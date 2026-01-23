@@ -1,0 +1,35 @@
+# Crawler sources configuration
+sources:
+  github_trending:
+    enabled: true
+    period: daily
+    language: all
+    limit: 10
+    spoken_language_code: 'zh'
+    since: 'daily'
+
+  hacker_news:
+    enabled: true
+    limit: 5
+    url: 'https://hacker-news.firebaseio.com/v0/topstories.json'
+
+  arxiv_ai:
+    enabled: true
+    categories:
+      - 'cs.AI'
+      - 'cs.LG'
+      - 'cs.CL'
+      - 'cs.NE'
+    limit: 3
+    sort_by: 'submittedDate'
+
+  juejin:
+    enabled: true
+    tags:
+      - '人工智能'
+      - '机器学习'
+      - '深度学习'
+      - '大模型'
+      - 'AI'
+    limit: 5
+    rss_url: 'https://juejin.cn/rss/backend'

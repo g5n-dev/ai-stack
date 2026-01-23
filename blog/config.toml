@@ -1,0 +1,69 @@
+# Hugo 配置文件 - AI Stack Terminal Blog
+
+baseURL = "https://ai-stack.site/"
+languageCode = "zh-CN"
+title = "AI Stack - 终端风格博客"
+theme = "terminal-theme"
+
+[params]
+  # 站点信息
+  description = "每日 AI 资讯精选 - GitHub Trending, Hacker News, ArXiv 论文"
+  author = "AI Stack Bot"
+  github = "https://github.com/yourusername/ai-stack"
+
+  # 终端风格设置
+  terminal = true
+  prompt = "➜"
+  cursor = true
+  typing_effect = true
+
+  # 社交媒体
+  twitter = "https://twitter.com/yourusername"
+  telegram = "https://t.me/yourchannel"
+
+  # 分页
+  paginate = 10
+  paginatePath = "page"
+
+[markup]
+  [markup.highlight]
+    style = "monokai"
+    lineNos = true
+    lineNumbersInTable = true
+    noClasses = false
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+[permalinks]
+  post = "/:year/:month/:slug/"
+
+[menu]
+  [[menu.main]]
+    name = "首页"
+    url = "/"
+    weight = 1
+
+  [[menu.main]]
+    name = "归档"
+    url = "/posts/"
+    weight = 2
+
+  [[menu.main]]
+    name = "标签"
+    url = "/tags/"
+    weight = 3
+
+  [[menu.main]]
+    name = "关于"
+    url = "/about/"
+    weight = 4
+
+[outputs]
+  home = ["HTML", "RSS"]
+  page = ["HTML"]
+  section = ["HTML", "RSS"]

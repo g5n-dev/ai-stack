@@ -1,0 +1,23 @@
+# Anthropic API configuration
+anthropic:
+  api_key: "${ANTHROPIC_AUTH_TOKEN}"
+  base_url: "${ANTHROPIC_BASE_URL}"
+  model: "claude-3-5-sonnet-20241022"
+  max_tokens: 4096
+  temperature: 0.7
+
+  # Summary settings
+  summary:
+    max_length: 200
+    style: "concise"
+
+  # Translation settings
+  translation:
+    default_target_lang: "zh"
+    preserve_formatting: true
+
+  # Generation settings
+  generation:
+    intro_length: 100
+    comment_length: 300
+    style: "professional"

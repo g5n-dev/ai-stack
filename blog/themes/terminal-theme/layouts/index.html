@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .Site.Title }}</title>
+    {{ $style := resources.Get "css/style.css" | minify }}
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+</head>
+<body>
+    <div class="terminal-container">
+        <header class="terminal-header">
+            <div class="terminal-controls">
+                <span class="control red"></span>
+                <span class="control yellow"></span>
+                <span class="control green"></span>
+            </div>
+            <div class="terminal-title">
+                <span class="prompt">➜</span> {{ .Site.Title }}
+            </div>
+        </header>
+
+        <main class="terminal-body">
+            <div class="welcome-message">
+                <div class="typing-effect">
+                    <p>欢迎使用 AI Stack 终端博客</p>
+                    <p>正在加载每日精选...</p>
+                </div>
+            </div>
+
+            <section class="latest-posts">
+                <h2><span class="prompt">$</span> 最新文章</h2>
+
+                <ul class="post-list">
+                    {{ $pages := where .Site.RegularPages "Type" "posts" }}
+                    {{ range first 5 $pages }}
+                    <li class="post-item">
+                        <span class="post-date">{{ .Date.Format "2006-01-02" }}</span>
+                        <a href="{{ .RelPermalink }}" class="post-link">{{ .Title }}</a>
+                        <span class="post-source">[{{ .Params.source | upper }}]</span>
+                    </li>
+                    {{ end }}
+                </ul>
+            </section>
+
+            <section class="quick-stats">
+                <h2><span class="prompt">$</span> 站点统计</h2>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-label">文章总数</div>
+                        <div class="stat-value">{{ len (where .Site.RegularPages "Type" "posts") }}</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">标签数量</div>
+                        <div class="stat-value">{{ len .Site.Taxonomies.tags }}</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">最后更新</div>
+                        <div class="stat-value">{{ now.Format "2006-01-02" }}</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="commands">
+                <h2><span class="prompt">$</span> 常用命令</h2>
+                <div class="command-list">
+                    <div class="command-item">
+                        <code>ls posts/</code>
+                        <span>查看所有文章</span>
+                    </div>
+                    <div class="command-item">
+                        <code>cat about/</code>
+                        <span>了解项目</span>
+                    </div>
+                    <div class="command-item">
+                        <code>grep "AI" posts/</code>
+                        <span>搜索 AI 相关文章</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="terminal-footer">
+            <p>AI Stack &copy; {{ now.Year }} | Powered by Hugo + Anthropic API</p>
+            <p>
+                <a href="{{ .Site.Params.github }}">GitHub</a> |
+                <a href="/index.xml">RSS</a>
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        // 打字机效果
+        const typingElements = document.querySelectorAll('.typing-effect p');
+        typingElements.forEach((element, index) => {
+            element.style.opacity = '0';
+            element.style.animation = `fadeIn 0.5s ease ${index * 0.3}s forwards`;
+        });
+
+        // 光标闪烁
+        const cursor = document.createElement('span');
+        cursor.className = 'cursor';
+        cursor.innerHTML = '█';
+        cursor.style.animation = 'blink 1s infinite';
+
+        // 添加闪烁效果到 prompt
+        const prompts = document.querySelectorAll('.prompt');
+        prompts.forEach(prompt => {
+            const cursorClone = cursor.cloneNode(true);
+            prompt.parentElement.appendChild(cursorClone);
+        });
+    </script>
+</body>
+</html>

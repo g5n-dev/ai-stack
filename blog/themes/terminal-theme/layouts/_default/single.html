@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .Title }} - {{ .Site.Title }}</title>
+    <meta name="description" content="{{ .Description }}">
+    {{ $style := resources.Get "css/style.css" | minify }}
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+</head>
+<body>
+    <div class="terminal-container">
+        <header class="terminal-header">
+            <div class="terminal-controls">
+                <span class="control red"></span>
+                <span class="control yellow"></span>
+                <span class="control green"></span>
+            </div>
+            <div class="terminal-title">
+                <span class="prompt">➜</span> {{ .Title }}
+            </div>
+        </header>
+
+        <nav class="terminal-nav">
+            <a href="/">/</a>
+            <a href="/posts/">/posts/</a>
+            <a href="/tags/">/tags/</a>
+        </nav>
+
+        <main class="terminal-body">
+            <article class="post-content">
+                <div class="post-meta">
+                    <span class="meta-item">
+                        <span class="prompt">$</span> date: {{ .Date.Format "2006-01-02 15:04:05" }}
+                    </span>
+                    <span class="meta-item">
+                        <span class="prompt">$</span> source: {{ .Params.source | upper }}
+                    </span>
+                </div>
+
+                <div class="post-tags">
+                    {{ range .Params.tags }}
+                    <span class="tag">{{ . }}</span>
+                    {{ end }}
+                </div>
+
+                <hr class="divider">
+
+                {{ .Content }}
+            </article>
+
+            <nav class="post-navigation">
+                {{ if .PrevInSection }}
+                <a href="{{ .PrevInSection.RelPermalink }}" class="nav-link prev">
+                    <span class="prompt">←</span> 上一篇
+                </a>
+                {{ end }}
+
+                {{ if .NextInSection }}
+                <a href="{{ .NextInSection.RelPermalink }}" class="nav-link next">
+                    下一篇 <span class="prompt">→</span>
+                </a>
+                {{ end }}
+            </nav>
+        </main>
+
+        <footer class="terminal-footer">
+            <p>AI Stack &copy; {{ now.Year }}</p>
+            <p>
+                <a href="{{ .Site.Params.github }}">GitHub</a> |
+                <a href="/index.xml">RSS</a>
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        // 代码块添加复制功能
+        const codeBlocks = document.querySelectorAll('pre code');
+        codeBlocks.forEach(block => {
+            block.setAttribute('contenteditable', 'true');
+        });
+    </script>
+</body>
+</html>
