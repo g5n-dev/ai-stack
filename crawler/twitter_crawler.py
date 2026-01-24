@@ -5,12 +5,15 @@ Twitter/X爬虫 - 使用Playwright模拟浏览器，不需要API
 
 import asyncio
 import logging
-from typing import List, Dict, Optional
+from typing import List, Dict, Optional, TYPE_CHECKING
 from datetime import datetime, timedelta, timezone
 import json
 
+if TYPE_CHECKING:
+    from playwright.async_api import Page
+
 try:
-    from playwright.async_api import async_playwright, Page
+    from playwright.async_api import async_playwright
     PLAYWRIGHT_AVAILABLE = True
 except ImportError:
     PLAYWRIGHT_AVAILABLE = False
