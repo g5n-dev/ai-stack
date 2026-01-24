@@ -127,8 +127,11 @@ jobs:
           if [ -f blog/config.toml ]; then
             cd blog
             hugo --baseURL "https://ai-stack.site/" --minify --cleanDestinationDir
-            cp -r public/* ..
             cd ..
+            # Remove source code files, keep only build artifacts
+            rm -rf blog/ crawler/ config/ processor/ scripts/ test_*.py generate_twitter_content.py requirements.txt README.md CLAUDE.md .github .gitignore
+            # Copy Hugo build artifacts
+            cp -r blog/public/* .
             rm -rf blog/public
           else
             echo "Hugo config not found, skipping build"
