@@ -1,6 +1,6 @@
 # Hugo 配置文件 - AI Stack 个人博客
 
-baseURL = "https://ai-stack.site/"
+baseURL = "https://g5n-dev.github.io/ai-stack/"
 languageCode = "zh-CN"
 title = "AI Stack"
 theme = "terminal-theme"
