@@ -43,6 +43,15 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Install Playwright browsers
+        run: |
+          if pip show playwright > /dev/null 2>&1; then
+            playwright install chromium
+            playwright install-deps chromium
+          else
+            echo "Playwright not found, skipping browser installation"
+          fi
+
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
