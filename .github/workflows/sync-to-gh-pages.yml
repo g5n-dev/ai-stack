@@ -52,6 +52,76 @@ jobs:
             git merge main --allow-unrelated-histories -X theirs -X ignore-space-change
           fi
 
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Install dependencies
+        run: |
+          pip install anthropic
+
+      - name: Clean non-AI posts and rebuild graph
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          python3 -c "
+          import anthropic
+          import json
+          import re
+          from pathlib import Path
+
+          client = anthropic.Anthropic(api_key='${{ secrets.ANTHROPIC_API_KEY }}')
+
+          posts_dir = Path('blog/content/posts')
+          non_ai_posts = []
+
+          for md_file in posts_dir.glob('*.md'):
+              with open(md_file, 'r', encoding='utf-8') as f:
+                  content = f.read()
+              
+              title_match = re.search(r'^title:\s*[\\\"\\'](.+?)[\\\"\\']', content, re.MULTILINE)
+              title = title_match.group(1) if title_match else md_file.stem
+              
+              try:
+                  message = client.messages.create(
+                      model='claude-3-5-sonnet-20241022',
+                      max_tokens=100,
+                      messages=[{
+                          'role': 'user',
+                          'content': f'判断以下内容是否与AI（人工智能）主题相关。只返回JSON: {{\"is_ai_related\": true/false, \"reason\": \"原因\", \"confidence\": 0.0-1.0}}\\n\\n标题: {title}\\n内容摘要: {content[:500]}'
+                      }]
+                  )
+                  
+                  result = json.loads(message.content[0].text)
+                  
+                  if not result['is_ai_related'] or result['confidence'] < 0.6:
+                      non_ai_posts.append({
+                          'file': str(md_file),
+                          'title': title,
+                          'reason': result['reason'],
+                          'confidence': result['confidence']
+                      })
+                      print(f'Non-AI: {md_file.name} - {result[\"reason\"]}')
+                  else:
+                      print(f'AI-related: {md_file.name}')
+              except Exception as e:
+                  print(f'Error processing {md_file.name}: {e}')
+
+          if non_ai_posts:
+              print(f'\\nFound {len(non_ai_posts)} non-AI posts:')
+              for post in non_ai_posts:
+                  print(f'  - {post[\"file\"]}: {post[\"title\"]}')
+                  Path(post['file']).unlink()
+                  print(f'  Deleted: {post[\"file\"]}')
+          else:
+              print('No non-AI posts found.')
+          "
+
+      - name: Rebuild tag graph
+        run: |
+          python3 processor/tag_graph.py
+
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
