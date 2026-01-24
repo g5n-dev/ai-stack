@@ -14,6 +14,7 @@ from .hacker_news import HackerNewsCrawler
 from .arxiv_papers import ArxivPapersCrawler
 from .juejin_rss import JuejinRSSCrawler
 from .blogs_podcasts import BlogsPodcastsCrawler
+from .twitter_crawler import TwitterRecentCrawler
 from .dedupe import canonicalize_url
 
 logging.basicConfig(level=logging.INFO)
@@ -92,6 +93,15 @@ class CrawlerOrchestrator:
                 timeout=config.get('timeout', 30),
             )
             logger.info("Initialized Blogs/Podcasts crawler")
+
+        # Twitter/X (Recent tweets from tech leaders)
+        if sources_config.get('twitter', {}).get('enabled', False):
+            config = sources_config['twitter']
+            crawlers['twitter'] = TwitterRecentCrawler(
+                accounts=config.get('accounts'),
+                headless=config.get('headless', True)
+            )
+            logger.info("Initialized Twitter/X crawler")
 
         return crawlers
 

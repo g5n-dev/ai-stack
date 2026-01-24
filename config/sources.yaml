@@ -71,3 +71,18 @@ sources:
       - name: "Lex Fridman Podcast"
         url: "https://lexfridman.com/feed/podcast/"
         type: "podcast"
+
+  # Twitter/X 科技大佬推文（使用 Playwright 爬取，不需要 API）
+  twitter:
+    enabled: true
+    headless: true
+    accounts:
+      - "elonmusk"
+      - "sama"
+      - "ylecun"
+      - "AndrewYNg"
+      - "hardmaru"
+      - "fchollet"
+      - "karpathy"
+      - "OpenAI"
+      - "ylecun"
