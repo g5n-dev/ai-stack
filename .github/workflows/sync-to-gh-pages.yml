@@ -1,0 +1,73 @@
+name: Sync to gh-pages
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Configure Git
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+      - name: Fetch gh-pages branch
+        run: |
+          git fetch origin gh-pages:gh-pages || echo "gh-pages branch does not exist yet"
+
+      - name: Create or checkout gh-pages branch
+        run: |
+          if git rev-parse --verify gh-pages >/dev/null 2>&1; then
+            echo "Checking out existing gh-pages branch..."
+            git checkout gh-pages
+          else
+            echo "Creating new orphan gh-pages branch..."
+            git checkout --orphan gh-pages
+            git rm -rf .
+          fi
+
+      - name: Merge main into gh-pages
+        run: |
+          if git rev-parse --verify gh-pages >/dev/null 2>&1 && [ "$(git log main --oneline | wc -l)" -gt 0 ]; then
+            echo "Merging main into gh-pages..."
+            git merge main --no-edit -X theirs -X ignore-space-change || git merge main --no-edit --allow-unrelated-histories -X theirs -X ignore-space-change
+          else
+            echo "Initial sync from main..."
+            git merge main --allow-unrelated-histories -X theirs -X ignore-space-change
+          fi
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: "latest"
+          extended: true
+
+      - name: Build Hugo site
+        run: |
+          if [ -f blog/config.toml ]; then
+            cd blog
+            hugo --baseURL "https://ai-stack.site/" --minify --cleanDestinationDir
+            cp -r public/* ..
+            cd ..
+            rm -rf blog/public
+          else
+            echo "Hugo config not found, skipping build"
+          fi
+
+      - name: Push to gh-pages
+        run: |
+          git add -A
+          git diff --cached --quiet || git commit -m "Sync from main [skip ci]"
+          git push origin gh-pages --force-with-lease
