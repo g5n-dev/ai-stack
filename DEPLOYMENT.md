@@ -42,7 +42,7 @@
 | Secret 名称 | 说明 | 示例 |
 |------------|------|------|
 | `ANTHROPIC_AUTH_TOKEN` | Anthropic API 密钥 | `sk-ant-xxxxx` |
-| `ANTHROPIC_BASE_URL` | API 基础 URL | `https://open.bigmodel.cn/api/anthropic` |
+| `ANTHROPIC_BASE_URL` | API 基础 URL | `https://your-api-endpoint.com/api/anthropic` |
 
 ### 可选的 Secrets（用于社交媒体推送）
 
@@ -314,7 +314,7 @@ curl -I https://ai-stack.site
 
 ```env
 ANTHROPIC_AUTH_TOKEN=your_token_here
-ANTHROPIC_BASE_URL=https://open.bigmodel.cn/api/anthropic
+ANTHROPIC_BASE_URL=https://your-api-endpoint.com/api/anthropic
 ```
 
 ### C. 常用链接

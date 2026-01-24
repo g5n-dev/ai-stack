@@ -60,7 +60,7 @@ if [ ! -f ".env" ]; then
     else
         cat > .env << 'EOF'
 ANTHROPIC_AUTH_TOKEN=your_anthropic_token
-ANTHROPIC_BASE_URL=https://open.bigmodel.cn/api/anthropic
+ANTHROPIC_BASE_URL=https://your-api-endpoint.com/api/anthropic
 EOF
     fi
     echo -e "${GREEN}✓ .env file created${NC}"

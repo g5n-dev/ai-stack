@@ -54,7 +54,7 @@ nano .env
 必需配置：
 ```env
 ANTHROPIC_AUTH_TOKEN=your_anthropic_token
-ANTHROPIC_BASE_URL=https://open.bigmodel.cn/api/anthropic
+ANTHROPIC_BASE_URL=https://your-api-endpoint.com/api/anthropic
 ```
 
 可选配置（用于社交媒体推送）：
