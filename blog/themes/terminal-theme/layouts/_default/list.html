@@ -39,7 +39,7 @@
     {{ $js := resources.Get "js/terminal.js" | minify }}
     <script src="{{ $js.RelPermalink }}" defer></script>
 </head>
-<body class="bg-deep-navy selection:bg-muted-teal selection:text-deep-navy font-mono">
+<body class="bg-deep-navy selection:bg-muted-teal selection:text-deep-navy font-display">
     <div class="rain-container">
         <div class="rain-streak r1"></div>
         <div class="rain-streak r2"></div>
@@ -75,12 +75,12 @@
                     <span class="material-symbols-outlined text-primary text-xl">terminal</span>
                 </a>
                 <div>
-                    <h2 class="text-off-white/90 text-lg font-medium tracking-widest teal-glow-text">{{ .Site.Title }}</h2>
-                    <p class="text-[9px] font-mono text-muted-teal/40 -mt-0.5 uppercase tracking-widest">Archive Listing</p>
+                    <h2 class="text-off-white/90 text-lg font-medium tracking-wide teal-glow-text">{{ .Site.Title }}</h2>
+                    <p class="text-[11px] font-mono text-muted-teal/50 -mt-0.5 tracking-wide">归档列表</p>
                 </div>
             </div>
 
-            <nav class="hidden md:flex items-center gap-8 text-[10px] font-mono uppercase tracking-[0.3em] text-off-white/60">
+            <nav class="hidden md:flex items-center gap-8 text-[11px] font-mono tracking-wide text-off-white/70">
                 {{ range .Site.Menus.main }}
                 <a href="{{ .URL }}" class="hover:text-primary transition-all">{{ .Name }}</a>
                 {{ end }}
@@ -97,11 +97,11 @@
             <div class="w-full max-w-6xl mx-auto">
                 <div class="flex items-end justify-between border-b border-muted-teal/10 pb-6 mb-8">
                     <div class="flex flex-col">
-                        <span class="text-primary/60 text-[10px] font-bold tracking-[0.4em] uppercase mb-1">Directory</span>
+                        <span class="text-primary/70 text-[12px] font-bold tracking-wide mb-1">目录</span>
                         <h1 class="text-off-white text-3xl font-light tracking-tight font-display">{{ .Title }}</h1>
                     </div>
-                    <div class="text-muted-teal/40 text-[10px] font-mono tracking-widest uppercase">
-                        Entries: {{ len .Pages }}
+                    <div class="text-muted-teal/45 text-[11px] font-mono tracking-wide">
+                        条目：{{ len .Pages }}
                     </div>
                 </div>
 
@@ -110,9 +110,9 @@
                     <table class="w-full table-fixed text-left border-collapse">
                         <thead>
                             <tr class="bg-muted-teal/5 border-b border-muted-teal/10">
-                                <th class="w-28 px-6 md:px-8 py-5 text-muted-teal/60 text-[10px] font-bold tracking-[0.2em] uppercase">Attributes</th>
-                                <th class="w-24 px-6 md:px-8 py-5 text-muted-teal/60 text-[10px] font-bold tracking-[0.2em] uppercase text-right">Size</th>
-                                <th class="px-6 md:px-8 py-5 text-off-white text-[10px] font-bold tracking-[0.2em] uppercase">Entry Name</th>
+                                <th class="w-28 px-6 md:px-8 py-5 text-muted-teal/60 text-[11px] font-bold tracking-wide">类型</th>
+                                <th class="w-24 px-6 md:px-8 py-5 text-muted-teal/60 text-[11px] font-bold tracking-wide text-right">阅读</th>
+                                <th class="px-6 md:px-8 py-5 text-off-white text-[11px] font-bold tracking-wide">条目</th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-muted-teal/5">
@@ -122,15 +122,15 @@
                                     {{- $kind := lower (.Params.entry_kind | default "") -}}
                                     {{- $isManual := or (eq $kind "manual") (and (eq $kind "") (not .Params.source)) -}}
                                     <div class="flex flex-col gap-1 leading-tight">
-                                        <span class="text-[10px] {{ if $isManual }}text-off-white/50 group-hover:text-off-white{{ else }}text-primary/60 group-hover:text-primary{{ end }} transition-colors">
-                                            {{ if $isManual }}[MANUAL]{{ else }}[AUTO]{{ end }}
+                                        <span class="text-[11px] {{ if $isManual }}text-off-white/60 group-hover:text-off-white{{ else }}text-primary/70 group-hover:text-primary{{ end }} transition-colors">
+                                            {{ if $isManual }}[手动]{{ else }}[自动]{{ end }}
                                         </span>
-                                        <span class="text-[10px] text-off-white/35 group-hover:text-off-white/55 transition-colors">
-                                            {{ with .Params.source }}{{ printf "[%s]" (upper .) }}{{ else }}[NOTE]{{ end }}
+                                        <span class="text-[11px] text-off-white/35 group-hover:text-off-white/55 transition-colors font-mono">
+                                            {{ with .Params.source }}{{ printf "[%s]" (upper .) }}{{ else }}[笔记]{{ end }}
                                         </span>
                                     </div>
                                 </td>
-                                <td class="w-24 px-6 md:px-8 py-6 text-muted-teal/40 text-xs text-right font-mono">
+                                <td class="w-24 px-6 md:px-8 py-6 text-muted-teal/45 text-[11px] text-right font-mono">
                                     {{ printf "%dmin" .ReadingTime }}
                                 </td>
                                 <td class="px-6 md:px-8 py-6">
@@ -146,7 +146,7 @@
                                         </span>
                                         <span class="min-w-0 flex-1 text-off-white text-sm tracking-wide group-hover:translate-x-1 transition-transform truncate" title="{{ .Title }}">{{ .Title }}</span>
                                     </a>
-                                    <div class="mt-2 flex flex-wrap items-center gap-2 text-[10px] text-off-white/40">
+                                    <div class="mt-2 flex flex-wrap items-center gap-2 text-[11px] text-off-white/45">
                                         <span class="font-mono text-muted-teal/40">{{ .Date.Format "2006-01-02" }}</span>
                                         {{ range first 3 (.Params.tags | default (slice)) }}
                                         <span class="px-2 py-0.5 rounded border border-muted-teal/15 bg-terminal-bg/40 text-muted-teal/60">{{ . }}</span>
@@ -161,32 +161,32 @@
 
                 <div class="mt-8 flex items-center justify-between gap-4">
                     {{ if $paginator.HasPrev }}
-                    <a href="{{ $paginator.Prev.URL }}" class="flex items-center gap-2 px-5 py-2 bg-muted-teal/5 border border-muted-teal/20 rounded-full hover:bg-muted-teal/10 transition-all text-[10px] font-mono uppercase tracking-[0.2em] text-off-white/60 hover:text-off-white">
-                        <span class="material-symbols-outlined text-base">arrow_back</span> Prev
+                    <a href="{{ $paginator.Prev.URL }}" class="flex items-center gap-2 px-5 py-2 bg-muted-teal/5 border border-muted-teal/20 rounded-full hover:bg-muted-teal/10 transition-all text-[11px] font-mono tracking-wide text-off-white/70 hover:text-off-white">
+                        <span class="material-symbols-outlined text-base">arrow_back</span> 上一页
                     </a>
                     {{ else }}
-                    <span class="px-5 py-2 text-[10px] font-mono uppercase tracking-[0.2em] text-off-white/20">Prev</span>
+                    <span class="px-5 py-2 text-[11px] font-mono tracking-wide text-off-white/20">上一页</span>
                     {{ end }}
 
-                    <div class="text-[10px] font-mono tracking-widest uppercase text-muted-teal/50">
-                        Page {{ $paginator.PageNumber }} / {{ $paginator.TotalPages }}
+                    <div class="text-[11px] font-mono tracking-wide text-muted-teal/55">
+                        第 {{ $paginator.PageNumber }} / {{ $paginator.TotalPages }} 页
                     </div>
 
                     {{ if $paginator.HasNext }}
-                    <a href="{{ $paginator.Next.URL }}" class="flex items-center gap-2 px-5 py-2 bg-muted-teal/5 border border-muted-teal/20 rounded-full hover:bg-muted-teal/10 transition-all text-[10px] font-mono uppercase tracking-[0.2em] text-off-white/60 hover:text-off-white">
-                        Next <span class="material-symbols-outlined text-base">arrow_forward</span>
+                    <a href="{{ $paginator.Next.URL }}" class="flex items-center gap-2 px-5 py-2 bg-muted-teal/5 border border-muted-teal/20 rounded-full hover:bg-muted-teal/10 transition-all text-[11px] font-mono tracking-wide text-off-white/70 hover:text-off-white">
+                        下一页 <span class="material-symbols-outlined text-base">arrow_forward</span>
                     </a>
                     {{ else }}
-                    <span class="px-5 py-2 text-[10px] font-mono uppercase tracking-[0.2em] text-off-white/20">Next</span>
+                    <span class="px-5 py-2 text-[11px] font-mono tracking-wide text-off-white/20">下一页</span>
                     {{ end }}
                 </div>
             </div>
         </main>
 
         <footer class="h-14 border-t border-muted-teal/10 bg-deep-navy/80 backdrop-blur-2xl flex items-center px-6 gap-6 z-20">
-            <div class="terminal-label text-primary font-mono text-xs font-bold tracking-tighter">CMD://</div>
+            <div class="terminal-label text-primary font-mono text-sm font-bold tracking-tight">CMD://</div>
             <div class="flex-1">
-                <input class="terminal-input bg-transparent border-none focus:ring-0 text-primary font-mono text-xs w-full placeholder:text-muted-teal/30" placeholder="Try: search llm | open 2 | clear" type="text" autocomplete="off" spellcheck="false" />
+                <input class="terminal-input bg-transparent border-none focus:ring-0 text-primary font-mono text-sm w-full placeholder:text-muted-teal/30" placeholder="输入命令…（search 关键词 / open 2 / clear）" type="text" autocomplete="off" spellcheck="false" />
             </div>
             <div class="hidden md:flex gap-6 items-center border-l border-muted-teal/10 pl-6 h-full">
                 <span class="text-muted-teal/40 font-mono text-[9px] tracking-widest uppercase">Link: STABLE</span>

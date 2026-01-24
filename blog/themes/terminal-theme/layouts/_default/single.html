@@ -39,7 +39,7 @@
     {{ $js := resources.Get "js/terminal.js" | minify }}
     <script src="{{ $js.RelPermalink }}" defer></script>
 </head>
-<body class="bg-deep-navy selection:bg-muted-teal selection:text-deep-navy font-mono">
+<body class="bg-deep-navy selection:bg-muted-teal selection:text-deep-navy font-display">
     <div class="rain-container">
         <div class="rain-streak r1"></div>
         <div class="rain-streak r2"></div>
@@ -77,11 +77,11 @@
                 </a>
                 <div>
                     <h2 class="text-off-white/90 text-lg font-medium tracking-widest teal-glow-text">{{ .Site.Title }}</h2>
-                    <p class="text-[9px] font-mono text-muted-teal/40 -mt-0.5 uppercase tracking-widest">Atmospheric Data Archive</p>
+                    <p class="text-[11px] font-mono text-muted-teal/50 -mt-0.5 tracking-wide">数据归档</p>
                 </div>
             </div>
 
-            <nav class="hidden md:flex items-center gap-8 text-[10px] font-mono uppercase tracking-[0.3em] text-off-white/60">
+            <nav class="hidden md:flex items-center gap-8 text-[11px] font-mono tracking-wide text-off-white/70">
                 {{ range .Site.Menus.main }}
                 <a href="{{ .URL }}" class="hover:text-primary transition-all">{{ .Name }}</a>
                 {{ end }}
@@ -106,7 +106,7 @@
 
             <div class="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                 <article class="lg:col-span-9 terminal-glass rounded-3xl overflow-hidden p-6 md:p-12 relative">
-                    <div class="flex flex-wrap items-center gap-3 mb-8 font-mono text-[9px] tracking-[0.3em]">
+                    <div class="flex flex-wrap items-center gap-3 mb-8 font-mono text-[10px] tracking-wide">
                         <a class="text-primary/40 hover:text-primary" href="/">ROOT</a>
                         <span class="text-primary/20">/</span>
                         <a class="text-primary/40 hover:text-primary" href="/posts/">POSTS</a>
@@ -118,12 +118,12 @@
                         <h1 class="text-off-white tracking-tight text-3xl md:text-5xl font-light leading-tight mb-4 font-display teal-glow-text">
                             {{ .Title }}
                         </h1>
-                        <div class="flex flex-wrap items-center gap-3 text-[10px] font-mono tracking-widest uppercase">
+                        <div class="flex flex-wrap items-center gap-3 text-[11px] font-mono tracking-wide">
                             <span class="text-primary/80">SRC: {{ $source | upper }}</span>
                             <span class="text-primary/20">•</span>
                             <span class="text-muted-teal/40">TS: {{ .Date.Format "2006-01-02 15:04" }}</span>
                             <span class="text-primary/20">•</span>
-                            <span class="{{ if $isManual }}text-off-white/50{{ else }}text-primary/60{{ end }}">MODE: {{ if $isManual }}MANUAL{{ else }}AUTO{{ end }}</span>
+                            <span class="{{ if $isManual }}text-off-white/55{{ else }}text-primary/70{{ end }}">MODE: {{ if $isManual }}手动{{ else }}自动{{ end }}</span>
                             <span class="text-primary/20">•</span>
                             <span class="text-off-white/35">ETA: {{ printf "%dmin" .ReadingTime }}</span>
                         </div>
@@ -147,8 +147,8 @@
                     <div class="mt-10 pt-8 border-t border-muted-teal/10">
                         <div class="terminal-glass rounded-2xl p-5 md:p-8 border border-muted-teal/10">
                             <div class="flex items-center justify-between gap-4 mb-4">
-                                <div class="text-primary/70 text-[10px] font-mono tracking-[0.3em] uppercase">Comments</div>
-                                <div class="text-off-white/30 text-[9px] font-mono tracking-widest uppercase">GitHub Issues</div>
+                                <div class="text-primary/75 text-[11px] font-mono tracking-wide">评论</div>
+                                <div class="text-off-white/30 text-[10px] font-mono tracking-wide">GitHub Issues</div>
                             </div>
 
                             <script
@@ -167,18 +167,18 @@
                     <div class="mt-10 pt-8 border-t border-muted-teal/10 flex flex-col md:flex-row justify-between items-stretch md:items-center gap-4">
                         <div class="flex gap-3">
                             {{ if .PrevInSection }}
-                            <a href="{{ .PrevInSection.RelPermalink }}" class="flex items-center gap-2 px-5 py-2 bg-muted-teal/5 border border-muted-teal/20 rounded-full hover:bg-muted-teal/10 transition-all text-[10px] font-mono uppercase tracking-[0.2em] text-off-white/60 hover:text-off-white">
-                                <span class="material-symbols-outlined text-base">arrow_back</span> Prev
+                            <a href="{{ .PrevInSection.RelPermalink }}" class="flex items-center gap-2 px-5 py-2 bg-muted-teal/5 border border-muted-teal/20 rounded-full hover:bg-muted-teal/10 transition-all text-[11px] font-mono tracking-wide text-off-white/70 hover:text-off-white">
+                                <span class="material-symbols-outlined text-base">arrow_back</span> 上一篇
                             </a>
                             {{ end }}
                             {{ if .NextInSection }}
-                            <a href="{{ .NextInSection.RelPermalink }}" class="flex items-center gap-2 px-5 py-2 bg-muted-teal/5 border border-muted-teal/20 rounded-full hover:bg-muted-teal/10 transition-all text-[10px] font-mono uppercase tracking-[0.2em] text-off-white/60 hover:text-off-white">
-                                Next <span class="material-symbols-outlined text-base">arrow_forward</span>
+                            <a href="{{ .NextInSection.RelPermalink }}" class="flex items-center gap-2 px-5 py-2 bg-muted-teal/5 border border-muted-teal/20 rounded-full hover:bg-muted-teal/10 transition-all text-[11px] font-mono tracking-wide text-off-white/70 hover:text-off-white">
+                                下一篇 <span class="material-symbols-outlined text-base">arrow_forward</span>
                             </a>
                             {{ end }}
                         </div>
-                        <a href="/posts/" class="px-5 py-2 bg-primary/5 border border-primary/20 rounded-full hover:bg-primary/10 transition-all text-[10px] font-mono uppercase tracking-[0.2em] text-primary/70 hover:text-primary text-center">
-                            Return to Archive
+                        <a href="/posts/" class="px-5 py-2 bg-primary/5 border border-primary/20 rounded-full hover:bg-primary/10 transition-all text-[11px] font-mono tracking-wide text-primary/70 hover:text-primary text-center">
+                            返回归档
                         </a>
                     </div>
                 </article>
@@ -186,7 +186,7 @@
                 <aside class="hidden lg:block lg:col-span-3 space-y-6 sticky top-8">
                     <div class="terminal-glass rounded-xl overflow-hidden border border-primary/20 flex flex-col h-96 relative">
                         <div class="px-4 py-3 bg-primary/5 border-b border-primary/10 flex items-center justify-between">
-                            <span class="text-[9px] font-mono font-bold text-primary tracking-widest uppercase">Decryption_Log</span>
+                            <span class="text-[10px] font-mono font-bold text-primary tracking-wide">Decryption Log</span>
                             <span class="size-1.5 bg-emerald-500 rounded-full animate-pulse shadow-[0_0_5px_#22c55e]"></span>
                         </div>
                         <div class="flex-1 relative overflow-hidden bg-black/30">
@@ -194,7 +194,7 @@
                                 <div class="absolute top-0 left-0 right-0 h-10 bg-gradient-to-b from-terminal-bg to-transparent"></div>
                                 <div class="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-terminal-bg to-transparent"></div>
                             </div>
-                            <div class="absolute inset-0 overflow-hidden px-4 py-3 font-mono text-[9px] leading-loose text-primary/60">
+                            <div class="absolute inset-0 overflow-hidden px-4 py-3 font-mono text-[10px] leading-loose text-primary/60">
                                 <div class="log-scroller">
                                     <div class="opacity-60">&gt; ESTABLISHING_SECURE_LINK...</div>
                                     <div class="text-primary">&gt; HANDSHAKE_PROTOCOL_INIT [OK]</div>
@@ -227,23 +227,23 @@
                     </div>
 
                     <div class="terminal-glass rounded-xl p-5 border border-primary/20">
-                        <div class="text-[9px] font-mono text-primary/40 tracking-widest mb-4 uppercase">Entry_Metadata</div>
+                        <div class="text-[10px] font-mono text-primary/45 tracking-wide mb-4">条目元数据</div>
                         <div class="space-y-3 text-[11px] text-off-white/70">
                             <div class="flex items-center justify-between">
                                 <span class="text-off-white/35 font-mono">MODE</span>
-                                <span class="{{ if $isManual }}text-off-white/70{{ else }}text-primary/80{{ end }} font-mono tracking-widest uppercase">{{ if $isManual }}MANUAL{{ else }}AUTO{{ end }}</span>
+                                <span class="{{ if $isManual }}text-off-white/70{{ else }}text-primary/80{{ end }} font-mono tracking-wide">{{ if $isManual }}手动{{ else }}自动{{ end }}</span>
                             </div>
                             <div class="flex items-center justify-between">
                                 <span class="text-off-white/35 font-mono">SOURCE</span>
-                                <span class="text-primary/70 font-mono tracking-widest uppercase">{{ $source | upper }}</span>
+                                <span class="text-primary/70 font-mono tracking-wide">{{ $source | upper }}</span>
                             </div>
                             <div class="flex items-center justify-between">
                                 <span class="text-off-white/35 font-mono">TIME</span>
-                                <span class="text-muted-teal/60 font-mono tracking-widest uppercase">{{ .Date.Format "2006-01-02" }}</span>
+                                <span class="text-muted-teal/60 font-mono tracking-wide">{{ .Date.Format "2006-01-02" }}</span>
                             </div>
                             <div class="flex items-center justify-between">
                                 <span class="text-off-white/35 font-mono">READ</span>
-                                <span class="text-muted-teal/60 font-mono tracking-widest uppercase">{{ printf "%dmin" .ReadingTime }}</span>
+                                <span class="text-muted-teal/60 font-mono tracking-wide">{{ printf "%dmin" .ReadingTime }}</span>
                             </div>
                             {{ with .Params.external_url }}
                             <div class="pt-3 border-t border-primary/10">
@@ -264,12 +264,12 @@
 
                     {{ if gt (len $related) 0 }}
                     <div class="terminal-glass rounded-xl p-5 border border-primary/20">
-                        <div class="text-[9px] font-mono text-primary/40 tracking-widest mb-4 uppercase">Related_Archives</div>
+                        <div class="text-[10px] font-mono text-primary/45 tracking-wide mb-4">相关条目</div>
                         <div class="space-y-3">
                             {{ range $related }}
                             <a class="block group" href="{{ .RelPermalink }}" data-entry-link="{{ .RelPermalink }}" data-entry-title="{{ .Title }}">
                                 <div class="text-[11px] text-off-white/80 font-medium group-hover:text-primary transition-colors">{{ .Title }}</div>
-                                <div class="text-[9px] text-muted-teal/40 font-mono tracking-widest uppercase mt-1">{{ .Date.Format "2006-01-02" }}</div>
+                                <div class="text-[10px] text-muted-teal/40 font-mono tracking-wide mt-1">{{ .Date.Format "2006-01-02" }}</div>
                             </a>
                             {{ end }}
                         </div>
@@ -280,9 +280,9 @@
         </main>
 
         <footer class="h-14 border-t border-muted-teal/10 bg-deep-navy/80 backdrop-blur-2xl flex items-center px-6 gap-6 z-20">
-            <div class="terminal-label text-primary font-mono text-xs font-bold tracking-tighter">CMD://</div>
+            <div class="terminal-label text-primary font-mono text-sm font-bold tracking-tight">CMD://</div>
             <div class="flex-1">
-                <input class="terminal-input bg-transparent border-none focus:ring-0 text-primary font-mono text-xs w-full placeholder:text-muted-teal/30" placeholder="Awaiting instruction... (try: posts, tags, open 1, search keyword)" type="text" autocomplete="off" spellcheck="false" />
+                <input class="terminal-input bg-transparent border-none focus:ring-0 text-primary font-mono text-sm w-full placeholder:text-muted-teal/30" placeholder="输入命令…（posts / tags / open 1 / search 关键词）" type="text" autocomplete="off" spellcheck="false" />
             </div>
             <div class="hidden md:flex gap-6 items-center border-l border-muted-teal/10 pl-6 h-full">
                 <span class="text-muted-teal/40 font-mono text-[9px] tracking-widest uppercase">Link: STABLE</span>

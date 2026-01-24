@@ -40,7 +40,7 @@
     {{ $js := resources.Get "js/terminal.js" | minify }}
     <script src="{{ $js.RelPermalink }}" defer></script>
 </head>
-<body class="bg-deep-navy selection:bg-muted-teal selection:text-deep-navy font-mono">
+<body class="bg-deep-navy selection:bg-muted-teal selection:text-deep-navy font-display">
     {{ $posts := where .Site.RegularPages "Type" "posts" }}
     {{ $posts = sort $posts "Date" "desc" }}
 
@@ -79,30 +79,30 @@
                     <span class="material-symbols-outlined text-3xl">terminal</span>
                 </div>
                 <div class="flex flex-col">
-                    <h2 class="text-off-white text-base font-bold leading-tight tracking-wider uppercase">{{ .Site.Title }}</h2>
-                    <p class="text-[9px] text-muted-teal font-mono tracking-[0.2em] uppercase opacity-70">{{ .Site.Params.description }}</p>
+                    <h2 class="text-off-white text-base font-bold leading-tight tracking-wide uppercase">{{ .Site.Title }}</h2>
+                    <p class="text-[11px] text-muted-teal/70 font-display tracking-normal">{{ .Site.Params.description }}</p>
                 </div>
             </div>
 
             <div class="flex flex-1 justify-end gap-6 md:gap-10 items-center">
-                <div class="hidden md:flex items-center gap-8 font-mono text-[11px] text-off-white/60">
+                <div class="hidden md:flex items-center gap-8 font-mono text-[12px] text-off-white/70">
                     <div class="flex flex-col">
-                        <span class="text-muted-teal/50 text-[9px] uppercase tracking-tighter">Posts</span>
+                        <span class="text-muted-teal/50 text-[10px] tracking-normal">条目</span>
                         <span class="font-medium">{{ len $posts }}</span>
                     </div>
                     <div class="flex flex-col border-l border-muted-teal/10 pl-8">
-                        <span class="text-muted-teal/50 text-[9px] uppercase tracking-tighter">Latency</span>
+                        <span class="text-muted-teal/50 text-[10px] tracking-normal">延迟</span>
                         <span class="font-medium">12ms</span>
                     </div>
                     <div class="flex flex-col border-l border-muted-teal/10 pl-8">
-                        <span class="text-muted-teal/50 text-[9px] uppercase tracking-tighter">Last Sync</span>
+                        <span class="text-muted-teal/50 text-[10px] tracking-normal">最近同步</span>
                         <span class="font-medium text-off-white">
                             {{ with (first 1 $posts) }}{{ (index . 0).Date.Format "2006-01-02 15:04" }}{{ else }}N/A{{ end }}
                         </span>
                     </div>
                 </div>
 
-                <nav class="hidden lg:flex items-center gap-6 font-mono text-[10px] tracking-[0.3em] uppercase text-off-white/60">
+                <nav class="hidden lg:flex items-center gap-6 font-mono text-[11px] tracking-wide text-off-white/70">
                     {{ range .Site.Menus.main }}
                     <a href="{{ .URL }}" class="hover:text-off-white transition-colors">
                         {{ .Name }}
@@ -111,8 +111,8 @@
                 </nav>
 
                 <div class="flex gap-3 ml-2 md:ml-4">
-                    <a href="{{ .Site.Params.github }}" class="hidden sm:flex items-center px-3 py-1.5 border border-muted-teal/30 rounded text-[10px] text-primary font-bold tracking-widest bg-muted-teal/5 hover:bg-muted-teal/10 transition-colors">
-                        SECURE_LINK
+                    <a href="{{ .Site.Params.github }}" class="hidden sm:flex items-center px-3 py-1.5 border border-muted-teal/30 rounded text-[11px] text-primary font-bold tracking-wide bg-muted-teal/5 hover:bg-muted-teal/10 transition-colors">
+                        安全连接
                     </a>
                     <a href="/index.xml" class="bg-muted-teal/10 hover:bg-muted-teal/20 text-off-white p-2 rounded border border-muted-teal/20 transition-all" aria-label="RSS">
                         <span class="material-symbols-outlined text-sm block">rss_feed</span>
@@ -125,37 +125,37 @@
             <aside class="hidden md:flex w-72 border-r border-muted-teal/5 bg-deep-navy/30 flex-col p-8 overflow-y-auto custom-scrollbar backdrop-blur-lg">
                 <div class="flex flex-col gap-10">
                     <div class="flex flex-col border-l border-primary/40 pl-4">
-                        <h1 class="text-off-white text-sm font-bold tracking-[0.25em] uppercase">Log Feed</h1>
-                        <p class="text-muted-teal/50 text-[10px] mt-1">Archive_v2049</p>
+                        <h1 class="text-off-white text-sm font-bold tracking-wide">日志流</h1>
+                        <p class="text-muted-teal/50 text-[11px] mt-1 font-mono">Archive_v2049</p>
                     </div>
 
                     <nav class="flex flex-col gap-2">
                         <a href="/posts/" class="flex items-center gap-3 px-4 py-3 rounded bg-muted-teal/10 border border-muted-teal/20 text-primary">
                             <span class="material-symbols-outlined text-lg">folder_open</span>
-                            <p class="text-xs font-bold tracking-widest uppercase">Posts</p>
+                            <p class="text-sm font-bold tracking-wide">归档</p>
                         </a>
                         <a href="/tags/" class="flex items-center gap-3 px-4 py-3 hover:bg-muted-teal/5 rounded transition-colors group">
                             <span class="material-symbols-outlined text-off-white/40 group-hover:text-primary text-lg transition-colors">sell</span>
-                            <p class="text-off-white/60 group-hover:text-off-white text-xs font-medium tracking-wide">Tags</p>
+                            <p class="text-off-white/60 group-hover:text-off-white text-sm font-medium tracking-wide">标签</p>
                         </a>
                         <a href="/about/" class="flex items-center gap-3 px-4 py-3 hover:bg-muted-teal/5 rounded transition-colors group">
                             <span class="material-symbols-outlined text-off-white/40 group-hover:text-primary text-lg transition-colors">account_circle</span>
-                            <p class="text-off-white/60 group-hover:text-off-white text-xs font-medium tracking-wide">About</p>
+                            <p class="text-off-white/60 group-hover:text-off-white text-sm font-medium tracking-wide">关于</p>
                         </a>
                     </nav>
 
                     <div class="mt-4">
-                        <h3 class="text-muted-teal/40 text-[9px] font-bold tracking-[0.3em] mb-6 uppercase">System Events</h3>
+                        <h3 class="text-muted-teal/50 text-[11px] font-bold tracking-wide mb-6">系统事件</h3>
                         <div class="flex flex-col gap-0 border-l border-muted-teal/10 ml-1">
                             <div class="relative pl-6 pb-8">
                                 <div class="absolute -left-[5px] top-0 size-2 rounded-full bg-primary/60 shadow-[0_0_10px_rgba(77,182,172,0.5)]"></div>
-                                <p class="text-off-white/80 text-[11px] leading-relaxed">Neural archive accessed by UID: {{ .Site.Params.author }}</p>
-                                <p class="text-muted-teal/40 text-[9px] mt-1.5 font-mono">{{ now.Format "15:04:05" }}</p>
+                                <p class="text-off-white/80 text-[12px] leading-relaxed">神经归档访问授权：{{ .Site.Params.author }}</p>
+                                <p class="text-muted-teal/40 text-[10px] mt-1.5 font-mono">{{ now.Format "15:04:05" }}</p>
                             </div>
                             <div class="relative pl-6 pb-2">
                                 <div class="absolute -left-[5px] top-0 size-2 rounded-full bg-off-white/10 border border-muted-teal/20"></div>
-                                <p class="text-off-white/50 text-[11px] leading-relaxed">Baseline shift: dedupe + DeepWiki enrichment online</p>
-                                <p class="text-muted-teal/40 text-[9px] mt-1.5 font-mono">{{ now.AddDate 0 0 -1 | time.Format "15:04:05" }}</p>
+                                <p class="text-off-white/60 text-[12px] leading-relaxed">基线变更：去重模块 + DeepWiki 增强已上线</p>
+                                <p class="text-muted-teal/40 text-[10px] mt-1.5 font-mono">{{ now.AddDate 0 0 -1 | time.Format "15:04:05" }}</p>
                             </div>
                         </div>
                     </div>
@@ -166,11 +166,11 @@
                 <div class="max-w-6xl w-full mx-auto relative z-10">
                     <div class="flex items-end justify-between border-b border-muted-teal/10 pb-6 mb-10">
                         <div class="flex flex-col">
-                            <span class="text-primary/60 text-[10px] font-bold tracking-[0.4em] uppercase mb-1">Index Retrieval</span>
+                            <span class="text-primary/70 text-[12px] font-bold tracking-wide mb-1">索引检索</span>
                             <h3 class="text-off-white text-3xl font-light tracking-tight font-display">/ROOT/ARCHIVE/<span class="text-primary/40">2049</span>/</h3>
                         </div>
-                        <div class="text-muted-teal/40 text-[10px] font-mono tracking-widest uppercase">
-                            Vault Capacity: 84% utilized
+                        <div class="text-muted-teal/40 text-[11px] font-mono tracking-wide">
+                            Vault: 84% utilized
                         </div>
                     </div>
 
@@ -178,9 +178,9 @@
                         <table class="w-full table-fixed text-left border-collapse">
                             <thead>
                                 <tr class="bg-muted-teal/5 border-b border-muted-teal/10">
-                                    <th class="w-28 px-6 md:px-8 py-5 text-muted-teal/60 text-[10px] font-bold tracking-[0.2em] uppercase">Attributes</th>
-                                    <th class="w-24 px-6 md:px-8 py-5 text-muted-teal/60 text-[10px] font-bold tracking-[0.2em] uppercase text-right">Size</th>
-                                    <th class="px-6 md:px-8 py-5 text-off-white text-[10px] font-bold tracking-[0.2em] uppercase">Entry Name</th>
+                                    <th class="w-28 px-6 md:px-8 py-5 text-muted-teal/60 text-[11px] font-bold tracking-wide">类型</th>
+                                    <th class="w-24 px-6 md:px-8 py-5 text-muted-teal/60 text-[11px] font-bold tracking-wide text-right">阅读</th>
+                                    <th class="px-6 md:px-8 py-5 text-off-white text-[11px] font-bold tracking-wide">条目</th>
                                 </tr>
                             </thead>
                             <tbody class="divide-y divide-muted-teal/5">
@@ -190,15 +190,15 @@
                                         {{- $kind := lower (.Params.entry_kind | default "") -}}
                                         {{- $isManual := or (eq $kind "manual") (and (eq $kind "") (not .Params.source)) -}}
                                         <div class="flex flex-col gap-1 leading-tight">
-                                            <span class="text-[10px] {{ if $isManual }}text-off-white/50 group-hover:text-off-white{{ else }}text-primary/60 group-hover:text-primary{{ end }} transition-colors">
-                                                {{ if $isManual }}[MANUAL]{{ else }}[AUTO]{{ end }}
+                                            <span class="text-[11px] {{ if $isManual }}text-off-white/60 group-hover:text-off-white{{ else }}text-primary/70 group-hover:text-primary{{ end }} transition-colors">
+                                                {{ if $isManual }}[手动]{{ else }}[自动]{{ end }}
                                             </span>
-                                            <span class="text-[10px] text-off-white/35 group-hover:text-off-white/55 transition-colors">
-                                                {{ with .Params.source }}{{ printf "[%s]" (upper .) }}{{ else }}[NOTE]{{ end }}
+                                            <span class="text-[11px] text-off-white/35 group-hover:text-off-white/55 transition-colors font-mono">
+                                                {{ with .Params.source }}{{ printf "[%s]" (upper .) }}{{ else }}[笔记]{{ end }}
                                             </span>
                                         </div>
                                     </td>
-                                    <td class="w-24 px-6 md:px-8 py-6 text-muted-teal/40 text-xs text-right font-mono">
+                                    <td class="w-24 px-6 md:px-8 py-6 text-muted-teal/45 text-[11px] text-right font-mono">
                                         {{ printf "%dmin" .ReadingTime }}
                                     </td>
                                     <td class="px-6 md:px-8 py-6">
@@ -214,7 +214,7 @@
                                             </span>
                                             <span class="min-w-0 flex-1 text-off-white text-sm tracking-wide group-hover:translate-x-1 transition-transform truncate" title="{{ .Title }}">{{ .Title }}</span>
                                         </a>
-                                        <div class="mt-2 flex flex-wrap items-center gap-2 text-[10px] text-off-white/40">
+                                        <div class="mt-2 flex flex-wrap items-center gap-2 text-[11px] text-off-white/45">
                                             <span class="font-mono text-muted-teal/40">{{ .Date.Format "2006-01-02" }}</span>
                                             {{ range first 3 (.Params.tags | default (slice)) }}
                                             <span class="px-2 py-0.5 rounded border border-muted-teal/15 bg-terminal-bg/40 text-muted-teal/60">{{ . }}</span>
@@ -232,12 +232,12 @@
                             <div class="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 transition-opacity">
                                 <span class="material-symbols-outlined text-7xl text-primary">grain</span>
                             </div>
-                            <h4 class="text-primary text-[10px] font-bold tracking-[0.3em] mb-4 uppercase">Archive Integrity</h4>
-                            <p class="text-off-white/60 text-sm leading-relaxed mb-6 font-light">Dedupe, DeepWiki enrichment, and multi-source crawling modules are operating within nominal parameters.</p>
+                            <h4 class="text-primary text-[12px] font-bold tracking-wide mb-4">归档完整性</h4>
+                            <p class="text-off-white/70 text-base leading-relaxed mb-6 font-light">去重、DeepWiki 增强、多源抓取模块运行正常，信息噪声已降到可控区间。</p>
                             <div class="w-full bg-deep-navy/60 h-1.5 rounded-full overflow-hidden border border-muted-teal/10">
                                 <div class="bg-primary/50 h-full w-[72%] shadow-[0_0_10px_rgba(77,182,172,0.3)]"></div>
                             </div>
-                            <div class="flex justify-between mt-3 font-mono text-[9px] text-muted-teal/60">
+                            <div class="flex justify-between mt-3 font-mono text-[10px] text-muted-teal/60">
                                 <span>RECOVERY: 72%</span>
                                 <span>STATUS: NOMINAL</span>
                             </div>
@@ -247,11 +247,11 @@
                             <div class="absolute top-0 right-0 p-6 opacity-5">
                                 <span class="material-symbols-outlined text-7xl text-off-white">lock</span>
                             </div>
-                            <h4 class="text-las-vegas-orange text-[10px] font-bold tracking-[0.3em] mb-4 uppercase">Protocol</h4>
-                            <p class="text-off-white/60 text-sm leading-relaxed mb-6 font-light italic">“Interlinked. Cells. Interlinked.” — Philosophical rigor mode enabled for generated essays.</p>
+                            <h4 class="text-las-vegas-orange text-[12px] font-bold tracking-wide mb-4">写作协议</h4>
+                            <p class="text-off-white/70 text-base leading-relaxed mb-6 font-light italic">“Interlinked. Cells. Interlinked.” —— 已启用「论证结构 + 可证伪判断 + 第一性原理」的深度写作模式。</p>
                             <div class="flex items-center gap-3">
                                 <div class="size-2 rounded-full bg-las-vegas-orange/40 shadow-[0_0_8px_rgba(217,119,6,0.5)]"></div>
-                                <span class="text-las-vegas-orange/70 font-mono text-[10px] tracking-widest uppercase">Awaiting Baseline Test</span>
+                                <span class="text-las-vegas-orange/70 font-mono text-[11px] tracking-wide">等待基线测试</span>
                             </div>
                         </div>
                     </div>
@@ -260,9 +260,9 @@
         </main>
 
         <footer class="h-14 border-t border-muted-teal/10 bg-deep-navy/80 backdrop-blur-2xl flex items-center px-6 md:px-10 gap-6 z-20">
-            <div class="terminal-label text-primary font-mono text-xs font-bold tracking-tighter">CMD://</div>
+            <div class="terminal-label text-primary font-mono text-sm font-bold tracking-tight">CMD://</div>
             <div class="flex-1">
-                <input class="terminal-input bg-transparent border-none focus:ring-0 text-primary font-mono text-xs w-full placeholder:text-muted-teal/30" placeholder="Awaiting instruction... (try: help, ls, open 1, search llm)" type="text" autocomplete="off" spellcheck="false" />
+                <input class="terminal-input bg-transparent border-none focus:ring-0 text-primary font-mono text-sm w-full placeholder:text-muted-teal/30" placeholder="输入命令…（help / ls / open 1 / search 关键词）" type="text" autocomplete="off" spellcheck="false" />
             </div>
             <div class="hidden md:flex gap-6 items-center border-l border-muted-teal/10 pl-6 h-full">
                 <span class="text-muted-teal/40 font-mono text-[9px] tracking-widest uppercase">Encryption: AES-256</span>

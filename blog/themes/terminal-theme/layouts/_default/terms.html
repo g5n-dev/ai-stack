@@ -39,7 +39,7 @@
     {{ $js := resources.Get "js/terminal.js" | minify }}
     <script src="{{ $js.RelPermalink }}" defer></script>
 </head>
-<body class="bg-deep-navy selection:bg-muted-teal selection:text-deep-navy font-mono">
+<body class="bg-deep-navy selection:bg-muted-teal selection:text-deep-navy font-display">
     <div class="rain-container">
         <div class="rain-streak r1"></div>
         <div class="rain-streak r2"></div>
@@ -75,12 +75,12 @@
                     <span class="material-symbols-outlined text-primary text-xl">terminal</span>
                 </a>
                 <div>
-                    <h2 class="text-off-white/90 text-lg font-medium tracking-widest teal-glow-text">{{ .Site.Title }}</h2>
-                    <p class="text-[9px] font-mono text-muted-teal/40 -mt-0.5 uppercase tracking-widest">Taxonomy Terms</p>
+                    <h2 class="text-off-white/90 text-lg font-medium tracking-wide teal-glow-text">{{ .Site.Title }}</h2>
+                    <p class="text-[11px] font-mono text-muted-teal/50 -mt-0.5 tracking-wide">标签索引</p>
                 </div>
             </div>
 
-            <nav class="hidden md:flex items-center gap-8 text-[10px] font-mono uppercase tracking-[0.3em] text-off-white/60">
+            <nav class="hidden md:flex items-center gap-8 text-[11px] font-mono tracking-wide text-off-white/70">
                 {{ range .Site.Menus.main }}
                 <a href="{{ .URL }}" class="hover:text-primary transition-all">{{ .Name }}</a>
                 {{ end }}
@@ -97,11 +97,11 @@
             <div class="w-full max-w-6xl mx-auto">
                 <div class="flex items-end justify-between border-b border-muted-teal/10 pb-6 mb-8">
                     <div class="flex flex-col">
-                        <span class="text-primary/60 text-[10px] font-bold tracking-[0.4em] uppercase mb-1">Index</span>
+                        <span class="text-primary/70 text-[12px] font-bold tracking-wide mb-1">索引</span>
                         <h1 class="text-off-white text-3xl font-light tracking-tight font-display">{{ .Title }}</h1>
                     </div>
-                    <div class="text-muted-teal/40 text-[10px] font-mono tracking-widest uppercase">
-                        Terms: {{ len .Data.Terms }}
+                    <div class="text-muted-teal/45 text-[11px] font-mono tracking-wide">
+                        标签：{{ len .Data.Terms }}
                     </div>
                 </div>
 
@@ -113,10 +113,10 @@
                                 <span class="material-symbols-outlined text-primary/40 group-hover:text-primary transition-colors">sell</span>
                                 <span class="text-off-white text-sm font-medium tracking-wide">{{ .Page.Title }}</span>
                             </div>
-                            <span class="text-muted-teal/50 text-[10px] font-mono tracking-widest uppercase">{{ .Count }}</span>
-                        </div>
-                        <div class="mt-3 text-off-white/40 text-[10px] tracking-widest uppercase">
-                            Open term directory
+                                <span class="text-muted-teal/55 text-[11px] font-mono tracking-wide">{{ .Count }}</span>
+                            </div>
+                        <div class="mt-3 text-off-white/45 text-[11px] tracking-wide">
+                            打开标签目录
                         </div>
                     </a>
                     {{ end }}
@@ -125,9 +125,9 @@
         </main>
 
         <footer class="h-14 border-t border-muted-teal/10 bg-deep-navy/80 backdrop-blur-2xl flex items-center px-6 gap-6 z-20">
-            <div class="terminal-label text-primary font-mono text-xs font-bold tracking-tighter">CMD://</div>
+            <div class="terminal-label text-primary font-mono text-sm font-bold tracking-tight">CMD://</div>
             <div class="flex-1">
-                <input class="terminal-input bg-transparent border-none focus:ring-0 text-primary font-mono text-xs w-full placeholder:text-muted-teal/30" placeholder="Try: posts | open 1 | help" type="text" autocomplete="off" spellcheck="false" />
+                <input class="terminal-input bg-transparent border-none focus:ring-0 text-primary font-mono text-sm w-full placeholder:text-muted-teal/30" placeholder="输入命令…（posts / open 1 / help）" type="text" autocomplete="off" spellcheck="false" />
             </div>
             <div class="hidden md:flex gap-6 items-center border-l border-muted-teal/10 pl-6 h-full">
                 <span class="text-muted-teal/40 font-mono text-[9px] tracking-widest uppercase">Link: STABLE</span>
