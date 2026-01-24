@@ -335,11 +335,21 @@
       // Ensure there is a subtle teal "smoke" layer on all pages.
       if (!fog.querySelector(".fog-teal")) {
         const teal = document.createElement("div");
-        teal.className = "fog-teal animate-fog-slow";
-        teal.style.top = "22%";
+        teal.className = "fog-teal animate-smoke-reverse";
+        teal.style.top = "18%";
         teal.style.left = "-10%";
         teal.style.opacity = "0.05";
         fog.appendChild(teal);
+      }
+
+      // Add a warm amber smoke layer to enrich depth.
+      if (!fog.querySelector(".fog-amber")) {
+        const amber = document.createElement("div");
+        amber.className = "fog-amber animate-smoke";
+        amber.style.bottom = "-25%";
+        amber.style.left = "-35%";
+        amber.style.opacity = "0.04";
+        fog.appendChild(amber);
       }
     }
   }

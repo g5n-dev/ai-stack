@@ -21,8 +21,8 @@
                         "las-vegas-orange": "#d97706",
                     },
                     fontFamily: {
-                        "display": ["Space Grotesk", "sans-serif"],
-                        "mono": ["Space Mono", "monospace"]
+                        "display": ["Space Grotesk", "Noto Sans SC", "ui-sans-serif", "system-ui", "sans-serif"],
+                        "mono": ["Space Mono", "ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", "Noto Sans SC", "monospace"]
                     },
                 },
             },
@@ -30,7 +30,7 @@
     </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700&display=swap" rel="stylesheet" />
 
     {{ $style := resources.Get "css/style.css" | minify }}
@@ -60,8 +60,17 @@
     <div class="ambient-glow"></div>
     <div class="scanlines"></div>
 
+    <div class="frame-overlay hidden md:block">
+        <div class="frame-corner tl"></div>
+        <div class="frame-corner tr"></div>
+        <div class="frame-corner bl"></div>
+        <div class="frame-corner br"></div>
+        <div class="frame-label top-left">LINK_STATUS: STABLE // ENCODING: UTF-8</div>
+        <div class="frame-label bottom-right">SECTOR_ID: AI_STACK // MODE: READ_ONLY</div>
+    </div>
+
     <div class="relative flex h-screen w-full flex-col overflow-hidden z-10">
-        <header class="w-full max-w-6xl mx-auto px-6 py-6 flex items-center justify-between">
+        <header class="w-full max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
             <div class="flex items-center gap-4">
                 <a href="/" class="size-10 bg-primary/10 flex items-center justify-center rounded-lg border border-primary/20 backdrop-blur-md shadow-[0_0_15px_rgba(77,182,172,0.12)]">
                     <span class="material-symbols-outlined text-primary text-xl">terminal</span>
@@ -90,9 +99,13 @@
             </div>
         </header>
 
-        <main class="flex-1 w-full overflow-y-auto custom-scrollbar px-4 md:px-8 py-8">
-            <div class="w-full max-w-4xl mx-auto">
-                <div class="glass-panel rounded-3xl overflow-hidden p-6 md:p-12 relative">
+        <main class="flex-1 w-full overflow-y-auto custom-scrollbar px-4 md:px-8 py-10">
+            {{- $kind := lower (.Params.entry_kind | default "") -}}
+            {{- $isManual := or (eq $kind "manual") (and (eq $kind "") (not .Params.source)) -}}
+            {{- $source := .Params.source | default (cond $isManual "manual" "system") -}}
+
+            <div class="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <article class="lg:col-span-9 terminal-glass rounded-3xl overflow-hidden p-6 md:p-12 relative">
                     <div class="flex flex-wrap items-center gap-3 mb-8 font-mono text-[9px] tracking-[0.3em]">
                         <a class="text-primary/40 hover:text-primary" href="/">ROOT</a>
                         <span class="text-primary/20">/</span>
@@ -101,18 +114,18 @@
                         <span class="text-primary/80">ENTRY</span>
                     </div>
 
-                    <div class="mb-10 border-l-2 border-primary pl-6">
+                    <div class="mb-10 border-l-2 border-primary/60 pl-6">
                         <h1 class="text-off-white tracking-tight text-3xl md:text-5xl font-light leading-tight mb-4 font-display teal-glow-text">
                             {{ .Title }}
                         </h1>
                         <div class="flex flex-wrap items-center gap-3 text-[10px] font-mono tracking-widest uppercase">
-                            {{- $kind := lower (.Params.entry_kind | default "") -}}
-                            {{- $isManual := or (eq $kind "manual") (and (eq $kind "") (not .Params.source)) -}}
-                            <span class="text-primary/80">SRC: {{ if .Params.source }}{{ .Params.source | upper }}{{ else if $isManual }}MANUAL{{ else }}SYSTEM{{ end }}</span>
+                            <span class="text-primary/80">SRC: {{ $source | upper }}</span>
                             <span class="text-primary/20">•</span>
                             <span class="text-muted-teal/40">TS: {{ .Date.Format "2006-01-02 15:04" }}</span>
                             <span class="text-primary/20">•</span>
                             <span class="{{ if $isManual }}text-off-white/50{{ else }}text-primary/60{{ end }}">MODE: {{ if $isManual }}MANUAL{{ else }}AUTO{{ end }}</span>
+                            <span class="text-primary/20">•</span>
+                            <span class="text-off-white/35">ETA: {{ printf "%dmin" .ReadingTime }}</span>
                         </div>
                     </div>
 
@@ -123,7 +136,7 @@
                     {{ with .Params.tags }}
                     <div class="mt-12 pt-8 border-t border-muted-teal/10 flex flex-wrap items-center gap-2">
                         {{ range . }}
-                        <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}/" class="px-2.5 py-1 rounded-full border border-muted-teal/15 bg-terminal-bg/40 text-muted-teal/60 text-[10px] font-mono tracking-widest uppercase hover:bg-muted-teal/10 hover:text-primary transition-colors">
+                        <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}/" class="px-2.5 py-1 rounded-full border border-muted-teal/15 bg-terminal-bg/40 text-muted-teal/60 text-[10px] font-mono tracking-wide hover:bg-muted-teal/10 hover:text-primary transition-colors">
                             {{ . }}
                         </a>
                         {{ end }}
@@ -132,7 +145,7 @@
 
                     {{ if and (eq .Type "posts") (.Site.Params.comments.enabled) (.Site.Params.comments.repo) }}
                     <div class="mt-10 pt-8 border-t border-muted-teal/10">
-                        <div class="glass-panel rounded-2xl p-5 md:p-8 border border-muted-teal/10">
+                        <div class="terminal-glass rounded-2xl p-5 md:p-8 border border-muted-teal/10">
                             <div class="flex items-center justify-between gap-4 mb-4">
                                 <div class="text-primary/70 text-[10px] font-mono tracking-[0.3em] uppercase">Comments</div>
                                 <div class="text-off-white/30 text-[9px] font-mono tracking-widest uppercase">GitHub Issues</div>
@@ -168,7 +181,101 @@
                             Return to Archive
                         </a>
                     </div>
-                </div>
+                </article>
+
+                <aside class="hidden lg:block lg:col-span-3 space-y-6 sticky top-8">
+                    <div class="terminal-glass rounded-xl overflow-hidden border border-primary/20 flex flex-col h-96 relative">
+                        <div class="px-4 py-3 bg-primary/5 border-b border-primary/10 flex items-center justify-between">
+                            <span class="text-[9px] font-mono font-bold text-primary tracking-widest uppercase">Decryption_Log</span>
+                            <span class="size-1.5 bg-emerald-500 rounded-full animate-pulse shadow-[0_0_5px_#22c55e]"></span>
+                        </div>
+                        <div class="flex-1 relative overflow-hidden bg-black/30">
+                            <div class="log-mask">
+                                <div class="absolute top-0 left-0 right-0 h-10 bg-gradient-to-b from-terminal-bg to-transparent"></div>
+                                <div class="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-terminal-bg to-transparent"></div>
+                            </div>
+                            <div class="absolute inset-0 overflow-hidden px-4 py-3 font-mono text-[9px] leading-loose text-primary/60">
+                                <div class="log-scroller">
+                                    <div class="opacity-60">&gt; ESTABLISHING_SECURE_LINK...</div>
+                                    <div class="text-primary">&gt; HANDSHAKE_PROTOCOL_INIT [OK]</div>
+                                    <div>&gt; DECRYPTING_PACKET_X99</div>
+                                    <div>&gt; KEY_GENERATION: RSA-4096 AUTHENTICATED</div>
+                                    <div class="text-muted-teal">&gt; PACKET_RECONSTRUCTION COMPLETE</div>
+                                    <div>&gt; BUFFER_OVERFLOW_CHECK... PASSED</div>
+                                    <div>&gt; CONTENT_LANGUAGE: ZH-CN [OK]</div>
+                                    <div>&gt; DEDUPE_LAYER: NOMINAL</div>
+                                    <div>&gt; CITATION_GRAPH: LINKED</div>
+                                    <div>&gt; RENDER_PIPELINE: HUGO [OK]</div>
+                                    <div class="text-primary">&gt; INTEGRITY_VERIFIED_99.9%</div>
+                                    <div>&gt; ACCESS_GRANTED: USER_K</div>
+                                    <br />
+                                    <div class="opacity-60">&gt; ESTABLISHING_SECURE_LINK...</div>
+                                    <div class="text-primary">&gt; HANDSHAKE_PROTOCOL_INIT [OK]</div>
+                                    <div>&gt; DECRYPTING_PACKET_X99</div>
+                                    <div>&gt; KEY_GENERATION: RSA-4096 AUTHENTICATED</div>
+                                    <div class="text-muted-teal">&gt; PACKET_RECONSTRUCTION COMPLETE</div>
+                                    <div>&gt; BUFFER_OVERFLOW_CHECK... PASSED</div>
+                                    <div>&gt; CONTENT_LANGUAGE: ZH-CN [OK]</div>
+                                    <div>&gt; DEDUPE_LAYER: NOMINAL</div>
+                                    <div>&gt; CITATION_GRAPH: LINKED</div>
+                                    <div>&gt; RENDER_PIPELINE: HUGO [OK]</div>
+                                    <div class="text-primary">&gt; INTEGRITY_VERIFIED_99.9%</div>
+                                    <div>&gt; ACCESS_GRANTED: USER_K</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="terminal-glass rounded-xl p-5 border border-primary/20">
+                        <div class="text-[9px] font-mono text-primary/40 tracking-widest mb-4 uppercase">Entry_Metadata</div>
+                        <div class="space-y-3 text-[11px] text-off-white/70">
+                            <div class="flex items-center justify-between">
+                                <span class="text-off-white/35 font-mono">MODE</span>
+                                <span class="{{ if $isManual }}text-off-white/70{{ else }}text-primary/80{{ end }} font-mono tracking-widest uppercase">{{ if $isManual }}MANUAL{{ else }}AUTO{{ end }}</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-off-white/35 font-mono">SOURCE</span>
+                                <span class="text-primary/70 font-mono tracking-widest uppercase">{{ $source | upper }}</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-off-white/35 font-mono">TIME</span>
+                                <span class="text-muted-teal/60 font-mono tracking-widest uppercase">{{ .Date.Format "2006-01-02" }}</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-off-white/35 font-mono">READ</span>
+                                <span class="text-muted-teal/60 font-mono tracking-widest uppercase">{{ printf "%dmin" .ReadingTime }}</span>
+                            </div>
+                            {{ with .Params.external_url }}
+                            <div class="pt-3 border-t border-primary/10">
+                                <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="block px-4 py-2 bg-primary/5 hover:bg-primary/10 border border-primary/20 rounded-lg text-[10px] font-mono tracking-[0.3em] uppercase text-primary/70 hover:text-primary transition-colors">
+                                    Open_External_Link
+                                </a>
+                            </div>
+                            {{ end }}
+                        </div>
+                    </div>
+
+                    {{- $related := slice -}}
+                    {{- if .Params.tags -}}
+                        {{- $pool := where (where .Site.RegularPages "Type" "posts") "Permalink" "ne" .Permalink -}}
+                        {{- $related = where $pool "Params.tags" "intersect" .Params.tags -}}
+                        {{- $related = first 6 (sort $related "Date" "desc") -}}
+                    {{- end -}}
+
+                    {{ if gt (len $related) 0 }}
+                    <div class="terminal-glass rounded-xl p-5 border border-primary/20">
+                        <div class="text-[9px] font-mono text-primary/40 tracking-widest mb-4 uppercase">Related_Archives</div>
+                        <div class="space-y-3">
+                            {{ range $related }}
+                            <a class="block group" href="{{ .RelPermalink }}" data-entry-link="{{ .RelPermalink }}" data-entry-title="{{ .Title }}">
+                                <div class="text-[11px] text-off-white/80 font-medium group-hover:text-primary transition-colors">{{ .Title }}</div>
+                                <div class="text-[9px] text-muted-teal/40 font-mono tracking-widest uppercase mt-1">{{ .Date.Format "2006-01-02" }}</div>
+                            </a>
+                            {{ end }}
+                        </div>
+                    </div>
+                    {{ end }}
+                </aside>
             </div>
         </main>
 

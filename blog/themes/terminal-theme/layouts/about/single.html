@@ -21,8 +21,8 @@
                         "las-vegas-orange": "#d97706",
                     },
                     fontFamily: {
-                        "display": ["Space Grotesk", "sans-serif"],
-                        "mono": ["Space Mono", "monospace"]
+                        "display": ["Space Grotesk", "Noto Sans SC", "ui-sans-serif", "system-ui", "sans-serif"],
+                        "mono": ["Space Mono", "ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", "Noto Sans SC", "monospace"]
                     },
                 },
             },
@@ -30,7 +30,7 @@
     </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700&display=swap" rel="stylesheet" />
 
     {{ $style := resources.Get "css/style.css" | minify }}
@@ -44,6 +44,14 @@
     <div class="fog-container"></div>
     <div class="ambient-glow"></div>
     <div class="scanlines"></div>
+    <div class="frame-overlay hidden md:block">
+        <div class="frame-corner tl"></div>
+        <div class="frame-corner tr"></div>
+        <div class="frame-corner bl"></div>
+        <div class="frame-corner br"></div>
+        <div class="frame-label top-left">LINK_STATUS: STABLE // ENCODING: UTF-8</div>
+        <div class="frame-label bottom-right">SECTOR_ID: AI_STACK // MODE: ABOUT</div>
+    </div>
 
     <div class="relative z-10 flex h-screen flex-col overflow-hidden">
         <header class="w-full border-b border-muted-teal/20 bg-deep-navy/80 backdrop-blur-sm sticky top-0 z-40">
@@ -66,24 +74,43 @@
 
         <main class="flex-1 overflow-y-auto custom-scrollbar flex items-center justify-center p-6 lg:p-12 relative">
 	            <div class="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-	                <div class="lg:col-span-5 flex flex-col gap-6 relative group">
-	                    <div class="relative w-full aspect-[4/5] rounded-lg overflow-hidden holo-portrait cyber-border corner-decoration" role="img" aria-label="{{ .Site.Params.profile_image_alt | default "AI Stack profile" }}" style="--holo-fit: {{ .Site.Params.profile_image_fit | default "cover" }}; --holo-pos: {{ .Site.Params.profile_image_position | default "50% 35%" }};">
-	                        <div class="holo-portrait-layer holo-portrait-base" style="background-image: url('{{ .Site.Params.profile_image | default "/img/profile-placeholder.svg" | relURL }}');"></div>
-	                        <div class="holo-portrait-layer holo-portrait-glitch" style="background-image: url('{{ .Site.Params.profile_image | default "/img/profile-placeholder.svg" | relURL }}');"></div>
-	                        <div class="holo-portrait-layer holo-portrait-grid"></div>
-	                        <div class="holo-portrait-layer holo-portrait-noise"></div>
+	                <div class="lg:col-span-5 flex flex-col gap-6 relative">
+	                    <div class="relative w-full aspect-[4/5] rounded-lg overflow-hidden holo-portrait cyber-border corner-decoration group" role="img" aria-label="{{ .Site.Params.profile_image_alt | default "AI Stack profile" }}" style="--holo-fit: {{ .Site.Params.profile_image_fit | default "cover" }}; --holo-pos: {{ .Site.Params.profile_image_position | default "50% 35%" }};">
+		                        <div class="holo-portrait-layer holo-portrait-base" style="background-image: url('{{ .Site.Params.profile_image | default "/img/profile-placeholder.svg" | relURL }}');"></div>
+		                        <div class="holo-portrait-layer holo-portrait-glitch" style="background-image: url('{{ .Site.Params.profile_image | default "/img/profile-placeholder.svg" | relURL }}');"></div>
+		                        <div class="holo-portrait-layer holo-portrait-grid"></div>
+		                        <div class="holo-portrait-layer holo-portrait-noise"></div>
 
 	                        <div class="absolute inset-0 pointer-events-none">
 	                            <div class="absolute top-4 left-4 w-4 h-[1px] bg-primary/50"></div>
 	                            <div class="absolute top-4 left-4 h-4 w-[1px] bg-primary/50"></div>
 	                            <div class="absolute bottom-4 right-4 w-4 h-[1px] bg-primary/50"></div>
 	                            <div class="absolute bottom-4 right-4 h-4 w-[1px] bg-primary/50"></div>
-	                            <div class="absolute top-0 left-0 w-full h-[2px] bg-primary/30 opacity-60 animate-glitch-line"></div>
-	                            <div class="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/35"></div>
-	                        </div>
+		                            <div class="absolute top-0 left-0 w-full h-[2px] bg-primary/30 opacity-60 animate-glitch-line"></div>
+		                            <div class="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/35"></div>
+		                        </div>
 
-	                        <div class="holo-portrait-label">TARGET_LOCKED</div>
-	                    </div>
+		                        <div class="holo-scan-overlay">
+		                            <div class="holo-scan-band">
+		                                <div class="holo-scan-line"></div>
+		                                <div class="holo-scan-grid"></div>
+		                                <div class="holo-scan-meta holo-scan-meta-left">
+		                                    <div class="holo-scan-meta-pulse">BIO_SIG: DETECTED</div>
+		                                    <div>DNA_HELIX: #A94-X</div>
+		                                    <div>NEURAL_SYNC: 98%</div>
+		                                </div>
+		                                <div class="holo-scan-meta holo-scan-meta-right">
+		                                    <div>TARGET: ACQUIRED</div>
+		                                    <div>RETINA: MATCH</div>
+		                                    <div class="holo-scan-meta-pulse">PROCESSING...</div>
+		                                </div>
+		                                <div class="holo-scan-badge">SCANNING...</div>
+		                            </div>
+		                            <div class="holo-scan-status">IDENTIFYING...</div>
+		                        </div>
+
+		                        <div class="holo-portrait-label">TARGET_LOCKED</div>
+		                    </div>
 
                     <div class="grid grid-cols-2 gap-4">
                         <div class="glass-panel p-4 rounded bg-deep-navy/40 backdrop-blur-sm border border-muted-teal/15">

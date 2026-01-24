@@ -21,8 +21,8 @@
                         "las-vegas-orange": "#d97706",
                     },
                     fontFamily: {
-                        "display": ["Space Grotesk", "sans-serif"],
-                        "mono": ["Space Mono", "monospace"]
+                        "display": ["Space Grotesk", "Noto Sans SC", "ui-sans-serif", "system-ui", "sans-serif"],
+                        "mono": ["Space Mono", "ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", "Noto Sans SC", "monospace"]
                     },
                 },
             },
@@ -30,7 +30,7 @@
     </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700&display=swap" rel="stylesheet" />
 
     {{ $style := resources.Get "css/style.css" | minify }}
@@ -59,6 +59,14 @@
     </div>
     <div class="ambient-glow"></div>
     <div class="scanlines"></div>
+    <div class="frame-overlay hidden md:block">
+        <div class="frame-corner tl"></div>
+        <div class="frame-corner tr"></div>
+        <div class="frame-corner bl"></div>
+        <div class="frame-corner br"></div>
+        <div class="frame-label top-left">LINK_STATUS: STABLE // ENCODING: UTF-8</div>
+        <div class="frame-label bottom-right">SECTOR_ID: AI_STACK // MODE: LIST</div>
+    </div>
 
     <div class="relative flex h-screen w-full flex-col overflow-hidden z-10">
         <header class="w-full max-w-6xl mx-auto px-6 py-6 flex items-center justify-between">
