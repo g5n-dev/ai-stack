@@ -51,36 +51,39 @@ jobs:
 
       - name: Run crawler
         env:
+          PYTHONPATH: /home/runner/work/ai-stack/ai-stack
           ANTHROPIC_AUTH_TOKEN: ${{ secrets.ANTHROPIC_AUTH_TOKEN }}
           ANTHROPIC_BASE_URL: ${{ secrets.ANTHROPIC_BASE_URL }}
         run: |
           echo "=== Running Crawler ==="
           if [ -f crawler/main.py ]; then
-            python3 crawler/main.py
+            python3 -m crawler.main
           else
             echo "Crawler not found, skipping..."
           fi
 
       - name: Run processor
         env:
+          PYTHONPATH: /home/runner/work/ai-stack/ai-stack
           ANTHROPIC_AUTH_TOKEN: ${{ secrets.ANTHROPIC_AUTH_TOKEN }}
           ANTHROPIC_BASE_URL: ${{ secrets.ANTHROPIC_BASE_URL }}
         run: |
           echo "=== Running Processor ==="
           if [ -f processor/main.py ]; then
-            python3 processor/main.py
+            python3 -m processor.main
           else
             echo "Processor not found, skipping..."
           fi
 
       - name: Build tag graph
         env:
+          PYTHONPATH: /home/runner/work/ai-stack/ai-stack
           ANTHROPIC_AUTH_TOKEN: ${{ secrets.ANTHROPIC_AUTH_TOKEN }}
           ANTHROPIC_BASE_URL: ${{ secrets.ANTHROPIC_BASE_URL }}
         run: |
           echo "=== Building Tag Graph ==="
           if [ -f processor/tag_graph.py ]; then
-            python3 processor/tag_graph.py
+            python3 -m processor.tag_graph
           else
             echo "Tag graph generator not found, skipping..."
           fi
