@@ -1,0 +1,112 @@
+name: Build and Deploy
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+env:
+  ANTHROPIC_AUTH_TOKEN: ${{ secrets.ANTHROPIC_AUTH_TOKEN }}
+  ANTHROPIC_BASE_URL: ${{ secrets.ANTHROPIC_BASE_URL }}
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Configure Git
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: "latest"
+          extended: true
+
+      - name: Run crawler
+        env:
+          ANTHROPIC_AUTH_TOKEN: ${{ secrets.ANTHROPIC_AUTH_TOKEN }}
+          ANTHROPIC_BASE_URL: ${{ secrets.ANTHROPIC_BASE_URL }}
+        run: |
+          echo "=== Running Crawler ==="
+          if [ -f crawler/main.py ]; then
+            python3 crawler/main.py
+          else
+            echo "Crawler not found, skipping..."
+          fi
+
+      - name: Run processor
+        env:
+          ANTHROPIC_AUTH_TOKEN: ${{ secrets.ANTHROPIC_AUTH_TOKEN }}
+          ANTHROPIC_BASE_URL: ${{ secrets.ANTHROPIC_BASE_URL }}
+        run: |
+          echo "=== Running Processor ==="
+          if [ -f processor/main.py ]; then
+            python3 processor/main.py
+          else
+            echo "Processor not found, skipping..."
+          fi
+
+      - name: Build tag graph
+        env:
+          ANTHROPIC_AUTH_TOKEN: ${{ secrets.ANTHROPIC_AUTH_TOKEN }}
+          ANTHROPIC_BASE_URL: ${{ secrets.ANTHROPIC_BASE_URL }}
+        run: |
+          echo "=== Building Tag Graph ==="
+          if [ -f processor/tag_graph.py ]; then
+            python3 processor/tag_graph.py
+          else
+            echo "Tag graph generator not found, skipping..."
+          fi
+
+      - name: Build Hugo site
+        run: |
+          echo "=== Building Hugo Site ==="
+          if [ -f blog/config.toml ]; then
+            cd blog
+            hugo --baseURL "https://ai-stack.site/" --minify --cleanDestinationDir
+          else
+            echo "Hugo config not found, skipping build"
+            exit 1
+          fi
+
+      - name: Commit changes
+        run: |
+          git add -A
+          git diff --cached --quiet || git commit -m "Update content and build $(date +'%Y-%m-%d %H:%M:%S') [skip ci]"
+          git push origin main
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: blog/public
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
