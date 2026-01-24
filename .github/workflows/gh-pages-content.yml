@@ -1,4 +1,4 @@
-name: gh-pages Content Update
+name: gh-pages Deep Content Generation
 
 on:
   schedule:
@@ -13,9 +13,10 @@ permissions:
 env:
   ANTHROPIC_AUTH_TOKEN: ${{ secrets.ANTHROPIC_AUTH_TOKEN }}
   ANTHROPIC_BASE_URL: ${{ secrets.ANTHROPIC_BASE_URL }}
+  OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
 
 jobs:
-  content-update:
+  deep-content-generation:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout gh-pages branch
@@ -64,11 +65,117 @@ jobs:
         run: |
           python scripts/verify_sync.py || echo "Verification script not found, continuing..."
 
-      - name: Generate content
+      - name: Phase 1: Data Collection and Organization
         env:
           ANTHROPIC_AUTH_TOKEN: ${{ secrets.ANTHROPIC_AUTH_TOKEN }}
           ANTHROPIC_BASE_URL: ${{ secrets.ANTHROPIC_BASE_URL }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
+          echo "=== Phase 1: Data Collection and Organization ==="
+          if [ -f scripts/phase1_collect_data.py ]; then
+            python scripts/phase1_collect_data.py
+          else
+            echo "Phase 1 script not found, skipping..."
+          fi
+
+      - name: Phase 2: Deep Technical Analysis
+        env:
+          ANTHROPIC_AUTH_TOKEN: ${{ secrets.ANTHROPIC_AUTH_TOKEN }}
+          ANTHROPIC_BASE_URL: ${{ secrets.ANTHROPIC_BASE_URL }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          echo "=== Phase 2: Deep Technical Analysis ==="
+          if [ -f scripts/phase2_deep_analysis.py ]; then
+            python scripts/phase2_deep_analysis.py
+          else
+            echo "Phase 2 script not found, skipping..."
+          fi
+
+      - name: Phase 3: Innovation Insights Mining
+        env:
+          ANTHROPIC_AUTH_TOKEN: ${{ secrets.ANTHROPIC_AUTH_TOKEN }}
+          ANTHROPIC_BASE_URL: ${{ secrets.ANTHROPIC_BASE_URL }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          echo "=== Phase 3: Innovation Insights Mining ==="
+          if [ -f scripts/phase3_innovation_insights.py ]; then
+            python scripts/phase3_innovation_insights.py
+          else
+            echo "Phase 3 script not found, skipping..."
+          fi
+
+      - name: Phase 4: Best Practices Summarization
+        env:
+          ANTHROPIC_AUTH_TOKEN: ${{ secrets.ANTHROPIC_AUTH_TOKEN }}
+          ANTHROPIC_BASE_URL: ${{ secrets.ANTHROPIC_BASE_URL }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          echo "=== Phase 4: Best Practices Summarization ==="
+          if [ -f scripts/phase4_best_practices.py ]; then
+            python scripts/phase4_best_practices.py
+          else
+            echo "Phase 4 script not found, skipping..."
+          fi
+
+      - name: Phase 5: Guidance and Recommendations
+        env:
+          ANTHROPIC_AUTH_TOKEN: ${{ secrets.ANTHROPIC_AUTH_TOKEN }}
+          ANTHROPIC_BASE_URL: ${{ secrets.ANTHROPIC_BASE_URL }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          echo "=== Phase 5: Guidance and Recommendations ==="
+          if [ -f scripts/phase5_guidance.py ]; then
+            python scripts/phase5_guidance.py
+          else
+            echo "Phase 5 script not found, skipping..."
+          fi
+
+      - name: Phase 6: Content Quality Optimization
+        env:
+          ANTHROPIC_AUTH_TOKEN: ${{ secrets.ANTHROPIC_AUTH_TOKEN }}
+          ANTHROPIC_BASE_URL: ${{ secrets.ANTHROPIC_BASE_URL }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          echo "=== Phase 6: Content Quality Optimization ==="
+          if [ -f scripts/phase6_quality_optimization.py ]; then
+            python scripts/phase6_quality_optimization.py
+          else
+            echo "Phase 6 script not found, skipping..."
+          fi
+
+      - name: Build Tech Stack Knowledge Graph
+        env:
+          ANTHROPIC_AUTH_TOKEN: ${{ secrets.ANTHROPIC_AUTH_TOKEN }}
+          ANTHROPIC_BASE_URL: ${{ secrets.ANTHROPIC_BASE_URL }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          echo "=== Building Tech Stack Knowledge Graph ==="
+          if [ -f scripts/build_knowledge_graph.py ]; then
+            python scripts/build_knowledge_graph.py
+          else
+            echo "Knowledge graph script not found, skipping..."
+          fi
+
+      - name: Generate High-Quality Tag System
+        env:
+          ANTHROPIC_AUTH_TOKEN: ${{ secrets.ANTHROPIC_AUTH_TOKEN }}
+          ANTHROPIC_BASE_URL: ${{ secrets.ANTHROPIC_BASE_URL }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          echo "=== Generating High-Quality Tag System ==="
+          if [ -f scripts/generate_tags.py ]; then
+            python scripts/generate_tags.py
+          else
+            echo "Tag generation script not found, skipping..."
+          fi
+
+      - name: Generate Content
+        env:
+          ANTHROPIC_AUTH_TOKEN: ${{ secrets.ANTHROPIC_AUTH_TOKEN }}
+          ANTHROPIC_BASE_URL: ${{ secrets.ANTHROPIC_BASE_URL }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          echo "=== Generating Final Content ==="
           if [ -f scripts/generate_content.py ]; then
             python scripts/generate_content.py
           else
@@ -123,5 +230,5 @@ jobs:
       - name: Commit and push changes
         run: |
           git add -A
-          git diff --cached --quiet || git commit -m "Content update $(date +'%Y-%m-%d %H:%M:%S') [skip ci]"
+          git diff --cached --quiet || git commit -m "Deep content generation $(date +'%Y-%m-%d %H:%M:%S') [skip ci]"
           git push origin gh-pages --force-with-lease
