@@ -32,6 +32,7 @@
     </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
         href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap"
         rel="stylesheet" />
@@ -111,7 +112,7 @@
                     </div>
                     <div class="flex flex-col border-l border-muted-teal/10 pl-8">
                         <span class="text-muted-teal/50 text-[10px] tracking-normal">当前时间</span>
-                        <span class="font-medium text-off-white">{{ now.Format "2006-01-02 15:04:05" }}</span>
+                        <span id="current-time" class="font-medium text-off-white">--:--:--</span>
                     </div>
                 </div>
 
