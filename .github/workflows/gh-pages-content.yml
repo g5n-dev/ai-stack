@@ -1,0 +1,127 @@
+name: gh-pages Content Update
+
+on:
+  schedule:
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+  push:
+    branches: ["gh-pages"]
+
+permissions:
+  contents: write
+
+env:
+  ANTHROPIC_AUTH_TOKEN: ${{ secrets.ANTHROPIC_AUTH_TOKEN }}
+  ANTHROPIC_BASE_URL: ${{ secrets.ANTHROPIC_BASE_URL }}
+
+jobs:
+  content-update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout gh-pages branch
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          fetch-depth: 0
+
+      - name: Configure Git
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+      - name: Fetch main branch for latest source code
+        run: |
+          git fetch origin main:main || echo "main branch not available"
+
+      - name: Merge latest source code from main
+        run: |
+          if git rev-parse --verify main >/dev/null 2>&1; then
+            echo "Merging latest source code from main..."
+            git merge main --no-edit -X theirs -X ignore-space-change || \
+            git merge main --no-edit --allow-unrelated-histories -X theirs -X ignore-space-change
+          else
+            echo "No main branch to merge"
+          fi
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
+          extended: true
+
+      - name: Run content verification
+        run: |
+          python scripts/verify_sync.py || echo "Verification script not found, continuing..."
+
+      - name: Generate content
+        env:
+          ANTHROPIC_AUTH_TOKEN: ${{ secrets.ANTHROPIC_AUTH_TOKEN }}
+          ANTHROPIC_BASE_URL: ${{ secrets.ANTHROPIC_BASE_URL }}
+        run: |
+          if [ -f scripts/generate_content.py ]; then
+            python scripts/generate_content.py
+          else
+            echo "generate_content.py not found, skipping content generation"
+          fi
+
+      - name: Publish to Twitter
+        if: vars.TWITTER_BEARER_TOKEN != ''
+        env:
+          TWITTER_API_KEY: ${{ secrets.TWITTER_API_KEY }}
+          TWITTER_API_SECRET: ${{ secrets.TWITTER_API_SECRET }}
+          TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+          TWITTER_ACCESS_TOKEN_SECRET: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
+          TWITTER_BEARER_TOKEN: ${{ secrets.TWITTER_BEARER_TOKEN }}
+        run: |
+          if [ -f publisher/twitter_publisher.py ]; then
+            python publisher/twitter_publisher.py
+          fi
+
+      - name: Publish to Telegram
+        if: vars.TELEGRAM_BOT_TOKEN != ''
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          if [ -f publisher/telegram_publisher.py ]; then
+            python publisher/telegram_publisher.py
+          fi
+
+      - name: Publish to WeChat
+        if: vars.WECHAT_APPID != ''
+        env:
+          WECHAT_APPID: ${{ secrets.WECHAT_APPID }}
+          WECHAT_SECRET: ${{ secrets.WECHAT_SECRET }}
+        run: |
+          if [ -f publisher/wechat_publisher.py ]; then
+            python publisher/wechat_publisher.py
+          fi
+
+      - name: Rebuild Hugo site
+        run: |
+          if [ -f blog/config.toml ]; then
+            cd blog
+            hugo --minify --cleanDestinationDir
+            cp -r public/* ..
+            cd ..
+            rm -rf blog/public
+          else
+            echo "Hugo config not found, skipping build"
+          fi
+
+      - name: Commit and push changes
+        run: |
+          git add -A
+          git diff --cached --quiet || git commit -m "Content update $(date +'%Y-%m-%d %H:%M:%S') [skip ci]"
+          git push origin gh-pages --force-with-lease

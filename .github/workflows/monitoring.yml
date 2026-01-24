@@ -1,0 +1,125 @@
+name: System Monitoring & Alerts
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+
+jobs:
+  monitor-main-branch:
+    name: Monitor Main Branch
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Check main branch activity
+        run: |
+          last_commit=$(git log -1 --format="%cd" --date=iso)
+          commit_count=$(git rev-list --count HEAD)
+          echo "Last commit: $last_commit"
+          echo "Total commits: $commit_count"
+
+  monitor-gh-pages-branch:
+    name: Monitor gh-pages Branch
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout gh-pages branch
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          fetch-depth: 0
+
+      - name: Check gh-pages activity
+        run: |
+          last_commit=$(git log -1 --format="%cd" --date=iso)
+          commit_count=$(git rev-list --count HEAD)
+          echo "Last commit: $last_commit"
+          echo "Total commits: $commit_count"
+
+      - name: Check content freshness
+        run: |
+          if [ -d "blog/content/posts" ]; then
+            post_count=$(find blog/content/posts -name "*.md" -type f 2>/dev/null | wc -l)
+            echo "📝 Total posts: $post_count"
+            if [ "$post_count" -eq 0 ]; then
+              echo "⚠️  No posts found!"
+            fi
+          else
+            echo "ℹ️  Posts directory not found"
+          fi
+
+      - name: Check built site
+        run: |
+          if [ -f "index.html" ]; then
+            html_files=$(find . -name "*.html" -type f | wc -l)
+            echo "🌐 Built HTML files: $html_files"
+          else
+            echo "⚠️  index.html not found - site may not be built"
+          fi
+
+  monitor-sync-status:
+    name: Monitor Sync Status
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout both branches
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Fetch both branches
+        run: |
+          git fetch origin main:main gh-pages:gh-pages || echo "Some branches not available"
+
+      - name: Compare branch commits
+        run: |
+          if git rev-parse --verify main >/dev/null 2>&1; then
+            main_commit=$(git rev-parse main)
+            echo "main: $main_commit"
+            main_date=$(git log -1 --format="%cd" --date=iso main)
+            echo "main last commit: $main_date"
+          fi
+
+          if git rev-parse --verify gh-pages >/dev/null 2>&1; then
+            gh_pages_commit=$(git rev-parse gh-pages)
+            echo "gh-pages: $gh_pages_commit"
+            gh_pages_date=$(git log -1 --format="%cd" --date=iso gh-pages)
+            echo "gh-pages last commit: $gh_pages_date"
+          fi
+
+  generate-report:
+    name: Generate Monitoring Report
+    runs-on: ubuntu-latest
+    needs: [monitor-main-branch, monitor-gh-pages-branch, monitor-sync-status]
+    if: always()
+    steps:
+      - name: Generate summary report
+        run: |
+          cat > monitoring_report.md << EOF
+          # System Monitoring Report
+          
+          Generated: $(date -u +%Y-%m-%dT%H:%M:%SZ)
+          Repository: ${{ github.repository }}
+          
+          ## Branch Status
+          - Main Branch: ${{ needs.monitor-main-branch.result }}
+          - gh-pages Branch: ${{ needs.monitor-gh-pages-branch.result }}
+          
+          ## Sync Status
+          - Branch Sync: ${{ needs.monitor-sync-status.result }}
+          
+          ## Overall Health
+          ${{ needs.monitor-main-branch.result == 'success' && needs.monitor-gh-pages-branch.result == 'success' && needs.monitor-sync-status.result == 'success' && '✅ All systems operational' || '⚠️ Some issues detected' }}
+          EOF
+          cat monitoring_report.md
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "## Monitoring Summary" >> $GITHUB_STEP_SUMMARY
+          echo "- Main Branch: ${{ needs.monitor-main-branch.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "- gh-pages Branch: ${{ needs.monitor-gh-pages-branch.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Sync Status: ${{ needs.monitor-sync-status.result }}" >> $GITHUB_STEP_SUMMARY
