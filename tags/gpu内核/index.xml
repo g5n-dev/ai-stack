@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>GPU内核 on AI Stack</title><link>https://ai-stack.site/tags/gpu%E5%86%85%E6%A0%B8/</link><description>Recent content in GPU内核 on AI Stack</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Sat, 24 Jan 2026 14:32:23 +0800</lastBuildDate><atom:link href="https://ai-stack.site/tags/gpu%E5%86%85%E6%A0%B8/index.xml" rel="self" type="application/rss+xml"/><item><title>🚀 测试时发现！让AI在推理中实现零样本学习突破✨</title><link>https://ai-stack.site/posts/20260124-arxiv_ai-learning-to-discover-at-test-time-6/</link><pubDate>Sat, 24 Jan 2026 14:32:23 +0800</pubDate><guid>https://ai-stack.site/posts/20260124-arxiv_ai-learning-to-discover-at-test-time-6/</guid><description>&lt;h1 id="--测试时发现让ai在推理中实现零样本学习突破"&gt;📚 🚀 测试时发现！让AI在推理中实现零样本学习突破✨&lt;/h1&gt;
+&lt;hr&gt;
+&lt;h2 id="-基本信息"&gt;📋 基本信息&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;ArXiv ID&lt;/strong&gt;: 2601.16175v1&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;分类&lt;/strong&gt;: cs.LG&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;作者&lt;/strong&gt;: Mert Yuksekgonul, Daniel Koceja, Xinhao Li, Federico Bianchi, Jed McCaleb&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;PDF&lt;/strong&gt;: &lt;a href="https://arxiv.org/pdf/2601.16175v1.pdf"&gt;https://arxiv.org/pdf/2601.16175v1.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a href="http://arxiv.org/abs/2601.16175v1"&gt;http://arxiv.org/abs/2601.16175v1&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="-引人入胜的引言"&gt;✨ 引人入胜的引言&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;引言：当 AI 不再只是“复读机”，而是变成了“发明家”…… 🚀&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;试想一下这样的未来：当你向 AI 提出一个困扰科学界已久的难题时，它不再仅仅是搜索数据库并背诵已有的知识，而是像一位在深夜实验室里灵光乍现的科学家一样，&lt;strong&gt;现场&lt;/strong&gt;开始思考、推导、尝试，最终为你发现一条前所未有的科学定律。🧪✨&lt;/p&gt;
+&lt;p&gt;这不是科幻小说，而是我们正在迎来的现实。&lt;/p&gt;
+&lt;p&gt;长期以来，大型语言模型（LLM）虽然博闻强记，但它们更像是“冻结”在时间线里的百科全书——无论你如何提问，它们的智能边界在训练完成的瞬间就已注定。然而，这篇由 &lt;strong&gt;Mert Yuksekgonul, Daniel Koceja, 和 Xinhao Li&lt;/strong&gt; 带来的重磅论文《Learning to Discover at Test Time》，彻底打破了这一僵局！🧠⚡&lt;/p&gt;
+&lt;p&gt;他们提出的 &lt;strong&gt;TTT-Discover（测试时训练发现）&lt;/strong&gt; 方法，是一种颠覆性的范式转移。不同于过去那些只能按部就班搜索的“死板”模型，TTT-Discover 引入了**“测试时强化学习”&lt;strong&gt;。通俗来说，这意味着 AI 在面对未知的测试问题时，不再依赖静态的记忆，而是能够&lt;/strong&gt;实时地自我进化**！🔄 它在解决问题的过程中，通过不断的试错和反馈，动态地“学习”如何去发现新的知识。&lt;/p&gt;
+&lt;p&gt;这就好比给 AI 装上了一个能在测试阶段不断生长的“大脑”。它不再受限于训练数据，而是具备了在&lt;strong&gt;测试时刻&lt;/strong&gt;主动探索未知、实现技术突破的能力。🤖🔍&lt;/p&gt;
+&lt;p&gt;准备好迎接这场科学发现方式的革命了吗？让我们深入阅读，一探究竟！👇🔥&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="-摘要"&gt;📄 摘要&lt;/h2&gt;
+&lt;p&gt;以下是对内容的中文总结：&lt;/p&gt;
+&lt;p&gt;本文介绍了一种名为&lt;strong&gt;测试时训练发现&lt;/strong&gt;（Test-Time Training to Discover，简称 &lt;strong&gt;TTT-Discover&lt;/strong&gt;）的新方法，旨在通过AI解决科学难题并实现技术突破。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;核心原理：&lt;/strong&gt;
+此前的测试时扩展方法（如AlphaEvolve）通常使用“冻结”的大语言模型（LLM）进行搜索，而TTT-Discover采用了&lt;strong&gt;测试时强化学习&lt;/strong&gt;策略。这使得LLM能够针对特定的测试问题进行持续训练和自我优化。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;独特优势：&lt;/strong&gt;
+这种持续学习的形式非常特殊，其目标是针对&lt;strong&gt;当前特定问题&lt;/strong&gt;找到&lt;strong&gt;一个最优解&lt;/strong&gt;，而非在多个问题上追求平均表现。因此，该方法的搜索子程序和学习目标被专门设计为优先挖掘最具潜力的解决方案。&lt;/p&gt;</description></item></channel></rss>

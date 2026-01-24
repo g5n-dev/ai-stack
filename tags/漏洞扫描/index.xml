@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>漏洞扫描 on AI Stack</title><link>https://ai-stack.site/tags/%E6%BC%8F%E6%B4%9E%E6%89%AB%E6%8F%8F/</link><description>Recent content in 漏洞扫描 on AI Stack</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Sat, 24 Jan 2026 14:32:23 +0800</lastBuildDate><atom:link href="https://ai-stack.site/tags/%E6%BC%8F%E6%B4%9E%E6%89%AB%E6%8F%8F/index.xml" rel="self" type="application/rss+xml"/><item><title>🔥shadow1ng/fscan：内网渗透神器！自动化扫描无敌！</title><link>https://ai-stack.site/posts/20260124-github_trending-shadow1ng-fscan-7/</link><pubDate>Sat, 24 Jan 2026 14:32:23 +0800</pubDate><guid>https://ai-stack.site/posts/20260124-github_trending-shadow1ng-fscan-7/</guid><description>&lt;h1 id="-shadow1ngfscan内网渗透神器自动化扫描无敌"&gt;🚀 🔥shadow1ng/fscan：内网渗透神器！自动化扫描无敌！&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;💡 &lt;strong&gt;原名&lt;/strong&gt;: shadow1ng /&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt; fscan
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;h2 id="-基本信息"&gt;📋 基本信息&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;描述&lt;/strong&gt;: 一款内网综合扫描工具，便于一键自动化、全方位漏洞扫描。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;语言&lt;/strong&gt;: Go&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;星标&lt;/strong&gt;: 13,337 (+9 stars today)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a href="https://github.com/shadow1ng/fscan"&gt;https://github.com/shadow1ng/fscan&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;DeepWiki&lt;/strong&gt;: &lt;a href="https://deepwiki.com/shadow1ng/fscan"&gt;https://deepwiki.com/shadow1ng/fscan&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="-deepwiki-速览节选"&gt;📚 DeepWiki 速览（节选）&lt;/h2&gt;
+&lt;h1 id="overview-of-fscan"&gt;Overview of fscan&lt;/h1&gt;
+&lt;p&gt;Relevant source files&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/shadow1ng/fscan/blob/805af82a/README.md"&gt;README.md&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="purpose-and-scope"&gt;Purpose and Scope&lt;/h2&gt;
+&lt;p&gt;Fscan is a comprehensive intranet scanning tool designed for security assessment and vulnerability detection. This document provides an overview of the tool&amp;rsquo;s purpose, key features, architecture, and operational workflow. The tool employs a modular plugin-based design that facilitates extensibility and maintenance.&lt;/p&gt;</description></item></channel></rss>

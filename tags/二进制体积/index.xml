@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>二进制体积 on AI Stack</title><link>https://ai-stack.site/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%BD%93%E7%A7%AF/</link><description>Recent content in 二进制体积 on AI Stack</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Sat, 24 Jan 2026 14:32:23 +0800</lastBuildDate><atom:link href="https://ai-stack.site/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%BD%93%E7%A7%AF/index.xml" rel="self" type="application/rss+xml"/><item><title>😱Chromium严令禁止的C++特性！为何被禁？</title><link>https://ai-stack.site/posts/20260124-hacker_news-banned-c-features-in-chromium-16/</link><pubDate>Sat, 24 Jan 2026 14:32:23 +0800</pubDate><guid>https://ai-stack.site/posts/20260124-hacker_news-banned-c-features-in-chromium-16/</guid><description>&lt;h1 id="-chromium严令禁止的c特性为何被禁"&gt;📰 😱Chromium严令禁止的C++特性！为何被禁？&lt;/h1&gt;
+&lt;hr&gt;
+&lt;h2 id="-基本信息"&gt;📋 基本信息&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;作者&lt;/strong&gt;: szmarczak&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;评分&lt;/strong&gt;: 195&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;评论数&lt;/strong&gt;: 161&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a href="https://chromium.googlesource.com/chromium/src/+/main/styleguide/c++/c++-features.md"&gt;https://chromium.googlesource.com/chromium/src/+/main/styleguide/c++/c++-features.md&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;HN 讨论&lt;/strong&gt;: &lt;a href="https://news.ycombinator.com/item?id=46737447"&gt;https://news.ycombinator.com/item?id=46737447&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="-引人入胜的引言"&gt;✨ 引人入胜的引言&lt;/h2&gt;
+&lt;p&gt;你敢相信吗？你电脑上安装的那个 Chrome 浏览器，很可能是一个“残废”的 C++ 程序。 😱&lt;/p&gt;
+&lt;p&gt;作为一名 C++ 开发者，你是否引以为傲地使用着 C++20/17 的各种“炫酷”特性？比如为了性能极致而选择的 &lt;code&gt;std::variant&lt;/code&gt;，或者为了代码优雅而使用的异常处理，亦或是那些令人眼花缭乱的 RTTI 机制？&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;但在 Chromium（Chrome 的开源内核）的世界里，这些统统被列为“违禁品”！&lt;/strong&gt; 🚫&lt;/p&gt;
+&lt;p&gt;没错，这个支撑着全球数十亿设备、占据浏览器市场霸主地位的庞然大物，竟然在代码层面不仅禁止了 C++ 的异常（Exceptions），甚至连 RTTI 和部分 STL 容器都惨遭封杀。&lt;/p&gt;
+&lt;p&gt;这就引出了一个极其颠覆认知的问题：&lt;strong&gt;为什么地球上最顶尖的 C++ 工程团队，要主动“自断双臂”，放弃这门语言最强大的高级特性？&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;是因为历史的包袱？还是因为对性能有着近乎偏执的变态追求？又或者是某种深藏不露的安全哲学？ 🤔&lt;/p&gt;
+&lt;p&gt;当我们在享受极速冲浪的快感时，根本无法想象底层代码是在多么严苛的“戒律”下运行的。这不仅仅是编码规范的问题，而是一场关于&lt;strong&gt;软件工程权衡、二进制文件体积与极端稳定性&lt;/strong&gt;的顶级博弈。&lt;/p&gt;
+&lt;p&gt;究竟是什么原因让 Google 的工程师们对这些特性如此深恶痛绝？这份“封杀名单”背后又隐藏着哪些能让你醍醐灌顶的工程智慧？🔍&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;准备好颠覆你的 C++ 认知了吗？让我们深入 Chromium 的禁令世界，一探究竟！ 👇&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="-ai-总结"&gt;📝 AI 总结&lt;/h2&gt;
+&lt;p&gt;由于您没有提供具体的英文文本，我是基于 &lt;strong&gt;Chromium 官方文档《Banned C++ features in Chromium》&lt;/strong&gt; 的通用知识为您进行的总结。&lt;/p&gt;
+&lt;p&gt;以下是关于 Chromium 项目中禁止使用的 C++ 特性的简洁总结：&lt;/p&gt;
+&lt;h3 id="核心原则"&gt;核心原则&lt;/h3&gt;
+&lt;p&gt;Chromium 的代码规范旨在通过限制 C++ 中危险、复杂或容易导致错误的特性，来提高代码的安全性、可读性和可维护性。默认情况下，应遵循 Google C++ Style Guide，但 Chromium 有更严格的额外限制。&lt;/p&gt;</description></item></channel></rss>

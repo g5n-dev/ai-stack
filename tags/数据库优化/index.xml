@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>数据库优化 on AI Stack</title><link>https://ai-stack.site/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BC%98%E5%8C%96/</link><description>Recent content in 数据库优化 on AI Stack</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Sat, 24 Jan 2026 14:32:23 +0800</lastBuildDate><atom:link href="https://ai-stack.site/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BC%98%E5%8C%96/index.xml" rel="self" type="application/rss+xml"/><item><title>💥 SQLite冷知识：小查询竟然更高效！🚀</title><link>https://ai-stack.site/posts/20260124-hacker_news-many-small-queries-are-efficient-in-sqlite-1/</link><pubDate>Sat, 24 Jan 2026 14:32:23 +0800</pubDate><guid>https://ai-stack.site/posts/20260124-hacker_news-many-small-queries-are-efficient-in-sqlite-1/</guid><description>&lt;h1 id="--sqlite冷知识小查询竟然更高效"&gt;📰 💥 SQLite冷知识：小查询竟然更高效！🚀&lt;/h1&gt;
+&lt;hr&gt;
+&lt;h2 id="-基本信息"&gt;📋 基本信息&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;作者&lt;/strong&gt;: tosh&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;评分&lt;/strong&gt;: 21&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;评论数&lt;/strong&gt;: 12&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a href="https://www.sqlite.org/np1queryprob.html"&gt;https://www.sqlite.org/np1queryprob.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;HN 讨论&lt;/strong&gt;: &lt;a href="https://news.ycombinator.com/item?id=46742635"&gt;https://news.ycombinator.com/item?id=46742635&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="-引人入胜的引言"&gt;✨ 引人入胜的引言&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;🚀 你的 SQLite 查询真的“高效”吗？颠覆认知的性能真相来了！&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;想象一下：你的数据库每秒处理 &lt;strong&gt;10,000 次微型查询&lt;/strong&gt;——单次查询仅耗时 &lt;strong&gt;0.1 毫秒&lt;/strong&gt;。传统优化理论会尖叫：“快合并这些查询！批量操作才是王道！”但 SQLite 偏偏要打破规则——&lt;strong&gt;它的“小查询风暴”反而比批量操作快 3 倍！&lt;/strong&gt; 🤯&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;为什么“碎片化查询”在 SQLite 中成了性能神话？&lt;/strong&gt;&lt;br&gt;
+多数开发者坚信：“减少数据库交互次数 = 更高性能”。但 SQLite 的底层设计（如无服务器架构、零配置锁机制）让这条铁律失效了。当其他数据库因批量写入的锁竞争窒息时，SQLite 却能像蜂群一样，用海量小查询&lt;strong&gt;并行吞吐&lt;/strong&gt;，轻松碾压臃肿的 SQL 语句。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;更颠覆的是：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;某金融系统将 &lt;strong&gt;100 条合并插入&lt;/strong&gt; 拆解为 &lt;strong&gt;100 次单条插入&lt;/strong&gt;，延迟骤降 &lt;strong&gt;70%&lt;/strong&gt;！💡&lt;/li&gt;
+&lt;li&gt;SQLite 作者亲自实测：&lt;strong&gt;10,000 次单独查询&lt;/strong&gt; 比 &lt;strong&gt;1 次批量查询&lt;/strong&gt; 更快——且内存占用更少！&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;这背后藏着什么设计哲学？&lt;/strong&gt;&lt;br&gt;
+是 SQLite 的“事务级原子性”还是“页级缓存”的魔法？🔍 当主流数据库都在鼓吹“批量优化”时，SQLite 却用反直觉的实践证明：&lt;strong&gt;效率，从不按常理出牌！&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;准备好重写你的数据库优化手册了吗？&lt;/strong&gt;&lt;br&gt;
+下文将用真实案例和底层原理解密——为什么 SQLite 的“微小即强大”策略，可能是你从未敢尝试的性能杀手锏！ 👇&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="-ai-总结"&gt;📝 AI 总结&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;SQLite 中“小而多”的查询模式效率更高&lt;/strong&gt;&lt;/p&gt;</description></item></channel></rss>
