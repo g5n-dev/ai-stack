@@ -2,7 +2,7 @@ name: gh-pages Deep Content Generation
 
 on:
   schedule:
-    - cron: '0 2 * * *'
+    - cron: "0 */3 * * *"
   workflow_dispatch:
 
 permissions:
@@ -11,7 +11,6 @@ permissions:
 env:
   ANTHROPIC_AUTH_TOKEN: ${{ secrets.ANTHROPIC_AUTH_TOKEN }}
   ANTHROPIC_BASE_URL: ${{ secrets.ANTHROPIC_BASE_URL }}
-  OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
 
 jobs:
   deep-content-generation:
@@ -31,8 +30,8 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.11'
-          cache: 'pip'
+          python-version: "3.11"
+          cache: "pip"
 
       - name: Install Python dependencies
         run: |
@@ -42,18 +41,17 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: 'latest'
+          hugo-version: "latest"
           extended: true
 
       - name: Run content verification
         run: |
           python scripts/verify_sync.py || echo "Verification script not found, continuing..."
 
-      - name: Phase 1: Data Collection and Organization
+      - name: "Phase 1: Data Collection and Organization"
         env:
           ANTHROPIC_AUTH_TOKEN: ${{ secrets.ANTHROPIC_AUTH_TOKEN }}
           ANTHROPIC_BASE_URL: ${{ secrets.ANTHROPIC_BASE_URL }}
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
           echo "=== Phase 1: Data Collection and Organization ==="
           if [ -f scripts/phase1_collect_data.py ]; then
@@ -62,11 +60,10 @@ jobs:
             echo "Phase 1 script not found, skipping..."
           fi
 
-      - name: Phase 2: Deep Technical Analysis
+      - name: "Phase 2: Deep Technical Analysis"
         env:
           ANTHROPIC_AUTH_TOKEN: ${{ secrets.ANTHROPIC_AUTH_TOKEN }}
           ANTHROPIC_BASE_URL: ${{ secrets.ANTHROPIC_BASE_URL }}
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
           echo "=== Phase 2: Deep Technical Analysis ==="
           if [ -f scripts/phase2_deep_analysis.py ]; then
@@ -75,11 +72,10 @@ jobs:
             echo "Phase 2 script not found, skipping..."
           fi
 
-      - name: Phase 3: Innovation Insights Mining
+      - name: "Phase 3: Innovation Insights Mining"
         env:
           ANTHROPIC_AUTH_TOKEN: ${{ secrets.ANTHROPIC_AUTH_TOKEN }}
           ANTHROPIC_BASE_URL: ${{ secrets.ANTHROPIC_BASE_URL }}
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
           echo "=== Phase 3: Innovation Insights Mining ==="
           if [ -f scripts/phase3_innovation_insights.py ]; then
@@ -88,11 +84,10 @@ jobs:
             echo "Phase 3 script not found, skipping..."
           fi
 
-      - name: Phase 4: Best Practices Summarization
+      - name: "Phase 4: Best Practices Summarization"
         env:
           ANTHROPIC_AUTH_TOKEN: ${{ secrets.ANTHROPIC_AUTH_TOKEN }}
           ANTHROPIC_BASE_URL: ${{ secrets.ANTHROPIC_BASE_URL }}
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
           echo "=== Phase 4: Best Practices Summarization ==="
           if [ -f scripts/phase4_best_practices.py ]; then
@@ -101,11 +96,10 @@ jobs:
             echo "Phase 4 script not found, skipping..."
           fi
 
-      - name: Phase 5: Guidance and Recommendations
+      - name: "Phase 5: Guidance and Recommendations"
         env:
           ANTHROPIC_AUTH_TOKEN: ${{ secrets.ANTHROPIC_AUTH_TOKEN }}
           ANTHROPIC_BASE_URL: ${{ secrets.ANTHROPIC_BASE_URL }}
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
           echo "=== Phase 5: Guidance and Recommendations ==="
           if [ -f scripts/phase5_guidance.py ]; then
@@ -114,11 +108,10 @@ jobs:
             echo "Phase 5 script not found, skipping..."
           fi
 
-      - name: Phase 6: Content Quality Optimization
+      - name: "Phase 6: Content Quality Optimization"
         env:
           ANTHROPIC_AUTH_TOKEN: ${{ secrets.ANTHROPIC_AUTH_TOKEN }}
           ANTHROPIC_BASE_URL: ${{ secrets.ANTHROPIC_BASE_URL }}
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
           echo "=== Phase 6: Content Quality Optimization ==="
           if [ -f scripts/phase6_quality_optimization.py ]; then
@@ -131,7 +124,6 @@ jobs:
         env:
           ANTHROPIC_AUTH_TOKEN: ${{ secrets.ANTHROPIC_AUTH_TOKEN }}
           ANTHROPIC_BASE_URL: ${{ secrets.ANTHROPIC_BASE_URL }}
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
           echo "=== Building Tech Stack Knowledge Graph ==="
           if [ -f scripts/build_knowledge_graph.py ]; then
@@ -144,7 +136,6 @@ jobs:
         env:
           ANTHROPIC_AUTH_TOKEN: ${{ secrets.ANTHROPIC_AUTH_TOKEN }}
           ANTHROPIC_BASE_URL: ${{ secrets.ANTHROPIC_BASE_URL }}
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
           echo "=== Generating High-Quality Tag System ==="
           if [ -f scripts/generate_tags.py ]; then
@@ -157,7 +148,6 @@ jobs:
         env:
           ANTHROPIC_AUTH_TOKEN: ${{ secrets.ANTHROPIC_AUTH_TOKEN }}
           ANTHROPIC_BASE_URL: ${{ secrets.ANTHROPIC_BASE_URL }}
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
           echo "=== Generating Final Content ==="
           if [ -f scripts/generate_content.py ]; then
