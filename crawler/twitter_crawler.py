@@ -5,7 +5,7 @@ Twitter/X爬虫 - 使用Playwright模拟浏览器，不需要API
 
 import asyncio
 import logging
-from typing import List, Dict, Optional, TYPE_CHECKING
+from typing import List, Dict, Optional, TYPE_CHECKING, Any
 from datetime import datetime, timedelta, timezone
 import json
 
@@ -60,7 +60,7 @@ class TwitterCrawler:
         self.timeout = timeout
         self.base_url = "https://twitter.com"
 
-    async def _scroll_to_load_tweets(self, page: Page, max_tweets: int):
+    async def _scroll_to_load_tweets(self, page: Any, max_tweets: int):
         """滚动页面加载更多推文"""
         tweets_collected = 0
 
