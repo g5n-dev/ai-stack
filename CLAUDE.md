@@ -35,7 +35,117 @@ python3 scripts/generate_content.py
 5. **推送内容** (5/5)
    - 发布到社交平台
 
-### 2. 标签系统
+### 2. Twitter 内容生成流程
+
+#### 爬虫配置
+- 位置：`crawler/twitter_crawler.py`
+- 功能：使用 Playwright 实现 API-free Twitter 爬虫
+- 扫描频率：30 分钟
+- 支持账号：Elon Musk, sama, ylecun, AndrewYNg, karpathy, OpenAI
+
+#### 核心组件
+
+**1. TwitterRecentCrawler（30分钟增量爬取）**
+- 基于 Playwright 异步浏览器自动化
+- 防反爬：浏览器指纹、随机延迟、无头模式
+- 时间过滤：只爬取最近 30 分钟的推文
+- 时区处理：UTC 时间戳转换，避免时区警告
+
+**2. TwitterContentAnalyzer（Claude 内容分析）**
+- 使用 Claude-3.5-Sonnet 分析推文内容
+- 提取关键观点、技术趋势、商业洞察
+- 分析利弊（优缺点）
+- 生成结构化 JSON 输出
+
+**3. TwitterPostGenerator（Markdown 文章生成）**
+- 基于分析结果生成 Markdown 文章
+- 整合多篇推文为一个主题
+- 自动生成标签和分类
+- 输出位置：`blog/content/posts/`
+
+#### 使用方法
+
+**独立运行：**
+```bash
+python3 scripts/generate_twitter_content.py
+```
+
+**集成到爬虫系统：**
+```yaml
+# config/sources.yaml
+twitter:
+  enabled: true
+  accounts:
+    - elonmusk
+    - sama
+    - ylecun
+    - AndrewYNg
+    - karpathy
+    - OpenAI
+```
+
+**命令行参数：**
+```bash
+python3 scripts/generate_twitter_content.py --headless false --save-markdown true
+```
+
+#### 技术特性
+
+**1. 浏览器自动化（Playwright）**
+- 异步 API 提高爬取效率
+- 无头模式降低资源消耗
+- 智能等待页面加载
+- 滚动加载更多推文
+
+**2. 时区处理**
+```python
+# 爬虫时间（UTC）
+thirty_minutes_ago = datetime.now(timezone.utc) - timedelta(minutes=30)
+
+# 推文时间（UTC）
+tweet_time = datetime.fromisoformat(timestamp_str)
+if tweet_time.tzinfo is None:
+    tweet_time = tweet_time.replace(tzinfo=timezone.utc)
+```
+
+**3. Claude 集成**
+- 支持自定义 Anthropic API Base URL
+- 结构化 JSON 输出
+- 内容分析和利弊评估
+
+**4. Markdown 生成**
+- 标准博客格式
+- 自动生成 frontmatter
+- 标签和分类系统
+- 日期时间戳
+
+#### 集成到 CrawlerOrchestrator
+
+```python
+# crawler/main.py
+def _init_crawlers(self):
+    # 添加 Twitter 爬虫
+    self.crawlers.append(TwitterRecentCrawler(headless=True))
+```
+
+#### E2E 测试
+
+```bash
+python3 test_twitter_integration.py
+```
+
+**测试覆盖：**
+- 爬虫功能测试
+- 推文时间过滤测试
+- Claude 分析测试
+- Markdown 生成测试
+- 端到端流程测试
+
+#### GitHub Actions 集成
+
+Twitter 内容生成已集成到 CrawlerOrchestrator，自动在内容生成流程中运行。
+
+### 3. 标签系统
 
 #### 标签生成
 - 使用 LLM（glm-4.7）自动为文章生成标签
@@ -187,55 +297,63 @@ source: "blogs_podcasts"
    - 如果不存在则创建新分支
 
 4. Create or checkout gh-pages branch
-   - 如果 gh-pages 存在：checkout 现有分支
+   - 如果 gh-pages 存在：
+     - 删除本地 gh-pages 分支（如果存在）
+     - 从 origin/gh-pages checkout 新分支
+     - 清空所有文件
    - 如果不存在：创建 orphan 分支并清空
 
-5. Stash untracked files before merge
-   - 使用 git stash push -u 保存未跟踪文件
-   - 防止合并时出现冲突
+5. Copy main branch content
+   - 从 main 分支复制所有文件到当前分支
+   - 保留完整的源代码
 
-6. Merge main into gh-pages
-   - 使用 -X theirs 保留 gh-pages 的更改
-   - 使用 --allow-unrelated-histories 处理无关历史
-   - 首次合并和后续合并使用不同策略
-
-7. Setup Python 环境
+6. Setup Python 环境
    - 使用 Python 3.10
    - 安装 anthropic 依赖
 
-8. 清理非 AI 文章
+7. 清理非 AI 文章
    - 使用 Claude-3.5-Sonnet 判断文章是否与 AI 相关
    - 置信度阈值：0.6
    - 自动删除非 AI 相关文章
 
-9. 重建标签图谱
+8. 重建标签图谱
    - 基于清理后的文章重新构建图谱
    - 包含 7 层架构（语言、框架、模型、应用、场景、标签、概念）
 
-10. Setup Hugo
+9. Setup Hugo
    - 使用 peaceiris/actions-hugo@v2
    - 版本：latest
    - extended: true
 
-11. Build Hugo site
-   - 检查 blog/config.toml 是否存在
-   - 执行 hugo --baseURL "https://ai-stack.site/" --minify --cleanDestinationDir
-   - 将构建产物复制到根目录
-   - 清理临时文件
+10. Build Hugo site
+    - 检查 blog/config.toml 是否存在
+    - 执行 hugo --baseURL "https://ai-stack.site/" --minify --cleanDestinationDir
+    - 先复制构建产物：cp -r blog/public/* .
+    - 再删除源代码：rm -rf blog/ crawler/ config/ processor/ scripts/ 等
+    - 只保留 Hugo 构建后的静态文件
 
-12. Push to gh-pages
-   - git add -A 添加所有更改
-   - git diff --cached --quiet 检查是否有更改
-   - git commit -m "Sync from main [skip ci]" 提交
-   - git push origin gh-pages --force-with-lease 推送
+11. Push to gh-pages
+    - git add -A 添加所有更改
+    - git diff --cached --quiet 检查是否有更改
+    - git commit -m "Sync from main [skip ci]" 提交
+    - git push origin gh-pages --force-with-lease 推送
 ```
 
 **关键配置说明：**
-- **Stash 步骤**：防止未跟踪文件导致合并冲突
-- **Theirs 策略**：在冲突时保留 gh-pages 分支的更改
+- **无合并策略**：不使用 git merge，直接复制 main 分支内容
+- **先复制后删除**：先复制 Hugo 构建产物，再删除源代码目录
+- **源代码清理**：删除 blog/, crawler/, config/, processor/, scripts/, .github/ 等目录
+- **只保留构建产物**：gh-pages 分支只包含 Hugo 构建后的静态文件
 - **Force-with-lease**：安全推送，避免覆盖他人的提交
 - **Skip ci**：避免触发其他 CI/CD 流程
 - **Gitignore**：验证报告文件 `*_verification_report.json` 已被忽略
+
+**部署流程关键点：**
+1. gh-pages 分支是纯静态站点，不包含源代码
+2. 所有源代码管理在 main 分支
+3. 推送到 main 分支自动触发部署
+4. 部署流程自动清理非 AI 文章并重建图谱
+5. Hugo 构建产物直接部署到 GitHub Pages
 
 **环境变量：**
 - `ANTHROPIC_API_KEY`: Claude API 密钥（在 GitHub Secrets 中配置）
