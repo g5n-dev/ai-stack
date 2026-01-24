@@ -201,13 +201,13 @@ a {
   position: absolute;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   font-size: 9px;
-  letter-spacing: 0.35em;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
   color: rgba(var(--primary), 0.35);
 }
 
 .frame-label.top-left { top: 24px; left: 40px; }
-.frame-label.bottom-right { bottom: 24px; right: 40px; text-align: right; }
+.frame-label.bottom-right { bottom: clamp(104px, 12vh, 160px); right: 40px; text-align: right; }
 
 .log-mask {
   position: absolute;
