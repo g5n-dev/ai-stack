@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Llm on AI Stack</title><link>https://ai-stack.site/tags/llm/</link><description>Recent content in Llm on AI Stack</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Wed, 22 Jan 2025 09:45:00 +0800</lastBuildDate><atom:link href="https://ai-stack.site/tags/llm/index.xml" rel="self" type="application/rss+xml"/><item><title>大语言模型应用最佳实践</title><link>https://ai-stack.site/posts/2025-01-22-llm-best-practices/</link><pubDate>Wed, 22 Jan 2025 09:45:00 +0800</pubDate><guid>https://ai-stack.site/posts/2025-01-22-llm-best-practices/</guid><description>&lt;p&gt;在构建基于大语言模型的应用时，遵循最佳实践可以显著提升效果和可靠性。&lt;/p&gt;
+&lt;h2 id="提示词工程"&gt;提示词工程&lt;/h2&gt;
+&lt;h3 id="清晰的指令"&gt;清晰的指令&lt;/h3&gt;
+&lt;p&gt;使用明确、具体的指令，避免模糊的描述。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;不佳示例：&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;写一篇文章
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;良好示例：&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;请写一篇关于人工智能发展历史的文章，字数在800-1000字之间，
+要求包含三个主要阶段，每个阶段要有具体的时间节点和技术突破。
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="思维链提示"&gt;思维链提示&lt;/h3&gt;
+&lt;p&gt;让模型逐步思考问题，提高推理能力。&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;让我们一步步分析这个问题：
+1. 首先识别问题的核心要素
+2. 然后分析各要素之间的关系
+3. 最后给出综合结论
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id="输出验证"&gt;输出验证&lt;/h2&gt;
+&lt;h3 id="结构化输出"&gt;结构化输出&lt;/h3&gt;
+&lt;p&gt;要求模型以特定格式输出，便于后续处理：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-json" data-lang="json"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nt"&gt;&amp;#34;summary&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;...&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nt"&gt;&amp;#34;key_points&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;...&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;...&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nt"&gt;&amp;#34;recommendations&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;...&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id="质量检查"&gt;质量检查&lt;/h3&gt;
+&lt;p&gt;对模型输出进行验证和修正：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;事实性检查&lt;/li&gt;
+&lt;li&gt;逻辑一致性检查&lt;/li&gt;
+&lt;li&gt;格式规范检查&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="成本优化"&gt;成本优化&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;使用较小的模型处理简单任务&lt;/li&gt;
+&lt;li&gt;实现结果缓存&lt;/li&gt;
+&lt;li&gt;批量处理请求&lt;/li&gt;
+&lt;/ul&gt;</description></item></channel></rss>
