@@ -241,6 +241,7 @@ class SuperEnhancedContentGenerator:
         source = content.get('source', '')
         title = content.get('title', '')
         deepwiki_excerpt = (content.get('deepwiki_content') or '')[:1200]
+        deepwiki_block = f"DeepWiki（节选）：\n{deepwiki_excerpt}" if deepwiki_excerpt.strip() else ""
 
         if source == 'github_trending':
             return f"""请为以下 GitHub 仓库写一个超级引人入胜的引言，控制在{self.intro_length}字以内：
@@ -249,7 +250,7 @@ class SuperEnhancedContentGenerator:
 描述：{content.get('description', '')}
 语言：{content.get('language', '')}
 星标数：{content.get('stars', '')}
-{f"DeepWiki（节选）：\\n{deepwiki_excerpt}" if deepwiki_excerpt.strip() else ""}
+{deepwiki_block}
 
 要求：
 1. 用一个引人入胜的故事或场景开头
@@ -315,6 +316,7 @@ class SuperEnhancedContentGenerator:
         source = content.get('source', '')
         title = content.get('title', '')
         deepwiki_excerpt = (content.get('deepwiki_content') or '')[:1200]
+        deepwiki_block = f"DeepWiki（节选）：\n{deepwiki_excerpt}" if deepwiki_excerpt.strip() else ""
 
         if source == 'github_trending':
             return f"""请从技术和实用角度超级深度地评价以下 GitHub 仓库，控制在{self.comment_length}字以内：
@@ -323,7 +325,7 @@ class SuperEnhancedContentGenerator:
 描述：{content.get('description', '')}
 语言：{content.get('language', '')}
 星标数：{content.get('stars', '')}
-{f"DeepWiki（节选）：\\n{deepwiki_excerpt}" if deepwiki_excerpt.strip() else ""}
+{deepwiki_block}
 
 请从以下维度进行评价：
 1. 技术创新性：有什么独特、颠覆性的技术方案
@@ -422,6 +424,7 @@ class SuperEnhancedContentGenerator:
         source = content.get('source', '')
         title = content.get('title', '')
         deepwiki_excerpt = (content.get('deepwiki_content') or '')[:1500]
+        deepwiki_block = f"DeepWiki（节选）：\n{deepwiki_excerpt}" if deepwiki_excerpt.strip() else ""
 
         if source == 'github_trending':
             return f"""请超级深入地分析以下 GitHub 仓库的技术特点和潜在应用，用中文：
@@ -430,7 +433,7 @@ class SuperEnhancedContentGenerator:
 描述：{content.get('description', '')}
 语言：{content.get('language', '')}
 星标数：{content.get('stars', '')}
-{f"DeepWiki（节选）：\\n{deepwiki_excerpt}" if deepwiki_excerpt.strip() else ""}
+{deepwiki_block}
 
 请从以下角度进行全面深入分析：
 
