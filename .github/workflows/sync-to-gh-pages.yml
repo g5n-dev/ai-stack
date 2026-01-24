@@ -29,28 +29,20 @@ jobs:
 
       - name: Create or checkout gh-pages branch
         run: |
-          if git rev-parse --verify gh-pages >/dev/null 2>&1; then
+          if git rev-parse --verify origin/gh-pages >/dev/null 2>&1; then
             echo "Checking out existing gh-pages branch..."
-            git checkout gh-pages
+            git checkout -b gh-pages origin/gh-pages
+            # Remove all files except .git
+            git rm -rf .
           else
             echo "Creating new orphan gh-pages branch..."
             git checkout --orphan gh-pages
             git rm -rf .
           fi
 
-      - name: Stash untracked files before merge
+      - name: Copy main branch content
         run: |
-          git stash push -u -m "Stashing untracked files before merge" || echo "Nothing to stash"
-
-      - name: Merge main into gh-pages
-        run: |
-          if git rev-parse --verify gh-pages >/dev/null 2>&1 && [ "$(git log main --oneline | wc -l)" -gt 0 ]; then
-            echo "Merging main into gh-pages..."
-            git merge main --no-edit -X theirs -X ignore-space-change || git merge main --no-edit --allow-unrelated-histories -X theirs -X ignore-space-change
-          else
-            echo "Initial sync from main..."
-            git merge main --allow-unrelated-histories -X theirs -X ignore-space-change
-          fi
+          git checkout main -- .
 
       - name: Set up Python
         uses: actions/setup-python@v5
