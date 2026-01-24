@@ -25,12 +25,14 @@ jobs:
 
       - name: Fetch gh-pages branch
         run: |
-          git fetch origin gh-pages:gh-pages || echo "gh-pages branch does not exist yet"
+          git fetch origin gh-pages || echo "gh-pages branch does not exist yet"
 
       - name: Create or checkout gh-pages branch
         run: |
           if git rev-parse --verify origin/gh-pages >/dev/null 2>&1; then
             echo "Checking out existing gh-pages branch..."
+            # Delete local gh-pages branch if it exists
+            git branch -D gh-pages 2>/dev/null || true
             git checkout -b gh-pages origin/gh-pages
             # Remove all files except .git
             git rm -rf .
