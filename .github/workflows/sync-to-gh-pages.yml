@@ -128,11 +128,10 @@ jobs:
             cd blog
             hugo --baseURL "https://ai-stack.site/" --minify --cleanDestinationDir
             cd ..
-            # Remove source code files, keep only build artifacts
-            rm -rf blog/ crawler/ config/ processor/ scripts/ test_*.py generate_twitter_content.py requirements.txt README.md CLAUDE.md .github .gitignore
-            # Copy Hugo build artifacts
+            # Copy Hugo build artifacts first
             cp -r blog/public/* .
-            rm -rf blog/public
+            # Then remove source code files, keep only build artifacts
+            rm -rf blog/ crawler/ config/ processor/ scripts/ test_*.py generate_twitter_content.py requirements.txt README.md CLAUDE.md .github .gitignore
           else
             echo "Hugo config not found, skipping build"
           fi
