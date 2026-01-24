@@ -11,7 +11,7 @@ from pathlib import Path
 from .anthropic_client import AnthropicClient
 from .summarizer import ContentSummarizer
 from .translator import ContentTranslator
-from .generator import ContentGenerator
+from .generator import SuperEnhancedContentGenerator
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -39,10 +39,9 @@ class ProcessorOrchestrator:
         )
 
         generation_config = self.config.get('generation', {})
-        self.generator = ContentGenerator(
+        self.generator = SuperEnhancedContentGenerator(
             self.client,
-            intro_length=generation_config.get('intro_length', 100),
-            comment_length=generation_config.get('comment_length', 300)
+            config=generation_config
         )
 
     def _load_config(self) -> Dict:

@@ -1,25 +1,25 @@
-# Hugo 配置文件 - AI Stack Terminal Blog
+# Hugo 配置文件 - AI Stack 个人博客
 
 baseURL = "https://ai-stack.site/"
 languageCode = "zh-CN"
-title = "AI Stack - 终端风格博客"
+title = "AI 探索者"
 theme = "terminal-theme"
 
 [params]
   # 站点信息
-  description = "每日 AI 资讯精选 - GitHub Trending, Hacker News, ArXiv 论文"
-  author = "AI Stack Bot"
-  github = "https://github.com/yourusername/ai-stack"
+  description = "探索 AI 技术前沿，分享深度思考与实践"
+  author = "AI Explorer"
+  github = "https://github.com/g5n-dev/ai-stack"
 
-  # 终端风格设置
-  terminal = true
+  # 终端风格设置（可选）
+  terminal = false
   prompt = "➜"
-  cursor = true
-  typing_effect = true
+  cursor = false
+  typing_effect = false
 
   # 社交媒体
-  twitter = "https://twitter.com/yourusername"
-  telegram = "https://t.me/yourchannel"
+  twitter = ""
+  telegram = ""
 
   # 分页
   paginate = 10
