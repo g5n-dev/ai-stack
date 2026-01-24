@@ -424,13 +424,6 @@ A: 查看日志，可能是网络问题或网站结构变更。可以尝试更�
 
 ---
 
-## 联系方式
-
-- 📧 Email: [your-email@example.com](mailto:your-email@example.com)
-- 🐦 Twitter: [@yourusername](https://twitter.com/yourusername)
-- 💬 Telegram: [yourchannel](https://t.me/yourchannel)
-- 🐛 Issues: [GitHub Issues](https://github.com/yourusername/ai-stack/issues)
-
 ---
 
 <div align="center">
