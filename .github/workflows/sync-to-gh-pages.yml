@@ -1,0 +1,141 @@
+name: Sync to gh-pages
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Configure Git
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+      - name: Fetch gh-pages branch
+        run: |
+          git fetch origin gh-pages || echo "gh-pages branch does not exist yet"
+
+      - name: Create or checkout gh-pages branch
+        run: |
+          if git rev-parse --verify origin/gh-pages >/dev/null 2>&1; then
+            echo "Checking out existing gh-pages branch..."
+            # Delete local gh-pages branch if it exists
+            git branch -D gh-pages 2>/dev/null || true
+            git checkout -b gh-pages origin/gh-pages
+            # Remove all files except .git
+            git rm -rf .
+          else
+            echo "Creating new orphan gh-pages branch..."
+            git checkout --orphan gh-pages
+            git rm -rf .
+          fi
+
+      - name: Copy main branch content
+        run: |
+          git checkout main -- .
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Install dependencies
+        run: |
+          pip install anthropic
+
+      - name: Clean non-AI posts and rebuild graph
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          python3 -c "
+          import anthropic
+          import json
+          import re
+          from pathlib import Path
+
+          client = anthropic.Anthropic(api_key='${{ secrets.ANTHROPIC_API_KEY }}')
+
+          posts_dir = Path('blog/content/posts')
+          non_ai_posts = []
+
+          for md_file in posts_dir.glob('*.md'):
+              with open(md_file, 'r', encoding='utf-8') as f:
+                  content = f.read()
+              
+              title_match = re.search(r'^title:\s*[\\\"\\'](.+?)[\\\"\\']', content, re.MULTILINE)
+              title = title_match.group(1) if title_match else md_file.stem
+              
+              try:
+                  message = client.messages.create(
+                      model='claude-3-5-sonnet-20241022',
+                      max_tokens=100,
+                      messages=[{
+                          'role': 'user',
+                          'content': f'判断以下内容是否与AI（人工智能）主题相关。只返回JSON: {{\"is_ai_related\": true/false, \"reason\": \"原因\", \"confidence\": 0.0-1.0}}\\n\\n标题: {title}\\n内容摘要: {content[:500]}'
+                      }]
+                  )
+                  
+                  result = json.loads(message.content[0].text)
+                  
+                  if not result['is_ai_related'] or result['confidence'] < 0.6:
+                      non_ai_posts.append({
+                          'file': str(md_file),
+                          'title': title,
+                          'reason': result['reason'],
+                          'confidence': result['confidence']
+                      })
+                      print(f'Non-AI: {md_file.name} - {result[\"reason\"]}')
+                  else:
+                      print(f'AI-related: {md_file.name}')
+              except Exception as e:
+                  print(f'Error processing {md_file.name}: {e}')
+
+          if non_ai_posts:
+              print(f'\\nFound {len(non_ai_posts)} non-AI posts:')
+              for post in non_ai_posts:
+                  print(f'  - {post[\"file\"]}: {post[\"title\"]}')
+                  Path(post['file']).unlink()
+                  print(f'  Deleted: {post[\"file\"]}')
+          else:
+              print('No non-AI posts found.')
+          "
+
+      - name: Rebuild tag graph
+        run: |
+          python3 processor/tag_graph.py
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: "latest"
+          extended: true
+
+      - name: Build Hugo site
+        run: |
+          if [ -f blog/config.toml ]; then
+            cd blog
+            hugo --baseURL "https://ai-stack.site/" --minify --cleanDestinationDir
+            cp -r public/* ..
+            cd ..
+            rm -rf blog/public
+          else
+            echo "Hugo config not found, skipping build"
+          fi
+
+      - name: Push to gh-pages
+        run: |
+          git add -A
+          git diff --cached --quiet || git commit -m "Sync from main [skip ci]"
+          git push origin gh-pages --force-with-lease

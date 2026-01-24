@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html class="dark" lang="{{ .Site.LanguageCode }}">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ .Title }} - {{ .Site.Title }}</title>
+    <meta name="description" content="{{ .Title }} 相关项目" />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4db6ac",
+                        "deep-navy": "#060a14",
+                        "muted-teal": "#26a69a",
+                        "off-white": "#d1d5db",
+                        "terminal-bg": "#0a111a",
+                        "las-vegas-orange": "#d97706",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "Noto Sans SC", "ui-sans-serif", "system-ui", "sans-serif"],
+                        "mono": ["Space Mono", "ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", "Noto Sans SC", "monospace"]
+                    },
+                },
+            },
+        }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700&display=swap" rel="stylesheet" />
+
+    {{ $style := resources.Get "css/style.css" | minify }}
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
+
+    {{ $js := resources.Get "js/terminal.js" | minify }}
+    <script src="{{ $js.RelPermalink }}" defer></script>
+</head>
+<body class="bg-deep-navy selection:bg-muted-teal selection:text-deep-navy font-display">
+    <div class="rain-container">
+        <div class="rain-streak r1"></div>
+        <div class="rain-streak r2"></div>
+        <div class="rain-streak r3"></div>
+        <div class="rain-streak r4"></div>
+        <div class="rain-streak r5"></div>
+        <div class="rain-streak r6"></div>
+        <div class="rain-streak r7"></div>
+        <div class="rain-streak r8"></div>
+        <div class="rain-streak r9"></div>
+        <div class="rain-streak r10"></div>
+    </div>
+    <div class="fog-container">
+        <div class="fog-cloud animate-fog" style="top: 10%; left: -20%;"></div>
+        <div class="fog-grey animate-fog-slow" style="top: 40%; right: -20%;"></div>
+        <div class="fog-cloud animate-fog" style="bottom: -10%; left: 10%; opacity: 0.03;"></div>
+    </div>
+    <div class="ambient-glow"></div>
+    <div class="scanlines"></div>
+    <div class="frame-overlay hidden md:block">
+        <div class="frame-corner tl"></div>
+        <div class="frame-corner tr"></div>
+        <div class="frame-corner bl"></div>
+        <div class="frame-corner br"></div>
+        <div class="frame-label top-left">LINK_STATUS: STABLE // MODE: SCENARIO_VIEW</div>
+        <div class="frame-label bottom-right">SECTOR_ID: AI_STACK // VIEW: DETAIL</div>
+    </div>
+
+    <div class="relative flex h-screen w-full flex-col overflow-hidden z-10">
+        <header class="w-full max-w-6xl mx-auto px-6 py-6 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <a href="/" class="size-10 bg-primary/10 flex items-center justify-center rounded-lg border border-primary/20 backdrop-blur-md shadow-[0_0_15px_rgba(77,182,172,0.12)]">
+                    <span class="material-symbols-outlined text-primary text-xl">terminal</span>
+                </a>
+                <div>
+                    <h2 class="text-off-white/90 text-lg font-medium tracking-wide teal-glow-text">{{ .Site.Title }}</h2>
+                    <p class="text-[11px] font-mono text-muted-teal/50 -mt-0.5 tracking-wide">场景详情</p>
+                </div>
+            </div>
+
+            <nav class="hidden md:flex items-center gap-8 text-[11px] font-mono tracking-wide text-off-white/70">
+                {{ range .Site.Menus.main }}
+                <a href="{{ .URL }}" class="hover:text-primary transition-all">{{ .Name }}</a>
+                {{ end }}
+            </nav>
+
+            <div class="flex items-center gap-3">
+                <a href="/scenarios/" class="px-4 py-1.5 bg-primary/5 border border-primary/20 text-primary/70 text-[10px] font-mono uppercase tracking-widest rounded-full hover:bg-primary/10 hover:text-primary hover:border-primary/40 transition-all">
+                    全部场景
+                </a>
+                <a href="/index.xml" class="size-9 flex items-center justify-center text-off-white/40 hover:text-primary transition-colors border border-muted-teal/20 rounded-lg bg-muted-teal/5" aria-label="RSS">
+                    <span class="material-symbols-outlined text-xl">rss_feed</span>
+                </a>
+            </div>
+        </header>
+
+        <main class="flex-1 w-full overflow-y-auto custom-scrollbar px-4 md:px-8 py-8">
+            <div class="w-full max-w-6xl mx-auto">
+                <!-- 面包屑 -->
+                <div class="flex flex-wrap items-center gap-2 mb-6 font-mono text-[10px] tracking-wide">
+                    <a class="text-primary/40 hover:text-primary" href="/">ROOT</a>
+                    <span class="text-primary/20">/</span>
+                    <a class="text-primary/40 hover:text-primary" href="/scenarios/">SCENARIOS</a>
+                    <span class="text-primary/20">/</span>
+                    <span class="text-primary/80">{{ .Title }}</span>
+                </div>
+
+                <!-- 场景标题 -->
+                <div class="glass-panel rounded-xl p-6 mb-8 border border-primary/20">
+                    <div class="flex items-center gap-4">
+                        <div class="size-14 bg-primary/10 flex items-center justify-center rounded-lg">
+                            {{- $scenarioIcon := "category" -}}
+                            {{- range .Pages -}}
+                                {{- range .Params.scenarios -}}
+                                    {{- if eq .name $.Title -}}
+                                        {{- $scenarioIcon = .icon -}}
+                                    {{- end -}}
+                                {{- end -}}
+                            {{- end -}}
+                            <span class="material-symbols-outlined text-2xl text-primary">{{ $scenarioIcon }}</span>
+                        </div>
+                        <div class="flex-1">
+                            <h1 class="text-off-white text-2xl font-light tracking-tight font-display">{{ .Title }}</h1>
+                            <p class="text-off-white/50 text-sm mt-1">
+                                {{- $scenarioDesc := "" -}}
+                                {{- range .Pages -}}
+                                    {{- range .Params.scenarios -}}
+                                        {{- if eq .name $.Title -}}
+                                            {{- $scenarioDesc = .description -}}
+                                        {{- end -}}
+                                    {{- end -}}
+                                {{- end -}}
+                                {{ if $scenarioDesc }}{{ $scenarioDesc }}{{ else }}相关项目集合{{ end }}
+                            </p>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-3xl font-light text-primary">{{ len .Pages }}</div>
+                            <div class="text-off-white/30 text-[10px] font-mono tracking-wide">相关项目</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 项目列表 -->
+                <div class="glass-panel rounded-xl overflow-hidden border border-muted-teal/10">
+                    <table class="w-full table-fixed text-left border-collapse">
+                        <thead>
+                            <tr class="bg-muted-teal/5 border-b border-muted-teal/10">
+                                <th class="w-20 px-6 py-4 text-muted-teal/60 text-[11px] font-bold tracking-wide">置信度</th>
+                                <th class="w-24 px-6 py-4 text-muted-teal/60 text-[11px] font-bold tracking-wide">阅读</th>
+                                <th class="px-6 py-4 text-off-white text-[11px] font-bold tracking-wide">项目名称</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-muted-teal/5">
+                            {{ range .Pages }}
+                            {{$confidence := 0.7}}
+                            {{- range .Params.scenarios -}}
+                                {{- if eq .name $.Title -}}
+                                    {{- $confidence = .confidence -}}
+                                {{- end -}}
+                            {{- end -}}
+                            <tr class="hover:bg-muted-teal/5 transition-all group">
+                                <td class="w-20 px-6 py-5">
+                                    <div class="flex items-center gap-2">
+                                        <div class="w-12 h-1.5 bg-muted-teal/10 rounded-full overflow-hidden">
+                                            <div class="h-full bg-primary/60 rounded-full" style="width: {{ mul $confidence 100 }}%"></div>
+                                        </div>
+                                        <span class="text-off-white/30 text-[10px] font-mono">{{ printf "%.0f%%" (mul $confidence 100) }}</span>
+                                    </div>
+                                </td>
+                                <td class="w-24 px-6 py-5 text-muted-teal/45 text-[11px] text-right font-mono">
+                                    {{ printf "%dmin" .ReadingTime }}
+                                </td>
+                                <td class="px-6 py-5">
+                                    <a href="{{ .RelPermalink }}" data-entry-link="{{ .RelPermalink }}" data-entry-title="{{ .Title }}" class="flex items-center gap-4 min-w-0">
+                                        <span class="material-symbols-outlined text-primary/40 group-hover:text-primary transition-all">
+                                            {{- $s := .Params.source -}}
+                                            {{- if eq $s "github_trending" -}}hub
+                                            {{- else if eq $s "hacker_news" -}}newspaper
+                                            {{- else if eq $s "arxiv" -}}school
+                                            {{- else if eq $s "blogs_podcasts" -}}mic
+                                            {{- else -}}sticky_note_2
+                                            {{- end -}}
+                                        </span>
+                                        <span class="min-w-0 flex-1 text-off-white text-sm tracking-wide group-hover:translate-x-1 transition-transform truncate" title="{{ .Title }}">{{ .Title }}</span>
+                                    </a>
+                                    <div class="mt-2 flex flex-wrap items-center gap-2 text-[11px] text-off-white/45">
+                                        <span class="font-mono text-muted-teal/40">{{ .Date.Format "2006-01-02" }}</span>
+                                        {{ range first 3 (.Params.tags | default (slice)) }}
+                                        <span class="px-2 py-0.5 rounded border border-muted-teal/15 bg-terminal-bg/40 text-muted-teal/60">{{ . }}</span>
+                                        {{ end }}
+                                    </div>
+                                </td>
+                            </tr>
+                            {{ end }}
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- 如果没有项目 -->
+                {{ if eq (len .Pages) 0 }}
+                <div class="glass-panel rounded-xl p-12 text-center border border-muted-teal/10">
+                    <span class="material-symbols-outlined text-4xl text-muted-teal/20">folder_open</span>
+                    <p class="text-off-white/40 text-sm mt-4">暂无相关项目</p>
+                </div>
+                {{ end }}
+
+                <!-- 返回链接 -->
+                <div class="mt-6">
+                    <a href="/scenarios/" class="inline-flex items-center gap-2 px-5 py-2 bg-muted-teal/5 border border-muted-teal/20 rounded-full hover:bg-muted-teal/10 transition-all text-[11px] font-mono tracking-wide text-off-white/70 hover:text-off-white">
+                        <span class="material-symbols-outlined text-base">arrow_back</span> 返回场景列表
+                    </a>
+                </div>
+            </div>
+        </main>
+
+        <footer class="h-14 border-t border-muted-teal/10 bg-deep-navy/80 backdrop-blur-2xl flex items-center px-6 gap-6 z-20">
+            <div class="terminal-label text-primary font-mono text-sm font-bold tracking-tight">CMD://</div>
+            <div class="flex-1">
+                <input class="terminal-input bg-transparent border-none focus:ring-0 text-primary font-mono text-sm w-full placeholder:text-muted-teal/30" placeholder="输入命令…（search 关键词 / open 2 / clear）" type="text" autocomplete="off" spellcheck="false" />
+            </div>
+            <div class="hidden md:flex gap-6 items-center border-l border-muted-teal/10 pl-6 h-full">
+                <span class="text-muted-teal/40 font-mono text-[9px] tracking-widest uppercase">Link: STABLE</span>
+                <div class="flex items-center gap-2 text-primary/60">
+                    <span class="material-symbols-outlined text-base">cloud_queue</span>
+                    <span class="text-[9px] font-bold tracking-widest uppercase">Live_Sync</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

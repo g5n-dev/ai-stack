@@ -1,0 +1,49 @@
+# Anthropic API configuration - Extreme Mode (Maximum Quality)
+anthropic:
+  api_key: "${ANTHROPIC_AUTH_TOKEN}"
+  base_url: "${ANTHROPIC_BASE_URL}"
+  model: "claude-3-5-sonnet-20241022"
+  max_tokens: 8192
+  temperature: 0.85
+
+  # Summary settings
+  summary:
+    max_length: 800
+    style: "comprehensive"
+
+  # Translation settings
+  translation:
+    default_target_lang: "zh"
+    preserve_formatting: true
+
+  # Generation settings - 极致模式，最大程度调用大模型
+  generation:
+    intro_length: 500
+    comment_length: 1200
+    analysis_length: 2500
+    style: "storytelling"
+    use_emoji: true
+    add_recommendations: true
+
+    # 新增内容类型
+    generate_code_examples: true      # 生成代码示例
+    generate_case_studies: true       # 生成案例研究
+    generate_faq: true              # 生成常见问题
+    generate_comparison: true         # 生成对比分析
+    generate_best_practices: true     # 生成最佳实践
+    generate_performance_tips: true    # 生成性能优化建议
+    generate_learning_path: true      # 生成学习路径
+    generate_challenges: true         # 生成挑战和思考题
+
+  # Tagging settings - 为文章自动打标归类（tags + categories）
+  tagging:
+    enabled: true
+    max_tags: 8
+    max_categories: 2
+    temperature: 0.2
+
+  # Scenarios settings - 为 GitHub 项目分析应用场景
+  scenarios:
+    enabled: true
+    max_scenarios: 3
+    temperature: 0.2
