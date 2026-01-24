@@ -1,84 +1,190 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode }}">
+<html class="dark" lang="{{ .Site.LanguageCode }}">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ .Title }} - {{ .Site.Title }}</title>
-    <meta name="description" content="{{ .Description }}">
+    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Summary | plainify }}{{ end }}" />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4db6ac",
+                        "deep-navy": "#060a14",
+                        "muted-teal": "#26a69a",
+                        "off-white": "#d1d5db",
+                        "terminal-bg": "#0a111a",
+                        "las-vegas-orange": "#d97706",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "mono": ["Space Mono", "monospace"]
+                    },
+                },
+            },
+        }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700&display=swap" rel="stylesheet" />
+
     {{ $style := resources.Get "css/style.css" | minify }}
-    <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
+
+    {{ $js := resources.Get "js/terminal.js" | minify }}
+    <script src="{{ $js.RelPermalink }}" defer></script>
 </head>
-<body>
-    <div class="terminal-container">
-        <header class="terminal-header">
-            <div class="terminal-controls">
-                <span class="control red"></span>
-                <span class="control yellow"></span>
-                <span class="control green"></span>
+<body class="bg-deep-navy selection:bg-muted-teal selection:text-deep-navy font-mono">
+    <div class="rain-container">
+        <div class="rain-streak r1"></div>
+        <div class="rain-streak r2"></div>
+        <div class="rain-streak r3"></div>
+        <div class="rain-streak r4"></div>
+        <div class="rain-streak r5"></div>
+        <div class="rain-streak r6"></div>
+        <div class="rain-streak r7"></div>
+        <div class="rain-streak r8"></div>
+        <div class="rain-streak r9"></div>
+        <div class="rain-streak r10"></div>
+    </div>
+    <div class="fog-container">
+        <div class="fog-cloud animate-fog" style="top: 10%; left: -20%;"></div>
+        <div class="fog-grey animate-fog-slow" style="top: 40%; right: -20%;"></div>
+        <div class="fog-cloud animate-fog" style="bottom: -10%; left: 10%; opacity: 0.03;"></div>
+    </div>
+    <div class="ambient-glow"></div>
+    <div class="scanlines"></div>
+
+    <div class="relative flex h-screen w-full flex-col overflow-hidden z-10">
+        <header class="w-full max-w-6xl mx-auto px-6 py-6 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <a href="/" class="size-10 bg-primary/10 flex items-center justify-center rounded-lg border border-primary/20 backdrop-blur-md shadow-[0_0_15px_rgba(77,182,172,0.12)]">
+                    <span class="material-symbols-outlined text-primary text-xl">terminal</span>
+                </a>
+                <div>
+                    <h2 class="text-off-white/90 text-lg font-medium tracking-widest teal-glow-text">{{ .Site.Title }}</h2>
+                    <p class="text-[9px] font-mono text-muted-teal/40 -mt-0.5 uppercase tracking-widest">Atmospheric Data Archive</p>
+                </div>
             </div>
-            <div class="terminal-title">
-                <span class="prompt">➜</span> {{ .Title }}
+
+            <nav class="hidden md:flex items-center gap-8 text-[10px] font-mono uppercase tracking-[0.3em] text-off-white/60">
+                {{ range .Site.Menus.main }}
+                <a href="{{ .URL }}" class="hover:text-primary transition-all">{{ .Name }}</a>
+                {{ end }}
+            </nav>
+
+            <div class="flex items-center gap-3">
+                {{ with .Params.external_url }}
+                <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="px-4 py-1.5 bg-primary/5 border border-primary/20 text-primary/70 text-[10px] font-mono uppercase tracking-widest rounded-full hover:bg-primary/10 hover:text-primary hover:border-primary/40 transition-all">
+                    External
+                </a>
+                {{ end }}
+                <a href="/index.xml" class="size-9 flex items-center justify-center text-off-white/40 hover:text-primary transition-colors border border-muted-teal/20 rounded-lg bg-muted-teal/5" aria-label="RSS">
+                    <span class="material-symbols-outlined text-xl">rss_feed</span>
+                </a>
             </div>
         </header>
 
-        <nav class="terminal-nav">
-            <a href="/">/</a>
-            <a href="/posts/">/posts/</a>
-            <a href="/tags/">/tags/</a>
-        </nav>
+        <main class="flex-1 w-full overflow-y-auto custom-scrollbar px-4 md:px-8 py-8">
+            <div class="w-full max-w-4xl mx-auto">
+                <div class="glass-panel rounded-3xl overflow-hidden p-6 md:p-12 relative">
+                    <div class="flex flex-wrap items-center gap-3 mb-8 font-mono text-[9px] tracking-[0.3em]">
+                        <a class="text-primary/40 hover:text-primary" href="/">ROOT</a>
+                        <span class="text-primary/20">/</span>
+                        <a class="text-primary/40 hover:text-primary" href="/posts/">POSTS</a>
+                        <span class="text-primary/20">/</span>
+                        <span class="text-primary/80">ENTRY</span>
+                    </div>
 
-        <main class="terminal-body">
-            <article class="post-content">
-                <div class="post-meta">
-                    <span class="meta-item">
-                        <span class="prompt">$</span> date: {{ .Date.Format "2006-01-02 15:04:05" }}
-                    </span>
-                    <span class="meta-item">
-                        <span class="prompt">$</span> source: {{ .Params.source | upper }}
-                    </span>
-                </div>
+                    <div class="mb-10 border-l-2 border-primary pl-6">
+                        <h1 class="text-off-white tracking-tight text-3xl md:text-5xl font-light leading-tight mb-4 font-display teal-glow-text">
+                            {{ .Title }}
+                        </h1>
+                        <div class="flex flex-wrap items-center gap-3 text-[10px] font-mono tracking-widest uppercase">
+                            {{- $kind := lower (.Params.entry_kind | default "") -}}
+                            {{- $isManual := or (eq $kind "manual") (and (eq $kind "") (not .Params.source)) -}}
+                            <span class="text-primary/80">SRC: {{ if .Params.source }}{{ .Params.source | upper }}{{ else if $isManual }}MANUAL{{ else }}SYSTEM{{ end }}</span>
+                            <span class="text-primary/20">•</span>
+                            <span class="text-muted-teal/40">TS: {{ .Date.Format "2006-01-02 15:04" }}</span>
+                            <span class="text-primary/20">•</span>
+                            <span class="{{ if $isManual }}text-off-white/50{{ else }}text-primary/60{{ end }}">MODE: {{ if $isManual }}MANUAL{{ else }}AUTO{{ end }}</span>
+                        </div>
+                    </div>
 
-                <div class="post-tags">
-                    {{ range .Params.tags }}
-                    <span class="tag">{{ . }}</span>
+                    <div class="post-content prose prose-invert max-w-none font-display text-base md:text-lg text-slate-300 leading-relaxed">
+                        {{ .Content }}
+                    </div>
+
+                    {{ with .Params.tags }}
+                    <div class="mt-12 pt-8 border-t border-muted-teal/10 flex flex-wrap items-center gap-2">
+                        {{ range . }}
+                        <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}/" class="px-2.5 py-1 rounded-full border border-muted-teal/15 bg-terminal-bg/40 text-muted-teal/60 text-[10px] font-mono tracking-widest uppercase hover:bg-muted-teal/10 hover:text-primary transition-colors">
+                            {{ . }}
+                        </a>
+                        {{ end }}
+                    </div>
                     {{ end }}
+
+                    {{ if and (eq .Type "posts") (.Site.Params.comments.enabled) (.Site.Params.comments.repo) }}
+                    <div class="mt-10 pt-8 border-t border-muted-teal/10">
+                        <div class="glass-panel rounded-2xl p-5 md:p-8 border border-muted-teal/10">
+                            <div class="flex items-center justify-between gap-4 mb-4">
+                                <div class="text-primary/70 text-[10px] font-mono tracking-[0.3em] uppercase">Comments</div>
+                                <div class="text-off-white/30 text-[9px] font-mono tracking-widest uppercase">GitHub Issues</div>
+                            </div>
+
+                            <script
+                                src="https://utteranc.es/client.js"
+                                repo="{{ .Site.Params.comments.repo }}"
+                                issue-term="{{ .Site.Params.comments.issue_term | default "pathname" }}"
+                                label="{{ .Site.Params.comments.label | default "comment" }}"
+                                theme="{{ .Site.Params.comments.theme | default "github-dark" }}"
+                                crossorigin="anonymous"
+                                async
+                            ></script>
+                        </div>
+                    </div>
+                    {{ end }}
+
+                    <div class="mt-10 pt-8 border-t border-muted-teal/10 flex flex-col md:flex-row justify-between items-stretch md:items-center gap-4">
+                        <div class="flex gap-3">
+                            {{ if .PrevInSection }}
+                            <a href="{{ .PrevInSection.RelPermalink }}" class="flex items-center gap-2 px-5 py-2 bg-muted-teal/5 border border-muted-teal/20 rounded-full hover:bg-muted-teal/10 transition-all text-[10px] font-mono uppercase tracking-[0.2em] text-off-white/60 hover:text-off-white">
+                                <span class="material-symbols-outlined text-base">arrow_back</span> Prev
+                            </a>
+                            {{ end }}
+                            {{ if .NextInSection }}
+                            <a href="{{ .NextInSection.RelPermalink }}" class="flex items-center gap-2 px-5 py-2 bg-muted-teal/5 border border-muted-teal/20 rounded-full hover:bg-muted-teal/10 transition-all text-[10px] font-mono uppercase tracking-[0.2em] text-off-white/60 hover:text-off-white">
+                                Next <span class="material-symbols-outlined text-base">arrow_forward</span>
+                            </a>
+                            {{ end }}
+                        </div>
+                        <a href="/posts/" class="px-5 py-2 bg-primary/5 border border-primary/20 rounded-full hover:bg-primary/10 transition-all text-[10px] font-mono uppercase tracking-[0.2em] text-primary/70 hover:text-primary text-center">
+                            Return to Archive
+                        </a>
+                    </div>
                 </div>
-
-                <hr class="divider">
-
-                {{ .Content }}
-            </article>
-
-            <nav class="post-navigation">
-                {{ if .PrevInSection }}
-                <a href="{{ .PrevInSection.RelPermalink }}" class="nav-link prev">
-                    <span class="prompt">←</span> 上一篇
-                </a>
-                {{ end }}
-
-                {{ if .NextInSection }}
-                <a href="{{ .NextInSection.RelPermalink }}" class="nav-link next">
-                    下一篇 <span class="prompt">→</span>
-                </a>
-                {{ end }}
-            </nav>
+            </div>
         </main>
 
-        <footer class="terminal-footer">
-            <p>AI Stack &copy; {{ now.Year }}</p>
-            <p>
-                <a href="{{ .Site.Params.github }}">GitHub</a> |
-                <a href="/index.xml">RSS</a>
-            </p>
+        <footer class="h-14 border-t border-muted-teal/10 bg-deep-navy/80 backdrop-blur-2xl flex items-center px-6 gap-6 z-20">
+            <div class="terminal-label text-primary font-mono text-xs font-bold tracking-tighter">CMD://</div>
+            <div class="flex-1">
+                <input class="terminal-input bg-transparent border-none focus:ring-0 text-primary font-mono text-xs w-full placeholder:text-muted-teal/30" placeholder="Awaiting instruction... (try: posts, tags, open 1, search keyword)" type="text" autocomplete="off" spellcheck="false" />
+            </div>
+            <div class="hidden md:flex gap-6 items-center border-l border-muted-teal/10 pl-6 h-full">
+                <span class="text-muted-teal/40 font-mono text-[9px] tracking-widest uppercase">Link: STABLE</span>
+                <div class="flex items-center gap-2 text-primary/60">
+                    <span class="material-symbols-outlined text-base">cloud_queue</span>
+                    <span class="text-[9px] font-bold tracking-widest uppercase">Live_Sync</span>
+                </div>
+            </div>
         </footer>
     </div>
-
-    <script>
-        // 代码块添加复制功能
-        const codeBlocks = document.querySelectorAll('pre code');
-        codeBlocks.forEach(block => {
-            block.setAttribute('contenteditable', 'true');
-        });
-    </script>
 </body>
 </html>

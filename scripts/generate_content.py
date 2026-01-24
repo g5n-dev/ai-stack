@@ -10,6 +10,7 @@ import os
 from pathlib import Path
 from datetime import datetime
 import logging
+import argparse
 
 # 添加项目根目录到路径
 project_root = Path(__file__).parent.parent
@@ -29,8 +30,8 @@ logger = logging.getLogger(__name__)
 class SuperEnhancedContentGenerator:
     """超级增强版内容生成器 - 极致质量模式"""
 
-    def __init__(self):
-        self.crawler = CrawlerOrchestrator()
+    def __init__(self, *, dedupe: bool = True, dedupe_scope: str = "global"):
+        self.crawler = CrawlerOrchestrator(dedupe=dedupe, dedupe_scope=dedupe_scope)
         self.processor = ProcessorOrchestrator()
         self.publisher = PublisherOrchestrator()
         self.posts_dir = project_root / 'blog' / 'content' / 'posts'
@@ -38,7 +39,7 @@ class SuperEnhancedContentGenerator:
         # 确保 posts 目录存在
         self.posts_dir.mkdir(parents=True, exist_ok=True)
 
-    def run(self):
+    def run(self, *, crawl_duration_hours: float = 0, crawl_interval_minutes: int = 30):
         """运行完整的超级增强内容生成流程"""
         try:
             logger.info("=" * 80)
@@ -48,7 +49,13 @@ class SuperEnhancedContentGenerator:
 
             # 1. 爬取内容
             logger.info("\n[1/4] 🕷️  Crawling content from sources...")
-            crawled_data = self.crawler.crawl_all()
+            if crawl_duration_hours and crawl_duration_hours > 0:
+                crawled_data = self.crawler.crawl_for_duration(
+                    duration_hours=crawl_duration_hours,
+                    interval_minutes=crawl_interval_minutes,
+                )
+            else:
+                crawled_data = self.crawler.crawl_all()
 
             total_items = sum(len(items) for items in crawled_data.values())
             logger.info(f"✓ Crawled {total_items} items from {len(crawled_data)} sources")
@@ -135,7 +142,7 @@ class SuperEnhancedContentGenerator:
             str: Markdown 内容
         """
         source = item.get('source', 'unknown')
-        title = item.get('catchy_title') or item.get('title', 'Untitled')
+        title = item.get('catchy_title') or item.get('title_translated') or item.get('title', 'Untitled')
         date = datetime.now().strftime('%Y-%m-%dT%H:%M:%S+08:00')
 
         # 构建标签
@@ -143,6 +150,12 @@ class SuperEnhancedContentGenerator:
         if isinstance(tags, str):
             tags = [tags]
         tags_str = ', '.join([f'"{tag}"' for tag in tags])
+
+        # 构建分类
+        categories = item.get('categories', [])
+        if isinstance(categories, str):
+            categories = [categories]
+        categories_str = ', '.join([f'"{cat}"' for cat in categories])
 
         # 获取 URL
         url = item.get('url', '')
@@ -155,7 +168,9 @@ class SuperEnhancedContentGenerator:
             f'title: "{title}"',
             f'date: {date}',
             'draft: false',
+            'entry_kind: "auto"',
             f'tags: [{tags_str}]',
+            f'categories: [{categories_str}]',
             f'source: {source}',
         ]
 
@@ -174,15 +189,80 @@ class SuperEnhancedContentGenerator:
             lines.extend(self._format_arxiv_paper_super_enhanced(item))
         elif source == 'juejin':
             lines.extend(self._format_juejin_article_super_enhanced(item))
+        elif source == 'blogs_podcasts':
+            lines.extend(self._format_blogs_podcasts_super_enhanced(item))
         else:
             lines.extend(self._format_generic_super_enhanced(item))
 
         return '\n'.join(lines)
 
+    def _append_references(self, lines: list, item: dict) -> None:
+        """追加引用信息（最小可用：原文/讨论/PDF/DeepWiki/RSS/音频）。"""
+        source = item.get("source", "")
+
+        refs: list[tuple[str, str]] = []
+
+        url = item.get("url") or item.get("repo_url") or item.get("external_url") or ""
+        if isinstance(url, str):
+            url = url.strip()
+
+        if source == "github_trending":
+            if url:
+                refs.append(("GitHub 仓库", url))
+            deepwiki_url = (item.get("deepwiki_url") or "").strip()
+            if deepwiki_url:
+                refs.append(("DeepWiki", deepwiki_url))
+        elif source == "hacker_news":
+            if url:
+                refs.append(("原文链接", url))
+            hn_id = item.get("hn_id")
+            if hn_id:
+                refs.append(("HN 讨论", f"https://news.ycombinator.com/item?id={hn_id}"))
+        elif source == "arxiv":
+            if url:
+                refs.append(("ArXiv", url))
+            pdf_url = (item.get("pdf_url") or "").strip()
+            if pdf_url:
+                refs.append(("PDF", pdf_url))
+        elif source == "blogs_podcasts":
+            if url:
+                refs.append(("文章/节目", url))
+            audio_url = (item.get("audio_url") or "").strip()
+            if audio_url:
+                refs.append(("音频", audio_url))
+            feed_url = (item.get("feed_url") or "").strip()
+            if feed_url:
+                refs.append(("RSS 源", feed_url))
+        elif source == "juejin":
+            if url:
+                refs.append(("掘金原文", url))
+        else:
+            if url:
+                refs.append(("原文链接", url))
+
+        if not refs:
+            return
+
+        lines.extend([
+            '',
+            '---',
+            '## 🔗 引用',
+            '',
+        ])
+
+        for label, link in refs:
+            lines.append(f'- **{label}**: [{link}]({link})')
+
+        lines.extend([
+            '',
+            '> 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。',
+        ])
+
     def _format_github_repo_super_enhanced(self, item: dict) -> list:
         """格式化 GitHub 仓库（超级增强版）"""
-        title = item.get('catchy_title') or item.get('title', '')
+        title = item.get('catchy_title') or item.get('title_translated') or item.get('title', '')
         original_title = item.get('title', '')
+        description = item.get("description_translated") or item.get("description", "")
 
         lines = [
             f'# 🚀 {title}',
@@ -193,7 +273,7 @@ class SuperEnhancedContentGenerator:
             '',
             '## 📋 基本信息',
             '',
-            f'- **描述**: {item.get("description", "")}',
+            f'- **描述**: {description}',
             f'- **语言**: {item.get("language", "Unknown")}',
             f'- **星标**: {item.get("stars", "0")} (+{item.get("today_stars", "0")})',
         ]
@@ -201,6 +281,18 @@ class SuperEnhancedContentGenerator:
         if item.get('url'):
             lines.extend([
                 f'- **链接**: [{item.get("url", "")}]({item.get("url", "")})',
+            ])
+
+        if item.get('deepwiki_url'):
+            lines.append(f'- **DeepWiki**: [{item.get("deepwiki_url", "")}]({item.get("deepwiki_url", "")})')
+
+        if item.get('deepwiki_content'):
+            lines.extend([
+                '',
+                '---',
+                '## 📚 DeepWiki 速览（节选）',
+                '',
+                item.get('deepwiki_content', ''),
             ])
 
         # 1. 引人入胜的引言
@@ -383,12 +475,14 @@ class SuperEnhancedContentGenerator:
                     f"  - 说明: {resource.get('description', '')}",
                 ])
 
+        self._append_references(lines, item)
+
         # 底部
         lines.extend([
             '',
             '---',
             '',
-            '*这篇文章由 AI 探索者自动生成，包含 15+ 次大模型调用，提供极致深度的内容分析。*',
+            '*这篇文章由 AI Stack 自动生成，包含多次大模型调用，提供深度的结构化分析。*',
             '',
             '**📚 更多精彩内容，敬请关注！**',
         ])
@@ -397,7 +491,7 @@ class SuperEnhancedContentGenerator:
 
     def _format_hacker_news_super_enhanced(self, item: dict) -> list:
         """格式化 Hacker News 故事（超级增强版）"""
-        title = item.get('catchy_title') or item.get('title', '')
+        title = item.get('catchy_title') or item.get('title_translated') or item.get('title', '')
 
         lines = [
             f'# 📰 {title}',
@@ -415,6 +509,10 @@ class SuperEnhancedContentGenerator:
             lines.extend([
                 f'- **链接**: [{item.get("url", "")}]({item.get("url", "")})',
             ])
+
+        if item.get("hn_id"):
+            hn_url = f'https://news.ycombinator.com/item?id={item.get("hn_id")}'
+            lines.append(f'- **HN 讨论**: [{hn_url}]({hn_url})')
 
         # 引人入胜的引言
         if item.get('engaging_intro'):
@@ -543,19 +641,139 @@ class SuperEnhancedContentGenerator:
                     f"- **{resource.get('title', '')}**: {resource.get('link', '')}",
                 ])
 
+        self._append_references(lines, item)
+
         # 底部
         lines.extend([
             '',
             '---',
             '',
-            '*本文由 AI 探索者生成，包含深度分析和丰富内容。*',
+            '*本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*',
+        ])
+
+        return lines
+
+    def _format_blogs_podcasts_super_enhanced(self, item: dict) -> list:
+        """格式化博客/播客条目（超级增强版）"""
+        title = item.get('catchy_title') or item.get('title_translated') or item.get('title', '')
+        description = item.get("description_translated") or item.get("description", "")
+
+        lines = [
+            f'# 🎙️ {title}',
+            '',
+            '---',
+            '',
+            '## 📋 基本信息',
+            '',
+            f'- **来源**: {item.get("feed_name", "")} ({item.get("feed_type", "")})',
+            f'- **发布时间**: {item.get("published_at") or item.get("published") or ""}',
+        ]
+
+        if item.get('url'):
+            lines.append(f'- **链接**: [{item.get("url", "")}]({item.get("url", "")})')
+
+        if item.get('audio_url'):
+            lines.append(f'- **音频**: [{item.get("audio_url", "")}]({item.get("audio_url", "")})')
+
+        if description:
+            lines.extend([
+                '',
+                '---',
+                '## 📄 摘要/简介',
+                '',
+                description,
+            ])
+
+        # 引人入胜的引言
+        if item.get('engaging_intro'):
+            lines.extend([
+                '',
+                '---',
+                '## ✨ 引人入胜的引言',
+                '',
+                item.get('engaging_intro', ''),
+            ])
+
+        # AI 总结
+        if item.get('summary'):
+            lines.extend([
+                '',
+                '---',
+                '## 📝 AI 总结',
+                '',
+                item.get('summary', ''),
+            ])
+
+        # 深度评价
+        if item.get('deep_comment'):
+            lines.extend([
+                '',
+                '---',
+                '## 🎯 深度评价',
+                '',
+                item.get('deep_comment', ''),
+            ])
+
+        # 全面分析
+        if item.get('comprehensive_analysis'):
+            lines.extend([
+                '',
+                '---',
+                '## 🔍 全面分析',
+                '',
+                item.get('comprehensive_analysis', ''),
+            ])
+
+        # 最佳实践
+        if item.get('best_practices'):
+            lines.extend([
+                '',
+                '---',
+                '## ✅ 最佳实践',
+                '',
+                item.get('best_practices', ''),
+            ])
+
+        # 学习要点
+        if item.get('learning_takeaways'):
+            lines.extend([
+                '',
+                '---',
+                '## 🎓 学习要点',
+                '',
+            ])
+            for takeaway in item.get('learning_takeaways', []):
+                lines.append(f'- {takeaway}')
+
+        # 相关资源
+        if item.get('related_resources'):
+            lines.extend([
+                '',
+                '---',
+                '## 🔗 推荐资源',
+                '',
+            ])
+            for resource in item.get('related_resources', []):
+                lines.extend([
+                    '',
+                    f"- **{resource.get('title', '')}**: {resource.get('link', '')}",
+                ])
+
+        self._append_references(lines, item)
+
+        # 底部
+        lines.extend([
+            '',
+            '---',
+            '',
+            '*本文由 AI Stack 自动生成，包含深度分析与方法论思考。*',
         ])
 
         return lines
 
     def _format_arxiv_paper_super_enhanced(self, item: dict) -> list:
         """格式化 ArXiv 论文（超级增强版）"""
-        title = item.get('catchy_title') or item.get('title', '')
+        title = item.get('catchy_title') or item.get('title_translated') or item.get('title', '')
 
         lines = [
             f'# 📚 {title}',
@@ -695,19 +913,22 @@ class SuperEnhancedContentGenerator:
                     f"- **{resource.get('title', '')}**: {resource.get('link', '')}",
                 ])
 
+        self._append_references(lines, item)
+
         # 底部
         lines.extend([
             '',
             '---',
             '',
-            '*本文由 AI 探索者生成，深度解读学术研究。*',
+            '*本文由 AI Stack 自动生成，深度解读学术研究。*',
         ])
 
         return lines
 
     def _format_juejin_article_super_enhanced(self, item: dict) -> list:
         """格式化掘金文章（超级增强版）"""
-        title = item.get('catchy_title') or item.get('title', '')
+        title = item.get('catchy_title') or item.get('title_translated') or item.get('title', '')
+        description = item.get("description_translated") or item.get("description", "")
 
         lines = [
             f'# 📝 {title}',
@@ -735,13 +956,13 @@ class SuperEnhancedContentGenerator:
             ])
 
         # 描述
-        if item.get('description'):
+        if description:
             lines.extend([
                 '',
                 '---',
                 '## 📄 描述',
                 '',
-                item.get('description', ''),
+                description,
             ])
 
         # AI 总结
@@ -791,19 +1012,21 @@ class SuperEnhancedContentGenerator:
                     faq.get('answer', 'A'),
                 ])
 
+        self._append_references(lines, item)
+
         # 底部
         lines.extend([
             '',
             '---',
             '',
-            '*本文由 AI 探索者生成，提供深度内容分析。*',
+            '*本文由 AI Stack 自动生成，提供深度内容分析。*',
         ])
 
         return lines
 
     def _format_generic_super_enhanced(self, item: dict) -> list:
         """格式化通用内容（超级增强版）"""
-        title = item.get('catchy_title') or item.get('title', '')
+        title = item.get('catchy_title') or item.get('title_translated') or item.get('title', '')
 
         lines = [
             f'# 📖 {title}',
@@ -874,12 +1097,14 @@ class SuperEnhancedContentGenerator:
                     f"- **{resource.get('title', '')}**: {resource.get('link', '')}",
                 ])
 
+        self._append_references(lines, item)
+
         # 底部
         lines.extend([
             '',
             '---',
             '',
-            '*本文由 AI 探索者生成。*',
+            '*本文由 AI Stack 自动生成。*',
         ])
 
         return lines
@@ -917,8 +1142,24 @@ class SuperEnhancedContentGenerator:
 
 def main():
     """主函数"""
-    generator = SuperEnhancedContentGenerator()
-    success = generator.run()
+    parser = argparse.ArgumentParser(description="AI Stack content generator")
+    parser.add_argument("--crawl-duration-hours", type=float, default=0, help="长时间抓取（小时），0 表示单次抓取")
+    parser.add_argument("--crawl-interval-minutes", type=int, default=30, help="长时间抓取时的间隔（分钟）")
+    parser.add_argument("--no-dedupe", action="store_true", help="关闭去重")
+    parser.add_argument(
+        "--dedupe-scope",
+        choices=["global", "per_source"],
+        default="global",
+        help="去重范围：global=跨数据源去重，per_source=仅同数据源去重",
+    )
+
+    args = parser.parse_args()
+
+    generator = SuperEnhancedContentGenerator(dedupe=not args.no_dedupe, dedupe_scope=args.dedupe_scope)
+    success = generator.run(
+        crawl_duration_hours=args.crawl_duration_hours,
+        crawl_interval_minutes=args.crawl_interval_minutes,
+    )
 
     return 0 if success else 1
 

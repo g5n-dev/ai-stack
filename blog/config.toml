@@ -2,14 +2,25 @@
 
 baseURL = "https://ai-stack.site/"
 languageCode = "zh-CN"
-title = "AI 探索者"
+title = "AI Stack"
 theme = "terminal-theme"
 
 [params]
   # 站点信息
   description = "探索 AI 技术前沿，分享深度思考与实践"
-  author = "AI Explorer"
-  github = "https://github.com/g5n-dev/ai-stack"
+  author = "AI Stack"
+  github = "https://github.com/g5n-dev"
+
+  # 个人头像（用于 /about/）
+  # 建议把你的头像图放到 blog/static/img/profile.png（或 profile.jpg），然后改成对应路径。
+  # 如果你要用“全息/故障风”头像（你发的那张蓝色线框），直接保存为 blog/static/img/profile-holo.png，
+  # 然后把 profile_image 改成 "/img/profile-holo.png"。
+  profile_image = "/img/profile-placeholder.svg"
+  profile_image_alt = "AI Stack profile"
+  # 头像裁切/适配：cover=铺满（会裁边），contain=完整显示（可能留黑边）
+  profile_image_fit = "cover"
+  # 头像在框里的位置（CSS background-position），默认 50% 35% 更适合人像
+  profile_image_position = "50% 35%"
 
   # 终端风格设置（可选）
   terminal = false
@@ -24,6 +35,14 @@ theme = "terminal-theme"
   # 分页
   paginate = 10
   paginatePath = "page"
+
+[params.comments]
+  enabled = true
+  provider = "utterances"   # GitHub Issues
+  repo = "g5n-dev/ai-stack"
+  issue_term = "pathname"
+  theme = "github-dark"
+  label = "comment"
 
 [markup]
   [markup.highlight]

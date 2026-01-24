@@ -32,7 +32,8 @@ class HackerNewsCrawler:
             response = requests.get(top_stories_url, timeout=10)
             response.raise_for_status()
 
-            story_ids = response.json()[:self.limit]
+            # 预取更多 ID，避免过滤（无 URL / 非 story）导致数量不足
+            story_ids = response.json()[: max(self.limit * 3, self.limit)]
 
             # 获取每个故事的详细信息
             stories = []
@@ -40,6 +41,8 @@ class HackerNewsCrawler:
                 story = self._fetch_story(story_id)
                 if story:
                     stories.append(story)
+                if len(stories) >= self.limit:
+                    break
 
             return stories
 

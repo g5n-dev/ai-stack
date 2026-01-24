@@ -1,114 +1,269 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode }}">
+<html class="dark" lang="{{ .Site.LanguageCode }}">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ .Site.Title }}</title>
+    <meta name="description" content="{{ .Site.Params.description }}" />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4db6ac",
+                        "deep-navy": "#060a14",
+                        "muted-teal": "#26a69a",
+                        "off-white": "#d1d5db",
+                        "terminal-bg": "#0a111a",
+                        "las-vegas-orange": "#d97706",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "mono": ["Space Mono", "monospace"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700&display=swap" rel="stylesheet" />
+
     {{ $style := resources.Get "css/style.css" | minify }}
-    <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
+
+    {{ $js := resources.Get "js/terminal.js" | minify }}
+    <script src="{{ $js.RelPermalink }}" defer></script>
 </head>
-<body>
-    <div class="terminal-container">
-        <header class="terminal-header">
-            <div class="terminal-controls">
-                <span class="control red"></span>
-                <span class="control yellow"></span>
-                <span class="control green"></span>
+<body class="bg-deep-navy selection:bg-muted-teal selection:text-deep-navy font-mono">
+    {{ $posts := where .Site.RegularPages "Type" "posts" }}
+    {{ $posts = sort $posts "Date" "desc" }}
+
+    <div class="rain-container">
+        <div class="rain-streak r1"></div>
+        <div class="rain-streak r2"></div>
+        <div class="rain-streak r3"></div>
+        <div class="rain-streak r4"></div>
+        <div class="rain-streak r5"></div>
+        <div class="rain-streak r6"></div>
+        <div class="rain-streak r7"></div>
+        <div class="rain-streak r8"></div>
+        <div class="rain-streak r9"></div>
+        <div class="rain-streak r10"></div>
+    </div>
+    <div class="fog-container">
+        <div class="fog-cloud animate-fog" style="top: 10%; left: -20%;"></div>
+        <div class="fog-grey animate-fog-slow" style="top: 40%; right: -20%;"></div>
+        <div class="fog-cloud animate-fog" style="bottom: -10%; left: 10%; opacity: 0.03;"></div>
+    </div>
+    <div class="ambient-glow"></div>
+    <div class="scanlines"></div>
+
+    <div class="relative flex h-screen w-full flex-col overflow-hidden z-10">
+        <header class="flex items-center justify-between border-b border-muted-teal/10 px-6 md:px-10 py-4 bg-deep-navy/60 backdrop-blur-xl z-20">
+            <div class="flex items-center gap-4">
+                <div class="size-6 text-primary teal-glow-text">
+                    <span class="material-symbols-outlined text-3xl">terminal</span>
+                </div>
+                <div class="flex flex-col">
+                    <h2 class="text-off-white text-base font-bold leading-tight tracking-wider uppercase">{{ .Site.Title }}</h2>
+                    <p class="text-[9px] text-muted-teal font-mono tracking-[0.2em] uppercase opacity-70">{{ .Site.Params.description }}</p>
+                </div>
             </div>
-            <div class="terminal-title">
-                <span class="prompt">➜</span> {{ .Site.Title }}
+
+            <div class="flex flex-1 justify-end gap-6 md:gap-10 items-center">
+                <div class="hidden md:flex items-center gap-8 font-mono text-[11px] text-off-white/60">
+                    <div class="flex flex-col">
+                        <span class="text-muted-teal/50 text-[9px] uppercase tracking-tighter">Posts</span>
+                        <span class="font-medium">{{ len $posts }}</span>
+                    </div>
+                    <div class="flex flex-col border-l border-muted-teal/10 pl-8">
+                        <span class="text-muted-teal/50 text-[9px] uppercase tracking-tighter">Latency</span>
+                        <span class="font-medium">12ms</span>
+                    </div>
+                    <div class="flex flex-col border-l border-muted-teal/10 pl-8">
+                        <span class="text-muted-teal/50 text-[9px] uppercase tracking-tighter">Last Sync</span>
+                        <span class="font-medium text-off-white">
+                            {{ with (first 1 $posts) }}{{ (index . 0).Date.Format "2006-01-02 15:04" }}{{ else }}N/A{{ end }}
+                        </span>
+                    </div>
+                </div>
+
+                <nav class="hidden lg:flex items-center gap-6 font-mono text-[10px] tracking-[0.3em] uppercase text-off-white/60">
+                    {{ range .Site.Menus.main }}
+                    <a href="{{ .URL }}" class="hover:text-off-white transition-colors">
+                        {{ .Name }}
+                    </a>
+                    {{ end }}
+                </nav>
+
+                <div class="flex gap-3 ml-2 md:ml-4">
+                    <a href="{{ .Site.Params.github }}" class="hidden sm:flex items-center px-3 py-1.5 border border-muted-teal/30 rounded text-[10px] text-primary font-bold tracking-widest bg-muted-teal/5 hover:bg-muted-teal/10 transition-colors">
+                        SECURE_LINK
+                    </a>
+                    <a href="/index.xml" class="bg-muted-teal/10 hover:bg-muted-teal/20 text-off-white p-2 rounded border border-muted-teal/20 transition-all" aria-label="RSS">
+                        <span class="material-symbols-outlined text-sm block">rss_feed</span>
+                    </a>
+                </div>
             </div>
         </header>
 
-        <main class="terminal-body">
-            <div class="welcome-message">
-                <div class="typing-effect">
-                    <p>欢迎使用 AI Stack 终端博客</p>
-                    <p>正在加载每日精选...</p>
+        <main class="flex flex-1 overflow-hidden">
+            <aside class="hidden md:flex w-72 border-r border-muted-teal/5 bg-deep-navy/30 flex-col p-8 overflow-y-auto custom-scrollbar backdrop-blur-lg">
+                <div class="flex flex-col gap-10">
+                    <div class="flex flex-col border-l border-primary/40 pl-4">
+                        <h1 class="text-off-white text-sm font-bold tracking-[0.25em] uppercase">Log Feed</h1>
+                        <p class="text-muted-teal/50 text-[10px] mt-1">Archive_v2049</p>
+                    </div>
+
+                    <nav class="flex flex-col gap-2">
+                        <a href="/posts/" class="flex items-center gap-3 px-4 py-3 rounded bg-muted-teal/10 border border-muted-teal/20 text-primary">
+                            <span class="material-symbols-outlined text-lg">folder_open</span>
+                            <p class="text-xs font-bold tracking-widest uppercase">Posts</p>
+                        </a>
+                        <a href="/tags/" class="flex items-center gap-3 px-4 py-3 hover:bg-muted-teal/5 rounded transition-colors group">
+                            <span class="material-symbols-outlined text-off-white/40 group-hover:text-primary text-lg transition-colors">sell</span>
+                            <p class="text-off-white/60 group-hover:text-off-white text-xs font-medium tracking-wide">Tags</p>
+                        </a>
+                        <a href="/about/" class="flex items-center gap-3 px-4 py-3 hover:bg-muted-teal/5 rounded transition-colors group">
+                            <span class="material-symbols-outlined text-off-white/40 group-hover:text-primary text-lg transition-colors">account_circle</span>
+                            <p class="text-off-white/60 group-hover:text-off-white text-xs font-medium tracking-wide">About</p>
+                        </a>
+                    </nav>
+
+                    <div class="mt-4">
+                        <h3 class="text-muted-teal/40 text-[9px] font-bold tracking-[0.3em] mb-6 uppercase">System Events</h3>
+                        <div class="flex flex-col gap-0 border-l border-muted-teal/10 ml-1">
+                            <div class="relative pl-6 pb-8">
+                                <div class="absolute -left-[5px] top-0 size-2 rounded-full bg-primary/60 shadow-[0_0_10px_rgba(77,182,172,0.5)]"></div>
+                                <p class="text-off-white/80 text-[11px] leading-relaxed">Neural archive accessed by UID: {{ .Site.Params.author }}</p>
+                                <p class="text-muted-teal/40 text-[9px] mt-1.5 font-mono">{{ now.Format "15:04:05" }}</p>
+                            </div>
+                            <div class="relative pl-6 pb-2">
+                                <div class="absolute -left-[5px] top-0 size-2 rounded-full bg-off-white/10 border border-muted-teal/20"></div>
+                                <p class="text-off-white/50 text-[11px] leading-relaxed">Baseline shift: dedupe + DeepWiki enrichment online</p>
+                                <p class="text-muted-teal/40 text-[9px] mt-1.5 font-mono">{{ now.AddDate 0 0 -1 | time.Format "15:04:05" }}</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </aside>
 
-            <section class="latest-posts">
-                <h2><span class="prompt">$</span> 最新文章</h2>
+            <section class="flex-1 flex flex-col overflow-y-auto custom-scrollbar px-6 md:px-12 py-8 md:py-10 relative">
+                <div class="max-w-6xl w-full mx-auto relative z-10">
+                    <div class="flex items-end justify-between border-b border-muted-teal/10 pb-6 mb-10">
+                        <div class="flex flex-col">
+                            <span class="text-primary/60 text-[10px] font-bold tracking-[0.4em] uppercase mb-1">Index Retrieval</span>
+                            <h3 class="text-off-white text-3xl font-light tracking-tight font-display">/ROOT/ARCHIVE/<span class="text-primary/40">2049</span>/</h3>
+                        </div>
+                        <div class="text-muted-teal/40 text-[10px] font-mono tracking-widest uppercase">
+                            Vault Capacity: 84% utilized
+                        </div>
+                    </div>
 
-                <ul class="post-list">
-                    {{ $pages := where .Site.RegularPages "Type" "posts" }}
-                    {{ range first 5 $pages }}
-                    <li class="post-item">
-                        <span class="post-date">{{ .Date.Format "2006-01-02" }}</span>
-                        <a href="{{ .RelPermalink }}" class="post-link">{{ .Title }}</a>
-                        <span class="post-source">[{{ .Params.source | upper }}]</span>
-                    </li>
-                    {{ end }}
-                </ul>
-            </section>
+                    <div class="glass-panel rounded-xl overflow-hidden mb-12">
+                        <table class="w-full table-fixed text-left border-collapse">
+                            <thead>
+                                <tr class="bg-muted-teal/5 border-b border-muted-teal/10">
+                                    <th class="w-28 px-6 md:px-8 py-5 text-muted-teal/60 text-[10px] font-bold tracking-[0.2em] uppercase">Attributes</th>
+                                    <th class="w-24 px-6 md:px-8 py-5 text-muted-teal/60 text-[10px] font-bold tracking-[0.2em] uppercase text-right">Size</th>
+                                    <th class="px-6 md:px-8 py-5 text-off-white text-[10px] font-bold tracking-[0.2em] uppercase">Entry Name</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-muted-teal/5">
+                                {{ range first 20 $posts }}
+                                <tr class="hover:bg-muted-teal/5 transition-all group">
+                                    <td class="w-28 px-6 md:px-8 py-6">
+                                        {{- $kind := lower (.Params.entry_kind | default "") -}}
+                                        {{- $isManual := or (eq $kind "manual") (and (eq $kind "") (not .Params.source)) -}}
+                                        <div class="flex flex-col gap-1 leading-tight">
+                                            <span class="text-[10px] {{ if $isManual }}text-off-white/50 group-hover:text-off-white{{ else }}text-primary/60 group-hover:text-primary{{ end }} transition-colors">
+                                                {{ if $isManual }}[MANUAL]{{ else }}[AUTO]{{ end }}
+                                            </span>
+                                            <span class="text-[10px] text-off-white/35 group-hover:text-off-white/55 transition-colors">
+                                                {{ with .Params.source }}{{ printf "[%s]" (upper .) }}{{ else }}[NOTE]{{ end }}
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td class="w-24 px-6 md:px-8 py-6 text-muted-teal/40 text-xs text-right font-mono">
+                                        {{ printf "%dmin" .ReadingTime }}
+                                    </td>
+                                    <td class="px-6 md:px-8 py-6">
+                                        <a href="{{ .RelPermalink }}" data-entry-link="{{ .RelPermalink }}" data-entry-title="{{ .Title }}" class="flex items-center gap-4 min-w-0">
+                                            <span class="material-symbols-outlined text-primary/40 group-hover:text-primary transition-all">
+                                                {{- $s := .Params.source -}}
+                                                {{- if eq $s "github_trending" -}}hub
+                                                {{- else if eq $s "hacker_news" -}}newspaper
+                                                {{- else if eq $s "arxiv" -}}school
+                                                {{- else if eq $s "blogs_podcasts" -}}mic
+                                                {{- else -}}sticky_note_2
+                                                {{- end -}}
+                                            </span>
+                                            <span class="min-w-0 flex-1 text-off-white text-sm tracking-wide group-hover:translate-x-1 transition-transform truncate" title="{{ .Title }}">{{ .Title }}</span>
+                                        </a>
+                                        <div class="mt-2 flex flex-wrap items-center gap-2 text-[10px] text-off-white/40">
+                                            <span class="font-mono text-muted-teal/40">{{ .Date.Format "2006-01-02" }}</span>
+                                            {{ range first 3 (.Params.tags | default (slice)) }}
+                                            <span class="px-2 py-0.5 rounded border border-muted-teal/15 bg-terminal-bg/40 text-muted-teal/60">{{ . }}</span>
+                                            {{ end }}
+                                        </div>
+                                    </td>
+                                </tr>
+                                {{ end }}
+                            </tbody>
+                        </table>
+                    </div>
 
-            <section class="quick-stats">
-                <h2><span class="prompt">$</span> 站点统计</h2>
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <div class="stat-label">文章总数</div>
-                        <div class="stat-value">{{ len (where .Site.RegularPages "Type" "posts") }}</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-label">标签数量</div>
-                        <div class="stat-value">{{ len .Site.Taxonomies.tags }}</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-label">最后更新</div>
-                        <div class="stat-value">{{ now.Format "2006-01-02" }}</div>
-                    </div>
-                </div>
-            </section>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="glass-panel p-8 rounded-xl relative overflow-hidden group border-l-2 border-l-primary/30">
+                            <div class="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 transition-opacity">
+                                <span class="material-symbols-outlined text-7xl text-primary">grain</span>
+                            </div>
+                            <h4 class="text-primary text-[10px] font-bold tracking-[0.3em] mb-4 uppercase">Archive Integrity</h4>
+                            <p class="text-off-white/60 text-sm leading-relaxed mb-6 font-light">Dedupe, DeepWiki enrichment, and multi-source crawling modules are operating within nominal parameters.</p>
+                            <div class="w-full bg-deep-navy/60 h-1.5 rounded-full overflow-hidden border border-muted-teal/10">
+                                <div class="bg-primary/50 h-full w-[72%] shadow-[0_0_10px_rgba(77,182,172,0.3)]"></div>
+                            </div>
+                            <div class="flex justify-between mt-3 font-mono text-[9px] text-muted-teal/60">
+                                <span>RECOVERY: 72%</span>
+                                <span>STATUS: NOMINAL</span>
+                            </div>
+                        </div>
 
-            <section class="commands">
-                <h2><span class="prompt">$</span> 常用命令</h2>
-                <div class="command-list">
-                    <div class="command-item">
-                        <code>ls posts/</code>
-                        <span>查看所有文章</span>
-                    </div>
-                    <div class="command-item">
-                        <code>cat about/</code>
-                        <span>了解项目</span>
-                    </div>
-                    <div class="command-item">
-                        <code>grep "AI" posts/</code>
-                        <span>搜索 AI 相关文章</span>
+                        <div class="glass-panel p-8 rounded-xl relative overflow-hidden group border-l-2 border-l-las-vegas-orange/30">
+                            <div class="absolute top-0 right-0 p-6 opacity-5">
+                                <span class="material-symbols-outlined text-7xl text-off-white">lock</span>
+                            </div>
+                            <h4 class="text-las-vegas-orange text-[10px] font-bold tracking-[0.3em] mb-4 uppercase">Protocol</h4>
+                            <p class="text-off-white/60 text-sm leading-relaxed mb-6 font-light italic">“Interlinked. Cells. Interlinked.” — Philosophical rigor mode enabled for generated essays.</p>
+                            <div class="flex items-center gap-3">
+                                <div class="size-2 rounded-full bg-las-vegas-orange/40 shadow-[0_0_8px_rgba(217,119,6,0.5)]"></div>
+                                <span class="text-las-vegas-orange/70 font-mono text-[10px] tracking-widest uppercase">Awaiting Baseline Test</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
         </main>
 
-        <footer class="terminal-footer">
-            <p>AI Stack &copy; {{ now.Year }} | Powered by Hugo + Anthropic API</p>
-            <p>
-                <a href="{{ .Site.Params.github }}">GitHub</a> |
-                <a href="/index.xml">RSS</a>
-            </p>
+        <footer class="h-14 border-t border-muted-teal/10 bg-deep-navy/80 backdrop-blur-2xl flex items-center px-6 md:px-10 gap-6 z-20">
+            <div class="terminal-label text-primary font-mono text-xs font-bold tracking-tighter">CMD://</div>
+            <div class="flex-1">
+                <input class="terminal-input bg-transparent border-none focus:ring-0 text-primary font-mono text-xs w-full placeholder:text-muted-teal/30" placeholder="Awaiting instruction... (try: help, ls, open 1, search llm)" type="text" autocomplete="off" spellcheck="false" />
+            </div>
+            <div class="hidden md:flex gap-6 items-center border-l border-muted-teal/10 pl-6 h-full">
+                <span class="text-muted-teal/40 font-mono text-[9px] tracking-widest uppercase">Encryption: AES-256</span>
+                <div class="flex items-center gap-2 text-primary/60">
+                    <span class="material-symbols-outlined text-base">cloud_queue</span>
+                    <span class="text-[9px] font-bold tracking-widest uppercase">Live_Sync</span>
+                </div>
+            </div>
         </footer>
     </div>
-
-    <script>
-        // 打字机效果
-        const typingElements = document.querySelectorAll('.typing-effect p');
-        typingElements.forEach((element, index) => {
-            element.style.opacity = '0';
-            element.style.animation = `fadeIn 0.5s ease ${index * 0.3}s forwards`;
-        });
-
-        // 光标闪烁
-        const cursor = document.createElement('span');
-        cursor.className = 'cursor';
-        cursor.innerHTML = '█';
-        cursor.style.animation = 'blink 1s infinite';
-
-        // 添加闪烁效果到 prompt
-        const prompts = document.querySelectorAll('.prompt');
-        prompts.forEach(prompt => {
-            const cursorClone = cursor.cloneNode(true);
-            prompt.parentElement.appendChild(cursorClone);
-        });
-    </script>
 </body>
 </html>

@@ -7,6 +7,7 @@ from .anthropic_client import AnthropicClient
 from .summarizer import ContentSummarizer
 from .translator import ContentTranslator
 from .generator import ContentGenerator
+from .tagger import ContentTagger
 from .main import ProcessorOrchestrator
 
 __all__ = [
@@ -14,5 +15,6 @@ __all__ = [
     'ContentSummarizer',
     'ContentTranslator',
     'ContentGenerator',
+    'ContentTagger',
     'ProcessorOrchestrator'
 ]

@@ -60,7 +60,13 @@ class AnthropicClient:
         else:
             return anthropic.Anthropic(api_key=api_key)
 
-    def create_message(self, prompt: str, max_tokens: Optional[int] = None) -> str:
+    def create_message(
+        self,
+        prompt: str,
+        max_tokens: Optional[int] = None,
+        *,
+        temperature: Optional[float] = None,
+    ) -> str:
         """
         创建消息并获取响应
 
@@ -74,7 +80,7 @@ class AnthropicClient:
         try:
             max_tokens = max_tokens or self.config.get('max_tokens', 4096)
             model = self.config.get('model', 'claude-3-5-sonnet-20241022')
-            temperature = self.config.get('temperature', 0.7)
+            temperature = temperature if temperature is not None else self.config.get('temperature', 0.7)
 
             logger.info(f"Calling Anthropic API with model: {model}, max_tokens: {max_tokens}")
 

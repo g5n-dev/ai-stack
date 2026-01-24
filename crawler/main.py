@@ -5,6 +5,7 @@ Crawler orchestrator
 
 import yaml
 import logging
+import time
 from typing import List, Dict
 from pathlib import Path
 
@@ -12,6 +13,8 @@ from .github_trending import GitHubTrendingCrawler
 from .hacker_news import HackerNewsCrawler
 from .arxiv_papers import ArxivPapersCrawler
 from .juejin_rss import JuejinRSSCrawler
+from .blogs_podcasts import BlogsPodcastsCrawler
+from .dedupe import canonicalize_url
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -20,9 +23,11 @@ logger = logging.getLogger(__name__)
 class CrawlerOrchestrator:
     """爬虫调度器"""
 
-    def __init__(self, config_path='config/sources.yaml'):
+    def __init__(self, config_path='config/sources.yaml', dedupe: bool = True, dedupe_scope: str = "global"):
         self.config_path = Path(config_path)
         self.config = self._load_config()
+        self.dedupe = dedupe
+        self.dedupe_scope = dedupe_scope  # global | per_source
         self.crawlers = self._init_crawlers()
 
     def _load_config(self) -> Dict:
@@ -72,12 +77,72 @@ class CrawlerOrchestrator:
         if sources_config.get('juejin', {}).get('enabled', False):
             config = sources_config['juejin']
             crawlers['juejin'] = JuejinRSSCrawler(
+                rss_url=config.get('rss_url'),
                 tags=config.get('tags', []),
                 limit=config.get('limit', 5)
             )
             logger.info("Initialized Juejin RSS crawler")
 
+        # Blogs & Podcasts (RSS/Atom)
+        if sources_config.get('blogs_podcasts', {}).get('enabled', False):
+            config = sources_config['blogs_podcasts']
+            crawlers['blogs_podcasts'] = BlogsPodcastsCrawler(
+                feeds=config.get('feeds'),
+                limit=config.get('limit', 10),
+                timeout=config.get('timeout', 30),
+            )
+            logger.info("Initialized Blogs/Podcasts crawler")
+
         return crawlers
+
+    def _dedupe_results(self, results: Dict[str, List[Dict]]) -> Dict[str, List[Dict]]:
+        """对爬取结果去重（默认跨数据源去重）。"""
+        if not self.dedupe:
+            return results
+
+        deduped: Dict[str, List[Dict]] = {}
+
+        if self.dedupe_scope == "per_source":
+            for source, items in results.items():
+                seen: set[str] = set()
+                unique: List[Dict] = []
+                removed = 0
+                for item in items:
+                    url = canonicalize_url(item.get("url", "") or "")
+                    if url and url in seen:
+                        removed += 1
+                        continue
+                    if url:
+                        seen.add(url)
+                        item["url"] = url
+                    unique.append(item)
+                if removed:
+                    logger.info(f"Dedupe(per_source) removed {removed} items from {source}")
+                deduped[source] = unique
+            return deduped
+
+        # global dedupe
+        seen_global: set[str] = set()
+        removed_total = 0
+        for source, items in results.items():
+            unique: List[Dict] = []
+            removed = 0
+            for item in items:
+                url = canonicalize_url(item.get("url", "") or "")
+                if url and url in seen_global:
+                    removed += 1
+                    continue
+                if url:
+                    seen_global.add(url)
+                    item["url"] = url
+                unique.append(item)
+            if removed:
+                logger.info(f"Dedupe(global) removed {removed} items from {source}")
+            removed_total += removed
+            deduped[source] = unique
+        if removed_total:
+            logger.info(f"Dedupe(global) removed {removed_total} duplicates across sources")
+        return deduped
 
     def crawl_all(self) -> Dict[str, List[Dict]]:
         """
@@ -98,7 +163,86 @@ class CrawlerOrchestrator:
                 logger.error(f"{name} crawler failed: {e}")
                 results[name] = []
 
-        return results
+        return self._dedupe_results(results)
+
+    def crawl_for_duration(self, duration_hours: float, interval_minutes: int = 30) -> Dict[str, List[Dict]]:
+        """
+        在指定时长内反复抓取（适合长时间运行的去重聚合）。
+        默认最终仍按各爬虫的 limit 截断，以避免输出无限膨胀。
+        """
+        if duration_hours <= 0:
+            return self.crawl_all()
+
+        end_ts = time.time() + duration_hours * 3600
+        logger.info(f"Starting long crawl: {duration_hours}h, interval {interval_minutes}m")
+
+        aggregated: Dict[str, Dict[str, Dict]] = {name: {} for name in self.crawlers.keys()}
+        seen_global: set[str] = set()
+
+        round_idx = 0
+        while True:
+            now = time.time()
+            if now >= end_ts:
+                break
+
+            round_idx += 1
+            logger.info(f"[Long crawl] Round {round_idx} ...")
+
+            batch = {}
+            for name, crawler in self.crawlers.items():
+                try:
+                    batch[name] = crawler.fetch()
+                except Exception as e:
+                    logger.error(f"{name} crawler failed: {e}")
+                    batch[name] = []
+
+            # incremental dedupe across the whole run
+            for source, items in batch.items():
+                for item in items:
+                    url = canonicalize_url(item.get("url", "") or "")
+                    if url:
+                        item["url"] = url
+                    key = url or f"{source}:{item.get('title','')}".strip()
+                    if self.dedupe and self.dedupe_scope == "global":
+                        if url and url in seen_global:
+                            continue
+                        if url:
+                            seen_global.add(url)
+                    elif self.dedupe and self.dedupe_scope == "per_source":
+                        pass  # handled by per-source dict below
+
+                    if key in aggregated[source]:
+                        continue
+                    aggregated[source][key] = item
+
+            sleep_seconds = max(0, int(end_ts - time.time()))
+            if sleep_seconds <= 0:
+                break
+            time.sleep(min(interval_minutes * 60, sleep_seconds))
+
+        # finalize: convert to list and truncate per crawler.limit
+        finalized: Dict[str, List[Dict]] = {}
+        for source, items_map in aggregated.items():
+            items_list = list(items_map.values())
+
+            # prefer newest first when available
+            def _sort_key(it: Dict) -> str:
+                return (
+                    it.get("published_at")
+                    or it.get("published")
+                    or str(it.get("time") or "")
+                    or it.get("crawled_at")
+                    or ""
+                )
+
+            items_list.sort(key=_sort_key, reverse=True)
+
+            limit = getattr(self.crawlers.get(source), "limit", None)
+            if isinstance(limit, int) and limit > 0:
+                items_list = items_list[:limit]
+            finalized[source] = items_list
+
+        return self._dedupe_results(finalized)
 
     def crawl_single(self, source_name: str) -> List[Dict]:
         """

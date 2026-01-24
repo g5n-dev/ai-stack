@@ -12,6 +12,8 @@ from .anthropic_client import AnthropicClient
 from .summarizer import ContentSummarizer
 from .translator import ContentTranslator
 from .generator import SuperEnhancedContentGenerator
+from .tagger import ContentTagger
+from .enricher import enrich_github_repo
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -44,6 +46,12 @@ class ProcessorOrchestrator:
             config=generation_config
         )
 
+        tagging_config = self.config.get('tagging', {})
+        self.tagger = ContentTagger(
+            self.client,
+            config=tagging_config
+        )
+
     def _load_config(self) -> Dict:
         """加载配置文件"""
         try:
@@ -68,6 +76,10 @@ class ProcessorOrchestrator:
 
             logger.info(f"Processing content from {source}: {content.get('title', 'N/A')}")
 
+            # 内容增强（如 DeepWiki）
+            if source == 'github_trending':
+                content = enrich_github_repo(content)
+
             # 总结
             if source == 'github_trending':
                 content = self.summarizer.summarize_repository(content)
@@ -82,6 +94,9 @@ class ProcessorOrchestrator:
 
             # 生成
             content = self.generator.process_content(content)
+
+            # 打标归类（tags + categories）
+            content = self.tagger.tag(content)
 
             logger.info(f"Successfully processed content from {source}")
             return content

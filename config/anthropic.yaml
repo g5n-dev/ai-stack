@@ -34,3 +34,10 @@ anthropic:
     generate_performance_tips: true    # 生成性能优化建议
     generate_learning_path: true      # 生成学习路径
     generate_challenges: true         # 生成挑战和思考题
+
+  # Tagging settings - 为文章自动打标归类（tags + categories）
+  tagging:
+    enabled: true
+    max_tags: 8
+    max_categories: 2
+    temperature: 0.2

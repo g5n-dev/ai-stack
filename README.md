@@ -17,7 +17,7 @@
 
 ## 功能特性
 
-- 🔍 **多源爬取**：支持 GitHub Trending、Hacker News、ArXiv AI 论文、掘金等多个数据源
+- 🔍 **多源爬取**：支持 GitHub Trending、Hacker News、ArXiv AI 论文、掘金、博客/播客 RSS 等多个数据源
 - 🤖 **AI 处理**：使用 Anthropic API 自动总结、翻译和生成内容
 - 💻 **终端风格**：独特的终端界面设计，黑底绿字，等宽字体
 - 🔄 **自动化**：GitHub Actions 定时任务，每日自动更新
@@ -119,6 +119,8 @@ ai-stack/
 │   ├── hacker_news.py         # Hacker News 爬虫
 │   ├── arxiv_papers.py        # ArXiv 论文爬虫
 │   ├── juejin_rss.py          # 掘金 RSS 爬虫
+│   ├── blogs_podcasts.py      # 大佬博客/播客 RSS 聚合
+│   ├── dedupe.py              # 去重工具
 │   └── main.py                # 爬虫调度器
 ├── processor/                 # 内容处理模块
 │   ├── __init__.py
@@ -126,6 +128,7 @@ ai-stack/
 │   ├── summarizer.py          # 内容总结
 │   ├── translator.py          # 翻译功能
 │   ├── generator.py           # 内容生成
+│   ├── enricher.py            # DeepWiki 等内容增强
 │   └── main.py                # 处理流程编排
 ├── publisher/                 # 推送模块
 │   ├── __init__.py
@@ -175,7 +178,7 @@ sources:
 
   hacker_news:
     enabled: true
-    limit: 5
+    limit: 20
 
   arxiv_ai:
     enabled: true
@@ -183,7 +186,7 @@ sources:
       - 'cs.AI'
       - 'cs.LG'
       - 'cs.CL'
-    limit: 3
+    limit: 10
     sort_by: 'submittedDate'
 
   juejin:
@@ -192,6 +195,17 @@ sources:
       - '人工智能'
       - '机器学习'
     limit: 5
+
+  blogs_podcasts:
+    enabled: true
+    limit: 10
+    feeds:
+      - name: "Andrej Karpathy Blog"
+        url: "https://karpathy.github.io/feed.xml"
+        type: "blog"
+      - name: "Lex Fridman Podcast"
+        url: "https://lexfridman.com/feed/podcast/"
+        type: "podcast"
 ```
 
 ### Anthropic API 配置 (config/anthropic.yaml)
@@ -248,6 +262,12 @@ publishers:
 
 ```bash
 python scripts/generate_content.py
+```
+
+**长时间抓取（例如 8 小时）+ 去重：**
+
+```bash
+python scripts/generate_content.py --crawl-duration-hours 8 --crawl-interval-minutes 30
 ```
 
 **预览本地站点：**

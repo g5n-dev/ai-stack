@@ -75,6 +75,10 @@ class ContentSummarizer:
             星标数：{repo_data.get('stars', '')} (+{repo_data.get('today_stars', '')})
             """
 
+            deepwiki_text = repo_data.get('deepwiki_content', '') or ''
+            if deepwiki_text.strip():
+                content += f"\nDeepWiki（节选）：\n{deepwiki_text[:2000]}\n"
+
             summary = self.summarize(content, style='concise')
 
             repo_data['summary'] = summary

@@ -240,6 +240,7 @@ class SuperEnhancedContentGenerator:
     def _build_intro_prompt(self, content: Dict) -> str:
         source = content.get('source', '')
         title = content.get('title', '')
+        deepwiki_excerpt = (content.get('deepwiki_content') or '')[:1200]
 
         if source == 'github_trending':
             return f"""请为以下 GitHub 仓库写一个超级引人入胜的引言，控制在{self.intro_length}字以内：
@@ -248,6 +249,7 @@ class SuperEnhancedContentGenerator:
 描述：{content.get('description', '')}
 语言：{content.get('language', '')}
 星标数：{content.get('stars', '')}
+{f"DeepWiki（节选）：\\n{deepwiki_excerpt}" if deepwiki_excerpt.strip() else ""}
 
 要求：
 1. 用一个引人入胜的故事或场景开头
@@ -260,7 +262,7 @@ class SuperEnhancedContentGenerator:
 
 请用中文写作，要有强烈的吸引力！
 """
-        elif source in ['hacker_news', 'juejin']:
+        elif source in ['hacker_news', 'juejin', 'blogs_podcasts']:
             return f"""请为以下文章写一个超级引人入胜的引言，控制在{self.intro_length}字以内：
 
 文章标题：{title}
@@ -312,6 +314,7 @@ class SuperEnhancedContentGenerator:
     def _build_comment_prompt(self, content: Dict) -> str:
         source = content.get('source', '')
         title = content.get('title', '')
+        deepwiki_excerpt = (content.get('deepwiki_content') or '')[:1200]
 
         if source == 'github_trending':
             return f"""请从技术和实用角度超级深度地评价以下 GitHub 仓库，控制在{self.comment_length}字以内：
@@ -320,6 +323,7 @@ class SuperEnhancedContentGenerator:
 描述：{content.get('description', '')}
 语言：{content.get('language', '')}
 星标数：{content.get('stars', '')}
+{f"DeepWiki（节选）：\\n{deepwiki_excerpt}" if deepwiki_excerpt.strip() else ""}
 
 请从以下维度进行评价：
 1. 技术创新性：有什么独特、颠覆性的技术方案
@@ -330,6 +334,12 @@ class SuperEnhancedContentGenerator:
 6. 潜在问题或改进建议
 7. 与同类工具的对比优势
 
+请额外满足「逻辑缜密 + 哲学性」要求：
+- 明确区分：事实（来自描述/DeepWiki） vs 推断（你基于经验的判断）
+- 给出论证结构：结论 → 理由 → 依据 → 反例/边界条件
+- 用第一性原理解释：这个工具把复杂性放在了哪里？它改变了什么“抽象边界/组织边界/认知边界”？
+- 给出 3 条可证伪的判断：读者如何在 1 天内验证你的结论是否成立（指标/实验/检查点）
+
 要求：
 - 深入分析，不要泛泛而谈
 - 具体举例说明
@@ -338,7 +348,7 @@ class SuperEnhancedContentGenerator:
 - 用中文写作
 - 每个维度都要有实质性内容
 """
-        elif source in ['hacker_news', 'juejin']:
+        elif source in ['hacker_news', 'juejin', 'blogs_podcasts']:
             return f"""请从技术和行业角度超级深度地评价以下文章，控制在{self.comment_length}字以内：
 
 文章标题：{title}
@@ -352,6 +362,12 @@ class SuperEnhancedContentGenerator:
 5. 行业影响：对行业或社区的潜在影响
 6. 争议点或不同观点
 7. 实际应用建议
+
+请额外满足「逻辑缜密 + 哲学性」要求：
+- 先写出文章的“中心命题”（一句话），再写“支撑理由”（3-5条）与“反例/边界条件”（至少2条）
+- 明确指出：哪些是事实陈述、哪些是价值判断、哪些是可检验预测
+- 给出你自己的立场，但必须给出可验证的检验方式（指标/实验/观察窗口）
+- 从哲学角度补一段：它隐含了怎样的世界观/人观/知识观？（比如：效率优先 vs 可控优先）
 
 要求：
 - 深入分析，要有自己的见解
@@ -375,6 +391,11 @@ class SuperEnhancedContentGenerator:
 5. 可复现性：方法是否清晰可复现
 6. 相关工作对比：与同类研究的优劣
 7. 局限性和未来方向
+
+请额外满足「逻辑缜密 + 哲学性」要求：
+- 明确区分：论文声称（claim）/证据（evidence）/推断（inference）
+- 以“可证伪性”视角指出：关键假设是什么？在什么条件下它会失败？
+- 从研究哲学角度补一段：它更偏形式主义（理论）还是经验主义（实验）？代价是什么？
 
 要求：
 - 深入分析，要有学术眼光
@@ -400,6 +421,7 @@ class SuperEnhancedContentGenerator:
     def _build_analysis_prompt(self, content: Dict) -> str:
         source = content.get('source', '')
         title = content.get('title', '')
+        deepwiki_excerpt = (content.get('deepwiki_content') or '')[:1500]
 
         if source == 'github_trending':
             return f"""请超级深入地分析以下 GitHub 仓库的技术特点和潜在应用，用中文：
@@ -408,6 +430,7 @@ class SuperEnhancedContentGenerator:
 描述：{content.get('description', '')}
 语言：{content.get('language', '')}
 星标数：{content.get('stars', '')}
+{f"DeepWiki（节选）：\\n{deepwiki_excerpt}" if deepwiki_excerpt.strip() else ""}
 
 请从以下角度进行全面深入分析：
 
@@ -453,6 +476,12 @@ class SuperEnhancedContentGenerator:
 - 性能优化建议
 - 最佳实践总结
 
+## 8. 哲学与方法论：第一性原理与权衡
+- 这个项目在“抽象层”上做了什么？它把复杂性转移给了谁（库/用户/运维/组织）？
+- 它默认了哪些价值取向（速度、控制、安全、可解释性、可移植性）？这些取向的代价是什么？
+- 如果把它看作一种“工程哲学”，它解决问题的范式是什么？哪里最容易被误用？
+- 给出 3 条可证伪的判断：用什么指标/实验/对照，可以验证你对它的核心评价？
+
 要求：
 - 深入技术细节，不要浅尝辄止
 - 结合代码和架构进行分析
@@ -462,7 +491,7 @@ class SuperEnhancedContentGenerator:
 - 控制在{self.analysis_length}字以内
 - 每个部分都要有实质性内容
 """
-        elif source in ['hacker_news', 'juejin']:
+        elif source in ['hacker_news', 'juejin', 'blogs_podcasts']:
             return f"""请超级深入地分析以下文章的核心观点和技术要点，用中文：
 
 文章标题：{title}
@@ -511,6 +540,13 @@ class SuperEnhancedContentGenerator:
 - 成功案例分析
 - 失败案例反思
 - 经验教训总结
+
+## 8. 哲学与逻辑：论证地图（Argument Map）
+- 用 1 句话写出中心命题（claim）
+- 列出 3-5 条支撑理由（reasons）与各自依据（evidence/intuition）
+- 至少给出 2 个反例或边界条件（counterexamples / conditions）
+- 明确哪些是事实、哪些是价值判断、哪些是可检验预测
+- 给出你的立场，并给出可证伪的验证方式（指标/实验/观察窗口）
 
 要求：
 - 深入理解文章内容
@@ -576,6 +612,12 @@ class SuperEnhancedContentGenerator:
 - 优势和不足分析
 - 创新性评估
 - 在该领域中的地位
+
+## 9. 研究哲学：可证伪性与边界
+- 论文的关键假设是什么？它依赖哪些先验/归纳偏置？
+- 在什么数据分布/任务条件下最可能失败？为什么？
+- 哪些结论是“经验事实”，哪些是“理论推断”？分别如何验证？
+- 如果把它放到更长的时间尺度，它推进的是“方法”还是“理解”？代价是什么？
 
 要求：
 - 深入理解论文内容

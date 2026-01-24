@@ -7,6 +7,7 @@ from .github_trending import GitHubTrendingCrawler
 from .hacker_news import HackerNewsCrawler
 from .arxiv_papers import ArxivPapersCrawler
 from .juejin_rss import JuejinRSSCrawler
+from .blogs_podcasts import BlogsPodcastsCrawler
 from .main import CrawlerOrchestrator
 
 __all__ = [
@@ -14,5 +15,6 @@ __all__ = [
     'HackerNewsCrawler',
     'ArxivPapersCrawler',
     'JuejinRSSCrawler',
+    'BlogsPodcastsCrawler',
     'CrawlerOrchestrator'
 ]
