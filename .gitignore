@@ -37,3 +37,6 @@ Thumbs.db
 
 # Clipboard
 .gemini-clipboard/
+
+# Verification reports
+*_verification_report.json

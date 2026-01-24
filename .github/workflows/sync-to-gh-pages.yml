@@ -38,6 +38,10 @@ jobs:
             git rm -rf .
           fi
 
+      - name: Stash untracked files before merge
+        run: |
+          git stash push -u -m "Stashing untracked files before merge" || echo "Nothing to stash"
+
       - name: Merge main into gh-pages
         run: |
           if git rev-parse --verify gh-pages >/dev/null 2>&1 && [ "$(git log main --oneline | wc -l)" -gt 0 ]; then
