@@ -219,7 +219,7 @@ jobs:
         run: |
           if [ -f blog/config.toml ]; then
             cd blog
-            hugo --baseURL "https://g5n-dev.github.io/ai-stack/" --minify --cleanDestinationDir
+            hugo --baseURL "https://ai-stack.site/" --minify --cleanDestinationDir
             cp -r public/* ..
             cd ..
             rm -rf blog/public
