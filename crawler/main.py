@@ -9,13 +9,13 @@ import time
 from typing import List, Dict
 from pathlib import Path
 
-from .github_trending import GitHubTrendingCrawler
-from .hacker_news import HackerNewsCrawler
-from .arxiv_papers import ArxivPapersCrawler
-from .juejin_rss import JuejinRSSCrawler
-from .blogs_podcasts import BlogsPodcastsCrawler
-from .twitter_crawler import TwitterRecentCrawler
-from .dedupe import canonicalize_url
+from crawler.github_trending import GitHubTrendingCrawler
+from crawler.hacker_news import HackerNewsCrawler
+from crawler.arxiv_papers import ArxivPapersCrawler
+from crawler.juejin_rss import JuejinRSSCrawler
+from crawler.blogs_podcasts import BlogsPodcastsCrawler
+from crawler.twitter_crawler import TwitterRecentCrawler
+from crawler.dedupe import canonicalize_url
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)

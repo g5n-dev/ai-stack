@@ -8,14 +8,14 @@ import logging
 from typing import List, Dict
 from pathlib import Path
 
-from .anthropic_client import AnthropicClient
-from .summarizer import ContentSummarizer
-from .translator import ContentTranslator
-from .generator import SuperEnhancedContentGenerator
-from .tagger import ContentTagger
-from .enricher import enrich_github_repo
-from .scenario_analyzer import ScenarioAnalyzer
-from .tech_stack import export_to_json
+from processor.anthropic_client import AnthropicClient
+from processor.summarizer import ContentSummarizer
+from processor.translator import ContentTranslator
+from processor.generator import SuperEnhancedContentGenerator
+from processor.tagger import ContentTagger
+from processor.enricher import enrich_github_repo
+from processor.scenario_analyzer import ScenarioAnalyzer
+from processor.tech_stack import export_to_json
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
