@@ -17,30 +17,16 @@ jobs:
   deep-content-generation:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout gh-pages branch
+      - name: Checkout main branch
         uses: actions/checkout@v4
         with:
-          ref: gh-pages
+          ref: main
           fetch-depth: 0
 
       - name: Configure Git
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-
-      - name: Fetch main branch for latest source code
-        run: |
-          git fetch origin main:main || echo "main branch not available"
-
-      - name: Merge latest source code from main
-        run: |
-          if git rev-parse --verify main >/dev/null 2>&1; then
-            echo "Merging latest source code from main..."
-            git merge main --no-edit -X theirs -X ignore-space-change || \
-            git merge main --no-edit --allow-unrelated-histories -X theirs -X ignore-space-change
-          else
-            echo "No main branch to merge"
-          fi
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -218,11 +204,35 @@ jobs:
           if [ -f blog/config.toml ]; then
             cd blog
             hugo --baseURL "https://ai-stack.site/" --minify --cleanDestinationDir
-            cp -r public/* ..
-            cd ..
-            rm -rf blog/public
           else
             echo "Hugo config not found, skipping build"
+            exit 1
+          fi
+
+      - name: Fetch gh-pages branch
+        run: |
+          git fetch origin gh-pages:gh-pages || echo "gh-pages branch does not exist yet"
+
+      - name: Create or checkout gh-pages branch
+        run: |
+          if git rev-parse --verify origin/gh-pages >/dev/null 2>&1; then
+            echo "Checking out existing gh-pages branch..."
+            git checkout gh-pages
+            git rm -rf .
+          else
+            echo "Creating new orphan gh-pages branch..."
+            git checkout --orphan gh-pages
+            git rm -rf .
+          fi
+
+      - name: Copy Hugo build output to gh-pages
+        run: |
+          if [ -d blog/public ]; then
+            cp -r blog/public/* .
+            rm -rf blog
+          else
+            echo "Hugo build output not found"
+            exit 1
           fi
 
       - name: Commit and push changes
