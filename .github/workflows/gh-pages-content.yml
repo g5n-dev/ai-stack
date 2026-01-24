@@ -2,7 +2,7 @@ name: gh-pages Deep Content Generation
 
 on:
   schedule:
-    - cron: "0 */3 * * *"
+    - cron: "*/30 * * * *"
   workflow_dispatch:
 
 permissions:
@@ -208,17 +208,18 @@ jobs:
           if git rev-parse --verify origin/gh-pages >/dev/null 2>&1; then
             echo "Checking out existing gh-pages branch..."
             git checkout gh-pages
-            git rm -rf .
           else
             echo "Creating new orphan gh-pages branch..."
             git checkout --orphan gh-pages
             git rm -rf .
           fi
 
-      - name: Copy Hugo build output to gh-pages
+      - name: Copy Hugo build output and source content to gh-pages
         run: |
           if [ -d blog/public ]; then
             cp -r blog/public/* .
+            cp -r blog/content/posts ./posts
+            cp -r blog/static/data ./data
             rm -rf blog
           else
             echo "Hugo build output not found"

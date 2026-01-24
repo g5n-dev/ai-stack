@@ -27,24 +27,22 @@ jobs:
         run: |
           git fetch origin gh-pages || echo "gh-pages branch does not exist yet"
 
-      - name: Create or checkout gh-pages branch
+      - name: Merge gh-pages data into main
         run: |
           if git rev-parse --verify origin/gh-pages >/dev/null 2>&1; then
-            echo "Checking out existing gh-pages branch..."
-            # Delete local gh-pages branch if it exists
-            git branch -D gh-pages 2>/dev/null || true
-            git checkout -b gh-pages origin/gh-pages
-            # Remove all files except .git
-            git rm -rf .
+            echo "Merging gh-pages data into main..."
+            mkdir -p blog/content/posts blog/static/data
+            git checkout origin/gh-pages -- posts data || echo "No posts/data found in gh-pages"
+            if [ -d posts ]; then
+              cp -r posts/* blog/content/posts/ 2>/dev/null || echo "No posts to copy"
+            fi
+            if [ -d data ]; then
+              cp -r data/* blog/static/data/ 2>/dev/null || echo "No data to copy"
+            fi
+            rm -rf posts data
           else
-            echo "Creating new orphan gh-pages branch..."
-            git checkout --orphan gh-pages
-            git rm -rf .
+            echo "No gh-pages branch found, starting fresh"
           fi
-
-      - name: Copy main branch content
-        run: |
-          git checkout main -- .
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -128,9 +126,11 @@ jobs:
             cd blog
             hugo --baseURL "https://ai-stack.site/" --minify --cleanDestinationDir
             cd ..
-            # Copy Hugo build artifacts first
+            # Copy Hugo build artifacts and source data
             cp -r blog/public/* .
-            # Then remove source code files, keep only build artifacts
+            cp -r blog/content/posts ./posts
+            cp -r blog/static/data ./data
+            # Then remove source code files, keep only build artifacts and data
             rm -rf blog/ crawler/ config/ processor/ scripts/ test_*.py generate_twitter_content.py requirements.txt README.md CLAUDE.md .github .gitignore
           else
             echo "Hugo config not found, skipping build"
