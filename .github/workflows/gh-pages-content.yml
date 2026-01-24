@@ -5,7 +5,12 @@ on:
     - cron: '0 2 * * *'
   workflow_dispatch:
   push:
-    branches: ["gh-pages"]
+    branches: ["main"]
+    paths:
+      - 'blog/content/**'
+      - 'scripts/**'
+      - 'requirements.txt'
+      - '.github/workflows/gh-pages-content.yml'
 
 permissions:
   contents: write
