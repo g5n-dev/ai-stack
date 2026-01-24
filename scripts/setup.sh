@@ -55,7 +55,14 @@ echo -e "${GREEN}✓ Dependencies installed${NC}"
 # 5. 创建配置文件
 echo -e "\n${YELLOW}[5/5]${NC} Creating configuration files..."
 if [ ! -f ".env" ]; then
-    cp .env.example .env
+    if [ -f ".env.example" ]; then
+        cp .env.example .env
+    else
+        cat > .env << 'EOF'
+ANTHROPIC_AUTH_TOKEN=your_anthropic_token
+ANTHROPIC_BASE_URL=https://open.bigmodel.cn/api/anthropic
+EOF
+    fi
     echo -e "${GREEN}✓ .env file created${NC}"
     echo -e "${YELLOW}⚠ Please edit .env with your API keys${NC}"
 else

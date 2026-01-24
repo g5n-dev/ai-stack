@@ -14,6 +14,8 @@ from .translator import ContentTranslator
 from .generator import SuperEnhancedContentGenerator
 from .tagger import ContentTagger
 from .enricher import enrich_github_repo
+from .scenario_analyzer import ScenarioAnalyzer
+from .tech_stack import export_to_json
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -50,6 +52,12 @@ class ProcessorOrchestrator:
         self.tagger = ContentTagger(
             self.client,
             config=tagging_config
+        )
+
+        scenario_config = self.config.get('scenarios', {})
+        self.scenario_analyzer = ScenarioAnalyzer(
+            self.client,
+            config=scenario_config
         )
 
     def _load_config(self) -> Dict:
@@ -97,6 +105,9 @@ class ProcessorOrchestrator:
 
             # 打标归类（tags + categories）
             content = self.tagger.tag(content)
+
+            # 场景分析
+            content = self.scenario_analyzer.analyze(content)
 
             logger.info(f"Successfully processed content from {source}")
             return content
@@ -164,6 +175,28 @@ class ProcessorOrchestrator:
             all_processed.extend(contents)
 
         return all_processed
+
+    def export_tech_stack_data(self, output_path: str = 'blog/static/data/tech-stack.json') -> Dict:
+        """
+        导出技术栈图谱数据
+
+        Args:
+            output_path: 输出文件路径
+
+        Returns:
+            Dict: 技术栈数据
+        """
+        try:
+            json_path = export_to_json(output_path)
+            logger.info(f"Tech stack data exported to: {json_path}")
+
+            # 读取并返回数据
+            import json
+            with open(json_path, 'r', encoding='utf-8') as f:
+                return json.load(f)
+        except Exception as e:
+            logger.error(f"Failed to export tech stack data: {e}")
+            return {}
 
 
 if __name__ == '__main__':

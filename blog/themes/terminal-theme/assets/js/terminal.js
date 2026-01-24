@@ -167,8 +167,9 @@
 
     switch (cmd.toLowerCase()) {
       case "help": {
-        await logLine("info", "Commands: help | ls [n] | open <n> | search <kw> | home | posts | tags | about | clear");
+        await logLine("info", "Commands: help | ls [n] | open <n> | search <kw> | home | posts | tags | scenarios | about | archive | clear | graph [cmd]");
         await logLine("info", "Tips: On /posts/ you can use `search` to filter the table; `open 3` opens the 3rd visible entry.");
+        await logLine("info", "Graph cmds: graph reset | graph focus <node> | graph filter <layer> | graph search <kw>");
         return;
       }
       case "home": {
@@ -192,8 +193,16 @@
         window.location.href = "/tags/";
         return;
       }
+      case "scenarios": {
+        window.location.href = "/scenarios/";
+        return;
+      }
       case "about": {
         window.location.href = "/about/";
+        return;
+      }
+      case "archive": {
+        window.location.href = "/archive/";
         return;
       }
       case "open": {
@@ -219,6 +228,69 @@
       }
       case "clear": {
         clearLog();
+        return;
+      }
+      case "graph": {
+        // 图谱命令：graph reset | graph focus <node> | graph filter <layer> | graph search <kw>
+        if (!arg) {
+          await logLine("err", "ERR: usage `graph <cmd>` where cmd is reset/focus/filter/search");
+          return;
+        }
+        const graphCmd = arg.split(/\s+/)[0];
+        const graphArg = arg.substring(graphCmd.length).trim();
+
+        // 检查是否存在图谱实例
+        if (typeof window.graphEngine === "undefined") {
+          await logLine("err", "ERR: graph not available on this page. Navigate to /scenarios/ first.");
+          return;
+        }
+
+        switch (graphCmd.toLowerCase()) {
+          case "reset": {
+            window.graphEngine.resetView();
+            await logLine("info", "GRAPH:// view reset");
+            return;
+          }
+          case "focus": {
+            if (!graphArg) {
+              await logLine("err", "ERR: usage `graph focus <node_id>`");
+              return;
+            }
+            const node = window.graphEngine.getNodeInfo(graphArg);
+            if (node) {
+              window.graphEngine.focusNode(graphArg);
+              await logLine("info", `GRAPH:// focused on "${node.name}"`);
+            } else {
+              await logLine("err", `ERR: node "${graphArg}" not found`);
+            }
+            return;
+          }
+          case "filter": {
+            if (!graphArg) {
+              await logLine("err", "ERR: usage `graph filter <layer1,layer2,...>`");
+              await logLine("info", "Available layers: language, framework, model, application, scenario");
+              return;
+            }
+            const layers = graphArg.split(",").map((l) => l.trim().toLowerCase());
+            const validLayers = ["language", "framework", "model", "application", "scenario"];
+            const invalid = layers.filter((l) => !validLayers.includes(l));
+            if (invalid.length > 0) {
+              await logLine("err", `ERR: invalid layers: ${invalid.join(", ")}`);
+              return;
+            }
+            window.graphEngine.filterLayers(layers);
+            await logLine("info", `GRAPH:// filtered to: ${layers.join(", ")}`);
+            return;
+          }
+          case "search": {
+            window.graphEngine.search(graphArg);
+            await logLine("info", `GRAPH:// searching for: "${graphArg}"`);
+            return;
+          }
+          default: {
+            await logLine("err", `ERR: unknown graph command '${graphCmd}'. Try 'help'.`);
+          }
+        }
         return;
       }
       default: {

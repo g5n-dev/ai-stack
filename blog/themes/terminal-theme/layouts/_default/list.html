@@ -94,91 +94,213 @@
         </header>
 
         <main class="flex-1 w-full overflow-y-auto custom-scrollbar px-4 md:px-8 py-8">
-            <div class="w-full max-w-6xl mx-auto">
-                <div class="flex items-end justify-between border-b border-muted-teal/10 pb-6 mb-8">
-                    <div class="flex flex-col">
-                        <span class="text-primary/70 text-[12px] font-bold tracking-wide mb-1">目录</span>
-                        <h1 class="text-off-white text-3xl font-light tracking-tight font-display">{{ .Title }}</h1>
-                    </div>
-                    <div class="text-muted-teal/45 text-[11px] font-mono tracking-wide">
-                        条目：{{ len .Pages }}
-                    </div>
-                </div>
-
-                {{ $paginator := .Paginator }}
-                <div class="glass-panel rounded-xl overflow-hidden">
-                    <table class="w-full table-fixed text-left border-collapse">
-                        <thead>
-                            <tr class="bg-muted-teal/5 border-b border-muted-teal/10">
-                                <th class="w-28 px-6 md:px-8 py-5 text-muted-teal/60 text-[11px] font-bold tracking-wide">类型</th>
-                                <th class="w-24 px-6 md:px-8 py-5 text-muted-teal/60 text-[11px] font-bold tracking-wide text-right">阅读</th>
-                                <th class="px-6 md:px-8 py-5 text-off-white text-[11px] font-bold tracking-wide">条目</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-muted-teal/5">
-                            {{ range $paginator.Pages }}
-                            <tr class="hover:bg-muted-teal/5 transition-all group">
-                                <td class="w-28 px-6 md:px-8 py-6">
-                                    {{- $kind := lower (.Params.entry_kind | default "") -}}
-                                    {{- $isManual := or (eq $kind "manual") (and (eq $kind "") (not .Params.source)) -}}
-                                    <div class="flex flex-col gap-1 leading-tight">
-                                        <span class="text-[11px] {{ if $isManual }}text-off-white/60 group-hover:text-off-white{{ else }}text-primary/70 group-hover:text-primary{{ end }} transition-colors">
-                                            {{ if $isManual }}[手动]{{ else }}[自动]{{ end }}
-                                        </span>
-                                        <span class="text-[11px] text-off-white/35 group-hover:text-off-white/55 transition-colors font-mono">
-                                            {{ with .Params.source }}{{ printf "[%s]" (upper .) }}{{ else }}[笔记]{{ end }}
-                                        </span>
-                                    </div>
-                                </td>
-                                <td class="w-24 px-6 md:px-8 py-6 text-muted-teal/45 text-[11px] text-right font-mono">
-                                    {{ printf "%dmin" .ReadingTime }}
-                                </td>
-                                <td class="px-6 md:px-8 py-6">
-                                    <a href="{{ .RelPermalink }}" data-entry-link="{{ .RelPermalink }}" data-entry-title="{{ .Title }}" class="flex items-center gap-4 min-w-0">
-                                        <span class="material-symbols-outlined text-primary/40 group-hover:text-primary transition-all">
-                                            {{- $s := .Params.source -}}
-                                            {{- if eq $s "github_trending" -}}hub
-                                            {{- else if eq $s "hacker_news" -}}newspaper
-                                            {{- else if eq $s "arxiv" -}}school
-                                            {{- else if eq $s "blogs_podcasts" -}}mic
-                                            {{- else -}}sticky_note_2
-                                            {{- end -}}
-                                        </span>
-                                        <span class="min-w-0 flex-1 text-off-white text-sm tracking-wide group-hover:translate-x-1 transition-transform truncate" title="{{ .Title }}">{{ .Title }}</span>
+            <div class="w-full max-w-6xl mx-auto flex gap-8">
+                <!-- 侧边栏筛选器 -->
+                <aside class="hidden lg:block w-56 flex-shrink-0">
+                    <div class="sticky top-8 space-y-6">
+                        <!-- 年份筛选 -->
+                        <div class="glass-panel rounded-lg p-4">
+                            <h3 class="text-primary/70 text-[11px] font-bold tracking-wide mb-3 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-sm">calendar_month</span>
+                                按年份筛选
+                            </h3>
+                            <ul class="space-y-1">
+                                {{ range .Site.RegularPages.GroupByDate "2006" }}
+                                {{$year := .Key}}
+                                {{ $count := len .Pages }}
+                                <li>
+                                    <a href="/posts/?year={{ $year }}" class="flex items-center justify-between px-3 py-1.5 rounded text-[11px] transition-all {{ if eq ($.Get "year") $year }}bg-primary/15 text-primary{{ else }}text-off-white/50 hover:bg-muted-teal/5 hover:text-off-white/70{{ end }}">
+                                        <span>{{ $year }}</span>
+                                        <span class="font-mono text-off-white/30">{{ $count }}</span>
                                     </a>
-                                    <div class="mt-2 flex flex-wrap items-center gap-2 text-[11px] text-off-white/45">
-                                        <span class="font-mono text-muted-teal/40">{{ .Date.Format "2006-01-02" }}</span>
-                                        {{ range first 3 (.Params.tags | default (slice)) }}
-                                        <span class="px-2 py-0.5 rounded border border-muted-teal/15 bg-terminal-bg/40 text-muted-teal/60">{{ . }}</span>
-                                        {{ end }}
-                                    </div>
-                                </td>
-                            </tr>
+                                </li>
+                                {{ end }}
+                            </ul>
+                        </div>
+
+                        <!-- 月份筛选 -->
+                        <div class="glass-panel rounded-lg p-4">
+                            <h3 class="text-primary/70 text-[11px] font-bold tracking-wide mb-3 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-sm">date_range</span>
+                                按月份筛选
+                            </h3>
+                            <ul class="space-y-1">
+                                {{ range .Site.RegularPages.GroupByDate "2006-01" }}
+                                {{$yearMonth := .Key}}
+                                {{ $year := index (split $yearMonth "-") 0 }}
+                                {{ $month := index (split $yearMonth "-") 1 }}
+                                {{ $monthName := index (slice "一月" "二月" "三月" "四月" "五月" "六月" "七月" "八月" "九月" "十月" "十一月" "十二月") (sub (int $month) 1) }}
+                                {{ $count := len .Pages }}
+                                <li>
+                                    <a href="/posts/?month={{ $yearMonth }}" class="flex items-center justify-between px-3 py-1.5 rounded text-[11px] transition-all {{ if eq ($.Get "month") $yearMonth }}bg-primary/15 text-primary{{ else }}text-off-white/50 hover:bg-muted-teal/5 hover:text-off-white/70{{ end }}">
+                                        <span>{{ $year }}年{{ $monthName }}</span>
+                                        <span class="font-mono text-off-white/30">{{ $count }}</span>
+                                    </a>
+                                </li>
+                                {{ end }}
+                            </ul>
+                        </div>
+
+                        <!-- 快速链接 -->
+                        <div class="glass-panel rounded-lg p-4">
+                            <h3 class="text-primary/70 text-[11px] font-bold tracking-wide mb-3 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-sm">bookmark</span>
+                                快速访问
+                            </h3>
+                            <ul class="space-y-1">
+                                <li><a href="/posts/" class="block px-3 py-1.5 rounded text-[11px] text-off-white/50 hover:bg-muted-teal/5 hover:text-off-white/70 transition-all">全部文章</a></li>
+                                <li><a href="/tags/" class="block px-3 py-1.5 rounded text-[11px] text-off-white/50 hover:bg-muted-teal/5 hover:text-off-white/70 transition-all">标签云</a></li>
+                                <li><a href="/scenarios/" class="block px-3 py-1.5 rounded text-[11px] text-off-white/50 hover:bg-muted-teal/5 hover:text-off-white/70 transition-all">应用场景</a></li>
+                                <li><a href="/archive/" class="block px-3 py-1.5 rounded text-[11px] text-off-white/50 hover:bg-muted-teal/5 hover:text-off-white/70 transition-all">时间线归档</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- 应用场景标签云 -->
+                        {{ $scenarios := slice }}
+                        {{ range .Site.RegularPages }}
+                            {{ range .Params.scenarios }}
+                                {{ $scenarios = $scenarios | append . }}
                             {{ end }}
-                        </tbody>
-                    </table>
-                </div>
+                        {{ end }}
+                        {{ if gt (len $scenarios) 0 }}
+                        <div class="glass-panel rounded-lg p-4">
+                            <h3 class="text-primary/70 text-[11px] font-bold tracking-wide mb-3 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-sm">explore</span>
+                                应用场景
+                            </h3>
+                            <div class="flex flex-wrap gap-2">
+                                {{ range .Site.Taxonomies.scenarios.Alphabetical }}
+                                <a href="{{ .Page.RelPermalink }}" class="scenario-tag px-2 py-1 rounded border border-primary/15 bg-primary/5 hover:bg-primary/10 text-primary/70 text-[10px] font-mono tracking-wide transition-all flex items-center gap-1" title="{{ len .Pages }} 个项目">
+                                    {{- $scenarioIcon := "category" -}}
+                                    {{- range .Pages -}}
+                                        {{- range .Params.scenarios -}}
+                                            {{- if eq .name $.Term -}}
+                                                {{- $scenarioIcon = .icon -}}
+                                            {{- end -}}
+                                        {{- end -}}
+                                    {{- end -}}
+                                    <span class="material-symbols-outlined text-[10px] align-middle">{{ $scenarioIcon }}</span>
+                                    {{ .Term }}
+                                </a>
+                                {{ end }}
+                            </div>
+                        </div>
+                        {{ end }}
+                    </div>
+                </aside>
 
-                <div class="mt-8 flex items-center justify-between gap-4">
-                    {{ if $paginator.HasPrev }}
-                    <a href="{{ $paginator.Prev.URL }}" class="flex items-center gap-2 px-5 py-2 bg-muted-teal/5 border border-muted-teal/20 rounded-full hover:bg-muted-teal/10 transition-all text-[11px] font-mono tracking-wide text-off-white/70 hover:text-off-white">
-                        <span class="material-symbols-outlined text-base">arrow_back</span> 上一页
-                    </a>
-                    {{ else }}
-                    <span class="px-5 py-2 text-[11px] font-mono tracking-wide text-off-white/20">上一页</span>
-                    {{ end }}
-
-                    <div class="text-[11px] font-mono tracking-wide text-muted-teal/55">
-                        第 {{ $paginator.PageNumber }} / {{ $paginator.TotalPages }} 页
+                <!-- 主内容区 -->
+                <div class="flex-1 min-w-0">
+                    <div class="flex items-end justify-between border-b border-muted-teal/10 pb-6 mb-8">
+                        <div class="flex flex-col">
+                            <span class="text-primary/70 text-[12px] font-bold tracking-wide mb-1">目录</span>
+                            <h1 class="text-off-white text-3xl font-light tracking-tight font-display">{{ .Title }}</h1>
+                        </div>
+                        <div class="text-muted-teal/45 text-[11px] font-mono tracking-wide">
+                            条目：{{ len .Pages }}
+                        </div>
                     </div>
 
-                    {{ if $paginator.HasNext }}
-                    <a href="{{ $paginator.Next.URL }}" class="flex items-center gap-2 px-5 py-2 bg-muted-teal/5 border border-muted-teal/20 rounded-full hover:bg-muted-teal/10 transition-all text-[11px] font-mono tracking-wide text-off-white/70 hover:text-off-white">
-                        下一页 <span class="material-symbols-outlined text-base">arrow_forward</span>
-                    </a>
-                    {{ else }}
-                    <span class="px-5 py-2 text-[11px] font-mono tracking-wide text-off-white/20">下一页</span>
+                    {{ $paginator := .Paginator }}
+                    <!-- 按年月分组显示 -->
+                    {{ $pages := $paginator.Pages }}
+                    {{ if $.Get "year" }}
+                        {{ $pages = where $pages "Date.Format" "2006" ($.Get "year") }}
                     {{ end }}
+                    {{ if $.Get "month" }}
+                        {{ $pages = where $pages "Date.Format" "2006-01" ($.Get "month") }}
+                    {{ end }}
+
+                    <div class="space-y-8">
+                        {{ range $pages.GroupByDate "2006-01" }}
+                        {{$year := index (split .Key "-") 0}}
+                        {{$month := index (split .Key "-") 1}}
+                        {{$monthName := index (slice "一月" "二月" "三月" "四月" "五月" "六月" "七月" "八月" "九月" "十月" "十一月" "十二月") (sub (int $month) 1)}}
+
+                        <!-- 月份分组标题 -->
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="text-primary/70 text-[13px] font-bold tracking-wider font-mono">{{ $year }}年{{ $monthName }}</span>
+                            <span class="h-px flex-1 bg-gradient-to-r from-muted-teal/30 to-transparent"></span>
+                            <span class="text-off-white/25 text-[10px] font-mono">{{ len .Pages }} 篇</span>
+                        </div>
+
+                        <div class="glass-panel rounded-xl overflow-hidden">
+                            <table class="w-full table-fixed text-left border-collapse">
+                                <thead>
+                                    <tr class="bg-muted-teal/5 border-b border-muted-teal/10">
+                                        <th class="w-28 px-6 md:px-8 py-4 text-muted-teal/60 text-[11px] font-bold tracking-wide">类型</th>
+                                        <th class="w-20 px-6 md:px-8 py-4 text-muted-teal/60 text-[11px] font-bold tracking-wide text-right">阅读</th>
+                                        <th class="px-6 md:px-8 py-4 text-off-white text-[11px] font-bold tracking-wide">条目</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-muted-teal/5">
+                                    {{ range .Pages }}
+                                    <tr class="hover:bg-muted-teal/5 transition-all group">
+                                        <td class="w-28 px-6 md:px-8 py-5">
+                                            {{- $kind := lower (.Params.entry_kind | default "") -}}
+                                            {{- $isManual := or (eq $kind "manual") (and (eq $kind "") (not .Params.source)) -}}
+                                            <div class="flex flex-col gap-1 leading-tight">
+                                                <span class="text-[11px] {{ if $isManual }}text-off-white/60 group-hover:text-off-white{{ else }}text-primary/70 group-hover:text-primary{{ end }} transition-colors">
+                                                    {{ if $isManual }}[手动]{{ else }}[自动]{{ end }}
+                                                </span>
+                                                <span class="text-[11px] text-off-white/35 group-hover:text-off-white/55 transition-colors font-mono">
+                                                    {{ with .Params.source }}{{ printf "[%s]" (upper .) }}{{ else }}[笔记]{{ end }}
+                                                </span>
+                                            </div>
+                                        </td>
+                                        <td class="w-20 px-6 md:px-8 py-5 text-muted-teal/45 text-[11px] text-right font-mono">
+                                            {{ printf "%dmin" .ReadingTime }}
+                                        </td>
+                                        <td class="px-6 md:px-8 py-5">
+                                            <a href="{{ .RelPermalink }}" data-entry-link="{{ .RelPermalink }}" data-entry-title="{{ .Title }}" class="flex items-center gap-4 min-w-0">
+                                                <span class="material-symbols-outlined text-primary/40 group-hover:text-primary transition-all">
+                                                    {{- $s := .Params.source -}}
+                                                    {{- if eq $s "github_trending" -}}hub
+                                                    {{- else if eq $s "hacker_news" -}}newspaper
+                                                    {{- else if eq $s "arxiv" -}}school
+                                                    {{- else if eq $s "blogs_podcasts" -}}mic
+                                                    {{- else -}}sticky_note_2
+                                                    {{- end -}}
+                                                </span>
+                                                <span class="min-w-0 flex-1 text-off-white text-sm tracking-wide group-hover:translate-x-1 transition-transform truncate" title="{{ .Title }}">{{ .Title }}</span>
+                                            </a>
+                                            <div class="mt-2 flex flex-wrap items-center gap-2 text-[11px] text-off-white/45">
+                                                <span class="font-mono text-muted-teal/40">{{ .Date.Format "01-02" }}</span>
+                                                {{ range first 3 (.Params.tags | default (slice)) }}
+                                                <span class="px-2 py-0.5 rounded border border-muted-teal/15 bg-terminal-bg/40 text-muted-teal/60">{{ . }}</span>
+                                                {{ end }}
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    {{ end }}
+                                </tbody>
+                            </table>
+                        </div>
+                        {{ end }}
+                    </div>
+
+                    <!-- 分页 -->
+                    <div class="mt-8 flex items-center justify-between gap-4">
+                        {{ if $paginator.HasPrev }}
+                        <a href="{{ $paginator.Prev.URL }}" class="flex items-center gap-2 px-5 py-2 bg-muted-teal/5 border border-muted-teal/20 rounded-full hover:bg-muted-teal/10 transition-all text-[11px] font-mono tracking-wide text-off-white/70 hover:text-off-white">
+                            <span class="material-symbols-outlined text-base">arrow_back</span> 上一页
+                        </a>
+                        {{ else }}
+                        <span class="px-5 py-2 text-[11px] font-mono tracking-wide text-off-white/20">上一页</span>
+                        {{ end }}
+
+                        <div class="text-[11px] font-mono tracking-wide text-muted-teal/55">
+                            第 {{ $paginator.PageNumber }} / {{ $paginator.TotalPages }} 页
+                        </div>
+
+                        {{ if $paginator.HasNext }}
+                        <a href="{{ $paginator.Next.URL }}" class="flex items-center gap-2 px-5 py-2 bg-muted-teal/5 border border-muted-teal/20 rounded-full hover:bg-muted-teal/10 transition-all text-[11px] font-mono tracking-wide text-off-white/70 hover:text-off-white">
+                            下一页 <span class="material-symbols-outlined text-base">arrow_forward</span>
+                        </a>
+                        {{ else }}
+                        <span class="px-5 py-2 text-[11px] font-mono tracking-wide text-off-white/20">下一页</span>
+                        {{ end }}
+                    </div>
                 </div>
             </div>
         </main>

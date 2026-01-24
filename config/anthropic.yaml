@@ -41,3 +41,9 @@ anthropic:
     max_tags: 8
     max_categories: 2
     temperature: 0.2
+
+  # Scenarios settings - 为 GitHub 项目分析应用场景
+  scenarios:
+    enabled: true
+    max_scenarios: 3
+    temperature: 0.2
