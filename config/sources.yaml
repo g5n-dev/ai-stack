@@ -74,7 +74,7 @@ sources:
 
   # Twitter/X 科技大佬推文（使用 Playwright 爬取，不需要 API）
   twitter:
-    enabled: true
+    enabled: false
     headless: true
     accounts:
       - "elonmusk"
