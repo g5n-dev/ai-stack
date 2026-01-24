@@ -103,9 +103,9 @@
 ### Main 分支工作流
 
 1. **[sync-to-gh-pages.yml](../.github/workflows/sync-to-gh-pages.yml)**
-   - 同步 main 最新代码到 gh-pages
-   - 确保 gh-pages 始终使用最新的爬虫和内容生成逻辑
-   - 触发 gh-pages 深度内容生成
+   - 同步 main 到 gh-pages
+   - 确保源代码一致性
+   - 不执行构建（构建由内容生成工作流负责）
 
 ### gh-pages 分支工作流
 
