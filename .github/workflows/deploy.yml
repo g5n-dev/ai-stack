@@ -64,24 +64,11 @@ jobs:
           ANTHROPIC_AUTH_TOKEN: ${{ secrets.ANTHROPIC_AUTH_TOKEN }}
           ANTHROPIC_BASE_URL: ${{ secrets.ANTHROPIC_BASE_URL }}
         run: |
-          echo "=== Running Crawler ==="
-          if [ -f crawler/main.py ]; then
-            python3 -m crawler.main
+          echo "=== Generating Posts (crawl + process + write markdown) ==="
+          if [ -f scripts/generate_content.py ]; then
+            python3 scripts/generate_content.py --dedupe-scope global
           else
-            echo "Crawler not found, skipping..."
-          fi
-
-      - name: Run processor
-        env:
-          PYTHONPATH: /home/runner/work/ai-stack/ai-stack
-          ANTHROPIC_AUTH_TOKEN: ${{ secrets.ANTHROPIC_AUTH_TOKEN }}
-          ANTHROPIC_BASE_URL: ${{ secrets.ANTHROPIC_BASE_URL }}
-        run: |
-          echo "=== Running Processor ==="
-          if [ -f processor/main.py ]; then
-            python3 -m processor.main
-          else
-            echo "Processor not found, skipping..."
+            echo "Content generator not found, skipping..."
           fi
 
       - name: Build tag graph
