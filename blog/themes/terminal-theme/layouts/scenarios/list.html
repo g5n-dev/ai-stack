@@ -162,32 +162,41 @@
 <body
     class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display overflow-hidden h-screen flex flex-col">
 
+    <!-- Frame Overlay -->
+    <div class="frame-overlay hidden md:block">
+        <div class="frame-corner tl"></div>
+        <div class="frame-corner tr"></div>
+        <div class="frame-corner bl"></div>
+        <div class="frame-corner br"></div>
+        <div class="frame-label top-left">LINK_STATUS: STABLE // ENCODING: UTF-8</div>
+        <div class="frame-label bottom-right">SECTOR_ID: AI_STACK // MODE: GRAPH</div>
+    </div>
+
     <!-- Header -->
-    <header
-        class="flex-none z-30 flex items-center justify-between whitespace-nowrap border-b border-solid border-b-surface-border bg-background-dark/90 backdrop-blur-md px-6 py-3">
-        <div class="flex items-center gap-4 text-primary">
-            <a href="/" class="size-6 group cursor-pointer">
-                <span class="material-symbols-outlined text-primary text-2xl group-hover:animate-pulse">hub</span>
+    <header class="w-full max-w-6xl mx-auto px-6 py-6 flex items-center justify-between">
+        <div class="flex items-center gap-4">
+            <a href="/"
+                class="size-10 bg-primary/10 flex items-center justify-center rounded-lg border border-primary/20 backdrop-blur-md shadow-[0_0_15px_rgba(77,182,172,0.12)]">
+                <span class="material-symbols-outlined text-primary text-xl">terminal</span>
             </a>
-            <h2 class="text-white text-lg font-bold leading-tight tracking-[0.1em]">
-                NEXUS_ARCHIVE <span class="text-primary/50 text-xs font-normal ml-2 font-mono">// V.20.49</span>
-            </h2>
+            <div>
+                <h2 class="text-off-white/90 text-lg font-medium tracking-wide teal-glow-text">{{ .Site.Title }}</h2>
+                <p class="text-[11px] font-mono text-muted-teal/50 -mt-0.5 tracking-wide">AI史塔克</p>
+            </div>
         </div>
-        <div class="hidden md:flex flex-1 justify-end gap-8">
-            <div class="flex items-center gap-8">
-                <a class="text-slate-400 hover:text-primary transition-colors text-sm font-medium leading-normal tracking-widest"
-                    href="/">HOME</a>
-                <a class="text-slate-400 hover:text-primary transition-colors text-sm font-medium leading-normal tracking-widest"
-                    href="/posts/">DATABANK</a>
-                <a class="text-primary shadow-[0_1px_0_0_#0df2f2] text-sm font-medium leading-normal tracking-widest"
-                    href="/scenarios/">GRAPH_VIEW</a>
-            </div>
-            <div class="flex gap-3 border-l border-surface-border pl-6">
-                <div class="flex items-center gap-2 px-3 py-1 rounded bg-surface-dark border border-surface-border">
-                    <div class="size-2 rounded-full bg-primary animate-pulse"></div>
-                    <span class="text-[10px] font-mono text-primary/70 tracking-wider">LIVE_FEED</span>
-                </div>
-            </div>
+
+        <nav class="hidden md:flex items-center gap-8 text-[11px] font-mono tracking-wide text-off-white/70">
+            {{ range .Site.Menus.main }}
+            <a href="{{ .URL }}" class="hover:text-primary transition-all">{{ .Name }}</a>
+            {{ end }}
+        </nav>
+
+        <div class="flex items-center gap-3">
+            <a href="/index.xml"
+                class="size-9 flex items-center justify-center text-off-white/40 hover:text-primary transition-colors border border-muted-teal/20 rounded-lg bg-muted-teal/5"
+                aria-label="RSS">
+                <span class="material-symbols-outlined text-xl">rss_feed</span>
+            </a>
         </div>
     </header>
 

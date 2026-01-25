@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html class="dark" lang="{{ .Site.LanguageCode }}">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -30,13 +31,17 @@
     </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700&display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700&display=swap"
+        rel="stylesheet" />
 
     <link rel="stylesheet" href="/css/style.css" />
 
     <script src="/js/terminal.js" defer></script>
 </head>
+
 <body class="bg-deep-navy selection:bg-muted-teal selection:text-deep-navy font-display">
     <div class="rain-container">
         <div class="rain-streak r1"></div>
@@ -69,11 +74,13 @@
     <div class="relative flex h-screen w-full flex-col overflow-hidden z-10">
         <header class="w-full max-w-6xl mx-auto px-6 py-6 flex items-center justify-between">
             <div class="flex items-center gap-4">
-                <a href="/" class="size-10 bg-primary/10 flex items-center justify-center rounded-lg border border-primary/20 backdrop-blur-md shadow-[0_0_15px_rgba(77,182,172,0.12)]">
+                <a href="/"
+                    class="size-10 bg-primary/10 flex items-center justify-center rounded-lg border border-primary/20 backdrop-blur-md shadow-[0_0_15px_rgba(77,182,172,0.12)]">
                     <span class="material-symbols-outlined text-primary text-xl">terminal</span>
                 </a>
                 <div>
-                    <h2 class="text-off-white/90 text-lg font-medium tracking-wide teal-glow-text">{{ .Site.Title }}</h2>
+                    <h2 class="text-off-white/90 text-lg font-medium tracking-wide teal-glow-text">{{ .Site.Title }}
+                    </h2>
                     <p class="text-[11px] font-mono text-muted-teal/50 -mt-0.5 tracking-wide">标签索引</p>
                 </div>
             </div>
@@ -85,7 +92,9 @@
             </nav>
 
             <div class="flex items-center gap-3">
-                <a href="/index.xml" class="size-9 flex items-center justify-center text-off-white/40 hover:text-primary transition-colors border border-muted-teal/20 rounded-lg bg-muted-teal/5" aria-label="RSS">
+                <a href="/index.xml"
+                    class="size-9 flex items-center justify-center text-off-white/40 hover:text-primary transition-colors border border-muted-teal/20 rounded-lg bg-muted-teal/5"
+                    aria-label="RSS">
                     <span class="material-symbols-outlined text-xl">rss_feed</span>
                 </a>
             </div>
@@ -105,14 +114,17 @@
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {{ range .Data.Terms.Alphabetical }}
-                    <a href="{{ .Page.RelPermalink }}" data-entry-link="{{ .Page.RelPermalink }}" data-entry-title="{{ .Page.Title }}" class="glass-panel p-6 rounded-xl border border-muted-teal/10 hover:border-primary/30 hover:bg-muted-teal/5 transition-colors group">
+                    <a href="{{ .Page.RelPermalink }}" data-entry-link="{{ .Page.RelPermalink }}"
+                        data-entry-title="{{ .Page.Title }}"
+                        class="glass-panel p-6 rounded-xl border border-muted-teal/10 hover:border-primary/30 hover:bg-muted-teal/5 transition-colors group">
                         <div class="flex items-center justify-between">
                             <div class="flex items-center gap-3">
-                                <span class="material-symbols-outlined text-primary/40 group-hover:text-primary transition-colors">sell</span>
+                                <span
+                                    class="material-symbols-outlined text-primary/40 group-hover:text-primary transition-colors">sell</span>
                                 <span class="text-off-white text-sm font-medium tracking-wide">{{ .Page.Title }}</span>
                             </div>
-                                <span class="text-muted-teal/55 text-[11px] font-mono tracking-wide">{{ .Count }}</span>
-                            </div>
+                            <span class="text-muted-teal/55 text-[11px] font-mono tracking-wide">{{ .Count }}</span>
+                        </div>
                         <div class="mt-3 text-off-white/45 text-[11px] tracking-wide">
                             打开标签目录
                         </div>
@@ -122,10 +134,13 @@
             </div>
         </main>
 
-        <footer class="h-14 border-t border-muted-teal/10 bg-deep-navy/80 backdrop-blur-2xl flex items-center px-6 gap-6 z-20">
+        <footer
+            class="h-14 border-t border-muted-teal/10 bg-deep-navy/80 backdrop-blur-2xl flex items-center px-6 gap-6 z-20">
             <div class="terminal-label text-primary font-mono text-sm font-bold tracking-tight">CMD://</div>
             <div class="flex-1">
-                <input class="terminal-input bg-transparent border-none focus:ring-0 text-primary font-mono text-sm w-full placeholder:text-muted-teal/30" placeholder="输入命令…（posts / open 1 / help）" type="text" autocomplete="off" spellcheck="false" />
+                <input
+                    class="terminal-input bg-transparent border-none focus:ring-0 text-primary font-mono text-sm w-full placeholder:text-muted-teal/30"
+                    placeholder="输入命令…（posts / open 1 / help）" type="text" autocomplete="off" spellcheck="false" />
             </div>
             <div class="hidden md:flex gap-6 items-center border-l border-muted-teal/10 pl-6 h-full">
                 <span class="text-muted-teal/40 font-mono text-[9px] tracking-widest uppercase">Link: STABLE</span>
@@ -137,4 +152,5 @@
         </footer>
     </div>
 </body>
+
 </html>
