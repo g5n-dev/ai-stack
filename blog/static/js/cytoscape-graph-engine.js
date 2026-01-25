@@ -194,7 +194,7 @@
         async ensureLayerLoaded(layer) {
             if (!layer) return;
             if ((layer === "tag" || layer === "concept")) {
-                if (this.fullLayers.has(layer)) return;
+                if (this.fullLayers.has(layer) || this.loadedLayers.has(layer)) return;
             } else {
                 if (this.loadedLayers.has(layer)) return;
             }

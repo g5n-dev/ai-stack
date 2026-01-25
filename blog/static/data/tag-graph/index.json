@@ -41,8 +41,7 @@
     "core": "core.json",
     "tagHot": "tag.hot.json",
     "conceptHot": "concept.hot.json",
-    "tag": "tag.json",
-    "concept": "concept.json"
+    "tag": "tag.json"
   },
   "defaults": {
     "hot_tag_limit": 250,

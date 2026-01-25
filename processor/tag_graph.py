@@ -560,7 +560,6 @@ def write_tag_graph_split_from_result(
             "tagHot": "tag.hot.json",
             "conceptHot": "concept.hot.json",
             "tag": "tag.json",
-            "concept": "concept.json",
         },
         "defaults": {
             "hot_tag_limit": hot_tag_limit,
@@ -609,17 +608,6 @@ def write_tag_graph_split_from_result(
         "stats": {
             "total_nodes": len(tag_nodes),
             "total_links": len(tag_links) + len(tag_to_tech_links),
-        },
-    })
-
-    write_json("concept.json", {
-        "nodes": concept_nodes,
-        "links": concept_links,
-        "layer": "concept",
-        "layers": layers,
-        "stats": {
-            "total_nodes": len(concept_nodes),
-            "total_links": len(concept_links),
         },
     })
 
