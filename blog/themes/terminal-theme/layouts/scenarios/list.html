@@ -154,11 +154,9 @@
         }
     </style>
 
-    {{ $graphEngine := resources.Get "js/graph-engine.js" | minify }}
-    <script src="{{ $graphEngine.RelPermalink }}" defer></script>
+    <script src="/js/graph-engine.js" defer></script>
 
-    {{ $graphRenderer := resources.Get "js/graph-renderer.js" | minify }}
-    <script src="{{ $graphRenderer.RelPermalink }}" defer></script>
+    <script src="/js/graph-renderer.js" defer></script>
 </head>
 
 <body
