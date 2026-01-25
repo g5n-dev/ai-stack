@@ -18,6 +18,11 @@
     return Math.max(min, Math.min(max, n));
   }
 
+  function getPxNumber(value) {
+    const n = Number.parseFloat(value || "0");
+    return Number.isFinite(n) ? n : 0;
+  }
+
   function sleep(ms) {
     return new Promise((resolve) => setTimeout(resolve, ms));
   }
@@ -299,12 +304,55 @@
     }
   }
 
+  function ensureMeasureEl(host) {
+    let el = $(".terminal-measure", host);
+    if (el) return el;
+    el = document.createElement("span");
+    el.className = "terminal-measure";
+    host.appendChild(el);
+    return el;
+  }
+
+  function updateCaretForHost(host) {
+    if (!host) return;
+    const input = $(".terminal-input", host);
+    const caret = $(".terminal-caret", host);
+    if (!input || !caret) return;
+
+    const measure = ensureMeasureEl(host);
+    const inputStyle = window.getComputedStyle(input);
+    measure.style.font = inputStyle.font;
+    measure.style.letterSpacing = inputStyle.letterSpacing;
+
+    const value = String(input.value || "").replace(/ /g, "\u00A0");
+    measure.textContent = value;
+
+    const paddingLeft = getPxNumber(inputStyle.paddingLeft);
+    const inputLeft = input.offsetLeft || 0;
+    const measureWidth = measure.getBoundingClientRect().width;
+    const caretWidth = caret.getBoundingClientRect().width || 10;
+
+    const minLeft = inputLeft + paddingLeft;
+    const maxLeft = inputLeft + input.clientWidth - caretWidth;
+    const left = clamp(minLeft + measureWidth, minLeft, maxLeft);
+    host.style.setProperty("--terminal-caret-left", `${Math.round(left)}px`);
+  }
+
   function initTerminal() {
     const input = $(".terminal-input");
     if (!input) return;
+    const host = input.closest(".terminal-caret-host");
 
     const history = [];
     let historyIndex = -1;
+
+    if (host) {
+      updateCaretForHost(host);
+      input.addEventListener("input", () => updateCaretForHost(host));
+      input.addEventListener("focus", () => updateCaretForHost(host));
+      input.addEventListener("click", () => updateCaretForHost(host));
+      window.addEventListener("resize", () => updateCaretForHost(host));
+    }
 
     input.addEventListener("keydown", async (e) => {
       if (e.key === "Enter") {
@@ -313,17 +361,20 @@
         input.value = "";
         history.unshift(value);
         historyIndex = -1;
+        if (host) updateCaretForHost(host);
         await runCommand(value);
       } else if (e.key === "ArrowUp") {
         e.preventDefault();
         if (!history.length) return;
         historyIndex = clamp(historyIndex + 1, 0, history.length - 1);
         input.value = history[historyIndex] || "";
+        if (host) updateCaretForHost(host);
       } else if (e.key === "ArrowDown") {
         e.preventDefault();
         if (!history.length) return;
         historyIndex = clamp(historyIndex - 1, -1, history.length - 1);
         input.value = historyIndex === -1 ? "" : history[historyIndex] || "";
+        if (host) updateCaretForHost(host);
       } else if (e.key === "Escape") {
         const overlay = $("#terminal-overlay");
         if (overlay) overlay.classList.remove("is-open");
@@ -338,6 +389,7 @@
         input.value = "";
         history.unshift(value);
         historyIndex = -1;
+        if (host) updateCaretForHost(host);
         await runCommand(value);
         input.focus();
       });

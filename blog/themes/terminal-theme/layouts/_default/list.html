@@ -353,19 +353,21 @@
         </main>
 
         <footer
-            class="h-14 border-t border-muted-teal/10 bg-deep-navy/80 backdrop-blur-2xl flex items-center px-6 gap-6 z-20">
+            class="h-14 border-t border-muted-teal/10 bg-deep-navy/80 backdrop-blur-2xl flex items-center px-6 gap-0 z-20">
             <div class="terminal-label text-primary font-mono text-sm font-bold tracking-tight">CMD://</div>
-            <div class="flex-1">
+            <div class="flex-1 terminal-caret-host flex items-center">
+                <span class="terminal-caret text-primary font-mono text-sm font-bold tracking-tight"
+                    aria-hidden="true">█</span>
                 <input
-                    class="terminal-input bg-transparent border-none focus:ring-0 text-primary font-mono text-sm w-full placeholder:text-muted-teal/30"
+                    class="terminal-input flex-1 min-w-0 bg-transparent border-none focus:ring-0 text-primary font-mono text-sm placeholder:text-muted-teal/30"
                     placeholder="输入命令…（search 关键词 / open 2 / clear）" type="text" autocomplete="off"
                     spellcheck="false" />
-            </div>
-            <div class="hidden md:flex gap-6 items-center border-l border-muted-teal/10 pl-6 h-full">
-                <span class="text-muted-teal/40 font-mono text-[9px] tracking-widest uppercase">Link: STABLE</span>
-                <div class="flex items-center gap-2 text-primary/60">
-                    <span class="material-symbols-outlined text-base">cloud_queue</span>
-                    <span class="text-[9px] font-bold tracking-widest uppercase">Live_Sync</span>
+                <div class="hidden md:flex gap-6 items-center border-l border-muted-teal/10 pl-6 ml-6 h-full">
+                    <span class="text-muted-teal/40 font-mono text-[9px] tracking-widest uppercase">Link: STABLE</span>
+                    <div class="flex items-center gap-2 text-primary/60">
+                        <span class="material-symbols-outlined text-base">cloud_queue</span>
+                        <span class="text-[9px] font-bold tracking-widest uppercase">Live_Sync</span>
+                    </div>
                 </div>
             </div>
         </footer>

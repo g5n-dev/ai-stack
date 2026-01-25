@@ -100,9 +100,8 @@
                     {{- $img = "/img/profile-placeholder.svg" -}}
                     {{- end -}}
                     <div class="relative w-full aspect-[4/5] rounded-lg overflow-hidden holo-portrait cyber-border corner-decoration group"
-                        role="img" aria-label="{{ .Site.Params.profile_image_alt | default " AI Stack profile" }}"
-                        style="--holo-fit: {{ .Site.Params.profile_image_fit | default " cover" }}; --holo-pos: {{
-                        .Site.Params.profile_image_position | default "50% 35%" }};">
+                        role="img" aria-label='{{ .Site.Params.profile_image_alt | default "AI Stack profile" }}'
+                        style='--holo-fit: {{ .Site.Params.profile_image_fit | default "cover" }}; --holo-pos: {{ .Site.Params.profile_image_position | default "50% 35%" }};'>
                         <div class="holo-portrait-layer holo-portrait-base"
                             style="background-image: url('{{ $img | relURL }}');"></div>
                         <div class="holo-portrait-layer holo-portrait-glitch"
@@ -270,9 +269,11 @@
                     class="max-w-4xl mx-auto glass-panel rounded-2xl p-3 flex items-center gap-4 border border-muted-teal/15">
                     <div class="terminal-label text-primary font-mono text-sm font-bold pl-4 tracking-tight">CMD://
                     </div>
-                    <div class="flex-1">
+                    <div class="flex-1 terminal-caret-host flex items-center">
+                        <span class="terminal-caret text-primary font-mono text-sm font-bold tracking-tight"
+                            aria-hidden="true">█</span>
                         <input
-                            class="terminal-input w-full bg-transparent border-none focus:ring-0 font-mono text-sm text-off-white placeholder:text-muted-teal/30 py-2 px-0"
+                            class="terminal-input flex-1 min-w-0 bg-transparent border-none focus:ring-0 font-mono text-sm text-off-white placeholder:text-muted-teal/30 py-2 px-0"
                             placeholder="输入命令…（home / posts / tags / help）" type="text" autocomplete="off"
                             spellcheck="false" />
                     </div>
@@ -283,6 +284,7 @@
                 </div>
             </div>
         </footer>
+    </div>
     </div>
 </body>
 
