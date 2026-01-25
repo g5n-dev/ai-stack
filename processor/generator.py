@@ -25,14 +25,15 @@ class SuperEnhancedContentGenerator:
         self.add_recommendations = self.config.get('add_recommendations', True)
 
         # 新增的内容生成开关
-        self.generate_code_examples = self.config.get('generate_code_examples', True)
-        self.generate_case_studies = self.config.get('generate_case_studies', True)
-        self.generate_faq = self.config.get('generate_faq', True)
-        self.generate_comparison = self.config.get('generate_comparison', True)
-        self.generate_best_practices = self.config.get('generate_best_practices', True)
-        self.generate_performance_tips = self.config.get('generate_performance_tips', True)
-        self.generate_learning_path = self.config.get('generate_learning_path', True)
-        self.generate_challenges = self.config.get('generate_challenges', True)
+        self._generate_code_examples_enabled = self.config.get('generate_code_examples', True)
+        self._generate_case_studies_enabled = self.config.get('generate_case_studies', True)
+        self._generate_faq_enabled = self.config.get('generate_faq', True)
+        self._generate_comparison_enabled = self.config.get('generate_comparison', True)
+        self._generate_best_practices_enabled = self.config.get('generate_best_practices', True)
+        self._generate_performance_tips_enabled = self.config.get('generate_performance_tips', True)
+        self._generate_learning_path_enabled = self.config.get('generate_learning_path', True)
+        self._generate_challenges_enabled = self.config.get('generate_challenges', True)
+        self._add_recommendations_enabled = self.add_recommendations
 
     # ============ 基础内容生成（3次调用） ============
 
@@ -80,7 +81,7 @@ class SuperEnhancedContentGenerator:
 
     def generate_code_examples(self, content: Dict) -> List[Dict]:
         """5. 生成实用代码示例"""
-        if not self.generate_code_examples:
+        if not self._generate_code_examples_enabled:
             return []
         try:
             prompt = self._build_code_examples_prompt(content)
@@ -92,7 +93,7 @@ class SuperEnhancedContentGenerator:
 
     def generate_case_studies(self, content: Dict) -> List[Dict]:
         """6. 生成真实案例研究"""
-        if not self.generate_case_studies:
+        if not self._generate_case_studies_enabled:
             return []
         try:
             prompt = self._build_case_studies_prompt(content)
@@ -106,7 +107,7 @@ class SuperEnhancedContentGenerator:
 
     def generate_comparison_analysis(self, content: Dict) -> str:
         """7. 生成与同类方案的对比分析"""
-        if not self.generate_comparison:
+        if not self._generate_comparison_enabled:
             return ""
         try:
             prompt = self._build_comparison_prompt(content)
@@ -118,7 +119,7 @@ class SuperEnhancedContentGenerator:
 
     def generate_best_practices(self, content: Dict) -> str:
         """8. 生成最佳实践"""
-        if not self.generate_best_practices:
+        if not self._generate_best_practices_enabled:
             return ""
         try:
             prompt = self._build_best_practices_prompt(content)
@@ -130,7 +131,7 @@ class SuperEnhancedContentGenerator:
 
     def generate_performance_tips(self, content: Dict) -> str:
         """9. 生成性能优化建议"""
-        if not self.generate_performance_tips:
+        if not self._generate_performance_tips_enabled:
             return ""
         try:
             prompt = self._build_performance_tips_prompt(content)
@@ -155,7 +156,7 @@ class SuperEnhancedContentGenerator:
 
     def generate_practical_recommendations(self, content: Dict) -> str:
         """11. 生成实践建议"""
-        if not self.add_recommendations:
+        if not self._add_recommendations_enabled:
             return ""
         try:
             prompt = self._build_recommendations_prompt(content)
@@ -167,7 +168,7 @@ class SuperEnhancedContentGenerator:
 
     def generate_related_resources(self, content: Dict) -> List[Dict]:
         """12. 生成相关资源推荐"""
-        if not self.add_recommendations:
+        if not self._add_recommendations_enabled:
             return []
         try:
             prompt = self._build_resources_prompt(content)
@@ -181,7 +182,7 @@ class SuperEnhancedContentGenerator:
 
     def generate_learning_path(self, content: Dict) -> str:
         """13. 生成学习路径"""
-        if not self.generate_learning_path:
+        if not self._generate_learning_path_enabled:
             return ""
         try:
             prompt = self._build_learning_path_prompt(content)
@@ -193,7 +194,7 @@ class SuperEnhancedContentGenerator:
 
     def generate_faq(self, content: Dict) -> List[Dict]:
         """14. 生成常见问题解答"""
-        if not self.generate_faq:
+        if not self._generate_faq_enabled:
             return []
         try:
             prompt = self._build_faq_prompt(content)
@@ -205,7 +206,7 @@ class SuperEnhancedContentGenerator:
 
     def generate_challenges(self, content: Dict) -> List[str]:
         """15. 生成挑战和思考题"""
-        if not self.generate_challenges:
+        if not self._generate_challenges_enabled:
             return []
         try:
             prompt = self._build_challenges_prompt(content)
