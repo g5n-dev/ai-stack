@@ -5,8 +5,9 @@
 """
 
 import re
+import os
 from pathlib import Path
-from typing import List, Dict, Set, Tuple, Optional
+from typing import List, Dict, Tuple
 from collections import defaultdict
 import json
 import logging
@@ -238,10 +239,9 @@ class TagGraphBuilder:
     def build_tag_to_tech_links(self, tech_nodes: List[Dict]) -> List[Dict]:
         """建立标签与技术栈节点的关联（基于名称匹配）"""
         links = []
-        tag_names = set(self.tags.keys())
         tech_names = {node["id"]: node for node in tech_nodes}
 
-        for tag_name, tag_data in self.tags.items():
+        for tag_name in self.tags.keys():
             for tech_id, tech_node in tech_names.items():
                 if self._is_semantically_related(tag_name, tech_id, tech_node):
                     links.append({
@@ -312,8 +312,109 @@ def export_tag_graph(
     sys.path.insert(0, str(Path(__file__).parent))
     from tech_stack import build_graph_data
 
+    output = Path(output_path)
+    existing_tag_descriptions: Dict[str, str] = {}
+    if output.exists():
+        try:
+            with open(output, "r", encoding="utf-8") as f:
+                existing = json.load(f) or {}
+            for node in existing.get("nodes", []) or []:
+                if node.get("layer") != "tag":
+                    continue
+                node_id = node.get("id")
+                desc = (node.get("description") or "").strip()
+                if not node_id or not desc:
+                    continue
+                existing_tag_descriptions[str(node_id)] = desc
+        except Exception as e:
+            logger.warning(f"Failed to load existing tag descriptions: {e}")
+
     builder = TagGraphBuilder(enable_content_mining=enable_content_mining)
     builder.extract_tags_from_articles()
+
+    def is_default_tag_description(tag_name: str, desc: str) -> bool:
+        d = (desc or "").strip()
+        if not d:
+            return True
+        if d == f"文章标签: {tag_name}":
+            return True
+        if d == f"文章标签:{tag_name}":
+            return True
+        return d.startswith("文章标签:") and tag_name in d and len(d) <= len(f"文章标签: {tag_name}") + 2
+
+    for tag_name, tag_data in builder.tags.items():
+        existing_desc = existing_tag_descriptions.get(tag_name)
+        if existing_desc and not is_default_tag_description(tag_name, existing_desc):
+            tag_data["description"] = existing_desc
+
+    enable_llm_intros = os.environ.get("TAG_INTRO_ENABLED", "1").strip().lower() not in {"0", "false", "no", "off"}
+    max_new_intros_raw = os.environ.get("TAG_INTRO_MAX_NEW", "80").strip()
+    try:
+        max_new_intros = max(0, int(max_new_intros_raw))
+    except Exception:
+        max_new_intros = 80
+
+    client = None
+    if enable_llm_intros and max_new_intros > 0:
+        try:
+            try:
+                from processor.anthropic_client import AnthropicClient
+            except Exception:
+                from anthropic_client import AnthropicClient
+            client = AnthropicClient()
+        except Exception as e:
+            logger.warning(f"Tag intro generation disabled: {e}")
+
+    if client:
+        tags_needing_intros = []
+        for tag_name, tag_data in builder.tags.items():
+            if is_default_tag_description(tag_name, tag_data.get("description", "")):
+                tags_needing_intros.append(tag_name)
+
+        tags_needing_intros.sort(
+            key=lambda t: (-int(builder.tags[t].get("article_count", 0) or 0), t)
+        )
+
+        if tags_needing_intros:
+            tag_to_articles: Dict[str, List[str]] = defaultdict(list)
+            for title, tags in (builder.article_tags or {}).items():
+                for tag in tags:
+                    tag_to_articles[tag].append(title)
+
+            for tag_name in tags_needing_intros[:max_new_intros]:
+                tag_data = builder.tags.get(tag_name) or {}
+                related = sorted(list(tag_data.get("related_tags") or []))[:10]
+                titles = tag_to_articles.get(tag_name, [])[:8]
+                article_count = int(tag_data.get("article_count", 0) or 0)
+
+                context_lines = [
+                    f"标签: {tag_name}",
+                    f"出现文章数: {article_count}",
+                ]
+                if related:
+                    context_lines.append(f"相关标签: {', '.join(related)}")
+                if titles:
+                    context_lines.append("出现文章标题样例:")
+                    context_lines.extend([f"- {t}" for t in titles])
+                context = "\n".join(context_lines)
+
+                prompt = (
+                    "你是一个技术内容策展人。请为给定“标签”写一段简介，用于知识图谱节点的介绍。\n"
+                    "要求:\n"
+                    "1) 用中文，1-2 句话即可\n"
+                    "2) 解释它通常指什么、与什么相关\n"
+                    "3) 不要列清单，不要加引号，不要输出 JSON\n"
+                    "4) 字数尽量控制在 30-80 字\n\n"
+                    f"{context}"
+                )
+
+                try:
+                    raw = client.create_message(prompt, max_tokens=140, temperature=0.3)
+                    intro = (raw or "").strip().strip('"').strip()
+                    if intro:
+                        tag_data["description"] = intro.replace("\r\n", "\n").strip()
+                except Exception as e:
+                    logger.warning(f"Failed to generate intro for tag '{tag_name}': {e}")
 
     tag_nodes = builder.get_tag_nodes()
     tag_links = builder.get_tag_links(min_cooccurrence)
@@ -349,7 +450,6 @@ def export_tag_graph(
         },
     }
 
-    output = Path(output_path)
     output.parent.mkdir(parents=True, exist_ok=True)
 
     with open(output, "w", encoding="utf-8") as f:

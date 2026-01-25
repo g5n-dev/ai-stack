@@ -70,6 +70,10 @@
                     {{ end }}
                 </nav>
                 <div class="flex items-center gap-3">
+                    <div class="hidden lg:flex flex-col border-l border-muted-teal/10 pl-3">
+                        <span class="text-muted-teal/50 text-[10px] tracking-normal">时间</span>
+                        <span id="current-time" class="font-medium text-off-white text-[11px] font-mono">--:--:--</span>
+                    </div>
                     <a href="{{ .Site.Params.github }}"
                         class="hidden sm:flex items-center px-3 py-1.5 border border-muted-teal/30 rounded text-[11px] text-primary font-bold tracking-wide bg-muted-teal/5 hover:bg-muted-teal/10 transition-colors">
                         安全连接

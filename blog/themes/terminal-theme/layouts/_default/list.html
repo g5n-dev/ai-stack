@@ -72,31 +72,36 @@
     </div>
 
     <div class="relative flex h-screen w-full flex-col overflow-hidden z-10">
-        <header class="w-full max-w-6xl mx-auto px-6 py-6 flex items-center justify-between">
-            <div class="flex items-center gap-4">
-                <a href="/"
-                    class="size-10 bg-primary/10 flex items-center justify-center rounded-lg border border-primary/20 backdrop-blur-md shadow-[0_0_15px_rgba(77,182,172,0.12)]">
-                    <span class="material-symbols-outlined text-primary text-xl">terminal</span>
-                </a>
-                <div>
-                    <h2 class="text-off-white/90 text-lg font-medium tracking-wide teal-glow-text">{{ .Site.Title }}
-                    </h2>
-                    <p class="text-[11px] font-mono text-muted-teal/50 -mt-0.5 tracking-wide">归档列表</p>
+        <header class="w-full border-b border-muted-teal/20 bg-deep-navy sticky top-0 z-40">
+            <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+                <div class="flex items-center gap-3 text-primary">
+                    <span class="material-symbols-outlined text-2xl">terminal</span>
+                    <h1 class="text-xl font-bold tracking-widest">{{ .Site.Title }}</h1>
                 </div>
-            </div>
-
-            <nav class="hidden md:flex items-center gap-8 text-[11px] font-mono tracking-wide text-off-white/70">
-                {{ range .Site.Menus.main }}
-                <a href="{{ .URL }}" class="hover:text-primary transition-all">{{ .Name }}</a>
-                {{ end }}
-            </nav>
-
-            <div class="flex items-center gap-3">
-                <a href="/index.xml"
-                    class="size-9 flex items-center justify-center text-off-white/40 hover:text-primary transition-colors border border-muted-teal/20 rounded-lg bg-muted-teal/5"
-                    aria-label="RSS">
-                    <span class="material-symbols-outlined text-xl">rss_feed</span>
-                </a>
+                <nav class="hidden md:flex gap-8 text-xs font-medium tracking-widest text-off-white/60">
+                    {{ range .Site.Menus.main }}
+                    <a class="hover:text-primary transition-colors" href="{{ .URL }}">{{ .Name }}</a>
+                    {{ end }}
+                </nav>
+                <div class="flex items-center gap-3">
+                    <div class="hidden lg:flex flex-col border-l border-muted-teal/10 pl-3">
+                        <span class="text-muted-teal/50 text-[10px] tracking-normal">时间</span>
+                        <span id="current-time" class="font-medium text-off-white text-[11px] font-mono">--:--:--</span>
+                    </div>
+                    <a href="{{ .Site.Params.github }}"
+                        class="hidden sm:flex items-center px-3 py-1.5 border border-muted-teal/30 rounded text-[11px] text-primary font-bold tracking-wide bg-muted-teal/5 hover:bg-muted-teal/10 transition-colors">
+                        安全连接
+                    </a>
+                    <a href="/index.xml"
+                        class="bg-muted-teal/10 hover:bg-muted-teal/20 text-off-white p-2 rounded border border-muted-teal/20 transition-all"
+                        aria-label="RSS">
+                        <span class="material-symbols-outlined text-sm block">rss_feed</span>
+                    </a>
+                    <div class="flex items-center gap-2 pl-2 border-l border-muted-teal/10">
+                        <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                        <span class="text-[10px] tracking-wider text-green-500 font-mono">SYS_STABLE</span>
+                    </div>
+                </div>
             </div>
         </header>
 

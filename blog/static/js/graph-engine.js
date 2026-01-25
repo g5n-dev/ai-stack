@@ -64,6 +64,12 @@
       // 动态更新颜色配置以严格匹配主题
       this._updateThemeColors();
 
+      this._isDestroyed = false;
+      this._isPaused = false;
+      this._rafId = null;
+      this._boundRenderFrame = () => this._renderFrame();
+      this._onResize = () => this._resize();
+
       this.data = this._prepareData(data);
       this.canvas = null;
       this.ctx = null;
@@ -93,10 +99,23 @@
       this._bindEvents();
     }
 
+    _getNodeBaseRadius(node) {
+      const { nodeRadius } = CONFIG.render;
+      const degree = node && node._links ? node._links.length : 0;
+      const boost = Math.min(10, Math.sqrt(Math.max(0, degree)) * 2);
+      return nodeRadius + boost;
+    }
+
+    _getNodeFocusRadius(node) {
+      const { nodeHoverRadius } = CONFIG.render;
+      const base = this._getNodeBaseRadius(node);
+      return Math.max(nodeHoverRadius, base * 1.8);
+    }
+
     // ===== 更新主题颜色 =====
     _updateThemeColors() {
       const primary = getCssVar("--primary");
-      
+
       CONFIG.colors = {
         primary: `rgb(${primary})`,
         mutedTeal: `rgba(${primary}, 0.7)`,
@@ -108,8 +127,10 @@
 
     // ===== 数据预处理 =====
     _prepareData(rawData) {
-      // 克隆数据避免修改原始数据
-      const data = JSON.parse(JSON.stringify(rawData));
+      const data = rawData || {};
+      data.nodes = Array.isArray(data.nodes) ? data.nodes : [];
+      data.links = Array.isArray(data.links) ? data.links : [];
+      data.layers = data.layers || {};
 
       // 构建节点ID映射
       const nodeMap = new Map();
@@ -120,12 +141,14 @@
 
       // 处理连线，建立节点间关联
       data.links.forEach((link) => {
-        const source = nodeMap.get(link.source);
-        const target = nodeMap.get(link.target);
+        const sourceId = typeof link.source === "object" && link.source ? link.source.id : link.source;
+        const targetId = typeof link.target === "object" && link.target ? link.target.id : link.target;
+        const source = nodeMap.get(sourceId);
+        const target = nodeMap.get(targetId);
 
         if (source && target) {
-          link.sourceNode = source;
-          link.targetNode = target;
+          link.source = source;
+          link.target = target;
           source._links.push(link);
           target._links.push(link);
         }
@@ -153,11 +176,12 @@
       this.ctx = this.canvas.getContext("2d");
 
       this._resize();
-      window.addEventListener("resize", () => this._resize());
+      window.addEventListener("resize", this._onResize);
     }
 
     // ===== 调整尺寸 =====
     _resize() {
+      if (!this.canvas || !this.ctx || !this.container) return;
       const rect = this.container.getBoundingClientRect();
       const dpr = window.devicePixelRatio || 1;
 
@@ -169,14 +193,14 @@
       this.canvas.style.width = `${this.width}px`;
       this.canvas.style.height = `${this.height}px`;
 
-      this.ctx.scale(dpr, dpr);
+      this.ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
       // 更新中心点
       this.centerX = this.width / 2;
       this.centerY = this.height / 2;
 
       // 重启模拟以适应新尺寸
-      if (this.simulation) {
+      if (this.simulation && !this._isPaused) {
         this.simulation.alpha(0.3).restart();
       }
     }
@@ -229,13 +253,19 @@
 
     // ===== 渲染循环 =====
     _startRenderLoop() {
-      const render = () => {
-        this.time += 16; // 约每帧16ms
-        this._updateFloatPositions();
-        this._render();
-        requestAnimationFrame(render);
-      };
-      requestAnimationFrame(render);
+      if (this._rafId != null) return;
+      this._rafId = requestAnimationFrame(this._boundRenderFrame);
+    }
+
+    _renderFrame() {
+      if (this._isDestroyed || this._isPaused) {
+        this._rafId = null;
+        return;
+      }
+      this.time += 16;
+      this._updateFloatPositions();
+      this._render();
+      this._rafId = requestAnimationFrame(this._boundRenderFrame);
     }
 
     // ===== 更新浮动位置 =====
@@ -255,6 +285,7 @@
 
     // ===== 渲染 =====
     _render() {
+      if (!this.ctx) return;
       const ctx = this.ctx;
       const { k, x, y } = this.transform;
 
@@ -281,11 +312,15 @@
     _renderLinks(ctx) {
       const { linkWidth, linkHoverWidth } = CONFIG.render;
       const { link, linkHighlight } = CONFIG.colors;
+      const focus = this.hoveredNode || this.selectedNode;
 
       this.data.links.forEach((link) => {
         const source = link.source;
         const target = link.target;
         const isConnected = this._isConnectedToHovered(source, target);
+        const isDimmed = focus && !isConnected;
+
+        ctx.filter = isDimmed ? "grayscale(90%) blur(0.6px)" : "none";
 
         ctx.beginPath();
         ctx.moveTo(source.x, source.y + source._floatY);
@@ -293,17 +328,51 @@
 
         ctx.strokeStyle = isConnected ? linkHighlight : link;
         ctx.lineWidth = isConnected ? linkHoverWidth : linkWidth;
-        ctx.globalAlpha = isConnected ? 1 : 0.6;
+        ctx.globalAlpha = isDimmed ? 0.035 : (isConnected ? 0.92 : 0.16);
+        if (isConnected) {
+          ctx.shadowBlur = 14;
+          ctx.shadowColor = CONFIG.colors.glow;
+        } else {
+          ctx.shadowBlur = 0;
+        }
         ctx.stroke();
+
+        if (isConnected) {
+          ctx.beginPath();
+          ctx.moveTo(source.x, source.y + source._floatY);
+          ctx.lineTo(target.x, target.y + target._floatY);
+          ctx.globalAlpha = 0.25;
+          ctx.lineWidth = linkHoverWidth + 1.5;
+          ctx.shadowBlur = 22;
+          ctx.shadowColor = CONFIG.colors.primary;
+          ctx.strokeStyle = linkHighlight;
+          ctx.stroke();
+
+          ctx.beginPath();
+          ctx.moveTo(source.x, source.y + source._floatY);
+          ctx.lineTo(target.x, target.y + target._floatY);
+          ctx.setLineDash([12, 22]);
+          ctx.lineDashOffset = -(this.time * 0.08);
+          ctx.globalAlpha = 0.75;
+          ctx.lineWidth = linkHoverWidth + 0.8;
+          ctx.shadowBlur = 18;
+          ctx.shadowColor = CONFIG.colors.primary;
+          ctx.strokeStyle = linkHighlight;
+          ctx.stroke();
+          ctx.setLineDash([]);
+        }
+
+        ctx.filter = "none";
         ctx.globalAlpha = 1;
+        ctx.shadowBlur = 0;
       });
     }
 
     // ===== 绘制脉冲效果 =====
     _renderPulses(ctx) {
       const pulseColor = CONFIG.colors.primary;
-      const pulseSize = 3;
-      const pulseCount = 5;
+      const pulseSize = 3.2;
+      const pulseCount = 7;
 
       this.data.links.forEach((link, i) => {
         const source = link.source;
@@ -322,12 +391,42 @@
           const px = source.x + dx * offset;
           const py = source.y + source._floatY + dy * offset;
 
+          const a = 1 - offset * 0.55;
+
+          ctx.save();
+          ctx.beginPath();
+          ctx.arc(px, py, pulseSize * 2.6, 0, Math.PI * 2);
+          ctx.fillStyle = pulseColor;
+          ctx.globalAlpha = a * 0.16;
+          ctx.shadowBlur = 16;
+          ctx.shadowColor = pulseColor;
+          ctx.fill();
+
           ctx.beginPath();
           ctx.arc(px, py, pulseSize, 0, Math.PI * 2);
           ctx.fillStyle = pulseColor;
-          ctx.globalAlpha = 1 - offset * 0.5;
+          ctx.globalAlpha = a;
+          ctx.shadowBlur = 10;
+          ctx.shadowColor = pulseColor;
           ctx.fill();
-          ctx.globalAlpha = 1;
+
+          const ang = Math.atan2(dy, dx);
+          const s = pulseSize * 1.2;
+          ctx.translate(px, py);
+          ctx.rotate(ang);
+          ctx.beginPath();
+          ctx.moveTo(0, -s);
+          ctx.lineTo(s, 0);
+          ctx.lineTo(0, s);
+          ctx.lineTo(-s, 0);
+          ctx.closePath();
+          ctx.fillStyle = "rgba(255,255,255,0.9)";
+          ctx.globalAlpha = a * 0.65;
+          ctx.shadowBlur = 14;
+          ctx.shadowColor = pulseColor;
+          ctx.fill();
+
+          ctx.restore();
         }
       });
     }
@@ -336,6 +435,7 @@
     _renderNodes(ctx) {
       const { nodeRadius, nodeHoverRadius } = CONFIG.render;
       const { glow } = CONFIG.colors;
+      const focus = this.hoveredNode || this.selectedNode;
 
       this.data.nodes.forEach((node) => {
         // 跳过不可见图层的节点
@@ -347,9 +447,13 @@
         const isHovered = this.hoveredNode === node;
         const isSelected = this.selectedNode === node;
         const isConnected = this._isConnectedToHovered(node);
-        const radius = isHovered || isSelected ? nodeHoverRadius : nodeRadius;
+        const isDimmed = focus && !isConnected;
+        const radius = isHovered || isSelected ? this._getNodeFocusRadius(node) : this._getNodeBaseRadius(node);
 
         const y = node.y + node._floatY;
+
+        ctx.filter = isDimmed ? "grayscale(90%) blur(0.6px)" : "none";
+        ctx.globalAlpha = isDimmed ? 0.12 : 1;
 
         // 发光效果
         if (isHovered || isSelected || isConnected) {
@@ -372,18 +476,61 @@
         ctx.fill();
 
         // 节点边框
-        ctx.strokeStyle = isHovered || isSelected ? "#fff" : "transparent";
-        ctx.lineWidth = 2;
-        ctx.stroke();
+        if (isHovered || isSelected) {
+          ctx.strokeStyle = "rgba(255,255,255,0.9)";
+          ctx.lineWidth = 2;
+          ctx.shadowBlur = 18;
+          ctx.shadowColor = glow;
+          ctx.stroke();
+
+          ctx.beginPath();
+          ctx.arc(node.x, y, radius + 6, 0, Math.PI * 2);
+          ctx.strokeStyle = CONFIG.colors.primary;
+          ctx.lineWidth = 1;
+          ctx.setLineDash([6, 10]);
+          ctx.lineDashOffset = -(this.time * 0.02);
+          ctx.globalAlpha = 0.75;
+          ctx.shadowBlur = 26;
+          ctx.shadowColor = CONFIG.colors.primary;
+          ctx.stroke();
+          ctx.setLineDash([]);
+          ctx.globalAlpha = isDimmed ? 0.16 : 1;
+        }
+        ctx.shadowBlur = 0;
+        ctx.filter = "none";
 
         // 节点标签（仅悬停或选中时显示）
         if (isHovered || isSelected) {
-          ctx.font = "12px ui-monospace, monospace";
-          ctx.fillStyle = "rgba(209, 213, 219, 0.9)";
+          const text = node.name || "";
+          ctx.font = "12px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace";
+          const metrics = ctx.measureText(text);
+          const padX = 10;
+          const padY = 7;
+          const w = Math.max(40, metrics.width + padX * 2);
+          const h = 26;
+          const bx = node.x - w / 2;
+          const by = y - radius - 14 - h;
+
+          ctx.globalAlpha = 0.92;
+          ctx.fillStyle = "rgba(10, 17, 26, 0.78)";
+          ctx.strokeStyle = "rgba(38, 166, 154, 0.22)";
+          ctx.lineWidth = 1;
+          ctx.shadowBlur = 18;
+          ctx.shadowColor = "rgba(38, 166, 154, 0.25)";
+          ctx.beginPath();
+          ctx.rect(bx, by, w, h);
+          ctx.fill();
+          ctx.stroke();
+
+          ctx.shadowBlur = 0;
+          ctx.fillStyle = "rgba(209, 213, 219, 0.92)";
           ctx.textAlign = "center";
-          ctx.textBaseline = "bottom";
-          ctx.fillText(node.name, node.x, y - radius - 4);
+          ctx.textBaseline = "middle";
+          ctx.fillText(text, node.x, by + h / 2 + 0.5);
+          ctx.globalAlpha = isDimmed ? 0.16 : 1;
         }
+
+        ctx.globalAlpha = 1;
       });
     }
 
@@ -393,16 +540,19 @@
       const target = this.hoveredNode || this.selectedNode;
       if (!target) return false;
 
-      // 检查a是否是target的邻居
-      const aIsNeighbor = a._links.some((l) =>
-        l.sourceNode === target || l.targetNode === target
-      );
+      const hasNode = (l, n) => {
+        if (!l || !n) return false;
+        if (l.source === n || l.target === n) return true;
+        if (typeof l.source === "string" && l.source === n.id) return true;
+        if (typeof l.target === "string" && l.target === n.id) return true;
+        return false;
+      };
+
+      const aIsNeighbor = a && Array.isArray(a._links) ? a._links.some((l) => hasNode(l, target)) : false;
 
       // 检查b是否是target的邻居
       if (b) {
-        const bIsNeighbor = b._links.some((l) =>
-          l.sourceNode === target || l.targetNode === target
-        );
+        const bIsNeighbor = b && Array.isArray(b._links) ? b._links.some((l) => hasNode(l, target)) : false;
         return aIsNeighbor || bIsNeighbor || a === target || b === target;
       }
 
@@ -414,9 +564,9 @@
       if (!this.searchQuery) return true;
       const q = this.searchQuery.toLowerCase();
       return (
-        node.name.toLowerCase().includes(q) ||
-        node.description.toLowerCase().includes(q) ||
-        node.layer_name.toLowerCase().includes(q)
+        (node.name || "").toLowerCase().includes(q) ||
+        (node.description || "").toLowerCase().includes(q) ||
+        (node.layer_name || "").toLowerCase().includes(q)
       );
     }
 
@@ -436,8 +586,9 @@
         const dx = transformX - node.x;
         const dy = transformY - nodeY;
         const dist = Math.sqrt(dx * dx + dy * dy);
+        const r = this._getNodeBaseRadius(node);
 
-        if (dist <= nodeHoverRadius + 5) {
+        if (dist <= Math.max(nodeHoverRadius, r) + 6) {
           return node;
         }
       }
@@ -446,8 +597,7 @@
 
     // ===== 绑定事件 =====
     _bindEvents() {
-      // 鼠标按下
-      this.canvas.addEventListener("mousedown", (e) => {
+      this._onMouseDown = (e) => {
         const rect = this.canvas.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
@@ -461,27 +611,23 @@
           node.fixed = true;
           this._emit("nodeSelect", node);
         } else {
-          // 拖拽画布
           this.isDragging = true;
           this.dragStart = { x, y };
         }
-      });
+      };
 
-      // 鼠标移动
-      this.canvas.addEventListener("mousemove", (e) => {
+      this._onMouseMove = (e) => {
         const rect = this.canvas.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
 
         if (this.isDragging) {
           if (this.dragNode) {
-            // 拖拽节点
             this.dragNode.x = (x - this.transform.x) / this.transform.k;
             this.dragNode.y = (y - this.transform.y) / this.transform.k;
             this.dragNode._baseY = this.dragNode.y;
-            this.simulation.alpha(0.1).restart();
+            if (!this._isPaused) this.simulation.alpha(0.1).restart();
           } else {
-            // 拖拽画布
             const dx = x - this.dragStart.x;
             const dy = y - this.dragStart.y;
             this.transform.x += dx;
@@ -489,7 +635,6 @@
             this.dragStart = { x, y };
           }
         } else {
-          // 悬停检测
           const node = this._getNodeAtPosition(x, y);
           if (node !== this.hoveredNode) {
             this.hoveredNode = node;
@@ -497,20 +642,20 @@
             this._emit("nodeHover", node);
           }
         }
-      });
+      };
 
-      // 鼠标释放
-      window.addEventListener("mouseup", () => {
+      this._onMouseUp = () => {
         if (this.dragNode) {
           this.dragNode.fixed = false;
         }
         this.isDragging = false;
         this.dragNode = null;
-        this.canvas.style.cursor = this.hoveredNode ? "pointer" : "grab";
-      });
+        if (this.canvas) {
+          this.canvas.style.cursor = this.hoveredNode ? "pointer" : "grab";
+        }
+      };
 
-      // 滚轮缩放
-      this.canvas.addEventListener("wheel", (e) => {
+      this._onWheel = (e) => {
         e.preventDefault();
         const rect = this.canvas.getBoundingClientRect();
         const x = e.clientX - rect.left;
@@ -521,16 +666,39 @@
         const oldK = this.transform.k;
         const newK = Math.max(0.3, Math.min(3, oldK + delta));
 
-        // 以鼠标位置为中心缩放
         this.transform.x = x - (x - this.transform.x) * (newK / oldK);
         this.transform.y = y - (y - this.transform.y) * (newK / oldK);
         this.transform.k = newK;
-      }, { passive: false });
+      };
+
+      this._onDblClick = () => {
+        this.resetView();
+      };
+
+      this._onVisibilityChange = () => {
+        if (document.hidden) {
+          this.pause();
+        } else {
+          this.resume();
+        }
+      };
+
+      // 鼠标按下
+      this.canvas.addEventListener("mousedown", this._onMouseDown);
+
+      // 鼠标移动
+      this.canvas.addEventListener("mousemove", this._onMouseMove);
+
+      // 鼠标释放
+      window.addEventListener("mouseup", this._onMouseUp);
+
+      // 滚轮缩放
+      this.canvas.addEventListener("wheel", this._onWheel, { passive: false });
 
       // 双击重置视图
-      this.canvas.addEventListener("dblclick", () => {
-        this.resetView();
-      });
+      this.canvas.addEventListener("dblclick", this._onDblClick);
+
+      document.addEventListener("visibilitychange", this._onVisibilityChange);
     }
 
     // ===== 事件发射 =====
@@ -548,7 +716,7 @@
     resetView() {
       this.transform = { k: 1, x: 0, y: 0 };
       this.selectedNode = null;
-      this.simulation.alpha(0.3).restart();
+      if (!this._isPaused) this.simulation.alpha(0.3).restart();
       this._emit("viewReset", null);
     }
 
@@ -570,7 +738,7 @@
     // 过滤层级
     filterLayers(layers) {
       this.visibleLayers = new Set(layers);
-      this.simulation.alpha(0.3).restart();
+      if (!this._isPaused) this.simulation.alpha(0.3).restart();
       this._emit("layerFilter", Array.from(this.visibleLayers));
     }
 
@@ -590,15 +758,50 @@
       return this.data.nodes.find((n) => n.id === nodeId);
     }
 
-    // 销毁
-    destroy() {
+    pause() {
+      if (this._isDestroyed || this._isPaused) return;
+      this._isPaused = true;
+      if (this._rafId != null) {
+        cancelAnimationFrame(this._rafId);
+        this._rafId = null;
+      }
       if (this.simulation) {
         this.simulation.stop();
       }
-      window.removeEventListener("resize", this._resize);
+    }
+
+    resume() {
+      if (this._isDestroyed || !this._isPaused) return;
+      this._isPaused = false;
+      if (this.simulation) {
+        this.simulation.alpha(0.08).restart();
+      }
+      this._startRenderLoop();
+    }
+
+    // 销毁
+    destroy() {
+      if (this._isDestroyed) return;
+      this._isDestroyed = true;
+      this.pause();
+      if (this.simulation) {
+        this.simulation.stop();
+      }
+      window.removeEventListener("resize", this._onResize);
+      if (this.canvas) {
+        this.canvas.removeEventListener("mousedown", this._onMouseDown);
+        this.canvas.removeEventListener("mousemove", this._onMouseMove);
+        this.canvas.removeEventListener("wheel", this._onWheel, { passive: false });
+        this.canvas.removeEventListener("dblclick", this._onDblClick);
+      }
+      window.removeEventListener("mouseup", this._onMouseUp);
+      document.removeEventListener("visibilitychange", this._onVisibilityChange);
       if (this.canvas && this.canvas.parentNode) {
         this.canvas.parentNode.removeChild(this.canvas);
       }
+      this.ctx = null;
+      this.canvas = null;
+      this.simulation = null;
     }
   }
 
