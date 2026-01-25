@@ -16,7 +16,12 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
         rel="stylesheet" />
 
-    <script src="https://unpkg.com/d3@7/dist/d3.min.js"></script>
+    <script src="https://unpkg.com/cytoscape@3.29.2/dist/cytoscape.min.js"></script>
+    <script src="/js/layout-base.js"></script>
+    <script src="/js/cose-base.js"></script>
+    <script src="/js/cytoscape-cose-bilkent.js"></script>
+    <script src="https://unpkg.com/dagre@0.8.5/dist/dagre.min.js"></script>
+    <script src="/js/cytoscape-dagre.js"></script>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 
     <script id="tailwind-config">
@@ -124,9 +129,8 @@
         }
     </style>
 
-    <script src="/js/graph-engine.js" defer></script>
-
-    <script src="/js/graph-renderer.js" defer></script>
+    <script src="/js/cytoscape-graph-engine.js"></script>
+    <script src="/js/cytoscape-graph-renderer.js"></script>
 </head>
 
 <body
@@ -413,11 +417,16 @@
             const abortController = new AbortController();
             let disposed = false;
             let timeTimer = null;
+            let dataWorker = null;
 
             function hardDispose() {
                 if (disposed) return;
                 disposed = true;
                 abortController.abort();
+                if (dataWorker) {
+                    dataWorker.terminate();
+                    dataWorker = null;
+                }
                 if (timeTimer) {
                     clearInterval(timeTimer);
                     timeTimer = null;
@@ -495,13 +504,8 @@
                 }
             }
 
-            if (typeof d3 === 'undefined') {
-                showError("D3.js Library Load Failed.");
-                return;
-            }
-
-            if (typeof GraphEngine === 'undefined') {
-                showError("GraphEngine Script Load Failed.");
+            if (typeof CytoscapeGraphEngine === 'undefined') {
+                showError("CytoscapeGraphEngine Script Load Failed.");
                 return;
             }
 
@@ -520,43 +524,111 @@
             updateCurrentTime();
             timeTimer = setInterval(updateCurrentTime, 1000);
 
-            // Fetch Data via Network instead of embedding
-            fetch('/data/tag-graph.json', { signal: abortController.signal })
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
-                    }
-                    return response.json();
+            function loadJsonWithWorker(url, label) {
+                return new Promise((resolve, reject) => {
+                    const w = new Worker('/js/data-parser-worker.js');
+                    w.onmessage = function (e) {
+                        const { type, data, error, progress } = e.data || {};
+                        if (type === 'progress') {
+                            if (loadingMsg) {
+                                const p = typeof progress === "number" ? progress : 0;
+                                loadingMsg.textContent = `${label || "LOADING"}... ${p}%`;
+                            }
+                            return;
+                        }
+                        if (type === 'parsing') {
+                            if (loadingMsg) loadingMsg.textContent = `${label || "PARSING"}...`;
+                            return;
+                        }
+                        if (type === 'success') {
+                            w.terminate();
+                            resolve(data);
+                            return;
+                        }
+                        if (type === 'error') {
+                            w.terminate();
+                            reject(new Error(error || "Data Load Failed"));
+                        }
+                    };
+                    w.onerror = function (err) {
+                        w.terminate();
+                        reject(err);
+                    };
+                    w.postMessage({ url });
+                });
+            }
+
+            window.dataWorkerFactory = function (url) {
+                return loadJsonWithWorker(url);
+            };
+
+            const splitBaseUrl = "/data/tag-graph/";
+
+            if (loadingMsg) loadingMsg.textContent = "BOOTSTRAP...";
+
+            fetch(`${splitBaseUrl}index.json`)
+                .then(r => {
+                    if (!r.ok) throw new Error(`HTTP error! status: ${r.status}`);
+                    return r.json();
                 })
-                .then(data => {
+                .then(async (index) => {
+                    if (!index || disposed) return;
+                    const files = index?.files || {};
+                    const layers = index?.layers || {};
+                    const defaults = index?.defaults || {};
+
+                    const coreUrl = `${splitBaseUrl}${files.core || "core.json"}`;
+                    const tagHotUrl = `${splitBaseUrl}${files.tagHot || "tag.hot.json"}`;
+                    const conceptHotUrl = `${splitBaseUrl}${files.conceptHot || "concept.hot.json"}`;
+
+                    const core = await loadJsonWithWorker(coreUrl, "LOADING CORE");
                     if (disposed) return;
-                    if (!data || !data.nodes) {
-                        throw new Error("Invalid Data Format: 'nodes' property missing.");
-                    }
+
+                    const initData = {
+                        nodes: Array.isArray(core?.nodes) ? core.nodes : [],
+                        links: Array.isArray(core?.links) ? core.links : [],
+                        layers: layers,
+                        split_base_url: splitBaseUrl,
+                        split_files: files,
+                        initial_visible_layers: defaults?.initial_visible_layers || [],
+                        full_layers: ["language", "framework", "model", "application", "scenario"]
+                    };
 
                     try {
-                        // Initialize Engine
                         if (window.graphEngine && typeof window.graphEngine.destroy === "function") {
                             window.graphEngine.destroy();
                         }
-                        window.graphEngine = new GraphEngine(container, data);
+                        window.graphEngine = new CytoscapeGraphEngine(container, initData);
 
-                        // Initialize Renderer
-                        if (typeof GraphRenderer !== 'undefined') {
+                        if (typeof CytoscapeGraphRenderer !== 'undefined') {
                             if (window.graphRenderer && typeof window.graphRenderer.destroy === "function") {
                                 window.graphRenderer.destroy();
                             }
-                            window.graphRenderer = new GraphRenderer(window.graphEngine);
+                            window.graphRenderer = new CytoscapeGraphRenderer(window.graphEngine);
                         }
-
-                        // Remove loading state
-                        if (loading) {
-                            loading.classList.add('opacity-0', 'transition-opacity', 'duration-500');
-                            setTimeout(() => loading.remove(), 500);
-                        }
-
                     } catch (initErr) {
-                        throw initErr;
+                        showError(initErr.message);
+                        console.error("Graph Init Error:", initErr);
+                        return;
+                    }
+
+                    try {
+                        const [tagHot, conceptHot] = await Promise.all([
+                            loadJsonWithWorker(tagHotUrl, "LOADING HOT TAGS"),
+                            loadJsonWithWorker(conceptHotUrl, "LOADING HOT CONCEPTS")
+                        ]);
+                        if (disposed) return;
+                        if (window.graphEngine && typeof window.graphEngine.addGraphData === "function") {
+                            window.graphEngine.addGraphData(tagHot || {});
+                            window.graphEngine.addGraphData(conceptHot || {});
+                        }
+                    } catch (hotErr) {
+                        console.warn("Hot Data Load Failed:", hotErr);
+                    }
+
+                    if (loading) {
+                        loading.classList.add('opacity-0', 'transition-opacity', 'duration-500');
+                        setTimeout(() => loading.remove(), 500);
                     }
                 })
                 .catch(error => {

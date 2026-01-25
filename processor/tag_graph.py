@@ -7,7 +7,7 @@
 import re
 import os
 from pathlib import Path
-from typing import List, Dict, Tuple
+from typing import List, Dict, Tuple, Any, Optional
 from collections import defaultdict
 import json
 import logging
@@ -312,22 +312,47 @@ def export_tag_graph(
     sys.path.insert(0, str(Path(__file__).parent))
     from tech_stack import build_graph_data
 
+    data = build_tag_graph_data(
+        min_cooccurrence=min_cooccurrence,
+        enable_content_mining=enable_content_mining,
+        existing_output_path=output_path,
+    )
+
     output = Path(output_path)
+    output.parent.mkdir(parents=True, exist_ok=True)
+    with open(output, "w", encoding="utf-8") as f:
+        json.dump(data["graph"], f, ensure_ascii=False, indent=2)
+
+    return output
+
+
+def build_tag_graph_data(
+    min_cooccurrence: int = 1,
+    enable_content_mining: bool = True,
+    existing_output_path: Optional[str] = None,
+) -> Dict[str, Any]:
+    import sys
+    from pathlib import Path
+    sys.path.insert(0, str(Path(__file__).parent))
+    from tech_stack import build_graph_data
+
     existing_tag_descriptions: Dict[str, str] = {}
-    if output.exists():
-        try:
-            with open(output, "r", encoding="utf-8") as f:
-                existing = json.load(f) or {}
-            for node in existing.get("nodes", []) or []:
-                if node.get("layer") != "tag":
-                    continue
-                node_id = node.get("id")
-                desc = (node.get("description") or "").strip()
-                if not node_id or not desc:
-                    continue
-                existing_tag_descriptions[str(node_id)] = desc
-        except Exception as e:
-            logger.warning(f"Failed to load existing tag descriptions: {e}")
+    if existing_output_path:
+        output = Path(existing_output_path)
+        if output.exists():
+            try:
+                with open(output, "r", encoding="utf-8") as f:
+                    existing = json.load(f) or {}
+                for node in existing.get("nodes", []) or []:
+                    if node.get("layer") != "tag":
+                        continue
+                    node_id = node.get("id")
+                    desc = (node.get("description") or "").strip()
+                    if not node_id or not desc:
+                        continue
+                    existing_tag_descriptions[str(node_id)] = desc
+            except Exception as e:
+                logger.warning(f"Failed to load existing tag descriptions: {e}")
 
     builder = TagGraphBuilder(enable_content_mining=enable_content_mining)
     builder.extract_tags_from_articles()
@@ -431,18 +456,20 @@ def export_tag_graph(
     all_nodes = tech_nodes + tag_nodes + concept_nodes
     all_links = tech_links + tag_links + tag_to_tech_links + concept_links
 
-    data = {
+    layers = {
+        "language": {"name": "编程语言", "level": 1, "color": "#4db6ac"},
+        "framework": {"name": "框架层", "level": 2, "color": "#26a69a"},
+        "model": {"name": "模型层", "level": 3, "color": "#d97706"},
+        "application": {"name": "应用层", "level": 4, "color": "#8b5cf6"},
+        "scenario": {"name": "场景层", "level": 5, "color": "#ec4899"},
+        "tag": {"name": "标签层", "level": 6, "color": "#f59e0b"},
+        "concept": {"name": "概念层", "level": 7, "color": "#6366f1"},
+    }
+
+    graph = {
         "nodes": all_nodes,
         "links": all_links,
-        "layers": {
-            "language": {"name": "编程语言", "level": 1, "color": "#4db6ac"},
-            "framework": {"name": "框架层", "level": 2, "color": "#26a69a"},
-            "model": {"name": "模型层", "level": 3, "color": "#d97706"},
-            "application": {"name": "应用层", "level": 4, "color": "#8b5cf6"},
-            "scenario": {"name": "场景层", "level": 5, "color": "#ec4899"},
-            "tag": {"name": "标签层", "level": 6, "color": "#f59e0b"},
-            "concept": {"name": "概念层", "level": 7, "color": "#6366f1"},
-        },
+        "layers": layers,
         "stats": {
             "total_nodes": len(all_nodes),
             "total_links": len(all_links),
@@ -450,20 +477,165 @@ def export_tag_graph(
         },
     }
 
-    output.parent.mkdir(parents=True, exist_ok=True)
+    return {
+        "graph": graph,
+        "parts": {
+            "tech_nodes": tech_nodes,
+            "tech_links": tech_links,
+            "tag_nodes": tag_nodes,
+            "tag_links": tag_links,
+            "tag_to_tech_links": tag_to_tech_links,
+            "concept_nodes": concept_nodes,
+            "concept_links": concept_links,
+        },
+        "layers": layers,
+        "stats": graph["stats"],
+    }
 
-    with open(output, "w", encoding="utf-8") as f:
-        json.dump(data, f, ensure_ascii=False, indent=2)
 
-    return output
+def export_tag_graph_split(
+    output_dir: str = "blog/static/data/tag-graph",
+    min_cooccurrence: int = 1,
+    enable_content_mining: bool = True,
+    hot_tag_limit: int = 250,
+    hot_concept_limit: int = 150,
+) -> Path:
+    result = build_tag_graph_data(
+        min_cooccurrence=min_cooccurrence,
+        enable_content_mining=enable_content_mining,
+        existing_output_path="blog/static/data/tag-graph/tag.json",
+    )
+    return write_tag_graph_split_from_result(
+        result=result,
+        output_dir=output_dir,
+        hot_tag_limit=hot_tag_limit,
+        hot_concept_limit=hot_concept_limit,
+    )
+
+
+def write_tag_graph_split_from_result(
+    result: Dict[str, Any],
+    output_dir: str = "blog/static/data/tag-graph",
+    hot_tag_limit: int = 250,
+    hot_concept_limit: int = 150,
+) -> Path:
+
+    layers = result["layers"]
+    parts = result["parts"]
+    out_dir = Path(output_dir)
+    out_dir.mkdir(parents=True, exist_ok=True)
+
+    tech_layers = {"language", "framework", "model", "application", "scenario"}
+    core_nodes = [n for n in parts["tech_nodes"] if n.get("layer") in tech_layers]
+    core_links = list(parts["tech_links"])
+
+    tag_nodes = list(parts["tag_nodes"])
+    concept_nodes = list(parts["concept_nodes"])
+    tag_links = list(parts["tag_links"])
+    tag_to_tech_links = list(parts["tag_to_tech_links"])
+    concept_links = list(parts["concept_links"])
+
+    tag_nodes_sorted = sorted(tag_nodes, key=lambda n: (-int(n.get("article_count", 0) or 0), str(n.get("id") or "")))
+    hot_tag_ids = set([n["id"] for n in tag_nodes_sorted[:max(0, int(hot_tag_limit))] if n.get("id")])
+    hot_tag_nodes = [n for n in tag_nodes if n.get("id") in hot_tag_ids]
+    hot_tag_links = [l for l in tag_links if l.get("source") in hot_tag_ids and l.get("target") in hot_tag_ids]
+    hot_tag_to_tech_links = [l for l in tag_to_tech_links if l.get("source") in hot_tag_ids]
+
+    concept_nodes_sorted = sorted(concept_nodes, key=lambda n: (-int(n.get("article_count", 0) or 0), str(n.get("id") or "")))
+    hot_concept_ids = set([n["id"] for n in concept_nodes_sorted[:max(0, int(hot_concept_limit))] if n.get("id")])
+    hot_concept_nodes = [n for n in concept_nodes if n.get("id") in hot_concept_ids]
+    hot_concept_links = [l for l in concept_links if l.get("source") in hot_concept_ids and l.get("target") in hot_concept_ids]
+
+    def write_json(rel_path: str, payload: Dict[str, Any]) -> None:
+        target = out_dir / rel_path
+        target.parent.mkdir(parents=True, exist_ok=True)
+        with open(target, "w", encoding="utf-8") as f:
+            json.dump(payload, f, ensure_ascii=False, indent=2)
+
+    write_json("index.json", {
+        "version": 1,
+        "layers": layers,
+        "files": {
+            "core": "core.json",
+            "tagHot": "tag.hot.json",
+            "conceptHot": "concept.hot.json",
+            "tag": "tag.json",
+            "concept": "concept.json",
+        },
+        "defaults": {
+            "hot_tag_limit": hot_tag_limit,
+            "hot_concept_limit": hot_concept_limit,
+            "initial_visible_layers": ["language", "framework", "model", "application", "scenario", "tag", "concept"],
+        },
+    })
+
+    write_json("core.json", {
+        "nodes": core_nodes,
+        "links": core_links,
+        "layers": layers,
+        "stats": {
+            "total_nodes": len(core_nodes),
+            "total_links": len(core_links),
+        },
+    })
+
+    write_json("tag.hot.json", {
+        "nodes": hot_tag_nodes,
+        "links": hot_tag_links + hot_tag_to_tech_links,
+        "layer": "tag",
+        "layers": layers,
+        "stats": {
+            "total_nodes": len(hot_tag_nodes),
+            "total_links": len(hot_tag_links) + len(hot_tag_to_tech_links),
+        },
+    })
+
+    write_json("concept.hot.json", {
+        "nodes": hot_concept_nodes,
+        "links": hot_concept_links,
+        "layer": "concept",
+        "layers": layers,
+        "stats": {
+            "total_nodes": len(hot_concept_nodes),
+            "total_links": len(hot_concept_links),
+        },
+    })
+
+    write_json("tag.json", {
+        "nodes": tag_nodes,
+        "links": tag_links + tag_to_tech_links,
+        "layer": "tag",
+        "layers": layers,
+        "stats": {
+            "total_nodes": len(tag_nodes),
+            "total_links": len(tag_links) + len(tag_to_tech_links),
+        },
+    })
+
+    write_json("concept.json", {
+        "nodes": concept_nodes,
+        "links": concept_links,
+        "layer": "concept",
+        "layers": layers,
+        "stats": {
+            "total_nodes": len(concept_nodes),
+            "total_links": len(concept_links),
+        },
+    })
+
+    return out_dir
 
 
 if __name__ == "__main__":
-    output_path = export_tag_graph()
-    print(f"\n已导出标签图谱到: {output_path}")
+    result = build_tag_graph_data(
+        min_cooccurrence=1,
+        enable_content_mining=True,
+        existing_output_path="blog/static/data/tag-graph/tag.json",
+    )
+    out_dir = write_tag_graph_split_from_result(result=result)
+    print(f"\n已导出标签图谱到: {out_dir}")
 
-    with open(output_path, "r", encoding="utf-8") as f:
-        data = json.load(f)
+    data = result["graph"]
 
     print(f"\n图谱统计:")
     print(f"  总节点数: {data['stats']['total_nodes']}")
