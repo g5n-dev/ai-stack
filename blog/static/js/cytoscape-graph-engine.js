@@ -17,6 +17,8 @@
             }
 
             this.data = this._prepareData(data);
+            this.layoutMode = (this.data && this.data.layout_mode) || "layered";
+            this._layeredPositions = this._computeLayeredPositionsFromRawNodes(this.data.nodes);
             this.cy = null;
             this.isDestroyed = false;
             this.visibleLayers = new Set(
@@ -45,6 +47,18 @@
         }
 
         _getLayoutOptions(override = {}) {
+            if (this.layoutMode === "layered") {
+                const animate = override.animate !== false;
+                const positions = override.positions || this._layeredPositions || {};
+                return {
+                    name: "preset",
+                    fit: false,
+                    animate,
+                    animationDuration: typeof override.animationDuration === "number" ? override.animationDuration : 900,
+                    positions
+                };
+            }
+
             return {
                 name: 'cose-bilkent',
                 animate: true,
@@ -78,10 +92,112 @@
                     try { this._activeLayout.stop(); } catch (_) { }
                 }
                 const animate = opts.animate !== false;
+                if (this.layoutMode === "layered") {
+                    this._applyLayeredLayout({ animate });
+                    return;
+                }
                 const layout = this.cy.layout(this._getLayoutOptions({ animate }));
                 this._activeLayout = layout;
                 layout.run();
             }, delay);
+        }
+
+        _normalizeLevel(value) {
+            const num = typeof value === "number" ? value : Number(value);
+            return Number.isFinite(num) ? num : 0;
+        }
+
+        _computeLayeredPositionsFromRawNodes(rawNodes) {
+            const nodes = Array.isArray(rawNodes) ? rawNodes : [];
+            const groups = new Map();
+
+            for (const node of nodes) {
+                if (!node || !node.id) continue;
+                const layer = node.layer;
+                const level = this._normalizeLevel(
+                    node.level != null ? node.level : (layer && this.data.layers && this.data.layers[layer] ? this.data.layers[layer].level : 0)
+                );
+                if (!groups.has(level)) groups.set(level, []);
+                groups.get(level).push(node);
+            }
+
+            const levels = Array.from(groups.keys()).sort((a, b) => a - b);
+            const minLevel = levels.length > 0 ? levels[0] : 0;
+            const positions = {};
+            const rankSep = 260;
+            const nodeSep = 170;
+
+            for (const level of levels) {
+                const list = groups.get(level) || [];
+                list.sort((a, b) => {
+                    const da = typeof a.degree === "number" ? a.degree : (typeof a.connections === "number" ? a.connections : 0);
+                    const db = typeof b.degree === "number" ? b.degree : (typeof b.connections === "number" ? b.connections : 0);
+                    if (db !== da) return db - da;
+                    return String(a.id).localeCompare(String(b.id));
+                });
+
+                const center = (list.length - 1) / 2;
+                for (let i = 0; i < list.length; i += 1) {
+                    const node = list[i];
+                    positions[node.id] = {
+                        x: (i - center) * nodeSep,
+                        y: (level - minLevel) * rankSep
+                    };
+                }
+            }
+
+            return positions;
+        }
+
+        _computeLayeredPositionsFromCyNodes() {
+            if (!this.cy) return {};
+            const groups = new Map();
+            const nodes = this.cy.nodes();
+
+            nodes.forEach((node) => {
+                const data = node.data();
+                const level = this._normalizeLevel(
+                    data.level != null ? data.level : (data.layer && this.data.layers && this.data.layers[data.layer] ? this.data.layers[data.layer].level : 0)
+                );
+                if (!groups.has(level)) groups.set(level, []);
+                groups.get(level).push(node);
+            });
+
+            const levels = Array.from(groups.keys()).sort((a, b) => a - b);
+            const minLevel = levels.length > 0 ? levels[0] : 0;
+            const positions = {};
+            const rankSep = 260;
+            const nodeSep = 170;
+
+            for (const level of levels) {
+                const list = groups.get(level) || [];
+                list.sort((a, b) => {
+                    const da = typeof a.data("degree") === "number" ? a.data("degree") : 0;
+                    const db = typeof b.data("degree") === "number" ? b.data("degree") : 0;
+                    if (db !== da) return db - da;
+                    return String(a.id()).localeCompare(String(b.id()));
+                });
+
+                const center = (list.length - 1) / 2;
+                for (let i = 0; i < list.length; i += 1) {
+                    const node = list[i];
+                    positions[node.id()] = {
+                        x: (i - center) * nodeSep,
+                        y: (level - minLevel) * rankSep
+                    };
+                }
+            }
+
+            return positions;
+        }
+
+        _applyLayeredLayout(opts = {}) {
+            if (this.isDestroyed || !this.cy) return;
+            const animate = opts.animate !== false;
+            this._layeredPositions = this._computeLayeredPositionsFromCyNodes();
+            const layout = this.cy.layout(this._getLayoutOptions({ animate, positions: this._layeredPositions }));
+            this._activeLayout = layout;
+            layout.run();
         }
 
         _prepareData(rawData) {
@@ -109,23 +225,7 @@
                 container: this.container,
                 elements: this._formatElements(),
                 style: this._getStylesheet(),
-                layout: {
-                    name: 'cose-bilkent',
-                    animate: true,
-                    animationDuration: 1500,
-                    animationEasing: 'ease-out-cubic',
-                    randomize: true,
-                    nodeRepulsion: 4500,
-                    idealEdgeLength: 100,
-                    edgeElasticity: 0.45,
-                    nestingFactor: 1.2,
-                    gravity: 1,
-                    numIter: 2500,
-                    tile: true,
-                    tilingPaddingVertical: 10,
-                    tilingPaddingHorizontal: 10,
-                    stopAfter: 1500
-                },
+                layout: this._getLayoutOptions({ animate: true, positions: this._layeredPositions }),
                 wheelSensitivity: 0.3,
                 minZoom: 0.1,
                 maxZoom: 5,
@@ -139,7 +239,7 @@
         }
 
         _formatNodeElement(node) {
-            return {
+            const element = {
                 data: {
                     id: node.id,
                     label: node.name,
@@ -154,6 +254,9 @@
                 },
                 classes: `layer-${node.layer}`
             };
+            const pos = this._layeredPositions && this._layeredPositions[node.id];
+            if (pos) element.position = pos;
+            return element;
         }
 
         _formatEdgeElement(link, index) {

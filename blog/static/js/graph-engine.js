@@ -71,6 +71,7 @@
       this._onResize = () => this._resize();
 
       this.data = this._prepareData(data);
+      this._levelRange = this._computeLevelRange();
       this.canvas = null;
       this.ctx = null;
       this.simulation = null;
@@ -168,6 +169,40 @@
       return data;
     }
 
+    _normalizeLevel(value) {
+      const num = typeof value === "number" ? value : Number(value);
+      return Number.isFinite(num) ? num : null;
+    }
+
+    _computeLevelRange() {
+      let minLevel = Infinity;
+      let maxLevel = -Infinity;
+
+      const layers = this.data && this.data.layers ? this.data.layers : {};
+      for (const key of Object.keys(layers)) {
+        const lvl = this._normalizeLevel(layers[key] && layers[key].level);
+        if (lvl == null) continue;
+        if (lvl < minLevel) minLevel = lvl;
+        if (lvl > maxLevel) maxLevel = lvl;
+      }
+
+      if (!Number.isFinite(minLevel) || !Number.isFinite(maxLevel)) {
+        const nodes = this.data && Array.isArray(this.data.nodes) ? this.data.nodes : [];
+        for (const node of nodes) {
+          const lvl = this._normalizeLevel(node && node.level);
+          if (lvl == null) continue;
+          if (lvl < minLevel) minLevel = lvl;
+          if (lvl > maxLevel) maxLevel = lvl;
+        }
+      }
+
+      if (!Number.isFinite(minLevel) || !Number.isFinite(maxLevel)) {
+        return { min: 1, max: 5 };
+      }
+
+      return { min: minLevel, max: maxLevel };
+    }
+
     // ===== 初始化Canvas =====
     _initCanvas() {
       this.canvas = document.createElement("canvas");
@@ -247,8 +282,15 @@
     _getLayerY(level) {
       const { min, max } = CONFIG.layerY;
       const range = max - min;
-      // level从1到5，映射到min到max
-      return min + ((level - 1) / 4) * range;
+      const minLevel = this._levelRange && Number.isFinite(this._levelRange.min) ? this._levelRange.min : 1;
+      const maxLevel = this._levelRange && Number.isFinite(this._levelRange.max) ? this._levelRange.max : 5;
+      const lvl = this._normalizeLevel(level);
+      const value = lvl == null ? minLevel : lvl;
+
+      if (maxLevel <= minLevel) return min + range / 2;
+      const t = (value - minLevel) / (maxLevel - minLevel);
+      const clamped = Math.max(0, Math.min(1, t));
+      return min + clamped * range;
     }
 
     // ===== 渲染循环 =====
