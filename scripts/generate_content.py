@@ -191,10 +191,140 @@ class SuperEnhancedContentGenerator:
             lines.extend(self._format_juejin_article_super_enhanced(item))
         elif source == 'blogs_podcasts':
             lines.extend(self._format_blogs_podcasts_super_enhanced(item))
+        elif source == 'twitter':
+            lines.extend(self._format_twitter_brief(item))
         else:
             lines.extend(self._format_generic_super_enhanced(item))
 
         return '\n'.join(lines)
+
+    def _format_twitter_brief(self, item: dict) -> list:
+        account = item.get("account", "unknown")
+        account_url = item.get("account_url") or item.get("url") or ""
+        tweets = item.get("tweets") or []
+
+        lines = [
+            f'# 🐦 Twitter 简讯：@{account}',
+            '',
+            '---',
+            '',
+            '## 📌 信息',
+            '',
+            f'- **账号**: @{account}',
+        ]
+
+        if account_url:
+            lines.append(f'- **主页**: [{account_url}]({account_url})')
+
+        lines.extend([
+            f'- **收录条数**: {len(tweets)}',
+            '',
+        ])
+
+        if not tweets:
+            lines.extend([
+                '暂无可用推文。',
+            ])
+            self._append_references(lines, item)
+            lines.extend([
+                '',
+                '---',
+                '',
+                '*本文由 AI Stack 自动生成，观点为 AI 分析，事实以引用链接为准。*',
+            ])
+            return lines
+
+        lines.extend([
+            '---',
+            '## 📰 简讯',
+        ])
+
+        for idx, t in enumerate(tweets, 1):
+            brief = t.get("brief") or {}
+            headline = (brief.get("headline") or "").strip()
+            url = (t.get("url") or "").strip()
+            screenshot = (t.get("screenshot") or "").strip()
+            text = (t.get("text") or "").strip()
+            timestamp = (t.get("timestamp") or "").strip()
+
+            lines.extend([
+                '',
+                '---',
+                f'### {idx}. {headline or "推文更新"}',
+                '',
+            ])
+
+            if timestamp:
+                lines.append(f'- **时间**: {timestamp}')
+            if url:
+                lines.append(f'- **原推文**: [{url}]({url})')
+
+            if screenshot:
+                lines.extend([
+                    '',
+                    f'![tweet]({screenshot})',
+                ])
+
+            if text:
+                lines.extend([
+                    '',
+                    '#### 原话',
+                    '',
+                    f'> {text.replace("\\n", " ")}',
+                ])
+
+            evidence = brief.get("evidence_snippets") or []
+            if isinstance(evidence, list) and evidence:
+                lines.extend([
+                    '',
+                    '#### 证据片段（原文摘录）',
+                    '',
+                ])
+                for s in evidence[:5]:
+                    if isinstance(s, str) and s.strip():
+                        lines.append(f'- "{s.strip()}"')
+
+            commentary = (brief.get("commentary") or "").strip()
+            if commentary:
+                lines.extend([
+                    '',
+                    '#### 点评',
+                    '',
+                    commentary,
+                ])
+
+            background = brief.get("background") or []
+            if isinstance(background, list) and background:
+                lines.extend([
+                    '',
+                    '#### 背景',
+                    '',
+                ])
+                for b in background[:6]:
+                    if isinstance(b, str) and b.strip():
+                        lines.append(f'- {b.strip()}')
+
+            to_verify = brief.get("to_verify") or []
+            if isinstance(to_verify, list) and to_verify:
+                lines.extend([
+                    '',
+                    '#### 待核实',
+                    '',
+                ])
+                for v in to_verify[:6]:
+                    if isinstance(v, str) and v.strip():
+                        lines.append(f'- {v.strip()}')
+
+        self._append_references(lines, item)
+
+        lines.extend([
+            '',
+            '---',
+            '',
+            '*本文由 AI Stack 自动生成，观点为 AI 分析，事实以引用链接为准。*',
+        ])
+
+        return lines
 
     def _append_references(self, lines: list, item: dict) -> None:
         """追加引用信息（最小可用：原文/讨论/PDF/DeepWiki/RSS/音频）。"""

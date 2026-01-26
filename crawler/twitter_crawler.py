@@ -8,6 +8,9 @@ import logging
 from typing import List, Dict, Optional, TYPE_CHECKING, Any
 from datetime import datetime, timedelta, timezone
 import json
+from pathlib import Path
+import re
+import hashlib
 
 if TYPE_CHECKING:
     from playwright.async_api import Page
@@ -30,7 +33,9 @@ class TwitterCrawler:
         accounts: Optional[List[str]] = None,
         tweets_per_account: int = 10,
         headless: bool = True,
-        timeout: int = 30000
+        timeout: int = 30000,
+        save_screenshots: bool = True,
+        screenshots_dir: Optional[str] = None,
     ):
         """
         初始化Twitter爬虫
@@ -59,6 +64,13 @@ class TwitterCrawler:
         self.headless = headless
         self.timeout = timeout
         self.base_url = "https://twitter.com"
+        self.save_screenshots = save_screenshots
+
+        project_root = Path(__file__).resolve().parents[1]
+        default_dir = project_root / "blog" / "static" / "images" / "twitter"
+        self.screenshots_dir = Path(screenshots_dir) if screenshots_dir else default_dir
+        if self.save_screenshots:
+            self.screenshots_dir.mkdir(parents=True, exist_ok=True)
 
     async def _scroll_to_load_tweets(self, page: Any, max_tweets: int):
         """滚动页面加载更多推文"""
@@ -82,7 +94,41 @@ class TwitterCrawler:
 
         return tweets_collected
 
-    async def _extract_tweet_data(self, tweet_element) -> Dict:
+    def _build_screenshot_filename(self, account: str, tweet_url: str, tweet_timestamp: str, tweet_text: str) -> str:
+        tweet_id = ""
+        if tweet_url:
+            m = re.search(r"/status/(\d+)", tweet_url)
+            if m:
+                tweet_id = m.group(1)
+
+        if tweet_id:
+            return f"{account}-{tweet_id}.png"
+
+        key = f"{account}|{tweet_timestamp}|{tweet_text}".encode("utf-8", errors="ignore")
+        digest = hashlib.sha256(key).hexdigest()[:16]
+        ts = (tweet_timestamp or "unknown").replace(":", "-").replace("/", "-")
+        ts = ts.replace("T", "_").replace("Z", "")
+        ts = re.sub(r"[^0-9A-Za-z_+.-]+", "-", ts).strip("-")[:40] or "unknown"
+        return f"{account}-{ts}-{digest}.png"
+
+    async def _capture_tweet_screenshot(self, tweet_element, *, account: str, tweet_url: str, tweet_timestamp: str, tweet_text: str) -> Optional[str]:
+        if not self.save_screenshots:
+            return None
+
+        try:
+            await tweet_element.scroll_into_view_if_needed()
+            await asyncio.sleep(0.2)
+
+            filename = self._build_screenshot_filename(account, tweet_url, tweet_timestamp, tweet_text)
+            file_path = self.screenshots_dir / filename
+
+            await tweet_element.screenshot(path=str(file_path))
+            return f"/images/twitter/{filename}"
+        except Exception as e:
+            logger.warning(f"推文截图失败: {e}")
+            return None
+
+    async def _extract_tweet_data(self, tweet_element, *, account: str) -> Dict:
         """从推文元素中提取数据"""
         try:
             tweet_data = {}
@@ -90,10 +136,25 @@ class TwitterCrawler:
             tweet_text = await tweet_element.query_selector('[data-testid="tweetText"]')
             if tweet_text:
                 tweet_data['text'] = await tweet_text.inner_text()
+                tweet_data['title'] = tweet_data['text'].replace('\n', ' ')[:80]
 
             time_element = await tweet_element.query_selector('time')
             if time_element:
                 tweet_data['timestamp'] = await time_element.get_attribute('datetime')
+                tweet_url = await time_element.evaluate("el => el.closest('a')?.href || ''")
+                if tweet_url:
+                    tweet_data['url'] = tweet_url
+
+            tweet_url = tweet_data.get("url", "")
+            tweet_timestamp = tweet_data.get("timestamp", "")
+            tweet_text_value = tweet_data.get("text", "")
+            tweet_id = ""
+            if tweet_url:
+                m = re.search(r"/status/(\d+)", tweet_url)
+                if m:
+                    tweet_id = m.group(1)
+            if tweet_id:
+                tweet_data["tweet_id"] = tweet_id
 
             likes_element = await tweet_element.query_selector('[data-testid="like"]')
             if likes_element:
@@ -109,6 +170,16 @@ class TwitterCrawler:
             if replies_element:
                 replies_text = await replies_element.inner_text()
                 tweet_data['replies'] = replies_text
+
+            screenshot_rel = await self._capture_tweet_screenshot(
+                tweet_element,
+                account=account,
+                tweet_url=tweet_url,
+                tweet_timestamp=tweet_timestamp,
+                tweet_text=tweet_text_value,
+            )
+            if screenshot_rel:
+                tweet_data["screenshot"] = screenshot_rel
 
             tweet_data['scraped_at'] = datetime.now().isoformat()
 
@@ -144,10 +215,11 @@ class TwitterCrawler:
                 logger.info(f"找到 {len(tweet_elements)} 条推文")
 
                 for i, tweet_element in enumerate(tweet_elements[:self.tweets_per_account]):
-                    tweet_data = await self._extract_tweet_data(tweet_element)
+                    tweet_data = await self._extract_tweet_data(tweet_element, account=account)
                     if tweet_data:
                         tweet_data['account'] = account
                         tweet_data['account_url'] = url
+                        tweet_data['source'] = 'twitter'
                         tweets.append(tweet_data)
                         logger.info(f"提取第 {i+1} 条推文成功")
 
@@ -175,8 +247,18 @@ class TwitterCrawler:
 
     def fetch(self) -> List[Dict]:
         """同步接口，便于集成到现有爬虫系统"""
-        loop = asyncio.get_event_loop()
-        all_tweets = loop.run_until_complete(self.crawl_all())
+        try:
+            all_tweets = asyncio.run(self.crawl_all())
+        except RuntimeError:
+            loop = asyncio.new_event_loop()
+            try:
+                asyncio.set_event_loop(loop)
+                all_tweets = loop.run_until_complete(self.crawl_all())
+            finally:
+                try:
+                    loop.close()
+                except Exception:
+                    pass
 
         flattened_tweets = []
         for account, tweets in all_tweets.items():

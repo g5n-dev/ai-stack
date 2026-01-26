@@ -74,7 +74,7 @@ sources:
 
   # Twitter/X 科技大佬推文（使用 Playwright 爬取，不需要 API）
   twitter:
-    enabled: false
+    enabled: true
     headless: true
     accounts:
       - "elonmusk"
@@ -85,4 +85,3 @@ sources:
       - "fchollet"
       - "karpathy"
       - "OpenAI"
-      - "ylecun"
