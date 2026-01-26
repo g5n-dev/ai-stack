@@ -266,11 +266,12 @@ class SuperEnhancedContentGenerator:
                 ])
 
             if text:
+                quoted_text = text.replace("\n", " ")
                 lines.extend([
                     '',
                     '#### 原话',
                     '',
-                    f'> {text.replace("\\n", " ")}',
+                    f'> {quoted_text}',
                 ])
 
             evidence = brief.get("evidence_snippets") or []
