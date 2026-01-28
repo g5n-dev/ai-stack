@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 """
-Super Enhanced Content generation script
-超级增强版内容生成主脚本 - 整合爬虫、处理和推送
-15+ 次大模型调用，生成极致高质量的文章内容
+Content generation script
+内容生成主脚本 - 整合爬虫、处理和推送
 """
 
 import sys
@@ -28,7 +27,7 @@ logger = logging.getLogger(__name__)
 
 
 class SuperEnhancedContentGenerator:
-    """超级增强版内容生成器 - 极致质量模式"""
+    """内容生成器"""
 
     def __init__(self, *, dedupe: bool = True, dedupe_scope: str = "global"):
         self.crawler = CrawlerOrchestrator(dedupe=dedupe, dedupe_scope=dedupe_scope)
@@ -43,12 +42,12 @@ class SuperEnhancedContentGenerator:
         """运行完整的超级增强内容生成流程"""
         try:
             logger.info("=" * 80)
-            logger.info("🚀🚀🚀 Starting SUPER ENHANCED content generation process 🚀🚀🚀")
-            logger.info("Mode: 15+ LLM calls per article for maximum quality!")
+            logger.info("Starting content generation process")
+            logger.info("Mode: 15+ LLM calls per article")
             logger.info("=" * 80)
 
             # 1. 爬取内容
-            logger.info("\n[1/4] 🕷️  Crawling content from sources...")
+            logger.info("\n[1/4] Crawling content from sources...")
             if crawl_duration_hours and crawl_duration_hours > 0:
                 crawled_data = self.crawler.crawl_for_duration(
                     duration_hours=crawl_duration_hours,
@@ -61,29 +60,29 @@ class SuperEnhancedContentGenerator:
             logger.info(f"✓ Crawled {total_items} items from {len(crawled_data)} sources")
 
             # 2. 超级增强处理（15次大模型调用）
-            logger.info("\n[2/4] 🤖🤖🤖  Processing content with AI (15+ LLM calls)...")
-            logger.info("    This may take a while, but the result will be amazing! 🔥")
+            logger.info("\n[2/4] Processing content with AI (15+ LLM calls)...")
+            logger.info("    This may take a while.")
             processed_data = self.processor.process_by_source(crawled_data)
             logger.info(f"✓ Super enhanced content from {len(processed_data)} sources")
 
             # 3. 生成超级增强版 Markdown 文章
-            logger.info("\n[3/4] 📝📝📝  Generating Super Enhanced Markdown posts...")
+            logger.info("\n[3/4] Generating Markdown posts...")
             posts_created = self._generate_posts(processed_data)
-            logger.info(f"✓ Created {posts_created} Super Enhanced Markdown posts")
+            logger.info(f"✓ Created {posts_created} Markdown posts")
 
             # 4. 推送内容
-            logger.info("\n[4/4] 📢  Publishing to social platforms...")
+            logger.info("\n[4/4] Publishing to social platforms...")
             self._publish_content(processed_data)
 
             logger.info("\n" + "=" * 80)
-            logger.info("✅✅✅ Super Enhanced content generation completed successfully! ✅✅✅")
-            logger.info("Each article contains 15+ AI-generated sections! 🎉")
+            logger.info("Content generation completed successfully")
+            logger.info("Each article contains 15+ AI-generated sections")
             logger.info("=" * 80)
 
             return True
 
         except Exception as e:
-            logger.error(f"❌ Content generation failed: {e}", exc_info=True)
+            logger.error(f"Content generation failed: {e}", exc_info=True)
             return False
 
     def _generate_posts(self, processed_data: dict) -> int:
@@ -114,7 +113,7 @@ class SuperEnhancedContentGenerator:
                     with open(filepath, 'w', encoding='utf-8') as f:
                         f.write(markdown_content)
 
-                    logger.info(f"✓ Created super enhanced post: {filename}")
+                    logger.info(f"✓ Created post: {filename}")
                     created_count += 1
 
                 except Exception as e:
@@ -204,11 +203,11 @@ class SuperEnhancedContentGenerator:
         tweets = item.get("tweets") or []
 
         lines = [
-            f'# 🐦 Twitter 简讯：@{account}',
+            f'# Twitter 简讯：@{account}',
             '',
             '---',
             '',
-            '## 📌 信息',
+            '## 信息',
             '',
             f'- **账号**: @{account}',
         ]
@@ -236,7 +235,7 @@ class SuperEnhancedContentGenerator:
 
         lines.extend([
             '---',
-            '## 📰 简讯',
+            '## 简讯',
         ])
 
         for idx, t in enumerate(tweets, 1):
@@ -377,7 +376,7 @@ class SuperEnhancedContentGenerator:
         lines.extend([
             '',
             '---',
-            '## 🔗 引用',
+            '## 引用',
             '',
         ])
 
@@ -396,13 +395,13 @@ class SuperEnhancedContentGenerator:
         description = item.get("description_translated") or item.get("description", "")
 
         lines = [
-            f'# 🚀 {title}',
+            f'# {title}',
             '',
-            f'> 💡 **原名**: {original_title}',
+            f'> **原名**: {original_title}',
             '',
             '---',
             '',
-            '## 📋 基本信息',
+            '## 基本信息',
             '',
             f'- **描述**: {description}',
             f'- **语言**: {item.get("language", "Unknown")}',
@@ -421,7 +420,7 @@ class SuperEnhancedContentGenerator:
             lines.extend([
                 '',
                 '---',
-                '## 📚 DeepWiki 速览（节选）',
+                '## DeepWiki 速览（节选）',
                 '',
                 item.get('deepwiki_content', ''),
             ])
@@ -431,7 +430,7 @@ class SuperEnhancedContentGenerator:
             lines.extend([
                 '',
                 '---',
-                '## ✨ 引人入胜的引言',
+                '## 导语',
                 '',
                 item.get('engaging_intro', ''),
             ])
@@ -441,7 +440,7 @@ class SuperEnhancedContentGenerator:
             lines.extend([
                 '',
                 '---',
-                '## 📝 AI 总结',
+                '## 摘要',
                 '',
                 item.get('summary', ''),
             ])
@@ -451,7 +450,7 @@ class SuperEnhancedContentGenerator:
             lines.extend([
                 '',
                 '---',
-                '## 🎯 深度评价',
+                '## 评论',
                 '',
                 item.get('deep_comment', ''),
             ])
@@ -461,7 +460,7 @@ class SuperEnhancedContentGenerator:
             lines.extend([
                 '',
                 '---',
-                '## 🔍 全面技术分析',
+                '## 技术分析',
                 '',
                 item.get('comprehensive_analysis', ''),
             ])
@@ -471,7 +470,7 @@ class SuperEnhancedContentGenerator:
             lines.extend([
                 '',
                 '---',
-                '## 💻 实用代码示例',
+                '## 代码示例',
                 '',
             ])
             for example in item.get('code_examples', []):
@@ -487,7 +486,7 @@ class SuperEnhancedContentGenerator:
             lines.extend([
                 '',
                 '---',
-                '## 📚 真实案例研究',
+                '## 案例研究',
                 '',
             ])
             for study in item.get('case_studies', []):
@@ -503,7 +502,7 @@ class SuperEnhancedContentGenerator:
             lines.extend([
                 '',
                 '---',
-                '## ⚖️ 与同类方案对比',
+                '## 对比分析',
                 '',
                 item.get('comparison_analysis', ''),
             ])
@@ -513,7 +512,7 @@ class SuperEnhancedContentGenerator:
             lines.extend([
                 '',
                 '---',
-                '## ✅ 最佳实践指南',
+                '## 最佳实践',
                 '',
                 item.get('best_practices', ''),
             ])
@@ -523,7 +522,7 @@ class SuperEnhancedContentGenerator:
             lines.extend([
                 '',
                 '---',
-                '## 🚀 性能优化建议',
+                '## 性能优化建议',
                 '',
                 item.get('performance_tips', ''),
             ])
@@ -533,7 +532,7 @@ class SuperEnhancedContentGenerator:
             lines.extend([
                 '',
                 '---',
-                '## 🎓 核心学习要点',
+                '## 学习要点',
                 '',
             ])
             for takeaway in item.get('learning_takeaways', []):
@@ -545,7 +544,7 @@ class SuperEnhancedContentGenerator:
                 '',
                 '',
                 '---',
-                '## 🗺️ 循序渐进的学习路径',
+                '## 学习路径',
                 '',
                 item.get('learning_path', ''),
             ])
@@ -555,7 +554,7 @@ class SuperEnhancedContentGenerator:
             lines.extend([
                 '',
                 '---',
-                '## ❓ 常见问题解答',
+                '## 常见问题',
                 '',
             ])
             for faq in item.get('faq', []):
@@ -571,7 +570,7 @@ class SuperEnhancedContentGenerator:
             lines.extend([
                 '',
                 '---',
-                '## 🎯 挑战与思考题',
+                '## 思考题',
                 '',
             ])
             for challenge in item.get('challenges', []):
@@ -585,7 +584,7 @@ class SuperEnhancedContentGenerator:
             lines.extend([
                 '',
                 '---',
-                '## 💡 实践建议',
+                '## 实践建议',
                 '',
                 item.get('practical_recommendations', ''),
             ])
@@ -595,7 +594,7 @@ class SuperEnhancedContentGenerator:
             lines.extend([
                 '',
                 '---',
-                '## 🔗 推荐学习资源',
+                '## 推荐资源',
                 '',
             ])
             for resource in item.get('related_resources', []):
@@ -614,8 +613,6 @@ class SuperEnhancedContentGenerator:
             '---',
             '',
             '*这篇文章由 AI Stack 自动生成，包含多次大模型调用，提供深度的结构化分析。*',
-            '',
-            '**📚 更多精彩内容，敬请关注！**',
         ])
 
         return lines
@@ -625,11 +622,11 @@ class SuperEnhancedContentGenerator:
         title = item.get('catchy_title') or item.get('title_translated') or item.get('title', '')
 
         lines = [
-            f'# 📰 {title}',
+            f'# {title}',
             '',
             '---',
             '',
-            '## 📋 基本信息',
+            '## 基本信息',
             '',
             f'- **作者**: {item.get("author", "")}',
             f'- **评分**: {item.get("score", "0")}',
@@ -650,7 +647,7 @@ class SuperEnhancedContentGenerator:
             lines.extend([
                 '',
                 '---',
-                '## ✨ 引人入胜的引言',
+                '## 导语',
                 '',
                 item.get('engaging_intro', ''),
             ])
@@ -660,7 +657,7 @@ class SuperEnhancedContentGenerator:
             lines.extend([
                 '',
                 '---',
-                '## 📝 AI 总结',
+                '## 摘要',
                 '',
                 item.get('summary', ''),
             ])
@@ -670,7 +667,7 @@ class SuperEnhancedContentGenerator:
             lines.extend([
                 '',
                 '---',
-                '## 🎯 深度评价',
+                '## 评论',
                 '',
                 item.get('deep_comment', ''),
             ])
@@ -680,7 +677,7 @@ class SuperEnhancedContentGenerator:
             lines.extend([
                 '',
                 '---',
-                '## 💻 代码示例',
+                '## 代码示例',
                 '',
             ])
             for example in item.get('code_examples', []):
@@ -696,7 +693,7 @@ class SuperEnhancedContentGenerator:
             lines.extend([
                 '',
                 '---',
-                '## 📚 案例研究',
+                '## 案例研究',
                 '',
             ])
             for study in item.get('case_studies', []):
@@ -712,7 +709,7 @@ class SuperEnhancedContentGenerator:
             lines.extend([
                 '',
                 '---',
-                '## ✅ 最佳实践',
+                '## 最佳实践',
                 '',
                 item.get('best_practices', ''),
             ])
@@ -722,7 +719,7 @@ class SuperEnhancedContentGenerator:
             lines.extend([
                 '',
                 '---',
-                '## 🎓 学习要点',
+                '## 学习要点',
                 '',
             ])
             for takeaway in item.get('learning_takeaways', []):
@@ -733,7 +730,7 @@ class SuperEnhancedContentGenerator:
             lines.extend([
                 '',
                 '---',
-                '## ❓ 常见问题',
+                '## 常见问题',
                 '',
             ])
             for faq in item.get('faq', []):
@@ -749,7 +746,7 @@ class SuperEnhancedContentGenerator:
             lines.extend([
                 '',
                 '---',
-                '## 🎯 思考题',
+                '## 思考题',
                 '',
             ])
             for challenge in item.get('challenges', []):
@@ -763,7 +760,7 @@ class SuperEnhancedContentGenerator:
             lines.extend([
                 '',
                 '---',
-                '## 🔗 推荐资源',
+                '## 相关资源',
                 '',
             ])
             for resource in item.get('related_resources', []):
@@ -790,11 +787,11 @@ class SuperEnhancedContentGenerator:
         description = item.get("description_translated") or item.get("description", "")
 
         lines = [
-            f'# 🎙️ {title}',
+            f'# {title}',
             '',
             '---',
             '',
-            '## 📋 基本信息',
+            '## 基本信息',
             '',
             f'- **来源**: {item.get("feed_name", "")} ({item.get("feed_type", "")})',
             f'- **发布时间**: {item.get("published_at") or item.get("published") or ""}',
@@ -810,7 +807,7 @@ class SuperEnhancedContentGenerator:
             lines.extend([
                 '',
                 '---',
-                '## 📄 摘要/简介',
+                '## 摘要/简介',
                 '',
                 description,
             ])
@@ -820,7 +817,7 @@ class SuperEnhancedContentGenerator:
             lines.extend([
                 '',
                 '---',
-                '## ✨ 引人入胜的引言',
+                '## 导语',
                 '',
                 item.get('engaging_intro', ''),
             ])
@@ -830,7 +827,7 @@ class SuperEnhancedContentGenerator:
             lines.extend([
                 '',
                 '---',
-                '## 📝 AI 总结',
+                '## 摘要',
                 '',
                 item.get('summary', ''),
             ])
@@ -840,7 +837,7 @@ class SuperEnhancedContentGenerator:
             lines.extend([
                 '',
                 '---',
-                '## 🎯 深度评价',
+                '## 评论',
                 '',
                 item.get('deep_comment', ''),
             ])
@@ -850,7 +847,7 @@ class SuperEnhancedContentGenerator:
             lines.extend([
                 '',
                 '---',
-                '## 🔍 全面分析',
+                '## 技术分析',
                 '',
                 item.get('comprehensive_analysis', ''),
             ])
@@ -860,7 +857,7 @@ class SuperEnhancedContentGenerator:
             lines.extend([
                 '',
                 '---',
-                '## ✅ 最佳实践',
+                '## 最佳实践',
                 '',
                 item.get('best_practices', ''),
             ])
@@ -870,7 +867,7 @@ class SuperEnhancedContentGenerator:
             lines.extend([
                 '',
                 '---',
-                '## 🎓 学习要点',
+                '## 学习要点',
                 '',
             ])
             for takeaway in item.get('learning_takeaways', []):
@@ -881,7 +878,7 @@ class SuperEnhancedContentGenerator:
             lines.extend([
                 '',
                 '---',
-                '## 🔗 推荐资源',
+                '## 相关资源',
                 '',
             ])
             for resource in item.get('related_resources', []):
@@ -907,11 +904,11 @@ class SuperEnhancedContentGenerator:
         title = item.get('catchy_title') or item.get('title_translated') or item.get('title', '')
 
         lines = [
-            f'# 📚 {title}',
+            f'# {title}',
             '',
             '---',
             '',
-            '## 📋 基本信息',
+            '## 基本信息',
             '',
             f'- **ArXiv ID**: {item.get("arxiv_id", "")}',
             f'- **分类**: {item.get("category", "")}',
@@ -933,7 +930,7 @@ class SuperEnhancedContentGenerator:
             lines.extend([
                 '',
                 '---',
-                '## ✨ 引人入胜的引言',
+                '## 导语',
                 '',
                 item.get('engaging_intro', ''),
             ])
@@ -943,7 +940,7 @@ class SuperEnhancedContentGenerator:
             lines.extend([
                 '',
                 '---',
-                '## 📄 摘要',
+                '## 摘要',
                 '',
                 item.get('summary', ''),
             ])
@@ -953,7 +950,7 @@ class SuperEnhancedContentGenerator:
             lines.extend([
                 '',
                 '---',
-                '## 🎯 深度评价',
+                '## 评论',
                 '',
                 item.get('deep_comment', ''),
             ])
@@ -963,7 +960,7 @@ class SuperEnhancedContentGenerator:
             lines.extend([
                 '',
                 '---',
-                '## 🔍 全面分析',
+                '## 技术分析',
                 '',
                 item.get('comprehensive_analysis', ''),
             ])
@@ -973,7 +970,7 @@ class SuperEnhancedContentGenerator:
             lines.extend([
                 '',
                 '---',
-                '## ✅ 研究最佳实践',
+                '## 研究最佳实践',
                 '',
                 item.get('best_practices', ''),
             ])
@@ -983,7 +980,7 @@ class SuperEnhancedContentGenerator:
             lines.extend([
                 '',
                 '---',
-                '## 🎓 核心学习要点',
+                '## 学习要点',
                 '',
             ])
             for takeaway in item.get('learning_takeaways', []):
@@ -995,7 +992,7 @@ class SuperEnhancedContentGenerator:
                 '',
                 '',
                 '---',
-                '## 🗺️ 学习路径',
+                '## 学习路径',
                 '',
                 item.get('learning_path', ''),
             ])
@@ -1005,7 +1002,7 @@ class SuperEnhancedContentGenerator:
             lines.extend([
                 '',
                 '---',
-                '## ❓ 常见问题',
+                '## 常见问题',
                 '',
             ])
             for faq in item.get('faq', []):
@@ -1021,7 +1018,7 @@ class SuperEnhancedContentGenerator:
             lines.extend([
                 '',
                 '---',
-                '## 🎯 思考题',
+                '## 思考题',
                 '',
             ])
             for challenge in item.get('challenges', []):
@@ -1035,7 +1032,7 @@ class SuperEnhancedContentGenerator:
             lines.extend([
                 '',
                 '---',
-                '## 🔗 推荐资源',
+                '## 相关资源',
                 '',
             ])
             for resource in item.get('related_resources', []):
@@ -1062,11 +1059,11 @@ class SuperEnhancedContentGenerator:
         description = item.get("description_translated") or item.get("description", "")
 
         lines = [
-            f'# 📝 {title}',
+            f'# {title}',
             '',
             '---',
             '',
-            '## 📋 基本信息',
+            '## 基本信息',
             '',
             f'- **作者**: {item.get("author", "")}',
         ]
@@ -1081,7 +1078,7 @@ class SuperEnhancedContentGenerator:
             lines.extend([
                 '',
                 '---',
-                '## ✨ 引人入胜的引言',
+                '## 导语',
                 '',
                 item.get('engaging_intro', ''),
             ])
@@ -1091,7 +1088,7 @@ class SuperEnhancedContentGenerator:
             lines.extend([
                 '',
                 '---',
-                '## 📄 描述',
+                '## 描述',
                 '',
                 description,
             ])
@@ -1101,7 +1098,7 @@ class SuperEnhancedContentGenerator:
             lines.extend([
                 '',
                 '---',
-                '## 📝 AI 总结',
+                '## 摘要',
                 '',
                 item.get('summary', ''),
             ])
@@ -1111,7 +1108,7 @@ class SuperEnhancedContentGenerator:
             lines.extend([
                 '',
                 '---',
-                '## 🎯 深度评价',
+                '## 评论',
                 '',
                 item.get('deep_comment', ''),
             ])
@@ -1121,7 +1118,7 @@ class SuperEnhancedContentGenerator:
             lines.extend([
                 '',
                 '---',
-                '## 🎓 学习要点',
+                '## 学习要点',
                 '',
             ])
             for takeaway in item.get('learning_takeaways', []):
@@ -1132,7 +1129,7 @@ class SuperEnhancedContentGenerator:
             lines.extend([
                 '',
                 '---',
-                '## ❓ 常见问题',
+                '## 常见问题',
                 '',
             ])
             for faq in item.get('faq', []):
@@ -1160,11 +1157,11 @@ class SuperEnhancedContentGenerator:
         title = item.get('catchy_title') or item.get('title_translated') or item.get('title', '')
 
         lines = [
-            f'# 📖 {title}',
+            f'# {title}',
             '',
             '---',
             '',
-            '## 📋 基本信息',
+            '## 基本信息',
             '',
         ]
 
@@ -1178,7 +1175,7 @@ class SuperEnhancedContentGenerator:
             lines.extend([
                 '',
                 '---',
-                '## ✨ 引人入胜的引言',
+                '## 导语',
                 '',
                 item.get('engaging_intro', ''),
             ])
@@ -1188,7 +1185,7 @@ class SuperEnhancedContentGenerator:
             lines.extend([
                 '',
                 '---',
-                '## 📝 AI 总结',
+                '## 摘要',
                 '',
                 item.get('summary', ''),
             ])
@@ -1198,7 +1195,7 @@ class SuperEnhancedContentGenerator:
             lines.extend([
                 '',
                 '---',
-                '## 🎯 深度评价',
+                '## 评论',
                 '',
                 item.get('deep_comment', ''),
             ])
@@ -1208,7 +1205,7 @@ class SuperEnhancedContentGenerator:
             lines.extend([
                 '',
                 '---',
-                '## 🎓 学习要点',
+                '## 学习要点',
                 '',
             ])
             for takeaway in item.get('learning_takeaways', []):
@@ -1219,7 +1216,7 @@ class SuperEnhancedContentGenerator:
             lines.extend([
                 '',
                 '---',
-                '## 🔗 推荐资源',
+                '## 相关资源',
                 '',
             ])
             for resource in item.get('related_resources', []):
@@ -1250,24 +1247,24 @@ class SuperEnhancedContentGenerator:
         enabled_platforms = self.publisher.get_enabled_platforms()
 
         if not enabled_platforms:
-            logger.info("ℹ️  No publishing platforms enabled")
+            logger.info("No publishing platforms enabled")
             return
 
         # 只推送每个来源的前几篇内容
         for source, items in processed_data.items():
             for item in items[:2]:  # 每个来源最多推送2篇
                 try:
-                    logger.info(f"📤 Publishing {source} item to {enabled_platforms}...")
+                    logger.info(f"Publishing {source} item to {enabled_platforms}...")
                     results = self.publisher.publish_all(item)
 
                     for platform, success in results.items():
                         if success:
-                            logger.info(f"✅ Successfully published to {platform}")
+                            logger.info(f"Successfully published to {platform}")
                         else:
-                            logger.warning(f"⚠️  Failed to publish to {platform}")
+                            logger.warning(f"Failed to publish to {platform}")
 
                 except Exception as e:
-                    logger.error(f"❌ Failed to publish item: {e}")
+                    logger.error(f"Failed to publish item: {e}")
                     continue
 
 

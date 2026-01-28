@@ -10,8 +10,9 @@ from pathlib import Path
 import json
 from collections import defaultdict
 from datetime import datetime
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
-from processor.anthropic_client import AnthropicClient
+from processor.anthropic_client import AnthropicClient, NullAnthropicClient
 from processor.summarizer import ContentSummarizer
 from processor.translator import ContentTranslator
 from processor.generator import SuperEnhancedContentGenerator
@@ -30,7 +31,11 @@ class ProcessorOrchestrator:
     def __init__(self, config_path='config/anthropic.yaml'):
         self.config_path = Path(config_path)
         self.config = self._load_config()
-        self.client = AnthropicClient(config_path)
+        try:
+            self.client = AnthropicClient(config_path)
+        except Exception as e:
+            logger.warning(f"Anthropic client disabled: {e}")
+            self.client = NullAnthropicClient(str(e))
 
         # 初始化处理器
         summary_config = self.config.get('summary', {})
@@ -269,16 +274,44 @@ class ProcessorOrchestrator:
         Returns:
             List[Dict]: 处理后的内容列表
         """
-        processed = []
+        processed: List[Dict] = []
+        if not contents:
+            logger.info("Processed 0 contents")
+            return processed
 
-        for content in contents:
-            try:
-                processed_content = self.process_single(content)
-                processed.append(processed_content)
-            except Exception as e:
-                logger.error(f"Failed to process content: {e}")
-                # 失败的内容也保留，只是没有处理
-                processed.append(content)
+        concurrency = self.config.get("llm_concurrency", 3)
+        try:
+            concurrency = int(concurrency)
+        except Exception:
+            concurrency = 3
+        concurrency = max(1, concurrency)
+
+        if concurrency == 1 or len(contents) == 1:
+            for content in contents:
+                try:
+                    processed.append(self.process_single(content))
+                except Exception as e:
+                    logger.error(f"Failed to process content: {e}")
+                    processed.append(content)
+            logger.info(f"Processed {len(processed)} contents")
+            return processed
+
+        logger.info(f"Processing batch with concurrency={concurrency}")
+        results_by_index: Dict[int, Dict] = {}
+        with ThreadPoolExecutor(max_workers=concurrency) as executor:
+            future_to_index = {
+                executor.submit(self.process_single, content): idx for idx, content in enumerate(contents)
+            }
+            for future in as_completed(future_to_index):
+                idx = future_to_index[future]
+                try:
+                    results_by_index[idx] = future.result()
+                except Exception as e:
+                    logger.error(f"Failed to process content: {e}")
+                    results_by_index[idx] = contents[idx]
+
+        for idx in range(len(contents)):
+            processed.append(results_by_index.get(idx, contents[idx]))
 
         logger.info(f"Processed {len(processed)} contents")
         return processed

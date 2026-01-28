@@ -5,6 +5,8 @@ anthropic:
   model: "claude-3-5-sonnet-20241022"
   max_tokens: 8192
   temperature: 0.85
+  llm_concurrency: 3
+  llm_max_retries: 3
 
   # Summary settings
   summary:
@@ -22,7 +24,7 @@ anthropic:
     comment_length: 1200
     analysis_length: 2500
     style: "storytelling"
-    use_emoji: true
+    use_emoji: false
     add_recommendations: true
 
     # 新增内容类型

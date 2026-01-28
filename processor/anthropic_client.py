@@ -8,9 +8,26 @@ import yaml
 import anthropic
 from typing import Dict, Optional
 import logging
+import random
+import threading
+import time
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
+
+
+class NullAnthropicClient:
+    def __init__(self, reason: str = "disabled"):
+        self.reason = reason
+
+    def create_message(
+        self,
+        prompt: str,
+        max_tokens: Optional[int] = None,
+        *,
+        temperature: Optional[float] = None,
+    ) -> str:
+        return ""
 
 
 class AnthropicClient:
@@ -19,6 +36,13 @@ class AnthropicClient:
     def __init__(self, config_path='config/anthropic.yaml'):
         self.config = self._load_config(config_path)
         self.client = self._init_client()
+        concurrency = self.config.get("llm_concurrency", 3)
+        try:
+            concurrency = int(concurrency)
+        except Exception:
+            concurrency = 3
+        concurrency = max(1, concurrency)
+        self._semaphore = threading.BoundedSemaphore(value=concurrency)
 
     def _load_config(self, config_path: str) -> Dict:
         """加载配置"""
@@ -77,36 +101,66 @@ class AnthropicClient:
         Returns:
             str: 响应内容
         """
+        max_tokens = max_tokens or self.config.get('max_tokens', 4096)
+        model = self.config.get('model', 'claude-3-5-sonnet-20241022')
+        temperature = temperature if temperature is not None else self.config.get('temperature', 0.7)
+        max_retries = self.config.get("llm_max_retries", 3)
         try:
-            max_tokens = max_tokens or self.config.get('max_tokens', 4096)
-            model = self.config.get('model', 'claude-3-5-sonnet-20241022')
-            temperature = temperature if temperature is not None else self.config.get('temperature', 0.7)
+            max_retries = int(max_retries)
+        except Exception:
+            max_retries = 3
+        max_retries = max(0, max_retries)
 
-            logger.info(f"Calling Anthropic API with model: {model}, max_tokens: {max_tokens}")
+        attempt = 0
+        while True:
+            try:
+                with self._semaphore:
+                    message = self.client.messages.create(
+                        model=model,
+                        max_tokens=max_tokens,
+                        temperature=temperature,
+                        messages=[
+                            {
+                                "role": "user",
+                                "content": prompt
+                            }
+                        ]
+                    )
 
-            message = self.client.messages.create(
-                model=model,
-                max_tokens=max_tokens,
-                temperature=temperature,
-                messages=[
-                    {
-                        "role": "user",
-                        "content": prompt
-                    }
-                ]
-            )
+                response_text = message.content[0].text
+                return response_text
 
-            response_text = message.content[0].text
-            logger.info(f"API response received, length: {len(response_text)}")
+            except anthropic.APIError as e:
+                retryable = isinstance(
+                    e,
+                    (
+                        getattr(anthropic, "RateLimitError", anthropic.APIError),
+                        getattr(anthropic, "APITimeoutError", anthropic.APIError),
+                        getattr(anthropic, "APIConnectionError", anthropic.APIError),
+                        getattr(anthropic, "InternalServerError", anthropic.APIError),
+                    ),
+                )
+                status_code = getattr(e, "status_code", None)
+                if status_code is not None and isinstance(status_code, int) and status_code >= 500:
+                    retryable = True
 
-            return response_text
+                if (not retryable) or attempt >= max_retries:
+                    logger.error(f"Anthropic API error: {e}")
+                    raise
 
-        except anthropic.APIError as e:
-            logger.error(f"Anthropic API error: {e}")
-            raise
-        except Exception as e:
-            logger.error(f"Failed to create message: {e}")
-            raise
+                backoff = min(30.0, (2 ** attempt)) + random.uniform(0, 0.5)
+                logger.warning(f"Anthropic API retrying in {backoff:.2f}s (attempt {attempt + 1}/{max_retries})")
+                time.sleep(backoff)
+                attempt += 1
+
+            except Exception as e:
+                if attempt >= max_retries:
+                    logger.error(f"Failed to create message: {e}")
+                    raise
+                backoff = min(30.0, (2 ** attempt)) + random.uniform(0, 0.5)
+                logger.warning(f"LLM call retrying in {backoff:.2f}s (attempt {attempt + 1}/{max_retries})")
+                time.sleep(backoff)
+                attempt += 1
 
 
 if __name__ == '__main__':

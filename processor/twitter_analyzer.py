@@ -4,6 +4,7 @@ Twitter内容分析器 - 使用Claude AI分析推文内容，解析大佬观点�
 """
 
 import logging
+import os
 from typing import List, Dict, Optional
 from datetime import datetime
 import json
@@ -25,7 +26,19 @@ class TwitterContentAnalyzer:
             api_key: Anthropic API密钥
             base_url: 自定义API基础URL（用于Claude Code）
         """
-        self.client = Anthropic(api_key=api_key, base_url=base_url)
+        resolved_api_key = (api_key or "").strip() or os.environ.get("ANTHROPIC_AUTH_TOKEN") or os.environ.get("ANTHROPIC_API_KEY")
+        resolved_base_url = (base_url or "").strip() or os.environ.get("ANTHROPIC_BASE_URL")
+
+        if not resolved_api_key:
+            logger.warning("TwitterContentAnalyzer disabled: Anthropic API key not configured")
+            self.client = None
+            return
+
+        try:
+            self.client = Anthropic(api_key=resolved_api_key, base_url=resolved_base_url)
+        except Exception as e:
+            logger.warning(f"TwitterContentAnalyzer disabled: failed to init Anthropic client: {e}")
+            self.client = None
 
     def _build_analysis_prompt(self, tweets: List[Dict]) -> str:
         """构建分析提示词"""
@@ -84,6 +97,17 @@ class TwitterContentAnalyzer:
                 "pros_and_cons": {"pros": [], "cons": []},
                 "social_post": "",
                 "hashtags": []
+            }
+
+        if self.client is None:
+            return {
+                "summary": "分析器未启用（缺少 Anthropic API key）",
+                "key_points": [],
+                "tech_trends": [],
+                "pros_and_cons": {"pros": [], "cons": []},
+                "social_post": "",
+                "hashtags": [],
+                "analyzed_at": datetime.now().isoformat(),
             }
 
         try:

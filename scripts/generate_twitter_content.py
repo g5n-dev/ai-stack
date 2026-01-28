@@ -39,11 +39,11 @@ class TwitterContentGenerator:
         """运行Twitter内容生成流程"""
         try:
             logger.info("=" * 80)
-            logger.info("🐦🐦🐦 Starting Twitter Content Generation 🐦🐦🐦")
+            logger.info("Starting Twitter content generation")
             logger.info("=" * 80)
 
             # 1. 初始化生成器
-            logger.info("\n[1/4] 📱 Initializing Twitter post generator...")
+            logger.info("\n[1/4] Initializing Twitter post generator...")
             generator = TwitterPostGenerator(
                 api_key=self.api_key,
                 base_url=self.base_url,
@@ -52,21 +52,21 @@ class TwitterContentGenerator:
             logger.info(f"✓ Monitoring accounts: {generator.crawler.accounts}")
 
             # 2. 抓取推文
-            logger.info("\n[2/4] 🕷️  Crawling recent tweets (last 30 minutes)...")
+            logger.info("\n[2/4] Crawling recent tweets (last 30 minutes)...")
             logger.info("    This may take a while as we're using browser automation...")
             tweets_data = generator.crawl_tweets()
             total_tweets = sum(len(tweets) for tweets in tweets_data.values())
             logger.info(f"✓ Crawled {total_tweets} tweets from {len(tweets_data)} accounts")
 
             # 3. 分析推文
-            logger.info("\n[3/4] 🤖 Analyzing tweets with Claude AI...")
+            logger.info("\n[3/4] Analyzing tweets with Claude AI...")
             logger.info("    Extracting insights, trends, and pros/cons...")
             analysis_results = generator.analyze_tweets(tweets_data)
             logger.info(f"✓ Analyzed {len(analysis_results)} accounts")
 
             # 4. 生成内容
             if save_markdown:
-                logger.info("\n[4/4] 📝 Generating blog posts...")
+                logger.info("\n[4/4] Generating blog posts...")
                 posts = generator.save_markdown_posts(str(self.posts_dir))
                 logger.info(f"✓ Created {len(posts)} blog posts:")
                 for post in posts:
@@ -75,7 +75,7 @@ class TwitterContentGenerator:
                 posts = []
 
             logger.info("\n" + "=" * 80)
-            logger.info("✅✅✅ Twitter Content Generation Completed Successfully! ✅✅✅")
+            logger.info("Twitter content generation completed successfully")
             logger.info("=" * 80)
 
             return {
@@ -86,7 +86,7 @@ class TwitterContentGenerator:
             }
 
         except Exception as e:
-            logger.error(f"❌ Twitter content generation failed: {e}", exc_info=True)
+            logger.error(f"Twitter content generation failed: {e}", exc_info=True)
             return None
 
 
@@ -108,7 +108,7 @@ def main():
     result = generator.run(save_markdown=not args.no_markdown)
 
     if result:
-        print("\n📊 Summary:")
+        print("\nSummary:")
         print(f"  Tweets crawled: {result['tweets_crawled']}")
         print(f"  Accounts analyzed: {result['accounts_analyzed']}")
         print(f"  Posts created: {result['posts_created']}")
