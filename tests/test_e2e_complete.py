@@ -63,7 +63,17 @@ def test_post_generation(processed_data):
     
     try:
         from datetime import datetime
-        from scripts.generate_content import SuperEnhancedContentGenerator
+        import importlib.util
+        from pathlib import Path
+
+        project_root = Path(__file__).parent.parent
+        module_path = project_root / "scripts" / "generate_content.py"
+        spec = importlib.util.spec_from_file_location("generate_content_local", module_path)
+        if spec is None or spec.loader is None:
+            raise RuntimeError("Failed to load scripts/generate_content.py")
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        SuperEnhancedContentGenerator = module.SuperEnhancedContentGenerator
 
         generator = SuperEnhancedContentGenerator()
         posts_dir = generator.posts_dir

@@ -10,6 +10,9 @@ from pathlib import Path
 from datetime import datetime
 import logging
 import argparse
+import re
+import urllib.parse
+import yaml
 
 # 添加项目根目录到路径
 project_root = Path(__file__).parent.parent
@@ -37,6 +40,7 @@ class SuperEnhancedContentGenerator:
 
         # 确保 posts 目录存在
         self.posts_dir.mkdir(parents=True, exist_ok=True)
+        self._post_index = self._load_post_index()
 
     def run(self, *, crawl_duration_hours: float = 0, crawl_interval_minutes: int = 30):
         """运行完整的超级增强内容生成流程"""
@@ -107,7 +111,7 @@ class SuperEnhancedContentGenerator:
                     filepath = self.posts_dir / filename
 
                     # 生成 Markdown 内容
-                    markdown_content = self._format_super_enhanced_markdown(item)
+                    markdown_content = self._format_super_enhanced_markdown(item, current_filename=filename)
 
                     # 写入文件
                     with open(filepath, 'w', encoding='utf-8') as f:
@@ -115,6 +119,7 @@ class SuperEnhancedContentGenerator:
 
                     logger.info(f"✓ Created post: {filename}")
                     created_count += 1
+                    self._post_index.append(self._post_entry_from_data(filename, item))
 
                 except Exception as e:
                     logger.error(f"Failed to generate post for {item.get('title', 'Unknown')}: {e}")
@@ -124,13 +129,12 @@ class SuperEnhancedContentGenerator:
 
     def _generate_slug(self, title: str, index: int) -> str:
         """生成 URL 友好的 slug"""
-        import re
         slug = re.sub(r'[^\w\s-]', '', title.lower())
         slug = re.sub(r'[-\s]+', '-', slug)
         slug = slug.strip('-')[:50]
         return f"{slug}-{index}"
 
-    def _format_super_enhanced_markdown(self, item: dict) -> str:
+    def _format_super_enhanced_markdown(self, item: dict, *, current_filename: str | None = None) -> str:
         """
         格式化内容为超级增强版 Markdown（15+ 个章节）
 
@@ -145,16 +149,15 @@ class SuperEnhancedContentGenerator:
         date = datetime.now().strftime('%Y-%m-%dT%H:%M:%S+08:00')
 
         # 构建标签
-        tags = item.get('tags', [])
-        if isinstance(tags, str):
-            tags = [tags]
-        tags_str = ', '.join([f'"{tag}"' for tag in tags])
+        tags = self._normalize_taxonomy_list(item.get('tags', []))
+        tags_str = ', '.join([f'"{self._yaml_escape(tag)}"' for tag in tags])
 
         # 构建分类
-        categories = item.get('categories', [])
-        if isinstance(categories, str):
-            categories = [categories]
-        categories_str = ', '.join([f'"{cat}"' for cat in categories])
+        categories = self._normalize_taxonomy_list(item.get('categories', []))
+        categories_str = ', '.join([f'"{self._yaml_escape(cat)}"' for cat in categories])
+
+        scenarios = self._normalize_scenarios(item.get("scenarios"))
+        scenarios_str = ', '.join([f'"{self._yaml_escape(s)}"' for s in scenarios])
 
         # 获取 URL
         url = item.get('url', '')
@@ -164,7 +167,7 @@ class SuperEnhancedContentGenerator:
         # 开始构建 Markdown
         lines = [
             '---',
-            f'title: "{title}"',
+            f'title: "{self._yaml_escape(title)}"',
             f'date: {date}',
             'draft: false',
             'entry_kind: "auto"',
@@ -175,6 +178,8 @@ class SuperEnhancedContentGenerator:
 
         if url:
             lines.append(f'external_url: {url}')
+        if scenarios:
+            lines.append(f'scenarios: [{scenarios_str}]')
 
         lines.append('---')
         lines.append('')
@@ -195,7 +200,186 @@ class SuperEnhancedContentGenerator:
         else:
             lines.extend(self._format_generic_super_enhanced(item))
 
+        related = self._find_related_posts(item, current_filename=current_filename)
+        self._inject_internal_links(lines, item, related)
         return '\n'.join(lines)
+
+    def _yaml_escape(self, text: str) -> str:
+        return str(text or "").replace("\\", "\\\\").replace('"', '\\"').strip()
+
+    def _normalize_taxonomy_list(self, value) -> list[str]:
+        if value is None:
+            return []
+        if isinstance(value, str):
+            value = [value]
+        if not isinstance(value, list):
+            return []
+        out: list[str] = []
+        for x in value:
+            s = str(x or "").strip()
+            if not s:
+                continue
+            if s not in out:
+                out.append(s)
+        return out
+
+    def _normalize_scenarios(self, value) -> list[str]:
+        if value is None:
+            return []
+        if isinstance(value, str):
+            value = [value]
+        if isinstance(value, list):
+            out: list[str] = []
+            for x in value:
+                if isinstance(x, str):
+                    name = x.strip()
+                elif isinstance(x, dict):
+                    name = str(x.get("name") or "").strip()
+                else:
+                    name = str(x or "").strip()
+                if not name:
+                    continue
+                if name not in out:
+                    out.append(name)
+            return out
+        return []
+
+    def _term_slug(self, term: str) -> str:
+        s = str(term or "").strip().lower()
+        s = re.sub(r"[^\w\s-]", " ", s, flags=re.UNICODE)
+        s = s.replace("_", "-")
+        s = re.sub(r"\s+", "-", s)
+        s = re.sub(r"-{2,}", "-", s).strip("-")
+        return urllib.parse.quote(s, safe="-")
+
+    def _term_link(self, taxonomy: str, term: str) -> str:
+        slug = self._term_slug(term)
+        return f"/{taxonomy}/{slug}/"
+
+    def _relref(self, content_path: str) -> str:
+        p = str(content_path or "").strip().lstrip("/")
+        return f'{{{{< relref "{p}" >}}}}'
+
+    def _post_entry_from_data(self, filename: str, item: dict) -> dict:
+        title = item.get('catchy_title') or item.get('title_translated') or item.get('title', '')
+        return {
+            "filename": filename,
+            "content_path": f"posts/{filename}",
+            "title": str(title or "").strip(),
+            "tags": self._normalize_taxonomy_list(item.get("tags", [])),
+            "categories": self._normalize_taxonomy_list(item.get("categories", [])),
+            "scenarios": self._normalize_scenarios(item.get("scenarios")),
+        }
+
+    def _post_entry_from_file(self, path: Path) -> dict | None:
+        try:
+            with open(path, "r", encoding="utf-8") as f:
+                lines = f.read().splitlines()
+        except Exception:
+            return None
+
+        if not lines or lines[0].strip() != "---":
+            return None
+
+        end_idx = None
+        for i in range(1, min(len(lines), 200)):
+            if lines[i].strip() == "---":
+                end_idx = i
+                break
+        if end_idx is None:
+            return None
+
+        fm_text = "\n".join(lines[1:end_idx]).strip()
+        if not fm_text:
+            return None
+
+        try:
+            fm = yaml.safe_load(fm_text) or {}
+        except Exception:
+            return None
+
+        filename = path.name
+        title = str(fm.get("title") or "").strip()
+        return {
+            "filename": filename,
+            "content_path": f"posts/{filename}",
+            "title": title,
+            "tags": self._normalize_taxonomy_list(fm.get("tags", [])),
+            "categories": self._normalize_taxonomy_list(fm.get("categories", [])),
+            "scenarios": self._normalize_taxonomy_list(fm.get("scenarios", [])),
+        }
+
+    def _load_post_index(self) -> list[dict]:
+        posts: list[dict] = []
+        try:
+            for p in sorted(self.posts_dir.glob("*.md")):
+                entry = self._post_entry_from_file(p)
+                if entry:
+                    posts.append(entry)
+        except Exception:
+            return []
+        return posts
+
+    def _find_related_posts(self, item: dict, *, current_filename: str | None = None) -> list[dict]:
+        tags = set(self._normalize_taxonomy_list(item.get("tags", [])))
+        categories = set(self._normalize_taxonomy_list(item.get("categories", [])))
+        scenarios = set(self._normalize_scenarios(item.get("scenarios")))
+
+        scored: list[tuple[int, dict]] = []
+        for p in self._post_index:
+            if current_filename and p.get("filename") == current_filename:
+                continue
+            score = 0
+            ptags = set(p.get("tags") or [])
+            pcats = set(p.get("categories") or [])
+            psc = set(p.get("scenarios") or [])
+            score += 2 * len(tags & ptags)
+            score += 1 * len(categories & pcats)
+            score += 1 * len(scenarios & psc)
+            if score <= 0:
+                continue
+            scored.append((score, p))
+
+        scored.sort(key=lambda x: (-x[0], str(x[1].get("filename") or "")))
+        return [p for _, p in scored[:5]]
+
+    def _inject_internal_links(self, lines: list[str], item: dict, related_posts: list[dict]) -> None:
+        tags = self._normalize_taxonomy_list(item.get("tags", []))
+        categories = self._normalize_taxonomy_list(item.get("categories", []))
+        scenarios = self._normalize_scenarios(item.get("scenarios"))
+
+        section: list[str] = []
+        section.extend([
+            "",
+            "---",
+            "## 站内链接",
+            "",
+        ])
+
+        if categories:
+            section.append("- 分类： " + " / ".join([f"[{c}]({self._term_link('categories', c)})" for c in categories[:6]]))
+        if tags:
+            section.append("- 标签： " + " / ".join([f"[{t}]({self._term_link('tags', t)})" for t in tags[:12]]))
+        if scenarios:
+            section.append("- 场景： " + " / ".join([f"[{s}]({self._term_link('scenarios', s)})" for s in scenarios[:8]]))
+
+        if related_posts:
+            section.extend([
+                "",
+                "### 相关文章",
+                "",
+            ])
+            for p in related_posts:
+                title = (p.get("title") or "").strip() or (p.get("filename") or "")
+                href = self._relref(p.get("content_path") or "")
+                section.append(f"- [{title}]({href})")
+
+        insert_at = len(lines)
+        for i in range(len(lines) - 1, -1, -1):
+            if "AI Stack 自动生成" in str(lines[i]):
+                insert_at = i
+                break
+        lines[insert_at:insert_at] = section
 
     def _format_twitter_brief(self, item: dict) -> list:
         account = item.get("account", "unknown")
