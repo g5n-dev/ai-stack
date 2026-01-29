@@ -166,22 +166,38 @@
 
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                             {{ range . }}
-                            <a href="/scenarios/{{ .name | urlize }}/"
+                            {{- $scenarioName := . -}}
+                            {{- $scenarioIcon := "category" -}}
+                            {{- $scenarioDesc := "" -}}
+                            {{- $scenarioConfidence := 0.7 -}}
+                            {{- if reflect.IsMap . -}}
+                            {{- $scenarioName = (index . "name") -}}
+                            {{- if isset . "icon" -}}
+                            {{- $scenarioIcon = (index . "icon") -}}
+                            {{- end -}}
+                            {{- if isset . "description" -}}
+                            {{- $scenarioDesc = (index . "description") -}}
+                            {{- end -}}
+                            {{- if and (isset . "confidence") (ne (index . "confidence") nil) -}}
+                            {{- $scenarioConfidence = (index . "confidence") -}}
+                            {{- end -}}
+                            {{- end -}}
+                            {{- $scenarioSlug := urlize (printf "%v" $scenarioName) -}}
+                            {{- $scenarioConfidenceWidth := printf "w-[%.0f%%]" (mul $scenarioConfidence 100) -}}
+                            <a href="/scenarios/{{ $scenarioSlug }}/"
                                 class="glass-panel rounded-lg p-5 border-l-2 border-primary/50 hover:border-primary transition-all group block">
                                 <div class="flex items-center gap-3 mb-3">
                                     <span
                                         class="material-symbols-outlined text-primary group-hover:text-primary/80 transition-colors">{{
-                                        .icon }}</span>
-                                    <h4 class="text-off-white font-bold tracking-wide">{{ .name }}</h4>
+                                        $scenarioIcon }}</span>
+                                    <h4 class="text-off-white font-bold tracking-wide">{{ printf "%v" $scenarioName }}</h4>
                                 </div>
-                                <p class="text-off-white/50 text-sm leading-relaxed">{{ .description }}</p>
+                                <p class="text-off-white/50 text-sm leading-relaxed">{{ $scenarioDesc }}</p>
                                 <div class="mt-3 flex items-center gap-2">
                                     <div class="h-1 flex-1 bg-muted-teal/10 rounded-full overflow-hidden">
-                                        <div class="h-full bg-primary/60 rounded-full"
-                                            style="width: {{ mul .confidence 100 }}%"></div>
+                                        <div class="h-full bg-primary/60 rounded-full {{ $scenarioConfidenceWidth }}"></div>
                                     </div>
-                                    <span class="text-off-white/30 text-[10px] font-mono">{{ printf "%.0f%%" (mul
-                                        .confidence 100) }}</span>
+                                    <span class="text-off-white/30 text-[10px] font-mono">{{ printf "%.0f%%" (mul $scenarioConfidence 100) }}</span>
                                 </div>
                             </a>
                             {{ end }}
