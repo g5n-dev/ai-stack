@@ -197,14 +197,25 @@
                             </h3>
                             <div class="flex flex-wrap gap-2">
                                 {{ range .Site.Taxonomies.scenarios.Alphabetical }}
+                                {{- $scenarioTerm := .Term -}}
                                 <a href="{{ .Page.RelPermalink }}"
                                     class="scenario-tag px-2 py-1 rounded border border-primary/15 bg-primary/5 hover:bg-primary/10 text-primary/70 text-[10px] font-mono tracking-wide transition-all flex items-center gap-1"
                                     title="{{ len .Pages }} 个项目">
                                     {{- $scenarioIcon := "category" -}}
                                     {{- range .Pages -}}
                                     {{- range .Params.scenarios -}}
-                                    {{- if eq .name $.Term -}}
-                                    {{- $scenarioIcon = .icon -}}
+                                    {{- $scenarioName := . -}}
+                                    {{- $scenarioIconCandidate := "" -}}
+                                    {{- if reflect.IsMap . -}}
+                                    {{- $scenarioName = (index . "name") -}}
+                                    {{- if isset . "icon" -}}
+                                    {{- $scenarioIconCandidate = (index . "icon") -}}
+                                    {{- end -}}
+                                    {{- end -}}
+                                    {{- if eq (printf "%v" $scenarioName) (printf "%v" $scenarioTerm) -}}
+                                    {{- if $scenarioIconCandidate -}}
+                                    {{- $scenarioIcon = $scenarioIconCandidate -}}
+                                    {{- end -}}
                                     {{- end -}}
                                     {{- end -}}
                                     {{- end -}}

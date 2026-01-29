@@ -120,10 +120,21 @@
                     <div class="flex items-center gap-4">
                         <div class="size-14 bg-primary/10 flex items-center justify-center rounded-lg">
                             {{- $scenarioIcon := "category" -}}
+                            {{- $scenarioTitle := .Title -}}
                             {{- range .Pages -}}
                             {{- range .Params.scenarios -}}
-                            {{- if eq .name $.Title -}}
-                            {{- $scenarioIcon = .icon -}}
+                            {{- $scenarioName := . -}}
+                            {{- $scenarioIconCandidate := "" -}}
+                            {{- if reflect.IsMap . -}}
+                            {{- $scenarioName = (index . "name") -}}
+                            {{- if isset . "icon" -}}
+                            {{- $scenarioIconCandidate = (index . "icon") -}}
+                            {{- end -}}
+                            {{- end -}}
+                            {{- if eq (printf "%v" $scenarioName) (printf "%v" $scenarioTitle) -}}
+                            {{- if $scenarioIconCandidate -}}
+                            {{- $scenarioIcon = $scenarioIconCandidate -}}
+                            {{- end -}}
                             {{- end -}}
                             {{- end -}}
                             {{- end -}}
@@ -133,10 +144,21 @@
                             <h1 class="text-off-white text-2xl font-light tracking-tight font-display">{{ .Title }}</h1>
                             <p class="text-off-white/50 text-sm mt-1">
                                 {{- $scenarioDesc := "" -}}
+                                {{- $scenarioTitle := .Title -}}
                                 {{- range .Pages -}}
                                 {{- range .Params.scenarios -}}
-                                {{- if eq .name $.Title -}}
-                                {{- $scenarioDesc = .description -}}
+                                {{- $scenarioName := . -}}
+                                {{- $scenarioDescCandidate := "" -}}
+                                {{- if reflect.IsMap . -}}
+                                {{- $scenarioName = (index . "name") -}}
+                                {{- if isset . "description" -}}
+                                {{- $scenarioDescCandidate = (index . "description") -}}
+                                {{- end -}}
+                                {{- end -}}
+                                {{- if eq (printf "%v" $scenarioName) (printf "%v" $scenarioTitle) -}}
+                                {{- if $scenarioDescCandidate -}}
+                                {{- $scenarioDesc = $scenarioDescCandidate -}}
+                                {{- end -}}
                                 {{- end -}}
                                 {{- end -}}
                                 {{- end -}}
@@ -166,16 +188,26 @@
                             {{ range .Pages }}
                             {{$confidence := 0.7}}
                             {{- range .Params.scenarios -}}
-                            {{- if eq .name $.Title -}}
-                            {{- $confidence = .confidence -}}
+                            {{- $scenarioName := . -}}
+                            {{- if reflect.IsMap . -}}
+                            {{- $scenarioName = (index . "name") -}}
+                            {{- if and (isset . "confidence") (ne (index . "confidence") nil) -}}
+                            {{- if eq (printf "%v" $scenarioName) (printf "%v" $.Title) -}}
+                            {{- $confidence = (index . "confidence") -}}
+                            {{- end -}}
+                            {{- end -}}
+                            {{- else -}}
+                            {{- if eq (printf "%v" $scenarioName) (printf "%v" $.Title) -}}
+                            {{- $confidence = 0.7 -}}
+                            {{- end -}}
                             {{- end -}}
                             {{- end -}}
                             <tr class="hover:bg-muted-teal/5 transition-all group">
                                 <td class="w-20 px-6 py-5">
                                     <div class="flex items-center gap-2">
                                         <div class="w-12 h-1.5 bg-muted-teal/10 rounded-full overflow-hidden">
-                                            <div class="h-full bg-primary/60 rounded-full"
-                                                style="width: {{ mul $confidence 100 }}%"></div>
+                                            {{- $confidenceWidth := printf "w-[%.0f%%]" (mul $confidence 100) -}}
+                                            <div class="h-full bg-primary/60 rounded-full {{ $confidenceWidth }}"></div>
                                         </div>
                                         <span class="text-off-white/30 text-[10px] font-mono">{{ printf "%.0f%%" (mul
                                             $confidence 100) }}</span>
