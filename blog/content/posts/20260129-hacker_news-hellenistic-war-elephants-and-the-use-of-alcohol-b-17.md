@@ -447,9 +447,7 @@ for terrain in ['平原', '森林', '山地']:
 
 ### 相关文章
 
-- [💥3.65万人惨遭屠杀！伊朗史上最血腥大屠杀机密文件曝光]({{< relref "posts/20260127-hacker_news-over-36500-killed-in-irans-deadliest-massacre-docu-18.md" >}})
 - [💥揭开WD-40的神秘配方！这背后的秘密居然...]({{< relref "posts/20260127-hacker_news-people-who-know-the-formula-for-wd-40-17.md" >}})
 - [🏛️ Pharos：世界七大奇迹之首！亚历山大灯塔如何照亮文明？]({{< relref "posts/20260127-hacker_news-pharos-the-lighthouse-at-alexandria-11.md" >}})
-- [🔥1963年经典单柄球阀！颠覆设计的龙头鼻祖？💧]({{< relref "posts/20260126-hacker_news-delta-single-handle-ball-faucets-1963-13.md" >}})
 - [缅因州“龙虾女士”去世：捕捞近百年，享年105岁]({{< relref "posts/20260129-hacker_news-maines-lobster-lady-who-fished-for-nearly-a-centur-1.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*
