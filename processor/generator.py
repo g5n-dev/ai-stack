@@ -77,6 +77,19 @@ class SuperEnhancedContentGenerator:
         ]
         return any(w in text for w in banned)
 
+    def _looks_like_meta_disclaimer(self, text: str) -> bool:
+        if not text:
+            return False
+        banned = [
+            "由于您提供",
+            "仅为标题",
+            "我将基于",
+            "我无法从",
+            "无法从提供",
+            "鉴于您提供",
+        ]
+        return any(w in text for w in banned)
+
     def _validate_text(
         self,
         text: str,
@@ -93,6 +106,8 @@ class SuperEnhancedContentGenerator:
         if len(t) < min_chars:
             return False
         if max_chars is not None and len(t) > max_chars:
+            return False
+        if self._looks_like_meta_disclaimer(t):
             return False
         if (not allow_emoji) and self._contains_emoji(t):
             return False

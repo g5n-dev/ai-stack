@@ -19,6 +19,7 @@ from processor.generator import SuperEnhancedContentGenerator
 from processor.tagger import ContentTagger
 from processor.enricher import enrich_github_repo
 from processor.scenario_analyzer import ScenarioAnalyzer
+from processor.ai_filter import AIThemeFilter
 from processor.tech_stack import export_to_json
 
 logging.basicConfig(level=logging.INFO)
@@ -67,6 +68,9 @@ class ProcessorOrchestrator:
             self.client,
             config=scenario_config
         )
+
+        ai_filter_config = self.config.get("ai_filter", {})
+        self.ai_filter = AIThemeFilter(self.client, ai_filter_config)
 
     def _extract_json(self, text: str) -> Optional[dict]:
         if not text:
@@ -231,6 +235,12 @@ class ProcessorOrchestrator:
             source = content.get('source', '')
 
             logger.info(f"Processing content from {source}: {content.get('title', 'N/A')}")
+
+            content = self.ai_filter.filter(content)
+            content = self.ai_filter.moderate(content)
+            if (not content.get("ai_related", True)) or (not content.get("should_publish", True)):
+                content["skip_post"] = True
+                return content
 
             # 内容增强（如 DeepWiki）
             if source == 'github_trending':

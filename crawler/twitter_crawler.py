@@ -115,18 +115,25 @@ class TwitterCrawler:
         if not self.save_screenshots:
             return None
 
-        try:
-            await tweet_element.scroll_into_view_if_needed()
-            await asyncio.sleep(0.2)
+        filename = self._build_screenshot_filename(account, tweet_url, tweet_timestamp, tweet_text)
+        file_path = self.screenshots_dir / filename
 
-            filename = self._build_screenshot_filename(account, tweet_url, tweet_timestamp, tweet_text)
-            file_path = self.screenshots_dir / filename
-
-            await tweet_element.screenshot(path=str(file_path))
-            return f"/images/twitter/{filename}"
-        except Exception as e:
-            logger.warning(f"推文截图失败: {e}")
-            return None
+        for attempt in range(3):
+            try:
+                await tweet_element.scroll_into_view_if_needed()
+                await asyncio.sleep(0.2)
+                await tweet_element.screenshot(path=str(file_path))
+                return f"/images/twitter/{filename}"
+            except Exception as e:
+                msg = str(e)
+                if ("not attached to the DOM" in msg) or ("Element is not attached" in msg):
+                    logger.info("推文截图跳过：元素已从 DOM 移除")
+                    return None
+                if attempt < 2:
+                    await asyncio.sleep(0.35)
+                    continue
+                logger.info(f"推文截图失败（已跳过）: {e}")
+                return None
 
     async def _extract_tweet_data(self, tweet_element, *, account: str) -> Dict:
         """从推文元素中提取数据"""

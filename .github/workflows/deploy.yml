@@ -75,6 +75,136 @@ jobs:
             echo "Content generator not found, skipping..."
           fi
 
+      - name: Moderation cleanup (LLM)
+        env:
+          PYTHONPATH: /home/runner/work/ai-stack/ai-stack
+          ANTHROPIC_AUTH_TOKEN: ${{ secrets.ANTHROPIC_AUTH_TOKEN }}
+          ANTHROPIC_BASE_URL: ${{ secrets.ANTHROPIC_BASE_URL }}
+        run: |
+          echo "=== Moderation Cleanup (scan newly changed posts) ==="
+          if [ -z "${ANTHROPIC_AUTH_TOKEN}" ]; then
+            echo "ANTHROPIC_AUTH_TOKEN not set, skipping moderation cleanup"
+            exit 0
+          fi
+          python3 - <<'PY'
+          import os
+          import re
+          import subprocess
+          from pathlib import Path
+
+          import yaml
+
+          from processor.anthropic_client import AnthropicClient
+          from processor.ai_filter import AIThemeFilter
+
+          def list_changed_posts() -> list[str]:
+              out = subprocess.check_output(["git", "status", "--porcelain"], text=True)
+              paths: list[str] = []
+              for line in out.splitlines():
+                  if len(line) < 4:
+                      continue
+                  path = line[3:].strip()
+                  if not path:
+                      continue
+                  if path.startswith("blog/content/posts/") and path.endswith(".md") and not path.endswith("/.gitkeep"):
+                      paths.append(path)
+              deduped: list[str] = []
+              seen: set[str] = set()
+              for p in paths:
+                  if p in seen:
+                      continue
+                  seen.add(p)
+                  deduped.append(p)
+              return deduped
+
+          def extract_frontmatter_and_body(path: Path) -> tuple[dict, str]:
+              text = path.read_text(encoding="utf-8", errors="ignore")
+              if not text.startswith("---"):
+                  return {}, text
+              parts = text.split("\n---\n", 1)
+              if len(parts) != 2:
+                  return {}, text
+              fm_raw = parts[0].lstrip("-").strip("\n")
+              body = parts[1]
+              try:
+                  fm = yaml.safe_load(fm_raw) or {}
+                  if not isinstance(fm, dict):
+                      fm = {}
+              except Exception:
+                  fm = {}
+              return fm, body
+
+          def looks_like_meta_disclaimer(t: str) -> bool:
+              s = (t or "").strip()
+              if not s:
+                  return False
+              banned = ["由于您提供", "仅为标题", "我将基于", "鉴于您提供", "无法从提供", "我无法从"]
+              return any(b in s for b in banned)
+
+          config_path = "config/anthropic.yaml"
+          client = AnthropicClient(config_path)
+          cfg = yaml.safe_load(Path(config_path).read_text(encoding="utf-8")) or {}
+          ai_filter_cfg = ((cfg.get("anthropic") or {}).get("ai_filter") or {})
+          flt = AIThemeFilter(client, ai_filter_cfg)
+
+          changed = list_changed_posts()
+          if not changed:
+              print("No changed posts to moderate")
+              raise SystemExit(0)
+
+          deleted: list[str] = []
+          for p in changed:
+              path = Path(p)
+              if not path.exists():
+                  continue
+              fm, body = extract_frontmatter_and_body(path)
+              title = str(fm.get("title") or "").strip()
+              description = str(fm.get("description") or "").strip()
+              tags = fm.get("tags", [])
+              categories = fm.get("categories", [])
+              source = str(fm.get("source") or "").strip()
+              external_url = str(fm.get("external_url") or fm.get("url") or "").strip()
+
+              body_snippet = re.sub(r"\s+", " ", body.strip())[:900]
+              if looks_like_meta_disclaimer(body_snippet):
+                  deleted.append(p)
+                  continue
+
+              content = {
+                  "source": source,
+                  "title": title,
+                  "catchy_title": title,
+                  "description": description,
+                  "summary": body_snippet,
+                  "tags": tags if isinstance(tags, list) else [],
+                  "categories": categories if isinstance(categories, list) else [],
+                  "url": external_url,
+              }
+
+              content = flt.filter(content)
+              content = flt.moderate(content)
+
+              should_publish = bool(content.get("should_publish", True))
+              ai_related = bool(content.get("ai_related", True))
+              if (not should_publish) or (not ai_related):
+                  deleted.append(p)
+
+          if not deleted:
+              print(f"Moderation OK: scanned={len(changed)} deleted=0")
+              raise SystemExit(0)
+
+          for p in deleted:
+              proc = subprocess.run(["git", "rm", "-f", p], capture_output=True, text=True)
+              if proc.returncode != 0:
+                  try:
+                      Path(p).unlink(missing_ok=True)
+                  except Exception:
+                      pass
+          print(f"Moderation done: scanned={len(changed)} deleted={len(deleted)}")
+          for p in deleted:
+              print(f"- deleted {p}")
+          PY
+
       - name: Build tag graph
         env:
           PYTHONPATH: /home/runner/work/ai-stack/ai-stack

@@ -105,6 +105,9 @@ class SuperEnhancedContentGenerator:
         for source, items in processed_data.items():
             for idx, item in enumerate(items):
                 try:
+                    if self._should_skip_post(item):
+                        continue
+
                     # 生成文件名
                     slug = self._generate_slug(item.get('title', ''), idx)
                     filename = f"{timestamp}-{source}-{slug}.md"
@@ -127,6 +130,42 @@ class SuperEnhancedContentGenerator:
 
         return created_count
 
+    def _looks_like_meta_disclaimer(self, text: str) -> bool:
+        t = str(text or "").strip()
+        if not t:
+            return False
+        banned = [
+            "由于您提供",
+            "仅为标题",
+            "我将基于",
+            "我无法从",
+            "无法从提供",
+            "鉴于您提供",
+        ]
+        return any(w in t for w in banned)
+
+    def _should_skip_post(self, item: dict) -> bool:
+        if not isinstance(item, dict):
+            return True
+        if item.get("skip_post", False):
+            return True
+        if item.get("ai_related") is False:
+            return True
+        if item.get("should_publish") is False:
+            return True
+        for k in [
+            "summary",
+            "engaging_intro",
+            "deep_comment",
+            "comprehensive_analysis",
+            "analysis",
+            "generated_intro",
+            "generated_comment",
+        ]:
+            if self._looks_like_meta_disclaimer(item.get(k, "")):
+                return True
+        return False
+
     def _generate_slug(self, title: str, index: int) -> str:
         """生成 URL 友好的 slug"""
         slug = re.sub(r'[^\w\s-]', '', title.lower())
@@ -145,7 +184,8 @@ class SuperEnhancedContentGenerator:
             str: Markdown 内容
         """
         source = item.get('source', 'unknown')
-        title = item.get('catchy_title') or item.get('title_translated') or item.get('title', 'Untitled')
+        raw_title = item.get('catchy_title') or item.get('title_translated') or item.get('title', 'Untitled')
+        title = self._sanitize_title_for_seo(raw_title)
         date = datetime.now().strftime('%Y-%m-%dT%H:%M:%S+08:00')
 
         # 构建标签
@@ -176,6 +216,10 @@ class SuperEnhancedContentGenerator:
             f'source: {source}',
         ]
 
+        seo_description = self._seo_description(item)
+        if seo_description:
+            lines.append(f'description: "{self._yaml_escape(seo_description)}"')
+
         if url:
             lines.append(f'external_url: {url}')
         if scenarios:
@@ -203,6 +247,53 @@ class SuperEnhancedContentGenerator:
         related = self._find_related_posts(item, current_filename=current_filename)
         self._inject_internal_links(lines, item, related)
         return '\n'.join(lines)
+
+    def _sanitize_title_for_seo(self, title: str) -> str:
+        t = str(title or "").strip()
+        if not t:
+            return "Untitled"
+        t = re.sub(r"[\U0001F300-\U0001FAFF]", "", t)
+        t = re.sub(r"[\u2600-\u27BF]", "", t)
+        t = re.sub(r"\s+", " ", t).strip()
+        if len(t) > 55:
+            t = t[:55].rstrip()
+        t = t.rstrip("!！。．. ")
+        return t or "Untitled"
+
+    def _strip_markdown_for_seo(self, text: str) -> str:
+        t = str(text or "").strip()
+        if not t:
+            return ""
+        t = re.sub(r"```[\s\S]*?```", " ", t)
+        t = re.sub(r"`[^`]*`", " ", t)
+        t = re.sub(r"!\[[^\]]*\]\([^)]+\)", " ", t)
+        t = re.sub(r"\[[^\]]+\]\([^)]+\)", " ", t)
+        t = re.sub(r"#+\s*", "", t)
+        t = re.sub(r">\s*", "", t)
+        t = re.sub(r"[\U0001F300-\U0001FAFF]", "", t)
+        t = re.sub(r"[\u2600-\u27BF]", "", t)
+        t = re.sub(r"\s+", " ", t).strip()
+        return t
+
+    def _seo_description(self, item: dict) -> str:
+        if not isinstance(item, dict):
+            return ""
+        candidates = [
+            item.get("summary", ""),
+            item.get("engaging_intro", ""),
+            item.get("description_translated", ""),
+            item.get("description", ""),
+        ]
+        for c in candidates:
+            s = self._strip_markdown_for_seo(c)
+            if not s:
+                continue
+            if self._looks_like_meta_disclaimer(s):
+                continue
+            if len(s) > 160:
+                s = s[:160].rstrip()
+            return s
+        return ""
 
     def _yaml_escape(self, text: str) -> str:
         return str(text or "").replace("\\", "\\\\").replace('"', '\\"').strip()

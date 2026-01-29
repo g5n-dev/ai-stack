@@ -24,6 +24,14 @@ class FilterResult:
     confidence: float
 
 
+@dataclass
+class ModerationResult:
+    should_publish: bool
+    reason: str
+    confidence: float
+    flags: Dict[str, bool]
+
+
 class AIThemeFilter:
     """AI主题过滤器"""
 
@@ -78,6 +86,39 @@ class AIThemeFilter:
             content["ai_related"] = False
             content["ai_reason"] = f"Error: {e}"
             content["ai_confidence"] = 0.0
+            return content
+
+    def moderate(self, content: Dict[str, Any]) -> Dict[str, Any]:
+        if not self.enabled:
+            content["should_publish"] = True
+            content["moderation_reason"] = "Filter disabled"
+            content["moderation_confidence"] = 1.0
+            content["moderation_flags"] = {
+                "non_tech": False,
+                "religion": False,
+                "violence": False,
+                "low_quality": False,
+            }
+            return content
+
+        try:
+            result = self._check_moderation(content)
+            content["should_publish"] = result.should_publish
+            content["moderation_reason"] = result.reason
+            content["moderation_confidence"] = result.confidence
+            content["moderation_flags"] = result.flags
+            return content
+        except Exception as e:
+            logger.error(f"Failed to moderate content: {e}")
+            content["should_publish"] = False
+            content["moderation_reason"] = f"Error: {e}"
+            content["moderation_confidence"] = 0.0
+            content["moderation_flags"] = {
+                "non_tech": False,
+                "religion": False,
+                "violence": False,
+                "low_quality": True,
+            }
             return content
 
     def _check_ai_relevance(self, content: Dict[str, Any]) -> FilterResult:
@@ -145,6 +186,76 @@ AI相关主题包括但不限于：
 
         return self._fallback(content)
 
+    def _check_moderation(self, content: Dict[str, Any]) -> ModerationResult:
+        source = (content.get("source") or "").strip()
+        title = (content.get("catchy_title") or content.get("title") or "").strip()
+        url = (content.get("url") or content.get("external_url") or "").strip()
+        description = (content.get("description_translated") or content.get("description") or "").strip()
+        summary = (content.get("summary_translated") or content.get("summary") or "").strip()
+        language = (content.get("language") or "").strip()
+        tags = content.get("tags", [])
+        categories = content.get("categories", [])
+        score = content.get("score")
+        comments = content.get("comments")
+
+        context_lines = [
+            f"source: {source}",
+            f"title: {title}",
+        ]
+        if url:
+            context_lines.append(f"url: {url}")
+        if description:
+            context_lines.append(f"description: {description[:500]}")
+        if summary:
+            context_lines.append(f"summary: {summary[:700]}")
+        if language:
+            context_lines.append(f"language: {language}")
+        if tags:
+            context_lines.append(f"tags: {', '.join(str(t) for t in tags[:8])}")
+        if categories:
+            context_lines.append(f"categories: {', '.join(str(c) for c in categories[:4])}")
+        if score is not None:
+            context_lines.append(f"score: {score}")
+        if comments is not None:
+            context_lines.append(f"comments: {comments}")
+
+        context = "\n".join(context_lines)
+
+        prompt = f"""你是一个严格的内容审核员，负责决定内容是否应该发布到“AI Stack”技术站点。
+
+审核标准（全部满足才可发布）：
+1) 必须与 AI/机器学习/大模型/Agent/RAG/Prompt 工程/AI应用开发/AI工具/AI论文 强相关
+2) 必须是科技/工程/研究导向，禁止宗教/暴力/血腥/仇恨/极端主义等内容
+3) 必须具备可读的信息量：如果只有标题、或信息不足以形成可信总结，判为低质并拒绝发布
+
+请输出严格 JSON：
+{{
+  "should_publish": true/false,
+  "reason": "中文，<=60字",
+  "confidence": 0.0-1.0,
+  "flags": {{
+    "non_tech": true/false,
+    "religion": true/false,
+    "violence": true/false,
+    "low_quality": true/false
+  }}
+}}
+
+内容：
+{context}
+
+只输出 JSON，不要其他内容："""
+
+        raw = self.client.create_message(prompt, max_tokens=250, temperature=0.1)
+        parsed = self._parse_moderation_result(raw)
+        if parsed:
+            if self.strict_mode and parsed.confidence < self.min_confidence:
+                parsed.should_publish = False
+                parsed.reason = f"置信度不足 ({parsed.confidence:.2f} < {self.min_confidence})"
+            return parsed
+
+        return self._fallback_moderation(content)
+
     def _parse_result(self, raw: str) -> Optional[FilterResult]:
         if not raw or not raw.strip():
             return None
@@ -168,6 +279,38 @@ AI相关主题包括但不限于：
             is_ai_related=bool(is_ai_related),
             reason=str(reason),
             confidence=confidence
+        )
+
+    def _parse_moderation_result(self, raw: str) -> Optional[ModerationResult]:
+        if not raw or not raw.strip():
+            return None
+
+        text = raw.strip()
+        parsed = self._try_json(text)
+        if parsed is None:
+            m = re.search(r"\{[\s\S]*\}", text)
+            if m:
+                parsed = self._try_json(m.group(0))
+
+        if not isinstance(parsed, dict):
+            return None
+
+        should_publish = bool(parsed.get("should_publish", False))
+        reason = str(parsed.get("reason", "") or "")
+        confidence = float(parsed.get("confidence", 0.5))
+        flags = parsed.get("flags", {}) if isinstance(parsed.get("flags", {}), dict) else {}
+        normalized_flags = {
+            "non_tech": bool(flags.get("non_tech", False)),
+            "religion": bool(flags.get("religion", False)),
+            "violence": bool(flags.get("violence", False)),
+            "low_quality": bool(flags.get("low_quality", False)),
+        }
+
+        return ModerationResult(
+            should_publish=should_publish,
+            reason=reason,
+            confidence=confidence,
+            flags=normalized_flags,
         )
 
     def _try_json(self, text: str) -> Optional[Dict[str, Any]]:
@@ -200,6 +343,23 @@ AI相关主题包括但不限于：
             is_ai_related=False,
             reason="未检测到AI相关内容",
             confidence=0.3
+        )
+
+    def _fallback_moderation(self, content: Dict[str, Any]) -> ModerationResult:
+        filtered = self.filter(dict(content))
+        ai_related = bool(filtered.get("ai_related", False))
+        if ai_related:
+            return ModerationResult(
+                should_publish=True,
+                reason="fallback: AI相关",
+                confidence=float(filtered.get("ai_confidence", 0.5) or 0.5),
+                flags={"non_tech": False, "religion": False, "violence": False, "low_quality": False},
+            )
+        return ModerationResult(
+            should_publish=False,
+            reason="fallback: 非AI或不确定",
+            confidence=float(filtered.get("ai_confidence", 0.3) or 0.3),
+            flags={"non_tech": True, "religion": False, "violence": False, "low_quality": True},
         )
 
 

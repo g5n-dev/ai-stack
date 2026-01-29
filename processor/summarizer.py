@@ -36,11 +36,28 @@ class ContentSummarizer:
         try:
             prompt = self._build_summary_prompt(content, style)
             summary = self.client.create_message(prompt, max_tokens=500)
-            return summary.strip()
+            text = (summary or "").strip()
+            if self._looks_like_meta_disclaimer(text):
+                return ""
+            return text
 
         except Exception as e:
             logger.error(f"Failed to summarize content: {e}")
             return ""
+
+    def _looks_like_meta_disclaimer(self, text: str) -> bool:
+        t = (text or "").strip()
+        if not t:
+            return False
+        patterns = [
+            "由于您提供",
+            "仅为标题",
+            "我将基于",
+            "我无法从",
+            "无法从提供",
+            "鉴于您提供",
+        ]
+        return any(p in t for p in patterns)
 
     def _build_summary_prompt(self, content: str, style: str) -> str:
         """构建总结提示词"""
@@ -110,7 +127,8 @@ class ContentSummarizer:
             elif description:
                 content = f"{title}\n{description}"
             else:
-                content = title
+                article_data['summary'] = ""
+                return article_data
 
             summary_text = self.summarize(content, style='concise')
 
