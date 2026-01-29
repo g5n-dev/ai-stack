@@ -205,6 +205,17 @@ jobs:
               print(f"- deleted {p}")
           PY
 
+      - name: Sanitize broken relref links
+        env:
+          PYTHONPATH: /home/runner/work/ai-stack/ai-stack
+        run: |
+          echo "=== Sanitizing broken relref links ==="
+          if [ -f scripts/generate_content.py ]; then
+            python3 scripts/generate_content.py --sanitize-relrefs-only
+          else
+            echo "Content generator not found, skipping relref sanitization"
+          fi
+
       - name: Build tag graph
         env:
           PYTHONPATH: /home/runner/work/ai-stack/ai-stack

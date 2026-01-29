@@ -28,6 +28,94 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+_RELREF_RE = re.compile(r"""\{\{[<%]\s*relref\s+(['"])(.+?)\1\s*[>%]\}\}""")
+
+
+def _relref_target_exists(*, content_root: Path, target: str) -> bool:
+    raw = str(target or "").strip().strip('"').strip("'").strip()
+    if not raw:
+        return False
+
+    raw = raw.lstrip("/")
+
+    candidates: list[Path] = []
+    base = content_root / raw
+    candidates.append(base)
+
+    if base.suffix.lower() != ".md":
+        candidates.append(content_root / f"{raw}.md")
+        candidates.append(content_root / raw / "_index.md")
+
+    for p in candidates:
+        try:
+            if p.exists():
+                return True
+        except Exception:
+            continue
+    return False
+
+
+def sanitize_relrefs_in_markdown_text(*, text: str, content_root: Path) -> tuple[str, int]:
+    if not text:
+        return text, 0
+
+    removed = 0
+    out_lines: list[str] = []
+
+    for line in text.splitlines():
+        matches = list(_RELREF_RE.finditer(line))
+        if not matches:
+            out_lines.append(line)
+            continue
+
+        broken = False
+        for m in matches:
+            target = (m.group(2) or "").strip()
+            if not _relref_target_exists(content_root=content_root, target=target):
+                broken = True
+                break
+
+        if broken:
+            removed += 1
+            continue
+
+        out_lines.append(line)
+
+    out = "\n".join(out_lines)
+    if text.endswith("\n") and not out.endswith("\n"):
+        out += "\n"
+    return out, removed
+
+
+def sanitize_relrefs_in_posts(*, posts_dir: Path, content_root: Path) -> tuple[int, int]:
+    changed_files = 0
+    removed_lines_total = 0
+
+    try:
+        paths = sorted(posts_dir.glob("*.md"))
+    except Exception:
+        return 0, 0
+
+    for path in paths:
+        try:
+            original = path.read_text(encoding="utf-8")
+        except Exception:
+            continue
+
+        sanitized, removed = sanitize_relrefs_in_markdown_text(text=original, content_root=content_root)
+        if removed <= 0:
+            continue
+
+        try:
+            path.write_text(sanitized, encoding="utf-8")
+        except Exception:
+            continue
+
+        changed_files += 1
+        removed_lines_total += removed
+
+    return changed_files, removed_lines_total
+
 
 class SuperEnhancedContentGenerator:
     """内容生成器"""
@@ -42,7 +130,13 @@ class SuperEnhancedContentGenerator:
         self.posts_dir.mkdir(parents=True, exist_ok=True)
         self._post_index = self._load_post_index()
 
-    def run(self, *, crawl_duration_hours: float = 0, crawl_interval_minutes: int = 30):
+    def run(
+        self,
+        *,
+        crawl_duration_hours: float = 0,
+        crawl_interval_minutes: int = 30,
+        sanitize_relrefs: bool = True,
+    ):
         """运行完整的超级增强内容生成流程"""
         try:
             logger.info("=" * 80)
@@ -73,6 +167,15 @@ class SuperEnhancedContentGenerator:
             logger.info("\n[3/4] Generating Markdown posts...")
             posts_created = self._generate_posts(processed_data)
             logger.info(f"✓ Created {posts_created} Markdown posts")
+
+            if sanitize_relrefs:
+                content_root = project_root / "blog" / "content"
+                changed_files, removed_lines = sanitize_relrefs_in_posts(
+                    posts_dir=self.posts_dir,
+                    content_root=content_root,
+                )
+                if changed_files > 0:
+                    logger.info(f"✓ Sanitized relref links: files={changed_files} lines_removed={removed_lines}")
 
             # 4. 推送内容
             logger.info("\n[4/4] Publishing to social platforms...")
@@ -1555,13 +1658,34 @@ def main():
         default="global",
         help="去重范围：global=跨数据源去重，per_source=仅同数据源去重",
     )
+    parser.add_argument(
+        "--sanitize-relrefs-only",
+        action="store_true",
+        help="仅清理失效 relref，不运行抓取/处理/推送",
+    )
+    parser.add_argument(
+        "--no-sanitize-relrefs",
+        action="store_true",
+        help="关闭 relref 清理",
+    )
 
     args = parser.parse_args()
+
+    if args.sanitize_relrefs_only:
+        content_root = project_root / "blog" / "content"
+        posts_dir = content_root / "posts"
+        changed_files, removed_lines = sanitize_relrefs_in_posts(posts_dir=posts_dir, content_root=content_root)
+        if changed_files > 0:
+            logger.info(f"✓ Sanitized relref links: files={changed_files} lines_removed={removed_lines}")
+        else:
+            logger.info("✓ Relref links OK")
+        return 0
 
     generator = SuperEnhancedContentGenerator(dedupe=not args.no_dedupe, dedupe_scope=args.dedupe_scope)
     success = generator.run(
         crawl_duration_hours=args.crawl_duration_hours,
         crawl_interval_minutes=args.crawl_interval_minutes,
+        sanitize_relrefs=not args.no_sanitize_relrefs,
     )
 
     return 0 if success else 1
