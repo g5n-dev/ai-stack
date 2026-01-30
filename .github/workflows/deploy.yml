@@ -20,6 +20,11 @@ permissions:
 env:
   ANTHROPIC_AUTH_TOKEN: ${{ secrets.ANTHROPIC_AUTH_TOKEN }}
   ANTHROPIC_BASE_URL: ${{ secrets.ANTHROPIC_BASE_URL }}
+  SITE_BASE_URL: https://ai-stack.site/
+  SITEMAP_PATH: blog/public/sitemap.xml
+  BING_INDEXNOW_API_KEY: ${{ secrets.BING_INDEXNOW_API_KEY }}
+  GOOGLE_INDEXING_API_KEY: ${{ secrets.GOOGLE_INDEXING_API_KEY }}
+  GOOGLE_INDEXING_API_URL: ${{ secrets.GOOGLE_INDEXING_API_URL }}
 
 jobs:
   build-and-deploy:
@@ -240,6 +245,13 @@ jobs:
             exit 1
           fi
 
+      - name: Prepare IndexNow key file
+        run: |
+          if [ -n "${BING_INDEXNOW_API_KEY}" ]; then
+            mkdir -p blog/public
+            printf '%s' "${BING_INDEXNOW_API_KEY}" > "blog/public/${BING_INDEXNOW_API_KEY}.txt"
+          fi
+
       - name: Commit changes
         run: |
           git pull --rebase --autostash origin main || (git rebase --abort && git reset --hard origin/main)
@@ -255,3 +267,9 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Notify search engines (IndexNow/Google)
+        run: |
+          if [ -f scripts/notify_search_engines.py ]; then
+            python3 scripts/notify_search_engines.py || true
+          fi
