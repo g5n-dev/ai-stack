@@ -1,9 +1,10 @@
 # Hugo 配置文件 - AI Stack 个人博客
 
-baseURL = "/"
+baseURL = "https://ai-stack.site/"
 languageCode = "zh-CN"
 title = "AI Stack"
 theme = "terminal-theme"
+enableRobotsTXT = true
 
 [params]
 # 站点信息
@@ -16,6 +17,7 @@ github = "https://github.com/g5n-dev"
 # 如果你要用“全息/故障风”头像（你发的那张蓝色线框），直接保存为 blog/static/img/profile-holo.png，
 # 然后把 profile_image 改成 "/img/profile-holo.png"。
 profile_image = "/img/profile-holo.png"
+default_og_image = "/img/profile-holo.png"
 profile_image_alt = "AI Stack profile"
 # 头像裁切/适配：cover=铺满（会裁边），contain=完整显示（可能留黑边）
 profile_image_fit = "contain"
@@ -61,6 +63,11 @@ scenario = "scenarios"
 
 [permalinks]
 post = "/:year/:month/:slug/"
+
+[sitemap]
+changefreq = "hourly"
+filename = "sitemap.xml"
+priority = 0.5
 
 [menu]
 [[menu.main]]

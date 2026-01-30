@@ -6,6 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ .Title }} - {{ .Site.Title }}</title>
     <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Summary | plainify }}{{ end }}" />
+    <link rel="canonical" href="{{ .Permalink }}" />
+    <meta property="og:site_name" content="{{ .Site.Title }}" />
+    <meta property="og:title" content="{{ .Title }} - {{ .Site.Title }}" />
+    <meta property="og:description"
+        content="{{ with .Description }}{{ . }}{{ else }}{{ .Summary | plainify }}{{ end }}" />
+    <meta property="og:url" content="{{ .Permalink }}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:image"
+        content="{{ (.Params.og_image | default .Params.image | default .Site.Params.default_og_image | default .Site.Params.profile_image | default `/img/profile-holo.png`) | absURL }}" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{{ .Title }} - {{ .Site.Title }}" />
+    <meta name="twitter:description"
+        content="{{ with .Description }}{{ . }}{{ else }}{{ .Summary | plainify }}{{ end }}" />
+    <meta name="twitter:image"
+        content="{{ (.Params.og_image | default .Params.image | default .Site.Params.default_og_image | default .Site.Params.profile_image | default `/img/profile-holo.png`) | absURL }}" />
+    {{ with .Site.Params.twitter }}
+    <meta name="twitter:site" content="{{ . }}" />{{ end }}
 
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
     <script id="tailwind-config">
@@ -190,14 +207,17 @@
                                     <span
                                         class="material-symbols-outlined text-primary group-hover:text-primary/80 transition-colors">{{
                                         $scenarioIcon }}</span>
-                                    <h4 class="text-off-white font-bold tracking-wide">{{ printf "%v" $scenarioName }}</h4>
+                                    <h4 class="text-off-white font-bold tracking-wide">{{ printf "%v" $scenarioName }}
+                                    </h4>
                                 </div>
                                 <p class="text-off-white/50 text-sm leading-relaxed">{{ $scenarioDesc }}</p>
                                 <div class="mt-3 flex items-center gap-2">
                                     <div class="h-1 flex-1 bg-muted-teal/10 rounded-full overflow-hidden">
-                                        <div class="h-full bg-primary/60 rounded-full {{ $scenarioConfidenceWidth }}"></div>
+                                        <div class="h-full bg-primary/60 rounded-full {{ $scenarioConfidenceWidth }}">
+                                        </div>
                                     </div>
-                                    <span class="text-off-white/30 text-[10px] font-mono">{{ printf "%.0f%%" (mul $scenarioConfidence 100) }}</span>
+                                    <span class="text-off-white/30 text-[10px] font-mono">{{ printf "%.0f%%" (mul
+                                        $scenarioConfidence 100) }}</span>
                                 </div>
                             </a>
                             {{ end }}
