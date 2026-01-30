@@ -23,6 +23,7 @@ env:
   SITE_BASE_URL: https://ai-stack.site/
   SITEMAP_PATH: blog/public/sitemap.xml
   BING_INDEXNOW_API_KEY: ${{ secrets.BING_INDEXNOW_API_KEY }}
+  BING_INDEXNOW_MAX_URLS: "80"
   GOOGLE_INDEXING_API_KEY: ${{ secrets.GOOGLE_INDEXING_API_KEY }}
   GOOGLE_INDEXING_API_URL: ${{ secrets.GOOGLE_INDEXING_API_URL }}
 

@@ -4,7 +4,7 @@ import os
 import sys
 import json
 import logging
-from typing import List
+from typing import List, Optional
 import requests
 from urllib.parse import urljoin
 
@@ -16,11 +16,19 @@ logger = logging.getLogger(__name__)
 
 
 class SearchEngineNotifier:
-    def __init__(self, base_url: str, google_api_key: str = None, google_search_console_url: str = None, bing_api_key: str = None):
+    def __init__(
+        self,
+        base_url: str,
+        google_api_key: str = None,
+        google_search_console_url: str = None,
+        bing_api_key: str = None,
+        bing_max_urls: Optional[int] = None,
+    ):
         self.base_url = base_url.rstrip('/')
         self.google_api_key = google_api_key
         self.google_search_console_url = google_search_console_url
         self.bing_api_key = bing_api_key
+        self.bing_max_urls = bing_max_urls
 
     def get_sitemap_urls(self, sitemap_path: str = None) -> List[str]:
         if sitemap_path and os.path.exists(sitemap_path):
@@ -29,8 +37,15 @@ class SearchEngineNotifier:
                 root = ET.fromstring(f.read())
                 ns = {'ns': 'http://www.sitemaps.org/schemas/sitemap/0.9'}
                 urls = [loc.text for loc in root.findall('.//ns:loc', ns)]
-                logger.info(f"Found {len(urls)} URLs in sitemap")
-                return urls
+                deduped: List[str] = []
+                seen = set()
+                for u in urls:
+                    if not u or u in seen:
+                        continue
+                    seen.add(u)
+                    deduped.append(u)
+                logger.info(f"Found {len(deduped)} URLs in sitemap")
+                return deduped
 
         logger.warning(f"Sitemap not found at {sitemap_path}, using fallback")
         return [self.base_url]
@@ -64,6 +79,8 @@ class SearchEngineNotifier:
         host = self.base_url.replace('https://', '').replace('http://', '').split('/')[0]
 
         try:
+            if self.bing_max_urls is not None and self.bing_max_urls > 0:
+                urls = urls[-self.bing_max_urls:]
             batch_size = 100
             for i in range(0, len(urls), batch_size):
                 batch = urls[i:i + batch_size]
@@ -88,16 +105,25 @@ def main():
     google_api_key = os.getenv('GOOGLE_INDEXING_API_KEY')
     google_search_console_url = os.getenv('GOOGLE_INDEXING_API_URL', 'https://indexing.googleapis.com/v3/urlNotifications:publish')
     bing_api_key = os.getenv('BING_INDEXNOW_API_KEY')
+    bing_max_urls_raw = os.getenv('BING_INDEXNOW_MAX_URLS', '80')
     sitemap_path = os.getenv('SITEMAP_PATH', 'blog/public/sitemap.xml')
 
     logger.info(f"Base URL: {base_url}")
     logger.info(f"Sitemap path: {sitemap_path}")
 
+    try:
+        bing_max_urls = int(bing_max_urls_raw)
+    except Exception:
+        bing_max_urls = 80
+    if bing_max_urls < 0:
+        bing_max_urls = 80
+
     notifier = SearchEngineNotifier(
         base_url=base_url,
         google_api_key=google_api_key,
         google_search_console_url=google_search_console_url,
-        bing_api_key=bing_api_key
+        bing_api_key=bing_api_key,
+        bing_max_urls=bing_max_urls,
     )
 
     urls = notifier.get_sitemap_urls(sitemap_path)
