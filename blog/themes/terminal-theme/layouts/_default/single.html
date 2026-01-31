@@ -24,6 +24,39 @@
     {{ with .Site.Params.twitter }}
     <meta name="twitter:site" content="{{ . }}" />{{ end }}
 
+    {{- $ldImage := (.Params.og_image | default .Params.image | default .Site.Params.default_og_image | default
+    .Site.Params.profile_image | default `/img/profile-holo.png`) | absURL -}}
+    {{- $ldLogo := (.Site.Params.default_og_image | default .Site.Params.profile_image | default
+    `/img/profile-holo.png`) | absURL -}}
+    {{- $ldDescription := .Summary | plainify -}}
+    {{- with .Description -}}
+    {{- $ldDescription = . -}}
+    {{- end -}}
+    {{- $ldAuthorName := .Params.author | default .Site.Params.author | default .Site.Title -}}
+    {{- $ldPublished := .Date.Format "2006-01-02T15:04:05Z07:00" -}}
+    {{- $ldModified := .Lastmod.Format "2006-01-02T15:04:05Z07:00" -}}
+    {{- $ldPublisher := dict "@type" "Organization" "name" .Site.Title "logo" (dict "@type" "ImageObject" "url" $ldLogo)
+    -}}
+    {{- $ldArticle := dict "@context" "https://schema.org" "@type" "BlogPosting" "headline" .Title "description"
+    $ldDescription "image" (slice $ldImage) "datePublished" $ldPublished "dateModified" $ldModified "author" (dict
+    "@type" "Person" "name" $ldAuthorName) "publisher" $ldPublisher "mainEntityOfPage" (dict "@type" "WebPage" "@id"
+    .Permalink) "inLanguage" .Site.LanguageCode "url" .Permalink -}}
+    <script type="application/ld+json">{{ $ldArticle | jsonify }}</script>
+    {{- $ldHomeItem := dict "@type" "ListItem" "position" 1 "name" .Site.Title "item" ("/" | absURL) -}}
+    {{- $ldBreadcrumbItems := slice $ldHomeItem -}}
+    {{- with .Site.GetPage "section" .Section -}}
+    {{- $ldBreadcrumbItems = $ldBreadcrumbItems | append (dict "@type" "ListItem" "position" 2 "name" .Title "item"
+    .Permalink) -}}
+    {{- $ldBreadcrumbItems = $ldBreadcrumbItems | append (dict "@type" "ListItem" "position" 3 "name" $.Title "item"
+    $.Permalink) -}}
+    {{- else -}}
+    {{- $ldBreadcrumbItems = $ldBreadcrumbItems | append (dict "@type" "ListItem" "position" 2 "name" .Title "item"
+    .Permalink) -}}
+    {{- end -}}
+    {{- $ldBreadcrumb := dict "@context" "https://schema.org" "@type" "BreadcrumbList" "itemListElement"
+    $ldBreadcrumbItems -}}
+    <script type="application/ld+json">{{ $ldBreadcrumb | jsonify }}</script>
+
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
     <script id="tailwind-config">
         tailwind.config = {

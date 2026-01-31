@@ -1,37 +1,37 @@
 # Python dependencies for AI Stack Blog System
 
 # HTTP requests
-requests>=2.31.0
-aiohttp>=3.9.0
-httpx>=0.25.0
+requests==2.31.0
+aiohttp==3.13.3
+httpx==0.28.1
 
 # Web scraping
-beautifulsoup4>=4.12.0
-lxml>=4.9.0
-feedparser>=6.0.10
-playwright>=1.40.0
+beautifulsoup4==4.14.3
+lxml==6.0.2
+feedparser==6.0.12
+playwright==1.57.0
 
 # YAML parsing
-PyYAML>=6.0.1
+PyYAML==6.0.1
 
 # Anthropic API
-anthropic>=0.21.0
+anthropic==0.75.0
 
 # Social media APIs
-tweepy>=4.14.0
-python-telegram-bot>=20.7
+tweepy==4.16.0
+python-telegram-bot==22.5
 
 # Date and time
-python-dateutil>=2.8.2
+python-dateutil==2.9.0.post0
 
 # Logging and utilities
-python-dotenv>=1.0.0
+python-dotenv==1.0.0
 
 # Data processing
-pandas>=2.1.0
+pandas==3.0.0
 
 # HTML parsing
-html2text>=2020.1.16
+html2text==2025.4.15
 
 # Utilities
-tqdm>=4.66.0
+tqdm==4.67.1
