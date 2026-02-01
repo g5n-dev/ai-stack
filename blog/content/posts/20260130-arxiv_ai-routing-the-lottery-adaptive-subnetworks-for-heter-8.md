@@ -565,7 +565,7 @@ RTL最可能在以下条件下**失败**：
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/) / [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)
-- 标签： [模型剪枝](/tags/%E6%A8%A1%E5%9E%8B%E5%89%AA%E6%9E%9D/) / [异构数据](/tags/%E5%BC%82%E6%9E%84%E6%95%B0%E6%8D%AE/) / [子网络](/tags/%E5%AD%90%E7%BD%91%E7%BB%9C/) / [自适应路由](/tags/%E8%87%AA%E9%80%82%E5%BA%94%E8%B7%AF%E7%94%B1/) / [彩票假说](/tags/%E5%BD%A9%E7%A5%A8%E5%81%87%E8%AF%B4/) / [CS.AI](/tags/cs-ai/) / [神经网络](/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/) / [模型压缩](/tags/%E6%A8%A1%E5%9E%8B%E5%8E%8B%E7%BC%A9/)
+- 标签： [模型剪枝](/tags/%E6%A8%A1%E5%9E%8B%E5%89%AA%E6%9E%9D/) / [异构数据](/tags/%E5%BC%82%E6%9E%84%E6%95%B0%E6%8D%AE/) / [子网络](/tags/%E5%AD%90%E7%BD%91%E7%BB%9C/) / [自适应路由](/tags/%E8%87%AA%E9%80%82%E5%BA%94%E8%B7%AF%E7%94%B1/) / [彩票假说](/tags/%E5%BD%A9%E7%A5%A8%E5%81%87%E8%AF%B4/) / [CS.AI](/tags/cs.ai/) / [神经网络](/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/) / [模型压缩](/tags/%E6%A8%A1%E5%9E%8B%E5%8E%8B%E7%BC%A9/)
 - 场景： [AI/ML项目](/scenarios/ai-ml%E9%A1%B9%E7%9B%AE/)
 
 ### 相关文章

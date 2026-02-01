@@ -494,7 +494,7 @@ AGENTS.md 之所以能胜出，是因为它更容易被迭代和优化。建立�
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)
-- 标签： [Agent](/tags/agent/) / [评估](/tags/%E8%AF%84%E4%BC%B0/) / [AGENTS.md](/tags/agents-md/) / [Skills](/tags/skills/) / [配置](/tags/%E9%85%8D%E7%BD%AE/) / [LLM](/tags/llm/) / [性能对比](/tags/%E6%80%A7%E8%83%BD%E5%AF%B9%E6%AF%94/) / [最佳实践](/tags/%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/)
+- 标签： [Agent](/tags/agent/) / [评估](/tags/%E8%AF%84%E4%BC%B0/) / [AGENTS.md](/tags/agents.md/) / [Skills](/tags/skills/) / [配置](/tags/%E9%85%8D%E7%BD%AE/) / [LLM](/tags/llm/) / [性能对比](/tags/%E6%80%A7%E8%83%BD%E5%AF%B9%E6%AF%94/) / [最佳实践](/tags/%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/)
 - 场景： [大语言模型](/scenarios/%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/)
 
 ### 相关文章

@@ -241,7 +241,7 @@ Kimi k2.5 的发布挑战了“闭源即最强”的市场假设。如果开放�
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [开源生态](/categories/%E5%BC%80%E6%BA%90%E7%94%9F%E6%80%81/)
-- 标签： [Moonshot AI](/tags/moonshot-ai/) / [Kimi k2.5](/tags/kimi-k2-5/) / [开源模型](/tags/%E5%BC%80%E6%BA%90%E6%A8%A1%E5%9E%8B/) / [Sonnet 4.5](/tags/sonnet-4-5/) / [成本优化](/tags/%E6%88%90%E6%9C%AC%E4%BC%98%E5%8C%96/) / [多模态](/tags/%E5%A4%9A%E6%A8%A1%E6%80%81/) / [智能体](/tags/%E6%99%BA%E8%83%BD%E4%BD%93/) / [SOTA](/tags/sota/)
+- 标签： [Moonshot AI](/tags/moonshot-ai/) / [Kimi k2.5](/tags/kimi-k2.5/) / [开源模型](/tags/%E5%BC%80%E6%BA%90%E6%A8%A1%E5%9E%8B/) / [Sonnet 4.5](/tags/sonnet-4.5/) / [成本优化](/tags/%E6%88%90%E6%9C%AC%E4%BC%98%E5%8C%96/) / [多模态](/tags/%E5%A4%9A%E6%A8%A1%E6%80%81/) / [智能体](/tags/%E6%99%BA%E8%83%BD%E4%BD%93/) / [SOTA](/tags/sota/)
 - 场景： [AI/ML项目](/scenarios/ai-ml%E9%A1%B9%E7%9B%AE/)
 
 ### 相关文章

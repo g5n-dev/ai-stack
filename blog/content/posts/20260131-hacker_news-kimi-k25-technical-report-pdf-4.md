@@ -411,7 +411,7 @@ Kimi k2.5 通过持续学习机制，能够根据用户反馈与新数据不断�
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)
-- 标签： [Kimi](/tags/kimi/) / [K2.5](/tags/k2-5/) / [技术报告](/tags/%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A/) / [Moonshot](/tags/moonshot/) / [LLM](/tags/llm/) / [长文本](/tags/%E9%95%BF%E6%96%87%E6%9C%AC/) / [推理](/tags/%E6%8E%A8%E7%90%86/) / [模型架构](/tags/%E6%A8%A1%E5%9E%8B%E6%9E%B6%E6%9E%84/)
+- 标签： [Kimi](/tags/kimi/) / [K2.5](/tags/k2.5/) / [技术报告](/tags/%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A/) / [Moonshot](/tags/moonshot/) / [LLM](/tags/llm/) / [长文本](/tags/%E9%95%BF%E6%96%87%E6%9C%AC/) / [推理](/tags/%E6%8E%A8%E7%90%86/) / [模型架构](/tags/%E6%A8%A1%E5%9E%8B%E6%9E%B6%E6%9E%84/)
 - 场景： [大语言模型](/scenarios/%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/)
 
 ### 相关文章

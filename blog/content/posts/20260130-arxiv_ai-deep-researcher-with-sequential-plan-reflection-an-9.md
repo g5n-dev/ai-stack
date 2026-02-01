@@ -539,7 +539,7 @@ $$ S_{t+1} = \text{Reflect}(S_t, \text{Search}(Query_t), \text{Plan}_t) $$
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)
-- 标签： [Deep Researcher](/tags/deep-researcher/) / [AI Agent](/tags/ai-agent/) / [智能体架构](/tags/%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84/) / [反思机制](/tags/%E5%8F%8D%E6%80%9D%E6%9C%BA%E5%88%B6/) / [顺序规划](/tags/%E9%A1%BA%E5%BA%8F%E8%A7%84%E5%88%92/) / [候选交叉](/tags/%E5%80%99%E9%80%89%E4%BA%A4%E5%8F%89/) / [Gemini 2.5 Pro](/tags/gemini-2-5-pro/) / [DeepResearch Bench](/tags/deepresearch-bench/)
+- 标签： [Deep Researcher](/tags/deep-researcher/) / [AI Agent](/tags/ai-agent/) / [智能体架构](/tags/%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84/) / [反思机制](/tags/%E5%8F%8D%E6%80%9D%E6%9C%BA%E5%88%B6/) / [顺序规划](/tags/%E9%A1%BA%E5%BA%8F%E8%A7%84%E5%88%92/) / [候选交叉](/tags/%E5%80%99%E9%80%89%E4%BA%A4%E5%8F%89/) / [Gemini 2.5 Pro](/tags/gemini-2.5-pro/) / [DeepResearch Bench](/tags/deepresearch-bench/)
 - 场景： [AI/ML项目](/scenarios/ai-ml%E9%A1%B9%E7%9B%AE/)
 
 ### 相关文章

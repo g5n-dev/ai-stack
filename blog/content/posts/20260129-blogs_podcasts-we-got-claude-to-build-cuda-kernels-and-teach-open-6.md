@@ -386,7 +386,7 @@ scenarios: ["Web应用开发"]
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)
-- 标签： [Claude 3.5](/tags/claude-3-5/) / [CUDA](/tags/cuda/) / [微调](/tags/%E5%BE%AE%E8%B0%83/) / [合成数据](/tags/%E5%90%88%E6%88%90%E6%95%B0%E6%8D%AE/) / [Llama-3](/tags/llama-3/) / [Qwen-2.5](/tags/qwen-2-5/) / [代码生成](/tags/%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90/) / [模型蒸馏](/tags/%E6%A8%A1%E5%9E%8B%E8%92%B8%E9%A6%8F/)
+- 标签： [Claude 3.5](/tags/claude-3.5/) / [CUDA](/tags/cuda/) / [微调](/tags/%E5%BE%AE%E8%B0%83/) / [合成数据](/tags/%E5%90%88%E6%88%90%E6%95%B0%E6%8D%AE/) / [Llama-3](/tags/llama-3/) / [Qwen-2.5](/tags/qwen-2.5/) / [代码生成](/tags/%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90/) / [模型蒸馏](/tags/%E6%A8%A1%E5%9E%8B%E8%92%B8%E9%A6%8F/)
 - 场景： [Web应用开发](/scenarios/web%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/)
 
 ### 相关文章

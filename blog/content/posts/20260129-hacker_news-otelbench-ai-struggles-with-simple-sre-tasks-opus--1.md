@@ -421,7 +421,7 @@ def safe_cleanup_stale_processes(max_lifetime_seconds=5):
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/)
-- 标签： [Opus 4.5](/tags/opus-4-5/) / [OTelBench](/tags/otelbench/) / [SRE](/tags/sre/) / [基准测试](/tags/%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95/) / [AI 编程](/tags/ai-%E7%BC%96%E7%A8%8B/) / [可观测性](/tags/%E5%8F%AF%E8%A7%82%E6%B5%8B%E6%80%A7/) / [OpenTelemetry](/tags/opentelemetry/) / [模型评估](/tags/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/)
+- 标签： [Opus 4.5](/tags/opus-4.5/) / [OTelBench](/tags/otelbench/) / [SRE](/tags/sre/) / [基准测试](/tags/%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95/) / [AI 编程](/tags/ai-%E7%BC%96%E7%A8%8B/) / [可观测性](/tags/%E5%8F%AF%E8%A7%82%E6%B5%8B%E6%80%A7/) / [OpenTelemetry](/tags/opentelemetry/) / [模型评估](/tags/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/)
 - 场景： [AI/ML项目](/scenarios/ai-ml%E9%A1%B9%E7%9B%AE/)
 
 ### 相关文章

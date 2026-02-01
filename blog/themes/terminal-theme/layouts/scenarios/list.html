@@ -187,7 +187,7 @@
             <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
                 <div class="flex items-center gap-3 text-primary">
                     <span class="material-symbols-outlined text-2xl">terminal</span>
-                    <h1 class="text-xl font-bold tracking-widest">{{ .Site.Title }}</h1>
+                    <h2 class="text-xl font-bold tracking-widest">{{ .Site.Title }}</h2>
                 </div>
                 <nav class="hidden md:flex gap-8 text-xs font-medium tracking-widest text-off-white/60">
                     {{ range .Site.Menus.main }}
@@ -217,6 +217,7 @@
         </header>
 
         <main class="flex-1 relative flex overflow-hidden">
+            <h1 class="sr-only">{{ .Title }}</h1>
             <div class="absolute inset-0 pointer-events-none">
                 <div class="absolute inset-0 bg-grid-pattern bg-[length:44px_44px] opacity-[0.07]"></div>
                 <div
@@ -341,9 +342,9 @@
                             <span class="material-symbols-outlined text-sm">public</span>
                             <span id="sidebar-layer">STATUS: ACTIVE</span>
                         </div>
-                        <h1 id="sidebar-title"
+                        <h2 id="sidebar-title"
                             class="text-2xl font-bold text-white tracking-wide font-display text-glow">
-                            Node Title</h1>
+                            Node Title</h2>
                         <div class="flex flex-wrap gap-4 text-xs text-slate-400 font-mono">
                             <span class="flex items-center gap-1">
                                 <span class="material-symbols-outlined text-[14px]">calendar_today</span>

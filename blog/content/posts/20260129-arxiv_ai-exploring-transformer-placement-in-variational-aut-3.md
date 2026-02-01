@@ -551,7 +551,7 @@ $$ \log p(x) \geq \mathbb{E}_{q(z|x)}[\log p(x|z)] - D_{KL}(q(z|x) || p(z)) $$
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/) / [数据](/categories/%E6%95%B0%E6%8D%AE/)
-- 标签： [Transformer](/tags/transformer/) / [VAE](/tags/vae/) / [表格数据](/tags/%E8%A1%A8%E6%A0%BC%E6%95%B0%E6%8D%AE/) / [生成模型](/tags/%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/) / [cs.LG](/tags/cs-lg/) / [OpenML](/tags/openml/) / [混合数据类型](/tags/%E6%B7%B7%E5%90%88%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/) / [特征交互](/tags/%E7%89%B9%E5%BE%81%E4%BA%A4%E4%BA%92/)
+- 标签： [Transformer](/tags/transformer/) / [VAE](/tags/vae/) / [表格数据](/tags/%E8%A1%A8%E6%A0%BC%E6%95%B0%E6%8D%AE/) / [生成模型](/tags/%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/) / [cs.LG](/tags/cs.lg/) / [OpenML](/tags/openml/) / [混合数据类型](/tags/%E6%B7%B7%E5%90%88%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/) / [特征交互](/tags/%E7%89%B9%E5%BE%81%E4%BA%A4%E4%BA%92/)
 - 场景： [AI/ML项目](/scenarios/ai-ml%E9%A1%B9%E7%9B%AE/)
 
 ### 相关文章

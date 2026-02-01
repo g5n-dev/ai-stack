@@ -503,7 +503,7 @@ Kimi 技术报告暗示了高质量训练数据的重要性。对于长上下文
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)
-- 标签： [月之暗面](/tags/%E6%9C%88%E4%B9%8B%E6%9A%97%E9%9D%A2/) / [Kimi](/tags/kimi/) / [K2.5](/tags/k2-5/) / [技术报告](/tags/%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A/) / [LLM](/tags/llm/) / [长文本](/tags/%E9%95%BF%E6%96%87%E6%9C%AC/) / [模型架构](/tags/%E6%A8%A1%E5%9E%8B%E6%9E%B6%E6%9E%84/) / [开源](/tags/%E5%BC%80%E6%BA%90/)
+- 标签： [月之暗面](/tags/%E6%9C%88%E4%B9%8B%E6%9A%97%E9%9D%A2/) / [Kimi](/tags/kimi/) / [K2.5](/tags/k2.5/) / [技术报告](/tags/%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A/) / [LLM](/tags/llm/) / [长文本](/tags/%E9%95%BF%E6%96%87%E6%9C%AC/) / [模型架构](/tags/%E6%A8%A1%E5%9E%8B%E6%9E%B6%E6%9E%84/) / [开源](/tags/%E5%BC%80%E6%BA%90/)
 - 场景： [大语言模型](/scenarios/%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/)
 
 ### 相关文章

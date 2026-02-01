@@ -532,7 +532,7 @@ scenarios: ["大语言模型"]
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)
-- 标签： [进化策略](/tags/%E8%BF%9B%E5%8C%96%E7%AD%96%E7%95%A5/) / [灾难性遗忘](/tags/%E7%81%BE%E9%9A%BE%E6%80%A7%E9%81%97%E5%BF%98/) / [持续学习](/tags/%E6%8C%81%E7%BB%AD%E5%AD%A6%E4%B9%A0/) / [LLM](/tags/llm/) / [GRPO](/tags/grpo/) / [无梯度优化](/tags/%E6%97%A0%E6%A2%AF%E5%BA%A6%E4%BC%98%E5%8C%96/) / [模型微调](/tags/%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%83/) / [cs.LG](/tags/cs-lg/)
+- 标签： [进化策略](/tags/%E8%BF%9B%E5%8C%96%E7%AD%96%E7%95%A5/) / [灾难性遗忘](/tags/%E7%81%BE%E9%9A%BE%E6%80%A7%E9%81%97%E5%BF%98/) / [持续学习](/tags/%E6%8C%81%E7%BB%AD%E5%AD%A6%E4%B9%A0/) / [LLM](/tags/llm/) / [GRPO](/tags/grpo/) / [无梯度优化](/tags/%E6%97%A0%E6%A2%AF%E5%BA%A6%E4%BC%98%E5%8C%96/) / [模型微调](/tags/%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%83/) / [cs.LG](/tags/cs.lg/)
 - 场景： [大语言模型](/scenarios/%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/)
 
 ### 相关文章

@@ -501,7 +501,7 @@ scenarios: ["AI/ML项目"]
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/) / [数据](/categories/%E6%95%B0%E6%8D%AE/)
-- 标签： [Transformer](/tags/transformer/) / [VAE](/tags/vae/) / [表格数据](/tags/%E8%A1%A8%E6%A0%BC%E6%95%B0%E6%8D%AE/) / [数据生成](/tags/%E6%95%B0%E6%8D%AE%E7%94%9F%E6%88%90/) / [变分自编码器](/tags/%E5%8F%98%E5%88%86%E8%87%AA%E7%BC%96%E7%A0%81%E5%99%A8/) / [注意力机制](/tags/%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/) / [cs.LG](/tags/cs-lg/) / [OpenML](/tags/openml/)
+- 标签： [Transformer](/tags/transformer/) / [VAE](/tags/vae/) / [表格数据](/tags/%E8%A1%A8%E6%A0%BC%E6%95%B0%E6%8D%AE/) / [数据生成](/tags/%E6%95%B0%E6%8D%AE%E7%94%9F%E6%88%90/) / [变分自编码器](/tags/%E5%8F%98%E5%88%86%E8%87%AA%E7%BC%96%E7%A0%81%E5%99%A8/) / [注意力机制](/tags/%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/) / [cs.LG](/tags/cs.lg/) / [OpenML](/tags/openml/)
 - 场景： [AI/ML项目](/scenarios/ai-ml%E9%A1%B9%E7%9B%AE/)
 
 ### 相关文章

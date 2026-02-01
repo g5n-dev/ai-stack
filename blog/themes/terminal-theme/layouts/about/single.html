@@ -79,7 +79,7 @@
             <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
                 <div class="flex items-center gap-3 text-primary">
                     <span class="material-symbols-outlined text-2xl">terminal</span>
-                    <h1 class="text-xl font-bold tracking-widest">{{ .Site.Title }}</h1>
+                    <h2 class="text-xl font-bold tracking-widest">{{ .Site.Title }}</h2>
                 </div>
                 <nav class="hidden md:flex gap-8 text-xs font-medium tracking-widest text-off-white/60">
                     {{ range .Site.Menus.main }}
@@ -109,6 +109,7 @@
         </header>
 
         <main class="flex-1 overflow-y-auto custom-scrollbar flex items-start justify-center p-6 lg:p-12 relative">
+            <h1 class="sr-only">{{ .Title }}</h1>
             <div class="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
                 <div class="lg:col-span-5 flex flex-col gap-6 relative">
                     {{- $img := .Site.Params.profile_image | default "/img/profile-placeholder.svg" -}}

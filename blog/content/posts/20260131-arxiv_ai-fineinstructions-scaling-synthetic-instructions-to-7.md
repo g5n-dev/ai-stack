@@ -433,8 +433,13 @@ scenarios: ["大语言模型", "AI/ML项目"]
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [数据](/categories/%E6%95%B0%E6%8D%AE/)
+<<<<<<< Updated upstream
 - 标签： [LLM](/tags/llm/) / [指令微调](/tags/%E6%8C%87%E4%BB%A4%E5%BE%AE%E8%B0%83/) / [合成数据](/tags/%E5%90%88%E6%88%90%E6%95%B0%E6%8D%AE/) / [预训练](/tags/%E9%A2%84%E8%AE%AD%E7%BB%83/) / [FineInstructions](/tags/fineinstructions/) / [数据集](/tags/%E6%95%B0%E6%8D%AE%E9%9B%86/) / [AI工程](/tags/ai%E5%B7%A5%E7%A8%8B/) / [开源](/tags/%E5%BC%80%E6%BA%90/)
 - 场景： [大语言模型](/scenarios/%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/) / [AI/ML项目](/scenarios/ai-ml%E9%A1%B9%E7%9B%AE/)
+=======
+- 标签： [LLM](/tags/llm/) / [指令微调](/tags/%E6%8C%87%E4%BB%A4%E5%BE%AE%E8%B0%83/) / [合成数据](/tags/%E5%90%88%E6%88%90%E6%95%B0%E6%8D%AE/) / [预训练](/tags/%E9%A2%84%E8%AE%AD%E7%BB%83/) / [FineInstructions](/tags/fineinstructions/) / [数据集](/tags/%E6%95%B0%E6%8D%AE%E9%9B%86/) / [cs.CL](/tags/cs.cl/) / [模型对齐](/tags/%E6%A8%A1%E5%9E%8B%E5%AF%B9%E9%BD%90/)
+- 场景： [大语言模型](/scenarios/%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/)
+>>>>>>> Stashed changes
 
 ### 相关文章
 

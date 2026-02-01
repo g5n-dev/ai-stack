@@ -474,7 +474,7 @@ AI 模型在 SRE 任务中的表现往往依赖于数据质量和上下文的完
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/)
-- 标签： [LLM](/tags/llm/) / [SRE](/tags/sre/) / [基准测试](/tags/%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95/) / [Opus 4.5](/tags/opus-4-5/) / [OTelBench](/tags/otelbench/) / [运维](/tags/%E8%BF%90%E7%BB%B4/) / [基础设施](/tags/%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/) / [AI 评测](/tags/ai-%E8%AF%84%E6%B5%8B/)
+- 标签： [LLM](/tags/llm/) / [SRE](/tags/sre/) / [基准测试](/tags/%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95/) / [Opus 4.5](/tags/opus-4.5/) / [OTelBench](/tags/otelbench/) / [运维](/tags/%E8%BF%90%E7%BB%B4/) / [基础设施](/tags/%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/) / [AI 评测](/tags/ai-%E8%AF%84%E6%B5%8B/)
 - 场景： [大语言模型](/scenarios/%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/) / [AI/ML项目](/scenarios/ai-ml%E9%A1%B9%E7%9B%AE/)
 
 ### 相关文章

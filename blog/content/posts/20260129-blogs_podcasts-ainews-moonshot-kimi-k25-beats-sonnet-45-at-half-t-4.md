@@ -267,7 +267,7 @@ Kimi K2.5 在击败 Sonnet 4.5 的评测中展现了极强的逻辑推理能力�
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [开源生态](/categories/%E5%BC%80%E6%BA%90%E7%94%9F%E6%80%81/)
-- 标签： [Kimi k2.5](/tags/kimi-k2-5/) / [Moonshot AI](/tags/moonshot-ai/) / [月之暗面](/tags/%E6%9C%88%E4%B9%8B%E6%9A%97%E9%9D%A2/) / [SOTA](/tags/sota/) / [多模态](/tags/%E5%A4%9A%E6%A8%A1%E6%80%81/) / [Agent 编排](/tags/agent-%E7%BC%96%E6%8E%92/) / [开源模型](/tags/%E5%BC%80%E6%BA%90%E6%A8%A1%E5%9E%8B/) / [Sonnet 4.5](/tags/sonnet-4-5/)
+- 标签： [Kimi k2.5](/tags/kimi-k2.5/) / [Moonshot AI](/tags/moonshot-ai/) / [月之暗面](/tags/%E6%9C%88%E4%B9%8B%E6%9A%97%E9%9D%A2/) / [SOTA](/tags/sota/) / [多模态](/tags/%E5%A4%9A%E6%A8%A1%E6%80%81/) / [Agent 编排](/tags/agent-%E7%BC%96%E6%8E%92/) / [开源模型](/tags/%E5%BC%80%E6%BA%90%E6%A8%A1%E5%9E%8B/) / [Sonnet 4.5](/tags/sonnet-4.5/)
 - 场景： [AI/ML项目](/scenarios/ai-ml%E9%A1%B9%E7%9B%AE/)
 
 ### 相关文章

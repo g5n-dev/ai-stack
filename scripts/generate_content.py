@@ -29,6 +29,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 _RELREF_RE = re.compile(r"""\{\{[<%]\s*relref\s+(['"])(.+?)\1\s*[>%]\}\}""")
+_TAXONOMY_MD_LINK_RE = re.compile(r"""\[([^\]]+)\]\(/(tags|categories|scenarios)/([^)]+?)\)""")
 
 
 def _relref_target_exists(*, content_root: Path, target: str) -> bool:
@@ -117,6 +118,75 @@ def sanitize_relrefs_in_posts(*, posts_dir: Path, content_root: Path) -> tuple[i
     return changed_files, removed_lines_total
 
 
+def _taxonomy_term_slug(term: str) -> str:
+    s = str(term or "").strip().lower()
+    s = re.sub(r"[^\w\s\.-]", " ", s, flags=re.UNICODE)
+    s = s.replace("_", "-")
+    s = re.sub(r"\s+", "-", s)
+    s = re.sub(r"-{2,}", "-", s).strip("-")
+    return urllib.parse.quote(s, safe="-.")
+
+
+def sanitize_taxonomy_links_in_markdown_text(*, text: str) -> tuple[str, int]:
+    if not text:
+        return text, 0
+
+    changed = 0
+
+    def _replace(m: re.Match) -> str:
+        nonlocal changed
+        label = (m.group(1) or "").strip()
+        taxonomy = (m.group(2) or "").strip()
+        raw_tail = (m.group(3) or "").strip()
+
+        if not label or taxonomy not in {"tags", "categories", "scenarios"}:
+            return m.group(0)
+
+        tail = raw_tail.split("#", 1)[0].split("?", 1)[0].strip()
+        if tail.endswith("/"):
+            tail = tail[:-1]
+
+        expected = _taxonomy_term_slug(label)
+        if tail != expected:
+            changed += 1
+            return f"[{m.group(1)}](/{taxonomy}/{expected}/)"
+
+        return m.group(0)
+
+    out = _TAXONOMY_MD_LINK_RE.sub(_replace, text)
+    return out, changed
+
+
+def sanitize_taxonomy_links_in_posts(*, posts_dir: Path) -> tuple[int, int]:
+    changed_files = 0
+    changed_links_total = 0
+
+    try:
+        paths = sorted(posts_dir.glob("*.md"))
+    except Exception:
+        return 0, 0
+
+    for path in paths:
+        try:
+            original = path.read_text(encoding="utf-8")
+        except Exception:
+            continue
+
+        sanitized, changed_links = sanitize_taxonomy_links_in_markdown_text(text=original)
+        if changed_links <= 0:
+            continue
+
+        try:
+            path.write_text(sanitized, encoding="utf-8")
+        except Exception:
+            continue
+
+        changed_files += 1
+        changed_links_total += changed_links
+
+    return changed_files, changed_links_total
+
+
 class SuperEnhancedContentGenerator:
     """内容生成器"""
 
@@ -176,6 +246,9 @@ class SuperEnhancedContentGenerator:
                 )
                 if changed_files > 0:
                     logger.info(f"✓ Sanitized relref links: files={changed_files} lines_removed={removed_lines}")
+                changed_files, changed_links = sanitize_taxonomy_links_in_posts(posts_dir=self.posts_dir)
+                if changed_files > 0:
+                    logger.info(f"✓ Sanitized taxonomy links: files={changed_files} links_fixed={changed_links}")
 
             # 4. 推送内容
             logger.info("\n[4/4] Publishing to social platforms...")
@@ -439,12 +512,7 @@ class SuperEnhancedContentGenerator:
         return []
 
     def _term_slug(self, term: str) -> str:
-        s = str(term or "").strip().lower()
-        s = re.sub(r"[^\w\s-]", " ", s, flags=re.UNICODE)
-        s = s.replace("_", "-")
-        s = re.sub(r"\s+", "-", s)
-        s = re.sub(r"-{2,}", "-", s).strip("-")
-        return urllib.parse.quote(s, safe="-")
+        return _taxonomy_term_slug(term)
 
     def _term_link(self, taxonomy: str, term: str) -> str:
         slug = self._term_slug(term)
@@ -1679,6 +1747,11 @@ def main():
             logger.info(f"✓ Sanitized relref links: files={changed_files} lines_removed={removed_lines}")
         else:
             logger.info("✓ Relref links OK")
+        changed_files, changed_links = sanitize_taxonomy_links_in_posts(posts_dir=posts_dir)
+        if changed_files > 0:
+            logger.info(f"✓ Sanitized taxonomy links: files={changed_files} links_fixed={changed_links}")
+        else:
+            logger.info("✓ Taxonomy links OK")
         return 0
 
     generator = SuperEnhancedContentGenerator(dedupe=not args.no_dedupe, dedupe_scope=args.dedupe_scope)

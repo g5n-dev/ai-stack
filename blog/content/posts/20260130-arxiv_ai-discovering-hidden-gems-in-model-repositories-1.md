@@ -587,7 +587,7 @@ scenarios: ["Web应用开发"]
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)
-- 标签： [模型评估](/tags/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/) / [Llama-3.1](/tags/llama-3-1/) / [微调](/tags/%E5%BE%AE%E8%B0%83/) / [多臂老虎机](/tags/%E5%A4%9A%E8%87%82%E8%80%81%E8%99%8E%E6%9C%BA/) / [MAB](/tags/mab/) / [模型筛选](/tags/%E6%A8%A1%E5%9E%8B%E7%AD%9B%E9%80%89/) / [隐藏瑰宝](/tags/%E9%9A%90%E8%97%8F%E7%91%B0%E5%AE%9D/) / [推理优化](/tags/%E6%8E%A8%E7%90%86%E4%BC%98%E5%8C%96/)
+- 标签： [模型评估](/tags/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/) / [Llama-3.1](/tags/llama-3.1/) / [微调](/tags/%E5%BE%AE%E8%B0%83/) / [多臂老虎机](/tags/%E5%A4%9A%E8%87%82%E8%80%81%E8%99%8E%E6%9C%BA/) / [MAB](/tags/mab/) / [模型筛选](/tags/%E6%A8%A1%E5%9E%8B%E7%AD%9B%E9%80%89/) / [隐藏瑰宝](/tags/%E9%9A%90%E8%97%8F%E7%91%B0%E5%AE%9D/) / [推理优化](/tags/%E6%8E%A8%E7%90%86%E4%BC%98%E5%8C%96/)
 - 场景： [Web应用开发](/scenarios/web%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/)
 
 ### 相关文章

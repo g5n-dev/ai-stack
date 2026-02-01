@@ -414,7 +414,7 @@ print("\n工作流执行结果:", results)
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)
-- 标签： [Agent](/tags/agent/) / [AGENTS.md](/tags/agents-md/) / [Skills](/tags/skills/) / [评估](/tags/%E8%AF%84%E4%BC%B0/) / [配置](/tags/%E9%85%8D%E7%BD%AE/) / [LLM](/tags/llm/) / [AI Agent](/tags/ai-agent/) / [性能对比](/tags/%E6%80%A7%E8%83%BD%E5%AF%B9%E6%AF%94/)
+- 标签： [Agent](/tags/agent/) / [AGENTS.md](/tags/agents.md/) / [Skills](/tags/skills/) / [评估](/tags/%E8%AF%84%E4%BC%B0/) / [配置](/tags/%E9%85%8D%E7%BD%AE/) / [LLM](/tags/llm/) / [AI Agent](/tags/ai-agent/) / [性能对比](/tags/%E6%80%A7%E8%83%BD%E5%AF%B9%E6%AF%94/)
 - 场景： [大语言模型](/scenarios/%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/) / [AI/ML项目](/scenarios/ai-ml%E9%A1%B9%E7%9B%AE/)
 
 ### 相关文章

@@ -329,7 +329,7 @@ OpenAI 通过激进淘汰旧模型，拉高了竞争对手的门槛。竞争对�
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [产品与创业](/categories/%E4%BA%A7%E5%93%81%E4%B8%8E%E5%88%9B%E4%B8%9A/)
-- 标签： [OpenAI](/tags/openai/) / [ChatGPT](/tags/chatgpt/) / [模型退役](/tags/%E6%A8%A1%E5%9E%8B%E9%80%80%E5%BD%B9/) / [GPT-4o](/tags/gpt-4o/) / [GPT-4.1](/tags/gpt-4-1/) / [o4-mini](/tags/o4-mini/) / [GPT-5](/tags/gpt-5/) / [API](/tags/api/)
+- 标签： [OpenAI](/tags/openai/) / [ChatGPT](/tags/chatgpt/) / [模型退役](/tags/%E6%A8%A1%E5%9E%8B%E9%80%80%E5%BD%B9/) / [GPT-4o](/tags/gpt-4o/) / [GPT-4.1](/tags/gpt-4.1/) / [o4-mini](/tags/o4-mini/) / [GPT-5](/tags/gpt-5/) / [API](/tags/api/)
 - 场景： [AI/ML项目](/scenarios/ai-ml%E9%A1%B9%E7%9B%AE/) / [后端开发](/scenarios/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/)
 
 ### 相关文章

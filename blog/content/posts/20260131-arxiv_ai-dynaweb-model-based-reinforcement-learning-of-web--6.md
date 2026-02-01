@@ -539,9 +539,15 @@ DynaWeb 通过引入世界模型，让智能体在“想象”中进行规划和
 ---
 ## 站内链接
 
+<<<<<<< Updated upstream
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)
 - 标签： [DynaWeb](/tags/dynaweb/) / [Web Agent](/tags/web-agent/) / [强化学习](/tags/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/) / [MBRL](/tags/mbrl/) / [LLM](/tags/llm/) / [模型驱动](/tags/%E6%A8%A1%E5%9E%8B%E9%A9%B1%E5%8A%A8/) / [智能体](/tags/%E6%99%BA%E8%83%BD%E4%BD%93/) / [AI Agent](/tags/ai-agent/)
 - 场景： [Web应用开发](/scenarios/web%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/) / [大语言模型](/scenarios/%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/) / [AI/ML项目](/scenarios/ai-ml%E9%A1%B9%E7%9B%AE/)
+=======
+- 分类： [论文](/categories/%E8%AE%BA%E6%96%87/)
+- 标签： [arxiv](/tags/arxiv/) / [cs.CL](/tags/cs.cl/)
+- 场景： [Web应用开发](/scenarios/web%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/)
+>>>>>>> Stashed changes
 
 ### 相关文章
 

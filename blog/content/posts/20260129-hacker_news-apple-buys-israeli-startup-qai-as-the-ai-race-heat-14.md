@@ -447,7 +447,7 @@ Apple 收购了专注于边缘 AI 的 Xnor.ai。该公司开发了一种极其�
 ## 站内链接
 
 - 分类： [产品与创业](/categories/%E4%BA%A7%E5%93%81%E4%B8%8E%E5%88%9B%E4%B8%9A/) / [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)
-- 标签： [苹果](/tags/%E8%8B%B9%E6%9E%9C/) / [Apple](/tags/apple/) / [收购](/tags/%E6%94%B6%E8%B4%AD/) / [M&A](/tags/m-a/) / [Q.ai](/tags/q-ai/) / [以色列](/tags/%E4%BB%A5%E8%89%B2%E5%88%97/) / [AI布局](/tags/ai%E5%B8%83%E5%B1%80/) / [初创企业](/tags/%E5%88%9D%E5%88%9B%E4%BC%81%E4%B8%9A/)
+- 标签： [苹果](/tags/%E8%8B%B9%E6%9E%9C/) / [Apple](/tags/apple/) / [收购](/tags/%E6%94%B6%E8%B4%AD/) / [M&A](/tags/m-a/) / [Q.ai](/tags/q.ai/) / [以色列](/tags/%E4%BB%A5%E8%89%B2%E5%88%97/) / [AI布局](/tags/ai%E5%B8%83%E5%B1%80/) / [初创企业](/tags/%E5%88%9D%E5%88%9B%E4%BC%81%E4%B8%9A/)
 - 场景： [AI/ML项目](/scenarios/ai-ml%E9%A1%B9%E7%9B%AE/)
 
 ### 相关文章

@@ -425,7 +425,7 @@ print(context_aware_decision(execution_history))
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)
-- 标签： [智能体](/tags/%E6%99%BA%E8%83%BD%E4%BD%93/) / [评估](/tags/%E8%AF%84%E4%BC%B0/) / [AGENTS.md](/tags/agents-md/) / [架构](/tags/%E6%9E%B6%E6%9E%84/) / [Skills](/tags/skills/) / [Agent](/tags/agent/) / [LLM](/tags/llm/) / [基准测试](/tags/%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95/)
+- 标签： [智能体](/tags/%E6%99%BA%E8%83%BD%E4%BD%93/) / [评估](/tags/%E8%AF%84%E4%BC%B0/) / [AGENTS.md](/tags/agents.md/) / [架构](/tags/%E6%9E%B6%E6%9E%84/) / [Skills](/tags/skills/) / [Agent](/tags/agent/) / [LLM](/tags/llm/) / [基准测试](/tags/%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95/)
 - 场景： [大语言模型](/scenarios/%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/)
 
 ### 相关文章

@@ -420,7 +420,7 @@ scenarios: ["Web应用开发"]
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/) / [数据](/categories/%E6%95%B0%E6%8D%AE/)
-- 标签： [向量检索](/tags/%E5%90%91%E9%87%8F%E6%A3%80%E7%B4%A2/) / [嵌入](/tags/%E5%B5%8C%E5%85%A5/) / [Top-k](/tags/top-k/) / [维度](/tags/%E7%BB%B4%E5%BA%A6/) / [cs.LG](/tags/cs-lg/) / [余弦相似度](/tags/%E4%BD%99%E5%BC%A6%E7%9B%B8%E4%BC%BC%E5%BA%A6/) / [内积](/tags/%E5%86%85%E7%A7%AF/) / [质心](/tags/%E8%B4%A8%E5%BF%83/)
+- 标签： [向量检索](/tags/%E5%90%91%E9%87%8F%E6%A3%80%E7%B4%A2/) / [嵌入](/tags/%E5%B5%8C%E5%85%A5/) / [Top-k](/tags/top-k/) / [维度](/tags/%E7%BB%B4%E5%BA%A6/) / [cs.LG](/tags/cs.lg/) / [余弦相似度](/tags/%E4%BD%99%E5%BC%A6%E7%9B%B8%E4%BC%BC%E5%BA%A6/) / [内积](/tags/%E5%86%85%E7%A7%AF/) / [质心](/tags/%E8%B4%A8%E5%BF%83/)
 - 场景： [Web应用开发](/scenarios/web%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/)
 
 ### 相关文章

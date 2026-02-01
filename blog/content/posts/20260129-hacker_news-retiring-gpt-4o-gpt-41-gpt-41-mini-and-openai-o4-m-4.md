@@ -405,7 +405,7 @@ GPT-4o mini的退役意味着应用必须寻找替代方案。如果直接升级
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [产品与创业](/categories/%E4%BA%A7%E5%93%81%E4%B8%8E%E5%88%9B%E4%B8%9A/)
-- 标签： [OpenAI](/tags/openai/) / [ChatGPT](/tags/chatgpt/) / [GPT-4o](/tags/gpt-4o/) / [模型下架](/tags/%E6%A8%A1%E5%9E%8B%E4%B8%8B%E6%9E%B6/) / [产品更新](/tags/%E4%BA%A7%E5%93%81%E6%9B%B4%E6%96%B0/) / [API变更](/tags/api%E5%8F%98%E6%9B%B4/) / [o4-mini](/tags/o4-mini/) / [GPT-4.1](/tags/gpt-4-1/)
+- 标签： [OpenAI](/tags/openai/) / [ChatGPT](/tags/chatgpt/) / [GPT-4o](/tags/gpt-4o/) / [模型下架](/tags/%E6%A8%A1%E5%9E%8B%E4%B8%8B%E6%9E%B6/) / [产品更新](/tags/%E4%BA%A7%E5%93%81%E6%9B%B4%E6%96%B0/) / [API变更](/tags/api%E5%8F%98%E6%9B%B4/) / [o4-mini](/tags/o4-mini/) / [GPT-4.1](/tags/gpt-4.1/)
 - 场景： [AI/ML项目](/scenarios/ai-ml%E9%A1%B9%E7%9B%AE/)
 
 ### 相关文章

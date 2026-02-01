@@ -472,7 +472,7 @@ Kimi K2.5 在内部基准测试中，数学与代码类任务的通过率相比�
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)
-- 标签： [Kimi](/tags/kimi/) / [K2.5](/tags/k2-5/) / [月之暗面](/tags/%E6%9C%88%E4%B9%8B%E6%9A%97%E9%9D%A2/) / [技术报告](/tags/%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A/) / [LLM](/tags/llm/) / [模型评估](/tags/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/) / [长文本](/tags/%E9%95%BF%E6%96%87%E6%9C%AC/) / [MoE](/tags/moe/)
+- 标签： [Kimi](/tags/kimi/) / [K2.5](/tags/k2.5/) / [月之暗面](/tags/%E6%9C%88%E4%B9%8B%E6%9A%97%E9%9D%A2/) / [技术报告](/tags/%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A/) / [LLM](/tags/llm/) / [模型评估](/tags/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/) / [长文本](/tags/%E9%95%BF%E6%96%87%E6%9C%AC/) / [MoE](/tags/moe/)
 - 场景： [大语言模型](/scenarios/%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/)
 
 ### 相关文章

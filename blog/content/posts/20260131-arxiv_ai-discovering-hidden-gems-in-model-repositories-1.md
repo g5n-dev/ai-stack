@@ -607,8 +607,13 @@ scenarios: ["Web应用开发"]
 ---
 ## 站内链接
 
+<<<<<<< Updated upstream
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)
 - 标签： [模型评估](/tags/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/) / [Llama](/tags/llama/) / [多臂老虎机](/tags/%E5%A4%9A%E8%87%82%E8%80%81%E8%99%8E%E6%9C%BA/) / [模型微调](/tags/%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%83/) / [遗珠模型](/tags/%E9%81%97%E7%8F%A0%E6%A8%A1%E5%9E%8B/) / [模型发现](/tags/%E6%A8%A1%E5%9E%8B%E5%8F%91%E7%8E%B0/) / [推理性能](/tags/%E6%8E%A8%E7%90%86%E6%80%A7%E8%83%BD/) / [算法优化](/tags/%E7%AE%97%E6%B3%95%E4%BC%98%E5%8C%96/)
+=======
+- 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [数据](/categories/%E6%95%B0%E6%8D%AE/)
+- 标签： [模型评估](/tags/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/) / [模型选择](/tags/%E6%A8%A1%E5%9E%8B%E9%80%89%E6%8B%A9/) / [微调模型](/tags/%E5%BE%AE%E8%B0%83%E6%A8%A1%E5%9E%8B/) / [Llama](/tags/llama/) / [多臂老虎机](/tags/%E5%A4%9A%E8%87%82%E8%80%81%E8%99%8E%E6%9C%BA/) / [隐藏瑰宝](/tags/%E9%9A%90%E8%97%8F%E7%91%B0%E5%AE%9D/) / [cs.LG](/tags/cs.lg/) / [推理优化](/tags/%E6%8E%A8%E7%90%86%E4%BC%98%E5%8C%96/)
+>>>>>>> Stashed changes
 - 场景： [Web应用开发](/scenarios/web%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/)
 
 ### 相关文章
@@ -616,6 +621,10 @@ scenarios: ["Web应用开发"]
 - [发现模型仓库中被忽视的高质量模型]({{< relref "posts/20260130-arxiv_ai-discovering-hidden-gems-in-model-repositories-1.md" >}})
 - [机器翻译评估中的跨向污染问题研究]({{< relref "posts/20260129-arxiv_ai-when-flores-bloomz-wrong-cross-direction-contamina-1.md" >}})
 - [基于认知上下文学习构建大模型多智能体系统的信任机制]({{< relref "posts/20260130-arxiv_ai-epistemic-context-learning-building-trust-the-righ-7.md" >}})
+<<<<<<< Updated upstream
 - [推理大模型从被动求解转向主动提问]({{< relref "posts/20260130-arxiv_ai-reasoning-while-asking-transforming-reasoning-larg-9.md" >}})
 - [🔥LLM序列标注新突破！揭秘高效策略，性能飙升！]({{< relref "posts/20260127-arxiv_ai-strategies-for-span-labeling-with-large-language-m-9.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*
+=======
+*本文由 AI Stack 自动生成，深度解读学术研究。*
+>>>>>>> Stashed changes

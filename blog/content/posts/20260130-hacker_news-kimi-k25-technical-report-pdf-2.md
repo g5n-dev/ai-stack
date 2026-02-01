@@ -433,7 +433,7 @@ print("摘要:", summary)
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)
-- 标签： [Kimi](/tags/kimi/) / [K2.5](/tags/k2-5/) / [强化学习](/tags/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/) / [长上下文](/tags/%E9%95%BF%E4%B8%8A%E4%B8%8B%E6%96%87/) / [技术报告](/tags/%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A/) / [Moonshot](/tags/moonshot/) / [LLM](/tags/llm/) / [模型升级](/tags/%E6%A8%A1%E5%9E%8B%E5%8D%87%E7%BA%A7/)
+- 标签： [Kimi](/tags/kimi/) / [K2.5](/tags/k2.5/) / [强化学习](/tags/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/) / [长上下文](/tags/%E9%95%BF%E4%B8%8A%E4%B8%8B%E6%96%87/) / [技术报告](/tags/%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A/) / [Moonshot](/tags/moonshot/) / [LLM](/tags/llm/) / [模型升级](/tags/%E6%A8%A1%E5%9E%8B%E5%8D%87%E7%BA%A7/)
 - 场景： [大语言模型](/scenarios/%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/)
 
 ### 相关文章

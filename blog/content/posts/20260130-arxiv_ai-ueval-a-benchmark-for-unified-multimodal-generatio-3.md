@@ -427,7 +427,7 @@ $$ Score(model, query) = Evaluator(MLLM(model\_output), Rubric(reference)) $$
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)
-- 标签： [UEval](/tags/ueval/) / [多模态](/tags/%E5%A4%9A%E6%A8%A1%E6%80%81/) / [统一模型](/tags/%E7%BB%9F%E4%B8%80%E6%A8%A1%E5%9E%8B/) / [基准测试](/tags/%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95/) / [MLLM](/tags/mllm/) / [图文生成](/tags/%E5%9B%BE%E6%96%87%E7%94%9F%E6%88%90/) / [评估方法](/tags/%E8%AF%84%E4%BC%B0%E6%96%B9%E6%B3%95/) / [cs.CV](/tags/cs-cv/)
+- 标签： [UEval](/tags/ueval/) / [多模态](/tags/%E5%A4%9A%E6%A8%A1%E6%80%81/) / [统一模型](/tags/%E7%BB%9F%E4%B8%80%E6%A8%A1%E5%9E%8B/) / [基准测试](/tags/%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95/) / [MLLM](/tags/mllm/) / [图文生成](/tags/%E5%9B%BE%E6%96%87%E7%94%9F%E6%88%90/) / [评估方法](/tags/%E8%AF%84%E4%BC%B0%E6%96%B9%E6%B3%95/) / [cs.CV](/tags/cs.cv/)
 - 场景： [AI/ML项目](/scenarios/ai-ml%E9%A1%B9%E7%9B%AE/) / [计算机视觉](/scenarios/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/)
 
 ### 相关文章

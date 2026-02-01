@@ -191,13 +191,16 @@
 
                     <div
                         class="post-content prose prose-invert max-w-none font-display text-base md:text-lg text-slate-300 leading-relaxed">
-                        {{ .Content }}
+                        {{- $content := .Content -}}
+                        {{- $content = replaceRE "<h1([^>]*)>" "<h2$1>" $content -}}
+                        {{- $content = replaceRE "</h1>" "</h2>" $content -}}
+                        {{- $content | safeHTML -}}
                     </div>
 
                     {{ with .Params.tags }}
                     <div class="mt-12 pt-8 border-t border-muted-teal/10 flex flex-wrap items-center gap-2">
                         {{ range . }}
-                        <a href="{{ " /tags/" | relLangURL }}{{ . | urlize }}/"
+                        <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}/"
                             class="px-2.5 py-1 rounded-full border border-muted-teal/15 bg-terminal-bg/40 text-muted-teal/60 text-[10px] font-mono tracking-wide hover:bg-muted-teal/10 hover:text-primary transition-colors">
                             {{ . }}
                         </a>

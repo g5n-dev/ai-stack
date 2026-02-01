@@ -234,7 +234,7 @@ Kimi k2.5 的发布标志着大模型在多模态融合与智能体系统架构�
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [开源生态](/categories/%E5%BC%80%E6%BA%90%E7%94%9F%E6%80%81/)
-- 标签： [Moonshot AI](/tags/moonshot-ai/) / [Kimi k2.5](/tags/kimi-k2-5/) / [Sonnet 4.5](/tags/sonnet-4-5/) / [多模态](/tags/%E5%A4%9A%E6%A8%A1%E6%80%81/) / [Agent Swarm](/tags/agent-swarm/) / [SOTA](/tags/sota/) / [推理成本](/tags/%E6%8E%A8%E7%90%86%E6%88%90%E6%9C%AC/) / [智能体编排](/tags/%E6%99%BA%E8%83%BD%E4%BD%93%E7%BC%96%E6%8E%92/)
+- 标签： [Moonshot AI](/tags/moonshot-ai/) / [Kimi k2.5](/tags/kimi-k2.5/) / [Sonnet 4.5](/tags/sonnet-4.5/) / [多模态](/tags/%E5%A4%9A%E6%A8%A1%E6%80%81/) / [Agent Swarm](/tags/agent-swarm/) / [SOTA](/tags/sota/) / [推理成本](/tags/%E6%8E%A8%E7%90%86%E6%88%90%E6%9C%AC/) / [智能体编排](/tags/%E6%99%BA%E8%83%BD%E4%BD%93%E7%BC%96%E6%8E%92/)
 - 场景： [AI/ML项目](/scenarios/ai-ml%E9%A1%B9%E7%9B%AE/)
 
 ### 相关文章

@@ -393,7 +393,7 @@ Kimi K2.5 能够准确识别出代码中的依赖关系、潜在的 Bug 以及�
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)
-- 标签： [Kimi](/tags/kimi/) / [K2.5](/tags/k2-5/) / [Moonshot](/tags/moonshot/) / [技术报告](/tags/%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A/) / [长上下文](/tags/%E9%95%BF%E4%B8%8A%E4%B8%8B%E6%96%87/) / [推理能力](/tags/%E6%8E%A8%E7%90%86%E8%83%BD%E5%8A%9B/) / [LLM](/tags/llm/) / [模型升级](/tags/%E6%A8%A1%E5%9E%8B%E5%8D%87%E7%BA%A7/)
+- 标签： [Kimi](/tags/kimi/) / [K2.5](/tags/k2.5/) / [Moonshot](/tags/moonshot/) / [技术报告](/tags/%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A/) / [长上下文](/tags/%E9%95%BF%E4%B8%8A%E4%B8%8B%E6%96%87/) / [推理能力](/tags/%E6%8E%A8%E7%90%86%E8%83%BD%E5%8A%9B/) / [LLM](/tags/llm/) / [模型升级](/tags/%E6%A8%A1%E5%9E%8B%E5%8D%87%E7%BA%A7/)
 - 场景： [大语言模型](/scenarios/%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/)
 
 ### 相关文章

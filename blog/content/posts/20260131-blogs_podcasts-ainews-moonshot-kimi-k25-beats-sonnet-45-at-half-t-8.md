@@ -247,7 +247,7 @@ Kimi k2.5 采用了“原生多模态”架构，区别于传统的“外挂式�
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [开源生态](/categories/%E5%BC%80%E6%BA%90%E7%94%9F%E6%80%81/)
-- 标签： [Moonshot](/tags/moonshot/) / [Kimi K2.5](/tags/kimi-k2-5/) / [SOTA](/tags/sota/) / [多模态](/tags/%E5%A4%9A%E6%A8%A1%E6%80%81/) / [Agent Swarm](/tags/agent-swarm/) / [Sonnet 4.5](/tags/sonnet-4-5/) / [成本优化](/tags/%E6%88%90%E6%9C%AC%E4%BC%98%E5%8C%96/) / [国产大模型](/tags/%E5%9B%BD%E4%BA%A7%E5%A4%A7%E6%A8%A1%E5%9E%8B/)
+- 标签： [Moonshot](/tags/moonshot/) / [Kimi K2.5](/tags/kimi-k2.5/) / [SOTA](/tags/sota/) / [多模态](/tags/%E5%A4%9A%E6%A8%A1%E6%80%81/) / [Agent Swarm](/tags/agent-swarm/) / [Sonnet 4.5](/tags/sonnet-4.5/) / [成本优化](/tags/%E6%88%90%E6%9C%AC%E4%BC%98%E5%8C%96/) / [国产大模型](/tags/%E5%9B%BD%E4%BA%A7%E5%A4%A7%E6%A8%A1%E5%9E%8B/)
 - 场景： [Web应用开发](/scenarios/web%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/)
 
 ### 相关文章

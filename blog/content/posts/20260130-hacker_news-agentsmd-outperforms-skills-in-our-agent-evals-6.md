@@ -472,7 +472,7 @@ AGENTS.md 的优势在于“编排”和“决策”，但它最终往往还是�
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)
-- 标签： [Agent](/tags/agent/) / [AGENTS.md](/tags/agents-md/) / [技能配置](/tags/%E6%8A%80%E8%83%BD%E9%85%8D%E7%BD%AE/) / [模型评估](/tags/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/) / [LLM](/tags/llm/) / [AI Agent](/tags/ai-agent/) / [配置优化](/tags/%E9%85%8D%E7%BD%AE%E4%BC%98%E5%8C%96/) / [性能对比](/tags/%E6%80%A7%E8%83%BD%E5%AF%B9%E6%AF%94/)
+- 标签： [Agent](/tags/agent/) / [AGENTS.md](/tags/agents.md/) / [技能配置](/tags/%E6%8A%80%E8%83%BD%E9%85%8D%E7%BD%AE/) / [模型评估](/tags/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/) / [LLM](/tags/llm/) / [AI Agent](/tags/ai-agent/) / [配置优化](/tags/%E9%85%8D%E7%BD%AE%E4%BC%98%E5%8C%96/) / [性能对比](/tags/%E6%80%A7%E8%83%BD%E5%AF%B9%E6%AF%94/)
 - 场景： [大语言模型](/scenarios/%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/) / [AI/ML项目](/scenarios/ai-ml%E9%A1%B9%E7%9B%AE/)
 
 ### 相关文章

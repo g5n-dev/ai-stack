@@ -215,7 +215,7 @@ Kimi k2.5 模型的发布标志着在特定基准测试中，开源模型在推�
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [开源生态](/categories/%E5%BC%80%E6%BA%90%E7%94%9F%E6%80%81/)
-- 标签： [Moonshot AI](/tags/moonshot-ai/) / [Kimi k2.5](/tags/kimi-k2-5/) / [开源模型](/tags/%E5%BC%80%E6%BA%90%E6%A8%A1%E5%9E%8B/) / [Claude 3.5 Sonnet](/tags/claude-3-5-sonnet/) / [多模态](/tags/%E5%A4%9A%E6%A8%A1%E6%80%81/) / [成本优化](/tags/%E6%88%90%E6%9C%AC%E4%BC%98%E5%8C%96/) / [Agent Swarm](/tags/agent-swarm/) / [Pony基准](/tags/pony%E5%9F%BA%E5%87%86/)
+- 标签： [Moonshot AI](/tags/moonshot-ai/) / [Kimi k2.5](/tags/kimi-k2.5/) / [开源模型](/tags/%E5%BC%80%E6%BA%90%E6%A8%A1%E5%9E%8B/) / [Claude 3.5 Sonnet](/tags/claude-3.5-sonnet/) / [多模态](/tags/%E5%A4%9A%E6%A8%A1%E6%80%81/) / [成本优化](/tags/%E6%88%90%E6%9C%AC%E4%BC%98%E5%8C%96/) / [Agent Swarm](/tags/agent-swarm/) / [Pony基准](/tags/pony%E5%9F%BA%E5%87%86/)
 - 场景： [AI/ML项目](/scenarios/ai-ml%E9%A1%B9%E7%9B%AE/)
 
 ### 相关文章

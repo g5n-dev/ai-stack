@@ -333,7 +333,7 @@ K2.5 支持 100 个并行 Agent Swarm 管理能力，这意味着它可以同时
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [开源生态](/categories/%E5%BC%80%E6%BA%90%E7%94%9F%E6%80%81/)
-- 标签： [Moonshot](/tags/moonshot/) / [Kimi k2.5](/tags/kimi-k2-5/) / [开源模型](/tags/%E5%BC%80%E6%BA%90%E6%A8%A1%E5%9E%8B/) / [Sonnet 4.5](/tags/sonnet-4-5/) / [成本效益](/tags/%E6%88%90%E6%9C%AC%E6%95%88%E7%9B%8A/) / [多模态](/tags/%E5%A4%9A%E6%A8%A1%E6%80%81/) / [Agent管理](/tags/agent%E7%AE%A1%E7%90%86/) / [SOTA](/tags/sota/)
+- 标签： [Moonshot](/tags/moonshot/) / [Kimi k2.5](/tags/kimi-k2.5/) / [开源模型](/tags/%E5%BC%80%E6%BA%90%E6%A8%A1%E5%9E%8B/) / [Sonnet 4.5](/tags/sonnet-4.5/) / [成本效益](/tags/%E6%88%90%E6%9C%AC%E6%95%88%E7%9B%8A/) / [多模态](/tags/%E5%A4%9A%E6%A8%A1%E6%80%81/) / [Agent管理](/tags/agent%E7%AE%A1%E7%90%86/) / [SOTA](/tags/sota/)
 - 场景： [Web应用开发](/scenarios/web%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/)
 
 ### 相关文章
