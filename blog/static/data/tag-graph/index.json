@@ -51,9 +51,7 @@
       "framework",
       "model",
       "application",
-      "scenario",
-      "tag",
-      "concept"
+      "scenario"
     ]
   }
 }

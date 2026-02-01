@@ -264,20 +264,18 @@
 
                 <!-- 主内容区 -->
                 <div class="flex-1 min-w-0">
+                    {{ $pages := .RegularPages }}
                     <div class="flex items-end justify-between border-b border-muted-teal/10 pb-6 mb-8">
                         <div class="flex flex-col">
                             <span class="text-primary/70 text-[12px] font-bold tracking-wide mb-1">目录</span>
                             <h1 class="text-off-white text-3xl font-light tracking-tight font-display">{{ .Title }}</h1>
                         </div>
                         <div class="text-muted-teal/45 text-[11px] font-mono tracking-wide">
-                            条目：{{ len .Pages }}
+                            条目：<span id="posts-count">{{ len $pages }}</span>
                         </div>
                     </div>
 
-                    {{ $paginator := .Paginator }}
                     <!-- 按年月分组显示 -->
-                    {{ $pages := $paginator.Pages }}
-
                     <div class="space-y-8">
                         {{ range $pages.GroupByDate "2006-01" }}
                         {{$year := index (split .Key "-") 0}}
@@ -285,111 +283,93 @@
                         {{$monthName := index (slice "一月" "二月" "三月" "四月" "五月" "六月" "七月" "八月" "九月" "十月" "十一月" "十二月") (sub
                         (int $month) 1)}}
 
-                        <!-- 月份分组标题 -->
-                        <div class="flex items-center gap-3 mb-4">
-                            <span class="text-primary/70 text-[13px] font-bold tracking-wider font-mono">{{ $year }}年{{
-                                $monthName }}</span>
-                            <span class="h-px flex-1 bg-gradient-to-r from-muted-teal/30 to-transparent"></span>
-                            <span class="text-off-white/25 text-[10px] font-mono">{{ len .Pages }} 篇</span>
-                        </div>
+                        <section class="posts-month-group space-y-4" data-year-month="{{ .Key }}" data-year="{{ $year }}"
+                            data-month="{{ $month }}">
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="text-primary/70 text-[13px] font-bold tracking-wider font-mono">{{ $year }}年{{
+                                    $monthName }}</span>
+                                <span class="h-px flex-1 bg-gradient-to-r from-muted-teal/30 to-transparent"></span>
+                                <span class="text-off-white/25 text-[10px] font-mono">{{ len .Pages }} 篇</span>
+                            </div>
 
-                        <div class="glass-panel rounded-xl overflow-hidden">
-                            <table class="w-full table-fixed text-left border-collapse">
-                                <thead>
-                                    <tr class="bg-muted-teal/5 border-b border-muted-teal/10">
-                                        <th
-                                            class="w-28 px-6 md:px-8 py-4 text-muted-teal/60 text-[11px] font-bold tracking-wide">
-                                            类型</th>
-                                        <th
-                                            class="w-20 px-6 md:px-8 py-4 text-muted-teal/60 text-[11px] font-bold tracking-wide text-right">
-                                            阅读</th>
-                                        <th
-                                            class="px-6 md:px-8 py-4 text-off-white text-[11px] font-bold tracking-wide">
-                                            条目</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="divide-y divide-muted-teal/5">
-                                    {{ range .Pages }}
-                                    <tr class="hover:bg-muted-teal/5 transition-all group">
-                                        <td class="w-28 px-6 md:px-8 py-5">
-                                            {{- $kind := lower (.Params.entry_kind | default "") -}}
-                                            {{- $isManual := or (eq $kind "manual") (and (eq $kind "") (not
-                                            .Params.source)) -}}
-                                            <div class="flex flex-col gap-1 leading-tight">
-                                                <span
-                                                    class="text-[11px] {{ if $isManual }}text-off-white/60 group-hover:text-off-white{{ else }}text-primary/70 group-hover:text-primary{{ end }} transition-colors">
-                                                    {{ if $isManual }}[手动]{{ else }}[自动]{{ end }}
-                                                </span>
-                                                <span
-                                                    class="text-[11px] text-off-white/35 group-hover:text-off-white/55 transition-colors font-mono">
-                                                    {{ with .Params.source }}{{ printf "[%s]" (upper .) }}{{ else
-                                                    }}[笔记]{{ end }}
-                                                </span>
-                                            </div>
-                                        </td>
-                                        <td
-                                            class="w-20 px-6 md:px-8 py-5 text-muted-teal/45 text-[11px] text-right font-mono">
-                                            {{ printf "%dmin" .ReadingTime }}
-                                        </td>
-                                        <td class="px-6 md:px-8 py-5">
-                                            <a href="{{ .RelPermalink }}" data-entry-link="{{ .RelPermalink }}"
-                                                data-entry-title="{{ .Title }}" class="flex items-center gap-4 min-w-0">
-                                                <span
-                                                    class="material-symbols-outlined text-primary/40 group-hover:text-primary transition-all">
-                                                    {{- $s := .Params.source -}}
-                                                    {{- if eq $s "github_trending" -}}hub
-                                                    {{- else if eq $s "hacker_news" -}}newspaper
-                                                    {{- else if eq $s "arxiv" -}}school
-                                                    {{- else if eq $s "blogs_podcasts" -}}mic
-                                                    {{- else -}}sticky_note_2
-                                                    {{- end -}}
-                                                </span>
-                                                <span
-                                                    class="min-w-0 flex-1 text-off-white text-sm tracking-wide group-hover:translate-x-1 transition-transform truncate"
-                                                    title="{{ .Title }}">{{ .Title }}</span>
-                                            </a>
-                                            <div
-                                                class="mt-2 flex flex-wrap items-center gap-2 text-[11px] text-off-white/45">
-                                                <span class="font-mono text-muted-teal/40">{{ .Date.Format "01-02"
-                                                    }}</span>
-                                                {{ range first 3 (.Params.tags | default (slice)) }}
-                                                <span
-                                                    class="px-2 py-0.5 rounded border border-muted-teal/15 bg-terminal-bg/40 text-muted-teal/60">{{
-                                                    . }}</span>
-                                                {{ end }}
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    {{ end }}
-                                </tbody>
-                            </table>
-                        </div>
+                            <div class="glass-panel rounded-xl overflow-hidden">
+                                <table class="w-full table-fixed text-left border-collapse">
+                                    <thead>
+                                        <tr class="bg-muted-teal/5 border-b border-muted-teal/10">
+                                            <th
+                                                class="w-28 px-6 md:px-8 py-4 text-muted-teal/60 text-[11px] font-bold tracking-wide">
+                                                类型</th>
+                                            <th
+                                                class="w-20 px-6 md:px-8 py-4 text-muted-teal/60 text-[11px] font-bold tracking-wide text-right">
+                                                阅读</th>
+                                            <th
+                                                class="px-6 md:px-8 py-4 text-off-white text-[11px] font-bold tracking-wide">
+                                                条目</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="divide-y divide-muted-teal/5">
+                                        {{ range .Pages }}
+                                        <tr class="hover:bg-muted-teal/5 transition-all group">
+                                            <td class="w-28 px-6 md:px-8 py-5">
+                                                {{- $kind := lower (.Params.entry_kind | default "") -}}
+                                                {{- $isManual := or (eq $kind "manual") (and (eq $kind "") (not
+                                                .Params.source)) -}}
+                                                <div class="flex flex-col gap-1 leading-tight">
+                                                    <span
+                                                        class="text-[11px] {{ if $isManual }}text-off-white/60 group-hover:text-off-white{{ else }}text-primary/70 group-hover:text-primary{{ end }} transition-colors">
+                                                        {{ if $isManual }}[手动]{{ else }}[自动]{{ end }}
+                                                    </span>
+                                                    <span
+                                                        class="text-[11px] text-off-white/35 group-hover:text-off-white/55 transition-colors font-mono">
+                                                        {{ with .Params.source }}{{ printf "[%s]" (upper .) }}{{ else
+                                                        }}[笔记]{{ end }}
+                                                    </span>
+                                                </div>
+                                            </td>
+                                            <td
+                                                class="w-20 px-6 md:px-8 py-5 text-muted-teal/45 text-[11px] text-right font-mono">
+                                                {{ printf "%dmin" .ReadingTime }}
+                                            </td>
+                                            <td class="px-6 md:px-8 py-5">
+                                                <a href="{{ .RelPermalink }}" data-entry-link="{{ .RelPermalink }}"
+                                                    data-entry-title="{{ .Title }}" class="flex items-center gap-4 min-w-0">
+                                                    <span
+                                                        class="material-symbols-outlined text-primary/40 group-hover:text-primary transition-all">
+                                                        {{- $s := .Params.source -}}
+                                                        {{- if eq $s "github_trending" -}}hub
+                                                        {{- else if eq $s "hacker_news" -}}newspaper
+                                                        {{- else if eq $s "arxiv" -}}school
+                                                        {{- else if eq $s "blogs_podcasts" -}}mic
+                                                        {{- else -}}sticky_note_2
+                                                        {{- end -}}
+                                                    </span>
+                                                    <span
+                                                        class="min-w-0 flex-1 text-off-white text-sm tracking-wide group-hover:translate-x-1 transition-transform truncate"
+                                                        title="{{ .Title }}">{{ .Title }}</span>
+                                                </a>
+                                                <div
+                                                    class="mt-2 flex flex-wrap items-center gap-2 text-[11px] text-off-white/45">
+                                                    <span class="font-mono text-muted-teal/40">{{ .Date.Format "01-02"
+                                                        }}</span>
+                                                    {{ range first 3 (.Params.tags | default (slice)) }}
+                                                    <span
+                                                        class="px-2 py-0.5 rounded border border-muted-teal/15 bg-terminal-bg/40 text-muted-teal/60">{{
+                                                        . }}</span>
+                                                    {{ end }}
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        {{ end }}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </section>
                         {{ end }}
                     </div>
 
-                    <!-- 分页 -->
-                    <div class="mt-8 flex items-center justify-between gap-4">
-                        {{ if $paginator.HasPrev }}
-                        <a href="{{ $paginator.Prev.URL }}"
-                            class="flex items-center gap-2 px-5 py-2 bg-muted-teal/5 border border-muted-teal/20 rounded-full hover:bg-muted-teal/10 transition-all text-[11px] font-mono tracking-wide text-off-white/70 hover:text-off-white">
-                            <span class="material-symbols-outlined text-base">arrow_back</span> 上一页
-                        </a>
-                        {{ else }}
-                        <span class="px-5 py-2 text-[11px] font-mono tracking-wide text-off-white/20">上一页</span>
-                        {{ end }}
-
-                        <div class="text-[11px] font-mono tracking-wide text-muted-teal/55">
-                            第 {{ $paginator.PageNumber }} / {{ $paginator.TotalPages }} 页
-                        </div>
-
-                        {{ if $paginator.HasNext }}
-                        <a href="{{ $paginator.Next.URL }}"
-                            class="flex items-center gap-2 px-5 py-2 bg-muted-teal/5 border border-muted-teal/20 rounded-full hover:bg-muted-teal/10 transition-all text-[11px] font-mono tracking-wide text-off-white/70 hover:text-off-white">
-                            下一页 <span class="material-symbols-outlined text-base">arrow_forward</span>
-                        </a>
-                        {{ else }}
-                        <span class="px-5 py-2 text-[11px] font-mono tracking-wide text-off-white/20">下一页</span>
-                        {{ end }}
+                    <div id="posts-empty"
+                        class="hidden mt-10 text-center text-off-white/35 text-sm border border-muted-teal/10 bg-muted-teal/5 rounded-xl py-10">
+                        无匹配条目
                     </div>
                 </div>
             </div>

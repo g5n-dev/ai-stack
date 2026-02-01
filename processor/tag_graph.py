@@ -564,7 +564,7 @@ def write_tag_graph_split_from_result(
         "defaults": {
             "hot_tag_limit": hot_tag_limit,
             "hot_concept_limit": hot_concept_limit,
-            "initial_visible_layers": ["language", "framework", "model", "application", "scenario", "tag", "concept"],
+            "initial_visible_layers": ["language", "framework", "model", "application", "scenario"],
         },
     })
 

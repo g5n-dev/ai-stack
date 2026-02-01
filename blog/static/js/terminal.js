@@ -46,6 +46,64 @@
     window.history.replaceState({}, "", url.toString());
   }
 
+  function parseYearMonth(value) {
+    const m = /^(\d{4})-(\d{2})$/.exec(String(value || "").trim());
+    if (!m) return null;
+    return { year: m[1], month: m[2], yearMonth: `${m[1]}-${m[2]}` };
+  }
+
+  function parseYear(value) {
+    const m = /^(\d{4})$/.exec(String(value || "").trim());
+    return m ? m[1] : "";
+  }
+
+  function setActiveArchiveLink(params) {
+    const links = $all('a[href^="/posts/?year="], a[href^="/posts/?month="]');
+    links.forEach((a) => {
+      a.classList.remove("bg-muted-teal/10", "text-off-white/80");
+    });
+
+    if (!params) return;
+    const selector = `a[href="/posts/?${params}"]`;
+    const active = $(selector);
+    if (active) active.classList.add("bg-muted-teal/10", "text-off-white/80");
+  }
+
+  function applyPostsTimeFilterFromQuery() {
+    const groups = $all(".posts-month-group");
+    if (!groups.length) return;
+
+    const ym = parseYearMonth(getQueryParam("month"));
+    const year = parseYear(getQueryParam("year"));
+
+    const shouldFilter = Boolean(ym || year);
+    if (!shouldFilter) return;
+
+    let visibleRows = 0;
+    let visibleGroups = 0;
+
+    groups.forEach((el) => {
+      const groupYM = String(el.getAttribute("data-year-month") || "");
+      const groupYear = String(el.getAttribute("data-year") || groupYM.split("-")[0] || "");
+
+      const show = ym ? groupYM === ym.yearMonth : groupYear === year;
+      el.style.display = show ? "" : "none";
+
+      if (show) {
+        visibleGroups += 1;
+        visibleRows += $all("tbody tr", el).length;
+      }
+    });
+
+    const countEl = document.getElementById("posts-count");
+    if (countEl) countEl.textContent = String(visibleRows);
+
+    const emptyEl = document.getElementById("posts-empty");
+    if (emptyEl) emptyEl.classList.toggle("hidden", visibleRows > 0);
+
+    setActiveArchiveLink(ym ? `month=${ym.yearMonth}` : `year=${year}`);
+  }
+
   function ensureOverlay() {
     let overlay = $("#terminal-overlay");
     if (overlay) return overlay;
@@ -407,6 +465,8 @@
     } catch (_) {
       // ignore
     }
+
+    applyPostsTimeFilterFromQuery();
 
     // Apply query filter if present.
     const q = getQueryParam("q");
