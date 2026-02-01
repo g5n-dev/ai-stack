@@ -552,7 +552,7 @@ scenarios: ["Web应用开发"]
 
 <<<<<<< Updated upstream
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/) / [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/)
-- 标签： [边缘计算](/tags/%E8%BE%B9%E7%BC%98%E8%AE%A1%E7%AE%97/) / [神经网络](/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/) / [逻辑流](/tags/%E9%80%BB%E8%BE%91%E6%B5%81/) / [决策树](/tags/%E5%86%B3%E7%AD%96%E6%A0%91/) / [RISC-V](/tags/risc-v/) / [模型优化](/tags/%E6%A8%A1%E5%9E%8B%E4%BC%98%E5%8C%96/) / [CPU推理](/tags/cpu%E6%8E%A8%E7%90%86/) / [cs.LG](/tags/cs-lg/)
+- 标签： [边缘计算](/tags/%E8%BE%B9%E7%BC%98%E8%AE%A1%E7%AE%97/) / [神经网络](/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/) / [逻辑流](/tags/%E9%80%BB%E8%BE%91%E6%B5%81/) / [决策树](/tags/%E5%86%B3%E7%AD%96%E6%A0%91/) / [RISC-V](/tags/risc-v/) / [模型优化](/tags/%E6%A8%A1%E5%9E%8B%E4%BC%98%E5%8C%96/) / [CPU推理](/tags/cpu%E6%8E%A8%E7%90%86/) / [cs.LG](/tags/cs.lg/)
 =======
 - 分类： [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)
 - 标签： [边缘计算](/tags/%E8%BE%B9%E7%BC%98%E8%AE%A1%E7%AE%97/) / [神经网络](/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/) / [逻辑流](/tags/%E9%80%BB%E8%BE%91%E6%B5%81/) / [决策树](/tags/%E5%86%B3%E7%AD%96%E6%A0%91/) / [CPU优化](/tags/cpu%E4%BC%98%E5%8C%96/) / [模型转换](/tags/%E6%A8%A1%E5%9E%8B%E8%BD%AC%E6%8D%A2/) / [推理加速](/tags/%E6%8E%A8%E7%90%86%E5%8A%A0%E9%80%9F/) / [cs.LG](/tags/cs.lg/)

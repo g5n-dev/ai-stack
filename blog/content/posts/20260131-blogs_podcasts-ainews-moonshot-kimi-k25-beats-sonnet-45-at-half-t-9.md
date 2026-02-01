@@ -229,7 +229,7 @@ Kimi k2.5 的发布更新了开放权重模型领域的性能天花板。它证�
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [开源生态](/categories/%E5%BC%80%E6%BA%90%E7%94%9F%E6%80%81/)
 <<<<<<< Updated upstream
-- 标签： [Kimi k1.5](/tags/kimi-k1-5/) / [Moonshot AI](/tags/moonshot-ai/) / [开源模型](/tags/%E5%BC%80%E6%BA%90%E6%A8%A1%E5%9E%8B/) / [多模态](/tags/%E5%A4%9A%E6%A8%A1%E6%80%81/) / [成本效益](/tags/%E6%88%90%E6%9C%AC%E6%95%88%E7%9B%8A/) / [Agent](/tags/agent/) / [Claude 3.5 Sonnet](/tags/claude-3-5-sonnet/) / [模型评测](/tags/%E6%A8%A1%E5%9E%8B%E8%AF%84%E6%B5%8B/)
+- 标签： [Kimi k1.5](/tags/kimi-k1.5/) / [Moonshot AI](/tags/moonshot-ai/) / [开源模型](/tags/%E5%BC%80%E6%BA%90%E6%A8%A1%E5%9E%8B/) / [多模态](/tags/%E5%A4%9A%E6%A8%A1%E6%80%81/) / [成本效益](/tags/%E6%88%90%E6%9C%AC%E6%95%88%E7%9B%8A/) / [Agent](/tags/agent/) / [Claude 3.5 Sonnet](/tags/claude-3.5-sonnet/) / [模型评测](/tags/%E6%A8%A1%E5%9E%8B%E8%AF%84%E6%B5%8B/)
 =======
 - 标签： [Moonshot AI](/tags/moonshot-ai/) / [Kimi k2.5](/tags/kimi-k2.5/) / [开源模型](/tags/%E5%BC%80%E6%BA%90%E6%A8%A1%E5%9E%8B/) / [Sonnet 4.5](/tags/sonnet-4.5/) / [多模态](/tags/%E5%A4%9A%E6%A8%A1%E6%80%81/) / [Agent](/tags/agent/) / [成本优化](/tags/%E6%88%90%E6%9C%AC%E4%BC%98%E5%8C%96/) / [国产大模型](/tags/%E5%9B%BD%E4%BA%A7%E5%A4%A7%E6%A8%A1%E5%9E%8B/)
 >>>>>>> Stashed changes

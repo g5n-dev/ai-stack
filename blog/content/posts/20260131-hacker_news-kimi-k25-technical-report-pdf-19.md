@@ -373,7 +373,7 @@ print(compress_context(long_text))
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)
-- 标签： [Kimi K2.5](/tags/kimi-k2-5/) / [技术报告](/tags/%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A/) / [模型架构](/tags/%E6%A8%A1%E5%9E%8B%E6%9E%B6%E6%9E%84/) / [性能评估](/tags/%E6%80%A7%E8%83%BD%E8%AF%84%E4%BC%B0/) / [Moonshot AI](/tags/moonshot-ai/) / [长文本](/tags/%E9%95%BF%E6%96%87%E6%9C%AC/) / [MoE](/tags/moe/) / [LLM](/tags/llm/)
+- 标签： [Kimi K2.5](/tags/kimi-k2.5/) / [技术报告](/tags/%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A/) / [模型架构](/tags/%E6%A8%A1%E5%9E%8B%E6%9E%B6%E6%9E%84/) / [性能评估](/tags/%E6%80%A7%E8%83%BD%E8%AF%84%E4%BC%B0/) / [Moonshot AI](/tags/moonshot-ai/) / [长文本](/tags/%E9%95%BF%E6%96%87%E6%9C%AC/) / [MoE](/tags/moe/) / [LLM](/tags/llm/)
 - 场景： [AI/ML项目](/scenarios/ai-ml%E9%A1%B9%E7%9B%AE/) / [大语言模型](/scenarios/%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/)
 
 ### 相关文章

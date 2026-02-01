@@ -424,7 +424,7 @@ Kimi 2.5 在长文本任务中的准确率提升了约 30%，特别是在处理�
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)
-- 标签： [Kimi](/tags/kimi/) / [K2.5](/tags/k2-5/) / [Moonshot](/tags/moonshot/) / [技术报告](/tags/%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A/) / [模型架构](/tags/%E6%A8%A1%E5%9E%8B%E6%9E%B6%E6%9E%84/) / [性能评估](/tags/%E6%80%A7%E8%83%BD%E8%AF%84%E4%BC%B0/) / [长文本](/tags/%E9%95%BF%E6%96%87%E6%9C%AC/) / [推理优化](/tags/%E6%8E%A8%E7%90%86%E4%BC%98%E5%8C%96/)
+- 标签： [Kimi](/tags/kimi/) / [K2.5](/tags/k2.5/) / [Moonshot](/tags/moonshot/) / [技术报告](/tags/%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A/) / [模型架构](/tags/%E6%A8%A1%E5%9E%8B%E6%9E%B6%E6%9E%84/) / [性能评估](/tags/%E6%80%A7%E8%83%BD%E8%AF%84%E4%BC%B0/) / [长文本](/tags/%E9%95%BF%E6%96%87%E6%9C%AC/) / [推理优化](/tags/%E6%8E%A8%E7%90%86%E4%BC%98%E5%8C%96/)
 - 场景： [Web应用开发](/scenarios/web%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/)
 
 ### 相关文章

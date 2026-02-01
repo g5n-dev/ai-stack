@@ -556,7 +556,7 @@ PIR在以下条件下最可能失败：
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)
-- 标签： [LLM](/tags/llm/) / [推理模型](/tags/%E6%8E%A8%E7%90%86%E6%A8%A1%E5%9E%8B/) / [主动询问](/tags/%E4%B8%BB%E5%8A%A8%E8%AF%A2%E9%97%AE/) / [交互式推理](/tags/%E4%BA%A4%E4%BA%92%E5%BC%8F%E6%8E%A8%E7%90%86/) / [信息获取](/tags/%E4%BF%A1%E6%81%AF%E8%8E%B7%E5%8F%96/) / [Agent](/tags/agent/) / [Prompt优化](/tags/prompt%E4%BC%98%E5%8C%96/) / [cs.CL](/tags/cs-cl/)
+- 标签： [LLM](/tags/llm/) / [推理模型](/tags/%E6%8E%A8%E7%90%86%E6%A8%A1%E5%9E%8B/) / [主动询问](/tags/%E4%B8%BB%E5%8A%A8%E8%AF%A2%E9%97%AE/) / [交互式推理](/tags/%E4%BA%A4%E4%BA%92%E5%BC%8F%E6%8E%A8%E7%90%86/) / [信息获取](/tags/%E4%BF%A1%E6%81%AF%E8%8E%B7%E5%8F%96/) / [Agent](/tags/agent/) / [Prompt优化](/tags/prompt%E4%BC%98%E5%8C%96/) / [cs.CL](/tags/cs.cl/)
 - 场景： [大语言模型](/scenarios/%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/)
 
 ### 相关文章
