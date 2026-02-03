@@ -62,7 +62,6 @@ AI 在 OpenSSL 的组件中发现了 **12 个此前未知的安全漏洞**。
 ## 🎯 深度评价
 
 **文章标题：AI found 12 vulnerabilities in OpenSSL**
-**评价对象：** 人工智能在核心基础设施软件（如OpenSSL）漏洞挖掘中的突破性应用
 
 ---
 

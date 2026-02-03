@@ -59,7 +59,6 @@ external_url: https://doi.org/10.1016/j.cub.2025.11.059
 ---
 ## 🎯 深度评价
 
-这是一篇基于**事实**的深度评价。评价对象为发表在《Scientific Reports》上的文章《Flexible use of a multi-purpose tool by a cow》（奶牛灵活使用多功能工具）。
 
 ---
 

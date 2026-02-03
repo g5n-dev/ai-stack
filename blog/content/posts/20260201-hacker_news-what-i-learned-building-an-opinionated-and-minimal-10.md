@@ -102,7 +102,6 @@ def generate_code(prompt: str, model: str = "gpt-4") -> str:
     response = client.chat.completions.create(
         model=model,
         messages=[
-            {"role": "system", "content": "你是一个专业程序员，只返回代码，不要解释。"},
             {"role": "user", "content": f"用Python实现：{prompt}"}
         ],
         temperature=0.3  # 降低随机性，使输出更确定

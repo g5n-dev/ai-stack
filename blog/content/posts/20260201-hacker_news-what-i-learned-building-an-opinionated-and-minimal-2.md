@@ -110,7 +110,6 @@ def coding_agent(prompt, model="gpt-3.5-turbo"):
     
     # 构造系统提示词，引导模型生成代码
     messages = [
-        {"role": "system", "content": "你是一个专业的代码生成助手。只返回代码，不要解释。"},
         {"role": "user", "content": f"用Python实现：{prompt}"}
     ]
     

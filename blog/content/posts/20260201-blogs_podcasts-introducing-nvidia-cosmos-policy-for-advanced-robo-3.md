@@ -29,8 +29,6 @@ scenarios: ["AI/ML项目"]
 ---
 ## 评论
 
-**评价对象：** 文章《Introducing NVIDIA Cosmos Policy for Advanced Robot Control》
-**评价视角：** 技术架构与机器人行业商业化
 
 ### 一、 核心观点与论证结构
 

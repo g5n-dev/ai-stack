@@ -62,7 +62,6 @@ external_url: https://www.windowscentral.com/microsoft/windows-11/windows-11s-bo
 
 ---
 
-### 📄 评价对象：文章《Windows 11's Patch Tuesday nightmare gets worse》
 
 **注：** 由于您未提供具体原文，以下评价基于该类文章通常涵盖的**Windows 11 近期（如KB503...系列）更新导致的广泛故障（如VPN中断、资源管理器卡死、任务栏消失等）**这一典型事实进行架构化推演。
 

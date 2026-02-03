@@ -51,7 +51,6 @@ scenarios: ["Web应用开发"]
 ---
 ## 评论
 
-### 评价对象：文章《We can't send mail farther than 500 miles》（2002）
 
 #### 一、 中心观点与核心逻辑（结构化摘要）
 

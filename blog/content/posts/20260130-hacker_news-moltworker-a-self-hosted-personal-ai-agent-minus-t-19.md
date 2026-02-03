@@ -31,7 +31,6 @@ Moltworker 是一款开源的本地 AI 助理工具，旨在让用户完全掌�
 ---
 ## 评论
 
-**评价对象**：文章《Moltworker: a self-hosted personal AI agent, minus the minis》
 
 ### 1. 核心观点与结构分析
 

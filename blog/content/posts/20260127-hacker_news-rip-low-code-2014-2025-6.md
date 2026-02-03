@@ -68,7 +68,6 @@ external_url: https://www.zackliscio.com/posts/rip-low-code-2014-2025
 ---
 ## 🎯 深度评价
 
-**评价对象：** 虚拟文章《RIP Low-Code 2014-2025》（基于行业典型唱衰低代码文章的推演）
 **评价维度：** 技术、行业、哲学、逻辑
 
 ---

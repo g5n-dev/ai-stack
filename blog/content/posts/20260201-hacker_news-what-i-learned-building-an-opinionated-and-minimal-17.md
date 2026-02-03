@@ -83,7 +83,6 @@ def code_generator(prompt: str, language: str = "python") -> str:
         model="gpt-3.5-turbo",
         messages=[{
             "role": "system",
-            "content": f"你是一个{language}专家，只输出代码，不要解释。"
         }, {
             "role": "user",
             "content": f"用{language}实现：{prompt}"

@@ -61,7 +61,6 @@ external_url: https://huggingface.co/blog/LinkedIn/gpt-oss-agentic-rl
 ---
 ## 🎯 深度评价
 
-**评价对象：** 文章《Unlocking Agentic RL Training for GPT-OSS: A Practical Retrospective》
 **评价语境：** 开源大模型（GPT-OSS）的智能体强化学习训练
 
 ---

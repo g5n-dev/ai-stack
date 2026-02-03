@@ -29,7 +29,6 @@ scenarios: ["大语言模型", "AI/ML项目"]
 ---
 ## 评论
 
-**评价对象：**《Architectural Choices in China's Open-Source AI Ecosystem: Building Beyond DeepSeek》（假设该文章讨论了在DeepSeek R1引发热潮后，中国AI社区在模型架构、推理优化及生态建设上的路径选择）。
 
 ### 1. 核心观点与论证架构
 

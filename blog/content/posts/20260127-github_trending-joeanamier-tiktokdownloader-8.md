@@ -180,7 +180,6 @@ System Component| Primary Classes| File Paths| Responsibilities
 ---
 ## 🎯 深度评价
 
-这是一份基于**第一性原理**与**系统架构视角**的深度评测。评价对象为 GitHub 仓库 `JoeanAmier/TikTokDownloader`（以下简称 TTD）。
 
 ---
 

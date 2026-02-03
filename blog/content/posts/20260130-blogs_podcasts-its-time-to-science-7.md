@@ -34,7 +34,6 @@ scenarios: ["AI/ML项目", "大语言模型"]
 ---
 ## 评论
 
-### 评价对象：文章《It's Time to Science》
 **主题背景：** 宣布推出全球首个专注于“AI for Science”的播客，并呼吁AI工程师关注这一领域。
 
 ---

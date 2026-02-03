@@ -55,7 +55,6 @@ scenarios: ["大语言模型"]
 ---
 ## 评论
 
-### 评价对象：Show HN: A MitM proxy to see what your LLM tools are sending
 
 #### 一、 核心观点与支撑逻辑
 

@@ -59,7 +59,6 @@ scenarios: ["AI/ML项目"]
 ---
 ## 评论
 
-### 评价对象：文章《It's Time to Science》
 **（摘要：为什么现在是创办世界上首个“AI for Science”播客的最佳时机，以及AI工程师为何应关注此领域）**
 
 ---

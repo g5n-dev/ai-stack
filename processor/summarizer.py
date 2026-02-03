@@ -56,6 +56,14 @@ class ContentSummarizer:
             "我无法从",
             "无法从提供",
             "鉴于您提供",
+            "评价对象",
+            "评价视角",
+            "字数控制",
+            "输出要求",
+            "结构要求",
+            "格式要求",
+            "写作要求",
+            "使用markdown格式组织内容",
         ]
         return any(p in t for p in patterns)
 

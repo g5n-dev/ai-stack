@@ -55,7 +55,6 @@ Bf-Tree 是一种结合了**B^link-Tree 高并发算法**与**现代分层存储
 ---
 ## 评论
 
-**评价对象：** 《Bf-Tree: modern read-write-optimized concurrent larger-than-memory range index》
 **评价维度：** 技术架构、并发控制、存储引擎设计
 
 ### 一、 核心观点与结构分析

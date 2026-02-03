@@ -51,7 +51,6 @@ scenarios: ["AI/ML项目"]
 ---
 ## 评论
 
-### 评价对象：OpenAI官方技术博客《Keeping your data safe when an AI agent clicks a link》
 
 #### 一、 核心观点与支撑逻辑
 

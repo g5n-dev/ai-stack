@@ -99,7 +99,6 @@ def generate_code(prompt: str, model: str = "gpt-3.5-turbo") -> str:
         response = openai.ChatCompletion.create(
             model=model,
             messages=[
-                {"role": "system", "content": "你是一个专业的代码生成助手，只输出代码，不要解释。"},
                 {"role": "user", "content": f"请用Python实现以下功能：{prompt}"}
             ],
             temperature=0.3,  # 降低随机性，使输出更确定

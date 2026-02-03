@@ -475,7 +475,6 @@ data = [
     {"id": 2, "content": "文档2", "owner": "current_user"},
     {"id": 3, "content": "文档3", "owner": "user2"}
 ]
-print(filter_by_permission(data, "user"))  # 只返回owner为current_user的数据
 ```
 
 

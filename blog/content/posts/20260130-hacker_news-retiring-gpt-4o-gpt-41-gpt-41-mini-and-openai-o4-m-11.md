@@ -31,7 +31,6 @@ scenarios: ["AI/ML项目"]
 ---
 ## 评论
 
-### 评价对象：OpenAI 官方博客《Retiring GPT-4o, GPT-4.1, GPT-4.1 mini, and OpenAI o4-mini in ChatGPT》
 
 **文章中心观点**
 OpenAI 正通过强制退役旧模型（GPT-4o/4.1系列及o4-mini）并引导用户迁移至 GPT-4o-mini 及最新推理模型，以实现算力资源的集约化利用，并推动用户全面拥抱“推理优先”的新一代 AI 范式。

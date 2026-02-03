@@ -31,8 +31,6 @@ scenarios: ["AI/ML项目", "大语言模型"]
 ---
 ## 评论
 
-**评价对象：** Kimi K2.5 Technical Report (Moonshot AI)
-**评价视角：** 技术架构与行业竞争格局
 
 ### 一、 核心论点与结构分析
 

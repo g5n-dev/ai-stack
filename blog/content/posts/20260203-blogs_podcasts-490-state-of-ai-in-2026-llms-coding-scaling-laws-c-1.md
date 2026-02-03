@@ -321,8 +321,6 @@ Nathan Lambert和Sebastian Raschka试图传达的核心思想是：**“缩放�
 ### 相关文章
 
 - [2026年AI展望：LLM、智能体、缩放定律与中国发展]({{< relref "posts/20260201-blogs_podcasts-490-state-of-ai-in-2026-llms-coding-scaling-laws-c-0.md" >}})
-- [2026年AI展望：LLM、智能体、算力与Scaling Laws]({{< relref "posts/20260202-blogs_podcasts-490-state-of-ai-in-2026-llms-coding-scaling-laws-c-1.md" >}})
 - [2026年AI展望：LLM、智能体、扩展定律与中国角色]({{< relref "posts/20260202-blogs_podcasts-490-state-of-ai-in-2026-llms-coding-scaling-laws-c-0.md" >}})
-- [2026年AI展望：LLM、智能体、算力与Scaling Laws]({{< relref "posts/20260202-blogs_podcasts-490-state-of-ai-in-2026-llms-coding-scaling-laws-c-2.md" >}})
-- [让 Claude 编写 CUDA 内核并指导开源模型]({{< relref "posts/20260129-blogs_podcasts-we-got-claude-to-build-cuda-kernels-and-teach-open-7.md" >}})
+- [2026年AI展望：LLM、智能体、算力与Scaling Laws]({{< relref "posts/20260202-blogs_podcasts-490-state-of-ai-in-2026-llms-coding-scaling-laws-c-1.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

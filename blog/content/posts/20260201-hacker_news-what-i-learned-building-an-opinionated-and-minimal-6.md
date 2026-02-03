@@ -31,7 +31,6 @@ scenarios: ["AI/ML项目", "大语言模型"]
 ---
 ## 评论
 
-### 评价对象：文章《What I learned building an opinionated and minimal coding agent》
 
 #### 1. 中心观点
 构建一个“固执己见”且“极简”的编码代理，通过限制上下文窗口和强制执行严格的开发范式，比试图构建通用型全能代理更能解决实际的软件工程问题。

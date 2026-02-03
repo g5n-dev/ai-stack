@@ -31,7 +31,6 @@ scenarios: ["AI/ML项目"]
 ---
 ## 评论
 
-### 评价对象：Project Genie: Experimenting with infinite, interactive worlds
 
 **中心观点：**
 文章提出了一个将大型语言模型（LLM）与程序化生成技术深度融合的实验性框架，旨在通过概率性推理突破传统游戏脚本的非线性叙事瓶颈，构建具有持久记忆与动态演化的无限交互世界，标志着游戏AI从“反应式工具”向“生成式导演”的范式转变。

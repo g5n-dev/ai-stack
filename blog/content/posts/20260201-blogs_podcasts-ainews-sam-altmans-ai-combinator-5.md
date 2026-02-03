@@ -34,7 +34,6 @@ scenarios: ["AI/ML项目"]
 ---
 ## 评论
 
-### 评价对象：[AINews] Sam Altman's AI Combinator
 
 **一句话中心观点：**
 该文章将 Sam Altman 的内部讲话解读为 OpenAI 战略重心的转移——即从单纯的模型研发转向通过“AI Combinator”模式直接赋能应用层，试图在模型能力趋同的背景下，重新定义 AI 时代的创业孵化规则。

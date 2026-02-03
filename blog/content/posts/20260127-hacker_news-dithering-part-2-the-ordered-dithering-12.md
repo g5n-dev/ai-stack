@@ -61,7 +61,6 @@ external_url: https://visualrambling.space/dithering-part-2
 ---
 ## 🎯 深度评价
 
-**评价对象**：*Dithering – Part 2: The Ordered Dithering*（基于对该类技术文章的一般性分析，假设该文主要阐述了 Bayer 矩阵等有序抖动算法的原理与应用）。
 
 ---
 

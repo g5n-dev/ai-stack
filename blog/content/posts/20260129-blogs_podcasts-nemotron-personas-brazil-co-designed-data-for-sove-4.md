@@ -57,7 +57,6 @@ Nemotron-Personas-Brazil 不仅是一个技术成果，更是“主权 AI”理�
 ---
 ## 评论
 
-### 评价对象：Nemotron-Personas-Brazil: Co-Designed Data for Sovereign AI
 
 #### 一、 核心观点与结构分析
 

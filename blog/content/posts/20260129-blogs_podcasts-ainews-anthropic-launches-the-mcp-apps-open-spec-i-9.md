@@ -38,7 +38,6 @@ Anthropic 在 Claude.ai 平台上推出了 **MCP Apps 开放规范**。这一举
 ---
 ## 评论
 
-**评价对象：** [AINews] Anthropic launches the MCP Apps open spec, in Claude.ai
 **核心论点：** Anthropic 通过推出 MCP Apps 开放规范，试图将生成式 AI 的交互模式从单纯的“对话框”升级为标准化的“动态 UI 控制层”，以此确立 Claude 在 AI Agent 工作流中的生态主导权。
 
 以下是技术与行业视角的深入评价：

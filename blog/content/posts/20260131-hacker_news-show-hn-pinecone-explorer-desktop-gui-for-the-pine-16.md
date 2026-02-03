@@ -31,8 +31,6 @@ Pinecone Explorer 是一款专为 Pinecone 向量数据库设计的桌面 GUI �
 ---
 ## 评论
 
-**评价对象：** Show HN: Pinecone Explorer – Desktop GUI for the Pinecone vector database
-**评价视角：** 工程化落地与开发体验
 
 ### 一、 核心观点与结构化分析
 

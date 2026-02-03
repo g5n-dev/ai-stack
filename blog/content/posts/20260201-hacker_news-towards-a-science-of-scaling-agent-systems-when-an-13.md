@@ -31,7 +31,6 @@ scenarios: ["大语言模型", "AI/ML项目"]
 ---
 ## 评论
 
-### 评价对象：文章《Towards a science of scaling agent systems: When and why agent systems work》
 
 #### 一、 核心观点与论证结构
 

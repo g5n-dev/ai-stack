@@ -31,7 +31,6 @@ scenarios: ["AI/ML项目", "大语言模型"]
 ---
 ## 评论
 
-**评价对象：** 文章《Generative AI and Wikipedia editing: What we learned in 2025》（注：基于标题进行模拟深度评价，假设该文章讨论了2025年生成式AI大规模介入维基百科编辑后的现状、挑战与解决方案）。
 
 ### 一、 核心观点与结构化分析
 

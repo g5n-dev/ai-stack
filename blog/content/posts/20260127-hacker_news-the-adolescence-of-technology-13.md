@@ -49,7 +49,6 @@ external_url: https://www.darioamodei.com/essay/the-adolescence-of-technology
 
 为了能为您准确地总结全文，**请您将需要总结的具体内容复制并发送给我**。
 
-一旦收到内容，我会立刻根据您的要求，用中文为您提供一份简洁的总结（字数控制在800字以内）。
 
 ---
 

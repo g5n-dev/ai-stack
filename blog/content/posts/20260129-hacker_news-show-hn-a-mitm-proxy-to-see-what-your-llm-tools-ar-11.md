@@ -185,7 +185,6 @@ class ProxyRequestHandler(BaseHTTPRequestHandler):
                 print(body.decode('utf-8', errors='replace'))
         
         # 这里应该实际转发请求到目标服务器
-        # 为简化示例，我们只返回一个模拟响应
         self.send_response(200)
         self.send_header('Content-type', 'application/json')
         self.end_headers()

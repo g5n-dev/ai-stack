@@ -31,8 +31,6 @@ scenarios: ["AI/ML项目"]
 ---
 ## 评论
 
-**评价对象：** Project Genie: Experimenting with infinite, interactive worlds
-**评价视角：** 技术架构与游戏行业趋势
 
 ### 一、 核心观点提炼
 

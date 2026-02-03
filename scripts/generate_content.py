@@ -31,6 +31,138 @@ logger = logging.getLogger(__name__)
 _RELREF_RE = re.compile(r"""\{\{[<%]\s*relref\s+(['"])(.+?)\1\s*[>%]\}\}""")
 _TAXONOMY_MD_LINK_RE = re.compile(r"""\[([^\]]+)\]\(/(tags|categories|scenarios)/([^)]+?)\)""")
 
+_PROMPT_LEAK_KEYWORDS = [
+    "评价对象",
+    "评价视角",
+    "字数控制",
+    "输出要求",
+    "结构要求",
+    "格式要求",
+    "写作要求",
+    "使用markdown格式组织内容",
+    "只输出 JSON",
+    "只输出json",
+    "只返回",
+    "不要其他内容",
+    "不要emoji",
+    "不要 emoji",
+]
+
+_PROMPT_LEAK_LINE_RE = re.compile(
+    r"^\s*(?:[-*•]\s*)?(?:\*\*)?"
+    r"(评价对象|评价视角|字数控制|输出要求|结构要求|格式要求|写作要求)"
+    r"(?:\*\*)?\s*[:：]\s*.+$"
+)
+
+
+def _looks_like_prompt_leak_line(line: str) -> bool:
+    s = str(line or "").strip()
+    if not s:
+        return False
+    high_signal = [
+        "我们被要求",
+        "我们需要生成",
+        "我们需要按照格式输出",
+        "但我们没有实际的内容",
+        "用户忘记",
+        "作为助手",
+    ]
+    if any(k in s for k in high_signal):
+        return True
+    if len(s) > 260:
+        return False
+    if _PROMPT_LEAK_LINE_RE.match(s):
+        return True
+    lowered = s.lower()
+    if "使用markdown格式组织内容" in s:
+        return True
+    if ("只输出" in s and "json" in lowered) or ("不要其他内容" in s):
+        return True
+    if "只返回" in s and (("内容" in s) or ("案例" in s) or ("json" in lowered)):
+        return True
+    if ("不要" in s) and (("emoji" in lowered) or ("其他内容" in s) or ("解释" in s)):
+        return True
+    if ("控制在" in s and "字" in s) and ("以内" in s or "左右" in s) and len(s) <= 60:
+        return True
+    return any(k in s for k in _PROMPT_LEAK_KEYWORDS)
+
+
+def sanitize_prompt_leaks_in_markdown_text(*, text: str) -> tuple[str, int]:
+    if not text:
+        return text, 0
+
+    removed = 0
+    out_lines: list[str] = []
+    in_frontmatter = False
+    frontmatter_done = False
+    in_code_fence = False
+
+    lines = text.splitlines()
+    for idx, line in enumerate(lines):
+        stripped = line.strip()
+
+        if idx == 0 and stripped == "---":
+            in_frontmatter = True
+            out_lines.append(line)
+            continue
+
+        if in_frontmatter:
+            out_lines.append(line)
+            if stripped == "---":
+                in_frontmatter = False
+                frontmatter_done = True
+            continue
+
+        if stripped.startswith("```"):
+            in_code_fence = not in_code_fence
+            out_lines.append(line)
+            continue
+
+        if not frontmatter_done:
+            out_lines.append(line)
+            continue
+
+        if _looks_like_prompt_leak_line(line):
+            removed += 1
+            continue
+
+        out_lines.append(line)
+
+    out = "\n".join(out_lines)
+    if text.endswith("\n") and not out.endswith("\n"):
+        out += "\n"
+    return out, removed
+
+
+def sanitize_prompt_leaks_in_posts(*, posts_dir: Path) -> tuple[int, int]:
+    changed_files = 0
+    removed_lines_total = 0
+
+    try:
+        paths = sorted(posts_dir.glob("*.md"))
+    except Exception:
+        return 0, 0
+
+    for path in paths:
+        try:
+            original = path.read_text(encoding="utf-8")
+        except Exception:
+            continue
+
+        sanitized, removed = sanitize_prompt_leaks_in_markdown_text(text=original)
+        if removed <= 0:
+            continue
+
+        try:
+            path.write_text(sanitized, encoding="utf-8")
+        except Exception:
+            continue
+
+        changed_files += 1
+        removed_lines_total += removed
+
+    return changed_files, removed_lines_total
+
 
 def _relref_target_exists(*, content_root: Path, target: str) -> bool:
     raw = str(target or "").strip().strip('"').strip("'").strip()
@@ -249,6 +381,9 @@ class SuperEnhancedContentGenerator:
                 changed_files, changed_links = sanitize_taxonomy_links_in_posts(posts_dir=self.posts_dir)
                 if changed_files > 0:
                     logger.info(f"✓ Sanitized taxonomy links: files={changed_files} links_fixed={changed_links}")
+                changed_files, removed_lines = sanitize_prompt_leaks_in_posts(posts_dir=self.posts_dir)
+                if changed_files > 0:
+                    logger.info(f"✓ Sanitized prompt leaks: files={changed_files} lines_removed={removed_lines}")
 
             # 4. 推送内容
             logger.info("\n[4/4] Publishing to social platforms...")
@@ -317,6 +452,14 @@ class SuperEnhancedContentGenerator:
             "我无法从",
             "无法从提供",
             "鉴于您提供",
+            "评价对象",
+            "评价视角",
+            "字数控制",
+            "输出要求",
+            "结构要求",
+            "格式要求",
+            "写作要求",
+            "使用markdown格式组织内容",
         ]
         return any(w in t for w in banned)
 
@@ -1752,6 +1895,11 @@ def main():
             logger.info(f"✓ Sanitized taxonomy links: files={changed_files} links_fixed={changed_links}")
         else:
             logger.info("✓ Taxonomy links OK")
+        changed_files, removed_lines = sanitize_prompt_leaks_in_posts(posts_dir=posts_dir)
+        if changed_files > 0:
+            logger.info(f"✓ Sanitized prompt leaks: files={changed_files} lines_removed={removed_lines}")
+        else:
+            logger.info("✓ Prompt leaks OK")
         return 0
 
     generator = SuperEnhancedContentGenerator(dedupe=not args.no_dedupe, dedupe_scope=args.dedupe_scope)

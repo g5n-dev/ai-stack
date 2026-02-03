@@ -31,7 +31,6 @@ scenarios: ["大语言模型"]
 ---
 ## 评论
 
-**评价对象**：Kimi k1.5 Technical Report（Moonshot AI）
 **评价维度**：技术深度、行业影响、实用价值与创新性
 
 ### 一、 核心观点与论证逻辑

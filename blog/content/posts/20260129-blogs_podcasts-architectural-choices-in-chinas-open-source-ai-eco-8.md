@@ -29,7 +29,6 @@ scenarios: ["AI/ML项目", "大语言模型"]
 ---
 ## 评论
 
-### 评价对象：文章《Architectural Choices in China's Open-Source AI Ecosystem: Building Beyond DeepSeek》
 
 *(注：由于您未提供文章正文，以下评价基于该标题通常隐含的行业语境——即“DeepSeek作为现象级开源模型后，中国AI生态的架构选择与差异化路径”进行模拟深度评价。)*
 

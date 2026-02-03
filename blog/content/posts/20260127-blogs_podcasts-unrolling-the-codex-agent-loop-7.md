@@ -171,7 +171,6 @@ Codex CLI 利用 OpenAI 的 Responses API 作为连接用户与模型的骨干�
 ### ⚙️ 技术原理与实现方式
 文章描述的 Codex Loop 本质上是一个 **ReAct（Reasoning + Acting）** 模式的实现：
 
-1.  **Prompt 构造：** 系统提示词被设计为包含工具定义（如 Bash 环境）和格式要求。
 2.  **模型决策：** LLM 根据用户输入，决定是生成代码还是调用工具。
 3.  **工具执行：** Codex CLI 拦截 LLM 的输出，识别出需要运行的命令（如 Python 脚本），在本地 Shell 中执行。
 4.  **结果捕获：** Shell 的输出（无论是结果还是 Error Trace）被捕获。

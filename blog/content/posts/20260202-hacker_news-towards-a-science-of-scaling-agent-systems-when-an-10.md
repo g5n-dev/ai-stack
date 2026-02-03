@@ -31,7 +31,6 @@ scenarios: ["大语言模型", "AI/ML项目"]
 ---
 ## 评论
 
-**评价对象：** 《Towards a science of scaling agent systems: When and why agent systems work》（注：基于标题及当前AI领域关于Agent系统的主流讨论趋势进行深度评价，假定文章核心在于探讨多智能体系统的规模化效应、涌现能力及其工程化边界。）
 
 ### 一、 核心观点与论证结构
 

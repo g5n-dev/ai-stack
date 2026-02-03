@@ -193,7 +193,6 @@ Sources: [package/base-files/files/bin/config_generate486-527](https://github.co
 ---
 ## 🎯 深度评价
 
-### 评价对象：coolsnowwolf/lede (Lean's LEDE source)
 
 这是一份基于技术哲学与工程实用主义的双重评价。该仓库是 OpenWrt 社区中最著名的“非官方”衍生项目之一，俗称“Lean 大佬”源。
 

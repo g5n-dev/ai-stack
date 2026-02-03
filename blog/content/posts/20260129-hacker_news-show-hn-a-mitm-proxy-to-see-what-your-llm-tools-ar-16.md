@@ -31,7 +31,6 @@ scenarios: ["大语言模型"]
 ---
 ## 评论
 
-### 评价对象：Show HN: A MitM proxy to see what your LLM tools are sending
 
 **一句话总结中心观点：**
 该文章展示了一个中间人代理工具，旨在通过拦截网络流量来揭示LLM应用程序在后台实际发送的数据内容，从而解决AI工具使用中的“黑盒”透明度问题。

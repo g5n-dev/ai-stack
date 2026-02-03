@@ -26,7 +26,6 @@ external_url: https://rendiment.io/postgresql/2026/01/21/pgtrgm-pgvector-music.h
 
 这是一篇为你量身定制的引言，旨在瞬间抓住读者的眼球：
 
-想象一下，用户在数据库里搜索 **"Beatles abbey rd"**，满心期待能听到那张传奇专辑的旋律 🎸。然而，数据库冷冰冰地甩给他一个错误：`Syntax Error`，或者更糟——只返回了关于 "Abbey"（修道院）的建筑结构文档，完全忽略了 "Beatles" 的灵魂。😱
 
 在这个 AI 飞速发展的时代，为什么我们的数据库依然像只会死记硬背的“书呆子”，听不懂人类的“言外之意”？
 

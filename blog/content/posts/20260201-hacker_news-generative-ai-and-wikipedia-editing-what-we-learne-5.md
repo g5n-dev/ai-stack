@@ -31,7 +31,6 @@ scenarios: ["AI/ML项目", "大语言模型"]
 ---
 ## 评论
 
-**评价对象：** 《Generative AI and Wikipedia editing: What we learned in 2025》
 **（注：由于您未提供原文正文，以下评价基于该标题所隐含的2025年技术语境、维基百科当前的AI治理现状以及生成式AI发展的必然趋势进行模拟分析与评价。）**
 
 ### 一、 核心观点与逻辑架构

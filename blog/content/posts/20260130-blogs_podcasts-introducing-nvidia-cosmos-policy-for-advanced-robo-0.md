@@ -29,7 +29,6 @@ scenarios: ["Web应用开发"]
 ---
 ## 评论
 
-### 评价对象：NVIDIA Cosmos Policy for Advanced Robot Control
 
 #### 1. 中心观点
 **[你的推断]** 该文章的核心观点是：通过引入基于通用世界基础模型的“Cosmos Policy”策略，NVIDIA 旨在将具身智能的控制范式从传统的单一任务训练转变为基于海量视频数据预训练的“通用泛化”模式，从而解决机器人长尾场景适应性差和样本效率低的痛点。

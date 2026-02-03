@@ -49,7 +49,6 @@ external_url: https://stratechery.com/2026/tsmc-risk
 
 ---
 
-### 评价对象：典型《TSMC Risk》类深度报告
 **（基于行业共识构建的靶心分析）**
 
 #### 🎯 核心逻辑重构
