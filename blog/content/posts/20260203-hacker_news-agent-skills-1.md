@@ -1,84 +1,75 @@
 ---
-title: "Agent Skills：大模型智能体技能框架"
-date: 2026-02-03T17:31:27+08:00
+title: "Agent Skills：AI 智能体技能框架"
+date: 2026-02-03T18:30:02+08:00
 draft: false
 entry_kind: "auto"
-tags: ["Agent", "智能体", "技能框架", "LLM", "AI Agent", "Agent Skills", "大模型", "框架设计"]
+tags: ["Agent", "智能体", "Agent Skills", "框架", "LLM", "AI", "工具调用", "自动化"]
 categories: ["大模型", "AI 工程"]
 source: hacker_news
-description: "随着大模型应用从单一对话向复杂任务演进，Agent Skills（智能体技能）正成为连接模型能力与实际业务场景的关键环节。它定义了智能体如何调用工具、规划步骤并处理多模态信息，直接决定了自动化流程的可靠性与上限。本文将解析 Agent Skills 的核心架构与实现路径，帮助你掌握构建高可用智能体的关键技术。"
+description: "Agent Skills 正在成为大模型应用落地的关键技术，它决定了智能体在复杂任务中的执行精度与可靠性。本文将系统梳理 Agent Skills 的核心概念、技术架构及主流实现路径，帮助开发者掌握如何为智能体赋予特定领域能力。通过解析设计原则与实战案例，你将学会如何构建可扩展、高可控的技能体系，从而在实际业务中提升"
 external_url: https://agentskills.io/home
 scenarios: ["大语言模型", "AI/ML项目"]
 ---
 
-# Agent Skills：大模型智能体技能框架
+# Agent Skills：AI 智能体技能框架
 
 ---
 
 ## 基本信息
 
 - **作者**: mooreds
-- **评分**: 166
-- **评论数**: 126
+- **评分**: 213
+- **评论数**: 141
 - **链接**: [https://agentskills.io/home](https://agentskills.io/home)
 - **HN 讨论**: [https://news.ycombinator.com/item?id=46871173](https://news.ycombinator.com/item?id=46871173)
 
 ---
 ## 导语
 
-随着大模型应用从单一对话向复杂任务演进，Agent Skills（智能体技能）正成为连接模型能力与实际业务场景的关键环节。它定义了智能体如何调用工具、规划步骤并处理多模态信息，直接决定了自动化流程的可靠性与上限。本文将解析 Agent Skills 的核心架构与实现路径，帮助你掌握构建高可用智能体的关键技术。
+Agent Skills 正在成为大模型应用落地的关键技术，它决定了智能体在复杂任务中的执行精度与可靠性。本文将系统梳理 Agent Skills 的核心概念、技术架构及主流实现路径，帮助开发者掌握如何为智能体赋予特定领域能力。通过解析设计原则与实战案例，你将学会如何构建可扩展、高可控的技能体系，从而在实际业务中提升 AI 系统的交付质量。
 
 ---
 ## 评论
 
-### 评价对象：文章《Agent Skills》（基于摘要及行业通用语境的深度评价）
+### 深度评论
 
-由于您未提供具体的文章正文，以下评价基于《Agent Skills》这一主题在当前AI Agent（智能体）领域的典型技术语境与行业共识进行构建。该评价假定文章核心围绕“如何定义、评估及提升大模型Agent的特定技能”展开。
-
-#### 一、 核心观点与论证结构
-
-**中心观点：**
-**Agent 的核心竞争力已从通用的语言理解能力（IQ）转向特定任务领域的执行技能，且这些技能具备可组合、可量化及通过特定数据飞进化的特征。**
+**文章中心观点：**
+构建高性能AI Agent的核心不在于模型参数规模的无限堆叠，而在于通过精细化的**技能解构、模块化设计以及针对特定技能的强化训练**，实现模型在复杂任务中的可控性与泛化能力。
 
 **支撑理由：**
-1.  **（事实陈述）** 模型架构同质化：随着基座模型能力趋于饱和，单纯的参数规模提升对复杂任务成功率的边际效应递减，差异化的“Skills”成为决定Agent表现的关键变量。
-2.  **（作者观点）** 技能的原子化与组合：高级任务（如“独立开发一个网页”）应被拆解为基础技能（如“文件操作”、“代码调试”、“搜索验证”）的有序组合，而非依赖模型的端到端涌现。
-3.  **（你的推断）** 数据闭环的必要性：特定技能的熟练度高度依赖于“过程监督数据”，而非传统的“结果监督数据”，这意味着行业数据采集重心将从“高质量问答”向“高质量轨迹”转移。
+1.  **复杂系统的可组合性：** 单一模型难以同时完美兼顾代码生成、长对话记忆和多步推理。通过将“Agent”拆解为独立的Skill Modules（如搜索技能、解析技能），可以利用“分而治之”的策略降低系统调试难度，提高单一环节的鲁棒性。
+2.  **数据飞轮的专精效应：** 针对特定技能（如RAG检索增强）进行微调或Prompt优化，其数据利用效率远高于通用预训练。结构化的Skill定义能更有效地收集高质量反馈数据。
+3.  **推理与执行的解耦：** 大模型存在“幻觉”问题，将规划层与执行层的技能解耦，允许在执行环节挂载确定性工具或经过微调的小模型，从而在不牺牲创造力的前提下提升落地可靠性。
 
 **反例/边界条件：**
-1.  **（边界条件）** 泛化与专精的悖论：过度训练特定技能可能导致模型的“灾难性遗忘”，使其在通用任务上的表现下降，或者导致Agent缺乏跨域迁移能力。
-2.  **（反例）** 涌现能力不可拆解：某些复杂的推理能力或创造性任务可能无法通过简单的技能堆叠实现，依然依赖于模型底层的隐式世界模型，而非显式的技能调用。
+1.  **端到端的学习潜力：** OpenAI o1模型展示出，通过强化学习和思维链，模型可以内化工具使用能力，无需显式的API调用接口。这表明随着基座模型智力提升，显式的“技能定义”可能会被隐式的“通用推理能力”所吞噬。
+2.  **上下文学习的成本：** 在极度依赖Prompt Engineering来定义技能的场景下，Token消耗会随着任务复杂度线性甚至指数级增长，导致系统在低延迟要求的实时场景中失效。
 
 ---
 
-#### 二、 多维度深入评价
+#### 1. 内容深度与严谨性
+从技术角度看，关于Agent Skills的讨论如果仅停留在“Prompt模板”层面，则深度不足；若涉及**神经符号结合**，则具备较高价值。
+*   **论证严谨性：** 目前行业对“技能”的定义尚无统一标准（是SOP流程？还是微调后的权重？）。文章若能区分“显式技能”和“隐式能力”，并论证在不同成本约束下的取舍，则具备学术严谨性。
+*   **缺失点：** 许多文章忽略了技能间的**冲突**。例如，“创造性写作”技能与“严谨代码生成”技能在底层概率分布上可能存在冲突，简单的技能叠加可能导致模型性能下降，而非预期的“1+1>2”。
 
-**1. 内容深度：从“黑盒”到“白盒”的尝试**
-*   **评价：** 如果文章深入探讨了技能的内部表征（例如，是SFT指令、Tool Call能力，还是MoE路由机制），则具有极高的技术深度。目前行业痛点在于，Agent往往在简单任务上表现优异，但在长链路任务中容易中断。
-*   **批判性视角：** 许多关于Agent Skills的文章容易陷入“列举清单”的浅层陷阱。真正的深度应当探讨**技能之间的冲突**（例如：创造性写作 vs. 严谨性编程）以及**技能调用的优先级仲裁机制**。如果文章仅停留在“我们要培养更多技能”，则缺乏对多智能体协作中冲突管理的讨论。
+#### 2. 实用价值与指导意义
+*   **工程化落地：** 对于企业级应用，“Agent Skills”理念极具价值。它允许工程团队将非标需求转化为标准的“技能卡片”。例如，在客服Agent中，将“退款政策查询”封装为独立技能，可以独立更新知识库而不影响模型的其他对话能力。
+*   **评估体系：** 文章若能提出针对单一技能的评估指标（如“工具调用准确率”而非笼统的“任务成功率”），将极大降低MLOps的门槛。
 
-**2. 实用价值：工程化落地的指南针**
-*   **评价：** 对开发者而言，将“Agent能力”拆解为“Skills”具有极高的工程指导意义。它允许团队采用模块化思维开发，将复杂的Prompt工程或微调任务解耦。
-*   **实际案例：** 以RAG（检索增强生成）为例，早期的RAG是通用技能，现在的Agent需要具备“根据问题类型选择不同检索策略”的元技能。文章若能提供一套技能评估标准（如：成功率、耗时、Token消耗），将直接指导企业的LLM Ops建设。
+#### 3. 创新性
+*   **新观点：** 如果文章提出了**“动态技能路由”**机制，即根据用户Query动态决定激活哪些Skill，这是对传统LangChain Chain结构的超越。
+*   **方法论：** 从“Hard-coding Tools”转向“Soft-skilled Prompts”或“Skill Fine-tuning”，代表了从Rule-based向Learning-based的范式转移。
 
-**3. 创新性：重构AI评价体系**
-*   **评价：** 传统的MMLU或C-Eval榜单正在失效。提出“Agent Skills”这一概念，本质上是在呼吁建立基于**任务完成度**而非**知识准确度**的新评价体系。
-*   **你的推断：** 最具创新性的观点应当是**“技能即数据”**。即未来的Agent开发不再是训练一个大模型，而是通过特定的Skill Adapter（技能适配器）快速挂载能力。如果文章提出了类似“Skill LoRA”或“Dynamic Skill Loading”的架构，则具备极高的前瞻性。
+#### 4. 行业影响与争议
+*   **争议点：Agent vs. Skill。**
+    *   **流派A：** 认为Agent是通用大脑，Skill只是外挂工具。
+    *   **流派B：** 认为Agent本质上是Skill的编排器。
+    *   随着GPT-4o等多模态原生模型的出现，许多原本需要独立技能的功能（如OCR、语音转文字）被基座模型内化。行业面临的最大挑战是：**哪些技能值得独立开发？哪些会被基座模型“降维打击”？**
 
-**4. 可读性与逻辑性**
-*   **评价：** 该类文章通常面临技术术语堆砌的问题。优秀的文章应当使用“驾驶”与“汽车部件”的类比来解释基座模型与技能的关系。
-*   **逻辑缺陷预警：** 需警惕循环论证——即“Agent能做好的事就是Skill，做不好的就是缺乏Skill”。这种定义无法指导实践。逻辑闭环必须包含：技能定义 -> 训练方法 -> 评估指标 -> 边界分析。
-
-**5. 行业影响：推动垂直领域Agent爆发**
-*   **评价：** 这一观点将加速AI行业从“通用大模型”向“垂直Agent”转型。行业将不再盲目追求万亿参数模型，而是追求在特定技能上达到专家级的“小而美”模型或智能体。
-*   **潜在影响：** 可能催生“技能交易市场”，即不同公司开发特定的Agent Skill并进行API级别的组合。
-
-**6. 争议点与不同观点**
-*   **争议点：** **System 1 vs. System 2（快思考与慢思考）**。部分学者认为Agent不需要预设的“Skills”，而应通过强化学习让模型在交互中自发习得策略。预设技能可能限制了模型的上限。
-*   **不同观点：** 端到端主义者认为，只要模型足够大、Context（上下文）足够长，通过Chain-of-Thought（思维链）推理即可覆盖所有技能，无需显式的技能模块化设计。
-
-**7. 实际应用建议**
-*   **建议：** 不要试图构建全能Agent。企业应采用“基座模型 + 技能库 + 路由层”的架构。重点投入在**高质量轨迹数据**的
+#### 5. 实际应用建议
+基于该主题，建议采取以下策略：
+1.  **原子化封装：** 将Skill设计为输入输出标准化的原子服务，便于复用和A/B测试。
+2.  **分层训练：** 基座模型负责通识，小模型（7B-13B）负责垂直领域的特定技能。
 
 ---
 ## 代码示例
@@ -87,205 +78,210 @@ scenarios: ["大语言模型", "AI/ML项目"]
 
 
 ```python
-# 示例1：Hacker News 热门文章抓取器
+# 示例1：Hacker News热门内容获取器
 import requests
-from bs4 import BeautifulSoup
+from datetime import datetime
 
-def fetch_hacker_news_top_stories(limit=5):
+def get_hn_top_stories(limit=5):
     """
-    获取Hacker News首页热门文章标题和链接
-    :param limit: 获取的文章数量，默认5篇
-    :return: 包含标题和链接的字典列表
+    获取Hacker News当前热门内容
+    :param limit: 获取条数，默认5条
+    :return: 格式化后的新闻列表
     """
-    url = "https://news.ycombinator.com/news"
-    headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
-    }
-    
+    # 获取热门故事ID列表
+    url = "https://hacker-news.firebaseio.com/v0/topstories.json"
     try:
-        response = requests.get(url, headers=headers)
-        response.raise_for_status()
-        soup = BeautifulSoup(response.text, 'html.parser')
+        response = requests.get(url)
+        story_ids = response.json()[:limit]
         
         stories = []
-        articles = soup.find_all('tr', class_='athing')[:limit]
-        
-        for article in articles:
-            title_elem = article.find('span', class_='titleline').find('a')
-            title = title_elem.text
-            link = title_elem.get('href')
-            stories.append({'title': title, 'link': link})
+        for story_id in story_ids:
+            # 获取每个故事的详细信息
+            story_url = f"https://hacker-news.firebaseio.com/v0/item/{story_id}.json"
+            story_data = requests.get(story_url).json()
             
+            # 提取关键信息
+            stories.append({
+                "标题": story_data.get("title", "无标题"),
+                "链接": story_data.get("url", f"https://news.ycombinator.com/item?id={story_id}"),
+                "分数": story_data.get("score", 0),
+                "评论数": story_data.get("descendants", 0),
+                "时间": datetime.fromtimestamp(story_data.get("time", 0)).strftime("%Y-%m-%d %H:%M")
+            })
+        
         return stories
     except Exception as e:
-        print(f"抓取失败: {str(e)}")
+        print(f"获取失败: {str(e)}")
         return []
 
 # 使用示例
 if __name__ == "__main__":
-    top_stories = fetch_hacker_news_top_stories()
+    top_stories = get_hn_top_stories(3)
     for idx, story in enumerate(top_stories, 1):
-        print(f"{idx}. {story['title']}\n   {story['link']}\n")
+        print(f"\n【热门 {idx}】")
+        print(f"标题: {story['标题']}")
+        print(f"链接: {story['链接']}")
+        print(f"分数: {story['分数']} | 评论: {story['评论数']}")
+        print(f"时间: {story['时间']}")
 ```
 
 
 
 
 ```python
-# 示例2：Hacker News 关键词搜索工具
+# 示例2：Hacker News评论情感分析器
 import requests
-from datetime import datetime, timedelta
+from textblob import TextBlob
 
-def search_hacker_news(keyword, days_back=7):
+def analyze_hn_comments(story_id):
     """
-    在Hacker News上搜索指定关键词的最近文章
-    :param keyword: 搜索关键词
-    :param days_back: 搜索最近几天的文章，默认7天
-    :return: 匹配的文章列表
+    分析Hacker News指定故事下的评论情感
+    :param story_id: 故事ID
+    :return: 情感分析结果
     """
-    base_url = "https://hn.algolia.com/api/v1/search"
-    params = {
-        'query': keyword,
-        'tags': 'story',
-        'numericFilters': f'created_at_i>{int((datetime.now() - timedelta(days=days_back)).timestamp())}',
-        'hitsPerPage': 20
-    }
-    
+    # 获取故事的评论ID列表
+    url = f"https://hacker-news.firebaseio.com/v0/item/{story_id}.json"
     try:
-        response = requests.get(base_url, params=params)
-        response.raise_for_status()
-        data = response.json()
+        story_data = requests.get(url).json()
+        comment_ids = story_data.get("kids", [])
         
-        results = []
-        for hit in data['hits']:
-            results.append({
-                'title': hit['title'],
-                'url': hit.get('url', f"https://news.ycombinator.com/item?id={hit['objectID']}"),
-                'points': hit['points'],
-                'comments': hit['num_comments'],
-                'date': datetime.fromtimestamp(hit['created_at_i']).strftime('%Y-%m-%d %H:%M')
-            })
+        positive = 0
+        negative = 0
+        neutral = 0
+        
+        for comment_id in comment_ids[:10]:  # 分析前10条评论
+            comment_url = f"https://hacker-news.firebaseio.com/v0/item/{comment_id}.json"
+            comment_data = requests.get(comment_url).json()
+            text = comment_data.get("text", "")
             
-        return results
+            if text:
+                # 使用TextBlob进行情感分析
+                analysis = TextBlob(text)
+                polarity = analysis.sentiment.polarity
+                
+                if polarity > 0.1:
+                    positive += 1
+                elif polarity < -0.1:
+                    negative += 1
+                else:
+                    neutral += 1
+        
+        return {
+            "故事标题": story_data.get("title", ""),
+            "积极评论": positive,
+            "消极评论": negative,
+            "中性评论": neutral,
+            "总评论数": len(comment_ids)
+        }
     except Exception as e:
-        print(f"搜索失败: {str(e)}")
-        return []
+        print(f"分析失败: {str(e)}")
+        return {}
 
 # 使用示例
 if __name__ == "__main__":
-    results = search_hacker_news("python", days_back=3)
-    for idx, item in enumerate(results, 1):
-        print(f"{idx}. {item['title']}\n   分数: {item['points']} | 评论: {item['comments']}\n   链接: {item['url']}\n")
+    # 分析一个热门故事的评论
+    top_stories = requests.get("https://hacker-news.firebaseio.com/v0/topstories.json").json()
+    first_story_id = top_stories[0]
+    result = analyze_hn_comments(first_story_id)
+    
+    print(f"\n【评论分析】{result['故事标题']}")
+    print(f"积极: {result['积极评论']} | 消极: {result['消极评论']} | 中性: {result['中性评论']}")
+    print(f"总评论数: {result['总评论数']}")
 ```
 
 
 
 
 ```python
-# 示例3：Hacker News 数据分析工具
+# 示例3：Hacker News关键词监控器
 import requests
-import pandas as pd
-import matplotlib.pyplot as plt
+from collections import Counter
+import re
 
-def analyze_hacker_news_trends(keyword, days_back=30):
+def monitor_hn_keywords(keywords, limit=10):
     """
-    分析Hacker News上特定关键词的发布趋势
-    :param keyword: 分析的关键词
-    :param days_back: 分析的时间范围(天)，默认30天
-    :return: 包含趋势数据的DataFrame
+    监控Hacker News热门内容中的关键词出现频率
+    :param keywords: 要监控的关键词列表
+    :param limit: 检查的热门故事数量
+    :return: 关键词统计结果
     """
-    base_url = "https://hn.algolia.com/api/v1/search_by_date"
-    params = {
-        'query': keyword,
-        'tags': 'story',
-        'numericFilters': f'created_at_i>{int((datetime.now() - timedelta(days=days_back)).timestamp())}',
-        'hitsPerPage': 1000
-    }
-    
+    # 获取热门故事
+    url = "https://hacker-news.firebaseio.com/v0/topstories.json"
     try:
-        response = requests.get(base_url, params=params)
-        response.raise_for_status()
-        data = response.json()
+        story_ids = requests.get(url).json()[:limit]
         
-        df = pd.DataFrame(data['hits'])
-        df['created_at'] = pd.to_datetime(df['created_at_i'], unit='s')
-        df['date'] = df['created_at'].dt.date
-        daily_counts = df.groupby('date').size().reset_index(name='count')
+        keyword_counter = Counter()
+        matched_stories = []
         
-        # 绘制趋势图
-        plt.figure(figsize=(12, 6))
-        plt.plot(daily_counts['date'], daily_counts['count'], marker='o')
-        plt.title(f'Hacker News上"{keyword}"相关文章发布趋势 (最近{days_back}天)')
-        plt.xlabel('日期')
-        plt.ylabel('文章数量')
-        plt.grid(True)
-        plt.xticks(rotation=45)
-        plt.tight_layout()
-        plt.show()
-        
-        return daily_counts
-    except Exception
+        for story_id in story_ids:
+            story_url = f"https://hacker-news.firebaseio.com/v0/item/{story_id}.json"
+            story_data = requests.get(story_url).json()
+            
+            title = story_data.get("title", "").lower()
+            text = story_data.get("text", "").lower() if story_data.get("text") else ""
+            
+            # 合并
 
 
 ---
 ## 案例研究
 
 
-### 1：Cognition AI (Devin)
+### 1：Cognition AI（Devin）
 
- 1：Cognition AI (Devin)
+ 1：Cognition AI（Devin）
 
 **背景**:
-Cognition AI 是一家专注于应用 AI 的初创公司，致力于通过自主 Agent 重塑软件工程流程。随着软件开发需求的激增，传统的“人类编写代码”模式面临效率和成本的双重挑战。
+Cognition AI 是一家专注于应用 AI 于软件工程领域的初创公司。他们致力于解决编程领域自动化程度低的问题，试图构建一个能够像人类工程师一样思考、推理并执行复杂任务的 AI 智能体。
 
 **问题**:
-软件工程中的许多任务，如调试、编写单元测试、迁移旧代码库以及端到端的功能构建，往往是重复性高且耗时的。现有的代码辅助工具（如 Copilot）仅能提供补全建议，无法独立完成复杂的、多步骤的工程任务，导致开发者仍需耗费大量精力在繁琐的流程上。
+传统的 AI 编程助手（如 Copilot）只能提供代码片段补全，无法独立完成整个功能模块的开发。实际开发流程涉及需求分析、架构设计、编写代码、调试错误、部署上线等多个环节，单一模型难以在长链条的任务中保持上下文连贯性，也无法自主修复环境报错。
 
 **解决方案**:
-团队开发了 Devin，这是一个被定位为“AI 软件工程师”的自主 Agent。Devin 具备规划、推理和修正自身错误的能力。它利用 Agent Skills 技术，能够熟练地使用开发者工具（如命令行、代码编辑器、浏览器）。在接收到任务后，Devin 会自主制定计划，通过调用特定的技能（如检索文档、编写代码片段、运行测试）来逐步解决问题，并在遇到错误时自动回滚和修复。
+团队开发了 "Devin"，这是一个基于 Agent Skills 架构的自主软件工程师。Devin 被赋予了规划、推理、使用命令行、浏览器和代码编辑器等具体技能。它不依赖单一提示词，而是通过自主规划，将大任务拆解为数百个可执行的小步骤（Skills），并利用沙箱环境实际运行代码、查找文档、修复 Bug，直至任务完成。
 
 **效果**:
-在实际演示和测试中，Devin 成功通过了 Upwork 的实际工程测试，能够完成从简单的网站部署到复杂的开源库漏洞修复。它不仅能像人类工程师一样思考，还能不知疲倦地 24/7 工作。根据 Cognition AI 的数据，Devin 在 SWE-bench 基准测试中的表现远超现有的 LLM 模型，能够独立解决约 13.86% 的问题（未经过微调），而其他模型往往无法通过任何测试。这标志着 Agent Skills 从简单的文本生成向复杂工程逻辑执行的跨越。
+Devin 在实际应用中成功通过了 Upwork 的真实工程测试，能够完成端到端的 Web 应用开发。在 SWE-bench 基准测试中，它解决了 13.86% 的问题（远超之前模型的 1.96%），展示了具备复杂技能组合的 Agent 在处理长周期、多步骤任务时的巨大潜力。
 
 ---
 
 
 
-### 2：Rabbit (R1)
+### 2：Rabbit（R1 软件平台）
 
- 2：Rabbit (R1)
+ 2：Rabbit（R1 软件平台）
 
 **背景**:
-Rabbit 是一家硬件初创公司，旨在通过重新定义人机交互来解决智能手机时代应用碎片化的问题。用户经常需要在数十个不同的 App 之间切换以完成简单的任务（如订票、发消息、播放音乐），这导致了高昂的认知负荷。
+Rabbit 是一家硬件初创公司，推出了便携式 AI 设备 R1。其核心目标是解决用户在智能手机上操作多个 App 时繁琐的点击和界面切换问题，实现意图直达。
 
 **问题**:
-传统的基于 App 的操作系统要求用户必须学习每个 App 的特定界面和操作逻辑。现有的语音助手（如 Siri 或 Alexa）通常只能执行预设的指令或简单的 API 调用，无法跨越多个 App 进行复杂的、基于意图的交互，也无法像人类一样“看着”屏幕进行操作。
+现代 App 生态封闭，API 接口不统一，且 App 内部逻辑复杂（例如：在 Spotify 搜索歌曲、播放、添加到喜欢）。传统的语音助手往往只能打开 App，无法深入操作具体功能。如果为每个 App 单独编写插件，扩展性极差。
 
 **解决方案**:
-Rabbit 开发了 Large Action Model (LAM) 作为其核心 Agent Skill。这是一种基于“基于意图”的交互系统。不同于传统的 API 调用，R1 设备通过基于云端的 Agent 学习用户在常用服务（如 Uber、DoorDash、Spotify）上的操作界面。该 Agent 具备“看懂”和应用界面进行交互的能力，能够模拟人类的点击、滑动和输入行为，从而跨 App 执行任务。
+Rabbit 开发了 "Large Action Model" (LAM) 本质上是一个基于 Agent Skills 的交互系统。它不依赖 App 的 API，而是通过训练 AI 学习现有主流 App 的 UI 交互逻辑（即 Skill）。当用户发出指令 "帮我订一杯拿铁" 时，Agent 会识别意图，激活相应的 "订咖啡技能"，模拟人类在 App 界面上的点击、输入和滑动操作，直接与 App 前端交互。
 
 **效果**:
-通过这种 Agent Skill，用户只需对 Rabbit R1 说“帮我订一杯拿铁送到家”，设备便能自动跳过 App 的启动、登录、选择和支付流程，直接完成任务。这极大地简化了操作步骤，将用户从繁琐的 UI 交互中解放出来。Rabbit R1 在 CES 2024 上发布后引起了巨大反响，展示了 Agent Skills 在消费电子领域替代传统 App 操作逻辑的巨大潜力。
+用户只需通过自然语言发出指令，R1 即可自动完成在 Uber Eats 点餐、在 Spotify 播放音乐或在 WhatsApp 发送消息等复杂操作。这种基于 UI 自动化的 Agent Skills 架构，绕过了 API 限制，实现了跨 App 的自动化操作，极大地简化了人机交互流程。
 
 ---
 
 
 
-### 3：Klarna (客服 Agent)
+### 3：OpenAI（GPTs 与 Assistants API）
 
- 3：Klarna (客服 Agent)
+ 3：OpenAI（GPTs 与 Assistants API）
 
 **背景**:
-Klarna 是全球领先的先买后付（BNPL）和购物服务公司，拥有庞大的全球客户群。随着业务扩张，其客服团队面临着日益增长的咨询压力，涵盖了退款、退货、支付纠纷等数百种场景。
+随着大模型能力的提升，企业希望将 AI 集成到具体的业务流程中，但通用模型往往缺乏特定领域的知识或无法访问企业内部数据（如 CRM 系统、文档库）。
 
 **问题**:
-传统的客服模式严重依赖人工坐席，导致响应时间长、运营成本高昂，且在高峰期容易出现服务积压。虽然公司使用了基于规则的旧版聊天机器人，但这些机器人缺乏灵活性，无法处理复杂的查询，往往需要转接人工，效率低下。
+企业定制 AI 通常需要高昂的微调成本，且模型无法实时获取外部数据（如最新的股价或库存），也无法执行如"发送邮件"或"更新工单"等操作。模型存在知识截止和缺乏行动力的问题。
 
 **解决方案**:
-Klarna 与 OpenAI 合作，部署了一个基于 GPT-4 架构的高度自主的 AI 客服 Agent。这个 Agent 被赋予了处理特定客户服务任务的技能，包括访问 Klarna 的内部知识库、查询订单状态、处理退款逻辑以及进行多语言对话。它不再仅仅是一个问答机器，而是一个能够执行业务逻辑的 Agent。
+OpenAI 推出了 GPTs 和 Assistants API，引入了 "Actions"（行动/技能）机制。开发者可以通过配置 OpenAPI 规范，赋予 LLM 调用外部工具的能力。这本质上是为 Agent 装备特定的 Skills。例如，给 Agent 装备"查询数据库"和"发送邮件"两个技能。当用户提问时，模型会自动判断何时调用这些技能，获取 JSON 格式的数据并生成最终回复。
 
 **效果**:
-在上线一个月后，该 AI Agent 处理了全球三分之二的客户咨询（约 230 万次对话）。它在执行任务时的准确性与人工客服持平，并且在每次对话中解决了的问题相当于两名全职人工客服的工作量。据 Klarna 估算，这项技术预计每年将为公司节省 4000 万美元的运营成本，并将客户咨询的解决时间从 11 分钟缩短至 2 分钟，显著提升了客户体验。
+这一架构被广泛应用于企业客服和内部办公自动化。例如，Canva 构建的 Agent 可以根据用户描述自动调用设计模板库生成图片；Zapier 的 Agent 则能连接数千种 SaaS 软件，自动处理跨平台的数据同步和工作流触发。这种"模型 + 工具调用"的 Agent Skills 模式，使 AI 从"聊天机器人"进化为"业务助理"。
 
 ---
 ## 最佳实践
@@ -294,167 +290,160 @@ Klarna 与 OpenAI 合作，部署了一个基于 GPT-4 架构的高度自主的 
 
 ### 实践 1：明确技能边界与单一职责原则
 
-**说明**: Agent Skills 的设计应遵循微服务化的架构思想。每个技能应当专注于解决一个特定的任务或领域问题（如“数据检索”、“代码生成”或“邮件发送”），避免构建包含复杂逻辑的“上帝技能”。明确的边界有助于降低维护成本，提高调用的准确性，并减少幻觉产生的概率。
+**说明**: 每个 Agent Skill 应专注于解决特定领域的问题或执行特定类型的任务。避免设计过于宽泛或试图解决所有问题的“万能”技能。明确的边界有助于提高调用的准确性，减少幻觉，并简化维护工作。
 
 **实施步骤**:
-1. 对 Agent 的业务目标进行拆解，列出核心功能清单。
-2. 将功能清单归类，确保每个 Skill 的功能内聚且互斥。
-3. 为每个 Skill 编写严格的功能描述，定义其输入和输出参数。
+1. 对每个 Skill 编写清晰的功能描述，仅定义其核心能力。
+2. 为 Skill 设定明确的输入参数结构和输出格式。
+3. 在 Skill 的系统提示词中显式声明拒绝处理超出其职责范围的请求。
 
-**注意事项**: 避免将决策逻辑与执行逻辑混合在同一个 Skill 中。如果一个 Skill 的 Prompt 过长或包含过多条件分支，应考虑将其进一步拆分。
+**注意事项**: 如果一个 Skill 的逻辑变得过于复杂，考虑将其拆分为多个更小的、可组合的子技能。
 
 ---
 
-### 实践 2：结构化输入与输出定义
+### 实践 2：实现语义化与版本化检索
 
-**说明**: 为了确保 Agent 与 Skill 之间通信的稳定性，必须严格定义输入和输出的 Schema。使用 JSON Schema 或 Pydantic 模型来约束数据格式，可以显著减少 LLM 解析错误，并使系统更容易集成到传统的代码库中。
+**说明**: Agent 需要从技能库中动态检索最合适的工具。不应仅依赖文件名，而应基于每个 Skill 的功能描述和元数据进行语义匹配。同时，必须对 Skill 进行版本控制，以便在不破坏现有系统的情况下进行迭代。
 
 **实施步骤**:
-1. 列出 Skill 运行所需的所有必要参数。
-2. 使用标准格式（如 JSON Schema）定义参数的类型、必填项和描述。
-3. 在 Prompt 中明确要求 LLM 按照定义的 Schema 生成调用请求。
+1. 为每个 Skill 编写高质量的摘要，用于嵌入向量化。
+2. 建立版本号管理机制，在 Skill 描述或元数据中包含版本信息。
+3. 在 Agent 运行时，使用向量搜索或关键词匹配来动态加载相关 Skill。
 
-**注意事项**: 对于输出结果，如果后续 Skill 需要依赖它，务必保证输出格式是机器可解析的，而不仅仅是自然语言文本。
+**注意事项**: 更新 Skill 描述时，务必重新生成对应的向量嵌入，以确保检索的相关性。
 
 ---
 
-### 实践 3：编写上下文无关的文档与描述
+### 实践 3：设计结构化输入与输出
 
-**说明**: Skill 的描述是 LLM 决定何时调用该 Skill 的唯一依据。描述应当清晰地说明“该技能做什么”、“何时使用”以及“何时不使用”。描述应当尽可能包含领域术语，以便 LLM 能够通过语义匹配找到正确的工具。
+**说明**: 为了确保 Agent 能够可靠地解析 Skill 的执行结果并传递给下一个步骤，所有的 Skill 必须遵循严格定义的输入输出模式（如 JSON Schema）。避免返回非结构化的自然语言文本，除非该 Skill 专门用于文本生成。
 
 **实施步骤**:
-1. 为每个 Skill 编写一段简洁的摘要。
-2. 补充详细的使用场景示例和参数说明。
-3. 在描述中显式声明该 Skill 的局限性或前置条件。
+1. 定义严格的 Pydantic 模型或 JSON Schema 用于输入验证。
+2. 确保 Skill 的输出是可序列化的结构化数据，包含状态码、结果数据和错误信息。
+3. 在代码层面强制执行类型检查。
 
-**注意事项**: 避免使用模糊的描述（如“处理数据”），应使用具体的动词和对象（如“将 CSV 格式的财务数据转换为 JSON 格式”）。
+**注意事项**: 即使是发生错误，也应返回标准化的错误对象，而不是抛出未处理的异常，以免导致 Agent 进程崩溃。
 
 ---
 
-### 实践 4：实施降级与错误处理机制
+### 实践 4：构建全面的沙箱与测试机制
 
-**说明**: 外部工具或 API 调用不可避免地会失败。Skill 设计必须包含健壮的错误处理逻辑，不能因为单次调用失败而导致整个 Agent 流程崩溃。应设计能够向 LLM 反馈具体错误信息的机制，以便 LLM 进行自我修正或尝试替代方案。
+**说明**: Agent Skills 通常会执行实际的操作（如 API 调用、数据库查询）。在部署到生产环境之前，必须在隔离的沙箱环境中进行测试。同时，应为每个 Skill 提供模拟数据或“Dry Run”模式，以便在不产生副作用的情况下验证逻辑。
 
 **实施步骤**:
-1. 在 Skill 逻辑中包裹 Try-Catch 块，捕获网络超时、API 异常等错误。
-2. 将技术错误转换为 LLM 能理解的语义错误信息返回。
-3. 设定超时阈值，防止 Skill 无限期挂起。
+1. 为每个 Skill 编写单元测试，覆盖正常路径和异常路径。
+2. 实现 Mock 接口，允许 Agent 在模拟模式下运行 Skill。
+3. 在 CI/CD 流水线中集成自动化测试，确保变更不会破坏现有功能。
 
-**注意事项**: 返回给 LLM 的错误信息应包含如何修复的建议（例如：“参数 `date` 格式错误，请使用 YYYY-MM-DD 格式重试”）。
+**注意事项**: 对于涉及外部付费 API 或写操作的 Skill，务必设置严格的权限配额和熔断机制。
 
 ---
 
-### 实践 5：包含少样本示例
+### 实践 5：优化上下文感知与参数推断
 
-**说明**: 在 Skill 的定义或配置中提供具体的调用示例，是提高 LLM 工具调用准确率最有效的方法之一。通过展示输入与输出的对应关系，可以帮助模型快速理解复杂的参数要求或特定的调用模式。
+**说明**: Agent 在调用 Skill 时，往往需要从对话历史或全局上下文中提取参数。最佳实践要求 Skill 具备处理缺失参数的能力，或者配合 Agent 框架自动推断上下文，减少反复询问用户的次数。
 
 **实施步骤**:
-1. 选取 2-3 个最具代表性的使用场景。
-2. 构造标准的输入请求和预期的输出结果。
-3. 将示例嵌入到 System Prompt 或 Tool Definition 中。
+1. 在参数定义中设置合理的默认值。
+2. 编写清晰的参数描述，帮助 LLM 理解每个参数的来源和用途。
+3. 如果参数缺失，Skill 应返回具体的参数缺失提示，而不是直接报错。
 
-**注意事项**: 示例必须与实际定义的 Schema 严格保持一致，否则会误导模型。
+**注意事项**: 敏感参数（如 API Key）不应通过普通上下文传递，而应通过安全的配置管理机制注入。
 
 ---
 
-### 实践 6：建立版本控制与灰度发布策略
+### 实践 6：建立可观测性与日志记录
 
-**说明**: Agent Skills 是不断演进的。在生产环境中，直接修改现有 Skill 可能会导致依赖它的 Agent 行为异常。需要建立版本管理机制，允许新旧版本并存，并支持 A/B 测试或灰度发布。
+**说明**: 当 Agent 执行失败或表现不佳时，需要追踪具体是哪个 Skill 出了问题。每个 Skill 应记录详细的执行日志，包括输入参数、执行耗时、中间结果和最终输出。
 
 **实施步骤**:
-1. 在 Skill 的元数据中引入版本号字段（如 `v1.0.0`）。
-2. 部署新版本 Skill 时，保留旧版本端点一段时间。
-3. 在 Agent 配置中指定调用的 Skill 版本，或通过流量控制逐步切换到新版本。
+1. 在 Skill 内部集成标准化的日志记录器。
+2. 记录每次调用的 Trace ID，以便关联整个 Agent 链路的调用链。
+3. 监控 Skill 的成功率和延迟，并设置告警阈值。
 
-**注意事项**: 修改 Skill 的输入输出参数结构通常被视为破坏性更新，必须升级版本号，而不能直接覆盖。
+**注意事项**: 避免在日志中记录敏感的用户隐私数据（PII）或完整的密钥信息。
+
+---
+
+### 实践 7：编写高质量的文档与示例
+
+**说明**: Skill 的文档不仅给开发者看，也是给 Agent 的 LLM 看。高质量的文档包括功能描述、使用场景、参数说明和具体的调用示例，这能显著提高 Agent 调用工具的准确率。
+
+**实施步骤**:
+1. 在代码或配置文件中使用自然语言详细描述 Skill 的用途。
+2. 提供至少 2-3 个包含输入输出的具体示例。
+3. 保持文档与代码实现的同步更新。
+
+**注意事项**: 文档中应明确指出该 Skill 的局限性，防止 Agent 在不适用场景下强行调用。
 
 ---
 ## 学习要点
 
-- 基于您提供的来源背景（Hacker News 关于 Agent Skills 的讨论），以下是总结出的关键要点：
-- Agent 的核心价值在于通过工具使用来突破大模型原本的知识截止限制和无法执行操作的局限。
-- 函数调用是目前实现 Agent 与外部系统交互最主流且标准化的技术接口。
-- ReAct（推理+行动）框架通过“思考-行动-观察”的循环，显著提升了模型解决复杂任务的逻辑链路。
-- 规划与拆解能力是 Agent 处理长尾、多步骤任务时防止迷失方向的关键机制。
-- 自我反思与纠错机制允许 Agent 在执行失败后自主调整路径，从而提高最终任务的完成率。
-- 上下文窗口管理技术（如记忆检索）对于维持 Agent 在长对话中的连贯性至关重要。
+- 基于对 Agent Skills 相关技术讨论的总结，以下是 5 个关键要点：
+- 智能体系统的核心在于通过工具调用将大模型的推理能力与外部世界动态交互，从而突破模型本身的知识和时效性限制。
+- 函数调用是实现智能体技能落地的关键技术，它允许模型将非结构化的自然语言精准转换为结构化的 API 请求参数。
+- 上下文窗口的大小和检索增强生成（RAG）的质量直接决定了智能体在处理长流程任务时的记忆能力和连贯性。
+- 设计高容错性的错误处理机制和自我反思循环，是提升智能体在复杂环境中任务完成率的关键因素。
+- 采用多智能体协作模式，通过将特定技能赋予不同的角色并让它们协同工作，能显著解决单一智能体难以处理的复杂任务。
 
 ---
 ## 常见问题
 
 
-### 1: 什么是 Agent Skills（代理技能），它与传统的 AI 助手有何不同？
+### 1: 什么是 Agent Skills？
 
-1: 什么是 Agent Skills（代理技能），它与传统的 AI 助手有何不同？
+1: 什么是 Agent Skills？
 
-**A**: Agent Skills 是指在自主智能体系统中，AI 模型为了完成复杂任务而调用的特定工具或能力。与传统 AI 助手（如简单的聊天机器人）不同，具备 Skills 的 Agent 不仅仅是根据概率生成文本，而是能够感知环境、做出决策并执行操作。传统助手通常是被动的，仅限于对话；而拥有 Skills 的 Agent 是主动的，能够结合检索增强生成（RAG）、API 调用、代码执行等具体技能来实际解决问题，例如直接查询数据库、操作软件或分析数据，而不仅仅是回答关于如何操作的问题。
-
-
-
-### 2: 一个 Agent 通常需要具备哪些核心技能才能在商业环境中有效工作？
-
-2: 一个 Agent 通常需要具备哪些核心技能才能在商业环境中有效工作？
-
-**A**: 在商业环境中，一个高效的 Agent 通常需要具备以下核心技能：
-1.  **信息检索与综合（RAG）**：能够从企业内部文档、知识库或互联网中精准检索信息并进行总结。
-2.  **任务规划与拆解**：能够将用户模糊的宏观指令拆解为具体的、可执行的步骤。
-3.  **工具调用**：能够连接外部 API（如发送邮件、查询 CRM 系统、更新日历）。
-4.  **代码解释与执行**：能够编写并运行代码来进行数据分析、数据清洗或文件转换。
-5.  **记忆管理**：能够记住上下文和历史交互，以提供连贯的服务。
-6.  **自我修正**：在执行过程中遇到错误时，能够尝试回溯或调整策略以完成任务。
+**A**: Agent Skills 是指 AI 智能体在执行任务时所具备的具体能力或技能集合。这些技能可以包括自然语言处理、数据分析、自动化任务执行、决策支持等。通过组合不同的技能，智能体可以更高效地完成复杂任务。
 
 
 
-### 3: 如何为 Agent 定义和开发新的 Skill？
+### 2: Agent Skills 如何提升智能体的性能？
 
-3: 如何为 Agent 定义和开发新的 Skill？
+2: Agent Skills 如何提升智能体的性能？
 
-**A**: 开发新的 Agent Skill 通常遵循以下流程：
-1.  **定义接口**：明确 Skill 的输入参数和输出结果，通常使用 JSON Schema 或 Pydantic 等格式进行严格定义。
-2.  **编写功能逻辑**：实现具体的业务逻辑，这可能是一个 Python 函数、一个 API 端点或一段脚本。
-3.  **文档与描述**：为 LLM（大语言模型）提供清晰的描述文档，说明该 Skill 的作用、何时使用以及参数限制。
-4.  **注册与测试**：将 Skill 注册到 Agent 的工具箱中，并在沙盒环境中测试 LLM 是否能正确识别并调用该工具。
-5.  **优化提示词**：调整系统提示词，确保 Agent 知道如何协调这个新技能与其他技能的配合。
+**A**: Agent Skills 通过模块化的方式让智能体具备多样化的能力。例如，一个智能体可能同时具备“文本生成”和“代码执行”的技能，从而在需要编程辅助的场景中表现更出色。技能的灵活组合还能让智能体适应不同领域的需求。
 
 
 
-### 4: Agent Skills 与 LLM 原生能力（如 Function Calling）有什么关系？
+### 3: 如何为智能体添加新的技能？
 
-4: Agent Skills 与 LLM 原生能力（如 Function Calling）有什么关系？
+3: 如何为智能体添加新的技能？
 
-**A**: LLM 的原生能力（特别是 Function Calling 或 Tool Use）是 Agent Skills 得以实现的底层技术基础。LLM 充当了“大脑”或“调度器”的角色，它理解用户的意图，并决定何时以及如何调用外部的 Skill。简单来说，Agent Skill 是具体的“手”和“工具”，而 LLM 的 Function Calling 能力是指挥这些手的“神经信号”。没有 LLM 的原生推理和函数生成能力，Agent 就无法动态地选择和组合这些 Skills。
-
-
-
-### 5: 在构建 Agent Skills 时面临的最大挑战是什么？
-
-5: 在构建 Agent Skills 时面临的最大挑战是什么？
-
-**A**: 构建时面临的主要挑战包括：
-1.  **幻觉与错误调用**：LLM 可能会在没有合适工具可用时试图强行调用工具，或者填入错误的参数格式，导致执行失败。
-2.  **上下文窗口限制**：如果 Skill 的描述文档或返回的数据过长，可能会耗尽模型的上下文窗口，导致遗忘或处理中断。
-3.  **延迟与成本**：Agent 在思考、规划和多次调用工具的过程中会产生显著的时间延迟和 Token 消耗，影响用户体验和成本控制。
-4.  **确定性控制**：很难保证 Agent 在面对相同输入时总是执行完全相同的操作，这在需要严格业务一致性的场景中是一个难题。
+**A**: 通常可以通过以下方式添加技能：1）直接集成预定义的技能模块；2）通过 API 或插件系统扩展功能；3）使用机器学习模型训练特定技能。具体方法取决于智能体的开发框架和平台支持。
 
 
 
-### 6: 如何评估 Agent Skills 的性能和有效性？
+### 4: Agent Skills 与传统 AI 模型有何区别？
 
-6: 如何评估 Agent Skills 的性能和有效性？
+4: Agent Skills 与传统 AI 模型有何区别？
 
-**A**: 评估 Agent Skills 比评估单纯的文本生成要复杂，通常需要多维度的方法：
-1.  **工具调用准确率**：统计 Agent 是否在正确的时间选择了正确的工具，以及参数填写的准确率。
-2.  **任务完成率**：在端到端的测试集中，观察 Agent 是否成功达成了用户的最终目标，而不仅仅是调用了工具。
-3.  **执行效率**：衡量完成任务所需的平均步数、Token 消耗量和时间延迟。
-4.  **鲁棒性测试**：故意输入干扰信息或 API 返回错误，观察 Agent 是否具备处理异常和自我恢复的能力。
+**A**: 传统 AI 模型通常专注于单一任务（如分类或生成），而 Agent Skills 强调多任务协同和动态调用。智能体可以根据任务需求灵活选择和组合技能，而非依赖单一模型的能力。
 
 
 
-### 7: Hacker News 社区对于 Agent Skills 的发展趋势有什么看法？
+### 5: Agent Skills 的典型应用场景有哪些？
 
-7: Hacker News 社区对于 Agent Skills 的发展趋势有什么看法？
+5: Agent Skills 的典型应用场景有哪些？
 
-**A**: 根据 Hacker News 的讨论趋势，开发者社区普遍认为 Agent Skills 正在从简单的“问答机器人”向“自主员工”转变。热门观点包括：多 Agent 系统（MAS）将成为主流，即不同的 Agent 专精于不同的技能并相互协作；对于标准化协议的关注度在增加，类似于 OpenAPI 或 LangChain 协议，以便不同开发者创建的 Skills 可以互通；同时，对于安全性（防止 Agent 意外删除数据或执行恶意操作）的讨论也日益增多。开发者们更
+**A**: 常见场景包括：1）客服机器人（结合问答、情感分析等技能）；2）数据分析助手（集成数据清洗、可视化技能）；3）自动化工作流（如邮件分类、任务调度等）；4）教育辅导（结合知识问答和个性化推荐）。
+
+
+
+### 6: 如何评估 Agent Skills 的有效性？
+
+6: 如何评估 Agent Skills 的有效性？
+
+**A**: 评估可以从以下维度进行：1）任务完成率（技能是否能准确执行目标）；2）响应速度（技能调用的效率）；3）用户满意度（技能输出的实用性）；4）可扩展性（新增技能的难易程度）。通常需要结合具体场景设计测试用例。
+
+
+
+### 7: Agent Skills 是否支持跨平台使用？
+
+7: Agent Skills 是否支持跨平台使用？
+
+**A**: 部分技能可能受限于平台或框架，但许多现代智能体系统通过标准化接口（如 REST API 或 GraphQL）实现跨平台兼容。开发时需注意技能的依赖项和运行环境要求。
 
 ---
 ## 思考题
@@ -462,13 +451,13 @@ Klarna 与 OpenAI 合作，部署了一个基于 GPT-4 架构的高度自主的 
 
 ### ## 挑战与思考题
 
-### ### 挑战 1: [简单]
+### ### 挑战 1: [简单] 基础工具调用与错误处理
 
-### 问题**: 构建一个基础的 Hacker News 代理。该代理需要能够接受一个关键词（例如 "AI" 或 "Bitcoin"），自动搜索 Hacker News 首页或搜索页面的相关文章，并返回得分最高（Score > 50）的前 5 条链接。
+### 问题**:
 
-### 提示**: 首先定义代理的“工具”。你需要一个用于搜索的工具和一个用于读取网页内容的工具。思考如何将自然语言的关键词转换为 URL 查询参数，并使用 HTML 解析库（如 BeautifulSoup）提取 `score` 和 `title` 对应的 HTML 节点。
+### 编写一个 Agent，该 Agent 需要具备“获取当前时间”和“计算两个数字之和”的能力。请设计你的 Agent，使得当用户询问“现在几点了？”时它能正确调用时间工具，当用户询问“1 加 1 等于几？”时它能调用计算工具。特别地，请处理当用户输入“计算 1 加 一”这种非数字格式输入时的错误情况，确保 Agent 不会崩溃，而是提示用户输入格式错误。
 
-### 
+### 提示**:
 
 ---
 ## 引用
@@ -485,14 +474,14 @@ Klarna 与 OpenAI 合作，部署了一个基于 GPT-4 架构的高度自主的 
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)
-- 标签： [Agent](/tags/agent/) / [智能体](/tags/%E6%99%BA%E8%83%BD%E4%BD%93/) / [技能框架](/tags/%E6%8A%80%E8%83%BD%E6%A1%86%E6%9E%B6/) / [LLM](/tags/llm/) / [AI Agent](/tags/ai-agent/) / [Agent Skills](/tags/agent-skills/) / [大模型](/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [框架设计](/tags/%E6%A1%86%E6%9E%B6%E8%AE%BE%E8%AE%A1/)
+- 标签： [Agent](/tags/agent/) / [智能体](/tags/%E6%99%BA%E8%83%BD%E4%BD%93/) / [Agent Skills](/tags/agent-skills/) / [框架](/tags/%E6%A1%86%E6%9E%B6/) / [LLM](/tags/llm/) / [AI](/tags/ai/) / [工具调用](/tags/%E5%B7%A5%E5%85%B7%E8%B0%83%E7%94%A8/) / [自动化](/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/)
 - 场景： [大语言模型](/scenarios/%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/) / [AI/ML项目](/scenarios/ai-ml%E9%A1%B9%E7%9B%AE/)
 
 ### 相关文章
 
-- [Compressed Agents：Agent Skills 技术解析]({{< relref "posts/20260130-hacker_news-compressed-agentsmd-agent-skills-6.md" >}})
-- [Agent Skills：大模型智能体的技能评估框架]({{< relref "posts/20260203-hacker_news-agent-skills-0.md" >}})
-- [Agent评估显示AGENTS.md配置优于Skills]({{< relref "posts/20260130-hacker_news-agentsmd-outperforms-skills-in-our-agent-evals-4.md" >}})
 - [AGENTS.md 架构在智能体评估中超越 Skills 技能]({{< relref "posts/20260130-hacker_news-agentsmd-outperforms-skills-in-our-agent-evals-5.md" >}})
-- [Agent评估显示AGENTS.md配置优于技能配置]({{< relref "posts/20260130-hacker_news-agentsmd-outperforms-skills-in-our-agent-evals-6.md" >}})
+- [Agent Skills：大模型智能体的技能评估框架]({{< relref "posts/20260203-hacker_news-agent-skills-0.md" >}})
+- [🤖解密Codex智能体闭环：AI如何自主进化？]({{< relref "posts/20260125-blogs_podcasts-unrolling-the-codex-agent-loop-1.md" >}})
+- [Compressed Agents：Agent Skills 技术解析]({{< relref "posts/20260130-hacker_news-compressed-agentsmd-agent-skills-6.md" >}})
+- [压缩智能体：Agent Skills 技术解析]({{< relref "posts/20260130-hacker_news-compressed-agentsmd-agent-skills-8.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*
