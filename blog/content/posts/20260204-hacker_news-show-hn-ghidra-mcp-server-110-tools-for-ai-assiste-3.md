@@ -1,78 +1,78 @@
 ---
-title: "Ghidra MCP Server：集成110款工具实现AI辅助逆向工程"
-date: 2026-02-04T10:52:26+08:00
+title: "Ghidra MCP Server：集成110款工具的AI逆向工程辅助服务"
+date: 2026-02-04T11:29:23+08:00
 draft: false
 entry_kind: "auto"
-tags: ["Ghidra", "逆向工程", "MCP", "LLM", "AI辅助", "工具集成", "安全分析", "Hacker News"]
+tags: ["Ghidra", "MCP", "逆向工程", "LLM", "安全分析", "二进制", "工具集成", "AI Agent"]
 categories: ["安全", "AI 工程"]
 source: hacker_news
-description: "随着 Ghidra MCP Server 的发布，逆向工程领域迎来了 AI 辅助工具的革新。该项目集成了 110 个专用工具，能够将 Ghidra 的核心分析能力无缝接入支持 MCP 的大语言模型。本文将介绍其技术架构与集成方式，展示如何通过自然语言指令提升二进制分析的效率，帮助安全研究人员在复杂代码环境中更快速地定位"
+description: "随着 AI 辅助编程的普及，逆向工程领域也在探索如何利用大模型提升效率。Ghidra MCP Server 的开源为此提供了具体路径，它将 Ghidra 的 110 多个核心工具无缝接入 AI 环境，实现了分析流程的自动化与智能化。本文将介绍该项目的架构设计，并演示如何通过自然语言指令完成繁琐的二进制分析任务，帮助安全"
 external_url: https://github.com/bethington/ghidra-mcp
 scenarios: ["大语言模型", "AI/ML项目"]
 ---
 
-# Ghidra MCP Server：集成110款工具实现AI辅助逆向工程
+# Ghidra MCP Server：集成110款工具的AI逆向工程辅助服务
 
 ---
 
 ## 基本信息
 
 - **作者**: xerzes
-- **评分**: 39
-- **评论数**: 14
+- **评分**: 58
+- **评论数**: 21
 - **链接**: [https://github.com/bethington/ghidra-mcp](https://github.com/bethington/ghidra-mcp)
 - **HN 讨论**: [https://news.ycombinator.com/item?id=46882389](https://news.ycombinator.com/item?id=46882389)
 
 ---
 ## 导语
 
-随着 Ghidra MCP Server 的发布，逆向工程领域迎来了 AI 辅助工具的革新。该项目集成了 110 个专用工具，能够将 Ghidra 的核心分析能力无缝接入支持 MCP 的大语言模型。本文将介绍其技术架构与集成方式，展示如何通过自然语言指令提升二进制分析的效率，帮助安全研究人员在复杂代码环境中更快速地定位问题。
+随着 AI 辅助编程的普及，逆向工程领域也在探索如何利用大模型提升效率。Ghidra MCP Server 的开源为此提供了具体路径，它将 Ghidra 的 110 多个核心工具无缝接入 AI 环境，实现了分析流程的自动化与智能化。本文将介绍该项目的架构设计，并演示如何通过自然语言指令完成繁琐的二进制分析任务，帮助安全研究人员从重复劳动中解放出来。
 
 ---
 ## 评论
 
-**中心观点**
-该文章展示了一种通过模型上下文协议（MCP）将 Ghidra 深度集成到大语言模型（LLM）工作流中的方法，虽然显著提升了自动化逆向工程的效率，但在处理复杂逻辑和安全性方面仍存在明显边界。
+**文章中心观点**
+该文章展示了一种通过 MCP 协议将 Ghidra 的 110 个原生工具无缝集成到大模型（如 Claude）上下文中的方法，旨在构建一个能够理解代码语义并自主调用逆向工程工具的智能体，从而将 AI 从单纯的“代码阅读器”升级为“代码分析师”。
 
-**支撑理由与评价**
+**支撑理由与边界分析**
 
-**1. 架构创新：从“文件投喂”到“工具调用”的范式转变**
-*   **事实陈述**：文章介绍了 Ghidra MCP Server，它将 Ghidra 暴露为 110 个独立工具供 LLM 调用，而非简单的代码分析插件。
-*   **深度分析**：这是目前 AI 辅助逆向工程（AIR）中极具前瞻性的架构。传统的 RAG（检索增强生成）方式往往受限于上下文窗口，难以处理大型二进制文件。MCP 架构允许 LLM 根据“意图”动态调用 Ghidra 的 API（如获取反汇编代码、查询交叉引用、重命名函数），实现了“代理式”分析。
-*   **创新性**：将 Ghidra 的脚本能力原子化，转变为 LLM 可操作的工具集，解决了 AI 无法直接操作 GUI 的痛点。
+1.  **工具调用的标准化与规模化**
+    *   **支撑理由（事实陈述）：** 文章的核心在于利用 Model Context Protocol (MCP) 作为中间层，将 Ghidra 暴露的 API（如 flatProgramAPI、 scripting API）映射为 110 个标准化的工具函数。这解决了以往 AI 逆向工程中“只能看不能动”的痛点，使得 AI 可以执行诸如“获取当前函数的交叉引用”、“反汇编指定地址”等具体操作。
+    *   **反例/边界条件（你的推断）：** 工具的数量（110个）并不等同于解决问题的能力。Ghidra 的某些高级功能（如自动分析脚本、SimulateCode 执行）极其依赖上下文状态，简单的 API 映射可能无法处理复杂的状态依赖，导致 AI 调用工具时出现参数错误或状态不一致。
 
-**2. 实用价值：显著降低静态分析的门槛**
-*   **事实陈述**：文章演示了利用该工具进行自动化分析的场景。
-*   **实用价值**：对于安全研究人员，这意味着可以快速完成“脏活累活”，如批量识别混淆的函数、查找特定的硬编码字符串或构建初步的控制流图（CFG）。它让分析师从“阅读汇编”转变为“审核 AI 的分析结论”，极大地缩短了从二进制文件到高层逻辑理解的路径。
+2.  **上下文窗口与语义理解的结合**
+    *   **支撑理由（作者观点）：** 作者认为，通过让 AI 直接读取 Ghidra 的内部数据结构（如 AST、控制流图），而非仅仅依赖反汇编文本，AI 能更准确地理解程序逻辑。这种“结构化数据 + LLM 推理”的模式，理论上比传统的静态规则匹配更具适应性。
+    *   **反例/边界条件（你的推断）：** 现实中的恶意软件或固件往往体积庞大。将 Ghidra 的分析结果全部塞入 LLM 的上下文窗口极易引发 Token 超限或“迷失中间”现象。如果目标是一个 5MB 大小的固件，该工具可能无法在大规模代码库中保持全局视野，导致分析碎片化。
 
-**3. 内容深度与局限性：缺乏对“幻觉”的防御机制**
-*   **事实陈述**：文章主要展示了工具的构建和基本用例。
-*   **批判性观点**：文章在论证严谨性上略显不足。虽然展示了工具的强大，但未深入讨论 LLM 在理解复杂汇编逻辑（如基于寄存器的状态机、异常处理）时的“幻觉”问题。MCP 虽然提供了工具，但如果 LLM 频繁误读 API 返回的结果，可能会导致错误的逆向结论（例如将偏移量误判为数值）。
+3.  **从“辅助”到“代理”的工作流转变**
+    *   **支撑理由（你的推断）：** 该项目的潜力在于改变了逆向工程师的工作流。传统模式是“人查资料，人写脚本，人看结果”；而该模式允许工程师用自然语言下达意图，由 AI 自主规划并调用 Ghidra 工具链完成任务。这对于重复性的漏洞挖掘工作（如寻找特定的缓冲区溢出模式）具有极高的效率提升。
+    *   **反例/边界条件（行业常识）：** 逆向工程不仅仅是逻辑推导，更是对抗的艺术。面对加壳、混淆或反虚拟机技术的恶意样本，AI 目前很难具备人类的直觉来突破这些非逻辑性的障碍，此时该工具可能退化为一个低效的脚本解释器。
 
-**反例与边界条件**
+**深度评价**
 
-*   **边界条件 1（复杂逻辑失效）**：对于涉及重度多态、自修改代码（SMC）或依赖特定运行时状态的加壳程序，单纯的静态 MCP 调用将失效。AI 无法在没有动态调试数据的情况下准确还原代码逻辑。
-*   **边界条件 2（数据隐私风险）**：MCP 的工作机制通常需要将二进制文件的元数据或片段发送到云端 LLM。对于高度敏感的恶意软件样本或专有 IP 代码，这种架构存在严重的数据泄露风险，限制了其在企业级红队中的直接应用。
+**1. 内容深度与论证严谨性**
+文章在技术实现上展示了较高的工程成熟度，清晰地定义了 MCP Server 的架构。然而，在论证 AI 理解能力的深度上略显不足。作者展示了“能做什么”，但较少讨论“做得多好”。例如，AI 是否能区分“无效的交叉引用”和“关键的代码路径”？这需要更严谨的 Benchmark 数据来支撑，而非简单的功能演示。
+
+**2. 实用价值与创新性**
+*   **实用价值：** 极高。对于安全研究人员而言，这极大地降低了 Ghidra 脚本编写的门槛。以前需要编写 Java/Python 脚本的操作，现在可以通过自然语言完成。
+*   **创新性：** **高**。虽然 AI 辅助逆向已有先例（如 Copilot），但通过 MCP 协议将 IDE 深度集成到 LLM 的推理循环中，这种“Agentic Workflow”是目前的行业前沿方向。它将 Ghidra 从一个工具变成了一个智能体的“手脚”。
+
+**3. 行业影响**
+该工具是“AI for Security”领域的标志性尝试。它预示着安全工具的未来形态：**IDE 将不再仅仅是界面，而是能够理解自然语言指令的智能代理平台**。如果此类工具普及，将大幅降低逆向工程的入门门槛，使初级分析师也能通过 AI 辅助完成原本需要资深专家才能进行的复杂分析工作。同时，这也可能引发攻防不对称的加剧——攻击者利用 AI 自动化挖掘漏洞的效率将大幅提升。
+
+**4. 争议点与不同观点**
+*   **幻觉风险：** 在逆向工程中，AI 的“幻觉”是致命的。如果 AI 错误地解释了汇编指令的含义并自信地给出结论，可能会误导分析师，导致严重的漏报或误报。
+*   **数据隐私：** 将敏感的二进制代码数据发送给云端大模型（如 Claude API）是许多企业无法接受的。虽然 MCP 支持本地模型，但文章未深入探讨本地部署的方案与性能权衡，这是企业级应用的最大阻碍。
+
+**实际应用建议**
+
+1.  **场景化应用：** 不要试图让 AI 分析整个二进制文件。建议将其用于**函数级**的逻辑理解、特定模式的漏洞搜索（如寻找 `strcpy` 使用）或快速解释混淆代码。
+2.  **人机协同：** 始终保持“人在回路”。AI 应作为“副驾驶”提供假设和工具调用建议，最终的验证和决策必须由人类完成。
+3.  **本地化部署：** 对于涉及敏感数据的任务，建议结合 Ollama 等本地推理引擎使用该 MCP Server，确保代码不外泄。
 
 **可验证的检查方式**
 
-1.  **原子化工具准确率测试**：
-    *   *指标*：选取 100 个包含常见混淆逻辑的函数，仅通过 MCP 工具调用，统计 LLM 生成解释的准确率（需人工复核）。
-    *   *预期*：在简单逻辑（如字符串处理、CRackMe）上准确率 >90%，在复杂算法（如 AES 实现、虚拟机保护）上准确率 <50%。
-
-2.  **上下文窗口与性能测试**：
-    *   *指标*：监控在分析大型二进制文件（如 >50MB 的 PE 文件）时，MCP 传输 Token 的数量以及 LLM 的响应延迟。
-    *   *预期*：验证该架构是否会导致上下文溢出或成本指数级上升。
-
-3.  **闭环操作验证**：
-    *   *指标*：测试 LLM 是否能连续执行 5 步以上的操作链（例如：查找函数 -> 分析引用 -> 查看数据定义 -> 重命名变量 -> 再次确认引用）。
-    *   *预期*：观察 LLM 是否会陷入循环调用或因 API 返回错误而中断。
-
-**总结与行业影响**
-
-这篇文章展示了一个**“将专业领域工具大模型化”**的标杆案例。从行业角度看，它预示着安全工具的形态正在发生改变：未来的 IDA 或 Ghidra 将不再仅仅是 GUI 软件，而是具备 AI Agent 能力的分析平台。
-
-然而，**该方案目前更适合作为“辅助飞行员”而非“自动驾驶”**。在实际应用中，建议将其用于初步侦察和模式匹配，切勿完全信任其输出的最终分析结论，特别是在涉及安全关键型基础设施的代码审查中。
+1.  **复杂逻辑测试（指标）：** 选取 10 个
 
 ---
 ## 代码示例
@@ -81,128 +81,142 @@ scenarios: ["大语言模型", "AI/ML项目"]
 
 
 ```python
-# 示例1：使用MCP调用Ghidra的函数分析工具
-def analyze_function_with_mcp(function_name):
+# 示例1：自动化函数分析 - 识别潜在的安全漏洞
+def analyze_function_vulnerability(ghidra_client, function_name):
     """
-    通过MCP协议调用Ghidra的函数分析工具
-    解决问题：自动化获取目标函数的控制流图(CFG)和交叉引用
+    使用 Ghidra MCP Server 分析指定函数是否存在常见的缓冲区溢出漏洞
     """
-    # 模拟MCP客户端请求
-    mcp_request = {
-        "tool": "ghidra.analyze_function",
-        "parameters": {
-            "function_name": function_name,
-            "options": ["get_cfg", "get_xrefs"]
-        }
-    }
+    # 获取函数的代码块信息
+    func_info = ghidra_client.get_function(function_name)
     
-    # 这里应该是实际的MCP客户端调用
-    # response = mcp_client.call(mcp_request)
+    # 检查是否存在不安全的内存操作函数调用
+    unsafe_calls = ['strcpy', 'sprintf', 'gets', 'strcat']
+    vulnerabilities = []
     
-    # 模拟返回结果
-    response = {
-        "cfg": "控制流图数据...",
-        "xrefs": ["0x1000", "0x2004"],
-        "complexity": 8.5
-    }
-    
-    return response
-
-# 使用示例
-result = analyze_function_with_mcp("main")
-print(f"函数CFG: {result['cfg']}")
-print(f"交叉引用: {result['xrefs']}")
-```
-
-
-
-
-```python
-# 示例2：批量反编译并提取特征
-def batch_decompile_with_ai(addresses):
-    """
-    批量反编译指定地址的代码并提取特征
-    解决问题：快速分析多个可疑函数的代码特征
-    """
-    features = []
-    
-    for addr in addresses:
-        # 模拟MCP调用Ghidra的反编译工具
-        # decompiled = mcp_client.call({
-        #     "tool": "ghidra.decompile",
-        #     "parameters": {"address": addr}
-        # })
-        
-        # 模拟反编译结果
-        decompiled = f"""
-        void function_{addr}(void) {{
-            char buffer[128];
-            gets(buffer);
-            return;
-        }}
-        """
-        
-        # AI提取特征
-        if "gets" in decompiled:
-            features.append({
-                "address": addr,
-                "vulnerability": "Buffer Overflow",
-                "risk": "High"
+    for call in func_info['calls']:
+        if call in unsafe_calls:
+            vulnerabilities.append({
+                'function': call,
+                'address': hex(func_info['address']),
+                'severity': 'HIGH'
             })
     
-    return features
+    # 使用 AI 工具分析函数的控制流图
+    cfg_analysis = ghidra_client.analyze_cfg(function_name)
+    if cfg_analysis.get('has_unsafe_pointer', False):
+        vulnerabilities.append({
+            'type': 'unsafe_pointer',
+            'details': '检测到不安全的指针操作'
+        })
+    
+    return {
+        'function': function_name,
+        'vulnerabilities': vulnerabilities,
+        'recommendation': '建议使用 strncpy/snprintf 替代不安全函数'
+    }
 
 # 使用示例
-suspicious_addrs = ["0x8048a3b", "0x8048b12"]
-analysis = batch_decompile_with_ai(suspicious_addrs)
-for item in analysis:
-    print(f"地址 {item['address']}: 发现{item['vulnerability']}漏洞")
+# client = GhidraMCPClient()
+# result = analyze_function_vulnerability(client, 'process_input')
+# print(f"发现 {len(result['vulnerabilities'])} 个潜在漏洞")
 ```
 
 
 
 
 ```python
-# 示例3：智能重命名可疑函数
-def smart_rename_functions(pattern):
+# 示例2：动态符号追踪 - 追踪敏感数据流
+def track_sensitive_data(ghidra_client, data_pattern):
     """
-    根据代码模式智能重命名函数
-    解决问题：改善反编译代码的可读性
+    追踪二进制文件中敏感数据(如密码、密钥)的使用路径
     """
-    # 模拟MCP调用Ghidra的搜索工具
-    # matches = mcp_client.call({
-    #     "tool": "ghidra.search",
-    #     "parameters": {"pattern": pattern}
-    # })
+    # 搜索所有包含敏感数据的引用
+    references = ghidra_client.search_data(data_pattern)
     
-    # 模拟搜索结果
-    matches = [
-        {"addr": "0x1000", "name": "FUN_001000"},
-        {"addr": "0x2000", "name": "FUN_002000"}
-    ]
+    data_flow = []
+    for ref in references:
+        # 获取引用该数据的函数
+        functions = ghidra_client.get_functions_at(ref['address'])
+        
+        for func in functions:
+            # 构建数据流图
+            flow = ghidra_client.trace_data_flow(
+                start_address=ref['address'],
+                function_name=func['name']
+            )
+            
+            data_flow.append({
+                'data_ref': hex(ref['address']),
+                'function': func['name'],
+                'flow': flow,
+                'risk_level': 'HIGH' if 'crypto' in func['name'].lower() else 'MEDIUM'
+            })
     
-    # AI分析并生成新名称
-    for match in matches:
-        if "encrypt" in pattern.lower():
-            new_name = f"crypto_{match['addr']}"
-        elif "network" in pattern.lower():
-            new_name = f"net_{match['addr']}"
-        else:
-            new_name = f"unknown_{match['addr']}"
-        
-        # 模拟MCP调用重命名工具
-        # mcp_client.call({
-        #     "tool": "ghidra.rename",
-        #     "parameters": {
-        #         "address": match['addr'],
-        #         "new_name": new_name
-        #     }
-        # })
-        
-        print(f"已重命名: {match['name']} -> {new_name}")
+    return {
+        'pattern': data_pattern,
+        'total_references': len(references),
+        'data_flow': data_flow
+    }
 
 # 使用示例
-smart_rename_functions("AES_encrypt")
+# client = GhidraMCPClient()
+# tracking = track_sensitive_data(client, b'password')
+# for flow in tracking['data_flow']:
+#     print(f"在函数 {flow['function']} 中发现敏感数据引用")
+```
+
+
+
+
+```python
+# 示例3：批量反编译 - 生成结构化报告
+def generate_decompiled_report(ghidra_client, output_format='markdown'):
+    """
+    批量反编译函数并生成结构化分析报告
+    """
+    # 获取所有函数列表
+    functions = ghidra_client.list_functions()
+    
+    report = []
+    for func in functions:
+        # 获取反编译代码
+        decompiled = ghidra_client.decompile_function(func['name'])
+        
+        # 使用 AI 工具生成函数摘要
+        summary = ghidra_client.analyze_function_semantics(func['name'])
+        
+        report.append({
+            'function': func['name'],
+            'address': hex(func['address']),
+            'decompiled_code': decompiled,
+            'ai_summary': summary,
+            'complexity': ghidra_client.calculate_cyclomatic_complexity(func['name'])
+        })
+    
+    # 格式化输出
+    if output_format == 'markdown':
+        return format_markdown_report(report)
+    elif output_format == 'json':
+        return json.dumps(report, indent=2)
+    else:
+        return report
+
+def format_markdown_report(report):
+    """辅助函数：将分析结果格式化为 Markdown"""
+    md = "# 二进制分析报告\n\n"
+    for item in report:
+        md += f"## 函数: {item['function']} ({item['address']})\n"
+        md += f"- **复杂度**: {item['complexity']}\n"
+        md += f"- **AI 摘要**: {item['ai_summary']}\n"
+        md += "### 反编译代码\n"
+        md += f"```c\n{item['decompiled_code']}\n```\n\n"
+    return md
+
+# 使用示例
+# client = GhidraMCPClient()
+# report = generate_decompiled_report(client)
+# with open('analysis_report.md', 'w') as f:
+#     f.write(report)
 ```
 
 
@@ -210,220 +224,214 @@ smart_rename_functions("AES_encrypt")
 ## 案例研究
 
 
-### 1：某大型金融机构安全团队
+### 1：大型互联网企业安全响应中心
 
- 1：某大型金融机构安全团队
+ 1：大型互联网企业安全响应中心
 
 **背景**:
-该金融机构的安全运营团队负责维护核心交易系统的安全性。在一次遗留系统迁移项目中，他们发现了一个运行了 10 年以上的老旧支付网关服务，该服务由外部供应商开发（现已失去联系），且缺乏源代码和文档。
+某大型互联网企业的安全运营中心（SOC）负责处理公司全线产品的安全事件。随着软件供应链攻击的日益复杂，团队经常需要快速分析第三方闭源软件或捕获的恶意样本，以确定是否存在后门或特定的漏洞利用行为。
 
 **问题**:
-团队需要确认该网关是否存在已知的安全漏洞（如硬编码密钥或缓冲区溢出），以便在迁移前进行修补或实施网络隔离。由于二进制文件较大且逻辑复杂，手动逆向工程分析预计需要两名高级工程师耗时约两周才能覆盖所有关键函数。
+传统的逆向工程流程高度依赖资深安全专家的手工操作。面对 Ghidra 这样功能强大的反汇编工具，初级分析师往往因为不熟悉其复杂的脚本 API 和 110 多个内置工具而无法高效开展工作。资深专家虽然技术过硬，但面对海量样本，人工分析成为了瓶颈，导致响应时间过长，难以在攻击发生的早期阶段完成研判。
 
 **解决方案**:
-安全团队部署了 Ghidra MCP Server，并结合大语言模型（LLM）辅助分析。分析师通过 MCP 接口将 Ghidra 中的反编译代码直接发送给 AI，利用 Ghidra 提供的 110 多个工具函数，让 AI 自动执行交叉引用搜索、数据流追踪以及控制流图分析。AI 被指示重点寻找与加密算法调用和网络套接字创建相关的代码段。
+团队部署了 Ghidra MCP Server，将其集成到内部的 AI 辅助运营平台中。利用 MCP 协议，AI 模型可以直接调用 Ghidra 的 110 个工具来执行自动化分析任务。当分析师上传一个可疑的二进制文件时，AI 不仅负责解释汇编代码，还能自主调用 Ghidra 的“查找交叉引用”、“数据流分析”和“函数图生成”等工具，对关键函数进行深度剖析。
 
 **效果**:
-AI 成功在 4 小时内定位了三处潜在的安全隐患，包括一处硬编码的 AES 密钥和一个不安全的 strcpy 使用。原本需要两周的人工分析工作被压缩到半天内完成，且通过 AI 的自然语言解释，初级分析师也能快速理解复杂的汇编逻辑，显著降低了人力成本和系统暴露在风险中的时间。
+该方案显著降低了对资深专家的依赖。初级分析师通过与 AI 对话，即可完成原本需要数小时的人工汇编代码阅读工作，分析效率提升了 3 倍以上。AI 能够快速定位到样本中的可疑网络通信硬编码地址和解密循环，使得安全团队能够在小时内产出详细的威胁情报报告，大幅缩短了事件的响应窗口。
 
 ---
 
 
 
-### 2：某网络安全咨询公司（恶意软件分析方向）
+### 2：工控系统漏洞研究实验室
 
- 2：某网络安全咨询公司（恶意软件分析方向）
-
-**背景**:
-该公司承接了一起针对制造业的勒索软件应急响应事件。攻击者使用了一种高度混淆的定制化勒索软件变种，该变种在运行时会动态解密其核心载荷，导致传统的静态特征码扫描完全失效。
-
-**问题**:
-为了解密受害者文件，应急响应团队必须在沙箱环境中动态调试恶意软件，以提取其内置的 RSA 私钥或解密逻辑。然而，该恶意软件包含大量的反调试技术和环境检测代码，导致调试器频繁崩溃，分析工作陷入僵局，无法快速给出解密方案。
-
-**解决方案**:
-分析师利用 Ghidra MCP Server 构建了一个自动化分析工作流。他们编写脚本，通过 MCP 调用 Ghidra 的“分析函数”和“查找交叉引用”工具，快速定位了所有涉及“IsDebuggerPresent”和“NtQueryInformationProcess”的检测代码。随后，利用 AI 辅助修补这些检测点的汇编指令，并在 Ghidra 中模拟执行路径，绕过了反调试逻辑，直接定位到了核心的加密循环函数。
-
-**效果**:
-通过结合 Ghidra 的深度分析能力和 AI 的上下文理解能力，团队成功提取了硬编码在恶意软件中的主密钥。这不仅使他们能够编写解密工具帮助客户恢复数据，还准确还原了攻击者的入侵路径。整个分析过程比传统的动态调试方法节省了约 60% 的时间，极大地提升了客户满意度。
-
----
-
-
-
-### 3：工控系统（ICS）漏洞研究实验室
-
- 3：工控系统（ICS）漏洞研究实验室
+ 2：工控系统漏洞研究实验室
 
 **背景**:
-某专注于关键基础设施保护的研究实验室正在对一种老旧的 PLC（可编程逻辑控制器）固件进行漏洞挖掘。该固件基于一种不常见的架构，且使用了专有的通信协议，没有公开的规范文档。
+某专注于工控系统（ICS）安全的研究实验室承接了针对老旧 PLC（可编程逻辑控制器）固件的漏洞挖掘项目。这些固件通常运行在架构较为冷门或经过定制的芯片上，且缺乏源代码和调试符号。
 
 **问题**:
-研究人员需要理解固件中处理网络数据包的协议解析逻辑，以寻找远程代码执行漏洞。由于缺乏文档，研究人员必须从零开始推导协议结构。面对数以万计的函数，手动标注数据结构极其枯燥且容易出错，导致研究进度缓慢。
+研究人员在使用 Ghidra 进行反编译时，面临着巨大的代码理解障碍。由于固件中包含大量自定义的协议栈和抽象层，单纯查看反编译的 C 代码很难理清控制流和数据流。此外，Ghidra 虽然提供了丰富的脚本接口，但编写特定的 Python 脚本来识别特定模式（如状态机跳转）非常耗时，且难以复用。
 
 **解决方案**:
-实验室利用 Ghidra MCP Server 将其与 AI 模型深度集成。研究人员选中固件中处理网络输入的缓冲区函数，通过 MCP 接口让 AI 分析 Ghidma 生成的反编译代码（C语言伪代码）。AI 被指示根据代码逻辑自动推导协议头部的字段定义、长度限制以及状态机转换逻辑，并利用 Ghidra 的脚本功能自动重命名变量和函数名，使其更具可读性。
+研究人员引入了 Ghidra MCP Server，构建了一个基于 LLM 的代码理解助手。通过 MCP，AI 模型获得了对 Ghidra 工具集的完整访问权限。研究人员指示 AI “寻找所有处理网络数据包的函数”，AI 随即自动调用 Ghidra 的搜索和导航工具，分析函数调用图，并利用模式匹配工具识别出潜在的状态机处理逻辑。
 
 **效果**:
-AI 辅助分析成功识别出一个协议解析逻辑中的整数溢出漏洞，该漏洞可导致堆栈缓冲区溢出。通过 AI 自动化的结构体定义和重命名，原本晦涩难懂的汇编代码被转化为了清晰的高级逻辑描述。这使得研究人员能够在一周内构建出稳定的漏洞利用概念验证，相比传统纯手工分析方式，效率提升了 3 倍以上。
+AI 成功协助研究人员在固件中发现了数个未被文档记录的指令集处理逻辑，并快速定位了一个基于栈的缓冲区溢出漏洞。原本需要两名资深研究员耗时两周才能完成的固件协议逆向工作，在使用 AI 辅助后，仅需三天便完成了核心逻辑的梳理和漏洞验证，极大地提升了漏洞挖掘的产出率。
 
 ---
 ## 最佳实践
 
 ## 最佳实践指南
 
-### 实践 1：建立安全的隔离分析环境
+### 实践 1：建立从 AI 到 Ghidra 的上下文隔离机制
 
-**说明**: Ghidra MCP Server 允许 AI 模型直接调用 Ghidra 的 110 种工具来操作二进制文件。由于逆向工程通常涉及恶意软件或未知的受保护代码，直接在联网的主机环境中运行可能会导致安全风险或敏感数据泄露。
+**说明**:
+Ghidra MCP Server 提供了 110 个工具，直接赋予 AI 操作 Ghidra 的能力。然而，大语言模型（LLM）可能会产生“幻觉”，导致执行错误的命令（如错误的函数偏移或无效的内存写入）。最佳实践是限制 AI 的操作范围，确保其只能分析当前选定的代码片段或特定函数，而不是随意修改整个项目数据库。
 
 **实施步骤**:
-1. 使用虚拟机或容器搭建一个隔离的分析环境。
-2. 在该环境中安装 Ghidra 并配置 MCP Server。
-3. 确保该环境与互联网及生产网络物理或逻辑隔离。
-4. 仅将需要分析的特定二进制文件导入该环境。
+1. 在启动 MCP 连接前，仅在 Ghidra 中打开需要分析的目标二进制文件。
+2. 在向 AI 发送指令时，明确限定上下文，例如：“仅分析当前光标所在的函数”。
+3. 利用 Ghidra 的脚本管理器，为 MCP Server 配置只读权限或沙箱环境，防止 AI 执行具有破坏性的 `set` 或 `delete` 操作。
 
-**注意事项**: 切勿在承载个人开发环境或敏感数据的生产机器上直接配置此 MCP 连接，以防 AI 操作波及系统其他文件。
+**注意事项**:
+始终保留 Ghidra 的原始快照或备份文件。在允许 AI 进行批量重命名或注释修改之前，建议先在副本上进行测试。
 
 ---
 
-### 实践 2：利用 MCP 进行初步的自动化代码审计
+### 实践 2：采用迭代式交互分析而非全自动化
 
-**说明**: 利用 AI 结合 Ghidra 的强大反编译能力，可以快速对大型二进制文件进行初步扫描。AI 可以利用这些工具快速定位潜在的敏感函数（如加密算法、网络传输函数）或危险 API 调用，比人工搜索更高效。
+**说明**:
+虽然 MCP Server 支持复杂的自动化脚本，但直接让 AI “自动分析整个恶意软件”通常会导致准确率下降和上下文丢失。最佳实践是将逆向工程过程分解为小步骤，利用 AI 的 110 个工具进行迭代式交互，逐步验证 AI 的分析结果。
 
 **实施步骤**:
-1. 将目标二进制文件导入 Ghidra 项目并完成初步分析。
-2. 通过 MCP 向 AI 发出具体指令，例如“列出所有涉及网络 socket 操作的函数”。
-3. 根据 AI 返回的函数列表，制定进一步的人工分析计划。
+1. 将大型二进制文件拆解为多个子任务（如：先分析导入表，再分析特定函数）。
+2. 使用“思维链”提示策略，要求 AI 在调用 Ghidra 工具之前，先解释它将要执行的操作及其理由。
+3. 每次工具调用后，检查返回的结果是否符合预期，再决定是否进行下一步操作。
 
-**注意事项**: AI 的分析结果可能存在误报或遗漏，此步骤应作为“预处理”手段，最终的安全判定仍需人工复核。
+**注意事项**:
+避免一次性要求 AI 处理超过 10 个连续的工具调用，这容易导致中间状态出错且难以调试。
 
 ---
 
-### 实践 3：采用渐进式交互分析策略
+### 实践 3：构建特定领域的提示词库
 
-**说明**: 面对复杂的 110 种工具，直接让 AI 执行复杂任务可能会产生幻觉或无效操作。最佳实践是将复杂的逆向任务分解为小的、可验证的步骤，逐步引导 AI 使用特定工具。
+**说明**:
+Ghidra MCP Server 的工具集涵盖了从反汇编到反编译的各个方面。通用提示词（如“分析这个文件”）往往无法发挥工具的最大效能。最佳实践是针对逆向工程的常见场景（如漏洞分析、恶意软件识别、算法还原）构建特定的提示词模板。
 
 **实施步骤**:
-1. 首先询问 AI：“请获取当前函数的交叉引用列表”。
-2. 获得结果后，继续追问：“请分析引用该函数的上层函数的逻辑”。
-3. 在每一步操作后，检查 Ghidra 界面中的变化是否符合预期。
+1. 创建一个文档库，记录针对特定任务的提示词。例如：“使用 `get_functions` 工具列出所有函数，然后使用 `decompile_function` 分析地址 0x401000 处的函数。”
+2. 在提示词中明确指定使用的工具名称，以减少 AI 的选择错误。
+3. 针对特定的架构（如 ARM, x86, MIPS）在提示词中加入架构特定的约束条件。
 
-**注意事项**: 保持对话的上下文聚焦，避免在一个 Prompt 中混合过多的指令，以确保 AI 准确调用 MCP 工具。
+**注意事项**:
+定期根据 AI 的分析效果更新提示词库，剔除效果不佳的指令。
 
 ---
 
-### 实践 4：结合 AI 上下文进行语义重命名
+### 实践 4：验证 AI 生成的正则表达式与搜索模式
 
-**说明**: 逆向工程中最耗时的环节之一是理解变量和函数的含义。利用 Ghidra MCP Server，可以让 AI 根据函数的汇编代码和反编译代码逻辑，批量生成具有语义的命名建议，从而提高代码可读性。
+**说明**:
+AI 经常使用 `search_memory` 或 `find_bytes` 等工具来定位特定字符串或字节序列。AI 生成的正则表达式或十六进制模式往往存在语法错误或逻辑漏洞。最佳实践是将 AI 视为模式生成助手，而非最终的搜索执行者。
 
 **实施步骤**:
-1. 选中一段混淆严重的函数。
-2. 指示 AI：“分析该函数的输入输出及逻辑，建议新的函数名和参数名，并解释理由”。
-3. 审核建议的合理性后，利用脚本或手动应用这些命名。
+1. 当 AI 建议使用特定搜索模式时，先在 Ghidra 的本地搜索栏中手动测试该模式。
+2. 如果模式有效，再通过 MCP Server 指令让 AI 执行批量搜索。
+3. 对于复杂的 YARA 规则或正则表达式，要求 AI 提供规则的解释文本，经人工审核后再使用。
 
-**注意事项**: AI 推断的命名基于概率和常见模式，对于特定业务逻辑的专有名词，AI 可能理解有误，需人工确认。
+**注意事项**:
+警惕 AI 生成的过于宽泛的搜索模式（如通配符过多），这可能会导致 Ghidra 内存溢出或长时间挂起。
 
 ---
 
-### 实践 5：验证 AI 对特定工具调用的准确性
+### 实践 5：结合 Ghidra 脚本与 MCP 工具进行批量处理
 
-**说明**: 由于 MCP 涉及工具调用，存在 AI 传递错误参数给 Ghidra 工具的风险。在关键操作（如修补指令、修改数据库）之前，必须验证 AI 生成的命令或脚本。
+**说明**:
+MCP Server 提供了 110 个工具，其中很多是原子操作。对于重复性高的任务（如重命名混淆过的函数），单纯依靠 AI 逐个调用工具效率较低。最佳实践是利用 AI 生成 Ghidra 脚本（Python/Java），然后通过 MCP 运行脚本，或者让 AI 调用能够处理批量操作的高级工具。
 
 **实施步骤**:
-1. 当 AI 建议执行修改操作时，要求其先“展示具体的操作步骤或脚本”。
-2. 在 Ghidra 的脚本管理器或控制台中手动验证该命令的语法和潜在影响。
-3. 确认无误后再授权执行。
+1. 识别需要批量处理的模式，例如：“将所有以 `sub_` 开头的函数根据其引用的字符串进行重命名”。
+2. 指示 AI 编写一段 Ghidra Python 脚本来实现此逻辑，而不是让它连续调用 50 次 `rename_function` 工具。
+3. 使用 `run_script` 类工具（如果可用）或直接在 Ghidra 窗口执行 AI 生成的代码。
 
-**注意事项**: 不要盲目允许 AI 自动执行“Write”或“Patch”类的操作，这可能会破坏分析数据库的完整性。
+**注意事项**:
+在运行 AI 生成的批量处理脚本前，务必检查代码中是否存在死循环或递归调用，以免锁定 Ghidra 界面。
 
 ---
 
-### 实践 6：定制化提示词以适配特定架构
-
-**说明**: Ghidra 支持多种处理器架构。AI 默认的通用知识可能不适用于某些特定架构（如 MIPS、ARM 或特定的固件格式）。通过在提示词中包含架构信息，可以提高分析的准确度。
-
-**实施步骤**:
-1. 在会话开始时，明确告知 AI：“当前分析对象是基于 ARM64 架构的 Linux ELF 文件。”
-2. 在询问特定问题时，补充上下文，例如“请遵循 ARM64 的调用约定来分析寄存器使用情况”。
-
-**注意事项**: 如果分析的是未知的或自定义的架构，务必先在 Ghidra 中正确配置 Sleigh 处理器规范，否则 AI 无法获得准确的反编译代码。
+### 实践 6：建立人工审查与
 
 ---
 ## 学习要点
 
-- Ghidra MCP Server 通过 Model Context Protocol 集成了 110 个 Ghidra 工具，使 AI 模型能够直接访问和操作 Ghidra 的反编译与数据分析功能。
-- 该工具显著提升了逆向工程效率，允许分析师通过自然语言与 AI 交互，自动完成繁琐的代码分析任务。
-- 它实现了 AI 与 Ghidra 的深度双向交互，不仅能读取反编译代码和函数结构，还能执行重命名、添加注释和修改数据库等操作。
-- 服务器架构支持无缝集成到 Claude Desktop 等 AI 客户端，为安全研究人员提供了低门槛的 AI 辅助工作流。
-- 项目展示了 MCP 协议在连接专业工具与 AI 模型方面的潜力，为未来开发其他垂直领域的 AI 辅助工具提供了标准范例。
+- Ghidra MCP Server 成功集成了 110 个 Ghidra 原生工具，通过 Model Context Protocol (MCP) 架构实现了 AI 对逆向工程工具的深度调用与自动化分析。
+- 该项目将 Ghidra 的脚本功能转化为标准化的 AI 智能体，使大语言模型能够直接执行反编译、数据流分析和模式匹配等复杂任务。
+- 通过 MCP 协议，AI 能够在保持上下文连贯的同时，动态查询内存地址、交叉引用和函数调用图，显著提升了二进制漏洞挖掘的效率。
+- 此工具链填补了静态分析工具与生成式 AI 之间的空白，允许研究人员通过自然语言交互来驱动繁琐的逆向工程流程。
+- 它展示了 AI Agent 在网络安全领域的应用范式，即利用 LLM 进行逻辑推理，结合专业工具完成高技术门槛的操作。
+- 该集成方案为未来的安全研究提供了基础框架，使得构建能够自主分析恶意软件和固件的“虚拟分析师”成为可能。
 
 ---
 ## 常见问题
 
 
-### 1: 什么是 Ghidra MCP Server，它与标准的 Ghidra 有什么不同？
+### 1: Ghidra MCP Server 是什么？它的主要用途是什么？
 
-1: 什么是 Ghidra MCP Server，它与标准的 Ghidra 有什么不同？
+1: Ghidra MCP Server 是什么？它的主要用途是什么？
 
-**A**: Ghidra MCP Server 是一个基于 Model Context Protocol (MCP) 的服务器，用于将 Ghidra 的功能集成到支持 MCP 的 AI 客户端中。与标准的 Ghidra 不同，它不依赖图形界面（GUI），而是通过 API 暴露了 Ghidra 的脚本和功能。这使得 AI 助手能够读取反编译代码、分析函数、交叉引用，并执行逆向工程任务。
-
----
-
-
-
-### 2: 该工具支持哪些 AI 客户端，如何配置？
-
-2: 该工具支持哪些 AI 客户端，如何配置？
-
-**A**: 该工具与任何支持 Model Context Protocol (MCP) 的客户端兼容。最常见的配置是使用 Claude Desktop（由 Anthropic 开发）。配置过程涉及修改 Claude Desktop 的配置文件，添加 Ghidra MCP Server 的路径和启动命令。配置完成后，用户可以在对话中请求分析 Ghidra 中加载的二进制文件。
+**A**: Ghidra MCP Server 是一个开源项目，它将 Ghidra 的强大逆向工程功能集成到了 Model Context Protocol (MCP) 生态系统中。简单来说，它充当了 AI 智能体（如 Claude 或 Desktop AI 助手）与 Ghidra 之间的桥梁。该服务器封装了大约 110 个 Ghidra 的 API 工具，使得 AI 能够直接读取反汇编代码、分析数据结构、交叉引用、搜索符号以及执行调试操作。这使得逆向工程人员可以通过自然语言与 AI 交互，让 AI 自动化执行繁琐的分析任务，从而大幅提高工作效率。
 
 ---
 
 
 
-### 3: Ghidra MCP Server 提供了哪些具体功能？
+### 2: 该项目如何与 AI 模型（如 Claude）进行协作？
 
-3: Ghidra MCP Server 提供了哪些具体功能？
+2: 该项目如何与 AI 模型（如 Claude）进行协作？
 
-**A**: 该服务器封装了 Ghidra 的核心功能，供 AI 调用。主要功能包括：
-*   **代码分析**：反编译函数、获取函数列表、分析控制流图。
-*   **数据查询**：搜索字符串、查找交叉引用、读取内存地址内容。
-*   **脚本执行**：运行 Ghidra 脚本以自动化分析任务。
-*   **符号操作**：重命名变量、添加注释、创建结构体定义等。
-这些功能允许 AI 理解二进制文件的结构和逻辑。
+**A**: 该项目基于 Anthropic 提出的 Model Context Protocol (MCP) 标准。用户需要在支持 MCP 的客户端（如 Claude Desktop 或 Zed 编辑器）中配置该服务器。配置完成后，当用户询问关于二进制文件的问题时，AI 模型会通过 MCP 协议调用 Ghidra Server 暴露的工具（例如 `get_current_address` 或 `decompile_function`）。Ghidra Server 在本地运行并处理请求，然后将结果（如反汇编代码或函数列表）返回给 AI。AI 再根据这些上下文信息进行分析、总结或执行自动化脚本，实现“人机协同”的逆向分析流程。
 
 ---
 
 
 
-### 4: 使用该工具是否存在安全或隐私风险？
+### 3: 安装和配置 Ghidra MCP Server 的难度大吗？需要哪些环境？
 
-4: 使用该工具是否存在安全或隐私风险？
+3: 安装和配置 Ghidra MCP Server 的难度大吗？需要哪些环境？
 
-**A**: 是的，存在数据隐私风险。使用 AI 辅助逆向工程时，二进制文件的代码片段、字符串和分析数据会被发送到 AI 模型的提供商（例如 Anthropic 或 OpenAI）。如果分析专有软件、恶意软件或敏感代码，这些数据可能会被上传到云端。建议仅在本地运行模型或确保遵守数据隐私政策的情况下使用。
-
----
-
-
-
-### 5: 安装和使用 Ghidra MCP Server 需要什么环境？
-
-5: 安装和使用 Ghidra MCP Server 需要什么环境？
-
-**A**: 基本要求如下：
-*   **Ghidra**：必须安装 Ghidra（建议使用较新的稳定版本）。
-*   **Python 环境**：MCP Server 需要 Python 运行时。
-*   **MCP 客户端**：如 Claude Desktop 或其他支持 MCP 的集成开发环境插件。
-*   **依赖库**：需要安装特定的 Python 库（通常在项目的 `requirements.txt` 中列出）来处理 Ghidra 与 AI 之间的通信。
+**A**: 安装过程相对直接，但需要具备一定的开发环境配置经验。主要步骤如下：
+1.  **环境依赖**：你需要安装 Python 3.x，并确保系统中已安装 Ghidra（因为 Server 需要调用 Ghidra 的底层脚本或 API）。
+2.  **获取代码**：从 GitHub 克隆该项目仓库。
+3.  **安装依赖**：通常需要运行 `pip install` 来安装 MCP 相关的 Python 库。
+4.  **配置客户端**：在 Claude Desktop 的配置文件中添加该服务器的启动命令路径。
+虽然项目旨在简化流程，但用户仍需熟悉命令行操作以及如何修改 JSON 配置文件。此外，由于 Ghidra 是基于 Java 的，确保 Java 环境配置正确也是关键。
 
 ---
 
 
 
-### 6: AI 能否完全自动化逆向工程过程？
+### 4: 这个工具支持 Ghidra 的哪些具体功能？覆盖了 110 个工具具体指什么？
 
-6: AI 能否完全自动化逆向工程过程？
+4: 这个工具支持 Ghidra 的哪些具体功能？覆盖了 110 个工具具体指什么？
 
-**A**: 不能完全自动化，但可以提高效率。虽然 Ghidra MCP Server 赋予了 AI 分析能力，但逆向工程需要上下文理解、逻辑推理和对系统架构的知识。AI 主要起到辅助作用，帮助定位关键函数、解释汇编代码片段或生成伪代码注释，最终的分析决策和验证仍需由人类专家完成。
+**A**: 这 110 个工具覆盖了 Ghidra 中最常用的逆向工程操作。具体包括但不限于：
+*   **导航与查询**：获取当前程序计数器位置、按地址跳转、搜索函数或符号。
+*   **反编译与反汇编**：获取指定函数的反编译 C 代码（Decompile）、获取指令列表。
+*   **数据流分析**：获取函数的调用树、交叉引用、查找引用特定地址的位置。
+*   **补丁与修改**：在数据库中创建注释、打标签、甚至修改指令字节（取决于 API 暴露权限）。
+*   **脚本执行**：部分实现可能允许通过 AI 触发 Ghidra 脚本。
+这些工具将原本分散在 Ghidra 图形界面（GUI）中的功能，转化为可以被 AI 理解和调用的标准化接口。
+
+---
+
+
+
+### 5: 使用该工具是否存在安全风险？它是否会把代码上传到云端？
+
+5: 使用该工具是否存在安全风险？它是否会把代码上传到云端？
+
+**A**: 安全性是逆向工程工具的重中之重。Ghidra MCP Server 通常设计为在**本地**运行。这意味着 AI 模型通过 MCP 调用的工具是直接操作你本地机器上的 Ghidra 实例，敏感的二进制代码和分析数据通常不会离开你的计算机上传到 AI 模型的云端服务器（除非 AI 模型为了生成回答必须将部分代码片段作为上下文发送）。用户应检查项目的配置，确认其通信机制，并确保在使用时遵循公司或个人的安全合规要求，避免将涉密的敏感固件或软件暴露给不可信的 AI 服务商。
+
+---
+
+
+
+### 6: 如果 AI 给出的分析建议是错误的，该怎么办？
+
+6: 如果 AI 给出的分析建议是错误的，该怎么办？
+
+**A**: AI 辅助逆向工程目前主要起辅助作用，而非完全替代。AI 可能会因为上下文理解不足或模型幻觉给出错误的建议。Ghidra MCP Server 的优势在于它提供了“可验证性”。AI 调用工具返回的结果（如反编译代码）是客观事实，用户应当始终在 Ghidra GUI 中验证 AI 的结论。如果 AI 误解了某个函数的逻辑，用户可以通过提供更多上下文（如重命名变量、添加注释）来引导 AI 进行二次分析。该工具更适合用于处理重复性高、模式识别强的工作（如识别特定的编译器优化特征或恶意代码特征），而对于复杂的逻辑漏洞挖掘，仍需依赖人类专家的判断。
+
+---
+
+
+
+### 7: 该项目目前处于什么阶段？是否适合生产环境使用？
+
+7: 该项目目前处于什么阶段？是否适合生产环境使用？
+
+**A**: 根据标题 "Show HN" 来看，这是一个展示性质的项目，通常意味着它处于相对早期的开发阶段或作为概念验证发布。虽然它可能已经实现了核心功能，
 
 ---
 ## 思考题
@@ -433,9 +441,9 @@ AI 辅助分析成功识别出一个协议解析逻辑中的整数溢出漏洞�
 
 ### ### 挑战 1: [简单]
 
-### 问题**: 在 Ghidra 中，你经常需要获取当前函数的基本信息。请尝试编写一个简单的 MCP 工具脚本，该脚本接受一个函数地址作为输入，并返回该函数的名称、入口点地址以及包含的指令数量。
+### 问题**: 假设你正在使用 Ghidra MCP Server 辅助分析一个未知的二进制文件。你需要让 AI 模型列出当前程序中所有的“函数”，并按地址排序。请描述你应该如何向 AI 构建这个 Prompt，以确保它调用正确的 MCP 工具而不是凭空捏造结果？
 
-### 提示**: 你需要使用 Ghidra Scripting API 中的 `getFunctionContaining()` 方法来获取函数对象，然后调用该对象的相关方法（如 `getName()` 和 `getBody()`）来提取信息。
+### 提示**: 思考 MCP (Model Context Protocol) 的核心机制。AI 需要知道它拥有访问特定工具的权限。你的 Prompt 需要明确指示 AI 使用其可用的工具集来查询 Ghidra 的当前状态，而不是依赖其预训练的记忆。
 
 ### 
 
@@ -454,14 +462,14 @@ AI 辅助分析成功识别出一个协议解析逻辑中的整数溢出漏洞�
 ## 站内链接
 
 - 分类： [安全](/categories/%E5%AE%89%E5%85%A8/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)
-- 标签： [Ghidra](/tags/ghidra/) / [逆向工程](/tags/%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B/) / [MCP](/tags/mcp/) / [LLM](/tags/llm/) / [AI辅助](/tags/ai%E8%BE%85%E5%8A%A9/) / [工具集成](/tags/%E5%B7%A5%E5%85%B7%E9%9B%86%E6%88%90/) / [安全分析](/tags/%E5%AE%89%E5%85%A8%E5%88%86%E6%9E%90/) / [Hacker News](/tags/hacker-news/)
+- 标签： [Ghidra](/tags/ghidra/) / [MCP](/tags/mcp/) / [逆向工程](/tags/%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B/) / [LLM](/tags/llm/) / [安全分析](/tags/%E5%AE%89%E5%85%A8%E5%88%86%E6%9E%90/) / [二进制](/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6/) / [工具集成](/tags/%E5%B7%A5%E5%85%B7%E9%9B%86%E6%88%90/) / [AI Agent](/tags/ai-agent/)
 - 场景： [大语言模型](/scenarios/%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/) / [AI/ML项目](/scenarios/ai-ml%E9%A1%B9%E7%9B%AE/)
 
 ### 相关文章
 
 - [Show HN：一款用于监控 LLM 工具数据传输的中间人代理]({{< relref "posts/20260129-hacker_news-show-hn-a-mitm-proxy-to-see-what-your-llm-tools-ar-9.md" >}})
-- [阿里开源 Higress：AI 原生 API 网关]({{< relref "posts/20260131-github_trending-alibaba-higress-9.md" >}})
-- [纽约市AI聊天bot因建议企业违法而被关停]({{< relref "posts/20260130-hacker_news-mamdani-to-kill-the-nyc-ai-chatbot-caught-telling--18.md" >}})
-- [发现逾17.5万个Ollama AI实例公网暴露]({{< relref "posts/20260131-hacker_news-175k-publicly-exposed-ollama-ai-instances-discover-19.md" >}})
-- [MaliciousCorgi：恶意AI扩展将代码发送至中国]({{< relref "posts/20260202-hacker_news-maliciouscorgi-ai-extensions-send-your-code-to-chi-5.md" >}})
+- [Kirara-AI：支持多平台接入的多模态聊天机器人框架]({{< relref "posts/20260130-github_trending-lss233-kirara-ai-2.md" >}})
+- [Agent评估显示AGENTS.md配置优于Skills]({{< relref "posts/20260130-hacker_news-agentsmd-outperforms-skills-in-our-agent-evals-4.md" >}})
+- [Agent评估显示AGENTS.md配置优于技能配置]({{< relref "posts/20260130-hacker_news-agentsmd-outperforms-skills-in-our-agent-evals-6.md" >}})
+- [Compressed Agents：Agent Skills 技术解析]({{< relref "posts/20260130-hacker_news-compressed-agentsmd-agent-skills-6.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*
