@@ -550,11 +550,7 @@ HypeNet 是论文提出的新型混合架构，其核心创新在于解决了线
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)
-<<<<<<< Updated upstream
 - 标签： [线性注意力](/tags/%E7%BA%BF%E6%80%A7%E6%B3%A8%E6%84%8F%E5%8A%9B/) / [长上下文](/tags/%E9%95%BF%E4%B8%8A%E4%B8%8B%E6%96%87/) / [混合架构](/tags/%E6%B7%B7%E5%90%88%E6%9E%B6%E6%9E%84/) / [知识蒸馏](/tags/%E7%9F%A5%E8%AF%86%E8%92%B8%E9%A6%8F/) / [Transformer](/tags/transformer/) / [RNN](/tags/rnn/) / [Qwen](/tags/qwen/) / [推理优化](/tags/%E6%8E%A8%E7%90%86%E4%BC%98%E5%8C%96/)
-=======
-- 标签： [线性注意力](/tags/%E7%BA%BF%E6%80%A7%E6%B3%A8%E6%84%8F%E5%8A%9B/) / [长上下文](/tags/%E9%95%BF%E4%B8%8A%E4%B8%8B%E6%96%87/) / [模型蒸馏](/tags/%E6%A8%A1%E5%9E%8B%E8%92%B8%E9%A6%8F/) / [Transformer](/tags/transformer/) / [RNN](/tags/rnn/) / [混合架构](/tags/%E6%B7%B7%E5%90%88%E6%9E%B6%E6%9E%84/) / [cs.CL](/tags/cs.cl/) / [推理加速](/tags/%E6%8E%A8%E7%90%86%E5%8A%A0%E9%80%9F/)
->>>>>>> Stashed changes
 - 场景： [Web应用开发](/scenarios/web%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/)
 
 ### 相关文章
