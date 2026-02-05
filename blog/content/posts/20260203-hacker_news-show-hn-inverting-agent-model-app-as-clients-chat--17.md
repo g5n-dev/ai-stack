@@ -31,7 +31,6 @@ scenarios: ["Web应用开发"]
 ---
 ## 评论
 
-**评价对象：** Show HN: Inverting Agent Model (App as Clients, Chat as Server and Reflection)
 
 ### 1. 核心观点与逻辑架构
 

@@ -58,7 +58,6 @@ scenarios: ["AI/ML项目"]
 ---
 ## 评论
 
-### 评价对象：文章 [AINews] OpenAI Codex App: death of the VSCode fork...
 
 **中心观点**
 文章认为，OpenAI Codex App 所代表的**“上下文感知型 AI 代理”**正在通过接管多文件编辑和复杂任务调度，终结传统的 IDE 分叉与工作树模式，将开发者的交互从“工具操作”转向“技能编排”。

@@ -31,7 +31,6 @@ FlashAttention-T 提出了一种基于张量化的注意力机制优化方案，
 ---
 ## 评论
 
-### 评价对象：FlashAttention-T: Towards Tensorized Attention
 
 **中心观点**
 文章提出了一种通过算子融合与张量化改造来优化Transformer注意力机制的方法，旨在通过消除内存访问瓶颈和利用现代硬件（如GPU Tensor Core）的矩阵计算能力，实现比标准FlashAttention更快的推理速度和更低的显存占用。

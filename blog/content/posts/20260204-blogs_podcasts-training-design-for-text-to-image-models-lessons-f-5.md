@@ -30,7 +30,6 @@ scenarios: ["AI/ML项目"]
 ## 评论
 
 **文章标题：** Training Design for Text-to-Image Models: Lessons from Ablations
-**评价视角：** 技术架构与工业化落地
 
 ### 一、 核心观点与论证结构
 

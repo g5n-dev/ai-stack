@@ -31,7 +31,6 @@ scenarios: ["AI/ML项目", "DevOps/运维"]
 ---
 ## 评论
 
-**评价对象：** 文章《Sandboxing AI Agents in Linux》（基于文章标题及该领域通用技术语境进行深度评价）
 
 ### 一、 核心观点与论证结构
 

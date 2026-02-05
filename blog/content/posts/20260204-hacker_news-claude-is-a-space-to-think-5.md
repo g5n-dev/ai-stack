@@ -31,7 +31,6 @@ scenarios: ["大语言模型", "AI/ML项目"]
 ---
 ## 评论
 
-**评价对象：** 文章《Claude Is a Space to Think》（通常指代 Anthropic 官方博客关于 Claude 3.5 Sonnet 及其 Artifacts 功能发布的深度文章，或与之同名的行业深度评论）。
 
 **评价综述：**
 

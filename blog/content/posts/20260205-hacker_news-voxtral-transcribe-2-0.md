@@ -32,7 +32,6 @@ scenarios: ["AI/ML项目"]
 ## 评论
 
 **文章标题**：Voxtral Transcribe 2 深度评价
-**评价对象**：假设该文章为一篇介绍Voxtral Transcribe 2（以下简称VT2）这一语音转文字（ASR）与AI辅助工具的技术发布文章或深度评测。
 
 ---
 

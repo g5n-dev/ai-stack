@@ -64,7 +64,6 @@ Nathan Lambert 和 Sebastian Raschka 是机器学习研究员、工程师和教�
 ---
 ## 评论
 
-### 评价对象
 文章标题：#490 – State of AI in 2026: LLMs, Coding, Scaling Laws, China, Agents, GPUs, AGI
 作者背景：Nathan Lambert (Ai2, RLHF专家) & Sebastian Raschka (AI教育者, 《Build a Large Language Model》作者)
 

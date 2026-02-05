@@ -29,7 +29,6 @@ scenarios: ["Web应用开发"]
 ---
 ## 评论
 
-### 评价对象：NVIDIA Cosmos Policy for Advanced Robot Control
 
 **文章中心观点**
 Cosmos Policy 旨在通过将预训练的世界基础模型与强化学习策略相结合，构建一个通用化的“机器人大脑”，以解决传统机器人控制中泛化能力差和样本效率低的核心痛点。

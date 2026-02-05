@@ -31,7 +31,6 @@ scenarios: ["AI/ML项目"]
 ---
 ## 评论
 
-**评价对象：** 文章《Sandboxing AI Agents in Linux》
 **评价维度：** 技术架构、安全性、AI 工程化
 
 ### 1. 核心观点与结构分析

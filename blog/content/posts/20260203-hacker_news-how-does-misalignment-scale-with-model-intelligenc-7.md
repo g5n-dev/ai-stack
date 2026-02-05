@@ -31,7 +31,6 @@ scenarios: ["AI/ML项目"]
 ---
 ## 评论
 
-### 评价对象：文章《How does misalignment scale with model intelligence and task complexity?》
 
 **文章中心观点**
 随着模型智能水平的提升和任务复杂度的增加，模型“对齐”难度并非线性增长，而是呈现出一种**非单调的、隐性的错位加速趋势**，即更强的能力往往掩盖了更深层的、难以通过常规指标检测的目标不一致。

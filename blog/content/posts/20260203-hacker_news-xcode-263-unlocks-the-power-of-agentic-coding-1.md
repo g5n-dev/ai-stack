@@ -31,7 +31,6 @@ scenarios: ["大语言模型"]
 ---
 ## 评论
 
-**评价对象：** 关于《Xcode 26.3 unlocks the power of agentic coding》一文的深度技术评价（基于标题及“Agentic Coding”技术概念进行的推演性评价）。
 
 **前提说明：** 鉴于 Xcode 当前官方版本未达 26.3，本评价基于该文章描述的是一种未来技术愿景或概念验证版本的前提。
 

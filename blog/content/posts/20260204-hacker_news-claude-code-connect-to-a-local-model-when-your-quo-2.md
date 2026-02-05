@@ -211,7 +211,6 @@ class ModelRouter:
 ---
 ## 最佳实践
 
-我们被要求为 "Claude Code: connect to a local model when your quota runs out" 生成最佳实践指南。来源是 hacker_news。我们需要列出5-7条最佳实践，每条有具体说明、实施建议、注意事项。使用markdown格式，不要emoji。
 
 首先，理解主题：Claude Code 是一个工具或环境，可能是Anthropic的Claude代码解释器，或者是一个代码生成/执行环境。但这里具体是 "Claude Code: connect to a local model when your quota runs out"，意思是在你的配额用完时连接到本地模型。可能是指使用Claude API时，如果API调用配额用尽，可以回退到本地运行的模型（如开源模型）来继续提供服务。这类似于降级策略。
 
@@ -290,7 +289,6 @@ class ModelRouter:
 **实施步骤**：
 1. 抽象统一的请求/响应接口，封装模型特定的差异。
 2. 对本地模型的输出进行后处理，使其风格与Claude输出相似（如添加结构、调整格式）。
-3. 如果本地模型功能有限，可简化请求或提供降级功能（如只返回摘要而非全文）。
 4. 测试各种场景下的输出兼容性。
 
 **注意事项**：

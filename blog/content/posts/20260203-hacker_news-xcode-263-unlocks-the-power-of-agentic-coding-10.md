@@ -31,7 +31,6 @@ scenarios: ["AI/ML项目"]
 ---
 ## 评论
 
-**评价对象：** 文章《Xcode 26.3 unlocks the power of agentic coding》（注：Xcode版本号在当前语境下应为未来或假设版本，当前主流版本为15/16，此处基于“Agentic Coding”这一概念进行深度评价）
 
 ### 一、 核心观点提炼
 

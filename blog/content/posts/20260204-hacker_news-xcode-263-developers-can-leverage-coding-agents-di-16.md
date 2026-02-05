@@ -31,7 +31,6 @@ scenarios: ["AI/ML项目"]
 ---
 ## 评论
 
-**评价对象**：关于 "Xcode 26.3 – Developers can leverage coding agents directly in Xcode" 的相关报道与技术分析
 **评价字数**：约 1100 字
 
 ---

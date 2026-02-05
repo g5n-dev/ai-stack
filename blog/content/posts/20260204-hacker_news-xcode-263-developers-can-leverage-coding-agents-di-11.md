@@ -33,7 +33,6 @@ scenarios: ["AI/ML项目"]
 
 ### 深度评论
 
-**评价对象：** 假设文章《Xcode 26.3 – Developers can leverage coding agents directly in Xcode》
 （注：鉴于当前 Xcode 版本未达到 26.3，本评价基于“苹果在 IDE 中深度集成自主智能体”这一假设性技术场景进行推演。）
 
 #### 一、 核心观点与结构化评价
