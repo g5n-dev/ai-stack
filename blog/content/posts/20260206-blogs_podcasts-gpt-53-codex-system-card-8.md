@@ -241,7 +241,6 @@ GPT-5.3-Codex 是大模型在软件工程领域的一次范式转移。它通过
 
 - [GPT-5.3-Codex：融合推理与编码能力的智能体模型]({{< relref "posts/20260205-blogs_podcasts-gpt-53-codex-system-card-7.md" >}})
 - [GPT-5.3-Codex：融合推理与编程的智能体模型]({{< relref "posts/20260205-blogs_podcasts-gpt-53-codex-system-card-5.md" >}})
-- [OpenAI对决Anthropic：Claude Opus 4.6与GPT-5.3 Codex技术对比]({{< relref "posts/20260206-blogs_podcasts-ainews-openai-and-anthropic-go-to-war-claude-opus--0.md" >}})
 - [GPT-5.3-Codex：结合前沿编码性能与推理能力的代理式模型]({{< relref "posts/20260205-blogs_podcasts-gpt-53-codex-system-card-4.md" >}})
 - [GPT-5.3-Codex：结合前沿编码与推理能力的具身智能体编程模型]({{< relref "posts/20260206-blogs_podcasts-gpt-53-codex-system-card-6.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*
