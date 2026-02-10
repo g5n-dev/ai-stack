@@ -1,17 +1,17 @@
 ---
-title: "New Relic联手AWS构建生成式AI生产力引擎"
-date: 2026-02-10T21:20:19+08:00
+title: "New Relic NOVA：基于AWS构建企业级生成式AI生产力引擎"
+date: 2026-02-10T22:46:04+08:00
 draft: false
 entry_kind: "auto"
-tags: ["blogs_podcasts"]
-categories: ["效率与方法论"]
+tags: ["生成式AI", "AWS", "企业级", "生产力", "技术架构", "LLM", "虚拟助手", "New Relic"]
+categories: ["AI 工程", "后端"]
 source: blogs_podcasts
-description: "以下是对该内容的中文总结： 本文详细介绍了 New Relic 如何通过与 AWS 生成式 AI 创新中心合作，将其虚拟助手 NOVA 从单纯的知识助手升级为全面的生成引擎，从而显著提升生产力。 **核心内容概要：** 1. **项目背景与目标** * **挑战：** 随着 New Relic 平台功能的快速增长，用户"
+description: "以下是对该内容的中文总结： 本文介绍了 New Relic 与 AWS 生成式 AI 创新中心合作，将其虚拟助手 NOVA 从一个单纯的知识助手，转型为全面生产力引擎的案例。 文章重点探讨了以下三个方面： 1. **技术架构**：构建企业级 AI 解决方案的技术实现细节。 2. **开发历程**：项目从概念到落地的演进"
 external_url: https://aws.amazon.com/blogs/machine-learning/new-relic-transforms-productivity-with-generative-ai-on-aws
-scenarios: ["Web应用开发"]
+scenarios: ["AI/ML项目", "大语言模型"]
 ---
 
-# New Relic联手AWS构建生成式AI生产力引擎
+# New Relic NOVA：基于AWS构建企业级生成式AI生产力引擎
 
 ---
 
@@ -24,142 +24,99 @@ scenarios: ["Web应用开发"]
 ---
 ## 摘要/简介
 
-Working with the Generative AI Innovation Center, New Relic NOVA (New Relic Omnipresence Virtual Assistant) evolved from a knowledge assistant into a comprehensive productivity engine. We explore the technical architecture, development journey, and key lessons learned in building an enterprise-grade AI solution that delivers measurable productivity gains at scale.
-
----
-## 导语
-
-New Relic 与 AWS Generative AI Innovation Center 合作，将 NOVA 从基础的知识助手升级为全面的生产力引擎。本文深入剖析了该企业级 AI 解决方案的技术架构与开发历程，探讨了如何通过生成式 AI 实现可衡量的效率提升。无论您关注系统设计还是工程实践，都能从中获得构建大规模生产级 AI 应用的宝贵经验。
+通过与生成式人工智能创新中心合作，New Relic NOVA（New Relic 全能虚拟助手）已从知识助手演进为一款全面的生产力引擎。我们探讨了在构建一款企业级 AI 解决方案过程中的技术架构、开发历程以及关键经验，该解决方案能够在大规模范围内实现可衡量的生产力提升。
 
 ---
 ## 摘要
 
 以下是对该内容的中文总结：
 
-本文详细介绍了 New Relic 如何通过与 AWS 生成式 AI 创新中心合作，将其虚拟助手 NOVA 从单纯的知识助手升级为全面的生成引擎，从而显著提升生产力。
+本文介绍了 New Relic 与 AWS 生成式 AI 创新中心合作，将其虚拟助手 NOVA 从一个单纯的知识助手，转型为全面生产力引擎的案例。
 
-**核心内容概要：**
-
-1.  **项目背景与目标**
-    *   **挑战：** 随着 New Relic 平台功能的快速增长，用户（包括开发者和客户）面临信息过载，难以快速找到所需文档或操作指引，导致效率低下。
-    *   **解决方案：** 开发 New Relic NOVA，利用生成式 AI 技术，帮助用户快速解答问题、执行任务并提供可操作的洞察。
-
-2.  **技术架构与实现**
-    *   **基础架构：** 系统构建于 AWS 之上，利用 **Amazon Bedrock** 作为底层模型接入层，提供了灵活性和安全性。
-    *   **模型选择：** 经过评估，选择了 **Anthropic 的 Claude 3** 模型。该模型在处理长上下文、遵循复杂指令以及减少幻觉方面表现优异。
-    *   **技术栈：** 结合了 **LangChain** 进行编排，使用 **Amazon OpenSearch Service** 进行语义检索（RAG 架构），并采用 **AWS Step Functions** 编排工作流。
-
-3.  **关键功能与应用场景**
-    *   **知识检索：** NOVA 能基于 New Relic 庞大的文档库，精准回答技术问题。
-    *   **任务自动化：** 它不仅能回答问题，还能生成并运行代码（如 NRQL 查询），甚至直接调用 API 执行操作，充当“代理”角色。
-    *   **可观测性：** NOVA 自身也具备完整的可观测性，开发者可以追踪其思维链和执行步骤。
-
-4.  **开发经验与教训**
-    *   **迭代开发：** 项目采用了快速原型与迭代的方法，从简单的“问答”逐步扩展到复杂的“任务执行”。
-    *   **评估与优化：** 建立了严格的评估机制，利用合成数据生成和“黄金数据集”来持续测试模型性能，确保回答的准确性和相关性。
-    *   **上下文管理：** 优化了提示词工程和上下文窗口的使用，以处理复杂的技术文档。
-
-5.  **成果与展望**
-    *   NOVA 已成为企业级 AI 解决方案的
+文章重点探讨了以下三个方面：
+1.  **技术架构**：构建企业级 AI 解决方案的技术实现细节。
+2.  **开发历程**：项目从概念到落地的演进过程。
+3.  **关键经验**：在大规模部署中实现可衡量的生产力提升所获得的重要经验与教训。
 
 ---
 ## 最佳实践
 
 ## 最佳实践指南
 
-### 实践 1：利用 Amazon Bedrock 构建可扩展的生成式 AI 基础
+### 实践 1：利用生成式 AI 构建智能运维助手
 
-**说明**:
-通过使用 Amazon Bedrock 服务，企业可以无需管理底层基础设施即可访问高性能的基础模型（如 Claude 3 等）。New Relic 的实践表明，直接调用 Bedrock API 能够快速集成大语言模型能力，同时利用 AWS 的云原生架构保障系统的可扩展性和安全性。
+**说明**:  
+基于 Amazon Bedrock 等服务集成大语言模型（LLM），构建能够理解自然语言查询的智能助手。通过将 New Relic 的可观测性数据与生成式 AI 结合，允许用户使用非技术语言（如“为什么我的网站变慢了？”）来查询复杂的系统状态，从而降低数据分析的门槛，加速问题排查过程。
 
 **实施步骤**:
-1. 在 AWS 控制台中启用 Amazon Bedrock 服务，并请求访问所需的基础模型。
-2. 配置 IAM 角色，确保应用程序拥有调用 Bedrock `InvokeModel` API 的最小权限。
-3. 在应用代码中通过 AWS SDK (如 Boto3) 建立与 Bedrock 的连接，处理推理请求和响应流。
+1. **数据准备**：确保 New Relic 中已配置并收集了足够的日志、指标和链路追踪数据。
+2. **模型选择**：在 AWS 上选择适合的基座模型（如 Amazon Titan 或通过 Bedrock 访问的第三方模型）。
+3. **RAG 架构搭建**：建立检索增强生成（RAG）流程，将用户的自然语言问题转换为 New Relic 的查询语言（如 NRQL），并检索相关上下文。
+4. **接口集成**：将 AI 助手集成到现有的工作流中（如 Slack 或内部门户）。
 
-**注意事项**:
-- 严格控制 API 密钥和 IAM 权限，遵循最小权限原则。
-- 监控 Token 使用量和 API 调用延迟，以便优化成本和性能。
+**注意事项**:  
+确保 LLM 在执行查询时遵循严格的权限控制，防止通过自然语言注入导致非授权的数据访问。
 
 ---
 
-### 实践 2：实施全面的可观测性策略
+### 实践 2：自动化异常检测与根本原因分析
 
-**说明**:
-构建生成式 AI 应用不仅仅是调用模型，还需要监控整个请求链路，包括向量数据库检索、上下文构建以及模型推理的耗时。New Relic 通过监控 AWS Lambda 函数和 Bedrock 的调用情况，确保了 AI 助手的响应速度和准确性。
+**说明**:  
+利用生成式 AI 分析海量的可观测性数据，自动识别偏离基线的异常行为。不同于传统的静态阈值告警，生成式 AI 可以理解复杂的上下文关系，自动生成事故摘要，并推测潜在的根本原因，从而减少运维人员在“理解事故”上花费的时间。
 
 **实施步骤**:
-1. 部署 New Relic Lambda 扩展层，自动捕获函数的冷启动和内存使用情况。
-2. 利用 OpenTelemetry 标准协议，将 Bedrock 的调用指标（如延迟、Token 消耗）发送至 New Relic 平台。
-3. 配置自定义仪表盘，可视化展示用户查询的端到端延迟和模型推理成功率。
+1. **基线建立**：让 AI 模型学习正常流量模式下的系统行为。
+2. **模式识别**：配置 AI 驱动的异常检测器，实时监控数据流中的非线性变化。
+3. **自动关联**：当检测到异常时，利用 AI 自动关联同一时间窗口内的日志错误、部署变更和数据库延迟。
+4. **生成报告**：自动生成包含可能原因的初步事故报告，供 SRE 团队审核。
 
-**注意事项**:
-- 确保在日志中脱敏处理 PII（个人身份信息），避免敏感数据传入可观测性平台。
-- 设置针对高延迟或高错误率的告警阈值。
+**注意事项**:  
+AI 生成的根本原因分析应作为“辅助建议”而非绝对结论，人工审核机制必不可少，以防止误导。
 
 ---
 
-### 实践 3：优化提示词工程与上下文管理
+### 实践 3：优化云成本与资源效率
 
-**说明**:
-生成式 AI 的质量高度依赖于 Prompt 的设计。最佳实践包括建立动态的 Prompt 模板，并根据用户意图注入相关的上下文信息（如文档片段），以提高回答的相关性并减少幻觉。
+**说明**:  
+利用 AI 分析 New Relic 中的基础设施性能数据与 AWS 成本数据，识别资源浪费和性能瓶颈。生成式 AI 可以提供具体的优化建议（例如：“将非生产环境的数据库实例在夜间缩小规格以节省 30% 成本”），并自动生成优化脚本的代码片段。
 
 **实施步骤**:
-1. 建立版本控制的 Prompt 模板库，针对不同任务（如总结、提取、问答）设计专用模板。
-2. 实施检索增强生成（RAG）模式，先通过语义搜索获取相关文档，再将其作为上下文填入 Prompt。
-3. 迭代测试不同的 Prompt 变体，基于用户反馈闭环优化模板。
+1. **数据集成**：将 AWS CloudWatch Billing Metrics 与 New Relic 的基础设施监控数据打通。
+2. **成本模式训练**：训练模型识别高成本低回报的资源使用模式（如闲置的 EC2 实例或过度配置的容器）。
+3. **建议生成**：设置定期任务，让 AI 生成包含具体 ROI 分析的优化建议书。
+4. **自动化执行**：对于低风险的优化建议，通过 AWS Lambda 实现自动化修复。
 
-**注意事项**:
-- 注意上下文窗口的 Token 限制，避免超出模型最大处理长度。
-- 在 Prompt 中明确设定输出格式（如 JSON 或 Markdown），便于后续处理。
+**注意事项**:  
+在实施自动缩容或资源释放策略前，务必设置资源锁定机制，防止关键业务组件被误操作。
 
 ---
 
-### 实践 4：采用无服务器架构以实现弹性与成本效益
+### 实践 4：利用 AI 辅助编写与维护代码
 
-**说明**:
-利用 AWS Lambda 等 Serverless 服务运行 AI 应用逻辑，可以根据请求量自动伸缩，仅在代码执行时付费。这种架构特别适合处理突发流量，避免了为闲置资源付费。
+**说明**:  
+结合 Amazon CodeWhisperer 等工具，利用生成式 AI 帮助开发人员编写用于监控的应用代码（如自定义插件、API 集成脚本）。AI 可以根据 New Relic 的最佳实践自动生成样板代码，确保监控代码的规范性和覆盖率，减少技术债务。
 
 **实施步骤**:
-1. 将 AI 应用的后端逻辑封装为 AWS Lambda 函数。
-2. 配置 API Gateway 或 Application Load Balancer 作为触发器。
-3. 调整 Lambda 的内存和超时设置，以适应不同 LLM 的推理时间需求。
+1. **IDE 集成**：在开发环境中集成 AI 编码助手。
+2. **上下文注入**：在编写代码时，提供 New Relic API 文档作为上下文参考，让 AI 生成符合规范的调用代码。
+3. **代码审查**：利用 AI 审查现有的监控代码，指出未处理的异常或性能不佳的查询语句。
+4. **单元测试生成**：自动生成针对监控逻辑的测试用例，确保数据采集的稳定性。
 
-**注意事项**:
-- 注意 Lambda 的默认超时限制，对于耗时较长的模型推理任务，可能需要异步调用模式。
-- 优化 Lambda 层的大小，加快冷启动速度。
+**注意事项**:  
+AI 生成的代码必须经过安全扫描，确保没有硬编码的密钥或敏感信息（如 AWS API Key）泄露。
 
 ---
 
-### 实践 5：建立严格的数据治理与安全合规机制
+### 实践 5：构建生成式 AI 应用的可观测性
 
-**说明**:
-在使用生成式 AI 时，数据隐私和安全至关重要。必须确保传输到 AWS Bedrock 的数据符合企业合规要求，并防止数据泄露给未授权的模型或第三方。
-
-**实施步骤**:
-1. 启用 AWS KMS（Key Management Service）对静态数据进行加密。
-2. 在数据发送至 LLM 之前，通过中间件层进行敏感数据扫描和过滤。
-3. 定期审计 AWS CloudTrail 日志，追踪所有对 Bedrock API 的访问记录。
-
-**注意事项**:
-- 了解所选基础模型的数据保留政策（例如 AWS 不使用客户数据训练模型）。
-- 建立数据使用审批流程，区分公开数据与内部机密数据的处理路径。
-
----
-
-### 实践 6：构建基于反馈的持续改进闭环
-
-**说明**:
-AI 模型的效果需要持续验证。通过收集用户对 AI 回复的点赞/点踩反馈，可以将人工反馈转化为模型微调或 Prompt 优化的依据，从而持续提升系统效能。
+**说明**:  
+当企业基于 AWS 构建自己的生成式 AI 应用时，New Relic 可以作为专门的监控层。最佳实践包括监控 LLM 的延迟、Token 使用量（成本）、提示词有效性以及模型的幻觉率。这确保了 AI 应用本身的可靠性、安全性和成本效益。
 
 **实施步骤**:
-1. 在用户界面集成简单的反馈机制（如“有用/无用”按钮）。
-2. 将反馈数据连同原始 Query、上下文和模型响应存储在数据湖（如 Amazon S3）中。
-3. 定期分析低分案例，针对性地调整 Prompt 或补充知识库内容。
-
-**注意事项**:
-- 确保反馈数据的收集符合隐私法规。
-- 建立自动化流程，定期评估模型在特定测试
+1. **定义指标**：确立关键 AI 指标，如每次交互的平均 Token 数、模型响应时间及用户满意度评分。
+2. **追踪链路**：利用分布式追踪记录从用户提示到模型响应再到后端数据库调用的完整链路。
+3. **数据质量监控**：监控输入和输出数据，检测是否存在提示词注入攻击或不当内容生成。
+4. **成本看板**：
 
 ---
 ## 引用
@@ -175,15 +132,15 @@ AI 模型的效果需要持续验证。通过收集用户对 AI 回复的点赞/
 ---
 ## 站内链接
 
-- 分类： [效率与方法论](/categories/%E6%95%88%E7%8E%87%E4%B8%8E%E6%96%B9%E6%B3%95%E8%AE%BA/)
-- 标签： [blogs_podcasts](/tags/blogs-podcasts/)
-- 场景： [Web应用开发](/scenarios/web%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/)
+- 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [后端](/categories/%E5%90%8E%E7%AB%AF/)
+- 标签： [生成式AI](/tags/%E7%94%9F%E6%88%90%E5%BC%8Fai/) / [AWS](/tags/aws/) / [企业级](/tags/%E4%BC%81%E4%B8%9A%E7%BA%A7/) / [生产力](/tags/%E7%94%9F%E4%BA%A7%E5%8A%9B/) / [技术架构](/tags/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/) / [LLM](/tags/llm/) / [虚拟助手](/tags/%E8%99%9A%E6%8B%9F%E5%8A%A9%E6%89%8B/) / [New Relic](/tags/new-relic/)
+- 场景： [AI/ML项目](/scenarios/ai-ml%E9%A1%B9%E7%9B%AE/) / [大语言模型](/scenarios/%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/)
 
 ### 相关文章
 
-- [OpenAI与Anthropic模型之争：Claude Opus 4.6对决GPT 5.3 Codex]({{< relref "posts/20260210-blogs_podcasts-ainews-openai-and-anthropic-go-to-war-claude-opus--8.md" >}})
-- [Building Prometheus: How Backend Aggregation Enables Gi]({{< relref "posts/20260210-blogs_podcasts-building-prometheus-how-backend-aggregation-enable-8.md" >}})
-- [结合Hugging Face与SageMaker实现企业级LLM高效微调]({{< relref "posts/20260210-blogs_podcasts-scale-llm-fine-tuning-with-hugging-face-and-amazon-9.md" >}})
-- [OpenAI在ChatGPT测试广告以支持免费访问]({{< relref "posts/20260210-blogs_podcasts-testing-ads-in-chatgpt-1.md" >}})
-- [Transformers.js v4 预览版已发布 NPM]({{< relref "posts/20260210-blogs_podcasts-transformersjs-v4-preview-now-available-on-npm-3.md" >}})
+- [利用 Hugging Face 与 SageMaker 扩展企业级 LLM 微调]({{< relref "posts/20260210-blogs_podcasts-scale-llm-fine-tuning-with-hugging-face-and-amazon-9.md" >}})
+- [AI对工程类岗位的影响或与预期不同]({{< relref "posts/20260129-hacker_news-ais-impact-on-engineering-jobs-may-be-different-th-5.md" >}})
+- [Codex 应用：基于 GPT-3 的代码生成工具]({{< relref "posts/20260202-hacker_news-the-codex-app-1.md" >}})
+- [Codex 应用：基于 OpenAI 模型的代码生成工具]({{< relref "posts/20260203-hacker_news-the-codex-app-12.md" >}})
+- [我的 AI 技术应用实践与经验总结]({{< relref "posts/20260205-hacker_news-my-ai-adoption-journey-3.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*
