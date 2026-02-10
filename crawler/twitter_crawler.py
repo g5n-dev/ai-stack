@@ -275,16 +275,34 @@ class TwitterCrawler:
 
 
 class TwitterRecentCrawler(TwitterCrawler):
-    """最近推文爬虫 - 只爬取最近30分钟内的推文"""
+    """最近推文爬虫 - 只爬取最近一段时间内的推文"""
 
-    def __init__(self, accounts: Optional[List[str]] = None, headless: bool = True):
-        super().__init__(accounts=accounts, tweets_per_account=50, headless=headless)
+    def __init__(
+        self,
+        accounts: Optional[List[str]] = None,
+        *,
+        headless: bool = True,
+        tweets_per_account: int = 30,
+        lookback_minutes: int = 90,
+        timeout: int = 30000,
+        save_screenshots: bool = True,
+        screenshots_dir: Optional[str] = None,
+    ):
+        super().__init__(
+            accounts=accounts,
+            tweets_per_account=tweets_per_account,
+            headless=headless,
+            timeout=timeout,
+            save_screenshots=save_screenshots,
+            screenshots_dir=screenshots_dir,
+        )
+        self.lookback_minutes = max(1, int(lookback_minutes))
 
     async def crawl_account(self, account: str) -> List[Dict]:
         """爬取单个账号的最近推文"""
         all_tweets = await super().crawl_account(account)
 
-        thirty_minutes_ago = datetime.now(timezone.utc) - timedelta(minutes=30)
+        threshold = datetime.now(timezone.utc) - timedelta(minutes=self.lookback_minutes)
         recent_tweets = []
 
         for tweet in all_tweets:
@@ -296,11 +314,11 @@ class TwitterRecentCrawler(TwitterCrawler):
                     tweet_time = datetime.fromisoformat(timestamp_str)
                     if tweet_time.tzinfo is None:
                         tweet_time = tweet_time.replace(tzinfo=timezone.utc)
-                    if tweet_time > thirty_minutes_ago:
+                    if tweet_time > threshold:
                         recent_tweets.append(tweet)
             except Exception as e:
                 logger.warning(f"解析推文时间失败: {e}")
 
-        logger.info(f"账号 @{account} 最近30分钟内有 {len(recent_tweets)} 条新推文")
+        logger.info(f"账号 @{account} 最近{self.lookback_minutes}分钟内有 {len(recent_tweets)} 条新推文")
 
         return recent_tweets

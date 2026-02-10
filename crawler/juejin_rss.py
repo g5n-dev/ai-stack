@@ -8,6 +8,7 @@ from datetime import datetime
 from typing import List, Dict
 import logging
 import html
+import requests
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -29,7 +30,13 @@ class JuejinRSSCrawler:
             List[Dict]: 文章信息列表
         """
         try:
-            feed = feedparser.parse(self.rss_url)
+            headers = {
+                "User-Agent": "Mozilla/5.0 (AI-Stack; +https://github.com/)",
+                "Accept": "application/rss+xml, application/atom+xml, application/xml, text/xml;q=0.9, */*;q=0.8",
+            }
+            resp = requests.get(self.rss_url, headers=headers, timeout=15)
+            resp.raise_for_status()
+            feed = feedparser.parse(resp.text)
 
             if feed.bozo:
                 logger.warning(f"RSS feed parsing warning: {feed.bozo}")
@@ -49,23 +56,27 @@ class JuejinRSSCrawler:
     def _extract_article_info(self, entry) -> Dict:
         """从 RSS 条目中提取文章信息"""
         try:
-            title = entry.get('title', '')
-            link = entry.get('link', '')
-            description = entry.get('description', '')
+            title = html.unescape(entry.get('title', '') or '')
+            link = entry.get('link', '') or ''
+            description = entry.get('summary', '') or entry.get('description', '') or ''
             author = entry.get('author', '')
             published = entry.get('published', '')
             tags = [tag.get('term', '') for tag in entry.get('tags', [])]
 
             # 如果指定了标签，检查是否匹配
-            if self.tags and not any(tag in title for tag in self.tags):
-                return None
+            keywords = [str(t).strip() for t in (self.tags or []) if str(t).strip()]
+            if keywords:
+                hay = " ".join([title, description, " ".join(str(t) for t in tags)]).lower()
+                if not any(k.lower() in hay for k in keywords):
+                    return None
 
             # 清理 HTML 标签
             if description:
                 # 简单的 HTML 清理
                 from bs4 import BeautifulSoup
                 soup = BeautifulSoup(description, 'html.parser')
-                description = soup.get_text(strip=True)
+                description = soup.get_text(" ", strip=True)
+                description = html.unescape(description)
 
             return {
                 'title': title,

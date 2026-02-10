@@ -14,6 +14,7 @@ from crawler.hacker_news import HackerNewsCrawler
 from crawler.arxiv_papers import ArxivPapersCrawler
 from crawler.juejin_rss import JuejinRSSCrawler
 from crawler.blogs_podcasts import BlogsPodcastsCrawler
+from crawler.reddit import RedditCrawler
 from crawler.twitter_crawler import TwitterRecentCrawler
 from crawler.dedupe import canonicalize_url
 
@@ -94,12 +95,28 @@ class CrawlerOrchestrator:
             )
             logger.info("Initialized Blogs/Podcasts crawler")
 
+        # Reddit (subreddits)
+        if sources_config.get('reddit', {}).get('enabled', False):
+            config = sources_config['reddit']
+            crawlers['reddit'] = RedditCrawler(
+                subreddits=config.get('subreddits'),
+                limit_per_subreddit=config.get('limit_per_subreddit', 10),
+                sort=config.get('sort', 'hot'),
+                include_selftext=config.get('include_selftext', True),
+                timeout=config.get('timeout', 15),
+            )
+            logger.info("Initialized Reddit crawler")
+
         # Twitter/X (Recent tweets from tech leaders)
         if sources_config.get('twitter', {}).get('enabled', False):
             config = sources_config['twitter']
             crawlers['twitter'] = TwitterRecentCrawler(
                 accounts=config.get('accounts'),
-                headless=config.get('headless', True)
+                headless=config.get('headless', True),
+                tweets_per_account=config.get('tweets_per_account', 30),
+                lookback_minutes=config.get('lookback_minutes', 90),
+                timeout=config.get('timeout', 30000),
+                save_screenshots=config.get('save_screenshots', True),
             )
             logger.info("Initialized Twitter/X crawler")
 

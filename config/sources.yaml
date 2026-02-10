@@ -32,12 +32,12 @@ sources:
       - "大模型"
       - "AI"
     limit: 5
-    rss_url: "https://juejin.cn/rss/backend"
+    rss_url: "https://juejin.cn/rss"
 
   # "大佬" 博客 / 播客（RSS/Atom 聚合）
   blogs_podcasts:
     enabled: true
-    limit: 10
+    limit: 15
     timeout: 30
     # 可按需增删 / 替换为你自己的订阅源
     feeds:
@@ -71,11 +71,51 @@ sources:
       - name: "Lex Fridman Podcast"
         url: "https://lexfridman.com/feed/podcast/"
         type: "podcast"
+      - name: "Google AI Blog"
+        url: "https://blog.google/technology/ai/rss/"
+        type: "blog"
+      - name: "Google DeepMind"
+        url: "https://deepmind.com/blog/feed/basic"
+        type: "blog"
+      - name: "BAIR Blog"
+        url: "https://bair.berkeley.edu/blog/feed.xml"
+        type: "blog"
+      - name: "MIT News (Machine Learning)"
+        url: "https://news.mit.edu/rss/topic/machine-learning"
+        type: "blog"
+      - name: "AWS Machine Learning Blog"
+        url: "https://aws.amazon.com/blogs/machine-learning/feed/"
+        type: "blog"
+      - name: "Microsoft AI Blog"
+        url: "https://blogs.microsoft.com/ai/feed/"
+        type: "blog"
+      - name: "NVIDIA Deep Learning"
+        url: "https://blogs.nvidia.com/blog/category/deep-learning/feed/"
+        type: "blog"
+      - name: "Meta Engineering"
+        url: "https://engineering.fb.com/feed/"
+        type: "blog"
+
+  reddit:
+    enabled: true
+    sort: "hot"
+    limit_per_subreddit: 10
+    include_selftext: true
+    timeout: 15
+    subreddits:
+      - "MachineLearning"
+      - "LocalLLaMA"
+      - "OpenAI"
+      - "singularity"
 
   # Twitter/X 科技大佬推文（使用 Playwright 爬取，不需要 API）
   twitter:
     enabled: true
     headless: true
+    tweets_per_account: 30
+    lookback_minutes: 90
+    timeout: 30000
+    save_screenshots: true
     accounts:
       - "elonmusk"
       - "sama"
