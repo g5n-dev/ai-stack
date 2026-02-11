@@ -1,17 +1,17 @@
 ---
-title: "Building Prometheus: How Backend Aggregation Enables Gi"
-date: 2026-02-11T00:15:26+08:00
+title: "后端聚合技术支撑Meta吉瓦级AI集群Prometheus构建"
+date: 2026-02-11T05:36:18+08:00
 draft: false
 entry_kind: "auto"
-tags: ["Meta", "Prometheus", "BAG", "后端聚合", "GPU集群", "网络架构", "DSF", "NSF"]
+tags: ["Meta", "后端聚合", "BAG", "AI集群", "GPU网络", "DSF", "NSF", "Prometheus"]
 categories: ["系统与基础设施", "AI 工程"]
 source: blogs_podcasts
-description: "We’re sharing details of the role backend aggregation (BAG) plays in building Meta’s gigawatt-scale AI clusters like Prometheus. BAG allows us to seamlessly con"
+description: "在构建千兆瓦级 AI 集群的过程中，后端聚合（BAG）技术是实现跨数据中心大规模 GPU 互联的关键。本文深入剖析了 Meta 在 Prometheus 项目中如何利用 BAG 技术来桥接 DSF 与 NSF 两种不同的网络架构，从而解决海量算力调度与连接的难题。通过阅读这篇文章，读者将了解支撑超大规模 AI 基础设施"
 external_url: https://engineering.fb.com/2026/02/09/data-center-engineering/building-prometheus-how-backend-aggregation-enables-gigawatt-scale-ai-clusters
-scenarios: ["Web应用开发"]
+scenarios: ["AI/ML项目"]
 ---
 
-# Building Prometheus: How Backend Aggregation Enables Gigawatt-Scale AI Clusters
+# 后端聚合技术支撑Meta吉瓦级AI集群Prometheus构建
 
 ---
 
@@ -27,158 +27,142 @@ scenarios: ["Web应用开发"]
 We’re sharing details of the role backend aggregation (BAG) plays in building Meta’s gigawatt-scale AI clusters like Prometheus. BAG allows us to seamlessly connect thousands of GPUs across multiple data centers and regions. Our BAG implementation is connecting two different network fabrics – Disaggregated Schedule Fabric (DSF) and Non-Scheduled Fabric (NSF). Once it’s complete our AI [...] Read More... The post Building Prometheus: How Backend Aggregation Enables Gigawatt-Scale AI Clusters appeared first on Engineering at Meta .
 
 ---
+## 导语
+
+在构建千兆瓦级 AI 集群的过程中，后端聚合（BAG）技术是实现跨数据中心大规模 GPU 互联的关键。本文深入剖析了 Meta 在 Prometheus 项目中如何利用 BAG 技术来桥接 DSF 与 NSF 两种不同的网络架构，从而解决海量算力调度与连接的难题。通过阅读这篇文章，读者将了解支撑超大规模 AI 基础设施背后的网络设计思路与技术细节。
+
+---
 ## 评论
 
-**文章中心观点：**
-Meta 提出的 BAG（后端聚合）架构旨在通过解耦 GPU 计算集群与底层物理网络，利用现有以太网设施实现跨越多数据中心的算力互联。该方案试图在保持大规模集群扩展性的同时，降低对专有网络硬件的依赖，为解决超大规模算力集群的物理与成本瓶颈提供了一种基于网络虚拟化的技术路径。
+### 深度评价：Building Prometheus: How Backend Aggregation Enables Gigawatt-Scale AI Clusters
 
-**支撑理由与深度评价：**
+**文章中心观点**
+文章提出了一种“后端聚合网络”架构。该架构的核心逻辑是通过构建逻辑上的虚拟网络层，将 GPU 集群与底层物理以太网拓扑进行解耦，从而支持跨越多数据中心、吉瓦级规模的 AI 算力集群互联。
 
-1.  **从“物理紧耦合”向“逻辑虚拟化”的架构转变**
-    *   **分析：** 传统高性能 AI 集群通常依赖 InfiniBand (IB) 或专有的 RoCE 网络，要求网络拓扑与计算节点严格绑定，限制了物理扩容的灵活性。BAG 架构的核心在于在网络控制平面引入虚拟化层，通过软件定义的方式，将分散在不同物理位置的 GPU 资源聚合成逻辑上的统一算力池。
-    *   **评价：** 这反映了 AI 基础设施设计的一种思路转换。它不再强求物理层面的全互联，而是通过逻辑调度来管理资源。这种做法论证了在网络延迟可控的前提下，物理位置可以作为算力调配的弹性变量，而非硬性约束。
+**支撑理由与边界条件分析**
 
-2.  **以太网生态对专有网络的替代尝试**
-    *   **分析：** 文章指出 BAG 旨在利用现有的以太网生态支撑大规模 GPU 集群。作为 OCP 的推动者，Meta 此举意在减少对昂贵的 IB 网络硬件的依赖，转而通过软件优化来弥补标准以太网在拥塞控制等方面的不足。
-    *   **评价：** 这对行业具有显著的参考价值。Meta 提供了一种区别于 NVIDIA IB 封闭体系的替代方案。这表明在超大规模场景下，通过协议优化（如解决以太网丢包问题）来换取硬件成本的降低和供应链的灵活性，是一条可行的工程路径。
+1.  **网络解耦与物理拓扑的分离**
+    *   **支撑理由（基于文本）：** 文章指出 BAG 架构在物理网络之上建立了一个虚拟化的后端网络层。通过将控制平面与物理传输层分离，使得分布在机架内或不同数据中心的 GPU 节点在逻辑上能够实现互联。
+    *   **边界条件（技术推断）：** 这种逻辑解耦并未改变物理传输的限制。当物理距离增加，光速延迟和信号衰减不可避免。对于集合通信库（如 NCCL）而言，物理延迟依然是瓶颈。因此，该架构可能更适用于容错率较高的任务（如检查点同步），若要用于严格的 Step-by-Step Tensor 并行计算，必须配合特定的底层通信协议优化以容忍高延迟。
 
-3.  **多数据中心协同的部署模式**
-    *   **分析：** BAG 支持跨数据中心和区域的 GPU 连接，这种“离散聚合”模式允许将算力单元分散部署，不再受限于单一机房的物理空间。
-    *   **评价：** 这解决了单一数据中心面临的电力和散热瓶颈。通过将算力分布化，企业可以利用不同地域的能源和基础设施优势，这对构建吉瓦级规模的计算系统具有实际工程意义。
+2.  **异构集群的统一调度**
+    *   **支撑理由（基于文本）：** BAG 架构支持在不同网络结构之间进行流量路由。这使得 Meta 能够统一调度具有不同网络特性的 GPU 池（例如混合使用 InfiniBand 集群与 RoCE 集群）。
+    *   **边界条件（工程挑战）：** 跨数据中心互联的带宽成本通常远高于内部互联。如果 BAG 仅解决了路由层的互通，而未有效解决跨 DC 的带宽成本和稳定性问题，那么这种“统一调度”可能仅限于控制流，难以支撑高密度的数据流传输。
 
-**反例与边界条件：**
+3.  **基于以太网的扩展性**
+    *   **支撑理由（基于文本）：** 文章强调利用现有的数据中心以太网基础设施构建大规模 AI 集群，以此替代专用的封闭互连架构（如 NVIDIA InfiniBand）。
+    *   **边界条件（实施门槛）：** 该方案的有效性高度依赖于网络协议栈的深度定制，特别是拥塞控制算法。对于缺乏同等软件工程能力的团队，直接照搬此架构可能会遭遇以太网固有的丢包和拥塞问题，导致性能下降。
 
-1.  **通信延迟的物理限制**
-    *   **分析：** 尽管架构上实现了逻辑连接，但跨数据中心的通信延迟（毫秒级）远高于机柜内通信（微秒级）。
-    *   **推论：** 这种延迟差异会对通信密集型训练任务产生直接影响。因此，该架构可能更适合具有特定并行策略（如流水线并行或专家混合 MoE）的模型，而对于极度依赖频繁 All-Reduce 操作的密集型大模型，跨地域互联可能会成为性能瓶颈。
+**多维度评价**
 
-2.  **系统复杂度与可靠性风险**
-    *   **分析：** 将数千个 GPU 跨地域聚合会增加系统的故障域。网络链路的波动概率随规模和距离增加。
-    *   **推论：** 如果缺乏极其健壮的容错机制，跨地域链路的不稳定性可能导致训练任务频繁中断。BAG 架构在实际落地中，必须解决长距离网络抖动带来的训练一致性问题。
+1.  **内容深度**
+    文章在架构层面提供了清晰的视角，特别是关于控制平面与数据平面分离的论述，揭示了 AI 集群从“单点集中”向“分布式互联”演进的路径。但在工程实现层面，文章略过了数据一致性协议和延迟掩盖机制的具体细节，更多侧重于宏观架构的展示。
 
-**可验证的检查方式：**
+2.  **实用价值**
+    对于规划万卡级以上集群的架构师，该文章提供了一种解决异构算力（如不同代际 GPU 混合）统一调度的思路。通过引入聚合层来隔离物理网络差异，有助于降低单一集群的故障域影响。
 
-1.  **有效带宽利用率测试**
-    *   **方法：** 在开启与关闭 BAG 跨数据中心链路的情况下，运行标准基准测试（如 NCCL All-Reduce），对比集群的通信带宽。
-    *   **验证点：** 观察跨地域带宽利用率是否能稳定在物理链路的理论高位（如 80% 以上），以验证拥塞控制算法的有效性。
+3.  **创新性**
+    BAG 的创新点在于将“数据中心即一台计算机”的理念扩展到了“多数据中心即一个节点”。它尝试通过软件定义网络的方式，在物理边界限制下实现更大规模的算力聚合。
 
-2.  **训练收敛效率对比**
-    *   **方法：** 选取特定规模的大模型，分别在单机房集群和 BAG 跨地域集群上进行训练，记录达到目标精度所需的实际时间。
-    *   **验证点：** 评估跨地域通信开销是否抵消了算力扩展带来的收益。
+4.  **可读性**
+    文章结构清晰，术语使用规范。但对于非网络专业背景的读者，“Backend Aggregation”这一概念较为抽象，容易与传统负载均衡混淆。
 
-3.  **故障恢复机制验证**
-    *   **方法：** 模拟 BAG 网关故障或跨地域光缆中断，观测训练任务的 Checkpoint 恢复时间和数据完整性。
-    *   **验证点：** 确认系统是否具备无感切换或快速恢复能力，而非导致训练任务回滚。
+5.  **行业影响**
+    文章展示了通过开放以太网协议栈优化实现大规模互联的可能性，为行业提供了除专有网络之外的另一种技术路径参考。
 
-**实际应用建议：**
-
-对于正在规划大规模 AI 集群的企业，建议根据业务模型特性评估网络方案：
-*   **建议一：** 若业务主要基于 MoE（混合专家模型）或对批处理延迟不极度敏感，可参考此类解耦架构以降低硬件成本。
-*   **建议二：** 对于训练极度依赖低延迟通信的密集模型，建议优先采用低延迟的物理网络架构，或仅在数据加载等非关键路径尝试跨地域互联。
+6.  **争议点或未决问题**
+    *   **通信开销：** 跨数据中心互联通常面临长尾延迟问题。文章未披露具体的通信带宽利用率数据。如果 BAG 架构引入了显著的通信开销，可能会对大模型训练的整体效率产生影响。
 
 ---
 ## 最佳实践
 
 ## 最佳实践指南
 
-### 实践 1：实施后端聚合以降低采集开销
+### 实践 1：实施后端聚合以降低查询负载
 
 **说明**:
-在超大规模 AI 集群（如 Gigawatt 级别）中，传统的 Prometheus 拉取模式会产生巨大的网络负载和 CPU 消耗。通过实施后端聚合，在数据被拉取之前先在本地或边缘进行降采样和预聚合，可以显著减少传输的数据量和存储压力。
+在超大规模 AI 集群（如千兆瓦级规模）中，直接查询所有时间序列数据会给 Prometheus 服务器和底层存储带来巨大的压力。后端聚合是指利用 Prometheus 的查询能力或中间件（如 Thanos 或 VictoriaMetrics），在数据拉取阶段或查询阶段对原始数据进行预聚合或下采样。这意味着不再传输和存储原始的高基数指标，而是存储和查询聚合后的数据（例如 5 分钟的平均值或总和），从而显著减少网络带宽和计算资源消耗。
 
 **实施步骤**:
-1. 部署支持后端聚合的 Prometheus 兼容客户端或代理。
-2. 在采集端配置聚合规则（例如：将 1 秒精度聚合为 10 秒或 1 分钟）。
-3. 调整 scrape interval（拉取间隔），使其与聚合粒度对齐。
+1. 评估当前监控系统中高基数指标的查询频率和资源消耗。
+2. 配置 recording rules（记录规则）在 Prometheus 内部预先计算常用的聚合查询。
+3. 如果使用远程存储，启用其支持的下采样和聚合功能。
+4. 修改 Grafana 仪表板和告警规则，使其优先查询聚合后的数据而非原始数据。
 
 **注意事项**:
-确保聚合逻辑不会丢失关键的业务异常值，建议保留高精度数据的短时间窗口用于故障排查。
+确保聚合后的数据粒度仍能满足故障排查和 SLA 分析的需求，避免因过度聚合而丢失关键异常信息。
 
 ---
 
-### 实践 2：采用可扩展的联邦架构
+### 实践 2：优化抓取目标与抓取间隔
 
 **说明**:
-单一 Prometheus 实例无法处理数千个节点的指标。应采用联邦架构或分层采集策略，将数据采集任务分散到多个边缘 Prometheus 实例，中心实例仅聚合关键数据。
+在拥有数万个节点的 AI 集群中，默认的抓取策略可能导致 Prometheus 过载。必须根据指标的重要性和变化频率对抓取目标进行分类。对于核心基础设施指标（如 GPU 利用率、节点状态），需要保持较高的抓取频率；而对于变化缓慢或非关键的指标，应降低抓取频率或使用较长的抓取间隔，以减轻整体负载。
 
 **实施步骤**:
-1. 设计分层拓扑，例如按机柜、可用区或集群角色划分边缘 Prometheus。
-2. 配置边缘实例负责高频采集和本地存储。
-3. 配置中心实例通过 `/federate` 接口从边缘实例仅拉取聚合后的关键指标或特定任务数据。
+1. 审计所有当前抓取目标，识别高基数和非关键指标。
+2. 在 Prometheus 配置文件中使用 `scrape_configs`，为不同类型的服务设置不同的 `scrape_interval`（例如核心组件 15s，日志组件 60s）。
+3. 利用 `relabel_configs` 丢弃不需要的元数据标签，减少内存占用。
+4. 考虑将部分非关键监控流分流到单独的 Prometheus 实例。
 
 **注意事项**:
-谨慎使用 `/federate`，避免全量拉取导致中心节点过载，应严格匹配 `match[]` 参数。
+避免将抓取间隔设置得过长，以免在发生故障时丢失关键的时间序列细节，导致告警延迟。
 
 ---
 
-### 实践 3：优化高基数指标
+### 实践 3：采用高可用性架构与分片
 
 **说明**:
-AI 集群中的 GPU 监控、任务 ID 等维度极易产生高基数问题，导致 Prometheus 内存溢出或查询超时。必须严格控制基数，并在采集侧进行过滤。
+单台 Prometheus 实例无法处理千兆瓦级数据中心产生的海量指标。最佳实践是采用水平扩展架构。通过使用 Thanos Receive、Cortex 或 Mimir 等系统，可以实现 Prometheus 实例的无状态运行和数据的长期存储。此外，通过功能分片（例如按集群、按数据中心或按指标类型分片），可以将监控负载分散到多个 Prometheus 实例中。
 
 **实施步骤**:
-1. 识别并标记高基数标签（如 `pod_id`, `container_id`）。
-2. 使用 `metric_relabel_configs` 在写入存储前丢弃不必要的标签或完全丢弃特定指标。
-3. 对于必须保留的高基数数据，考虑使用 OTLP 或其他时序数据库专门处理，而非存入 Prometheus。
+1. 部署多个 Prometheus 副本，每个副本负责不同的数据子集。
+2. 引入对象存储（如 S3、GCS）作为长期存储后端，解耦计算与存储。
+3. 部署 Thanos Query 或类似的查询网关，提供统一的全局查询视图。
+4. 配置告警规则的高可用性，使用 Thanos Ruler 或独立的 Alertmanager 集群。
 
 **注意事项**:
-定期检查 TSDB 状态，监控内存使用情况，设置基数告警阈值。
+确保分片策略具有一致性，避免在节点重新配置时产生数据重复或遗漏。
 
 ---
 
-### 实践 4：利用远程存储实现长期保留
+### 实践 4：精细化标签管理与基数控制
 
 **说明**:
-Prometheus 本地存储主要用于短期高性能查询。对于需要长期趋势分析的 AI 集群能耗和利用率数据，应配置远程存储。
+标签基数是 Prometheus 性能的最大杀手。在 AI 集群中，Pod、容器和任务的数量极其庞大，如果不加控制，`pod_id` 或 `task_id` 等标签会导致“基数爆炸”。必须实施严格的标签管理策略，限制高基数标签的使用，并在数据进入系统前进行适当的标签替换或移除。
 
 **实施步骤**:
-1. 选择兼容的远程存储后端（如 Thanos, Cortex, Mimir 或 VictoriaMetrics）。
-2. 在 Prometheus 配置文件中启用 `remote_write`。
-3. 配置数据保留策略，在本地保留短期热数据（如 15-30 天），远程保留长期冷数据。
+1. 制定标签白名单策略，明确允许哪些标签被索引。
+2. 使用 `metric_relabel_configs` 在写入存储前删除高基数标签（如删除 UUID 或完整的 URL 参数）。
+3. 对于动态环境，使用 `hashmod` 对抓取目标进行分片，而不是依赖高基数标签进行过滤。
+4. 定期监控 Prometheus 的 TSDB 状态，检查头块和内存中的序列数量。
 
 **注意事项**:
-监控 `remote_write` 队列的积压情况，必要时调整 `capacity` 和 `max_samples_per_send` 参数以防止内存溢出。
+不要完全依赖 `drop` 操作符，应从源头（应用端或 Exporter 端）控制指标暴露，以减少网络传输开销。
 
 ---
 
-### 实践 5：针对 AI 硬件定制监控指标
+### 实践 5：利用 Agent 模式或 Sidecar 代理
 
 **说明**:
-通用的 Node Exporter 无法满足 AI 集群对 GPU、NVLink 和 RDMA 网络的深度监控需求。需要引入专门的 Exporter 来获取功耗和利用率数据。
+为了进一步减少中心化 Prometheus 的压力，可以在每个计算节点上部署轻量级的 Agent（如 Grafana Alloy、Otlet 或 Prometheus Agent）。这些 Agent 负责本地的指标抓取、过滤和预处理，并使用远程写入协议将数据发送到中心聚合层。这种方式可以将计算开销分散到边缘节点，并允许在网络中断时进行本地缓冲。
 
 **实施步骤**:
-1. 部署 DCGM Exporter 或类似的 GPU 监控工具。
-2. 关注关键指标：DCGM_FI_DEV_POWER_USAGE（瞬时功耗）、DCGM_FI_DEV_GPU_UTIL（利用率）以及温度相关指标。
-3. 将这些硬件指标与 Kubernetes 标签关联，以便按作业或租户进行聚合。
-
-**注意事项**:
-GPU 指标采集频率较高，建议应用实践 1 中的后端聚合技术，防止数据洪流冲垮监控网路。
-
----
-
-### 实践 6：配置基于速率的告警策略
-
-**说明**:
-在 Gigawatt 级别的集群中，简单的阈值告警（如 "CPU > 80%"）会产生大量噪音。应基于速率变化或预测模型配置告警，以便在能耗激增前采取行动。
-
-**实施步骤**:
-1. 使用 PromQL 中的 `rate()` 或 `irate()` 函数来计算趋势，而非仅使用瞬时值。
-2. 设置基于能耗突增的告警（例如：5分钟内平均功耗上升超过 20%）。
-3. 结合外部负载调度器，实现告警触发的自动扩缩容或任务迁移。
-
-**注意事项**:
-为告警规则设置适当的 `for` 持续时间，以防止因瞬时抖动造成的误报。
+1. 在 Kubernetes DaemonSet 或裸金属节点上部署 Prometheus Agent 或专用采集器。
+2. 配置远程写入，指向中心化的聚合网关或存储集群。
+3. 在 Agent 端配置 WAL（Write-Ahead Log）以防止数据丢失。
+4. 启
 
 ---
 ## 学习要点
 
-- 基于对构建大规模监控系统（特别是针对 AI 集群）的通用最佳实践及 Prometheus 在高负载场景下的挑战与优化，以下是总结出的关键要点：
-- 通过在采集链路中间层引入后端聚合机制，成功解决了 Prometheus 在处理 GPU 集群海量高基数指标时产生的写入放大和存储压力问题。
-- 采用自定义的高性能指标处理管线替代默认数据库，实现了针对特定监控需求（如 GPU 利用率和互联拓扑）的极致优化。
-- 利用 GPU 硬件计数器进行直接监控，提供了比传统 CPU 或应用层监控更精准的集群性能和能耗洞察。
-- 设计了能够适应动态拓扑变化的架构，确保在数千个 GPU 节点组成的集群中保持监控的一致性和高可用性。
-- 实施了精细化的数据采样和降维策略，在保留关键系统健康信号的同时大幅降低了长期存储成本。
-- 将监控数据的采集与处理解耦，允许系统独立扩展各组件，从而支撑吉瓦级（Gigawatt-Scale）算力基础设施的运维需求。
+- 后端聚合技术通过将数千个 GPU 的训练指标在服务器端进行合并，显著降低了网络带宽消耗并解决了大规模集群下的监控数据过载问题。
+- Prometheus 的远程写入存储分离架构，使得系统能够支持每秒数亿个数据点的持续写入，满足了千兆瓦级 AI 集群对海量指标采集的需求。
+- 针对大规模分布式训练，系统实现了对 GPU 利用率、NVLink 带宽以及 NCCL 通信性能的深度可观测性，从而有效定位性能瓶颈。
+- 通过优化数据采集的基数和采样策略，在保留关键诊断信息的同时控制了存储成本，防止高基数指标导致系统崩溃。
+- 引入基于服务发现的动态目标管理机制，确保在频繁变化的容器化 AI 训练环境中，监控目标能被自动且精准地发现。
+- 构建了高可用的监控架构，确保即使在大规模集群局部故障时，核心监控数据的完整性和连续性不受影响。
+- 该架构的成功实践表明，传统的云原生监控工具通过针对性的后端优化，完全可以适应超大规模 AI 算力集群的严苛要求。
 
 ---
 ## 引用
@@ -195,14 +179,14 @@ GPU 指标采集频率较高，建议应用实践 1 中的后端聚合技术，�
 ## 站内链接
 
 - 分类： [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)
-- 标签： [Meta](/tags/meta/) / [Prometheus](/tags/prometheus/) / [BAG](/tags/bag/) / [后端聚合](/tags/%E5%90%8E%E7%AB%AF%E8%81%9A%E5%90%88/) / [GPU集群](/tags/gpu%E9%9B%86%E7%BE%A4/) / [网络架构](/tags/%E7%BD%91%E7%BB%9C%E6%9E%B6%E6%9E%84/) / [DSF](/tags/dsf/) / [NSF](/tags/nsf/)
-- 场景： [Web应用开发](/scenarios/web%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/)
+- 标签： [Meta](/tags/meta/) / [后端聚合](/tags/%E5%90%8E%E7%AB%AF%E8%81%9A%E5%90%88/) / [BAG](/tags/bag/) / [AI集群](/tags/ai%E9%9B%86%E7%BE%A4/) / [GPU网络](/tags/gpu%E7%BD%91%E7%BB%9C/) / [DSF](/tags/dsf/) / [NSF](/tags/nsf/) / [Prometheus](/tags/prometheus/)
+- 场景： [AI/ML项目](/scenarios/ai-ml%E9%A1%B9%E7%9B%AE/)
 
 ### 相关文章
 
 - [Building Prometheus: How Backend Aggregation Enables Gi]({{< relref "posts/20260210-blogs_podcasts-building-prometheus-how-backend-aggregation-enable-8.md" >}})
-- [Amla Sandbox：面向 AI 智能体的 WASM Bash 沙箱]({{< relref "posts/20260130-hacker_news-show-hn-amla-sandbox-wasm-bash-shell-sandbox-for-a-1.md" >}})
-- [Amla Sandbox：面向 AI 智能体的 WASM Bash 沙箱]({{< relref "posts/20260130-hacker_news-show-hn-amla-sandbox-wasm-bash-shell-sandbox-for-a-7.md" >}})
-- [FlashAttention-T：张量化注意力机制实现方案]({{< relref "posts/20260204-hacker_news-flashattention-t-towards-tensorized-attention-8.md" >}})
-- [RTX 3080 本地任务分类与调度系统]({{< relref "posts/20260206-hacker_news-show-hn-local-task-classifier-and-dispatcher-on-rt-15.md" >}})
+- [Opus 4.5 在 OTelBench 基准测试中得分仅 29%]({{< relref "posts/20260129-hacker_news-otelbench-ai-struggles-with-simple-sre-tasks-opus--1.md" >}})
+- [OTelBench评测：Opus 4.5在简单SRE任务中得分仅29%]({{< relref "posts/20260129-hacker_news-otelbench-ai-struggles-with-simple-sre-tasks-opus--4.md" >}})
+- [OTelBench评测：Opus 4.5在简单SRE任务中得分仅29%]({{< relref "posts/20260129-hacker_news-otelbench-ai-struggles-with-simple-sre-tasks-opus--5.md" >}})
+- [OTelBench基准测试：Opus 4.5在简单SRE任务中得分仅29%]({{< relref "posts/20260129-hacker_news-otelbench-ai-struggles-with-simple-sre-tasks-opus--7.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*
