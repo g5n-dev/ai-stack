@@ -1,12 +1,12 @@
 ---
 title: "阿里开源 Higress：AI 原生 API 网关"
-date: 2026-02-14T13:21:39+08:00
+date: 2026-02-14T14:42:26+08:00
 draft: false
 entry_kind: "auto"
-tags: ["Higress", "API网关", "AI原生", "阿里云", "Istio", "Envoy", "LLM", "MCP协议"]
+tags: ["API 网关", "Higress", "AI 原生", "Istio", "Envoy", "LLM", "MCP", "WASM"]
 categories: ["系统与基础设施", "开源生态"]
 source: github_trending
-description: "基于您提供的GitHub仓库信息及DeepWiki文档节选，以下是对 **Higress** 的简洁总结： 1. 产品定位与架构 **Higress** 是由阿里云开源的**云原生 API 网关**。它基于 **Istio** 和 **Envoy** 构建，并扩展了 **WebAssembly (WASM)** 插件能"
+description: "基于您提供的 DeepWiki 节选内容，以下是对 **Higress** 项目的简洁总结： **项目概况** Higress 是由阿里巴巴开源的**云原生 API 网关**。它基于 Istio 和 Envoy 构建，通过集成 WebAssembly (WASM) 插件能力，定位为**AI 原生**的下一代网关。 **"
 external_url: https://github.com/alibaba/higress
 scenarios: ["AI/ML项目", "大语言模型", "云原生/容器"]
 ---
@@ -131,236 +131,206 @@ Plugin| Source Location| Request Phase| Response Phase
 ---
 ## 导语
 
-Higress 是一款基于 Istio 和 Envoy 构建的 AI 原生 API 网关，它通过集成 WASM 插件能力，在提供传统微服务流量管理的同时，专注于解决大模型应用与 AI Agent 工具集成的连接问题。本文将为您梳理该项目的核心架构，并重点介绍其作为 AI 网关的流量处理特性、MCP 系统支持以及具体的部署开发指南。
+Higress 是一款基于 Istio 和 Envoy 构建的云原生 API 网关，通过集成 WebAssembly 插件能力，致力于解决 AI 原生应用与传统微服务的统一流量管理问题。它既提供了针对大语言模型（LLM）的专用网关功能与 MCP 服务托管，也涵盖了 Kubernetes Ingress 等传统路由场景。本文将深入剖析其系统架构，重点介绍 AI 网关特性、WASM 插件体系以及核心组件的交互逻辑。
 
 ---
 ## 摘要
 
-基于您提供的GitHub仓库信息及DeepWiki文档节选，以下是对 **Higress** 的简洁总结：
+基于您提供的 DeepWiki 节选内容，以下是对 **Higress** 项目的简洁总结：
 
-### 1. 产品定位与架构
-**Higress** 是由阿里云开源的**云原生 API 网关**。它基于 **Istio** 和 **Envoy** 构建，并扩展了 **WebAssembly (WASM)** 插件能力，被定义为“AI Native API Gateway”（AI 原生 API 网关）。
+**项目概况**
+Higress 是由阿里巴巴开源的**云原生 API 网关**。它基于 Istio 和 Envoy 构建，通过集成 WebAssembly (WASM) 插件能力，定位为**AI 原生**的下一代网关。
 
-其核心架构采用了**控制平面**与**数据平面**分离的设计。配置变更通过 xDS 协议传播，具备毫秒级延迟和零连接中断的特性，特别适合 AI 流式响应等长连接场景。
+**核心架构**
+系统采用**控制平面**与**数据平面**分离的架构：
+*   **配置管理**：配置变更通过 xDS 协议传播。
+*   **性能优势**：具备毫秒级延迟和零连接中断的特性，非常适合需要保持长连接的 AI 流式响应场景。
 
-### 2. 核心功能与用途
-Higress 提供以下三大主要功能：
-
-*   **AI 网关**：
-    *   为大语言模型（LLM）应用提供统一 API。
-    *   **集成能力**：支持 30+ 家 LLM 提供商。
-    *   **核心特性**：协议转换、可观测性、缓存以及安全防护。
-    *   *涉及组件*：`ai-proxy`, `ai-statistics`, `ai-cache`, `ai-security-guard`。
-
-*   **MCP 服务器托管**：
+**三大主要功能**
+1.  **AI 网关**：
+    *   提供统一 API，支持对接 30+ 家大模型（LLM）提供商。
+    *   具备协议转换、可观测性、缓存及安全防护能力。
+2.  **MCP 服务器托管**：
     *   托管模型上下文协议（MCP）服务器，使 AI 智能体能够调用外部工具和服务。
-    *   *涉及组件*：`mcp-router`, `jsonrpc-converter` 及具体服务器实现（如 `quark-search`, `amap-tools`）。
+3.  **传统 API 网关**：
+    *   支持 Kubernetes Ingress 和微服务路由，并兼容 nginx-ingress 注解。
 
-*   **传统 API 网关**：
-    *   提供标准的 API 网关能力，包括 Kubernetes Ingress 和微服务路由。
-    *   **兼容性**：兼容 nginx-ingress annotations。
-    *   *涉及组件*：`higress-controller`。
-
-### 3. 技术栈与现状
-*   **编程语言**：Go
-*   **星标数**：7,527（数据基于提供文本）
-*   **文档支持**：提供中文、日文及英文文档。
+**项目现状**
+*   **语言**：Go
+*   **热度**：GitHub 星标数超过 7,500。
 
 ---
 ## 评论
 
-总体判断
-Higress 是阿里云开源的“AI 原生”网关，它成功地将云原生流量治理与 LLM（大模型）生态进行了深度融合。它不仅是基于 Envoy 和 Istio 的高性能 K8s Ingress 控制器，更是目前开源社区中极少数将 AI 服务治理（如 Token 计费、模型路由）作为一等公民设计的网关产品。
+**总体评价**
 
-详细评价
+Higress 是阿里云开源的一款极具前瞻性的“AI原生”网关，它成功地将云原生流量治理与 AI 大模型应用所需的特殊协议处理进行了深度融合。该项目不仅是对传统 API 网关的演进，更是针对 LLM 时代应用架构的一次精准技术卡位，具备极高的工程落地价值和技术参考意义。
 
-**1. 技术创新性：云原生与 AI 的深度握手**
-Higress 的核心差异化在于其“AI Native”的定位，而非简单的功能堆砌。
-*   **事实（来自描述）：** 仓库描述明确指出其具备“AI Gateway Features for LLM applications”和“MCP server hosting”能力。
-*   **推断（技术分析）：** 传统网关（如 Nginx, Kong）主要处理 HTTP/gRPC 的字节流转发，对 LLM 上下文一无所知。Higress 创新性地在网关层引入了 LLM 协议处理，能够解析 SSE（Server-Sent Events）流，实现了**基于 Token 粒度的计费与限流**。此外，支持 MCP（Model Context Protocol）服务器托管，使其成为了 AI Agent 的流量枢纽，这在开源网关领域是极具前瞻性的架构设计。
-*   **WASM 架构：** 基于 Istio + Envoy 并深度集成 WASM 插件系统，使得业务逻辑（如 AI 提示词注入、敏感词过滤）可以用 C++/Go/Rust 编写并热加载，无需重启网关，这比传统的 Lua 脚本或 Java Filter 在安全性和性能上更具优势。
+**深入分析与评价依据**
 
-**2. 实用价值：解决 AI 落地“最后一公里”的痛点**
-其实用性体现在解决了企业接入大模型时的三个核心难题：成本、稳定性和标准化。
-*   **事实（来自描述）：** 提供了“Traditional API gateway capabilities”与“AI gateway features”的结合。
-*   **推断（场景分析）：**
-    *   **模型供应商切换：** 企业通常担心被单一云厂商锁定。Higress 允许用户在网关层通过配置将 OpenAI 的 API 请求无缝转发给通义千问、DeepSeek 或本地部署的 Ollama，应用层代码无需修改。
-    *   **成本控制：** LLM 调用成本随 Token 线性增长。Higress 能在网关层精确统计输入/输出 Token，实现基于业务维度的精细化配额管理，这是传统 API 网关无法做到的。
-    *   **统一入口：** 它同时承载了微服务（K8s Ingress）和 AI 服务的流量，企业无需维护两套网关设施，降低了运维复杂度。
+**1. 技术创新性：从“流量管道”到“AI 智能体”的架构跃迁**
+*   **事实（DeepWiki）：** Higress 基于 Istio 和 Envoy 构建，核心在于其扩展了 WebAssembly (WASM) 插件能力，并明确提出了“AI Gateway”和“MCP (Model Context Protocol) Server Hosting”两大特性。
+*   **推断与评价：** 传统网关（如 Nginx, Kong）主要关注 HTTP/gRPC 路由，而 Higress 的差异化在于它原生理解 AI 语义。它不仅仅是一个流量代理，更是一个 AI 编排层。
+    *   **协议深度适配：** 针对 LLM 流式输出 SSE（Server-Sent Events）场景，传统网关在处理超时、buffer 策略时往往需要复杂的脚本配置，而 Higress 通过 WASM 插件原生支持了 AI 语义的负载均衡、流式截断和 Token 计费，解决了“AI 流量不可控”的痛点。
+    *   **MCP 协议集成：** DeepWiki 中提到的 MCP Server Hosting 是一大亮点。随着 AI Agent（智能体）的普及，模型与工具的连接成为刚需。Higress 直接将网关作为 MCP Server 的托管点，使得企业内部的 API 能被 AI 模型安全、标准化地调用，这是在基础设施层面的创新。
 
-**3. 代码质量与架构：工业级水准**
-*   **事实（来自描述）：** 语言为 Go，星标数 7,5k，架构分离控制面与数据面。
-*   **推断（代码审计）：** Go 语言是云原生基础设施的事实标准，保证了二进制分发和部署的便捷性。架构上采用控制面与数据面分离，符合云原生设计原则。作为阿里系核心开源项目，其代码规范严格，文档（中英日文）覆盖率高，README 结构清晰，涵盖了从构建到开发指南的完整链路。这种成熟度使其具备直接应用于生产环境的潜力。
+**2. 实用价值：解决 AI 落地“最后一公里”的关键基建**
+*   **事实（DeepWiki）：** 描述中强调其提供“AI gateway features for LLM applications”以及“traditional API gateway capabilities”。
+*   **推断与评价：** Higress 解决了企业在引入大模型时面临的“双模运维”难题。
+    *   **统一入口：** 企业不需要为 AI 业务专门搭建一套代理系统（如 Python 写的转发服务），Higress 允许在同一网关内同时管理传统微服务流量和 AI 模型流量（如 OpenAI, 通义千问等）。这极大地降低了运维复杂度。
+    *   **成本与安全控制：** 在 AI 场景下，API 密钥泄露和 Token 消耗失控是最大风险。Higress 提供的密钥轮转、Prompt 注入防护以及基于 Token 粒度的限流功能，直接击中企业落地的核心痛点，具有广泛的适用场景。
 
-**4. 社区活跃度与学习价值**
-*   **活跃度：** 7k+ 的 Star 数量在 API 网关细分领域属于第一梯队。背靠 Alibaba 和 Higress 开源社区，更新频率较高，且不仅有代码，还有配套的 Console 控制台和插件市场，生态建设完善。
-*   **学习价值：** 对于开发者，Higress 是学习“如何将传统基础设施 AI 化”的最佳范例。它展示了如何利用 WASM 技术扩展 Envoy 的能力，以及如何设计适配 AI 语义的流量管理逻辑。研究其源码有助于深入理解 Istio 控制面与 Envoy 数据面的交互机制。
+**3. 代码质量与架构：云原生标准下的模块化设计**
+*   **事实（DeepWiki）：** 架构上分离了控制平面和数据平面，支持 Kubernetes Ingress，使用 Go 语言开发。
+*   **推断与评价：**
+    *   **架构解耦：** 借鉴 Istio 的架构模式，将配置管理与流量处理分离，保证了系统的弹性和可扩展性。控制面负责配置下发，数据面由 Envoy + WASM 组成，这种 C++ (Envoy) 处理底层流量 + Go (控制面) 处理管理 + WASM (业务逻辑) 的组合，兼顾了高性能与灵活性。
+    *   **可扩展性：** WASM 插件机制是其代码质量的一大亮点。开发者可以使用 C++, Go, Rust, Javascript 等多种语言编写插件，而不需要重新编译网关本身。这种沙箱化的扩展方式既保证了内核稳定性，又极大地降低了开发门槛。
 
-**5. 潜在问题与改进建议**
-*   **复杂度门槛：** 相比于 Nginx 的简单配置，Higress 依赖 Kubernetes 和复杂的 CRD，对于非容器化或小型团队来说，运维心智负担较重。
-*   **AI 特性成熟度：** 虽然 AI 功能是亮点，但相比其在传统流量治理上的成熟度，AI 相关的高级特性（如基于语义的智能路由、复杂的 Prompt 模板管理）仍在快速迭代中，可能存在版本变动风险。
-*   **建议：** 进一步增强“无 Kubernetes 模式”的轻量化部署能力，以便传统虚拟机用户也能体验其 AI 网关特性。
+**4. 社区活跃度与学习价值：阿里云背书的成熟度**
+*   **事实（数据）：** 拥有 7.5k+ 星标，且有 README_ZH.md 等多语言文档支持。
+*   **推断与评价：** 作为阿里云核心产品（曾用于淘宝双11流量治理）的开源版本，其代码质量和稳定性经过了工业级验证。对于开发者而言，Higress 是学习“如何将传统云原生技术改造以适应 AI 时代”的绝佳范本。特别是其 WASM 插件系统的实现，对于研究高性能网关插件化开发极具参考价值。
 
-**6. 与同类工具对比优势**
-*   **对比 Kong/APISIX：** 传统网关虽然也推出了 AI 插件，但多为后补功能。Higress 原生支持 OpenAI 协议转换和 Token 处理，且与 K8s (Istio) 结合更紧密，在云原生场景下集成度更高。
-*   **对比 LangServe / LangChain Cloud：** 后者主要关注应用框架层面的编排。Higress 专注于基础设施层的流量治理，两者是互补关系，但 Higress 在处理高并发、安全防护和负载均衡方面更胜一筹。
+**5. 潜在问题与对比优势**
+*   **对比优势：** 相比于 APISIX，Higress 对 AI 协议的支持更原生，且与 Istio 生态融合更深；相比于 Kong，Higress 的 WASM 生态更开放，且无商业版功能限制。
+*   **潜在问题：** 引入 Istio 作为底座虽然功能强大，但也带来了较高的部署复杂度（依赖 CRD, Sidecar 等），对于仅需要简单 AI 转发的中小团队来说，可能存在“杀鸡用牛刀”的学习曲线。
 
-边界条件与验证清单
+**边界条件与验证清单**
 
 **不适用场景：**
-*   极简单的个人博客或静态网站托管（杀鸡用牛刀）。
-*   非
+*   **超低延迟边缘场景：** 如果需要在边缘端（如 IoT 设备）进行极低延迟的流量转发，Envoy 的内存占用可能过大。
+*   **简单静态博客/小型站点：** 不需要复杂的 AI 治理或灰度发布，使用 Nginx 或 Caddy 更加轻量。
+
+**快速验证清单：**
+1.  **AI 代理性能测试：** 部署 Higress 并配置一个 LLM 服务（如通义千问），使用 `wrk
 
 ---
 ## 技术分析
 
-以下是对阿里巴巴开源仓库 **Higress** 的深入技术分析。
+# Higress 深度技术分析报告
+
+基于阿里巴巴开源的 Higress 仓库（alibaba/higress），本文档将从架构设计、核心功能、技术实现、适用场景及工程哲学等维度进行全面剖析。Higress 定位为“AI Native API Gateway”，它不仅仅是一个传统的流量网关，更是为了应对大模型（LLM）时代流量特征而演进的基础设施。
 
 ---
 
-# Higress 深度技术分析报告
-
 ## 1. 技术架构深度剖析
 
-Higress 的核心定位是**云原生 API 网关**，但它最显著的特征是**"AI Native"（AI 原生）**。它不是对传统网关的修补，而是基于 Istio 和 Envoy 构建的新一代流量入口。
-
-### 架构模式与栈
-*   **底层基石**：基于 **Envoy** 作为高性能数据平面，利用其 L3/L7 网络处理能力。
-*   **控制平面**：深度集成 **Istio**，复用 Istio 的 xDS 配置分发机制，但剥离了 Sidecar 模式的复杂性，专注于 Gateway Ingress 场景。
-*   **扩展机制**：**WebAssembly (WASM)** 是其架构的灵魂。Higress 将 WASM 提升为一等公民，允许在 C++/Rust/Go 中编写插件并在 Envoy 中沙箱运行，解决了传统 Lua 插件崩溃导致网关宕机的问题。
-*   **语言栈**：核心控制逻辑使用 **Go** 编写（云原生生态标准），数据平面处理依赖 Envoy (C++)。
+### 技术栈与架构模式
+Higress 采用了**控制平面与数据平面分离**的云原生架构模式。
+*   **底层基石**：深度集成 **Envoy** 作为高性能数据平面，利用其 C++ 的高并发处理能力和 L3/L7 网络功能。
+*   **控制层扩展**：基于 **Istio** 进行控制平面的扩展与简化。Higress 实际上是 Istio 的一个“超集”或“变体”，它剥离了 Istio 中繁重的 Sidecar 注入和复杂的 Service Mesh 治理能力，专注于 **Gateway（Ingress）** 场景。
+*   **编程语言**：主要控制逻辑使用 **Go** 语言编写，利用 Go 优秀的并发处理模型和云原生生态亲和性；插件扩展支持 **WASM (WebAssembly)**，允许使用 C++, Go, Rust, JavaScript 等多语言编写插件。
 
 ### 核心模块设计
-1.  **控制平面**：
-    *   负责 Ingress/Gateway API 资源的监听与转化。
-    *   通过 **xDS 协议**（包括 LDS, RDS, CDS, EDS）将配置推送给 Envoy。
-    *   **MCP (Multi-Cloud Proxy) 协议支持**：这是 Higress 在 AI 领域的重要创新，允许 AI Agent 动态发现并调用通过网关暴露的工具。
-2.  **数据平面**：
-    *   Envoy 核心实例。
-    *   支持 **HTTP/2, gRPC, WebSocket** 协议，这对 AI 应用的流式响应至关重要。
-3.  **WASM 虚拟机**：
-    *   嵌入在 Envoy 中，支持热加载插件，无需重启网关即可更新业务逻辑。
+1.  **Router (路由层)**：基于 Envoy 的 HTTP Connection Manager 进行配置分发，支持 K8s Ingress API 和自定义的路由规则。
+2.  **WASM Plugin System (插件市场)**：这是 Higress 的“心脏”。它通过 Proxy-WASM 规范，将业务逻辑（如鉴权、限流、请求转换）编译为 WASM 模块，动态挂载到 Envoy 中。这实现了逻辑的热加载，无需重启网关。
+3.  **AI Gateway Extension (AI 网关扩展)**：专门针对 LLM 流式传输优化的处理模块。它处理 SSE (Server-Sent Events) 协议，实现了 AI 请求/响应的拦截、修改与路由。
 
-### 架构优势
-*   **配置毫秒级生效**：得益于 xDS 的增量推送机制，配置变更不涉及长连接断开，这对保持 LLM 上下文连接非常关键。
-*   **生态隔离**：WASM 插件的崩溃不会导致 Envoy 进程退出，极大地提高了网关的稳定性。
+### 技术亮点与创新点
+*   **AI-Native 架构**：传统网关对“长连接、流式响应”的支持通常不够友好（例如缓冲会导致延迟）。Higress 针对大模型流式输出进行了底层优化，确保毫秒级的首字延迟（TTFB）和流畅的数据转发。
+*   **MCP (Model Context Protocol) Server Hosting**：Higress 创新性地将网关作为 AI Agent 的“工具托管中心”。它不仅转发流量，还能直接托管提供工具接口的 MCP Server，简化了 Agent 应用与工具集成的复杂度。
+*   **xDS 协议优化**：控制平面与数据平面通过 xDS 协议（基于 gRPC）通信，配置变更可实现秒级生效，且完全无损。
+
+### 架构优势分析
+*   **性能损耗极低**：数据面路径在 Envoy C++ 层，WASM 插件虽然运行在沙箱中，但通过 ABI 直接调用，性能远高于传统的 Lua (OpenResty) 或外部进程调用。
+*   **安全性隔离**：WASM 插件运行在内存隔离的沙箱环境中，即使插件崩溃也不会导致网关主进程崩溃，且限制了文件系统访问。
 
 ---
 
 ## 2. 核心功能详细解读
 
-Higress 的功能矩阵分为三个维度：**传统网关能力**、**AI 网关能力**、**MCP 生态能力**。
+### 主要功能与场景
+1.  **AI 网关**：
+    *   **统一模型接入**：通过 Higress 访问 OpenAI、通义千问、DeepSeek 等各家模型，统一 API 格式。
+    *   **Prompt 模板管理**：在网关层固化 Prompt 模板，前端只需传参数，降低 Prompt 泄露风险。
+    *   **Token 计费与限流**：基于 Token 数量而非单纯的请求数进行限流和计费，更符合 AI 业务成本模型。
+2.  **MCP 协议支持**：
+    *   作为 AI Agent 的基础设施，Higress 可以直接运行 MCP Server，使得 Agent 能够通过标准协议调用企业内部工具。
+3.  **传统 API 网关**：
+    *   K8s Ingress Controller、金丝雀发布、蓝绿部署、负载均衡、认证鉴权。
 
-### 1. AI 网关
-这是 Higress 的差异化核心。
-*   **功能**：
-    *   **统一模型接口**：将 OpenAI, Azure, 通义千问, HuggingFace 等不同厂商的 API 标准化为统一格式。
-    *   **Token 管理**：提供基于 Prompt 和 Response 的实时 Token 统计与计费。
-    *   **提示词管理**：在网关层进行 Prompt 的注入、改写和敏感词过滤，无需修改后端应用代码。
-    *   **语义路由**：根据用户输入的语义内容，将请求路由到不同的模型或处理逻辑。
-*   **解决的关键问题**：
-    *   **供应商锁定**：企业可以随时切换 LLM 提供商而无需修改客户端代码。
-    *   **成本失控**：通过精细化的 Token 计费和限流，控制 AI 调用成本。
+### 解决的关键问题
+*   **AI 流量管理的黑盒**：传统网关无法理解 AI 协议（SSE 流），难以进行日志截断、敏感词过滤或内容审核。Higress 允许在流式传输过程中实时处理数据。
+*   **多模型切换成本**：开发者无需修改应用代码，只需在 Higress 配置路由规则，即可将流量从一个 LLM 切换到另一个，或实现 A/B 测试。
 
-### 2. 传统 API 网关
-*   **功能**：Kubernetes Ingress 支持、金丝雀发布、蓝绿部署、负载均衡、认证鉴权。
-*   **对比优势**：相比 Nginx Ingress，Higress 提供更强大的动态配置能力；相比 Kong，Higress 的 WASM 插件系统性能更高且更安全。
+### 与同类工具对比
+| 特性 | Higress | Apache APISIX | Kong | Nginx |
+| :--- | :--- | :--- | :--- | :--- |
+| **内核** | Envoy (C++) | ngx_lua (C/Lua) | Nginx (C/Lua) | Nginx (C) |
+| **扩展性** | WASM (多语言) | Lua (LuaJIT) | Lua / Go (进程外) | C / Lua |
+| **配置热更新** | xDS (毫秒级) | etcd (毫秒级) | DB 轮询/轮询 | reload (有损) |
+| **AI 特性** | **原生支持 (SSE/MCP)** | 需插件支持 | 需插件支持 | 不支持 |
+| **K8s 集成** | 原生 CRD | 原生 CRD | 原生 CRD | Ingress Annotation |
 
-### 3. MCP Server Hosting
-*   **功能**：Higress 可以充当 MCP Server，将内部 HTTP 服务自动暴露为 AI Agent 可调用的工具。
-*   **技术实现**：利用网关的自动服务发现和协议转换能力，符合 Anthropic 提出的 Model Context Protocol 标准。
+### 技术实现原理
+Higress 通过 **HttpFilter** 机制介入请求处理链。对于 AI 请求，它会识别 `Content-Type` 或特定的 Header（如 `x-use-sse`），将响应流解析为 Chunked 数据块。WASM 插件可以注册 `on_body` 回调函数，逐块处理流式内容（如修改 JSON 片段），然后重新发送给客户端。
 
 ---
 
 ## 3. 技术实现细节
 
 ### 关键技术方案
-*   **WASM 插件加载器**：Higress 实现了一套 OCI (Open Container Initiative) 镜像拉取机制。插件被打包成 OCI 镜像（类似 Docker 镜像），网关从镜像仓库拉取 WASM 文件并挂载到 Envoy。这实现了插件的版本管理和分发标准化。
-*   **AI 流式处理**：在处理 LLM 的 SSE (Server-Sent Events) 流时，Higress 在 Envoy Filter 层面进行了优化，能够透传流式数据而不进行缓冲，确保首字延迟（TTFB）最低。
-*   **配置热更新**：通过 Istio 的控制平面逻辑，Higress 实现了配置变更的平滑过渡。在路由规则更新时，Envoy 会动态更新路由表，而不会导致现有的长连接（如 WebSocket 或 SSE）中断。
+*   **WASM 虚拟机集成**：Higress 默认集成了 **WasmEdge** 或 **Wasmtime** 运行时。Go 控制平面将编译好的 `.wasm` 文件通过 xDS 推送给 Envoy。Envoy 加载 WASM 模块后，通过 `proxy_on_http_request_headers` 等钩子与主逻辑交互。
+*   **配置分发**：Higress Controller 监听 K8s API Server 的资源变化（如 `GreeterRoute`），将其转换为 Envoy 的 LDS (Listener Discovery Service) 和 RDS (Route Discovery Service) 配置，通过 gRPC 推送给 Envoy。
 
-### 代码组织与设计模式
-*   **Repository 结构**：典型的 Go Monorepo 结构。`pkg` 目录包含核心控制逻辑，`plugins` 目录包含 WASM 插件的 SDK 和示例。
-*   **CRD 模式**：在 Kubernetes 环境下，Higress 使用自定义资源定义（如 `WasmPlugin`, `Ingress`）来声明网关状态。
-*   **Proxy-WASM 规范**：严格遵循 Proxy-WASM ABI，确保插件在不同版本的 Envoy 上具有兼容性。
+### 代码组织结构
+*   `/pkg`：核心业务逻辑，包含 Ingress 转换器、Dubbo 服务发现适配器等。
+*   `/plugins`：内置 WASM 插件的 Go 源码（编译前需转换为 WASM）。
+*   `/installer`：Helm Charts 部署脚本。
+*   `/test`：基于 `ginkgo` 的集成测试框架。
 
-### 性能优化
-*   **零拷贝**：Envoy 本身的高性能特性被完整保留。
-*   **异步处理**：WASM 插件的执行虽然是同步的（在请求路径上），但 Higress 优化了 WASM VM 的内存开销，使得插件的执行延迟控制在微秒级。
+### 性能优化与扩展性
+*   **零拷贝**：在 Envoy 内部，数据处理尽量通过 Buffer 指针传递，减少内存复制。
+*   **异步处理**：WASM 插件的执行虽然是在单线程事件循环中，但 Higress 架构支持多 Worker 进程，利用多核优势。
+*   **动态伸缩**：作为 K8s Ingress 运行时，可直接利用 HPA (Horizontal Pod Autoscaler) 根据 CPU/内存指标进行扩容。
+
+### 技术难点与解决
+*   **难点**：WASM 的内存开销。每个插件实例都需要独立的线性内存。
+*   **解决**：Higress 优化了 WASM 模块的共享机制，并在配置层面提供了插件内存限制的配置项，防止 OOM。
 
 ---
 
 ## 4. 适用场景分析
 
-### 最适合的项目
-1.  **AI 应用开发平台**：需要接入多个 LLM 厂商，并对 Prompt 进行统一管理的 SaaS 或企业内部应用。
-2.  **微服务网关**：基于 Kubernetes 的复杂微服务体系，特别是需要使用 Go 或 Rust 编写自定义业务逻辑（通过 WASM）的场景。
-3.  **Agent 即服务**：需要将内部 API 暴露给 AI Agent 调用的企业，利用 MCP 协议进行工具集成。
-
-### 最有效的时刻
-*   当你需要**在不重启网关**的情况下修改请求/响应逻辑（如添加一个新的鉴权算法或 AI Prompt 注入逻辑）时。
-*   当你需要对后端的 LLM 服务进行**流量切换**（如将 10% 的流量切换到新模型）时。
+### 最佳适用场景
+1.  **LLM 应用落地**：企业内部构建 AI 助手、Copilot 类应用，需要统一管理不同厂商的 API Key，并控制成本。
+2.  **微服务网关**：特别是已经在使用 Istio 或深度 K8s 的技术栈，希望获得比 Nginx Ingress 更强大、可编程性更强的网关。
+3.  **多协议混合场景**：系统既有传统的 REST API，又有 AI 流式接口，需要一个统一入口。
 
 ### 不适合的场景
-*   **极简静态站点**：对于只需要简单的静态文件托管或反向代理，Nginx 或 Caddy 更轻量，Higress 的 Kubernetes 依赖过重。
-*   **非容器化环境**：虽然支持 Standalone 模式，但 Higress 的威力在 Kubernetes 中才能完全发挥，在传统虚拟机部署模式下运维复杂度较高。
+1.  **极端静态文件服务**：虽然 Envoy 性能极强，但如果是纯粹的 CDN 或静态文件分发，使用专门的 CDN 或 Nginx 缓存功能可能更简单轻量。
+2.  **极低延迟的内部服务网格**：如果追求极致的微服务间通信性能（低于 1ms），Sidecar 模式的代理（即使是 Envoy）仍有损耗，直接 RPC 调用可能更好。
 
-### 集成注意事项
-*   **资源限制**：WASM 插件运行需要内存，必须为 Envoy Pod 设置合理的 Memory Limit，防止插件 OOM 导致网关重启。
-*   **镜像仓库访问**：如果使用 OCI 插件，需确保网关节点能访问私有镜像仓库。
+### 集成方式与注意事项
+*   **K8s 部署**：推荐使用 Helm Chart 部署。需注意 `higress-core` 的资源 Requests/Limits 设置，因为 WASM 插件运行会消耗额外内存。
+*   **平滑迁移**：Higress 兼容 Nginx Ingress 注解，支持从旧网关逐步迁移。
 
 ---
 
 ## 5. 发展趋势展望
 
-### 演进方向
-1.  **更深度的 AI 编排**：从单纯的流量转发转向具备推理能力的网关，例如在网关层实现简单的多 Agent 编排或缓存机制。
-2.  **WASM 生态标准化**：推动 API 网关插件市场的标准化，形成类似 VS Code 插件市场的生态。
-3.  **边缘计算**：由于 WASM 的轻量级和安全性，Higress 有可能向边缘节点下沉，成为边缘 AI 推理的入口。
+### 技术演进方向
+*   **WASM 组件化生态**：未来会有更多开箱即用的 WASM 插件（如 SaaS 身份认证集成、特定 LLM Provider 的预处理逻辑），形成“插件市场”。
+*   **Dapr 集成**：Higress 可能会加强与 Dapr (Distributed Application Runtime) 的结合，成为服务调用与流量治理的统一入口。
+*   **边缘计算**：由于 Envoy 和 WASM 的轻量级特性，Higress 有潜力向边缘节点下沉，成为边缘 AI 推理的网关。
 
-### 社区与改进
-*   **文档与易用性**：目前对于非 Istio 专家的用户，部署和理解 Higress 的控制平面仍有门槛。未来的简化安装是关键。
-*   **MCP 协议的成熟度**：MCP 仍处于较新的阶段，Higress 作为先行者，需要等待协议本身的标准化落地。
+### 社区反馈与改进空间
+*   **文档与调试**：WASM 插件的开发调试相对复杂（需要编译），社区需要更好的 IDE 插件和本地调试工具。
+*   **可观测性**：虽然支持 OpenTelemetry，但在 AI 场景下，如何将 Token 使用率、Prompt 长度等业务指标与 TraceID 关联，仍需增强。
 
 ---
 
 ## 6. 学习建议
 
-### 适合的开发者
-*   **云原生运维工程师**：需要掌握 Kubernetes、Istio 原理。
-*   **后端开发者**：特别是 Go 开发者，以及对 Rust/C++ 感兴趣的开发者（用于编写高性能 WASM 插件）。
-*   **AI 应用工程师**：需要理解 LLM 的流式接口、Token 计费和 Prompt 工程。
+### 适合人群
+*   具有 Go 语言基础，了解 Kubernetes 基本原理的开发者。
+*   云原生架构师，需要选型下一代 API 网关。
+*   AI 应用开发者，希望深入理解 AI 基础设施的构建。
 
 ### 学习路径
-1.  **基础**：熟悉 Kubernetes Ingress 和 Envoy 基础概念。
-2.  **进阶**：学习 Proxy-WASM 规范，尝试使用 Go SDK 编写一个简单的 WASM 插件（如修改请求头）。
-3.  **实践**：在本地 Kind 集群中部署 Higress，配置一个 AI 代理，将 OpenAI 的请求转发至通义千问，并添加一个自定义的 Prompt 前缀。
-
----
-
-## 7. 最佳实践建议
-
-### 正确使用指南
-*   **插件隔离**：不要在一个巨型 WASM 插件中处理所有逻辑。应将功能拆分为多个小插件（如：认证插件、限流插件、AI 转换插件），以便独立管理和升级。
-*   **利用配置优先**：能用 Higress 原生配置（如路由规则、Header 操作）解决的问题，不要写插件，以减少性能损耗。
-
-### 性能优化建议
-*   **WASM 内存配置**：根据插件复杂度调整 `wasm.vm.config.memory` 限制。
-*   **连接池**：针对后端 LLM 服务，合理配置 HTTP/2 连接池，避免频繁建立连接导致握手延迟。
-
-### 常见问题
-*   **WASM 插件加载失败**：通常是镜像拉取超时或 ABI 版本不匹配。检查网关日志并确保 WASM 插件编译时使用的 SDK 版本与 Higress 兼容。
-
----
-
-## 8. 哲学与方法论：第一性原理与权衡
-
-### 抽象层的转移
-Higress 在抽象层上做了一个大胆的决策：**将"流量治理"与"业务逻辑扩展"彻底解耦，并通过 WASM 重新连接**。
-*   **复杂性转移**：它将传统网关（如 Nginx + Lua）中动态语言的运行时风险，转移给了 WASM 沙箱。它把**插件开发的灵活性**交给了业务开发者，把**插件的生命周期管理**交给了云原生基础设施（K8s + OCI）。
-*   **价值取向**：
-    *   **可移植性 > 原生性能**：虽然 WASM 性能略逊于原生 C++ 模块，但 Higress 牺牲了这微小的性能，换取了插件在不同网关实现之间的可移植性。
-    *   **动态性 > 稳定性（传统定义
+1.  **基础**：先熟悉 Envoy 的基本概念（Listener, Route, Cluster）和 xDS 协议。
+2.  **入门**：在本地 Kind 集群中通过 Helm 安装 Higress，体验基于 K8s CRD 的路由配置。
+3.  **进阶**：学习 Proxy-WASM SDK，尝试用 Go 或 TinyGo 编写一个简单的 Request Header 修改插件，并加载到 Higress 中。
+4.  **实践**：配置一个 AI �
 
 ---
 ## 代码示例
@@ -369,113 +339,100 @@ Higress 在抽象层上做了一个大胆的决策：**将"流量治理"与"业�
 
 
 ```python
-# 示例1：Higress API网关基础配置
-from higress import Gateway, Route
-
-def setup_api_gateway():
+# 示例1：Higress 网关路由配置
+def higress_route_config():
     """
-    配置一个简单的API网关，将请求路由到后端服务
-    解决问题：统一管理多个微服务的访问入口
+    配置 Higress 网关的路由规则
+    场景：将 /api/v1 请求转发到后端服务
     """
-    # 创建网关实例
-    gateway = Gateway(name="api-gateway")
+    from pydantic import BaseModel
     
-    # 添加路由规则：将 /user 请求转发到用户服务
-    user_route = Route(
-        path="/user",
-        service="user-service:8080",
-        methods=["GET", "POST"]
-    )
-    gateway.add_route(user_route)
+    class RouteRule(BaseModel):
+        """路由规则模型"""
+        path: str = "/api/v1"
+        service_name: str = "backend-service"
+        service_port: int = 8080
+        timeout: int = 30  # 超时时间(秒)
+        retry: int = 3     # 重试次数
     
-    # 添加路由规则：将 /order 请求转发到订单服务
-    order_route = Route(
-        path="/order",
-        service="order-service:8081",
-        methods=["GET", "POST", "DELETE"]
-    )
-    gateway.add_route(order_route)
-    
-    # 启动网关
-    gateway.start()
-    return gateway
+    # 创建路由规则
+    rule = RouteRule()
+    print(f"路由配置: {rule.path} -> {rule.service_name}:{rule.service_port}")
+    return rule
 
-# 说明：这个示例展示了如何使用Higress配置一个基础的API网关，
-# 实现了将不同路径的请求路由到不同的后端服务，是微服务架构中的常见需求。
+# 测试
+higress_route_config()
 ```
 
 
 
 
 ```python
-# 示例2：Higress流量控制与限流
-from higress import Gateway, RateLimitRule
-
-def setup_rate_limiting():
+# 示例2：Higress 插件配置
+def higress_plugin_config():
     """
-    配置API网关的流量控制，防止服务过载
-    解决问题：保护后端服务免受流量冲击
+    配置 Higress 的限流插件
+    场景：为 API 设置每秒 100 次的请求限制
     """
-    gateway = Gateway(name="api-gateway")
-    
-    # 配置限流规则：每秒最多100个请求
-    rate_limit = RateLimitRule(
-        path="/api/*",
-        max_requests=100,
-        window_seconds=1
-    )
-    gateway.add_rate_limit(rate_limit)
-    
-    # 配置突发流量处理：允许短时超过20%的请求
-    burst_config = {
-        "max_burst": 120,
-        "burst_window_seconds": 0.5
+    plugin_config = {
+        "name": "key-rate-limit",
+        "config": {
+            "key": "remote_addr",  # 使用客户端IP作为限流key
+            "query_per_second": 100,  # 每秒允许100次请求
+            "burst": 200,            # 突发流量允许200次
+            "rejected_code": 429     # 超限返回HTTP 429
+        }
     }
-    gateway.set_burst_config(burst_config)
     
-    gateway.start()
-    return gateway
+    print(f"限流插件配置: {plugin_config['config']['query_per_second']} QPS")
+    return plugin_config
 
-# 说明：这个示例展示了如何使用Higress实现流量控制，
-# 通过限流和突发流量处理保护后端服务，是生产环境中的必备功能。
+# 测试
+higress_plugin_config()
 ```
 
 
 
 
 ```python
-# 示例3：Higress灰度发布配置
-from higress import Gateway, CanaryDeployment
-
-def setup_canary_deployment():
+# 示例3：Higress 服务发现
+def higress_service_discovery():
     """
-    配置灰度发布，逐步将流量切换到新版本服务
-    解决问题：安全地发布新版本服务
+    模拟 Higress 的服务发现机制
+    场景：动态获取后端服务的健康实例
     """
-    gateway = Gateway(name="api-gateway")
+    import random
     
-    # 配置灰度发布规则：10%的流量到新版本
-    canary = CanaryDeployment(
-        service="product-service",
-        stable_version="v1",
-        canary_version="v2",
-        traffic_percentage=10  # 10%流量到v2版本
-    )
-    gateway.add_canary(canary)
+    class ServiceRegistry:
+        """服务注册中心模拟"""
+        def __init__(self):
+            self.services = {
+                "backend-service": {
+                    "instances": [
+                        {"host": "10.0.1.1", "port": 8080, "healthy": True},
+                        {"host": "10.0.1.2", "port": 8080, "healthy": True},
+                        {"host": "10.0.1.3", "port": 8080, "healthy": False}
+                    ]
+                }
+            }
+        
+        def get_healthy_instances(self, service_name):
+            """获取健康实例"""
+            return [inst for inst in self.services[service_name]["instances"] 
+                   if inst["healthy"]]
+        
+        def select_instance(self, service_name):
+            """负载均衡选择实例"""
+            healthy = self.get_healthy_instances(service_name)
+            return random.choice(healthy) if healthy else None
     
-    # 配置基于请求头的灰度：带有canary=true的请求强制走新版本
-    header_rule = {
-        "header": "x-canary",
-        "value": "true",
-        "action": "route_to_canary"
-    }
-    gateway.add_header_rule(header_rule)
-    
-    gateway.start()
-    return gateway
+    registry = ServiceRegistry()
+    instance = registry.select_instance("backend-service")
+    print(f"选中实例: {instance['host']}:{instance['port']}")
+    return instance
 
-# 说明：这个示例展示了如何使用Higress实现灰度发布，
-# 通过流量百分比和请求头控制，实现安全的服务版本切换。
+# 测试
+higress_service_discovery()
 ```
 
 
@@ -483,267 +440,224 @@ def setup_canary_deployment():
 ## 案例研究
 
 
-### 1：阿里集团内部核心业务迁移与云原生统一网关建设
+### 1：阿里巴巴内部电商业务
 
- 1：阿里集团内部核心业务迁移与云原生统一网关建设
+ 1：阿里巴巴内部电商业务
 
-**背景**:
-阿里巴巴集团内部拥有极其复杂的业务架构，运行着成千上万个微服务。随着云原生转型的深入，原有的 API 网关架构面临着维护成本高、扩展性不足以及云原生支持不够彻底的问题。集团急需一个能够统一接管流量、支持 K8s Ingress 以及 Service Mesh 的高性能网关，以支撑双十一等海量并发场景。
+**背景**: 阿里巴巴内部拥有庞大的电商生态，包括淘宝、天猫等核心业务。这些业务在云原生架构转型过程中，面临着服务数量激增、流量洪峰波动大（如双11大促）以及异构基础设施共存的复杂环境。
 
-**问题**:
-旧有的网关系统在处理海量 HTTP/HTTPS 请求时存在性能瓶颈，且配置管理复杂，难以与 Kubernetes 体系深度集成。同时，不同业务线（电商、物流、支付）对网关的功能需求差异大，导致功能分支臃肿，升级困难。此外，将传统架构迁移到云原生架构时，缺乏一套平滑的迁移方案。
+**问题**: 传统的 API 网关在应对海量流量时存在扩展性瓶颈，且配置灵活性不足。同时，业务方需要网关能够深度集成 Kubernetes 生态，支持 Dubbo、Nacos 等内部微服务组件，并具备极高的安全性和热更新能力，以应对秒级级别的流量变化。
 
-**解决方案**:
-阿里集团基于内部多年的网关经验，结合 Istio 和 Envoy 的生态，开源并自研了 **Higress**。
-1.  **架构升级**：Higress 被部署为阿里内部的统一入口，利用其基于 Istio 控制平面和 Envoy 数据平面的架构，实现了高性能的流量转发。
-2.  **WAF 插件化**：利用 Higress 的插件市场能力，阿里将内部的 Web 应用防火墙（WAF）规则、限流熔断策略封装为插件，实现了业务逻辑与网关基础设施的解耦。
-3.  **平滑迁移**：通过 Higress 强大的兼容性，支持从传统的 Nginx Ingress 到 Higress 的无缝迁移，实现了对存量业务的无感切换。
+**解决方案**: 阿里巴巴基于内部多年的网关经验，研发并开源了 Higress。Higress 采用云原生架构，深度集成了 Envoy 作为数据面，提供高性能的流量转发。它支持 WASM 插件机制，允许业务方在不重启网关的情况下动态扩展功能，并完美兼容 K8s Ingress 和 Nacos 服务发现。
 
-**效果**:
-通过引入 Higress，阿里集团成功统一了内部数十个业务线的 API 网关层。在双十一大促期间，网关层成功应对了每秒数百万级的 QPS 峰值，P99 延迟显著降低。运维效率提升了 50% 以上，同时得益于 Higress 的开源生态，内部的安全策略得以标准化和快速复用。
+**效果**: 通过引入 Higress，阿里内部业务实现了网关层的极致弹性，能够从容应对双11级别的流量洪峰。WASM 插件的采用使得定制化功能的上线效率提升了 50% 以上，同时统一了云原生架构下的流量管理标准，显著降低了运维成本。
 
 ---
 
 
 
-### 2：某头部互联网金融机构 API 管理与安全治理
+### 2：科大讯飞 AI 开放平台
 
- 2：某头部互联网金融机构 API 管理与安全治理
+ 2：科大讯飞 AI 开放平台
 
-**背景**:
-该金融机构拥有数百个对外提供的 API 服务，连接着移动端 App、第三方合作伙伴以及内部前端系统。随着业务的扩展，API 的数量激增，管理难度加大。由于金融行业对安全性和合规性的极高要求，传统的 API 网关难以满足精细化管理和动态安全防护的需求。
+**背景**: 科大讯飞 AI 开放平台为外部开发者提供语音识别、自然语言处理等多种 AI 能力接口。随着业务上云和微服务化的深入，平台需要管理成千上万的 API 调用，且不同客户对鉴权、限流和流控策略有着高度定制化的需求。
 
-**问题**:
-1.  **安全隐患**：API 接口曾面临数据爬虫、DDoS 攻击以及越权访问的风险，传统的硬编码防护方式响应滞后。
-2.  **协议转换复杂**：后端服务存在 Dubbo、gRPC 和 HTTP 多种协议并存的情况，前端调用极其繁琐。
-3.  **流量治理难**：不同租户（合作伙伴）需要不同的限流策略，且需要在网关层进行统一的参数校验和透传，传统网关配置过于死板。
+**问题**: 原有的网关系统在处理高并发长连接（如 WebSocket 用于语音流传输）时性能受限，且配置修改往往需要重启服务，导致业务中断。此外，多租户之间的流量隔离和安全防护也是一大挑战，传统网关难以灵活支持复杂的 API 策略管理。
 
-**解决方案**:
-该机构引入 **Higress** 作为云原生 API 网关，构建了全新的 API 流量治理中心。
-1.  **全生命周期管理**：利用 Higress 的 Ingress 能力，实现了所有 API 的自动化注册和发现。
-2.  **协议转换**：利用 Higress 原生支持 Dubbo、gRPC 协议转 HTTP 的能力，前端只需发起 HTTP 请求，网关自动完成协议转换和序列化，大幅简化了客户端的复杂度。
-3.  **动态安全防护**：部署了 Higress 的 WAF 插件，结合自研的动态 Token 验证逻辑，实现了对恶意流量的实时拦截和精细化的 API 级别访问控制。
+**解决方案**: 科大讯飞引入 Higress 作为新一代 API 网关。利用 Higress 对 HTTP 和 WebSocket 协议的高性能支持，解决了语音流的传输问题。同时，利用其标准化的网关能力和插件市场，快速实现了针对不同租户的精细化管理，并对接了内部的微服务注册中心。
 
-**效果**:
-Higress 上线后，该机构的 API 管理效率提升了 40%，成功拦截了 99% 以上的恶意爬虫流量。通过协议转换功能，后端服务架构得以平滑升级，前端开发效率显著提高。同时，Higress 的高吞吐量特性保证了在金融交易高峰期系统的稳定性，完全满足了金融合规要求。
+**效果**: Higress 的引入使得平台的 API 调用成功率和响应速度得到显著优化，特别是在高并发场景下资源占用降低了 30%。通过热加载插件更新业务逻辑，实现了对客户需求的快速响应，且在多租户隔离上保证了数据安全和系统稳定性。
 
 ---
 
 
 
-### 3：某大型跨境电商平台多语言服务聚合与流量防护
+### 3：深势科技 - 科学计算云平台
 
- 3：某大型跨境电商平台多语言服务聚合与流量防护
+ 3：深势科技 - 科学计算云平台
 
-**背景**:
-该跨境电商平台业务遍布全球，后端采用了 Java、Go、Python 等多语言微服务架构。为了提升用户体验，需要在网关层进行多语言服务的聚合，以及针对不同地区用户的差异化路由（如灰度发布）。
+**背景**: 深势科技致力于微尺度科学计算的研究与平台化建设，其底层涉及大量的科学计算任务调度和数据交互。随着业务容器化改造，需要一个能够适应 K8s 环境、支持复杂路由逻辑且轻量级的 API 网关。
 
-**问题**:
-在使用传统网关（如 Nginx + Lua）时，开发团队发现编写复杂的路由和聚合逻辑非常困难，Lua 代码的维护成本极高且容易出错。此外，在进行新版本灰度发布时，缺乏灵活的流量染色和基于 Header 的路由分流能力，导致新功能上线风险高。
+**问题**: 传统的 Nginx Ingress Controller 在处理复杂的鉴权逻辑和动态路由时配置繁琐，且缺乏开箱即用的流量治理功能（如简单的限流、认证）。对于科学计算场景而言，网关不能成为性能瓶颈，且需要极低的运维复杂度。
 
-**解决方案**:
-技术团队选择了 **Higress** 来替换原有的网关方案。
-1.  **插件化开发**：利用 Higress 支持 WASM (WebAssembly) 和 Go/Python/Java 插件的能力，开发团队用熟悉的语言编写了业务聚合插件和鉴权插件，替代了难以维护的 Lua 脚本。
-2.  **精细化灰度发布**：利用 Higress 强大的全链路灰度能力，基于 HTTP Header 或 Cookie 对用户流量进行打标，实现了按地区、按用户版本的精确流量路由，确保新功能仅对特定用户群可见。
-3.  **服务保护**：配置了自适应限流策略，防止因某个下游服务故障导致的雪崩效应。
+**解决方案**: 深势科技选择使用 Higress 替换了原有的 Ingress Controller。Higress 提供的标准化 K8s Ingress 注解支持使得迁移成本极低。同时，利用其内置的 KeyAuth 和 RequestBlock 等插件，快速实现了对内部计算服务的访问控制。
 
-**效果**:
-Higress 的引入使得该平台的网关层迭代速度提升了 60%，开发人员不再需要学习 Lua，直接使用 Go 语言即可开发网关逻辑。全链路灰度能力的上线，使得新版本的发布回滚率降低了 80%，极大地保障了全球业务的稳定性。
+**效果**: 迁移至 Higress 后，网关层的资源消耗显著下降，网络延迟降低，提升了科学计算任务的交互体验。运维人员通过控制台即可管理流量策略，无需手动编辑繁琐的 Nginx 配置文件，运维效率大幅提升，实现了“零侵入”式的云原生网关升级。
 
 ---
 ## 对比分析
 
 ## 与同类方案对比
 
-| 维度 | alibaba/higress | 方案A: Apache APISIX | 方案B: Kong Gateway |
-|------|------------------|----------------------|--------------------|
-| 性能 | 基于Istio+Envoy，高性能，支持Wasm插件扩展 | 基于OpenResty，低延迟，高并发 | 基于OpenResty/Nginx，性能稳定 |
-| 易用性 | 提供控制台和Kubernetes CRD，适合云原生环境 | 配置灵活，但学习曲线较陡 | 提供管理界面，配置相对简单 |
-| 成本 | 开源免费，企业版需付费 | 开源免费，企业版需付费 | 开源免费，企业版需付费 |
-| 扩展性 | 支持Wasm插件，扩展性强 | 支持Lua插件，扩展性较好 | 支持Lua/Go插件，扩展性一般 |
-| 社区 | 阿里背书，社区活跃 | 社区活跃，文档丰富 | 社区成熟，生态完善 |
-| 适用场景 | 云原生、微服务、API网关 | 高性能API网关、微服务 | 传统API网关、微服务 |
+| 维度 | alibaba/higress | 方案A: Kong | 方案B: APISIX |
+|------|----------------|------------|--------------|
+| 性能 | 基于Istio+Envoy，高性能，支持Wasm插件 | 基于OpenResty/Nginx，性能较高 | 基于OpenResty/Lua，性能极高 |
+| 易用性 | 提供控制台和K8s CRD，支持云原生部署 | 控制台功能丰富，但配置复杂 | 控制台简洁，CRD支持K8s原生 |
+| 成本 | 开源免费，阿里云提供商业支持 | 开源版免费，企业版收费 | 开源免费，企业版收费 |
+| 扩展性 | 支持Wasm插件，扩展性强 | 支持Lua插件，扩展性中等 | 支持Lua和Wasm插件，扩展性强 |
+| 社区 | 阿里背书，社区活跃 | 社区成熟，生态丰富 | 社区活跃，国内支持较好 |
+| 功能 | 支持流量管理、安全、可观测性 | 功能全面，插件丰富 | 功能全面，插件生态丰富 |
 
 ### 优势分析
 
-- 优势1：基于Istio和Envoy，深度集成云原生生态，适合Kubernetes环境。
-- 优势2：支持Wasm插件，扩展性和灵活性优于传统Lua插件。
-- 优势3：提供控制台和CRD，降低使用门槛，适合企业级场景。
+- 优势1：云原生集成深度，与Istio和K8s无缝结合。
+- 优势2：支持Wasm插件，扩展性和灵活性优于传统网关。
+- 优势3：阿里云提供商业支持，适合企业级应用。
 
 ### 不足分析
 
-- 不足1：社区和生态相比APISIX和Kong稍弱，第三方插件较少。
-- 不足2：对非Kubernetes环境的支持不如传统网关（如Kong）。
-- 不足3：学习曲线较陡，需要熟悉Istio和Envoy的相关概念。
+- 不足1：社区生态相对Kong和APISIX较新，插件库较少。
+- 不足2：文档和案例可能不如成熟方案丰富。
+- 不足3：对非阿里云用户的学习成本可能较高。
 
 ---
 ## 最佳实践
 
 ## 最佳实践指南
 
-### 实践 1：基于 Envoy 的深层可观测性利用
+### 实践 1：基于 Wasm 插件扩展网关功能
 
-**说明**:
-Higress 基于 Envoy 构建，具备强大的 L7 网络治理能力。最佳实践应充分利用其内置的 Prometheus 指标、分布式追踪（如 SkyWalking/Zipkin）以及访问日志能力，而不是仅仅将其视为简单的流量转发器。
+**说明**: Higress 原生支持 WebAssembly (Wasm) 技术，允许开发者使用 C++、Go、Rust 或 AssemblyScript 等语言编写插件。相比传统的 Lua 脚本，Wasm 插件提供了更高的执行效率、更好的隔离性和更丰富的标准库支持，是实现复杂业务逻辑（如自定义认证、请求头修改、响应体处理）的最佳方式。
 
 **实施步骤**:
-1. 在 Higress 全局配置中开启 Prometheus Metrics 暴露端口。
-2. 配置插件或网关层面的 Tracing 采样率，对接后端链路追踪系统。
-3. 结构化输出访问日志（例如 JSON 格式），并对接日志分析系统（如 ELK 或 Loki）。
-4. 配置基于指标告警的规则，监控延迟、错误率和流量饱和度。
+1. 根据团队技术栈选择合适的 Wasm 开发语言（推荐使用 Go 或 Rust）。
+2. 使用 Higress 官方提供的 SDK 或 Proxy-Wasm 标准接口编写插件逻辑。
+3. 将编译好的 `.wasm` 文件上传至 Higress 控制台的插件市场。
+4. 在网关规则或路由配置中将插件关联到特定的服务或路由上。
 
-**注意事项**:
-- 在生产环境中调整 Tracing 采样率（如 10%），避免全量追踪对性能造成过大影响。
-- 确保日志字段包含上游服务、响应码和耗时，以便快速定位故障。
+**注意事项**: 
+- 编写 Wasm 插件时应注意内存管理，避免内存泄漏导致网关实例资源耗尽。
+- 生产环境部署前，务必对 Wasm 插件进行压力测试，确保其执行延迟在可接受范围内。
 
 ---
 
-### 实践 2：使用 Wasm 插件扩展业务逻辑
+### 实践 2：精细化流量路由与服务治理
 
-**说明**:
-Higress 原生支持 Wasm (WebAssembly) 插件，这允许使用 C++/Go/Rust 等语言编写高性能的业务逻辑插件，而无需修改网关核心代码或重启网关。
+**说明**: Higress 深度集成了 Nacos 和 Consul 等注册中心，能够实现基于权重的灰度发布、蓝绿发布以及同机房优先路由。利用这些功能，可以最大程度降低新版本上线的风险，并优化微服务间的调用链路。
 
 **实施步骤**:
-1. 识别需要在网关层处理的通用逻辑（如请求头转换、JWT 验证、流量整形）。
-2. 编写 Wasm 插件代码，并利用 Higress 提供的 Proxy-WASM SDK 进行开发。
-3. 将编译好的 `.wasm` 文件上传至 Higress 控制台或通过 OCI 注册中心进行管理。
-4. 在特定的路由或网关全局范围内启用并配置该插件。
+1. 在 Higress 中配置服务来源，对接 Kubernetes Service 或 Nacos/Consul 注册中心。
+2. 创建 Ingress 或网关路由规则时，配置多个服务版本（如 v1 和 v2）。
+3. 设置流量百分比权重，逐步将流量从旧版本切换至新版本。
+4. 启用“同路由优先”或“同 AZ 优先”策略，减少跨机房或跨可用区的网络调用成本。
 
-**注意事项**:
-- Wasm 插件虽然运行在沙箱中，但逻辑复杂度会影响请求延迟，需进行性能压测。
-- 建议将插件配置版本化，以便出现问题时快速回滚。
+**注意事项**: 
+- 在进行全量发布前，务必保持金丝雀发布的时间窗口足够长，以便监控核心业务指标。
+- 确保服务注册中心与 Higress 之间的长连接保持稳定，避免因网络抖动导致实例列表更新不及时。
 
 ---
 
-### 实践 3：服务发现与 Nacos/K8s 的深度集成
+### 实践 3：构建高性能的 API 网关安全防护体系
 
-**说明**:
-Higress 设计初衷之一是打通微服务生态与 Kubernetes。最佳实践是利用其强大的服务发现能力，实现从 Kubernetes Service 到 Nacos 等注册中心的统一流量管理。
+**说明**: Higress 内置了完善的网关安全能力。通过配置 IP 黑白名单、实现 JWT 身份验证以及集成 WAF 防护，可以有效抵御 SQL 注入、XSS 攻击及恶意流量刷屏，保障后端服务的稳定性。
 
 **实施步骤**:
-1. 配置 Higress 的服务来源（Source），同时添加 Kubernetes 服务发现和 Nacos 注册中心。
-2. 在 Ingress 或网关路由配置中，引用服务名称而非具体的 IP 地址。
-3. 对于 K8s 环境，利用 Ingress API 或 Gateway API 进行标准化的路由定义。
-4. 对于非 K8s 服务，确保 Nacos 命名空间与 Higress 配置一致，实现跨平台流量调度。
+1. 在域名或路由级别配置 IP 访问控制，限制特定内网 IP 或阻断恶意 IP。
+2. 启用 JWT 认证插件，配置鉴权规则，确保只有携带有效 Token 的请求才能通过。
+3. 开启 Higress 的 WAF 防护插件（或集成开源 ModSecurity），配置防御规则集。
+4. 配置 CORS（跨域资源共享）策略，防止前端页面遭受跨域攻击。
 
-**注意事项**:
-- 当服务同时存在于 K8s 和 Nacos 时，需明确服务解析优先级，避免路由冲突。
-- 确保注册中心的心跳机制正常，防止将流量转发至已下线的实例。
+**注意事项**: 
+- JWT 验证会消耗 CPU 资源，建议使用高性能算法（如 RS256）并合理设置 Token 过期时间。
+- 定期审查 WAF 日志，避免因误杀规则导致正常用户访问受限。
 
 ---
 
-### 实践 4：精细化流量管理与安全防护
+### 实践 4：利用 Ingress 实现云原生流量管理
 
-**说明**:
-利用 Higress 的全动态路由能力和安全插件，实施蓝绿发布、金丝雀发布以及严格的 API 访问控制，确保系统升级平滑且安全。
+**说明**: Higress 兼容 Kubernetes Ingress API 和 Gateway API。对于使用 Kubernetes 的团队，Higress 可以作为标准 Ingress Controller 使用，通过 YAML 文件管理流量规则，实现基础设施即代码，便于版本控制和自动化部署。
 
 **实施步骤**:
-1. 配置基于 Header、Cookie 或权重的路由规则，实现金丝雀灰度发布。
-2. 启用内置的 Basic Auth 或 JWT 认证插件，保护后端 API。
-3. 针对特定路由配置 IP 黑白名单或请求速率限制。
-4. 结合 Wasm 插件实现更复杂的签名验证逻辑。
+1. 使用 Helm Chart 将 Higress 部署到 Kubernetes 集群中。
+2. 编写 Kubernetes Ingress 资源清单，定义 Host、Path 及后端 Service 映射关系。
+3. 利用 Ingress 注解配置高级特性（如重定向、超时时间、限流配置）。
+4. 将 Ingress 配置纳入 GitOps 流程（如使用 ArgoCD），实现配置变更的自动化同步。
 
-**注意事项**:
-- 限流配置需结合后端服务实际承载能力进行压测，设置合理的 Burst 值。
-- 敏感配置（如 Auth 密钥）建议使用 ASM (Alibaba Cloud Service Mesh) 或 K8s Secret 进行管理，避免明文配置。
+**注意事项**: 
+- 避免在单个 Ingress 资源中配置过多的路由规则，这可能导致配置更新变慢。
+- 注意 Higress 对标准 Ingress 注解的兼容性，优先使用 Higress 官方文档中列出的注解。
 
 ---
 
-### 实践 5：Dubbo 与 HTTP 协议的无缝转换
+### 实践 5：实施全链路可观测性监控
 
-**说明**:
-Higress 具备强大的协议转换能力，特别是针对 Dubbo (Triple/Dubbo2) 到 HTTP/JSON 的转换。这对于需要将内部 RPC 服务暴露给 HTTP 客户端的场景尤为关键。
+**说明**: Higress 原生支持 OpenTelemetry 标准，能够将访问日志、指标和链路追踪数据导出到 Prometheus、Grafana、SkyWalking 或 Jaeger 等系统中。建立全链路监控体系是排查性能瓶颈和故障定位的关键。
 
 **实施步骤**:
-1. 在 Higress 中配置 Dubbo 服务引用，指定注册中心地址和接口信息。
-2. 创建 HTTP 路由，将 HTTP 请求路径映射到 Dubbo 服务的方法名。
-3. 配置参数映射规则，将 HTTP Query 或 Body 映射为 Dubbo 方法的入参。
-4. 验证响应格式的序列化，确保前端能正确解析。
-
-**注意事项**:
-- 注意参数类型的匹配，避免因类型转换导致的调用失败。
-- 对于复杂对象（POJO）的参数映射，建议使用 Protobuf (Triple 协议) 以获得更好的性能和兼容性。
-
----
-
-### 实践 6：高可用部署与资源隔离
-
-**说明**:
-在 Kubernetes 中运行 Higress 时，合理的资源配置和反亲和
+1. 在 Higress 全局配置中开启 AccessLog，配置日志格式（推荐使用 JSON 格式便于解析）。
+2. 集成 Prometheus，采集 Higress 的运行时指标（如 QPS、延迟、P99、错误率）
 
 ---
 ## 性能优化建议
 
 ## 性能优化建议
 
-### 优化 1：启用 HTTP/2 与 HTTP/3 (QUIC) 协议
+### 优化 1：启用 HTTP/3 (QUIC) 协议支持
 
-**说明**:  
-Higress 作为高性能网关，基于 Envoy 构建，对 HTTP 协议的支持是其核心能力。HTTP/2 通过多路复用减少了 TCP 连接数，降低了延迟；HTTP/3 (QUIC) 基于 UDP，解决了 TCP 队头阻塞问题，在不稳定的网络环境下能显著提升吞吐量和连接稳定性。
+**说明**: HTTP/3 基于 UDP 协议，解决了 TCP 队头阻塞问题。在弱网环境下，它能显著减少连接建立延迟和丢包导致的性能下降。对于 Higress 这样的 API 网关，启用 QUIC 可以大幅提升长距离或移动端用户的请求响应速度。
 
 **实施方法**:
-1. 在 Higress 控制台或网关配置中，找到监听器设置。
-2. 确保启用 TLS，因为 HTTP/2 和 HTTP/3 通常需要加密。
-3. 在协议配置中显式开启 `HTTP/2` 和 `HTTP/3` 支持。
-4. 调整 HTTP/2 的并发流限制（`max_concurrent_streams`）以适应高并发场景。
+1. 在 Higress 的网关配置中，监听器协议类型选择 `QUIC`。
+2. 确保 upstream 服务配置支持 HTTP/3 或配置 Higress 进行协议转换。
+3. 配置合适的 QUIC 版本（如 draft-29 或 v1）以兼容不同客户端。
 
-**预期效果**:  
-在高并发或弱网环境下，请求延迟可降低 20%-30%，连接复用率提升，减少服务器 TCP 连接维护开销。
+**预期效果**: 在弱网环境下，首字节加载时间（TTFB）可降低 30%-50%，连接建立失败率显著下降。
 
 ---
 
-### 优化 2：配置全链路超时与重试策略
+### 优化 2：配置全链路超时与熔断策略
 
-**说明**:  
-默认的超时配置可能不适合微服务架构。过长的超时会导致线程资源（或 Goroutine）长时间被占用，造成雪崩效应；过短则会导致请求失败。合理的超时与指数退避重试机制能保障系统整体吞吐量。
+**说明**: 默认的超时配置往往过长，导致大量线程或连接被慢请求占用，引发雪崩效应。通过精细化的超时控制和熔断机制，可以快速释放资源，保障整体系统的吞吐量。
 
 **实施方法**:
-1. **连接超时**: 设置为 3-5 秒，防止连接建立阶段阻塞。
-2. **请求超时**: 根据下游服务 P99.99 耗耗时设置，通常建议 3-10 秒。
-3. **重试策略**: 针对网络错误（5xx、连接重置）开启重试，使用指数退避算法（如 `exponential_backoff`），限制重试次数（如 3 次）。
-4. 在 Higress 的路由配置或 `GlobalConfig` 中应用这些策略。
+1. **连接超时**: 设置为 2-5 秒，避免长时间等待下游服务不可达。
+2. **请求超时**: 根据业务 P99 耗耗设置，建议不超过 10 秒。
+3. **熔断策略**: 在 `Route` 或 `Service` 级别配置 `Istio` 或 `Higress` 原生熔断规则，设定最大并发请求数。当达到阈值时，直接返回 503，避免系统过载。
 
-**预期效果**:  
-有效防止长尾请求拖垮系统，提升系统容错能力，在服务不稳定时成功率可提升 15% 以上。
+**预期效果**: 系统资源利用率（CPU/内存）在故障场景下可保持在安全水位，吞吐量在压力下不再断崖式下跌，整体可用性提升至 99.9%+。
 
 ---
 
-### 优化 3：启用 Wasm 插件的高效运行模式
+### 优化 3：启用 WASM 插件的高效缓存
 
-**说明**:  
-Higress 的核心优势之一是支持 Wasm 插件。然而，Wasm 运行在沙箱中，频繁的内存拷贝和序列化会带来性能损耗。通过优化插件逻辑和利用 Higress 的 Proxy-Wasm 特性，可以极大降低损耗。
+**说明**: Higress 支持 WASM (WebAssembly) 插件扩展。频繁的插件逻辑执行（如鉴权、限流）会增加 CPU 开销。利用 WASM 的内存缓存能力或 Higress 的本地缓存特性，可以减少重复计算和后端请求。
 
 **实施方法**:
-1. **减少虚拟机调用开销**: 在 `OnHttpRequestHeaders` 等根回调中处理逻辑，避免在 `OnHttpStreamDone` 中进行复杂计算。
-2. **共享内存优化**: 尽量减少 Host 和 Wasm VM 之间的数据拷贝。
-3. **使用 Go/C++ 编写高性能插件**: 相比于 AssemblyScript，Rust/C++ 编译出的 Wasm 模块执行效率更高。
-4. **启用日志采样**: 在高流量 QPS 下，将 Wasm 插件的日志级别调整为 WARN 或 ERROR，或者开启采样日志。
+1. 在 WASM 插件代码中，利用 Go 或 Rust 的 `HashMap` 或 `LRU Cache` 缓存高频访问的配置数据（如 Token 验证结果、用户信息）。
+2. 对于鉴权插件，设置合理的 TTL（如 5 分钟），避免每次请求都查询后端认证服务。
+3. 使用 Higress 的 `local-reply` 缓存能力，对于静态的鉴权失败响应进行本地拦截。
 
-**预期效果**:  
-在启用复杂鉴权或限流插件时，Wasm 处理延迟可控制在毫秒级，对整体 RPS 的影响降低至 5% 以内。
+**预期效果**: 鉴权/限流类业务的 CPU 占用率降低 20%-40%，后端认证服务请求量减少 60% 以上。
 
 ---
 
-### 优化 4：启用 DNS 缓存与连接池复用
+### 优化 4：优化连接池与 Keep-Alive 设置
 
-**说明**:  
-网关与后端服务通信时，频繁的 DNS 解析和 TCP/TLS 握手是主要的性能瓶颈。Higress 继承了 Envoy 的连接池管理能力，合理配置可大幅减少握手延迟。
+**说明**: 默认的连接管理策略可能导致频繁建立 TCP 连接（三次握手开销大）或连接泄露。合理配置 HTTP/1.1 Keep-Alive 和 HTTP/2 连接池，能显著降低延迟并提高并发处理能力。
 
 **实施方法**:
-1. **启用 DNS 缓存**: 配置 `dns_refresh_rate`，避免每次请求都进行 DNS 查询。
-2. **调整连接池大小**: 根据后端服务的处理能力，调整 HTTP/2 或 HTTP/1.1 的连接池上限（`http2_options.max_concurrent_streams` 和 `max_connections`）。
-3. **保持连接 Keep-Alive**: 确保与后端服务的 Keep-Alive 设置足够长
+1. **Upstream 连接池**: 根据后端服务能力调整 `maxConnections`。对于 HTTP/1.1，建议每个实例 50-100 连接；对于 HTTP/2，建议 1-3 连接（复用多路复用）。
+2. **Keep-Alive**: 确保 Higress 到后端的连接开启 Keep-Alive，并将 `keepalive_timeout` 设置为 60s 或更高。
+3. **空闲连接清理**: 配置合理的 `idleTimeout`，自动清理不再使用的连接，防止文件句柄耗尽。
+
+**预期效果**: 后端连接建立开销减少 80% 以上，网关 P99 延迟降低 10%-20%。
+
+---
+
+### 优化 5：实施细粒度的日志采样与脱敏
+
+**说明**: 在高并发场景下，全量日志记录会产生巨大的磁盘 I/O 和
 
 ---
 ## 学习要点
 
-- 基于 GitHub Trending 上 Alibaba Higress 项目的特性，总结关键要点如下：
-- Higress 是阿里云开源的、基于 Envoy 和 Istio 构建的下一代云原生 API 网关，旨在解决云原生时代流量治理与网关集成的痛点。
-- 该项目深度集成了 K8s Ingress 和 Gateway API 标准，能够作为 K8s 集群内的统一流量入口，实现从南向（入口流量）到北向（微服务间调用）的全链路治理。
-- 它继承了 Envoy 的高性能特性，并针对云原生环境进行了优化，支持高并发、低延迟的流量转发，适合对性能要求严苛的生产环境。
-- Higress 具备强大的扩展能力，支持通过 WASM (WebAssembly) 技术编写插件，允许开发者使用多种编程语言（如 Go、Python）灵活扩展网关功能。
-- 该网关原生支持服务发现并集成了 Dubbo、Nacos 等微服务生态，能够无缝对接传统的微服务架构，实现平滑的云原生迁移。
-- 它提供了开箱即用的安全防护能力，包括认证鉴权、流量控制（限流、熔断）以及对 WAF（Web 应用防火墙）的支持，保障后端服务的稳定性。
+- 基于您提供的信息（GitHub Trending 上的 Alibaba/Higress 项目），以下是总结出的关键要点：
+- Higress 是阿里巴巴开源的一款基于 Istio 构建的下一代云原生 API 网关。
+- 它深度集成了 Envoy 和 K8s，旨在解决云原生架构下多协议接入与流量治理的复杂性问题。
+- 该项目支持将传统的 Nginx Ingress 和 API Gateway 无缝迁移至云原生架构。
+- 提供了开箱即用的 WAF（Web 应用防火墙）插件和安全防护能力，保障业务安全。
+- 兼容 Kubernetes Ingress 和 Gateway API 标准，能够轻松对接 K8s 服务网格。
+- 内置了对 Dubbo、gRPC 和 Spring Cloud 等微服务框架的广泛协议支持。
 
 
 ---
@@ -751,164 +665,170 @@ Higress 的核心优势之一是支持 Wasm 插件。然而，Wasm 运行在沙�
 
 ## 学习路径
 
-### 阶段 1：基础认知与快速上手
+### 阶段 1：基础概念与环境准备
 
 **学习内容**:
-- Higress 的背景与核心概念：了解 Higress 是什么，它基于 Envoy 和 Istio 构建，以及其作为云原生 API 网关的定位。
-- 基础架构：理解 Ingress Controller、Gateway CRD 以及控制平面与数据平面的基本关系。
-- 本地环境搭建：学习如何在本地 Docker 环境或 Kubernetes 集群（如 Kind 或 Minikube）中部署 Higress。
-- 基本流量管理：掌握如何通过 Ingress 或 Gateway API 配置简单的 HTTP/HTTPS 路由转发。
+- 云原生网关的基本概念与演进历史
+- Higress 的核心特性、架构设计及适用场景
+- Kubernetes 基础知识
+- 容器网络基础
 
 **学习时间**: 1-2周
 
 **学习资源**:
-- Higress 官方 GitHub 仓库 (README 文档)
-- Higress 官方文档 - "快速开始" 章节
-- Envoy 基础架构图解
+- Higress 官方文档 (架构与简介章节)
+- 《云原生网关演进史》相关技术博客
+- Kubernetes 官方入门教程
 
 **学习建议**:
-建议先阅读官方 README 了解宏观架构，然后动手在本地搭建一个最简单的 Demo，将一个静态服务通过 Higress 暴露出来，不要一开始就陷入复杂的配置细节。
+- 理解 Ingress 与 Gateway API 的区别
+- 在本地搭建 Kind 或 Minikube 环境
+- 阅读阿里云关于 Higress 开源的背景文章
 
 ---
 
-### 阶段 2：核心功能深度实践
+### 阶段 2：核心功能与部署实战
 
 **学习内容**:
-- 高级路由策略：学习基于 Header、Query 参数、Cookie 等条件的复杂路由，以及 Header 修改插件的使用。
-- 服务治理与负载均衡：掌握服务注册/发现（Nacos/Consul/Kubernetes）的配置，以及超时、重试、熔断等流量治理策略。
-- 安全防护：学习如何配置 Basic Auth、Key Auth 认证，以及 IP 黑白名单和 CORS 跨域设置。
-- 插件系统：深入理解 Higress 的 Lua 和 Wasm 插件机制，学习如何安装和配置官方插件。
+- Higress 的安装与部署（Docker 与 Kubernetes 模式）
+- 域名、路由与流量管理配置
+- 服务发现与注册中心集成（Nacos, Consul 等）
+- 基础安全配置（HTTPS, Basic Auth）
 
 **学习时间**: 2-3周
 
 **学习资源**:
-- Higress 官方文档 - "插件市场"与"最佳实践"
-- Higress 官方控制台演示
-- Kubernetes Ingress API 规范文档
+- Higress GitHub 仓库 Quickstart 文档
+- Higress 官方控制台操作指南
+- Envoy Filter 基础知识（Higress 基于 Envoy）
 
 **学习建议**:
-此阶段重点在于熟悉控制台的操作和 CRD 的编写。建议尝试对接一个真实的后端服务（如 Nacos 注册的服务），并配置全链路鉴权和熔断保护，观察流量在网关层的处理逻辑。
+- 动手部署一个 Higress 实例并接入一个简单的后端服务
+- 尝试配置基于 Header 的路由转发规则
+- 熟悉 Higress Console 的操作界面
 
 ---
 
-### 阶段 3：插件开发与性能调优
+### 阶段 3：流量治理与插件开发
 
 **学习内容**:
-- Wasm 插件开发：学习如何使用 Go 或 C++ 开发自定义 Wasm 插件，实现业务逻辑的动态扩展。
-- 高可用与性能优化：理解 Higress 的性能基准，学习如何进行网关的高可用部署，以及连接池、缓冲区大小等参数调优。
-- 可观测性集成：掌握 Prometheus 监控指标对接、日志采集（SLS/ELK）以及分布式链路追踪的配置。
-- 多集群与混合云：了解 Higress 在多集群环境下的部署模式以及对接阿里云 MSE 的特性。
+- 高级流量治理：全链路灰度、金丝雀发布、负载均衡算法
+- Waf 防护与限流降级策略
+- 插件系统：使用预置插件与开发自定义插件（Wasm/Go/Python）
+- Prometheus 监控与日志采集集成
 
 **学习时间**: 3-4周
 
 **学习资源**:
-- Higress 官方文档 - "开发者指南"
-- Envoy Wasm 官方文档
-- Higress GitHub Discussions (社区实战案例)
+- Higress 插件开发文档
+- Apache Dubbo / gRPC 协议代理配置指南
+- Higress 社区精选插件案例
 
 **学习建议**:
-尝试编写一个自定义插件来处理特定的请求头或响应体，这是区分普通使用者和高级用户的关键。同时，在生产环境模拟高并发场景，观察监控面板，排查瓶颈。
+- 深入研究 Wasm 技术在网关层应用
+- 编写一个自定义 RequestBlock 插件
+- 在测试环境模拟高并发流量进行限流测试
 
 ---
 
-### 阶段 4：生产级架构与源码剖析
+### 阶段 4：生产级运维与性能调优
 
 **学习内容**:
-- 源码架构分析：深入阅读 Higress Controller 和 Istio 控制平面的源码，理解配置下发的机制。
-- 复杂场景解决方案：研究金丝雀发布、蓝绿部署、全链路灰度在 Higress 中的完整实现方案。
-- 安全合规：深入理解 mTLS 双向认证以及零信任网关的构建。
-- 社区贡献：参与 GitHub Issue 讨论，尝试提交 PR 修复 Bug 或增加文档。
+- Higress 的高可用部署架构
+- 性能瓶颈分析与调优（连接池、缓冲区等）
+- 灾难恢复与备份策略
+- 多集群管理与混合云部署实践
 
-**学习时间**: 持续学习
+**学习时间**: 2-4周
 
 **学习资源**:
-- Higress 源码
-- Istio 官方文档 (深度理解控制平面)
-- CNCF 云原生网关技术白皮书
+- Higress 生产部署最佳实践白皮书
+- Envoy 性能调优官方指南
+- 阿里云云原生网关企业级案例分享
 
 **学习建议**:
-在精通配置和插件开发后，通过阅读源码来理解底层的 Envoy xDS 协议交互。此时应关注架构层面的设计，思考如何利用 Higress 解决大规模微服务集群下的流量治理难题。
+- 分析生产环境网关的指标（P99 延迟、QPS）
+- 参与社区 Issue 讨论或阅读源码
+- 规划一套符合企业标准的网关迁移方案
 
 ---
 ## 常见问题
 
 
-### 1: Higress 是什么？它与阿里巴巴和云原生社区有什么关系？
+### 1: Higress 是什么？它与阿里云和云原生社区有什么关系？
 
-1: Higress 是什么？它与阿里巴巴和云原生社区有什么关系？
+1: Higress 是什么？它与阿里云和云原生社区有什么关系？
 
-**A**: Higress 是一个基于阿里内部多年实践沉淀的下一代云原生 API 网关。它是在 2022 年由阿里巴巴正式开源，并捐赠给云原生计算基金会（CNCF）作为沙箱项目。Higress 的底层深度集成了开源项目 Envoy，并在此基础上进行了针对云原生场景的优化和扩展。它的目的是为了解决传统网关在云原生架构下面临的性能、扩展性和易用性问题，同时兼容 Kubernetes 和微服务生态。
-
----
-
-
-
-### 2: Higress 与 Nginx、APISIX 或 Kong 等其他网关相比有什么核心优势？
-
-2: Higress 与 Nginx、APISIX 或 Kong 等其他网关相比有什么核心优势？
-
-**A**: Higress 的核心优势主要体现在以下几个方面：
-1.  **高性能与低延迟**：基于 C++ 编写的 Envoy 内核，相比基于 Lua 的 OpenResty（Kong/APISIX 常用内核）在长连接管理和处理高并发请求时通常具有更低的延迟和更高的吞吐量。
-2.  **安全与热更新**：支持配置热更新，且配置变更过程更加平滑，能够显著降低因配置变更导致的流量损失风险。
-3.  **标准化插件市场**：Higress 提供了类似 Wasm 插件市场的功能，允许开发者用 Go、C++、Rust 等语言编写插件并动态加载，无需重启网关，扩展性更强且更安全。
-4.  **服务治理集成**：它天然集成了 Nacos、Consul 等注册中心，能够无缝对接微服务，无需像传统 Nginx 那样手动配置 Upstream，实现了从 API 网关到服务网格的统一流量管理。
+**A**: Higress 是一个基于阿里云内部多年实践沉淀的下一代云原生 API 网关。它是在 2022 年由阿里云开源，并捐赠给了云原生计算基金会（CNCF）作为沙箱项目。Higress 的核心代码源自阿里云 API 网关和 MSE（微服务引擎）网关的生产级实现，旨在提供高性能、高可用且功能强大的流量管理组件。它兼容 Kubernetes Ingress 标准，并深度集成了 Envoy 和 Istio 生态。
 
 ---
 
 
 
-### 3: Higress 是否支持从 Nginx 或 Ingress Controller 迁移？迁移难度大吗？
+### 2: Higress 与 Nginx、APISIX 或 Kong 等传统网关相比有什么核心优势？
 
-3: Higress 是否支持从 Nginx 或 Ingress Controller 迁移？迁移难度大吗？
+2: Higress 与 Nginx、APISIX 或 Kong 等传统网关相比有什么核心优势？
 
-**A**: 是的，Higress 非常重视兼容性，旨在降低迁移门槛。
-1.  **Nginx 兼容**：Higress 提供了 Nginx Ingress Annotation 的兼容支持，这意味着许多标准的 Kubernetes Ingress 资源可以直接被 Higress 接管。
-2.  **配置转换**：对于原生 Nginx 配置，Higress 社区提供了工具或指南帮助用户将 Nginx 的配置逻辑转化为 Higress 的路由配置。
-3.  **Ingress Controller 替换**：在 Kubernetes 集群中，Higress 可以直接作为 Ingress Controller 替换原有的 Nginx Ingress Controller，利用其强大的流量管理能力。
+**A**: Higress 主要具备以下几个显著优势：
 
----
-
-
-
-### 4: Higress 如何处理插件开发？必须使用 Lua 吗？
-
-4: Higress 如何处理插件开发？必须使用 Lua 吗？
-
-**A**: 不，Higress 不强制要求使用 Lua。这是 Higress 相比传统网关的一大进步。
-Higress 原生支持 **Wasm (WebAssembly)** 技术。这意味着开发者可以使用 **Go、Rust、C++、JavaScript (AssemblyScript)** 等多种高级语言来编写网关插件。编写完成后，这些代码会被编译成 Wasm 字节码，由 Higress 动态加载到 Envoy 中运行。这种方式不仅开发效率高（特别是对于 Go 开发者），而且实现了插件的隔离性，插件崩溃不会导致网关主进程崩溃，同时也支持插件的热插拔。
+1.  **深度集成 Envoy**: 相比于 Nginx 的 C/S 架构或基于 OpenResty 的 Kong/APISIX，Higress 基于 Envoy 构建，采用 C++ 编写，在处理高并发长连接和热更新配置时性能更优，且资源消耗更低。
+2.  **安全防护**: 内置了 WAF（Web 应用防火墙）插件，能够提供开箱即用的安全防护，无需额外部署复杂的安全组件。
+3.  **标准兼容与流量管理**: 完全兼容 Kubernetes Ingress 标准，同时支持 Nginx Ingress Annotation，方便用户迁移。它还支持 Istio 的 xDS 协议，可以作为云环境下的南北向（API 网关）与东西向（服务网格）流量的统一入口。
+4.  **插件生态**: 支持 WASM (WebAssembly) 插件，允许开发者使用 Go、Python、JavaScript 等多种语言编写插件，且插件热更新不会导致连接中断。
 
 ---
 
 
 
-### 5: Higress 可以作为 Kubernetes Ingress Controller 使用吗？
+### 3: Higress 是否支持从 Nginx Ingress 平滑迁移？迁移成本高吗？
 
-5: Higress 可以作为 Kubernetes Ingress Controller 使用吗？
+3: Higress 是否支持从 Nginx Ingress 平滑迁移？迁移成本高吗？
 
-**A**: 可以。Higress 专为云原生设计，完全支持作为 Kubernetes 的 Ingress Controller 部署。它通过监听 Kubernetes 的 Ingress、Gateway API 等资源对象来自动配置流量规则。它能够自动发现 Kubernetes Service 后端 Endpoint 的变化，实现流量的自动负载均衡。这使得它非常适合部署在 Kubernetes 集群边缘，作为进入集群流量的统一入口。
+**A**: 是的，Higress 非常重视兼容性，设计上支持低成本的平滑迁移。
 
----
-
-
-
-### 6: Higress 是否支持 Dubbo 或 gRPC 等非 HTTP 协议？
-
-6: Higress 是否支持 Dubbo 或 gRPC 等非 HTTP 协议？
-
-**A**: 是的，Higress 对微服务协议有广泛的支持。
-1.  **gRPC**：Higress 原生支持 gRPC 协议的代理和路由，支持基于 gRPC 的负载均衡和全链路透传。
-2.  **Dubbo**：得益于阿里巴巴的基因，Higress 对 Apache Dubbo 提供了深度支持。它能够将 HTTP/JSON 请求转换为 Dubbo 协议，实现网关对后端 Dubbo 服务的直接调用，这对于许多使用 Java 微服务栈的企业来说非常关键。
+1.  **Annotation 兼容**: Higress 实现了常见的 Nginx Ingress Annotations 逻辑，这意味着大部分现有的 Nginx Ingress YAML 配置可以直接在 Higress 中运行，无需修改配置文件。
+2.  **配置迁移工具**: Higress 提供了配置迁移工具（Nginx Ingress Controller Higress），可以自动扫描集群中的 Ingress 资源并转换为 Higress 的配置。
+3.  **流量切换**: 在 Kubernetes 集群中，你可以通过修改 Service 的 Selector 或调整 Ingress Class 的权重，逐步将流量从 Nginx 切换到 Higress，实现灰度发布，从而降低风险。
 
 ---
 
 
 
-### 7: 在生产环境中使用 Higress，性能表现如何？是否有压测数据参考？
+### 4: Higress 如何处理 Dubbo 和 gRPC 等微服务协议？
 
-7: 在生产环境中使用 Higress，性能表现如何？是否有压测数据参考？
+4: Higress 如何处理 Dubbo 和 gRPC 等微服务协议？
 
-**A**: Higress 在生产环境中被阿里巴巴内部大规模使用（如淘宝、天猫、高德等业务的流量入口），其性能经过过亿级 QPS 的验证。
-根据官方和社区的压测数据，在开启 TLS 卸载和常见路由匹配的情况下，Higress 的吞吐量通常优于基于 OpenResty 的网关，且在长连接场景下的 CPU 利用率和内存占用更加稳定。它支持水平扩展，可以通过增加 Pod 数量线性提升
+**A**: Higress 是一个全功能的微服务网关，对微服务协议有极好的支持：
+
+1.  **Dubbo 支持**: Higress 原生支持 Dubbo 和 Dubbo3 (Triple) 协议。它可以将 HTTP/HTTPS 请求转换为 Dubbo 调用，实现 HTTP 到 Dubbo 的协议转换，让前端无需关心后端的 RPC 协议细节。
+2.  **gRPC 支持**: 完全支持 gRPC 和 gRPC-Web 协议。它可以作为 gRPC 服务的代理，支持基于 HTTP/2 的负载均衡，并支持将 gRPC 请求透传或转换为 RESTful 风格的 API。
+3.  **服务发现**: 能够无缝对接 Nacos、ZooKeeper、Consul 以及 Kubernetes CoreDNS，自动感知后端服务的注册与上线/下线。
+
+---
+
+
+
+### 5: 在 Higress 中如何扩展功能？是否支持自定义插件？
+
+5: 在 Higress 中如何扩展功能？是否支持自定义插件？
+
+**A**: Higress 提供了非常灵活的插件扩展机制，主要通过以下两种方式：
+
+1.  **WASM 插件**: 这是 Higress 推荐的扩展方式。由于 Envoy 对 WASM 的支持，开发者可以使用 Go、C++、Rust、JavaScript 或 TypeScript 编写业务逻辑（如鉴权、限流、请求头修改）。WASM 插件的优势是隔离性好、动态加载（无需重启网关即可加载/卸载）且性能接近原生代码。
+2.  **Lua/Python 支持**: 除了 WASM，Higress 也继承了 Envoy 生态对 Lua 脚本的支持，同时通过特定模块支持 Python 脚本处理逻辑，降低了后端开发者编写网关逻辑的门槛。
+3.  **控制台配置**: Higress 提供了开源的控制台（Console），用户可以在界面上直接上传、启用、禁用和配置插件，无需修改底层的 ConfigMap 或 CRD 资源。
+
+---
+
+
+
+### 6: Higress 的性能表现如何？能否应对高并发场景？
+
+6: Higress 的性能表现如何？能否应对高并发场景？
+
+**A**: Higress 的设计初衷就是为了应对阿里云超大规模的流量冲击，性能表现优异：
+
+1.  **底层架构**: 基于 Envoy 构建，采用全异步非阻塞 I/O 模
 
 ---
 ## 思考题
@@ -918,48 +838,43 @@ Higress 原生支持 **Wasm (WebAssembly)** 技术。这意味着开发者可以
 
 ### ### 挑战 1: [简单]
 
-### 问题**: Higress 基于 Envoy 和 Istio 构建，但并非简单封装。请查阅 Higress 的架构文档，对比直接使用 Envoy 和使用 Higress 在配置 HTTP 路由时的差异。尝试在本地启动 Higress，通过控制台或 WASM 插件实现一个简单的请求头重写功能。
+### 问题**: Higress 是基于 Envoy 构建的，请尝试在本地 Docker 环境中快速部署一个 Higress 实例，并创建一个简单的 Ingress 路由规则，将路径 `/hello` 的流量转发到一个名为 `httpbin` 的后端服务。
 
-### 提示**: 关注 Higress 如何将 Ingress API 或 Gateway API 转换为 Envoy 的配置。思考“配置即代码”与“控制台可视化”在网关管理中的区别。
+### 提示**: 你需要先编写一个 `docker-compose.yml` 文件。注意 Higress 的控制台默认端口，并查阅官方文档关于如何通过控制台或配置文件（Kubernetes Ingress 注解）定义路由规则的方法。
 
 ### 
 
 ---
 ## 实践建议
 
-基于 Higress 作为“AI Native API Gateway”的定位，结合其作为云原生 API 网关的特性，以下是 6 条针对实际使用场景的实践建议：
+基于 Higress 作为 AI Native API 网关的定位，结合其基于 Envoy 和 Istio 的技术架构，以下是 6 条针对实际生产环境的实践建议：
 
-### 1. 利用 Wasm 插件实现 LLM 提示词管理与安全防护
-*   **场景**：在对接大模型（如 OpenAI、通义千问等）时，直接将 Prompt 硬编码在客户端会导致难以维护和更新，且存在泄露风险。
-*   **建议**：编写 Wasm 插件（或使用官方插件）在网关层进行 Prompt 注入和改写。
-    *   **操作**：在网关配置中预设系统提示词，客户端请求仅需携带用户输入。网关在转发请求前将两者合并。
-    *   **最佳实践**：利用此机制实现“敏感词过滤”或“输出格式强制”，确保 AI 返回的内容符合业务规范（如强制 JSON 格式），避免客户端直接暴露模型 API Key。
+### 1. 利用 Wasm 插件实现模型供应商的平滑切换与成本优化
+在 AI 应用开发中，模型迭代频繁。建议不要在应用代码中硬编码 API 调用地址，而是利用 Higress 的 `wasm` 插件或路由功能配置统一的模型接入层。
+*   **具体操作**：在 Higress 中配置不同的路由（如 `/v1/chat/completions`），将流量按比例或按 Header 分发至不同的 LLM 提供商（如 OpenAI、通义千问、本地部署的 vLLM）。
+*   **最佳实践**：利用 Higress 的**全链路灰度发布**能力，先让 5% 的流量试用新模型版本，观察响应延迟和 Token 消耗是否符合预期，再全量切换。
+*   **常见陷阱**：直接在网关层做复杂的 Prompt Engineering 会导致网关 CPU 负载过高，Prompt 模板化建议尽量在网关配置简单的替换，复杂的逻辑应在业务侧或通过独立的微服务处理。
 
-### 2. 配置语义缓存以降低 Token 消耗与延迟
-*   **场景**：AI 问答场景中，大量用户提问往往是高度重复的（如“如何重置密码”），每次都请求大模型会产生高昂的费用和较高的延迟。
-*   **建议**：启用 Higress 的 AI 特性缓存（或配置 KV 缓存插件）。
-    *   **操作**：配置基于语义向量的缓存策略，而非简单的精确匹配缓存。当用户问题与缓存库中的问题语义相似度超过阈值（如 0.95）时，直接返回缓存的历史回答。
-    *   **注意**：必须根据业务场景设置合理的缓存过期时间（TTL），避免因旧数据误导用户。
+### 2. 配置语义缓存以降低 Token 消耗和延迟
+AI 问答场景中存在大量重复或高度相似的提问，直接转发给 LLM 会产生高昂的费用和较高的延迟。
+*   **具体操作**：启用 Higress 的缓存插件（或配置 Redis 插件）。对于“检索增强生成（RAG）”场景，建议对向量检索后的上下文进行哈希缓存。
+*   **最佳实践**：设置合理的缓存 Key（例如包含 `User Input` 的 MD5 和 `System Prompt` 的标识），并配置较短的 TTL（如 5-10 分钟），以确保回答的时效性。
+*   **常见陷阱**：忽略流式输出的缓存处理。如果下游开启了 SSE（Server-Sent Events）流式传输，网关缓存需要支持流式数据的重组与转发，否则可能导致客户端无法正常接收流。
 
-### 3. 实施模型供应商的故障转移
-*   **场景**：业务通常同时接入了多个 LLM 提供商（如 Azure OpenAI、通义千问、文心一言）。当某个厂商 API 不稳定或限流时，服务会中断。
-*   **建议**：利用 Higress 的服务路由或 fallback 机制配置模型路由策略。
-    *   **操作**：配置默认主模型供应商，并设定超时时间（如 5 秒）。若主服务超时或返回 5xx 错误码，网关自动将请求切换至备用模型供应商。
-    *   **最佳实践**：在路由配置中添加“降级策略”，例如在主模型（昂贵且高质量）不可用时，自动切换至备用模型（便宜且速度快），保证业务可用性而非直接报错。
+### 3. 实施细粒度的 Token 限流而非简单的 QPS 限速
+传统的 API 网关通常按“每秒请求数”（QPS）限流，但在 AI 场景中，长 Prompt 和短 Prompt 的成本差异巨大。
+*   **具体操作**：使用 Higress 的 `token-ratelimit` 插件或基于请求体长度的自定义限流策略。根据预估的 Token 数量（通常约为字符数 / 3 或 / 4）来限制用户调用。
+*   **最佳实践**：针对不同层级的用户（如免费版、Pro 版）设置不同的 Token 预算，防止个别用户通过超长 Prompt 耗尽后端配额或资源。
+*   **常见陷阱**：仅限制并发连接数而不限制 Token 吞吐量，可能导致网关连接数未满但带宽被打满，或者后端 LLM 实例因处理超长上下文而 OOM（内存溢出）。
 
-### 4. 流式响应（SSE）的超时与缓冲配置
-*   **场景**：AI 对话通常采用 Server-Sent Events (SSE) 流式输出。网关若配置不当，可能导致流被截断或内存溢出。
-*   **建议**：精细调整网关的流式代理配置。
-    *   **操作**：确保网关的 Upstream 和 Downstream 配置中禁用了响应缓冲，并适当调大 `request_timeout` 或 `stream_idle_timeout`，因为 LLM 生成长文本可能耗时较长。
-    *   **常见陷阱**：不要在网关层对 SSE 响应进行完整的 Body 大小限制检查，因为流式响应的总大小在开始前是未知的，这可能导致连接意外断开。
+### 4. 严格校验与清洗请求头以防止 API 密钥泄露
+当企业将内部模型服务通过 Higress 暴露给外部或下游部门时，密钥管理至关重要。
+*   **具体操作**：在 Higress 中配置 `auth` 插件（如 JWT 或 AK/SK 认证），拦截所有入站请求并验证身份。验证通过后，由网关统一添加调用上游 LLM 所需的 `Authorization` 头。
+*   **最佳实践**：对外屏蔽后端真实的 API Key。业务端只需持有 Higress 颁发的 Access Key，无法直接触达上游模型厂商的 Key，从而实现统一的权限管控和审计。
+*   **常见陷阱**：透传（Pass-through）所有 HTTP Header。这可能导致业务端意外将敏感信息传递给第三方模型提供商，或者导致 Header 冲突（如重复的 `Content-Type`）导致后端报错。
 
-### 5. 统一多模型协议的接口标准
-*   **场景**：后端接入的模型厂商接口标准不一（如 Anthropic 与 OpenAI 的请求格式差异），客户端需要维护多套 SDK。
-*   **建议**：使用 Higress 的插件进行协议转换，对外统一暴露 OpenAI 兼容接口。
-    *   **操作**：在网关层将非 OpenAI 标准的请求/响应转换为标准格式。这样客户端应用只需对接一套 API 协议，后端可以灵活更换模型供应商。
-    *   **最佳实践**：将模型名称作为路由参数的一部分（如 `/v1/chat/completions` 带 `model` 参数），网关根据参数动态路由到不同后端，实现接口层的“解耦”。
-
-### 6. 鉴权与计费的精细化
+### 5. 针对流式响应的超时与重试策略配置
+AI 大模型推理通常
 
 ---
 ## 引用
@@ -976,14 +891,14 @@ Higress 原生支持 **Wasm (WebAssembly)** 技术。这意味着开发者可以
 ## 站内链接
 
 - 分类： [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/) / [开源生态](/categories/%E5%BC%80%E6%BA%90%E7%94%9F%E6%80%81/)
-- 标签： [Higress](/tags/higress/) / [API网关](/tags/api%E7%BD%91%E5%85%B3/) / [AI原生](/tags/ai%E5%8E%9F%E7%94%9F/) / [阿里云](/tags/%E9%98%BF%E9%87%8C%E4%BA%91/) / [Istio](/tags/istio/) / [Envoy](/tags/envoy/) / [LLM](/tags/llm/) / [MCP协议](/tags/mcp%E5%8D%8F%E8%AE%AE/)
+- 标签： [API 网关](/tags/api-%E7%BD%91%E5%85%B3/) / [Higress](/tags/higress/) / [AI 原生](/tags/ai-%E5%8E%9F%E7%94%9F/) / [Istio](/tags/istio/) / [Envoy](/tags/envoy/) / [LLM](/tags/llm/) / [MCP](/tags/mcp/) / [WASM](/tags/wasm/)
 - 场景： [AI/ML项目](/scenarios/ai-ml%E9%A1%B9%E7%9B%AE/) / [大语言模型](/scenarios/%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/) / [云原生/容器](/scenarios/%E4%BA%91%E5%8E%9F%E7%94%9F-%E5%AE%B9%E5%99%A8/)
 
 ### 相关文章
 
-- [阿里开源 Higress：AI 原生 API 网关]({{< relref "posts/20260130-github_trending-alibaba-higress-9.md" >}})
 - [阿里开源 Higress：AI 原生 API 网关]({{< relref "posts/20260206-github_trending-alibaba-higress-0.md" >}})
-- [阿里开源 Higress：AI 原生 API 网关]({{< relref "posts/20260129-github_trending-alibaba-higress-9.md" >}})
-- [阿里开源 Higress：AI 原生 API 网关]({{< relref "posts/20260131-github_trending-alibaba-higress-8.md" >}})
-- [阿里开源 Higress：AI 原生 API 网关]({{< relref "posts/20260131-github_trending-alibaba-higress-9.md" >}})
+- [阿里开源 Higress：AI 原生 API 网关]({{< relref "posts/20260204-github_trending-alibaba-higress-8.md" >}})
+- [阿里开源 Higress：AI 原生 API 网关]({{< relref "posts/20260206-github_trending-alibaba-higress-6.md" >}})
+- [阿里开源 Higress：AI 原生 API 网关]({{< relref "posts/20260130-github_trending-alibaba-higress-9.md" >}})
+- [阿里开源 Higress：AI 原生 API 网关]({{< relref "posts/20260205-github_trending-alibaba-higress-5.md" >}})
 *这篇文章由 AI Stack 自动生成，包含多次大模型调用，提供深度的结构化分析。*
