@@ -274,5 +274,4 @@ Gemini 3 Deep Think不仅仅是一个模型的迭代，它是AI从“工具”�
 - [Gemini 3 Deep Think 推出：强化长链思考能力]({{< relref "posts/20260212-hacker_news-gemini-3-deep-think-16.md" >}})
 - [Gemini 3 Deep Think：升级推理模式以应对科研与工程挑战]({{< relref "posts/20260213-blogs_podcasts-gemini-3-deep-think-advancing-science-research-and-9.md" >}})
 - [Gemini 3 Deep Think：面向科研与工程的推理模型]({{< relref "posts/20260214-blogs_podcasts-gemini-3-deep-think-advancing-science-research-and-12.md" >}})
-- [Gemini 3 Deep Think：面向科研与工程领域的推理模型]({{< relref "posts/20260215-blogs_podcasts-gemini-3-deep-think-advancing-science-research-and-11.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*
