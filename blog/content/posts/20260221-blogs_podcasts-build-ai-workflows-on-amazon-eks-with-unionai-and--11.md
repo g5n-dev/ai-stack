@@ -1,17 +1,17 @@
 ---
-title: "基于 Union.ai 与 Flyte 在 Amazon EKS 上构建 AI 工作流"
-date: 2026-02-21T21:41:31+08:00
+title: "基于Union.ai与Flyte在Amazon EKS上构建AI工作流"
+date: 2026-02-21T23:15:48+08:00
 draft: false
 entry_kind: "auto"
-tags: ["Flyte", "Union.ai", "Amazon EKS", "Kubernetes", "工作流编排", "AWS", "MLOps", "S3 Vectors"]
+tags: ["Flyte", "Union.ai", "Amazon EKS", "Kubernetes", "工作流编排", "AWS", "MLOps", "Python SDK"]
 categories: ["AI 工程", "系统与基础设施"]
 source: blogs_podcasts
-description: "本文介绍了如何利用 Union.ai 2.0 和 Flyte 在 Amazon Elastic Kubernetes Service (Amazon EKS) 上构建和扩展 AI/ML 工作流。 **核心要点：** 1. **编排与扩展**：通过 Flyte Python SDK，用户可以高效地编排并实现 AI/ML"
+description: "本文介绍了如何利用 Union.ai 和 Flyte 在 Amazon EKS 上构建和扩展 AI 工作流。 主要内容总结如下： 1. **核心组件**：利用 **Flyte Python SDK** 来编排和扩展机器学习工作流。 2. **部署架构**：**Union.ai 2.0** 系统支持将 Flyte 部署在"
 external_url: https://aws.amazon.com/blogs/machine-learning/build-ai-workflows-on-amazon-eks-with-union-ai-and-flyte
 scenarios: ["AI/ML项目", "Kubernetes"]
 ---
 
-# 基于 Union.ai 与 Flyte 在 Amazon EKS 上构建 AI 工作流
+# 基于Union.ai与Flyte在Amazon EKS上构建AI工作流
 
 ---
 
@@ -24,307 +24,301 @@ scenarios: ["AI/ML项目", "Kubernetes"]
 ---
 ## 摘要/简介
 
-在本文中，我们将解释如何使用 Flyte Python SDK 编排并扩展 AI/ML 工作流。我们将探讨 Union.ai 2.0 系统如何支持在 Amazon Elastic Kubernetes Service (Amazon EKS) 上部署 Flyte，并与 Amazon Simple Storage Service (Amazon S3)、Amazon Aurora、AWS Identity and Access Management (IAM) 和 Amazon CloudWatch 等 AWS 服务无缝集成。我们将通过一个使用全新 Amazon S3 Vectors 服务的 AI 工作流示例来深入剖析该解决方案。
+在本文中，我们将解释如何使用 Flyte Python SDK 来编排和扩展 AI/ML 工作流。我们将探讨 Union.ai 2.0 系统如何支持在 Amazon Elastic Kubernetes Service (Amazon EKS) 上部署 Flyte，并与 Amazon Simple Storage Service (Amazon S3)、Amazon Aurora、AWS Identity and Access Management (IAM) 和 Amazon CloudWatch 等 AWS 服务实现无缝集成。我们将通过一个使用全新 Amazon S3 Vectors 服务的 AI 工作流示例来演示该解决方案。
 
 ---
 ## 导语
 
-随着 AI 工作流日益复杂，企业亟需在 Kubernetes 上实现高效、可扩展的编排与资源管理。本文将详细介绍如何利用 Union.ai 和 Flyte 在 Amazon EKS 上构建生产级工作流，并实现与 S3、Aurora 等 AWS 服务的无缝集成。通过解析 Amazon S3 Vectors 服务的实战示例，我们将帮助您掌握构建稳健 AI 数据管道的关键步骤。
+在构建生产级 AI 系统时，如何高效编排并扩展工作流是开发者面临的核心挑战。本文将介绍如何利用 Union.ai 2.0 和 Flyte，在 Amazon EKS 上构建可扩展的 AI 工作流，并实现与 S3、Aurora 等 AWS 服务的无缝集成。通过具体的代码示例，你将掌握从环境搭建到向量存储集成的完整流程，从而在 Kubernetes 上实现更稳健的机器学习任务调度与管理。
 
 ---
 ## 摘要
 
-本文介绍了如何利用 Union.ai 2.0 和 Flyte 在 Amazon Elastic Kubernetes Service (Amazon EKS) 上构建和扩展 AI/ML 工作流。
+本文介绍了如何利用 Union.ai 和 Flyte 在 Amazon EKS 上构建和扩展 AI 工作流。
 
-**核心要点：**
+主要内容总结如下：
 
-1.  **编排与扩展**：通过 Flyte Python SDK，用户可以高效地编排并实现 AI/ML 工作流的规模化运行。
-2.  **部署平台**：Union.ai 2.0 系统支持将 Flyte 部署在 Amazon EKS 上。
-3.  **AWS 集成**：该解决方案能与 AWS 生态系统无缝集成，包括：
-    *   **Amazon S3**（用于存储）
-    *   **Amazon Aurora**（数据库）
-    *   **AWS IAM**（身份与访问管理）
-    *   **Amazon CloudWatch**（监控）
-4.  **应用示例**：文中通过一个具体案例，展示了如何利用新的 Amazon S3 Vectors 服务来构建 AI 工作流。
+1.  **核心组件**：利用 **Flyte Python SDK** 来编排和扩展机器学习工作流。
+2.  **部署架构**：**Union.ai 2.0** 系统支持将 Flyte 部署在 **Amazon EKS（Elastic Kubernetes Service）** 上。
+3.  **集成能力**：该解决方案能够与 AWS 服务无缝集成，包括：
+    *   Amazon Simple Storage Service (Amazon S3)
+    *   Amazon Aurora
+    *   AWS Identity and Access Management (IAM)
+    *   Amazon CloudWatch
+4.  **应用示例**：文章通过一个使用全新 **Amazon S3 Vectors** 服务的 AI 工作流示例，演示了该解决方案的实际应用。
+
+简而言之，该方案提供了一个在 AWS 云环境中，通过 Kubernetes 编排可扩展 AI 流程的现代化方法。
 
 ---
 ## 评论
 
-### 深度评价：基于 Union.ai 和 Flyte 在 Amazon EKS 上构建 AI 工作流
+### 评价文章：Build AI workflows on Amazon EKS with Union.ai and Flyte
 
 **中心观点**
-该文章主张通过 Union.ai 2.0 将 Flyte 工作流引擎部署于 Amazon EKS，以利用容器编排能力解决 AI/ML 工作流中的扩展性与异构计算管理难题，实现云原生的机器学习流水线标准化。
+文章主张通过 Union.ai 2.0 将 Flyte 工作流编排系统部署在 Amazon EKS 上，能够构建一个既利用 Kubernetes 云原生弹性，又通过 Flyte 实现严格版本控制与可复现性的高性能 AI/ML 基础设施平台。
 
-**支撑理由与边界条件**
+**支撑理由与边界分析**
 
-**1. 技术架构的解耦与复用（事实陈述）**
-文章强调了 Flyte 作为“以数据为中心”的编排器，能够将业务逻辑与基础设施解耦。通过 Python SDK 定义任务，Flyte 自动将其容器化并调度至 EKS。这种架构允许数据科学家复用代码，无需关注底层 K8s 的 YAML 配置细节。
-*   **反例/边界条件**：对于极轻量级的推理任务（如简单的 Lambda 函数），引入 EKS + Flyte 的架构会带来过高的运维复杂度和资源开销，远不如 Serverless 方案经济。
+**1. 混合架构的工程红利（支撑理由）**
+*   **事实陈述**：Flyte 是一个基于 Kubernetes 的开源工作流编排工具，专门用于构建数据和 ML 流水线；Amazon EKS 是 AWS 托管的 K8s 服务。
+*   **作者观点**：结合两者可以解决 ML 工程中的“最后一公里”问题——即从实验环境到生产环境的过渡。
+*   **深度分析**：这种组合的核心价值在于“声明式基础设施”。Flyte 将 ML 任务编译为 K8s Pod，利用 EKS 的弹性进行自动扩缩容。这比传统的在 EC2 上运行 Airflow 或使用固定大小的 SageMaker 实例更具成本效益和资源利用率。Union.ai 2.0 作为商业发行版，降低了 Flyte 在 AWS 上的部署和运维复杂度，提供了控制平面可视性。
 
-**2. 异构资源调度的深度优化（你的推断）**
-文章暗示了利用 AWS EKS 对 GPU 和 Spot 实例的支持。Flyte 的强项在于能够根据任务需求动态调整节点池，例如在训练阶段请求高性能 GPU，在数据清洗阶段使用低成本 Spot 实例，从而优化成本与性能比。
-*   **反例/边界条件**：如果企业缺乏成熟的 FinOps（云财务管理）机制，EKS 上的自动扩缩容可能会导致不可预测的账单，特别是当任务配置不合理导致节点频繁启停时。
+**2. 数据与计算的紧耦合（支撑理由）**
+*   **事实陈述**：文章提到了与 Amazon S3 等服务的无缝集成。
+*   **你的推断**：在 AI 工作流中，I/O 往往比计算本身更成为瓶颈。Flyte 的设计哲学包含了“数据感知”调度，它能自动处理 S3 与 EKS 节点之间的数据传输逻辑，并在任务失败时利用 S3 的 Checkpoint 进行重试，而不需要重新计算。这种深度的 AWS 服务集成（如 IAM 角色绑定、S3 直连）是架构上的显著优势。
 
-**3. 生态系统的无缝集成（事实陈述）**
-文章重点提到了与 AWS S3 的集成。在 AI 工作流中，数据吞吐是瓶颈。Flyte 原生支持 S3 作为数据代理，意味着任务间传递的是数据引用而非实际数据块，极大减少了 I/O 开销和序列化成本。
-*   **反例/边界条件**：在混合云或私有云部署场景下，如果数据无法轻易迁移至 S3 或存在严格的延迟要求，这种深度绑定 AWS 存储生态的架构可能会引入网络传输的瓶颈。
+**3. 边界条件与反例（批判性思考）**
+*   **反例 1（运维复杂度陷阱）**：虽然 Union.ai 简化了部署，但 EKS 本身的学习曲线极陡。对于一个只有 3-5 人的数据科学小团队，维护一套 EKS + Flyte 的集群（包括控制平面、节点组、存储类配置）的 Overhead（额外开销）可能远超其带来的收益。相比之下，直接使用 AWS SageMaker Pipelines 或 Vertex AI 可能是更“务实”的选择，尽管牺牲了一定的灵活性。
+*   **反例 2（延迟敏感型任务）**：Kubernetes 的调度并非为毫秒级延迟设计。如果工作流是高频交易算法或实时推理链路，Flyte on EKS 的 Pod 启动冷启动时间（通常在秒级）将是不可接受的。此时，直接运行在 EC2 或使用 AWS Lambda 才是正解。
 
-**4. 可观测性与版本管理（作者观点）**
-文章声称 Union.ai 2.0 提供了简化的用户体验。这通常指代其提供了开箱即用的 UI、血缘追踪和自动版本控制（GitOps 风格），这对于需要严格合规和审计的金融或医疗行业 AI 应用具有极高的价值。
-*   **反例/边界条件**：对于已经深度投资于 Kubeflow Pipelines 或 Apache Airflow 的团队，迁移至 Flyte 的学习成本和现有流水线的重构成本可能抵消其带来的便利性。
+**多维度评价**
 
-**综合评价**
-
-*   **内容深度**：文章作为技术落地指南，覆盖了从代码到部署的完整链路，但在底层性能调优（如 K8s 网络插件选择、存储挂载性能对比）方面更多依赖 Flyte 的默认能力，缺乏深度的架构权衡讨论。
-*   **实用价值**：高。对于正在从单机实验转向工业化生产的 AI 团队，该方案提供了一条经过验证的路径，避免了重复造轮子。
-*   **创新性**：中等。Flyte 本身并非新技术，Union.ai 2.0 的核心创新在于降低了 Flyte 在 EKS 上的部署门槛，将复杂的开源工程转化为商业化的 SaaS/托管体验。
-*   **可读性**：结构清晰，逻辑流畅，主要面向具备一定 K8s 和 Python 背景的工程师。
-*   **行业影响**：强化了“Kubernetes 是 AI 基础设施标准”的认知，推动了 MLOps 领域从“脚本化”向“工作流即代码”的演进。
-*   **争议点**：主要的争议在于“抽象泄漏”风险。虽然 Union.ai 试图屏蔽 K8s 复杂性，但在排查深层性能瓶颈或网络故障时，用户仍需具备深厚的 K8s 知识，单纯依赖 Python SDK 可能不足以解决所有基础设施问题。
+1.  **内容深度**：文章属于典型的“Tutorial/Pattern”类技术文档。它严谨地展示了架构图和代码片段，论证了“如何做”。但在“为什么这么做”的理论层面（如 Flyte 与 Argo Workflow 或 Kubeflow 在调度策略上的具体数学差异）涉及较浅。
+2.  **实用价值**：高。对于受困于本地训练资源、希望上云但又不想被厂商锁定（Vendor Lock-in）的企业，这是一个极佳的参考架构。
+3.  **创新性**：中等。Kubernetes 上运行 ML 并非新概念，但 Union.ai 2.0 强调的“多租户隔离”和“与 AWS 原生服务的深度绑定”是针对企业级痛点的重要演进。
+4.  **可读性**：技术文档标准结构，逻辑清晰，但需要读者具备深厚的 K8s 和 AWS 背景知识。
+5.  **行业影响**：强化了“Kubernetes 作为 AI 操作系统”的行业共识，推动了 MLOps 从“脚本化”向“工程化/平台化”转型。
 
 **实际应用建议**
 
-1.  **评估现有技术栈**：如果团队已深度使用 Airflow 且主要处理 ETL 任务而非大规模深度学习，迁移 Flyte 的收益有限。Flyte 更适合涉及大量 GPU 训练和复杂数据依赖的场景。
-2.  **成本监控**：在启用 EKS 自动扩缩容前，务必设置严格的 AWS Budget 和告警，防止 Flyte 任务配置错误导致的资源泄露。
-3.  **渐进式迁移**：建议先从非关键路径的数据处理任务开始试点，验证 Flyte 与 AWS IAM（身份认证）的集成模式，避免直接改造核心训练流水线。
+1.  **成本监控是关键**：在 EKS 上运行 Spot 实例虽省钱但易中断。建议利用 Flyte 的容错机制配合 AWS Spot 实例使用，但必须设置严格的 CloudWatch 告警，防止异常任务导致账单爆炸。
+2.  **避免过度设计**：如果你的工作流仅是“每天早上跑一次 Python 脚本”，不要使用此架构。此架构适用于包含多阶段数据处理、分布式训练（如 PyTorch on K8s）和复杂模型注册的流水线。
 
 **可验证的检查方式**
 
-1.  **基准测试**：
-    *   **指标**：对比 Flyte on EKS 与原生 SageMaker Pipelines 在同等数据集下的“冷启动时间”和“任务调度延迟”。
-    *   **实验**：运行一个包含 1000 个并发任务的简单 Python 脚本，观察 EKS 集群的 Pod 吞吐量和 API Server 的负载表现。
-
-2.  **集成测试**：
-    *   **观察窗口**：在任务失败时，检查 Flyte UI 是否能准确捕获并展示 Pod 的底层日志，验证其“可观测性”承诺是否需要额外接入 AWS CloudWatch。
-
-3.  **成本分析**：
-    *   **指标**：计算“训练 1TB 数据”在 EC2 实例与 EKS Spot 实例上的
+1.  **性能指标验证**：
+    *   在相同数据集下，对比“Flyte on EKS”与“AWS SageMaker Training Job”的端到端任务完成时间。
+    *   **观察窗口**：连续运行 7 天，记录 Pod 启动的 P99 延迟。
+2.  **成本效益验证**：
+    *   开启 AWS Cost Explorer 标签，标记由 Flyte 创建的 EC2 实例。
+    *   **检查指标**：计算单位训练成本（Cost per Training Hour），对比使用 On-Demand 实例与 Spot 实例的混合比例。
+3.  **系统稳定性观察**：
+    *   人为中断 EKS 节点（模拟故障），观察 Flyte 的 Workflow 是否能自动重试并恢复到 S3 上的最新断点，而非从头开始。
 
 ---
 ## 技术分析
 
-基于您提供的文章标题《Build AI workflows on Amazon EKS with Union.ai and Flyte》及其摘要，以下是对该文章核心观点、技术要点及实际应用价值的深入分析。
+基于您提供的文章标题《Build AI workflows on Amazon EKS with Union.ai and Flyte》及其摘要，以下是对该文章核心观点和技术要点的深入分析。
 
 ---
 
-# 深入分析：基于 Amazon EKS 与 Union.ai 构建 AI 工作流
+# 深入分析：基于 Union.ai 和 Flyte 在 Amazon EKS 上构建 AI 工作流
 
 ## 1. 核心观点深度解读
 
-**文章的主要观点**
-文章主张利用 **Flyte**（一个开源的工作流编排框架）结合 **Union.ai**（Flyte 的商业化托管平台），在 **Amazon EKS**（Elastic Kubernetes Service）上构建可扩展、高生产级的 AI/ML 工作流。其核心在于将 Kubernetes 的强大弹性调度能力与 ML 工作流的特定需求（如模型训练、数据处理）无缝集成。
+**主要观点**
+文章的核心主张是：**为了构建可扩展、可维护且生产级的 AI/ML 工作流，企业应采用基于 Kubernetes 的编排引擎（Flyte），并利用 Union.ai 这一托管平台将其无缝部署在 Amazon EKS 上。** 这一组合旨在解决从原型到生产环境过程中的“工程化鸿沟”。
 
-**作者想要传达的核心思想**
-作者试图传达“**基础设施即代码**”与“**ML 工程化**”的理念。核心思想是：现代 AI 开发不应仅停留在 Notebook 实验阶段，而应通过容器化和编排技术，实现从原型到生产环境的无缝过渡。Union.ai 2.0 降低了 Flyte 在 AWS 上部署的门槛，使得数据科学家可以专注于 Python 代码逻辑，而无需深陷底层 K8s 的运维泥潭。
+**核心思想传达**
+作者试图传达“**基础设施即代码**”与“**工作流即代码**”在 AI 领域的深度融合。传统的脚本式 ML 流程难以管理数据依赖、版本控制和计算资源扩展。通过将 Flyte 部署在 EKS 上，开发者可以利用 AWS 强大的云生态（如 S3、IAM、EC2），同时通过 Union.ai 降低 K8s 的运维复杂度，从而让数据科学家专注于算法逻辑，而非底层基础设施。
 
-**观点的创新性和深度**
-该观点的创新性在于解决了“**最后一公里**”的问题。虽然 K8s 是行业标准，但其复杂性极高；虽然 MLOps 工具众多，但往往与云原生基础设施割裂。文章提出了一种深度集成方案：利用 Union.ai 作为控制平面，直接管理 EKS 上的计算资源。这不仅是技术的堆砌，更是将“声明式工作流”与“声明式基础设施（K8s）”的深度融合。
+**观点的创新性与深度**
+该观点的创新性在于**“解耦”与“复用”**。
+1.  **计算与逻辑解耦**：Flyte 将业务逻辑（Python 代码）与执行环境（容器/K8s Pod）分离。
+2.  **深度云原生集成**：不仅仅是运行一个容器，而是深入利用 EKS 的弹性扩缩容能力来处理 ML 特有的高峰负载（如分布式训练）。
+3.  **深度**：文章触及了 MLOps 的痛点——**可重复性**。在 EKS 上运行 Flyte 确保了每次任务运行的环境一致性，这是本地开发环境难以保证的。
 
-**为什么这个观点重要**
-随着大模型（LLM）和复杂数据管道的兴起，单机训练已无法满足需求。企业面临的最大挑战不是算法本身，而是如何**规模化、可重复且低成本**地运行这些算法。该方案提供了一条标准化的路径，将 AI 工作流直接嵌入到企业最信任的云基础设施（AWS EKS）中，这对于企业级 AI 落地至关重要。
+**重要性**
+随着大模型（LLM）和复杂数据管道的兴起，单机脚本已无法满足需求。企业面临高昂的云资源成本和低效的模型迭代周期。这一架构提供了一条标准化的路径，将 AI 开发从“手工作坊”转变为“工业化流水线”，直接提升了 AI 落地的效率和 ROI。
 
 ## 2. 关键技术要点
 
-**涉及的关键技术或概念**
-*   **Flyte:** 一个基于 Kubernetes 的开源工作流编排平台，专门用于构建 ML 和数据编排管道。它使用 Python SDK 定义任务和工作流。
-*   **Amazon EKS:** AWS 提供的托管 Kubernetes 服务，用于容器化应用的部署、管理和扩展。
-*   **Union.ai 2.0:** 提供了 Flyte 的企业级控制平面，简化了 Flyte 的部署、升级和用户管理。
-*   **AWS S3 (Simple Storage Service):** 用于存储训练数据、模型 artifacts 和中间结果。
-*   **Containerization (容器化):** 将 Python 代码打包为 Docker 镜像。
+**涉及的关键技术**
+1.  **Amazon EKS (Elastic Kubernetes Service)**：AWS 提供的托管 K8s 服务，用于容器编排。
+2.  **Flyte**：一个开源的、基于 Kubernetes 的原生工作流编排平台，专门用于构建数据和 ML 流程。
+3.  **Union.ai**：Flyte 的商业托管版本，提供控制平面和管理功能，简化了 Flyte 的部署和运维。
+4.  **Flyte Python SDK**：用于定义任务、工作流和数据依赖的 Python 库。
+5.  **AWS S3 (Simple Storage Service)**：用于存储数据集、模型工件和中间结果。
 
-**技术原理和实现方式**
-1.  **声明式定义:** 用户使用 Flyte Python SDK（`@task`, `@workflow` 装饰器）定义逻辑。
-2.  **容器构建与注册:** 代码自动被打包为 Docker 镜像并推送到 ECR（Elastic Container Registry）。
-3.  **编译与执行:** Flyte 将工作流编译为 IR（中间表示），并提交给 Union.ai 控制平面。
-4.  **调度与伸缩:** Union.ai 调度 EKS 上的 Pod 运行任务。任务间通过 S3 传递数据指针（非实际数据，减少开销）。
-5.  **资源隔离:** 每个任务可以在 EKS 中申请不同的资源（GPU、内存），实现多租户资源隔离。
+**技术原理与实现方式**
+*   **工作流定义**：开发者使用 Python 装饰器（`@task`, `@workflow`）定义代码。Flyte 将这些代码编译成不可变的执行计划。
+*   **容器化与调度**：Flyte 将每个任务打包进容器。当工作流运行时，Flyte 的控制平面会向 EKS 集群发送指令，调度 Pod 运行任务。
+*   **数据传递**：任务间的数据传递通过引用实现。Flyte 自动将大型文件上传至 S3，并在下游任务中通过引用下载，避免了内存溢出和不必要的数据拷贝。
+*   **自动扩缩容**：Flyte 监控 EKS 集群资源。当有成千上万个并发任务（如超参数调优）时，Flyte 可以触发 EKS 节点组的自动扩容，任务完成后自动缩容以节省成本。
 
-**技术难点和解决方案**
-*   **难点:** Kubernetes 的复杂性（网络、存储、权限管理）是数据科学家的噩梦。
-*   **方案:** Union.ai 提供了抽象层，自动处理底层 K8s 的配置（如 Node Pools、IAM Roles for Service Accounts）。
-*   **难点:** 任务间数据传递的效率。
-*   **方案:** Flyte 自动处理 S3 上传/下载，任务间传递的是 S3 的 URI 引用，而非庞大的数据集，极大减少了 I/O 瓶颈。
+**技术难点与解决方案**
+*   **难点**：Kubernetes 的复杂性（网络、存储、RBAC）是数据科学家的噩梦。
+*   **解决方案**：Union.ai 提供了全托管控制平面，用户无需管理 K8s API Server 或 Etcd，只需连接 EKS 的 Worker 节点（或使用 EKS Fargate 无服务器模式）。
+*   **难点**：异构计算（CPU vs GPU vs 分布式训练）。
+*   **解决方案**：Flyte 允许在任务级别指定资源需求（如 `requests_gpu=1`），EKS 调度器会自动将其分配到具备相应硬件的节点上。
 
-**技术创新点分析**
-*   **延迟执行与动态工作流:** Flyte 允许在运行时动态生成任务 DAG（有向无环图），这对于 AutoML 或迭代式训练场景非常重要。
-*   **原生 Python 体验:** 不需要学习 YAML 或复杂的 DSL，直接使用 Python 类型提示，降低了认知负担。
+**技术创新点**
+*   **惰性求值与动态工作流**：Flyte 支持在运行时动态生成工作流分支，这在处理不确定的数据循环或条件判断时非常关键。
+*   **跨区域/云迁移**：由于基于标准的 K8s 和 Python SDK，工作流可以轻松在本地、AWS EKS 甚至其他云环境之间迁移，避免了厂商锁定。
 
 ## 3. 实际应用价值
 
 **对实际工作的指导意义**
-该方案为数据工程团队提供了一个从“实验”走向“生产”的标准化模板。它解决了“在我的机器上能跑，在服务器上不行”的经典问题，确保了环境的一致性。
+这为 MLOps 工程师提供了一套**“开箱即用”的架构蓝图**。它证明了企业不需要从零开始构建调度系统（如 Airflow 的 Kubernetes 扩展），可以直接利用专为 ML 设计的编排工具。
 
-**可以应用到哪些场景**
-*   **大规模模型微调:** 利用 EKS 的 Spot 实例降低成本，进行分布式训练。
-*   **ETL 管道:** 构建定时触发的数据清洗和特征工程管道。
-*   **批推理:** 每天定时对海量数据进行模型推理，结果存回 S3。
+**应用场景**
+1.  **模型微调**：利用 EKS 的 Spot 实例进行大规模 LLM 微调，Flyte 管理检查点和故障恢复。
+2.  **批处理推理**：每天定时处理 TB 级别的数据，生成预测结果。
+3.  **特征工程**：构建复杂的特征管道，依赖多个数据源，Flyte 确保数据血缘清晰。
 
 **需要注意的问题**
-*   **成本控制:** EKS 节点（特别是 GPU 实例）费用高昂。需要配置自动扩缩容策略，避免闲置资源浪费。
-*   **冷启动:** 容器启动可能需要时间，对于毫秒级实时推理不适用，更适合流式或批处理任务。
+*   **成本控制**：在 EKS 上运行不当可能导致资源泄漏。需要仔细配置 Flyte 的资源限制和节点的自动缩容策略。
+*   **学习曲线**：团队需要掌握 Docker 容器化技术和基本的 K8s 概念。
 
 **实施建议**
-*   从简单的非关键业务工作流开始迁移，熟悉 Flyte 的概念。
-*   利用 EKS 的 Cluster Autoscaler 和 Karpenter 实现精细化的节点管理。
-*   建立标准的容器镜像构建流程，确保依赖库版本的可控性。
+*   从简单的批处理任务开始迁移，逐步覆盖训练管道。
+*   使用 S3 作为统一的存储层，确保数据访问权限的一致性。
+*   利用 Union.ai 的可视化管理界面监控工作流执行情况，快速定位性能瓶颈。
 
 ## 4. 行业影响分析
 
 **对行业的启示**
-这标志着 **MLOps 正在全面拥抱云原生**。未来的 AI 基础设施将不再是独立的“AI 平台”，而是深度集成在 Kubernetes 生态之上的通用计算层。
+这一架构标志着 **MLOps 正在全面拥抱云原生**。Airflow 虽然流行，但并非为 ML 的长时间运行和 GPU 调度而生。Flyte + EKS 的组合展示了“Kubernetes 通用编排”在特定垂直领域的胜利。
 
 **可能带来的变革**
-*   **角色融合:** 数据科学家需要具备一定的容器化知识，而 DevOps 工程师需要理解 ML 工作流的资源特性（如 GPU 调度）。
-*   **标准化:** "Workflow-as-Code" 可能成为企业内部 ML 交付的标准格式。
+*   **降低 ML 工程化门槛**：数据科学家可以用写 Python 代码的方式定义复杂的分布式系统。
+*   **加速 AI 模型迭代周期**：标准化的流水线使得 A/B 测试和模型回滚变得自动化。
 
-**相关领域的发展趋势**
-*   **Serverless AI:** 虽然文章讲的是 EKS，但趋势是向更细粒度的 Serverless 容器（如 AWS Fargate）演进，Union.ai 也支持这一点。
-*   **混合云支持:** 这种架构使得工作流可以在 AWS、私有云甚至边缘设备间无缝迁移。
+**发展趋势**
+*   **Serverless 容器的普及**：结合 AWS Fargate，用户甚至不需要管理节点，只需关注任务逻辑。
+*   **多云编排**：Union.ai 和 Flyte 的架构支持混合云部署，企业可能开始在本地 EKS 训练，云端推理，或反之。
 
 ## 5. 延伸思考
 
-**引发的其他思考**
-*   **LLM 的编排:** 传统的 DAG（有向无环图）结构是否适合基于 Agent 的 LLM 应用？Flyte 如何适应循环和不确定性的交互流程？
-*   **数据隐私:** 当工作流深度绑定 AWS S3 和 EKS 时，如何满足数据驻留（Data Residency）的合规要求？
+**引发的思考**
+*   **LLM 时代的编排**：传统的 DAG（有向无环图）结构是否足够支持基于 Agent 的自主循环工作流？Flyte 如何适应 LLMOps 的需求（例如集成 LangChain）？
+*   **成本与效率的平衡**：对于极小规模的任务，EKS 的开销是否过大？是否存在边缘计算场景的轻量级 Flyte 变体？
 
-**可以拓展的方向**
-*   结合 **KServe** 或 **Seldon Core**，在同一个 EKS 集群中实现“训练-部署”的一体化闭环。
-*   研究 **Ray**（分布式计算库）与 Flyte 的集成，利用 Ray 在 EKS 上进行超参数调优。
-
-**未来发展趋势**
-未来，工作流编排将不仅仅是“任务调度”，而是“资源策略管理”。系统将自动根据任务类型（IO密集 vs 计算密集）在 EKS 中动态选择最优的实例类型（如 Graviton 实例 vs GPU 实例）。
+**拓展方向**
+*   **与 SageMaker 的竞合关系**：AWS SageMaker 提供了端到端的托管体验。选择 Flyte+EKS 意味着选择了灵活性而非“全家桶”便利性。如何界定两者的边界？
+*   **数据安全**：在高度受监管的行业，如何利用 EKS 的 VPC 隔离和加密策略配合 Flyte 确保数据不泄露。
 
 ## 6. 实践建议
 
 **如何应用到自己的项目**
-1.  **评估现状:** 如果你的团队正在使用 Airflow 管理批处理任务，或者使用 CRON 调度脚本，且面临资源管理混乱的问题，是迁移的好时机。
-2.  **环境搭建:** 在 AWS 上创建 EKS 集群，试用 Union.ai 免费层或部署开源 Flyte。
-3.  **代码改造:** 将现有的 Python 脚本用 `@task` 包装，配置好 Dockerfile。
+1.  **评估现有痛点**：如果你的团队正在为脚本运行失败、难以追踪数据来源或 GPU 资源分配混乱而苦恼，这套方案是合适的。
+2.  **环境准备**：建立一个 EKS 集群（开发环境），配置好 IAM Role for Service Accounts (IRSA) 以便 Pod 能访问 S3。
+3.  **Hello World**：安装 Flyte Python SDK，编写一个简单的两个任务相加的工作流，使用 `pyflyte run` 本地运行，然后注册到远程 Flyte 集群运行。
 
-**具体的行动建议**
-*   学习 Flyte Python SDK 的基本语法。
-*   阅读 AWS 关于 "IRSA" (IAM Roles for Service Accounts) 的文档，这是 EKS 访问 S3 的安全关键。
-*   构建一个简单的“两步走”流程：下载数据 -> 处理数据 -> 上传结果。
+**具体行动建议**
+*   **容器化先行**：将现有的 ML 脚本 Docker 化。
+*   **模块化代码**：将代码重构为函数式编程风格，以便映射为 Flyte 任务。
 
-**需要补充的知识**
-*   **Docker:** 必须掌握如何编写 Dockerfile 和调试容器。
-*   **Kubernetes 基础:** 理解 Pod, Namespace, Service, RBAC 等基本概念。
-*   **Python 类型提示:** Flyte 强依赖类型提示来传递数据。
-
-**实践中的注意事项**
-*   避免在容器镜像中打包过大的数据集，应使用 S3 挂载或初始化时下载。
-*   注意 Python 依赖的版本冲突，建议使用 Poetry 或 Conda 管理依赖环境。
+**注意事项**
+*   避免在任务中硬编码 AWS 凭证，始终使用 IAM 角色。
+*   注意 EKS 节点的成本，建议使用 Spot 实例运行可中断的训练任务。
 
 ## 7. 案例分析
 
-**结合实际案例说明**
-假设一家金融科技公司需要每日预测信用风险。
-*   **传统做法:** 数据科学家在 SageMaker Notebook 中写好脚本，手动运行，然后通过 Slack 发送结果。经常因为环境不一致导致报错。
-*   **Flyte + EKS 方案:**
-    1.  **数据摄取:** 任务自动从 S3 读取当天的交易日志。
-    2.  **特征工程:** 在 EKS 上启动多个 CPU Pod 并行处理数据。
-    3.  **模型训练:** 启动一个带 GPU 的 Pod 进行 XGBoost 训练。
-    4.  **模型评估:** 自动计算指标，如果不达标则发送告警。
+**成功案例（基于行业常识推断）**
+*   **Spotify**：作为 Flyte 的早期创造者和使用者，他们利用此架构处理海量的推荐模型训练和日常数据 ETL。通过 Flyte，他们能够管理数千个并发的数据管道，且无需维护庞大的调度器集群。
+*   **某金融科技公司**：使用 EKS + Flyte 进行反欺诈模型的实时训练。利用 EKS 的快速扩容，在市场开盘时处理交易流，闭市后进行大规模回测。
 
-**成功案例分析**
-**Spotify** 是 Flyte 的早期采用者和主要贡献者。他们利用 Flyte 管理其庞大的推荐系统训练管道。通过迁移到基于 K8s 的架构，他们显著提高了基础设施的利用率，并缩短了数据科学家从代码到部署的时间周期。
-
-**失败案例反思**
-一些团队尝试将所有东西都容器化，结果导致 **Docker Hell**。如果每个任务都使用完全不同的底层操作系统库，会导致镜像体积膨胀且难以维护。**教训:** 应建立基础镜像标准，并在工作流中复用这些镜像。
+**失败反思**
+*   **忽视资源限制**：某团队直接将本地内存脚本迁移，未设置 Flyte 任务的内存限制，导致 OOM（内存溢出）Killed，反复重试造成高额云费用。
+*   **教训**：必须根据数据量预估并设置 `requests` 和 `limits`。
 
 ## 8. 哲学与逻辑：论证地图
 
 **中心命题**
-为了实现 AI/ML 工作流的高效生产化部署，企业应当采用 **基于 Kubernetes（如 Amazon EKS）的编排框架（如 Flyte/Union.ai）**，而非传统的单体脚本或通用编排工具。
+在构建企业级 AI/ML 工作流时，采用 **"Union.ai + Flyte on Amazon EKS"** 架构相比传统脚本或通用编排工具，能提供**更优的可扩展性、资源利用率和开发效率**。
 
-**支撑理由与依据**
-1.  **可扩展性:** AI 工作负载（特别是训练）具有突发性和高资源需求。
-    *   *依据:* K8s 提供了业界最成熟的容器编排和自动扩缩容能力，EKS 进一步降低了管理复杂度。
-2.  **可移植性与一致性:** "It works on my machine" 问题导致高昂的部署成本。
-    *   *依据:* 容器化封装了依赖，Flyte 保证了代码在任何 K8s 环境下以相同方式运行。
-3.  **工作流复杂性:** ML 流程不仅仅是线性任务，包含条件分支、递归和映射。
-    *   *依据:* Flyte 的 Python SDK 原生支持动态 DAG 和复杂的控制流，优于传统的 Cron/Airflow（Airflow 更偏向数据 ETL，对
+**支撑理由**
+1.  **资源弹性**：依据是 Kubernetes 的声明式 API 和 EKS 的自动扩缩容能力。
+2.  **语言亲和性**：依据是 Flyte Python SDK 允许用原生 Python 定义复杂工作流，降低了 DSL（领域特定语言）的学习成本。
+3.  **可移植性**：依据是容器化标准和开源协议，避免了被单一云厂商（如 AWS SageMaker）的专有 API 锁定。
+
+**反例 / 边界条件**
+1.  **极简项目**：对于每周仅运行一次、耗时 10 分钟的简单报表，引入 K8s 和 Flyte 的运维成本远超收益。
+2.  **强依赖云原生服务**：如果业务逻辑深度依赖 AWS Step Functions 或 Lambda 的特定触发机制，Flyte 可能不是最优解。
+
+**命题分类**
+*   **事实**：Flyte 是开源的，EKS 支持 K8s，Python 是主流语言。
+*   **价值判断**：“更优的效率”和“更好的可维护性”属于价值判断，取决于用户对运维复杂度的接受程度。
+*   **可检验预测**：该架构能将 ML 模型的部署频率提高 X%，或将基础架构维护成本降低 Y%。
+
+**立场与验证**
+*   **立场**：对于中大型规模（数据量 TB 级以上、团队规模 >
 
 ---
 ## 最佳实践
 
 ## 最佳实践指南
 
-### 实践 1：构建容器化的可移植工作流
+### 实践 1：构建容器化与模块化的 AI 工作流
 
-**说明**: 将 AI/ML 工作流及其依赖项（库、模型、脚本）容器化。利用 Union.ai 和 Flyte 的能力，将这些容器镜像注册为工作流中的任务。这确保了工作流可以在本地、EKS 或任何其他 Kubernetes 集群上运行，而无需更改代码，从而实现高度的可移植性和环境一致性。
+**说明**:
+在 Amazon EKS 上使用 Union.ai 和 Flyte 时，核心在于将 AI/ML 任务构建为独立的、容器化的微服务。Flyte 强调任务的可复用性和版本控制，因此应避免构建单体应用。每个任务（如数据预处理、模型训练、推理）应封装在独立的 Docker 容器中，并利用 Flyte 的任务注册机制进行管理。
 
 **实施步骤**:
-1. 为每个独立任务编写 Dockerfile，明确指定 Python 版本、依赖库以及模型训练或推理所需的框架。
-2. 构建并标记 Docker 镜像，将其推送到 Amazon ECR（Elastic Container Registry）。
-3. 在 Flyte 任务定义中，通过 `ImageSpec` 或容器定义直接引用 ECR 中的镜像 URI。
-4. 验证本地环境与 EKS 集群中的运行结果是否一致。
+1.  **定义任务接口**：明确每个任务的输入和输出类型，确保数据类型符合 Flyte 的规范。
+2.  **容器化环境**：为每个步骤编写 Dockerfile，利用 Union.ai 提供的工具或标准 Docker 构建流程，并将镜像推送到 Amazon ECR。
+3.  **编写 Flyte 工作流**：使用 Python SDK 定义工作流（Workflow），将上述独立的任务逻辑连接起来形成有向无环图（DAG）。
 
-**注意事项**: 确保镜像体积尽可能小（例如使用多阶段构建），以加快 EKS 上的 Pod 启动速度。定期扫描镜像以修复安全漏洞。
+**注意事项**:
+- 确保容器镜像精简，仅包含运行任务所需的依赖，以减少启动时间。
+- 为容器镜像打上版本标签，确保工作流的可重现性。
 
 ---
 
-### 实践 2：利用 Spot 实例优化成本
+### 实践 2：优化 EKS 计算资源与节点配置
 
-**说明**: AI 工作流（特别是训练和数据处理）通常包含容错任务。在 EKS 上配置 Node Groups 或 Karpenter 使用 EC2 Spot 实例，可以显著降低计算成本。Flyte 和 Union.ai 具备处理 Spot 实例中断和重试任务的机制，非常适合这种高性价比的运行模式。
+**说明**:
+AI 工作流通常包含计算密集型（如训练）和 I/O 密集型（如数据预处理）任务。在 EKS 上，不应使用单一的节点组。最佳实践是利用 Karpenter 或 Cluster Autoscaler 结合 Node Groups，根据 Flyte 任务的需求动态配置不同的实例类型（如 GPU 实例用于训练，CPU 实例用于数据处理）。
 
 **实施步骤**:
-1. 在 EKS 集群中配置托管节点组或使用 Karpenter，并开启 Spot 实例容量类型。
-2. 在 Flyte 的任务定义中，合理设置重试次数，以应对 Spot 实例可能发生的回收中断。
-3. 利用 Flyte 的缓存机制，确保已成功的任务不会因为节点故障而重新计算。
-4. 监控 Spot 实例的中断频率，并根据任务时长选择合适的 Spot 实例池。
+1.  **配置节点池**：创建专用的节点组，例如配置 `p3` 或 `g4` 实例用于 Flyte 的训练任务，配置 `c5` 或 `m5` 实例用于通用任务。
+2.  **设置资源限制**：在 Flyte 任务定义中，准确指定 `requests` 和 `limits`（CPU、内存、GPU）。
+3.  **启用自动扩缩容**：配置 Karpenter 或 Cluster Autoscaler，以便当 Flyte 调度积压任务时能自动增加节点，任务完成后自动释放资源。
 
-**注意事项**: 并非所有任务都适合 Spot 实例。对于长时间运行且无状态检查点的训练任务，建议谨慎评估或使用 On-Demand 实例作为备份。
+**注意事项**:
+- GPU 资源昂贵且有限，务必在 Flyte 任务中正确设置 `nvidia.com/gpu` 资源请求。
+- 利用 EKS 的 Spot 实例运行可中断的任务（如数据清洗），以降低成本。
 
 ---
 
-### 实践 3：利用 Flyte 的动态任务与 EKS 自动扩缩容
+### 实践 3：实施高效的数据传递与缓存策略
 
-**说明**: AI 工作流的负载通常具有波动性。结合 Flyte 的动态任务和 EKS 的 Cluster Autoscaler（或 Karpenter），可以根据工作流队列中的任务数量和资源需求，动态调整 Kubernetes 集群的计算资源。这不仅能优化资源利用率，还能确保大批量并行任务（如超参数调优）能够及时获得计算资源。
+**说明**:
+在云端运行 AI 工作流时，数据传输可能成为瓶颈。Flyte 提供了强大的数据类型系统，允许自动处理 S3 与 Pod 之间的数据传输。最佳实践是利用 Flyte 的 Offloaded 数据类型（如 FlyteDirectory, FlyteFile）和缓存机制，避免重复计算和不必要的数据下载。
 
 **实施步骤**:
-1. 配置 EKS Cluster Autoscaler 或 Karpenter，使其能够根据 Pod 的资源请求自动扩展节点。
-2. 在 Flyte 项目中配置资源需求，确保任务提交时包含明确的 CPU 和内存请求及限制。
-3. 使用 Flyte 的 Map 任务或动态工作流生成大量并行子任务，触发集群自动扩容。
-4. 设置合理的扩缩容策略，平衡冷启动时间和资源闲置成本。
+1.  **使用 S3 作为后端**：配置 Union.ai/Flyte 的存储后端为 Amazon S3，用于存储输入、输出和中间数据集。
+2.  **定义数据类型**：在 Python 代码中使用 `FlyteFile` 和 `FlyteDirectory` 而非原始路径，让 Flyte 自动处理 S3 的上传和下载。
+3.  **启用任务缓存**：在任务装饰器中启用缓存策略，当输入参数哈希值未变化时，直接返回之前缓存的结果，跳过计算。
 
-**注意事项**: 避免资源请求设置过低导致 Pod 发生 OOM（内存溢出）或被节流，同时也要避免设置过高造成资源浪费。
+**注意事项**:
+- 避免在任务代码中硬编码本地路径，始终使用 Flyte 提供的上下文路径。
+- 对于极大规模的数据集，考虑使用 S3 Fuse 或直接在任务中通过 SDK 流式读取数据，而非完全下载到 Pod 内存中。
 
 ---
 
-### 实践 4：实施严格的资源隔离与多租户策略
+### 实践 4：利用 Union.ai 进行集中式工作流编排与版本控制
 
-**说明**: 在共享的 EKS 集群上运行多个 AI 项目或团队的工作流时，必须实施资源隔离。利用 Kubernetes 的命名空间、资源配额以及 Flyte 的项目域概念，可以防止单个失败或高负载的工作流影响其他关键任务的运行。
+**说明**:
+Union.ai 提供了托管或自托管的控制平面，用于管理 Flyte 工作流的生命周期。最佳实践是将所有工作流定义代码存储在 Git 仓库中，并通过 Union.ai 的平台进行注册、版本控制和调度。这确保了实验的可追溯性和生产环境的稳定性。
 
 **实施步骤**:
-1. 为不同的开发环境（开发、测试、生产）或团队创建独立的 Kubernetes 命名空间。
-2. 在每个命名空间中配置 ResourceQuotas，限制 CPU 和内存的总使用量。
-3. 利用 Flyte 的执行层面特性，将不同的工作流项目映射到特定的 Kubernetes 服务账户或命名空间。
-4. 使用 LimitRange 防止单个任务独占所有节点资源。
+1.  **项目结构化**：将 Flyte 工作流代码组织为标准的 Python 项目，区分 `workflows`、`tasks` 和 `tests` 目录。
+2.  **版本注册**：使用 `unionctl` 或 CI/CD 流水线自动将工作流包注册到 Union 服务端。
+3.  **利用 Launch Plans**：创建 Launch Plans 来固定特定版本的输入参数和任务版本，用于生产环境的定时调度或触发执行。
 
-**注意事项**: 确保为系统组件预留足够的资源，以免因工作负载过重导致 DNS 或 Flyte 服务组件不可用。
+**注意事项**:
+- 不要在本地开发环境直接修改生产环境的 Launch Plan。
+- 定期清理不再使用的旧版本工作流和任务，以保持控制平面的整洁。
 
 ---
 
-### 实践 5：集中化日志与可观测性集成
+### 实践 5：强化安全性与隔离性
 
-**说明**: AI 模型训练过程会产生大量日志和指标。将 Union.ai/Flyte 与 AWS 的可观测性服务（如 CloudWatch、X-Ray 或 OpenSearch）集成，可以实时监控工作流状态、调试性能瓶颈并追踪模型训练指标（如 Loss 和 Accuracy）。
-
-**实施步骤**:
-1. 安装并配置 AWS for Fluent Bit 作为 EKS 的日志收集器，将容器标准输出和错误日志发送到 CloudWatch Logs 或 S3。
-2. 在 Flyte 任务中集成 Python logging 库，输出结构化日志（JSON 格式），便于后续查询。
-3. 利用 Flyte 的插件机制，将训练过程中的指标自动记录到 Flyte 控制面板或外部仪表盘（如 Grafana）。
-4. 配置告警规则，当工作流失败或资源使用率
+**说明**:
+在 EKS 上运行 AI 工作流涉及敏感数据和计算资源。必须实施
 
 ---
 ## 学习要点
 
-- Union.ai 和 Flyte 的结合为在 Amazon EKS 上构建可扩展、生产级 AI 工作流提供了开源且与云无关的解决方案
-- Flyte 能够将数据、模型和代码封装为工作流，实现机器学习流程的自动化、可复现性和版本控制
-- 该架构利用 Amazon EKS 实现了计算资源的弹性伸缩，确保 AI 任务能高效利用底层基础设施
-- 通过 Union.ai 提供的托管服务，用户无需维护底层控制平面，即可显著降低在 Kubernetes 上编排复杂 AI 流的运维负担
-- 该工作流支持混合云部署，允许企业在本地和云端（如 AWS）之间灵活迁移和调度 AI 任务
-- Flyte 的任务级并行处理能力能够有效加速超参数调优和数据预处理等大规模计算场景
+- Union.ai 与 Flyte 的结合能够在 Amazon EKS 上构建可扩展、可维护的 AI 工作流，实现机器学习任务的高效编排与调度。
+- 该架构利用 EKS 的容器化能力，确保 AI 工作负载具备生产级的弹性伸缩和高可用性。
+- 通过 Flyte 的数据感知型任务模型，可以自动化处理复杂的数据依赖关系，显著降低构建数据流水线的工程复杂度。
+- 集成方案支持 GPU 资源的精细化调度与共享，从而优化分布式训练和推理任务的资源利用率及成本。
+- 统一的工作流平台打破了不同团队（数据、工程、业务）之间的协作壁垒，加速了从实验模型到生产环境的落地过程。
+- 该技术栈原生支持混合云及多云环境，允许企业灵活地在不同基础设施间迁移和部署 AI 应用，避免厂商锁定。
 
 ---
 ## 引用
@@ -341,14 +335,14 @@ scenarios: ["AI/ML项目", "Kubernetes"]
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/)
-- 标签： [Flyte](/tags/flyte/) / [Union.ai](/tags/union.ai/) / [Amazon EKS](/tags/amazon-eks/) / [Kubernetes](/tags/kubernetes/) / [工作流编排](/tags/%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%BC%96%E6%8E%92/) / [AWS](/tags/aws/) / [MLOps](/tags/mlops/) / [S3 Vectors](/tags/s3-vectors/)
+- 标签： [Flyte](/tags/flyte/) / [Union.ai](/tags/union.ai/) / [Amazon EKS](/tags/amazon-eks/) / [Kubernetes](/tags/kubernetes/) / [工作流编排](/tags/%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%BC%96%E6%8E%92/) / [AWS](/tags/aws/) / [MLOps](/tags/mlops/) / [Python SDK](/tags/python-sdk/)
 - 场景： [AI/ML项目](/scenarios/ai-ml%E9%A1%B9%E7%9B%AE/) / [Kubernetes](/scenarios/kubernetes/)
 
 ### 相关文章
 
-- [使用 Union.ai 和 Flyte 在 Amazon EKS 上构建 AI 工作流]({{< relref "posts/20260219-blogs_podcasts-build-ai-workflows-on-amazon-eks-with-unionai-and--2.md" >}})
-- [基于 Amazon EKS 使用 Union.ai 和 Flyte 构建 AI 工作流]({{< relref "posts/20260220-blogs_podcasts-build-ai-workflows-on-amazon-eks-with-unionai-and--4.md" >}})
 - [在 Amazon EKS 上利用 Union.ai 和 Flyte 编排 AI 工作流]({{< relref "posts/20260219-blogs_podcasts-build-ai-workflows-on-amazon-eks-with-unionai-and--3.md" >}})
 - [基于Union.ai和Flyte在Amazon EKS上构建AI工作流]({{< relref "posts/20260220-blogs_podcasts-build-ai-workflows-on-amazon-eks-with-unionai-and--5.md" >}})
 - [基于 Union.ai 和 Flyte 在 Amazon EKS 上构建 AI 工作流]({{< relref "posts/20260220-blogs_podcasts-build-ai-workflows-on-amazon-eks-with-unionai-and--6.md" >}})
+- [在 Amazon EKS 上使用 Union.ai 和 Flyte 构建 AI 工作流]({{< relref "posts/20260221-blogs_podcasts-build-ai-workflows-on-amazon-eks-with-unionai-and--10.md" >}})
+- [使用 Union.ai 和 Flyte 在 Amazon EKS 上构建 AI 工作流]({{< relref "posts/20260219-blogs_podcasts-build-ai-workflows-on-amazon-eks-with-unionai-and--2.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*
