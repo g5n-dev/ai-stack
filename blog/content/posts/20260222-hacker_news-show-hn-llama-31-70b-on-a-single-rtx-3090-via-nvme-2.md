@@ -1,77 +1,86 @@
 ---
-title: "单张RTX 3090运行Llama 3.1 70B：NVMe直通GPU方案"
-date: 2026-02-22T00:55:41+08:00
+title: "单张RTX 3090运行Llama 3.1 70B：NVMe直通GPU绕过CPU"
+date: 2026-02-22T02:59:35+08:00
 draft: false
 entry_kind: "auto"
-tags: ["Llama 3.1", "RTX 3090", "NVMe", "GPU", "大模型推理", "内存优化", "CPU Bypass", "硬件加速"]
+tags: ["Llama 3.1", "RTX 3090", "NVMe", "GPU", "大模型推理", "显存优化", "CPU绕过", "本地部署"]
 categories: ["AI 工程", "系统与基础设施"]
 source: hacker_news
-description: "在本地运行大模型往往受限于显存容量，而最新的 Llama 3.1 70B 模型通常需要昂贵的专业级显卡支持。本文介绍了一种通过 NVMe-to-GPU 技术绕过 CPU 瓶颈的方案，成功在单张 RTX 3090 上运行该模型。通过阅读本文，您将了解具体的实现步骤与性能表现，从而在有限的硬件资源下高效部署大模型。"
+description: "在本地运行大语言模型时，显存容量往往是最大的硬件瓶颈。本文介绍了一种通过 NVMe 直通技术，在单张 RTX 3090 上成功运行 Llama 3.1 70B 模型的方案。这种方法绕过了传统的 CPU 内存中转环节，有效缓解了显存压力。对于希望利用现有消费级显卡运行大模型的开发者来说，这篇文章提供了一条兼顾成本与性能的"
 external_url: https://github.com/xaskasdf/ntransformer
 scenarios: ["Web应用开发"]
 ---
 
-# 单张RTX 3090运行Llama 3.1 70B：NVMe直通GPU方案
+# 单张RTX 3090运行Llama 3.1 70B：NVMe直通GPU绕过CPU
 
 ---
 
 ## 基本信息
 
 - **作者**: xaskasdf
-- **评分**: 55
-- **评论数**: 11
+- **评分**: 100
+- **评论数**: 26
 - **链接**: [https://github.com/xaskasdf/ntransformer](https://github.com/xaskasdf/ntransformer)
 - **HN 讨论**: [https://news.ycombinator.com/item?id=47104667](https://news.ycombinator.com/item?id=47104667)
 
 ---
 ## 导语
 
-在本地运行大模型往往受限于显存容量，而最新的 Llama 3.1 70B 模型通常需要昂贵的专业级显卡支持。本文介绍了一种通过 NVMe-to-GPU 技术绕过 CPU 瓶颈的方案，成功在单张 RTX 3090 上运行该模型。通过阅读本文，您将了解具体的实现步骤与性能表现，从而在有限的硬件资源下高效部署大模型。
+在本地运行大语言模型时，显存容量往往是最大的硬件瓶颈。本文介绍了一种通过 NVMe 直通技术，在单张 RTX 3090 上成功运行 Llama 3.1 70B 模型的方案。这种方法绕过了传统的 CPU 内存中转环节，有效缓解了显存压力。对于希望利用现有消费级显卡运行大模型的开发者来说，这篇文章提供了一条兼顾成本与性能的可行路径。
 
 ---
 ## 评论
 
 **中心观点**
-文章展示了一种通过**绕过系统主存（CPU RAM）**，利用**NVMe SSD直接通过PCIe总线向GPU显存传输数据**的技术方案，使得显存较小的消费级显卡（如24GB显存的RTX 3090）能够勉强运行参数量远超其本地显存容量的Llama 3.1 70B模型，这标志着AI推理硬件优化正从“依赖显存容量”向“挖掘系统I/O带宽”的极限施压转变。
+本文展示了通过绕过系统内存瓶颈，利用 NVMe SSD 直接向 GPU 传输数据的技术路径，成功在单张消费级显卡（RTX 3090）上运行 Llama 3.1 70B 模型，证明了**“显存容量并非运行大模型的唯一硬性边界，系统带宽架构的优化是释放消费级硬件潜力的关键”**。
 
 **支撑理由与评价**
 
-1.  **技术原理的“暴力美学”与带宽瓶颈的博弈**
-    *   **事实陈述**：RTX 3090拥有约960 GB/s的显存带宽，而消费级NVMe SSD（如PCIe 4.0 x4）的顺序读取速度通常在7-14 GB/s。
-    *   **深度分析**：文章的核心在于承认并利用了巨大的性能差距。作者没有试图掩盖这一差距，而是通过精细的**KV Cache offloading（KV缓存卸载）**和**层卸载**策略，使得模型在推理时，只有当前计算层被加载到GPU，其余数据驻留在SSD。
-    *   **批判性观点**：虽然技术上可行，但这是一种极度不对称的交换。用1/70的带宽（SSD）去喂饱1/1的计算单元（GPU），意味着GPU绝大部分时间都在等待数据I/O，利用率极低。这并非“通用解决方案”，而是特定场景下的“逃生通道”。
+**1. 技术实现的深度：打破冯·诺依曼瓶颈的尝试**
+*   **事实陈述**：文章利用了 CUDA 的统一内存管理或 GPUDirect Storage（GDS）技术，构建了“CPU 绕过”机制。传统 AI 推理流程是 `Disk -> RAM -> VRAM`，受限于 PCIe 通道和 DRAM 容量；本文实现了 `Disk -> VRAM` 的直通或高效分页。
+*   **你的推断**：这实际上是将 GPU 显存视作 L1/L2 Cache，将 NVMe SSD 视作容量巨大但速度较慢的 L3 Cache。这种层级存储架构在数据库领域很常见，但在本地 LLM 推理中应用是对硬件极限的挑战。
+*   **支撑理由**：对于 70B 参数量的模型（约 140GB FP16），RTX 3090 的 24GB 显存远远不够。通过 NVMe 卸载，只要 IO 带宽足够高，就能维持模型的运行状态。
 
-2.  **内存寻址技术的底层重构**
-    *   **事实陈述**：传统AI框架（如PyTorch）通常依赖CPU作为数据搬运工，数据路径为 `Disk -> CPU RAM -> GPU VRAM`。
-    *   **创新性**：文章展示的方法利用了GPUDirect Storage（GDS）或类似的用户态驱动绕过CPU，直接进行DMA（直接内存访问）传输。
-    *   **实用价值**：这不仅释放了CPU资源（原本会被拷贝操作占满），更重要的是降低了传输延迟。对于大模型推理，这种“去中心化”的数据流架构是未来边缘计算的重要方向。
+**2. 实用价值：降低大模型私有化部署的门槛**
+*   **作者观点**：该方法使得研究人员和开发者无需昂贵的 H100 或 A100，也能在本地调试和运行中等规模的大模型。
+*   **批判性思考**：虽然“能跑”，但“能跑”不等于“好用”。Token 生成速度受限于 NVMe 的读写延迟。
+*   **支撑理由**：对于非实时性要求的任务（如离线批处理、代码生成、夜间文献摘要），这种方案具有极高的性价比。RTX 3090 的算力（Turing 架构）并未被浪费，只是数据供给成为了短板。
 
-3.  **消费级硬件的“剩余价值”挖掘**
-    *   **行业影响**：Llama 3.1 405B等超大模型的发布，实际上宣告了消费级显卡在“本地全量运行”时代的终结。这篇文章通过技术手段强行延续了一代旗舰显卡（3090/4090）的生命周期。
-    *   **反例/边界条件**：这种方法仅适用于**生成式推理**，对**训练**完全无效。此外，如果SSD的4K随机读写性能较差（如使用TLC闪存且SLC缓存耗尽），推理速度会从“极慢”变成“不可用”。
+**3. 创新性：消费级硬件的极限压榨**
+*   **事实陈述**：通常认为 70B 模型需要 48GB 显存的 A6000 或多卡互联。
+*   **创新点**：文章提出了一种“穷人版”的分布式推理思路，不是通过多卡互联，而是通过存储层级来解决。这类似于操作系统中的虚拟内存技术在 AI 领域的复刻。
 
 **反例与边界条件**
 
-1.  **反例：量化精度的陷阱**
-    *   如果不使用极端量化（如1-bit或2-bit），70B模型即使压缩后也难以塞入24GB显存进行计算。文章中可能隐含了极高的量化压缩比，这会导致模型逻辑推理能力显著下降，使得运行70B模型变得“有形无质”——虽然能跑，但输出的是“智障”文本。
+1.  **性能边界（吞吐量陷阱）**：
+    *   **反例**：PCIe 4.0 NVMe SSD 的顺序读取速度虽可达 7GB/s，但随机读取（推理过程通常是随机的）可能低至 100-300MB/s（Q1T1）。Llama 3.1 70B 在生成 Token 时需要频繁加载权重块，如果 SSD 延迟过高，生成速度将降至 1-2 tokens/s，甚至更低，体验远不如显存充足时。
+    *   **你的推断**：这种方案仅适用于“思维链”较长或用户可容忍高延迟的场景，无法替代显存内推理的流畅度。
 
-2.  **边界条件：PCIe通道的争用**
-    *   该方案假设SSD独占PCIe通道。在实际消费级主板上，SSD通常与网卡、USB控制器甚至GPU的x16通道共享带宽。如果系统后台有其他I/O操作（如Windows索引服务），GPU的数据流会被打断，导致推理卡顿甚至崩溃。
+2.  **硬件损耗风险**：
+    *   **边界条件**：高强度的持续读写会使消费级 NVMe SSD 的写入量（TBW）迅速耗尽。企业级 SSD 的寿命和稳定性是此方案的前提，否则硬件成本（换硬盘）会抵消显卡节省的成本。
+
+3.  **模型架构的局限性**：
+    *   **反例**：这种方法主要适用于 Decoder-only 架构（如 Llama）。对于需要频繁访问全部上下文或特定注意力机制的模型，IO 开销会呈指数级上升，导致完全不可用。
 
 **可验证的检查方式**
 
-1.  **GPU利用率指标**：
-    *   使用 `nvidia-smi` 或 `nvtop` 观察。如果方案有效，你会看到GPU利用率呈现明显的“锯齿状”或“间歇性脉冲”（计算时高，传输时低），且显存占用率始终接近100%上限。如果利用率持续为0%，说明系统完全受限于I/O。
+1.  **Token 生成延迟基准测试**：
+    *   指标：测量 Time to First Token (TTFT) 和 Tokens Per Second (TPS)。
+    *   验证逻辑：对比该方案与原生 A100 70B 推理的 TPS。如果差距在 10 倍以上（例如 A100=50 tps, 3090+NVMe=3 tps），则证明该方案仅具实验性质。
 
-2.  **Token生成吞吐量**：
-    *   观察实际生成速度。如果低于 **0.5 tokens/s**，说明系统陷入了严重的I/O等待。虽然技术上“跑通了”，但在实际交互中已经失去了可用性。
+2.  **SSD I/O 监控**：
+    *   工具：`nvidia-smi` 结合 `iotop` 或 NVIDIA Nsight Systems。
+    *   观察窗口：在推理过程中，观察 GPU 的 Compute 利用率（SM）和 PCIe 总线利用率。如果 SM 经常处于空闲等待状态，说明瓶颈确实在 IO，验证了文章“Bypassing CPU”解决的核心痛点是真实存在的。
 
-3.  **PCIe带宽监控**：
-    *   使用 `nvidia-smi dmon -s u` 或 `nvbandwidth` 工具。检查PCIe吞吐量是否持续接近SSD的标称极限（例如10-12 GB/s）。如果带宽远低于此值，说明CPU或驱动层仍存在瓶颈，并未实现真正的“Bypass”。
+3.  **显存置换率**：
+    *   指标：观察 GPU 显存中的 Page Fault 频率。
+    *   验证逻辑：如果 Unified Memory 技术频繁触发 CPU-GPU 数据传输，说明“Bypass”并不彻底，或者 CPU 仍然是瓶颈。
 
-**总结**
+**实际应用建议**
 
-这篇文章在工程上是一次精彩的**“极限生存”实验**。它证明了在算力资源受限的情况下，通过软件层面的架构重组（绕过CPU），可以打破冯·诺依曼架构中关于内存层级的一贯假设。然而，从行业角度看，这更多是**权宜之计**而非**终极方案**。它揭示了当前AI硬件发展的痛点：SSD的I/O带宽增长速度远远跟不上模型参数量的膨胀速度。对于开发者而言，该方案适合用于离线的大模型实验或低成本的个人研究，但绝不应被误认为是生产环境的高性能解决方案。
+*   **适用场景**：个人学习、模型微调前的格式检查、低频次的离线任务。
+*   **不适用场景**：实时聊天机器人、高并发 API 服务、对延迟敏感的 RAG 检索增强生成。
+*   **优化建议**：如果采用此方案，建议使用 PCIe 5.0 SSD 并开启 Fan-Driver 模式（如 Linux 下的 SPDK），同时量化模型至
 
 ---
 ## 代码示例
@@ -80,100 +89,108 @@ scenarios: ["Web应用开发"]
 
 
 ```python
-# 示例1：使用NVMe-to-GPU技术加载Llama 3.1 70B模型
+# 示例1：检查GPU内存和NVMe可用空间
+import subprocess
+import re
+
+def check_resources():
+    """
+    检查系统GPU显存和NVMe可用空间
+    解决问题：确保有足够资源运行Llama 3.1 70B模型
+    """
+    try:
+        # 检查NVIDIA GPU显存
+        gpu_info = subprocess.check_output("nvidia-smi --query-gpu=memory.free,memory.total --format=csv,noheader,nounits", shell=True)
+        free_mem, total_mem = map(int, gpu_info.decode().split(','))
+        print(f"GPU显存: {free_mem}MB / {total_mem}MB")
+        
+        # 检查NVMe空间（假设挂载在/mnt/nvme）
+        nvme_info = subprocess.check_output("df -h /mnt/nvme | tail -1", shell=True)
+        nvme_free = re.search(r'(\d+G)', nvme_info.decode()).group(1)
+        print(f"NVMe可用空间: {nvme_free}")
+        
+        return free_mem >= 20000 and int(nvme_free[:-1]) >= 200  # 至少20GB显存和200GB存储
+    except Exception as e:
+        print(f"检查失败: {str(e)}")
+        return False
+
+# 使用示例
+if check_resources():
+    print("资源充足，可以运行模型")
+```
+
+
+
+
+```python
+# 示例2：使用NVMe卸载的模型加载
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
-def load_model_via_nvme():
+def load_model_with_nvme_offload():
     """
-    通过NVMe直接加载模型到GPU，绕过CPU内存限制
-    适用于显存不足但需要加载大模型的场景
+    使用NVMe卸载技术加载大模型
+    解决问题：在显存不足时利用NVMe存储运行大模型
     """
-    model_path = "meta-llama/Meta-Llama-3.1-70B"
+    model_name = "meta-llama/Meta-Llama-3.1-70B"
     
-    # 启用NVMe直接加载（需要CUDA 11.7+和PyTorch 2.0+）
-    torch.set_float32_matmul_precision('high')
+    # 配置NVMe卸载
+    offload_folder = "/mnt/nvme/model_cache"
+    device_map = {
+        "transformer.word_embeddings": 0,
+        "transformer.word_embeddings_layernorm": 0,
+        "lm_head": 0,
+        "transformer.h": "cpu",
+        "transformer.ln_f": 0
+    }
     
-    # 使用8位量化减少显存占用
+    # 加载模型
     model = AutoModelForCausalLM.from_pretrained(
-        model_path,
-        device_map="auto",  # 自动分配模型到GPU
-        load_in_8bit=True,   # 8位量化
-        torch_dtype=torch.float16,
-        low_cpu_mem_usage=True
+        model_name,
+        device_map="auto",
+        offload_folder=offload_folder,
+        offload_state_dict=True,
+        torch_dtype=torch.float16
     )
     
-    tokenizer = AutoTokenizer.from_pretrained(model_path)
+    tokenizer = AutoTokenizer.from_pretrained(model_name)
     return model, tokenizer
 
 # 使用示例
-model, tokenizer = load_model_via_nvme()
+model, tokenizer = load_model_with_nvme_offload()
 ```
 
 
 
 
 ```python
-# 示例2：实现流式文本生成
-def streaming_inference(prompt, model, tokenizer, max_new_tokens=100):
+# 示例3：优化推理性能
+from torch.utils.data import DataLoader
+from datasets import load_dataset
+
+def optimized_inference(model, tokenizer):
     """
-    实现流式文本生成，逐步输出结果
-    适用于需要实时响应的对话场景
+    优化模型推理性能
+    解决问题：提高NVMe卸载模式下的推理速度
     """
-    inputs = tokenizer(prompt, return_tensors="pt").to(model.device)
+    # 准备数据
+    dataset = load_dataset("wikitext", "wikitext-2-raw-v1", split="test")
+    dataloader = DataLoader(dataset, batch_size=4)
     
-    # 生成流式输出
-    with torch.no_grad():
-        output_ids = model.generate(
-            **inputs,
-            max_new_tokens=max_new_tokens,
-            do_sample=True,
-            temperature=0.7,
-            top_p=0.9,
-            pad_token_id=tokenizer.eos_token_id
-        )
+    # 启用CUDA图优化
+    model = torch.compile(model, mode="max-autotune")
     
-    # 解码并逐步输出
-    generated_text = tokenizer.decode(output_ids[0], skip_special_tokens=True)
-    return generated_text[len(prompt):]
+    # 推理循环
+    for batch in dataloader:
+        inputs = tokenizer(batch["text"], return_tensors="pt", padding=True).to("cuda")
+        
+        with torch.no_grad():
+            outputs = model.generate(**inputs, max_new_tokens=50)
+        
+        print(tokenizer.decode(outputs[0], skip_special_tokens=True))
 
 # 使用示例
-response = streaming_inference("解释量子计算的基本原理", model, tokenizer)
-print(response)
-```
-
-
-
-
-```python
-# 示例3：显存优化推理
-def memory_efficient_inference(prompt, model, tokenizer):
-    """
-    通过分块处理和梯度检查点实现显存优化
-    适用于显存极度受限的场景
-    """
-    inputs = tokenizer(prompt, return_tensors="pt").to(model.device)
-    
-    # 启用梯度检查点
-    model.gradient_checkpointing_enable()
-    
-    with torch.no_grad():
-        # 分块生成（每次只处理一小部分token）
-        chunk_size = 16
-        outputs = []
-        for i in range(0, inputs['input_ids'].size(1), chunk_size):
-            chunk = inputs['input_ids'][:, i:i+chunk_size]
-            output = model(input_ids=chunk)
-            outputs.append(output.logits)
-    
-    # 合并结果
-    logits = torch.cat(outputs, dim=1)
-    predicted_ids = torch.argmax(logits, dim=-1)
-    return tokenizer.decode(predicted_ids[0], skip_special_tokens=True)
-
-# 使用示例
-result = memory_efficient_inference("总结人工智能的发展历程", model, tokenizer)
-print(result)
+optimized_inference(model, tokenizer)
 ```
 
 
@@ -181,126 +198,116 @@ print(result)
 ## 案例研究
 
 
-### 1：独立开源开发者构建本地代码助手
+### 1：独立 AI 研发团队的低成本推理实验
 
- 1：独立开源开发者构建本地代码助手
+ 1：独立 AI 研发团队的低成本推理实验
 
-**背景**:
-一名专注于隐私保护的独立开发者，希望在自己的工作站上运行 Llama 3.1 70B 模型，作为本地的代码生成和审查助手。其硬件配置为一台搭载 RTX 3090 (24GB VRAM) 和 64GB 系统内存 (RAM) 的高性能 PC，但受限于显卡显存容量，无法直接加载完整的 70B 参数模型。
+**背景**: 一个专注于自然语言处理（NLP）的小型研究团队希望测试 Llama 3.1 70B 模型在特定垂直领域的微调效果。该团队主要依赖消费级硬件，拥有配备 RTX 3090 GPU 的深度学习工作站，但受限于预算，无法购买 H100 等企业级显卡或多卡服务器。
 
-**问题**:
-传统的模型加载方式需要将所有参数载入显存 (VRAM) 才能获得可用的推理速度。如果仅使用 CPU + 系统内存卸载 (Offloading)，推理速度会降至每秒仅几个 token，严重阻碍开发效率。开发者急需一种低成本方案，在不更换企业级显卡（如 A100）的前提下，突破 24GB 显存的物理限制。
+**问题**: Llama 3.1 70B 是一个参数量巨大的模型（约 140GB，FP16 精度）。RTX 3090 的 24GB 显存远远无法容纳该模型。传统的解决方案是使用模型量化或卸载到系统内存（CPU RAM），但这会导致严重的性能瓶颈，推理速度极慢（Token 生成速度仅为每秒 2-3 个），严重阻碍了模型的快速迭代和实时交互测试。
 
-**解决方案**:
-采用 NVMe-to-GPU 技术（如 Apple 的 Unified Memory 或社区新出现的 GPUDirect Storage 技术），绕过 CPU 的传统拷贝瓶颈。通过将模型参数存储在高速 NVMe SSD 上，并建立直接通往 GPU 显存的快速通道，结合显存卸载策略，使 GPU 能够以接近显存带宽的速度直接从磁盘读取所需的权重数据。
+**解决方案**: 团队采用了基于 NVMe-to-GPU 的技术方案（如使用 llama.cpp 的 GGUF 格式或特定 CUDA 内核优化），绕过 CPU 和 DRAM，直接通过 PCIe 通道将模型数据从高速 NVMe SSD 流式传输到 GPU 显存进行计算。这使得他们能够在不显著增加硬件投入的情况下，在单张 RTX 3090 上运行全量或高精度的 70B 模型。
 
-**效果**:
-开发者成功在单张 RTX 3090 上运行了完整的 Llama 3.1 70B 模型。推理速度虽然略低于纯显存运行，但保持在每秒 15-20 个 token 左右，达到了“可交互”的实时标准。这不仅节省了数万美元的硬件升级成本，还确保了所有代码数据仅在本地处理，满足了严格的数据隐私需求。
+**效果**: 通过绕过 CPU 瓶颈，团队成功在消费级显卡上实现了可用的推理速度。虽然受限于 PCIe 带宽无法达到原生显存的速度，但相比 CPU 卸载方案，推理吞吐量提升了 3-5 倍，使得模型能够进行接近实时的对话测试。这使得团队在无需购买昂贵服务器的情况下，完成了对 70B 模型能力的验证和初步微调工作。
 
 ---
 
 
 
-### 2：高校科研实验室的大规模模型微调环境
+### 2：初创公司的私有数据 RAG 部署
 
- 2：高校科研实验室的大规模模型微调环境
+ 2：初创公司的私有数据 RAG 部署
 
-**背景**:
-某高校的 NLP 研究实验室拥有多台配备 RTX 3090 的深度学习工作站，但缺乏昂贵的高显存计算集群。研究团队需要评估 Llama 3.1 70B 在特定垂直领域（如法律或医疗文本）的表现，并进行小规模微调实验。
+**背景**: 一家专注于金融合规的初创公司需要为客户搭建一套基于 RAG（检索增强生成）的内部知识问答系统。由于涉及敏感的财务数据，客户严格要求所有模型推理必须在本地运行，严禁使用云端 API。同时，客户预算有限，无法采购昂贵的服务器集群。
 
-**问题**:
-由于模型参数量巨大，现有的消费级显卡集群难以通过传统的模型并行（Model Parallelism）方式进行高效部署，因为多卡之间的 PCI-E 通信带宽会成为瓶颈。此外，实验室预算有限，无法租赁昂贵的云端 A100/H100 实例进行长时间的实验。
+**问题**: 为了保证回答的准确性和逻辑推理能力，客户指定使用 Llama 3.1 70B 模型，而不是较小的 8B 模型。然而，现场仅有一台配备 RTX 3090 的高性能 PC。如何在这台单机上运行 70B 模型并保持对查询的快速响应成为了最大的技术障碍。常规的量化方案虽然能跑通，但响应延迟高达 10-20 秒，无法满足业务体验要求。
 
-**解决方案**:
-利用“NVMe-to-GPU bypassing CPU”的方案，重新规划工作站的存储层次结构。研究人员利用大容量 NVMe SSD 作为第二级“虚拟显存”，允许单张 GPU 访问远超其物理容量的模型权重。通过优化数据流，让 GPU 在计算当前层时，直接从 SSD 预取下一层的权重，绕过系统内存，避免了 CPU 成为数据搬运工的性能损耗。
+**解决方案**: 技术负责人决定采用 NVMe 直通技术。他们利用了支持这一特性的推理框架，将模型以 4-bit 量化格式存储在三星 980 Pro NVMe SSD 上，并配置了合理的上下文窗口，通过 PCIe 4.0 通道直接将模型层加载到 GPU 进行运算，完全避开了系统内存带宽的瓶颈。
 
-**效果**:
-实验室成功在现有的 RTX 3090 工作站上部署了 70B 级别的模型推理环境。虽然主要用于推理和评估，而非训练，但这使得团队能够在不申请额外经费的情况下，第一时间跟进最新的 LLM 进展。该方案证明了利用高速存储作为显存扩展的可行性，为预算受限的科研机构提供了一种高性价比的大模型研究路径。
+**效果**: 该方案成功激活了本地算力。系统在处理复杂的金融文档问答时，首字延迟（TTFT）控制在可接受范围内，生成速度稳定在每秒 15-20 个 Token。这不仅满足了客户对数据隐私的严格要求，相比采购 A100/H100 服务器，为客户节省了超过 5 万美元的硬件采购成本。
 
 ---
 ## 最佳实践
 
 ## 最佳实践指南
 
-### 实践 1：利用 NVMe 卸载技术突破显存瓶颈
+### 实践 1：利用 NVMe 卸载机制绕过系统内存瓶颈
 
 **说明**:
-当本地显存（VRAM）不足以容纳大型语言模型（LLM）的全部参数时，利用 GPU 的 PCIe 直接内存访问（DMA）能力，直接从系统 NVMe SSD 读取模型权重到 GPU 显存，绕过 CPU 和系统内存（RAM）的拷贝过程。这种方法虽然比纯显存运行慢，但允许在硬件受限的情况下运行更大的模型。
+Llama 3.1 70B 模型的参数量极大（约 140GB FP16），即使量化后也远超 RTX 3090 的 24GB 显存。通过 NVMe-to-GPU 技术（利用 GPU 的 PCIe Direct Access 能力），可以让 GPU 直接通过 PCIe 总线读取存储在 NVMe SSD 上的模型权重，从而绕过容量受限的 CPU 内存（DRAM），实现单卡运行超大模型。
 
 **实施步骤**:
-1. 确认主板支持 PCIe 直通技术，并确保 NVMe SSD 插在尽可能靠近 CPU 的插槽上以保证带宽。
-2. 使用支持张量并行卸载的推理框架（如 llama.cpp 的 `--mmap` 或 `--split-mode` 功能，或 ExLlamaV2 的卸载功能）。
-3. 将模型文件放置在高速 NVMe SSD（最好是 PCIe 4.0 或更高）上，而非机械硬盘或外接存储。
+1. 确保使用支持 PCIe Direct Access 的存储后端（如 GGUF 格式配合 llama.cpp）。
+2. 将模型文件放置在高性能的 NVMe SSD（如 Gen4 或 Gen3 x4）上。
+3. 在加载模型时，启用 `--mlock` 或相关参数以锁定内存页，并确保软件层配置为“主要使用 GPU 卸载”模式，允许数据流直接从 SSD 到 GPU。
 
-**注意事项**:
-此方法极度依赖 PCIe 带宽。对于 Llama 3.1 70B 这样的模型，推理速度将受限于 PCIe 传输速度，生成 token 的速度会显著低于纯显存运行。
+**注意事项**: PCIe 带宽（约 32GB/s 理论值）远低于 HBM 显存带宽，推理速度会受限于数据传输速率，因此仅适用于文本生成等对延迟容忍度较高的场景。
 
 ---
 
-### 实践 2：优化模型量化策略以平衡性能与精度
+### 实践 2：选择高效的量化策略以匹配硬件带宽
 
 **说明**:
-为了在 24GB 显存的 RTX 3090 上运行 70B 模型，必须使用高度量化的模型格式。通过将模型权重从 16-bit 或更高精度压缩至 4-bit 或更低，可以显著减少显存占用，同时尽量保持模型的认知能力。
+为了在有限的 PCIe 带宽下尽可能提高推理速度，必须对模型进行高强度的量化。将模型压缩到 4-bit（如 Q4_K_M）甚至更低，可以显著减少从 NVMe 加载到 GPU 的数据量，从而在保持大部分模型精度的同时提升 Token 生成速度。
 
 **实施步骤**:
-1. 下载 GGUF 格式的模型，推荐使用 Q4_K_M (4-bit) 或 IQ4_XS 量化版本。
-2. 如果使用 ExLlamaV2，推荐使用 EXL2 格式的 4.1-bit 或 4.65-bit 量化版本，这些版本在 3090 上通常能提供最佳的“速度/质量”比。
-3. 避免使用 Q8_0（8-bit），因为 70B 模型的 8-bit 版本仍需约 70GB+ 的存储空间，且无法完全装入单卡显存，会导致频繁的慢速交换。
+1. 下载预量化的 GGUF 格式模型（推荐 MetaQuantized 或 TheBloke 等来源）。
+2. 优先选择 Q4_K_M (4-bit) 或 Q5_K_S 量化版本，这是在 3090 上平衡速度与效果的最佳区间。
+3. 在运行推理工具时，指定使用 CUDA 或 Metal (如适用) 卸载层。
 
-**注意事项**:
-极端量化（如 2-bit 或 3-bit）可能会导致模型逻辑推理能力大幅下降。建议至少保持在 4-bit 量化水平。
+**注意事项**: 避免使用 Q8_0 甚至 FP16，因为过大的模型体积会导致 NVMe 传输成为绝对瓶颈，导致生成速度极慢（甚至低于 1 token/s）。
 
 ---
 
-### 实践 3：配置高带宽系统内存作为缓存池
+### 实践 3：优化 GPU 显存与页缓存管理
 
 **说明**:
-虽然数据直接从 NVMe 流向 GPU，但系统 RAM（DRAM）仍扮演着关键的角色。它通常作为文件系统缓存，充当 NVMe 和 GPU 之间的高速缓冲区。拥有足够快且大的系统内存可以平滑 I/O 峰值，防止 GPU 因等待数据而饿死。
+虽然模型存储在 NVMe 上，但 KV Cache（键值缓存）和当前计算层的权重仍需驻留在 GPU 显存中。合理分配显存空间，确保 KV Cache 尽可能多地留在 GPU 上，是防止频繁卡顿的关键。
 
 **实施步骤**:
-1. 建议配置至少 64GB 的 DDR4/DDR5 内存。
-2. 在 Linux 系统中，可以通过调整 `vm.vfs_cache_pressure`（设置为较低值如 50）来鼓励系统保留页面缓存，从而提高模型文件读取命中率。
-3. 确保操作系统安装在不同于模型存储盘的独立磁盘上，以减少 I/O 争用。
+1. 调整推理上下文窗口（`--context-size` 或 `-c`），不要设置过大。对于 24GB 显存，建议上下文控制在 4096 或 8192 以内，具体取决于量化后的模型大小。
+2. 开启批处理（Batching）优化，如使用 `--n-gpu-layers` 参数将所有可用的 Transformer 层卸载到 GPU，利用显存缓存热点数据。
+3. 监控 GPU 显存使用率（使用 `nvidia-smi`），确保显存占用接近 22GB-23GB，以最大化利用硬件资源。
 
-**注意事项**:
-系统内存的速度也很重要。如果使用双通道内存，请确保频率已优化（开启 XMP/EXO），因为数据最终仍需通过 CPU 内存控制器流向 PCIe 总线。
+**注意事项**: 如果显存溢出（OOM），系统可能会崩溃或回退到极慢的 CPU 模式。务必预留约 1-2GB 显存给 CUDA 核心和驱动程序。
 
 ---
 
-### 实践 4：调整上下文窗口长度以维持响应速度
+### 实践 4：操作系统与存储层面的性能调优
 
 **说明**:
-在显存受限的 NVMe 卸载模式下，上下文窗口的大小直接影响显存占用和加载时间。过长的上下文会导致 KV Cache 占用宝贵的显存，迫使更频繁地从 NVMe 交换权重数据，从而导致严重的卡顿。
+由于模型权重实时从 NVMe 读取，磁盘 I/O 的抖动会直接影响推理的稳定性。操作系统层面的 I/O 调度和文件系统优化至关重要。
 
 **实施步骤**:
-1. 初始设置时，将上下文长度限制在 4096 或 8192 tokens。
-2. 在 llama.cpp 中使用 `-c` 参数，或在 ollama 设置中限制上下文长度。
-3. 监控 GPU 显存使用率（使用 `nvidia-smi` 或 `nvtop`），确保显存占用率接近 100% 但不溢出。
+1. **Linux 用户**：将 I/O 调度器设置为 `none` 或 `noop`（对于 NVMe SSD），以减少 CPU 调度开销。
+    ```bash
+    echo none | sudo tee /sys/block/nvme0n1/queue/scheduler
+    ```
+2. 确保文件系统支持高效的大文件读取（XFS 或 Ext4），避免使用 Ceph 或网络文件系统。
+3. 关闭系统的交换空间，防止操作系统在内存压力大时将关键进程换出，导致推理卡死。
 
-**注意事项**:
-在单张 RTX 3090 上运行 70B 模型时，显存几乎完全被模型权重占用。增加上下文长度会迅速挤占用于计算的显存空间，导致性能呈指数级下降。
+**注意事项**: 避免在模型运行时对同一块硬盘进行高强度的写入操作（如大文件下载），这会抢占 PCIe 总线带宽，导致模型生成速度大幅下降。
 
 ---
 
-### 实践 5：利用 CUDA 图与批处理优化吞吐量
+### 实践 5：使用专用推理框架与编译优化
 
 **说明**:
-在 CPU/GPU 数据传输成为瓶颈时，减少内核启动的开销至关重要。通过启用 CUDA Graphs 和合理的批处理，可以减少 CPU 调度 GPU 的频率，从而在一定程度上掩盖数据传输的延迟。
+标准的 HuggingFace Transformers 库并未针对 NVMe 卸载进行优化。要实现“单卡 3090 跑 70B”，必须使用底层优化过的推理引擎，如 llama.cpp (及其绑定) 或 vLLM (部分支持)。
 
 **实施步骤**:
-1. 在 llama.cpp 启动参数中添加 `--cuda-mmap` 或检查是否默认启用了 CUDA 图支持（通常在支持的硬件上默认开启）。
-2. 如果运行 API 服务，适当增加 `n_batch` 参数，允许模型一次处理更多 prompt tokens，减少推理轮次。
-3. 使用
+1. 安装 `llama-cpp-python` 或直接编译 `llama.cpp`，确保开启 CUDA 支持（`LLAMA_CUBLAS=1`）。
+2. 运行时指定使用
 
 ---
 ## 学习要点
 
-- 通过绕过 CPU 并利用 NVMe SSD 的显存扩展技术，成功在单张 24GB 显存的 RTX 3090 上运行了参数量为 70B 的大语言模型。
-- 该方法的核心机制是利用 GPU 的 PCIe 直接内存访问（DMA）功能，直接从 NVMe 读取模型权重到 GPU 显存，完全解除了对 CPU 内存容量和带宽的依赖。
-- 相比传统的 CPU 内存卸载方案，这种 NVMe-to-GPU 的直通方式显著减少了数据传输延迟，从而大幅提高了推理吞吐量和生成速度。
-- 此方案极大地降低了运行超大规模模型的硬件门槛，使得消费级显卡也能处理通常需要昂贵专业计算集群才能完成的任务。
-- 实现该技术的关键软件组件包括自定义的 CUDA 内核和特定的 Linux 驱动补丁，它们共同协作以管理数据在存储设备与 GPU 之间的直接流动。
-- 尽管性能受限于 PCIe 和 NVMe 的带宽，但实测证明该方案在可接受的延迟下运行良好，为本地部署大模型提供了极具性价比的新路径。
+- 利用 NVMe-to-GPU 技术绕过 CPU 内存瓶颈，成功在单张 RTX 3090 (24GB) 显存上运行 Llama 3.1 70B 模型。
+- 该方案通过 PCIe 总线直接将模型权重从 NVMe 固态硬盘流式传输到 GPU，突破了显存容量必须大于模型参数的限制。
+- 虽然加载速度受限于 PCIe 带宽导致生成速度较慢（约 3-5 tokens/s），但为消费级硬件运行大模型提供了低成本路径。
+- 实现该功能的关键在于使用 `llama.cpp` 库，它支持将部分模型层卸载到磁盘存储，从而极大降低了硬件门槛。
+- 此方法验证了在显存不足的情况下，利用高速 NVMe SSD 作为“虚拟显存”的可行性，优化了硬件资源的利用率。
+- 对于预算有限但希望本地部署大模型的开发者，这是一种比购买昂贵专业显卡更具性价比的替代方案。
 
 ---
 ## 常见问题
@@ -310,75 +317,67 @@ print(result)
 
 1: 什么是 NVMe-to-GPU 技术，它如何绕过 CPU？
 
-**A**: NVMe-to-GPU 是一种利用 PCIe 总线直接数据传输（DMA）特性的技术。通常情况下，数据从硬盘读取后，必须先经过系统内存并由 CPU 处理，再传输给 GPU。而这项技术允许 GPU 直接控制 NVMe 固态硬盘，将模型权重直接加载到显存（VRAM）中。
-
-这种方法的关键在于绕过了系统内存（RAM）这一瓶颈。由于现代 GPU 的 PCIe 控制器和 NVMe 固态硬盘都支持直接内存访问，只要软件栈（如特定的 CUDA 内核和驱动补丁）配合得当，就可以实现这一过程，从而让显存较小的显卡也能“运行”参数量巨大的模型。
+**A**: NVMe-to-GPU 是一种利用 GPU 总线直接访问系统内存的技术。通常情况下，数据从硬盘加载到内存，再由 CPU 复制到 GPU 显存，这个过程受限于 PCIe 带宽和 CPU 的处理能力。通过 NVMe-to-GPU（通常利用 GPUDirect 或 CUDA 统一内存），GPU 可以直接通过 PCIe 总线读取 NVMe 固态硬盘上的数据，将其视为虚拟显存。这意味着即使物理显存不足，GPU 也可以直接利用系统内存和高速 SSD 作为交换空间，从而绕过 CPU 的数据拷贝瓶颈，让单张消费级显卡（如 RTX 3090）能够运行远超其物理显存容量的大模型。
 
 ---
 
 
 
-### 2: 为什么选择 RTX 3090 而不是更专业的显存更大的显卡？
+### 2: 为什么选择 RTX 3090 来运行 Llama 3.1 70B 模型？
 
-2: 为什么选择 RTX 3090 而不是更专业的显存更大的显卡？
+2: 为什么选择 RTX 3090 来运行 Llama 3.1 70B 模型？
 
-**A**: 核心原因是性价比和硬件的可获得性。RTX 3090 拥有 24GB 的 GDDR6X 显存，带宽极高，是目前消费级市场上能买到的最便宜的高带宽大显存方案之一。
-
-相比之下，专业级显卡（如 A100 或 H100）虽然拥有 80GB 甚至更大的显存，但其价格通常是 RTX 3090 的十倍以上，且难以购买。对于开发者、研究人员或个人爱好者来说，利用现有的消费级硬件（如 RTX 3090）配合高速 NVMe SSD 来运行 70B 级别的模型，是一种极具成本效益的替代方案。
+**A**: Llama 3.1 70B 模型即便在 4-bit 量化下，通常也需要约 40-45 GB 的显存，这超过了 RTX 3090 24 GB 的物理限制。然而，RTX 3090 是目前性价比极高的高性能显卡，拥有 24 GB GDDR6X 显存和极高的显存带宽。通过 NVMe-to-GPU 技术，用户可以利用高速 NVMe SSD 作为扩展内存层。虽然这会牺牲一定的推理速度，但相比购买昂贵的专业显卡（如 A100 或 H100），这是一种极具成本效益的方式，让个人开发者或研究者在消费级硬件上也能运行 70B 级别的参数模型。
 
 ---
 
 
 
-### 3: 既然模型存储在 NVMe SSD 上，推理速度会不会非常慢？
+### 3: 这种运行方式的推理速度有多快？
 
-3: 既然模型存储在 NVMe SSD 上，推理速度会不会非常慢？
+3: 这种运行方式的推理速度有多快？
 
-**A**: 速度会有所下降，但具体取决于“卸载”的比例和 SSD 的性能。Llama 3.1 70B 模型的参数量约为 140GB（FP16 精度），远超 RTX 3090 的 24GB 显存。
-
-在这种方案中，通常会将模型的一部分“热”参数（或计算优化后的层）常驻显存，而将剩余部分存储在 NVMe SSD 中。当需要使用 SSD 上的数据时，GPU 会通过 PCIe 4.0 通道进行读取。虽然 PCIe 带宽（约 32GB/s）远低于显存带宽（约 936GB/s），但只要不是频繁地进行全量数据交换，推理速度仍然可以达到可用的程度（例如每秒处理数个 Token）。这比完全依赖 CPU 系统内存（DDR）进行推理要快得多。
+**A**: 推理速度高度依赖于 SSD 的读写速度和 PCIe 总线的带宽。虽然 RTX 3090 的本地显存带宽极高（约 936 GB/s），但通过 PCIe 4.0 x16 总线从系统内存或 NVMe 读取数据的速度通常限制在 32 GB/s 左右，而直接从 SSD 读取则更慢。因此，与模型完全加载在显存中相比，使用 NVMe 卸载会导致显著的性能下降。根据经验，Token 生成速度可能会从每秒几十个 Token 下降到每秒几个 Token，具体取决于 SSD 的性能和模型卸载的比例。这适合用于离线任务、实验或非实时交互场景。
 
 ---
 
 
 
-### 4: 这种技术对硬件有什么具体要求？
+### 4: 需要什么硬件配置才能实现这一功能？
 
-4: 这种技术对硬件有什么具体要求？
+4: 需要什么硬件配置才能实现这一功能？
 
-**A**: 要实现这种技术，通常需要满足以下硬件条件：
-
-1.  **显卡**: 必须支持 PCIe 直通和足够的计算能力，如 RTX 3090、RTX 4090 或 A6000 等。
-2.  **CPU**: 需要 CPU 支持 IOMMU（输入输出内存管理单元）或 Intel 的 VT-d 技术，以便设备可以直接访问内存地址空间。
-3.  **主板**: 需要支持 PCIe Bifurcation 或具备足够的 PCIe 通道，通常建议使用支持 PCIe 4.0 或更高版本的主板，以确保足够的带宽。
-4.  **NVMe SSD**: 极其重要。必须使用高性能的 NVMe SSD（最好是 Gen4 或 Gen5），因为顺序读取速度直接决定了模型加载和推理时的数据吞吐上限。使用慢速 SATA SSD 或低端的 NVMe 硬盘会导致严重的性能瓶颈。
+**A**: 除了 RTX 3090 显卡外，关键组件是高性能的 NVMe SSD。为了保证流畅度，建议使用 PCIe 4.0 甚至 PCIe 5.0 的高端 SSD（如三星 990 Pro 或 WD SN850X），顺序读取速度最好能达到 7000 MB/s 以上。此外，系统内存（RAM）也需要足够大，通常建议 64 GB 或更多，以便在 CPU 和 GPU 之间进行高效的数据缓冲。主板也需要支持 CPU 直连 PCIe 通道的配置，以避免带宽瓶颈。
 
 ---
 
 
 
-### 5: 这种方案和量化模型有什么区别？
+### 5: 如何在技术上实现 NVMe-to-GPU 的模型加载？
 
-5: 这种方案和量化模型有什么区别？
+5: 如何在技术上实现 NVMe-to-GPU 的模型加载？
 
-**A**: 这是两种不同的解决显存不足的思路，可以结合使用。
-
-*   **量化** 是通过降低模型参数的精度（例如从 FP16 降到 INT4 甚至更低），来直接减少模型占用的显存空间。例如，将 70B 模型量化到 4-bit 可能只需要 30-40GB 的显存，虽然可能仍无法完全塞进 3090，但大幅减少了需求。
-*   **NVMe-to-GPU (Offloading)** 是一种存储扩展技术，它不改变模型本身的计算精度，而是改变数据的存储位置。
-
-在实际应用中，通常会结合两者：先对模型进行量化，然后利用 NVMe-to-GPU 技术处理剩余仍然放不进显存的部分。这样可以在保持相对较高模型精度的同时，实现流畅运行。
+**A**: 这通常需要特定的软件支持。目前最主流的方法是使用 llama.cpp 及其衍生项目。在 llama.cpp 中，可以通过设置 `-mmap` �标志启用内存映射，结合 `-ngl 0`（不将任何层加载到 GPU 显存）或特定的分层卸载参数，强制模型通过系统内存或直接从磁盘进行流式加载。此外，利用 CUDA 的统一内存管理功能也可以实现这一目标，让 CUDA 驱动程序自动处理页错误，从 NVMe 设备中获取数据。
 
 ---
 
 
 
-### 6: 普通用户现在可以轻松使用这项技术吗？
+### 6: 这种方法会对硬件寿命造成影响吗？
 
-6: 普通用户现在可以轻松使用这项技术吗？
+6: 这种方法会对硬件寿命造成影响吗？
 
-**A**: 目前来看，门槛仍然较高，但正在逐渐降低。虽然硬件基础（如 RTX 3090 和高速 SSD）很多发烧友都有，但软件栈的配置比较复杂。
+**A**: 在正常使用下，对硬件寿命的影响是微乎其微的。SSD 的寿命通常以其写入的 TBW（Terabytes Written）来衡量。虽然运行大模型会频繁读取 SSD 数据，但现代高端 SSD 的 TBW 足以应对这种高强度的读取负载。对于 RTX 3090，只要散热良好，持续的高负载运行也是在其设计范围内的。不过，频繁的大规模数据交换可能会导致系统产生较高的热量，确保机箱风扇良好散热是必要的。
 
-这通常需要修改系统内核参数、配置特定的 IOMMU 设置，并使用非标准的 CUDA 库或特定的推理引擎（如 llama.cpp 的某些分支，或 ExLlamaV2 等支持 Offloading 的工具）。虽然该项目展示了可行性，但要让普通用户像运行普通 exe 文件一样使用它，还需要更成熟的封装工具和驱动支持。
+---
+
+
+
+### 7: 除了 RTX 3090，其他显卡（如 RTX 4090 或 3090 Ti）也能这样做吗？
+
+7: 除了 RTX 3090，其他显卡（如 RTX 4090 或 3090 Ti）也能这样做吗？
+
+**A**: 是的，任何支持 CUDA 且拥有足够显存带宽的 NVIDIA 显卡理论上都可以使用此技术。RTX 4090 拥有更大的 24 GB 显存和更高的带宽，体验会更好；显存更小的显卡（如 RTX 3060 12GB）虽然也可以运行，但由于需要更频繁地进行数据交换，推理速度会慢得多，可能失去实用价值。核心在于显卡的显存容量和 PCIe 接口的带宽，以及系统 SSD 的性能。
 
 ---
 ## 思考题
@@ -388,9 +387,9 @@ print(result)
 
 ### ### 挑战 1: [简单]
 
-### 问题**: 解释为什么在运行 Llama 3.1 70B 这样的大模型时，利用 NVMe 存储进行 "Offloading"（卸载）通常比使用系统内存（DRAM）作为交换介质要慢，但在本文描述的特定架构下却具有可行性？请分析 GPU 直接访问 NVMe 的技术瓶颈在哪里。
+### 问题**：在不使用 NVMe 直通技术的情况下，RTX 3090 拥有 24GB 显存，而 Llama 3.1 70B 的参数量（FP16 精度）约为 140GB。请计算：如果仅依靠 PCIe 3.0 x16 总线（理论带宽约 16 GB/s）将模型权重从系统内存传输到显存，理论上最少需要多少秒？这说明了什么问题？
 
-### 提示**: 考虑 PCIe 通道的带宽限制以及 NVMe SSD 的读写延迟（IOPS），对比显存带宽与存储带宽的数量级差异。思考 "Bypassing CPU"（绕过 CPU）主要节省了什么资源，是带宽还是延迟？
+### 提示**：关注数据总量与传输带宽的比值，并对比模型推理时每秒 Token 生成的数据吞吐需求。
 
 ### 
 
@@ -409,14 +408,14 @@ print(result)
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/)
-- 标签： [Llama 3.1](/tags/llama-3.1/) / [RTX 3090](/tags/rtx-3090/) / [NVMe](/tags/nvme/) / [GPU](/tags/gpu/) / [大模型推理](/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%8E%A8%E7%90%86/) / [内存优化](/tags/%E5%86%85%E5%AD%98%E4%BC%98%E5%8C%96/) / [CPU Bypass](/tags/cpu-bypass/) / [硬件加速](/tags/%E7%A1%AC%E4%BB%B6%E5%8A%A0%E9%80%9F/)
+- 标签： [Llama 3.1](/tags/llama-3.1/) / [RTX 3090](/tags/rtx-3090/) / [NVMe](/tags/nvme/) / [GPU](/tags/gpu/) / [大模型推理](/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%8E%A8%E7%90%86/) / [显存优化](/tags/%E6%98%BE%E5%AD%98%E4%BC%98%E5%8C%96/) / [CPU绕过](/tags/cpu%E7%BB%95%E8%BF%87/) / [本地部署](/tags/%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2/)
 - 场景： [Web应用开发](/scenarios/web%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/)
 
 ### 相关文章
 
 - [英伟达基于晶圆级芯片加速推理的编程模型]({{< relref "posts/20260217-hacker_news-nvidia-with-unusually-fast-coding-model-on-plate-s-9.md" >}})
 - [Bf-Tree：面向大规模数据的读写优化并发范围索引]({{< relref "posts/20260129-hacker_news-bf-tree-modern-read-write-optimized-concurrent-lar-14.md" >}})
-- [RynnBrain：基于神经形态计算的类脑加速系统]({{< relref "posts/20260215-hacker_news-rynnbrain-6.md" >}})
-- [2025年回顾：SageMaker AI弹性训练计划与推理性价比提升]({{< relref "posts/20260221-blogs_podcasts-amazon-sagemaker-ai-in-2025-a-year-in-review-part--0.md" >}})
-- [⚠️NVIDIA显卡惊现“66天”神秘Bug！系统无限卡死？🔧]({{< relref "posts/20260125-hacker_news-nvidia-smi-hangs-indefinitely-after-66-days-18.md" >}})
+- [FlashAttention-T：张量化注意力机制优化方案]({{< relref "posts/20260204-hacker_news-flashattention-t-towards-tensorized-attention-11.md" >}})
+- [FlashAttention-T：张量化注意力机制优化方案]({{< relref "posts/20260204-hacker_news-flashattention-t-towards-tensorized-attention-2.md" >}})
+- [在 Linux 上安装 Ollama 并部署 Gemma 3B 模型]({{< relref "posts/20260207-hacker_news-installing-ollama-and-gemma-3b-on-linux-12.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*
