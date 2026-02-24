@@ -1,83 +1,81 @@
 ---
-title: "将 Wolfram 技术作为基础工具集成至 LLM 系统"
-date: 2026-02-24T09:19:13+08:00
+title: "将 Wolfram 技术作为 LLM 系统基础工具"
+date: 2026-02-24T11:01:45+08:00
 draft: false
 entry_kind: "auto"
-tags: ["LLM", "Wolfram", "工具集成", "计算能力", "符号计算", "函数调用", "知识图谱", "AI 基础设施"]
+tags: ["LLM", "Wolfram", "工具调用", "计算智能", "符号计算", "知识图谱", "函数调用", "AI 基础设施"]
 categories: ["大模型", "AI 工程"]
 source: hacker_news
-description: "随着大语言模型（LLM）在复杂任务中的应用日益深入，如何弥补其在精确计算与符号推理方面的短板，成为技术落地的关键挑战。Wolfram 技术凭借其强大的知识库与计算能力，正逐渐成为补齐这一短板的核心基础设施。本文将探讨如何将 Wolfram 作为基础工具集成至 LLM 系统，并解析这一组合如何提升模型的逻辑准确性与可靠性"
+description: "将 Wolfram 技术引入大语言模型（LLM）系统，旨在解决当前模型在处理精确计算与符号推理时的固有局限。这种结合不仅增强了系统的逻辑可靠性，也为复杂任务提供了更严谨的数据支撑。阅读本文，您将了解如何将 Wolfram 作为基础工具集成至 LLM 流程中，从而提升系统的准确性与实用性。"
 external_url: https://writings.stephenwolfram.com/2026/02/making-wolfram-tech-available-as-a-foundation-tool-for-llm-systems
 scenarios: ["大语言模型", "AI/ML项目"]
 ---
 
-# 将 Wolfram 技术作为基础工具集成至 LLM 系统
+# 将 Wolfram 技术作为 LLM 系统基础工具
 
 ---
 
 ## 基本信息
 
 - **作者**: surprisetalk
-- **评分**: 148
-- **评论数**: 80
+- **评分**: 169
+- **评论数**: 91
 - **链接**: [https://writings.stephenwolfram.com/2026/02/making-wolfram-tech-available-as-a-foundation-tool-for-llm-systems](https://writings.stephenwolfram.com/2026/02/making-wolfram-tech-available-as-a-foundation-tool-for-llm-systems)
 - **HN 讨论**: [https://news.ycombinator.com/item?id=47129727](https://news.ycombinator.com/item?id=47129727)
 
 ---
 ## 导语
 
-随着大语言模型（LLM）在复杂任务中的应用日益深入，如何弥补其在精确计算与符号推理方面的短板，成为技术落地的关键挑战。Wolfram 技术凭借其强大的知识库与计算能力，正逐渐成为补齐这一短板的核心基础设施。本文将探讨如何将 Wolfram 作为基础工具集成至 LLM 系统，并解析这一组合如何提升模型的逻辑准确性与可靠性，为构建更稳健的 AI 应用提供参考。
+将 Wolfram 技术引入大语言模型（LLM）系统，旨在解决当前模型在处理精确计算与符号推理时的固有局限。这种结合不仅增强了系统的逻辑可靠性，也为复杂任务提供了更严谨的数据支撑。阅读本文，您将了解如何将 Wolfram 作为基础工具集成至 LLM 流程中，从而提升系统的准确性与实用性。
 
 ---
 ## 评论
 
 ### 中心观点
-文章提出将 Wolfram 技术栈作为大型语言模型（LLM）的“计算与逻辑基石”，旨在通过符号计算与精确知识库的引入，解决 LLM 普遍存在的幻觉、数学推理薄弱及工具调用不可控等核心痛点，构建“语言+计算”的混合智能架构。
+文章主张将 Wolfram 的符号计算与知识图谱能力作为 LLM 的“认知义肢”，通过构建结构化的计算层，解决大模型在逻辑推理和数学准确性上的缺陷，而非试图让模型自身习得这些能力。
 
-### 支撑理由与边界分析
+### 支撑理由与边界条件
 
-**1. 符号回归与语义精确性（事实陈述）**
-文章核心论点在于 LLM 本质上是概率统计模型，擅长模糊语义处理，但缺乏精确的逻辑推导能力。Wolfram Language（WL）作为基于符号计算的确定性系统，能完美互补 LLM 的短板。通过将自然语言通过函数调用转化为 WL 代码，再由内核执行并返回确定结果，形成“LLM 理解意图 -> Wolfram 执行计算 -> LLM 生成回答”的闭环。
-*   **边界条件/反例**：对于极度开放、缺乏结构化数据支持或纯文学性/情感类的问题（如“请写一首关于忧伤的十四行诗”），引入 Wolfram 的计算逻辑不仅无法提供帮助，反而可能因过度结构化限制 LLM 的创造力，增加系统延迟。
+**支撑理由：**
 
-**2. 知识库的实时性与可验证性（作者观点）**
-Stephen Wolfram 强调 LLM 的训练数据是静态的，而世界是动态的。文章主张利用 Wolfram Alpha 的实时 curated data（精选数据）为 LLM 提供事实支撑。
-*   **边界条件/反例**：Wolfram 的知识库虽然准确，但在长尾知识、非结构化的网络舆论或最新发生的突发新闻（尚未录入 curated 数据库）方面，其覆盖面远不如基于搜索引擎的 RAG（检索增强生成）方案广泛。
+1.  **确定性的互补性**：LLM 本质上是概率统计模型（下一个词预测），擅长模糊语义理解但难以进行精确的数学运算或逻辑推演；Wolfram Alpha/Language 基于确定性规则和符号计算，两者结合构成了“直觉+逻辑”的完美闭环。
+    *   [事实陈述] Wolfram 拥有覆盖广泛领域的结构化知识库和经过数十年验证的算法库。
+2.  **工具调用的范式转移**：文章提出了一种从“端到端训练”向“系统化集成”的转变。与其耗费巨大算力试图让 LLM 背诵数学公式或编程语法，不如通过 Function Calling 将任务外包给最专业的工具。
+    *   [作者观点] 这种“外挂大脑”的模式比单纯的扩大模型参数规模更具性价比和可靠性。
+3.  **自然语言到形式语言的桥接**：LLM 极其擅长将用户的自然语言转化为 Wolfram Language 代码。这意味着 LLM 充当了“翻译官”，而 Wolfram 充当了“执行者”，这种分工极大地降低了用户使用复杂计算工具的门槛。
+    *   [你的推断] 这种模式将重塑编程教育的未来，重点将从语法记忆转向问题拆解。
 
-**3. “计算即契约”的工具调用范式（你的推断）**
-文章暗示了一种从“文本生成”向“流程生成”的转变。传统的 Prompt Engineering 往往试图让 LLM 直接输出答案，而 Wolfram 模式要求 LLM 输出可执行的代码（Intermediate Representation）。这种“代码契约”比自然语言更严谨，极大地降低了系统出错的概率。
-*   **边界条件/反例**：代码生成本身对 LLM 的语法掌握能力要求极高。如果 LLM 生成了语法错误的 Wolfram 代码，整个流程会报错崩溃，导致用户体验比直接产生一本正经胡说八道的幻觉更差（即“Hard Failure” vs “Soft Failure”）。
+**反例/边界条件：**
 
-### 深入评价
+1.  **延迟与实时性瓶颈**：在需要毫秒级响应的对话场景中，调用外部 API 的网络往返和计算时间可能导致用户体验断裂，这与 LLM 原生生成的流式输出体验背道而驰。
+2.  **上下文截断与成本**：复杂的 Wolfram 查询可能返回极长的数据或代码，若重新注入 LLM 上下文，极易导致 Token 消耗过大或超出上下文窗口，使得后续生成失效或成本激增。
 
-#### 1. 内容深度与严谨性
-文章在技术架构的描述上具有极高的深度。它没有停留在“Chat with your data”的表面，而是深入到了**计算本体论**的层面。Wolfram 正确地指出了 LLM 不能仅仅被视为“知识库”，而应被视为“语义解析器”。
-*   **批判性思考**：文章略显“王婆卖瓜”。它过分强调了符号计算的重要性，却忽略了神经符号 AI（Neuro-Symbolic AI）中“神经”部分的进化。随着 LLM 推理能力的提升（如 OpenAI o1），纯语言模型的逻辑链条正在变强，Wolfram 必须证明其“重型符号引擎”在未来的性价比依然高于“更强的推理模型”。
+---
 
-#### 2. 实用价值
-对于需要**高确定性**的行业（如金融工程、科研计算、医疗辅助诊断），该文章提出的架构具有极高的实用价值。它提供了一条将 LLM 从“聊天玩具”转化为“生产力工具”的清晰路径。
-*   **实际案例**：在量化交易中，让 LLM 直接编写交易策略是危险的，但让 LLM 编写 Wolfram 代码来回测历史数据，则是非常可行且高效的。
+### 深度评价
 
-#### 3. 创新性
-文章最大的创新点在于重新定义了**LLM 插件的标准接口**。不同于 OpenAI 的 Function Calling 需要针对每个 API 单独定义 Schema，Wolfram 提出了一种统一的、全覆盖的计算语言接口。只要学会 Wolfram Language，就等于掌握了所有领域的工具调用能力。
+#### 1. 内容深度：严谨的工程务实主义
+文章展现了极高的工程务实精神。它没有陷入“让模型学会一切”的炼丹迷思，而是清晰地界定了 LLM 的能力边界。论证严谨之处在于承认了 LLM 的语义理解能力与符号系统的计算能力之间的正交性。然而，文章略过了**错误传播链**的问题：如果 LLM 将用户的物理问题翻译成了错误的 Wolfram 代码，后端的精确计算只会精确地产生错误结果，这种“Garbage In, Garbage Out”在级联系统中可能更难被调试。
 
-#### 4. 可读性与逻辑性
-作为一篇技术宣言，文章逻辑清晰，但在具体实现细节（如 Token 消耗、Latency 优化）上略显简略。文章假设读者对 Wolfram 生态有较高认同感，对于习惯了 Python 生态的开发者来说，可能存在一定的认知门槛。
+#### 2. 实用价值：企业级 AI 的必由之路
+对于构建垂直领域 AI（如金融分析、科研辅助）的从业者来说，该文章提供了极具价值的架构蓝图。目前的 RAG（检索增强生成）多基于非结构化文本，而 Wolfram 代表了**结构化数据增强**的方向。
+*   *案例*：在金融报表分析中，纯 LLM 经常编造数字，而通过插件让 LLM 调用 Wolfram 读取实时股价并进行复杂的衍生品定价公式计算，是落地的唯一可行路径。
 
-#### 5. 行业影响
-该文章强化了 **"RAG + Code Interpreter"** 作为 LLM 应用终极形态的行业共识。它迫使开发者重新思考：**哪些问题应该用概率解决，哪些问题必须用规则解决。** 这将推动行业从单纯的“拼参数规模”转向“拼工具链集成能力”。
+#### 3. 创新性：旧技术的“新接口”
+将 Wolfram 技术作为基础工具并非全新的技术发明（API 一直存在），但其创新性在于**将 LLM 定义为“语义解析器”**。这重新激活了 Wolfram 庞大的知识库，使其从冷门的专家工具转变为大众通过 ChatGPT 等接口可以触达的通用基础设施。这是一种“旧瓶装新酒”的生态位创新。
 
-#### 6. 争议点
-*   **生态封闭性**：Wolfram Language 是一门封闭且商业化的语言，而 AI 开发者群体习惯使用开源的 Python。强迫开发者学习 WL 生态是一个巨大的进入壁垒。
-*   **成本问题**：Wolfram Engine 的调用成本和 API 费用相比开源 Python 库（如 NumPy, Pandas）要高昂得多，这在大规模商业化应用中是一个不可忽视的阻力。
+#### 4. 可读性：清晰的愿景阐述
+文章逻辑结构清晰，从问题（LLM 的缺陷）到方案（工具集成）再到愿景。但对于非技术背景的决策者，文中关于符号计算与神经网络差异的描述可能略显抽象。不过，对于目标受众（AI 架构师、开发者）而言，其技术隐喻恰到好处。
 
-### 可验证的检查方式
+#### 5. 行业影响：重定义“搜索”与“推理”
+这篇文章预示了搜索引擎的未来：不再是返回链接，而是返回计算结果。它对行业的影响在于推动了 **"Agentic Workflow"（智能体工作流）** 的发展。未来的 AI 应用将不再是一个单纯的模型，而是一个调度各种工具（如 Wolfram、SQL、Python 解释器）的操作系统。这也挑战了纯模型厂商（如仅依赖 Transformer 扩展定律的公司），迫使行业转向“模型+工具”的生态竞争。
 
-1.  **幻觉率测试**：
-    *   *指标*：在处理复杂的数学应用题或物理计算时，对比“纯 LLM 模式”与“LLM + Wolfram Plugin 模式”的错误率。
-    *   *预期*：混合模式在数值计算上的错误率应趋近于 0。
+#### 6. 争议点与不同观点
+*   **封闭生态 vs 开源生态**：Wolfram 是一个高度封闭、商业化的专有系统。这与当前 AI 领域拥抱开源（如 Python 生态、HuggingFace）的趋势相悖。开发者可能会质疑：为什么我要绑定一个昂贵的黑盒，而不是使用开源的 Python 库（NumPy, SciPy）或更灵活的代码解释器？
+*   **过度依赖外部工具**：有观点认为，随着模型规模扩大和思维链技术的进步，LLM 自身的逻辑推理能力正在增强。过度依赖外部工具可能会阻碍模型内部推理能力的涌现，导致系统在无法连接工具时变得完全不可用。
 
-2.  **中间代码可执行
+#### 7. 实际应用建议
+*   **混合架构设计**：不要盲目全盘接入。对于简单的算术（如 2+2），应依赖模型自身；对于微积分、数据可视化或物理仿真，才调用 Wolfram
 
 ---
 ## 代码示例
@@ -86,84 +84,110 @@ Stephen Wolfram 强调 LLM 的训练数据是静态的，而世界是动态的�
 
 
 ```python
-# 示例1：使用Wolfram Alpha API进行数学计算
+# 示例1：使用Wolfram Alpha进行数学计算和知识查询
 import wolframalpha
 
-def solve_math_equation(query):
+def wolfram_query(query):
     """
-    使用Wolfram Alpha API解决数学问题
-    :param query: 数学问题字符串，如 "solve x^2 + 2x + 1 = 0"
+    使用Wolfram Alpha API进行查询
+    :param query: 用户输入的问题或计算表达式
+    :return: 查询结果的文本形式
+    """
+    # 替换为你的Wolfram Alpha App ID
+    app_id = "YOUR_WOLFRAM_APPID"
+    client = wolframalpha.Client(app_id)
+    
+    try:
+        # 发送查询请求
+        res = client.query(query)
+        # 提取主要结果
+        answer = next(res.results).text
+        return answer
+    except Exception as e:
+        return f"查询出错: {str(e)}"
+
+# 使用示例
+if __name__ == "__main__":
+    # 数学计算示例
+    print(wolfram_query("integral of x^2 from 0 to 1"))
+    # 知识查询示例
+    print(wolfram_query("distance between Earth and Moon"))
+```
+
+
+
+
+```python
+# 示例2：将Wolfram Alpha结果整合到LLM对话中
+import openai
+import wolframalpha
+
+def enhanced_llm_response(user_query):
+    """
+    增强型LLM响应函数，结合Wolfram Alpha的计算能力
+    :param user_query: 用户查询
+    :return: 增强后的响应
+    """
+    # Wolfram Alpha查询
+    wolfram_result = wolfram_query(user_query)
+    
+    # 构建增强提示
+    enhanced_prompt = f"""
+    用户问题: {user_query}
+    Wolfram Alpha结果: {wolfram_result}
+    
+    请基于以上信息提供详细解答:
+    """
+    
+    # 调用OpenAI API
+    openai.api_key = "YOUR_OPENAI_API_KEY"
+    response = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo",
+        messages=[
+            {"role": "system", "content": "你是一个有帮助的助手，擅长结合计算结果进行解答"},
+            {"role": "user", "content": enhanced_prompt}
+        ]
+    )
+    
+    return response.choices[0].message.content
+
+# 使用示例
+if __name__ == "__main__":
+    print(enhanced_llm_response("美国人口是多少？"))
+```
+
+
+
+
+```python
+# 示例3：使用Wolfram Language进行高级符号计算
+from wolframclient.evaluation import WolframLanguageSession
+from wolframclient.language import wl
+
+def symbolic_calculation():
+    """
+    使用Wolfram Language进行符号计算
     :return: 计算结果
     """
-    app_id = "YOUR_WOLFRAM_APP_ID"  # 需要替换为实际的Wolfram Alpha App ID
-    client = wolframalpha.Client(app_id)
-    res = client.query(query)
+    # 启动Wolfram Language会话
+    session = WolframLanguageSession()
     
-    # 提取主要结果
-    answer = next(res.results).text
-    return answer
+    try:
+        # 解析符号表达式
+        expr = session.evaluate(wl.Integrate(wl.Symbol('x')**2, wl.Symbol('x')))
+        print(f"不定积分结果: {expr}")
+        
+        # 解方程
+        solutions = session.evaluate(wl.Solve(wl.Eq(wl.Symbol('x')**2 + 2*wl.Symbol('x') + 1, 0), wl.Symbol('x')))
+        print(f"方程解: {solutions}")
+        
+        return expr, solutions
+    finally:
+        session.terminate()
 
 # 使用示例
-result = solve_math_equation("derivative of x^2 + 3x")
-print(result)  # 输出: 2 x + 3
-```
-
-
-
-
-```python
-# 示例2：获取实时数据（如天气、股票等）
-import wolframalpha
-
-def get_real_time_data(query):
-    """
-    获取实时数据，如天气、股票价格等
-    :param query: 查询字符串，如 "weather in Beijing" 或 "AAPL stock price"
-    :return: 查询结果
-    """
-    app_id = "YOUR_WOLFRAM_APP_ID"
-    client = wolframalpha.Client(app_id)
-    res = client.query(query)
-    
-    # 解析结果
-    answer = next(res.results).text
-    return answer
-
-# 使用示例
-weather = get_real_time_data("weather in Shanghai")
-print(weather)  # 输出当前上海的天气情况
-
-stock_price = get_real_time_data("AAPL stock price")
-print(stock_price)  # 输出苹果公司股票当前价格
-```
-
-
-
-
-```python
-# 示例3：单位转换和知识问答
-import wolframalpha
-
-def convert_units(query):
-    """
-    进行单位转换或回答知识性问题
-    :param query: 查询字符串，如 "100 USD to CNY" 或 "distance from Earth to Moon"
-    :return: 转换结果或答案
-    """
-    app_id = "YOUR_WOLFRAM_APP_ID"
-    client = wolframalpha.Client(app_id)
-    res = client.query(query)
-    
-    # 解析结果
-    answer = next(res.results).text
-    return answer
-
-# 使用示例
-conversion = convert_units("100 miles to km")
-print(conversion)  # 输出: 160.934 km
-
-knowledge = convert_units("population of China")
-print(knowledge)  # 输出中国人口数据
+if __name__ == "__main__":
+    symbolic_calculation()
 ```
 
 
@@ -171,227 +195,217 @@ print(knowledge)  # 输出中国人口数据
 ## 案例研究
 
 
-### 1：OpenAI ChatGPT (Wolfram 插件集成)
+### 1：OpenAI 的 ChatGPT（Wolfram 插件集成）
 
- 1：OpenAI ChatGPT (Wolfram 插件集成)
+ 1：OpenAI 的 ChatGPT（Wolfram 插件集成）
 
-**背景**: ChatGPT 等大型语言模型（LLM）虽然具备强大的文本生成能力，但在处理精确的数学计算、科学数据和实时系统性信息时，常面临“幻觉”问题，即生成看似合理但错误的内容。
+**背景**:
+ChatGPT 等大型语言模型（LLM）虽然擅长生成自然语言，但在处理精确的数学计算、科学数据查询和实时知识检索方面存在“幻觉”和逻辑推理能力不足的问题。用户经常需要从聊天机器人处获取准确的数据分析或数学答案，而不仅仅是文本摘要。
 
-**问题**: 用户需要 AI 不仅能够对话，还能进行准确的微积分运算、解方程、查询单位换算以及处理复杂的物理化学数据。单纯依赖语言模型的概率预测无法保证数学和科学领域的严谨性。
+**问题**:
+LLM 本质上是概率模型，无法可靠地执行复杂的符号计算或访问经过验证的科学知识库。例如，询问 ChatGPT 解析方程或查询当前人口统计数据时，它可能会编造数字或得出错误的计算结果，缺乏可信度。
 
-**解决方案**: OpenAI 推出了 Wolfram 插件。当用户提问涉及数学或科学知识时，ChatGPT 会自动调用 Wolfram Alpha 和 Wolfram Language 的后台能力。LLM 负责将自然语言转化为 Wolfram 可执行的代码，Wolfram 负责精确计算并返回结果，最后由 LLM 将结果整理成自然语言反馈给用户。
+**解决方案**:
+OpenAI 与 Wolfram Research 合作，将 Wolfram Alpha 和 Wolfram Language 的深度功能集成到 ChatGPT 中作为一个官方插件。当用户提问涉及数学、物理或数据时，ChatGPT 不再仅依靠内部权重生成答案，而是自动编写 Wolfram Language 代码并发送给 Wolfram Cloud 执行，然后将结果以自然语言形式返回给用户。
 
-**效果**: 这一结合极大地消除了数学和科学问答中的错误率，使 ChatGPT 从一个“语言通才”进化为“数理专家”。用户可以直接通过对话解决复杂的工程计算、数据分析和化学方程式配平问题，显著扩展了 AI 在教育和科研领域的实用价值。
-
----
-
-
-
-### 2：微软 Bing Chat (Copilot)
-
- 2：微软 Bing Chat (Copilot)
-
-**背景**: 微软在将 AI 集成到必应搜索时，旨在提供比传统搜索更直观的答案，而不仅仅是链接列表。
-
-**问题**: 用户在搜索时经常遇到需要整合信息的情况，例如“比较两个国家的 GDP 并计算增长率”或“显示过去 10 年的股票价格趋势”。传统的搜索结果需要用户自行在不同网页间跳转、复制数据并计算，效率低下且容易出错。
-
-**解决方案**: Bing Chat 集成了 Wolfram Alpha 的计算和结构化数据能力。当用户提问涉及数据对比、数学计算或可视化图表时，Bing 会利用 Wolfram 的知识库直接生成精确的答案和动态图表，而不是仅依赖抓取的网页文本。
-
-**效果**: 用户可以直接在聊天界面获得经过计算的数据对比和可视化图表，无需打开第三方表格软件。这不仅提升了搜索结果的准确度，还通过自动化数据处理为用户节省了大量时间，增强了搜索引擎的智能化体验。
+**效果**:
+这一结合将 ChatGPT 的自然语言理解能力与 Wolfram 的精确计算和知识库相结合。它极大地减少了数学和科学问题中的错误率，使 ChatGPT 能够解决从基础代数到高等物理、化学分析的复杂问题，并为答案提供了可验证的数据来源。
 
 ---
 
 
 
-### 3：NotebookLM (Google 实验性项目)
+### 2：微软的 Bing Chat（Copilot）与科学计算增强
 
- 3：NotebookLM (Google 实验性项目)
+ 2：微软的 Bing Chat（Copilot）与科学计算增强
 
-**背景**: 随着个人和企业知识库的数字化，用户急需一种工具能理解其私人文档（如 PDF、笔记）中的内容并进行深度分析。
+**背景**:
+微软在推出集成 AI 的必应搜索（现名为 Copilot）时，旨在通过对话式界面提供更直接的答案，而不仅仅是返回链接列表。然而，对于涉及结构化数据和计算的问题，传统的搜索引擎索引和 LLM 的生成能力都无法提供令人满意的深度解答。
 
-**问题**: LLM 虽然能阅读文档，但在处理文档中包含的复杂数据表格、财务报表或科学实验数据时，往往只能进行文本总结，无法进行基于数据的动态查询（例如：“根据文档第 5 页的数据，如果增长率下降 10%，预测下一季度的营收”）。
+**问题**:
+用户在搜索特定科学常数、进行单位换算或需要可视化数据图表时，往往需要跳转到多个网站。纯 LLM 模式难以理解复杂的科学符号，且无法生成动态的可视化图表来辅助回答。
 
-**解决方案**: 虽然该产品主要依托 Google 技术，但其设计理念与 Wolfram 作为 LLM 基础工具的愿景高度一致。在实际应用中，许多企业级 AI 助手采用类似架构：LLM 用于理解用户意图和文档上下文，随后调用 Wolfram Language 编写代码来处理文档中的结构化数据，执行统计建模或敏感性分析。
+**解决方案**:
+Bing Chat 利用 Wolfram Alpha 的 API 作为其后台“大脑”的一部分，专门处理需要结构化知识和计算能力的查询。当 Bing 识别到用户查询属于数学、科学或工程领域时，它会调用 Wolfram 的能力来生成精确的答案、步骤解析以及相关的函数图像。
 
-**效果**: 这种模式使得 AI 助手不仅能“读”文档，还能“算”文档。用户可以上传包含数千行数据的财务报告，直接向 AI 询问复杂的假设性问题，AI 通过调用计算内核返回精确的预测结果，从而将静态的文档库转化为动态的分析工具。
+**效果**:
+这使得 Bing 能够直接在聊天界面中提供教科书级别的数学解题步骤和准确的科学数据。它不仅提升了搜索结果的可信度，还通过动态生成图表增强了用户体验，确立了其在教育和专业领域的搜索优势。
+
+---
+
+
+
+### 3：专业金融分析平台（基于 Wolfram Language 构建的私有 AI）
+
+ 3：专业金融分析平台（基于 Wolfram Language 构建的私有 AI）
+
+**背景**:
+一家量化金融分析公司希望建立一个内部的 AI 助手，帮助分析师快速查询市场数据、计算复杂的金融指标（如期权定价模型或风险价值 VaR），并生成报告。
+
+**问题**:
+通用的 LLM 无法访问公司的私有历史数据库，且在处理金融数学公式时极其容易出错。金融领域对数字的精确性要求极高，任何微小的计算误差都可能导致巨大的损失。
+
+**解决方案**:
+开发团队构建了一个基于 LLM 的应用界面，该界面不直接进行计算，而是将用户的自然语言意图转化为 Wolfram Language 代码。后端使用 Wolfram Engine 连接公司的私有数据源和金融数据源。LLM 充当“翻译官”，Wolfram 技术栈充当“计算引擎”。
+
+**效果**:
+该系统允许分析师使用简单的语言（如“分析过去五年科技股在通胀高企时期的波动率”）即可获得经过严格数学验证的报告。这大大降低了高级金融建模的门槛，提高了工作效率，并确保了所有输出结果符合金融级的精度标准。
 
 ---
 ## 最佳实践
 
 ## 最佳实践指南
 
-### 实践 1：构建基于 Wolfram Alpha 的计算型语义解析器
+### 实践 1：构建语义化与结构化的查询接口
 
 **说明**:
-LLM 虽然擅长生成自然语言，但在处理精确的数学计算、物理方程求解或单位换算时容易产生“幻觉”。将 Wolfram Alpha 作为外部计算引擎，通过语义解析将自然语言转换为 Wolfram Language 代码，可以确保输出的准确性和科学性。
+大语言模型（LLM）通常生成自然语言文本，而 Wolfram Language（WL）需要精确的符号化代码。最佳实践是建立一个中间层，将 LLM 的意图转化为 Wolfram Alpha 的查询字符串或 WL 函数调用。这要求系统能够识别用户的查询类型（是数学计算、数据检索还是单位转换），并据此选择最合适的 Wolfram API 端点（如 Full Result API 或 Short Answer API）。
 
 **实施步骤**:
-1. 在 Prompt 工程中明确指示 LLM：当遇到数值计算或数据分析需求时，优先调用 Wolfram Alpha API。
-2. 建立“自然语言 -> Wolfram Language -> 结果”的转换管道。
-3. 对 LLM 生成的 Wolfram 代码进行沙箱执行，获取结果后再由 LLM 进行自然语言总结。
+1. 设计提示词工程，引导 LLM 输出符合 Wolfram 语法规范的 JSON 格式请求。
+2. 建立查询预处理模块，负责清理自然语言中的歧义，并将其转换为 WL 可理解的实体（如 `CityData["Beijing", "Population"]`）。
+3. 针对简单问答使用 Short Answers API，针对需要可视化或复杂数据的场景使用 Full Results API。
 
 **注意事项**:
-确保 API 调用的超时机制完善，避免因复杂计算导致 LLM 响应时间过长。
+避免直接将用户的原始自然语言输入直接传递给 API，应先经过 LLM 的解析和格式化，以提高查询的准确率和返回结果的相关性。
 
 ---
 
-### 实践 2：利用 Wolfram Knowledgebase 进行实时事实检索
+### 实践 2：实施混合计算与验证策略
 
 **说明**:
-LLM 的知识受限于训练数据的截止时间。Wolfram Knowledgebase 包含海量的结构化实时数据（如国家人口、化学性质、股票数据等）。通过 RAG（检索增强生成）模式，让 LLM 在回答事实性问题前先查询 Wolfram 的知识库。
+LLM 存在“幻觉”问题，尤其是在数学和逻辑推理方面。Wolfram Tech 提供了基于符号计算的确定性答案。最佳实践是将 Wolfram 作为系统的“计算校验器”或“事实核查层”。当 LLM 生成包含数值或逻辑推断的内容时，应调用 Wolfram 进行验证，或直接由 Wolfram 接管计算任务，以确保输出结果的严谨性。
 
 **实施步骤**:
-1. 识别用户查询中的实体（如“苹果公司的股价”或“钛的熔点”）。
-2. 使用 Wolfram Alpha API 的 Short Answer 或 Pod 输出功能获取结构化数据。
-3. 将检索到的结构化数据注入到 LLM 的 Context 中，要求 LLM 基于这些数据生成回答。
+1. 在 LLM 的推理链中设置触发器：当检测到数学运算、物理公式或具体数据查询时，中断 LLM 生成，转而调用 Wolfram Engine。
+2. 将 Wolfram 返回的结果重新注入到 LLM 的上下文中，要求 LLM 基于这些确凿的数据生成最终的自然语言回复。
+3. 对于多步推理问题，采用“思维链”结合“工具调用”的模式，逐步验证中间结果。
 
 **注意事项**:
-注意数据隐私和合规性，确保通过 API 传输的查询内容符合企业安全政策。
+确保 LLM 能够正确解析 Wolfram 返回的复杂数据结构（如嵌套列表或图形对象），避免因格式错误导致二次生成错误。
 
 ---
 
-### 实践 3：实现符号推理与逻辑校验
+### 实践 3：处理多模态输出与可视化
 
 **说明**:
-Wolfram Language 是一种符号化编程语言，擅长逻辑推演和定理证明。利用这一特性，可以用 Wolfram 系统来校验 LLM 生成的逻辑链条是否严密，或者在复杂规划任务中生成最优解。
+Wolfram Tech 的强大之处在于其强大的数据可视化能力（如 Plot3D, GeoGraphics 等）。在 LLM 系统中集成时，不应仅返回文本结果。最佳实践是能够识别适合可视化的场景，并将生成的图表、图像或交互式图形正确地渲染给最终用户，增强系统的表现力。
 
 **实施步骤**:
-1. 将 LLM 生成的推理步骤或计划转化为符号表达式。
-2. 调用 Wolfram Engine 进行逻辑一致性检查或模拟运行。
-3. 如果 Wolfram 返回错误或警告，将反馈信息回传给 LLM 进行修正。
+1. 配置 Wolfram Cloud 或 Wolfram Engine 以导出高分辨率的图像格式（如 PNG 或 SVG）。
+2. 在中间件层建立图像处理管道，将 WL 生成的图形对象转换为 Base64 编码或可访问的 URL。
+3. 在 LLM 的回复模板中预留渲染插槽，确保图像能流畅地嵌入到 Markdown 或 HTML 响应中。
 
 **注意事项**:
-此方法需要较高的系统集成度，建议仅用于金融建模、工程计算等对逻辑准确性要求极高的核心场景。
+控制图形生成的复杂度和文件大小，避免因生成过于复杂的 3D 图形导致系统响应延迟或前端渲染崩溃。
 
 ---
 
-### 实践 4：可视化数据的自动生成与展示
+### 实践 4：优化上下文管理与数据截断
 
 **说明**:
-Wolfram Language 拥有极其强大的数据可视化能力。当 LLM 需要向用户展示图表、地理分布图或复杂函数图像时，不应让 LLM 生成低质量的代码，而应调用 Wolfram 生成标准图像。
+Wolfram 的查询结果可能非常详尽，包含大量元数据、POD（结果分组）和嵌套信息。直接将完整的原始结果返回给 LLM 可能会迅速消耗 Token 预算，甚至超出上下文窗口限制。最佳实践是对返回结果进行智能裁剪和摘要，仅保留最关键的信息输入给 LLM。
 
 **实施步骤**:
-1. 训练 LLM 识别需要可视化的场景（如“绘制过去10年的气温变化”）。
-2. 将数据参数传递给 Wolfram Cloud API。
-3. 获取生成的图像（如 PNG 或 SVG）直接展示给用户，或让 LLM 根据图像生成文字描述。
+1. 编写后端过滤器，解析 Wolfram 返回的 XML 或 JSON，仅提取 `Result`、`Input` 及主要的 `Pod` 标题和内容。
+2. 对于数据集查询，如果数据量过大，应在 Wolfram 端进行聚合（如求和、平均值）或取 Top-N 处理，而非传输全部数据。
+3. 建立结果优先级机制，优先展示“主要结果”，将“假设结果”或“相关解释”作为次要参考。
 
 **注意事项**:
-处理高分辨率图像时需注意带宽限制，对于交互式图表，建议返回可交互的 CDF (Computable Document Format) 链接。
+在截断数据时要保留关键的单位和定义信息，防止 LLM 在生成回复时丢失必要的物理上下文或量纲。
 
 ---
 
-### 实践 5：建立混合式代码解释器
+### 实践 5：利用 Wolfram Language 进行代码生成与执行
 
 **说明**:
-类似于 OpenAI 的 Advanced Data Analysis，构建一个由 LLM 编写代码、Wolfram 负责执行的环境。这不仅能处理数学问题，还能进行复杂的图像处理、信号处理和生物信息学分析。
+除了直接查询数据，LLM 可以编写 Wolfram Language 代码来解决复杂问题。这比单纯调用 API 更灵活。最佳实践是构建一个沙箱环境，允许 LLM 生成 WL 代码片段，在隔离的环境中执行，并捕获输出结果。这适用于需要自定义算法或特定数据处理的场景。
 
 **实施步骤**:
-1. 设计一个 Prompt 模板，指示 LLM 输出标准的 Wolfram Language 代码。
-2. 在后端部署一个隔离的 Wolfram Kernel 或 Wolfram Cloud 容器用于执行代码。
-3. 捕获执行结果（包括输出值、警告信息或错误日志），并将其反馈给 LLM 以便向用户解释。
-
-**注意事项**:
-必须严格限制代码执行的权限和资源（CPU/内存），防止用户通过 Prompt 注入恶意代码（如无限循环或文件系统访问）。
-
----
-
-### 实践 6：标准化 Prompt 与函数调用
-
-**说明**:
-为了使 LLM 能够稳定地调用 Wolfram 技术，不应依赖自由文本对话，而应使用 Function Calling (或 Tool Use) 机制。定义标准化的 API 接口，让 LLM 像调用函数一样调用 Wolfram 的能力。
-
-**实施步骤**:
-1. 在 LLM 的系统提示词中注册工具，例如 `wolfram_query` 和 `wolfram_compute`。
-2. 定义清晰的输入参数 schema（例如 `input: string`, `output_format: "json" or "text"`）。
-3. 当 LLM 决定使用工具时，系统自动拦截请求，转发给 Wolfram API，并将结果无缝返回给对话流。
-
-**注意事项**:
-定期更新 LLM 的 Function Calling 定义，以匹配 Wolfram Language 的最新功能扩展。
-
----
-
-### 实践 7：处理多模态输入与物理世界数据
+1. 在提示词中明确要求 LLM 针对复杂问题输出纯 Wolfram Language 代码块。
+2. 部署一个无状态的 Wolfram Kernel 实例或使用 Wolfram Cloud 的 API 执行端点。
+3. 实施
 
 ---
 ## 学习要点
 
-- 根据您提供的内容（基于标题 "Making Wolfram Tech Available as a Foundation Tool for LLM Systems" 及相关背景），总结出的关键要点如下：
-- Wolfram Language 及其计算知识库为大型语言模型（LLM）提供了精准的符号计算和数据处理能力，弥补了纯语言模型在数学和逻辑推理上的不足。
-- 通过将 Wolfram Alpha 作为外部工具调用，LLM 能够获取实时、准确的 curated（经过整理的）知识，有效降低了模型产生“幻觉”的风险。
-- Wolfram 的符号化编程范式使其成为连接 LLM 语义理解与精确代码执行之间的理想桥梁，实现了从自然语言到可执行代码的自动化转换。
-- 该集成方案展示了“计算智能”与“语言智能”结合的最佳实践，确立了 LLM 通过调用外部工具解决复杂科学问题的标准范式。
-- 这一工具链的开放显著增强了 LLM 系统的鲁棒性，使其能够处理需要高精度计算或结构化数据的复杂任务。
+- 基于 Wolfram 技术作为 LLM 基础工具的讨论，以下是关键要点总结：
+- Wolfram Language 提供了符号化、确定性的计算与知识表示能力，弥补了 LLM 仅具备概率性文本生成的短板。
+- 通过将 LLM 的自然语言解析为 Wolfram Language 代码，系统实现了从“模糊意图”到“精确计算”的可靠转换。
+- Wolfram Alpha 的海量、结构化且经过验证的 curated data（结构化知识库）为 LLM 提供了真实世界的事实锚点，有效减少幻觉。
+- 该工具链不仅能处理数学和科学计算，还能通过物理世界模拟和数据分析，扩展 LLM 解决复杂逻辑问题的能力。
+- Wolfram Notebooks 提供了一种可交互、可解释的“计算论文”格式，使 LLM 的推理过程透明化且易于验证。
+- 这种“LLM 作为语义前端，Wolfram 作为计算后端”的架构，展示了构建高精度 AI 系统的最佳实践。
 
 ---
 ## 常见问题
 
 
-### 1: Wolfram 技术与大型语言模型（LLM）结合的核心优势是什么？
+### 1: Wolfram 技术具体是如何作为 LLM（大语言模型）的基础工具的？
 
-1: Wolfram 技术与大型语言模型（LLM）结合的核心优势是什么？
+1: Wolfram 技术具体是如何作为 LLM（大语言模型）的基础工具的？
 
-**A**: 核心优势在于“计算知识”与“语言生成”的互补。LLM（如 GPT-4）擅长自然语言理解和生成，但在处理精确的数学计算、逻辑推理以及获取实时、结构化的科学数据时，容易出现“幻觉”或错误。Wolfram 技术提供了基于符号计算的确定性和严谨的知识库。通过将 Wolfram 作为基础工具接入，LLM 可以将模糊的自然语言查询转化为精确的 Wolfram Language 代码，并在 Wolfram Alpha 或 Wolfram Cloud 中执行，从而返回经过验证的、准确的数据和计算结果，极大地增强了系统的可靠性和实用性。
-
----
-
-
-
-### 2: 这种集成是如何在技术上实现的？LLM 如何调用 Wolfram？
-
-2: 这种集成是如何在技术上实现的？LLM 如何调用 Wolfram？
-
-**A**: 实现方式通常是通过函数调用或工具使用能力。具体流程如下：
-1.  **意图识别**：用户向 LLM 提出问题（例如“计算过去 10 年的 GDP 增长率并绘图”）。
-2.  **代码生成**：LLM 识别出该问题需要计算或外部数据，于是生成一段对应的 Wolfram Language 代码，而不是直接生成文本答案。
-3.  **执行与返回**：系统将这段代码发送给 Wolfram 引擎执行。Wolfram 引擎进行计算、访问内置知识库或调用实时数据，然后将结果（通常是文本、数据列表或图像对象）返回给 LLM。
-4.  **最终回答**：LLM 接收 Wolfram 的计算结果，并用自然语言将其组织成最终答案呈现给用户。
+**A**: Wolfram 技术主要通过其核心产品 Wolfram Language 和 Wolfram Alpha 与大语言模型进行深度集成。大语言模型虽然擅长生成人类语言和代码，但在精确的数学计算、数据处理和结构化知识查询方面存在“幻觉”或逻辑不严谨的问题。Wolfram 技术充当了“计算知识”的后端，LLM 可以将用户的自然语言请求转换为 Wolfram Language 代码，然后在 Wolfram 引擎中执行。这使得 LLM 系统能够获得经过验证的、符号化的数学计算能力、实时数据访问以及科学算法支持，从而弥补了纯语言模型在逻辑推理和精确性上的短板。
 
 ---
 
 
 
-### 3: Wolfram Language 相比于 Python 等其他编程语言，在 LLM 应用场景中有何独特之处？
+### 2: 为什么 LLM 需要接入 Wolfram 而不是直接使用 Python 代码解释器？
 
-3: Wolfram Language 相比于 Python 等其他编程语言，在 LLM 应用场景中有何独特之处？
+2: 为什么 LLM 需要接入 Wolfram 而不是直接使用 Python 代码解释器？
 
-**A**: Wolfram Language 是一种专门设计用于“计算知识”的语言，其符号化架构使其在 LLM 应用中具有独特优势：
-*   **高阶语义**：Wolfram Language 的函数命名和语法非常接近自然语言概念（例如 `CountryData["China", "GDP"]`），这使得 LLM 更容易生成正确且可执行的代码，减少了语法错误。
-*   **内置知识库**：它直接包含了海量的 curated（精选）数据，涵盖物理、化学、地理、金融等领域，LLM 无需编写复杂的 API 调用即可直接获取这些深度知识。
-*   **算法完整性**：它在数学求解、微积分、微分方程等领域的算法集成度极高，能够解决通用编程语言（如 Python）需要依赖多个第三方库才能解决的复杂问题。
+**A**: 虽然 Python 拥有庞大的生态系统（如 NumPy, Pandas），但 Wolfram Language 是一种专门为“计算知识”设计的符号化语言。与 Python 需要编写多行过程式代码不同，Wolfram Language 具有极高的知识密度和内置的算法库，能够用极简的代码表达复杂的数学和科学概念。此外，Wolfram Alpha 拥有海量的结构化、经过策展的真实世界数据。对于 LLM 而言，接入 Wolfram 意味着不仅能运行代码，还能直接调用经过验证的科学知识和物理模型，这在准确性和符号推理的可靠性上往往优于通用的 Python 解释器。
 
 ---
 
 
 
-### 4: 接入 Wolfram 技术能否完全消除 LLM 的“幻觉”问题？
+### 3: 这种集成方式如何解决大语言模型的“幻觉”问题？
 
-4: 接入 Wolfram 技术能否完全消除 LLM 的“幻觉”问题？
+3: 这种集成方式如何解决大语言模型的“幻觉”问题？
 
-**A**: 不能完全消除，但能显著抑制特定类型的幻觉。LLM 的幻觉主要源于其基于概率的文本生成机制。当 LLM 被用作“翻译器”将自然语言转为 Wolfram 代码，并由 Wolfram 引擎执行时，最终输出的数据和计算结果是数学上确定的，因此**事实性**和**计算性**的幻觉会被大幅消除。然而，如果 LLM 在第一步就错误理解了用户意图并生成了错误的 Wolfram 代码，或者在解读 Wolfram 返回的结果时产生了偏差，错误仍然可能发生。因此，这是一种“混合智能”模式，通过工具的确定性来弥补模型的不确定性。
-
----
-
-
-
-### 5: 对于开发者而言，将 Wolfram 集成到 LLM 应用中是否复杂？
-
-5: 对于开发者而言，将 Wolfram 集成到 LLM 应用中是否复杂？
-
-**A**: 复杂程度取决于集成深度，但 Wolfram 已经致力于简化这一过程。Wolfram 提供了 API 接口（如 Wolfram Alpha API 和 Wolfram Cloud API），允许开发者通过 HTTP 请求发送查询或代码。此外，随着 OpenAI 等平台推出插件和函数调用功能，Wolfram 已经推出了官方插件和工具连接器。对于熟悉 API 调用的开发者来说，基本的集成相对直接。主要的挑战在于如何设计 Prompt（提示词），以确保 LLM 能够准确地生成符合 Wolfram 语法规范的代码，以及如何处理复杂的多步推理交互。
+**A**: 大语言模型的“幻觉”通常源于其基于概率的文本生成机制，即它可能在不确定的情况下编造事实。通过引入 Wolfram 作为基础工具，系统的工作流程变为：LLM 负责理解意图和转换参数，Wolfram 负责严格的逻辑执行和事实检索。Wolfram 的计算是基于符号逻辑和确定性算法的，它不会“猜测”数学结果或物理常数。因此，当 LLM 将计算任务卸载给 Wolfram 时，返回的结果是数学上确定的或数据源可查证的，从而极大地消除了事实性错误和逻辑谬误。
 
 ---
 
 
 
-### 6: 这种技术组合主要适用于哪些具体的应用场景？
+### 4: 开发者如何利用这一技术构建自己的 AI 应用？
 
-6: 这种技术组合主要适用于哪些具体的应用场景？
+4: 开发者如何利用这一技术构建自己的 AI 应用？
 
-**A**: 任何需要高精度、结构化数据或复杂计算的场景都适用，主要包括：
-*   **科学研究与教育**：解决复杂数学问题、物理模拟、化学数据分析，或作为个性化辅导助手解答需要精确计算的问题。
-*   **金融与数据分析**：进行实时的股票数据分析、经济指标计算、风险评估建模，以及生成专业的可视化图表。
-*   **工程与技术领域**：单位转换、材料属性查询、工程公式计算等。
-*   **知识增强型问答**：回答需要实时数据支持的问题（如“现在的天气”或“昨天的汇率”），弥补 LLM 训练数据滞后的缺陷。
+**A**: 开发者可以通过 Wolfram 开放的 API 和最新的“Notebook 接口”来实现集成。具体流程通常包括：利用 LLM（如 GPT-4）将用户的自然语言提示解析为结构化的 Wolfram Language 代码片段，然后通过 API 调用将这些代码发送给 Wolfram Cloud 或本地 Wolfram Engine 进行执行，最后将计算结果（文本、图形或数据对象）返回给 LLM 进行最终的自然语言表述。Wolfram 还提供了专门的工作流工具，帮助开发者调试 LLM 生成的代码，确保其在 Wolfram 环境中能正确运行。
+
+---
+
+
+
+### 5: 这种技术主要适用于哪些具体的应用场景？
+
+5: 这种技术主要适用于哪些具体的应用场景？
+
+**A**: 这种结合主要适用于需要高精度逻辑计算、科学知识检索和数据分析的场景。具体包括：1. **科学教育与科研**：解答复杂的微积分、物理或化学问题；2. **金融分析**：进行精确的复利计算、风险建模或基于历史数据的投资分析；3. **工程与数据科学**：生成可执行的数据可视化图表和统计分析报告；4. **知识问答系统**：提供基于实时数据的精确答案，而非仅仅是文本摘要。任何需要“计算”而不仅仅是“文本生成”的场景，都是该技术的用武之地。
+
+---
+
+
+
+### 6: 将 Wolfram 引入 LLM 堆栈是否会显著增加系统的延迟或成本？
+
+6: 将 Wolfram 引入 LLM 堆栈是否会显著增加系统的延迟或成本？
+
+**A**: 引入 Wolfram 确实会增加一次额外的 API 调用和计算执行时间，因此会有一定的延迟，但对于大多数非实时游戏类的应用来说，这种延迟（通常在秒级以内）是可以接受的。在成本方面，虽然调用 Wolfram Cloud API 可能产生费用，但它可以显著降低 LLM 的推理成本。因为如果没有 Wolfram，LLM 往往需要消耗大量的 Token 进行思维链推理来尝试解决数学问题，且准确率较低。通过将计算任务外包给 Wolfram，可以缩短 LLM 的上下文长度并提高准确率，从总体效能和资源消耗上看，往往更具优势。
+
+---
+
+
+
+### 7: Wolfram 的符号化方法与神经网络的概率化方法结合有什么长期意义？
+
+7: Wolfram 的符号化方法与神经网络的概率化方法结合有什么长期意义？
+
+**A**: 这代表了“神经符号人工智能”的一种重要实践。神经网络（LLM）擅长感知、模式识别和模糊处理，而符号系统擅长逻辑、规则和确定性推理。Wolfram 的技术栈为 LLM 提供了一个“符号脚手架”，使得 AI 系统不仅能够像人类一样“说话”，还能像数学家或科学家一样“思考”和“验证”。这种结合被认为是通往更高级别通用人工智能（AGI）的关键路径，因为它解决了纯深度学习模型在可解释性和逻辑一致性上的先天缺陷。
 
 ---
 ## 思考题
@@ -401,11 +415,11 @@ Wolfram Language 拥有极其强大的数据可视化能力。当 LLM 需要向�
 
 ### ### 挑战 1: [简单]
 
-### 问题**:
+### 问题**: Wolfram Language 的核心优势在于其内置的海量知识库和符号计算能力。请设计一个简单的提示词工程流程，利用 LLM 识别用户输入中的数学计算需求，并将其转化为 Wolfram Alpha 可执行的查询语句（例如将“地球的周长是多少”转化为相应的查询格式），而不需要编写实际的代码连接两者。
 
-### 假设你正在构建一个简单的问答机器人，用户询问“法国的首都是哪里？”。请设计一个提示词，指示 LLM 不要仅依赖其内部参数知识，而是生成一个可被 Wolfram Alpha 解析的查询字符串，以获取精确答案。
+### 提示**: 思考如何明确指示 LLM 将自然语言“翻译”为结构化的查询字符串，而不是让 LLM 试图直接回答计算问题。重点在于定义输入和输出的格式规范。
 
-### 提示**:
+### 
 
 ---
 ## 引用
@@ -422,14 +436,14 @@ Wolfram Language 拥有极其强大的数据可视化能力。当 LLM 需要向�
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)
-- 标签： [LLM](/tags/llm/) / [Wolfram](/tags/wolfram/) / [工具集成](/tags/%E5%B7%A5%E5%85%B7%E9%9B%86%E6%88%90/) / [计算能力](/tags/%E8%AE%A1%E7%AE%97%E8%83%BD%E5%8A%9B/) / [符号计算](/tags/%E7%AC%A6%E5%8F%B7%E8%AE%A1%E7%AE%97/) / [函数调用](/tags/%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8/) / [知识图谱](/tags/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/) / [AI 基础设施](/tags/ai-%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/)
+- 标签： [LLM](/tags/llm/) / [Wolfram](/tags/wolfram/) / [工具调用](/tags/%E5%B7%A5%E5%85%B7%E8%B0%83%E7%94%A8/) / [计算智能](/tags/%E8%AE%A1%E7%AE%97%E6%99%BA%E8%83%BD/) / [符号计算](/tags/%E7%AC%A6%E5%8F%B7%E8%AE%A1%E7%AE%97/) / [知识图谱](/tags/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/) / [函数调用](/tags/%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8/) / [AI 基础设施](/tags/ai-%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/)
 - 场景： [大语言模型](/scenarios/%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/) / [AI/ML项目](/scenarios/ai-ml%E9%A1%B9%E7%9B%AE/)
 
 ### 相关文章
 
-- [Wolfram技术作为LLM系统基础工具的集成方案]({{< relref "posts/20260224-hacker_news-making-wolfram-tech-available-as-a-foundation-tool-5.md" >}})
 - [将 Wolfram 技术集成为大语言模型系统的基础工具]({{< relref "posts/20260224-hacker_news-making-wolfram-tech-available-as-a-foundation-tool-8.md" >}})
+- [Wolfram技术作为LLM系统基础工具的集成方案]({{< relref "posts/20260224-hacker_news-making-wolfram-tech-available-as-a-foundation-tool-5.md" >}})
 - [Claws 现已成为 LLM 智能体的新架构层]({{< relref "posts/20260222-hacker_news-claws-are-now-a-new-layer-on-top-of-llm-agents-18.md" >}})
-- [生成式AI与维基百科编辑：2025年经验总结]({{< relref "posts/20260201-hacker_news-generative-ai-and-wikipedia-editing-what-we-learne-11.md" >}})
-- [生成式AI与维基百科协作的2025年实践总结]({{< relref "posts/20260201-hacker_news-generative-ai-and-wikipedia-editing-what-we-learne-14.md" >}})
+- [Agent Skills：AI 智能体技能框架]({{< relref "posts/20260203-hacker_news-agent-skills-1.md" >}})
+- [Agent Skills：智能体技能框架]({{< relref "posts/20260203-hacker_news-agent-skills-4.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*
