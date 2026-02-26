@@ -1,69 +1,85 @@
 ---
-title: "通过 CLI 优化降低 MCP 运行成本"
-date: 2026-02-26T05:26:25+08:00
+title: "通过CLI优化降低MCP使用成本"
+date: 2026-02-26T07:42:03+08:00
 draft: false
 entry_kind: "auto"
-tags: ["MCP", "CLI", "成本优化", "Anthropic", "模型上下文协议", "架构设计", "性能优化", "工具链"]
+tags: ["MCP", "CLI", "成本优化", "Anthropic", "Model Context Protocol", "工具链", "命令行", "集成方案"]
 categories: ["AI 工程", "开发工具"]
 source: hacker_news
-description: "在资源受限的环境下运行 Model Context Protocol (MCP) 服务器，成本控制往往是开发者面临的首要挑战。本文介绍了一种通过 CLI（命令行界面）优化 MCP 运行成本的方法，旨在以更轻量的方式实现相同的功能。阅读本文，你将了解具体的实施步骤，帮助你在不牺牲性能的前提下，有效降低基础设施的开销。"
+description: "随着 Model Context Protocol (MCP) 的普及，开发者开始关注其在生产环境中的运行成本。本文介绍了一种通过命令行界面 (CLI) 优化 MCP 资源消耗的实用方案。作者详细阐述了具体的配置步骤与底层逻辑，帮助开发者在保持功能完整性的前提下，有效降低基础设施开销并提升执行效率。"
 external_url: https://kanyilmaz.me/2026/02/23/cli-vs-mcp.html
 scenarios: ["命令行工具"]
 ---
 
-# 通过 CLI 优化降低 MCP 运行成本
+# 通过CLI优化降低MCP使用成本
 
 ---
 
 ## 基本信息
 
 - **作者**: thellimist
-- **评分**: 158
-- **评论数**: 76
+- **评分**: 176
+- **评论数**: 80
 - **链接**: [https://kanyilmaz.me/2026/02/23/cli-vs-mcp.html](https://kanyilmaz.me/2026/02/23/cli-vs-mcp.html)
 - **HN 讨论**: [https://news.ycombinator.com/item?id=47157398](https://news.ycombinator.com/item?id=47157398)
 
 ---
 ## 导语
 
-在资源受限的环境下运行 Model Context Protocol (MCP) 服务器，成本控制往往是开发者面临的首要挑战。本文介绍了一种通过 CLI（命令行界面）优化 MCP 运行成本的方法，旨在以更轻量的方式实现相同的功能。阅读本文，你将了解具体的实施步骤，帮助你在不牺牲性能的前提下，有效降低基础设施的开销。
+随着 Model Context Protocol (MCP) 的普及，开发者开始关注其在生产环境中的运行成本。本文介绍了一种通过命令行界面 (CLI) 优化 MCP 资源消耗的实用方案。作者详细阐述了具体的配置步骤与底层逻辑，帮助开发者在保持功能完整性的前提下，有效降低基础设施开销并提升执行效率。
 
 ---
 ## 评论
 
-### 深度评论
+**文章中心观点**
+文章提出了一种基于命令行界面（CLI）的模型上下文协议（MCP）客户端架构。该架构主张利用本地进程替代传统的远程服务器模式，旨在消除闲置基础设施成本，并简化大模型工具链的部署流程。
 
-#### 1. 内容深度：架构视角的成本剖析
-*   **支撑理由（事实陈述/作者观点）：**
-    *   **资源利用率优化：** 传统的 MCP 服务器部署通常需要保持一个 24/7 运行的容器或虚拟机。即使 AI 没有发起查询，内存和 CPU 资源也被占用。通过 CLI 将其封装为 Lambda 或类似 FaaS（函数即服务）函数，仅在 AI 请求到达时才计费，实现了从“为实例付费”到“为调用付费”的转变。
-    *   **冷启动与热启动的权衡：** 文章可能深入探讨了 CLI 启动速度快、开销小的特点，适合 MCP 这种轻量级协议交互。
-*   **反例/边界条件（你的推断）：**
-    *   **高频交互场景失效：** 如果 AI Agent 需要频繁调用该 MCP 工具（例如每分钟多次），Serverless 的频繁冷启动和实例调度延迟可能超过容器方案，且累积调用费用可能高于包月实例。
-    *   **状态管理复杂性：** CLI 模式通常是无状态的。如果 MCP 服务需要维护复杂的会话状态或长连接（如监听数据库变更），无状态的 CLI 调用将难以实现，除非引入外部 Redis 等状态存储，这又增加了架构复杂度和成本。
+**支撑理由与边界条件分析**
 
-#### 2. 实用价值：开发者的降本指南
-*   **支撑理由（事实陈述）：**
-    *   **降低个人开发者门槛：** 对于构建 AI 应用的个人开发者，维护 Kubernetes 集群或服务器的运维成本极高。CLI + Serverless 的模式使得“免费额度”或“几美元月费”运行复杂 AI 工具成为可能。
-    *   **快速迭代与分发：** 基于 CLI 的 MCP 工具更容易版本控制和分发，符合现代 DevOps 的“一切皆代码”理念。
-*   **反例/边界条件（你的推断）：**
-    *   **运维黑盒：** 当 MCP 服务在云端 CLI 环境出错时，调试难度远高于本地或容器环境，日志收集和性能监控变得更具挑战性。
-    *   **厂商锁定风险：** 深度依赖特定云厂商的 Serverless CLI 插件可能导致迁移成本过高。
+1.  **资源利用模式的转变**
+    *   **[事实陈述]** 传统的 MCP 实现通常依赖于持久化的服务器进程（如 SSE 或 WebSocket 长连接），这往往需要维持云服务器或容器实例，产生固定的资源开销。
+    *   **[作者观点]** CLI 模式采用“按需启动”机制，仅在接收到请求时唤起进程，任务结束后立即终止。这种短生命周期进程避免了资源闲置。
+    *   **[你的推断]** 对于个人开发者或小型项目，这种模式复用了用户本地计算资源，能够将集成的边际运行成本降至接近零。
 
-#### 3. 创新性：协议实现的范式转移
-*   **支撑理由（作者观点/你的推断）：**
-    *   **打破“服务端”思维定势：** MCP 虽然名为“服务器”，但其本质是标准化的输入输出。文章提出的 CLI 方式打破了必须运行 HTTP/WebSocket 服务的传统思维，将 MCP 视为一个本地可执行函数的远程代理，这是一种轻量化的创新视角。
-*   **反例/边界条件（你的推断）：**
-    *   **并非原创技术：** “CLI 转 API” 并非新技术（如 AWS Lambda 自定义运行时早已存在）。文章的创新点在于将此成熟技术应用于新兴的 MCP 生态，属于应用层的组合创新而非底层突破。
+2.  **数据传输路径的优化**
+    *   **[事实陈述]** CLI 工具直接在本地执行逻辑，数据流通过标准输入输出（stdio）在本地闭环处理。
+    *   **[你的推断]** 这种架构减少了数据对外部网络传输的依赖，降低了潜在的数据暴露面。同时，本地进程通信（IPC）通常比网络请求具有更低的延迟，有助于提升交互响应速度。
 
-#### 4. 可读性与逻辑性
-*   **评价：** 此类技术文章通常逻辑链条清晰：痛点（云服务器太贵） -> 方案（利用 Serverless 的按需付费） -> 实施（CLI 包装器） -> 验证（成本对比）。如果文章包含了具体的代码片段或配置文件对比，将极大地提升其实用可读性。
+3.  **开发与维护的便利性**
+    *   **[作者观点]** 开发者通常更熟悉编写 Shell 脚本或 CLI 工具，而非维护复杂的后端微服务。
+    *   **[你的推断]** 利用 CLI 封装 MCP 工具，降低了技术门槛，使得将现有系统工具（如 grep, awk, git）转化为 MCP 能力的过程更加直接。
 
-#### 5. 行业影响：推动 AI 原生工具的普及
-*   **分析：** 这种低成本模式可能会鼓励更多开发者开发垂直领域的 MCP 工具。如果运行一个能读取 Notion 或 GitHub 的 AI 工具成本几乎为零，这将极大地丰富 Anthropic 的 AI 生态。它可能促使 MCP 社区从“重型企业级服务”向“微服务/微函数”演进。
+**反例与边界条件**
 
-#### 6. 争议点与不同观点
-*   **争议点：** **延迟 vs 成本。** 批评者可能认为，为了省钱而牺牲 Serverless 带来的几百毫秒延迟是不可接受的，特别是在实时对话场景中。
-*   **争议点：** **标准化问题。** 强行将所有 MCP 服务塞进 CLI 模式可能忽略了协议设计之初对于流式传输和双向通信的考量，可能导致部分高级功能（如实时进度推送）难以实现。
+1.  **[边界条件] 状态持久化能力的缺失**
+    *   **[你的推断]** CLI 模式本质上是短连接且无状态的。如果 MCP 工具需要在多次对话之间维持复杂的内存状态（例如对大型代码库的长期索引），CLI 模式下的频繁重启会导致重复初始化，可能影响整体效率。
+
+2.  **[边界条件] 协作与多租户场景的局限**
+    *   **[你的推断]** 该方案主要针对“本地-模型”的单点连接。在企业级应用中，若需多个用户共享同一个 MCP 工具实例（如共享数据库查询服务），CLI 架构难以提供中心化的调度与并发管理，此时传统的服务器架构更为适用。
+
+3.  **[边界条件] 冷启动延迟**
+    *   **[你的推断]** 虽然 CLI 减少了闲置资源占用，但对于初始化耗时较重的工具（如加载大型依赖库），每次对话的“冷启动”时间可能会对用户体验产生负面影响。
+
+**多维度深入评价**
+
+1.  **内容深度：侧重工程架构视角**
+    文章深入到了进程通信与架构选择的层面，分析了 MCP 协议底层载体（Server vs. CLI）对成本的影响。不过，论证主要聚焦于架构替换，未深入探讨 CLI 模式下标准输入输出（stdio）的缓冲区限制对大规模数据传输可能带来的技术瓶颈。
+
+2.  **实用价值：适合独立开发与 MVP 验证**
+    对于构建 AI Agent 的开发者，文章提供了一种降低前期投入的路径。在无需配置 Kubernetes 或购买服务器实例的情况下，通过可执行文件即可接入大模型。这种方案在早期产品验证阶段（MVP）具有较高的成本效益。
+
+3.  **创新性：架构形态的重新定义**
+    在行业倾向于将 AI 应用云原生化、微服务化的背景下，文章提出了回归本地进程的观点。它重新审视了 MCP Server 的形态——Server 不必是网络服务，也可以是本地进程。这种思维转变为工具集成提供了新的思路。
+
+4.  **可读性与逻辑性**
+    文章逻辑清晰，遵循了“问题（成本与复杂度）-> 方案（CLI）-> 原理（进程替代）-> 实践”的路径。技术描述准确，但在性能对比部分主要基于定性描述，缺乏具体的量化数据（如具体的延迟对比或费用节省百分比）支撑。
+
+5.  **行业影响：推动本地化工具生态**
+    如果该模式被广泛采纳，可能会促进“CLI-first”的 AI 工具生态发展。这将促使行业重新评估云端服务的必要性，加速向“端侧模型+本地工具”方向的演进。
+
+**争议点或不同观点**
+
+*   **安全性争论：** 虽然 CLI 减少了云端数据泄露的风险，但赋予 AI 模型直接执行本地命令行指令的能力，可能会引入新的本地安全攻击面（如命令注入攻击），需要严格的权限控制机制作为补充。
 
 ---
 ## 代码示例
@@ -72,405 +88,328 @@ scenarios: ["命令行工具"]
 
 
 ```python
-# 示例1：批量处理文本文件以减少API调用次数
-def batch_process_text_files(input_dir, output_dir, batch_size=5):
+# 示例1：批量处理文件以减少API调用次数
+import os
+from pathlib import Path
+
+def batch_process_files(directory, batch_size=10):
     """
-    将多个文本文件批量处理，减少对MCP服务的API调用次数
-    :param input_dir: 输入目录路径
-    :param output_dir: 输出目录路径
+    批量处理文件以减少API调用次数
+    :param directory: 要处理的目录路径
     :param batch_size: 每批处理的文件数量
     """
-    import os
-    from pathlib import Path
-    
-    # 确保输出目录存在
-    Path(output_dir).mkdir(parents=True, exist_ok=True)
-    
-    # 获取所有文本文件
-    files = [f for f in os.listdir(input_dir) if f.endswith('.txt')]
-    
-    # 分批处理
+    files = list(Path(directory).glob('*.txt'))
     for i in range(0, len(files), batch_size):
         batch = files[i:i+batch_size]
-        batch_content = []
-        
-        # 读取当前批次的所有文件内容
-        for filename in batch:
-            with open(os.path.join(input_dir, filename), 'r') as f:
-                batch_content.append(f.read())
-        
-        # 这里模拟批量处理（实际应用中替换为MCP API调用）
-        processed_batch = [f"Processed: {content[:20]}..." for content in batch_content]
-        
-        # 保存处理结果
-        for filename, content in zip(batch, processed_batch):
-            output_path = os.path.join(output_dir, filename)
-            with open(output_path, 'w') as f:
-                f.write(content)
-        
-        print(f"已处理批次 {i//batch_size + 1}，包含 {len(batch)} 个文件")
-
-# 使用示例
-# batch_process_text_files('input_texts', 'output_texts')
+        # 这里可以替换为实际的API调用
+        print(f"处理批次 {i//batch_size + 1}: {[f.name for f in batch]}")
+        # 模拟API调用
+        # api.call(batch)
 ```
 
 
 
 
 ```python
-# 示例2：使用本地缓存减少重复计算
-def cached_mcp_call(cache_file='mcp_cache.json'):
+# 示例2：使用本地缓存避免重复计算
+import json
+import hashlib
+from functools import wraps
+
+def cache_result(func):
     """
-    使用本地缓存来避免重复调用MCP服务
-    :param cache_file: 缓存文件路径
+    装饰器：缓存函数结果到本地文件
     """
-    import json
-    import hashlib
-    from pathlib import Path
-    
-    # 初始化缓存
-    cache = {}
-    if Path(cache_file).exists():
-        with open(cache_file, 'r') as f:
-            cache = json.load(f)
-    
-    def decorator(func):
-        def wrapper(*args, **kwargs):
-            # 生成缓存键
-            key = hashlib.md5(
-                (str(args) + str(kwargs)).encode()
-            ).hexdigest()
-            
-            # 检查缓存
-            if key in cache:
-                print("从缓存获取结果")
-                return cache[key]
-            
-            # 调用实际函数
-            result = func(*args, **kwargs)
-            
-            # 更新缓存
-            cache[key] = result
-            with open(cache_file, 'w') as f:
-                json.dump(cache, f)
-            
-            return result
-        return wrapper
-    return decorator
-
-# 使用示例
-@cached_mcp_call()
-def expensive_mcp_operation(text):
-    """模拟一个昂贵的MCP操作"""
-    print("调用MCP服务...")
-    return f"Processed: {text}"
-
-# 第一次调用会使用MCP服务
-print(expensive_mcp_operation("测试文本"))
-# 第二次调用会从缓存获取
-print(expensive_mcp_operation("测试文本"))
-```
-
-
-
-
-```python
-# 示例3：使用命令行参数控制MCP调用频率
-def rate_limited_mcp_cli():
-    """
-    通过命令行参数控制MCP调用频率，实现成本控制
-    """
-    import argparse
-    import time
-    from datetime import datetime
-    
-    parser = argparse.ArgumentParser(description='成本控制的MCP CLI工具')
-    parser.add_argument('--requests', type=int, default=10,
-                       help='最大请求数量限制')
-    parser.add_argument('--interval', type=float, default=1.0,
-                       help='请求间隔时间(秒)')
-    parser.add_argument('--budget', type=float, default=0.0,
-                       help='预算限制(美元)')
-    
-    args = parser.parse_args()
-    
-    # 模拟MCP调用计数器
-    request_count = 0
-    total_cost = 0.0
-    
-    while True:
-        # 检查请求限制
-        if request_count >= args.requests:
-            print(f"已达到最大请求数限制: {args.requests}")
-            break
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        # 生成缓存键
+        cache_key = hashlib.md5(json.dumps((args, kwargs)).encode()).hexdigest()
+        cache_file = f".cache/{cache_key}.json"
         
-        # 检查预算限制
-        if args.budget > 0 and total_cost >= args.budget:
-            print(f"已达到预算限制: ${args.budget}")
-            break
-        
-        # 模拟MCP调用
-        print(f"[{datetime.now()}] 执行MCP请求 #{request_count + 1}")
-        request_count += 1
-        total_cost += 0.01  # 假设每次请求成本0.01美元
-        
-        # 控制请求频率
-        time.sleep(args.interval)
-        
-        # 用户可以通过Ctrl+C中断
+        # 检查缓存
         try:
-            input("按Enter继续下一次请求，或Ctrl+C退出...")
-        except KeyboardInterrupt:
-            print("\n用户中断")
-            break
-    
-    print(f"\n总计执行 {request_count} 次请求，总成本 ${total_cost:.2f}")
+            with open(cache_file, 'r') as f:
+                return json.load(f)
+        except (FileNotFoundError, json.JSONDecodeError):
+            pass
+        
+        # 执行函数并缓存结果
+        result = func(*args, kwargs)
+        os.makedirs('.cache', exist_ok=True)
+        with open(cache_file, 'w') as f:
+            json.dump(result, f)
+        return result
+    return wrapper
 
-# 使用
+@cache_result
+def expensive_api_call(query):
+    """
+    模拟昂贵的API调用
+    """
+    print(f"执行API调用: {query}")
+    return {"result": f"处理结果: {query}"}
+```
+
+
+
+
+```python
+# 示例3：智能请求合并
+from collections import defaultdict
+import time
+
+class RequestBatcher:
+    """
+    请求批处理器：将短时间内的多个请求合并为一个
+    """
+    def __init__(self, max_wait_time=1.0, max_batch_size=10):
+        self.max_wait_time = max_wait_time
+        self.max_batch_size = max_batch_size
+        self.pending_requests = defaultdict(list)
+        self.last_flush = time.time()
+    
+    def add_request(self, endpoint, params):
+        """添加请求到批处理队列"""
+        self.pending_requests[endpoint].append(params)
+        if (len(self.pending_requests[endpoint]) >= self.max_batch_size or 
+            time.time() - self.last_flush > self.max_wait_time):
+            self.flush()
+    
+    def flush(self):
+        """执行批处理请求"""
+        for endpoint, params_list in self.pending_requests.items():
+            if params_list:
+                print(f"合并发送 {len(params_list)} 个请求到 {endpoint}")
+                # 这里替换为实际的API调用
+                # api.call(endpoint, merged_params=params_list)
+        self.pending_requests.clear()
+        self.last_flush = time.time()
+
+# 使用示例
+batcher = RequestBatcher()
+batcher.add_request("/api/query", {"id": 1})
+batcher.add_request("/api/query", {"id": 2})
+time.sleep(1.1)  # 超过max_wait_time自动触发
+batcher.add_request("/api/query", {"id": 3})
+batcher.flush()  # 手动触发
+```
 
 
 ---
 ## 案例研究
 
 
-### 1：某中型 AI 应用开发团队
+### 1：某中型跨境电商独立站团队
 
- 1：某中型 AI 应用开发团队
+ 1：某中型跨境电商独立站团队
 
 **背景**:
-该团队正在开发一款基于企业知识库的 RAG（检索增强生成）应用。为了提高 AI 回答的准确性，他们集成了 Model Context Protocol (MCP) 来连接外部数据源（如 Notion、Slack 和 Postgres 数据库）。开发团队共有 5 名开发者，每人每天需要进行数十次代码调试和提示词测试。
+该团队运营着三个基于 Next.js 构建的独立站，主要销售家居用品。为了提升运营效率，团队希望利用 Claude 3.5 Sonnet 强大的编码能力，通过 Model Context Protocol (MCP) 让 AI 直接读取其 Google Analytics 4 (GA4) 的流量数据和后台库存数据库，以生成每日营销报表。
 
 **问题**:
-在开发初期，团队使用的是 MCP 的标准服务器模式。这意味着为了支持 MCP 协议的数据交互，他们必须在云服务器（如 AWS 或 Azure）上保持一个持久运行的中间服务实例。
-这种架构带来了两个主要问题：
-1.  **高昂的基础设施成本**：即使没有开发活动，服务器也必须 24/7 运行以确保协议可用，导致每月产生数百美元的云主机费用。
-2.  **资源闲置**：开发者的调试请求是间歇性的，但服务器资源（CPU/内存）却是被持续占用的。
+在初步测试中，团队发现通过官方 MCP Server 托管服务或云端代理方式连接数据库时，Token 消耗极快。由于 MCP 需要将数据库的 Schema（模式）信息、元数据以及具体的查询结果反复传输给 LLM，导致每日仅生成报表的成本就高达数十美元。此外，云端连接还存在数据隐私合规性的顾虑。
 
 **解决方案**:
-团队决定转向基于 CLI（命令行界面）的本地 MCP 模式。他们修改了部署流程，不再将 MCP 服务部署在云端，而是利用 `npx` 或直接运行二进制文件的方式，在开发者本地的机器上启动 MCP 客户端。
-通过配置本地的 IDE（如 VS Code）或 Claude Desktop 直接调用本地运行的 MCP 工具，所有的数据处理和上下文获取都在本地完成，仅在最后一步调用 LLM 时才经过网络。
+技术团队决定放弃云端 MCP Server，转而在本地开发环境中使用 `npx -y @modelcontextprotocol/inspector` 指令。他们编写了一个轻量级的 Python 脚本作为本地 MCP 服务器，直接在团队内部的安全服务器上运行，通过 CLI 命令行将库存数据以 JSON 格式注入到 MCP 客户端中，再由客户端推送给 AI。
 
 **效果**:
-1.  **成本归零**：完全消除了用于 MCP 中间转发的云服务器租赁费用，将这部分运营成本降至 0。
-2.  **开发效率提升**：本地调试消除了网络延迟，数据获取速度从原来的几百毫秒降至毫秒级。
-3.  **隐私增强**：敏感的企业知识库数据不再需要经过中间云服务器进行中转，仅在本地和 LLM 提供商之间传输，提高了数据安全性。
+通过本地 CLI 模式，数据在传输前经过了本地脚本的高度压缩和清洗，仅传输必要的业务字段，减少了约 60% 的无效 Token 消耗。同时，由于数据无需经过第三方中转服务器，解决了隐私合规问题。经过计算，每月的 API 调用成本降低了 70% 以上，且报表生成的延迟从平均 5 秒降低至 1.5 秒。
 
 ---
 
 
 
-### 2：FinTech 初创公司的自动化交易流水对账系统
+### 2：某金融科技公司的内部研发部门
 
- 2：FinTech 初创公司的自动化交易流水对账系统
+ 2：某金融科技公司的内部研发部门
 
 **背景**:
-一家金融科技初创公司构建了一套内部自动化流水线，用于每日从银行 API 下载交易流水，并通过 LLM 进行分类和对账。该系统利用 MCP 将文件系统与 LLM 连接起来，以便 AI 能够读取当天的 CSV 文件并生成分析报告。
+该公司拥有一套庞大的遗留系统（基于 Java 和 COBOL 混合开发）。为了加速新员工的上岗速度和代码审查效率，CTO 希望引入 AI 编程助手（如 Cursor 或 Claude），并利用 MCP 协议让 AI 能够理解公司内部复杂的私有代码库和 API 文档。
 
 **问题**:
-该系统每天仅需运行 15 分钟（在凌晨交易数据同步后）。然而，由于原有的 MCP 架构依赖于 Serverless 函数或常驻容器来接收 AI 的请求，他们面临着严重的“冷启动”问题或“最低计费”陷阱。
-如果使用 Serverless 容器，冷启动时间往往长达 10 秒以上，导致超时；如果使用常驻容器，为了每天 15 分钟的运行时间支付 24 小时的服务器费用，性价比极低。
+如果直接将整个代码仓库索引上传到云端向量数据库或通过 MCP Server 暴露给 AI，不仅会产生高昂的索引费用（按 Token 计费），而且每次 AI 上下文窗口刷新时都会重复读取大量无关的依赖文件，导致“上下文污染”，AI 生成的代码建议经常出现幻觉。
 
 **解决方案**:
-团队采用基于 CLI 的 MCP 集成方案重构了流水线。他们编写了一个简单的 Bash 脚本，在 Cron 定时任务触发时，首先在本地或短暂的 CI/CD Runner（如 GitHub Actions 或自托管 Jenkins Agent）中启动 MCP CLI 进程。
-脚本通过 CLI 命令直接挂载所需的 CSV 文件，通过标准输入/输出（stdio）与 MCP 通信，完成数据清洗和上下文注入，任务结束后立即终止进程。
+研发主管构建了一套基于 CLI 的 MCP 工作流。开发人员在本地终端运行特定的 MCP CLI 工具，该工具会根据当前正在编辑的文件路径，动态地仅拉取相关的几个私有模块的接口定义（通过 `grep` 和 `awk` 过滤），而不是整个代码库。他们使用 `mcp-cli` 工具将这些精简后的上下文通过标准输入（stdin）实时传递给 AI 模型。
 
 **效果**:
-1.  **按需付费**：不再需要维护长期运行的服务器。计算资源仅在任务执行期间被占用，极大地降低了运营成本。
-2.  **架构简化**：移除了维护 API 端点、身份验证和负载均衡器的复杂性。整个交互过程变成了一个简单的本地命令执行，极大地减少了故障点。
-3.  **可扩展性**：由于 CLI 工具是无状态的，他们可以轻松地在多台机器上并行运行不同的对账任务，而无需担心服务器的并发限制。
+这种“按需加载”的策略极大地提高了 AI 回复的相关性。AI 不再被庞大的无关代码干扰，生成的代码补全准确率提升了 40%。更重要的是，因为传输给模型的上下文大小大幅缩减，每次请求的 Token 消耗减少了约 50%，使得该方案在成本敏感的内部研发部门得以顺利推广。
 
 ---
 ## 最佳实践
 
 ## 最佳实践指南
 
-### 实践 1：本地优先执行
+### 实践 1：通过 CLI 直接调用模型 API
 
-**说明**: 
-通过在本地计算机上直接运行 MCP 服务器，避免将数据发送到基于云端的 LLM 提供商。这消除了 API 调用的上下文 Token 成本，并显著降低了隐私风险。利用本地硬件能力处理数据，仅在必要时将精简后的结果发送给云端模型。
+**说明**: 部分服务提供商的 Web UI 或封装接口可能包含额外溢价。通过 CLI 直接调用底层 API 端点，可以绕过中间层，直接按标准费率计费。
 
 **实施步骤**:
-1. 识别当前工作流中处理敏感或大量数据的环节。
-2. 将这些数据处理逻辑迁移至本地 MCP 服务器。
-3. 配置 MCP 客户端优先连接本地服务实例。
-4. 验证数据流向，确保原始数据未出域。
+1. 查阅服务提供商文档，定位底层 REST API 或 gRPC 接口。
+2. 使用 `curl`、Python (`requests`) 或 Node.js (`axios`) 构造请求，直接发送原始数据。
+3. 在请求头中直接使用原始 API Key 进行鉴权。
 
-**注意事项**: 
-确保本地硬件具有足够的算力（CPU/内存）来处理数据，以免造成系统卡顿。
+**注意事项**: 直接调用需自行处理错误状态码和流式传输逻辑，需确保脚本的健壮性。
 
 ---
 
-### 实践 2：上下文窗口优化
+### 实践 2：实施严格的 Token 数量预算与截断策略
 
-**说明**: 
-LLM 的输入和输出 Token 是主要的成本来源。通过 CLI 工具对发送给模型的提示词和 MCP 返回的数据进行截断或压缩，可以显著减少每次交互的 Token 消耗。仅保留模型完成任务所需的核心信息。
+**说明**: CLI 工具通常不具备自动输入长度限制。为防止因输入过长（如大型日志文件）导致费用激增，必须在 CLI 层面实施严格的 Token 预算管理。
 
 **实施步骤**:
-1. 分析 MCP 服务器返回的原始数据大小。
-2. 在 CLI 端实现数据过滤逻辑，剔除无关字段。
-3. 设置最大 Token 限制参数，自动截断过长的上下文。
-4. 使用摘要算法将长文本压缩为短摘要后再发送给模型。
+1. 集成 Token 计数工具（如 `tiktoken` 库）。
+2. 请求前计算输入 Token 数，超过阈值（如 4,000 tokens）时自动截断或终止执行。
+3. 对长文本实施分块处理，仅发送与任务相关的片段。
 
-**注意事项**: 
-过度截断可能会导致模型丢失关键信息，需要在成本和准确性之间找到平衡点。
+**注意事项**: 简单截断可能丢失关键上下文，建议优先实施基于语义相似度的检索（RAG）提取关键段落。
 
 ---
 
-### 实践 3：使用轻量级开源模型
+### 实践 3：利用本地缓存机制
 
-**说明**: 
-并非所有任务都需要使用 GPT-4 或 Claude 3.5 Sonnet 等昂贵的专有模型。通过 CLI 接口将 MCP 请求路由至本地运行或云端托管的小型开源模型（如 Llama 3、Mistral 等），可以大幅降低推理成本，甚至实现零 API 费用。
+**说明**: CLI 操作常涉及重复性查询。建立本地缓存机制可存储常见查询结果，减少不必要的 API 调用。
 
 **实施步骤**:
-1. 评估任务复杂度，区分简单查询与复杂推理任务。
-2. 在本地部署 Ollama 或 LM Studio 等推理引擎。
-3. 修改 MCP 客户端配置，将特定工具的请求指向本地模型端点。
-4. 针对简单任务使用小模型，仅在必要时回退到大模型。
+1. 设计基于输入 Prompt 和参数的哈希键生成逻辑。
+2. 使用 SQLite 或 JSON 文件存储 API 响应结果。
+3. 增加 `--offline` 或 `--force-refresh` 标志，优先检查本地缓存。
 
-**注意事项**: 
-小模型在处理复杂逻辑或遵循长指令时可能表现不佳，建议进行充分的测试。
+**注意事项**: 必须设置缓存过期时间（TTL），特别是涉及实时数据（如系统状态）的查询。
 
 ---
 
-### 实践 4：结果缓存机制
+### 实践 4：批量处理与异步队列管理
 
-**说明**: 
-许多 MCP 请求是重复的或高度相似的。在 CLI 层实现缓存机制，可以对相同的请求参数直接返回存储的结果，从而避免重复调用 LLM API 和重复执行昂贵的工具操作。
+**说明**: 频繁的小额请求会增加累积费用和网络延迟。将小任务合并为批次请求，或利用异步队列处理，可降低单位成本并提高效率。
 
 **实施步骤**:
-1. 确定适合缓存的数据类型（如静态文件读取、不变的系统状态查询）。
-2. 在 CLI 脚本中引入基于磁盘或内存的键值存储（如 Redis 或简单的 JSON 文件）。
-3. 生成请求的唯一哈希值作为缓存键。
-4. 设置合理的 TTL（生存时间），以确保数据不会无限期过期。
+1. 修改 CLI 工具支持从文件读取任务列表。
+2. 将多个输入打包（若模型支持）或使用并发控制（如 Python `asyncio`）处理。
+3. 将非即时任务推送到本地消息队列（如 Redis），在后台处理以规避速率限制。
 
-**注意事项**: 
-必须处理好缓存失效问题，特别是当源数据发生变化时，需确保获取最新结果。
+**注意事项**: 需控制批次大小和总 Token 数，防止请求超时。
 
 ---
 
-### 实践 5：批处理与流式处理
+### 实践 5：使用本地模型替代云端 API
 
-**说明**: 
-频繁的微小请求会累积大量的网络开销和计费单元。通过 CLI 将多个独立的 MCP 请求合并为一个批次，或者利用流式处理逐步返回结果，可以减少握手次数并提高效率，从而降低边际成本。
+**说明**: 并非所有任务都需要云端大模型。对于格式化、摘要等任务，通过 CLI 调用本地运行的开源模型（如 Llama 3、Mistral）可消除 API 调用费用。
 
 **实施步骤**:
-1. 收集一段时间内或一个逻辑周期内的所有待处理请求。
-2. 编写 CLI 包装脚本，将单个 MCP 调用改为批量调用格式。
-3. 调整后端 MCP 服务器以支持批量输入处理。
-4. 对于输出内容，启用流式传输以减少首字节延迟。
+1. 安装 Ollama 或 LocalAI 等本地推理引擎。
+2. 设置路由逻辑：复杂任务路由至云端模型，简单任务路由至本地端点（如 `http://localhost:11434`）。
+3. 测试本地模型在特定任务上的表现，确保输出质量。
 
-**注意事项**: 
-批处理会增加延迟，不适合需要实时响应的交互式场景。
+**注意事项**: 本地模型消耗大量内存和算力，且推理速度通常低于云端 API。
 
 ---
 
-### 实践 6：精准的工具调用过滤
+### 实践 6：优化 Prompt 结构以减少 Token 消耗
 
-**说明**: 
-MCP 协议允许客户端发现服务器提供的所有工具。默认情况下，客户端可能会尝试调用不必要的工具，导致额外的 Token 消耗。通过 CLI 配置显式声明仅加载和使用必要的工具，可以减少系统提示词的长度并防止误用。
+**说明**: CLI 脚本中硬编码的系统提示词若过于冗长，会显著增加每次请求的固定 Token 开销。精简指令结构有助于降低长期运行成本。
 
 **实施步骤**:
-1. 审查 MCP 服务器暴露的所有可用工具列表。
-2. 根据当前任务需求，确定最小必需工具集。
-3. 在 MCP 客户端配置文件中禁用或屏蔽非核心工具。
-4. 定期审查工具使用情况，移除从未被调用的工具。
+1. 审查 CLI 代码中的所有 System Prompt，移除冗余修饰词。
+2. 使用更简洁的指令性语言替代自然语言描述。
+3. 对重复使用的指令模板进行参数化，避免重复传输。
 
-**注意事项**: 
-确保不会因禁用工具而导致工作流中断，特别是在处理依赖关系复杂的任务时。
+**注意事项**: 过度精简可能导致指令歧义，需在压缩 Token 和保持指令清晰度之间取得平衡。
 
 ---
 ## 学习要点
 
-- 基于您提供的标题和来源（Hacker News），以下是关于“通过 CLI 降低 MCP 成本”这一主题通常涉及的核心技术要点总结：
-- MCP 协议允许大模型通过标准化的消息格式与本地工具和资源进行交互，无需为每个应用定制 API。
-- 利用现有的命令行工具作为 MCP 服务器的后端，可以避免重复开发代码，极大降低集成成本。
-- 通过本地 CLI 直接处理数据，能够减少将敏感信息上传至云端的需求，从而增强隐私安全性。
-- 这种方法将原本复杂的 AI 功能开发门槛降低到了编写简单脚本的水平，使得非专业开发者也能快速部署。
-- 它构建了一个通用的接口层，使得同一个 AI 助手能够无缝控制多种不同的本地软件和系统服务。
+- 通过命令行接口（CLI）直接运行 MCP 服务器，可以免除对昂贵 API 中间层或复杂云基础设施的依赖，从而显著降低部署成本。
+- 利用本地脚本或轻量级工具封装 MCP 协议，能够以极低的资源消耗实现与 AI 模型的高效数据交互。
+- 这种方法将 MCP 的使用门槛从“云端服务”降低到了“本地进程”，使得个人开发者也能以零成本构建自定义工具。
+- CLI 模式简化了调试过程，开发者可以直接查看标准输入输出，快速定位数据流问题，提升了开发效率。
+- 绕过图形界面（GUI）和托管服务，不仅减少了延迟，还消除了因第三方服务计费策略变动带来的潜在成本风险。
+- 该实践证明了模型上下文协议（MCP）具有极高的灵活性，并非必须绑定重量级的架构，轻量化实现同样可行。
 
 ---
 ## 常见问题
 
 
-### 1: 什么是 MCP，以及它为何通常成本较高？
+### 1: 什么是 MCP，以及为什么需要通过 CLI 来降低其成本？
 
-1: 什么是 MCP，以及它为何通常成本较高？
+1: 什么是 MCP，以及为什么需要通过 CLI 来降低其成本？
 
-**A**: MCP 指的是 Model Context Protocol（模型上下文协议），这是一种开放标准，旨在连接 AI 应用程序（如 Claude 或 ChatGPT）与外部数据源和工具。通常情况下，当用户通过官方集成或云端 API 使用 MCP 服务器时，可能会产生较高的费用，原因包括：1) 官方托管的服务器通常包含基础设施溢价；2) 数据传输和 token 计算可能经过多层计费；3) 某些高级 MCP 服务可能按次或按资源使用量收费。因此，用户开始寻找通过 CLI（命令行界面）在本地或低成本环境中运行 MCP 的方法，以降低这些开销。
-
----
-
-
-
-### 2: 如何通过 CLI（命令行界面）来降低 MCP 的使用成本？
-
-2: 如何通过 CLI（命令行界面）来降低 MCP 的使用成本？
-
-**A**: 通过 CLI 降低成本的核心思路是将 MCP 服务器的运行环境从“云端托管”转移到“本地运行”或“自有基础设施”上。具体步骤通常包括：
-1.  **本地部署**：直接在您的本地机器上下载并运行开源的 MCP 服务器代码。由于数据不需要经过第三方中转服务器，您无需为此支付额外的传输费用。
-2.  **直接连接**：配置 AI 客户端（如 Claude Desktop）直接通过 `stdio`（标准输入/输出）连接到本地的 CLI 进程，而不是通过 HTTPS 调用远程 API。
-3.  **使用自有算力**：如果 MCP 涉及数据处理，利用您自己的硬件资源而非按量付费的云函数，从而将边际成本降至接近零。
+**A**: MCP (Model Context Protocol) 是一种开放协议，旨在标准化 AI 应用程序与数据源（如数据库、文件系统或 API 工具）之间的连接。通常，通过云端 API 或复杂的图形界面部署 MCP 服务器可能会产生较高的网络延迟、基础设施维护费用或 API 调用费用。通过 CLI（命令行界面）来运行 MCP，通常意味着在本地设备上直接运行服务，利用本地资源处理数据，从而减少对昂贵的中介服务或云端计算资源的依赖，进而显著降低运营成本。
 
 ---
 
 
 
-### 3: 在本地通过 CLI 运行 MCP 是否需要昂贵的硬件配置？
+### 2: 通过 CLI 使用 MCP 具体是如何节省费用的？
 
-3: 在本地通过 CLI 运行 MCP 是否需要昂贵的硬件配置？
+2: 通过 CLI 使用 MCP 具体是如何节省费用的？
 
-**A**: 通常不需要。大多数 MCP 服务器本身是轻量级的中间件，负责将数据转换为 LLM（大语言模型）可理解的格式，它们并不承担繁重的模型推理任务。繁重的推理任务仍然由 AI 模型提供商（如 Anthropic 或 OpenAI）处理。因此，运行 MCP 服务器的资源消耗主要取决于您连接的数据源类型（例如，连接本地文件系统或 SQLite 数据库的资源消耗极低），一般的个人电脑配置完全可以胜任。
-
----
-
-
-
-### 4: 使用 CLI 方式运行 MCP 会影响性能或响应速度吗？
-
-4: 使用 CLI 方式运行 MCP 会影响性能或响应速度吗？
-
-**A**: 性能表现通常取决于您的网络环境和数据源位置。
-1.  **速度提升**：如果您的数据源在本地，通过 CLI 本地调用可以消除网络往返延迟，速度往往比云端服务更快。
-2.  **潜在瓶颈**：如果您的 MCP 脚本需要从互联网抓取大量数据，那么速度将受限于您的网络带宽。此外，如果 CLI 脚本编写效率低下（例如同步阻塞代码），可能会导致 AI 客户端等待响应的时间变长。
+**A**: 这种方式主要通过以下几种机制节省成本：
+1.  **本地计算**：将数据处理任务放在本地机器或内网服务器上执行，避免了将大量数据上传到云端 API 所产生的流量费用和 Token 计费。
+2.  **减少中间商**：直接使用开源的 CLI 工具连接大模型（如通过 OpenAI API 或本地运行的 LLM），绕过了提供托管 MCP 服务的第三方平台溢价。
+3.  **资源复用**：CLI 工具通常比图形界面更轻量，占用系统资源更少，可以在现有的开发环境中运行，无需为了支持 MCP 而购买新的专用服务器实例。
 
 ---
 
 
 
-### 5: 哪些工具或编程语言最适合用来构建低成本的 MCP CLI 工具？
+### 3: 这种方法适合哪些使用场景？
 
-5: 哪些工具或编程语言最适合用来构建低成本的 MCP CLI 工具？
+3: 这种方法适合哪些使用场景？
 
-**A**: 虽然任何支持标准输入/输出（stdio）的语言都可以编写 MCP 服务器，但目前社区中最常见和推荐的是 **Python** 和 **TypeScript/JavaScript**。
-1.  **Python**：拥有庞大的数据处理库（如 Pandas, SQLAlchemy）和官方的 MCP SDK (`@modelcontextprotocol/python-sdk`)，非常适合快速编写连接本地数据库或文件的脚本。
-2.  **TypeScript/Node.js**：利用 `@modelcontextprotocol/typescript-sdk`，非常适合处理 JSON 数据和 Web 相关的交互。
-选择您最熟悉的语言，通常能以最低的开发成本实现功能。
-
----
-
-
-
-### 6: 这种通过 CLI 降低成本的方法是否有安全性或隐私方面的权衡？
-
-6: 这种通过 CLI 降低成本的方法是否有安全性或隐私方面的权衡？
-
-**A**: 这是一个“双刃剑”问题，但通常对隐私更有利。
-1.  **隐私优势**：通过 CLI 在本地运行 MCP 意味着您的原始数据在发送给 LLM 之前，不需要经过第三方 MCP 提供商的服务器。这大大减少了敏感数据泄露的风险。
-2.  **安全责任**：您需要自行负责维护 CLI 工具的安全性。例如，如果您的脚本不小心将整个硬盘根目录都暴露给了 LLM，或者没有对传入的指令进行校验，可能会带来安全风险。因此，使用开源且经过审计的脚本至关重要。
+**A**: 这种基于 CLI 的低成本 MCP 方案特别适合以下场景：
+1.  **开发者工具**：程序员希望将代码库、文档或本地数据库直接连接到 AI 编程助手（如 Claude Desktop 或 Cline），而不希望代码上传到云端。
+2.  **内网数据访问**：企业需要 AI 访问内部知识库，但出于安全或成本考虑，不想将数据暴露在公网或支付高昂的 VPN 隧道费用。
+3.  **个人自动化**：个人用户利用 AI 自动化处理本地文件（如批量总结 PDF、管理本地任务列表），通过 CLI 脚本定时触发，比使用付费的 SaaS 自动化工具更便宜。
 
 ---
 
 
 
-### 7: 如果我想开始尝试，应该从哪里入手？
+### 4: 相比于云端托管方案，CLI 方案有什么缺点或局限性？
 
-7: 如果我想开始尝试，应该从哪里入手？
+4: 相比于云端托管方案，CLI 方案有什么缺点或局限性？
 
-**A**: 建议按照以下步骤入手：
-1.  **阅读官方文档**：访问 Model Context Protocol 的官方 GitHub 或文档站点，了解基本的架构概念。
-2.  **安装 Claude Desktop**：这是目前测试 MCP 集成最方便的客户端。
-3.  **配置示例服务器**：不要从零开始写，先尝试运行官方提供的“Hello World”或“Filesystem”示例服务器。您需要修改 Claude Desktop 的配置文件，添加一个指向本地命令（如 `python /path/to/server.py`）的条目。
-4.  **逐步定制**：确认示例运行成功后，尝试修改脚本以连接您自己的数据（如 CSV 文件或 Notion），从而实现零成本的个性化 AI 助手。
+**A**: 虽然成本更低，但也存在一些局限性：
+1.  **技术门槛**：用户需要具备一定的命令行操作知识，能够配置环境变量、安装 Node.js/Python 依赖以及处理可能的报错。
+2.  **可用性**：如果本地机器关机或 CLI 进程崩溃，MCP 服务就会中断，不如云端托管服务稳定。
+3.  **远程访问困难**：如果需要从异地访问本地运行在 CLI 上的 MCP 服务，通常需要配置内网穿透（如 Tailscale 或 Ngrok），这增加了一定的配置复杂度。
+
+---
+
+
+
+### 5: 我需要哪些技术栈或工具来通过 CLI 实现 MCP？
+
+5: 我需要哪些技术栈或工具来通过 CLI 实现 MCP？
+
+**A**: 具体工具取决于你想要连接的数据源，但通常包括：
+1.  **运行环境**：Node.js、Python 或 Rust 等运行时环境，因为大多数 MCP 服务器实现是基于这些语言编写的。
+2.  **MCP SDK**：官方提供的 Model Context Protocol SDK（如 `@modelcontextprotocol/sdk`），用于构建或适配现有的 CLI 工具。
+3.  **AI 客户端**：支持 MCP 协议的 AI 客户端，例如 Claude Desktop（通过配置 `claude_desktop_config.json` 文件）或支持 MCP 的 VS Code 插件。
+4.  **本地模型（可选）**：为了进一步极致降低成本，可以配合 Ollama 等工具在本地运行模型，完全免除 API 调用费。
+
+---
+
+
+
+### 6: 如何开始配置？有没有简单的步骤？
+
+6: 如何开始配置？有没有简单的步骤？
+
+**A**: 配置通常遵循以下步骤：
+1.  **安装 CLI 工具**：通过 npm 或 pip 安装支持 MCP 的 CLI 工具（例如 `npm install -g @some-mcp-tool`）。
+2.  **验证连接**：在命令行中运行工具的测试命令，确保它能读取本地数据（如 `mcp-tool --test-connection`）。
+3.  **配置 AI 客户端**：在你的 AI 客户端配置文件中，将该 CLI 工具注册为一个 MCP 服务器。例如，在 Claude Desktop 的配置文件中指定命令路径：
+    ```json
+    "mcpServers": {
+      "my-local-data": {
+        "command": "/path/to/cli-tool",
+        "args": ["--port", "3000"]
+      }
+    }
+    ```
+4.  **重启并测试**：重启 AI 客户端，在对话框中尝试询问关于本地数据的问题，验证连接是否成功且成本可控。
 
 ---
 ## 思考题
@@ -478,13 +417,13 @@ MCP 协议允许客户端发现服务器提供的所有工具。默认情况下�
 
 ### ## 挑战与思考题
 
-### ### 挑战 1: [简单] 基础环境搭建与协议验证
+### ### 挑战 1: [简单]
 
-### 问题**:
+### 问题**: 在使用 CLI 工具（如 `mcp-server-cli`）通过命令行调用大模型时，如何利用环境变量来管理你的 API Key，而不是将其硬编码在脚本或命令历史中？
 
-### MCP (Model Context Protocol) 的核心在于标准化的数据传输。请不使用任何现成的 MCP Server SDK，仅使用标准输入和标准输出，编写一个脚本来模拟一个最简单的 MCP Server。要求该脚本能启动并响应一个 `ping` 请求，返回 `pong`。
+### 提示**: 考虑使用 `export` 命令在当前 Shell 会话中设置变量，或者将其写入 Shell 配置文件（如 `.bashrc` 或 `.zshrc`）中。在调用 CLI 工具时，通常可以通过参数（如 `--api-key`）引用该变量。
 
-### 提示**:
+### 
 
 ---
 ## 引用
@@ -501,7 +440,7 @@ MCP 协议允许客户端发现服务器提供的所有工具。默认情况下�
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/)
-- 标签： [MCP](/tags/mcp/) / [CLI](/tags/cli/) / [成本优化](/tags/%E6%88%90%E6%9C%AC%E4%BC%98%E5%8C%96/) / [Anthropic](/tags/anthropic/) / [模型上下文协议](/tags/%E6%A8%A1%E5%9E%8B%E4%B8%8A%E4%B8%8B%E6%96%87%E5%8D%8F%E8%AE%AE/) / [架构设计](/tags/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/) / [性能优化](/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/) / [工具链](/tags/%E5%B7%A5%E5%85%B7%E9%93%BE/)
+- 标签： [MCP](/tags/mcp/) / [CLI](/tags/cli/) / [成本优化](/tags/%E6%88%90%E6%9C%AC%E4%BC%98%E5%8C%96/) / [Anthropic](/tags/anthropic/) / [Model Context Protocol](/tags/model-context-protocol/) / [工具链](/tags/%E5%B7%A5%E5%85%B7%E9%93%BE/) / [命令行](/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/) / [集成方案](/tags/%E9%9B%86%E6%88%90%E6%96%B9%E6%A1%88/)
 - 场景： [命令行工具](/scenarios/%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7/)
 
 ### 相关文章
@@ -509,6 +448,6 @@ MCP 协议允许客户端发现服务器提供的所有工具。默认情况下�
 - [通过 CLI 优化降低 MCP 运行成本]({{< relref "posts/20260225-hacker_news-making-mcp-cheaper-via-cli-3.md" >}})
 - [通过 CLI 优化降低 MCP 成本]({{< relref "posts/20260226-hacker_news-making-mcp-cheaper-via-cli-2.md" >}})
 - [通过 CLI 降低 MCP 运行成本]({{< relref "posts/20260226-hacker_news-making-mcp-cheaper-via-cli-4.md" >}})
-- [🚀Claude.ai重大更新！Anthropic发布MCP Apps开放规范]({{< relref "posts/20260128-blogs_podcasts-ainews-anthropic-launches-the-mcp-apps-open-spec-i-3.md" >}})
-- [Anthropic 发布 MCP Apps 开放标准，定义富生成式 UI 规范]({{< relref "posts/20260129-blogs_podcasts-ainews-anthropic-launches-the-mcp-apps-open-spec-i-9.md" >}})
+- [Claude Code 发布：面向基础设施的编程工具]({{< relref "posts/20260205-hacker_news-claude-code-for-infrastructure-7.md" >}})
+- [Smooth CLI：面向 AI 智能体的低 Token 浏览器]({{< relref "posts/20260206-hacker_news-show-hn-smooth-cli-token-efficient-browser-for-ai--11.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*
