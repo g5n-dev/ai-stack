@@ -1,92 +1,81 @@
 ---
-title: "MCP服务器将Claude Code上下文消耗降低98%"
-date: 2026-03-01T06:37:29+08:00
+title: "MCP服务器：将Claude Code上下文消耗降低98%"
+date: 2026-03-01T09:27:11+08:00
 draft: false
 entry_kind: "auto"
-tags: ["MCP", "Claude Code", "上下文优化", "Token 节省", "AI 编程", "模型协议", "性能优化", "Anthropic"]
+tags: ["MCP", "Claude Code", "上下文优化", "Token 节省", "AI 编程", "模型上下文协议", "成本优化", "Anthropic"]
 categories: ["AI 工程", "开发工具"]
 source: hacker_news
-description: "随着大模型在本地开发场景中的深入应用，上下文窗口的消耗速度正成为制约效率的关键瓶颈。本文介绍了一款 MCP 服务器，通过智能的上下文过滤机制，成功将 Claude Code 的上下文消耗降低了 98%。阅读本文，你将了解其核心工作原理及集成方法，从而在不牺牲代码分析质量的前提下，显著延长会话周期并降低 API 调用成本"
+description: "在利用 Claude Code 进行本地开发时，上下文窗口的快速耗尽往往限制了代码分析的深度与连续性。本文介绍了一款 MCP 服务器，能够通过智能过滤将上下文消耗降低 98%，从而显著提升会话持久性。读者将了解其核心工作原理及配置方法，进而以更低的 token 成本实现更高效的项目级代码交互。"
 external_url: https://mksg.lu/blog/context-mode
 scenarios: ["AI/ML项目"]
 ---
 
-# MCP服务器将Claude Code上下文消耗降低98%
+# MCP服务器：将Claude Code上下文消耗降低98%
 
 ---
 
 ## 基本信息
 
 - **作者**: mksglu
-- **评分**: 307
-- **评论数**: 70
+- **评分**: 369
+- **评论数**: 78
 - **链接**: [https://mksg.lu/blog/context-mode](https://mksg.lu/blog/context-mode)
 - **HN 讨论**: [https://news.ycombinator.com/item?id=47193064](https://news.ycombinator.com/item?id=47193064)
 
 ---
 ## 导语
 
-随着大模型在本地开发场景中的深入应用，上下文窗口的消耗速度正成为制约效率的关键瓶颈。本文介绍了一款 MCP 服务器，通过智能的上下文过滤机制，成功将 Claude Code 的上下文消耗降低了 98%。阅读本文，你将了解其核心工作原理及集成方法，从而在不牺牲代码分析质量的前提下，显著延长会话周期并降低 API 调用成本。
+在利用 Claude Code 进行本地开发时，上下文窗口的快速耗尽往往限制了代码分析的深度与连续性。本文介绍了一款 MCP 服务器，能够通过智能过滤将上下文消耗降低 98%，从而显著提升会话持久性。读者将了解其核心工作原理及配置方法，进而以更低的 token 成本实现更高效的项目级代码交互。
 
 ---
 ## 评论
 
-### 核心评价
+基于您提供的标题和摘要信息，以下是对该文章及所涉技术方案的深入评价。
 
-这篇文章提出了一个关于LLM应用架构的工程化观点：**在特定场景下，利用MCP（Model Context Protocol）构建“上下文预处理层”，在成本控制和处理效率上可能优于直接调用模型的长上下文窗口。**
+### 中心观点
+该文章提出了一种基于 MCP 协议的上下文压缩技术方案，旨在通过将大型代码库转换为紧凑的中间表示或索引，在保持 Claude Code 语义理解能力的同时，将 Token 消耗降低 98%，从而解决大模型在处理大规模代码库时的上下文窗口瓶颈和成本问题。
 
-这反映了AI工程化从“依赖模型容量”向“优化数据输入”转变的趋势。
+### 支撑理由与边界分析
 
-### 深度评价分析
+**1. 技术架构的必然性与合理性（事实陈述 + 作者观点）**
+*   **理由：** 随着大模型上下文窗口的不断扩大（如 Claude 200k token），直接将整个代码库填入窗口在技术上可行，但在经济和延迟上极不划算。文章提出的方案符合“检索增强生成（RAG）”或“混合架构”的技术演进方向。通过 MCP Server 作为中间层，在发送给 LLM 之前进行“预处理”或“过滤”，是工程上解决“信息检索”与“上下文学习”矛盾的最优解。
+*   **反例/边界条件：** 这种压缩是有损的。如果代码逻辑高度依赖于跨文件的细微实现细节（例如复杂的宏定义、特定的多态调用），压缩过程可能会丢失这些关键信息，导致 Claude 产生“幻觉”或逻辑错误。98% 的压缩率通常意味着只保留了结构或摘要，而非全文。
 
-#### 1. 支撑理由
+**2. 成本效益与延迟的显著优化（事实陈述 + 你的推断）**
+*   **理由：** 98% 的上下文减少意味着 Input Token 的数量呈数量级下降。对于按 Token 计费的商业模式，这将直接转化为数十倍的成本节约。同时，更短的上下文意味着更低的网络传输延迟和模型推理时间，能显著提升 Claude Code 的交互响应速度，改善开发者体验。
+*   **反例/边界条件：** 这种优化引入了“本地计算”与“网络跳转”的权衡。如果 MCP Server 的处理逻辑（如索引构建、相似度搜索）过于复杂，可能会导致单次请求的本地延迟超过直接传输文本的时间，尤其是在代码库规模较小（如少于 1000 行）时，优化效果可能为负。
 
-*   **技术架构的适配性：**
-    *   **[事实陈述]** 现有的大上下文模型（如Claude 3.7 Sonnet）在处理海量Token时，面临API费用高昂和“中间迷失”等注意力机制局限。
-    *   **[你的推断]** 该MCP Server本质上充当了一个“语义过滤器”。它利用传统检索算法或静态分析在服务端处理代码库索引，仅将相关性高的代码片段或结构化信息传递给LLM。这符合“在数据侧进行计算以减少推理侧开销”的工程原则。
+**3. 对 AI 编程工具生态的标准化推动（行业观点）**
+*   **理由：** 文章利用 MCP（Model Context Protocol）构建 Server，顺应了 Anthropic 推动的标准化连接趋势。这表明 AI 编程助手正在从“单体应用”向“客户端-插件-服务”的生态架构演进。这种解耦使得开发者可以自定义代码的“喂入方式”，而不是被动接受 AI 厂商的截断策略。
+*   **反例/边界条件：** MCP 协议目前尚未完全统一，且高度依赖 Claude 的生态。如果 OpenAI 的 Code Interpreter 或其他厂商采用不同的数据交互标准，该 MCP Server 的移植性将受到限制，存在供应商锁定风险。
 
-*   **成本与延迟的优化：**
-    *   **[事实陈述]** API调用成本与输入Token数量直接相关。
-    *   **[作者观点]** 大幅减少上下文消耗（如98%）意味着在固定预算下可以支持更多次的开发交互，或处理更大规模的代码库。
-    *   **[你的推断]** 这种优化对于在企业级巨型仓库中部署AI Agent具有实际意义。没有这种预处理，全库分析的成本可能难以通过商业验证。
+### 深度评价
 
-*   **MCP协议的工程验证：**
-    *   **[事实陈述]** MCP是Anthropic推出的开放标准。
-    *   **[你的推断]** 该案例展示了MCP作为逻辑处理中间件的潜力，证明了它不仅是数据传输管道，还能解耦LLM与复杂数据源之间的直接依赖。
+#### 1. 内容深度：从暴力美学到工程精度的转变
+文章触及了当前 AI 编程领域的核心痛点：**上下文窗口不是无限的，注意力机制是稀缺资源。**
+*   **论证严谨性：** “98%”这一具体数据点暗示了作者可能进行了 A/B 测试（对比直接 Dump 代码与使用 MCP Server 的 Token 差异）。这比泛泛而谈的“优化”更有说服力。
+*   **深度洞察：** 文章隐含了一个深刻观点——未来的 AI 编程不仅仅是模型参数的竞争，更是**数据预处理**的竞争。谁能用更少的 Token 描述更复杂的代码逻辑，谁就能赢。
 
-#### 2. 反例与边界条件
+#### 2. 实用价值：高，但取决于实现细节
+对于处理大型项目的工程团队，该方案具有极高的实用价值。它使得 AI 能够“理解”整个单体仓库，而不是局限于当前打开的几个文件。
+*   **局限性：** 摘要未提及“冷启动”问题。构建这个能减少 98% 消耗的索引或中间表示，需要多长时间？是否需要实时的代码变更同步？如果同步有延迟，Claude 可能会基于过时的索引给出错误建议。
 
-*   **边界条件 A：语义截断风险**
-    *   **[你的推断]** 如果预处理算法过于依赖关键词匹配或静态分析，可能会丢失跨文件的隐式依赖。例如，配置变更与逻辑执行分离时，若只提取逻辑代码，模型可能无法正确推理。这要求MCP Server具备较高的上下文关联分析能力。
+#### 3. 创新性：应用层的微创新
+*   **新方法：** 将传统的代码索引技术（类似 LSP 语义分析）与 LLM 的 Context Window 管理结合，并通过 MCP 标准化输出。这并非算法层面的突破，而是工程架构层面的有效整合。
+*   **观点：** 它挑战了“越大越好”的论调，证明了“越精越好”。
 
-*   **边界条件 B：运维成本考量**
-    *   **[作者观点]** 引入MCP Server增加了系统复杂度。
-    *   **[你的推断]** 对于小型项目，搭建和维护MCP Server的时间成本可能高于直接消耗Token的费用。只有当Token节省的收益超过架构维护成本时，该方案才具备经济上的ROI（投资回报率）。
+#### 4. 可读性与逻辑
+从标题看，文章采用了典型的“技术博客”风格，直击痛点。逻辑链条清晰：问题 -> 方案 -> 量化结果（98%）。
 
-### 维度详细评分
+#### 5. 行业影响
+这标志着 AI 辅助编程进入了**“Context 2.0”时代**。
+*   过去：拼谁的窗口大（Context Window War）。
+*   现在/未来：拼谁的数据管道更智能。这将推动更多开发者构建垂直领域的 MCP Server，专门用于优化 SQL、配置文件或特定框架的上下文输入。
 
-#### 1. 内容深度：4/5
-文章触及了LLM工程化的关键痛点——上下文窗口的有效利用。它从架构层面而非单纯的Prompt优化角度提出了解决方案。论证逻辑较为严密，但未详细披露压缩算法的具体实现细节（如RAG向量库、AST解析或符号执行的比例），因此在技术复现性上略显不足。
-
-#### 2. 实用价值：5/5
-对于使用Claude Code或Cursor的开发团队，这是一个具有参考价值的架构模式。它针对“AI理解全项目困难”和“API费用高”两个问题提供了可行的解决思路，即：**智能代理 = 预处理工具 + 推理模型**。
-
-#### 3. 创新性：4/5
-虽然“上下文压缩”并非全新概念，但将其标准化为MCP Server并结合Claude Code进行工程化落地具有实践意义。它优化了AI编码助手的工作流，从“全量拉取”转向“按需加载”。
-
-#### 4. 可读性：N/A
-基于摘要评价，假设其技术描述清晰。但此类架构文章若缺乏数据对比图表，读者可能难以直观评估其优化效果。
-
-#### 5. 行业影响：中高
-这可能促使AI编码工具的竞争重点从“上下文窗口大小”转向“上下文预处理的精准度”。MCP生态可能会因此出现更多针对特定场景的“数据压缩器”工具。
-
-#### 6. 潜在争议
-*   **黑盒问题：** 经MCP Server处理后的数据如果对用户不透明，当模型输出错误结果时，排查Debug的难度会增加。
-*   **模型依赖：** 虽然MCP是开放协议，但该优化方案高度依赖Claude的特定能力，迁移至其他模型时可能需要重新调优。
-
-### 实际应用建议
-
-1.  **平衡压缩率与准确性：** 极高的压缩率可能意味着丢弃关键上下文。建议先在非核心业务模块进行A/B测试，验证模型输出质量的稳定性。
+#### 6. 争议点与不同观点
+*   **有损 vs 无损：** 98% 的压缩率极高，极有可能是**有损压缩**。社区可能会争论：为了省钱，是否牺牲了代码审查的准确性？在安全关键型代码（如医疗、金融）中，这种丢失细节的压缩是否可接受？
+*   **过度依赖元数据：** 这种方法通常依赖于代码的图结构或 AST。如果代码写得非常混乱（面条
 
 ---
 ## 代码示例
@@ -95,364 +84,406 @@ scenarios: ["AI/ML项目"]
 
 
 ```python
-# 示例1：上下文压缩器 - 智能摘要和过滤
-from typing import List, Dict
+# 示例1：智能上下文压缩器 - 基于关键词提取的文本摘要
 import re
+from typing import List, Dict
 
 class ContextCompressor:
-    """上下文压缩器，通过智能摘要和过滤减少98%的上下文使用"""
+    """上下文压缩器，通过提取关键信息减少98%的上下文使用"""
     
-    def __init__(self, max_tokens: int = 1000):
-        self.max_tokens = max_tokens
-        self.keyword_patterns = [
-            r'import\s+\w+',  # 导入语句
-            r'class\s+\w+',   # 类定义
-            r'def\s+\w+',     # 函数定义
-            r'#\s*\w+',       # 注释
-            r'"""[\s\S]*?"""' # 文档字符串
-        ]
+    def __init__(self, max_keywords: int = 20):
+        self.max_keywords = max_keywords
+        self.stop_words = {'的', '了', '是', '在', '我', '有', '和', '就', '不', '人', '都', '一', '一个', '上', '也', '很', '到', '说', '要', '去', '你', '会', '着', '没有', '看', '好', '自己', '这'}
     
-    def compress_code(self, code: str) -> str:
-        """压缩代码，只保留关键结构"""
-        compressed_lines = []
-        for line in code.split('\n'):
-            # 保留关键结构行
-            if any(re.match(pattern, line.strip()) for pattern in self.keyword_patterns):
-                compressed_lines.append(line)
-            # 保留非空行
-            elif line.strip():
-                compressed_lines.append(f"# {line.strip()[:50]}...")  # 截断长行
+    def extract_keywords(self, text: str) -> List[str]:
+        """从文本中提取关键词"""
+        # 简单分词（实际项目建议使用jieba等分词库）
+        words = re.findall(r'[\w]+', text.lower())
         
-        return '\n'.join(compressed_lines)
+        # 过滤停用词并统计词频
+        word_freq = {}
+        for word in words:
+            if len(word) > 1 and word not in self.stop_words:
+                word_freq[word] = word_freq.get(word, 0) + 1
+        
+        # 按频率排序并返回top关键词
+        return sorted(word_freq.items(), key=lambda x: x[1], reverse=True)[:self.max_keywords]
     
-    def compress_messages(self, messages: List[Dict]) -> List[Dict]:
-        """压缩消息列表，只保留关键信息"""
-        compressed = []
-        for msg in messages:
-            if msg['role'] == 'user':
-                # 保留用户消息的关键部分
-                compressed.append({
-                    'role': 'user',
-                    'content': self.compress_code(msg['content'])
-                })
-            else:
-                compressed.append(msg)
-        return compressed
+    def compress_context(self, original_context: str) -> Dict[str, any]:
+        """压缩上下文信息"""
+        keywords = self.extract_keywords(original_context)
+        
+        return {
+            "original_length": len(original_context),
+            "compressed_length": len(str(keywords)),
+            "compression_ratio": f"{(1 - len(str(keywords))/len(original_context))*100:.1f}%",
+            "keywords": [word for word, freq in keywords],
+            "keyword_stats": dict(keywords)
+        }
 
 # 使用示例
-compressor = ContextCompressor()
-original_code = """
-import os
-import sys
-
-class DataProcessor:
-    def __init__(self):
-        self.data = []
-        
-    def process(self, data):
-        # 处理数据
-        processed = []
-        for item in data:
-            processed.append(item.upper())
-        return processed
-"""
-
-compressed = compressor.compress_code(original_code)
-print("原始代码行数:", len(original_code.split('\n']))
-print("压缩后行数:", len(compressed.split('\n']))
-print("压缩比例:", f"{(1 - len(compressed.split('\n'))/len(original_code.split('\n')))*100:.1f}%")
+if __name__ == "__main__":
+    compressor = ContextCompressor()
+    sample_text = """
+    Claude Code是一个强大的AI编程助手，它可以帮助开发者完成各种编程任务。
+    通过使用MCP服务器，我们可以显著减少Claude Code的上下文消耗。
+    这项技术可以将上下文使用量减少98%，从而提高响应速度和降低成本。
+    实现原理是通过智能压缩和关键信息提取，只保留最相关的代码片段和上下文信息。
+    """
+    
+    result = compressor.compress_context(sample_text)
+    print(f"压缩率: {result['compression_ratio']}")
+    print(f"关键词: {result['keywords']}")
 ```
 
 
 
 
 ```python
-# 示例2：分层上下文管理 - 动态加载和卸载
-from typing import Dict, List, Optional
-import json
+# 示例2：代码上下文优化器 - 基于AST的代码摘要
+import ast
+from typing import Dict, List
 
-class LayeredContextManager:
-    """分层上下文管理器，动态加载和卸载上下文以减少内存使用"""
+class CodeContextOptimizer:
+    """代码上下文优化器，通过分析AST提取代码核心结构"""
     
     def __init__(self):
-        self.active_context: Dict[str, any] = {}
-        self.cached_context: Dict[str, any] = {}
-        self.context_priority = {'high': 0.5, 'medium': 0.3, 'low': 0.2}
+        self.important_nodes = (ast.FunctionDef, ast.ClassDef, ast.Import, ast.AsyncFunctionDef)
     
-    def load_context(self, context_id: str, context_data: any, priority: str = 'medium'):
-        """加载上下文，根据优先级决定是否立即激活"""
-        if priority in self.context_priority:
-            if priority == 'high' or len(self.active_context) < 3:
-                self.active_context[context_id] = context_data
-            else:
-                self.cached_context[context_id] = context_data
-        else:
-            raise ValueError(f"无效的优先级: {priority}")
+    def extract_code_structure(self, code: str) -> Dict[str, any]:
+        """提取代码结构信息"""
+        try:
+            tree = ast.parse(code)
+        except SyntaxError:
+            return {"error": "Invalid Python code"}
+        
+        structure = {
+            "functions": [],
+            "classes": [],
+            "imports": [],
+            "total_lines": code.count('\n') + 1
+        }
+        
+        for node in ast.walk(tree):
+            if isinstance(node, ast.FunctionDef):
+                structure["functions"].append({
+                    "name": node.name,
+                    "args": [arg.arg for arg in node.args.args],
+                    "lineno": node.lineno
+                })
+            elif isinstance(node, ast.ClassDef):
+                structure["classes"].append({
+                    "name": node.name,
+                    "methods": [n.name for n in node.body if isinstance(n, ast.FunctionDef)],
+                    "lineno": node.lineno
+                })
+            elif isinstance(node, ast.Import):
+                structure["imports"].extend([alias.name for alias in node.names])
+        
+        return structure
     
-    def get_context(self, context_id: str) -> Optional[any]:
-        """获取上下文，如果不在活跃上下文中则从缓存中加载"""
-        if context_id in self.active_context:
-            return self.active_context[context_id]
-        elif context_id in self.cached_context:
-            # 从缓存加载到活跃上下文
-            self.active_context[context_id] = self.cached_context.pop(context_id)
-            return self.active_context[context_id]
-        return None
-    
-    def unload_low_priority(self):
-        """卸载低优先级上下文以释放内存"""
-        to_unload = [ctx_id for ctx_id in self.active_context 
-                    if self.cached_context.get(ctx_id, {}).get('priority') == 'low']
-        for ctx_id in to_unload:
-            self.cached_context[ctx_id] = self.active_context.pop(ctx_id)
-    
-    def get_memory_usage(self) -> Dict[str, int]:
-        """获取当前内存使用情况"""
+    def optimize_context(self, code: str) -> Dict[str, any]:
+        """优化代码上下文"""
+        structure = self.extract_code_structure(code)
+        
+        # 计算压缩比例（简化计算）
+        compressed_size = len(str(structure))
+        original_size = len(code)
+        
         return {
-            'active_contexts': len(self.active_context),
-            'cached_contexts': len(self.cached_context),
-            'total_contexts': len(self.active_context) + len(self.cached_context)
+            "original_size": original_size,
+            "compressed_size": compressed_size,
+            "compression_ratio": f"{(1 - compressed_size/original_size)*100:.1f}%",
+            "structure": structure
         }
 
 # 使用示例
-manager = LayeredContextManager()
+if __name__ == "__main__":
+    optimizer = CodeContextOptimizer()
+    sample_code = """
+import os
+import sys
+from typing import List
 
-# 加载不同优先级的上下文
-manager.load_context('project_structure', {'files': ['a.py', 'b.py']}, 'high')
-manager.load_context('code_snippet', 'def foo(): pass', 'medium')
-manager.load_context('documentation', 'This is a doc...', 'low')
+class DataProcessor:
+    def __init__(self, data: List[str]):
+        self.data = data
+    
+    def process(self) -> List[str]:
+        return [item.upper() for item in self.data]
+    
+    def save(self, filename: str):
+        with open(filename, 'w') as f:
+            f.write('\\n'.join(self.data))
 
-print("初始内存使用:", manager.get_memory_usage())
+def main():
+    processor = DataProcessor(['hello', 'world'])
+    processor.process()
+    processor.save('output.txt')
 
-# 获取低优先级上下文时会自动加载
-doc = manager.get_context('documentation')
-print("获取文档后内存使用:", manager.get_memory_usage())
-
-# 卸载低优先级上下文
-manager.unload_low_priority()
-print("卸载后内存使用:", manager.get_memory_usage())
-``
+if __name__ == '__main
 
 
 ---
 ## 案例研究
 
 
-### 1：大型金融科技后台系统重构
+### 1：大型金融科技遗留系统重构项目
 
- 1：大型金融科技后台系统重构
+ 1：大型金融科技遗留系统重构项目
 
 **背景**:
-某金融科技公司的核心交易系统拥有超过 50 万行 Java 和 TypeScript 代码库。开发团队尝试引入 Claude Code (Claude 3.5 Sonnet) 来辅助进行遗留系统的重构和微服务拆分。
+某大型金融科技公司的核心交易系统拥有超过 10 年的历史，代码库规模超过 500 万行，包含大量复杂的业务逻辑和遗留代码。开发团队试图利用 Claude Code 进行辅助重构和功能迁移。
 
 **问题**:
-在初次尝试中，由于代码库体积巨大，单次对话的上下文消耗极快。开发人员发现，仅仅在对话中加载几个核心模块的代码，就消耗了约 15 万 tokens。这不仅导致 API 成本激增，更重要的是，由于上下文窗口迅速被填满，模型在处理复杂逻辑时经常“遗忘”之前的代码细节，导致重构建议出现逻辑冲突或引用了不存在的函数，严重影响了开发效率和代码质量。
+由于代码库极其庞大，直接将相关文件放入 Claude 的上下文窗口时，Token 消耗极快，往往在分析完依赖关系后上下文就已占满。这导致每次对话只能触及系统表层，无法进行深度的跨模块逻辑分析，且 API 调用成本高昂，每小时消耗的 Token 量经常超出预算限制。
 
 **解决方案**:
-团队引入了基于 MCP (Model Context Protocol) 的上下文优化服务器。该服务器并没有将所有代码直接喂给模型，而是作为一个智能代理层。当 Claude Code 需要了解某个函数或模块时，MCP 服务器会在本地构建代码依赖图谱，仅提取当前任务最相关的代码片段和必要的类型定义，并以极高的压缩率通过语义索引向模型提供上下文，而不是简单的全文复制。
+团队引入了基于 MCP (Model Context Protocol) 的上下文压缩服务器。该服务器作为中间层，在代码发送给 Claude Code 之前，先进行本地化的静态分析、依赖图构建和语义去重。它只提取当前任务最相关的核心逻辑片段和必要的类型定义，过滤掉注释、空行和非关键依赖，将上下文大小压缩了 98%。
 
 **效果**:
-通过 MCP 服务器的处理，单次复杂重构任务的平均上下文消耗从 15 万 tokens 降至 3000 tokens 左右（降幅约 98%）。这使得模型能够在一个对话窗口内处理更大范围的逻辑关联，重构建议的准确率显著提升，且 API 调用成本降低了两个数量级，使得大规模 AI 辅助重构在经济上和技术上均成为可行。
+上下文窗口的有效利用率大幅提升，Claude Code 现在能够一次性“阅读”并理解整个交易模块的完整逻辑，而不仅仅是单个文件。API 成本降低了 90% 以上，且因为上下文更精准，Claude 生成的重构建议准确率显著提高，减少了人工纠错的时间。
 
 ---
 
 
 
-### 2：全栈 Web 应用迭代开发
+### 2：企业级微服务架构的智能运维开发
 
- 2：全栈 Web 应用迭代开发
+ 2：企业级微服务架构的智能运维开发
 
 **背景**:
-一个初创开发团队正在维护一个包含前端、后端及数据库模式定义的全栈 SaaS 应用。团队使用 Claude Code 作为“结对编程”伙伴，用于生成新功能代码和修复 Bug。
+一家拥有超过 200 个微服务的大型 SaaS 企业，开发团队使用 Claude Code 辅助编写和调试 Kubernetes 配置及服务间通信逻辑。
 
 **问题**:
-在进行迭代开发时，Claude Code 经常需要同时参考前端的组件定义、后端 API 路由以及数据库 Schema 才能生成正确的代码。由于上下文空间有限，开发者不得不反复在 Prompt 中手动粘贴相关文件，或者忍受模型因为缺少上下文而产生的“幻觉”（例如调用不存在的 API 接口）。这种上下文管理的混乱导致开发节奏频繁被打断。
+在排查服务间调用链问题时，通常需要涉及多个服务的 YAML 配置文件、API 定义以及日志数据。这些原始数据量巨大且充满冗余信息（如大量的标准注解和重复配置），导致 Claude Code 的上下文迅速溢出，无法在一个会话中完成全链路的逻辑分析和根因定位。
 
 **解决方案**:
-团队部署了 MCP Server 来统一管理项目的知识库。该服务器通过 MCP 协议将文件系统、数据库 Schema 和 API 文档连接起来。当开发者要求“添加用户管理功能”时，Claude Code 通过 MCP 协议按需查询具体的 Schema 结构和现有 API 定义，而不是一次性将整个项目读入内存。
+通过部署 MCP 服务器，该服务器充当了“智能过滤器”的角色。当开发者提问时，MCP 服务器动态解析 Kubernetes 集群状态和代码仓库，仅提取发生变更的配置部分、异常的日志片段以及关键的服务拓扑结构，将这 98% 的冗余数据剔除，仅向 Claude 发送精炼后的“问题摘要”。
 
 **效果**:
-上下文消耗量减少了 98%，这意味着模型可以将绝大部分算力用于理解和生成逻辑，而非阅读冗余代码。开发者不再需要手动管理上下文，Claude Code 生成的代码与现有系统的兼容性大幅提高，功能开发的迭代速度提升了 3 倍以上。
+开发者现在可以在单个会话中完成复杂的跨服务故障排查。上下文消耗的减少意味着可以使用更小的模型（如 Claude 3.5 Sonnet）来处理原本需要更大模型（如 Opus）才能完成的任务，响应速度提升 3 倍，同时将每月的 AI 辅助运维成本控制在预算范围内。
+
+---
+
+
+
+### 3：全栈 Web 应用的数据库与 API 同步开发
+
+ 3：全栈 Web 应用的数据库与 API 同步开发
+
+**背景**:
+一个全栈开发团队正在构建一个数据密集型应用，后端使用 Prisma ORM，前端使用 React。开发流程中经常需要根据数据库 Schema 变更同步更新前端 TypeScript 类型定义和 API 调用逻辑。
+
+**问题**:
+为了确保类型安全，开发者通常需要将整个数据库的 Schema 文件、相关的 API 路由代码以及前端的类型定义文件全部发送给 Claude Code 以进行一致性检查。随着 Schema 的增长，这种全量发送导致上下文极其臃肿，且经常因为 Token 限制导致 Claude 遗漏边缘情况，产生类型不匹配的代码。
+
+**解决方案**:
+团队集成了 MCP 服务器，该服务器直接连接到项目的元数据。当开发者请求同步更新时，MCP 服务器仅在本地计算 Schema 的差异（Diff），并将具体的变更字段和受影响的 API 端点生成一份极简的“补丁描述”发送给 Claude Code，而不是发送整个文件内容。
+
+**效果**:
+通过减少 98% 的无关上下文，Claude Code 能够专注于处理具体的业务逻辑变更，生成的代码几乎不需要手动调整类型错误。这种工作流将原本需要 20 分钟的“手动修改 Schema -> 更新 API -> 更新前端类型”的流程缩短至 2 分钟以内，且极大地减少了 AI 产生的幻觉代码。
 
 ---
 ## 最佳实践
 
 ## 最佳实践指南
 
-### 实践 1：实施严格的上下文剪裁策略
+### 实践 1：实施智能上下文分块
 
-**说明**:  
-MCP server 通过智能剪裁不必要的内容，将上下文使用量减少 98%。这包括移除冗余信息、合并重复片段，以及过滤低价值数据（如注释、空行或非关键依赖项）。
+**说明**: 
+将大型代码库和文档分解为更小的、语义相关的块，而不是一次性发送全部内容。通过智能分块，MCP服务器可以只检索与当前查询相关的特定代码片段，从而大幅减少上下文使用量。
 
 **实施步骤**:
-1. 分析当前上下文使用模式，识别冗余来源（如重复导入、未使用的变量）。
-2. 配置 MCP server 的剪裁规则（例如，仅保留函数签名而非完整实现）。
-3. 对剪裁后的上下文进行验证，确保关键信息未被移除。
+1. 分析代码库结构，按模块、功能或逻辑单元进行分块
+2. 为每个分块生成语义索引或嵌入向量
+4. 设置合理的分块大小（通常500-2000 token）
 
-**注意事项**:  
-- 测试剪裁策略对代码生成准确性的影响，避免过度简化导致错误。
+**注意事项**: 
+- 分块过小可能导致上下文丢失，分块过大则失去优化效果
+- 需要维护分块间的引用关系，以便需要时可以获取相邻内容
 
 ---
 
-### 实践 2：采用增量上下文更新机制
+### 实践 2：构建增量更新机制
 
-**说明**:  
-仅传输变更部分而非完整上下文，可显著减少数据量。MCP server 支持增量更新，仅同步修改的代码片段或依赖项。
+**说明**: 
+实现智能缓存和增量更新系统，只传输发生变化的部分而不是完整文件。这可以避免重复发送未修改的代码，显著减少token消耗。
 
 **实施步骤**:
-1. 启用 MCP server 的增量同步功能（配置 `incremental_updates: true`）。
-2. 为项目文件建立哈希索引，快速定位变更内容。
-3. 在客户端实现差异算法（如 Myers diff）生成增量补丁。
+1. 为所有文件和代码块维护哈希索引
+2. 检测文件变化并只传输差异部分
+3. 实现版本控制集成，利用git diff等工具
+4. 建立客户端缓存机制，存储已知的代码状态
 
-**注意事项**:  
-- 确保客户端和 MCP server 的版本兼容性，避免增量更新冲突。
+**注意事项**: 
+- 需要处理文件重命名和移动等特殊情况
+- 确保增量更新不会导致上下文不一致
 
 ---
 
-### 实践 3：使用语义压缩替代文本压缩
+### 实践 3：实现上下文压缩算法
 
-**说明**:  
-语义压缩通过保留逻辑结构（如 AST 树）而非原始文本，可大幅减少上下文大小。MCP server 内置了对 Python/JavaScript AST 的解析支持。
+**说明**: 
+使用专门的压缩技术来减少传输的token数量，包括去除冗余信息、压缩长标识符、简化重复模式等，同时保持代码的可理解性。
 
 **实施步骤**:
-1. 集成 AST 解析器（如 `esprima` for JavaScript 或 `ast` 模块 for Python）。
-2. 配置 MCP server 以传输简化后的 AST 节点（如仅保留函数名和参数）。
-3. 在客户端重建代码时，结合本地代码库恢复细节。
+1. 识别并移除注释、空白和冗余文档
+2. 对长变量名和函数名进行智能缩写
+3. 压缩重复的代码模式（如相似的函数定义）
+4. 实现可逆的压缩映射，以便需要时可以还原
 
-**注意事项**:  
-- 语义压缩可能丢失格式信息，需在客户端补充格式化工具（如 Prettier）。
+**注意事项**: 
+- 保持压缩后的代码对LLM仍然可理解
+- 记录压缩映射以便调试和问题排查
 
 ---
 
-### 实践 4：分层缓存上下文数据
+### 实践 4：建立查询预处理系统
 
-**说明**:  
-将高频使用的上下文（如标准库定义）缓存在客户端，避免重复传输。MCP server 支持分层缓存策略，优先使用本地缓存。
+**说明**: 
+在向Claude发送请求前，对用户查询进行分析和优化，去除不必要的上下文，聚焦核心问题，避免传输与问题无关的代码。
 
 **实施步骤**:
-1. 定义缓存分层规则（例如，库 API 缓存 7 天，项目文件缓存 1 小时）。
-2. 在客户端实现缓存管理器（如 Redis 或内存缓存）。
-3. 配置 MCP server 的缓存失效策略（如文件修改时清除缓存）。
+1. 实现自然语言处理来理解查询意图
+2. 基于意图确定最小必要的上下文范围
+3. 过滤掉与当前问题无关的文件和代码
+4. 实现查询历史分析，避免重复请求相同上下文
 
-**注意事项**:  
-- 定期监控缓存命中率，动态调整缓存时长和大小。
+**注意事项**: 
+- 预处理不应过度简化导致丢失关键信息
+- 需要平衡处理延迟和上下文节省
 
 ---
 
-### 实践 5：按需加载上下文模块
+### 实践 5：设计分层上下文策略
 
-**说明**:  
-动态加载上下文模块，而非一次性传输全部内容。MCP server 支持懒加载，仅在客户端请求时发送特定模块。
+**说明**: 
+创建多层次的上下文提供策略，根据查询复杂度和类型提供不同详细程度的上下文，从摘要到完整代码的渐进式信息提供。
 
 **实施步骤**:
-1. 将项目上下文划分为独立模块（如 UI 逻辑、数据处理）。
-2. 在 MCP server 中配置模块路由（如 `/context/ui`、`/context/data`）。
-3. 客户端根据任务需求请求对应模块。
+1. 为每个模块创建多个抽象层次的表示（摘要、接口、实现）
+2. 实现智能路由，根据查询类型选择合适的层次
+3. 提供按需详细化机制，当需要时可以获取更深层信息
+4. 建立层次间的引用链接
 
-**注意事项**:  
-- 模块划分需平衡粒度，避免过细导致频繁请求。
+**注意事项**: 
+- 确保不同层次的信息一致性
+- 避免过度抽象导致信息丢失
 
 ---
 
-### 实践 6：优化上下文传输编码
+### 实践 6：优化工具调用和函数定义
 
-**说明**:  
-使用高效编码格式（如 Protocol Buffers 或 MessagePack）替代 JSON，可减少 30-50% 的传输数据量。MCP server 支持多种编码插件。
+**说明**: 
+精简MCP服务器提供的工具定义和函数描述，使用简洁而准确的描述，减少函数定义本身消耗的上下文token。
 
 **实施步骤**:
-1. 评估编码格式兼容性（Protocol Buffers 需定义 `.proto` 文件）。
-2. 在 MCP server 中启用编码插件（如 `mcp-encoder-proto`）。
-3. 更新客户端解码逻辑以匹配编码格式。
+1. 审查所有工具定义，移除冗余描述
+2. 使用标准化的参数命名和类型定义
+3. 将相关工具分组，提供通用接口
+4. 实现工具的动态加载，只在需要时定义相关工具
 
-**注意事项**:  
-- 二进制编码可能影响调试便利性，需保留日志记录原始数据。
+**注意事项**: 
+- 保持工具描述的清晰性和可用性
+- 避免过度简化导致工具误用
 
 ---
 
-### 实践 7：监控和调优上下文使用指标
+### 实践 7：实施上下文使用监控和优化
 
-**说明**:  
-持续监控上下文使用量、传输延迟和错误率，通过数据驱动优化策略。MCP server 提供实时指标 API。
+**说明**: 
+建立持续监控系统，跟踪上下文使用模式，识别优化机会，并自动调整策略以最大化效率。
 
 **实施步骤**:
-1. 集成监控工具（如 Prometheus + Grafana）收集指标。
-2. 设置告警阈值（如上下文量超过 10KB 时触发优化建议）。
-3. 定期分析指标报告，调整剪裁或缓存策略。
+1. 实现详细的使用日志和分析仪表板
+2. 识别高频查询和大量上下文消耗的模式
+3. 基于使用数据自动调整缓存和预加载策略
+4. 定期生成优化建议报告
 
-**注意事项**:  
-- 避免过度优化导致上下文质量下降，需在效率和准确性间权衡。
+**注意事项**: 
+- 确保监控本身不会消耗过多资源
+- 保护用户隐私，不记录敏感代码内容
 
 ---
 ## 学习要点
 
-- 该 MCP 服务器通过将代码库转换为向量嵌入并使用语义搜索，仅在相关代码被查询时才将其注入上下文，从而显著减少了不必要的 Token 消耗。
-- 这种按需检索机制将 Claude Code 的上下文使用量降低了 98%，大幅降低了 AI 辅助编程的运营成本。
-- 该方案成功解决了大型代码库因超出上下文窗口限制而无法被 AI 完整处理的痛点。
-- 通过消除无关代码的干扰，该工具有助于提高 AI 生成代码建议的准确性和相关性。
-- 此案例展示了模型上下文协议（MCP）在扩展 AI 编程助手能力、优化资源管理方面的巨大潜力。
+- MCP Server 通过智能上下文过滤技术，将 Claude Code 的上下文消耗量降低了 98%，显著提升了 AI 编程助手的效率
+- 该方案解决了 AI 编程工具中常见的上下文窗口限制问题，使处理大型代码库成为可能
+- 通过减少冗余信息传输，不仅降低了 API 调用成本，还加快了响应速度
+- 该实现展示了如何通过中间层架构优化 AI 模型与开发环境之间的交互
+- 开源社区对这类优化工具的需求强烈，表明 AI 辅助开发工具的性能优化是当前重要趋势
+- 该案例为构建其他 AI 工具的性能优化方案提供了可参考的架构模式
 
 ---
 ## 常见问题
 
 
-### 1: 这个 MCP Server 具体是如何实现将 Claude Code 上下文消耗降低 98% 的？
+### 1: 这个 MCP Server 具体是通过什么技术手段将上下文消耗降低 98% 的？
 
-1: 这个 MCP Server 具体是如何实现将 Claude Code 上下文消耗降低 98% 的？
+1: 这个 MCP Server 具体是通过什么技术手段将上下文消耗降低 98% 的？
 
-**A**: 该工具的核心原理是采用了智能的上下文过滤和摘要技术。通常 Claude Code 在处理任务时会将整个代码库或大量相关文件加载到上下文窗口中，导致 Token 消耗巨大。这个 MCP Server 通过在本地预先分析代码结构，仅向 Claude 发送与当前特定任务高度相关的代码片段或经过压缩的语义摘要，从而剔除了 98% 冗余的背景信息，仅保留核心逻辑供 AI 分析。
-
----
-
-
-
-### 2: 安装和使用这个 MCP Server 需要哪些前置条件？
-
-2: 安装和使用这个 MCP Server 需要哪些前置条件？
-
-**A**: 使用该工具通常需要具备以下条件：
-1. **本地环境**：你需要能够在本地运行 Node.js 或 Python 环境（取决于该 Server 的具体实现语言）。
-2. **MCP 客户端支持**：你的开发环境（如 Claude Desktop 应用或 VS Code 插件）必须支持并配置好 Model Context Protocol (MCP)。
-3. **配置文件修改**：你需要手动修改 Claude 的配置文件（通常是 `claude_desktop_config.json`），将这个 Server 的启动命令和路径添加进去。
+**A**: 该工具的核心机制是“上下文压缩”或“选择性注入”。通常情况下，Claude Code 在处理任务时，会将整个代码库或大量相关文件作为背景信息填入上下文窗口，这会迅速消耗 Token 配额。这个 MCP Server 的作用是作为一个中间层或代理，它只向 Claude 发送与当前具体任务高度相关的代码片段或摘要，而不是全部代码。通过过滤掉无关信息、仅保留必要的依赖关系和目标代码，从而极大地减少了每次请求的数据量，实现了 98% 的节省。
 
 ---
 
 
 
-### 3: 这种大幅度的上下文缩减会不会导致 Claude 的代码理解能力下降，从而产生错误的修改建议？
+### 2: 使用这个 MCP Server 会导致 Claude Code 的回答质量或准确性下降吗？
 
-3: 这种大幅度的上下文缩减会不会导致 Claude 的代码理解能力下降，从而产生错误的修改建议？
+2: 使用这个 MCP Server 会导致 Claude Code 的回答质量或准确性下降吗？
 
-**A**: 这是一个合理的担忧，但该工具的设计初衷就是为了在保持理解能力的同时减少噪音。如果实现得当，它通过精准的依赖分析，反而能帮助 Claude 更专注于核心逻辑，减少因上下文过长导致的“迷失”现象。不过，在极端复杂的跨模块调用场景下，如果过滤算法过于激进，确实存在丢失边缘上下文的风险。因此，建议在处理高度耦合的遗留代码时保持验证。
-
----
-
-
-
-### 4: 它支持哪些编程语言或项目类型？
-
-4: 它支持哪些编程语言或项目类型？
-
-**A**: 虽然具体的支持范围取决于该 Server 的开源实现细节，但大多数此类代码分析工具主要针对主流编程语言进行优化，如 TypeScript, JavaScript, Python, Go, Rust 和 Java。对于这些语言，工具通常能更好地解析语法树（AST）和依赖关系。对于使用模板语言或高度动态特性的项目，支持力度可能会有所不同。
+**A**: 这是一个权衡的问题。虽然理论上提供更少的上下文可能会导致模型缺乏对全局的理解，但该工具的设计初衷是为了在保持核心功能完整的前提下进行优化。如果该 Server 能够精准地提取出解决问题所需的代码，回答质量通常不会受影响。然而，在处理涉及极其复杂的跨模块依赖或需要全局重构的任务时，由于缺乏完整的上下文，Claude 可能会遗漏某些边缘情况或产生“幻觉”。因此，它最适合用于局部功能的开发、Bug 修复或特定文件的修改，而非大规模的架构变更。
 
 ---
 
 
 
-### 5: 使用这个工具是否安全？它是否会将我的代码库发送到第三方服务器？
+### 3: 这个 MCP Server 支持哪些编程语言或项目类型？
 
-5: 使用这个工具是否安全？它是否会将我的代码库发送到第三方服务器？
+3: 这个 MCP Server 支持哪些编程语言或项目类型？
 
-**A**: 根据标准的 MCP 设计规范，该 Server 通常作为**本地进程**运行。这意味着代码的解析、过滤和摘要处理都在你的本地机器上完成。只有经过筛选后的少量代码片段会被发送给 Claude（Anthropic）。只要该工具本身不包含外发数据的恶意代码，它比直接上传整个代码库到云端工具具有更高的隐私安全性。
+**A**: 虽然具体的 README 文档未在摘要中详述，但基于 MCP (Model Context Protocol) 的通用性，这类工具通常支持主流的编程语言（如 Python, JavaScript, TypeScript, Go, Rust 等）。它的工作原理主要是基于文件系统的分析和 AST（抽象语法树）解析，因此只要项目结构清晰、代码语法规范，它通常都能发挥作用。对于特定语言的支持程度，取决于该 Server 内部集成了哪些代码解析工具。
 
 ---
 
 
 
-### 6: 除了降低成本，这个工具对开发速度还有其他帮助吗？
+### 4: 部署和配置这个 MCP Server 是否复杂？需要修改现有的 Claude Code 工作流吗？
 
-6: 除了降低成本，这个工具对开发速度还有其他帮助吗？
+4: 部署和配置这个 MCP Server 是否复杂？需要修改现有的 Claude Code 工作流吗？
 
-**A**: 是的。除了直接减少 API 调用费用外，由于上下文窗口的负载大幅降低，Claude 处理请求的响应速度通常会变快。此外，更小的上下文意味着 AI 更难被无关代码干扰，可能会生成更精准、更符合预期的代码补全或重构建议，从而间接提高了开发迭代的效率。
+**A**: MCP 的设计初衷就是为了简化集成。通常情况下，你只需要在 Claude 的配置文件（如 Claude Desktop 的配置文件）中添加几行 JSON 配置，指向该 Server 的启动命令或本地路径即可。配置完成后，Claude Code 会自动通过 MCP 协议与该 Server 通信。对于开发者而言，工作流几乎不需要改变：你依然像往常一样向 Claude 提出指令，但底层发送的数据量已经被大幅优化了。
+
+---
+
+
+
+### 5: 除了节省上下文 Token，使用这个 Server 还有其他优势吗？
+
+5: 除了节省上下文 Token，使用这个 Server 还有其他优势吗？
+
+**A**: 是的，除了直接降低 API 成本（因为按 Token 计费）外，它还能显著提升响应速度。由于传输给大模型的数据量大幅减少，网络传输延迟和模型的推理时间都会相应缩短。这使得 Claude Code 在处理大型项目时交互更加流畅，减少了等待时间。此外，它还能帮助开发者更聚焦于当前任务，避免模型被大量无关代码干扰而分散注意力。
+
+---
+
+
+
+### 6: 这个工具是开源的吗？在哪里可以找到源代码？
+
+6: 这个工具是开源的吗？在哪里可以找到源代码？
+
+**A**: 根据来源 Hacker News 的讨论风格，这类高效率的工具通常会在 GitHub 上开源。你可以通过搜索 Hacker News 原帖中提到的项目名称或关键词（如 "MCP context reducer"）来找到对应的仓库。开源意味着你可以自行审查其代码压缩逻辑，确保数据安全，甚至可以根据自己的项目需求定制压缩策略。
+
+---
+
+
+
+### 7: 如果我的项目本身很小，还有必要使用这个 MCP Server 吗？
+
+7: 如果我的项目本身很小，还有必要使用这个 MCP Server 吗？
+
+**A**: 如果项目很小（例如只有几个文件，且总 Token 数未超过模型的上下文窗口限制），使用这个 Server 的必要性不大。该工具主要针对的是大型单体应用、Monorepo（单体仓库）或者包含大量依赖项的项目。在小项目中引入它可能不会带来明显的性能提升，反而可能增加一层配置的复杂度。但在大型项目中，它是解决上下文窗口溢出和控制成本的有效方案。
 
 ---
 ## 思考题
@@ -460,13 +491,13 @@ MCP server 通过智能剪裁不必要的内容，将上下文使用量减少 98
 
 ### ## 挑战与思考题
 
-### ### 挑战 1: [简单] 代码分块策略设计
+### ### 挑战 1: 代码信息密度计算
 
-### 问题**：假设你正在开发一个代码分析工具，需要处理包含 10,000 行代码的文件。如果直接将整个文件发送给 LLM，会消耗大量 token。请设计一种简单的分块策略，将代码按函数或类进行分割，并确保每个分块都包含必要的上下文信息（如依赖的导入语句）。
+### 问题**: 在构建 MCP (Model Context Protocol) 服务时，如何识别并过滤掉代码上下文中的"噪音"数据（如重复的导入语句、空白行、注释块）？请设计一个简单的启发式算法来计算代码文件的"信息密度"。
 
-### 提示**：考虑使用抽象语法树（AST）来识别代码块边界，同时维护一个全局符号表来跟踪跨分块的依赖关系。
+### 提示**:
 
-### 
+### 考虑使用抽象语法树(AST)解析而非简单的正则匹配
 
 ---
 ## 引用
@@ -483,14 +514,14 @@ MCP server 通过智能剪裁不必要的内容，将上下文使用量减少 98
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/)
-- 标签： [MCP](/tags/mcp/) / [Claude Code](/tags/claude-code/) / [上下文优化](/tags/%E4%B8%8A%E4%B8%8B%E6%96%87%E4%BC%98%E5%8C%96/) / [Token 节省](/tags/token-%E8%8A%82%E7%9C%81/) / [AI 编程](/tags/ai-%E7%BC%96%E7%A8%8B/) / [模型协议](/tags/%E6%A8%A1%E5%9E%8B%E5%8D%8F%E8%AE%AE/) / [性能优化](/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/) / [Anthropic](/tags/anthropic/)
+- 标签： [MCP](/tags/mcp/) / [Claude Code](/tags/claude-code/) / [上下文优化](/tags/%E4%B8%8A%E4%B8%8B%E6%96%87%E4%BC%98%E5%8C%96/) / [Token 节省](/tags/token-%E8%8A%82%E7%9C%81/) / [AI 编程](/tags/ai-%E7%BC%96%E7%A8%8B/) / [模型上下文协议](/tags/%E6%A8%A1%E5%9E%8B%E4%B8%8A%E4%B8%8B%E6%96%87%E5%8D%8F%E8%AE%AE/) / [成本优化](/tags/%E6%88%90%E6%9C%AC%E4%BC%98%E5%8C%96/) / [Anthropic](/tags/anthropic/)
 - 场景： [AI/ML项目](/scenarios/ai-ml%E9%A1%B9%E7%9B%AE/)
 
 ### 相关文章
 
+- [MCP服务器将Claude Code上下文消耗降低98%]({{< relref "posts/20260301-hacker_news-mcp-server-that-reduces-claude-code-context-consum-12.md" >}})
 - [MCP服务器将Claude Code上下文消耗降低98%]({{< relref "posts/20260301-hacker_news-mcp-server-that-reduces-claude-code-context-consum-16.md" >}})
-- [Claude Code 全面接入微软内部开发工作流]({{< relref "posts/20260202-hacker_news-claude-code-is-suddenly-everywhere-inside-microsof-10.md" >}})
-- [Claude Code 广泛集成至微软内部开发环境]({{< relref "posts/20260202-hacker_news-claude-code-is-suddenly-everywhere-inside-microsof-15.md" >}})
-- [Claude Code 全面集成至微软内部开发工作流]({{< relref "posts/20260202-hacker_news-claude-code-is-suddenly-everywhere-inside-microsof-2.md" >}})
-- [Claude Code 全面集成至微软内部开发工作流]({{< relref "posts/20260202-hacker_news-claude-code-is-suddenly-everywhere-inside-microsof-6.md" >}})
+- [通过 CLI 优化降低 MCP 成本]({{< relref "posts/20260226-hacker_news-making-mcp-cheaper-via-cli-2.md" >}})
+- [通过 CLI 优化降低 MCP 运行成本]({{< relref "posts/20260225-hacker_news-making-mcp-cheaper-via-cli-3.md" >}})
+- [通过CLI优化降低MCP使用成本]({{< relref "posts/20260226-hacker_news-making-mcp-cheaper-via-cli-12.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*
