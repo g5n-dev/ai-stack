@@ -259,7 +259,6 @@ Gemini 3.1 Flash Image Preview (Nano Banana 2) 的核心优势在于其极快的
 
 - [Nano Banana 2：Gemini 3.1 Flash 图像生成模型预览]({{< relref "posts/20260227-blogs_podcasts-ainews-nano-banana-2-aka-gemini-31-flash-image-pre-4.md" >}})
 - [Gemini 2.0 Flash 登场：成新一代 SOTA 图像生成模型]({{< relref "posts/20260227-blogs_podcasts-ainews-nano-banana-2-aka-gemini-31-flash-image-pre-5.md" >}})
-- [Nano Banana 2：Gemini 3.1 Flash 图像生成模型预览]({{< relref "posts/20260301-blogs_podcasts-ainews-nano-banana-2-aka-gemini-31-flash-image-pre-9.md" >}})
 - [谷歌发布 Gemini 3.1 模型]({{< relref "posts/20260219-hacker_news-gemini-31-1.md" >}})
 - [谷歌发布 Gemini 3.1 Pro 模型]({{< relref "posts/20260219-hacker_news-gemini-31-pro-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*
