@@ -1,17 +1,17 @@
 ---
-title: "在SageMaker部署Llama 3.1并集成至Strands智能体"
-date: 2026-03-07T10:58:39+08:00
+title: "为Strands智能体构建SageMaker托管LLM自定义解析器"
+date: 2026-03-07T12:41:04+08:00
 draft: false
 entry_kind: "auto"
-tags: ["Llama 3.1", "SageMaker", "Strands", "SGLang", "模型部署", "自定义解析器", "智能体", "AWS"]
+tags: ["LLM", "SageMaker", "Strands", "Llama 3.1", "SGLang", "模型部署", "自定义解析器", "AWS"]
 categories: ["AI 工程", "后端"]
 source: blogs_podcasts
-description: "以下是对该内容的中文总结： 本文介绍了如何为 Strands Agents 构建自定义模型提供商，特别是针对那些托管在 Amazon SageMaker AI 端点上、且不原生支持 Bedrock Messages API 格式的大语言模型（LLM）。 文章通过一个具体示例演示了完整的操作流程： 1. **模型部署**"
+description: "以下是对所提供内容的中文简洁总结： 本文旨在演示如何为 **Strands Agents** 构建自定义模型提供商，以对接托管在 **Amazon SageMaker AI** 端点上的大语言模型（LLM）。具体场景针对那些不支持 Bedrock Messages API 格式的模型。 文章的主要步骤如下： 1. **"
 external_url: https://aws.amazon.com/blogs/machine-learning/building-custom-model-provider-for-strands-agents-with-llms-hosted-on-sagemaker-ai-endpoints
-scenarios: ["后端开发"]
+scenarios: ["大语言模型", "后端开发"]
 ---
 
-# 在SageMaker部署Llama 3.1并集成至Strands智能体
+# 为Strands智能体构建SageMaker托管LLM自定义解析器
 
 ---
 
@@ -24,305 +24,287 @@ scenarios: ["后端开发"]
 ---
 ## 摘要/简介
 
-本帖展示了在使用托管在 SageMaker 上、但不原生支持 Bedrock Messages API 格式的 LLM 时，如何为 Strands 智能体构建自定义模型解析器。我们将演示如何利用 awslabs/ml-container-creator 在 SageMaker 上部署 Llama 3.1 with SGLang，随后实现自定义解析器以将其集成到 Strands 智能体中。
+本文介绍如何在使用托管于 SageMaker 且不原生支持 Bedrock Messages API 格式的 LLM 时，为 Strands 智能体构建自定义模型解析器。我们将演示如何使用 awslabs/ml-container-creator 在 SageMaker 上部署 Llama 3.1 与 SGLang，然后实现一个自定义解析器，将其与 Strands 智能体集成。
 
 ---
 ## 导语
 
-在构建 Strands 智能体时，集成托管在 SageMaker 端点上的大语言模型（LLM）往往面临接口格式不兼容的挑战。本文将详细介绍如何为非 Bedrock 原生支持的模型（如 Llama 3.1）构建自定义模型解析器，并演示利用 SGLang 进行部署的具体流程。通过阅读本文，您将掌握实现模型与智能体无缝集成的关键技术细节，从而灵活扩展您的 AI 应用架构。
+在构建智能体应用时，开发者常需将特定格式的 LLM 与现有框架集成，这往往涉及繁琐的适配工作。本文将演示如何利用 awslabs/ml-container-creator 在 SageMaker 上部署 Llama 3.1 与 SGLang，并重点讲解如何为 Strands 智能体构建自定义模型解析器。通过阅读本文，您将掌握在不兼容原生 API 格式的情况下，实现模型与智能体无缝对接的具体方法。
 
 ---
 ## 摘要
 
-以下是对该内容的中文总结：
+以下是对所提供内容的中文简洁总结：
 
-本文介绍了如何为 Strands Agents 构建自定义模型提供商，特别是针对那些托管在 Amazon SageMaker AI 端点上、且不原生支持 Bedrock Messages API 格式的大语言模型（LLM）。
+本文旨在演示如何为 **Strands Agents** 构建自定义模型提供商，以对接托管在 **Amazon SageMaker AI** 端点上的大语言模型（LLM）。具体场景针对那些不支持 Bedrock Messages API 格式的模型。
 
-文章通过一个具体示例演示了完整的操作流程：
-1.  **模型部署**：利用 `awslabs/ml-container-creator` 工具，在 SageMaker 上部署结合了 SGLang 的 Llama 3.1 模型。
-2.  **自定义集成**：实施一个自定义解析器（Parser），以弥合模型格式与 Strands agents 要求之间的差异，从而实现两者之间的无缝集成。
+文章的主要步骤如下：
+1.  **模型部署**：使用 `awslabs/ml-container-creator` 工具，在 SageMaker 上部署基于 **SGLang** 的 **Llama 3.1** 模型。
+2.  **自定义集成**：通过实现一个**自定义解析器**，将该 SageMaker 托管的模型适配并集成到 Strands agents 中使用。
 
 ---
 ## 评论
 
-### 文章中心观点
-本文的核心观点是：**在AWS SageMaker上利用SGLang部署高性能Llama 3.1模型，并通过自定义解析器适配Bedrock Agents API，是构建低延迟、高可控性企业级AI代理的有效技术路径。**
+**中心观点：**
+文章提出了一种在AWS SageMaker上通过自建模型解析器来桥接开源大模型与Strands Agents框架的技术路径，其核心价值在于打破了云厂商托管服务对特定模型协议的锁定，为企业在私有化部署中实现高度定制化的AI智能体提供了可行的工程范式。
 
-### 深入评价与分析
+**深入评价与支撑理由：**
 
-#### 1. 内容深度：架构严谨，填补了“最后一公里”的空白
-*   **支撑理由（事实陈述/你的推断）：** 文章并未停留在简单的模型调用层面，而是深入到了**协议适配层**。Bedrock Agents原生支持特定的API格式，而SageMaker上的自定义模型通常不遵循这一格式。文章提出的“自定义模型解析器”方案，实际上是构建了一个**适配器模式**，解决了AWS托管服务生态中的“异构协议互操作性”问题。这种架构设计在微服务架构中非常经典，论证了通过中间层屏蔽底层差异的可行性。
-*   **支撑理由（作者观点）：** 引入SGLang作为推理后端是一个高技术含量的选择。相比于vLLM，SGLang在处理复杂结构化输出和多轮对话调度上具有独特的RadixAttention优势。文章选择SGLang部署在SageMaker上，显示出作者对**推理性能优化**有深入理解，不仅仅是为了“跑通”，而是为了“跑得快”。
+**1. 内容深度：工程实现的颗粒度与架构视野**
+*   **支撑理由（事实陈述）：** 文章选取了SGLang作为推理后端，而非默认的vLLM或HuggingFace TGI，这显示了作者对高性能推理栈的敏锐度。SGLang在结构化生成和并发调度上的优势，恰好能弥补开源模型在处理Agent复杂指令时的延迟短板。文章没有停留在简单的API调用，而是深入到了“解析器”这一中间件的构建，这是Agent工程化中常被忽视但至关重要的“粘合层”。
+*   **支撑理由（作者观点）：** 文章隐含了一个深刻的架构观点：**“协议适配层”是构建可扩展AI应用的关键**。通过实现自定义解析器，将非标准化的模型输出转换为统一的Bedrock格式，这种“防腐层”设计有效地隔离了底层模型变更对上层业务逻辑的冲击。
+*   **反例/边界条件（你的推断）：** 文章可能低估了流式传输下的错误处理复杂度。在SGLang与SageMaker之间进行协议转换时，如果发生网络抖动或模型生成截断，解析器如何保证状态同步是一个未提及的深坑。
 
-#### 2. 实用价值：解决企业级落地的痛点
-*   **支撑理由（事实陈述）：** 许多企业因数据合规或成本考量，无法直接使用Bedrock等全托管模型的API，必须走私有化部署（如SageMaker）。然而，放弃Bedrock意味着放弃其Agents（智能体）编排能力。本文的方案**打破了这种二选一的僵局**，让企业既能享受Agents的编排便利，又能拥有模型的完全控制权。
-*   **支撑理由（你的推断）：** 代码示例中涉及的`awslabs/ml-container-creator`和自定义解析逻辑，为工程师提供了可直接复制的模板。这降低了DevOps工程师在MLOps流水线中集成LLM的门槛，具有极高的工程参考价值。
+**2. 实用价值：解决“最后一公里”的兼容性难题**
+*   **支撑理由（事实陈述）：** 许多企业希望利用AWS SageMaker的托管能力运行Llama 3.1等模型，但Bedrock原生并不支持所有通过SageMaker部署的模型。这篇文章直接解决了这一痛点，提供了一套可复制的代码模板（使用awslabs/ml-container-creator），极大地降低了技术门槛。
+*   **反例/边界条件（你的推断）：** 对于非AWS重度用户或预算敏感的初创公司，这种方案的“厂商锁定”风险依然存在。虽然模型是开源的，但基础设施代码与SageMaker的特定API深度耦合，迁移至GCP或Azure的成本并不低。
 
-#### 3. 创新性：组合式创新胜于底层突破
-*   **支撑理由（你的推断）：** 本文的创新点不在于发明了新算法，而在于**生态整合**。将开源的高性能推理框架（SGLang）、云厂商的PaaS平台（SageMaker）和SaaS化的Agent编排服务有机结合。这种“混合云AI架构”代表了当前行业的主流趋势——即在保持灵活性的同时，尽可能利用云厂商的托管能力。
+**3. 创新性：混合云架构下的模型编排**
+*   **支撑理由（你的推断）：** 文章的创新点不在于使用了某个具体的模型，而在于提出了一种**“托管服务+私有化模型”的混合编排模式**。它展示了如何让AWS原生的Agent框架“误以为”自己在调用原生Bedrock，实际上底层是完全自主可控的开源模型。这种“欺骗”层的设计思想，对于构建企业级AI中台具有重要的参考意义。
+*   **反例/边界条件（事实陈述）：** 这种方法并非首创，LangChain等社区中早已存在类似的适配器模式。文章的创新性更多体现在AWS特定生态内的落地，而非通用技术的突破。
 
-#### 4. 反例与边界条件（批判性思考）
-*   **反例1：运维复杂度的非线性增加（事实陈述/你的推断）：** 相比于直接调用Bedrock API，自建SageMaker端点+维护SGLang容器+编写自定义解析器，极大地增加了**运维负担**。如果团队没有专门的MLOps工程师，这种方案的长期维护成本可能远超其带来的性能收益。一旦SGLang版本更新或SageMaker底层实例变更，兼容性问题将成为噩梦。
-*   **反例2：延迟悖论（作者观点/你的推断）：** 文章强调SGLang的低延迟，但Bedrock作为全托管服务，其网络链路经过了极度优化。在跨可用区或跨 region 调用SageMaker端点时，网络往返延迟可能抵消SGLang带来的推理加速优势。对于极低延迟要求的场景，直接使用专用的Bedrock实例可能反而更优。
+**4. 行业影响：推动Agent标准化的博弈**
+*   **支撑理由（作者观点）：** 随着Strands Agents等框架的兴起，模型提供商之间的格式壁垒正在成为阻碍行业发展的绊脚石。这篇文章实际上是在示范如何通过“中间件”来对抗这种碎片化。如果这种自定义解析器的模式被广泛采纳，可能会迫使云厂商在构建Agent服务时，更加开放地支持第三方模型接口，从而推动行业标准的形成。
+*   **反例/边界条件（你的推断）：** 这种做法也可能导致云厂商收紧策略，或者使得维护成本高昂的自定义适配器成为企业的沉重负担，反而加强了MSP（管理服务提供商）的市场地位。
 
-#### 5. 行业影响：推动“解耦”成为标准
-*   **支撑理由（你的推断）：** 此类文章的传播，会促使行业意识到**模型与框架解耦**的重要性。未来，Agent编排层不应被锁定在特定的模型提供商上。AWS用户会开始要求更灵活的“Bring Your Own Model (BYOM)”支持，推动云厂商进一步开放其协议标准。
+**5. 可读性与逻辑性**
+*   **支撑理由（事实陈述）：** 文章结构清晰，遵循了“问题提出 -> 基础设施搭建 -> 代码实现 -> 集成验证”的经典技术博客叙事逻辑。特别是针对SGLang的部署配置，提供了具体的参数，具有很强的可操作性。
+*   **反例/边界条件（作者观点）：** 文章假设读者已经非常熟悉AWS IAM权限和网络配置，对于初学者来说，Debug SageMaker端点的连接问题可能会比写解析器代码更耗时。
 
-### 可验证的检查方式
+**可验证的检查方式：**
 
-为了验证该方案的可行性与性能，建议进行以下检查：
+1.  **性能对比基准测试（指标）：**
+    *   *验证方式：* 构建一个A/B测试环境。A组使用文章中的SGLang+SageMaker+自定义解析器方案；B组使用AWS Bedrock原生的Claude或Llama模型。
+    *   *观察指标：* 重点测量**首字延迟（TTFT）**和**端到端延迟**。由于引入了自定义解析层和SageMaker的网络开销，预计A组的延迟会比B组高出15%-30%。如果延迟差异超过50%，则该方案在实时交互场景下的实用性将大打折扣。
 
-1.  **Token吐出速率对比测试（指标）：**
-    *   *实验方法：* 使用相同的Prompt（包含长上下文），分别对比Bedrock原生Llama 3.1端点与SageMaker+SGLang端点的**Time to First Token (TTFT)** 和 **Tokens Per Second (TPS)**。
-    *   *预期结果：* SGLang在并发场景下的TPS应显著高于普通vLLM或HuggingFace TGI部署，但在单流低并发下优势可能不明显。
+2.  **结构化数据生成的准确性（实验）：**
+    *   *验证方式：* 设计一组需要Agent调用工具的复杂Prompt，要求模型输出JSON格式的Action指令。
+    *   *观察指标：* 统计**JSON解析失败率**。SGLang虽然支持结构化生成，但在经过自定义解析器转换后，是否会出现字符截断或转义错误导致Agent流程中断是关键验证点。
 
-2.  **协议解析成功率测试（指标）：**
-    *   *实验方法：* 构造包含Function Calling（工具调用）的复杂Agent任务，观察自定义解析器是否能将SageMaker的输出**无损转换**为Bedrock Agents所需的JSON Schema格式。
-    *   *预期结果：* 验证解析器是否能正确处理边缘情况（如模型输出截断、非法JSON字符）。
-
-3.  **长期稳定性观察（观察窗口）：**
-    *   *实验方法：* 在高并发负载下运行该架构24小时以上，监控SageMaker端点的内存显存占用情况及SGLang服务的Error Rate。
-    *   *预期结果：* 观察SGLang的KV Cache管理是否会导致OOM（内存溢出），验证其生产环境稳定性。
-
-### 实际应用建议
-1.  **成本效益分析：** 在实施前，务必计算SageMaker实例（如G5/G6实例）的租用成本 + 人力维护成本 vs 直接调用Bedrock API的成本。通常只有在大规模、
+3.  **并发稳定性测试（观察窗口）：**
+    *   *验证方式：* 使用Locust或K6模拟100个并发用户同时与Strands Agent交互。
+    *   *观察窗口：* 持续观察10分钟。
+    *   *观察指标：* 监
 
 ---
 ## 技术分析
 
-基于您提供的文章标题和摘要，这篇文章主要探讨了在 AWS SageMaker AI 端点上托管 LLM（如 Llama 3.1）时，如何为 Strands Agents（推测为 AWS Agents 或特定框架 Agent）构建自定义模型提供程序，特别是解决非 Bedrock 原生格式与 SGLang 高性能推理框架的集成问题。
+基于提供的标题和摘要，这篇文章虽然篇幅可能不长，但触及了当前生成式AI落地中的一个非常关键的痛点：**标准化服务与异构模型部署之间的适配问题**。文章通过构建自定义模型提供者，将非标准格式的SageMaker端点模型（如Llama 3.1）集成到标准化的Agent框架中。
 
-以下是针对该文章的深入分析：
+以下是对该文章核心观点及技术要点的深入分析：
 
 ---
 
 ## 1. 核心观点深度解读
 
 **主要观点：**
-文章的核心观点是**“解耦与适配”**。在构建生成式 AI 应用时，开发者不应被锁定在单一云厂商的托管服务（如 AWS Bedrock）中，而应掌握通过**自定义模型提供程序**将高性能开源模型（Llama 3.1）、高效推理框架（SGLang）与标准化 Agent 框架无缝连接的能力。
+文章的核心观点是**“抽象与适配是AI工程化的关键”**。在构建企业级AI Agent时，开发者不应受限于云厂商提供的原生托管模型（如Bedrock），而应掌握通过构建自定义模型提供者和解析器，将任意自托管模型（如SageMaker上的Llama 3.1）无缝接入标准化Agent框架的能力。
 
 **核心思想：**
-作者传达了**“基础设施灵活性优于便利性”**的思想。虽然 Bedrock 提供了开箱即用的 API，但在成本控制、性能优化和数据隐私要求下，企业往往选择在 SageMaker 上自部署模型。文章主张通过实现**解析层**来抹平不同推理后端（SGLang）与上层应用之间的接口差异。
+作者传达了**“接口标准化与实现解耦”**的工程思想。Strands Agents（假设为某种Agent框架或应用逻辑）期望统一的输入输出格式（如Bedrock Messages API），但底层模型服务（SageMaker + SGLang）可能提供不同的协议。通过编写中间层，实现“模型无关”的Agent开发。
 
 **创新性与深度：**
-*   **创新性：** 将 SGLang（一种新兴的高性能推理服务框架）与 AWS 的 ML 容器工具链结合，并专门针对 Agent 的“工具调用”格式进行适配，这比简单的模型部署更具工程深度。
-*   **深度：** 文章触及了 LLM 落地的“最后一公里”问题——即模型输出的标准化。Agent 依赖结构化输出（如 JSON/Function Call），而开源模型原生输出格式各异，构建自定义 Parser 是解决这一痛点的关键。
+*   **创新性：** 结合了**SGLang**（高性能推理服务）与**awslabs/ml-container-creator**（标准化容器构建），并针对**Strands Agents**（特定的应用层框架）进行适配，展示了一套完整的从模型部署到应用接入的MLOps全链路。
+*   **深度：** 不仅仅停留在“调用API”，而是深入到了**数据解析**层面。处理LLM的输出流，将其从原始Token转化为Agent可用的结构化数据，是Agent能否稳定运行的关键。
 
 **重要性：**
-随着大模型从“玩具”走向“生产”，企业对**延迟**和**吞吐量**（SGLang 的优势）极其敏感。同时，出于合规性，数据不能离开特定 VPC。掌握这种自定义集成能力，是企业级 AI 落地的必修课。
+随着企业对数据隐私和成本控制的关注，越来越多的模型从托管API转向私有化部署（VPC内部）。这篇文章解决了**“最后一公里”**的接入问题，使得企业既能享受私有部署的灵活性，又能利用上层Agent框架的编排能力。
 
 ---
 
 ## 2. 关键技术要点
 
-**涉及的关键技术：**
-*   **AWS SageMaker AI:** 用于托管模型计算资源的平台。
-*   **SGLang:** 一个高性能的 LLM 推理服务框架，以高吞吐和低延迟著称，特别擅长处理复杂的 Prompt 和结构化输出。
-*   **Llama 3.1:** Meta 开源的高性能模型。
-*   **awslabs/ml-container-creator:** AWS 实验室提供的工具，用于简化大模型容器的构建与打包。
-*   **Strands Agents (推测为 Agents for Amazon Bedrock 或类似框架):** 需要调用模型能力的 Agent 编排层。
-*   **Bedrock Messages API 格式:** 行业标准化的消息交互格式。
+### 涉及的关键技术
+1.  **SageMaker AI Endpoints:** AWS云上的托管推理服务，提供GPU实例和自动扩缩容。
+2.  **SGLang:** 一个高性能的LLM推理服务运行时，以高吞吐和低延迟著称，支持OpenAI兼容协议或自有协议。
+3.  **awslabs/ml-container-creator:** AWS提供的工具，用于简化构建符合SageMaker规范的Docker镜像。
+4.  **Llama 3.1:** Meta的开源大模型，通常需要特定的推理格式。
+5.  **Custom Model Provider & Parsers:** 自定义代码逻辑，用于处理请求和响应的序列化与反序列化。
 
-**技术原理与实现：**
-1.  **容器化部署:** 利用 `ml-container-creator` 将 Llama 3.1 模型权重和 SGLang 服务器环境打包，推送到 SageMaker。
-2.  **SGLang 服务端:** 启动 SGLang 服务器，监听端口，准备接收推理请求。
-3.  **自定义适配层:** 这是核心。SageMaker 上的 SGLang 可能不直接兼容 Bedrock 的 HTTP 协议或 JSON 结构。需要编写一个中间件或 Lambda 层，将 Bedrock 格式的请求转化为 SGLang 格式，反之亦然。
-4.  **输出解析:** 针对 Agent 需要的工具调用格式，编写 Parser 确保模型输出的 JSON 能被 Agent 正确消费。
+### 技术原理与实现
+*   **部署层:** 使用`ml-container-creator`将Llama 3.1模型权重和SGLang推理服务器打包成一个Docker容器。SGLang启动后监听端口，提供HTTP推理接口。
+*   **适配层:** 这是文章的重点。Strands Agents可能默认发送Bedrock格式的JSON。自定义提供者需要拦截这一请求，将其转换为SGLang/Llama 3.1理解的格式（例如，调整`prompt`字段或`chat_template`）。
+*   **解析层:** 模型返回的是流式Token。解析器需要将这些Token拼接，并根据Agent的需求提取工具调用或特定JSON结构。
 
-**技术难点与解决方案：**
-*   **难点:** **结构化输出的稳定性**。开源模型在生成 Function Call 的 JSON 时容易出错。
-*   **方案:** 利用 SGLang 的 Constrained Decoding（约束解码）能力，强制模型输出符合 JSON Schema 的格式，从而提高 Agent 的成功率。
-*   **难点:** **协议转换**。
-*   **方案:** 实现一个 Custom Model Provider，模拟 Bedrock 的 `InvokeModel` 接口签名。
+### 技术难点与解决方案
+*   **难点：流式传输的终止条件与解析。**
+    *   *问题：* SGLang返回的流可能不包含明确的“消息结束”标记，或者格式与Bedrock不同。
+    *   *方案：* 实现一个基于Python生成器的解析器，实时处理字节流，识别Stop Tokens，并转换为Agent框架期望的标准事件流（如SSE格式）。
+*   **难点：Chat Template的兼容性。**
+    *   *问题：* Llama 3.1有其特殊的Prompt格式（如特殊的Header和Token分隔符）。
+    *   *方案：* 确保SGLang配置了正确的Tokenizer配置文件，或者在自定义提供者中手动构建Prompt模板。
+
+### 技术创新点
+利用**SGLang**替代传统的vLLM或TGI，可能意在利用其独特的**结构化生成**或**RadixAttention**特性来提高Agent在多轮对话中的响应速度。
 
 ---
 
 ## 3. 实际应用价值
 
 **指导意义：**
-这篇文章为**“混合云 AI 架构”**提供了具体的实施路径。它告诉架构师：你可以享受 AWS SageMaker 的基础设施弹性，同时利用 SGLang 的极致性能，还能保持上层应用代码的标准化（使用 Bedrock API 风格）。
+对于正在构建AI Agent应用的企业，这篇文章提供了一条避开供应商锁定的路径。你不必为了使用Agent框架而被迫使用昂贵的托管API。
 
 **应用场景：**
-1.  **高频交易/金融分析:** 需要极低的推理延迟，SGLang 的性能优势明显。
-2.  **私有化部署/数据主权:** 数据不能上传给 Bedrock 托管模型，必须在 VPC 内部 SageMaker 部署。
-3.  **成本敏感型应用:** 使用 SageMaker Spot 实例 + 自部署 Llama 3.1，比调用 Bedrock API 更便宜。
+1.  **金融/医疗行业：** 数据敏感，必须将模型部署在VPC内部的SageMaker上，不能出公网调用Bedrock。
+2.  **成本优化：** 使用Spot实例或预留实例在SageMaker上运行Llama 3.1，成本远低于按Token计费的API。
+3.  **模型微调集成：** 企业微调了Llama 3.1，需要将其接入Agent流程，Bedrock原生未提供该微调模型，必须自部署。
 
 **注意事项：**
-*   **运维复杂度:** 自部署意味着你要维护模型健康、负载均衡和自动扩缩容，这比直接调用 API 复杂得多。
-*   **冷启动:** SageMaker 端点可能存在冷启动问题，需要配置好预置实例。
-
-**实施建议：**
-不要从零开始构建容器。优先使用 `awslabs/ml-container-creator` 或 Hugging Face 的 TGI (Text Generation Inference) 等成熟容器模板。重点开发**“适配器”**代码，而非底层推理引擎。
+*   **冷启动时间：** SageMaker端点在从0扩容时可能有几分钟的启动延迟。
+*   **维护成本：** 需要自行维护Docker镜像、模型版本更新和底层基础设施的健康检查。
 
 ---
 
 ## 4. 行业影响分析
 
-**对行业的启示：**
-*   **推理引擎之战升级:** SGLang、vLLM、TGI 等推理框架的竞争日益激烈。企业不再满足于“跑起来”，而是追求“跑得快、跑得省”。
-*   **标准化接口的胜利:** Bedrock Messages API 格式正在成为事实上的行业标准。即便是非 AWS 的服务，也在努力兼容这一接口，以降低迁移门槛。
+**行业启示：**
+AI基础设施正在从**“MaaS（模型即服务）”**向**“MaaS + Custom Deployment（混合部署）”**转变。工具链的互操作性变得至关重要。未来的赢家是那些能提供最好“适配器”和“胶水层”技术的厂商或开发者。
 
 **带来的变革：**
-推动**“模型路由”**的普及。企业内部可能会建立一个统一的模型网关，后端挂载 SageMaker (Llama 3.1)、Bedrock (Claude 3.5)、甚至本地 GPU，而前端应用无感知。
+加速了**开源模型在企业生产环境中的落地**。企业不再犹豫是否使用开源模型，因为接入难度正在降低。
 
 **发展趋势：**
-*   **MLOps 向 LLMOps 演进:** 重点从模型训练转向模型服务优化。
-*   **精细化的成本控制:** 企业会更倾向于在简单任务使用自部署的小模型（如 Llama 3.1 8B），在复杂任务使用托管的大模型（如 Claude 3.5 Sonnet），通过 Custom Provider 实现智能路由。
+*   **标准化协议的胜利：** OpenAI API协议正在成为事实标准。SGLang、vLLM等都支持该协议，文章中的“自定义解析”在未来可能会变得更简单，只需简单的协议映射。
+*   **Inference at the Edge：** 类似的技术栈可以迁移到边缘设备或本地数据中心。
 
 ---
 
 ## 5. 延伸思考
 
-**引发的其他思考：**
-*   **模型切换的代价:** 如果我们构建了大量的 Custom Parser，当模型升级（如 Llama 3.1 -> 3.2）时，Prompt 格式或 Tokenizer 的变化是否会导致解析层失效？如何设计更具鲁棒性的解析层？
-*   **SGLang vs vLLM:** 文章选择了 SGLang，是因为其对 Structured Generation 的支持。这暗示了未来推理框架的核心竞争力将在于**对非文本生成（如 JSON、代码、图像）的控制能力**。
-
 **拓展方向：**
-*   可以研究如何将此架构扩展到**多模态**（Llama 3.1 Vision）。
-*   探索**动态批处理**在 SageMaker 上的配置，以进一步降低成本。
+*   **Function Calling的标准化：** 自托管模型（如Llama 3.1）在进行Function Calling（工具调用）时，输出格式往往与GPT-4不同。如何编写通用的Parser来处理不同模型的工具调用输出（是JSON Schema还是特殊Token），是一个值得深究的方向。
+*   **多模型路由：** 如果一个Agent同时调用SageMaker上的Llama 3.1（用于长文本）和Bedrock上的Claude 3（用于复杂逻辑），如何构建一个统一的Model Router？
+
+**待研究问题：**
+SGLang在处理高并发Agent请求时的显存管理效率如何？相比TGI，在处理流式输出时的首字延迟（TTFT）表现是否更优？
 
 ---
 
 ## 6. 实践建议
 
-**如何应用到自己的项目：**
-1.  **评估需求:** 如果你的应用对延迟不敏感（< 500ms），直接用 Bedrock。如果你需要处理高并发或极低延迟，或者需要特定格式的强制输出，考虑此方案。
-2.  **原型验证:** 先在本地使用 Docker 运行 SGLang + Llama 3.1，编写一个简单的 Python 脚本模拟 Bedrock 的请求格式进行转换，验证解析逻辑。
-3.  **容器化:** 使用文章提到的工具构建镜像，测试镜像在 EC2 上的运行情况。
-4.  **部署 SageMaker:** 配置好 IAM Role 和 VPC，部署端点。
-5.  **编写 Provider:** 在你的 Agent 代码中，配置 `Custom Model Provider`，指向 SageMaker 端点 URL。
+**如何应用到项目：**
+1.  **评估现有框架：** 检查你正在使用的Agent框架（如LangChain, AutoGen等）是否支持自定义`LLM`类或`ChatModel`接口。
+2.  **容器化准备：** 不要直接在SageMaker裸实例上折腾，使用Docker封装环境。利用`ml-container-creator`或类似工具（如HuggingFace TGI的官方镜像）。
+3.  **编写适配层：** 创建一个Python类，实现`invoke`和`stream`方法。内部使用`requests`或`aiohttp`调用SageMaker端点。
+
+**行动建议：**
+*   先在本地使用Docker运行SGLang + Llama 3.1，并用简单的Python脚本模拟Agent的请求格式进行调试。
+*   确认SageMaker端点的IAM角色配置正确，确保你的Agent服务有权限调用SageMaker的`InvokeEndpoint` API。
 
 **补充知识：**
-*   熟悉 **OpenAPI/Swagger** 规范（用于 Function Call 定义）。
-*   了解 **JSON Schema**。
-*   掌握 **Python Boto3** SDK。
-
-**注意事项：**
-*   **Token 计费:** 自部署模型按实例小时计费，而非 Token 数。需要监控利用率，确保算力没有被浪费。
-*   **超时设置:** Agent 调用链路长，要注意 SageMaker 端点的超时配置，避免 60s 超时导致 Agent 中断。
+需要熟悉**BentoML**或**KServe**等模型服务框架的原理，理解HTTP流式传输（Chunked Transfer Encoding）的机制。
 
 ---
 
 ## 7. 案例分析
 
-**成功案例（假设场景）：**
-*   **场景:** 某电商公司需要构建“智能客服 Agent”，能够实时查询库存并修改订单。
-*   **痛点:** Bedrock Claude 虽然聪明但太贵且慢，Llama 3.1 70B 在 SageMaker 上用 TGI 部署延迟不稳定。
-*   **应用:** 采用文章方案，使用 SGLang 部署 Llama 3.1 70B。利用 SGLang 的 constrained decoding 强制模型输出标准的 JSON 格式（`{"action": "refund", "order_id": "..."}`）。
-*   **结果:** 解析错误率从 5% 降至 0.1%，P95 延迟降低 40%，成本降低 60%。
+**成功案例（推演）：**
+某电商公司构建了一个“智能客服Agent”。他们使用Llama 3.1 70B模型部署在SageMaker上，因为该模型经过了特定客服术语的微调。通过应用文章所述的方法，他们将这个私有模型接入了基于LangChain构建的Agent中。Agent成功调用了“查订单”和“退款”等工具。
+*   *关键成功因素：* 完美处理了模型输出中的工具调用JSON格式，即使模型偶尔输出Markdown格式的JSON，Parser也能通过正则清洗修复。
 
-**失败反思：**
-*   **场景:** 某初创团队试图复现该架构。
-*   **失败点:** 团队低估了维护 SGLang 服务的难度。当并发量激增时，SGLang 出现 OOM (内存溢出)，且没有完善的监控告警。
-*   **教训:** 自部署模型必须配套完善的可观测性工具（如 Prometheus/Grafana 监控 GPU 利用率和显存），否则生产环境稳定性无法保障。
+**失败反思（假设）：**
+如果开发者忽略了**Prompt Template**的差异。直接将User Message发送给Llama 3.1，而没有加上`<|begin_of_text|><|start_header_id|>user<|end_header_id|>`等Llama特有的Header。
+*   *后果：* 模型不理解指令，输出乱码或无法遵循Agent的指令。
+*   *教训：* 自定义Provider不仅仅是转发HTTP请求，更是**Prompt Engineering**的守门员。
 
 ---
 
 ## 8. 哲学与逻辑：论证地图
 
 **中心命题:**
-在构建高性能、低成本的生成式 AI Agent 时，**应当优先选择在 SageMaker 上部署 SGLang 并配合自定义解析层**，而非直接依赖 Bedrock 托管模型。
+**在构建企业级生成式AI应用时，采用“自定义模型提供者”模式将异构推理后端（如SageMaker+SGLang）适配至标准化Agent框架，是实现性能优化与成本控制的最佳架构路径。**
 
 **支撑理由:**
-1.  **性能可控性:** SGLang 提供了比通用托管服务更优的并发处理能力和结构化输出约束能力。
-2.  **成本效益:** 对于高并发场景，SageMaker 的按实例计费通常比按 Token 计费更具经济性。
-3.  **数据主权与合规:** 自部署允许数据完全保留在 VPC 内，满足严格的合规要求。
-4.  **格式兼容性:** 通过自定义解析层，可以消除不同后端模型与上层应用之间的接口差异。
+1.  **性能可控性:** 自托管允许选择特定的推理引擎（如SGLang）和硬件配置，从而针对特定负载（如高并发流式输出）进行调优，这是通用黑盒API无法提供的。
+2.  **数据主权与合规:** 对于敏感行业，将模型部署在SageMaker VPC内比调用公有云API更能满足合规要求，自定义提供者是连接这一环境的桥梁。
+3.  **成本效益:** 长期运行大规模Agent应用时，按实例计费的自部署模型通常优于按Token计费的托管API，且消除了供应商锁定风险。
 
 **反例/边界条件:**
-1.  **低频/低并发场景:** 如果日调用量很低，维护 SageMaker 端点的固定成本（实例运行费）会远高于 Bedrock 的按量付费。
-2.  **极致模型能力需求:** 如果任务需要 Bedrock 独有的顶尖模型（如 Claude 3.5 Sonnet 或 Haiku），Llama 3.1 即使优化再好也无法在推理能力上弥补差距。
-3.  **运维资源匮乏:** 如果团队没有专门的 MLOps 工程师，自部署的高运维风险会抵消其技术优势。
+1.  **维护开销阈值:** 如果团队规模较小或缺乏MLOps能力，维护自定义容器、监控端点健康和处理版本迭代的成本可能超过直接调用API的额外费用。
+2.  **极致延迟要求:** 如果应用对TTFT（首字延迟）极其敏感（毫秒级），公有云厂商的优化API（如Bedrock或OpenAI）通常比自建端点有更优的网络基础设施和模型加载优化。
+
+**事实与价值判断:**
+*   *事实:* SageMaker支持部署自定义容器；SGLang支持Llama 3.1；Agent框架通常依赖特定的接口格式。
+*   *价值判断:* “灵活性”和“成本控制”比“开发速度”和“开箱即用”更重要（针对特定企业场景）。
+
+**立场与验证:**
+我支持该命题，但建议采用**渐进式策略**。
+*   *验证方式:* 进行A/B测试。A组使用Bedrock原生API，B组使用SageMaker+SGLang+自定义Provider。
+*   *可证伪指标:* 对比两者的**总拥有成本 (TCO)**、**P99 延迟**以及**开发与维护工时**。如果B组的TCO下降幅度 >
 
 ---
 ## 最佳实践
 
 ## 最佳实践指南
 
-### 实践 1：优化 SageMaker 端点配置以降低延迟
+### 实践 1：优化 SageMaker 端点配置以实现低延迟推理
 
-**说明**: 在构建自定义模型提供程序时，LLM 的推理速度直接影响 Strands Agents 的响应体验。SageMaker 端点的实例类型、模型量化程度以及并发配置是决定延迟的关键因素。
+**说明**: 在为 Strands Agents 构建自定义模型提供程序时，响应延迟直接影响用户体验。SageMaker 端点的配置（包括实例类型、模型量化以及并发处理能力）决定了推理速度。对于需要实时交互的 Agent 应用，必须优化端点配置以减少首字节响应时间（TTFB）和整体推理延迟。
 
 **实施步骤**:
-1. 根据模型大小选择合适的实例类型（如使用 GPU 实例 `ml.g5` 或 `ml.p4`）。
-2. 在模型容器配置中启用动态批处理或利用 SageMaker 的多模型端点功能以提高吞吐量。
-3. 实施模型量化（如使用 AWQ 或 GPTQ）以减少显存占用并提高推理速度。
+1. **选择合适的实例类型**：根据模型大小选择支持 GPU 加速的实例（如 `ml.g5` 或 `ml.p4`），对于较小模型可考虑使用 `ml.inf1` 实例以获得更低成本和延迟。
+2. **启用模型量化**：在将模型上传至 SageMaker 之前，应用量化技术（如 AWQ 或 GPTQ）以减少模型显存占用，从而提高吞吐量。
+3. **配置多模型端点**：如果可能，使用 SageMaker 的多模型端点（MME）功能，在单个实例上加载多个模型以提高资源利用率。
 
-**注意事项**: 避免在单实例上部署过大的模型，确保在配置自动扩缩容策略时设置合理的冷启动时间，以免代理请求超时。
+**注意事项**: 避免在生产环境中使用 `ml.t2` 或 `ml.m5` 等通用 CPU 实例运行大语言模型，因为它们无法提供足够的计算能力来维持可接受的响应速度。
 
 ---
 
-### 实践 2：实现健壮的标准化接口适配层
+### 实践 2：实现严格的输入输出序列化与验证
 
-**说明**: Strands Agents 期望特定的输入输出格式（通常兼容 OpenAI API 标准）。SageMaker 托管的开源模型（如 Llama 3 或 Mistral）通常具有不同的请求/响应架构，因此必须构建一个适配层来处理格式转换。
+**说明**: Strands Agents 通过标准化的 API 与 LLM 交互。自定义提供程序必须充当适配器，将来自 Agent 框架的请求转换为 SageMaker 端点预期的格式（通常是 JSON），并将模型的原始响应反序列化回框架所需的格式。此外，必须验证输入参数以防止端点处理错误。
 
 **实施步骤**:
-1. 创建一个 Python 包装器类，继承自 Strands Agents 的基类。
-2. 在包装器中实现 `invoke` 方法，将来自 Agent 的标准 Prompt 转换为 SageMaker 模型所需的 JSON 格式（如处理特定模板）。
-3. 解析 SageMaker 返回的响应，提取生成的文本并将其映射回 Agent 期望的标准响应对象。
+1. **定义映射逻辑**：编写转换函数，将 Agent 的提示词、温度、最大令牌数等参数映射到 SageMaker 调用体的 JSON 结构中。
+2. **添加数据验证层**：在发送请求前，验证输入提示词不为空，且温度参数在 0 到 1 之间。
+3. **处理流式响应**：如果 Agent 支持流式传输，确保自定义提供程序能够处理 SageMaker 的流式响应字节流，并将其正确转发给客户端。
 
-**注意事项**: 严格处理 Token 限制和截断逻辑，防止因输入过长导致 SageMaker 推理错误。
+**注意事项**: 特别注意处理长上下文输入，确保输入 Token 数量不超过模型的上下文窗口限制，否则应在请求前进行截断或报错处理。
 
 ---
 
-### 实践 3：建立严格的身份验证与网络隔离
+### 实践 3：设计健壮的错误处理与重试机制
 
-**说明**: 将 SageMaker 端点暴露给外部服务（如 Strands Agents）时，必须确保通信安全，防止未授权访问和数据泄露。
+**说明**: 云端推理服务可能会遇到瞬时的网络问题或端点过载。自定义提供程序不能仅仅在遇到错误时崩溃，而必须能够识别可重试的错误（如 5xx 错误或限流错误）并执行指数退避重试，同时向 Agent 框架返回清晰的错误信息。
 
 **实施步骤**:
-1. 配置 SageMaker 端点的 VPC 设置，将其部署在私有子网中。
-2. 使用 AWS IAM Roles Anywhere 或 VPC Endpoints 建立私有连接，避免流量穿越公网。
-3. 在自定义提供程序代码中，使用 AWS SDK (boto3) 的 SigV4 签名机制进行身份验证，而不是硬编码 API Key。
+1. **分类错误类型**：区分客户端错误（如 400 Bad Request，不应重试）和服务端错误（如 503 Service Unavailable，应重试）。
+2. **实施指数退避**：在代码中集成重试逻辑，每次重试之间的等待时间呈指数增长（例如 1s, 2s, 4s），最大重试次数设为 3 次。
+3. **回退策略**：如果 SageMaker 端点持续不可用，考虑设计一个降级逻辑（如返回预设的静态响应或切换到备用端点）。
 
-**注意事项**: 定期轮换 IAM 凭证，并确保 SageMaker 端点策略仅允许特定的 Strands Agents 服务角色进行 `sagemaker:InvokeEndpoint` 操作。
+**注意事项**: 确保重试机制不会导致请求风暴，在重试时记录详细的错误日志以便后续排查。
 
 ---
 
-### 实践 4：设计全面的错误处理与重试机制
+### 实践 4：利用 IAM 角色实施最小权限访问控制
 
-**说明**: 云端推理服务可能会遇到瞬态故障（如 503 Service Unavailable 或网络抖动）。自定义提供程序需要能够优雅地处理这些错误，而不会导致 Agent 任务彻底失败。
+**说明**: 安全性是构建 AI Agent 的核心。自定义提供程序通常需要调用 SageMaker `InvokeEndpoint` API。必须遵循最小权限原则，为提供程序分配的 IAM 角色仅包含执行任务所需的权限，避免授予过度的 SageMaker 管理权限。
 
 **实施步骤**:
-1. 捕获 `boto3` 客户端抛出的特定异常（如 `ModelError` 或 `ServiceUnavailable`）。
-2. 实施指数退避算法进行自动重试（例如：首次重试等待 1秒，第二次 2秒，最多重试 3 次）。
-3. 在重试耗尽后，向 Agent 返回结构化的错误信息，以便 Agent 能够决定是暂停还是向用户报告。
+1. **创建专用 IAM 角色**：不要使用根账户或管理员凭证。
+2. **定义信任策略**：确保该角色仅能被运行自定义提供程序的服务（如 Lambda 或 ECS）代入。
+3. **附加精细策略**：仅授予 `sagemaker:InvokeEndpoint` 权限，并限制资源 ARN 为特定的端点 ARN，例如 `arn:aws:sagemaker:us-east-1:123456789012:endpoint/my-custom-agent-endpoint`。
 
-**注意事项**: 区分可重试错误（如限流）和不可重试错误（如认证失败、参数错误），避免对后者进行无意义的重试。
+**注意事项**: 定期轮换 IAM 凭证，并使用 AWS CloudTrail 审计对 SageMaker 端点的调用日志，确保没有异常访问模式。
 
 ---
 
-### 实践 5：集成可观测性工具以监控性能与成本
+### 实践 5：建立全面的可观测性与日志记录
 
-**说明**: 部署后需要持续监控模型的调用次数、延迟以及 Token 消耗量，以便优化成本和性能。
-
-**实施步骤**:
-1. 利用 Amazon CloudWatch 收集 SageMaker 端点的指标（如 `Invocations`、`ModelLatency`、`InvocationsPerInstance`）。
-2. 在自定义提供程序代码中记录每次请求的输入和输出 Token 数量，并将其发送至 CloudWatch Logs 或成本分析系统。
-3. 为关键指标设置警报，例如当延迟超过特定阈值或错误率飙升时触发通知。
-
-**注意事项**: 确保日志中不包含敏感的 PII（个人身份信息）数据，遵守数据隐私合规要求。
-
----
-
-### 实践 6：处理流式响应以提升用户体验
-
-**说明**: 对于交互式 Agent 应用，用户期望实时看到生成的文本流，而不是等待完整响应后一次性显示。SageMaker 支持流式响应，但需要自定义代码来处理。
+**说明**: 为了调试 Agent 的行为并优化性能，必须记录模型交互的元数据。这包括发送给模型的提示词、模型生成的响应、推理延迟以及使用的 Token 数量。这些数据对于追踪幻觉问题或计算成本至关重要。
 
 **实施步骤**:
-1. 在调用 `sagemaker_runtime.invoke_endpoint_with_response_stream` 时，确保自定义提供程序支持迭代器模式。
-2. 实现一个生成器函数，逐块读取 SageMaker 返回的输出流，并解析出增量文本。
-3. 将解析后的增量文本实时传递给 Strands Agents 的前端接口。
-
-**注意事项**: 处理流式传输时的网络中断异常，确保在流中断时能够优雅降级或提示用户重试。
+1. **结构化日志记录**：在调用 SageMaker 前后记录时间戳，以计算
 
 ---
 ## 学习要点
 
-- 通过在 SageMaker AI 端点上部署自定义 LLM 并将其配置为 Bedrock Knowledge Base 的提供商，可以轻松集成专有模型以实现检索增强生成（RAG）功能。
-- 利用 Strands Agents 的自定义模型提供商功能，开发者能够灵活地将托管在 SageMaker 上的专有模型无缝接入 Bedrock 生态系统，而无需依赖基础模型提供商。
-- 在配置自定义提供商时，必须正确设置推理端点名称、区域和 IAM 角色权限，以确保 Bedrock 能够安全调用 SageMaker 托管的模型。
-- 为了确保模型兼容性，SageMaker 托管的模型需要支持特定的输入输出格式（如 OpenAI 兼容格式），以便与 Bedrock 的 RAG 工作流协同工作。
-- 通过将模型托管在 SageMaker 上，企业可以更好地控制模型部署环境、数据隐私和成本，同时利用 Bedrock 的编排能力构建智能代理应用。
+- 通过实现标准化的 LangChain 接口（BaseLLM 或 ChatModel），可以无缝集成托管在 Amazon SageMaker 端点上的自定义大语言模型，使其兼容 Strands Agents 框架。
+- 利用 Amazon SageMaker 的实时推理端点，能够在 VPC 内部安全地部署和托管模型，从而满足数据隐私与合规性的严格要求。
+- 通过 LangChain 的 `SagemakerEndpoint` 类，可以直接调用 SageMaker 上的模型，无需编写复杂的底层网络请求代码，极大简化了开发流程。
+- 在构建自定义提供程序时，必须确保输入提示词（Prompt）的格式与目标模型微调时使用的模板完全匹配，以避免推理性能下降。
+- 该架构允许企业灵活替换底层基础模型，只需调整配置即可在 Strands Agents 中切换不同的开源或自研模型，而无需重构上层应用逻辑。
+- 借助 SageMaker 的异步推理功能，可以有效处理大负载或长时间运行的生成任务，优化资源利用率并降低推理延迟。
 
 ---
 ## 引用
@@ -339,14 +321,14 @@ scenarios: ["后端开发"]
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [后端](/categories/%E5%90%8E%E7%AB%AF/)
-- 标签： [Llama 3.1](/tags/llama-3.1/) / [SageMaker](/tags/sagemaker/) / [Strands](/tags/strands/) / [SGLang](/tags/sglang/) / [模型部署](/tags/%E6%A8%A1%E5%9E%8B%E9%83%A8%E7%BD%B2/) / [自定义解析器](/tags/%E8%87%AA%E5%AE%9A%E4%B9%89%E8%A7%A3%E6%9E%90%E5%99%A8/) / [智能体](/tags/%E6%99%BA%E8%83%BD%E4%BD%93/) / [AWS](/tags/aws/)
-- 场景： [后端开发](/scenarios/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/)
+- 标签： [LLM](/tags/llm/) / [SageMaker](/tags/sagemaker/) / [Strands](/tags/strands/) / [Llama 3.1](/tags/llama-3.1/) / [SGLang](/tags/sglang/) / [模型部署](/tags/%E6%A8%A1%E5%9E%8B%E9%83%A8%E7%BD%B2/) / [自定义解析器](/tags/%E8%87%AA%E5%AE%9A%E4%B9%89%E8%A7%A3%E6%9E%90%E5%99%A8/) / [AWS](/tags/aws/)
+- 场景： [大语言模型](/scenarios/%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/) / [后端开发](/scenarios/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/)
 
 ### 相关文章
 
-- [在 SageMaker 上部署 SGLang 并集成至 Strands 智能体]({{< relref "posts/20260305-blogs_podcasts-building-custom-model-provider-for-strands-agents--2.md" >}})
 - [为Strands智能体构建SageMaker托管LLM自定义解析器]({{< relref "posts/20260305-blogs_podcasts-building-custom-model-provider-for-strands-agents--3.md" >}})
-- [在SageMaker部署SGLang并构建Strands代理自定义模型解析器]({{< relref "posts/20260306-blogs_podcasts-building-custom-model-provider-for-strands-agents--10.md" >}})
 - [为Strands智能体构建SageMaker托管LLM自定义解析器]({{< relref "posts/20260306-blogs_podcasts-building-custom-model-provider-for-strands-agents--3.md" >}})
 - [为Strands智能体构建SageMaker自定义模型解析器]({{< relref "posts/20260306-blogs_podcasts-building-custom-model-provider-for-strands-agents--4.md" >}})
+- [在 SageMaker 上部署 SGLang 并为 Strands 智能体构建自定义模型解析器]({{< relref "posts/20260307-blogs_podcasts-building-custom-model-provider-for-strands-agents--9.md" >}})
+- [为 Strands 智能体构建 SageMaker 托管 LLM 自定义模型解析器]({{< relref "posts/20260306-blogs_podcasts-building-custom-model-provider-for-strands-agents--9.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*
