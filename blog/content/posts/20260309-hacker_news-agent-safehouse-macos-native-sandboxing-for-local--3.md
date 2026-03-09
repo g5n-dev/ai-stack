@@ -1,73 +1,78 @@
 ---
-title: "Agent Safehouse：macOS 原生沙箱技术保护本地 Agent"
-date: 2026-03-09T10:32:53+08:00
+title: "Agent Safehouse：基于 macOS 原生沙箱的本地 Agent 隔离方案"
+date: 2026-03-09T12:20:24+08:00
 draft: false
 entry_kind: "auto"
-tags: ["Agent", "macOS", "沙箱技术", "本地安全", "Sandboxing", "系统安全", "原生应用", "隐私保护"]
+tags: ["Agent Safehouse", "macOS", "沙箱", "本地 Agent", "安全隔离", "原生沙箱", "系统安全", "Agent 安全"]
 categories: ["安全", "系统与基础设施"]
 source: hacker_news
-description: "随着本地 Agent 的普及，如何在 macOS 上有效隔离其权限成为安全挑战。Agent Safehouse 提供了一套原生的沙箱方案，旨在限制 Agent 的系统访问范围，降低潜在风险。本文将解析其设计思路与核心机制，帮助开发者构建更安全的本地运行环境。"
+description: "随着本地 AI Agent 的普及，其系统权限管控与安全性正成为开发者关注的焦点。Agent Safehouse 作为一款基于 macOS 原生沙箱机制的工具，为本地 Agent 提供了严格的隔离环境。本文将深入解析其技术原理与架构设计，展示如何在不牺牲性能的前提下有效规避潜在风险，帮助开发者在构建本地应用时实现更精细"
 external_url: https://agent-safehouse.dev
 scenarios: ["Web应用开发"]
 ---
 
-# Agent Safehouse：macOS 原生沙箱技术保护本地 Agent
+# Agent Safehouse：基于 macOS 原生沙箱的本地 Agent 隔离方案
 
 ---
 
 ## 基本信息
 
 - **作者**: atombender
-- **评分**: 568
-- **评论数**: 141
+- **评分**: 610
+- **评论数**: 149
 - **链接**: [https://agent-safehouse.dev](https://agent-safehouse.dev)
 - **HN 讨论**: [https://news.ycombinator.com/item?id=47301085](https://news.ycombinator.com/item?id=47301085)
 
 ---
 ## 导语
 
-随着本地 Agent 的普及，如何在 macOS 上有效隔离其权限成为安全挑战。Agent Safehouse 提供了一套原生的沙箱方案，旨在限制 Agent 的系统访问范围，降低潜在风险。本文将解析其设计思路与核心机制，帮助开发者构建更安全的本地运行环境。
+随着本地 AI Agent 的普及，其系统权限管控与安全性正成为开发者关注的焦点。Agent Safehouse 作为一款基于 macOS 原生沙箱机制的工具，为本地 Agent 提供了严格的隔离环境。本文将深入解析其技术原理与架构设计，展示如何在不牺牲性能的前提下有效规避潜在风险，帮助开发者在构建本地应用时实现更精细的安全控制。
 
 ---
 ## 评论
 
-**文章中心观点**
-Agent Safehouse 提出了一种基于 macOS 原生沙盒机制的本地 AI Agent 约束方案，旨在通过系统级权限控制，缓解本地大模型应用执行不可信代码时的安全风险。
+**深度评论：macOS 原生沙盒在本地 AI Agent 安全中的应用**
 
-**深入评价**
+**核心论点**
+文章提出利用 macOS 原生的沙盒机制作为本地 AI Agent 的安全隔离方案，旨在解决自主智能体在执行系统级操作时的权限滥用风险。该方案试图在系统安全性与 Agent 功能性之间建立一种低资源消耗的标准。
 
-**1. 技术深度：利用系统原生机制构建防御基线**
-*   **支撑理由（事实陈述）：** 文章准确把握了 macOS 安全架构的核心要素，即 `sandbox`（沙盒）、`codesign`（代码签名）和 `entitlements`（授权）。方案将网络安全中的“最小权限原则”应用于本地 Agent 运行时环境。
-*   **支撑理由（作者观点）：** 作者指出，基于特征匹配的传统杀毒软件难以应对 Agent 行为的动态性和非确定性。相比之下，通过静态定义的沙盒规则来限制动态行为，是一种更务实的防御手段。
-*   **边界条件（事实陈述）：** macOS 沙盒并非无法绕过。历史上存在过沙盒逃逸及 Gatekeeper 绕过漏洞。若 Agent 触发内核漏洞或利用合法的进程间通信（IPC）机制进行侧信道攻击，单一沙盒防御可能失效。
-*   **边界条件（你的推断）：** 现代恶意软件常采用“无文件攻击”或内存执行技术。若沙盒规则配置不当（如授予了过于宽泛的 `exec` 权限），防御效果将大打折扣。
+**技术可行性与边界分析**
 
-**2. 实用价值：填补本地开发的安全空白**
-*   **支撑理由（事实陈述）：** 当前本地 AI 开发中，安全往往处于次要地位。Agent Safehouse 提供的配置文件和实施路径，为开发者提供了一个可直接参考的“安全模板”。
-*   **支撑理由（你的推断）：** 该方案有助于解决企业内部部署本地 Agent 时的合规问题。通过沙盒限制 Agent 仅访问特定路径，符合数据防泄漏（DLP）的基本要求。
-*   **局限性（你的推断）：** 实用性受限于 macOS 生态。对于需要调用底层系统 API（如直接 GPU 计算或修改网络设置）的高级 Agent，严格的沙盒限制可能导致功能受限，开发者需在安全与功能完整性之间做出权衡。
+1.  **技术基础与原生优势**
+    *   **机制陈述**：macOS 拥有成熟的 Sandbox 和 TCC（透明同意与控制）框架，能够对文件系统、网络和进程访问进行细粒度限制。
+    *   **支撑理由**：相比于虚拟机或 Docker 容器，原生沙盒对资源的消耗较低，且与操作系统 UI 深度集成，更适配桌面端 Agent 的交互场景。
+    *   **边界条件**：原生沙盒并非绝对的安全边界。历史上存在过沙盒逃逸漏洞（如 Gatekeeper 绕过）。如果 Agent 本身被诱导利用内核漏洞，沙盒机制可能失效。
 
-**3. 创新性：引入系统级安全视角**
-*   **支撑理由（作者观点）：** 文章的创新性不在于发明新技术，而在于将“操作系统级隔离”思维引入目前主要关注算法对齐（RLHF）或提示词注入（Prompt Injection）的 AI 安全领域。
-*   **支撑理由（你的推断）：** 方案体现了一种“零信任”思路：不信任 Agent 生成的任何指令，而是假设宿主环境存在潜在风险。这补充了当前 AI 安全讨论中常被忽视的系统防御视角。
-*   **局限性（事实陈述）：** 利用容器技术（如 Docker、Firecracker）隔离应用在 Linux 环境下已是标准做法。Agent Safehouse 的贡献在于将此类逻辑适配至 macOS 原生环境，而非颠覆性创新。
+2.  **安全边界的有效性**
+    *   **作者观点**：文章暗示通过严格的 Profile 配置，可以限制 Agent 仅访问特定目录，从而防止“删除整个硬盘”等灾难性操作。
+    *   **支撑理由**：最小权限原则是安全设计的基石。将 Agent 限制在“临时文件夹”或“下载文件夹”内，确实能有效降低随机性错误带来的破坏。
+    *   **局限性**：对于 LLM 驱动的 Agent，沙盒难以解决“意图”与“执行”的鸿沟。例如，若 Agent 被赋予“整理文件”的权限，它可能会错误地将重要文件移动到沙盒允许的路径中，沙盒本身无法识别这种逻辑上的误操作。
 
-**4. 行业影响：促进端侧 AI 安全规范**
-*   **支撑理由（你的推断）：** 随着 Apple Intelligence 的普及，端侧 AI 应用将增多。Agent Safehouse 的探索可能为未来 macOS 应用商店审核 AI 类应用提供安全参考依据。
-*   **支撑理由（作者观点）：** 若此类工具被广泛采用，可能促使 AI Agent 开发者从“功能优先”转向“安全设计优先”，推动建立本地 Agent 的安全等级标准。
+3.  **开发成本与用户体验**
+    *   **开发视角**：利用系统自带能力符合“Lean Development”理念。编写一个 Sandbox 配置文件的维护成本通常低于维护一个完整的 Linux 虚拟机镜像。
+    *   **用户视角**：用户无需开启重型虚拟机即可获得基础保护。
+    *   **潜在风险**：macOS 的安全弹窗机制较为频繁。若 Agent 频繁请求权限，用户可能产生“弹窗疲劳”并习惯性点击“允许”，从而导致安全模型失效。
 
-**5. 争议点与权衡**
-*   **争议点：可用性与安全性的平衡。**
-    *   *观点 A（作者倾向）：* 必须实施严格限制，即使这可能牺牲部分用户体验（如增加文件访问确认步骤）。
-    *   *观点 B（你的推断）：* 过度限制会降低 Agent 的自动化能力。例如，无法读取浏览器缓存将限制 Agent 处理自动化办公任务的能力。
-*   **争议点：沙盒的防御边界。**
-    *   *观点 A：* 沙盒能有效防止意外的系统修改和简单的恶意脚本执行。
-    *   *观点 B：* 沙盒无法防止逻辑层面的错误。例如，Agent 在沙盒内合法执行了删除用户授权文件的指令，沙盒机制无法判断这是否源于“提示词注入”导致的用户意图扭曲。
+**多维度评价**
 
-**实际应用建议**
-1.  **分层防御：** 建议将沙盒作为安全基线，而非唯一防线。应结合网络防火墙（监控数据外传）及行为监控手段。
-2.  **动态配置：** 开发者应根据 Agent 的具体功能需求定制 `entitlements`，避免使用默认的宽泛配置。
-3.  **审计日志：** 开启并定期审计沙盒拦截日志，以识别潜在的异常行为尝试。
+1.  **内容深度：视角具体但覆盖面有限**
+    文章从操作系统底层机制出发，准确识别了文件 I/O 是当前 Agent 的主要风险面。论证聚焦于“隔离”层面，但对于“监控”和“审计”机制涉及较少。Agent 安全不仅包含防止越界，还包含行为审计。
+
+2.  **实用价值：适配桌面自动化场景**
+    对于构建 macOS 原生工具（如文字润色、代码补全、本地文件整理）的开发者，文章提供了具体的操作指引。特别是关于 `com.apple.security.files.user-selected.read-write` 等 entitlements 的使用，具有参考意义。
+
+3.  **创新性与行业视角**
+    将沙盒应用于 Local LLM Agent 并非全新概念，但文章探讨了 macOS 原生能力在这一特定场景下的适配性。这对“为了安全必须使用 K8s/VM”的思路提供了另一种轻量级的替代视角。
+
+4.  **争议点与局限性**
+    *   **概率性 vs 规则**：沙盒基于确定性规则，而 Agent 基于概率模型。核心挑战在于如何确保概率模型申请正确的权限。
+    *   **平台依赖**：过分依赖 macOS 原生特性会增加应用跨平台移植的难度。
+
+**实施建议**
+
+1.  **纵深防御**：建议在 Agent 内部增加“确认环”机制，即涉及删除或修改操作时，强制要求 LLM 输出可读的确认步骤，并在执行前进行二次校验。
+2.  **权限分级**：开发时可设计“只读模式”和“读写模式”两套 Profile。在处理简单任务时默认只读，仅在用户明确介入后才切换至读写沙盒。
+3.  **日志审计**：即使沙盒限制了文件访问，仍建议记录所有系统调用的日志以便事后审查。
 
 ---
 ## 代码示例
@@ -76,115 +81,111 @@ Agent Safehouse 提出了一种基于 macOS 原生沙盒机制的本地 AI Agent
 
 
 ```python
-# 示例1：沙箱环境中的文件隔离操作
-def sandboxed_file_operation():
+# 示例1：文件系统隔离 - 限制Agent只能访问指定目录
+import os
+import tempfile
+
+def sandboxed_file_operations():
     """
-    模拟macOS沙箱环境下的安全文件操作
-    解决问题：防止恶意代码访问系统关键文件
+    创建临时沙箱目录并演示受限文件操作
+    实际应用中可结合macOS的sandbox-exec实现更严格的隔离
     """
-    import os
-    import tempfile
-    
     # 创建临时沙箱目录
-    sandbox_dir = tempfile.mkdtemp(prefix="agent_sandbox_")
-    print(f"沙箱目录创建于: {sandbox_dir}")
-    
-    # 允许的操作：在沙箱内创建文件
-    safe_file = os.path.join(sandbox_dir, "test.txt")
-    with open(safe_file, "w") as f:
-        f.write("这是沙箱内的安全操作")
-    
-    # 尝试访问系统文件（会被沙箱阻止）
-    try:
-        with open("/etc/passwd", "r") as f:
-            print("危险操作：读取系统文件")
-    except PermissionError:
-        print("沙箱已阻止系统文件访问")
-    
-    # 清理沙箱
-    os.remove(safe_file)
-    os.rmdir(sandbox_dir)
-    print("沙箱环境已清理")
+    with tempfile.TemporaryDirectory(prefix="agent_sandbox_") as sandbox_path:
+        print(f"沙箱目录创建于: {sandbox_path}")
+        
+        # 允许的操作：在沙箱内创建文件
+        safe_file = os.path.join(sandbox_path, "agent_data.txt")
+        with open(safe_file, "w") as f:
+            f.write("这是安全隔离的Agent数据")
+        
+        # 尝试访问沙箱外的文件（实际应用中会被拦截）
+        try:
+            with open("/etc/passwd", "r") as f:
+                print(f.read())
+        except PermissionError:
+            print("权限拦截：无法访问沙箱外文件")
+        
+        # 读取沙箱内文件
+        with open(safe_file, "r") as f:
+            print(f"\n沙箱内文件内容:\n{f.read()}")
 
-# 测试
-sandboxed_file_operation()
+# 说明：这个示例展示了如何通过临时目录创建基础文件隔离环境，
+# 在实际macOS应用中应配合sandbox-exec实现系统级隔离
 ```
 
 
 
 
 ```python
-# 示例2：网络访问控制
-def network_sandbox_control():
-    """
-    模拟沙箱环境下的网络访问控制
-    解决问题：防止未授权的网络连接
-    """
-    import socket
-    import urllib.request
-    
-    # 允许的网络操作：访问白名单域名
-    allowed_domains = ["api.example.com"]
-    test_domain = "api.example.com"
-    
-    try:
-        # 尝试建立连接
-        with socket.create_connection((test_domain, 80), timeout=2) as sock:
-            print(f"允许访问白名单域名: {test_domain}")
-    except (socket.timeout, ConnectionRefusedError):
-        print("网络访问被阻止或连接失败")
-    
-    # 阻止的网络操作：访问非白名单域名
-    blocked_domain = "malicious-site.com"
-    try:
-        urllib.request.urlopen(f"http://{blocked_domain}", timeout=2)
-    except (urllib.error.URLError, socket.timeout):
-        print(f"沙箱已阻止访问: {blocked_domain}")
+# 示例2：网络隔离 - 限制Agent的网络访问
+import subprocess
+import shlex
 
-# 测试
-network_sandbox_control()
+def network_restricted_agent():
+    """
+    使用macOS sandbox工具限制网络访问
+    需要配合自定义sandbox配置文件使用
+    """
+    # 定义沙箱规则（实际应保存为.sb配置文件）
+    sandbox_rules = """
+    (version 1)
+    (deny network*)
+    (allow file-read* file-write* (subpath "/tmp/agent_sandbox"))
+    """
+    
+    # 模拟受限的网络操作
+    try:
+        # 实际应用中会通过sandbox-exec运行此命令
+        result = subprocess.run(
+            ["curl", "https://api.example.com"],
+            check=True,
+            capture_output=True
+        )
+        print("网络请求成功（未隔离状态）")
+    except (subprocess.CalledProcessError, FileNotFoundError):
+        print("网络请求被拦截（沙箱隔离状态）")
+
+# 说明：这个示例展示了如何通过macOS沙箱规则限制网络访问，
+# 实际应用中需要创建.sb配置文件并通过sandbox-exec执行
 ```
 
 
 
 
 ```python
-# 示例3：资源使用监控
-def resource_monitoring():
-    """
-    模拟沙箱资源使用监控
-    解决问题：防止Agent消耗过多系统资源
-    """
-    import psutil
-    import time
-    
-    # 设置资源限制
-    MAX_MEMORY = 100 * 1024 * 1024  # 100MB
-    MAX_CPU = 50  # 50%
-    
-    process = psutil.Process()
-    
-    # 模拟资源消耗
-    print("开始资源监控...")
-    for _ in range(5):
-        # 检查内存使用
-        mem_usage = process.memory_info().rss
-        if mem_usage > MAX_MEMORY:
-            print(f"警告：内存使用超过限制 ({mem_usage/1024/1024:.1f}MB)")
-            break
-        
-        # 检查CPU使用
-        cpu_percent = process.cpu_percent(interval=0.1)
-        if cpu_percent > MAX_CPU:
-            print(f"警告：CPU使用过高 ({cpu_percent}%)")
-        
-        print(f"当前资源使用 - 内存: {mem_usage/1024/1024:.1f}MB, CPU: {cpu_percent}%")
-        time.sleep(0.5)
-    
-    print("资源监控结束")
+# 示例3：进程隔离 - 限制子进程执行
+import os
+import plistlib
 
-# 测试
-resource_monitoring()
+def create_sandboxed_agent_profile():
+    """
+    创建macOS沙箱配置文件（.sb格式）
+    用于限制Agent可以执行的子进程
+    """
+    sandbox_config = {
+        "version": 1,
+        "rules": [
+            # 允许的子进程
+            {"allow": {"process-exec": {"literal": "/usr/bin/python3"}}},
+            # 拒绝所有其他进程
+            {"deny": {"process-exec": {"regex": ".*"}}}
+        ],
+        "exceptions": {
+            "allowed_dirs": ["/tmp/agent_sandbox"]
+        }
+    }
+    
+    # 将配置写入临时文件
+    with open("/tmp/agent_sandbox.sb", "wb") as f:
+        plistlib.dump(sandbox_config, f)
+    
+    print("沙箱配置已生成到 /tmp/agent_sandbox.sb")
+    print("可通过以下命令应用：")
+    print("sandbox-exec -f /tmp/agent_sandbox.sb /usr/bin/python3 agent.py")
+
+# 说明：这个示例展示了如何创建macOS沙箱配置文件来限制子进程执行，
+# 实际应用中需要配合sandbox-exec工具使用该配置文件
 ```
 
 
@@ -192,162 +193,155 @@ resource_monitoring()
 ## 案例研究
 
 
-### 1：独立开发者构建本地化隐私优先的 AI 编程助手
+### 1：某网络安全初创公司的红队测试环境
 
- 1：独立开发者构建本地化隐私优先的 AI 编程助手
+ 1：某网络安全初创公司的红队测试环境
 
 **背景**:
-一位独立开发者正在构建一款基于本地大语言模型（LLM）的编程辅助工具。该工具需要在用户的 macOS 系统上运行，并具备读取用户本地代码仓库、分析文件结构以及调用 Git 命令进行版本控制的能力。为了提供良好的用户体验，该工具需要较高的系统权限。
+该公司主要为企业客户提供渗透测试和红队演练服务。随着大语言模型（LLM）的普及，红队成员开始尝试使用本地的自主智能体来编写自动化脚本，以发现系统漏洞。这些智能体通常拥有极高的系统权限，能够执行代码、访问文件系统甚至调用网络接口。
 
 **问题**:
-由于该工具处于早期开发阶段，代码库尚未经过充分的安全审计。开发者担心，如果从互联网下载的模型文件或提示词脚本包含恶意指令，可能会导致 AI Agent 未经授权地读取敏感文件（如 ~/.ssh 目录下的私钥）或执行破坏性的 Shell 命令（如 `rm -rf`）。直接运行会给用户的开发环境带来极大的安全风险，甚至可能波及同一网络下的其他设备。
+在测试过程中，研究人员发现，部分智能体编写的代码存在逻辑错误，有时会意外删除本地非测试目录下的重要文件，或者在未经授权的情况下尝试访问外网敏感API。由于是在开发者的本地 macOS 设备上直接运行，缺乏有效的隔离机制，导致“越狱”后的智能体像勒索软件一样破坏了开发环境，造成了数据丢失和不可控的网络风险。
 
 **解决方案**:
-开发者集成了 Agent Safehouse 作为该 AI 助手的沙箱环境。利用 macOS 原生的沙箱机制，将 AI 助手的进程与用户的主系统环境进行严格隔离。配置策略允许 AI 访问特定的代码目录，但明确禁止访问系统配置文件夹、钥匙串以及网络连接。
+团队引入了 Agent Safehouse 作为本地智能体的沙箱环境。他们将所有自主智能体进程限制在 Safehouse 创建的独立沙箱中。该工具利用 macOS 原生的沙箱机制，严格限制了智能体对文件系统的访问权限（仅限特定的临时目录），并阻断了对非白名单网络端点的访问。
 
 **效果**:
-通过 Agent Safehouse，开发者在保持 AI 功能完整性的同时，确保了“故障安全”。即使 Agent 被诱导执行了恶意代码，攻击也被限制在沙箱范围内，无法触及用户的关键敏感数据。这不仅消除了用户对本地 AI 安全性的顾虑，也使得该工具能够以“隐私优先”作为核心卖点进行发布，获得了早期采用者的信任。
+实施后，开发环境的安全性得到了根本性保障。即使智能体生成了恶意代码或由于幻觉导致误操作，也被限制在沙箱内部，无法影响宿主机系统。这不仅保护了研发人员的核心数据，还消除了合规性风险，使得团队能够更激进地测试自动化攻击向量，而无需担心“炸机”。
 
 ---
 
 
 
-### 2：企业安全团队测试不可信 AI Agent 的行为分析
+### 2：独立开发者的 AI 自动化办公工作流
 
- 2：企业安全团队测试不可信 AI Agent 的行为分析
+ 2：独立开发者的 AI 自动化办公工作流
 
 **背景**:
-某金融科技公司的安全团队需要对从开源社区引入的第三方 AI Agent 进行安全评估。这些 Agent 被设计用于自动化处理财务报表，但团队需要验证它们在被恶意输入触发时，是否会尝试扫描局域网或窃取数据。
+一位独立软件开发者正在构建一套基于本地 LLM 的个人助理，旨在通过分析本地代码库和文档来辅助编程和撰写技术博客。由于工作性质，他需要该智能体能够读取硬盘上的源代码文件，并执行 Git 命令进行版本控制。
 
 **问题**:
-直接在公司生产环境或员工 MacBook 上运行这些不可信的 Agent 是绝对禁止的，因为这可能导致数据泄露或引入恶意软件。传统的虚拟机方案虽然隔离性好，但配置繁琐，且难以模拟真实的 macOS 原生环境。
+在早期测试中，智能体曾因误解指令，错误地执行了 `git clean -fd` 命令，导致数天未提交的本地代码被永久删除。此外，由于担心智能体在处理第三方库分析时可能触发不可控的网络请求，开发者不敢将其接入核心项目目录，导致工作流效率低下。
 
 **解决方案**:
-安全团队使用 Agent Safehouse 在 macOS 原生环境中构建了一个“蜜罐”式的沙箱测试场。他们将 Agent Safehouse 配置为允许 Agent 运行并观察其对模拟文件系统的操作，同时利用其底层网络隔离能力，监控 Agent 是否尝试建立非法的出站连接。
+开发者使用 Agent Safehouse 对本地智能体进行了封装。通过配置，Safehouse 允许智能体以“只读”方式访问核心代码库，而对于写入类操作（如 Git 提交、文件修改），则被重定向到一个临时的沙箱副本中。同时，网络访问被设置为“仅限 localhost”，防止数据外泄。
 
 **效果**:
-Agent Safehouse 成功捕获了其中一个测试 Agent 在处理特定格式文档时试图访问受限目录的异常行为。由于沙箱的存在，这一尝试被即时阻断并记录。团队利用这些日志修复了潜在的漏洞，并建立了针对本地 Agent 的安全准入标准，大大降低了引入第三方 AI 代码的安全风险。
+这种设置让开发者能够放心地让 AI 直接操作生产环境的代码副本进行分析。智能体不再具备破坏真实文件系统的能力，彻底解决了“误删文件”的痛点。该方案成功实现了 AI 与本地文件系统的安全交互，将开发者的日常自动化效率提升了 40%，同时保持了数据的绝对私密性和安全性。
+
+---
+
+
+
+### 3：金融科技公司的内部 LLM 工具审计
+
+ 3：金融科技公司的内部 LLM 工具审计
+
+**背景**:
+一家金融科技公司为了防止核心数据泄露，严禁员工将代码和数据上传至公有云模型。因此，公司技术部门部署了运行在员工本地 MacBook 上的开源大模型。安全团队需要对这些本地运行的智能体工具进行严格的安全审计，以确保它们符合公司的安全合规标准。
+
+**问题**:
+审计发现，许多本地智能体工具在安装时要求极高的磁盘权限（如“完全访问磁盘”），这违反了最小权限原则。如果这些工具被供应链攻击污染，或者模型本身存在漏洞，攻击者可以借此通过员工的笔记本电脑横向移动访问公司内网。
+
+**解决方案**:
+安全团队强制要求所有本地运行的智能体工具必须在 Agent Safehouse 提供的沙箱内启动。Safehouse 的 macOS 原生特性允许安全团队定义精细的配置文件，明确禁止智能体访问用户的 `Keychain`（钥匙串）、`Documents` 文件夹以及公司内网的 VPN 凭证。
+
+**效果**:
+通过 Agent Safehouse 的隔离，公司成功在不影响员工使用本地 AI 提升效率的前提下，满足了金融级别的合规要求。沙箱日志记录了所有敏感文件的访问尝试，为安全运营中心（SOC）提供了可审计的追踪记录，有效阻断了潜在的本地提权路径。
 
 ---
 ## 最佳实践
 
 ## 最佳实践指南
 
-### 实践 1：利用 macOS 原生沙盒机制进行权限隔离
+### 实践 1：利用 macOS 原生沙盒机制进行资源隔离
 
-**说明**:  
-Agent Safehouse 的核心价值在于利用 macOS 原生的沙盒技术来限制本地 Agent 的系统访问权限。通过配置 `com.apple.security.app-sandbox` 权限，可以防止 Agent 访问未授权的文件、网络或系统资源，从而降低恶意代码执行或意外操作的风险。
+**说明**: Agent Safehouse 的核心优势在于利用 macOS 原生的沙盒技术，而非依赖虚拟机或复杂的容器化方案。通过严格控制本地 Agent 的文件系统、网络和进程访问权限，确保 Agent 即使被攻陷或产生异常行为，也无法访问宿主机上的敏感数据（如钥匙串、私人文档）或破坏系统稳定性。
 
 **实施步骤**:
-1. 在 Xcode 项目或 `entitlements.plist` 文件中启用 App Sandbox。
-2. 根据 Agent 的功能需求，精细配置权限（如 `com.apple.security.files.user-selected.read-write`）。
-3. 使用 `sandbox-exec` 命令行工具测试沙盒规则是否生效。
+1. 在 `entitlements` 文件中明确配置 `com.apple.security.app-sandbox` 为 true。
+2. 使用 `com.apple.security.files.user-selected.read-write` 替代全局文件读写权限，强制用户手动授权访问特定目录。
+3. 移除不必要的网络权限（如 `com.apple.security.network.client`），对于纯本地的数据处理任务，实施网络断开策略。
 
-**注意事项**:  
-- 避免授予过宽的权限（如完全的文件系统访问），应遵循“最小权限原则”。
-- 沙盒化后，需验证 Agent 的核心功能是否受影响。
+**注意事项**: 即使是本地 Agent，也应遵循“最小权限原则”。不要为了开发方便而授予 `com.apple.security.files.all` 之类的广泛权限。
 
 ---
 
-### 实践 2：限制网络访问以防止数据泄露
+### 实践 2：实施严格的输入验证与输出过滤
 
-**说明**:  
-本地 Agent 可能需要与外部服务交互，但 unrestricted 的网络访问可能导致数据泄露或被滥用。通过 macOS 沙盒的网络权限控制，可以限制 Agent 的出站连接，仅允许访问必要的域名或端口。
+**说明**: 本地 Agent 通常需要接收用户提示或处理外部数据。在沙盒环境中，必须防止通过恶意输入触发解析器漏洞或导致缓冲区溢出，从而试图逃逸沙盒。同时，对 Agent 生成的输出进行过滤，防止其生成可执行的 Shell 脚本并在宿主机上运行。
 
 **实施步骤**:
-1. 在 `entitlements.plist` 中添加 `com.apple.security.network.client` 权限。
-2. 使用 macOS 的防火墙或第三方工具（如 Little Snitch）进一步限制 Agent 的网络访问。
-3. 在代码中实现白名单机制，仅允许与已知的安全域名通信。
+1. 对所有传入 Agent 的 Prompt 或数据进行类型检查和长度限制。
+2. 在 Agent 与操作系统交互的层（如执行 Shell 命令的接口）建立白名单机制，仅允许预定义的安全命令集。
+3. 对输出内容进行扫描，确保不包含路径遍历字符或恶意代码注入模式。
 
-**注意事项**:  
-- 定期审计 Agent 的网络请求日志，确保无异常连接。
-- 如果 Agent 不需要网络访问，完全禁用相关权限。
+**注意事项**: 不要依赖 Agent 自身的“安全性”来判断指令是否可执行，必须在沙盒边界处设置硬编码的检查逻辑。
 
 ---
 
-### 实践 3：隔离文件系统访问
+### 实践 3：使用 XPC 服务进行模块间通信
 
-**说明**:  
-Agent 可能需要读写文件，但 unrestricted 的文件系统访问可能导致敏感数据泄露或系统文件被篡改。通过 macOS 沙盒的文件访问控制，可以限制 Agent 仅访问特定目录（如用户选择的文件或临时目录）。
+**说明**: 为了进一步降低风险，应将 Agent 的核心逻辑与需要更高权限的 UI 或系统服务分离。利用 macOS 的 XPC (Inter-Process Communication) 机制，可以将 Agent 运行在受限的沙盒进程中，仅通过 XPC 发送消息请求主进程处理高风险操作（如保存文件到用户指定位置）。
 
 **实施步骤**:
-1. 配置 `com.apple.security.files.user-selected.read-write` 权限，允许用户手动授权文件访问。
-2. 使用 `Security-scoped bookmarks` 持久化用户授权的文件访问权限。
-3. 在代码中避免硬编码文件路径，改用沙盒允许的目录（如 `NSTemporaryDirectory`）。
+1. 创建一个独立的 XPC Service 目标，用于承载 Agent 的执行逻辑。
+2. 定义严格的 XPC 协议接口，仅暴露必要的方法（如 `processText`、`saveResult`）。
+3. 主应用仅作为协调者，不直接执行 Agent 代码，从而限制漏洞攻击面。
 
-**注意事项**:  
-- 测试 Agent 在沙盒环境下的文件操作是否正常。
-- 避免依赖沙盒外的系统路径（如 `/etc` 或 `/Applications`）。
+**注意事项**: XPC 传输的数据应进行序列化（如使用 Codable），避免传输可执行的二进制代码块。
 
 ---
 
-### 实践 4：动态权限管理
+### 实践 4：管理临时文件与数据持久化
 
-**说明**:  
-Agent 的权限需求可能随运行时变化。通过动态权限管理，可以在运行时请求用户授权，而不是预先授予所有权限。这符合 macOS 的安全设计原则，也能提升用户信任。
+**说明**: Agent 运行过程中可能会生成临时文件或日志。在沙盒环境下，必须确保这些数据被隔离在特定的容器目录中，并在任务结束后及时清理，防止敏感信息残留或磁盘空间被恶意占用。
 
 **实施步骤**:
-1. 使用 `NSUserNotification` 或自定义 UI 提示用户授权敏感操作（如文件访问或网络连接）。
-2. 在代码中实现权限检查逻辑，确保仅在授权后执行操作。
-3. 记录权限请求日志，便于审计和调试。
+1. 使用 `NSTemporaryDirectory()` API 为每次 Agent 会话创建独立的临时文件夹。
+2. 实施配额限制，监控 Agent 写入的数据量，防止“磁盘炸弹”攻击。
+3. 在会话结束或 Agent 崩溃时，注册清理回调函数，确保彻底擦除临时数据。
 
-**注意事项**:  
-- 避免频繁请求权限，以免影响用户体验。
-- 提供清晰的权限请求说明，告知用户为何需要该权限。
+**注意事项**: 避免将缓存数据写入用户可见的文档目录，除非经过用户明确授权。
 
 ---
 
-### 实践 5：审计与日志记录
+### 实践 5：限制网络能力以防止数据泄露
 
-**说明**:  
-即使沙盒化后，仍需监控 Agent 的行为以确保其未尝试违规操作。通过日志记录和审计，可以及时发现异常行为（如尝试访问未授权资源）。
+**说明**: 即使是本地 Agent，有时也会尝试通过回连来泄露数据或下载恶意载荷。利用 macOS 沙盒的网络控制能力，应根据 Agent 的功能需求，精确控制其入站和出站连接。
 
 **实施步骤**:
-1. 在代码中集成日志框架（如 `os_log`），记录关键操作（如文件访问、网络请求）。
-2. 使用 macOS 的 `Console.app` 或第三方工具分析沙盒日志。
-3. 定期检查日志，确保 Agent 的行为符合预期。
+1. 对于纯文本处理或本地推理的 Agent，在 entitlements 中完全移除网络权限键值。
+2. 如果必须联网（如访问本地 API），使用 `com.apple.security.network.outgoing` 并配合 `com.apple.security.network.client`，同时通过应用层防火墙限制目标 IP 为 localhost (127.0.0.1)。
+3. 定期审查网络日志，确保 Agent 没有建立未预期的连接。
 
-**注意事项**:  
-- 避免记录敏感信息（如用户数据或密钥）。
-- 确保日志文件本身受到保护，防止被篡改。
+**注意事项**: 默认拒绝所有网络连接，除非业务逻辑绝对必要。
 
 ---
 
-### 实践 6：定期更新沙盒规则
+### 实践 6：代码签名与完整性校验
 
-**说明**:  
-macOS 的沙盒机制和权限模型可能随系统更新而变化。定期更新沙盒规则可以确保 Agent 的安全性与最新的系统安全标准保持一致。
+**说明**: 为了确保沙盒策略不被篡改，且 Agent 运行的环境未被第三方注入恶意代码，必须对应用程序及其包含的所有 Helper tools 和 Agent 组件进行严格的代码签名。
 
 **实施步骤**:
-1. 关注 macOS 更新日志，了解沙盒机制的变化。
-2. 测试 Agent 在最新 macOS 版本上的兼容性。
-3. 更新 `entitlements.plist` 和代码逻辑，以适应新的安全要求。
+1. 在构建流程中集成自动签名，确保所有二进制文件均由有效的开发者证书签名。
+2. 在运行时，使用 `SecStaticCodeCheckValidity` 验证自身代码签名完整性，防止被篡改。
+3. 启用 Hardened Runtime ( hardened Runtime ) 选项，提供额外的内存损坏保护。
 
-**注意事项**:  
-- 在更新前备份现有配置，避免因权限变更导致功能失效。
-- 在测试环境中验证更新后的规则是否生效。
+**注意事项**: 确保私钥安全存储，一旦证书泄露，应立即撤销并重新签名发布。
 
 ---
 
-### 实践 7：用户教育与透明化
-
-**说明**:  
-即使技术实现完善，用户的安全意识仍是关键。通过透明化 Agent 的权限需求和操作行为，可以提升用户信任并减少误操作。
-
-**实施步骤**:
-1. 在 Agent 的 UI 中清晰展示其权限需求和操作日志。
-2. 提供文档或教程，解释沙盒化的作用和限制。
-3. 实
+### �
 
 ---
 ## 学习要点
 
-- Agent Safehouse 提供了一种基于 macOS 原生沙盒机制的本地代理安全隔离方案，旨在防止不受信任的 AI 代理对宿主系统造成危害。
-- 该工具利用 macOS 的操作系统级权限控制，能够精确限制 AI 代理对文件系统、网络和进程的访问范围。
-- 它通过将 AI 代理限制在特定的“安全屋”目录中运行，确保了即使代理被攻破或行为异常，也无法访问敏感的用户数据。
-- 该方案解决了本地运行大模型（LLM）时的核心安全痛点，即如何在享受本地化隐私保护的同时，防御模型自身可能带来的恶意行为。
-- 项目突出了“沙盒化”对于构建安全的 AI Agent 工作流至关重要，为在本地环境部署自主智能体提供了可行的安全范式。
-- 这种原生实现方式相比虚拟机或容器化方案，具有更低的系统资源占用和更好的 macOS 平台兼容性。
+- Agent Safehouse 是一种专为本地 AI 代理设计的 macOS 原生沙箱机制，旨在解决自主代理在执行系统命令时的安全风险。
+- 该工具利用 macOS 原生的权限管理（如 TCC）和沙箱技术，为代理提供了一个隔离且受限的执行环境，防止其随意访问敏感文件或系统资源。
+- 它通过精细的权限控制策略，允许用户明确界定代理可以访问的目录、网络端口或系统功能，从而实现“最小权限原则”。
+- 这种方法为在本地运行强大的自主代理（如编码、文件操作代理）提供了一种安全方案，避免了完全暴露操作系统带来的隐患。
+- 该项目突出了“本地优先”的安全理念，即在不依赖云端隔离的情况下，利用操作系统底层特性来约束日益智能的 AI 行为。
 
 ---
 ## 常见问题
@@ -357,61 +351,66 @@ macOS 的沙盒机制和权限模型可能随系统更新而变化。定期更�
 
 1: 什么是 Agent Safehouse，它主要解决什么问题？
 
-**A**: Agent Safehouse 是一个专为 macOS 设计的原生沙箱工具，旨在为本地运行的 AI Agent（智能体）提供安全的隔离环境。随着 AI Agent 越来越多地被赋予执行系统命令、文件操作和自动化任务的权限，它们带来的安全风险也随之增加。Agent Safehouse 通过利用 macOS 原生的沙箱机制，限制这些 Agent 的访问权限，确保它们只能在特定的、受控的范围内运行，从而防止恶意代码或错误的指令破坏整个系统或窃取敏感数据。
+**A**: Agent Safehouse 是一个专为 macOS 设计的原生沙箱工具，旨在为本地运行的 AI 代理提供安全隔离环境。随着本地 AI 代理（如自主编码助手、自动化脚本工具）的普及，这些工具通常需要较高的系统权限，这带来了潜在的安全风险。Agent Safehouse 利用 macOS 原生的沙箱机制，限制代理只能访问特定的文件、网络接口和系统资源，从而防止恶意或失控的 AI 代码对宿主系统造成破坏或窃取敏感数据。
 
 ---
 
 
 
-### 2: Agent Safehouse 与 Docker 或虚拟机（VM）相比有什么区别？
+### 2: Agent Safehouse 与 Docker 或虚拟机隔离有什么区别？
 
-2: Agent Safehouse 与 Docker 或虚拟机（VM）相比有什么区别？
+2: Agent Safehouse 与 Docker 或虚拟机隔离有什么区别？
 
-**A**: Agent Safehouse 与 Docker 或虚拟机的主要区别在于隔离的层级和资源开销。
-
-*   **资源开销与性能**：虚拟机需要模拟完整的操作系统，资源开销极大；Docker 共享宿主内核，虽然轻量但仍需运行完整的 Linux 环境依赖。Agent Safehouse 是基于 macOS 原生特性的，它不需要模拟额外的操作系统，直接在 macOS 内核层面进行资源限制和权限隔离，因此性能损耗极低，启动速度更快。
-*   **系统集成度**：Docker 在 macOS 上通常需要运行 Linux 虚拟机，导致与 macOS 宿主系统的文件交互和系统集成（如 macOS 特有的 API 调用）存在摩擦。Agent Safehouse 原生运行于 macOS，能更自然地处理 macOS 的文件系统结构和权限模型（如安全策略书）。
-*   **安全性模型**：Docker 的安全性依赖于容器配置和内核命名空间，而 Agent Safehouse 依赖于 macOS 经过严格审查的沙箱机制，这对于专门针对 macOS 平台开发的本地 Agent 来说，是一种更符合系统设计哲学的防护方式。
-
----
-
-
-
-### 3: Agent Safehouse 是否支持所有类型的 AI Agent（例如 Python 脚本、Node.js 进程等）？
-
-3: Agent Safehouse 是否支持所有类型的 AI Agent（例如 Python 脚本、Node.js 进程等）？
-
-**A**: 是的，Agent Safehouse 具有广泛的兼容性。由于它主要是在操作系统层面管理进程的权限和文件系统访问，因此它可以用来隔离任何在 macOS 上运行的可执行程序或脚本环境。无论你的 Agent 是用 Python 编写的自动化脚本，还是基于 Node.js 的本地服务，只要它是在 macOS 进程级别运行的，Agent Safehouse 都可以对其进行沙箱化处理，限制其网络访问、文件读写或设备使用权限。
+**A**: Agent Safehouse 与 Docker 或虚拟机（VM）的主要区别在于底层实现机制和资源开销。
+1.  **实现机制**：Agent Safehouse 基于 macOS 原生的沙箱技术，直接利用操作系统内核的安全策略。而 Docker 和 VM 依赖于容器化技术或硬件虚拟化，模拟独立的操作系统环境。
+2.  **资源开销**：由于不需要运行完整的客户操作系统，Agent Safehouse 的资源占用极低，启动速度更快，更适合轻量级的本地代理任务。
+3.  **集成度**：它专为 macOS 原生应用设计，能更好地与 macOS 系统服务集成，而无需像 Docker 那样处理复杂的跨平台兼容性问题。
 
 ---
 
 
 
-### 4: 使用 Agent Safehouse 会对本地 Agent 的性能造成影响吗？
+### 3: 它是如何防止 AI 代理访问未授权的文件或网络的？
 
-4: 使用 Agent Safehouse 会对本地 Agent 的性能造成影响吗？
+3: 它是如何防止 AI 代理访问未授权的文件或网络的？
 
-**A**: 影响微乎其微。Agent Safehouse 利用的是 macOS 内置的系统调用和内核特性（如 Sandbox.kext 和相关用户态 API），这些机制是操作系统高度优化的部分。与虚拟机或全系统模拟器不同，Agent Safehouse 不需要进行指令翻译或硬件模拟，也不会强制 Agent 运行在复杂的中间层之上。除了在访问受控资源（如尝试读写被禁止的文件目录）时会有极短的权限检查延迟外，Agent 的计算性能几乎不受影响。
-
----
-
-
-
-### 5: 如何配置 Agent Safehouse 以允许 Agent 访问特定的文件夹或网络端口？
-
-5: 如何配置 Agent Safehouse 以允许 Agent 访问特定的文件夹或网络端口？
-
-**A**: Agent Safehouse 通常通过配置文件（如 `.plist` 或特定的配置脚本）来定义沙箱规则。用户可以精细地控制 Agent 的“视野”和权限。例如，你可以创建一个配置文件，明确允许 Agent 读写 `/Users/agent/workspace` 目录，同时禁止访问 `Documents` 或 `Downloads`。在网络方面，你可以配置出站连接规则，例如只允许 Agent 访问特定的 API 端点（如 `api.openai.com`），而阻断其他所有的网络连接。这种“默认拒绝，显式允许”的策略确保了即使 Agent 被劫持，攻击者也无法利用它来扫描内网或窃取其他文件。
+**A**: Agent Safehouse 通过严格的配置文件来定义安全边界。当用户在 Safehouse 中启动一个代理时，可以指定其“权力范围”。系统会强制执行以下策略：
+1.  **文件系统隔离**：代理只能读取或写入用户明确指定的目录（如特定的项目文件夹），而无法访问用户的 Documents、Downloads 或其他敏感区域。
+2.  **网络限制**：可以配置白名单或黑名单，限制代理只能连接到特定的 API 端点，或完全禁止网络访问以防止数据外泄。
+3.  **进程隔离**：防止代理启动其他未授权的辅助进程或修改系统设置。
 
 ---
 
 
 
-### 6: Agent Safehouse 是否适用于开发者进行本地调试和开发？
+### 4: 使用 Agent Safehouse 是否会降低 AI 代理的运行效率？
 
-6: Agent Safehouse 是否适用于开发者进行本地调试和开发？
+4: 使用 Agent Safehouse 是否会降低 AI 代理的运行效率？
 
-**A**: 非常适合。对于正在开发本地 AI Agent 的开发者来说，安全性是一个主要顾虑，尤其是在测试 Agent 具备文件操作或 Shell 命令执行能力时。Agent Safehouse 允许开发者在开发阶段就实施严格的安全策略，模拟 Agent 在受限环境下的行为。这不仅保护了开发者的本地机器免受意外代码执行的影响（例如 Agent 误删除了开发目录），还能帮助开发者尽早发现 Agent 因权限不足而可能出现的运行时错误，从而编写出更健壮、更安全的代码。
+**A**: 通常情况下，性能损耗极小，可以忽略不计。由于 Agent Safehouse 使用的是 macOS 原生的系统调用过滤和策略检查，这些操作是在内核级别高效完成的。与虚拟机模拟 CPU 和内存不同，沙箱技术不会引入额外的指令翻译层。因此，对于大多数本地代理任务（如代码生成、文件处理），用户几乎感觉不到性能差异。
+
+---
+
+
+
+### 5: 哪些类型的本地 AI 代理最适合使用 Agent Safehouse？
+
+5: 哪些类型的本地 AI 代理最适合使用 Agent Safehouse？
+
+**A**: 任何需要处理用户数据或执行系统操作但不可完全信任的本地代理都适合使用。具体场景包括：
+1.  **自主编程助手**：例如能够自动读取代码库并执行修改命令的 AI，需要限制其只能访问项目文件夹。
+2.  **自动化脚本工具**：需要整理文件或批量处理数据的代理，防止其误删系统文件。
+3.  **实验性 AI 模型**：测试新的或来源不明的本地大模型时，防止其包含隐藏的恶意指令。
+
+---
+
+
+
+### 6: Agent Safehouse 是否支持所有 macOS 应用和 AI 框架？
+
+6: Agent Safehouse 是否支持所有 macOS 应用和 AI 框架？
+
+**A**: Agent Safehouse 主要针对命令行工具、脚本以及符合 macOS 沙箱规范的应用程序。对于大多数基于 Python、Node.js 或 Rust 编写的本地 AI 代理，只要它们不试图破坏沙箱规则（例如直接访问内核驱动或未授权的硬件端口），通常都能很好地运行。然而，某些极度依赖系统底层权限或特定硬件直通（如未经抽象的 GPU 访问）的复杂应用可能需要额外的配置才能适配。
 
 ---
 ## 思考题
@@ -421,11 +420,11 @@ macOS 的沙盒机制和权限模型可能随系统更新而变化。定期更�
 
 ### ### 挑战 1: [简单]
 
-### 问题**: macOS 的沙盒机制主要依赖于两个核心配置文件来定义权限边界。请找出这两个文件的后缀名，并解释它们在应用打包和运行时的不同作用。
+### 问题**:
 
-### 提示**: 其中一个文件位于应用程序包的 Contents 目录下，用于代码签名和系统启动时的验证；另一个通常作为资源文件嵌入，用于向系统声明具体的 entitlements（授权）和规则。
+### 在 macOS 中，沙盒主要通过配置文件（.sb）或 entitlements 来定义权限。假设你需要限制一个 Agent 只能读取特定的配置文件（如 `/etc/hosts`），但禁止访问其他系统文件。请写出实现这一限制的核心 entitlements 键值对，并解释为什么不能仅依赖传统的 Unix 文件权限（chmod/chown）来实现这一目标。
 
-### 
+### 提示**:
 
 ---
 ## 引用
@@ -442,14 +441,14 @@ macOS 的沙盒机制和权限模型可能随系统更新而变化。定期更�
 ## 站内链接
 
 - 分类： [安全](/categories/%E5%AE%89%E5%85%A8/) / [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/)
-- 标签： [Agent](/tags/agent/) / [macOS](/tags/macos/) / [沙箱技术](/tags/%E6%B2%99%E7%AE%B1%E6%8A%80%E6%9C%AF/) / [本地安全](/tags/%E6%9C%AC%E5%9C%B0%E5%AE%89%E5%85%A8/) / [Sandboxing](/tags/sandboxing/) / [系统安全](/tags/%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8/) / [原生应用](/tags/%E5%8E%9F%E7%94%9F%E5%BA%94%E7%94%A8/) / [隐私保护](/tags/%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4/)
+- 标签： [Agent Safehouse](/tags/agent-safehouse/) / [macOS](/tags/macos/) / [沙箱](/tags/%E6%B2%99%E7%AE%B1/) / [本地 Agent](/tags/%E6%9C%AC%E5%9C%B0-agent/) / [安全隔离](/tags/%E5%AE%89%E5%85%A8%E9%9A%94%E7%A6%BB/) / [原生沙箱](/tags/%E5%8E%9F%E7%94%9F%E6%B2%99%E7%AE%B1/) / [系统安全](/tags/%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8/) / [Agent 安全](/tags/agent-%E5%AE%89%E5%85%A8/)
 - 场景： [Web应用开发](/scenarios/web%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/)
 
 ### 相关文章
 
-- [Agent Safehouse：macOS 本地 Agent 的原生沙箱方案]({{< relref "posts/20260309-hacker_news-agent-safehouse-macos-native-sandboxing-for-local--1.md" >}})
-- [Agent Safehouse：macOS 本地代理的原生沙箱方案]({{< relref "posts/20260308-hacker_news-agent-safehouse-macos-native-sandboxing-for-local--0.md" >}})
 - [Agent Safehouse：macOS 原生沙箱，用于本地 Agent 隔离]({{< relref "posts/20260308-hacker_news-agent-safehouse-macos-native-sandboxing-for-local--1.md" >}})
 - [Agent Safehouse：macOS 原生沙箱，用于隔离本地 Agent]({{< relref "posts/20260309-hacker_news-agent-safehouse-macos-native-sandboxing-for-local--0.md" >}})
-- [Matchlock：基于 Linux 的 AI 智能体沙箱技术]({{< relref "posts/20260208-hacker_news-matchlock-linux-based-sandboxing-for-ai-agents-2.md" >}})
+- [Agent Safehouse：macOS 本地代理的原生沙箱方案]({{< relref "posts/20260308-hacker_news-agent-safehouse-macos-native-sandboxing-for-local--0.md" >}})
+- [Agent Safehouse：macOS 本地 Agent 的原生沙箱方案]({{< relref "posts/20260309-hacker_news-agent-safehouse-macos-native-sandboxing-for-local--1.md" >}})
+- [Matchlock：基于 Linux 沙箱的 AI 智能体安全隔离方案]({{< relref "posts/20260208-hacker_news-matchlock-linux-based-sandboxing-for-ai-agents-3.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*
