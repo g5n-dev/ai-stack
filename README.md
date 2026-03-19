@@ -77,7 +77,8 @@ nano .env
 
 ```env
 ANTHROPIC_AUTH_TOKEN=your_anthropic_token
-ANTHROPIC_BASE_URL=https://open.bigmodel.cn/api/anthropic
+ANTHROPIC_BASE_URL=https://api.minimaxi.com/anthropic
+ANTHROPIC_MODEL=MiniMax-M2.7-highspeed
 ```
 
 ### 4. 本地测试运行
@@ -214,7 +215,7 @@ sources:
 anthropic:
   api_key: "${ANTHROPIC_AUTH_TOKEN}"
   base_url: "${ANTHROPIC_BASE_URL}"
-  model: "claude-3-5-sonnet-20241022"
+  model: "${ANTHROPIC_MODEL}"
   max_tokens: 4096
   temperature: 0.7
 
@@ -310,6 +311,7 @@ hugo --minify
 
 - `ANTHROPIC_AUTH_TOKEN` - 你的 Anthropic API 密钥
 - `ANTHROPIC_BASE_URL` - Anthropic API 基础 URL
+- `ANTHROPIC_MODEL` - 模型名称，例如 `MiniMax-M2.7-highspeed`
 
 ### 可选的 Secrets
 

@@ -54,7 +54,8 @@ nano .env
 必需配置：
 ```env
 ANTHROPIC_AUTH_TOKEN=your_anthropic_token
-ANTHROPIC_BASE_URL=https://your-api-endpoint.com/api/anthropic
+ANTHROPIC_BASE_URL=https://api.minimaxi.com/anthropic
+ANTHROPIC_MODEL=MiniMax-M2.7-highspeed
 ```
 
 可选配置（用于社交媒体推送）：
@@ -214,7 +215,7 @@ sources:
 anthropic:
   api_key: "${ANTHROPIC_AUTH_TOKEN}"  # 从环境变量读取
   base_url: "${ANTHROPIC_BASE_URL}"
-  model: "claude-3-5-sonnet-20241022"
+  model: "${ANTHROPIC_MODEL}"
   max_tokens: 4096
   temperature: 0.7               # 创造性 (0-2)
 
@@ -335,6 +336,7 @@ GitHub Actions 配置为每天 UTC 时间 02:00（北京时间 10:00）自动运
 **必需的 Secrets：**
 - `ANTHROPIC_AUTH_TOKEN` - 你的 Anthropic API 密钥
 - `ANTHROPIC_BASE_URL` - Anthropic API 基础 URL
+- `ANTHROPIC_MODEL` - 模型名称，例如 `MiniMax-M2.7-highspeed`
 
 **可选的 Secrets：**
 

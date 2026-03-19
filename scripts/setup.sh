@@ -60,7 +60,8 @@ if [ ! -f ".env" ]; then
     else
         cat > .env << 'EOF'
 ANTHROPIC_AUTH_TOKEN=your_anthropic_token
-ANTHROPIC_BASE_URL=https://your-api-endpoint.com/api/anthropic
+ANTHROPIC_BASE_URL=https://api.minimaxi.com/anthropic
+ANTHROPIC_MODEL=MiniMax-M2.7-highspeed
 EOF
     fi
     echo -e "${GREEN}✓ .env file created${NC}"

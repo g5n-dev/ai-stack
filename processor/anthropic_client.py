@@ -6,7 +6,7 @@ Anthropic API 客户端封装
 import os
 import yaml
 import anthropic
-from typing import Dict, Optional
+from typing import Any, Dict, Optional
 import logging
 import random
 import threading
@@ -49,25 +49,57 @@ class AnthropicClient:
         try:
             with open(config_path, 'r', encoding='utf-8') as f:
                 config = yaml.safe_load(f)
-                anthropic_config = config.get('anthropic', {})
-
-                # 处理环境变量替换
-                api_key = anthropic_config.get('api_key', '')
-                base_url = anthropic_config.get('base_url', '')
-
-                if api_key.startswith('${'):
-                    env_var = api_key[2:-1]
-                    anthropic_config['api_key'] = os.environ.get(env_var, '')
-
-                if base_url.startswith('${'):
-                    env_var = base_url[2:-1]
-                    anthropic_config['base_url'] = os.environ.get(env_var, '')
-
+                anthropic_config = config.get('anthropic', {}) or {}
+                anthropic_config = {
+                    key: self._resolve_env_placeholder(value)
+                    for key, value in anthropic_config.items()
+                }
                 return anthropic_config
 
         except Exception as e:
             logger.error(f"Failed to load config: {e}")
             raise
+
+    def _resolve_env_placeholder(self, value: Any) -> Any:
+        if isinstance(value, str) and value.startswith('${') and value.endswith('}'):
+            env_var = value[2:-1]
+            return os.environ.get(env_var, '')
+        return value
+
+    def _default_model(self) -> str:
+        base_url = str(self.config.get("base_url") or "").lower()
+        if "minimax" in base_url:
+            return "MiniMax-M2.7-highspeed"
+        return "claude-3-5-sonnet-20241022"
+
+    def _extract_text_from_message(self, message: Any) -> str:
+        blocks = getattr(message, "content", None) or []
+        texts: list[str] = []
+        block_types: list[str] = []
+
+        for block in blocks:
+            block_type = getattr(block, "type", None)
+            if not block_type and isinstance(block, dict):
+                block_type = str(block.get("type") or "")
+            if block_type:
+                block_types.append(str(block_type))
+
+            text = ""
+            if isinstance(block, dict):
+                if block.get("type") == "text":
+                    text = str(block.get("text") or "")
+            elif getattr(block, "type", None) == "text":
+                text = str(getattr(block, "text", "") or "")
+            elif hasattr(block, "text"):
+                text = str(getattr(block, "text", "") or "")
+
+            if text.strip():
+                texts.append(text.strip())
+
+        if texts:
+            return "\n\n".join(texts).strip()
+
+        raise ValueError(f"No text content found in response blocks: {block_types or ['unknown']}")
 
     def _init_client(self) -> anthropic.Anthropic:
         """初始化 Anthropic 客户端"""
@@ -102,7 +134,11 @@ class AnthropicClient:
             str: 响应内容
         """
         max_tokens = max_tokens or self.config.get('max_tokens', 4096)
-        model = self.config.get('model', 'claude-3-5-sonnet-20241022')
+        model = (
+            os.environ.get("ANTHROPIC_MODEL")
+            or self.config.get('model')
+            or self._default_model()
+        )
         temperature = temperature if temperature is not None else self.config.get('temperature', 0.7)
         max_retries = self.config.get("llm_max_retries", 3)
         try:
@@ -127,7 +163,7 @@ class AnthropicClient:
                         ]
                     )
 
-                response_text = message.content[0].text
+                response_text = self._extract_text_from_message(message)
                 return response_text
 
             except anthropic.APIError as e:

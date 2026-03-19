@@ -20,6 +20,7 @@ permissions:
 env:
   ANTHROPIC_AUTH_TOKEN: ${{ secrets.ANTHROPIC_AUTH_TOKEN }}
   ANTHROPIC_BASE_URL: ${{ secrets.ANTHROPIC_BASE_URL }}
+  ANTHROPIC_MODEL: ${{ secrets.ANTHROPIC_MODEL }}
   SITE_BASE_URL: https://ai-stack.site/
   SITEMAP_PATH: blog/public/sitemap.xml
   BING_INDEXNOW_API_KEY: ${{ secrets.BING_INDEXNOW_API_KEY }}
@@ -53,6 +54,10 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+
+      - name: Run MiniMax response parsing tests
+        run: |
+          python3 -m unittest tests/test_anthropic_response_parsing.py
 
       - name: Install Playwright browsers
         run: |

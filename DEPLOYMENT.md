@@ -42,7 +42,8 @@
 | Secret 名称 | 说明 | 示例 |
 |------------|------|------|
 | `ANTHROPIC_AUTH_TOKEN` | Anthropic API 密钥 | `sk-ant-xxxxx` |
-| `ANTHROPIC_BASE_URL` | API 基础 URL | `https://your-api-endpoint.com/api/anthropic` |
+| `ANTHROPIC_BASE_URL` | API 基础 URL | `https://api.minimaxi.com/anthropic` |
+| `ANTHROPIC_MODEL` | 模型名称 | `MiniMax-M2.7-highspeed` |
 
 ### 可选的 Secrets（用于社交媒体推送）
 
@@ -314,7 +315,8 @@ curl -I https://ai-stack.site
 
 ```env
 ANTHROPIC_AUTH_TOKEN=your_token_here
-ANTHROPIC_BASE_URL=https://your-api-endpoint.com/api/anthropic
+ANTHROPIC_BASE_URL=https://api.minimaxi.com/anthropic
+ANTHROPIC_MODEL=MiniMax-M2.7-highspeed
 ```
 
 ### C. 常用链接

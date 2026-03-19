@@ -2,7 +2,7 @@
 anthropic:
   api_key: "${ANTHROPIC_AUTH_TOKEN}"
   base_url: "${ANTHROPIC_BASE_URL}"
-  model: "claude-3-5-sonnet-20241022"
+  model: "${ANTHROPIC_MODEL}"
   max_tokens: 8192
   temperature: 0.85
   llm_concurrency: 3

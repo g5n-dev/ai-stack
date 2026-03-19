@@ -28,6 +28,8 @@ class TwitterContentAnalyzer:
         """
         resolved_api_key = (api_key or "").strip() or os.environ.get("ANTHROPIC_AUTH_TOKEN") or os.environ.get("ANTHROPIC_API_KEY")
         resolved_base_url = (base_url or "").strip() or os.environ.get("ANTHROPIC_BASE_URL")
+        default_model = "MiniMax-M2.7-highspeed" if "minimax" in resolved_base_url.lower() else "claude-3-5-sonnet-20241022"
+        self.model = (os.environ.get("ANTHROPIC_MODEL") or default_model).strip()
 
         if not resolved_api_key:
             logger.warning("TwitterContentAnalyzer disabled: Anthropic API key not configured")
@@ -39,6 +41,23 @@ class TwitterContentAnalyzer:
         except Exception as e:
             logger.warning(f"TwitterContentAnalyzer disabled: failed to init Anthropic client: {e}")
             self.client = None
+
+    def _extract_response_text(self, message) -> str:
+        blocks = getattr(message, "content", None) or []
+        texts: List[str] = []
+        for block in blocks:
+            if getattr(block, "type", None) == "text":
+                text = str(getattr(block, "text", "") or "").strip()
+                if text:
+                    texts.append(text)
+                continue
+            if isinstance(block, dict) and block.get("type") == "text":
+                text = str(block.get("text") or "").strip()
+                if text:
+                    texts.append(text)
+        if texts:
+            return "\n\n".join(texts).strip()
+        raise ValueError("No text block found in model response")
 
     def _build_analysis_prompt(self, tweets: List[Dict]) -> str:
         """构建分析提示词"""
@@ -116,7 +135,7 @@ class TwitterContentAnalyzer:
             prompt = self._build_analysis_prompt(tweets)
 
             message = self.client.messages.create(
-                model="claude-3-5-sonnet-20241022",
+                model=self.model,
                 max_tokens=4096,
                 messages=[
                     {
@@ -126,7 +145,7 @@ class TwitterContentAnalyzer:
                 ]
             )
 
-            response_text = message.content[0].text
+            response_text = self._extract_response_text(message)
 
             logger.info(f"Claude AI分析完成")
 
