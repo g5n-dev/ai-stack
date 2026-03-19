@@ -21,6 +21,7 @@ env:
   ANTHROPIC_AUTH_TOKEN: ${{ secrets.ANTHROPIC_AUTH_TOKEN }}
   ANTHROPIC_BASE_URL: ${{ secrets.ANTHROPIC_BASE_URL }}
   ANTHROPIC_MODEL: ${{ secrets.ANTHROPIC_MODEL }}
+  SEARXNG_BASE_URL: ${{ secrets.SEARXNG_BASE_URL }}
   SITE_BASE_URL: https://ai-stack.site/
   SITEMAP_PATH: blog/public/sitemap.xml
   BING_INDEXNOW_API_KEY: ${{ secrets.BING_INDEXNOW_API_KEY }}
@@ -59,6 +60,10 @@ jobs:
         run: |
           python3 -m unittest tests/test_anthropic_response_parsing.py
 
+      - name: Run search fallback tests
+        run: |
+          python3 -m unittest tests/test_search_fallback.py
+
       - name: Install Playwright browsers
         run: |
           if pip show playwright > /dev/null 2>&1; then
@@ -79,6 +84,7 @@ jobs:
           PYTHONPATH: /home/runner/work/ai-stack/ai-stack
           ANTHROPIC_AUTH_TOKEN: ${{ secrets.ANTHROPIC_AUTH_TOKEN }}
           ANTHROPIC_BASE_URL: ${{ secrets.ANTHROPIC_BASE_URL }}
+          SEARXNG_BASE_URL: ${{ secrets.SEARXNG_BASE_URL }}
         run: |
           echo "=== Generating Posts (crawl + process + write markdown) ==="
           if [ -f scripts/generate_content.py ]; then

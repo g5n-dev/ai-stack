@@ -45,6 +45,7 @@ class CrawlerOrchestrator:
         """初始化爬虫实例"""
         crawlers = {}
         sources_config = self.config.get('sources', {})
+        search_fallback_config = self.config.get('search_fallback', {})
 
         # GitHub Trending
         if sources_config.get('github_trending', {}).get('enabled', False):
@@ -81,7 +82,8 @@ class CrawlerOrchestrator:
             crawlers['juejin'] = JuejinRSSCrawler(
                 rss_url=config.get('rss_url'),
                 tags=config.get('tags', []),
-                limit=config.get('limit', 5)
+                limit=config.get('limit', 5),
+                search_fallback=search_fallback_config,
             )
             logger.info("Initialized Juejin RSS crawler")
 
@@ -92,6 +94,7 @@ class CrawlerOrchestrator:
                 feeds=config.get('feeds'),
                 limit=config.get('limit', 10),
                 timeout=config.get('timeout', 30),
+                search_fallback=search_fallback_config,
             )
             logger.info("Initialized Blogs/Podcasts crawler")
 
@@ -104,6 +107,7 @@ class CrawlerOrchestrator:
                 sort=config.get('sort', 'hot'),
                 include_selftext=config.get('include_selftext', True),
                 timeout=config.get('timeout', 15),
+                search_fallback=search_fallback_config,
             )
             logger.info("Initialized Reddit crawler")
 

@@ -1,4 +1,25 @@
 # Crawler sources configuration
+search_fallback:
+  enabled: true
+  timeout: 12
+  per_query_limit: 5
+  max_queries_per_target: 4
+  time_range: "month"
+  query_languages:
+    - "zh-CN"
+    - "en-US"
+  default_topics:
+    - "AI"
+    - "人工智能"
+    - "LLM"
+    - "大模型"
+    - "machine learning"
+    - "机器学习"
+    - "agents"
+    - "智能体"
+  # 优先使用环境变量 SEARXNG_BASE_URL 指向你自己的实例；为空时会尝试公共实例。
+  instances: []
+
 sources:
   github_trending:
     enabled: true

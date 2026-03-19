@@ -11,6 +11,8 @@ from typing import Dict, List, Optional
 
 import requests
 
+from .search_fallback import SearchFallbackService
+
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -24,6 +26,7 @@ class RedditCrawler:
         sort: str = "hot",
         include_selftext: bool = True,
         timeout: int = 15,
+        search_fallback: Optional[Dict] = None,
     ):
         self.subreddits = subreddits or ["MachineLearning", "LocalLLaMA", "OpenAI", "ArtificialInteligence"]
         self.limit_per_subreddit = int(limit_per_subreddit)
@@ -31,6 +34,8 @@ class RedditCrawler:
         self.include_selftext = bool(include_selftext)
         self.timeout = int(timeout)
         self.base_url = "https://www.reddit.com"
+        self.search_topics = ["AI", "人工智能", "LLM", "大模型", "agents", "智能体", "open source", "开源"]
+        self.search_fallback_service = SearchFallbackService(search_fallback)
 
     def _fetch_listing(self, subreddit: str) -> List[Dict]:
         url = f"{self.base_url}/r/{subreddit}/{self.sort}.json"
@@ -89,9 +94,34 @@ class RedditCrawler:
         for subreddit in self.subreddits:
             try:
                 items = self._fetch_listing(subreddit)
-                all_items.extend(items)
-                logger.info(f"Reddit r/{subreddit} fetched: {len(items)} items")
+                if items:
+                    all_items.extend(items)
+                    logger.info(f"Reddit r/{subreddit} fetched: {len(items)} items")
+                    continue
+
+                logger.warning(f"Reddit r/{subreddit} returned 0 items, trying search fallback")
+                fallback_items = self.search_fallback_service.search_reddit_subreddit(
+                    subreddit=subreddit,
+                    limit=self.limit_per_subreddit,
+                    topics=self.search_topics,
+                    fallback_reason="empty_listing",
+                )
+                if fallback_items:
+                    all_items.extend(fallback_items)
+                    logger.info(
+                        f"Reddit r/{subreddit} search fallback recovered: {len(fallback_items)} items"
+                    )
             except Exception as e:
                 logger.error(f"Reddit r/{subreddit} failed: {e}")
+                fallback_items = self.search_fallback_service.search_reddit_subreddit(
+                    subreddit=subreddit,
+                    limit=self.limit_per_subreddit,
+                    topics=self.search_topics,
+                    fallback_reason="api_blocked",
+                )
+                if fallback_items:
+                    all_items.extend(fallback_items)
+                    logger.info(
+                        f"Reddit r/{subreddit} search fallback recovered: {len(fallback_items)} items"
+                    )
         return all_items
-

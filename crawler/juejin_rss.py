@@ -10,6 +10,8 @@ import logging
 import html
 import requests
 
+from .search_fallback import SearchFallbackService
+
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
@@ -17,10 +19,11 @@ logger = logging.getLogger(__name__)
 class JuejinRSSCrawler:
     """爬取掘金 RSS 内容"""
 
-    def __init__(self, rss_url=None, tags=None, limit=5):
+    def __init__(self, rss_url=None, tags=None, limit=5, search_fallback=None):
         self.rss_url = rss_url or 'https://juejin.cn/rss/frontend'
         self.tags = tags or []
         self.limit = limit
+        self.search_fallback_service = SearchFallbackService(search_fallback)
 
     def fetch(self) -> List[Dict]:
         """
@@ -47,10 +50,31 @@ class JuejinRSSCrawler:
                 if article:
                     articles.append(article)
 
-            return articles[:self.limit]
+            articles = articles[:self.limit]
+            if articles:
+                return articles
+
+            fallback_items = self.search_fallback_service.search_juejin_articles(
+                tags=self.tags,
+                limit=self.limit,
+                fallback_reason="empty_feed",
+            )
+            if fallback_items:
+                logger.info(f"Juejin search fallback recovered: {len(fallback_items)} items")
+                return fallback_items
+
+            return []
 
         except Exception as e:
             logger.error(f"Failed to fetch Juejin RSS: {e}")
+            fallback_items = self.search_fallback_service.search_juejin_articles(
+                tags=self.tags,
+                limit=self.limit,
+                fallback_reason="rss_fetch_failed",
+            )
+            if fallback_items:
+                logger.info(f"Juejin search fallback recovered: {len(fallback_items)} items")
+                return fallback_items
             return []
 
     def _extract_article_info(self, entry) -> Dict:

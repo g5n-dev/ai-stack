@@ -15,6 +15,7 @@ import requests
 from bs4 import BeautifulSoup
 
 from .dedupe import canonicalize_url
+from .search_fallback import SearchFallbackService
 
 
 logging.basicConfig(level=logging.INFO)
@@ -89,10 +90,17 @@ class FeedConfig:
 class BlogsPodcastsCrawler:
     """聚合多个 RSS/Atom 源，按时间排序后返回最新条目。"""
 
-    def __init__(self, feeds: Optional[List[Dict[str, str]]] = None, limit: int = 10, timeout: int = 30):
+    def __init__(
+        self,
+        feeds: Optional[List[Dict[str, str]]] = None,
+        limit: int = 10,
+        timeout: int = 30,
+        search_fallback: Optional[Dict[str, Any]] = None,
+    ):
         self.feeds = [FeedConfig(**f) for f in (feeds or DEFAULT_FEEDS)]
         self.limit = limit
         self.timeout = timeout
+        self.search_fallback_service = SearchFallbackService(search_fallback)
 
     def fetch(self) -> List[Dict]:
         try:
@@ -145,6 +153,18 @@ class BlogsPodcastsCrawler:
             return items
         except Exception as e:
             logger.warning(f"Failed to fetch feed {feed_cfg.name} ({feed_cfg.url}): {e}")
+            fallback_items = self.search_fallback_service.search_feed_domain(
+                feed_name=feed_cfg.name,
+                feed_url=feed_cfg.url,
+                limit=max(1, min(3, self.limit)),
+                topics=[feed_cfg.name, "AI", "人工智能", "LLM", "大模型"],
+                fallback_reason="feed_fetch_failed",
+            )
+            if fallback_items:
+                logger.info(
+                    f"Feed {feed_cfg.name} search fallback recovered: {len(fallback_items)} items"
+                )
+                return fallback_items
             return []
 
     def _extract_entry(self, entry: Any, feed_cfg: FeedConfig) -> Optional[Dict[str, Any]]:

@@ -81,6 +81,13 @@ ANTHROPIC_BASE_URL=https://api.minimaxi.com/anthropic
 ANTHROPIC_MODEL=MiniMax-M2.7-highspeed
 ```
 
+可选配置：
+
+```env
+# 优先填你自己的 SearXNG 实例；为空时会尝试公共实例做搜索兜底
+SEARXNG_BASE_URL=https://your-searxng-instance/search
+```
+
 ### 4. 本地测试运行
 
 ```bash

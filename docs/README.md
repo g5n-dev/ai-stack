@@ -58,6 +58,12 @@ ANTHROPIC_BASE_URL=https://api.minimaxi.com/anthropic
 ANTHROPIC_MODEL=MiniMax-M2.7-highspeed
 ```
 
+可选配置：
+```env
+# 优先填你自己的 SearXNG 实例；为空时会尝试公共实例做搜索兜底
+SEARXNG_BASE_URL=https://your-searxng-instance/search
+```
+
 可选配置（用于社交媒体推送）：
 ```env
 TWITTER_API_KEY=your_twitter_key
