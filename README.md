@@ -219,6 +219,7 @@ anthropic:
   max_tokens: 4096
   temperature: 0.7
   disable_thinking: true
+  min_fallback_max_tokens: 2048
 
   summary:
     max_length: 200

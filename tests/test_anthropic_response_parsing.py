@@ -128,6 +128,7 @@ class AnthropicResponseParsingTest(unittest.TestCase):
             "max_tokens": 8192,
             "llm_max_retries": 0,
             "temperature": 0.3,
+            "min_fallback_max_tokens": 2048,
         }
         client._semaphore = contextlib.nullcontext()
         client.client = _FakeClient(
@@ -143,7 +144,7 @@ class AnthropicResponseParsingTest(unittest.TestCase):
         self.assertEqual(len(client.client.messages.calls), 2)
         self.assertEqual(client.client.messages.calls[0]["thinking"], {"type": "disabled"})
         self.assertEqual(client.client.messages.calls[1]["thinking"], {"type": "disabled"})
-        self.assertEqual(client.client.messages.calls[1]["max_tokens"], 1024)
+        self.assertEqual(client.client.messages.calls[1]["max_tokens"], 2048)
 
     def test_twitter_analyzer_extracts_text_from_mixed_blocks(self):
         analyzer = self.twitter_analyzer_module.TwitterContentAnalyzer.__new__(self.twitter_analyzer_module.TwitterContentAnalyzer)

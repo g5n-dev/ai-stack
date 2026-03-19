@@ -128,7 +128,13 @@ class AnthropicClient:
             configured_max = int(configured_max)
         except Exception:
             configured_max = max_tokens
-        return max(max_tokens, min(configured_max, 1024))
+        min_fallback = self.config.get("min_fallback_max_tokens", 2048)
+        try:
+            min_fallback = int(min_fallback)
+        except Exception:
+            min_fallback = 2048
+        target = max(min_fallback, max_tokens * 2)
+        return max(max_tokens, min(configured_max, target))
 
     def _extract_text_from_message(self, message: Any) -> str:
         blocks = getattr(message, "content", None) or []

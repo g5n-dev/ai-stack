@@ -8,6 +8,7 @@ anthropic:
   llm_concurrency: 3
   llm_max_retries: 3
   disable_thinking: true
+  min_fallback_max_tokens: 2048
 
   # Summary settings
   summary:
