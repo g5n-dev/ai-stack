@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import contextlib
 import importlib.util
 import sys
 import types
@@ -55,8 +56,26 @@ class _TextBlock:
 
 
 class _Message:
-    def __init__(self, content):
+    def __init__(self, content, stop_reason=None):
         self.content = content
+        self.stop_reason = stop_reason
+
+
+class _FakeMessagesAPI:
+    def __init__(self, responses):
+        self.responses = list(responses)
+        self.calls = []
+
+    def create(self, **kwargs):
+        self.calls.append(kwargs)
+        if not self.responses:
+            raise AssertionError("No more fake responses configured")
+        return self.responses.pop(0)
+
+
+class _FakeClient:
+    def __init__(self, responses):
+        self.messages = _FakeMessagesAPI(responses)
 
 
 class AnthropicResponseParsingTest(unittest.TestCase):
@@ -86,6 +105,45 @@ class AnthropicResponseParsingTest(unittest.TestCase):
         client.config = {"base_url": "https://api.minimaxi.com/anthropic"}
 
         self.assertEqual(client._default_model(), "MiniMax-M2.7-highspeed")
+
+    def test_request_kwargs_disable_thinking_for_minimax(self):
+        client = self.anthropic_client_module.AnthropicClient.__new__(self.anthropic_client_module.AnthropicClient)
+        client.config = {"base_url": "https://api.minimaxi.com/anthropic"}
+
+        kwargs = client._build_request_kwargs(
+            prompt="hello",
+            model="MiniMax-M2.7-highspeed",
+            max_tokens=256,
+            temperature=0.2,
+        )
+
+        self.assertEqual(kwargs["thinking"], {"type": "disabled"})
+        self.assertEqual(kwargs["messages"][0]["content"][0]["type"], "text")
+        self.assertEqual(kwargs["messages"][0]["content"][0]["text"], "hello")
+
+    def test_create_message_retries_thinking_only_minimax_response_once(self):
+        client = self.anthropic_client_module.AnthropicClient.__new__(self.anthropic_client_module.AnthropicClient)
+        client.config = {
+            "base_url": "https://api.minimaxi.com/anthropic",
+            "max_tokens": 8192,
+            "llm_max_retries": 0,
+            "temperature": 0.3,
+        }
+        client._semaphore = contextlib.nullcontext()
+        client.client = _FakeClient(
+            [
+                _Message([_ThinkingBlock()], stop_reason="max_tokens"),
+                _Message([_TextBlock("final answer")], stop_reason="end_turn"),
+            ]
+        )
+
+        text = client.create_message("prompt", max_tokens=200, temperature=0.1)
+
+        self.assertEqual(text, "final answer")
+        self.assertEqual(len(client.client.messages.calls), 2)
+        self.assertEqual(client.client.messages.calls[0]["thinking"], {"type": "disabled"})
+        self.assertEqual(client.client.messages.calls[1]["thinking"], {"type": "disabled"})
+        self.assertEqual(client.client.messages.calls[1]["max_tokens"], 1024)
 
     def test_twitter_analyzer_extracts_text_from_mixed_blocks(self):
         analyzer = self.twitter_analyzer_module.TwitterContentAnalyzer.__new__(self.twitter_analyzer_module.TwitterContentAnalyzer)

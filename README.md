@@ -218,6 +218,7 @@ anthropic:
   model: "${ANTHROPIC_MODEL}"
   max_tokens: 4096
   temperature: 0.7
+  disable_thinking: true
 
   summary:
     max_length: 200

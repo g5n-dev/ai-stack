@@ -30,6 +30,7 @@ class TwitterContentAnalyzer:
         resolved_base_url = (base_url or "").strip() or os.environ.get("ANTHROPIC_BASE_URL")
         default_model = "MiniMax-M2.7-highspeed" if "minimax" in resolved_base_url.lower() else "claude-3-5-sonnet-20241022"
         self.model = (os.environ.get("ANTHROPIC_MODEL") or default_model).strip()
+        self.disable_thinking = "minimax" in resolved_base_url.lower()
 
         if not resolved_api_key:
             logger.warning("TwitterContentAnalyzer disabled: Anthropic API key not configured")
@@ -134,16 +135,20 @@ class TwitterContentAnalyzer:
 
             prompt = self._build_analysis_prompt(tweets)
 
-            message = self.client.messages.create(
-                model=self.model,
-                max_tokens=4096,
-                messages=[
+            request = {
+                "model": self.model,
+                "max_tokens": 4096,
+                "messages": [
                     {
                         "role": "user",
-                        "content": prompt
+                        "content": [{"type": "text", "text": prompt}]
                     }
-                ]
-            )
+                ],
+            }
+            if self.disable_thinking:
+                request["thinking"] = {"type": "disabled"}
+
+            message = self.client.messages.create(**request)
 
             response_text = self._extract_response_text(message)
 

@@ -16,6 +16,14 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
+class NoTextContentError(ValueError):
+    def __init__(self, block_types: list[str], stop_reason: str | None = None):
+        self.block_types = block_types
+        self.stop_reason = stop_reason
+        suffix = f", stop_reason={stop_reason}" if stop_reason else ""
+        super().__init__(f"No text content found in response blocks: {block_types}{suffix}")
+
+
 class NullAnthropicClient:
     def __init__(self, reason: str = "disabled"):
         self.reason = reason
@@ -72,6 +80,56 @@ class AnthropicClient:
             return "MiniMax-M2.7-highspeed"
         return "claude-3-5-sonnet-20241022"
 
+    def _is_minimax_backend(self) -> bool:
+        return "minimax" in str(self.config.get("base_url") or "").lower()
+
+    def _thinking_disabled_by_default(self) -> bool:
+        configured = self.config.get("disable_thinking")
+        if isinstance(configured, bool):
+            return configured
+        if isinstance(configured, str) and configured.strip():
+            return configured.strip().lower() in {"1", "true", "yes", "on"}
+        return self._is_minimax_backend()
+
+    def _build_request_kwargs(
+        self,
+        *,
+        prompt: str,
+        model: str,
+        max_tokens: int,
+        temperature: float,
+        disable_thinking: Optional[bool] = None,
+    ) -> Dict[str, Any]:
+        request: Dict[str, Any] = {
+            "model": model,
+            "max_tokens": max_tokens,
+            "temperature": temperature,
+            "messages": [
+                {
+                    "role": "user",
+                    "content": [
+                        {
+                            "type": "text",
+                            "text": prompt,
+                        }
+                    ],
+                }
+            ],
+        }
+        if disable_thinking is None:
+            disable_thinking = self._thinking_disabled_by_default()
+        if disable_thinking:
+            request["thinking"] = {"type": "disabled"}
+        return request
+
+    def _fallback_max_tokens(self, max_tokens: int) -> int:
+        configured_max = self.config.get("max_tokens", max_tokens)
+        try:
+            configured_max = int(configured_max)
+        except Exception:
+            configured_max = max_tokens
+        return max(max_tokens, min(configured_max, 1024))
+
     def _extract_text_from_message(self, message: Any) -> str:
         blocks = getattr(message, "content", None) or []
         texts: list[str] = []
@@ -99,7 +157,10 @@ class AnthropicClient:
         if texts:
             return "\n\n".join(texts).strip()
 
-        raise ValueError(f"No text content found in response blocks: {block_types or ['unknown']}")
+        raise NoTextContentError(
+            block_types=block_types or ["unknown"],
+            stop_reason=getattr(message, "stop_reason", None),
+        )
 
     def _init_client(self) -> anthropic.Anthropic:
         """初始化 Anthropic 客户端"""
@@ -152,18 +213,36 @@ class AnthropicClient:
             try:
                 with self._semaphore:
                     message = self.client.messages.create(
-                        model=model,
-                        max_tokens=max_tokens,
-                        temperature=temperature,
-                        messages=[
-                            {
-                                "role": "user",
-                                "content": prompt
-                            }
-                        ]
+                        **self._build_request_kwargs(
+                            prompt=prompt,
+                            model=model,
+                            max_tokens=max_tokens,
+                            temperature=temperature,
+                        )
                     )
 
-                response_text = self._extract_text_from_message(message)
+                try:
+                    response_text = self._extract_text_from_message(message)
+                except NoTextContentError as e:
+                    if ("thinking" in e.block_types) and self._is_minimax_backend():
+                        fallback_max_tokens = self._fallback_max_tokens(max_tokens)
+                        logger.warning(
+                            "MiniMax returned thinking without text; retrying once with thinking disabled "
+                            f"and max_tokens={fallback_max_tokens}"
+                        )
+                        with self._semaphore:
+                            fallback_message = self.client.messages.create(
+                                **self._build_request_kwargs(
+                                    prompt=prompt,
+                                    model=model,
+                                    max_tokens=fallback_max_tokens,
+                                    temperature=temperature,
+                                    disable_thinking=True,
+                                )
+                            )
+                        response_text = self._extract_text_from_message(fallback_message)
+                    else:
+                        raise
                 return response_text
 
             except anthropic.APIError as e:
