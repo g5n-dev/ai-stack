@@ -1,14 +1,27 @@
 ---
-title: "Flutter SSE 流式响应：基于 Dio 实现 OpenAI 逐 Token 输出"
-date: 2026-02-21T02:41:10+08:00
+title: Flutter SSE 流式响应：基于 Dio 实现 OpenAI 逐 Token 输出
+date: 2026-02-21 02:41:10+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Flutter", "Dio", "SSE", "流式响应", "OpenAI", "LLM", "逐字输出", "移动端开发"]
-categories: ["前端", "AI 工程"]
+entry_kind: auto
+tags:
+- Flutter
+- Dio
+- SSE
+- 流式响应
+- OpenAI
+- LLM
+- 逐字输出
+- 移动端开发
+categories:
+- 前端
+- AI 工程
 source: juejin
-description: "本文介绍了在 Flutter 开发中，如何利用 Dio 网络库实现兼容 OpenAI 接口的 SSE（Server-Sent Events）流式响应，从而达成类似打字机的逐 Token 输出效果，提升 AI 应用的用户体验。 以下是实现步骤的简要总结： 1. **背景与目的**： 为了避免 AI 生成大段文本时让用户长"
+description: 本文介绍了在 Flutter 开发中，如何利用 Dio 网络库实现兼容 OpenAI 接口的 SSE（Server-Sent Events）流式响应，从而达成类似打字机的逐
+  Token 输出效果，提升 AI 应用的用户体验。 以下是实现步骤的简要总结： 1. **背景与目的**： 为了避免 AI 生成大段文本时让用户长
 external_url: https://juejin.cn/post/7607332124487958591
-scenarios: ["AI/ML项目", "大语言模型"]
+scenarios:
+- AI/ML项目
+- 大语言模型
 ---
 
 # Flutter SSE 流式响应：基于 Dio 实现 OpenAI 逐 Token 输出
@@ -21,17 +34,20 @@ scenarios: ["AI/ML项目", "大语言模型"]
 - **链接**: [https://juejin.cn/post/7607332124487958591](https://juejin.cn/post/7607332124487958591)
 
 ---
+
 ## 导语
 
 在构建 AI 应用时，流式输出能显著改善用户等待体验，避免长时间白屏。本文将基于 Dio 网络库，详细讲解如何在 Flutter 中通过 SSE（Server-Sent Events）实现 OpenAI 兼容接口的逐 Token 输出。你将掌握从网络请求监听到 UI 逐字渲染的完整逻辑，从而在项目中复现类似 ChatGPT 的打字机效果。
 
 ---
+
 ## 描述
 
 在做 AI 提示词优化器 时，“等 10 秒一次性返回大段文本”的体验通常很差。
 更好的体验是：模型一边生成，你的 UI 一边展示（像打字机逐字出现）
 
 ---
+
 ## 摘要
 
 本文介绍了在 Flutter 开发中，如何利用 Dio 网络库实现兼容 OpenAI 接口的 SSE（Server-Sent Events）流式响应，从而达成类似打字机的逐 Token 输出效果，提升 AI 应用的用户体验。
@@ -60,6 +76,7 @@ scenarios: ["AI/ML项目", "大语言模型"]
 通过这种方式，开发者可以在 Flutter 中高效地实现 AI 对话的流式输出功能。
 
 ---
+
 ## 评论
 
 **文章中心观点：**
@@ -103,12 +120,8 @@ scenarios: ["AI/ML项目", "大语言模型"]
 3.  **协议兼容性压力测试：**
     *   **验证方式：** 模拟网络中断（开启飞行模式）或服务端返回非标准 JSON 片段。观察代码是否会抛出未捕获的 `FormatException`，或者 App 是否会发生 Crash。健壮的 SSE 实现应能优雅处理流中断。
 
-**实际应用建议：**
-
-*   **引入渲染缓冲：** 不要每收到一个 Token 就更新一次 UI。建议实现一个“微缓冲区”，例如每 30-50ms 或累积 5-10 个 Token 再提交一次渲染，以平衡流畅度与性能。
-*   **Markdown 实时解析优化：** 如果输出包含 Markdown 格式，直接对
-
 ---
+
 ## 学习要点
 
 - 核心实现是利用 Dio 的 ResponseType.stream 类型将响应转换为二进制流，并配合 utf8.decoder 解码数据以支持 SSE 协议。
@@ -120,14 +133,11 @@ scenarios: ["AI/ML项目", "大语言模型"]
 - SSE 数据流通常以 `data: [DONE]` 结尾，代码中需包含对此特定结束标记的判断以终止流处理。
 
 ---
+
 ## 常见问题
 
+### 使用 Dio 发起 SSE 请求时，如何配置才能正确接收流式数据？
 
-### 1: 使用 Dio 发起 SSE 请求时，如何配置才能正确接收流式数据？
-
-1: 使用 Dio 发起 SSE 请求时，如何配置才能正确接收流式数据？
-
-**A**: 
 要使用 Dio 接收 SSE (Server-Sent Events) 流，核心在于配置 `ResponseType`。默认情况下 Dio 会等待整个响应体下载完成，必须显式指定接收类型为 `stream`。
 
 **关键配置步骤：**
@@ -156,15 +166,8 @@ final response = await dio.post<ResponseBody>(
 );
 ```
 
----
+### 如何从 Dio 返回的 `ResponseBody` 中逐行解析出 SSE 数据？
 
-
-
-### 2: 如何从 Dio 返回的 `ResponseBody` 中逐行解析出 SSE 数据？
-
-2: 如何从 Dio 返回的 `ResponseBody` 中逐行解析出 SSE 数据？
-
-**A**: 
 OpenAI 的 SSE 接口返回的是 `text/event-stream` 格式，数据以 `data: {...}` 的形式逐行发送。你需要监听 `response.data.stream`，处理字节流并将其转换为 UTF-8 字符串，然后按行分割。
 
 **解析逻辑：**
@@ -179,11 +182,11 @@ OpenAI 的 SSE 接口返回的是 `text/event-stream` 格式，数据以 `data: 
 response.data.stream.listen((data) {
   final decoded = utf8.decode(data);
   final lines = decoded.split('\n');
-  
+
   for (final line in lines) {
     final trimmed = line.trim();
     if (trimmed.isEmpty) continue;
-    
+
     if (trimmed.startsWith('data: ')) {
       final jsonStr = trimmed.substring(6); // 去除 'data: '
       if (jsonStr == '[DONE]') {
@@ -198,15 +201,8 @@ response.data.stream.listen((data) {
 });
 ```
 
----
+### 在处理 SSE 流时，如何解决 JSON 数据被截断或跨行传输的问题？
 
-
-
-### 3: 在处理 SSE 流时，如何解决 JSON 数据被截断或跨行传输的问题？
-
-3: 在处理 SSE 流时，如何解决 JSON 数据被截断或跨行传输的问题？
-
-**A**: 
 这是网络流式传输中最常见的问题。由于 TCP 分包机制，一次 `stream.listen` 接收到的数据块可能不包含完整的 JSON，或者包含半个 JSON。直接 `jsonDecode` 会抛出格式异常。
 
 **解决方案：使用缓冲区**
@@ -219,15 +215,8 @@ response.data.stream.listen((data) {
 4.  如果存在，截取第一个换行符之前的内容作为“一行”进行处理。
 5.  处理完毕后，将该行从 `buffer` 中移除，保留剩余部分供下次使用。
 
----
+### OpenAI 返回的流式 JSON 结构是怎样的？如何提取具体的 Token 文本？
 
-
-
-### 4: OpenAI 返回的流式 JSON 结构是怎样的？如何提取具体的 Token 文本？
-
-4: OpenAI 返回的流式 JSON 结构是怎样的？如何提取具体的 Token 文本？
-
-**A**: 
 OpenAI 兼容接口在流式模式下，返回的 JSON 对象结构略有不同。文本内容不是直接返回的，而是嵌套在 `choices` 数组的 `delta` 对象中。
 
 **数据结构示例：**
@@ -257,7 +246,6 @@ OpenAI 兼容接口在流式模式下，返回的 JSON 对象结构略有不同�
 
 ---
 
----
 ## 引用
 
 - **掘金原文**: [https://juejin.cn/post/7607332124487958591](https://juejin.cn/post/7607332124487958591)
@@ -266,8 +254,6 @@ OpenAI 兼容接口在流式模式下，返回的 JSON 对象结构略有不同�
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [前端](/categories/%E5%89%8D%E7%AB%AF/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)
@@ -281,4 +267,3 @@ OpenAI 兼容接口在流式模式下，返回的 JSON 对象结构略有不同�
 - [kirara-ai：支持多平台接入的多模态AI聊天机器人框架]({{< relref "posts/20260131-github_trending-lss233-kirara-ai-2.md" >}})
 - [Codex 应用：基于 GPT-3 的代码生成工具]({{< relref "posts/20260202-hacker_news-the-codex-app-1.md" >}})
 - [Codex 应用：基于 OpenAI 模型的代码生成工具]({{< relref "posts/20260203-hacker_news-the-codex-app-12.md" >}})
-*本文由 AI Stack 自动生成，提供深度内容分析。*

@@ -1,14 +1,27 @@
 ---
-title: "Codex 工程化实践：解析 AGENTS.md、SKILL.md 与 MCP"
-date: 2026-03-14T23:04:01+08:00
+title: Codex 工程化实践：解析 AGENTS.md、SKILL.md 与 MCP
+date: 2026-03-14 23:04:01+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Codex", "MCP", "Model Context Protocol", "AGENTS.md", "SKILL.md", "AI Agent", "工程化实践", "LLM"]
-categories: ["AI 工程", "开发工具"]
+entry_kind: auto
+tags:
+- Codex
+- MCP
+- Model Context Protocol
+- AGENTS.md
+- SKILL.md
+- AI Agent
+- 工程化实践
+- LLM
+categories:
+- AI 工程
+- 开发工具
 source: juejin
-description: "Codex 的工程化落地离不开对 AGENTS.md、SKILL.md 与 MCP（Model Context Protocol）这三个核心概念的精准把控。若将 Codex 视为一名“AI 工程师”，理解这些机制便是构建其工作流与扩展能力的关键。本文将深入剖析这三者的设计逻辑与协作方式，帮助读者掌握如何通过标准化配置与"
+description: Codex 的工程化落地离不开对 AGENTS.md、SKILL.md 与 MCP（Model Context Protocol）这三个核心概念的精准把控。若将
+  Codex 视为一名“AI 工程师”，理解这些机制便是构建其工作流与扩展能力的关键。本文将深入剖析这三者的设计逻辑与协作方式，帮助读者掌握如何通过标准化配置与
 external_url: https://juejin.cn/post/7616666752521404416
-scenarios: ["AI/ML项目", "大语言模型"]
+scenarios:
+- AI/ML项目
+- 大语言模型
 ---
 
 # Codex 工程化实践：解析 AGENTS.md、SKILL.md 与 MCP
@@ -21,16 +34,19 @@ scenarios: ["AI/ML项目", "大语言模型"]
 - **链接**: [https://juejin.cn/post/7616666752521404416](https://juejin.cn/post/7616666752521404416)
 
 ---
+
 ## 导语
 
 Codex 的工程化落地离不开对 AGENTS.md、SKILL.md 与 MCP（Model Context Protocol）这三个核心概念的精准把控。若将 Codex 视为一名“AI 工程师”，理解这些机制便是构建其工作流与扩展能力的关键。本文将深入剖析这三者的设计逻辑与协作方式，帮助读者掌握如何通过标准化配置与协议集成，提升 AI 代理在复杂开发场景中的实际效能。
 
 ---
+
 ## 描述
 
 在 Codex 的设计中，有三个非常关键的概念：AGENTS.md SKILL.md MCP（Model Context Protocol）如果把 Codex 看成一个 “AI 工程师”，那么这三
 
 ---
+
 ## 评论
 
 ### 中心观点
@@ -79,6 +95,7 @@ Codex 的工程化落地离不开对 AGENTS.md、SKILL.md 与 MCP（Model Contex
 然而，文章可能**低估了自然语言本身的模糊性**带来的工程挑战。将工程规范写入 MD 文件只是第一步，如何确保 LLM 严格“理解”并“执行”这些规范，才是工程化真正的深水区。这不仅是文档格式的问题，更是模型推理能力与控制力的问题。
 
 ---
+
 ## 学习要点
 
 - AGENTS.md 是定义 AI 智能体角色、目标与约束的核心配置文件，通过明确边界防止模型产生幻觉并确保任务执行的准确性。
@@ -89,82 +106,51 @@ Codex 的工程化落地离不开对 AGENTS.md、SKILL.md 与 MCP（Model Contex
 - 清晰定义技能的输入输出参数，是降低 Agent 调试难度并提高多智能体协作稳定性的重要工程实践。
 
 ---
+
 ## 常见问题
 
+### 在 Codex 工程化实践中，AGENTS.md 文件的核心作用是什么？它与传统的 README 有何区别？
 
-### 1: 在 Codex 工程化实践中，AGENTS.md 文件的核心作用是什么？它与传统的 README 有何区别？
+AGENTS.md 是专门为 AI Agent（智能体）设计的“系统提示词”或“角色定义”文档。与传统的 README 面向人类开发者、侧重于项目介绍和安装指南不同，AGENTS.md 的目标读者是 AI 模型。它的核心作用是定义 Agent 的身份、职责范围、工作流以及它所掌握的技能列表。通过编写高质量的 AGENTS.md，开发者可以将 AI 从一个通用的聊天机器人转变为具备特定领域知识、能够执行复杂任务的专家级 Agent，从而确保 AI 在执行任务时能够准确理解上下文并遵循既定的工程规范。
 
-1: 在 Codex 工程化实践中，AGENTS.md 文件的核心作用是什么？它与传统的 README 有何区别？
+### SKILL.md 文件应该如何构建才能让 AI 最好地理解并调用特定技能？
 
-**A**: AGENTS.md 是专门为 AI Agent（智能体）设计的“系统提示词”或“角色定义”文档。与传统的 README 面向人类开发者、侧重于项目介绍和安装指南不同，AGENTS.md 的目标读者是 AI 模型。它的核心作用是定义 Agent 的身份、职责范围、工作流以及它所掌握的技能列表。通过编写高质量的 AGENTS.md，开发者可以将 AI 从一个通用的聊天机器人转变为具备特定领域知识、能够执行复杂任务的专家级 Agent，从而确保 AI 在执行任务时能够准确理解上下文并遵循既定的工程规范。
-
----
-
-
-
-### 2: SKILL.md 文件应该如何构建才能让 AI 最好地理解并调用特定技能？
-
-2: SKILL.md 文件应该如何构建才能让 AI 最好地理解并调用特定技能？
-
-**A**: SKILL.md 是对 Agent 具体能力的详细说明书，其构建应遵循结构化和标准化的原则。为了让 AI 最好地理解，一个 SKILL.md 通常应包含以下关键部分：
+SKILL.md 是对 Agent 具体能力的详细说明书，其构建应遵循结构化和标准化的原则。为了让 AI 最好地理解，一个 SKILL.md 通常应包含以下关键部分：
 1.  **技能概述**：简要说明该技能的功能和用途。
 2.  **输入与输出**：明确界定该技能需要什么参数（输入），以及执行后返回什么结果（输出）。这有助于 AI 进行参数匹配。
 3.  **执行步骤**：将技能的实现过程拆解为清晰的步骤，类似于算法逻辑，帮助 AI 理解技能的内部工作机制。
 4.  **依赖与限制**：说明该技能运行所需的前置条件或无法处理的情况，防止 AI 产生幻觉或错误调用。
 通过这种结构化描述，AI 可以像查阅 API 文档一样精准地选择和使用技能。
 
----
+### 什么是 MCP (Model Context Protocol)？它在 Codex 工程化架构中解决了什么痛点？
 
+MCP (Model Context Protocol) 是一种开放的标准协议，旨在连接 AI 应用与外部数据源和工具系统。在 Codex 工程化架构中，MCP 解决了 AI 模型与外部世界交互的“最后一公里”痛点。此前，为 AI 添加新的数据源或工具需要为每个模型编写特定的集成代码，维护成本极高。MCP 的引入使得开发者可以通过统一的方式（Standardized Connectors）让 AI 访问本地文件、数据库、API 或云服务。它充当了一个通用的“翻译器”和“连接器”，让 Agent 能够动态地挂载各种能力，极大地扩展了 Codex 的实用性和工程化落地能力。
 
+### 在实际开发中，AGENTS.md、SKILL.md 和 MCP 这者之间是如何协作的？
 
-### 3: 什么是 MCP (Model Context Protocol)？它在 Codex 工程化架构中解决了什么痛点？
-
-3: 什么是 MCP (Model Context Protocol)？它在 Codex 工程化架构中解决了什么痛点？
-
-**A**: MCP (Model Context Protocol) 是一种开放的标准协议，旨在连接 AI 应用与外部数据源和工具系统。在 Codex 工程化架构中，MCP 解决了 AI 模型与外部世界交互的“最后一公里”痛点。此前，为 AI 添加新的数据源或工具需要为每个模型编写特定的集成代码，维护成本极高。MCP 的引入使得开发者可以通过统一的方式（Standardized Connectors）让 AI 访问本地文件、数据库、API 或云服务。它充当了一个通用的“翻译器”和“连接器”，让 Agent 能够动态地挂载各种能力，极大地扩展了 Codex 的实用性和工程化落地能力。
-
----
-
-
-
-### 4: 在实际开发中，AGENTS.md、SKILL.md 和 MCP 这者之间是如何协作的？
-
-4: 在实际开发中，AGENTS.md、SKILL.md 和 MCP 这者之间是如何协作的？
-
-**A**: 这三者共同构成了一个完整的 AI 工程化上下文体系，协作逻辑如下：
+这三者共同构成了一个完整的 AI 工程化上下文体系，协作逻辑如下：
 1.  **AGENTS.md (大脑/指挥官)**：定义了 Agent 的整体目标。当用户发出指令时，Agent 会首先查阅 AGENTS.md 确认自己的角色和任务目标。
 2.  **SKILL.md (技能手册)**：Agent 在规划任务时，会根据 SKILL.md 中定义的技能列表，决定调用哪些内部逻辑或函数来解决问题。它告诉 Agent “我能做什么”。
 3.  **MCP (手脚/接口)**：当 Agent 需要获取外部数据（如查询数据库）或执行外部操作（如读写文件）时，会通过 MCP 协议与外部系统进行交互。
 简而言之，AGENTS.md 负责“决策”，SKILL.md 负责“提供内部能力描述”，而 MCP 负责“打通外部资源执行”。
 
----
+### 编写 SKILL.md 时，如何避免 AI 产生幻觉或错误地执行任务？
 
-
-
-### 5: 编写 SKILL.md 时，如何避免 AI 产生幻觉或错误地执行任务？
-
-5: 编写 SKILL.md 时，如何避免 AI 产生幻觉或错误地执行任务？
-
-**A**: 为了避免 AI 产生幻觉，编写 SKILL.md 时应遵循“严格约束”和“明确边界”的原则：
+为了避免 AI 产生幻觉，编写 SKILL.md 时应遵循“严格约束”和“明确边界”的原则：
 1.  **显式声明前置条件**：在文档中明确指出技能运行必须满足的条件，例如“必须先获得用户授权”或“文件必须存在”。
 2.  **定义失败模式**：明确告诉 AI 当输入不符合要求或操作失败时应该返回什么，而不是让 AI 自己臆造结果。
 3.  **使用结构化数据格式**：在描述输入输出时，尽量使用 JSON Schema 或具体的类型定义，减少 AI 对参数格式的猜测空间。
 4.  **隔离上下文**：确保每个 SKILL.md 只关注单一职责，避免在一个技能中混杂过多逻辑，导致 AI 理解偏差。
 
----
+### 引入 MCP 后，系统的安全性如何保障？是否会有数据泄露风险？
 
-
-
-### 6: 引入 MCP 后，系统的安全性如何保障？是否会有数据泄露风险？
-
-6: 引入 MCP 后，系统的安全性如何保障？是否会有数据泄露风险？
-
-**A**: 引入 MCP 确实带来了新的安全挑战，因此工程化实践中必须建立严格的权限控制机制：
+引入 MCP 确实带来了新的安全挑战，因此工程化实践中必须建立严格的权限控制机制：
 1.  **权限白名单**：MCP 的实现应遵循“最小权限原则”。Agent 默认不应拥有访问所有系统资源的权限，必须通过配置文件显式声明允许访问的路径或 API 接口。
 2.  **沙箱机制**：在执行高风险操作（如修改系统文件、执行数据库写操作）前，最好设计人工确认环节，或者将 MCP 服务器运行在隔离的沙箱环境中。
 3.  **输入验证**：
 
 ---
+
 ## 引用
 
 - **掘金原文**: [https://juejin.cn/post/7616666752521404416](https://juejin.cn/post/7616666752521404416)
@@ -173,8 +159,6 @@ Codex 的工程化落地离不开对 AGENTS.md、SKILL.md 与 MCP（Model Contex
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/)
@@ -188,4 +172,3 @@ Codex 的工程化落地离不开对 AGENTS.md、SKILL.md 与 MCP（Model Contex
 - [使用MCP协议集成外部工具至Amazon Quick Agents的六步指南]({{< relref "posts/20260223-blogs_podcasts-integrate-external-tools-with-amazon-quick-agents--9.md" >}})
 - [wechat-devtools-mcp：基于官方库的微信小程序自动化方案]({{< relref "posts/20260226-juejin-微信小程序自动化的-ai-新时代wechat-devtools-mcp-智能方案-2.md" >}})
 - [MCP 协议入门与实操：构建大模型的数据连接标准]({{< relref "posts/20260311-juejin-mcp-初识到实操打造-ai-的usb-c接口让大模型真正手眼通天-2.md" >}})
-*本文由 AI Stack 自动生成，提供深度内容分析。*

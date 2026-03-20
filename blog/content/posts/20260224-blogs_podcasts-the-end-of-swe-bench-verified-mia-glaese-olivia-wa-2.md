@@ -1,14 +1,26 @@
 ---
-title: "OpenAI前沿评测团队：SWE-Bench Verified后的智能体评测演进"
-date: 2026-02-24T03:30:14+08:00
+title: OpenAI前沿评测团队：SWE-Bench Verified后的智能体评测演进
+date: 2026-02-24 03:30:14+08:00
 draft: false
-entry_kind: "auto"
-tags: ["OpenAI", "SWE-Bench", "Agent", "智能体评测", "代码生成", "前沿评估", "基准测试", "o1"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- OpenAI
+- SWE-Bench
+- Agent
+- 智能体评测
+- 代码生成
+- 前沿评估
+- 基准测试
+- o1
+categories:
+- 大模型
+- AI 工程
 source: blogs_podcasts
-description: "这是对 Mia Glaese 和 Olivia Watkins 在 OpenAI 负责“前沿评估与人类数据”工作的简要总结： **核心主题：迈向更高阶的前沿智能体评估** 这篇文章标志着 **SWE-Bench Verified** 时代的终结，并呼吁在评估 AI 智能体方面采取“下一步行动”。 **要点总结：** 1"
+description: 这是对 Mia Glaese 和 Olivia Watkins 在 OpenAI 负责“前沿评估与人类数据”工作的简要总结： **核心主题：迈向更高阶的前沿智能体评估**
+  这篇文章标志着 **SWE-Bench Verified** 时代的终结，并呼吁在评估 AI 智能体方面采取“下一步行动”。 **要点总结：** 1
 external_url: https://www.latent.space/p/swe-bench-dead
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
 ---
 
 # OpenAI前沿评测团队：SWE-Bench Verified后的智能体评测演进
@@ -22,16 +34,19 @@ scenarios: ["AI/ML项目"]
 - **链接**: [https://www.latent.space/p/swe-bench-dead](https://www.latent.space/p/swe-bench-dead)
 
 ---
+
 ## 摘要/简介
 
 是时候在智能体前沿评测上迈出下一步了。
 
 ---
+
 ## 导语
 
 随着 SWE-Bench Verified 逐渐成为衡量代码智能体能力的基准，业界迫切需要更严苛的评测标准以推动技术边界。OpenAI 的 Mia Glaese 与 Olivia Watkins 在本文中探讨了当前评估体系的局限性，并提出了迈向下一代评测的必要性。阅读本文，读者将了解前沿评估方法的演进方向，以及如何构建更贴近真实场景的测试环境来验证模型能力。
 
 ---
+
 ## 摘要
 
 这是对 Mia Glaese 和 Olivia Watkins 在 OpenAI 负责“前沿评估与人类数据”工作的简要总结：
@@ -59,6 +74,7 @@ scenarios: ["AI/ML项目"]
 随着 SWE-Bench Verified 基准已被顶尖模型基本攻克，OpenAI 宣布将重心转向开发更严格、更接近现实世界复杂度的下一代评估体系，以测试 AI 智能体在更高
 
 ---
+
 ## 评论
 
 **文章中心观点**
@@ -98,7 +114,6 @@ SWE-Bench Verified 作为衡量 AI 软件工程能力的基准已接近失效，
 3.  **社区反馈**：观察开源社区（如 Hugging Face, GitHub）针对 SWE-Bench 的细分领域分析，看是否出现大量“通过基准但在实际生产环境报错”的案例，这将是过拟合的直接证据。
 
 ---
-## 技术分析
 
 ## 技术分析
 
@@ -136,9 +151,8 @@ SWE-agent的技术实现展示了LLM作为系统控制器的潜力，其架构�
 这一进展标志着行业竞争焦点从**“模型参数规模”**转向**“Agent系统架构设计”**。未来的技术壁垒将不仅在于基座模型的性能，更在于如何设计更高效的工具调用接口、更鲁棒的反馈机制以及更安全的执行环境。评估标准的升级将推动研发团队从关注单一模型的代码生成率，转向关注整个系统的工程化落地能力。
 
 ---
-## 最佳实践
 
-## 最佳实践指南
+## 最佳实践
 
 ### 实践 1：构建基于真实世界复杂性的评估基准
 
@@ -229,6 +243,7 @@ OpenAI 的研究强调了人类数据在模型对齐中的关键作用。通过�
 评估指标需要多元化，除了“通过率”，还应考虑“首次尝试成功率”和“修复所需时间”，以全面衡量工程效率。
 
 ---
+
 ## 学习要点
 
 - OpenAI 的 o3 模型在 SWE-Bench Verified 基准测试中取得了突破性成绩，首次实现了超越人类专家水平的软件工程任务解决能力。
@@ -239,6 +254,7 @@ OpenAI 的研究强调了人类数据在模型对齐中的关键作用。通过�
 - 这一进展表明 AI 正在从辅助编码工具演变为能够独立完成端到端开发任务的智能体。
 
 ---
+
 ## 引用
 
 - **文章/节目**: [https://www.latent.space/p/swe-bench-dead](https://www.latent.space/p/swe-bench-dead)
@@ -248,8 +264,6 @@ OpenAI 的研究强调了人类数据在模型对齐中的关键作用。通过�
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)
@@ -263,4 +277,3 @@ OpenAI 的研究强调了人类数据在模型对齐中的关键作用。通过�
 - [OpenAI提出SWE-Bench-Dead：智能体前沿评估的下一步]({{< relref "posts/20260223-blogs_podcasts-swe-bench-dead-the-end-of-swe-bench-verified-mia-g-0.md" >}})
 - [GPT-5.3-Codex：结合前沿编码性能与推理能力的代理式模型]({{< relref "posts/20260205-blogs_podcasts-gpt-53-codex-system-card-4.md" >}})
 - [利用 Codex 构建以 Agent 为中心的工程化实践]({{< relref "posts/20260212-blogs_podcasts-harness-engineering-leveraging-codex-in-an-agent-f-9.md" >}})
-*本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

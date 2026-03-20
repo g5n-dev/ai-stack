@@ -1,14 +1,26 @@
 ---
-title: "使用 veRL 和 Ray 在 SageMaker 上训练 CodeFu-7B 模型"
-date: 2026-02-25T20:35:05+08:00
+title: 使用 veRL 和 Ray 在 SageMaker 上训练 CodeFu-7B 模型
+date: 2026-02-25 20:35:05+08:00
 draft: false
-entry_kind: "auto"
-tags: ["veRL", "Ray", "SageMaker", "CodeFu-7B", "GRPO", "强化学习", "分布式训练", "竞技编程"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- veRL
+- Ray
+- SageMaker
+- CodeFu-7B
+- GRPO
+- 强化学习
+- 分布式训练
+- 竞技编程
+categories:
+- 大模型
+- AI 工程
 source: blogs_podcasts
-description: "本文介绍了如何在 Amazon SageMaker Training jobs 上，利用 veRL 和 Ray 分布式集群训练 CodeFu-7B（一个专注于竞技编程的 70 亿参数模型）。通过采用 Group Relative Policy Optimization (GRPO) 算法，我们展示了从数据准备、分布式训"
+description: 本文介绍了如何在 Amazon SageMaker Training jobs 上，利用 veRL 和 Ray 分布式集群训练 CodeFu-7B（一个专注于竞技编程的
+  70 亿参数模型）。通过采用 Group Relative Policy Optimization (GRPO) 算法，我们展示了从数据准备、分布式训
 external_url: https://aws.amazon.com/blogs/machine-learning/train-codefu-7b-with-verl-and-ray-on-amazon-sagemaker-training-jobs
-scenarios: ["工具"]
+scenarios:
+- 工具
 ---
 
 # 使用 veRL 和 Ray 在 SageMaker 上训练 CodeFu-7B 模型
@@ -22,21 +34,25 @@ scenarios: ["工具"]
 - **链接**: [https://aws.amazon.com/blogs/machine-learning/train-codefu-7b-with-verl-and-ray-on-amazon-sagemaker-training-jobs](https://aws.amazon.com/blogs/machine-learning/train-codefu-7b-with-verl-and-ray-on-amazon-sagemaker-training-jobs)
 
 ---
+
 ## 摘要/简介
 
 在本文中，我们演示了如何使用 veRL 的 Group Relative Policy Optimization (GRPO) 来训练 CodeFu-7B——一款专为竞技编程打造的 70 亿参数模型。veRL 是一个灵活且高效的大语言模型 (LLM) 训练库，能够便捷地扩展各类强化学习算法，并与现有 LLM 基础设施无缝集成；而整个训练过程在由 SageMaker 托管作业所管理的分布式 Ray 集群中进行。我们将完整过一遍实现，涵盖数据准备、分布式训练配置以及全面的可观测性，以展示这一统一方案如何为复杂的强化学习训练负载同时带来算力规模和开发者体验。
 
 ---
+
 ## 导语
 
 竞技编程模型的训练往往面临强化学习算法实现复杂与分布式资源调度困难的双重挑战。本文将演示如何利用 veRL 库的 GRPO 算法，结合 Amazon SageMaker 上托管的 Ray 集群，来训练 CodeFu-7B 模型。我们将深入探讨从数据准备到分布式配置的完整实现细节，展示这一方案如何在不牺牲开发者体验的前提下，高效地扩展大规模强化学习训练负载。
 
 ---
+
 ## 摘要
 
 本文介绍了如何在 Amazon SageMaker Training jobs 上，利用 veRL 和 Ray 分布式集群训练 CodeFu-7B（一个专注于竞技编程的 70 亿参数模型）。通过采用 Group Relative Policy Optimization (GRPO) 算法，我们展示了从数据准备、分布式训练设置到全面可观测性的完整实现流程。这种统一的方法不仅提供了强大的计算规模，还优化了复杂强化学习工作负载的开发体验。
 
 ---
+
 ## 评论
 
 **文章中心观点**
@@ -79,13 +95,12 @@ scenarios: ["工具"]
 4.  **成本基准**：记录训练完成一个 Epoch 所需的实例时长与费用，对比在本地同等算力集群上的电力与折旧成本，计算云端的溢价比例。
 
 ---
+
 ## 技术分析
 
 基于您提供的文章标题和摘要，以下是对该技术方案的深入分析。文章主要探讨了在亚马逊云科技 SageMaker 上，利用 veRL 库和 Ray 分布式计算框架，对 CodeFu-7B 模型进行 GRPO（Group Relative Policy Optimization）强化学习训练的全过程。
 
----
-
-## 1. 核心观点深度解读
+### 1. 核心观点深度解读
 
 **文章的主要观点**
 文章的核心观点在于展示一种**高度工程化且可扩展的 LLM 训练范式**：通过将 **veRL**（一种专为 LLM 设计的高效强化学习库）与 **Ray**（分布式计算框架）深度集成，并在 **Amazon SageMaker** 上运行，可以高效地完成对特定领域模型（如 CodeFu-7B）的高级对齐训练（GRPO）。
@@ -99,7 +114,7 @@ scenarios: ["工具"]
 **为什么这个观点重要**
 随着大模型进入“深水区”，通用的预训练模型已经触顶，行业竞争的焦点转移到了**后训练**和对齐阶段。特别是对于 Code、Math 等强逻辑领域，传统的 SFT（监督微调）效果有限，必须依靠 RL（强化学习）来提升推理能力。本文提供的方法论为开发者提供了一条从“开源模型”到“领域专家模型”的可行路径，对推动 LLM 在垂直行业的落地具有重要意义。
 
-## 2. 关键技术要点
+### 2. 关键技术要点
 
 **涉及的关键技术或概念**
 1.  **GRPO (Group Relative Policy Optimization)**：这是技术核心。它是 PPO（Proximal Policy Optimization）的一种变体。GRPO 不需要训练一个显式的价值模型来计算基线，而是通过一组采样的输出来计算相对优势。这大大减少了显存占用和计算量。
@@ -123,7 +138,7 @@ scenarios: ["工具"]
 **技术创新点分析**
 最大的技术创新点在于**在 GRPO 这种特定算法下，验证了“轻量级 RL”在云原生环境下的可行性**。证明了不需要像 OpenAI 那样庞大的超算集群，通过合理的架构设计，也能高效地进行 7B 级别的强化学习训练。
 
-## 3. 实际应用价值
+### 3. 实际应用价值
 
 **对实际工作的指导意义**
 该文章为 AI 工程师和研究员提供了一套**“开箱即用”的工程蓝图**。它不仅仅是一个算法论文，更是一份 Infrastructure as Code (IaC) 的实践指南。它指导团队如何从单机实验平滑过渡到云端的大规模分布式训练。
@@ -140,7 +155,7 @@ scenarios: ["工具"]
 **实施建议**
 建议先在小规模的 SageMaker 实例（如单机多卡）上验证 veRL 的 GRPO 流程，确认 Reward Model 或环境逻辑无误后，再利用 Ray 扩展到多节点。充分利用 SageMaker 的 Spot Instance 来降低训练成本。
 
-## 4. 行业影响分析
+### 4. 行业影响分析
 
 **对行业的启示**
 这标志着**大模型训练从“暴力美学”转向“精细化运营”**。行业不再仅仅关注参数量，而是关注如何通过更高效的算法（GRPO）和更灵活的架构，在有限的资源下榨干模型的能力。同时，云厂商（AWS）与开源社区（veRL, Ray）的深度绑定，正在降低 AI 创业的门槛。
@@ -156,7 +171,7 @@ scenarios: ["工具"]
 **对行业格局的影响**
 这将进一步巩固**云厂商+开源生态**的统治地位。AWS 通过支持这类前沿技术，吸引了开发者在其平台上构建模型。同时，veRL 等高效库的崛起，可能会挑战 HuggingFace TRL 等传统训练库的市场地位。
 
-## 5. 延伸思考
+### 5. 延伸思考
 
 **引发的其他思考**
 *   **GRPO 的泛化能力**：虽然 GRPO 在代码任务上表现出色，但在开放式对话、创意写作等缺乏客观“对错”标准的场景下，Group Sampling 的相对优势是否还能稳定有效？
@@ -173,42 +188,19 @@ scenarios: ["工具"]
 **未来发展趋势**
 训练框架将向着**“解耦”**方向发展：数据生成、模型训练、奖励计算将作为独立的微服务在云上动态调度。未来的 LLM 训练将更像是一个编排问题，而不仅仅是算法问题。
 
-## 6. 实践建议
-
-**如何应用到自己的项目**
-1.  **评估数据**：如果你有明确的“正确/错误”反馈数据（如单元测试、SQL 执行结果、用户点赞/点踩），你可以尝试此方案。
-2.  **环境搭建**：在 AWS 账户中配置 SageMaker Domain，并准备好 Docker 镜像，其中包含 veRL 和 Ray 依赖。
-3.  **代码改造**：将你的 SFT 脚本替换为 veRL 的 GRPO 配置文件，编写你的 Reward Function（例如调用一个 Python 解释器执行代码）。
-
-**具体的行动建议**
-*   **Step 1**：阅读 veRL 官方文档，理解其 Actor-Critic-Rollout 的数据流。
-*   **Step 2**：在本地利用小模型（如 1B 参数）跑通 GRPO 的最小闭环。
-*   **Step 3**：将代码容器化，推送到 ECR（Elastic Container Registry）。
-*   **Step 4**：编写 SageMaker 启动脚本，指定 Ray 集群配置，提交训练任务。
-
-**需要补充的知识**
-*   **Ray 架构**：理解 Ray 的 Actor, Remote Function, 和 Object Store 机制。
-*   **强化学习基础**：理解 Policy Gradient, Importance Sampling, KL Divergence 等概念。
-*   **AWS 基础设施**：熟悉 VPC, IAM Role, S3 的配置。
-
-**实践中的注意事项**
-*   **超参数敏感性**：GRPO 对 KL Penalty（KL 散度惩罚系数）非常敏感。过大会导致模型退化，过小则不稳定。建议从小值开始调试。
-*   **日志监控**：务必监控 Ray Dashboard 和 SageMaker Metrics，关注 Reward 的均值和方差，以及 GPU 的显存利用率。
-
-## 7. 案例分析
+### 7. 案例分析
 
 **结合实际案例说明**
 文章中的 CodeFu-7B 是一个典型的**垂直领域增强案例**。
 *   **背景**：通用的 Llama-2 或 CodeLlama 可能能写代码，但在复杂的算法竞赛
 
 ---
-## 最佳实践
 
-## 最佳实践指南
+## 最佳实践
 
 ### 实践 1：利用 vLLM 驱动的连续批处理优化吞吐量
 
-**说明**: 
+**说明**:
 veRL 集成了 vLLM 作为推理引擎，利用其连续批处理机制来优化训练过程中的数据吞吐量。相比于传统的静态批处理，连续批处理允许在同一个批次中动态插入和删除序列，显著减少了填充带来的计算浪费，从而在保持模型精度的同时大幅提升训练效率。
 
 **实施步骤**:
@@ -216,14 +208,14 @@ veRL 集成了 vLLM 作为推理引擎，利用其连续批处理机制来优化
 2. 根据模型显存大小，动态调整 `max_num_batched_tokens` 参数，以平衡显存占用和吞吐量。
 3. 监控 GPU 的显存利用率，确保连续批处理机制正在生效（通常表现为更高的 MFU）。
 
-**注意事项**: 
+**注意事项**:
 在启用连续批处理时，需要特别注意不同长度序列之间的对齐问题，确保数据预处理阶段没有引入不必要的填充。
 
 ---
 
 ### 实践 2：基于 Ray 的弹性资源调度与容错
 
-**说明**: 
+**说明**:
 利用 Ray 在 SageMaker 上实现高效的分布式训练调度。Ray 的弹性调度能力允许训练任务在节点发生故障或资源波动时自动恢复或重置，这对于长时间运行的大语言模型（LLM）训练任务至关重要，可以有效避免因单点故障导致的训练中断。
 
 **实施步骤**:
@@ -231,14 +223,14 @@ veRL 集成了 vLLM 作为推理引擎，利用其连续批处理机制来优化
 2. 配置 Ray 的自动扩展器，使其能够根据队列中的待处理任务动态申请或释放 SageMaker 计算实例。
 3. 启用 Ray 的检查点功能，定期将模型状态保存到 Amazon S3，以便在故障恢复时快速回滚。
 
-**注意事项**: 
+**注意事项**:
 确保 IAM 角色具有足够的权限来管理 SageMaker 实例和访问 S3 存储桶，否则 Ray 的弹性调度将无法正常工作。
 
 ---
 
 ### 实践 3：使用混合精度训练（BF16）加速计算
 
-**说明**: 
+**说明**:
 CodeFu-7B 训练应优先使用 BFloat16 (BF16) 数据格式而非 FP16。BF16 在保持与 FP32 相同的指数位宽的同时减少了尾数位宽，这不仅能够显著降低显存占用，加快计算速度，还能减少数值下溢的风险，特别是在大模型训练的梯度更新阶段。
 
 **实施步骤**:
@@ -246,14 +238,14 @@ CodeFu-7B 训练应优先使用 BFloat16 (BF16) 数据格式而非 FP16。BF16 �
 2. 确保所选的 SageMaker 实例类型（如 p4de 或 p5）原生支持 BF16 加速（如 NVIDIA A100 或 H100 GPU）。
 3. 验证损失函数的收敛曲线，确保精度损失在可接受范围内。
 
-**注意事项**: 
+**注意事项**:
 如果使用较旧的 GPU（如 V100），可能不支持原生 BF16，此时需回退到 FP16 或使用 Flash Attention 的模拟 BF16 模式，并注意梯度缩放。
 
 ---
 
 ### 实践 4：优化数据加载与预处理流水线
 
-**说明**: 
+**说明**:
 在分布式训练环境中，GPU 往往需要等待 CPU 准备数据。为了避免 I/O 瓶颈，应构建高效的数据加载流水线。这包括使用内存映射文件、预取机制以及多线程数据加载，确保 GPU 始终处于计算状态而非等待状态。
 
 **实施步骤**:
@@ -261,14 +253,14 @@ CodeFu-7B 训练应优先使用 BFloat16 (BF16) 数据格式而非 FP16。BF16 �
 2. 在 PyTorch DataLoader 中配置 `num_workers` 参数，利用多核 CPU 并行处理数据。
 3. 启用 `pin_memory=True` 选项，加速数据从 CPU 内存到 GPU 显存的传输。
 
-**注意事项**: 
+**注意事项**:
 过多的 `num_workers` 可能会导致 CPU 内存争用，需根据实例的 vCPU 数量进行调优，建议从 `4 * GPU_Count` 开始测试。
 
 ---
 
 ### 实践 5：实施高效的检查点与断点续训策略
 
-**说明**: 
+**说明**:
 考虑到 SageMaker 按需计费实例可能发生的中断，以及长时间训练的不确定性，必须实施高频且低开销的检查点策略。仅保存模型权重是不够的，还需要保存优化器状态和随机数生成器状态，以确保完全无缝的断点续训。
 
 **实施步骤**:
@@ -276,17 +268,18 @@ CodeFu-7B 训练应优先使用 BFloat16 (BF16) 数据格式而非 FP16。BF16 �
 2. 设置合理的保存间隔（例如每 1000 步或每小时），避免过于频繁的 I/O 操作影响训练速度。
 3. 在训练脚本启动时，添加逻辑检测 S3 路径下是否存在未完成的检查点，自动加载并继续训练。
 
-**注意事项**: 
+**注意事项**:
 全量保存优化器状态（如 Adam）可能占用大量磁盘空间。如果磁盘写入速度成为瓶颈，可以考虑仅保存模型权重的“影子检查点”，虽然恢复训练时需要丢弃优化器动量，但能大幅减少 I/O 时间。
 
 ---
 
 ### 实践 6：利用 SageMaker 分布式训练库进行网络通信优化
 
-**说明**: 
+**说明**:
 在使用 Ray 和 veRL 进行分布式训练时，节点间的通信延迟
 
 ---
+
 ## 学习要点
 
 - veRL 与 Ray 的深度集成能够在 SageMaker 上实现高效的模型并行训练，显著降低大语言模型训练的显存开销并提升训练速度。
@@ -296,6 +289,7 @@ CodeFu-7B 训练应优先使用 BFloat16 (BF16) 数据格式而非 FP16。BF16 �
 - 该架构展示了如何将开源生态（如 Hugging Face 模型）无缝部署至云端生产环境进行大规模微调。
 
 ---
+
 ## 引用
 
 - **文章/节目**: [https://aws.amazon.com/blogs/machine-learning/train-codefu-7b-with-verl-and-ray-on-amazon-sagemaker-training-jobs](https://aws.amazon.com/blogs/machine-learning/train-codefu-7b-with-verl-and-ray-on-amazon-sagemaker-training-jobs)
@@ -305,8 +299,6 @@ CodeFu-7B 训练应优先使用 BFloat16 (BF16) 数据格式而非 FP16。BF16 �
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)
@@ -320,4 +312,3 @@ CodeFu-7B 训练应优先使用 BFloat16 (BF16) 数据格式而非 FP16。BF16 �
 - [使用 veRL 和 Ray 在 SageMaker 上训练 CodeFu-7B 模型]({{< relref "posts/20260225-blogs_podcasts-train-codefu-7b-with-verl-and-ray-on-amazon-sagema-5.md" >}})
 - [基于veRL与Ray在SageMaker上训练CodeFu-7B模型]({{< relref "posts/20260225-blogs_podcasts-train-codefu-7b-with-verl-and-ray-on-amazon-sagema-9.md" >}})
 - [在 SageMaker 上利用 veRL 与 Ray 训练 CodeFu-7B]({{< relref "posts/20260224-blogs_podcasts-train-codefu-7b-with-verl-and-ray-on-amazon-sagema-1.md" >}})
-*本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

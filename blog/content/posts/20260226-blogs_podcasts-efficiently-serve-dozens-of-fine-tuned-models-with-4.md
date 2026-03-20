@@ -1,14 +1,27 @@
 ---
-title: "在 SageMaker AI 与 Amazon Bedrock 上使用 vLLM 高效部署多 LoRA 模型"
-date: 2026-02-26T16:11:37+08:00
+title: 在 SageMaker AI 与 Amazon Bedrock 上使用 vLLM 高效部署多 LoRA 模型
+date: 2026-02-26 16:11:37+08:00
 draft: false
-entry_kind: "auto"
-tags: ["vLLM", "LoRA", "MoE", "模型推理", "SageMaker", "Bedrock", "模型部署", "内核优化"]
-categories: ["AI 工程", "系统与基础设施"]
+entry_kind: auto
+tags:
+- vLLM
+- LoRA
+- MoE
+- 模型推理
+- SageMaker
+- Bedrock
+- 模型部署
+- 内核优化
+categories:
+- AI 工程
+- 系统与基础设施
 source: blogs_podcasts
-description: "**标题：利用 vLLM 在 Amazon SageMaker AI 和 Amazon Bedrock 上高效服务多 LoRA 模型** **摘要** 本文介绍了如何在 vLLM 框架中实现针对混合专家模型的多 LoRA 推理功能。通过内核级别的深度优化，该方案旨在提升推理效率，并以 GPT-OSS 20B 模型为例，"
+description: '**标题：利用 vLLM 在 Amazon SageMaker AI 和 Amazon Bedrock 上高效服务多 LoRA 模型**
+  **摘要** 本文介绍了如何在 vLLM 框架中实现针对混合专家模型的多 LoRA 推理功能。通过内核级别的深度优化，该方案旨在提升推理效率，并以 GPT-OSS
+  20B 模型为例，'
 external_url: https://aws.amazon.com/blogs/machine-learning/efficiently-serve-dozens-of-fine-tuned-models-with-vllm-on-amazon-sagemaker-ai-and-amazon-bedrock
-scenarios: ["大语言模型"]
+scenarios:
+- 大语言模型
 ---
 
 # 在 SageMaker AI 与 Amazon Bedrock 上使用 vLLM 高效部署多 LoRA 模型
@@ -22,16 +35,19 @@ scenarios: ["大语言模型"]
 - **链接**: [https://aws.amazon.com/blogs/machine-learning/efficiently-serve-dozens-of-fine-tuned-models-with-vllm-on-amazon-sagemaker-ai-and-amazon-bedrock](https://aws.amazon.com/blogs/machine-learning/efficiently-serve-dozens-of-fine-tuned-models-with-vllm-on-amazon-sagemaker-ai-and-amazon-bedrock)
 
 ---
+
 ## 摘要/简介
 
 在本篇文章中，我们将介绍如何在 vLLM 中为混合专家（MoE）模型实现多 LoRA 推理，描述我们在内核层面所做的优化，并展示您如何能从中受益。在本文中，我们将以 GPT-OSS 20B 为主要示例。
 
 ---
+
 ## 导语
 
 随着大模型应用场景的细分，如何高效管理并服务数十个微调模型已成为降低成本的关键挑战。本文将深入探讨如何在 Amazon SageMaker AI 和 Amazon Bedrock 上利用 vLLM 实现多 LoRA 推理，并分享针对混合专家（MoE）模型的内核级优化细节。通过以 GPT-OSS 20B 为例的实操解析，您将掌握在保障推理性能的同时，显著提升模型服务资源利用率的具体方法。
 
 ---
+
 ## 摘要
 
 **标题：利用 vLLM 在 Amazon SageMaker AI 和 Amazon Bedrock 上高效服务多 LoRA 模型**
@@ -40,6 +56,7 @@ scenarios: ["大语言模型"]
 本文介绍了如何在 vLLM 框架中实现针对混合专家模型的多 LoRA 推理功能。通过内核级别的深度优化，该方案旨在提升推理效率，并以 GPT-OSS 20B 模型为例，展示了如何在 Amazon SageMaker AI 和 Amazon Bedrock 平台上高效部署和托管数十个微调模型，帮助用户降低成本并提高吞吐量。
 
 ---
+
 ## 评论
 
 ### 中心观点
@@ -103,15 +120,16 @@ scenarios: ["大语言模型"]
 为了验证文章中提到的“Eff
 
 ---
+
 ## 技术分析
 
 基于您提供的文章标题和摘要，以及我对 vLLM、Amazon SageMaker、LoRA 和 Mixture of Experts (MoE) 技术生态的深入理解，以下是对该技术方案的全面深入分析。
 
 ---
 
-# 深度分析：在 Amazon SageMaker 和 Bedrock 上利用 vLLM 高效服务化多 LoRA 模型
+### 深度分析：在 Amazon SageMaker 和 Bedrock 上利用 vLLM 高效服务化多 LoRA 模型
 
-## 1. 核心观点深度解读
+### 1. 核心观点深度解读
 
 **文章的主要观点**
 文章的核心观点在于解决大模型落地中的“最后一公里”成本与效率问题。具体而言，它证明了通过 **vLLM 引擎**结合 **Multi-LoRA (多 LoRA) 服务**技术，可以在单个 GPU 实例或集群上，以极低的资源开销同时服务数十个基于同一基座模型（如 GPT-OSS 20B）微调出的不同任务模型，并将其无缝集成到 Amazon SageMaker AI 和 Amazon Bedrock 的托管服务中。
@@ -127,7 +145,7 @@ scenarios: ["大语言模型"]
 **为什么这个观点重要**
 这一观点至关重要，因为它直接击中了企业级 AI 落地的痛点——**高昂的推理成本和复杂的运维管理**。如果一家公司需要为 50 个不同的业务场景微调大模型，传统的部署方式需要 50 倍的 GPU 资源。通过本文提出的技术方案，资源占用可以降低一个数量级，使得个性化、定制化的 AI 模型大规模商业化成为可能。
 
-## 2. 关键技术要点
+### 2. 关键技术要点
 
 **涉及的关键技术或概念**
 *   **vLLM**: 具有高吞吐量和显存管理效率的 LLM 推理引擎，核心技术是 PagedAttention。
@@ -151,7 +169,7 @@ scenarios: ["大语言模型"]
 **技术创新点分析**
 最大的创新点在于**将 MoE 的推理逻辑应用于 LoRA 服务**。在推理阶段，系统根据请求的元数据（如 `lora_name`）动态路由到对应的参数矩阵。这实际上把 LoRA 权重视作 MoE 中的“专家权重”，利用 vLLM 的高效调度引擎实现了类似 MoE 的推理加速，但不需要 MoE 那样复杂的训练过程。
 
-## 3. 实际应用价值
+### 3. 实际应用价值
 
 **对实际工作的指导意义**
 对于 AI 工程师和架构师而言，这意味着架构选型的根本性变化。以前在设计“千人千面”的 AI 应用时，受限于成本，可能被迫使用一个通用大模型通过 Prompt Engineering 来区分场景，效果受限。现在，可以在成本可控的前提下，为每个细分场景部署专用的微调模型。
@@ -170,7 +188,7 @@ scenarios: ["大语言模型"]
 *   优先选择参数量较大的基座模型（如 20B+），因为 LoRA 在大模型上的资源节省效应比小模型更明显。
 *   在 SageMaker 部署时，合理配置 Multi-LoRA 服务器的缓存空间，确保热点 LoRA 常驻显存。
 
-## 4. 行业影响分析
+### 4. 行业影响分析
 
 **对行业的启示**
 这篇文章标志着**MaaS (Model as a Service) 从粗放型向精细化运营的转变**。云厂商和 AI 公司开始从单纯提供基础模型，转向提供“模型工厂”能力。未来的 AI 基础设施将更加注重“模型复用率”。
@@ -182,7 +200,7 @@ scenarios: ["大语言模型"]
 *   **推理框架的内卷**: vLLM、TGI (Text Generation Inference)、TensorRT-LLM 之间关于 Multi-LoRA 支持的竞争将更加白热化。
 *   **动态 LoRA 加载**: 未来可能会出现根据请求内容自动选择或生成 LoRA 的技术。
 
-## 5. 延伸思考
+### 5. 延伸思考
 
 **引发的其他思考**
 *   **安全性**: 多个租户的 LoRA 模型在同一个 GPU 内存空间中，虽然逻辑隔离，但物理内存共处。是否存在通过显存时序攻击推测其他租户模型数据的潜在风险？
@@ -192,25 +210,7 @@ scenarios: ["大语言模型"]
 *   **Cross-LoRA Composition**: 是否可以在一次推理中动态组合多个 LoRA？例如同时激活“代码专家”和“法语专家”两个 LoRA。
 *   **LoRA 压缩**: 既然是频繁加载卸载，研究更极致的 LoRA 权重量化（如 4bit/2bit）将进一步提升吞吐量。
 
-## 6. 实践建议
-
-**如何应用到自己的项目**
-1.  **评估基座模型**: 确定你的业务场景是否适合共享一个基座模型（如 Llama-3-70B 或 GPT-OSS）。
-2.  **准备 LoRA**: 使用 PEFT (Parameter-Efficient Fine-Tuning) 库训练好不同任务的适配器。
-3.  **容器化部署**: 利用 vLLM 提供的 Docker 镜像，构建支持 `--enable-lora` 参数的服务容器。
-4.  **集成测试**: 在 SageMaker 上部署，编写脚本并发发送带有不同 `lora_name` 的请求，监控 GPU 利用率和延迟。
-
-**具体的行动建议**
-*   **第一步**: 在本地开发环境尝试使用 vLLM 的 OpenAI 兼容服务器启动一个 Multi-LoRA 实例，熟悉 API 规范。
-*   **第二步**: 将不同 LoRA 适配器上传到 S3 存储桶，配置 SageMaker 推理端点指向该 S3 路径。
-*   **第三步**: 进行压测，特别是测试冷启动（LoRA 首次加载）的延迟是否满足 SLA。
-
-**需要补充的知识**
-*   **CUDA 编程基础**: 理解 Kernel Fusion 和 Memory Coalescing。
-*   **vLLM 架构**: 深入理解 PagedAttention 和 KV Cache 管理。
-*   **AWS 容器服务**: 熟悉 SageMaker 的 Inference Components 概念。
-
-## 7. 案例分析
+### 7. 案例分析
 
 **结合实际案例说明**
 假设一家跨国银行希望构建 AI 助手。
@@ -222,9 +222,8 @@ scenarios: ["大语言模型"]
 Hugging Face 的 TGI 也支持类似功能，但 vLLM 的优势在于其极高的吞吐量。在处理高并发请求时，vLLM 的 PagedAttention 配合 Multi-LoRA 能显著减少显存浪费，使得单
 
 ---
-## 最佳实践
 
-## 最佳实践指南
+## 最佳实践
 
 ### 实践 1：利用 vLLM 的连续批处理与 PagedAttention 技术
 
@@ -293,6 +292,7 @@ vLLM 的核心优势在于其高性能的推理引擎。通过启用连续批处
 在管理数十个模型时，存储和部署效率至关重要。SageMaker 提供了模型组件功能，允许将推理镜像（包含 vLLM 引擎）与模型权重（S3 路径）分离。最佳实践是创建一个通用的
 
 ---
+
 ## 学习要点
 
 - 通过 vLLM 的多 LoRA 服务功能，可在单一 GPU 实例上同时高效托管数十个微调模型，大幅降低部署成本与资源开销。
@@ -303,6 +303,7 @@ vLLM 的核心优势在于其高性能的推理引擎。通过启用连续批处
 - 该解决方案支持在保持基础模型冻结的情况下，动态加载轻量级适配器（LoRA），从而灵活应对不同业务场景的定制化需求。
 
 ---
+
 ## 引用
 
 - **文章/节目**: [https://aws.amazon.com/blogs/machine-learning/efficiently-serve-dozens-of-fine-tuned-models-with-vllm-on-amazon-sagemaker-ai-and-amazon-bedrock](https://aws.amazon.com/blogs/machine-learning/efficiently-serve-dozens-of-fine-tuned-models-with-vllm-on-amazon-sagemaker-ai-and-amazon-bedrock)
@@ -312,8 +313,6 @@ vLLM 的核心优势在于其高性能的推理引擎。通过启用连续批处
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/)
@@ -327,4 +326,3 @@ vLLM 的核心优势在于其高性能的推理引擎。通过启用连续批处
 - [利用vLLM在SageMaker与Bedrock上高效部署多LoRA及MoE模型]({{< relref "posts/20260226-blogs_podcasts-efficiently-serve-dozens-of-fine-tuned-models-with-1.md" >}})
 - [在 SageMaker AI 与 Bedrock 上使用 vLLM 高效服务多 LoRA 模型]({{< relref "posts/20260226-blogs_podcasts-efficiently-serve-dozens-of-fine-tuned-models-with-2.md" >}})
 - [NVIDIA Nemotron 3 Nano 30B 模型现已在 Amazon SageMaker JumpS]({{< relref "posts/20260212-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-2.md" >}})
-*本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

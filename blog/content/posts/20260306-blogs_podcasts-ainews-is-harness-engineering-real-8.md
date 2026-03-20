@@ -1,14 +1,26 @@
 ---
-title: "AI工程辩论：Harness Engineering是否成立"
-date: 2026-03-06T01:38:42+08:00
+title: AI工程辩论：Harness Engineering是否成立
+date: 2026-03-06 01:38:42+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI工程", "Harness", "工程化", "辩论", "AI落地", "技术栈", "架构", "方法论"]
-categories: ["AI 工程", "产品与创业"]
+entry_kind: auto
+tags:
+- AI工程
+- Harness
+- 工程化
+- 辩论
+- AI落地
+- 技术栈
+- 架构
+- 方法论
+categories:
+- AI 工程
+- 产品与创业
 source: blogs_podcasts
-description: "在技术迭代趋于平稳的时刻，重新审视“Harness Engineering”这一概念显得尤为必要。这并非单纯的术语之争，而是关乎 AI 工程化落地中架构设计与工程实践如何有效结合的核心命题。本文将深入探讨该概念的真实内涵与行业争议，帮助读者厘清理论边界，并思考如何构建更稳健的 AI 工程体系。"
+description: 在技术迭代趋于平稳的时刻，重新审视“Harness Engineering”这一概念显得尤为必要。这并非单纯的术语之争，而是关乎 AI 工程化落地中架构设计与工程实践如何有效结合的核心命题。本文将深入探讨该概念的真实内涵与行业争议，帮助读者厘清理论边界，并思考如何构建更稳健的
+  AI 工程体系。
 external_url: https://www.latent.space/p/ainews-is-harness-engineering-real
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
 ---
 
 # AI工程辩论：Harness Engineering是否成立
@@ -22,16 +34,19 @@ scenarios: ["AI/ML项目"]
 - **链接**: [https://www.latent.space/p/ainews-is-harness-engineering-real](https://www.latent.space/p/ainews-is-harness-engineering-real)
 
 ---
+
 ## 摘要/简介
 
 平静的一天让我们反思人工智能工程领域的一场核心辩论
 
 ---
+
 ## 导语
 
 在技术迭代趋于平稳的时刻，重新审视“Harness Engineering”这一概念显得尤为必要。这并非单纯的术语之争，而是关乎 AI 工程化落地中架构设计与工程实践如何有效结合的核心命题。本文将深入探讨该概念的真实内涵与行业争议，帮助读者厘清理论边界，并思考如何构建更稳健的 AI 工程体系。
 
 ---
+
 ## 评论
 
 ### 中心观点
@@ -88,7 +103,6 @@ scenarios: ["AI/ML项目"]
 这篇文章是一记警钟，提醒我们不要陷入“为了AI而AI”的工程陷阱。虽然它可能低估了系统工程在稳定性、成本控制和数据隐私方面的不可替代性，但它正确地指出了**随着模型能力的进化，工程化的
 
 ---
-## 技术分析
 
 ## 技术分析
 
@@ -137,9 +151,8 @@ scenarios: ["AI/ML项目"]
 -   **注意事项**：避免过度设计。对于简单任务，不应引入复杂的代理框架，应保持架构的简洁性。
 
 ---
-## 最佳实践
 
-## 最佳实践指南
+## 最佳实践
 
 ### 实践 1：建立以数据为核心的决策文化
 
@@ -218,6 +231,7 @@ scenarios: ["AI/ML项目"]
 **注意事项**: 保持沟通渠道的畅通，避免Dev与Ops团队之间的割裂。
 
 ---
+
 ## 学习要点
 
 - 基于您提供的标题和来源，虽然具体的文章内容未完全展开，但根据“Harness Engineering”这一主题在软件工程和AI领域的常见讨论，以下是关于该主题通常涉及的5-7个关键要点总结：
@@ -229,6 +243,7 @@ scenarios: ["AI/ML项目"]
 - 企业实施Harness Engineering的最终目标，是消除开发过程中的摩擦力，让工程师能够专注于业务逻辑创新而非基础设施维护。**
 
 ---
+
 ## 引用
 
 - **文章/节目**: [https://www.latent.space/p/ainews-is-harness-engineering-real](https://www.latent.space/p/ainews-is-harness-engineering-real)
@@ -238,8 +253,6 @@ scenarios: ["AI/ML项目"]
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [产品与创业](/categories/%E4%BA%A7%E5%93%81%E4%B8%8E%E5%88%9B%E4%B8%9A/)
@@ -253,4 +266,3 @@ scenarios: ["AI/ML项目"]
 - [软件工厂与智能体时刻]({{< relref "posts/20260208-hacker_news-software-factories-and-the-agentic-moment-6.md" >}})
 - [软件工厂与代理时刻：AI 编程范式的演进]({{< relref "posts/20260208-hacker_news-software-factories-and-the-agentic-moment-9.md" >}})
 - [告别技术债！Scaling without Slop：如何实现高质量扩展？🚀]({{< relref "posts/20260127-blogs_podcasts-scaling-without-slop-6.md" >}})
-*本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

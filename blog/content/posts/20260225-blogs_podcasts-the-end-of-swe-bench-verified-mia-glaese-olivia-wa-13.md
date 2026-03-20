@@ -1,14 +1,26 @@
 ---
-title: "OpenAI前沿评估团队：迈向智能体评测的下一步"
-date: 2026-02-25T14:15:03+08:00
+title: OpenAI前沿评估团队：迈向智能体评测的下一步
+date: 2026-02-25 14:15:03+08:00
 draft: false
-entry_kind: "auto"
-tags: ["OpenAI", "SWE-Bench", "智能体评测", "Agent", "前沿评估", "基准测试", "软件工程", "模型能力"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- OpenAI
+- SWE-Bench
+- 智能体评测
+- Agent
+- 前沿评估
+- 基准测试
+- 软件工程
+- 模型能力
+categories:
+- 大模型
+- AI 工程
 source: blogs_podcasts
-description: "这是一份关于OpenAI前沿评估与人类数据团队（OpenAI Frontier Evals & Human Data）的Mia Glaese和Olivia Watkins所发表内容的中文总结： **标题：SWE-Bench Verified 的终结与前沿智能体评估的进阶** **核心观点：** OpenAI团队宣布，现"
+description: 这是一份关于OpenAI前沿评估与人类数据团队（OpenAI Frontier Evals & Human Data）的Mia Glaese和Olivia
+  Watkins所发表内容的中文总结： **标题：SWE-Bench Verified 的终结与前沿智能体评估的进阶** **核心观点：** OpenAI团队宣布，现
 external_url: https://www.latent.space/p/swe-bench-dead
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
 ---
 
 # OpenAI前沿评估团队：迈向智能体评测的下一步
@@ -22,16 +34,19 @@ scenarios: ["AI/ML项目"]
 - **链接**: [https://www.latent.space/p/swe-bench-dead](https://www.latent.space/p/swe-bench-dead)
 
 ---
+
 ## 摘要/简介
 
 是时候在智能体前沿评估上迈出下一步了。
 
 ---
+
 ## 导语
 
 随着大语言模型在代码生成领域的能力日益精进，传统的基准测试已难以全面衡量智能体在复杂环境中的真实表现。OpenAI 研究团队 Mia Glaese 与 Olivia Watkins 的最新文章，深入探讨了 SWE-Bench Verified 的局限性，并提出了在智能体前沿评估上迈出“下一步”的必要性。阅读本文，你将了解为何现有评估体系面临终结，以及未来构建更严格、更具代表性测试标准的方向与思考。
 
 ---
+
 ## 摘要
 
 这是一份关于OpenAI前沿评估与人类数据团队（OpenAI Frontier Evals & Human Data）的Mia Glaese和Olivia Watkins所发表内容的中文总结：
@@ -59,6 +74,7 @@ OpenAI团队宣布，现有的 **SWE-Bench Verified** 基准测试已不再足�
 随着 SWE-Bench Verified 基准的“终结”，OpenAI 正在推动评估标准升级，以应对并测试更强大的前沿智能体能力。
 
 ---
+
 ## 评论
 
 **文章中心观点**
@@ -114,7 +130,6 @@ SWE-Bench Verified 已不再足以衡量最前沿 AI 智能体的软件工程能
 这篇文章不仅是对 SWE-Bench Verified 的讣告，更是 AI 软件工程进入“深水区”的宣言。它揭示了行业从追求“炫技式的高分”向追求“工程级的可靠性”转型的必然趋势。虽然完全抛弃自动化基准为时尚早，但引入人类专家视角的动态评估，将是构建下一代 AI 程序员的关键路径。
 
 ---
-## 技术分析
 
 ## 技术分析
 
@@ -137,9 +152,8 @@ SWE-Bench Verified 已不再足以衡量最前沿 AI 智能体的软件工程能
 SWE-Bench Verified的饱和表明，静态基准测试在衡量前沿模型时存在局限性。未来的评估体系将更加动态，可能会更多地结合人类专家的反馈或基于真实世界长周期任务的评估指标，以更准确地衡量Agent在实际工程环境中的表现。
 
 ---
-## 最佳实践
 
-## 最佳实践指南
+## 最佳实践
 
 ### 实践 1：采用基于真实GitHub仓库的评估基准
 
@@ -218,6 +232,7 @@ SWE-Bench Verified的饱和表明，静态基准测试在衡量前沿模型时�
 **注意事项**: 更换基准测试会导致历史数据难以直接比较，需要建立标准化的换算或对照机制。
 
 ---
+
 ## 学习要点
 
 - OpenAI o3模型在SWE-Bench Verified基准测试中取得了突破性成绩，解决了71.7%的GitHub现实世界软件工程问题，超越了此前所有AI系统的表现。
@@ -228,6 +243,7 @@ SWE-Bench Verified的饱和表明，静态基准测试在衡量前沿模型时�
 - 这一进展暗示了未来软件开发工作流的根本性转变，AI将从辅助编码工具演变为能够独立完成复杂Feature开发与Bug修复的智能体。
 
 ---
+
 ## 引用
 
 - **文章/节目**: [https://www.latent.space/p/swe-bench-dead](https://www.latent.space/p/swe-bench-dead)
@@ -237,8 +253,6 @@ SWE-Bench Verified的饱和表明，静态基准测试在衡量前沿模型时�
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)
@@ -252,4 +266,3 @@ SWE-Bench Verified的饱和表明，静态基准测试在衡量前沿模型时�
 - [OpenAI前沿评估团队：从SWE-Bench Verified看智能体评估演进]({{< relref "posts/20260224-blogs_podcasts-the-end-of-swe-bench-verified-mia-glaese-olivia-wa-8.md" >}})
 - [OpenAI提出SWE-Bench-Dead：智能体前沿评估的下一步]({{< relref "posts/20260223-blogs_podcasts-swe-bench-dead-the-end-of-swe-bench-verified-mia-g-0.md" >}})
 - [OpenAI前沿评估团队：超越SWE-Bench Verified的智能体评估新阶段]({{< relref "posts/20260223-blogs_podcasts-the-end-of-swe-bench-verified-mia-glaese-olivia-wa-0.md" >}})
-*本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

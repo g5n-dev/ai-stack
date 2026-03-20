@@ -1,14 +1,26 @@
 ---
-title: "AWS企业级代理式AI指南：面向不同角色的落地策略"
-date: 2026-03-16T20:59:01+08:00
+title: AWS企业级代理式AI指南：面向不同角色的落地策略
+date: 2026-03-16 20:59:01+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Agentic AI", "AWS", "企业落地", "AI 战略", "生成式 AI", "角色分工", "企业架构", "AI 治理"]
-categories: ["大模型", "产品与创业"]
+entry_kind: auto
+tags:
+- Agentic AI
+- AWS
+- 企业落地
+- AI 战略
+- 生成式 AI
+- 角色分工
+- 企业架构
+- AI 治理
+categories:
+- 大模型
+- 产品与创业
 source: blogs_podcasts
-description: "**标题：企业级 Agentic AI 指南（第二部分）：基于角色的行动策略** **核心摘要：** 本文是 AWS 生成式 AI 创新中心两部曲系列中的第二部分。文章旨在为企业各职能部门的领导者提供实操指导，阐述如何将 AI 的共同愿景转化为具体行动。文章强调，Agentic AI（代理式人工智能）的成功与否，取决于"
+description: '**标题：企业级 Agentic AI 指南（第二部分）：基于角色的行动策略** **核心摘要：** 本文是 AWS 生成式 AI 创新中心两部曲系列中的第二部分。文章旨在为企业各职能部门的领导者提供实操指导，阐述如何将
+  AI 的共同愿景转化为具体行动。文章强调，Agentic AI（代理式人工智能）的成功与否，取决于'
 external_url: https://aws.amazon.com/blogs/machine-learning/agentic-ai-in-the-enterprise-part-2-guidance-by-persona
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
 ---
 
 # AWS企业级代理式AI指南：面向不同角色的落地策略
@@ -22,16 +34,19 @@ scenarios: ["AI/ML项目"]
 - **链接**: [https://aws.amazon.com/blogs/machine-learning/agentic-ai-in-the-enterprise-part-2-guidance-by-persona](https://aws.amazon.com/blogs/machine-learning/agentic-ai-in-the-enterprise-part-2-guidance-by-persona)
 
 ---
+
 ## 摘要/简介
 
 这是来自 AWS 生成式 AI 创新中心两篇系列文章的第二篇。在第二篇中，我们直接与那些必须将共同基础转化为行动的领导者对话。每个角色都肩负着独特的职责、风险和杠杆点。无论你负责盈亏、掌管企业架构、领导安全、治理数据，还是管理合规，本部分都以你的工作语言撰写——因为代理式 AI 的成败往往在此一举。
 
 ---
+
 ## 导语
 
 随着生成式 AI 从概念验证走向规模化落地，企业领导者正面临如何将技术潜力转化为实际业务价值的挑战。作为 AWS 生成式 AI 创新中心系列文章的第二篇，本文旨在跨越通用技术指南与具体业务场景之间的鸿沟。我们将深入探讨 CEO、首席架构师、安全官及数据负责人等关键角色，如何利用代理式 AI 应对各自独特的职责与风险。通过阅读本文，你将获得针对自身职能的实操建议，从而在复杂的转型过程中做出更精准的决策。
 
 ---
+
 ## 摘要
 
 **标题：企业级 Agentic AI 指南（第二部分）：基于角色的行动策略**
@@ -46,9 +61,8 @@ scenarios: ["AI/ML项目"]
 3.  **成败关键：** Agentic AI 的实施必须结合具体的业务语言和工作场景。只有当领导者理解并承担起各自独特的责任与风险时，Agentic AI 才能真正落地，否则将难以生存。
 
 ---
-## 最佳实践
 
-## 最佳实践指南
+## 最佳实践
 
 ### 实践 1：建立明确的角色定义与权限边界
 
@@ -124,13 +138,8 @@ scenarios: ["AI/ML项目"]
 
 **说明**: Agentic AI 通常涉及多次大模型调用和复杂的推理链，成本可能远超简单的 Chatbot 应用。企业需要建立精细的成本控制机制，平衡智能体的性能与运营支出，避免资源浪费。
 
-**实施步骤**:
-1. 根据任务复杂度选择合适的模型（如简单任务使用小模型或廉价模型，复杂推理使用高智商模型）。
-2. 实施智能缓存策略，对于重复或相似的查询直接返回缓存结果。
-3. 监控每个智能体的 Token 使用量，并为不同部门或项目设置预算上限。
-4. 优化
-
 ---
+
 ## 学习要点
 
 - 根据您提供的内容主题（Agentic AI in the Enterprise Part 2: Guidance by Persona），以下是关于如何利用“人设”来引导企业级智能体的关键要点总结：
@@ -142,6 +151,7 @@ scenarios: ["AI/ML项目"]
 - 在企业环境中，必须建立一套标准化的人设库，以确保不同部门部署的AI助手在交互体验上的一致性。
 
 ---
+
 ## 引用
 
 - **文章/节目**: [https://aws.amazon.com/blogs/machine-learning/agentic-ai-in-the-enterprise-part-2-guidance-by-persona](https://aws.amazon.com/blogs/machine-learning/agentic-ai-in-the-enterprise-part-2-guidance-by-persona)
@@ -151,8 +161,6 @@ scenarios: ["AI/ML项目"]
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [产品与创业](/categories/%E4%BA%A7%E5%93%81%E4%B8%8E%E5%88%9B%E4%B8%9A/)
@@ -166,4 +174,3 @@ scenarios: ["AI/ML项目"]
 - [Untitled]({{< relref "posts/20260312-blogs_podcasts-operationalizing-agentic-ai-part-1-a-stakeholders--3.md" >}})
 - [AWS生成式AI中心高管指南：如何将智能体AI投入生产]({{< relref "posts/20260312-blogs_podcasts-operationalizing-agentic-ai-part-1-a-stakeholders--6.md" >}})
 - [Operationalizing Agentic AI Part 1: A Stakeholder’s Gui]({{< relref "posts/20260311-blogs_podcasts-operationalizing-agentic-ai-part-1-a-stakeholders--0.md" >}})
-*本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

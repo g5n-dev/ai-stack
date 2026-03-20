@@ -1,14 +1,26 @@
 ---
-title: "在 SageMaker AI 与 Bedrock 上利用 vLLM 高效部署多 LoRA 模型"
-date: 2026-02-25T23:30:41+08:00
+title: 在 SageMaker AI 与 Bedrock 上利用 vLLM 高效部署多 LoRA 模型
+date: 2026-02-25 23:30:41+08:00
 draft: false
-entry_kind: "auto"
-tags: ["vLLM", "LoRA", "MoE", "SageMaker", "Bedrock", "模型推理", "内核优化", "模型部署"]
-categories: ["AI 工程", "系统与基础设施"]
+entry_kind: auto
+tags:
+- vLLM
+- LoRA
+- MoE
+- SageMaker
+- Bedrock
+- 模型推理
+- 内核优化
+- 模型部署
+categories:
+- AI 工程
+- 系统与基础设施
 source: blogs_podcasts
-description: "本文介绍了如何在 Amazon SageMaker AI 和 Amazon Bedrock 上利用 vLLM 高效服务多个微调模型。核心内容包括实现针对 Mixture of Experts (MoE) 模型的 multi-LoRA 推理，并进行了内核级优化。文中以 GPT-OSS 20B 为主要示例，展示了这些优化带"
+description: 本文介绍了如何在 Amazon SageMaker AI 和 Amazon Bedrock 上利用 vLLM 高效服务多个微调模型。核心内容包括实现针对
+  Mixture of Experts (MoE) 模型的 multi-LoRA 推理，并进行了内核级优化。文中以 GPT-OSS 20B 为主要示例，展示了这些优化带
 external_url: https://aws.amazon.com/blogs/machine-learning/efficiently-serve-dozens-of-fine-tuned-models-with-vllm-on-amazon-sagemaker-ai-and-amazon-bedrock
-scenarios: ["大语言模型"]
+scenarios:
+- 大语言模型
 ---
 
 # 在 SageMaker AI 与 Bedrock 上利用 vLLM 高效部署多 LoRA 模型
@@ -22,21 +34,25 @@ scenarios: ["大语言模型"]
 - **链接**: [https://aws.amazon.com/blogs/machine-learning/efficiently-serve-dozens-of-fine-tuned-models-with-vllm-on-amazon-sagemaker-ai-and-amazon-bedrock](https://aws.amazon.com/blogs/machine-learning/efficiently-serve-dozens-of-fine-tuned-models-with-vllm-on-amazon-sagemaker-ai-and-amazon-bedrock)
 
 ---
+
 ## 摘要/简介
 
 在本文中，我们将解释如何在 vLLM 中为混合专家（MoE）模型实现多 LoRA 推理，描述我们所做的内核级优化，并展示您如何从这项工作中受益。全文我们将以 GPT-OSS 20B 为主要示例。
 
 ---
+
 ## 导语
 
 随着大模型应用场景的细分，企业往往需要同时维护多个经过微调的模型，但这通常意味着高昂的推理成本与复杂的运维负担。本文将深入探讨如何利用 vLLM 在 Amazon SageMaker AI 和 Amazon Bedrock 上高效部署混合专家（MoE）模型，并详细解析针对多 LoRA 推理的内核级优化。通过以 GPT-OSS 20B 为例的实操演示，您将掌握在保障性能的前提下，低成本服务数十个微调模型的具体方法。
 
 ---
+
 ## 摘要
 
 本文介绍了如何在 Amazon SageMaker AI 和 Amazon Bedrock 上利用 vLLM 高效服务多个微调模型。核心内容包括实现针对 Mixture of Experts (MoE) 模型的 multi-LoRA 推理，并进行了内核级优化。文中以 GPT-OSS 20B 为主要示例，展示了这些优化带来的性能提升和实际应用价值。
 
 ---
+
 ## 评论
 
 ### 深度评价：Efficiently serve dozens of fine-tuned models with vLLM on Amazon SageMaker AI and Amazon Bedrock
@@ -81,15 +97,16 @@ scenarios: ["大语言模型"]
 3.  **MoE 的必要性存疑**：业界有观点认为，如果只是为了服务多个 LoRA， dense（稠密）模型配合高效的
 
 ---
+
 ## 技术分析
 
 基于文章标题《Efficiently serve dozens of fine-tuned models with vLLM on Amazon SageMaker AI and Amazon Bedrock》及摘要内容，以下是对该技术方案的深度全面分析。
 
 ---
 
-# 深度分析报告：基于 vLLM 与 MoE 的多 LoRA 高效推理服务
+### 深度分析报告：基于 vLLM 与 MoE 的多 LoRA 高效推理服务
 
-## 1. 核心观点深度解读
+### 1. 核心观点深度解读
 
 **主要观点**
 文章的核心观点在于通过**vLLM 引擎的优化**，实现在单一推理实例上同时高效服务**数十个微调模型**。其技术路径是将微调后的模型视为**混合专家模型**中的专家，通过动态路由机制，在一个基础大模型之上加载并服务多个特定任务的 LoRA 适配器。
@@ -105,7 +122,7 @@ scenarios: ["大语言模型"]
 **重要性**
 随着企业对大模型应用的深入，单一基础模型无法满足所有垂直场景需求，微调成为常态。如果每个微调模型都独立部署，成本将呈指数级上升。该方案解决了大模型落地**“最后一公里”的成本与效率难题**，使得企业可以用一套基础设施支撑数十种业务场景。
 
-## 2. 关键技术要点
+### 2. 关键技术要点
 
 **关键技术概念**
 *   **vLLM**: 具有高性能 PagedAttention 内核的 LLM 推理引擎。
@@ -133,7 +150,7 @@ scenarios: ["大语言模型"]
 **技术创新点分析**
 将 **MoE 的推理逻辑**复用到 **Multi-LoRA Serving** 上。在 MoE 推理中，系统需要处理稀疏激活；在 Multi-LoRA 中，系统需要处理稀疏的权重加载。通过优化调度器，vLLM 能够在同一个 Batch 中处理不同任务的请求，从而极大提升 GPU 的吞吐量。
 
-## 3. 实际应用价值
+### 3. 实际应用价值
 
 **对实际工作的指导意义**
 *   **成本削减**: 对于需要同时服务多个行业模型（如金融、法律、医疗通用底座+行业微调）的企业，可以将硬件成本降低数倍。
@@ -152,7 +169,7 @@ scenarios: ["大语言模型"]
 *   优先将流量较小但数量众多的微调模型合并部署。
 *   监控 GPU 的显存利用率，如果显存紧张，考虑将部分不常用的 LoRA 权重卸载到 CPU 内存（以速度换空间）。
 
-## 4. 行业影响分析
+### 4. 行业影响分析
 
 **对行业的启示**
 该方案标志着大模型服务架构从**“单体应用”**向**“微服务化/插件化”**的演进。正如容器技术改变了应用部署，LoRA 动态服务将改变模型部署。
@@ -165,7 +182,7 @@ scenarios: ["大语言模型"]
 *   **推理与训练的进一步解耦**: 未来模型训练将产出大量的适配器，而推理服务将变成通用的适配器加载器。
 *   **标准化的适配器协议**: 类似于 USB 接口，LoRA 可能会成为模型插件的标准接口。
 
-## 5. 延伸思考
+### 5. 延伸思考
 
 **引发的思考**
 *   **LoRA 的秩对性能的影响**: 在多 LoRA 并发场景下，极低的 Rank（如 r=8）是否能保持足够的表达能力？是否存在干扰？
@@ -178,22 +195,7 @@ scenarios: ["大语言模型"]
 **未来研究**
 *   **自动化路由**: 能否训练一个轻量级的分类器，自动决定新请求应该路由到哪个 LoRA，或者直接使用底座（无需微调）。
 
-## 6. 实践建议
-
-**如何应用到自己的项目**
-1.  **评估现有模型**: 盘点你目前微调的模型是否基于同一个基础模型（如都是 Llama-3-70B）。如果是，该方案收益最大。
-2.  **环境搭建**: 在 AWS SageMaker 上配置 vLLM 容器，确保使用支持 Multi-LoRA 的版本。
-3.  **权重转换**: 将现有的 Checkpoint 转换为 vLLM 兼容的 LoRA 格式。
-
-**具体行动建议**
-*   **性能测试**: 使用 GPT-OSS 20B 或 Llama-3-8B 进行压测。对比“单端点部署”与“多 LoRA 部署”的 P99 延迟和 Throughput。
-*   **监控指标**: 重点监控 Time to First Token (TTFT) 和 GPU Memory Usage。
-
-**知识补充**
-*   需要深入学习 **PyTorch FSDP (Fully Sharded Data Parallel)** 或 **ZeRO** 技术，理解权重分片的原理。
-*   了解 **CUDA Programming** 基础，以便阅读 vLLM 的 Kernel 源码。
-
-## 7. 案例分析
+### 7. 案例分析
 
 **成功案例（基于文章逻辑推演）**
 *   **场景**: 一家跨国企业拥有针对 10 个不同语言的客服机器人。
@@ -205,7 +207,7 @@ scenarios: ["大语言模型"]
 *   **结果**: 无法运行，因为 Multi-LoRA 要求基础网络结构完全一致。
 *   **教训**: 必须统一技术栈底座。
 
-## 8. 哲学与逻辑：论证地图
+### 8. 哲学与逻辑：论证地图
 
 **中心命题**
 在单一推理实例上利用 vLLM 实现**多 LoRA 动态服务**，是在保证模型性能的前提下，实现大模型多场景部署**成本效益最优**的架构范式。
@@ -223,9 +225,8 @@ scenarios: ["大语言模型"]
 2.  **长文本场景**: 当 Context Length 极
 
 ---
-## 最佳实践
 
-## 最佳实践指南
+## 最佳实践
 
 ### 实践 1：利用 vLLM 的连续批处理与 PagedAttention 技术
 
@@ -290,6 +291,7 @@ vLLM 能够利用张量并行将模型分布到多个 GPU 上以处理更大的�
 - 张量并行会引入 GPU 间的通信开销。对于较小的模型（如
 
 ---
+
 ## 学习要点
 
 - 利用 vLLM 的连续批处理和 PagedAttention 技术，可以在 Amazon SageMaker 上实现高吞吐量和低延迟的模型推理，从而高效地同时服务数十个微调模型。
@@ -301,6 +303,7 @@ vLLM 能够利用张量并行将模型分布到多个 GPU 上以处理更大的�
 - 该架构方案验证了开源推理引擎与云原生托管服务（SageMaker/Bedrock）结合的可行性，为企业构建私有化或定制化的模型服务集群提供了标准化的参考路径。
 
 ---
+
 ## 引用
 
 - **文章/节目**: [https://aws.amazon.com/blogs/machine-learning/efficiently-serve-dozens-of-fine-tuned-models-with-vllm-on-amazon-sagemaker-ai-and-amazon-bedrock](https://aws.amazon.com/blogs/machine-learning/efficiently-serve-dozens-of-fine-tuned-models-with-vllm-on-amazon-sagemaker-ai-and-amazon-bedrock)
@@ -310,8 +313,6 @@ vLLM 能够利用张量并行将模型分布到多个 GPU 上以处理更大的�
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/)
@@ -325,4 +326,3 @@ vLLM 能够利用张量并行将模型分布到多个 GPU 上以处理更大的�
 - [NVIDIA Nemotron 3 Nano 30B 现已在 Amazon SageMaker JumpSta]({{< relref "posts/20260212-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-6.md" >}})
 - [NVIDIA Nemotron 3 Nano 30B 模型现已在 Amazon SageMaker JumpS]({{< relref "posts/20260213-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-12.md" >}})
 - [NVIDIA Nemotron 3 Nano 30B 现已登陆 Amazon SageMaker JumpSt]({{< relref "posts/20260212-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-0.md" >}})
-*本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

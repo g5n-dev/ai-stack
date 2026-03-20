@@ -1,14 +1,27 @@
 ---
-title: "Spring AI MCP 实战：将服务升级为 AI 可调用工具"
-date: 2026-02-27T08:07:36+08:00
+title: Spring AI MCP 实战：将服务升级为 AI 可调用工具
+date: 2026-02-27 08:07:36+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Spring AI", "MCP", "LLM", "AI Agent", "工具调用", "Java", "Spring Boot", "实战"]
-categories: ["后端", "AI 工程"]
+entry_kind: auto
+tags:
+- Spring AI
+- MCP
+- LLM
+- AI Agent
+- 工具调用
+- Java
+- Spring Boot
+- 实战
+categories:
+- 后端
+- AI 工程
 source: juejin
-description: "随着大模型技术的落地，如何让 AI 安全、标准化地调用业务系统成为开发者关注的焦点。MCP（Model Context Protocol）为此提供了一种高效的连接标准，而 Spring AI 则进一步简化了其在 Java 生态的集成。本文将带你通过实战案例，利用 Spring AI 封装 MCP 接口，将现有服务升级为"
+description: 随着大模型技术的落地，如何让 AI 安全、标准化地调用业务系统成为开发者关注的焦点。MCP（Model Context Protocol）为此提供了一种高效的连接标准，而
+  Spring AI 则进一步简化了其在 Java 生态的集成。本文将带你通过实战案例，利用 Spring AI 封装 MCP 接口，将现有服务升级为
 external_url: https://juejin.cn/post/7611064285587128347
-scenarios: ["AI/ML项目", "大语言模型"]
+scenarios:
+- AI/ML项目
+- 大语言模型
 ---
 
 # Spring AI MCP 实战：将服务升级为 AI 可调用工具
@@ -21,11 +34,13 @@ scenarios: ["AI/ML项目", "大语言模型"]
 - **链接**: [https://juejin.cn/post/7611064285587128347](https://juejin.cn/post/7611064285587128347)
 
 ---
+
 ## 导语
 
 随着大模型技术的落地，如何让 AI 安全、标准化地调用业务系统成为开发者关注的焦点。MCP（Model Context Protocol）为此提供了一种高效的连接标准，而 Spring AI 则进一步简化了其在 Java 生态的集成。本文将带你通过实战案例，利用 Spring AI 封装 MCP 接口，将现有服务升级为 AI 可直接调用的智能工具，从而构建起大模型与后端业务之间的稳固桥梁。
 
 ---
+
 ## 描述
 
 Spring AI MCP 实战：将你的服务升级为 AI 可调用的智能工具
@@ -35,6 +50,7 @@ Spring AI MCP 实战：将你的服务升级为 AI 可调用的智能工具
 在 AI 大模型蓬勃发展的今天，如何让 AI 能够安全、标准化地调用我们的业务系统？MCP（Model Context
 
 ---
+
 ## 评论
 
 ### 中心观点
@@ -86,6 +102,7 @@ Spring AI 并不是首创，但结合 MCP 是一个敏锐的战术动作。过�
 3.  **混合架构模式：** 使用 Python 处理模型推理与复杂逻辑，使用 Spring AI + MCP 仅作为网关
 
 ---
+
 ## 学习要点
 
 - Spring AI 实现了与 Model Context Protocol (MCP) 的集成，使开发者能够通过统一协议将 Spring 服务标准化为 AI 智能体的可调用工具。
@@ -96,29 +113,21 @@ Spring AI 并不是首创，但结合 MCP 是一个敏锐的战术动作。过�
 - 该方案为构建“Agentic Workflow”（智能体工作流）提供了基础，使 AI 能够根据上下文自主决策并调用 Spring 后端完成复杂任务。
 
 ---
+
 ## 常见问题
 
+### 什么是 MCP (Model Context Protocol)，它与 Spring AI 结合有什么优势？
 
-### 1: 什么是 MCP (Model Context Protocol)，它与 Spring AI 结合有什么优势？
-
-1: 什么是 MCP (Model Context Protocol)，它与 Spring AI 结合有什么优势？
-
-**A**: MCP 是由 Anthropic 提出的一种开放标准协议，旨在连接 AI 应用与数据源。它定义了 AI 模型如何与外部系统（如数据库、API、文件系统）进行交互的标准方式。
+MCP 是由 Anthropic 提出的一种开放标准协议，旨在连接 AI 应用与数据源。它定义了 AI 模型如何与外部系统（如数据库、API、文件系统）进行交互的标准方式。
 
 将 Spring AI 与 MCP 结合的优势主要体现在以下几点：
 1.  **标准化接口**：MCP 提供了统一的接口定义（如 Tools、Resources、Prompts），使得 Spring AI 开发的服务可以被任何支持 MCP 的 AI 客户端（如 Claude Desktop 或各类 IDE 插件）直接调用，无需为每个模型单独开发适配层。
 2.  **解耦与复用**：通过 MCP 协议，业务逻辑被封装为标准的“工具”。AI 模型作为“大脑”，通过 MCP 协议调度 Spring Boot 应用的能力，实现了业务逻辑的复用。
 3.  **简化集成**：Spring AI 生态对 MCP 提供了良好的支持，开发者可以像编写普通 Controller 一样编写 AI 工具，大大降低了将现有 Java 服务升级为 AI 智能体的门槛。
 
----
+### 如何将一个现有的 Spring Boot 方法暴露为 MCP 工具？
 
-
-
-### 2: 如何将一个现有的 Spring Boot 方法暴露为 MCP 工具？
-
-2: 如何将一个现有的 Spring Boot 方法暴露为 MCP 工具？
-
-**A**: 在 Spring AI 中，将方法暴露为 MCP 工具通常非常简单，主要依赖于注解驱动。以下是核心步骤：
+在 Spring AI 中，将方法暴露为 MCP 工具通常非常简单，主要依赖于注解驱动。以下是核心步骤：
 
 1.  **添加依赖**：确保你的项目中包含了 `spring-ai-mcp-server-spring-boot-starter`（或相关版本）依赖。
 2.  **创建服务类**：编写一个普通的 Spring Service 类。
@@ -129,25 +138,19 @@ Spring AI 并不是首创，但结合 MCP 是一个敏锐的战术动作。过�
 ```java
 @Service
 public class WeatherService {
-    
+
     @FunctionDescription("获取指定城市的当前天气温度")
     public int getTemperature(@Description("城市名称") String city) {
         // 业务逻辑：调用天气 API 或查询数据库
-        return 25; 
+        return 25;
     }
 }
 ```
 当 AI 客户端询问“北京今天多少度？”时，MCP 协议会指导 AI 调用这个 `getTemperature` 方法。
 
----
+### 在 Spring AI MCP 中，如何处理复杂对象（如自定义类）作为参数？
 
-
-
-### 3: 在 Spring AI MCP 中，如何处理复杂对象（如自定义类）作为参数？
-
-3: 在 Spring AI MCP 中，如何处理复杂对象（如自定义类）作为参数？
-
-**A**: AI 模型本质上是处理文本的，而 Java 方法使用的是强类型对象。Spring AI 在处理复杂对象参数时，通常遵循以下机制：
+AI 模型本质上是处理文本的，而 Java 方法使用的是强类型对象。Spring AI 在处理复杂对象参数时，通常遵循以下机制：
 
 1.  **JSON 序列化**：MCP 协议传输的是 JSON 格式。Spring AI 会利用 Jackson 或 Gson 将 AI 生成的 JSON 参数反序列化为 Java 对象。
 2.  **结构化描述**：为了让 AI 知道如何生成正确的 JSON，你需要确保你的 Java 类（Record 或 POJO）有清晰的字段定义和描述。
@@ -156,7 +159,7 @@ public class WeatherService {
 **示例：**
 ```java
 public record OrderRequest(
-    @Description("产品ID") String productId, 
+    @Description("产品ID") String productId,
     @Description("购买数量") int quantity
 ) {}
 
@@ -165,35 +168,24 @@ public String createOrder(OrderRequest request) { ... }
 ```
 Spring AI 会自动将 `OrderRequest` 的结构暴露给 AI 模型，AI 会根据用户输入提取 `productId` 和 `quantity` 并构造 JSON 传给后端。
 
----
+### MCP Server 必须独立部署吗？能否与现有的 Web 应用共存？
 
-
-
-### 4: MCP Server 必须独立部署吗？能否与现有的 Web 应用共存？
-
-4: MCP Server 必须独立部署吗？能否与现有的 Web 应用共存？
-
-**A**: MCP Server 可以独立部署，也可以与现有的 Spring Boot Web 应用共存，这取决于你的使用场景。
+MCP Server 可以独立部署，也可以与现有的 Spring Boot Web 应用共存，这取决于你的使用场景。
 
 1.  **独立部署**：通常用于微服务架构。你将特定的 AI 能力打包成一个独立的 Spring Boot 应用，通过 SSE (Server-Sent Events) 或 stdio（标准输入输出，仅限本地）方式暴露 MCP 服务。
 2.  **共存模式**：如果你的现有应用只是一个内部工具或单体应用，你可以在同一个 Spring Boot 应用中同时开启 Web MVC 和 MCP Server 支持。
     *   *注意*：如果使用 SSE 传输，MCP 服务会占用一个特定的 HTTP 端点（例如 `/sse`）。
     *   *优势*：这种方式允许 AI 直接调用你现有的业务逻辑 Bean，无需重复编写 API 层代码。
 
----
+### 如何调试 MCP 工具的调用过程？如果 AI 拒绝调用工具怎么办？
 
-
-
-### 5: 如何调试 MCP 工具的调用过程？如果 AI 拒绝调用工具怎么办？
-
-5: 如何调试 MCP 工具的调用过程？如果 AI 拒绝调用工具怎么办？
-
-**A**: 调试 AI 应用是常见挑战。如果 AI 没有按预期调用你的 Spring 工具，可以检查以下几点：
+调试 AI 应用是常见挑战。如果 AI 没有按预期调用你的 Spring 工具，可以检查以下几点：
 
 1.  **检查描述信息**：工具方法及其参数的 `@Description` 是否清晰准确？如果描述模糊，AI 可能无法理解何时或如何调用该工具。
 2.  **查看日志**：开启 Spring AI 的 Debug 级别日志。观察 AI 返回的 Function Call
 
 ---
+
 ## 引用
 
 - **掘金原文**: [https://juejin.cn/post/7611064285587128347](https://juejin.cn/post/7611064285587128347)
@@ -202,8 +194,6 @@ Spring AI 会自动将 `OrderRequest` 的结构暴露给 AI 模型，AI 会根�
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [后端](/categories/%E5%90%8E%E7%AB%AF/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)
@@ -217,4 +207,3 @@ Spring AI 会自动将 `OrderRequest` 的结构暴露给 AI 模型，AI 会根�
 - [Spring AI MCP 结合 WebFlux SSE 构建 AI 天气助手]({{< relref "posts/20260222-juejin-spring-ai-mcp-之-sse-webflux-实战从零构建-ai-天气助手-4.md" >}})
 - [Ghidra MCP Server：集成110项工具的AI逆向工程辅助环境]({{< relref "posts/20260204-hacker_news-show-hn-ghidra-mcp-server-110-tools-for-ai-assiste-10.md" >}})
 - [Ghidra MCP Server：集成110款工具实现AI辅助逆向工程]({{< relref "posts/20260204-hacker_news-show-hn-ghidra-mcp-server-110-tools-for-ai-assiste-14.md" >}})
-*本文由 AI Stack 自动生成，提供深度内容分析。*

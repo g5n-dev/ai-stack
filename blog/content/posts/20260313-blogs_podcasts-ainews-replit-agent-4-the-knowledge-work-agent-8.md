@@ -1,14 +1,26 @@
 ---
-title: "Replit Agent 4：面向知识工作的智能体"
-date: 2026-03-13T07:36:38+08:00
+title: Replit Agent 4：面向知识工作的智能体
+date: 2026-03-13 07:36:38+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Replit Agent", "智能体", "AI 编程", "知识工作", "自动化", "LLM", "开发工具", "AI Agent"]
-categories: ["大模型", "产品与创业"]
+entry_kind: auto
+tags:
+- Replit Agent
+- 智能体
+- AI 编程
+- 知识工作
+- 自动化
+- LLM
+- 开发工具
+- AI Agent
+categories:
+- 大模型
+- 产品与创业
 source: blogs_podcasts
-description: "Replit Agent 4 的发布标志着开发工具从单一功能向综合型“知识工作代理”的演进。通过整合代码编写、调试与部署等环节，它不仅简化了开发流程，更重新定义了人机协作的边界。本文将深入剖析该版本的核心技术特性，帮助开发者理解如何利用这一工具提升工程效率并应对复杂挑战。"
+description: Replit Agent 4 的发布标志着开发工具从单一功能向综合型“知识工作代理”的演进。通过整合代码编写、调试与部署等环节，它不仅简化了开发流程，更重新定义了人机协作的边界。本文将深入剖析该版本的核心技术特性，帮助开发者理解如何利用这一工具提升工程效率并应对复杂挑战。
 external_url: https://www.latent.space/p/ainews-replit-agent-4-the-knowledge
-scenarios: ["AI/ML项目", "大语言模型"]
+scenarios:
+- AI/ML项目
+- 大语言模型
 ---
 
 # Replit Agent 4：面向知识工作的智能体
@@ -22,16 +34,19 @@ scenarios: ["AI/ML项目", "大语言模型"]
 - **链接**: [https://www.latent.space/p/ainews-replit-agent-4-the-knowledge](https://www.latent.space/p/ainews-replit-agent-4-the-knowledge)
 
 ---
+
 ## 摘要/简介
 
 Replit Agent 4 让我们回顾几项互不相关的发布。
 
 ---
+
 ## 导语
 
 Replit Agent 4 的发布标志着开发工具从单一功能向综合型“知识工作代理”的演进。通过整合代码编写、调试与部署等环节，它不仅简化了开发流程，更重新定义了人机协作的边界。本文将深入剖析该版本的核心技术特性，帮助开发者理解如何利用这一工具提升工程效率并应对复杂挑战。
 
 ---
+
 ## 引用
 
 - **文章/节目**: [https://www.latent.space/p/ainews-replit-agent-4-the-knowledge](https://www.latent.space/p/ainews-replit-agent-4-the-knowledge)
@@ -41,8 +56,6 @@ Replit Agent 4 的发布标志着开发工具从单一功能向综合型“知�
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [产品与创业](/categories/%E4%BA%A7%E5%93%81%E4%B8%8E%E5%88%9B%E4%B8%9A/)
@@ -56,4 +69,3 @@ Replit Agent 4 的发布标志着开发工具从单一功能向综合型“知�
 - [Replit Agent 4：面向知识工作的开发代理]({{< relref "posts/20260312-blogs_podcasts-ainews-replit-agent-4-the-knowledge-work-agent-1.md" >}})
 - [构建极简且具倾向性的编程代理的经验总结]({{< relref "posts/20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-3.md" >}})
 - [构建极简编程代理的技术实践与经验总结]({{< relref "posts/20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-6.md" >}})
-*本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

@@ -8,6 +8,14 @@ import logging
 import re
 
 from .anthropic_client import AnthropicClient
+from .markdown_normalizer import (
+    DEFAULT_WRAPPER_HEADINGS,
+    extract_bulleted_items,
+    filter_related_resources,
+    looks_incomplete_text,
+    normalize_generated_markdown,
+    parse_faq_markdown,
+)
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -98,6 +106,43 @@ class SuperEnhancedContentGenerator:
         ]
         return any(w in text for w in banned)
 
+    def _normalize_section_text(
+        self,
+        text: str,
+        *,
+        wrapper_headings: set[str] | None = None,
+        demote_headings: bool = True,
+    ) -> str:
+        headings = set(DEFAULT_WRAPPER_HEADINGS)
+        if wrapper_headings:
+            headings.update(wrapper_headings)
+        return normalize_generated_markdown(
+            text,
+            wrapper_headings=headings,
+            strip_first_heading=True,
+            demote_headings=demote_headings,
+        ).strip()
+
+    def _normalize_intro_text(self, text: str) -> str:
+        cleaned = self._normalize_section_text(
+            text,
+            wrapper_headings={"导语"},
+            demote_headings=False,
+        )
+        cleaned = re.sub(r"\n{2,}", "\n\n", cleaned)
+        return cleaned.strip()
+
+    def _normalize_body_section_text(self, text: str) -> str:
+        return self._normalize_section_text(text, demote_headings=True)
+
+    def _body_only_rule(self, section_name: str, *, allow_subsections: bool = True) -> str:
+        if allow_subsections:
+            return (
+                f"只输出 {section_name} 正文，不要写标题，不要写“## {section_name}”或其他一级/二级总标题；"
+                "如果需要分节，请从三级标题（###）开始。"
+            )
+        return f"只输出 {section_name} 正文，不要写标题、区块名或额外包裹标题。"
+
     def _validate_text(
         self,
         text: str,
@@ -123,6 +168,8 @@ class SuperEnhancedContentGenerator:
             return False
         if (not allow_placeholders) and self._has_placeholders(t):
             return False
+        if looks_incomplete_text(t):
+            return False
         return True
 
     def _generate_with_quality_retry(
@@ -133,12 +180,15 @@ class SuperEnhancedContentGenerator:
         temperature: float,
         validator: Callable[[str], bool],
         label: str,
+        postprocess: Callable[[str], str] | None = None,
     ) -> str:
         last = ""
         attempts = max(1, 1 + self._quality_retries)
         for attempt in range(attempts):
             response = self.client.create_message(prompt, max_tokens=max_tokens, temperature=temperature)
             text = (response or "").strip()
+            if postprocess is not None:
+                text = postprocess(text)
             last = text
             if validator(text):
                 return text
@@ -152,6 +202,8 @@ class SuperEnhancedContentGenerator:
                     feedback.append("包含夸张/营销用语")
                 if self._has_placeholders(text):
                     feedback.append("包含占位符（如[标题]）")
+                if looks_incomplete_text(text):
+                    feedback.append("输出不完整，结尾疑似被截断")
                 if not feedback:
                     feedback.append("未满足格式/长度要求")
                 prompt = "\n".join(
@@ -211,6 +263,7 @@ class SuperEnhancedContentGenerator:
                     allow_placeholders=False,
                 ),
                 label="导语",
+                postprocess=self._normalize_intro_text,
             )
         except Exception as e:
             logger.error(f"Failed to generate engaging intro: {e}")
@@ -233,6 +286,7 @@ class SuperEnhancedContentGenerator:
                     allow_placeholders=False,
                 ),
                 label="深度评论",
+                postprocess=self._normalize_body_section_text,
             )
         except Exception as e:
             logger.error(f"Failed to generate deep comment: {e}")
@@ -257,6 +311,7 @@ class SuperEnhancedContentGenerator:
                     allow_placeholders=False,
                 ),
                 label="技术分析",
+                postprocess=self._normalize_body_section_text,
             )
         except Exception as e:
             logger.error(f"Failed to generate comprehensive analysis: {e}")
@@ -281,6 +336,7 @@ class SuperEnhancedContentGenerator:
                     allow_placeholders=False,
                 ),
                 label="代码示例",
+                postprocess=self._normalize_body_section_text,
             )
             examples = self._parse_code_examples(response)
             if not examples:
@@ -309,6 +365,7 @@ class SuperEnhancedContentGenerator:
                     allow_placeholders=False,
                 ),
                 label="案例研究",
+                postprocess=self._normalize_body_section_text,
             )
             return self._parse_case_studies(response)
         except Exception as e:
@@ -336,6 +393,7 @@ class SuperEnhancedContentGenerator:
                     allow_placeholders=False,
                 ),
                 label="对比分析",
+                postprocess=self._normalize_body_section_text,
             )
         except Exception as e:
             logger.error(f"Failed to generate comparison: {e}")
@@ -360,6 +418,7 @@ class SuperEnhancedContentGenerator:
                     allow_placeholders=False,
                 ),
                 label="最佳实践",
+                postprocess=self._normalize_body_section_text,
             )
         except Exception as e:
             logger.error(f"Failed to generate best practices: {e}")
@@ -384,6 +443,7 @@ class SuperEnhancedContentGenerator:
                     allow_placeholders=False,
                 ),
                 label="性能优化建议",
+                postprocess=self._normalize_body_section_text,
             )
         except Exception as e:
             logger.error(f"Failed to generate performance tips: {e}")
@@ -408,8 +468,13 @@ class SuperEnhancedContentGenerator:
                     allow_placeholders=False,
                 ),
                 label="学习要点",
+                postprocess=lambda text: self._normalize_section_text(
+                    text,
+                    wrapper_headings={"学习要点", "关键要点"},
+                    demote_headings=False,
+                ),
             )
-            takeaways = [line.strip().lstrip('•-* ') for line in response.split('\n') if line.strip()]
+            takeaways = extract_bulleted_items(response, max_items=7)
             return takeaways[:7]  # 最多7个要点
         except Exception as e:
             logger.error(f"Failed to generate learning takeaways: {e}")
@@ -434,6 +499,7 @@ class SuperEnhancedContentGenerator:
                     allow_placeholders=False,
                 ),
                 label="实践建议",
+                postprocess=self._normalize_body_section_text,
             )
         except Exception as e:
             logger.error(f"Failed to generate practical recommendations: {e}")
@@ -458,8 +524,9 @@ class SuperEnhancedContentGenerator:
                     allow_placeholders=False,
                 ),
                 label="资源推荐",
+                postprocess=self._normalize_body_section_text,
             )
-            return self._parse_resources(response)
+            return filter_related_resources(self._parse_resources(response))
         except Exception as e:
             logger.error(f"Failed to generate related resources: {e}")
             return []
@@ -485,6 +552,7 @@ class SuperEnhancedContentGenerator:
                     allow_placeholders=False,
                 ),
                 label="学习路径",
+                postprocess=self._normalize_body_section_text,
             )
         except Exception as e:
             logger.error(f"Failed to generate learning path: {e}")
@@ -509,8 +577,13 @@ class SuperEnhancedContentGenerator:
                     allow_placeholders=False,
                 ),
                 label="FAQ",
+                postprocess=lambda text: self._normalize_section_text(
+                    text,
+                    wrapper_headings={"常见问题", "常见问题解答", "FAQ"},
+                    demote_headings=False,
+                ),
             )
-            return self._parse_faq(response)
+            return parse_faq_markdown(response)
         except Exception as e:
             logger.error(f"Failed to generate FAQ: {e}")
             return []
@@ -534,6 +607,11 @@ class SuperEnhancedContentGenerator:
                     allow_placeholders=False,
                 ),
                 label="挑战与思考题",
+                postprocess=lambda text: self._normalize_section_text(
+                    text,
+                    wrapper_headings={"思考题", "挑战与思考题"},
+                    demote_headings=False,
+                ),
             )
             challenges = [line.strip().lstrip('•-* 123456789.') for line in response.split('\n') if line.strip()]
             return challenges[:5]  # 最多5个挑战
@@ -658,9 +736,10 @@ class SuperEnhancedContentGenerator:
         deepwiki_excerpt = (content.get('deepwiki_content') or '')[:1200]
         deepwiki_block = f"DeepWiki（节选）：\n{deepwiki_excerpt}" if deepwiki_excerpt.strip() else ""
         emoji_rule = "不要使用 emoji"
+        body_rule = self._body_only_rule("评论")
 
         if source == 'github_trending':
-            return f"""请从技术与实用角度深入评价以下 GitHub 仓库，控制在{self.comment_length}字以内：
+            return f"""你是中文技术内容编辑。请从技术与实用角度写一段评论，控制在{self.comment_length}字以内。
 
 仓库名称：{title}
 描述：{content.get('description', '')}
@@ -668,82 +747,43 @@ class SuperEnhancedContentGenerator:
 星标数：{content.get('stars', '')}
 {deepwiki_block}
 
-请从以下维度进行评价：
-1. 技术创新性：有什么差异化的技术方案
-2. 实用价值：解决了什么关键问题，应用场景有多广
-3. 代码质量：架构设计、代码规范、文档完整性
-4. 社区活跃度：开发者反馈、更新频率、贡献者数量
-5. 学习价值：对开发者有什么启发和借鉴意义
-6. 潜在问题或改进建议
-7. 与同类工具的对比优势
-
-结构要求：
-- 先给 1-2 句总体判断
-- 再给出 3-5 条依据，穿插“事实（来自描述/DeepWiki）”与“推断（你的判断）”
-- 最后给出边界条件/不适用场景，并提供 2-4 条快速验证清单（指标/实验/检查点）
-
 要求：
-- 深入分析，不要泛泛而谈
-- 具体举例说明
-- 保持专业性和客观性
+- 先给总体判断，再展开依据、适用场景、局限与验证方式。
+- 明确区分“事实 / 推断”，不要把猜测写成事实。
+- 可以使用三级标题 `###` 组织内容，但不要输出一级、二级标题。
+- 不要重复题目或区块名。
 - {emoji_rule}
 - 用中文写作
-- 每个维度都要有实质性内容
+- {body_rule}
 """
         elif source in ['hacker_news', 'juejin', 'blogs_podcasts']:
-            return f"""请从技术与行业角度深入评价以下文章，控制在{self.comment_length}字以内：
+            return f"""你是中文技术内容编辑。请从技术与行业角度写一段评论，控制在{self.comment_length}字以内。
 
 文章标题：{title}
 摘要：{content.get('description', '')[:300]}
 
-请从以下维度进行评价：
-1. 内容深度：观点的深度和论证的严谨性
-2. 实用价值：对实际工作的指导意义
-3. 创新性：提出了什么新观点或新方法
-4. 可读性：表达的清晰度和逻辑性
-5. 行业影响：对行业或社区的潜在影响
-6. 争议点或不同观点
-7. 实际应用建议
-
-结构要求：
-- 先用 1 句话写出文章的中心观点
-- 再写 3-5 条支撑理由，并给出至少 2 条反例/边界条件
-- 明确标注：事实陈述 / 作者观点 / 你的推断
-- 给出 2-4 条可验证的检查方式（指标/实验/观察窗口）
-
 要求：
-- 深入分析，要有自己的见解
-- 批判性思考，不盲从
-- 结合实际案例说明
+- 先概括中心观点，再给出支撑理由、边界条件和实践启发。
+- 明确区分“事实陈述 / 作者观点 / 你的推断”。
+- 可以使用三级标题 `###`，不要输出一级、二级标题。
 - {emoji_rule}
 - 用中文写作
+- {body_rule}
 """
         elif source == 'arxiv':
-            return f"""请从学术与应用角度深入评价以下论文，控制在{self.comment_length}字以内：
+            return f"""你是中文学术解读编辑。请从学术与应用角度写一段评论，控制在{self.comment_length}字以内。
 
 论文标题：{title}
 作者：{', '.join(content.get('authors', [])[:3])}
 摘要：{content.get('summary', '')[:300]}
 
-请从以下维度进行评价：
-1. 研究创新性：有什么新的发现或方法
-2. 理论贡献：对现有理论有什么补充或突破
-3. 实验验证：实验设计和结果的可靠性
-4. 应用前景：在实际场景中的应用价值
-5. 可复现性：方法是否清晰可复现
-6. 相关工作对比：与同类研究的优劣
-7. 局限性和未来方向
-
-结构要求：
-- 明确区分：论文声称（claim）/证据（evidence）/推断（inference）
-- 指出关键假设与可能失效条件，并给出可验证的检验方式（指标/实验/复现实验）
-
 要求：
-- 深入分析，要有学术眼光
-- 结合具体技术细节
-- 评价要有深度和广度
+- 明确区分：论文声称、证据、你的推断。
+- 指出关键假设、潜在失效条件和可验证方式。
+- 可以使用三级标题 `###`，不要输出一级、二级标题。
 - {emoji_rule}
 - 用中文写作
+- {body_rule}
 """
         else:
             return f"""请深入评价以下内容，控制在{self.comment_length}字以内：
@@ -751,10 +791,11 @@ class SuperEnhancedContentGenerator:
 标题：{title}
 
 要求：
-- 多角度深入分析
-- 提出有价值的见解
+- 多角度深入分析，给出依据与边界条件
+- 可以使用三级标题 `###`，不要输出一级、二级标题
 - {emoji_rule}
 - 用中文写作
+- {body_rule}
 """
 
         return ""
@@ -765,9 +806,10 @@ class SuperEnhancedContentGenerator:
         deepwiki_excerpt = (content.get('deepwiki_content') or '')[:1500]
         deepwiki_block = f"DeepWiki（节选）：\n{deepwiki_excerpt}" if deepwiki_excerpt.strip() else ""
         emoji_rule = "不要使用 emoji"
+        body_rule = self._body_only_rule("技术分析")
 
         if source == 'github_trending':
-            return f"""请深入分析以下 GitHub 仓库的技术特点和潜在应用，用中文：
+            return f"""你是中文技术分析编辑。请深入分析以下 GitHub 仓库的技术特点和潜在应用，用中文。
 
 仓库名称：{title}
 描述：{content.get('description', '')}
@@ -775,198 +817,42 @@ class SuperEnhancedContentGenerator:
 星标数：{content.get('stars', '')}
 {deepwiki_block}
 
-请从以下角度进行全面深入分析：
-
-## 1. 技术架构深度剖析
-- 采用了什么技术栈和架构模式
-- 核心模块和关键设计
-- 技术亮点和创新点
-- 架构优势分析
-
-## 2. 核心功能详细解读
-- 主要功能和使用场景
-- 解决了什么关键问题
-- 与同类工具的详细对比
-- 技术实现原理
-
-## 3. 技术实现细节
-- 关键算法或技术方案
-- 代码组织结构和设计模式
-- 性能优化和扩展性考虑
-- 技术难点和解决方案
-
-## 4. 适用场景分析
-- 什么样的项目适合使用
-- 在什么情况下最有效
-- 不适合的场景和原因
-- 集成方式和注意事项
-
-## 5. 发展趋势展望
-- 技术演进方向
-- 社区反馈和改进空间
-- 与前沿技术的结合
-- 未来可能的发展方向
-
-## 6. 学习建议
-- 适合什么水平的开发者
-- 可以从中学习到什么
-- 推荐的学习路径
-- 实践建议
-
-## 7. 最佳实践建议
-- 如何正确使用该工具
-- 常见问题和解决方案
-- 性能优化建议
-- 最佳实践总结
-
-## 8. 哲学与方法论：第一性原理与权衡
-- 这个项目在“抽象层”上做了什么？它把复杂性转移给了谁（库/用户/运维/组织）？
-- 它默认了哪些价值取向（速度、控制、安全、可解释性、可移植性）？这些取向的代价是什么？
-- 如果把它看作一种“工程哲学”，它解决问题的范式是什么？哪里最容易被误用？
-- 给出 3 条可证伪的判断：用什么指标/实验/对照，可以验证你对它的核心评价？
-
 要求：
-- 深入技术细节，不要浅尝辄止
-- 结合代码和架构进行分析
-- 提供具体可操作的建议
-- 使用markdown格式组织内容
+- 覆盖：架构、核心能力、技术实现、适用与不适用场景、学习与落地建议。
+- 明确区分已知事实与基于仓库信息的推断。
+- 可以使用三级标题 `###` 和四级标题 `####` 组织内容，但不要输出一级、二级标题。
 - {emoji_rule}
+- {body_rule}
 - 控制在{self.analysis_length}字以内
-- 每个部分都要有实质性内容
 """
         elif source in ['hacker_news', 'juejin', 'blogs_podcasts']:
-            return f"""请深入分析以下文章的核心观点和技术要点，用中文：
+            return f"""你是中文技术分析编辑。请深入分析以下文章的核心观点和技术要点，用中文。
 
 文章标题：{title}
 摘要：{content.get('description', '')[:300]}
 
-请从以下角度进行全面深入分析：
-
-## 1. 核心观点深度解读
-- 文章的主要观点是什么
-- 作者想要传达的核心思想
-- 观点的创新性和深度
-- 为什么这个观点重要
-
-## 2. 关键技术要点
-- 涉及的关键技术或概念
-- 技术原理和实现方式
-- 技术难点和解决方案
-- 技术创新点分析
-
-## 3. 实际应用价值
-- 对实际工作的指导意义
-- 可以应用到哪些场景
-- 需要注意的问题
-- 实施建议
-
-## 4. 行业影响分析
-- 对行业的启示
-- 可能带来的变革
-- 相关领域的发展趋势
-- 对行业格局的影响
-
-## 5. 延伸思考
-- 引发的其他思考
-- 可以拓展的方向
-- 需要进一步研究的问题
-- 未来发展趋势
-
-## 6. 实践建议
-- 如何应用到自己的项目
-- 具体的行动建议
-- 需要补充的知识
-- 实践中的注意事项
-
-## 7. 案例分析
-- 结合实际案例说明
-- 成功案例分析
-- 失败案例反思
-- 经验教训总结
-
-## 8. 哲学与逻辑：论证地图（Argument Map）
-- 用 1 句话写出中心命题（claim）
-- 列出 3-5 条支撑理由（reasons）与各自依据（evidence/intuition）
-- 至少给出 2 个反例或边界条件（counterexamples / conditions）
-- 明确哪些是事实、哪些是价值判断、哪些是可检验预测
-- 给出你的立场，并给出可证伪的验证方式（指标/实验/观察窗口）
-
 要求：
-- 深入理解文章内容
-- 结合实际场景分析
-- 提供可操作的建议
-- 使用markdown格式组织内容
+- 覆盖：核心观点、关键技术点、实际应用价值、行业影响、边界条件与实践建议。
+- 给出论证地图：中心命题、支撑理由、反例或边界条件、可验证方式。
+- 可以使用三级标题 `###` 和四级标题 `####`，不要输出一级、二级标题。
 - {emoji_rule}
+- {body_rule}
 - 控制在{self.analysis_length}字以内
 """
         elif source == 'arxiv':
-            return f"""请深入分析以下论文的研究内容和贡献，用中文：
+            return f"""你是中文学术解读编辑。请深入分析以下论文的研究内容和贡献，用中文。
 
 论文标题：{title}
 作者：{', '.join(content.get('authors', []))}
 摘要：{content.get('summary', '')}
 
-请从以下角度进行全面深入分析：
-
-## 1. 研究背景与问题
-- 研究要解决的核心问题
-- 问题的研究背景和意义
-- 现有方法的局限性
-- 为什么这个问题重要
-
-## 2. 核心方法与创新
-- 提出的核心方法是什么
-- 技术创新点和贡献
-- 方法的优势和特色
-- 方法的理论依据
-
-## 3. 理论基础
-- 使用的理论基础或假设
-- 数学模型或算法设计
-- 理论分析和证明
-- 理论贡献分析
-
-## 4. 实验与结果
-- 实验设计和数据集
-- 主要实验结果和指标
-- 结果分析和验证
-- 实验的局限性
-
-## 5. 应用前景
-- 实际应用场景
-- 产业化的可能性
-- 与其他技术的结合
-- 未来应用方向
-
-## 6. 研究启示
-- 对该领域的启示
-- 可能的研究方向
-- 需要进一步探索的问题
-- 对后续研究的影响
-
-## 7. 学习建议
-- 适合什么背景的读者
-- 需要哪些前置知识
-- 推荐的阅读顺序
-- 如何理解论文内容
-
-## 8. 相关工作对比
-- 与同类研究的对比
-- 优势和不足分析
-- 创新性评估
-- 在该领域中的地位
-
-## 9. 研究哲学：可证伪性与边界
-- 论文的关键假设是什么？它依赖哪些先验/归纳偏置？
-- 在什么数据分布/任务条件下最可能失败？为什么？
-- 哪些结论是“经验事实”，哪些是“理论推断”？分别如何验证？
-- 如果把它放到更长的时间尺度，它推进的是“方法”还是“理解”？代价是什么？
-
 要求：
-- 深入理解论文内容
-- 结合专业知识分析
-- 使用markdown格式组织内容
+- 覆盖：研究背景、核心方法、理论基础、实验与结果、应用前景、研究启示、相关工作对比。
+- 明确哪些内容来自摘要或可确认事实，哪些是你的推断。
+- 指出关键假设、潜在失效条件和可证伪方式。
+- 可以使用三级标题 `###` 和四级标题 `####`，不要输出一级、二级标题。
 - {emoji_rule}
+- {body_rule}
 - 控制在{self.analysis_length}字以内
 """
         else:
@@ -975,7 +861,9 @@ class SuperEnhancedContentGenerator:
 标题：{title}
 
 请从技术价值、实用性、创新性等角度进行全面深入分析。
-使用markdown格式组织内容，{emoji_rule}
+可以使用三级标题 `###` 和四级标题 `####`，不要输出一级、二级标题。
+{emoji_rule}
+{body_rule}
 控制在{self.analysis_length}字以内。
 """
 
@@ -984,6 +872,7 @@ class SuperEnhancedContentGenerator:
     def _build_code_examples_prompt(self, content: Dict) -> str:
         source = content.get('source', '')
         title = content.get('title', '')
+        body_rule = self._body_only_rule("代码示例")
 
         return f"""请为以下内容生成 2-3 个实用的代码示例，用中文：
 
@@ -996,12 +885,15 @@ class SuperEnhancedContentGenerator:
 - 添加详细的中文注释
 - 每个示例解决一个实际问题
 - 使用代码块格式
-- 简洁易懂，适合学习
+- 每个示例先给一句简短说明，再给代码块
+- 不要输出“## 代码示例”等包装标题
+- 不要输出示例总标题，只保留正文
+- {body_rule}
 
 格式示例：
 
 ```python
-# 示例1：XXX功能
+# 示例 1：XXX功能
 def example():
     # 代码实现
     pass
@@ -1025,6 +917,7 @@ def example2():
         source = content.get('source', '')
         title = content.get('title', '')
         emoji_rule = "不要使用 emoji"
+        body_rule = self._body_only_rule("案例研究")
 
         return f"""请为以下内容生成 2-3 个真实的应用案例，用中文：
 
@@ -1036,8 +929,11 @@ def example2():
 - 案例要真实可信
 - 说明背景、问题和解决方案
 - 突出实际效果和价值
-- 使用markdown格式
+- 使用 markdown 格式
+- 每个案例使用 `### 案例 N：标题`
+- 不要输出“## 案例研究”等包装标题
 - {emoji_rule}
+- {body_rule}
 
 格式示例：
 
@@ -1070,6 +966,7 @@ def example2():
         source = content.get('source', '')
         title = content.get('title', '')
         emoji_rule = "不要使用 emoji"
+        body_rule = self._body_only_rule("对比分析")
 
         return f"""请为以下内容生成与同类方案的详细对比分析，用中文：
 
@@ -1082,11 +979,11 @@ def example2():
 - 从多个维度进行对比
 - 突出优势和不足
 - 使用表格或列表格式
+- 不要输出“## 与同类方案对比”等包装标题
 - {emoji_rule}
+- {body_rule}
 
 格式示例：
-
-## 与同类方案对比
 
 | 维度 | {title[:10]} | 方案A | 方案B |
 |------|------------|--------|--------|
@@ -1111,6 +1008,7 @@ def example2():
         source = content.get('source', '')
         title = content.get('title', '')
         emoji_rule = "不要使用 emoji"
+        body_rule = self._body_only_rule("最佳实践")
 
         return f"""请为以下内容生成最佳实践指南，用中文：
 
@@ -1122,12 +1020,13 @@ def example2():
 - 列出 5-7 条最佳实践
 - 每条实践要有具体说明
 - 提供实施建议
-- 使用markdown格式
+- 使用 markdown 格式
+- 每条实践使用 `### 实践 N：标题`
+- 不要输出“## 最佳实践指南”等包装标题
 - {emoji_rule}
+- {body_rule}
 
 格式示例：
-
-## 最佳实践指南
 
 ### 实践 1：[标题]
 
@@ -1158,6 +1057,7 @@ def example2():
         source = content.get('source', '')
         title = content.get('title', '')
         emoji_rule = "不要使用 emoji"
+        body_rule = self._body_only_rule("性能优化建议")
 
         return f"""请为以下内容生成性能优化建议，用中文：
 
@@ -1170,12 +1070,13 @@ def example2():
 - 每条建议要有具体说明
 - 提供实施方法
 - 量化优化效果（如可能）
-- 使用markdown格式
+- 使用 markdown 格式
+- 每条建议使用 `### 优化 N：标题`
+- 不要输出“## 性能优化建议”等包装标题
 - {emoji_rule}
+- {body_rule}
 
 格式示例：
-
-## 性能优化建议
 
 ### 优化 1：[标题]
 
@@ -1206,6 +1107,7 @@ def example2():
         source = content.get('source', '')
         title = content.get('title', '')
         emoji_rule = "不要使用 emoji"
+        body_rule = self._body_only_rule("学习要点", allow_subsections=False)
 
         return f"""请总结从以下内容中学到的 5-7 个关键要点，用中文：
 
@@ -1219,6 +1121,8 @@ def example2():
 - 使用 • 开头
 - {emoji_rule}
 - 按重要性排序
+- 不要输出“学习要点”标题或其他包装标题
+- {body_rule}
 
 格式示例：
 • 要点一（最重要）
@@ -1232,6 +1136,7 @@ def example2():
         source = content.get('source', '')
         title = content.get('title', '')
         emoji_rule = "不要使用 emoji"
+        body_rule = self._body_only_rule("实践建议")
 
         if source == 'github_trending':
             return f"""请为以下 GitHub 仓库提供 5-7 条实践建议，用中文：
@@ -1244,6 +1149,8 @@ def example2():
 - 提供具体可操作的建议
 - 包括最佳实践和常见陷阱
 - {emoji_rule}
+- 可以使用三级标题 `###`
+- {body_rule}
 """
         elif source == 'arxiv':
             return f"""请为以下论文提供学习建议，用中文：
@@ -1256,6 +1163,8 @@ def example2():
 - 如何实践和验证
 - 学习顺序建议
 - {emoji_rule}
+- 可以使用三级标题 `###`
+- {body_rule}
 """
         else:
             return f"""请为以下内容提供实践建议，用中文：
@@ -1265,10 +1174,13 @@ def example2():
 要求：
 - 提供具体可操作的建议
 - {emoji_rule}
+- 可以使用三级标题 `###`
+- {body_rule}
 """
 
     def _build_resources_prompt(self, content: Dict) -> str:
         title = content.get('title', '')
+        body_rule = self._body_only_rule("相关资源", allow_subsections=False)
 
         return f"""请推荐 5 个与以下内容相关的优质资源，用中文：
 
@@ -1278,6 +1190,8 @@ def example2():
 - 包括官方文档、教程、工具、博客等
 - 资源要有价值和质量保证
 - 说明每个资源的特点和适用场景
+- 不要输出“相关资源/推荐资源”标题
+- {body_rule}
 - 格式：
   名称：xxx
   链接：xxx
@@ -1290,6 +1204,7 @@ def example2():
         source = content.get('source', '')
         title = content.get('title', '')
         emoji_rule = "不要使用 emoji"
+        body_rule = self._body_only_rule("学习路径")
 
         return f"""请为以下内容生成一个循序渐进的学习路径，用中文：
 
@@ -1303,11 +1218,12 @@ def example2():
 - 提供学习建议和资源
 - 标注每个阶段需要的时间
 - {emoji_rule}
-- 使用markdown格式
+- 使用 markdown 格式
+- 不要输出“## 学习路径”等包装标题
+- 每个阶段使用 `### 阶段 N：标题`
+- {body_rule}
 
 格式示例：
-
-## 学习路径
 
 ### 阶段 1：入门基础
 
@@ -1346,6 +1262,7 @@ def example2():
         source = content.get('source', '')
         title = content.get('title', '')
         emoji_rule = "不要使用 emoji"
+        body_rule = self._body_only_rule("常见问题")
 
         return f"""请为以下内容生成 5-7 个常见问题和解答，用中文：
 
@@ -1356,12 +1273,14 @@ def example2():
 要求：
 - 问题要真实常见
 - 回答要详细准确
-- 使用markdown格式
+- 使用 markdown 格式
+- 不要输出“## 常见问题”或“## 常见问题解答”标题
+- 每个问题使用 `### Q1: 问题`
+- 回答部分只写答案正文，不要重复“A:”标题之外的包装段
 - {emoji_rule}
+- {body_rule}
 
 格式示例：
-
-## 常见问题解答
 
 ### Q1: [问题]
 
@@ -1380,6 +1299,7 @@ def example2():
         source = content.get('source', '')
         title = content.get('title', '')
         emoji_rule = "不要使用 emoji"
+        body_rule = self._body_only_rule("挑战与思考题")
 
         return f"""请为以下内容生成 5 个挑战和思考题，用中文：
 
@@ -1392,10 +1312,11 @@ def example2():
 - 每个挑战都有实践价值
 - 提供解答提示（不直接给答案）
 - {emoji_rule}
+- 不要输出“## 挑战与思考题”标题
+- 每个挑战使用 `### 挑战 N：标题`
+- {body_rule}
 
 格式示例：
-
-## 挑战与思考题
 
 ### 挑战 1: [简单]
 
@@ -1500,20 +1421,27 @@ def example2():
         resources = []
         lines = response.split('\n')
         current_resource = {}
+
+        def flush_current():
+            nonlocal current_resource
+            if current_resource.get('title') and current_resource.get('link'):
+                resources.append(current_resource)
+            current_resource = {}
+
         for line in lines:
             line = line.strip()
+            if not line:
+                flush_current()
+                continue
             if line.startswith('名称') or line.startswith('Title'):
+                flush_current()
                 current_resource = {'title': line.split(':', 1)[1].strip()}
             elif line.startswith('链接') or line.startswith('Link'):
                 if current_resource:
                     current_resource['link'] = line.split(':', 1)[1].strip()
-                    resources.append(current_resource)
-                    current_resource = {}
-            elif line.startswith('说明') or line.startswith('说明'):
-                if 'description' in current_resource:
-                    resources.append(current_resource)
-                    current_resource = {}
+            elif line.startswith('说明'):
                 current_resource['description'] = line.split(':', 1)[1].strip()
+        flush_current()
         return resources[:5]
 
     def _parse_faq(self, response: str) -> List[Dict]:

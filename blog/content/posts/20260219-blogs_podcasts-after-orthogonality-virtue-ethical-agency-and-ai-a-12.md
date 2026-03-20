@@ -1,14 +1,26 @@
 ---
-title: "理性人无目标论：AI对齐应基于实践协调而非终极目的"
-date: 2026-02-19T19:36:28+08:00
+title: 理性人无目标论：AI对齐应基于实践协调而非终极目的
+date: 2026-02-19 19:36:28+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI对齐", "正交性论题", "美德伦理", "理性", "实践协调", "AI安全", "目标函数", "代理机制"]
-categories: ["大模型", "安全"]
+entry_kind: auto
+tags:
+- AI对齐
+- 正交性论题
+- 美德伦理
+- 理性
+- 实践协调
+- AI安全
+- 目标函数
+- 代理机制
+categories:
+- 大模型
+- 安全
 source: blogs_podcasts
-description: "以下是对该内容的中文总结： **核心论点：理性不等于拥有目标** 这篇文章提出了一个反直觉的观点：真正的理性并非由特定的“目标”驱动，无论是人类还是AI，都不应被视为拥有终极目标的实体。 **1. 对传统观念的颠覆** 通常人们认为，理性行为是指为了达成某个最终目的而采取的手段。然而，作者认为这种观点是错误的。人类的行"
+description: 以下是对该内容的中文总结： **核心论点：理性不等于拥有目标** 这篇文章提出了一个反直觉的观点：真正的理性并非由特定的“目标”驱动，无论是人类还是AI，都不应被视为拥有终极目标的实体。
+  **1. 对传统观念的颠覆** 通常人们认为，理性行为是指为了达成某个最终目的而采取的手段。然而，作者认为这种观点是错误的。人类的行
 external_url: https://thegradient.pub/virtue-ethics-ai-alignment
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
 ---
 
 # 理性人无目标论：AI对齐应基于实践协调而非终极目的
@@ -22,6 +34,7 @@ scenarios: ["AI/ML项目"]
 - **链接**: [https://thegradient.pub/virtue-ethics-ai-alignment](https://thegradient.pub/virtue-ethics-ai-alignment)
 
 ---
+
 ## 摘要/简介
 
 **前言**
@@ -29,11 +42,13 @@ scenarios: ["AI/ML项目"]
 本文主张，理性的人没有目标，理性的AI也不应该有目标。人的行动之所以是理性的，并不是因为我们把行动指向某种终极的“目标”，而是因为我们把行动与实践[1]相协调：即行动的网络、行动倾向、行动评价标准，
 
 ---
+
 ## 导语
 
 长期以来，主流观点常将理性视为对特定目标的优化，但本文提出了一个根本性的反思：理性的主体不应被单一的目标所定义，而应体现为行动与实践之间的协调。通过引入“德性伦理能动性”这一视角，文章重新审视了人类理性与AI对齐的内在逻辑。对于关注AI安全与哲学基础的研究者而言，这篇文本提供了一种超越传统正交性假说的路径，有助于在更广阔的伦理框架下思考智能系统的构建方向。
 
 ---
+
 ## 摘要
 
 以下是对该内容的中文总结：
@@ -55,6 +70,7 @@ scenarios: ["AI/ML项目"]
 这篇短文主张用基于“实践”和“美德”的模型，来取代目前基于“目标-手段”的主流AI设计范式，认为这才是通往安全、理性AI的正确路径。
 
 ---
+
 ## 评论
 
 ### 深度评论：After Orthogonality: Virtue-Ethical Agency and AI Alignment
@@ -100,7 +116,6 @@ scenarios: ["AI/ML项目"]
 #### 5. 技术落地建议
 
 ---
-## 技术分析
 
 ## 技术分析
 
@@ -150,9 +165,8 @@ scenarios: ["AI/ML项目"]
 目前该理论主要处于哲学探讨和概念验证阶段，缺乏大规模工程实践的证据。如何将哲学上的“美德”概念转化为可扩展的工程算法，仍是待解决的核心挑战。
 
 ---
-## 最佳实践
 
-## 最佳实践指南
+## 最佳实践
 
 ### 实践 1：从“工具性收敛”转向“美德养成”的架构设计
 
@@ -222,6 +236,7 @@ scenarios: ["AI/ML项目"]
 ### 实践 6：关注 AI 系统的“社会性嵌入”
 
 ---
+
 ## 学习要点
 
 - AI对齐研究应从追求工具性的正交性转向培养AI的道德主体性，使其具备内在的道德判断力而非仅依赖外部约束
@@ -233,6 +248,7 @@ scenarios: ["AI/ML项目"]
 - 当前AI安全研究过度关注形式化验证，亟需补充对AI社会性互动和道德直觉的实证研究
 
 ---
+
 ## 引用
 
 - **文章/节目**: [https://thegradient.pub/virtue-ethics-ai-alignment](https://thegradient.pub/virtue-ethics-ai-alignment)
@@ -242,8 +258,6 @@ scenarios: ["AI/ML项目"]
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [安全](/categories/%E5%AE%89%E5%85%A8/)
@@ -257,4 +271,3 @@ scenarios: ["AI/ML项目"]
 - [OpenAI 如何通过内置安全机制防范 AI 代理点击链接时的数据泄露与提示词注入]({{< relref "posts/20260129-blogs_podcasts-keeping-your-data-safe-when-an-ai-agent-clicks-a-l-6.md" >}})
 - [RedSage：网络安全通用大语言模型]({{< relref "posts/20260201-arxiv_ai-redsage-a-cybersecurity-generalist-llm-0.md" >}})
 - [Anthropic Claude Opus 4.6 挖掘开源代码500个零日漏洞]({{< relref "posts/20260205-hacker_news-anthropics-claude-opus-46-uncovers-500-zero-day-fl-13.md" >}})
-*本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

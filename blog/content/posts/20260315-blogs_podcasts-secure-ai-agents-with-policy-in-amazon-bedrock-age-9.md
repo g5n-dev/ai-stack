@@ -1,14 +1,27 @@
 ---
-title: "利用Amazon Bedrock AgentCore Policy实现AI Agent的细粒度访问控制"
-date: 2026-03-15T22:55:21+08:00
+title: 利用Amazon Bedrock AgentCore Policy实现AI Agent的细粒度访问控制
+date: 2026-03-15 22:55:21+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Amazon Bedrock", "AgentCore", "AI Agent", "访问控制", "Cedar", "策略即代码", "身份认证", "运行时安全"]
-categories: ["AI 工程", "安全"]
+entry_kind: auto
+tags:
+- Amazon Bedrock
+- AgentCore
+- AI Agent
+- 访问控制
+- Cedar
+- 策略即代码
+- 身份认证
+- 运行时安全
+categories:
+- AI 工程
+- 安全
 source: blogs_podcasts
-description: "本文介绍了Amazon Bedrock AgentCore中的Policy功能，旨在为AI代理（AI Agents）构建一个确定性的安全执行层。该机制独立于代理自身的推理过程，确保系统安全。 核心内容包含以下三点： 1. **自然语言转策略**：用户可以将业务规则的自然语言描述直接转化为Cedar策略。 2. **细粒"
+description: 本文介绍了Amazon Bedrock AgentCore中的Policy功能，旨在为AI代理（AI Agents）构建一个确定性的安全执行层。该机制独立于代理自身的推理过程，确保系统安全。
+  核心内容包含以下三点： 1. **自然语言转策略**：用户可以将业务规则的自然语言描述直接转化为Cedar策略。 2. **细粒
 external_url: https://aws.amazon.com/blogs/machine-learning/secure-ai-agents-with-policy-in-amazon-bedrock-agentcore
-scenarios: ["AI/ML项目", "命令行工具"]
+scenarios:
+- AI/ML项目
+- 命令行工具
 ---
 
 # 利用Amazon Bedrock AgentCore Policy实现AI Agent的细粒度访问控制
@@ -22,16 +35,19 @@ scenarios: ["AI/ML项目", "命令行工具"]
 - **链接**: [https://aws.amazon.com/blogs/machine-learning/secure-ai-agents-with-policy-in-amazon-bedrock-agentcore](https://aws.amazon.com/blogs/machine-learning/secure-ai-agents-with-policy-in-amazon-bedrock-agentcore)
 
 ---
+
 ## 摘要/简介
 
 在本文中，您将了解 Amazon Bedrock AgentCore 中的 Policy 如何创建一个确定性的执行层，该层独立于 Agent 自身的推理逻辑运行。您将学习如何将业务规则的自然语言描述转化为 Cedar 策略，然后使用这些策略实施细粒度、具备身份感知能力的控制，以便 Agent 仅能访问其用户被授权使用的工具和数据。您还将看到如何通过 AgentCore Gateway 应用 Policy，在运行时拦截并评估每一个 Agent 对工具的请求。
 
 ---
+
 ## 导语
 
 随着生成式 AI 的落地，如何确保 Agent 在执行任务时严格遵循业务规则与权限边界，已成为企业级应用的关键挑战。本文将深入解析 Amazon Bedrock AgentCore 中的 Policy 机制，展示如何通过独立的确定性执行层，将自然语言描述转化为 Cedar 策略。通过阅读本文，您将掌握构建细粒度、具备身份感知能力的控制体系的方法，从而在运行时精准拦截并评估每一次工具调用，确保 Agent 仅能访问其被授权的资源。
 
 ---
+
 ## 摘要
 
 本文介绍了Amazon Bedrock AgentCore中的Policy功能，旨在为AI代理（AI Agents）构建一个确定性的安全执行层。该机制独立于代理自身的推理过程，确保系统安全。
@@ -43,6 +59,7 @@ scenarios: ["AI/ML项目", "命令行工具"]
 3.  **运行时动态拦截**：借助AgentCore Gateway，系统会在运行时拦截并评估每一个代理对工具的调用请求，从而实时执行安全策略。
 
 ---
+
 ## 评论
 
 **中心观点**
@@ -95,15 +112,12 @@ scenarios: ["AI/ML项目", "命令行工具"]
     *   验证标准：P99 �
 
 ---
+
 ## 技术分析
 
 基于您提供的文章标题《Secure AI agents with Policy in Amazon Bedrock AgentCore》及摘要内容，这是一篇关于如何在生成式AI（Generative AI）应用中实施**确定性安全控制**的技术文章。
 
-文章的核心在于解决AI Agent（智能体）技术中最大的痛点——**不可预测性与安全性之间的矛盾**。以下是对该文章核心观点和技术要点的深入分析：
-
----
-
-## 1. 核心观点深度解读
+### 1. 核心观点深度解读
 
 ### 主要观点
 文章的核心观点是：**在构建企业级AI Agent时，必须将安全策略的执行层与Agent的推理层解耦。** 仅仅依赖大模型（LLM）自身的“理解”或“提示词”来遵守安全规则是不够的，必须引入一个外部的、确定性的强制执行层（如Amazon Bedrock AgentCore中的Policy机制）。
@@ -119,9 +133,7 @@ scenarios: ["AI/ML项目", "命令行工具"]
 ### 重要性
 随着AI Agent从“聊天机器人”向“行动者”（能够操作数据库、发送邮件、修改API）转变，错误的代价急剧上升。此观点对于企业落地AI至关重要，它是AI从“玩具”走向“生产级工具”的安全基石。
 
----
-
-## 2. 关键技术要点
+### 2. 关键技术要点
 
 ### 涉及的关键技术
 1.  **Amazon Bedrock AgentCore**: AWS提供的用于构建Agent的核心框架。
@@ -144,9 +156,7 @@ scenarios: ["AI/ML项目", "命令行工具"]
 ### 技术创新点
 **NL-to-Policy（自然语言生成策略）**是最大的创新点。它降低了安全运维的门槛，让不懂Cedar语法的业务人员也能定义规则，然后由系统自动转化为机器可执行的策略。
 
----
-
-## 3. 实际应用价值
+### 3. 实际应用价值
 
 ### 指导意义
 对于架构师和AI工程师而言，这篇文章确立了**“护栏优先”**的设计原则。在设计Agent时，不应先考虑“它能做什么”，而应先定义“它绝对不能碰什么”。
@@ -163,9 +173,7 @@ scenarios: ["AI/ML项目", "命令行工具"]
 ### 实施建议
 采用**纵深防御**策略。将AgentCore的Policy作为最后一道防线（硬防线），同时在Prompt中保留安全指令（软防线），并监控所有被拦截的请求以优化策略。
 
----
-
-## 4. 行业影响分析
+### 4. 行业影响分析
 
 ### 对行业的启示
 这标志着**AI安全治理从“提示词工程”向“代码化治理”的转型**。行业将意识到，仅靠调优Prompt无法满足合规要求（如GDPR、SOX），必须引入类似Cedar这样的标准策略语言。
@@ -177,9 +185,7 @@ scenarios: ["AI/ML项目", "命令行工具"]
 ### 发展趋势
 未来，AI Agent框架将内置更强大的RBAC/ABAC支持，策略管理将成为AI编排平台的核心竞争力之一。
 
----
-
-## 5. 延伸思考
+### 5. 延伸思考
 
 ### 拓展方向
 -   **动态策略调整**：策略能否根据实时风险评分动态变化？例如，检测到异常流量时，自动收紧Agent的权限。
@@ -189,26 +195,7 @@ scenarios: ["AI/ML项目", "命令行工具"]
 -   如何测试策略的有效性？是否会出现“对抗性攻击”，专门诱导Agent触发策略边界？
 -   策略本身的版本管理和回滚机制如何与AI模型的迭代同步？
 
----
-
-## 6. 实践建议
-
-### 如何应用到项目
-1.  **审计现有Agent**：列出你的Agent目前拥有的所有工具和能力。
-2.  **定义边界**：针对每个工具，写下“谁、在什么 context 下、可以做什么”。
-3.  **引入Cedar**：尝试将上述规则写成Cedar策略。
-4.  **测试用例**：专门设计一套“红队测试”Prompt，试图诱导Agent违规，验证Policy是否生效。
-
-### 知识补充
--   学习 **Cedar 语言语法**（基于Z3定理证明器）。
--   了解 **AWS IAM 与 Cedar 的区别**（IAM主要管理AWS资源访问，Cedar主要管理应用级权限）。
-
-### 注意事项
-不要试图用Policy来控制AI的“想法”（即它生成什么文本），那是内容过滤的任务。Policy主要用于控制AI的“行动”（即调用什么API、访问什么数据）。
-
----
-
-## 7. 案例分析
+### 7. 案例分析
 
 ### 成功案例（假设场景）
 **场景**：一家银行的AI客服助手。
@@ -219,9 +206,7 @@ scenarios: ["AI/ML项目", "命令行工具"]
 ### 失败案例反思
 *   **教训**：某公司只设置了Prompt限制“不要删除数据”，未设置硬约束。Agent在处理复杂脚本时，将“清空表”误解为“优化表”并执行了，导致数据丢失。如果有AgentCore Policy明确禁止`DROP`或`DELETE`操作，此次事故可避免。
 
----
-
-## 8. 哲学与逻辑：论证地图
+### 8. 哲学与逻辑：论证地图
 
 ### 中心命题
 **为了在企业环境中安全部署AI Agent，必须在Agent的推理层之外，构建一个独立的、基于代码的确定性策略执行层。**
@@ -250,9 +235,8 @@ scenarios: ["AI/ML项目", "命令行工具"]
     *   **实验**: 构建一组“越狱Prompt”，对比仅用Prompt防御的Agent与使用了AgentCore Policy的Agent的拦截率。预计后者拦截率接近100%。
 
 ---
-## 最佳实践
 
-## 最佳实践指南
+## 最佳实践
 
 ### 实践 1：实施基于角色的精细访问控制
 
@@ -338,6 +322,7 @@ AI 代理通常通过调用外部工具（API、数据库查询）来完成任�
 **注意事项**: 提示词注入技术不断演变，建议定期更新防御模式和对抗性测试样本。
 
 ---
+
 ## 学习要点
 
 - Amazon Bedrock 引入了 AgentCore 框架，通过将策略执行与核心代理逻辑解耦，实现了对 AI 智能体行为的细粒度治理与安全防护。
@@ -348,6 +333,7 @@ AI 代理通常通过调用外部工具（API、数据库查询）来完成任�
 - 此架构不仅增强了安全性，还通过提供可复用的安全组件，加速了企业级生成式 AI 应用的开发与落地流程。
 
 ---
+
 ## 引用
 
 - **文章/节目**: [https://aws.amazon.com/blogs/machine-learning/secure-ai-agents-with-policy-in-amazon-bedrock-agentcore](https://aws.amazon.com/blogs/machine-learning/secure-ai-agents-with-policy-in-amazon-bedrock-agentcore)
@@ -357,8 +343,6 @@ AI 代理通常通过调用外部工具（API、数据库查询）来完成任�
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [安全](/categories/%E5%AE%89%E5%85%A8/)
@@ -372,4 +356,3 @@ AI 代理通常通过调用外部工具（API、数据库查询）来完成任�
 - [构建安全的 Amazon Bedrock 智能体：利用 AgentCore Policy 实现工具调用合规]({{< relref "posts/20260313-blogs_podcasts-secure-ai-agents-with-policy-in-amazon-bedrock-age-5.md" >}})
 - [构建确定性执行层：利用 Amazon Bedrock AgentCore 策略管控 AI Agent]({{< relref "posts/20260314-blogs_podcasts-secure-ai-agents-with-policy-in-amazon-bedrock-age-7.md" >}})
 - [构建确定性执行层：利用 Amazon Bedrock AgentCore 策略管控 AI Agent]({{< relref "posts/20260314-blogs_podcasts-secure-ai-agents-with-policy-in-amazon-bedrock-age-8.md" >}})
-*本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

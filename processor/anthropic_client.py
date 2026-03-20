@@ -168,6 +168,11 @@ class AnthropicClient:
             stop_reason=getattr(message, "stop_reason", None),
         )
 
+    def _should_retry_truncated_text(self, *, message: Any, text: str) -> bool:
+        if not text or not text.strip():
+            return False
+        return getattr(message, "stop_reason", None) == "max_tokens"
+
     def _init_client(self) -> anthropic.Anthropic:
         """初始化 Anthropic 客户端"""
         api_key = self.config.get('api_key')
@@ -215,6 +220,7 @@ class AnthropicClient:
         max_retries = max(0, max_retries)
 
         attempt = 0
+        retried_truncated_text = False
         while True:
             try:
                 with self._semaphore:
@@ -247,8 +253,19 @@ class AnthropicClient:
                                 )
                             )
                         response_text = self._extract_text_from_message(fallback_message)
+                        message = fallback_message
                     else:
                         raise
+
+                if self._should_retry_truncated_text(message=message, text=response_text) and not retried_truncated_text:
+                    fallback_max_tokens = self._fallback_max_tokens(max_tokens)
+                    logger.warning(
+                        "LLM response ended at max_tokens; retrying once with max_tokens="
+                        f"{fallback_max_tokens}"
+                    )
+                    max_tokens = fallback_max_tokens
+                    retried_truncated_text = True
+                    continue
                 return response_text
 
             except anthropic.APIError as e:

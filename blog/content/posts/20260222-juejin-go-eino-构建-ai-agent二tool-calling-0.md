@@ -1,14 +1,28 @@
 ---
-title: "Go 结合 Eino 实现 Tool Calling 构建 AI Agent"
-date: 2026-02-22T09:52:55+08:00
+title: Go 结合 Eino 实现 Tool Calling 构建 AI Agent
+date: 2026-02-22 09:52:55+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Go", "Eino", "AI Agent", "Tool Calling", "LLM", "Function Calling", "后端开发", "开源框架"]
-categories: ["后端", "AI 工程"]
+entry_kind: auto
+tags:
+- Go
+- Eino
+- AI Agent
+- Tool Calling
+- LLM
+- Function Calling
+- 后端开发
+- 开源框架
+categories:
+- 后端
+- AI 工程
 source: juejin
-description: "本文是对 **Go + Eino 构建 AI Agent（二）：Tool Calling** 的简洁总结。 核心主题 本文介绍了如何在 Go 语言中使用 **Eino** 框架实现 **Tool Calling（工具调用）** 功能。通过结合 Eino 提供的工具组件与大模型，使 AI Agent 具备调用外部函数（如"
+description: 本文是对 **Go + Eino 构建 AI Agent（二）：Tool Calling** 的简洁总结。 核心主题 本文介绍了如何在 Go
+  语言中使用 **Eino** 框架实现 **Tool Calling（工具调用）** 功能。通过结合 Eino 提供的工具组件与大模型，使 AI Agent 具备调用外部函数（如
 external_url: https://juejin.cn/post/7608759940799266866
-scenarios: ["AI/ML项目", "大语言模型", "命令行工具"]
+scenarios:
+- AI/ML项目
+- 大语言模型
+- 命令行工具
 ---
 
 # Go 结合 Eino 实现 Tool Calling 构建 AI Agent
@@ -21,16 +35,19 @@ scenarios: ["AI/ML项目", "大语言模型", "命令行工具"]
 - **链接**: [https://juejin.cn/post/7608759940799266866](https://juejin.cn/post/7608759940799266866)
 
 ---
+
 ## 导语
 
 在构建 AI Agent 的过程中，让大模型准确调用外部工具是连接推理与执行的关键环节。本文将深入介绍 Eino 框架中的 Tool Calling 机制，详细解析如何利用 utils.InferTool 自动推断工具定义，并通过 BindTools() 将工具绑定至模型。通过阅读本文，读者可以掌握处理 response.ToolCalls 的完整流程，从而在 Go 项目中高效实现工具调用的逻辑闭环。
 
 ---
+
 ## 描述
 
 介绍 Eino 的 Tool Calling 功能。通过 utils.InferTool 自动推断工具定义，BindTools() 绑定到模型，处理 response.ToolCalls 执行工具。
 
 ---
+
 ## 摘要
 
 本文是对 **Go + Eino 构建 AI Agent（二）：Tool Calling** 的简洁总结。
@@ -65,6 +82,7 @@ scenarios: ["AI/ML项目", "大语言模型", "命令行工具"]
 Eino 的 Tool Calling 流程通过 **自动推断** 和 **绑定机制**，屏蔽了底层繁琐的协议转换细节，让 Go 开发者能够用极低的成本将本地函数转化为 AI Agent 可用的能力，从而构建出功能更强大的智能应用。
 
 ---
+
 ## 评论
 
 ### 中心观点
@@ -116,6 +134,7 @@ Eino 的 Tool Calling 流程通过 **自动推断** 和 **绑定机制**，屏�
     *   *指标*：当 LLM 返回格式错误的 Tool Call 参数时，框架能捕获并返回可读
 
 ---
+
 ## 学习要点
 
 - Eino 框架通过抽象 Tool 接口（Info/Call/Stream 方法）和提供便捷的 Wrapper，实现了将任意 Go 函数快速转化为 LLM 可调用的工具。
@@ -126,87 +145,56 @@ Eino 的 Tool Calling 流程通过 **自动推断** 和 **绑定机制**，屏�
 - Eino 严格遵循 LLM 返回的工具调用指令，通过自动路由机制精准匹配并执行对应的 Go 函数，实现了从对话到函数执行的自动化闭环。
 
 ---
+
 ## 常见问题
 
+### 在 Eino 框架中，Tool Calling 的具体实现原理是什么？
 
-### 1: 在 Eino 框架中，Tool Calling 的具体实现原理是什么？
-
-1: 在 Eino 框架中，Tool Calling 的具体实现原理是什么？
-
-**A**: 在 Eino 框架中，Tool Calling 的实现主要依赖于大模型的原生 Function Calling 能力或 Prompt 引导。具体流程通常分为三个阶段：
+在 Eino 框架中，Tool Calling 的实现主要依赖于大模型的原生 Function Calling 能力或 Prompt 引导。具体流程通常分为三个阶段：
 
 1.  **工具定义**: 开发者使用 Eino 提供的接口（如 `Tool` 或 `Function` 结构体）定义工具的元数据，包括名称、描述以及 JSON Schema 格式的参数定义。
 2.  **模型交互**: 在请求 LLM 时，将工具定义通过特定的参数（如 `tools` 字段）传递给模型。模型在生成回复时，会根据用户意图判断是否需要调用工具，并返回相应的函数调用名称和参数（通常为 JSON 字符串）。
 3.  **执行与回传**: Eino 捕获模型的调用意图，在本地执行对应的 Go 函数，获得结果后，将结果作为新的用户消息或系统消息再次发送给 LLM，由 LLM 生成最终的自然语言回复。
 
----
+### 使用 Go 语言实现 Tool Calling 时，如何处理复杂的 JSON 参数解析？
 
-
-
-### 2: 使用 Go 语言实现 Tool Calling 时，如何处理复杂的 JSON 参数解析？
-
-2: 使用 Go 语言实现 Tool Calling 时，如何处理复杂的 JSON 参数解析？
-
-**A**: 在 Go 中处理 LLM 返回的工具调用参数（通常是 JSON 字符串）是一个常见的痛点。最佳实践包括：
+在 Go 中处理 LLM 返回的工具调用参数（通常是 JSON 字符串）是一个常见的痛点。最佳实践包括：
 
 1.  **结构体映射**: 为每个工具定义专门的 Go `struct`，并使用 `json` tag 标注字段映射。
 2.  **使用 `encoding/json`**: 利用标准库将 LLM 返回的 JSON 字符串 Unmarshal 到结构体中。
 3.  **错误处理**: 必须处理解析错误。如果 LLM 生成的 JSON 格式不正确（例如幻觉导致的双引号缺失），代码应具备容错能力，或者向 LLM 返回错误信息要求其重新生成。
 4.  **利用 Eino 的类型转换**: 如果 Eino 提供了参数映射的中间件或辅助函数，应优先使用，以减少手动处理 `map[string]interface{}` 或 `json.RawMessage` 的复杂性。
 
----
+### 如果模型拒绝调用工具或返回错误的参数，应该如何进行重试或容错？
 
-
-
-### 3: 如果模型拒绝调用工具或返回错误的参数，应该如何进行重试或容错？
-
-3: 如果模型拒绝调用工具或返回错误的参数，应该如何进行重试或容错？
-
-**A**: 这种情况在 AI 应用中非常常见，可以通过以下策略增强鲁棒性：
+这种情况在 AI 应用中非常常见，可以通过以下策略增强鲁棒性：
 
 1.  **Prompt 优化**: 在 System Prompt 中明确指示模型：“如果无法从上下文中提取到必要参数，必须询问用户”或者“必须严格按照 JSON Schema 输出”。
 2.  **结果验证机制**: 在执行工具前，先校验参数的合法性（如必填项、类型检查）。如果校验失败，不执行工具，而是构造一段错误提示文本（例如“参数 age 必须为整数”）发送给 LLM，让其自我修正。
 3.  **最大重试次数**: 设置 Tool Calling 的最大重试次数（例如 3 次）。如果 LLM 连续多次无法生成正确的调用格式，则终止流程并转交人工客服或返回默认错误，避免无限循环消耗 Token。
 
----
+### Eino 框架中的 Tool 与普通 Go 函数有什么区别，如何注册？
 
-
-
-### 4: Eino 框架中的 Tool 与普通 Go 函数有什么区别，如何注册？
-
-4: Eino 框架中的 Tool 与普通 Go 函数有什么区别，如何注册？
-
-**A**: Eino 中的 Tool 并不是直接把 Go 函数扔给模型，而是对 Go 函数的一种封装描述：
+Eino 中的 Tool 并不是直接把 Go 函数扔给模型，而是对 Go 函数的一种封装描述：
 
 1.  **元数据描述**: Tool 需要包含模型能理解的“描述”，这是普通 Go 函数不具备的。模型是依靠这个描述来理解工具功能的。
 2.  **注册方式**: 通常需要实例化一个具体的 Tool 对象，包含 `Name`（唯一标识）、`Desc`（功能描述）、`Params`（参数 JSON Schema）以及一个 `Run` 方法（实际的 Go 函数逻辑）。
 3.  **注入到 Agent**: 在构建 Agent 或 Chain 时，通过 Eino 的 API（如 `WithTools`）将这些 Tool 对象注入到 LLM 的配置中。框架会自动处理将 Go 对象序列化为 LLM API 所需的 JSON 格式。
 
----
+### 在多轮对话中，如何确保 Tool Calling 不会丢失上下文？
 
-
-
-### 5: 在多轮对话中，如何确保 Tool Calling 不会丢失上下文？
-
-5: 在多轮对话中，如何确保 Tool Calling 不会丢失上下文？
-
-**A**: 保持上下文是 Agent 开发的核心。在 Tool Calling 场景下：
+保持上下文是 Agent 开发的核心。在 Tool Calling 场景下：
 
 1.  **消息历史管理**: 必须维护一个完整的 Message 列表。当模型决定调用工具时，这条“助手消息（包含 tool_calls）”和随后的“工具返回消息”都必须追加到历史列表中。
 2.  **Eino 的状态管理**: 如果使用 Eino 的组件（如 `Agent`），通常它会内部维护 `State`。你需要确保在配置时启用了历史记录的存储（例如存入 Redis 或内存）。
 3.  **全量发送**: 每次进行下一次 Tool Calling 或生成时，必须将包含之前工具调用结果的历史记录全量发送给 LLM，这样 LLM 才知道“刚才我调用了什么，结果是什么，下一步该做什么”。
 
----
+### Go + Eino 架构下，如何实现工具的并行调用？
 
-
-
-### 6: Go + Eino 架构下，如何实现工具的并行调用？
-
-6: Go + Eino 架构下，如何实现工具的并行调用？
-
-**A**: 某些场景下，模型可能会返回多个工具调用请求，且这些调用之间没有依赖关系，可以并行执行以提高效率
+某些场景下，模型可能会返回多个工具调用请求，且这些调用之间没有依赖关系，可以并行执行以提高效率
 
 ---
+
 ## 引用
 
 - **掘金原文**: [https://juejin.cn/post/7608759940799266866](https://juejin.cn/post/7608759940799266866)
@@ -215,8 +203,6 @@ Eino 的 Tool Calling 流程通过 **自动推断** 和 **绑定机制**，屏�
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [后端](/categories/%E5%90%8E%E7%AB%AF/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)
@@ -230,4 +216,3 @@ Eino 的 Tool Calling 流程通过 **自动推断** 和 **绑定机制**，屏�
 - [OpenClaw 开源 AI Agent 框架解析与 GitHub 增长复盘]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-3.md" >}})
 - [OpenClaw：GitHub 增长最快的开源 AI 智能体框架]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-4.md" >}})
 - [OpenClaw：GitHub 增长最快的开源 AI 智能体框架]({{< relref "posts/20260213-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-10.md" >}})
-*本文由 AI Stack 自动生成，提供深度内容分析。*

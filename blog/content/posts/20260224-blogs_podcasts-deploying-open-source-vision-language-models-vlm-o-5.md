@@ -1,14 +1,26 @@
 ---
-title: "在 Jetson 平台部署开源视觉语言模型"
-date: 2026-02-24T18:45:16+08:00
+title: 在 Jetson 平台部署开源视觉语言模型
+date: 2026-02-24 18:45:16+08:00
 draft: false
-entry_kind: "auto"
-tags: ["VLM", "Jetson", "边缘计算", "模型部署", "NVIDIA", "视觉语言模型", "嵌入式AI", "LLaVA"]
-categories: ["AI 工程", "系统与基础设施"]
+entry_kind: auto
+tags:
+- VLM
+- Jetson
+- 边缘计算
+- 模型部署
+- NVIDIA
+- 视觉语言模型
+- 嵌入式AI
+- LLaVA
+categories:
+- AI 工程
+- 系统与基础设施
 source: blogs_podcasts
-description: "随着多模态 AI 技术的演进，在边缘端部署视觉语言模型（VLM）已成为实现智能设备本地化感知的关键趋势。本文详细介绍了如何在 Jetson 平台上部署开源 VLM，涵盖了从环境配置到模型推理的完整流程。通过阅读此文，读者将掌握在边缘设备上高效运行视觉大模型的实践方法，从而在保障数据隐私的同时，有效提升系统的实时响应能力"
+description: 随着多模态 AI 技术的演进，在边缘端部署视觉语言模型（VLM）已成为实现智能设备本地化感知的关键趋势。本文详细介绍了如何在 Jetson
+  平台上部署开源 VLM，涵盖了从环境配置到模型推理的完整流程。通过阅读此文，读者将掌握在边缘设备上高效运行视觉大模型的实践方法，从而在保障数据隐私的同时，有效提升系统的实时响应能力
 external_url: https://huggingface.co/blog/nvidia/cosmos-on-jetson
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
 ---
 
 # 在 Jetson 平台部署开源视觉语言模型
@@ -22,11 +34,13 @@ scenarios: ["AI/ML项目"]
 - **链接**: [https://huggingface.co/blog/nvidia/cosmos-on-jetson](https://huggingface.co/blog/nvidia/cosmos-on-jetson)
 
 ---
+
 ## 导语
 
 随着多模态 AI 技术的演进，在边缘端部署视觉语言模型（VLM）已成为实现智能设备本地化感知的关键趋势。本文详细介绍了如何在 Jetson 平台上部署开源 VLM，涵盖了从环境配置到模型推理的完整流程。通过阅读此文，读者将掌握在边缘设备上高效运行视觉大模型的实践方法，从而在保障数据隐私的同时，有效提升系统的实时响应能力。
 
 ---
+
 ## 评论
 
 **中心观点：**
@@ -68,11 +82,10 @@ scenarios: ["AI/ML项目"]
 这篇文章是边缘计算与生成式AI交叉领域的重要实践指南。它不仅展示了技术落地的可能性，更揭示了未来智能终端从“感知”向“认知”进化的必然趋势。尽管受限于硬件物理属性，端侧VLM在能力上存在天花板，但在实时性、隐私性和成本敏感的场景下，其商业价值巨大。
 
 ---
+
 ## 技术分析
 
-# 深度技术分析：Jetson边缘端部署VLM的核心路径
-
-## 1. 核心观点深度解读
+### 1. 核心观点深度解读
 
 **主要观点：**
 文章的核心论点是**“通过模型量化（如4-bit AWQ/GPTQ）与推理引擎适配（TensorRT-LLM），将高性能开源视觉语言模型（VLM）成功部署至NVIDIA Jetson等资源受限的边缘设备，是实现具身智能与低延迟交互的必由之路。”**
@@ -86,7 +99,7 @@ scenarios: ["AI/ML项目"]
 **重要性：**
 这一技术路径的重要性在于它打破了**“大模型=高性能服务器”**的固有认知，为自动驾驶、工业检测等对实时性、安全性要求极高的场景提供了切实可行的技术底座。
 
-## 2. 关键技术要点
+### 2. 关键技术要点
 
 **涉及的关键技术：**
 1.  **模型量化：** FP16/BF16 转 INT4/INT8（AWQ, GPTQ）。
@@ -109,7 +122,7 @@ scenarios: ["AI/ML项目"]
 *   **难点3：散热与功耗墙。** 长时间高负载推理会导致降频。
     *   *方案：* 引入动态电压频率调整（DVFS），在生成Token时动态调节功耗模式。
 
-## 3. 实际应用价值
+### 3. 实际应用价值
 
 **对实际工作的指导意义：**
 该技术方案为嵌入式AI工程师提供了**“端侧大模型部署的标准范式”**。它证明了在边缘侧运行复杂多模态任务的可行性，指导开发者如何从模型选型（选择MoE或小参数量模型）到硬件调优（Max-N模式设置）进行全链路优化。
@@ -126,9 +139,8 @@ scenarios: ["AI/ML项目"]
 *   **散热设计：** 在边缘设备外壳设计时，必须为长时间运行VLM预留足够的被动散热空间。
 
 ---
-## 最佳实践
 
-## 最佳实践指南
+## 最佳实践
 
 ### 实践 1：利用 JetsonPack 进行环境依赖管理
 
@@ -196,9 +208,6 @@ scenarios: ["AI/ML项目"]
 
 ---
 
-### 实践
-
----
 ## 学习要点
 
 - 在 Jetson 平台上成功部署开源 VLM 的关键在于使用 TensorRT 和量化技术（如 INT4），以在有限的算力下实现实时推理性能。
@@ -210,6 +219,7 @@ scenarios: ["AI/ML项目"]
 - 部署过程中需重点关注散热与功耗管理（如使用 Jetson Clock 工具），以防止因热节流导致的推理性能下降。
 
 ---
+
 ## 引用
 
 - **文章/节目**: [https://huggingface.co/blog/nvidia/cosmos-on-jetson](https://huggingface.co/blog/nvidia/cosmos-on-jetson)
@@ -219,8 +229,6 @@ scenarios: ["AI/ML项目"]
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/)
@@ -234,4 +242,3 @@ scenarios: ["AI/ML项目"]
 - [在8位摩托罗拉6809上运行深度卷积神经网络玩棋盘游戏]({{< relref "posts/20260129-hacker_news-playing-board-games-with-deep-convolutional-neural-12.md" >}})
 - [在8位摩托罗拉6809上运行深度卷积神经网络玩桌游]({{< relref "posts/20260129-hacker_news-playing-board-games-with-deep-convolutional-neural-15.md" >}})
 - [通往无处不在的AI：实现每秒1.7万tokens推理]({{< relref "posts/20260220-hacker_news-the-path-to-ubiquitous-ai-17k-tokenssec-5.md" >}})
-*本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

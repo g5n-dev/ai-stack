@@ -1,14 +1,26 @@
 ---
-title: "Holotron-12B：高吞吐率计算机使用智能体"
-date: 2026-03-17T22:19:46+08:00
+title: Holotron-12B：高吞吐率计算机使用智能体
+date: 2026-03-17 22:19:46+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Holotron", "智能体", "Computer Use", "高吞吐率", "LLM", "Agent", "模型部署", "自动化"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- Holotron
+- 智能体
+- Computer Use
+- 高吞吐率
+- LLM
+- Agent
+- 模型部署
+- 自动化
+categories:
+- 大模型
+- AI 工程
 source: blogs_podcasts
-description: "随着大模型在自动化办公领域的应用日益深入，具备自主操作计算机能力的 Agent 正成为解决复杂工作流的关键。Holotron-12B 作为一款高吞吐量模型，通过优化指令执行效率，在保持 12B 参数规模精简性的同时，显著提升了长任务链的稳定性。本文将解析其技术架构与性能表现，帮助开发者了解该模型在构建自动化工具时的实际"
+description: 随着大模型在自动化办公领域的应用日益深入，具备自主操作计算机能力的 Agent 正成为解决复杂工作流的关键。Holotron-12B 作为一款高吞吐量模型，通过优化指令执行效率，在保持
+  12B 参数规模精简性的同时，显著提升了长任务链的稳定性。本文将解析其技术架构与性能表现，帮助开发者了解该模型在构建自动化工具时的实际
 external_url: https://huggingface.co/blog/Hcompany/holotron-12b
-scenarios: ["大语言模型"]
+scenarios:
+- 大语言模型
 ---
 
 # Holotron-12B：高吞吐率计算机使用智能体
@@ -22,14 +34,14 @@ scenarios: ["大语言模型"]
 - **链接**: [https://huggingface.co/blog/Hcompany/holotron-12b](https://huggingface.co/blog/Hcompany/holotron-12b)
 
 ---
+
 ## 导语
 
 随着大模型在自动化办公领域的应用日益深入，具备自主操作计算机能力的 Agent 正成为解决复杂工作流的关键。Holotron-12B 作为一款高吞吐量模型，通过优化指令执行效率，在保持 12B 参数规模精简性的同时，显著提升了长任务链的稳定性。本文将解析其技术架构与性能表现，帮助开发者了解该模型在构建自动化工具时的实际优势与集成要点。
 
 ---
-## 最佳实践
 
-## 最佳实践指南
+## 最佳实践
 
 ### 实践 1：构建高吞吐量的异步执行架构
 
@@ -106,6 +118,7 @@ scenarios: ["大语言模型"]
 **说明**: 高吞吐量 Agent 容易陷入“错误循环”，即重复执行错误的操作。最佳实践是配置反思机制，当任务连续失败或遇到错误代码时，强制模型暂停并进入“反思模式”。在此模式下，模型应分析当前状态与目标的
 
 ---
+
 ## 引用
 
 - **文章/节目**: [https://huggingface.co/blog/Hcompany/holotron-12b](https://huggingface.co/blog/Hcompany/holotron-12b)
@@ -115,8 +128,6 @@ scenarios: ["大语言模型"]
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)
@@ -130,4 +141,3 @@ scenarios: ["大语言模型"]
 - [Agent Skills：AI 智能体技能框架]({{< relref "posts/20260203-hacker_news-agent-skills-1.md" >}})
 - [LLM智能体新增Claws层以优化任务执行]({{< relref "posts/20260222-hacker_news-claws-are-now-a-new-layer-on-top-of-llm-agents-14.md" >}})
 - [智能体工程化的能力层级划分]({{< relref "posts/20260310-hacker_news-levels-of-agentic-engineering-11.md" >}})
-*本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

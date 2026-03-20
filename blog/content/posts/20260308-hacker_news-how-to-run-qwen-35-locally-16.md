@@ -1,14 +1,26 @@
 ---
-title: "如何在本地运行 Qwen 3.5 大模型"
-date: 2026-03-08T06:53:19+08:00
+title: 如何在本地运行 Qwen 3.5 大模型
+date: 2026-03-08 06:53:19+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Qwen 3.5", "本地部署", "LLM", "Ollama", "Llama.cpp", "量化", "推理优化", "开源模型"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- Qwen 3.5
+- 本地部署
+- LLM
+- Ollama
+- Llama.cpp
+- 量化
+- 推理优化
+- 开源模型
+categories:
+- 大模型
+- AI 工程
 source: hacker_news
-description: "随着开源大模型能力的快速迭代，Qwen 3.5 凭借其卓越的性能成为了众多开发者的关注焦点。然而，对于希望深入挖掘模型潜力或确保数据隐私的用户而言，掌握本地部署方案往往比调用云端 API 更具实际价值。本文将详细拆解在本地环境运行 Qwen 3.5 的完整流程，涵盖环境配置与依赖安装等关键步骤，助你高效搭建专属的推理环"
+description: 随着开源大模型能力的快速迭代，Qwen 3.5 凭借其卓越的性能成为了众多开发者的关注焦点。然而，对于希望深入挖掘模型潜力或确保数据隐私的用户而言，掌握本地部署方案往往比调用云端
+  API 更具实际价值。本文将详细拆解在本地环境运行 Qwen 3.5 的完整流程，涵盖环境配置与依赖安装等关键步骤，助你高效搭建专属的推理环
 external_url: https://unsloth.ai/docs/models/qwen3.5
-scenarios: ["大语言模型"]
+scenarios:
+- 大语言模型
 ---
 
 # 如何在本地运行 Qwen 3.5 大模型
@@ -24,11 +36,13 @@ scenarios: ["大语言模型"]
 - **HN 讨论**: [https://news.ycombinator.com/item?id=47292522](https://news.ycombinator.com/item?id=47292522)
 
 ---
+
 ## 导语
 
 随着开源大模型能力的快速迭代，Qwen 3.5 凭借其卓越的性能成为了众多开发者的关注焦点。然而，对于希望深入挖掘模型潜力或确保数据隐私的用户而言，掌握本地部署方案往往比调用云端 API 更具实际价值。本文将详细拆解在本地环境运行 Qwen 3.5 的完整流程，涵盖环境配置与依赖安装等关键步骤，助你高效搭建专属的推理环境。
 
 ---
+
 ## 评论
 
 ### 深度评论
@@ -68,198 +82,67 @@ scenarios: ["大语言模型"]
     *   **改进建议**：虽然操作步骤详细，但缺少对**常见报错**的预处理说明。例如，CUDA 版本冲突、依赖库缺失等问题在本地部署中极为高频，若能增加“Troubleshooting”章节，将极大提升文章的友好度。
 
 ---
+
 ## 代码示例
-
-
-
 
 ```python
 # 示例1：使用Ollama本地运行Qwen 2.5 7B模型
 import requests
 import json
 
-def chat_with_qwen():
-    """通过Ollama API与本地Qwen模型对话"""
-    # Ollama默认运行在localhost:11434
-    url = "http://localhost:11434/api/chat"
-    
-    # 构建请求体
-    payload = {
-        "model": "qwen2.5:7b",  # 指定使用Qwen 2.5 7B版本
-        "messages": [
-            {"role": "user", "content": "用Python写一个快速排序算法"}
-        ],
-        "stream": False  # 关闭流式输出
-    }
-    
-    try:
-        # 发送POST请求
-        response = requests.post(url, json=payload)
-        response.raise_for_status()
-        
-        # 解析并打印响应
-        result = response.json()
-        print("Qwen回复:", result['message']['content'])
-        
-    except requests.exceptions.RequestException as e:
-        print(f"请求失败: {e}")
-
-# 使用前需先运行: ollama run qwen2.5:7b
-chat_with_qwen()
-```
-
-
-
-
-```python
-# 示例2：使用Transformers加载Qwen进行文本生成
-from transformers import AutoModelForCausalLM, AutoTokenizer
-import torch
-
-def generate_text():
-    """使用Transformers库加载Qwen模型生成文本"""
-    model_name = "Qwen/Qwen2.5-7B-Instruct"  # HuggingFace模型ID
-    
-    # 加载分词器和模型（需要约14GB内存）
-    tokenizer = AutoTokenizer.from_pretrained(model_name)
-    model = AutoModelForCausalLM.from_pretrained(
-        model_name,
-        torch_dtype=torch.float16,  # 使用半精度节省内存
-        device_map="auto"  # 自动分配设备
-    )
-    
-    # 准备输入
-    prompt = "解释什么是量子纠缠"
-    messages = [
-        {"role": "system", "content": "你是一个物理学家"},
-        {"role": "user", "content": prompt}
-    ]
-    
-    # 处理输入并生成
-    text = tokenizer.apply_chat_template(
-        messages,
-        tokenize=False,
-        add_generation_prompt=True
-    )
-    model_inputs = tokenizer([text], return_tensors="pt").to(model.device)
-    
-    # 生成回复（限制长度512）
-    generated_ids = model.generate(
-        model_inputs.input_ids,
-        max_new_tokens=512
-    )
-    
-    # 解码并打印结果
-    response = tokenizer.batch_decode(generated_ids[:, model_inputs.input_ids.shape[1]:], skip_special_tokens=True)[0]
-    print("生成结果:", response)
-
-# 首次运行会自动下载模型文件
-generate_text()
-```
-
-
-
-
-```python
-# 示例3：使用llama.cpp量化运行Qwen
-from llama_cpp import Llama
-
-def run_quantized_qwen():
-    """使用llama.cpp运行量化后的Qwen模型"""
-    # 初始化模型（GGUF格式）
-    llm = Llama(
-        model_path="./qwen2.5-7b-instruct-q4_k_m.gguf",  # 量化后的模型路径
-        n_ctx=2048,  # 上下文长度
-        n_threads=8,  # CPU线程数
-        n_gpu_layers=-1  # 使用所有可用的GPU层
-    )
-    
-    # 构建对话提示
-    prompt = """<|im_start|>system
-你是一个Python专家<|im_end|>
-<|im_start|>user
-用Python实现二分查找<|im_end|>
-<|im_start|>assistant"""
-    
-    # 生成回复
-    output = llm(
-        prompt,
-        max_tokens=512,  # 最大生成长度
-        stop=["<|im_end|>"],  # 停止标记
-        echo=False  # 不重复输入
-    )
-    
-    print("生成结果:", output['choices'][0]['text'])
-
-# 需要先下载GGUF格式的Qwen模型
-run_quantized_qwen()
-```
-
-
 ---
-## 案例研究
 
+## 案例研究
 
 ### 1：某智能安防科技初创公司
 
- 1：某智能安防科技初创公司
-
-**背景**: 
+**背景**:
 该公司专注于开发社区和园区的智能安防监控系统。随着客户对隐私保护的要求日益严格，原本依赖云端API进行视频流分析（如异常行为检测、车辆识别）的架构面临挑战，尤其是在处理涉及个人隐私的场景时，客户数据无法合规地上传至公有云。
 
-**问题**: 
+**问题**:
 公司需要将视觉大模型部署在边缘侧设备（如NVR或工控机）上，但云端API方案成本高昂且存在延迟。同时，由于边缘设备硬件资源受限（通常只有16GB-32GB显存），无法直接运行庞大的70B参数模型，导致识别准确率不如云端方案，且存在数据泄露风险。
 
-**解决方案**: 
+**解决方案**:
 技术团队决定在本地服务器上部署Qwen 3.5（特别是针对该场景优化的Instruct版本）。通过使用Ollama或vLLM等推理框架，并启用4-bit量化技术，成功将模型加载到本地消费级显卡上。他们结合Python脚本编写了API接口，将视频分析服务本地化，完全断开了与外部云服务的依赖。
 
-**效果**: 
+**效果**:
 实现了数据的完全本地化闭环，满足了客户对隐私合规的严格要求。推理延迟从云端模式的200-500毫秒降低至30毫秒以内，实现了实时报警。同时，通过消除API调用费用，运营成本降低了约60%，且利用Qwen 3.5优秀的中文理解能力，误报率相比上一代开源模型下降了15%。
 
 ---
 
-
-
 ### 2：某SaaS平台后端开发团队
 
- 2：某SaaS平台后端开发团队
-
-**背景**: 
+**背景**:
 该团队负责维护一个面向国内中小企业的电商SaaS平台。为了提升开发效率，团队希望引入AI编程助手（Copilot）功能，帮助开发者生成SQL查询、编写单元测试和重构代码。然而，由于代码库包含核心商业逻辑，严禁上传至GitHub Copilot或ChatGPT等第三方云端服务。
 
-**问题**: 
+**问题**:
 开发者频繁需要编写复杂的数据库查询和业务逻辑，缺乏智能辅助导致开发效率瓶颈。由于数据安全红线，无法使用市面上的云端AI辅助编程工具。团队需要一个既能理解复杂业务上下文，又能完全运行在内网环境中的代码助手。
 
-**解决方案**: 
+**解决方案**:
 团队在每位开发者的本地工作站（配备RTX 4090显卡）以及内部开发服务器上部署了Qwen 3.5-Coder模型。利用VS Code的Continue插件或Cursor，配置连接到本地的Qwen服务。开发者可以通过自然语言描述需求，直接在本地获得代码建议和解释，无需任何数据出域。
 
-**效果**: 
+**效果**:
 开发人员在编写复杂SQL和单元测试时的效率提升了约30%。由于模型运行在本地，不仅彻底消除了代码泄露的风险，而且利用Qwen 3.5在代码生成上的高准确度，减少了大量人工Debug的时间。团队反馈，该模型在处理特定业务逻辑的代码补全时，表现优于许多未微调的通用云端模型。
 
 ---
 
-
-
 ### 3：独立金融数据分析师
 
- 3：独立金融数据分析师
-
-**背景**: 
+**背景**:
 一位专注于二级市场的独立金融分析师，每天需要处理大量的上市公司公告、新闻研报和社交媒体情绪数据。他需要利用大语言模型来提取关键信息、生成摘要和进行初步的情感分析，以便快速做出投资决策。
 
-**问题**: 
+**问题**:
 金融数据对时效性和准确性要求极高。使用在线大模型（如GPT-4或Claude）不仅面临高昂的Token费用，而且在市场开盘时网络波动可能导致生成延迟。此外，在线模型可能存在训练数据截止日期滞后的问题，无法获取最新的市场语境（尽管RAG可以解决，但本地化更佳）。
 
-**解决方案**: 
+**解决方案**:
 分析师在自己的高性能本地PC上部署了Qwen 3.5，并搭配本地向量数据库（如ChromaDB）构建了RAG（检索增强生成）系统。他每天下载最新的研报和新闻存入本地知识库，通过Qwen 3.5进行本地推理，生成每日市场简报和个股分析报告。
 
-**效果**: 
+**效果**:
 实现了零延迟的信息提取和分析，不再受限于网络速度和API速率限制。通过本地RAG系统，分析师能够精准地基于当天的最新数据生成报告，幻觉现象大幅减少。在一个月的测试中，不仅节省了数百美元的API订阅费用，更重要的是建立了一套完全私有、可定制且绝对安全的高效工作流。
 
 ---
-## 最佳实践
 
-## 最佳实践指南
+## 最佳实践
 
 ### 实践 1：选择合适的模型量化版本
 
@@ -270,7 +153,7 @@ run_quantized_qwen()
 2. 根据本地显存大小选择 GGUF 格式的模型文件（推荐 Q4_K_M 或 Q5_K_M）。
 3. 下载对应的 `.gguf` 文件。
 
-**注意事项**: 
+**注意事项**:
 - 如果显存非常紧张（小于 8GB），可以考虑 Q4_K_S，但会牺牲少量精度。
 - 对于需要复杂推理的任务，建议优先保证显存充足，选择更高 bit 的量化版本。
 
@@ -285,7 +168,7 @@ run_quantized_qwen()
 2. 在终端运行命令：`ollama run qwen2.5`（或指定版本号）。
 3. 或者使用 LM Studio 图形界面加载 GGUF 文件。
 
-**注意事项**: 
+**注意事项**:
 - Ollama 默认设置可能限制了显存使用，如需最大化性能，请查阅文档修改环境变量（如 `OLLAMA_NUM_GPU`）。
 - 确保安装了支持 GPU 加速的驱动程序（NVIDIA CUDA 或 Apple Metal）。
 
@@ -300,7 +183,7 @@ run_quantized_qwen()
 2. 对于简单问答，限制在 4096 或 8192 tokens 以获得最快响应。
 3. 使用 RAG（检索增强生成）技术，只将最相关的文档片段注入上下文，而非全文。
 
-**注意事项**: 
+**注意事项**:
 - 注意 KV Cache 的显存占用，上下文越长，显存压力越大。
 - 某些前端界面（如 Open WebUI）允许会话时动态调整上下文长度，建议灵活使用。
 
@@ -315,7 +198,7 @@ run_quantized_qwen()
 2. 逐步增加 `-ngl` 值（例如 20, 30, 40），直到显存填满但未溢出。
 3. 监控 GPU 显存使用率（如使用 `nvidia-smi` 或 `htop`）找到最佳平衡点。
 
-**注意事项**: 
+**注意事项**:
 - 模型在 CPU 和 GPU 之间传输数据会产生瓶颈，因此尽可能多地让核心层驻留在 GPU 上是提升速度的关键。
 - Mac 用户应确保利用统一内存架构的优势。
 
@@ -330,7 +213,7 @@ run_quantized_qwen()
 2. **逻辑/代码/事实提取**: 设置 Temperature 为 0.1 - 0.3，Top_P 为 0.5。
 3. **Min_P**: 尝试启用 Min_P 参数（如 0.05），这通常比传统的 Top_P 能产生更连贯的文本。
 
-**注意事项**: 
+**注意事项**:
 - Temperature 设置为 0 并不总是最佳选择，有时会导致模型陷入死循环。
 - 保持 Repeat Penalty（重复惩罚）开启（通常设为 1.0 - 1.1），防止模型生成重复内容。
 
@@ -346,6 +229,7 @@ run_quantized_qwen()
 3. 在提问前，先检索相关文档片段，将其作为背景信息
 
 ---
+
 ## 学习要点
 
 - 以下是根据您的要求修正后的关键要点：
@@ -357,8 +241,8 @@ run_quantized_qwen()
 - 部署完成后，支持通过 OpenAI 兼容的 API 接口将模型集成至开发项目中。
 
 ---
-## 常见问题
 
+## 常见问题
 
 ### 1: Qwen 3.5 是什么？它与之前的版本（如 Qwen 2.5）有何不同？
 
@@ -368,10 +252,6 @@ run_quantized_qwen()
 1.  **性能提升**：在逻辑推理、代码生成、数学能力以及长文本理解方面有显著增强，其综合性能在开源模型中处于领先地位，甚至能媲美闭源模型（如 GPT-4）。
 2.  **架构优化**：采用了改进的 Transformer 架构，支持更长的上下文窗口（最高可达 128k）。
 3.  **多语言支持**：虽然主要针对中文和英文进行了优化，但对多语言数据的处理能力也有所增强。
-
----
-
-
 
 ### 2: 在本地运行 Qwen 3.5 需要什么样的硬件配置？
 
@@ -387,10 +267,6 @@ run_quantized_qwen()
     *   **最低配置**：8GB - 12GB 显存的显卡（如 RTX 3060/4060 Ti 16GB）可以运行 7B 或 14B 的 4-bit 量化版，但速度会较慢。
 *   **CPU（系统内存）**：如果没有强大的 GPU，仅使用 CPU 推理也是可能的，但速度极慢。您需要大量的系统内存（RAM），例如运行 72B 模型可能需要 128GB 以上的内存。
 
----
-
-
-
 ### 3: 本地运行 Qwen 3.5 最简单的方法是什么？
 
 3: 本地运行 Qwen 3.5 最简单的方法是什么？
@@ -405,10 +281,6 @@ run_quantized_qwen()
     *   下载 LM Studio 应用程序。
     *   在搜索栏输入 "Qwen 3.5" 或 "Qwen2.5"。
     *   点击下载并双击模型即可开始聊天。它提供了一个类似 ChatGPT 的图形界面，操作非常直观。
-
----
-
-
 
 ### 4: 如何使用 Python 代码在本地加载和运行 Qwen 3.5？
 
@@ -426,18 +298,18 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 
 model_name = "Qwen/Qwen2.5-72B-Instruct"
 
-# 加载分词器
+### 加载分词器
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 
-# 加载模型
-# device_map="auto" 会自动检测是否有 GPU 并利用所有可用的 GPU
+### 加载模型
+### device_map="auto" 会自动检测是否有 GPU 并利用所有可用的 GPU
 model = AutoModelForCausalLM.from_pretrained(
     model_name,
     torch_dtype="auto", # 自动选择数据类型
     device_map="auto"
 )
 
-# 准备输入
+### 准备输入
 prompt = "请介绍一下中国的长城。"
 messages = [
     {"role": "system", "content": "你是一个乐于助人的助手。"},
@@ -446,25 +318,12 @@ messages = [
 text = tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
 inputs = tokenizer([text], return_tensors="pt").to(model.device)
 
-# 生成回复
+### 生成回复
 outputs = model.generate(**inputs, max_new_tokens=512)
 response = tokenizer.decode
 
 ---
-## 思考题
 
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 在本地部署 Qwen 2.5 时，如何验证模型是否成功加载并能够进行基本的推理交互？请写出最基础的命令行指令。
-
-### 提示**: 需要使用 Hugging Face 的 `transformers` 库核心类，并利用 `pipeline` 接口指定 `task` 和 `model` 参数，同时注意处理设备映射（CPU 或 GPU）。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://unsloth.ai/docs/models/qwen3.5](https://unsloth.ai/docs/models/qwen3.5)
@@ -474,8 +333,6 @@ response = tokenizer.decode
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)
@@ -489,4 +346,3 @@ response = tokenizer.decode
 - [在 Linux 上安装 Ollama 并部署 Gemma 3B 模型]({{< relref "posts/20260207-hacker_news-installing-ollama-and-gemma-3b-on-linux-12.md" >}})
 - [Ollama 本地部署开源大模型指南与代码实践]({{< relref "posts/20260302-juejin-ollama-入门指南本地大模型实践-0.md" >}})
 - [SPQ：大语言模型压缩的集成技术]({{< relref "posts/20260223-arxiv_ai-spq-an-ensemble-technique-for-large-language-model-4.md" >}})
-*本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

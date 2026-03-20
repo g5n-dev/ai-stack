@@ -1,14 +1,26 @@
 ---
-title: "面向C级高管的智能体AI落地实践指南"
-date: 2026-03-12T13:04:46+08:00
+title: 面向C级高管的智能体AI落地实践指南
+date: 2026-03-12 13:04:46+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Agentic AI", "AWS", "C-Level", "落地实践", "生成式AI", "CTO", "CISO", "生产力"]
-categories: ["大模型", "产品与创业"]
+entry_kind: auto
+tags:
+- Agentic AI
+- AWS
+- C-Level
+- 落地实践
+- 生成式AI
+- CTO
+- CISO
+- 生产力
+categories:
+- 大模型
+- 产品与创业
 source: blogs_podcasts
-description: "随着企业从概念验证转向规模化落地，如何将 Agentic AI 有效转化为实际生产力，已成为 C-level 高管与技术领导者面临的关键课题。本文基于 AWS 协助千余家客户落地的实战经验，旨在为 CTO、CISO 及业务负责人提供从战略规划到合规管理的全局视角。通过阅读本文，读者将获得一套可执行的决策框架，以在保障安"
+description: 随着企业从概念验证转向规模化落地，如何将 Agentic AI 有效转化为实际生产力，已成为 C-level 高管与技术领导者面临的关键课题。本文基于
+  AWS 协助千余家客户落地的实战经验，旨在为 CTO、CISO 及业务负责人提供从战略规划到合规管理的全局视角。通过阅读本文，读者将获得一套可执行的决策框架，以在保障安
 external_url: https://aws.amazon.com/blogs/machine-learning/operationalizing-agentic-ai-part-1-a-stakeholders-guide
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
 ---
 
 # 面向C级高管的智能体AI落地实践指南
@@ -22,16 +34,19 @@ scenarios: ["AI/ML项目"]
 - **链接**: [https://aws.amazon.com/blogs/machine-learning/operationalizing-agentic-ai-part-1-a-stakeholders-guide](https://aws.amazon.com/blogs/machine-learning/operationalizing-agentic-ai-part-1-a-stakeholders-guide)
 
 ---
+
 ## 摘要/简介
 
 AWS 生成式 AI 创新中心已协助 1,000 多位客户将 AI 投入生产，带来了数百万美元的可证生产率提升。在这篇文章中，我们面向 C-level 高管团队——包括 CTO、CISO、CDO 以及首席数据科学官/首席 AI 官，还有业务负责人与合规负责人——分享相关指导。
 
 ---
+
 ## 导语
 
 随着企业从概念验证转向规模化落地，如何将 Agentic AI 有效转化为实际生产力，已成为 C-level 高管与技术领导者面临的关键课题。本文基于 AWS 协助千余家客户落地的实战经验，旨在为 CTO、CISO 及业务负责人提供从战略规划到合规管理的全局视角。通过阅读本文，读者将获得一套可执行的决策框架，以在保障安全与合规的前提下，切实推动 AI 投入生产并实现业务价值。
 
 ---
+
 ## 评论
 
 **深度评论**
@@ -71,9 +86,8 @@ AWS 生成式 AI 创新中心已协助 1,000 多位客户将 AI 投入生产，�
 2.  **设定熔断机制**：在上线任何 Agent 前，必须定义明确的退出机制和预算熔断机制，防止 Agent 在异常循环中消耗过多资源。
 
 ---
-## 最佳实践
 
-## 最佳实践指南
+## 最佳实践
 
 ### 实践 1：明确业务价值与定义“代理”角色
 
@@ -149,6 +163,7 @@ AWS 生成式 AI 创新中心已协助 1,000 多位客户将 AI 投入生产，�
 2. 制定针对 AI 系统的 SLA（服务等级协议），考虑到 AI
 
 ---
+
 ## 引用
 
 - **文章/节目**: [https://aws.amazon.com/blogs/machine-learning/operationalizing-agentic-ai-part-1-a-stakeholders-guide](https://aws.amazon.com/blogs/machine-learning/operationalizing-agentic-ai-part-1-a-stakeholders-guide)
@@ -158,8 +173,6 @@ AWS 生成式 AI 创新中心已协助 1,000 多位客户将 AI 投入生产，�
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [产品与创业](/categories/%E4%BA%A7%E5%93%81%E4%B8%8E%E5%88%9B%E4%B8%9A/)
@@ -173,4 +186,3 @@ AWS 生成式 AI 创新中心已协助 1,000 多位客户将 AI 投入生产，�
 - [New Relic NOVA：基于AWS构建企业级生成式AI生产力引擎]({{< relref "posts/20260210-blogs_podcasts-new-relic-transforms-productivity-with-generative--10.md" >}})
 - [New Relic NOVA：基于AWS的生成式AI效能引擎架构与实践]({{< relref "posts/20260211-blogs_podcasts-new-relic-transforms-productivity-with-generative--11.md" >}})
 - [Lendi 基于 Amazon Bedrock 16周构建房贷AI守护者]({{< relref "posts/20260304-blogs_podcasts-how-lendi-revamped-the-refinance-journey-for-its-c-6.md" >}})
-*本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

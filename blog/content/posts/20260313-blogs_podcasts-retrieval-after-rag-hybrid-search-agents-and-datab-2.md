@@ -1,14 +1,26 @@
 ---
-title: "Turbopuffer 源自阅读应用的数据库设计"
-date: 2026-03-13T15:27:44+08:00
+title: Turbopuffer 源自阅读应用的数据库设计
+date: 2026-03-13 15:27:44+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Turbopuffer", "RAG", "向量数据库", "混合搜索", "数据库设计", "语义搜索", "Agent", "检索优化"]
-categories: ["数据", "系统与基础设施"]
+entry_kind: auto
+tags:
+- Turbopuffer
+- RAG
+- 向量数据库
+- 混合搜索
+- 数据库设计
+- 语义搜索
+- Agent
+- 检索优化
+categories:
+- 数据
+- 系统与基础设施
 source: blogs_podcasts
-description: "这是一个关于 **Turbopuffer** 联合创始人 **Simon Hørup Eskildsen** 在谈论检索增强生成（RAG）技术中“后检索”阶段内容的简洁总结。 核心主题：RAG 之后的检索（Retrieval After RAG） 演讲主要围绕如何优化 RAG 系统中的检索环节，特别是向量数据库的混合搜"
+description: 这是一个关于 **Turbopuffer** 联合创始人 **Simon Hørup Eskildsen** 在谈论检索增强生成（RAG）技术中“后检索”阶段内容的简洁总结。
+  核心主题：RAG 之后的检索（Retrieval After RAG） 演讲主要围绕如何优化 RAG 系统中的检索环节，特别是向量数据库的混合搜
 external_url: https://www.latent.space/p/turbopuffer
-scenarios: ["RAG应用"]
+scenarios:
+- RAG应用
 ---
 
 # Turbopuffer 源自阅读应用的数据库设计
@@ -22,16 +34,19 @@ scenarios: ["RAG应用"]
 - **链接**: [https://www.latent.space/p/turbopuffer](https://www.latent.space/p/turbopuffer)
 
 ---
+
 ## 摘要/简介
 
 Turbopuffer 是从一款阅读应用中诞生的。
 
 ---
+
 ## 导语
 
 检索增强生成（RAG）虽然普及了向量检索，但单纯依赖相似度匹配往往难以满足复杂业务需求。Turbopuffer 联合创始人 Simon Hørup Eskildsen 在本文中深入探讨了 RAG 之后的演进方向，重点解析混合检索、Agent 交互模式与数据库设计的深层逻辑。阅读本文，你将了解到如何通过架构层面的优化突破向量检索的局限，从而构建更精准、可扩展的搜索系统。
 
 ---
+
 ## 摘要
 
 这是一个关于 **Turbopuffer** 联合创始人 **Simon Hørup Eskildsen** 在谈论检索增强生成（RAG）技术中“后检索”阶段内容的简洁总结。
@@ -58,9 +73,8 @@ Turbopuffer 是从一款阅读应用中诞生的。
 Simon 的演讲指出，随着 RAG 技术的普及，重点正从简单的“向量嵌入”转向更复杂、更精准的“检索后”阶段。Turbopuffer 旨在通过优化的数据库设计和混合搜索策略，解决构建高性能 AI 应用时遇到的数据检索瓶颈。
 
 ---
-## 最佳实践
 
-## 最佳实践指南
+## 最佳实践
 
 ### 实践 1：采用混合搜索策略
 
@@ -144,6 +158,7 @@ Simon 的演讲指出，随着 RAG 技术的普及，重点正从简单的“向
 **注意事项**: 过度的过滤可能导致无结果返回，应设计兜底策略，例如当过滤后结果过少时自动放宽过滤条件。
 
 ---
+
 ## 学习要点
 
 - 在 RAG 系统中，混合检索（结合关键词与向量搜索）通常优于单纯的向量搜索，因为它能同时匹配语义和精确关键词，从而显著提高召回率。
@@ -154,6 +169,7 @@ Simon 的演讲指出，随着 RAG 技术的普及，重点正从简单的“向
 - 稀疏向量（如 SPLADE）与密集向量的结合，能在保持语义理解能力的同时，提供更好的可解释性和精准匹配。
 
 ---
+
 ## 引用
 
 - **文章/节目**: [https://www.latent.space/p/turbopuffer](https://www.latent.space/p/turbopuffer)
@@ -163,8 +179,6 @@ Simon 的演讲指出，随着 RAG 技术的普及，重点正从简单的“向
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [数据](/categories/%E6%95%B0%E6%8D%AE/) / [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/)
@@ -178,4 +192,3 @@ Simon 的演讲指出，随着 RAG 技术的普及，重点正从简单的“向
 - [AI大模型入门：Embedding原理与向量数据库应用]({{< relref "posts/20260305-juejin-ai大模型小白手册embedding-与向量数据库-0.md" >}})
 - [AI大模型指南：Embedding技术与向量数据库原理]({{< relref "posts/20260306-juejin-ai大模型小白手册embedding-与向量数据库-2.md" >}})
 - [Pinecone Explorer：Pinecone 向量数据库桌面 GUI]({{< relref "posts/20260131-hacker_news-show-hn-pinecone-explorer-desktop-gui-for-the-pine-16.md" >}})
-*本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

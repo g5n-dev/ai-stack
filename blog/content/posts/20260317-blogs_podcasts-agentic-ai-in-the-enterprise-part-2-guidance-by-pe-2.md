@@ -1,17 +1,30 @@
 ---
-title: "Agentic AI in the Enterprise Part 2: Guidance by Person"
-date: 2026-03-17T03:25:32+08:00
+title: 'Agentic AI in the Enterprise Part 2: Guidance by Person'
+date: 2026-03-17 03:25:32+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Agentic AI", "企业级应用", "AWS", "角色分工", "风险管理", "数据治理", "合规", "AI 落地"]
-categories: ["产品与创业", "大模型"]
+entry_kind: auto
+tags:
+- Agentic AI
+- 企业级应用
+- AWS
+- 角色分工
+- 风险管理
+- 数据治理
+- 合规
+- AI 落地
+categories:
+- 产品与创业
+- 大模型
 source: blogs_podcasts
-description: "本文是 AWS 生成式 AI 创新中心关于企业级代理 AI 的系列文章第二部分。本部分主要面向需要将基础构想转化为实际行动的企业领导者。 文章指出，不同的管理角色在代理 AI 的实施中承担着独特的职责、面临特定的风险并拥有不同的杠杆作用。无论是盈亏负责人、企业架构师、安全主管、数据治理者还是合规经理，代理 AI 的成功"
+description: 本文是 AWS 生成式 AI 创新中心关于企业级代理 AI 的系列文章第二部分。本部分主要面向需要将基础构想转化为实际行动的企业领导者。
+  文章指出，不同的管理角色在代理 AI 的实施中承担着独特的职责、面临特定的风险并拥有不同的杠杆作用。无论是盈亏负责人、企业架构师、安全主管、数据治理者还是合规经理，代理
+  AI 的成功
 external_url: https://aws.amazon.com/blogs/machine-learning/agentic-ai-in-the-enterprise-part-2-guidance-by-persona
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
 ---
 
-# Agentic AI in the Enterprise Part 2: Guidance by Persona
+# Agentic AI in the Enterprise Part 2: Guidance by Person
 
 ---
 
@@ -22,11 +35,13 @@ scenarios: ["AI/ML项目"]
 - **链接**: [https://aws.amazon.com/blogs/machine-learning/agentic-ai-in-the-enterprise-part-2-guidance-by-persona](https://aws.amazon.com/blogs/machine-learning/agentic-ai-in-the-enterprise-part-2-guidance-by-persona)
 
 ---
+
 ## 摘要/简介
 
 这是来自 AWS 生成式 AI 创新中心两部分系列文章的第二部分。在第二部分中，我们直接与那些必须将共同基础转化为行动的领导者对话。每个角色都肩负着独特的职责、风险和杠杆点。无论你是损益（P&L）负责人、企业架构师、安全主管、数据治理者还是合规管理者，本部分都使用你的职业语言来撰写——因为代理式 AI 的成败往往就在于此。
 
 ---
+
 ## 摘要
 
 本文是 AWS 生成式 AI 创新中心关于企业级代理 AI 的系列文章第二部分。本部分主要面向需要将基础构想转化为实际行动的企业领导者。
@@ -34,6 +49,7 @@ scenarios: ["AI/ML项目"]
 文章指出，不同的管理角色在代理 AI 的实施中承担着独特的职责、面临特定的风险并拥有不同的杠杆作用。无论是盈亏负责人、企业架构师、安全主管、数据治理者还是合规经理，代理 AI 的成功与否都取决于这些领导者是否能在各自的工作语言和职责范围内有效推动。
 
 ---
+
 ## 学习要点
 
 - 通过为 AI Agent 赋予具体的角色设定，可以显著提升其在企业环境中的任务执行准确性和上下文理解能力。
@@ -45,6 +61,7 @@ scenarios: ["AI/ML项目"]
 - 持续的迭代测试和 Prompt 微调是维持 Agent 长期有效性和适应业务变化的必要手段。
 
 ---
+
 ## 引用
 
 - **文章/节目**: [https://aws.amazon.com/blogs/machine-learning/agentic-ai-in-the-enterprise-part-2-guidance-by-persona](https://aws.amazon.com/blogs/machine-learning/agentic-ai-in-the-enterprise-part-2-guidance-by-persona)
@@ -54,8 +71,6 @@ scenarios: ["AI/ML项目"]
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [产品与创业](/categories/%E4%BA%A7%E5%93%81%E4%B8%8E%E5%88%9B%E4%B8%9A/) / [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)
@@ -69,4 +84,3 @@ scenarios: ["AI/ML项目"]
 - [Operationalizing Agentic AI Part 1: A Stakeholder’s Gui]({{< relref "posts/20260311-blogs_podcasts-operationalizing-agentic-ai-part-1-a-stakeholders--0.md" >}})
 - [面向C级高管的智能体AI落地实践指南]({{< relref "posts/20260312-blogs_podcasts-operationalizing-agentic-ai-part-1-a-stakeholders--4.md" >}})
 - [AWS生成式AI中心：C-suite高管落地智能体的生产实践指南]({{< relref "posts/20260312-blogs_podcasts-operationalizing-agentic-ai-part-1-a-stakeholders--9.md" >}})
-*本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

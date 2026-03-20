@@ -1,17 +1,29 @@
 ---
-title: "AWS and NVIDIA deepen strategic collaboration to accele"
-date: 2026-03-17T20:30:34+08:00
+title: AWS and NVIDIA deepen strategic collaboration to accele
+date: 2026-03-17 20:30:34+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AWS", "NVIDIA", "GTC 2026", "AI 基础设施", "战略合作", "生产环境", "算力", "云计算"]
-categories: ["系统与基础设施", "AI 工程"]
+entry_kind: auto
+tags:
+- AWS
+- NVIDIA
+- GTC 2026
+- AI 基础设施
+- 战略合作
+- 生产环境
+- 算力
+- 云计算
+categories:
+- 系统与基础设施
+- AI 工程
 source: blogs_podcasts
-description: "**中文总结：** 在 2026 年 NVIDIA GTC 大会上，AWS 与 NVIDIA 宣布深化战略合作关系。双方将通过新的技术集成，携手应对日益增长的 AI 算力需求，致力于帮助客户构建并运行可投入生产环境（Production-ready）的 AI 解决方案，从而加速 AI 项目从试点阶段迈向大规模生产应用的"
+description: '**中文总结：** 在 2026 年 NVIDIA GTC 大会上，AWS 与 NVIDIA 宣布深化战略合作关系。双方将通过新的技术集成，携手应对日益增长的
+  AI 算力需求，致力于帮助客户构建并运行可投入生产环境（Production-ready）的 AI 解决方案，从而加速 AI 项目从试点阶段迈向大规模生产应用的'
 external_url: https://aws.amazon.com/blogs/machine-learning/aws-and-nvidia-deepen-strategic-collaboration-to-accelerate-ai-from-pilot-to-production
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
 ---
 
-# AWS and NVIDIA deepen strategic collaboration to accelerate AI from pilot to production
+# AWS and NVIDIA deepen strategic collaboration to accele
 
 ---
 
@@ -22,16 +34,19 @@ scenarios: ["AI/ML项目"]
 - **链接**: [https://aws.amazon.com/blogs/machine-learning/aws-and-nvidia-deepen-strategic-collaboration-to-accelerate-ai-from-pilot-to-production](https://aws.amazon.com/blogs/machine-learning/aws-and-nvidia-deepen-strategic-collaboration-to-accelerate-ai-from-pilot-to-production)
 
 ---
+
 ## 摘要/简介
 
 今日在 NVIDIA GTC 2026 上，AWS 和 NVIDIA 宣布深化合作，推出多项新技术集成，以支持不断增长的 AI 计算需求，并助您构建和运行可投入生产的 AI 解决方案。
 
 ---
+
 ## 导语
 
 在 NVIDIA GTC 2026 期间，AWS 与 NVIDIA 宣布深化战略合作，通过多项新技术集成，旨在应对日益增长的 AI 计算需求。这一举措的核心在于打通从概念验证到大规模生产的路径，解决企业在 AI 落地过程中面临的算力与工程挑战。阅读本文，您将了解双方如何通过软硬件协同优化，帮助您构建并运行可投入生产的高性能 AI 解决方案。
 
 ---
+
 ## 摘要
 
 **中文总结：**
@@ -39,9 +54,8 @@ scenarios: ["AI/ML项目"]
 在 2026 年 NVIDIA GTC 大会上，AWS 与 NVIDIA 宣布深化战略合作关系。双方将通过新的技术集成，携手应对日益增长的 AI 算力需求，致力于帮助客户构建并运行可投入生产环境（Production-ready）的 AI 解决方案，从而加速 AI 项目从试点阶段迈向大规模生产应用的进程。
 
 ---
-## 最佳实践
 
-## 最佳实践指南
+## 最佳实践
 
 ### 实践 1：利用 GH200 超级芯片突破内存瓶颈
 
@@ -109,6 +123,7 @@ Project Ceiba 是专为大规模计算设计的超级计算机架构。对于致
 为了解决模型部署的“最后一公里”问题，建议将 Amazon SageMaker 的 MLOps 能力与 NVIDIA 的推理优化技术相结合。利用 NVIDIA TensorRT 等工具对模型进行量化、剪枝和编译，随后在 SageMaker 端点上进行部署，以最大化模型吞吐量并最小化推理延迟。
 
 ---
+
 ## 学习要点
 
 - AWS 将成为首家部署 NVIDIA Blackwell GPU 架构的云服务提供商。
@@ -120,6 +135,7 @@ Project Ceiba 是专为大规模计算设计的超级计算机架构。对于致
 - 此次合作旨在通过整合 AWS 的基础设施与 NVIDIA 的计算能力，协助企业将 AI 应用从概念验证转化为生产环境。
 
 ---
+
 ## 引用
 
 - **文章/节目**: [https://aws.amazon.com/blogs/machine-learning/aws-and-nvidia-deepen-strategic-collaboration-to-accelerate-ai-from-pilot-to-production](https://aws.amazon.com/blogs/machine-learning/aws-and-nvidia-deepen-strategic-collaboration-to-accelerate-ai-from-pilot-to-production)
@@ -129,8 +145,6 @@ Project Ceiba 是专为大规模计算设计的超级计算机架构。对于致
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)
@@ -144,4 +158,3 @@ Project Ceiba 是专为大规模计算设计的超级计算机架构。对于致
 - [AWS与NVIDIA深化战略合作，加速AI从试点到生产]({{< relref "posts/20260317-blogs_podcasts-aws-and-nvidia-deepen-strategic-collaboration-to-a-1.md" >}})
 - [Amazon SageMaker AI 2025回顾：弹性训练计划与推理性价比优化]({{< relref "posts/20260223-blogs_podcasts-amazon-sagemaker-ai-in-2025-a-year-in-review-part--2.md" >}})
 - [NVIDIA Nemotron 3 Nano 30B 现已登陆 Amazon SageMaker JumpSt]({{< relref "posts/20260212-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-0.md" >}})
-*本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

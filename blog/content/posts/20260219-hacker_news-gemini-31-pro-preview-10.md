@@ -1,14 +1,26 @@
 ---
-title: "谷歌发布 Gemini 3.1 Pro 预览版"
-date: 2026-02-19T19:36:28+08:00
+title: 谷歌发布 Gemini 3.1 Pro 预览版
+date: 2026-02-19 19:36:28+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Google", "Gemini", "Gemini 3.1 Pro", "LLM", "模型发布", "预览版", "AI", "API"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- Google
+- Gemini
+- Gemini 3.1 Pro
+- LLM
+- 模型发布
+- 预览版
+- AI
+- API
+categories:
+- 大模型
+- AI 工程
 source: hacker_news
-description: "随着大模型技术的快速迭代，开发者对于模型性能与响应速度的平衡有了更高要求。Gemini 3.1 Pro Preview 作为谷歌最新的预览版本，在推理能力与多模态处理上进行了针对性优化，旨在解决实际部署中的复杂问题。本文将深入解析该版本的核心更新与技术细节，帮助开发者评估其适用场景，并探索如何将其高效集成至现有工作流中"
+description: 随着大模型技术的快速迭代，开发者对于模型性能与响应速度的平衡有了更高要求。Gemini 3.1 Pro Preview 作为谷歌最新的预览版本，在推理能力与多模态处理上进行了针对性优化，旨在解决实际部署中的复杂问题。本文将深入解析该版本的核心更新与技术细节，帮助开发者评估其适用场景，并探索如何将其高效集成至现有工作流中
 external_url: https://console.cloud.google.com/vertex-ai/publishers/google/model-garden/gemini-3.1-pro-preview?pli=1
-scenarios: ["大语言模型", "AI/ML项目"]
+scenarios:
+- 大语言模型
+- AI/ML项目
 ---
 
 # 谷歌发布 Gemini 3.1 Pro 预览版
@@ -24,11 +36,13 @@ scenarios: ["大语言模型", "AI/ML项目"]
 - **HN 讨论**: [https://news.ycombinator.com/item?id=47074735](https://news.ycombinator.com/item?id=47074735)
 
 ---
+
 ## 导语
 
 随着大模型技术的快速迭代，开发者对于模型性能与响应速度的平衡有了更高要求。Gemini 3.1 Pro Preview 作为谷歌最新的预览版本，在推理能力与多模态处理上进行了针对性优化，旨在解决实际部署中的复杂问题。本文将深入解析该版本的核心更新与技术细节，帮助开发者评估其适用场景，并探索如何将其高效集成至现有工作流中。
 
 ---
+
 ## 评论
 
 ### 核心评价
@@ -78,10 +92,8 @@ scenarios: ["大语言模型", "AI/ML项目"]
 **安全与对齐的过度矫正**。Google 模型通常以“政治正确”和安全拒绝著称。文章争议性地忽略了模型的“过度拒绝”问题——即模型因安全策略拒绝回答正常的合法查询。这是行业普遍诟病的痛点，也是评价该模型实用性的关键负面因素，文章对此缺乏批判性探讨。
 
 ---
+
 ## 代码示例
-
-
-
 
 ```python
 # 示例1：实时Hacker News热点监控
@@ -100,21 +112,21 @@ def get_hacker_news_top_stories(limit=5):
         response = requests.get(url)
         response.raise_for_status()  # 检查请求是否成功
         story_ids = response.json()[:limit]
-        
+
         # 获取每个故事的详细信息
         stories = []
         for story_id in story_ids:
             detail_url = f"https://hacker-news.firebaseio.com/v0/item/{story_id}.json"
             detail_response = requests.get(detail_url)
             story = detail_response.json()
-            
+
             stories.append({
                 'title': story.get('title'),
                 'url': story.get('url', f"https://news.ycombinator.com/item?id={story_id}"),
                 'score': story.get('score'),
                 'time': datetime.fromtimestamp(story.get('time')).strftime('%Y-%m-%d %H:%M')
             })
-            
+
         return stories
     except Exception as e:
         print(f"获取数据时出错: {e}")
@@ -128,9 +140,6 @@ if __name__ == "__main__":
         print(f"   链接: {story['url']}")
         print(f"   分数: {story['score']} | 时间: {story['time']}\n")
 ```
-
-
-
 
 ```python
 # 示例2：Hacker News评论情感分析
@@ -147,31 +156,31 @@ def analyze_story_comments(story_id, max_comments=10):
     # 获取故事评论
     url = f"https://hacker-news.firebaseio.com/v0/item/{story_id}.json"
     story = requests.get(url).json()
-    
+
     if 'kids' not in story:
         print("这个故事没有评论")
         return
-    
+
     # 获取前N条评论
     comment_ids = story['kids'][:max_comments]
     results = []
-    
+
     for comment_id in comment_ids:
         comment_url = f"https://hacker-news.firebaseio.com/v0/item/{comment_id}.json"
         comment = requests.get(comment_url).json()
-        
+
         if comment and 'text' in comment:
             text = comment['text']
             # 使用TextBlob进行情感分析
             blob = TextBlob(text)
             sentiment = blob.sentiment.polarity
-            
+
             results.append({
                 'text': text[:100] + '...' if len(text) > 100 else text,
                 'sentiment': sentiment,
                 'author': comment.get('by', 'unknown')
             })
-    
+
     return results
 
 # 使用示例
@@ -179,7 +188,7 @@ if __name__ == "__main__":
     # 分析一个热门故事的评论(使用示例ID)
     story_id = 2921983  # 这是一个示例ID，实际使用时替换为真实ID
     comments = analyze_story_comments(story_id)
-    
+
     if comments:
         print("评论情感分析结果:")
         for i, comment in enumerate(comments, 1):
@@ -187,9 +196,6 @@ if __name__ == "__main__":
             print(f"   内容: {comment['text']}")
             print(f"   情感值: {comment['sentiment']:.2f} (负数=负面, 正数=正面)\n")
 ```
-
-
-
 
 ```python
 # 示例3：Hacker News数据可视化
@@ -205,7 +211,7 @@ def plot_hacker_news_trends(days=7):
     # 获取过去几天的热门故事
     url = "https://hacker-news.firebaseio.com/v0/topstories.json"
     top_ids = requests.get(url).json()[:100]  # 获取前100个热门故事
-    
+
     # 收集故事数据
     titles = []
     for story_id in top_ids:
@@ -213,22 +219,20 @@ def plot_hacker_news_trends(days=7):
         story = requests.get(story_url).json()
         if story and 'title' in story:
             titles.append(story['title'])
-    
+
     # 简单的关键词提取(这里使用空格分词，实际应用中可能需要更复杂的NLP)
     words = []
     for title in titles:
         words.extend([word.lower() for word in title.split() if len(word) > 3])
-    
+
     # 统计词频
     word_counts = Counter(words)
     top_words = word_counts.most_common(10)
-    
-    # 绘制条形图
 
+    # 绘制条形图
 
 ---
 ## 案例研究
-
 
 ### 1：全球领先的 CRM 平台提供商
 
@@ -248,8 +252,6 @@ def plot_hacker_news_trends(days=7):
 
 ---
 
-
-
 ### 2：跨国法律事务所的合同审查系统
 
  2：跨国法律事务所的合同审查系统
@@ -267,8 +269,6 @@ def plot_hacker_news_trends(days=7):
 合同初审的耗时从平均 4 小时缩短至 30 分钟。模型成功识别出了多处人工审查中遗漏的跨章节定义冲突，将潜在的法律风险降低了 60%。律师得以从繁琐的“找茬”工作中解放出来，将精力集中在更高价值的谈判策略制定上。
 
 ---
-
-
 
 ### 3：大型电商平台的个性化营销分析
 
@@ -388,7 +388,6 @@ Gemini 原生支持多模态
 ---
 ## 常见问题
 
-
 ### 1: Gemini 3.1 Pro Preview 是什么？
 
 1: Gemini 3.1 Pro Preview 是什么？
@@ -396,8 +395,6 @@ Gemini 原生支持多模态
 **A**: Gemini 3.1 Pro Preview 是 Google DeepMind 发布的 Gemini 系列模型中的一个预览版本。根据 Hacker News 等技术社区的讨论，该版本通常被视为 Gemini 3.0 的继任者或重大更新。它主要针对推理能力、代码生成以及长文本处理进行了优化。Google 往往会通过 "Preview"（预览）标签来让开发者和企业用户在正式版发布前测试最新的模型能力，因此该版本通常通过 Google AI Studio 或 Vertex AI 平台向特定用户开放访问。
 
 ---
-
-
 
 ### 2: 与之前的版本（如 Gemini 1.5 Pro）相比，它有哪些显著提升？
 
@@ -410,8 +407,6 @@ Gemini 原生支持多模态
 
 ---
 
-
-
 ### 3: 如何访问和使用 Gemini 3.1 Pro Preview？
 
 3: 如何访问和使用 Gemini 3.1 Pro Preview？
@@ -422,8 +417,6 @@ Gemini 原生支持多模态
 3.  **访问限制**：作为一个 Preview 版本，它可能首先对特定区域开放，或者需要加入等待列表。Hacker News 上的用户也指出，API 的速率限制在预览期可能较为严格。
 
 ---
-
-
 
 ### 4: 它的主要竞争对手是谁，性能对比如何？
 
@@ -437,8 +430,6 @@ Gemini 原生支持多模态
 
 ---
 
-
-
 ### 5: 该模型是否支持多模态输入（如图像、视频、音频）？
 
 5: 该模型是否支持多模态输入（如图像、视频、音频）？
@@ -446,8 +437,6 @@ Gemini 原生支持多模态
 **A**: 是的，Gemini 系列模型的核心优势之一就是原生多模态能力。Gemini 3.1 Pro Preview 继承并增强了这一能力。它不仅可以处理文本提示，还能直接分析图片、读取 PDF 文档中的图表，甚至处理视频片段。Hacker News 上的开发者反馈显示，其在处理包含图表的复杂文档时，提取数据的能力比纯文本模型有显著优势。
 
 ---
-
-
 
 ### 6: 开发者在使用该 API 时需要注意哪些常见问题？
 
@@ -459,20 +448,6 @@ Gemini 原生支持多模态
 3.  **JSON 输出格式**：虽然模型支持强制 JSON 输出，但在极少数情况下，模型可能会在 JSON 块前后添加解释性文本，开发者需要在代码层做好清洗工作。
 
 ---
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 假设你正在开发一个简单的聊天机器人应用。请设计一个 Prompt（提示词），利用 Gemini 2.5 Pro 的长上下文能力，让模型根据用户提供的最近 10 条聊天记录，总结出用户最关心的三个话题。
-
-### 提示**: 考虑如何构建输入数据的格式，以及如何明确指示模型输出结构化的结果（如列表或 JSON）。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://console.cloud.google.com/vertex-ai/publishers/google/model-garden/gemini-3.1-pro-preview?pli=1](https://console.cloud.google.com/vertex-ai/publishers/google/model-garden/gemini-3.1-pro-preview?pli=1)
@@ -481,7 +456,6 @@ Gemini 原生支持多模态
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接
@@ -496,4 +470,3 @@ Gemini 原生支持多模态
 - [Gemini 3 Deep Think 推出：强化长链思考能力]({{< relref "posts/20260212-hacker_news-gemini-3-deep-think-16.md" >}})
 - [Gemini 3.1 Pro：面向复杂任务的深度回答模型]({{< relref "posts/20260219-blogs_podcasts-gemini-31-pro-a-smarter-model-for-your-most-comple-4.md" >}})
 - [Claude Opus 4.6 发布：性能与上下文窗口提升]({{< relref "posts/20260205-hacker_news-claude-opus-46-2.md" >}})
-*本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

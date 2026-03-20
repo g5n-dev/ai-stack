@@ -1,14 +1,26 @@
 ---
-title: "Ulysses序列并行技术支持百万级Token上下文训练"
-date: 2026-03-10T07:05:59+08:00
+title: Ulysses序列并行技术支持百万级Token上下文训练
+date: 2026-03-10 07:05:59+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Ulysses", "序列并行", "长上下文", "分布式训练", "LLM", "Megatron", "注意力机制", "显存优化"]
-categories: ["大模型", "系统与基础设施"]
+entry_kind: auto
+tags:
+- Ulysses
+- 序列并行
+- 长上下文
+- 分布式训练
+- LLM
+- Megatron
+- 注意力机制
+- 显存优化
+categories:
+- 大模型
+- 系统与基础设施
 source: blogs_podcasts
-description: "随着大模型对上下文长度的需求日益增长，如何高效处理超长序列已成为技术瓶颈。本文深入探讨 Ulysses 提出的序列并行方案，解析其如何通过分布式策略将训练上下文扩展至百万 Token 级别。读者将了解到该方案在保持计算效率与通信平衡方面的具体实现，以及它为长文本模型训练带来的工程参考。"
+description: 随着大模型对上下文长度的需求日益增长，如何高效处理超长序列已成为技术瓶颈。本文深入探讨 Ulysses 提出的序列并行方案，解析其如何通过分布式策略将训练上下文扩展至百万
+  Token 级别。读者将了解到该方案在保持计算效率与通信平衡方面的具体实现，以及它为长文本模型训练带来的工程参考。
 external_url: https://huggingface.co/blog/ulysses-sp
-scenarios: ["大语言模型"]
+scenarios:
+- 大语言模型
 ---
 
 # Ulysses序列并行技术支持百万级Token上下文训练
@@ -22,11 +34,13 @@ scenarios: ["大语言模型"]
 - **链接**: [https://huggingface.co/blog/ulysses-sp](https://huggingface.co/blog/ulysses-sp)
 
 ---
+
 ## 导语
 
 随着大模型对上下文长度的需求日益增长，如何高效处理超长序列已成为技术瓶颈。本文深入探讨 Ulysses 提出的序列并行方案，解析其如何通过分布式策略将训练上下文扩展至百万 Token 级别。读者将了解到该方案在保持计算效率与通信平衡方面的具体实现，以及它为长文本模型训练带来的工程参考。
 
 ---
+
 ## 评论
 
 **中心观点**
@@ -68,6 +82,7 @@ Ulysses 通过在注意力计算中引入序列维度的并行化，在不改变
 2.  **带宽监控**：在部署 Ulysses 时，必须严格监控网卡带宽利用率。如果发现通信带宽打满而 GPU 利用率下降（Bubble 过大），说明序列并行度过高，应考虑减小
 
 ---
+
 ## 技术分析
 
 基于您提供的标题《Ulysses Sequence Parallelism: Training with Million-Token Contexts》（Ulysses 序列并行：使用百万级令牌上下文进行训练），这是一篇在长上下文大语言模型（LLM）训练领域极具影响力的技术论文（通常指由微软、MIT等机构联合发表的研究）。
@@ -76,9 +91,9 @@ Ulysses 通过在注意力计算中引入序列维度的并行化，在不改变
 
 ---
 
-# Ulysses Sequence Parallelism: 深度分析报告
+### Ulysses Sequence Parallelism: 深度分析报告
 
-## 1. 核心观点深度解读
+### 1. 核心观点深度解读
 
 **主要观点**
 文章提出了 **Ulysses**，一种针对超长序列（上下文窗口高达 100 万甚至更多 Token）的高效并行训练策略。其核心观点是：**为了打破长序列训练的内存墙和通信瓶颈，必须将注意力机制的计算从“数据并行”或“张量并行”中剥离出来，通过在序列维度上进行切分，并利用 All-To-All 通信算子重组数据，从而实现通信量与序列长度无关的线性扩展能力。**
@@ -93,9 +108,7 @@ Ulysses 通过在注意力计算中引入序列维度的并行化，在不改变
 **重要性**
 随着 LLM 向 Agent（智能体）和长文本摘要、长代码库分析方向发展，上下文窗口从 4k 扩展到 1M+ 是必然趋势。Ulysses 提供了一条在此类硬件限制下，**以低通信成本训练无限长度上下文模型**的可行路径，是实现“无限上下文”愿景的基石技术之一。
 
----
-
-## 2. 关键技术要点
+### 2. 关键技术要点
 
 **涉及的关键技术或概念**
 - **Sequence Parallelism (SP, 序列并行)**：将输入序列沿维度切分到不同设备。
@@ -123,9 +136,7 @@ Ulysses 的实现包含三个关键步骤，假设有 $N$ 个 GPU，序列长度
 - **通信复杂度优化**：证明了在 Attention 层，通信量可以控制在 $O(1)$（相对于序列长度），而 Ring Attention 是 $O(N)$。
 - **与 4D 并行的兼容性**：Ulysses 专门设计为可以与 ZeRO（数据并行）、Tensor Parallel（张量并行）和 Pipeline Parallel（流水线并行）无缝结合，形成 4D 并行架构。
 
----
-
-## 3. 实际应用价值
+### 3. 实际应用价值
 
 **对实际工作的指导意义**
 对于 AI 基础设施团队和算法工程师，Ulysses 提供了在不增加昂贵硬件（如 H100 显存升级）的情况下，利用现有 GPU 集群训练长上下文模型的方法论。
@@ -144,9 +155,7 @@ Ulysses 的实现包含三个关键步骤，假设有 $N$ 个 GPU，序列长度
 - 在集群部署时，确保 NCCL 通信优化开启。
 - 建议将 Ulysses 用于 **预训练** 或 **长文本 SFT 阶段**，推理阶段可能更适合使用其他投机采样或 KV Cache 压缩技术。
 
----
-
-## 4. 行业影响分析
+### 4. 行业影响分析
 
 **对行业的启示**
 Ulysses 的出现标志着“长上下文”不再是少数顶尖实验室的特权。它降低了长序列训练的工程门槛，使得长上下文模型（如 Moonshot, Kimi, Claude 3 等）的技术方案趋于标准化。
@@ -159,9 +168,7 @@ Ulysses 的出现标志着“长上下文”不再是少数顶尖实验室的特
 - **从 Ring 到 Ulysses**：行业正在从 Ring Attention 向 Ulysses (或类似的 Megatron-Style SP) 迁移。
 - **稀疏注意力结合**：未来可能会看到 Ulysses 与 Sparse Attention（如 FlashAttention 变体）的结合，进一步降低计算量。
 
----
-
-## 5. 延伸思考
+### 5. 延伸思考
 
 **引发的思考**
 - **算法定义硬件**：Ulysses 对通信拓扑的特殊要求，是否会倒逼数据中心网络架构的变革？
@@ -171,30 +178,7 @@ Ulysses 的出现标志着“长上下文”不再是少数顶尖实验室的特
 - **非 Transformer 架构**：Ulysses 基于 Transformer 的 Attention 机制。对于 Mamba/SSM 等线性复杂度的状态空间模型，是否需要类似的并行策略？（答案是不需要，因为它们本身就是 RNN 特性，但这可能限制了它们的长程召回能力，Ulysses 保证了精确召回）。
 - **MoE + 长上下文**：当混合专家模型遇到百万级上下文时，路由机制该如何设计？
 
----
-
-## 6. 实践建议
-
-**如何应用到自己的项目**
-1. **评估基础设施**：检查你的 GPU 集群是否支持 NVLink/IB。如果是普通以太网，Ulysses 的收益会被抵消。
-2. **选择框架**：使用集成了 Ulysses 的框架，如 **Megatron-LM** 或 **DeepSpeed**。
-3. **配置并行度**：
-   - 设置 `context_parallel_degree` (CP degree)。
-   - 确保 `Global Batch Size` 能被 CP degree 整除。
-   - 通常 CP degree 不宜过大（如 <= 8），否则 All-to-All 开销增加。
-
-**具体行动建议**
-- 在微调阶段，如果显存不够，优先尝试 **FlashAttention 2**。
-- 如果序列长度超过 32k 且显存依然不足，引入 **Ulysses**。
-- 监控 `all_to_all` 的通信耗时，如果占比过高，尝试减少 CP 的并行度。
-
-**注意事项**
-- **数值稳定性**：极长的序列可能导致 Attention Score 数值溢出，需确保使用 scaled-dot-product attention 的正确缩放因子。
-- **Checkpoint 恢复**：分布式 Checkpoint 的保存和恢复需要支持 CP 维度，否则无法正确加载模型权重。
-
----
-
-## 7. 案例分析
+### 7. 案例分析
 
 **成功案例**
 - **Microsoft/DeepSpeed 团队**：在官方演示中，利用 Ulysses 在标准 H100 集群上成功训练了上下文窗口长达 128k-1M 的模型，且吞吐量相比 Ring Attention 提升了数倍。这直接支持了 Azure OpenAI Service 中长文本模型的服务能力。
@@ -203,9 +187,7 @@ Ulysses 的出现标志着“长上下文”不再是少数顶尖实验室的特
 **失败/反思**
 - **低带宽环境下的尝试**：部分研究者在 AWS EC2（基于普通以太网的 p4/p5 实例，未充分优化网络）上尝试高并行的 Ulysses，发现训练速度反而比单卡慢。这验证了该技术对**带宽**的极度依赖。
 
----
-
-## 8. 哲学与逻辑：论证地图
+### 8. 哲学与逻辑：论证地图
 
 **中心命题**
 **Ulysses Sequence Parallelism 是目前在大规模集群上训练超长上下文（>100k tokens）Transformer 模型最高效、最具扩展性的并行策略。**
@@ -217,9 +199,8 @@ Ulysses 的出现标志着“长上下文”不再是少数顶尖实验室的特
     - *依据*：Micro-benchmark 显示，在长序列下，Ulysses
 
 ---
-## 最佳实践
 
-## 最佳实践指南
+## 最佳实践
 
 ### 实践 1：合理配置序列并行度
 
@@ -286,11 +267,6 @@ Ulysses 的出现标志着“长上下文”不再是少数顶尖实验室的特
 
 ---
 
-### 实践 6：实施高效的数据加载与预处理流水线
-
-**
-
----
 ## 学习要点
 
 - Ulysses 将超长序列在数据并行维度上进行切分，使得模型能够以极低的通信开销训练百万级 Token 上下文，突破了显存容量对上下文长度的限制。
@@ -301,6 +277,7 @@ Ulysses 的出现标志着“长上下文”不再是少数顶尖实验室的特
 - 通过解耦序列长度与显存限制，该方法使得在有限的硬件资源下训练长上下文大语言模型变得更加容易和高效。
 
 ---
+
 ## 引用
 
 - **文章/节目**: [https://huggingface.co/blog/ulysses-sp](https://huggingface.co/blog/ulysses-sp)
@@ -310,8 +287,6 @@ Ulysses 的出现标志着“长上下文”不再是少数顶尖实验室的特
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/)
@@ -325,4 +300,3 @@ Ulysses 的出现标志着“长上下文”不再是少数顶尖实验室的特
 - [Ulysses序列并行技术实现百万Token上下文训练]({{< relref "posts/20260310-blogs_podcasts-ulysses-sequence-parallelism-training-with-million-7.md" >}})
 - [基于注意力匹配机制实现快速KV压缩]({{< relref "posts/20260220-hacker_news-fast-kv-compaction-via-attention-matching-18.md" >}})
 - [基于对称感知泰勒近似实现恒定Token成本注意力机制]({{< relref "posts/20260204-hacker_news-attention-at-constant-cost-per-token-via-symmetry--4.md" >}})
-*本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

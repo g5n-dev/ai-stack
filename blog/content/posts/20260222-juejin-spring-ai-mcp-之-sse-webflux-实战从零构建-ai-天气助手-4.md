@@ -1,14 +1,28 @@
 ---
-title: "Spring AI MCP 结合 WebFlux SSE 构建 AI 天气助手"
-date: 2026-02-22T07:40:33+08:00
+title: Spring AI MCP 结合 WebFlux SSE 构建 AI 天气助手
+date: 2026-02-22 07:40:33+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Spring AI", "MCP", "WebFlux", "SSE", "LLM", "流式响应", "实战教程", "天气助手"]
-categories: ["后端", "AI 工程"]
+entry_kind: auto
+tags:
+- Spring AI
+- MCP
+- WebFlux
+- SSE
+- LLM
+- 流式响应
+- 实战教程
+- 天气助手
+categories:
+- 后端
+- AI 工程
 source: juejin
-description: "在 AI 应用开发中，如何让大语言模型（LLM）与外部工具无缝集成一直是个难题。MCP（Model Context Protocol，模型上下文协议）为此提供了一个标准化的解决方案。本文将带你一步步实现一个基于 Spring WebFlux 的 Server-Sent Events（SSE）流式响应的 AI 天气助手，"
+description: 在 AI 应用开发中，如何让大语言模型（LLM）与外部工具无缝集成一直是个难题。MCP（Model Context Protocol，模型上下文协议）为此提供了一个标准化的解决方案。本文将带你一步步实现一个基于
+  Spring WebFlux 的 Server-Sent Events（SSE）流式响应的 AI 天气助手，
 external_url: https://juejin.cn/post/7608212715346690054
-scenarios: ["AI/ML项目", "Web应用开发", "大语言模型"]
+scenarios:
+- AI/ML项目
+- Web应用开发
+- 大语言模型
 ---
 
 # Spring AI MCP 结合 WebFlux SSE 构建 AI 天气助手
@@ -21,11 +35,13 @@ scenarios: ["AI/ML项目", "Web应用开发", "大语言模型"]
 - **链接**: [https://juejin.cn/post/7608212715346690054](https://juejin.cn/post/7608212715346690054)
 
 ---
+
 ## 导语
 
 在 AI 应用开发中，如何让大语言模型（LLM）与外部工具无缝集成一直是个难题。MCP（Model Context Protocol，模型上下文协议）为此提供了一个标准化的解决方案。本文将带你一步步实现一个基于 Spring WebFlux 的 Server-Sent Events（SSE）流式响应的 AI 天气助手，展示如何通过 MCP 将实时天气查询能力赋予 LLM。
 
 ---
+
 ## 描述
 
 Spring AI MCP 之 SSE WebFlux 实战：从零构建 AI 天气助手
@@ -33,6 +49,7 @@ Spring AI MCP 之 SSE WebFlux 实战：从零构建 AI 天气助手
 在 AI 应用开发中，如何让大语言模型（LLM）与外部工具无缝集成一直是个难题。MCP（Model Context Protocol，模型上下文协议）为此提供了一个标准化的解决方案。本文将带你一步步实现一个基于 Spring WebFlux 的 Server-Sent Events（SSE）流式响应的 AI 天气助手，展示如何通过 MCP 将实时天气查询能力赋予 LLM。
 
 ---
+
 ## 评论
 
 ### 中心观点
@@ -73,6 +90,7 @@ Spring AI MCP 之 SSE WebFlux 实战：从零构建 AI 天气助手
 3.  **安全性考量：** MCP 允许 LLM 调用本地工具，这带来了巨大的安全风险。务必在 MCP Server 端实施严格的权限校
 
 ---
+
 ## 学习要点
 
 - 掌握基于 Spring WebFlux 的 SSE (Server-Sent Events) 流式输出实现，解决 AI 响应的打字机效果与实时交互问题。
@@ -83,14 +101,12 @@ Spring AI MCP 之 SSE WebFlux 实战：从零构建 AI 天气助手
 - 验证了 Spring AI 在处理复杂工具调用场景下的稳定性，为构建企业级 AI Agent 应用提供标准化的架构参考。
 
 ---
+
 ## 常见问题
 
+### Spring AI MCP 中的 SSE 和传统的 HTTP 轮询有什么区别？
 
-### 1: Spring AI MCP 中的 SSE 和传统的 HTTP 轮询有什么区别？
-
-1: Spring AI MCP 中的 SSE 和传统的 HTTP 轮询有什么区别？
-
-**A**: SSE（Server-Sent Events）与 HTTP 轮询在实现 AI 流式响应时有本质区别。
+SSE（Server-Sent Events）与 HTTP 轮询在实现 AI 流式响应时有本质区别。
 
 1.  **连接机制**：HTTP 轮询需要客户端反复向服务器发起请求（例如每秒一次），即使没有新数据也会产生大量无效请求和 HTTP 开销。而 SSE 是基于 HTTP 的单向持久连接，客户端发起一次请求后，服务器可以保持连接打开，并在有数据生成时主动推送。
 2.  **实时性与资源消耗**：SSE 的延迟更低，因为数据生成后立即推送，无需等待下一次轮询周期。同时，SSE 显著减少了服务器处理无效请求的负担。
@@ -98,29 +114,17 @@ Spring AI MCP 之 SSE WebFlux 实战：从零构建 AI 天气助手
 
 在 Spring WebFlux 中，SSE 的实现非常简单，只需返回 `Flux<ServerSentEvent>` 类型，Spring 会自动处理 `Content-Type: text/event-stream` 和 Keep-Alive 机制。
 
----
+### 为什么在构建 AI 天气助手时选择 Spring WebFlux 而不是 Spring MVC？
 
-
-
-### 2: 为什么在构建 AI 天气助手时选择 Spring WebFlux 而不是 Spring MVC？
-
-2: 为什么在构建 AI 天气助手时选择 Spring WebFlux 而不是 Spring MVC？
-
-**A**: 选择 WebFlux 主要是为了适配 AI 大模型流式输出的特性以及高并发场景。
+选择 WebFlux 主要是为了适配 AI 大模型流式输出的特性以及高并发场景。
 
 1.  **背压与流式处理**：AI 模型（如 OpenAI）的返回是 Token by Token 的流式数据。Spring WebFlux 基于 Reactor（`Flux` 和 `Mono`），天然支持非阻塞的响应式流。这意味着我们可以逐个 Token 处理数据，并立即通过 SSE 推送给前端，而不需要等待整个响应生成完毕。
 2.  **线程模型**：在 Spring MVC（Servlet 模型）中，每个请求会占用一个线程直到响应结束。对于长连接的 AI 对话，这容易导致线程池耗尽。WebFlux 使用少量的 EventLoop 线程即可处理大量并发连接，资源利用率极高。
 3.  **统一的数据流**：从调用第三方 AI API（通常是流式 HTTP 客户端）到前端 SSE 推送，全程可以使用响应式管道无缝衔接，代码更加简洁。
 
----
+### 在实战代码中，`ServerSentEvent` 和直接返回 `Flux<String>` 有什么区别？
 
-
-
-### 3: 在实战代码中，`ServerSentEvent` 和直接返回 `Flux<String>` 有什么区别？
-
-3: 在实战代码中，`ServerSentEvent` 和直接返回 `Flux<String>` 有什么区别？
-
-**A**: 两者都可以实现流式传输，但 `ServerSentEvent` 提供了更丰富的语义控制。
+两者都可以实现流式传输，但 `ServerSentEvent` 提供了更丰富的语义控制。
 
 1.  **直接返回 `Flux<String>`**：Spring WebFlux 会将字符串片段直接写入响应体。这种方式简单直接，适合纯文本流。
 2.  **使用 `ServerSentEvent`**：它允许你构建结构化的 SSE 消息。你可以设置：
@@ -132,34 +136,23 @@ Spring AI MCP 之 SSE WebFlux 实战：从零构建 AI 天气助手
 
 在构建 AI 助手时，通常推荐使用 `Flux<String>` 配合 `produces = MediaType.TEXT_EVENT_STREAM_VALUE` 即可满足需求，因为 AI 流主要关注数据本身。但如果需要区分“开始”、“中间 Token”、“结束”等事件类型，使用 `ServerSentEvent` 会更加规范。
 
----
+### 如何处理 AI 流式输出中的异常断开或超时问题？
 
-
-
-### 4: 如何处理 AI 流式输出中的异常断开或超时问题？
-
-4: 如何处理 AI 流式输出中的异常断开或超时问题？
-
-**A**: 在长连接或网络不稳定的环境下，流式传输可能会中断。在 Spring WebFlux 中可以通过以下机制增强健壮性：
+在长连接或网络不稳定的环境下，流式传输可能会中断。在 Spring WebFlux 中可以通过以下机制增强健壮性：
 
 1.  **超时设置**：使用 Reactor 的 `.timeout()` 操作符限制单次请求的最大等待时间，防止客户端无限期挂起。
 2.  **重试机制**：利用 `.retryWhen()` 操作符配置重试策略。但需要注意 AI 接口的幂等性，通常流式输出一旦中断，重试是重新发起请求，而不是从断点继续。
 3.  **错误信号处理**：在 Flux 管道末端使用 `.doOnError()` 或 `.onErrorResume()`。当发生错误（如 AI 服务 502 错误）时，可以发送一个特殊的 SSE 事件（例如 `data: [ERROR] ...`）给前端，让前端知道流已异常终止，而不是让连接静默断开。
 4.  **前端配合**：前端 `EventSource` 自带自动重连机制，但需要后端在最后发送一个结束标记（如 `data: [DONE]`），以便前端主动关闭连接，避免不必要的重连尝试。
 
----
+### MCP (Model Context Protocol) 在此架构中扮演什么角色？
 
-
-
-### 5: MCP (Model Context Protocol) 在此架构中扮演什么角色？
-
-5: MCP (Model Context Protocol) 在此架构中扮演什么角色？
-
-**A**: MCP 是连接 AI 模型与外部数据源（如天气 API）的标准化桥梁。
+MCP 是连接 AI 模型与外部数据源（如天气 API）的标准化桥梁。
 
 1.  **解决上下文局限**：大模型本身无法获取实时天气数据。MCP 定义了一种标准协议，允许 AI 应用通过“工具调用”的方式与外部系统交互。
 
 ---
+
 ## 引用
 
 - **掘金原文**: [https://juejin.cn/post/7608212715346690054](https://juejin.cn/post/7608212715346690054)
@@ -168,8 +161,6 @@ Spring AI MCP 之 SSE WebFlux 实战：从零构建 AI 天气助手
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [后端](/categories/%E5%90%8E%E7%AB%AF/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)
@@ -183,4 +174,3 @@ Spring AI MCP 之 SSE WebFlux 实战：从零构建 AI 天气助手
 - [Spring AI 多模态实战：构建图像理解应用]({{< relref "posts/20260219-juejin-spring-ai-多模态实战手把手教你构建图像理解应用-0.md" >}})
 - [Flutter SSE 流式响应：基于 Dio 实现 OpenAI 逐 Token 输出]({{< relref "posts/20260221-juejin-flutter-sse-流式响用-dio-实现-openai-兼容接口的逐-token-输出-0.md" >}})
 - [Spring AI 结构化输出转换器实战：告别字符串解析，拥抱类型安全]({{< relref "posts/20260218-juejin-spring-ai-结构化输出转换器实战告别字符串解析拥抱类型安全-4.md" >}})
-*本文由 AI Stack 自动生成，提供深度内容分析。*

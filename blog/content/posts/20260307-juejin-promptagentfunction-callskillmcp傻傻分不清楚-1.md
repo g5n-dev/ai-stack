@@ -1,14 +1,28 @@
 ---
-title: "AI核心概念解析：Prompt、Agent与Function Call的区别"
-date: 2026-03-07T02:49:40+08:00
+title: AI核心概念解析：Prompt、Agent与Function Call的区别
+date: 2026-03-07 02:49:40+08:00
 draft: false
-entry_kind: "auto"
-tags: ["LLM", "Agent", "Prompt", "Function Call", "MCP", "智能体", "AI概念", "RAG"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- LLM
+- Agent
+- Prompt
+- Function Call
+- MCP
+- 智能体
+- AI概念
+- RAG
+categories:
+- 大模型
+- AI 工程
 source: juejin
-description: "这是一篇关于人工智能核心概念的科普文章。以下是对该内容的简洁总结： **文章主旨：** 随着AI的普及，许多人对 **Prompt（提示词）、Agent（智能体）、Function Call（函数调用）、Skill（技能）** 和 **MCP（模型上下文协议）** 这五个核心概念及其关系感到困惑。文章旨在通过类比和原理"
+description: 这是一篇关于人工智能核心概念的科普文章。以下是对该内容的简洁总结： **文章主旨：** 随着AI的普及，许多人对 **Prompt（提示词）、Agent（智能体）、Function
+  Call（函数调用）、Skill（技能）** 和 **MCP（模型上下文协议）** 这五个核心概念及其关系感到困惑。文章旨在通过类比和原理
 external_url: https://juejin.cn/post/7614205951297732654
-scenarios: ["大语言模型", "AI/ML项目", "RAG应用"]
+scenarios:
+- 大语言模型
+- AI/ML项目
+- RAG应用
 ---
 
 # AI核心概念解析：Prompt、Agent与Function Call的区别
@@ -21,16 +35,19 @@ scenarios: ["大语言模型", "AI/ML项目", "RAG应用"]
 - **链接**: [https://juejin.cn/post/7614205951297732654](https://juejin.cn/post/7614205951297732654)
 
 ---
+
 ## 导语
 
 随着大模型应用的深入，Prompt、Agent、Function Call、Skill 与 MCP 等术语频繁出现，但其具体边界往往容易混淆。厘清这些概念不仅有助于理解 AI 的技术演进，更是构建复杂应用系统的基石。本文将逐一拆解这些术语的定义与核心差异，帮助你构建清晰的知识体系，从而在实际开发中做出更合理的技术选型。
 
 ---
+
 ## 描述
 
 前言 最近AI越来越火了。 我发现里面有很多概念有些小伙伴有点分不清楚，比如：Prompt、Agent、Function Call、Skill、MCP等。 今天这篇文章专门跟大家一起聊聊这个话题，希望
 
 ---
+
 ## 摘要
 
 这是一篇关于人工智能核心概念的科普文章。以下是对该内容的简洁总结：
@@ -63,6 +80,7 @@ scenarios: ["大语言模型", "AI/ML项目", "RAG应用"]
     *   **作用：** 解决了不同AI应用之间数据孤岛的问题
 
 ---
+
 ## 评论
 
 基于您提供的文章标题和摘要，虽然无法获取全文细节，但基于标题中列出的核心概念（Prompt、Agent、Function Call、Skill、MCP），我们可以从技术架构演进和行业认知的视角进行深入剖析。以下是该主题的深度评价：
@@ -120,6 +138,7 @@ scenarios: ["大语言模型", "AI/ML项目", "RAG应用"]
     *   **观察：** 尝试仅
 
 ---
+
 ## 学习要点
 
 - MCP（Model Context Protocol）是连接大模型与外部数据源的“通用USB接口”，它通过标准化的协议解决了AI应用与工具集成的碎片化问题，是构建开放生态的关键基础设施。
@@ -131,54 +150,34 @@ scenarios: ["大语言模型", "AI/ML项目", "RAG应用"]
 - MCP协议的标准化使得开发者无需为每个数据源重复开发适配器，从而极大地降低了AI应用接入外部系统的成本并提升了系统的可扩展性。
 
 ---
+
 ## 常见问题
 
+### Prompt（提示词）和 Agent（智能体）有什么本质区别？为什么有了 Prompt 还需要 Agent？
 
-### 1: Prompt（提示词）和 Agent（智能体）有什么本质区别？为什么有了 Prompt 还需要 Agent？
-
-1: Prompt（提示词）和 Agent（智能体）有什么本质区别？为什么有了 Prompt 还需要 Agent？
-
-**A**: **Prompt（提示词）** 是你发送给大模型的具体指令或上下文，它是静态的文本。当你使用 Prompt 时，大模型是根据你的指令一次性生成回复，无法主动去外部获取信息或执行操作。
+**Prompt（提示词）** 是你发送给大模型的具体指令或上下文，它是静态的文本。当你使用 Prompt 时，大模型是根据你的指令一次性生成回复，无法主动去外部获取信息或执行操作。
 
 **Agent（智能体）** 则是一个具备自主规划能力的系统。它不仅仅是接收指令，而是会使用大模型作为“大脑”来拆解任务、规划步骤，并能够调用外部工具（如搜索网页、执行代码）来完成目标。简单来说，Prompt 是“你让模型做什么”，而 Agent 是“模型自己决定怎么做并去执行”。Agent 是 Prompt 的进阶封装，增加了感知、规划和行动的能力。
 
----
+### Function Call（函数调用）和 Skill（技能）是同一个东西吗？
 
-
-
-### 2: Function Call（函数调用）和 Skill（技能）是同一个东西吗？
-
-2: Function Call（函数调用）和 Skill（技能）是同一个东西吗？
-
-**A**: 它们紧密相关但侧重点不同。
+它们紧密相关但侧重点不同。
 
 **Function Call** 是大模型的一种**原生能力**（或技术机制）。它允许大模型在生成文本的过程中，不直接输出自然语言，而是输出一段结构化的 JSON 数据，指示程序去调用某个特定的函数（如 `get_weather(city: "Beijing")`）。这是连接大模型与现实世界代码的桥梁。
 
 **Skill（技能）** 则是**业务层面的概念**。一个 Skill 通常由一个或多个 Function Call 组成，并包含了具体的业务逻辑和描述。例如，“查询天气”是一个 Skill，而在技术实现上，它依赖底层的 Function Call 机制来触发。你可以把 Function Call 理解为“螺丝刀”，而 Skill 是用螺丝刀修好的“电器”。
 
----
+### MCP 是什么？它和 Function Call 有什么区别？
 
-
-
-### 3: MCP 是什么？它和 Function Call 有什么区别？
-
-3: MCP 是什么？它和 Function Call 有什么区别？
-
-**A**: **MCP (Model Context Protocol)** 是一个开放的通用标准协议，用于连接 AI 应用与外部数据源（如 GitHub、Google Drive、本地文件等）。
+**MCP (Model Context Protocol)** 是一个开放的通用标准协议，用于连接 AI 应用与外部数据源（如 GitHub、Google Drive、本地文件等）。
 
 **区别在于：**
 1.  **通用性 vs 特异性**：Function Call 通常是指某个特定应用内部调用函数的机制（例如 OpenAI 定义的函数调用格式）；而 MCP 是一个跨应用、跨平台的行业标准，旨在解决不同 AI 工具之间数据不通用的“孤岛”问题。
 2.  **连接对象**：Function Call 更多是连接大模型和**代码逻辑**；而 MCP 侧重于连接大模型和**数据内容**（Context）。通过 MCP，Agent 可以更方便地读取和写入各种系统的数据，而无需为每个系统单独写适配代码。
 
----
+### Agent 是如何使用 Skill 和 Function Call 的？
 
-
-
-### 4: Agent 是如何使用 Skill 和 Function Call 的？
-
-4: Agent 是如何使用 Skill 和 Function Call 的？
-
-**A**: Agent 是指挥官，Skill 是战术，Function Call 是具体的动作。
+Agent 是指挥官，Skill 是战术，Function Call 是具体的动作。
 
 工作流程通常是这样的：
 1.  用户向 Agent 发出任务（例如：“帮我预定明天的机票并查看天气”）。
@@ -187,27 +186,15 @@ scenarios: ["大语言模型", "AI/ML项目", "RAG应用"]
 4.  系统执行 Function Call，获取真实数据（如机票余票、天气情况）。
 5.  Agent 将结果汇总，生成最终回复给用户。
 
----
+### 如果我只想做一个简单的翻译工具，需要用到 Agent 或 MCP 吗？
 
-
-
-### 5: 如果我只想做一个简单的翻译工具，需要用到 Agent 或 MCP 吗？
-
-5: 如果我只想做一个简单的翻译工具，需要用到 Agent 或 MCP 吗？
-
-**A**: 不需要。
+不需要。
 
 对于简单的、单次交互的任务（如翻译、摘要、问答），直接编写高质量的 **Prompt** 即可解决。引入 Agent 和 MCP 会增加系统的复杂度和延迟。只有当你的任务需要**多步推理**、**访问实时数据**、或**操作外部软件**（比如“帮我读取邮件并总结日程”）时，才需要考虑使用 Agent 架构和 MCP 协议。
 
----
+### 学习这些概念的顺序建议是什么？
 
-
-
-### 6: 学习这些概念的顺序建议是什么？
-
-6: 学习这些概念的顺序建议是什么？
-
-**A**: 建议按照以下顺序进阶：
+建议按照以下顺序进阶：
 
 1.  **Prompt**：这是基础，学习如何通过自然语言精准控制模型输出。
 2.  **Function Call**：学习如何让模型输出结构化数据，从而能运行代码。
@@ -216,6 +203,7 @@ scenarios: ["大语言模型", "AI/ML项目", "RAG应用"]
 5.  **MCP**：当你需要连接大量外部数据源，或者希望你的 Agent 能被其他 AI 生态使用时，再深入学习此协议。
 
 ---
+
 ## 引用
 
 - **掘金原文**: [https://juejin.cn/post/7614205951297732654](https://juejin.cn/post/7614205951297732654)
@@ -224,8 +212,6 @@ scenarios: ["大语言模型", "AI/ML项目", "RAG应用"]
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)
@@ -239,4 +225,3 @@ scenarios: ["大语言模型", "AI/ML项目", "RAG应用"]
 - [LangBot：生产级多平台智能体机器人开发平台]({{< relref "posts/20260201-github_trending-langbot-app-langbot-0.md" >}})
 - [LLM智能体新增Claws层：强化外部工具调用与任务执行能力]({{< relref "posts/20260221-hacker_news-claws-are-now-a-new-layer-on-top-of-llm-agents-13.md" >}})
 - [LangBot：生产级多平台智能体开发平台]({{< relref "posts/20260226-github_trending-langbot-app-langbot-8.md" >}})
-*本文由 AI Stack 自动生成，提供深度内容分析。*

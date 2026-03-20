@@ -1,14 +1,26 @@
 ---
-title: "Codex 工程化实践：解析 AGENTS.md、SKILL.md 与 MCP"
-date: 2026-03-15T01:07:53+08:00
+title: Codex 工程化实践：解析 AGENTS.md、SKILL.md 与 MCP
+date: 2026-03-15 01:07:53+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Codex", "MCP", "Model Context Protocol", "Agent", "AI 工程化", "系统提示词", "技能封装", "架构设计"]
-categories: ["AI 工程", "开发工具"]
+entry_kind: auto
+tags:
+- Codex
+- MCP
+- Model Context Protocol
+- Agent
+- AI 工程化
+- 系统提示词
+- 技能封装
+- 架构设计
+categories:
+- AI 工程
+- 开发工具
 source: juejin
-description: "以下是对该内容的简洁总结： 核心概念：Codex 的三位一体架构 该指南将 Codex 视为一个 **“AI 工程师”**，其强大的工程化能力源于三个核心概念的有机协作：**AGENTS.md**、**SKILL.md** 和 **MCP**。 1. AGENTS.md：定义“角色”与“职责” * **角色定义**：相"
+description: 以下是对该内容的简洁总结： 核心概念：Codex 的三位一体架构 该指南将 Codex 视为一个 **“AI 工程师”**，其强大的工程化能力源于三个核心概念的有机协作：**AGENTS.md**、**SKILL.md**
+  和 **MCP**。 1. AGENTS.md：定义“角色”与“职责” * **角色定义**：相
 external_url: https://juejin.cn/post/7616666752521404416
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
 ---
 
 # Codex 工程化实践：解析 AGENTS.md、SKILL.md 与 MCP
@@ -21,16 +33,19 @@ scenarios: ["AI/ML项目"]
 - **链接**: [https://juejin.cn/post/7616666752521404416](https://juejin.cn/post/7616666752521404416)
 
 ---
+
 ## 导语
 
 在构建 Codex 应用时，AGENTS.md、SKILL.md 与 MCP（Model Context Protocol）构成了核心工程骨架。理解这三者的协作机制，是将大语言模型从简单的对话工具转化为具备复杂工程能力的“AI 工程师”的关键。本文将深入解析这三个概念的技术细节与交互逻辑，帮助开发者理清架构思路，从而更高效地搭建稳健的 AI 工程化体系。
 
 ---
+
 ## 描述
 
 在 Codex 的设计中，有三个非常关键的概念：AGENTS.md SKILL.md MCP（Model Context Protocol）如果把 Codex 看成一个“AI 工程师”，那么这三
 
 ---
+
 ## 摘要
 
 以下是对该内容的简洁总结：
@@ -63,6 +78,7 @@ scenarios: ["AI/ML项目"]
 通过这三者的配合，开发者可以将大
 
 ---
+
 ## 学习要点
 
 - AGENTS.md 是定义 AI 智能体行为规范的核心配置文件，通过明确角色定位与交互边界，能有效解决模型幻觉与行为不可控问题。
@@ -73,14 +89,12 @@ scenarios: ["AI/ML项目"]
 - 实践中应遵循“配置优先于代码”的原则，利用 AGENTS.md 与 SKILL.md 实现逻辑与实现的解耦，以提升迭代效率。
 
 ---
+
 ## 常见问题
 
+### AGENTS.md 与 SKILL.md 在 Codex 工程化体系中分别扮演什么角色？两者的核心区别是什么？
 
-### 1: AGENTS.md 与 SKILL.md 在 Codex 工程化体系中分别扮演什么角色？两者的核心区别是什么？
-
-1: AGENTS.md 与 SKILL.md 在 Codex 工程化体系中分别扮演什么角色？两者的核心区别是什么？
-
-**A**: 在 Codex 工程化实践中，这两个文件分别对应了“智能体”定义的宏观与微观层面。
+在 Codex 工程化实践中，这两个文件分别对应了“智能体”定义的宏观与微观层面。
 
 **AGENTS.md** 主要负责定义**智能体的身份、角色、目标、约束条件以及协作模式**。它关注的是“谁来做”和“为什么做”，规定了 Agent 的行为边界、可用资源以及它如何与其他 Agent 或人类交互。它类似于一个“项目经理”或“协调者”的配置文件。
 
@@ -88,15 +102,9 @@ scenarios: ["AI/ML项目"]
 
 **核心区别**在于：AGENTS.md 描述的是**具备意图和决策能力的实体**（Entity），而 SKILL.md 描述的是**可供调用的能力或方法**（Capability）。一个 Agent 可以调用多个 Skill。
 
----
+### MCP (Model Context Protocol) 在该体系中解决了什么核心痛点？
 
-
-
-### 2: MCP (Model Context Protocol) 在该体系中解决了什么核心痛点？
-
-2: MCP (Model Context Protocol) 在该体系中解决了什么核心痛点？
-
-**A**: MCP (模型上下文协议) 主要解决了大语言模型（LLM）与外部数据源及工具系统之间**连接碎片化**的痛点。
+MCP (模型上下文协议) 主要解决了大语言模型（LLM）与外部数据源及工具系统之间**连接碎片化**的痛点。
 
 在没有统一标准的情况下，每个工具或数据源都需要编写特定的插件或适配器才能被 LLM 访问。MCP 提供了一个开放的通用标准，使得 AI 应用（如 Codex 智能体）能够通过标准化的方式连接到本地文件、数据库、API 服务及业务工具。
 
@@ -105,45 +113,27 @@ scenarios: ["AI/ML项目"]
 2.  **上下文增强**：让模型能够安全、实时地获取系统运行时的上下文信息（如日志、代码库状态），而不仅仅是依赖静态训练数据。
 3.  **工程化解耦**：将数据获取逻辑与模型推理逻辑分离，便于维护和扩展。
 
----
+### 在编写 SKILL.md 时，如何确保 Agent 能够准确调用该技能？
 
-
-
-### 3: 在编写 SKILL.md 时，如何确保 Agent 能够准确调用该技能？
-
-3: 在编写 SKILL.md 时，如何确保 Agent 能够准确调用该技能？
-
-**A**: 编写高质量的 SKILL.md 需要遵循结构化和明确的工程原则，以确保模型能够理解并执行。关键实践包括：
+编写高质量的 SKILL.md 需要遵循结构化和明确的工程原则，以确保模型能够理解并执行。关键实践包括：
 
 1.  **明确的输入/输出定义**：必须清晰声明该技能需要什么参数（参数类型、是否必填）以及返回什么格式的数据。这有助于模型进行正确的参数映射。
 2.  **上下文隔离**：Skill 应当是功能单一且独立的。避免在 Skill 中掺杂过多的业务逻辑判断，专注于执行特定的操作（如“读取文件”、“执行 SQL”）。
 3.  **依赖声明**：如果该 Skill 依赖 MCP 服务器或其他工具，必须在文档中明确指出连接方式和调用前缀。
 4.  **示例驱动**：提供具体的调用示例（包括 Prompt 示例和返回结果示例），这能显著提高模型对 Skill 的理解准确率。
 
----
+### 如何通过 AGENTS.md 管理 Agent 之间的协作与冲突？
 
-
-
-### 4: 如何通过 AGENTS.md 管理 Agent 之间的协作与冲突？
-
-4: 如何通过 AGENTS.md 管理 Agent 之间的协作与冲突？
-
-**A**: AGENTS.md 不仅是配置文件，更是协作协议的载体。在工程化实践中，通过以下方式管理协作：
+AGENTS.md 不仅是配置文件，更是协作协议的载体。在工程化实践中，通过以下方式管理协作：
 
 1.  **角色定义**：为每个 Agent 分配清晰的职则。例如，定义 `Reviewer` Agent 只负责审查代码，`Builder` Agent 只负责生成代码。通过严格的职责划分避免权限冲突。
 2.  **通信协议**：在 AGENTS.md 中规定 Agent 之间如何传递信息。例如，规定输出格式必须为 JSON，或者必须包含特定的 `message_id` 以便追踪。
 3.  **握手与授权**：定义 Agent A 调用 Agent B 的前置条件。例如，只有当 `status` 为 `ready` 时，构建 Agent 才能启动部署 Agent。
 4.  **约束与安全**：在配置中明确禁止某些行为（如禁止直接修改生产环境配置），通过系统级约束来防止 Agent 协作过程中的“越界”操作。
 
----
+### 在 Codex 工程化落地过程中，调试 MCP 连接和 Agent 行为的最佳实践是什么？
 
-
-
-### 5: 在 Codex 工程化落地过程中，调试 MCP 连接和 Agent 行为的最佳实践是什么？
-
-5: 在 Codex 工程化落地过程中，调试 MCP 连接和 Agent 行为的最佳实践是什么？
-
-**A**: 调试基于 LLM 的工程系统比传统软件更复杂，建议采用以下实践：
+调试基于 LLM 的工程系统比传统软件更复杂，建议采用以下实践：
 
 1.  **日志可视化**：MCP 传输的数据和 Agent 的思考过程必须全量记录。建议实现“中间层日志”，查看 Agent 发送给 MCP 的具体指令以及 MCP 返回的原始数据，快速定位是数据获取错误还是模型理解错误。
 2.  **本地模拟沙箱**：不要直接在生产环境测试 MCP 工具。构建本地的 Mock Server，模拟 MCP 的响应，确保 Agent 的提示词逻辑正确后再接入真实数据。
@@ -154,6 +144,7 @@ scenarios: ["AI/ML项目"]
 4.  **版本控制提示词**：AGENTS.md 和 SKILL.md 本质
 
 ---
+
 ## 引用
 
 - **掘金原文**: [https://juejin.cn/post/7616666752521404416](https://juejin.cn/post/7616666752521404416)
@@ -162,8 +153,6 @@ scenarios: ["AI/ML项目"]
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/)
@@ -177,4 +166,3 @@ scenarios: ["AI/ML项目"]
 - [Codex 工程化实践：解析 AGENTS.md、SKILL.md 与 MCP]({{< relref "posts/20260314-juejin-codex-工程化实践指南深入理解-agentsmdskillmd-与-mcp-0.md" >}})
 - [工程团队实践：在Agent优先架构中应用Codex]({{< relref "posts/20260212-blogs_podcasts-harness-engineering-leveraging-codex-in-an-agent-f-11.md" >}})
 - [当人类知识学会自己奔跑：Skill 属性与 AI 工程化实践]({{< relref "posts/20260305-juejin-当人类知识学会自己奔跑-skill-1.md" >}})
-*本文由 AI Stack 自动生成，提供深度内容分析。*

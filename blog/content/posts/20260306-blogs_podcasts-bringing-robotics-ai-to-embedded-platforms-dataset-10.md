@@ -1,14 +1,25 @@
 ---
-title: "将机器人AI移植至嵌入式平台：数据采集、VLA微调与端侧优化"
-date: 2026-03-06T19:08:22+08:00
+title: 将机器人AI移植至嵌入式平台：数据采集、VLA微调与端侧优化
+date: 2026-03-06 19:08:22+08:00
 draft: false
-entry_kind: "auto"
-tags: ["机器人", "VLA", "嵌入式", "端侧部署", "数据采集", "模型微调", "边缘计算", "模型优化"]
-categories: ["AI 工程", "系统与基础设施"]
+entry_kind: auto
+tags:
+- 机器人
+- VLA
+- 嵌入式
+- 端侧部署
+- 数据采集
+- 模型微调
+- 边缘计算
+- 模型优化
+categories:
+- AI 工程
+- 系统与基础设施
 source: blogs_podcasts
-description: "随着具身智能的兴起，在算力受限的嵌入式平台上部署机器人 AI 已成为行业落地的关键瓶颈。本文深入探讨了从数据采集、视觉-语言-动作（VLA）模型微调，到端侧推理优化的全流程技术细节。通过解析这些工程实践，读者将了解如何克服硬件限制，实现高性能的本地化机器人控制方案。"
+description: 随着具身智能的兴起，在算力受限的嵌入式平台上部署机器人 AI 已成为行业落地的关键瓶颈。本文深入探讨了从数据采集、视觉-语言-动作（VLA）模型微调，到端侧推理优化的全流程技术细节。通过解析这些工程实践，读者将了解如何克服硬件限制，实现高性能的本地化机器人控制方案。
 external_url: https://huggingface.co/blog/nxp/bringing-robotics-ai-to-embedded-platforms
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
 ---
 
 # 将机器人AI移植至嵌入式平台：数据采集、VLA微调与端侧优化
@@ -22,11 +33,13 @@ scenarios: ["Web应用开发"]
 - **链接**: [https://huggingface.co/blog/nxp/bringing-robotics-ai-to-embedded-platforms](https://huggingface.co/blog/nxp/bringing-robotics-ai-to-embedded-platforms)
 
 ---
+
 ## 导语
 
 随着具身智能的兴起，在算力受限的嵌入式平台上部署机器人 AI 已成为行业落地的关键瓶颈。本文深入探讨了从数据采集、视觉-语言-动作（VLA）模型微调，到端侧推理优化的全流程技术细节。通过解析这些工程实践，读者将了解如何克服硬件限制，实现高性能的本地化机器人控制方案。
 
 ---
+
 ## 评论
 
 **文章中心观点**
@@ -67,7 +80,6 @@ scenarios: ["Web应用开发"]
 4.  **长尾场景测试：** 设计10个物理干扰场景（如光线突变、遮挡、物体滑落），统计系统的恢复率和错误处理能力，以验证其鲁棒性是否达到工业级标准。
 
 ---
-## 技术分析
 
 ## 技术分析
 
@@ -102,9 +114,8 @@ scenarios: ["Web应用开发"]
 *   **自动驾驶/无人机**：对实时性要求极高的边缘端感知与决策系统。
 
 ---
-## 最佳实践
 
-## 最佳实践指南
+## 最佳实践
 
 ### 实践 1：构建高质量的机器人操作数据集
 
@@ -187,6 +198,7 @@ scenarios: ["Web应用开发"]
 部署后的模型在真实环境中可能会遇到训练数据中未见过的情况。建立闭环反馈机制
 
 ---
+
 ## 学习要点
 
 - 在机器人领域，通过结合视觉-语言-动作（VLA）模型与嵌入式系统，实现了在边缘设备上直接运行复杂的AI决策逻辑。
@@ -197,6 +209,7 @@ scenarios: ["Web应用开发"]
 - 优化了数据传输管线与内存管理策略，解决了在资源受限的平台上处理高维视觉数据时的带宽瓶颈问题。
 
 ---
+
 ## 引用
 
 - **文章/节目**: [https://huggingface.co/blog/nxp/bringing-robotics-ai-to-embedded-platforms](https://huggingface.co/blog/nxp/bringing-robotics-ai-to-embedded-platforms)
@@ -206,8 +219,6 @@ scenarios: ["Web应用开发"]
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/)
@@ -221,4 +232,3 @@ scenarios: ["Web应用开发"]
 - [将机器人AI引入嵌入式平台：数据采集、VLA微调与端侧优化]({{< relref "posts/20260306-blogs_podcasts-bringing-robotics-ai-to-embedded-platforms-dataset-7.md" >}})
 - [将机器人AI引入嵌入式平台：数据集构建、VLA微调与端侧优化]({{< relref "posts/20260306-blogs_podcasts-bringing-robotics-ai-to-embedded-platforms-dataset-5.md" >}})
 - [将机器人AI引入嵌入式平台：数据集记录、VLA微调与端侧优化]({{< relref "posts/20260305-blogs_podcasts-bringing-robotics-ai-to-embedded-platforms-dataset-4.md" >}})
-*本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

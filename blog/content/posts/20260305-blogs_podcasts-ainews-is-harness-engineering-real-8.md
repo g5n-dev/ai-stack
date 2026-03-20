@@ -1,14 +1,26 @@
 ---
-title: "AI工程争议：Harness Engineering是否成立"
-date: 2026-03-05T19:19:47+08:00
+title: AI工程争议：Harness Engineering是否成立
+date: 2026-03-05 19:19:47+08:00
 draft: false
-entry_kind: "auto"
-tags: ["提示词工程", "LLM", "Agent", "系统设计", "结构化输出", "Pydantic", "RAG", "模型微调"]
-categories: ["AI 工程"]
+entry_kind: auto
+tags:
+- 提示词工程
+- LLM
+- Agent
+- 系统设计
+- 结构化输出
+- Pydantic
+- RAG
+- 模型微调
+categories:
+- AI 工程
 source: blogs_podcasts
-description: "这是一篇关于AI工程核心辩论的总结，主要针对“提示词工程（Prompt Engineering）”是否真实存在或已死这一热门话题进行了梳理。 **核心主题：提示词工程是否“真实”？** 在AI行业相对平静的一天，业界引发了关于“提示词工程”本质的深度探讨。随着大模型能力的提升，一种观点认为提示词工程已死或从未存在过，而"
+description: 这是一篇关于AI工程核心辩论的总结，主要针对“提示词工程（Prompt Engineering）”是否真实存在或已死这一热门话题进行了梳理。
+  **核心主题：提示词工程是否“真实”？** 在AI行业相对平静的一天，业界引发了关于“提示词工程”本质的深度探讨。随着大模型能力的提升，一种观点认为提示词工程已死或从未存在过，而
 external_url: https://www.latent.space/p/ainews-is-harness-engineering-real
-scenarios: ["大语言模型", "RAG应用"]
+scenarios:
+- 大语言模型
+- RAG应用
 ---
 
 # AI工程争议：Harness Engineering是否成立
@@ -22,16 +34,19 @@ scenarios: ["大语言模型", "RAG应用"]
 - **链接**: [https://www.latent.space/p/ainews-is-harness-engineering-real](https://www.latent.space/p/ainews-is-harness-engineering-real)
 
 ---
+
 ## 摘要/简介
 
 宁静的一天让我们得以反思人工智能工程中的一个核心争议
 
 ---
+
 ## 导语
 
 在人工智能工程领域，"Harness Engineering" 的概念引发了广泛讨论，其真实性与实用性成为开发者关注的焦点。这一争议不仅涉及技术实现的可行性，更关乎团队如何高效构建和部署 AI 系统。本文将深入剖析该概念的核心争议点，通过实际案例与行业视角，帮助读者厘清其本质，并评估是否值得将其纳入当前的技术实践。
 
 ---
+
 ## 摘要
 
 这是一篇关于AI工程核心辩论的总结，主要针对“提示词工程（Prompt Engineering）”是否真实存在或已死这一热门话题进行了梳理。
@@ -56,10 +71,8 @@ scenarios: ["大语言模型", "RAG应用"]
 *   关于大模型是否具备推理能力的争论仍在继续。一些简单的提示技巧（如“让我们一步步思考”）虽然看似有效，但也可能只是利用了模型的统计相关性而非真正的逻辑推理。
 *   然而，从工程角度来看，无论模型内部机制如何，只要能通过系统设计稳定地复现输出结果，这种工程手段就是“真实”且有价值的。
 
-**4. 行业工具的进化**
-*   **LangChain等框架的演进：** 早期的LangChain因过度抽象和复杂备受批评，但现在的LCEL（LangChain
-
 ---
+
 ## 评论
 
 ### 深度评论：文章《Is Harness Engineering real?》
@@ -115,7 +128,6 @@ scenarios: ["大语言模型", "RAG应用"]
     *   **判定标准：** 若性能提升的边际收益无法覆盖维护成本的增加，则需警惕过度工程化。
 
 ---
-## 技术分析
 
 ## 技术分析
 
@@ -159,9 +171,8 @@ scenarios: ["大语言模型", "RAG应用"]
 采用**“低耦合架构”**。尽量减少与特定模型行为强耦合的代码，保持核心业务逻辑的独立性，以便在模型迭代时能以较低成本完成替换或升级。
 
 ---
-## 最佳实践
 
-## 最佳实践指南
+## 最佳实践
 
 ### 实践 1：建立明确的AI工程定义与范围
 
@@ -259,6 +270,7 @@ scenarios: ["大语言模型", "RAG应用"]
 **注意事项**: 需定期更新伦理框架以跟上技术发展和法规变化
 
 ---
+
 ## 学习要点
 
 - 基于对 "Harness Engineering" 相关讨论的总结，以下是关键要点：
@@ -270,6 +282,7 @@ scenarios: ["大语言模型", "RAG应用"]
 - 线束工程不仅是技术问题，更是供应链管理的难题，因为其涉及大量的人工组装环节和长尾物料，自动化程度相对较低。
 
 ---
+
 ## 引用
 
 - **文章/节目**: [https://www.latent.space/p/ainews-is-harness-engineering-real](https://www.latent.space/p/ainews-is-harness-engineering-real)
@@ -279,8 +292,6 @@ scenarios: ["大语言模型", "RAG应用"]
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)
@@ -294,4 +305,3 @@ scenarios: ["大语言模型", "RAG应用"]
 - [LangBot：生产级多平台智能体机器人开发平台]({{< relref "posts/20260201-github_trending-langbot-app-langbot-0.md" >}})
 - [LangBot：生产级多平台智能 IM 机器人开发平台]({{< relref "posts/20260202-github_trending-langbot-app-langbot-0.md" >}})
 - [Agent Skills：智能体技能框架]({{< relref "posts/20260203-hacker_news-agent-skills-4.md" >}})
-*本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

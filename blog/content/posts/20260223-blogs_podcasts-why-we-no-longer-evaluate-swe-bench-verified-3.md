@@ -1,14 +1,26 @@
 ---
-title: "SWE-bench Verified 数据污染严重，推荐使用 SWE-bench Pro"
-date: 2026-02-23T19:24:12+08:00
+title: SWE-bench Verified 数据污染严重，推荐使用 SWE-bench Pro
+date: 2026-02-23 19:24:12+08:00
 draft: false
-entry_kind: "auto"
-tags: ["SWE-bench", "数据污染", "基准测试", "代码生成", "数据泄露", "模型评估", "SWE-bench Pro", "LLM"]
-categories: ["大模型", "数据"]
+entry_kind: auto
+tags:
+- SWE-bench
+- 数据污染
+- 基准测试
+- 代码生成
+- 数据泄露
+- 模型评估
+- SWE-bench Pro
+- LLM
+categories:
+- 大模型
+- 数据
 source: blogs_podcasts
-description: "**关于我们不再评估 SWE-bench Verified 的原因总结** 我们决定不再将 **SWE-bench Verified** 作为评估标准，主要基于以下两点核心原因： 1. **数据污染日益严重（Training Leakage）：** 随着该基准测试的普及，出现了严重的训练数据泄漏问题。许多模型在训练过程"
+description: '**关于我们不再评估 SWE-bench Verified 的原因总结** 我们决定不再将 **SWE-bench Verified**
+  作为评估标准，主要基于以下两点核心原因： 1. **数据污染日益严重（Training Leakage）：** 随着该基准测试的普及，出现了严重的训练数据泄漏问题。许多模型在训练过程'
 external_url: https://openai.com/index/why-we-no-longer-evaluate-swe-bench-verified
-scenarios: ["大语言模型"]
+scenarios:
+- 大语言模型
 ---
 
 # SWE-bench Verified 数据污染严重，推荐使用 SWE-bench Pro
@@ -22,16 +34,19 @@ scenarios: ["大语言模型"]
 - **链接**: [https://openai.com/index/why-we-no-longer-evaluate-swe-bench-verified](https://openai.com/index/why-we-no-longer-evaluate-swe-bench-verified)
 
 ---
+
 ## 摘要/简介
 
 SWE-bench Verified 的数据污染日益严重，无法准确衡量前沿编码进展。我们的分析显示测试存在缺陷，且存在训练数据泄露。我们推荐使用 SWE-bench Pro。
 
 ---
+
 ## 导语
 
 SWE-bench Verified 长期以来被视为衡量代码生成模型的重要基准，但其日益严重的数据污染问题正逐渐削弱评估的有效性。我们的最新分析表明，该基准不仅存在测试缺陷，还涉及训练数据泄露，导致其已无法准确反映前沿模型的编码能力。本文将详细阐述这一现象背后的证据，并向开发者推荐更为可靠的替代方案 SWE-bench Pro，以确保技术评估的客观性与准确性。
 
 ---
+
 ## 摘要
 
 **关于我们不再评估 SWE-bench Verified 的原因总结**
@@ -48,6 +63,7 @@ SWE-bench Verified 长期以来被视为衡量代码生成模型的重要基准�
 鉴于以上问题，我们推荐改用 **SWE-bench Pro** 进行评估，以获得更可靠、更具挑战性的前沿代码能力衡量结果。
 
 ---
+
 ## 评论
 
 ### 中心观点
@@ -93,14 +109,11 @@ SWE-bench Verified 长期以来被视为衡量代码生成模型的重要基准�
 2.  **关注 Pass@k 的同时关注 Code Review**：在自动化测试通过的基础上，引入AI驱动的代码审查或人工抽查，确认模型生成的代码逻辑是否真正解决了问题，而不是绕过了测试。
 3.  **混合评估策略**：使用 SWE-bench Pro 作为衡量模型上限的标尺，使用 HumanEval 或 MBPP 等合成问题衡量基础语法和算法能力，两者结合评估。
 
-### 可验证的
-
 ---
+
 ## 技术分析
 
-# 技术分析：关于停止使用 SWE-bench Verified 的评估
-
-## 1. 核心观点分析
+### 1. 核心观点分析
 
 ### 主要结论
 文章明确指出：**SWE-bench Verified 数据集已不再适用于衡量前沿大模型的代码生成能力。** 造成这一结果的主要原因是数据集受到了严重的“数据污染”以及部分测试用例存在缺陷，导致评估结果无法真实反映模型在实际软件工程场景中的表现。
@@ -113,7 +126,7 @@ SWE-bench Verified 长期以来被视为衡量代码生成模型的重要基准�
 *   **数据泄露**：指训练数据中包含了测试集内容，导致模型“记忆”答案。
 *   **测试缺陷**：指测试用例本身存在逻辑错误。模型可能因为生成了符合错误逻辑的代码而通过测试，这种“通过”掩盖了模型实际能力的不足，造成了评估偏差。
 
-## 2. 关键技术要点
+### 2. 关键技术要点
 
 ### 涉及的关键概念
 1.  **数据污染**：指训练集与测试集重叠，导致模型在评估时出现非预期的性能提升。
@@ -128,7 +141,7 @@ SWE-bench Verified 长期以来被视为衡量代码生成模型的重要基准�
 *   **难点**：在代码领域，由于开源协议的开放性，大量的 Bug 修复和测试代码直接公开在互联网上，极易被爬虫抓取并混入训练集，从而难以区分模型是“学会了推理”还是“记住了答案”。
 *   **应对方案**：文章建议放弃 Verified 子集，转而采用 SWE-bench Pro。该版本设计更新颖、难度更大，目前受数据污染的影响相对较小。
 
-## 3. 实际应用价值
+### 3. 实际应用价值
 
 ### 对研发的指导意义
 对于 AI 研究员和工程师，这篇文章指出了基准选择的局限性。在评估模型能力时，不应单一依赖发布时间较长、流传较广的基准测试结果，而应关注数据集的纯净度和时效性。
@@ -138,9 +151,8 @@ SWE-bench Verified 长期以来被视为衡量代码生成模型的重要基准�
 *   **数据清洗**：在进行强化学习（RLHF）或微调数据构建时，必须严格过滤包含 SWE-bench 相关 ID 或代码片段的数据，防止模型在评估环节产生“作弊”行为。
 
 ---
-## 最佳实践
 
-## 最佳实践指南
+## 最佳实践
 
 ### 实践 1：采用多维度评估体系
 
@@ -232,6 +244,7 @@ SWE-bench Verified 长期以来被视为衡量代码生成模型的重要基准�
 **注意事项**: 避免过度宣传单一指标，强调综合能力和实际场景表现。
 
 ---
+
 ## 学习要点
 
 - SWE-bench Verified 因其测试集样本量过小（仅 500 个样本），导致模型评估结果的统计置信度降低，难以有效区分模型间的细微性能差异。
@@ -241,6 +254,7 @@ SWE-bench Verified 长期以来被视为衡量代码生成模型的重要基准�
 - 社区应转向关注更全面的评估维度，例如模型在处理模糊需求、长上下文依赖以及非代码类工程任务上的表现。
 
 ---
+
 ## 引用
 
 - **文章/节目**: [https://openai.com/index/why-we-no-longer-evaluate-swe-bench-verified](https://openai.com/index/why-we-no-longer-evaluate-swe-bench-verified)
@@ -250,8 +264,6 @@ SWE-bench Verified 长期以来被视为衡量代码生成模型的重要基准�
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [数据](/categories/%E6%95%B0%E6%8D%AE/)
@@ -265,4 +277,3 @@ SWE-bench Verified 长期以来被视为衡量代码生成模型的重要基准�
 - [SokoBench：评估大模型长程规划与推理能力]({{< relref "posts/20260129-arxiv_ai-sokobench-evaluating-long-horizon-planning-and-rea-2.md" >}})
 - [Alyah：评估阿拉伯语大模型阿联酋方言能力]({{< relref "posts/20260129-blogs_podcasts-alyah-toward-robust-evaluation-of-emirati-dialect--8.md" >}})
 - [SokoBench：评估大模型长周期规划与推理能力]({{< relref "posts/20260130-arxiv_ai-sokobench-evaluating-long-horizon-planning-and-rea-2.md" >}})
-*本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

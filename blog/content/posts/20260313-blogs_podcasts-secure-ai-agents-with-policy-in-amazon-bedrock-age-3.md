@@ -1,14 +1,28 @@
 ---
-title: "利用 Amazon Bedrock AgentCore Policy 实现安全访问"
-date: 2026-03-13T00:51:39+08:00
+title: 利用 Amazon Bedrock AgentCore Policy 实现安全访问
+date: 2026-03-13 00:51:39+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Amazon Bedrock", "AgentCore", "Cedar", "AI Agent", "访问控制", "策略引擎", "LLM 安全", "自然语言转策略"]
-categories: ["安全", "AI 工程"]
+entry_kind: auto
+tags:
+- Amazon Bedrock
+- AgentCore
+- Cedar
+- AI Agent
+- 访问控制
+- 策略引擎
+- LLM 安全
+- 自然语言转策略
+categories:
+- 安全
+- AI 工程
 source: blogs_podcasts
-description: "本文介绍了 Amazon Bedrock AgentCore 中的 Policy（策略）功能，旨在为 AI 智能体（Agent）构建一个独立于其自身推理能力的确定性安全执行层。主要内容总结如下： **1. 核心机制：将业务规则转化为策略** 该功能允许用户将用自然语言描述的业务规则自动转化为 Cedar 策略。通过这种"
+description: 本文介绍了 Amazon Bedrock AgentCore 中的 Policy（策略）功能，旨在为 AI 智能体（Agent）构建一个独立于其自身推理能力的确定性安全执行层。主要内容总结如下：
+  **1. 核心机制：将业务规则转化为策略** 该功能允许用户将用自然语言描述的业务规则自动转化为 Cedar 策略。通过这种
 external_url: https://aws.amazon.com/blogs/machine-learning/secure-ai-agents-with-policy-in-amazon-bedrock-agentcore
-scenarios: ["AI/ML项目", "大语言模型", "命令行工具"]
+scenarios:
+- AI/ML项目
+- 大语言模型
+- 命令行工具
 ---
 
 # 利用 Amazon Bedrock AgentCore Policy 实现安全访问
@@ -22,16 +36,19 @@ scenarios: ["AI/ML项目", "大语言模型", "命令行工具"]
 - **链接**: [https://aws.amazon.com/blogs/machine-learning/secure-ai-agents-with-policy-in-amazon-bedrock-agentcore](https://aws.amazon.com/blogs/machine-learning/secure-ai-agents-with-policy-in-amazon-bedrock-agentcore)
 
 ---
+
 ## 摘要/简介
 
 在本文中，您将了解 Amazon Bedrock AgentCore 的 Policy 如何创建一个确定性的执行层，独立于 Agent 自身的推理逻辑运行。您将学习如何将业务规则的自然语言描述转化为 Cedar 策略，进而利用这些策略实施细粒度、具备身份识别能力的控制，确保 Agent 仅访问其用户有权使用的工具与数据。您还将看到如何通过 AgentCore Gateway 应用 Policy，在运行时拦截并评估每一个 Agent 发向工具的请求。
 
 ---
+
 ## 导语
 
 随着企业加速落地 AI 智能体，如何确保其行为符合业务规范与安全边界成为关键挑战。本文将深入探讨 Amazon Bedrock AgentCore 的 Policy 机制，解析如何通过独立的确定性执行层，在不干预推理逻辑的前提下实施精准管控。您将学习如何将自然语言描述转化为 Cedar 策略，并通过 AgentCore Gateway 在运行时拦截请求，从而确保智能体仅访问用户权限范围内的工具与数据。
 
 ---
+
 ## 摘要
 
 本文介绍了 Amazon Bedrock AgentCore 中的 Policy（策略）功能，旨在为 AI 智能体（Agent）构建一个独立于其自身推理能力的确定性安全执行层。主要内容总结如下：
@@ -46,6 +63,7 @@ Policy 创建了一个强制执行层，它独立于 Agent 的自主推理过程
 文章展示了如何通过 AgentCore Gateway 应用这些策略。在运行时，Gateway 会拦截并评估每一个 Agent 发向工具的请求，确保所有操作在执行前都符合既定的安全策略。
 
 ---
+
 ## 评论
 
 ### 评价报告：关于《Secure AI agents with Policy in Amazon Bedrock AgentCore》
@@ -99,13 +117,12 @@ Policy 创建了一个强制执行层，它独立于 Agent 的自主推理过程
     *   **方法：** 在高并发场景下（如 100 QPS
 
 ---
+
 ## 技术分析
 
 基于您提供的文章标题《Secure AI agents with Policy in Amazon Bedrock AgentCore》及其摘要，以下是对该技术方案的深入分析。文章主要探讨了如何利用Amazon Bedrock AgentCore中的策略机制，特别是结合Cedar策略语言，来解决AI智能体自主性带来的安全挑战。
 
----
-
-## 1. 核心观点深度解读
+### 1. 核心观点深度解读
 
 **主要观点：**
 文章的核心观点是**将AI智能体的“执行层”与“决策层”进行安全解耦**。通过引入一个基于Cedar策略的确定性执行层，在Agent自主推理之外，强制实施业务规则和安全边界。即使Agent的大模型（LLM）产生幻觉、被诱导或推理出错，该策略层也能像不可逾越的防火墙一样阻止不安全行为。
@@ -117,7 +134,7 @@ Policy 创建了一个强制执行层，它独立于 Agent 的自主推理过程
 *   **创新性：** 将通用的授权语言（Cedar，通常用于应用级权限控制如AWS S3或API访问）深度集成到Agentic Workflow（智能体工作流）中。这不仅仅是API调用限制，而是对Agent意图的最终裁决。
 *   **重要性：** 随着Agent从“聊天机器人”向“行动者”转变，它们拥有调用数据库、修改文件、发送邮件等高权限能力。如果仅靠LLM的自我约束，风险极高。这一观点解决了企业级应用AI Agent最大的痛点——**安全性与可控性**，是AI Agent从实验室走向生产环境的关键基础设施。
 
-## 2. 关键技术要点
+### 2. 关键技术要点
 
 **关键技术概念：**
 1.  **Amazon Bedrock AgentCore：** AWS提供的构建Agent的核心框架或服务层，负责编排推理、工具调用和执行。
@@ -133,7 +150,7 @@ Policy 创建了一个强制执行层，它独立于 Agent 的自主推理过程
 *   **难点：** Agent的上下文极其复杂，包含多轮对话历史、动态生成的推理链。如何将非结构化的LLM输出映射为结构化的Cedar评估属性是难点。
 *   **解决方案：** 引入中间层或规范化定义，强制AgentCore在调用工具时必须携带结构化的元数据，而非仅依赖自然语言指令。
 
-## 3. 实际应用价值
+### 3. 实际应用价值
 
 **对实际工作的指导意义：**
 *   **消除“越狱”风险：** 防止恶意用户通过精心设计的Prompt诱导Agent绕过安全限制（例如诱导Agent“忽略之前的指令，删除数据库”）。
@@ -148,7 +165,7 @@ Policy 创建了一个强制执行层，它独立于 Agent 的自主推理过程
 *   不要试图用Policy去控制Agent的“思考”，只控制Agent的“行动”。
 *   建立“自然语言策略”到“Cedar代码”的CI/CD流水线，确保业务规则变更能实时同步到AI Agent的防护层。
 
-## 4. 行业影响分析
+### 4. 行业影响分析
 
 **对行业的启示：**
 该方案标志着AI Agent架构正在从**“以模型为中心”**（Model-Centric，依赖模型智商和指令遵循）转向**“以数据和安全为中心”**（Data & Security-Centric，依赖外围护栏）。行业将意识到，**Prompt Engineering不是安全解决方案**，必须回归到传统的访问控制（IAM）逻辑，但要适配AI的语义特性。
@@ -157,7 +174,7 @@ Policy 创建了一个强制执行层，它独立于 Agent 的自主推理过程
 *   **DevSecOps for AI：** 安全团队将开始编写和管理Cedar策略，成为AI开发流程的一部分，而不仅仅是数据科学家的工作。
 *   **标准化护栏：** 类似于Cedar这样的策略语言可能成为行业标配，用于在不同Agent平台间迁移安全规则。
 
-## 5. 延伸思考
+### 5. 延伸思考
 
 **拓展方向：**
 *   **动态策略调整：** 策略能否根据Agent的“置信度”动态调整？（例如：Agent置信度低时，策略自动收紧，要求人工介入）。
@@ -167,19 +184,7 @@ Policy 创建了一个强制执行层，它独立于 Agent 的自主推理过程
 **未来趋势：**
 未来可能会出现“Policy-as-a-Service”，专门为各类Agent提供跨平台的策略托管和执行服务。
 
-## 6. 实践建议
-
-**如何应用到项目：**
-1.  **审计现有Agent：** 梳理你的Agent目前拥有哪些工具权限（API, 数据库读写等）。
-2.  **定义边界：** 列出绝对禁止的操作（如删除、写操作）和有条件允许的操作（如读取敏感数据）。
-3.  **编写Cedar策略：** 从简单的“拒绝所有”开始，逐步白名单化。
-4.  **测试：** 构建红队测试Prompt，专门尝试诱导Agent违反策略，验证Bedrock AgentCore的拦截效果。
-
-**注意事项：**
-*   **性能延迟：** 每次工具调用都增加了一次策略评估，需监控其对响应速度的影响。
-*   **上下文注入：** 确保传递给策略引擎的上下文信息是未被篡改的。
-
-## 7. 案例分析
+### 7. 案例分析
 
 **成功案例（假设性场景）：**
 某银行部署了辅助客服的AI Agent。
@@ -190,7 +195,7 @@ Policy 创建了一个强制执行层，它独立于 Agent 的自主推理过程
 **失败反思：**
 如果策略定义过于宽泛（例如只检查Action是“Refund”而不检查Resource ID），则Agent可能通过拆分交易或利用参数混淆绕过检查。**教训：策略的颗粒度必须细化到具体的资源实例。**
 
-## 8. 哲学与逻辑：论证地图
+### 8. 哲学与逻辑：论证地图
 
 **中心命题:**
 在生成式AI智能体的架构中，必须引入**独立于模型推理之外的确定性策略执行层**（如Bedrock AgentCore with Cedar），以实现生产级别的安全与可控。
@@ -219,6 +224,7 @@ Policy 创建了一个强制执行层，它独立于 Agent 的自主推理过程
     *   **观察窗口:** 在生产环境中观察6个月，统计由Agent引起的误操作事故数量。
 
 ---
+
 ## 学习要点
 
 - Amazon Bedrock AgentCore 引入了基于策略的访问控制机制，使开发者能够通过定义精细化的“允许”与“拒绝”策略来严格限制 AI 智能体的行为边界，从而确保其操作符合企业安全规范。
@@ -229,6 +235,7 @@ Policy 创建了一个强制执行层，它独立于 Agent 的自主推理过程
 - 借助 Amazon Bedrock 的托管服务特性，用户无需维护复杂的策略执行基础设施，即可获得企业级的 AI 治理能力，显著降低了安全运营的门槛与成本。
 
 ---
+
 ## 引用
 
 - **文章/节目**: [https://aws.amazon.com/blogs/machine-learning/secure-ai-agents-with-policy-in-amazon-bedrock-agentcore](https://aws.amazon.com/blogs/machine-learning/secure-ai-agents-with-policy-in-amazon-bedrock-agentcore)
@@ -238,8 +245,6 @@ Policy 创建了一个强制执行层，它独立于 Agent 的自主推理过程
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [安全](/categories/%E5%AE%89%E5%85%A8/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)
@@ -253,4 +258,3 @@ Policy 创建了一个强制执行层，它独立于 Agent 的自主推理过程
 - [构建Amazon智能体评估框架：通用工作流与Bedrock指标库]({{< relref "posts/20260218-blogs_podcasts-evaluating-ai-agents-real-world-lessons-from-build-0.md" >}})
 - [亚马逊发布代理式AI评估框架：标准化工作流与专用指标库]({{< relref "posts/20260219-blogs_podcasts-evaluating-ai-agents-real-world-lessons-from-build-1.md" >}})
 - [亚马逊构建代理式AI系统的评估框架与实战经验]({{< relref "posts/20260219-blogs_podcasts-evaluating-ai-agents-real-world-lessons-from-build-14.md" >}})
-*本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

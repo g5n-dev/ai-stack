@@ -1,14 +1,25 @@
 ---
-title: "AI工程师会是最后一份工作吗"
-date: 2026-03-09T15:36:53+08:00
+title: AI工程师会是最后一份工作吗
+date: 2026-03-09 15:36:53+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI工程师", "职业发展", "未来工作", "自动化", "AGI", "行业趋势", "技术变革", "工作替代"]
-categories: ["产品与创业", "效率与方法论"]
+entry_kind: auto
+tags:
+- AI工程师
+- 职业发展
+- 未来工作
+- 自动化
+- AGI
+- 行业趋势
+- 技术变革
+- 工作替代
+categories:
+- 产品与创业
+- 效率与方法论
 source: blogs_podcasts
-description: "在技术迭代的浪潮中，AI 工程师这一角色正被推向聚光灯下，引发了关于其是否将成为“最后一份工作”的深刻探讨。这并非单纯的职业焦虑，而是对生产力变革本质与人类价值定位的重新审视。本文将剥离情绪化的喧嚣，从技术演进与产业分工的角度，为你剖析这一论断背后的逻辑，以及它对未来职业发展的真实启示。"
+description: 在技术迭代的浪潮中，AI 工程师这一角色正被推向聚光灯下，引发了关于其是否将成为“最后一份工作”的深刻探讨。这并非单纯的职业焦虑，而是对生产力变革本质与人类价值定位的重新审视。本文将剥离情绪化的喧嚣，从技术演进与产业分工的角度，为你剖析这一论断背后的逻辑，以及它对未来职业发展的真实启示。
 external_url: https://www.latent.space/p/ainews-ai-engineer-will-be-the-last
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
 ---
 
 # AI工程师会是最后一份工作吗
@@ -22,16 +33,19 @@ scenarios: ["AI/ML项目"]
 - **链接**: [https://www.latent.space/p/ainews-ai-engineer-will-be-the-last](https://www.latent.space/p/ainews-ai-engineer-will-be-the-last)
 
 ---
+
 ## 摘要/简介
 
 一个宁静的日子让我们反思关于工作的争论。
 
 ---
+
 ## 导语
 
 在技术迭代的浪潮中，AI 工程师这一角色正被推向聚光灯下，引发了关于其是否将成为“最后一份工作”的深刻探讨。这并非单纯的职业焦虑，而是对生产力变革本质与人类价值定位的重新审视。本文将剥离情绪化的喧嚣，从技术演进与产业分工的角度，为你剖析这一论断背后的逻辑，以及它对未来职业发展的真实启示。
 
 ---
+
 ## 评论
 
 ### 核心评价：基于“AI Engineer将是最后一份工作”的深度剖析
@@ -91,7 +105,6 @@ scenarios: ["AI/ML项目"]
 2.  **深耕垂直领域**：通用的编程能力会被 commoditized（商品化），但结合了**行业Know-how**（如医疗、法律、金融
 
 ---
-## 技术分析
 
 ## 技术分析
 
@@ -126,9 +139,8 @@ scenarios: ["AI/ML项目"]
 *   **开发流程优化**：企业将更多地采用“人机协同”的开发模式，利用AI处理重复性编码任务，人类专注于核心业务逻辑和创造性决策。
 
 ---
-## 最佳实践
 
-## 最佳实践指南
+## 最佳实践
 
 ### 实践 1：从“代码编写者”转变为“系统架构师”
 
@@ -207,6 +219,7 @@ scenarios: ["AI/ML项目"]
 **注意事项**: 避免对特定工具或语言产生宗教般的狂热，保持工具主义的实用心态，什么工具解决问题最快就用什么。
 
 ---
+
 ## 学习要点
 
 - 基于对“AI Engineer will be the LAST job”这一观点的深度解析，以下是总结出的关键要点：
@@ -218,6 +231,7 @@ scenarios: ["AI/ML项目"]
 - AI工程师这一职业的终极使命是“让自己失业”，通过不断完善AI系统，最终实现无需人类干预的完全自动化社会。
 
 ---
+
 ## 引用
 
 - **文章/节目**: [https://www.latent.space/p/ainews-ai-engineer-will-be-the-last](https://www.latent.space/p/ainews-ai-engineer-will-be-the-last)
@@ -227,8 +241,6 @@ scenarios: ["AI/ML项目"]
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [产品与创业](/categories/%E4%BA%A7%E5%93%81%E4%B8%8E%E5%88%9B%E4%B8%9A/) / [效率与方法论](/categories/%E6%95%88%E7%8E%87%E4%B8%8E%E6%96%B9%E6%B3%95%E8%AE%BA/)
@@ -242,4 +254,3 @@ scenarios: ["AI/ML项目"]
 - [AI工程师将是最后一份工作：就业市场的反思]({{< relref "posts/20260308-blogs_podcasts-ainews-ai-engineer-will-be-the-last-job-0.md" >}})
 - [AI对工程类岗位的影响或与预期不同]({{< relref "posts/20260129-hacker_news-ais-impact-on-engineering-jobs-may-be-different-th-3.md" >}})
 - [AI如何影响技能形成与人才培养]({{< relref "posts/20260130-hacker_news-how-ai-impacts-skill-formation-17.md" >}})
-*本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

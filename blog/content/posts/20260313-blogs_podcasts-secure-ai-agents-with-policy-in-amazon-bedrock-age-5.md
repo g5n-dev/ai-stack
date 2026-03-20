@@ -1,14 +1,27 @@
 ---
-title: "构建安全的 Amazon Bedrock 智能体：利用 AgentCore Policy 实现工具调用合规"
-date: 2026-03-13T15:27:45+08:00
+title: 构建安全的 Amazon Bedrock 智能体：利用 AgentCore Policy 实现工具调用合规
+date: 2026-03-13 15:27:45+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Amazon Bedrock", "AgentCore", "Policy", "Cedar", "AI Agents", "工具调用", "访问控制", "运行时安全"]
-categories: ["安全", "AI 工程"]
+entry_kind: auto
+tags:
+- Amazon Bedrock
+- AgentCore
+- Policy
+- Cedar
+- AI Agents
+- 工具调用
+- 访问控制
+- 运行时安全
+categories:
+- 安全
+- AI 工程
 source: blogs_podcasts
-description: "本文介绍了如何利用 **Amazon Bedrock AgentCore** 中的 **Policy（策略）** 功能，为 AI 智能体构建安全且确定的执行层。 主要内容包括： 1. **独立的执行层**：Policy 创建了一个独立于智能体自身推理逻辑之外的强制执行层，确保安全控制不受模型生成内容的直接影响。 2."
+description: 本文介绍了如何利用 **Amazon Bedrock AgentCore** 中的 **Policy（策略）** 功能，为 AI 智能体构建安全且确定的执行层。
+  主要内容包括： 1. **独立的执行层**：Policy 创建了一个独立于智能体自身推理逻辑之外的强制执行层，确保安全控制不受模型生成内容的直接影响。 2.
 external_url: https://aws.amazon.com/blogs/machine-learning/secure-ai-agents-with-policy-in-amazon-bedrock-agentcore
-scenarios: ["AI/ML项目", "命令行工具"]
+scenarios:
+- AI/ML项目
+- 命令行工具
 ---
 
 # 构建安全的 Amazon Bedrock 智能体：利用 AgentCore Policy 实现工具调用合规
@@ -22,16 +35,19 @@ scenarios: ["AI/ML项目", "命令行工具"]
 - **链接**: [https://aws.amazon.com/blogs/machine-learning/secure-ai-agents-with-policy-in-amazon-bedrock-agentcore](https://aws.amazon.com/blogs/machine-learning/secure-ai-agents-with-policy-in-amazon-bedrock-agentcore)
 
 ---
+
 ## 摘要/简介
 
 本文将带你了解 Amazon Bedrock AgentCore 中的 Policy 如何构建一个确定性的执行层，独立于 Agent 自身的推理而运作。你将学习如何将业务规则的自然语言描述转换为 Cedar 策略，随后利用这些策略实施细粒度、具备身份感知的管控，确保 Agent 仅能访问其用户被授权使用的工具与数据。你还将看到如何通过 AgentCore Gateway 应用 Policy，在运行时拦截并评估每一项 Agent 发起的对工具的请求。
 
 ---
+
 ## 导语
 
 构建具备自主决策能力的 AI Agent，如何确保其行为严格符合业务边界与安全规范？这是开发者面临的核心挑战。本文将深入解析 Amazon Bedrock AgentCore 的 Policy 机制，探讨其如何通过独立的确定性执行层来管控 Agent 的工具调用。通过将自然语言规则转换为 Cedar 策略，并经由 AgentCore Gateway 实施运行时拦截，你可以为 Agent 建立细粒度且具备身份感知的权限体系，从而在保障数据安全的前提下实现精准的自动化管控。
 
 ---
+
 ## 摘要
 
 本文介绍了如何利用 **Amazon Bedrock AgentCore** 中的 **Policy（策略）** 功能，为 AI 智能体构建安全且确定的执行层。
@@ -43,6 +59,7 @@ scenarios: ["AI/ML项目", "命令行工具"]
 3.  **运行时拦截与评估**：通过 **AgentCore Gateway** 应用这些策略，在运行时拦截并评估智能体对工具发出的每一个请求，确保智能体仅能访问其用户被授权使用的资源。
 
 ---
+
 ## 评论
 
 ### 中心观点
@@ -95,18 +112,13 @@ scenarios: ["AI/ML项目", "命令行工具"]
     *   **定义**：统计 Agent 在执行任务时被 Policy 层拦截的比例。
     *   **验证**：如果拒绝率过高（>30%），说明策略限制了 Agent 的正常能力；如果出现“越狱”成功（即执行了不该执行的操作），说明策略覆盖不全。
 
-2
-
 ---
+
 ## 技术分析
 
 基于您提供的文章标题和摘要，我们将对《Secure AI agents with Policy in Amazon Bedrock AgentCore》进行深入的技术与逻辑分析。这篇文章探讨了在生成式AI（Generative AI）落地过程中最棘手的问题之一：**如何在保持智能体自主性的同时，确保其行为符合企业的安全与合规边界？**
 
-以下是详细的分析报告：
-
----
-
-## 1. 核心观点深度解读
+### 1. 核心观点深度解读
 
 **文章的主要观点**
 文章的核心观点是：**AI智能体的安全性不应依赖于模型本身的不确定性推理，而应通过外部的、确定性的策略层来强制执行。** Amazon Bedrock AgentCore 引入的 Policy 功能，旨在将业务规则与模型的决策过程解耦，形成一个独立的“执法层”。
@@ -120,7 +132,7 @@ scenarios: ["AI/ML项目", "命令行工具"]
 **为什么这个观点重要**
 随着 AI Agent 从简单的聊天机器人转向能够执行数据库操作、API 调用的自主实体，安全风险呈指数级上升。一个不受控的 Agent 可能会导致数据泄露或错误交易。这一观点解决了企业级应用 AI 的最后一公里难题——**安全性与合规性**，使得 AI 能够真正进入关键业务流程。
 
-## 2. 关键技术要点
+### 2. 关键技术要点
 
 **涉及的关键技术或概念**
 1.  **Amazon Bedrock AgentCore**: AWS 提供的用于构建和托管 AI Agent 的核心服务。
@@ -145,7 +157,7 @@ scenarios: ["AI/ML项目", "命令行工具"]
 **技术创新点分析**
 最大的创新点在于 **Guardrails 与 Agent Actions 的深度集成**。传统的 Guardrails 主要是过滤输入输出文本（例如防止脏话），而 Bedrock AgentCore 的 Policy 是在**函数调用层面**进行控制。它不仅能控制“说什么”，还能控制“做什么”。
 
-## 3. 实际应用价值
+### 3. 实际应用价值
 
 **对实际工作的指导意义**
 对于架构师和开发者而言，这意味着在设计 AI 系统时，不再需要花费大量精力去“微调”模型以遵守规则，而是可以像配置防火墙一样配置 AI 的行为边界。这大大降低了运维成本和上线风险。
@@ -163,7 +175,7 @@ scenarios: ["AI/ML项目", "命令行工具"]
 **实施建议**
 采用“防御纵深”策略。不要完全依赖 Policy，应结合 Prompt Engineering（告诉模型不要做坏事）和 Policy Enforcement（防止模型做坏事），形成双重保险。
 
-## 4. 行业影响分析
+### 4. 行业影响分析
 
 **对行业的启示**
 这一举措标志着 AI 安全从“模型对齐”向“系统架构对齐”的转变。行业将意识到，仅靠 RLHF（基于人类反馈的强化学习）无法满足企业级安全需求，必须引入外部的、可审计的代码层来保障安全。
@@ -175,7 +187,7 @@ scenarios: ["AI/ML项目", "命令行工具"]
 *   **可解释性**: 当 AI 拒绝执行操作时，Cedar 策略可以提供精确的逻辑依据（例如：“被拒绝，因为资源标签包含 Secret”），比黑盒模型的解释更具说服力。
 *   **审计与合规**: 这种架构天然支持合规审计，因为所有的权限判定都基于确定的代码日志。
 
-## 5. 延伸思考
+### 5. 延伸思考
 
 **引发的其他思考**
 *   **动态策略**: 目前的策略可能是静态的。未来是否能结合实时风险评估（例如检测到异常登录环境）动态调整 Cedar 策略的严格程度？
@@ -187,23 +199,7 @@ scenarios: ["AI/ML项目", "命令行工具"]
 **未来发展趋势**
 预计未来的 AI Agent 框架都会内置类似的 PDP（Policy Decision Point）组件。不提供外部策略执行层的 Agent 框架将无法进入企业级市场。
 
-## 6. 实践建议
-
-**如何应用到自己的项目**
-1.  **审计现有动作**: 列出你的 AI Agent 可以调用的所有工具和 API。
-2.  **定义资源层级**: 明确每个 API 操作涉及什么资源（如 `file:123`, `account:456`）。
-3.  **编写自然语言规则**: 与业务专家协作，用白话文写出谁能在什么情况下操作什么。
-4.  **转化为 Cedar**: 利用 LLM 辅助将自然语言转化为 Cedar 策略代码，并建立单元测试进行验证。
-
-**具体的行动建议**
-*   在开发初期就引入 Cedar 策略，不要事后补丁。
-*   建立“拒绝日志”监控，定期查看 Agent 哪些操作被拦截了，以此判断是用户意图越界，还是模型理解偏差，亦或是策略过于严格。
-
-**需要补充的知识**
-*   学习 Cedar 语言的语法。
-*   理解 RBAC（基于角色）和 ABAC（基于属性）的访问控制模型。
-
-## 7. 案例分析
+### 7. 案例分析
 
 **结合实际案例说明**
 假设一个**银行 AI 助手**场景。
@@ -221,7 +217,7 @@ scenarios: ["AI/ML项目", "命令行工具"]
 **经验教训总结**
 安全必须是确定性的。在这个案例中，即使模型被诱导试图转账，外部的策略层也充当了“看门人”的角色，确保了资金安全。
 
-## 8. 哲学与逻辑：论证地图
+### 8. 哲学与逻辑：论证地图
 
 **中心命题**
 **企业级 AI 智能体的安全治理必须从依赖模型内在的概率性对齐，转向基于外部确定性策略代码的强制执行，才能实现生产环境所需的可靠性与合规性。**
@@ -244,9 +240,8 @@ scenarios: ["AI/ML项目", "命令行工具"]
 *   **价值判断**: 确定性的安全性比智能的
 
 ---
-## 最佳实践
 
-## 最佳实践指南
+## 最佳实践
 
 ### 实践 1：实施严格的输入输出边界检查
 
@@ -325,6 +320,7 @@ scenarios: ["AI/ML项目", "命令行工具"]
 **注意事项**: 注意防止“长上下文攻击”，即攻击者通过大量无关输入试图挤掉或覆盖原本的系统指令
 
 ---
+
 ## 学习要点
 
 - Amazon Bedrock AgentCore 引入了“策略”概念，允许开发者通过声明式配置而非硬编码来精细控制 AI 智能体的行为与安全边界。
@@ -334,6 +330,7 @@ scenarios: ["AI/ML项目", "命令行工具"]
 - 通过将安全策略与业务逻辑解耦，该架构降低了构建安全 AI 应用的复杂性，加速了智能体在生产环境中的落地部署。
 
 ---
+
 ## 引用
 
 - **文章/节目**: [https://aws.amazon.com/blogs/machine-learning/secure-ai-agents-with-policy-in-amazon-bedrock-agentcore](https://aws.amazon.com/blogs/machine-learning/secure-ai-agents-with-policy-in-amazon-bedrock-agentcore)
@@ -343,8 +340,6 @@ scenarios: ["AI/ML项目", "命令行工具"]
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [安全](/categories/%E5%AE%89%E5%85%A8/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)
@@ -358,4 +353,3 @@ scenarios: ["AI/ML项目", "命令行工具"]
 - [亚马逊构建AI代理评估框架：通用工作流与Bedrock评估库]({{< relref "posts/20260219-blogs_podcasts-evaluating-ai-agents-real-world-lessons-from-build-6.md" >}})
 - [利用 FAST 模板加速构建 Amazon Bedrock AgentCore 应用]({{< relref "posts/20260210-blogs_podcasts-accelerate-agentic-application-development-with-a--11.md" >}})
 - [Iberdrola enhances IT operations using Amazon Bedrock A]({{< relref "posts/20260210-blogs_podcasts-iberdrola-enhances-it-operations-using-amazon-bedr-1.md" >}})
-*本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

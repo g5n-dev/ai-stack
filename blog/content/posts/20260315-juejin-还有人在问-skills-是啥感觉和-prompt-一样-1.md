@@ -1,14 +1,26 @@
 ---
-title: "Claude Skills 与 Prompt 的区别：可复用工作流封装与代码审查实践"
-date: 2026-03-15T15:23:22+08:00
+title: Claude Skills 与 Prompt 的区别：可复用工作流封装与代码审查实践
+date: 2026-03-15 15:23:22+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Claude", "Claude Skills", "Prompt", "工作流封装", "代码审查", "MCP", "Agent", "AI 效率"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- Claude
+- Claude Skills
+- Prompt
+- 工作流封装
+- 代码审查
+- MCP
+- Agent
+- AI 效率
+categories:
+- 大模型
+- AI 工程
 source: juejin
-description: "**Claude Skills 核心总结：区别于 Prompt 的复用工作流包** 针对“Claude Skills 是否等同于 Prompt”的疑问，核心结论是：**二者本质不同**。 **1. 本质区别** * **Prompt（提示词）**：是一次性的指令文本。 * **Skills（技能包）**：是 Claud"
+description: '**Claude Skills 核心总结：区别于 Prompt 的复用工作流包** 针对“Claude Skills 是否等同于 Prompt”的疑问，核心结论是：**二者本质不同**。
+  **1. 本质区别** * **Prompt（提示词）**：是一次性的指令文本。 * **Skills（技能包）**：是 Claud'
 external_url: https://juejin.cn/post/7617156058722009124
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
 ---
 
 # Claude Skills 与 Prompt 的区别：可复用工作流封装与代码审查实践
@@ -21,16 +33,19 @@ scenarios: ["AI/ML项目"]
 - **链接**: [https://juejin.cn/post/7617156058722009124](https://juejin.cn/post/7617156058722009124)
 
 ---
+
 ## 导语
 
 Skills 与 prompt 虽然都用于指令输入，但本质截然不同：Skills 是 Claude 中可复用的工作流包，通过封装流程、资料与模板，让 AI 能够稳定执行代码审查等复杂任务。本文将详细解读 Skills 的包结构及其与 MCP、Agent 的区别，并提供五步学习法。阅读后，你将掌握如何通过封装工作流来显著提升 AI 的执行效率与稳定性。
 
 ---
+
 ## 描述
 
 本文阐明 Skills 与 prompt 的区别：Skills 是 Claude 可复用的工作流包，将流程、资料和模板进行封装，让 AI 稳定执行代码审查。详细解读 MCP/Agent 的区别、包结构、五步学习法，提升效率。
 
 ---
+
 ## 摘要
 
 **Claude Skills 核心总结：区别于 Prompt 的复用工作流包**
@@ -51,6 +66,7 @@ Skills 能够让 AI 在处理复杂任务（如代码审查）时，依据预设
 **总结**：Skills 是一种将流程、资料固化的工具，旨在通过封装工作流显著提升 AI 在特定任务上的执行效率与质量。
 
 ---
+
 ## 评论
 
 **文章中心观点**
@@ -101,6 +117,7 @@ Skills 能够让 AI 在处理复杂任务（如代码审查）时，依据预设
     *   **验证**：对比直接Prompt。如果Skill包的Token消耗是直接
 
 ---
+
 ## 学习要点
 
 - 根据您的要求，以下是从该内容中提炼出的关键要点（基于对“Skills”与“Prompt”区别的通用技术理解）：
@@ -111,6 +128,7 @@ Skills 能够让 AI 在处理复杂任务（如代码审查）时，依据预设
 - Skills 的本质是将“自然语言描述”转化为“确定性能力”，解决了 Prompt 在多轮对话中上下文管理混乱的问题。
 
 ---
+
 ## 引用
 
 - **掘金原文**: [https://juejin.cn/post/7617156058722009124](https://juejin.cn/post/7617156058722009124)
@@ -119,8 +137,6 @@ Skills 能够让 AI 在处理复杂任务（如代码审查）时，依据预设
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)
@@ -134,4 +150,3 @@ Skills 能够让 AI 在处理复杂任务（如代码审查）时，依据预设
 - [Claude Composer：AI 编排多智能体协作与任务流]({{< relref "posts/20260206-hacker_news-claude-composer-7.md" >}})
 - [Claude Composer：AI 编排多智能体工作流]({{< relref "posts/20260207-hacker_news-claude-composer-18.md" >}})
 - [深度解析Skill/MCP/RAG等五大AI技术的底层逻辑]({{< relref "posts/20260212-juejin-深入理解skillmcpragagentopenclaw底层逻辑-2.md" >}})
-*本文由 AI Stack 自动生成，提供深度内容分析。*

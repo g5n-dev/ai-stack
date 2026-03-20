@@ -7,6 +7,7 @@ from typing import Dict
 import logging
 
 from .anthropic_client import AnthropicClient
+from .markdown_normalizer import looks_incomplete_text, normalize_generated_markdown
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -36,8 +37,15 @@ class ContentSummarizer:
         try:
             prompt = self._build_summary_prompt(content, style)
             summary = self.client.create_message(prompt, max_tokens=500)
-            text = (summary or "").strip()
+            text = normalize_generated_markdown(
+                summary or "",
+                wrapper_headings={"摘要", "摘要/简介", "核心摘要"},
+                strip_first_heading=True,
+                demote_headings=True,
+            ).strip()
             if self._looks_like_meta_disclaimer(text):
+                return ""
+            if looks_incomplete_text(text):
                 return ""
             return text
 
@@ -78,7 +86,12 @@ class ContentSummarizer:
         else:
             instruction = f"请用中文总结以下内容。"
 
-        prompt = f"{instruction}\n\n内容：\n{content}"
+        prompt = (
+            f"{instruction}\n"
+            "只输出正文，不要写标题，不要写“## 摘要”这类区块名，不要额外包裹 Markdown 总标题；"
+            "如果需要小节，请从三级标题（###）开始。\n\n"
+            f"内容：\n{content}"
+        )
         return prompt
 
     def summarize_repository(self, repo_data: Dict) -> Dict:

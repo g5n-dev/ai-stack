@@ -1,14 +1,28 @@
 ---
-title: "Next.js + Ollama + Qwen3 构建本地流式聊天应用"
-date: 2026-03-17T01:17:58+08:00
+title: Next.js + Ollama + Qwen3 构建本地流式聊天应用
+date: 2026-03-17 01:17:58+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Next.js", "Ollama", "Qwen3", "流式输出", "本地部署", "LLM", "零成本", "全栈开发"]
-categories: ["前端", "大模型"]
+entry_kind: auto
+tags:
+- Next.js
+- Ollama
+- Qwen3
+- 流式输出
+- 本地部署
+- LLM
+- 零成本
+- 全栈开发
+categories:
+- 前端
+- 大模型
 source: juejin
-description: "本文介绍了如何利用 **Next.js**、**Ollama** 和 **Qwen3** 在本地搭建一个零成本的 AI 流式聊天应用。该方案无需昂贵的 API 密钥，适合个人开发者快速构建专属的本地 AI 工具。 以下是实现的核心要点总结： 1. **核心技术栈**： * **Next.js**：用于构建前端应用及 A"
+description: 本文介绍了如何利用 **Next.js**、**Ollama** 和 **Qwen3** 在本地搭建一个零成本的 AI 流式聊天应用。该方案无需昂贵的
+  API 密钥，适合个人开发者快速构建专属的本地 AI 工具。 以下是实现的核心要点总结： 1. **核心技术栈**： * **Next.js**：用于构建前端应用及
+  A
 external_url: https://juejin.cn/post/7617728986828816411
-scenarios: ["大语言模型", "后端开发"]
+scenarios:
+- 大语言模型
+- 后端开发
 ---
 
 # Next.js + Ollama + Qwen3 构建本地流式聊天应用
@@ -21,16 +35,19 @@ scenarios: ["大语言模型", "后端开发"]
 - **链接**: [https://juejin.cn/post/7617728986828816411](https://juejin.cn/post/7617728986828816411)
 
 ---
+
 ## 导语
 
 在本地环境运行大模型已成为降低开发成本与保护数据隐私的重要趋势。本文将详细介绍如何利用 Next.js、Ollama 和 Qwen3，从零构建一个支持流式输出的 AI 聊天应用。通过阅读本文，你将掌握无需 API 密钥即可在本地部署高性能模型的具体方法，从而搭建起完全属于自己的 AI 开发环境。
 
 ---
+
 ## 描述
 
 大家好！今天我来给大家分享一个非常实用的技术实现：如何在本地零成本搭建一个可以流式输出的 AI 聊天应用。不需要昂贵的 API 密钥，也不需要复杂的配置，跟着我一步步来，你也能拥有属于自己的本地 AI
 
 ---
+
 ## 摘要
 
 本文介绍了如何利用 **Next.js**、**Ollama** 和 **Qwen3** 在本地搭建一个零成本的 AI 流式聊天应用。该方案无需昂贵的 API 密钥，适合个人开发者快速构建专属的本地 AI 工具。
@@ -50,6 +67,7 @@ scenarios: ["大语言模型", "后端开发"]
     该方案非常适合开发者学习 AI 应用开发流程，或者作为个人专属的、不联网的智能助手使用。通过简单的配置，即可在本地浏览器中体验高质量的大模型对话。
 
 ---
+
 ## 评论
 
 ### 中心观点
@@ -94,11 +112,8 @@ scenarios: ["大语言模型", "后端开发"]
     *   *操作*：使用 `nvidia-smi` (Linux/Windows) 或 `activity monitor` (Mac) 观察 Ollama 进程在加载模型后的显存/内存占用。
     *   *验证*：验证文章是否诚实地列出了硬件门槛。一个 7B 量化模型通常需要 4-6GB 显存，未量化版本翻倍。
 
-3.  **并发压力测试**：
-    *   *操作*：同时打开两个浏览器标签页，同时向本地应用发送请求。
-    *   *观察*：
-
 ---
+
 ## 学习要点
 
 - 利用 Ollama 在本地运行 Qwen3 大模型，实现了零 API 成本且数据隐私安全的开发环境。
@@ -109,54 +124,36 @@ scenarios: ["大语言模型", "后端开发"]
 - 掌握了在 Next.js 中通过 fetch API 与本地大模型服务进行交互的标准开发流程与配置技巧。
 
 ---
+
 ## 常见问题
 
+### Ollama 运行模型时提示 "out of memory" (显存不足) 或电脑卡顿怎么办？
 
-### 1: Ollama 运行模型时提示 "out of memory" (显存不足) 或电脑卡顿怎么办？
-
-1: Ollama 运行模型时提示 "out of memory" (显存不足) 或电脑卡顿怎么办？
-
-**A**: 这是一个非常常见的问题，尤其是使用 7B 或更大参数量的模型时。解决方法主要有以下几种：
+这是一个非常常见的问题，尤其是使用 7B 或更大参数量的模型时。解决方法主要有以下几种：
 
 1.  **量化模型**：确保你下载的是量化后的版本（如 Q4_K_M）。Qwen3 等模型通常提供多种量化等级，Q4 格式在性能和内存占用上取得了较好的平衡。
 2.  **调整上下文窗口**：在代码中调用 API 时，减小 `num_ctx` 参数的值。默认值可能很大（如 32k），将其设置为 4096 或 8192 可以显著降低显存占用。
 3.  **关闭其他应用**：关闭浏览器其他占用内存的标签页或后台应用，为模型释放更多 RAM。
 4.  **调整 Ollama 配置**：在 Ollama 设置中限制使用的 GPU 显存大小，或者强制使用 CPU 运行（速度会变慢，但不会爆显存）。
 
----
+### 如何在 Next.js 中实现类似 ChatGPT 的打字机流式输出效果？
 
-
-
-### 2: 如何在 Next.js 中实现类似 ChatGPT 的打字机流式输出效果？
-
-2: 如何在 Next.js 中实现类似 ChatGPT 的打字机流式输出效果？
-
-**A**: 实现流式输出主要依赖 Next.js 的 API Routes 和 Web Streams API。具体步骤如下：
+实现流式输出主要依赖 Next.js 的 API Routes 和 Web Streams API。具体步骤如下：
 
 1.  **后端**：在 Next.js 的 Route Handler 中，使用 `fetch` 请求 Ollama 的 `/api/generate` 接口，并将 `stream` 参数设为 `true`。
 2.  **处理流**：使用 `for await...of` 循环来读取 `response.body`，通过 `TextDecoder` 解码数据块。
 3.  **前端**：使用 `useEffect` 或 `SWR`/`React Query` 来获取流数据，或者直接使用原生 `fetch`。关键在于使用 `ReadableStream` 的 `reader` 逐块读取数据，并实时更新 State 来渲染 UI。
 
----
+### 部署到生产环境（如 Vercel）后无法连接本地的 Ollama 服务，该如何解决？
 
-
-
-### 3: 部署到生产环境（如 Vercel）后无法连接本地的 Ollama 服务，该如何解决？
-
-3: 部署到生产环境（如 Vercel）后无法连接本地的 Ollama 服务，该如何解决？
-
-**A**: 这是一个典型的网络隔离问题。Next.js 部署在云端服务器（Vercel），而 Ollama 运行在你本地的 `localhost`，云端服务器无法访问你的本地电脑。
+这是一个典型的网络隔离问题。Next.js 部署在云端服务器（Vercel），而 Ollama 运行在你本地的 `localhost`，云端服务器无法访问你的本地电脑。
 
 **解决方案**：
 1.  **本地运行**：仅在本地开发环境使用，通过 `localhost:3000` 访问。
 2.  **内网穿透**：使用工具（如 Ngrok 或 Cloudflare Tunnel）将本地 Ollama 服务（默认端口 11434）暴露到公网，并设置环境变量 `OLLAMA_HOST` 指向该公网地址。
 3.  **服务器部署**：租用一台具有 GPU 的云服务器，在该服务器上安装 Ollama 和 Next.js，这样它们就在同一个网络环境中了。
 
----
-
-
-
-### 4: Qwen3 模型在回答时出现中文乱码或者奇怪的字符怎么处理？
+### wen3 模型在回答时出现中文乱码或者奇怪的字符怎么处理？
 
 4: Qwen3 模型在回答时出现中文乱码或者奇怪的字符怎么处理？
 
@@ -167,33 +164,22 @@ scenarios: ["大语言模型", "后端开发"]
 2.  **TextDecoder**：使用 `new TextDecoder("utf-8")` 时，确保处理了 `{ stream: true }` 选项（如果浏览器支持），或者在前端展示层将接收到的字符串片段进行缓冲，确保完整字符再渲染。
 3.  **换行符处理**：Ollama 返回的 JSON 数据可能包含换行符，确保在 `JSON.parse` 之前正确处理了这些空白字符，否则会导致解析错误。
 
----
+### 除了 Qwen3，如何切换使用 Ollama 中的其他模型（如 Llama 3 或 Mistral）？
 
-
-
-### 5: 除了 Qwen3，如何切换使用 Ollama 中的其他模型（如 Llama 3 或 Mistral）？
-
-5: 除了 Qwen3，如何切换使用 Ollama 中的其他模型（如 Llama 3 或 Mistral）？
-
-**A**: Ollama 的 API 设计是通用的，切换模型非常简单：
+Ollama 的 API 设计是通用的，切换模型非常简单：
 
 1.  **拉取模型**：首先在终端运行 `ollama pull <模型名>`（例如 `ollama pull llama3`）。
 2.  **修改请求参数**：在你的 Next.js 代码中，找到发送给 Ollama 的请求体（body），将 `model` 字段的值从 `qwen3` 修改为 `llama3` 或其他你下载的模型名称即可。不需要修改其他逻辑代码。
 
----
+### Next.js 服务端组件（RSC）如何获取 Ollama 的数据？
 
-
-
-### 6: Next.js 服务端组件（RSC）如何获取 Ollama 的数据？
-
-6: Next.js 服务端组件（RSC）如何获取 Ollama 的数据？
-
-**A**: 你可以在 Next.js 的 Server Component 中直接使用 `async/await` 获取数据，但要注意流式处理的特殊性。
+你可以在 Next.js 的 Server Component 中直接使用 `async/await` 获取数据，但要注意流式处理的特殊性。
 
 1.  **非流式（一次性返回）**：直接在 Server Component 中定义 `async function`，使用 `fetch` 调用 Ollama API（`stream: false`），等待数据返回后渲染页面。这适合首屏加载内容。
 2.  **流式（推荐）**：由于 Server Component 本身不支持流式更新 UI，通常的做法是创建一个 Route Handler (`app/api/chat/route.ts`) 来处理流
 
 ---
+
 ## 引用
 
 - **掘金原文**: [https://juejin.cn/post/7617728986828816411](https://juejin.cn/post/7617728986828816411)
@@ -202,8 +188,6 @@ scenarios: ["大语言模型", "后端开发"]
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [前端](/categories/%E5%89%8D%E7%AB%AF/) / [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)
@@ -217,4 +201,3 @@ scenarios: ["大语言模型", "后端开发"]
 - [如何在本地部署运行 Qwen 3.5 大模型]({{< relref "posts/20260308-hacker_news-how-to-run-qwen-35-locally-10.md" >}})
 - [如何在本地运行 Qwen 3.5 大模型]({{< relref "posts/20260308-hacker_news-how-to-run-qwen-35-locally-16.md" >}})
 - [本地部署 Qwen 3.5 大模型的方法与流程]({{< relref "posts/20260308-hacker_news-how-to-run-qwen-35-locally-18.md" >}})
-*本文由 AI Stack 自动生成，提供深度内容分析。*

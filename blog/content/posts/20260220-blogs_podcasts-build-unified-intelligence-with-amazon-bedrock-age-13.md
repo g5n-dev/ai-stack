@@ -1,14 +1,28 @@
 ---
-title: "利用 Amazon Bedrock AgentCore 构建统一智能系统"
-date: 2026-02-20T07:13:53+08:00
+title: 利用 Amazon Bedrock AgentCore 构建统一智能系统
+date: 2026-02-20 07:13:53+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Amazon Bedrock", "AgentCore", "LLM", "智能体", "RAG", "AWS", "系统架构", "CAKE"]
-categories: ["AI 工程", "后端"]
+entry_kind: auto
+tags:
+- Amazon Bedrock
+- AgentCore
+- LLM
+- 智能体
+- RAG
+- AWS
+- 系统架构
+- CAKE
+categories:
+- AI 工程
+- 后端
 source: blogs_podcasts
-description: "随着企业业务场景的日益复杂，如何将分散的 AI 能力整合为统一的智能系统，已成为技术落地的关键挑战。本文以 Customer Agent and Knowledge Engine（CAKE）的真实实现为例，深入探讨如何利用 Amazon Bedrock AgentCore 构建高效、连贯的智能体架构。通过阅读本文，您将"
+description: 随着企业业务场景的日益复杂，如何将分散的 AI 能力整合为统一的智能系统，已成为技术落地的关键挑战。本文以 Customer Agent
+  and Knowledge Engine（CAKE）的真实实现为例，深入探讨如何利用 Amazon Bedrock AgentCore 构建高效、连贯的智能体架构。通过阅读本文，您将
 external_url: https://aws.amazon.com/blogs/machine-learning/build-unified-intelligence-with-amazon-bedrock-agentcore
-scenarios: ["大语言模型", "RAG应用", "AI/ML项目"]
+scenarios:
+- 大语言模型
+- RAG应用
+- AI/ML项目
 ---
 
 # 利用 Amazon Bedrock AgentCore 构建统一智能系统
@@ -22,16 +36,19 @@ scenarios: ["大语言模型", "RAG应用", "AI/ML项目"]
 - **链接**: [https://aws.amazon.com/blogs/machine-learning/build-unified-intelligence-with-amazon-bedrock-agentcore](https://aws.amazon.com/blogs/machine-learning/build-unified-intelligence-with-amazon-bedrock-agentcore)
 
 ---
+
 ## 摘要/简介
 
 在这篇文章中，我们通过 Customer Agent and Knowledge Engine（CAKE）的真实实现，演示如何利用 Amazon Bedrock AgentCore 构建统一的智能系统。
 
 ---
+
 ## 导语
 
 随着企业业务场景的日益复杂，如何将分散的 AI 能力整合为统一的智能系统，已成为技术落地的关键挑战。本文以 Customer Agent and Knowledge Engine（CAKE）的真实实现为例，深入探讨如何利用 Amazon Bedrock AgentCore 构建高效、连贯的智能体架构。通过阅读本文，您将掌握构建统一智能的核心逻辑与具体路径，从而在实际项目中更有效地整合数据与模型，提升系统的自动化水平与决策效率。
 
 ---
+
 ## 评论
 
 **文章中心观点**
@@ -81,9 +98,8 @@ scenarios: ["大语言模型", "RAG应用", "AI/ML项目"]
 这篇文章虽然带有典型的 AWS 供应商色彩，但其提出的**“统一智能”**概念精准地击中了当前生成式 AI 落地的“最后一公里”难题——即如何将大模型的能力与企业的实际业务流程（API、数据库、逻辑）深度融合。从行业角度看，它标志着云厂商正在从提供“模型”转向提供“
 
 ---
-## 最佳实践
 
-## 最佳实践指南
+## 最佳实践
 
 ### 实践 1：设计单一且明确的 Agent 专注领域
 
@@ -168,6 +184,7 @@ Agent 的表现并非一成不变。最佳实践要求建立持续测试和优�
 **注意事项**: 每次修改 Prompt 后，必须进行回归测试，确保新的改动没有导致原有功能的退化。
 
 ---
+
 ## 学习要点
 
 - Amazon Bedrock AgentCore 提供了统一的智能体构建框架，帮助企业快速集成并协调多个 AI 模型与数据源。
@@ -178,6 +195,7 @@ Agent 的表现并非一成不变。最佳实践要求建立持续测试和优�
 - 该解决方案支持通过标准化 API 将 AI 能力嵌入现有业务工作流，加速了智能化转型的落地。
 
 ---
+
 ## 引用
 
 - **文章/节目**: [https://aws.amazon.com/blogs/machine-learning/build-unified-intelligence-with-amazon-bedrock-agentcore](https://aws.amazon.com/blogs/machine-learning/build-unified-intelligence-with-amazon-bedrock-agentcore)
@@ -187,8 +205,6 @@ Agent 的表现并非一成不变。最佳实践要求建立持续测试和优�
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [后端](/categories/%E5%90%8E%E7%AB%AF/)
@@ -202,4 +218,3 @@ Agent 的表现并非一成不变。最佳实践要求建立持续测试和优�
 - [基于Amazon Bedrock AgentCore构建统一智能系统实践]({{< relref "posts/20260219-blogs_podcasts-build-unified-intelligence-with-amazon-bedrock-age-3.md" >}})
 - [使用 Amazon Bedrock AgentCore 构建统一智能系统]({{< relref "posts/20260219-blogs_podcasts-build-unified-intelligence-with-amazon-bedrock-age-10.md" >}})
 - [使用 Amazon Bedrock AgentCore 构建统一智能系统]({{< relref "posts/20260219-blogs_podcasts-build-unified-intelligence-with-amazon-bedrock-age-11.md" >}})
-*本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

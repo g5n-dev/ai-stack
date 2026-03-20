@@ -1,14 +1,26 @@
 ---
-title: "本地部署 Qwen 3.5 大模型的方法与流程"
-date: 2026-03-08T18:33:41+08:00
+title: 本地部署 Qwen 3.5 大模型的方法与流程
+date: 2026-03-08 18:33:41+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Qwen", "本地部署", "LLM", "模型推理", "Ollama", "vLLM", "量化", "硬件配置"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- Qwen
+- 本地部署
+- LLM
+- 模型推理
+- Ollama
+- vLLM
+- 量化
+- 硬件配置
+categories:
+- 大模型
+- AI 工程
 source: hacker_news
-description: "随着大模型本地化部署需求的增加，Qwen 3.5 凭借其性能表现和开源特性，成为许多开发者和爱好者的首选方案。本文将详细介绍如何在本地环境中高效运行 Qwen 3.5，涵盖环境配置、依赖安装及模型调用的具体步骤。通过阅读此文，读者可以掌握从零开始的部署流程，并了解如何根据硬件条件优化推理效率，从而在离线环境中安全、灵活"
+description: 随着大模型本地化部署需求的增加，Qwen 3.5 凭借其性能表现和开源特性，成为许多开发者和爱好者的首选方案。本文将详细介绍如何在本地环境中高效运行
+  Qwen 3.5，涵盖环境配置、依赖安装及模型调用的具体步骤。通过阅读此文，读者可以掌握从零开始的部署流程，并了解如何根据硬件条件优化推理效率，从而在离线环境中安全、灵活
 external_url: https://unsloth.ai/docs/models/qwen3.5
-scenarios: ["大语言模型"]
+scenarios:
+- 大语言模型
 ---
 
 # 本地部署 Qwen 3.5 大模型的方法与流程
@@ -24,11 +36,13 @@ scenarios: ["大语言模型"]
 - **HN 讨论**: [https://news.ycombinator.com/item?id=47292522](https://news.ycombinator.com/item?id=47292522)
 
 ---
+
 ## 导语
 
 随着大模型本地化部署需求的增加，Qwen 3.5 凭借其性能表现和开源特性，成为许多开发者和爱好者的首选方案。本文将详细介绍如何在本地环境中高效运行 Qwen 3.5，涵盖环境配置、依赖安装及模型调用的具体步骤。通过阅读此文，读者可以掌握从零开始的部署流程，并了解如何根据硬件条件优化推理效率，从而在离线环境中安全、灵活地使用该模型。
 
 ---
+
 ## 评论
 
 ### 深度评论
@@ -54,113 +68,19 @@ scenarios: ["大语言模型"]
 *   **资源监控**：使用 `nvtop` 实时监控显存占用。在 2048 Context Length 下，Qwen-7B-Q4 的显存占用应稳定在 5-6GB 左右，若超出此范围过多，说明 KV Cache 配置存在冗余。
 
 ---
+
 ## 代码示例
-
-
-
 
 ```python
 # 示例1：使用Transformers库加载Qwen2.5-7B-Instruct模型并生成文本
 from transformers import AutoModelForCausalLM, AutoTokenizer
 import torch
 
-def run_qwen_local():
-    # 加载分词器和模型（首次运行会自动下载约15GB模型文件）
-    model_name = "Qwen/Qwen2.5-7B-Instruct"
-    tokenizer = AutoTokenizer.from_pretrained(model_name)
-    model = AutoModelForCausalLM.from_pretrained(
-        model_name,
-        torch_dtype=torch.float16,  # 使用半精度节省显存
-        device_map="auto"          # 自动分配GPU/CPU
-    )
-    
-    # 准备对话输入
-    messages = [
-        {"role": "system", "content": "你是一个智能助手"},
-        {"role": "user", "content": "如何用Python实现快速排序？"}
-    ]
-    text = tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
-    
-    # 生成回复
-    inputs = tokenizer([text], return_tensors="pt").to(model.device)
-    outputs = model.generate(**inputs, max_new_tokens=512)
-    print(tokenizer.decode(outputs[0], skip_special_tokens=True))
-
-run_qwen_local()
-```
-
-
-
-
-```python
-# 示例2：使用llama.cpp实现4-bit量化推理（CPU友好）
-from llama_cpp import Llama
-
-def run_qwen_quantized():
-    # 加载4-bit量化模型（需要先下载GGUF格式模型文件）
-    model_path = "qwen2.5-7b-instruct.Q4_K_M.gguf"
-    llm = Llama(
-        model_path=model_path,
-        n_gpu_layers=-1,    # -1表示使用所有可用GPU层
-        n_ctx=4096,         # 上下文长度
-        verbose=False
-    )
-    
-    # 生成回复（支持流式输出）
-    output = llm.create_completion(
-        "解释什么是量子纠缠，用小学生能理解的方式",
-        max_tokens=256,
-        stop=["<|im_end|>"],
-        stream=True
-    )
-    
-    for chunk in output:
-        print(chunk["choices"][0]["text"], end="", flush=True)
-
-run_qwen_quantized()
-```
-
-
-
-
-```python
-# 示例3：使用vLLM实现高吞吐量推理服务
-from vllm import LLM, SamplingParams
-
-def run_qwen_batch():
-    # 初始化vLLM引擎（支持张量并行）
-    llm = LLM(
-        model="Qwen/Qwen2.5-7B-Instruct",
-        tensor_parallel_size=2,  # 使用2张GPU
-        max_model_len=4096,
-        trust_remote_code=True
-    )
-    
-    # 准备批量输入
-    prompts = [
-        "写一个Python函数计算斐波那契数列",
-        "比较TCP和UDP的区别",
-        "解释RESTful API设计原则"
-    ]
-    sampling_params = SamplingParams(temperature=0.7, top_p=0.9, max_tokens=256)
-    
-    # 批量生成（自动优化内存和计算）
-    outputs = llm.generate(prompts, sampling_params)
-    
-    for output in outputs:
-        print(f"Prompt: {output.prompt}\nGenerated: {output.outputs[0].text}\n")
-
-run_qwen_batch()
-```
-
-
 ---
+
 ## 案例研究
 
-
 ### 1：某中型跨境电商公司独立站项目
-
- 1：某中型跨境电商公司独立站项目
 
 **背景**:
 该公司运营着一个面向全球市场的垂直领域独立站，需要为用户提供 24/7 的售前咨询和售后支持。此前一直依赖人工客服，但随着海外市场扩展，夜间客服成本高昂且响应不及时。
@@ -176,11 +96,7 @@ run_qwen_batch()
 
 ---
 
-
-
 ### 2：某医疗科技初创公司的辅助诊断系统研发
-
- 2：某医疗科技初创公司的辅助诊断系统研发
 
 **背景**:
 该公司致力于开发辅助医生进行病历分析和建议生成的工具。由于医疗行业的敏感性，数据严禁外传，且对模型生成的文本逻辑性和安全性有极高要求。
@@ -196,11 +112,7 @@ run_qwen_batch()
 
 ---
 
-
-
 ### 3：独立开发者的智能知识管理插件
-
- 3：独立开发者的智能知识管理插件
 
 **背景**:
 一位独立开发者正在构建一款面向程序员和写作人群的桌面端笔记软件，旨在通过 AI 帮助用户自动整理、总结和关联本地笔记内容。
@@ -215,9 +127,8 @@ run_qwen_batch()
 软件发布后，"完全离线运行"和"隐私优先"的特性成为主要卖点，吸引了大量注重隐私的极客用户。即使在普通的 MacBook Air 上，模型也能实现流畅的实时文本补全和摘要生成，用户留存率显著高于同类联网产品。
 
 ---
-## 最佳实践
 
-## 最佳实践指南
+## 最佳实践
 
 ### 实践 1：硬件资源的精准评估与选择
 
@@ -276,14 +187,8 @@ run_qwen_batch()
 
 **说明**: 在消费级硬件上运行大模型时，直接运行 FP16 或 BF16 精度通常是不现实的。使用 GGUF (GPT-Generated Unified Format) 格式的量化模型是标准做法。选择正确的量化等级（Quantization Level）需要在模型性能（智力）和资源占用之间取得平衡。
 
-**实施步骤**:
-1. 访问 Hugging Face 上的 Qwen 模型库，寻找由 `TheBloke` 或 `MaziyarPanahi` 等用户提供的 GGUF 版本。
-2. 根据显存大小选择量化等级：
-   - **Q4_K_M (4-bit)**: 性能损耗最小，显存占用最低，推荐用于 12GB-16GB 显存的设备。
-   - **Q5_K_M (5-bit)**: 如果显存充裕，此等级能提供接近原生的性能。
-   - **
-
 ---
+
 ## 学习要点
 
 - Qwen 2.5 支持 128k 上下文窗口，在多项基准测试中的表现优于 Llama 3.1 70B。
@@ -294,8 +199,8 @@ run_qwen_batch()
 - 该模型支持函数调用及结构化输出，适用于构建本地的 RAG（检索增强生成）或智能体应用。
 
 ---
-## 常见问题
 
+## 常见问题
 
 ### 1: 运行 Qwen 2.5（通常指 Qwen2.5-7B-Instruct 等版本，Qwen 3.5 尚未正式发布，此处以最新一代 Qwen2.5 为例）本地运行需要什么样的硬件配置？
 
@@ -311,10 +216,6 @@ run_qwen_batch()
 2.  **CPU 与内存**：如果没有强大的 NVIDIA 显卡，可以使用基于 CPU 的推理工具（如 llama.cpp），此时需要大容量的系统内存（RAM）。建议内存容量至少为模型大小的 1.5 倍以实现流畅加载。
 3.  **硬盘**：建议使用 SSD 读取模型文件，以减少加载时间。
 
----
-
-
-
 ### 2: 普通用户在本地运行 Qwen 模型，最简单的方法是什么？
 
 2: 普通用户在本地运行 Qwen 模型，最简单的方法是什么？
@@ -329,10 +230,6 @@ run_qwen_batch()
     *   **步骤**：在官网下载 Ollama 并安装 -> 打开终端输入 `ollama run qwen2.5`。它会自动下载模型并启动一个交互式聊天窗口。
 3.  **GPT4All**：
     *   另一个不需要复杂安装的本地客户端，内置了模型下载器，界面友好。
-
----
-
-
 
 ### 3: 如果我是开发者，想要在 Python 代码中调用 Qwen 模型，应该怎么做？
 
@@ -350,82 +247,18 @@ run_qwen_batch()
 
     model_name = "Qwen/Qwen2.5-7B-Instruct" # 示例模型名称
 
-    # 加载 Tokenizer
+### 加载 Tokenizer
     tokenizer = AutoTokenizer.from_pretrained(model_name)
 
-    # 加载模型 (device_map="auto" 会自动检测并使用 GPU)
+### 加载模型 (device_map="auto" 会自动检测并使用 GPU)
     model = AutoModelForCausalLM.from_pretrained(
         model_name,
         torch_dtype="auto", # 自动选择数据类型
         device_map="auto"
     )
 
-    # 准备输入
+### 准备输入
     prompt = "你是谁？"
     messages = [{"role": "user", "content": prompt}]
     text = tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
     model_inputs = tokenizer([text], return_tensors="pt").to(model.device)
-
-    # 生成回复
-    generated_ids = model.generate(
-        model_inputs.input_ids,
-        max_new_tokens=512
-    )
-    generated_ids = [
-        output_ids[len(input_ids):] for input_ids, output_ids in zip(model_inputs.input_ids, generated_ids)
-    ]
-
-    response = tokenizer.batch_decode(generated_ids, skip_special_tokens=True)[0]
-    print(response)
-    ```
-
----
-
-
-
-### 4: 什么是 GGUF 格式？为什么下载 Qwen 模型时经常看到这种格式？
-
-4: 什么是 GGUF 格式？为什么下载 Qwen 模型时经常看到这种格式？
-
-**A**: GGUF (GPT-Generated Unified Format) 是一种由 `llama.cpp` 项目推出的文件格式，
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [基础验证]
-
-### 问题**：在本地运行 Qwen 2.5 时，如何验证模型是否成功加载并能够处理基本的推理任务？请编写一个最基础的脚本，使其能够接收用户输入并返回模型的生成结果，同时确保显存占用在 7GB 以下（适用于消费级显卡）。
-
-### 提示**：关注 Hugging Face 的 `transformers` 库加载模型时的参数配置，特别是与量化（Quantization）相关的加载方法，例如 `bitsandbytes` 的配置。
-
-### 
-
----
-## 引用
-
-- **原文链接**: [https://unsloth.ai/docs/models/qwen3.5](https://unsloth.ai/docs/models/qwen3.5)
-- **HN 讨论**: [https://news.ycombinator.com/item?id=47292522](https://news.ycombinator.com/item?id=47292522)
-
-> 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
-
----
-
-
----
-## 站内链接
-
-- 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)
-- 标签： [Qwen](/tags/qwen/) / [本地部署](/tags/%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2/) / [LLM](/tags/llm/) / [模型推理](/tags/%E6%A8%A1%E5%9E%8B%E6%8E%A8%E7%90%86/) / [Ollama](/tags/ollama/) / [vLLM](/tags/vllm/) / [量化](/tags/%E9%87%8F%E5%8C%96/) / [硬件配置](/tags/%E7%A1%AC%E4%BB%B6%E9%85%8D%E7%BD%AE/)
-- 场景： [大语言模型](/scenarios/%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/)
-
-### 相关文章
-
-- [如何在本地部署运行 Qwen 3.5 大模型]({{< relref "posts/20260308-hacker_news-how-to-run-qwen-35-locally-10.md" >}})
-- [如何在本地部署并运行 Qwen 3.5 大模型]({{< relref "posts/20260308-hacker_news-how-to-run-qwen-35-locally-5.md" >}})
-- [本地运行 Qwen 3.5 大模型的完整指南]({{< relref "posts/20260308-hacker_news-how-to-run-qwen-35-locally-7.md" >}})
-- [如何在本地运行 Qwen 3.5 模型]({{< relref "posts/20260308-hacker_news-how-to-run-qwen-35-locally-9.md" >}})
-- [如何在本地运行 Qwen 3.5 大模型]({{< relref "posts/20260308-hacker_news-how-to-run-qwen-35-locally-16.md" >}})
-*本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

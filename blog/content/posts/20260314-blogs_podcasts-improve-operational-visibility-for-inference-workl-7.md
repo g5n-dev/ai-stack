@@ -1,17 +1,30 @@
 ---
-title: "Improve operational visibility for inference workloads"
-date: 2026-03-14T21:09:07+08:00
+title: Improve operational visibility for inference workloads
+date: 2026-03-14 21:09:07+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Amazon Bedrock", "CloudWatch", "LLM", "运维监控", "TTFT", "配额管理", "推理优化", "告警配置"]
-categories: ["AI 工程", "系统与基础设施"]
+entry_kind: auto
+tags:
+- Amazon Bedrock
+- CloudWatch
+- LLM
+- 运维监控
+- TTFT
+- 配额管理
+- 推理优化
+- 告警配置
+categories:
+- AI 工程
+- 系统与基础设施
 source: blogs_podcasts
-description: "以下是对该内容的中文总结： **主题：** 通过新增的 CloudWatch 指标提升 Amazon Bedrock 推理工作负载的运维可见性 **概述：** 亚马逊云科技宣布为 Amazon Bedrock 推出两项新的 Amazon CloudWatch 指标：**TimeToFirstToken**（首 toke"
+description: 以下是对该内容的中文总结： **主题：** 通过新增的 CloudWatch 指标提升 Amazon Bedrock 推理工作负载的运维可见性
+  **概述：** 亚马逊云科技宣布为 Amazon Bedrock 推出两项新的 Amazon CloudWatch 指标：**TimeToFirstToken**（首
+  toke
 external_url: https://aws.amazon.com/blogs/machine-learning/improve-operational-visibility-for-inference-workloads-on-amazon-bedrock-with-new-cloudwatch-metrics-for-ttft-and-estimated-quota-consumption
-scenarios: ["大语言模型"]
+scenarios:
+- 大语言模型
 ---
 
-# Improve operational visibility for inference workloads on Amazon Bedrock with new CloudWatch metrics for TTFT and Estimated Quota Consumption
+# Improve operational visibility for inference workloads
 
 ---
 
@@ -22,16 +35,19 @@ scenarios: ["大语言模型"]
 - **链接**: [https://aws.amazon.com/blogs/machine-learning/improve-operational-visibility-for-inference-workloads-on-amazon-bedrock-with-new-cloudwatch-metrics-for-ttft-and-estimated-quota-consumption](https://aws.amazon.com/blogs/machine-learning/improve-operational-visibility-for-inference-workloads-on-amazon-bedrock-with-new-cloudwatch-metrics-for-ttft-and-estimated-quota-consumption)
 
 ---
+
 ## 摘要/简介
 
 Today, we’re announcing two new Amazon CloudWatch metrics for Amazon Bedrock, TimeToFirstToken and EstimatedTPMQuotaUsage. In this post, we cover how these work and how to set alarms, establish baselines, and proactively manage capacity using them.
 
 ---
+
 ## 导语
 
 在 Amazon Bedrock 上运行推理工作负载时，对性能和资源配额的实时监控至关重要。本文介绍了新增的两个 Amazon CloudWatch 指标：TimeToFirstToken（TTFT）和 EstimatedTPMQuotaUsage，它们能帮助用户更精细地量化模型响应延迟与配额消耗情况。通过阅读本文，您将了解这些指标的具体运作机制，并掌握如何设置告警、建立基线以及主动管理容量，从而优化生产环境的可观测性与稳定性。
 
 ---
+
 ## 摘要
 
 以下是对该内容的中文总结：
@@ -49,9 +65,8 @@ Today, we’re announcing two new Amazon CloudWatch metrics for Amazon Bedrock, 
 4.  **主动管理容量**：通过监控配额使用情况（EstimatedTPMQuotaUsage）和响应速度（TimeToFirstToken），用户可以更有效地预测需求并主动管理模型容量，避免因配额不足或响应延迟影响业务。
 
 ---
-## 最佳实践
 
-## 最佳实践指南
+## 最佳实践
 
 ### 实践 1：利用 TTFT 指标优化用户体验
 
@@ -137,6 +152,7 @@ TTFT 会受到 Prompt 长度和模型复杂度的影响。在分析数据时，�
 1. 确保启用了 Amazon Bedrock 日志记录到 CloudWatch Logs。
 
 ---
+
 ## 学习要点
 
 - Amazon Bedrock 新增了 Time to First Token (TTFT) 和 Estimated Quota Consumption 两项 CloudWatch 指标，显著提升了推理工作负载的运营可见性。
@@ -146,6 +162,7 @@ TTFT 会受到 Prompt 长度和模型复杂度的影响。在分析数据时，�
 - 借助更精细的监控数据，运营团队可以快速诊断性能瓶颈，从而提高生成式 AI 应用的整体可靠性。
 
 ---
+
 ## 引用
 
 - **文章/节目**: [https://aws.amazon.com/blogs/machine-learning/improve-operational-visibility-for-inference-workloads-on-amazon-bedrock-with-new-cloudwatch-metrics-for-ttft-and-estimated-quota-consumption](https://aws.amazon.com/blogs/machine-learning/improve-operational-visibility-for-inference-workloads-on-amazon-bedrock-with-new-cloudwatch-metrics-for-ttft-and-estimated-quota-consumption)
@@ -155,8 +172,6 @@ TTFT 会受到 Prompt 长度和模型复杂度的影响。在分析数据时，�
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/)
@@ -170,4 +185,3 @@ TTFT 会受到 Prompt 长度和模型复杂度的影响。在分析数据时，�
 - [Amazon Bedrock 新增 CloudWatch 指标，支持监控 TTFT 和配额消耗]({{< relref "posts/20260313-blogs_podcasts-improve-operational-visibility-for-inference-workl-4.md" >}})
 - [Amazon Bedrock 新增 CloudWatch 指标：TTFT 与预估配额消耗]({{< relref "posts/20260313-blogs_podcasts-improve-operational-visibility-for-inference-workl-5.md" >}})
 - [Amazon Bedrock 新增 CloudWatch 指标：TTFT 与配额监控]({{< relref "posts/20260314-blogs_podcasts-improve-operational-visibility-for-inference-workl-6.md" >}})
-*本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

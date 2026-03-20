@@ -1,14 +1,25 @@
 ---
-title: "利用闲置算力将大模型训练速度提升一倍"
-date: 2026-02-26T20:32:57+08:00
+title: 利用闲置算力将大模型训练速度提升一倍
+date: 2026-02-26 20:32:57+08:00
 draft: false
-entry_kind: "auto"
-tags: ["LLM", "训练加速", "算力优化", "资源调度", "模型训练", "性能优化", "闲置算力", "效率提升"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- LLM
+- 训练加速
+- 算力优化
+- 资源调度
+- 模型训练
+- 性能优化
+- 闲置算力
+- 效率提升
+categories:
+- 大模型
+- AI 工程
 source: blogs_podcasts
-description: "研究人员开发出了一种新方法，通过有效利用闲置计算资源，能够在保证模型准确率的前提下，将大语言模型（LLM）的训练速度提升一倍，从而显著提高训练效率。"
+description: 研究人员开发出了一种新方法，通过有效利用闲置计算资源，能够在保证模型准确率的前提下，将大语言模型（LLM）的训练速度提升一倍，从而显著提高训练效率。
 external_url: https://news.mit.edu/2026/new-method-could-increase-llm-training-efficiency-0226
-scenarios: ["大语言模型"]
+scenarios:
+- 大语言模型
 ---
 
 # 利用闲置算力将大模型训练速度提升一倍
@@ -22,21 +33,25 @@ scenarios: ["大语言模型"]
 - **链接**: [https://news.mit.edu/2026/new-method-could-increase-llm-training-efficiency-0226](https://news.mit.edu/2026/new-method-could-increase-llm-training-efficiency-0226)
 
 ---
+
 ## 摘要/简介
 
 通过利用闲置计算时间，研究人员可以在保持精度的同时将模型训练速度提升一倍。
 
 ---
+
 ## 导语
 
 大语言模型的训练成本高昂且耗时，如何突破算力瓶颈已成为当前技术攻关的重点。本文介绍了一种利用闲置计算时间的新方法，能够在保持模型精度的前提下将训练速度提升一倍。通过阅读本文，读者将了解该方法背后的技术原理，以及它为优化资源分配和降低训练成本带来的实际价值。
 
 ---
+
 ## 摘要
 
 研究人员开发出了一种新方法，通过有效利用闲置计算资源，能够在保证模型准确率的前提下，将大语言模型（LLM）的训练速度提升一倍，从而显著提高训练效率。
 
 ---
+
 ## 评论
 
 ### 中心观点
@@ -75,16 +90,7 @@ scenarios: ["大语言模型"]
 2.  **风险控制：** 在引入此类利用闲置算力的调度器时，必须开启严格的**Determinism check（确定性检查）**，确保梯度数值与标准训练完全一致，否则会导致模型难以调试。
 3.  **监控指标：** 不要只看GPU Utilization（利用率），更要关注**PCIe带宽吞吐**和**NCCL Collective Call的时间**。
 
-### 可验证的检查方式
-
-为了验证该方法的有效性，建议进行以下指标的观测与实验：
-
-1.  **有效吞吐量测试：**
-    *   *指标：* Tokens/Second per GPU（有效吞吐量）。
-    *   *验证：* 在相同的模型配置（如Llama-3-
-
 ---
-## 技术分析
 
 ## 技术分析
 
@@ -105,9 +111,8 @@ scenarios: ["大语言模型"]
 *   **去中心化训练**：为跨地域、跨数据中心的异构算力协作提供了可能，使得通过聚合全球闲置算力来训练超大模型成为未来潜在的技术方向。
 
 ---
-## 最佳实践
 
-## 最佳实践指南
+## 最佳实践
 
 ### 实践 1：采用数据混合策略优化训练
 
@@ -206,6 +211,7 @@ scenarios: ["大语言模型"]
 **注意事项**: 避免过度预取导致内存不足；预处理逻辑应尽可能在GPU上进行。
 
 ---
+
 ## 学习要点
 
 - 基于您提供的标题“New method could increase LLM training efficiency”（新方法可提高大语言模型训练效率），以下是关于该主题通常涉及的核心技术要点总结：
@@ -216,6 +222,7 @@ scenarios: ["大语言模型"]
 - 该创新为降低人工智能开发门槛提供了新路径，有助于推动更先进、更环保的通用人工智能技术的普及与应用。
 
 ---
+
 ## 引用
 
 - **文章/节目**: [https://news.mit.edu/2026/new-method-could-increase-llm-training-efficiency-0226](https://news.mit.edu/2026/new-method-could-increase-llm-training-efficiency-0226)
@@ -225,8 +232,6 @@ scenarios: ["大语言模型"]
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)
@@ -240,4 +245,3 @@ scenarios: ["大语言模型"]
 - [利用空闲计算时间将大模型训练速度提升一倍]({{< relref "posts/20260226-blogs_podcasts-new-method-could-increase-llm-training-efficiency-4.md" >}})
 - [利用闲置算力将大模型训练速度提升一倍的新方法]({{< relref "posts/20260226-blogs_podcasts-new-method-could-increase-llm-training-efficiency-8.md" >}})
 - [AGENTS.md 架构在智能体评估中优于 Skills 架构]({{< relref "posts/20260130-hacker_news-agentsmd-outperforms-skills-in-our-agent-evals-9.md" >}})
-*本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

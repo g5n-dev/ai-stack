@@ -1,14 +1,27 @@
 ---
-title: "Lendi 基于 Amazon Bedrock 构建智能贷款助手重塑客户体验"
-date: 2026-03-04T19:45:21+08:00
+title: Lendi 基于 Amazon Bedrock 构建智能贷款助手重塑客户体验
+date: 2026-03-04 19:45:21+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Amazon Bedrock", "Agentic AI", "智能体", "客户体验", "金融科技", "架构设计", "生成式 AI", "AWS"]
-categories: ["AI 工程", "产品与创业"]
+entry_kind: auto
+tags:
+- Amazon Bedrock
+- Agentic AI
+- 智能体
+- 客户体验
+- 金融科技
+- 架构设计
+- 生成式 AI
+- AWS
+categories:
+- AI 工程
+- 产品与创业
 source: blogs_podcasts
-description: "这是一份关于 Lendi Group 如何利用 Amazon Bedrock 构建生成式 AI 应用的案例总结： **案例概览** Lendi Group 在短短 16 周内，利用 Amazon Bedrock 成功重构了客户的房贷再融资流程。他们开发了一款名为 **“Home Loan Guardian”** 的智能"
+description: 这是一份关于 Lendi Group 如何利用 Amazon Bedrock 构建生成式 AI 应用的案例总结： **案例概览** Lendi
+  Group 在短短 16 周内，利用 Amazon Bedrock 成功重构了客户的房贷再融资流程。他们开发了一款名为 **“Home Loan Guardian”**
+  的智能
 external_url: https://aws.amazon.com/blogs/machine-learning/how-lendi-revamped-the-refinance-journey-for-its-customers-using-agentic-ai-in-12-weeks-using-amazon-bedrock
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
 ---
 
 # Lendi 基于 Amazon Bedrock 构建智能贷款助手重塑客户体验
@@ -22,16 +35,19 @@ scenarios: ["AI/ML项目"]
 - **链接**: [https://aws.amazon.com/blogs/machine-learning/how-lendi-revamped-the-refinance-journey-for-its-customers-using-agentic-ai-in-12-weeks-using-amazon-bedrock](https://aws.amazon.com/blogs/machine-learning/how-lendi-revamped-the-refinance-journey-for-its-customers-using-agentic-ai-in-12-weeks-using-amazon-bedrock)
 
 ---
+
 ## 摘要/简介
 
 本文详细介绍了 Lendi Group 如何利用 Amazon Bedrock 构建其由 AI 驱动的 Home Loan Guardian，包括他们面临的挑战、实施的架构以及取得的显著业务成果。他们的历程为希望利用生成式 AI 改造客户体验，同时保持能够建立信任与忠诚度的人性化关怀的组织，提供了宝贵的见解。
 
 ---
+
 ## 导语
 
 面对复杂的房贷再融资流程，Lendi Group 借助 Amazon Bedrock 成功构建了由 AI 驱动的 Home Loan Guardian。本文将详细拆解他们在 16 周内的实施架构、克服的挑战及取得的业务成果。通过这一案例，读者可以了解到如何在利用生成式 AI 提升效率的同时，保留建立客户信任所必需的“人性化关怀”，为自身的技术落地提供切实参考。
 
 ---
+
 ## 摘要
 
 这是一份关于 Lendi Group 如何利用 Amazon Bedrock 构建生成式 AI 应用的案例总结：
@@ -56,6 +72,7 @@ Lendi 希望利用生成式 AI 技术来革新现有的客户旅程。然而，�
 Lendi 的案例为其他企业提供了宝贵经验：通过像 Amazon Bedrock 这样的全托管服务，企业可以快速、安全地部署生成式 AI，从而在提升运营效率和客户满意度的道路上迈出实质性的一步。
 
 ---
+
 ## 评论
 
 ### 中心观点
@@ -111,9 +128,8 @@ Lendi 的案例为其他企业提供了宝贵经验：通过像 Amazon Bedrock �
     进行 **“对抗性幻觉测试”**。输入一段包含不存在条款的银行政策（诱导性 Prompt），观察 Agent 是会根据错误
 
 ---
-## 技术分析
 
-# 技术分析
+## 技术分析
 
 **核心观点解析**
 该案例展示了如何利用 Amazon Bedrock 构建多智能体系统，将房屋贷款再融资这一传统、流程固定的金融业务，转化为自动化的交互流程。文章的核心论点在于：通过托管服务消除底层模型管理的复杂性，使开发团队能够专注于业务逻辑的编排，从而在16周内实现从概念到落地的快速交付。
@@ -134,9 +150,8 @@ Lendi Group 构建的“Home Loan Guardian”采用了多智能体架构，主�
 *   **响应延迟**：采用流式传输技术，并针对不同复杂度的任务分配不同规模的模型，以平衡响应速度与推理能力。
 
 ---
-## 最佳实践
 
-## 最佳实践指南
+## 最佳实践
 
 ### 实践 1：采用快速迭代与“以周为单位”的交付周期
 
@@ -227,6 +242,7 @@ AI 项目失败的一个常见原因是试图“用锤子找钉子”。最佳�
 数据源的质量直接决定 AI 的输出质量。必须定期更新知识库内容，并清理过时的信息。
 
 ---
+
 ## 学习要点
 
 - Lendi 仅用 16 周时间，利用 Amazon Bedrock 上的代理式 AI（Agentic AI）成功重构了其复杂的房贷再融资流程，证明了生成式 AI 在金融核心业务中具备快速落地与交付的能力。
@@ -237,6 +253,7 @@ AI 项目失败的一个常见原因是试图“用锤子找钉子”。最佳�
 - 这一案例表明，将 AI 应用于现有遗留系统时，无需一次性完全重构，而是可以通过 API 将 AI 智能体作为中间层连接旧系统，以更低的成本实现数字化体验的现代化升级。
 
 ---
+
 ## 引用
 
 - **文章/节目**: [https://aws.amazon.com/blogs/machine-learning/how-lendi-revamped-the-refinance-journey-for-its-customers-using-agentic-ai-in-12-weeks-using-amazon-bedrock](https://aws.amazon.com/blogs/machine-learning/how-lendi-revamped-the-refinance-journey-for-its-customers-using-agentic-ai-in-12-weeks-using-amazon-bedrock)
@@ -246,8 +263,6 @@ AI 项目失败的一个常见原因是试图“用锤子找钉子”。最佳�
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [产品与创业](/categories/%E4%BA%A7%E5%93%81%E4%B8%8E%E5%88%9B%E4%B8%9A/)
@@ -261,4 +276,3 @@ AI 项目失败的一个常见原因是试图“用锤子找钉子”。最佳�
 - [Lendi 基于 Amazon Bedrock 16 周构建 AI 贷款助手]({{< relref "posts/20260303-blogs_podcasts-how-lendi-revamped-the-refinance-journey-for-its-c-5.md" >}})
 - [Lendi 基于 Amazon Bedrock 构建智能抵押贷款助手]({{< relref "posts/20260304-blogs_podcasts-how-lendi-revamped-the-refinance-journey-for-its-c-9.md" >}})
 - [利用 Amazon Bedrock 在数百万 IoT 设备上部署生成式 AI]({{< relref "posts/20260212-blogs_podcasts-swann-provides-generative-ai-to-millions-of-iot-de-3.md" >}})
-*本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

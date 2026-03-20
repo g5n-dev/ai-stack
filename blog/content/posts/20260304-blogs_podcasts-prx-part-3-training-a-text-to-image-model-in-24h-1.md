@@ -1,14 +1,25 @@
 ---
-title: "PRX Part 3：24小时训练文本生成图像模型"
-date: 2026-03-04T03:29:03+08:00
+title: PRX Part 3：24小时训练文本生成图像模型
+date: 2026-03-04 03:29:03+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Stable Diffusion", "扩散模型", "模型训练", "文本生成图像", "PRX", "深度学习", "计算机视觉", "PyTorch"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- Stable Diffusion
+- 扩散模型
+- 模型训练
+- 文本生成图像
+- PRX
+- 深度学习
+- 计算机视觉
+- PyTorch
+categories:
+- 大模型
+- AI 工程
 source: blogs_podcasts
-description: "在开源社区中，从零开始训练一个文生图模型通常意味着高昂的硬件成本与漫长的调试周期。本文详细记录了作者如何在 24 小时内完成 PRX 模型的训练全过程，涵盖了从数据清洗、环境配置到最终模型收敛的实战细节。通过这篇技术复盘，你将了解到在有限算力下优化训练效率的具体策略，以及构建个性化图像生成模型的关键路径。"
+description: 在开源社区中，从零开始训练一个文生图模型通常意味着高昂的硬件成本与漫长的调试周期。本文详细记录了作者如何在 24 小时内完成 PRX 模型的训练全过程，涵盖了从数据清洗、环境配置到最终模型收敛的实战细节。通过这篇技术复盘，你将了解到在有限算力下优化训练效率的具体策略，以及构建个性化图像生成模型的关键路径。
 external_url: https://huggingface.co/blog/Photoroom/prx-part3
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
 ---
 
 # PRX Part 3：24小时训练文本生成图像模型
@@ -22,11 +33,13 @@ scenarios: ["Web应用开发"]
 - **链接**: [https://huggingface.co/blog/Photoroom/prx-part3](https://huggingface.co/blog/Photoroom/prx-part3)
 
 ---
+
 ## 导语
 
 在开源社区中，从零开始训练一个文生图模型通常意味着高昂的硬件成本与漫长的调试周期。本文详细记录了作者如何在 24 小时内完成 PRX 模型的训练全过程，涵盖了从数据清洗、环境配置到最终模型收敛的实战细节。通过这篇技术复盘，你将了解到在有限算力下优化训练效率的具体策略，以及构建个性化图像生成模型的关键路径。
 
 ---
+
 ## 评论
 
 **文章标题：PRX Part 3 — Training a Text-to-Image Model in 24h!**
@@ -81,7 +94,6 @@ scenarios: ["Web应用开发"]
     检查训练日志中的Loss曲线。如果在24小时（约对应几千到几万步，取决于步长）内，Loss已经平稳收敛且不再下降，说明该时长是合理的。如果Loss仍在剧烈震荡，说明24小时可能训练不足，模型处于欠拟合
 
 ---
-## 技术分析
 
 ## 技术分析
 
@@ -125,9 +137,8 @@ scenarios: ["Web应用开发"]
 *   **个人艺术创作**：艺术家训练模仿个人画风的生成模型，辅助创作或开发衍生作品。
 
 ---
-## 最佳实践
 
-## 最佳实践指南
+## 最佳实践
 
 ### 实践 1：精选高质量训练数据集
 
@@ -206,6 +217,7 @@ scenarios: ["Web应用开发"]
 **注意事项**: 平衡“拟合新数据”与“保留原有能力”之间的比例，通常新数据占比控制在80%-90%为宜。
 
 ---
+
 ## 学习要点
 
 - 根据您提供的内容来源（PRX Part 3 关于在24小时内训练文生图模型），以下是总结出的关键要点：
@@ -217,6 +229,7 @@ scenarios: ["Web应用开发"]
 - Prompt Engineering（提示词工程）在模型推理阶段至关重要，高质量的输入提示词能显著提升图像生成的准确性和艺术性。
 
 ---
+
 ## 引用
 
 - **文章/节目**: [https://huggingface.co/blog/Photoroom/prx-part3](https://huggingface.co/blog/Photoroom/prx-part3)
@@ -226,8 +239,6 @@ scenarios: ["Web应用开发"]
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)
@@ -241,4 +252,3 @@ scenarios: ["Web应用开发"]
 - [文本生成图像模型训练设计：消融实验的经验总结]({{< relref "posts/20260203-blogs_podcasts-training-design-for-text-to-image-models-lessons-f-2.md" >}})
 - [文本生成图像模型训练设计：消融实验的经验总结]({{< relref "posts/20260204-blogs_podcasts-training-design-for-text-to-image-models-lessons-f-5.md" >}})
 - [文本生成图像模型训练设计：消融实验的经验总结]({{< relref "posts/20260204-blogs_podcasts-training-design-for-text-to-image-models-lessons-f-6.md" >}})
-*本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

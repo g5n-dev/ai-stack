@@ -1,14 +1,27 @@
 ---
-title: "基于 SageMaker Unified Studio 构建离线特征存储"
-date: 2026-03-17T18:33:56+08:00
+title: 基于 SageMaker Unified Studio 构建离线特征存储
+date: 2026-03-17 18:33:56+08:00
 draft: false
-entry_kind: "auto"
-tags: ["SageMaker", "特征存储", "离线特征", "AWS", "数据治理", "发布订阅", "模型开发", "数据工程"]
-categories: ["数据", "AI 工程"]
+entry_kind: auto
+tags:
+- SageMaker
+- 特征存储
+- 离线特征
+- AWS
+- 数据治理
+- 发布订阅
+- 模型开发
+- 数据工程
+categories:
+- 数据
+- AI 工程
 source: blogs_podcasts
-description: "本文介绍了如何利用 **Amazon SageMaker Unified Studio** 和 **SageMaker Catalog** 构建线下特征存储（Offline Feature Store）。 **核心方案：** 该方案通过采用“发布-订阅”模式，实现了数据生产者与消费者之间的解耦与协作： 1. **数据生"
+description: 本文介绍了如何利用 **Amazon SageMaker Unified Studio** 和 **SageMaker Catalog**
+  构建线下特征存储（Offline Feature Store）。 **核心方案：** 该方案通过采用“发布-订阅”模式，实现了数据生产者与消费者之间的解耦与协作：
+  1. **数据生
 external_url: https://aws.amazon.com/blogs/machine-learning/build-an-offline-feature-store-using-amazon-sagemaker-unified-studio-and-sagemaker-catalog
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
 ---
 
 # 基于 SageMaker Unified Studio 构建离线特征存储
@@ -22,16 +35,19 @@ scenarios: ["Web应用开发"]
 - **链接**: [https://aws.amazon.com/blogs/machine-learning/build-an-offline-feature-store-using-amazon-sagemaker-unified-studio-and-sagemaker-catalog](https://aws.amazon.com/blogs/machine-learning/build-an-offline-feature-store-using-amazon-sagemaker-unified-studio-and-sagemaker-catalog)
 
 ---
+
 ## 摘要/简介
 
 This blog post provides step-by-step guidance on implementing an offline feature store using SageMaker Catalog within a SageMaker Unified Studio domain. By adopting a publish-subscribe pattern, data producers can use this solution to publish curated, versioned feature tables—while data consumers can securely discover, subscribe to, and reuse them for model development.
 
 ---
+
 ## 导语
 
 在机器学习工程中，特征复用效率与数据治理水平往往决定了模型迭代的成败。本文将介绍如何利用 Amazon SageMaker Unified Studio 和 SageMaker Catalog 构建离线特征存储，通过发布-订阅模式打通数据生产者与消费者之间的协作壁垒。阅读本文，您将掌握创建版本化特征表及实现安全共享的完整流程，从而在保障数据安全的前提下，显著提升特征发现与模型开发的效率。
 
 ---
+
 ## 摘要
 
 本文介绍了如何利用 **Amazon SageMaker Unified Studio** 和 **SageMaker Catalog** 构建线下特征存储（Offline Feature Store）。
@@ -45,9 +61,8 @@ This blog post provides step-by-step guidance on implementing an offline feature
 简而言之，此指南旨在帮助用户在 SageMaker Unified Studio 域内，建立一套安全、高效的特征管理与共享机制。
 
 ---
-## 最佳实践
 
-## 最佳实践指南
+## 最佳实践
 
 ### 实践 1：建立统一的治理与权限管控体系
 
@@ -134,6 +149,7 @@ This blog post provides step-by-step guidance on implementing an offline feature
 SageMaker Unified Studio 和 Catalog 的
 
 ---
+
 ## 学习要点
 
 - 利用 SageMaker Unified Studio 构建离线特征库，可集中管理特征并消除特征工程中的孤岛现象。
@@ -143,6 +159,7 @@ SageMaker Unified Studio 和 Catalog 的
 - 借助 Amazon SageMaker 的托管基础设施，企业能够以低代码方式快速搭建可扩展的特征存储解决方案。
 
 ---
+
 ## 引用
 
 - **文章/节目**: [https://aws.amazon.com/blogs/machine-learning/build-an-offline-feature-store-using-amazon-sagemaker-unified-studio-and-sagemaker-catalog](https://aws.amazon.com/blogs/machine-learning/build-an-offline-feature-store-using-amazon-sagemaker-unified-studio-and-sagemaker-catalog)
@@ -152,8 +169,6 @@ SageMaker Unified Studio 和 Catalog 的
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [数据](/categories/%E6%95%B0%E6%8D%AE/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)
@@ -167,4 +182,3 @@ SageMaker Unified Studio 和 Catalog 的
 - [使用 SageMaker Catalog 构建离线特征库的实践指南]({{< relref "posts/20260316-blogs_podcasts-build-an-offline-feature-store-using-amazon-sagema-5.md" >}})
 - [基于SageMaker Catalog构建离线特征库的分步指南]({{< relref "posts/20260317-blogs_podcasts-build-an-offline-feature-store-using-amazon-sagema-5.md" >}})
 - [使用 SageMaker Unified Studio 构建离线特征存储]({{< relref "posts/20260317-blogs_podcasts-build-an-offline-feature-store-using-amazon-sagema-7.md" >}})
-*本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

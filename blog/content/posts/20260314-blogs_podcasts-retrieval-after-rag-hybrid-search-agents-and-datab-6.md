@@ -1,14 +1,26 @@
 ---
-title: "RAG后的检索：混合搜索、Agent与数据库设计"
-date: 2026-03-14T23:04:01+08:00
+title: RAG后的检索：混合搜索、Agent与数据库设计
+date: 2026-03-14 23:04:01+08:00
 draft: false
-entry_kind: "auto"
-tags: ["RAG", "混合搜索", "向量检索", "Agent", "数据库设计", "关键词搜索", "系统架构", "Turbopuffer"]
-categories: ["AI 工程", "数据"]
+entry_kind: auto
+tags:
+- RAG
+- 混合搜索
+- 向量检索
+- Agent
+- 数据库设计
+- 关键词搜索
+- 系统架构
+- Turbopuffer
+categories:
+- AI 工程
+- 数据
 source: blogs_podcasts
-description: "以下是关于 Simon Hørup Eskildsen（Turbopuffer）演讲内容的总结： 该演讲主要围绕**RAG（检索增强生成）系统中的“后检索”阶段**展开，深入探讨了如何通过混合搜索、智能代理以及优化的数据库设计来提升检索质量和系统性能。 **核心观点：** 在构建 RAG 系统时，仅仅依赖单一的检索方式"
+description: 以下是关于 Simon Hørup Eskildsen（Turbopuffer）演讲内容的总结： 该演讲主要围绕**RAG（检索增强生成）系统中的“后检索”阶段**展开，深入探讨了如何通过混合搜索、智能代理以及优化的数据库设计来提升检索质量和系统性能。
+  **核心观点：** 在构建 RAG 系统时，仅仅依赖单一的检索方式
 external_url: https://www.latent.space/p/turbopuffer
-scenarios: ["RAG应用"]
+scenarios:
+- RAG应用
 ---
 
 # RAG后的检索：混合搜索、Agent与数据库设计
@@ -22,16 +34,19 @@ scenarios: ["RAG应用"]
 - **链接**: [https://www.latent.space/p/turbopuffer](https://www.latent.space/p/turbopuffer)
 
 ---
+
 ## 摘要/简介
 
 Turbopuffer came out of a reading app.
 
 ---
+
 ## 导语
 
 检索增强生成（RAG）虽然有效，但单纯的向量检索往往难以应对复杂查询。Turbopuffer 联合创始人 Simon Hørup Eskildsen 将探讨 RAG 之后的进阶路径，重点分析混合搜索、智能代理以及数据库设计如何协同工作，以提升信息获取的精准度。本文将深入解析这些技术背后的权衡与实现细节，帮助开发者在构建下一代应用时优化数据架构。
 
 ---
+
 ## 摘要
 
 以下是关于 Simon Hørup Eskildsen（Turbopuffer）演讲内容的总结：
@@ -59,9 +74,8 @@ Turbopuffer came out of a reading app.
 这场演讲揭示了 RAG 技术演进的方向：从简单的“检索-生成”向更智能的“混合检索与代理驱动”模式转变，同时强调了底层存储设施在支撑这一进化中的关键作用。
 
 ---
-## 最佳实践
 
-## 最佳实践指南
+## 最佳实践
 
 ### 实践 1：采用混合检索策略
 
@@ -132,6 +146,7 @@ Turbopuffer came out of a reading app.
 **注意事项**: 增加上下文窗口大小会直接增加 Prompt 的 Token 消耗并可能引入噪声。需要在上下文丰富度和干扰信息
 
 ---
+
 ## 学习要点
 
 - RAG 系统的检索性能主要取决于数据库的查询吞吐能力而非单纯的模型推理速度，因此专用的高性能向量数据库是提升系统整体效率的关键。
@@ -143,6 +158,7 @@ Turbopuffer came out of a reading app.
 - 随着模型上下文窗口的不断扩大，RAG 的重点正从单纯的“填补知识空白”转向通过精准检索来减少模型幻觉和降低推理成本。
 
 ---
+
 ## 引用
 
 - **文章/节目**: [https://www.latent.space/p/turbopuffer](https://www.latent.space/p/turbopuffer)
@@ -152,8 +168,6 @@ Turbopuffer came out of a reading app.
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [数据](/categories/%E6%95%B0%E6%8D%AE/)
@@ -167,4 +181,3 @@ Turbopuffer came out of a reading app.
 - [RAG 之后的检索：混合搜索、智能体与数据库设计]({{< relref "posts/20260314-blogs_podcasts-retrieval-after-rag-hybrid-search-agents-and-datab-4.md" >}})
 - [RAG后的检索：混合搜索、Agent与数据库设计]({{< relref "posts/20260314-blogs_podcasts-retrieval-after-rag-hybrid-search-agents-and-datab-5.md" >}})
 - [Turbopuffer 源自阅读应用的数据库设计]({{< relref "posts/20260313-blogs_podcasts-retrieval-after-rag-hybrid-search-agents-and-datab-2.md" >}})
-*本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

@@ -1,14 +1,25 @@
 ---
-title: "如何在本地运行 Qwen 3.5 模型"
-date: 2026-03-08T13:37:15+08:00
+title: 如何在本地运行 Qwen 3.5 模型
+date: 2026-03-08 13:37:15+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Qwen", "本地部署", "LLM", "模型推理", "Ollama", "量化", "GPU", "开源模型"]
-categories: ["大模型", "开发工具"]
+entry_kind: auto
+tags:
+- Qwen
+- 本地部署
+- LLM
+- 模型推理
+- Ollama
+- 量化
+- GPU
+- 开源模型
+categories:
+- 大模型
+- 开发工具
 source: hacker_news
-description: "随着大模型能力的提升，在本地部署高性能模型已成为许多开发者和 AI 爱好者的刚需。本文将详细介绍如何在本地环境中运行 Qwen 3.5，涵盖环境配置、依赖安装及推理调优等关键步骤。通过这份实操指南，读者将掌握在本地高效运行该模型的方法，从而在保障数据隐私的前提下，充分体验其强大的生成与推理能力。"
+description: 随着大模型能力的提升，在本地部署高性能模型已成为许多开发者和 AI 爱好者的刚需。本文将详细介绍如何在本地环境中运行 Qwen 3.5，涵盖环境配置、依赖安装及推理调优等关键步骤。通过这份实操指南，读者将掌握在本地高效运行该模型的方法，从而在保障数据隐私的前提下，充分体验其强大的生成与推理能力。
 external_url: https://unsloth.ai/docs/models/qwen3.5
-scenarios: ["大语言模型"]
+scenarios:
+- 大语言模型
 ---
 
 # 如何在本地运行 Qwen 3.5 模型
@@ -24,11 +35,13 @@ scenarios: ["大语言模型"]
 - **HN 讨论**: [https://news.ycombinator.com/item?id=47292522](https://news.ycombinator.com/item?id=47292522)
 
 ---
+
 ## 导语
 
 随着大模型能力的提升，在本地部署高性能模型已成为许多开发者和 AI 爱好者的刚需。本文将详细介绍如何在本地环境中运行 Qwen 3.5，涵盖环境配置、依赖安装及推理调优等关键步骤。通过这份实操指南，读者将掌握在本地高效运行该模型的方法，从而在保障数据隐私的前提下，充分体验其强大的生成与推理能力。
 
 ---
+
 ## 评论
 
 ### 一、 核心评价
@@ -73,104 +86,18 @@ scenarios: ["大语言模型"]
     *   **反方：** 本地部署的电费成本、硬件折旧以及维护时间成本，往往高于使用廉价的云端API（如GPT-4o-mini）。对于非敏感数据处理，云端API在响应速度和模型智能上限上仍具优势。
 
 ---
+
 ## 代码示例
-
-
-
 
 ```python
 # 示例1：使用Transformers库加载Qwen 3.5并生成文本
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
-def run_qwen_basic():
-    # 加载预训练模型和分词器
-    model_name = "Qwen/Qwen2.5-7B-Instruct"  # 注意：实际使用时需确认最新模型名称
-    tokenizer = AutoTokenizer.from_pretrained(model_name)
-    model = AutoModelForCausalLM.from_pretrained(model_name, device_map="auto")
-    
-    # 准备输入文本
-    prompt = "请解释量子计算的基本原理"
-    inputs = tokenizer(prompt, return_tensors="pt").to(model.device)
-    
-    # 生成文本
-    outputs = model.generate(**inputs, max_length=500, temperature=0.7)
-    response = tokenizer.decode(outputs[0], skip_special_tokens=True)
-    
-    print(response)
-
-# 说明：这个示例展示了如何使用Hugging Face Transformers库加载Qwen 3.5模型并进行基础文本生成。
-# 适合需要快速测试模型或进行简单对话的场景。
-```
-
-
-
-
-```python
-# 示例2：使用vLLM实现高效批量推理
-from vllm import LLM, SamplingParams
-
-def run_qwen_batch():
-    # 初始化vLLM引擎（自动优化内存和计算）
-    llm = LLM(model="Qwen/Qwen2.5-7B-Instruct", gpu_memory_utilization=0.9)
-    
-    # 配置生成参数
-    sampling_params = SamplingParams(temperature=0.8, top_p=0.95, max_tokens=200)
-    
-    # 准备批量输入
-    prompts = [
-        "用Python实现快速排序",
-        "解释Transformer架构",
-        "比较Rust和Go语言的特性"
-    ]
-    
-    # 执行批量推理
-    outputs = llm.generate(prompts, sampling_params)
-    
-    # 打印结果
-    for output in outputs:
-        print(f"Prompt: {output.prompt}\nGenerated: {output.outputs[0].text}\n")
-
-# 说明：这个示例展示了如何使用vLLM库实现高效的批量推理。
-# 适合需要处理大量请求或对吞吐量有较高要求的生产环境。
-```
-
-
-
-
-```python
-# 示例3：通过API接口部署Qwen 3.5服务
-from fastapi import FastAPI
-from transformers import AutoModelForCausalLM, AutoTokenizer
-import uvicorn
-
-app = FastAPI()
-
-# 全局加载模型（避免每次请求重新加载）
-model_name = "Qwen/Qwen2.5-7B-Instruct"
-tokenizer = AutoTokenizer.from_pretrained(model_name)
-model = AutoModelForCausalLM.from_pretrained(model_name, device_map="auto")
-
-@app.post("/generate")
-async def generate_text(prompt: str, max_length: int = 500):
-    inputs = tokenizer(prompt, return_tensors="pt").to(model.device)
-    outputs = model.generate(**inputs, max_length=max_length)
-    return {"response": tokenizer.decode(outputs[0], skip_special_tokens=True)}
-
-if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
-
-# 说明：这个示例展示了如何将Qwen 3.5部署为REST API服务。
-# 适合需要将模型集成到现有系统或提供多用户访问的场景。
-```
-
-
 ---
+
 ## 案例研究
 
-
 ### 1：某金融科技初创公司
-
- 1：某金融科技初创公司
 
 **背景**:
 该公司专注于开发自动化财务分析工具，团队规模约 20 人。由于处理的是客户的敏感财务数据和内部审计记录，数据隐私和合规性是公司的生命线。
@@ -186,11 +113,7 @@ if __name__ == "__main__":
 
 ---
 
-
-
 ### 2：某大型互联网公司内部知识库项目
-
- 2：某大型互联网公司内部知识库项目
 
 **背景**:
 该公司拥有庞大的内部技术文档、Wiki 和代码库，累计超过百万页文档。新员工入职或老员工跨部门查询技术细节时，往往需要花费大量时间在搜索和阅读零散的文档上。
@@ -206,11 +129,7 @@ if __name__ == "__main__":
 
 ---
 
-
-
 ### 3：独立开发者的嵌入式硬件 AI 助手
-
- 3：独立开发者的嵌入式硬件 AI 助手
 
 **背景**:
 一位专注于物联网和智能家居领域的独立开发者，正在开发一款运行在高端边缘设备（如配备 NPU 的 ARM 架构开发板）上的语音助手原型。
@@ -225,9 +144,8 @@ if __name__ == "__main__":
 在仅消耗少量系统资源的情况下，设备实现了流畅的中文语音交互功能。响应时间控制在 1 秒以内，且完全离线运行，保护了用户隐私。该原型成功验证了在低成本硬件上运行高质量中文大模型的可行性，为后续的产品化奠定了基础。
 
 ---
-## 最佳实践
 
-## 最佳实践指南
+## 最佳实践
 
 ### 实践 1：选择合适的模型量化版本
 
@@ -304,6 +222,7 @@ if __name__ == "__main__":
 3. **CPU 推理优化**：如果使用 CPU 运行，确保安装了 AVX2 或 AVX
 
 ---
+
 ## 学习要点
 
 - Ollama 是目前本地运行 Qwen 2.5（注：原文标题或指代最新版本）最便捷的工具，支持跨平台一键部署。
@@ -315,8 +234,8 @@ if __name__ == "__main__":
 - 通过调整上下文长度和提示词模板，可以进一步优化模型在特定任务上的响应质量。
 
 ---
-## 常见问题
 
+## 常见问题
 
 ### 1: 运行 Qwen 2.5（注：Qwen 3.5 尚未发布，此处指代最新版本）本地模型需要什么样的硬件配置？
 
@@ -333,10 +252,6 @@ if __name__ == "__main__":
 
 3.  **存储**：模型文件通常在几 GB 到几十 GB 之间，建议使用 SSD 以提高模型加载速度。
 
----
-
-
-
 ### 2: 普通用户最简单的本地部署方式是什么？
 
 2: 普通用户最简单的本地部署方式是什么？
@@ -352,10 +267,6 @@ if __name__ == "__main__":
     *   **安装**：下载 LM Studio 客户端。
     *   **运行**：在软件内的搜索栏输入 "Qwen"，选择你想要的版本（通常选择 GGUF 格式），点击下载后即可在图形化界面中聊天。
     *   **优势**：拥有友好的图形用户界面（GUI），支持在左侧侧边栏调节参数（如 Temperature, Top_P），并允许离线使用。
-
----
-
-
 
 ### 3: 如何使用 Python 代码（如 Hugging Face Transformers）加载 Qwen 模型？
 
@@ -374,85 +285,21 @@ if __name__ == "__main__":
 
     model_name = "Qwen/Qwen2.5-7B-Instruct" # 示例模型名称
 
-    # 加载 Tokenizer
+### 加载 Tokenizer
     tokenizer = AutoTokenizer.from_pretrained(model_name)
 
-    # 加载模型
-    # device_map="auto" 会自动检测是否有 GPU，并分配显存
+### 加载模型
+### device_map="auto" 会自动检测是否有 GPU，并分配显存
     model = AutoModelForCausalLM.from_pretrained(
         model_name,
         torch_dtype="auto", # 自动选择数据类型 (bfloat16/float16)
         device_map="auto"
     )
 
-    # 准备输入
+### 准备输入
     prompt = "请介绍一下中国的长城。"
     messages = [
         {"role": "system", "content": "You are Qwen, created by Alibaba Cloud."},
         {"role": "user", "content": prompt}
     ]
     text = tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
-
-    # 推理
-    model_inputs = tokenizer([text], return_tensors="pt").to(model.device)
-    generated_ids = model.generate(
-        model_inputs.input_ids,
-        max_new_tokens=512
-    )
-    generated_ids = [
-        output_ids[len(input_ids):] for input_ids, output_ids in zip(model_inputs.input_ids, generated_ids)
-    ]
-
-    response = tokenizer.batch_decode(generated_ids, skip_special_tokens=True)[0]
-    print(response)
-    ```
-    *注意：运行此代码需要你的 GPU 有足够的显存（如 7B 模型建议 16GB 显存以上以获得最佳性能，否则可能需要量化加载。*
-
----
-
-
-
-### 4: 什么是
-
-4: 什么是
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 在本地运行 Qwen 2.5 时，如何验证模型是否成功加载并能够进行基本的推理？请编写一个最简单的 Python 脚本，使其加载模型并输出 "Hello, Qwen" 的回复。
-
-### 提示**: 考虑使用 Hugging Face 的 `transformers` 库，并关注 `pipeline` 或 `AutoModelForCausalLM` 的基本用法。
-
-### 
-
----
-## 引用
-
-- **原文链接**: [https://unsloth.ai/docs/models/qwen3.5](https://unsloth.ai/docs/models/qwen3.5)
-- **HN 讨论**: [https://news.ycombinator.com/item?id=47292522](https://news.ycombinator.com/item?id=47292522)
-
-> 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
-
----
-
-
----
-## 站内链接
-
-- 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/)
-- 标签： [Qwen](/tags/qwen/) / [本地部署](/tags/%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2/) / [LLM](/tags/llm/) / [模型推理](/tags/%E6%A8%A1%E5%9E%8B%E6%8E%A8%E7%90%86/) / [Ollama](/tags/ollama/) / [量化](/tags/%E9%87%8F%E5%8C%96/) / [GPU](/tags/gpu/) / [开源模型](/tags/%E5%BC%80%E6%BA%90%E6%A8%A1%E5%9E%8B/)
-- 场景： [大语言模型](/scenarios/%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/)
-
-### 相关文章
-
-- [如何在本地部署并运行 Qwen 3.5 大模型]({{< relref "posts/20260308-hacker_news-how-to-run-qwen-35-locally-5.md" >}})
-- [Ollama 本地部署开源大模型指南与代码实践]({{< relref "posts/20260302-juejin-ollama-入门指南本地大模型实践-0.md" >}})
-- [如何在本地运行 Qwen 3.5 大模型]({{< relref "posts/20260308-hacker_news-how-to-run-qwen-35-locally-16.md" >}})
-- [本地运行 Qwen 3.5 大模型的完整指南]({{< relref "posts/20260308-hacker_news-how-to-run-qwen-35-locally-7.md" >}})
-- [在 Linux 上安装 Ollama 并部署 Gemma 3B 模型]({{< relref "posts/20260207-hacker_news-installing-ollama-and-gemma-3b-on-linux-12.md" >}})
-*本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

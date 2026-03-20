@@ -1,14 +1,26 @@
 ---
-title: "Project Genie 四个技巧：创建新世界与自定义圆形全景"
-date: 2026-03-05T02:41:37+08:00
+title: Project Genie 四个技巧：创建新世界与自定义圆形全景
+date: 2026-03-05 02:41:37+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Project Genie", "全景视图", "UI设计", "用户体验", "实验性界面", "圆形布局", "交互设计", "VR"]
-categories: ["产品与创业", "前端"]
+entry_kind: auto
+tags:
+- Project Genie
+- 全景视图
+- UI设计
+- 用户体验
+- 实验性界面
+- 圆形布局
+- 交互设计
+- VR
+categories:
+- 产品与创业
+- 前端
 source: blogs_podcasts
-description: "随着 Project Genie 等沉浸式创作工具的兴起，构建虚拟世界的门槛正在逐渐降低。掌握核心交互逻辑与界面操作，对于提升创作效率至关重要。本文将分享四个实用技巧，帮助读者快速熟悉该实验性界面的特性，更高效地在 Project Genie 中生成并定制属于自己的全景场景。"
+description: 随着 Project Genie 等沉浸式创作工具的兴起，构建虚拟世界的门槛正在逐渐降低。掌握核心交互逻辑与界面操作，对于提升创作效率至关重要。本文将分享四个实用技巧，帮助读者快速熟悉该实验性界面的特性，更高效地在
+  Project Genie 中生成并定制属于自己的全景场景。
 external_url: https://blog.google/innovation-and-ai/models-and-research/google-deepmind/tips-prompt-writing-project-genie
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
 ---
 
 # Project Genie 四个技巧：创建新世界与自定义圆形全景
@@ -22,16 +34,19 @@ scenarios: ["Web应用开发"]
 - **链接**: [https://blog.google/innovation-and-ai/models-and-research/google-deepmind/tips-prompt-writing-project-genie](https://blog.google/innovation-and-ai/models-and-research/google-deepmind/tips-prompt-writing-project-genie)
 
 ---
+
 ## 摘要/简介
 
 Project Genie 的屏幕截图，显示了一个实验性界面，呈现为圆形图像的网格，其中许多似乎是360度全景视图，中央有一个大型黑色球体，标注为“Create your own”。
 
 ---
+
 ## 导语
 
 随着 Project Genie 等沉浸式创作工具的兴起，构建虚拟世界的门槛正在逐渐降低。掌握核心交互逻辑与界面操作，对于提升创作效率至关重要。本文将分享四个实用技巧，帮助读者快速熟悉该实验性界面的特性，更高效地在 Project Genie 中生成并定制属于自己的全景场景。
 
 ---
+
 ## 评论
 
 ### 深度评价：Create new worlds in Project Genie with these 4 tips
@@ -88,7 +103,6 @@ Project Genie 的屏幕截图，显示了一个实验性界面，呈现为圆形
 *   **对个人**：建议关注其“网格化”的交互逻辑。未来的AI工具可能不再是单一的对话框，而是多视图、多模态的控制面板。对于创作者而言，学习如何编写Prompt固然重要，
 
 ---
-## 技术分析
 
 ## 技术分析
 
@@ -116,9 +130,8 @@ Project Genie 是一个基于生成式AI的实验性工具，旨在通过文本�
 *   **数字孪生与建筑可视化：** 根据描述快速生成空间布局预览，辅助初步设计评估。
 
 ---
-## 最佳实践
 
-## 最佳实践指南
+## 最佳实践
 
 ### 实践 1：建立清晰的世界观框架
 
@@ -209,6 +222,7 @@ Project Genie 是一个基于生成式AI的实验性工具，旨在通过文本�
 **注意事项**: 任何规则的例外都应有合理的解释，避免"机械降神"式的解决方案。
 
 ---
+
 ## 学习要点
 
 - 根据您提供的内容，以下是关于“Project Genie”创建新世界的 5 个关键要点总结：
@@ -219,6 +233,7 @@ Project Genie 是一个基于生成式AI的实验性工具，旨在通过文本�
 - 优化场景性能与资源管理，确保在构建宏大世界时保持流畅的运行体验。
 
 ---
+
 ## 引用
 
 - **文章/节目**: [https://blog.google/innovation-and-ai/models-and-research/google-deepmind/tips-prompt-writing-project-genie](https://blog.google/innovation-and-ai/models-and-research/google-deepmind/tips-prompt-writing-project-genie)
@@ -228,8 +243,6 @@ Project Genie 是一个基于生成式AI的实验性工具，旨在通过文本�
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [产品与创业](/categories/%E4%BA%A7%E5%93%81%E4%B8%8E%E5%88%9B%E4%B8%9A/) / [前端](/categories/%E5%89%8D%E7%AB%AF/)
@@ -243,4 +256,3 @@ Project Genie 是一个基于生成式AI的实验性工具，旨在通过文本�
 - [Project Genie 实验性界面创建虚拟世界的4个技巧]({{< relref "posts/20260304-blogs_podcasts-create-new-worlds-in-project-genie-with-these-4-ti-1.md" >}})
 - [Project Genie 实验性界面创建虚拟世界的四个技巧]({{< relref "posts/20260304-blogs_podcasts-create-new-worlds-in-project-genie-with-these-4-ti-6.md" >}})
 - [利用Project Genie创建新世界的四个实用技巧]({{< relref "posts/20260303-blogs_podcasts-create-new-worlds-in-project-genie-with-these-4-ti-0.md" >}})
-*本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

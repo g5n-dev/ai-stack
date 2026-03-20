@@ -1,14 +1,26 @@
 ---
-title: "Ulysses序列并行技术实现百万Token上下文训练"
-date: 2026-03-10T02:45:40+08:00
+title: Ulysses序列并行技术实现百万Token上下文训练
+date: 2026-03-10 02:45:40+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Ulysses", "序列并行", "长上下文", "分布式训练", "Megatron", "Llama", "Attention", "显存优化"]
-categories: ["大模型", "系统与基础设施"]
+entry_kind: auto
+tags:
+- Ulysses
+- 序列并行
+- 长上下文
+- 分布式训练
+- Megatron
+- Llama
+- Attention
+- 显存优化
+categories:
+- 大模型
+- 系统与基础设施
 source: blogs_podcasts
-description: "随着大模型参数量的持续增长，超长上下文窗口已成为提升模型性能的关键技术瓶颈。本文深入探讨 Ulysses 提出的序列并行策略，解析其如何在保持计算效率的同时，将有效训练上下文扩展至百万 Token 级别。通过剖析其分布式注意力机制与显存优化细节，读者将掌握在有限硬件资源下实现超长文本训练的工程化路径与核心原理。"
+description: 随着大模型参数量的持续增长，超长上下文窗口已成为提升模型性能的关键技术瓶颈。本文深入探讨 Ulysses 提出的序列并行策略，解析其如何在保持计算效率的同时，将有效训练上下文扩展至百万
+  Token 级别。通过剖析其分布式注意力机制与显存优化细节，读者将掌握在有限硬件资源下实现超长文本训练的工程化路径与核心原理。
 external_url: https://huggingface.co/blog/ulysses-sp
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
 ---
 
 # Ulysses序列并行技术实现百万Token上下文训练
@@ -22,11 +34,13 @@ scenarios: ["Web应用开发"]
 - **链接**: [https://huggingface.co/blog/ulysses-sp](https://huggingface.co/blog/ulysses-sp)
 
 ---
+
 ## 导语
 
 随着大模型参数量的持续增长，超长上下文窗口已成为提升模型性能的关键技术瓶颈。本文深入探讨 Ulysses 提出的序列并行策略，解析其如何在保持计算效率的同时，将有效训练上下文扩展至百万 Token 级别。通过剖析其分布式注意力机制与显存优化细节，读者将掌握在有限硬件资源下实现超长文本训练的工程化路径与核心原理。
 
 ---
+
 ## 评论
 
 **文章中心观点**
@@ -77,15 +91,16 @@ Ulysses 提出了一种通过在序列维度上进行切分的并行策略（序
 *   **场景选择**：如果你的训练
 
 ---
+
 ## 技术分析
 
 基于您提供的文章标题《Ulysses Sequence Parallelism: Training with Million-Token Contexts》以及该领域的技术背景，以下是对该论文（及相关技术体系）的深度分析。
 
 ---
 
-# Ulysses Sequence Parallelism: Training with Million-Token Contexts 深度分析报告
+### Ulysses Sequence Parallelism: Training with Million-Token Contexts 深度分析报告
 
-## 1. 核心观点深度解读
+### 1. 核心观点深度解读
 
 **主要观点**
 文章的核心观点是：**通过一种名为“Ulysses”的序列并行策略，可以将长序列训练的计算负载均匀分布到多个GPU上，从而打破显存限制，实现百万级甚至更长上下文的高效训练。**
@@ -101,7 +116,7 @@ Ulysses 提出了一种通过在序列维度上进行切分的并行策略（序
 **重要性**
 随着大模型从“以知识为中心”转向“以推理为中心”，长上下文窗口成为刚需。无论是处理长篇小说、海量代码库分析，还是长对话记忆，都要求模型具备处理百万级Token的能力。Ulysses 提供了一种在不牺牲训练速度（不显著增加通信墙）的前提下实现这一目标的工程路径。
 
-## 2. 关键技术要点
+### 2. 关键技术要点
 
 **涉及的关键概念**
 *   **Sequence Parallelism (SP, 序列并行)**：将输入序列沿长度维度切分到不同设备。
@@ -125,7 +140,7 @@ Ulysses 提出了一种通过在序列维度上进行切分的并行策略（序
 **技术创新点分析**
 Ulysses 的最大创新在于**解耦了序列长度与单卡显存的强绑定关系**。它使得训练超长上下文模型不再需要昂贵的超高显存硬件（如 1TB 显存的 A100/H100 集群），而是可以通过横向扩展 GPU 数量来解决。
 
-## 3. 实际应用价值
+### 3. 实际应用价值
 
 **对实际工作的指导意义**
 *   **降低门槛**：使得中小型团队利用现有的 GPU 集群（如 8x 或 64x A100/H100）即可微调出支持 128k 甚至 1M 上下文的模型。
@@ -144,7 +159,7 @@ Ulysses 的最大创新在于**解耦了序列长度与单卡显存的强绑定�
 **实施建议**
 在实施前，请务必评估你的网络带宽。Ulysses 极度依赖 **NVLink** 或 **InfiniBand**。如果在以太网环境下运行，All-to-All 通信会成为巨大的瓶颈，导致训练速度反而比单卡更慢。
 
-## 4. 行业影响分析
+### 4. 行业影响分析
 
 **对行业的启示**
 *   **“长上下文”将成为标配**：以前是 4k、8k，现在 128k 正在成为大模型的入门门槛。Ulysses 等技术加速了这一进程。
@@ -158,7 +173,7 @@ Ulysses 的最大创新在于**解耦了序列长度与单卡显存的强绑定�
 *   **推理优化**：Ulysses 主要针对训练。类似的序列并行技术（如 vLLM 中的 Chunked Prefill）正在推理领域爆发。
 *   **端侧长文本**：虽然 Ulysses 用于云端训练，但其思想会影响端侧模型如何利用 NPU 处理长文本。
 
-## 5. 延伸思考
+### 5. 延伸思考
 
 **引发的思考**
 *   **Attention 是唯一的瓶颈吗？** 随着序列变长，非 Attention 层（如 MLP、LayerNorm）的计算和激活值显存占用虽然线性增长，但也可能成为瓶颈。
@@ -171,22 +186,7 @@ Ulysses 的最大创新在于**解耦了序列长度与单卡显存的强绑定�
 **未来趋势**
 *   **Ring Attention 与 Ulysses 的融合**：Ulysses 适合单机内（高带宽），Ring Attention 适合跨机（低带宽）。未来的框架可能会自动分层，机内用 Ulysses，机间用 Ring。
 
-## 6. 实践建议
-
-**如何应用到项目**
-1.  **环境评估**：确保你有至少 8 张拥有 NVLink 互联的 GPU（如 A800/H800）。
-2.  **框架选择**：使用 Megatron-LM 或 DeepSpeed，这些框架已集成类似 Ulysses 的序列并行功能。
-3.  **配置调整**：设置 `sequence_parallel` 为 True，并调整 `tensor_model_parallel_size` 以平衡显存。
-
-**具体行动建议**
-*   **从小规模开始**：不要直接上 1M context。先从 32k 或 64k 开始，测量训练吞吐量和 Loss 曲线。
-*   **监控通信**：使用 Nsight Systems 或 dcgm_profiler 监控 GPU 的通信利用率。如果通信占比过高，考虑减少 SP 的度数，增加 TP 的度数。
-
-**补充知识**
-*   需要深入学习 **NCCL (NVIDIA Collective Communications Library)** 的基础。
-*   理解 **FlashAttention** 的原理，因为 Ulysses 通常与 FlashAttention 结合使用以减少显存碎片。
-
-## 7. 案例分析
+### 7. 案例分析
 
 **成功案例**
 *   **Claude 3 / GPT-4**：虽然它们未完全开源细节，但业界普遍推测它们在训练阶段使用了类似的序列并行技术，从而实现了 200k token 的上下文窗口，且在长文本“大海捞针”测试中表现优异。
@@ -196,7 +196,7 @@ Ulysses 的最大创新在于**解耦了序列长度与单卡显存的强绑定�
 *   **显存 OOM (Out of Memory)**：在实践中，许多开发者错误地认为只要切分序列就万事大吉，忽略了 Attention 计算中间结果 $QK^T$ 的显存占用。如果 `tensor_parallel_size` 设置不当，依然会爆显存。
 *   **通信死锁**：在某些自定义的算子实现中，All-to-All 通信容易导致环形依赖死锁，这需要严格的异步编程控制。
 
-## 8. 哲学与逻辑：论证地图
+### 8. 哲学与逻辑：论证地图
 
 **中心命题**
 > **在分布式训练中，通过将序列维度进行并行化处理，是解决大模型超长上下文训练显存瓶颈且保持计算效率的最优解。**
@@ -208,9 +208,8 @@ Ulysses 的最大创新在于**解耦了序列长度与单卡显存的强绑定�
     *   *依据*：相比于数据并行的梯度同步（与模型参数量 $P$ 成正比），序列并行的通信量与序列长度 $L$ 成
 
 ---
-## 最佳实践
 
-## 最佳实践指南
+## 最佳实践
 
 ### 实践 1：长上下文场景的精准选择
 
@@ -281,9 +280,8 @@ Ulysses 的最大创新在于**解耦了序列长度与单卡显存的强绑定�
 
 **说明**: 百万级上下文训练周期长、成本高。Ulysses SP 增加了系统的复杂性，通信故障的风险随之增加。
 
-**实施步骤
-
 ---
+
 ## 学习要点
 
 - Ulysses 通过将长序列切分到多个 GPU 上并行处理，打破了单卡显存对上下文长度的限制，实现了百万级 token 上下文的高效训练。
@@ -294,6 +292,7 @@ Ulysses 的最大创新在于**解耦了序列长度与单卡显存的强绑定�
 - Ulysses 在长文本场景下的显存占用和训练速度均优于 Ring Attention，为构建下一代长上下文大模型提供了极具性价比的解决方案。
 
 ---
+
 ## 引用
 
 - **文章/节目**: [https://huggingface.co/blog/ulysses-sp](https://huggingface.co/blog/ulysses-sp)
@@ -303,8 +302,6 @@ Ulysses 的最大创新在于**解耦了序列长度与单卡显存的强绑定�
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/)
@@ -318,4 +315,3 @@ Ulysses 的最大创新在于**解耦了序列长度与单卡显存的强绑定�
 - [FlashOptim：面向大模型内存高效训练的优化器]({{< relref "posts/20260302-arxiv_ai-flashoptim-optimizers-for-memory-efficient-trainin-5.md" >}})
 - [Untied Ulysses：基于分头切分的高效上下文并行方案]({{< relref "posts/20260226-arxiv_ai-untied-ulysses-memory-efficient-context-parallelis-5.md" >}})
 - [通过低秩近似优化大模型动量状态以降低显存占用]({{< relref "posts/20260302-arxiv_ai-taming-momentum-rethinking-optimizer-states-throug-4.md" >}})
-*本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

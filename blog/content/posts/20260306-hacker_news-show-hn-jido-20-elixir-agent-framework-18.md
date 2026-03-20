@@ -1,14 +1,26 @@
 ---
-title: "Show HN: Elixir 智能体框架 Jido 2.0"
-date: 2026-03-06T09:25:00+08:00
+title: 'Show HN: Elixir 智能体框架 Jido 2.0'
+date: 2026-03-06 09:25:00+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Elixir", "智能体", "Agent Framework", "Jido", "BEAM", "并发", "AI 工具", "开源"]
-categories: ["AI 工程", "开发工具"]
+entry_kind: auto
+tags:
+- Elixir
+- 智能体
+- Agent Framework
+- Jido
+- BEAM
+- 并发
+- AI 工具
+- 开源
+categories:
+- AI 工程
+- 开发工具
 source: hacker_news
-description: "随着分布式系统复杂度的提升，构建具备并发处理能力的智能代理已成为开发者关注的焦点。Jido 2.0 作为一个基于 Elixir 的代理框架，利用 BEAM 虚拟机在容错与并发上的原生优势，为构建稳健的后台任务提供了新的解决思路。本文将介绍 Jido 的核心架构与工作流设计，并演示如何通过它实现可观测、可扩展的自动化任务"
+description: 随着分布式系统复杂度的提升，构建具备并发处理能力的智能代理已成为开发者关注的焦点。Jido 2.0 作为一个基于 Elixir 的代理框架，利用
+  BEAM 虚拟机在容错与并发上的原生优势，为构建稳健的后台任务提供了新的解决思路。本文将介绍 Jido 的核心架构与工作流设计，并演示如何通过它实现可观测、可扩展的自动化任务
 external_url: https://jido.run/blog/jido-2-0-is-here
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
 ---
 
 # Show HN: Elixir 智能体框架 Jido 2.0
@@ -24,11 +36,13 @@ scenarios: ["AI/ML项目"]
 - **HN 讨论**: [https://news.ycombinator.com/item?id=47263036](https://news.ycombinator.com/item?id=47263036)
 
 ---
+
 ## 导语
 
 随着分布式系统复杂度的提升，构建具备并发处理能力的智能代理已成为开发者关注的焦点。Jido 2.0 作为一个基于 Elixir 的代理框架，利用 BEAM 虚拟机在容错与并发上的原生优势，为构建稳健的后台任务提供了新的解决思路。本文将介绍 Jido 的核心架构与工作流设计，并演示如何通过它实现可观测、可扩展的自动化任务管理，帮助你在高并发场景下更从容地设计系统。
 
 ---
+
 ## 评论
 
 **中心观点**
@@ -82,10 +96,8 @@ Jido 2.0 的发布不仅是 Elixir 生态对当前 AI Agent 热潮的一次技�
     *   *指标*：测量 Jido 启动一个最小可用 Agent 实例所需的内存（MB）和 CPU 周期，对比 Python �
 
 ---
+
 ## 代码示例
-
-
-
 
 ```elixir
 # 示例1：简单任务执行与状态管理
@@ -93,17 +105,17 @@ defmodule SimpleAgent do
   @moduledoc """
   基础Agent示例：展示如何创建一个简单的计数器Agent
   """
-  
+
   def start_link(_opts) do
     # 初始化Agent，初始状态为0
     Agent.start_link(fn -> 0 end, name: __MODULE__)
   end
-  
+
   def increment do
     # 原子性地增加计数器
     Agent.update(__MODULE__, fn state -> state + 1 end)
   end
-  
+
   def get_count do
     # 获取当前计数
     Agent.get(__MODULE__, fn state -> state end)
@@ -117,7 +129,6 @@ SimpleAgent.increment()
 IO.puts("当前计数: #{SimpleAgent.get_count()}")  # 输出: 当前计数: 2
 ```
 
-
 - 创建并启动Agent进程
 - 使用`Agent.update/2`修改状态
 - 使用`Agent.get/2`读取状态
@@ -129,17 +140,17 @@ defmodule TaskQueue do
   @moduledoc """
   任务队列示例：展示如何使用Agent管理并发任务队列
   """
-  
+
   def start_link(_opts) do
     # 初始化空队列
     Agent.start_link(fn -> [] end, name: __MODULE__)
   end
-  
+
   def enqueue(task) do
     # 添加任务到队列尾部
     Agent.update(__MODULE__, fn queue -> queue ++ [task] end)
   end
-  
+
   def dequeue do
     # 从队列头部取出任务
     Agent.get_and_update(__MODULE__, fn
@@ -147,13 +158,13 @@ defmodule TaskQueue do
       [head | tail] -> {head, tail}  # 返回头部任务并更新队列
     end)
   end
-  
+
   def process_queue do
     # 模拟处理队列中的所有任务
     Enum.each_while(1..10, fn _ ->
       case dequeue() do
         :empty -> {:halt, :done}
-        task -> 
+        task ->
           IO.puts("处理任务: #{task}")
           Process.sleep(500)  # 模拟任务处理耗时
           {:cont, :continue}
@@ -170,70 +181,16 @@ TaskQueue.enqueue("任务3")
 TaskQueue.process_queue()
 ```
 
-
 - 使用列表实现FIFO队列
 - `Agent.get_and_update/2`实现原子性的"取出并更新"操作
 - 模拟并发任务处理场景
 - 展示了Agent在状态管理中的线程安全特性
 
-```elixir
-# 示例3：分布式Agent与故障恢复
-defmodule DistributedCache do
-  @moduledoc """
-  分布式缓存示例：展示Agent在分布式环境中的应用
-  """
-  
-  use GenServer
-  
-  def start_link(opts) do
-    GenServer.start_link(__MODULE__, opts, name: __MODULE__)
-  end
-  
-  def init(_opts) do
-    # 初始化缓存表
-    {:ok, %{}}
-  end
-  
-  def get(key) do
-    GenServer.call(__MODULE__, {:get, key})
-  end
-  
-  def put(key, value) do
-    GenServer.cast(__MODULE__, {:put, key, value})
-  end
-  
-  def handle_call({:get, key}, _from, state) do
-    {:reply, Map.get(state, key), state}
-  end
-  
-  def handle_cast({:put, key, value}, state) do
-    {:noreply, Map.put(state, key, value)}
-  end
-  
-  def handle_info(:timeout, state) do
-    # 模拟定期保存状态
-    IO.puts("定期保存缓存状态...")
-    {:noreply, state}
-  end
-end
-
-# 使用示例
-{:ok, _pid} = DistributedCache.start_link([])
-DistributedCache.put(:user_1, %{name: "张三", age: 30})
-DistributedCache.put(:user_2, %{name: "李四", age: 25})
-
-IO.inspect(DistributedCache.get(:user_1))  # 输出: %{name: "张三", age: 30}
-IO.inspect(DistributedCache.get(:user_2))  # 输出: %{name: "李四", age: 25}
-```
-
-
 ---
+
 ## 案例研究
 
-
 ### 1：Discord 社区自动化管理机器人
-
- 1：Discord 社区自动化管理机器人
 
 **背景**:
 某大型在线游戏社区拥有超过 50,000 名活跃 Discord 用户。随着社区规模的扩大，仅靠人工版主团队 24 小时监控聊天频道、处理垃圾信息和协调玩家活动变得不再现实。
@@ -251,11 +208,7 @@ IO.inspect(DistributedCache.get(:user_2))  # 输出: %{name: "李四", age: 25}
 
 ---
 
-
-
 ### 2：金融科技公司的实时交易监控与风控系统
-
- 2：金融科技公司的实时交易监控与风控系统
 
 **背景**:
 一家跨国支付处理公司需要处理每秒数千笔的跨境交易。监管要求必须实时检测并阻止欺诈交易，同时系统必须具备极高的可用性，不能因单点故障而停止服务。
@@ -273,11 +226,7 @@ IO.inspect(DistributedCache.get(:user_2))  # 输出: %{name: "李四", age: 25}
 
 ---
 
-
-
 ### 3：SaaS 平台的数据同步与工作流引擎
-
- 3：SaaS 平台的数据同步与工作流引擎
 
 **背景**:
 一家 B2B 营销自动化 SaaS 平台需要将客户数据在 CRM、邮件营销工具和内部数据仓库之间进行双向同步。每个客户都有独特的集成需求和自定义工作流。
@@ -294,9 +243,8 @@ IO.inspect(DistributedCache.get(:user_2))  # 输出: %{name: "李四", age: 25}
 - **资源利用**：通过在 Erlang VM 上运行成千上万个轻量级 Agent，服务器成本在流量翻倍的情况下反而降低了 20%。
 
 ---
-## 最佳实践
 
-## 最佳实践指南
+## 最佳实践
 
 ### 实践 1：构建模块化的 Agent 架构
 
@@ -379,6 +327,7 @@ IO.inspect(DistributedCache.get(:user_2))  # 输出: %{name: "李四", age: 25}
 ### 实践 7：设计
 
 ---
+
 ## 学习要点
 
 - Jido 2.0 是一个基于 Elixir 构建的新一代 Agent 框架，旨在解决现有 AI 框架在处理复杂、长期运行的工作流时面临的可靠性、可观测性和状态管理难题。
@@ -390,80 +339,35 @@ IO.inspect(DistributedCache.get(:user_2))  # 输出: %{name: "李四", age: 25}
 - 它特别适合用于需要高可靠性的自主交易系统、后台任务调度以及需要处理长期记忆的复杂业务逻辑场景。
 
 ---
+
 ## 常见问题
 
+### Jido 2.0 是什么，它与 Jido 1.0 或其他 Elixir Agent 框架（如 LangChain.ex）有何不同？
 
-### 1: Jido 2.0 是什么，它与 Jido 1.0 或其他 Elixir Agent 框架（如 LangChain.ex）有何不同？
+Jido 2.0 是一个基于 Elixir 构建的现代 Agent 框架，旨在利用 Erlang 虚拟机（BEAM）的并发特性来构建健壮的、分布式的 AI 智能体。与 1.0 版本相比，2.0 版本通常在架构上进行了重构，可能引入了更灵活的工作流定义、更好的状态管理或更优的工具集成机制。与其他流行的 Elixir 框架（如 LangChain.ex）相比，Jido 更侧重于利用 Elixir 的原生优势（如 Actor 模型、容错性和分布式能力）来处理长时间运行的任务和多智能体协作，而不仅仅是提供对 LLM API 的简单封装。它通常将 Agent 视为可持续运行的进程，而非一次性的请求-响应循环。
 
-1: Jido 2.0 是什么，它与 Jido 1.0 或其他 Elixir Agent 框架（如 LangChain.ex）有何不同？
+### 在使用 Jido 构建智能体时，它是如何处理 LLM（大语言模型）调用的？
 
-**A**: Jido 2.0 是一个基于 Elixir 构建的现代 Agent 框架，旨在利用 Erlang 虚拟机（BEAM）的并发特性来构建健壮的、分布式的 AI 智能体。与 1.0 版本相比，2.0 版本通常在架构上进行了重构，可能引入了更灵活的工作流定义、更好的状态管理或更优的工具集成机制。与其他流行的 Elixir 框架（如 LangChain.ex）相比，Jido 更侧重于利用 Elixir 的原生优势（如 Actor 模型、容错性和分布式能力）来处理长时间运行的任务和多智能体协作，而不仅仅是提供对 LLM API 的简单封装。它通常将 Agent 视为可持续运行的进程，而非一次性的请求-响应循环。
+Jido 通常采用模块化的方式来处理 LLM 调用。它可能内置了对主流模型提供商（如 OpenAI、Anthropic）的支持，或者允许通过适配器模式接入不同的模型。在 Jido 的架构中，LLM 通常被视为一种“工具”或“能力”。智能体在执行工作流时，根据当前的上下文和目标，决定何时以及如何调用 LLM。由于 Elixir 的并发特性，Jido 能够高效地管理多个并发的 LLM 请求，并且可以在请求失败时利用监督树自动进行重启或恢复，从而提高系统的稳定性。
 
----
+### Jido 是否支持“函数调用”或“工具使用”，这是如何实现的？
 
+是的，支持函数调用或工具使用是现代 Agent 框架的核心功能之一。在 Jido 中，这通常通过定义特定的 Elixir 函数或模块来实现，并将其注册为智能体可用的工具集。当 LLM 需要执行特定操作（如查询数据库、调用外部 API 或执行 shell 命令）时，Jido 会拦截这一请求，解析 LLM 输出的参数，在安全的沙箱或进程上下文中执行相应的 Elixir 代码，然后将结果返回给 LLM 以进行进一步的推理。这种设计使得智能体不仅能对话，还能通过 Elixir 强大的后端能力实际执行任务。
 
+### 我可以使用 Jido 来构建多智能体系统吗？
 
-### 2: 在使用 Jido 构建智能体时，它是如何处理 LLM（大语言模型）调用的？
+可以。Jido 的设计初衷之一就是利用 Elixir 的分布式特性来支持多智能体系统。你可以将不同的智能体定义为独立的进程，甚至可以将它们部署在不同的节点上。智能体之间可以通过消息传递进行通信，协作完成复杂的任务。Jido 可能提供了用于智能体间消息路由、工作流编排和共享状态管理的机制，使得构建“主管-工人”模式或“全通道”通信模式的智能体网络变得相对简单。
 
-2: 在使用 Jido 构建智能体时，它是如何处理 LLM（大语言模型）调用的？
+### Jido 的状态管理是如何工作的？智能体是否有记忆？
 
-**A**: Jido 通常采用模块化的方式来处理 LLM 调用。它可能内置了对主流模型提供商（如 OpenAI、Anthropic）的支持，或者允许通过适配器模式接入不同的模型。在 Jido 的架构中，LLM 通常被视为一种“工具”或“能力”。智能体在执行工作流时，根据当前的上下文和目标，决定何时以及如何调用 LLM。由于 Elixir 的并发特性，Jido 能够高效地管理多个并发的 LLM 请求，并且可以在请求失败时利用监督树自动进行重启或恢复，从而提高系统的稳定性。
+Jido 利用 Elixir 的 GenServer 或类似机制来管理智能体的状态。这意味着每个智能体都是一个持久的进程，可以在其生命周期内保持状态。这种状态可以包括对话历史、当前任务目标、已获取的数据或任何其他自定义信息。Jido 可能提供了结构化的方式来持久化这些状态，例如通过 ETS（Erlang Term Storage）或集成数据库（如 PostgreSQL 或 Redis），以便在智能体崩溃或重启时恢复记忆，从而实现长期记忆功能。
 
----
+### 部署 Jido 2.0 应用需要哪些基础设施或依赖？
 
-
-
-### 3: Jido 是否支持“函数调用”或“工具使用”，这是如何实现的？
-
-3: Jido 是否支持“函数调用”或“工具使用”，这是如何实现的？
-
-**A**: 是的，支持函数调用或工具使用是现代 Agent 框架的核心功能之一。在 Jido 中，这通常通过定义特定的 Elixir 函数或模块来实现，并将其注册为智能体可用的工具集。当 LLM 需要执行特定操作（如查询数据库、调用外部 API 或执行 shell 命令）时，Jido 会拦截这一请求，解析 LLM 输出的参数，在安全的沙箱或进程上下文中执行相应的 Elixir 代码，然后将结果返回给 LLM 以进行进一步的推理。这种设计使得智能体不仅能对话，还能通过 Elixir 强大的后端能力实际执行任务。
+由于 Jido 是基于 Elixir 构建的，因此需要一个运行 Erlang/OTP 的环境。这可以是标准的 Linux 服务器、容器环境（如 Docker），或者是云平台（如 Fly.io，该平台对 Elixir 有极佳的原生支持）。除了 Elixir 运行时外，如果你的智能体需要访问外部 LLM API，你需要确保网络可以访问相应的提供商（如 OpenAI）。对于需要持久化的应用，你可能还需要配置数据库连接。得益于 BEAM 的低资源消耗，Jido 应用通常可以在资源有限的硬件上高效运行，同时处理高并发请求。
 
 ---
 
-
-
-### 4: 我可以使用 Jido 来构建多智能体系统吗？
-
-4: 我可以使用 Jido 来构建多智能体系统吗？
-
-**A**: 可以。Jido 的设计初衷之一就是利用 Elixir 的分布式特性来支持多智能体系统。你可以将不同的智能体定义为独立的进程，甚至可以将它们部署在不同的节点上。智能体之间可以通过消息传递进行通信，协作完成复杂的任务。Jido 可能提供了用于智能体间消息路由、工作流编排和共享状态管理的机制，使得构建“主管-工人”模式或“全通道”通信模式的智能体网络变得相对简单。
-
----
-
-
-
-### 5: Jido 的状态管理是如何工作的？智能体是否有记忆？
-
-5: Jido 的状态管理是如何工作的？智能体是否有记忆？
-
-**A**: Jido 利用 Elixir 的 GenServer 或类似机制来管理智能体的状态。这意味着每个智能体都是一个持久的进程，可以在其生命周期内保持状态。这种状态可以包括对话历史、当前任务目标、已获取的数据或任何其他自定义信息。Jido 可能提供了结构化的方式来持久化这些状态，例如通过 ETS（Erlang Term Storage）或集成数据库（如 PostgreSQL 或 Redis），以便在智能体崩溃或重启时恢复记忆，从而实现长期记忆功能。
-
----
-
-
-
-### 6: 部署 Jido 2.0 应用需要哪些基础设施或依赖？
-
-6: 部署 Jido 2.0 应用需要哪些基础设施或依赖？
-
-**A**: 由于 Jido 是基于 Elixir 构建的，因此需要一个运行 Erlang/OTP 的环境。这可以是标准的 Linux 服务器、容器环境（如 Docker），或者是云平台（如 Fly.io，该平台对 Elixir 有极佳的原生支持）。除了 Elixir 运行时外，如果你的智能体需要访问外部 LLM API，你需要确保网络可以访问相应的提供商（如 OpenAI）。对于需要持久化的应用，你可能还需要配置数据库连接。得益于 BEAM 的低资源消耗，Jido 应用通常可以在资源有限的硬件上高效运行，同时处理高并发请求。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 在 Jido 2.0 框架中，Agent 是核心执行单元。请尝试定义一个最基础的 Agent，该 Agent 接收一个字符串输入，并返回该字符串反转后的结果。你需要确保该 Agent 能够被 Jido 的调度器正确调用。
-
-### 提示**: 查阅 Jido 关于 `Agent` 行为的定义文档，关注如何实现 `call/1` 或 `run/1` 回调函数，以及如何使用 Elixir 标准库中的 `String.reverse/1` 函数。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://jido.run/blog/jido-2-0-is-here](https://jido.run/blog/jido-2-0-is-here)
@@ -473,8 +377,6 @@ IO.inspect(DistributedCache.get(:user_2))  # 输出: %{name: "李四", age: 25}
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/)
@@ -488,4 +390,3 @@ IO.inspect(DistributedCache.get(:user_2))  # 输出: %{name: "李四", age: 25}
 - [Jido 2.0：基于 Elixir 的 Agent 框架]({{< relref "posts/20260306-hacker_news-show-hn-jido-20-elixir-agent-framework-14.md" >}})
 - [Show HN: Jido 2.0，基于 Elixir 的 Agent 框架]({{< relref "posts/20260305-hacker_news-show-hn-jido-20-elixir-agent-framework-1.md" >}})
 - [Show HN: Jido 2.0, Elixir Agent Framework]({{< relref "posts/20260306-hacker_news-show-hn-jido-20-elixir-agent-framework-12.md" >}})
-*本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

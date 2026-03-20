@@ -1,14 +1,28 @@
 ---
-title: "LangChain实战：利用Tool与Function Calling突破大模型能力边界"
-date: 2026-03-13T03:05:25+08:00
+title: LangChain实战：利用Tool与Function Calling突破大模型能力边界
+date: 2026-03-13 03:05:25+08:00
 draft: false
-entry_kind: "auto"
-tags: ["LangChain", "Function Calling", "Tool", "LLM", "能力边界", "实战", "AI应用", "大模型开发"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- LangChain
+- Function Calling
+- Tool
+- LLM
+- 能力边界
+- 实战
+- AI应用
+- 大模型开发
+categories:
+- 大模型
+- AI 工程
 source: juejin
-description: "尽管大语言模型在自然语言理解方面表现优异，但其固有的知识截止日期和缺乏对外部系统的直接访问能力，往往限制了其在实际业务场景中的落地。LangChain 的 Tool 与 Function Calling 机制正是为了打破这一边界，让模型能够动态调用外部 API 或执行特定逻辑。本文将深入解析这一核心模块，通过代码示例演"
+description: 尽管大语言模型在自然语言理解方面表现优异，但其固有的知识截止日期和缺乏对外部系统的直接访问能力，往往限制了其在实际业务场景中的落地。LangChain
+  的 Tool 与 Function Calling 机制正是为了打破这一边界，让模型能够动态调用外部 API 或执行特定逻辑。本文将深入解析这一核心模块，通过代码示例演
 external_url: https://juejin.cn/post/7616201064984428554
-scenarios: ["AI/ML项目", "大语言模型", "命令行工具"]
+scenarios:
+- AI/ML项目
+- 大语言模型
+- 命令行工具
 ---
 
 # LangChain实战：利用Tool与Function Calling突破大模型能力边界
@@ -21,16 +35,19 @@ scenarios: ["AI/ML项目", "大语言模型", "命令行工具"]
 - **链接**: [https://juejin.cn/post/7616201064984428554](https://juejin.cn/post/7616201064984428554)
 
 ---
+
 ## 导语
 
 尽管大语言模型在自然语言理解方面表现优异，但其固有的知识截止日期和缺乏对外部系统的直接访问能力，往往限制了其在实际业务场景中的落地。LangChain 的 Tool 与 Function Calling 机制正是为了打破这一边界，让模型能够动态调用外部 API 或执行特定逻辑。本文将深入解析这一核心模块，通过代码示例演示如何赋予模型实时交互能力，助你构建更智能、更实用的 AI 应用。
 
 ---
+
 ## 描述
 
 大模型的边界能力 我们先看看下面一段代码，AI大模型执行的结果是什么呢？ AI居然不知道，是不是大跌眼镜呢？Langchain的Tool正是解决这个痛点的技术方案。
 
 ---
+
 ## 评论
 
 ### 中心观点
@@ -85,6 +102,7 @@ scenarios: ["AI/ML项目", "大语言模型", "命令行工具"]
     *   *验证标准：* 一个成熟的 Tool 系统应能处理 90% 以上的
 
 ---
+
 ## 学习要点
 
 - LangChain 的核心价值在于将大模型与外部工具解耦，通过定义工具规范让模型能够自主决定何时以及如何调用外部 API 或函数。
@@ -96,29 +114,21 @@ scenarios: ["AI/ML项目", "大语言模型", "命令行工具"]
 - LangChain 抽象了不同模型提供商的差异，使得同一套工具定义逻辑可以无缝迁移支持 OpenAI、Anthropic 等多种模型。
 
 ---
+
 ## 常见问题
 
+### LangChain 中的 Tool 和 Function Calling 有什么区别？
 
-### 1: LangChain 中的 Tool 和 Function Calling 有什么区别？
-
-1: LangChain 中的 Tool 和 Function Calling 有什么区别？
-
-**A**: 在 LangChain 的语境下，这两个概念紧密相关但侧重点不同。
+在 LangChain 的语境下，这两个概念紧密相关但侧重点不同。
 
 1.  **Tool (工具)**: 是 LangChain 中的**抽象接口**。它定义了一个具体的、可被调用的功能，通常包含名称、描述和参数架构（Schema）。Tool 可以是一个简单的 Python 函数，也可以是对外部 API（如 Google Search、数据库查询）的封装。
 2.  **Function Calling (函数调用)**: 是**底层的模型能力**或**交互机制**。特指大语言模型（LLM）生成结构化 JSON 数据来匹配用户定义的函数参数的过程。
 
 简单来说，**Tool 是“做什么”，Function Calling 是“怎么做”**。LangChain 的 `Tools` 模块将各种功能封装成标准格式，然后利用 LLM 的 `Function Calling` 能力来决定何时以及如何调用这些工具。
 
----
+### 如何定义一个自定义 Tool 并传递给 LLM？
 
-
-
-### 2: 如何定义一个自定义 Tool 并传递给 LLM？
-
-2: 如何定义一个自定义 Tool 并传递给 LLM？
-
-**A**: 在 LangChain 中定义自定义 Tool 主要有两种常见方式：
+在 LangChain 中定义自定义 Tool 主要有两种常见方式：
 
 **方式一：使用 `@tool` 装饰器（推荐）**
 这是最简单的方法，适用于简单的 Python 函数。LangChain 会自动解析函数签名生成参数架构。
@@ -153,15 +163,9 @@ search_tool = StructuredTool.from_function(
 
 定义好 Tool 后，通过 `bind_tools` 方法将其绑定到 LLM 上，模型便具备了调用这些工具的能力。
 
----
+### 为什么 LangChain 推荐使用 `.bind_tools()` 而不是直接传递 `tools` 参数？
 
-
-
-### 3: 为什么 LangChain 推荐使用 `.bind_tools()` 而不是直接传递 `tools` 参数？
-
-3: 为什么 LangChain 推荐使用 `.bind_tools()` 而不是直接传递 `tools` 参数？
-
-**A**: 这涉及到 LangChain 的新旧架构演进（LCEL - LangChain Expression Language）。
+这涉及到 LangChain 的新旧架构演进（LCEL - LangChain Expression Language）。
 
 1.  **旧方式（直接传参）**: 在早期的 Agent 或直接调用中，通常直接将 `tools` 列表传给 Agent executor 或构造函数。这种方式缺乏灵活性，且与 LLM 的原生 API 绑定较深。
 2.  **新方式 (`.bind_tools()`)**: 这是 LCEL 的标准做法。调用 `llm.bind_tools(tools)` 会返回一个新的 LLM 对象，这个对象在每次调用时都会自动携带工具的架构信息。
@@ -169,15 +173,9 @@ search_tool = StructuredTool.from_function(
     *   **流式处理**: 配合流式输出时，`.bind_tools()` 能更好地处理 `tool_calls` 类型的 Chunk 数据。
     *   **通用性**: 它是 LangChain 抽象层处理不同模型（OpenAI, Anthropic, Mistral 等）不同函数调用格式的统一接口。
 
----
+### 如何处理 Tool 调用过程中的错误或异常？
 
-
-
-### 4: 如何处理 Tool 调用过程中的错误或异常？
-
-4: 如何处理 Tool 调用过程中的错误或异常？
-
-**A**: 在实际生产中，工具执行可能会失败（如 API 超时、参数错误）。LangChain 提供了 `ToolException` 和 `handle_tool_errors` 机制来优雅地处理这些问题。
+在实际生产中，工具执行可能会失败（如 API 超时、参数错误）。LangChain 提供了 `ToolException` 和 `handle_tool_errors` 机制来优雅地处理这些问题。
 
 **1. 抛出特定异常:**
 在你的 Tool 函数中，遇到错误时抛出 `ToolException` 而不是普通的 `Exception`。
@@ -198,22 +196,16 @@ weather_tool = Tool(name="get_weather", func=_get_weather_impl, description="获
 
 ```python
 # 简单配置方式
-weather_tool.handle_tool_error = True 
+weather_tool.handle_tool_error = True
 # 或者自定义错误信息
 weather_tool.handle_tool_error = lambda e: f"工具调用出错: {e}"
 ```
 
 这样，当工具报错时，LLM 会收到错误反馈，并有机会进行自我修正或尝试其他方案。
 
----
+### 什么是 `AgentExecutor`，它与手动解析 Tool Call 有什么不同？
 
-
-
-### 5: 什么是 `AgentExecutor`，它与手动解析 Tool Call 有什么不同？
-
-5: 什么是 `AgentExecutor`，它与手动解析 Tool Call 有什么不同？
-
-**A**: `AgentExecutor` 是 LangChain 中运行 Agent 的**运行时引擎**。
+`AgentExecutor` 是 LangChain 中运行 Agent 的**运行时引擎**。
 
 *   **手动解析**: 如果不使用 AgentExecutor，你需要手动编写循环逻辑：
     1. 调用 LLM。
@@ -223,6 +215,7 @@ weather_tool.handle_tool_error = lambda e: f"工具调用出错: {e}"
     5. 重复直到 LLM
 
 ---
+
 ## 引用
 
 - **掘金原文**: [https://juejin.cn/post/7616201064984428554](https://juejin.cn/post/7616201064984428554)
@@ -231,8 +224,6 @@ weather_tool.handle_tool_error = lambda e: f"工具调用出错: {e}"
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)
@@ -246,4 +237,3 @@ weather_tool.handle_tool_error = lambda e: f"工具调用出错: {e}"
 - [大模型调用工具的原理与Agent开发基础]({{< relref "posts/20260311-juejin-面试官大模型是怎么调用工具的呢-2.md" >}})
 - [LangChain 进阶实战：当 Memory 遇上 OutputParser，打造有记忆的结构化助手]({{< relref "posts/20260211-juejin-langchain-进阶实战当-memory-遇上-outputparser打造有记忆的结构化助手-3.md" >}})
 - [LangChain 模型 I/O 模块：提示构建、模型调用与输出解析]({{< relref "posts/20260215-juejin-langchain-模型io输入提示调用模型解析输出-4.md" >}})
-*本文由 AI Stack 自动生成，提供深度内容分析。*

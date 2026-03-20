@@ -1,14 +1,26 @@
 ---
-title: "基于Amazon Nova与OpenSearch构建可扩展多模态视频搜索系统"
-date: 2026-03-13T00:51:39+08:00
+title: 基于Amazon Nova与OpenSearch构建可扩展多模态视频搜索系统
+date: 2026-03-13 00:51:39+08:00
 draft: false
-entry_kind: "auto"
-tags: ["多模态", "向量搜索", "语义搜索", "视频检索", "Amazon Nova", "OpenSearch", "Embeddings", "AI 数据湖"]
-categories: ["AI 工程", "数据"]
+entry_kind: auto
+tags:
+- 多模态
+- 向量搜索
+- 语义搜索
+- 视频检索
+- Amazon Nova
+- OpenSearch
+- Embeddings
+- AI 数据湖
+categories:
+- AI 工程
+- 数据
 source: blogs_podcasts
-description: "本文介绍了如何利用 **Amazon Nova 模型**和 **Amazon OpenSearch Service** 构建一个**可扩展的多模态视频搜索系统**。该系统旨在解决传统方法在处理大型视频数据集时的局限性，主要功能和优势如下： **1. 核心功能：自然语言视频搜索** 系统允许用户使用自然语言直接在庞大的视"
+description: 本文介绍了如何利用 **Amazon Nova 模型**和 **Amazon OpenSearch Service** 构建一个**可扩展的多模态视频搜索系统**。该系统旨在解决传统方法在处理大型视频数据集时的局限性，主要功能和优势如下：
+  **1. 核心功能：自然语言视频搜索** 系统允许用户使用自然语言直接在庞大的视
 external_url: https://aws.amazon.com/blogs/machine-learning/multimodal-embeddings-at-scale-ai-data-lake-for-media-and-entertainment-workloads
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
 ---
 
 # 基于Amazon Nova与OpenSearch构建可扩展多模态视频搜索系统
@@ -22,16 +34,19 @@ scenarios: ["AI/ML项目"]
 - **链接**: [https://aws.amazon.com/blogs/machine-learning/multimodal-embeddings-at-scale-ai-data-lake-for-media-and-entertainment-workloads](https://aws.amazon.com/blogs/machine-learning/multimodal-embeddings-at-scale-ai-data-lake-for-media-and-entertainment-workloads)
 
 ---
+
 ## 摘要/简介
 
 本文将向您展示如何构建一个可扩展的多模态视频搜索系统，该系统利用 Amazon Nova 模型和 Amazon OpenSearch Service，支持针对大型视频数据集的自然语言搜索。您将了解如何超越手动标注和基于关键词的搜索，实现能够捕捉视频内容全貌的语义搜索。
 
 ---
+
 ## 导语
 
 随着媒体数据量的激增，传统的手动标注和关键词检索已难以满足海量非结构化内容的挖掘需求。本文将介绍如何利用 Amazon Nova 模型与 Amazon OpenSearch Service，构建一套可扩展的多模态视频搜索系统。通过阅读本文，您将掌握实现语义级搜索的具体方法，从而突破元数据限制，精准捕捉视频内容的深层语义，有效提升大型媒体数据集的管理与检索效率。
 
 ---
+
 ## 摘要
 
 本文介绍了如何利用 **Amazon Nova 模型**和 **Amazon OpenSearch Service** 构建一个**可扩展的多模态视频搜索系统**。该系统旨在解决传统方法在处理大型视频数据集时的局限性，主要功能和优势如下：
@@ -52,6 +67,7 @@ scenarios: ["AI/ML项目"]
 该方案为媒体和娱乐行业提供了一个基于 **AI 数据湖** 的现代化工作流。它不仅大幅提升了视频检索的准确性和效率，还通过自动化和智能化的手段，降低了对人工元数据管理的依赖，实现了对视频资产的全量价值挖掘。
 
 ---
+
 ## 评论
 
 **文章中心观点**
@@ -109,12 +125,10 @@ scenarios: ["AI/ML项目"]
 
 1.  **混合检索策略**：不要完全抛弃关键词。建议采用“向量检索+关键词过滤”的混合检索策略。例如，先通过关键词过滤“2024年奥运会”的视频集，再在子集内进行语义搜索“感人的瞬间”，以提高准确率和速度。
 2.  **分阶段处理**：不要试图一次性对历史存量数据进行全量重处理。应采用“冷热数据分离”策略，仅对高频访问的近期数据进行高精度的多模态分析，历史数据保持基础索引。
-3.  **元数据增强**：利用LLM在生成Embeddings的同时，生成结构化的JSON摘要（如：场景、人物、情绪标签）。这能弥补向量检索难以进行精确筛选（如“只找时长大于5分钟的视频”）的缺陷。
 
 ---
-## 最佳实践
 
-## 最佳实践指南
+## 最佳实践
 
 ### 实践 1：构建多模态数据摄取管道
 
@@ -202,6 +216,7 @@ scenarios: ["AI/ML项目"]
 3. 使用重排序模型（如 Cross-Encoder）对候选结果进行最终打分和排序。
 
 ---
+
 ## 学习要点
 
 - 构建基于多模态嵌入（Multimodal Embeddings）的 AI 数据湖，能够将视频、音频和文本等非结构化媒体资产转化为高维向量，从而实现对海量娱乐内容的深度语义理解和高效检索。
@@ -213,6 +228,7 @@ scenarios: ["AI/ML项目"]
 - 采用此类先进的数据湖架构，能够帮助媒体和娱乐企业在面对内容爆炸式增长时，通过智能化的资产管理解决“内容可用但不可寻”的行业痛点。
 
 ---
+
 ## 引用
 
 - **文章/节目**: [https://aws.amazon.com/blogs/machine-learning/multimodal-embeddings-at-scale-ai-data-lake-for-media-and-entertainment-workloads](https://aws.amazon.com/blogs/machine-learning/multimodal-embeddings-at-scale-ai-data-lake-for-media-and-entertainment-workloads)
@@ -222,8 +238,6 @@ scenarios: ["AI/ML项目"]
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [数据](/categories/%E6%95%B0%E6%8D%AE/)
@@ -237,4 +251,3 @@ scenarios: ["AI/ML项目"]
 - [亚马逊利用Nova模型自动化检测新履约中心组件]({{< relref "posts/20260212-blogs_podcasts-how-amazon-uses-amazon-nova-models-to-automate-ope-10.md" >}})
 - [How Amazon uses Amazon Nova models to automate operatio]({{< relref "posts/20260211-blogs_podcasts-how-amazon-uses-amazon-nova-models-to-automate-ope-6.md" >}})
 - [亚马逊利用Nova模型自动化新履约中心运营准备检测]({{< relref "posts/20260211-blogs_podcasts-how-amazon-uses-amazon-nova-models-to-automate-ope-7.md" >}})
-*本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

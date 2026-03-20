@@ -1,14 +1,26 @@
 ---
-title: "在 Jetson 平台上部署开源视觉语言模型"
-date: 2026-02-24T21:40:55+08:00
+title: 在 Jetson 平台上部署开源视觉语言模型
+date: 2026-02-24 21:40:55+08:00
 draft: false
-entry_kind: "auto"
-tags: ["VLM", "Jetson", "边缘计算", "模型部署", "NVIDIA", "视觉语言模型", "嵌入式AI", "LLaVA"]
-categories: ["AI 工程", "系统与基础设施"]
+entry_kind: auto
+tags:
+- VLM
+- Jetson
+- 边缘计算
+- 模型部署
+- NVIDIA
+- 视觉语言模型
+- 嵌入式AI
+- LLaVA
+categories:
+- AI 工程
+- 系统与基础设施
 source: blogs_podcasts
-description: "在边缘设备上部署高性能视觉语言模型（VLM）正成为 AI 应用的关键趋势。本文将详细介绍如何在 NVIDIA Jetson 平台上部署开源 VLM，涵盖环境配置、模型优化及推理加速等核心步骤。通过阅读本文，开发者将掌握在资源受限的边缘端实现高效视觉理解任务的实用方法，并了解如何平衡模型性能与硬件限制。"
+description: 在边缘设备上部署高性能视觉语言模型（VLM）正成为 AI 应用的关键趋势。本文将详细介绍如何在 NVIDIA Jetson 平台上部署开源
+  VLM，涵盖环境配置、模型优化及推理加速等核心步骤。通过阅读本文，开发者将掌握在资源受限的边缘端实现高效视觉理解任务的实用方法，并了解如何平衡模型性能与硬件限制。
 external_url: https://huggingface.co/blog/nvidia/cosmos-on-jetson
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
 ---
 
 # 在 Jetson 平台上部署开源视觉语言模型
@@ -22,11 +34,13 @@ scenarios: ["AI/ML项目"]
 - **链接**: [https://huggingface.co/blog/nvidia/cosmos-on-jetson](https://huggingface.co/blog/nvidia/cosmos-on-jetson)
 
 ---
+
 ## 导语
 
 在边缘设备上部署高性能视觉语言模型（VLM）正成为 AI 应用的关键趋势。本文将详细介绍如何在 NVIDIA Jetson 平台上部署开源 VLM，涵盖环境配置、模型优化及推理加速等核心步骤。通过阅读本文，开发者将掌握在资源受限的边缘端实现高效视觉理解任务的实用方法，并了解如何平衡模型性能与硬件限制。
 
 ---
+
 ## 评论
 
 **中心观点**
@@ -82,9 +96,8 @@ scenarios: ["AI/ML项目"]
     *   *验证点*：在加载模型并输入一张高分辨率图片后，显存占用应稳定在硬件总容量的80%以下（如Jetson Orin 64GB版本应<50GB），否则会发生OOM（内存溢出）。
 
 ---
-## 技术分析
 
-# 1. 核心观点深度解读
+## 技术分析
 
 **主要观点：**
 文章的核心观点是**“边缘侧多模态大模型的实用化落地”**。通过针对性的工程优化，打破算力墙，将原本依赖云端集群的视觉语言模型（VLM）成功移植到资源受限的嵌入式设备（如NVIDIA Jetson）上，实现低延迟、高隐私且具备离线能力的本地化智能视觉分析。
@@ -101,7 +114,7 @@ scenarios: ["AI/ML项目"]
 
 ---
 
-# 2. 关键技术要点
+### 2. 关键技术要点
 
 **涉及的关键技术：**
 1.  **模型量化：** 采用AWQ或GPTQ算法，将模型权重从FP16量化至INT8甚至FP4，显著降低显存占用并提升吞吐量。
@@ -125,7 +138,7 @@ scenarios: ["AI/ML项目"]
 
 ---
 
-# 3. 实际应用价值
+### 3. 实际应用价值
 
 **指导意义：**
 为边缘AI开发者提供了一套从模型选型到部署优化的完整方法论。它明确了在Jetson等边缘设备上，应优先选择如LLaVA-1.5-7B-Quantized或NanoLLaVA等轻量化模型，而非盲目追求超大参数量，强调了“场景适用性”优于“模型规模”。
@@ -136,9 +149,8 @@ scenarios: ["AI/ML项目"]
 3.  **服务机器人：** 在离线环境下实现人机交互，理解用户手势与指令，提供导航或讲解服务。
 
 ---
-## 最佳实践
 
-## 最佳实践指南
+## 最佳实践
 
 ### 实践 1：选择与硬件架构兼容的模型架构
 
@@ -215,6 +227,7 @@ scenarios: ["AI/ML项目"]
 3. 使用 vLLM 或 TensorRT-LLM
 
 ---
+
 ## 学习要点
 
 - 基于在 Jetson 设备上部署开源视觉语言模型（VLM）的最佳实践，总结如下：
@@ -226,6 +239,7 @@ scenarios: ["AI/ML项目"]
 - 借助 Jetson 的多模态能力，可以构建能够同时处理视觉和文本输入的复杂自主代理应用。
 
 ---
+
 ## 引用
 
 - **文章/节目**: [https://huggingface.co/blog/nvidia/cosmos-on-jetson](https://huggingface.co/blog/nvidia/cosmos-on-jetson)
@@ -235,8 +249,6 @@ scenarios: ["AI/ML项目"]
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/)
@@ -250,4 +262,3 @@ scenarios: ["AI/ML项目"]
 - [在 Jetson 平台部署开源视觉语言模型]({{< relref "posts/20260224-blogs_podcasts-deploying-open-source-vision-language-models-vlm-o-5.md" >}})
 - [在8位摩托罗拉6809上运行深度卷积神经网络玩棋盘游戏]({{< relref "posts/20260129-hacker_news-playing-board-games-with-deep-convolutional-neural-12.md" >}})
 - [在8位摩托罗拉6809上运行深度卷积神经网络玩桌游]({{< relref "posts/20260129-hacker_news-playing-board-games-with-deep-convolutional-neural-15.md" >}})
-*本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

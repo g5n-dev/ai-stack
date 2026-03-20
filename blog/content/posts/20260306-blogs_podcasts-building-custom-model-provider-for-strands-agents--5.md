@@ -1,14 +1,26 @@
 ---
-title: "在SageMaker上部署SGLang并集成Strands智能体自定义模型"
-date: 2026-03-06T14:24:36+08:00
+title: 在SageMaker上部署SGLang并集成Strands智能体自定义模型
+date: 2026-03-06 14:24:36+08:00
 draft: false
-entry_kind: "auto"
-tags: ["SageMaker", "SGLang", "Llama 3.1", "Strands", "模型部署", "自定义解析器", "推理优化", "AWS"]
-categories: ["AI 工程", "后端"]
+entry_kind: auto
+tags:
+- SageMaker
+- SGLang
+- Llama 3.1
+- Strands
+- 模型部署
+- 自定义解析器
+- 推理优化
+- AWS
+categories:
+- AI 工程
+- 后端
 source: blogs_podcasts
-description: "以下是针对所提供内容的中文总结： 本文旨在演示如何在 **Amazon SageMaker AI** 端点上托管大语言模型（LLM），并通过构建**自定义模型提供商**将其集成到 **Strands Agents** 智能体中。此过程主要针对那些不原生支持 Bedrock Messages API 格式的模型，通过自定"
+description: 以下是针对所提供内容的中文总结： 本文旨在演示如何在 **Amazon SageMaker AI** 端点上托管大语言模型（LLM），并通过构建**自定义模型提供商**将其集成到
+  **Strands Agents** 智能体中。此过程主要针对那些不原生支持 Bedrock Messages API 格式的模型，通过自定
 external_url: https://aws.amazon.com/blogs/machine-learning/building-custom-model-provider-for-strands-agents-with-llms-hosted-on-sagemaker-ai-endpoints
-scenarios: ["后端开发"]
+scenarios:
+- 后端开发
 ---
 
 # 在SageMaker上部署SGLang并集成Strands智能体自定义模型
@@ -22,16 +34,19 @@ scenarios: ["后端开发"]
 - **链接**: [https://aws.amazon.com/blogs/machine-learning/building-custom-model-provider-for-strands-agents-with-llms-hosted-on-sagemaker-ai-endpoints](https://aws.amazon.com/blogs/machine-learning/building-custom-model-provider-for-strands-agents-with-llms-hosted-on-sagemaker-ai-endpoints)
 
 ---
+
 ## 摘要/简介
 
 本文演示了当使用不支持 Bedrock Messages API 格式的、托管在 SageMaker 上的 LLM 时，如何为 Strands 智能体构建自定义模型解析器。我们将介绍如何使用 awslabs/ml-container-creator 在 SageMaker 上通过 SGLang 部署 Llama 3.1，然后实现一个自定义解析器将其与 Strands 智能体集成。
 
 ---
+
 ## 导语
 
 当在 Amazon SageMaker 上部署非标准格式的 LLM 时，将其集成到 Strands 智能体往往面临接口兼容性挑战。本文将演示如何通过 SGLang 部署 Llama 3.1 并构建自定义模型解析器，从而解决与 Bedrock Messages API 格式不匹配的问题。读者将掌握实现模型与智能体无缝对接的具体步骤，确保在自有基础设施上灵活调用大模型能力。
 
 ---
+
 ## 摘要
 
 以下是针对所提供内容的中文总结：
@@ -49,6 +64,7 @@ scenarios: ["后端开发"]
 **总结**：通过结合 SageMaker 的托管能力与 Strands 的可扩展性，开发者可以灵活地使用多样化的开源模型（如 Llama 3.1）构建智能体应用，而不仅限于 Bedrock 原生支持的模型。
 
 ---
+
 ## 评论
 
 **文章中心观点**
@@ -91,9 +107,8 @@ scenarios: ["后端开发"]
 *   **SGLang 的生产就绪度**：虽然 SGLang 性能强悍，但在生产环境的稳定性（Long-running stability）方面，社区反馈仍不如 vLLum 成熟。在关键业务流中使用
 
 ---
-## 技术分析
 
-# 1. 核心技术解读
+## 技术分析
 
 **文章主旨**
 文章探讨了如何在AWS生态系统中，解决非标准格式模型与智能体框架的兼容性问题。具体而言，即通过构建自定义适配层，使部署在Amazon SageMaker上的开源大模型（如Llama 3.1）能够被Strands智能体框架调用，从而绕过对特定托管API格式的依赖。
@@ -104,7 +119,7 @@ scenarios: ["后端开发"]
 **技术价值**
 该方案填补了模型部署层与应用编排层之间的技术空白。在构建企业级AI应用时，这种解耦方式允许开发者根据性能和成本需求灵活选择底层模型（如Llama 3.1或特定微调版本），而不受限于上层框架原生支持的模型列表，有助于实现更具弹性的系统架构。
 
-# 2. 关键技术要点
+### 2. 关键技术要点
 
 **涉及的关键技术**
 *   **Amazon SageMaker Endpoints:** 用于托管模型的HTTP服务端点，支持自定义Docker镜像。
@@ -122,9 +137,8 @@ scenarios: ["后端开发"]
 *   **流式数据重组:** 实时处理流式响应时，需要维护请求上下文，确保分块传输的数据在经过格式转换后仍能保持语义连贯性和时间顺序，避免因格式转换导致的流式中断或乱码。
 
 ---
-## 最佳实践
 
-## 最佳实践指南
+## 最佳实践
 
 ### 实践 1：优化 SageMaker 端点推理配置
 
@@ -203,6 +217,7 @@ scenarios: ["后端开发"]
 **注意事项**: 确保模板中的系统指令与用户输入清晰分离，防止 Prompt 注入攻击。
 
 ---
+
 ## 学习要点
 
 - 通过将 Amazon Bedrock 的“知识库”功能与自定义模型提供商集成，可以在 SageMaker 托管的模型上实现 RAG（检索增强生成）能力，从而让私有模型能够利用企业私有数据回答问题。
@@ -213,6 +228,7 @@ scenarios: ["后端开发"]
 - 实现过程中需特别注意处理 Token 计数（`_count_tokens`），因为不同的模型架构（如 Llama-3）需要特定的分词器来准确计算推理成本。
 
 ---
+
 ## 引用
 
 - **文章/节目**: [https://aws.amazon.com/blogs/machine-learning/building-custom-model-provider-for-strands-agents-with-llms-hosted-on-sagemaker-ai-endpoints](https://aws.amazon.com/blogs/machine-learning/building-custom-model-provider-for-strands-agents-with-llms-hosted-on-sagemaker-ai-endpoints)
@@ -222,8 +238,6 @@ scenarios: ["后端开发"]
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [后端](/categories/%E5%90%8E%E7%AB%AF/)
@@ -237,4 +251,3 @@ scenarios: ["后端开发"]
 - [为Strands智能体构建SageMaker托管LLM自定义解析器]({{< relref "posts/20260306-blogs_podcasts-building-custom-model-provider-for-strands-agents--3.md" >}})
 - [为Strands智能体构建SageMaker自定义模型解析器]({{< relref "posts/20260306-blogs_podcasts-building-custom-model-provider-for-strands-agents--4.md" >}})
 - [NVIDIA Nemotron 3 Nano 30B 现已登陆 Amazon SageMaker JumpSt]({{< relref "posts/20260212-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-10.md" >}})
-*本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

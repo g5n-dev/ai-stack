@@ -1,14 +1,26 @@
 ---
-title: "首个医疗机器人数据集及基础物理AI模型发布"
-date: 2026-03-17T12:14:38+08:00
+title: 首个医疗机器人数据集及基础物理AI模型发布
+date: 2026-03-17 12:14:38+08:00
 draft: false
-entry_kind: "auto"
-tags: ["医疗机器人", "物理AI", "数据集", "基础模型", "Healthcare", "Robotics", "Physical AI", "Dataset"]
-categories: ["大模型", "数据"]
+entry_kind: auto
+tags:
+- 医疗机器人
+- 物理AI
+- 数据集
+- 基础模型
+- Healthcare
+- Robotics
+- Physical AI
+- Dataset
+categories:
+- 大模型
+- 数据
 source: blogs_podcasts
-description: "医疗机器人领域长期面临高质量数据匮乏与基础模型缺失的挑战，限制了其在复杂临床场景中的广泛应用。本文介绍了首个专门针对医疗机器人领域构建的开源数据集，以及基于此训练的物理 AI 基础模型，旨在为机器人赋予更精准的物理交互能力。通过阅读本文，读者不仅能了解该数据集的构成与特性，还能深入探讨这些基础模型如何推动手术辅助与康复"
+description: 医疗机器人领域长期面临高质量数据匮乏与基础模型缺失的挑战，限制了其在复杂临床场景中的广泛应用。本文介绍了首个专门针对医疗机器人领域构建的开源数据集，以及基于此训练的物理
+  AI 基础模型，旨在为机器人赋予更精准的物理交互能力。通过阅读本文，读者不仅能了解该数据集的构成与特性，还能深入探讨这些基础模型如何推动手术辅助与康复
 external_url: https://huggingface.co/blog/nvidia/physical-ai-for-healthcare-robotics
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
 ---
 
 # 首个医疗机器人数据集及基础物理AI模型发布
@@ -22,11 +34,13 @@ scenarios: ["AI/ML项目"]
 - **链接**: [https://huggingface.co/blog/nvidia/physical-ai-for-healthcare-robotics](https://huggingface.co/blog/nvidia/physical-ai-for-healthcare-robotics)
 
 ---
+
 ## 导语
 
 医疗机器人领域长期面临高质量数据匮乏与基础模型缺失的挑战，限制了其在复杂临床场景中的广泛应用。本文介绍了首个专门针对医疗机器人领域构建的开源数据集，以及基于此训练的物理 AI 基础模型，旨在为机器人赋予更精准的物理交互能力。通过阅读本文，读者不仅能了解该数据集的构成与特性，还能深入探讨这些基础模型如何推动手术辅助与康复护理等场景的技术落地。
 
 ---
+
 ## 评论
 
 ### 深度评论：迈向通用医疗机器人的“物理AI”范式
@@ -73,9 +87,8 @@ scenarios: ["AI/ML项目"]
 *   **物理抗干扰测试：** 在模拟环境中引入异常组织参数（如意外出血、组织滑移），测试模型的鲁棒性与纠错能力。
 
 ---
-## 最佳实践
 
-## 最佳实践指南
+## 最佳实践
 
 ### 实践 1：构建高质量、多样化的医疗机器人数据集
 
@@ -151,6 +164,7 @@ scenarios: ["AI/ML项目"]
 2. **迭代式用户测试**: 在开发的早期阶段就让医护人员参与原型测试，收集
 
 ---
+
 ## 引用
 
 - **文章/节目**: [https://huggingface.co/blog/nvidia/physical-ai-for-healthcare-robotics](https://huggingface.co/blog/nvidia/physical-ai-for-healthcare-robotics)
@@ -160,8 +174,6 @@ scenarios: ["AI/ML项目"]
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [数据](/categories/%E6%95%B0%E6%8D%AE/)
@@ -175,4 +187,3 @@ scenarios: ["AI/ML项目"]
 - [Nemotron-Personas-Brazil：主权AI协同设计数据集]({{< relref "posts/20260129-blogs_podcasts-nemotron-personas-brazil-co-designed-data-for-sove-5.md" >}})
 - [FineInstructions：将合成指令数据扩展至预训练规模]({{< relref "posts/20260131-arxiv_ai-fineinstructions-scaling-synthetic-instructions-to-7.md" >}})
 - [Anthropic 发布 METR 数据集研究 AI Agent 自主性]({{< relref "posts/20260219-blogs_podcasts-ainews-anthropics-agent-autonomy-study-6.md" >}})
-*本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

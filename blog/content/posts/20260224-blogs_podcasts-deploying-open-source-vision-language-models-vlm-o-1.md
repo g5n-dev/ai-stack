@@ -1,14 +1,26 @@
 ---
-title: "在 Jetson 上部署开源视觉语言模型"
-date: 2026-02-24T15:46:23+08:00
+title: 在 Jetson 上部署开源视觉语言模型
+date: 2026-02-24 15:46:23+08:00
 draft: false
-entry_kind: "auto"
-tags: ["VLM", "Jetson", "边缘计算", "模型部署", "NVIDIA", "视觉语言模型", "嵌入式AI", "LLaVA"]
-categories: ["AI 工程", "系统与基础设施"]
+entry_kind: auto
+tags:
+- VLM
+- Jetson
+- 边缘计算
+- 模型部署
+- NVIDIA
+- 视觉语言模型
+- 嵌入式AI
+- LLaVA
+categories:
+- AI 工程
+- 系统与基础设施
 source: blogs_podcasts
-description: "随着边缘计算能力的提升，在 Jetson 平台部署视觉语言模型（VLM）已成为实现本地化智能分析的关键路径。相比于依赖云端 API，本地部署不仅能有效降低延迟，还能更好地保护数据隐私。本文将详细介绍如何在 Jetson 设备上配置并运行开源 VLM，帮助开发者掌握从环境搭建到模型推理的完整流程，从而构建高效且自主的边缘"
+description: 随着边缘计算能力的提升，在 Jetson 平台部署视觉语言模型（VLM）已成为实现本地化智能分析的关键路径。相比于依赖云端 API，本地部署不仅能有效降低延迟，还能更好地保护数据隐私。本文将详细介绍如何在
+  Jetson 设备上配置并运行开源 VLM，帮助开发者掌握从环境搭建到模型推理的完整流程，从而构建高效且自主的边缘
 external_url: https://huggingface.co/blog/nvidia/cosmos-on-jetson
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
 ---
 
 # 在 Jetson 上部署开源视觉语言模型
@@ -22,11 +34,13 @@ scenarios: ["AI/ML项目"]
 - **链接**: [https://huggingface.co/blog/nvidia/cosmos-on-jetson](https://huggingface.co/blog/nvidia/cosmos-on-jetson)
 
 ---
+
 ## 导语
 
 随着边缘计算能力的提升，在 Jetson 平台部署视觉语言模型（VLM）已成为实现本地化智能分析的关键路径。相比于依赖云端 API，本地部署不仅能有效降低延迟，还能更好地保护数据隐私。本文将详细介绍如何在 Jetson 设备上配置并运行开源 VLM，帮助开发者掌握从环境搭建到模型推理的完整流程，从而构建高效且自主的边缘视觉应用。
 
 ---
+
 ## 评论
 
 ### 中心观点
@@ -74,17 +88,11 @@ Jetson Orin/Xavier等平台的显存带宽通常远低于数据中心GPU（如A1
 2.  **输入分辨率控制**：强制将输入图像分辨率限制在336x336或448x448以下。Vision Token的数量与显存占用成正比，降低分辨率是提升推理速度最直接的方法。
 3.  **流水线并行**：如果业务允许，建议将Vision Encoder和LLM解码器分离到不同的进程或线程中处理，利用Jetson的多媒体引擎（VIC）进行图像预处理，减轻GPU负载。
 
-### 可验证的检查方式
-
-1.  **Token生成吞吐量测试**：
-    *   *指标
-
 ---
+
 ## 技术分析
 
-# 技术分析
-
-## 1. 核心观点深度解读
+### 1. 核心观点深度解读
 
 **文章的主要观点：**
 文章的核心论点是：**随着 Jetson Orin 等边缘计算硬件算力的显著提升，结合模型轻量化与编译优化技术，将高性能开源视觉语言模型（VLM）部署于边缘侧已具备工程可行性。这标志着边缘人工智能从传统的“单一视觉感知”向“多模态认知理解”的关键跨越。**
@@ -97,7 +105,7 @@ Jetson Orin/Xavier等平台的显存带宽通常远低于数据中心GPU（如A1
 *   **软硬协同优化的深度：** 文章超越了简单的模型调用，深入探讨了 KV Cache 优化、内存带宽管理以及在有限资源（如 Jetson 的统一内存架构）下榨干硬件性能的底层工程实践。
 *   **解决落地痛点：** 这一观点直接解决了边缘 AI 落地中最大的短板——**上下文理解能力**。它使得设备能在本地实现“理解场景”而非仅仅“看见像素”，对于隐私保护、低延迟决策及离线环境应用具有决定性意义。
 
-## 2. 关键技术要点
+### 2. 关键技术要点
 
 **涉及的关键技术栈：**
 *   **模型架构：** 基于 CLIP/ViT（视觉编码器）与 LLM（如 Llama 3-8B, Phi-3, Qwen）的投影连接结构。
@@ -122,9 +130,8 @@ Jetson Orin/Xavier等平台的显存带宽通常远低于数据中心GPU（如A1
 *   **端到端 TensorRT-LLM 优化：** 不同于通用的 PyTorch 部署，文章强调利用 TensorRT-LLM 针对特定 VLM 架构（如 LLaVA）进行 Kernel 级别的定制与融合，这是实现实时交互的核心。
 
 ---
-## 最佳实践
 
-## 最佳实践指南
+## 最佳实践
 
 ### 实践 1：优化模型量化与精度选择
 
@@ -204,6 +211,7 @@ Jetson 的内存是统一的 CPU 和 GPU 共享内存。当 VLM 模型加载后�
 ### 实践 6：电源模式与性能调优
 
 ---
+
 ## 学习要点
 
 - 基于在 Jetson 设备上部署开源视觉语言模型（VLM）的内容，总结如下：
@@ -215,6 +223,7 @@ Jetson 的内存是统一的 CPU 和 GPU 共享内存。当 VLM 模型加载后�
 - 使用 Jetson 的专用工具链（如 DeepStream 或 VPI）进行视频预处理，能有效降低 CPU 负担并优化数据传输管道。
 
 ---
+
 ## 引用
 
 - **文章/节目**: [https://huggingface.co/blog/nvidia/cosmos-on-jetson](https://huggingface.co/blog/nvidia/cosmos-on-jetson)
@@ -224,8 +233,6 @@ Jetson 的内存是统一的 CPU 和 GPU 共享内存。当 VLM 模型加载后�
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/)
@@ -239,4 +246,3 @@ Jetson 的内存是统一的 CPU 和 GPU 共享内存。当 VLM 模型加载后�
 - [在8位摩托罗拉6809上运行深度卷积神经网络玩桌游]({{< relref "posts/20260129-hacker_news-playing-board-games-with-deep-convolutional-neural-15.md" >}})
 - [通往无处不在的AI：实现每秒1.7万tokens推理]({{< relref "posts/20260220-hacker_news-the-path-to-ubiquitous-ai-17k-tokenssec-5.md" >}})
 - [NVIDIA Nemotron 3 Nano 30B 现已登陆 Amazon SageMaker JumpSt]({{< relref "posts/20260212-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-0.md" >}})
-*本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

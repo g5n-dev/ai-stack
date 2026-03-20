@@ -1,14 +1,27 @@
 ---
-title: "从 Prompt 到 Agent Skill：AI 交互模式的架构设计与实现"
-date: 2026-03-03T23:28:17+08:00
+title: 从 Prompt 到 Agent Skill：AI 交互模式的架构设计与实现
+date: 2026-03-03 23:28:17+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Agent", "Prompt", "架构设计", "LLM", "交互模式", "Agent Skill", "系统设计", "AI应用"]
-categories: ["AI 工程", "大模型"]
+entry_kind: auto
+tags:
+- Agent
+- Prompt
+- 架构设计
+- LLM
+- 交互模式
+- Agent Skill
+- 系统设计
+- AI应用
+categories:
+- AI 工程
+- 大模型
 source: juejin
-description: "随着 AI 应用从简单的单次指令交互向复杂任务演进，Agent Skill 已成为构建智能体的核心单元。它不仅是提示词的封装，更是模型能力与业务逻辑深度结合的产物。本文将深入解析 Agent Skill 的设计理念与工程实现，帮助开发者厘清从 Prompt 到 Skill 的跃迁路径，掌握构建高可用智能体的关键技术。"
+description: 随着 AI 应用从简单的单次指令交互向复杂任务演进，Agent Skill 已成为构建智能体的核心单元。它不仅是提示词的封装，更是模型能力与业务逻辑深度结合的产物。本文将深入解析
+  Agent Skill 的设计理念与工程实现，帮助开发者厘清从 Prompt 到 Skill 的跃迁路径，掌握构建高可用智能体的关键技术。
 external_url: https://juejin.cn/post/7612935214355988520
-scenarios: ["大语言模型", "AI/ML项目"]
+scenarios:
+- 大语言模型
+- AI/ML项目
 ---
 
 # 从 Prompt 到 Agent Skill：AI 交互模式的架构设计与实现
@@ -21,16 +34,19 @@ scenarios: ["大语言模型", "AI/ML项目"]
 - **链接**: [https://juejin.cn/post/7612935214355988520](https://juejin.cn/post/7612935214355988520)
 
 ---
+
 ## 导语
 
 随着 AI 应用从简单的单次指令交互向复杂任务演进，Agent Skill 已成为构建智能体的核心单元。它不仅是提示词的封装，更是模型能力与业务逻辑深度结合的产物。本文将深入解析 Agent Skill 的设计理念与工程实现，帮助开发者厘清从 Prompt 到 Skill 的跃迁路径，掌握构建高可用智能体的关键技术。
 
 ---
+
 ## 描述
 
 一、从 Prompt 到 Agent Skill：能力的跃迁 很多开发者最初接触 AI，都是从“喂一句指令”开始的，比如这样： 这就是最基础的 Prompt 驱动模型输出 —— 单次交互、用完即走，本
 
 ---
+
 ## 评论
 
 **中心观点**
@@ -75,10 +91,8 @@ scenarios: ["大语言模型", "AI/ML项目"]
 2.  **建立 Skill 仓库：** 借鉴 GitHub 的思路，建立企业内部的 Skill 注册表。每个 Skill 必须附带清晰的“意图描述”（供 Router 模型调用）和“负面测试用例”。
 3.  **关注“软技能”：** 除了工具调用 Skill，更应关注“规划 Skill”、“反思 Skill”和“总结 Skill”的设计，这些才是 Agent 区别于传统脚本的核心竞争力。
 
-**总结**
-这篇文章
-
 ---
+
 ## 学习要点
 
 - Agent Skill 是将大模型的能力具象化为可执行单元的标准化封装，包含描述、参数、执行逻辑及结果反馈，是构建复杂 Agent 应用的核心积木。
@@ -90,92 +104,61 @@ scenarios: ["大语言模型", "AI/ML项目"]
 - 合理的 Skill 路由与分发机制能避免大模型处理长文本时的性能损耗，通过意图识别精准匹配所需技能，提升系统整体响应速度。
 
 ---
+
 ## 常见问题
 
+### Agent Skill 与普通的 Prompt（提示词）有什么本质区别？
 
-### 1: Agent Skill 与普通的 Prompt（提示词）有什么本质区别？
-
-1: Agent Skill 与普通的 Prompt（提示词）有什么本质区别？
-
-**A**: 虽然 Agent Skill 的底层逻辑依赖于 Prompt，但两者在定义和作用域上有显著区别。普通的 Prompt 通常是一次性的、上下文依赖的指令，主要用于单次交互。而 Agent Skill 是被**结构化封装**的能力单元。
+虽然 Agent Skill 的底层逻辑依赖于 Prompt，但两者在定义和作用域上有显著区别。普通的 Prompt 通常是一次性的、上下文依赖的指令，主要用于单次交互。而 Agent Skill 是被**结构化封装**的能力单元。
 
 具体区别在于：
 1.  **复用性**：Skill 是可以被不同 Agent 或不同任务反复调用的标准模块，而 Prompt 往往针对特定场景临时编写。
 2.  **参数化**：Skill 支持输入输出参数定义（类似于函数的 Arguments），而 Prompt 更多是自然语言的描述。
 3.  **编排能力**：Skill 是 Agent 进行规划和编排的原子单位，Agent 可以根据需求动态组合多个 Skill，而普通 Prompt 缺乏这种组合性。
 
----
+### 在设计 Agent Skill 时，如何确定其颗粒度？
 
-
-
-### 2: 在设计 Agent Skill 时，如何确定其颗粒度？
-
-2: 在设计 Agent Skill 时，如何确定其颗粒度？
-
-**A**: Skill 的颗粒度设计是平衡通用性与执行效率的关键。过粗会导致复用困难，过细则增加编排成本。建议遵循以下原则：
+Skill 的颗粒度设计是平衡通用性与执行效率的关键。过粗会导致复用困难，过细则增加编排成本。建议遵循以下原则：
 
 1.  **单一职责原则**：一个 Skill 应只做一件事，并做好。例如，不要将“发送邮件”和“撰写邮件草稿”放在同一个 Skill 中，而应拆分为 `WriteEmailDraft` 和 `SendEmail`。
 2.  **原子性与完整性**：Skill 应对外暴露一个完整的功能闭环。对于“搜索”这种基础能力，应作为一个独立 Skill；对于“数据分析报告”这种复杂任务，如果内部逻辑紧密，也可以作为一个 Skill，前提是其内部步骤对 Agent 透明。
 3.  **可测试性**：颗粒度应以便于独立测试为标准。如果一个 Skill 包含太多逻辑分支，调试将变得非常困难。
 
----
+### 如何实现 Agent Skill 的“工具调用”或“函数调用”？
 
-
-
-### 3: 如何实现 Agent Skill 的“工具调用”或“函数调用”？
-
-3: 如何实现 Agent Skill 的“工具调用”或“函数调用”？
-
-**A**: 实现 Skill 的核心在于将自然语言请求转化为结构化的执行指令。通常遵循以下流程：
+实现 Skill 的核心在于将自然语言请求转化为结构化的执行指令。通常遵循以下流程：
 
 1.  **元数据定义**：为每个 Skill 定义清晰的 JSON Schema，包括名称、描述、以及具体的参数结构（参数名、类型、是否必填、描述）。
 2.  **描述的重要性**：描述部分是 LLM 理解 Skill 功能的关键。必须准确说明该 Skill 的作用、适用场景以及参数的具体含义。
 3.  **注册与发现**：将 Skill 的元数据注册到 Agent 的上下文中。在推理阶段，LLM 会根据用户意图，从已注册的 Skill 列表中筛选出需要调用的 Skill 及其参数。
 4.  **执行与反馈**：Agent 解析出参数后，执行对应的代码逻辑（如 Python 函数或 API 请求），并将执行结果返回给 LLM 进行最终的自然语言生成。
 
----
+### Agent Skill 的设计中，如何处理上下文记忆和多轮交互？
 
-
-
-### 4: Agent Skill 的设计中，如何处理上下文记忆和多轮交互？
-
-4: Agent Skill 的设计中，如何处理上下文记忆和多轮交互？
-
-**A**: Skill 本身通常设计为**无状态** 的，以保证其幂等性和复用性，但 Agent 框架负责管理上下文：
+Skill 本身通常设计为**无状态** 的，以保证其幂等性和复用性，但 Agent 框架负责管理上下文：
 
 1.  **输入层**：Agent 在调用 Skill 前，会将历史对话中的关键信息（如用户 ID、之前的操作结果）作为参数注入到 Skill 的输入中。
 2.  **输出层**：Skill 的返回结果应包含结构化数据，而不仅仅是自然语言。这些结果会被存入 Agent 的记忆模块中，供后续步骤或其他 Skill 使用。
 3.  **会话管理**：对于需要多轮交互的 Skill（如需要用户确认），Skill 应返回一个特定的“等待输入”状态，由 Agent 暂停规划并等待用户下一轮输入，而不是由 Skill 自己直接阻塞循环。
 
----
+### 如何对 Agent Skill 进行测试和评估？
 
-
-
-### 5: 如何对 Agent Skill 进行测试和评估？
-
-5: 如何对 Agent Skill 进行测试和评估？
-
-**A**: 不同于传统的软件测试，Agent Skill 的测试需要兼顾逻辑正确性和语义理解能力：
+不同于传统的软件测试，Agent Skill 的测试需要兼顾逻辑正确性和语义理解能力：
 
 1.  **单元测试**：针对 Skill 的执行逻辑，编写传统的代码级测试用例，验证对于特定输入，Skill 是否返回了预期的结构化数据。
 2.  **语义评估**：测试 LLM 是否能正确识别何时调用该 Skill。可以通过构造一系列边缘 Case，观察 Agent 是否在正确的场景下触发了 Skill。
 3.  **Golden Set 测试**：构建一组包含“输入-期望输出”的测试集，运行完整的 Agent 流程，对比最终输出是否符合预期。
 4.  **人工反馈**：在真实或模拟环境中，收集用户对 Skill 执行结果的反馈（如点赞/点踩），用于迭代优化 Skill 的 Prompt 描述或底层逻辑。
 
----
+### 当 Agent Skill 执行失败（如 API 报错）时，应该如何设计错误处理机制？
 
-
-
-### 6: 当 Agent Skill 执行失败（如 API 报错）时，应该如何设计错误处理机制？
-
-6: 当 Agent Skill 执行失败（如 API 报错）时，应该如何设计错误处理机制？
-
-**A**: 鲁棒的 Agent 设计必须包含优雅的错误降级和重试策略：
+鲁棒的 Agent 设计必须包含优雅的错误降级和重试策略：
 
 1.  **结构化错误返回**：Skill 不应直接抛出异常导致 Agent 崩溃，而应返回包含错误码和错误信息的结构化对象（如 `{ "success": false, "error_code": 404, "message": "Resource not found" }`）。
 2.  **自我修正**：将错误信息返回给 LLM，并赋予 Agent 重新规划的能力。例如，如果搜索
 
 ---
+
 ## 引用
 
 - **掘金原文**: [https://juejin.cn/post/7612935214355988520](https://juejin.cn/post/7612935214355988520)
@@ -184,8 +167,6 @@ scenarios: ["大语言模型", "AI/ML项目"]
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)
@@ -199,4 +180,3 @@ scenarios: ["大语言模型", "AI/ML项目"]
 - [人人都在构建异步智能体 但鲜有人能定义其概念]({{< relref "posts/20260209-hacker_news-everyones-building-async-agents-but-almost-no-one--14.md" >}})
 - [LLM智能体新增Claws层以增强功能]({{< relref "posts/20260222-hacker_news-claws-are-now-a-new-layer-on-top-of-llm-agents-10.md" >}})
 - [Claws 成为 LLM 智能体之上的新架构层]({{< relref "posts/20260222-hacker_news-claws-are-now-a-new-layer-on-top-of-llm-agents-11.md" >}})
-*本文由 AI Stack 自动生成，提供深度内容分析。*

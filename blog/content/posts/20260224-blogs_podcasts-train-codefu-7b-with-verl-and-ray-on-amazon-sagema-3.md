@@ -1,14 +1,27 @@
 ---
-title: "在 Amazon SageMaker 上使用 veRL 和 Ray 训练 CodeFu-7B 模型"
-date: 2026-02-24T23:13:49+08:00
+title: 在 Amazon SageMaker 上使用 veRL 和 Ray 训练 CodeFu-7B 模型
+date: 2026-02-24 23:13:49+08:00
 draft: false
-entry_kind: "auto"
-tags: ["SageMaker", "veRL", "Ray", "CodeFu-7B", "GRPO", "强化学习", "分布式训练", "竞技编程"]
-categories: ["大模型", "系统与基础设施"]
+entry_kind: auto
+tags:
+- SageMaker
+- veRL
+- Ray
+- CodeFu-7B
+- GRPO
+- 强化学习
+- 分布式训练
+- 竞技编程
+categories:
+- 大模型
+- 系统与基础设施
 source: blogs_podcasts
-description: "本文介绍了如何在 Amazon SageMaker 训练作业上，利用 veRL 库和 Ray 分布式集群训练 CodeFu-7B 模型。 主要内容包括： 1. **训练目标**：针对竞技编程场景，使用**群体相对策略优化（GRPO）**算法，对拥有 70 亿参数的 CodeFu-7B 模型进行训练。 2. **技术架构"
+description: 本文介绍了如何在 Amazon SageMaker 训练作业上，利用 veRL 库和 Ray 分布式集群训练 CodeFu-7B 模型。
+  主要内容包括： 1. **训练目标**：针对竞技编程场景，使用**群体相对策略优化（GRPO）**算法，对拥有 70 亿参数的 CodeFu-7B 模型进行训练。
+  2. **技术架构
 external_url: https://aws.amazon.com/blogs/machine-learning/train-codefu-7b-with-verl-and-ray-on-amazon-sagemaker-training-jobs
-scenarios: ["工具"]
+scenarios:
+- 工具
 ---
 
 # 在 Amazon SageMaker 上使用 veRL 和 Ray 训练 CodeFu-7B 模型
@@ -22,16 +35,19 @@ scenarios: ["工具"]
 - **链接**: [https://aws.amazon.com/blogs/machine-learning/train-codefu-7b-with-verl-and-ray-on-amazon-sagemaker-training-jobs](https://aws.amazon.com/blogs/machine-learning/train-codefu-7b-with-verl-and-ray-on-amazon-sagemaker-training-jobs)
 
 ---
+
 ## 摘要/简介
 
 在本文中，我们展示了如何使用 Group Relative Policy Optimization (GRPO) 结合 veRL——一个灵活高效的大语言模型（LLM）训练库，支持对多种 RL 算法进行直接扩展，并与现有 LLM 基础设施无缝集成——在由 SageMaker 训练任务管理的分布式 Ray 集群中，训练 CodeFu-7B，一个专门面向竞技编程的 70 亿参数模型。我们将遍历完整的实现流程，涵盖数据准备、分布式训练设置以及全方位的可观测性，展示这一统一方法如何为复杂的 RL 训练任务同时提供计算规模与开发者体验。
 
 ---
+
 ## 导语
 
 利用强化学习提升代码生成模型的推理能力，已成为大模型技术演进的关键方向。本文将详细介绍如何在 Amazon SageMaker 上，结合 veRL 库与 Ray 分布式集群，高效训练 CodeFu-7B 模型。通过解析从数据准备到分布式训练部署的完整流程，我们将展示如何兼顾计算规模与开发体验，帮助您掌握在云环境中实施复杂强化学习训练任务的实操方法。
 
 ---
+
 ## 摘要
 
 本文介绍了如何在 Amazon SageMaker 训练作业上，利用 veRL 库和 Ray 分布式集群训练 CodeFu-7B 模型。
@@ -43,6 +59,7 @@ scenarios: ["工具"]
 4.  **核心优势**：展示了这种统一方法如何为复杂的强化学习工作负载同时提供**计算规模**和良好的**开发者体验**。
 
 ---
+
 ## 评论
 
 **中心观点**
@@ -86,15 +103,16 @@ scenarios: ["工具"]
 *   **成本控制**：利用 SageMaker 的 Spot 实例进行 Rollout 阶段（数据生成），使用 On-Demand 实例进行 Gradient Update 阶段（模型更新），这种混合策略可以最大化成本效益。
 
 ---
+
 ## 技术分析
 
 基于您提供的文章标题和摘要，以及对相关技术栈（veRL, Ray, SageMaker, GRPO）的深度理解，以下是对该文章核心观点和技术要点的全面深入分析。
 
 ---
 
-# 深度分析：在 Amazon SageMaker 上使用 veRL 和 Ray 训练 CodeFu-7B
+### 深度分析：在 Amazon SageMaker 上使用 veRL 和 Ray 训练 CodeFu-7B
 
-## 1. 核心观点深度解读
+### 1. 核心观点深度解读
 
 **主要观点**
 文章的核心观点是：**通过将高性能的强化学习训练库与弹性分布式计算框架相结合，并在云原生基础设施上运行，可以高效、低成本地完成针对特定垂直领域（如竞技编程）的大语言模型（LLM）对齐训练。**
@@ -109,7 +127,7 @@ scenarios: ["工具"]
 **重要性**
 这一观点的重要性在于它**降低了垂直领域大模型对齐的门槛**。对于企业和研究机构而言，利用开源工具（veRL, Ray）和公有云基础设施（SageMaker），可以快速构建出类似 CodeLlama 或 DeepSeek-Coder 这样的专业模型，而无需从零开发复杂的训练框架。
 
-## 2. 关键技术要点
+### 2. 关键技术要点
 
 ### 涉及的关键技术概念
 1.  **GRPO (Group Relative Policy Optimization)**：这是技术核心。与 PPO 不同，GRPO 通过从输出组中采样多个输出来计算基线，从而移除了对价值函数的需求，显著降低了内存消耗。
@@ -135,7 +153,7 @@ scenarios: ["工具"]
 *   **去 Critic 化**：证明了在特定领域（如代码生成，奖励信号明确且二元）中，可以通过 Group Sampling 代替复杂的 Value Function 估计，简化了系统设计。
 *   **云原生编排**：展示了如何将研究级代码无缝部署到生产级云环境，实现了“本地开发，云端扩展”的闭环。
 
-## 3. 实际应用价值
+### 3. 实际应用价值
 
 **指导意义**
 该文章为**“后训练”**阶段提供了一个极具性价比的工程模板。它告诉工程师，不需要庞大的 HPC 集群也能完成高质量的 RLHF。
@@ -154,7 +172,7 @@ scenarios: ["工具"]
 *   使用 SageMaker 的本地模式在本地调试代码，再提交到云端。
 *   编写健壮的 Reward Function，这是 RL 成败的关键。
 
-## 4. 行业影响分析
+### 4. 行业影响分析
 
 **对行业的启示**
 *   **基础设施平民化**：随着 veRL 等开源库和 SageMaker 等云服务的成熟，大模型训练不再是科技巨头的专利，中小团队也能训练出顶尖的垂直模型。
@@ -167,7 +185,7 @@ scenarios: ["工具"]
 *   **RLHF 成为标配**：不仅是通用模型，代码代理、游戏 AI 等都将引入 RL 环节。
 *   **训练与推理融合**：像 veRL 这样注重推理时优化的训练库将更受欢迎。
 
-## 5. 延伸思考
+### 5. 延伸思考
 
 **拓展方向**
 *   **多模态 GRPO**：能否将 GRPO 应用于图文生成或多模态推理任务？
@@ -178,24 +196,7 @@ scenarios: ["工具"]
 *   GRPO 在稀疏奖励环境下的表现如何？（代码通过测试是密集反馈，但很多现实任务是稀疏反馈）。
 *   Ray 的调度延迟在极大规模（千卡）下是否会成为瓶颈？
 
-## 6. 实践建议
-
-**如何应用到自己的项目**
-1.  **评估任务**：确定你的任务是否有明确的、可计算的奖励函数。
-2.  **环境搭建**：在 Docker 容器中配置 veRL 和 Ray 环境，确保依赖隔离。
-3.  **数据准备**：构建包含“问题-答案-奖励”的数据集。
-
-**行动建议**
-*   阅读 veRL 官方文档，理解其 Actor-Learner 架构。
-*   在 SageMaker 上创建一个 Ray 集群进行简单的“Hello World”测试。
-*   尝试复现文章中的 CodeFu 训练流程，使用较小的模型（如 1B）作为起点。
-
-**补充知识**
-*   强化学习基础（Policy Gradient, Importance Sampling）。
-*   PyTorch 分布式训练（DDP, FSDP）。
-*   Kubernetes 和容器化技术（理解 Ray 的底层机制）。
-
-## 7. 案例分析
+### 7. 案例分析
 
 **成功案例：DeepSeek-Coder / CodeFu**
 *   **背景**：竞技编程需要极强的逻辑推理和代码生成能力，SFT（监督微调）往往难以通过测试用例。
@@ -207,7 +208,7 @@ scenarios: ["工具"]
 *   **原因**：开放域的奖励信号往往由另一个大模型（如 GPT-4）打分，噪声极大。GRPO 虽然省去了 Critic，但如果 Reward 本身不准，优化方向会跑偏，导致模型“怪异化”或“复读机”。
 *   **教训**：RL 的效果上限取决于 Reward Function 的质量。
 
-## 8. 哲学与逻辑：论证地图
+### 8. 哲学与逻辑：论证地图
 
 **中心命题**
 **在针对具有明确奖励信号的垂直领域（如代码生成）进行大模型对齐时，采用“veRL + GRPO + Ray”的技术栈，相比传统的 PPO + DeepSpeed 方案，能够在显著降低工程复杂度和硬件成本的同时，达到相当甚至更优的训练效果。**
@@ -230,13 +231,9 @@ scenarios: ["工具"]
 *   **事实**：veRL 是开源的；SageMaker 支持 Ray；GRPO 算法原理已发表。
 *   **可检验预测**：在相同的硬件预算下，使用该技术栈训练 CodeFu-7B 的收敛速度应快于使用标准 DeepSpeed-RLHF 的实现。
 
-**立场与验证方式**
-*   **立场
-
 ---
-## 最佳实践
 
-## 最佳实践指南
+## 最佳实践
 
 ### 实践 1：优化 Ray 集群与 SageMaker 的资源配置
 
@@ -312,6 +309,7 @@ LLM 训练往往是 IO 密集型的。在 SageMaker 分布式环境中，如果�
 2. 将 Checkpoint 定期保存到
 
 ---
+
 ## 学习要点
 
 - 通过结合veRL的高效内存优化与Ray的弹性伸缩能力，在SageMaker上实现了对CodeFu-7B大模型的高效训练。
@@ -322,6 +320,7 @@ LLM 训练往往是 IO 密集型的。在 SageMaker 分布式环境中，如果�
 - 通过整合这些技术栈，有效地解决了大模型训练中常见的计算资源瓶颈和工程化部署难题。
 
 ---
+
 ## 引用
 
 - **文章/节目**: [https://aws.amazon.com/blogs/machine-learning/train-codefu-7b-with-verl-and-ray-on-amazon-sagemaker-training-jobs](https://aws.amazon.com/blogs/machine-learning/train-codefu-7b-with-verl-and-ray-on-amazon-sagemaker-training-jobs)
@@ -331,8 +330,6 @@ LLM 训练往往是 IO 密集型的。在 SageMaker 分布式环境中，如果�
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/)
@@ -346,4 +343,3 @@ LLM 训练往往是 IO 密集型的。在 SageMaker 分布式环境中，如果�
 - [Hexagon 利用 SageMaker HyperPod 加速分割模型预训练]({{< relref "posts/20260224-blogs_podcasts-accelerating-ai-model-production-at-hexagon-with-a-9.md" >}})
 - [🔥实战复盘：解锁GPT-OSS的智能体RL训练秘籍！]({{< relref "posts/20260128-blogs_podcasts-unlocking-agentic-rl-training-for-gpt-oss-a-practi-5.md" >}})
 - [受限群组相对策略优化]({{< relref "posts/20260206-arxiv_ai-constrained-group-relative-policy-optimization-1.md" >}})
-*本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

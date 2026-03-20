@@ -1,14 +1,26 @@
 ---
-title: "从零开始调用 Qwen 大模型 API 的入门指南"
-date: 2026-03-10T05:11:10+08:00
+title: 从零开始调用 Qwen 大模型 API 的入门指南
+date: 2026-03-10 05:11:10+08:00
 draft: false
-entry_kind: "auto"
-tags: ["LLM", "Qwen", "通义千问", "API", "入门指南", "大模型应用", "神经网络", "自然语言处理"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- LLM
+- Qwen
+- 通义千问
+- API
+- 入门指南
+- 大模型应用
+- 神经网络
+- 自然语言处理
+categories:
+- 大模型
+- AI 工程
 source: juejin
-description: "由于提供的内容在“你每”处中断，信息不完整。基于目前可见的文本，以下是关于**第一章：Qwen 大模型 API 入门**的简要总结： **内容总结：** 本章主要介绍了大语言模型（LLM）的基础知识及其作为当今 AI 应用核心引擎的地位。 1. **LLM 的定义**：LLM（Large Language Model，"
+description: 由于提供的内容在“你每”处中断，信息不完整。基于目前可见的文本，以下是关于**第一章：Qwen 大模型 API 入门**的简要总结： **内容总结：**
+  本章主要介绍了大语言模型（LLM）的基础知识及其作为当今 AI 应用核心引擎的地位。 1. **LLM 的定义**：LLM（Large Language Model，
 external_url: https://juejin.cn/post/7615161431982620682
-scenarios: ["大语言模型"]
+scenarios:
+- 大语言模型
 ---
 
 # 从零开始调用 Qwen 大模型 API 的入门指南
@@ -21,16 +33,19 @@ scenarios: ["大语言模型"]
 - **链接**: [https://juejin.cn/post/7615161431982620682](https://juejin.cn/post/7615161431982620682)
 
 ---
+
 ## 导语
 
 大语言模型（LLM）已成为构建现代 AI 应用的核心基础设施，但对于许多开发者而言，如何从零开始调用 API 仍是一道门槛。本文将以 Qwen 大模型为例，详细介绍从环境准备到代码实现的具体步骤，帮助你快速掌握接口调用方法。通过阅读本文，你将学会如何将强大的模型能力集成到自己的项目中，开启大模型开发的第一步。
 
 ---
+
 ## 描述
 
 一、你真的了解 LLM 是什么吗？ LLM（Large Language Model，大语言模型） 是当今 AI 应用的核心引擎。它本质上是一个经过海量文本训练的神经网络，能够理解和生成自然语言。你每
 
 ---
+
 ## 摘要
 
 由于提供的内容在“你每”处中断，信息不完整。基于目前可见的文本，以下是关于**第一章：Qwen 大模型 API 入门**的简要总结：
@@ -45,6 +60,7 @@ scenarios: ["大语言模型"]
 （注：由于原文中断，关于 API 调用的具体实操细节未能包含在总结中。）
 
 ---
+
 ## 评论
 
 ### 评价报告：第01章：从零开始调用 LLM —— 入门 Qwen 大模型 API
@@ -95,6 +111,7 @@ scenarios: ["大语言模型"]
 3.  **输出一致性检验（实验）：** 固定输入参数，多次调用 API，观察 Temperature=0 和 Temperature=1 时的输出方差，验证文章对参数控制的理解是否准确。
 
 ---
+
 ## 学习要点
 
 - 通过 DashScope SDK 调用 Qwen 大模型 API 是实现 AI 功能的基础，需先完成环境配置与安装
@@ -105,34 +122,20 @@ scenarios: ["大语言模型"]
 - 通过自定义 system_prompt 能够灵活设定模型的人设与行为边界
 
 ---
+
 ## 常见问题
 
+### 如何获取 Qwen 大模型的 API Key？
 
-### 1: 如何获取 Qwen 大模型的 API Key？
+要调用 Qwen（通义千问）大模型 API，您需要先在阿里云百炼平台上进行注册和实名认证。具体步骤如下：首先登录阿里云百炼控制台，如果您是首次使用，通常需要开通“百炼大模型推理”服务。开通后，在控制台的 API-KEY 管理页面，创建一个新的 API Key。请注意，创建时的 Key 只会显示一次，请务必及时将其保存到本地或配置到环境变量中，以免泄露或丢失。
 
-1: 如何获取 Qwen 大模型的 API Key？
+### 调用 Qwen API 时，提示 401 或 403 错误怎么办？
 
-**A**: 要调用 Qwen（通义千问）大模型 API，您需要先在阿里云百炼平台上进行注册和实名认证。具体步骤如下：首先登录阿里云百炼控制台，如果您是首次使用，通常需要开通“百炼大模型推理”服务。开通后，在控制台的 API-KEY 管理页面，创建一个新的 API Key。请注意，创建时的 Key 只会显示一次，请务必及时将其保存到本地或配置到环境变量中，以免泄露或丢失。
+这通常是身份验证或授权问题。请检查以下几点：1. 确认您的 API Key 是否正确填写，且没有多余的空格；2. 检查您的账户余额是否充足，或者该 API Key 是否已被禁用或删除；3. 确认您使用的 HTTP Header 格式是否正确，通常需要使用 `Authorization: Bearer YOUR_API_KEY` 的格式。如果以上都无误，建议查看官方文档确认该 API Key 是否具备调用特定模型（如 qwen-turbo、qwen-plus 等）的权限。
 
----
+### 如何在代码中正确构建 HTTP 请求以调用 Qwen API？
 
-
-
-### 2: 调用 Qwen API 时，提示 401 或 403 错误怎么办？
-
-2: 调用 Qwen API 时，提示 401 或 403 错误怎么办？
-
-**A**: 这通常是身份验证或授权问题。请检查以下几点：1. 确认您的 API Key 是否正确填写，且没有多余的空格；2. 检查您的账户余额是否充足，或者该 API Key 是否已被禁用或删除；3. 确认您使用的 HTTP Header 格式是否正确，通常需要使用 `Authorization: Bearer YOUR_API_KEY` 的格式。如果以上都无误，建议查看官方文档确认该 API Key 是否具备调用特定模型（如 qwen-turbo、qwen-plus 等）的权限。
-
----
-
-
-
-### 3: 如何在代码中正确构建 HTTP 请求以调用 Qwen API？
-
-3: 如何在代码中正确构建 HTTP 请求以调用 Qwen API？
-
-**A**: 调用 Qwen API 通常使用 POST 方法向指定的端点（Endpoint）发送请求。以 Python 为例，建议使用 `requests` 库。您需要设置正确的 `Content-Type` 为 `application/json`，并在 Header 中填入 API Key。请求体需要包含 `model`（模型名称，如 qwen-plus）和 `input`（包含 messages 列表）等参数。示例结构如下：
+调用 Qwen API 通常使用 POST 方法向指定的端点（Endpoint）发送请求。以 Python 为例，建议使用 `requests` 库。您需要设置正确的 `Content-Type` 为 `application/json`，并在 Header 中填入 API Key。请求体需要包含 `model`（模型名称，如 qwen-plus）和 `input`（包含 messages 列表）等参数。示例结构如下：
 ```json
 {
   "model": "qwen-plus",
@@ -146,47 +149,26 @@ scenarios: ["大语言模型"]
 ```
 请确保 JSON 格式合法且参数符合 DashScope (灵积) 或百炼平台的规范。
 
----
+### 调用 API 时返回 "InvalidRequestError" 或参数错误，如何排查？
 
+此类错误通常意味着发送的请求体不符合模型要求。请重点检查：1. `messages` 列表是否为空，或者是否存在格式错误（如缺少 `role` 或 `content` 字段）；2. 对话轮次是否超出了模型的上下文窗口限制，导致输入过长；3. `temperature` 或 `top_p` 等参数是否设置在了 0 到 1 的合理范围内。建议打印出发送前的 Request Body 进行比对，或参考官方文档中的“参数说明”章节进行修正。
 
-
-### 4: 调用 API 时返回 "InvalidRequestError" 或参数错误，如何排查？
-
-4: 调用 API 时返回 "InvalidRequestError" 或参数错误，如何排查？
-
-**A**: 此类错误通常意味着发送的请求体不符合模型要求。请重点检查：1. `messages` 列表是否为空，或者是否存在格式错误（如缺少 `role` 或 `content` 字段）；2. 对话轮次是否超出了模型的上下文窗口限制，导致输入过长；3. `temperature` 或 `top_p` 等参数是否设置在了 0 到 1 的合理范围内。建议打印出发送前的 Request Body 进行比对，或参考官方文档中的“参数说明”章节进行修正。
-
----
-
-
-
-### 5: Qwen 模型 API 支持流式输出吗？如何实现？
+### wen 模型 API 支持流式输出吗？如何实现？
 
 5: Qwen 模型 API 支持流式输出吗？如何实现？
 
 **A**: 是的，Qwen API 支持 SSE (Server-Sent Events) 协议的流式输出。在请求参数中，将 `incremental_output` 设置为 `true`（具体参数名可能随 SDK 版本或接口文档更新略有不同，通常在 DashScope SDK 中使用 `stream=True`）。在代码实现时，您不能像普通请求那样直接获取 `response.json()`，而是需要逐行读取返回的数据流，解析出 `content` 字段并实时打印或处理，直到接收到结束标记。
 
----
+### 官方提供的 SDK 和直接调用 HTTP 接口有什么区别，推荐使用哪种？
 
+直接调用 HTTP 接口最为底层，兼容性好，但需要手动处理连接、重试、鉴权和流式解析等细节。官方 SDK（如 Python 的 `dashscope` 库）封装了这些逻辑，提供了更简洁的方法（如 `Generation.call`），自动处理了签名、错误重试和流式响应的迭代，能显著提高开发效率。对于初学者或快速集成项目，强烈推荐使用官方 SDK；对于无法安装 Python 库的环境或需要极致轻量化的场景，可以使用原生 HTTP 调用。
 
+### 如何控制模型的生成 randomness（随机性）和长度？
 
-### 6: 官方提供的 SDK 和直接调用 HTTP 接口有什么区别，推荐使用哪种？
-
-6: 官方提供的 SDK 和直接调用 HTTP 接口有什么区别，推荐使用哪种？
-
-**A**: 直接调用 HTTP 接口最为底层，兼容性好，但需要手动处理连接、重试、鉴权和流式解析等细节。官方 SDK（如 Python 的 `dashscope` 库）封装了这些逻辑，提供了更简洁的方法（如 `Generation.call`），自动处理了签名、错误重试和流式响应的迭代，能显著提高开发效率。对于初学者或快速集成项目，强烈推荐使用官方 SDK；对于无法安装 Python 库的环境或需要极致轻量化的场景，可以使用原生 HTTP 调用。
+您可以通过调整请求参数来控制模型行为。使用 `temperature` 参数控制随机性，值越大（如 0.8）输出越创造性、越随机；值越小（如 0.1）输出越确定、越保守。使用 `top_p` (核采样) 进行另一种维度的控制。若要限制生成长度，可以设置 `max_tokens` 参数，指定模型最多生成的 token 数量，这有助于控制成本和响应速度。
 
 ---
 
-
-
-### 7: 如何控制模型的生成 randomness（随机性）和长度？
-
-7: 如何控制模型的生成 randomness（随机性）和长度？
-
-**A**: 您可以通过调整请求参数来控制模型行为。使用 `temperature` 参数控制随机性，值越大（如 0.8）输出越创造性、越随机；值越小（如 0.1）输出越确定、越保守。使用 `top_p` (核采样) 进行另一种维度的控制。若要限制生成长度，可以设置 `max_tokens` 参数，指定模型最多生成的 token 数量，这有助于控制成本和响应速度。
-
----
 ## 引用
 
 - **掘金原文**: [https://juejin.cn/post/7615161431982620682](https://juejin.cn/post/7615161431982620682)
@@ -195,8 +177,6 @@ scenarios: ["大语言模型"]
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)
@@ -210,4 +190,3 @@ scenarios: ["大语言模型"]
 - [Qwen 模型动态更新与能力演进分析]({{< relref "posts/20260305-hacker_news-something-is-afoot-in-the-land-of-qwen-11.md" >}})
 - [Compressed Agents：Agent Skills 技术解析]({{< relref "posts/20260130-hacker_news-compressed-agentsmd-agent-skills-6.md" >}})
 - [Qwen3-Coder-Next：下一代代码模型架构与性能解析]({{< relref "posts/20260204-hacker_news-qwen3-coder-next-13.md" >}})
-*本文由 AI Stack 自动生成，提供深度内容分析。*

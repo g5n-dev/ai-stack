@@ -20,6 +20,7 @@ sys.path.insert(0, str(project_root))
 
 from crawler.main import CrawlerOrchestrator
 from processor.main import ProcessorOrchestrator
+from processor.markdown_normalizer import remove_markdown_sections_by_heading
 from publisher.main import PublisherOrchestrator
 
 logging.basicConfig(
@@ -162,6 +163,42 @@ def sanitize_prompt_leaks_in_posts(*, posts_dir: Path) -> tuple[int, int]:
         removed_lines_total += removed
 
     return changed_files, removed_lines_total
+
+
+def sanitize_public_markdown_text(*, text: str) -> tuple[str, int]:
+    if not text:
+        return text, 0
+    return remove_markdown_sections_by_heading(text, {"思考题", "挑战与思考题"})
+
+
+def sanitize_public_sections_in_posts(*, posts_dir: Path) -> tuple[int, int]:
+    changed_files = 0
+    removed_sections_total = 0
+
+    try:
+        paths = sorted(posts_dir.glob("*.md"))
+    except Exception:
+        return 0, 0
+
+    for path in paths:
+        try:
+            original = path.read_text(encoding="utf-8")
+        except Exception:
+            continue
+
+        sanitized, removed = sanitize_public_markdown_text(text=original)
+        if removed <= 0:
+            continue
+
+        try:
+            path.write_text(sanitized, encoding="utf-8")
+        except Exception:
+            continue
+
+        changed_files += 1
+        removed_sections_total += removed
+
+    return changed_files, removed_sections_total
 
 
 def _relref_target_exists(*, content_root: Path, target: str) -> bool:
@@ -384,6 +421,9 @@ class SuperEnhancedContentGenerator:
                 changed_files, removed_lines = sanitize_prompt_leaks_in_posts(posts_dir=self.posts_dir)
                 if changed_files > 0:
                     logger.info(f"✓ Sanitized prompt leaks: files={changed_files} lines_removed={removed_lines}")
+                changed_files, removed_sections = sanitize_public_sections_in_posts(posts_dir=self.posts_dir)
+                if changed_files > 0:
+                    logger.info(f"✓ Sanitized public-only sections: files={changed_files} sections_removed={removed_sections}")
 
             # 4. 推送内容
             logger.info("\n[4/4] Publishing to social platforms...")
@@ -426,6 +466,7 @@ class SuperEnhancedContentGenerator:
 
                     # 生成 Markdown 内容
                     markdown_content = self._format_super_enhanced_markdown(item, current_filename=filename)
+                    markdown_content, _ = sanitize_public_markdown_text(text=markdown_content)
 
                     # 写入文件
                     with open(filepath, 'w', encoding='utf-8') as f:
@@ -1154,20 +1195,6 @@ class SuperEnhancedContentGenerator:
                     faq.get('answer', 'Answer'),
                 ])
 
-        # 13. 挑战和思考
-        if item.get('challenges'):
-            lines.extend([
-                '',
-                '---',
-                '## 思考题',
-                '',
-            ])
-            for challenge in item.get('challenges', []):
-                lines.extend([
-                    '',
-                    f"### {challenge}",
-                ])
-
         # 14. 实践建议
         if item.get('practical_recommendations'):
             lines.extend([
@@ -1328,20 +1355,6 @@ class SuperEnhancedContentGenerator:
                     f"### {faq.get('question', 'Q')}",
                     '',
                     faq.get('answer', 'A'),
-                ])
-
-        # 挑战
-        if item.get('challenges'):
-            lines.extend([
-                '',
-                '---',
-                '## 思考题',
-                '',
-            ])
-            for challenge in item.get('challenges', []):
-                lines.extend([
-                    '',
-                    f"### {challenge}",
                 ])
 
         # 相关资源
@@ -1600,20 +1613,6 @@ class SuperEnhancedContentGenerator:
                     f"### {faq.get('question', 'Q')}",
                     '',
                     faq.get('answer', 'A'),
-                ])
-
-        # 挑战
-        if item.get('challenges'):
-            lines.extend([
-                '',
-                '---',
-                '## 思考题',
-                '',
-            ])
-            for challenge in item.get('challenges', []):
-                lines.extend([
-                    '',
-                    f"### {challenge}",
                 ])
 
         # 相关资源
@@ -1900,6 +1899,11 @@ def main():
             logger.info(f"✓ Sanitized prompt leaks: files={changed_files} lines_removed={removed_lines}")
         else:
             logger.info("✓ Prompt leaks OK")
+        changed_files, removed_sections = sanitize_public_sections_in_posts(posts_dir=posts_dir)
+        if changed_files > 0:
+            logger.info(f"✓ Sanitized public-only sections: files={changed_files} sections_removed={removed_sections}")
+        else:
+            logger.info("✓ Public-only sections OK")
         return 0
 
     generator = SuperEnhancedContentGenerator(dedupe=not args.no_dedupe, dedupe_scope=args.dedupe_scope)

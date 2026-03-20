@@ -1,14 +1,28 @@
 ---
-title: "后端面试高频考点：MCP、Skill 与 Function Call 的区别"
-date: 2026-02-27T08:07:36+08:00
+title: 后端面试高频考点：MCP、Skill 与 Function Call 的区别
+date: 2026-02-27 08:07:36+08:00
 draft: false
-entry_kind: "auto"
-tags: ["MCP", "Function Call", "Skill", "LLM", "AI面试", "后端开发", "模型协议", "技术解析"]
-categories: ["后端", "大模型"]
+entry_kind: auto
+tags:
+- MCP
+- Function Call
+- Skill
+- LLM
+- AI面试
+- 后端开发
+- 模型协议
+- 技术解析
+categories:
+- 后端
+- 大模型
 source: juejin
-description: "**面试热点解析：MCP、Skill 与 Function Call 的区别** 随着 AI 大模型技术在各领域的深入应用，后端面试中 AI 相关题目的重要性日益凸显。为帮助开发者应对高频考点，本文将对 **MCP、Skill、Function Call** 这三个核心概念及其区别进行总结。 **1. 概念定义** *"
+description: '**面试热点解析：MCP、Skill 与 Function Call 的区别** 随着 AI 大模型技术在各领域的深入应用，后端面试中
+  AI 相关题目的重要性日益凸显。为帮助开发者应对高频考点，本文将对 **MCP、Skill、Function Call** 这三个核心概念及其区别进行总结。 **1.
+  概念定义** *'
 external_url: https://juejin.cn/post/7611084174967210019
-scenarios: ["大语言模型", "AI/ML项目"]
+scenarios:
+- 大语言模型
+- AI/ML项目
 ---
 
 # 后端面试高频考点：MCP、Skill 与 Function Call 的区别
@@ -21,16 +35,19 @@ scenarios: ["大语言模型", "AI/ML项目"]
 - **链接**: [https://juejin.cn/post/7611084174967210019](https://juejin.cn/post/7611084174967210019)
 
 ---
+
 ## 导语
 
 随着 AI 技术在后端开发中的渗透，MCP、Skill 和 Function Call 已成为高频面试考点，但许多开发者对其概念边界与应用场景仍缺乏清晰认知。厘清这三者的技术差异与适用逻辑，不仅有助于应对面试提问，更能指导我们在实际业务中做出更合理的架构设计。本文将深入剖析它们的核心区别，助你建立系统化的认知框架。
 
 ---
+
 ## 描述
 
 最近翻后台留言，发现好多朋友都在吐槽：现在后端面试，AI 相关的题目已经成了高频必考点，没提前准备很容易被问懵。 所以我后面计划陆续更新 AI 大模型开发相关的面试题系列，帮大家提前攒好干货、做好储备
 
 ---
+
 ## 摘要
 
 **面试热点解析：MCP、Skill 与 Function Call 的区别**
@@ -64,6 +81,7 @@ scenarios: ["大语言模型", "AI/ML项目"]
 这三者共同构成了 AI 应用开发的关键拼图：**Function Call** 负责打通模型与代码的执行，**Skill** 负责将能力产品化，而 **MCP** 则致力于构建统一的连接生态。
 
 ---
+
 ## 评论
 
 **中心观点**
@@ -110,6 +128,7 @@ scenarios: ["大语言模型", "AI/ML项目"]
 2.  **行业观察（观察窗口
 
 ---
+
 ## 学习要点
 
 - 根据您提供的内容，以下是关于 MCP、Skill 和 Function Call 区别的关键要点总结：
@@ -120,55 +139,35 @@ scenarios: ["大语言模型", "AI/ML项目"]
 - 从生态角度看，MCP 解决的是“通用连接”问题，而 Skill 和 Function Call 更多是解决“具体任务执行”问题。**
 
 ---
+
 ## 常见问题
 
+### 什么是 Function Call (函数调用)？它的核心作用是什么？
 
-### 1: 什么是 Function Call (函数调用)？它的核心作用是什么？
-
-1: 什么是 Function Call (函数调用)？它的核心作用是什么？
-
-**A**: Function Call 是大语言模型（LLM）的一种基础能力，指模型可以根据用户的语义，自主判断并生成调用外部工具或 API 的指令（通常为 JSON 格式），而不是直接生成文本回复。
+Function Call 是大语言模型（LLM）的一种基础能力，指模型可以根据用户的语义，自主判断并生成调用外部工具或 API 的指令（通常为 JSON 格式），而不是直接生成文本回复。
 
 其核心作用是打破 LLM 只能基于训练数据进行对话的局限，赋予模型“联网”和“执行操作”的能力。通过 Function Call，LLM 可以查询实时信息（如天气、股票）、操作私有数据库（如查询企业知识库）或执行具体任务（如发送邮件、预订会议室）。它是实现 AI Agent（智能体）从“对话者”转变为“执行者”的第一步。
 
----
+### 什么是 Skill (技能)？它与 Function Call 有何不同？
 
-
-
-### 2: 什么是 Skill (技能)？它与 Function Call 有何不同？
-
-2: 什么是 Skill (技能)？它与 Function Call 有何不同？
-
-**A**: Skill 通常指 AI 系统中封装好的、具有特定业务逻辑的“技能包”或“服务”。
+Skill 通常指 AI 系统中封装好的、具有特定业务逻辑的“技能包”或“服务”。
 
 两者的区别主要在于层级和封装度：
 1.  **粒度**：Function Call 往往对应底层的、原子级的 API 接口（例如 `get_user_info(user_id)`）；而 Skill 是更高层的概念，可能由多个 Function Call 组合而成，完成一个复杂的任务（例如“预订机票”这个 Skill，可能包含查询航班、锁定座位、支付等多个 Function Call）。
 2.  **标准化**：Function Call 是一种通用的技术标准（如 OpenAI 的 function calling 格式）；而 Skill 更多是应用层或平台层（如 Dify、Coze 等平台）的概念，用于方便开发者复用和编排业务逻辑。
 3.  **关系**：Skill 的底层实现通常依赖 Function Call，但 Skill 提供了更友好的配置界面和更复杂的上下文管理能力。
 
----
+### 什么是 MCP (Model Context Protocol)？它解决了什么问题？
 
-
-
-### 3: 什么是 MCP (Model Context Protocol)？它解决了什么问题？
-
-3: 什么是 MCP (Model Context Protocol)？它解决了什么问题？
-
-**A**: MCP (Model Context Protocol) 是一个开放的标准协议，旨在解决 AI 应用与数据源/工具之间的连接问题。
+MCP (Model Context Protocol) 是一个开放的标准协议，旨在解决 AI 应用与数据源/工具之间的连接问题。
 
 它主要解决了以下痛点：
 1.  **连接碎片化**：在 MCP 出现之前，每个 AI 应用（如 ChatGPT、Claude Desktop 或各类 IDE 插件）连接数据源（如 Google Drive、Slack、本地文件）都需要开发专门的插件。MCP 定义了一套统一的连接标准，使得“一次开发，处处运行”成为可能。
 2.  **上下文获取的标准化**：它规范了 AI 如何向服务器请求内容、服务器如何返回内容。简单来说，MCP 让 LLM 能够通过标准化的方式“读取”和“写入”各种系统的数据，而无需为每个系统重复开发适配器。
 
----
+### MCP、Skill 和 Function Call 三者在技术架构上是什么关系？
 
-
-
-### 4: MCP、Skill 和 Function Call 三者在技术架构上是什么关系？
-
-4: MCP、Skill 和 Function Call 三者在技术架构上是什么关系？
-
-**A**: 这三者通常处于 AI 交互栈的不同层级，可以理解为从底层到上层的递进关系：
+这三者通常处于 AI 交互栈的不同层级，可以理解为从底层到上层的递进关系：
 
 1.  **Function Call (机制层)**：这是最底层的“握手协议”。它定义了 LLM 如何向外部系统发送指令（JSON），以及外部系统如何返回结果。它是实现工具调用的基础技术手段。
 2.  **MCP (传输/协议层)**：这是中间层的“连接管道”。它定义了 AI 客户端如何与远端服务（提供数据或工具的服务）建立连接、传输数据。MCP 的传输内容往往就包含了 Function Call 的定义或执行结果。
@@ -176,29 +175,17 @@ scenarios: ["大语言模型", "AI/ML项目"]
 
 **总结**：Function Call 是“怎么做”，MCP 是“怎么连”，Skill 是“做什么”。
 
----
+### 在实际开发中，我应该优先选择哪种技术？
 
-
-
-### 5: 在实际开发中，我应该优先选择哪种技术？
-
-5: 在实际开发中，我应该优先选择哪种技术？
-
-**A**: 这取决于你的开发场景和目标：
+这取决于你的开发场景和目标：
 
 *   **如果你是底层模型开发者或直接调用 OpenAI/Claude API**：你主要打交道的是 **Function Call**。你需要定义函数的 JSON Schema，并处理模型返回的参数。
 *   **如果你在构建 AI 应用或 Agent 平台**：你会大量使用 **Skill** 的概念。你需要将业务逻辑封装成可复用的技能，并处理技能之间的编排。
 *   **如果你需要让 AI 客户端连接到企业内部数据或 SaaS 软件**：**MCP** 是未来的首选。如果你的客户端支持 MCP，实现 MCP 服务端将比开发各种私有插件更高效、更具通用性。
 
----
+### 为什么说 MCP 是连接 AI 与数据源的“USB 接口”？
 
-
-
-### 6: 为什么说 MCP 是连接 AI 与数据源的“USB 接口”？
-
-6: 为什么说 MCP 是连接 AI 与数据源的“USB 接口”？
-
-**A**: 这是一个形象的比喻。在计算机硬件中，USB 协议允许各种不同的设备（鼠标、键盘、硬盘）通过标准接口插入电脑，无需为每个设备定制主板的物理接口。
+这是一个形象的比喻。在计算机硬件中，USB 协议允许各种不同的设备（鼠标、键盘、硬盘）通过标准接口插入电脑，无需为每个设备定制主板的物理接口。
 
 MCP 在 AI 领域扮演了同样的角色：
 *   **AI 客户端**（如 Claude、IDE）相当于“电脑”。
@@ -206,6 +193,7 @@ MCP 在 AI 领域扮演了同样的角色：
 *   **MCP
 
 ---
+
 ## 引用
 
 - **掘金原文**: [https://juejin.cn/post/7611084174967210019](https://juejin.cn/post/7611084174967210019)
@@ -214,8 +202,6 @@ MCP 在 AI 领域扮演了同样的角色：
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [后端](/categories/%E5%90%8E%E7%AB%AF/) / [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)
@@ -229,4 +215,3 @@ MCP 在 AI 领域扮演了同样的角色：
 - [Compressed Agents：Agent Skills 技术解析]({{< relref "posts/20260130-hacker_news-compressed-agentsmd-agent-skills-6.md" >}})
 - [压缩智能体：Agent Skills 技术解析]({{< relref "posts/20260130-hacker_news-compressed-agentsmd-agent-skills-8.md" >}})
 - [Context Graphs与Agent Traces技术解析]({{< relref "posts/20260204-blogs_podcasts-ainews-context-graphs-and-agent-traces-0.md" >}})
-*本文由 AI Stack 自动生成，提供深度内容分析。*

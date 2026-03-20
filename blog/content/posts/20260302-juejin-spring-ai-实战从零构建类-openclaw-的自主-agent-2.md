@@ -1,14 +1,29 @@
 ---
-title: "基于Spring AI构建类OpenClaw自主Agent的实现方案"
-date: 2026-03-02T02:56:17+08:00
+title: 基于Spring AI构建类OpenClaw自主Agent的实现方案
+date: 2026-03-02 02:56:17+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Spring AI", "Agent", "自主智能体", "RAG", "LLM", "工具调用", "多轮对话", "上下文管理"]
-categories: ["后端", "AI 工程"]
+entry_kind: auto
+tags:
+- Spring AI
+- Agent
+- 自主智能体
+- RAG
+- LLM
+- 工具调用
+- 多轮对话
+- 上下文管理
+categories:
+- 后端
+- AI 工程
 source: juejin
-description: "以下是基于您提供的文本进行的简洁总结： **项目概述** 本文详细介绍了一个基于 **Spring AI** 框架从零构建**类 OpenClaw 自主 Agent** 的实战方案。该项目旨在构建一个具备高度自主性的智能体系统，全面覆盖了从底层架构到前端管理的完整开发生命周期。 **核心功能与技术实现** 1. **多"
+description: 以下是基于您提供的文本进行的简洁总结： **项目概述** 本文详细介绍了一个基于 **Spring AI** 框架从零构建**类 OpenClaw
+  自主 Agent** 的实战方案。该项目旨在构建一个具备高度自主性的智能体系统，全面覆盖了从底层架构到前端管理的完整开发生命周期。 **核心功能与技术实现**
+  1. **多
 external_url: https://juejin.cn/post/7611843836689072179
-scenarios: ["AI/ML项目", "RAG应用", "大语言模型"]
+scenarios:
+- AI/ML项目
+- RAG应用
+- 大语言模型
 ---
 
 # 基于Spring AI构建类OpenClaw自主Agent的实现方案
@@ -21,16 +36,19 @@ scenarios: ["AI/ML项目", "RAG应用", "大语言模型"]
 - **链接**: [https://juejin.cn/post/7611843836689072179](https://juejin.cn/post/7611843836689072179)
 
 ---
+
 ## 导语
 
 随着大模型应用场景的深入，如何基于 Spring AI 构建具备复杂任务处理能力的自主 Agent，已成为开发者关注的重点。本文将详细介绍从零搭建类似 OpenClaw 系统的完整流程，涵盖多渠道适配、会话管理及工具调用等核心模块。通过解析动态提示词组装与上下文窗口管理等关键技术，读者将掌握实现多轮任务自动化的实战方法，从而构建出稳健且可扩展的智能体应用。
 
 ---
+
 ## 描述
 
 本文基于 Spring AI 从零构建类似 OpenClaw 的自主 Agent，涵盖多渠道适配、会话管理、智能体运行、工具调用及前端管理。通过动态提示词组装、上下文窗口管理和心跳机制，实现多轮任务自动化
 
 ---
+
 ## 摘要
 
 以下是基于您提供的文本进行的简洁总结：
@@ -59,6 +77,7 @@ scenarios: ["AI/ML项目", "RAG应用", "大语言模型"]
 通过上述技术手段，该项目成功实现了**多轮任务的自动化处理**，能够模拟类似 OpenClaw 的复杂智能行为，为企业级 AI 应用的开发提供了可行的落地参考。
 
 ---
+
 ## 评论
 
 **中心观点**
@@ -101,6 +120,7 @@ scenarios: ["AI/ML项目", "RAG应用", "大语言模型"]
 本文为 Java 开发者提供了一条将 AI 能力引入企业级应用的可行路径，展示了 Spring AI 在生态融合上的潜力。然而，文章在 Agent 智能水平的描述上存在概念泛化，且在并发控制、错误处理和 Prompt 管理等生产关键环节上仍有待深入探讨。对于追求高可用性的企业系统而言，该架构目前更适合作为原型验证或内部工具的解决方案，而非直接替代核心业务逻辑。
 
 ---
+
 ## 学习要点
 
 - Spring AI 的核心价值在于提供了一套统一的 API 抽象，屏蔽了底层大模型厂商的连接差异，使开发者能够轻松切换模型供应商。
@@ -112,14 +132,12 @@ scenarios: ["AI/ML项目", "RAG应用", "大语言模型"]
 - 该项目展示了从零构建类 OpenAI 应用的完整路径，证明了 Java 开发者无需深入 Python 生态，仅凭 Spring AI 即可快速落地生产级的 AI 应用。
 
 ---
+
 ## 常见问题
 
+### Spring AI 与 Spring AI Alibaba 有什么区别，我该如何选择？
 
-### 1: Spring AI 与 Spring AI Alibaba 有什么区别，我该如何选择？
-
-1: Spring AI 与 Spring AI Alibaba 有什么区别，我该如何选择？
-
-**A**: Spring AI 是 Spring 生态中用于构建 AI 工程应用的通用框架，由社区驱动，主要提供对 OpenAI、Azure OpenAI 等国外模型的抽象接口。而 Spring AI Alibaba 是基于 Spring AI 规范的国内实现，专门针对阿里云通义系列大模型进行了适配。
+Spring AI 是 Spring 生态中用于构建 AI 工程应用的通用框架，由社区驱动，主要提供对 OpenAI、Azure OpenAI 等国外模型的抽象接口。而 Spring AI Alibaba 是基于 Spring AI 规范的国内实现，专门针对阿里云通义系列大模型进行了适配。
 
 选择建议：
 1. **网络环境**：如果你的应用部署在国内或需要稳定的访问速度，优先选择 Spring AI Alibaba，它直接连接阿里云服务，无需翻墙。
@@ -127,45 +145,27 @@ scenarios: ["AI/ML项目", "RAG应用", "大语言模型"]
 3. **通用性**：如果你主要使用 GPT-4 等国外模型，且已有成熟的海外代理方案，可以使用原生 Spring AI。
 在构建自主 Agent 时，两者的 API（如 ChatClient, Prompt）基本是一致的，主要区别在于 Starter 依赖和配置项。
 
----
+### 如何理解 Agent 中的“提示词工程”在 Spring 代码中的实现？
 
-
-
-### 2: 如何理解 Agent 中的“提示词工程”在 Spring 代码中的实现？
-
-2: 如何理解 Agent 中的“提示词工程”在 Spring 代码中的实现？
-
-**A**: 在 Spring AI 实战构建 Agent 时，提示词工程不再仅仅是拼接字符串，而是通过结构化的类来管理。Spring AI 提供了 `Message` 和 `Prompt` 抽象。
+在 Spring AI 实战构建 Agent 时，提示词工程不再仅仅是拼接字符串，而是通过结构化的类来管理。Spring AI 提供了 `Message` 和 `Prompt` 抽象。
 
 具体实现方式：
 1. **系统提示词**：通常在配置文件中定义，或者通过代码构建 `SystemPromptTemplate`。在构建 Agent 时，你需要将 Agent 的“人设”（如你是一个专业的代码助手）注入到 System Message 中。
 2. **少样本提示**：利用 Spring AI 的 `ChatMessage` 历史，可以将用户的历史对话或预设的问答对作为 List 传入，让 LLM 上下文更连贯。
 3. **动态模板**：使用 `String.format` 或 Spring 模板引擎，将数据库查询到的动态数据（如用户上下文、知识库检索结果）填充到 Prompt 中，这是实现“类 OpenAI” Agent 记忆功能的关键。
 
----
+### Spring AI 如何实现 Agent 的“记忆”功能，即如何让 AI 记住之前的对话？
 
-
-
-### 3: Spring AI 如何实现 Agent 的“记忆”功能，即如何让 AI 记住之前的对话？
-
-3: Spring AI 如何实现 Agent 的“记忆”功能，即如何让 AI 记住之前的对话？
-
-**A**: LLM 本身是无状态的。Spring AI 通过 `ChatClient` 的 `prompt` 方法参数或 `advisors` 机制来实现记忆管理。
+LLM 本身是无状态的。Spring AI 通过 `ChatClient` 的 `prompt` 方法参数或 `advisors` 机制来实现记忆管理。
 
 实现步骤：
 1. **历史存储**：你需要在前端或后端维护一个 `List<Message>`，将每次的用户提问和 AI 回复保存到这个列表中。
 2. **上下文回传**：在发起下一次请求时，将这个 List 作为 `.messages()` 参数传给 Spring AI。
 3. **Token 优化**：为了防止 Token 溢出，实战中通常不会全量回传所有历史。Spring AI 提供了 `ChatMemoryAdvisor`，它可以配置一个窗口大小（例如最近 10 轮对话），自动截断过旧的历史，或者在发送前对历史对话进行摘要处理。这是构建自主 Agent 必须要处理的性能瓶颈。
 
----
+### 什么是 Function Calling（函数调用），Spring AI 如何让 Agent 具备联网或查库能力？
 
-
-
-### 4: 什么是 Function Calling（函数调用），Spring AI 如何让 Agent 具备联网或查库能力？
-
-4: 什么是 Function Calling（函数调用），Spring AI 如何让 Agent 具备联网或查库能力？
-
-**A**: Function Calling 是 Agent 实现自主行动的核心。它允许 LLM 在生成文本的过程中，输出一个特定的指令（不是自然语言，而是 JSON 格式的函数名和参数），告诉程序去执行某个代码逻辑。
+Function Calling 是 Agent 实现自主行动的核心。它允许 LLM 在生成文本的过程中，输出一个特定的指令（不是自然语言，而是 JSON 格式的函数名和参数），告诉程序去执行某个代码逻辑。
 
 Spring AI 中的实现流程：
 1. **定义函数**：在 Java 代码中写一个普通方法（例如查询天气 `getCurrentWeather`），并使用 `@JsonProperty` 描述参数。
@@ -177,15 +177,9 @@ Spring AI 中的实现流程：
    - Spring AI 将结果再次发给 LLM。
    - LLM 组织语言，最终回答用户“北京今天天气晴朗，温度25度”。
 
----
+### 在构建自主 Agent 时，如何处理 RAG（检索增强生成）与知识库的集成？
 
-
-
-### 5: 在构建自主 Agent 时，如何处理 RAG（检索增强生成）与知识库的集成？
-
-5: 在构建自主 Agent 时，如何处理 RAG（检索增强生成）与知识库的集成？
-
-**A**: RAG 是解决大模型知识幻觉和私有数据问答的关键。在 Spring AI 中，通常结合向量数据库实现。
+RAG 是解决大模型知识幻觉和私有数据问答的关键。在 Spring AI 中，通常结合向量数据库实现。
 
 实战集成方案：
 1. **文档切分与向量化**：使用 Spring AI 的 `DocumentReader` 读取本地 TXT/PDF 文档，利用 `TokenTextSplitter` 进行切分，然后调用 Embedding 模型（如 ONNX 或阿里云 DashScope）转化为向量。
@@ -193,6 +187,7 @@ Spring AI 中的实现流程：
 3. **检索增强**：当用户提问时，先通过 `VectorStore.similaritySearch(query)` 检索出相关度最高的
 
 ---
+
 ## 引用
 
 - **掘金原文**: [https://juejin.cn/post/7611843836689072179](https://juejin.cn/post/7611843836689072179)
@@ -201,8 +196,6 @@ Spring AI 中的实现流程：
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [后端](/categories/%E5%90%8E%E7%AB%AF/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)
@@ -216,4 +209,3 @@ Spring AI 中的实现流程：
 - [LangChain实战：结合Memory与OutputParser构建有记忆的结构化助手]({{< relref "posts/20260210-juejin-langchain-进阶实战当-memory-遇上-outputparser打造有记忆的结构化助手-3.md" >}})
 - [基于Amazon Bedrock AgentCore构建统一智能系统]({{< relref "posts/20260219-blogs_podcasts-build-unified-intelligence-with-amazon-bedrock-age-2.md" >}})
 - [LLM智能体新增Claws层：强化外部工具调用与任务执行能力]({{< relref "posts/20260221-hacker_news-claws-are-now-a-new-layer-on-top-of-llm-agents-13.md" >}})
-*本文由 AI Stack 自动生成，提供深度内容分析。*

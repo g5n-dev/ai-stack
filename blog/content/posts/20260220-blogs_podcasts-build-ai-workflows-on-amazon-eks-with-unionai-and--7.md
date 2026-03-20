@@ -1,14 +1,28 @@
 ---
-title: "基于 Union.ai 和 Flyte 在 Amazon EKS 上构建 AI 工作流"
-date: 2026-02-20T21:09:19+08:00
+title: 基于 Union.ai 和 Flyte 在 Amazon EKS 上构建 AI 工作流
+date: 2026-02-20 21:09:19+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Flyte", "Union.ai", "Amazon EKS", "Kubernetes", "工作流编排", "AWS", "MLOps", "云原生"]
-categories: ["AI 工程", "系统与基础设施"]
+entry_kind: auto
+tags:
+- Flyte
+- Union.ai
+- Amazon EKS
+- Kubernetes
+- 工作流编排
+- AWS
+- MLOps
+- 云原生
+categories:
+- AI 工程
+- 系统与基础设施
 source: blogs_podcasts
-description: "本文介绍了如何利用 Union.ai 和 Flyte 在 Amazon EKS 上构建、编排及扩展 AI/ML 工作流，主要内容总结如下： **1. 核心技术方案** 文章探讨了使用 **Flyte Python SDK** 来编排 AI/ML 工作流，并结合 **Union.ai 2.0** 系统实现其在 **Ama"
+description: 本文介绍了如何利用 Union.ai 和 Flyte 在 Amazon EKS 上构建、编排及扩展 AI/ML 工作流，主要内容总结如下：
+  **1. 核心技术方案** 文章探讨了使用 **Flyte Python SDK** 来编排 AI/ML 工作流，并结合 **Union.ai 2.0** 系统实现其在
+  **Ama
 external_url: https://aws.amazon.com/blogs/machine-learning/build-ai-workflows-on-amazon-eks-with-union-ai-and-flyte
-scenarios: ["AI/ML项目", "Kubernetes"]
+scenarios:
+- AI/ML项目
+- Kubernetes
 ---
 
 # 基于 Union.ai 和 Flyte 在 Amazon EKS 上构建 AI 工作流
@@ -22,16 +36,19 @@ scenarios: ["AI/ML项目", "Kubernetes"]
 - **链接**: [https://aws.amazon.com/blogs/machine-learning/build-ai-workflows-on-amazon-eks-with-union-ai-and-flyte](https://aws.amazon.com/blogs/machine-learning/build-ai-workflows-on-amazon-eks-with-union-ai-and-flyte)
 
 ---
+
 ## 摘要/简介
 
 在本文中，我们将介绍如何使用 Flyte Python SDK 来编排和扩展 AI/ML 工作流。我们将探讨 Union.ai 2.0 系统如何支持在 Amazon Elastic Kubernetes Service (Amazon EKS) 上部署 Flyte，并与 Amazon Simple Storage Service (Amazon S3)、Amazon Aurora、AWS Identity and Access Management (IAM) 和 Amazon CloudWatch 等 AWS 服务实现无缝集成。我们还将通过一个使用 Amazon S3 Vectors 服务的 AI 工作流示例来解析该解决方案。
 
 ---
+
 ## 导语
 
 随着 AI 工作流的复杂度日益提升，如何基于 Kubernetes 构建可扩展且易于维护的编排系统已成为技术团队的关键挑战。本文将深入探讨如何利用 Union.ai 和 Flyte 在 Amazon EKS 上构建工作流，并解析其与 S3、Aurora 等 AWS 服务的无缝集成方案。通过阅读本文，读者将掌握具体的部署架构与配置方法，并获得一个基于 Amazon S3 Vectors 的实践示例，从而有效优化云环境下的机器学习任务管理。
 
 ---
+
 ## 摘要
 
 本文介绍了如何利用 Union.ai 和 Flyte 在 Amazon EKS 上构建、编排及扩展 AI/ML 工作流，主要内容总结如下：
@@ -48,6 +65,7 @@ scenarios: ["AI/ML项目", "Kubernetes"]
 文章通过一个具体的 AI 工作流示例演示了该解决方案的实际应用，该示例特别使用了全新的 **Amazon S3 Vectors** 服务，展示了如何在 EKS 环境下高效处理向量数据。
 
 ---
+
 ## 评论
 
 **文章中心观点**
@@ -104,13 +122,14 @@ scenarios: ["AI/ML项目", "Kubernetes"]
     *   检查方式：对比使用 Union.ai on EKS 与使用 AWS SageMaker Pipelines 运行相同工作
 
 ---
+
 ## 技术分析
 
 基于提供的标题和摘要，以下是对“Build AI workflows on Amazon EKS with Union.ai and Flyte”这一主题的深度分析。由于摘要截断，分析将基于Flyte、Union.ai和AWS EKS生态系统的标准技术架构和行业最佳实践进行展开。
 
 ---
 
-# 1. 核心观点深度解读
+### 1. 核心观点深度解读
 
 **主要观点**
 文章的核心主张是：**通过将 Union.ai（基于 Flyte）部署在 Amazon EKS 上，企业可以构建一个既具备云原生弹性，又能无缝集成 AWS 数据生态的“单一事实来源”型 AI/ML 工作流编排平台。**
@@ -127,7 +146,7 @@ scenarios: ["AI/ML项目", "Kubernetes"]
 
 ---
 
-# 2. 关键技术要点
+### 2. 关键技术要点
 
 **涉及的关键技术**
 *   **Flyte:** 一个开源的工作流编排平台，专门用于构建批处理和机器学习管道。
@@ -151,7 +170,7 @@ scenarios: ["AI/ML项目", "Kubernetes"]
 
 ---
 
-# 3. 实际应用价值
+### 3. 实际应用价值
 
 **对实际工作的指导意义**
 *   **标准化：** 将数据科学家的 Python 脚本直接转化为生产级工作流，无需重构为 Dockerfile 或 YAML 文件。
@@ -172,7 +191,7 @@ scenarios: ["AI/ML项目", "Kubernetes"]
 
 ---
 
-# 4. 行业影响分析
+### 4. 行业影响分析
 
 **对行业的启示**
 *   **MLOps 的“Kubernetes 化”已成定局：** 文章反映了行业趋势，即 K8s 正成为 ML 工作负载的标准底层，而专有的 ML 平台（如旧版 SageMaker）正在向开放的 K8s 标准靠拢。
@@ -187,7 +206,7 @@ scenarios: ["AI/ML项目", "Kubernetes"]
 
 ---
 
-# 5. 延伸思考
+### 5. 延伸思考
 
 **引发的思考**
 *   **Serverless vs. Kubernetes：** 虽然 EKS 提供了强大控制，但 AWS Fargate 或 Lambda 是否更适合轻量级 AI 任务？Flyte on EKS 的运维成本是否值得？
@@ -199,7 +218,7 @@ scenarios: ["AI/ML项目", "Kubernetes"]
 
 ---
 
-# 6. 实践建议
+### 6. 实践建议
 
 **如何应用到自己的项目**
 1.  **评估：** 检查现有 AI 流程是否包含复杂的依赖关系、重计算需求或需要大规模并行。
@@ -217,7 +236,7 @@ scenarios: ["AI/ML项目", "Kubernetes"]
 
 ---
 
-# 7. 案例分析
+### 7. 案例分析
 
 **成功案例（假设性典型场景）**
 *   **场景：** 某金融科技公司使用 Union.ai on EKS。
@@ -231,7 +250,7 @@ scenarios: ["AI/ML项目", "Kubernetes"]
 
 ---
 
-# 8. 哲学与逻辑：论证地图
+### 8. 哲学与逻辑：论证地图
 
 **中心命题**
 **对于追求高扩展性和成本效益的企业级 AI/ML 项目，采用基于 Union.ai (Flyte) 和 Amazon EKS 的编排架构优于传统的单体脚本或单一云厂商锁定方案。**
@@ -258,9 +277,8 @@ scenarios: ["AI/ML项目", "Kubernetes"]
     *   **观察窗口：** 观察 3-6 个月内的模型迭代频率和基础设施故障率。
 
 ---
-## 最佳实践
 
-## 最佳实践指南
+## 最佳实践
 
 ### 实践 1：容器化与资源优化
 
@@ -332,10 +350,8 @@ AI 实验往往需要运行大量的并行任务，例如超参数搜索。Flyte
 2. 对于高频访问的数据集，使用 `fsx for lustre` 或 `EBS` 快照预先挂载到节点或 Pod 中，减少网络 I/O 延迟。
 3. 在 Flyte 任务中实现智能数据加载逻辑，仅加载当前处理步骤所需的数据切片。
 
-**注意事项**:
-缓存策略需要配合业务逻辑调整，确保在代码变更但输入未变时，是否真的需要跳过执行（
-
 ---
+
 ## 学习要点
 
 - Union.ai 与 Flyte 的结合能够在 Amazon EKS 上构建可扩展且生产就绪的 AI 工作流，实现机器学习模型训练与部署流程的自动化。
@@ -345,6 +361,7 @@ AI 实验往往需要运行大量的并行任务，例如超参数搜索。Flyte
 - 此工作流支持混合云部署模式，用户可以灵活地在本地和云端调度任务，从而优化数据传输延迟并满足数据合规要求。
 
 ---
+
 ## 引用
 
 - **文章/节目**: [https://aws.amazon.com/blogs/machine-learning/build-ai-workflows-on-amazon-eks-with-union-ai-and-flyte](https://aws.amazon.com/blogs/machine-learning/build-ai-workflows-on-amazon-eks-with-union-ai-and-flyte)
@@ -354,8 +371,6 @@ AI 实验往往需要运行大量的并行任务，例如超参数搜索。Flyte
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/)
@@ -369,4 +384,3 @@ AI 实验往往需要运行大量的并行任务，例如超参数搜索。Flyte
 - [基于 Amazon EKS 使用 Union.ai 和 Flyte 构建 AI 工作流]({{< relref "posts/20260220-blogs_podcasts-build-ai-workflows-on-amazon-eks-with-unionai-and--4.md" >}})
 - [基于Union.ai和Flyte在Amazon EKS上构建AI工作流]({{< relref "posts/20260220-blogs_podcasts-build-ai-workflows-on-amazon-eks-with-unionai-and--5.md" >}})
 - [基于 Union.ai 和 Flyte 在 Amazon EKS 上构建 AI 工作流]({{< relref "posts/20260220-blogs_podcasts-build-ai-workflows-on-amazon-eks-with-unionai-and--6.md" >}})
-*本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

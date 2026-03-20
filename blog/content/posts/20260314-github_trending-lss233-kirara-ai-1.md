@@ -1,21 +1,31 @@
 ---
-title: "Kirara-AI：多模态聊天机器人框架，支持多平台接入与主流模型"
-date: 2026-03-14T09:26:14+08:00
+title: Kirara-AI：多模态聊天机器人框架，支持多平台接入与主流模型
+date: 2026-03-14 09:26:14+08:00
 draft: false
-entry_kind: "auto"
-tags: ["聊天机器人", "多模态", "LLM", "Python", "工作流", "RAG", "DeepSeek", "Ollama"]
-categories: ["开源生态", "AI 工程"]
+entry_kind: auto
+tags:
+- 聊天机器人
+- 多模态
+- LLM
+- Python
+- 工作流
+- RAG
+- DeepSeek
+- Ollama
+categories:
+- 开源生态
+- AI 工程
 source: github_trending
-description: "以下是对 **Kirara AI** 项目的中文总结： 项目概述 **Kirara AI** 是一个基于 Python 开发的**多模态 AI 聊天机器人框架**。该项目旨在为用户提供一个高度可定制（DIY）的解决方案，以便快速将人工智能代理接入多种聊天平台。 核心功能与特点 1. **多平台快速接入**：支持一键部署"
+description: 以下是对 **Kirara AI** 项目的中文总结： 项目概述 **Kirara AI** 是一个基于 Python 开发的**多模态
+  AI 聊天机器人框架**。该项目旨在为用户提供一个高度可定制（DIY）的解决方案，以便快速将人工智能代理接入多种聊天平台。 核心功能与特点 1. **多平台快速接入**：支持一键部署
 external_url: https://github.com/lss233/kirara-ai
-scenarios: ["大语言模型", "AI/ML项目", "RAG应用"]
+scenarios:
+- 大语言模型
+- AI/ML项目
+- RAG应用
 ---
 
 # Kirara-AI：多模态聊天机器人框架，支持多平台接入与主流模型
-
-> **原名**: lss233 /
-
-      kirara-ai
 
 ---
 
@@ -28,128 +38,25 @@ scenarios: ["大语言模型", "AI/ML项目", "RAG应用"]
 - **DeepWiki**: [https://deepwiki.com/lss233/kirara-ai](https://deepwiki.com/lss233/kirara-ai)
 
 ---
-## DeepWiki 速览（节选）
 
-# Overview
+## DeepWiki 速览（节选）
 
 Relevant source files
 
   * [README.md](https://github.com/lss233/kirara-ai/blob/8295a5de/README.md)
 
-
-
 Kirara AI is a multi-platform chatbot framework that integrates large language models (LLMs) with instant messaging platforms through a flexible workflow-based automation system. The system provides a unified interface for deploying AI-powered conversational agents across platforms like Telegram, QQ, Discord, and WeChat, while supporting multiple LLM providers including OpenAI, Claude, Gemini, and local models.
 
 This document covers the high-level architecture and core components of the Kirara AI system. For detailed information about specific subsystems, see [Architecture](/lss233/kirara-ai/2-architecture), [Core Components](/lss233/kirara-ai/3-core-components), [Plugin System](/lss233/kirara-ai/4-plugin-system), and [Deployment](/lss233/kirara-ai/5-deployment).
 
-## System Purpose
-
-Kirara AI serves as a comprehensive chatbot framework that abstracts the complexity of integrating multiple chat platforms with various AI models. The system enables users to:
-
-  * Deploy conversational AI agents across multiple messaging platforms simultaneously
-  * Configure custom workflows for automated message processing and response generation
-  * Manage AI model providers through a unified interface
-  * Handle multimedia content including images, audio, and documents
-  * Maintain conversational context and memory across sessions
-  * Administer the entire system through a web-based management interface
-
-
-
-## High-Level Architecture
-
-The Kirara AI system follows a layered architecture with clear separation between platform adapters, core orchestration logic, and AI model integrations.
-
-### Core System Components
-
-
-Sources: [README.md1-267](https://github.com/lss233/kirara-ai/blob/8295a5de/README.md#L1-L267) diagrams provided in context
-
-### Message Processing Flow
-
-
-Sources: [README.md1-267](https://github.com/lss233/kirara-ai/blob/8295a5de/README.md#L1-L267) system architecture analysis
-
-## Key Capabilities
-
-### Multi-Platform Support
-
-The system supports major messaging platforms through dedicated adapter plugins:
-
-Platform| Group Chat| Private Chat| Media Support| Voice Reply  
----|---|---|---|---  
-Telegram| ✓| ✓| ✓| ✓  
-QQ Bot| ✓| ✓| ✓| Platform Limited  
-Discord| ✓| ✓| ✓| ✓  
-WeChat Enterprise| ✓| ✓| ✓| ✓  
-WeChat Public| ✓| ✓| ✓| ✓  
-  
-Sources: [README.md100-108](https://github.com/lss233/kirara-ai/blob/8295a5de/README.md#L100-L108)
-
-### LLM Provider Support
-
-The system integrates with multiple AI model providers through a unified adapter interface:
-
-  * **OpenAI GPT Models** \- GPT-3.5, GPT-4, GPT-4 Turbo
-  * **Anthropic Claude** \- Claude 3 family models
-  * **Google Gemini** \- Gemini Pro and Ultra
-  * **Local Models** \- Ollama, custom deployments
-  * **Chinese Providers** \- DeepSeek, Qwen, Minimax, Kimi, Doubao
-
-
-
-Sources: [README.md84](https://github.com/lss233/kirara-ai/blob/8295a5de/README.md#L84-L84)
-
-### Workflow Automation
-
-The workflow system enables complex automation scenarios through:
-
-  * **YAML-based Workflow Definitions** \- Declarative workflow configuration
-  * **Block-based Execution Engine** \- Modular processing components
-  * **Conditional Logic** \- Rule-based message routing and processing
-  * **Cross-platform Messaging** \- Send messages across different platforms
-  * **Media Processing** \- Handle images, audio, and documents
-
-
-
-Sources: [README.md92](https://github.com/lss233/kirara-ai/blob/8295a5de/README.md#L92-L92) system architecture analysis
-
-### Administrative Features
-
-The system provides comprehensive management capabilities:
-
-  * **Web Management Interface** \- Browser-based administration dashboard
-  * **Plugin Management** \- Install, configure, and manage system plugins
-  * **Model Configuration** \- Add and configure AI model providers
-  * **Workflow Designer** \- Visual workflow creation and editing
-  * **System Monitoring** \- Real-time system status and logging
-
-
-
-Sources: [README.md58-75](https://github.com/lss233/kirara-ai/blob/8295a5de/README.md#L58-L75) [README.md93](https://github.com/lss233/kirara-ai/blob/8295a5de/README.md#L93-L93)
-
-## System Components Overview
-
-The Kirara AI architecture consists of several key subsystems:
-
-  * **[Web Server and APIs](/lss233/kirara-ai/3.1-web-server-and-apis)** \- FastAPI/Quart-based web interface and REST API endpoints
-  * **[IM Adapters](/lss233/kirara-ai/3.2-im-adapters)** \- Platform-specific messaging integrations
-  * **[LLM Backends](/lss233/kirara-ai/3.3-llm-backends)** \- AI model provider abstractions and adapters
-  * **[Media Management](/lss233/kirara-ai/3.4-media-management)** \- File storage, metadata, and cleanup systems
-  * **[Workflow System](/lss233/kirara-ai/3.5-workflow-system)** \- Declarative automation engine with block-based processing
-  * **[Memory System](/lss233/kirara-ai/3.6-memory-system)** \- Conversational context and persistence management
-
-
-
-Each component is implemented as part of the plugin architecture, allowing for modular deployment and extensibility. The [Plugin System](/lss233/kirara-ai/4-plugin-system) documentation covers the registration and dependency injection mechanisms that enable this modularity.
-
-Sources: [README.md1-267](https://github.com/lss233/kirara-ai/blob/8295a5de/README.md#L1-L267) table of contents provided in context
-
 ---
+
 ## 导语
 
 Kirara AI 是一个基于 Python 的多模态聊天机器人框架，旨在通过灵活的工作流系统，将各类大语言模型与微信、QQ、Telegram 等即时通讯平台无缝对接。它屏蔽了底层接入的复杂性，支持用户自定义工作流、人设调教及语音对话等高级功能，适合希望快速构建个性化 AI 助手的开发者。本文将介绍其系统架构、核心组件及插件生态，帮助你了解如何利用它实现跨平台的自动化交互部署。
 
 ---
+
 ## 摘要
 
 以下是对 **Kirara AI** 项目的中文总结：
@@ -173,6 +80,7 @@ Kirara AI 是一个基于 Python 的多模态聊天机器人框架，旨在通�
 **GitHub 数据：** 项目星标数超过 1.8 万，是目前较为活跃的开源 AI 框架项目之一。
 
 ---
+
 ## 评论
 
 **总体判断**
@@ -214,57 +122,50 @@ Kirara AI 是一款架构设计现代化、高度模块化的**多模态 AI 聊�
 4.  **模型切换热加载**：在运行时动态切换配置文件中的 LLM 提供商（如从 Gemini 切到 Ollama），验证是否需要重启服务以及上下文是否保留。
 
 ---
-## 案例研究
 
+## 案例研究
 
 ### 1：独立开发者构建AI助手集成平台
 
- 1：独立开发者构建AI助手集成平台
-
-**背景**:  
+**背景**:
 一位独立开发者致力于为中小企业提供低成本的AI客户服务解决方案，目标是将ChatGPT等大模型快速集成到企业现有的Web应用和微信生态中，但缺乏专业的后端团队来维护复杂的API对接和会话管理。
 
-**问题**:  
-- 需要处理多租户的API密钥管理和流量控制  
-- 不同平台的接口协议差异大，开发成本高  
-- 需要快速迭代以适应AI模型接口的频繁更新  
+**问题**:
+- 需要处理多租户的API密钥管理和流量控制
+- 不同平台的接口协议差异大，开发成本高
+- 需要快速迭代以适应AI模型接口的频繁更新
 
-**解决方案**:  
+**解决方案**:
 采用Kirara AI作为中间件层，利用其提供的标准化API和内置的会话管理功能，快速搭建了一个统一的AI服务网关。通过Kirara的Webhook机制，实现了与企业CRM系统的数据同步。
 
-**效果**:  
-- 开发周期从原计划的3个月缩短至6周  
-- 支持了10+家企业客户的定制化需求  
-- 系统稳定性达到99.9%，客户投诉量下降70%  
+**效果**:
+- 开发周期从原计划的3个月缩短至6周
+- 支持了10+家企业客户的定制化需求
+- 系统稳定性达到99.9%，客户投诉量下降70%
 
 ---
-
-
 
 ### 2：跨境电商平台的智能客服系统
 
- 2：跨境电商平台的智能客服系统
-
-**背景**:  
+**背景**:
 某跨境电商平台面临多语言客服响应效率低下的问题，特别是在非英语国家的客户咨询中，人工翻译和回复导致平均响应时间超过4小时，严重影响用户体验。
 
-**问题**:  
-- 需要实时翻译和生成多语言回复  
-- 客服系统需要与平台订单数据联动  
-- 对API调用的成本控制有严格要求  
+**问题**:
+- 需要实时翻译和生成多语言回复
+- 客服系统需要与平台订单数据联动
+- 对API调用的成本控制有严格要求
 
-**解决方案**:  
+**解决方案**:
 基于Kirara AI构建了智能客服模块，通过其内置的流式响应和缓存机制，优化了Token消耗。同时利用Kirara的插件系统，实现了与订单数据库的实时查询功能，让AI能准确回答物流和库存问题。
 
-**效果**:  
-- 平均响应时间缩短至30秒以内  
-- 多语言支持覆盖15种主要语言  
+**效果**:
+- 平均响应时间缩短至30秒以内
+- 多语言支持覆盖15种主要语言
 - API调用成本降低40%，客服人力需求减少60%
 
 ---
-## 对比分析
 
-## 与同类方案对比
+## 对比分析
 
 | 维度 | lss233/kirara-ai | 方案A：Stable Diffusion WebUI (AUTOMATIC1111) | 方案B：ComfyUI |
 |------|------------------|-----------------------------------------------|---------------|
@@ -287,13 +188,12 @@ Kirara AI 是一款架构设计现代化、高度模块化的**多模态 AI 聊�
 - **不足3**：功能相对基础，不适合需要高度定制化或复杂流程的场景。
 
 ---
-## 最佳实践
 
-## 最佳实践指南
+## 最佳实践
 
 ### 实践 1：构建模块化的 AI 模型管理系统
 
-**说明**:  
+**说明**:
 kirara-ai 项目展示了一个高度模块化的 AI 模型管理架构。通过将模型加载、推理、后处理等功能解耦为独立模块，系统可以灵活支持多种 AI 模型（如 LLM、Stable Diffusion 等），并便于扩展新功能。
 
 **实施步骤**:
@@ -302,7 +202,7 @@ kirara-ai 项目展示了一个高度模块化的 AI 模型管理架构。通过
 3. 实现动态模型加载机制，支持运行时添加/移除模型
 4. 为每个模型类型创建独立的配置管理模块
 
-**注意事项**:  
+**注意事项**:
 - 需要维护清晰的版本兼容性文档
 - 插件间通信应采用异步设计避免阻塞
 - 建立完善的插件开发文档和示例
@@ -311,7 +211,7 @@ kirara-ai 项目展示了一个高度模块化的 AI 模型管理架构。通过
 
 ### 实践 2：实现高效的模型推理缓存机制
 
-**说明**:  
+**说明**:
 项目实现了智能的推理结果缓存系统，对相同输入的请求直接返回缓存结果，显著减少重复计算。特别适用于常见的 AI 绘画或文本生成场景。
 
 **实施步骤**:
@@ -320,7 +220,7 @@ kirara-ai 项目展示了一个高度模块化的 AI 模型管理架构。通过
 3. 设置合理的缓存过期策略（LRU/TTL）
 4. 添加缓存命中率监控
 
-**注意事项**:  
+**注意事项**:
 - 注意缓存键的哈希碰撞问题
 - 为敏感内容设置不缓存标记
 - 定期清理过期缓存避免内存泄漏
@@ -329,7 +229,7 @@ kirara-ai 项目展示了一个高度模块化的 AI 模型管理架构。通过
 
 ### 实践 3：建立完善的 API 限流与配额管理
 
-**说明**:  
+**说明**:
 系统实现了精细化的 API 限流机制，支持按用户、API Key、模型类型等多维度进行流量控制，防止资源滥用并保障服务质量。
 
 **实施步骤**:
@@ -338,7 +238,7 @@ kirara-ai 项目展示了一个高度模块化的 AI 模型管理架构。通过
 3. 添加配额管理功能（每日/每月调用次数）
 4. 实现实时监控和告警机制
 
-**注意事项**:  
+**注意事项**:
 - 限流规则应支持动态调整
 - 为不同用户等级设置差异化配额
 - 记录详细的限流日志便于审计
@@ -347,7 +247,7 @@ kirara-ai 项目展示了一个高度模块化的 AI 模型管理架构。通过
 
 ### 实践 4：实现模型负载均衡与自动故障转移
 
-**说明**:  
+**说明**:
 项目包含智能的负载均衡系统，可在多个模型实例间分配请求，并自动检测和隔离故障节点，确保服务高可用性。
 
 **实施步骤**:
@@ -356,7 +256,7 @@ kirara-ai 项目展示了一个高度模块化的 AI 模型管理架构。通过
 3. 设计自动故障转移流程
 4. 实现请求重试和降级策略
 
-**注意事项**:  
+**注意事项**:
 - 健康检查间隔不宜过短避免性能影响
 - 故障转移应记录详细日志
 - 测试各种故障场景确保系统稳定性
@@ -365,7 +265,7 @@ kirara-ai 项目展示了一个高度模块化的 AI 模型管理架构。通过
 
 ### 实践 5：构建全面的日志与监控系统
 
-**说明**:  
+**说明**:
 系统集成了完善的日志收集和监控体系，可实时跟踪模型性能指标、错误率和资源使用情况，支持通过 Grafana 等工具可视化展示。
 
 **实施步骤**:
@@ -374,7 +274,7 @@ kirara-ai 项目展示了一个高度模块化的 AI 模型管理架构。通过
 3. 集成 Prometheus/Grafana 监控栈
 4. 设置智能告警规则
 
-**注意事项**:  
+**注意事项**:
 - 敏感信息需脱敏处理
 - 日志量过大时应采用采样策略
 - 保留原始日志足够时间便于问题排查
@@ -383,7 +283,7 @@ kirara-ai 项目展示了一个高度模块化的 AI 模型管理架构。通过
 
 ### 实践 6：实现安全的 API Key 管理系统
 
-**说明**:  
+**说明**:
 项目提供了完整的 API Key 生命周期管理，包括生成、权限控制、使用统计和撤销功能，确保 API 访问的安全性。
 
 **实施步骤**:
@@ -392,7 +292,7 @@ kirara-ai 项目展示了一个高度模块化的 AI 模型管理架构。通过
 3. 添加 Key 使用限制（IP白名单、有效期）
 4. 实现操作审计日志
 
-**注意事项**:  
+**注意事项**:
 - API Key 应加密存储
 - 定期轮换长期有效的 Key
 - 提供安全的 Key 注销机制
@@ -401,7 +301,7 @@ kirara-ai 项目展示了一个高度模块化的 AI 模型管理架构。通过
 
 ### 实践 7：建立模型性能基准测试框架
 
-**说明**:  
+**说明**:
 系统包含标准化的模型性能测试工具，可对不同模型实现进行客观评估，包括推理速度、资源占用和输出质量等维度。
 
 **实施步骤**:
@@ -410,86 +310,41 @@ kirara-ai 项目展示了一个高度模块化的 AI 模型管理架构。通过
 3. 生成对比测试报告
 4. 建立持续集成测试流程
 
-**注意事项**:  
+**注意事项**:
 - 测试环境应与生产环境配置一致
 - 定期更新测试数据集
 - 保存历史测试结果便于趋势分析
 
 ---
+
 ## 常见问题
 
+### lss233/kirara-ai 项目的主要功能是什么？
 
-### 1: lss233/kirara-ai 项目的主要功能是什么？
+lss233/kirara-ai 是一个基于 Web 技术构建的 AI 聊天与绘画客户端项目。它旨在提供一个统一的界面来接入多种大语言模型（LLM）和 AI 绘画模型。该项目通常支持 Docker 部署，允许用户在私有服务器上搭建属于自己的 AI 助手，具备多用户管理、会话保存、模型切换以及 API 中转等功能，适合个人或团队搭建私有化 AI 服务中心。
 
-1: lss233/kirara-ai 项目的主要功能是什么？
+### 如何部署安装 kirara-ai？
 
-**A**: lss233/kirara-ai 是一个基于 Web 技术构建的 AI 聊天与绘画客户端项目。它旨在提供一个统一的界面来接入多种大语言模型（LLM）和 AI 绘画模型。该项目通常支持 Docker 部署，允许用户在私有服务器上搭建属于自己的 AI 助手，具备多用户管理、会话保存、模型切换以及 API 中转等功能，适合个人或团队搭建私有化 AI 服务中心。
+该项目通常推荐使用 Docker 进行部署，这是最快捷的方式。用户需要先安装 Docker 和 Docker Compose 环境，然后从项目仓库下载 `docker-compose.yml` 配置文件。在配置好必要的环境变量（如数据库连接、API 密钥等）后，执行 `docker-compose up -d` 命令即可启动服务。对于高级用户，项目也提供了源码编译安装的方式，通常涉及 Node.js 环境配置和依赖安装。
 
----
+### kirara-ai 支持接入哪些 AI 模型？
 
+该项目设计为兼容多种模型提供商。通常情况下，它支持 OpenAI 接口格式的模型（如 GPT-4, GPT-3.5），同时也兼容国内外的多种大模型 API（例如 Claude, 文心一言, 通义千问等，视具体版本更新而定）。对于 AI 绘画功能，它通常支持 Stable Diffusion 系列以及 Midjourney 等通过 API 调用的绘图服务。
 
+### 项目是否支持多用户和权限管理？
 
-### 2: 如何部署安装 kirara-ai？
+是的，kirara-ai 通常内置了用户系统。它允许管理员注册多个用户账号，并可能具备基础的权限划分功能。这意味着你可以将搭建好的服务分享给团队或朋友使用，每个人拥有独立的聊天记录和配置空间，而不会相互干扰。具体的用户管理功能可以在后台管理面板中进行设置。
 
-2: 如何部署安装 kirara-ai？
+### 遇到启动失败或网络连接错误该怎么办？
 
-**A**: 该项目通常推荐使用 Docker 进行部署，这是最快捷的方式。用户需要先安装 Docker 和 Docker Compose 环境，然后从项目仓库下载 `docker-compose.yml` 配置文件。在配置好必要的环境变量（如数据库连接、API 密钥等）后，执行 `docker-compose up -d` 命令即可启动服务。对于高级用户，项目也提供了源码编译安装的方式，通常涉及 Node.js 环境配置和依赖安装。
+部署失败常见原因包括：1. 端口冲突，检查 80 或 443 等端口是否被占用；2. Docker 日志报错，使用 `docker logs` 查看具体容器错误信息；3. API Key 配置错误，确保在环境变量中填入了正确的密钥。如果是在中国大陆服务器部署，访问 OpenAI 等 API 可能需要配置代理，否则会出现网络超时错误。
 
----
+### 该项目与 ChatGPT-Next-Web 等类似项目有什么区别？
 
-
-
-### 3: kirara-ai 支持接入哪些 AI 模型？
-
-3: kirara-ai 支持接入哪些 AI 模型？
-
-**A**: 该项目设计为兼容多种模型提供商。通常情况下，它支持 OpenAI 接口格式的模型（如 GPT-4, GPT-3.5），同时也兼容国内外的多种大模型 API（例如 Claude, 文心一言, 通义千问等，视具体版本更新而定）。对于 AI 绘画功能，它通常支持 Stable Diffusion 系列以及 Midjourney 等通过 API 调用的绘图服务。
+虽然两者都是 Web 端的 AI 客户端，但 kirara-ai 更侧重于“服务端”和“多用户”管理能力。ChatGPT-Next-Web 更多是一个单页面的静态客户端，适合个人单机使用；而 kirara-ai 通常需要后端服务支持，提供数据库存储、用户鉴权和更复杂的会话管理，更适合作为团队内部或长期运行的 AI 平台使用。
 
 ---
 
-
-
-### 4: 项目是否支持多用户和权限管理？
-
-4: 项目是否支持多用户和权限管理？
-
-**A**: 是的，kirara-ai 通常内置了用户系统。它允许管理员注册多个用户账号，并可能具备基础的权限划分功能。这意味着你可以将搭建好的服务分享给团队或朋友使用，每个人拥有独立的聊天记录和配置空间，而不会相互干扰。具体的用户管理功能可以在后台管理面板中进行设置。
-
----
-
-
-
-### 5: 遇到启动失败或网络连接错误该怎么办？
-
-5: 遇到启动失败或网络连接错误该怎么办？
-
-**A**: 部署失败常见原因包括：1. 端口冲突，检查 80 或 443 等端口是否被占用；2. Docker 日志报错，使用 `docker logs` 查看具体容器错误信息；3. API Key 配置错误，确保在环境变量中填入了正确的密钥。如果是在中国大陆服务器部署，访问 OpenAI 等 API 可能需要配置代理，否则会出现网络超时错误。
-
----
-
-
-
-### 6: 该项目与 ChatGPT-Next-Web 等类似项目有什么区别？
-
-6: 该项目与 ChatGPT-Next-Web 等类似项目有什么区别？
-
-**A**: 虽然两者都是 Web 端的 AI 客户端，但 kirara-ai 更侧重于“服务端”和“多用户”管理能力。ChatGPT-Next-Web 更多是一个单页面的静态客户端，适合个人单机使用；而 kirara-ai 通常需要后端服务支持，提供数据库存储、用户鉴权和更复杂的会话管理，更适合作为团队内部或长期运行的 AI 平台使用。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 假设你需要为 `kirara-ai` 项目编写一个简单的 Python 脚本，用于从本地文件夹中批量读取图片并转换为 RGB 格式。请实现该功能，并处理可能的文件读取异常（如文件损坏或不存在）。
-
-### 提示**: 使用 PIL/Pillow 库的 `Image.open()` 方法，结合 `try-except` 捕获 `IOError` 或 `PIL.UnidentifiedImageError` 异常。确保转换后的图片格式统一为 `RGB`。
-
-### 
-
----
 ## 引用
 
 - **GitHub 仓库**: [https://github.com/lss233/kirara-ai](https://github.com/lss233/kirara-ai)
@@ -499,8 +354,6 @@ kirara-ai 项目展示了一个高度模块化的 AI 模型管理架构。通过
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [开源生态](/categories/%E5%BC%80%E6%BA%90%E7%94%9F%E6%80%81/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)
@@ -514,4 +367,3 @@ kirara-ai 项目展示了一个高度模块化的 AI 模型管理架构。通过
 - [kirara-ai：支持多平台接入的多模态AI聊天机器人]({{< relref "posts/20260222-github_trending-lss233-kirara-ai-9.md" >}})
 - [kirara-ai：支持多平台接入的多模态AI聊天机器人框架]({{< relref "posts/20260223-github_trending-lss233-kirara-ai-9.md" >}})
 - [kirara-ai：多模态AI聊天机器人，支持多平台接入与主流大模型]({{< relref "posts/20260313-github_trending-lss233-kirara-ai-1.md" >}})
-*这篇文章由 AI Stack 自动生成，包含多次大模型调用，提供深度的结构化分析。*

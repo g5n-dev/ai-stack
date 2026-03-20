@@ -1,14 +1,28 @@
 ---
-title: "为Strands智能体构建SageMaker托管LLM自定义解析器"
-date: 2026-03-06T01:38:42+08:00
+title: 为Strands智能体构建SageMaker托管LLM自定义解析器
+date: 2026-03-06 01:38:42+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AWS", "SageMaker", "Strands", "LLM", "Llama 3.1", "SGLang", "自定义解析器", "模型部署"]
-categories: ["AI 工程", "后端"]
+entry_kind: auto
+tags:
+- AWS
+- SageMaker
+- Strands
+- LLM
+- Llama 3.1
+- SGLang
+- 自定义解析器
+- 模型部署
+categories:
+- AI 工程
+- 后端
 source: blogs_podcasts
-description: "本文介绍了如何为 Strands 代理构建自定义模型解析器，以便在 SageMaker AI 托管的 LLM（如 Llama 3.1）不原生支持 Bedrock Messages API 格式时进行集成。 主要内容包括： 1. **背景与目的**：针对托管在 SageMaker 上且不原生兼容 Bedrock API"
+description: 本文介绍了如何为 Strands 代理构建自定义模型解析器，以便在 SageMaker AI 托管的 LLM（如 Llama 3.1）不原生支持
+  Bedrock Messages API 格式时进行集成。 主要内容包括： 1. **背景与目的**：针对托管在 SageMaker 上且不原生兼容 Bedrock
+  API
 external_url: https://aws.amazon.com/blogs/machine-learning/building-custom-model-provider-for-strands-agents-with-llms-hosted-on-sagemaker-ai-endpoints
-scenarios: ["大语言模型", "后端开发"]
+scenarios:
+- 大语言模型
+- 后端开发
 ---
 
 # 为Strands智能体构建SageMaker托管LLM自定义解析器
@@ -22,16 +36,19 @@ scenarios: ["大语言模型", "后端开发"]
 - **链接**: [https://aws.amazon.com/blogs/machine-learning/building-custom-model-provider-for-strands-agents-with-llms-hosted-on-sagemaker-ai-endpoints](https://aws.amazon.com/blogs/machine-learning/building-custom-model-provider-for-strands-agents-with-llms-hosted-on-sagemaker-ai-endpoints)
 
 ---
+
 ## 摘要/简介
 
 本文演示了在接入不原生支持 Bedrock Messages API 格式的 SageMaker 托管 LLM 时，如何为 Strands 智能体构建自定义模型解析器。我们将一起使用 awslabs/ml-container-creator 在 SageMaker 上部署 Llama 3.1 与 SGLang，然后实现一个自定义解析器将其与 Strands 智能体集成。
 
 ---
+
 ## 导语
 
 将自托管的大语言模型（LLM）接入智能体框架时，兼容性往往是开发者面临的首要挑战。本文将演示如何在 Amazon SageMaker 上部署 Llama 3.1 与 SGLang，并通过构建自定义模型解析器，使其适配 Strands 智能体的标准接口。阅读本文，您将掌握实现异构模型与智能体无缝集成的具体方法，从而在云环境中灵活构建可控的生成式 AI 应用。
 
 ---
+
 ## 摘要
 
 本文介绍了如何为 Strands 代理构建自定义模型解析器，以便在 SageMaker AI 托管的 LLM（如 Llama 3.1）不原生支持 Bedrock Messages API 格式时进行集成。
@@ -45,6 +62,7 @@ scenarios: ["大语言模型", "后端开发"]
 简言之，文章演示了从 SageMaker 部署 LLM 开始，到最终通过开发自定义解析器完成与 Strands 代理集成的完整流程。
 
 ---
+
 ## 评论
 
 ### 中心观点
@@ -92,7 +110,6 @@ scenarios: ["大语言模型", "后端开发"]
     *   **验证点**：使用模拟 Agent 的多轮对话请求（包含大量 JSON 结构化输出），测量 SGLang 的 Tokens/秒 和端到端延迟是否显著优于 vLLM
 
 ---
-## 技术分析
 
 ## 技术分析
 
@@ -130,9 +147,8 @@ scenarios: ["大语言模型", "后端开发"]
 *   **技术栈复用**：企业无需为了使用私有模型而自研 Agent 框架，可以直接复用 Bedrock Agents 成熟的工具调用、知识库集成和链式编排能力，大幅降低研发复杂度并加快产品上市速度。
 
 ---
-## 最佳实践
 
-## 最佳实践指南
+## 最佳实践
 
 ### 实践 1：优化 SageMaker 端点配置与资源管理
 
@@ -143,7 +159,7 @@ scenarios: ["大语言模型", "后端开发"]
 2. 配置多模型端点或利用 SageMaker 的 GPU 共享功能以提高资源利用率。
 3. 设置自动扩缩容策略，定义目标追踪指标（如 CPU 利用率或每请求数延迟）。
 
-**注意事项**: 
+**注意事项**:
 - 监控端点的冷启动时间，对于实时交互场景，建议保持一定数量的预置实例。
 - 确保端点配置的 Variant（变体）设置合理的生产流量权重。
 
@@ -158,7 +174,7 @@ scenarios: ["大语言模型", "后端开发"]
 2. 实现后处理逻辑，将模型输出的原始文本解析为包含 `choices`、`message` 和 `finish_reason` 的标准 JSON 响应。
 3. 测试流式响应与非流式响应的兼容性，确保 `stream_options` 被正确处理。
 
-**注意事项**: 
+**注意事项**:
 - 仔细处理 Token 计数逻辑，确保返回的 `usage` 字段（`prompt_tokens`, `completion_tokens`）准确无误，以便 Strands 进行成本追踪。
 
 ---
@@ -172,7 +188,7 @@ scenarios: ["大语言模型", "后端开发"]
 2. 在自定义提供商代码中，使用 AWS SDK（如 Boto3）的 SigV4 签名机制对请求进行签名。
 3. 如果端点通过 VPC 内网访问，确保安全组仅允许来自特定 IP 范围或 VPC 端点的流量。
 
-**注意事项**: 
+**注意事项**:
 - 避免在代码中硬编码 AWS 凭证，应优先使用 IAM Roles Anywhere 或环境变量/实例元数据服务。
 - 启用 AWS CloudTrail 以记录所有 API 调用，便于审计。
 
@@ -187,7 +203,7 @@ scenarios: ["大语言模型", "后端开发"]
 2. 实现指数退避重试策略，对于 5xx 错误或特定 429 (限流) 错误进行自动重试。
 3. 将底层基础设施错误转换为标准的 HTTP 状态码和错误消息返回给 Strands。
 
-**注意事项**: 
+**注意事项**:
 - 设置最大重试次数和超时时间，防止级联故障导致系统资源耗尽。
 - 确保错误消息对 Agent 可读，以便 Agent 能够根据错误信息调整后续行动。
 
@@ -202,7 +218,7 @@ scenarios: ["大语言模型", "后端开发"]
 2. 配置 CloudWatch Logs 收集推理日志，记录 Prompt 和 Response 的采样数据（注意脱敏）。
 3. 在自定义提供商代码中埋点，记录请求延迟、Token 吞吐量（Tokens/秒）和错误率。
 
-**注意事项**: 
+**注意事项**:
 - 确保日志中不包含敏感的 PII（个人身份信息）数据，可在推理脚本中添加脱敏层。
 - 设置告警阈值，当错误率突增或延迟超过阈值时及时通知运维人员。
 
@@ -217,6 +233,7 @@ scenarios: ["大语言模型", "后端开发"]
 2. 对 Agent 发送的 Prompt 生成
 
 ---
+
 ## 学习要点
 
 - 通过在 Strands Agents 中构建自定义模型提供程序，可以将部署在 Amazon SageMaker 端点上的 LLM 无缝集成，从而实现对专有或定制化模型的直接调用。
@@ -226,6 +243,7 @@ scenarios: ["大语言模型", "后端开发"]
 - 在构建过程中，必须处理异步推理和流式响应等高级特性，以确保 Strands Agents 能够提供与直接使用公共 API 相似的低延迟交互体验。
 
 ---
+
 ## 引用
 
 - **文章/节目**: [https://aws.amazon.com/blogs/machine-learning/building-custom-model-provider-for-strands-agents-with-llms-hosted-on-sagemaker-ai-endpoints](https://aws.amazon.com/blogs/machine-learning/building-custom-model-provider-for-strands-agents-with-llms-hosted-on-sagemaker-ai-endpoints)
@@ -235,8 +253,6 @@ scenarios: ["大语言模型", "后端开发"]
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [后端](/categories/%E5%90%8E%E7%AB%AF/)
@@ -250,4 +266,3 @@ scenarios: ["大语言模型", "后端开发"]
 - [在 Amazon SageMaker 中使用 Outlines 实现 LLM 结构化输出]({{< relref "posts/20260224-blogs_podcasts-generate-structured-output-from-llms-with-dottxt-o-4.md" >}})
 - [AWS SageMaker实战：用Dottxt Outlines实现LLM结构化输出]({{< relref "posts/20260225-blogs_podcasts-generate-structured-output-from-llms-with-dottxt-o-12.md" >}})
 - [AWS SageMaker 集成 Dottxt Outlines 实现 LLM 结构化输出]({{< relref "posts/20260226-blogs_podcasts-generate-structured-output-from-llms-with-dottxt-o-13.md" >}})
-*本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

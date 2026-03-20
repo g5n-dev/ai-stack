@@ -1,14 +1,27 @@
 ---
-title: "为Strands智能体构建SageMaker自定义模型解析器"
-date: 2026-03-06T07:31:16+08:00
+title: 为Strands智能体构建SageMaker自定义模型解析器
+date: 2026-03-06 07:31:16+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Strands", "SageMaker", "LLM", "Llama 3.1", "SGLang", "自定义解析器", "模型部署", "AWS"]
-categories: ["AI 工程", "后端"]
+entry_kind: auto
+tags:
+- Strands
+- SageMaker
+- LLM
+- Llama 3.1
+- SGLang
+- 自定义解析器
+- 模型部署
+- AWS
+categories:
+- AI 工程
+- 后端
 source: blogs_podcasts
-description: "本文介绍了如何为 Amazon Strands 智能体构建自定义模型提供商，以便集成那些托管在 Amazon SageMaker AI 端点上、且不原生支持 Bedrock Messages API 格式的大语言模型（LLM）。 文章以部署 **Llama 3.1** 模型为例，详细讲解了以下步骤： 1. **模型部署"
+description: 本文介绍了如何为 Amazon Strands 智能体构建自定义模型提供商，以便集成那些托管在 Amazon SageMaker AI 端点上、且不原生支持
+  Bedrock Messages API 格式的大语言模型（LLM）。 文章以部署 **Llama 3.1** 模型为例，详细讲解了以下步骤： 1. **模型部署
 external_url: https://aws.amazon.com/blogs/machine-learning/building-custom-model-provider-for-strands-agents-with-llms-hosted-on-sagemaker-ai-endpoints
-scenarios: ["大语言模型", "后端开发"]
+scenarios:
+- 大语言模型
+- 后端开发
 ---
 
 # 为Strands智能体构建SageMaker自定义模型解析器
@@ -22,16 +35,19 @@ scenarios: ["大语言模型", "后端开发"]
 - **链接**: [https://aws.amazon.com/blogs/machine-learning/building-custom-model-provider-for-strands-agents-with-llms-hosted-on-sagemaker-ai-endpoints](https://aws.amazon.com/blogs/machine-learning/building-custom-model-provider-for-strands-agents-with-llms-hosted-on-sagemaker-ai-endpoints)
 
 ---
+
 ## 摘要/简介
 
 本文演示了当使用不支持 Bedrock Messages API 格式的 SageMaker 托管 LLM 时，如何为 Strands 智能体构建自定义模型解析器。我们将介绍如何使用 awslabs/ml-container-creator 在 SageMaker 上通过 SGLang 部署 Llama 3.1，然后实现一个自定义解析器将其与 Strands 智能体集成。
 
 ---
+
 ## 导语
 
 将大语言模型（LLM）部署在 SageMaker 端点上时，若其输出格式与 Bedrock Messages API 不兼容，往往会导致集成受阻。本文针对这一实际痛点，详细介绍了如何利用 SGLang 在 SageMaker 上部署 Llama 3.1，并构建自定义模型解析器以适配 Strands 智能体。通过阅读本文，您将掌握实现这一特定集成的完整步骤，从而在 AWS 环境中更灵活地定制和扩展您的智能体应用。
 
 ---
+
 ## 摘要
 
 本文介绍了如何为 Amazon Strands 智能体构建自定义模型提供商，以便集成那些托管在 Amazon SageMaker AI 端点上、且不原生支持 Bedrock Messages API 格式的大语言模型（LLM）。
@@ -42,6 +58,7 @@ scenarios: ["大语言模型", "后端开发"]
 3.  **集成**：通过该解析器，将 SageMaker 上的模型与 Strands 智能体连接，从而实现无缝调用。
 
 ---
+
 ## 评论
 
 ### 中心观点
@@ -89,6 +106,7 @@ AWS最近推出了Bedrock Custom Model Import功能，允许将微调后的模�
 1.  **建立统一的Model Gateway：** 不要在Agent代码内部硬编码SageMaker的调用逻辑。建议构建一个内部“模型网关”服务，将SageMaker的自定义接口包装成类OpenAI格式。这样Strands Agents
 
 ---
+
 ## 技术分析
 
 基于您提供的文章标题和摘要，尽管全文内容尚未完全展开，但结合AWS生态、当前LLM部署趋势以及“Strands Agents”（推测为AWS内部的Agent框架或特定项目背景）的技术语境，我可以为您构建一份深度分析报告。这篇文章的核心在于**解决异构模型与标准化Agent框架之间的适配问题**。
@@ -97,7 +115,7 @@ AWS最近推出了Bedrock Custom Model Import功能，允许将微调后的模�
 
 ---
 
-# 1. 核心观点深度解读
+### 1. 核心观点深度解读
 
 **文章的主要观点**
 文章的核心观点是：**企业级AI应用不应被单一云厂商的专有API所锁定**。通过构建自定义模型提供程序和解析器，开发者可以将部署在Amazon SageMaker上的高性能开源模型（如Llama 3.1）无缝集成到原本期望Bedrock标准格式的Agent框架中，从而在保持架构标准化的同时，获得模型部署的灵活性与成本优势。
@@ -114,7 +132,7 @@ AWS最近推出了Bedrock Custom Model Import功能，允许将微调后的模�
 
 ---
 
-# 2. 关键技术要点
+### 2. 关键技术要点
 
 **涉及的关键技术或概念**
 1.  **SGLang**：一种高性能的大语言模型推理服务运行时，相比vLLM，在某些场景下具有更高的吞吐量和更低的延迟。
@@ -137,7 +155,7 @@ AWS最近推出了Bedrock Custom Model Import功能，允许将微调后的模�
 
 ---
 
-# 3. 实际应用价值
+### 3. 实际应用价值
 
 **对实际工作的指导意义**
 对于正在使用AWS构建生成式AI应用的企业，这篇文章提供了一条**“混合架构”**的落地路径：核心逻辑使用Bedrock Agents管理，但核心推理任务可以转移到SageMaker上的开源模型，从而规避Bedrock按Token计费的高昂成本，同时满足数据不出域的安全合规要求。
@@ -157,7 +175,7 @@ AWS最近推出了Bedrock Custom Model Import功能，允许将微调后的模�
 
 ---
 
-# 4. 行业影响分析
+### 4. 行业影响分析
 
 **对行业的启示**
 这标志着**AI基础设施正在从“大模型提供商”向“模型路由与编排层”转变**。未来的企业AI架构将不再依赖单一模型供应商，而是通过统一的编排层，动态路由到最合适的模型（无论是API还是自托管）。
@@ -174,7 +192,7 @@ AWS最近推出了Bedrock Custom Model Import功能，允许将微调后的模�
 
 ---
 
-# 5. 延伸思考
+### 5. 延伸思考
 
 **引发的其他思考**
 *   **性能与精度的权衡**：SGLang虽然快，但其解码策略（如Speculative Decoding）是否会影响模型的推理能力或工具调用的准确率？需要建立评估体系。
@@ -190,7 +208,7 @@ AWS最近推出了Bedrock Custom Model Import功能，允许将微调后的模�
 
 ---
 
-# 6. 实践建议
+### 6. 实践建议
 
 **如何应用到自己的项目**
 1.  **评估现有技术栈**：检查你是否在使用Bedrock Agents或类似的依赖特定API格式的Agent框架。
@@ -213,7 +231,7 @@ AWS最近推出了Bedrock Custom Model Import功能，允许将微调后的模�
 
 ---
 
-# 7. 案例分析
+### 7. 案例分析
 
 **结合实际案例说明**
 假设一家**大型电商平台**需要构建一个“智能售后助手”。
@@ -231,15 +249,7 @@ AWS最近推出了Bedrock Custom Model Import功能，允许将微调后的模�
 
 ---
 
-# 8. 哲学与逻辑：论证地图
-
-**中心命题**
-在企业级AI架构中，通过构建自定义适配层将自托管LLM（如SageMaker上的Llama
-
----
 ## 最佳实践
-
-## 最佳实践指南
 
 ### 实践 1：优化 SageMaker 端点配置以降低推理延迟
 
@@ -318,6 +328,7 @@ AWS最近推出了Bedrock Custom Model Import功能，允许将微调后的模�
 **注意事项**: 设置合理的超时时间，避免因等待无
 
 ---
+
 ## 学习要点
 
 - 通过在 SageMaker AI 端点上部署 LLM 并将其配置为 Strands Agents 的自定义模型提供商，开发者可以在确保数据安全与隐私的前提下，灵活利用私有或定制化的大语言模型来构建智能体应用。
@@ -328,6 +339,7 @@ AWS最近推出了Bedrock Custom Model Import功能，允许将微调后的模�
 - 通过将模型部署逻辑与 Agent 应用层解耦，企业可以更轻松地遵循合规性要求，并针对特定垂直领域优化模型性能。
 
 ---
+
 ## 引用
 
 - **文章/节目**: [https://aws.amazon.com/blogs/machine-learning/building-custom-model-provider-for-strands-agents-with-llms-hosted-on-sagemaker-ai-endpoints](https://aws.amazon.com/blogs/machine-learning/building-custom-model-provider-for-strands-agents-with-llms-hosted-on-sagemaker-ai-endpoints)
@@ -337,8 +349,6 @@ AWS最近推出了Bedrock Custom Model Import功能，允许将微调后的模�
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [后端](/categories/%E5%90%8E%E7%AB%AF/)
@@ -352,4 +362,3 @@ AWS最近推出了Bedrock Custom Model Import功能，允许将微调后的模�
 - [在 SageMaker 上部署 SGLang 并集成至 Strands 智能体]({{< relref "posts/20260305-blogs_podcasts-building-custom-model-provider-for-strands-agents--2.md" >}})
 - [在 Amazon SageMaker 中使用 Outlines 实现 LLM 结构化输出]({{< relref "posts/20260224-blogs_podcasts-generate-structured-output-from-llms-with-dottxt-o-4.md" >}})
 - [AWS SageMaker实战：用Dottxt Outlines实现LLM结构化输出]({{< relref "posts/20260225-blogs_podcasts-generate-structured-output-from-llms-with-dottxt-o-12.md" >}})
-*本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

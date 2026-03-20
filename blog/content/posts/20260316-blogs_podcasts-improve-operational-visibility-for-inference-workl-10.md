@@ -1,14 +1,27 @@
 ---
-title: "Amazon Bedrock 新增 CloudWatch 指标，支持监控 TTFT 和配额消耗"
-date: 2026-03-16T16:46:26+08:00
+title: Amazon Bedrock 新增 CloudWatch 指标，支持监控 TTFT 和配额消耗
+date: 2026-03-16 16:46:26+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Amazon Bedrock", "CloudWatch", "LLM", "TTFT", "配额管理", "可观测性", "推理优化", "告警配置"]
-categories: ["AI 工程", "系统与基础设施"]
+entry_kind: auto
+tags:
+- Amazon Bedrock
+- CloudWatch
+- LLM
+- TTFT
+- 配额管理
+- 可观测性
+- 推理优化
+- 告警配置
+categories:
+- AI 工程
+- 系统与基础设施
 source: blogs_podcasts
-description: "以下是对该内容的中文简洁总结： **标题：利用新的 CloudWatch 指标提升 Amazon Bedrock 推理工作负载的可见性** 今天，我们宣布为 Amazon Bedrock 推出两项新的 Amazon CloudWatch 指标：**TimeToFirstToken（首字生成时间，TTFT）** 和 **"
+description: 以下是对该内容的中文简洁总结： **标题：利用新的 CloudWatch 指标提升 Amazon Bedrock 推理工作负载的可见性**
+  今天，我们宣布为 Amazon Bedrock 推出两项新的 Amazon CloudWatch 指标：**TimeToFirstToken（首字生成时间，TTFT）**
+  和 **
 external_url: https://aws.amazon.com/blogs/machine-learning/improve-operational-visibility-for-inference-workloads-on-amazon-bedrock-with-new-cloudwatch-metrics-for-ttft-and-estimated-quota-consumption
-scenarios: ["大语言模型"]
+scenarios:
+- 大语言模型
 ---
 
 # Amazon Bedrock 新增 CloudWatch 指标，支持监控 TTFT 和配额消耗
@@ -22,16 +35,19 @@ scenarios: ["大语言模型"]
 - **链接**: [https://aws.amazon.com/blogs/machine-learning/improve-operational-visibility-for-inference-workloads-on-amazon-bedrock-with-new-cloudwatch-metrics-for-ttft-and-estimated-quota-consumption](https://aws.amazon.com/blogs/machine-learning/improve-operational-visibility-for-inference-workloads-on-amazon-bedrock-with-new-cloudwatch-metrics-for-ttft-and-estimated-quota-consumption)
 
 ---
+
 ## 摘要/简介
 
 Today, we’re announcing two new Amazon CloudWatch metrics for Amazon Bedrock, TimeToFirstToken and EstimatedTPMQuotaUsage. In this post, we cover how these work and how to set alarms, establish baselines, and proactively manage capacity using them.
 
 ---
+
 ## 导语
 
 在生成式 AI 应用从原型走向生产环境的过程中，推理环节的性能监控与资源管理往往成为瓶颈。本文介绍 Amazon Bedrock 新发布的两项 Amazon CloudWatch 指标：TimeToFirstToken（首字生成时间）和 EstimatedTPMQuotaUsage（预估 TPM 配额使用率）。通过解读这两项指标，读者将了解如何量化模型响应速度、精准追踪配额消耗，并利用 CloudWatch 告警建立基线，从而实现对推理工作负载的主动运维与容量规划。
 
 ---
+
 ## 摘要
 
 以下是对该内容的中文简洁总结：
@@ -50,9 +66,8 @@ Today, we’re announcing two new Amazon CloudWatch metrics for Amazon Bedrock, 
 用户可以利用这些指标进行主动监控，确保推理工作负载的稳定运行并有效管理容量。
 
 ---
-## 最佳实践
 
-## 最佳实践指南
+## 最佳实践
 
 ### 实践 1：建立基于 TTFT 的用户体验监控体系
 
@@ -140,6 +155,7 @@ Bedrock 支持多种基础模型。为了统一管理，不应单独查看每个
 3. 在代码中实现动态路由逻辑：当收到
 
 ---
+
 ## 学习要点
 
 - Amazon Bedrock 新增了 Time to First Token (TTFT) 和 Estimated Quota Consumption 两项 CloudWatch 指标，显著提升了推理工作负载的运营可见性。
@@ -150,6 +166,7 @@ Bedrock 支持多种基础模型。为了统一管理，不应单独查看每个
 - 这些新增指标与 CloudWatch 控制面板深度集成，实现了对模型健康状况与资源使用的统一可视化监控。
 
 ---
+
 ## 引用
 
 - **文章/节目**: [https://aws.amazon.com/blogs/machine-learning/improve-operational-visibility-for-inference-workloads-on-amazon-bedrock-with-new-cloudwatch-metrics-for-ttft-and-estimated-quota-consumption](https://aws.amazon.com/blogs/machine-learning/improve-operational-visibility-for-inference-workloads-on-amazon-bedrock-with-new-cloudwatch-metrics-for-ttft-and-estimated-quota-consumption)
@@ -159,8 +176,6 @@ Bedrock 支持多种基础模型。为了统一管理，不应单独查看每个
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/)
@@ -174,4 +189,3 @@ Bedrock 支持多种基础模型。为了统一管理，不应单独查看每个
 - [Amazon Bedrock 新增 CloudWatch 指标，支持监控 TTFT 和配额消耗]({{< relref "posts/20260313-blogs_podcasts-improve-operational-visibility-for-inference-workl-4.md" >}})
 - [Amazon Bedrock 新增 CloudWatch 指标：TTFT 与配额监控]({{< relref "posts/20260314-blogs_podcasts-improve-operational-visibility-for-inference-workl-6.md" >}})
 - [Amazon Bedrock新增CloudWatch指标：监控TTFT与配额消耗]({{< relref "posts/20260316-blogs_podcasts-improve-operational-visibility-for-inference-workl-8.md" >}})
-*本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

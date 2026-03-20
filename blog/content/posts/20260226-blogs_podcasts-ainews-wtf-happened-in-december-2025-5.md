@@ -1,14 +1,26 @@
 ---
-title: "2025年12月AI回顾：编程范式的根本性变革"
-date: 2026-02-26T17:38:47+08:00
+title: 2025年12月AI回顾：编程范式的根本性变革
+date: 2026-02-26 17:38:47+08:00
 draft: false
-entry_kind: "auto"
-tags: ["编程范式", "AI 编程", "LLM", "开发工具", "行业回顾", "技术变革", "2025", "AI Agent"]
-categories: ["AI 工程", "效率与方法论"]
+entry_kind: auto
+tags:
+- 编程范式
+- AI 编程
+- LLM
+- 开发工具
+- 行业回顾
+- 技术变革
+- '2025'
+- AI Agent
+categories:
+- AI 工程
+- 效率与方法论
 source: blogs_podcasts
-description: "2024 年 12 月的 AI 行业看似平静，实则暗流涌动。这种表面的稳定反而加剧了一种普遍的焦虑：编程的本质正在经历不可逆的重构，其影响远超常规的技术炒作。本文将复盘当月的关键动态，剖析代码生成工具如何从辅助角色转变为开发的核心驱动力，并探讨这对开发者工作流与职业发展的长期意义。"
+description: 2024 年 12 月的 AI 行业看似平静，实则暗流涌动。这种表面的稳定反而加剧了一种普遍的焦虑：编程的本质正在经历不可逆的重构，其影响远超常规的技术炒作。本文将复盘当月的关键动态，剖析代码生成工具如何从辅助角色转变为开发的核心驱动力，并探讨这对开发者工作流与职业发展的长期意义。
 external_url: https://www.latent.space/p/wtf2025
-scenarios: ["AI/ML项目", "大语言模型"]
+scenarios:
+- AI/ML项目
+- 大语言模型
 ---
 
 # 2025年12月AI回顾：编程范式的根本性变革
@@ -22,16 +34,19 @@ scenarios: ["AI/ML项目", "大语言模型"]
 - **链接**: [https://www.latent.space/p/wtf2025](https://www.latent.space/p/wtf2025)
 
 ---
+
 ## 摘要/简介
 
 平静的一天，让我们得以表达一种日益强烈的不安感：编码已经永远改变——远不止是“正常”的炒作。
 
 ---
+
 ## 导语
 
 2024 年 12 月的 AI 行业看似平静，实则暗流涌动。这种表面的稳定反而加剧了一种普遍的焦虑：编程的本质正在经历不可逆的重构，其影响远超常规的技术炒作。本文将复盘当月的关键动态，剖析代码生成工具如何从辅助角色转变为开发的核心驱动力，并探讨这对开发者工作流与职业发展的长期意义。
 
 ---
+
 ## 评论
 
 **深度评论：编程范式的结构性重构**
@@ -71,7 +86,6 @@ scenarios: ["AI/ML项目", "大语言模型"]
 4.  **企业调研：** 跟踪头部科技公司的工程团队结构调整及人效比变化数据。
 
 ---
-## 技术分析
 
 ## 技术分析
 
@@ -124,9 +138,8 @@ scenarios: ["AI/ML项目", "大语言模型"]
 *   **知识产权风险**：关注AI生成代码的版权归属及合规性使用。
 
 ---
-## 最佳实践
 
-## 最佳实践指南
+## 最佳实践
 
 ### 实践 1：建立结构化的月度复盘框架
 
@@ -208,6 +221,7 @@ scenarios: ["AI/ML项目", "大语言模型"]
 1. 开发受众画像系统，明确
 
 ---
+
 ## 学习要点
 
 - 基于您提供的标题 "[AINews] WTF Happened in December 2025?" 以及来源 "blogs_podcasts"，由于您未提供具体的文章正文内容，我将根据该特定标题在 AI 社区中通常涵盖的 **2024年12月（或预测2025年底）** 的行业重大事件，为您总结最可能包含的 5 个关键要点：
@@ -219,6 +233,7 @@ scenarios: ["AI/ML项目", "大语言模型"]
 - AI 视频生成领域取得重大突破，OpenAI 的 Sora 向公众开放，同时 Google 发布 Veo 2 和 Imagen 3，大幅提升了视频生成的真实感和分辨率。
 
 ---
+
 ## 引用
 
 - **文章/节目**: [https://www.latent.space/p/wtf2025](https://www.latent.space/p/wtf2025)
@@ -228,8 +243,6 @@ scenarios: ["AI/ML项目", "大语言模型"]
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [效率与方法论](/categories/%E6%95%88%E7%8E%87%E4%B8%8E%E6%96%B9%E6%B3%95%E8%AE%BA/)
@@ -243,4 +256,3 @@ scenarios: ["AI/ML项目", "大语言模型"]
 - [构建极简且具倾向性的编程代理的经验总结]({{< relref "posts/20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-3.md" >}})
 - [构建极简编程代理的技术实践与经验总结]({{< relref "posts/20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-6.md" >}})
 - [Claude Code 配额耗尽时接入本地模型的方法]({{< relref "posts/20260205-hacker_news-claude-code-connect-to-a-local-model-when-your-quo-1.md" >}})
-*本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

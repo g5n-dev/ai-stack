@@ -1,14 +1,26 @@
 ---
-title: "AWS 解耦式推理技术解析：解耦服务、智能调度与专家并行"
-date: 2026-03-17T12:14:38+08:00
+title: AWS 解耦式推理技术解析：解耦服务、智能调度与专家并行
+date: 2026-03-17 12:14:38+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AWS", "LLM", "推理优化", "llm-d", "解耦服务", "专家并行", "SageMaker", "EKS"]
-categories: ["AI 工程", "系统与基础设施"]
+entry_kind: auto
+tags:
+- AWS
+- LLM
+- 推理优化
+- llm-d
+- 解耦服务
+- 专家并行
+- SageMaker
+- EKS
+categories:
+- AI 工程
+- 系统与基础设施
 source: blogs_podcasts
-description: "本文介绍了基于 **llm-d** 的 AWS 下一代推理能力，主要概念及优势如下： 1. **核心概念**： * **解耦服务**：将推理任务中的计算与资源分离，以提高灵活性。 * **智能请求调度**：优化请求处理流程，提升响应速度。 * **专家并行**：利用并行计算技术处理复杂模型。 2. **实施平台**："
+description: 本文介绍了基于 **llm-d** 的 AWS 下一代推理能力，主要概念及优势如下： 1. **核心概念**： * **解耦服务**：将推理任务中的计算与资源分离，以提高灵活性。
+  * **智能请求调度**：优化请求处理流程，提升响应速度。 * **专家并行**：利用并行计算技术处理复杂模型。 2. **实施平台**：
 external_url: https://aws.amazon.com/blogs/machine-learning/introducing-disaggregated-inference-on-aws-powered-by-llm-d
-scenarios: ["大语言模型"]
+scenarios:
+- 大语言模型
 ---
 
 # AWS 解耦式推理技术解析：解耦服务、智能调度与专家并行
@@ -22,16 +34,19 @@ scenarios: ["大语言模型"]
 - **链接**: [https://aws.amazon.com/blogs/machine-learning/introducing-disaggregated-inference-on-aws-powered-by-llm-d](https://aws.amazon.com/blogs/machine-learning/introducing-disaggregated-inference-on-aws-powered-by-llm-d)
 
 ---
+
 ## 摘要/简介
 
 在这篇博文中，我们将介绍下一代推理能力背后的概念，包括解耦式服务（disaggregated serving）、智能请求调度和专家并行（expert parallelism）。我们会探讨它们的优势，并逐步演示如何在 Amazon SageMaker HyperPod EKS 上实施这些技术，从而显著提升推理性能、资源利用率和运营效率。
 
 ---
+
 ## 导语
 
 随着大模型参数规模的持续增长，传统的单体推理架构在资源利用与扩展性上面临严峻挑战。本文深入探讨由 llm-d 驱动的解耦式推理技术，解析其如何通过智能请求调度和专家并行机制突破性能瓶颈。通过演示在 Amazon SageMaker HyperPod EKS 上的具体实施步骤，我们将展示该方案如何帮助企业显著提升资源利用率与运营效率。
 
 ---
+
 ## 摘要
 
 本文介绍了基于 **llm-d** 的 AWS 下一代推理能力，主要概念及优势如下：
@@ -50,6 +65,7 @@ scenarios: ["大语言模型"]
     *   增强运营效率。
 
 ---
+
 ## 学习要点
 
 - AWS 推出了由 llm-d 驱动的解耦推理架构，通过将计算与内存资源分离，实现了针对大语言模型推理的独立扩展能力
@@ -59,6 +75,7 @@ scenarios: ["大语言模型"]
 - 通过利用 AWS Nitro System 和 EC2 的弹性能力，该架构为在云端运行生成式 AI 提供了更具性价比的优化路径
 
 ---
+
 ## 引用
 
 - **文章/节目**: [https://aws.amazon.com/blogs/machine-learning/introducing-disaggregated-inference-on-aws-powered-by-llm-d](https://aws.amazon.com/blogs/machine-learning/introducing-disaggregated-inference-on-aws-powered-by-llm-d)
@@ -68,8 +85,6 @@ scenarios: ["大语言模型"]
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/)
@@ -83,4 +98,3 @@ scenarios: ["大语言模型"]
 - [AWS 推出基于 llm-d 的分离式推理技术]({{< relref "posts/20260317-blogs_podcasts-introducing-disaggregated-inference-on-aws-powered-3.md" >}})
 - [2025年Amazon SageMaker AI增强可观测性与模型定制托管功能]({{< relref "posts/20260220-blogs_podcasts-amazon-sagemaker-ai-in-2025-a-year-in-review-part--1.md" >}})
 - [Amazon SageMaker AI 2025回顾：可观测性与模型定制托管增强]({{< relref "posts/20260221-blogs_podcasts-amazon-sagemaker-ai-in-2025-a-year-in-review-part--2.md" >}})
-*本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

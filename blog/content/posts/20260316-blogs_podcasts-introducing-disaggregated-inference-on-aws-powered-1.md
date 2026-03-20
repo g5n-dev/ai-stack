@@ -1,14 +1,26 @@
 ---
-title: "AWS 解耦式推理技术解析：服务解耦、智能调度与专家并行"
-date: 2026-03-16T20:59:01+08:00
+title: AWS 解耦式推理技术解析：服务解耦、智能调度与专家并行
+date: 2026-03-16 20:59:01+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AWS", "推理优化", "解耦式服务", "llm-d", "智能调度", "专家并行", "SageMaker", "EKS"]
-categories: ["系统与基础设施", "AI 工程"]
+entry_kind: auto
+tags:
+- AWS
+- 推理优化
+- 解耦式服务
+- llm-d
+- 智能调度
+- 专家并行
+- SageMaker
+- EKS
+categories:
+- 系统与基础设施
+- AI 工程
 source: blogs_podcasts
-description: "以下是对该内容的中文总结： **AWS 基于 llm-d 推出的解耦推理功能简介** 这篇博客文章介绍了下一代推理能力的核心概念，包括**解耦服务**、**智能请求调度**和**专家并行**。文章探讨了这些技术带来的优势，并详细说明了如何在 **Amazon SageMaker HyperPod EKS** 上实施这些"
+description: 以下是对该内容的中文总结： **AWS 基于 llm-d 推出的解耦推理功能简介** 这篇博客文章介绍了下一代推理能力的核心概念，包括**解耦服务**、**智能请求调度**和**专家并行**。文章探讨了这些技术带来的优势，并详细说明了如何在
+  **Amazon SageMaker HyperPod EKS** 上实施这些
 external_url: https://aws.amazon.com/blogs/machine-learning/introducing-disaggregated-inference-on-aws-powered-by-llm-d
-scenarios: ["大语言模型"]
+scenarios:
+- 大语言模型
 ---
 
 # AWS 解耦式推理技术解析：服务解耦、智能调度与专家并行
@@ -22,16 +34,19 @@ scenarios: ["大语言模型"]
 - **链接**: [https://aws.amazon.com/blogs/machine-learning/introducing-disaggregated-inference-on-aws-powered-by-llm-d](https://aws.amazon.com/blogs/machine-learning/introducing-disaggregated-inference-on-aws-powered-by-llm-d)
 
 ---
+
 ## 摘要/简介
 
 在本篇博文中，我们将介绍下一代推理能力背后的概念，包括解耦式服务、智能请求调度和专家并行。我们将探讨它们的优势，并演示如何在 Amazon SageMaker HyperPod EKS 上实施这些能力，从而在推理性能、资源利用率和运营效率方面实现显著提升。
 
 ---
+
 ## 导语
 
 随着大模型应用规模的扩大，传统的单体推理架构在资源利用与成本控制上面临挑战。本文将深入探讨基于 llm-d 的解耦式推理技术，解析其如何通过服务解耦、智能调度及专家并行来优化系统性能。通过阅读，您将了解在 Amazon SageMaker HyperPod EKS 上的具体实施方案，以及如何利用这些技术显著提升推理效率与运营灵活性。
 
 ---
+
 ## 摘要
 
 以下是对该内容的中文总结：
@@ -41,6 +56,7 @@ scenarios: ["大语言模型"]
 这篇博客文章介绍了下一代推理能力的核心概念，包括**解耦服务**、**智能请求调度**和**专家并行**。文章探讨了这些技术带来的优势，并详细说明了如何在 **Amazon SageMaker HyperPod EKS** 上实施这些方案，以帮助用户在推理性能、资源利用率和运营效率方面实现显著提升。
 
 ---
+
 ## 评论
 
 ### 中心观点
@@ -98,7 +114,6 @@ scenarios: ["大语言模型"]
 1.  **适用场景评估：** 仅建议在部署 Mixtral 8x7B/47B 或更大参数量的 MoE 模型，且并发请求量（Q
 
 ---
-## 技术分析
 
 ## 技术分析
 
@@ -130,9 +145,8 @@ scenarios: ["大语言模型"]
 *   **高并发服务**：通过分离处理阶段，避免长请求阻塞短请求的生成。
 
 ---
-## 最佳实践
 
-## 最佳实践指南
+## 最佳实践
 
 ### 实践 1：合理规划计算与存储资源的分离架构
 
@@ -211,6 +225,7 @@ scenarios: ["大语言模型"]
 **注意事项**: 容器镜像应保持精简，只包含必要的运行库，以加快实例的拉取和启动速度。
 
 ---
+
 ## 学习要点
 
 - AWS 推出了基于 llm-d 的解耦推理架构，将推理工作负载中的计算和显存资源物理分离，以独立扩展，从而显著优化资源利用率并降低成本。
@@ -221,6 +236,7 @@ scenarios: ["大语言模型"]
 - 此举进一步扩展了 AWS 在生成式 AI 基础设施上的选择范围，为客户提供了更灵活的算力组合，以平衡推理性能与运营成本。
 
 ---
+
 ## 引用
 
 - **文章/节目**: [https://aws.amazon.com/blogs/machine-learning/introducing-disaggregated-inference-on-aws-powered-by-llm-d](https://aws.amazon.com/blogs/machine-learning/introducing-disaggregated-inference-on-aws-powered-by-llm-d)
@@ -230,8 +246,6 @@ scenarios: ["大语言模型"]
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)
@@ -245,4 +259,3 @@ scenarios: ["大语言模型"]
 - [2025年Amazon SageMaker AI回顾：可观测性、模型定制与托管增强]({{< relref "posts/20260222-blogs_podcasts-amazon-sagemaker-ai-in-2025-a-year-in-review-part--2.md" >}})
 - [2025年回顾：SageMaker AI提升可观测性并优化模型定制与托管]({{< relref "posts/20260223-blogs_podcasts-amazon-sagemaker-ai-in-2025-a-year-in-review-part--4.md" >}})
 - [2025年亚马逊SageMaker AI：增强可观测性与模型定制托管功能]({{< relref "posts/20260224-blogs_podcasts-amazon-sagemaker-ai-in-2025-a-year-in-review-part--11.md" >}})
-*本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

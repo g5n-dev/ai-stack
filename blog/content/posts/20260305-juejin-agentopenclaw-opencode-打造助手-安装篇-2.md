@@ -1,14 +1,26 @@
 ---
-title: "OpenClaw + Opencode 搭建 24 小时云端数字助理"
-date: 2026-03-05T22:28:24+08:00
+title: OpenClaw + Opencode 搭建 24 小时云端数字助理
+date: 2026-03-05 22:28:24+08:00
 draft: false
-entry_kind: "auto"
-tags: ["OpenClaw", "Opencode", "Agent", "自动化工作流", "云端部署", "AI工具", "数字助理", "系统集成"]
-categories: ["AI 工程", "效率与方法论"]
+entry_kind: auto
+tags:
+- OpenClaw
+- Opencode
+- Agent
+- 自动化工作流
+- 云端部署
+- AI工具
+- 数字助理
+- 系统集成
+categories:
+- AI 工程
+- 效率与方法论
 source: juejin
-description: "**总结：OpenClaw + OpenCode 打造 24 小时云端数字助理（安装篇）** 本项目旨在通过 **OpenClaw** 与 **OpenCode** 的组合，搭建一个全天候（24小时）运行的云端数字助理系统。其核心目标是将原本分散、独立的各类 AI 工具入口进行整合，收敛至一个统一的自动化工作流中，从而"
+description: '**总结：OpenClaw + OpenCode 打造 24 小时云端数字助理（安装篇）** 本项目旨在通过 **OpenClaw**
+  与 **OpenCode** 的组合，搭建一个全天候（24小时）运行的云端数字助理系统。其核心目标是将原本分散、独立的各类 AI 工具入口进行整合，收敛至一个统一的自动化工作流中，从而'
 external_url: https://juejin.cn/post/7613392309822767167
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
 ---
 
 # OpenClaw + Opencode 搭建 24 小时云端数字助理
@@ -21,16 +33,19 @@ scenarios: ["AI/ML项目"]
 - **链接**: [https://juejin.cn/post/7613392309822767167](https://juejin.cn/post/7613392309822767167)
 
 ---
+
 ## 导语
 
 随着 AI 工具的普及，如何将其整合为高效的自动化工作流已成为提升生产力的关键。本文介绍如何利用 OpenClaw 与 Opencode，在云端搭建一套 24 小时运行的数字助理。通过将分散的 AI 能力整合，该方案能有效替代重复性人工操作，实现流程的自动化托管。阅读本文，您将掌握从环境配置到系统部署的完整步骤，快速构建属于您的云端自动化助手。
 
 ---
+
 ## 描述
 
 借助 OpenClaw + Opencode 搭建 24 小时云端数字助理，将分散的 AI 工具入口整合为单一自动化工作流，替代重复性人工操作。
 
 ---
+
 ## 摘要
 
 **总结：OpenClaw + OpenCode 打造 24 小时云端数字助理（安装篇）**
@@ -46,6 +61,7 @@ scenarios: ["AI/ML项目"]
 虽然原文具体技术细节未展开，但该“安装篇”通常包含环境配置、依赖安装及工作流初始化等步骤，是构建自动化数字助理的基础。
 
 ---
+
 ## 评论
 
 **中心观点**
@@ -97,6 +113,7 @@ scenarios: ["AI/ML项目"]
 2.  **[实验] 幻觉率测试：** 让助手
 
 ---
+
 ## 学习要点
 
 - 根据文章内容，总结关键要点如下：
@@ -108,66 +125,35 @@ scenarios: ["AI/ML项目"]
 - 框架支持自定义工具扩展，开发者可通过编写符合规范的插件函数快速集成新功能。
 
 ---
+
 ## 常见问题
 
+### 执行安装命令时提示权限不足或报错如何解决？
 
-### 1: 执行安装命令时提示权限不足或报错如何解决？
+该项目通常涉及系统级的文件操作或服务配置，因此需要管理员权限。请确保在命令行前加上 `sudo`。例如，使用 `sudo npm install` 或 `sudo ./install.sh`。此外，如果遇到 EACCES 错误，建议不要直接使用 sudo 修改全局 npm 目录，而是配置 npm 使用用户级目录，或者使用 Node.js 版本管理工具（如 nvm）进行安装，以避免权限冲突。
 
-1: 执行安装命令时提示权限不足或报错如何解决？
+### 安装过程中提示 Node.js 版本不匹配怎么办？
 
-**A**: 该项目通常涉及系统级的文件操作或服务配置，因此需要管理员权限。请确保在命令行前加上 `sudo`。例如，使用 `sudo npm install` 或 `sudo ./install.sh`。此外，如果遇到 EACCES 错误，建议不要直接使用 sudo 修改全局 npm 目录，而是配置 npm 使用用户级目录，或者使用 Node.js 版本管理工具（如 nvm）进行安装，以避免权限冲突。
+OpenClaw 和 OpenCode 对运行环境有特定要求。如果终端提示“Engine”不匹配或版本过低，请检查 `package.json` 中的 `engines` 字段。通常建议使用 LTS（长期支持）版本的 Node.js。你可以通过 `nvm install` 命令安装项目推荐的版本，或者手动运行 `nvm use <version>` 切换到正确的 Node.js 版本后再执行安装命令。
 
----
+### 如何处理依赖安装失败或网络超时的问题？
 
+由于默认的 npm 源可能在国内访问较慢，导致依赖下载失败。建议在安装前将 npm 源切换为国内镜像。可以使用 `npm config set registry https://registry.npmmirror.com` 命令进行配置。如果问题依然存在，尝试删除 `node_modules` 文件夹和 `package-lock.json` 文件，然后重新运行 `npm install` 或 `pnpm install` 进行清洁安装。
 
+### 安装完成后，如何验证 OpenClaw + OpenCode 是否配置成功？
 
-### 2: 安装过程中提示 Node.js 版本不匹配怎么办？
+安装成功不仅仅是命令不报错，还需要验证服务是否可用。首先，检查配置文件（如 `.env` 或 `config.yaml`）是否已正确填写必要的 API Key 或服务地址。其次，尝试在命令行运行项目的启动命令（如 `npm run dev` 或 `openclaw start`）。如果终端显示服务已在特定端口（如 3000 或 8080）启动，且浏览器能访问对应的本地地址，即表示配置成功。
 
-2: 安装过程中提示 Node.js 版本不匹配怎么办？
+### 启动时提示“模块未找到”或连接 OpenCode 失败怎么办？
 
-**A**: OpenClaw 和 OpenCode 对运行环境有特定要求。如果终端提示“Engine”不匹配或版本过低，请检查 `package.json` 中的 `engines` 字段。通常建议使用 LTS（长期支持）版本的 Node.js。你可以通过 `nvm install` 命令安装项目推荐的版本，或者手动运行 `nvm use <version>` 切换到正确的 Node.js 版本后再执行安装命令。
+这通常是因为 OpenClaw 核心程序无法找到 OpenCode 的扩展模块或通信断开。请确认以下几点：第一，OpenCode 是否已正确安装并在同一环境下运行；第二，检查环境变量是否正确指向了 OpenCode 的路径；第三，查看防火墙设置，确保本地端口未被拦截。如果是模块缺失，尝试重新执行 `npm link` 或检查项目的依赖树是否完整。
 
----
+### 在 Windows 系统下安装时出现脚本执行错误如何处理？
 
-
-
-### 3: 如何处理依赖安装失败或网络超时的问题？
-
-3: 如何处理依赖安装失败或网络超时的问题？
-
-**A**: 由于默认的 npm 源可能在国内访问较慢，导致依赖下载失败。建议在安装前将 npm 源切换为国内镜像。可以使用 `npm config set registry https://registry.npmmirror.com` 命令进行配置。如果问题依然存在，尝试删除 `node_modules` 文件夹和 `package-lock.json` 文件，然后重新运行 `npm install` 或 `pnpm install` 进行清洁安装。
+Windows 的 PowerShell 默认执行策略可能限制脚本运行。如果遇到“无法加载文件，因为在此系统上禁止运行脚本”的提示，请以管理员身份打开 PowerShell，并执行 `Set-ExecutionPolicy RemoteSigned -Scope CurrentUser` 命令来解除限制。此外，确保已安装 C++ 编译工具（如 Visual Studio Build Tools）和 Python，因为某些原生依赖模块需要在 Windows 上进行编译。
 
 ---
 
-
-
-### 4: 安装完成后，如何验证 OpenClaw + OpenCode 是否配置成功？
-
-4: 安装完成后，如何验证 OpenClaw + OpenCode 是否配置成功？
-
-**A**: 安装成功不仅仅是命令不报错，还需要验证服务是否可用。首先，检查配置文件（如 `.env` 或 `config.yaml`）是否已正确填写必要的 API Key 或服务地址。其次，尝试在命令行运行项目的启动命令（如 `npm run dev` 或 `openclaw start`）。如果终端显示服务已在特定端口（如 3000 或 8080）启动，且浏览器能访问对应的本地地址，即表示配置成功。
-
----
-
-
-
-### 5: 启动时提示“模块未找到”或连接 OpenCode 失败怎么办？
-
-5: 启动时提示“模块未找到”或连接 OpenCode 失败怎么办？
-
-**A**: 这通常是因为 OpenClaw 核心程序无法找到 OpenCode 的扩展模块或通信断开。请确认以下几点：第一，OpenCode 是否已正确安装并在同一环境下运行；第二，检查环境变量是否正确指向了 OpenCode 的路径；第三，查看防火墙设置，确保本地端口未被拦截。如果是模块缺失，尝试重新执行 `npm link` 或检查项目的依赖树是否完整。
-
----
-
-
-
-### 6: 在 Windows 系统下安装时出现脚本执行错误如何处理？
-
-6: 在 Windows 系统下安装时出现脚本执行错误如何处理？
-
-**A**: Windows 的 PowerShell 默认执行策略可能限制脚本运行。如果遇到“无法加载文件，因为在此系统上禁止运行脚本”的提示，请以管理员身份打开 PowerShell，并执行 `Set-ExecutionPolicy RemoteSigned -Scope CurrentUser` 命令来解除限制。此外，确保已安装 C++ 编译工具（如 Visual Studio Build Tools）和 Python，因为某些原生依赖模块需要在 Windows 上进行编译。
-
----
 ## 引用
 
 - **掘金原文**: [https://juejin.cn/post/7613392309822767167](https://juejin.cn/post/7613392309822767167)
@@ -176,8 +162,6 @@ scenarios: ["AI/ML项目"]
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [效率与方法论](/categories/%E6%95%88%E7%8E%87%E4%B8%8E%E6%96%B9%E6%B3%95%E8%AE%BA/)
@@ -191,4 +175,3 @@ scenarios: ["AI/ML项目"]
 - [OpenClaw赋予AI全系统权限引发安全担忧]({{< relref "posts/20260206-hacker_news-openclaw-when-ai-agents-get-full-system-access-sec-14.md" >}})
 - [AI vs SaaS：从 OpenClaw 到 MCP UI 的中心化效能]({{< relref "posts/20260208-blogs_podcasts-ainews-ai-vs-saas-the-unreasonable-effectiveness-o-1.md" >}})
 - [深度解析Skill/MCP/RAG等五大AI技术的底层逻辑]({{< relref "posts/20260212-juejin-深入理解skillmcpragagentopenclaw底层逻辑-2.md" >}})
-*本文由 AI Stack 自动生成，提供深度内容分析。*

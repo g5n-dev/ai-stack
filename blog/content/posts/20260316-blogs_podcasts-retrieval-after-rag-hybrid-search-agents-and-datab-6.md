@@ -1,14 +1,26 @@
 ---
-title: "RAG后的检索优化：混合搜索、Agent与数据库设计"
-date: 2026-03-16T14:45:45+08:00
+title: RAG后的检索优化：混合搜索、Agent与数据库设计
+date: 2026-03-16 14:45:45+08:00
 draft: false
-entry_kind: "auto"
-tags: ["RAG", "混合搜索", "向量数据库", "Agent", "检索优化", "长上下文", "Turbopuffer", "系统设计"]
-categories: ["AI 工程", "数据"]
+entry_kind: auto
+tags:
+- RAG
+- 混合搜索
+- 向量数据库
+- Agent
+- 检索优化
+- 长上下文
+- Turbopuffer
+- 系统设计
+categories:
+- AI 工程
+- 数据
 source: blogs_podcasts
-description: "以下是关于 Turbopuffer 联合创始人 Simon Hørup Eskildsen 演讲内容的中文总结： **主题：RAG 之后的检索：混合搜索、智能代理与数据库设计** Simon Hørup Eskildsen（来自 Turbopuffer）探讨了在检索增强生成（RAG）技术普及之后，如何进一步优化检索系统"
+description: 以下是关于 Turbopuffer 联合创始人 Simon Hørup Eskildsen 演讲内容的中文总结： **主题：RAG 之后的检索：混合搜索、智能代理与数据库设计**
+  Simon Hørup Eskildsen（来自 Turbopuffer）探讨了在检索增强生成（RAG）技术普及之后，如何进一步优化检索系统
 external_url: https://www.latent.space/p/turbopuffer
-scenarios: ["RAG应用"]
+scenarios:
+- RAG应用
 ---
 
 # RAG后的检索优化：混合搜索、Agent与数据库设计
@@ -22,16 +34,19 @@ scenarios: ["RAG应用"]
 - **链接**: [https://www.latent.space/p/turbopuffer](https://www.latent.space/p/turbopuffer)
 
 ---
+
 ## 摘要/简介
 
 Turbopuffer 源自一个阅读应用。
 
 ---
+
 ## 导语
 
 检索增强生成（RAG）虽然提升了大模型回答的准确性，但检索系统的质量往往决定了最终效果的上限。Turbopuffer 联合创始人 Simon Hørup Eskildsen 将结合实战经验，探讨混合检索、Agent 协作以及数据库设计在 RAG 之后的关键作用。本文将深入分析如何通过优化检索架构解决现有瓶颈，帮助开发者构建更稳健、高效的 AI 数据管道。
 
 ---
+
 ## 摘要
 
 以下是关于 Turbopuffer 联合创始人 Simon Hørup Eskildsen 演讲内容的中文总结：
@@ -63,6 +78,7 @@ Simon Hørup Eskildsen（来自 Turbopuffer）探讨了在检索增强生成（R
 Turbopuffer 源于 Simon 开发阅读应用时的经验，旨在解决向量数据库在实际应用中的痛点。传统数据库往往难以兼顾大规模数据下的实时
 
 ---
+
 ## 评论
 
 ### 深度评论：RAG 进化与架构取舍
@@ -96,9 +112,8 @@ Turbopuffer 源于 Simon 开发阅读应用时的经验，旨在解决向量数�
 文章基于“检索依然必要”的前提，但忽略了**长上下文窗口**带来的颠覆性影响。随着模型支持 1M+ Token，部分场景下 RAG 可能被“直接全量输入”取代。此外，**神经检索**与**Late Interaction** 等新范式正在模糊关键词与向量的界限，可能使传统的混合检索架构在未来面临重构。
 
 ---
-## 最佳实践
 
-## 最佳实践指南
+## 最佳实践
 
 ### 实践 1：采用混合搜索策略提升检索精度
 
@@ -193,6 +208,7 @@ RAG 系统上线后，必须建立监控机制以评估检索组件的有效性�
 关注“无结果”或“低分”查询的日志，这些往往是优化检索策略的关键切入点。
 
 ---
+
 ## 学习要点
 
 - RAG 系统的检索质量是决定整体性能的上限，单纯依赖向量检索的语义匹配往往无法满足精准度要求，必须引入更复杂的检索策略。
@@ -204,6 +220,7 @@ RAG 系统上线后，必须建立监控机制以评估检索组件的有效性�
 - 评估检索系统的有效性不能仅看大模型生成的最终答案，必须单独量化检索步骤的召回率和准确率指标。
 
 ---
+
 ## 引用
 
 - **文章/节目**: [https://www.latent.space/p/turbopuffer](https://www.latent.space/p/turbopuffer)
@@ -213,8 +230,6 @@ RAG 系统上线后，必须建立监控机制以评估检索组件的有效性�
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [数据](/categories/%E6%95%B0%E6%8D%AE/)
@@ -228,4 +243,3 @@ RAG 系统上线后，必须建立监控机制以评估检索组件的有效性�
 - [Retrieval After RAG：混合搜索、智能体与数据库设计]({{< relref "posts/20260313-blogs_podcasts-retrieval-after-rag-hybrid-search-agents-and-datab-1.md" >}})
 - [Turbopuffer谈RAG之后：混合搜索、Agent与数据库设计]({{< relref "posts/20260313-blogs_podcasts-retrieval-after-rag-hybrid-search-agents-and-datab-0.md" >}})
 - [RAG后的检索优化：混合搜索、Agent与数据库设计]({{< relref "posts/20260313-blogs_podcasts-retrieval-after-rag-hybrid-search-agents-and-datab-3.md" >}})
-*本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

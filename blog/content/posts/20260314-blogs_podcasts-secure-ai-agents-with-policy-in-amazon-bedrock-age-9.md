@@ -1,14 +1,27 @@
 ---
-title: "利用 Amazon Bedrock AgentCore Policy 构建 AI Agent 确定性执行层"
-date: 2026-03-14T23:04:01+08:00
+title: 利用 Amazon Bedrock AgentCore Policy 构建 AI Agent 确定性执行层
+date: 2026-03-14 23:04:01+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Amazon Bedrock", "AgentCore", "AI Agent", "Cedar", "访问控制", "确定性执行", "策略引擎", "运行时拦截"]
-categories: ["AI 工程", "安全"]
+entry_kind: auto
+tags:
+- Amazon Bedrock
+- AgentCore
+- AI Agent
+- Cedar
+- 访问控制
+- 确定性执行
+- 策略引擎
+- 运行时拦截
+categories:
+- AI 工程
+- 安全
 source: blogs_podcasts
-description: "本文介绍了 Amazon Bedrock AgentCore 中的 Policy（策略）功能，旨在解决 AI 智能体（AI Agents）在执行任务时的安全与控制问题。 **核心概念与原理** AgentCore 引入了一个**确定性的执行层**，该层独立于智能体自身的推理过程运行。这意味着无论 AI 模型如何生成请求"
+description: 本文介绍了 Amazon Bedrock AgentCore 中的 Policy（策略）功能，旨在解决 AI 智能体（AI Agents）在执行任务时的安全与控制问题。
+  **核心概念与原理** AgentCore 引入了一个**确定性的执行层**，该层独立于智能体自身的推理过程运行。这意味着无论 AI 模型如何生成请求
 external_url: https://aws.amazon.com/blogs/machine-learning/secure-ai-agents-with-policy-in-amazon-bedrock-agentcore
-scenarios: ["AI/ML项目", "命令行工具"]
+scenarios:
+- AI/ML项目
+- 命令行工具
 ---
 
 # 利用 Amazon Bedrock AgentCore Policy 构建 AI Agent 确定性执行层
@@ -22,16 +35,19 @@ scenarios: ["AI/ML项目", "命令行工具"]
 - **链接**: [https://aws.amazon.com/blogs/machine-learning/secure-ai-agents-with-policy-in-amazon-bedrock-agentcore](https://aws.amazon.com/blogs/machine-learning/secure-ai-agents-with-policy-in-amazon-bedrock-agentcore)
 
 ---
+
 ## 摘要/简介
 
 在本文中，你将了解 Amazon Bedrock AgentCore 中的 Policy 如何构建一个独立于 Agent 自身推理的确定性执行层。你将学习如何将业务规则的自然语言描述转化为 Cedar 策略，进而利用这些策略实施细粒度、具备身份感知的管控，从而确保 Agent 仅能访问其用户被授权使用的工具和数据。你还将看到如何通过 AgentCore Gateway 应用 Policy，在运行时拦截并评估每一个 Agent 对工具的请求。
 
 ---
+
 ## 导语
 
 随着 AI Agent 深入企业核心业务，如何确保其行为符合安全规范成为关键挑战。本文介绍 Amazon Bedrock AgentCore 中的 Policy 功能，它通过构建独立于 Agent 推理的确定性执行层，实现了细粒度、具备身份感知的权限管控。阅读本文，你将掌握如何将自然语言规则转化为 Cedar 策略，并利用 Gateway 在运行时精准拦截未授权的工具调用，从而在赋予 Agent 自主能力的同时，确保数据访问的合规与安全。
 
 ---
+
 ## 摘要
 
 本文介绍了 Amazon Bedrock AgentCore 中的 Policy（策略）功能，旨在解决 AI 智能体（AI Agents）在执行任务时的安全与控制问题。
@@ -48,13 +64,14 @@ AgentCore 引入了一个**确定性的执行层**，该层独立于智能体自
 简而言之，该功能通过将自然语言规则转化为强制执行的代码策略，并在请求路径上进行实时拦截，为企业级 AI 智能体提供了一套安全、可控且符合权限管理的运行机制。
 
 ---
+
 ## 技术分析
 
 基于您提供的文章标题《Secure AI agents with Policy in Amazon Bedrock AgentCore》及其摘要，以下是对该技术方案的深度分析。
 
 ---
 
-# 1. 核心观点深度解读
+### 1. 核心观点深度解读
 
 **主要观点**
 文章的核心观点是：**AI 智能体的安全性不应依赖于模型自身的不确定性推理，而应通过外部的、确定性的策略层进行强制执行。** Amazon Bedrock AgentCore 引入的 Policy 功能，旨在构建一个独立的“护栏”，确保即使 Agent 产生幻觉或试图执行越权操作，系统也能依据预设规则进行拦截。
@@ -68,7 +85,7 @@ AgentCore 引入了一个**确定性的执行层**，该层独立于智能体自
 **重要性**
 随着 AI Agent 从“聊天机器人”进化为“行动者”，能够自主调用 API、修改数据库或转账，错误的代价急剧上升。这种确定性执行层是企业级 AI 落地的“安全带”，解决了企业不敢放手让 Agent 执行关键任务的核心痛点。
 
-# 2. 关键技术要点
+### 2. 关键技术要点
 
 **关键技术概念**
 1.  **Amazon Bedrock AgentCore**：AWS 提供的构建 AI Agent 的框架核心。
@@ -93,7 +110,7 @@ AgentCore 引入了一个**确定性的执行层**，该层独立于智能体自
 **技术创新点**
 将自然语言处理（NLP）与基于逻辑的访问控制（ABAC/RBAC）无缝结合。这不仅仅是 API 网关，因为它理解 Agent 的“意图”和“上下文”，能够进行基于语义的动态权限判断。
 
-# 3. 实际应用价值
+### 3. 实际应用价值
 
 **对实际工作的指导意义**
 这为 AI 工程师提供了一种**“零信任”**的架构范式。在开发 Agent 时，不需要花费大量精力去微调模型以“学会”遵守规则，而是通过配置策略来保证底线安全。这极大地降低了合规成本和模型调试的难度。
@@ -109,7 +126,7 @@ AgentCore 引入了一个**确定性的执行层**，该层独立于智能体自
 **实施建议**
 采用“最小权限原则”初始化策略。先允许 Agent 只读，随着信任建立和策略完善，再逐步开放写权限。
 
-# 4. 行业影响分析
+### 4. 行业影响分析
 
 **对行业的启示**
 这标志着 AI 安全从“模型对齐”向“系统架构对齐”的转变。行业将意识到，仅仅依靠 RLHF（基于人类反馈的强化学习）是不够的，必须回归到传统的计算机科学安全原则（如最小权限、强制访问控制）来约束 AI。
@@ -121,7 +138,7 @@ AgentCore 引入了一个**确定性的执行层**，该层独立于智能体自
 *   **Governance as Code（治理即代码）**：业务合规规则将像软件代码一样被版本控制、审查和测试。
 *   **可解释性安全**：当 Agent 拒绝执行操作时，系统可以明确指出是违反了哪一条 Cedar 策略，比黑盒模型的拒绝更具可解释性。
 
-# 5. 延伸思考
+### 5. 延伸思考
 
 **引发的思考**
 如果 Policy 层足够强，我们是否还需要在 Prompt 中加入大量的安全提示词？这可能导致 Prompt 极大简化，让 Token 消耗更高效。
@@ -133,7 +150,7 @@ AgentCore 引入了一个**确定性的执行层**，该层独立于智能体自
 **未来研究问题**
 如何利用 LLM 自动生成 Cedar 策略？即实现从“员工手册”直接到“可执行安全代码”的自动化转换。
 
-# 6. 实践建议
+### 6. 实践建议
 
 **如何应用到项目中**
 1.  **审计现有 Agent**：检查当前你的 AI 应用中，哪些操作涉及敏感数据或写入权限。
@@ -148,7 +165,7 @@ AgentCore 引入了一个**确定性的执行层**，该层独立于智能体自
 **补充知识**
 需要了解 ABAC（基于属性的访问控制）模型，因为 Cedar 主要基于此模型（Principal, Action, Resource, Context）。
 
-# 7. 案例分析
+### 7. 案例分析
 
 **成功案例设想：某银行智能贷款助手**
 *   **场景**：Agent 协助员工查看客户贷款状态。
@@ -160,7 +177,7 @@ AgentCore 引入了一个**确定性的执行层**，该层独立于智能体自
 *   **问题**：如果 LLM 误将用户身份识别为“Admin”（例如解析错误），且策略层完全信任 LLM 传入的上下文，那么策略层就会形同虚设。
 *   **教训**：**永远不要信任 Agent 传来的身份声明**。策略层必须从可信的 IAM 系统中获取 Principal 信息，而不是从 LLM 的生成文本中获取。
 
-# 8. 哲学与逻辑：论证地图
+### 8. 哲学与逻辑：论证地图
 
 **中心命题**
 **在生成式 AI 架构中，必须引入独立于模型推理之外的确定性策略执行层（如 Cedar Policy），才能实现企业级的安全与合规。**
@@ -191,9 +208,8 @@ AgentCore 引入了一个**确定性的执行层**，该层独立于智能体自
     *   **观察窗口**：观察未来 1-2 年主流企业级 AI 平台（如 Azure, Google）是否跟进类似的“外部策略层”设计。如果行业未跟进，说明该观点可能存在工程上的过度复杂性问题。
 
 ---
-## 最佳实践
 
-## 最佳实践指南
+## 最佳实践
 
 ### 实践 1：实施严格的输入输出边界防护
 
@@ -278,6 +294,7 @@ AgentCore 引入了一个**确定性的执行层**，该层独立于智能体自
 **注意事项**: 提示词工程是动态的，需要随着模型能力的提升和攻击手段的演变不断调整防御策略。
 
 ---
+
 ## 学习要点
 
 - Amazon Bedrock AgentCore 引入了基于策略的访问控制机制，允许开发者通过精细化的权限管理来规范 AI 智能体对工具和 API 的调用，从而有效防止未经授权的操作。
@@ -288,6 +305,7 @@ AgentCore 引入了一个**确定性的执行层**，该层独立于智能体自
 - 此安全模型支持跨多个智能体应用复用通用的安全策略，简化了在大规模部署 AI 智能体时的安全管理复杂度。
 
 ---
+
 ## 引用
 
 - **文章/节目**: [https://aws.amazon.com/blogs/machine-learning/secure-ai-agents-with-policy-in-amazon-bedrock-agentcore](https://aws.amazon.com/blogs/machine-learning/secure-ai-agents-with-policy-in-amazon-bedrock-agentcore)
@@ -297,8 +315,6 @@ AgentCore 引入了一个**确定性的执行层**，该层独立于智能体自
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [安全](/categories/%E5%AE%89%E5%85%A8/)
@@ -312,4 +328,3 @@ AgentCore 引入了一个**确定性的执行层**，该层独立于智能体自
 - [利用 Amazon Bedrock AgentCore Policy 实现安全访问]({{< relref "posts/20260313-blogs_podcasts-secure-ai-agents-with-policy-in-amazon-bedrock-age-3.md" >}})
 - [构建确定性执行层：利用 Amazon Bedrock AgentCore Policy 管控 AI Agent]({{< relref "posts/20260313-blogs_podcasts-secure-ai-agents-with-policy-in-amazon-bedrock-age-7.md" >}})
 - [构建安全的 Amazon Bedrock 代理：利用 AgentCore Policy 实现细粒度访问控制]({{< relref "posts/20260312-blogs_podcasts-secure-ai-agents-with-policy-in-amazon-bedrock-age-2.md" >}})
-*本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

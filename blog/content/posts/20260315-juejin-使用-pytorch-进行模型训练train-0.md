@@ -1,14 +1,25 @@
 ---
-title: "使用 torch.nn 构建模型并基于 PyTorch 进行训练"
-date: 2026-03-15T11:28:03+08:00
+title: 使用 torch.nn 构建模型并基于 PyTorch 进行训练
+date: 2026-03-15 11:28:03+08:00
 draft: false
-entry_kind: "auto"
-tags: ["PyTorch", "深度学习", "模型训练", "torch.nn", "神经网络", "Python", "机器学习", "教程"]
-categories: ["AI 工程"]
+entry_kind: auto
+tags:
+- PyTorch
+- 深度学习
+- 模型训练
+- torch.nn
+- 神经网络
+- Python
+- 机器学习
+- 教程
+categories:
+- AI 工程
 source: juejin
-description: "这段内容主要介绍了**使用 PyTorch 进行模型训练**的相关教程。 主要信息点如下： 1. **学习资源**：提供了视频教程，支持在当前页面或 YouTube 平台观看。 2. **前置基础**：提到在之前的课程中，已经讲解并演示了如何使用 模块中的层和函数来**构建神经网络模型**。 这段文字主要作为后续模型训"
+description: 这段内容主要介绍了**使用 PyTorch 进行模型训练**的相关教程。 主要信息点如下： 1. **学习资源**：提供了视频教程，支持在当前页面或
+  YouTube 平台观看。 2. **前置基础**：提到在之前的课程中，已经讲解并演示了如何使用 模块中的层和函数来**构建神经网络模型**。 这段文字主要作为后续模型训
 external_url: https://juejin.cn/post/7616818675262652450
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
 ---
 
 # 使用 torch.nn 构建模型并基于 PyTorch 进行训练
@@ -21,16 +32,19 @@ scenarios: ["Web应用开发"]
 - **链接**: [https://juejin.cn/post/7616818675262652450](https://juejin.cn/post/7616818675262652450)
 
 ---
+
 ## 导语
 
 模型训练是深度学习工作流中的核心环节，也是将算法理论转化为实际应用的关键步骤。本文将承接之前的模型构建内容，详细演示如何使用 PyTorch 完成训练循环的搭建、损失函数的优化及参数更新。通过阅读本文，你将掌握从数据输入到模型迭代优化的完整流程，从而高效地开展自己的深度学习实验。
 
 ---
+
 ## 描述
 
 使用 PyTorch 进行模型训练 你可以观看下方视频或 YouTube 上的对应内容跟随学习。 引言 在之前的视频中，我们已经讨论并演示了： 使用 torch.nn 模块的神经网络层和函数构建模型
 
 ---
+
 ## 摘要
 
 这段内容主要介绍了**使用 PyTorch 进行模型训练**的相关教程。
@@ -43,6 +57,7 @@ scenarios: ["Web应用开发"]
 这段文字主要作为后续模型训练教学内容的引言和背景铺垫。
 
 ---
+
 ## 评论
 
 ### 评价综述
@@ -103,10 +118,6 @@ scenarios: ["Web应用开发"]
 
 ---
 
-### 总结
-这篇文章
-
----
 ## 学习要点
 
 - 由于您未提供具体的文章内容，我是基于 PyTorch 模型训练的标准最佳实践为您总结的通用关键要点：
@@ -118,14 +129,12 @@ scenarios: ["Web应用开发"]
 - 在每个训练迭代结束后使用 optimizer.zero_grad() 或梯度置零清空历史梯度，防止梯度累积干扰参数更新。
 
 ---
+
 ## 常见问题
 
+### PyTorch 中 `model.eval()` 和 `torch.no_grad()` 有什么区别，为什么训练时不需要它们？
 
-### 1: PyTorch 中 `model.eval()` 和 `torch.no_grad()` 有什么区别，为什么训练时不需要它们？
-
-1: PyTorch 中 `model.eval()` 和 `torch.no_grad()` 有什么区别，为什么训练时不需要它们？
-
-**A**: 这两者在功能上有关联，但作用层面不同。`model.eval()` 是切换模型状态的方法，而 `torch.no_grad()` 是上下文管理器。
+这两者在功能上有关联，但作用层面不同。`model.eval()` 是切换模型状态的方法，而 `torch.no_grad()` 是上下文管理器。
 
 1.  **`model.eval()`**：
     *   **作用**：将模型设置为评估（推理）模式。
@@ -139,15 +148,9 @@ scenarios: ["Web应用开发"]
 
 **总结**：在验证/测试阶段，通常建议**同时使用**两者。先调用 `model.eval()` 确保层行为正确，再用 `with torch.no_grad():` 包裹前向传播代码以节省显存。训练时通常使用 `model.train()` 来恢复训练模式。
 
----
+### 训练过程中显存溢出（OOM）有哪些常见的解决方法？
 
-
-
-### 2: 训练过程中显存溢出（OOM）有哪些常见的解决方法？
-
-2: 训练过程中显存溢出（OOM）有哪些常见的解决方法？
-
-**A**: 显存不足是深度学习训练中最常见的问题之一。以下是几种有效的解决策略，按推荐顺序排列：
+显存不足是深度学习训练中最常见的问题之一。以下是几种有效的解决策略，按推荐顺序排列：
 
 1.  **减小 Batch Size**：这是最直接的方法，虽然可能会影响 BatchNorm 的稳定性和训练速度，但通常能立即缓解 OOM。
 2.  **使用混合精度训练（AMP）**：利用 PyTorch 的 `torch.cuda.amp` 自动将部分运算从 float32 转换为 float16。这不仅能减少显存占用（约减半），还能在支持 Tensor Core 的 GPU 上加速计算。
@@ -156,15 +159,9 @@ scenarios: ["Web应用开发"]
 5.  **优化 DataLoader**：设置 `pin_memory=True`（如果是 GPU 训练）并调整 `num_workers`，有时可以优化数据传输效率，间接缓解显存碎片化问题，但主要解决的是 CPU-GPU 传输瓶颈。
 6.  **检查模型输入**：确保输入数据的尺寸正确，有时候不小心将全尺寸图像传入了本应处理缩略图的分支会导致瞬间爆显存。
 
----
+### 如何正确设置随机数种子以保证结果可复现？
 
-
-
-### 3: 如何正确设置随机数种子以保证结果可复现？
-
-3: 如何正确设置随机数种子以保证结果可复现？
-
-**A**: 深度学习的可复现性受多个因素影响，包括随机权重初始化、数据加载的随机顺序、Dropout 等。在 PyTorch 中，仅设置 `torch.manual_seed` 是不够的。以下是标准配置代码：
+深度学习的可复现性受多个因素影响，包括随机权重初始化、数据加载的随机顺序、Dropout 等。在 PyTorch 中，仅设置 `torch.manual_seed` 是不够的。以下是标准配置代码：
 
 ```python
 import torch
@@ -180,7 +177,7 @@ def set_seed(seed=42):
     torch.manual_seed(seed)
     # 设置 PyTorch 的随机模块（GPU）
     torch.cuda.manual_seed(seed)
-    torch.cuda.manual_seed_all(seed) 
+    torch.cuda.manual_seed_all(seed)
     # 确保卷积算法的确定性（可能会稍微降低性能）
     torch.backends.cudnn.deterministic = True
     torch.backends.cudnn.benchmark = False
@@ -190,21 +187,16 @@ set_seed(42)
 
 **注意**：即使设置了上述所有种子，完全的可复现性也很难保证，尤其是在不同版本的 PyTorch 或不同的硬件（GPU）上运行时。此外，设置 `cudnn.deterministic = True` 会导致禁用 cuDNN 的自动优化，可能会降低训练速度。
 
----
+### 训练时 Loss 变成 NaN 的原因是什么？
 
-
-
-### 4: 训练时 Loss 变成 NaN 的原因是什么？
-
-4: 训练时 Loss 变成 NaN 的原因是什么？
-
-**A**: Loss 变为 NaN（Not a Number）通常意味着数值计算出现了不稳定。常见原因及排查方法如下：
+Loss 变为 NaN（Not a Number）通常意味着数值计算出现了不稳定。常见原因及排查方法如下：
 
 1.  **学习率过大**：这是最常见的原因。过大的学习率导致参数更新步长过大，直接“跳过”了极值点，导致 Loss 爆炸。
     *   *解决*：尝试将学习率缩小 10 倍或 100 倍。
 2.  **梯度
 
 ---
+
 ## 引用
 
 - **掘金原文**: [https://juejin.cn/post/7616818675262652450](https://juejin.cn/post/7616818675262652450)
@@ -213,8 +205,6 @@ set_seed(42)
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)
@@ -228,4 +218,3 @@ set_seed(42)
 - [PyTorch 可视化入门教程]({{< relref "posts/20260217-hacker_news-visual-introduction-to-pytorch-7.md" >}})
 - [PyTorch 可视化入门教程]({{< relref "posts/20260217-hacker_news-visual-introduction-to-pytorch-8.md" >}})
 - [PyTorch 可视化教程：核心概念与实现机制解析]({{< relref "posts/20260217-hacker_news-visual-introduction-to-pytorch-10.md" >}})
-*本文由 AI Stack 自动生成，提供深度内容分析。*

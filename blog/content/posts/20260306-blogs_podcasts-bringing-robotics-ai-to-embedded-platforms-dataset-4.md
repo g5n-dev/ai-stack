@@ -1,14 +1,25 @@
 ---
-title: "将机器人AI引入嵌入式平台：数据集录制、VLA微调与端侧优化"
-date: 2026-03-06T01:38:42+08:00
+title: 将机器人AI引入嵌入式平台：数据集录制、VLA微调与端侧优化
+date: 2026-03-06 01:38:42+08:00
 draft: false
-entry_kind: "auto"
-tags: ["机器人", "VLA", "嵌入式", "端侧优化", "模型微调", "数据集", "边缘计算", "AIoT"]
-categories: ["AI 工程", "系统与基础设施"]
+entry_kind: auto
+tags:
+- 机器人
+- VLA
+- 嵌入式
+- 端侧优化
+- 模型微调
+- 数据集
+- 边缘计算
+- AIoT
+categories:
+- AI 工程
+- 系统与基础设施
 source: blogs_podcasts
-description: "随着机器人技术从实验室走向实际应用，将先进的 AI 模型部署到资源受限的嵌入式设备上已成为关键挑战。本文详细介绍了从数据集录制到视觉-语言-动作（VLA）模型微调，再到端侧推理优化的完整技术路径。通过解析这一流程中的工程实践与优化策略，读者将掌握如何克服硬件限制，在边缘端高效实现智能机器人的感知与决策能力。"
+description: 随着机器人技术从实验室走向实际应用，将先进的 AI 模型部署到资源受限的嵌入式设备上已成为关键挑战。本文详细介绍了从数据集录制到视觉-语言-动作（VLA）模型微调，再到端侧推理优化的完整技术路径。通过解析这一流程中的工程实践与优化策略，读者将掌握如何克服硬件限制，在边缘端高效实现智能机器人的感知与决策能力。
 external_url: https://huggingface.co/blog/nxp/bringing-robotics-ai-to-embedded-platforms
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
 ---
 
 # 将机器人AI引入嵌入式平台：数据集录制、VLA微调与端侧优化
@@ -22,11 +33,13 @@ scenarios: ["AI/ML项目"]
 - **链接**: [https://huggingface.co/blog/nxp/bringing-robotics-ai-to-embedded-platforms](https://huggingface.co/blog/nxp/bringing-robotics-ai-to-embedded-platforms)
 
 ---
+
 ## 导语
 
 随着机器人技术从实验室走向实际应用，将先进的 AI 模型部署到资源受限的嵌入式设备上已成为关键挑战。本文详细介绍了从数据集录制到视觉-语言-动作（VLA）模型微调，再到端侧推理优化的完整技术路径。通过解析这一流程中的工程实践与优化策略，读者将掌握如何克服硬件限制，在边缘端高效实现智能机器人的感知与决策能力。
 
 ---
+
 ## 评论
 
 **文章中心观点**
@@ -74,9 +87,8 @@ scenarios: ["AI/ML项目"]
 1.  **基准测试指标：** 检查文章是否提供了在标准嵌入式平台（如Jetson Orin或树莓派AI套件）上的具体
 
 ---
-## 技术分析
 
-# 技术分析
+## 技术分析
 
 ### 核心技术路径
 文章探讨了将具身智能从云端迁移至边缘端的技术闭环。其核心逻辑在于构建“数据-模型-推理”的端侧全栈方案：
@@ -101,9 +113,8 @@ scenarios: ["AI/ML项目"]
 -   **行业意义**：该方案验证了在资源受限硬件上运行具身智能模型的可行性，为降低机器人硬件成本、实现离线自主决策提供了可复用的工程范式。
 
 ---
-## 最佳实践
 
-## 最佳实践指南
+## 最佳实践
 
 ### 实践 1：构建高质量、多样化的机器人操作数据集
 
@@ -169,6 +180,7 @@ scenarios: ["AI/ML项目"]
 **注意事项**: 提前测试目标硬件对特定算子（如复杂的注意力机制）的支持情况，如果不支持，可能需要手动实现自定义算子或回退
 
 ---
+
 ## 学习要点
 
 - 通过在真实物理环境中记录高质量数据集，解决了传统仿真数据与实际部署之间存在的“Sim-to-Real”鸿沟问题，为机器人模型训练提供了最关键的准确性基础。
@@ -179,6 +191,7 @@ scenarios: ["AI/ML项目"]
 - 在端侧部署 AI 模型实现了数据的本地处理，有效避免了向云端传输视频流带来的高带宽消耗和隐私泄露风险，增强了系统的安全性与独立性。
 
 ---
+
 ## 引用
 
 - **文章/节目**: [https://huggingface.co/blog/nxp/bringing-robotics-ai-to-embedded-platforms](https://huggingface.co/blog/nxp/bringing-robotics-ai-to-embedded-platforms)
@@ -188,8 +201,6 @@ scenarios: ["AI/ML项目"]
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/)
@@ -203,4 +214,3 @@ scenarios: ["AI/ML项目"]
 - [将机器人AI引入嵌入式平台：数据集录制、VLA微调与端侧优化]({{< relref "posts/20260305-blogs_podcasts-bringing-robotics-ai-to-embedded-platforms-dataset-3.md" >}})
 - [MicroGPT：面向微控制器的极简 GPT 实现]({{< relref "posts/20260301-hacker_news-microgpt-1.md" >}})
 - [zclaw：体积小于888 KB的个人AI助手，运行于ESP32]({{< relref "posts/20260222-hacker_news-zclaw-personal-ai-assistant-in-under-888-kb-runnin-10.md" >}})
-*本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

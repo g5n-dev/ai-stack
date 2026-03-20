@@ -1,14 +1,28 @@
 ---
-title: "5分钟用Amazon Bedrock搭建能调API的AI Agent"
-date: 2026-03-10T21:20:59+08:00
+title: 5分钟用Amazon Bedrock搭建能调API的AI Agent
+date: 2026-03-10 21:20:59+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Amazon Bedrock", "AI Agent", "LLM", "API 调用", "AWS", "Claude 3", "无代码开发", "意图识别"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- Amazon Bedrock
+- AI Agent
+- LLM
+- API 调用
+- AWS
+- Claude 3
+- 无代码开发
+- 意图识别
+categories:
+- 大模型
+- AI 工程
 source: juejin
-description: "5分钟用Amazon Bedrock搭建AI Agent：从零到能干活 核心概述 利用Amazon Bedrock的Agent功能，无需本地环境配置或框架开发，快速搭建一个能理解意图并自动调用API的AI Agent。以下是关键步骤总结： 1. **准备阶段** - 注册AWS账号并开通Amazon Bedrock服务"
+description: 5分钟用Amazon Bedrock搭建AI Agent：从零到能干活 核心概述 利用Amazon Bedrock的Agent功能，无需本地环境配置或框架开发，快速搭建一个能理解意图并自动调用API的AI
+  Agent。以下是关键步骤总结： 1. **准备阶段** - 注册AWS账号并开通Amazon Bedrock服务
 external_url: https://juejin.cn/post/7615419563384274984
-scenarios: ["AI/ML项目", "大语言模型", "后端开发"]
+scenarios:
+- AI/ML项目
+- 大语言模型
+- 后端开发
 ---
 
 # 5分钟用Amazon Bedrock搭建能调API的AI Agent
@@ -21,54 +35,58 @@ scenarios: ["AI/ML项目", "大语言模型", "后端开发"]
 - **链接**: [https://juejin.cn/post/7615419563384274984](https://juejin.cn/post/7615419563384274984)
 
 ---
+
 ## 导语
 
 虽然 AI Agent 的讨论热度很高，但真正从零搭建并验证其工作流程的实践案例却相对稀缺。本文将跳过繁琐的环境配置与框架开发，直接利用 Amazon Bedrock 的托管功能，演示如何在 5 分钟内构建一个具备意图理解与 API 调用能力的 Agent。通过这篇经过实际验证的指南，读者可以快速掌握无代码构建 AI 应用的核心步骤，并直观地理解 Agent 的运行逻辑。
 
 ---
+
 ## 描述
 
 最近热榜全是AI Agent，但真正从零搭过的不多。今天不装环境不写框架，直接用Amazon Bedrock的Agent功能，5分钟搭一个能理解意图、自动调API的Agent。所有步骤实际验证跑通。
 
 ---
+
 ## 摘要
 
-### 5分钟用Amazon Bedrock搭建AI Agent：从零到能干活  
+### 5分钟用Amazon Bedrock搭建AI Agent：从零到能干活
 
-#### 核心概述  
-利用Amazon Bedrock的Agent功能，无需本地环境配置或框架开发，快速搭建一个能理解意图并自动调用API的AI Agent。以下是关键步骤总结：  
+#### 核心概述
+利用Amazon Bedrock的Agent功能，无需本地环境配置或框架开发，快速搭建一个能理解意图并自动调用API的AI Agent。以下是关键步骤总结：
 
-1. **准备阶段**  
-   - 注册AWS账号并开通Amazon Bedrock服务。  
-   - 选择基础模型（如Claude 3或Titan系列）作为Agent的核心推理引擎。  
+1. **准备阶段**
+   - 注册AWS账号并开通Amazon Bedrock服务。
+   - 选择基础模型（如Claude 3或Titan系列）作为Agent的核心推理引擎。
 
-2. **创建Agent**  
-   - 在Bedrock控制台选择"Agents" → "Create agent"，输入名称和描述。  
-   - 定义Agent的指令（Role），明确其职责（如"回答用户问题并调用API"）。  
+2. **创建Agent**
+   - 在Bedrock控制台选择"Agents" → "Create agent"，输入名称和描述。
+   - 定义Agent的指令（Role），明确其职责（如"回答用户问题并调用API"）。
 
-3. **配置知识库（可选）**  
-   - 若需基于文档回答问题，可上传文件至S3桶并创建知识库，关联到Agent。  
+3. **配置知识库（可选）**
+   - 若需基于文档回答问题，可上传文件至S3桶并创建知识库，关联到Agent。
 
-4. **添加Action Groups（API调用）**  
-   - 创建Action Group，定义API接口规范（如OpenAPI格式）。  
-   - 示例：通过API查询天气或数据库，输入参数由Agent自动解析用户意图生成。  
+4. **添加Action Groups（API调用）**
+   - 创建Action Group，定义API接口规范（如OpenAPI格式）。
+   - 示例：通过API查询天气或数据库，输入参数由Agent自动解析用户意图生成。
 
-5. **测试与部署**  
-   - 在测试窗口输入问题（如"今天北京天气如何？"），Agent自动调用API并返回结果。  
-   - 验证后部署Agent，生成API端点供外部调用。  
+5. **测试与部署**
+   - 在测试窗口输入问题（如"今天北京天气如何？"），Agent自动调用API并返回结果。
+   - 验证后部署Agent，生成API端点供外部调用。
 
-#### 关键优势  
-- **零代码/低代码**：无需编写框架，通过可视化配置完成。  
-- **原生集成**：直接调用AWS服务（如Lambda、S3），适合企业级场景。  
-- **快速验证**：5分钟内完成原型，适合敏捷开发或概念验证。  
+#### 关键优势
+- **零代码/低代码**：无需编写框架，通过可视化配置完成。
+- **原生集成**：直接调用AWS服务（如Lambda、S3），适合企业级场景。
+- **快速验证**：5分钟内完成原型，适合敏捷开发或概念验证。
 
-#### 注意事项  
-- 需确保API定义清晰，避免参数歧义。  
-- Bedrock按调用次数和Token计费，需控制成本。  
+#### 注意事项
+- 需确保API定义清晰，避免参数歧义。
+- Bedrock按调用次数和Token计费，需控制成本。
 
 **总结**：Bedrock Agent通过模型托管、意图解析和API编排三步，大幅降低AI Agent开发门槛，适合快速落地对话式工具或自动化任务。
 
 ---
+
 ## 评论
 
 **中心观点：**
@@ -109,6 +127,7 @@ scenarios: ["AI/ML项目", "大语言模型", "后端开发"]
 这篇文章是一篇优秀的**技术入门与概念验证**指南，准确地把握了云原生 AI Agent 的操作流。它有力地证明了 MaaS（Model as a Service）厂商正在降低 AI 的准入门槛。然而，从批判性角度看，读者需警惕“5 分钟”背后的简化主义陷阱。在实际工程中，API 的标准化改造
 
 ---
+
 ## 学习要点
 
 - 利用 Amazon Bedrock 无需任何基础设施维护即可快速调用 Claude 等大模型，是构建 AI Agent 的核心底座。
@@ -119,14 +138,12 @@ scenarios: ["AI/ML项目", "大语言模型", "后端开发"]
 - 通过 Prompt Engineering 明确工具的输入输出规范，是确保 Agent 能准确调用外部 API 的关键环节。
 
 ---
+
 ## 常见问题
 
+### 使用 Amazon Bedrock 搭建 AI Agent 的核心优势是什么，为什么选择它而不是直接调用 OpenAI API？
 
-### 1: 使用 Amazon Bedrock 搭建 AI Agent 的核心优势是什么，为什么选择它而不是直接调用 OpenAI API？
-
-1: 使用 Amazon Bedrock 搭建 AI Agent 的核心优势是什么，为什么选择它而不是直接调用 OpenAI API？
-
-**A**: 选择 Amazon Bedrock 主要基于三个核心原因：**模型多样性**、**数据隐私安全**以及**企业级集成能力**。
+选择 Amazon Bedrock 主要基于三个核心原因：**模型多样性**、**数据隐私安全**以及**企业级集成能力**。
 
 首先，Bedrock 并非单一模型，而是一个托管服务，提供了来自 Anthropic (Claude)、AI21 (Jurassic)、Meta (Llama) 等多家顶尖公司的模型。你可以在一个平台上根据需求切换模型（例如用 Claude 做复杂推理，用 Llama 做低成本任务），而不需要分别对接不同厂商的接口。
 
@@ -134,15 +151,9 @@ scenarios: ["AI/ML项目", "大语言模型", "后端开发"]
 
 最后，Bedrock 原生集成了 AWS 的生态系统（如 S3 存储桶、Kendra 知识库、Lambda 函数），这使得“给 AI 装上手脚”（连接企业私有数据和工具）变得非常简单，无需复杂的架构设计。
 
----
+### 文章提到的“5 分钟搭建”是否适合完全没有编程基础的新手？
 
-
-
-### 2: 文章提到的“5 分钟搭建”是否适合完全没有编程基础的新手？
-
-2: 文章提到的“5 分钟搭建”是否适合完全没有编程基础的新手？
-
-**A**: 这里的“5 分钟”主要针对具备**基础云服务认知**和**Python 脚本阅读能力**的开发者。对于完全没有编程基础的新手，直接上手可能会有一定难度。
+这里的“5 分钟”主要针对具备**基础云服务认知**和**Python 脚本阅读能力**的开发者。对于完全没有编程基础的新手，直接上手可能会有一定难度。
 
 虽然 AWS 提供了控制台界面可以进行可视化配置，但搭建一个“能干活”的 Agent 通常涉及以下步骤：
 1.  **权限配置**：在 IAM（身份和访问管理）中创建角色并授权，这对新手来说概念较陌生。
@@ -151,15 +162,9 @@ scenarios: ["AI/ML项目", "大语言模型", "后端开发"]
 
 如果你是新手，建议先熟悉 AWS 的基本操作（如开通服务、配置密钥），再尝试跟随教程操作。
 
----
+### 在搭建 Agent 时，如何选择合适的 Foundation Model (基础模型)？
 
-
-
-### 3: 在搭建 Agent 时，如何选择合适的 Foundation Model (基础模型)？
-
-3: 在搭建 Agent 时，如何选择合适的 Foundation Model (基础模型)？
-
-**A**: 模型的选择取决于你的具体应用场景、成本预算以及对性能的要求。在 Bedrock 搭建 Agent 时，通常建议如下选择：
+模型的选择取决于你的具体应用场景、成本预算以及对性能的要求。在 Bedrock 搭建 Agent 时，通常建议如下选择：
 
 *   **Claude 3 Sonnet / Opus (Anthropic)**：这是目前构建 Agent 的首选。Claude 系列在**工具调用**和**遵循复杂指令**方面表现极强，能够准确地决定何时调用搜索工具或何时执行代码，大大降低 Agent 产生幻觉或逻辑循环的风险。
 *   **Llama 3 (Meta)**：如果你的应用对成本极其敏感，且任务相对简单（如简单的问答、摘要），Llama 3 是性价比极高的选择。
@@ -167,15 +172,9 @@ scenarios: ["AI/ML项目", "大语言模型", "后端开发"]
 
 对于初学者，建议先使用 Claude 3 Sonnet，它在推理能力和速度之间取得了很好的平衡，且在 Bedrock 上的响应速度通常较快。
 
----
+### 如何让 Agent 能够访问实时的私有数据（例如公司内部的 PDF 文档）？
 
-
-
-### 4: 如何让 Agent 能够访问实时的私有数据（例如公司内部的 PDF 文档）？
-
-4: 如何让 Agent 能够访问实时的私有数据（例如公司内部的 PDF 文档）？
-
-**A**: 这是 Bedrock Agent 的一大强项，主要通过 **Knowledge Base (知识库)** 功能实现。
+这是 Bedrock Agent 的一大强项，主要通过 **Knowledge Base (知识库)** 功能实现。
 
 实现原理是“检索增强生成”（RAG）：
 1.  **数据存储**：你将私有数据（PDF、TXT、Website 等）上传到 Amazon S3 存储桶中。
@@ -184,15 +183,9 @@ scenarios: ["AI/ML项目", "大语言模型", "后端开发"]
 
 当用户提问时，Agent 会自动去检索相关的文档片段，将其作为上下文背景，再结合大模型的能力生成回答。你不需要写任何检索代码，只需在控制台点击关联即可。
 
----
+### 使用 Amazon Bedrock 搭建 AI Agent 的成本如何计算？
 
-
-
-### 5: 使用 Amazon Bedrock 搭建 AI Agent 的成本如何计算？
-
-5: 使用 Amazon Bedrock 搭建 AI Agent 的成本如何计算？
-
-**A**: Bedrock 的费用结构主要包含两部分，且采用按量付费模式：
+Bedrock 的费用结构主要包含两部分，且采用按量付费模式：
 
 1.  **模型推理费用**：根据你选择的模型以及输入和输出的 Token 数量计费。
     *   输入：你发送给模型的 Prompt 和检索到的上下文。
@@ -206,6 +199,7 @@ scenarios: ["AI/ML项目", "大语言模型", "后端开发"]
 **省钱建议**：在开发测试阶段，尽量使用成本较低的模型（如 Llama 3 或 Claude 3 Haiku）进行调试，逻辑跑通后再切换
 
 ---
+
 ## 引用
 
 - **掘金原文**: [https://juejin.cn/post/7615419563384274984](https://juejin.cn/post/7615419563384274984)
@@ -214,8 +208,6 @@ scenarios: ["AI/ML项目", "大语言模型", "后端开发"]
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)
@@ -229,4 +221,3 @@ scenarios: ["AI/ML项目", "大语言模型", "后端开发"]
 - [亚马逊构建代理式AI系统的评估框架与实战经验]({{< relref "posts/20260219-blogs_podcasts-evaluating-ai-agents-real-world-lessons-from-build-14.md" >}})
 - [亚马逊发布AI Agent评估框架：通用工作流与Bedrock评估库]({{< relref "posts/20260219-blogs_podcasts-evaluating-ai-agents-real-world-lessons-from-build-2.md" >}})
 - [NVIDIA Nemotron 3 Nano 现已在 Amazon Bedrock 上线]({{< relref "posts/20260310-blogs_podcasts-run-nvidia-nemotron-3-nano-as-a-fully-managed-serv-3.md" >}})
-*本文由 AI Stack 自动生成，提供深度内容分析。*

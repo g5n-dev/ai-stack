@@ -1,14 +1,27 @@
 ---
-title: "利用 Project Genie 的 4 个技巧创建新世界"
-date: 2026-03-04T22:47:33+08:00
+title: 利用 Project Genie 的 4 个技巧创建新世界
+date: 2026-03-04 22:47:33+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Project Genie", "实验性界面", "360度全景", "虚拟场景", "场景构建", "沉浸式体验", "模块化设计", "PTGui Pro"]
-categories: ["产品与创业", "AI 工程"]
+entry_kind: auto
+tags:
+- Project Genie
+- 实验性界面
+- 360度全景
+- 虚拟场景
+- 场景构建
+- 沉浸式体验
+- 模块化设计
+- PTGui Pro
+categories:
+- 产品与创业
+- AI 工程
 source: blogs_podcasts
-description: "在 Project Genie 中创造新世界的 4 个技巧 Project Genie 是一个实验性界面，允许用户通过网格化的圆形图像和 360 度视图来创造自定义世界。以下四个技巧能帮助你高效构建虚拟场景： 1. **善用 360 度全景素材** Project Genie 的核心是沉浸式体验，优先使用高清 360"
+description: 在 Project Genie 中创造新世界的 4 个技巧 Project Genie 是一个实验性界面，允许用户通过网格化的圆形图像和
+  360 度视图来创造自定义世界。以下四个技巧能帮助你高效构建虚拟场景： 1. **善用 360 度全景素材** Project Genie 的核心是沉浸式体验，优先使用高清
+  360
 external_url: https://blog.google/innovation-and-ai/models-and-research/google-deepmind/tips-prompt-writing-project-genie
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
 ---
 
 # 利用 Project Genie 的 4 个技巧创建新世界
@@ -22,37 +35,39 @@ scenarios: ["Web应用开发"]
 - **链接**: [https://blog.google/innovation-and-ai/models-and-research/google-deepmind/tips-prompt-writing-project-genie](https://blog.google/innovation-and-ai/models-and-research/google-deepmind/tips-prompt-writing-project-genie)
 
 ---
+
 ## 摘要/简介
 
 一张 Project Genie 的屏幕截图，显示了一个实验性界面，其中以网格形式排列着一组圆形图像，许多似乎是360度视图，中央有一个大型黑色地球仪，标注着“Create your own”（创建你自己的）。
 
 ---
+
 ## 导语
 
 随着 Project Genie 的加入，Adobe 正在探索生成式 AI 在 3D 创作领域的边界，为设计师提供了从零开始构建虚拟世界的可能。本文基于该工具的实验性界面，分享了四个实用的操作建议，旨在帮助读者更高效地掌握这一新兴技术，从而在早期阶段优化从概念到 3D 场景的构建流程。
 
 ---
-## 摘要
 
-# 在 Project Genie 中创造新世界的 4 个技巧
+## 摘要
 
 Project Genie 是一个实验性界面，允许用户通过网格化的圆形图像和 360 度视图来创造自定义世界。以下四个技巧能帮助你高效构建虚拟场景：
 
-1. **善用 360 度全景素材**  
+1. **善用 360 度全景素材**
    Project Genie 的核心是沉浸式体验，优先使用高清 360 度照片或视频作为基础素材。确保图像分辨率至少 8K 以上，避免拼接痕迹，通过工具如 PTGui Pro 合成全景图，提升环境真实感。
 
-2. **模块化场景组合**  
+2. **模块化场景组合**
    利用界面中的圆形图像网格，将不同元素（如地形、建筑、天空）分层添加。建议从基础环境（如草地、海洋）开始，逐步叠加细节（树木、建筑），并通过拖拽调整层级关系，实现动态场景构建。
 
-3. **交互功能嵌入**  
+3. **交互功能嵌入**
    为静态场景添加交互性：标记热点区域触发音效或动画，设置路径引导用户视角移动，或使用 JavaScript API 编写自定义交互逻辑（如物体碰撞反馈）。参考 Unity 或 Unreal Engine 的节点式编程简化流程。
 
-4. **性能优化与测试**  
+4. **性能优化与测试**
    控制单个场景的多边形数量不超过 50 万，使用纹理压缩格式如 ASTC 减少加载时间。通过 Project Genie 的性能监控面板检测帧率，在不同设备（尤其是 VR 头显）上反复测试，确保流畅体验。
 
 **关键建议**：定期保存工程文件，利用社区模板加速开发，并关注官方文档获取最新 API 更新。通过迭代测试与用户反馈，逐步完善虚拟世界的细节与交互性。
 
 ---
+
 ## 评论
 
 ### 中心观点
@@ -106,14 +121,11 @@ Project Genie 代表了 **Spatial Computing（空间计算）** 与 **Generative
     *   *操作：* 在生成的世界中移动视角（不仅是旋转，而是平移）。
     *   *指标：* 观察背景物体是否发生相对于前景物体的合理位移。如果背景像贴纸一样跟随视角移动，说明是假3D（2.5D）。
 
-2.  **闭环一致性测试：**
-    *   *操作：* 360度旋转视角一圈。
-    *   *指标：*
-
 ---
+
 ## 技术分析
 
-## 1. 核心观点深度解读
+### 1. 核心观点深度解读
 
 ### 文章的主要观点
 文章探讨了利用 Project Genie 这一实验性工具，通过四个具体步骤将现有的360度全景素材或生成式内容转化为可交互的虚拟空间。其核心在于从单纯的图像浏览转向空间环境的构建与连接。
@@ -127,9 +139,7 @@ Project Genie 代表了 **Spatial Computing（空间计算）** 与 **Generative
 ### 为什么这个观点重要
 这反映了内容创作从2D向空间体验发展的趋势。在扩展现实（XR）领域，对3D场景的需求日益增长，但制作成本较高。若能通过图像快速生成可漫游的空间，将为虚拟展示、场景预览等应用提供更高效的工具。
 
----
-
-## 2. 关键技术要点
+### 2. 关键技术要点
 
 ### 涉及的关键技术或概念
 1.  **全景图像处理**：涉及Equirectangular（等距长方投影）或Cubemap（立方体贴图）格式的图像处理与缝合。
@@ -150,9 +160,7 @@ Project Genie 代表了 **Spatial Computing（空间计算）** 与 **Generative
 ### 技术创新点分析
 主要创新点在于**从输入到空间构建的直接转化**。传统流程需要经过建模、贴图、渲染等阶段，而该工具尝试缩短这一路径，实现从文本或图像直接到空间环境的生成。
 
----
-
-## 3. 实际应用价值
+### 3. 实际应用价值
 
 ### 对实际工作的指导意义
 对于VR/AR内容开发者、建筑设计师及游戏策划师，这提供了一个快速的**场景原型验证工具**。无需搭建完整的3D模型，即可在短时间内展示空间氛围和漫游路径。
@@ -168,9 +176,8 @@ Project Genie 代表了 **Spatial Computing（空间计算）** 与 **Generative
 *   **物理交互缺失**：基于全景图的技术通常缺乏真实的物理碰撞和深度交互，用户主要是“观看”而非“触碰”。
 
 ---
-## 最佳实践
 
-## 最佳实践指南
+## 最佳实践
 
 ### 实践 1：构建连贯的世界观基础
 
@@ -255,6 +262,7 @@ Project Genie 代表了 **Spatial Computing（空间计算）** 与 **Generative
 **注意事项**: 平衡创意表达与用户接受度，保持核心特色的稳定性
 
 ---
+
 ## 学习要点
 
 - 根据您提供的标题“Create new worlds in Project Genie with these 4 tips”，以下是总结出的关键要点：
@@ -264,6 +272,7 @@ Project Genie 代表了 **Spatial Computing（空间计算）** 与 **Generative
 - 采用高效的协作工具或工作流来加速世界构建的迭代过程
 
 ---
+
 ## 引用
 
 - **文章/节目**: [https://blog.google/innovation-and-ai/models-and-research/google-deepmind/tips-prompt-writing-project-genie](https://blog.google/innovation-and-ai/models-and-research/google-deepmind/tips-prompt-writing-project-genie)
@@ -273,8 +282,6 @@ Project Genie 代表了 **Spatial Computing（空间计算）** 与 **Generative
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [产品与创业](/categories/%E4%BA%A7%E5%93%81%E4%B8%8E%E5%88%9B%E4%B8%9A/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)
@@ -288,4 +295,3 @@ Project Genie 代表了 **Spatial Computing（空间计算）** 与 **Generative
 - [Project Genie 实验性界面创建虚拟世界的4个技巧]({{< relref "posts/20260304-blogs_podcasts-create-new-worlds-in-project-genie-with-these-4-ti-1.md" >}})
 - [利用 Project Genie 实验性界面创建虚拟世界的四个技巧]({{< relref "posts/20260304-blogs_podcasts-create-new-worlds-in-project-genie-with-these-4-ti-2.md" >}})
 - [Project Genie 实验性界面创建新世界的四个技巧]({{< relref "posts/20260304-blogs_podcasts-create-new-worlds-in-project-genie-with-these-4-ti-4.md" >}})
-*本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

@@ -1,14 +1,27 @@
 ---
-title: "Spring AI 多模态实战：构建图像理解应用"
-date: 2026-02-19T02:58:23+08:00
+title: Spring AI 多模态实战：构建图像理解应用
+date: 2026-02-19 02:58:23+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Spring AI", "多模态", "图像理解", "LLM", "Java", "AI 应用开发", "GPT-4o", "实战教程"]
-categories: ["后端", "大模型"]
+entry_kind: auto
+tags:
+- Spring AI
+- 多模态
+- 图像理解
+- LLM
+- Java
+- AI 应用开发
+- GPT-4o
+- 实战教程
+categories:
+- 后端
+- 大模型
 source: juejin
-description: "多模态能力的普及正推动 AI 应用从单一的文本交互向更丰富的视觉理解演进。对于 Java 开发者而言，如何利用熟悉的 Spring 生态快速接入这一能力，是构建下一代智能应用的关键。本文将基于 Spring AI 框架，通过实战案例演示如何调用大模型 API 实现图像理解功能，帮助你掌握在业务代码中处理图文数据的核心流"
+description: 多模态能力的普及正推动 AI 应用从单一的文本交互向更丰富的视觉理解演进。对于 Java 开发者而言，如何利用熟悉的 Spring 生态快速接入这一能力，是构建下一代智能应用的关键。本文将基于
+  Spring AI 框架，通过实战案例演示如何调用大模型 API 实现图像理解功能，帮助你掌握在业务代码中处理图文数据的核心流
 external_url: https://juejin.cn/post/7607255854145617958
-scenarios: ["AI/ML项目", "大语言模型"]
+scenarios:
+- AI/ML项目
+- 大语言模型
 ---
 
 # Spring AI 多模态实战：构建图像理解应用
@@ -21,11 +34,13 @@ scenarios: ["AI/ML项目", "大语言模型"]
 - **链接**: [https://juejin.cn/post/7607255854145617958](https://juejin.cn/post/7607255854145617958)
 
 ---
+
 ## 导语
 
 多模态能力的普及正推动 AI 应用从单一的文本交互向更丰富的视觉理解演进。对于 Java 开发者而言，如何利用熟悉的 Spring 生态快速接入这一能力，是构建下一代智能应用的关键。本文将基于 Spring AI 框架，通过实战案例演示如何调用大模型 API 实现图像理解功能，帮助你掌握在业务代码中处理图文数据的核心流程。
 
 ---
+
 ## 描述
 
 Spring AI 多模态实战：手把手教你构建图像理解应用
@@ -34,6 +49,7 @@ Spring AI 多模态实战：手把手教你构建图像理解应用
 随着 GPT-4o、Claude 3、Gemini 等大模型的发布，多模态 AI（Multimodal AI）已经成为人工智能领域最热
 
 ---
+
 ## 评论
 
 ### 中心观点
@@ -80,12 +96,8 @@ Spring AI 多模态实战：手把手教你构建图像理解应用
 2.  **异步化架构**：大模型 API 响应通常较慢（1-5秒）。在 Spring 应用中，应使用 `@Async` 或响应式编程，避免阻塞 Tomcat 线程池，导致系统吞吐量下降。
 3.  **结果验证**：对于关键业务（如审核），不要完全信任模型输出。建议结合规则引擎或小模型对大模型的输出结果进行二次校验。
 
-### 可验证的检查方式
-
-1.  **性能基准测试**：
-    *   *指标
-
 ---
+
 ## 学习要点
 
 - Spring AI 通过抽象层统一了 OpenAI GPT-4 等大模型的多模态交互接口，开发者仅需编写少量代码即可实现图像理解功能
@@ -96,39 +108,25 @@ Spring AI 多模态实战：手把手教你构建图像理解应用
 - 项目实战展示了从环境配置、POJO 对象定义到 Controller 层实现的完整多模态应用开发闭环
 
 ---
+
 ## 常见问题
 
+### 什么是 Spring AI 的多模态功能，它与传统的文本大模型有何不同？
 
-### 1: 什么是 Spring AI 的多模态功能，它与传统的文本大模型有何不同？
+Spring AI 的多模态功能主要指其能够处理和理解多种类型数据（如文本、图像、音频等）的能力。在图像理解场景中，这意味着应用不仅接收用户的文本提示，还能接收图片作为输入。传统的文本大模型仅能处理文本 Token，而多模态模型（如 OpenAI 的 GPT-4o 或 Google 的 Gemini）具备视觉编码器，能将图像像素转换为模型可理解的向量表示，从而实现对图片内容的识别、分析、描述以及基于图片内容的逻辑推理。
 
-1: 什么是 Spring AI 的多模态功能，它与传统的文本大模型有何不同？
+### 如何在 Spring AI 项目中配置多模态模型（例如 OpenAI 或 Google Gemini）？
 
-**A**: Spring AI 的多模态功能主要指其能够处理和理解多种类型数据（如文本、图像、音频等）的能力。在图像理解场景中，这意味着应用不仅接收用户的文本提示，还能接收图片作为输入。传统的文本大模型仅能处理文本 Token，而多模态模型（如 OpenAI 的 GPT-4o 或 Google 的 Gemini）具备视觉编码器，能将图像像素转换为模型可理解的向量表示，从而实现对图片内容的识别、分析、描述以及基于图片内容的逻辑推理。
-
----
-
-
-
-### 2: 如何在 Spring AI 项目中配置多模态模型（例如 OpenAI 或 Google Gemini）？
-
-2: 如何在 Spring AI 项目中配置多模态模型（例如 OpenAI 或 Google Gemini）？
-
-**A**: 配置多模态模型通常需要以下步骤：
+配置多模态模型通常需要以下步骤：
 
 1.  **添加依赖**：在 `pom.xml` 中引入 `spring-ai-openai-spring-boot-starter` 或 `spring-ai-vertex-ai-gemini-spring-boot-starter`。
 2.  **配置 API Key**：在 `application.properties` 或 `application.yml` 中填入对应的 API Key（例如 `spring.ai.openai.api-key`）。
 3.  **指定模型**：明确指定支持视觉的模型 ID，例如 OpenAI 的 `gpt-4o` 或 `gpt-4-vision-preview`。
 4.  **构建 ChatClient**：通过自动注入的 `ChatModel.Builder` 或 `ChatClient` builder 模式，指定默认的选项，确保模型能够接受多媒体消息类型。
 
----
+### 在 Spring AI 中，如何将图像数据传递给大模型进行理解？
 
-
-
-### 3: 在 Spring AI 中，如何将图像数据传递给大模型进行理解？
-
-3: 在 Spring AI 中，如何将图像数据传递给大模型进行理解？
-
-**A**: Spring AI 提供了灵活的 API 来处理多媒体消息。通常使用 `UserMessage` 类，并结合 `Media` 对象来实现。
+Spring AI 提供了灵活的 API 来处理多媒体消息。通常使用 `UserMessage` 类，并结合 `Media` 对象来实现。
 
 1.  **本地图片**：使用 `Media` 构造函数，传入 MIME 类型（如 `MediaType.IMAGE_JPEG`）和图片资源的 `Resource` 对象（例如 `new ClassPathResource("image.jpg")`）。
 2.  **网络图片**：可以直接使用图片的 URL 字符串，或者将其封装为 `Media` 对象。
@@ -142,44 +140,26 @@ UserMessage message = new UserMessage("请描述这张图片", new Media(MimeTyp
 ChatResponse response = chatModel.call(message);
 ```
 
----
+### Spring AI 支持哪些格式的图像输入？如果图片太大导致 Token 超限怎么办？
 
-
-
-### 4: Spring AI 支持哪些格式的图像输入？如果图片太大导致 Token 超限怎么办？
-
-4: Spring AI 支持哪些格式的图像输入？如果图片太大导致 Token 超限怎么办？
-
-**A**: Spring AI 本质上是对底层模型 API 的封装，因此支持的格式取决于底层模型提供商（如 OpenAI 或 Google）。
+Spring AI 本质上是对底层模型 API 的封装，因此支持的格式取决于底层模型提供商（如 OpenAI 或 Google）。
 
 *   **支持格式**：通常支持常见的格式如 PNG (`image/png`)、JPEG (`image/jpeg`)、GIF (`image/gif`) 和 WebP (`image/webp`)。
 *   **Token 超限处理**：多模态模型将图片转换为 Token 时，高分辨率图片会消耗大量 Token（例如 OpenAI 的计算逻辑与图片尺寸相关）。
     *   **方案一（推荐）**：在发送给模型前，使用 Java 库（如 Thumbnailator 或 Java 2D API）对图片进行压缩或缩放，降低分辨率。
     *   **方案二**：调整 API 调用参数（如 `detail` 参数），设置为 `low` 模式以减少 Token 消耗，但这会降低识别精度。
 
----
+### 构建图像理解应用时，如何处理流式响应以提高用户体验？
 
-
-
-### 5: 构建图像理解应用时，如何处理流式响应以提高用户体验？
-
-5: 构建图像理解应用时，如何处理流式响应以提高用户体验？
-
-**A**: 在处理复杂的图像分析任务时，模型生成响应可能需要较长时间。Spring AI 支持流式响应，允许应用逐字（Token by Token）显示结果。
+在处理复杂的图像分析任务时，模型生成响应可能需要较长时间。Spring AI 支持流式响应，允许应用逐字（Token by Token）显示结果。
 
 *   **实现方式**：使用 `ChatModel` 的 `stream` 方法代替 `call` 方法。
 *   **返回类型**：`stream` 方法返回的是 `Flux<ChatResponse>`（Reactor 类型）。
 *   **前端集成**：在 Web 层（如 Spring WebFlux 或通过 SSE），可以将这个 Flux 流直接推送给前端，实现类似 ChatGPT 的打字机效果，避免用户长时间面对白屏等待。
 
----
+### 除了直接描述图片，还能利用 Spring AI 多模态实现哪些高级功能？
 
-
-
-### 6: 除了直接描述图片，还能利用 Spring AI 多模态实现哪些高级功能？
-
-6: 除了直接描述图片，还能利用 Spring AI 多模态实现哪些高级功能？
-
-**A**: 基于 Spring AI 的多模态能力，可以构建多种高级应用场景：
+基于 Spring AI 的多模态能力，可以构建多种高级应用场景：
 
 1.  **OCR 与文档解析**：将照片或扫描件转换为结构化的文本数据（如身份证识别、发票录入）。
 2.  **视觉问答（VQA）**：用户上传产品图，询问颜色、材质或功能，模型基于图片内容回答。
@@ -187,6 +167,7 @@ ChatResponse response = chatModel.call(message);
 4.  **图表数据提取**：上传截图（如折线图、柱状图），让模型解析图片并生成对应的 CSV
 
 ---
+
 ## 引用
 
 - **掘金原文**: [https://juejin.cn/post/7607255854145617958](https://juejin.cn/post/7607255854145617958)
@@ -195,8 +176,6 @@ ChatResponse response = chatModel.call(message);
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [后端](/categories/%E5%90%8E%E7%AB%AF/) / [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)
@@ -210,4 +189,3 @@ ChatResponse response = chatModel.call(message);
 - [2026年AI展望：LLM、智能体、缩放定律与中国发展]({{< relref "posts/20260201-blogs_podcasts-490-state-of-ai-in-2026-llms-coding-scaling-laws-c-0.md" >}})
 - [Agent Skills：大模型智能体的技能评估框架]({{< relref "posts/20260203-hacker_news-agent-skills-0.md" >}})
 - [Vercel AI SDK 实战：利用 Call Options 动态配置 Agent]({{< relref "posts/20260213-juejin-vercel-ai-sdk-使用指南call-options-动态配置-agent-2.md" >}})
-*本文由 AI Stack 自动生成，提供深度内容分析。*

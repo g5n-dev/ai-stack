@@ -1,14 +1,26 @@
 ---
-title: "在 Jetson 平台上部署开源视觉语言模型"
-date: 2026-02-25T07:24:29+08:00
+title: 在 Jetson 平台上部署开源视觉语言模型
+date: 2026-02-25 07:24:29+08:00
 draft: false
-entry_kind: "auto"
-tags: ["VLM", "Jetson", "边缘计算", "模型部署", "NVIDIA", "视觉语言模型", "嵌入式AI", "LLaVA"]
-categories: ["AI 工程", "系统与基础设施"]
+entry_kind: auto
+tags:
+- VLM
+- Jetson
+- 边缘计算
+- 模型部署
+- NVIDIA
+- 视觉语言模型
+- 嵌入式AI
+- LLaVA
+categories:
+- AI 工程
+- 系统与基础设施
 source: blogs_podcasts
-description: "随着边缘计算能力的提升，在 Jetson 平台本地部署视觉语言模型（VLM）正逐渐成为许多开发者的实际需求。本文详细介绍了如何将开源 VLM 成功移植到 Jetson 设备上，并针对硬件限制进行了具体的优化指导。通过阅读此文，读者将掌握从环境配置到模型推理的完整流程，从而在边缘端实现高效、私密的视觉理解能力。"
+description: 随着边缘计算能力的提升，在 Jetson 平台本地部署视觉语言模型（VLM）正逐渐成为许多开发者的实际需求。本文详细介绍了如何将开源 VLM
+  成功移植到 Jetson 设备上，并针对硬件限制进行了具体的优化指导。通过阅读此文，读者将掌握从环境配置到模型推理的完整流程，从而在边缘端实现高效、私密的视觉理解能力。
 external_url: https://huggingface.co/blog/nvidia/cosmos-on-jetson
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
 ---
 
 # 在 Jetson 平台上部署开源视觉语言模型
@@ -22,11 +34,13 @@ scenarios: ["AI/ML项目"]
 - **链接**: [https://huggingface.co/blog/nvidia/cosmos-on-jetson](https://huggingface.co/blog/nvidia/cosmos-on-jetson)
 
 ---
+
 ## 导语
 
 随着边缘计算能力的提升，在 Jetson 平台本地部署视觉语言模型（VLM）正逐渐成为许多开发者的实际需求。本文详细介绍了如何将开源 VLM 成功移植到 Jetson 设备上，并针对硬件限制进行了具体的优化指导。通过阅读此文，读者将掌握从环境配置到模型推理的完整流程，从而在边缘端实现高效、私密的视觉理解能力。
 
 ---
+
 ## 评论
 
 由于您未提供具体的文章正文，以下评价基于**“Deploying Open Source Vision Language Models (VLM) on Jetson”**这一典型技术议题的行业通用实践、常见技术路径及该类文章通常涵盖的核心内容进行深度剖析。这代表了当前边缘AI领域最热门的技术方向之一。
@@ -73,14 +87,7 @@ scenarios: ["AI/ML项目"]
 *   **反例/边界条件：**
     *   如果部署效果不佳（如帧率 < 1 FPS），可能会产生反作用，让行业认为边缘端尚不具备运行VLM的能力。
 
-#### 6. 争议点或不同观点
-*   **争议点：精度 vs 速度的权衡。**
-    *   **观点A（激进派）：** 必须使用INT4量化才能在Jetson上跑起来，牺牲一点精度是可以接受的。
-    *   **观点B（保守派）：** VLM对量化极其敏感，INT4会导致严重的“幻觉”或字符识别错误，必须保留FP16，哪怕这意味要换用更昂贵的Jetson AGX Orin或降低分辨率。
-*
-
 ---
-## 技术分析
 
 ## 技术分析
 
@@ -100,9 +107,8 @@ scenarios: ["AI/ML项目"]
 *   **隐私敏感场景**：在医疗或安防监控中，本地化处理敏感图像数据，避免了数据上传云端带来的隐私泄露风险。
 
 ---
-## 最佳实践
 
-## 最佳实践指南
+## 最佳实践
 
 ### 实践 1：选择适合边缘计算的模型架构
 
@@ -174,6 +180,7 @@ scenarios: ["AI/ML项目"]
 **说明**: VLM 推理属于高负载计算任务，会使 Jetson 设备迅速升温。热节流会强制降低 CPU/GPU 频率，导致推理速度忽快忽慢
 
 ---
+
 ## 学习要点
 
 - 基于您提供的来源主题，以下是关于在 Jetson 平台上部署开源视觉语言模型（VLM）的关键要点总结：
@@ -185,6 +192,7 @@ scenarios: ["AI/ML项目"]
 - 针对特定视觉任务进行微调，可以显著提升模型在特定工业或商业场景中的实用性和准确率。
 
 ---
+
 ## 引用
 
 - **文章/节目**: [https://huggingface.co/blog/nvidia/cosmos-on-jetson](https://huggingface.co/blog/nvidia/cosmos-on-jetson)
@@ -194,8 +202,6 @@ scenarios: ["AI/ML项目"]
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/)
@@ -209,4 +215,3 @@ scenarios: ["AI/ML项目"]
 - [在 Jetson 平台部署开源视觉语言模型]({{< relref "posts/20260224-blogs_podcasts-deploying-open-source-vision-language-models-vlm-o-5.md" >}})
 - [在 Jetson 平台上部署开源视觉语言模型]({{< relref "posts/20260224-blogs_podcasts-deploying-open-source-vision-language-models-vlm-o-6.md" >}})
 - [在Jetson上部署开源视觉语言模型]({{< relref "posts/20260225-blogs_podcasts-deploying-open-source-vision-language-models-vlm-o-9.md" >}})
-*本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

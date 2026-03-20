@@ -1,14 +1,26 @@
 ---
-title: "在 EC2 上使用 Oumi 微调并部署 Llama 至 Amazon Bedrock"
-date: 2026-03-11T17:13:56+08:00
+title: 在 EC2 上使用 Oumi 微调并部署 Llama 至 Amazon Bedrock
+date: 2026-03-11 17:13:56+08:00
 draft: false
-entry_kind: "auto"
-tags: ["LLM", "Llama", "Oumi", "微调", "Amazon Bedrock", "EC2", "S3", "模型部署"]
-categories: ["AI 工程", "系统与基础设施"]
+entry_kind: auto
+tags:
+- LLM
+- Llama
+- Oumi
+- 微调
+- Amazon Bedrock
+- EC2
+- S3
+- 模型部署
+categories:
+- AI 工程
+- 系统与基础设施
 source: blogs_podcasts
-description: "本文介绍了如何利用 Oumi 在 Amazon EC2 上微调 Llama 模型，并通过 Amazon Bedrock 的自定义模型导入功能进行托管推理部署。 主要流程如下： 1. **模型微调**：在 Amazon EC2 实例上使用 Oumi 对 Llama 模型进行微调，并可选择使用 Oumi 生成合成数据以辅助"
+description: 本文介绍了如何利用 Oumi 在 Amazon EC2 上微调 Llama 模型，并通过 Amazon Bedrock 的自定义模型导入功能进行托管推理部署。
+  主要流程如下： 1. **模型微调**：在 Amazon EC2 实例上使用 Oumi 对 Llama 模型进行微调，并可选择使用 Oumi 生成合成数据以辅助
 external_url: https://aws.amazon.com/blogs/machine-learning/accelerate-custom-llm-deployment-fine-tune-with-oumi-and-deploy-to-amazon-bedrock
-scenarios: ["大语言模型"]
+scenarios:
+- 大语言模型
 ---
 
 # 在 EC2 上使用 Oumi 微调并部署 Llama 至 Amazon Bedrock
@@ -22,16 +34,19 @@ scenarios: ["大语言模型"]
 - **链接**: [https://aws.amazon.com/blogs/machine-learning/accelerate-custom-llm-deployment-fine-tune-with-oumi-and-deploy-to-amazon-bedrock](https://aws.amazon.com/blogs/machine-learning/accelerate-custom-llm-deployment-fine-tune-with-oumi-and-deploy-to-amazon-bedrock)
 
 ---
+
 ## 摘要/简介
 
 在这篇文章中，我们将展示如何在 Amazon EC2 上使用 Oumi 对 Llama 模型进行微调（并可选择使用 Oumi 创建合成数据），将工件存储在 Amazon S3 中，并通过自定义模型导入将其部署到 Amazon Bedrock，以实现托管推理。
 
 ---
+
 ## 导语
 
 在构建生成式 AI 应用时，将经过微调的定制模型快速部署至生产环境是许多团队面临的关键挑战。本文将介绍如何利用开源框架 Oumi 在 Amazon EC2 上微调 Llama 模型，并通过 Amazon Bedrock 的自定义模型导入功能实现托管推理。阅读本文，您将掌握从模型训练到云端部署的完整工作流，从而高效地构建并管理您的专属大模型服务。
 
 ---
+
 ## 摘要
 
 本文介绍了如何利用 Oumi 在 Amazon EC2 上微调 Llama 模型，并通过 Amazon Bedrock 的自定义模型导入功能进行托管推理部署。
@@ -42,9 +57,8 @@ scenarios: ["大语言模型"]
 3.  **部署**：利用 Amazon Bedrock 的 Custom Model Import 功能，将模型导入以进行托管推理，从而加速自定义大语言模型的部署过程。
 
 ---
-## 最佳实践
 
-## 最佳实践指南
+## 最佳实践
 
 ### 实践 1：利用 Oumi 简化微调工作流
 
@@ -123,6 +137,7 @@ scenarios: ["大语言模型"]
 **注意事项**: 部署初期建议使用按需模式进行测试，待流量稳定后再切换到预置吞吐量以优化成本。
 
 ---
+
 ## 学习要点
 
 - Oumi 是一个开源框架，旨在通过统一训练、评估和导出流程来简化大语言模型的微调过程。
@@ -133,6 +148,7 @@ scenarios: ["大语言模型"]
 - 这种开源工具与云托管服务的结合，为构建特定领域的生成式 AI 应用提供了一条高效且低成本的路径。
 
 ---
+
 ## 引用
 
 - **文章/节目**: [https://aws.amazon.com/blogs/machine-learning/accelerate-custom-llm-deployment-fine-tune-with-oumi-and-deploy-to-amazon-bedrock](https://aws.amazon.com/blogs/machine-learning/accelerate-custom-llm-deployment-fine-tune-with-oumi-and-deploy-to-amazon-bedrock)
@@ -142,8 +158,6 @@ scenarios: ["大语言模型"]
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/)
@@ -157,4 +171,3 @@ scenarios: ["大语言模型"]
 - [在 EC2 上使用 Oumi 微调并部署 Llama 至 Amazon Bedrock]({{< relref "posts/20260311-blogs_podcasts-accelerate-custom-llm-deployment-fine-tune-with-ou-4.md" >}})
 - [在 EC2 上使用 Oumi 微调 Llama 并部署至 Amazon Bedrock]({{< relref "posts/20260311-blogs_podcasts-accelerate-custom-llm-deployment-fine-tune-with-ou-3.md" >}})
 - [在 EC2 上使用 Oumi 微调 Llama 并部署至 Amazon Bedrock]({{< relref "posts/20260310-blogs_podcasts-accelerate-custom-llm-deployment-fine-tune-with-ou-0.md" >}})
-*本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

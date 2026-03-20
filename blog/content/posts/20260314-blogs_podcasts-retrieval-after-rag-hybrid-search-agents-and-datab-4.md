@@ -1,14 +1,27 @@
 ---
-title: "RAG 之后的检索：混合搜索、智能体与数据库设计"
-date: 2026-03-14T03:08:48+08:00
+title: RAG 之后的检索：混合搜索、智能体与数据库设计
+date: 2026-03-14 03:08:48+08:00
 draft: false
-entry_kind: "auto"
-tags: ["RAG", "混合搜索", "向量检索", "数据库设计", "AI 智能体", "BM25", "重排序", "Turbopuffer"]
-categories: ["AI 工程", "数据"]
+entry_kind: auto
+tags:
+- RAG
+- 混合搜索
+- 向量检索
+- 数据库设计
+- AI 智能体
+- BM25
+- 重排序
+- Turbopuffer
+categories:
+- AI 工程
+- 数据
 source: blogs_podcasts
-description: "这段内容主要来自 Turbopuffer 联合创始人 Simon Hørup Eskildsen 的技术分享，核心围绕 **RAG（检索增强生成）之后的“检索”阶段**，探讨如何通过混合搜索、Agent 以及数据库设计来优化 AI 应用。 以下是主要内容总结： 1. 背景与起源 Turbopuffer 起源于一个阅读类"
+description: 这段内容主要来自 Turbopuffer 联合创始人 Simon Hørup Eskildsen 的技术分享，核心围绕 **RAG（检索增强生成）之后的“检索”阶段**，探讨如何通过混合搜索、Agent
+  以及数据库设计来优化 AI 应用。 以下是主要内容总结： 1. 背景与起源 Turbopuffer 起源于一个阅读类
 external_url: https://www.latent.space/p/turbopuffer
-scenarios: ["RAG应用", "AI/ML项目"]
+scenarios:
+- RAG应用
+- AI/ML项目
 ---
 
 # RAG 之后的检索：混合搜索、智能体与数据库设计
@@ -22,16 +35,19 @@ scenarios: ["RAG应用", "AI/ML项目"]
 - **链接**: [https://www.latent.space/p/turbopuffer](https://www.latent.space/p/turbopuffer)
 
 ---
+
 ## 摘要/简介
 
 Turbopuffer 源于一个阅读应用。
 
 ---
+
 ## 导语
 
 检索增强生成（RAG）虽然提升了大模型回答的准确性，但检索环节本身往往成为性能瓶颈。Turbopuffer 创始人 Simon Hørup Eskildsen 在本文中深入探讨了 RAG 之后的进阶路径，解析了混合检索、智能代理与数据库设计的协同作用。通过剖析从阅读应用到通用数据库的演进历程，文章为开发者提供了优化检索架构、平衡延迟与精度的实用视角。
 
 ---
+
 ## 摘要
 
 这段内容主要来自 Turbopuffer 联合创始人 Simon Hørup Eskildsen 的技术分享，核心围绕 **RAG（检索增强生成）之后的“检索”阶段**，探讨如何通过混合搜索、Agent 以及数据库设计来优化 AI 应用。
@@ -61,6 +77,7 @@ Turbopuffer 起源于一个阅读类应用。在开发过程中，团队发现�
 **总结**：Simon 强调，RAG 的成功关键在于“检索”本身。
 
 ---
+
 ## 学习要点
 
 - RAG 系统的核心瓶颈通常在于检索而非生成，提升检索质量（特别是混合检索）比单纯优化模型参数更能有效改善最终答案的准确性。
@@ -72,6 +89,7 @@ Turbopuffer 起源于一个阅读类应用。在开发过程中，团队发现�
 - 评估 RAG 系统时，应关注检索系统的召回率与精确度，并建立针对检索环节的专门测试指标，而不是仅关注生成模型的表面效果。
 
 ---
+
 ## 引用
 
 - **文章/节目**: [https://www.latent.space/p/turbopuffer](https://www.latent.space/p/turbopuffer)
@@ -81,8 +99,6 @@ Turbopuffer 起源于一个阅读类应用。在开发过程中，团队发现�
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [数据](/categories/%E6%95%B0%E6%8D%AE/)
@@ -96,4 +112,3 @@ Turbopuffer 起源于一个阅读类应用。在开发过程中，团队发现�
 - [Turbopuffer谈RAG之后：混合搜索、Agent与数据库设计]({{< relref "posts/20260313-blogs_podcasts-retrieval-after-rag-hybrid-search-agents-and-datab-0.md" >}})
 - [Turbopuffer 源自阅读应用的数据库设计]({{< relref "posts/20260313-blogs_podcasts-retrieval-after-rag-hybrid-search-agents-and-datab-2.md" >}})
 - [RAG后的检索优化：混合搜索、Agent与数据库设计]({{< relref "posts/20260313-blogs_podcasts-retrieval-after-rag-hybrid-search-agents-and-datab-4.md" >}})
-*本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

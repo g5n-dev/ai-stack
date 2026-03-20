@@ -1,13 +1,24 @@
 ---
-title: "Nemotron 3 Nano 4B：面向高效本地AI的紧凑型混合模型"
-date: 2026-03-18T08:22:04+08:00
+title: Nemotron 3 Nano 4B：面向高效本地AI的紧凑型混合模型
+date: 2026-03-18 08:22:04+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Nemotron", "本地部署", "混合模型", "小模型", "高效推理", "边缘计算", "模型压缩", "NVIDIA"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- Nemotron
+- 本地部署
+- 混合模型
+- 小模型
+- 高效推理
+- 边缘计算
+- 模型压缩
+- NVIDIA
+categories:
+- 大模型
+- AI 工程
 source: blogs_podcasts
 external_url: https://huggingface.co/blog/nvidia/nemotron-3-nano-4b
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
 ---
 
 # Nemotron 3 Nano 4B：面向高效本地AI的紧凑型混合模型
@@ -21,9 +32,8 @@ scenarios: ["Web应用开发"]
 - **链接**: [https://huggingface.co/blog/nvidia/nemotron-3-nano-4b](https://huggingface.co/blog/nvidia/nemotron-3-nano-4b)
 
 ---
-## 最佳实践
 
-## 最佳实践指南
+## 最佳实践
 
 ### 实践 1：量化部署以优化显存占用
 
@@ -102,6 +112,7 @@ scenarios: ["Web应用开发"]
 **注意事项**: 评估数据集必须与训练数据分开，并定期更新测试用例以防止数据泄露。
 
 ---
+
 ## 学习要点
 
 - Nemotron 3 Nano 4B 是一款专为高效本地 AI 部署设计的紧凑型混合模型，旨在平衡性能与资源消耗。
@@ -112,6 +123,7 @@ scenarios: ["Web应用开发"]
 - 该模型展示了在资源受限环境中（如移动设备或嵌入式系统）运行生成式 AI 的可行性。
 
 ---
+
 ## 引用
 
 - **文章/节目**: [https://huggingface.co/blog/nvidia/nemotron-3-nano-4b](https://huggingface.co/blog/nvidia/nemotron-3-nano-4b)
@@ -121,8 +133,6 @@ scenarios: ["Web应用开发"]
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)
@@ -136,4 +146,3 @@ scenarios: ["Web应用开发"]
 - [在 EC2 上微调 NVIDIA Nemotron ASR 模型实现领域适配]({{< relref "posts/20260312-blogs_podcasts-fine-tuning-nvidia-nemotron-speech-asr-on-amazon-e-4.md" >}})
 - [在 EC2 上微调 NVIDIA Nemotron ASR 模型实现领域适配]({{< relref "posts/20260313-blogs_podcasts-fine-tuning-nvidia-nemotron-speech-asr-on-amazon-e-6.md" >}})
 - [在 EC2 上微调 NVIDIA Nemotron ASR 模型实现领域适配]({{< relref "posts/20260313-blogs_podcasts-fine-tuning-nvidia-nemotron-speech-asr-on-amazon-e-8.md" >}})
-*本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

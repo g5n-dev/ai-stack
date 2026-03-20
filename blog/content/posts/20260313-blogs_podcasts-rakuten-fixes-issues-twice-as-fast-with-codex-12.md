@@ -1,14 +1,28 @@
 ---
-title: "乐天利用Codex将MTTR缩短50%并实现CI/CD审查自动化"
-date: 2026-03-13T07:36:38+08:00
+title: 乐天利用Codex将MTTR缩短50%并实现CI/CD审查自动化
+date: 2026-03-13 07:36:38+08:00
 draft: false
-entry_kind: "auto"
-tags: ["OpenAI", "Codex", "CI/CD", "MTTR", "代码生成", "自动化", "DevOps", "全栈开发"]
-categories: ["AI 工程", "后端"]
+entry_kind: auto
+tags:
+- OpenAI
+- Codex
+- CI/CD
+- MTTR
+- 代码生成
+- 自动化
+- DevOps
+- 全栈开发
+categories:
+- AI 工程
+- 后端
 source: blogs_podcasts
-description: "**内容总结：Rakuten 利用 OpenAI Codex 加速开发与修复** 日本知名企业乐天通过应用 OpenAI 的代码生成工具 Codex，显著提升了软件交付的效率与安全性，主要成果包括： 1. **加速问题修复**：平均修复时间（MTTR）减少了 50%，实现了两倍速的问题解决能力。 2. **自动化流程*"
+description: '**内容总结：Rakuten 利用 OpenAI Codex 加速开发与修复** 日本知名企业乐天通过应用 OpenAI 的代码生成工具
+  Codex，显著提升了软件交付的效率与安全性，主要成果包括： 1. **加速问题修复**：平均修复时间（MTTR）减少了 50%，实现了两倍速的问题解决能力。
+  2. **自动化流程*'
 external_url: https://openai.com/index/rakuten
-scenarios: ["AI/ML项目", "DevOps/运维"]
+scenarios:
+- AI/ML项目
+- DevOps/运维
 ---
 
 # 乐天利用Codex将MTTR缩短50%并实现CI/CD审查自动化
@@ -22,16 +36,19 @@ scenarios: ["AI/ML项目", "DevOps/运维"]
 - **链接**: [https://openai.com/index/rakuten](https://openai.com/index/rakuten)
 
 ---
+
 ## 摘要/简介
 
 乐天使用 OpenAI 的编程代理 Codex 更快、更安全地交付软件，将平均修复时间（MTTR）缩短了 50%，实现了 CI/CD 审查的自动化，并在数周内完成全栈构建。
 
 ---
+
 ## 导语
 
 在大型企业的软件交付流程中，如何平衡开发速度与代码质量始终是一大挑战。本文介绍了乐天通过引入 OpenAI 的编程模型 Codex，将平均修复时间缩短 50% 并实现 CI/CD 审查自动化的实践经验。通过阅读这篇文章，你将了解到生成式 AI 如何在保障安全性的前提下，显著提升工程团队的全栈构建效率与交付能力。
 
 ---
+
 ## 摘要
 
 **内容总结：Rakuten 利用 OpenAI Codex 加速开发与修复**
@@ -45,6 +62,7 @@ scenarios: ["AI/ML项目", "DevOps/运维"]
 总结而言，乐天借助 Codex 成功实现了更快速、更安全的软件发布。
 
 ---
+
 ## 评论
 
 ### 核心评价：企业级 AI 编程工具的效能验证与落地挑战
@@ -101,6 +119,7 @@ scenarios: ["AI/ML项目", "DevOps/运维"]
 2.
 
 ---
+
 ## 学习要点
 
 - 根据您提供的标题和来源，以下是关于 Rakuten 使用 Codex 提升效率的关键要点总结：
@@ -111,6 +130,7 @@ scenarios: ["AI/ML项目", "DevOps/运维"]
 - Rakuten 的案例表明，在大型企业环境中应用 AI 辅助编程工具可以大幅提高软件交付的生产力。
 
 ---
+
 ## 引用
 
 - **文章/节目**: [https://openai.com/index/rakuten](https://openai.com/index/rakuten)
@@ -120,8 +140,6 @@ scenarios: ["AI/ML项目", "DevOps/运维"]
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [后端](/categories/%E5%90%8E%E7%AB%AF/)
@@ -135,4 +153,3 @@ scenarios: ["AI/ML项目", "DevOps/运维"]
 - [乐天应用Codex将MTTR缩短50%并实现CI/CD自动化]({{< relref "posts/20260312-blogs_podcasts-rakuten-fixes-issues-twice-as-fast-with-codex-11.md" >}})
 - [乐天应用Codex将MTTR降低50%并自动化CI/CD审查]({{< relref "posts/20260312-blogs_podcasts-rakuten-fixes-issues-twice-as-fast-with-codex-5.md" >}})
 - [乐天集成Codex降低50%平均修复时间并自动化CI/CD审查]({{< relref "posts/20260311-blogs_podcasts-rakuten-fixes-issues-twice-as-fast-with-codex-1.md" >}})
-*本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

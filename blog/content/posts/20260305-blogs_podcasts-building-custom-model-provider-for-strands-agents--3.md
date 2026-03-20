@@ -1,14 +1,27 @@
 ---
-title: "为Strands智能体构建SageMaker托管LLM自定义解析器"
-date: 2026-03-05T22:28:24+08:00
+title: 为Strands智能体构建SageMaker托管LLM自定义解析器
+date: 2026-03-05 22:28:24+08:00
 draft: false
-entry_kind: "auto"
-tags: ["LLM", "SageMaker", "Strands", "SGLang", "Llama 3.1", "模型部署", "自定义解析器", "AWS"]
-categories: ["AI 工程", "后端"]
+entry_kind: auto
+tags:
+- LLM
+- SageMaker
+- Strands
+- SGLang
+- Llama 3.1
+- 模型部署
+- 自定义解析器
+- AWS
+categories:
+- AI 工程
+- 后端
 source: blogs_podcasts
-description: "本文介绍了如何为 Strands Agents 构建自定义模型提供商，以便集成托管在 Amazon SageMaker AI 端点上的 LLM（特别是那些原生不支持 Bedrock Messages API 格式的模型）。文章以部署 Llama 3.1（使用 SGLang）为例，演示了完整流程。 以下是关键步骤总结："
+description: 本文介绍了如何为 Strands Agents 构建自定义模型提供商，以便集成托管在 Amazon SageMaker AI 端点上的 LLM（特别是那些原生不支持
+  Bedrock Messages API 格式的模型）。文章以部署 Llama 3.1（使用 SGLang）为例，演示了完整流程。 以下是关键步骤总结：
 external_url: https://aws.amazon.com/blogs/machine-learning/building-custom-model-provider-for-strands-agents-with-llms-hosted-on-sagemaker-ai-endpoints
-scenarios: ["大语言模型", "后端开发"]
+scenarios:
+- 大语言模型
+- 后端开发
 ---
 
 # 为Strands智能体构建SageMaker托管LLM自定义解析器
@@ -22,16 +35,19 @@ scenarios: ["大语言模型", "后端开发"]
 - **链接**: [https://aws.amazon.com/blogs/machine-learning/building-custom-model-provider-for-strands-agents-with-llms-hosted-on-sagemaker-ai-endpoints](https://aws.amazon.com/blogs/machine-learning/building-custom-model-provider-for-strands-agents-with-llms-hosted-on-sagemaker-ai-endpoints)
 
 ---
+
 ## 摘要/简介
 
 本文介绍如何在使用托管于 SageMaker 且不支持 Bedrock Messages API 格式的 LLM 时，为 Strands 智能体构建自定义模型解析器。我们将演示如何使用 awslabs/ml-container-creator 在 SageMaker 上部署 Llama 3.1 with SGLang，然后实现一个自定义解析器，将其与 Strands 智能体集成。
 
 ---
+
 ## 导语
 
 在构建基于 Strands 智能体的应用时，开发者常需将托管在 SageMaker 端点上的 LLM 无缝集成，但往往受限于模型输出格式与标准 API 的差异。本文将详细介绍如何通过部署 Llama 3.1 并实现自定义模型解析器，解决兼容性问题。阅读本文，您将掌握将非标准格式模型与智能体集成的完整流程，从而更灵活地构建定制化的 AI 解决方案。
 
 ---
+
 ## 摘要
 
 本文介绍了如何为 Strands Agents 构建自定义模型提供商，以便集成托管在 Amazon SageMaker AI 端点上的 LLM（特别是那些原生不支持 Bedrock Messages API 格式的模型）。文章以部署 Llama 3.1（使用 SGLang）为例，演示了完整流程。
@@ -43,6 +59,7 @@ scenarios: ["大语言模型", "后端开发"]
 3.  **集成代理**：通过该解析器将 SageMaker 上的模型无缝接入 Strands Agents 使用。
 
 ---
+
 ## 评论
 
 ### 评价文章：Building custom model provider for Strands Agents with LLMs hosted on SageMaker AI endpoints
@@ -84,15 +101,16 @@ scenarios: ["大语言模型", "后端开发"]
 1.  **监控与可观测性：** 在实施此方案时，必须在自定义解析器中植入详细的 Cloud
 
 ---
+
 ## 技术分析
 
 基于您提供的文章标题和摘要，以下是对该技术方案的深入分析。文章主要探讨了在AWS生态系统中，如何将非标准接口的大语言模型（如Llama 3.1）集成到Strands智能体框架中，重点解决了模型部署与接口适配的技术难题。
 
 ---
 
-# 深入分析：构建基于SageMaker自定义模型的Strands Agents
+### 深入分析：构建基于SageMaker自定义模型的Strands Agents
 
-## 1. 核心观点深度解读
+### 1. 核心观点深度解读
 
 **主要观点**
 文章的核心观点是：**企业不应被云厂商的专有API（如AWS Bedrock）所锁定，而应具备通过自定义适配器将任意自托管模型（如SageMaker上的Llama 3.1）集成到高级AI框架（如Strands Agents）的能力。**
@@ -106,7 +124,7 @@ scenarios: ["大语言模型", "后端开发"]
 **重要性**
 随着大模型从“玩具”走向“生产”，企业对数据隐私、成本控制和定制化的要求日益增加。能够熟练掌握从模型容器化到接口适配的全链路技术，是构建高可用、低成本企业级AI应用的关键。
 
-## 2. 关键技术要点
+### 2. 关键技术要点
 
 **涉及的关键技术**
 1.  **AWS SageMaker Endpoints**: 用于托管底层LLM推理服务。
@@ -125,7 +143,7 @@ scenarios: ["大语言模型", "后端开发"]
 *   **难点**: 工具调用的Schema映射。
 *   **解决方案**: Llama 3.1虽然支持Function Calling，但其JSON输出格式可能与Bedrock不同。需要编写正则或JSON解析逻辑，准确提取模型生成的函数参数。
 
-## 3. 实际应用价值
+### 3. 实际应用价值
 
 **指导意义**
 该方案为企业摆脱“单一云厂商依赖”提供了具体路径。它允许企业在SageMaker上利用Spot实例大幅降低推理成本，同时不损失上层应用的开发效率。
@@ -139,7 +157,7 @@ scenarios: ["大语言模型", "后端开发"]
 *   **运维负担**: 自托管意味着需要监控GPU利用率、处理自动扩缩容和版本更新。
 *   **延迟**: SageMaker端点可能没有Bedrock全球优化的边缘节点低延迟。
 
-## 4. 行业影响分析
+### 4. 行业影响分析
 
 **行业启示**
 这标志着AI基础设施正在从**“全托管服务”向“可编程基础设施”**回归。虽然MaaS（Model as a Service）降低了门槛，但头部企业为了差异化竞争优势，必然会走向“模型微调+高性能推理+自定义编排”的深水区。
@@ -148,7 +166,7 @@ scenarios: ["大语言模型", "后端开发"]
 *   **推理引擎标准化**: SGLang、vLLM等后端技术正在成为事实标准，云厂商的PaaS服务必须兼容这些开源生态。
 *   **网关模式兴起**: 类似于本文中的Custom Provider，未来的AI架构中，模型网关将负责统一不同模型的API协议。
 
-## 5. 延伸思考
+### 5. 延伸思考
 
 **拓展方向**
 *   **多模型负载均衡**: 如何在同一个Custom Provider中配置路由策略，根据Prompt复杂度自动路由到SageMaker上的Llama 3.1（70B）或8B模型。
@@ -157,19 +175,7 @@ scenarios: ["大语言模型", "后端开发"]
 **未来研究**
 *   **动态上下文压缩**: 在SGLang层集成KV Cache压缩技术，并在Custom Provider中透明处理，以支持更长的对话历史。
 
-## 6. 实践建议
-
-**如何应用到项目**
-1.  **评估现有模型**: 检查当前使用的模型是否在SageMaker上运行性价比更高（特别是高频调用的RAG检索增强生成场景）。
-2.  **抽象接口层**: 不要写死Bedrock API。在代码中引入`ModelProvider`接口，便于后续切换。
-3.  **容器化**: 熟悉Docker和SageMaker部署流程，这是落地的基石。
-
-**行动建议**
-*   先在开发环境搭建SGLang + Llama 3.1，测试其与OpenAI API的兼容性。
-*   编写一个Python类封装请求转换逻辑。
-*   进行压力测试，对比SageMaker + SGLang 与 Bedrock On-Demand的P95延迟和吞吐量。
-
-## 7. 案例分析
+### 7. 案例分析
 
 **成功案例逻辑**
 假设一家金融科技公司：
@@ -181,7 +187,7 @@ scenarios: ["大语言模型", "后端开发"]
 *   **问题**: 如果团队低估了GPU运维的难度，导致在高峰期端点OOM（内存溢出）。
 *   **教训**: 自托管模型必须配备完善的自动扩缩容策略和监控告警，否则可用性不如全托管服务。
 
-## 8. 哲学与逻辑：论证地图
+### 8. 哲学与逻辑：论证地图
 
 **中心命题**
 在构建企业级Agent应用时，采用**SageMaker自托管高性能推理（如SGLang）配合自定义适配器**的架构，在长期看优于直接依赖全托管API（如Bedrock），因为它提供了不可替代的成本可控性、数据主权和模型迭代自由度。
@@ -211,9 +217,8 @@ scenarios: ["大语言模型", "后端开发"]
 如果B组在TCO持平或降低的情况下，满足了特定的合规或定制需求，则命题成立。
 
 ---
-## 最佳实践
 
-## 最佳实践指南
+## 最佳实践
 
 ### 实践 1：优化 SageMaker 端点配置以降低延迟
 
@@ -277,9 +282,8 @@ scenarios: ["大语言模型", "后端开发"]
 3. **启用端点加密**：确保 SageMaker 端点的配置中启用了流量加密，且数据卷已加密（KMS）。
 4. **VPC 配置**：如果安全策略要求，将 SageMaker 端点配置在私有 VPC 中，并仅允许来自特定子网的安全组访问。
 
-**注意事项**
-
 ---
+
 ## 学习要点
 
 - 通过实现标准化的 LangChain 接口，可以将部署在 SageMaker 上的 LLM 无缝集成到 Bedrock 的 Agents 框架中，从而扩展模型选择范围。
@@ -289,6 +293,7 @@ scenarios: ["大语言模型", "后端开发"]
 - 通过将 SageMaker 托管的基础模型与 Bedrock 的编排层（Orchestration）解耦，实现了基础设施与业务逻辑的分离，提升了系统的可维护性。
 
 ---
+
 ## 引用
 
 - **文章/节目**: [https://aws.amazon.com/blogs/machine-learning/building-custom-model-provider-for-strands-agents-with-llms-hosted-on-sagemaker-ai-endpoints](https://aws.amazon.com/blogs/machine-learning/building-custom-model-provider-for-strands-agents-with-llms-hosted-on-sagemaker-ai-endpoints)
@@ -298,8 +303,6 @@ scenarios: ["大语言模型", "后端开发"]
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [后端](/categories/%E5%90%8E%E7%AB%AF/)
@@ -313,4 +316,3 @@ scenarios: ["大语言模型", "后端开发"]
 - [AWS SageMaker实战：用Dottxt Outlines实现LLM结构化输出]({{< relref "posts/20260225-blogs_podcasts-generate-structured-output-from-llms-with-dottxt-o-12.md" >}})
 - [AWS SageMaker 集成 Dottxt Outlines 实现 LLM 结构化输出]({{< relref "posts/20260226-blogs_podcasts-generate-structured-output-from-llms-with-dottxt-o-13.md" >}})
 - [利用 Hugging Face 与 SageMaker 扩展企业级 LLM 微调]({{< relref "posts/20260210-blogs_podcasts-scale-llm-fine-tuning-with-hugging-face-and-amazon-9.md" >}})
-*本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

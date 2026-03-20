@@ -1,14 +1,27 @@
 ---
-title: "在 Amazon SageMaker 上使用 veRL 与 Ray 训练 CodeFu-7B 模型"
-date: 2026-02-26T05:26:26+08:00
+title: 在 Amazon SageMaker 上使用 veRL 与 Ray 训练 CodeFu-7B 模型
+date: 2026-02-26 05:26:26+08:00
 draft: false
-entry_kind: "auto"
-tags: ["SageMaker", "veRL", "Ray", "CodeFu-7B", "GRPO", "RLHF", "分布式训练", "竞技编程"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- SageMaker
+- veRL
+- Ray
+- CodeFu-7B
+- GRPO
+- RLHF
+- 分布式训练
+- 竞技编程
+categories:
+- 大模型
+- AI 工程
 source: blogs_podcasts
-description: "本文介绍了如何利用 **veRL** 和 **Ray**，在 **Amazon SageMaker Training jobs** 上训练 **CodeFu-7B**（一个专注于竞技编程的 70 亿参数模型），并采用 **GRPO（Group Relative Policy Optimization）** 算法。文章详"
+description: 本文介绍了如何利用 **veRL** 和 **Ray**，在 **Amazon SageMaker Training jobs** 上训练
+  **CodeFu-7B**（一个专注于竞技编程的 70 亿参数模型），并采用 **GRPO（Group Relative Policy Optimization）**
+  算法。文章详
 external_url: https://aws.amazon.com/blogs/machine-learning/train-codefu-7b-with-verl-and-ray-on-amazon-sagemaker-training-jobs
-scenarios: ["工具"]
+scenarios:
+- 工具
 ---
 
 # 在 Amazon SageMaker 上使用 veRL 与 Ray 训练 CodeFu-7B 模型
@@ -22,21 +35,25 @@ scenarios: ["工具"]
 - **链接**: [https://aws.amazon.com/blogs/machine-learning/train-codefu-7b-with-verl-and-ray-on-amazon-sagemaker-training-jobs](https://aws.amazon.com/blogs/machine-learning/train-codefu-7b-with-verl-and-ray-on-amazon-sagemaker-training-jobs)
 
 ---
+
 ## 摘要/简介
 
 在本文中，我们演示了如何使用 Group Relative Policy Optimization (GRPO) 与 veRL——一个灵活高效的 LLM 训练库，能够便捷地扩展多种 RL 算法并与现有 LLM 基础设施无缝集成——在由 SageMaker 训练作业托管的分布式 Ray 集群内，训练 CodeFu-7B 这一面向竞技编程的 70 亿参数专用模型。我们梳理了完整的实现流程，涵盖数据准备、分布式训练设置以及全方位的可观测性，展示这一统一方案如何为复杂的 RL 训练工作负载同时带来计算规模与开发体验。
 
 ---
+
 ## 导语
 
 随着强化学习在代码模型训练中的应用日益深入，如何高效扩展分布式训练流程成为技术落地的关键。本文将详细介绍如何利用 veRL 库与 Ray 集群，在 Amazon SageMaker 上训练 CodeFu-7B 模型。通过梳理从数据准备到可观测性配置的完整实现，我们旨在展示这一统一方案如何兼顾计算规模与开发效率，为复杂的 RL 训练工作负载提供可参考的实践路径。
 
 ---
+
 ## 摘要
 
 本文介绍了如何利用 **veRL** 和 **Ray**，在 **Amazon SageMaker Training jobs** 上训练 **CodeFu-7B**（一个专注于竞技编程的 70 亿参数模型），并采用 **GRPO（Group Relative Policy Optimization）** 算法。文章详细阐述了从数据准备、分布式训练配置到全面可观测性监控的完整实现流程，展示了如何通过这种统一架构实现高性能计算规模与开发者体验的优化，支持复杂的强化学习训练任务。
 
 ---
+
 ## 评论
 
 ### 中心观点
@@ -83,13 +100,14 @@ scenarios: ["工具"]
 *   **GRPO vs. DPO**：目前社区（如 Hugging Face）更推崇 DPO（Direct Preference Optimization），因为 DPO 不需要训练 Reward Model 也不需要复杂的在线采样。文章坚持使用 GRPO（一种在线 RL 方法），虽然 GRPO 不需要 Critic，但仍需要在线环境交互。对于代码任务，DPO 是否已足够？在线 RL 的额外计算开销是否
 
 ---
+
 ## 技术分析
 
 基于您提供的文章标题和摘要，以下是对这篇关于在 Amazon SageMaker 上使用 veRL 和 Ray 训练 CodeFu-7B 模型文章的深度分析。
 
 ---
 
-# 1. 核心观点深度解读
+### 1. 核心观点深度解读
 
 **主要观点**
 文章的核心观点是展示如何构建一个**可扩展、高效且灵活的分布式强化学习（RL）训练流水线**，专门用于优化大语言模型（LLM）在特定垂直领域（竞技编程）的表现。作者主张通过结合 **veRL**（一个高效的大模型 RL 训练库）与 **Ray**（分布式计算框架），在 **Amazon SageMaker** 这一托管平台上，实现 Group Relative Policy Optimization (GRPO) 算法，从而训练出 7B 参数的专用模型 CodeFu。
@@ -106,7 +124,7 @@ scenarios: ["工具"]
 
 ---
 
-# 2. 关键技术要点
+### 2. 关键技术要点
 
 **涉及的关键技术**
 1.  **GRPO (Group Relative Policy Optimization)：** 一种强化学习算法，是 RLHF/RLAIF 阶段的核心。它通过从同一个 prompt 采样一组 outputs，利用 group 的平均 reward 作为 baseline 来计算优势，从而省去了 Critic 模型。
@@ -131,7 +149,7 @@ scenarios: ["工具"]
 
 ---
 
-# 3. 实际应用价值
+### 3. 实际应用价值
 
 **指导意义**
 这篇文章为所有希望从“通用基座模型”迈向“行业专用模型”的团队提供了实战指南。它证明了不需要从头开发 RL 框架，利用开源组件和云平台可以快速搭建起类似 DeepSeek-Coder 或 AlphaCode 的训练流水线。
@@ -153,7 +171,7 @@ scenarios: ["工具"]
 
 ---
 
-# 4. 行业影响分析
+### 4. 行业影响分析
 
 **对行业的启示**
 *   **基础设施平民化：** 高效的 RL 训练不再是顶级实验室的特权。通过 veRL（降低算法工程难度）+ SageMaker（降低运维难度），中型 AI 团队也能进行高质量的 RLHF/RLAIF 训练。
@@ -169,7 +187,7 @@ scenarios: ["工具"]
 
 ---
 
-# 5. 延伸思考
+### 5. 延伸思考
 
 **引发的思考**
 *   **GRPO 的极限在哪里？** GRPO 虽然省去了 Critic 模型，但在超大规模模型（如 70B+）上，Group Sample 的显存开销是否会成为新的瓶颈？
@@ -185,7 +203,7 @@ scenarios: ["工具"]
 
 ---
 
-# 6. 实践建议
+### 6. 实践建议
 
 **如何应用到自己的项目**
 1.  **环境准备：** 在 AWS 账户中配置 SageMaker Domain，并准备好包含 veRL 和 Ray 依赖的 Docker 镜像（或使用预置的 PyTorch 镜像并安装 pip 包）。
@@ -199,11 +217,10 @@ scenarios: ["工具"]
 *   **利用 Spot Instance：** SageMaker 支持 Spot 实例，Rollout 阶段（生成数据）可以使用更便宜的 Spot 实例，训练阶段使用 On-Demand，以优化成本。
 
 **注意事项**
-*   **超参数敏感性：** GRPO 的 `kl_coeff`（KL 散度系数）非常关键。太小会导致模型模式坍塌（只输出高 Reward 的固定答案），太大会导致模型不学习。建议从 `0.1` 开始搜索。
 
 ---
 
-# 7. 案例分析
+### 7. 案例分析
 
 **成功案例：CodeFu-7B**
 *   **背景：** 旨在解决竞技编程问题。
@@ -217,13 +234,12 @@ scenarios: ["工具"]
 *   **教训：** 在设计 Reward 函数时
 
 ---
-## 最佳实践
 
-## 最佳实践指南
+## 最佳实践
 
 ### 实践 1：利用 Ray on SageMaker 实现弹性算力编排
 
-**说明**: 
+**说明**:
 CodeFu-7B 的训练涉及复杂的分布式调度。通过在 SageMaker 上使用 Ray，可以利用 SageMaker 的深度集成功能（如 `sagemaker-ray`）来动态管理底层计算资源。Ray 能够处理细粒度的任务调度和容错，而 SageMaker 负责提供稳定的底层基础设施，两者结合可以最大化资源利用率。
 
 **实施步骤**:
@@ -231,14 +247,14 @@ CodeFu-7B 的训练涉及复杂的分布式调度。通过在 SageMaker 上使�
 2. 在 SageMaker 训练作业启动脚本中，设置 Ray Head 节点和 Worker 节点的通信地址。
 3. 配置 `resources` 参数，确保 veRL 的训练进程能够正确映射到 Ray 的 Actor 上。
 
-**注意事项**: 
+**注意事项**:
 确保 SageMaker 的安全组允许 Ray Head 节点与 Worker 节点之间的通信端口（默认为 6379 等端口）畅通。
 
 ---
 
 ### 实践 2：配置 vLLM 作为高效推理后端
 
-**说明**: 
+**说明**:
 在 CodeFu-7B 的训练流程（特别是强化学习阶段）中，模型需要频繁生成响应以进行评估。使用 vLLM 作为推理引擎可以显著提高生成速度，减少训练瓶颈。vLLM 的 PagedAttention 技术能最大化 GPU 显存利用率。
 
 **实施步骤**:
@@ -246,14 +262,14 @@ CodeFu-7B 的训练涉及复杂的分布式调度。通过在 SageMaker 上使�
 2. 调整 vLLM 的 `tensor_parallel_size` 参数以匹配实例数量。
 3. 预加载基础模型权重到 vLLM 实例中，避免每次 Rollout 都重新加载。
 
-**注意事项**: 
+**注意事项**:
 vLLM 对显存管理较为敏感，需预留足够的显存给 KV Cache，防止 OOM（显存溢出）错误。
 
 ---
 
 ### 实践 3：优化 SageMaker 实例选择与分布式策略
 
-**说明**: 
+**说明**:
 针对 7B 参数量级的模型，选择合适的实例类型对成本和性能至关重要。建议使用 `ml.p4d.24xlarge` 或 `ml.p5.48xlarge` 实例，并利用 SageMaker 的分布式数据并行（DDP）或张量并行功能。
 
 **实施步骤**:
@@ -261,14 +277,14 @@ vLLM 对显存管理较为敏感，需预留足够的显存给 KV Cache，防止
 2. 在 SageMaker Estimator 中配置 `distribution` 参数，启用 MPI 或 Ray 分布式策略。
 3. 设置 `instance_type` 和 `instance_count`，确保网络带宽（如 EFA）满足节点间通信需求。
 
-**注意事项**: 
+**注意事项**:
 如果使用 Spot 实例以降低成本，请确保配置好 Checkpoint（检查点）的定期保存，以便在实例中断时能够快速恢复。
 
 ---
 
 ### 实践 4：实施高效的数据加载与预处理流水线
 
-**说明**: 
+**说明**:
 训练效率往往受限于数据加载速度。利用 Ray 的分布式数据加载能力，结合 SageMaker 的文件系统（如 FSx for Lustre 或 EFS），可以确保 GPU 不会因为等待数据而闲置。
 
 **实施步骤**:
@@ -276,14 +292,14 @@ vLLM 对显存管理较为敏感，需预留足够的显存给 KV Cache，防止
 2. 使用 Ray Data 或 PyTorch DataLoader 设置多进程预处理。
 3. 在 veRL 配置中，调整数据预取的数量，以平衡内存占用和读取速度。
 
-**注意事项**: 
+**注意事项**:
 对于大规模数据集，避免直接从 S3 流式读取小文件，这会严重拖慢训练速度；建议打包成 TFRecord 或 Parquet 格式。
 
 ---
 
 ### 实践 5：强化学习阶段的内存与显存优化
 
-**说明**: 
+**说明**:
 CodeFu 训练通常包含 RLHF（基于人类反馈的强化学习）阶段，该阶段需要同时加载 Actor、Critic 和 Reference 模型，显存压力巨大。利用 veRL 的内存优化特性（如 ZeRO 优化器卸载或梯度检查点）至关重要。
 
 **实施步骤**:
@@ -291,14 +307,14 @@ CodeFu 训练通常包含 RLHF（基于人类反馈的强化学习）阶段，�
 2. 激活 `gradient_checkpointing` 以计算换空间，减少反向传播时的显存占用。
 3. 混合精度训练（BF16），在不损失精度的前提下减半显存占用。
 
-**注意事项**: 
+**注意事项**:
 在卸载到 CPU 时，确保 SageMaker 实例拥有足够的系统内存（CPU RAM），否则会导致进程被系统 Kill。
 
 ---
 
 ### 实践 6：建立可观测性与实时监控机制
 
-**说明**: 
+**说明**:
 在大规模分布式训练中，节点故障难以避免。建立完善的监控体系可以帮助快速定位问题。利用 Ray Dashboard 和 SageMaker Metrics 实时监控训练状态。
 
 **实施步骤**:
@@ -307,6 +323,7 @@ CodeFu 训练通常包含 RLHF（基于人类反馈的强化学习）阶段，�
 3. 在代码中集成自定义 Metrics（如 Reward 变化、KL �
 
 ---
+
 ## 学习要点
 
 - veRL 与 Ray 的深度集成允许开发者利用 Ray 的分布式能力高效处理大语言模型（LLM）的并行训练任务。
@@ -317,6 +334,7 @@ CodeFu 训练通常包含 RLHF（基于人类反馈的强化学习）阶段，�
 - 该架构成功验证了在云端托管环境中进行高性能、低成本 LLM 训练的可行性与可扩展性。
 
 ---
+
 ## 引用
 
 - **文章/节目**: [https://aws.amazon.com/blogs/machine-learning/train-codefu-7b-with-verl-and-ray-on-amazon-sagemaker-training-jobs](https://aws.amazon.com/blogs/machine-learning/train-codefu-7b-with-verl-and-ray-on-amazon-sagemaker-training-jobs)
@@ -326,8 +344,6 @@ CodeFu 训练通常包含 RLHF（基于人类反馈的强化学习）阶段，�
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)
@@ -341,4 +357,3 @@ CodeFu 训练通常包含 RLHF（基于人类反馈的强化学习）阶段，�
 - [使用 veRL 和 Ray 在 SageMaker 上训练 CodeFu-7B 模型]({{< relref "posts/20260225-blogs_podcasts-train-codefu-7b-with-verl-and-ray-on-amazon-sagema-10.md" >}})
 - [基于 veRL 在 SageMaker 与 Ray 上训练 CodeFu-7B 模型]({{< relref "posts/20260225-blogs_podcasts-train-codefu-7b-with-verl-and-ray-on-amazon-sagema-11.md" >}})
 - [基于veRL与Ray在SageMaker上训练CodeFu-7B模型]({{< relref "posts/20260225-blogs_podcasts-train-codefu-7b-with-verl-and-ray-on-amazon-sagema-9.md" >}})
-*本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

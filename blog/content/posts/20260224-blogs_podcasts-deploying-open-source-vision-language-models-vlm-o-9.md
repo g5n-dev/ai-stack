@@ -1,14 +1,26 @@
 ---
-title: "在 Jetson 平台上部署开源视觉语言模型"
-date: 2026-02-24T23:13:49+08:00
+title: 在 Jetson 平台上部署开源视觉语言模型
+date: 2026-02-24 23:13:49+08:00
 draft: false
-entry_kind: "auto"
-tags: ["VLM", "Jetson", "边缘计算", "模型部署", "NVIDIA", "视觉语言模型", "嵌入式AI", "开源模型"]
-categories: ["AI 工程", "系统与基础设施"]
+entry_kind: auto
+tags:
+- VLM
+- Jetson
+- 边缘计算
+- 模型部署
+- NVIDIA
+- 视觉语言模型
+- 嵌入式AI
+- 开源模型
+categories:
+- AI 工程
+- 系统与基础设施
 source: blogs_podcasts
-description: "随着边缘计算能力的提升，在本地部署视觉语言模型正成为许多 AI 应用的关键需求。本文将详细介绍如何在 NVIDIA Jetson 平台上部署开源 VLM，并针对嵌入式设备的资源限制提供具体的优化策略。通过阅读本文，您将掌握在边缘端实现高效视觉推理的完整流程，从而构建响应迅速且保护隐私的智能视觉系统。"
+description: 随着边缘计算能力的提升，在本地部署视觉语言模型正成为许多 AI 应用的关键需求。本文将详细介绍如何在 NVIDIA Jetson 平台上部署开源
+  VLM，并针对嵌入式设备的资源限制提供具体的优化策略。通过阅读本文，您将掌握在边缘端实现高效视觉推理的完整流程，从而构建响应迅速且保护隐私的智能视觉系统。
 external_url: https://huggingface.co/blog/nvidia/cosmos-on-jetson
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
 ---
 
 # 在 Jetson 平台上部署开源视觉语言模型
@@ -22,11 +34,13 @@ scenarios: ["AI/ML项目"]
 - **链接**: [https://huggingface.co/blog/nvidia/cosmos-on-jetson](https://huggingface.co/blog/nvidia/cosmos-on-jetson)
 
 ---
+
 ## 导语
 
 随着边缘计算能力的提升，在本地部署视觉语言模型正成为许多 AI 应用的关键需求。本文将详细介绍如何在 NVIDIA Jetson 平台上部署开源 VLM，并针对嵌入式设备的资源限制提供具体的优化策略。通过阅读本文，您将掌握在边缘端实现高效视觉推理的完整流程，从而构建响应迅速且保护隐私的智能视觉系统。
 
 ---
+
 ## 评论
 
 **文章标题：Deploying Open Source Vision Language Models (VLM) on Jetson**
@@ -82,17 +96,16 @@ scenarios: ["AI/ML项目"]
     *   **反方观点：** 随着5G和Wi-Fi 7的低延迟特性，将图片传回云端集群（如H100集群）处理，不仅模型更大（效果更好），而且成本更低（无需昂贵的边缘计算模块）。在Jetson上跑7B模型，效果可能不如云端跑70B模型，且
 
 ---
+
 ## 技术分析
 
-# 技术分析
-
-## 1. 核心观点深度解读
+### 1. 核心观点深度解读
 
 本文的核心论点在于验证并展示**高性能开源视觉语言模型（VLM）在资源受限的边缘计算平台（NVIDIA Jetson）上的可行性与优越性**。作者试图打破“多模态大模型必须依赖昂贵云端算力”的固有认知，通过具体的部署实践，传达了**“边缘 AI 的民主化”**这一核心思想。
 
 该观点的深度在于其解决了从“能不能跑”到“跑得好不好”的跨越。文章不仅论证了在嵌入式设备上运行 VLM 的技术可能性，更强调了通过特定的模型优化策略（如量化、算子融合），在仅 10W-30W 功耗的设备上实现低延迟、高并发的本地多模态推理能力。其创新性主要体现在**端侧适配**层面，即如何将庞大的云端模型适配到 ARM 架构和有限显存环境中，这对于隐私敏感（医疗、监控）、实时性要求高（机器人交互）以及网络不稳定的场景具有极高的应用价值。
 
-## 2. 关键技术要点
+### 2. 关键技术要点
 
 在技术实现层面，文章主要围绕 **CLIP 视觉编码器与 LLM 语言模型的投影架构**展开，重点涉及以下关键技术：
 
@@ -100,7 +113,7 @@ scenarios: ["AI/ML项目"]
 *   **推理引擎优化**：核心在于将 PyTorch 模型转换为 **TensorRT** 引擎。利用 **TensorRT-LLM** 或 **vLLM** 框架进行算子融合（如 Flash Attention）、Kernel 优化以及 KV Cache（键值缓存）管理，以充分挖掘 Jetson GPU 的并行计算能力。
 *   **内存管理策略**：针对 Jetson 统一内存架构的特性，文章可能会涉及如何优化 **PagedAttention** 算法，以及在显存不足时如何高效地在系统内存与 GPU 显存间进行数据交换，防止 OOM（内存溢出）。
 
-## 3. 实际应用价值
+### 3. 实际应用价值
 
 该技术方案为嵌入式 AI 工程师提供了一套**“离线智能”**的标准化落地路径，具有极高的指导意义。
 
@@ -113,7 +126,6 @@ scenarios: ["AI/ML项目"]
     部署过程中需重点关注**散热与功耗平衡**。VLM 推理会导致 CPU/GPU 长时间高负载运行，必须设计合理的被动或主动散热方案以防止降频。同时，INT4 量化可能会带来轻微的精度损失，在特定高精度要求的任务中需要进行细致的微调与验证。
 
 ---
-## 最佳实践
 
 ## 最佳实践
 
@@ -194,6 +206,7 @@ scenarios: ["AI/ML项目"]
 **注意事项**: 降低功耗模式会导致推理速度下降，需根据实际业务需求进行调整。
 
 ---
+
 ## 学习要点
 
 - Jetson 平台通过集成 TensorRT 和 CUDA 加速库，实现了在边缘设备上对开源视觉语言模型（VLM）的高效推理与部署。
@@ -204,6 +217,7 @@ scenarios: ["AI/ML项目"]
 - 针对特定硬件架构进行算子融合与内核优化，是提升边缘侧 VLM 运行帧率（FPS）和能效比的关键手段。
 
 ---
+
 ## 引用
 
 - **文章/节目**: [https://huggingface.co/blog/nvidia/cosmos-on-jetson](https://huggingface.co/blog/nvidia/cosmos-on-jetson)
@@ -213,8 +227,6 @@ scenarios: ["AI/ML项目"]
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/)
@@ -228,4 +240,3 @@ scenarios: ["AI/ML项目"]
 - [在 Jetson 平台部署开源视觉语言模型]({{< relref "posts/20260224-blogs_podcasts-deploying-open-source-vision-language-models-vlm-o-5.md" >}})
 - [在 Jetson 平台上部署开源视觉语言模型]({{< relref "posts/20260224-blogs_podcasts-deploying-open-source-vision-language-models-vlm-o-6.md" >}})
 - [在8位摩托罗拉6809上运行深度卷积神经网络玩棋盘游戏]({{< relref "posts/20260129-hacker_news-playing-board-games-with-deep-convolutional-neural-12.md" >}})
-*本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

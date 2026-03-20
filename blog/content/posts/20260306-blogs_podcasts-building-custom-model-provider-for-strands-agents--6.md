@@ -1,14 +1,28 @@
 ---
-title: "在SageMaker部署SGLang并集成Strands代理自定义解析器"
-date: 2026-03-06T17:33:54+08:00
+title: 在SageMaker部署SGLang并集成Strands代理自定义解析器
+date: 2026-03-06 17:33:54+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AWS SageMaker", "SGLang", "Llama 3.1", "Strands Agents", "模型部署", "自定义解析器", "Bedrock API", "ml-container-creator"]
-categories: ["AI 工程", "后端"]
+entry_kind: auto
+tags:
+- AWS SageMaker
+- SGLang
+- Llama 3.1
+- Strands Agents
+- 模型部署
+- 自定义解析器
+- Bedrock API
+- ml-container-creator
+categories:
+- AI 工程
+- 后端
 source: blogs_podcasts
-description: "总结：构建自定义模型提供商以集成 SageMaker AI 终端节点与 Strands Agents 这篇文章演示了如何在 AWS SageMaker 上托管的 LLM（特别是 Llama 3.1）与 Strands Agents 之间建立集成，特别是针对那些不原生支持 Bedrock Messages API 格式的"
+description: 总结：构建自定义模型提供商以集成 SageMaker AI 终端节点与 Strands Agents 这篇文章演示了如何在 AWS SageMaker
+  上托管的 LLM（特别是 Llama 3.1）与 Strands Agents 之间建立集成，特别是针对那些不原生支持 Bedrock Messages API
+  格式的
 external_url: https://aws.amazon.com/blogs/machine-learning/building-custom-model-provider-for-strands-agents-with-llms-hosted-on-sagemaker-ai-endpoints
-scenarios: ["AI/ML项目", "后端开发"]
+scenarios:
+- AI/ML项目
+- 后端开发
 ---
 
 # 在SageMaker部署SGLang并集成Strands代理自定义解析器
@@ -22,16 +36,19 @@ scenarios: ["AI/ML项目", "后端开发"]
 - **链接**: [https://aws.amazon.com/blogs/machine-learning/building-custom-model-provider-for-strands-agents-with-llms-hosted-on-sagemaker-ai-endpoints](https://aws.amazon.com/blogs/machine-learning/building-custom-model-provider-for-strands-agents-with-llms-hosted-on-sagemaker-ai-endpoints)
 
 ---
+
 ## 摘要/简介
 
 本文演示了在使用托管在 SageMaker 上、且不原生支持 Bedrock Messages API 格式的 LLM 时，如何为 Strands 代理构建自定义模型解析器。我们将介绍如何使用 awslabs/ml-container-creator 在 SageMaker 上部署 SGLang 版本的 Llama 3.1，然后实现自定义解析器，将其与 Strands 代理集成。
 
 ---
+
 ## 导语
 
 在构建 Amazon Bedrock 的 Strands 代理时，将 SageMaker 上部署的开源大模型（如 Llama 3.1）接入常面临输出格式不兼容的挑战。本文将演示如何利用 ml-container-creator 部署 SGLang 推理环境，并深入讲解构建自定义模型解析器的完整流程。通过本文，您将掌握解决异构模型格式兼容性的具体方法，实现 Strands 代理与自托管模型的无缝对接。
 
 ---
+
 ## 摘要
 
 ### 总结：构建自定义模型提供商以集成 SageMaker AI 终端节点与 Strands Agents
@@ -44,6 +61,7 @@ scenarios: ["AI/ML项目", "后端开发"]
 2.  **自定义解析器实现**：由于托管在 SageMaker 上的模型通常无法直接兼容 Bedrock 的消息 API 格式，文章重点介绍了如何实现一个“自定义模型解析器”。通过编写这个解析器，可以将 Strands Agents 的请求转换为 SageMaker 终端节点能理解的格式，并将响应转换回 Strands 所需的结构，从而实现无缝对接。
 
 ---
+
 ## 评论
 
 ### 中心观点
@@ -94,6 +112,7 @@ scenarios: ["AI/ML项目", "后端开发"]
     *   使用Locust或K6
 
 ---
+
 ## 技术分析
 
 基于您提供的文章标题和摘要，虽然原文内容被截断，但结合AWS技术生态、SageMaker、Strands Agents（推测为AWS内部或特定合作伙伴的Agent框架，或者是对"Bedrock Agents"的特定指代）以及Llama 3.1与SGLang的技术特性，我可以为您构建一份深度分析报告。
@@ -104,9 +123,9 @@ scenarios: ["AI/ML项目", "后端开发"]
 
 ---
 
-# 深度分析：构建基于SageMaker托管LLM的自定义Agent模型提供商
+### 深度分析：构建基于SageMaker托管LLM的自定义Agent模型提供商
 
-## 1. 核心观点深度解读
+### 1. 核心观点深度解读
 
 ### 文章的主要观点
 文章的主要观点是：**企业不应被锁定在单一的模型提供商API格式（如Bedrock Messages API）中。** 通过利用SageMaker的灵活性和SGLang的高性能推理能力，开发者可以将任意开源大模型（如Llama 3.1）封装为符合Agent框架标准的“自定义模型提供商”，从而在不牺牲性能的前提下，实现对基础设施的完全控制。
@@ -121,7 +140,7 @@ scenarios: ["AI/ML项目", "后端开发"]
 ### 为什么这个观点重要
 随着企业对数据隐私和成本控制的关注增加，自托管开源模型成为趋势。然而，主流的Agent开发框架（如LangChain, Bedrock Agents）通常针对特定API优化。这篇文章解决了**“想用开源模型的高性价比，又想要Agent框架的易用性”**这一痛点，是企业级AI落地的重要拼图。
 
-## 2. 关键技术要点
+### 2. 关键技术要点
 
 ### 涉及的关键技术或概念
 1.  **SGLang**：一个高性能的LLM推理引擎，以其高吞吐量和低延迟著称，特别适合处理大规模并发请求和复杂的结构化生成。
@@ -140,7 +159,7 @@ scenarios: ["AI/ML项目", "后端开发"]
 ### 技术创新点分析
 文章的创新点在于**“中间件思维”**。它没有试图修改SageMaker或Agent框架的核心代码，而是通过“自定义提供商”这一接口层，打通了异构系统。这展示了如何利用SGLang的高性能（如RadixAttention）来弥补开源模型在推理速度上的短板，使其具备生产级服务能力。
 
-## 3. 实际应用价值
+### 3. 实际应用价值
 
 ### 对实际工作的指导意义
 对于正在构建AI Agent的企业，这篇文章指明了**降低Token成本**和**保障数据隐私**的具体路径。它证明了使用AWS自托管服务并不意味着放弃高级的编排能力。
@@ -158,7 +177,7 @@ scenarios: ["AI/ML项目", "后端开发"]
 *   **优先使用SGLang**：如果使用Llama 3.1 70B或405B，SGLang的KV Cache优化是必须的。
 *   **标准化输出**：在编写Parser时，务必处理模型输出格式错误的情况，增加容错逻辑。
 
-## 4. 行业影响分析
+### 4. 行业影响分析
 
 ### 对行业的启示
 这标志着**“推理基础设施层”的成熟**。行业正在从“模型大战”转向“推理优化大战”。SGLang、vLLM等工具与云厂商的深度整合，意味着开源模型的生产力门槛正在急剧降低。
@@ -170,7 +189,7 @@ scenarios: ["AI/ML项目", "后端开发"]
 *   **MaaS的标准化**：模型服务协议将趋向统一（如OpenAI协议成为事实标准）。
 *   **私有化Agent的爆发**：随着此类教程的普及，私有化部署Agent将从“奢侈品”变为“标配”。
 
-## 5. 延伸思考
+### 5. 延伸思考
 
 ### 引发的其他思考
 *   **成本与性能的平衡点**：SageMaker托管成本（GPU实例小时费）加上开发成本，是否真的比直接调用Bedrock API便宜？这通常取决于QPS（每秒查询率）。
@@ -180,23 +199,7 @@ scenarios: ["AI/ML项目", "后端开发"]
 *   **动态模型路由**：根据请求复杂度，在SageMaker（处理简单任务）和Bedrock Claude（处理复杂推理）之间动态路由。
 *   **量化部署**：结合AWQ/GGUF量化技术，在SageMaker CPU实例上部署小参数模型，进一步降低成本。
 
-## 6. 实践建议
-
-### 如何应用到自己的项目
-1.  **评估现有模型**：检查你正在使用的Agent框架是否支持“自定义HTTP端点”或“自定义Provider”。
-2.  **容器化测试**：在本地使用Docker复现SGLang + Llama 3.1的环境，编写解析脚本。
-3.  **部署上云**：使用SageMaker的`CreateModel`和`CreateEndpointConfig` API进行部署。
-
-### 具体的行动建议
-*   **学习SGLang配置**：熟悉`--tp` (Tensor Parallelism) 和 `--chat-template` 参数。
-*   **编写BDD测试**：为你的Custom Parser编写行为驱动开发测试，确保各种模型输出（包括错误的JSON）都能被正确处理或报错。
-
-### 需要补充的知识
-*   **Docker与容器编排**。
-*   **Python异步编程**：处理高并发请求。
-*   **JSON Schema验证**：确保模型输出符合工具定义。
-
-## 7. 案例分析
+### 7. 案例分析
 
 ### 成功案例分析
 某电商公司构建了“智能客服Agent”。由于涉及用户隐私，不能将数据传给公共API。
@@ -207,7 +210,7 @@ scenarios: ["AI/ML项目", "后端开发"]
 某团队试图在SageMaker上使用多卡部署Llama 3 405B，但未正确配置SGLang的分布式通信。
 *   **教训**：忽视了SageMaker底层网络带宽限制（EFA vs 标准以太网），导致推理极慢。**教训**：在部署大模型前，必须验证实例的网络吞吐能力。
 
-## 8. 哲学与逻辑：论证地图
+### 8. 哲学与逻辑：论证地图
 
 ### 中心命题
 **在构建企业级Agent应用时，采用“自托管模型 + 自定义协议解析”的混合架构优于直接依赖单一托管API，因为它在保障数据主权的同时，提供了与原生API相当的功能完整性。**
@@ -232,9 +235,8 @@ scenarios: ["AI/ML项目", "后端开发"]
     *   **实验**：运行10,000次并发工具调用，记录SGLang的自定义Parser与Bedrock原生API的错误率和超时率。若错误率<0.5%且成本降低>30%，则命题成立。
 
 ---
-## 最佳实践
 
-## 最佳实践指南
+## 最佳实践
 
 ### 实践 1：优化模型端点的配置与延迟
 
@@ -326,6 +328,7 @@ scenarios: ["AI/ML项目", "后端开发"]
 **注意事项**: 测试环境应尽量模拟生产环境，以避免潜在问题。
 
 ---
+
 ## 学习要点
 
 - 通过实现标准化的请求/响应接口，开发者可以将部署在 SageMaker 上的 LLM 无缝集成为 Strands Agents 的自定义模型提供商。
@@ -337,6 +340,7 @@ scenarios: ["AI/ML项目", "后端开发"]
 - 这种架构模式不仅限于 SageMaker，还可复用于连接任何符合 OpenAI 协议或自建的其他远程推理端点。
 
 ---
+
 ## 引用
 
 - **文章/节目**: [https://aws.amazon.com/blogs/machine-learning/building-custom-model-provider-for-strands-agents-with-llms-hosted-on-sagemaker-ai-endpoints](https://aws.amazon.com/blogs/machine-learning/building-custom-model-provider-for-strands-agents-with-llms-hosted-on-sagemaker-ai-endpoints)
@@ -346,8 +350,6 @@ scenarios: ["AI/ML项目", "后端开发"]
 
 ---
 
-
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [后端](/categories/%E5%90%8E%E7%AB%AF/)
@@ -361,4 +363,3 @@ scenarios: ["AI/ML项目", "后端开发"]
 - [为Strands智能体构建SageMaker托管LLM自定义解析器]({{< relref "posts/20260306-blogs_podcasts-building-custom-model-provider-for-strands-agents--3.md" >}})
 - [为Strands智能体构建SageMaker自定义模型解析器]({{< relref "posts/20260306-blogs_podcasts-building-custom-model-provider-for-strands-agents--4.md" >}})
 - [在SageMaker上部署SGLang并集成Strands智能体自定义模型]({{< relref "posts/20260306-blogs_podcasts-building-custom-model-provider-for-strands-agents--5.md" >}})
-*本文由 AI Stack 自动生成，包含深度分析与方法论思考。*
