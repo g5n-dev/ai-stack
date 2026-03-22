@@ -170,6 +170,31 @@ class AnthropicResponseParsingTest(unittest.TestCase):
         self.assertEqual(client.client.messages.calls[0]["max_tokens"], 300)
         self.assertEqual(client.client.messages.calls[1]["max_tokens"], 2048)
 
+    def test_truncated_retry_uses_larger_budget_after_thinking_fallback(self):
+        client = self.anthropic_client_module.AnthropicClient.__new__(self.anthropic_client_module.AnthropicClient)
+        client.config = {
+            "base_url": "https://api.minimaxi.com/anthropic",
+            "max_tokens": 8192,
+            "llm_max_retries": 0,
+            "temperature": 0.3,
+            "min_fallback_max_tokens": 2048,
+        }
+        client._semaphore = contextlib.nullcontext()
+        client.client = _FakeClient(
+            [
+                _Message([_ThinkingBlock()], stop_reason="max_tokens"),
+                _Message([_TextBlock("partial answer")], stop_reason="max_tokens"),
+                _Message([_TextBlock("complete answer")], stop_reason="end_turn"),
+            ]
+        )
+
+        text = client.create_message("prompt", max_tokens=200, temperature=0.1)
+
+        self.assertEqual(text, "complete answer")
+        self.assertEqual(len(client.client.messages.calls), 3)
+        self.assertEqual(client.client.messages.calls[1]["max_tokens"], 2048)
+        self.assertEqual(client.client.messages.calls[2]["max_tokens"], 4096)
+
     def test_twitter_analyzer_extracts_text_from_mixed_blocks(self):
         analyzer = self.twitter_analyzer_module.TwitterContentAnalyzer.__new__(self.twitter_analyzer_module.TwitterContentAnalyzer)
         message = _Message([_ThinkingBlock(), _TextBlock('{"summary":"ok"}')])

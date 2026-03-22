@@ -205,7 +205,7 @@ class AnthropicClient:
         Returns:
             str: 响应内容
         """
-        max_tokens = max_tokens or self.config.get('max_tokens', 4096)
+        current_max_tokens = max_tokens or self.config.get('max_tokens', 4096)
         model = (
             os.environ.get("ANTHROPIC_MODEL")
             or self.config.get('model')
@@ -228,7 +228,7 @@ class AnthropicClient:
                         **self._build_request_kwargs(
                             prompt=prompt,
                             model=model,
-                            max_tokens=max_tokens,
+                            max_tokens=current_max_tokens,
                             temperature=temperature,
                         )
                     )
@@ -237,17 +237,18 @@ class AnthropicClient:
                     response_text = self._extract_text_from_message(message)
                 except NoTextContentError as e:
                     if ("thinking" in e.block_types) and self._is_minimax_backend():
-                        fallback_max_tokens = self._fallback_max_tokens(max_tokens)
-                        logger.warning(
+                        fallback_max_tokens = self._fallback_max_tokens(current_max_tokens)
+                        logger.info(
                             "MiniMax returned thinking without text; retrying once with thinking disabled "
                             f"and max_tokens={fallback_max_tokens}"
                         )
+                        current_max_tokens = fallback_max_tokens
                         with self._semaphore:
                             fallback_message = self.client.messages.create(
                                 **self._build_request_kwargs(
                                     prompt=prompt,
                                     model=model,
-                                    max_tokens=fallback_max_tokens,
+                                    max_tokens=current_max_tokens,
                                     temperature=temperature,
                                     disable_thinking=True,
                                 )
@@ -258,14 +259,15 @@ class AnthropicClient:
                         raise
 
                 if self._should_retry_truncated_text(message=message, text=response_text) and not retried_truncated_text:
-                    fallback_max_tokens = self._fallback_max_tokens(max_tokens)
-                    logger.warning(
-                        "LLM response ended at max_tokens; retrying once with max_tokens="
-                        f"{fallback_max_tokens}"
-                    )
-                    max_tokens = fallback_max_tokens
-                    retried_truncated_text = True
-                    continue
+                    fallback_max_tokens = self._fallback_max_tokens(current_max_tokens)
+                    if fallback_max_tokens > current_max_tokens:
+                        logger.info(
+                            "LLM response ended at max_tokens; retrying once with max_tokens="
+                            f"{fallback_max_tokens}"
+                        )
+                        current_max_tokens = fallback_max_tokens
+                        retried_truncated_text = True
+                        continue
                 return response_text
 
             except anthropic.APIError as e:
