@@ -11,6 +11,8 @@ import json
 
 from anthropic import Anthropic
 
+from runtime_env import load_project_env
+
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
@@ -26,6 +28,7 @@ class TwitterContentAnalyzer:
             api_key: Anthropic API密钥
             base_url: 自定义API基础URL（用于Claude Code）
         """
+        load_project_env()
         resolved_api_key = (api_key or "").strip() or os.environ.get("ANTHROPIC_AUTH_TOKEN") or os.environ.get("ANTHROPIC_API_KEY")
         resolved_base_url = (base_url or "").strip() or os.environ.get("ANTHROPIC_BASE_URL")
         default_model = "MiniMax-M2.7-highspeed" if "minimax" in resolved_base_url.lower() else "claude-3-5-sonnet-20241022"

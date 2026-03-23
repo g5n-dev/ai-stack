@@ -18,6 +18,9 @@ import yaml
 project_root = Path(__file__).parent.parent
 sys.path.insert(0, str(project_root))
 
+from runtime_env import load_project_env
+load_project_env(project_root)
+
 from crawler.main import CrawlerOrchestrator
 from processor.main import ProcessorOrchestrator
 from processor.markdown_normalizer import remove_markdown_sections_by_heading

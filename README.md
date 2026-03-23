@@ -94,12 +94,17 @@ SEARXNG_BASE_URL=https://your-searxng-instance/search
 # 激活虚拟环境
 source venv/bin/activate
 
-# 生成内容
-python scripts/generate_content.py
+# 预检本地环境
+python3 scripts/preflight.py
+
+# 只跑抓取 + AI 处理 + Markdown 生成
+./scripts/run_local.sh --skip-build
+
+# 跑完整本地链路（包含 Hugo 构建）
+./scripts/run_local.sh
 
 # 本地预览 Hugo 站点
-cd blog
-hugo server -D
+./scripts/run_local.sh --serve
 ```
 
 访问 `http://localhost:1313` 查看效果。

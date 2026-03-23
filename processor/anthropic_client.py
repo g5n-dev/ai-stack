@@ -12,6 +12,8 @@ import random
 import threading
 import time
 
+from runtime_env import load_project_env
+
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
@@ -42,6 +44,7 @@ class AnthropicClient:
     """Anthropic API 客户端封装"""
 
     def __init__(self, config_path='config/anthropic.yaml'):
+        load_project_env()
         self.config = self._load_config(config_path)
         self.client = self._init_client()
         concurrency = self.config.get("llm_concurrency", 3)
