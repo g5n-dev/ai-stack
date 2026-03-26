@@ -58,6 +58,22 @@ _PROMPT_LEAK_LINE_RE = re.compile(
     r"(?:\*\*)?\s*[:：]\s*.+$"
 )
 
+_AUTH_FAILURE_HINTS = (
+    "401",
+    "403",
+    "unauthorized",
+    "forbidden",
+    "authentication",
+    "auth",
+    "invalid api key",
+    "invalid_api_key",
+    "身份验证失败",
+    "鉴权",
+    "api key",
+    "access token",
+    "token",
+)
+
 
 def _looks_like_prompt_leak_line(line: str) -> bool:
     s = str(line or "").strip()
@@ -202,6 +218,50 @@ def sanitize_public_sections_in_posts(*, posts_dir: Path) -> tuple[int, int]:
         removed_sections_total += removed
 
     return changed_files, removed_sections_total
+
+
+def looks_like_llm_auth_failure(text: str) -> bool:
+    s = str(text or "").strip()
+    if not s:
+        return False
+    lowered = s.lower()
+    return any(hint in lowered or hint in s for hint in _AUTH_FAILURE_HINTS)
+
+
+def summarize_processed_postability(processed_data: dict) -> dict:
+    summary = {
+        "total_items": 0,
+        "skipped_items": 0,
+        "auth_error_items": 0,
+        "auth_error_examples": [],
+    }
+
+    if not isinstance(processed_data, dict):
+        return summary
+
+    for source, items in processed_data.items():
+        if not isinstance(items, list):
+            continue
+        for item in items:
+            if not isinstance(item, dict):
+                continue
+            summary["total_items"] += 1
+
+            if item.get("skip_post", False):
+                summary["skipped_items"] += 1
+
+            reasons = [
+                item.get("ai_reason", ""),
+                item.get("moderation_reason", ""),
+                item.get("processing_error", ""),
+            ]
+            if any(looks_like_llm_auth_failure(reason) for reason in reasons):
+                summary["auth_error_items"] += 1
+                if len(summary["auth_error_examples"]) < 3:
+                    title = str(item.get("title") or item.get("catchy_title") or "Untitled").strip()
+                    summary["auth_error_examples"].append(f"{source}: {title}")
+
+    return summary
 
 
 def _relref_target_exists(*, content_root: Path, target: str) -> bool:
@@ -404,11 +464,16 @@ class SuperEnhancedContentGenerator:
             logger.info("    This may take a while.")
             processed_data = self.processor.process_by_source(crawled_data)
             logger.info(f"✓ Super enhanced content from {len(processed_data)} sources")
+            postability = summarize_processed_postability(processed_data)
 
             # 3. 生成超级增强版 Markdown 文章
             logger.info("\n[3/4] Generating Markdown posts...")
             posts_created = self._generate_posts(processed_data)
             logger.info(f"✓ Created {posts_created} Markdown posts")
+            self._raise_for_fatal_post_generation_state(
+                posts_created=posts_created,
+                postability=postability,
+            )
 
             if sanitize_relrefs:
                 content_root = project_root / "blog" / "content"
@@ -442,6 +507,30 @@ class SuperEnhancedContentGenerator:
         except Exception as e:
             logger.error(f"Content generation failed: {e}", exc_info=True)
             return False
+
+    def _raise_for_fatal_post_generation_state(self, *, posts_created: int, postability: dict) -> None:
+        total_items = int(postability.get("total_items", 0) or 0)
+        auth_error_items = int(postability.get("auth_error_items", 0) or 0)
+
+        if posts_created > 0:
+            if auth_error_items > 0:
+                logger.warning(
+                    "Some content failed due to LLM authentication issues: items=%s examples=%s",
+                    auth_error_items,
+                    ", ".join(postability.get("auth_error_examples", [])) or "n/a",
+                )
+            return
+
+        if total_items <= 0:
+            return
+
+        if auth_error_items > 0:
+            examples = ", ".join(postability.get("auth_error_examples", [])) or "n/a"
+            raise RuntimeError(
+                "LLM authentication failed and no Markdown posts were created. "
+                "Check ANTHROPIC_AUTH_TOKEN, ANTHROPIC_BASE_URL, and ANTHROPIC_MODEL. "
+                f"Examples: {examples}"
+            )
 
     def _generate_posts(self, processed_data: dict) -> int:
         """
