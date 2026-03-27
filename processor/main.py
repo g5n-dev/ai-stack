@@ -21,6 +21,7 @@ from processor.enricher import enrich_github_repo
 from processor.scenario_analyzer import ScenarioAnalyzer
 from processor.ai_filter import AIThemeFilter
 from processor.tech_stack import export_to_json
+from runtime_profile import apply_anthropic_runtime_profile, get_runtime_profile
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -29,11 +30,12 @@ logger = logging.getLogger(__name__)
 class ProcessorOrchestrator:
     """内容处理调度器"""
 
-    def __init__(self, config_path='config/anthropic.yaml'):
+    def __init__(self, config_path='config/anthropic.yaml', runtime_profile: str | None = None):
         self.config_path = Path(config_path)
+        self.runtime_profile = get_runtime_profile(runtime_profile)
         self.config = self._load_config()
         try:
-            self.client = AnthropicClient(config_path)
+            self.client = AnthropicClient(config_path, runtime_profile=self.runtime_profile)
         except Exception as e:
             logger.warning(f"Anthropic client disabled: {e}")
             self.client = NullAnthropicClient(str(e))
@@ -216,7 +218,8 @@ class ProcessorOrchestrator:
         """加载配置文件"""
         try:
             with open(self.config_path, 'r', encoding='utf-8') as f:
-                return yaml.safe_load(f).get('anthropic', {})
+                config = (yaml.safe_load(f) or {}).get('anthropic', {})
+                return apply_anthropic_runtime_profile(config, self.runtime_profile)
         except Exception as e:
             logger.error(f"Failed to load config: {e}")
             return {}

@@ -13,6 +13,7 @@ import argparse
 import re
 import urllib.parse
 import yaml
+from typing import Optional
 
 # 添加项目根目录到路径
 project_root = Path(__file__).parent.parent
@@ -20,6 +21,7 @@ sys.path.insert(0, str(project_root))
 
 from runtime_env import load_project_env
 load_project_env(project_root)
+from runtime_profile import get_runtime_profile
 
 from crawler.main import CrawlerOrchestrator
 from processor.main import ProcessorOrchestrator
@@ -422,9 +424,20 @@ def sanitize_taxonomy_links_in_posts(*, posts_dir: Path) -> tuple[int, int]:
 class SuperEnhancedContentGenerator:
     """内容生成器"""
 
-    def __init__(self, *, dedupe: bool = True, dedupe_scope: str = "global"):
-        self.crawler = CrawlerOrchestrator(dedupe=dedupe, dedupe_scope=dedupe_scope)
-        self.processor = ProcessorOrchestrator()
+    def __init__(
+        self,
+        *,
+        dedupe: bool = True,
+        dedupe_scope: str = "global",
+        runtime_profile: Optional[str] = None,
+    ):
+        self.runtime_profile = get_runtime_profile(runtime_profile)
+        self.crawler = CrawlerOrchestrator(
+            dedupe=dedupe,
+            dedupe_scope=dedupe_scope,
+            runtime_profile=self.runtime_profile,
+        )
+        self.processor = ProcessorOrchestrator(runtime_profile=self.runtime_profile)
         self.publisher = PublisherOrchestrator()
         self.posts_dir = project_root / 'blog' / 'content' / 'posts'
 
@@ -444,6 +457,7 @@ class SuperEnhancedContentGenerator:
             logger.info("=" * 80)
             logger.info("Starting content generation process")
             logger.info("Mode: 15+ LLM calls per article")
+            logger.info(f"Runtime profile: {self.runtime_profile}")
             logger.info("=" * 80)
 
             # 1. 爬取内容
@@ -1970,6 +1984,11 @@ def main():
         action="store_true",
         help="关闭 relref 清理",
     )
+    parser.add_argument(
+        "--runtime-profile",
+        default=None,
+        help="运行档位：default（本地完整模式）或 ci（GitHub Actions 轻量模式）",
+    )
 
     args = parser.parse_args()
 
@@ -1998,7 +2017,11 @@ def main():
             logger.info("✓ Public-only sections OK")
         return 0
 
-    generator = SuperEnhancedContentGenerator(dedupe=not args.no_dedupe, dedupe_scope=args.dedupe_scope)
+    generator = SuperEnhancedContentGenerator(
+        dedupe=not args.no_dedupe,
+        dedupe_scope=args.dedupe_scope,
+        runtime_profile=args.runtime_profile,
+    )
     success = generator.run(
         crawl_duration_hours=args.crawl_duration_hours,
         crawl_interval_minutes=args.crawl_interval_minutes,

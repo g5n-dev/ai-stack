@@ -13,6 +13,7 @@ import threading
 import time
 
 from runtime_env import load_project_env
+from runtime_profile import apply_anthropic_runtime_profile, get_runtime_profile
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -43,8 +44,9 @@ class NullAnthropicClient:
 class AnthropicClient:
     """Anthropic API 客户端封装"""
 
-    def __init__(self, config_path='config/anthropic.yaml'):
+    def __init__(self, config_path='config/anthropic.yaml', runtime_profile: str | None = None):
         load_project_env()
+        self.runtime_profile = get_runtime_profile(runtime_profile)
         self.config = self._load_config(config_path)
         self.client = self._init_client()
         concurrency = self.config.get("llm_concurrency", 3)
@@ -65,7 +67,7 @@ class AnthropicClient:
                     key: self._resolve_env_placeholder(value)
                     for key, value in anthropic_config.items()
                 }
-                return anthropic_config
+                return apply_anthropic_runtime_profile(anthropic_config, self.runtime_profile)
 
         except Exception as e:
             logger.error(f"Failed to load config: {e}")
