@@ -17,6 +17,7 @@ from crawler.blogs_podcasts import BlogsPodcastsCrawler
 from crawler.reddit import RedditCrawler
 from crawler.twitter_crawler import TwitterRecentCrawler
 from crawler.dedupe import canonicalize_url
+from runtime_profile import apply_sources_runtime_profile, get_runtime_profile
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -25,8 +26,15 @@ logger = logging.getLogger(__name__)
 class CrawlerOrchestrator:
     """爬虫调度器"""
 
-    def __init__(self, config_path='config/sources.yaml', dedupe: bool = True, dedupe_scope: str = "global"):
+    def __init__(
+        self,
+        config_path='config/sources.yaml',
+        dedupe: bool = True,
+        dedupe_scope: str = "global",
+        runtime_profile: str | None = None,
+    ):
         self.config_path = Path(config_path)
+        self.runtime_profile = get_runtime_profile(runtime_profile)
         self.config = self._load_config()
         self.dedupe = dedupe
         self.dedupe_scope = dedupe_scope  # global | per_source
@@ -36,7 +44,8 @@ class CrawlerOrchestrator:
         """加载配置文件"""
         try:
             with open(self.config_path, 'r', encoding='utf-8') as f:
-                return yaml.safe_load(f)
+                config = yaml.safe_load(f) or {'sources': {}}
+                return apply_sources_runtime_profile(config, self.runtime_profile)
         except Exception as e:
             logger.error(f"Failed to load config: {e}")
             return {'sources': {}}

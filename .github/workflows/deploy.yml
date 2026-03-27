@@ -22,6 +22,7 @@ env:
   ANTHROPIC_BASE_URL: ${{ secrets.ANTHROPIC_BASE_URL }}
   ANTHROPIC_MODEL: ${{ secrets.ANTHROPIC_MODEL }}
   SEARXNG_BASE_URL: ${{ secrets.SEARXNG_BASE_URL }}
+  AI_STACK_RUNTIME_PROFILE: ci
   SITE_BASE_URL: https://ai-stack.site/
   SITEMAP_PATH: blog/public/sitemap.xml
   BING_INDEXNOW_API_KEY: ${{ secrets.BING_INDEXNOW_API_KEY }}
@@ -33,6 +34,7 @@ jobs:
   build-and-deploy:
     if: ${{ !(github.event_name == 'push' && github.actor == 'github-actions[bot]') }}
     runs-on: ubuntu-latest
+    timeout-minutes: 45
     steps:
       - name: Checkout main branch
         uses: actions/checkout@v4
@@ -86,9 +88,9 @@ jobs:
           ANTHROPIC_BASE_URL: ${{ secrets.ANTHROPIC_BASE_URL }}
           SEARXNG_BASE_URL: ${{ secrets.SEARXNG_BASE_URL }}
         run: |
-          echo "=== Generating Posts (crawl + process + write markdown) ==="
+          echo "=== Generating Posts (crawl + process + write markdown, runtime_profile=${AI_STACK_RUNTIME_PROFILE}) ==="
           if [ -f scripts/generate_content.py ]; then
-            python3 scripts/generate_content.py --dedupe-scope global
+            python3 scripts/generate_content.py --dedupe-scope global --runtime-profile "${AI_STACK_RUNTIME_PROFILE}"
           else
             echo "Content generator not found, skipping..."
           fi
