@@ -96,6 +96,7 @@ jobs:
           fi
 
       - name: Moderation cleanup (LLM)
+        if: ${{ env.AI_STACK_RUNTIME_PROFILE != 'ci' }}
         env:
           PYTHONPATH: /home/runner/work/ai-stack/ai-stack
           ANTHROPIC_AUTH_TOKEN: ${{ secrets.ANTHROPIC_AUTH_TOKEN }}
