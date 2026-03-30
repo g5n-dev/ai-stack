@@ -36,8 +36,6 @@ Relevant source files
 
   * [README.md](https://github.com/lss233/kirara-ai/blob/8295a5de/README.md)
 
-
-
 Kirara AI is a multi-platform chatbot framework that integrates large language models (LLMs) with instant messaging platforms through a flexible workflow-based automation system. The system provides a unified interface for deploying AI-powered conversational agents across platforms like Telegram, QQ, Discord, and WeChat, while supporting multiple LLM providers including OpenAI, Claude, Gemini, and local models.
 
 This document covers the high-level architecture and core components of the Kirara AI system. For detailed information about specific subsystems, see [Architecture](/lss233/kirara-ai/2-architecture), [Core Components](/lss233/kirara-ai/3-core-components), [Plugin System](/lss233/kirara-ai/4-plugin-system), and [Deployment](/lss233/kirara-ai/5-deployment).
@@ -53,19 +51,15 @@ Kirara AI serves as a comprehensive chatbot framework that abstracts the complex
   * Maintain conversational context and memory across sessions
   * Administer the entire system through a web-based management interface
 
-
-
 ## High-Level Architecture
 
 The Kirara AI system follows a layered architecture with clear separation between platform adapters, core orchestration logic, and AI model integrations.
 
 ### Core System Components
 
-
 Sources: [README.md1-267](https://github.com/lss233/kirara-ai/blob/8295a5de/README.md#L1-L267) diagrams provided in context
 
 ### Message Processing Flow
-
 
 Sources: [README.md1-267](https://github.com/lss233/kirara-ai/blob/8295a5de/README.md#L1-L267) system architecture analysis
 
@@ -95,8 +89,6 @@ The system integrates with multiple AI model providers through a unified adapter
   * **Local Models** \- Ollama, custom deployments
   * **Chinese Providers** \- DeepSeek, Qwen, Minimax, Kimi, Doubao
 
-
-
 Sources: [README.md84](https://github.com/lss233/kirara-ai/blob/8295a5de/README.md#L84-L84)
 
 ### Workflow Automation
@@ -108,8 +100,6 @@ The workflow system enables complex automation scenarios through:
   * **Conditional Logic** \- Rule-based message routing and processing
   * **Cross-platform Messaging** \- Send messages across different platforms
   * **Media Processing** \- Handle images, audio, and documents
-
-
 
 Sources: [README.md92](https://github.com/lss233/kirara-ai/blob/8295a5de/README.md#L92-L92) system architecture analysis
 
@@ -123,8 +113,6 @@ The system provides comprehensive management capabilities:
   * **Workflow Designer** \- Visual workflow creation and editing
   * **System Monitoring** \- Real-time system status and logging
 
-
-
 Sources: [README.md58-75](https://github.com/lss233/kirara-ai/blob/8295a5de/README.md#L58-L75) [README.md93](https://github.com/lss233/kirara-ai/blob/8295a5de/README.md#L93-L93)
 
 ## System Components Overview
@@ -137,8 +125,6 @@ The Kirara AI architecture consists of several key subsystems:
   * **[Media Management](/lss233/kirara-ai/3.4-media-management)** \- File storage, metadata, and cleanup systems
   * **[Workflow System](/lss233/kirara-ai/3.5-workflow-system)** \- Declarative automation engine with block-based processing
   * **[Memory System](/lss233/kirara-ai/3.6-memory-system)** \- Conversational context and persistence management
-
-
 
 Each component is implemented as part of the plugin architecture, allowing for modular deployment and extensibility. The [Plugin System](/lss233/kirara-ai/4-plugin-system) documentation covers the registration and dependency injection mechanisms that enable this modularity.
 
@@ -375,9 +361,6 @@ Kirara AI 采用了典型的 **事件驱动架构** 结合 **微内核架构**�
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：AI对话基础功能
 def simple_chat():
@@ -435,10 +418,8 @@ def streaming_chat():
 # 适合需要实时显示AI生成内容的场景，提升用户体验。
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某中型科技公司的AI客服系统
 
@@ -453,8 +434,6 @@ def streaming_chat():
 **效果**: 客服响应时间从平均2小时缩短至5秒内，人工客服工作量减少40%；工单分类准确率达92%，每月节省人力成本约15万元。
 
 ---
-
-
 
 ### 2：某跨境电商平台的智能推荐引擎
 
@@ -718,7 +697,6 @@ AI 模型推理结果通常具有重复性，通过 Redis 缓存高频请求的�
 - 作为一个在 GitHub 上趋势的项目，其文档和代码规范展示了如何构建易于维护和扩展的 AI 应用架构。
 - 该仓库可能演示了如何处理流式响应或实时数据交互，提升了用户体验。
 
-
 ---
 ## 学习路径
 
@@ -809,7 +787,6 @@ AI 模型推理结果通常具有重复性，通过 Redis 缓存高频请求的�
 ---
 ## 常见问题
 
-
 ### 1: lss233/kirara-ai 是一个什么项目？
 
 1: lss233/kirara-ai 是一个什么项目？
@@ -817,8 +794,6 @@ AI 模型推理结果通常具有重复性，通过 Redis 缓存高频请求的�
 **A**: lss233/kirara-ai 是一个基于 Web 技术构建的 AI 聊天与绘画前端项目。它旨在提供一个美观、现代化且功能强大的用户界面，用于与各种大语言模型（LLM）和 AI 绘画模型进行交互。该项目通常支持对接 OpenAI API 格式的接口，允许用户自建后端或使用第三方 API 来实现类似 ChatGPT 的对话体验以及 AI 生图功能。
 
 ---
-
-
 
 ### 2: 这个项目主要有哪些核心功能？
 
@@ -834,8 +809,6 @@ AI 模型推理结果通常具有重复性，通过 Redis 缓存高频请求的�
 
 ---
 
-
-
 ### 3: 如何部署 kirara-ai？
 
 3: 如何部署 kirara-ai？
@@ -850,8 +823,6 @@ AI 模型推理结果通常具有重复性，通过 Redis 缓存高频请求的�
 
 ---
 
-
-
 ### 4: 使用该项目是否需要自己提供 API Key？
 
 4: 使用该项目是否需要自己提供 API Key？
@@ -859,8 +830,6 @@ AI 模型推理结果通常具有重复性，通过 Redis 缓存高频请求的�
 **A**: 是的，作为一个前端界面项目，kirara-ai 本身不提供免费的 AI 算力服务。用户需要自行配置后端服务。这意味着你需要拥有一个兼容 OpenAI 格式的 API 后端（可以是官方 OpenAI API，也可以是开源模型如 Llama 的本地部署服务，或是中转 API 服务）。你需要在项目的设置面板中填入对应的 API Endpoint 和 API Key 才能正常使用聊天和绘图功能。
 
 ---
-
-
 
 ### 5: 项目支持接入哪些 AI 模型？
 
@@ -874,8 +843,6 @@ AI 模型推理结果通常具有重复性，通过 Redis 缓存高频请求的�
 
 ---
 
-
-
 ### 6: 遇到网络请求报错（如 401 或 500）该怎么办？
 
 6: 遇到网络请求报错（如 401 或 500）该怎么办？
@@ -887,8 +854,6 @@ AI 模型推理结果通常具有重复性，通过 Redis 缓存高频请求的�
 
 ---
 
-
-
 ### 7: 该项目与 ChatGPT 官方网页版相比有什么优势？
 
 7: 该项目与 ChatGPT 官方网页版相比有什么优势？
@@ -898,22 +863,6 @@ AI 模型推理结果通常具有重复性，通过 Redis 缓存高频请求的�
 2.  **高度定制**：用户可以修改源码，自定义 UI 主题、默认参数，甚至集成企业内部知识库。
 3.  **功能整合**：可能在一个界面内同时整合了对话和绘图功能，无需在多个网页间切换。
 4.  **无广告/纯净体验**：没有官方网页版的额外干扰，专注于交互体验。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 在使用 Kirara AI 进行模型推理时，如何通过命令行参数指定使用 GPU（如 `cuda:0`）而非 CPU 进行推理？请写出完整的命令行指令。
-
-### 提示**: 查阅项目文档中关于 `--device` 或 `--gpu-id` 相关的参数说明，通常这类参数接受 `cuda` 或 `cpu` 作为值。
-
-### 
-
----
 ## 实践建议
 
 基于该仓库的功能特性（多平台接入、多模态、工作流、人设调教），以下是针对实际部署和使用场景的 5-7 条实践建议：
@@ -961,7 +910,6 @@ AI 模型推理结果通常具有重复性，通过 Redis 缓存高频请求的�
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

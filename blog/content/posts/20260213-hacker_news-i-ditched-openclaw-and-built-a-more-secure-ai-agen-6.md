@@ -88,9 +88,6 @@ scenarios: ["AI/ML项目"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：本地AI代理的安全沙箱执行环境
 import subprocess
@@ -133,9 +130,6 @@ print(safe_execute_command("ls -l"))  # 允许的命令
 print(safe_execute_command("rm -rf /"))  # 不允许的命令
 ```
 
-
-
-
 ```python
 # 示例2：Mac Mini上的本地模型推理
 from transformers import pipeline
@@ -169,9 +163,6 @@ def local_ai_inference(prompt, model_name="distilbert-base-uncased-distilled-squ
 print(local_ai_inference("AI安全需要什么？"))
 ```
 
-
-
-
 ```python
 # 示例3：AI代理的敏感信息过滤
 import re
@@ -200,10 +191,8 @@ def sanitize_input(user_input):
 print(sanitize_input("我的邮箱是test@example.com，API密钥是sk-1234567890abcdef"))
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：个人开发者构建离线隐私财务助手
 
@@ -223,8 +212,6 @@ print(sanitize_input("我的邮箱是test@example.com，API密钥是sk-123456789
 
 ---
 
-
-
 ### 2：金融科技初创公司的自动化合规审查系统
 
  2：金融科技初创公司的自动化合规审查系统
@@ -242,8 +229,6 @@ print(sanitize_input("我的邮箱是test@example.com，API密钥是sk-123456789
 通过自建方案，公司在满足 SOC2 合规要求的前提下，实现了代码审查流程的自动化。新系统在处理 10 万行级别的代码库时，响应延迟比云端方案降低了 60%，且完全消除了数据泄露的风险。Mac Mini 的低成本硬件方案也为公司节省了约 70% 的 GPU 服务器租赁成本。
 
 ---
-
-
 
 ### 3：医疗健康领域的本地化病历分析终端
 
@@ -368,7 +353,6 @@ Agent 应仅拥有完成其特定任务所需的最小权限。不要使用 Root
 ---
 ## 常见问题
 
-
 ### 1: 作者为什么要放弃 OpenClaw 转而开发新的 AI Agent 方案？
 
 1: 作者为什么要放弃 OpenClaw 转而开发新的 AI Agent 方案？
@@ -376,8 +360,6 @@ Agent 应仅拥有完成其特定任务所需的最小权限。不要使用 Root
 **A**: 作者放弃 OpenClaw 的主要原因在于安全性和控制权。OpenClaw（可能指代 OpenAI 的 ChatGPT 或相关封闭生态 API）通常要求将数据上传至云端处理，这存在隐私泄露风险，且受到供应商严格的审查机制限制。为了构建一个更安全、私密且可控的 AI Agent，作者选择转向本地部署方案，利用 Mac Mini 的算力在本地运行大语言模型（LLM），从而确保数据不出本地，并拥有完全的代码和模型控制权。
 
 ---
-
-
 
 ### 2: 为什么选择 Mac Mini 作为运行本地 AI Agent 的硬件？
 
@@ -387,8 +369,6 @@ Agent 应仅拥有完成其特定任务所需的最小权限。不要使用 Root
 
 ---
 
-
-
 ### 3: "Blink" 在这个项目中具体指什么？它是如何工作的？
 
 3: "Blink" 在这个项目中具体指什么？它是如何工作的？
@@ -396,8 +376,6 @@ Agent 应仅拥有完成其特定任务所需的最小权限。不要使用 Root
 **A**: 在此语境下，"Blink" 通常指代作者构建的 AI Agent 软件系统或框架名称。它可能是一个运行在 Mac Mini 上的后端服务，或者是用于连接用户与本地大模型的交互接口。其工作原理通常是接收用户的指令，通过本地运行的模型进行意图识别和推理，然后调用系统工具或执行脚本来完成任务（如自动化操作、文件处理等），所有处理过程均在本地闭环完成。
 
 ---
-
-
 
 ### 4: 相比于使用云端 API（如 OpenAI），这种本地部署方案有什么优缺点？
 
@@ -407,8 +385,6 @@ Agent 应仅拥有完成其特定任务所需的最小权限。不要使用 Root
 
 ---
 
-
-
 ### 5: 普通用户如何复现这个项目？需要具备哪些技术背景？
 
 5: 普通用户如何复现这个项目？需要具备哪些技术背景？
@@ -416,8 +392,6 @@ Agent 应仅拥有完成其特定任务所需的最小权限。不要使用 Root
 **A**: 复现该项目需要具备一定的编程和系统运维能力。首先需要一台支持 Hypervisor 或具有良好 NPU/GPU 的 Mac Mini。其次，需要熟悉命令行操作，能够安装 Homebrew、Python 或 Ollama 等运行环境。用户还需要了解如何下载开源模型文件（GGUF 或 GGML 格式），并可能需要编写代码来调用模型 API。对于完全没有技术背景的用户，目前市面上已有一些封装好的应用（如 LM Studio），可以降低使用门槛，但构建定制化的 Agent 仍需开发能力。
 
 ---
-
-
 
 ### 6: 这种本地 AI Agent 的安全性真的比云端方案好吗？
 
@@ -427,29 +401,11 @@ Agent 应仅拥有完成其特定任务所需的最小权限。不要使用 Root
 
 ---
 
-
-
 ### 7: 运行这样的系统对 Mac Mini 的性能损耗和发热量影响大吗？
 
 7: 运行这样的系统对 Mac Mini 的性能损耗和发热量影响大吗？
 
 **A**: 这取决于所运行模型的参数量大小以及并发请求的数量。运行 7B 或 8B 参数的模型（如 Llama 3 8B）在现代 Mac Mini 上通常非常流畅，风扇噪音很小，甚至可以在后台静默运行。但如果运行 70B 或更大的模型，或者进行长时间的密集推理任务，CPU/GPU 负载会显著增加，导致设备发热量上升，风扇全速运转。不过，得益于 Apple Silicon 优秀的能效比，其功耗和发热通常仍远低于同级别的 PC GPU。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 假设你需要在一个受限环境中（如无外网的局域网服务器）部署一个轻量级 AI 服务。请列出在本地 Mac Mini 上部署开源大模型（如 Llama 3 或 Mistral）所需的核心软件栈（包括推理引擎和依赖库），并说明如何通过 API 进行简单的文本补全调用。
-
-### 提示**: 考虑使用 Python 作为中间层，你需要一个能够加载 GGUF 或原始权重的推理后端（如 llama.cpp 或 Ollama），以及一个封装了 HTTP 请求的库（如 Flask 或 FastAPI）来暴露接口。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://coder.com/blog/why-i-ditched-openclaw-and-built-a-more-secure-ai-agent-on-blink-mac-mini](https://coder.com/blog/why-i-ditched-openclaw-and-built-a-more-secure-ai-agent-on-blink-mac-mini)
@@ -458,7 +414,6 @@ Agent 应仅拥有完成其特定任务所需的最小权限。不要使用 Root
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

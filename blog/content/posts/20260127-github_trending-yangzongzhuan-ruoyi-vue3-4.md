@@ -40,8 +40,6 @@ Relevant source files
   * [src/main.js](https://github.com/yangzongzhuan/RuoYi-Vue3/blob/2dbc9165/src/main.js)
   * [src/views/index.vue](https://github.com/yangzongzhuan/RuoYi-Vue3/blob/2dbc9165/src/views/index.vue)
 
-
-
 This document provides a comprehensive introduction to the RuoYi-Vue3 framework, a rapid development platform designed for building administrative web applications. The RuoYi-Vue3 framework combines a Vue 3 frontend with a SpringBoot backend to provide a complete solution for developing enterprise management systems.
 
 For information about the core architecture and configuration details, see [Core Architecture](/yangzongzhuan/RuoYi-Vue3/2-core-architecture). For information about the permission system, see [Permission System](/yangzongzhuan/RuoYi-Vue3/2.2-permission-system).
@@ -59,7 +57,6 @@ Sources: [package.json2-5](https://github.com/yangzongzhuan/RuoYi-Vue3/blob/2dbc
 The RuoYi-Vue3 system is built on a clear separation between frontend and backend components, following the modern practice of frontend-backend separation.
 
 ### Architecture Diagram
-
 
 Sources: [README.md12-16](https://github.com/yangzongzhuan/RuoYi-Vue3/blob/2dbc9165/README.md#L12-L16) [src/main.js1-82](https://github.com/yangzongzhuan/RuoYi-Vue3/blob/2dbc9165/src/main.js#L1-L82)
 
@@ -101,7 +98,6 @@ RuoYi-Vue3 features a comprehensive set of modules and components designed for a
 
 ### System Component Diagram
 
-
 Sources: [src/main.js9-66](https://github.com/yangzongzhuan/RuoYi-Vue3/blob/2dbc9165/src/main.js#L9-L66) [README.md39-58](https://github.com/yangzongzhuan/RuoYi-Vue3/blob/2dbc9165/README.md#L39-L58)
 
 ### Feature Set
@@ -134,8 +130,6 @@ RuoYi-Vue3 includes a rich set of built-in features:
      * API documentation based on business code
      * Scheduled task management
 
-
-
 Sources: [README.md39-58](https://github.com/yangzongzhuan/RuoYi-Vue3/blob/2dbc9165/README.md#L39-L58) [src/views/index.vue4-33](https://github.com/yangzongzhuan/RuoYi-Vue3/blob/2dbc9165/src/views/index.vue#L4-L33)
 
 ## UI Customization
@@ -153,8 +147,6 @@ RuoYi-Vue3 supports extensive UI customization through its settings panel, allow
     * Logo display toggle
     * Dynamic title toggle
 
-
-
 These settings can be saved to localStorage for persistence across sessions.
 
 Sources: [src/layout/components/Settings/index.vue1-204](https://github.com/yangzongzhuan/RuoYi-Vue3/blob/2dbc9165/src/layout/components/Settings/index.vue#L1-L204)
@@ -168,10 +160,7 @@ To run the RuoYi-Vue3 project:
   * Node.js (latest stable version recommended)
   * Git
 
-
-
 ### Frontend Setup
-
 
 The frontend will be available at <http://localhost:80> by default.
 
@@ -420,37 +409,8 @@ RuoYi 正在经历一场 **“现代化复兴”**。
 ---
 ## 💻 实用代码示例
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 ## 📚 真实案例研究
-
 
 ### 1：某中型制造企业的供应链管理系统升级
 
@@ -478,8 +438,6 @@ RuoYi 正在经历一场 **“现代化复兴”**。
 
 ---
 
-
-
 ### 2：省级政务服务平台统一认证中心
 
  2：省级政务服务平台统一认证中心
@@ -505,8 +463,6 @@ RuoYi 正在经历一场 **“现代化复兴”**。
 🏆 获省级数字政府创新奖
 
 ---
-
-
 
 ### 3：智慧农业物联网监控平台
 
@@ -710,7 +666,6 @@ RuoYi 正在经历一场 **“现代化复兴”**。
 - 前后端分离技术栈** 🛠️
 - 后端基于 Spring Boot + Sa-Token（或 Spring Security），前端使用 Element Plus UI 组件库，完美展示了主流前后端分离架构的集成与通信规范。
 
-
 ---
 ## 🗺️ 循序渐进的学习路径
 
@@ -794,7 +749,6 @@ RuoYi 正在经历一场 **“现代化复兴”**。
 ---
 ## ❓ 常见问题解答
 
-
 ### 1: RuoYi-Vue3 是什么？它适用于什么场景？
 
 1: RuoYi-Vue3 是什么？它适用于什么场景？
@@ -804,8 +758,6 @@ RuoYi 正在经历一场 **“现代化复兴”**。
 它非常适用于企业内部管理系统（ERP、OA、CRM）、后台管理脚手架或作为毕业设计的项目基础。其内置的用户管理、菜单权限控制、代码生成器等功能能极大地提高开发效率 🚀。
 
 ---
-
-
 
 ### 2: 运行项目时前端报错 `Module not found: Error: Can't resolve '@/xxx'`，如何解决？
 
@@ -830,8 +782,6 @@ RuoYi 正在经历一场 **“现代化复兴”**。
 
 ---
 
-
-
 ### 3: 如何使用 RuoYi 的代码生成器快速生成 CRUD 代码？
 
 3: 如何使用 RuoYi 的代码生成器快速生成 CRUD 代码？
@@ -851,8 +801,6 @@ RuoYi 正在经历一场 **“现代化复兴”**。
 这样就可以快速拥有一个完整的增删改查页面了 ✨。
 
 ---
-
-
 
 ### 4: 启动后端项目时提示 `Connected to failed` 或数据库连接失败怎么办？
 
@@ -874,27 +822,9 @@ RuoYi 正在经历一场 **“现代化复兴”**。
 
 ---
 
-
-
 ### 5: 前端打包后部署到服务器，刷新
 
 5: 前端打包后部署到服务器，刷新
-
----
-## 🎯 挑战与思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**:
-
-### 若依框架通常将菜单路由存储在数据库中。请尝试在后台系统新增一个“测试菜单”，要求该菜单指向一个全新的空白页面组件（例如 `src/views/test/index.vue`），并确保在点击侧边栏菜单时能正确无报错地跳转显示。
-
-### 提示**:
-
----
 ## 💡 实践建议
 
 RuoYi-Vue3 是一个非常成熟且在国内企业应用中极具代表性的前后端分离脚手架。基于其技术栈（Spring Boot 3 + Vue 3 + Vite），以下是 7 条针对实际开发与落地的实践建议：

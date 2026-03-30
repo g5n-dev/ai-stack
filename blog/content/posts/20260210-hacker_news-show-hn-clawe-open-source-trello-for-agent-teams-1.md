@@ -69,9 +69,6 @@ Clawe 试图通过将人类的项目管理范式（看板/Kanban）引入多智�
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：创建任务看板
 def create_kanban_board():
@@ -112,9 +109,6 @@ print(f"已创建看板：{board['name']}")
 print(f"待办事项数量：{len(board['lists'][0]['cards'])}")
 ```
 
-
-
-
 ```python
 # 示例2：任务流转操作
 def move_card(board, card_id, from_list_id, to_list_id):
@@ -147,9 +141,6 @@ move_card(board, 1, "todo", "inprogress")
 print(f"当前进行中任务数：{len(board['lists'][1]['cards'])}")
 ```
 
-
-
-
 ```python
 # 示例3：代理任务分配
 def assign_task(board, card_id, agent_id):
@@ -174,10 +165,8 @@ assign_task(board, 2, "Agent-UI")
 print(f"任务2当前负责人：{board['lists'][0]['cards'][1]['assignee']}")
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某跨境电商运营团队
 
@@ -196,8 +185,6 @@ print(f"任务2当前负责人：{board['lists'][0]['cards'][1]['assignee']}")
 实现了 7x24 小时的即时响应，用户差评的平均响应时间从 4 小时缩短至 5 分钟。团队人工介入的工作量减少了 60%，员工得以专注于处理复杂的售后纠纷而非重复性的信息分类，店铺好评率提升了 15%。
 
 ---
-
-
 
 ### 2：中型软件研发团队的自动化测试流程
 
@@ -224,22 +211,6 @@ print(f"任务2当前负责人：{board['lists'][0]['cards'][1]['assignee']}")
 - 它通过将抽象的智能体逻辑转化为具体的卡片和列表，显著降低了人类监控和调试 AI 自主团队的难度。
 - 开源特性允许开发者根据特定的业务逻辑定制智能体的行为规则，避免了使用闭源 SaaS 产品时的黑盒限制。
 - 该项目填补了当前 AI 基础设施中“人机协作”界面的空白，使人类能以管理者而非操作者的身份参与 AI 自动化流程。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**:
-
-### 在构建类似 Clawe 的看板系统时，核心数据结构通常涉及“列表”和“卡片”。请设计一个 JSON Schema，用于表示一个看板的数据模型，要求包含至少三个列表（如：待办、进行中、已完成），并且每个列表中包含两张具有不同属性的卡片（如：标题、描述、截止日期、优先级）。
-
-### 提示**:
-
----
 ## 引用
 
 - **原文链接**: [https://github.com/getclawe/clawe](https://github.com/getclawe/clawe)
@@ -248,7 +219,6 @@ print(f"任务2当前负责人：{board['lists'][0]['cards'][1]['assignee']}")
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

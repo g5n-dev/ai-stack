@@ -64,9 +64,6 @@ OpenAI 退役 GPT-4o 等主力模型并代之以 GPT-4o-mini 等版本，本质�
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：检查API模型是否可用
 def check_model_availability(api_key, model_name):
@@ -96,9 +93,6 @@ model_to_check = "gpt-4o"
 is_available = check_model_availability(api_key, model_to_check)
 print(f"模型 {model_to_check} 是否可用: {is_available}")
 ```
-
-
-
 
 ```python
 # 示例2：自动切换到可用模型
@@ -138,9 +132,6 @@ available_model = get_available_model(api_key, preferred)
 print(f"将使用模型: {available_model}")
 ```
 
-
-
-
 ```python
 # 示例3：记录模型退役通知
 def log_model_deprecation(api_key, model_name, log_file="model_deprecation.log"):
@@ -175,10 +166,8 @@ for model in models_to_check:
     log_model_deprecation(api_key, model)
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：跨国金融科技公司的模型迁移与成本优化
 
@@ -197,8 +186,6 @@ for model in models_to_check:
 迁移完成后，新模型在处理复杂财务语义时的准确率提升了约 5%，且推理速度比旧模型提升了 30%。更重要的是，通过合理使用 GPT-4.1 mini 处理简单任务，公司在保持原有处理质量的前提下，将每月的 API 调用成本降低了 40%。
 
 ---
-
-
 
 ### 2：智能客服系统的平稳过渡与性能提升
 
@@ -314,7 +301,6 @@ OpenAI 通常会推荐替代模型（例如 GPT-4o 或 GPT-4.1 的继任者）�
 ---
 ## 常见问题
 
-
 ### 1: OpenAI 宣布在 ChatGPT 中退役的具体是哪些模型？
 
 1: OpenAI 宣布在 ChatGPT 中退役的具体是哪些模型？
@@ -322,8 +308,6 @@ OpenAI 通常会推荐替代模型（例如 GPT-4o 或 GPT-4.1 的继任者）�
 **A**: 根据 OpenAI 的官方公告，此次计划在 ChatGPT 中退役的模型包括四个版本：**GPT-4o**、**GPT-4.1**、**GPT-4.1 mini** 以及 **OpenAI o4-mini**。这些模型将从 ChatGPT 的可用模型列表中移除，用户将无法再通过标准界面直接调用这些特定版本来生成对话或内容。
 
 ---
-
-
 
 ### 2: 为什么要退役这些模型？是性能不佳吗？
 
@@ -337,8 +321,6 @@ OpenAI 通常会推荐替代模型（例如 GPT-4o 或 GPT-4.1 的继任者）�
 
 ---
 
-
-
 ### 3: 如果我正在使用这些模型进行开发或订阅服务，我该怎么办？
 
 3: 如果我正在使用这些模型进行开发或订阅服务，我该怎么办？
@@ -350,8 +332,6 @@ OpenAI 通常会推荐替代模型（例如 GPT-4o 或 GPT-4.1 的继任者）�
 
 ---
 
-
-
 ### 4: 这些模型退役后，我之前的聊天记录会被删除吗？
 
 4: 这些模型退役后，我之前的聊天记录会被删除吗？
@@ -359,8 +339,6 @@ OpenAI 通常会推荐替代模型（例如 GPT-4o 或 GPT-4.1 的继任者）�
 **A**: 通常情况下，**模型退役不会影响已保存的历史聊天记录**。之前使用 GPT-4o 或 GPT-4.1 生成的对话依然会保留在 ChatGPT 的聊天历史侧边栏中。但是，用户将无法再基于这些旧的对话使用已退役的模型进行“继续生成”或“重新生成”操作，系统可能会提示切换到当前可用的模型来继续对话。
 
 ---
-
-
 
 ### 5: 免费用户和付费用户受到的影响有何不同？
 
@@ -372,8 +350,6 @@ OpenAI 通常会推荐替代模型（例如 GPT-4o 或 GPT-4.1 的继任者）�
 
 ---
 
-
-
 ### 6: 如何找到这些退役模型的最佳替代品？
 
 6: 如何找到这些退役模型的最佳替代品？
@@ -382,22 +358,6 @@ OpenAI 通常会推荐替代模型（例如 GPT-4o 或 GPT-4.1 的继任者）�
 *   **GPT-4o / GPT-4.1**：通常建议迁移至 **GPT-4o** 的最新稳定版或 **GPT-4o-mini** 的最新版，具体取决于对成本和速度的要求。
 *   **OpenAI o4-mini**：这通常属于预览版或特定测试版，其功能往往已被 **o1-mini** 或 **o1** 的正式版本所涵盖。
 建议用户在切换前，查阅 OpenAI 官方模型对比表，以确定新模型是否符合延迟和推理深度需求。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: 异常处理与自动回退
-
-### 问题**：假设你正在维护一个依赖旧版 OpenAI 模型（如 `gpt-4o`）的自动化脚本。请编写一段 Python 代码，用于检测 API 调用是否因模型退役而失败（例如 HTTP 404 或 400 错误），并自动回退到当前推荐的替代模型（如 `gpt-4.1`）。
-
-### 提示**：考虑使用 `try-except` 块捕获异常，并设计一个映射表将旧模型名称映射到新模型名称，以便在捕获特定错误码时动态替换模型参数。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://openai.com/index/retiring-gpt-4o-and-older-models](https://openai.com/index/retiring-gpt-4o-and-older-models)
@@ -406,7 +366,6 @@ OpenAI 通常会推荐替代模型（例如 GPT-4o 或 GPT-4.1 的继任者）�
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

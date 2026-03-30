@@ -50,8 +50,6 @@ Relevant source files
   * [src/router/modules/mind.ts](https://github.com/pure-admin/vue-pure-admin/blob/b20323e6/src/router/modules/mind.ts)
   * [src/views/about/columns.tsx](https://github.com/pure-admin/vue-pure-admin/blob/b20323e6/src/views/about/columns.tsx)
 
-
-
 ## What is vue-pure-admin?
 
 vue-pure-admin is an open-source, production-ready admin dashboard template designed for building enterprise-grade middle and backend management systems. It is completely free and follows the MIT license, making it suitable for both commercial and non-commercial projects.
@@ -65,8 +63,6 @@ The template is built entirely using ECMAScript Module (ESM) standards and lever
   * **ESM-First** : Fully adopts ECMAScript Module standards for better tree-shaking and code organization
   * **Highly Customizable** : Flexible configuration system supporting themes, layouts, and internationalization
   * **Developer-Friendly** : Comprehensive TypeScript support, hot module replacement, and extensive tooling
-
-
 
 Sources: [README.md9-12](https://github.com/pure-admin/vue-pure-admin/blob/b20323e6/README.md#L9-L12) [README.en-US.md9-11](https://github.com/pure-admin/vue-pure-admin/blob/b20323e6/README.en-US.md#L9-L11) [package.json1-34](https://github.com/pure-admin/vue-pure-admin/blob/b20323e6/package.json#L1-L34)
 
@@ -82,8 +78,6 @@ This philosophy is reflected in the project's approach to:
   * **Innovation** : Incorporating modern development practices and optimizing user experience through thoughtful design
   * **Future-Oriented** : Staying current with web standards (ESM, latest Vue 3 features) while maintaining backward compatibility
   * **Performance** : Optimizing build size (under 2.3MB with Element Plus) and load times through careful dependency management
-
-
 
 Sources: [README.md14-16](https://github.com/pure-admin/vue-pure-admin/blob/b20323e6/README.md#L14-L16) [README.en-US.md13-15](https://github.com/pure-admin/vue-pure-admin/blob/b20323e6/README.en-US.md#L13-L15)
 
@@ -105,8 +99,6 @@ With `brotli` compression and CDN replacement enabled, the thin version can be r
   * Thin Version (Non-i18n): [pure-admin-thin](https://github.com/pure-admin/vue-pure-admin/blob/b20323e6/pure-admin-thin)
   * Thin Version (i18n): [pure-admin-thin/tree/i18n](https://github.com/pure-admin/vue-pure-admin/blob/b20323e6/pure-admin-thin/tree/i18n)
 
-
-
 Sources: [README.md18-23](https://github.com/pure-admin/vue-pure-admin/blob/b20323e6/README.md#L18-L23) [README.en-US.md17-22](https://github.com/pure-admin/vue-pure-admin/blob/b20323e6/README.en-US.md#L17-L22)
 
 ## Key Features
@@ -120,16 +112,12 @@ vue-pure-admin provides a comprehensive set of features for building modern admi
   * Role-Based Access Control (RBAC) with page and button-level permissions
   * Dynamic route generation based on user permissions
 
-
-
 ### System Administration
 
   * **User Management** : CRUD operations with department tree filtering
   * **Role Management** : Role definition with menu permission assignment
   * **Department Management** : Hierarchical organization structure
   * **Menu Management** : Dynamic menu configuration and management
-
-
 
 ### UI & Layout
 
@@ -139,15 +127,11 @@ vue-pure-admin provides a comprehensive set of features for building modern admi
   * Multi-tab navigation with keep-alive caching
   * Three tab styles: smart, card, and Chrome-style
 
-
-
 ### Internationalization
 
   * Built-in support for Chinese (zh-CN) and English (en)
   * Complete framework internationalization coverage
   * Easy to extend with additional languages via YAML locale files
-
-
 
 ### Developer Experience
 
@@ -157,8 +141,6 @@ vue-pure-admin provides a comprehensive set of features for building modern admi
   * Code inspector plugin for DOM-to-code navigation
   * Comprehensive ESLint, Prettier, and Stylelint configuration
 
-
-
 ### Component Library
 
   * 34+ custom components built on Element Plus
@@ -166,16 +148,12 @@ vue-pure-admin provides a comprehensive set of features for building modern admi
   * Utility components for common admin scenarios
   * 200+ demonstration pages showing various use cases
 
-
-
 ### Monitoring & Logging
 
   * Online user monitoring
   * Login log tracking
   * Operation log recording
   * System log with performance metrics
-
-
 
 Sources: [README.md1-226](https://github.com/pure-admin/vue-pure-admin/blob/b20323e6/README.md#L1-L226) [locales/zh-CN.yaml1-241](https://github.
 
@@ -415,37 +393,8 @@ Pure-admin 并没有消灭开发后台系统的复杂性，它只是将复杂性
 ---
 ## 💻 实用代码示例
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 ## 📚 真实案例研究
-
 
 ### 1：某跨境电商SaaS后台管理系统
 
@@ -469,8 +418,6 @@ Pure-admin 并没有消灭开发后台系统的复杂性，它只是将复杂性
 
 ---
 
-
-
 ### 2：智慧城市数据可视化平台
 
  2：智慧城市数据可视化平台
@@ -492,8 +439,6 @@ Pure-admin 并没有消灭开发后台系统的复杂性，它只是将复杂性
 3. 开发周期缩短 30%，且后续扩展功能更加灵活。  
 
 ---
-
-
 
 ### 3：企业内部低代码平台
 
@@ -743,7 +688,6 @@ pure-admin 使用 Pinia 进行状态管理。不合理的状态设计会导致�
 - 🎁 **交付双模选择**：同时提供 **精简版** 和 **完整版**，开发者既可以将其作为学习底层原理的脚手架，也可以直接将其作为生产力工具用于快速交付。
 - 🛠️ **高度灵活的扩展性**：核心库与业务逻辑解耦，支持二次封装和按需引入，方便开发者根据业务特性进行个性化扩展而不受限于模板。
 
-
 ---
 ## 🗺️ 循序渐进的学习路径
 
@@ -826,7 +770,6 @@ pure-admin 是基于 Vue 3 + TypeScript + Vite 构建的。不要急于看源码
 ---
 ## ❓ 常见问题解答
 
-
 ### 1: vue-pure-admin 和 pure-admin 是什么关系？我应该选择哪一个？
 
 1: vue-pure-admin 和 pure-admin 是什么关系？我应该选择哪一个？
@@ -840,8 +783,6 @@ pure-admin 是基于 Vue 3 + TypeScript + Vite 构建的。不要急于看源码
 **总结**：想直接用模板选 **pure-admin**；想自己组装或只用组件选 **vue-pure-admin**。
 
 ---
-
-
 
 ### 2: 它的技术栈是什么？是否支持 TypeScript？
 
@@ -862,8 +803,6 @@ pure-admin 是基于 Vue 3 + TypeScript + Vite 构建的。不要急于看源码
 这套技术栈是目前 Vue 生态中最主流、性能最好的组合之一。
 
 ---
-
-
 
 ### 3: 如何解决首次下载后依赖安装失败或启动报错的问题？
 
@@ -886,8 +825,6 @@ pure-admin 是基于 Vue 3 + TypeScript + Vite 构建的。不要急于看源码
 
 ---
 
-
-
 ### 4: 项目是否支持国际化（i18n）？如何配置多语言？
 
 4: 项目是否支持国际化（i18n）？如何配置多语言？
@@ -902,8 +839,6 @@ pure-admin 是基于 Vue 3 + TypeScript + Vite 构建的。不要急于看源码
 
 ---
 
-
-
 ### 5: 它是免费的吗？可以用于商业项目吗？
 
 5: 它是免费的吗？可以用于商业项目吗？
@@ -917,8 +852,6 @@ pure-admin 是基于 Vue 3 + TypeScript + Vite 构建的。不要急于看源码
 
 ---
 
-
-
 ### 6: 我是一个新手，是否有配套的学习文档或视频？
 
 6: 我是一个新手，是否有配套的学习文档或视频？
@@ -929,22 +862,6 @@ pure-admin 拥有非常完善的中文文档生态，这对国内开发者非常
 1.  **官方文档**: 项目通常会有配套的文档站（通常在 Readme 中有链接），文档详细介绍了每个组件的用法、路由配置、权限控制逻辑等。
 2.  **视频教程**: 在 Bilibili（B站）搜索 "pure-admin"，会有作者本人或社区贡献的详细上手教程，手把手教你如何从零搭建。
 3.  **代码注释**: 项目源码
-
----
-## 🎯 挑战与思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**: vue-pure-admin 的一大特点是支持“跨端”使用。请查阅项目文档，说明如何在不修改核心业务逻辑代码的前提下，分别启动一个基于 Vue 的 Web 版项目和一个基于 Electron 的桌面版项目？你需要描述具体的启动命令差异或配置入口。
-
-### 提示**: 🐒 关注项目根目录下的 `package.json` 脚本命令，以及文档中关于“Tencent”相关或“精简版”与“完整版”的区别。思考一下它是如何通过文件目录结构来复用 `src` 目录下的逻辑的。
-
-### 
-
----
 ## 💡 实践建议
 
 基于 `pure-admin` (vue-pure-admin) 的技术栈（Vue 3 + Vite + TypeScript + Element-Plus）及其架构特点，以下是 7 条针对实际开发场景的实践建议：

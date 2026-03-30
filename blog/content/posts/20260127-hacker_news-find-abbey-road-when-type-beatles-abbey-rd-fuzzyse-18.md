@@ -121,22 +121,8 @@ external_url: https://rendiment.io/postgresql/2026/01/21/pgtrgm-pgvector-music.h
 ---
 ## 💻 代码示例
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 ## 📚 案例研究
-
 
 ### 1：大型电商平台的商品搜索优化（以 Shopify 为例）
 
@@ -158,8 +144,6 @@ Shopify 集成了 PostgreSQL 的扩展插件（如 `pg_trgm` 用于模糊匹配�
 
 ---
 
-
-
 ### 2：企业级文档管理系统（如 GitLab 的代码搜索）
 
  2：企业级文档管理系统（如 GitLab 的代码搜索）
@@ -179,8 +163,6 @@ GitLab 在其 PostgreSQL 数据库中引入了模糊搜索和语义搜索功能�
 - 用户满意度调查显示，搜索功能的易用性和准确性评分从 **3.5/5** 提升至 **4.5/5**。  
 
 ---
-
-
 
 ### 3：音乐流媒体平台的歌曲推荐（如 Spotify 的搜索功能）
 
@@ -311,7 +293,6 @@ Postgres 的标准 `LIKE` 查询对拼写错误或缩写（如 'abbey rd'）支�
 ---
 ## ❓ 常见问题
 
-
 ### 1: 为什么传统的 SQL `LIKE` 查询无法搜到 'Abbey Road'？
 
 1: 为什么传统的 SQL `LIKE` 查询无法搜到 'Abbey Road'？
@@ -322,8 +303,6 @@ Postgres 的标准 `LIKE` 查询对拼写错误或缩写（如 'abbey rd'）支�
 在标题 "Abbey Road" 中，并不包含完整的单词 "abbey rd"（没有空格），因此标准的 `LIKE` 搜索会返回零结果。要解决这个问题，你需要使用**模糊匹配**或**语义搜索**技术，这些技术不依赖于精确的拼写，而是关注文本的相似度或含义。
 
 ---
-
-
 
 ### 2: 什么是模糊搜索，它与语义搜索有什么区别？
 
@@ -343,8 +322,6 @@ Postgres 的标准 `LIKE` 查询对拼写错误或缩写（如 'abbey rd'）支�
     *   *例子*: 搜索 "披头士跨马路的那张专辑"（中文）或 "Fab Four walking crossing"，即便没有包含 "Abbey Road" 这个词，语义搜索也能通过理解含义找到该专辑。
 
 ---
-
-
 
 ### 3: 在 Postgres 中如何实现基础的模糊搜索？
 
@@ -370,8 +347,6 @@ WHERE title % 'abbey rd';
 
 ---
 
-
-
 ### 4: Postgres 如何支持语义搜索？
 
 4: Postgres 如何支持语义搜索？
@@ -386,8 +361,6 @@ WHERE title % 'abbey rd';
 这能让系统理解 "Beatles" 与 "Abbey Road" 之间的深层关联，即使拼写差异很大。
 
 ---
-
-
 
 ### 5: 如何在 Postgres 中结合全文搜索处理 'Beatles abbey rd'？
 
@@ -411,27 +384,9 @@ WHERE to_tsvector('english', title) @@ to_tsquery('english', 'Beatles & abbey & 
 
 ---
 
-
-
 ### 6: 实现搜索
 
 6: 实现搜索
-
----
-## 🎯 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**:
-
-### 在不使用任何外部扩展（如 `pg_trgm` 或全文搜索）的情况下，仅使用标准 SQL 的 `LIKE` 或 `ILIKE` 操作符，如何查询出标题中同时包含 "Beatles" 和 "Abbey" 的记录？同时，如何让查询不区分大小写（例如匹配 'beatles'）？
-
-### 提示**:
-
----
 ## 🔗 引用
 
 - **原文链接**: [https://rendiment.io/postgresql/2026/01/21/pgtrgm-pgvector-music.html](https://rendiment.io/postgresql/2026/01/21/pgtrgm-pgvector-music.html)

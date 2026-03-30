@@ -128,34 +128,8 @@ external_url: https://the-diy-life.com/raspberry-pi-drag-race-pi-1-to-pi-5-perfo
 ---
 ## 💻 代码示例
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 ## 📚 案例研究
-
 
 ### 1：Wildlife Labs 智能边缘计算项目 🦁
 
@@ -176,8 +150,6 @@ external_url: https://the-diy-life.com/raspberry-pi-drag-race-pi-1-to-pi-5-perfo
 - 🛡️ **生态兼容性**：由于保持了树莓派家族的引脚兼容性，现有的传感器底板无需重新设计，大大降低了硬件迭代成本。
 
 ---
-
-
 
 ### 2：中小学校创客教育升级计划 🎓
 
@@ -264,7 +236,6 @@ external_url: https://the-diy-life.com/raspberry-pi-drag-race-pi-1-to-pi-5-perfo
 ---
 ## ❓ 常见问题
 
-
 ### 1: Raspberry Pi 5 相比 Pi 4 性能提升了多少？主要提升在哪里？
 
 1: Raspberry Pi 5 相比 Pi 4 性能提升了多少？主要提升在哪里？
@@ -275,8 +246,6 @@ external_url: https://the-diy-life.com/raspberry-pi-drag-race-pi-1-to-pi-5-perfo
 *   **I/O 吞吐**：这是最大的亮点之一。由于引入了 PCIe 接口（通过 RP1 芯片），其外设数据传输速度极大提高，在存储和网络相关任务中优势明显。
 
 ---
-
-
 
 ### 2: Raspberry Pi 1 (一代) 和 Pi 5 之间的性能差距到底有多大？
 
@@ -289,8 +258,6 @@ external_url: https://the-diy-life.com/raspberry-pi-drag-race-pi-1-to-pi-5-perfo
 
 ---
 
-
-
 ### 3: Raspberry Pi 5 发热情况如何？是否必须安装风扇？
 
 3: Raspberry Pi 5 发热情况如何？是否必须安装风扇？
@@ -300,8 +267,6 @@ external_url: https://the-diy-life.com/raspberry-pi-drag-race-pi-1-to-pi-5-perfo
 *   **主动散热**：官方强烈建议使用**主动散热器**（Active Cooler，即官方的小风扇）。如果不安装风扇，CPU 很快会达到 80°C 的温度墙并降频。为了发挥全部性能，风扇几乎是必须的配件。
 
 ---
-
-
 
 ### 4: 在 Pi 5 上使用 SSD 相比 SD 卡有多大提升？
 
@@ -313,8 +278,6 @@ external_url: https://the-diy-life.com/raspberry-pi-drag-race-pi-1-to-pi-5-perfo
 
 ---
 
-
-
 ### 5: 老旧的 Raspberry Pi 2 或 3 现在还有实用价值吗？
 
 5: 老旧的 Raspberry Pi 2 或 3 现在还有实用价值吗？
@@ -325,8 +288,6 @@ external_url: https://the-diy-life.com/raspberry-pi-drag-race-pi-1-to-pi-5-perfo
 
 ---
 
-
-
 ### 6: 升级到 Raspberry Pi 5 是否值得购买？
 
 6: 升级到 Raspberry Pi 5 是否值得购买？
@@ -334,22 +295,6 @@ external_url: https://the-diy-life.com/raspberry-pi-drag-race-pi-1-to-pi-5-perfo
 **A**: 这取决于你的使用需求：
 *   **值得**：如果你需要将其作为**日常桌面电脑**替代品（浏览网页、看视频）、运行复杂的 Home Assistant 服务器、进行代码编译、运行 Retropie 模拟器（PS2/N64 级别）或需要高速 I/O 处理。Pi 5 是目前最接近 PC 体验的单板计算机。
 *   **不值得**：如果你只是用来点亮一个 LED 灯、运行简单的温湿度监控
-
----
-## 🎯 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**:
-
-### 请编写一个 Bash 脚本（或 Python 脚本），用于读取树莓派的 CPU 温度，并计算每秒钟温度的变化率。当温度变化率超过 5°C/s 时，打印警告信息。在 Pi 3 和 Pi 5 上运行此脚本，比较在执行高负载任务（如 `stress --cpu 4`）时，两者的温度上升速度有何不同？
-
-### 提示**:
-
----
 ## 🔗 引用
 
 - **原文链接**: [https://the-diy-life.com/raspberry-pi-drag-race-pi-1-to-pi-5-performance-comparison](https://the-diy-life.com/raspberry-pi-drag-race-pi-1-to-pi-5-performance-comparison)

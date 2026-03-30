@@ -78,9 +78,6 @@ scenarios: ["大语言模型", "AI/ML项目"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：多语言安全护栏检测
 def multilingual_guardrail(text, language='en'):
@@ -109,9 +106,6 @@ def multilingual_guardrail(text, language='en'):
 print(multilingual_guardrail("This is a peaceful message", 'en'))  # (True, [])
 print(multilingual_guardrail("La bomba es peligrosa", 'es'))      # (False, ['bomba'])
 ```
-
-
-
 
 ```python
 # 示例2：上下文感知的敏感信息过滤
@@ -149,9 +143,6 @@ print(context_aware_filter("I like ibuprofen commercials",
                          "Discussing TV ads"))  # I like ibuprofen commercials
 ```
 
-
-
-
 ```python
 # 示例3：人道主义场景的地理围栏检查
 import geopy.distance
@@ -183,10 +174,8 @@ print(humanitarian_geo_check((40.7130, -74.0065), disaster_site))  # (True, 0.05
 print(humanitarian_geo_check((34.0522, -118.2437), disaster_site))  # (False, 3944.2)
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：联合国难民署（UNHCR）多语言危机响应助手
 
@@ -202,8 +191,6 @@ print(humanitarian_geo_check((34.0522, -118.2437), disaster_site))  # (False, 39
 
 ---
 
-
-
 ### 2：国际红十字会与红新月会联合会（IFRC）灾害谣言监测与辟谣平台
 
  2：国际红十字会与红新月会联合会（IFRC）灾害谣言监测与辟谣平台
@@ -217,8 +204,6 @@ print(humanitarian_geo_check((34.0522, -118.2437), disaster_site))  # (False, 39
 **效果**: 该平台成功在多次灾害响应中拦截了数千条可能引起公众恐慌的虚假信息。通过精准的上下文分析，救援队能够基于更准确的数据做出决策，减少了谣言对救援工作的干扰，提高了救援行动的针对性和效率。
 
 ---
-
-
 
 ### 3：Translators without Borders（无国界译者）与GPT驱动的社区翻译工具
 
@@ -327,7 +312,6 @@ print(humanitarian_geo_check((34.0522, -118.2437), disaster_site))  # (False, 39
 ---
 ## 常见问题
 
-
 ### 1: 什么是“护栏”技术，为什么它在大型语言模型（LLM）中如此重要？
 
 1: 什么是“护栏”技术，为什么它在大型语言模型（LLM）中如此重要？
@@ -335,8 +319,6 @@ print(humanitarian_geo_check((34.0522, -118.2437), disaster_site))  # (False, 39
 **A**: 在人工智能语境下，“护栏”指的是部署在大型语言模型周围的一套安全协议、过滤器和验证机制。它们的作用是监控并干预模型的输入和输出，以防止生成有害、不道德、不准确或与组织政策相悖的内容。在人道主义救援等高风险场景中，LLM 可能会被用于提供医疗建议、心理健康支持或紧急指引。如果模型在没有护栏的情况下产生“幻觉”（胡编乱造）或输出带有偏见的信息，可能会导致严重的现实后果，包括危及生命或加剧弱势群体的困境。因此，护栏是确保 AI 系统安全、可靠和负责任地运行的关键组件。
 
 ---
-
-
 
 ### 2: 为什么人道主义领域的 LLM 应用特别需要“多语言”和“上下文感知”的护栏？
 
@@ -347,8 +329,6 @@ print(humanitarian_geo_check((34.0522, -118.2437), disaster_site))  # (False, 39
 
 ---
 
-
-
 ### 3: 文章中提到的评估方法与传统的 LLM 安全评估有何不同？
 
 3: 文章中提到的评估方法与传统的 LLM 安全评估有何不同？
@@ -356,8 +336,6 @@ print(humanitarian_geo_check((34.0522, -118.2437), disaster_site))  # (False, 39
 **A**: 传统的 LLM 安全评估通常依赖于静态的基准测试集，这些测试集往往基于英语，且包含的是通用的毒性测试（如直接询问如何制造炸弹）。而该文章提出的方法侧重于**动态的、基于场景的评估**。它模拟了真实的人道主义工作流程，测试护栏在面对非英语输入、带有创伤性描述的文本以及需要特定文化理解的情况下的表现。评估的重点不仅仅是“是否拦截了有害内容”，还包括“是否允许了合法的求助”以及“在多语言环境下的误报率是否过高”。
 
 ---
-
-
 
 ### 4: 在构建多语言护栏时面临的主要技术挑战是什么？
 
@@ -370,8 +348,6 @@ print(humanitarian_geo_check((34.0522, -118.2437), disaster_site))  # (False, 39
 
 ---
 
-
-
 ### 5: 该研究对人道主义组织部署 AI 有什么实际建议？
 
 5: 该研究对人道主义组织部署 AI 有什么实际建议？
@@ -383,29 +359,11 @@ print(humanitarian_geo_check((34.0522, -118.2437), disaster_site))  # (False, 39
 
 ---
 
-
-
 ### 6: “上下文感知”具体是如何帮助减少误判的？
 
 6: “上下文感知”具体是如何帮助减少误判的？
 
 **A**: “上下文感知”意味着模型不仅仅是分析单个句子或关键词，而是结合对话历史、发言者身份和当前场景来综合判断。例如，在一个关于心理健康支持的对话中，用户可能会表达出强烈的负面情绪甚至自残倾向。一个不具备上下文感知能力的严格过滤器可能会直接拦截这些内容，导致对话中断。而具备上下文感知能力的护栏会识别出这是一个“求助”场景，从而允许对话继续，并引导模型提供富有同情心的回应，而不是生硬地拦截。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**：在人道主义救援场景中，LLM 经常需要处理非英语的输入（如斯瓦希里语或阿拉伯语）。请列举三种在多语言环境下，LLM 可能产生比英语更严重的幻觉或安全违规的具体原因。
-
-### 提示**：考虑训练数据的分布不均、文化语境的缺失以及指令微调中语言覆盖率的差异。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://blog.mozilla.ai/evaluating-multilingual-context-aware-guardrails-evidence-from-a-humanitarian-llm-use-case](https://blog.mozilla.ai/evaluating-multilingual-context-aware-guardrails-evidence-from-a-humanitarian-llm-use-case)
@@ -414,7 +372,6 @@ print(humanitarian_geo_check((34.0522, -118.2437), disaster_site))  # (False, 39
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

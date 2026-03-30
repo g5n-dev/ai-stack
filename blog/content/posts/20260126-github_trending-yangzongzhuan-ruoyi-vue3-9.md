@@ -40,8 +40,6 @@ Relevant source files
   * [src/main.js](https://github.com/yangzongzhuan/RuoYi-Vue3/blob/2dbc9165/src/main.js)
   * [src/views/index.vue](https://github.com/yangzongzhuan/RuoYi-Vue3/blob/2dbc9165/src/views/index.vue)
 
-
-
 This document provides a comprehensive introduction to the RuoYi-Vue3 framework, a rapid development platform designed for building administrative web applications. The RuoYi-Vue3 framework combines a Vue 3 frontend with a SpringBoot backend to provide a complete solution for developing enterprise management systems.
 
 For information about the core architecture and configuration details, see [Core Architecture](/yangzongzhuan/RuoYi-Vue3/2-core-architecture). For information about the permission system, see [Permission System](/yangzongzhuan/RuoYi-Vue3/2.2-permission-system).
@@ -59,7 +57,6 @@ Sources: [package.json2-5](https://github.com/yangzongzhuan/RuoYi-Vue3/blob/2dbc
 The RuoYi-Vue3 system is built on a clear separation between frontend and backend components, following the modern practice of frontend-backend separation.
 
 ### Architecture Diagram
-
 
 Sources: [README.md12-16](https://github.com/yangzongzhuan/RuoYi-Vue3/blob/2dbc9165/README.md#L12-L16) [src/main.js1-82](https://github.com/yangzongzhuan/RuoYi-Vue3/blob/2dbc9165/src/main.js#L1-L82)
 
@@ -101,7 +98,6 @@ RuoYi-Vue3 features a comprehensive set of modules and components designed for a
 
 ### System Component Diagram
 
-
 Sources: [src/main.js9-66](https://github.com/yangzongzhuan/RuoYi-Vue3/blob/2dbc9165/src/main.js#L9-L66) [README.md39-58](https://github.com/yangzongzhuan/RuoYi-Vue3/blob/2dbc9165/README.md#L39-L58)
 
 ### Feature Set
@@ -134,8 +130,6 @@ RuoYi-Vue3 includes a rich set of built-in features:
      * API documentation based on business code
      * Scheduled task management
 
-
-
 Sources: [README.md39-58](https://github.com/yangzongzhuan/RuoYi-Vue3/blob/2dbc9165/README.md#L39-L58) [src/views/index.vue4-33](https://github.com/yangzongzhuan/RuoYi-Vue3/blob/2dbc9165/src/views/index.vue#L4-L33)
 
 ## UI Customization
@@ -153,8 +147,6 @@ RuoYi-Vue3 supports extensive UI customization through its settings panel, allow
     * Logo display toggle
     * Dynamic title toggle
 
-
-
 These settings can be saved to localStorage for persistence across sessions.
 
 Sources: [src/layout/components/Settings/index.vue1-204](https://github.com/yangzongzhuan/RuoYi-Vue3/blob/2dbc9165/src/layout/components/Settings/index.vue#L1-L204)
@@ -168,10 +160,7 @@ To run the RuoYi-Vue3 project:
   * Node.js (latest stable version recommended)
   * Git
 
-
-
 ### Frontend Setup
-
 
 The frontend will be available at <http://localhost:80> by default.
 
@@ -440,26 +429,8 @@ RuoYi 在 **“业务逻辑”** 层面做了极高的抽象。
 ---
 ## 💻 实用代码示例
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 ## 📚 真实案例研究
-
 
 ### 1：某物流公司数字化管理系统
 
@@ -486,8 +457,6 @@ RuoYi 在 **“业务逻辑”** 层面做了极高的抽象。
 
 ---
 
-
-
 ### 2：智慧农业IoT平台
 
  2：智慧农业IoT平台
@@ -512,8 +481,6 @@ RuoYi 在 **“业务逻辑”** 层面做了极高的抽象。
 📡 98%场景下弱网可用  
 
 ---
-
-
 
 ### 3：政务OA系统国产化改造
 
@@ -733,7 +700,6 @@ RuoYi 集成了 Redis，用于缓存字典、参数配置等高频访问数据�
 - 🔐 完善的权限安全体系**：实现了后端基于 Spring Security 的细粒度权限控制与前端按钮级权限指令，确保系统安全。
 - 🧩 模块化架构设计**：采用前后端分离架构，后端模块化清晰，前端组件化程度高，便于进行功能扩展和定制。
 
-
 ---
 ## 🗺️ 循序渐进的学习路径
 
@@ -816,7 +782,6 @@ RuoYi 集成了 Redis，用于缓存字典、参数配置等高频访问数据�
 ---
 ## ❓ 常见问题解答
 
-
 ### 1: RuoYi-Vue3 是什么？适合用来做什么？
 
 1: RuoYi-Vue3 是什么？适合用来做什么？
@@ -826,8 +791,6 @@ RuoYi 集成了 Redis，用于缓存字典、参数配置等高频访问数据�
 它整合了 **Vue 3**、**Vite**、**Element Plus** 和 **TypeScript** 等主流前端技术栈。它非常适合用来构建企业内部的各种管理系统（如 CMS、OA、ERP 等）。由于其代码结构清晰、功能模块完整（包含用户管理、菜单管理、权限控制等），开发者可以在此基础上快速进行业务开发和定制，大大节省了从零搭建基础架构的时间。🚀
 
 ---
-
-
 
 ### 2: RuoYi-Vue3 与原版 RuoYi-Vue (Vue2 版本) 有什么核心区别？
 
@@ -842,8 +805,6 @@ RuoYi 集成了 Redis，用于缓存字典、参数配置等高频访问数据�
 5.  **状态管理**：通常使用 Pinia 代替 Vuex，状态管理更加简洁直观。
 
 ---
-
-
 
 ### 3: 如何启动和运行 RuoYi-Vue3 项目？需要准备什么环境？
 
@@ -867,8 +828,6 @@ RuoYi 集成了 Redis，用于缓存字典、参数配置等高频访问数据�
 
 ---
 
-
-
 ### 4: 后端接口如何配置？如果遇到跨域问题（CORS）怎么办？
 
 4: 后端接口如何配置？如果遇到跨域问题（CORS）怎么办？
@@ -882,8 +841,6 @@ RuoYi 集成了 Redis，用于缓存字典、参数配置等高频访问数据�
 
 ---
 
-
-
 ### 5: 我想在 RuoYi-Vue3 中新增一个业务菜单和页面，具体操作流程是什么？
 
 5: 我想在 RuoYi-Vue3 中新增一个业务菜单和页面，具体操作流程是什么？
@@ -895,22 +852,6 @@ RuoYi 集成了 Redis，用于缓存字典、参数配置等高频访问数据�
 3.  **放置代码**：
     *   将 `main` (后端) 目录下的代码复制到项目的 `ruoyi-system` 模块对应目录下。
     *   将 `vue` (前端) 目录下的代码复制到项目的 `src/views` 下
-
----
-## 🎯 挑战与思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**:
-
-### 在 RuoYi-Vue3 的前端项目中，如何根据用户权限动态控制某个按钮的显示与隐藏？例如：只有拥有 "system:user:remove" 权限标识的用户才能看到“删除”按钮。
-
-### 提示**:
-
----
 ## 💡 实践建议
 
 你好！`RuoYi-Vue3` 是一个非常成熟且流行的前后端分离权限脚手架，基于 SpringBoot3 和 Vue3 构建，非常适合作为企业级项目的基础。

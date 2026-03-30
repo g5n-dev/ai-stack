@@ -79,9 +79,6 @@ scenarios: ["大语言模型"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：基于AGENTS.md的动态任务规划
 def dynamic_task_planner(user_request):
@@ -113,9 +110,6 @@ def dynamic_task_planner(user_request):
 print(dynamic_task_planner("我需要做数据分析和报告生成"))
 ```
 
-
-
-
 ```python
 # 示例2：上下文感知的技能组合
 def context_aware_skill_combination(context):
@@ -146,9 +140,6 @@ def context_aware_skill_combination(context):
 # 测试用例
 print(context_aware_skill_combination("我需要用Python和SQL处理数据"))
 ```
-
-
-
 
 ```python
 # 示例3：自适应学习机制
@@ -192,10 +183,8 @@ task_history = [
 print(adaptive_learning_agent(task_history))
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某头部电商平台智能客服升级项目
 
@@ -210,8 +199,6 @@ print(adaptive_learning_agent(task_history))
 **效果**: 上线后，复杂咨询的一步解决率提升了 25%，人工转接率降低了 18%。Agent 能够在多轮对话中准确捕捉用户意图变更，不仅解决了上下文割裂的问题，还通过自主决策能力，在不增加人工标注成本的情况下，处理了长尾场景的客服需求。
 
 ---
-
-
 
 ### 2：金融科技公司的合规报告自动化生成
 
@@ -317,7 +304,6 @@ print(adaptive_learning_agent(task_history))
 ---
 ## 常见问题
 
-
 ### 1: 什么是 AGENTS.md，它与传统的 "Skills"（技能）定义有什么本质区别？
 
 1: 什么是 AGENTS.md，它与传统的 "Skills"（技能）定义有什么本质区别？
@@ -327,8 +313,6 @@ print(adaptive_learning_agent(task_history))
 传统的 "Skills" 往往是孤立的代码片段，Agent 只能机械地执行特定指令。而 AGENTS.md 允许开发者通过自然语言描述 Agent 的上下文、性格和任务流程。这种方法使得 Agent 能够根据上下文动态地规划任务，而不是简单地调用预定义的函数。在 Hacker News 的讨论中，这种从“调用函数”到“阅读指令”的转变被认为是性能提升的关键，因为它赋予了 Agent 更强的推理能力和适应性。
 
 ---
-
-
 
 ### 2: 为什么在评估测试中，基于 AGENTS.md 的 Agent 会优于基于 Skills 的 Agent？
 
@@ -341,8 +325,6 @@ print(adaptive_learning_agent(task_history))
 3.  **灵活性**：在处理复杂、多步骤的任务时，基于文本的配置允许 Agent 动态调整策略，而硬编码的 Skills 往往缺乏这种弹性，难以应对边缘情况。
 
 ---
-
-
 
 ### 3: AGENTS.md 的具体工作原理是什么？它是如何被加载和执行的？
 
@@ -357,8 +339,6 @@ print(adaptive_learning_agent(task_history))
 
 ---
 
-
-
 ### 4: 使用 AGENTS.md 方式是否存在性能成本或 Token 消耗过大的问题？
 
 4: 使用 AGENTS.md 方式是否存在性能成本或 Token 消耗过大的问题？
@@ -371,8 +351,6 @@ print(adaptive_learning_agent(task_history))
 
 ---
 
-
-
 ### 5: AGENTS.md 是否会取代现有的工具调用或函数调用机制？
 
 5: AGENTS.md 是否会取代现有的工具调用或函数调用机制？
@@ -383,8 +361,6 @@ print(adaptive_learning_agent(task_history))
 
 ---
 
-
-
 ### 6: 对于开发者来说，从迁移到 AGENTS.md 的难度大吗？
 
 6: 对于开发者来说，从迁移到 AGENTS.md 的难度大吗？
@@ -394,22 +370,6 @@ print(adaptive_learning_agent(task_history))
 *   **无需深入编码**：对于简单的 Agent 调整，开发者只需要编辑 Markdown 文本，而不需要深入修改 Python 或 JavaScript 代码逻辑。
 *   **标准化**：它提供了一种通用的格式来描述 Agent 行为，使得团队内部共享和复用 Agent 配置变得更加容易。
 *   **调试便利**：相比于调试复杂的逻辑代码，阅读和修改自然语言描述的配置文件通常更加直观，便于快速迭代。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 在构建 AI Agent 时，"硬编码技能"（Hard-coded Skills）与"基于文档的 Agent"（AGENTS.md）在处理未知任务时的行为模式有何根本不同？请列举一个具体的业务场景，说明后者为何能产生更好的泛化能力。
-
-### 提示**: 考虑当用户提出一个开发者未曾预先编写过函数的问题时，系统分别会做出什么反应。重点在于"静态代码逻辑"与"动态上下文推理"的区别。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://vercel.com/blog/agents-md-outperforms-skills-in-our-agent-evals](https://vercel.com/blog/agents-md-outperforms-skills-in-our-agent-evals)
@@ -418,7 +378,6 @@ print(adaptive_learning_agent(task_history))
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

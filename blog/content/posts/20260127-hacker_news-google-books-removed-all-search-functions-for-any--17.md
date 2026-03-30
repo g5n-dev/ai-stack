@@ -105,37 +105,8 @@ external_url: https://old.reddit.com/r/google/comments/1qn1hk1/google_has_seemin
 ---
 ## 💻 代码示例
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 ## 📚 案例研究
-
 
 ### 1：Z-Library 电子书档案检索项目
 
@@ -151,8 +122,6 @@ external_url: https://old.reddit.com/r/google/comments/1qn1hk1/google_has_seemin
 
 ---
 
-
-
 ### 2：学术文献聚合平台 "Semantic Scholar"
 
  2：学术文献聚合平台 "Semantic Scholar"
@@ -166,8 +135,6 @@ external_url: https://old.reddit.com/r/google/comments/1qn1hk1/google_has_seemin
 **效果**: 🎓 这一改进不仅修复了引用链接的失效问题，还通过 AI 摘要技术为用户提供了比原版 Google Books 预览更精准的上下文片段。据统计，该功能调整后，用户在查找被引用书籍时的有效点击率提升了 40% 以上，极大地增强了学术文献之间的互联互通性。
 
 ---
-
-
 
 ### 3：绝版书数字化复刻机构 "Archive.org" (互联网档案馆)
 
@@ -269,7 +236,6 @@ Google Books 的功能削弱并不意味着互联网上没有其他资源。Inte
 ---
 ## ❓ 常见问题
 
-
 ### 1: Google Books 到底移除了什么功能？是所有书籍都不能搜索了吗？
 
 1: Google Books 到底移除了什么功能？是所有书籍都不能搜索了吗？
@@ -279,8 +245,6 @@ Google Books 的功能削弱并不意味着互联网上没有其他资源。Inte
 用户仍然可以搜索 Google Books 的**整个数据库**来找到相关的书名，但一旦进入具体的书籍页面，就无法在书内部进行内容检索了。
 
 ---
-
-
 
 ### 2: Google 为什么要突然移除这个功能？背后的原因是什么？
 
@@ -292,8 +256,6 @@ Google Books 的功能削弱并不意味着互联网上没有其他资源。Inte
 3.  **打击爬虫与滥用**：可能为了防止爬虫通过搜索功能大量抓取受版权保护的书籍内容，因此暂时或永久关闭了该入口。
 
 ---
-
-
 
 ### 3: 如果我需要查找书中的特定内容，现在有什么替代方案吗？
 
@@ -307,8 +269,6 @@ Google Books 的功能削弱并不意味着互联网上没有其他资源。Inte
 
 ---
 
-
-
 ### 4: 这个变化是永久的吗？Google 会恢复这个功能吗？
 
 4: 这个变化是永久的吗？Google 会恢复这个功能吗？
@@ -316,8 +276,6 @@ Google Books 的功能削弱并不意味着互联网上没有其他资源。Inte
 **A**: 目前尚无法确定。鉴于 Google Books 团队近年来维护力度较小，且该功能已消失一段时间，这有可能是长期的策略调整。不过，如果这主要是由于技术 Bug 或反爬虫机制误伤导致的，在用户反馈强烈的情况下，Google 有可能会恢复该功能。目前只能静观其变。
 
 ---
-
-
 
 ### 5: 这个变化对“无预览”或“公共领域”的书籍有影响吗？
 
@@ -327,8 +285,6 @@ Google Books 的功能削弱并不意味着互联网上没有其他资源。Inte
 
 ---
 
-
-
 ### 6: 作为用户，我能如何反馈这个问题？
 
 6: 作为用户，我能如何反馈这个问题？
@@ -336,22 +292,6 @@ Google Books 的功能削弱并不意味着互联网上没有其他资源。Inte
 **A**: 虽然这通常很难直接联系到具体的工程师，但你可以：
 1.  在 Google Books 页面底部的“发送反馈”链接中提交问题。
 2.  在相关的技术社区（如 Hacker News、Reddit）继续讨论，保持热度，有时 Google 产品经理会关注这些渠道。
-
----
-## 🎯 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**: 既然 Google Books 移除了预览版书籍的站内搜索功能，请利用通配符（`*`）语法配合 Google 搜索，尝试检索《The Great Gatsby》（了不起的盖茨比）书中包含 "old" 和 "money" 的特定段落。写出你的搜索查询语句。
-
-### 提示**: Google Books 的索引数据并未完全消失，只是入口被隐藏了。你需要利用 `site:books.google.com` 限制域名，并配合书名关键词和通配符来构建查询，例如将一句名言中的部分词用星号代替。
-
-### 
-
----
 ## 🔗 引用
 
 - **原文链接**: [https://old.reddit.com/r/google/comments/1qn1hk1/google_has_seemingly_entirely_removed_search](https://old.reddit.com/r/google/comments/1qn1hk1/google_has_seemingly_entirely_removed_search)

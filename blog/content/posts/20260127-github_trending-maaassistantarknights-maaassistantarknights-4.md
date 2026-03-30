@@ -40,8 +40,6 @@ Relevant source files
   * [docs/zh-cn/readme.md](https://github.com/MaaAssistantArknights/MaaAssistantArknights/blob/c7db3681/docs/zh-cn/readme.md)
   * [docs/zh-tw/readme.md](https://github.com/MaaAssistantArknights/MaaAssistantArknights/blob/c7db3681/docs/zh-tw/readme.md)
 
-
-
 This document provides a high-level introduction to the MAA (MAA Assistant Arknights) codebase architecture, its core components, and the relationships between major subsystems. It is intended as an entry point for developers and technical users who need to understand how the system is organized.
 
 For detailed information about specific subsystems, see:
@@ -51,8 +49,6 @@ For detailed information about specific subsystems, see:
   * Specific automation features: [Automation Features](/MaaAssistantArknights/MaaAssistantArknights/4-automation-features)
   * User interfaces: [User Interfaces](/MaaAssistantArknights/MaaAssistantArknights/5-user-interfaces)
   * Build and deployment: [Development and Build System](/MaaAssistantArknights/MaaAssistantArknights/6-development-and-build-system)
-
-
 
 ## What is MAA?
 
@@ -65,14 +61,11 @@ The software operates by:
   3. Executing predefined task sequences based on game state
   4. Injecting touch/click inputs back to the device
 
-
-
 **Sources:** [README.md1-202](https://github.com/MaaAssistantArknights/MaaAssistantArknights/blob/c7db3681/README.md#L1-L202) [docs/en-us/readme.md1-192](https://github.com/MaaAssistantArknights/MaaAssistantArknights/blob/c7db3681/docs/en-us/readme.md#L1-L192)
 
 ## System Architecture Overview
 
 MAA follows a layered architecture that separates user interfaces from the core automation engine, with a resource layer providing configuration data and game content information.
-
 
 **Key characteristics:**
 
@@ -81,14 +74,11 @@ MAA follows a layered architecture that separates user interfaces from the core 
   * **Plugin architecture** : Roguelike system uses plugins for theme-specific logic
   * **Multi-regional support** : Resource inheritance allows localization without duplicating base data
 
-
-
 **Sources:** [README.md33-58](https://github.com/MaaAssistantArknights/MaaAssistantArknights/blob/c7db3681/README.md#L33-L58) [CHANGELOG.md1-165](https://github.com/MaaAssistantArknights/MaaAssistantArknights/blob/c7db3681/CHANGELOG.md#L1-L165) High-Level Diagrams 1 & 2
 
 ## Core Components
 
 The following diagram maps the major functional subsystems to their primary code locations:
-
 
 **Core execution flow:**
 
@@ -97,8 +87,6 @@ The following diagram maps the major functional subsystems to their primary code
   3. `AsstStart()` begins sequential task execution via `InterfaceTask` implementations
   4. Each task uses `Controller` for screenshots and `VisionHelper` for recognition
   5. `TaskData` singleton provides configuration loaded from [resource/](https://github.com/MaaAssistantArknights/MaaAssistantArknights/blob/c7db3681/resource/) directory
-
-
 
 **Sources:** [include/AsstCaller.h1-200](https://github.com/MaaAssistantArknights/MaaAssistantArknights/blob/c7db3681/include/AsstCaller.h#L1-L200) [README.md120-132](https://github.com/MaaAssistantArknights/MaaAssistantArknights/blob/c7db3681/README.md#L120-L132) High-Level Diagrams 2 & 5
 
@@ -123,12 +111,9 @@ Layer| Technology| Purpose
   * **Linux** : AppImage distribution, CLI-focused
   * **macOS** : Universal binaries (x86_64 + ARM64), XCFramework
 
-
-
 **Sources:** [README.md144-164](https://github.com/MaaAssistantArknights/MaaAssistantArknights/blob/c7db3681/README.md#L144-L164) [docs/en-us/readme.md136-154](https://github.com/MaaAssistantArknights/MaaAssistantArknights/blob/c7db3681/docs/en-us/readme.md#L136-L154) High-Level Diagram 3
 
 ## Multi-Platform Build Architecture
-
 
 **CI/CD characteristics:**
 
@@ -136,8 +121,6 @@ Layer| Technology| Purpose
   * MaaDeps system provides pre-built dependencies to speed up compilation
   * OTA (Over-The-Air) update system generates delta patches between versions
   * Resource updates run every 20 minutes independently from code releases
-
-
 
 **Sources:** [README.md44-46](https://github.com/MaaAssistantArknights/MaaAssistantArknights/blob/c7db3681/README.md#L44-L46) High-Level Diagram 3, [CHANGELOG.md87-96](https://github.com/MaaAssistantArknights/MaaAssistantArknights/blob/c7db3681/CHANGELOG.md#L87-L96)
 
@@ -434,37 +417,8 @@ MAA 在工程哲学上最核心的抽象是：**将“程序逻辑”与“业�
 ---
 ## 💻 实用代码示例
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 ## 📚 真实案例研究
-
 
 ### 1：高校博士研究生的“自动挂机”科研辅助
 
@@ -486,8 +440,6 @@ MAA 在工程哲学上最核心的抽象是：**将“程序逻辑”与“业�
 
 ---
 
-
-
 ### 2：大厂程序员的“全天候”基建管理
 
  2：大厂程序员的“全天候”基建管理
@@ -507,8 +459,6 @@ MAA 在工程哲学上最核心的抽象是：**将“程序逻辑”与“业�
 💤 **专注工作**：彻底消除了“该换班了”的焦虑闹钟，让他在 Code Review 和开会时能更加专注。
 
 ---
-
-
 
 ### 3：二次元社团的“共享代肝”服务
 
@@ -734,7 +684,6 @@ MAA 涉及 UI 控制、图像采集、图像处理（识别）和外设模拟（
 - 🛡️ **安全性与低侵入性**：主要依赖图像识别而非修改游戏内存，配合模拟器控制，最大程度降低了账号被封禁的风险。
 - 📂 **资源开箱即用**：项目内置了完善的任务流程与资源包，用户无需具备编程基础即可配置复杂的自动化策略。
 
-
 ---
 ## 🗺️ 循序渐进的学习路径
 
@@ -811,7 +760,6 @@ MAA 涉及 UI 控制、图像采集、图像处理（识别）和外设模拟（
 ---
 ## ❓ 常见问题解答
 
-
 ### 1: MaaAssistantArknights（MAA）是什么？它主要用来做什么？
 
 1: MaaAssistantArknights（MAA）是什么？它主要用来做什么？
@@ -827,8 +775,6 @@ MAA 涉及 UI 控制、图像采集、图像处理（识别）和外设模拟（
 
 ---
 
-
-
 ### 2: 软件启动时提示 "找不到资源" 或 "Core not found" 是怎么回事？
 
 2: 软件启动时提示 "找不到资源" 或 "Core not found" 是怎么回事？
@@ -841,8 +787,6 @@ MAA 涉及 UI 控制、图像采集、图像处理（识别）和外设模拟（
 你需要将下载好的资源包解压，并把解压出来的内容（如 `resource` 文件夹）**复制并粘贴到主程序的根目录下**，与主程序放在一起。确保目录结构正确，通常主程序读取到 `resource` 文件夹后即可正常运行。
 
 ---
-
-
 
 ### 3: 如何使用 MAA 连接安卓模拟器或手机？
 
@@ -859,8 +803,6 @@ MAA 涉及 UI 控制、图像采集、图像处理（识别）和外设模拟（
 
 ---
 
-
-
 ### 4: MAA 的作业配置（战斗设置）在哪里？我可以自己写吗？
 
 4: MAA 的作业配置（战斗设置）在哪里？我可以自己写吗？
@@ -871,8 +813,6 @@ MAA 涉及 UI 控制、图像采集、图像处理（识别）和外设模拟（
 
 ---
 
-
-
 ### 5: 在运行过程中，MAA 提示“识别失败”或任务卡住不动怎么办？
 
 5: 在运行过程中，MAA 提示“识别失败”或任务卡住不动怎么办？
@@ -882,22 +822,6 @@ MAA 涉及 UI 控制、图像采集、图像处理（识别）和外设模拟（
 1.  **检查分辨率**：确保游戏分辨率设置为 **16:9**（推荐 1280x720 或 1920x1080）。MAA 对非 16:9 的支持较弱，可能导致点击偏移。
 2.  **关闭加速功能**：部分模拟器的“高帧率模式”或“渲染加速”会导致画面变形。建议在模拟器设置中关闭 VT、多开优化等加速功能，使用 30FPS 或 60FPS 即可。
 3.  **检查连接方式**：如果是通过 ADB
-
----
-## 🎯 挑战与思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**: 资源路径配置
-
-### 在 MaaAssistantArknights 的配置文件中，如何正确设置游戏客户端（如官服、Bilibili服等）的可执行文件路径？如果启动器报告找不到游戏进程，通常是由于什么原因导致的？
-
-### 提示**: 检查 `config.json` 文件中的 `ExePath` 字段。注意路径中是否包含特殊字符或空格，以及是否使用了绝对路径。
-
----
 ## 💡 实践建议
 
 以下是为 **MaaAssistantArknights (MAA)** 仓库整理的 6 条实践建议，涵盖了环境搭建、性能优化、资源管理及排程策略等方面，旨在提升自动化挂机的稳定性与效率。

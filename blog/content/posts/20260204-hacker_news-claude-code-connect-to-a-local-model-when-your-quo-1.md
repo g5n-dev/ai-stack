@@ -66,9 +66,6 @@ scenarios: ["大语言模型"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：自动回退到本地模型
 import requests
@@ -113,9 +110,6 @@ client = SmartLLMClient(api_key="your_api_key")
 print(client.chat("解释量子计算"))
 ```
 
-
-
-
 ```python
 # 示例2：成本优化路由器
 from dataclasses import dataclass
@@ -155,9 +149,6 @@ router = CostOptimizedRouter()
 print(router.route_request("简单查询"))  # 使用云端
 print(router.route_request("复杂分析", priority=True))  # 强制云端
 ```
-
-
-
 
 ```python
 # 示例3：本地模型健康检查
@@ -211,10 +202,8 @@ manager.start_local_model()
 manager.stop_local_model()
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：AI辅助编程工具集成
 
@@ -230,8 +219,6 @@ manager.stop_local_model()
 
 ---
 
-
-
 ### 2：金融科技合规系统
 
  2：金融科技合规系统
@@ -245,8 +232,6 @@ manager.stop_local_model()
 **效果**: 完全满足GDPR和本地金融监管要求，通过合规审计。平均响应时间降至800ms，系统吞吐量提升2.3倍。年度云API费用节省约120万美元。
 
 ---
-
-
 
 ### 3：多语言客户支持平台
 
@@ -368,7 +353,6 @@ manager.stop_local_model()
 ---
 ## 常见问题
 
-
 ### 1: Claude Code 支持哪些本地模型格式？
 
 1: Claude Code 支持哪些本地模型格式？
@@ -382,8 +366,6 @@ manager.stop_local_model()
 只要本地服务提供 `/v1/chat/completions` 或类似的 OpenAI 兼容端点，Claude Code 就能通过配置连接到它。
 
 ---
-
-
 
 ### 2: 如何在 Claude Code 中配置本地模型连接？
 
@@ -416,8 +398,6 @@ manager.stop_local_model()
 
 ---
 
-
-
 ### 3: 使用本地模型会影响 Claude Code 的哪些功能？
 
 3: 使用本地模型会影响 Claude Code 的哪些功能？
@@ -434,8 +414,6 @@ manager.stop_local_model()
 - 复杂任务切换回 Claude API（当配额恢复后）
 
 ---
-
-
 
 ### 4: 本地运行需要什么硬件配置？
 
@@ -455,8 +433,6 @@ manager.stop_local_model()
 - Mac 用户可利用 Metal 加速（M1/M2/M3 芯片）
 
 ---
-
-
 
 ### 5: 如何在 API 配额用尽时自动切换到本地模型？
 
@@ -491,8 +467,6 @@ manager.stop_local_model()
 
 ---
 
-
-
 ### 6: 本地模型与 Claude API 的成本对比如何？
 
 6: 本地模型与 Claude API 的成本对比如何？
@@ -508,22 +482,6 @@ manager.stop_local_model()
 计算示例：
 - 每月处理 500M tokens：
   - Claude API：约 $7,500
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: 本地环境配置
-
-### 问题**: 在本地运行一个兼容 OpenAI API 格式的小型模型（如 Qwen2.5-Instruct-0.5B），使用 LM Studio 或 Ollama 部署，并修改 Claude Code 的配置文件（`~/.claude/config.json`）指向该本地端点。验证通过 `curl` 命令能成功获取响应。
-
-### 提示**: 关注本地模型服务器的默认端口（LM Studio 通常为 1234，Ollama 为 11434），并参考 Claude Code 文档中关于 `apiBase` 的配置说明。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://boxc.net/blog/2026/claude-code-connecting-to-local-models-when-your-quota-runs-out](https://boxc.net/blog/2026/claude-code-connecting-to-local-models-when-your-quota-runs-out)
@@ -532,7 +490,6 @@ manager.stop_local_model()
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

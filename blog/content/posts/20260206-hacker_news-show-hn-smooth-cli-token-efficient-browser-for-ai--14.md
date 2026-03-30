@@ -76,9 +76,6 @@ Smooth CLI 通过引入“浏览器即 CLI”的交互范式和基于 Token 预�
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：使用Smooth CLI进行网页内容提取
 import requests
@@ -123,9 +120,6 @@ content = extract_web_content("https://news.ycombinator.com/")
 print(content)
 ```
 
-
-
-
 ```python
 # 示例2：实现token-efficient的命令行交互
 import sys
@@ -161,9 +155,6 @@ def smooth_cli_command(command):
 print(smooth_cli_command("ls -la"))
 ```
 
-
-
-
 ```python
 # 示例3：构建轻量级网页浏览器类
 class SmoothBrowser:
@@ -196,10 +187,8 @@ print(browser.navigate("https://hackernews.com"))
 print(browser.get_summary())
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某金融科技初创公司的自动化研报生成系统
 
@@ -220,8 +209,6 @@ print(browser.get_summary())
 3. **速度优化**: 由于处理的数据量显著减少，Agent 的响应延迟降低了约 30%，提升了用户体验。
 
 ---
-
-
 
 ### 2：企业级 SaaS 平台的客户支持知识库自动化
 
@@ -345,7 +332,6 @@ print(browser.get_summary())
 ---
 ## 常见问题
 
-
 ### 1: Smooth CLI 的主要功能是什么，它与传统的浏览器工具有何不同？
 
 1: Smooth CLI 的主要功能是什么，它与传统的浏览器工具有何不同？
@@ -353,8 +339,6 @@ print(browser.get_summary())
 **A**: Smooth CLI 是一个专为 AI 智能体设计的命令行浏览器工具。与传统的浏览器（如 Puppeteer 或 Selenium）不同，Smooth CLI 的核心优势在于其“Token 高效性”。它能够将网页内容转换为对大语言模型（LLM）更友好的格式，通过移除不必要的广告、追踪脚本和复杂的视觉布局，仅保留核心文本信息。这使得 AI Agent 在读取网页内容时消耗的 Token 大幅减少，从而降低了 API 调用成本并提高了处理速度。
 
 ---
-
-
 
 ### 2: 使用 Smooth CLI 能节省多少 Token，具体是如何实现的？
 
@@ -364,8 +348,6 @@ print(browser.get_summary())
 
 ---
 
-
-
 ### 3: Smooth CLI 的技术架构是怎样的，它依赖哪些底层库？
 
 3: Smooth CLI 的技术架构是怎样的，它依赖哪些底层库？
@@ -373,8 +355,6 @@ print(browser.get_summary())
 **A**: Smooth CLI 通常构建在无头浏览器技术之上（例如 Chromium 或 Chrome DevTools Protocol），但它增加了一个专门的优化层。它不直接返回完整的页面 DOM 树，而是通过自定义的解析脚本来清洗和过滤数据。这种架构允许它像传统浏览器一样执行 JavaScript（这对于加载现代动态网页至关重要），但在输出给 AI 模型之前，会进行大幅度的数据压缩和清洗。
 
 ---
-
-
 
 ### 4: 对于 AI Agent 开发者而言，集成 Smooth CLI 是否复杂？
 
@@ -384,8 +364,6 @@ print(browser.get_summary())
 
 ---
 
-
-
 ### 5: Smooth CLI 是否支持处理需要 JavaScript 渲染的动态网页（SPA）？
 
 5: Smooth CLI 是否支持处理需要 JavaScript 渲染的动态网页（SPA）？
@@ -394,29 +372,11 @@ print(browser.get_summary())
 
 ---
 
-
-
 ### 6: 该工具目前是否开源，未来的开发路线图是什么？
 
 6: 该工具目前是否开源，未来的开发路线图是什么？
 
 **A**: 根据其在 Hacker News 上的 "Show HN" 展示，Smooth CLI 通常是开源项目，旨在吸引社区贡献。目前的重点主要集中在文本提取的效率上。未来的路线图可能包括进一步增强对复杂交互的支持（如自动填表、点击按钮），以及提供更多针对特定 LLM（如 GPT-4 或 Claude）的上下文窗口优化模式，以进一步提升智能体的自主浏览能力。
-
----
-## 思考题
-
-
-### ```markdown
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 在构建 AI 代理的浏览器工具时，最简单的实现方式通常是直接获取网页的全文内容。请分析为什么对于大语言模型（LLM）来说，直接获取全文是低效的？请列举出导致 Token 消耗过高的两个主要 HTML 结构特征。
-
-### 提示**: 思考一下现代网页的源代码构成，除了用户可见的正文内容外，还有哪些占据大量字符空间的“噪音”数据？特别是那些用于页面布局和交互的标签。
-
----
 ## 引用
 
 - **原文链接**: [https://docs.smooth.sh/cli/overview](https://docs.smooth.sh/cli/overview)
@@ -425,7 +385,6 @@ print(browser.get_summary())
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

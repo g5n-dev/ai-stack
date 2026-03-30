@@ -93,9 +93,6 @@ scenarios: ["AI/ML项目", "DevOps/运维"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：自动化PR审查
 def auto_review_pr(pr_number, repo_owner, repo_name):
@@ -138,9 +135,6 @@ def auto_review_pr(pr_number, repo_owner, repo_name):
 # 检查特定模式（如TODO注释）并自动添加审查意见。
 ```
 
-
-
-
 ```python
 # 示例2：Issue分类器
 def classify_issue(issue_number, repo_owner, repo_name):
@@ -181,9 +175,6 @@ def classify_issue(issue_number, repo_owner, repo_name):
 # 说明：这个示例展示了如何根据Issue内容自动分类并添加标签，
 # 使用简单的关键词匹配来识别bug、功能请求和文档相关Issue。
 ```
-
-
-
 
 ```python
 # 示例3：工作流状态监控
@@ -226,10 +217,8 @@ def monitor_workflow_status(repo_owner, repo_name, workflow_name):
 # 当工作流失败时可以触发通知机制（实际应用中可集成邮件/Slack等）。
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：Cognition 公司的 Devin AI
 
@@ -249,8 +238,6 @@ Cognition 开发了 Devin，这是一个具备“Agentic”能力的 AI 软件�
 
 ---
 
-
-
 ### 2：Rippling 的自动化 PR 审查与修复
 
  2：Rippling 的自动化 PR 审查与修复
@@ -268,8 +255,6 @@ Rippling 构建了一个基于 GitHub Agentic Workflow 的内部工作流。当�
 该系统显著减少了 PR 在队列中的等待时间。据统计，这类 Agentic Workflow 自动修复了约 20%-30% 的 CI 失败案例，使得资深工程师能够从繁琐的修修补补中解放出来，专注于架构设计和核心业务逻辑。这展示了 Agentic Workflow 在维护代码质量和提升工程团队吞吐量方面的实际商业价值。
 
 ---
-
-
 
 ### 3：Pythagora 的自主软件开发
 
@@ -387,7 +372,6 @@ Agentic Workflow 的效率取决于信息的透明度。最佳实践是将项目
 ---
 ## 常见问题
 
-
 ### 1: 什么是 GitHub Agentic Workflows，它与传统的 CI/CD 有什么区别？
 
 1: 什么是 GitHub Agentic Workflows，它与传统的 CI/CD 有什么区别？
@@ -395,8 +379,6 @@ Agentic Workflow 的效率取决于信息的透明度。最佳实践是将项目
 **A**: GitHub Agentic Workflows 是 GitHub 推出的新一代工作流自动化功能，它利用 AI 智能体来动态执行任务。与传统的 CI/CD（持续集成/持续部署）不同，传统工作流依赖于预定义的静态脚本，而 Agentic Workflows 允许 AI 根据上下文自主规划步骤、编写代码并修复错误。它不仅仅是运行脚本，而是能够理解开发者的意图（例如“修复这个安全漏洞”），自主决定如何完成目标，并在过程中进行自我修正。
 
 ---
-
-
 
 ### 2: GitHub Agentic Workflows 的核心能力有哪些？
 
@@ -410,8 +392,6 @@ Agentic Workflow 的效率取决于信息的透明度。最佳实践是将项目
 
 ---
 
-
-
 ### 3: 使用 Agentic Workflows 是否安全？AI 会不会破坏我的代码库？
 
 3: 使用 Agentic Workflows 是否安全？AI 会不会破坏我的代码库？
@@ -424,8 +404,6 @@ Agentic Workflow 的效率取决于信息的透明度。最佳实践是将项目
 
 ---
 
-
-
 ### 4: 它支持哪些 AI 模型？我必须使用 GitHub Copilot 吗？
 
 4: 它支持哪些 AI 模型？我必须使用 GitHub Copilot 吗？
@@ -433,8 +411,6 @@ Agentic Workflow 的效率取决于信息的透明度。最佳实践是将项目
 **A**: 虽然 GitHub Agentic Workflows 深度集成了 GitHub Copilot 的能力，旨在利用 OpenAI 的模型（如 GPT-4），但 GitHub 的策略通常是提供一定的灵活性。在底层架构上，它可能会支持接入其他 LLM（大型语言模型）提供商，或者允许企业用户根据自己的合规需求配置特定的模型端点。然而，为了获得最佳体验和原生功能支持，使用 GitHub Copilot 通常是首选方案。
 
 ---
-
-
 
 ### 5: 这对开发者的工作流程有什么实际影响？会取代程序员吗？
 
@@ -448,8 +424,6 @@ Agentic Workflow 的效率取决于信息的透明度。最佳实践是将项目
 
 ---
 
-
-
 ### 6: 如何开始使用或试用 GitHub Agentic Workflows？
 
 6: 如何开始使用或试用 GitHub Agentic Workflows？
@@ -458,22 +432,6 @@ Agentic Workflow 的效率取决于信息的透明度。最佳实践是将项目
 1.  **加入等待列表**：访问 GitHub 官方页面加入 Copilot Workspace 或相关功能的等待列表。
 2.  **检查仓库设置**：对于已获得访问权限的用户，通常会在 GitHub Actions 或仓库设置的相关选项中看到“Agentic”或“Copilot”相关的开关。
 3.  **查看官方文档**：由于该功能更新较快，建议查阅 GitHub 的官方博客或开发者文档以获取最新的配置和启用指南。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 在传统的 CI/CD 流程中，脚本通常是确定性的。请分析并列举出至少三个在 GitHub Agentic Workflows 中，AI Agent 可能表现出“非确定性”行为的实际场景，并说明这种非确定性为何在软件开发中可能是有益的。
-
-### 提示**: 思考 AI 在处理代码风格、生成测试用例或修复 Bug 时，是否会每次都产生完全相同的结果？这种差异性与人类开发者有何相似之处？
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://github.github.io/gh-aw](https://github.github.io/gh-aw)
@@ -482,7 +440,6 @@ Agentic Workflow 的效率取决于信息的透明度。最佳实践是将项目
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

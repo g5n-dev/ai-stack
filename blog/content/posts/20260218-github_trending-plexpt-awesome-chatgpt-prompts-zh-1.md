@@ -37,8 +37,6 @@ Relevant source files
   * [LICENSE](https://github.com/PlexPt/awesome-chatgpt-prompts-zh/blob/367ed18b/LICENSE)
   * [README.md](https://github.com/PlexPt/awesome-chatgpt-prompts-zh/blob/367ed18b/README.md)
 
-
-
 The `awesome-chatgpt-prompts-zh` repository serves as a comprehensive collection of Chinese-language prompts for ChatGPT. These prompts instruct ChatGPT to assume specific roles or perform specialized tasks, enabling users to achieve more effective and targeted interactions with the AI model.
 
 This overview introduces the repository's purpose, structure, and usage patterns to help users understand and navigate the available resources.
@@ -48,7 +46,6 @@ Sources: [README.md1-14](https://github.com/PlexPt/awesome-chatgpt-prompts-zh/bl
 ## Repository Purpose and Structure
 
 The repository aims to provide Chinese-speaking users with ready-to-use prompts that can be directly copied and pasted into ChatGPT conversations. By using these carefully crafted prompts, users can guide ChatGPT to respond in specific ways aligned with their needs.
-
 
 Sources: [README.md1-61](https://github.com/PlexPt/awesome-chatgpt-prompts-zh/blob/367ed18b/README.md#L1-L61) [README.md64-73](https://github.com/PlexPt/awesome-chatgpt-prompts-zh/blob/367ed18b/README.md#L64-L73) [README.md740-742](https://github.com/PlexPt/awesome-chatgpt-prompts-zh/blob/367ed18b/README.md#L740-L742)
 
@@ -73,13 +70,11 @@ Sources: [README.md31-61](https://github.com/PlexPt/awesome-chatgpt-prompts-zh/b
 
 The repository organizes prompts into several key categories to help users quickly find the appropriate prompt for their needs:
 
-
 Sources: [README.md84-496](https://github.com/PlexPt/awesome-chatgpt-prompts-zh/blob/367ed18b/README.md#L84-L496) [README.md663-674](https://github.com/PlexPt/awesome-chatgpt-prompts-zh/blob/367ed18b/README.md#L663-L674)
 
 ## User Workflow
 
 The typical workflow for using prompts from this repository follows these steps:
-
 
 Sources: [README.md79-82](https://github.com/PlexPt/awesome-chatgpt-prompts-zh/blob/367ed18b/README.md#L79-L82)
 
@@ -101,7 +96,6 @@ Sources: [README.md84-119](https://github.com/PlexPt/awesome-chatgpt-prompts-zh/
 
 Beyond standard task-oriented prompts, the repository includes specialized role-playing prompts in separate files:
 
-
 These prompts are designed for entertainment purposes and create more personalized, character-based interactions with ChatGPT.
 
 Sources: [README.md740-742](https://github.com/PlexPt/awesome-chatgpt-prompts-zh/blob/367ed18b/README.md#L740-L742)
@@ -110,7 +104,6 @@ Sources: [README.md740-742](https://github.com/PlexPt/awesome-chatgpt-prompts-zh
 
 The repository connects users to a broader ecosystem of AI-related resources and communities:
 
-
 The WeChat groups facilitate discussions among AI enthusiasts and users looking to share experiences with ChatGPT and the prompt library.
 
 Sources: [README.md64-73](https://github.com/PlexPt/awesome-chatgpt-prompts-zh/blob/367ed18b/README.md#L64-L73) [README.md23-27](https://github.com/PlexPt/awesome-chatgpt-prompts-zh/blob/367ed18b/README.md#L23-L27)
@@ -118,7 +111,6 @@ Sources: [README.md64-73](https://github.com/PlexPt/awesome-chatgpt-prompts-zh/b
 ## Technical Implementation
 
 For developers looking to utilize these prompts programmatically:
-
 
 The JSON files provide structured access to the prompts, allowing for integration into applications, tools, or custom implementations.
 
@@ -132,8 +124,6 @@ To use the prompts:
   2. Copy the prompt text directly from the README or appropriate file
   3. Paste the prompt into your ChatGPT conversation
   4. Continue the conversation within the context established by the prompt
-
-
 
 The repository is designed to be straightforward, with prompts that can be used immediately without modification.
 
@@ -391,9 +381,6 @@ awesome-chatgpt-prompts-zh 是一个精选的 ChatGPT 中文提示词库，旨�
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：文本摘要生成
 def generate_summary(text, max_length=100):
@@ -423,9 +410,6 @@ def generate_summary(text, max_length=100):
         return f"生成摘要时出错: {str(e)}"
 ```
 
-
-
-
 ```python
 # 示例2：代码解释器
 def explain_code(code_snippet, language="python"):
@@ -453,9 +437,6 @@ def explain_code(code_snippet, language="python"):
     except Exception as e:
         return f"解释代码时出错: {str(e)}"
 ```
-
-
-
 
 ```python
 # 示例3：多语言翻译
@@ -485,10 +466,8 @@ def translate_text(text, target_language="中文"):
         return f"翻译时出错: {str(e)}"
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某电商平台客服系统优化
 
@@ -515,8 +494,6 @@ def translate_text(text, target_language="中文"):
 
 ---
 
-
-
 ### 2：教育科技公司课程内容生成
 
  2：教育科技公司课程内容生成
@@ -541,8 +518,6 @@ def translate_text(text, target_language="中文"):
 3. 教师反馈内容质量与人工创作相当，但节省70%时间用于教学优化。  
 
 ---
-
-
 
 ### 3：企业内部知识库问答系统
 
@@ -728,7 +703,6 @@ def translate_text(text, target_language="中文"):
 - 针对专业领域定制术语（编程/写作/分析），提高响应内容的专业度
 - 利用思维链提示要求AI展示推理步骤，增强复杂逻辑任务的可靠性
 
-
 ---
 ## 学习路径
 
@@ -815,7 +789,6 @@ def translate_text(text, target_language="中文"):
 ---
 ## 常见问题
 
-
 ### 1: 什么是 awesome-chatgpt-prompts-zh 项目？
 
 1: 什么是 awesome-chatgpt-prompts-zh 项目？
@@ -823,8 +796,6 @@ def translate_text(text, target_language="中文"):
 **A**: awesome-chatgpt-prompts-zh 是一个精选的 ChatGPT 提示词集合。该项目将国外知名的 "awesome-chatgpt-prompts" 库进行了中文翻译和整理，旨在帮助中文用户通过使用高质量的提示词来更有效地利用 ChatGPT 的能力。它包含了各种角色扮演场景（如充当翻译官、面试官、程序员等）的指令模板。
 
 ---
-
-
 
 ### 2: 如何使用这些提示词？
 
@@ -834,8 +805,6 @@ def translate_text(text, target_language="中文"):
 
 ---
 
-
-
 ### 3: 为什么我复制了提示词，但 ChatGPT 的回答效果不好？
 
 3: 为什么我复制了提示词，但 ChatGPT 的回答效果不好？
@@ -843,8 +812,6 @@ def translate_text(text, target_language="中文"):
 **A**: 这可能有几个原因。首先，请确保你复制了完整的提示词内容，不要遗漏上下文。其次，ChatGPT 的回答质量受模型版本影响，GPT-4 通常比 GPT-3.5 效果更好且理解力更强。最后，如果提示词是英文的而你直接翻译使用，可能会损失一些语境，建议参考该项目的中文版本，或者在使用中文提示词后，如果效果不佳，尝试微调你的具体指令。
 
 ---
-
-
 
 ### 4: 我可以直接复制英文原版提示词使用吗？
 
@@ -854,8 +821,6 @@ def translate_text(text, target_language="中文"):
 
 ---
 
-
-
 ### 5: 这个项目支持 GPT-4 吗？
 
 5: 这个项目支持 GPT-4 吗？
@@ -863,8 +828,6 @@ def translate_text(text, target_language="中文"):
 **A**: 支持的。这些提示词本质上是自然语言指令，适用于所有基于 GPT 架构的模型。实际上，由于 GPT-4 拥有更强的逻辑推理和上下文理解能力，使用这些提示词在 GPT-4 上通常会获得比 GPT-3.5 更加出色、更加符合预期的回复。
 
 ---
-
-
 
 ### 6: 如何贡献我自己的提示词？
 
@@ -874,29 +837,11 @@ def translate_text(text, target_language="中文"):
 
 ---
 
-
-
 ### 7: 除了 GitHub，还有其他方式查看这些提示词吗？
 
 7: 除了 GitHub，还有其他方式查看这些提示词吗？
 
 **A**: 除了直接在 GitHub 上阅读 Markdown 文件，很多开发者或社区会将这些提示词导入到专门的网站、浏览器插件或者 Notion 模板中，以便于快速搜索和复制。你可以在 GitHub 项目的 Readme 中查看是否有相关的在线演示地址或推荐工具。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 假设你是一名初级软件工程师，需要向非技术背景的项目经理解释什么是"API"。请使用该仓库中的"充当高级软件工程师"提示词作为基础，生成一段通俗易懂的解释。
-
-### 提示**:
-
-### 在仓库中找到"高级软件工程师"相关的提示词模板
-
----
 ## 实践建议
 
 基于 **PlexPt/awesome-chatgpt-prompts-zh** 仓库的特性（即 Prompt 收录与场景化应用），以下是 6 条针对实际使用场景的实践建议：
@@ -941,7 +886,6 @@ def translate_text(text, target_language="中文"):
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

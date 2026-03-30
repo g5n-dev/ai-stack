@@ -44,8 +44,6 @@ Relevant source files
   * [README_TW.md](https://github.com/langbot-app/LangBot/blob/023281ae/README_TW.md)
   * [README_VI.md](https://github.com/langbot-app/LangBot/blob/023281ae/README_VI.md)
 
-
-
 ## Purpose and Scope
 
 This document provides a high-level overview of LangBot, a production-grade instant messaging (IM) bot platform. It covers the system's purpose, architecture, key components, technology stack, and deployment models. For detailed information about specific subsystems, refer to:
@@ -55,8 +53,6 @@ This document provides a high-level overview of LangBot, a production-grade inst
   * Deployment instructions: [Deployment Options](/langbot-app/LangBot/1.3-deployment-options)
   * Backend implementation: [Core Backend System](/langbot-app/LangBot/3-core-backend-system)
   * Frontend implementation: [Web Management Interface](/langbot-app/LangBot/8-web-management-interface)
-
-
 
 * * *
 
@@ -85,7 +81,6 @@ Capability| Description
 
 ### High-Level Architecture Diagram
 
-
 **Description:** This diagram shows the complete LangBot system architecture mapped to actual code entities. The system consists of six major layers: external services, web frontend (React/Next.js), backend core (Python/Quart), data persistence, message processing, AI integration, and plugin/extension systems. Each node represents concrete modules, classes, or services in the codebase. The web frontend communicates with the backend via REST APIs and WebSocket connections, while the backend orchestrates message flow through adapters, security layers, pipeline stages, and AI providers.
 
 **Sources:** [README.md1-177](https://github.com/langbot-app/LangBot/blob/023281ae/README.md#L1-L177) [README_EN.md1-151](https://github.com/langbot-app/LangBot/blob/023281ae/README_EN.md#L1-L151) System Architecture diagrams from context
@@ -93,7 +88,6 @@ Capability| Description
 * * *
 
 ### Core Components and Code Entities
-
 
 **Description:** This diagram bridges natural language system descriptions to concrete code entities in the LangBot codebase. Starting from `main.py`, the application bootstraps through `BootingStage` implementations including `LoadConfigStage` (loads `config.yaml`) and `DBMigration` (database schema). The web UI components (`BotForm`, `PipelineFormComponent`, `ModelsDialog`, etc.) communicate with backend service classes (`BotService`, `PipelineService`, `ModelService`, etc.) through the Quart API layer at `/api/v1/*`. Message processing flows through platform adapters to security layers and pipeline stages, integrating with LLM providers, RAG manager, and plugin systems. All configuration and state is persisted to SQL databases and vector databases.
 
@@ -149,8 +143,6 @@ LangBot supports multiple deployment models to accommodate different use cases:
   * **Use Case:** Local development, quick testing
   * **Prerequisites:** Python 3.10+, uv package manager
 
-
-
 ### Docker Compose (Standard)
 
   * **Image:** `rockchin/langbot:latest`
@@ -158,16 +150,12 @@ LangBot supports multiple deployment models to accommodate different use cases:
   * **Use Case:** Production self-hosted deployment
   * **Storage:** Docker volumes for persistence
 
-
-
 ### Kubernetes (Enterprise)
 
   * **Manifests:** `docker/README_K8S.md`
   * **Features:** Pod autoscaling, service mesh integration
   * **Use Case:** Large-scale enterprise deployments
   * **Storage:** Persistent volumes for SQL/vector databases
-
-
 
 ### Cloud Platforms (Managed)
 
@@ -180,7 +168,6 @@ Platform| Deployment Method| Configuration
 ### Multi-Stage Docker Build
 
 The Docker build process uses a multi-stage approach:
-
 
 **Description:** The Dockerfile first builds the Next.js frontend using Node.js, then copies the static assets into a Python runtime image. This produces a single container image that includes both the web UI and the backend API.
 
@@ -310,9 +297,6 @@ LangBot 采用了基于 **Python** 的**插件化架构**与**适配器模式**�
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：基础聊天机器人实现
 def basic_chatbot():
@@ -342,9 +326,6 @@ def basic_chatbot():
 # 运行示例
 basic_chatbot()
 ```
-
-
-
 
 ```python
 # 示例2：带上下文记忆的聊天机器人
@@ -379,9 +360,6 @@ def context_chatbot():
 # 运行示例
 context_chatbot()
 ```
-
-
-
 
 ```python
 # 示例3：集成API的智能聊天机器人
@@ -436,10 +414,8 @@ def api_chatbot():
 # api_chatbot()
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某跨境电商SaaS平台
 
@@ -466,8 +442,6 @@ def api_chatbot():
 
 ---
 
-
-
 ### 2：某大型制造企业知识库项目
 
  2：某大型制造企业知识库项目
@@ -492,8 +466,6 @@ def api_chatbot():
 3. 设备停机时间减少35%，年节省维护成本约200万元。
 
 ---
-
-
 
 ### 3：某在线教育平台个性化学习系统
 
@@ -750,7 +722,6 @@ LangBot 可能包含用户头像、机器人图标等图片资源，未优化的
 - 开源社区活跃，提供文档和示例代码，降低学习成本
 - 适用场景涵盖客服、教育或个人助手等领域的自动化对话需求
 
-
 ---
 ## 学习路径
 
@@ -867,7 +838,6 @@ LangBot 可能包含用户头像、机器人图标等图片资源，未优化的
 ---
 ## 常见问题
 
-
 ### 1: LangBot 是什么项目？它的主要功能是什么？
 
 1: LangBot 是什么项目？它的主要功能是什么？
@@ -875,8 +845,6 @@ LangBot 可能包含用户头像、机器人图标等图片资源，未优化的
 **A**: LangBot 是一个开源的应用程序，旨在帮助开发者或用户快速构建基于大语言模型（LLM）的聊天机器人。它的主要功能通常包括提供一个可视化的界面或脚手架，让用户能够轻松连接到不同的 LLM API（如 OpenAI、Anthropic 等），配置提示词，并集成到各种平台（如 Discord、Telegram 或 Web 端）。该项目通常侧重于简化开发流程，提供多语言支持或特定的工具链集成。
 
 ---
-
-
 
 ### 2: 如何部署和运行 LangBot？
 
@@ -892,8 +860,6 @@ LangBot 可能包含用户头像、机器人图标等图片资源，未优化的
 
 ---
 
-
-
 ### 3: LangBot 支持哪些大语言模型提供商？
 
 3: LangBot 支持哪些大语言模型提供商？
@@ -901,8 +867,6 @@ LangBot 可能包含用户头像、机器人图标等图片资源，未优化的
 **A**: 根据大多数此类项目的标准配置，LangBot 通常支持主流的 LLM 提供商。这可能包括 OpenAI (GPT-3.5, GPT-4)、Anthropic (Claude)、Google (Gemini) 以及通过 Ollama 部署的开源模型（如 Llama 3, Mistral）。部分版本还可能支持通过统一的接口接入兼容 OpenAI 格式的本地模型服务。
 
 ---
-
-
 
 ### 4: 使用 LangBot 时遇到 API 错误或限流怎么办？
 
@@ -916,8 +880,6 @@ LangBot 可能包含用户头像、机器人图标等图片资源，未优化的
 
 ---
 
-
-
 ### 5: 该项目是否支持 Docker 部署？
 
 5: 该项目是否支持 Docker 部署？
@@ -925,8 +887,6 @@ LangBot 可能包含用户头像、机器人图标等图片资源，未优化的
 **A**: 是的，大多数现代开源 Bot 项目都会提供 Docker 支持。通常项目中会包含 `Dockerfile` 和 `docker-compose.yml` 文件。使用 Docker 部署可以避免繁琐的环境配置问题。您只需运行 `docker-compose up -d` 命令即可启动服务。请查看项目源码目录中是否存在相关 Docker 配置文件以确认。
 
 ---
-
-
 
 ### 6: 如何自定义机器人的提示词或行为？
 
@@ -936,29 +896,11 @@ LangBot 可能包含用户头像、机器人图标等图片资源，未优化的
 
 ---
 
-
-
 ### 7: LangBot 是否支持中文？
 
 7: LangBot 是否支持中文？
 
 **A**: 是的，LangBot 本身作为一个多语言框架或应用，通常支持国际化（i18n）。此外，由于底层调用的 LLM（如 GPT-4, Claude 3）本身具备强大的中英双语能力，机器人处理中文输入和输出通常没有障碍。如果前端界面显示为英文，用户可以在配置文件中寻找语言设置选项将其修改为中文。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 尝试修改 LangBot 的系统提示词，使其在回答问题时强制使用特定的角色设定（例如“你是一位严厉的代码审查员”）。观察并验证机器人的回复风格是否发生了预期的变化。
-
-### 提示**: 关注项目中处理 Prompt 模板或初始化 LLM 客户端的配置文件，通常在 `src` 或 `config` 目录下。
-
-### 
-
----
 ## 实践建议
 
 基于 `langbot-app` 作为一款生产级多平台智能机器人开发平台的定位，结合其支持多渠道（IM）和多模型（LLM）的特性，以下是 6 条针对实际开发与运维的实践建议：
@@ -1002,7 +944,6 @@ LangBot 可能包含用户头像、机器人图标等图片资源，未优化的
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

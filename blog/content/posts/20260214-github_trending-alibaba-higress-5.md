@@ -38,8 +38,6 @@ Relevant source files
   * [README_JP.md](https://github.com/alibaba/higress/blob/8deceb4d/README_JP.md)
   * [README_ZH.md](https://github.com/alibaba/higress/blob/8deceb4d/README_ZH.md)
 
-
-
 ## Purpose and Scope
 
 This document provides a comprehensive overview of Higress, an AI Native API Gateway built on Istio and Envoy. It covers the system's architecture, core components, and primary use cases. For detailed information about specific subsystems, refer to the Core Architecture (page 2), Build and Deployment (page 3), WASM Plugin System (page 4), AI Gateway Features (page 5), MCP System (page 6), and Development Guide (page 7) sections.
@@ -73,7 +71,6 @@ Higress implements a control plane and data plane separation derived from Istio'
 
 **Component Deployment Diagram:**
 
-
 **Binary and Process Mapping:**
 
 Binary| Source Entry Point| Deployment Location| Primary Functions  
@@ -92,7 +89,6 @@ Sources: [README.md32](https://github.com/alibaba/higress/blob/8deceb4d/README.m
 ### Configuration Flow and Controller Architecture
 
 **Configuration Update Sequence:**
-
 
 **Controller Registry and Responsibilities:**
 
@@ -337,9 +333,6 @@ Higress 定位为“一站式流量入口”，核心功能分为三大板块：
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：Higress 网关配置示例
 def higress_gateway_config():
@@ -380,9 +373,6 @@ gateway_config = higress_gateway_config()
 print("Higress 网关配置已生成:", gateway_config)
 ```
 
-
-
-
 ```python
 # 示例2：Higress 插件开发示例
 class AuthPlugin:
@@ -422,9 +412,6 @@ response = auth_plugin.process_request(request)
 print("认证结果:", response)
 ```
 
-
-
-
 ```python
 # 示例3：Higress 监控指标收集
 def collect_higress_metrics():
@@ -461,10 +448,8 @@ for key, value in metrics.items():
     print(f"{key}: {value}")
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某大型电商平台微服务网关改造
 
@@ -479,8 +464,6 @@ for key, value in metrics.items():
 **效果**: 网关配置变更实现秒级生效，彻底消除了因网关重启导致的连接中断问题。借助Wasm插件的高性能执行效率，鉴权链路延迟降低约40%，成功支撑了大促期间的高并发流量，并赋予了业务团队独立开发网关扩展插件的能力。
 
 ---
-
-
 
 ### 2：AI模型推理服务的高并发接入
 
@@ -695,7 +678,6 @@ Higress 提供了内置的认证鉴权插件（如 JWT、AK/SK、Basic Auth）�
 - 它具备高性能的 WAF（Web 应用防火墙）防护能力和插件市场，支持通过 WASM (WebAssembly) 进行毫秒级热更新，灵活扩展业务功能。
 - 作为 CNCF (云原生计算基金会) 的沙箱项目，它拥有活跃的开源社区支持，适合作为企业级流量入口或统一 API 管理平台。
 
-
 ---
 ## 学习路径
 
@@ -790,7 +772,6 @@ Higress 提供了内置的认证鉴权插件（如 JWT、AK/SK、Basic Auth）�
 ---
 ## 常见问题
 
-
 ### 1: Higress 是什么？它与阿里巴巴和云原生社区有什么关系？
 
 1: Higress 是什么？它与阿里巴巴和云原生社区有什么关系？
@@ -800,8 +781,6 @@ Higress 提供了内置的认证鉴权插件（如 JWT、AK/SK、Basic Auth）�
 Higress 的核心定位是**“云原生 API 网关”**，它深度集成了 Envoy 和 Istio，旨在解决从传统微服务架构向 Service Mesh（服务网格）架构过渡时的流量管理痛点。它既支持作为 Kubernetes 集群的 Ingress Gateway 入口网关，也支持作为传统的 API 网关管理南北向流量。
 
 ---
-
-
 
 ### 2: Higress 与 Nginx、APISIX 或 Kong 等 API 网关相比有什么优势？
 
@@ -816,8 +795,6 @@ Higress 的核心定位是**“云原生 API 网关”**，它深度集成了 En
 
 ---
 
-
-
 ### 3: Higress 是否支持非容器化或虚拟机环境的服务？
 
 3: Higress 是否支持非容器化或虚拟机环境的服务？
@@ -827,8 +804,6 @@ Higress 的核心定位是**“云原生 API 网关”**，它深度集成了 En
 虽然 Higress 是为 Kubernetes 设计的，但它具备强大的**服务发现**能力，不仅支持 Kubernetes 原生 Service，还支持 Nacos、Consul、ZooKeeper、DNS 以及固定 IP（IP 列表）等注册中心。这意味着用户可以将运行在虚拟机上的后端服务注册到 Higress 中，实现从容器到虚拟机的统一流量调度和路由。
 
 ---
-
-
 
 ### 4: 如何在 Higress 中扩展功能？是否支持插件机制？
 
@@ -842,8 +817,6 @@ Higress 的核心定位是**“云原生 API 网关”**，它深度集成了 En
 
 ---
 
-
-
 ### 5: Higress 能否处理 Dubbo 或 gRPC 等非 HTTP 协议的流量？
 
 5: Higress 能否处理 Dubbo 或 gRPC 等非 HTTP 协议的流量？
@@ -854,8 +827,6 @@ Higress 的核心定位是**“云原生 API 网关”**，它深度集成了 En
 2.  **Dubbo**：Higress 提供了对 Dubbo（Apache Dubbo）协议的深度支持，可以直接代理 Dubbo 服务，实现 HTTP 转 Dubbo 的协议转换，使得前端可以通过 HTTP/RESTful 方式调用后端的 Dubbo 服务。
 
 ---
-
-
 
 ### 6: Higress 的生产环境部署是否复杂？是否有控制台？
 
@@ -868,8 +839,6 @@ Higress 的核心定位是**“云原生 API 网关”**，它深度集成了 En
 
 ---
 
-
-
 ### 7: Higress 是否兼容 Nginx Ingress 的配置？
 
 7: Higress 是否兼容 Nginx Ingress 的配置？
@@ -877,22 +846,6 @@ Higress 的核心定位是**“云原生 API 网关”**，它深度集成了 En
 **A**: 是的，为了降低迁移成本，Higress 做了大量的兼容工作。
 
 Higress 实现了 Kubernetes Ingress 的标准规范，并且
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 基础路由与环境搭建
-
-### 问题**: 在本地 Docker 环境中快速部署 Higress，并配置一个简单的路由规则。要求实现：当用户访问 `/httpbin/` 路径时，将流量 100% 转发到公网可用的 httpbin 测试服务（如 `httpbin.org`），同时移除请求路径中的 `/httpbin` 前缀。
-
-### 提示**:
-
-### 参考 Higress 官方文档的 "快速开始" 章节，使用 `docker-compose` 启动标准镜像。
-
----
 ## 实践建议
 
 以下是基于 Higress 作为 AI 网关和 API 网关在实际生产环境中的 6 条实践建议：
@@ -933,7 +886,6 @@ AI 问答通常耗时较长，且使用 SSE (Server-Sent Events) 协议。
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

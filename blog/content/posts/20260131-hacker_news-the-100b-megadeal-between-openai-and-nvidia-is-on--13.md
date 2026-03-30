@@ -82,9 +82,6 @@ OpenAI与英伟达之间潜在的百亿美金算力交易遭遇搁置，并非�
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：实时监控科技新闻关键词
 def monitor_tech_news(keyword="OpenAI"):
@@ -115,7 +112,6 @@ def monitor_tech_news(keyword="OpenAI"):
 monitor_tech_news()
 ```
 
-
 ---
 
 ```python
@@ -143,7 +139,6 @@ def analyze_partnership(company_a, company_b):
 # 测试
 analyze_partnership("OpenAI", "Nvidia")
 ```
-
 
 ---
 
@@ -174,10 +169,8 @@ def calculate_impact(deal_value, current_revenue, growth_rate=0.1):
 print(calculate_impact(100, 30))  # 模拟OpenAI-Nvidia交易
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：CoreWeave 的债务融资扩张
 
@@ -193,8 +186,6 @@ print(calculate_impact(100, 30))  # 模拟OpenAI-Nvidia交易
 
 ---
 
-
-
 ### 2：Lambda Labs 的算力租赁模式
 
  2：Lambda Labs 的算力租赁模式
@@ -208,8 +199,6 @@ print(calculate_impact(100, 30))  # 模拟OpenAI-Nvidia交易
 **效果**: 这种模式使得 Lambda 能够在算力极度稀缺的市场中占据一席之地。通过直接对接英伟达的顶级硬件，Lambda 为无法自建数据中心的初创公司提供了通往大模型训练的桥梁，证明了在硬件供应链紧张时期，作为英伟达生态链中的“毛细血管”具有极高的商业价值。
 
 ---
-
-
 
 ### 3：戴尔与英伟达的“AI 工厂”战略合作
 
@@ -318,7 +307,6 @@ print(calculate_impact(100, 30))  # 模拟OpenAI-Nvidia交易
 ---
 ## 常见问题
 
-
 ### 1: OpenAI 与 Nvidia 之间所谓的“1000 亿美元超级交易”具体指的是什么？
 
 1: OpenAI 与 Nvidia 之间所谓的“1000 亿美元超级交易”具体指的是什么？
@@ -326,8 +314,6 @@ print(calculate_impact(100, 30))  # 模拟OpenAI-Nvidia交易
 **A**: 这指的是 OpenAI 计划在未来数年内向 Nvidia 采购总价值约 1000 亿美元的人工智能算力硬件（主要是 GPU）及相关基础设施的协议。该采购计划旨在为 OpenAI 下一代模型的研发提供硬件支持。目前，该交易处于“冻结”状态，意味着协议条款尚未最终敲定，执行计划已被暂时搁置。
 
 ---
-
-
 
 ### 2: 为什么这笔交易会被“冻结”或搁置？
 
@@ -337,8 +323,6 @@ print(calculate_impact(100, 30))  # 模拟OpenAI-Nvidia交易
 
 ---
 
-
-
 ### 3: OpenAI 为什么要开发自己的芯片，这对与 Nvidia 的合作有何影响？
 
 3: OpenAI 为什么要开发自己的芯片，这对与 Nvidia 的合作有何影响？
@@ -346,8 +330,6 @@ print(calculate_impact(100, 30))  # 模拟OpenAI-Nvidia交易
 **A**: OpenAI 开发自研芯片旨在针对特定模型负载进行硬件优化，以追求更高的计算效率和更低的运营成本。这一战略调整意味着 OpenAI 不再完全依赖 Nvidia 满足其未来算力需求，从而直接影响了原定的大规模采购计划，导致交易被搁置。
 
 ---
-
-
 
 ### 4: 这一消息对 Nvidia 的股价和市场地位有何影响？
 
@@ -357,8 +339,6 @@ print(calculate_impact(100, 30))  # 模拟OpenAI-Nvidia交易
 
 ---
 
-
-
 ### 5: DeepSeek 在此事件中扮演了什么角色？
 
 5: DeepSeek 在此事件中扮演了什么角色？
@@ -367,29 +347,11 @@ print(calculate_impact(100, 30))  # 模拟OpenAI-Nvidia交易
 
 ---
 
-
-
 ### 6: “On ice” 是指交易彻底取消了吗？
 
 6: “On ice” 是指交易彻底取消了吗？
 
 **A**: “On ice” 在商业术语中通常意味着“暂停”或“搁置”，而非永久性的“取消”。这表示双方暂时停止了谈判推进或推迟了交付时间表。未来，如果 OpenAI 的自研芯片计划进度不及预期，或算力需求发生变化，双方仍有可能重启谈判或修改交易条款，但原定规模的交易可能会被调整。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 财务报表中的“搁置”
-
-### 问题**:
-
-### 根据商业新闻逻辑，"on ice"（搁置）通常意味着交易完全取消还是暂时延期？在科技行业的硬件采购中，"搁置"一个价值 100 亿美元的交易对卖方（Nvidia）的季度营收预期模型会产生什么直接影响？
-
-### 提示**:
-
----
 ## 引用
 
 - **原文链接**: [https://www.wsj.com/tech/ai/the-100-billion-megadeal-between-openai-and-nvidia-is-on-ice-aa3025e3](https://www.wsj.com/tech/ai/the-100-billion-megadeal-between-openai-and-nvidia-is-on-ice-aa3025e3)
@@ -398,7 +360,6 @@ print(calculate_impact(100, 30))  # 模拟OpenAI-Nvidia交易
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

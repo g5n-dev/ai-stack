@@ -132,26 +132,8 @@ MapLibre Tile 降低了地图开发的门槛：
 ---
 ## 💻 代码示例
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 ## 📚 案例研究
-
 
 ### 1：MapTiler（全球地图数据提供商）
 
@@ -170,8 +152,6 @@ MapLibre Tile 降低了地图开发的门槛：
 
 ---
 
-
-
 ### 2：CARTO（地理位置智能分析平台）
 
  2：CARTO（地理位置智能分析平台）
@@ -188,8 +168,6 @@ MapLibre Tile 降低了地图开发的门槛：
 💡 **无缝迁移体验**：CARTO 提供了自动迁移工具，帮助成千上万的企业用户平滑过渡到基于 MapLibre 的新版分析引擎，保持了极高的客户满意度。
 
 ---
-
-
 
 ### 3：NextGIS（专业 GIS 与野外数据采集系统）
 
@@ -301,7 +279,6 @@ MapLibre Tile 降低了地图开发的门槛：
 ---
 ## ❓ 常见问题
 
-
 ### 1: MapLibre Tile 格式与 Mapbox Vector Tiles (MVT) 有什么区别？
 
 1: MapLibre Tile 格式与 Mapbox Vector Tiles (MVT) 有什么区别？
@@ -313,8 +290,6 @@ MapLibre Tile 降低了地图开发的门槛：
 3.  **独立性**：它是 MapLibre 生态系统的一部分，旨在减少对单一商业供应商（如 Mapbox）私有 API 的依赖，提供一个完全开源、中立的数据格式解决方案。
 
 ---
-
-
 
 ### 2: 为什么我们需要一种“新的”矢量瓦片格式？现有的格式不够用吗？
 
@@ -328,8 +303,6 @@ MapLibre Tile 降低了地图开发的门槛：
 
 ---
 
-
-
 ### 3: MapLibre Tile 是否支持 3D 数据和渲染？
 
 3: MapLibre Tile 是否支持 3D 数据和渲染？
@@ -339,8 +312,6 @@ MapLibre Tile 降低了地图开发的门槛：
 虽然基础的 MVT 格式主要是 2D 的，但 MapLibre Tile 旨在更好地支持 **3D 渲染**（如 3D 建筑物、地形夸张）。MapLibre GL JS 引擎能够利用该格式中的几何数据构建 3D 网格。通过在瓦片数据中包含特定的高度属性或利用新的扩展机制，MapLibre Tile 可以高效地传输构建 3D 城市模型所需的数据，这在现代数字孪生应用中非常常见。
 
 ---
-
-
 
 ### 4: 如何从现有的数据源（如 PostGIS）生成 MapLibre Tile？
 
@@ -353,8 +324,6 @@ MapLibre Tile 降低了地图开发的门槛：
 3.  **后端生成**：你可以使用 **GeoTools**, **Tegola**, 或 **PostGIS ST_AsMVT** 函数。只要输出的数据遵循 Mapbox Vector Tile Spec v2，并按照 MapLibre 的要求配置好 `tiles.json`（TileJSON）元数据文件，就可以被视为 MapLibre Tile 数据源。
 
 ---
-
-
 
 ### 5: MapLibre Tile 与 GeoPackage 或 WMS 等传统格式相比，优势在哪里？
 
@@ -371,31 +340,11 @@ MapLibre Tile 降低了地图开发的门槛：
 
 ---
 
-
-
 ### 6: 使用 MapLibre Tile 是否有版权或许可证方面的限制？
 
 6: 使用 MapLibre Tile 是否有版权或许可证方面的限制？
 
 **A**: **没有，它是完全开源的。** 📜
-
-
-
----
-## 🎯 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**:
-
-### MapLibre GL JS 默认使用的是 `.mvt` (Mapbox Vector Tile) 格式的二进制文件。如果你在浏览器控制台中直接 `console.log()` 读取一个 Vector Tile 的响应，通常会看到乱码。
-
-### 请编写一段简单的 JavaScript 代码片段，利用 `fetch` API 和 `ArrayBuffer`，计算并打印出某个 Vector Tile 文件的大小（字节），并尝试读取文件的前 4 个字节（通常是魔数/版本号）的十六进制表示。
-
----
 ## 🔗 引用
 
 - **原文链接**: [https://maplibre.org/news/2026-01-23-mlt-release](https://maplibre.org/news/2026-01-23-mlt-release)

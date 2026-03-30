@@ -82,9 +82,6 @@ Smooth CLI 并没有发明新技术，而是将“文本优先”的理念产品
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：智能网页内容提取（Token优化）
 def smart_content_extractor(url: str, max_tokens: int = 1000):
@@ -123,9 +120,6 @@ def smart_content_extractor(url: str, max_tokens: int = 1000):
 print(smart_content_extractor("https://example.com/article"))
 ```
 
-
-
-
 ```python
 # 示例2：多模态数据转换器
 def multimodal_converter(input_data: str, output_format: str = "markdown"):
@@ -154,9 +148,6 @@ def multimodal_converter(input_data: str, output_format: str = "markdown"):
 html_content = "<h1>标题</h1><p>这是内容</p>"
 print(multimodal_converter(html_content))
 ```
-
-
-
 
 ```python
 # 示例3：交互式命令行界面
@@ -199,10 +190,8 @@ def interactive_browser():
 # interactive_browser()
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某电商智能客服自动化项目
 
@@ -223,8 +212,6 @@ def interactive_browser():
 - **准确性**: 去除干扰性代码后，模型专注于核心内容，回答关于商品参数的准确率得到了显著提升。
 
 ---
-
-
 
 ### 2：垂直领域情报聚合 Agent
 
@@ -349,7 +336,6 @@ AI Agent 自动化浏览容易触发网站的反爬虫机制（如 CAPTCHA 或 I
 ---
 ## 常见问题
 
-
 ### 1: 什么是 Smooth CLI？它与传统的浏览器自动化工具有何不同？
 
 1: 什么是 Smooth CLI？它与传统的浏览器自动化工具有何不同？
@@ -358,8 +344,6 @@ AI Agent 自动化浏览容易触发网站的反爬虫机制（如 CAPTCHA 或 I
 
 ---
 
-
-
 ### 2: 为什么 AI Agent 需要专门的浏览器？普通浏览器不够用吗？
 
 2: 为什么 AI Agent 需要专门的浏览器？普通浏览器不够用吗？
@@ -367,8 +351,6 @@ AI Agent 自动化浏览容易触发网站的反爬虫机制（如 CAPTCHA 或 I
 **A**: 普通浏览器是为人类视觉体验设计的，包含大量的广告、样式代码、脚本和无关内容。如果让 AI 直接读取这些原始数据，不仅会消耗昂贵的 Token 预算，还会产生大量“噪音”，干扰 AI 的决策。Smooth CLI 这类工具充当了“翻译层”的角色，它将复杂的网页结构转化为 AI 易于理解的简洁格式（如 Markdown 或结构化 JSON），并屏蔽了人类不需要但会干扰 AI 的视觉元素。
 
 ---
-
-
 
 ### 3: Smooth CLI 具体是如何实现“Token 高效”的？
 
@@ -382,8 +364,6 @@ AI Agent 自动化浏览容易触发网站的反爬虫机制（如 CAPTCHA 或 I
 
 ---
 
-
-
 ### 4: 它支持哪些操作系统？安装是否复杂？
 
 4: 它支持哪些操作系统？安装是否复杂？
@@ -391,8 +371,6 @@ AI Agent 自动化浏览容易触发网站的反爬虫机制（如 CAPTCHA 或 I
 **A**: Smooth CLI 通常基于 Python 或 Rust 等跨平台语言开发，因此支持 Linux、macOS 和 Windows 系统。安装过程通常非常简单，用户只需通过包管理器（如 pip 或 cargo）或下载预编译的二进制文件即可完成。由于它是命令行工具（CLI），没有图形界面依赖，因此非常适合在服务器环境或 Docker 容器中运行。
 
 ---
-
-
 
 ### 5: Smooth CLI 能处理复杂的动态网页（如 React 或 Vue 应用）吗？
 
@@ -402,8 +380,6 @@ AI Agent 自动化浏览容易触发网站的反爬虫机制（如 CAPTCHA 或 I
 
 ---
 
-
-
 ### 6: 使用 Smooth CLI 是否需要编程能力？它主要面向什么用户群体？
 
 6: 使用 Smooth CLI 是否需要编程能力？它主要面向什么用户群体？
@@ -411,8 +387,6 @@ AI Agent 自动化浏览容易触发网站的反爬虫机制（如 CAPTCHA 或 I
 **A**: 虽然 Smooth CLI 是命令行工具，但其主要受众是开发者和 AI 研究人员。如果你正在构建 AI Agent、自动化脚本或需要 LLM 与网页进行交互的应用，Smooth CLI 是一个底层的中间件。普通用户可能不会直接使用它，但会使用集成了 Smooth CLI 的 AI 应用（例如能够帮你订票或查资料的 AI 助手）。
 
 ---
-
-
 
 ### 7: 相比于直接使用 Puppeteer 或 Playwright，Smooth CLI 的优势在哪里？
 
@@ -422,22 +396,6 @@ AI Agent 自动化浏览容易触发网站的反爬虫机制（如 CAPTCHA 或 I
 *   **更低的延迟**：传输的数据量更小，处理速度更快。
 *   **更高的成功率**：通过优化元素定位逻辑，减少了 AI 在复杂页面中点击错误按钮的概率。
 *   **成本控制**：大幅减少了在上下文窗口中传输的 Token 数量，直接降低了运行 AI Agent 的资金成本。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**:
-
-### 在传统的 Web 抓取或自动化脚本中，直接获取完整的 HTML 往往会包含大量无关的导航栏、广告或页脚代码。请设计一个简单的过滤规则或启发式算法，能够从给定的 HTML 字符串中提取出主要内容区域（例如 `<article>` 或带有特定 class 的 `div`），从而减少输入给 LLM 的 Token 数量。
-
-### 提示**:
-
----
 ## 引用
 
 - **原文链接**: [https://docs.smooth.sh/cli/overview](https://docs.smooth.sh/cli/overview)
@@ -446,7 +404,6 @@ AI Agent 自动化浏览容易触发网站的反爬虫机制（如 CAPTCHA 或 I
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

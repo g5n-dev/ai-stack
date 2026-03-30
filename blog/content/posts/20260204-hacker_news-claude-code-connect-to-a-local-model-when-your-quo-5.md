@@ -31,7 +31,6 @@ scenarios: ["大语言模型"]
 ---
 ## 评论
 
-
 ### 一、 核心观点与逻辑架构
 
 **中心观点：**
@@ -93,9 +92,6 @@ scenarios: ["大语言模型"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：本地模型回退机制
 import openai
@@ -133,9 +129,6 @@ client = HybridLLMClient(api_key="your-api-key")
 response = client.chat([{"role": "user", "content": "你好"}])
 print(response)
 ```
-
-
-
 
 ```python
 # 示例2：本地模型健康检查
@@ -176,9 +169,6 @@ if monitor.wait_until_ready():
 else:
     print("本地模型启动超时")
 ```
-
-
-
 
 ```python
 # 示例3：混合模型负载均衡
@@ -229,10 +219,8 @@ for i in range(15):
     print(response)
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某AI初创公司
 
@@ -254,8 +242,6 @@ for i in range(15):
 
 ---
 
-
-
 ### 2：某高校研究团队
 
  2：某高校研究团队
@@ -275,8 +261,6 @@ for i in range(15):
 - 团队积累了本地模型部署经验，为后续研究提供了更多灵活性。
 
 ---
-
-
 
 ### 3：某电商平台技术团队
 
@@ -352,7 +336,6 @@ for i in range(15):
 
 ### 实践 4：优化提示词适配本地模型
 
-
 **实施步骤**:
 1. 测试本地模型在不同提示词长度下的表现（建议≤4096 tokens）
 2. 添加结构化指令（如"使用以下格式输出：```json```"）
@@ -420,7 +403,6 @@ for i in range(15):
 ---
 ## 常见问题
 
-
 ### 1: Claude Code 是什么？它与普通的 Claude 有什么区别？
 
 1: Claude Code 是什么？它与普通的 Claude 有什么区别？
@@ -428,8 +410,6 @@ for i in range(15):
 **A**: Claude Code 是 Anthropic 推出的一个命令行工具，专为软件开发工作流设计。与通过网页或 API 调用的标准 Claude 不同，Claude Code 允许用户直接在终端环境中进行代码编写、调试和文件操作。它支持与本地文件系统交互及执行 Shell 命令。此外，该工具支持配置自定义 API 端点，允许用户在无法访问官方 API 时，连接至本地或第三方兼容服务。
 
 ---
-
-
 
 ### 2: 当我的 Claude API 配额用尽时，如何配置 Claude Code 连接到本地模型？
 
@@ -447,8 +427,6 @@ for i in range(15):
 
 ---
 
-
-
 ### 3: 连接本地模型后，功能会受到限制吗？
 
 3: 连接本地模型后，功能会受到限制吗？
@@ -461,8 +439,6 @@ for i in range(15):
 不过，对于常规的代码补全、脚本编写和一般性 Bug 修复，参数适中的本地模型（如 Llama 3 8B 或 Mistral 7B）通常可以满足基本需求。
 
 ---
-
-
 
 ### 4: 哪些本地模型适合作为 Claude 的替代品？
 
@@ -477,8 +453,6 @@ for i in range(15):
 
 ---
 
-
-
 ### 5: 运行本地模型需要什么样的硬件配置？
 
 5: 运行本地模型需要什么样的硬件配置？
@@ -489,22 +463,6 @@ for i in range(15):
     - **7B - 9B 模型**（如 Llama 3 8B）：在 4-bit 量化下，约需 6GB - 8GB 显存。RTX 3060、4060 或 Apple M1/M2/M3 芯片通常可以运行。
     - **13B - 14B 模型**：在 4-bit 量化下，约需 10GB - 12GB 显存。
     - **30B+ 模型**：通常需要 24GB+ 显存（如 RTX 3090/4090）或大内存的 Mac 设备。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 配置 Claude Code 连接到本地运行的 Ollama 模型（如 Llama 3）。假设 Ollama 已在默认端口 11434 启动，请写出必要的配置步骤。
-
-### 提示**: Claude Code 使用类似 OpenAI 的 API 格式，需要设置 `baseURL` 和 `apiKey`（即使本地模型不需要真实密钥）。检查 Ollama 的模型列表命令。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://boxc.net/blog/2026/claude-code-connecting-to-local-models-when-your-quota-runs-out](https://boxc.net/blog/2026/claude-code-connecting-to-local-models-when-your-quota-runs-out)
@@ -513,7 +471,6 @@ for i in range(15):
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

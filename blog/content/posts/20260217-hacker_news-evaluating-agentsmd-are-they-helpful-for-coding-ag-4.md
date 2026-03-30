@@ -81,9 +81,6 @@ scenarios: ["AI/ML项目", "大语言模型"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：评估AGENTS.md文件的完整性
 import os
@@ -116,9 +113,6 @@ def evaluate_agents_completeness(file_path):
 print(evaluate_agents_completeness("./AGENTS.md"))
 ```
 
-
-
-
 ```python
 # 示例2：测试AGENTS.md指令的有效性
 def test_agent_instruction(instruction):
@@ -144,9 +138,6 @@ test_cases = [
 for case in test_cases:
     print(f"指令: {case} -> {test_agent_instruction(case)}")
 ```
-
-
-
 
 ```python
 # 示例3：生成AGENTS.md改进建议
@@ -177,10 +168,8 @@ def generate_improvement_suggestions(file_path):
 print(generate_improvement_suggestions("./AGENTS.md"))
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：Cognition AI (Devin 开发团队)
 
@@ -195,8 +184,6 @@ print(generate_improvement_suggestions("./AGENTS.md"))
 **效果**: 引入该机制后，Devin 在处理陌生代码库的任务成功率显著提升。它能够更准确地定位需要修改的文件，减少了因上下文理解错误导致的无效尝试。在 SWE-bench 基准测试中，Devin 能够更高效地解决真实 GitHub 问题，证明了结构化的 AGENTS.md 文档对于编码代理建立“项目心智模型”至关重要。
 
 ---
-
-
 
 ### 2：某大型金融科技公司的内部 AI 助手迁移
 
@@ -316,7 +303,6 @@ print(generate_improvement_suggestions("./AGENTS.md"))
 ---
 ## 常见问题
 
-
 ### 1: 什么是 AGENTS.md 文件，它与 README.md 有什么区别？
 
 1: 什么是 AGENTS.md 文件，它与 README.md 有什么区别？
@@ -325,8 +311,6 @@ print(generate_improvement_suggestions("./AGENTS.md"))
 
 ---
 
-
-
 ### 2: 为什么需要专门为 AI 代码代理编写 AGENTS.md？
 
 2: 为什么需要专门为 AI 代码代理编写 AGENTS.md？
@@ -334,8 +318,6 @@ print(generate_improvement_suggestions("./AGENTS.md"))
 **A**: 尽管 LLM（大语言模型）非常强大，但在处理大型、复杂的代码库时，它们仍然面临上下文窗口限制和“迷失”方向的问题。直接将所有代码文件喂给代理往往会导致信息过载或理解偏差。`AGENTS.md` 充当了一个“高层指南”或“地图”，它预先提炼了关键的结构信息和设计意图。这使得代理在执行任务（如修复 Bug 或添加功能）时，能够更快地定位相关文件，理解修改的影响范围，从而生成更准确、更符合项目规范的代码，减少幻觉和错误。
 
 ---
-
-
 
 ### 3: 一个高质量的 AGENTS.md 文件应该包含哪些核心内容？
 
@@ -351,8 +333,6 @@ print(generate_improvement_suggestions("./AGENTS.md"))
 
 ---
 
-
-
 ### 4: AGENTS.md 对于目前流行的 AI 编程工具（如 Cursor, GitHub Copilot Workspace）真的有用吗？
 
 4: AGENTS.md 对于目前流行的 AI 编程工具（如 Cursor, GitHub Copilot Workspace）真的有用吗？
@@ -360,8 +340,6 @@ print(generate_improvement_suggestions("./AGENTS.md"))
 **A**: 是的，非常有用。虽然目前的 AI 工具（如 Cursor）具备强大的代码库索引能力（RAG），但它们在处理跨文件引用或深层逻辑时，往往只能基于片段进行猜测。如果项目中存在 `AGENTS.md`，开发者可以在对话中明确引用该文件，或者代理在检索时优先读取该文件，从而获得更全局的视角。实际反馈表明，拥有清晰 `AGENTS.md` 的项目，AI 生成代码的一次性成功率通常更高，且更少出现违反架构原则的修改。
 
 ---
-
-
 
 ### 5: 编写 AGENTS.md 会带来额外的维护成本吗？如何平衡成本与收益？
 
@@ -374,8 +352,6 @@ print(generate_improvement_suggestions("./AGENTS.md"))
 
 ---
 
-
-
 ### 6: 除了 AGENTS.md，还有哪些方法可以提高 AI 代码代理在项目中的表现？
 
 6: 除了 AGENTS.md，还有哪些方法可以提高 AI 代码代理在项目中的表现？
@@ -385,22 +361,6 @@ print(generate_improvement_suggestions("./AGENTS.md"))
 2.  **模块化设计**：降低模块间的耦合度，使得代理修改某个功能时不会意外破坏其他部分。
 3.  **提供上下文示例**：在代码注释中提供具体的输入输出示例。
 4.  **使用 .cursorrules 等配置**：在支持的工具中定义全局规则，强制代理遵循特定的编码习惯。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 假设你正在为一个简单的 Python 脚本项目编写 `AGENTS.md`。该项目包含一个用于抓取新闻的脚本。请列出你认为必须包含在 `AGENTS.md` 中的 3 个核心元数据字段（如项目名称、主要依赖等），并解释为什么这些字段对于一个刚接手代码的 AI Agent 至关重要。
-
-### 提示**: 思考 AI Agent 在没有上下文的情况下阅读代码时，首先需要知道什么才能正确配置环境并理解项目意图。关注“环境配置”和“依赖管理”。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://arxiv.org/abs/2602.11988](https://arxiv.org/abs/2602.11988)
@@ -409,7 +369,6 @@ print(generate_improvement_suggestions("./AGENTS.md"))
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

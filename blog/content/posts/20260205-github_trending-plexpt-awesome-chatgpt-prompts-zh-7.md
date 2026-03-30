@@ -37,8 +37,6 @@ Relevant source files
   * [LICENSE](https://github.com/PlexPt/awesome-chatgpt-prompts-zh/blob/367ed18b/LICENSE)
   * [README.md](https://github.com/PlexPt/awesome-chatgpt-prompts-zh/blob/367ed18b/README.md)
 
-
-
 The `awesome-chatgpt-prompts-zh` repository serves as a comprehensive collection of Chinese-language prompts for ChatGPT. These prompts instruct ChatGPT to assume specific roles or perform specialized tasks, enabling users to achieve more effective and targeted interactions with the AI model.
 
 This overview introduces the repository's purpose, structure, and usage patterns to help users understand and navigate the available resources.
@@ -48,7 +46,6 @@ Sources: [README.md1-14](https://github.com/PlexPt/awesome-chatgpt-prompts-zh/bl
 ## Repository Purpose and Structure
 
 The repository aims to provide Chinese-speaking users with ready-to-use prompts that can be directly copied and pasted into ChatGPT conversations. By using these carefully crafted prompts, users can guide ChatGPT to respond in specific ways aligned with their needs.
-
 
 Sources: [README.md1-61](https://github.com/PlexPt/awesome-chatgpt-prompts-zh/blob/367ed18b/README.md#L1-L61) [README.md64-73](https://github.com/PlexPt/awesome-chatgpt-prompts-zh/blob/367ed18b/README.md#L64-L73) [README.md740-742](https://github.com/PlexPt/awesome-chatgpt-prompts-zh/blob/367ed18b/README.md#L740-L742)
 
@@ -73,13 +70,11 @@ Sources: [README.md31-61](https://github.com/PlexPt/awesome-chatgpt-prompts-zh/b
 
 The repository organizes prompts into several key categories to help users quickly find the appropriate prompt for their needs:
 
-
 Sources: [README.md84-496](https://github.com/PlexPt/awesome-chatgpt-prompts-zh/blob/367ed18b/README.md#L84-L496) [README.md663-674](https://github.com/PlexPt/awesome-chatgpt-prompts-zh/blob/367ed18b/README.md#L663-L674)
 
 ## User Workflow
 
 The typical workflow for using prompts from this repository follows these steps:
-
 
 Sources: [README.md79-82](https://github.com/PlexPt/awesome-chatgpt-prompts-zh/blob/367ed18b/README.md#L79-L82)
 
@@ -101,7 +96,6 @@ Sources: [README.md84-119](https://github.com/PlexPt/awesome-chatgpt-prompts-zh/
 
 Beyond standard task-oriented prompts, the repository includes specialized role-playing prompts in separate files:
 
-
 These prompts are designed for entertainment purposes and create more personalized, character-based interactions with ChatGPT.
 
 Sources: [README.md740-742](https://github.com/PlexPt/awesome-chatgpt-prompts-zh/blob/367ed18b/README.md#L740-L742)
@@ -110,7 +104,6 @@ Sources: [README.md740-742](https://github.com/PlexPt/awesome-chatgpt-prompts-zh
 
 The repository connects users to a broader ecosystem of AI-related resources and communities:
 
-
 The WeChat groups facilitate discussions among AI enthusiasts and users looking to share experiences with ChatGPT and the prompt library.
 
 Sources: [README.md64-73](https://github.com/PlexPt/awesome-chatgpt-prompts-zh/blob/367ed18b/README.md#L64-L73) [README.md23-27](https://github.com/PlexPt/awesome-chatgpt-prompts-zh/blob/367ed18b/README.md#L23-L27)
@@ -118,7 +111,6 @@ Sources: [README.md64-73](https://github.com/PlexPt/awesome-chatgpt-prompts-zh/b
 ## Technical Implementation
 
 For developers looking to utilize these prompts programmatically:
-
 
 The JSON files provide structured access to the prompts, allowing for integration into applications, tools, or custom implementations.
 
@@ -132,8 +124,6 @@ To use the prompts:
   2. Copy the prompt text directly from the README or appropriate file
   3. Paste the prompt into your ChatGPT conversation
   4. Continue the conversation within the context established by the prompt
-
-
 
 The repository is designed to be straightforward, with prompts that can be used immediately without modification.
 
@@ -377,9 +367,6 @@ awesome-chatgpt-prompts-zh 是一个汇集了各类中文提示词的精选列�
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：获取GitHub Trending热门仓库信息
 import requests
@@ -424,7 +411,6 @@ for repo in trending_repos[:3]:  # 打印前3个
     print(f"[星标: {repo['stars']}] | [Fork: {repo['forks']}]\n")
 ```
 
-
 ---
 
 ```python
@@ -467,10 +453,8 @@ print(f"链接数量: {analysis.get('links', 0)}")
 print(f"内容长度: {analysis.get('length', 0)} 字符")
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某电商公司客户服务优化
 
@@ -489,8 +473,6 @@ print(f"内容长度: {analysis.get('length', 0)} 字符")
 
 ---
 
-
-
 ### 2：教育科技企业课程内容生成
 
  2：教育科技企业课程内容生成  
@@ -507,8 +489,6 @@ print(f"内容长度: {analysis.get('length', 0)} 字符")
 **效果**: 课程开发周期缩短60%，案例多样性提升50%。学生完课率提高18%，习题正确率提升22%，教研团队可专注于教学设计而非重复性写作。  
 
 ---
-
-
 
 ### 3：法律事务所合同审查自动化
 
@@ -676,7 +656,6 @@ print(f"内容长度: {analysis.get('length', 0)} 字符")
 - 分步骤处理复杂任务比单次请求更高效
 - 避免模糊指令，使用可量化的参数（如字数/数量）
 
-
 ---
 ## 学习路径
 
@@ -772,7 +751,6 @@ print(f"内容长度: {analysis.get('length', 0)} 字符")
 ---
 ## 常见问题
 
-
 ### 1: 这个项目的主要用途是什么？
 
 1: 这个项目的主要用途是什么？
@@ -780,8 +758,6 @@ print(f"内容长度: {analysis.get('length', 0)} 字符")
 **A**: awesome-chatgpt-prompts-zh 是一个精选的提示词集合库。它的主要目的是帮助用户通过使用高质量的提示词，来引导 ChatGPT（或类似的 AI 模型）生成更精准、更符合预期的回复。该项目包含了各种场景下的提示词模板，例如充当翻译官、代码解释器、面试官、甚至特定领域的专家。
 
 ---
-
-
 
 ### 2: 如何使用这个仓库中的提示词？
 
@@ -791,8 +767,6 @@ print(f"内容长度: {analysis.get('length', 0)} 字符")
 
 ---
 
-
-
 ### 3: 这个项目支持哪些语言？
 
 3: 这个项目支持哪些语言？
@@ -800,8 +774,6 @@ print(f"内容长度: {analysis.get('length', 0)} 字符")
 **A**: 顾名思义，awesome-chatgpt-prompts-zh 主要是针对中文用户优化的提示词集合。虽然原始的英文版本库也非常流行，但这个版本（zh）专门将提示词进行了中文翻译或优化，更适合国内用户直接使用，避免了语言切换带来的理解偏差。
 
 ---
-
-
 
 ### 4: 这些提示词只能用于 ChatGPT 吗？
 
@@ -811,8 +783,6 @@ print(f"内容长度: {analysis.get('length', 0)} 字符")
 
 ---
 
-
-
 ### 5: 如果我有好的提示词想法，可以贡献吗？
 
 5: 如果我有好的提示词想法，可以贡献吗？
@@ -821,29 +791,11 @@ print(f"内容长度: {analysis.get('length', 0)} 字符")
 
 ---
 
-
-
 ### 6: 提示词的效果不好怎么办？
 
 6: 提示词的效果不好怎么办？
 
 **A**: 提示词的效果取决于多种因素。首先，确保你完整地复制了提示词，没有遗漏关键的上下文设定。其次，AI 模型的版本也很重要（如 GPT-3.5 vs GPT-4）。如果效果不佳，建议尝试基于模板进行微调，加入更具体的细节要求，或者切换到更高级的模型版本进行测试。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**:
-
-### 假设你是一个英语写作助手，请编写一个提示词，让 ChatGPT 帮你将一段中文商务邮件翻译成英文，要求语气正式、专业，并保留原文的段落格式。
-
-### 提示**:
-
----
 ## 实践建议
 
 基于该仓库（ChatGPT 中文调教指南）的内容特性，以下是 6 条针对实际使用场景的实践建议：
@@ -875,7 +827,6 @@ print(f"内容长度: {analysis.get('length', 0)} 字符")
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

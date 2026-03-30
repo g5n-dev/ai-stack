@@ -71,9 +71,6 @@ MiniMax M2.5 在 SWE-bench Verified 上取得 80.2% 的成绩，表明该模型�
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：自动化测试用例生成
 def generate_test_cases(function_name, params):
@@ -98,9 +95,6 @@ def generate_test_cases(function_name, params):
 print(generate_test_cases("calculate_discount", 
                          [{'name':'price', 'type':'float'}, {'name':'rate', 'type':'float'}]))
 ```
-
-
-
 
 ```python
 # 示例2：代码复杂度分析器
@@ -139,9 +133,6 @@ def process(items):
 print(analyze_complexity(sample_code))
 ```
 
-
-
-
 ```python
 # 示例3：智能代码补全建议
 def suggest_completion(code_context, cursor_pos):
@@ -171,10 +162,8 @@ code = "def my_fun"
 print(suggest_completion(code, len(code)))  # 输出: ['function']
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某大型金融科技公司核心交易系统维护
 
@@ -193,8 +182,6 @@ print(suggest_completion(code, len(code)))  # 输出: ['function']
 在针对过去半年的50个复杂Bug修复测试中，MiniMax M2.5 成功修复了其中的40个，且生成的代码直接通过了单元测试。这将对资深开发人员的依赖降低了约40%，将平均修复时间（MTTR）从4小时缩短至30分钟以内，显著提升了系统的迭代速度和稳定性。
 
 ---
-
-
 
 ### 2：某企业级SaaS平台遗留代码重构项目
 
@@ -306,7 +293,6 @@ print(suggest_completion(code, len(code)))  # 输出: ['function']
 ---
 ## 常见问题
 
-
 ### 1: MiniMax M2.5 是什么，它在 SWE-bench Verified 上取得的 80.2% 成绩意味着什么？
 
 1: MiniMax M2.5 是什么，它在 SWE-bench Verified 上取得的 80.2% 成绩意味着什么？
@@ -314,8 +300,6 @@ print(suggest_completion(code, len(code)))  # 输出: ['function']
 **A**: MiniMax M2.5 是由 AI 公司 MiniMax 发布的一个大语言模型。SWE-bench Verified 是一个严格评估 AI 模型软件工程能力的基准测试，它要求模型通过解决 GitHub 上真实开源仓库中的 Issue 来生成代码。80.2% 的准确率意味着该模型在处理真实的、复杂的软件工程任务（如代码修复、功能实现）时，具有极高的成功率。这一成绩不仅超越了之前的许多开源模型，也证明了其在代码生成和逻辑推理方面达到了顶尖水平，能够胜任高难度的编程辅助工作。
 
 ---
-
-
 
 ### 2: MiniMax M2.5 与之前的版本或其他主流模型（如 GPT-4 或 Claude 3.5）相比有何优势？
 
@@ -325,8 +309,6 @@ print(suggest_completion(code, len(code)))  # 输出: ['function']
 
 ---
 
-
-
 ### 3: SWE-bench Verified 测试的难点在哪里，为什么 80.2% 被视为突破性进展？
 
 3: SWE-bench Verified 测试的难点在哪里，为什么 80.2% 被视为突破性进展？
@@ -334,8 +316,6 @@ print(suggest_completion(code, len(code)))  # 输出: ['function']
 **A**: SWE-bench Verified 的难点在于它不是简单的“填空”或编写独立函数，而是要求模型具备完整的软件工程能力。模型需要阅读并理解长达数千行甚至数万行的现有代码库，定位问题所在，理解跨文件的依赖关系，并生成符合项目风格且能通过所有单元测试的代码。80.2% 的通过率意味着模型在绝大多数情况下能够像一名资深工程师一样，独立完成从分析需求到提交代码的全过程，这在以前是只有极少数顶尖模型才能接近的门槛。
 
 ---
-
-
 
 ### 4: MiniMax M2.5 支持长上下文窗口吗？这对代码生成有什么帮助？
 
@@ -345,8 +325,6 @@ print(suggest_completion(code, len(code)))  # 输出: ['function']
 
 ---
 
-
-
 ### 5: 开发者目前可以试用 MiniMax M2.5 吗？
 
 5: 开发者目前可以试用 MiniMax M2.5 吗？
@@ -355,29 +333,11 @@ print(suggest_completion(code, len(code)))  # 输出: ['function']
 
 ---
 
-
-
 ### 6: MiniMax M2.5 是开源模型还是闭源 API 服务？
 
 6: MiniMax M2.5 是开源模型还是闭源 API 服务？
 
 **A**: 截至目前的消息，MiniMax M2.5 主要是以 API 服务的形式向开发者提供，属于闭源或部分开放的商业模型。虽然开源社区（如 CodeQwen, DeepSeek Coder）也有很强的代码模型，但 MiniMax M2.5 此次的高分成绩展示了商业闭源模型在经过精细数据调优和工程优化后的竞争力。开发者可以通过调用 API 来将其集成到 IDE 插件或工作流中。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**:
-
-### SWE-bench Verified 是一个基于真实 GitHub 问题的代码生成基准测试。请简要说明相比于原始的 SWE-bench 数据集，"Verified" 版本在数据质量上做了哪些核心改进，以及为什么这对评估大模型（LLM）的真实代码能力至关重要？
-
-### 提示**:
-
----
 ## 引用
 
 - **原文链接**: [https://www.minimax.io/news/minimax-m25](https://www.minimax.io/news/minimax-m25)
@@ -386,7 +346,6 @@ print(suggest_completion(code, len(code)))  # 输出: ['function']
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

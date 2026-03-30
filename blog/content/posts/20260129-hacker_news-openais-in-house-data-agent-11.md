@@ -64,9 +64,6 @@ OpenAI 的“内部数据智能体”不仅是一项工程工具，更是**数�
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：自动化数据清洗与格式化
 import pandas as pd
@@ -100,9 +97,6 @@ raw_data = [
 cleaned = clean_data(raw_data)
 print(cleaned)
 ```
-
-
-
 
 ```python
 # 示例2：智能数据查询接口
@@ -140,9 +134,6 @@ agent = DataAgent(employees)
 print(agent.query({'age': {'>=': 30}, 'dept': {'==': 'IT'}}))
 ```
 
-
-
-
 ```python
 # 示例3：自动化数据报告生成
 def generate_report(data, metrics):
@@ -175,10 +166,8 @@ sales_data = [
 print(generate_report(sales_data, ['avg_age', 'dept_count', 'total_records']))
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某大型跨国银行合规与审计部门
 
@@ -198,8 +187,6 @@ print(generate_report(sales_data, ['avg_age', 'dept_count', 'total_records']))
 
 ---
 
-
-
 ### 2：全球顶尖生物制药研发机构
 
  2：全球顶尖生物制药研发机构
@@ -217,8 +204,6 @@ print(generate_report(sales_data, ['avg_age', 'dept_count', 'total_records']))
 药物研发的早期筛选阶段效率提升了 30%。Agent 成功提示研究人员注意一项十年前的毒性测试数据，避免了某个候选药物进入昂贵的二期临床试验后才发现毒性问题，直接节省了约 1.5 亿美元的研发成本。
 
 ---
-
-
 
 ### 3：高端 SaaS 平台的技术支持团队
 
@@ -331,7 +316,6 @@ print(generate_report(sales_data, ['avg_age', 'dept_count', 'total_records']))
 ---
 ## 常见问题
 
-
 ### 1: 什么是 OpenAI 的“内部数据代理”？它的主要用途是什么？
 
 1: 什么是 OpenAI 的“内部数据代理”？它的主要用途是什么？
@@ -339,8 +323,6 @@ print(generate_report(sales_data, ['avg_age', 'dept_count', 'total_records']))
 **A**: 根据相关报道，OpenAI 开发的“内部数据代理”是一个专门设计用于自动化处理和分析公司内部数据的软件工具。其主要用途是帮助员工自动查询、检索和分析分散在不同数据库、文档（如 Slack、Google Drive 等）中的信息。通过自然语言交互，员工可以要求该代理执行复杂的数据分析任务，例如生成销售报表、总结跨部门的沟通记录或检索特定的技术文档，从而减少人工搜索和整理数据的时间。
 
 ---
-
-
 
 ### 2: OpenAI 为什么要开发这种内部工具，而不是直接使用 ChatGPT？
 
@@ -350,8 +332,6 @@ print(generate_report(sales_data, ['avg_age', 'dept_count', 'total_records']))
 
 ---
 
-
-
 ### 3: 该数据代理如何处理数据隐私和安全性问题？
 
 3: 该数据代理如何处理数据隐私和安全性问题？
@@ -359,8 +339,6 @@ print(generate_report(sales_data, ['avg_age', 'dept_count', 'total_records']))
 **A**: 尽管这是一个内部工具，但 OpenAI 采取了严格的安全措施。通常这类系统会遵循严格的访问控制协议（ACL），确保代理只能访问用户权限范围内的数据。这意味着如果用户没有权限查看某个部门的财务报表，数据代理也会拒绝检索该信息。此外，OpenAI 在设计此类系统时，通常会配置数据保留策略，确保用于训练或推理的敏感内部数据不会被泄露到公共模型中，或者在处理过程中对敏感信息进行脱敏。
 
 ---
-
-
 
 ### 4: 这个数据代理使用了哪些技术来实现数据检索和分析？
 
@@ -370,8 +348,6 @@ print(generate_report(sales_data, ['avg_age', 'dept_count', 'total_records']))
 
 ---
 
-
-
 ### 5: 目前这个工具在 OpenAI 内部的应用效果如何？
 
 5: 目前这个工具在 OpenAI 内部的应用效果如何？
@@ -380,29 +356,11 @@ print(generate_report(sales_data, ['avg_age', 'dept_count', 'total_records']))
 
 ---
 
-
-
 ### 6: OpenAI 是否计划将此内部工具作为商业产品发布给企业客户？
 
 6: OpenAI 是否计划将此内部工具作为商业产品发布给企业客户？
 
 **A**: 截至目前，这主要被视为 OpenAI 内部提高效率的工具。然而，业界普遍认为，OpenAI 开发此类工具的意图之一是验证其模型在企业级应用中的能力。虽然该特定内部版本可能不会直接作为产品出售，但其技术特性和功能设计很可能会融入到 OpenAI 面向企业客户的服务中（例如 ChatGPT Enterprise 的定制化功能），或者为合作伙伴开发类似的企业级数据代理提供参考架构。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 在构建基于 RAG（检索增强生成）的数据分析 Agent 时，如何确保从非结构化文档（如 PDF）中提取表格数据的准确性？请描述一种验证提取结果是否与原文一致的方法。
-
-### 提示**: 考虑使用 LLM 自身的“自我修正”能力，或者引入传统的校验和机制。你可以设计一个提示词，让模型在提取数据后，再次对照原始文本片段进行比对，或者计算行数据的哈希值来验证完整性。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://openai.com/index/inside-our-in-house-data-agent](https://openai.com/index/inside-our-in-house-data-agent)
@@ -411,7 +369,6 @@ print(generate_report(sales_data, ['avg_age', 'dept_count', 'total_records']))
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

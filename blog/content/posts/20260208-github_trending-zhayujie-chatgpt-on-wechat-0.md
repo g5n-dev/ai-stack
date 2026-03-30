@@ -43,8 +43,6 @@ Relevant source files
   * [channel/wechat/wechat_channel.py](https://github.com/zhayujie/chatgpt-on-wechat/blob/3db5e70a/channel/wechat/wechat_channel.py)
   * [config-template.json](https://github.com/zhayujie/chatgpt-on-wechat/blob/3db5e70a/config-template.json)
 
-
-
 This document provides a comprehensive introduction to the chatgpt-on-wechat (CoW) system - an intelligent conversational bot framework that integrates large language models with various messaging platforms. The system allows users to interact with AI models like GPT-4o, Claude, Gemini, and others through messaging platforms including WeChat, DingTalk, Feishu, and more.
 
 For specific deployment instructions, see [Deployment](/zhayujie/chatgpt-on-wechat/8-deployment), and for configuration details, see [Configuration](/zhayujie/chatgpt-on-wechat/7-configuration).
@@ -58,8 +56,6 @@ The chatgpt-on-wechat system serves as a flexible bridge between messaging platf
   3. Extensibility through a plugin architecture
   4. Integration with knowledge bases for domain-specific applications
 
-
-
 The system supports both personal and enterprise use cases, from simple chatbots to complex AI assistants with specialized knowledge.
 
 Sources: [README.md9-20](https://github.com/zhayujie/chatgpt-on-wechat/blob/3db5e70a/README.md#L9-L20)
@@ -68,7 +64,6 @@ Sources: [README.md9-20](https://github.com/zhayujie/chatgpt-on-wechat/blob/3db5
 
 The system follows a modular architecture with several key components working together to process messages, generate responses, and manage the flow of information.
 
-
 **Core Components Diagram**
 
 Sources: [app.py28-41](https://github.com/zhayujie/chatgpt-on-wechat/blob/3db5e70a/app.py#L28-L41) [channel/channel_factory.py8-51](https://github.com/zhayujie/chatgpt-on-wechat/blob/3db5e70a/channel/channel_factory.py#L8-L51)
@@ -76,7 +71,6 @@ Sources: [app.py28-41](https://github.com/zhayujie/chatgpt-on-wechat/blob/3db5e7
 ## Message Flow
 
 Messages flow through the system following a consistent pattern, with plugins having the opportunity to intercept and handle messages before they reach the default processing path.
-
 
 **Message Processing Flow Diagram**
 
@@ -105,7 +99,6 @@ Sources: [README.md13-20](https://github.com/zhayujie/chatgpt-on-wechat/blob/3db
 
 The system supports multiple messaging platforms through its channel architecture. Each channel handles the specific communication protocol of its platform.
 
-
 **Channel Hierarchy Diagram**
 
 Sources: [channel/channel_factory.py8-51](https://github.com/zhayujie/chatgpt-on-wechat/blob/3db5e70a/channel/channel_factory.py#L8-L51) [channel/wechat/wechat_channel.py109-115](https://github.com/zhayujie/chatgpt-on-wechat/blob/3db5e70a/channel/wechat/wechat_channel.py#L109-L115) [channel/wechat/wcf_channel.py26-38](https://github.com/zhayujie/chatgpt-on-wechat/blob/3db5e70a/channel/wechat/wcf_channel.py#L26-L38)
@@ -133,7 +126,6 @@ Sources: [README.md9](https://github.com/zhayujie/chatgpt-on-wechat/blob/3db5e70
 
 The system features a robust plugin architecture that allows for extending functionality:
 
-
 **Plugin System Diagram**
 
 Sources: [app.py32](https://github.com/zhayujie/chatgpt-on-wechat/blob/3db5e70a/app.py#L32-L32) [README.md19](https://github.com/zhayujie/chatgpt-on-wechat/blob/3db5e70a/README.md#L19-L19)
@@ -158,7 +150,6 @@ Sources: [config-template.json1-37](https://github.com/zhayujie/chatgpt-on-wecha
 ## Application Entry Point
 
 The system starts from `app.py`, which initializes the configuration, creates and starts the appropriate channel, and loads plugins:
-
 
 **Application Startup Diagram**
 
@@ -293,9 +284,6 @@ chatgpt-on-wechat 是一个基于大语言模型的开源智能对话框架，�
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：微信消息自动回复功能
 def auto_reply(user_message):
@@ -320,9 +308,6 @@ def auto_reply(user_message):
 # 测试用例
 print(auto_reply("请问价格是多少？"))  # 输出：我们的产品价格从99元到999元不等，具体请查看官网
 ```
-
-
-
 
 ```python
 # 示例2：ChatGPT接口调用封装
@@ -352,9 +337,6 @@ def chat_with_gpt(prompt, api_key):
 # 使用示例（需要替换真实API key）
 # print(chat_with_gpt("写一首关于春天的诗", "your-api-key"))
 ```
-
-
-
 
 ```python
 # 示例3：微信消息持久化存储
@@ -392,10 +374,8 @@ def save_message_to_db(user_id, message):
 save_message_to_db("user123", "你好，我想咨询产品信息")
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某中型科技公司的内部知识库助手
 
@@ -417,8 +397,6 @@ save_message_to_db("user123", "你好，我想咨询产品信息")
 
 ---
 
-
-
 ### 2：跨境电商团队的智能客服与私域运营
 
  2：跨境电商团队的智能客服与私域运营
@@ -438,8 +416,6 @@ save_message_to_db("user123", "你好，我想咨询产品信息")
 3. **体验改善**：机器人能够用自然、亲切的语气回复，避免了传统自动回复的机械感，用户满意度评分有所上升。
 
 ---
-
-
 
 ### 3：个人开发者的自动化信息流订阅工具
 
@@ -704,7 +680,6 @@ save_message_to_db("user123", "你好，我想咨询产品信息")
 - 内置自然语言处理中间件，可灵活切换不同大语言模型后端
 - 项目持续更新维护，社区活跃度高，累计获得超过3万GitHub星标
 
-
 ---
 ## 学习路径
 
@@ -817,7 +792,6 @@ save_message_to_db("user123", "你好，我想咨询产品信息")
 ---
 ## 常见问题
 
-
 ### 1: 什么是 zhayujie / chatgpt-on-wechat 项目？
 
 1: 什么是 zhayujie / chatgpt-on-wechat 项目？
@@ -825,8 +799,6 @@ save_message_to_db("user123", "你好，我想咨询产品信息")
 **A**: 该项目是一个开源的微信机器人项目，主要功能是将 OpenAI 的 ChatGPT 或其他大语言模型（如 GPT-4、文心一言、通义千问等）接入到微信个人号中。它允许用户通过微信直接与 AI 进行对话，支持多种部署方式（如 Docker、本地部署），并具备通过关键词触发回复、语音识别等丰富功能。
 
 ---
-
-
 
 ### 2: 部署该项目需要哪些技术基础和环境要求？
 
@@ -841,8 +813,6 @@ save_message_to_db("user123", "你好，我想咨询产品信息")
 
 ---
 
-
-
 ### 3: 登录微信时出现扫码超时或登录失败怎么办？
 
 3: 登录微信时出现扫码超时或登录失败怎么办？
@@ -854,8 +824,6 @@ save_message_to_db("user123", "你好，我想咨询产品信息")
 4.  **IP 风控**：新注册的服务器 IP 或被微信标记为异常的 IP 可能无法登录。
 
 ---
-
-
 
 ### 4: 如何配置使用国内的大模型（如文心一言、通义千问）？
 
@@ -869,8 +837,6 @@ save_message_to_db("user123", "你好，我想咨询产品信息")
 
 ---
 
-
-
 ### 5: 机器人回复消息很慢或者没有反应，如何排查？
 
 5: 机器人回复消息很慢或者没有反应，如何排查？
@@ -883,8 +849,6 @@ save_message_to_db("user123", "你好，我想咨询产品信息")
 
 ---
 
-
-
 ### 6: 使用该项目会导致微信账号被封禁吗？
 
 6: 使用该项目会导致微信账号被封禁吗？
@@ -895,22 +859,6 @@ save_message_to_db("user123", "你好，我想咨询产品信息")
     *   不要频繁发送消息，设置合理的回复频率限制。
     *   尽量使用非主力微信号进行挂载。
     *   关注项目社区的动态，如果微信协议有重大更新导致封号潮，应立即停止使用并等待更新。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 任务**: 部署基础环境
-
-### 在本地成功运行该项目，并配置好 OpenAI 的 API Key，使其能够通过微信回复一条简单的消息。
-
-### 提示**:
-
----
 ## 实践建议
 
 基于您提供的仓库描述（虽然描述文本中混杂了 `CowAgent` 和 `zhayujie/chatgpt-on-wechat` 的内容，但核心是**基于大模型的多平台接入方案**），以下是针对实际部署和使用场景的 5-7 条实践建议：
@@ -966,7 +914,6 @@ save_message_to_db("user123", "你好，我想咨询产品信息")
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

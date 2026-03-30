@@ -117,37 +117,8 @@ external_url: https://www.birdy.chat/blog/first-to-interoperate-with-whatsapp
 ---
 ## 💻 代码示例
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 ## 📚 案例研究
-
 
 ### 1：欧洲中小企业的全渠道客服升级 🛍️
 
@@ -169,8 +140,6 @@ external_url: https://www.birdy.chat/blog/first-to-interoperate-with-whatsapp
 
 ---
 
-
-
 ### 2：跨区域物流与供应链的实时协同 🚢
 
  2：跨区域物流与供应链的实时协同 🚢
@@ -190,8 +159,6 @@ external_url: https://www.birdy.chat/blog/first-to-interoperate-with-whatsapp
 - **减少延误**：关键物流信息的确认时间缩短了50%，显著降低了因沟通不畅导致的滞港费。
 
 ---
-
-
 
 ### 3：注重隐私的数字游民与自由职业社区 🌍
 
@@ -292,7 +259,6 @@ BirdyChat作为一个欧洲本土的聊天应用，主打GDPR（通用数据保�
 ---
 ## ❓ 常见问题
 
-
 ### 1: 什么是“互操作性”，为什么 BirdyChat 与 WhatsApp 的互操作如此重要？
 
 1: 什么是“互操作性”，为什么 BirdyChat 与 WhatsApp 的互操作如此重要？
@@ -303,8 +269,6 @@ BirdyChat作为一个欧洲本土的聊天应用，主打GDPR（通用数据保�
 
 ---
 
-
-
 ### 2: BirdyChat 是如何连接到 WhatsApp 的？
 
 2: BirdyChat 是如何连接到 WhatsApp 的？
@@ -314,8 +278,6 @@ BirdyChat作为一个欧洲本土的聊天应用，主打GDPR（通用数据保�
 在欧盟《数字市场法案》的压力下，Meta（WhatsApp 的母公司）被要求向第三方服务开放其协议。BirdyChat 利用这一合法接入点，使它的用户能够添加 WhatsApp 联系人，并在 BirdyChat 的界面内直接发送和接收消息，而无需同时安装两个应用程序。
 
 ---
-
-
 
 ### 3: 我需要付费才能使用 BirdyChat 与 WhatsApp 互通的功能吗？
 
@@ -329,8 +291,6 @@ BirdyChat作为一个欧洲本土的聊天应用，主打GDPR（通用数据保�
 
 ---
 
-
-
 ### 4: 我使用 BirdyChat 给 WhatsApp 用户发消息，对方能看到我的真实号码吗？
 
 4: 我使用 BirdyChat 给 WhatsApp 用户发消息，对方能看到我的真实号码吗？
@@ -340,8 +300,6 @@ BirdyChat作为一个欧洲本土的聊天应用，主打GDPR（通用数据保�
 通常情况下，第三方客户端如 BirdyChat（基于 Matrix 协议构建）允许您使用**用户 ID**（如 `@user:birdychat.com`）而不是电话号码进行通信。如果 BirdyChat 实现了端到端加密的桥接功能，WhatsApp 的用户可能会看到一个验证过的加密身份，而不一定直接看到您的原始电话号码，但这取决于具体的实现细节。不过，在注册过程中，您通常仍需验证电话号码以符合 WhatsApp 的安全机制。
 
 ---
-
-
 
 ### 5: 在使用 BirdyChat 与 WhatsApp 互通时，聊天是端到端加密（E2EE）的吗？
 
@@ -355,8 +313,6 @@ BirdyChat作为一个欧洲本土的聊天应用，主打GDPR（通用数据保�
 
 ---
 
-
-
 ### 6: 我在美国或中国可以使用这个功能吗？
 
 6: 我在美国或中国可以使用这个功能吗？
@@ -367,8 +323,6 @@ BirdyChat作为一个欧洲本土的聊天应用，主打GDPR（通用数据保�
 
 ---
 
-
-
 ### 7: 如果我切换到 BirdyChat，我会失去 WhatsApp 上的聊天记录吗？
 
 7: 如果我切换到 BirdyChat，我会失去 WhatsApp 上的聊天记录吗？
@@ -376,22 +330,6 @@ BirdyChat作为一个欧洲本土的聊天应用，主打GDPR（通用数据保�
 **A: 是的，通常需要重新开始**。
 
 目前的互操作性主要侧重于**协议传输**（发送和接收新消息），而不是**数据迁移**（同步历史聊天记录、媒体文件和群组设置）。当您在 BirdyChat 中登录 WhatsApp 账户时，您看到的是从那一刻开始的新消息。您之前在 WhatsApp 官方应用中的多年聊天历史仍然保留在原应用中，但不会自动同步到 BirdyChat 界面里。
-
----
-## 🎯 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**：
-
-### “互操作性”是本文的核心概念。请结合 WhatsApp 现有的封闭生态系统，分析为什么欧洲用户会特别需要一个能与 WhatsApp “互通”的第三方聊天软件？这种互通主要解决了用户在社交网络中的什么痛点？
-
-### 提示**：
-
----
 ## 🔗 引用
 
 - **原文链接**: [https://www.birdy.chat/blog/first-to-interoperate-with-whatsapp](https://www.birdy.chat/blog/first-to-interoperate-with-whatsapp)

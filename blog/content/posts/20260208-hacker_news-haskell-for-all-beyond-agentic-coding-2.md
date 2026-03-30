@@ -75,9 +75,6 @@ scenarios: ["AI/ML项目"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：自动化文本摘要生成
 from transformers import pipeline
@@ -107,9 +104,6 @@ if __name__ == "__main__":
     print("原始文本:", article[:50] + "...")
     print("\n生成的摘要:", generate_summary(article))
 ```
-
-
-
 
 ```python
 # 示例2：智能代码重构建议
@@ -160,9 +154,6 @@ def process_data(items):
     for suggestion in analyze_code(sample_code):
         print(f"第{suggestion['line']}行: {suggestion['message']}")
 ```
-
-
-
 
 ```python
 # 示例3：自动化API测试
@@ -216,10 +207,8 @@ if __name__ == "__main__":
             print(f"响应大小: {result['response_size']}字节")
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：Facebook（Meta）—— 社交图谱反垃圾邮件系统
 
@@ -241,8 +230,6 @@ Facebook 的工程师团队决定使用 Haskell 重写核心的反垃圾邮件�
 
 ---
 
-
-
 ### 2：Standard Chartered（渣打银行）—— 金融风险定价系统
 
  2：Standard Chartered（渣打银行）—— 金融风险定价系统
@@ -262,8 +249,6 @@ Standard Chartered 的核心技术开发部门决定采用 Haskell 作为主要�
 - **系统重构**: 得益于纯函数式编程的特性，当业务规则变更时，工程师可以自信地重构底层代码而无需担心破坏上层的业务逻辑，显著加快了新产品的上市速度。
 
 ---
-
-
 
 ### 3：Tokyo Tyrant / Mixi —— 高性能分布式数据库
 
@@ -384,14 +369,11 @@ Standard Chartered 的核心技术开发部门决定采用 Haskell 作为主要�
 ---
 ## 常见问题
 
-
 ### 1: 什么是 "Agentic Coding"（代理编程），文章为何主张要超越它？
 
 1: 什么是 "Agentic Coding"（代理编程），文章为何主张要超越它？
 
 **A**: "Agentic Coding" 是指利用具有高度自主性的 AI 智能体来编写代码。这些智能体通常被赋予一个目标，能够自主规划步骤、调用工具（如编译器、浏览器）、编写代码并进行自我修正，以完成复杂的编程任务。文章主张 "Beyond agentic coding"（超越代理编程），通常意味着虽然承认 AI 智能体的强大，但认为单纯依赖它们存在局限性（如不可控性、幻觉、调试困难）。作者可能提倡一种更侧重于形式化验证、数学严谨性或利用特定语言特性（如 Haskell）来确保代码正确性的方法，而不是仅仅依赖一个黑盒的 AI 智能体去“试错”直到代码跑通。
-
-
 
 ### 2: Haskell 语言在 AI 辅助编程或构建可靠系统中有何独特优势？
 
@@ -402,15 +384,11 @@ Standard Chartered 的核心技术开发部门决定采用 Haskell 作为主要�
 2.  **纯函数式编程**：无副作用的特性使得代码更容易推理、测试和并行化。
 3.  **形式化方法**：Haskell 代码更容易被转化为数学证明，这与文章标题中隐含的追求“绝对正确”或“形式化验证”的理念相契合。作者可能认为，利用 Haskell 的类型系统作为约束，比让 AI 自由发挥编写 Python 脚本更能构建健壮的系统。
 
-
-
 ### 3: 这篇文章与 Paul Graham（Y Combinator 创始人）的 "Haskell for all" 有什么关系？
 
 3: 这篇文章与 Paul Graham（Y Combinator 创始人）的 "Haskell for all" 有什么关系？
 
 **A**: "Haskell for all" 是 Paul Graham 在 2001 年左右写的一篇著名文章，预言 Haskell 将成为未来的主流编程语言，因为它允许程序员在更高的抽象层次上工作。虽然现实并未完全按此预言发展（Haskell 依然是小众语言），但这篇文章的标题显然是在致敬或回应这一概念。在当前 AI 时代，作者可能是在重新审视这一观点：也许在 AI 编程助手或智能体的时代，Haskell 这种高度规范化和逻辑严密的语言，反而成为了让 AI 理解和生成高质量代码的最佳媒介，从而真正实现“Haskell for all”。
-
-
 
 ### 4: 既然 AI 智能体（如 Devin, AutoGPT）已经很强了，为什么还需要关注编程语言的选择？
 
@@ -421,8 +399,6 @@ Standard Chartered 的核心技术开发部门决定采用 Haskell 作为主要�
 2.  **意图对齐**：强类型语言本身就是一种形式的文档，能帮助 AI 更准确地理解开发者的意图，减少“幻觉”。
 3.  **复杂性管理**：随着软件越来越复杂，单纯的“代理”行为会导致面条代码。使用更高级的抽象语言（如 Haskell）可以从根本上降低系统的复杂度，这是 AI 智能体无法自动解决的架构问题。
 
-
-
 ### 5: 文章中提到的 "Beyond"（超越）具体是指什么技术方向或方法论？
 
 5: 文章中提到的 "Beyond"（超越）具体是指什么技术方向或方法论？
@@ -432,15 +408,11 @@ Standard Chartered 的核心技术开发部门决定采用 Haskell 作为主要�
 2.  **从“概率性”转向“确定性”**：目前的 LLM（大语言模型）是基于概率的，输出具有不确定性。文章可能主张结合 Haskell 等确定性逻辑工具，构建混合系统，用逻辑约束 AI 的输出。
 3.  **特定领域的 DSL（领域特定语言）**：可能指开发针对特定任务的高度优化的 DSL，让 AI 智能体操作这些 DSL 而不是通用的编程语言，从而提高安全性和效率。
 
-
-
 ### 6: 对于普通开发者来说，这篇文章的核心启示是什么？
 
 6: 对于普通开发者来说，这篇文章的核心启示是什么？
 
 **A**: 核心启示是不要盲目迷信“AI Agent 可以替代一切”。虽然 AI 极大地提高了生产力，但软件的基础设施——编程语言、类型系统和架构设计——依然至关重要。开发者应该关注如何利用强类型语言和工具链来“驯服”AI，使其输出更可靠、更易于维护的代码，而不是仅仅把 AI 当作一个更快的打字员或一个不可控的黑盒程序员。
-
-
 
 ### 7: Hacker News 社区对这篇文章的主要观点或争议是什么？
 
@@ -449,22 +421,6 @@ Standard Chartered 的核心技术开发部门决定采用 Haskell 作为主要�
 **A**: Hacker News 作为一个技术社区，对 Haskell 和 AI 的讨论通常两极分化。
 1.  **支持者**：通常认为 Haskell 的严谨性正是当前 AI 编程缺乏的，结合两者可以带来革命性的变化。
 2.  **反对者/怀疑者**：可能会指出 Haskell 的学习曲线陡峭，生态圈不如 Python
-
----
-## 思考题
-
-
-### ```markdown
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 在 Haskell 中，我们经常使用 `Maybe` 或 `Either` 来处理可能失败的计算。请编写一个函数 `safeConvert :: [String] -> Either String [Int]`，它尝试将列表中的每个字符串转换为整数。如果转换失败，请使用 `Either` 单子来捕获具体的错误信息（例如 "Cannot parse 'abc'"），而不是抛出异常或返回 `Nothing`。
-
-### 提示**: 考虑使用 `reads` 函数或 `readMaybe`，并结合 `traverse` 来处理列表，思考如何将 `Maybe` 的结果转换为 `Either String Int`。
-
----
 ## 引用
 
 - **原文链接**: [https://haskellforall.com/2026/02/beyond-agentic-coding](https://haskellforall.com/2026/02/beyond-agentic-coding)
@@ -473,7 +429,6 @@ Standard Chartered 的核心技术开发部门决定采用 Haskell 作为主要�
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

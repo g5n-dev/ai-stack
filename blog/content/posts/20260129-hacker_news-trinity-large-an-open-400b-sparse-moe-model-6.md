@@ -104,9 +104,6 @@ Trinity large 通过构建 4000 亿参数的稀疏混合专家模型并采用高
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：模拟稀疏MoE模型的专家选择机制
 def simulate_moe_routing(input_data, num_experts=8, active_experts=2):
@@ -138,9 +135,6 @@ def simulate_moe_routing(input_data, num_experts=8, active_experts=2):
 sample_input = [1.2, 3.4, 5.6, 7.8]
 print("激活的专家及输出:", simulate_moe_routing(sample_input))
 ```
-
-
-
 
 ```python
 # 示例2：实现模型分片加载 (模拟400B参数加载)
@@ -174,9 +168,6 @@ print(f"加载了 {len(shards)} 个分片")
 print("第一个分片信息:", shards[0])
 ```
 
-
-
-
 ```python
 # 示例3：计算稀疏MoE模型的推理成本
 def calculate_inference_cost(active_params, total_params=400, base_cost=1.0):
@@ -202,10 +193,8 @@ def calculate_inference_cost(active_params, total_params=400, base_cost=1.0):
 print("推理成本分析:", calculate_inference_cost(active_params=50))
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：全球跨境电商平台智能客服系统升级
 
@@ -231,8 +220,6 @@ print("推理成本分析:", calculate_inference_cost(active_params=50))
 
 ---
 
-
-
 ### 2：大型金融集团的复杂数据分析与合规审查
 
  2：大型金融集团的复杂数据分析与合规审查
@@ -257,8 +244,6 @@ print("推理成本分析:", calculate_inference_cost(active_params=50))
 3. **合规性保障**：通过私有化部署大参数模型，在不出域的前提下解决了数据隐私痛点，符合严格的金融监管要求。
 
 ---
-
-
 
 ### 3：代码辅助与遗留系统重构平台
 
@@ -389,7 +374,6 @@ print("推理成本分析:", calculate_inference_cost(active_params=50))
 ---
 ## 常见问题
 
-
 ### 1: 什么是 Trinity large 模型，它的核心架构特点是什么？
 
 1: 什么是 Trinity large 模型，它的核心架构特点是什么？
@@ -397,8 +381,6 @@ print("推理成本分析:", calculate_inference_cost(active_params=50))
 **A**: Trinity large 是一个参数规模为 4000 亿的开源大语言模型。其核心架构采用了**稀疏混合专家模型**技术。与稠密模型不同，MoE 架构在推理时仅激活模型中的部分参数。这种设计旨在保持模型总参数量规模的同时，降低实际推理时的计算负载和显存占用。
 
 ---
-
-
 
 ### 2: "400B" 参数量意味着什么？它处于当前 LLM 领域的什么地位？
 
@@ -408,8 +390,6 @@ print("推理成本分析:", calculate_inference_cost(active_params=50))
 
 ---
 
-
-
 ### 3: 既然是 MoE 架构，Trinity large 的实际推理成本是否比同等参数量的稠密模型低？
 
 3: 既然是 MoE 架构，Trinity large 的实际推理成本是否比同等参数量的稠密模型低？
@@ -417,8 +397,6 @@ print("推理成本分析:", calculate_inference_cost(active_params=50))
 **A**: 是的，这是 MoE 架构的特性之一。虽然 Trinity large 拥有 4000 亿总参数，但在处理单个 Token 时，它只激活其中的一部分参数。这意味着在理论上，其推理速度和显存需求低于同等参数规模的稠密模型。需要注意的是，由于模型总权重较大，要运行该模型仍需高性能硬件支持（如多张 H100 GPU），其硬件门槛高于 7B 或 70B 的模型。
 
 ---
-
-
 
 ### 4: Trinity large 的训练数据来源和策略是什么？
 
@@ -428,8 +406,6 @@ print("推理成本分析:", calculate_inference_cost(active_params=50))
 
 ---
 
-
-
 ### 5: Trinity large 的开源协议是怎样的？商业公司可以使用吗？
 
 5: Trinity large 的开源协议是怎样的？商业公司可以使用吗？
@@ -437,8 +413,6 @@ print("推理成本分析:", calculate_inference_cost(active_params=50))
 **A**: Trinity large 采用 **Trinity License 1.0** 协议。该协议允许商业用途、修改和分发。这一点对于企业和开发者而言，意味着在生产环境中部署和应用该模型具有许可层面的可行性。
 
 ---
-
-
 
 ### 6: Trinity large 在基准测试中的表现如何？
 
@@ -448,8 +422,6 @@ print("推理成本分析:", calculate_inference_cost(active_params=50))
 
 ---
 
-
-
 ### 7: 普通开发者如何在本地或云端运行 Trinity large？
 
 7: 普通开发者如何在本地或云端运行 Trinity large？
@@ -458,22 +430,6 @@ print("推理成本分析:", calculate_inference_cost(active_params=50))
 1.  **量化**：使用量化技术（如 4-bit），但这可能会对模型性能产生影响。
 2.  **云端部署**：利用云服务商提供的高性能实例（如 AWS、Azure 或 Google Cloud 的 H100 集群）进行部署。
 3.  **API 服务**：通过提供该模型服务的 API 提供商进行接口调用。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**：在混合专家模型中，"稀疏性"通常指的是模型在推理时只激活参数总量的一小部分。假设 Trinity Large 拥有 400B 的总参数量，但在一次前向传播中只激活了 8B 的参数（即活跃参数量）。请计算该模型的活跃参数比例。此外，请思考：相比于拥有 400B 参数的稠密模型，这种稀疏模型在显存带宽和计算延迟方面理论上能带来多大的数量级优势？
-
-### 提示**：
-
-### 计算比例只需简单的除法：活跃参数 / 总参数。
-
----
 ## 引用
 
 - **原文链接**: [https://www.arcee.ai/blog/trinity-large](https://www.arcee.ai/blog/trinity-large)
@@ -482,7 +438,6 @@ print("推理成本分析:", calculate_inference_cost(active_params=50))
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

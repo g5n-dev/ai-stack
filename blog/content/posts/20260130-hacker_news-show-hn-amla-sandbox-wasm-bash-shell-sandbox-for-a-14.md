@@ -89,9 +89,6 @@ scenarios: ["AI/ML项目", "Web应用开发"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：安全的命令执行与输出捕获
 import subprocess
@@ -126,9 +123,6 @@ def safe_command_execution(command: str) -> dict:
 print(safe_command_execution("echo 'Hello from sandbox'"))
 ```
 
-
-
-
 ```python
 # 示例2：沙箱环境资源限制
 import resource
@@ -155,9 +149,6 @@ def set_sandbox_limits():
 set_sandbox_limits()
 print(f"当前进程ID: {os.getpid()}, 资源限制已设置")
 ```
-
-
-
 
 ```python
 # 示例3：简单的命令白名单验证
@@ -189,10 +180,8 @@ print(whitelist.execute_safe_command("echo 'Allowed command'"))
 print(whitelist.execute_safe_command("rm -rf /"))  # 会被拒绝
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某企业级 SaaS 平台的数据运维自动化
 
@@ -214,8 +203,6 @@ print(whitelist.execute_safe_command("rm -rf /"))  # 会被拒绝
 
 ---
 
-
-
 ### 2：在线编程教育平台的交互式终端
 
  2：在线编程教育平台的交互式终端
@@ -235,8 +222,6 @@ print(whitelist.execute_safe_command("rm -rf /"))  # 会被拒绝
 - **稳定性增强**: 即使学生编写了 `fork bomb` 或其他破坏性代码，也只会卡死浏览器标签页，而不会影响平台服务器或其他用户。
 
 ---
-
-
 
 ### 3：AI 辅助代码审查与安全测试工具
 
@@ -361,7 +346,6 @@ AI Agent 的任务往往需要多步完成，每一步可能依赖上一步的�
 ---
 ## 常见问题
 
-
 ### 1: Amla Sandbox 的核心功能是什么，它与传统的 Docker 容器有何不同？
 
 1: Amla Sandbox 的核心功能是什么，它与传统的 Docker 容器有何不同？
@@ -369,8 +353,6 @@ AI Agent 的任务往往需要多步完成，每一步可能依赖上一步的�
 **A**: Amla Sandbox 是一个专为 AI Agent 设计的 WebAssembly (WASM) Bash Shell 沙箱环境。其核心功能是允许 AI Agent 在一个隔离、安全的环境中执行 Bash 命令和脚本，从而完成代码运行、文件操作或系统管理任务。与传统的 Docker 容器不同，Amla 基于 WASM 技术，具有更轻量级的特性（启动速度极快、内存占用极低），并且不依赖 Linux 内核命名空间，而是通过 WASM 的能力边界来实现安全隔离。这使得它非常适合在无服务器环境或浏览器中运行，且安全性更易于严格把控。
 
 ---
-
-
 
 ### 2: 为什么 AI Agent 需要专门的沙箱环境，直接在宿主机运行命令有什么风险？
 
@@ -380,8 +362,6 @@ AI Agent 的任务往往需要多步完成，每一步可能依赖上一步的�
 
 ---
 
-
-
 ### 3: Amla Sandbox 的性能表现如何？WASM 技术是否会引入显著的延迟？
 
 3: Amla Sandbox 的性能表现如何？WASM 技术是否会引入显著的延迟？
@@ -389,8 +369,6 @@ AI Agent 的任务往往需要多步完成，每一步可能依赖上一步的�
 **A**: Amla Sandbox 的性能表现非常优异，尤其是在冷启动和资源占用方面。由于 WASM 是一种二进制指令格式，它的启动时间通常在毫秒级别，远快于需要秒级启动的传统虚拟机或容器。虽然 WASM 在某些涉及复杂系统调用的场景下可能存在轻微的性能开销，但对于绝大多数 AI Agent 需要执行的脚本任务（如文本处理、数据分析、API 调用），这种性能差异几乎可以忽略不计。此外，Amla 的高效内存管理使其可以在同一硬件上并发运行成百上千个沙箱实例。
 
 ---
-
-
 
 ### 4: 该工具支持哪些编程语言和工具？是否可以安装自定义的 Linux 软件包？
 
@@ -400,8 +378,6 @@ AI Agent 的任务往往需要多步完成，每一步可能依赖上一步的�
 
 ---
 
-
-
 ### 5: 如何集成 Amla Sandbox 到我的 AI 应用开发流程中？
 
 5: 如何集成 Amla Sandbox 到我的 AI 应用开发流程中？
@@ -410,29 +386,11 @@ AI Agent 的任务往往需要多步完成，每一步可能依赖上一步的�
 
 ---
 
-
-
 ### 6: Amla Sandbox 是开源项目吗？目前的成熟度如何？
 
 6: Amla Sandbox 是开源项目吗？目前的成熟度如何？
 
 **A**: 是的，根据 "Show HN" 的惯例，这通常是一个开源项目的展示。Amla Sandbox 旨在通过社区合作来完善 AI Agent 的执行环境。作为一个相对较新的工具，它可能正处于活跃的开发阶段。虽然核心功能可能已经可用，但在处理极端边缘情况或支持非常复杂的系统依赖时，可能还存在一些局限性。对于生产环境使用，建议开发者密切关注其更新日志，并评估其是否满足特定的安全性和稳定性要求。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 在 Amla Sandbox 中，尝试运行一个简单的命令来列出当前目录下的所有文件（包括隐藏文件），并查看如何将输出结果重定向到一个名为 `output.txt` 的文件中。如果该文件已存在，如何在不覆盖的情况下追加内容？
-
-### 提示**: 回顾 Linux 基础命令，特别是关于列表显示的参数以及输出重定向操作符 `>` 和 `>>` 的区别。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://github.com/amlalabs/amla-sandbox](https://github.com/amlalabs/amla-sandbox)
@@ -441,7 +399,6 @@ AI Agent 的任务往往需要多步完成，每一步可能依赖上一步的�
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

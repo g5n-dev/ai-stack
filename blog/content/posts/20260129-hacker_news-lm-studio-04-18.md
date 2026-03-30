@@ -98,9 +98,6 @@ LM Studio 0.4 的核心价值在于其通过封装底层推理技术，显著降
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：LM Studio API 调用封装
 def call_lm_studio_api(prompt, model_path="http://localhost:1234/v1"):
@@ -134,9 +131,6 @@ def call_lm_studio_api(prompt, model_path="http://localhost:1234/v1"):
 print(call_lm_studio_api("解释量子纠缠的原理"))
 ```
 
-
-
-
 ```python
 # 示例2：批量处理文本摘要
 def batch_summarize(texts, max_length=100):
@@ -164,9 +158,6 @@ summaries = batch_summarize(articles)
 print(summaries)
 ```
 
-
-
-
 ```python
 # 示例3：交互式命令行对话工具
 def interactive_chat():
@@ -186,10 +177,8 @@ def interactive_chat():
 interactive_chat()
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某金融科技初创公司的本地化智能客服开发
 
@@ -209,8 +198,6 @@ interactive_chat()
 
 ---
 
-
-
 ### 2：某独立软件开发者的隐私优先写作辅助工具
 
  2：某独立软件开发者的隐私优先写作辅助工具
@@ -228,8 +215,6 @@ interactive_chat()
 该软件成功打入了“隐私优先”的市场细分领域，吸引了大量对数据安全有顾虑的专业作家。由于无需维护后端服务器，开发者的运营成本几乎为零，且用户反馈本地模型的响应速度极快，即便在飞机上等无网络环境下也能正常使用 AI 辅助功能。
 
 ---
-
-
 
 ### 3：医疗设备公司的嵌入式离线诊断辅助
 
@@ -345,7 +330,6 @@ interactive_chat()
 ---
 ## 常见问题
 
-
 ### 1: LM Studio 0.4 版本的主要更新和核心功能是什么？
 
 1: LM Studio 0.4 版本的主要更新和核心功能是什么？
@@ -354,8 +338,6 @@ interactive_chat()
 
 ---
 
-
-
 ### 2: 如何使用 LM Studio 0.4 启动本地 API 服务器？
 
 2: 如何使用 LM Studio 0.4 启动本地 API 服务器？
@@ -363,8 +345,6 @@ interactive_chat()
 **A**: 在 LM Studio 0.4 中启动本地服务器非常直观。首先，你需要在应用界面左侧的模型列表中下载并加载一个你想要使用的模型。加载完成后，找到界面上的“服务器”或“Local Server”选项卡（通常在顶部或侧边栏），点击“启动服务器”按钮。启动后，LM Studio 会在本地（通常是 `http://localhost:1234`）创建一个 API 端点。你可以直接在代码中（例如使用 Python 的 `openai` 库）将 `base_url` 指向该本地地址，将 `api_key` 设置为任意字符串（例如 `lm-studio`），即可像调用 OpenAI 官方接口一样调用本地模型。
 
 ---
-
-
 
 ### 3: 运行 LM Studio 需要什么样的电脑硬件配置？
 
@@ -378,8 +358,6 @@ interactive_chat()
 
 ---
 
-
-
 ### 4: LM Studio 是完全免费和开源的吗？
 
 4: LM Studio 是完全免费和开源的吗？
@@ -387,8 +365,6 @@ interactive_chat()
 **A**: LM Studio 的核心软件目前可以免费下载和使用，但其源代码并未完全开源（属于闭源免费软件）。不过，它构建于开源社区的基础之上，支持加载 Hugging Face 上广泛存在的开源模型文件（如 GGUF 格式）。用户可以自由地下载、运行和测试这些开源模型，但 LM Studio 应用程序本身的源代码并不像 Llama.cpp 等底层库那样公开。
 
 ---
-
-
 
 ### 5: 在 LM Studio 中加载模型时出现“Out of Memory”（内存不足）错误怎么办？
 
@@ -402,8 +378,6 @@ interactive_chat()
 
 ---
 
-
-
 ### 6: LM Studio 支持哪些类型的模型文件？如何下载新模型？
 
 6: LM Studio 支持哪些类型的模型文件？如何下载新模型？
@@ -412,29 +386,11 @@ interactive_chat()
 
 ---
 
-
-
 ### 7: LM Studio 0.4 生成的 API 服务器可以在局域网内其他设备上访问吗？
 
 7: LM Studio 0.4 生成的 API 服务器可以在局域网内其他设备上访问吗？
 
 **A**: 是的，默认情况下，LM Studio 的 API 服务器可能仅绑定在 `localhost` (127.0.0.1) 上。如果希望局域网内的其他设备（如手机、平板或另一台电脑）访问该 API，你需要在设置中找到“服务器绑定地址”或“Host”选项，将其从 `localhost`
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**:
-
-### 假设你需要在完全离线的环境中使用 LM Studio 部署一个 7B 参数量的模型（如 Llama 3 8B）。你的电脑显存（VRAM）刚好只有 8GB，直接加载完整模型会导致显存溢出（OOM）。请描述你应该如何在 LM Studio 的设置面板中调整参数，以确保模型能够成功运行并完成基本的推理任务？
-
-### 提示**:
-
----
 ## 引用
 
 - **原文链接**: [https://lmstudio.ai/blog/0.4.0](https://lmstudio.ai/blog/0.4.0)
@@ -443,7 +399,6 @@ interactive_chat()
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

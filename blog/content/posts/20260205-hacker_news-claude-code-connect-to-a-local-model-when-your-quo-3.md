@@ -85,9 +85,6 @@ scenarios: ["大语言模型", "AI/ML项目"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：自动切换本地/云端模型
 def smart_model_switcher(prompt, use_local=False):
@@ -121,9 +118,6 @@ def smart_model_switcher(prompt, use_local=False):
 response = smart_model_switcher("解释量子纠缠")
 print(response)
 ```
-
-
-
 
 ```python
 # 示例2：配额监控与预警系统
@@ -160,9 +154,6 @@ while True:
         print("配额已用尽，仅使用本地模型")
         break
 ```
-
-
-
 
 ```python
 # 示例3：混合推理管道
@@ -214,10 +205,8 @@ result = pipeline.route_request("翻译这句话到英文")
 print(result)
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：独立开发者构建自动化测试工具
 
@@ -239,8 +228,6 @@ print(result)
 
 ---
 
-
-
 ### 2：初创公司的客户支持系统
 
  2：初创公司的客户支持系统
@@ -260,8 +247,6 @@ print(result)
 - 用户投诉率下降25%，系统可靠性显著提升。
 
 ---
-
-
 
 ### 3：开源项目的代码审查工具
 
@@ -398,7 +383,6 @@ print(result)
 ---
 ## 常见问题
 
-
 ### 1: 什么是 Claude Code，它与标准版 Claude 有什么区别？
 
 1: 什么是 Claude Code，它与标准版 Claude 有什么区别？
@@ -406,8 +390,6 @@ print(result)
 **A**: Claude Code 是 Anthropic 推出的命令行工具，专为开发者设计，用于直接在终端中进行编程辅助、代码生成和调试。与基于网页的 Claude Chat 不同，Claude Code 运行在本地终端环境中，能够直接与文件系统交互、执行 shell 命令并管理项目文件。它主要面向需要将 AI 辅助集成到开发工作流中的程序员，提供更高效的代码编写和问题解决体验。
 
 ---
-
-
 
 ### 2: 当 API 配额用尽时，为什么要连接本地模型而不是直接升级付费计划？
 
@@ -417,8 +399,6 @@ print(result)
 
 ---
 
-
-
 ### 3: Claude Code 支持哪些本地模型？对硬件有什么要求？
 
 3: Claude Code 支持哪些本地模型？对硬件有什么要求？
@@ -426,8 +406,6 @@ print(result)
 **A**: Claude Code 通过兼容 OpenAI API 协议的本地推理服务器（如 Ollama、LM Studio 或 vLLM）支持多种开源模型，包括 Meta 的 Llama 3、Qwen 2.5、Mistral 7B 等。硬件要求取决于模型大小：运行 7B 参数模型至少需要 8GB RAM（推荐 GPU 加速），13B 模型需要 16GB，而 70B 模型则建议 32GB 以上显存。CPU 推理可行但速度较慢，Apple Silicon 芯片的 Mac 可通过统一内存高效运行较大模型。
 
 ---
-
-
 
 ### 4: 如何在 Claude Code 中配置连接到本地模型？
 
@@ -448,8 +426,6 @@ print(result)
 
 ---
 
-
-
 ### 5: 本地模型的性能与 Claude 官方模型相比如何？
 
 5: 本地模型的性能与 Claude 官方模型相比如何？
@@ -457,8 +433,6 @@ print(result)
 **A**: 官方 Claude 模型（如 Claude 3.5 Sonnet）在复杂推理、长上下文处理和指令遵循方面通常优于同规模开源模型。但本地模型在代码生成、简单调试等任务上表现已相当实用。性能差距可通过以下方式缩小：选择针对代码优化的模型（如 CodeLlama）、使用量化技术提升推理速度，或通过提示工程弥补能力不足。对于非关键任务，本地模型常能提供 70-80% 的官方模型效果。
 
 ---
-
-
 
 ### 6: 混合使用云端和本地模型时，如何自动切换？
 
@@ -482,8 +456,6 @@ print(result)
 
 ---
 
-
-
 ### 7: 使用本地模型有哪些潜在风险或限制？
 
 7: 使用本地模型有哪些潜在风险或限制？
@@ -494,22 +466,6 @@ print(result)
 3. 维护成本：需自行更新模型版本和管理硬件资源
 4. 法律风险：部分开源模型许可证限制商业使用
 建议对关键代码进行人工审查，并优先选择宽松许可证（如 Apache 2.0）的模型。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 在本地部署一个开源大语言模型（如 Llama 3 或 Mistral），使用 Ollama 或 LM Studio 等工具，并通过命令行测试其基本功能。记录下从安装到首次成功运行的总耗时。
-
-### 提示**: 选择轻量级模型（7B 参数以下）以降低硬件要求，优先考虑支持 GPU 加速的工具以提升推理速度。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://boxc.net/blog/2026/claude-code-connecting-to-local-models-when-your-quota-runs-out](https://boxc.net/blog/2026/claude-code-connecting-to-local-models-when-your-quota-runs-out)
@@ -518,7 +474,6 @@ print(result)
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

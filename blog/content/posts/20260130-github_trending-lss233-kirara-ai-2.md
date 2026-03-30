@@ -36,8 +36,6 @@ Relevant source files
 
   * [README.md](https://github.com/lss233/kirara-ai/blob/8295a5de/README.md)
 
-
-
 Kirara AI is a multi-platform chatbot framework that integrates large language models (LLMs) with instant messaging platforms through a flexible workflow-based automation system. The system provides a unified interface for deploying AI-powered conversational agents across platforms like Telegram, QQ, Discord, and WeChat, while supporting multiple LLM providers including OpenAI, Claude, Gemini, and local models.
 
 This document covers the high-level architecture and core components of the Kirara AI system. For detailed information about specific subsystems, see [Architecture](/lss233/kirara-ai/2-architecture), [Core Components](/lss233/kirara-ai/3-core-components), [Plugin System](/lss233/kirara-ai/4-plugin-system), and [Deployment](/lss233/kirara-ai/5-deployment).
@@ -53,19 +51,15 @@ Kirara AI serves as a comprehensive chatbot framework that abstracts the complex
   * Maintain conversational context and memory across sessions
   * Administer the entire system through a web-based management interface
 
-
-
 ## High-Level Architecture
 
 The Kirara AI system follows a layered architecture with clear separation between platform adapters, core orchestration logic, and AI model integrations.
 
 ### Core System Components
 
-
 Sources: [README.md1-267](https://github.com/lss233/kirara-ai/blob/8295a5de/README.md#L1-L267) diagrams provided in context
 
 ### Message Processing Flow
-
 
 Sources: [README.md1-267](https://github.com/lss233/kirara-ai/blob/8295a5de/README.md#L1-L267) system architecture analysis
 
@@ -95,8 +89,6 @@ The system integrates with multiple AI model providers through a unified adapter
   * **Local Models** \- Ollama, custom deployments
   * **Chinese Providers** \- DeepSeek, Qwen, Minimax, Kimi, Doubao
 
-
-
 Sources: [README.md84](https://github.com/lss233/kirara-ai/blob/8295a5de/README.md#L84-L84)
 
 ### Workflow Automation
@@ -108,8 +100,6 @@ The workflow system enables complex automation scenarios through:
   * **Conditional Logic** \- Rule-based message routing and processing
   * **Cross-platform Messaging** \- Send messages across different platforms
   * **Media Processing** \- Handle images, audio, and documents
-
-
 
 Sources: [README.md92](https://github.com/lss233/kirara-ai/blob/8295a5de/README.md#L92-L92) system architecture analysis
 
@@ -123,8 +113,6 @@ The system provides comprehensive management capabilities:
   * **Workflow Designer** \- Visual workflow creation and editing
   * **System Monitoring** \- Real-time system status and logging
 
-
-
 Sources: [README.md58-75](https://github.com/lss233/kirara-ai/blob/8295a5de/README.md#L58-L75) [README.md93](https://github.com/lss233/kirara-ai/blob/8295a5de/README.md#L93-L93)
 
 ## System Components Overview
@@ -137,8 +125,6 @@ The Kirara AI architecture consists of several key subsystems:
   * **[Media Management](/lss233/kirara-ai/3.4-media-management)** \- File storage, metadata, and cleanup systems
   * **[Workflow System](/lss233/kirara-ai/3.5-workflow-system)** \- Declarative automation engine with block-based processing
   * **[Memory System](/lss233/kirara-ai/3.6-memory-system)** \- Conversational context and persistence management
-
-
 
 Each component is implemented as part of the plugin architecture, allowing for modular deployment and extensibility. The [Plugin System](/lss233/kirara-ai/4-plugin-system) documentation covers the registration and dependency injection mechanisms that enable this modularity.
 
@@ -373,9 +359,6 @@ Kirara AI 在“协议层”和“业务逻辑层”之间建立了一个**标�
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：使用OpenAI API进行简单对话
 def openai_chat_example():
@@ -409,9 +392,6 @@ def openai_chat_example():
 print(openai_chat_example())
 ```
 
-
-
-
 ```python
 # 示例2：使用Hugging Face进行文本摘要
 def huggingface_summarization():
@@ -441,9 +421,6 @@ def huggingface_summarization():
 # 使用示例
 print(huggingface_summarization())
 ```
-
-
-
 
 ```python
 # 示例3：使用LangChain进行文档问答
@@ -494,10 +471,8 @@ def langchain_qa_example():
 print(langchain_qa_example())
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某中型互联网公司的自动化运维平台
 
@@ -523,8 +498,6 @@ print(langchain_qa_example())
 - 运维团队人力成本减少30%，专注于更高价值的优化工作。
 
 ---
-
-
 
 ### 2：开源社区的AI模型训练平台
 
@@ -795,7 +768,6 @@ AI 项目可能涉及敏感数据或模型，需采取安全措施防止数据�
 - 项目提供了高度可配置的后台管理系统，允许用户自定义角色人设、对话上下文以及外观样式。
 - 代码结构采用模块化设计，将前端渲染、音频处理与后端逻辑分离，便于开发者进行二次开发或功能扩展。
 
-
 ---
 ## 学习路径
 
@@ -912,7 +884,6 @@ AI 项目可能涉及敏感数据或模型，需采取安全措施防止数据�
 ---
 ## 常见问题
 
-
 ### 1: lss233/kirara-ai 是什么项目？
 
 1: lss233/kirara-ai 是什么项目？
@@ -921,8 +892,6 @@ AI 项目可能涉及敏感数据或模型，需采取安全措施防止数据�
 
 ---
 
-
-
 ### 2: 该项目支持哪些大模型提供商？
 
 2: 该项目支持哪些大模型提供商？
@@ -930,8 +899,6 @@ AI 项目可能涉及敏感数据或模型，需采取安全措施防止数据�
 **A**: kirara-ai 设计为高度可扩展的架构，通常支持主流的 LLM 提供商。这包括但不限于 OpenAI (GPT-3.5/GPT-4)、Anthropic (Claude 系列)、以及兼容 OpenAI API 格式的第三方服务（如国内的各种中转 API）。此外，它通常也支持通过 Ollama 或 LM Studio 等工具运行本地开源大模型。具体支持列表可能会随版本更新而变化，建议查看项目的官方文档以获取最新的兼容性列表。
 
 ---
-
-
 
 ### 3: 如何部署和安装 kirara-ai？
 
@@ -944,8 +911,6 @@ AI 项目可能涉及敏感数据或模型，需采取安全措施防止数据�
 
 ---
 
-
-
 ### 4: 使用 kirara-ai 需要准备什么？
 
 4: 使用 kirara-ai 需要准备什么？
@@ -957,8 +922,6 @@ AI 项目可能涉及敏感数据或模型，需采取安全措施防止数据�
 
 ---
 
-
-
 ### 5: 项目是否支持多会话管理和数据导出？
 
 5: 项目是否支持多会话管理和数据导出？
@@ -966,8 +929,6 @@ AI 项目可能涉及敏感数据或模型，需采取安全措施防止数据�
 **A**: 是的，作为一个成熟的聊天客户端，lss233/kirara-ai 通常具备完善的会话管理功能。用户可以创建多个独立的聊天会话，并在不同会话间切换。同时，为了数据安全，项目通常支持将聊天记录导出为 Markdown、JSON 或图片格式。部分版本还可能支持数据库存储（如 SQLite 或 PostgreSQL），以便长期保存历史记录。
 
 ---
-
-
 
 ### 6: 遇到网络请求报错（如 401 或 500）该怎么办？
 
@@ -978,22 +939,6 @@ AI 项目可能涉及敏感数据或模型，需采取安全措施防止数据�
 2.  **检查 API 地址**：如果你使用的是中转服务或自定义端点，确保 Base URL 填写正确，且末尾不要带有多余的斜杠。
 3.  **查看控制台日志**：打开浏览器的开发者工具（F12）或查看 Docker 日志，具体的错误信息通常会指明是连接超时、权限拒绝还是参数错误。
 4.  **代理问题**：确认运行 kirara-ai 的服务器（如果是 Docker）或者你的浏览器能够访问对应的 API 端点。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 在 GitHub Trending 页面中，如何通过 URL 参数快速筛选特定编程语言（例如 Python）的热门项目？请构造一个可以直接访问的 URL。
-
-### 提示**: 观察 GitHub Trending 页面的 URL 结构，注意 `language` 参数的用法，并尝试修改 URL 来实现筛选。
-
-### 
-
----
 ## 实践建议
 
 基于 lss233/kirara-ai 仓库的功能特性（多模态、多平台接入、工作流、人设调教），以下是 6 条针对实际部署与使用的实践建议：
@@ -1037,7 +982,6 @@ Kirara 支持“人设调教”和“虚拟女仆”功能，这是其核心体�
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

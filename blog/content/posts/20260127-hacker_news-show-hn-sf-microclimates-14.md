@@ -128,32 +128,8 @@ external_url: https://github.com/solo-founders/sf-microclimates
 ---
 ## 💻 代码示例
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 ## 📚 案例研究
-
 
 ### 1：户外摄影与电影制作团队
 
@@ -169,8 +145,6 @@ external_url: https://github.com/solo-founders/sf-microclimates
 
 ---
 
-
-
 ### 2：旧金山湾区共享单车调度优化
 
  2：旧金山湾区共享单车调度优化
@@ -184,8 +158,6 @@ external_url: https://github.com/solo-founders/sf-microclimates
 **效果**: 📈 实施该策略后，在天气多变的季节里，单车的日均周转率提升了约8%。用户满意度调查显示，因“找不到车”或“天气太冷不想骑”导致的投诉率明显下降，因为用户总是在气候最舒适的区域找到了可用车辆。
 
 ---
-
-
 
 ### 3：城市农业与社区花园管理
 
@@ -303,7 +275,6 @@ external_url: https://github.com/solo-founders/sf-microclimates
 ---
 ## ❓ 常见问题
 
-
 ### 1: 什么是“SF Microclimates”，这个项目主要是用来做什么的？
 
 1: 什么是“SF Microclimates”，这个项目主要是用来做什么的？
@@ -312,8 +283,6 @@ external_url: https://github.com/solo-founders/sf-microclimates
 
 ---
 
-
-
 ### 2: 为什么旧金山的天气差异如此之大，以至于需要专门的工具来查看？
 
 2: 为什么旧金山的天气差异如此之大，以至于需要专门的工具来查看？
@@ -321,8 +290,6 @@ external_url: https://github.com/solo-founders/sf-microclimates
 **A**: 这主要归因于旧金山独特的地理环境。🌁 城市三面环海，且内部地形起伏，拥有众多的山丘和山谷。太平洋的冷洋流带来了低温和浓雾，而内陆湾区的温度则较高。当湿润的海风吹向内陆时，遇到山丘阻挡抬升，空气冷却凝结成雾（通常集中在西部），而背风坡或东部内陆地区则保持晴朗炎热。因此，仅仅看城市的整体天气预报是不够的，微观层面的数据对居住者更有参考价值。
 
 ---
-
-
 
 ### 3: 这个项目使用的数据来源是什么？准确性如何？
 
@@ -336,8 +303,6 @@ external_url: https://github.com/solo-founders/sf-microclimates
 
 ---
 
-
-
 ### 4: 我该如何使用这个工具来规划我的日常通勤？
 
 4: 我该如何使用这个工具来规划我的日常通勤？
@@ -348,8 +313,6 @@ external_url: https://github.com/solo-founders/sf-microclimates
 
 ---
 
-
-
 ### 5: 这是一个移动端 App 还是网页应用？
 
 5: 这是一个移动端 App 还是网页应用？
@@ -357,8 +320,6 @@ external_url: https://github.com/solo-founders/sf-microclimates
 **A**: 根据标题中的“Show HN”特性，这通常是一个以 **Web 应用** 形式发布的项目，旨在展示技术和交互设计。这意味着你可以直接通过手机或电脑的浏览器访问其网址（URL）来使用，无需下载安装包。不过，为了更好的用户体验，开发者通常会对移动端浏览器进行适配，使其看起来像一个原生 App（PWA）。
 
 ---
-
-
 
 ### 6: 这个项目是开源的吗？我可以参与贡献吗？
 
@@ -368,22 +329,6 @@ external_url: https://github.com/solo-founders/sf-microclimates
 1.  **Star** 该项目以示支持。
 2.  提交 **Issue** 报告 Bug 或建议新功能。
 3.  提交 **Pull Request** 帮助修复代码或优化文档。🤝
-
----
-## 🎯 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**: 数据聚合与可视化
-
-### 假设你获取了旧金山湾区 5 个不同气象站的实时温度数据（JSON 格式）。请编写一个函数，计算并返回当前的平均温度以及温差（最高温 - 最低温）。
-
-### 提示**: 可以使用 Python 的 `statistics` 模块处理均值，或者手动遍历列表。注意处理数据中可能存在的 `null` 值或异常格式。
-
----
 ## 🔗 引用
 
 - **原文链接**: [https://github.com/solo-founders/sf-microclimates](https://github.com/solo-founders/sf-microclimates)

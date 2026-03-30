@@ -84,9 +84,6 @@ Amla Sandbox 代表了 AI Agent 基础设施向**“轻量化、标准化、沙�
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：安全执行AI代理生成的Shell命令
 def execute_safe_command(command: str):
@@ -116,7 +113,6 @@ def execute_safe_command(command: str):
 # 使用示例
 print(execute_safe_command("ls -l /tmp"))
 ```
-
 
 ---
 
@@ -153,7 +149,6 @@ def sandboxed_file_operations():
 # 使用示例
 print(sandboxed_file_operations())
 ```
-
 
 ---
 
@@ -192,10 +187,8 @@ def monitor_ai_agent():
 monitor_ai_agent()
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：自动化运维 SaaS 平台——SafeOps
 
@@ -216,8 +209,6 @@ SafeOps 集成了 Amla Sandbox，将 AI 智能体的执行环境从物理机或�
 3.  **信任度增加**: 能够向企业客户展示其 AI 智能体运行在严格的安全沙箱内，成为了产品销售中的一个关键信任卖点。
 
 ---
-
-
 
 ### 2：开源编程教育平台——CodeMaster
 
@@ -331,7 +322,6 @@ CodeMaster 采用 Amla Sandbox 进行了架构重构。他们将 Bash 执行逻�
 ---
 ## 常见问题
 
-
 ### 1: Amla Sandbox 的主要用途是什么？
 
 1: Amla Sandbox 的主要用途是什么？
@@ -339,8 +329,6 @@ CodeMaster 采用 Amla Sandbox 进行了架构重构。他们将 Bash 执行逻�
 **A**: Amla Sandbox 是一个专为 AI 代理设计的基于 WebAssembly (WASM) 的 Bash Shell 沙盒环境。它的主要用途是解决 AI 代理在执行代码或命令时的安全问题。通过提供一个隔离的轻量级 Linux 环境，它允许 AI 模型执行 Shell 脚本、运行代码或进行文件操作，而不会危及宿主机的安全。这使得开发者可以放心地赋予 AI 代理“动手”能力，例如运行 Python 脚本处理数据或使用 Git 管理仓库，而无需担心恶意命令的执行风险。
 
 ---
-
-
 
 ### 2: 为什么选择 WebAssembly (WASM) 技术来实现沙盒？
 
@@ -350,8 +338,6 @@ CodeMaster 采用 Amla Sandbox 进行了架构重构。他们将 Bash 执行逻�
 
 ---
 
-
-
 ### 3: Amla Sandbox 与 Docker 容器相比有什么优势？
 
 3: Amla Sandbox 与 Docker 容器相比有什么优势？
@@ -359,8 +345,6 @@ CodeMaster 采用 Amla Sandbox 进行了架构重构。他们将 Bash 执行逻�
 **A**: 相比 Docker，Amla Sandbox 更加轻量级且启动速度更快。Docker 容器通常需要加载完整的操作系统镜像，资源消耗较大，而 Amla 基于 WASM，可以在毫秒级启动，且内存占用极低。对于 AI 代理这种需要频繁创建和销毁执行环境的场景，Amla 提供了更高的效率和密度。然而，需要注意的是，Amla 提供的是一个 Shell 环境而非完整的系统服务环境，因此它更适合用于代码执行和命令行工具运行，而不是运行复杂的后台守护进程。
 
 ---
-
-
 
 ### 4: AI 代理如何与 Amla Sandbox 进行交互？
 
@@ -370,8 +354,6 @@ CodeMaster 采用 Amla Sandbox 进行了架构重构。他们将 Bash 执行逻�
 
 ---
 
-
-
 ### 5: Amla Sandbox 支持哪些常见的 Linux 工具和命令？
 
 5: Amla Sandbox 支持哪些常见的 Linux 工具和命令？
@@ -380,29 +362,11 @@ CodeMaster 采用 Amla Sandbox 进行了架构重构。他们将 Bash 执行逻�
 
 ---
 
-
-
 ### 6: Amla Sandbox 是开源的吗？如何集成到现有项目中？
 
 6: Amla Sandbox 是开源的吗？如何集成到现有项目中？
 
 **A**: 是的，作为一个 Show HN 项目，Amla Sandbox 通常是开源的，开发者可以在 GitHub 上找到其源代码。集成方式通常取决于你的技术栈。如果是 Node.js 环境，可以通过 npm 安装相应的包；如果是其他语言，也可以通过其提供的 WASM 模块进行集成。项目通常会提供详细的文档，说明如何初始化沙盒、挂载文件系统目录以及设置网络权限，以便开发者能够快速将其嵌入到 AI 应用的工作流中。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 基础环境验证与文件操作
-
-### 在 Amla Sandbox 中，编写一个简单的 AI Agent 指令序列（或直接在 Shell 中操作），要求完成以下任务：
-
-### 创建一个名为 `hello.txt` 的文件。
-
----
 ## 引用
 
 - **原文链接**: [https://github.com/amlalabs/amla-sandbox](https://github.com/amlalabs/amla-sandbox)
@@ -411,7 +375,6 @@ CodeMaster 采用 Amla Sandbox 进行了架构重构。他们将 Bash 执行逻�
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

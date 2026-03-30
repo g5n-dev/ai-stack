@@ -129,37 +129,8 @@ external_url: https://walzr.com/sf-graffiti
 ---
 ## 💻 代码示例
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 ## 📚 案例研究
-
 
 ### 1：旧金山公共工程部 (SF Public Works) - "Graffiti Watch" 计划 🏙️
 
@@ -181,8 +152,6 @@ external_url: https://walzr.com/sf-graffiti
 
 ---
 
-
-
 ### 2：历史建筑保护组织 - 数字化存档与修复 📸
 
  2：历史建筑保护组织 - 数字化存档与修复 📸
@@ -202,8 +171,6 @@ external_url: https://walzr.com/sf-graffiti
 - **社区价值**: 该项目获得了当地艺术社区和遗产保护组织的双重支持，平衡了城市整洁与文化保留之间的矛盾。
 
 ---
-
-
 
 ### 3：城市旅游与零售协会 - 动态广告位合法化 🎨
 
@@ -325,7 +292,6 @@ external_url: https://walzr.com/sf-graffiti
 ---
 ## ❓ 常见问题
 
-
 ### 1: 旧金山的涂鸦属于艺术还是破坏公物？当地政府如何界定？
 
 1: 旧金山的涂鸦属于艺术还是破坏公物？当地政府如何界定？
@@ -335,8 +301,6 @@ external_url: https://walzr.com/sf-graffiti
 然而，**从文化角度来看**，旧金山拥有丰富的街头艺术历史，特别是在像 Clarion Alley（克里利昂巷）或 Balmy Alley 这样的特定区域，壁画是被法律允许且受保护的艺术形式。当地政府通常会区分“未经许可的涂鸦破坏”和“获得委托的社区壁画”。
 
 ---
-
-
 
 ### 2: 如果我的财产被涂鸦了，旧金山市政府会负责清理吗？
 
@@ -348,8 +312,6 @@ external_url: https://walzr.com/sf-graffiti
 *   **对于公共财产**：如路灯、交通标志、护栏等，市政府负责清理。
 
 ---
-
-
 
 ### 3: 旧金山哪些街区是合法的街头艺术（壁画）聚集地？
 
@@ -364,8 +326,6 @@ external_url: https://walzr.com/sf-graffiti
 
 ---
 
-
-
 ### 4: 在旧金山因涂鸦被抓会面临什么样的后果？
 
 4: 在旧金山因涂鸦被抓会面临什么样的后果？
@@ -379,8 +339,6 @@ external_url: https://walzr.com/sf-graffiti
 
 ---
 
-
-
 ### 5: 为什么旧金山的涂鸦问题似乎越来越严重？
 
 5: 为什么旧金山的涂鸦问题似乎越来越严重？
@@ -393,8 +351,6 @@ external_url: https://walzr.com/sf-graffiti
 
 ---
 
-
-
 ### 6: 什么是 "Ghost Signs"（幽灵招牌），它和普通涂鸦有什么区别？
 
 6: 什么是 "Ghost Signs"（幽灵招牌），它和普通涂鸦有什么区别？
@@ -403,22 +359,6 @@ external_url: https://walzr.com/sf-graffiti
 
 *   **区别**：普通涂鸦通常是现代、未经授权的；而 Ghost Signs 是**历史遗留物**，通常是几十年前商家合法绘制的广告。
 *   **价值**：这些幽灵招牌被视为城市历史的一部分，具有怀旧和美学价值，受到历史保护组织的青睐，不会被当作破坏公物清理掉。
-
----
-## 🎯 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**: 假设 `San Francisco Graffiti` 是一个包含涂鸦艺术家名字的列表（例如 `["Daze", "Cypher", "Amaze"]`）。请编写一个函数，过滤掉长度小于 4 个字符的名字，返回一个新的列表。
-
-### 提示**: 使用 Python 的列表推导式（List Comprehension）或 `filter()` 函数，结合 `len()` 方法来检查字符串长度。
-
-### 
-
----
 ## 🔗 引用
 
 - **原文链接**: [https://walzr.com/sf-graffiti](https://walzr.com/sf-graffiti)

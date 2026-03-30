@@ -84,9 +84,6 @@ scenarios: ["AI/ML项目"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：解析PR文件变更并标注AI贡献比例
 def analyze_ai_contribution(diff_content, ai_authors=["bot", "ai-assistant"]):
@@ -121,7 +118,6 @@ test_diff = """
 print(analyze_ai_contribution(test_diff))
 ```
 
-
 ---
 
 ```python
@@ -153,7 +149,6 @@ test_commits = [
 ]
 print(detect_ai_signatures(test_commits))
 ```
-
 
 ---
 
@@ -191,10 +186,8 @@ test_pr = {
 print(generate_ai_contribution_report(test_pr))
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某中型金融科技公司的代码审查优化
 
@@ -214,8 +207,6 @@ print(generate_ai_contribution_report(test_pr))
 
 ---
 
-
-
 ### 2：开源项目的 AI 贡献透明化实践
 
  2：开源项目的 AI 贡献透明化实践
@@ -233,8 +224,6 @@ print(generate_ai_contribution_report(test_pr))
 维护者能快速筛选出需要重点审查的 PR，项目文档中新增了“AI 贡献透明度”章节，明确要求贡献者使用插件标注 AI 生成内容。社区反馈显示，此举提升了代码信任度，同时未显著降低贡献积极性。
 
 ---
-
-
 
 ### 3：企业级遗留系统重构项目
 
@@ -366,7 +355,6 @@ print(generate_ai_contribution_report(test_pr))
 ---
 ## 常见问题
 
-
 ### 1: 这个 GitHub 浏览器插件的核心功能是什么？
 
 1: 这个 GitHub 浏览器插件的核心功能是什么？
@@ -374,8 +362,6 @@ print(generate_ai_contribution_report(test_pr))
 **A**: 该插件的主要功能是在 GitHub 的 Pull Request（PR）页面中，利用人工智能（AI）技术对代码变更进行“归因”分析。它能够自动识别并标注代码是由谁编写的，或者指出某段特定代码的原始作者。这有助于在代码审查过程中，更清晰地了解代码变更的来源，特别是在处理大型代码库或多人协作项目时，能帮助审查者快速判断代码的背景和贡献者。
 
 ---
-
-
 
 ### 2: 插件如何确定代码的作者？它使用什么数据？
 
@@ -385,8 +371,6 @@ print(generate_ai_contribution_report(test_pr))
 
 ---
 
-
-
 ### 3: 使用这个插件会影响我的 GitHub 页面加载速度吗？
 
 3: 使用这个插件会影响我的 GitHub 页面加载速度吗？
@@ -394,8 +378,6 @@ print(generate_ai_contribution_report(test_pr))
 **A**: 作为一个浏览器插件，它确实需要额外的资源来获取数据并渲染界面。如果插件设计得当，它应该只在打开 PR 页面时才激活，并且异步加载数据。然而，如果项目非常庞大，或者 AI 分析过程复杂，可能会在页面上产生轻微的延迟。大多数此类插件都会尽量优化性能，确保不阻塞主线程，但在低端设备上可能会有轻微的性能影响。
 
 ---
-
-
 
 ### 4: 它支持哪些浏览器？是否开源？
 
@@ -405,8 +387,6 @@ print(generate_ai_contribution_report(test_pr))
 
 ---
 
-
-
 ### 5: 插件是否会泄露我的私有代码或仓库信息？
 
 5: 插件是否会泄露我的私有代码或仓库信息？
@@ -414,8 +394,6 @@ print(generate_ai_contribution_report(test_pr))
 **A**: 这是一个关于 AI 工具非常关键的问题。如果插件完全在本地运行，且仅调用 GitHub 的官方 API 来获取公开的 Blame 信息，那么风险较低。然而，如果插件将代码片段发送到第三方服务器进行 AI 分析，则存在潜在的数据泄露风险，特别是对于私有仓库。在使用前，用户应仔细阅读插件的隐私政策，确认其数据处理方式（例如是否使用本地模型或零数据保留的 API）。
 
 ---
-
-
 
 ### 6: 在什么场景下使用这个插件最有帮助？
 
@@ -429,29 +407,11 @@ print(generate_ai_contribution_report(test_pr))
 
 ---
 
-
-
 ### 7: 我可以自定义 AI 模型或分析规则吗？
 
 7: 我可以自定义 AI 模型或分析规则吗？
 
 **A**: 这取决于插件的具体架构。如果插件设计为模块化或客户端驱动，用户可能可以配置使用本地的 Ollama 或其他 OpenAI 兼容的 API 端点。这种灵活性允许用户在不将数据发送给第三方的情况下使用自定义模型。如果插件是封闭源代码的 SaaS 服务，则通常不支持自定义模型，只能使用开发者提供的功能。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 在开发浏览器插件时，如何准确识别用户当前浏览的 GitHub 页面是否为具体的“Pull Request”详情页，而不是代码仓库主页或 Issues 页面？请结合 DOM 结构和 URL 模式给出判断逻辑。
-
-### 提示**: 观察标准 GitHub PR 页面的 URL 路径特征，并检查页面中是否存在特定的容器元素（如用于存放文件变更列表的 DOM 节点）。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://blog.rbby.dev/posts/github-ai-contribution-blame-for-pull-requests](https://blog.rbby.dev/posts/github-ai-contribution-blame-for-pull-requests)
@@ -460,7 +420,6 @@ print(generate_ai_contribution_report(test_pr))
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

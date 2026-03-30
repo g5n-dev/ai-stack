@@ -82,9 +82,6 @@ OpenAI 在 ChatGPT 中测试广告功能并非单纯的技术尝试，而是生�
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：模拟广告点击率测试
 def simulate_ad_ctr(ad_name, impressions, clicks):
@@ -108,9 +105,6 @@ def simulate_ad_ctr(ad_name, impressions, clicks):
 simulate_ad_ctr("ChatGPT Pro", 10000, 450)
 simulate_ad_ctr("ChatGPT Plus", 8000, 320)
 ```
-
-
-
 
 ```python
 # 示例2：A/B测试结果比较
@@ -145,9 +139,6 @@ ctr_a = simulate_ad_ctr("原始广告", 5000, 150)
 ctr_b = simulate_ad_ctr("优化广告", 5000, 210)
 compare_ad_performance(ctr_a, ctr_b)
 ```
-
-
-
 
 ```python
 # 示例3：广告效果可视化
@@ -184,10 +175,8 @@ ad_performance = {
 visualize_ad_performance(ad_performance)
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：全球知名旅游预订平台
 
@@ -211,8 +200,6 @@ visualize_ad_performance(ad_performance)
 - **规模化运营**：团队得以在不增加人力的情况下，将广告测试的覆盖范围扩大了 3 倍，成功挖掘了许多之前被忽视的高价值细分市场。
 
 ---
-
-
 
 ### 2：DTC（直接面向消费者）时尚电商品牌
 
@@ -342,7 +329,6 @@ visualize_ad_performance(ad_performance)
 ---
 ## 常见问题
 
-
 ### 1: ChatGPT 开始测试广告了吗？
 
 1: ChatGPT 开始测试广告了吗？
@@ -350,8 +336,6 @@ visualize_ad_performance(ad_performance)
 **A**: 是的，根据近期在社交媒体（如 Hacker News）上的用户反馈和截图，OpenAI 已开始在 ChatGPT 中测试广告。部分用户在使用 ChatGPT 搜索某些特定话题（如旅游、生活服务等）时，会在回复结果中看到带有“Sponsored”（赞助）或“Ad”（广告）标签的内容。这标志着 OpenAI 正在探索通过广告变现的可行性。
 
 ---
-
-
 
 ### 2: 这些广告具体会出现在哪里？
 
@@ -361,8 +345,6 @@ visualize_ad_performance(ad_performance)
 
 ---
 
-
-
 ### 3: ChatGPT 中的广告与 Google 搜索广告有什么区别？
 
 3: ChatGPT 中的广告与 Google 搜索广告有什么区别？
@@ -370,8 +352,6 @@ visualize_ad_performance(ad_performance)
 **A**: 虽然两者都是基于用户意图进行推广，但形式有所不同。Google 搜索广告通常直接显示在搜索结果列表的顶部或底部，形式较为传统。而 ChatGPT 的广告测试似乎更倾向于“原生广告”或“推荐”的形式，即 AI 将广告主的内容作为解决方案之一自然地融入对话流中，通常会有明确的标签提示用户这是赞助内容。
 
 ---
-
-
 
 ### 4: OpenAI 官方对此有何回应？
 
@@ -381,8 +361,6 @@ visualize_ad_performance(ad_performance)
 
 ---
 
-
-
 ### 5: 免费用户和付费用户都会看到广告吗？
 
 5: 免费用户和付费用户都会看到广告吗？
@@ -391,29 +369,11 @@ visualize_ad_performance(ad_performance)
 
 ---
 
-
-
 ### 6: 用户如何区分正常回答和广告内容？
 
 6: 用户如何区分正常回答和广告内容？
 
 **A**: OpenAI 在测试中遵循了互联网广告的透明度原则。被标记为广告的内容通常会带有显眼的“Sponsored”（赞助）或“Ad”（广告）标签。这意味着用户在阅读 AI 生成的推荐列表时，可以清楚地识别出哪些是算法自然生成的结果，哪些是付费推广的链接或内容。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 提示词工程基础
-
-### 问题**: 假设你需要在 ChatGPT 中植入一个软性广告（例如推荐一本关于人工智能的书）。请设计一段提示词，要求 ChatGPT 在回答“如何学习 Python”这个问题时，自然地提及这本书，且不能让用户感到突兀或反感。
-
-### 提示**: 考虑如何设定“角色”和“语气”，以及如何使用“上下文关联”将广告内容与回答主题无缝衔接，而不是生硬地附加在末尾。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://openai.com/index/testing-ads-in-chatgpt](https://openai.com/index/testing-ads-in-chatgpt)
@@ -422,7 +382,6 @@ visualize_ad_performance(ad_performance)
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

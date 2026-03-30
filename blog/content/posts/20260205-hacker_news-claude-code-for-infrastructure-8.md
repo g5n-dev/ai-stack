@@ -55,9 +55,6 @@ scenarios: ["DevOps/运维", "AI/ML项目", "命令行工具"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：自动化服务器健康检查
 import subprocess
@@ -87,9 +84,6 @@ def check_server_health(hosts):
 # 使用示例
 print(check_server_health(["8.8.8.8", "192.168.1.1"]))
 ```
-
-
-
 
 ```python
 # 示例2：Docker容器批量管理
@@ -127,9 +121,6 @@ def manage_containers(action, image_name):
 # 使用示例
 manage_containers("stop", "nginx:latest")
 ```
-
-
-
 
 ```python
 # 示例3：云资源成本分析
@@ -172,10 +163,8 @@ def analyze_ec2_costs(region='us-east-1'):
 print(analyze_ec2_costs())
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某电商平台微服务架构优化
 
@@ -191,8 +180,6 @@ print(analyze_ec2_costs())
 
 ---
 
-
-
 ### 2：金融科技公司日志分析系统升级
 
  2：金融科技公司日志分析系统升级
@@ -206,8 +193,6 @@ print(analyze_ec2_costs())
 **效果**：查询性能提升 5 倍，存储成本降低 40%，数据团队能够专注于高级分析功能开发，系统维护工作量减少 70%。
 
 ---
-
-
 
 ### 3：SaaS 公司多租户数据库架构迁移
 
@@ -329,7 +314,6 @@ print(analyze_ec2_costs())
 ---
 ## 常见问题
 
-
 ### 1: Claude Code for Infrastructure 是什么？
 
 1: Claude Code for Infrastructure 是什么？
@@ -337,8 +321,6 @@ print(analyze_ec2_costs())
 **A**: Claude Code for Infrastructure 是 Anthropic 推出的一个专门针对基础设施代码的 AI 编程助手。它基于 Claude 3.7 Sonnet 模型，专门优化了处理基础设施即代码的能力，包括 Terraform、Kubernetes 配置、云基础设施脚本等。该工具能够理解、生成、调试和优化基础设施代码，帮助 DevOps 工程师和 SRE 更高效地管理基础设施。
 
 ---
-
-
 
 ### 2: 与通用 AI 编程工具相比，它有什么独特优势？
 
@@ -348,8 +330,6 @@ print(analyze_ec2_costs())
 
 ---
 
-
-
 ### 3: 它支持哪些基础设施工具和云平台？
 
 3: 它支持哪些基础设施工具和云平台？
@@ -357,8 +337,6 @@ print(analyze_ec2_costs())
 **A**: 目前支持主流的基础设施即代码工具，包括 Terraform、Pulumi、AWS CloudFormation、Azure Resource Manager、Kubernetes（YAML/Manifests）、Ansible、Docker、Helm Charts 等。云平台方面覆盖 AWS、Azure、Google Cloud Platform、阿里云等主流公有云，以及 OpenStack、VMware 等私有云平台。
 
 ---
-
-
 
 ### 4: 如何确保生成的基础设施代码符合安全和合规要求？
 
@@ -368,8 +346,6 @@ print(analyze_ec2_costs())
 
 ---
 
-
-
 ### 5: 是否可以集成到现有的 CI/CD 流程中？
 
 5: 是否可以集成到现有的 CI/CD 流程中？
@@ -377,8 +353,6 @@ print(analyze_ec2_costs())
 **A**: 是的，Claude Code for Infrastructure 提供了多种集成方式：1）支持作为 GitHub Actions、GitLab CI、Jenkins 等 CI/CD 工具的插件；2）提供 REST API 和 CLI 工具，可轻松集成到自动化流程中；3）支持与 Git 仓库直接集成，在 Pull Request 阶段进行代码审查；4）可以与现有的 IaC 管理平台（如 Terraform Cloud、Spacelift）配合使用。
 
 ---
-
-
 
 ### 6: 企业使用时如何保护敏感配置信息？
 
@@ -388,29 +362,11 @@ print(analyze_ec2_costs())
 
 ---
 
-
-
 ### 7: 如何处理多环境配置管理（开发、测试、生产）？
 
 7: 如何处理多环境配置管理（开发、测试、生产）？
 
 **A**: Claude Code for Infrastructure 能够智能处理多环境配置：1）自动识别不同环境的变量和参数差异；2）建议使用模块化和可复用的代码结构；3）帮助管理环境特定的配置文件（如 dev.tfvars、prod.tfvars）；4）检测跨环境的不一致配置；5）支持渐进式部署策略，如蓝绿部署、金丝雀发布等基础设施配置的生成和审查。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: 基础加固
-
-### 问题**: 假设你正在使用 Claude Code 优化一个简单的 Nginx 配置文件。当前配置存在一个常见的安全隐患：默认情况下会显示服务器版本号。请编写一个指令或配置片段来隐藏版本号，并解释为什么这属于"纵深防御"策略的一部分。
-
-### 提示**: 考虑 `server_tokens` 指令的作用，以及信息泄露与实际安全漏洞之间的关系。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://www.fluid.sh](https://www.fluid.sh)
@@ -419,7 +375,6 @@ print(analyze_ec2_costs())
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

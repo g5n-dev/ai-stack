@@ -119,37 +119,8 @@ external_url: https://practical.engineering/blog/2026/1/20/the-hidden-engineerin
 ---
 ## 💻 代码示例
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 ## 📚 案例研究
-
 
 ### 1：戴高乐机场与防波处理工程 🛫
 
@@ -171,8 +142,6 @@ external_url: https://practical.engineering/blog/2026/1/20/the-hidden-engineerin
 
 ---
 
-
-
 ### 2：希思罗机场的智能跑道监控系统 🛬
 
  2：希思罗机场的智能跑道监控系统 🛬
@@ -192,8 +161,6 @@ external_url: https://practical.engineering/blog/2026/1/20/the-hidden-engineerin
 - **安全性**：自全面安装以来，未发生过因跑道异物导致的轮胎损坏或起降事故。
 
 ---
-
-
 
 ### 3：波音公司的“柔性道面”工程 💺
 
@@ -308,7 +275,6 @@ external_url: https://practical.engineering/blog/2026/1/20/the-hidden-engineerin
 ---
 ## ❓ 常见问题
 
-
 ### 1: 为什么跑道总是有特定的编号，这些数字代表什么意义？🔢
 
 1: 为什么跑道总是有特定的编号，这些数字代表什么意义？🔢
@@ -319,8 +285,6 @@ external_url: https://practical.engineering/blog/2026/1/20/the-hidden-engineerin
 3.  **磁漂移修正**：由于地球磁极在不断移动，磁北也会随之缓慢变化（称为磁漂移）。因此，每隔几年，机场可能需要重新校准并更改跑道的数字编号以保持准确。
 
 ---
-
-
 
 ### 2: 跑道上的灯光颜色有什么讲究，为什么有些是白色，有些是蓝色或黄色？💡
 
@@ -334,8 +298,6 @@ external_url: https://practical.engineering/blog/2026/1/20/the-hidden-engineerin
 
 ---
 
-
-
 ### 3: 为什么跑道的材质大多是混凝土，而不是沥青？🛣️
 
 3: 为什么跑道的材质大多是混凝土，而不是沥青？🛣️
@@ -347,8 +309,6 @@ external_url: https://practical.engineering/blog/2026/1/20/the-hidden-engineerin
 
 ---
 
-
-
 ### 4: 跑道表面那些横向的沟槽（Grooves）有什么用？🌧️
 
 4: 跑道表面那些横向的沟槽（Grooves）有什么用？🌧️
@@ -359,8 +319,6 @@ external_url: https://practical.engineering/blog/2026/1/20/the-hidden-engineerin
 3.  **工程精度**：这些沟槽通常宽约 6 毫米，深 6 毫米，间距非常密集。正是这些细微的工程细节，让飞机在暴雨中也能安全着陆。
 
 ---
-
-
 
 ### 5: 为什么跑道长度并不总是越长越好？✈️
 
@@ -374,27 +332,9 @@ external_url: https://practical.engineering/blog/2026/1/20/the-hidden-engineerin
 
 ---
 
-
-
 ### 6: 飞机在跑道上掉头时，为什么
 
 6: 飞机在跑道上掉头时，为什么
-
----
-## 🎯 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**:
-
-### 跑道编号通常是一个两位数（如 09, 27, 36L）。请解释这些数字与什么物理量相关，以及为什么跑道的两端编号通常相差 18？
-
-### 提示**:
-
----
 ## 🔗 引用
 
 - **原文链接**: [https://practical.engineering/blog/2026/1/20/the-hidden-engineering-of-runways](https://practical.engineering/blog/2026/1/20/the-hidden-engineering-of-runways)

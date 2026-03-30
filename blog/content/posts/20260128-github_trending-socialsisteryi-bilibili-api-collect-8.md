@@ -35,8 +35,6 @@ Relevant source files
   * [.gitignore](https://github.com/SocialSisterYi/bilibili-API-collect/blob/cfc5fddc/.gitignore)
   * [README.md](https://github.com/SocialSisterYi/bilibili-API-collect/blob/cfc5fddc/README.md)
 
-
-
 ## Purpose and Scope
 
 The **bilibili-API-collect** project is a community-driven documentation effort that collects, researches, and documents undocumented ("wild") APIs from Bilibili's web, mobile app, and TV client platforms. This project focuses exclusively on **main site business APIs** and does not cover the [official open platform](https://openhome.bilibili.com/doc) or [live streaming open platform](https://open-live.bilibili.com/document/), which have their own official documentation.
@@ -50,8 +48,6 @@ This documentation is intended strictly for **educational and research purposes*
   * WebSocket protocols for real-time interactions
   * Authentication mechanisms, security signatures, and risk control systems
   * Platform-specific implementations across Web, Android, iOS, and TV clients
-
-
 
 For detailed information about specific subsystems, refer to the following sections: Authentication and Security ([#2](/SocialSisterYi/bilibili-API-collect/2-authentication-and-security)), User System ([#3](/SocialSisterYi/bilibili-API-collect/3-user-system)), Content Systems ([#4](/SocialSisterYi/bilibili-API-collect/4-content-systems)), Interaction Features ([#5](/SocialSisterYi/bilibili-API-collect/5-interaction-features)), and Search and Discovery ([#6](/SocialSisterYi/bilibili-API-collect/6-search-and-discovery)).
 
@@ -79,7 +75,6 @@ The documentation explicitly notes when API behavior is uncertain using notation
 
 Bilibili's API infrastructure follows a **client-server (C/S) architecture** with three primary communication protocols:
 
-
 **REST APIs** constitute the majority of documented endpoints, using HTTPS with URL query parameters or `application/x-www-form-urlencoded` / `application/json` request bodies. Responses are typically JSON, though some endpoints return Protocol Buffers or XML (primarily for danmaku/bullet comments).
 
 **gRPC Services** are used extensively by mobile clients for performance-critical operations. Protocol buffer definitions are maintained in the `/grpc_api` directory, organized by package namespace (e.g., `bilibili.app.view.v1`, `bilibili.main.community.reply.v1`).
@@ -92,7 +87,6 @@ Bilibili's API infrastructure follows a **client-server (C/S) architecture** wit
 
 The project organizes API documentation following a hierarchical structure that mirrors Bilibili's business domains:
 
-
 Each markdown file documents related API endpoints following a consistent format: endpoint URL, request method, authentication requirements, parameters, response structure, and examples.
 
 **Sources:** [CONTRIBUTING.md56-82](https://github.com/SocialSisterYi/bilibili-API-collect/blob/cfc5fddc/CONTRIBUTING.md#L56-L82) [README.md63-316](https://github.com/SocialSisterYi/bilibili-API-collect/blob/cfc5fddc/README.md#L63-L316)
@@ -102,7 +96,6 @@ Each markdown file documents related API endpoints following a consistent format
 ### Major Subsystems
 
 The Bilibili platform can be decomposed into seven major functional subsystems:
-
 
 **Sources:** [README.md63-316](https://github.com/SocialSisterYi/bilibili-API-collect/blob/cfc5fddc/README.md#L63-L316) High-level architecture diagrams provided in prompt
 
@@ -125,7 +118,6 @@ Subsystem| Primary Responsibility| Key Documentation
 ### Authentication Methods by Platform
 
 Bilibili employs different authentication strategies depending on the client platform:
-
 
 **Web Clients** primarily use cookie-based authentication with `SESSDATA` as the primary session identifier. Most modern web APIs also require **Wbi signature** generation, which involves fetching image keys and computing an MD5 hash with request parameters. The optional `bili_ticket` JWT token can reduce risk control triggering.
 
@@ -370,32 +362,8 @@ Bilibili employs different authentication strategies depending on the client pla
 ---
 ## 💻 实用代码示例
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 ## 📚 真实案例研究
-
 
 ### 1：二次元个人开发者——Bilibili 视频数据分析助手
 
@@ -424,8 +392,6 @@ Bilibili employs different authentication strategies depending on the client pla
 
 ---
 
-
-
 ### 2：高校研究团队——弹幕语义与用户行为研究
 
  2：高校研究团队——弹幕语义与用户行为研究
@@ -450,8 +416,6 @@ Bilibili employs different authentication strategies depending on the client pla
 - 团队基于此开发的开源工具包 `BiliCrawler` 被 5 个相关研究引用。  
 
 ---
-
-
 
 ### 3：企业内容运营——多平台视频分发效率优化
 
@@ -701,7 +665,6 @@ Bilibili API数据可能具有时效性，对非实时接口实施客户端/服�
 - 🧩 **业务逻辑的数据结构映射** 🧠：不仅提供了URL，还详细列出了返回JSON的层级结构，对于想要复刻B站功能（如排行榜、评论区翻页）的开发者来说是完美的数据参考。
 - 📜 **跨平台协议的差异对比** 🔄：项目区分了网页版和App版（Android/iOS）的接口差异，帮助开发者理解同一业务在不同终端上的实现方式与性能优劣。
 
-
 ---
 ## 🗺️ 循序渐进的学习路径
 
@@ -799,7 +762,6 @@ Bilibili API数据可能具有时效性，对非实时接口实施客户端/服�
 ---
 ## ❓ 常见问题解答
 
-
 ### 1: 什么是 SocialSisterYi/bilibili-API-collect 项目？
 
 1: 什么是 SocialSisterYi/bilibili-API-collect 项目？
@@ -807,8 +769,6 @@ Bilibili API数据可能具有时效性，对非实时接口实施客户端/服�
 **A**: 这是一个位于 GitHub 上的开源项目，专门致力于收集、整理和逆向工程解析 B站（哔哩哔哩）的接口文档。由于 B站官方没有公开完整的 API 文档，该项目成为了开发者社区中最全面、更新最及时的第三方接口参考库。它涵盖了网页端、App端以及各种涉及视频信息、用户数据、评论弹幕等功能的接口规则。📚
 
 ---
-
-
 
 ### 2: 该项目收录的 API 接口主要有哪些类型？
 
@@ -822,8 +782,6 @@ Bilibili API数据可能具有时效性，对非实时接口实施客户端/服�
 
 ---
 
-
-
 ### 3: 如何通过该项目获取视频的真实播放地址（下载视频）？
 
 3: 如何通过该项目获取视频的真实播放地址（下载视频）？
@@ -831,8 +789,6 @@ Bilibili API数据可能具有时效性，对非实时接口实施客户端/服�
 **A**: B站 的视频下载接口通常包含多层加密和防盗链机制。项目中详细记录了获取视频流的 URL（通常为 `playurl` 相关接口）。你需要按照文档中的要求，请求相应的接口（通常需要传入 `bvid` 或 `aid` 以及 `cid`），并正确处理请求中的 `Query` 参数（如 `qn` 清晰度, `fnval` 格式等）。**注意**：直接解析出的链接通常带有防盗链限制，且仅供学习交流使用，请勿用于商业用途或侵犯版权。⚠️
 
 ---
-
-
 
 ### 4: 为什么我调用接口时返回了 `-101` 或 `-352` 等错误代码？
 
@@ -844,8 +800,6 @@ Bilibili API数据可能具有时效性，对非实时接口实施客户端/服�
 
 ---
 
-
-
 ### 5: `SESSDATA` 是什么？如何获取并使用它？
 
 5: `SESSDATA` 是什么？如何获取并使用它？
@@ -855,8 +809,6 @@ Bilibili API数据可能具有时效性，对非实时接口实施客户端/服�
 *   **使用方式**：在发送 API 请求时，将其添加到 HTTP 请求头的 `Cookie` 字段中。⚠️ *注意：请妥善保管你的 SESSDATA，泄露可能导致账号被盗用。*
 
 ---
-
-
 
 ### 6: 该项目更新频率如何？接口失效了怎么办？
 
@@ -868,8 +820,6 @@ Bilibili API数据可能具有时效性，对非实时接口实施客户端/服�
 
 ---
 
-
-
 ### 7: 这个项目适合新手学习 API 开发吗？
 
 7: 这个项目适合新手学习 API 开发吗？
@@ -877,22 +827,6 @@ Bilibili API数据可能具有时效性，对非实时接口实施客户端/服�
 **A**: 非常适合，但需要一定的前置基础。
 *   **适合人群**：具有一定的 HTTP 协议基础（了解 GET/POST 请求、Header、Cookie），会使用编程语言（如 Python 的 requests 库）发送网络请求的开发者。
 *   **学习价值**：通过阅读该项目，你可以学习到如何抓包（Fiddler/Charles）、如何分析加密参数（如 Wbi 签名机制）以及如何处理 JSON 数据。它是逆向工程领域的优秀入门案例。🎓
-
----
-## 🎯 挑战与思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**: 获取 UP 主的个人空间数据
-
-### 在不解析复杂的网页源代码或逆向工程的情况下，尝试使用该仓库中收集的 API 接口，获取任意指定 B 站 UP 主的粉丝数、关注数以及头像 URL。请打印出这些基础信息。
-
-### 提示**:
-
----
 ## 💡 实践建议
 
 这份仓库是 B 站 API 收集界最著名的“圣经”之一，但正因为其内容庞大且依赖社区维护，直接照搬代码往往容易踩坑。

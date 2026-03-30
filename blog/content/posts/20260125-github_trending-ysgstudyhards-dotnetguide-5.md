@@ -37,8 +37,6 @@ Relevant source files
   * [docs/DotNet/DotNetProjectPicks.md](https://github.com/YSGStudyHards/DotNetGuide/blob/9f068a8e/docs/DotNet/DotNetProjectPicks.md)
   * [docs/Linux/Linux.md](https://github.com/YSGStudyHards/DotNetGuide/blob/9f068a8e/docs/Linux/Linux.md)
 
-
-
 DotNetGuide is a comprehensive, community-driven knowledge repository designed to serve as a one-stop resource hub for .NET developers across all experience levels—from learning and working to interviewing. The repository functions primarily as a curated documentation system that aggregates, categorizes, and presents over 6,000+ .NET-related resources including open-source frameworks, complete application systems, development tools, SDKs, class libraries, and UI component packages.
 
 **Purpose** : This overview introduces the repository's architecture, core components, content organization strategy, and community engagement model. It explains how the various markdown files, directory structures, and external platforms work together to deliver a cohesive learning and reference experience.
@@ -53,7 +51,6 @@ Sources: [README.md1-100](https://github.com/YSGStudyHards/DotNetGuide/blob/9f06
 
 DotNetGuide follows a **documentation-first architecture** where markdown files serve as the primary content delivery mechanism. The repository is structured around two core systems: a massive reference catalog and a lightweight practice environment.
 
-
 **Figure 1: DotNetGuide System Architecture**
 
 The importance scores (calculated by edit frequency analysis) reveal the design priorities:
@@ -62,8 +59,6 @@ The importance scores (calculated by edit frequency analysis) reveal the design 
   * **Practice Code** (`HelloDotNetGuide` project): Combined importance ~48
   * **Ratio** : Approximately 36:1, confirming documentation-first approach
 
-
-
 Sources: [README.md7-98](https://github.com/YSGStudyHards/DotNetGuide/blob/9f068a8e/README.md#L7-L98) [docs/DotNet/DotNetProjectPicks.md1-15](https://github.com/YSGStudyHards/DotNetGuide/blob/9f068a8e/docs/DotNet/DotNetProjectPicks.md#L1-L15) [docs/DotNet/DotNetProjectMonthly.md1-10](https://github.com/YSGStudyHards/DotNetGuide/blob/9f068a8e/docs/DotNet/DotNetProjectMonthly.md#L1-L10)
 
 * * *
@@ -71,7 +66,6 @@ Sources: [README.md7-98](https://github.com/YSGStudyHards/DotNetGuide/blob/9f068
 ## Core Component: Resource Catalog
 
 The `DotNetProjectPicks.md` file is the repository's highest-priority component (importance: 849.27), containing a systematically categorized catalog of .NET ecosystem resources. The file structure follows a hierarchical taxonomy:
-
 
 **Figure 2: DotNetProjectPicks.md Content Taxonomy**
 
@@ -91,7 +85,6 @@ Sources: [docs/DotNet/DotNetProjectPicks.md1-289](https://github.com/YSGStudyHar
 ## Core Component: Documentation System
 
 The documentation system comprises multiple specialized markdown files, each serving distinct purposes in the learning journey:
-
 
 **Figure 3: Documentation Content Flow**
 
@@ -116,7 +109,6 @@ Sources: [README.md35-98](https://github.com/YSGStudyHards/DotNetGuide/blob/9f06
 
 While primarily documentation-focused, the repository includes a lightweight practice environment through the `DotNetGuidePractice` solution:
 
-
 **Figure 4: Practice Code Organization**
 
 The `Program.cs` file serves as a demonstration framework where various code examples are organized as commented-out methods. This design allows developers to selectively uncomment and execute specific examples:
@@ -125,8 +117,6 @@ The `Program.cs` file serves as a demonstration framework where various code exa
   * **Pattern** : Each example is a self-contained method with descriptive comments
   * **Execution** : Console application output type with .NET 9.0 target framework
   * **Features** : `ImplicitUsings` and `Nullable` reference types enabled
-
-
 
 The low importance scores (relative to documentation) confirm this is a **supplementary learning resource** rather than a primary feature.
 
@@ -138,7 +128,6 @@ Sources: [README.md473-500](https://github.com/YSGStudyHards/DotNetGuide/blob/9f
 
 DotNetGuide operates as a **bidirectional learning ecosystem** where community contributions drive content updates:
 
-
 **Figure 5: Content Curation Lifecycle**
 
 ### Contribution Channels
@@ -147,8 +136,6 @@ DotNetGuide operates as a **bidirectional learning ecosystem** where community c
   2. **Pull Requests** : Direct contributions to documentation files
   3. **WeChat Community** : Discussion and feedback through `追逐时光者` public account
   4. **dotNetTreasury Organization** : Collaborative project repository hosting
-
-
 
 ### Content Update Pipeline
 
@@ -421,37 +408,8 @@ DotNetGuide 在**知识索引层**做了极致的抽象。它把“在互联网�
 ---
 ## 💻 实用代码示例
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 ## 📚 真实案例研究
-
 
 ### 1：国内某中型互联网公司（电商业务）
 
@@ -477,8 +435,6 @@ DotNetGuide 在**知识索引层**做了极致的抽象。它把“在互联网�
 
 ---
 
-
-
 ### 2：某传统制造企业的数字化研发部门
 
  2：某传统制造企业的数字化研发部门
@@ -500,8 +456,6 @@ DotNetGuide 在**知识索引层**做了极致的抽象。它把“在互联网�
 *   🌟 **自信心建立**：初级开发通过系统学习，具备了独立处理复杂问题的能力，团队离职率下降，因为员工觉得在这里能学到真东西。
 
 ---
-
-
 
 ### 3：某金融科技初创公司
 
@@ -785,7 +739,6 @@ DotNetGuide 在**知识索引层**做了极致的抽象。它把“在互联网�
 - 技术栈广度与深度**：涵盖了从后端框架到前端、数据库、中间件及 DevOps 的全链路技术视野，提醒开发者避免成为“API 调用侠” 🛠️。
 - 持续学习与社区活跃度**：GitHub Trending 上的热门项目反映了当前市场最关注的技术趋势（如 .NET Core 生态、AI 编程辅助等），保持关注是技术保鲜的关键 🔥。
 
-
 ---
 ## 🗺️ 循序渐进的学习路径
 
@@ -879,7 +832,6 @@ DotNetGuide 在**知识索引层**做了极致的抽象。它把“在互联网�
 ---
 ## ❓ 常见问题解答
 
-
 ### 1: DotNetGuide 是一个什么样的项目？它主要包含哪些内容？
 
 1: DotNetGuide 是一个什么样的项目？它主要包含哪些内容？
@@ -893,8 +845,6 @@ DotNetGuide 在**知识索引层**做了极致的抽象。它把“在互联网�
 
 ---
 
-
-
 ### 2: 作为一个初学者，应该如何使用 DotNetGuide 来开始学习 .NET？
 
 2: 作为一个初学者，应该如何使用 DotNetGuide 来开始学习 .NET？
@@ -907,8 +857,6 @@ DotNetGuide 在**知识索引层**做了极致的抽象。它把“在互联网�
 
 ---
 
-
-
 ### 3: DotNetGuide 和 YSGStudyHards 有什么区别或联系吗？
 
 3: DotNetGuide 和 YSGStudyHards 有什么区别或联系吗？
@@ -917,8 +865,6 @@ DotNetGuide 在**知识索引层**做了极致的抽象。它把“在互联网�
 
 ---
 
-
-
 ### 4: 项目中的技术栈和工具是否保持更新？我需要担心内容过时吗？
 
 4: 项目中的技术栈和工具是否保持更新？我需要担心内容过时吗？
@@ -926,8 +872,6 @@ DotNetGuide 在**知识索引层**做了极致的抽象。它把“在互联网�
 **A**: 既然该项目能出现在 GitHub Trending（热门趋势）榜单上，说明它具有很高的活跃度和关注度。这类优质开源项目通常会紧跟微软的官方更新步伐（例如 .NET 8, .NET 9 等）。不过，技术迭代很快，建议在学习时关注项目的 `Commit` 记录或 `Issues` 讨论，以确保你获取的信息是最新版本的实践。
 
 ---
-
-
 
 ### 5: 我可以参与到 DotNetGuide 项目的建设中吗？
 
@@ -940,8 +884,6 @@ DotNetGuide 在**知识索引层**做了极致的抽象。它把“在互联网�
 
 ---
 
-
-
 ### 6: 除了 DotNetGuide，还有哪些推荐的配套学习资源？
 
 6: 除了 DotNetGuide，还有哪些推荐的配套学习资源？
@@ -950,22 +892,6 @@ DotNetGuide 在**知识索引层**做了极致的抽象。它把“在互联网�
 1.  **微软官方文档**：这是最权威的参考书，用于查阅 API 和底层原理。
 2.  **YouTube/B站 视频教程**：对于 visual learner（视觉学习者），配合视频教程理解抽象概念会更快。
 3.  **实战演练**：尝试模仿构建一个简单的 Web API 或后台管理系统，将 DotNetGuide 中的理论知识应用到实际项目中。
-
----
-## 🎯 挑战与思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**:
-
-### 假设 `DotNetGuide` 是一个包含大量 .NET 学习资源的仓库，如何通过一条 Git 命令快速查看仓库的历史提交记录（按时间倒序）？
-
-### 提示**:
-
----
 ## 💡 实践建议
 
 基于 `YSGStudyHards/DotNetGuide` 仓库的内容（学习指南、面试题、资源聚合）和定位，以下是 6 条针对性的实践建议，旨在提升仓库的**可维护性**、**实用性**和**社区活跃度**：

@@ -87,9 +87,6 @@ scenarios: ["大语言模型", "AI/ML项目"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：动态提示词模板生成器
 def generate_prompt_template(task_type, model_name):
@@ -116,9 +113,6 @@ def generate_prompt_template(task_type, model_name):
 print(generate_prompt_template('code_generation', 'GPT-4').format(requirement="实现快速排序"))
 ```
 
-
-
-
 ```python
 # 示例2：模型输出质量自动评估器
 def evaluate_model_output(model_response, expected_keywords):
@@ -143,9 +137,6 @@ test_response = "快速排序算法的时间复杂度为O(n log n)"
 result = evaluate_model_output(test_response, ["快速排序", "时间复杂度", "O(n log n)"])
 print(f"匹配度：{result['score']*100}%")
 ```
-
-
-
 
 ```python
 # 示例3：批量模型测试框架
@@ -181,10 +172,8 @@ test_cases = {
 print(batch_test_models(test_models, test_cases))
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某中型金融科技公司的自动化测试重构项目
 
@@ -203,8 +192,6 @@ print(batch_test_models(test_models, test_cases))
 通过该框架，团队发现 DeepSeek Coder 模型在结合内部上下文和错误反馈后，生成代码的可用性显著提升。原本预计耗时较长的测试用例重构工作，在框架辅助下，进度明显加快，且生成的代码符合内部规范，降低了人工审查的成本。
 
 ---
-
-
 
 ### 2：某电商 SaaS 提供商的遗留系统迁移
 
@@ -241,7 +228,6 @@ print(batch_test_models(test_models, test_cases))
 ---
 
 ### 实践 2：优化提示词工程与上下文结构
-
 
 **实施步骤**：
 1. **设计系统提示词**：明确指定模型的角色（如“资深 Python 开发者”）和输出格式（如“仅输出代码”）。
@@ -317,7 +303,6 @@ print(batch_test_models(test_models, test_cases))
 ---
 ## 常见问题
 
-
 ### 1: 文章标题中提到的“Harness”具体指的是什么？
 
 1: 文章标题中提到的“Harness”具体指的是什么？
@@ -325,8 +310,6 @@ print(batch_test_models(test_models, test_cases))
 **A**: 在这篇文章的语境中，“Harness”指的是用于评估、测试或驱动大语言模型（LLM）生成代码的底层框架、提示词工程策略或测试流程。文章的核心观点是，并没有对模型本身的权重进行微调或改变模型架构，而是通过改进输入端的指令、优化上下文处理方式或改进评估指标，从而激发出模型更好的性能表现。简而言之，就是换了更好的“缰绳”来驾驭现有的“马”。
 
 ---
-
-
 
 ### 2: 在不重新训练模型的情况下，如何快速提升 LLM 的代码生成能力？
 
@@ -339,8 +322,6 @@ print(batch_test_models(test_models, test_cases))
 
 ---
 
-
-
 ### 3: 文章中提到的“15 LLMs”包含了哪些模型？是否涵盖了主流模型？
 
 3: 文章中提到的“15 LLMs”包含了哪些模型？是否涵盖了主流模型？
@@ -348,8 +329,6 @@ print(batch_test_models(test_models, test_cases))
 **A**: 虽然具体的列表取决于文章发布时的测试范围，但通常这类横向测试会涵盖当时最流行的开源和闭源模型。这可能包括 GPT-4、GPT-3.5、Claude 2、Llama 2（不同参数量版本）、Code Llama、Mistral 以及 StarCoder 等。文章的重点在于展示这种改进方法对不同架构模型的普遍有效性，而不仅仅是针对某一个特定模型。
 
 ---
-
-
 
 ### 4: 这种“改进”是永久性的吗？还是仅限于特定测试环境？
 
@@ -359,8 +338,6 @@ print(batch_test_models(test_models, test_cases))
 
 ---
 
-
-
 ### 5: 对于开发者来说，这篇文章的核心启示是什么？
 
 5: 对于开发者来说，这篇文章的核心启示是什么？
@@ -368,8 +345,6 @@ print(batch_test_models(test_models, test_cases))
 **A**: 核心启示在于：在考虑花费巨资进行微调或等待更强大的模型发布之前，应该先充分挖掘现有模型的潜力。通过构建更好的评估工具和更精细的提示词策略，往往能以极低的成本显著提升模型在具体任务（如编码）中的表现。有时候，限制模型表现的瓶颈不是模型智力，而是我们与模型交互的方式。
 
 ---
-
-
 
 ### 6: 文章中是否提到了具体的评估基准或数据集？
 
@@ -379,29 +354,11 @@ print(batch_test_models(test_models, test_cases))
 
 ---
 
-
-
 ### 7: 这种方法是否适用于非编程类的 LLM 任务？
 
 7: 这种方法是否适用于非编程类的 LLM 任务？
 
 **A**: 是的，原理是通用的。虽然文章聚焦于编程任务，但通过优化输入端来提升输出质量的逻辑适用于所有 LLM 应用场景。无论是文本写作、摘要提取还是逻辑推理，改进提示词策略、提供更好的示例以及建立反馈循环，都是提升模型表现的有效手段。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 在使用 LLM 进行代码生成时，Prompt（提示词）的编写方式对结果影响巨大。请尝试设计一个 Prompt 模板，专门用于让 LLM 生成符合特定代码风格（如 Google Python Style Guide）的函数，并要求其包含输入参数的类型注解和文档字符串。
-
-### 提示**: 思考如何将“上下文”和“指令”结合。不要只说“写一个函数”，而是要在 Prompt 中提供具体的风格指南片段或示例，明确告知模型输出必须包含哪些具体要素（如 `def`、`args`、`returns`、`raises` 等部分）。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [http://blog.can.ac/2026/02/12/the-harness-problem](http://blog.can.ac/2026/02/12/the-harness-problem)
@@ -410,7 +367,6 @@ print(batch_test_models(test_models, test_cases))
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

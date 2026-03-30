@@ -112,37 +112,8 @@ external_url: https://www.nbcnews.com/tech/internet/fbi-investigating-minnesota-
 ---
 ## 💻 代码示例
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 ## 📚 案例研究
-
 
 ### 1：Signal 监控工具在边境执法中的应用（基于 FBI 调查事件）
 
@@ -169,8 +140,6 @@ external_url: https://www.nbcnews.com/tech/internet/fbi-investigating-minnesota-
 
 ---
 
-
-
 ### 2：欧洲反恐部门的加密通信破解项目
 
  2：欧洲反恐部门的加密通信破解项目
@@ -195,8 +164,6 @@ external_url: https://www.nbcnews.com/tech/internet/fbi-investigating-minnesota-
 - 项目成果被写入欧盟《反恐技术白皮书》作为标准方案  
 
 ---
-
-
 
 ### 3：企业内部泄密追踪系统（Signal 集成版）
 
@@ -341,7 +308,6 @@ external_url: https://www.nbcnews.com/tech/internet/fbi-investigating-minnesota-
 ---
 ## ❓ 常见问题
 
-
 ### 1: 什么是“Minnesota Signal chats tracking ICE”事件？
 
 1: 什么是“Minnesota Signal chats tracking ICE”事件？
@@ -350,8 +316,6 @@ external_url: https://www.nbcnews.com/tech/internet/fbi-investigating-minnesota-
 根据报道，这群抗议者利用 Signal 聊天群组来分享 ICE 特工的实时位置信息，意图干扰执法行动。这起事件引发了关于数字隐私、言论自由以及政府如何获取加密通讯记录的广泛讨论。
 
 ---
-
-
 
 ### 2: FBI 是如何获取 Signal 聊天记录的？Signal 不是端到端加密的吗？
 
@@ -365,8 +329,6 @@ external_url: https://www.nbcnews.com/tech/internet/fbi-investigating-minnesota-
 
 ---
 
-
-
 ### 3: 追踪 ICE 特工的行为属于犯罪吗？
 
 3: 追踪 ICE 特工的行为属于犯罪吗？
@@ -375,8 +337,6 @@ external_url: https://www.nbcnews.com/tech/internet/fbi-investigating-minnesota-
 虽然抗议和集会受到美国宪法第一修正案的保护，但执法机构认为，专门针对联邦特工进行实时位置追踪、并在网上公布其个人信息（即“人肉搜索”或 Doxxing），意图恐吓或干扰其执行公务，这已经越过了言论自由的界限，构成了对执法官员的威胁和骚扰。具体罪名可能包括跟踪、串谋侵犯公民权利等。
 
 ---
-
-
 
 ### 4: 为什么 Hacker News (HN) 社区会关注这个新闻？
 
@@ -389,8 +349,6 @@ external_url: https://www.nbcnews.com/tech/internet/fbi-investigating-minnesota-
 
 ---
 
-
-
 ### 5: 这对使用 Signal 等加密软件的普通用户有什么影响？
 
 5: 这对使用 Signal 等加密软件的普通用户有什么影响？
@@ -402,30 +360,12 @@ external_url: https://www.nbcnews.com/tech/internet/fbi-investigating-minnesota-
 
 ---
 
-
-
 ### 6: ICE 在此事件中扮演了什么角色？
 
 6: ICE 在此事件中扮演了什么角色？
 
 **A**: ICE（美国移民与海关执法局）是这起事件中的“被追踪”方。
 抗议者追踪 ICE 特工的背景通常与反对 ICE 的移民政策有关（例如家庭分离政策）。抗议者试图通过追踪特工的动向，来预警或阻止突袭移民社区的行动。然而，在这起 FBI 的调查中，ICE 被描述为受到骚扰和威胁的受害者，这也是联邦政府介入调查并动用 FBI 资源的主要原因。
-
----
-## 🎯 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**:
-
-### 假设你是一名数字取证分析师，你需要解释为什么使用端到端加密（E2EE）的应用（如 Signal）相比传统的短信或未加密的聊天应用，会给执法机构的调查带来更大的技术困难？请列举两个核心技术原因。
-
-### 提示**:
-
----
 ## 🔗 引用
 
 - **原文链接**: [https://www.nbcnews.com/tech/internet/fbi-investigating-minnesota-signal-minneapolis-group-ice-patel-kash-rcna256041](https://www.nbcnews.com/tech/internet/fbi-investigating-minnesota-signal-minneapolis-group-ice-patel-kash-rcna256041)

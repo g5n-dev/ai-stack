@@ -87,9 +87,6 @@ scenarios: ["DevOps/运维", "大语言模型"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：动态创建云虚拟机
 import subprocess
@@ -127,9 +124,6 @@ def create_vm(vm_name="dev-vm", instance_type="t2.micro"):
 # 使用示例
 create_vm("ml-training-vm", "t3.medium")
 ```
-
-
-
 
 ```python
 # 示例2：GPU资源监控与调度
@@ -172,9 +166,6 @@ def allocate_task_to_gpu(task_id):
 allocate_task_to_gpu("model-training-001")
 ```
 
-
-
-
 ```python
 # 示例3：容器化GPU环境部署
 import docker
@@ -211,10 +202,8 @@ def deploy_gpu_container(image_name, gpu_ids=[0]):
 deploy_gpu_container("tensorflow/tensorflow:latest-gpu", gpu_ids=[0, 1])
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某生成式 AI 初创公司
 
@@ -234,8 +223,6 @@ deploy_gpu_container("tensorflow/tensorflow:latest-gpu", gpu_ids=[0, 1])
 
 ---
 
-
-
 ### 2：大型金融机构内部算法交易平台
 
  2：大型金融机构内部算法交易平台
@@ -253,8 +240,6 @@ deploy_gpu_container("tensorflow/tensorflow:latest-gpu", gpu_ids=[0, 1])
 研究人员的生产力显著提升，回测任务的启动不再依赖 IT 部门的人工干预，实现了研发闭环。通过按需使用 Spot 实例（竞价实例），计算成本相比使用固定内部集群降低了 40% 以上。同时，临时创建和销毁的机制极大地减少了攻击面，增强了系统的安全性。
 
 ---
-
-
 
 ### 3：开源 SaaS 项目自动化演示系统
 
@@ -366,7 +351,6 @@ deploy_gpu_container("tensorflow/tensorflow:latest-gpu", gpu_ids=[0, 1])
 ---
 ## 常见问题
 
-
 ### 1: 这个工具的核心功能是什么？
 
 1: 这个工具的核心功能是什么？
@@ -375,8 +359,6 @@ deploy_gpu_container("tensorflow/tensorflow:latest-gpu", gpu_ids=[0, 1])
 
 ---
 
-
-
 ### 2: 它支持哪些云平台或基础设施提供商？
 
 2: 它支持哪些云平台或基础设施提供商？
@@ -384,8 +366,6 @@ deploy_gpu_container("tensorflow/tensorflow:latest-gpu", gpu_ids=[0, 1])
 **A**: 根据此类工具的常见架构，它通常设计为模块化，支持主流的云服务提供商，如 AWS（Amazon Web Services）、Google Cloud Platform (GCP) 或 Azure。具体的兼容性取决于工具的实现方式，有些版本可能专门针对特定的 VPS 提供商（如 DigitalOcean 或 Linode）或专门针对提供高性能 GPU 实例的提供商（如 Lambda Labs 或 Vast.ai）。
 
 ---
-
-
 
 ### 3: 使用这个工具安全吗？如何防止 AI 意外产生高额费用？
 
@@ -399,8 +379,6 @@ deploy_gpu_container("tensorflow/tensorflow:latest-gpu", gpu_ids=[0, 1])
 
 ---
 
-
-
 ### 4: 它是如何与 Claude Code 或 Codex 集成的？
 
 4: 它是如何与 Claude Code 或 Codex 集成的？
@@ -408,8 +386,6 @@ deploy_gpu_container("tensorflow/tensorflow:latest-gpu", gpu_ids=[0, 1])
 **A**: 该工具通常作为一个“工具”或“函数”定义集成到大语言模型（LLM）的上下文中。当用户向 Claude 发出指令（例如“启动一个 GPU 实例并训练这个模型”）时，模型会解析该意图，并生成特定的 API 调用请求。后台系统接收到请求后，与云服务商的 API 进行交互来完成实际的基础设施创建，并将结果（如 IP 地址、SSH 登录信息）返回给 AI，AI 再反馈给用户。
 
 ---
-
-
 
 ### 5: 使用这个工具需要哪些前置条件？
 
@@ -422,29 +398,11 @@ deploy_gpu_container("tensorflow/tensorflow:latest-gpu", gpu_ids=[0, 1])
 
 ---
 
-
-
 ### 6: 它与传统的 Serverless 或容器编排平台（如 Kubernetes）有什么区别？
 
 6: 它与传统的 Serverless 或容器编排平台（如 Kubernetes）有什么区别？
 
 **A**: 这个工具专注于**交互式开发**场景。它不是为了长期运行的服务（如 Kubernetes 那样）设计的，而是为了临时的、计算密集型的任务（如训练模型、编译大型项目、运行短期批处理任务）。它更倾向于“按需创建，用完即毁”的模式，省去了配置复杂容器编排的繁琐过程，让开发者通过自然语言就能快速获得算力。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 设计一个简单的命令行工具，能够根据用户输入的参数（如 `--cpu 4 --memory 8`），自动生成对应的云服务提供商（如 AWS 或 Azure）的创建虚拟机（VM）的 CLI 命令字符串，但不实际执行。
-
-### 提示**: 考虑使用 Python 的 `argparse` 库来解析参数，并使用字符串格式化（f-string 或 `format`）来构建最终的命令。重点在于参数映射和字符串拼接逻辑。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://cloudrouter.dev](https://cloudrouter.dev)
@@ -453,7 +411,6 @@ deploy_gpu_container("tensorflow/tensorflow:latest-gpu", gpu_ids=[0, 1])
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

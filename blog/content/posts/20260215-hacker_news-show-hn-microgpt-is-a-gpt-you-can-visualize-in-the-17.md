@@ -85,9 +85,6 @@ Microgpt 通过在浏览器端实现轻量级 GPT 架构的可视化与运行，
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：可视化GPT的注意力权重
 import matplotlib.pyplot as plt
@@ -111,9 +108,6 @@ seq_len = 10
 attention = np.random.rand(seq_len, seq_len)
 visualize_attention(attention)
 ```
-
-
-
 
 ```python
 # 示例2：交互式文本生成演示
@@ -148,9 +142,6 @@ if __name__ == '__main__':
     app.run(debug=True)
 ```
 
-
-
-
 ```python
 # 示例3：GPT模型结构可视化
 import torch
@@ -182,10 +173,8 @@ output = model(dummy_input)
 make_dot(output, params=dict(model.named_parameters())).render("gpt_structure", format="png")
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某高校 AI 导师课辅助教学系统
 
@@ -204,8 +193,6 @@ make_dot(output, params=dict(model.named_parameters())).render("gpt_structure", 
 这种“所见即所得”的教学方式极大地降低了认知门槛。学生能够直观地看到输入数据如何转化为输出结果，课堂互动率提升了 40%以上。课后反馈显示，这种可视化的演示帮助学生在脑海中建立起了完整的模型架构图，显著提升了对 GPT 内部机制的理解深度。
 
 ---
-
-
 
 ### 2：初创公司 SaaS 产品的前端集成验证
 
@@ -318,14 +305,11 @@ make_dot(output, params=dict(model.named_parameters())).render("gpt_structure", 
 ---
 ## 常见问题
 
-
 ### 1: Microgpt 是什么？它与标准的 ChatGPT 有什么区别？
 
 1: Microgpt 是什么？它与标准的 ChatGPT 有什么区别？
 
 **A**: Microgpt 是一个旨在帮助用户理解和可视化 GPT（生成式预训练变换模型）内部工作原理的 Web 应用程序。与标准的 ChatGPT 不同，ChatGPT 是一个通过 API 或 Web 界面提供服务的庞大黑盒模型，用户只能看到输入和输出；而 Microgpt 专注于“可视化”和“微缩”体验。它通常在浏览器本地运行一个规模较小、结构精简的模型，让用户能够直观地看到 Token（词元）的处理过程、注意力机制的权重分布以及神经网络层是如何逐层生成文本的。它的主要目的是教育和技术演示，而非作为生产级的写作工具。
-
-
 
 ### 2: 我需要安装 Python 或配置本地开发环境才能运行它吗？
 
@@ -333,15 +317,11 @@ make_dot(output, params=dict(model.named_parameters())).render("gpt_structure", 
 
 **A**: 通常不需要。根据“Show HN”项目的特点，Microgpt 被设计为可以直接在浏览器中运行。这意味着它很可能使用了 WebAssembly（如 Pyodide 或 WasmEdge）技术将 Python 代码编译为浏览器可执行的格式，或者是完全使用 JavaScript/TypeScript 重写了模型的核心逻辑。用户只需打开项目提供的网页链接，即可加载模型并开始交互，无需在本地安装任何依赖库或配置 GPU 环境。
 
-
-
 ### 3: 既然是在浏览器中运行，它的运行速度和性能如何？
 
 3: 既然是在浏览器中运行，它的运行速度和性能如何？
 
 **A**: 运行速度取决于几个因素，包括模型的参数量大小、浏览器的 WebAssembly 运行效率以及用户设备的 CPU 性能。由于这是一个“Micro”（微缩）版本的 GPT，其参数量通常远小于 GPT-3 或 GPT-4（可能只有几百万到几千万个参数），因此在现代笔记本电脑或手机上的推理速度应该是相对可接受的，通常在几秒钟内能生成一个 Token 或完成一次短文本推理。不过，与云端运行的大型 GPU 集群相比，其生成速度会慢一些，且无法处理非常复杂的上下文。
-
-
 
 ### 4: 这个项目使用的是预训练的模型权重，还是从头开始训练的？
 
@@ -349,15 +329,11 @@ make_dot(output, params=dict(model.named_parameters())).render("gpt_structure", 
 
 **A**: Microgpt 为了演示目的，通常使用的是预训练好的轻量级模型权重。开发者可能使用了类似 GPT-2 的架构，但在极小的数据集（例如莎士比亚文集或简单的代码库）上进行了训练，或者直接加载了一个开源的微型语言模型权重。如果项目包含“训练”功能，它可能会展示如何通过反向传播更新权重，但这通常仅限于非常简单的数据集，以便在浏览器内存中快速完成。
 
-
-
 ### 5: 我可以查看并修改源代码吗？它是开源的吗？
 
 5: 我可以查看并修改源代码吗？它是开源的吗？
 
 **A**: 是的，作为“Show HN”的内容，Microgpt 通常是开源的。开发者发布此项目的目的之一是分享技术实现细节。你可以通过项目主页（通常是 GitHub 仓库）查看完整的源代码。这不仅允许你查看模型是如何构建的，还允许你 fork 该项目，修改模型层数、改变超参数，甚至替换训练数据集，以此作为学习 Transformer 架构的绝佳实践。
-
-
 
 ### 6: 它支持中文吗？
 
@@ -365,29 +341,11 @@ make_dot(output, params=dict(model.named_parameters())).render("gpt_structure", 
 
 **A**: 这取决于该项目所使用的训练数据集和 Tokenizer（分词器）。如果原始模型是在英文语料上训练的，且分词器主要针对英文优化，那么它生成中文的能力会很弱，可能会产生乱码或不连贯的字符。不过，由于 GPT 架构本身是通用的，如果开发者使用了多语言训练集或针对中文进行了微调，它是可以支持中文生成的。作为一个演示项目，默认配置下它可能主要针对英文进行优化，但用户可以通过修改代码和数据来尝试支持中文。
 
-
-
 ### 7: 使用这个工具需要付费吗？
 
 7: 使用这个工具需要付费吗？
 
 **A**: 不需要。Microgpt 作为一个可视化的教育类开源项目，通常是免费提供的。所有的计算都在你的本地浏览器中完成，不涉及调用 OpenAI 或其他云服务商的付费 API，因此不会产生任何 Token 费用。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 在浏览器中可视化 GPT 模型时，为了直观展示 Token（词元）的生成过程，需要将文本字符串转换为模型可理解的整数索引。请尝试实现一个简单的分词器，能够将输入的句子拆分为单词，并根据预设的词汇表将其映射为对应的 ID 序列。
-
-### 提示**: 可以使用 JavaScript 的 `String.prototype.split()` 方法配合正则表达式来处理基本的单词拆分。你需要构建一个简单的对象作为“词汇表”，其中键是单词，值是唯一的整数 ID。注意处理词汇表中不存在的未知词。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://microgpt.boratto.ca](https://microgpt.boratto.ca)
@@ -396,7 +354,6 @@ make_dot(output, params=dict(model.named_parameters())).render("gpt_structure", 
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

@@ -36,8 +36,6 @@ Relevant source files
   * [README_EN.md](https://github.com/JoeanAmier/TikTokDownloader/blob/9fefb9a7/README_EN.md)
   * [src/application/TikTokDownloader.py](https://github.com/JoeanAmier/TikTokDownloader/blob/9fefb9a7/src/application/TikTokDownloader.py)
 
-
-
 ## Purpose and Scope
 
 TikTokDownloader (also known as DouK-Downloader) is an open-source, HTTP-based data collection and file download tool for the Douyin (抖音) and TikTok platforms. The project provides a complete solution for acquiring content metadata, downloading media files, and persisting collected data in multiple formats. It is built using Python 3.12 and the HTTPX library, offering both interactive and programmatic access methods.
@@ -68,14 +66,11 @@ Key technical features include:
   * **Proxy Support** : Configurable HTTP/HTTPS/SOCKS proxy for network requests
   * **Authentication Management** : Cookie extraction from clipboard, browsers (Chromium/Firefox/Safari), or manual input
 
-
-
 **Sources:** [README.md24-75](https://github.com/JoeanAmier/TikTokDownloader/blob/9fefb9a7/README.md#L24-L75) [README_EN.md25-76](https://github.com/JoeanAmier/TikTokDownloader/blob/9fefb9a7/README_EN.md#L25-L76)
 
 ## Dual-Platform Architecture
 
 The system implements symmetric dual-platform support through parallel API implementations and unified data processing:
-
 
 The `Parameter` class in [src/config/parameter.py](https://github.com/JoeanAmier/TikTokDownloader/blob/9fefb9a7/src/config/parameter.py) maintains separate configuration states for each platform, including platform-specific cookies, headers, and API endpoints. The `Extractor` class in [src/extract/extractor.py](https://github.com/JoeanAmier/TikTokDownloader/blob/9fefb9a7/src/extract/extractor.py) normalizes platform-specific API responses into unified data structures for downstream processing.
 
@@ -84,7 +79,6 @@ The `Parameter` class in [src/config/parameter.py](https://github.com/JoeanAmier
 ## Operational Modes
 
 TikTokDownloader provides four distinct operational modes, each suited for different use cases:
-
 
 ### Mode Descriptions
 
@@ -103,7 +97,6 @@ Each mode initializes with a shared `Parameter` instance that provides configura
 
 The application follows a structured initialization and runtime lifecycle:
 
-
 Key lifecycle components:
 
   * **Initialization** ([TikTokDownloader.py57-76](https://github.com/JoeanAmier/TikTokDownloader/blob/9fefb9a7/TikTokDownloader.py#L57-L76)): Creates console, settings, database, and cookie manager instances
@@ -111,8 +104,6 @@ Key lifecycle components:
   * **Parameter Setup** ([TikTokDownloader.py387-406](https://github.com/JoeanAmier/TikTokDownloader/blob/9fefb9a7/TikTokDownloader.py#L387-L406)): Initializes runtime state with settings, authentication, and HTTP clients
   * **Background Thread** ([TikTokDownloader.py417-438](https://github.com/JoeanAmier/TikTokDownloader/blob/9fefb9a7/TikTokDownloader.py#L417-L438)): Periodically updates authentication tokens (msToken, ttwid) at `COOKIE_UPDATE_INTERVAL`
   * **Cleanup** ([TikTokDownloader.py440-445](https://github.com/JoeanAmier/TikTokDownloader/blob/9fefb9a7/TikTokDownloader.py#L440-L445)): Closes HTTP clients, stops background thread, removes empty directories
-
-
 
 **Sources:** [src/application/TikTokDownloader.py57-105](https://github.com/JoeanAmier/TikTokDownloader/blob/9fefb9a7/src/application/TikTokDownloader.py#L57-L105) [src/application/TikTokDownloader.py387-445](https://github.com/JoeanAmier/TikTokDownloader/blob/9fefb9a7/src/application/TikTokDownloader.py#L387-L445)
 
@@ -179,7 +170,6 @@ System Component| Primary Classes| File Paths| Responsibilities
 
 ---
 ## 🎯 深度评价
-
 
 ---
 
@@ -396,37 +386,8 @@ System Component| Primary Classes| File Paths| Responsibilities
 ---
 ## 💻 实用代码示例
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 ## 📚 真实案例研究
-
 
 ### 1：独立内容创作者 - 短视频素材库积累
 
@@ -450,8 +411,6 @@ System Component| Primary Classes| File Paths| Responsibilities
 
 ---  
 
-
-
 ### 2：教育机构 - 跨平台教学资源迁移
 
  2：教育机构 - 跨平台教学资源迁移  
@@ -473,8 +432,6 @@ System Component| Primary Classes| File Paths| Responsibilities
 - 合规性提升：通过元数据记录规避版权纠纷。  
 
 ---  
-
-
 
 ### 3：市场分析团队 - 热门趋势数据追踪
 
@@ -713,7 +670,6 @@ System Component| Primary Classes| File Paths| Responsibilities
 - 💾 **多端与数据兼容**：支持多种操作系统，并提供保存为 JSON 的元数据功能，方便开发者进行二次数据分析或归档管理。
 - 🔄 **持续活跃维护**：作为 GitHub Trending 项目，其高频的更新频率反映了应对平台反爬虫策略变动的重要性，是学习对抗性爬虫技术的优秀案例。
 
-
 ---
 ## 🗺️ 循序渐进的学习路径
 
@@ -816,7 +772,6 @@ System Component| Primary Classes| File Paths| Responsibilities
 ---
 ## ❓ 常见问题解答
 
-
 ### 1: 这个项目是什么？有什么主要功能？
 
 1: 这个项目是什么？有什么主要功能？
@@ -829,8 +784,6 @@ System Component| Primary Classes| File Paths| Responsibilities
 4.  **跨平台支持**：支持 Windows、macOS 和 Linux 系统（基于 .NET 运行时）。
 
 ---
-
-
 
 ### 2: 下载后软件无法启动或报错，怎么办？
 
@@ -845,8 +798,6 @@ System Component| Primary Classes| File Paths| Responsibilities
 
 ---
 
-
-
 ### 3: 为什么下载的文件没有声音？
 
 3: 为什么下载的文件没有声音？
@@ -858,8 +809,6 @@ System Component| Primary Classes| File Paths| Responsibilities
 **建议：** 你可以使用视频剪辑软件（如剪映、Premiere）或格式转换工具将这两个文件合并。大多数情况下，普通视频下载下来是自带声音的，只有部分特殊视频才会分离。
 
 ---
-
-
 
 ### 4: 如何获取 TikTok 的分享链接并导入软件？
 
@@ -873,8 +822,6 @@ System Component| Primary Classes| File Paths| Responsibilities
 
 ---
 
-
-
 ### 5: 下载速度很慢或显示“网络错误”，如何解决？
 
 5: 下载速度很慢或显示“网络错误”，如何解决？
@@ -886,8 +833,6 @@ System Component| Primary Classes| File Paths| Responsibilities
 3.  **接口失效**：TikTok 官方接口经常更新，如果大面积出现无法下载，可能是开源项目的解析接口失效了。请关注 GitHub 项目页面的 `Issues` 或 `Releases`，等待作者更新修复。
 
 ---
-
-
 
 ### 6: 可以批量下载某个用户的所有视频吗？
 
@@ -902,8 +847,6 @@ System Component| Primary Classes| File Paths| Responsibilities
 
 ---
 
-
-
 ### 7: 这个软件安全吗？会有封号风险吗？
 
 7: 这个软件安全吗？会有封号风险吗？
@@ -911,22 +854,6 @@ System Component| Primary Classes| File Paths| Responsibilities
 **A**: **关于软件安全：** 该项目是开源的，代码托管在 GitHub 上，你可以自行查阅代码或下载源码编译，通常不包含恶意病毒。🛡️
 **关于封号风险：** 该工具主要是通过解析公开接口获取数据，属于“采集”行为。
 *   **登录风险**：如果你
-
----
-## 🎯 挑战与思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**: **基础环境与依赖修复**
-
-### 假设你克隆了 `JoeanAmier/TikTokDownloader` 项目，但在运行 `pip install -r requirements.txt` 时遇到了依赖冲突或某个库安装失败。请列出排查此类环境问题的标准步骤（如检查 Python 版本、使用虚拟环境等），并尝试编写一个简单的 `test.py` 脚本来验证核心依赖库（如 `requests` 或 `playwright`）是否已正确安装且能正常工作。
-
-### 提示**:
-
----
 ## 💡 实践建议
 
 以下是针对 **TikTokDownloader (JoeanAmier)** 项目的 7 条实践建议，旨在帮助你更高效、安全地完成数据采集任务：

@@ -75,9 +75,6 @@ scenarios: ["Web应用开发"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：加载并预处理音频数据
 import librosa
@@ -107,9 +104,6 @@ def preprocess_audio(audio_path, sr=16000, n_mels=80):
 # 使用示例
 # mel = preprocess_audio("mandarin_sample.wav")
 ```
-
-
-
 
 ```python
 # 示例2：拼音声调标注转换
@@ -156,9 +150,6 @@ def convert_pinyin_tones(pinyin_str):
 # print(tones)   # [3, 3]
 ```
 
-
-
-
 ```python
 # 示例3：模型推理与声调修正
 import torch
@@ -196,10 +187,8 @@ def correct_mandarin_tones(audio_path, model_path="model_checkpoint"):
 # print(f"修正后的拼音: {corrected}")
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：跨国企业内部沟通效率提升项目
 
@@ -218,8 +207,6 @@ def correct_mandarin_tones(audio_path, model_path="model_checkpoint"):
 使用该工具三个月后，参与项目的非华裔工程师的中文声调准确率提升了约 40%。在内部沟通中，因声调错误导致的语义误解次数显著减少，员工在中文会议中的参与度明显提高，团队凝聚力得到增强。
 
 ---
-
-
 
 ### 2：面向海外华裔儿童的中文教育平台
 
@@ -345,7 +332,6 @@ def correct_mandarin_tones(audio_path, model_path="model_checkpoint"):
 ---
 ## 常见问题
 
-
 ### 1: 为什么只有 9M (9百万) 参数的模型能够有效修正普通话声调？
 
 1: 为什么只有 9M (9百万) 参数的模型能够有效修正普通话声调？
@@ -353,8 +339,6 @@ def correct_mandarin_tones(audio_path, model_path="model_checkpoint"):
 **A**: 通常语音合成或识别模型需要数亿甚至数十亿参数，但声调修正任务相对单一，不需要模型理解复杂的语义或处理极其多样的音频环境。9M 参数的模型专注于声调的微观调整（如 F0 轮廓曲线），属于轻量级任务。小参数量意味着模型推理速度极快，且能在消费级硬件（如 CPU）上实时运行，非常适合个人辅助学习场景。
 
 ---
-
-
 
 ### 2: 该模型是如何获取训练数据的？使用了什么技术架构？
 
@@ -364,8 +348,6 @@ def correct_mandarin_tones(audio_path, model_path="model_checkpoint"):
 
 ---
 
-
-
 ### 3: 这个模型能帮助我完全学会标准的普通话声调吗？
 
 3: 这个模型能帮助我完全学会标准的普通话声调吗？
@@ -373,8 +355,6 @@ def correct_mandarin_tones(audio_path, model_path="model_checkpoint"):
 **A**: 不能完全依赖模型。该工具更像是一个“声调镜”或反馈设备，它能告诉你正确的声调听起来是什么样的，或者帮你修正练习录音。然而，语言习得还需要肌肉记忆，你需要通过反复模仿和口头练习来内化正确的发声方式。模型可以提供即时反馈，但无法替代你自身的口腔肌肉训练。
 
 ---
-
-
 
 ### 4: 使用该模型修正语音时，会改变我的原声音色或口音吗？
 
@@ -384,8 +364,6 @@ def correct_mandarin_tones(audio_path, model_path="model_checkpoint"):
 
 ---
 
-
-
 ### 5: 我可以在自己的电脑或手机上本地运行这个模型吗？
 
 5: 我可以在自己的电脑或手机上本地运行这个模型吗？
@@ -394,29 +372,11 @@ def correct_mandarin_tones(audio_path, model_path="model_checkpoint"):
 
 ---
 
-
-
 ### 6: 模型对于带有方言口音（如南方口音）的学习者效果如何？
 
 6: 模型对于带有方言口音（如南方口音）的学习者效果如何？
 
 **A**: 这取决于模型训练数据的覆盖范围和鲁棒性。如果模型主要在标准普通话数据上训练，它对于带有浓重方言口音（如平翘舌不分、n/l 不分，或声调调值偏差过大）的输入，修正效果可能会下降。模型擅长修正“声调曲线”，但如果输入的发音在声学特征上与标准普通话差异过大，模型可能无法识别出意图的汉字，从而导致修正失败。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 在语音合成（TTS）或语音转换任务中，直接使用原始音频波形作为模型输入通常计算量巨大。请列举两种常用的特征提取方法，将音频波形转换为更适合神经网络处理的声学特征（如频谱图），并简述它们在保留音高信息方面的优缺点。
-
-### 提示**: 思考一下时域信号和频域信号的区别。一种方法基于傅里叶变换，另一种模拟了人耳的听觉感知特性。对于声调语言，基频是关键。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://simedw.com/2026/01/31/ear-pronunication-via-ctc](https://simedw.com/2026/01/31/ear-pronunication-via-ctc)
@@ -425,7 +385,6 @@ def correct_mandarin_tones(audio_path, model_path="model_checkpoint"):
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

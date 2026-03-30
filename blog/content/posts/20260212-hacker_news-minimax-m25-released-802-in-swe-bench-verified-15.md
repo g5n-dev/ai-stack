@@ -80,9 +80,6 @@ MiniMax 发布的 M2.5 模型在 SWE-bench Verified 基准测试中取得了 80.
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：自动化SWE-bench测试结果分析
 def analyze_swe_bench_results(score: float, threshold: float = 75.0):
@@ -114,9 +111,6 @@ def analyze_swe_bench_results(score: float, threshold: float = 75.0):
 print(analyze_swe_bench_results(80.2))
 ```
 
-
-
-
 ```python
 # 示例2：代码修复能力测试工具
 def test_code_repair(model_output: str, expected_output: str) -> dict:
@@ -147,9 +141,6 @@ buggy_code = "def add(a, b): return a + b"
 fixed_code = "def add(a, b): return a + b  # 修复了整数溢出问题"
 print(test_code_repair(fixed_code, buggy_code))
 ```
-
-
-
 
 ```python
 # 示例3：SWE-bench测试用例生成器
@@ -190,10 +181,8 @@ bug_report = "在处理大数组时出现数组越界异常，且当输入为Non
 print(generate_swe_bench_test_cases(bug_report))
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某大型金融科技公司核心交易系统维护
 
@@ -218,8 +207,6 @@ print(generate_swe_bench_test_cases(bug_report))
 3. **知识传承**：初级工程师通过与模型的交互，能够快速理解复杂的遗留代码逻辑，间接提升了团队整体的技术水位。
 
 ---
-
-
 
 ### 2：某中型 SaaS 独立开发者的效能提升
 
@@ -337,7 +324,6 @@ print(generate_swe_bench_test_cases(bug_report))
 ---
 ## 常见问题
 
-
 ### 1: MiniMax M2.5 是什么，它在 SWE-bench Verified 上取得的成绩意味着什么？
 
 1: MiniMax M2.5 是什么，它在 SWE-bench Verified 上取得的成绩意味着什么？
@@ -345,8 +331,6 @@ print(generate_swe_bench_test_cases(bug_report))
 **A**: MiniMax M2.5 是由人工智能公司 MiniMax 发布的最新一代大语言模型。根据其在 Hacker News 上的讨论，该模型在 SWE-bench Verified 基准测试中取得了 80.2% 的分数。这是一个非常显著的成就，因为 SWE-bench 是一个极具挑战性的基准，它要求模型通过阅读 GitHub 仓库中的问题和代码，来生成能够解决真实软件 bug 的代码补丁。80.2% 的得分表明该模型在代码生成、逻辑推理以及理解复杂软件系统方面具备了顶尖的能力，甚至可能超越了此前发布的 GPT-4o 等知名模型在该数据集上的表现。
 
 ---
-
-
 
 ### 2: SWE-bench Verified 与普通的 SWE-bench 有什么区别？
 
@@ -356,8 +340,6 @@ print(generate_swe_bench_test_cases(bug_report))
 
 ---
 
-
-
 ### 3: MiniMax M2.5 是如何实现如此高的代码生成准确率的？
 
 3: MiniMax M2.5 是如何实现如此高的代码生成准确率的？
@@ -365,8 +347,6 @@ print(generate_swe_bench_test_cases(bug_report))
 **A**: 虽然 MiniMax 官方具体的训练细节属于技术机密，但根据业界对类似高性能模型的分析，M2.5 的高准确率通常源于以下几个因素：首先是海量的高质量代码预训练数据，这帮助模型学习了复杂的语法结构和编程逻辑；其次是针对代码任务的监督微调（SFT）和强化学习（RLHF），特别是针对解决 bug 这一特定任务的优化；最后，该模型可能采用了类似 "Test-Time Compute" 的技术，即在生成代码后，模型会进行自我检查、编译和运行测试用例，根据错误反馈不断修正代码，直到通过所有测试，从而显著提高了最终的成功率。
 
 ---
-
-
 
 ### 4: MiniMax M2.5 目前是否已经向公众开放使用？
 
@@ -376,8 +356,6 @@ print(generate_swe_bench_test_cases(bug_report))
 
 ---
 
-
-
 ### 5: 与 GPT-4o 或 Claude 3.5 Sonnet 相比，MiniMax M2.5 的竞争力如何？
 
 5: 与 GPT-4o 或 Claude 3.5 Sonnet 相比，MiniMax M2.5 的竞争力如何？
@@ -386,29 +364,11 @@ print(generate_swe_bench_test_cases(bug_report))
 
 ---
 
-
-
 ### 6: 开发者如何利用 MiniMax M2.5 的能力来辅助编程？
 
 6: 开发者如何利用 MiniMax M2.5 的能力来辅助编程？
 
 **A**: 开发者可以通过集成 MiniMax 的 API 来利用 M2.5 的强大能力。具体应用场景包括：自动修复单元测试失败的代码、根据自然语言描述生成复杂的函数实现、解释遗留代码的逻辑、以及进行代码审查。由于 M2.5 在 SWE-bench 上表现出色，它特别适合用于处理那些涉及复杂上下文依赖和深层逻辑推理的编程任务，能够显著提高软件开发的调试和维护效率。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: SWE-bench Verified 是一个评估代码生成模型解决真实 GitHub 问题能力的基准测试。请查阅相关论文或文档，解释 "Verified" 版本与原始 SWE-bench 数据集的主要区别是什么？这种修改对评估结果的可信度有何影响？
-
-### 提示**: 关注数据集构建过程中关于“上下文完整性”和“可复现性”的筛选标准，思考为什么原始数据集中可能存在模型无法解决的非代码因素。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://www.minimax.io/news/minimax-m25](https://www.minimax.io/news/minimax-m25)
@@ -417,7 +377,6 @@ print(generate_swe_bench_test_cases(bug_report))
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

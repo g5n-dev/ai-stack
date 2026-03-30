@@ -43,8 +43,6 @@ Relevant source files
   * [astrbot/core/utils/metrics.py](https://github.com/AstrBotDevs/AstrBot/blob/0faf109c/astrbot/core/utils/metrics.py)
   * [dashboard/pnpm-lock.yaml](https://github.com/AstrBotDevs/AstrBot/blob/0faf109c/dashboard/pnpm-lock.yaml)
 
-
-
 ## Purpose and Scope
 
 This document provides a comprehensive introduction to AstrBot, an open-source multi-platform chatbot framework with agentic capabilities. It covers the system's purpose, core features, high-level architecture, deployment options, and supported integrations.
@@ -60,8 +58,6 @@ For detailed information about specific subsystems, see:
   * **Plugin development** : [Plugin System (Stars)](/AstrBotDevs/AstrBot/7-plugin-system-\(stars\))
   * **Web interface usage** : [Dashboard and Web Interface](/AstrBotDevs/AstrBot/8-dashboard-and-web-interface)
 
-
-
 ## What is AstrBot
 
 AstrBot is an all-in-one agentic chatbot platform designed for deployment across mainstream instant messaging platforms. It provides conversational AI infrastructure for individuals, developers, and teams, enabling rapid construction of production-ready AI applications within existing workflow tools.
@@ -74,8 +70,6 @@ AstrBot is an all-in-one agentic chatbot platform designed for deployment across
   * Enterprise knowledge base interfaces
   * Multi-agent orchestration systems
 
-
-
 **Technical Foundation:**
 
   * Written in Python 3.10+
@@ -83,8 +77,6 @@ AstrBot is an all-in-one agentic chatbot platform designed for deployment across
   * Modular plugin system with hot-reload support
   * Web-based management dashboard with Vue.js frontend
   * Flexible deployment via Docker, `uv`, or system package managers
-
-
 
 Sources: [README.md1-286](https://github.com/AstrBotDevs/AstrBot/blob/0faf109c/README.md#L1-L286) [README_en.md1-297](https://github.com/AstrBotDevs/AstrBot/blob/0faf109c/README_en.md#L1-L297)
 
@@ -122,7 +114,6 @@ Sources: [README.md172-215](https://github.com/AstrBotDevs/AstrBot/blob/0faf109c
 
 ### Agentic Features
 
-
 **Key Features:**
 
   1. **Agent Sandbox** : Isolated execution environment for code and shell commands at [astrbot/core/agent/sandbox](https://github.com/AstrBotDevs/AstrBot/blob/0faf109c/astrbot/core/agent/sandbox)
@@ -132,14 +123,11 @@ Sources: [README.md172-215](https://github.com/AstrBotDevs/AstrBot/blob/0faf109c
   5. **Knowledge Base** : Vector search with FAISS and BM25 ranking for RAG capabilities
   6. **Subagent Orchestration** : Hierarchical multi-agent systems with task routing
 
-
-
 Sources: [README.md36-50](https://github.com/AstrBotDevs/AstrBot/blob/0faf109c/README.md#L36-L50)
 
 ## System Architecture Overview
 
 ### Entry Point and Core Lifecycle
-
 
 The application lifecycle begins at [main.py1-10](https://github.com/AstrBotDevs/AstrBot/blob/0faf109c/main.py#L1-L10) which invokes the runtime bootstrap that instantiates `InitialLoader`. This core lifecycle manager initializes all subsystems in dependency order:
 
@@ -150,12 +138,9 @@ The application lifecycle begins at [main.py1-10](https://github.com/AstrBotDevs
   5. **Conversation Tracking** : `ConversationManager` initializes session storage
   6. **Dashboard** : Quart-based web server starts on configured port
 
-
-
 Sources: [README.md69-148](https://github.com/AstrBotDevs/AstrBot/blob/0faf109c/README.md#L69-L148)
 
 ### Message Flow Architecture
-
 
 Messages flow through a 4-stage pipeline defined at [astrbot/core/pipeline/](https://github.com/AstrBotDevs/AstrBot/blob/0faf109c/astrbot/core/pipeline/):
 
@@ -164,22 +149,17 @@ Messages flow through a 4-stage pipeline defined at [astrbot/core/pipeline/](htt
   3. **ResultDecorateStage** : Content safety, TTS/T2I conversion, reply formatting
   4. **RespondStage** : Message validation and transmission
 
-
-
 The `ProcessStage` can invoke plugin handlers registered in `star_handlers_registry` or trigger agent execution with tool calling capabilities.
 
 Sources: High-level diagram "Diagram 3: Message Processing Pipeline Flow"
 
 ### Configuration Architecture
 
-
 Configuration is hierarchical with three layers:
 
   1. **Defaults** : `DEFAULT_CONFIG` at [astrbot/core/config/default.py1-900](https://github.com/AstrBotDevs/AstrBot/blob/0faf109c/astrbot/core/config/default.py#L1-L900) provides ~900 lines of baseline settings
   2. **User Overrides** : JSON files in `config/` directory override defaults
   3. **Runtime Modifications** : `SharedPreferences` API allows in-memory updates
-
-
 
 The configuration system has an importance score of 699.50, making it the highest-priority subsystem. It controls all aspects of platform behavior, provider selection, feature enablement, and safety policies.
 
@@ -387,9 +367,6 @@ AstrBot 的范式是**“事件驱动的中间件”**。它将自己定位为�
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：自动回复机器人基础功能
 def auto_reply(message):
@@ -416,9 +393,6 @@ if __name__ == "__main__":
     print(auto_reply("你好"))  # 输出：你好！我是AstrBot，很高兴为您服务。
     print(auto_reply("现在几点了"))  # 输出：当前时间是：2023-11-15 14:30:00
 ```
-
-
-
 
 ```python
 # 示例2：插件系统基础实现
@@ -453,9 +427,6 @@ def translate(text):
 print(manager.execute("天气查询", "北京"))  # 输出：北京今天晴天，气温25°C
 print(manager.execute("翻译", "Hello"))    # 输出：翻译结果：[翻译]Hello[/翻译]
 ```
-
-
-
 
 ```python
 # 示例3：消息处理中间件
@@ -502,10 +473,8 @@ print(pipeline.process("正常消息"))  # 输出：处理后的消息: 正常�
 print(pipeline.process("包含敏感词的消息"))  # 输出：None（被拦截）
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某大学计算机系技术社团
 
@@ -521,8 +490,6 @@ print(pipeline.process("包含敏感词的消息"))  # 输出：None（被拦截
 
 ---
 
-
-
 ### 2：独立开发者运营的二次元游戏资讯社区
 
  2：独立开发者运营的二次元游戏资讯社区
@@ -536,8 +503,6 @@ print(pipeline.process("包含敏感词的消息"))  # 输出：None（被拦截
 **效果**: 社区实现了 24 小时无人值守的自动化数据查询服务，玩家留存率提高了 20% 以上。运营者无需编写复杂的后端接口，仅通过配置 AstrBot 的插件即可满足核心需求，极大地降低了开发和维护成本。
 
 ---
-
-
 
 ### 3：小型科技创业公司的内部协作群
 
@@ -755,7 +720,6 @@ CPU 负载更加平滑，峰值负载降低 40%，系统稳定性大幅提升。
 - AstrBot 兼容标准的 OneBot 11 协议，能够良好地适配 LLOneBot、NapCat 等主流 QQ 协议端，部署灵活性高。
 - 项目遵循开源协议，拥有活跃的开发者社区和详细的文档，降低了二次开发和自定义功能的学习门槛。
 
-
 ---
 ## 学习路径
 
@@ -872,7 +836,6 @@ CPU 负载更加平滑，峰值负载降低 40%，系统稳定性大幅提升。
 ---
 ## 常见问题
 
-
 ### 1: AstrBot 是什么？它主要用来做什么？
 
 1: AstrBot 是什么？它主要用来做什么？
@@ -880,8 +843,6 @@ CPU 负载更加平滑，峰值负载降低 40%，系统稳定性大幅提升。
 **A**: AstrBot 是一个基于 Python 开发的跨平台 QQ/OneBot 机器人框架。它主要用于构建功能丰富的聊天机器人，支持通过插件系统来扩展功能。AstrBot 旨在提供一个轻量级、高性能且易于部署的解决方案，让用户能够轻松管理社群、娱乐互动或实现自动化任务。
 
 ---
-
-
 
 ### 2: 如何安装和部署 AstrBot？
 
@@ -897,8 +858,6 @@ CPU 负载更加平滑，峰值负载降低 40%，系统稳定性大幅提升。
 
 ---
 
-
-
 ### 3: AstrBot 支持哪些消息协议（如 NapCat, Lagrange, Go-cqhttp）？
 
 3: AstrBot 支持哪些消息协议（如 NapCat, Lagrange, Go-cqhttp）？
@@ -911,8 +870,6 @@ CPU 负载更加平滑，峰值负载降低 40%，系统稳定性大幅提升。
 
 ---
 
-
-
 ### 4: 如何为 AstrBot 安装和管理插件？
 
 4: 如何为 AstrBot 安装和管理插件？
@@ -923,8 +880,6 @@ CPU 负载更加平滑，峰值负载降低 40%，系统稳定性大幅提升。
 - **管理**：可以通过控制台指令或配置文件来启用、禁用或卸载特定的插件，无需删除代码文件。
 
 ---
-
-
 
 ### 5: 运行 AstrBot 时出现依赖缺失或报错怎么办？
 
@@ -938,8 +893,6 @@ CPU 负载更加平滑，峰值负载降低 40%，系统稳定性大幅提升。
 
 ---
 
-
-
 ### 6: AstrBot 是否支持 Docker 部署？
 
 6: AstrBot 是否支持 Docker 部署？
@@ -947,8 +900,6 @@ CPU 负载更加平滑，峰值负载降低 40%，系统稳定性大幅提升。
 **A**: 是的，AstrBot 通常支持 Docker 部署。项目仓库中一般会提供 `Dockerfile` 或 `docker-compose.yml` 示例文件。使用 Docker 部署可以避免复杂的 Python 环境配置问题，且便于迁移和管理。用户只需根据文档修改 Docker 配置中的环境变量（如账号、密码、API 地址），然后构建并运行容器即可。
 
 ---
-
-
 
 ### 7: 在哪里可以获取帮助或提交 Bug 反馈？
 
@@ -958,22 +909,6 @@ CPU 负载更加平滑，峰值负载降低 40%，系统稳定性大幅提升。
 - **文档**：首先应查阅项目目录下的 `README.md` 或项目 Wiki 页面。
 - **Issues**：如果你遇到了 Bug 或有功能建议，可以在 GitHub 项目的 [Issues](https://github.com/AstrBotDevs/AstrBot) 板块搜索类似问题或提交新的 Issue。
 - **社群**：部分项目会提供 QQ 群或 Discord 频道作为用户交流群，加入这些群组是获取实时帮助的好方法。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 环境搭建与基础运行
-
-### 问题**: 在本地成功克隆 AstrBot 项目后，根据项目文档配置所需的运行环境（如 Python 版本、依赖库等），并尝试启动主程序。如何确认 AstrBot 已经成功连接到了你指定的聊天平台（如 Telegram 或 QQ）并处于待命状态？
-
-### 提示**: 仔细阅读 `README.md` 或部署文档中的“前置要求”部分。检查控制台输出的日志信息，通常连接成功的协议或插件会有特定的“已连接”或“登录成功”提示。
-
-### 
-
----
 ## 实践建议
 
 基于 AstrBot 的仓库描述（Agentic IM Chatbot infrastructure），以下是针对实际部署、开发和维护的 6 条实践建议：
@@ -1017,7 +952,6 @@ AstrBot 集成了“lots of IM platforms”，不同平台（如 Telegram vs Dis
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

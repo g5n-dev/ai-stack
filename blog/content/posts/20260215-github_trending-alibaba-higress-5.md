@@ -38,8 +38,6 @@ Relevant source files
   * [README_JP.md](https://github.com/alibaba/higress/blob/8deceb4d/README_JP.md)
   * [README_ZH.md](https://github.com/alibaba/higress/blob/8deceb4d/README_ZH.md)
 
-
-
 ## Purpose and Scope
 
 This document provides a comprehensive overview of Higress, an AI Native API Gateway built on Istio and Envoy. It covers the system's architecture, core components, and primary use cases. For detailed information about specific subsystems, refer to the Core Architecture (page 2), Build and Deployment (page 3), WASM Plugin System (page 4), AI Gateway Features (page 5), MCP System (page 6), and Development Guide (page 7) sections.
@@ -73,7 +71,6 @@ Higress implements a control plane and data plane separation derived from Istio'
 
 **Component Deployment Diagram:**
 
-
 **Binary and Process Mapping:**
 
 Binary| Source Entry Point| Deployment Location| Primary Functions  
@@ -92,7 +89,6 @@ Sources: [README.md32](https://github.com/alibaba/higress/blob/8deceb4d/README.m
 ### Configuration Flow and Controller Architecture
 
 **Configuration Update Sequence:**
-
 
 **Controller Registry and Responsibilities:**
 
@@ -355,9 +351,6 @@ Higress 的范式是**“配置即代码，插件即微服务”**。它将网�
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：使用Higress实现简单的流量路由
 from flask import Flask, request, jsonify
@@ -389,9 +382,6 @@ def gateway(path):
 if __name__ == '__main__':
     app.run(debug=True)
 ```
-
-
-
 
 ```python
 # 示例2：实现简单的限流功能
@@ -431,9 +421,6 @@ def get_data():
 if __name__ == '__main__':
     app.run(debug=True)
 ```
-
-
-
 
 ```python
 # 示例3：实现服务发现和负载均衡
@@ -481,10 +468,8 @@ if __name__ == '__main__':
     app.run(debug=True)
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某头部电商平台大促保障
 
@@ -506,8 +491,6 @@ if __name__ == '__main__':
 
 ---
 
-
-
 ### 2：某大型跨国企业 SaaS 平台
 
  2：某大型跨国企业 SaaS 平台
@@ -527,8 +510,6 @@ if __name__ == '__main__':
 3. 建立了统一的 API 资产目录，使得不同团队能够清晰地看到和管理所有对外接口，极大提升了运维和审计效率。
 
 ---
-
-
 
 ### 3：AIGC 应用开发者平台
 
@@ -733,7 +714,6 @@ Higress 极大的优势在于支持 Wasm 插件。相比于 Lua，Wasm 提供了
 - 该网关支持将 Nacos、Consul 等注册中心的服务直接透传至 K8s，有效打通了微服务与容器化网络之间的服务发现壁垒。
 - 架构设计上实现了数据面与控制面的分离，支持热更新插件配置，可以在不重启服务的情况下动态调整流量管理策略。
 
-
 ---
 ## 学习路径
 
@@ -831,7 +811,6 @@ Higress 极大的优势在于支持 Wasm 插件。相比于 Lua，Wasm 提供了
 ---
 ## 常见问题
 
-
 ### 1: Higress 是什么？它与阿里云有什么关系？
 
 1: Higress 是什么？它与阿里云有什么关系？
@@ -839,8 +818,6 @@ Higress 极大的优势在于支持 Wasm 插件。相比于 Lua，Wasm 提供了
 **A**: Higress 是一个基于阿里内部多年实践沉淀的下一代云原生网关。它建立在 Envoy 和 Istio 等开源项目之上，旨在提供高性能、可扩展且易于管理的 API 网关功能。Higress 由阿里巴巴集团开源，并捐赠给了 CNCF（云原生计算基金会）作为孵化项目。它结合了阿里在电商、金融等高并发场景下的网关经验，支持 Kubernetes Ingress、API 管理以及微服务治理。
 
 ---
-
-
 
 ### 2: Higress 与 Nginx、APISIX 或 Kong 等传统网关相比有什么优势？
 
@@ -855,8 +832,6 @@ Higress 极大的优势在于支持 Wasm 插件。相比于 Lua，Wasm 提供了
 
 ---
 
-
-
 ### 3: Higress 是否支持从 Nginx 或 Ingress Controller 进行迁移？
 
 3: Higress 是否支持从 Nginx 或 Ingress Controller 进行迁移？
@@ -867,8 +842,6 @@ Higress 极大的优势在于支持 Wasm 插件。相比于 Lua，Wasm 提供了
 3.  **注解支持**：为了降低迁移门槛，Higress 兼容了大量常见的 Nginx Ingress Annotations，使得迁移后的配置改动最小化。
 
 ---
-
-
 
 ### 4: Higress 如何处理插件扩展？是否支持 WASM？
 
@@ -881,8 +854,6 @@ Higress 极大的优势在于支持 Wasm 插件。相比于 Lua，Wasm 提供了
 
 ---
 
-
-
 ### 5: Higress 的部署方式有哪些？是否支持非 K8s 环境？
 
 5: Higress 的部署方式有哪些？是否支持非 K8s 环境？
@@ -894,8 +865,6 @@ Higress 极大的优势在于支持 Wasm 插件。相比于 Lua，Wasm 提供了
 
 ---
 
-
-
 ### 6: Higress 是否支持服务网格 流量治理？
 
 6: Higress 是否支持服务网格 流量治理？
@@ -904,22 +873,6 @@ Higress 极大的优势在于支持 Wasm 插件。相比于 Lua，Wasm 提供了
 1.  **定位**：Higress 可以作为 Istio 的数据平面组件替代品，利用其高性能的 Envoy 内核处理南北向流量（入口流量）。
 2.  **集成**：它可以与 Istio 控制平面集成，实现金丝雀发布、蓝绿部署、流量镜像、全链路灰度发布等复杂的微服务治理功能。
 3.  **独立使用**：即使不部署完整的 Istio，Higress 自身也提供了丰富的 HTTP/gRPC 路由和负载均衡能力，足以应对大多数微服务治理场景。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 在本地 Docker 环境中快速部署 Higress，并创建一个简单的路由规则，将访问 `/hello` 的请求转发到一个模拟的后端服务（如 httpbin.org）。
-
-### 提示**: 参考 Higress 官方文档的快速开始部分，使用 Docker Compose 进行部署，并了解如何创建一个简单的 Ingress 路由。
-
-### 
-
----
 ## 实践建议
 
 基于 Higress 作为 AI Native API 网关的定位，结合其云原生架构与 AI 流量管理的特性，以下是 6 条实践建议：
@@ -963,7 +916,6 @@ Higress 极大的优势在于支持 Wasm 插件。相比于 Lua，Wasm 提供了
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

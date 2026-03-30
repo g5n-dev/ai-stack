@@ -34,8 +34,6 @@ Relevant source files
 
   * [README.md](https://github.com/shadow1ng/fscan/blob/805af82a/README.md)
 
-
-
 ## Purpose and Scope
 
 Fscan is a comprehensive intranet scanning tool designed for security assessment and vulnerability detection. This document provides an overview of the tool's purpose, key features, architecture, and operational workflow. The tool employs a modular plugin-based design that facilitates extensibility and maintenance.
@@ -75,7 +73,6 @@ Fscan is built on a modular, plugin-based architecture that facilitates extensib
 
 ### Core System Architecture
 
-
 Sources: [README.md16](https://github.com/shadow1ng/fscan/blob/805af82a/README.md#L16-L16) [README.md289-292](https://github.com/shadow1ng/fscan/blob/805af82a/README.md#L289-L292)
 
 ## Scan Workflow
@@ -84,14 +81,11 @@ Fscan follows a systematic workflow when conducting scans, starting from user in
 
 ### Scanning Process Flow
 
-
 The workflow begins with parsing command-line arguments to determine the scan configuration and mode. Based on the selected mode, fscan will execute different scanning paths:
 
   1. **Host Mode** : Performs host discovery, port scanning, and service detection
   2. **Web Mode** : Focuses on web vulnerability scanning
   3. **Local Mode** : Gathers information from the local system
-
-
 
 The tool then selects and executes relevant plugins based on discovered services or specified targets, collecting and formatting results for output.
 
@@ -102,7 +96,6 @@ Sources: [README.md117-125](https://github.com/shadow1ng/fscan/blob/805af82a/REA
 Fscan's functionality is implemented through a comprehensive plugin system that allows for easy extension and maintenance:
 
 ### Plugin Architecture
-
 
 The plugin system is designed as a "hot-swappable" architecture, allowing for quick development and integration of new scanning capabilities. Plugins register with the central registry and are called based on discovered services or user specifications.
 
@@ -134,8 +127,6 @@ Fscan is designed to support various security assessment scenarios:
   3. **Web Application Security** : Scan web applications for security issues and vulnerabilities
   4. **Credential Testing** : Verify the strength of authentication mechanisms for network services
   5. **Information Gathering** : Collect valuable system and network information for security analysis
-
-
 
 Sources: [README.md49-74](https://github.com/shadow1ng/fscan/blob/805af82a/README.md#L49-L74)
 
@@ -430,32 +421,8 @@ fscan 不仅仅是一个扫描器，它是**内网安全评估领域的“瑞士
 ---
 ## 💻 实用代码示例
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 ## 📚 真实案例研究
-
 
 ### 1：某大型电商平台安全加固项目
 
@@ -482,8 +449,6 @@ fscan 不仅仅是一个扫描器，它是**内网安全评估领域的“瑞士
 
 ---  
 
-
-
 ### 2：某医疗机构勒索病毒应急响应
 
  2：某医疗机构勒索病毒应急响应  
@@ -508,8 +473,6 @@ fscan 不仅仅是一个扫描器，它是**内网安全评估领域的“瑞士
 🚑 后续通过每日定时fscan任务，将横向攻击风险降低 **80%**。  
 
 ---  
-
-
 
 ### 3：金融行业合规性检查自动化
 
@@ -737,7 +700,6 @@ fscan 内置了丰富的指纹识别和弱口令爆破插件。如果目标环�
 - 内置强大的弱口令爆破功能** 💣，支持对 SSH、FTP、SMB、RDP、数据库等多种服务进行批量密码破解，支持用户名密码字典配置。
 - 高度灵活与可定制化** ⚙️，支持命令行参数精细控制扫描范围（如 IP 段、端口、协议），并可导出详细结果，适应不同场景的自动化扫描需求。
 
-
 ---
 ## 🗺️ 循序渐进的学习路径
 
@@ -826,7 +788,6 @@ fscan 内置了丰富的指纹识别和弱口令爆破插件。如果目标环�
 ---
 ## ❓ 常见问题解答
 
-
 ### 1: fscan 是什么？它是用来做什么的？
 
 1: fscan 是什么？它是用来做什么的？
@@ -841,8 +802,6 @@ fscan 内置了丰富的指纹识别和弱口令爆破插件。如果目标环�
 
 ---
 
-
-
 ### 2: fscan 和其他扫描器（如 Nmap、Masscan）相比有什么优势？
 
 2: fscan 和其他扫描器（如 Nmap、Masscan）相比有什么优势？
@@ -854,8 +813,6 @@ fscan 内置了丰富的指纹识别和弱口令爆破插件。如果目标环�
 *   **对比**：Nmap 功能更全面、指纹库更全，适合精细化的端口服务发现；而 fscan 更像是“瑞士军刀”，为了内网打点而优化，牺牲了一部分指纹准确率换取了极高的效率和便捷的攻击面发现能力。
 
 ---
-
-
 
 ### 3: 如何使用 fscan 进行简单的存活主机探测和端口扫描？
 
@@ -883,8 +840,6 @@ fscan 内置了丰富的指纹识别和弱口令爆破插件。如果目标环�
 
 ---
 
-
-
 ### 4: fscan 支持哪些协议的密码爆破？如何自定义字典？
 
 4: fscan 支持哪些协议的密码爆破？如何自定义字典？
@@ -904,8 +859,6 @@ fscan 内置了简单的用户名和密码字典。如果需要使用自定义�
 
 ---
 
-
-
 ### 5: 为什么我扫不到目标主机？或者显示“Host is not alive”？
 
 5: 为什么我扫不到目标主机？或者显示“Host is not alive”？
@@ -914,22 +867,6 @@ fscan 内置了简单的用户名和密码字典。如果需要使用自定义�
 
 1.  **防火墙拦截**：目标主机开启了防火墙，丢弃了 ICMP 包（Ping 不通）。fscan 默认会先用 ICMP 探测存活，如果 Ping 不通就不会继续扫端口。
     *   **解决方法**：尝试使用 `-np` (no ping) 参数，跳过存活检测，直接对全量 IP
-
----
-## 🎯 挑战与思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**: fscan 默认运行会扫描常见的端口（如 22, 80, 445 等）。请如何通过参数指定仅扫描目标 IP 的 **3389** 端口（RDP 服务），并检测是否存在弱口令？
-
-### 提示**: 查看 `-p` 参数指定端口，结合 `-pw` 参数或用户名字典进行测试。
-
-### 
-
----
 ## 💡 实践建议
 
 针对 **shadow1ng/fscan** 这款非常流行的内网综合扫描工具，以下是 6 条基于实战经验的优化建议，涵盖了扫描策略、性能调优及隐蔽性等方面：

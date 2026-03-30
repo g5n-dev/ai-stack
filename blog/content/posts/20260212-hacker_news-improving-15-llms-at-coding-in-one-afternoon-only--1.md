@@ -93,9 +93,6 @@ scenarios: ["大语言模型"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：LLM代码生成评估框架
 def evaluate_llm_coding(llm_model, test_cases):
@@ -149,9 +146,6 @@ def evaluate_llm_coding(llm_model, test_cases):
 # 可以统一测试不同LLM模型的代码生成能力，比较它们的准确率和性能。
 ```
 
-
-
-
 ```python
 # 示例2：自动代码生成与测试
 def auto_generate_and_test(problem_description, test_cases):
@@ -199,9 +193,6 @@ def auto_generate_and_test(problem_description, test_cases):
 # 可以快速验证LLM生成的代码是否正确解决了问题。
 ```
 
-
-
-
 ```python
 # 示例3：多模型代码生成比较
 def compare_llm_coding(problem, models):
@@ -241,10 +232,8 @@ def compare_llm_coding(problem, models):
 # 可以直观地看到哪个模型生成的代码更简洁、高效且正确。
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某中型金融科技公司内部研发效能提升
 
@@ -259,8 +248,6 @@ def compare_llm_coding(problem, models):
 **效果**: 代码的一次通过率从 40% 提升至 75% 以上。开发人员不再需要频繁纠正变量命名或 API 版本错误，AI 生成的代码可以直接通过大部分静态代码扫描。团队反馈，现在的 AI 助手更像是熟悉公司架构的“老员工”，而非通用的编程新手。
 
 ---
-
-
 
 ### 2：某 SaaS 创业公司遗留系统重构
 
@@ -372,7 +359,6 @@ def compare_llm_coding(problem, models):
 ---
 ## 常见问题
 
-
 ### 1: 标题中提到的 "Harness"（测试工具/框架）具体指的是什么？
 
 1: 标题中提到的 "Harness"（测试工具/框架）具体指的是什么？
@@ -380,8 +366,6 @@ def compare_llm_coding(problem, models):
 **A**: 在这篇文章的语境中，"Harness" 指的是一套用于评估和测试大语言模型（LLM）代码生成能力的**测试框架、基准测试工具或评估流程**。文章的核心观点是，并没有对底层的模型权重或架构进行微调，而是通过改进评估模型的方式——例如提供更清晰的上下文、更好的提示词工程、或者更准确的测试用例——从而让模型在编码任务上的表现得到了显著提升。简单来说，就是换了一套更“聪明”的考试方法，从而发掘出了模型更好的成绩。
 
 ---
-
-
 
 ### 2: 为什么仅仅改变测试框架就能让 15 个不同的模型同时提升代码能力？
 
@@ -391,8 +375,6 @@ def compare_llm_coding(problem, models):
 
 ---
 
-
-
 ### 3: 文章是否涉及对模型本身（Model Weights）的微调或训练？
 
 3: 文章是否涉及对模型本身（Model Weights）的微调或训练？
@@ -400,8 +382,6 @@ def compare_llm_coding(problem, models):
 **A**: **没有**。根据标题的描述，这次提升是在“一个下午”完成的，且只有“Harness”改变了。模型训练（尤其是对 15 个模型进行微调）通常需要巨大的算力和数天的时间。因此，这属于“推理时优化”或“评估优化”，即通过改进模型与任务交互的接口（Prompt、Context、Tooling）来激发模型的潜力，而不是改变模型内部的参数。
 
 ---
-
-
 
 ### 4: 这种提升是否意味着这些模型在实际编程场景中变得更强了？
 
@@ -411,8 +391,6 @@ def compare_llm_coding(problem, models):
 
 ---
 
-
-
 ### 5: 这种方法对开发者有什么实际启示？
 
 5: 这种方法对开发者有什么实际启示？
@@ -421,29 +399,11 @@ def compare_llm_coding(problem, models):
 
 ---
 
-
-
 ### 6: 文章中提到的 15 个 LLMs 包括哪些类型？
 
 6: 文章中提到的 15 个 LLMs 包括哪些类型？
 
 **A**: 虽然具体名单取决于原文引用的具体研究，但通常这类测试会涵盖当时主流的各类模型，包括 OpenAI 的 GPT 系列（如 GPT-4, GPT-3.5）、开源模型（如 Llama, CodeLlama, Mistral）以及专注于代码的模型（如 StarCoder）。这种对比旨在证明改进测试框架的方法对不同架构和规模的模型都具有鲁棒性。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 在 LLM 编码评估中，"Harness"（测试工具/框架）的具体作用是什么？为什么仅仅更换测试工具就能导致 15 个模型的排名发生显著变化？
-
-### 提示**: 思考测试工具如何定义代码的输入、输出格式，以及它如何处理代码执行的上下文环境（例如依赖库的导入、超时设置或内存限制）。考虑一下，如果测试工具对某些特定语法或库的支持不完善，会对不同模型的得分产生什么影响？
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [http://blog.can.ac/2026/02/12/the-harness-problem](http://blog.can.ac/2026/02/12/the-harness-problem)
@@ -452,7 +412,6 @@ def compare_llm_coding(problem, models):
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

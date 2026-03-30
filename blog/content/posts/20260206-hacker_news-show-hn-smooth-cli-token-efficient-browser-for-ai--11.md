@@ -102,9 +102,6 @@ Smooth CLI 的创新不在于“CLI 浏览器”这一形式（类似 Lynx），
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：Token压缩功能
 def compress_tokens(text: str, max_length: int = 100) -> str:
@@ -123,9 +120,6 @@ def compress_tokens(text: str, max_length: int = 100) -> str:
 long_text = "这是一个很长的文本示例，用于演示如何通过截断和去除多余空格来减少Token使用量。在实际应用中，这种技术可以显著降低AI代理的Token消耗。"
 print(compress_tokens(long_text, 50))
 ```
-
-
-
 
 ```python
 # 示例2：智能网页内容提取
@@ -157,9 +151,6 @@ def extract_main_content(url: str) -> str:
 # 测试
 print(extract_main_content("https://example.com")[:200])
 ```
-
-
-
 
 ```python
 # 示例3：分块处理大文本
@@ -196,10 +187,8 @@ chunks = process_large_text(long_text)
 print(f"文本被分为 {len(chunks)} 块，第一块长度: {len(chunks[0])}")
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：DataFlow 科技（虚构的电商数据聚合服务商）
 
@@ -219,8 +208,6 @@ DataFlow 科技主要为中小型电商卖家提供竞品监控与价格分析�
 - **准确性提升**：由于输入更加纯净，AI 提取价格和库存的准确率从 92% 提升至 99% 以上，大幅减少了人工复核的工作量。
 
 ---
-
-
 
 ### 2：DevOps 自动化团队 Alpha（内部工具开发组）
 
@@ -346,17 +333,13 @@ AI Agent 在执行复杂任务时可能会多次访问同一个 URL 或重复访
 ---
 ## 常见问题
 
-
 ### 1: Smooth CLI 具体是什么？它是如何工作的？
 
 1: Smooth CLI 具体是什么？它是如何工作的？
 
 **A**: Smooth CLI 是一个专为 AI 智能体设计的命令行工具，旨在解决 AI 自动化浏览网页时的 Token（令牌）消耗过高的问题。传统的 AI 智能体在浏览网页时，往往会获取大量无关的 HTML、CSS 和 JavaScript 代码，导致上下文窗口迅速填满且成本高昂。
 
-
 ---
-
-
 
 ### 2: 与传统的浏览器自动化工具（如 Puppeteer 或 Selenium）相比，Smooth CLI 有什么优势？
 
@@ -371,8 +354,6 @@ AI Agent 在执行复杂任务时可能会多次访问同一个 URL 或重复访
 
 ---
 
-
-
 ### 3: Smooth CLI 支持哪些操作系统和安装方式？
 
 3: Smooth CLI 支持哪些操作系统和安装方式？
@@ -386,8 +367,6 @@ AI Agent 在执行复杂任务时可能会多次访问同一个 URL 或重复访
 
 ---
 
-
-
 ### 4: 它能处理需要 JavaScript 渲染的动态网页（SPA）吗？
 
 4: 它能处理需要 JavaScript 渲染的动态网页（SPA）吗？
@@ -395,8 +374,6 @@ AI Agent 在执行复杂任务时可能会多次访问同一个 URL 或重复访
 **A**: 是的，Smooth CLI 具备处理动态网页的能力。虽然它的目标是简化输出，但它底层依赖（或内置）了无头浏览器技术。这意味着它可以像普通浏览器一样执行 JavaScript，等待页面加载完成，然后再对渲染后的最终 DOM 进行内容提取和清洗。这使得它能够抓取现代 React、Vue 等框架构建的应用内容，而不仅仅是静态 HTML。
 
 ---
-
-
 
 ### 5: 使用 Smooth CLI 是否会丢失网页中的关键交互元素（如按钮、表单）？
 
@@ -408,8 +385,6 @@ AI Agent 在执行复杂任务时可能会多次访问同一个 URL 或重复访
 
 ---
 
-
-
 ### 6: Smooth CLI 的输出格式是什么？如何将其集成到我的 AI 项目中？
 
 6: Smooth CLI 的输出格式是什么？如何将其集成到我的 AI 项目中？
@@ -420,29 +395,11 @@ AI Agent 在执行复杂任务时可能会多次访问同一个 URL 或重复访
 
 ---
 
-
-
 ### 7: 这个工具是开源的吗？是否免费？
 
 7: 这个工具是开源的吗？是否免费？
 
 **A**: 根据其在 Hacker News 上的 "Show HN" 属性，Smooth CLI 通常是一个开源项目。这意味着其核心代码是免费提供的，开发者可以查看源码、自行修改或部署。然而，具体的开源协议（如 MIT、Apache 2.0）需查看其 GitHub 仓库页面。如果是作为工具使用，通常是免费的，但未来可能会提供付费的托管版本或高级云功能。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**:
-
-### 在构建 AI Agent 的浏览器工具时，传统的基于 HTML 的抓取方式往往包含大量无关的 DOM 结构（如 `<script>`、`<style>` 或导航栏），导致 Token 消耗过高。请设计一种简单的启发式算法或规则，用于在发送给 LLM 之前清洗 HTML 页面，仅保留核心语义内容。
-
-### 提示**:
-
----
 ## 引用
 
 - **原文链接**: [https://docs.smooth.sh/cli/overview](https://docs.smooth.sh/cli/overview)
@@ -451,7 +408,6 @@ AI Agent 在执行复杂任务时可能会多次访问同一个 URL 或重复访
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

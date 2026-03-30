@@ -31,9 +31,6 @@ OCR 技术的落地往往需要在精度、速度与场景覆盖之间做出妥�
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：图像转文本提取
 from PIL import Image
@@ -62,9 +59,6 @@ def extract_text_from_image(image_path):
 # 使用示例
 print(extract_text_from_image("example.jpg"))
 ```
-
-
-
 
 ```python
 # 示例2：批量处理图片OCR
@@ -105,9 +99,6 @@ def batch_ocr_processing(image_folder, output_file):
 print(batch_ocr_processing("./images", "ocr_results.txt"))
 ```
 
-
-
-
 ```python
 # 示例3：结构化数据提取
 import json
@@ -141,10 +132,8 @@ def extract_structured_data(image_path):
 print(extract_structured_data("invoice.jpg"))
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：跨国物流企业的数字化归档系统
 
@@ -166,8 +155,6 @@ print(extract_structured_data("invoice.jpg"))
 
 ---
 
-
-
 ### 2：医疗病历结构化平台
 
  2：医疗病历结构化平台
@@ -187,8 +174,6 @@ print(extract_structured_data("invoice.jpg"))
 - 支持科研团队快速提取特定病种数据，使临床研究效率提升40%  
 
 ---
-
-
 
 ### 3：跨境电商的智能发票审核
 
@@ -300,7 +285,6 @@ print(extract_structured_data("invoice.jpg"))
 ---
 ## 常见问题
 
-
 ### 1: GLM-OCR 的核心优势是什么，它与传统的 OCR 工具有何不同？
 
 1: GLM-OCR 的核心优势是什么，它与传统的 OCR 工具有何不同？
@@ -312,8 +296,6 @@ print(extract_structured_data("invoice.jpg"))
 3.  **全面性**：它不仅能提取文本，还能理解文档的版面结构，支持旋转文本识别、数学公式识别以及多种图像格式的解析，是一个端到端的视觉理解解决方案。
 
 ---
-
-
 
 ### 2: GLM-OCR 支持哪些具体的文档类型和特殊场景？
 
@@ -328,8 +310,6 @@ print(extract_structured_data("invoice.jpg"))
 
 ---
 
-
-
 ### 3: GLM-OCR 的性能表现如何？能否在消费级硬件上运行？
 
 3: GLM-OCR 的性能表现如何？能否在消费级硬件上运行？
@@ -340,8 +320,6 @@ print(extract_structured_data("invoice.jpg"))
 2.  **硬件要求**：虽然具体的基准测试数值取决于输入图像的分辨率和复杂度，但该模型经过优化，旨在降低显存占用和计算量。这意味着它在标准的服务器 GPU 上可以轻松实现高吞吐量处理，甚至经过量化后，有望在性能较好的消费级显卡或高端移动设备上流畅运行。
 
 ---
-
-
 
 ### 4: 如何通过 API 或开源方式使用 GLM-OCR？
 
@@ -354,8 +332,6 @@ print(extract_structured_data("invoice.jpg"))
 
 ---
 
-
-
 ### 5: GLM-OCR 在处理多语言（特别是中文）内容时的表现如何？
 
 5: GLM-OCR 在处理多语言（特别是中文）内容时的表现如何？
@@ -367,8 +343,6 @@ print(extract_structured_data("invoice.jpg"))
 
 ---
 
-
-
 ### 6: GLM-OCR 是否包含版面分析功能？
 
 6: GLM-OCR 是否包含版面分析功能？
@@ -379,8 +353,6 @@ print(extract_structured_data("invoice.jpg"))
 
 ---
 
-
-
 ### 7: 对于开发者来说，集成 GLM-OCR 的难度大吗？
 
 7: 对于开发者来说，集成 GLM-OCR 的难度大吗？
@@ -389,22 +361,6 @@ print(extract_structured_data("invoice.jpg"))
 
 1.  **易用性**：通常提供“开箱即用”的接口，开发者无需关心底层的模型训练细节，只需调用简单的函数即可完成从图像到结构化文本的转换。
 2.  **文档支持**：通常会提供详细的 API 文档和 Demo 代码，覆盖 Python、Java 等主流编程语言，方便集成到现有的数据处理流水线中。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 在OCR任务中，图像预处理对最终识别率有显著影响。请列举三种常见的图像预处理技术，并解释它们各自主要解决什么类型的图像质量问题（例如：低对比度、噪声干扰、几何形变）。
-
-### 提示**: 思考从像素级操作到几何变换的流程。一种方法关注像素强度分布，一种方法关注去除高频噪声，还有一种方法关注坐标系的映射变换。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://github.com/zai-org/GLM-OCR](https://github.com/zai-org/GLM-OCR)
@@ -413,7 +369,6 @@ print(extract_structured_data("invoice.jpg"))
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

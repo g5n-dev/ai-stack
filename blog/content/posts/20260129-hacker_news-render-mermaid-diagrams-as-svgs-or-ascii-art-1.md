@@ -95,9 +95,6 @@ scenarios: ["AI/ML项目", "命令行工具"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：将Mermaid流程图渲染为SVG文件
 from mermaid_py import Generate
@@ -122,9 +119,6 @@ def render_mermaid_to_svg():
 render_mermaid_to_svg()
 ```
 
-
-
-
 ```python
 # 示例2：在终端中显示Mermaid图表的ASCII艺术
 from mermaid_py import Generate
@@ -146,9 +140,6 @@ def display_mermaid_ascii():
 
 display_mermaid_ascii()
 ```
-
-
-
 
 ```python
 # 示例3：批量处理多个Mermaid图表
@@ -181,10 +172,8 @@ def batch_process_diagrams():
 batch_process_diagrams()
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：GitLab 文档团队
 
@@ -204,8 +193,6 @@ GitLab 是一个拥有庞大代码库和复杂 DevOps 流程的一体化平台�
 
 ---
 
-
-
 ### 2：Pulumi 技术文档
 
  2：Pulumi 技术文档
@@ -223,8 +210,6 @@ Pulumi 在其文档构建流程中集成了 Mermaid。在 Web 端，Mermaid 代�
 解决了多端适配问题。开发者在浏览器上能看到高质量的矢量图，而在 SSH 远程连接或终端环境下，依然可以通过 ASCII 字符画理解系统架构和流程。这种双模渲染极大地提升了开发者的阅读体验，体现了“开发者优先”的设计理念。
 
 ---
-
-
 
 ### 3：某大型金融机构内部知识库
 
@@ -337,7 +322,6 @@ Pulumi 在其文档构建流程中集成了 Mermaid。在 Web 端，Mermaid 代�
 ---
 ## 常见问题
 
-
 ### 1: 什么是 Mermaid，它与传统的绘图工具有何不同？
 
 1: 什么是 Mermaid，它与传统的绘图工具有何不同？
@@ -345,8 +329,6 @@ Pulumi 在其文档构建流程中集成了 Mermaid。在 Web 端，Mermaid 代�
 **A**: Mermaid 是一种基于 JavaScript 的开源图表绘制工具，它允许用户通过编写文本和代码来生成图表。与传统的可视化工具（如 Visio、Lucidchart 或 Microsoft PowerPoint）不同，Mermaid 不需要用户通过鼠标拖拽形状或连接线。用户只需遵循特定的语法规则编写 Markdown 风格的代码，Mermaid 的渲染引擎就会自动将其转换为可视化的图表。这种方法使得图表的修改变得非常容易，类似于编辑代码文档，并且非常适合版本控制系统（如 Git）进行追踪和协作。
 
 ---
-
-
 
 ### 2: Mermaid 支持哪些类型的图表？
 
@@ -364,8 +346,6 @@ Pulumi 在其文档构建流程中集成了 Mermaid。在 Web 端，Mermaid 代�
 9.  **Git 分支图**：用于可视化 Git 提交历史和分支结构。
 
 ---
-
-
 
 ### 3: 在实际应用中，应该选择 SVG 还是 ASCII 艺术输出？
 
@@ -385,8 +365,6 @@ Pulumi 在其文档构建流程中集成了 Mermaid。在 Web 端，Mermaid 代�
 
 ---
 
-
-
 ### 4: 如何在 Markdown 文件或代码编辑器中渲染 Mermaid 图表？
 
 4: 如何在 Markdown 文件或代码编辑器中渲染 Mermaid 图表？
@@ -399,8 +377,6 @@ Pulumi 在其文档构建流程中集成了 Mermaid。在 Web 端，Mermaid 代�
 4.  **Live Editor**：您可以访问 Mermaid 官方的 Live Editor 网页，在线编写代码并实时预览，完成后导出为 SVG 或 PNG 图片文件。
 
 ---
-
-
 
 ### 5: Mermaid 语法的入门难度如何？有没有简单的例子？
 
@@ -426,8 +402,6 @@ graph TD;
 
 ---
 
-
-
 ### 6: 如果图表渲染失败或显示不正确，通常是什么原因？
 
 6: 如果图表渲染失败或显示不正确，通常是什么原因？
@@ -435,22 +409,6 @@ graph TD;
 **A**: 常见的渲染问题通常由以下几个原因造成：
 
 1.  **语法错误**：这是最
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 编写一个简单的 Mermaid 流程图，描述一个用户登录系统的基本流程（包含开始、输入验证、成功/失败判断、结束）。尝试将其渲染为 SVG 并观察其 XML 结构，找出定义箭头样式的具体属性。
-
-### 提示**: 使用 `graph TD` 语法定义节点。在生成的 SVG 代码中，搜索 `<marker>` 标签，这通常定义了箭头的头部形状。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://github.com/lukilabs/beautiful-mermaid](https://github.com/lukilabs/beautiful-mermaid)
@@ -459,7 +417,6 @@ graph TD;
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

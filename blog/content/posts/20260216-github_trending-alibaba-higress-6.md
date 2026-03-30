@@ -38,8 +38,6 @@ Relevant source files
   * [README_JP.md](https://github.com/alibaba/higress/blob/8deceb4d/README_JP.md)
   * [README_ZH.md](https://github.com/alibaba/higress/blob/8deceb4d/README_ZH.md)
 
-
-
 ## Purpose and Scope
 
 This document provides a comprehensive overview of Higress, an AI Native API Gateway built on Istio and Envoy. It covers the system's architecture, core components, and primary use cases. For detailed information about specific subsystems, refer to the Core Architecture (page 2), Build and Deployment (page 3), WASM Plugin System (page 4), AI Gateway Features (page 5), MCP System (page 6), and Development Guide (page 7) sections.
@@ -73,7 +71,6 @@ Higress implements a control plane and data plane separation derived from Istio'
 
 **Component Deployment Diagram:**
 
-
 **Binary and Process Mapping:**
 
 Binary| Source Entry Point| Deployment Location| Primary Functions  
@@ -92,7 +89,6 @@ Sources: [README.md32](https://github.com/alibaba/higress/blob/8deceb4d/README.m
 ### Configuration Flow and Controller Architecture
 
 **Configuration Update Sequence:**
-
 
 **Controller Registry and Responsibilities:**
 
@@ -338,9 +334,6 @@ Higress 采用了标准的**云原生控制平面/数据平面**分离架构。
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：使用Higress进行流量路由配置
 from higress import HigressGateway
@@ -368,7 +361,6 @@ def configure_traffic_routing():
 **说明**: 这个示例展示了如何使用Higress的Python SDK配置基于URL路径的流量路由，实现微服务架构中的API网关功能。
 
 ```python
-
 
 from higress import RateLimiter
 def setup_rate_limiting():
@@ -416,10 +408,8 @@ def canary_release():
 
 **说明**: 这个示例展示了如何使用Higress实现金丝雀发布，通过流量分割和条件路由，实现新版本的灰度发布和测试。
 
-
 ---
 ## 案例研究
-
 
 ### 1：阿里集团内部大模型网关落地
 
@@ -444,8 +434,6 @@ def canary_release():
 
 ---
 
-
-
 ### 2：某头部互联网企业微服务流量治理
 
  2：某头部互联网企业微服务流量治理
@@ -468,8 +456,6 @@ def canary_release():
 网关 P99 延迟降低了 40%，单集群吞吐量提升 2 倍。通过统一的控制面，运维人员实现了全链路流量的可视化与精细化管理，跨云容灾切换时间从小时级缩短至分钟级。
 
 ---
-
-
 
 ### 3：识货 APP API 网关重构与安全防护
 
@@ -672,7 +658,6 @@ def canary_release():
 - 兼容 Envoy 与 Gateway API 的插件生态，扩展性强
 - 专为高并发与低延迟场景进行了深度性能优化
 
-
 ---
 ## 学习路径
 
@@ -773,7 +758,6 @@ Higress 的强大之处在于其插件生态。建议先熟练使用官方提供
 ---
 ## 常见问题
 
-
 ### 1: Higress 是什么？它与阿里巴巴和云原生社区有什么关系？
 
 1: Higress 是什么？它与阿里巴巴和云原生社区有什么关系？
@@ -783,8 +767,6 @@ Higress 的强大之处在于其插件生态。建议先熟练使用官方提供
 Higress 的前身是阿里巴巴内部用于支撑淘宝、天猫等核心业务流量接入的网关系统。它深度集成了阿里云的生态，同时兼容 Kubernetes 和 Istio 标准。简单来说，它继承了阿里巴巴在电商高并发场景下的网关技术积累，并进行了云原生的重构，旨在解决云原生时代流量管理的痛点。
 
 ---
-
-
 
 ### 2: Higress 与 Nginx、Envoy 或 Kong 等传统网关相比有什么核心优势？
 
@@ -799,8 +781,6 @@ Higress 的前身是阿里巴巴内部用于支撑淘宝、天猫等核心业务
 
 ---
 
-
-
 ### 3: Higress 是否支持从 Nginx 或 Ingress Controller（如 Nginx Ingress）迁移？迁移难度大吗？
 
 3: Higress 是否支持从 Nginx 或 Ingress Controller（如 Nginx Ingress）迁移？迁移难度大吗？
@@ -813,8 +793,6 @@ Higress 的前身是阿里巴巴内部用于支撑淘宝、天猫等核心业务
 
 ---
 
-
-
 ### 4: Higress 的性能表现如何？能否支撑双十一级别的大流量？
 
 4: Higress 的性能表现如何？能否支撑双十一级别的大流量？
@@ -826,8 +804,6 @@ Higress 的前身是阿里巴巴内部用于支撑淘宝、天猫等核心业务
 3.  **生产验证**：由于它源自阿里内部系统，它已经过多年双十一大促的验证，具备极强的稳定性和抗压能力。在开源版本中，这些核心性能特性都被完整保留。
 
 ---
-
-
 
 ### 5: Higress 如何处理插件开发？是否必须懂 C++ 或 Lua？
 
@@ -842,8 +818,6 @@ Higress 全面支持 **Wasm (WebAssembly)** 技术。这意味着开发者可以
 
 ---
 
-
-
 ### 6: Higress 是免费的吗？它的开源协议是什么？
 
 6: Higress 是免费的吗？它的开源协议是什么？
@@ -854,8 +828,6 @@ Higress 全面支持 **Wasm (WebAssembly)** 技术。这意味着开发者可以
 
 ---
 
-
-
 ### 7: 在什么场景下应该选择 Higress 而不是传统的 Nginx？
 
 7: 在什么场景下应该选择 Higress 而不是传统的 Nginx？
@@ -863,22 +835,6 @@ Higress 全面支持 **Wasm (WebAssembly)** 技术。这意味着开发者可以
 **A**: 如果你的业务场景符合以下特征，强烈推荐使用 Higress：
 
 1.  **云原生架构**：你的
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: Higress 基于 Envoy 构建，但为了适应云原生环境，它在 Envoy 的核心能力之上做了哪些关键的架构改进或功能增强？
-
-### 提示**: 思考 Envoy 原生配置的复杂性（xDS 协议），以及 Higress 在对接阿里生态（如 MSE, Nacos, ACK）时引入的哪些中间层或协议转换机制。
-
-### 
-
----
 ## 实践建议
 
 基于 Higress 作为 AI Native API 网关的定位，结合其与阿里云产品的联系及开源社区的特性，以下是 6 条针对实际生产环境的实践建议：
@@ -927,7 +883,6 @@ Higress 全面支持 **Wasm (WebAssembly)** 技术。这意味着开发者可以
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

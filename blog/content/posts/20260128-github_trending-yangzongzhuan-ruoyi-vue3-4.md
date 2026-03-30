@@ -40,8 +40,6 @@ Relevant source files
   * [src/main.js](https://github.com/yangzongzhuan/RuoYi-Vue3/blob/2dbc9165/src/main.js)
   * [src/views/index.vue](https://github.com/yangzongzhuan/RuoYi-Vue3/blob/2dbc9165/src/views/index.vue)
 
-
-
 This document provides a comprehensive introduction to the RuoYi-Vue3 framework, a rapid development platform designed for building administrative web applications. The RuoYi-Vue3 framework combines a Vue 3 frontend with a SpringBoot backend to provide a complete solution for developing enterprise management systems.
 
 For information about the core architecture and configuration details, see [Core Architecture](/yangzongzhuan/RuoYi-Vue3/2-core-architecture). For information about the permission system, see [Permission System](/yangzongzhuan/RuoYi-Vue3/2.2-permission-system).
@@ -59,7 +57,6 @@ Sources: [package.json2-5](https://github.com/yangzongzhuan/RuoYi-Vue3/blob/2dbc
 The RuoYi-Vue3 system is built on a clear separation between frontend and backend components, following the modern practice of frontend-backend separation.
 
 ### Architecture Diagram
-
 
 Sources: [README.md12-16](https://github.com/yangzongzhuan/RuoYi-Vue3/blob/2dbc9165/README.md#L12-L16) [src/main.js1-82](https://github.com/yangzongzhuan/RuoYi-Vue3/blob/2dbc9165/src/main.js#L1-L82)
 
@@ -101,7 +98,6 @@ RuoYi-Vue3 features a comprehensive set of modules and components designed for a
 
 ### System Component Diagram
 
-
 Sources: [src/main.js9-66](https://github.com/yangzongzhuan/RuoYi-Vue3/blob/2dbc9165/src/main.js#L9-L66) [README.md39-58](https://github.com/yangzongzhuan/RuoYi-Vue3/blob/2dbc9165/README.md#L39-L58)
 
 ### Feature Set
@@ -134,8 +130,6 @@ RuoYi-Vue3 includes a rich set of built-in features:
      * API documentation based on business code
      * Scheduled task management
 
-
-
 Sources: [README.md39-58](https://github.com/yangzongzhuan/RuoYi-Vue3/blob/2dbc9165/README.md#L39-L58) [src/views/index.vue4-33](https://github.com/yangzongzhuan/RuoYi-Vue3/blob/2dbc9165/src/views/index.vue#L4-L33)
 
 ## UI Customization
@@ -153,8 +147,6 @@ RuoYi-Vue3 supports extensive UI customization through its settings panel, allow
     * Logo display toggle
     * Dynamic title toggle
 
-
-
 These settings can be saved to localStorage for persistence across sessions.
 
 Sources: [src/layout/components/Settings/index.vue1-204](https://github.com/yangzongzhuan/RuoYi-Vue3/blob/2dbc9165/src/layout/components/Settings/index.vue#L1-L204)
@@ -168,10 +160,7 @@ To run the RuoYi-Vue3 project:
   * Node.js (latest stable version recommended)
   * Git
 
-
-
 ### Frontend Setup
-
 
 The frontend will be available at <http://localhost:80> by default.
 
@@ -446,37 +435,8 @@ RuoYi-Vue3 在抽象层上做了一个极具中国特色的权衡：**将配置�
 ---
 ## 💻 实用代码示例
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 ## 📚 真实案例研究
-
 
 ### 1：某中型物流企业内部管理系统重构
 
@@ -502,8 +462,6 @@ RuoYi-Vue3 在抽象层上做了一个极具中国特色的权衡：**将配置�
 
 ---  
 
-
-
 ### 2：政务数据共享平台建设
 
  2：政务数据共享平台建设  
@@ -527,8 +485,6 @@ RuoYi-Vue3 在抽象层上做了一个极具中国特色的权衡：**将配置�
 - 后续新部门接入成本降低 **60%**。  
 
 ---  
-
-
 
 ### 3：初创SaaS产品快速原型验证
 
@@ -719,7 +675,6 @@ RuoYi-Vue3 作为后台管理系统，往往体积较大。如果将所有代码
 - 📱 **响应式与移动端适配**：针对 Vue 3 的特性进行了适配，确保了管理后台在不同设备屏幕上的良好表现和交互体验。
 - 📖 **文档与社区生态完善**：作为若依框架的 Vue3 版本，拥有清晰的官方文档和活跃的社区支持，大大降低了新手上手和二次开发的难度。
 
-
 ---
 ## 🗺️ 循序渐进的学习路径
 
@@ -805,7 +760,6 @@ RuoYi-Vue3 作为后台管理系统，往往体积较大。如果将所有代码
 ---
 ## ❓ 常见问题解答
 
-
 ### 1: RuoYi-Vue3 是什么？它和原版 RuoYi 有什么区别？
 
 1: RuoYi-Vue3 是什么？它和原版 RuoYi 有什么区别？
@@ -818,8 +772,6 @@ RuoYi-Vue3 作为后台管理系统，往往体积较大。如果将所有代码
 3.  **代码风格**：全面拥抱 Composition API（组合式 API），代码组织更加灵活，类型定义更加严谨。
 
 ---
-
-
 
 ### 2: 启动项目时，前端报错 `vite : 无法加载文件，因为在此系统上禁止运行脚本` 怎么办？
 
@@ -835,8 +787,6 @@ RuoYi-Vue3 作为后台管理系统，往往体积较大。如果将所有代码
 
 ---
 
-
-
 ### 3: 后端接口运行正常，但前端请求报错 `net::ERR_CONNECTION_REFUSED` 或跨域问题？
 
 3: 后端接口运行正常，但前端请求报错 `net::ERR_CONNECTION_REFUSED` 或跨域问题？
@@ -851,8 +801,6 @@ RuoYi-Vue3 作为后台管理系统，往往体积较大。如果将所有代码
 
 ---
 
-
-
 ### 4: 如何修改数据库连接配置？
 
 4: 如何修改数据库连接配置？
@@ -864,8 +812,6 @@ RuoYi-Vue3 作为后台管理系统，往往体积较大。如果将所有代码
 3.  **驱动版本**：确认 MySQL 驱动版本。如果是 MySQL 8.0+，`driver-class-name` 通常为 `com.mysql.cj.jdbc.Driver`，且 URL 需要带时区参数 `serverTimezone=GMT%2B8`。
 
 ---
-
-
 
 ### 5: 前端登录成功后，页面空白或控制台报错 `Uncaught SyntaxError`？
 
@@ -880,8 +826,6 @@ RuoYi-Vue3 作为后台管理系统，往往体积较大。如果将所有代码
 
 ---
 
-
-
 ### 6: 如何生成前后端代码？代码生成后放在哪里？
 
 6: 如何生成前后端代码？代码生成后放在哪里？
@@ -894,22 +838,6 @@ RuoYi-Vue3 作为后台管理系统，往往体积较大。如果将所有代码
 3.  **生成代码**：点击生成，下载压缩包。
 4.  **放置位置**：
     *   **后端**：将 `main` Java
-
----
-## 🎯 挑战与思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**:
-
-### 在 RuoYi-Vue3 项目中，如何通过修改后端配置，实现不同用户（如管理员、普通用户）登录后看到不同的顶部菜单导航？请尝试隐藏普通用户的“系统管理”菜单。
-
-### 提示**:
-
----
 ## 💡 实践建议
 
 针对 **RuoYi-Vue3** (基于 SpringBoot + Vue3 + Element Plus) 这款成熟的前后端分离权限管理系统，以下是 6 条针对实际开发与生产环境的实践建议：

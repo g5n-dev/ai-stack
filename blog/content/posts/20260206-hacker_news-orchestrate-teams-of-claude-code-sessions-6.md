@@ -62,9 +62,6 @@ scenarios: ["AI/ML项目", "DevOps/运维"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：多Agent协作处理复杂任务
 from typing import List, Dict
@@ -105,9 +102,6 @@ async def main():
 
 asyncio.run(main())
 ```
-
-
-
 
 ```python
 # 示例2：动态任务分配与负载均衡
@@ -158,9 +152,6 @@ for result in results:
     print(result)
 ```
 
-
-
-
 ```python
 # 示例3：多阶段任务流水线处理
 from enum import Enum, auto
@@ -209,10 +200,8 @@ for stage, tasks in results.items():
         print(f" - {task}")
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某中型金融科技公司的遗留系统重构
 
@@ -236,8 +225,6 @@ for stage, tasks in results.items():
 3. **知识沉淀**：自动生成的技术文档帮助新员工上手时间缩短了 60%。
 
 ---
-
-
 
 ### 2：某 SaaS 初创公司的多语言 SDK 同步开发
 
@@ -298,7 +285,6 @@ for stage, tasks in results.items():
 ---
 ## 常见问题
 
-
 ### 1: 什么是 "Orchestrate teams of Claude Code sessions"，它主要解决什么问题？
 
 1: 什么是 "Orchestrate teams of Claude Code sessions"，它主要解决什么问题？
@@ -311,8 +297,6 @@ for stage, tasks in results.items():
 3.  **持续性与维护**：通过团队协作，可以在一个会休眠或遇到错误时，由其他会话接手或进行审查，保证开发流程的连续性。
 
 ---
-
-
 
 ### 2: 在技术上如何实现多个 Claude Code 会话的编排？
 
@@ -327,8 +311,6 @@ for stage, tasks in results.items():
 
 ---
 
-
-
 ### 3: 这种“多 Agent”模式与单一 AI 助手相比，有哪些核心优势？
 
 3: 这种“多 Agent”模式与单一 AI 助手相比，有哪些核心优势？
@@ -341,8 +323,6 @@ for stage, tasks in results.items():
 4.  **更高的稳定性**：如果单个会话陷入死循环或产生幻觉，编排系统可以检测到异常并重置该特定会话，而不会导致整个项目失败。
 
 ---
-
-
 
 ### 4: 在实施过程中，开发者面临的最大挑战是什么？
 
@@ -357,8 +337,6 @@ for stage, tasks in results.items():
 
 ---
 
-
-
 ### 5: 目前有哪些工具或框架可以帮助构建这样的系统？
 
 5: 目前有哪些工具或框架可以帮助构建这样的系统？
@@ -372,27 +350,7 @@ for stage, tasks in results.items():
 
 ---
 
-
-
 ### 
-
-
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: 基础数据交换
-
-### 问题**: 设计一个基础架构，让两个独立的 Claude Code 会话通过共享文件系统交换数据。例如，会话 A 生成配置文件，会话 B 读取并基于该文件执行操作。
-
-### 提示**: 考虑使用 JSON 或 YAML 作为中间格式，并设计一个简单的轮询机制来检测文件更新。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://code.claude.com/docs/en/agent-teams](https://code.claude.com/docs/en/agent-teams)
@@ -401,7 +359,6 @@ for stage, tasks in results.items():
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

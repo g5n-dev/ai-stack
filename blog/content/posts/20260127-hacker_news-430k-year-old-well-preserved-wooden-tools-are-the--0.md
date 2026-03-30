@@ -106,37 +106,8 @@ external_url: https://www.nytimes.com/2026/01/26/science/archaeology-neanderthal
 ---
 ## 💻 代码示例
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 ## 📚 案例研究
-
 
 ### 1：德国图林根州考古发掘项目
 
@@ -157,8 +128,6 @@ external_url: https://www.nytimes.com/2026/01/26/science/archaeology-neanderthal
 3. **跨学科价值**：研究发表在《自然》子刊，推动考古学与材料科学、数字技术的深度合作。  
 
 ---
-
-
 
 ### 2：肯尼亚Olorgesailie盆地史前遗址研究
 
@@ -182,8 +151,6 @@ external_url: https://www.nytimes.com/2026/01/26/science/archaeology-neanderthal
 3. **公众教育**：通过3D打印工具复制品和VR展览，将研究成果转化为科普资源，吸引超20万观众参与互动。  
 
 ---
-
-
 
 ### 3：国际文化遗产保护联盟（ICC）的数字化存档计划
 
@@ -290,7 +257,6 @@ external_url: https://www.nytimes.com/2026/01/26/science/archaeology-neanderthal
 ---
 ## ❓ 常见问题
 
-
 ### 1: 这批新发现的木制工具有什么特别之处？
 
 1: 这批新发现的木制工具有什么特别之处？
@@ -299,8 +265,6 @@ external_url: https://www.nytimes.com/2026/01/26/science/archaeology-neanderthal
 
 ---
 
-
-
 ### 2: 在此之前，世界上已知最古老的木制工具是什么？
 
 2: 在此之前，世界上已知最古老的木制工具是什么？
@@ -308,8 +272,6 @@ external_url: https://www.nytimes.com/2026/01/26/science/archaeology-neanderthal
 **A**: 在此次发现之前，世界上最古老的木制工具记录主要由在欧洲发现的物品保持。例如，在德国 Schöningen 发现的约 **30万年** 前的木质标枪，以及在意大利 Poggetti Vecchi 发现的约 **17万年** 前的木质挖掘棒。这次在赞比亚发现的 43万年前的工具，将人类使用木材进行复杂加工的已知历史向前推进了至少 **10万年** 以上。
 
 ---
-
-
 
 ### 3: 考古学家具体发现了什么样的工具？
 
@@ -321,8 +283,6 @@ external_url: https://www.nytimes.com/2026/01/26/science/archaeology-neanderthal
 
 ---
 
-
-
 ### 4: 这一发现对于理解人类进化有什么重要意义？
 
 4: 这一发现对于理解人类进化有什么重要意义？
@@ -333,8 +293,6 @@ external_url: https://www.nytimes.com/2026/01/26/science/archaeology-neanderthal
 
 ---
 
-
-
 ### 5: 为什么木头能保存 43 万年之久而不腐烂？
 
 5: 为什么木头能保存 43 万年之久而不腐烂？
@@ -343,29 +301,11 @@ external_url: https://www.nytimes.com/2026/01/26/science/archaeology-neanderthal
 
 ---
 
-
-
 ### 6: 是谁制造了这些工具？
 
 6: 是谁制造了这些工具？
 
 **A**: 虽然没有直接发现人类化石，但根据年代和地理位置判断，科学家认为制造者很可能是 **海德堡人**。海德堡人被认为是尼安德特人和现代人类的共同祖先，他们生活在距今 70万年至 20万年前的欧洲和非洲。这一发现也暗示了非洲早期人类的认知能力和技术水平可能与同时期的欧洲海德堡人相当，甚至更为复杂。
-
----
-## 🎯 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**:
-
-### 考古学家发现这些 43 万年前的木制工具保存完好，这在考古学界极其罕见。请结合常见的考古发现（如石器、骨头），列举出至少三个导致木质工具难以在远古地层中保存至今的自然因素（非人为因素）。
-
-### 提示**:
-
----
 ## 🔗 引用
 
 - **原文链接**: [https://www.nytimes.com/2026/01/26/science/archaeology-neanderthals-tools.html](https://www.nytimes.com/2026/01/26/science/archaeology-neanderthals-tools.html)

@@ -84,9 +84,6 @@ scenarios: ["AI/ML项目"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：将Mermaid流程图渲染为SVG文件
 from mermaid_py import Generate
@@ -111,9 +108,6 @@ def render_mermaid_to_svg():
 
 render_mermaid_to_svg()
 ```
-
-
-
 
 ```python
 # 示例2：将Mermaid序列图渲染为ASCII艺术图
@@ -145,9 +139,6 @@ def render_mermaid_to_ascii():
 render_mermaid_to_ascii()
 ```
 
-
-
-
 ```python
 # 示例3：动态生成Mermaid甘特图并渲染为PNG
 from mermaid_py import Generate
@@ -174,10 +165,8 @@ def render_dynamic_gantt():
 render_dynamic_gantt()
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：开源项目 Apache Iceberg 官方文档
 
@@ -198,8 +187,6 @@ Iceberg 的架构设计涉及多个组件的交互（如 Catalog、Metadata File
 - **版本控制友好**：由于图表本质是文本代码，Git 可以清晰地展示架构图的变更历史，便于审查逻辑修改。
 
 ---
-
-
 
 ### 2：某大型 SaaS 企业的研发知识库
 
@@ -327,7 +314,6 @@ Iceberg 的架构设计涉及多个组件的交互（如 Catalog、Metadata File
 ---
 ## 常见问题
 
-
 ### 1: Mermaid 是什么，它主要用来解决什么问题？
 
 1: Mermaid 是什么，它主要用来解决什么问题？
@@ -337,8 +323,6 @@ Iceberg 的架构设计涉及多个组件的交互（如 Catalog、Metadata File
 通常，创建流程图、时序图或类图需要打开专门的图形界面软件（如 Visio 或 draw.io）进行拖拽和连线，这不仅耗时，而且在修改图表逻辑时非常不便。Mermaid 采用“代码即图表”的理念，用户只需编写简单的标记语法，即可实时渲染出专业的图表。这使得开发者可以将图表直接嵌入到 Markdown 文件、HTML 页面或 Wiki 中，实现图表的版本控制与文本的同步更新。
 
 ---
-
-
 
 ### 2: 将 Mermaid 渲染为 SVG 和 ASCII art 各有什么优缺点？
 
@@ -355,8 +339,6 @@ Iceberg 的架构设计涉及多个组件的交互（如 Catalog、Metadata File
     *   **缺点**：表现力非常有限，只能显示线条和基本结构，无法展示颜色、阴影或复杂的排版，对于大型或复杂的图表，可读性会大幅下降。
 
 ---
-
-
 
 ### 3: 如何在 Markdown 文件或网页中渲染 Mermaid 图表？
 
@@ -379,8 +361,6 @@ Iceberg 的架构设计涉及多个组件的交互（如 Catalog、Metadata File
 
 ---
 
-
-
 ### 4: 如果 Mermaid 代码有语法错误，渲染失败怎么办？
 
 4: 如果 Mermaid 代码有语法错误，渲染失败怎么办？
@@ -392,8 +372,6 @@ Iceberg 的架构设计涉及多个组件的交互（如 Catalog、Metadata File
 3.  **降级处理**：如果是在网页中运行，可以通过 JavaScript 的 `try...catch` 块包裹渲染逻辑，或者监听渲染错误事件，在渲染失败时回退显示原始的代码文本，而不是让页面显示一片空白或报错图标。
 
 ---
-
-
 
 ### 5: Mermaid 支持哪些类型的图表？
 
@@ -413,8 +391,6 @@ Iceberg 的架构设计涉及多个组件的交互（如 Catalog、Metadata File
 
 ---
 
-
-
 ### 6: 生成的 SVG 图表可以进一步编辑或修改样式吗？
 
 6: 生成的 SVG 图表可以进一步编辑或修改样式吗？
@@ -422,22 +398,6 @@ Iceberg 的架构设计涉及多个组件的交互（如 Catalog、Metadata File
 **A**: 是的，生成的 SVG 具有很强的可定制性：
 
 1.  **主题与配置**：在初始化 Mermaid 时，可以通过配置指令
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 实现一个基础的 Mermaid 解析器，能够识别并渲染简单的流程图（如 `graph TD; A-->B`）为 ASCII 艺术。
-
-### 提示**: 首先需要定义 Mermaid 语法的子集规则，然后使用正则表达式或简单的字符串分割来提取节点和连接关系，最后根据这些信息构建 ASCII 字符串。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://github.com/lukilabs/beautiful-mermaid](https://github.com/lukilabs/beautiful-mermaid)
@@ -446,7 +406,6 @@ Iceberg 的架构设计涉及多个组件的交互（如 Catalog、Metadata File
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

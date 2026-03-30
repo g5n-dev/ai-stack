@@ -78,9 +78,6 @@ scenarios: ["AI/ML项目"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：无限生成地形块
 import random
@@ -109,9 +106,6 @@ for i in range(5):
     chunk = generate_terrain_chunk(i*3, i*3)
     print(f"坐标 {chunk['position']}: 类型={chunk['type']}, 植被={chunk['vegetation']}")
 ```
-
-
-
 
 ```python
 # 示例2：基于距离的动态对象加载
@@ -147,9 +141,6 @@ player_pos = (0, 0, 0)
 loaded = load_objects_around_player(player_pos, world_objects)
 print(f"玩家周围需要加载的对象: {[obj['type'] for obj in loaded]}")
 ```
-
-
-
 
 ```python
 # 示例3：程序化生成NPC对话
@@ -192,10 +183,8 @@ print(generate_npc_dialogue('guard', -70))    # 敌对守卫
 print(generate_npc_dialogue('villager', 0))   # 中立村民
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：NVIDIA Project G-Assist
 
@@ -215,8 +204,6 @@ print(generate_npc_dialogue('villager', 0))   # 中立村民
 
 ---
 
-
-
 ### 2：Inworld AI 与 Ubisoft 的 NEO NPC 项目
 
  2：Inworld AI 与 Ubisoft 的 NEO NPC 项目
@@ -234,8 +221,6 @@ print(generate_npc_dialogue('villager', 0))   # 中立村民
 在 Ubisoft 的 NEO NPC 演示中，玩家可以自然地与 NPC 交谈，询问关于游戏世界的背景故事，甚至通过说服技能改变 NPC 的态度。这种技术让游戏世界变得鲜活，每个 NPC 都成为了一个独特的、可交互的故事节点，极大地丰富了开放世界的叙事深度和玩家的沉浸感。
 
 ---
-
-
 
 ### 3：斯坦福大学“Smallville”生成式智能体模拟
 
@@ -357,7 +342,6 @@ print(generate_npc_dialogue('villager', 0))   # 中立村民
 ---
 ## 常见问题
 
-
 ### 1: Project Genie 是什么？
 
 1: Project Genie 是什么？
@@ -365,8 +349,6 @@ print(generate_npc_dialogue('villager', 0))   # 中立村民
 **A**: Project Genie 是一个实验性的技术项目，旨在探索和构建无限且互动性极强的虚拟世界。该项目通常结合了程序化生成技术与人工智能，以创建一个不仅空间广阔，而且能够根据用户行为或输入实时动态响应的交互环境。其核心目标在于突破传统游戏或模拟世界在内容广度和交互深度上的限制。
 
 ---
-
-
 
 ### 2: 它是如何实现“无限”世界的？
 
@@ -376,8 +358,6 @@ print(generate_npc_dialogue('villager', 0))   # 中立村民
 
 ---
 
-
-
 ### 3: 这个项目中的“交互性”体现在哪里？
 
 3: 这个项目中的“交互性”体现在哪里？
@@ -385,8 +365,6 @@ print(generate_npc_dialogue('villager', 0))   # 中立村民
 **A**: 这里的交互性指的是世界不仅仅是静态的背景，而是能够对用户的操作做出逻辑上的反馈。这可能包括物理引擎的模拟（如重力、碰撞）、环境状态的改变（如天气变化、昼夜交替）以及由 AI 驱动的非玩家角色（NPC）或生物的智能行为。在 Project Genie 的语境下，交互性可能特指用户可以通过自然语言或其他输入方式直接干预世界的生成或演变过程。
 
 ---
-
-
 
 ### 4: Project Genie 使用了哪些核心技术？
 
@@ -400,8 +378,6 @@ print(generate_npc_dialogue('villager', 0))   # 中立村民
 
 ---
 
-
-
 ### 5: 这个项目目前的应用场景有哪些？
 
 5: 这个项目目前的应用场景有哪些？
@@ -414,29 +390,11 @@ print(generate_npc_dialogue('villager', 0))   # 中立村民
 
 ---
 
-
-
 ### 6: 普通用户现在可以体验 Project Genie 吗？
 
 6: 普通用户现在可以体验 Project Genie 吗？
 
 **A**: 这取决于项目的具体开源状态或发布策略。作为一个在 Hacker News 等技术社区讨论的实验性项目，它可能目前仅以技术演示、代码仓库或有限制的原型形式存在。通常这类项目需要一定的技术背景（如运行本地代码或使用开发版工具）才能体验，尚未作为成熟的商业产品向大众开放。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: 确定性生成
-
-### 问题**: 在构建无限世界时，最基础的技术是程序化生成。请设计一个简单的算法，使用一维的元胞自动机或简单的噪声函数，生成一条看似无限延伸的“地形”数据（例如高度值）。如何确保当玩家回到之前访问过的坐标时，生成的地形保持一致？
-
-### 提示**: 考虑使用哈希函数或伪随机数生成器，并将“世界坐标”作为种子输入。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://blog.google/innovation-and-ai/models-and-research/google-deepmind/project-genie](https://blog.google/innovation-and-ai/models-and-research/google-deepmind/project-genie)
@@ -445,7 +403,6 @@ print(generate_npc_dialogue('villager', 0))   # 中立村民
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

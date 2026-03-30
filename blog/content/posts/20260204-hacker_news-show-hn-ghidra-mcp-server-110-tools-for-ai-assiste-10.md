@@ -82,9 +82,6 @@ Ghidra 作为开源逆向工程的标杆工具，其庞大的功能体系往往�
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：使用MCP工具获取当前函数的反汇编代码
 def get_disassembly(mcp_client, function_name):
@@ -106,9 +103,6 @@ def get_disassembly(mcp_client, function_name):
 # disasm = get_disassembly(mcp_client, "main")
 # print(disasm)
 ```
-
-
-
 
 ```python
 # 示例2：分析函数的交叉引用
@@ -138,9 +132,6 @@ def analyze_xrefs(mcp_client, address):
 # for ref in refs:
 #     print(f"{ref['type']} reference from {ref['from']}")
 ```
-
-
-
 
 ```python
 # 示例3：批量重命名可疑函数
@@ -179,10 +170,8 @@ def batch_rename_functions(mcp_client, rename_map):
 # print(f"共重命名了 {renamed} 个函数")
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某大型互联网安全公司 - 恶意软件样本自动化分析
 
@@ -204,8 +193,6 @@ def batch_rename_functions(mcp_client, rename_map):
 - **人力释放**：高级分析师只需处理 AI 标记为“高危”或“复杂”的样本，将精力集中在 0-day 漏洞挖掘上。
 
 ---
-
-
 
 ### 2：某工控系统制造商 - 遗产代码维护与漏洞挖掘
 
@@ -319,7 +306,6 @@ AI 模型通过 MCP 调用 Ghidra 的数据流分析工具和交叉引用查询�
 ---
 ## 常见问题
 
-
 ### 1: 什么是 Ghidra MCP Server，它与直接使用 Ghidra 有什么区别？
 
 1: 什么是 Ghidra MCP Server，它与直接使用 Ghidra 有什么区别？
@@ -331,8 +317,6 @@ AI 模型通过 MCP 调用 Ghidra 的数据流分析工具和交叉引用查询�
 2.  **工具集封装**：该项目封装了 Ghidra 的 110 个工具，使得 AI 能够以结构化的方式调用这些功能，而不仅仅是作为一个静态的代码补全工具。
 
 ---
-
-
 
 ### 2: 该项目支持哪些 AI 客户端或模型？
 
@@ -347,8 +331,6 @@ AI 模型通过 MCP 调用 Ghidra 的数据流分析工具和交叉引用查询�
 需要注意的是，该 Server 本身通常在本地运行，而 AI 模型（如 Claude 3.5 Sonnet 或 GPT-4）通常通过云端 API 进行交互（除非您配置了本地 LLM）。
 
 ---
-
-
 
 ### 3: "110 tools" 具体指的是什么？包含哪些功能？
 
@@ -366,8 +348,6 @@ AI 模型通过 MCP 调用 Ghidra 的数据流分析工具和交叉引用查询�
 
 ---
 
-
-
 ### 4: 安装和配置 Ghidra MCP Server 的流程复杂吗？
 
 4: 安装和配置 Ghidra MCP Server 的流程复杂吗？
@@ -384,8 +364,6 @@ AI 模型通过 MCP 调用 Ghidra 的数据流分析工具和交叉引用查询�
 
 ---
 
-
-
 ### 5: 使用 AI 辅助逆向工程是否存在数据隐私或安全风险？
 
 5: 使用 AI 辅助逆向工程是否存在数据隐私或安全风险？
@@ -398,27 +376,9 @@ AI 模型通过 MCP 调用 Ghidra 的数据流分析工具和交叉引用查询�
 
 ---
 
-
-
 ### 6: 它能完全替代人工逆向工程分析吗
 
 6: 它能完全替代人工逆向工程分析吗
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 在 Ghidra 中，MCP Server 需要通过特定的方式与 Ghidra Script Manager 进行交互以执行命令。假设你需要编写一个简单的 Python 脚本，利用 Ghidra 的 API 获取当前程序在内存中的基址。请描述在不使用 MCP Server 的情况下，你通常使用哪个 Ghidra Python 类（FlatProgramAPI 或其子类）来实现这一点，并说明 MCP Server 如何将这种能力转化为 LLM 可调用的工具。
-
-### 提示**: 回顾 Ghidra 脚本开发基础，思考 `currentProgram` 和 `currentAddress` 的作用，以及 MCP 协议如何将本地函数暴露为远程接口。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://github.com/bethington/ghidra-mcp](https://github.com/bethington/ghidra-mcp)
@@ -427,7 +387,6 @@ AI 模型通过 MCP 调用 Ghidra 的数据流分析工具和交叉引用查询�
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

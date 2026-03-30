@@ -81,9 +81,6 @@ scenarios: ["AI/ML项目"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：使用Linux命名空间隔离AI Agent的文件系统
 import os
@@ -119,9 +116,6 @@ def sandbox_agent_with_namespace(agent_script_path):
 # 防止AI Agent访问宿主机文件系统，同时保持基本功能可用。
 ```
 
-
-
-
 ```python
 # 示例2：使用cgroups限制AI Agent的资源使用
 import subprocess
@@ -153,9 +147,6 @@ def limit_agent_resources(agent_pid, cpu_quota=50, mem_limit="512M"):
 # 说明: 这个示例展示了如何使用cgroups技术限制AI Agent的资源使用，
 # 防止Agent占用过多CPU或内存导致系统不稳定。
 ```
-
-
-
 
 ```python
 # 示例3：使用seccomp过滤系统调用
@@ -203,10 +194,8 @@ def restrict_syscalls(agent_cmd):
 # 有效防止Agent执行潜在危险操作，如修改系统配置或访问敏感文件。
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某大型互联网安全公司（类似 OpenAI 或 Anthropic 的内部安全团队）
 
@@ -231,8 +220,6 @@ def restrict_syscalls(agent_cmd):
 
 ---
 
-
-
 ### 2：某头部 DevOps 自动化平台（类似 GitLab CI 或 GitHub Actions）
 
  2：某头部 DevOps 自动化平台（类似 GitLab CI 或 GitHub Actions）
@@ -255,8 +242,6 @@ AI Agent 在处理依赖项时，可能被恶意软件包（如依赖混淆攻�
 - **成本控制**：由于隔离性强，平台得以在单台物理机上混合运行高风险和低风险的 Agent 任务，显著提升了基础设施的密度和 ROI。
 
 ---
-
-
 
 ### 3：企业级网络安全服务商（类似 CrowdStrike）
 
@@ -369,7 +354,6 @@ AI Agent 可能被提示词注入攻击利用，作为跳板攻击内网其他�
 ---
 ## 常见问题
 
-
 ### 1: 为什么在 Linux 上对 AI Agent 进行沙箱隔离是必要的？
 
 1: 为什么在 Linux 上对 AI Agent 进行沙箱隔离是必要的？
@@ -377,8 +361,6 @@ AI Agent 可能被提示词注入攻击利用，作为跳板攻击内网其他�
 **A**: AI Agent（AI 代理）通常需要执行代码、访问文件系统或调用外部 API 来完成复杂任务。这种自主性带来了显著的安全风险。如果没有隔离，一个被恶意提示词注入或存在逻辑漏洞的 AI Agent 可能会意外删除关键文件、泄露敏感数据（如 API 密钥），或者被利用来攻击宿主机系统。Linux 提供了强大的内核级隔离机制，利用这些机制可以确保 Agent 的操作被限制在受控范围内，即使 Agent 被攻破，也不会影响宿主机的安全。
 
 ---
-
-
 
 ### 2: 使用 Docker 容器运行 AI Agent 是否足够安全？
 
@@ -392,8 +374,6 @@ AI Agent 可能被提示词注入攻击利用，作为跳板攻击内网其他�
 
 ---
 
-
-
 ### 3: 相比于 Docker，使用 Firejail 有什么优势？
 
 3: 相比于 Docker，使用 Firejail 有什么优势？
@@ -405,8 +385,6 @@ AI Agent 可能被提示词注入攻击利用，作为跳板攻击内网其他�
 对于运行轻量级的 AI 脚本或 Agent，Firejail 往往比容器化方案更简单且高效。
 
 ---
-
-
 
 ### 4: 什么是 Seccomp（Secure Computing Mode），它在限制 AI Agent 中起什么作用？
 
@@ -420,8 +398,6 @@ AI Agent 可能被提示词注入攻击利用，作为跳板攻击内网其他�
 
 ---
 
-
-
 ### 5: 如何处理 AI Agent 需要访问互联网的情况？
 
 5: 如何处理 AI Agent 需要访问互联网的情况？
@@ -433,8 +409,6 @@ AI Agent 可能被提示词注入攻击利用，作为跳板攻击内网其他�
 
 ---
 
-
-
 ### 6: User Namespaces（用户命名空间）在沙箱中是如何工作的？
 
 6: User Namespaces（用户命名空间）在沙箱中是如何工作的？
@@ -442,8 +416,6 @@ AI Agent 可能被提示词注入攻击利用，作为跳板攻击内网其他�
 **A**: User Namespaces 允许进程在宿主机上以非 root 用户运行，但在容器内部拥有 root 权限。这是一种非常强大的隔离技术。即使 AI Agent 获得了容器内的 root 权限，在内核看来，它仍然只是一个普通的非特权用户。这意味着 Agent 无法执行需要真正 root 权限的操作，如加载内核模块或修改宿主机网络配置。这是防止容器逃逸最有效的手段之一，通常与 Rootless Docker 结合使用。
 
 ---
-
-
 
 ### 7: 对于允许执行任意代码的 AI Agent，除了系统级沙箱，还需要注意什么？
 
@@ -453,22 +425,6 @@ AI Agent 可能被提示词注入攻击利用，作为跳板攻击内网其他�
 1.  **超时机制**：所有代码执行必须设置严格的超时限制，防止 Agent 陷入死循环或发起拒绝服务攻击。
 2.  **临时文件清理**：确保 Agent 生成的所有文件都存储在临时卷或挂载点中，并在任务结束后立即销毁。
 3.  **eBPF �
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 假设你需要限制一个 AI Agent 只能访问特定的目录（如 `/data/agent_workspace`），而不能访问系统的其他敏感区域（如 `/etc` 或 `/home/user`）。请设计一个基础的命令行指令方案，利用 Linux 用户权限和文件系统挂载技术，创建一个隔离的运行环境。
-
-### 提示**: 考虑创建一个专用的系统用户，并使用 `chroot` 机制来改变进程的根目录，或者利用 `mount --bind` 将空目录挂载到敏感路径上以屏蔽访问。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://blog.senko.net/sandboxing-ai-agents-in-linux](https://blog.senko.net/sandboxing-ai-agents-in-linux)
@@ -477,7 +433,6 @@ AI Agent 可能被提示词注入攻击利用，作为跳板攻击内网其他�
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

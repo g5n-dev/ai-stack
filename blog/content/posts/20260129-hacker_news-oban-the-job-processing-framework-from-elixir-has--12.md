@@ -81,9 +81,6 @@ Oban 以其基于 PostgreSQL 的可靠性、简洁性以及对数据库事务（
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：基本任务调度与执行
 from oban import Oban
@@ -106,7 +103,6 @@ if __name__ == "__main__":
     result = job.get()
     print(result)
 ```
-
 
 ---
 
@@ -133,7 +129,6 @@ if __name__ == "__main__":
         print(f"Job failed after retries: {str(e)}")
 ```
 
-
 ---
 
 ```python
@@ -157,10 +152,8 @@ if __name__ == "__main__":
     # 实际应用中这里会保持运行
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某大型社交媒体平台的内容审核系统
 
@@ -182,8 +175,6 @@ if __name__ == "__main__":
 
 ---
 
-
-
 ### 2：金融科技公司的支付清算系统
 
  2：金融科技公司的支付清算系统
@@ -203,8 +194,6 @@ if __name__ == "__main__":
 - 系统维护成本降低30%，因Oban的稳定性和社区支持减少了故障排查时间。
 
 ---
-
-
 
 ### 3：电商平台的订单履约系统
 
@@ -332,7 +321,6 @@ if __name__ == "__main__":
 ---
 ## 常见问题
 
-
 ### 1: Oban 原本是 Elixir 生态中的知名任务处理库，它移植到 Python 后的核心优势是什么？
 
 1: Oban 原本是 Elixir 生态中的知名任务处理库，它移植到 Python 后的核心优势是什么？
@@ -340,8 +328,6 @@ if __name__ == "__main__":
 **A**: Oban 在 Elixir 中以稳定性、可靠性和丰富的功能集著称。将其移植到 Python，旨在为 Python 开发者带来类似的体验。其核心优势在于结合了 Elixir 版本的成熟设计理念（如通过数据库进行协调、强大的重试机制、任务生命周期管理）与 Python 广泛的生态兼容性。它试图解决 Python 传统后台任务工具（如 Celery）在某些复杂场景下配置繁琐或依赖过多外部组件（如 Redis）的问题，提供一种更轻量但功能强大的替代方案，特别是对于已经依赖 PostgreSQL 或 SQLAlchemy 的项目。
 
 ---
-
-
 
 ### 2: Oban for Python 的架构是如何设计的？它是否像 Celery 一样需要 Redis 或 RabbitMQ？
 
@@ -353,8 +339,6 @@ if __name__ == "__main__":
 
 ---
 
-
-
 ### 3: 既然基于数据库，Oban for Python 的性能是否会不如基于内存的 Celery？
 
 3: 既然基于数据库，Oban for Python 的性能是否会不如基于内存的 Celery？
@@ -364,8 +348,6 @@ if __name__ == "__main__":
 然而，Oban for Python 的设计目标并非是在所有场景下追求极致的微秒级延迟，而是提供**极高的可靠性、一致性和开发效率**。对于绝大多数 Web 应用程序的后台任务（如发送邮件、生成报告、清理数据、处理图片等），数据库的瓶颈通常可以忽略不计，且 PostgreSQL 本身具有极高的性能。通过合理的数据库索引优化和连接池管理，Oban 能够满足绝大多数业务场景的需求，同时换取了更简单的架构和更强的事务安全保证（例如，只有在数据库事务提交成功后，任务才会入队）。
 
 ---
-
-
 
 ### 4: Oban for Python 支持哪些功能特性？例如任务重试、优先级或定时任务？
 
@@ -381,8 +363,6 @@ if __name__ == "__main__":
 
 ---
 
-
-
 ### 5: 目前 Oban for Python 的开发状态如何？是否已经可以用于生产环境？
 
 5: 目前 Oban for Python 的开发状态如何？是否已经可以用于生产环境？
@@ -393,8 +373,6 @@ if __name__ == "__main__":
 
 ---
 
-
-
 ### 6: Oban for Python 与 Python 现有的其他任务队列（如 Celery, RQ, Dramatiq）相比，最大的不同点在哪里？
 
 6: Oban for Python 与 Python 现有的其他任务队列（如 Celery, RQ, Dramatiq）相比，最大的不同点在哪里？
@@ -404,22 +382,6 @@ if __name__ == "__main__":
 1.  **后端依赖**：Celery/RQ/Dramatiq 通常强依赖 Redis/RabbitMQ，追求速度；而 Oban for Python 坚持使用 **PostgreSQL**，追求基础设施的极简和数据一致性。
 2.  **配置复杂度**：Celery 功能极其强大但配置选项繁多，学习曲线陡峭；Oban for Python 倾向于“约定优于配置”，试图提供更开箱即用的体验，减少样板代码。
 3.  **数据完整性**：Oban 天生与数据库事务紧密结合，可以确保“业务数据保存”与“任务入队”的原子性，这在很多基于 Redis 的工具中是需要额外代码来处理的边缘情况。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: Elixir 的 Oban 框架依赖于 PostgreSQL 的 LISTEN/NOTIFY 机制来触发任务执行。请尝试在 Python 中使用 `asyncpg` 或 `psycopg` 库编写一个简单的脚本，实现监听 PostgreSQL 的 NOTIFY 事件，并在接收到消息时打印出来。这是理解 Oban.Lite 通信机制的基础。
-
-### 提示**: 你需要先在数据库中创建一个触发器或手动执行一条 `NOTIFY 'channel', 'payload'` SQL 语句。在 Python 端，你需要建立一个非事务性的连接来专门处理监听，因为事务中的监听可能会被阻塞。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://www.dimamik.com/posts/oban_py](https://www.dimamik.com/posts/oban_py)
@@ -428,7 +390,6 @@ if __name__ == "__main__":
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

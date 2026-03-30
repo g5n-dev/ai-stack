@@ -42,8 +42,6 @@ Relevant source files
   * [test/worker/worker-connect-test.js](https://github.com/zizifn/edgetunnel/blob/44b93779/test/worker/worker-connect-test.js)
   * [wrangler.toml](https://github.com/zizifn/edgetunnel/blob/44b93779/wrangler.toml)
 
-
-
 EdgeTunnel is an open-source project that implements proxy tunnel solutions primarily using the VLESS protocol, with deployments targeting Cloudflare Workers and Node.js environments. This wiki page provides a comprehensive overview of the EdgeTunnel system, explaining its architecture, core components, and data flow.
 
 For specific implementation details about the Cloudflare Workers implementation, see [Cloudflare Workers Implementation](/zizifn/edgetunnel/2-cloudflare-workers-implementation). For installation and deployment instructions, refer to [Installation and Deployment](/zizifn/edgetunnel/1.2-installation-and-deployment).
@@ -58,21 +56,17 @@ EdgeTunnel creates secure proxy tunnels that operate over WebSocket connections,
   * Experimental SOCKS5 proxy support
   * Deployments for both Cloudflare Workers and Node.js environments
 
-
-
 Sources: [src/worker-vless.js1-636](https://github.com/zizifn/edgetunnel/blob/44b93779/src/worker-vless.js#L1-L636) [src/worker-with-socks5-experimental.js1-806](https://github.com/zizifn/edgetunnel/blob/44b93779/src/worker-with-socks5-experimental.js#L1-L806) [package.json1-22](https://github.com/zizifn/edgetunnel/blob/44b93779/package.json#L1-L22)
 
 ## System Architecture
 
 ### High-Level Architecture
 
-
 EdgeTunnel acts as an intermediary between clients and their intended destinations. Client applications connect to a VLESS client, which establishes a WebSocket connection to the EdgeTunnel server. The server processes VLESS protocol headers, handles TCP and UDP traffic appropriately, and forwards responses back to clients.
 
 Sources: [src/worker-vless.js16-53](https://github.com/zizifn/edgetunnel/blob/44b93779/src/worker-vless.js#L16-L53) [src/worker-vless.js62-156](https://github.com/zizifn/edgetunnel/blob/44b93779/src/worker-vless.js#L62-L156)
 
 ### VLESS Protocol Flow
-
 
 This sequence shows the detailed flow of requests through the EdgeTunnel system, from initial WebSocket connection establishment to the handling of different command types and returning responses to clients.
 
@@ -84,21 +78,17 @@ Sources: [src/worker-vless.js62-156](https://github.com/zizifn/edgetunnel/blob/4
 
 The `fetch` function serves as the main entry point for all requests to the EdgeTunnel worker:
 
-
 The function checks if the request is a WebSocket upgrade request. If it is, it forwards the request to `vlessOverWSHandler`. Otherwise, it processes the HTTP request based on the path:
 
   * `/`: Returns Cloudflare metadata
   * `/{UUID}`: Returns VLESS configuration information
   * Any other path: Returns a 404 error
 
-
-
 Sources: [src/worker-vless.js16-53](https://github.com/zizifn/edgetunnel/blob/44b93779/src/worker-vless.js#L16-L53)
 
 ### WebSocket and VLESS Handling
 
 The `vlessOverWSHandler` function handles WebSocket connections and VLESS protocol processing:
-
 
 This function:
 
@@ -108,14 +98,11 @@ This function:
   4. Forwards the data to the appropriate handler
   5. Returns responses to the client via the WebSocket connection
 
-
-
 Sources: [src/worker-vless.js62-156](https://github.com/zizifn/edgetunnel/blob/44b93779/src/worker-vless.js#L62-L156)
 
 ### VLESS Protocol Processing
 
 The `processVlessHeader` function parses the VLESS protocol headers:
-
 
 The VLESS header contains important information for establishing connections:
 
@@ -124,14 +111,11 @@ The VLESS header contains important information for establishing connections:
   * Remote address and port
   * Additional metadata
 
-
-
 Sources: [src/worker-vless.js279-389](https://github.com/zizifn/edgetunnel/blob/44b93779/src/worker-vless.js#L279-L389)
 
 ### Connection Management
 
 The system handles TCP connections through the `handleTCPOutBound` function:
-
 
 For TCP connections, the system:
 
@@ -140,14 +124,11 @@ For TCP connections, the system:
   3. Sets up a pipeline to forward data between the remote server and the WebSocket
   4. Implements retry logic if the connection fails
 
-
-
 Sources: [src/worker-vless.js170-202](https://github.com/zizifn/edgetunnel/blob/44b93779/src/worker-vless.js#L170-L202) [src/worker-vless.js400-461](https://github.com/zizifn/edgetunnel/blob/44b93779/src/worker-vless.js#L400-L461)
 
 ### DNS and UDP Handling
 
 UDP traffic (specifically DNS) is handled by the `handleUDPOutBound` function:
-
 
 For DNS queries (UDP port 53), the system:
 
@@ -155,8 +136,6 @@ For DNS queries (UDP port 53), the system:
   2. Forwards the query to Cloudflare's DNS-over-HTTPS service
   3. Receives and processes the response
   4. Formats and returns the data to the client via WebSocket
-
-
 
 Sources: [src/worker-vless.js530-594](https://github.com/zizifn/edgetunnel/blob/44b93779/src/worker-vless.js#L530-L594)
 
@@ -171,8 +150,6 @@ The standard implementation in `worker-vless.js` provides the core functionality
   * TCP connections
   * DNS over UDP handling
 
-
-
 Sources: [src/worker-vless.js1-636](https://github.com/zizifn/edgetunnel/blob/44b93779/src/worker-vless.js#L1-L636)
 
 ### SOCKS5 Experimental Implementation
@@ -182,8 +159,6 @@ The extended implementation in `worker-with-socks5-experimental.js` adds:
   * SOCKS5 proxy support with authentication
   * The ability to route connections through an external SOCKS5 proxy
   * All features of the standard implementation
-
-
 
 This variant allows EdgeTunnel to connect to destinations through an intermediate SOCKS5 proxy, which can be useful for specific networking scenarios.
 
@@ -317,9 +292,6 @@ EdgeTunnel 的本质是将 **Cloudflare 的边缘网络转化为一个巨大的�
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：获取Edge Tunnel的实时状态
 import requests
@@ -350,9 +322,6 @@ def check_edge_tunnel_status():
 check_edge_tunnel_status()
 ```
 
-
-
-
 ```python
 # 示例2：配置Edge Tunnel的隧道规则
 def configure_tunnel_rules():
@@ -380,9 +349,6 @@ def configure_tunnel_rules():
 # 调用示例
 configure_tunnel_rules()
 ```
-
-
-
 
 ```python
 # 示例3：监控Edge Tunnel的流量统计
@@ -422,10 +388,8 @@ monitor.record_traffic("tunnel1", 512, 512)
 monitor.print_summary()
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：跨国团队远程协作加速项目
 
@@ -447,8 +411,6 @@ monitor.print_summary()
 
 ---
 
-
-
 ### 2：高可用性API网关优化
 
  2：高可用性API网关优化
@@ -468,8 +430,6 @@ monitor.print_summary()
 - 边缘节点处理了60%的重复请求，减轻源服务器压力  
 
 ---
-
-
 
 ### 3：学术资源访问加速项目
 
@@ -694,7 +654,6 @@ BBR 算法在高延迟或丢包网络中表现优于传统 Cubic 算法，可显
 - 部署过程完全自动化，用户仅需配置必要的 UUID 和域名即可快速上线。
 - 该工具完全开源免费，为用户提供了零成本搭建代理服务的可行方案。
 
-
 ---
 ## 学习路径
 
@@ -801,7 +760,6 @@ BBR 算法在高延迟或丢包网络中表现优于传统 Cubic 算法，可显
 ---
 ## 常见问题
 
-
 ### 1: 什么是 zizifn/edgetunnel，它主要用于什么场景？
 
 1: 什么是 zizifn/edgetunnel，它主要用于什么场景？
@@ -810,29 +768,11 @@ BBR 算法在高延迟或丢包网络中表现优于传统 Cubic 算法，可显
 
 ---
 
-
-
 ### 2: 部署该项目需要哪些准备工作？
 
 2: 部署该项目需要哪些准备工作？
 
 **A
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 在部署 EdgeTunnel 时，VLESS 协议配置中 `flow`（流控）字段通常用于混淆流量特征。请尝试在配置文件中启用 `xtls-rprx-vision` 流控，并解释为什么这种流控模式通常配合 TLS 1.3 使用，而不是 TLS 1.2。
-
-### 提示**: 关注 XTLS 的 Vision 机制是如何利用 TLS 1.3 的特性（如 Early Data）来减少数据包处理延迟的，以及 TLS 1.2 在握手过程中的差异。
-
-### 
-
----
 ## 实践建议
 
 以下是针对 `zizifn/edgetunnel` 项目的 5-7 条实践建议，这些建议基于 Cloudflare Workers/Pages 的无服务器架构特性以及 V2Ray 的配置原理：
@@ -873,7 +813,6 @@ BBR 算法在高延迟或丢包网络中表现优于传统 Cubic 算法，可显
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

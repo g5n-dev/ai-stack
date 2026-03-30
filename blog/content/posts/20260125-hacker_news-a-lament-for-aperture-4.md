@@ -127,37 +127,8 @@ external_url: https://ikennd.ac/blog/2026/01/old-man-yells-at-modern-software-de
 ---
 ## 💻 代码示例
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 ## 📚 案例研究
-
 
 ### 1：AI 初创公司的 API 成本优化之路
 
@@ -178,8 +149,6 @@ external_url: https://ikennd.ac/blog/2026/01/old-man-yells-at-modern-software-de
 📈 **模型能力保留**：在处理复杂问题时依然保持高质量输出，没有牺牲核心业务价值。
 
 ---
-
-
 
 ### 2：多模态大模型的数据吞吐瓶颈突破
 
@@ -281,7 +250,6 @@ external_url: https://ikennd.ac/blog/2026/01/old-man-yells-at-modern-software-de
 ---
 ## ❓ 常见问题
 
-
 ### 1: 什么是 "A Lament for Aperture"？这篇文章主要讲什么内容？
 
 1: 什么是 "A Lament for Aperture"？这篇文章主要讲什么内容？
@@ -289,8 +257,6 @@ external_url: https://ikennd.ac/blog/2026/01/old-man-yells-at-modern-software-de
 **A**: 这是一篇发布在 Hacker News 上的深度技术文章，作者对苹果公司已停止开发的图像处理软件 **Aperture** 表达了怀念与惋惜。文章通常会将 Aperture 与其继任者以及目前的竞品（如 Adobe Lightroom 或 Capture One）进行对比。核心内容通常包括：Aperture 具有的非破坏性编辑架构、卓越的图像组织管理能力（尤其是“堆栈”和版本管理），以及它当时超越时代的用户界面设计。作者感叹的是 Aperture 消失后，摄影师在现有工具中难以找到同等优雅体验的现状。📸💻
 
 ---
-
-
 
 ### 2: 既然 Aperture 已经停止更新很多年了，为什么现在还有人讨论它？
 
@@ -303,8 +269,6 @@ external_url: https://ikennd.ac/blog/2026/01/old-man-yells-at-modern-software-de
 
 ---
 
-
-
 ### 3: 为什么苹果会放弃 Aperture？它被什么产品取代了？
 
 3: 为什么苹果会放弃 Aperture？它被什么产品取代了？
@@ -314,8 +278,6 @@ external_url: https://ikennd.ac/blog/2026/01/old-man-yells-at-modern-software-de
 2.  **替代产品**：Aperture 的功能被拆分了。其基础图像引擎被整合进免费的 **Photos** app（照片应用），而更高级的专业功能则被取消。苹果曾短暂推出 **Aperture 3.6** 以兼容新系统，但最终停止了开发，建议用户迁移到 Photos 或 Adobe Lightroom。🍎🔄
 
 ---
-
-
 
 ### 4: 文章中提到的“Lament”（挽歌）具体是指 Aperture 的哪些具体功能或特性？
 
@@ -329,8 +291,6 @@ external_url: https://ikennd.ac/blog/2026/01/old-man-yells-at-modern-software-de
 
 ---
 
-
-
 ### 5: 如果我现在还在使用旧版本的 Aperture，或者想打开旧的 Aperture 资源库，应该怎么办？
 
 5: 如果我现在还在使用旧版本的 Aperture，或者想打开旧的 Aperture 资源库，应该怎么办？
@@ -342,8 +302,6 @@ external_url: https://ikennd.ac/blog/2026/01/old-man-yells-at-modern-software-de
 
 ---
 
-
-
 ### 6: Hacker News 上的评论对这篇文章通常有什么反应？
 
 6: Hacker News 上的评论对这篇文章通常有什么反应？
@@ -352,22 +310,6 @@ external_url: https://ikennd.ac/blog/2026/01/old-man-yells-at-modern-software-de
 1.  **对订阅制的厌恶**：很多人会将 Aperture 的终结与 Adobe Creative Cloud 强制订阅制的兴起联系起来，感叹“买断制软件”的黄金时代已过。
 2.  **软件工程的讨论**：开发者会讨论 Aperture 的代码库质量，以及维护这样一个复杂的原生应用所面临的挑战。
 3.  **替代方案推荐**：评论区
-
----
-## 🎯 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**: 文章标题中的 "Aperture" 在计算机视觉和摄影领域通常指代什么概念？它与景深有什么关系？
-
-### 提示**: 思考镜头中控制光线通过量的部件，以及它如何影响背景虚化效果。
-
-### 
-
----
 ## 🔗 引用
 
 - **原文链接**: [https://ikennd.ac/blog/2026/01/old-man-yells-at-modern-software-design](https://ikennd.ac/blog/2026/01/old-man-yells-at-modern-software-design)

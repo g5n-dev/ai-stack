@@ -64,9 +64,6 @@ AI Agent 的技术演进正经历从“依赖大模型通用能力”向“依�
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：获取Hacker News热门文章标题
 import requests
@@ -104,9 +101,6 @@ if __name__ == "__main__":
         print(f"{i}. {story['title']} (评分: {story['score']})")
         print(f"   链接: {story['url']}\n")
 ```
-
-
-
 
 ```python
 # 示例2：搜索Hacker News文章
@@ -148,9 +142,6 @@ if __name__ == "__main__":
         print(f"{i}. {story['title']} (作者: {story['author']}, 评分: {story['points']})")
         print(f"   链接: {story['url']}\n")
 ```
-
-
-
 
 ```python
 # 示例3：获取Hacker News评论
@@ -196,10 +187,8 @@ if __name__ == "__main__":
         print()
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：Cognition AI（Devin 开发团队）
 
@@ -215,8 +204,6 @@ if __name__ == "__main__":
 
 ---
 
-
-
 ### 2：Rabbit R1（基于 Large Action Model 的个人助理）
 
  2：Rabbit R1（基于 Large Action Model 的个人助理）
@@ -230,8 +217,6 @@ if __name__ == "__main__":
 **效果**: Rabbit R1 在发布初期售出 10 万台。用户可以通过语音指令完成在 Spotify 播放音乐、在 Uber 上叫车或在 DoorDash 上点餐，而无需打开手机操作。这展示了 Agent Skills 在“跨应用操作”层面的巨大价值，即 AI 学会了使用人类使用的工具（UI），而不是等待专门为 AI 准备的接口。
 
 ---
-
-
 
 ### 3：Klarna（客服自动化 Agent）
 
@@ -340,7 +325,6 @@ if __name__ == "__main__":
 ---
 ## 常见问题
 
-
 ### 1: 什么是 Agent Skills，它与传统的 AI 提示词有何不同？
 
 1: 什么是 Agent Skills，它与传统的 AI 提示词有何不同？
@@ -348,8 +332,6 @@ if __name__ == "__main__":
 **A**: Agent Skills（智能体技能）是指 AI 智能体在执行任务时所具备的特定能力或工具。与传统的 AI 提示词不同，Agent Skills 通常不仅仅是基于文本生成的指令，而是结合了外部工具、API 调用、代码执行或结构化的工作流。提示词更多是引导模型生成文本，而 Agent Skills 则允许模型“行动”，例如查询实时数据、操作软件或访问私有数据库。简单来说，提示词是“说话”，而 Agent Skills 是“做事”。
 
 ---
-
-
 
 ### 2: 开发 Agent Skills 时主要的技术挑战是什么？
 
@@ -362,8 +344,6 @@ if __name__ == "__main__":
 
 ---
 
-
-
 ### 3: Agent Skills 如何与 RAG（检索增强生成）技术结合使用？
 
 3: Agent Skills 如何与 RAG（检索增强生成）技术结合使用？
@@ -373,8 +353,6 @@ if __name__ == "__main__":
 例如，一个企业客服智能体可以使用“搜索知识库”这一 Skill 来调用 RAG 系统，从而根据公司内部文档回答用户的复杂问题，而不是仅依赖模型预训练的知识。
 
 ---
-
-
 
 ### 4: 如何评估一个 Agent Skill 的性能是否达标？
 
@@ -389,8 +367,6 @@ if __name__ == "__main__":
 
 ---
 
-
-
 ### 5: 在构建 Agent Skills 时，如何确保数据安全和隐私？
 
 5: 在构建 Agent Skills 时，如何确保数据安全和隐私？
@@ -401,30 +377,12 @@ if __name__ == "__main__":
 
 ---
 
-
-
 ### 6: 开源框架（如 LangChain 或 AutoGPT）在构建 Agent Skills 中扮演什么角色？
 
 6: 开源框架（如 LangChain 或 AutoGPT）在构建 Agent Skills 中扮演什么角色？
 
 **A**: 开源框架为构建 Agent Skills 提供了基础设施和标准化的接口。以 LangChain 为例，它提供了丰富的工具抽象，允许开发者轻松地将外部 API 或函数封装成 LLM（大语言模型）可以调用的 Skill。
 这些框架通常内置了“代理”逻辑，负责处理 LLM 与工具之间的交互循环，包括解析工具的输入参数、执行工具以及将输出反馈给 LLM。使用这些框架可以大大降低开发门槛，让开发者专注于业务逻辑的实现，而不是从零开始处理复杂的通信协议。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 设计一个 Agent，能够根据用户输入的自然语言描述（例如“帮我查一下今天的天气”），自动调用对应的工具函数（如 `get_weather`）。你需要定义一套简单的工具模式，并实现一个基础的映射逻辑，将用户意图与工具名称进行匹配。
-
-### 提示**: 可以尝试使用关键词匹配作为最基础的实现，或者思考如何定义工具的元数据（如名称、描述），以便 Agent 能够理解每个工具的功能。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://agentskills.io/home](https://agentskills.io/home)
@@ -433,7 +391,6 @@ if __name__ == "__main__":
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

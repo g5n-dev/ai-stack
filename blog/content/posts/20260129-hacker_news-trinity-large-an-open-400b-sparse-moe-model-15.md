@@ -78,9 +78,6 @@ scenarios: ["大语言模型"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：模拟稀疏MoE模型的专家激活机制
 def simulate_moe_activation(input_tensor, num_experts=8, top_k=2):
@@ -110,9 +107,6 @@ expert_indices, weights = simulate_moe_activation(input)
 print(f"激活的专家索引:\n{expert_indices}")
 print(f"对应的路由权重:\n{weights}")
 ```
-
-
-
 
 ```python
 # 示例2：模拟MoE模型的负载均衡损失计算
@@ -144,9 +138,6 @@ expert_indices = torch.randint(0, 8, (2, 4, 2))  # 模拟专家索引
 loss = compute_load_balance_loss(expert_indices)
 print(f"负载均衡损失: {loss.item():.4f}")
 ```
-
-
-
 
 ```python
 # 示例3：模拟分布式MoE模型的专家并行处理
@@ -194,10 +185,8 @@ output = parallel_expert_processing(input, expert_indices)
 print(f"输出张量形状: {output.shape}")
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：多语言金融情报分析平台
 
@@ -218,8 +207,6 @@ print(f"输出张量形状: {output.shape}")
 - **效率**：单次请求的延迟控制在毫秒级，满足了高频交易场景对速度的苛刻要求。
 
 ---
-
-
 
 ### 2：企业级智能知识库重构
 
@@ -345,7 +332,6 @@ print(f"输出张量形状: {output.shape}")
 ---
 ## 常见问题
 
-
 ### 1: 什么是 Trinity large，它与其他主流大语言模型（如 Llama 3 或 GPT-4）的主要区别是什么？
 
 1: 什么是 Trinity large，它与其他主流大语言模型（如 Llama 3 或 GPT-4）的主要区别是什么？
@@ -353,8 +339,6 @@ print(f"输出张量形状: {output.shape}")
 **A**: Trinity large 是一个拥有 4000 亿参数的稀疏混合专家模型。与 Llama 3 或 GPT-4 等传统密集模型不同，MoE 架构在每次推理时只激活其中一小部分参数（专家），而不是激活整个网络。这意味着虽然 Trinity large 拥有 4000 亿的总参数量，但在实际运行时，其活跃参数量可能仅相当于一个密集的 120 亿至 300 亿参数的模型。这种设计旨在结合超大模型的智能水平与小模型的高效推理速度和低廉成本。
 
 ---
-
-
 
 ### 2: 为什么选择“稀疏 MoE”架构，这种技术有什么优势？
 
@@ -364,8 +348,6 @@ print(f"输出张量形状: {output.shape}")
 
 ---
 
-
-
 ### 3: Trinity large 的“400B”参数规模是如何构成的，它是开源的吗？
 
 3: Trinity large 的“400B”参数规模是如何构成的，它是开源的吗？
@@ -373,8 +355,6 @@ print(f"输出张量形状: {output.shape}")
 **A**: 根据目前的公开信息，Trinity large 的 400B 参数量指的是模型的总参数容量。在 MoE 架构中，这些参数被分配给多个“专家”子网络以及路由网络。关于开源状态，Trinity large 通常被视为开放权重或开放模型的一种尝试，旨在推动超大模型的研究。虽然它可能不像 Llama 那样拥有极其宽松的商用协议，但它为研究社区提供了接近 GPT-4 级别参数规模的模型权重，用于研究和开发。
 
 ---
-
-
 
 ### 4: 运行或微调 Trinity large 需要什么样的硬件配置？
 
@@ -386,8 +366,6 @@ print(f"输出张量形状: {output.shape}")
 
 ---
 
-
-
 ### 5: Trinity large 的性能表现如何，它达到了什么水平？
 
 5: Trinity large 的性能表现如何，它达到了什么水平？
@@ -395,8 +373,6 @@ print(f"输出张量形状: {output.shape}")
 **A**: Trinity large 的目标是填补开源模型与顶尖闭源模型（如 GPT-4、Claude Opus）之间的差距。根据发布时的基准测试，Trinity large 在推理、代码生成和常识理解等任务上通常表现出色，其能力预计接近或达到早期版本的 GPT-4 级别。它证明了通过扩大 MoE 模型的参数规模并优化路由策略，开源模型可以在不牺牲推理效率的情况下达到顶尖的智能水平。
 
 ---
-
-
 
 ### 6: Trinity large 的主要应用场景有哪些？
 
@@ -407,22 +383,6 @@ print(f"输出张量形状: {output.shape}")
 *   **长文本处理**：得益于大参数量带来的潜在大上下文窗口能力，适合分析长篇文档。
 *   **知识密集型问答**：作为企业级的知识库助手，提供高准确度的回答。
 *   **模型蒸馏研究**：作为“教师模型”，用来训练更小、更快的“学生模型”。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**：稀疏混合专家模型的核心机制之一是“门控网络”，它负责决定输入的 Token 应该由哪些专家处理。请尝试用伪代码或简单的 Python 代码描述一个门控网络的前向传播过程。假设模型总共有 4 个专家，且门控机制设定为每个 Token 只选择得分最高的前 2 个专家，请写出如何根据输入 $x$ 计算出选中的专家索引及其对应的权重。
-
-### 提示**：首先需要通过一个线性层将输入 $x$ 映射到一个维度为 4 的 logits 向量；然后对该向量进行 Softmax 归一化；最后使用 `topk` 函数提取数值最大的两个索引及其权重。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://www.arcee.ai/blog/trinity-large](https://www.arcee.ai/blog/trinity-large)
@@ -431,7 +391,6 @@ print(f"输出张量形状: {output.shape}")
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

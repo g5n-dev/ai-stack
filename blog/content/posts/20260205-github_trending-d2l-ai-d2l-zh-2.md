@@ -48,8 +48,6 @@ Relevant source files
   * [static/frontpage/_images/zhangge.jpg](https://github.com/d2l-ai/d2l-zh/blob/e6b18cce/static/frontpage/_images/zhangge.jpg)
   * [static/frontpage/frontpage.html](https://github.com/d2l-ai/d2l-zh/blob/e6b18cce/static/frontpage/frontpage.html)
 
-
-
 The D2L.ai repository is an open-source project that provides a comprehensive deep learning educational resource known as "动手学深度学习" (Dive into Deep Learning). This repository contains the source code for a textbook with executable code examples that work across multiple deep learning frameworks including PyTorch, MXNet, TensorFlow, and PaddlePaddle.
 
 ## Purpose and Scope
@@ -62,14 +60,11 @@ The D2L.ai project aims to create a unified learning resource that:
   4. Enables rapid iteration to keep pace with the fast-evolving field
   5. Supports a community platform for questions and knowledge exchange
 
-
-
 As stated in the repository README: "The best way to understand deep learning is to learn by doing." The textbook has been adopted by over 500 universities across 70+ countries as teaching material.
 
 ## Repository Architecture
 
 The repository is organized into three primary components: textbook content, code implementation, and the build system.
-
 
 Sources: README.md, INFO.md, static/frontpage/frontpage.html
 
@@ -81,14 +76,11 @@ The content consists of markdown files organized in chapter directories:
   * `chapter_multilayer-perceptrons/`: Covers neural network basics
   * Additional chapters for CNNs, RNNs, attention mechanisms, etc.
 
-
-
 Each chapter contains markdown files with embedded code cells that can be executed as Jupyter notebooks. The content follows a progressive approach, introducing concepts from basic to advanced.
 
 ### Code Implementation
 
 One of the key features of the repository is the unified `d2l` package that provides a consistent API across different deep learning frameworks:
-
 
 Sources: static/frontpage/frontpage.html, README.md
 
@@ -102,8 +94,6 @@ The build system includes:
   * Build scripts for converting markdown to different formats
   * Documentation generation tools
 
-
-
 The build process can generate HTML, PDF, and other formats from the source files, allowing the content to be accessed in various ways.
 
 Sources: INFO.md
@@ -111,7 +101,6 @@ Sources: INFO.md
 ## Learning Pathway
 
 The content follows a structured learning pathway designed to build knowledge progressively:
-
 
 Sources: chapter_introduction/index.md, static/frontpage/frontpage.html
 
@@ -124,12 +113,9 @@ This pathway starts with basic concepts and gradually introduces more complex mo
   5. Attention mechanisms and Transformers for NLP
   6. Optimization techniques and practical considerations
 
-
-
 ## Educational Approach
 
 The textbook combines three key elements to create an effective learning experience:
-
 
 Sources: static/frontpage/frontpage.html, README.md
 
@@ -137,14 +123,11 @@ Sources: static/frontpage/frontpage.html, README.md
   2. **Figures** : Visual illustrations explaining concepts and architectures
   3. **Code** : Executable implementations demonstrating practical applications
 
-
-
 Each chapter is designed as a Jupyter notebook, allowing readers to run code examples, modify parameters, and experiment with different approaches.
 
 ## Framework Integration
 
 The repository's design supports multiple deep learning frameworks through a unified API:
-
 
 Sources: static/frontpage/frontpage.html
 
@@ -154,8 +137,6 @@ This approach allows the same conceptual material to be presented consistently a
   * TensorFlow: Yuan Tang
   * PaddlePaddle: Wu Gaosheng, Hu Liujun, Zhang Ge, Xie Jiehang
 
-
-
 ## Usage Environments
 
 The textbook content can be accessed and executed in various environments:
@@ -163,8 +144,6 @@ The textbook content can be accessed and executed in various environments:
   1. **Local Installation** : Running on personal computers with installed dependencies
   2. **Cloud Platforms** : Using services like Amazon SageMaker, SageMaker Studio Lab, or Google Colab
   3. **Containerized Environments** : Deploying in Docker containers for consistent environments
-
-
 
 Sources: static/frontpage/frontpage.html, README.md
 
@@ -405,9 +384,6 @@ d2l 在抽象层上做了一个极具野心的尝试：**将深度学习框架�
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：批量处理文件名
 import os
@@ -430,9 +406,6 @@ def batch_rename_files(directory, prefix):
 # 使用示例
 batch_rename_files("./test_files", "report")
 ```
-
-
-
 
 ```python
 # 示例2：监控文件变化
@@ -467,9 +440,6 @@ def monitor_directory(path):
 monitor_directory("./watch_dir")
 ```
 
-
-
-
 ```python
 # 示例3：计算目录大小
 import os
@@ -501,10 +471,8 @@ dir_size = get_directory_size("./my_project")
 print(f"目录大小: {human_readable_size(dir_size)}")
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：国内某顶尖高校 AI 课程教学改革
 
@@ -531,8 +499,6 @@ print(f"目录大小: {human_readable_size(dir_size)}")
 
 ---
 
-
-
 ### 2：某金融科技公司 AI 基础设施团队内部培训
 
  2：某金融科技公司 AI 基础设施团队内部培训
@@ -557,8 +523,6 @@ print(f"目录大小: {human_readable_size(dir_size)}")
 3. 降低了新员工的入职培训门槛，d2l-zh 成为了新人必读的技术手册。
 
 ---
-
-
 
 ### 3：独立开发者构建垂直领域 AI 助手
 
@@ -798,7 +762,6 @@ print(f"目录大小: {human_readable_size(dir_size)}")
 - 提供社区支持与讨论平台，促进学习交流与问题解决
 - 结构清晰、循序渐进，适合初学者到进阶用户系统学习
 
-
 ---
 ## 学习路径
 
@@ -922,7 +885,6 @@ print(f"目录大小: {human_readable_size(dir_size)}")
 ---
 ## 常见问题
 
-
 ### 1: d2l-zh 是什么项目？它的主要内容是什么？
 
 1: d2l-zh 是什么项目？它的主要内容是什么？
@@ -934,8 +896,6 @@ print(f"目录大小: {human_readable_size(dir_size)}")
 - 涵盖 PyTorch、TensorFlow 等主流框架的实现
 
 ---
-
-
 
 ### 2: 如何本地运行 d2l-zh 的代码？
 
@@ -951,8 +911,6 @@ print(f"目录大小: {human_readable_size(dir_size)}")
 
 ---
 
-
-
 ### 3: d2l-zh 与 d2l-en 有什么区别？
 
 3: d2l-zh 与 d2l-en 有什么区别？
@@ -964,8 +922,6 @@ print(f"目录大小: {human_readable_size(dir_size)}")
 4. 社区支持：中文版有更活跃的中文讨论区
 
 ---
-
-
 
 ### 4: 如何获取最新版本的教程？
 
@@ -979,8 +935,6 @@ print(f"目录大小: {human_readable_size(dir_size)}")
 注意：纸质书版本可能落后于在线版本
 
 ---
-
-
 
 ### 5: 遇到代码报错如何解决？
 
@@ -999,8 +953,6 @@ print(f"目录大小: {human_readable_size(dir_size)}")
 
 ---
 
-
-
 ### 6: 可以将内容用于商业用途吗？
 
 6: 可以将内容用于商业用途吗？
@@ -1014,8 +966,6 @@ print(f"目录大小: {human_readable_size(dir_size)}")
 
 ---
 
-
-
 ### 7: 如何参与项目贡献？
 
 7: 如何参与项目贡献？
@@ -1027,22 +977,6 @@ print(f"目录大小: {human_readable_size(dir_size)}")
 4. 报告问题：提交详细的 Bug 报告
 
 建议先阅读 `CONTRIBUTING.md` 了解规范
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 动手实践：环境配置与初次运行
-
-### 请访问 d2l-zh 仓库，根据文档说明在本地配置好运行环境（推荐使用 Jupyter 或 Docker），并成功运行第一章中 "预备知识" 相关的任意一段代码示例，打印出 "Hello World" 或一个随机张量。
-
-### 提示**: 仔细阅读仓库根目录下的 `README.md` 文件，通常安装指令分为 pip、conda 或 docker 三种方式。如果遇到依赖包版本冲突，建议创建一个新的虚拟环境。
-
----
 ## 实践建议
 
 以下是针对 d2l-ai/d2l-zh 仓库的 6 条实践建议，旨在优化学习效率并规避常见技术陷阱：
@@ -1086,7 +1020,6 @@ Notebook 的交互性容易导致代码逻辑混乱。
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

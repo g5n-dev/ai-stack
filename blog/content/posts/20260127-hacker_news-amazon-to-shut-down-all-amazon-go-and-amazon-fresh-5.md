@@ -122,37 +122,8 @@ external_url: https://www.wsj.com/business/retail/amazon-to-shut-down-all-amazon
 ---
 ## 💻 代码示例
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 ## 📚 案例研究
-
 
 ### 1：Shopify 升级 POS 系统 🛍️
 
@@ -170,8 +141,6 @@ external_url: https://www.wsj.com/business/retail/amazon-to-shut-down-all-amazon
 - 🛍️ **客户体验**：店员可以利用移动设备在店内任何地方为顾客提供咨询和结账服务，不再被固定在收银台。
 
 ---
-
-
 
 ### 2：麦当劳“数字化门店”转型 🍟
 
@@ -192,8 +161,6 @@ external_url: https://www.wsj.com/business/retail/amazon-to-shut-down-all-amazon
 - 🚀 **数据沉淀**：积累了海量用户消费数据，为后续的精准营销和新品研发提供了数据支持。
 
 ---
-
-
 
 ### 3：丝芙兰全渠道零售策略 💄
 
@@ -299,7 +266,6 @@ Amazon Go 的收缩可能暗示了纯粹的“拿了就走”缺乏温度。实�
 ---
 ## ❓ 常见问题
 
-
 ### 1: Amazon 真的打算关闭所有 Amazon Go 和 Amazon Fresh 门店吗？
 
 1: Amazon 真的打算关闭所有 Amazon Go 和 Amazon Fresh 门店吗？
@@ -312,8 +278,6 @@ Amazon Go 的收缩可能暗示了纯粹的“拿了就走”缺乏温度。实�
 
 ---
 
-
-
 ### 2: Amazon 为什么突然决定关闭这么多门店？
 
 2: Amazon 为什么突然决定关闭这么多门店？
@@ -325,8 +289,6 @@ Amazon Go 的收缩可能暗示了纯粹的“拿了就走”缺乏温度。实�
 3.  **经济环境**：在当前的经济形势下，Amazon 正在全面削减非核心业务的亏损，寻求盈利增长，实体零售部门首当其冲。
 
 ---
-
-
 
 ### 3: Amazon 以后还会开新的实体杂货店吗？
 
@@ -341,8 +303,6 @@ Amazon 零售业务 CEO Tony Hoggett 表示，他们不会放弃实体店，但�
 
 ---
 
-
-
 ### 4: 所谓的“Just Walk Out”技术失败了吗？以后还能用吗？
 
 4: 所谓的“Just Walk Out”技术失败了吗？以后还能用吗？
@@ -353,8 +313,6 @@ Amazon 零售业务 CEO Tony Hoggett 表示，他们不会放弃实体店，但�
 所以，技术还在，但可能会被限制在更小、更易控的场所，或者被 Dash Cart 取代。
 
 ---
-
-
 
 ### 5: 消费者手里的 Amazon Prime 会员和实体店折扣会受影响吗？
 
@@ -367,8 +325,6 @@ Amazon 零售业务 CEO Tony Hoggett 表示，他们不会放弃实体店，但�
 
 ---
 
-
-
 ### 6: 此前 Amazon 关闭了所有 Amazon Books 和 Amazon 4-star，这次调整是一样的逻辑吗？
 
 6: 此前 Amazon 关闭了所有 Amazon Books 和 Amazon 4-star，这次调整是一样的逻辑吗？
@@ -377,22 +333,6 @@ Amazon 零售业务 CEO Tony Hoggett 表示，他们不会放弃实体店，但�
 Amazon 似乎正在剥离那些**“不赚钱”**或**“战略优先级低”**的实体业务。
 *   之前关闭书店和网红店（4-star）是因为这些门店坪效（每平米销售额）低，且无法与亚马逊强大的线上书店形成差异化优势。
 *   这次调整 Go 和 Fresh，是因为亚马逊意识到，如果没有可持续的利润模型，仅仅为了“酷”而开实体店是不可持续的。亚马逊正在回归**零售的本质：低成本和高效率**。
-
----
-## 🎯 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**:
-
-### 请分析 Amazon Go 和 Amazon Fresh 关闭的核心商业原因。如果一家拥有顶级技术（如“拿了就走”的 Just Walk Out 技术）的公司无法维持实体店的运营，那么通常是因为哪两个关键指标（一个与收入有关，一个与成本有关）失衡？
-
-### 提示**:
-
----
 ## 🔗 引用
 
 - **原文链接**: [https://www.wsj.com/business/retail/amazon-to-shut-down-all-amazon-go-and-amazon-fresh-stores-0301dfb7](https://www.wsj.com/business/retail/amazon-to-shut-down-all-amazon-go-and-amazon-fresh-stores-0301dfb7)

@@ -119,32 +119,8 @@ external_url: https://www.nbcnews.com/tech/internet/fbi-investigating-minnesota-
 ---
 ## 💻 代码示例
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 ## 📚 案例研究
-
 
 ### 1：Signal 端到端加密通信在隐私保护中的应用
 
@@ -163,8 +139,6 @@ external_url: https://www.nbcnews.com/tech/internet/fbi-investigating-minnesota-
 
 ---
 
-
-
 ### 2：Telegram 在反对《Snoopers' Charter》中的角色
 
  2：Telegram 在反对《Snoopers' Charter》中的角色
@@ -182,8 +156,6 @@ external_url: https://www.nbcnews.com/tech/internet/fbi-investigating-minnesota-
 
 ---
 
-
-
 ### 3：WhatsApp 元数据泄露与 FBI 调查
 
  3：WhatsApp 元数据泄露与 FBI 调查
@@ -195,7 +167,6 @@ external_url: https://www.nbcnews.com/tech/internet/fbi-investigating-minnesota-
 **解决方案**: 用户转向更注重元数据隐私的工具，如 Session（基于区块链的去中心化通讯），或使用 Tor 浏览器配合 Signal 以隐藏 IP 地址。
 
 **效果**:  
-
 
 ---
 ## ✅ 最佳实践
@@ -283,7 +254,6 @@ external_url: https://www.nbcnews.com/tech/internet/fbi-investigating-minnesota-
 ---
 ## ❓ 常见问题
 
-
 ### 1: 什么是“Minnesota Signal chats”事件，主要涉及哪些内容？
 
 1: 什么是“Minnesota Signal chats”事件，主要涉及哪些内容？
@@ -291,8 +261,6 @@ external_url: https://www.nbcnews.com/tech/internet/fbi-investigating-minnesota-
 **A**: 这起事件主要涉及美国联邦调查局（FBI）对美国移民和海关执法局（ICE）进行监控的相关调查。根据黑客新闻及相关报道，明尼阿波利斯警方曾使用一个名为“Minnesota Signal”的通讯群组（基于加密通讯软件 Signal）来追踪 ICE 的行动。目前 FBI 已介入调查，重点在于审查这些群组中的聊天记录，以确定是否存在针对联邦执法部门的非法监视、情报共享或潜在的反执法活动。这反映了地方执法部门与联邦移民执法机构之间日益紧张的关系。
 
 ---
-
-
 
 ### 2: FBI 调查 Signal 聊天记录是否意味着 Signal 加密被破解了？
 
@@ -306,8 +274,6 @@ external_url: https://www.nbcnews.com/tech/internet/fbi-investigating-minnesota-
 
 ---
 
-
-
 ### 3: 为什么地方警察部门要秘密追踪 ICE 的行动？
 
 3: 为什么地方警察部门要秘密追踪 ICE 的行动？
@@ -319,8 +285,6 @@ external_url: https://www.nbcnews.com/tech/internet/fbi-investigating-minnesota-
 
 ---
 
-
-
 ### 4: 这种调查在法律上会有什么后果？
 
 4: 这种调查在法律上会有什么后果？
@@ -331,8 +295,6 @@ external_url: https://www.nbcnews.com/tech/internet/fbi-investigating-minnesota-
 *   **隐私权争议**：反之，如果 FBI 在没有搜查令的情况下获取了私人通讯数据，可能会引发关于第四修正案（非法搜查和扣押）的法律诉讼。目前案件正在调查中，具体取决于检方如何引用相关法律。
 
 ---
-
-
 
 ### 5: 对于普通用户来说，使用 Signal 等加密通讯软件还安全吗？
 
@@ -347,29 +309,11 @@ external_url: https://www.nbcnews.com/tech/internet/fbi-investigating-minnesota-
 
 ---
 
-
-
 ### 6: 这个事件与 Hacker News 有什么关系？
 
 6: 这个事件与 Hacker News 有什么关系？
 
 **A**: Hacker News (HN) 并不是事件的制造者，而是该新闻的**主要来源和讨论平台**。这里的“来源：hacker_news”指的是该条新闻线索最早或主要出现在 Hacker News 网站上。Hacker News 聚集了大量的技术专家、安全研究人员和黑客，他们通常会迅速挖掘新闻背后的技术细节（例如 Signal 的元数据分析、执法部门的技术手段等）。因此，关于此事件的深入技术讨论和细节分析往往集中在 HN 的评论区。
-
----
-## 🎯 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**: **技术选型分析**
-
-### 为什么犯罪分子或极端组织会偏爱使用 "Minnesota"（而非主流的 WhatsApp 或 Signal）进行通讯？请列举至少三个技术层面的原因（例如：开源代码、去中心化程度、服务器部署方式），并说明这对执法机构意味着什么？
-
-### 提示**:
-
----
 ## 🔗 引用
 
 - **原文链接**: [https://www.nbcnews.com/tech/internet/fbi-investigating-minnesota-signal-minneapolis-group-ice-patel-kash-rcna256041](https://www.nbcnews.com/tech/internet/fbi-investigating-minnesota-signal-minneapolis-group-ice-patel-kash-rcna256041)

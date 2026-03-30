@@ -36,8 +36,6 @@ Relevant source files
 
   * [README.md](https://github.com/lss233/kirara-ai/blob/8295a5de/README.md)
 
-
-
 Kirara AI is a multi-platform chatbot framework that integrates large language models (LLMs) with instant messaging platforms through a flexible workflow-based automation system. The system provides a unified interface for deploying AI-powered conversational agents across platforms like Telegram, QQ, Discord, and WeChat, while supporting multiple LLM providers including OpenAI, Claude, Gemini, and local models.
 
 This document covers the high-level architecture and core components of the Kirara AI system. For detailed information about specific subsystems, see [Architecture](/lss233/kirara-ai/2-architecture), [Core Components](/lss233/kirara-ai/3-core-components), [Plugin System](/lss233/kirara-ai/4-plugin-system), and [Deployment](/lss233/kirara-ai/5-deployment).
@@ -53,19 +51,15 @@ Kirara AI serves as a comprehensive chatbot framework that abstracts the complex
   * Maintain conversational context and memory across sessions
   * Administer the entire system through a web-based management interface
 
-
-
 ## High-Level Architecture
 
 The Kirara AI system follows a layered architecture with clear separation between platform adapters, core orchestration logic, and AI model integrations.
 
 ### Core System Components
 
-
 Sources: [README.md1-267](https://github.com/lss233/kirara-ai/blob/8295a5de/README.md#L1-L267) diagrams provided in context
 
 ### Message Processing Flow
-
 
 Sources: [README.md1-267](https://github.com/lss233/kirara-ai/blob/8295a5de/README.md#L1-L267) system architecture analysis
 
@@ -95,8 +89,6 @@ The system integrates with multiple AI model providers through a unified adapter
   * **Local Models** \- Ollama, custom deployments
   * **Chinese Providers** \- DeepSeek, Qwen, Minimax, Kimi, Doubao
 
-
-
 Sources: [README.md84](https://github.com/lss233/kirara-ai/blob/8295a5de/README.md#L84-L84)
 
 ### Workflow Automation
@@ -108,8 +100,6 @@ The workflow system enables complex automation scenarios through:
   * **Conditional Logic** \- Rule-based message routing and processing
   * **Cross-platform Messaging** \- Send messages across different platforms
   * **Media Processing** \- Handle images, audio, and documents
-
-
 
 Sources: [README.md92](https://github.com/lss233/kirara-ai/blob/8295a5de/README.md#L92-L92) system architecture analysis
 
@@ -123,8 +113,6 @@ The system provides comprehensive management capabilities:
   * **Workflow Designer** \- Visual workflow creation and editing
   * **System Monitoring** \- Real-time system status and logging
 
-
-
 Sources: [README.md58-75](https://github.com/lss233/kirara-ai/blob/8295a5de/README.md#L58-L75) [README.md93](https://github.com/lss233/kirara-ai/blob/8295a5de/README.md#L93-L93)
 
 ## System Components Overview
@@ -137,8 +125,6 @@ The Kirara AI architecture consists of several key subsystems:
   * **[Media Management](/lss233/kirara-ai/3.4-media-management)** \- File storage, metadata, and cleanup systems
   * **[Workflow System](/lss233/kirara-ai/3.5-workflow-system)** \- Declarative automation engine with block-based processing
   * **[Memory System](/lss233/kirara-ai/3.6-memory-system)** \- Conversational context and persistence management
-
-
 
 Each component is implemented as part of the plugin architecture, allowing for modular deployment and extensibility. The [Plugin System](/lss233/kirara-ai/4-plugin-system) documentation covers the registration and dependency injection mechanisms that enable this modularity.
 
@@ -370,9 +356,6 @@ Kirara AI 在 **“应用逻辑”** 与 **“基础设施（通讯协议/模型
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：自动回复机器人功能
 def auto_reply_bot(message):
@@ -395,9 +378,6 @@ def auto_reply_bot(message):
 # 测试
 print(auto_reply_bot("你好"))  # 输出: 你好！我是AI助手，有什么可以帮你的吗？
 ```
-
-
-
 
 ```python
 # 示例2：文本情感分析
@@ -427,9 +407,6 @@ def sentiment_analysis(text):
 print(sentiment_analysis("今天天气真好，我很开心！"))  # 输出: 正面
 ```
 
-
-
-
 ```python
 # 示例3：智能问答系统
 def qa_system(question):
@@ -457,10 +434,8 @@ def qa_system(question):
 print(qa_system("你们的营业时间是什么时候？"))  # 输出: 工作日9:00-18:00，周末10:00-17:00
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某中型电商公司用户行为分析平台
 
@@ -482,8 +457,6 @@ print(qa_system("你们的营业时间是什么时候？"))  # 输出: 工作日
 
 ---
 
-
-
 ### 2：智慧城市交通流量预测项目
 
  2：智慧城市交通流量预测项目
@@ -503,8 +476,6 @@ print(qa_system("你们的营业时间是什么时候？"))  # 输出: 工作日
 - 模型更新周期从 1 周缩短至 15 分钟，大幅提升系统响应速度  
 
 ---
-
-
 
 ### 3：金融科技风控系统实时反欺诈
 
@@ -758,7 +729,6 @@ print(qa_system("你们的营业时间是什么时候？"))  # 输出: 工作日
 - 架构设计上注重高性能与可扩展性，采用 Python 编写核心逻辑，并利用 WebSocket 处理实时通信。
 - 项目开源且文档完善，为开发者提供了一个从零构建 AI 虚拟角色的低门槛解决方案。
 
-
 ---
 ## 学习路径
 
@@ -873,7 +843,6 @@ print(qa_system("你们的营业时间是什么时候？"))  # 输出: 工作日
 ---
 ## 常见问题
 
-
 ### 1: lss233/kirara-ai 项目的主要功能是什么？
 
 1: lss233/kirara-ai 项目的主要功能是什么？
@@ -882,8 +851,6 @@ print(qa_system("你们的营业时间是什么时候？"))  # 输出: 工作日
 
 ---
 
-
-
 ### 2: 该项目支持哪些 AI 模型提供商？
 
 2: 该项目支持哪些 AI 模型提供商？
@@ -891,8 +858,6 @@ print(qa_system("你们的营业时间是什么时候？"))  # 输出: 工作日
 **A**: kirara-ai 设计为兼容 OpenAI 格式的 API 接口。理论上，它支持所有兼容 OpenAI API 协议的服务商。这包括但不限于 OpenAI 官方、Azure OpenAI、以及国内外的各种中转服务（如 OneAPI 等）。此外，项目通常也支持通过配置接入本地运行的开源模型（例如使用 Ollama 或 LocalAI 运行的模型），具体支持的列表会随项目更新而变化，建议查阅最新的官方文档。
 
 ---
-
-
 
 ### 3: 如何部署和安装 kirara-ai？
 
@@ -905,8 +870,6 @@ print(qa_system("你们的营业时间是什么时候？"))  # 输出: 工作日
 
 ---
 
-
-
 ### 4: 使用 kirara-ai 是否需要付费？
 
 4: 使用 kirara-ai 是否需要付费？
@@ -914,8 +877,6 @@ print(qa_system("你们的营业时间是什么时候？"))  # 输出: 工作日
 **A**: kirara-ai 项目本身是开源软件，通常遵循 MIT 或 AGPL 等开源协议，软件本身的获取和使用是免费的。但是，**AI 模型的调用费用**取决于您配置的后端服务商。如果您使用的是 OpenAI 官方 API 或其他付费中转服务，您需要自行承担相应的 Token 费用。如果您配置的是本地模型（如通过 Ollama 运行的 Llama 3），则在硬件允许的情况下通常是免费的（仅需电费和硬件损耗）。
 
 ---
-
-
 
 ### 5: 遇到网络请求失败或 API 报错该如何排查？
 
@@ -929,8 +890,6 @@ print(qa_system("你们的营业时间是什么时候？"))  # 输出: 工作日
 
 ---
 
-
-
 ### 6: 该项目适合什么样的用户群体？
 
 6: 该项目适合什么样的用户群体？
@@ -939,22 +898,6 @@ print(qa_system("你们的营业时间是什么时候？"))  # 输出: 工作日
 1. **注重数据隐私的用户**：因为可以部署在本地服务器或个人电脑上，所有聊天记录和 API Key 仅存储在自己手中，不像使用网页版 ChatGPT 那样担心数据泄露。
 2. **需要统一管理多个模型的用户**：对于同时使用 GPT-4、Claude（通过中转）、本地模型等多个 AI 服务的用户，kirara-ai 提供了一个统一的操作界面。
 3. **开发者与极客**：喜欢折腾自建服务、定制化 AI 体验的技术人员。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 在 `kirara-ai` 项目中，尝试定位并修改前端项目的默认主题色（例如将主色调从蓝色修改为紫色），并确保修改在所有页面生效。
-
-### 提示**: 首先需要确定项目使用的前端框架（如 React/Vue）和 UI 库（如 Tailwind CSS 或 Ant Design）。通常全局样式变量定义在全局 CSS 文件或配置文件中（如 `tailwind.config.js` 或 `styles.css`）。
-
-### 
-
----
 ## 实践建议
 
 基于 `lss233/kirara-ai` 仓库的功能特性（多模态、多平台接入、工作流、本地部署支持），以下是针对实际部署和使用的 6 条实践建议：
@@ -997,7 +940,6 @@ Kirara-AI 的核心优势之一是工作流系统，这比单纯的“人设调�
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

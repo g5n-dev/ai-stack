@@ -88,9 +88,6 @@ scenarios: ["大语言模型", "AI/ML项目"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：基于AGENTS.md的动态任务规划
 def dynamic_task_planner():
@@ -125,9 +122,6 @@ def dynamic_task_planner():
 print(dynamic_task_planner())
 ```
 
-
-
-
 ```python
 # 示例2：自适应技能组合
 def adaptive_skill_combination():
@@ -159,9 +153,6 @@ def adaptive_skill_combination():
 # 测试
 print(adaptive_skill_combination())
 ```
-
-
-
 
 ```python
 # 示例3：上下文感知决策
@@ -199,10 +190,8 @@ def context_aware_decision():
 print(context_aware_decision())
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某头部电商平台智能客服系统
 
@@ -229,8 +218,6 @@ print(context_aware_decision())
 
 ---
 
-
-
 ### 2：某跨国银行反欺诈系统
 
  2：某跨国银行反欺诈系统
@@ -255,8 +242,6 @@ print(context_aware_decision())
 - 年度欺诈损失减少约1200万美元。
 
 ---
-
-
 
 ### 3：某医疗AI辅助诊断平台
 
@@ -374,7 +359,6 @@ print(context_aware_decision())
 ---
 ## 常见问题
 
-
 ### 1: AGENTS.md 是什么？它与传统的 "Skills"（技能）定义有什么本质区别？
 
 1: AGENTS.md 是什么？它与传统的 "Skills"（技能）定义有什么本质区别？
@@ -384,8 +368,6 @@ print(context_aware_decision())
 传统的 "Skills" 通常是将特定任务封装成独立的模块或函数（例如“写邮件”、“预订餐厅”），代理需要根据用户意图去调用这些特定的工具。而 AGENTS.md 的核心思想是提供更全面、更结构化的上下文描述。它不仅仅定义“能做什么”，还定义了代理的“角色设定”、“长期目标”、“约束条件”以及“如何处理未预见的情况”。在评估中，AGENTS.md 这种基于文档或角色的定义方式，能让模型更好地理解全局语境，从而在复杂任务中表现出比单纯调用技能更高的推理能力和执行准确性。
 
 ---
-
-
 
 ### 2: 为什么在评估中，基于 AGENTS.md 的代理会优于基于 Skills 的代理？
 
@@ -399,8 +381,6 @@ print(context_aware_decision())
 
 ---
 
-
-
 ### 3: AGENTS.md 是否意味着不再需要工具调用或函数定义了？
 
 3: AGENTS.md 是否意味着不再需要工具调用或函数定义了？
@@ -410,8 +390,6 @@ print(context_aware_decision())
 可以将 AGENTS.md 视为代理的“大脑”或“操作手册”，而 Skills 是它手中的“工具”。在 Hacker News 的讨论语境中，强调 AGENTS.md 优于 Skills，通常是指**通过文档驱动的代理架构**比**单纯的技能堆砌架构**更有效。一个优秀的 AGENTS.md 实现仍然会包含对外部 API 的调用，但决策过程是由文档定义的高级逻辑驱动的，而不是由底层的函数签名驱动的。
 
 ---
-
-
 
 ### 4: 在 Hacker News 的讨论中，开发者对 AGENTS.md 的主要争议点是什么？
 
@@ -425,8 +403,6 @@ print(context_aware_decision())
 
 ---
 
-
-
 ### 5: 对于开发者来说，现在应该转向 AGENTS.md 模式吗？
 
 5: 对于开发者来说，现在应该转向 AGENTS.md 模式吗？
@@ -436,22 +412,6 @@ print(context_aware_decision())
 如果你的应用场景是**高度动态、需要复杂推理且步骤不固定**的任务（例如全能助理、复杂的数据分析代理），采用 AGENTS.md 或类似的“角色+规则”驱动模式可能会带来更好的效果。
 
 然而，如果你的应用场景是**确定性强、对延迟和准确性要求极高**的任务（例如特定的企业工作流自动化），传统的 Skills 或函数调用模式配合清晰的逻辑控制可能依然是最稳健的选择。目前的趋势是尝试将两者结合，即利用 AGENTS.md 来规划高层策略，利用 Skills 来执行具体的原子操作。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 在传统的软件开发中，"函数"（Function）与 AI Agent 语境下的 "技能"（Skill）在定义和调用方式上有何本质区别？请列举出至少两点核心差异。
-
-### 提示**: 请从输入输出的确定性、执行过程的自主性以及上下文感知能力这三个维度进行对比分析。思考传统函数是否具备“规划”能力。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://vercel.com/blog/agents-md-outperforms-skills-in-our-agent-evals](https://vercel.com/blog/agents-md-outperforms-skills-in-our-agent-evals)
@@ -460,7 +420,6 @@ print(context_aware_decision())
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

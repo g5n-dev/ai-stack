@@ -142,37 +142,8 @@ const Struct = struct {
 ---
 ## 💻 代码示例
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 ## 📚 案例研究
-
 
 ### 1：高性能游戏引擎 —— Tilengine 的 Zig 重构
 
@@ -205,8 +176,6 @@ const Sprite = packed struct {
 
 ---
 
-
-
 ### 2：嵌入式数据库 —— TigerBeetle 的内存优化
 
  2：嵌入式数据库 —— TigerBeetle 的内存优化
@@ -233,8 +202,6 @@ const records_per_block = BLOCK_SIZE / RECORD_SIZE; // 编译时常量
 - ✅ **可验证性**：内存布局公式通过单元测试自动验证，防止未来更改破坏布局假设。  
 
 ---
-
-
 
 ### 3：物联网固件 —— Zig 互操作性下的硬件寄存器映射
 
@@ -358,7 +325,6 @@ Zig 的枚举默认使用 `u_int` 类型或足以容纳所有标签的最小整�
 ---
 ## ❓ 常见问题
 
-
 ### 1: 在 Zig 中，如何使用公式来计算结构体的内存大小？
 
 1: 在 Zig 中，如何使用公式来计算结构体的内存大小？
@@ -376,8 +342,6 @@ Zig 提供了 `@offsetOf` 和 `@alignOf` 来辅助计算，最准确的方式是
 
 ---
 
-
-
 ### 2: Zig 中的 `extern` 和 `packed` 结构体在内存布局上有什么区别？
 
 2: Zig 中的 `extern` 和 `packed` 结构体在内存布局上有什么区别？
@@ -391,8 +355,6 @@ Zig 提供了 `@offsetOf` 和 `@alignOf` 来辅助计算，最准确的方式是
 
 ---
 
-
-
 ### 3: 什么是 Zig 的“安全”模式对内存布局的影响？
 
 3: 什么是 Zig 的“安全”模式对内存布局的影响？
@@ -405,8 +367,6 @@ Zig 提供了 `@offsetOf` 和 `@alignOf` 来辅助计算，最准确的方式是
 因此，如果你手动计算偏移量并发现与 `@sizeOf` 不符，通常是因为你是在 Debug 模式下运行，Zig 悄悄加了一些“保护字节”。在生产环境中，这些字节会消失。
 
 ---
-
-
 
 ### 4: 如何在 Zig 中实现类似 C 语言联合体 的数据重叠？
 
@@ -426,8 +386,6 @@ const i32_slice = std.mem.bytesAsSlice(i32, &buffer);
 
 ---
 
-
-
 ### 5: Zig 的枚举 是如何占用内存的？
 
 5: Zig 的枚举 是如何占用内存的？
@@ -440,8 +398,6 @@ const i32_slice = std.mem.bytesAsSlice(i32, &buffer);
 
 ---
 
-
-
 ### 6: 计算数组内存对齐时，需要注意什么？
 
 6: 计算数组内存对齐时，需要注意什么？
@@ -450,22 +406,6 @@ const i32_slice = std.mem.bytesAsSlice(i32, &buffer);
 
 *   **公式**：数组的对齐值 = 元素类型的对齐值。
 *   **
-
----
-## 🎯 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**: 数据对齐与填充
-
-### 假设定义了一个结构体：
-
-### ```zig
-
----
 ## 🔗 引用
 
 - **原文链接**: [https://raymondtana.github.io/math/programming/2026/01/23/zig-alignment-and-sizing.html](https://raymondtana.github.io/math/programming/2026/01/23/zig-alignment-and-sizing.html)

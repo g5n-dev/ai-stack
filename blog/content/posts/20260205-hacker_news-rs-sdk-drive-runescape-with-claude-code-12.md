@@ -97,9 +97,6 @@ scenarios: ["大语言模型"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：自动登录游戏
 def auto_login(username, password):
@@ -126,9 +123,6 @@ def auto_login(username, password):
     except Exception as e:
         print(f"登录失败: {str(e)}")
 ```
-
-
-
 
 ```python
 # 示例2：自动采集资源
@@ -162,9 +156,6 @@ def auto_mine_ore(ore_type="iron", duration=30):
     except Exception as e:
         print(f"采集过程中出错: {str(e)}")
 ```
-
-
-
 
 ```python
 # 示例3：自动战斗系统
@@ -207,10 +198,8 @@ def auto_combat(target_enemy="goblin", max_fights=10):
         print(f"战斗过程中出错: {str(e)}")
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：独立游戏开发者的自动化脚本测试
 
@@ -230,8 +219,6 @@ def auto_combat(target_enemy="goblin", max_fights=10):
 
 ---
 
-
-
 ### 2：游戏社区的内容创作工具
 
  2：游戏社区的内容创作工具
@@ -249,8 +236,6 @@ def auto_combat(target_enemy="goblin", max_fights=10):
 内容生成速度提高了80%，社区活跃度提升了30%。玩家能够及时获取高质量的游戏信息，社区的内容创作负担显著减轻，同时增强了用户粘性。
 
 ---
-
-
 
 ### 3：游戏工作室的运营数据分析
 
@@ -370,7 +355,6 @@ def auto_combat(target_enemy="goblin", max_fights=10):
 ---
 ## 常见问题
 
-
 ### 1: RS-SDK 是什么？它的主要功能是什么？
 
 1: RS-SDK 是什么？它的主要功能是什么？
@@ -378,8 +362,6 @@ def auto_combat(target_enemy="goblin", max_fights=10):
 **A**: RS-SDK 是一个专为 RuneScape 游戏设计的软件开发工具包，它允许开发者通过 Claude Code（Anthropic 的 Claude AI 编程接口）来控制和自动化游戏操作。该 SDK 的主要功能是提供一个桥梁，将自然语言处理或 AI 编程逻辑与 RuneScape 的游戏机制连接起来，使开发者能够编写脚本或程序来自动执行游戏中的任务、战斗、技能训练等操作。
 
 ---
-
-
 
 ### 2: 使用 RS-SDK 需要哪些技术背景？
 
@@ -393,8 +375,6 @@ def auto_combat(target_enemy="goblin", max_fights=10):
 
 ---
 
-
-
 ### 3: RS-SDK 是否违反 RuneScape 的游戏规则？
 
 3: RS-SDK 是否违反 RuneScape 的游戏规则？
@@ -402,8 +382,6 @@ def auto_combat(target_enemy="goblin", max_fights=10):
 **A**: 这是一个需要谨慎处理的问题。RuneScape 的官方规则明确禁止使用未经授权的第三方工具或宏（macro）来自动化游戏操作，尤其是那些违反“公平游戏”原则的工具。如果 RS-SDK 被用于自动化操作（如自动刷怪、自动采集资源），可能会被视为违规行为，导致账号被封禁。建议在使用前仔细阅读 Jagex（RuneScape 的开发商）的服务条款，并确保仅用于合法用途，例如数据分析或教育目的。
 
 ---
-
-
 
 ### 4: 如何安装和配置 RS-SDK？
 
@@ -420,8 +398,6 @@ def auto_combat(target_enemy="goblin", max_fights=10):
 
 ---
 
-
-
 ### 5: RS-SDK 支持哪些自动化操作？
 
 5: RS-SDK 支持哪些自动化操作？
@@ -434,8 +410,6 @@ def auto_combat(target_enemy="goblin", max_fights=10):
 需要注意的是，具体支持的操作可能受限于游戏客户端的接口和 SDK 的开发进度。
 
 ---
-
-
 
 ### 6: RS-SDK 是开源的吗？如何参与开发？
 
@@ -450,8 +424,6 @@ def auto_combat(target_enemy="goblin", max_fights=10):
 
 ---
 
-
-
 ### 7: 使用 RS-SDK 时常见的错误有哪些？如何解决？
 
 7: 使用 RS-SDK 时常见的错误有哪些？如何解决？
@@ -462,22 +434,6 @@ def auto_combat(target_enemy="goblin", max_fights=10):
 3. **权限问题**：某些操作可能需要更高的游戏权限或管理员权限，检查 SDK 的配置文件。
 4. **脚本逻辑错误**：如果自动化脚本未按预期工作，可以通过日志调试或简化脚本逻辑来排查问题。
 5. **依赖冲突**：确保所有依赖库的版本兼容，必要时重新安装或更新依赖。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: 自动登录脚本实现
-
-### 问题**: 尝试使用 Claude Code 编写一个简单的脚本，实现自动登录 RuneScape 的功能。你需要处理基本的界面交互，如输入用户名和密码，并点击登录按钮。
-
-### 提示**:
-
-### 考虑使用图像识别来定位登录按钮和输入框
-
----
 ## 引用
 
 - **原文链接**: [https://github.com/MaxBittker/rs-sdk](https://github.com/MaxBittker/rs-sdk)
@@ -486,7 +442,6 @@ def auto_combat(target_enemy="goblin", max_fights=10):
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

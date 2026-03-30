@@ -43,8 +43,6 @@ Relevant source files
   * [astrbot/core/utils/metrics.py](https://github.com/AstrBotDevs/AstrBot/blob/0faf109c/astrbot/core/utils/metrics.py)
   * [dashboard/pnpm-lock.yaml](https://github.com/AstrBotDevs/AstrBot/blob/0faf109c/dashboard/pnpm-lock.yaml)
 
-
-
 ## Purpose and Scope
 
 This document provides a comprehensive introduction to AstrBot, an open-source multi-platform chatbot framework with agentic capabilities. It covers the system's purpose, core features, high-level architecture, deployment options, and supported integrations.
@@ -60,8 +58,6 @@ For detailed information about specific subsystems, see:
   * **Plugin development** : [Plugin System (Stars)](/AstrBotDevs/AstrBot/7-plugin-system-\(stars\))
   * **Web interface usage** : [Dashboard and Web Interface](/AstrBotDevs/AstrBot/8-dashboard-and-web-interface)
 
-
-
 ## What is AstrBot
 
 AstrBot is an all-in-one agentic chatbot platform designed for deployment across mainstream instant messaging platforms. It provides conversational AI infrastructure for individuals, developers, and teams, enabling rapid construction of production-ready AI applications within existing workflow tools.
@@ -74,8 +70,6 @@ AstrBot is an all-in-one agentic chatbot platform designed for deployment across
   * Enterprise knowledge base interfaces
   * Multi-agent orchestration systems
 
-
-
 **Technical Foundation:**
 
   * Written in Python 3.10+
@@ -83,8 +77,6 @@ AstrBot is an all-in-one agentic chatbot platform designed for deployment across
   * Modular plugin system with hot-reload support
   * Web-based management dashboard with Vue.js frontend
   * Flexible deployment via Docker, `uv`, or system package managers
-
-
 
 Sources: [README.md1-286](https://github.com/AstrBotDevs/AstrBot/blob/0faf109c/README.md#L1-L286) [README_en.md1-297](https://github.com/AstrBotDevs/AstrBot/blob/0faf109c/README_en.md#L1-L297)
 
@@ -122,7 +114,6 @@ Sources: [README.md172-215](https://github.com/AstrBotDevs/AstrBot/blob/0faf109c
 
 ### Agentic Features
 
-
 **Key Features:**
 
   1. **Agent Sandbox** : Isolated execution environment for code and shell commands at [astrbot/core/agent/sandbox](https://github.com/AstrBotDevs/AstrBot/blob/0faf109c/astrbot/core/agent/sandbox)
@@ -132,14 +123,11 @@ Sources: [README.md172-215](https://github.com/AstrBotDevs/AstrBot/blob/0faf109c
   5. **Knowledge Base** : Vector search with FAISS and BM25 ranking for RAG capabilities
   6. **Subagent Orchestration** : Hierarchical multi-agent systems with task routing
 
-
-
 Sources: [README.md36-50](https://github.com/AstrBotDevs/AstrBot/blob/0faf109c/README.md#L36-L50)
 
 ## System Architecture Overview
 
 ### Entry Point and Core Lifecycle
-
 
 The application lifecycle begins at [main.py1-10](https://github.com/AstrBotDevs/AstrBot/blob/0faf109c/main.py#L1-L10) which invokes the runtime bootstrap that instantiates `InitialLoader`. This core lifecycle manager initializes all subsystems in dependency order:
 
@@ -150,12 +138,9 @@ The application lifecycle begins at [main.py1-10](https://github.com/AstrBotDevs
   5. **Conversation Tracking** : `ConversationManager` initializes session storage
   6. **Dashboard** : Quart-based web server starts on configured port
 
-
-
 Sources: [README.md69-148](https://github.com/AstrBotDevs/AstrBot/blob/0faf109c/README.md#L69-L148)
 
 ### Message Flow Architecture
-
 
 Messages flow through a 4-stage pipeline defined at [astrbot/core/pipeline/](https://github.com/AstrBotDevs/AstrBot/blob/0faf109c/astrbot/core/pipeline/):
 
@@ -164,22 +149,17 @@ Messages flow through a 4-stage pipeline defined at [astrbot/core/pipeline/](htt
   3. **ResultDecorateStage** : Content safety, TTS/T2I conversion, reply formatting
   4. **RespondStage** : Message validation and transmission
 
-
-
 The `ProcessStage` can invoke plugin handlers registered in `star_handlers_registry` or trigger agent execution with tool calling capabilities.
 
 Sources: High-level diagram "Diagram 3: Message Processing Pipeline Flow"
 
 ### Configuration Architecture
 
-
 Configuration is hierarchical with three layers:
 
   1. **Defaults** : `DEFAULT_CONFIG` at [astrbot/core/config/default.py1-900](https://github.com/AstrBotDevs/AstrBot/blob/0faf109c/astrbot/core/config/default.py#L1-L900) provides ~900 lines of baseline settings
   2. **User Overrides** : JSON files in `config/` directory override defaults
   3. **Runtime Modifications** : `SharedPreferences` API allows in-memory updates
-
-
 
 The configuration system has an importance score of 699.50, making it the highest-priority subsystem. It controls all aspects of platform behavior, provider selection, feature enablement, and safety policies.
 
@@ -400,9 +380,6 @@ AstrBot 在抽象层上做了一个巨大的**妥协与交换**：它将**异构
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：基础插件开发框架
 def example_plugin_framework():
@@ -424,7 +401,6 @@ def example_plugin_framework():
                 return True  # 表示消息已被处理
             return False  # 继续传递给其他插件
 ```
-
 
 1. 导入必要的AstrBot API模块
 2. 使用@register装饰器注册插件
@@ -451,7 +427,6 @@ def example_scheduled_task():
                 return True
             return False
 ```
-
 
 1. 导入ScheduleEvent处理定时事件
 2. 使用time模块设置触发时间
@@ -506,10 +481,8 @@ def example_database_plugin():
             return False
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某二次元游戏社区 Discord 服务器
 
@@ -535,8 +508,6 @@ def example_database_plugin():
 3. 通过统一的 Bot 管理后台，大幅降低了运维复杂度，服务器稳定性从每月崩溃 2-3 次优化至全年无故障运行。
 
 ---
-
-
 
 ### 2：高校计算机学院新生答疑群
 
@@ -805,7 +776,6 @@ AstrBot 作为聊天机器人，频繁的数据库读写操作可能成为性能
 - 采用异步编程架构，有效提升了机器人在处理高并发消息时的响应速度和稳定性。
 - 拥有活跃的开发者社区和详细的文档，降低了新手上手和二次开发的门槛。
 
-
 ---
 ## 学习路径
 
@@ -907,7 +877,6 @@ AstrBot 作为聊天机器人，频繁的数据库读写操作可能成为性能
 ---
 ## 常见问题
 
-
 ### 1: AstrBot 是什么？它主要用来做什么？
 
 1: AstrBot 是什么？它主要用来做什么？
@@ -915,8 +884,6 @@ AstrBot 作为聊天机器人，频繁的数据库读写操作可能成为性能
 **A**: AstrBot 是一个基于 Python 开发的跨平台 QQ/OneBot 机器人框架。它主要用于在聊天软件（如 QQ）中实现自动化管理、娱乐互动、消息推送等功能。作为一个框架，它支持通过插件系统来扩展功能，用户可以根据需求安装不同的插件来实现诸如 AI 对话、群管、签到、查询数据等具体功能，适用于搭建社群管理助手或娱乐机器人。
 
 ---
-
-
 
 ### 2: 如何安装和部署 AstrBot？
 
@@ -931,8 +898,6 @@ AstrBot 作为聊天机器人，频繁的数据库读写操作可能成为性能
 
 ---
 
-
-
 ### 3: AstrBot 支持哪些消息协议？如何连接 QQ？
 
 3: AstrBot 支持哪些消息协议？如何连接 QQ？
@@ -945,8 +910,6 @@ AstrBot 作为聊天机器人，频繁的数据库读写操作可能成为性能
 
 ---
 
-
-
 ### 4: 如何安装和管理插件？
 
 4: 如何安装和管理插件？
@@ -957,8 +920,6 @@ AstrBot 作为聊天机器人，频繁的数据库读写操作可能成为性能
 安装后，大部分插件会在配置目录下生成独立的配置文件，你可以根据需要修改参数。
 
 ---
-
-
 
 ### 5: 运行 AstrBot 对服务器配置有什么要求？
 
@@ -971,8 +932,6 @@ AstrBot 作为聊天机器人，频繁的数据库读写操作可能成为性能
 
 ---
 
-
-
 ### 6: 启动时提示连接失败或报错怎么办？
 
 6: 启动时提示连接失败或报错怎么办？
@@ -982,22 +941,6 @@ AstrBot 作为聊天机器人，频繁的数据库读写操作可能成为性能
 2.  **核对配置**：检查 AstrBot 配置中的 WebSocket 地址（IP 和端口）是否与协议端监听的地址完全一致。
 3.  **网络防火墙**：如果是部署在远程服务器，检查防火墙是否放行了相关端口；如果是本地连接，检查 127.0.0.1 是否被正确监听。
 4.  **日志分析**：查看 AstrBot 的控制台日志或 `logs` 文件夹下的日志文件，具体的报错信息（如 `ConnectionRefusedError`）能帮助定位问题。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 在 AstrBot 的插件系统中，尝试编写一个简单的“复读机”插件。当用户在群聊中发送特定关键词（如“复读”）时，机器人能够回复完全相同的消息内容。
-
-### 提示**:
-
-### 阅读插件开发文档中关于 `on_message` 或事件监听的部分。
-
----
 ## 实践建议
 
 基于 AstrBot 作为一个集成了多平台、多模型和插件系统的 Agent 型聊天机器人基础设施，以下是 6 条针对实际部署与使用的实践建议：
@@ -1039,7 +982,6 @@ AstrBot 作为聊天机器人，频繁的数据库读写操作可能成为性能
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

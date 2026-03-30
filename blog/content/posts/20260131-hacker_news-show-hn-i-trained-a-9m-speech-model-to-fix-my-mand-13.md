@@ -79,9 +79,6 @@ scenarios: ["Web应用开发"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：加载预训练语音模型并处理音频文件
 from transformers import pipeline
@@ -107,9 +104,6 @@ def correct_mandarin_tones(audio_path):
 # 使用示例
 # corrected_audio = correct_mandarin_tones("input.wav")
 ```
-
-
-
 
 ```python
 # 示例2：批量处理音频文件并保存结果
@@ -142,9 +136,6 @@ def batch_process_audio(input_dir, output_dir):
 # 使用示例
 # batch_process_audio("input_audios", "corrected_audios")
 ```
-
-
-
 
 ```python
 # 示例3：实时声调修正与可视化
@@ -189,10 +180,8 @@ def visualize_correction(audio_path):
 # visualize_correction("sample.wav")
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：跨国企业内部沟通效率提升项目
 
@@ -212,8 +201,6 @@ def visualize_correction(audio_path):
 
 ---
 
-
-
 ### 2：沉浸式中文学习 App "LiveChinese"
 
  2：沉浸式中文学习 App "LiveChinese"
@@ -231,8 +218,6 @@ def visualize_correction(audio_path):
 实现了完全离线的声调纠错功能，评估延迟从云端时代的 1.5 秒降低至 200 毫秒以内，用户体验极其丝滑。同时，由于不再需要向服务器发送音频流，不仅大幅降低了运营成本，也消除了用户对隐私泄露的担忧。用户留存率因此提升了 15%，特别是那些对发音准确性有高要求的进阶学习者。
 
 ---
-
-
 
 ### 3：智能语音助手的方言与口音自适应
 
@@ -345,7 +330,6 @@ def visualize_correction(audio_path):
 ---
 ## 常见问题
 
-
 ### 1: 为什么要专门开发一个只有 9M 参数的小模型来纠正声调，而不是使用像 Whisper 这样的大型开源模型？
 
 1: 为什么要专门开发一个只有 9M 参数的小模型来纠正声调，而不是使用像 Whisper 这样的大型开源模型？
@@ -356,8 +340,6 @@ def visualize_correction(audio_path):
 3.  **隐私性**：9M 的小模型可以轻松在本地（甚至离线）运行，无需将用户的语音数据上传到云端，极大地保护了隐私。
 
 ---
-
-
 
 ### 2: 该模型是如何训练的？使用了什么数据集？
 
@@ -370,8 +352,6 @@ def visualize_correction(audio_path):
 
 ---
 
-
-
 ### 3: 这个模型能完全替代真人老师进行口语练习吗？
 
 3: 这个模型能完全替代真人老师进行口语练习吗？
@@ -382,8 +362,6 @@ def visualize_correction(audio_path):
 3.  **定位**：它最适合的场景是学习者独自练习时的“陪练”，帮助你建立肌肉记忆，让你在开口时对声调更有自信。
 
 ---
-
-
 
 ### 4: 该模型在浏览器或手机端运行时的性能表现如何？延迟是否严重？
 
@@ -396,8 +374,6 @@ def visualize_correction(audio_path):
 
 ---
 
-
-
 ### 5: 如果我有口音或者说话速度很快，模型还能准确识别吗？
 
 5: 如果我有口音或者说话速度很快，模型还能准确识别吗？
@@ -407,8 +383,6 @@ def visualize_correction(audio_path):
 2.  **语速影响**：语音处理模型通常会对输入音频进行分帧处理。语速过快可能会导致音节之间的声调曲线粘连，增加识别难度。不过，针对声调的模型通常关注的是相对音高变化，相比识别语义的 ASR 模型，它对语速的容忍度通常更高一些。
 
 ---
-
-
 
 ### 6: 除了纠正声调，这个技术还能应用在哪些场景？
 
@@ -422,30 +396,12 @@ def visualize_correction(audio_path):
 
 ---
 
-
-
 ### 7: 如何获取或试用这个模型？它是开源的吗？
 
 7: 如何获取或试用这个模型？它是开源的吗？
 
 **A**: 通常在 "Show HN" 系列帖子中，作者发布项目是为了展示成果并获取反馈。
 1.  **GitHub**：作者通常会在 GitHub 上发布模型的代码、
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 声调是普通话中最具辨识度的特征之一。请尝试从信号处理的角度分析，普通话的四个声调在基频（F0）随时间变化的轨迹上分别呈现什么几何形态？如果要在二维平面上画出它们的轮廓，你会如何描述？
-
-### 提示**: 思考“平”、“升”、“曲”、“降”这四个字在物理声学参数上的对应关系，特别是音高随时间变化的趋势。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://simedw.com/2026/01/31/ear-pronunication-via-ctc](https://simedw.com/2026/01/31/ear-pronunication-via-ctc)
@@ -454,7 +410,6 @@ def visualize_correction(audio_path):
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

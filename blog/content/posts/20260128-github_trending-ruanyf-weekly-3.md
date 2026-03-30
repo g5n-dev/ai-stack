@@ -43,8 +43,6 @@ Relevant source files
   * [docs/issue-352.md](https://github.com/ruanyf/weekly/blob/d13c574f/docs/issue-352.md)
   * [docs/issue-353.md](https://github.com/ruanyf/weekly/blob/d13c574f/docs/issue-353.md)
 
-
-
 This document provides a comprehensive overview of the "Technology Enthusiast Weekly (科技爱好者周刊)" system, an open-source weekly newsletter that shares noteworthy technology content in Chinese. The newsletter covers a wide range of technology-related topics including current trends, tools, articles, resources, and thought-provoking content. This document explains the structure, content organization, and workflows involved in the newsletter's publication and management.
 
 The repository is organized as a collection of markdown files, with each file representing a single newsletter issue. Published weekly on Fridays, the newsletter follows a consistent format that has evolved over time to include specialized sections on AI, recruitment information, and thematic discussions.
@@ -55,7 +53,6 @@ Sources: [README.md1-7](https://github.com/ruanyf/weekly/blob/d13c574f/README.md
 
 The repository follows a straightforward organization pattern:
 
-
 The main components of the repository are:
 
   * **README.md** : Serves as the index to all newsletter issues, sorted by year and month, with links to each issue. Also provides search instructions and links to additional resources.
@@ -64,8 +61,6 @@ The main components of the repository are:
     * **subjects/** : Topic-specific resource collections organized by technology area
     * **free-*.md** : Specialized collections of free resources (photos, music, software)
 
-
-
 The repository is designed to be easily navigable, with the README.md file acting as the central hub linking to all content.
 
 Sources: [README.md1-643](https://github.com/ruanyf/weekly/blob/d13c574f/README.md#L1-L643)
@@ -73,7 +68,6 @@ Sources: [README.md1-643](https://github.com/ruanyf/weekly/blob/d13c574f/README.
 ## Newsletter Issue Structure
 
 Each newsletter issue follows a consistent format with the following sections:
-
 
 These sections have evolved over time, with newer issues including additional components:
 
@@ -90,8 +84,6 @@ These sections have evolved over time, with newer issues including additional co
   11. **Subscription** : Information on how to subscribe to the newsletter
   12. **AI Related** : A newer section focusing on AI tools and developments
 
-
-
 Recent issues have included sections dedicated to AI-related content, reflecting the growing importance of this technology in the industry.
 
 Sources: [docs/issue-106.md9-393](https://github.com/ruanyf/weekly/blob/d13c574f/docs/issue-106.md#L9-L393) [docs/issue-344.md7-392](https://github.com/ruanyf/weekly/blob/d13c574f/docs/issue-344.md#L7-L392) [docs/issue-343.md8-427](https://github.com/ruanyf/weekly/blob/d13c574f/docs/issue-343.md#L8-L427)
@@ -99,7 +91,6 @@ Sources: [docs/issue-106.md9-393](https://github.com/ruanyf/weekly/blob/d13c574f
 ## Content Publication and Distribution Workflow
 
 The newsletter's publication follows a well-defined process from content collection to distribution:
-
 
 The workflow involves:
 
@@ -109,8 +100,6 @@ The workflow involves:
   4. **Publication on GitHub** : Committing the new issue to the repository in the `docs/` directory
   5. **Distribution** : Sharing through multiple channels including the author's personal blog and WeChat public account
 
-
-
 A key strength of this system is the feedback loop, where readers can contribute suggestions for future issues, creating a community-driven content cycle.
 
 Sources: [README.md3-7](https://github.com/ruanyf/weekly/blob/d13c574f/README.md#L3-L7) [docs/issue-106.md385-392](https://github.com/ruanyf/weekly/blob/d13c574f/docs/issue-106.md#L385-L392)
@@ -119,14 +108,11 @@ Sources: [README.md3-7](https://github.com/ruanyf/weekly/blob/d13c574f/README.md
 
 The repository includes multiple search methods to help users find specific content across issues:
 
-
 Three primary search methods are provided:
 
   1. **GitHub Web Search** : Using GitHub's built-in search functionality
   2. **Sourcegraph.com** : A specialized code search tool enhanced for repository content
   3. **Local Repository Search** : Command-line search using grep after cloning the repository
-
-
 
 This multi-faceted approach enables both online and offline searching capabilities, allowing users to efficiently locate specific topics across the extensive archive of newsletter issues.
 
@@ -136,15 +122,12 @@ Sources: [README.md9-27](https://github.com/ruanyf/weekly/blob/d13c574f/README.m
 
 The newsletter encourages community participation through a well-defined contribution model:
 
-
 Key aspects of the contribution model include:
 
   1. **GitHub Issues** : The primary channel for community contributions, where users can submit content suggestions, corrections, or feedback
   2. **Who's Hiring Thread** : A dedicated thread for job postings, providing a service to both employers and job-seeking readers
   3. **Content Influence** : Community suggestions directly influence newsletter content, creating a collaborative curation process
   4. **Multi-channel Distribution** : Content is shared through multiple platforms, increasing accessibility
-
-
 
 This model enables the newsletter to maintain its relevance by incorporating diverse perspectives and addressing topics that resonate with the community.
 
@@ -154,13 +137,10 @@ Sources: [README.md5-7](https://github.com/ruanyf/weekly/blob/d13c574f/README.md
 
 Beyond the weekly issues, the repository maintains specialized collections of resources organized by category:
 
-
 These resource collections serve as persistent reference guides, complementing the time-sensitive nature of the weekly newsletter issues. They are divided into two main categories:
 
   1. **Subject-Specific Resources** : Organized by technology domain (CSS, Linux, Docker, etc.), providing focused resources for practitioners in each area
   2. **Free Media Resources** : Collections of free photos, music, and software that can be used in various projects
-
-
 
 These collections are regularly updated and represent a valuable knowledge base for readers, independent of the chronological newsletter issues.
 
@@ -420,37 +400,8 @@ Feature| Description
 ---
 ## 💻 实用代码示例
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 ## 📚 真实案例研究
-
 
 ### 1：字节跳动（内部监控平台）
 
@@ -472,8 +423,6 @@ Feature| Description
 
 ---
 
-
-
 ### 2：阿里巴巴（电商推荐系统）
 
  2：阿里巴巴（电商推荐系统）
@@ -493,8 +442,6 @@ Feature| Description
 - 双十一期间系统稳定运行，支撑峰值流量 50 万 QPS 🛍️  
 
 ---
-
-
 
 ### 3：腾讯（云存储服务）
 
@@ -736,7 +683,6 @@ Feature| Description
 - 📚 **极客资源合集**：长期连载高质量的书籍、课程或视频资源（如“互联网协议入门”系列），构建系统化的自学习路径。
 - 💬 **金句与心智成长**：每期刊首的“本周图片”或段子常蕴含深刻的人生哲理与职场智慧，引发技术人的深层共鸣。
 
-
 ---
 ## 🗺️ 循序渐进的学习路径
 
@@ -817,7 +763,6 @@ Feature| Description
 ---
 ## ❓ 常见问题解答
 
-
 ### 1: ruanyf/weekly 是什么项目？
 
 1: ruanyf/weekly 是什么项目？
@@ -826,8 +771,6 @@ Feature| Description
 
 ---
 
-
-
 ### 2: 为什么这个周刊会在 GitHub Trending 榜单上出现？
 
 2: 为什么这个周刊会在 GitHub Trending 榜单上出现？
@@ -835,8 +778,6 @@ Feature| Description
 **A**: 出现在 Trending 榜单上通常是因为该仓库刚刚更新了最新一期的内容。🔥 由于阮一峰在中文技术圈拥有巨大的影响力，且周刊内容质量极高、覆盖面广（涵盖前端、后端、AI、创业等），每次更新都会吸引大量开发者访问和 Star，从而触发 GitHub 的热度算法，使其频繁进入 Trending 榜。📈
 
 ---
-
-
 
 ### 3: 如果我想阅读往期内容，应该如何查找？
 
@@ -847,8 +788,6 @@ Feature| Description
 2. **官方网站**: 阮一峰拥有专门的个人博客网站，提供了更友好的目录索引和搜索功能，适合在浏览器中长期阅读。🌐
 
 ---
-
-
 
 ### 4: 这个周刊的内容主要面向什么人群？
 
@@ -862,8 +801,6 @@ Feature| Description
 
 ---
 
-
-
 ### 5: 除了在 GitHub 上看，还有其他订阅方式吗？
 
 5: 除了在 GitHub 上看，还有其他订阅方式吗？
@@ -876,8 +813,6 @@ Feature| Description
 
 ---
 
-
-
 ### 6: 我想给周刊投稿或推荐内容，应该怎么做？
 
 6: 我想给周刊投稿或推荐内容，应该怎么做？
@@ -886,22 +821,6 @@ Feature| Description
 *   你可以直接在 GitHub 仓库的 **Issues** 板块寻找相关的投稿主题。
 *   或者按照周刊末尾提供的邮箱地址，直接发送邮件给阮一峰。✉️
 如果你的推荐被采纳，你的名字和 ID 通常会出现在下一期的刊首致谢名单中。🌟
-
----
-## 🎯 挑战与思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**:
-
-### 阮一峰的周刊中包含大量实用工具推荐。请尝试在本地搭建一个简易的“周刊阅读器”：编写一个脚本，从周刊的 HTML 存档中提取**最近 10 期**的标题，并生成一个包含链接的 Markdown 目录索引。
-
-### 提示**:
-
----
 ## 💡 实践建议
 
 针对 **ruanyf/weekly** 这个极具影响力的技术周刊仓库，以下是 7 条针对实际维护和协作场景的实践建议：

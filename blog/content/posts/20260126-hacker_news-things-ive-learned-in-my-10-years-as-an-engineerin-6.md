@@ -132,32 +132,8 @@ external_url: https://www.jampa.dev/p/lessons-learned-after-10-years-as
 ---
 ## 💻 代码示例
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 ## 📚 案例研究
-
 
 ### 1：中型SaaS平台研发效能提升
 
@@ -184,8 +160,6 @@ external_url: https://www.jampa.dev/p/lessons-learned-after-10-years-as
 
 ---
 
-
-
 ### 2：大型遗留系统重构项目
 
  2：大型遗留系统重构项目
@@ -210,8 +184,6 @@ external_url: https://www.jampa.dev/p/lessons-learned-after-10-years-as
 *   **知识共享**：通过补全文档和测试，新员工平均上手时间缩短至2周。
 
 ---
-
-
 
 ### 3：AI初创公司的团队文化转型
 
@@ -315,7 +287,6 @@ external_url: https://www.jampa.dev/p/lessons-learned-after-10-years-as
 ---
 ## ❓ 常见问题
 
-
 ### 1: 从高级工程师转型为工程经理（EM）时，最难的心理转变是什么？
 
 1: 从高级工程师转型为工程经理（EM）时，最难的心理转变是什么？
@@ -327,8 +298,6 @@ external_url: https://www.jampa.dev/p/lessons-learned-after-10-years-as
 很多新任经理会感到焦虑，觉得如果不写代码就失去了对技术的掌控感。但你需要明白：**你的产出现在等于你团队所有成员产出的总和**。你需要学会享受“通过他人成功而获得的成就感”，而不是独自解决问题的快感。
 
 ---
-
-
 
 ### 2: 工程经理还需要写代码吗？如果要，应该占多少比例？
 
@@ -345,8 +314,6 @@ external_url: https://www.jampa.dev/p/lessons-learned-after-10-years-as
 
 ---
 
-
-
 ### 3: 当团队成员的技术能力比我强时，我该如何管理？
 
 3: 当团队成员的技术能力比我强时，我该如何管理？
@@ -360,8 +327,6 @@ external_url: https://www.jampa.dev/p/lessons-learned-after-10-years-as
 4.  **借力**：让他们在技术决策上发挥领导作用，你可以专注于帮助他们的方案在组织内获得通过。
 
 ---
-
-
 
 ### 4: 如何有效地进行一对一（1-on-1）面谈？应该谈些什么？
 
@@ -382,8 +347,6 @@ external_url: https://www.jampa.dev/p/lessons-learned-after-10-years-as
 
 ---
 
-
-
 ### 5: 当团队陷入低谷或士气低落时，作为经理该怎么做？
 
 5: 当团队陷入低谷或士气低落时，作为经理该怎么做？
@@ -398,29 +361,11 @@ external_url: https://www.jampa.dev/p/lessons-learned-after-10-years-as
 
 ---
 
-
-
 ### 6: 在 hiring（招聘）时，除了技术能力，你最看重什么特质？
 
 6: 在 hiring（招聘）时，除了技术能力，你最看重什么特质？
 
 **A**: 技术能力决定了下限，但**心态和软技能决定了上限**。🚀
-
----
-## 🎯 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**:
-
-### 假设你刚接手一个新的 5 人工程团队。在最初的前 30 天里，如果只有**一次**机会与团队进行正式的“1对1”面谈，为了建立信任并了解团队现状，你应该问哪一个最核心的问题？
-
-### 提示**:
-
----
 ## 🔗 引用
 
 - **原文链接**: [https://www.jampa.dev/p/lessons-learned-after-10-years-as](https://www.jampa.dev/p/lessons-learned-after-10-years-as)

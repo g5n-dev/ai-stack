@@ -59,8 +59,6 @@ Relevant source files
   * [pyproject.toml](https://github.com/AstrBotDevs/AstrBot/blob/106f3520/pyproject.toml)
   * [requirements.txt](https://github.com/AstrBotDevs/AstrBot/blob/106f3520/requirements.txt)
 
-
-
 ## Purpose and Scope
 
 This document introduces AstrBot, an open-source multi-platform LLM chatbot orchestration framework. It provides a high-level overview of the system's purpose, architecture, and core components. For detailed information about specific features, see [What is AstrBot](/AstrBotDevs/AstrBot/1.1-what-is-astrbot). For deployment instructions, see [Installation and Deployment](/AstrBotDevs/AstrBot/1.2-installation-and-deployment). For in-depth architecture details, see [System Architecture Overview](/AstrBotDevs/AstrBot/1.3-system-architecture-overview).
@@ -77,9 +75,6 @@ The framework version `4.13.1` is defined in [astrbot/core/config/default.py8](h
 
   3. **Extensible Plugin Ecosystem** : A registry system (`StarHandlerRegistry`) manages ~800 available plugins that can intercept messages, add custom commands, and extend bot functionality without modifying core code.
 
-
-
-
 For a comprehensive feature list and use cases, see [What is AstrBot](/AstrBotDevs/AstrBot/1.1-what-is-astrbot).
 
 **Sources** : [README.md37-40](https://github.com/AstrBotDevs/AstrBot/blob/106f3520/README.md#L37-L40) [astrbot/core/config/default.py8](https://github.com/AstrBotDevs/AstrBot/blob/106f3520/astrbot/core/config/default.py#L8-L8) [pyproject.toml4](https://github.com/AstrBotDevs/AstrBot/blob/106f3520/pyproject.toml#L4-L4)
@@ -91,7 +86,6 @@ For a comprehensive feature list and use cases, see [What is AstrBot](/AstrBotDe
 ### Startup Flow
 
 AstrBot's initialization follows a strict dependency order to ensure subsystems are available when needed. The entry point is `main.py`, which orchestrates the startup sequence:
-
 
 **Key Components** :
 
@@ -110,8 +104,6 @@ The initialization order is critical:
   2. **Providers** initialize before plugins, as plugins may call LLM APIs during startup
   3. **Platforms** start last, ensuring message handlers are registered before events arrive
 
-
-
 **Sources** : [main.py79-106](https://github.com/AstrBotDevs/AstrBot/blob/106f3520/main.py#L79-L106) [main.py28-40](https://github.com/AstrBotDevs/AstrBot/blob/106f3520/main.py#L28-L40) [astrbot/core/config/default.py9](https://github.com/AstrBotDevs/AstrBot/blob/106f3520/astrbot/core/config/default.py#L9-L9)
 
 * * *
@@ -121,7 +113,6 @@ The initialization order is critical:
 ### High-Level Component Model
 
 AstrBot's architecture separates concerns into five major subsystems that communicate through well-defined interfaces:
-
 
 **Sources** : Diagram 1 from provided system diagrams, [astrbot/core/config/default.py21-203](https://github.com/AstrBotDevs/AstrBot/blob/106f3520/astrbot/core/config/default.py#L21-L203)
 
@@ -136,8 +127,6 @@ The configuration system is the foundation of AstrBot, defined in `DEFAULT_CONFI
   * **`DEFAULT_CONFIG`** : Defines all possible configuration options with default values
   * **`CONFIG_METADATA_2`** : Provides type validation and WebUI rendering metadata at [astrbot/core/config/default.py234-880](https://github.com/AstrBotDevs/AstrBot/blob/106f3520/astrbot/core/config/default.py#L234-L880)
 
-
-
 The user's configuration file `data/cmd_config.json` is merged with defaults during initialization. The system supports:
 
   * Platform adapter configurations (`platform` array)
@@ -145,8 +134,6 @@ The user's configuration file `data/cmd_config.json` is merged with defaults dur
   * Plugin selection (`plugin_set`)
   * Routing rules (`path_mapping`)
   * Feature toggles (TTS, STT, content safety, etc.)
-
-
 
 For detailed configuration documentation, see [Configu
 
@@ -370,9 +357,6 @@ AstrBot 的范式是 **“Lifecycle Management”**。它不仅仅是一个库�
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：基础命令处理与消息回复
 def handle_command(message: str) -> str:
@@ -402,7 +386,6 @@ def handle_command(message: str) -> str:
 print(handle_command("帮助"))  # 输出帮助信息
 print(handle_command("天气怎么样"))  # 输出天气信息
 ```
-
 
 1. 消息预处理（转小写、去空格）
 2. 命令匹配（使用字典实现路由）
@@ -448,7 +431,6 @@ print(manager.execute("hello", "张三"))  # 输出：你好，张三！
 print(manager.execute("time"))  # 输出当前时间
 ```
 
-
 1. 插件注册机制
 2. 动态调用插件
 3. 参数传递处理
@@ -493,10 +475,8 @@ mq.add_message("用户C的消息")
 mq.process_messages()
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某大学动漫社团自动化运营
 
@@ -515,8 +495,6 @@ mq.process_messages()
 实现了 90% 的基础咨询工作自动化，管理员仅需处理复杂的纠纷问题。活动报名效率提升，不再出现漏统计情况。社团成员满意度显著提高，且机器人的配置文件被文档化记录，解决了管理层换届导致的信息丢失问题。
 
 ---
-
-
 
 ### 2：独立游戏开发者社群管理
 
@@ -735,7 +713,6 @@ AstrBot 依赖插件扩展功能，若插件存在内存泄漏或死循环，会
 - 框架对指令处理进行了深度优化，能够高效响应用户输入，并支持复杂的权限管理和群组控制逻辑。
 - 拥有活跃的开发者社区和详细的文档，降低了二次开发和自定义机器人的门槛，适合 Python 开发者进行学习与贡献。
 
-
 ---
 ## 学习路径
 
@@ -847,7 +824,6 @@ AstrBot 依赖插件扩展功能，若插件存在内存泄漏或死循环，会
 ---
 ## 常见问题
 
-
 ### 1: AstrBot 是什么？它主要用来做什么？
 
 1: AstrBot 是什么？它主要用来做什么？
@@ -855,8 +831,6 @@ AstrBot 依赖插件扩展功能，若插件存在内存泄漏或死循环，会
 **A**: AstrBot 是一个基于 Python 开发的跨平台 QQ/OneBot 机器人框架。它主要用于在聊天软件中实现自动化管理、娱乐互动和实用功能。作为 AstrBotDevs 团队开发的项目，它通常被用于搭建群管机器人、游戏机器人或提供 AI 对话服务的载体，支持通过插件系统扩展功能。
 
 ---
-
-
 
 ### 2: 如何安装和部署 AstrBot？
 
@@ -871,8 +845,6 @@ AstrBot 依赖插件扩展功能，若插件存在内存泄漏或死循环，会
 
 ---
 
-
-
 ### 3: AstrBot 支持哪些消息协议（后端）？
 
 3: AstrBot 支持哪些消息协议（后端）？
@@ -884,8 +856,6 @@ AstrBot 依赖插件扩展功能，若插件存在内存泄漏或死循环，会
 
 ---
 
-
-
 ### 4: 如何为 AstrBot 安装和管理插件？
 
 4: 如何为 AstrBot 安装和管理插件？
@@ -896,8 +866,6 @@ AstrBot 依赖插件扩展功能，若插件存在内存泄漏或死循环，会
 *   **管理**：你可以通过控制台命令或聊天指令来启用、禁用、更新或卸载已安装的插件。
 
 ---
-
-
 
 ### 5: 运行 AstrBot 时报错 "Connection refused" 或连接不上客户端怎么办？
 
@@ -911,8 +879,6 @@ AstrBot 依赖插件扩展功能，若插件存在内存泄漏或死循环，会
 
 ---
 
-
-
 ### 6: AstrBot 是否支持 Docker 部署？
 
 6: AstrBot 是否支持 Docker 部署？
@@ -921,22 +887,6 @@ AstrBot 依赖插件扩展功能，若插件存在内存泄漏或死循环，会
 *   你可以在项目仓库或官方文档中找到 `Dockerfile` 或 `docker-compose.yml` 文件。
 *   使用命令构建镜像或直接拉取作者发布的 Docker 镜像。
 *   运行时记得通过 `-v` 参数将本地的配置目录挂载到容器内，以保证配置持久化。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: AstrBot 是一个基于 Python 的 QQ 机器人框架。假设你已经成功运行了机器人，请尝试在配置文件中修改机器人的默认指令前缀（例如将默认的 `/` 修改为 `!`），并确保机器人重启后能通过新前缀响应指令。
-
-### 提示**: AstrBot 通常使用 YAML 或 JSON 格式进行配置管理，请检查项目根目录下的配置文件（如 `config.yml` 或 `settings.json`），找到控制命令前缀的字段并进行修改。
-
-### 
-
----
 ## 实践建议
 
 基于 AstrBot 作为一个集成多平台、多模型及插件系统的智能体架构，以下是针对实际部署与开发的 6 条实践建议：
@@ -985,7 +935,6 @@ AstrBot 依赖插件扩展功能，若插件存在内存泄漏或死循环，会
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

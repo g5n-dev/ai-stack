@@ -86,9 +86,6 @@ scenarios: ["DevOps/运维"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：使用Python脚本通过SSH远程启动VM
 import paramiko
@@ -133,9 +130,6 @@ def start_remote_vm(hostname, username, password, vm_name):
 # 使用示例
 start_remote_vm("192.168.1.100", "admin", "password", "my_vm")
 ```
-
-
-
 
 ```python
 # 示例2：使用OpenStack API动态分配GPU资源
@@ -196,9 +190,6 @@ create_gpu_instance(
 )
 ```
 
-
-
-
 ```python
 # 示例3：使用Kubernetes API动态创建GPU Pod
 from kubernetes import client, config
@@ -257,10 +248,8 @@ def create_gpu_pod(pod_name, gpu_type="nvidia.com/gpu", gpu_count=1):
 create_gpu_pod("gpu-pod-example", gpu_count=2)
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：AIGC 初创公司的快速原型验证
 
@@ -280,8 +269,6 @@ create_gpu_pod("gpu-pod-example", gpu_count=2)
 
 ---
 
-
-
 ### 2：遗留系统的自动化安全审计
 
  2：遗留系统的自动化安全审计
@@ -299,8 +286,6 @@ create_gpu_pod("gpu-pod-example", gpu_count=2)
 审计环境的部署实现了完全自动化，消除了人工配置错误的风险。安全团队能够以极低的成本频繁启动多个并行审计节点，将原本需要 3 周完成的全量代码审计工作压缩到了 3 天内完成，并成功发现了多个潜在的高危漏洞。
 
 ---
-
-
 
 ### 3：高校科研实验室的弹性算力调度
 
@@ -409,7 +394,6 @@ create_gpu_pod("gpu-pod-example", gpu_count=2)
 ---
 ## 常见问题
 
-
 ### 1: 这个工具的核心功能是什么？
 
 1: 这个工具的核心功能是什么？
@@ -417,8 +401,6 @@ create_gpu_pod("gpu-pod-example", gpu_count=2)
 **A**: 该工具是一个技能扩展，旨在将 Claude Code 或 Codex 等 AI 编码模型与云基础设施管理相结合。它的核心功能是允许 AI 模型不仅仅是编写代码，还能直接执行操作来启动和管理虚拟机以及 GPU 实例。这意味着开发者可以通过自然语言指令，让 AI 自动完成开发环境的配置、服务器的部署以及高性能计算资源的分配，从而打通从“代码生成”到“环境部署”的最后一公里。
 
 ---
-
-
 
 ### 2: 使用该工具启动 GPU 实例的主要应用场景有哪些？
 
@@ -432,8 +414,6 @@ create_gpu_pod("gpu-pod-example", gpu_count=2)
 
 ---
 
-
-
 ### 3: 在安全性方面，将 AI 与云基础设施（如创建虚拟机）连接是否存在风险？
 
 3: 在安全性方面，将 AI 与云基础设施（如创建虚拟机）连接是否存在风险？
@@ -445,8 +425,6 @@ create_gpu_pod("gpu-pod-example", gpu_count=2)
 
 ---
 
-
-
 ### 4: 它支持哪些云服务提供商（如 AWS, Azure, GCP）？
 
 4: 它支持哪些云服务提供商（如 AWS, Azure, GCP）？
@@ -454,8 +432,6 @@ create_gpu_pod("gpu-pod-example", gpu_count=2)
 **A**: 根据此类开源工具的常见设计，它通常通过 API 与云服务商进行交互。虽然具体的支持列表取决于该项目的实现细节，但一般设计上会倾向于支持主流的公有云提供商，例如 AWS（通过 EC2 API）、Google Cloud（通过 Compute Engine API）或 Azure。用户通常需要配置相应的 API 密钥或凭证文件，以便该技能能够代表用户向云服务商发起请求。
 
 ---
-
-
 
 ### 5: 相比于手动配置服务器，使用 AI 自动化部署有哪些优势？
 
@@ -468,8 +444,6 @@ create_gpu_pod("gpu-pod-example", gpu_count=2)
 
 ---
 
-
-
 ### 6: 成本如何控制？是否会因为 AI 误操作导致高昂的云服务账单？
 
 6: 成本如何控制？是否会因为 AI 误操作导致高昂的云服务账单？
@@ -478,22 +452,6 @@ create_gpu_pod("gpu-pod-example", gpu_count=2)
 1.  **自动销毁**：可以设定任务（如模型训练）完成后自动终止实例。
 2.  **预算警报**：集成云厂商的计费 API，当预估费用超过阈值时发出警告。
 3.  **Spot 实例支持**：AI 可以被配置为优先使用廉价的 Spot 实例来运行容错性高的任务，从而大幅降低成本。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 自然语言指令解析器
-
-### 问题**: 设计一个简单的 CLI 工具，能够接受用户输入的自然语言指令（如“启动一个 Ubuntu 服务器”），并将其转换为调用云服务商 API 的标准命令。
-
-### 提示**: 可以使用 Python 的 `argparse` 库处理命令行参数，并尝试定义一套简单的指令映射规则。考虑如何解析关键词（如 OS 类型）并填充到 API 调用模板中。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://cloudrouter.dev](https://cloudrouter.dev)
@@ -502,7 +460,6 @@ create_gpu_pod("gpu-pod-example", gpu_count=2)
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

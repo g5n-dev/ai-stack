@@ -140,37 +140,8 @@ Velox 是 Tauri 在苹果生态的一个“Swift
 ---
 ## 💻 代码示例
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 ## 📚 案例研究
-
 
 ### 1：某金融科技初创公司的跨平台数据展示应用
 
@@ -192,8 +163,6 @@ Velox 是 Tauri 在苹果生态的一个“Swift
 📱 **原生体验**：应用获得了 macOS 和 iOS 的原生系统集成支持，包括 Touch ID 认证和原生通知，用户满意度显著提升。
 
 ---
-
-
 
 ### 2：专业创意工具开发商的混合引擎重构
 
@@ -321,7 +290,6 @@ Swift 编译的二进制通常较小，但仍需通过配置减小最终包体�
 ---
 ## ❓ 常见问题
 
-
 ### 1: 什么是 Velox，它与 Tauri 有什么区别？
 
 1: 什么是 Velox，它与 Tauri 有什么区别？
@@ -329,8 +297,6 @@ Swift 编译的二进制通常较小，但仍需通过配置减小最终包体�
 **A**: Velox 是由著名开发者 Miguel de Icaza 发起的一个实验性项目，旨在将 Tauri 的架构移植到 Swift 语言环境中。Tauri 原本是基于 Rust（后端）和 Web 技术（前端）构建的，而 Velox 的核心思想是保留 Tauri 的设计理念——即使用操作系统原生的 WebView 来构建轻量级桌面应用，但将后端逻辑从 Rust 替换为 Swift。这使得 Velox 成为了一个“Swift 版本的 Tauri”，它不是 Tauri 的官方分支，而是一个概念验证性质的移植。
 
 ---
-
-
 
 ### 2: 为什么 Miguel de Icaza 选择用 Swift 而不是 Rust？
 
@@ -341,8 +307,6 @@ Swift 编译的二进制通常较小，但仍需通过配置减小最终包体�
 
 ---
 
-
-
 ### 3: Velox 是用来替代 Tauri 的吗？
 
 3: Velox 是用来替代 Tauri 的吗？
@@ -351,8 +315,6 @@ Swift 编译的二进制通常较小，但仍需通过配置减小最终包体�
 Velox 的价值在于为 macOS 开发者提供了一个除了 Electron 和原生 SwiftUI/AppKit 之外的新选择。如果你只需要开发 macOS 应用，并且更喜欢 Swift 语法而不是 Rust，那么 Velox 是一个极具吸引力的替代方案；但如果你的应用需要跨平台，原版 Tauri 依然是更好的选择。
 
 ---
-
-
 
 ### 4: 使用 Velox 构建的应用与 Electron 相比，性能真的更好吗？
 
@@ -363,8 +325,6 @@ Velox（像 Tauri 一样）利用操作系统自带的 WebView（macOS 上是 WK
 
 ---
 
-
-
 ### 5: Velox 目前处于什么阶段，可以用于生产环境吗？
 
 5: Velox 目前处于什么阶段，可以用于生产环境吗？
@@ -374,30 +334,12 @@ Velox（像 Tauri 一样）利用操作系统自带的 WebView（macOS 上是 WK
 
 ---
 
-
-
 ### 6: 前端开发者可以使用 JavaScript 框架（如 React, Vue）配合 Velox 吗？
 
 6: 前端开发者可以使用 JavaScript 框架（如 React, Vue）配合 Velox 吗？
 
 **A**: 可以。Velox 遵循与 Tauri 类似的架构模式：前端层依然是标准的 Web 技术。这意味着你完全可以使用 React、Vue、Svelte 或任何现代 Web 框架来构建 UI。
 区别在于后端 API 的调用方式。在 Tauri 中，你通过 JavaScript 调用 Rust 编写的 API；而在 Velox 中，虽然具体实现细节可能仍在演进，但目标是让你能够轻松地从 JavaScript 端调用 Swift 编写的函数或对象。对于前端开发者来说，这通常意味着只需切换一下后端调用的 SDK 即可。
-
----
-## 🎯 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**:
-
-### Tauri 和 Velox 的核心架构都依赖于在操作系统层面创建一个隐形的窗口来渲染 Web 内容。请编写一段伪代码或简单的逻辑描述，展示如何在 Swift (macOS/iOS) 中初始化一个标准的 `WKWebView`，并将其设置为“无边框”且“透明”背景。
-
-### 提示**:
-
----
 ## 🔗 引用
 
 - **原文链接**: [https://github.com/velox-apps/velox](https://github.com/velox-apps/velox)

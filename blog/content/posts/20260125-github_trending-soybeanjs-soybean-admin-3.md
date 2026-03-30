@@ -49,8 +49,6 @@ Relevant source files
   * [public/favicon.svg](https://github.com/soybeanjs/soybean-admin/blob/c6d97dba/public/favicon.svg)
   * [src/layouts/modules/global-footer/index.vue](https://github.com/soybeanjs/soybean-admin/blob/c6d97dba/src/layouts/modules/global-footer/index.vue)
 
-
-
 **SoybeanAdmin** is an enterprise-grade admin template built with Vue 3, TypeScript, and modern frontend tooling. This documentation covers the architecture, core systems, and development workflows for the main application and its internal packages.
 
 This page provides a high-level introduction to the project structure, technology stack, and key architectural patterns. For detailed information on specific subsystems, refer to:
@@ -60,8 +58,6 @@ This page provides a high-level introduction to the project structure, technolog
   * State management patterns: [State Management](/soybeanjs/soybean-admin/4-state-management)
   * Routing configuration: [Routing System](/soybeanjs/soybean-admin/5-routing-system)
   * Build and development setup: [Build and Development](/soybeanjs/soybean-admin/8-build-and-development)
-
-
 
 **Sources:** [README.md29-46](https://github.com/soybeanjs/soybean-admin/blob/c6d97dba/README.md#L29-L46) [package.json1-110](https://github.com/soybeanjs/soybean-admin/blob/c6d97dba/package.json#L1-L110)
 
@@ -129,7 +125,6 @@ Technology| Version| Purpose
 
 ## Monorepo Package Architecture
 
-
 The project follows a **pnpm workspace monorepo** structure with 8 internal packages under the `@sa/*` namespace. The `@sa/utils` package serves as the foundational layer with zero internal dependencies, while higher-level packages build upon it.
 
 ### Internal Package Summary
@@ -151,15 +146,12 @@ Package| Location| Purpose| Dependencies
 
 ## Application Bootstrap Flow
 
-
 The application bootstraps in a carefully ordered sequence to ensure dependencies are initialized before dependent systems:
 
   1. **Plugin Initialization** \- Global utilities and libraries configured
   2. **Store Setup** \- Pinia stores registered with persistence
   3. **Router Setup** \- Vue Router configured with guards
   4. **Component Mount** \- Root component renders with providers
-
-
 
 **Sources:** Referenced from high-level diagrams (Diagram 4)
 
@@ -442,28 +434,8 @@ Soybean Admin 旨在解决**中后台管理系统“重复造轮子”**的问�
 ---
 ## 💻 实用代码示例
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 ## 📚 真实案例研究
-
 
 ### 1：某中型SaaS企业管理系统重构
 
@@ -490,8 +462,6 @@ Soybean Admin 旨在解决**中后台管理系统“重复造轮子”**的问�
 
 ---  
 
-
-
 ### 2：智慧校园数据中台项目
 
  2：智慧校园数据中台项目  
@@ -516,8 +486,6 @@ Soybean Admin 旨在解决**中后台管理系统“重复造轮子”**的问�
 - 后续新增子系统接入时间从平均5天缩短至0.5天  
 
 ---  
-
-
 
 ### 3：跨境电商ERP系统快速迭代
 
@@ -734,7 +702,6 @@ Soybean Admin 旨在解决**中后台管理系统“重复造轮子”**的问�
 - 🌏 国际化与规范：内置完善的 **i18n** 国际化支持及严格的 **ESLint + Prettier** 代码规范，为团队协作开发和多语言项目提供了标准示范。
 - 📦 模块化状态管理：深入使用了 **Pinia** 进行状态管理，并结合 TypeScript 实现了高度的类型安全，有效解决了大型应用中的状态管理难题。
 
-
 ---
 ## 🗺️ 循序渐进的学习路径
 
@@ -819,7 +786,6 @@ Soybean Admin 旨在解决**中后台管理系统“重复造轮子”**的问�
 ---
 ## ❓ 常见问题解答
 
-
 ### 1: SoybeanAdmin 是什么？它主要解决了什么问题？
 
 1: SoybeanAdmin 是什么？它主要解决了什么问题？
@@ -834,8 +800,6 @@ Soybean Admin 旨在解决**中后台管理系统“重复造轮子”**的问�
 
 ---
 
-
-
 ### 2: 启动项目前需要哪些环境准备？
 
 2: 启动项目前需要哪些环境准备？
@@ -847,8 +811,6 @@ Soybean Admin 旨在解决**中后台管理系统“重复造轮子”**的问�
 3.  **IDE**: 推荐 **VS Code**，并配合官方推荐的插件（如 Volar）以获得最佳的开发体验。
 
 ---
-
-
 
 ### 3: 如何从 GitHub 克隆并本地运行该项目？
 
@@ -878,8 +840,6 @@ Soybean Admin 旨在解决**中后台管理系统“重复造轮子”**的问�
 
 ---
 
-
-
 ### 4: 该项目使用了哪些核心技术栈？
 
 4: 该项目使用了哪些核心技术栈？
@@ -897,8 +857,6 @@ Soybean Admin 旨在解决**中后台管理系统“重复造轮子”**的问�
 
 ---
 
-
-
 ### 5: 项目是否支持权限管理和多布局切换？
 
 5: 项目是否支持权限管理和多布局切换？
@@ -910,8 +868,6 @@ Soybean Admin 旨在解决**中后台管理系统“重复造轮子”**的问�
 
 ---
 
-
-
 ### 6: 如果在使用中遇到问题，如何寻求帮助或参与贡献？
 
 6: 如果在使用中遇到问题，如何寻求帮助或参与贡献？
@@ -922,22 +878,6 @@ Soybean Admin 旨在解决**中后台管理系统“重复造轮子”**的问�
 2.  **GitHub Issues**：如果你发现了 Bug 或有功能建议，可以在 GitHub 仓库的 [Issues](https://github.com/soybeanjs/soybean-admin/issues) 板块提问。提问时建议使用英文或中文，并详细描述问题复现步骤。
 3.  ** Discussions**：GitHub 的 Discussions 区适合用于技术交流或询问非 Bug 类的问题。
 4.  **贡献代码**：欢迎提交 Pull Request (PR) 来帮助修复 Bug 或增加新功能。
-
----
-## 🎯 挑战与思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**:
-
-### 基于 SoybeanAdmin 的模板特性，如何快速创建一个包含"搜索表单"和"数据表格"的标准 CRUD（增删改查）页面模块？请描述需要配置哪些关键文件。
-
-### 提示**:
-
----
 ## 💡 实践建议
 
 基于 `soybean-admin` 的技术栈（Vue3, Vite7, NaiveUI, UnoCSS）及其“清新优雅、高颜值”的定位，以下是 6 条实际开发中的实践建议：

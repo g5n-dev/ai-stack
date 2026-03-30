@@ -72,9 +72,6 @@ scenarios: ["大语言模型", "AI/ML项目"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：获取Hacker News热门故事标题
 import requests
@@ -114,9 +111,6 @@ if __name__ == "__main__":
     for i, story in enumerate(top_stories, 1):
         print(f"{i}. {story['title']}\n   {story['link']}\n")
 ```
-
-
-
 
 ```python
 # 示例2：Hacker News故事搜索功能
@@ -161,9 +155,6 @@ if __name__ == "__main__":
     for i, story in enumerate(results, 1):
         print(f"{i}. {story['title']} ({story['points']} points)\n   {story['url']}\n")
 ```
-
-
-
 
 ```python
 # 示例3：Hacker News评论分析
@@ -214,10 +205,8 @@ if __name__ == "__main__":
     print(f"平均评论长度: {analysis['avg_comment_length']:.1f}词")
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：Cognition AI 公司的 Devin
 
@@ -237,8 +226,6 @@ Devin 被设计为世界上第一个完全自主的 AI 软件工程师。它不�
 
 ---
 
-
-
 ### 2：Rabbit R1 个人助理设备
 
  2：Rabbit R1 个人助理设备
@@ -256,8 +243,6 @@ Rabbit 开发了基于“Large Action Model”（LAM）的操作系统和 R1 设
 Rabbit R1 在 CES 展会上引起了巨大轰动，首发即售罄数万台。其实际价值在于打破了 App 之间的壁垒，用户不再需要下载和打开特定的 App，只需通过 Agent 即可完成跨应用的服务调用。这种基于 UI 交互的 Agent 技能展示了一种无需 API 生态即可实现 AI 自动化的新路径。
 
 ---
-
-
 
 ### 3：UiPath 文档理解自动化
 
@@ -382,7 +367,6 @@ Agent 的思考过程通常包含多轮串行调用，如果单个技能响应�
 ---
 ## 常见问题
 
-
 ### 1: 什么是 Agent Skills（代理技能）？
 
 1: 什么是 Agent Skills（代理技能）？
@@ -391,8 +375,6 @@ Agent 的思考过程通常包含多轮串行调用，如果单个技能响应�
 
 ---
 
-
-
 ### 2: Agent Skills 与传统的 Function Calling 有什么区别？
 
 2: Agent Skills 与传统的 Function Calling 有什么区别？
@@ -400,8 +382,6 @@ Agent 的思考过程通常包含多轮串行调用，如果单个技能响应�
 **A**: 虽然 Agent Skills 和 Function Calling（函数调用）都涉及让模型执行特定的代码逻辑，但概念层级和侧重点不同。Function Calling 通常指模型生成参数以调用特定函数的机制，是底层的接口能力。而 Agent Skills 是更高层的抽象概念，它不仅包含函数调用，还包含了技能的发现、选择、组合以及执行后的结果处理。在 Agent 系统中，Skills 往往是模块化的，代理可以根据任务动态决定使用哪个 Skill，甚至可以将多个 Skills 串联起来使用（例如：先搜索信息，再写入文件）。
 
 ---
-
-
 
 ### 3: 如何为 AI 代理定义和注册一个新的 Skill？
 
@@ -414,8 +394,6 @@ Agent 的思考过程通常包含多轮串行调用，如果单个技能响应�
 在开发中，开发者通常需要编写 Schema（如 JSON Schema）来描述参数，并将这些信息注入到系统的提示词或上下文中，以便大模型理解何时以及如何调用该 Skill。
 
 ---
-
-
 
 ### 4: Agent Skills 的主要应用场景有哪些？
 
@@ -430,8 +408,6 @@ Agent 的思考过程通常包含多轮串行调用，如果单个技能响应�
 
 ---
 
-
-
 ### 5: 在 Hacker News 的讨论中，关于 Agent Skills 有哪些技术挑战或关注点？
 
 5: 在 Hacker News 的讨论中，关于 Agent Skills 有哪些技术挑战或关注点？
@@ -444,8 +420,6 @@ Agent 的思考过程通常包含多轮串行调用，如果单个技能响应�
 
 ---
 
-
-
 ### 6: 未来 Agent Skills 的发展趋势是什么？
 
 6: 未来 Agent Skills 的发展趋势是什么？
@@ -455,22 +429,6 @@ Agent 的思考过程通常包含多轮串行调用，如果单个技能响应�
 *   **多代理协作**：不同的 Agent 拥有不同的专业技能，通过协作解决更宏大的问题。
 *   **标准化**：类似于 OpenAPI 或 MCP（Model Context Protocol）等标准的出现，使得 Skills 可以跨平台、跨模型复用。
 *   **自学习能力**：代理能够根据执行结果反馈，自动优化其使用 Skills 的策略，甚至通过学习生成新的 Skills。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 编写一个 Agent Skill，能够接收一个 URL 作为输入参数，访问该网页并提取页面的标题和正文文本（去除 HTML 标签）。
-
-### 提示**: 可以使用 Python 的 `requests` 库获取网页内容，并结合 `BeautifulSoup` 来解析 HTML 结构。注意处理网络请求可能出现的超时或非 200 状态码异常。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://agentskills.io/home](https://agentskills.io/home)
@@ -479,7 +437,6 @@ Agent 的思考过程通常包含多轮串行调用，如果单个技能响应�
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

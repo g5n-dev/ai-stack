@@ -122,37 +122,8 @@ Miguel 的文笔一贯**平实、诚恳且逻辑通顺**。他没有堆砌太多
 ---
 ## 💻 代码示例
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 ## 📚 案例研究
-
 
 ### 1：独立开发者 Alex 的跨平台效率工具开发
 
@@ -173,8 +144,6 @@ Alex 决定尝试 **Velox**。他将应用的核心逻辑（数据处理、本�
 - **用户体验**：在 macOS 上保持了纯粹的 Swift 原生体验，而在 Windows 上也拥有极高的响应速度，不再被误认为是“套壳网页”。
 
 ---
-
-
 
 ### 2：金融科技初创公司的内部合规仪表盘
 
@@ -292,14 +261,11 @@ Velox 项目通常涉及复杂的混合语言编译。使用 Swift Package Manag
 ---
 ## ❓ 常见问题
 
-
 ### 1: Velox 是什么？它与 Tauri 有什么区别？
 
 1: Velox 是什么？它与 Tauri 有什么区别？
 
 **A**: Velox 是由著名开发者 Miguel de Icaza 发起的一个实验性项目，旨在将 Tauri 的核心概念移植到 Swift 生态系统。Tauri 通常使用 Rust 作为后端语言，而 Velox 则使用 **Swift**（并结合 SwiftUI）来构建 macOS 和 iOS 原生应用。简而言之，Velox 可以被视为“Swift 版本的 Tauri”，它继承了 Tauri 构建轻量级、安全应用的哲学，但主要面向苹果平台的开发者。
-
-
 
 ### 2: 为什么要用 Swift 重写 Tauri？使用 Velox 有什么优势？
 
@@ -310,15 +276,11 @@ Velox 项目通常涉及复杂的混合语言编译。使用 Swift Package Manag
 2.  **原生集成**：Swift 与苹果生态系统的 API 集成更加紧密，访问原生功能（如 iCloud、特定的苹果框架）可能更加方便。
 3.  **工具链统一**：开发者可以使用 Xcode 作为主要的开发环境，无需配置复杂的 Rust 工具链。
 
-
-
 ### 3: Velox 目前支持哪些平台？可以用它开发 Windows 或 Android 应用吗？
 
 3: Velox 目前支持哪些平台？可以用它开发 Windows 或 Android 应用吗？
 
 **A**: 目前 Velox 主要专注于 **苹果平台**，具体包括 macOS 和 iOS。由于 Swift 语言本身的特性（虽然 Swift 有 Linux 版本，但 UI 框架支持有限），Velox 并不像原始版本的 Tauri 那样支持 Windows、Linux 或 Android。如果你需要跨平台开发（包括桌面和移动端的全面覆盖），原版的 Tauri（使用 Rust）仍然是更好的选择。
-
-
 
 ### 4: Velox 的架构是怎样的？它如何处理 Web 前端和原生后端？
 
@@ -329,15 +291,11 @@ Velox 项目通常涉及复杂的混合语言编译。使用 Swift Package Manag
 2.  **原生后端**：后端逻辑由 Swift 编写，运行在原生进程或 App 内部。
 3.  **IPC 通信**：前端和后端通过消息传递进行通信。Velox 提供了一种机制，允许 JavaScript 调用 Swift 函数，并异步获取结果，从而实现 Web UI 与原生功能的交互。
 
-
-
 ### 5: Velox 现在可以用于生产环境吗？
 
 5: Velox 现在可以用于生产环境吗？
 
 **A**: **不建议**。根据 Miguel de Icaza 在 Hacker News 上的描述，Velox 目前处于 **概念验证** 阶段。虽然它已经能够运行基本的演示程序（如调用系统 API 或渲染网页），但它可能还缺少完善的生产级特性，例如全面的安全审计、自动更新机制、打包工具链的稳定性等。建议关注其项目进展，等到版本成熟后再考虑用于商业项目。
-
-
 
 ### 6: 如何开始尝试 Velox？
 
@@ -348,29 +306,11 @@ Velox 项目通常涉及复杂的混合语言编译。使用 Swift Package Manag
 2.  安装 **Xcode**。
 3.  克隆项目源码并按照 README 中的指示编译示例代码。由于项目较新，可能需要自行解决一些依赖问题或编译环境配置。
 
-
-
 ### 7: 原版 Tauri 和 Velox 的性能表现如何对比？
 
 7: 原版 Tauri 和 Velox 的性能表现如何对比？
 
 **A**: 理论上，Rust（Tauri 后端）在内存安全和极端性能优化方面具有优势，且跨平台一致性更好。Swift（Velox 后端）虽然在苹果设备上性能极佳，且对 SwiftUI 的支持使得 UI 渲染非常流畅，但其限制在于无法跨出苹果生态。对于纯苹果应用开发，Velox 的性能体验应该与原生 Swift 应用无异，且优于传统的 Electron 应用。
-
----
-## 🎯 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**：
-
-### Tauri 的核心优势之一是利用系统自带的 WebView 而不是打包一个完整的 Chromium（如 Electron）。请分析一下，如果将 Tauri 移植到 Swift (Velox) 环境下，应该调用 macOS 或 iOS 的哪个原生 API 来渲染 Web 内容？这种做法对最终应用的体积有多大程度的缩减？
-
-### 提示**：
-
----
 ## 🔗 引用
 
 - **原文链接**: [https://github.com/velox-apps/velox](https://github.com/velox-apps/velox)

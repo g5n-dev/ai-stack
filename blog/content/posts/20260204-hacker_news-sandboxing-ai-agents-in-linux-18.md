@@ -31,7 +31,6 @@ scenarios: ["AI/ML项目", "DevOps/运维"]
 ---
 ## 评论
 
-
 ### 一、 核心观点与论证结构
 
 **中心观点：**
@@ -79,9 +78,6 @@ scenarios: ["AI/ML项目", "DevOps/运维"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：使用chroot限制文件系统访问
 import os
@@ -112,9 +108,6 @@ def create_chroot_jail():
 # 限制AI代理只能访问特定目录，防止其访问敏感系统文件。
 ```
 
-
-
-
 ```python
 # 示例2：使用Linux命名空间隔离进程
 import subprocess
@@ -137,9 +130,6 @@ def run_in_isolated_namespace():
 # 说明：这个示例展示了如何使用Linux命名空间(unshare)创建隔离的
 # 进程、网络和挂载命名空间，使AI代理无法看到或影响主系统的进程和网络。
 ```
-
-
-
 
 ```python
 # 示例3：使用seccomp限制系统调用
@@ -178,10 +168,8 @@ def run_with_seccomp_filter():
 # 系统调用，防止其执行危险操作如文件修改、网络访问等。
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某大型互联网社交媒体平台
 
@@ -197,8 +185,6 @@ def run_with_seccomp_filter():
 
 ---
 
-
-
 ### 2：某 Fintech 金融科技初创公司
 
  2：某 Fintech 金融科技初创公司
@@ -212,8 +198,6 @@ def run_with_seccomp_filter():
 **效果**: 这一方案极大地增强了客户信任，成功通过了 ISO 27001 信息安全认证。在实际运行中，即使 Agent 遭遇了模拟的供应链攻击尝试，也无法建立外网连接，数据实现了零泄漏。该安全特性成为产品核心竞争力之一，帮助公司在半年内签约了数十家对数据合规要求极高的金融机构。
 
 ---
-
-
 
 ### 3：某开源自动化运维项目
 
@@ -326,7 +310,6 @@ def run_with_seccomp_filter():
 ---
 ## 常见问题
 
-
 ### 1: 为什么需要为 AI Agent 在 Linux 上构建沙箱环境？
 
 1: 为什么需要为 AI Agent 在 Linux 上构建沙箱环境？
@@ -334,8 +317,6 @@ def run_with_seccomp_filter():
 **A**: AI Agent 通常需要高度的自主性来执行任务，例如读取文件、修改配置或运行脚本。如果直接在宿主机上运行，一旦 Agent 产生幻觉或受到提示注入攻击，可能会执行破坏性命令（如 `rm -rf /`）或泄露敏感数据。沙箱技术通过限制 Agent 的可见性和权限，确保其只能访问特定的目录和资源，从而在利用其自动化能力的同时，保障系统的安全性和稳定性。
 
 ---
-
-
 
 ### 2: 在 Linux 中实现 AI Agent 沙箱有哪些主流技术方案？
 
@@ -350,8 +331,6 @@ def run_with_seccomp_filter():
 
 ---
 
-
-
 ### 3: 如何解决沙箱环境中的网络访问限制问题？
 
 3: 如何解决沙箱环境中的网络访问限制问题？
@@ -359,22 +338,6 @@ def run_with_seccomp_filter():
 **A**: AI Agent 往往需要联网查询信息或调用 API。在 Linux 沙箱中，可以通过以下方式管理网络：
 1. **用户模式网络**：在 Docker 或 QEMU 中默认启用，允许容器通过 NAT 访问外网，但外界无法直接访问容器。
 2. **VPN 或隧道**：如果 Agent 需要访问内
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 基础用户隔离
-
-### 假设你需要运行一个不可信的 AI Agent，它只需要读取 `/data/input` 目录中的文件并将结果写入 `/data/output`。请设计一个 Linux 命令，使用 `unshare` 或类似工具，将该 Agent 的进程隔离在一个新的 Mount Namespace 中，并确保它只能看到这两个目录，而无法访问根文件系统的其他部分（如 `/etc/passwd` 或 `/home`）。
-
-### 提示**: 考虑使用 `unshare -m` 创建挂载命名空间，然后使用 `mount --bind` 将特定目录挂载到新的根目录结构中，并使用 `chroot` 限制根目录视图。
-
----
 ## 引用
 
 - **原文链接**: [https://blog.senko.net/sandboxing-ai-agents-in-linux](https://blog.senko.net/sandboxing-ai-agents-in-linux)
@@ -383,7 +346,6 @@ def run_with_seccomp_filter():
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

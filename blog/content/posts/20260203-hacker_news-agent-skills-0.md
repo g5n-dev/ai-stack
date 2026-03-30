@@ -86,9 +86,6 @@ scenarios: ["大语言模型", "AI/ML项目"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：获取Hacker News热门新闻标题
 import requests
@@ -124,9 +121,6 @@ if __name__ == "__main__":
     for i, story in enumerate(stories, 1):
         print(f"{i}. {story['title']}\n   {story['link']}\n")
 ```
-
-
-
 
 ```python
 # 示例2：搜索Hacker News历史文章
@@ -166,9 +160,6 @@ if __name__ == "__main__":
         print(f"   By {article['author']}")
         print(f"   {article['url']}\n")
 ```
-
-
-
 
 ```python
 # 示例3：监控Hacker News关键词
@@ -213,10 +204,8 @@ if __name__ == "__main__":
     monitor_hn_keywords(['python', 'AI', 'machine learning'])
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：Cognition AI (Devin)
 
@@ -232,8 +221,6 @@ if __name__ == "__main__":
 
 ---
 
-
-
 ### 2：Rabbit (R1)
 
  2：Rabbit (R1)
@@ -247,8 +234,6 @@ if __name__ == "__main__":
 **效果**: R1 在 CES 2024 上引发了广泛关注。通过赋予 Agent 操纵现有 App 的技能，用户无需下载新的插件或等待 API 接口，即可通过语音指令完成复杂的跨应用服务预订，极大地简化了人机交互流程。
 
 ---
-
-
 
 ### 3：Imbue
 
@@ -370,7 +355,6 @@ if __name__ == "__main__":
 ---
 ## 常见问题
 
-
 ### 1: 什么是 Agent Skills？
 
 1: 什么是 Agent Skills？
@@ -379,8 +363,6 @@ if __name__ == "__main__":
 
 ---
 
-
-
 ### 2: Agent Skills 与普通的 Function Calling 有什么区别？
 
 2: Agent Skills 与普通的 Function Calling 有什么区别？
@@ -388,8 +370,6 @@ if __name__ == "__main__":
 **A**: 虽然 Agent Skills 的底层实现往往依赖于 Function Calling，但两者的侧重点不同。Function Calling 更多是一种技术机制，允许模型将输出转化为结构化的参数以调用函数；而 Agent Skills 是一种更高层的抽象概念。它不仅包含函数调用，还包含了技能的发现、编排、生命周期管理以及上下文记忆。例如，一个 Agent 可能需要动态决定在特定时刻使用“搜索”技能还是“代码执行”技能，并处理技能之间的依赖关系，这属于 Agent Skills 的范畴。
 
 ---
-
-
 
 ### 3: 如何为 Agent 开发或定义一个新的 Skill？
 
@@ -403,8 +383,6 @@ if __name__ == "__main__":
 
 ---
 
-
-
 ### 4: Hacker News 上关于 Agent Skills 讨论的热点技术栈有哪些？
 
 4: Hacker News 上关于 Agent Skills 讨论的热点技术栈有哪些？
@@ -417,8 +395,6 @@ if __name__ == "__main__":
 
 ---
 
-
-
 ### 5: 在实际应用中，Agent Skills 面临的最大挑战是什么？
 
 5: 在实际应用中，Agent Skills 面临的最大挑战是什么？
@@ -430,29 +406,11 @@ if __name__ == "__main__":
 
 ---
 
-
-
 ### 6: Agent Skills 的未来发展方向是什么？
 
 6: Agent Skills 的未来发展方向是什么？
 
 **A**: 业界普遍认为 Agent Skills 正在从“硬编码的工具列表”向“动态学习的技能集”演进。未来的 Agent 可能不再需要开发者手动定义每一个 Skill 的 JSON Schema，而是能够通过阅读文档或观察人类操作，自动学习并掌握新的工具。此外，标准化协议（如 MCP）的推广将使得不同 AI 应用之间的技能互通成为可能，形成一个类似于“App Store”的 Agent Skills 生态系统。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 编写一个简单的 Agent，能够自动访问 Hacker News (https://news.ycombinator.com/) 首页，提取当前排名前 5 的文章标题和对应的链接，并将其格式化为 JSON 字符串输出。
-
-### 提示**: 你需要使用 HTTP 请求工具（如 Python 的 `requests` 或 `httpx`）获取页面内容。Hacker News 的 HTML 结构非常规范，标题通常位于 `<span>` 标签中，且 class 包含 `titleline`。你可以使用 `BeautifulSoup` 或 `lxml` 进行解析。注意处理可能出现的网络超时或非 200 状态码。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://agentskills.io/home](https://agentskills.io/home)
@@ -461,7 +419,6 @@ if __name__ == "__main__":
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

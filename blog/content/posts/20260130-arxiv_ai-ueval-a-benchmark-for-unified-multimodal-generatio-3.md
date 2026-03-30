@@ -232,7 +232,6 @@ $$ Score(model, query) = Evaluator(MLLM(model\_output), Rubric(reference)) $$
 - 该研究指出了当前多模态大模型在跨模态生成（特别是音频和视频）以及复杂指令遵循方面仍存在显著的性能瓶颈。
 - 通过广泛的实验和人类对齐验证，UEval 证明了基于 MLLM 的评估方法在多模态生成任务上比传统指标具有更高的准确性和鲁棒性。
 
-
 ---
 ## 学习路径
 
@@ -327,7 +326,6 @@ $$ Score(model, query) = Evaluator(MLLM(model\_output), Rubric(reference)) $$
 ---
 ## 常见问题
 
-
 ### 1: UEval 是什么？它的主要目的是什么？
 
 1: UEval 是什么？它的主要目的是什么？
@@ -335,8 +333,6 @@ $$ Score(model, query) = Evaluator(MLLM(model\_output), Rubric(reference)) $$
 **A**: UEval 是一个全新的统一多模态生成基准测试。随着大型多模态模型的发展，现有的评估基准往往局限于单一任务（如图像描述或视觉问答）或单一输入模态。UEval 的主要目的是提供一个全面的平台，用于评估 LMM 在处理多种输入模态（如图像、视频、音频）并执行多种生成任务（如描述、问答、推理）时的综合性能。它旨在解决现有评估碎片化的问题，推动模型向更通用、更统一的人工智能方向发展。
 
 ---
-
-
 
 ### 2: UEval 评估基准包含哪些具体的任务和模态？
 
@@ -349,8 +345,6 @@ $$ Score(model, query) = Evaluator(MLLM(model\_output), Rubric(reference)) $$
 
 ---
 
-
-
 ### 3: 与现有的多模态基准测试（如 MMBench 或 SEED-Bench）相比，UEval 有什么独特之处？
 
 3: 与现有的多模态基准测试（如 MMBench 或 SEED-Bench）相比，UEval 有什么独特之处？
@@ -362,8 +356,6 @@ $$ Score(model, query) = Evaluator(MLLM(model\_output), Rubric(reference)) $$
 
 ---
 
-
-
 ### 4: UEval 如何对模型的生成结果进行评估？使用什么指标？
 
 4: UEval 如何对模型的生成结果进行评估？使用什么指标？
@@ -373,8 +365,6 @@ $$ Score(model, query) = Evaluator(MLLM(model\_output), Rubric(reference)) $$
 2.  **传统指标**：对于部分任务，可能会辅以 BLEU、METEOR 或 CIDEr 等指标来衡量文本重叠度，但在语义理解方面，LLM 赋能的评估通常权重更高。
 
 ---
-
-
 
 ### 5: UEval 基准测试的主要发现或结论是什么？
 
@@ -387,8 +377,6 @@ $$ Score(model, query) = Evaluator(MLLM(model\_output), Rubric(reference)) $$
 
 ---
 
-
-
 ### 6: 如何使用 UEval 来测试我自己的模型？
 
 6: 如何使用 UEval 来测试我自己的模型？
@@ -397,22 +385,6 @@ $$ Score(model, query) = Evaluator(MLLM(model\_output), Rubric(reference)) $$
 1.  **下载数据**：从官方仓库（通常是 GitHub 或 Hugging Face）获取 UEval 的测试数据集和提示词。
 2.  **运行推理**：将测试数据输入到待测的多模态模型中，收集生成的文本结果。
 3.  **自动评估**：使用官方提供的评估脚本（通常集成了 GPT-4 的 API 调用），将生成的结果与标准答案进行对比，从而获得最终的评分。具体的实现细节和代码通常会在论文的附录或官方项目中提供。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: UEval 旨在统一多模态生成任务。请列举出论文中提到的至少四种由该基准测试覆盖的具体下游任务（如视觉问答、图像描述等），并简述这四种任务在输入和输出形式上的主要区别。
-
-### 提示**: 重点关注论文引言或实验设置部分中关于“任务多样性”的描述，思考哪些任务只需要文本输出，哪些需要图像输出，以及哪些任务需要同时处理图像和文本作为输入条件。
-
-### 
-
----
 ## 引用
 
 - **ArXiv**: [http://arxiv.org/abs/2601.22155v1](http://arxiv.org/abs/2601.22155v1)
@@ -421,7 +393,6 @@ $$ Score(model, query) = Evaluator(MLLM(model\_output), Rubric(reference)) $$
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

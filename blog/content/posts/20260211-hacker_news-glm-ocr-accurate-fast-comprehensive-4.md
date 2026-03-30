@@ -76,9 +76,6 @@ GLM-OCR 提出了一种基于多模态大语言模型（MLLM）的新型 OCR 范
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：提取图片中的表格数据并转为CSV
 import pandas as pd
@@ -106,9 +103,6 @@ def extract_table_to_csv(image_path, output_csv):
 # 使用示例
 extract_table_to_csv("table_image.png", "output_table.csv")
 ```
-
-
-
 
 ```python
 # 示例2：批量处理多语言图片OCR
@@ -141,9 +135,6 @@ def batch_multilingual_ocr(input_folder, output_folder):
 # 使用示例
 batch_multilingual_ocr("input_images", "output_texts")
 ```
-
-
-
 
 ```python
 # 示例3：从身份证图片提取结构化信息
@@ -183,10 +174,8 @@ for k, v in id_info.items():
     print(f"{k}: {v}")
 ```
 
-
 ---
 ## 常见问题
-
 
 ### 1: GLM-OCR 的核心优势是什么，它如何平衡准确性和速度？
 
@@ -196,8 +185,6 @@ for k, v in id_info.items():
 
 ---
 
-
-
 ### 2: GLM-OCR 中的 "Comprehensive"（全面性）具体体现在哪些方面？
 
 2: GLM-OCR 中的 "Comprehensive"（全面性）具体体现在哪些方面？
@@ -205,8 +192,6 @@ for k, v in id_info.items():
 **A**: "Comprehensive" 主要体现在其对复杂场景的适应能力和广泛的文档类型支持上。具体而言，它通常具备以下特点：首先，支持多语言识别，能够处理中英文混合等多种语言环境；其次，具备强大的版面分析能力，可以精准识别文档中的标题、段落、表格、公式甚至图片等不同元素；最后，它还能处理扭曲、模糊或低光照等低质量图像，确保在非理想条件下也能提取出完整的信息。
 
 ---
-
-
 
 ### 3: 与 Tesseract 或 PaddleOCR 等开源工具相比，GLM-OCR 有什么不同？
 
@@ -216,8 +201,6 @@ for k, v in id_info.items():
 
 ---
 
-
-
 ### 4: GLM-OCR 是否支持表格和公式的结构化提取？
 
 4: GLM-OCR 是否支持表格和公式的结构化提取？
@@ -225,8 +208,6 @@ for k, v in id_info.items():
 **A**: 是的，基于其 "Comprehensive" 的特性，GLM-OCR 设计上支持对复杂文档结构的深度解析。这包括不仅识别表格中的文字，还能还原表格的行列结构，将其转化为可编辑的格式（如 HTML 或 Markdown）。对于数学公式，它通常具备将图像中的公式转换为 LaTeX 代码或标准数学符号的能力，这对于处理学术论文和技术文档尤为重要。
 
 ---
-
-
 
 ### 5: 该技术适合部署在移动端或边缘设备上吗？
 
@@ -236,8 +217,6 @@ for k, v in id_info.items():
 
 ---
 
-
-
 ### 6: 如何评估 GLM-OCR 在实际业务场景中的效果？
 
 6: 如何评估 GLM-OCR 在实际业务场景中的效果？
@@ -246,29 +225,11 @@ for k, v in id_info.items():
 
 ---
 
-
-
 ### 7: GLM-OCR 是否能够理解文档内容并进行语义分析？
 
 7: GLM-OCR 是否能够理解文档内容并进行语义分析？
 
 **A**: 虽然 GLM-OCR 的核心功能是光学字符识别，但结合现代大模型技术栈，它极有可能具备初步的语义理解能力。这意味着它不仅能“看”到文字，还能在一定程度上“理解”文字的含义。例如，在处理简历时，它能自动提取关键信息字段；在处理合同时，能识别出甲乙双方及金额。这种视觉与语义的结合是其区别于传统 OCR 工具的重要特征。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 在OCR任务中，"准确率"和"速度"通常是一对矛盾的性能指标。请列举三种在不显著降低识别准确率的前提下，能够有效提升OCR系统处理速度的工程化手段。
-
-### 提示**: 从数据预处理流程、模型架构设计以及推理部署策略这三个维度进行思考，考虑哪些环节是计算密集型的，哪些可以通过冗余裁剪来换取时间。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://github.com/zai-org/GLM-OCR](https://github.com/zai-org/GLM-OCR)
@@ -277,7 +238,6 @@ for k, v in id_info.items():
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

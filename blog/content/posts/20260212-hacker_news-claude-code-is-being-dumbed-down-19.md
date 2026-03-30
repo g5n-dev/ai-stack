@@ -94,9 +94,6 @@ scenarios: ["大语言模型", "AI/ML项目"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：文本复杂度分析器
 def analyze_text_complexity(text: str) -> dict:
@@ -136,9 +133,6 @@ sample_text = "Artificial intelligence is transforming industries through advanc
 print(analyze_text_complexity(sample_text))
 ```
 
-
-
-
 ```python
 # 示例2：版本对比工具
 def compare_versions(version1: str, version2: str) -> str:
@@ -168,9 +162,6 @@ print(compare_versions("2.1.3", "2.1.4"))  # 升级
 print(compare_versions("3.0", "2.9.9"))    # 降级
 ```
 
-
-
-
 ```python
 # 示例3：功能完整性检查器
 def check_feature_completeness(current_features: set, expected_features: set) -> dict:
@@ -195,10 +186,8 @@ expected = {"AI", "代码生成", "调试", "文档", "多语言支持", "插件
 print(check_feature_completeness(current, expected))
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某中型电商公司
 
@@ -214,8 +203,6 @@ print(check_feature_completeness(current, expected))
 
 ---
 
-
-
 ### 2：独立开发者项目
 
  2：独立开发者项目
@@ -229,8 +216,6 @@ print(check_feature_completeness(current, expected))
 **效果**: 调试准确率恢复至80%，但工具切换增加约10%的时间成本。
 
 ---
-
-
 
 ### 3：开源项目维护
 
@@ -359,7 +344,6 @@ print(check_feature_completeness(current, expected))
 ---
 ## 常见问题
 
-
 ### 1: 为什么会有"Claude Code正在变笨"的讨论？
 
 1: 为什么会有"Claude Code正在变笨"的讨论？
@@ -367,8 +351,6 @@ print(check_feature_completeness(current, expected))
 **A**: 这种讨论主要源于用户在使用Claude Code过程中观察到的现象。部分开发者反馈Claude在处理编程任务时表现不如从前，比如代码质量下降、错误率上升、或者需要更多轮次才能完成任务。这种感知可能源于多方面因素，包括模型版本的更新、使用场景的变化、或者对AI工具期望值的调整。值得注意的是，这类讨论在Hacker News等开发者社区中较为常见，往往反映了用户对AI工具性能的高度关注。
 
 ---
-
-
 
 ### 2: Claude Code的实际性能是否真的下降了？
 
@@ -378,8 +360,6 @@ print(check_feature_completeness(current, expected))
 
 ---
 
-
-
 ### 3: 哪些因素可能导致用户感觉Claude Code"变笨"了？
 
 3: 哪些因素可能导致用户感觉Claude Code"变笨"了？
@@ -387,8 +367,6 @@ print(check_feature_completeness(current, expected))
 **A**: 多个因素可能导致这种感知：首先是"新奇效应"的消退，早期用户可能对AI能力印象深刻，随着使用增加，期望值提高而满意度下降；其次是任务复杂度的变化，随着用户更深入地使用，可能遇到更具挑战性的问题；还有可能是模型更新导致的性能分布变化，某些领域改进而其他领域保持不变或略有调整；最后是用户对AI工具的理解加深，更清楚地认识到其局限性，从而产生"变笨"的错觉。
 
 ---
-
-
 
 ### 4: 如何客观评估Claude Code的性能变化？
 
@@ -398,8 +376,6 @@ print(check_feature_completeness(current, expected))
 
 ---
 
-
-
 ### 5: Anthropic对这类反馈有何回应？
 
 5: Anthropic对这类反馈有何回应？
@@ -407,8 +383,6 @@ print(check_feature_completeness(current, expected))
 **A**: Anthropic通常通过官方渠道关注用户反馈。虽然公司不会对每个具体讨论做出回应，但他们强调持续改进模型性能和用户体验。Anthropic的改进通常基于多维度评估，包括安全性和有用性的平衡。用户可以通过官方反馈渠道提交具体问题，这些反馈会被纳入产品改进流程。值得注意的是，AI模型的优化是一个持续过程，不同版本可能在特定任务上表现不同。
 
 ---
-
-
 
 ### 6: 开发者应该如何应对感知到的性能下降？
 
@@ -418,29 +392,11 @@ print(check_feature_completeness(current, expected))
 
 ---
 
-
-
 ### 7: 这类讨论对AI开发工具有何启示？
 
 7: 这类讨论对AI开发工具有何启示？
 
 **A**: 这类讨论反映了AI开发工具领域的重要趋势。它显示了用户对AI工具性能的高度关注和快速变化的期望。对开发者而言，这强调了透明沟通、持续改进和用户教育的重要性。同时，它也提醒我们，AI工具的性能评估需要多维度考虑，包括技术指标、用户体验和实际应用效果。这类讨论促进了整个行业对AI工具发展方向的思考，有助于推动更负责任和以用户为中心的AI开发。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 假设你需要为两个不同的 AI 编程助手设计一个评估基准测试。第一个助手（A）专注于快速生成代码，第二个助手（B）专注于代码安全和最佳实践。请列出至少 3 个关键评估指标，并解释为什么这些指标对评估 AI 编程工具的"智能程度"至关重要。
-
-### 提示**: 考虑代码质量、执行效率和安全性之间的权衡。思考如何量化"智能"——是速度、准确性还是解决问题的深度？
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://symmetrybreak.ing/blog/claude-code-is-being-dumbed-down](https://symmetrybreak.ing/blog/claude-code-is-being-dumbed-down)
@@ -449,7 +405,6 @@ print(check_feature_completeness(current, expected))
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

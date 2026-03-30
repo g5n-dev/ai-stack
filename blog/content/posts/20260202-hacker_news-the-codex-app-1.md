@@ -90,9 +90,6 @@ scenarios: ["AI/ML项目", "大语言模型"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：文件批量重命名工具
 import os
@@ -116,9 +113,6 @@ def batch_rename_files(directory, pattern, replacement):
 # 使用示例
 batch_rename_files("./test_files", r"IMG_(\d{4})", "photo_\1")
 ```
-
-
-
 
 ```python
 # 示例2：简单Web爬虫
@@ -148,9 +142,6 @@ titles = scrape_titles("https://example.com")
 for i, title in enumerate(titles, 1):
     print(f"{i}. {title}")
 ```
-
-
-
 
 ```python
 # 示例3：数据可视化工具
@@ -190,10 +181,8 @@ def plot_sales_data(csv_file):
 plot_sales_data("sales_data.csv")
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某中型科技初创公司（SaaS 领域）
 
@@ -212,8 +201,6 @@ plot_sales_data("sales_data.csv")
 
 ---
 
-
-
 ### 2：传统金融科技公司的内部工具部门
 
  2：传统金融科技公司的内部工具部门
@@ -230,8 +217,6 @@ plot_sales_data("sales_data.csv")
 - 代码审查的时间减少了，因为生成的代码通常遵循统一的格式和规范，减少了因风格不统一而产生的争论。
 
 ---
-
-
 
 ### 3：独立开发者构建数据可视化插件
 
@@ -343,7 +328,6 @@ plot_sales_data("sales_data.csv")
 ---
 ## 常见问题
 
-
 ### 1: The Codex App 是什么？它是如何工作的？
 
 1: The Codex App 是什么？它是如何工作的？
@@ -351,8 +335,6 @@ plot_sales_data("sales_data.csv")
 **A**: The Codex App 是一款基于人工智能技术的编程辅助工具，旨在帮助开发者更高效地编写代码、调试程序以及学习新的编程语言。它利用大型语言模型来理解代码的上下文，并根据用户的输入实时生成代码片段、函数甚至完整的模块。用户通常只需编写注释或描述意图，Codex 就能自动补全相应的代码逻辑，支持 Python、JavaScript、TypeScript 等多种主流编程语言。
 
 ---
-
-
 
 ### 2: The Codex App 支持哪些编程语言和开发环境？
 
@@ -362,8 +344,6 @@ plot_sales_data("sales_data.csv")
 
 ---
 
-
-
 ### 3: 使用 The Codex App 生成的代码是否安全且可以直接用于生产环境？
 
 3: 使用 The Codex App 生成的代码是否安全且可以直接用于生产环境？
@@ -371,8 +351,6 @@ plot_sales_data("sales_data.csv")
 **A**: 虽然 Codex App 生成的代码通常语法正确且逻辑通顺，但直接将其用于生产环境存在一定风险。AI 模型是基于互联网上的开源代码训练的，有时可能会引入存在安全漏洞的代码片段、过时的库函数调用或包含潜在版权争议的代码。因此，开发者始终需要对 AI 生成的内容进行严格的代码审查、安全扫描和测试，以确保其符合企业的安全标准和性能要求。
 
 ---
-
-
 
 ### 4: The Codex App 是免费的吗，它的定价模式是怎样的？
 
@@ -382,8 +360,6 @@ plot_sales_data("sales_data.csv")
 
 ---
 
-
-
 ### 5: 如果 The Codex App 生成的代码不准确或包含错误，应该如何处理？
 
 5: 如果 The Codex App 生成的代码不准确或包含错误，应该如何处理？
@@ -391,8 +367,6 @@ plot_sales_data("sales_data.csv")
 **A**: 遇到代码不准确的情况是使用 AI 编程工具过程中的常态。处理方法包括：首先，优化你的输入提示词，更详细地描述函数的输入输出类型、边界条件和业务逻辑，这能显著提高生成代码的准确率；其次，利用 Codex 的上下文理解能力，在编辑器中提供更多相关代码作为参考；最后，将 Codex 视为“副驾驶”而非“自动驾驶”，将其生成的代码作为草稿，由人工进行调试、重构和单元测试，从而修复逻辑错误。
 
 ---
-
-
 
 ### 6: The Codex App 与 GitHub Copilot 有什么区别？
 
@@ -402,29 +376,11 @@ plot_sales_data("sales_data.csv")
 
 ---
 
-
-
 ### 7: 使用 The Codex App 时，我的代码隐私和数据安全如何保障？
 
 7: 使用 The Codex App 时，我的代码隐私和数据安全如何保障？
 
 **A**: 数据隐私是开发者非常关心的问题。大多数主流 AI 编程工具（包括 Codex App）都会在隐私政策中声明，不会将用户的私有代码用于训练其公共模型。通常，发送给 AI 的代码片段仅用于处理当前的请求，且在传输和处理过程中采用加密技术。然而，对于企业用户而言，建议仔细阅读服务提供商的企业协议（BAA），确认是否提供完全的数据隔离保证，以确保敏感的知识产权不会泄露。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 在 Codex App 的使用场景中，当用户输入的 Prompt（提示词）过于模糊时，模型往往无法生成预期的代码。请设计一个输入预处理逻辑，用于检测用户输入是否包含具体的函数名或变量名，若不包含，则弹窗引导用户补充更多上下文信息。
-
-### 提示**: 考虑使用正则表达式来检测常见的编程语言关键字（如 `function`, `def`, `var`）或特定的标点符号（如括号）。如果输入全是自然语言且没有技术术语，则判定为模糊输入。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://openai.com/index/introducing-the-codex-app](https://openai.com/index/introducing-the-codex-app)
@@ -433,7 +389,6 @@ plot_sales_data("sales_data.csv")
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

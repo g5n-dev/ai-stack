@@ -111,37 +111,8 @@ external_url: https://amutable.com/about
 ---
 ## 💻 代码示例
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 ## 📚 案例研究
-
 
 ### 1：某大型金融机构的核心交易系统现代化
 
@@ -160,8 +131,6 @@ external_url: https://amutable.com/about
 
 ---
 
-
-
 ### 2：某云服务商的混合云管理平台
 
  2：某云服务商的混合云管理平台
@@ -178,8 +147,6 @@ external_url: https://amutable.com/about
 - 🌐 支持客户在 5 分钟内完成服务迁移（通过 `systemd-nspawn` 容器）  
 
 ---
-
-
 
 ### 3：某汽车制造商的边缘计算网关
 
@@ -289,7 +256,6 @@ external_url: https://amutable.com/about
 ---
 ## ❓ 常见问题
 
-
 ### 1: Lennart Poettering 和 Christian Brauner 究竟是谁？
 
 1: Lennart Poettering 和 Christian Brauner 究竟是谁？
@@ -301,8 +267,6 @@ external_url: https://amutable.com/about
 
 ---
 
-
-
 ### 2: 他们创立的新公司叫什么名字？主要业务是什么？
 
 2: 他们创立的新公司叫什么名字？主要业务是什么？
@@ -312,8 +276,6 @@ external_url: https://amutable.com/about
 实际上，如果指的是最近引起轰动的新闻（源于 Hacker News 等渠道），他们两人联合创办了一家专注于**系统级基础设施**的新公司，旨在为 Linux 生态提供企业级支持、开发新的底层技术，并围绕 systemd、容器技术和微服务架构提供解决方案。该公司的目标是填补 Linux 系统底层的商业化服务空白。
 
 ---
-
-
 
 ### 3: 为什么要创立这家新公司？背后的动机是什么？
 
@@ -327,8 +289,6 @@ external_url: https://amutable.com/about
 
 ---
 
-
-
 ### 4: 这对 systemd 和 Linux 生态会有什么影响？
 
 4: 这对 systemd 和 Linux 生态会有什么影响？
@@ -341,8 +301,6 @@ external_url: https://amutable.com/about
 
 ---
 
-
-
 ### 5: 他们会离开 Red Hat 和 Canonical 吗？
 
 5: 他们会离开 Red Hat 和 Canonical 吗？
@@ -350,8 +308,6 @@ external_url: https://amutable.com/about
 **A**: 根据报道，是的。**Christian Brauner** 已经宣布辞去其在 Canonical（Ubuntu 母公司）的职位以专注于这家新公司。虽然 **Lennart Poettering** 长期以来是 Red Hat 的核心员工，但创立这家公司通常意味着他也会转换身份，或者至少在角色上发生重大变化，将主要精力投入到新公司的运营和开发中。这代表了 Linux 社区顶级开发者从单一厂商向独立创业的一个重要转变。
 
 ---
-
-
 
 ### 6: 开源社区对这件事的反应如何？
 
@@ -362,22 +318,6 @@ external_url: https://amutable.com/about
 *   **信心倍增**：在 Hacker News 和 Reddit 等技术论坛上，大多数开发者认为这是“梦之队”的组合。因为这两个人分别掌握了 Linux 启动流程和内核隔离技术的“半壁江山”。
 *   **期待变革**：社区普遍希望这家公司能解决一些长期存在的痛点，例如改善容器的安全性、优化 systemd 在大规模云环境下的性能等。
 *   **商业模式关注**：当然，也有部分声音关注其商业模式，希望能确保其开源项目保持开放和中立，不被单一利益所绑架。
-
----
-## 🎯 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**: Lennart Poettering 和 Christian Brauner 是 Linux 生态系统中的重量级人物。请列出 Lennart Poettering 最著名的三个开源项目名称，并简述 Christian Brauner 在 Linux 内核社区主要负责的子系统领域。
-
-### 提示**: 专注于思考 Linux 的“启动管理”和“进程管理”工具，以及内核中关于“进程隔离”和“权限控制”的核心机制。
-
-### 
-
----
 ## 🔗 引用
 
 - **原文链接**: [https://amutable.com/about](https://amutable.com/about)

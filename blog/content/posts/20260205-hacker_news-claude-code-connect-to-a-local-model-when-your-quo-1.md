@@ -86,9 +86,6 @@ Claude Code 作为一个 CLI 工具，其核心价值在于“Agent 逻辑”（
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：检测API配额并自动切换到本地模型
 import os
@@ -130,7 +127,6 @@ def smart_api_call(messages, api_key=None):
 messages = [{"role": "user", "content": "写一首关于编程的诗"}]
 print(smart_api_call(messages))
 ```
-
 
 ---
 
@@ -184,10 +180,8 @@ class ModelRouter:
 #   model: "llama2"
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某AI初创公司
 
@@ -203,8 +197,6 @@ class ModelRouter:
 
 ---
 
-
-
 ### 2：独立开发者项目
 
  2：独立开发者项目
@@ -218,8 +210,6 @@ class ModelRouter:
 **效果**: 项目交付延迟减少80%，客户满意度提升，同时节省了约300美元/月的API费用。
 
 ---
-
-
 
 ### 3：企业内部工具开发
 
@@ -340,7 +330,6 @@ class ModelRouter:
 ---
 ## 常见问题
 
-
 ### 1: Claude Code 是什么？它与普通的 Claude 有什么区别？
 
 1: Claude Code 是什么？它与普通的 Claude 有什么区别？
@@ -348,8 +337,6 @@ class ModelRouter:
 **A**: Claude Code 是 Anthropic 推出的一款面向开发者的命令行工具。与标准的 Claude 聊天界面不同，Claude Code 专门设计用于直接与开发者的本地代码库进行交互。它可以读取、编辑和执行代码，直接操作文件系统，并协助完成复杂的编程任务。它的主要特点是能够理解项目上下文，并提供具体的代码实现建议，而不仅仅是通用的编程建议。
 
 ---
-
-
 
 ### 2: 当我的 API 配额用完时，为什么要连接本地模型而不是直接等待配额重置？
 
@@ -363,8 +350,6 @@ class ModelRouter:
 4. **灵活性**：可以根据特定需求微调本地模型，使其更适应特定的编程任务或代码库。
 
 ---
-
-
 
 ### 3: 哪些本地模型适合作为 Claude Code 的替代？
 
@@ -381,8 +366,6 @@ class ModelRouter:
 选择模型时需考虑显存大小（VRAM），通常 7B 模型需要约 6-8GB 显存，13B 需要约 12-16GB。
 
 ---
-
-
 
 ### 4: 如何在 Claude Code 中配置连接到本地模型？
 
@@ -405,8 +388,6 @@ class ModelRouter:
 
 ---
 
-
-
 ### 5: 本地模型的性能表现如何？会显著比云端 Claude 慢吗？
 
 5: 本地模型的性能表现如何？会显著比云端 Claude 慢吗？
@@ -421,8 +402,6 @@ class ModelRouter:
 
 ---
 
-
-
 ### 6: 使用本地模型有哪些潜在的限制或缺点？
 
 6: 使用本地模型有哪些潜在的限制或缺点？
@@ -436,8 +415,6 @@ class ModelRouter:
 
 ---
 
-
-
 ### 7: 除了等待配额重置，还有其他方法解决 Claude Code 配额不足的问题吗？
 
 7: 除了等待配额重置，还有其他方法解决 Claude Code 配额不足的问题吗？
@@ -446,22 +423,6 @@ class ModelRouter:
 
 1. **切换 API Provider**：如果使用的是 AWS Bedrock 或 Google Cloud Vertex AI 等平台访问 Claude，可以检查是否有不同的计费层级或试用额度。
 2. **优化提示词**：更精准
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 在本地模型环境中，如何验证 Claude Code 是否成功连接到本地模型而非云端 API？请设计一个测试用例，包括输入提示词和预期输出特征。
-
-### 提示**: 考虑本地模型与云端模型在响应速度、特定知识库（如实时信息）上的差异，可通过设置特定问题或监控网络请求来验证。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://boxc.net/blog/2026/claude-code-connecting-to-local-models-when-your-quota-runs-out](https://boxc.net/blog/2026/claude-code-connecting-to-local-models-when-your-quota-runs-out)
@@ -470,7 +431,6 @@ class ModelRouter:
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

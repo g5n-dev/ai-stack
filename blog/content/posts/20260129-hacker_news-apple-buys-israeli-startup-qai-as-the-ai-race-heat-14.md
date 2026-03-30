@@ -98,9 +98,6 @@ scenarios: ["AI/ML项目"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：新闻文本摘要生成
 def summarize_news(text, max_sentences=2):
@@ -141,9 +138,6 @@ news_text = "Apple buys Israeli startup Q.ai as the AI race heats up. The acquis
 print(summarize_news(news_text))
 ```
 
-
-
-
 ```python
 # 示例2：公司收购事件信息提取
 def extract_acquisition_info(text):
@@ -172,9 +166,6 @@ def extract_acquisition_info(text):
 news_text = "Apple buys Israeli startup Q.ai as the AI race heats up. Q.ai specializes in machine learning algorithms."
 print(extract_acquisition_info(news_text))
 ```
-
-
-
 
 ```python
 # 示例3：行业关键词提取
@@ -206,10 +197,8 @@ news_text = "Apple buys Israeli startup Q.ai as the AI race heats up. The acquis
 print(extract_industry_keywords(news_text))
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：Apple 收购 DarwinAI
 
@@ -229,8 +218,6 @@ Apple 通过收购 DarwinAI，获得了其核心的“GenSynth”技术。该技
 
 ---
 
-
-
 ### 2：Apple 收购 Mobeus
 
  2：Apple 收购 Mobeus
@@ -248,8 +235,6 @@ Apple 收购 Mobeus 后，利用其独特的“模型量化与剪枝”技术，
 这一技术整合直接促成了 Apple Intelligence 中部分核心功能的落地，实现了在手机端快速、私密地处理复杂任务（如文本生成和总结），既保护了用户隐私，又维持了设备的流畅度和电池续航。
 
 ---
-
-
 
 ### 3：Apple 收购 Xnor.ai
 
@@ -361,7 +346,6 @@ Apple 收购了专注于边缘 AI 的 Xnor.ai。该公司开发了一种极其�
 ---
 ## 常见问题
 
-
 ### 1: 苹果公司为什么要收购 Q.ai？
 
 1: 苹果公司为什么要收购 Q.ai？
@@ -369,8 +353,6 @@ Apple 收购了专注于边缘 AI 的 Xnor.ai。该公司开发了一种极其�
 **A**: 苹果收购 Q.ai 的主要目的是为了增强其在人工智能（AI）领域的技术实力，特别是在生成式 AI 和大语言模型（LLM）方面。随着科技巨头之间“AI 军备竞赛”的日益激烈，苹果需要通过收购初创公司来获取顶尖的人才和技术储备。Q.ai 拥有强大的算法开发能力和自然语言处理技术，这有助于苹果改进 Siri 的功能，优化其服务生态，并在 iOS、macOS 等系统中集成更先进的 AI 功能，以缩小与微软、谷歌等竞争对手在 AI 领域的差距。
 
 ---
-
-
 
 ### 2: Q.ai 是一家什么样的公司？
 
@@ -380,8 +362,6 @@ Apple 收购了专注于边缘 AI 的 Xnor.ai。该公司开发了一种极其�
 
 ---
 
-
-
 ### 3: 此次收购对苹果的现有产品会有什么具体影响？
 
 3: 此次收购对苹果的现有产品会有什么具体影响？
@@ -389,8 +369,6 @@ Apple 收购了专注于边缘 AI 的 Xnor.ai。该公司开发了一种极其�
 **A**: 虽然苹果官方通常不会立即披露具体整合计划，但基于 Q.ai 的技术专长，预计其技术将首先应用于提升 Siri 的理解能力和对话自然度。此外，Q.ai 的技术可能会被整合到苹果的搜索服务、App Store 的推荐算法以及 Apple Music 等服务的个性化功能中。长远来看，这些技术可能成为苹果开发自有端侧大模型的基础，从而在 iPhone 和 Mac 上运行更强大且注重隐私保护的 AI 功能，减少对云端计算的依赖。
 
 ---
-
-
 
 ### 4: 苹果在 AI 领域目前面临怎样的竞争压力？
 
@@ -400,8 +378,6 @@ Apple 收购了专注于边缘 AI 的 Xnor.ai。该公司开发了一种极其�
 
 ---
 
-
-
 ### 5: 苹果在收购科技公司时通常有什么特点？
 
 5: 苹果在收购科技公司时通常有什么特点？
@@ -410,29 +386,11 @@ Apple 收购了专注于边缘 AI 的 Xnor.ai。该公司开发了一种极其�
 
 ---
 
-
-
 ### 6: 这对以色列的高科技行业意味着什么？
 
 6: 这对以色列的高科技行业意味着什么？
 
 **A**: 这对以色列的高科技行业是一个积极的信号，再次证明了以色列作为“创业国度”在全球科技领域的核心地位。苹果、英特尔、英伟达等科技巨头在以色列都有庞大的研发中心或频繁进行收购活动。此次收购表明，即便在全球经济波动的情况下，拥有核心 AI 技术的以色列初创公司依然具有极高的市场价值。这也会进一步激励当地的风险投资和创业活动，特别是在深度学习和数据科学领域。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 假设你是一名科技分析师，请简要分析 Apple 收购 Q.ai 对其现有生态系统（如 Siri 或 App Store）可能带来的三个直接增强点。
-
-### 提示**: 考虑 Apple 目前在语音助手中遇到的瓶颈，以及 Q.ai 在生成式 AI 或数据处理方面的专长如何填补这些空白。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://techcrunch.com/2026/01/29/apple-buys-israeli-startup-q-ai-as-the-ai-race-heats-up](https://techcrunch.com/2026/01/29/apple-buys-israeli-startup-q-ai-as-the-ai-race-heats-up)
@@ -441,7 +399,6 @@ Apple 收购了专注于边缘 AI 的 Xnor.ai。该公司开发了一种极其�
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

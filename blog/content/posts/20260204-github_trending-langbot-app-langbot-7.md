@@ -44,8 +44,6 @@ Relevant source files
   * [README_TW.md](https://github.com/langbot-app/LangBot/blob/023281ae/README_TW.md)
   * [README_VI.md](https://github.com/langbot-app/LangBot/blob/023281ae/README_VI.md)
 
-
-
 ## Purpose and Scope
 
 This document provides a high-level overview of LangBot, a production-grade instant messaging (IM) bot platform. It covers the system's purpose, architecture, key components, technology stack, and deployment models. For detailed information about specific subsystems, refer to:
@@ -55,8 +53,6 @@ This document provides a high-level overview of LangBot, a production-grade inst
   * Deployment instructions: [Deployment Options](/langbot-app/LangBot/1.3-deployment-options)
   * Backend implementation: [Core Backend System](/langbot-app/LangBot/3-core-backend-system)
   * Frontend implementation: [Web Management Interface](/langbot-app/LangBot/8-web-management-interface)
-
-
 
 * * *
 
@@ -85,7 +81,6 @@ Capability| Description
 
 ### High-Level Architecture Diagram
 
-
 **Description:** This diagram shows the complete LangBot system architecture mapped to actual code entities. The system consists of six major layers: external services, web frontend (React/Next.js), backend core (Python/Quart), data persistence, message processing, AI integration, and plugin/extension systems. Each node represents concrete modules, classes, or services in the codebase. The web frontend communicates with the backend via REST APIs and WebSocket connections, while the backend orchestrates message flow through adapters, security layers, pipeline stages, and AI providers.
 
 **Sources:** [README.md1-177](https://github.com/langbot-app/LangBot/blob/023281ae/README.md#L1-L177) [README_EN.md1-151](https://github.com/langbot-app/LangBot/blob/023281ae/README_EN.md#L1-L151) System Architecture diagrams from context
@@ -93,7 +88,6 @@ Capability| Description
 * * *
 
 ### Core Components and Code Entities
-
 
 **Description:** This diagram bridges natural language system descriptions to concrete code entities in the LangBot codebase. Starting from `main.py`, the application bootstraps through `BootingStage` implementations including `LoadConfigStage` (loads `config.yaml`) and `DBMigration` (database schema). The web UI components (`BotForm`, `PipelineFormComponent`, `ModelsDialog`, etc.) communicate with backend service classes (`BotService`, `PipelineService`, `ModelService`, etc.) through the Quart API layer at `/api/v1/*`. Message processing flows through platform adapters to security layers and pipeline stages, integrating with LLM providers, RAG manager, and plugin systems. All configuration and state is persisted to SQL databases and vector databases.
 
@@ -149,8 +143,6 @@ LangBot supports multiple deployment models to accommodate different use cases:
   * **Use Case:** Local development, quick testing
   * **Prerequisites:** Python 3.10+, uv package manager
 
-
-
 ### Docker Compose (Standard)
 
   * **Image:** `rockchin/langbot:latest`
@@ -158,16 +150,12 @@ LangBot supports multiple deployment models to accommodate different use cases:
   * **Use Case:** Production self-hosted deployment
   * **Storage:** Docker volumes for persistence
 
-
-
 ### Kubernetes (Enterprise)
 
   * **Manifests:** `docker/README_K8S.md`
   * **Features:** Pod autoscaling, service mesh integration
   * **Use Case:** Large-scale enterprise deployments
   * **Storage:** Persistent volumes for SQL/vector databases
-
-
 
 ### Cloud Platforms (Managed)
 
@@ -180,7 +168,6 @@ Platform| Deployment Method| Configuration
 ### Multi-Stage Docker Build
 
 The Docker build process uses a multi-stage approach:
-
 
 **Description:** The Dockerfile first builds the Next.js frontend using Node.js, then copies the static assets into a Python runtime image. This produces a single container image that includes both the web UI and the backend API.
 
@@ -408,9 +395,6 @@ LangBot 的范式是 **“配置驱动开发”**。它试图将 AI 机器人的
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：基础聊天机器人实现
 from langchain.chat_models import ChatOpenAI
@@ -436,9 +420,6 @@ def simple_chatbot():
 # 运行示例
 simple_chatbot()
 ```
-
-
-
 
 ```python
 # 示例2：带记忆功能的对话系统
@@ -474,9 +455,6 @@ def conversational_chatbot():
 # 运行示例
 conversational_chatbot()
 ```
-
-
-
 
 ```python
 # 示例3：基于文档的问答系统
@@ -521,10 +499,8 @@ def document_qa_system():
 document_qa_system()
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某跨境电商SaaS平台
 
@@ -548,8 +524,6 @@ document_qa_system()
 
 ---
 
-
-
 ### 2：某在线教育平台
 
  2：某在线教育平台
@@ -571,8 +545,6 @@ document_qa_system()
 - 学员对学习支持的满意度评分从3.2分提升至4.6分（满分5分）。
 
 ---
-
-
 
 ### 3：某医疗健康科技企业
 
@@ -813,7 +785,6 @@ document_qa_system()
 - 交互界面快速开发**：利用 Streamlit 或 Gradio 等 Python 库快速构建 Web UI，实现低代码的对话界面原型开发。
 - 多模态与记忆机制**：探索如何实现对话历史记忆的存储与管理，确保多轮对话的上下文连贯性与个性化体验。
 
-
 ---
 ## 学习路径
 
@@ -925,7 +896,6 @@ document_qa_system()
 ---
 ## 常见问题
 
-
 ### 1: LangBot 是什么？它的主要功能是什么？
 
 1: LangBot 是什么？它的主要功能是什么？
@@ -933,8 +903,6 @@ document_qa_system()
 **A**: LangBot 是一个基于 GitHub 的开源应用程序，通常被归类为“开发者工具”或“自动化机器人”。从其名称和来源来看，它主要是一个用于编程语言学习、练习或代码管理的辅助工具。LangBot 的核心功能通常包括自动化处理编程任务、提供代码片段管理、或者作为 Discord/Telegram 等平台上的机器人来帮助用户查询编程语法和执行代码。它旨在帮助开发者更高效地处理与编程语言相关的交互。
 
 ---
-
-
 
 ### 2: 如何部署或安装 LangBot？
 
@@ -948,8 +916,6 @@ document_qa_system()
 
 ---
 
-
-
 ### 3: LangBot 支持哪些编程语言或平台？
 
 3: LangBot 支持哪些编程语言或平台？
@@ -957,8 +923,6 @@ document_qa_system()
 **A**: 具体支持的语言和平台取决于该项目的具体实现细节。一般来说，此类 Bot 会支持主流的编程语言（如 Python, JavaScript, Java, C++ 等）用于代码执行或语法高亮。在平台方面，LangBot 可能设计为运行在 Discord, Slack 或 Telegram 上，也可能作为一个独立的 Web 服务运行。你需要查看项目的文档以确认它目前集成了哪些外部 API 或支持哪些具体的聊天平台。
 
 ---
-
-
 
 ### 4: 运行 LangBot 需要什么样的系统要求？
 
@@ -971,8 +935,6 @@ document_qa_system()
 
 ---
 
-
-
 ### 5: 如果遇到运行错误或 Bug，我该如何获取帮助？
 
 5: 如果遇到运行错误或 Bug，我该如何获取帮助？
@@ -984,8 +946,6 @@ document_qa_system()
 
 ---
 
-
-
 ### 6: LangBot 是否免费？是否可以用于商业用途？
 
 6: LangBot 是否免费？是否可以用于商业用途？
@@ -994,22 +954,6 @@ document_qa_system()
 *   如果是 **MIT** 或 **Apache-2.0** 许可证，通常允许自由使用、修改和商业分发。
 *   如果是 **GPL** 许可证，则衍生作品也必须开源。
 请务必遵守原作者规定的许可证条款，在使用前仔细阅读法律声明。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**:
-
-### LangBot 作为一个语言学习应用，核心功能之一是词汇管理。请设计一个简单的数据结构（例如 JSON 格式或类结构），用于存储一个单词及其核心属性（如单词本身、发音、释义、例句）。随后，编写一段伪代码或实际代码，实现“添加生词”和“查询单词”这两个基础功能。
-
-### 提示**:
-
----
 ## 实践建议
 
 基于 `langbot-app` (LangBot) 作为一个支持多平台（企微、飞书、钉钉、微信等）且集成多种大模型和编排工具（Dify, Coze, n8n 等）的生产级开发平台，以下是 6 条针对实际落地场景的实践建议：
@@ -1058,7 +1002,6 @@ document_qa_system()
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

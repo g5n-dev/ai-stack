@@ -94,9 +94,6 @@ PyTorch 已成为机器学习领域的主流框架，但其核心概念往往被
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：张量基础操作
 import torch
@@ -128,9 +125,6 @@ def tensor_operations():
 
 tensor_operations()
 ```
-
-
-
 
 ```python
 # 示例2：简单线性回归
@@ -172,9 +166,6 @@ def linear_regression():
 linear_regression()
 ```
 
-
-
-
 ```python
 # 示例3：自动求导机制
 import torch
@@ -202,10 +193,8 @@ def autograd_example():
 autograd_example()
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：Tesla 自动驾驶系统
 
@@ -225,8 +214,6 @@ Tesla 使用 PyTorch 作为其深度学习模型的核心开发框架。PyTorch 
 
 ---
 
-
-
 ### 2：OpenAI GPT-3 语言模型
 
  2：OpenAI GPT-3 语言模型
@@ -244,8 +231,6 @@ OpenAI 使用 PyTorch 作为 GPT-3 的主要训练框架。PyTorch 的分布式�
 GPT-3 在多项自然语言处理任务中达到了最先进的性能，包括文本生成、翻译和问答。其应用范围从智能客服到代码生成，极大地推动了自然语言处理技术的商业化落地。
 
 ---
-
-
 
 ### 3：Facebook AI Research (FAIR) 图像识别系统
 
@@ -361,7 +346,6 @@ FAIR 使用 PyTorch 开发了基于卷积神经网络（CNN）的图像识别模
 ---
 ## 常见问题
 
-
 ### 1: PyTorch 与 TensorFlow 等其他深度学习框架相比，主要的核心优势是什么？
 
 1: PyTorch 与 TensorFlow 等其他深度学习框架相比，主要的核心优势是什么？
@@ -375,8 +359,6 @@ FAIR 使用 PyTorch 开发了基于卷积神经网络（CNN）的图像识别模
 
 ---
 
-
-
 ### 2: 什么是张量？它与 NumPy 数组有什么区别和联系？
 
 2: 什么是张量？它与 NumPy 数组有什么区别和联系？
@@ -389,8 +371,6 @@ FAIR 使用 PyTorch 开发了基于卷积神经网络（CNN）的图像识别模
     2.  **自动求导**：PyTorch 张量默认支持自动微分机制。当张量设置 `requires_grad=True` 时，PyTorch 会自动跟踪对该张量的所有运算，并在反向传播时自动计算梯度，这是训练神经网络所必需的，而 NumPy 不具备此功能。
 
 ---
-
-
 
 ### 3: 在 PyTorch 中，`nn.Module` 是什么？为什么它是构建模型的核心？
 
@@ -407,8 +387,6 @@ FAIR 使用 PyTorch 开发了基于卷积神经网络（CNN）的图像识别模
 
 ---
 
-
-
 ### 4: 什么是 Autograd（自动微分）系统？`requires_grad` 和 `backward()` 是如何工作的？
 
 4: 什么是 Autograd（自动微分）系统？`requires_grad` 和 `backward()` 是如何工作的？
@@ -422,8 +400,6 @@ FAIR 使用 PyTorch 开发了基于卷积神经网络（CNN）的图像识别模
 
 ---
 
-
-
 ### 5: PyTorch 中的 `DataLoader` 和 `Dataset` 类有什么作用？
 
 5: PyTorch 中的 `DataLoader` 和 `Dataset` 类有什么作用？
@@ -431,22 +407,6 @@ FAIR 使用 PyTorch 开发了基于卷积神经网络（CNN）的图像识别模
 **A**: 这是 PyTorch 处理数据输入的核心工具，旨在将数据加载与模型训练逻辑解耦。
 
 1.  **`Dataset`**：这是一个抽象类，用于表示数据集。你需要重写 `__len__`（
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 基础张量运算与梯度追踪
-
-### 创建一个形状为 (3, 4) 的随机张量 `A`，要求其元素从标准正态分布中抽取，并开启梯度追踪 (`requires_grad=True`)。创建另一个全 1 的张量 `B`，形状为 (4, 2)。计算矩阵乘法 `C = A @ B`。最后，计算 `C` 中所有元素的和，并对该和进行反向传播。请验证 `A` 的梯度属性是否已更新，并打印 `A.grad` 的形状。
-
-### 提示**: 注意 PyTorch 中张量创建函数（如 `torch.randn`, `torch.ones`）的参数设置。只有叶子节点的梯度会被默认保留，检查 `grad_fn` 和 `grad` 属性的区别。
-
----
 ## 引用
 
 - **原文链接**: [https://0byte.io/articles/pytorch_introduction.html](https://0byte.io/articles/pytorch_introduction.html)
@@ -455,7 +415,6 @@ FAIR 使用 PyTorch 开发了基于卷积神经网络（CNN）的图像识别模
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

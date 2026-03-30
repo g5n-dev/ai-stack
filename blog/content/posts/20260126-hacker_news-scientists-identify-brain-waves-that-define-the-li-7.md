@@ -121,23 +121,8 @@ external_url: https://www.sciencealert.com/scientists-identify-brain-waves-that-
 ---
 ## 💻 代码示例
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 ## 📚 案例研究
-
 
 ### 1：Neuralink 脑机接口临床试验中的自我意识定位
 
@@ -152,8 +137,6 @@ external_url: https://www.sciencealert.com/scientists-identify-brain-waves-that-
 **效果**: ✅ 通过这一技术，患者仅凭意念控制光标的流畅度和准确率显著提升，成功实现了仅通过思维来下棋、发短信等复杂操作。这证明了明确界定“神经层面的自我”能大幅提升人机交互的带宽和信噪比。
 
 ---
-
-
 
 ### 2：东京大学利用脑波解码预测“意图时刻”
 
@@ -256,7 +239,6 @@ external_url: https://www.sciencealert.com/scientists-identify-brain-waves-that-
 ---
 ## ❓ 常见问题
 
-
 ### 1: 这项关于“脑波定义自我界限”的研究核心发现是什么？
 
 1: 这项关于“脑波定义自我界限”的研究核心发现是什么？
@@ -266,8 +248,6 @@ external_url: https://www.sciencealert.com/scientists-identify-brain-waves-that-
 具体来说，当患者发出声音（说话或唱歌）时，大脑中代表声音皮层的特定区域会产生明显的神经活动；而当患者**听到**外界播放自己声音的录音时，大脑的反应模式是不同的。研究识别出了能够区分这两种体验的独特脑波（高频 gamma 波和 beta 波的变化），这揭示了大脑如何在物理层面上标记“这是我做的”与“这是外部发生的”，从而定义了“你”的界限。
 
 ---
-
-
 
 ### 2: 这项研究是如何进行的？为什么能在人脑中观测得如此精确？
 
@@ -281,8 +261,6 @@ external_url: https://www.sciencealert.com/scientists-identify-brain-waves-that-
 
 ---
 
-
-
 ### 3: 为什么大脑需要区分“自我”和“非我”？这一机制有什么作用？
 
 3: 为什么大脑需要区分“自我”和“非我”？这一机制有什么作用？
@@ -295,8 +273,6 @@ external_url: https://www.sciencealert.com/scientists-identify-brain-waves-that-
 
 ---
 
-
-
 ### 4: 这里的“自我界限”指的是哲学上的“自我意识”吗？
 
 4: 这里的“自我界限”指的是哲学上的“自我意识”吗？
@@ -306,8 +282,6 @@ external_url: https://www.sciencealert.com/scientists-identify-brain-waves-that-
 它并不是在解释“我是谁”这种抽象的哲学概念，而是在探索大脑如何处理**本体感觉**和** agency（行动主体性）**。也就是说，它研究的是大脑如何确认“这个动作是我做的”或者“这个声音是我发出的”。这是构建自我意识的生理基础，属于认知神经科学的范畴。
 
 ---
-
-
 
 ### 5: 这项研究有什么实际应用价值？例如对人工智能或医疗领域？
 
@@ -321,8 +295,6 @@ external_url: https://www.sciencealert.com/scientists-identify-brain-waves-that-
 
 ---
 
-
-
 ### 6: 听到自己的录音为什么感觉奇怪？这和该研究有关吗？
 
 6: 听到自己的录音为什么感觉奇怪？这和该研究有关吗？
@@ -332,22 +304,6 @@ external_url: https://www.sciencealert.com/scientists-identify-brain-waves-that-
 当你说话时，你听到的声音是通过骨骼传导（内部）和空气传导（外部）混合而成的。更重要的是，你的大脑在你说出声音的瞬间，会发出一种“预测信号”来抑制听觉皮层的反应（即感官衰减）。
 
 但是，当你听录音时，只有空气传导，且大脑没有发出“预测信号”，因此听觉皮层会被完全激活。这项研究正是通过测量大脑皮层在这些不同情况下的电波差异，量化了这种“陌生感”的神经起源。
-
----
-## 🎯 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**:
-
-### 根据文章标题 "Scientists identify brain waves that define the limits of 'you'"，在神经科学的语境下，"You"（你/自我意识）在物理层面上主要由什么构成？当这种物理基础停止活动（如深度麻醉或脑死亡）时，哲学上的“我”还存在吗？
-
-### 提示**:
-
----
 ## 🔗 引用
 
 - **原文链接**: [https://www.sciencealert.com/scientists-identify-brain-waves-that-define-the-limits-of-you](https://www.sciencealert.com/scientists-identify-brain-waves-that-define-the-limits-of-you)

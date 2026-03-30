@@ -93,37 +93,8 @@ external_url: https://reason.com/2026/01/23/cop-assisted-extortion-of-dwi-arrest
 ---
 ## 💻 代码示例
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 ## 📚 案例研究
-
 
 ### 1：美国新墨西哥州警察协助敲诈醉酒驾驶被捕者事件调查 🚨
 
@@ -149,8 +120,6 @@ external_url: https://reason.com/2026/01/23/cop-assisted-extortion-of-dwi-arrest
 
 ---  
 
-
-
 ### 2：美国警察系统腐败治理技术方案 🛡️
 
  2：美国警察系统腐败治理技术方案 🛡️  
@@ -174,8 +143,6 @@ external_url: https://reason.com/2026/01/23/cop-assisted-extortion-of-dwi-arrest
 - 多个州开始试点该技术方案，推动全国性警察系统透明化改革。  
 
 ---  
-
-
 
 ### 3：国际反腐败组织（如Transparency International）的执法监督合作 🌍
 
@@ -294,7 +261,6 @@ external_url: https://reason.com/2026/01/23/cop-assisted-extortion-of-dwi-arrest
 ---
 ## ❓ 常见问题
 
-
 ### 1: 新墨西哥州这起涉及警员的勒索案件具体发生了什么？
 
 1: 新墨西哥州这起涉及警员的勒索案件具体发生了什么？
@@ -302,8 +268,6 @@ external_url: https://reason.com/2026/01/23/cop-assisted-extortion-of-dwi-arrest
 **A**: 根据报道，新墨西哥州发生了一起令人震惊的警察腐败案件。部分警员利用其职务之便，对因涉嫌酒驾（DWI）被捕的嫌疑人进行勒索。这些警员不仅没有履行维护法律的职责，反而强迫被捕者饮用更多的酒精，以确保他们的血液酒精浓度（BAC）维持在或超过法律规定的醉酒标准。这种行为是为了制造确凿的“证据”，迫使被捕者在面临严厉刑罚威胁下支付贿赂，以求私了。
 
 ---
-
-
 
 ### 2: 警员为什么要强迫被捕者“喝醉”？这在法律上意味着什么？
 
@@ -317,8 +281,6 @@ external_url: https://reason.com/2026/01/23/cop-assisted-extortion-of-dwi-arrest
 
 ---
 
-
-
 ### 3: 这类事件是个案，还是反映了当地更广泛的系统性问题？
 
 3: 这类事件是个案，还是反映了当地更广泛的系统性问题？
@@ -326,8 +288,6 @@ external_url: https://reason.com/2026/01/23/cop-assisted-extortion-of-dwi-arrest
 **A**: 虽然这起具体案件涉及特定的警员，但它揭示了当地执法监督机制中可能存在的漏洞。这种极端的滥用职权行为通常不是孤立的，它往往发生在缺乏有效内部监管和透明度较低的环境中。此事件曝光后，通常会引发对整个部门甚至该州执法系统廉洁性的调查，旨在排查是否存在共犯或制度性的纵容。
 
 ---
-
-
 
 ### 4: 涉事警员将面临哪些法律后果？
 
@@ -340,8 +300,6 @@ external_url: https://reason.com/2026/01/23/cop-assisted-extortion-of-dwi-arrest
 
 ---
 
-
-
 ### 5: 如果我是酒驾被捕者，该如何判断自己是否遭遇了类似的非法执法或敲诈？
 
 5: 如果我是酒驾被捕者，该如何判断自己是否遭遇了类似的非法执法或敲诈？
@@ -353,8 +311,6 @@ external_url: https://reason.com/2026/01/23/cop-assisted-extortion-of-dwi-arrest
 
 ---
 
-
-
 ### 6: 这类案件对新墨西哥州的司法公信力有何影响？
 
 6: 这类案件对新墨西哥州的司法公信力有何影响？
@@ -362,22 +318,6 @@ external_url: https://reason.com/2026/01/23/cop-assisted-extortion-of-dwi-arrest
 **A**: 这种丑闻对司法公信力的打击是毁灭性的。当执法者变成违法者，公众对警察的信任会急剧下降。
 *   **质疑过往案件**：这可能导致许多过去由这些涉事警员经手的DWI案件被重新审查，甚至被推翻。
 *   **改革压力**：这通常会促使当地政府加强警察培训，实施更严格的身体摄像头佩戴规定，并建立更完善的独立监督机制，以防止类似事件再次发生。
-
----
-## 🎯 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**: 这则新闻的核心指控是警察（公职人员）利用职权进行敲诈勒索，甚至包括“让被捕者喝醉”这种行为。请分析这种行为在法律上构成了哪几种罪名的竞合？除了勒索罪，还有哪项针对公职人员的特定指控可能适用？
-
-### 提示**:
-
-### 思考“以权谋私”对应的法律术语。
-
----
 ## 🔗 引用
 
 - **原文链接**: [https://reason.com/2026/01/23/cop-assisted-extortion-of-dwi-arrestees-in-new-mexico-included-getting-them-drunk](https://reason.com/2026/01/23/cop-assisted-extortion-of-dwi-arrestees-in-new-mexico-included-getting-them-drunk)

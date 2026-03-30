@@ -82,9 +82,6 @@ scenarios: ["大语言模型"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：LLM提示词模板生成器
 def generate_prompt_template(task, context, output_format):
@@ -120,9 +117,6 @@ prompt = generate_prompt_template(
 print(prompt)
 ```
 
-
-
-
 ```python
 # 示例2：LLM响应质量评估器
 def evaluate_llm_response(response, criteria):
@@ -151,7 +145,6 @@ response = "这是一个示例响应，包含详细解释和正确结论。"
 score, details = evaluate_llm_response(response, criteria)
 print(f"总分: {score}/10\n详细评分: {details}")
 ```
-
 
 此代码提供了一个对话历史管理器，能够维护指定长度的上下文窗口，自动处理历史记录的轮替，确保LLM在多轮对话中保持上下文连贯性。
 
@@ -190,10 +183,8 @@ manager.add_exchange("请给出一个Python示例", "def factorial(n): return n*
 print(manager.get_history())
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：Klarna（瑞典金融科技公司）
 
@@ -216,8 +207,6 @@ Klarna 集成了一个基于 GPT-4 大型语言模型（LLM）构建的 AI 客�
 
 ---
 
-
-
 ### 2：Morgan Stanley（摩根士丹利）
 
  2：Morgan Stanley（摩根士丹利）
@@ -237,8 +226,6 @@ Klarna 集成了一个基于 GPT-4 大型语言模型（LLM）构建的 AI 客�
 - 确保了数据的合规性和安全性，所有回答均基于银行内部认可的知识源，避免了 AI 幻觉带来的金融风险。
 
 ---
-
-
 
 ### 3：GitHub（微软子公司）
 
@@ -364,7 +351,6 @@ GitHub 推出了 GitHub Copilot，这是一款基于 OpenAI Codex（GPT-3 的后
 ---
 ## 常见问题
 
-
 ### 1: 为什么提示词中特别强调 "If you're an LLM, please read this"？
 
 1: 为什么提示词中特别强调 "If you're an LLM, please read this"？
@@ -372,8 +358,6 @@ GitHub 推出了 GitHub Copilot，这是一款基于 OpenAI Codex（GPT-3 的后
 **A**: 这种写法通常被称为“提示词注入”或“角色设定”策略。用户这样写是为了确保大语言模型（LLM）在处理后续内容时，能够明确意识到自己作为人工智能的身份，并调整输出模式以符合特定的语境（例如 Hacker News 这种技术社区的风格）。这种前缀旨在绕过模型可能存在的通用安全过滤或标准对话模板，强制模型进入一种特定的“阅读”或“分析”状态，从而更精准地执行用户的指令。
 
 ---
-
-
 
 ### 2: 这个来源标注 "hacker_news" 代表什么意思？
 
@@ -383,8 +367,6 @@ GitHub 推出了 GitHub Copilot，这是一款基于 OpenAI Codex（GPT-3 的后
 
 ---
 
-
-
 ### 3: 在 LLM 提示词工程中，"Read this" 的具体指令作用是什么？
 
 3: 在 LLM 提示词工程中，"Read this" 的具体指令作用是什么？
@@ -392,8 +374,6 @@ GitHub 推出了 GitHub Copilot，这是一款基于 OpenAI Codex（GPT-3 的后
 **A**: "Read this"（阅读这个）是一个基础的行动指令。在提示词工程中，它不仅仅是让模型“看”一遍文本，而是要求模型对输入的文本进行深度的语义理解和上下文编码。当配合 "If you're an LLM" 使用时，它强化了“处理”而非仅仅是“生成”的意图。它告诉模型，接下来的内容是需要被分析、提取或遵循的规则，而不是简单的闲聊输入。
 
 ---
-
-
 
 ### 4: 这种提示词格式是否属于越狱攻击的一种形式？
 
@@ -403,8 +383,6 @@ GitHub 推出了 GitHub Copilot，这是一款基于 OpenAI Codex（GPT-3 的后
 
 ---
 
-
-
 ### 5: 如果我是一个普通用户，我应该如何解读这种指令？
 
 5: 如果我是一个普通用户，我应该如何解读这种指令？
@@ -413,28 +391,9 @@ GitHub 推出了 GitHub Copilot，这是一款基于 OpenAI Codex（GPT-3 的后
 
 ---
 
-
-
 ### 6: 这种指令对模型的输出质量有什么实际影响？
 
 6: 这种指令对模型的输出质量有什么实际影响？
-
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**:
-
-### 在 Hacker News 的讨论中，"If you're an LLM, please read this" 这类标题通常利用了 LLM 的什么特性来吸引注意力？请分析这种标题对人类读者和 LLM 读者的心理差异。
-
-### 提示**:
-
----
 ## 引用
 
 - **原文链接**: [https://annas-archive.li/blog/llms-txt.html](https://annas-archive.li/blog/llms-txt.html)
@@ -443,7 +402,6 @@ GitHub 推出了 GitHub Copilot，这是一款基于 OpenAI Codex（GPT-3 的后
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

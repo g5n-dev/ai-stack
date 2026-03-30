@@ -71,9 +71,6 @@ scenarios: ["大语言模型"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：模拟稀疏MoE模型的专家选择机制
 import torch
@@ -111,7 +108,6 @@ output = model(input_tensor)
 print(f"输入形状: {input_tensor.shape}, 输出形状: {output.shape}")
 ```
 
-
 ---
 
 ```python
@@ -146,7 +142,6 @@ def estimate_moe_efficiency(total_params=400e9, active_ratio=0.1, batch_size=1):
 print("单token推理效率:", estimate_moe_efficiency(batch_size=1))
 print("批量处理效率:", estimate_moe_efficiency(batch_size=32))
 ```
-
 
 ---
 
@@ -185,10 +180,8 @@ for rank in range(4):
     simulate_distributed_training(rank, world_size=4)
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：多语言客服与知识库自动化系统
 
@@ -210,8 +203,6 @@ for rank in range(4):
 
 ---
 
-
-
 ### 2：金融级超长文档分析与合规审查
 
  2：金融级超长文档分析与合规审查
@@ -231,8 +222,6 @@ for rank in range(4):
 - **效率革命**: 自动化审查覆盖率提升至90%，将初级分析师从繁琐的文档阅读中解放出来，专注于高价值决策。
 
 ---
-
-
 
 ### 3：个性化代码生成与遗留系统重构助手
 
@@ -346,7 +335,6 @@ for rank in range(4):
 ---
 ## 常见问题
 
-
 ### 1: 什么是 Trinity large，它与现有的开源大模型（如 Llama 3 或 Mixtral）有何不同？
 
 1: 什么是 Trinity large，它与现有的开源大模型（如 Llama 3 或 Mixtral）有何不同？
@@ -358,8 +346,6 @@ for rank in range(4):
 3.  **开源性质**：作为一个开源项目，它旨在为研究社区和开发者提供一个接近顶级商业模型性能的基座，以促进大模型领域的研究与发展。
 
 ---
-
-
 
 ### 2: "400B 稀疏 MoE" 具体是什么意思？这种技术有什么优势？
 
@@ -373,8 +359,6 @@ for rank in range(4):
     *   **推理效率高**：虽然模型很大，但由于每次推理只激活部分参数（即稀疏激活），其计算量（FLOPs）和推理速度可以接近一个参数量小得多的稠密模型。例如，一个 400B 的 MoE 模型在推理时的计算量可能仅相当于一个 60B-70B 的稠密模型。
 
 ---
-
-
 
 ### 3: Trinity large 的性能表现如何？它能否匹敌 GPT-4 或 Claude 3 等商业闭源模型？
 
@@ -391,8 +375,6 @@ for rank in range(4):
 
 ---
 
-
-
 ### 4: 普通用户或开发者可以在本地运行 Trinity large 吗？需要什么样的硬件配置？
 
 4: 普通用户或开发者可以在本地运行 Trinity large 吗？需要什么样的硬件配置？
@@ -405,8 +387,6 @@ for rank in range(4):
 
 ---
 
-
-
 ### 5: Trinity large 的数据来源和训练方式是什么？
 
 5: Trinity large 的数据来源和训练方式是什么？
@@ -418,8 +398,6 @@ for rank in range(4):
 
 ---
 
-
-
 ### 6: 该模型是否“开放权重”？它的商业使用许可协议是什么？
 
 6: 该模型是否“开放权重”？它的商业使用许可协议是什么？
@@ -427,22 +405,6 @@ for rank in range(4):
 **A**: 虽然被称为“开源”，但具体的使用许可取决于发布者声明的协议（如 Apache 2.0, MIT, 或自定义的社区许可）。
 
 对于 400B 这种规模的模型，发布者
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 稀疏混合专家模型的核心优势在于在保持总参数量巨大的同时，通过激活机制降低每次推理的实际计算量。请基于 MoE 的基本原理，计算一个拥有 400B 总参数、Top-2 路由策略（即每次只激活 2 个专家）的模型，如果其专家数量为 8 个，理论上每次推理激活的参数量大约是多少？这与同性能的稠密模型相比，在显存带宽和计算延迟上有何本质区别？
-
-### 提示**: 关注“总参数量”与“激活参数量”的区别。假设参数均匀分布，计算 $400B \times (2 / 8)$。思考推理时主要受限于显存读取速度还是计算核心的速度。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://www.arcee.ai/blog/trinity-large](https://www.arcee.ai/blog/trinity-large)
@@ -451,7 +413,6 @@ for rank in range(4):
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

@@ -123,23 +123,8 @@ external_url: https://twitter.com/NicerInPerson/status/2014989679796347375
 ---
 ## 💻 代码示例
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 ## 📚 案例研究
-
 
 ### 1：AI初创公司 - 智能客服系统开发
 
@@ -159,8 +144,6 @@ external_url: https://twitter.com/NicerInPerson/status/2014989679796347375
 
 ---
 
-
-
 ### 2：电商平台 - 自动化数据管道维护
 
  2：电商平台 - 自动化数据管道维护
@@ -178,8 +161,6 @@ external_url: https://twitter.com/NicerInPerson/status/2014989679796347375
 - 👨‍💻 数据工程师每周节省约20小时
 
 ---
-
-
 
 ### 3：金融科技公司 - 代码审计与安全扫描
 
@@ -311,7 +292,6 @@ external_url: https://twitter.com/NicerInPerson/status/2014989679796347375
 ---
 ## ❓ 常见问题
 
-
 ### 1: 什么是 Claude Code 的 "Swarms" 隐藏功能？
 
 1: 什么是 Claude Code 的 "Swarms" 隐藏功能？
@@ -319,8 +299,6 @@ external_url: https://twitter.com/NicerInPerson/status/2014989679796347375
 **A**: Swarms 是 Claude Code 中发现的一项未公开的高级功能，它允许用户同时调用并协调多个 AI 智能体来共同完成复杂的编程任务 🤖。不同于传统的单次对话模式，Swarms 能够让一个主控 Agent 派遣多个子 Agent 并行处理不同的代码模块、测试或调试任务，从而显著提升开发效率。这个功能类似于 Anthropic 之前在研究论文中提到过的 "多智能体协作" 概念，但在产品层面一直处于低调状态。
 
 ---
-
-
 
 ### 2: 如何在 Claude Code 中启用或访问 Swarms 功能？
 
@@ -334,8 +312,6 @@ external_url: https://twitter.com/NicerInPerson/status/2014989679796347375
 
 ---
 
-
-
 ### 3: Swarms 模式与普通的 Claude Chat 对话有什么核心区别？
 
 3: Swarms 模式与普通的 Claude Chat 对话有什么核心区别？
@@ -346,8 +322,6 @@ external_url: https://twitter.com/NicerInPerson/status/2014989679796347375
 这意味着在 Swarms 模式下，你可以同时看到多个文件被修改、多个测试被同时运行，速度通常会比普通模式快很多。
 
 ---
-
-
 
 ### 4: 使用 Swarms 功能会增加 API 调用成本吗？
 
@@ -360,8 +334,6 @@ external_url: https://twitter.com/NicerInPerson/status/2014989679796347375
 
 ---
 
-
-
 ### 5: Swarms 功能目前的稳定性和可用性如何？
 
 5: Swarms 功能目前的稳定性和可用性如何？
@@ -372,29 +344,11 @@ external_url: https://twitter.com/NicerInPerson/status/2014989679796347375
 
 ---
 
-
-
 ### 6: 既然是 "隐藏" 功能，为什么它会被公开讨论？
 
 6: 既然是 "隐藏" 功能，为什么它会被公开讨论？
 
 **A":** 开发者社区对 AI 编程助手的需求正在从 "单点辅助" 转向 "全流程自动化" 🔍。Swarms 代表了下一代编程工具的形态——即 AI 不仅仅是陪聊，而是成为一支虚拟的开发团队。虽然官方尚未大肆宣传，但敏锐的开发者在日志和边缘测试中发现了这一特性，并在 Hacker News 等技术社区进行了深入挖掘。这也反映了市场对于 "Agent Swarm"（智能体集群）技术的高度关注和期待。
-
----
-## 🎯 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**: 假设你正在开发一个基于 Claude Code 的多智能体协作系统。你需要设计一个简单的“任务分配器”，将一个大任务（如“分析这个代码库”）拆解为 3 个并行子任务（如“读取文件”、“分析结构”、“生成报告”）。请描述你会如何定义每个智能体的 **角色** 和 **目标**，以及它们之间如何传递结果？
-
-### 提示**: 思考每个智能体的输入应该是什么，输出又应该是什么。你可以类比流水线的工作方式。
-
-### 
-
----
 ## 🔗 引用
 
 - **原文链接**: [https://twitter.com/NicerInPerson/status/2014989679796347375](https://twitter.com/NicerInPerson/status/2014989679796347375)

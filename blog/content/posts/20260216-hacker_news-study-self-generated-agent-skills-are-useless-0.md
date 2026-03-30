@@ -82,9 +82,6 @@ scenarios: ["大语言模型", "AI/ML项目"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：技能生成器与评估器
 def generate_skill(skill_name):
@@ -103,9 +100,6 @@ skill = generate_skill("自动整理文件")
 is_useful = evaluate_skill(skill)
 print(f"技能'自动整理文件'是否有用: {is_useful}")
 ```
-
-
-
 
 ```python
 # 示例2：技能注册与过滤系统
@@ -129,9 +123,6 @@ useful_skills = registry.filter_useful_skills()
 print(f"有用的技能: {list(useful_skills.keys())}")
 ```
 
-
-
-
 ```python
 # 示例3：技能效果对比测试
 def test_skill_effectiveness(skill1, skill2, test_data):
@@ -152,10 +143,8 @@ data = [10, 20, 30, 40, 50]
 print(test_skill_effectiveness(skill_a, skill_b, data))
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：CognitionAI (Devin AI 项目)
 
@@ -170,8 +159,6 @@ print(test_skill_effectiveness(skill_a, skill_b, data))
 **效果**: 这一转变显著提升了 Devin 的实际可用性。Devin 成功通过了实际工程面试，并在 Upwork 上完成了真实任务。它不再依赖脆弱的自生成技能，而是利用可靠的工具链解决了端到端的编程问题，证明了在当前技术阶段，利用现有工具比自主生成技能更具实用价值。
 
 ---
-
-
 
 ### 2：某头部电商大客户智能客服项目
 
@@ -296,7 +283,6 @@ print(test_skill_effectiveness(skill_a, skill_b, data))
 ---
 ## 常见问题
 
-
 ### 1: 这项研究的核心结论是什么？
 
 1: 这项研究的核心结论是什么？
@@ -304,8 +290,6 @@ print(test_skill_effectiveness(skill_a, skill_b, data))
 **A**: 该研究主要探讨了“自我生成的智能体技能”在大型语言模型（LLM）中的实际效用。核心结论指出，尽管许多前沿研究致力于让 AI 智能体通过自我反思或与环境交互来自主学习和生成新技能，但在实际测试中，这些自我生成的技能往往无法带来显著的性能提升，甚至在某些情况下是无用的。这意味着模型可能并没有真正“学会”新的可迁移能力，而仅仅是在记忆特定的训练模式或陷入某种形式的“虚假学习”。
 
 ---
-
-
 
 ### 2: 为什么自我生成的技能被认为是“无用”的？
 
@@ -318,8 +302,6 @@ print(test_skill_effectiveness(skill_a, skill_b, data))
 
 ---
 
-
-
 ### 3: 这项研究对当前 AI 智能体的发展意味着什么？
 
 3: 这项研究对当前 AI 智能体的发展意味着什么？
@@ -328,8 +310,6 @@ print(test_skill_effectiveness(skill_a, skill_b, data))
 
 ---
 
-
-
 ### 4: 这是否意味着“Agent”智能体的技术路线是错误的？
 
 4: 这是否意味着“Agent”智能体的技术路线是错误的？
@@ -337,8 +317,6 @@ print(test_skill_effectiveness(skill_a, skill_b, data))
 **A**: 不完全是。该研究更多是质疑了“自我生成技能”这一特定组件的有效性，而不是否定整个智能体技术框架。Agent 的核心在于感知、规划、行动和记忆，自我生成技能只是增强其能力的一种尝试。这项研究建议我们在构建 Agent 时，应更加谨慎地评估哪些组件真正贡献了性能，而不是盲目追求模型的“自主性”。
 
 ---
-
-
 
 ### 5: 如果自我生成的技能不可靠，目前有哪些替代方案？
 
@@ -351,29 +329,11 @@ print(test_skill_effectiveness(skill_a, skill_b, data))
 
 ---
 
-
-
 ### 6: 这项研究是否适用于所有的大型语言模型？
 
 6: 这项研究是否适用于所有的大型语言模型？
 
 **A**: 虽然研究通常针对特定的模型架构（如基于 Transformer 的 LLM），但其揭示的原理——即模型在缺乏外部反馈或真实数据约束的情况下容易产生无效的自我强化——在大多数当前的生成式模型中都是普遍存在的。因此，这一发现对整个 LLM 社区都具有参考价值，提醒开发者在设计“自举”或“自我改进”算法时需要更加严格的验证。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**：在自主智能体系统中，"工具使用"与"内生技能"通常有何区别？请列举一个具体的场景，说明为什么一个预训练好的外部 API 工具往往比智能体通过微调或上下文学习（ICL）自行生成的技能更有效。
-
-### 提示**：思考"泛化能力"与"专用性"的权衡。预训练工具通常是基于海量数据构建的，而内生技能往往受限于训练数据的分布或上下文窗口的大小。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://arxiv.org/abs/2602.12670](https://arxiv.org/abs/2602.12670)
@@ -382,7 +342,6 @@ print(test_skill_effectiveness(skill_a, skill_b, data))
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

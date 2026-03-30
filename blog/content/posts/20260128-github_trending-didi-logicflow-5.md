@@ -53,8 +53,6 @@ Relevant source files
   * [sites/docs/CHANGELOG.md](https://github.com/didi/LogicFlow/blob/5ce9fe62/sites/docs/CHANGELOG.md)
   * [sites/docs/package.json](https://github.com/didi/LogicFlow/blob/5ce9fe62/sites/docs/package.json)
 
-
-
 This document provides a comprehensive introduction to LogicFlow, a flowchart editing framework. It covers the project's purpose, architecture philosophy, package organization, and core technical components. For detailed information on specific subsystems, see [Repository Organization](/didi/LogicFlow/1.1-repository-organization) for package structure, [Key Concepts](/didi/LogicFlow/1.2-key-concepts) for fundamental abstractions, and [Getting Started](/didi/LogicFlow/1.3-getting-started) for installation and usage.
 
 ## What is LogicFlow
@@ -69,7 +67,6 @@ The project is hosted at <https://github.com/didi/LogicFlow> and published as mu
 
 LogicFlow follows a **model-view separation** architecture where data models (BaseNodeModel, BaseEdgeModel) are decoupled from view components (BaseNode, BaseEdge). State changes in models automatically trigger view updates through MobX reactive programming. Communication between components occurs exclusively through a centralized EventEmitter, enabling loose coupling and extensibility.
 
-
 **Key architectural decisions:**
 
   * **Preact for rendering** : Core uses Preact (not React) to minimize bundle size while maintaining compatibility
@@ -77,14 +74,11 @@ LogicFlow follows a **model-view separation** architecture where data models (Ba
   * **Event-driven** : 40+ event types enable decoupled communication between core, extensions, and applications
   * **Plugin system** : Extensions modify behavior by intercepting lifecycle hooks and listening to events
 
-
-
 **Sources:** [packages/core/src/LogicFlow.tsx1-100](https://github.com/didi/LogicFlow/blob/5ce9fe62/packages/core/src/LogicFlow.tsx#L1-L100) [packages/core/src/model/GraphModel.ts1-50](https://github.com/didi/LogicFlow/blob/5ce9fe62/packages/core/src/model/GraphModel.ts#L1-L50) [packages/core/package.json42-50](https://github.com/didi/LogicFlow/blob/5ce9fe62/packages/core/package.json#L42-L50)
 
 ## Package Ecosystem
 
 LogicFlow is organized as a pnpm monorepo with published packages and example applications:
-
 
 Package| Version| Purpose| Build Outputs  
 ---|---|---|---  
@@ -101,12 +95,9 @@ Package| Version| Purpose| Build Outputs
   * **CJS** (`lib/index.js`): For Node.js and older bundlers
   * **UMD** (`dist/index.min.js`): For direct browser usage via CDN (unpkg, jsdelivr)
 
-
-
 **Sources:** [packages/core/package.json1-56](https://github.com/didi/LogicFlow/blob/5ce9fe62/packages/core/package.json#L1-L56) [packages/extension/package.json1-60](https://github.com/didi/LogicFlow/blob/5ce9fe62/packages/extension/package.json#L1-L60) [packages/layout/package.json1-48](https://github.com/didi/LogicFlow/blob/5ce9fe62/packages/layout/package.json#L1-L48) [packages/react-node-registry/package.json1-47](https://github.com/didi/LogicFlow/blob/5ce9fe62/packages/react-node-registry/package.json#L1-L47) [packages/vue-node-registry/package.json1-55](https://github.com/didi/LogicFlow/blob/5ce9fe62/packages/vue-node-registry/package.json#L1-L55)
 
 ## Core Technology Stack
-
 
 **Key technical choices:**
 
@@ -115,17 +106,13 @@ Package| Version| Purpose| Build Outputs
   3. **TypeScript compilation** : `tsc --target es5` ensures wide browser support
   4. **No CSS-in-JS** : Styles are separate LESS files compiled to CSS for better caching
 
-
-
 **Sources:** [packages/core/package.json42-55](https://github.com/didi/LogicFlow/blob/5ce9fe62/packages/core/package.json#L42-L55) [packages/core/src/util/StepDrag.ts1-50](https://github.com/didi/LogicFlow/blob/5ce9fe62/packages/core/src/util/StepDrag.ts#L1-L50)
 
 ## Entry Points and Initialization
 
 The primary entry point is the `LogicFlow` class, which orchestrates all subsystems:
 
-
 **Minimal initialization code:**
-
 
 **Configuration options** are passed to the constructor and stored in [packages/core/src/options.ts1-50](https://github.com/didi/LogicFlow/blob/5ce9fe62/packages/core/src/options.ts#L1-L50) Key options include:
 
@@ -417,32 +404,8 @@ LogicFlow 是目前国内前端领域在**流程图编辑框架**中非常优秀
 ---
 ## 💻 实用代码示例
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 ## 📚 真实案例研究
-
 
 ### 1：滴滴内部 - 审批流可视化配置平台
 
@@ -469,8 +432,6 @@ LogicFlow 是目前国内前端领域在**流程图编辑框架**中非常优秀
 
 ---
 
-
-
 ### 2：某大型物流企业 - 智能运单调度与监控大屏
 
  2：某大型物流企业 - 智能运单调度与监控大屏
@@ -495,8 +456,6 @@ LogicFlow 是目前国内前端领域在**流程图编辑框架**中非常优秀
 🛠️ **扩展性强**：基于 LogicFlow 的插件化架构，后续轻松增加了“冷链温度监控”等特殊节点，无需重构系统。
 
 ---
-
-
 
 ### 3：金融科技 SaaS 厂商 - 信贷风控规则编排引擎
 
@@ -740,7 +699,6 @@ LogicFlow 核心包体积较大，需要优化加载策略。建议采用动态�
 - 🌐 **基于 SVG 的底层渲染引擎**：采用 SVG 技术保证图形的高保真度和清晰度，同时利用 DOM 事件机制，实现了更流畅的交互体验。
 - 📦 **极简的 API 与数据驱动视图**：提供简洁的接口配置，支持通过 JSON 格式快速导入导出图数据，实现了数据与视图的分离和同步。
 
-
 ---
 ## 🗺️ 循序渐进的学习路径
 
@@ -833,7 +791,6 @@ LogicFlow 核心包体积较大，需要优化加载策略。建议采用动态�
 ---
 ## ❓ 常见问题解答
 
-
 ### 1: LogicFlow 是什么？主要解决什么问题？
 
 1: LogicFlow 是什么？主要解决什么问题？
@@ -842,8 +799,6 @@ LogicFlow 核心包体积较大，需要优化加载策略。建议采用动态�
 它不仅仅是一个画图库，更是一个专注于**业务流程**的编辑框架。LogicFlow 提供了完整的流程图编辑交互能力，并支持通过自定义节点（基于 React/Vue 等框架）、扩展插件来满足复杂的业务需求（如审批流、逻辑编排、拓扑图等），非常适合用来构建 BPMN、ER 图或通用的 Flow 编辑器。
 
 ---
-
-
 
 ### 2: LogicFlow 与 AntV X6、G6 等图可视化库有什么区别？
 
@@ -858,8 +813,6 @@ LogicFlow 核心包体积较大，需要优化加载策略。建议采用动态�
 
 ---
 
-
-
 ### 3: LogicFlow 支持哪些前端框架？如何自定义节点？
 
 3: LogicFlow 支持哪些前端框架？如何自定义节点？
@@ -871,8 +824,6 @@ LogicFlow 核心包体积较大，需要优化加载策略。建议采用动态�
 
 ---
 
-
-
 ### 4: 如何保存和加载流程图数据？
 
 4: 如何保存和加载流程图数据？
@@ -883,8 +834,6 @@ LogicFlow 核心包体积较大，需要优化加载策略。建议采用动态�
 
 ---
 
-
-
 ### 5: LogicFlow 是否支持 BPMN 规范？如何自定义复杂的节点样式？
 
 5: LogicFlow 是否支持 BPMN 规范？如何自定义复杂的节点样式？
@@ -893,8 +842,6 @@ LogicFlow 核心包体积较大，需要优化加载策略。建议采用动态�
 对于样式和形状的自定义，LogicFlow 采用了 SVG 技术。你可以通过重写节点的 `getShape` 方法来自由绘制 SVG 图形来改变节点的形状、颜色和图标。这使得它既能满足 BPMN 的标准样式，也能根据企业品牌进行深度定制。
 
 ---
-
-
 
 ### 6: 在 LogicFlow 中如何实现节点之间的数据流转或逻辑校验？
 
@@ -906,8 +853,6 @@ LogicFlow 核心包体积较大，需要优化加载策略。建议采用动态�
 
 ---
 
-
-
 ### 7: LogicFlow 是否有官方示例或文档？上手难度如何？
 
 7: LogicFlow 是否有官方示例或文档？上手难度如何？
@@ -915,22 +860,6 @@ LogicFlow 核心包体积较大，需要优化加载策略。建议采用动态�
 **A**: LogicFlow 拥有非常详细的**中文文档**和丰富的**官方示例**。
 *   **文档**：官网提供了从基础概念、快速上手到高级定制的完整指南，对国内开发者非常友好。
 *   **示例**：GitHub 仓库和官网提供了大量开箱即用的示例，包括 BPMN 示例、
-
----
-## 🎯 挑战与思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**: 如何快速初始化一个 LogicFlow 实例，并实现基础的节点拖拽功能（如：矩形、圆形节点）？
-
-### 提示**:
-
-### 查看 `LogicFlow` 的构造函数参数，了解 `container` 和 `width/height` 的配置。
-
----
 ## 💡 实践建议
 
 基于 **LogicFlow** 的特性和企业级流程图开发的常见场景，以下是 6 条实践建议与最佳实践：

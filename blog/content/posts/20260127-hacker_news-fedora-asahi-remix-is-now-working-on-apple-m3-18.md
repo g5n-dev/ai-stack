@@ -123,37 +123,8 @@ external_url: https://bsky.app/profile/did:plc:okydh7e54e2nok65kjxdklvd/post/3md
 ---
 ## 💻 代码示例
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 ## 📚 案例研究
-
 
 ### 1：开源社区开发者与 Linux 爱好者
 
@@ -174,8 +145,6 @@ Asahi Linux 项目团队通过深入逆向工程 Apple 的专有图形驱动，�
 🔧 **开发环境优化**：开发者终于可以在 M3 设备上运行完整的 Fedora 工作站环境，进行原生的 ARM64 架构代码编译和测试，极大提升了跨平台开发效率。
 
 ---
-
-
 
 ### 2：高性能嵌入式计算科研团队
 
@@ -284,7 +253,6 @@ Asahi Linux 项目团队通过深入逆向工程 Apple 的专有图形驱动，�
 ---
 ## ❓ 常见问题
 
-
 ### 1: Fedora Asahi Remix 是什么？它支持哪些新款 Apple 芯片？
 
 1: Fedora Asahi Remix 是什么？它支持哪些新款 Apple 芯片？
@@ -293,8 +261,6 @@ Asahi Linux 项目团队通过深入逆向工程 Apple 的专有图形驱动，�
 目前，该项目已经宣布支持最新的 **Apple M3** 系列芯片（包括 M3、M3 Pro 和 M3 Max）。此前，它已经完美支持 M1 和 M2 系列芯片。这意味着用户可以在最新的 MacBook Air、MacBook Pro 和 iMac 上运行原生 Linux 系统。
 
 ---
-
-
 
 ### 2: 在 M3 芯片上运行 Fedora Asahi Remix 的目前状态如何？是否适合日常使用？
 
@@ -307,8 +273,6 @@ Asahi Linux 项目团队通过深入逆向工程 Apple 的专有图形驱动，�
 
 ---
 
-
-
 ### 3: 在安装 Linux 之前，我是否需要调整 Mac 的内部硬盘设置？
 
 3: 在安装 Linux 之前，我是否需要调整 Mac 的内部硬盘设置？
@@ -320,8 +284,6 @@ Fedora Asahi Remix 需要 **APFS 卷**的严格特定布局才能与 macOS 共�
 
 ---
 
-
-
 ### 4: Fedora Asahi Remix 对 M3 芯片 GPU 的图形加速支持情况如何？
 
 4: Fedora Asahi Remix 对 M3 芯片 GPU 的图形加速支持情况如何？
@@ -332,8 +294,6 @@ Fedora Asahi Remix 需要 **APFS 卷**的严格特定布局才能与 macOS 共�
 
 ---
 
-
-
 ### 5: 我在 M3 Mac 上可以外接显示器吗？
 
 5: 我在 M3 Mac 上可以外接显示器吗？
@@ -343,8 +303,6 @@ Fedora Asahi Remix 需要 **APFS 卷**的严格特定布局才能与 macOS 共�
 *   **例外：** 如果您使用的是 Mac Studio 或 Mac mini，虽然可以通过 HDMI 端口获得一定支持，但笔记本用户目前可能难以实现稳定的外接显示器功能，需关注后续驱动更新。
 
 ---
-
-
 
 ### 6: 如何安装 Fedora Asahi Remix？安装过程困难吗？
 
@@ -358,8 +316,6 @@ Fedora Asahi Remix 需要 **APFS 卷**的严格特定布局才能与 macOS 共�
 
 ---
 
-
-
 ### 7: 如果我不满意 Linux，我可以恢复回纯粹的 macOS 吗？
 
 7: 如果我不满意 Linux，我可以恢复回纯粹的 macOS 吗？
@@ -367,22 +323,6 @@ Fedora Asahi Remix 需要 **APFS 卷**的严格特定布局才能与 macOS 共�
 **A:** **完全可以。**
 Fedora Asahi Remix 的设计理念就是非破坏性的。它会在你的启动磁盘中保留一个恢复分区。
 *
-
----
-## 🎯 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**: 在 Apple Silicon (M1/M2/M3) 芯片上运行非 macOS 操作系统（如 Linux 或 Windows）时，最大的架构障碍是什么？这与传统的 x86 架构 PC 有何不同？
-
-### 提示**: 思考苹果采用的指令集架构（ISA），以及操作系统启动时与硬件沟通的“语言”差异。
-
-### 
-
----
 ## 🔗 引用
 
 - **原文链接**: [https://bsky.app/profile/did:plc:okydh7e54e2nok65kjxdklvd/post/3mdd55paffk2o](https://bsky.app/profile/did:plc:okydh7e54e2nok65kjxdklvd/post/3mdd55paffk2o)

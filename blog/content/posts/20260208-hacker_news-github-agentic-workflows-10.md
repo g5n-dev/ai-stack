@@ -91,9 +91,6 @@ scenarios: ["AI/ML项目", "DevOps/运维", "大语言模型"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：自动化Issue分类器
 def classify_issue(title: str, body: str) -> str:
@@ -119,9 +116,6 @@ def classify_issue(title: str, body: str) -> str:
 print(classify_issue("App crashes on startup", "When I open the app it crashes immediately"))  # 输出: bug
 print(classify_issue("Add dark mode", "Please implement dark mode support"))  # 输出: enhancement
 ```
-
-
-
 
 ```python
 # 示例2：PR代码审查助手
@@ -157,9 +151,6 @@ pr_diff = """
 print(review_pr(pr_diff))  # 输出: ['包含调试代码', '可能包含敏感信息']
 ```
 
-
-
-
 ```python
 # 示例3：自动化工作流触发器
 def trigger_workflow(event: str, payload: dict) -> bool:
@@ -191,10 +182,8 @@ event_payload = {
 print(trigger_workflow("pull_request", event_payload))  # 输出: True
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：Cognition 公司 (Devin AI)
 
@@ -209,8 +198,6 @@ print(trigger_workflow("pull_request", event_payload))  # 输出: True
 **效果**: 在实际应用测试中，Devin 能够成功解决 Upwork 等平台上的真实软件工程任务。它不仅能通过端到端的工程任务，其表现甚至优于人类工程师。这标志着从“AI 辅助编程”向“AI 自主代理”的转变，极大地释放了人类工程师的创造力，使其能专注于架构设计和核心逻辑。
 
 ---
-
-
 
 ### 2：Rippling 公司 (自动化 PR 处理)
 
@@ -319,7 +306,6 @@ print(trigger_workflow("pull_request", event_payload))  # 输出: True
 ---
 ## 常见问题
 
-
 ### 1: 什么是 GitHub Agentic Workflows？
 
 1: 什么是 GitHub Agentic Workflows？
@@ -327,8 +313,6 @@ print(trigger_workflow("pull_request", event_payload))  # 输出: True
 **A**: GitHub Agentic Workflows 是 GitHub 推出的基于 AI 智能体的自动化工作流功能。它允许开发者通过自然语言描述任务，利用 AI 智能体自动规划、编码、测试并修复软件项目中的问题。与传统的 GitHub Actions 不同，Agentic Workflows 不仅能执行预定义的脚本，还能理解上下文、调用工具并尝试完成复杂的开发任务。
 
 ---
-
-
 
 ### 2: Agentic Workflows 与传统的 GitHub Actions 有什么区别？
 
@@ -338,8 +322,6 @@ print(trigger_workflow("pull_request", event_payload))  # 输出: True
 
 ---
 
-
-
 ### 3: 目前支持哪些 AI 模型来驱动这些工作流？
 
 3: 目前支持哪些 AI 模型来驱动这些工作流？
@@ -347,8 +329,6 @@ print(trigger_workflow("pull_request", event_payload))  # 输出: True
 **A**: 根据目前的资讯， GitHub 正在与 OpenAI 和 Anthropic 合作。这意味着 Agentic Workflows 背后的智能体将由 GPT-4 或 Claude 系列等模型驱动。GitHub 旨在通过多模型支持，辅助开发者处理代码逻辑和长上下文任务。
 
 ---
-
-
 
 ### 4: 使用 Agentic Workflows 会不会泄露我的私有代码？
 
@@ -358,8 +338,6 @@ print(trigger_workflow("pull_request", event_payload))  # 输出: True
 
 ---
 
-
-
 ### 5: 开发者现在可以立即使用这项功能吗？
 
 5: 开发者现在可以立即使用这项功能吗？
@@ -368,29 +346,11 @@ print(trigger_workflow("pull_request", event_payload))  # 输出: True
 
 ---
 
-
-
 ### 6: AI 智能体在执行工作流时如果犯了错误怎么办？
 
 6: AI 智能体在执行工作流时如果犯了错误怎么办？
 
 **A**: Agentic Workflows 的设计包含了错误处理机制。如果智能体生成的代码导致测试失败或编译错误，它会捕获这些错误信息，并将其作为新的上下文反馈给自己，然后尝试修改代码以修复问题。这个过程会循环进行，直到所有测试通过或达到预设的重试次数上限。此外，开发者拥有最终审核权，可以在合并代码前检查 AI 所做的所有更改。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 在传统的 CI/CD 流程中，脚本通常是确定性的。请列举出在引入 AI Agent 后，工作流中出现的三个非确定性因素，并解释为什么这些因素使得传统的“重试运行”策略可能失效。
-
-### 提示**: 思考大语言模型（LLM）的固有属性（如 temperature 参数），以及 Agent 在处理外部依赖（如 API 调用、环境状态）时的行为模式。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://github.github.io/gh-aw](https://github.github.io/gh-aw)
@@ -399,7 +359,6 @@ print(trigger_workflow("pull_request", event_payload))  # 输出: True
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

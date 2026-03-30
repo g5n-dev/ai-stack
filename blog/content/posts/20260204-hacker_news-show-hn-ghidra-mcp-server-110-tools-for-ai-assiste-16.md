@@ -79,9 +79,6 @@ Ghidra MCP Server 是逆向工程领域与 AI 结合的一个高水准“连接�
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：使用 MCP 工具获取 Ghidra 当前函数的汇编代码
 import requests
@@ -107,7 +104,6 @@ def get_current_function_disassembly(server_url="http://localhost:8000"):
 # 使用示例
 get_current_function_disassembly()
 ```
-
 
 ---
 
@@ -140,7 +136,6 @@ def search_string_in_binary(target_string, server_url="http://localhost:8000"):
 search_string_in_binary("password")
 ```
 
-
 ---
 
 ```python
@@ -172,10 +167,8 @@ def analyze_function_xrefs(function_name, server_url="http://localhost:8000"):
 analyze_function_xrefs("main")
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某大型互联网企业安全应急响应团队
 
@@ -194,8 +187,6 @@ analyze_function_xrefs("main")
 样本分析的平均耗时从 4 小时缩短至 30 分钟以内。初级分析师在 AI 的辅助下能够独立完成原本需要 3 年经验以上专家才能胜任的混淆代码分析工作。团队的整体漏洞处理效率提升了 300%，成功在多次 0-day 漏洞挖掘中抢在攻击者行动前完成了补丁修复。
 
 ---
-
-
 
 ### 2：某工控系统安全实验室
 
@@ -307,7 +298,6 @@ analyze_function_xrefs("main")
 ---
 ## 常见问题
 
-
 ### 1: 什么是 Ghidra MCP Server，它与直接使用 Ghidra 有什么区别？
 
 1: 什么是 Ghidra MCP Server，它与直接使用 Ghidra 有什么区别？
@@ -316,8 +306,6 @@ analyze_function_xrefs("main")
 
 ---
 
-
-
 ### 2: 该工具支持哪些 AI 客户端，如何配置？
 
 2: 该工具支持哪些 AI 客户端，如何配置？
@@ -325,8 +313,6 @@ analyze_function_xrefs("main")
 **A**: 目前，Ghidra MCP Server 主要兼容支持 MCP 协议的 AI 客户端。最典型的例子是 Anthropic 的 Claude Desktop 以及 VS Code 中的 Cline 插件。配置过程通常包括以下几个步骤：首先，确保你已安装并运行了 Ghidra；其次，克隆 Ghidra MCP Server 的源代码并安装所需的 Python 依赖（通常在 `requirements.txt` 中列出）；最后，在 AI 客户端的配置文件中添加 MCP 服务器的路径和启动命令。配置完成后，AI 客户端在启动时会自动连接到该服务器，使其能够调用 Ghidra 的工具集。
 
 ---
-
-
 
 ### 3: 这 110 个工具具体包含哪些功能？
 
@@ -341,8 +327,6 @@ analyze_function_xrefs("main")
 
 ---
 
-
-
 ### 4: 使用该工具是否存在安全风险，特别是代码隐私方面？
 
 4: 使用该工具是否存在安全风险，特别是代码隐私方面？
@@ -350,8 +334,6 @@ analyze_function_xrefs("main")
 **A**: 是的，这是一个需要重点考虑的问题。使用 Ghidra MCP Server 时，你正在将本地的逆向工程上下文（如反汇编代码片段、函数名、结构体定义等）发送给 AI 模型提供商（例如 Anthropic 或 OpenAI）。这意味着你正在分析的二进制文件的细节会被上传到云端。因此，**绝对不建议**将该工具用于处理敏感的、专有的或涉及恶意软件的高危样本，除非你使用的是本地部署的 LLM 并且配置了严格的本地 MCP 通信。对于学习开源软件（CTF 题目或公开软件）则相对安全。
 
 ---
-
-
 
 ### 5: 如果 Ghidra 中没有打开项目，AI 还能调用这些工具吗？
 
@@ -361,29 +343,11 @@ analyze_function_xrefs("main")
 
 ---
 
-
-
 ### 6: 该工具对 Ghidra 的版本有要求吗？
 
 6: 该工具对 Ghidra 的版本有要求吗？
 
 **A**: 虽然具体的版本要求取决于项目代码中使用的 Ghidra Python API (GhidraDev) 的兼容性，但一般来说，它需要较新版本的 Ghidra（通常是 Ghidra 10.0 或更高版本）。这是因为 MCP 协议和相关的 Python 脚本依赖于较新的 API 特性。在安装前，建议查看项目的 GitHub 仓库文档，确认其测试通过的 Ghidra 具体版本号。如果版本过旧，可能会导致 API 调用失败或缺少特定的依赖库。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 假设你正在使用 Ghidra MCP Server 辅助分析一个二进制文件。你希望 AI 能够帮你识别出所有潜在的“不安全函数调用”（如 `strcpy` 或 `gets`）。请构建一个具体的 Prompt（提示词），明确告知 AI 需要调用的工具名称以及你期望返回的输出格式（例如：包含地址、函数名和参数列表的表格）。
-
-### 提示**: 思考 MCP Server 的核心功能是将 Ghidra 的 API 暴露给 LLM。你需要明确指定 Ghidra 中的“Listing”或“Functions”相关操作，并在 Prompt 中定义结构化的输出约束。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://github.com/bethington/ghidra-mcp](https://github.com/bethington/ghidra-mcp)
@@ -392,7 +356,6 @@ analyze_function_xrefs("main")
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

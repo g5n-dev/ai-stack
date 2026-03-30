@@ -70,9 +70,6 @@ scenarios: ["命令行工具", "AI/ML项目"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：发送Slack消息
 def send_slack_message(webhook_url, message):
@@ -99,9 +96,6 @@ def send_slack_message(webhook_url, message):
 # 使用示例
 # send_slack_message("https://hooks.slack.com/services/YOUR/WEBHOOK/URL", "这是一条测试消息")
 ```
-
-
-
 
 ```python
 # 示例2：列出频道中的最新消息
@@ -146,9 +140,6 @@ def list_latest_messages(token, channel_id, limit=5):
 # list_latest_messages("xoxb-your-token-here", "C1234567890")
 ```
 
-
-
-
 ```python
 # 示例3：创建Slack快捷方式
 def create_slack_shortcut(token, callback_id, title, description):
@@ -192,10 +183,8 @@ def create_slack_shortcut(token, callback_id, title, description):
 # create_slack_shortcut("xoxb-your-token-here", "my_custom_shortcut", "我的快捷方式", "这是一个自定义快捷方式")
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某快速增长的 SaaS 初创公司
 
@@ -215,8 +204,6 @@ def create_slack_shortcut(token, callback_id, title, description):
 
 ---
 
-
-
 ### 2：中型科技企业的 DevOps 运维团队
 
  2：中型科技企业的 DevOps 运维团队
@@ -234,8 +221,6 @@ def create_slack_shortcut(token, callback_id, title, description):
 故障平均恢复时间（MTTR）缩短了 40%。通过将操作直接带入聊天界面，减少了上下文切换，并且所有操作都有由 Agent 记录的详细审计日志，提高了合规性和安全性。
 
 ---
-
-
 
 ### 3：远程优先的数字营销代理机构
 
@@ -359,7 +344,6 @@ Agent 无法避免出错。当 Agent 遇到无法解析的指令或后端报错�
 ---
 ## 常见问题
 
-
 ### 1: 什么是 Slack CLI for Agents，它与官方 Slack CLI 有何不同？
 
 1: 什么是 Slack CLI for Agents，它与官方 Slack CLI 有何不同？
@@ -367,8 +351,6 @@ Agent 无法避免出错。当 Agent 遇到无法解析的指令或后端报错�
 **A**: Slack CLI for Agents 是一个专为构建和部署 AI Agent（智能体）设计的命令行工具。虽然 Slack 官方也提供了自己的 CLI 用于开发应用和机器人，但这个第三方工具通常侧重于简化将大语言模型（LLM）集成到 Slack 工作流的流程。它可能提供了更高级的抽象层，专门用于处理 Agent 的上下文管理、工具调用或与特定 AI 模型的接口，而官方 CLI 更多关注于 Slack 平台原生的 API 交互和基础功能实现。
 
 ---
-
-
 
 ### 2: 我需要具备哪些技术背景才能使用这个工具？
 
@@ -382,8 +364,6 @@ Agent 无法避免出错。当 Agent 遇到无法解析的指令或后端报错�
 
 ---
 
-
-
 ### 3: 该工具支持哪些大语言模型（LLM）提供商？
 
 3: 该工具支持哪些大语言模型（LLM）提供商？
@@ -391,8 +371,6 @@ Agent 无法避免出错。当 Agent 遇到无法解析的指令或后端报错�
 **A**: 具体支持取决于该开源项目的实现细节，但大多数此类 Agent 框架通常支持主流的 LLM 提供商。这可能包括 OpenAI (GPT-4, GPT-3.5)、Anthropic (Claude)、开源模型（通过 Ollama 或 LocalAI）或通过 Azure OpenAI 服务。你需要查阅该项目的具体文档以确认支持的提供商列表及相应的配置方法。
 
 ---
-
-
 
 ### 4: 如何将开发好的 Agent 部署到 Slack 工作区？
 
@@ -406,8 +384,6 @@ Agent 无法避免出错。当 Agent 遇到无法解析的指令或后端报错�
 
 ---
 
-
-
 ### 5: 使用该工具是否需要支付费用？
 
 5: 使用该工具是否需要支付费用？
@@ -418,8 +394,6 @@ Agent 无法避免出错。当 Agent 遇到无法解析的指令或后端报错�
 
 ---
 
-
-
 ### 6: 我可以在本地运行模型以确保数据隐私吗？
 
 6: 我可以在本地运行模型以确保数据隐私吗？
@@ -427,8 +401,6 @@ Agent 无法避免出错。当 Agent 遇到无法解析的指令或后端报错�
 **A**: 这取决于该 CLI 工具的架构。如果它允许自定义 API 端点或支持标准的 LLM 协议（如 OpenAI 兼容协议），那么理论上你可以配置它指向本地运行的模型服务（例如通过 Ollama 或 vLLM 部署的本地模型）。这对于处理敏感数据且不希望发送给云端 API 的场景非常重要。建议查看项目的 README 文件中关于 "Local Models" 或 "Self-hosted" 的配置说明。
 
 ---
-
-
 
 ### 7: 遇到连接错误或调试困难时，该如何排查？
 
@@ -439,22 +411,6 @@ Agent 无法避免出错。当 Agent 遇到无法解析的指令或后端报错�
 2.  **验证权限**：确保 Bot Token 已被授予应用所需的 Scopes（如 `chat:write`, `channels:read` 等），并且 Bot 已被邀请到目标频道。
 3.  **查看日志**：该 CLI 工具通常会输出详细的控制台日志，检查是否有 LLM API 报错或网络超时信息。
 4.  **网络连接**：如果使用隧道工具，确保 ngrok 或类似服务的隧道 URL 是稳定且可访问的。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 设计基础 CLI 命令结构
-
-### 问题**: 设计一个简单的 CLI 命令结构，用于向 Slack 发送一条预定义的文本消息。假设你已经拥有一个有效的 Slack Token 和 Channel ID，请定义命令的参数（如 `--message`, `--channel`）以及一个基本的函数签名来处理这个请求。
-
-### 提示**: 考虑使用标准库中的 `flag` 或 `os` 包来解析命令行参数，并定义一个结构体来封装发送消息所需的上下文信息。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://github.com/stablyai/agent-slack](https://github.com/stablyai/agent-slack)
@@ -463,7 +419,6 @@ Agent 无法避免出错。当 Agent 遇到无法解析的指令或后端报错�
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

@@ -53,8 +53,6 @@ Relevant source files
   * [feedauthor/update.json](https://github.com/xiaojieonly/Ehviewer_CN_SXJ/blob/70faa8a4/feedauthor/update.json)
   * [gradle/wrapper/gradle-wrapper.properties](https://github.com/xiaojieonly/Ehviewer_CN_SXJ/blob/70faa8a4/gradle/wrapper/gradle-wrapper.properties)
 
-
-
 ## Purpose and Scope
 
 EhViewer CN SXJ is an Android client application for browsing, viewing, and downloading galleries from E-Hentai and ExHentai websites. This document provides a high-level introduction to the application's architecture, core components, and design principles.
@@ -66,8 +64,6 @@ For detailed information about specific subsystems:
   * Network communication and API integration: see [Network and API Integration](/xiaojieonly/Ehviewer_CN_SXJ/9-network-and-api-integration)
   * Download management: see [Download Management System](/xiaojieonly/Ehviewer_CN_SXJ/7-download-management-system)
   * Database schema and data models: see [Database and Data Management](/xiaojieonly/Ehviewer_CN_SXJ/8-database-and-data-management)
-
-
 
 **Sources:** [README.md1-135](https://github.com/xiaojieonly/Ehviewer_CN_SXJ/blob/70faa8a4/README.md#L1-L135) [app/build.gradle1-199](https://github.com/xiaojieonly/Ehviewer_CN_SXJ/blob/70faa8a4/app/build.gradle#L1-L199)
 
@@ -104,16 +100,12 @@ EhViewer CN SXJ provides comprehensive functionality for E-Hentai content consum
   * Tag system with translation support (10+ languages)
   * Content filtering and blacklist management
 
-
-
 ### Gallery Management
 
   * Cloud-synced favorites (10 categories)
   * Local favorites for offline access
   * Reading history with timestamps
   * Quick search templates for frequent queries
-
-
 
 ### Download System
 
@@ -123,8 +115,6 @@ EhViewer CN SXJ provides comprehensive functionality for E-Hentai content consum
   * Archive download from H@H (Hentai@Home) servers
   * Label-based organization and filtering
 
-
-
 ### Reader Features
 
   * Multiple reading modes (left-to-right, right-to-left, vertical)
@@ -132,8 +122,6 @@ EhViewer CN SXJ provides comprehensive functionality for E-Hentai content consum
   * Page preloading for smooth reading
   * Reading progress tracking
   * Archive file support (.zip, .rar, .7z)
-
-
 
 ### Network Resilience
 
@@ -144,21 +132,16 @@ EhViewer CN SXJ provides comprehensive functionality for E-Hentai content consum
   * Domain fronting capability
   * Proxy configuration support
 
-
-
 ### Localization
 
   * 10 supported languages: Chinese (Simplified/Traditional/Hong Kong), Japanese, Korean, English, German, Thai, French, Spanish
   * Tag translation database with community contributions
-
-
 
 **Sources:** [README.md1-135](https://github.com/xiaojieonly/Ehviewer_CN_SXJ/blob/70faa8a4/README.md#L1-L135) [app/src/main/AndroidManifest.xml1-295](https://github.com/xiaojieonly/Ehviewer_CN_SXJ/blob/70faa8a4/app/src/main/AndroidManifest.xml#L1-L295) [app/build.gradle36](https://github.com/xiaojieonly/Ehviewer_CN_SXJ/blob/70faa8a4/app/build.gradle#L36-L36)
 
 * * *
 
 ## High-Level Architecture
-
 
 **Architecture Description:**
 
@@ -310,32 +293,8 @@ Ehviewer_CN_SXJ 是一个活跃度较高的 Android 客户端项目，专注于�
 ---
 ## 💻 实用代码示例
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 ## 📚 真实案例研究
-
 
 ### 1：某高校图书馆数字化项目
 
@@ -354,8 +313,6 @@ Ehviewer_CN_SXJ 是一个活跃度较高的 Android 客户端项目，专注于�
 
 ---  
 
-
-
 ### 2：医疗影像云平台
 
  2：医疗影像云平台  
@@ -372,8 +329,6 @@ Ehviewer_CN_SXJ 是一个活跃度较高的 Android 客户端项目，专注于�
 - 平台用户量 6 个月内增长 **200%**，覆盖 **50+** 基层医院。  
 
 ---  
-
-
 
 ### 3：电商商品图像优化
 
@@ -648,7 +603,6 @@ API 请求效率直接影响数据加载速度，当前可能存在请求串行�
 - GitHub Trending 的风向标作用** 📈
 - 该项目出现在趋势榜单中，说明开发者社区对于特定垂直领域工具（如图标查看/管理类应用）保持着高度的关注和活跃的代码贡献。
 
-
 ---
 ## 🗺️ 循序渐进的学习路径
 
@@ -736,28 +690,11 @@ API 请求效率直接影响数据加载速度，当前可能存在请求串行�
 ---
 ## ❓ 常见问题解答
 
-
 ### 1: 什么是 Ehviewer，它主要用于什么？
 
 1: 什么是 Ehviewer，它主要用于什么？
 
 **A**: Ehviewer（全称 E-Hentai Viewer）是一款开源的 Android 平台图片浏览工具，主要用于访问和浏览 E-Hentai 及其关联的 ExHentai 网站的内容。它支持在线阅读、下载管理、标签过滤以及画廊分类等功能。由于该应用基于 GitHub 开源，不同的
-
----
-## 🎯 挑战与思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**: 如何获取特定仓库过去 30 天的 Star 增长历史数据？
-
-### 提示**: 考虑使用 GitHub API 的 `stargazers` 端点，并按时间戳筛选结果。
-
-### 
-
----
 ## 💡 实践建议
 
 基于该仓库是 **EhViewer（一个著名的开源图片/漫画浏览器）的中文修改版/分支**，以下是为您整理的 6 条实践建议。这些建议涵盖了下载、使用、安全以及社区互动等实际场景：

@@ -64,9 +64,6 @@ scenarios: ["大语言模型", "AI/ML项目"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：使用MCP Server自动化分析二进制文件中的可疑函数
 def analyze_suspicious_function(binary_path, function_name):
@@ -104,7 +101,6 @@ result = analyze_suspicious_function("/path/to/malware.exe", "suspicious_func")
 print(f"反汇编结果:\n{result['disassembly']}")
 print(f"控制流图节点数: {len(result['cfg'])}")
 ```
-
 
 1. 自动创建Ghidra项目并导入二进制文件
 2. 定位并分析指定函数
@@ -154,7 +150,6 @@ crypto_algos = identify_crypto_algorithms("/path/to/suspicious_app")
 for algo, funcs in crypto_algos.items():
     print(f"发现{algo}算法，相关函数: {', '.join(funcs)}")
 ```
-
 
 1. 自动扫描所有函数的字节码
 2. 匹配常见加密算法的特征字节序列
@@ -209,10 +204,8 @@ def generate_disasm_report(binary_path, output_path):
 generate_disasm_report("/path/to/target_binary", "disasm_report.json")
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某大型互联网安全公司应急响应团队
 
@@ -232,8 +225,6 @@ generate_disasm_report("/path/to/target_binary", "disasm_report.json")
 
 ---
 
-
-
 ### 2：遗留工业控制系统（ICS）维护项目
 
  2：遗留工业控制系统（ICS）维护项目
@@ -251,8 +242,6 @@ generate_disasm_report("/path/to/target_binary", "disasm_report.json")
 AI辅助审计在3天内完成了原本需要4周的工作量。系统成功在3个不同的网络协议处理模块中定位了高风险的堆栈溢出漏洞，并生成了详细的漏洞报告。这使厂商能够及时发布补丁，满足了合规性检查，并避免了设备被大规模召回的风险。
 
 ---
-
-
 
 ### 3：恶意软件分析培训与教学
 
@@ -363,7 +352,6 @@ AI辅助审计在3天内完成了原本需要4周的工作量。系统成功在3
 ---
 ## 常见问题
 
-
 ### 1: 什么是 Ghidra MCP Server，它的主要功能是什么？
 
 1: 什么是 Ghidra MCP Server，它的主要功能是什么？
@@ -371,8 +359,6 @@ AI辅助审计在3天内完成了原本需要4周的工作量。系统成功在3
 **A**: Ghidra MCP Server 是一个基于 Model Context Protocol (MCP) 的开源项目，旨在将 Ghidra 强大的逆向工程能力集成到支持 MCP 的人工智能工作流中（如 Claude Desktop 或其他兼容的 AI 客户端）。它的核心功能是作为一个中间件，将 AI 模型与 Ghidra 的脚本 API 连接起来。该项目封装了大约 110 个 Ghidra 的常用工具和 API 调用，使得 AI 助手能够直接执行诸如反编译代码、分析数据流、交叉引用查询、函数重命名以及获取程序结构信息等操作，从而实现真正的“AI 辅助逆向工程”。
 
 ---
-
-
 
 ### 2: 如何安装和配置 Ghidra MCP Server？
 
@@ -387,8 +373,6 @@ AI辅助审计在3天内完成了原本需要4周的工作量。系统成功在3
 
 ---
 
-
-
 ### 3: 该工具支持哪些具体的逆向工程操作？
 
 3: 该工具支持哪些具体的逆向工程操作？
@@ -402,8 +386,6 @@ AI辅助审计在3天内完成了原本需要4周的工作量。系统成功在3
 
 ---
 
-
-
 ### 4: 使用 Ghidra MCP Server 是否存在安全风险？
 
 4: 使用 Ghidra MCP Server 是否存在安全风险？
@@ -415,8 +397,6 @@ AI辅助审计在3天内完成了原本需要4周的工作量。系统成功在3
 
 ---
 
-
-
 ### 5: 它与直接使用 Ghidra 内置的脚本（如 Python 脚本）有什么区别？
 
 5: 它与直接使用 Ghidra 内置的脚本（如 Python 脚本）有什么区别？
@@ -427,8 +407,6 @@ AI辅助审计在3天内完成了原本需要4周的工作量。系统成功在3
 
 ---
 
-
-
 ### 6: 该项目目前处于什么阶段，兼容性如何？
 
 6: 该项目目前处于什么阶段，兼容性如何？
@@ -436,22 +414,6 @@ AI辅助审计在3天内完成了原本需要4周的工作量。系统成功在3
 **A**: 根据标题 "Show HN" 判断，这是一个新发布或展示的项目。通常这类项目处于活跃开发的早期或中期阶段。
 *   **兼容性**：它主要依赖于 Ghidra 的 API 稳定性。由于 Ghidra 本身是基于 Java 架构，而 MCP Server 通常通过某种桥接方式（如通过 HTTP 或直接调用 Ghidra 的 Python 模块）进行通信，因此需要确保与 Ghidra 的版本（如 Ghidra 10.x 或 11.x）相匹配。
 *   **AI 模型**：它主要兼容支持 Model Context Protocol 的客户端，目前主要是 Anthropic 的 Claude Desktop，但随着 MCP 协议的普及，未来可能会支持更多本地模型（如 Ollama）或其他 AI 平台。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 在传统的逆向工程工作流中，分析人员通常需要手动在 Ghidra 的界面中点击菜单来查找交叉引用或重命名变量。请描述引入拥有 110 个工具的 MCP Server 后，对于处理一个包含数千个函数的二进制文件时，最直接的时间节省体现在哪个具体环节？
-
-### 提示**: 考虑“批量处理”与“逐个点击”的区别，以及自然语言接口在处理重复性任务时的优势。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://github.com/bethington/ghidra-mcp](https://github.com/bethington/ghidra-mcp)
@@ -460,7 +422,6 @@ AI辅助审计在3天内完成了原本需要4周的工作量。系统成功在3
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

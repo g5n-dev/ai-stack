@@ -78,9 +78,6 @@ scenarios: ["DevOps/运维"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：使用Python创建AWS EC2虚拟机
 import boto3
@@ -114,9 +111,6 @@ def create_ec2_instance(instance_type='t2.micro', key_name='my-key-pair'):
 # create_ec2_instance()
 ```
 
-
-
-
 ```python
 # 示例2：使用Terraform创建GPU实例
 resource "google_compute_instance" "gpu_instance" {
@@ -147,9 +141,6 @@ resource "google_compute_instance" "gpu_instance" {
   metadata_startup_script = "sudo apt-get update && sudo apt-get install -y nvidia-driver-470"
 }
 ```
-
-
-
 
 ```python
 # 示例3：使用Azure CLI创建GPU虚拟机
@@ -190,10 +181,8 @@ def create_azure_gpu_vm():
 # create_azure_gpu_vm()
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：AIGC 初创公司的深夜模型微调
 
@@ -211,8 +200,6 @@ def create_azure_gpu_vm():
 **效果**:
 原本需要 45 分钟的手动配置工作被缩短至 5 分钟。工程师只需专注于模型参数的调整，测试完成后，工具自动销毁了实例以节省成本。这种“即用即抛”的高效工作流使得该团队在两周内完成了原本需要一个月的模型验证周期。
 
-
-
 ### 2：科研机构的自动化数据处理管道
 
  2：科研机构的自动化数据处理管道
@@ -228,8 +215,6 @@ def create_azure_gpu_vm():
 
 **效果**:
 实验室建立了一个完全自动化的“无服务器”数据处理流程。研究员不再需要维护计算基础设施，计算资源的利用率提升了 100%（因为没有闲置时间）。更重要的是，由于环境配置由 AI 统一标准化，因环境不一致导致的实验复现错误率降为零。
-
-
 
 ### 3：独立开发者的 SaaS 压力测试
 
@@ -362,7 +347,6 @@ def create_azure_gpu_vm():
 ---
 ## 常见问题
 
-
 ### 1: 这个工具的主要功能是什么，它是如何工作的？
 
 1: 这个工具的主要功能是什么，它是如何工作的？
@@ -370,8 +354,6 @@ def create_azure_gpu_vm():
 **A**: 该工具是一个开源项目，旨在将 AI 编码助手（如 Claude Code 或 OpenAI Codex）与云计算资源（虚拟机 VM 和 GPU）直接连接起来。它的工作原理是充当一个中间件或代理，接收 AI 生成的代码执行指令，然后通过云服务提供商的 API（如 AWS、Azure 或 Google Cloud）动态启动所需的计算资源。AI 模型可以在这些临时启动的环境中运行代码、训练模型或进行高性能计算，而无需用户手动配置服务器。
 
 ---
-
-
 
 ### 2: 使用这个工具需要具备哪些技术前提或依赖？
 
@@ -385,8 +367,6 @@ def create_azure_gpu_vm():
 
 ---
 
-
-
 ### 3: 它的安全性如何？将 AI 直接连接到云账户是否存在风险？
 
 3: 它的安全性如何？将 AI 直接连接到云账户是否存在风险？
@@ -397,8 +377,6 @@ def create_azure_gpu_vm():
 3.  **沙箱环境**：尽量在隔离的开发或测试环境中运行，避免直接操作生产环境资源。
 
 ---
-
-
 
 ### 4: 这个工具支持哪些云服务提供商和硬件类型？
 
@@ -413,8 +391,6 @@ def create_azure_gpu_vm():
 
 ---
 
-
-
 ### 5: 成本是如何计算的？使用起来会不会很贵？
 
 5: 成本是如何计算的？使用起来会不会很贵？
@@ -425,8 +401,6 @@ def create_azure_gpu_vm():
 
 ---
 
-
-
 ### 6: 它与现有的 AI 编码插件（如 GitHub Copilot）有什么区别？
 
 6: 它与现有的 AI 编码插件（如 GitHub Copilot）有什么区别？
@@ -435,29 +409,11 @@ def create_azure_gpu_vm():
 
 ---
 
-
-
 ### 7: 如果代码执行出错或实例启动失败，工具如何处理？
 
 7: 如果代码执行出错或实例启动失败，工具如何处理？
 
 **A**: 该工具通常包含错误处理和日志反馈机制。如果云实例启动失败，AI 会捕获 API 返回的错误信息（如配额不足、镜像错误等）并反馈给用户，或者尝试自动重试。如果代码在远程实例上运行失败，工具会将标准输出和标准错误流重定向回本地终端，供用户和 AI 查看并进行调试。部分高级版本甚至允许 AI 根据报错信息自动修正代码并重新提交运行。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 设计一个简单的 CLI 工具，能够接受用户输入的自然语言指令（如“启动一个 Ubuntu 虚拟机”），并将其转换为结构化的 JSON 格式，以便后续 API 调用使用。
-
-### 提示**:
-
-### 可以使用大语言模型（LLM）的 Function Calling 或 Tool Use 功能。
-
----
 ## 引用
 
 - **原文链接**: [https://cloudrouter.dev](https://cloudrouter.dev)
@@ -466,7 +422,6 @@ def create_azure_gpu_vm():
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

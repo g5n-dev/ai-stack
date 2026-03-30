@@ -72,9 +72,6 @@ Google 通过将 Gemini 2.0 Flash 模型深度集成到 Chrome 桌面版浏览�
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：网页内容摘要生成
 import requests
@@ -104,9 +101,6 @@ def summarize_webpage(url: str, api_key: str) -> str:
 # 使用示例
 # print(summarize_webpage("https://example.com", "your_api_key"))
 ```
-
-
-
 
 ```python
 # 示例2：智能表单填写助手
@@ -141,9 +135,6 @@ def smart_form_filler(form_data: dict, api_key: str) -> dict:
 # }
 # print(smart_form_filler(form_fields, "your_api_key"))
 ```
-
-
-
 
 ```python
 # 示例3：网页内容翻译助手
@@ -180,10 +171,8 @@ def translate_webpage(content: str, target_lang: str, api_key: str) -> str:
 # print(translate_webpage(html_content, "中文", "your_api_key"))
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某跨国电商客户支持团队
 
@@ -208,8 +197,6 @@ def translate_webpage(content: str, target_lang: str, api_key: str) -> str:
 
 ---
 
-
-
 ### 2：金融科技公司的合规审查专员
 
  2：金融科技公司的合规审查专员
@@ -232,8 +219,6 @@ def translate_webpage(content: str, target_lang: str, api_key: str) -> str:
 - 降低了对高级合规专家的依赖，初级专员在AI辅助下即可完成复杂的初步审查。
 
 ---
-
-
 
 ### 3：独立软件开发者的代码与文档调研
 
@@ -363,7 +348,6 @@ Gemini 可能无法读取受付费墙保护或需要特殊登录权限的私密�
 ---
 ## 常见问题
 
-
 ### 1: 如何在 Chrome 浏览器中启用并开始使用 Gemini 集成功能？
 
 1: 如何在 Chrome 浏览器中启用并开始使用 Gemini 集成功能？
@@ -379,8 +363,6 @@ Gemini 可能无法读取受付费墙保护或需要特殊登录权限的私密�
 
 ---
 
-
-
 ### 2: Chrome 中的 Gemini 功能是否需要付费，或者订阅 Google One 才能使用？
 
 2: Chrome 中的 Gemini 功能是否需要付费，或者订阅 Google One 才能使用？
@@ -390,8 +372,6 @@ Gemini 可能无法读取受付费墙保护或需要特殊登录权限的私密�
 然而，Google 可能会根据使用情况或账户状态设定一定的使用限额（例如每日请求次数限制）。如果你订阅了 Gemini Advanced（属于 Google One AI Premium），你可能会体验到更长的上下文理解能力或更高级的模型支持，但基础的浏览器集成功能对普通用户是开放的。
 
 ---
-
-
 
 ### 3: 使用 Chrome 版 Gemini 时，我的隐私数据是如何处理的？Google 会查看我的浏览内容吗？
 
@@ -406,8 +386,6 @@ Gemini 可能无法读取受付费墙保护或需要特殊登录权限的私密�
 
 ---
 
-
-
 ### 4: Chrome 中的 Gemini 与直接访问 Gemini 网页版或使用 Gemini App 有什么区别？
 
 4: Chrome 中的 Gemini 与直接访问 Gemini 网页版或使用 Gemini App 有什么区别？
@@ -418,8 +396,6 @@ Gemini 可能无法读取受付费墙保护或需要特殊登录权限的私密�
 *   **Gemini 网页版/App**：侧重于**通用聊天和复杂任务**。它拥有完整的聊天界面，支持更长的对话历史、文件上传、代码生成以及多模态交互（如识别图片）。它是为了解决更广泛的问题而设计的，而不仅仅是修改当前页面的文本。
 
 ---
-
-
 
 ### 5: 为什么我在 Chrome 中右键点击或文本框中没有看到“Help me write”的图标？
 
@@ -435,8 +411,6 @@ Gemini 可能无法读取受付费墙保护或需要特殊登录权限的私密�
 
 ---
 
-
-
 ### 6: 使用“Help me read”功能时，它能处理多长的文章，支持哪些语言？
 
 6: 使用“Help me read”功能时，它能处理多长的文章，支持哪些语言？
@@ -444,22 +418,6 @@ Gemini 可能无法读取受付费墙保护或需要特殊登录权限的私密�
 **A**:
 
 *   **长度限制**：目前的“Help me read”功能（通过侧边栏访问）能够处理非常长的网页内容，包括长篇新闻报道、PDF 文档（如果浏览器原生支持渲染）或博客文章。它不像之前的 SGP（SGE）那样有严格的字数限制，非常适合用来总结冗长的
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**:
-
-### 基于“Putting Gemini to Work in Chrome”的上下文，假设你需要在一个简单的网页中实现一个“文本摘要”功能。请设计一个基本的用户交互流程，说明用户如何选中网页上的文本，并触发 Chrome 内置的 AI 模型生成摘要。
-
-### 提示**:
-
----
 ## 引用
 
 - **原文链接**: [https://blog.google/products-and-platforms/products/chrome/gemini-3-auto-browse](https://blog.google/products-and-platforms/products/chrome/gemini-3-auto-browse)
@@ -468,7 +426,6 @@ Gemini 可能无法读取受付费墙保护或需要特殊登录权限的私密�
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

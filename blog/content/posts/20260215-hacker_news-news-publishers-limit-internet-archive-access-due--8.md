@@ -90,9 +90,6 @@ scenarios: ["AI/ML项目"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：检测网站是否屏蔽Internet Archive的User-Agent
 import requests
@@ -120,9 +117,6 @@ def check_archive_access(url):
 print(check_archive_access("https://example-news-site.com"))
 ```
 
-
-
-
 ```python
 # 示例2：获取网页的存档版本
 from waybackpy import WaybackMachineSaveAPI
@@ -142,9 +136,6 @@ def get_archived_version(url):
 # 使用示例
 print(get_archived_version("https://example-news-site.com/article"))
 ```
-
-
-
 
 ```python
 # 示例3：分析网站robots.txt的AI爬虫规则
@@ -178,10 +169,8 @@ def check_ai_crawling_rules(url):
 print(check_ai_crawling_rules("https://example-news-site.com"))
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：纽约时报与 OpenAI 的版权博弈
 
@@ -201,8 +190,6 @@ print(check_ai_crawling_rules("https://example-news-site.com"))
 
 ---
 
-
-
 ### 2：全球数千家出版商联手阻止 Common Crawl 数据抓取
 
  2：全球数千家出版商联手阻止 Common Crawl 数据抓取
@@ -220,8 +207,6 @@ Common Crawl 是一个非营利组织，提供免费的互联网文本数据集�
 这一行动显著减少了高质量新闻数据在公开数据集中的比例。这迫使 AI 开发者必须寻求合法的商业合作来获取新闻数据，从而提高了 AI 训练数据的获取成本，并确立了“数据有价”的行业共识。
 
 ---
-
-
 
 ### 3：Internet Archive 遭遇出版商联合封锁
 
@@ -332,7 +317,6 @@ Internet Archive（互联网档案馆）长期通过“Wayback Machine”提供�
 ---
 ## 常见问题
 
-
 ### 1: 为什么新闻出版机构要限制互联网档案馆的访问权限？
 
 1: 为什么新闻出版机构要限制互联网档案馆的访问权限？
@@ -340,8 +324,6 @@ Internet Archive（互联网档案馆）长期通过“Wayback Machine”提供�
 **A**: 此次限制行动的核心原因是对人工智能（AI）数据抓取的担忧。虽然互联网档案馆长期以来通过“时光机”功能为用户提供免费的网页存档服务，但许多新闻出版商认为，该机构目前对爬虫协议的处理方式存在漏洞。出版商担心，如果他们允许互联网档案馆不受限制地抓取其内容，这些内容可能会被第三方用于训练大型语言模型或其他AI系统。这被视为对版权内容的潜在滥用，因此出版商选择通过限制访问来保护其知识产权和商业利益。
 
 ---
-
-
 
 ### 2: 什么是“时光机”功能，它与此次事件有何关联？
 
@@ -351,8 +333,6 @@ Internet Archive（互联网档案馆）长期通过“Wayback Machine”提供�
 
 ---
 
-
-
 ### 3: 互联网档案馆对此事件持什么态度？
 
 3: 互联网档案馆对此事件持什么态度？
@@ -360,8 +340,6 @@ Internet Archive（互联网档案馆）长期通过“Wayback Machine”提供�
 **A**: 互联网档案馆对此表示了遗憾和反对。该机构认为，出版商的这种做法属于“因噎废食”。互联网档案馆强调，其使命是保存人类的数字记忆，为学者、记者和普通公众提供获取历史信息的渠道，而不是为AI公司提供数据训练服务。他们指出，出版商可以通过技术手段阻止AI爬虫，而不应该因此切断公众获取历史新闻的途径。档案馆方面表示，出版商的这种广泛限制实际上损害了公众获取信息的权利。
 
 ---
-
-
 
 ### 4: 这里的“AI抓取”具体指的是什么？为什么出版商如此担心？
 
@@ -371,8 +349,6 @@ Internet Archive（互联网档案馆）长期通过“Wayback Machine”提供�
 
 ---
 
-
-
 ### 5: 这种限制对普通用户有什么实际影响？
 
 5: 这种限制对普通用户有什么实际影响？
@@ -381,29 +357,11 @@ Internet Archive（互联网档案馆）长期通过“Wayback Machine”提供�
 
 ---
 
-
-
 ### 6: 出版商是如何实现这种技术限制的？
 
 6: 出版商是如何实现这种技术限制的？
 
 **A**: 这种限制通常是通过修改网站的 `robots.txt` 文件来实现的。`robots.txt` 是一种互联网标准协议，用于告诉网络爬虫（包括互联网档案馆的爬虫）哪些页面可以抓取，哪些不可以。近年来，互联网档案馆开始尊重出版商在 `robots.txt` 中设置的最新规则，而不是像以前那样忽略或延迟执行这些规则。因此，一旦出版商在该文件中屏蔽了互联网档案馆的爬虫，档案馆就会停止显示相关内容，从而实现了访问限制。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 假设你是一家新闻网站的技术负责人，现在需要通过配置服务器来阻止 AI 机器人和存档站点（如 Internet Archive）抓取你的网站内容。请列出你会采取的两种主要技术手段，并说明它们在 HTTP 协议层面是如何工作的。
-
-### 提示**: 思考一下 robots.txt 协议的作用范围，以及 Web 服务器在处理请求时如何根据 HTTP 头部或 User-Agent 字符串来区分不同的客户端。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://www.niemanlab.org/2026/01/news-publishers-limit-internet-archive-access-due-to-ai-scraping-concerns](https://www.niemanlab.org/2026/01/news-publishers-limit-internet-archive-access-due-to-ai-scraping-concerns)
@@ -412,7 +370,6 @@ Internet Archive（互联网档案馆）长期通过“Wayback Machine”提供�
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

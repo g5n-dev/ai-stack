@@ -43,8 +43,6 @@ Relevant source files
   * [channel/wechat/wechat_channel.py](https://github.com/zhayujie/chatgpt-on-wechat/blob/3db5e70a/channel/wechat/wechat_channel.py)
   * [config-template.json](https://github.com/zhayujie/chatgpt-on-wechat/blob/3db5e70a/config-template.json)
 
-
-
 This document provides a comprehensive introduction to the chatgpt-on-wechat (CoW) system - an intelligent conversational bot framework that integrates large language models with various messaging platforms. The system allows users to interact with AI models like GPT-4o, Claude, Gemini, and others through messaging platforms including WeChat, DingTalk, Feishu, and more.
 
 For specific deployment instructions, see [Deployment](/zhayujie/chatgpt-on-wechat/8-deployment), and for configuration details, see [Configuration](/zhayujie/chatgpt-on-wechat/7-configuration).
@@ -58,8 +56,6 @@ The chatgpt-on-wechat system serves as a flexible bridge between messaging platf
   3. Extensibility through a plugin architecture
   4. Integration with knowledge bases for domain-specific applications
 
-
-
 The system supports both personal and enterprise use cases, from simple chatbots to complex AI assistants with specialized knowledge.
 
 Sources: [README.md9-20](https://github.com/zhayujie/chatgpt-on-wechat/blob/3db5e70a/README.md#L9-L20)
@@ -68,7 +64,6 @@ Sources: [README.md9-20](https://github.com/zhayujie/chatgpt-on-wechat/blob/3db5
 
 The system follows a modular architecture with several key components working together to process messages, generate responses, and manage the flow of information.
 
-
 **Core Components Diagram**
 
 Sources: [app.py28-41](https://github.com/zhayujie/chatgpt-on-wechat/blob/3db5e70a/app.py#L28-L41) [channel/channel_factory.py8-51](https://github.com/zhayujie/chatgpt-on-wechat/blob/3db5e70a/channel/channel_factory.py#L8-L51)
@@ -76,7 +71,6 @@ Sources: [app.py28-41](https://github.com/zhayujie/chatgpt-on-wechat/blob/3db5e7
 ## Message Flow
 
 Messages flow through the system following a consistent pattern, with plugins having the opportunity to intercept and handle messages before they reach the default processing path.
-
 
 **Message Processing Flow Diagram**
 
@@ -105,7 +99,6 @@ Sources: [README.md13-20](https://github.com/zhayujie/chatgpt-on-wechat/blob/3db
 
 The system supports multiple messaging platforms through its channel architecture. Each channel handles the specific communication protocol of its platform.
 
-
 **Channel Hierarchy Diagram**
 
 Sources: [channel/channel_factory.py8-51](https://github.com/zhayujie/chatgpt-on-wechat/blob/3db5e70a/channel/channel_factory.py#L8-L51) [channel/wechat/wechat_channel.py109-115](https://github.com/zhayujie/chatgpt-on-wechat/blob/3db5e70a/channel/wechat/wechat_channel.py#L109-L115) [channel/wechat/wcf_channel.py26-38](https://github.com/zhayujie/chatgpt-on-wechat/blob/3db5e70a/channel/wechat/wcf_channel.py#L26-L38)
@@ -133,7 +126,6 @@ Sources: [README.md9](https://github.com/zhayujie/chatgpt-on-wechat/blob/3db5e70
 
 The system features a robust plugin architecture that allows for extending functionality:
 
-
 **Plugin System Diagram**
 
 Sources: [app.py32](https://github.com/zhayujie/chatgpt-on-wechat/blob/3db5e70a/app.py#L32-L32) [README.md19](https://github.com/zhayujie/chatgpt-on-wechat/blob/3db5e70a/README.md#L19-L19)
@@ -158,7 +150,6 @@ Sources: [config-template.json1-37](https://github.com/zhayujie/chatgpt-on-wecha
 ## Application Entry Point
 
 The system starts from `app.py`, which initializes the configuration, creates and starts the appropriate channel, and loads plugins:
-
 
 **Application Startup Diagram**
 
@@ -352,9 +343,6 @@ chatgpt-on-wechat 是一个基于大模型的智能对话框架，支持接入�
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：自动回复微信消息
 def auto_reply(message):
@@ -376,9 +364,6 @@ def auto_reply(message):
 print(auto_reply("你好"))
 print(auto_reply("你有哪些功能？"))
 ```
-
-
-
 
 ```python
 # 示例2：微信消息摘要生成
@@ -409,9 +394,6 @@ messages = [
 print(generate_summary(messages))
 ```
 
-
-
-
 ```python
 # 示例3：微信消息翻译功能
 def translate_message(message, target_lang="英文"):
@@ -437,10 +419,8 @@ print(translate_message("谢谢"))
 print(translate_message("晚上好"))
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某中型科技公司内部知识库助手
 
@@ -467,8 +447,6 @@ print(translate_message("晚上好"))
 
 ---
 
-
-
 ### 2：跨境电商客户服务自动化
 
  2：跨境电商客户服务自动化
@@ -493,8 +471,6 @@ print(translate_message("晚上好"))
 - 节省约 3 名全职客服的人力成本，年化 ROI 达 300%。
 
 ---
-
-
 
 ### 3：高校学生事务智能问答系统
 
@@ -797,7 +773,6 @@ print(translate_message("晚上好"))
 - 内置完善的日志系统与错误处理机制，确保长期运行的稳定性
 - 开源社区活跃，持续更新适配OpenAI最新API接口及微信协议变更
 
-
 ---
 ## 学习路径
 
@@ -897,7 +872,6 @@ print(translate_message("晚上好"))
 ---
 ## 常见问题
 
-
 ### 1: chatgpt-on-wechat 是什么项目？
 
 1: chatgpt-on-wechat 是什么项目？
@@ -905,8 +879,6 @@ print(translate_message("晚上好"))
 **A**: `chatgpt-on-wechat` (曾用名 `chatgpt-on-wechat`) 是一个基于大语言模型（如 ChatGPT、Claude、文心一言等）的微信接入项目。它能够将大模型的能力接入到微信个人号中，实现通过微信与 AI 进行对话。该项目支持多种部署方式（如 Docker、本地部署），并支持多账户管理、语音对话、访问量控制等功能，是目前 GitHub 上非常热门的 ChatGPT 微信接入开源项目之一。
 
 ---
-
-
 
 ### 2: 部署该项目需要哪些技术要求？
 
@@ -921,8 +893,6 @@ print(translate_message("晚上好"))
 
 ---
 
-
-
 ### 3: 如何避免微信账号被封禁？
 
 3: 如何避免微信账号被封禁？
@@ -936,8 +906,6 @@ print(translate_message("晚上好"))
 
 ---
 
-
-
 ### 4: 支持哪些大模型？可以使用免费的模型吗？
 
 4: 支持哪些大模型？可以使用免费的模型吗？
@@ -950,8 +918,6 @@ print(translate_message("晚上好"))
 
 ---
 
-
-
 ### 5: 部署后如何登录微信？是否需要扫码？
 
 5: 部署后如何登录微信？是否需要扫码？
@@ -962,8 +928,6 @@ print(translate_message("晚上好"))
 3. **登录状态保持**：登录成功后，项目会保存登录状态，短期内重启无需重复扫码（除非微信强制登出或 Token 失效）。
 
 ---
-
-
 
 ### 6: 如何更新项目到最新版本？
 
@@ -978,8 +942,6 @@ print(translate_message("晚上好"))
 
 ---
 
-
-
 ### 7: 遇到报错 "Connection error" 或 "Timeout" 怎么办？
 
 7: 遇到报错 "Connection error" 或 "Timeout" 怎么办？
@@ -989,22 +951,6 @@ print(translate_message("晚上好"))
 2. **网络代理**：如果服务器位于国内，访问 OpenAI API 可能需要配置代理。请在配置文件中正确填写 HTTP_PROXY 或 HTTPS_PROXY。
 3. **API 服务状态**：检查大模型服务商的官方状态页面，确认服务是否正常。
 4. **依赖版本**：确保 `openai` 等 Python 库的版本与项目要求一致，过时的版本可能导致连接错误。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: 环境配置与连接测试
-
-### 问题**: 项目启动时，如何通过配置文件正确设置 OpenAI API Key，并确保项目能成功连接并回复第一条测试消息？
-
-### 提示**: 请检查项目根目录下的配置文件（通常是 `.env` 或 `config.json`），确认 API Key 的格式是否正确，以及代码中读取环境变量的逻辑是否生效。
-
-### 
-
----
 ## 实践建议
 
 以下是基于 `zhayujie/chatgpt-on-wechat` 项目的实际使用建议：
@@ -1039,7 +985,6 @@ print(translate_message("晚上好"))
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

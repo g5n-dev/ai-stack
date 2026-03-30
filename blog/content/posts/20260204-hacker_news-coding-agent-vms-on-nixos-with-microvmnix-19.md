@@ -86,9 +86,6 @@ scenarios: ["DevOps/运维"]
 ---
 ## 代码示例
 
-
-
-
 ```nix
 # 示例1：创建基础MicroVM配置
 # 这个示例展示了如何定义一个最小的MicroVM配置
@@ -115,9 +112,6 @@ scenarios: ["DevOps/运维"]
   system.stateVersion = "23.11";
 }
 ```
-
-
-
 
 ```nix
 # 示例2：创建带有开发工具的MicroVM
@@ -152,9 +146,6 @@ scenarios: ["DevOps/运维"]
   };
 }
 ```
-
-
-
 
 ```nix
 # 示例3：使用MicroVM模块构建多虚拟机系统
@@ -191,10 +182,8 @@ scenarios: ["DevOps/运维"]
 }
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某欧洲金融科技初创公司
 
@@ -217,8 +206,6 @@ scenarios: ["DevOps/运维"]
 
 ---
 
-
-
 ### 2：某开源基础设施自动化工具项目
 
  2：某开源基础设施自动化工具项目
@@ -239,8 +226,6 @@ scenarios: ["DevOps/运维"]
 - MicroVM 的快速启动特性使得每次 Pull Request 的反馈时间减少了 50%，显著提升了社区贡献者的开发体验。
 
 ---
-
-
 
 ### 3：某高性能计算（HPC）研究团队
 
@@ -360,7 +345,6 @@ Coding Agent 可能会启动 Web 服务或需要对外暴露接口。Microvm.nix
 ---
 ## 常见问题
 
-
 ### 1: 什么是 Microvm.nix，它与标准的 NixOS 虚拟机有何不同？
 
 1: 什么是 Microvm.nix，它与标准的 NixOS 虚拟机有何不同？
@@ -374,8 +358,6 @@ Coding Agent 可能会启动 Web 服务或需要对外暴露接口。Microvm.nix
 
 ---
 
-
-
 ### 2: 为什么要在 NixOS 上使用 MicroVM 来运行 Coding Agent，而不是直接使用 Docker 或 Podman？
 
 2: 为什么要在 NixOS 上使用 MicroVM 来运行 Coding Agent，而不是直接使用 Docker 或 Podman？
@@ -388,8 +370,6 @@ Coding Agent 可能会启动 Web 服务或需要对外暴露接口。Microvm.nix
 
 ---
 
-
-
 ### 3: 如何通过 Microvm.nix 限制 Coding Agent 对宿主机文件系统的访问？
 
 3: 如何通过 Microvm.nix 限制 Coding Agent 对宿主机文件系统的访问？
@@ -401,8 +381,6 @@ Coding Agent 可能会启动 Web 服务或需要对外暴露接口。Microvm.nix
 3.  **网络隔离**：可以通过配置 `microvm.interfaces` 将 Agent 置于独立的网桥或 NAT 网络中，限制其对外部网络的访问能力。
 
 ---
-
-
 
 ### 4: 在 MicroVM 中运行 AI Coding Agent 时，如何处理 GPU 透传以支持本地大模型？
 
@@ -417,8 +395,6 @@ Coding Agent 可能会启动 Web 服务或需要对外暴露接口。Microvm.nix
 
 ---
 
-
-
 ### 5: MicroVM 的网络配置通常是如何设置的？如何让宿主机与 Agent 通信？
 
 5: MicroVM 的网络配置通常是如何设置的？如何让宿主机与 Agent 通信？
@@ -428,22 +404,6 @@ Coding Agent 可能会启动 Web 服务或需要对外暴露接口。Microvm.nix
 1.  **模式选择**：默认情况下，MicroVM 可能使用用户模式网络（User Networking），但这通常只支持出站访问。为了让宿主机主动连接到 Agent（例如通过 API 调用），通常使用 `tap` 模式。
 2.  **网桥配置**：你需要在宿主机上创建一个网桥（例如 `vm-br0`），并将 MicroVM 的虚拟网卡连接到该网桥。
 3.  **IP 分配**：MicroVM 启动后，可以通过内网 DHCP 获取 IP 地址，或者在配置中静态指定 IP。这样，
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 目录挂载配置
-
-### 问题**：在使用 `microvm.nix` 创建虚拟机时，如何通过配置将宿主机的一个特定目录（例如 `/tmp/my-data`）以只读权限挂载到虚拟机内的 `/mnt/host-data` 目录？请写出相关的 Nix 配置片段。
-
-### 提示**：查看 `microvm.nix` 关于 `shares` 的文档。这通常涉及到 9p 文件系统共享或 virtio-fs，需要在虚拟机的 `shares` 配置中进行声明，并设置 `tag` 和 `proto`，同时确保挂载点配置正确。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://michael.stapelberg.ch/posts/2026-02-01-coding-agent-microvm-nix](https://michael.stapelberg.ch/posts/2026-02-01-coding-agent-microvm-nix)
@@ -452,7 +412,6 @@ Coding Agent 可能会启动 Web 服务或需要对外暴露接口。Microvm.nix
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

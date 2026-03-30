@@ -38,8 +38,6 @@ Relevant source files
   * [package.json](https://github.com/wangrongding/wechat-bot/blob/4b0c6de4/package.json)
   * [sponsors/server.jpg](https://github.com/wangrongding/wechat-bot/blob/4b0c6de4/sponsors/server.jpg)
 
-
-
 ## Purpose and Scope
 
 The wechat-bot is a versatile chat bot system that integrates WeChat messaging capabilities with various AI language models. Built on the foundation of `wechaty` framework and supporting multiple AI services, the system allows for automatic responses to WeChat messages in both private and group conversations.
@@ -51,7 +49,6 @@ Sources: [README.md5-7](https://github.com/wangrongding/wechat-bot/blob/4b0c6de4
 ## System Architecture
 
 The wechat-bot system consists of several key components working together to provide an intelligent chat interface through WeChat. The following diagram illustrates the high-level architecture:
-
 
 Sources: [README.md5-7](https://github.com/wangrongding/wechat-bot/blob/4b0c6de4/README.md#L5-L7) [package.json30-46](https://github.com/wangrongding/wechat-bot/blob/4b0c6de4/package.json#L30-L46)
 
@@ -99,13 +96,11 @@ Sources: [README.md25-125](https://github.com/wangrongding/wechat-bot/blob/4b0c6
 
 The following diagram illustrates how messages flow through the system:
 
-
 Sources: [README.md212-231](https://github.com/wangrongding/wechat-bot/blob/4b0c6de4/README.md#L212-L231)
 
 ## AI Service Integration
 
 The system uses a flexible architecture to integrate with multiple AI services through a centralized router:
-
 
 Sources: [README.md25-125](https://github.com/wangrongding/wechat-bot/blob/4b0c6de4/README.md#L25-L125)
 
@@ -134,8 +129,6 @@ To run the wechat-bot system, you need:
   * Internet connection with appropriate proxy settings if accessing restricted APIs
   * Optional: Docker for containerized deployment
 
-
-
 Sources: [README.md163-164](https://github.com/wangrongding/wechat-bot/blob/4b0c6de4/README.md#L163-L164) [README.md291-300](https://github.com/wangrongding/wechat-bot/blob/4b0c6de4/README.md#L291-L300)
 
 ## Deployment Options
@@ -144,8 +137,6 @@ The system supports two main deployment methods:
 
   1. **Local Deployment** : Run directly on your local machine using Node.js
   2. **Docker Deployment** : Run in a Docker container (see [Docker Deployment](/wangrongding/wechat-bot/2.1-docker-deployment) for details)
-
-
 
 For both deployment methods, proper configuration of environment variables is essential.
 
@@ -158,8 +149,6 @@ The system interacts with both WeChat and external AI services, requiring carefu
   * WeChat account security (risk of warnings or bans with certain protocols)
   * API key protection for AI services
   * Message content privacy and data handling
-
-
 
 Users should be aware that recent WeChat updates have increased scrutiny on bots, and appropriate protocols should be used to minimize risks.
 
@@ -379,9 +368,6 @@ wechat-bot 是一款基于 WeChaty 框架的开源微信机器人，支持接入
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：自动回复微信消息
 import itchat
@@ -410,7 +396,6 @@ def auto_reply(msg):
 itchat.auto_login(hotReload=True)  # hotReload=True保持登录状态
 itchat.run()
 ```
-
 
 ---
 
@@ -445,7 +430,6 @@ def analyze_friends():
 
 analyze_friends()
 ```
-
 
 ---
 
@@ -482,10 +466,8 @@ while True:
     time.sleep(1)
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：SaaS企业技术支持自动化
 
@@ -505,8 +487,6 @@ while True:
 
 ---
 
-
-
 ### 2：高校科研小组协作工具
 
  2：高校科研小组协作工具
@@ -524,8 +504,6 @@ while True:
 实现了运维通知的自动化，服务器故障的平均发现时间缩短至5分钟以内。团队协作流程得到优化，减少了人工提醒的工作量，使成员能专注于科研工作。
 
 ---
-
-
 
 ### 3：社区团购团长辅助系统
 
@@ -787,7 +765,6 @@ while True:
 - 开源社区活跃，文档覆盖部署、调试及常见问题解决方案，适合快速二次开发
 - 项目价值在于填补微信自动化工具的空白，为客服、营销、社群运营等场景提供低成本解决方案
 
-
 ---
 ## 学习路径
 
@@ -902,7 +879,6 @@ while True:
 ---
 ## 常见问题
 
-
 ### 1: 这个项目的主要功能是什么？
 
 1: 这个项目的主要功能是什么？
@@ -910,8 +886,6 @@ while True:
 **A**: `wechat-bot` 是一个基于微信网页版协议（通常使用 wechaty 或类似的自动化框架）开发的机器人项目。它的主要功能是允许用户通过编程的方式控制微信账号，实现自动回复消息、管理群聊、定时发送通知、通过 Webhook 接入 ChatGPT 或其他大模型进行智能对话等功能。它旨在解决微信无法直接通过 API 自动化操作的问题。
 
 ---
-
-
 
 ### 2: 如何部署和运行这个机器人？
 
@@ -926,8 +900,6 @@ while True:
 
 ---
 
-
-
 ### 3: 使用这个项目有封号风险吗？
 
 3: 使用这个项目有封号风险吗？
@@ -935,8 +907,6 @@ while True:
 **A**: 是的，存在一定风险。此类项目通常基于微信网页版协议或 Hook 技术实现。腾讯官方对自动化脚本有严格的检测机制，频繁使用自动化操作、非官方客户端登录或被他人举报，都可能导致账号受到限制，包括但不限于禁止使用网页版微信、短期封禁或永久封号。建议仅在小号上测试，并控制消息发送频率。
 
 ---
-
-
 
 ### 4: 为什么登录时一直显示二维码或无法扫码？
 
@@ -949,8 +919,6 @@ while True:
 
 ---
 
-
-
 ### 5: 如何将此机器人接入 ChatGPT 或 AI 模型？
 
 5: 如何将此机器人接入 ChatGPT 或 AI 模型？
@@ -962,8 +930,6 @@ while True:
 
 ---
 
-
-
 ### 6: 项目运行时报错 "Error: Puppet not found" 怎么办？
 
 6: 项目运行时报错 "Error: Puppet not found" 怎么办？
@@ -972,29 +938,11 @@ while True:
 
 ---
 
-
-
 ### 7: 可以在 Docker 容器中运行吗？
 
 7: 可以在 Docker 容器中运行吗？
 
 **A**: 可以。这是推荐的运行方式之一，因为可以避免本地环境配置的复杂性。项目通常会提供 `Dockerfile` 或 `docker-compose.yml` 文件。用户只需安装 Docker 和 Docker Compose，然后运行相应的构建和启动命令即可。需要注意的是，如果需要扫码登录，可能需要配置 Docker 容器的显示输出或使用特定的扫码登录方式（如在浏览器打开特定链接）。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: 消息路由机制设计
-
-### 问题描述**:
-
-### 在微信机器人开发中，请设计一个基础的消息路由系统。该系统需要能够解析接收到的文本消息，并根据预设的规则（如关键词匹配）触发相应的回复逻辑。
-
-### 设计提示**:
-
----
 ## 实践建议
 
 基于该微信机器人项目的架构和功能，以下是针对实际使用场景的 5-7 条实践建议：
@@ -1043,7 +991,6 @@ while True:
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

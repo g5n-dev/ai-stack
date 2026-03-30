@@ -128,34 +128,8 @@ external_url: https://sigh.dev/posts/you-can-just-port-things-to-cloudflare-work
 ---
 ## 💻 代码示例
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 ## 📚 案例研究
-
 
 ### 1：Discord（Discord 在线状态服务）
 
@@ -178,8 +152,6 @@ Discord 团队将在线状态 API 完全移植到了 **Cloudflare Workers** 上�
 
 ---
 
-
-
 ### 2：Optimizely（全栈 A/B 测试平台）
 
  2：Optimizely（全栈 A/B 测试平台）
@@ -200,8 +172,6 @@ Optimizely 推出了基于 **Cloudflare Workers** 的边缘分流解决方案。
 - **客户扩展性**：支持每秒数十万次的分流请求，满足大型企业的高流量需求。  
 
 ---
-
-
 
 ### 3：1Password（密码管理器 API 网关）
 
@@ -311,7 +281,6 @@ Workers 的核心优势在于其遵循 Web Standards。与其试图适配 Expres
 ---
 ## ❓ 常见问题
 
-
 ### 1: Cloudflare Workers 到底是什么？它和传统的服务器托管有什么区别？
 
 1: Cloudflare Workers 到底是什么？它和传统的服务器托管有什么区别？
@@ -323,8 +292,6 @@ Workers 的核心优势在于其遵循 Web Standards。与其试图适配 Expres
 3.  **V8 引擎**：它基于 Chrome 的 V8 引擎构建，启动速度极快（冷启动通常以毫秒计），非常适合处理 HTTP 请求。
 
 ---
-
-
 
 ### 2: 什么样的应用适合迁移到 Cloudflare Workers？
 
@@ -341,8 +308,6 @@ Workers 的核心优势在于其遵循 Web Standards。与其试图适配 Expres
 
 ---
 
-
-
 ### 3: 如果我的应用依赖数据库怎么办？Workers 可以连接数据库吗？
 
 3: 如果我的应用依赖数据库怎么办？Workers 可以连接数据库吗？
@@ -357,8 +322,6 @@ Workers 的核心优势在于其遵循 Web Standards。与其试图适配 Expres
 
 ---
 
-
-
 ### 4: 迁移到 Cloudflare Workers 有哪些技术限制或陷阱？
 
 4: 迁移到 Cloudflare Workers 有哪些技术限制或陷阱？
@@ -372,8 +335,6 @@ Workers 的核心优势在于其遵循 Web Standards。与其试图适配 Expres
 
 ---
 
-
-
 ### 5: Cloudflare Workers 是免费的吗？迁移成本高吗？
 
 5: Cloudflare Workers 是免费的吗？迁移成本高吗？
@@ -386,22 +347,6 @@ Workers 的核心优势在于其遵循 Web Standards。与其试图适配 Expres
 **迁移成本分析：**
 *   **技术成本**：如果代码是纯逻辑（如 JWT 验证、API 聚合），迁移成本很低。但如果代码深度依赖 Node.js 生态（如 `npm` 里的很多库），可能需要重写部分代码以兼容 Web Standards。
 *
-
----
-## 🎯 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**: 编写一个 Cloudflare Worker，它不返回任何外部 API 的数据，而是直接返回一个包含 JSON 格式的响应。要求响应中包含当前的请求方法（如 GET、POST）和请求的 URL 路径。
-
-### 提示**:
-
-### Worker 的默认接收参数是什么？
-
----
 ## 🔗 引用
 
 - **原文链接**: [https://sigh.dev/posts/you-can-just-port-things-to-cloudflare-workers](https://sigh.dev/posts/you-can-just-port-things-to-cloudflare-workers)

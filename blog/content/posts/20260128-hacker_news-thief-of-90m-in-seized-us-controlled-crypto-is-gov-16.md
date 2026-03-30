@@ -126,32 +126,8 @@ external_url: https://www.web3isgoinggreat.com/single/lick-theft
 ---
 ## 💻 代码示例
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 ## 📚 案例研究
-
 
 ### 1：美国司法部追回Silk Road暗网市场比特币 🚨
 
@@ -175,8 +151,6 @@ external_url: https://www.web3isgoinggreat.com/single/lick-theft
 
 ---
 
-
-
 ### 2：Bitfinex交易所黑客攻击资金追回 💻
 
  2：Bitfinex交易所黑客攻击资金追回 💻
@@ -198,8 +172,6 @@ external_url: https://www.web3isgoinggreat.com/single/lick-theft
 - 此案展示了即使经过多年，区块链取证仍能有效追踪和追回被盗资产。
 
 ---
-
-
 
 ### 3：Coincheck交易所5亿美元被盗案的追回 🏦
 
@@ -314,7 +286,6 @@ external_url: https://www.web3isgoinggreat.com/single/lick-theft
 ---
 ## ❓ 常见问题
 
-
 ### 1: 窃取这 9000 万美元加密货币的嫌疑人是谁？
 
 1: 窃取这 9000 万美元加密货币的嫌疑人是谁？
@@ -322,8 +293,6 @@ external_url: https://www.web3isgoinggreat.com/single/lick-theft
 **A**: 嫌疑人被确认为 25 岁的安东尼奥·帕尔马·赫南德兹（Antonio Palma Hernandez）。根据相关报道及法庭文件，他不仅是此次盗窃事件的主谋，其父亲还是一家与美国司法部（DOJ）有合作关系的政府承包商的高管。这一家庭背景成为了该案件备受关注的一大焦点。
 
 ---
-
-
 
 ### 2: 这些被盗的加密货币原本属于谁，为何由美国政府控制？
 
@@ -333,8 +302,6 @@ external_url: https://www.web3isgoinggreat.com/single/lick-theft
 
 ---
 
-
-
 ### 3: 嫌疑人是如何实施盗窃的？他是否使用了黑客技术？
 
 3: 嫌疑人是如何实施盗窃的？他是否使用了黑客技术？
@@ -342,8 +309,6 @@ external_url: https://www.web3isgoinggreat.com/single/lick-theft
 **A**: 令人惊讶的是，安东尼奥并没有使用高深的技术黑客手段（如攻破区块链协议或破解私钥加密）。他是利用了与其父亲工作相关的便利条件，通过物理方式获取了存储加密货币的“冷钱包”硬件设备（类似于一个高度加密的 U 盘）以及相关的访问密码。这是一种典型的利用内部信任和物理接触进行的内部作案。
 
 ---
-
-
 
 ### 4: 美国政府是如何追回这笔巨款的？
 
@@ -353,8 +318,6 @@ external_url: https://www.web3isgoinggreat.com/single/lick-theft
 
 ---
 
-
-
 ### 5: 这起事件暴露了政府扣押数字资产管理中的哪些问题？
 
 5: 这起事件暴露了政府扣押数字资产管理中的哪些问题？
@@ -363,29 +326,11 @@ external_url: https://www.web3isgoinggreat.com/single/lick-theft
 
 ---
 
-
-
 ### 6: 嫌疑人目前面临什么后果？
 
 6: 嫌疑人目前面临什么后果？
 
 **A**: 安东尼奥·帕尔马·赫南德兹已在夏威夷被捕，并面临多项指控，包括电信诈骗和非法进行货币交易。如果罪名成立，他可能面临长达 20 年的联邦监禁。虽然他的父亲并未被指控参与盗窃，但这起家庭关联的犯罪无疑给其父亲所在的承包公司带来了巨大的声誉危机和合同风险。
-
----
-## 🎯 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**:
-
-### 假设某执法部门查获了一个包含 1,000,000 USDT 的钱包，并将其转移到政府控制的多签钱包中保管。如果该钱包采用“3-of-5”（5人中3人同意即可转账）的多重签名机制，请计算攻击者（内部人员）至少需要获取几把私钥才能盗走资金？如果是“2-of-3”机制呢？
-
-### 提示**:
-
----
 ## 🔗 引用
 
 - **原文链接**: [https://www.web3isgoinggreat.com/single/lick-theft](https://www.web3isgoinggreat.com/single/lick-theft)

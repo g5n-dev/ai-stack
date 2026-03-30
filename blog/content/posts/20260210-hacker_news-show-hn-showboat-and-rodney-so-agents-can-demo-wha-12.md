@@ -87,9 +87,6 @@ scenarios: ["AI/ML项目"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：演示智能体自动生成项目文档
 def generate_docs(agent_name, project_features):
@@ -109,9 +106,6 @@ def generate_docs(agent_name, project_features):
 # 测试用例
 print(generate_docs("Showboat", ["自动演示生成", "多格式导出", "实时预览"]))
 ```
-
-
-
 
 ```python
 # 示例2：智能体性能监控装饰器
@@ -140,9 +134,6 @@ def demo_agent():
 # 测试用例
 demo_agent()
 ```
-
-
-
 
 ```python
 # 示例3：多智能体协作演示系统
@@ -180,10 +171,8 @@ orchestrator.register_agent(Agent("Rodney", "执行实时预览"))
 orchestrator.run_demo()
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某垂直领域 AI Agent 研发团队
 
@@ -198,8 +187,6 @@ orchestrator.run_demo()
 **效果**: 在演示会议中，客户能够实时看到 Agent 识别出价格异常并触发人工审批流程的全过程。这种“黑盒透明化”的演示方式将客户的信任度显著提升，将原本平均 3 个月的 PoC（概念验证）周期缩短至 4 周，直接促成了三个标杆客户的签约。
 
 ---
-
-
 
 ### 2：企业级 LLM 应用开发平台
 
@@ -307,7 +294,6 @@ orchestrator.run_demo()
 ---
 ## 常见问题
 
-
 ### 1: Showboat 和 Rodney 具体是什么？它们之间有什么区别？
 
 1: Showboat 和 Rodney 具体是什么？它们之间有什么区别？
@@ -320,8 +306,6 @@ orchestrator.run_demo()
 简单来说，Rodney 负责收集和发送智能体的行为数据，而 Showboat 负责将这些数据以人类可读的方式展示出来。
 
 ---
-
-
 
 ### 2: 为什么开发者需要这个工具？它解决了什么具体问题？
 
@@ -336,8 +320,6 @@ Showboat 和 Rodney 通过以下方式解决这一问题：
 
 ---
 
-
-
 ### 3: 这两个工具支持哪些编程语言或框架？
 
 3: 这两个工具支持哪些编程语言或框架？
@@ -348,8 +330,6 @@ Showboat 和 Rodney 通过以下方式解决这一问题：
 *   **Showboat**：作为一个前端组件，它通常以 Web 组件或 React 组件的形式提供，可以轻松嵌入到任何 Web 应用程序中，与后端的 Rodney 实例进行通信。
 
 ---
-
-
 
 ### 4: 部署和使用这两个工具的难度如何？是否需要复杂的配置？
 
@@ -363,8 +343,6 @@ Showboat 和 Rodney 通过以下方式解决这一问题：
 
 ---
 
-
-
 ### 5: Showboat 显示的数据是实时的吗？我能否自定义显示的内容？
 
 5: Showboat 显示的数据是实时的吗？我能否自定义显示的内容？
@@ -376,8 +354,6 @@ Showboat 和 Rodney 通过以下方式解决这一问题：
 
 ---
 
-
-
 ### 6: 这个项目是开源的吗？我可以用于商业项目吗？
 
 6: 这个项目是开源的吗？我可以用于商业项目吗？
@@ -385,22 +361,6 @@ Showboat 和 Rodney 通过以下方式解决这一问题：
 **A**: 是的，Showboat 和 Rodney 均为开源项目。这意味着代码是公开可查的，社区可以贡献代码或修复 Bug。
 
 关于具体的商业使用许可，通常这类项目会采用宽松的许可证（如 MIT 或 Apache 2.0），允许在商业项目中免费使用、修改和分发。但在正式用于商业产品之前，建议查看其 GitHub 仓库中的具体 `LICENSE` 文件以确认法律细节。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 设计一个简单的静态 HTML 页面，用于展示一个 AI Agent 的输出结果。该页面需要包含一个标题栏、一个主要内容区域（用于显示 Agent 生成的文本或代码），以及一个底部的“重新生成”按钮。
-
-### 提示**: 使用语义化的 HTML5 标签（如 `<header>`, `<main>`, `<footer>`）来构建页面结构。CSS 方面，考虑使用 Flexbox 布局来确保内容在不同屏幕尺寸下都能居中显示。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://simonwillison.net/2026/Feb/10/showboat-and-rodney](https://simonwillison.net/2026/Feb/10/showboat-and-rodney)
@@ -409,7 +369,6 @@ Showboat 和 Rodney 通过以下方式解决这一问题：
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

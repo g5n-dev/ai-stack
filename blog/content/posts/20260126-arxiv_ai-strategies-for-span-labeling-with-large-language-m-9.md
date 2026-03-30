@@ -365,7 +365,6 @@ external_url: http://arxiv.org/abs/2601.16946v1
 - ⚙️ 上下文学习（ICL）与检索增强（RAG）至关重要**：在输入 Prompt 中提供少量精心挑选的标注示例，或通过检索增强引入相关知识库，能帮助模型更精确地界定跨度范围，尤其是在低资源场景下。
 - 🧪 消除偏差需依赖多样化的负样本**：在训练或设计 Prompt 时，不仅要包含正样本，更要包含“似是而非”的负样本，以教会模型严格区分“相关文本”与“精确跨度”的边界。
 
-
 ---
 ## 🗺️ 学习路径
 
@@ -448,7 +447,6 @@ external_url: http://arxiv.org/abs/2601.16946v1
 ---
 ## ❓ 常见问题
 
-
 ### 1: 什么是 Span Labeling（片段标注），为什么它对 LLM 来说具有挑战性？
 
 1: 什么是 Span Labeling（片段标注），为什么它对 LLM 来说具有挑战性？
@@ -460,8 +458,6 @@ external_url: http://arxiv.org/abs/2601.16946v1
 2.  **格式限制**：如果强制要求输出结构化的坐标（如 JSON `[start, end]`），模型的生成流畅性可能会受到影响，导致输出格式非法或坐标越界。
 
 ---
-
-
 
 ### 2: 使用 LLM 进行 Span Labeling 有哪些主流的生成策略？
 
@@ -477,8 +473,6 @@ external_url: http://arxiv.org/abs/2601.16946v1
 
 ---
 
-
-
 ### 3: 直接生成文本（如 "Entity: Type"）和生成坐标（如 JSON "[Start, End]"）哪种效果更好？
 
 3: 直接生成文本（如 "Entity: Type"）和生成坐标（如 JSON "[Start, End]"）哪种效果更好？
@@ -490,8 +484,6 @@ external_url: http://arxiv.org/abs/2601.16946v1
 *   如果追求简单易用，先让模型输出实体文本，再通过简单的字符串匹配算法在原文中找回坐标。
 
 ---
-
-
 
 ### 4: 如何设计 Prompt 才能提高 Span Labeling 的准确率？
 
@@ -505,8 +497,6 @@ external_url: http://arxiv.org/abs/2601.16946v1
 
 ---
 
-
-
 ### 5: 处理“重叠实体”或“嵌套实体”时，应该采用什么策略？
 
 5: 处理“重叠实体”或“嵌套实体”时，应该采用什么策略？
@@ -518,8 +508,6 @@ external_url: http://arxiv.org/abs/2601.16946v1
 
 ---
 
-
-
 ### 6: 在低资源语言或特定领域（如医疗、金融）下，LLM 做 Span Labeling 效果不好怎么办？
 
 6: 在低资源语言或特定领域（如医疗、金融）下，LLM 做 Span Labeling 效果不好怎么办？
@@ -527,22 +515,6 @@ external_url: http://arxiv.org/abs/2601.16946v1
 **A**: 如果通用 LLM（如 GPT-4）在特定领域效果不佳，可以采用以下进阶策略：
 1.  **Domain Adaptive Prompting**：在 Prompt 中注入该领域的专业词典或定义作为背景知识。
 2.  **RAG (检索增强生成)**：在标注前，先检索类似的标注案例作为 In
-
----
-## 🎯 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**:
-
-### 在传统的 Span Labeling（跨度标注）任务中，我们通常使用 BIO 或 BIOES 标签体系来训练模型（如 BERT-CRF）。如果直接将这种序列标注的格式作为 Prompt 输入给 Large Language Model (LLM)，可能会遇到什么问题？相比于直接输出文本，为什么要求 LLM 输出结构化的 JSON 格式通常更利于下游处理？
-
-### 提示**:
-
----
 ## 🔗 引用
 
 - **ArXiv**: [http://arxiv.org/abs/2601.16946v1](http://arxiv.org/abs/2601.16946v1)

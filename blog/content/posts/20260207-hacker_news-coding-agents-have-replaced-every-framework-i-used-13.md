@@ -90,9 +90,6 @@ AI 编程代理的智能化与系统化能力已达到临界点，使得开发�
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：自动生成单元测试
 def generate_unit_tests(func_name, func_code):
@@ -133,9 +130,6 @@ class Test{func_name.capitalize()}(unittest.TestCase):
 # 使用示例
 print(generate_unit_tests("calculate_sum", "def calculate_sum(a, b): return a + b"))
 ```
-
-
-
 
 ```python
 # 示例2：智能代码补全助手
@@ -179,9 +173,6 @@ agent = CodeCompletionAgent()
 print(agent.suggest_completion("for"))  # 输出: ['for item in items:\n    # 处理每个item\n    pass']
 ```
 
-
-
-
 ```python
 # 示例3：自动代码重构工具
 def refactor_code(source_code):
@@ -224,10 +215,8 @@ for num in numbers:
 print(refactor_code(original_code))  # 输出: result = [num * 2 for num in numbers]
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某中型 SaaS 初创公司的技术重构
 
@@ -246,8 +235,6 @@ print(refactor_code(original_code))  # 输出: result = [num * 2 for num in numb
 原本预计需要 6 个月的重构工作，在 2 个月内完成了核心模块的迁移。AI 编码代理不仅生成了新框架的代码，还优化了类型定义，减少了运行时错误。团队彻底抛弃了旧框架，统一了技术栈，新功能的开发速度提升了约 40%。
 
 ---
-
-
 
 ### 2：全栈独立开发者的 MVP 爆发式开发
 
@@ -278,7 +265,6 @@ print(refactor_code(original_code))  # 输出: result = [num * 2 for num in numb
 1. 在使用 Agent 生成代码前，先绘制系统架构图或编写高层次的设计文档。
 2. 要求 Agent 根据设计文档推荐最适合的框架，而不是由你预设框架。
 3. 重点审查 Agent 生成的依赖注入、模块划分和数据流设计。
-
 
 ---
 
@@ -365,7 +351,6 @@ print(refactor_code(original_code))  # 输出: result = [num * 2 for num in numb
 ---
 ## 常见问题
 
-
 ### 1: 什么是 Coding Agent（编程智能体），它与传统的 GitHub Copilot 等代码补全工具有何区别？
 
 1: 什么是 Coding Agent（编程智能体），它与传统的 GitHub Copilot 等代码补全工具有何区别？
@@ -373,8 +358,6 @@ print(refactor_code(original_code))  # 输出: result = [num * 2 for num in numb
 **A**: Coding Agent 是一种基于大语言模型（LLM）的高级自动化工具，它不仅能根据上下文补全代码片段，还能理解高层指令、规划任务、自主调用开发工具（如终端、文件系统、编译器），并迭代修复错误。与 Copilot 等被动式补全工具不同，Coding Agent 具备“代理”属性，能够独立完成从需求分析、架构设计到代码编写、测试和部署的完整闭环。它更像是一个虚拟的初级程序员或结对编程伙伴，而不仅仅是一个输入法插件。
 
 ---
-
-
 
 ### 2: Coding Agent 真的能完全取代 React、Vue 或 Django 等现有框架吗？
 
@@ -384,8 +367,6 @@ print(refactor_code(original_code))  # 输出: result = [num * 2 for num in numb
 
 ---
 
-
-
 ### 3: 如果 Agent 生成了代码，我是否还需要学习前端或后端的底层技术细节？
 
 3: 如果 Agent 生成了代码，我是否还需要学习前端或后端的底层技术细节？
@@ -393,8 +374,6 @@ print(refactor_code(original_code))  # 输出: result = [num * 2 for num in numb
 **A**: 是的，依然非常需要。虽然 Agent 可以大幅降低编写代码的门槛，但软件开发的核心难点往往在于“定义问题”和“系统设计”，而非单纯的“语法实现”。当 Agent 生成的代码出现逻辑错误、性能瓶颈或安全漏洞时，只有具备扎实技术背景的开发者才能有效地进行调试、审查和优化。此外，理解底层原理有助于你向 Agent 提供更精准的提示词，从而获得更好的结果。未来的开发者将从“代码编写者”转变为“代码审查者和架构设计者”。
 
 ---
-
-
 
 ### 4: 使用 Coding Agent 进行开发，目前面临的主要挑战和局限性是什么？
 
@@ -408,8 +387,6 @@ print(refactor_code(original_code))  # 输出: result = [num * 2 for num in numb
 
 ---
 
-
-
 ### 5: 这种“AI 优先”的开发模式会对软件架构产生什么影响？
 
 5: 这种“AI 优先”的开发模式会对软件架构产生什么影响？
@@ -417,8 +394,6 @@ print(refactor_code(original_code))  # 输出: result = [num * 2 for num in numb
 **A**: 这种模式可能会推动软件架构向“模块化”和“标准化”方向发展。由于 AI 擅长处理常见的、有明确文档规范的代码，未来的架构可能会倾向于使用更清晰、解耦度更高的设计模式，以便 AI 能够更好地理解和生成。同时，为了适应 AI 的上下文限制，单体应用可能会进一步加速向微服务或无服务器架构转变，将大任务拆解为 AI 能够独立处理的小型、独立功能单元。
 
 ---
-
-
 
 ### 6: 对于初学者来说，现在学习编程是否还有意义，如果未来都是 Agent 在写代码？
 
@@ -428,29 +403,11 @@ print(refactor_code(original_code))  # 输出: result = [num * 2 for num in numb
 
 ---
 
-
-
 ### 7: 企业在引入 Coding Agent 时，最需要关注的安全风险是什么？
 
 7: 企业在引入 Coding Agent 时，最需要关注的安全风险是什么？
 
 **A**: 最大的风险在于**数据泄露**和**供应链安全**。开发者可能会将包含敏感信息（如 API 密钥、客户数据或专有算法）的代码片段发送给云端模型进行处理，这可能导致数据泄露。此外，Agent 建议的依赖库可能存在恶意代码或已知漏洞。企业需要建立严格的 AI 使用策略，使用私有化部署的模型或具备企业级安全保护的 SaaS 服务，并对 AI 生成的代码进行严格的安全扫描。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 假设 Coding Agent 能够自动生成标准的 CRUD（增删改查）代码。请列出三个即使代码由 Agent 生成，人类开发者仍然必须亲自编写或审核的关键代码片段或配置部分。
-
-### 提示**: 思考代码运行的安全性、系统的外部连接点以及业务逻辑的独特性。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://blog.alaindichiappari.dev/p/software-engineering-is-back](https://blog.alaindichiappari.dev/p/software-engineering-is-back)
@@ -459,7 +416,6 @@ print(refactor_code(original_code))  # 输出: result = [num * 2 for num in numb
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

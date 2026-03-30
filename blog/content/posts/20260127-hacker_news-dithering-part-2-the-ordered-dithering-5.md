@@ -138,26 +138,8 @@ external_url: https://visualrambling.space/dithering-part-2
 ---
 ## 💻 代码示例
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 ## 📚 案例研究
-
 
 ### 1：老照片修复与扫描数字化项目
 
@@ -177,8 +159,6 @@ external_url: https://visualrambling.space/dithering-part-2
 📉 **极简体积**：生成的图像虽然是纯黑白的，但在视觉上完美还原了原版的质感，且文件体积比灰度图减少了数倍，非常适合在低带宽环境下传输。
 
 ---
-
-
 
 ### 2：嵌入式墨水屏（E-ink）智能标签系统
 
@@ -290,7 +270,6 @@ external_url: https://visualrambling.space/dithering-part-2
 ---
 ## ❓ 常见问题
 
-
 ### 1: 什么是有序抖动，它与随机抖动（Random Noise Dithering）有什么本质区别？
 
 1: 什么是有序抖动，它与随机抖动（Random Noise Dithering）有什么本质区别？
@@ -303,8 +282,6 @@ external_url: https://visualrambling.space/dithering-part-2
 简单来说，随机抖动像是在画面上撒“随机灰尘”，而有序抖动则是像铺瓷砖一样，按照固定的数学规律放置像素点，从而产生更具规律性、视觉上更连贯的纹理（通常是网状或交叉影线图案）。
 
 ---
-
-
 
 ### 2: 在图像处理中，Bayer 矩阵的具体作用是什么？
 
@@ -320,8 +297,6 @@ external_url: https://visualrambling.space/dithering-part-2
 
 ---
 
-
-
 ### 3: 为什么有时候有序抖动产生的图像看起来比误差扩散抖动（如 Floyd-Steinberg）更“粗糙”？
 
 3: 为什么有时候有序抖动产生的图像看起来比误差扩散抖动（如 Floyd-Steinberg）更“粗糙”？
@@ -334,8 +309,6 @@ external_url: https://visualrambling.space/dithering-part-2
 **优势在于**：有序抖动的结构非常简单，计算速度极快，且是可并行的（不需要等待上一个像素计算完），因此在需要实时性能或复古像素风格的场景下非常有用。
 
 ---
-
-
 
 ### 4: 我该如何选择 Bayer 矩阵的大小（如 2x2, 4x4, 8x8）？
 
@@ -351,27 +324,9 @@ external_url: https://visualrambling.space/dithering-part-2
 
 ---
 
-
-
 ### 5: 在 Web 开发或 CSS 中，如何不使用 JavaScript 而实现有序抖
 
 5: 在 Web 开发或 CSS 中，如何不使用 JavaScript 而实现有序抖
-
----
-## 🎯 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**:
-
-### 请编写一个函数，生成标准的 2x2 Bayer (有序抖动) 矩阵。
-
-### 要求：
-
----
 ## 🔗 引用
 
 - **原文链接**: [https://visualrambling.space/dithering-part-2](https://visualrambling.space/dithering-part-2)

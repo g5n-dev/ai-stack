@@ -80,9 +80,6 @@ scenarios: ["AI/ML项目", "Web应用开发"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：安全执行用户提供的Shell命令
 import subprocess
@@ -117,9 +114,6 @@ def safe_shell_execution(command: str, timeout: int = 5):
 print(safe_shell_execution("ls -l"))
 ```
 
-
-
-
 ```python
 # 示例2：沙箱文件系统操作模拟
 class SandboxFileSystem:
@@ -143,9 +137,6 @@ sandbox = SandboxFileSystem()
 sandbox.write_file("/sandbox/test.txt", "Hello Amla!")
 print(sandbox.read_file("/sandbox/test.txt"))
 ```
-
-
-
 
 ```python
 # 示例3：WASM兼容的命令执行器
@@ -187,10 +178,8 @@ print(executor.execute("echo Hello World"))
 print(executor.execute("date"))
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：DataFlow Analytics - 智能数据清洗平台
 
@@ -212,8 +201,6 @@ DataFlow Analytics 是一家为企业提供自动化数据治理服务的初创�
 
 ---
 
-
-
 ### 2：CodeMentor - 交互式编程教育平台
 
  2：CodeMentor - 交互式编程教育平台
@@ -233,8 +220,6 @@ CodeMentor 是一个专注于 DevOps 和 Linux 运维培训的在线教育平台
 - **响应速度**：消除了网络延迟，命令执行的反馈达到了原生应用般的流畅度，课程完成率因此提升了 20%。
 
 ---
-
-
 
 ### 3：NexAI - 企业级运维自动化 Agent
 
@@ -356,7 +341,6 @@ AI Agent 执行 Shell 命
 ---
 ## 常见问题
 
-
 ### 1: Amla Sandbox 的核心功能是什么，它与传统的 Docker 容器有何不同？
 
 1: Amla Sandbox 的核心功能是什么，它与传统的 Docker 容器有何不同？
@@ -364,8 +348,6 @@ AI Agent 执行 Shell 命
 **A**: Amla Sandbox 是一个专为 AI 智能体设计的基于 WebAssembly (WASM) 的 Bash Shell 沙箱环境。与传统的 Docker 容器相比，它的核心区别在于底层技术和隔离机制。Docker 使用操作系统级别的虚拟化，共享宿主机的内核，虽然轻量但仍存在一定的安全风险和资源占用。而 Amla Sandbox 利用 WASM 技术，在浏览器或独立运行时中运行，提供了更细粒度的内存隔离和更强的安全性。此外，它专为 AI Agent 的代码执行场景优化，启动速度极快，且更容易嵌入到各种 AI 应用工作流中，允许 AI 安全地执行 Shell 命令而不会威胁到宿主服务器。
 
 ---
-
-
 
 ### 2: 为什么 AI Agent 需要专门的沙箱环境，直接在服务器上运行脚本有什么风险？
 
@@ -379,8 +361,6 @@ Amla Sandbox 通过提供一个隔离的、资源受限的 WASM 环境，确保 
 
 ---
 
-
-
 ### 3: Amla Sandbox 支持哪些常见的 Linux 工具和命令？
 
 3: Amla Sandbox 支持哪些常见的 Linux 工具和命令？
@@ -388,8 +368,6 @@ Amla Sandbox 通过提供一个隔离的、资源受限的 WASM 环境，确保 
 **A**: 由于它是基于 WASM 实现的 Bash Shell，它支持标准的 POSIX Shell 语法以及常见的 Linux 核心工具集。通常包括文件操作（如 `ls`, `cd`, `cat`, `mkdir`, `rm`），文本处理（如 `grep`, `sed`, `awk`, `wc`），以及网络请求工具（如 `curl`）。具体的支持范围取决于其底层移植的 WASI (WebAssembly System Interface) 工具链的完整度。对于 AI 开发者来说，它足以支持大多数数据处理、文件管理和简单的自动化脚本任务。
 
 ---
-
-
 
 ### 4: 如何将 Amla Sandbox 集成到我现有的 AI 应用或 Agent 工作流中？
 
@@ -402,8 +380,6 @@ Amla Sandbox 通过提供一个隔离的、资源受限的 WASM 环境，确保 
 
 ---
 
-
-
 ### 5: 在 WebAssembly 环境中运行 Shell 脚本会有性能损失吗？
 
 5: 在 WebAssembly 环境中运行 Shell 脚本会有性能损失吗？
@@ -412,29 +388,11 @@ Amla Sandbox 通过提供一个隔离的、资源受限的 WASM 环境，确保 
 
 ---
 
-
-
 ### 6: Amla Sandbox 目前是否支持网络请求（例如使用 curl 访问外部 API）？
 
 6: Amla Sandbox 目前是否支持网络请求（例如使用 curl 访问外部 API）？
 
 **A**: 支持，但具体实现取决于其 WASI 网络权限的配置。现代 WASI 标准正在逐步完善网络访问能力。在 Amla Sandbox 的上下文中，通常允许通过内置的 `curl` 或类似工具发起 HTTP/HTTPS 请求。这对于 AI Agent 非常关键，因为它允许 Agent 在沙箱内获取外部数据（如抓取网页内容）或调用其他 Web API。开发者需要在配置沙箱时明确授予网络访问权限，以确保安全性。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 在 Amla Sandbox 的 WASM 环境中，尝试创建一个名为 `agent_log.txt` 的文件，并向其中写入当前的时间戳和一条 "System initialized" 的消息。随后，验证文件内容是否写入成功。
-
-### 提示**: 你可以使用标准的 shell 命令（如 `echo` 配合重定向符 `>`）来创建和写入文件。使用 `cat` 命令来验证内容。注意 WASM 环境下的文件系统通常是临时的，重启后数据会丢失。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://github.com/amlalabs/amla-sandbox](https://github.com/amlalabs/amla-sandbox)
@@ -443,7 +401,6 @@ Amla Sandbox 通过提供一个隔离的、资源受限的 WASM 环境，确保 
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

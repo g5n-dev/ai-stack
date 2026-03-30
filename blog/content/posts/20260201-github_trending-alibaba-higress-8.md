@@ -38,8 +38,6 @@ Relevant source files
   * [README_JP.md](https://github.com/alibaba/higress/blob/8deceb4d/README_JP.md)
   * [README_ZH.md](https://github.com/alibaba/higress/blob/8deceb4d/README_ZH.md)
 
-
-
 ## Purpose and Scope
 
 This document provides a comprehensive overview of Higress, an AI Native API Gateway built on Istio and Envoy. It covers the system's architecture, core components, and primary use cases. For detailed information about specific subsystems, refer to the Core Architecture (page 2), Build and Deployment (page 3), WASM Plugin System (page 4), AI Gateway Features (page 5), MCP System (page 6), and Development Guide (page 7) sections.
@@ -73,7 +71,6 @@ Higress implements a control plane and data plane separation derived from Istio'
 
 **Component Deployment Diagram:**
 
-
 **Binary and Process Mapping:**
 
 Binary| Source Entry Point| Deployment Location| Primary Functions  
@@ -92,7 +89,6 @@ Sources: [README.md32](https://github.com/alibaba/higress/blob/8deceb4d/README.m
 ### Configuration Flow and Controller Architecture
 
 **Configuration Update Sequence:**
-
 
 **Controller Registry and Responsibilities:**
 
@@ -269,9 +265,6 @@ Higress 针对大模型应用场景提供了特定的流量治理功能：
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：基于Higress的API网关流量路由配置
 from higress_gateway import GatewayConfig
@@ -308,9 +301,6 @@ def configure_api_routing():
 # 说明：这个示例展示了如何使用Higress实现微服务API网关的流量路由，
 # 包括路径匹配、服务转发以及常用插件（限流、认证、缓存）的配置。
 ```
-
-
-
 
 ```python
 # 示例2：Higress WAF安全防护配置
@@ -349,9 +339,6 @@ def configure_waf_protection():
 # 包括配置正则规则拦截恶意请求和IP黑名单管理。
 ```
 
-
-
-
 ```python
 # 示例3：Higress插件开发：自定义请求头处理
 from higress_plugin import PluginBase
@@ -384,10 +371,8 @@ plugin.register()
 # 实现了请求头的动态添加和修改功能，可根据实际需求扩展。
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：阿里巴巴集团内部业务（淘天集团）
 
@@ -407,8 +392,6 @@ plugin.register()
 
 ---
 
-
-
 ### 2：某大型互联网电商平台的 API 生态开放
 
  2：某大型互联网电商平台的 API 生态开放
@@ -426,8 +409,6 @@ plugin.register()
 Higress 的部署使得 API 接入效率提升了 50% 以上。通过配置化的方式替代了硬编码开发，新上线安全策略的周期从“天”级缩短至“小时”级。系统成功抵御了多次恶意爬虫攻击，且在高并发场景下保持了 99.99% 的可用性，极大地提升了合作伙伴的接入体验和平台的整体安全性。
 
 ---
-
-
 
 ### 3：某 AI 创业公司的 LLM（大语言模型）服务网关
 
@@ -642,7 +623,6 @@ Higress 的部署使得 API 接入效率提升了 50% 以上。通过配置化�
 - 它通过将配置数据与运行时数据分离，显著提升了大规模流量场景下的性能与稳定性。
 - 该项目具备极致的轻量化特性，可作为 Sidecar 代理与 Service Mesh 深度集成，实现微服务连接的统一管理。
 
-
 ---
 ## 学习路径
 
@@ -718,7 +698,6 @@ Higress 的部署使得 API 接入效率提升了 50% 以上。通过配置化�
 ---
 ## 常见问题
 
-
 ### 1: Higress 是什么？它与阿里巴巴和云原生社区有什么关系？
 
 1: Higress 是什么？它与阿里巴巴和云原生社区有什么关系？
@@ -726,8 +705,6 @@ Higress 的部署使得 API 接入效率提升了 50% 以上。通过配置化�
 **A**: Higress 是一个基于阿里内部两年多的实践，由阿里云和蚂蚁集团联合开源的云原生 API 网关。它建立在 Envoy 和 Istio 等开源项目之上，旨在提供标准化、高集成、易扩展、云原生的网关解决方案。Higress 兼容 Kubernetes Ingress 标准，并深度集成了 Nacos 等微服务生态组件，是阿里巴巴在云原生网关领域技术对外输出的重要载体。
 
 ---
-
-
 
 ### 2: Higress 与 Nginx、Kong 或 APISIX 等传统网关相比有什么核心优势？
 
@@ -741,8 +718,6 @@ Higress 的部署使得 API 接入效率提升了 50% 以上。通过配置化�
 
 ---
 
-
-
 ### 3: Higress 是否支持从 Nginx 或 Ingress Controller（如 Nginx Ingress Controller）迁移？
 
 3: Higress 是否支持从 Nginx 或 Ingress Controller（如 Nginx Ingress Controller）迁移？
@@ -753,8 +728,6 @@ Higress 的部署使得 API 接入效率提升了 50% 以上。通过配置化�
 3.  **协议兼容**：完全支持 HTTP/HTTPS、WebSocket、gRPC、Dubbo 等协议。
 
 ---
-
-
 
 ### 4: Higress 的插件机制是如何工作的？能否编写自定义插件？
 
@@ -767,8 +740,6 @@ Higress 的部署使得 API 接入效率提升了 50% 以上。通过配置化�
 
 ---
 
-
-
 ### 5: Higress 如何处理流量管理和灰度发布（金丝雀发布）？
 
 5: Higress 如何处理流量管理和灰度发布（金丝雀发布）？
@@ -780,8 +751,6 @@ Higress 的部署使得 API 接入效率提升了 50% 以上。通过配置化�
 
 ---
 
-
-
 ### 6: Higress 是否支持 Dubbo 服务，如何进行 HTTP 到 Dubbo 的协议转换？
 
 6: Higress 是否支持 Dubbo 服务，如何进行 HTTP 到 Dubbo 的协议转换？
@@ -790,22 +759,6 @@ Higress 的部署使得 API 接入效率提升了 50% 以上。通过配置化�
 1.  **直接调用**：Higress 可以直接作为 Dubbo 服务的消费者，通过注册中心发现服务地址并发起调用。
 2.  **协议转换**：它支持将 HTTP/HTTPS 请求自动转换为 Dubbo (Hessian2/JSONRPC) 协议调用。这使得前端应用可以通过 RESTful API 调用后端的 Dubbo 微服务，无需在中间层搭建额外的转换服务。
 3.  **多注册中心**：支持同时连接多个注册中心，适合复杂的微服务架构环境。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 本地环境路由配置
-
-### 问题**：Higress 基于 Envoy 构建，拥有强大的路由能力。请尝试在本地 Docker 环境中部署 Higress，并创建一个简单的路由规则，将访问 `/source-a` 的流量转发到后端服务 A，将访问 `/source-b` 的流量转发到后端服务 B。
-
-### 提示**：重点在于理解 Higress 的 Ingress Route 配置。你需要先启动一个本地容器集群，编写两个简单的后端服务（可以使用 nginx 或 echo server），然后定义一个 `Ingress` 或 `Gateway` 资源来实现基于路径的前端代理。
-
-### 
-
----
 ## 实践建议
 
 基于 Higress 作为 AI Native API 网关的定位，结合其云原生架构与 AI 流量处理特性，以下是 6 条针对实际生产环境的实践建议：
@@ -851,7 +804,6 @@ Higress 的部署使得 API 接入效率提升了 50% 以上。通过配置化�
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

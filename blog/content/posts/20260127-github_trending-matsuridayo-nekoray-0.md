@@ -42,8 +42,6 @@ Relevant source files
   * [ui/mainwindow.ui](https://github.com/MatsuriDayo/nekoray/blob/adef6cd4/ui/mainwindow.ui)
   * [ui/mainwindow_grpc.cpp](https://github.com/MatsuriDayo/nekoray/blob/adef6cd4/ui/mainwindow_grpc.cpp)
 
-
-
 NekoBox is a Qt-based cross-platform GUI proxy configuration manager that uses sing-box as its backend engine. This page introduces the project's purpose, core features, and high-level architecture to help developers understand how the system works as a whole. For specific implementation details about components, please refer to their dedicated pages.
 
 ## Purpose and Scope
@@ -79,9 +77,6 @@ The application supports multiple operating systems (primarily Windows and Linux
 
   * **Group Organization** : Organize profiles into manageable groups
 
-
-
-
 Sources: [README.md2-61](https://github.com/MatsuriDayo/nekoray/blob/adef6cd4/README.md#L2-L61)
 
 ## High-Level Architecture
@@ -90,11 +85,9 @@ NekoBox follows a multi-process architecture with clear separation between the u
 
 ### Architecture Overview Diagram
 
-
 Sources: [ui/mainwindow.cpp55-103](https://github.com/MatsuriDayo/nekoray/blob/adef6cd4/ui/mainwindow.cpp#L55-L103) [ui/mainwindow_grpc.cpp37-54](https://github.com/MatsuriDayo/nekoray/blob/adef6cd4/ui/mainwindow_grpc.cpp#L37-L54) [db/ConfigBuilder.cpp73-92](https://github.com/MatsuriDayo/nekoray/blob/adef6cd4/db/ConfigBuilder.cpp#L73-L92)
 
 ### Data Flow and Process Interaction
-
 
 Sources: [ui/mainwindow_grpc.cpp285-349](https://github.com/MatsuriDayo/nekoray/blob/adef6cd4/ui/mainwindow_grpc.cpp#L285-L349) [db/ConfigBuilder.cpp73-92](https://github.com/MatsuriDayo/nekoray/blob/adef6cd4/db/ConfigBuilder.cpp#L73-L92)
 
@@ -114,8 +107,6 @@ Key responsibilities:
   * Displaying logs and connection information
   * Managing system proxy and VPN settings
 
-
-
 Sources: [ui/mainwindow.cpp55-442](https://github.com/MatsuriDayo/nekoray/blob/adef6cd4/ui/mainwindow.cpp#L55-L442) [ui/mainwindow.h36-204](https://github.com/MatsuriDayo/nekoray/blob/adef6cd4/ui/mainwindow.h#L36-L204)
 
 ### ProfileManager and Entity System
@@ -128,8 +119,6 @@ Key classes:
   * `ProxyEntity`: Represents a proxy configuration (server, port, protocol, etc.)
   * `Bean`: Base class for different protocol-specific configuration classes
   * `Group`: Collection of profiles with additional properties like subscription URLs
-
-
 
 Sources: [ui/mainwindow.cpp62-65](https://github.com/MatsuriDayo/nekoray/blob/adef6cd4/ui/mainwindow.cpp#L62-L65) [ui/mainwindow.cpp456-467](https://github.com/MatsuriDayo/nekoray/blob/adef6cd4/ui/mainwindow.cpp#L456-L467)
 
@@ -144,8 +133,6 @@ Key features:
   * Managing routing rules
   * Configuring DNS settings
 
-
-
 Sources: [db/ConfigBuilder.cpp73-92](https://github.com/MatsuriDayo/nekoray/blob/adef6cd4/db/ConfigBuilder.cpp#L73-L92) [db/ConfigBuilder.cpp174-385](https://github.com/MatsuriDayo/nekoray/blob/adef6cd4/db/ConfigBuilder.cpp#L174-L385)
 
 ### Core Communication
@@ -159,12 +146,9 @@ Main operations:
   * Connection monitoring
   * Testing proxy latency and speed
 
-
-
 Sources: [ui/mainwindow_grpc.cpp37-54](https://github.com/MatsuriDayo/nekoray/blob/adef6cd4/ui/mainwindow_grpc.cpp#L37-L54) [ui/mainwindow_grpc.cpp285-349](https://github.com/MatsuriDayo/nekoray/blob/adef6cd4/ui/mainwindow_grpc.cpp#L285-L349)
 
 ## Component Relationships
-
 
 Sources: [ui/mainwindow.cpp285-488](https://github.com/MatsuriDayo/nekoray/blob/adef6cd4/ui/mainwindow.cpp#L285-L488) [ui/mainwindow.h36-204](https://github.com/MatsuriDayo/nekoray/blob/adef6cd4/ui/mainwindow.h#L36-L204)
 
@@ -178,10 +162,7 @@ The configuration flow in NekoBox follows a structured path from the user interf
   4. **Core Loading** : The configuration is sent to the core via gRPC
   5. **Proxy Establishment** : The core establishes the proxy connections based on the configuration
 
-
-
 ### Configuration Build Process
-
 
 Sources: [db/ConfigBuilder.cpp73-92](https://github.com/MatsuriDayo/nekoray/blob/adef6cd4/db/ConfigBuilder.cpp#L73-L92) [db/ConfigBuilder.cpp389-729](https://github.com/MatsuriDayo/nekoray/blob/adef6cd4/db/ConfigBuilder.cpp#L389-L729)
 
@@ -335,37 +316,8 @@ Nekoray 采用了经典的 **GUI Client + Core Backend** 分离架构，但在�
 ---
 ## 💻 实用代码示例
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 ## 📚 真实案例研究
-
 
 ### 1：跨国协作团队的远程办公网络优化
 
@@ -387,8 +339,6 @@ Nekoray 采用了经典的 **GUI Client + Core Backend** 分离架构，但在�
 
 ---  
 
-
-
 ### 2：海外内容创作者的本地化运营
 
  2：海外内容创作者的本地化运营  
@@ -408,8 +358,6 @@ Nekoray 采用了经典的 **GUI Client + Core Backend** 分离架构，但在�
 - 内容更新频率从每周 **2条 提高至 4条** 📈  
 
 ---  
-
-
 
 ### 3：出海电商企业的广告投放优化
 
@@ -602,7 +550,6 @@ Nekoray 采用了经典的 **GUI Client + Core Backend** 分离架构，但在�
 - 核心功能：Nekoray 是一款基于 Qt 开发的跨平台图形化代理工具** 🛠️
 - 内核支持：它集成了 V2Ray 和 sing-box
 
-
 ---
 ## 🗺️ 循序渐进的学习路径
 
@@ -681,7 +628,6 @@ Nekoray 采用了经典的 **GUI Client + Core Backend** 分离架构，但在�
 ---
 ## ❓ 常见问题解答
 
-
 ### 1: MatsuriDayo 和 NekoRay 的核心区别是什么？我该选哪个？
 
 1: MatsuriDayo 和 NekoRay 的核心区别是什么？我该选哪个？
@@ -692,8 +638,6 @@ Nekoray 采用了经典的 **GUI Client + Core Backend** 分离架构，但在�
 *   **NekoRay**：是一个功能更为全面的 **Qt 客户端**，拥有独立的可视化窗口。它集成了 v2ray (xray) 和 sing-box 内核，拥有类似于“小火箭”的规则分流系统（分流规则更直观）。如果你需要在一个软件里完成节点订阅、规则分流、调试且不依赖后端，NekoRay 更适合作为主力客户端。
 
 ---
-
-
 
 ### 2: 如何解决 MatsuriDayo 或 NekoRay 报错 "Failed to get latest version" 或无法更新？
 
@@ -709,8 +653,6 @@ Nekoray 采用了经典的 **GUI Client + Core Backend** 分离架构，但在�
 
 ---
 
-
-
 ### 3: 使用 "Core: xray" 节点时，推荐使用哪个传输协议 (Transport)？
 
 3: 使用 "Core: xray" 节点时，推荐使用哪个传输协议 (Transport)？
@@ -723,8 +665,6 @@ Nekoray 采用了经典的 **GUI Client + Core Backend** 分离架构，但在�
 *   *提示：如果是 MatsuriDayo，确保在设置中开启了正确的“分流规则”以防止流量泄露。*
 
 ---
-
-
 
 ### 4: NekoRay 如何设置系统代理？为什么浏览器还是直连？
 
@@ -742,8 +682,6 @@ Nekoray 采用了经典的 **GUI Client + Core Backend** 分离架构，但在�
 
 ---
 
-
-
 ### 5: 为什么导入订阅后一个节点都不可用？
 
 5: 为什么导入订阅后一个节点都不可用？
@@ -756,27 +694,9 @@ Nekoray 采用了经典的 **GUI Client + Core Backend** 分离架构，但在�
 
 ---
 
-
-
 ### 6: 如何开启“路由”功能以实现分流
 
 6: 如何开启“路由”功能以实现分流
-
----
-## 🎯 挑战与思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**:
-
-### Nekoray 是一个基于 `Core` 内核的代理工具，而 MatsuriDayo 是该内核的开发者。请查阅文档，说明 Nekoray 相比于直接使用 v2ray 或 xray 的命令行版本，在“订阅管理”这一具体功能上解决了什么用户痛点？
-
-### 提示**:
-
----
 ## 💡 实践建议
 
 鉴于 `MatsuriDayo/nekoray` 仓库已经明确标注为 **"不再维护" (Unmaintained)**，且该项目依赖后端为 `sing-box`，以下建议将侧重于**安全迁移、存量使用保障以及过渡期的最佳实践**。

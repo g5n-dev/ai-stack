@@ -60,9 +60,6 @@ scenarios: ["大语言模型"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：PagedAttention核心机制实现
 class PagedAttention:
@@ -98,9 +95,6 @@ paged_attn = PagedAttention()
 blocks = paged_attn.allocate_blocks(50)  # 分配50个token需要的块
 print(f"分配的块ID: {blocks}")
 ```
-
-
-
 
 ```python
 # 示例2：连续批处理调度器
@@ -143,9 +137,6 @@ for i in range(10):
     print(f"运行中请求: {scheduler.running_requests}, 完成: {completed}")
 ```
 
-
-
-
 ```python
 # 示例3：预分配内存池
 class MemoryPool:
@@ -178,10 +169,8 @@ print(f"分配的偏移量: {offset1}, {offset2}, 总使用: {pool.allocated}")
 pool.reset()  # 重置内存池供下一批使用
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某头部电商大厂智能客服系统
 
@@ -202,8 +191,6 @@ pool.reset()  # 重置内存池供下一批使用
 - **响应延迟降低**：P99 延迟降低至 800ms 以内，显著提升了用户交互体验。
 
 ---
-
-
 
 ### 2：某金融科技公司的实时风控与研报生成平台
 
@@ -322,7 +309,6 @@ vLLM 的核心优势之一在于其高度优化的 CUDA 内核。为了达到最
 ---
 ## 常见问题
 
-
 ### 1: 什么是 vLLM，它与 Nano-vLLM 有什么区别？
 
 1: 什么是 vLLM，它与 Nano-vLLM 有什么区别？
@@ -333,8 +319,6 @@ Nano-vLLM 则是一个基于 vLLM 核心设计理念的教学性或极简实现�
 
 ---
 
-
-
 ### 2: vLLM 风格的推理引擎是如何解决显存瓶颈的？
 
 2: vLLM 风格的推理引擎是如何解决显存瓶颈的？
@@ -344,8 +328,6 @@ Nano-vLLM 则是一个基于 vLLM 核心设计理念的教学性或极简实现�
 vLLM 风格的引擎通过 **PagedAttention** 机制解决了这个问题。它将 KV Cache（键值缓存）切分成固定大小的“块”。在模型生成文本时，不再需要为每个序列分配一段连续的显存空间，而是可以像操作系统管理内存一样，非连续地存储这些 KV Cache 块。这种机制极大地提高了显存的利用率，允许引擎在不发生显存溢出（OOM）的情况下处理更大的并发请求。
 
 ---
-
-
 
 ### 3: 什么是 Continuous Batching（连续批处理），为什么它对吞吐量至关重要？
 
@@ -359,8 +341,6 @@ vLLM 风格的引擎通过 **PagedAttention** 机制解决了这个问题。它�
 
 ---
 
-
-
 ### 4: 学习 Nano-vLLM 对实际开发大模型应用有什么帮助？
 
 4: 学习 Nano-vLLM 对实际开发大模型应用有什么帮助？
@@ -372,8 +352,6 @@ vLLM 风格的引擎通过 **PagedAttention** 机制解决了这个问题。它�
 3.  **定制化开发**：如果需要对推理引擎进行深度定制（例如修改调度策略或支持特殊的算子），阅读精简版的源码是进入复杂生产级代码库（如 vLLM 或 TensorRT-LLM）的最佳跳板。
 
 ---
-
-
 
 ### 5: Nano-vLLM 适合直接部署到生产环境吗？
 
@@ -389,8 +367,6 @@ vLLM 风格的引擎通过 **PagedAttention** 机制解决了这个问题。它�
 
 ---
 
-
-
 ### 6: 除了 PagedAttention，vLLM 风格引擎还有哪些关键组件？
 
 6: 除了 PagedAttention，vLLM 风格引擎还有哪些关键组件？
@@ -400,22 +376,6 @@ vLLM 风格的引擎通过 **PagedAttention** 机制解决了这个问题。它�
 1.  **Block Manager（块管理器）**：负责管理 KV Cache 的物理内存，分配和释放 Block，并维护逻辑索引到物理 Block 的映射表。
 2.  **Scheduler（调度器）**：决定哪些请求应该被送入模型进行计算。它负责管理 Waiting Queue（等待队列）、Running Queue（运行队列）和 Swap Queue（交换队列），并执行 Continuous Batching 逻辑。
 3.  **Model Executor（模型执行器）**：负责实际的 GPU 计算。它接收 Scheduler 准备好的数据，执行 Attention 层和 MLP 层的前向传播，并更新
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 在传统的 LLM 推理中，KV Cache 占据了大量的显存。请解释为什么 vLLM 引入的 PagedAttention 机制能够比传统的连续内存管理更有效地利用 GPU 显存，特别是在处理长序列或动态批处理时。
-
-### 提示**: 思考操作系统中的内存分页与虚拟内存概念，以及处理请求时序列长度的不确定性如何导致内存碎片化。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://neutree.ai/blog/nano-vllm-part-1](https://neutree.ai/blog/nano-vllm-part-1)
@@ -424,7 +384,6 @@ vLLM 风格的引擎通过 **PagedAttention** 机制解决了这个问题。它�
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

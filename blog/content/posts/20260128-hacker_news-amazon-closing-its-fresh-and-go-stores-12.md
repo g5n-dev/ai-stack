@@ -129,37 +129,8 @@ external_url: https://finance.yahoo.com/news/amazon-closing-fresh-grocery-conven
 ---
 ## 💻 代码示例
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 ## 📚 案例研究
-
 
 ### 1：加拿大电商巨头 Shopify 关闭其所有实体仓库
 
@@ -180,8 +151,6 @@ external_url: https://finance.yahoo.com/news/amazon-closing-fresh-grocery-conven
 
 ---
 
-
-
 ### 2：英国 Ocado 零售转型：从自营杂货到技术授权
 
  2：英国 Ocado 零售转型：从自营杂货到技术授权
@@ -200,8 +169,6 @@ external_url: https://finance.yahoo.com/news/amazon-closing-fresh-grocery-conven
 ✅ **技术变现**：成功将技术出口至全球，避免了在红海市场中与巨头进行正面消耗战。
 
 ---
-
-
 
 ### 3：京东旗下 7FRESH 七鲜超市的战略收缩与调整
 
@@ -293,7 +260,6 @@ external_url: https://finance.yahoo.com/news/amazon-closing-fresh-grocery-conven
 ---
 ## ❓ 常见问题
 
-
 ### 1: Amazon 真的决定关闭所有的 Amazon Fresh 和 Amazon Go 门店了吗？
 
 1: Amazon 真的决定关闭所有的 Amazon Fresh 和 Amazon Go 门店了吗？
@@ -301,8 +267,6 @@ external_url: https://finance.yahoo.com/news/amazon-closing-fresh-grocery-conven
 **A**: 并不是关闭**所有**门店，但确实进行了大规模的缩减。根据报道，Amazon 已决定关闭全美各地的 Amazon Fresh 超市和 Amazon Go 便利店，受影响的门店数量达到数十家。此次调整涉及西雅图、纽约市、旧金山等多个主要城市。Amazon 表示，他们仍在继续评估现有的门店组合，并致力于寻找盈利模式，这意味着目前尚未关闭的门店仍将继续营业，但未来的扩张计划可能会更加谨慎。
 
 ---
-
-
 
 ### 2: Amazon 为什么要突然关闭这些线下零售店？
 
@@ -316,8 +280,6 @@ external_url: https://finance.yahoo.com/news/amazon-closing-fresh-grocery-conven
 
 ---
 
-
-
 ### 3: 什么是“拿了就走”技术，为什么它没能拯救 Amazon Go？
 
 3: 什么是“拿了就走”技术，为什么它没能拯救 Amazon Go？
@@ -330,8 +292,6 @@ external_url: https://finance.yahoo.com/news/amazon-closing-fresh-grocery-conven
 
 ---
 
-
-
 ### 4: 这对 Amazon Fresh 的送货服务有影响吗？
 
 4: 这对 Amazon Fresh 的送货服务有影响吗？
@@ -342,8 +302,6 @@ Amazon 关闭的是面向公众的**实体生鲜店**（Walk-in stores），但�
 
 ---
 
-
-
 ### 5: 关闭这些门店后，员工会被解雇吗？
 
 5: 关闭这些门店后，员工会被解雇吗？
@@ -351,8 +309,6 @@ Amazon 关闭的是面向公众的**实体生鲜店**（Walk-in stores），但�
 **A**: 是的，涉及大量裁员。Amazon 确认，受关闭门店影响的员工将有资格获得**离职补偿金** 💰，并有机会申请调往公司内部的其他职位。Amazon 的一位发言人表示，他们将尽最大努力帮助受影响的员工找到新的角色，但这对于许多专注于实体店运营的员工来说，仍然是一个充满不确定性的时刻。
 
 ---
-
-
 
 ### 6: 我手中的 Amazon Fresh 礼品卡或会员福利还能用吗？
 
@@ -367,8 +323,6 @@ Amazon 关闭的是面向公众的**实体生鲜店**（Walk-in stores），但�
 
 ---
 
-
-
 ### 7: Amazon 现在的零售战略重点转移到了哪里？
 
 7: Amazon 现在的零售战略重点转移到了哪里？
@@ -379,22 +333,6 @@ Amazon 关闭的是面向公众的**实体生鲜店**（Walk-in stores），但�
 1.  **服饰实体店**：开设 Amazon Style 服装店，尝试结合线上线下试穿体验。
 2.  **自动化杂货店**：继续探索不需要复杂传感器的新型自动化杂货店模式（如 Dash Carts 智能购物车），这种模式比 Go 店的技术成本更低。
 3.  **核心业务聚焦**：重新将重心放在其核心的电商业务、AWS 云服务以及广告业务上，实体零售则更多作为线上
-
----
-## 🎯 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**: 重新评估商业模式
-
-### Amazon 关闭部分生鲜和无人便利店（Go）的原因之一是成本过高。假设你是该业务的负责人，请列出三种在**保持店铺运营**的前提下，显著降低运营成本（OPEX）的具体措施。
-
-### 提示**: 考虑“无人便利店”中哪些硬件是最烧钱的？以及店内的人事安排（如备餐环节）是否可以优化？
-
----
 ## 🔗 引用
 
 - **原文链接**: [https://finance.yahoo.com/news/amazon-closing-fresh-grocery-convenience-150437789.html](https://finance.yahoo.com/news/amazon-closing-fresh-grocery-convenience-150437789.html)

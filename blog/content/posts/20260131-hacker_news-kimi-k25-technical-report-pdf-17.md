@@ -66,9 +66,6 @@ Moonshot AI 发布的 Kimi k1.5 及其后续迭代模型（对应报告中的 K2
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：使用LangChain加载并分析Kimi K2.5技术报告
 from langchain.document_loaders import PyPDFLoader
@@ -98,9 +95,6 @@ def analyze_kimi_report(pdf_path):
 # texts = analyze_kimi_report("kimi_k2.5_report.pdf")
 # print(f"共提取 {len(texts)} 个文本块")
 ```
-
-
-
 
 ```python
 # 示例2：提取模型架构关键参数
@@ -135,9 +129,6 @@ def extract_model_parameters(text):
 # text = "Kimi K2.5模型规模：120B，上下文长度：2,000,000 tokens，训练数据：15Ttokens"
 # print(extract_model_parameters(text))
 ```
-
-
-
 
 ```python
 # 示例3：生成模型对比表格
@@ -186,10 +177,8 @@ def create_comparison_table(models_data):
 # print(create_comparison_table(models))
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：Moonshot AI 自主研发的 Kimi 探索版
 
@@ -205,8 +194,6 @@ def create_comparison_table(models_data):
 
 ---
 
-
-
 ### 2：某头部金融机构的智能研报分析系统
 
  2：某头部金融机构的智能研报分析系统
@@ -220,8 +207,6 @@ def create_comparison_table(models_data):
 **效果**: 研报处理时间从平均 2 小时缩短至 5 分钟，关键数据提取准确率达 98%，分析师工作效率提升 4 倍，且模型对复杂金融问题的回答通过率提高 25%。
 
 ---
-
-
 
 ### 3：法律科技平台的合同审查助手
 
@@ -330,7 +315,6 @@ def create_comparison_table(models_data):
 ---
 ## 常见问题
 
-
 ### 1: Kimi k1.5 与 Kimi k2.5 模型的主要区别是什么？
 
 1: Kimi k1.5 与 Kimi k2.5 模型的主要区别是什么？
@@ -344,8 +328,6 @@ def create_comparison_table(models_data):
 
 ---
 
-
-
 ### 2: Kimi k2.5 在数学和代码能力上有哪些具体的提升？
 
 2: Kimi k2.5 在数学和代码能力上有哪些具体的提升？
@@ -357,8 +339,6 @@ def create_comparison_table(models_data):
 3.  **复杂指令遵循**：通过引入更高质量的合成数据和专家反馈，k2.5 在理解复杂的编程或数学指令约束方面表现更好，减少了“幻觉”和语法错误。
 
 ---
-
-
 
 ### 3: 该模型在长上下文窗口方面的表现如何？是否支持“大海捞针”测试？
 
@@ -372,8 +352,6 @@ def create_comparison_table(models_data):
 
 ---
 
-
-
 ### 4: Kimi k2.5 采用了怎样的训练策略和技术架构？
 
 4: Kimi k2.5 采用了怎样的训练策略和技术架构？
@@ -385,8 +363,6 @@ def create_comparison_table(models_data):
 3.  **多阶段训练**：报告提到了多阶段训练 pipeline，包括大规模预训练、有监督微调（SFT）以及强化学习阶段。特别是在强化学习阶段，重点加强了模型的规划能力和自我纠错能力。
 
 ---
-
-
 
 ### 5: Kimi k2.5 在多模态能力（视觉与语言）方面有哪些新特性？
 
@@ -400,29 +376,11 @@ def create_comparison_table(models_data):
 
 ---
 
-
-
 ### 6: Kimi k2.5 的安全性如何保障？
 
 6: Kimi k2.5 的安全性如何保障？
 
 **A**: 安全性是大模型发布的重要考量，Kimi k2.
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 报告中提到 Kimi k2.5 采用了 MoE（混合专家）架构。请简要说明在推理阶段，MoE 架构相比 Dense（稠密）模型在计算成本上的主要优势是什么？为什么这种优势对于长上下文处理尤为重要？
-
-### 提示**: 关注模型在处理单个 Token 时实际激活的参数量与总参数量的区别，并思考长上下文场景下显存带宽和计算量的瓶颈在哪里。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://github.com/MoonshotAI/Kimi-K2.5/blob/master/tech_report.pdf](https://github.com/MoonshotAI/Kimi-K2.5/blob/master/tech_report.pdf)
@@ -431,7 +389,6 @@ def create_comparison_table(models_data):
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

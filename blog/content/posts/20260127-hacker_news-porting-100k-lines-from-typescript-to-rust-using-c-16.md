@@ -134,32 +134,8 @@ external_url: https://blog.vjeux.com/2026/analysis/porting-100k-lines-from-types
 ---
 ## 💻 代码示例
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 ## 📚 案例研究
-
 
 ### 1：某金融科技初创公司核心风控系统迁移 🏦
 
@@ -183,8 +159,6 @@ external_url: https://blog.vjeux.com/2026/analysis/porting-100k-lines-from-types
 
 ---
 
-
-
 ### 2：边缘计算 IoT 设备固件重构 📡
 
  2：边缘计算 IoT 设备固件重构 📡
@@ -206,8 +180,6 @@ external_url: https://blog.vjeux.com/2026/analysis/porting-100k-lines-from-types
 - **知识传递**：在一个月的项目周期中，数据科学家通过 AI 的代码解释功能，逐渐掌握了 Rust 的基本范式，实现了“无痛”技术栈转型。
 
 ---
-
-
 
 ### 3：高性能游戏后端服务重写 🎮
 
@@ -308,7 +280,6 @@ external_url: https://blog.vjeux.com/2026/analysis/porting-100k-lines-from-types
 ---
 ## ❓ 常见问题
 
-
 ### 1: 在一个月内将 10 万行 TypeScript 代码迁移到 Rust，这个速度是否真实可信？会不会牺牲了代码质量？
 
 1: 在一个月内将 10 万行 TypeScript 代码迁移到 Rust，这个速度是否真实可信？会不会牺牲了代码质量？
@@ -322,8 +293,6 @@ external_url: https://blog.vjeux.com/2026/analysis/porting-100k-lines-from-types
 
 ---
 
-
-
 ### 2: TypeScript 拥有垃圾回收（GC），而 Rust 没有迁移过程中如何处理内存管理的差异？
 
 2: TypeScript 拥有垃圾回收（GC），而 Rust 没有迁移过程中如何处理内存管理的差异？
@@ -336,8 +305,6 @@ external_url: https://blog.vjeux.com/2026/analysis/porting-100k-lines-from-types
 
 ---
 
-
-
 ### 3: 对于动态类型的 TypeScript，Rust 的强类型系统在迁移时会不会导致开发效率低下？
 
 3: 对于动态类型的 TypeScript，Rust 的强类型系统在迁移时会不会导致开发效率低下？
@@ -348,8 +315,6 @@ external_url: https://blog.vjeux.com/2026/analysis/porting-100k-lines-from-types
 *   **枚举的优势**：处理复杂的联合类型时，Rust 的 `Enum` 和 `match` 表达式比 TypeScript 的类型守卫更加强制且安全，AI 在处理这类模式匹配时也非常高效。
 
 ---
-
-
 
 ### 4: 既然 TypeScript 已经很好用了，为什么还要费这么大劲迁移到 Rust？
 
@@ -363,8 +328,6 @@ external_url: https://blog.vjeux.com/2026/analysis/porting-100k-lines-from-types
 
 ---
 
-
-
 ### 5: Claude Code 相比于 GitHub Copilot，在处理这种大规模迁移时有何不同？
 
 5: Claude Code 相比于 GitHub Copilot，在处理这种大规模迁移时有何不同？
@@ -376,8 +339,6 @@ external_url: https://blog.vjeux.com/2026/analysis/porting-100k-lines-from-types
 
 ---
 
-
-
 ### 6: 既然用了 AI，还需要懂 Rust 吗？
 
 6: 既然用了 AI，还需要懂 Rust 吗？
@@ -386,22 +347,6 @@ external_url: https://blog.vjeux.com/2026/analysis/porting-100k-lines-from-types
 
 *   **代码审查**：AI 会犯错。它可能会生成不安全的代码（使用 `unsafe` 块）、忽略并发安全问题，或者写出逻辑错误的循环。如果你不懂 Rust，你就无法审查 AI 生成的代码，最终会导致项目失控。
 *   **调试困难**：Rust 的编译报错信息虽然详细，但在处理复杂的生命周期或 Trait 约束时，AI 可能会陷入“试错循环”。只有懂原理
-
----
-## 🎯 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**:
-
-### 在从 TypeScript 迁移到 Rust 的过程中，你会遇到类型系统的差异。请列举出 TypeScript 中的 `any` 类型在 Rust 中的三个替代方案，并解释它们的适用场景。
-
-### 提示**:
-
----
 ## 🔗 引用
 
 - **原文链接**: [https://blog.vjeux.com/2026/analysis/porting-100k-lines-from-typescript-to-rust-using-claude-code-in-a-month.html](https://blog.vjeux.com/2026/analysis/porting-100k-lines-from-typescript-to-rust-using-claude-code-in-a-month.html)

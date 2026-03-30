@@ -80,9 +80,6 @@ scenarios: ["大语言模型"]
 ---
 ## 代码示例
 
-
-
-
 ```bash
 # 示例1：在Linux上安装Ollama并运行Gemma 3B模型
 # 1. 安装Ollama（官方一键安装脚本）
@@ -94,7 +91,6 @@ curl -fsSL https://ollama.com/install.sh | sh
 # 3. 下载并运行Gemma 3B模型（首次运行会自动下载）
 ollama run gemma:3b
 ```
-
 
 ---
 
@@ -120,7 +116,6 @@ def chat_with_gemma(prompt):
 # 测试对话
 print(chat_with_gemma("用中文介绍量子计算的基本原理"))
 ```
-
 
 ---
 
@@ -157,10 +152,8 @@ def process_texts(input_file, output_file):
 process_texts("questions.txt", "answers.txt")
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某中小型 SaaS 初创公司的内部开发辅助
 
@@ -180,8 +173,6 @@ process_texts("questions.txt", "answers.txt")
 
 ---
 
-
-
 ### 2：某物联网设备制造商的边缘网关
 
  2：某物联网设备制造商的边缘网关
@@ -199,8 +190,6 @@ process_texts("questions.txt", "answers.txt")
 实现了毫秒级的本地日志分析，无需互联网连接即可对设备故障进行智能诊断。相比之前的规则引擎，误报率下降了 25%，且能够识别出未曾见过的潜在故障描述。Gemma 3B 的低资源占用完美适配了边缘设备的硬件限制，未影响主控程序的运行稳定性。
 
 ---
-
-
 
 ### 3：某隐私优先的个人知识库管理项目
 
@@ -308,7 +297,6 @@ process_texts("questions.txt", "answers.txt")
 ---
 ## 常见问题
 
-
 ### 1: 在 Linux 上安装 Ollama 后，运行 `ollama run gemma:3b` 提示 "model not found" 或一直卡在下载界面怎么办？
 
 1: 在 Linux 上安装 Ollama 后，运行 `ollama run gemma:3b` 提示 "model not found" 或一直卡在下载界面怎么办？
@@ -320,8 +308,6 @@ process_texts("questions.txt", "answers.txt")
     *   **解决方法**：如果下载卡住，请按 `Ctrl + C` 终止，然后重试。如果网络环境无法改善，建议先在具备科学上网环境的机器上下载模型文件，或者使用 Ollama 支持的镜像源环境变量（需查阅最新文档配置 `OLLAMA_HOSTS`）。
 
 ---
-
-
 
 ### 2: 运行 Gemma 3B 模型时提示 "out of memory" (OOM) 或系统崩溃，我的内存不够怎么办？
 
@@ -336,8 +322,6 @@ process_texts("questions.txt", "answers.txt")
     *   **检查 32 位系统**：如果你使用的是 32 位 Linux 系统，可能无法运行该模型，建议使用 64 位操作系统。
 
 ---
-
-
 
 ### 3: 如何在 Linux 服务器（无 GUI 界面）上安装并使用 Ollama？
 
@@ -354,8 +338,6 @@ process_texts("questions.txt", "answers.txt")
 3.  **运行模型**：服务启动后，直接在终端输入 `ollama run gemma:3b` 即可开始交互式对话。
 
 ---
-
-
 
 ### 4: 如何通过 API 在 Python 代码中调用本地运行的 Gemma 3B 模型？
 
@@ -387,8 +369,6 @@ process_texts("questions.txt", "answers.txt")
 
 ---
 
-
-
 ### 5: 安装脚本运行时报错 "Permission denied" 或无法连接到 ollama.com，该如何处理？
 
 5: 安装脚本运行时报错 "Permission denied" 或无法连接到 ollama.com，该如何处理？
@@ -399,22 +379,6 @@ process_texts("questions.txt", "answers.txt")
     *   `curl -fsSL https://ollama.com/install.sh -o install.sh`
     *   `chmod +x install.sh`
     *
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**：在安装 Ollama 后，默认情况下模型数据会被下载到用户目录下的隐藏文件夹中（通常是 `~/.ollama/models`）。如果你希望将模型存储在另一个拥有更大容量的独立硬盘挂载点（例如 `/mnt/ssd/ollama_models`），应该如何通过环境变量 `OLLAMA_MODELS` 在不重新安装软件的情况下进行配置？
-
-### 提示**：Linux 环境变量的修改通常涉及修改 shell 配置文件（如 `.bashrc` 或 `.zshrc`），你需要使用 `export` 命令定义新的路径，并确保该目录对当前用户具有读写权限。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://byandrev.dev/en/blog/ollama-in-linux](https://byandrev.dev/en/blog/ollama-in-linux)
@@ -423,7 +387,6 @@ process_texts("questions.txt", "answers.txt")
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

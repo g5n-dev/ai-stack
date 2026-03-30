@@ -36,8 +36,6 @@ Relevant source files
   * [.github/workflows/release.yml](https://github.com/Johnshall/Shadowrocket-ADBlock-Rules-Forever/blob/27205b89/.github/workflows/release.yml)
   * [figure/guide.png](https://github.com/Johnshall/Shadowrocket-ADBlock-Rules-Forever/blob/27205b89/figure/guide.png)
 
-
-
 This document provides a comprehensive introduction to the Shadowrocket ADBlock Rules repository. This repository maintains and distributes a collection of rule configurations for the Shadowrocket application, an iOS network proxy tool. These rules enable ad-blocking and traffic routing based on predefined patterns.
 
 ## Purpose of the Repository
@@ -49,14 +47,11 @@ The Shadowrocket ADBlock Rules repository serves as a continuously updated colle
   * Automatically updates rules through a scheduled GitHub workflow
   * Includes visual guides to help users understand and apply different rule configurations
 
-
-
 For detailed information about licensing terms, see [License](/Johnshall/Shadowrocket-ADBlock-Rules-Forever/1.1-license).
 
 ## Repository Architecture
 
 The repository employs a dual-branch architecture to separate source materials from distributable configurations:
-
 
 Sources: [.github/workflows/release.yml10-30](https://github.com/Johnshall/Shadowrocket-ADBlock-Rules-Forever/blob/27205b89/.github/workflows/release.yml#L10-L30)
 
@@ -77,14 +72,11 @@ Sources: [.github/workflows/release.yml41-52](https://github.com/Johnshall/Shado
 
 The repository employs an automated system to ensure rule configurations remain current:
 
-
 This system ensures that:
 
   1. Rules are automatically rebuilt daily
   2. Changes to source files trigger new builds
   3. The release branch maintains a clean history for easy access
-
-
 
 For more detailed information about the release workflow, see [Release Workflow](/Johnshall/Shadowrocket-ADBlock-Rules-Forever/2.1-release-workflow).
 
@@ -93,7 +85,6 @@ Sources: [.github/workflows/release.yml3-22](https://github.com/Johnshall/Shadow
 ## Repository Components
 
 The following diagram illustrates the key components in the codebase and their relationships:
-
 
 For more information on the different rule types, see [Shadowrocket Rules](/Johnshall/Shadowrocket-ADBlock-Rules-Forever/3-shadowrocket-rules) and its subsections.
 
@@ -240,9 +231,6 @@ Shadowrocket 规则集主要基于以下几种匹配技术实现流量筛选：
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：规则去重与合并
 def deduplicate_rules(rule_files):
@@ -277,9 +265,6 @@ rules = deduplicate_rules(['rules1.txt', 'rules2.txt'])
 with open('merged_rules.txt', 'w', encoding='utf-8') as f:
     f.write('\n'.join(rules))
 ```
-
-
-
 
 ```python
 # 示例2：规则有效性验证
@@ -333,9 +318,6 @@ for rule, msg in invalid:
     print(f"无效规则: {rule} - 原因: {msg}")
 ```
 
-
-
-
 ```python
 # 示例3：规则分类统计
 def categorize_rules(rule_file):
@@ -378,10 +360,8 @@ for category, count in stats.items():
     print(f"{category}: {count} 条")
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：跨国贸易公司的网络环境优化
 
@@ -405,8 +385,6 @@ for category, count in stats.items():
 
 ---
 
-
-
 ### 2：远程开发团队的资源访问加速
 
  2：远程开发团队的资源访问加速
@@ -428,8 +406,6 @@ for category, count in stats.items():
 3. 团队成员在公共网络下的数据安全性得到加强，未再发生信息泄露事件。
 
 ---
-
-
 
 ### 3：教育机构的在线教学平台保障
 
@@ -677,7 +653,6 @@ Shadowrocket-ADBlock-Rules-Forever 是一个动态维护的广告拦截规则集
 - 提供详细的文档说明，帮助用户快速部署和调整规则配置。
 - 开源社区支持，用户可通过 GitHub 提交问题或贡献规则改进。
 
-
 ---
 ## 学习路径
 
@@ -710,7 +685,6 @@ Shadowrocket-ADBlock-Rules-Forever 是一个动态维护的广告拦截规则集
 ---
 ## 常见问题
 
-
 ### 1: 什么是 Shadowrocket-ADBlock-Rules-Forever，它的主要用途是什么？
 
 1: 什么是 Shadowrocket-ADBlock-Rules-Forever，它的主要用途是什么？
@@ -718,8 +692,6 @@ Shadowrocket-ADBlock-Rules-Forever 是一个动态维护的广告拦截规则集
 **A**: Shadowrocket-ADBlock-Rules-Forever 是一个针对 Shadowrocket（一款 iOS 平台的网络代理工具）的规则集项目。它的主要用途是提供一套持续维护、长久有效的广告拦截规则。通过订阅这些规则，用户可以屏蔽移动设备上的大部分广告、跟踪器以及恶意网站，从而提升浏览速度并保护隐私。该项目通常包含针对常见广告服务商的过滤列表，并致力于解决规则失效的问题。
 
 ---
-
-
 
 ### 2: 如何在 Shadowrocket 中配置并使用这些规则？
 
@@ -736,8 +708,6 @@ Shadowrocket-ADBlock-Rules-Forever 是一个动态维护的广告拦截规则集
 
 ---
 
-
-
 ### 3: 规则更新后如何同步到本地？
 
 3: 规则更新后如何同步到本地？
@@ -747,8 +717,6 @@ Shadowrocket-ADBlock-Rules-Forever 是一个动态维护的广告拦截规则集
 2.  **自动更新**：在添加远程规则时，可以设置更新间隔（例如每 24 小时或每 7 天），Shadowrocket 会在后台自动拉取最新的规则文件，无需用户手动干预。
 
 ---
-
-
 
 ### 4: 使用这些规则会导致某些网页或 App 无法正常工作吗？
 
@@ -762,8 +730,6 @@ Shadowrocket-ADBlock-Rules-Forever 是一个动态维护的广告拦截规则集
 
 ---
 
-
-
 ### 5: 该项目与 Adblock Plus 或 AdGuard 的规则有什么区别？
 
 5: 该项目与 Adblock Plus 或 AdGuard 的规则有什么区别？
@@ -771,8 +737,6 @@ Shadowrocket-ADBlock-Rules-Forever 是一个动态维护的广告拦截规则集
 **A**: Shadowrocket-ADBlock-Rules-Forever 主要是为了优化 Shadowrocket 的解析效率而定制。虽然它可能借鉴或包含了 EasyList（ABP 使用的列表）或 AdGuard 过滤列表的内容，但它通常会将规则转换为 Shadowrocket 原生支持的格式（如 DOMAIN、DOMAIN-SUFFIX、URL-REGEX 等）。相比于直接在浏览器中使用插件，这类系统级规则可以拦截非浏览器 App（如视频软件、游戏）内的广告。
 
 ---
-
-
 
 ### 6: 规则文件中的 "User-Agent" 和 "METHOD" 字段是什么意思？
 
@@ -785,8 +749,6 @@ Shadowrocket-ADBlock-Rules-Forever 是一个动态维护的广告拦截规则集
 
 ---
 
-
-
 ### 7: 如果我发现规则没有生效，应该如何排查？
 
 7: 如果我发现规则没有生效，应该如何排查？
@@ -796,22 +758,6 @@ Shadowrocket-ADBlock-Rules-Forever 是一个动态维护的广告拦截规则集
 2.  **检查规则顺序**：Shadowrocket 的规则是自上而下匹配的。如果该规则上方有一条更宽泛的“直连”或“拒绝”规则，可能会覆盖它。建议将广告拦截规则放在列表的较前位置。
 3.  **验证规则文件**：直接在浏览器中访问规则链接，确认 GitHub Raw 文件能正常加载且内容不为空。
 4.  **查看日志**：使用 Shadowrocket 的“连接日志”功能，发起一个包含广告的请求，查看该请求是被哪条规则处理了。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 请分析该项目中规则文件的基本语法结构。例如，如何区分一条规则是用来屏蔽（BLOCK）域名，还是仅仅为了拒绝连接（REJECT）？请找出文件中通配符（如 `*`）的使用规则及其在匹配域名时的优先级逻辑。
-
-### 提示**: 仔细阅读规则列表的开头部分，通常包含语法说明或注释。关注 `DOMAIN`, `DOMAIN-SUFFIX`, `URL` 等关键词的区别，以及通配符在字符串匹配中的基本行为。
-
-### 
-
----
 ## 实践建议
 
 以下是针对 Shadowrocket-ADBlock-Rules-Forever 仓库的 6 条实践建议：
@@ -843,7 +789,6 @@ Shadowrocket-ADBlock-Rules-Forever 是一个动态维护的广告拦截规则集
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

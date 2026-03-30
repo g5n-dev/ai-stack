@@ -78,9 +78,6 @@ scenarios: ["大语言模型"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：KV Cache管理（模拟vLLM的PagedAttention机制）
 class KVCacheManager:
@@ -112,9 +109,6 @@ blocks = manager.allocate_blocks(32)  # 需要2个块
 manager.update_cache(blocks, [1, 2, 3])
 print(f"已分配块: {blocks}, 缓存内容: {manager.blocks['block_0']}")
 ```
-
-
-
 
 ```python
 # 示例2：连续批处理调度器
@@ -158,9 +152,6 @@ print("初始批次:", scheduler.schedule())
 print("下一批次:", scheduler.schedule())  # req3会加入
 ```
 
-
-
-
 ```python
 # 示例3：显存估算器
 def estimate_gpu_memory(model_size_gb, seq_len, batch_size, precision="fp16"):
@@ -199,10 +190,8 @@ print(f"7B模型 fp16 2048序列 批次8: {estimate_gpu_memory(13, 2048, 8):.2f}
 print(f"7B模型 int8 1024序列 批次16: {estimate_gpu_memory(13, 1024, 16, 'int8'):.2f}GB")
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某大型互联网公司智能客服系统重构
 
@@ -228,8 +217,6 @@ print(f"7B模型 int8 1024序列 批次16: {estimate_gpu_memory(13, 1024, 16, 'i
 3. 在相同硬件规模下，系统可承载的并发用户数增长 200%，节省约 30% 的服务器成本。
 
 ---
-
-
 
 ### 2：自动驾驶仿真平台中的实时场景生成
 
@@ -353,7 +340,6 @@ PCIe 带宽限制了 GPU 与 CPU 之间交换数据的速度。因此，抢占�
 ---
 ## 常见问题
 
-
 ### 1: 什么是 vLLM，它与传统的 LLM 推理引擎（如 HuggingFace Transformers）相比有什么核心优势？
 
 1: 什么是 vLLM，它与传统的 LLM 推理引擎（如 HuggingFace Transformers）相比有什么核心优势？
@@ -365,8 +351,6 @@ PCIe 带宽限制了 GPU 与 CPU 之间交换数据的速度。因此，抢占�
 vLLM 借鉴了操作系统中分页内存管理的思想，将 KV Cache 划分为固定的块。这使得系统能够以非连续的方式在 GPU 内存中存储这些缓存块，从而极大地提高了内存利用率。这种机制允许 vLLM 在不发生显存溢出（OOM）的情况下，将批处理大小提高数倍，显著提升了推理吞吐量。
 
 ---
-
-
 
 ### 2: PagedAttention 具体是如何工作的，为什么它能提高显存利用率？
 
@@ -381,8 +365,6 @@ vLLM 借鉴了操作系统中分页内存管理的思想，将 KV Cache 划分�
 
 ---
 
-
-
 ### 3: vLLM 的连续批处理和传统推理引擎的静态批处理有什么区别？
 
 3: vLLM 的连续批处理和传统推理引擎的静态批处理有什么区别？
@@ -393,8 +375,6 @@ vLLM 借鉴了操作系统中分页内存管理的思想，将 KV Cache 划分�
 *   **连续批处理**：vLLM 采用了连续调度策略。一旦批次中的某个请求生成了 EOS（结束符）或达到停止条件，该请求会立即从批次中移除，系统会立即插入一个新的等待中的请求。这意味着 GPU 几乎没有空闲时间，始终处于满载计算状态。这种“即出即进”的策略显著提高了 GPU 的有效利用率。
 
 ---
-
-
 
 ### 4: 在实际部署中，使用 vLLM 相比直接使用 PyTorch 或 HuggingFace 能带来多大的性能提升？
 
@@ -408,8 +388,6 @@ vLLM 借鉴了操作系统中分页内存管理的思想，将 KV Cache 划分�
 
 ---
 
-
-
 ### 5: vLLM 是否支持所有主流的大模型？它对 OpenAI API 兼容吗？
 
 5: vLLM 是否支持所有主流的大模型？它对 OpenAI API 兼容吗？
@@ -420,8 +398,6 @@ vLLM 借鉴了操作系统中分页内存管理的思想，将 KV Cache 划分�
 
 ---
 
-
-
 ### 6: vLLM 是否支持多 GPU 分布式推理或张量并行？
 
 6: vLLM 是否支持多 GPU 分布式推理或张量并行？
@@ -429,22 +405,6 @@ vLLM 借鉴了操作系统中分页内存管理的思想，将 KV Cache 划分�
 **A**: 是的，vLLM 原生支持分布式推理。
 
 它主要通过 **张量并行** 来实现模型在多 GPU 上的切分。这意味着如果你有一个非常大的模型（例如 70B 参数），单张显卡无法容纳，vLLM 可以利用 Ray 或 PyTorch 分布式框架将模型层切分到多张 GPU 上进行并行计算。这使得
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 在传统的 LLM 推理服务中，当并发请求数量增加时，显存占用往往不成比例地增长，导致 GPU 利用率低下。请解释 vLLM 引入的 PagedAttention 技术是如何借鉴操作系统的虚拟内存和分页思想来解决 KV Cache 内存管理碎片的？
-
-### 提示**: 思考在处理变长序列时，传统的预分配策略如何造成浪费，以及将 KV Cache 划分为固定大小的块如何允许系统在物理显存中非连续地存储这些数据块。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://neutree.ai/blog/nano-vllm-part-1](https://neutree.ai/blog/nano-vllm-part-1)
@@ -453,7 +413,6 @@ vLLM 借鉴了操作系统中分页内存管理的思想，将 KV Cache 划分�
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

@@ -78,9 +78,6 @@ scenarios: ["大语言模型", "AI/ML项目"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：视觉问答功能
 import requests
@@ -122,9 +119,6 @@ def visual_qa(image_path, question):
 # print(answer)
 ```
 
-
-
-
 ```python
 # 示例2：多模态文档解析
 def parse_document(image_path):
@@ -158,9 +152,6 @@ def parse_document(image_path):
 # doc_info = parse_document("invoice.jpg")
 # print(doc_info)
 ```
-
-
-
 
 ```python
 # 示例3：多模态对话系统
@@ -211,10 +202,8 @@ class MultimodalChat:
 # print(chat.chat("这张图片怎么样？", "example.jpg"))  # 多模态对话
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：跨境电商智能客服系统升级
 
@@ -234,8 +223,6 @@ class MultimodalChat:
 
 ---
 
-
-
 ### 2：工业制造质检与运维助手
 
  2：工业制造质检与运维助手
@@ -253,8 +240,6 @@ class MultimodalChat:
 该应用将初级工程师的故障排查平均耗时缩短了 60%，减少了对特定专家的依赖。Qwen3.5 强大的图文理解能力使其能够识别出人眼容易忽略的安全隐患（如微小的漏液或异色），上线三个月内，产线意外停机时间减少了 20%，显著提升了生产效率。
 
 ---
-
-
 
 ### 3：个人知识库的“第二大脑”
 
@@ -367,7 +352,6 @@ class MultimodalChat:
 ---
 ## 常见问题
 
-
 ### 1: Qwen3.5 是什么，它与之前的 Qwen 模型（如 Qwen2）相比有哪些主要升级？
 
 1: Qwen3.5 是什么，它与之前的 Qwen 模型（如 Qwen2）相比有哪些主要升级？
@@ -381,8 +365,6 @@ class MultimodalChat:
 
 ---
 
-
-
 ### 2: “Native Multimodal Agents”（原生多模态智能体）具体指什么功能？
 
 2: “Native Multimodal Agents”（原生多模态智能体）具体指什么功能？
@@ -394,8 +376,6 @@ class MultimodalChat:
 
 ---
 
-
-
 ### 3: Qwen3.5 的长上下文处理能力如何？是否支持超长文本？
 
 3: Qwen3.5 的长上下文处理能力如何？是否支持超长文本？
@@ -405,8 +385,6 @@ class MultimodalChat:
 它支持最高达 **128k tokens** 甚至更多（取决于具体微调版本）的上下文窗口。这意味着它可以一次性处理数十万字的文本、长篇技术文档或大量的对话历史而不会“遗忘”之前的细节。在“大海捞针”测试中，Qwen3.5 能够在长文本中精准提取微小信息，这对于需要阅读大量代码库或法律文档的智能体应用至关重要。
 
 ---
-
-
 
 ### 4: 开发者如何使用 Qwen3.5？它是完全开源的吗？
 
@@ -420,8 +398,6 @@ class MultimodalChat:
 
 ---
 
-
-
 ### 5: Qwen3.5 在数学和代码生成方面的表现为何受到 Hacker News 社区的关注？
 
 5: Qwen3.5 在数学和代码生成方面的表现为何受到 Hacker News 社区的关注？
@@ -432,8 +408,6 @@ class MultimodalChat:
 
 ---
 
-
-
 ### 6: 与 Llama 3.1 或 Mistral 等其他开源模型相比，Qwen3.5 有什么优势？
 
 6: 与 Llama 3.1 或 Mistral 等其他开源模型相比，Qwen3.5 有什么优势？
@@ -443,22 +417,6 @@ class MultimodalChat:
 1.  **双语优势**：虽然 Llama 3.1 在英语表现上极佳，但 Qwen3.5 在中文和英文的理解与生成上达到了近乎完美的平衡，对中文语境、成语和文化梗的理解远优于其他西方开源模型。
 2.  **视觉-语言整合**：Qwen3.5 的视觉理解能力（基于 Qwen-VL 技术路线）在处理复杂文档、图表和 OCR 任务时通常比同期的 Llama 或 Mistral 模型更强。
 3.  **指令遵循**：在复杂的提示词工程和格式
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**:
-
-### Qwen2.5 强调了“原生”多模态能力。请对比“原生多模态模型”与“通过外接视觉编码器（如 CLIP）连接大语言模型”的传统架构，在处理复杂视觉场景时，前者在数据流转和推理效率上有什么本质区别？
-
-### 提示**:
-
----
 ## 引用
 
 - **原文链接**: [https://qwen.ai/blog?id=qwen3.5](https://qwen.ai/blog?id=qwen3.5)
@@ -467,7 +425,6 @@ class MultimodalChat:
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

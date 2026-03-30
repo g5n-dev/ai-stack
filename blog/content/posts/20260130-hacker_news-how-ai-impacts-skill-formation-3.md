@@ -75,9 +75,6 @@ scenarios: ["AI/ML项目"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：AI辅助技能需求分析
 def analyze_skill_demand(job_description, ai_model):
@@ -106,9 +103,6 @@ ner_model = pipeline("ner", model="dbmdz/bert-large-cased-finetuned-conll03-engl
 jd = "We need a Python developer with experience in machine learning, data analysis, and cloud computing."
 print(analyze_skill_demand(jd, ner_model))
 ```
-
-
-
 
 ```python
 # 示例2：个性化学习路径推荐
@@ -144,9 +138,6 @@ class KnowledgeGraph:
 kg = KnowledgeGraph()
 print(recommend_learning_path(["Python"], "数据科学家", kg))
 ```
-
-
-
 
 ```python
 # 示例3：技能熟练度自动评估
@@ -201,10 +192,8 @@ def add(a, b):
 print(assess_skill_proficiency(user_code, test_cases, AIGrader()))
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：IBM 内部 AI 技能重塑计划
 
@@ -228,8 +217,6 @@ IBM 开发并部署了内部 AI 驱动的学习平台 "Your Learning"，利用�
 
 ---
 
-
-
 ### 2：Khan Academy 的 Khanmigo 导师系统
 
  2：Khan Academy 的 Khanmigo 导师系统
@@ -251,8 +238,6 @@ Khan Academy 与 OpenAI 合作，推出了名为 Khanmigo 的 AI 助手，专门
 - **教师减负增效**：教师报告称，AI 工具帮助他们节省了约 50% 的行政和备课时间，使他们能将精力集中在教学互动和学生技能培养的核心环节。
 
 ---
-
-
 
 ### 3：埃森哲 的企业级 AI 技能培训
 
@@ -369,7 +354,6 @@ Khan Academy 与 OpenAI 合作，推出了名为 Khanmigo 的 AI 助手，专门
 ---
 ## 常见问题
 
-
 ### 1: AI 对技能形成的核心影响是什么？
 
 1: AI 对技能形成的核心影响是什么？
@@ -378,8 +362,6 @@ Khan Academy 与 OpenAI 合作，推出了名为 Khanmigo 的 AI 助手，专门
 
 ---
 
-
-
 ### 2: AI 是会完全取代人类技能，还是会增强人类技能？
 
 2: AI 是会完全取代人类技能，还是会增强人类技能？
@@ -387,8 +369,6 @@ Khan Academy 与 OpenAI 合作，推出了名为 Khanmigo 的 AI 助手，专门
 **A**: 目前的主流观点和趋势倾向于“增强”而非完全“取代”。AI 在处理海量数据、模式识别和执行重复性任务方面远超人类，但在涉及同理心、复杂决策、创造性思维和非结构化问题解决方面仍然存在局限。因此，未来的技能形成更多是关于“人机协作”：即人类学会如何指挥 AI、解释 AI 的输出以及弥补 AI 的盲点。虽然某些特定技能（如基础翻译或初级代码编写）的需求可能会减少，但对能够驾驭 AI 工具的高阶技能的需求正在增加。
 
 ---
-
-
 
 ### 3: 在 AI 时代，哪些具体技能会变得更有价值？
 
@@ -402,8 +382,6 @@ Khan Academy 与 OpenAI 合作，推出了名为 Khanmigo 的 AI 助手，专门
 
 ---
 
-
-
 ### 4: AI 如何改变教育和职业培训的现状？
 
 4: AI 如何改变教育和职业培训的现状？
@@ -411,8 +389,6 @@ Khan Academy 与 OpenAI 合作，推出了名为 Khanmigo 的 AI 助手，专门
 **A**: AI 正在推动教育和培训从“标准化”向“个性化”转变。通过自适应学习算法，教育系统可以根据学习者的实时反馈调整难度和内容，从而提高学习效率。此外，AI 使得“即时学习”成为可能，员工可以在遇到具体工作问题时，随时通过 AI 获取指导，而无需参加漫长的线下课程。然而，这也带来了挑战：教育机构需要重新评估课程设置，减少对死记硬背知识的考核，转而关注学生在实际场景中应用信息和工具的能力。
 
 ---
-
-
 
 ### 5: 随着生成式 AI 的普及，初学者是否还需要学习基础知识？
 
@@ -422,8 +398,6 @@ Khan Academy 与 OpenAI 合作，推出了名为 Khanmigo 的 AI 助手，专门
 
 ---
 
-
-
 ### 6: 面对 AI 带来的技能迭代，个人和企业应如何应对？
 
 6: 面对 AI 带来的技能迭代，个人和企业应如何应对？
@@ -431,22 +405,6 @@ Khan Academy 与 OpenAI 合作，推出了名为 Khanmigo 的 AI 助手，专门
 **A**:
 *   **对于个人**：需要培养“成长型思维”，主动拥抱变化而非抵触。建议专注于培养跨学科的复合能力，并定期进行技能审计，识别自身技能中哪些容易被自动化，并积极学习如何利用 AI 工具来放大自己的优势。
 *   **对于企业**：不能再仅仅依赖招聘拥有现成技能的人才，而需要建立内部的人才培养和再培训机制。企业应致力于创造一种鼓励实验和持续学习的文化，并提供必要的 AI 工具培训，帮助员工从繁琐的重复性工作中解脱出来，转向更高价值的创造性行动。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**:
-
-### 在当前的工作流中，选择一项你每周重复至少三次的技能型任务（例如撰写常规邮件、整理数据或代码调试）。尝试使用 AI 工具（如 ChatGPT、Copilot 等）辅助完成该任务。对比纯人工操作与 AI 辅助操作在时间消耗和输出质量上的差异，并记录 AI 在哪一步骤节省了最多的时间。
-
-### 提示**:
-
----
 ## 引用
 
 - **原文链接**: [https://arxiv.org/abs/2601.20245](https://arxiv.org/abs/2601.20245)
@@ -455,7 +413,6 @@ Khan Academy 与 OpenAI 合作，推出了名为 Khanmigo 的 AI 助手，专门
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

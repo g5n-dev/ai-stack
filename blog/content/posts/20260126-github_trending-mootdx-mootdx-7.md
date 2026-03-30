@@ -39,8 +39,6 @@ Relevant source files
   * [mootdx/__init__.py](https://github.com/mootdx/mootdx/blob/e99ae343/mootdx/__init__.py)
   * [sample/basic_quotes.py](https://github.com/mootdx/mootdx/blob/e99ae343/sample/basic_quotes.py)
 
-
-
 This document provides an introduction to MooTDX, a Python library designed for accessing and processing TDX (通达信) financial data. MooTDX serves as a comprehensive interface to TDX financial data through various modules that handle different aspects of data retrieval, processing, and manipulation.
 
 ## What is MooTDX?
@@ -55,8 +53,6 @@ The library supports:
   * Performing stock data adjustments for dividends and splits
   * Finding optimal TDX server connections automatically
 
-
-
 Sources: [README.md1-18](https://github.com/mootdx/mootdx/blob/e99ae343/README.md#L1-L18) [mootdx/__init__.py1-10](https://github.com/mootdx/mootdx/blob/e99ae343/mootdx/__init__.py#L1-L10)
 
 ## System Architecture
@@ -65,13 +61,11 @@ MooTDX is structured around several core modules that interact with TDX data sou
 
 ### High-Level Architecture
 
-
 Sources: [mootdx/__init__.py1-5](https://github.com/mootdx/mootdx/blob/e99ae343/mootdx/__init__.py#L1-L5) [README.md61-112](https://github.com/mootdx/mootdx/blob/e99ae343/README.md#L61-L112)
 
 ### Data Flow Architecture
 
 MooTDX follows a consistent data flow pattern, transforming raw TDX data into structured formats that are easy to work with in Python:
-
 
 Sources: [README.md64-112](https://github.com/mootdx/mootdx/blob/e99ae343/README.md#L64-L112) [sample/basic_quotes.py1-29](https://github.com/mootdx/mootdx/blob/e99ae343/sample/basic_quotes.py#L1-L29)
 
@@ -81,20 +75,17 @@ Sources: [README.md64-112](https://github.com/mootdx/mootdx/blob/e99ae343/README
 
 The Quotes module provides access to real-time market data from TDX servers. It connects to the TDX network and retrieves quotes, K-line data, minute-level data, and more.
 
-
 Sources: [README.md81-97](https://github.com/mootdx/mootdx/blob/e99ae343/README.md#L81-L97) [sample/basic_quotes.py1-29](https://github.com/mootdx/mootdx/blob/e99ae343/sample/basic_quotes.py#L1-L29)
 
 ### Reader Module
 
 The Reader module reads offline TDX data files from a local directory. It supports reading daily, minute, and time-series data.
 
-
 Sources: [README.md61-79](https://github.com/mootdx/mootdx/blob/e99ae343/README.md#L61-L79)
 
 ### Financial Data Module
 
 The Financial module (Affair) enables access to financial data through the TDX platform, allowing users to list, fetch, and parse financial data files.
-
 
 Sources: [README.md99-112](https://github.com/mootdx/mootdx/blob/e99ae343/README.md#L99-L112)
 
@@ -109,15 +100,11 @@ MooTDX includes tools to automatically select the fastest available TDX servers 
   * Python 3.8 or higher
   * Operating Systems: Windows, MacOS, or Linux
 
-
-
 ### Installation Methods
 
 #### Basic Installation
 
-
 #### Upgrade Installation
-
 
 For more detailed installation instructions, see [Setup](/mootdx/mootdx/3-user-interfaces).
 
@@ -126,7 +113,6 @@ Sources: [README.md30-54](https://github.com/mootdx/mootdx/blob/e99ae343/README.
 ## Factory Pattern Implementation
 
 MooTDX extensively uses the factory pattern to provide a consistent interface while supporting different markets and data sources:
-
 
 This pattern allows users to interact with a consistent API regardless of whether they're accessing standard market data (stocks) or extended market data (futures, bonds, etc.).
 
@@ -152,8 +138,6 @@ For more detailed information about specific components, please refer to the fol
   * [Data Adjustment System](/mootdx/mootdx/2.4-data-adjustment-system)
   * [Server Selection](/mootdx/mootdx/2.5-server-selection)
   * [User Interfaces](/mootdx/mootdx/3-user-interfaces)
-
-
 
 Sources: [mkdocs.yml1-29](https://github.com/mootdx/mootdx/blob/e99ae343/mkdocs.yml#L1-L29)
 
@@ -408,37 +392,8 @@ MooTDX 在抽象层上做了一个巨大的权衡：**它将“协议的复杂�
 ---
 ## 💻 实用代码示例
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 ## 📚 真实案例研究
-
 
 ### 1：个人量化交易回测系统构建 📈
 
@@ -468,8 +423,6 @@ data = quotes.bars(symbol='600036', start=1, offset=100)
 
 ---
 
-
-
 ### 2：小型私募基金的内部看板搭建 📊
 
  2：小型私募基金的内部看板搭建 📊
@@ -491,8 +444,6 @@ data = quotes.bars(symbol='600036', start=1, offset=100)
 2.  **稳定性增强**：解决了直接读写文件导致的冲突问题，系统崩溃率从每周几次降低到 0，极大提升了交易时段的监控效率。
 
 ---
-
-
 
 ### 3：金融数据聚合平台的 API 服务化 🚀
 
@@ -732,7 +683,6 @@ mootdx 在频繁请求通达信数据时，每次创建新连接会导致TCP握�
 - 🛠️ **赋能量化策略回测**：通过将非标准化的通达信数据转化为 Pandas DataFrame 格式，极大地简化了数据清洗流程，可直接接入 Zipline、Backtrader 等回测框架。
 - 🐍 **纯 Python 实现**：无需依赖复杂的 C++ 库或重型插件，安装轻便，代码易于维护和二次开发。
 
-
 ---
 ## 🗺️ 循序渐进的学习路径
 
@@ -829,7 +779,6 @@ mootdx 在频繁请求通达信数据时，每次创建新连接会导致TCP握�
 ---
 ## ❓ 常见问题解答
 
-
 ### 1: 什么是 mootdx？它主要用于什么场景？
 
 1: 什么是 mootdx？它主要用于什么场景？
@@ -837,8 +786,6 @@ mootdx 在频繁请求通达信数据时，每次创建新连接会导致TCP握�
 **A**: mootdx 是一个基于 Python 的开源财经数据接口库，主要用于获取通达信（TDX）格式的金融行情数据。它能够直接读取本地通达信软件的数据目录，也可以通过远程接口获取实时行情。开发者常使用它进行量化交易策略回测、金融数据分析、以及构建个人的交易系统。它是 Python 量化交易生态中处理 A 股历史数据的热门工具之一。
 
 ---
-
-
 
 ### 2: mootdx 支持哪些 Python 版本？如何安装？
 
@@ -855,8 +802,6 @@ pip install mootdx
 如果你需要获取最新的开发版特性，也可以直接从 GitHub 克隆源码进行安装。
 
 ---
-
-
 
 ### 3: 如何使用 mootdx 读取本地通达信日线数据？
 
@@ -882,8 +827,6 @@ print(data.head())
 *注意：你需要根据本地通达信软件的实际安装路径配置 `TDX_DIR` 环境变量，或者在代码中指定路径。*
 
 ---
-
-
 
 ### 4: 除了本地文件，mootdx 能否通过远程接口获取实时数据？
 
@@ -915,8 +858,6 @@ print(quotes_data)
 
 ---
 
-
-
 ### 5: 运行代码时报错 "找不到数据文件" 或 "路径错误" 怎么办？
 
 5: 运行代码时报错 "找不到数据文件" 或 "路径错误" 怎么办？
@@ -930,8 +871,6 @@ print(quotes_data)
 
 ---
 
-
-
 ### 6: mootdx 和 Tushare 有什么区别？该如何选择？
 
 6: mootdx 和 Tushare 有什么区别？该如何选择？
@@ -943,22 +882,6 @@ print(quotes_data)
     *   **劣势**：数据清洗程度较低，原始数据需要自己处理；实时数据依赖通达信服务器稳定性。
 *   **Tushare** (Pro版):
     *   **优势**：数据经过高度清洗和标准化，拥有丰富的**
-
----
-## 🎯 挑战与思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**: 环境搭建与基础连通性测试
-
-### 安装 `mootdx` 库，并编写一段简单的 Python 代码，尝试连接通达信的**本地缓存数据**（假设你有通达信软件），读取并打印出最近 5 个交易日的日线数据（开高低收）。
-
-### 提示**:
-
----
 ## 💡 实践建议
 
 针对 **mootdx** (通达信数据读取封装) 这个仓库，结合其作为 Python 金融数据获取工具的特性，以下是 5-7 条实践建议：

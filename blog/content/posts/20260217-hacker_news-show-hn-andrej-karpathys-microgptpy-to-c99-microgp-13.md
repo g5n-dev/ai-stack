@@ -81,9 +81,6 @@ scenarios: ["Web应用开发"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：基础矩阵乘法（Python实现）
 import numpy as np
@@ -107,9 +104,6 @@ A = [[1, 2], [3, 4]]
 B = [[5, 6], [7, 8]]
 print(matrix_multiply_python(A, B))
 ```
-
-
-
 
 ```c
 // 示例2：优化后的矩阵乘法（C实现）
@@ -146,9 +140,6 @@ int main() {
 }
 ```
 
-
-
-
 ```python
 # 示例3：使用Numba加速Python代码
 from numba import jit
@@ -175,10 +166,8 @@ B = np.array([[5, 6], [7, 8]], dtype=np.float32)
 print(matrix_multiply_numba(A, B))
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：高性能边缘计算终端 - 工业缺陷检测系统
 
@@ -197,8 +186,6 @@ print(matrix_multiply_numba(A, B))
 迁移后，模型在相同硬件上的推理延迟从2000毫秒降低至40毫秒以下，实现了约50倍的性能提升。这使得检测设备能够实时跟上高速传送带的速度，且内存占用减少了60%，允许在低成本的边缘芯片上运行更复杂的模型。
 
 ---
-
-
 
 ### 2：嵌入式智能设备 - 低功耗离线语音助手
 
@@ -282,7 +269,6 @@ print(matrix_multiply_numba(A, B))
 ---
 ## 常见问题
 
-
 ### 1: 为什么将 microgpt.py 重写为 C99 后能获得 4,600 倍的性能提升？
 
 1: 为什么将 microgpt.py 重写为 C99 后能获得 4,600 倍的性能提升？
@@ -296,8 +282,6 @@ print(matrix_multiply_numba(A, B))
 
 ---
 
-
-
 ### 2: C99 版本的 microgpt 是否支持 GPU 加速？
 
 2: C99 版本的 microgpt 是否支持 GPU 加速？
@@ -308,8 +292,6 @@ print(matrix_multiply_numba(A, B))
 *   **C 版本的实现**：这个 C99 移植版很可能是通过高度优化的线性代数内核（如基于 BLAS 或手写汇编）在 CPU 上运行，从而在单线程或多线程 CPU 环境下击败了未优化的 Python 实现。
 
 ---
-
-
 
 ### 3: 这种性能提升是否具有普遍性？是否所有 Python 代码重写为 C 都能获得类似收益？
 
@@ -322,8 +304,6 @@ print(matrix_multiply_numba(A, B))
 3.  **Microgpt 的特殊性**：Microgpt 是一个极简的教学项目，模型参数很小。在 Python 中，启动解释器、初始化张量库、动态分发函数的开销占用了总运行时间的绝大部分。而在 C 语言中，这些开销几乎为零。因此，对于极小规模的计算任务，C 语言的优势会被成倍放大；但对于大规模生产级任务，这种比例会显著缩小。
 
 ---
-
-
 
 ### 4: 既然 C 语言这么快，为什么深度学习主流依然使用 Python？
 
@@ -338,8 +318,6 @@ print(matrix_multiply_numba(A, B))
 
 ---
 
-
-
 ### 5: 这个 C99 移植版是否完全实现了原始 Python 版本的所有功能？
 
 5: 这个 C99 移植版是否完全实现了原始 Python 版本的所有功能？
@@ -348,22 +326,6 @@ print(matrix_multiply_numba(A, B))
 
 *   **核心逻辑**：它很可能完整实现了 GPT 的前向传播、反向传播和参数更新逻辑，因为这是性能对比的核心。
 *   **缺失部分**：为了保持代码的“微”特性，它可能省略了复杂的数据加载器、分布式训练支持、自动混合精度（AMP）、
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 在将 Python 代码转换为 C 语言时，最基础的内存管理差异是什么？请分析在 `microgpt.c` 中，为了实现 4,600 倍的性能提升，作者可能如何处理 Transformer 模型中的张量分配，这与 Python 的自动内存管理有何本质区别？
-
-### 提示**: 思考 Python 中 `torch.Tensor` 或 `numpy.array` 在后台是如何处理内存的，以及 C 语言中 `malloc`、`free` 与堆内存管理的关系。重点关注“预分配”策略在批量推理或训练中的作用。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://github.com/enjector/microgpt-c](https://github.com/enjector/microgpt-c)
@@ -372,7 +334,6 @@ print(matrix_multiply_numba(A, B))
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

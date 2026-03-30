@@ -76,9 +76,6 @@ scenarios: ["AI/ML项目"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：批量处理Hacker News热门标题
 from typing import List
@@ -115,9 +112,6 @@ print(process_hn_titles(test_titles))
 # 输出: ['Show HN: My new project', 'Python 3.11 released…']
 ```
 
-
-
-
 ```python
 # 示例2：计算HN帖子的互动率
 def calculate_engagement_score(upvotes: int, comments: int) -> float:
@@ -144,9 +138,6 @@ print(calculate_engagement_score(100, 20))  # 高互动帖子
 print(calculate_engagement_score(5, 0))     # 低互动帖子
 print(calculate_engagement_score(0, 0))     # 无互动帖子
 ```
-
-
-
 
 ```python
 # 示例3：HN帖子分类器
@@ -188,10 +179,8 @@ print(classify_hn_post("New Python 3.12 features", "docs.python.org"))
 print(classify_hn_post("What's your favorite programming language?"))
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：Notion
 
@@ -207,8 +196,6 @@ print(classify_hn_post("What's your favorite programming language?"))
 
 ---
 
-
-
 ### 2：Cognition (Devin AI)
 
  2：Cognition (Devin AI)
@@ -222,8 +209,6 @@ print(classify_hn_post("What's your favorite programming language?"))
 **效果**: 升级后，Devin 在处理真实世界 GitHub Issue 任务时的成功率提高了约 15%。特别是在处理遗留代码和跨语言文档的项目时，模型表现出更强的鲁棒性。开发团队报告称，Sonnet 4.6 在处理长链路推理任务时的输出稳定性更高，减少了人工干预的次数。
 
 ---
-
-
 
 ### 3：一家跨国金融科技公司的合规审查部门
 
@@ -353,7 +338,6 @@ print(classify_hn_post("What's your favorite programming language?"))
 ---
 ## 常见问题
 
-
 ### 1: Claude Sonnet 4.6 的主要升级点是什么？
 
 1: Claude Sonnet 4.6 的主要升级点是什么？
@@ -361,8 +345,6 @@ print(classify_hn_post("What's your favorite programming language?"))
 **A**: Claude Sonnet 4.6 是 Anthropic 发布的 AI 模型，相比前代版本有所更新。主要变化包括：1) 推理逻辑调整；2) 代码生成功能更新，支持更多编程语言；3) 上下文窗口支持 200K tokens；4) 响应速度优化；5) 多模态功能更新。这些改进旨在提升其在企业应用、开发辅助和内容创作等场景中的适用性。
 
 ---
-
-
 
 ### 2: 与 GPT-4o 相比，Claude Sonnet 4.6 有哪些特点？
 
@@ -372,8 +354,6 @@ print(classify_hn_post("What's your favorite programming language?"))
 
 ---
 
-
-
 ### 3: Claude Sonnet 4.6 的定价和可用性如何？
 
 3: Claude Sonnet 4.6 的定价和可用性如何？
@@ -381,8 +361,6 @@ print(classify_hn_post("What's your favorite programming language?"))
 **A**: Claude Sonnet 4.6 已通过 Anthropic API 和 Claude.ai 开放。定价方面：输入费用为 $3/百万 tokens，输出费用为 $15/百万 tokens。企业用户可选择 Claude Team 和 Claude Enterprise 计划。目前支持多种语言，免费用户可通过 Claude.ai 获得使用额度，Pro 用户($20/月)可获得更高使用量。
 
 ---
-
-
 
 ### 4: 开发者如何迁移到 Claude Sonnet 4.6 API？
 
@@ -392,8 +370,6 @@ print(classify_hn_post("What's your favorite programming language?"))
 
 ---
 
-
-
 ### 5: Claude Sonnet 4.6 在实际应用中有哪些局限性？
 
 5: Claude Sonnet 4.6 在实际应用中有哪些局限性？
@@ -401,8 +377,6 @@ print(classify_hn_post("What's your favorite programming language?"))
 **A**: 根据用户反馈，主要局限性包括：1) 信息获取受限于知识库更新时间；2) 非英文语言表现与英文存在差异；3) 复杂数学推理可能出现错误；4) 图像生成功能尚未开放；5) 部分创意写作任务可能受限于安全策略；6) API 速率限制可能影响并发场景。此外，模型可能存在输出偏差，建议关键应用中加入验证机制。
 
 ---
-
-
 
 ### 6: 企业使用 Claude Sonnet 4.6 需要注意哪些合规问题？
 
@@ -412,29 +386,11 @@ print(classify_hn_post("What's your favorite programming language?"))
 
 ---
 
-
-
 ### 7: Hacker News 社区对 Claude Sonnet 4.6 的评价如何？
 
 7: Hacker News 社区对 Claude Sonnet 4.6 的评价如何？
 
 **A**: HN 讨论观点不一：正面评价包括编程辅助功能更新、长文档处理能力和输出稳定性。开发者关注其错误处理机制和代码注释风格。批评主要涉及非英文语言支持、知识库更新频率和部分任务的处理策略。部分用户讨论了定价策略。总体而言，技术社区认为其在工程应用场景中具有一定的可用性。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: 超长文档上下文重构
-
-### 问题**: 假设你需要用 Claude Sonnet 4.6 处理一个 500 页的 PDF 技术手册，但直接上传会超出上下文窗口限制。请设计一个分步处理方案，要求：1) 自动化分块策略 2) 保持关键信息连贯性 3) 最终生成结构化摘要。
-
-### 提示**: 考虑如何利用递归摘要技术，以及如何设计提示词让每个分块处理时保留前序内容的上下文锚点。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://www.anthropic.com/news/claude-sonnet-4-6](https://www.anthropic.com/news/claude-sonnet-4-6)
@@ -443,7 +399,6 @@ print(classify_hn_post("What's your favorite programming language?"))
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

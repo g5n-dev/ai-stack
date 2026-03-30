@@ -82,9 +82,6 @@ scenarios: ["AI/ML项目", "大语言模型", "DevOps/运维"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：智能代码补全工具
 def smart_code_completion():
@@ -113,9 +110,6 @@ def smart_code_completion():
 # 说明：这个示例展示了如何使用jedi库实现智能代码补全，
 # 帮助开发者快速发现和修复代码中的错误（如示例中的.len应改为len()）
 ```
-
-
-
 
 ```python
 # 示例2：自动化代码审查
@@ -161,9 +155,6 @@ def automated_code_review():
 # 自动检测代码中的类型错误等常见问题
 ```
 
-
-
-
 ```python
 # 示例3：智能代码重构建议
 def smart_refactoring():
@@ -207,10 +198,8 @@ def smart_refactoring():
 # 并提供重构建议，帮助开发者编写更简洁的代码
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：Rippling 的自动化工程系统
 
@@ -230,8 +219,6 @@ Rippling 构建了一个名为 "Rippling Agent" 的自动化工程系统。这�
 
 ---
 
-
-
 ### 2：Cognition 的 Devin 与全球自由职业平台 Upwork 的合作
 
  2：Cognition 的 Devin 与全球自由职业平台 Upwork 的合作
@@ -249,8 +236,6 @@ Upwork 与 Cognition（开发了全球首个 AI 软件工程师 Devin 的公司�
 通过引入 Devin，Upwork 能够以更快的速度交付复杂的维护项目，且准确率显著提升。Devin 能够像一名资深工程师一样，在沙盒环境中不断尝试并修复问题，直到任务完成。这证明了“超越编码代理”的价值：它不再仅仅是辅助工具，而是成为了能够独立承担工程责任、解决复杂现实世界问题的数字劳动力，改变了软件外包的商业模式。
 
 ---
-
-
 
 ### 3：某大型金融机构的智能合规与遗留系统迁移
 
@@ -363,7 +348,6 @@ Upwork 与 Cognition（开发了全球首个 AI 软件工程师 Devin 的公司�
 ---
 ## 常见问题
 
-
 ### 1: "Beyond agentic coding" 这一概念具体指的是什么？
 
 1: "Beyond agentic coding" 这一概念具体指的是什么？
@@ -371,8 +355,6 @@ Upwork 与 Cognition（开发了全球首个 AI 软件工程师 Devin 的公司�
 **A**: "Beyond agentic coding"（超越自主代理编码）通常指在软件开发领域，超越单纯依赖 AI 智能体来自动化编写代码片段或完成单一任务的阶段。它强调从单纯的“代码生成”转向更高层次的“系统构建”、“架构设计”以及“复杂问题解决”。这一概念主张 AI 不应仅仅是一个能听懂指令写函数的工具，而应成为能够理解业务上下文、进行全栈开发、自主调试并维护整个软件系统的协作伙伴。它关注的是 AI 在软件开发生命周期（SDLC）中更具主动性和全局性的作用。
 
 ---
-
-
 
 ### 2: 目前的 AI 编程工具（如 GitHub Copilot, Cursor 等）与“Agentic Coding”有何区别？
 
@@ -386,8 +368,6 @@ Upwork 与 Cognition（开发了全球首个 AI 软件工程师 Devin 的公司�
 
 ---
 
-
-
 ### 3: Hacker News 上关于这个话题的讨论中，开发者们主要关注的风险是什么？
 
 3: Hacker News 上关于这个话题的讨论中，开发者们主要关注的风险是什么？
@@ -400,8 +380,6 @@ Upwork 与 Cognition（开发了全球首个 AI 软件工程师 Devin 的公司�
 
 ---
 
-
-
 ### 4: 实现 "Beyond agentic coding" 面临的主要技术瓶颈是什么？
 
 4: 实现 "Beyond agentic coding" 面临的主要技术瓶颈是什么？
@@ -412,8 +390,6 @@ Upwork 与 Cognition（开发了全球首个 AI 软件工程师 Devin 的公司�
 3.  **测试与验证**：AI 目前很难像人类一样直觉地判断代码是否“好用”或符合用户体验，自动化测试的生成与覆盖率仍需人工干预。
 
 ---
-
-
 
 ### 5: 这一趋势对未来的软件工程师角色会有什么影响？
 
@@ -426,8 +402,6 @@ Upwork 与 Cognition（开发了全球首个 AI 软件工程师 Devin 的公司�
 
 ---
 
-
-
 ### 6: 有哪些代表性的项目或工具正在探索 "Beyond agentic coding" 的方向？
 
 6: 有哪些代表性的项目或工具正在探索 "Beyond agentic coding" 的方向？
@@ -437,22 +411,6 @@ Upwork 与 Cognition（开发了全球首个 AI 软件工程师 Devin 的公司�
 2.  **OpenHands (原 OpenDevin)**：一个开源的尝试，旨在模仿 Devin 的能力，提供能够自主解决 bug 和编写功能的 AI 代理。
 3.  **SWE-agent**：由 Princeton University 研究团队推出的项目，专注于利用 Agent 解决 GitHub 上的真实软件工程问题。
 这些工具的共同点是试图让 AI 拥有自己的工作空间，能够自主运行命令、修改文件并验证结果。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: 自动化样板代码生成
-
-### 问题**: 在传统的软件开发中，开发者通常需要手动编写样板代码。请设计一个工作流，利用现有的 LLM（如 GPT-4 或 Claude 3.5 Sonnet）自动为一个简单的 Python REST API 生成符合 PEP-8 规范的样板代码、数据模型以及基础的单元测试。
-
-### 提示**: 考虑如何将项目需求拆分为多个 Prompt，而不是一次性生成所有代码。思考如何利用上下文窗口让模型理解你的项目结构，以及如何通过迭代指令来修正代码风格。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://haskellforall.com/2026/02/beyond-agentic-coding](https://haskellforall.com/2026/02/beyond-agentic-coding)
@@ -461,7 +419,6 @@ Upwork 与 Cognition（开发了全球首个 AI 软件工程师 Devin 的公司�
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

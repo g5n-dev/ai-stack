@@ -38,8 +38,6 @@ Relevant source files
   * [README_JP.md](https://github.com/alibaba/higress/blob/8deceb4d/README_JP.md)
   * [README_ZH.md](https://github.com/alibaba/higress/blob/8deceb4d/README_ZH.md)
 
-
-
 ## Purpose and Scope
 
 This document provides a comprehensive overview of Higress, an AI Native API Gateway built on Istio and Envoy. It covers the system's architecture, core components, and primary use cases. For detailed information about specific subsystems, refer to the Core Architecture (page 2), Build and Deployment (page 3), WASM Plugin System (page 4), AI Gateway Features (page 5), MCP System (page 6), and Development Guide (page 7) sections.
@@ -73,7 +71,6 @@ Higress implements a control plane and data plane separation derived from Istio'
 
 **Component Deployment Diagram:**
 
-
 **Binary and Process Mapping:**
 
 Binary| Source Entry Point| Deployment Location| Primary Functions  
@@ -92,7 +89,6 @@ Sources: [README.md32](https://github.com/alibaba/higress/blob/8deceb4d/README.m
 ### Configuration Flow and Controller Architecture
 
 **Configuration Update Sequence:**
-
 
 **Controller Registry and Responsibilities:**
 
@@ -363,9 +359,6 @@ Higress 采用了**控制平面与数据平面分离**的云原生架构模式�
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：Higress 网关路由配置
 def higress_route_config():
@@ -401,9 +394,6 @@ def higress_route_config():
 # 并附加了认证和限流插件。
 ```
 
-
-
-
 ```python
 # 示例2：Higress 动态插件加载
 def load_higress_plugin():
@@ -438,9 +428,6 @@ def load_higress_plugin():
 # 实现了 JWT 认证和基于 IP 的限流功能，
 # 适合需要灵活控制网关行为的场景。
 ```
-
-
-
 
 ```python
 # 示例3：Higress 服务发现集成
@@ -483,10 +470,8 @@ def service_discovery_integration():
 # 适合云原生环境下的微服务治理场景。
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：阿里巴巴内部核心业务（如淘宝、天猫等）
 
@@ -506,8 +491,6 @@ Higress 成功支撑了阿里巴巴内部核心电商业务的平稳运行。相
 
 ---
 
-
-
 ### 2：某大型互联网科技公司 AI 应用接入场景
 
  2：某大型互联网科技公司 AI 应用接入场景
@@ -525,8 +508,6 @@ Higress 成功支撑了阿里巴巴内部核心电商业务的平稳运行。相
 通过 Higress，该公司成功将 AI 服务的接入层标准化。业务开发人员无需关注底层的模型差异和鉴权逻辑，只需调用统一的网关接口。安全性和合规性得到了有效保障，敏感信息拦截率达到 100%。此外，网关层的统一流量控制有效避免了因模型调用突发导致的成本失控，整体研发效率提升了 40% 以上。
 
 ---
-
-
 
 ### 3：有赞（Youzan）云原生架构升级
 
@@ -771,7 +752,6 @@ Higress 内置了丰富的可观测性功能，包括访问日志、指标采集
 - 它具备极致的高性能与低延迟特性，能够处理大规模并发流量，同时支持动态加载配置而不影响业务连续性。
 - 平台内置了丰富的流量管理插件（如限流、熔断、鉴权）并支持 WASM (WebAssembly) 技术，允许开发者使用多种语言编写自定义扩展逻辑。
 
-
 ---
 ## 学习路径
 
@@ -860,7 +840,6 @@ Higress 内置了丰富的可观测性功能，包括访问日志、指标采集
 ---
 ## 常见问题
 
-
 ### 1: Higress 是什么？它与阿里云和云原生社区有什么关系？
 
 1: Higress 是什么？它与阿里云和云原生社区有什么关系？
@@ -868,8 +847,6 @@ Higress 内置了丰富的可观测性功能，包括访问日志、指标采集
 **A**: Higress 是一个基于阿里云内部多年实践沉淀的下一代云原生网关。它是在 2022 年由阿里云开源的，深度集成了 Envoy 和 Istio 的生态优势。简单来说，Higress 的定位是**云原生 API 网关**。它旨在解决传统网关在云原生架构下遇到的扩展性、性能和标准化问题。它既支持传统的南北向流量管理（作为入口网关），也支持东西向流量（服务间通信），并且与 K8s Ingress 标准和 Gateway API 标准高度兼容。
 
 ---
-
-
 
 ### 2: Higress 与 Nginx、Kong 或 APISIX 等传统网关相比有什么核心优势？
 
@@ -884,8 +861,6 @@ Higress 内置了丰富的可观测性功能，包括访问日志、指标采集
 
 ---
 
-
-
 ### 3: Higress 是否支持从 Nginx 或 Ingress-NGINX 进行平滑迁移？
 
 3: Higress 是否支持从 Nginx 或 Ingress-NGINX 进行平滑迁移？
@@ -897,8 +872,6 @@ Higress 内置了丰富的可观测性功能，包括访问日志、指标采集
 3.  **零停机迁移**：通过调整 Service 的 Selector 或 DNS 切换，可以实现流量的平滑灰度切换。
 
 ---
-
-
 
 ### 4: Higress 支持哪些类型的流量管理和协议？
 
@@ -913,8 +886,6 @@ Higress 内置了丰富的可观测性功能，包括访问日志、指标采集
 
 ---
 
-
-
 ### 5: Higress 的插件机制是如何工作的？是否支持热加载？
 
 5: Higress 的插件机制是如何工作的？是否支持热加载？
@@ -927,8 +898,6 @@ Higress 内置了丰富的可观测性功能，包括访问日志、指标采集
 
 ---
 
-
-
 ### 6: Higress 的性能表现如何？能否支撑高并发场景？
 
 6: Higress 的性能表现如何？能否支撑高并发场景？
@@ -937,22 +906,6 @@ Higress 内置了丰富的可观测性功能，包括访问日志、指标采集
 
 1.  **底层优势**：基于 Envoy 的 C++ 异步非阻塞架构，Higress 在处理长连接（如 gRPC、WebSocket）和海量并发请求时，延迟通常比基于 Lua 的传统网关更低。
 2.
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: Higress 基于 Envoy 和 Istio 构建，但针对云原生网关场景做了大量优化。请查阅 Higress 的官方文档或源码，列出 Higress 相比标准 Istio Ingress Gateway，在流量路由配置（如 HTTP 路由规则）方面做了哪些简化和增强？
-
-### 提示**: 关注 Higress 如何处理 K8s Ingress 资源，以及其特有的 `WasmPlugin` 或 `VirtualService` 适配方式。
-
-### 
-
----
 ## 实践建议
 
 以下是针对 Alibaba Higress 仓库的 6 条实践建议，侧重于 AI 网关场景的实际落地与避坑：
@@ -994,7 +947,6 @@ AI 网关的限流与传统 API 网关不同，传统 QPS 限流无法防止“�
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

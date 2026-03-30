@@ -87,9 +87,6 @@ scenarios: ["大语言模型"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：自动切换到本地模型当API配额用尽时
 import os
@@ -119,9 +116,6 @@ response = client.chat.completions.create(
 )
 print(response.choices[0].message.content)
 ```
-
-
-
 
 ```python
 # 示例2：监控API使用量并提前预警
@@ -155,9 +149,6 @@ if not check_api_quota(threshold=0.9):
     # 切换到本地模型的逻辑
     print("正在切换到本地模型...")
 ```
-
-
-
 
 ```python
 # 示例3：本地模型与云端API的混合使用策略
@@ -209,10 +200,8 @@ response = client.chat(
 print(response)
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：初创公司AI开发团队
 
@@ -229,8 +218,6 @@ print(response)
 - 本地模型处理了约60%的代码生成任务，节省了约40%的API调用成本
 - 建立了混合使用的长期策略，将非关键任务分流至本地模型
 
-
-
 ### 2：开源项目维护团队
 
  2：开源项目维护团队
@@ -245,8 +232,6 @@ print(response)
 - 处理了积压的137个Pull Request，响应时间从平均48小时缩短至6小时
 - 通过混合使用模式，每月节省约65%的API调用费用
 - 为其他开源项目提供了可复制的应急方案模板
-
-
 
 ### 3：企业内部工具开发小组
 
@@ -379,14 +364,11 @@ print(response)
 ---
 ## 常见问题
 
-
 ### 1: 当 Claude API 配额用尽时，如何配置本地模型连接？
 
 1: 当 Claude API 配额用尽时，如何配置本地模型连接？
 
 **A**: 要在 Claude Code 中切换到本地模型，首先需要确保已安装 Ollama 或 LM Studio 等本地推理工具。然后在 Claude Code 的配置文件中修改 `api_base` 参数，将其指向本地服务的地址（例如 `http://localhost:11434/v1`），并更新 `model` 参数为本地模型名称（如 `llama3` 或 `codellama`）。具体配置路径通常位于用户目录下的 `.claude` 配置文件夹中。
-
-
 
 ### 2: 本地模型的性能是否足以支持编程任务？
 
@@ -394,15 +376,11 @@ print(response)
 
 **A**: 这取决于本地硬件配置和选择的模型。对于代码补全和简单调试，7B-13B 参数量的模型（如 CodeLlama 7B 或 DeepSeek Coder）在拥有 GPU 加速的情况下表现尚可。但对于复杂逻辑分析和长代码生成，本地模型在准确性和上下文理解上仍与 Claude 3 等云端模型存在明显差距。建议将本地模型作为配额耗尽时的备用方案，而非完全替代。
 
-
-
 ### 3: 切换到本地模型后，Claude Code 的哪些功能会受限？
 
 3: 切换到本地模型后，Claude Code 的哪些功能会受限？
 
 **A**: 本地模型通常缺乏联网能力，因此无法访问实时文档或执行需要外部信息的命令。同时，由于本地模型的上下文窗口普遍较小（通常 8k-32k），处理大型代码库时会遇到记忆限制。此外，Claude 特有的工具调用能力在本地模型上可能无法正常工作，导致某些自动化调试功能失效。
-
-
 
 ### 4: 如何在云端和本地模型之间快速切换？
 
@@ -410,15 +388,11 @@ print(response)
 
 **A**: 推荐使用环境变量管理不同配置。可以创建两个配置文件：`~/.claude/config.json` 用于默认云端 API，`~/.claude/config.local.json` 用于本地模型。通过 shell 别名快速切换，例如添加 `alias claude-local="export CLAUDE_CONFIG=~/.claude/config.local.json"` 到 `.bashrc` 或 `.zshrc`。这样在配额恢复时也能轻松切回云端模式。
 
-
-
 ### 5: 使用本地模型是否会产生 API 费用？
 
 5: 使用本地模型是否会产生 API 费用？
 
 **A**: 连接本地模型本身不会产生 API 调用费用，因为所有推理都在本地完成。但需要注意两点：一是运行大型模型需要较高配置的硬件（建议至少 RTX 3060 以上显卡），这涉及电力成本和硬件折旧；二是某些本地模型工具（如 Ollama 商业版）可能收取订阅费。总体而言，长期高频使用本地模型比付费 API 更经济。
-
-
 
 ### 6: 哪些本地模型最适合替代 Claude 进行编程辅助？
 
@@ -431,8 +405,6 @@ print(response)
 - **StarCoder 2**：Hugging Face 开发的多语言代码模型
 建议通过 Ollama (`ollama pull <模型名>`) 或 LM Studio 的模型库下载这些模型。
 
-
-
 ### 7: 配额用尽后还有哪些云端替代方案？
 
 7: 配额用尽后还有哪些云端替代方案？
@@ -442,22 +414,6 @@ print(response)
 2. **免费层服务**：Google Colab 的免费 GPU 可以临时运行开源模型
 3. **混合方案**：简单任务用本地模型，复杂任务手动切换到付费 API
 4. **等待配额重置**：大多数 API 服务有每月或每日重置机制，可查看账户页面确认具体时间
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 在你的本地机器上使用 Ollama 或 LM Studio 部署一个开源大模型（如 Llama 3 或 Mistral），并通过命令行验证其能够正常响应。记录下模型占用的显存和内存情况。
-
-### 提示**: 需要先安装本地模型运行工具，下载模型后使用 `curl` 或工具自带的 CLI 进行测试，可以用 `nvidia-smi`（GPU）或 `htop`（CPU）监控资源占用。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://boxc.net/blog/2026/claude-code-connecting-to-local-models-when-your-quota-runs-out](https://boxc.net/blog/2026/claude-code-connecting-to-local-models-when-your-quota-runs-out)
@@ -466,7 +422,6 @@ print(response)
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

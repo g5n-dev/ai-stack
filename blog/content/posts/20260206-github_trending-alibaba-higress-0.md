@@ -38,8 +38,6 @@ Relevant source files
   * [README_JP.md](https://github.com/alibaba/higress/blob/8deceb4d/README_JP.md)
   * [README_ZH.md](https://github.com/alibaba/higress/blob/8deceb4d/README_ZH.md)
 
-
-
 ## Purpose and Scope
 
 This document provides a comprehensive overview of Higress, an AI Native API Gateway built on Istio and Envoy. It covers the system's architecture, core components, and primary use cases. For detailed information about specific subsystems, refer to the Core Architecture (page 2), Build and Deployment (page 3), WASM Plugin System (page 4), AI Gateway Features (page 5), MCP System (page 6), and Development Guide (page 7) sections.
@@ -73,7 +71,6 @@ Higress implements a control plane and data plane separation derived from Istio'
 
 **Component Deployment Diagram:**
 
-
 **Binary and Process Mapping:**
 
 Binary| Source Entry Point| Deployment Location| Primary Functions  
@@ -92,7 +89,6 @@ Sources: [README.md32](https://github.com/alibaba/higress/blob/8deceb4d/README.m
 ### Configuration Flow and Controller Architecture
 
 **Configuration Update Sequence:**
-
 
 **Controller Registry and Responsibilities:**
 
@@ -349,9 +345,6 @@ Higress 在**“流量治理的标准化”**这一层上做了抽象。
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：动态路由配置
 def dynamic_routing():
@@ -381,9 +374,6 @@ def dynamic_routing():
 # 说明：展示了如何根据请求特征实现智能路由，
 # 这是Higress作为API网关的核心功能之一
 ```
-
-
-
 
 ```python
 # 示例2：流量控制与熔断
@@ -431,9 +421,6 @@ def circuit_breaker():
 # 说明：实现了熔断器模式，当服务失败率达到阈值时
 # 自动熔断，避免雪崩效应
 ```
-
-
-
 
 ```python
 # 示例3：插件式请求处理
@@ -487,10 +474,8 @@ def plugin_system():
 # 现代网关实现可扩展性的关键设计模式
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：阿里巴巴集团内部核心业务云原生化改造
 
@@ -517,8 +502,6 @@ def plugin_system():
 
 ---
 
-
-
 ### 2：某互联网科技公司 AI 应用接入网关
 
  2：某互联网科技公司 AI 应用接入网关
@@ -543,8 +526,6 @@ def plugin_system():
 3.  **安全性增强**：在网关层统一拦截了包含敏感信息的请求，确保了合规性。
 
 ---
-
-
 
 ### 3：某大型电商平台多语言/多租户 API 管理
 
@@ -770,7 +751,6 @@ def plugin_system():
 - 通过 Dubbo、Nacos 等协议适配器，解决传统微服务体系与云原生网关的互通问题
 - 开源社区活跃，文档完善，适合作为企业云原生架构的统一流量入口选型
 
-
 ---
 ## 学习路径
 
@@ -872,7 +852,6 @@ def plugin_system():
 ---
 ## 常见问题
 
-
 ### 1: Higress 是什么？它与阿里云和 Kong 有什么关系？
 
 1: Higress 是什么？它与阿里云和 Kong 有什么关系？
@@ -884,8 +863,6 @@ def plugin_system():
 关于与 Kong 的对比，虽然两者都是 API 网关，但架构理念不同。Kong 基于 Nginx/Lua 和 OpenResty 构建，主要是一个单体或集中式的流量网关；而 Higress 基于 Istio 和 Envoy，采用云原生架构，深度集成 Kubernetes，更擅长处理服务网格中的东西向（服务间）流量和南北向（入口）流量，并支持 WASM（WebAssembly）插件以提供比传统 Lua 插件更好的隔离性和扩展性。
 
 ---
-
-
 
 ### 2: Higress 与 Apache APISIX 相比，有哪些核心区别？
 
@@ -899,8 +876,6 @@ def plugin_system():
 
 ---
 
-
-
 ### 3: Higress 是否支持从 Nginx 或 Ingress-Nginx 平滑迁移？
 
 3: Higress 是否支持从 Nginx 或 Ingress-Nginx 平滑迁移？
@@ -912,8 +887,6 @@ def plugin_system():
 3.  **工具支持**：Higress 提供了配置迁移工具（Nginx Converter），可以帮助用户将传统的 Nginx.conf 文件转换为 Higress 的网关路由配置。
 
 ---
-
-
 
 ### 4: 在 Higress 中如何开发和使用插件？支持哪些语言？
 
@@ -929,8 +902,6 @@ Higress 官方提供了类似于 "Plugin Development Kit" (PDK) 的 Go SDK，方
 
 ---
 
-
-
 ### 5: Higress 如何处理服务发现？是否只能对接 Kubernetes Service？
 
 5: Higress 如何处理服务发现？是否只能对接 Kubernetes Service？
@@ -939,22 +910,6 @@ Higress 官方提供了类似于 "Plugin Development Kit" (PDK) 的 Go SDK，方
 
 1.  **Kubernetes Service**：这是最原生的方式，Higress 会自动监听 K8s 的 Service 和 Endpoints 变化，实现服务发现。
 2.  **Nacos / Consul / Eureka**：Higress 内置了对主流注册
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 快速上手与流量验证
-
-### 假设你有一个运行在 `localhost:8080` 的后端服务（例如一个简单的 Python Flask 或 Node.js 应用）。请编写 Higress 的 `Ingress` 配置文件，将请求路径 `/api/v1` 的流量路由到该服务。配置完成后，使用 `curl` 命令验证路由是否生效。
-
-### 提示**: 关注 Higress (或基于 Nginx 的 Ingress) 中 `host`、`path` 以及 `service` 的端口配置字段。你需要确保 Ingress Controller 能够访问到你的本地服务（如果在 Kubernetes 集群外测试，可能需要注意网络策略或使用 NodePort/HostNetwork）。
-
----
 ## 实践建议
 
 以下是基于 Higress 作为 AI 网关和 API 网关的实际使用场景，提供的 7 条实践建议：
@@ -1004,7 +959,6 @@ Higress 官方提供了类似于 "Plugin Development Kit" (PDK) 的 Go SDK，方
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

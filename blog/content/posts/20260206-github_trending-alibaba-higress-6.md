@@ -38,8 +38,6 @@ Relevant source files
   * [README_JP.md](https://github.com/alibaba/higress/blob/8deceb4d/README_JP.md)
   * [README_ZH.md](https://github.com/alibaba/higress/blob/8deceb4d/README_ZH.md)
 
-
-
 ## Purpose and Scope
 
 This document provides a comprehensive overview of Higress, an AI Native API Gateway built on Istio and Envoy. It covers the system's architecture, core components, and primary use cases. For detailed information about specific subsystems, refer to the Core Architecture (page 2), Build and Deployment (page 3), WASM Plugin System (page 4), AI Gateway Features (page 5), MCP System (page 6), and Development Guide (page 7) sections.
@@ -73,7 +71,6 @@ Higress implements a control plane and data plane separation derived from Istio'
 
 **Component Deployment Diagram:**
 
-
 **Binary and Process Mapping:**
 
 Binary| Source Entry Point| Deployment Location| Primary Functions  
@@ -92,7 +89,6 @@ Sources: [README.md32](https://github.com/alibaba/higress/blob/8deceb4d/README.m
 ### Configuration Flow and Controller Architecture
 
 **Configuration Update Sequence:**
-
 
 **Controller Registry and Responsibilities:**
 
@@ -354,9 +350,6 @@ Higress 采用了**控制平面与数据平面分离**的经典云原生架构�
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：基于Higress的API网关动态路由配置
 # 解决问题：根据请求头动态路由到不同后端服务
@@ -390,9 +383,6 @@ if __name__ == '__main__':
     app.run(debug=True)
 ```
 
-
-
-
 ```python
 # 示例2：Higress插件开发 - 请求限流
 # 解决问题：实现基于IP的简单限流功能
@@ -422,9 +412,6 @@ def get_data():
 if __name__ == '__main__':
     app.run(debug=True)
 ```
-
-
-
 
 ```python
 # 示例3：Higress配置热更新模拟
@@ -468,10 +455,8 @@ if __name__ == '__main__':
     app.run(debug=True)
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：阿里巴巴内部电商业务
 
@@ -497,8 +482,6 @@ if __name__ == '__main__':
 3. 微服务调用可观测性增强，故障定位效率提升 50%。  
 
 ---
-
-
 
 ### 2：某大型金融科技公司
 
@@ -527,8 +510,6 @@ if __name__ == '__main__':
 3. 网关可用性达到 99.99%，业务中断时间减少 90%。  
 
 ---
-
-
 
 ### 3：某互联网教育平台
 
@@ -766,7 +747,6 @@ if __name__ == '__main__':
 - 兼容 Ingress/Gateway API 标准，可平滑替代 Nginx/Kong 等传统网关组件。
 - 开源版本已包含企业级特性（如分布式追踪、指标监控），适合生产环境直接部署。
 
-
 ---
 ## 学习路径
 
@@ -852,7 +832,6 @@ if __name__ == '__main__':
 ---
 ## 常见问题
 
-
 ### 1: Higress 是什么？它与 Nginx 和 Kong 有什么区别？
 
 1: Higress 是什么？它与 Nginx 和 Kong 有什么区别？
@@ -864,8 +843,6 @@ if __name__ == '__main__':
 *   **与 Kong 的区别**：Kong 基于 OpenResty (Nginx + Lua)，其插件扩展主要使用 Lua 语言编写。Higiggs 底层基于 **Envoy** (C++/Go)，使用 **Go** 语言编写插件（Wasm 插件），在安全隔离性（沙箱）、资源管控和性能上通常更具优势，且与 Istio 服务网格的生态融合更紧密。
 
 ---
-
-
 
 ### 2: Higress 是如何兼容 Istio 的？我可以在现有的 Istio 集群中使用它吗？
 
@@ -880,8 +857,6 @@ if __name__ == '__main__':
 
 ---
 
-
-
 ### 3: Higress 支持哪些协议？除了 HTTP/HTTPS，它支持 gRPC 或 Dubbo 吗？
 
 3: Higress 支持哪些协议？除了 HTTP/HTTPS，它支持 gRPC 或 Dubbo 吗？
@@ -894,8 +869,6 @@ if __name__ == '__main__':
 4.  **其他协议**：支持 TCP 和 TLS 透传，以及基于 WebSocket 的长连接通信。
 
 ---
-
-
 
 ### 4: Higress 的插件机制是如何工作的？支持自定义插件吗？
 
@@ -911,8 +884,6 @@ if __name__ == '__main__':
 
 ---
 
-
-
 ### 5: 如何在生产环境中部署 Higress？对 Kubernetes 有依赖吗？
 
 5: 如何在生产环境中部署 Higress？对 Kubernetes 有依赖吗？
@@ -923,22 +894,6 @@ if __name__ == '__main__':
 2.  **依赖性**：
     *   **标准 K8s 环境**：需要标准的 Kubernetes 集群（版本通常建议 1.19+）。
     *   **服务发现**：虽然它也可以对接 Nacos、Consul 等第三方
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**:
-
-### Higress 基于 Envoy 构建，但为了适应云原生环境，它在 Envoy 的配置模型上做了哪些关键性的抽象和封装？请对比直接使用 Envoy 的配置文件与使用 Higress 的 Ingress 资源配置一个简单的路由转发规则。
-
-### 提示**:
-
----
 ## 实践建议
 
 基于 Higress 作为 AI Native API 网关的定位，结合其与 Istio 的兼容性及对 AI 模型的支持，以下是 6 条针对实际使用场景的实践建议：
@@ -990,7 +945,6 @@ if __name__ == '__main__':
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

@@ -131,19 +131,8 @@ Cloudflare 的所谓“实现”，实际上只是利用 Workers 对 TCP sockets
 ---
 ## 💻 代码示例
 
-
-
-
-
-
-
-
-
-
-
 ---
 ## 📚 案例研究
-
 
 ### 1：Element (前身为 Riot.im) 与 Matrix 协议的高可用性改造
 
@@ -166,8 +155,6 @@ Element 是最流行的 Matrix 客户端，背后是 Matrix.org 团队。Matrix 
 
 ---
 
-
-
 ### 2：T2 Hostel 利用 Cloudflare Workers 实现 Matrix 中继服务
 
  2：T2 Hostel 利用 Cloudflare Workers 实现 Matrix 中继服务
@@ -188,8 +175,6 @@ T2 Hostel 是一个知名的背包客社区，他们运营着自己的 Matrix �
 - **即时合规与安全** 🚦：利用 Workers 轻松实现了针对特定 API 端点的访问控制，无需在源服务器上配置复杂的防火墙规则。
 
 ---
-
-
 
 ### 3：基于 Cloudflare Workers 的 Matrix "Appservice" 网关
 
@@ -306,7 +291,6 @@ Matrix 协议允许通过 "Appservice" 桥接其他网络（如 IRC, Discord, Sl
 ---
 ## ❓ 常见问题
 
-
 ### 1: Cloudflare 到底“声称”做了什么？为什么说他们实际上并没有做到？
 
 1: Cloudflare 到底“声称”做了什么？为什么说他们实际上并没有做到？
@@ -322,8 +306,6 @@ Cloudflare 在一篇博客文章及随后的宣传中，**声称**他们成功�
 
 ---
 
-
-
 ### 2: Matrix 协议通常需要什么样的运行环境？为什么 Cloudflare Workers 很难适配？
 
 2: Matrix 协议通常需要什么样的运行环境？为什么 Cloudflare Workers 很难适配？
@@ -337,8 +319,6 @@ Matrix 协议的服务端组件（如 Synapse 或 Dendrite）通常设计运行�
 *   **持久化存储**：Matrix 需要存储大量的房间状态、事件图谱和用户数据。Workers 是无状态的，必须依赖 Durable Objects 或 KV 存储，这与 Matrix 传统基于 SQL 数据库的架构有很大差异。
 
 ---
-
-
 
 ### 3: 既然“没做到”，那 Cloudflare 的 Demo 展示了什么技术能力？
 
@@ -355,8 +335,6 @@ Matrix 协议的服务端组件（如 Synapse 或 Dendrite）通常设计运行�
 
 ---
 
-
-
 ### 4: 这件事在 Hacker News 上引发了什么样的技术讨论？
 
 4: 这件事在 Hacker News 上引发了什么样的技术讨论？
@@ -370,30 +348,12 @@ Hacker News 上的讨论主要集中在 **“营销炒作 vs. 技术现实”** 
 
 ---
 
-
-
 ### 5: 如果我想在 Cloudflare Workers 上运行类似 Matrix 的应用，正确的姿势是什么？
 
 5: 如果我想在 Cloudflare Workers 上运行类似 Matrix 的应用，正确的姿势是什么？
 
 **A**: 
 不要试图直接将现有的 Node.js 应用（如 Synapse）直接扔进 Workers。正确的“姿势”应该是
-
----
-## 🎯 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**: 理解环境限制
-
-### Cloudflare Workers 是一个 V8隔离环境，而不是一个完整的操作系统。请列出 Cloudflare Workers 的运行时环境中缺失的至少 3 个常见的 Node.js 核心模块（例如 `fs`, `net` 等），并解释为什么这些模块的缺失使得直接运行标准的 Matrix Homeserver（如 Synapse）成为不可能。
-
-### 提示**: 思考传统的服务器是如何处理持久化存储和原始 TCP socket 连接的，对比 Workers 提供的 API（如 Fetch API）。
-
----
 ## 🔗 引用
 
 - **原文链接**: [https://tech.lgbt/@JadedBlueEyes/115967791152135761](https://tech.lgbt/@JadedBlueEyes/115967791152135761)

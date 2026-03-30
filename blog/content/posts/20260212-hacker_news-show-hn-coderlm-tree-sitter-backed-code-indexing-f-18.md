@@ -79,9 +79,6 @@ CodeRLM 提出了一种极具实用价值的混合索引思路，它巧妙地利
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：使用Tree-sitter解析Python函数定义
 import tree_sitter_python as tspython
@@ -121,9 +118,6 @@ class Calculator:
 
 print(extract_functions(code))
 ```
-
-
-
 
 ```python
 # 示例2：跨语言代码搜索（支持Python和JavaScript）
@@ -178,9 +172,6 @@ function processData(data) {
 print("Python结果:", search_code_patterns(py_code, "python", "(call function: (identifier) @func)"))
 print("JavaScript结果:", search_code_patterns(js_code, "javascript", "(call_expression function: (identifier) @func)"))
 ```
-
-
-
 
 ```python
 # 示例3：代码语义差异分析
@@ -240,10 +231,8 @@ def greet(name):
 print(compare_code_semantics(old_version, new_version))
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：大型遗留金融系统重构项目（某跨国银行技术部）
 
@@ -265,8 +254,6 @@ print(compare_code_semantics(old_version, new_version))
 
 ---
 
-
-
 ### 2：开源项目自动化维护与 PR 审查（知名开源基础设施项目）
 
  2：开源项目自动化维护与 PR 审查（知名开源基础设施项目）
@@ -286,8 +273,6 @@ print(compare_code_semantics(old_version, new_version))
 - **维护负担**：核心开发者每周节省约 15 小时的纯代码审查时间，得以专注于新特性的开发。
 
 ---
-
-
 
 ### 3：SaaS 平台多租户代码库迁移与语义搜索（某 B2B 企业）
 
@@ -413,7 +398,6 @@ Tree-sitter 支持多语言，但不同语言的惯用模式不同。为了提�
 ---
 ## 常见问题
 
-
 ### 1: CodeRLM 的主要功能是什么，它与传统的代码搜索工具有何不同？
 
 1: CodeRLM 的主要功能是什么，它与传统的代码搜索工具有何不同？
@@ -423,8 +407,6 @@ Tree-sitter 支持多语言，但不同语言的惯用模式不同。为了提�
 与传统的代码搜索工具（如基于 grep 或简单的文本匹配工具）不同，CodeRLM 不仅仅是查找文本字符串。它能够理解代码的语法结构，例如函数定义、类继承关系、变量作用域等。这使得它能够为 LLM 提供更精准、结构化的上下文信息，帮助 AI 智能体更好地“阅读”和“理解”代码库，从而在执行代码生成、重构或问答任务时表现更出色。
 
 ---
-
-
 
 ### 2: 为什么选择 Tree-sitter 作为底层解析技术？
 
@@ -438,8 +420,6 @@ Tree-sitter 支持多语言，但不同语言的惯用模式不同。为了提�
 
 ---
 
-
-
 ### 3: CodeRLM 如何提升 LLM 智能体的代码处理能力？
 
 3: CodeRLM 如何提升 LLM 智能体的代码处理能力？
@@ -451,8 +431,6 @@ Tree-sitter 支持多语言，但不同语言的惯用模式不同。为了提�
 
 ---
 
-
-
 ### 4: CodeRLM 是否支持所有编程语言？
 
 4: CodeRLM 是否支持所有编程语言？
@@ -462,8 +440,6 @@ Tree-sitter 支持多语言，但不同语言的惯用模式不同。为了提�
 只要相应的 Tree-sitter 语法文件存在，CodeRLM 就可以对其进行索引。用户也可以根据需要，为特定的小众语言编写或接入自定义的 Tree-sitter 语法定义。
 
 ---
-
-
 
 ### 5: 部署 CodeRLM 的技术难度大吗？它需要哪些依赖？
 
@@ -475,8 +451,6 @@ Tree-sitter 支持多语言，但不同语言的惯用模式不同。为了提�
 
 ---
 
-
-
 ### 6: 相比于直接让 LLM 读取文件，使用 CodeRLM 的性能开销如何？
 
 6: 相比于直接让 LLM 读取文件，使用 CodeRLM 的性能开销如何？
@@ -485,22 +459,6 @@ Tree-sitter 支持多语言，但不同语言的惯用模式不同。为了提�
 
 *   **预处理阶段**：在首次索引代码库时，Tree-sitter 需要解析文件并构建索引，这需要消耗一定的 CPU 和 I/O 资源。但这是一个一次性成本，且 Tree-sitter 本身解析速度极快。
 *   **推理阶段**：这是收益最大的地方。通过 CodeRLM，你可以大幅减少输入给 LLM 的无效 Token 数量（只传关键代码片段而非全文件）。由于 LLM 的推理成本与 Token 数量成正比，减少输入 Token 不仅能加快响应速度，还能显著降低 API 调用费用。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: 文本检索的局限性与 CST 的优势
-
-### 问题**: 在传统的代码检索中，我们通常使用简单的字符串匹配或正则表达式来查找函数定义。请分析并描述：当面对一个包含大量重载函数、嵌套类或宏定义的大型 C++ 代码库时，基于文本的搜索方法会遇到哪些具体的局限性？Tree-sitter 生成的 CST（具体语法树）在结构上与传统的 AST（抽象语法树）有何不同，这种差异为何有利于代码索引？
-
-### 提示**: 思考 "void foo(int)" 和 "void foo(float)" 在正则匹配时的歧义性，以及 CST 保留源代码位置信息（如空白符、注释）对 LLM 上下文重建的重要性。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://github.com/JaredStewart/coderlm/blob/main/server/REPL_to_API.md](https://github.com/JaredStewart/coderlm/blob/main/server/REPL_to_API.md)
@@ -509,7 +467,6 @@ Tree-sitter 支持多语言，但不同语言的惯用模式不同。为了提�
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

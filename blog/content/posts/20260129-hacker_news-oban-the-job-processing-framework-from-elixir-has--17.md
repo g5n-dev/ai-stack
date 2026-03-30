@@ -118,9 +118,6 @@ Python 生态中的 Celery 虽然强大，但常因“任务饥饿”问题（�
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：基本任务调度
 from oban import Oban
@@ -142,9 +139,6 @@ job = send_email.delay("user@example.com", "欢迎", "感谢注册！")
 print(f"任务ID: {job.id}")
 print(f"任务状态: {job.status}")
 ```
-
-
-
 
 ```python
 # 示例2：带重试机制的失败任务
@@ -170,9 +164,6 @@ if job.failed:
     print(f"失败原因: {job.error}")
     print(f"剩余重试次数: {job.remaining_retries}")
 ```
-
-
-
 
 ```python
 # 示例3：定时任务与任务链
@@ -203,10 +194,8 @@ print(f"任务链ID: {job.id}")
 print(f"任务链状态: {job.status}")
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某大型跨境电商平台的数据同步服务
 
@@ -228,8 +217,6 @@ print(f"任务链状态: {job.status}")
 
 ---
 
-
-
 ### 2：金融科技公司的合规报表生成系统
 
  2：金融科技公司的合规报表生成系统
@@ -249,8 +236,6 @@ print(f"任务链状态: {job.status}")
 3. **资源利用率优化**：利用 Oban 的优先级队列，在系统资源紧张时，优先保证监管报表的计算资源，压制非关键的后台任务。
 
 ---
-
-
 
 ### 3：SaaS 平台的邮件与通知系统重构
 
@@ -365,7 +350,6 @@ print(f"任务链状态: {job.status}")
 ---
 ## 常见问题
 
-
 ### 1: Oban 原本是 Elixir 生态系统中的知名库，它主要解决什么问题？
 
 1: Oban 原本是 Elixir 生态系统中的知名库，它主要解决什么问题？
@@ -374,8 +358,6 @@ print(f"任务链状态: {job.status}")
 
 ---
 
-
-
 ### 2: 这个 Python 版本的 Oban 是如何实现的？它是 Elixir 代码的直接移植吗？
 
 2: 这个 Python 版本的 Oban 是如何实现的？它是 Elixir 代码的直接移植吗？
@@ -383,8 +365,6 @@ print(f"任务链状态: {job.status}")
 **A**: 根据该项目的描述，Python 版本的 Oban 并不是简单的代码移植，而是“受 Oban 启发”或遵循 Oban 设计哲学的实现。由于 Elixir 基于 BEAM 虚拟机，具有轻量级进程和强大的容错机制，而 Python 缺乏这些原生特性，因此 Python 版本必须使用不同的底层技术来模仿 Oban 的行为。它通常依赖 Python 的多进程处理（如 `multiprocessing` 或 `asyncio`）以及关系型数据库（如 PostgreSQL）来构建健壮的任务队列系统，旨在为 Python 开发者提供类似 Oban 的稳定性和开发体验。
 
 ---
-
-
 
 ### 3: 相比 Celery 或 RQ，Python 版的 Oban 有什么独特的优势？
 
@@ -397,8 +377,6 @@ print(f"任务链状态: {job.status}")
 
 ---
 
-
-
 ### 4: 它支持哪些数据库？是否可以使用 MySQL 或 SQLite？
 
 4: 它支持哪些数据库？是否可以使用 MySQL 或 SQLite？
@@ -406,8 +384,6 @@ print(f"任务链状态: {job.status}")
 **A**: 虽然具体的 Python 实现可能有所不同，但 Oban 的设计哲学通常高度依赖 PostgreSQL 的高级特性（如 `LISTEN`/`NOTIFY` 进行通知、复杂的 CTE 查询以及特定的 JSONB 处理能力）。因此，最理想和最稳定的运行环境通常是 PostgreSQL。虽然理论上可以适配其他数据库，但可能会失去一些高性能的并发特性或实时通知能力。
 
 ---
-
-
 
 ### 5: Python 版 Oban 的性能如何？能否处理高并发任务？
 
@@ -417,8 +393,6 @@ print(f"任务链状态: {job.status}")
 
 ---
 
-
-
 ### 6: 如何在现有的 Python 项目（如 Django 或 FastAPI）中集成它？
 
 6: 如何在现有的 Python 项目（如 Django 或 FastAPI）中集成它？
@@ -427,22 +401,6 @@ print(f"任务链状态: {job.status}")
 1.  **数据库迁移**：运行提供的迁移脚本来创建存储任务、元数据和队列状态的表。
 2.  **Worker 启动**：在应用启动时注册任务定义，并运行独立的 Worker 进程来监听并执行任务。
 对于 Web 框架，它通常提供中间件或上下文管理器，以便在 HTTP 请求中轻松入队任务，例如 `Oban.enqueue(job="SendEmail", args={"user_id": 1})`。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: 事务一致性验证
-
-### 问题**：Oban 在 Elixir 中以利用 PostgreSQL 的特性进行任务队列管理而闻名。请分析 Python 版本的 Oban（假设基于 SQLAlchemy 或类似 ORM）是如何利用数据库事务来确保“任务入队”与“业务数据修改”之间的原子性的。请编写一个伪代码或简单的 Python 函数，演示在创建订单记录的同时，必须成功发送一封“欢迎邮件”任务，如果邮件任务入队失败，订单创建也应回滚。
-
-### 提示**：思考数据库事务的 ACID 特性，特别是原子性。在 Python 的数据库操作中，`commit` 和 `rollback` 应该发生在什么时机？是否需要将任务插入操作包裹在同一个数据库事务作用域中？
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://www.dimamik.com/posts/oban_py](https://www.dimamik.com/posts/oban_py)
@@ -451,7 +409,6 @@ print(f"任务链状态: {job.status}")
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

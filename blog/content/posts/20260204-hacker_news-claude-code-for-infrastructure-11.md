@@ -51,9 +51,6 @@ scenarios: ["DevOps/运维", "AI/ML项目", "命令行工具"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：自动检测并修复AWS安全组配置
 import boto3
@@ -83,9 +80,6 @@ def audit_and_fix_security_groups():
                     #     IpPermissions=[rule]
                     # )
 ```
-
-
-
 
 ```python
 # 示例2：Kubernetes资源自动扩缩容
@@ -129,9 +123,6 @@ def auto_scale_deployment(namespace, deployment_name, min_replicas=1, max_replic
         print(f"创建失败: {str(e)}")
 ```
 
-
-
-
 ```python
 # 示例3：监控Docker容器资源使用
 import docker
@@ -170,10 +161,8 @@ def monitor_container_resources(container_name, duration=60):
         print(f"监控出错: {str(e)}")
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某中型SaaS公司的基础设施自动化迁移
 
@@ -202,8 +191,6 @@ def monitor_container_resources(container_name, duration=60):
 
 ---
 
-
-
 ### 2：初创公司的CI/CD流水线优化
 
  2：初创公司的CI/CD流水线优化
@@ -230,8 +217,6 @@ def monitor_container_resources(container_name, duration=60):
 - 开发团队反馈部署等待时间大幅减少，开发效率提升约30%
 
 ---
-
-
 
 ### 3：多云环境下的资源管理平台
 
@@ -374,7 +359,6 @@ def monitor_container_resources(container_name, duration=60):
 ---
 ## 常见问题
 
-
 ### 1: Claude Code for Infrastructure 是什么？
 
 1: Claude Code for Infrastructure 是什么？
@@ -382,8 +366,6 @@ def monitor_container_resources(container_name, duration=60):
 **A**: Claude Code for Infrastructure 是 Anthropic 推出的一个专门针对基础设施和 DevOps 领域的 AI 编程助手。它基于 Claude 3.7 Sonnet 模型，专门优化了处理基础设施代码（如 Terraform、Kubernetes 配置、CI/CD 管道等）的能力。与通用代码助手不同，它更理解云服务、容器编排、自动化部署等基础设施相关的上下文和最佳实践。
 
 ---
-
-
 
 ### 2: 它支持哪些基础设施工具和语言？
 
@@ -399,8 +381,6 @@ def monitor_container_resources(container_name, duration=60):
 
 ---
 
-
-
 ### 3: 与 ChatGPT/Copilot 相比有什么优势？
 
 3: 与 ChatGPT/Copilot 相比有什么优势？
@@ -413,8 +393,6 @@ def monitor_container_resources(container_name, duration=60):
 5. **多文件编辑**：能同时修改相关的配置文件（如同时修改服务和对应的 Ingress）
 
 ---
-
-
 
 ### 4: 如何处理敏感的基础设施信息？
 
@@ -429,8 +407,6 @@ def monitor_container_resources(container_name, duration=60):
 
 ---
 
-
-
 ### 5: 能否直接操作生产环境？
 
 5: 能否直接操作生产环境？
@@ -443,8 +419,6 @@ def monitor_container_resources(container_name, duration=60):
 5. **集成限制**：需要显式配置才能连接到云服务 API
 
 ---
-
-
 
 ### 6: 如何处理 Terraform 状态文件和复杂依赖？
 
@@ -460,8 +434,6 @@ def monitor_container_resources(container_name, duration=60):
 
 ---
 
-
-
 ### 7: 定价和可用性如何？
 
 7: 定价和可用性如何？
@@ -474,22 +446,6 @@ def monitor_container_resources(container_name, duration=60):
 5. **API 访问**：企业版可通过 API 集成到现有工具链
 
 （注：具体定价可能随时间调整，建议查看官方最新文档）
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: 命名规范自动化
-
-### 问题**: 在使用 Claude Code 进行基础设施自动化时，如何确保生成的 Terraform 配置文件符合命名规范（如资源名使用小写和下划线）？
-
-### 提示**: 考虑在提示词中添加明确的格式约束，或使用 Claude Code 的文件操作功能对生成内容进行后处理。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://www.fluid.sh](https://www.fluid.sh)
@@ -498,7 +454,6 @@ def monitor_container_resources(container_name, duration=60):
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

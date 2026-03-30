@@ -85,9 +85,6 @@ scenarios: ["AI/ML项目", "命令行工具"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：播放Peon语音通知
 import pygame
@@ -120,9 +117,6 @@ def play_peon_notification(sound_type):
 # 使用示例
 play_peon_notification('ready')  # 播放"Ready to work!"
 ```
-
-
-
 
 ```python
 # 示例2：Peon状态通知系统
@@ -157,9 +151,6 @@ notifier.notify('start')      # 输出: [工作开始] Job's done!
 notifier.notify('progress')   # 输出: [进行中] Work, work...
 notifier.notify('complete')   # 输出: [任务完成] Ready to work!
 ```
-
-
-
 
 ```python
 # 示例3：Peon语音命令解析器
@@ -203,10 +194,8 @@ print(parser.parse_command("Stop"))            # {'command': 'stop', 'args': []}
 print(parser.parse_command("Unknown command")) # {'command': 'unknown', ...}
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：独立游戏工作室的 AI 辅助开发流程
 
@@ -221,8 +210,6 @@ print(parser.parse_command("Unknown command")) # {'command': 'unknown', ...}
 **效果**: 这种高度情境化的音频反馈极大地提升了团队的编程体验。开发者在听到苦工的声音时能下意识地判断当前状态，无需频繁查看侧边栏。这种趣味性的反馈机制缓解了长时间编程的枯燥感，使团队在为期三周的游戏原型冲刺中保持了高昂的士气，代码提交频率比以往提高了约 20%。
 
 ---
-
-
 
 ### 2：某科技初创公司的内部 DevOps 监控面板
 
@@ -358,7 +345,6 @@ print(parser.parse_command("Unknown command")) # {'command': 'unknown', ...}
 ---
 ## 常见问题
 
-
 ### 1: 什么是 "Warcraft III Peon Voice Notifications for Claude Code"？
 
 1: 什么是 "Warcraft III Peon Voice Notifications for Claude Code"？
@@ -366,8 +352,6 @@ print(parser.parse_command("Unknown command")) # {'command': 'unknown', ...}
 **A**: 这是一个开源项目或插件，旨在将经典即时战略游戏《魔兽争霸III》（Warcraft III）中苦工的语音台词集成到 Claude Code 开发环境中。当代码编辑器或 AI 助手 Claude 产生特定的状态变化、错误或完成编译等事件时，系统会播放游戏中苦工的经典语音（如 "Work work" 或 "Job done"），以此增加编程过程的趣味性和互动性。
 
 ---
-
-
 
 ### 2: 如何在 Claude Code 中安装和配置这个语音通知插件？
 
@@ -377,8 +361,6 @@ print(parser.parse_command("Unknown command")) # {'command': 'unknown', ...}
 
 ---
 
-
-
 ### 3: 该插件支持哪些具体的触发事件和对应的语音台词？
 
 3: 该插件支持哪些具体的触发事件和对应的语音台词？
@@ -386,8 +368,6 @@ print(parser.parse_command("Unknown command")) # {'command': 'unknown', ...}
 **A**: 虽然具体映射可能因版本而异，但常见的设置通常遵循游戏原意。例如：当 AI 开始生成代码或处理任务时，播放 "Work work"；当代码编译或运行成功时，播放 "Job done"；当遇到错误或构建失败时，播放 "Ready not!" 或 "Something need doing?"；当用户停止或中断操作时，可能会播放 "Stop poking me!"。用户通常可以在配置文件中自定义这些映射关系。
 
 ---
-
-
 
 ### 4: 使用该插件是否会影响 Claude Code 的性能或响应速度？
 
@@ -397,8 +377,6 @@ print(parser.parse_command("Unknown command")) # {'command': 'unknown', ...}
 
 ---
 
-
-
 ### 5: 我可以自定义语音包，例如使用其他魔兽争霸种族的语音吗？
 
 5: 我可以自定义语音包，例如使用其他魔兽争霸种族的语音吗？
@@ -406,8 +384,6 @@ print(parser.parse_command("Unknown command")) # {'command': 'unknown', ...}
 **A**: 是的，大多数此类插件都支持自定义音频文件。你只需要找到你喜欢的语音文件（例如兽族大酋长或人族农民的语音），并将其替换掉插件目录中对应的音频文件，或者修改配置文件指向新的音频路径即可。只要文件格式和命名规则符合插件的要求，它就能正常工作。
 
 ---
-
-
 
 ### 6: 遇到语音无法播放的问题，应该如何排查？
 
@@ -417,29 +393,11 @@ print(parser.parse_command("Unknown command")) # {'command': 'unknown', ...}
 
 ---
 
-
-
 ### 7: 这个插件是否仅适用于特定的操作系统？
 
 7: 这个插件是否仅适用于特定的操作系统？
 
 **A**: 这取决于插件的实现方式。如果它是基于通用的 Web 技术（如 HTML5 Audio）或跨平台的运行时（如 Electron 或 Node.js）构建的，那么它通常可以在 Windows、macOS 和 Linux 上运行。然而，如果它依赖特定操作系统的原生通知 API（如 Windows 的 SAPI 或 macOS 的 NSSound），则可能需要针对不同系统进行适配。大多数开源版本都会尽量保持跨平台兼容性。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 实现一个基础的语音通知系统，当 Claude Code 完成任务时播放《魔兽争霸3》农民的经典台词 "Work work"。
-
-### 提示**: 需要考虑音频文件的存储位置、触发条件以及跨平台的音频播放兼容性（Windows/macOS/Linux）。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://github.com/tonyyont/peon-ping](https://github.com/tonyyont/peon-ping)
@@ -448,7 +406,6 @@ print(parser.parse_command("Unknown command")) # {'command': 'unknown', ...}
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

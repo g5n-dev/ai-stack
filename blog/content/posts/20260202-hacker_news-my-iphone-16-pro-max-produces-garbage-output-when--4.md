@@ -82,9 +82,6 @@ scenarios: ["AI/ML项目", "大语言模型"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：清理MLX LLM输出中的乱码
 def clean_garbage_output(text: str) -> str:
@@ -103,9 +100,6 @@ def clean_garbage_output(text: str) -> str:
 garbage_text = "Hello\x00World\ufffd  \n  This is a test."
 print(clean_garbage_output(garbage_text))  # 输出: "Hello World This is a test."
 ```
-
-
-
 
 ```python
 # 示例2：限制MLX LLM输出长度防止溢出
@@ -130,9 +124,6 @@ long_text = "This is a very long text that needs to be truncated. " * 20
 print(truncate_output(long_text, 100))  # 输出截断后的文本
 ```
 
-
-
-
 ```python
 # 示例3：验证MLX LLM输出编码
 def validate_output_encoding(text: str) -> bool:
@@ -154,10 +145,8 @@ print(validate_output_encoding(valid_text))    # 输出: True
 print(validate_output_encoding(invalid_text))  # 输出: False
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：个人开发者构建离线语音助手
 
@@ -176,8 +165,6 @@ print(validate_output_encoding(invalid_text))  # 输出: False
 经过量化处理，应用在 iPhone 16 Pro Max 上运行流畅，不再产生乱码输出。响应速度提升了约 40%，且在保持离线状态的同时，准确率达到了云端模型的 95% 以上，成功实现了隐私保护与功能可用性的平衡。
 
 ---
-
-
 
 ### 2：野外科研团队的便携式数据终端
 
@@ -309,7 +296,6 @@ MLX 是一个快速迭代的框架，iPhone 16 Pro Max 使用的是最新的 A18
 ---
 ## 常见问题
 
-
 ### 1: 为什么我的 iPhone 16 Pro Max 运行 MLX 框架下的 LLM（大语言模型）时会出现乱码或无意义文本？
 
 1: 为什么我的 iPhone 16 Pro Max 运行 MLX 框架下的 LLM（大语言模型）时会出现乱码或无意义文本？
@@ -317,8 +303,6 @@ MLX 是一个快速迭代的框架，iPhone 16 Pro Max 使用的是最新的 A18
 **A**: 这个问题通常不是硬件故障，而是软件兼容性或配置问题。MLX 是 Apple 针对其芯片优化的机器学习框架，但它在移动端（iOS）的运行环境与 macOS 有显著差异。产生“垃圾输出”最常见的原因是**数据类型不匹配**。iPhone 16 Pro Max 的 A18 Pro 芯片虽然支持强大的浮点运算，但如果加载的模型权重是半精度（FP16），而推理代码默认启用了单精度（FP32）或混合了不兼容的精度类型，就会导致数值计算溢出或下溢，从而生成乱码。此外，MLX 在 iOS 上对某些特定算子的支持可能尚未完全完善，导致模型的前向传播逻辑错误。
 
 ---
-
-
 
 ### 2: 如何确认问题出在模型权重上还是代码实现上？
 
@@ -331,8 +315,6 @@ MLX 是一个快速迭代的框架，iPhone 16 Pro Max 使用的是最新的 A18
 
 ---
 
-
-
 ### 3: MLX 在 iOS 上运行 LLM 时，对内存（RAM）有什么特殊要求？
 
 3: MLX 在 iOS 上运行 LLM 时，对内存（RAM）有什么特殊要求？
@@ -342,8 +324,6 @@ MLX 是一个快速迭代的框架，iPhone 16 Pro Max 使用的是最新的 A18
 *   **上下文窗口**：过长的上下文长度会消耗大量显存。尝试将 `max_seq_len` 参数调低（例如 512 或 1024），看输出是否恢复正常。
 
 ---
-
-
 
 ### 4: 我该如何修改代码来修复这些输出错误？
 
@@ -356,8 +336,6 @@ MLX 是一个快速迭代的框架，iPhone 16 Pro Max 使用的是最新的 A18
 
 ---
 
-
-
 ### 5: 除了代码调整，还有哪些环境因素可能导致此问题？
 
 5: 除了代码调整，还有哪些环境因素可能导致此问题？
@@ -368,30 +346,12 @@ MLX 是一个快速迭代的框架，iPhone 16 Pro Max 使用的是最新的 A18
 
 ---
 
-
-
 ### 6: 如果问题依然存在，有什么替代方案吗？
 
 6: 如果问题依然存在，有什么替代方案吗？
 
 **A**: 如果 MLX 在你的具体用例中持续不稳定，可以考虑以下替代方案：
 1.  **使用专门的 App**：与其自己编写 MLX 代码，不如使用已经优化好的 App，如 **DrawThings**、**MLC Chat** 或 **Layla (LLM)**。这些应用针对 iOS 的 Metal API �
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 在移动设备上运行大模型时，除了模型权重（Weights）之外，通常还需要加载一个额外的文件来定义模型的词汇表和分词规则。如果这个文件与模型权重版本不匹配，或者加载时未指定正确的参数（如 `legacy` 模式），生成的文本就会变成乱码。请解释这个关键文件的作用，并说明如何检查它是否与当前模型权重兼容。
-
-### 提示**: 思考文本是如何从数字 ID 转换回人类可读字符串的。在 Hugging Face 生态系统中，这个文件通常包含 `vocab` 和 `merges`，或者是一个单纯的列表。检查该文件的哈希值或文件名中的版本标识（如 `v1` vs `v2`）是常见的验证手段。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://journal.rafaelcosta.me/my-thousand-dollar-iphone-cant-do-math](https://journal.rafaelcosta.me/my-thousand-dollar-iphone-cant-do-math)
@@ -400,7 +360,6 @@ MLX 是一个快速迭代的框架，iPhone 16 Pro Max 使用的是最新的 A18
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

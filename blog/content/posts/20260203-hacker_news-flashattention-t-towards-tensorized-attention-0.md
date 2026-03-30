@@ -72,9 +72,6 @@ FlashAttention-T 通过引入一种名为“张量化”的硬件感知算法融
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：基础注意力机制的内存优化实现
 def optimized_attention(query, key, value):
@@ -114,9 +111,6 @@ def optimized_attention(query, key, value):
 # 避免一次性存储完整的[seq_len, seq_len]注意力矩阵。
 ```
 
-
-
-
 ```python
 # 示例2：融合Softmax和矩阵乘法的计算
 def fused_attention_kernel(query, key, value):
@@ -151,9 +145,6 @@ def fused_attention_kernel(query, key, value):
 # 说明：这个示例展示了如何融合Softmax和矩阵乘法操作，
 # 减少中间结果的存储和计算开销，提高计算效率。
 ```
-
-
-
 
 ```python
 # 示例3：稀疏注意力模式的实现
@@ -197,10 +188,8 @@ def sparse_attention(query, key, value, sparsity_ratio=0.1):
 # 只计算部分重要的注意力权重，减少计算量和内存使用。
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：MosaicML（现属于 Databricks）—— MPT 模型训练优化
 
@@ -220,8 +209,6 @@ MosaicML 是 FlashAttention 的早期采用者和重要贡献者。针对 FlashA
 
 ---
 
-
-
 ### 2：Hugging Face —— Transformers 库集成与加速
 
  2：Hugging Face —— Transformers 库集成与加速
@@ -239,8 +226,6 @@ Hugging Face 在其 `transformers` 库中全面集成了 FlashAttention（以及
 集成后，用户报告在生成式任务（GPT 类模型）的推理速度上平均提升了 30% 至 200%，具体取决于硬件和序列长度。在微调场景下，显存占用减少了约 20-30%，这使得开发者能够在更小的显卡上微调更大的模型。这一改进极大地降低了大模型应用的门槛，使得社区能够更快地进行模型实验和原型开发。
 
 ---
-
-
 
 ### 3：LangChain + 本地私有化部署（RAG 应用）
 
@@ -344,7 +329,6 @@ Hugging Face 在其 `transformers` 库中全面集成了 FlashAttention（以及
 ---
 ## 常见问题
 
-
 ### 1: FlashAttention-T 的核心目标是什么？它与原始的 FlashAttention 有何区别？
 
 1: FlashAttention-T 的核心目标是什么？它与原始的 FlashAttention 有何区别？
@@ -358,8 +342,6 @@ Hugging Face 在其 `transformers` 库中全面集成了 FlashAttention（以及
 
 ---
 
-
-
 ### 2: 为什么现有的注意力机制优化（如 FlashAttention-2）仍然不够，需要提出 FlashAttention-T？
 
 2: 为什么现有的注意力机制优化（如 FlashAttention-2）仍然不够，需要提出 FlashAttention-T？
@@ -371,8 +353,6 @@ Hugging Face 在其 `transformers` 库中全面集成了 FlashAttention（以及
 3.  **非矩阵乘法开销**：Softmax 的归约步骤在并行计算中涉及线程间的通信，这在某些架构下会成为性能瓶颈。FlashAttention-T 试图通过算法变换，将更多计算转化为 GEMM（通用矩阵乘法）或类似 GEMM 的形式，从而最大化硬件吞吐量。
 
 ---
-
-
 
 ### 3: FlashAttention-T 中的“Tensorized”具体是如何实现的？
 
@@ -386,8 +366,6 @@ Hugging Face 在其 `transformers` 库中全面集成了 FlashAttention（以及
 
 ---
 
-
-
 ### 4: FlashAttention-T 对显存（VRAM）消耗有何影响？
 
 4: FlashAttention-T 对显存（VRAM）消耗有何影响？
@@ -399,8 +377,6 @@ Hugging Face 在其 `transformers` 库中全面集成了 FlashAttention（以及
 *   **额外开销**：由于引入了更复杂的分块和张量化逻辑，可能会略微增加共享内存或寄存器的使用压力，但总体 HBM 的占用是显著降低的。
 
 ---
-
-
 
 ### 5: 哪些模型或应用场景最能从 FlashAttention-T 中受益？
 
@@ -414,29 +390,11 @@ Hugging Face 在其 `transformers` 库中全面集成了 FlashAttention（以及
 
 ---
 
-
-
 ### 6: FlashAttention-T 是否兼容现有的深度学习框架（如 PyTorch）？
 
 6: FlashAttention-T 是否兼容现有的深度学习框架（如 PyTorch）？
 
 **A**: 是的，通常通过自定义 CUDA
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 在传统的注意力机制实现中，显存带宽通常是主要瓶颈。请解释为什么 FlashAttention 通过“分块”计算 Attention 矩阵能够减少 HBM（高带宽内存）的访问次数。请结合 $N \times N$ 的矩阵大小和 SRAM 的大小进行定性说明。
-
-### 提示**: 考虑标准实现中 $Q, K, V$ 矩阵在 HBM 和计算单元之间的数据流动模式。如果不进行分块，计算 Softmax 时需要对矩阵 $S$ 进行多少次读写？分块后，每个 Block 的 $S$ 和 $O$ 是如何处理的？
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://dl.acm.org/doi/10.1145/3774934.3786425](https://dl.acm.org/doi/10.1145/3774934.3786425)
@@ -445,7 +403,6 @@ Hugging Face 在其 `transformers` 库中全面集成了 FlashAttention（以及
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

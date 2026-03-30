@@ -38,8 +38,6 @@ Relevant source files
   * [README_JP.md](https://github.com/alibaba/higress/blob/8deceb4d/README_JP.md)
   * [README_ZH.md](https://github.com/alibaba/higress/blob/8deceb4d/README_ZH.md)
 
-
-
 ## Purpose and Scope
 
 This document provides a comprehensive overview of Higress, an AI Native API Gateway built on Istio and Envoy. It covers the system's architecture, core components, and primary use cases. For detailed information about specific subsystems, refer to the Core Architecture (page 2), Build and Deployment (page 3), WASM Plugin System (page 4), AI Gateway Features (page 5), MCP System (page 6), and Development Guide (page 7) sections.
@@ -73,7 +71,6 @@ Higress implements a control plane and data plane separation derived from Istio'
 
 **Component Deployment Diagram:**
 
-
 **Binary and Process Mapping:**
 
 Binary| Source Entry Point| Deployment Location| Primary Functions  
@@ -92,7 +89,6 @@ Sources: [README.md32](https://github.com/alibaba/higress/blob/8deceb4d/README.m
 ### Configuration Flow and Controller Architecture
 
 **Configuration Update Sequence:**
-
 
 **Controller Registry and Responsibilities:**
 
@@ -354,9 +350,6 @@ Higress 的后端主要采用 **Go** 语言编写。
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：使用Higress实现简单的API网关路由
 from flask import Flask, jsonify
@@ -388,9 +381,6 @@ if __name__ == '__main__':
     app.run(port=8080)
 ```
 
-
-
-
 ```python
 # 示例2：使用Higress进行流量染色和金丝雀发布
 def canary_release(request):
@@ -420,9 +410,6 @@ req2 = MockRequest({}, '192.168.1.2')
 print(canary_release(req1))  # 输出: 新版本服务 (v2.0)
 print(canary_release(req2))  # 输出: 旧版本服务 (v1.0)
 ```
-
-
-
 
 ```python
 # 示例3：使用Higress进行API限流
@@ -477,10 +464,8 @@ for i in range(7):
     time.sleep(1)
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：阿里巴巴集团内部核心业务（如淘宝、天猫等）
 
@@ -510,8 +495,6 @@ for i in range(7):
 Higress 成功支撑了阿里巴巴内部核心电商业务的平稳运行。在双11等大促场景下，单集群 QPS（每秒查询率）达到百万级别，同时 P99 延迟控制在毫秒级。通过统一的网关层，运维复杂度大幅降低，业务迭代速度显著加快，资源利用率相比传统网关方案提升了 30%。
 
 ---
-
-
 
 ### 2：某大型互联网科技公司 AI 业务落地
 
@@ -721,7 +704,6 @@ Higress 成功支撑了阿里巴巴内部核心电商业务的平稳运行。在
 - 内置了针对微服务场景的流量治理能力，如金丝雀发布、蓝绿发布和负载均衡，同时也集成了针对 AI 服务的推理缓存与路由优化特性。
 - 提供了开箱即用的控制台和丰富的 Dashboard，极大地降低了网关的运维与调试复杂度，提升了开发者体验。
 
-
 ---
 ## 学习路径
 
@@ -829,7 +811,6 @@ Higress 成功支撑了阿里巴巴内部核心电商业务的平稳运行。在
 ---
 ## 常见问题
 
-
 ### 1: Higress 是什么？它与 Alibaba 有什么关系？
 
 1: Higress 是什么？它与 Alibaba 有什么关系？
@@ -839,8 +820,6 @@ Higress 成功支撑了阿里巴巴内部核心电商业务的平稳运行。在
 Higress 的前身是阿里云的 MSE 云原生网关和内部使用的 Tengine 网关。阿里巴巴将其核心代码开源，旨在为开发者提供一个统一、高效、标准化的流量入口。它继承了阿里巴巴在电商、金融等高并发场景下的网关技术经验，同时深度集成了 Istio 和 Envoy 的生态。
 
 ---
-
-
 
 ### 2: Higress 与 Nginx、APISIX 或 Kong 等传统网关相比有什么优势？
 
@@ -854,8 +833,6 @@ Higress 的前身是阿里云的 MSE 云原生网关和内部使用的 Tengine �
 
 ---
 
-
-
 ### 3: Higress 是否支持从 Nginx 或 Ingress Controller (如 Nginx Ingress) 进行迁移？
 
 3: Higress 是否支持从 Nginx 或 Ingress Controller (如 Nginx Ingress) 进行迁移？
@@ -867,8 +844,6 @@ Higress 的前身是阿里云的 MSE 云原生网关和内部使用的 Tengine �
 
 ---
 
-
-
 ### 4: Higress 如何处理插件开发？必须使用 Go 或 Rust 吗？
 
 4: Higress 如何处理插件开发？必须使用 Go 或 Rust 吗？
@@ -878,8 +853,6 @@ Higress 的前身是阿里云的 MSE 云原生网关和内部使用的 Tengine �
 虽然 Higress 的核心代码是 Go 语言编写的，但在编写自定义插件（如鉴权、流量染色、请求改写等）时，开发者不需要使用 Go。Higress 提供了 WASM (WebAssembly) 运行时，允许开发者使用 **JavaScript/TypeScript**、**Go**、**C++**、**Rust** 甚至 **Python** 来编写插件逻辑。这使得业务开发团队能够利用他们最熟悉的语言来扩展网关功能，极大地降低了开发门槛。
 
 ---
-
-
 
 ### 5: Higress 是否支持 Dubbo 或 gRPC 等微服务协议？
 
@@ -892,8 +865,6 @@ Higress 的前身是阿里云的 MSE 云原生网关和内部使用的 Tengine �
 
 ---
 
-
-
 ### 6: Higress 的性能表现如何？能否应对高并发场景？
 
 6: Higress 的性能表现如何？能否应对高并发场景？
@@ -903,22 +874,6 @@ Higress 的前身是阿里云的 MSE 云原生网关和内部使用的 Tengine �
 1.  **底层性能**：Higress 的数据面基于 Envoy，这是一个用 C++ 编写的高性能代理，具有极低的延迟和极高的吞吐量。
 2.  **优化**：阿里巴巴内部对 Higress 进行了深度的内核级优化（如对 Linux 内核的调优），使其在长连接管理、SSL 加解密处理以及高 QPS 场景下的表现非常稳定。
 3.  **弹性伸缩**：作为云原生网关，Higress 支持基于 Kubernetes 的水平扩容（HPA），可以根据流量
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 基于 Higress 的快速入门特性，请尝试在本地 Docker 环境中部署一个 Higress 网关，并配置一个简单的路由规则，将访问 `/hello` 的请求转发到一个模拟的后端服务（如 Nginx 默认页或一个简单的 HTTP echo 服务）。
-
-### 提示**:
-
-### 查阅 Higress 官方文档中的 "快速开始" 或 "Docker 部署" 章节。
-
----
 ## 实践建议
 
 ### 实践建议
@@ -966,7 +921,6 @@ Higress 的前身是阿里云的 MSE 云原生网关和内部使用的 Tengine �
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

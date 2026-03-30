@@ -81,9 +81,6 @@ OpenClaw 的出现，为我们审视 Apple Intelligence 提供了一个全新的
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：本地智能摘要生成（模拟Apple Intelligence的文本摘要功能）
 from transformers import pipeline
@@ -109,9 +106,6 @@ long_text = """
 
 print(generate_summary(long_text))
 ```
-
-
-
 
 ```python
 # 示例2：本地图像内容识别（模拟Apple Intelligence的视觉识别功能）
@@ -140,9 +134,6 @@ def describe_image(image_path: str) -> str:
 # 使用示例（需要准备一张图片）
 print(describe_image("example.jpg"))
 ```
-
-
-
 
 ```python
 # 示例3：本地智能问答系统（模拟Apple Intelligence的对话功能）
@@ -173,10 +164,8 @@ question = "Python是什么时候创建的？"
 print(local_qa(question, context))
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：独立开发者构建本地化隐私优先的写作助手
 
@@ -195,8 +184,6 @@ print(local_qa(question, context))
 应用成功实现了完全离线的实时语法纠错和风格润色。由于 OpenClaw 优化了 Metal API 的调用，推理速度比使用默认的 Core ML 提升了约 40%，且内存占用降低了 30%。该软件最终作为“完全隐私”的卖点推向市场，获得了专业用户的高度认可。
 
 ---
-
-
 
 ### 2：金融科技公司的自动化合规审计系统
 
@@ -319,7 +306,6 @@ OpenClaw 的吸引力在于“我的数据在我的机器上”。最佳实践�
 ---
 ## 常见问题
 
-
 ### 1: OpenClaw 具体是什么项目，它与苹果的 Apple Intelligence 有何根本区别？
 
 1: OpenClaw 具体是什么项目，它与苹果的 Apple Intelligence 有何根本区别？
@@ -327,8 +313,6 @@ OpenClaw 的吸引力在于“我的数据在我的机器上”。最佳实践�
 **A**: OpenClaw 是一个基于开源理念构建的本地人工智能框架。其核心目标是提供完全透明、可由用户掌控且在本地设备上运行的 AI 能力。它与 Apple Intelligence 的根本区别在于“开放性”与“控制权”。Apple Intelligence 虽然也强调隐私，但其核心模型和实现细节是封闭的，且高度依赖苹果的硬件生态（如 Apple Silicon）。而 OpenClaw 旨在打破这种封闭性，允许用户查看底层代码、自定义模型权重，并且理论上可以在更广泛的硬件上运行，而不仅仅局限于苹果最新的芯片。
 
 ---
-
-
 
 ### 2: 为什么文章标题说 OpenClaw 才是 Apple Intelligence "本该有的样子"？
 
@@ -338,8 +322,6 @@ OpenClaw 的吸引力在于“我的数据在我的机器上”。最佳实践�
 
 ---
 
-
-
 ### 3: OpenClaw 如何处理用户隐私？它真的比 Apple 的“私有云计算”更安全吗？
 
 3: OpenClaw 如何处理用户隐私？它真的比 Apple 的“私有云计算”更安全吗？
@@ -347,8 +329,6 @@ OpenClaw 的吸引力在于“我的数据在我的机器上”。最佳实践�
 **A**: OpenClaw 采取的是“激进”的本地化策略。它设计为完全在本地运行，不依赖云端服务器进行推理，这意味着数据从未离开过用户的设备。相比之下，Apple Intelligence 虽然主要在本地运行，但在处理复杂任务时仍会通过“私有云计算”将数据发送到苹果服务器，尽管苹果声称这些服务器是保密的且数据不被存储。从纯粹的技术角度来看，完全离线的 OpenClaw 消除了数据传输过程中的理论风险，因此对于极端隐私倡导者来说，它确实比混合模式的 Apple Intelligence 更具安全感。
 
 ---
-
-
 
 ### 4: OpenClaw 的技术门槛高吗？普通用户能像使用 Siri 一样使用它吗？
 
@@ -358,8 +338,6 @@ OpenClaw 的吸引力在于“我的数据在我的机器上”。最佳实践�
 
 ---
 
-
-
 ### 5: OpenClaw 支持哪些硬件？我可以在非苹果设备（如 Windows PC 或 Android 手机）上使用它吗？
 
 5: OpenClaw 支持哪些硬件？我可以在非苹果设备（如 Windows PC 或 Android 手机）上使用它吗？
@@ -368,29 +346,11 @@ OpenClaw 的吸引力在于“我的数据在我的机器上”。最佳实践�
 
 ---
 
-
-
 ### 6: 既然 OpenClaw 这么好，为什么它没有像 Apple Intelligence 那样普及？
 
 6: 既然 OpenClaw 这么好，为什么它没有像 Apple Intelligence 那样普及？
 
 **A**: 主要原因在于生态系统整合和资源投入。Apple Intelligence 之所以普及，是因为它深度集成在 iOS 和 macOS 的每一个角落，拥有完美的图形界面、语音交互以及苹果公司庞大的研发资源支持。而 OpenClaw 作为一个社区驱动的项目，缺乏资金进行大规模的用户界面设计和市场推广，且无法像苹果那样直接访问操作系统的底层 API 来实现全局控制。因此，它目前更多是技术爱好者和开发者的玩具，而非大众消费品。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 假设 OpenClaw 是一个本地优先的开源 AI 框架。请列出在构建此类系统时，为了保证用户隐私，必须避免在本地设备上发生的三个具体数据传输行为。
-
-### 提示**: 思考“本地优先”的定义，以及哪些传统的云端 AI 操作会违背这一原则。重点关注日志、模型更新和推理请求。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://www.jakequist.com/thoughts/openclaw-is-what-apple-intelligence-should-have-been](https://www.jakequist.com/thoughts/openclaw-is-what-apple-intelligence-should-have-been)
@@ -399,7 +359,6 @@ OpenClaw 的吸引力在于“我的数据在我的机器上”。最佳实践�
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

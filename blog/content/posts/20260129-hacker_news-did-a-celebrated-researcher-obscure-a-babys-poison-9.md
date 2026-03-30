@@ -91,9 +91,6 @@ scenarios: ["Web应用开发"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：关键词匹配检测
 def check_poison_mention(text):
@@ -109,9 +106,6 @@ def check_poison_mention(text):
 news_text = "研究发现某品牌婴儿配方奶粉中铅含量超标"
 print(check_poison_mention(news_text))  # 输出：['婴儿', '铅', '婴儿配方']
 ```
-
-
-
 
 ```python
 # 示例2：研究人员声誉追踪
@@ -139,9 +133,6 @@ print(tracker.get_reputation("Dr. Smith"))
 # 输出：{'score': 80, 'controversies': ['隐瞒婴儿中毒数据']}
 ```
 
-
-
-
 ```python
 # 示例3：新闻来源可信度评估
 def assess_news_source(source):
@@ -162,10 +153,8 @@ print(assess_news_source("Nature"))  # 输出：0.95
 print(assess_news_source("unknown_blog"))  # 输出：0.5
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：英国伦敦大学学院（UCL）与婴儿铅中毒研究
 
@@ -186,8 +175,6 @@ print(assess_news_source("unknown_blog"))  # 输出：0.5
 - 学术界建立了更严格的利益冲突披露机制。
 
 ---
-
-
 
 ### 2：美国弗林特水危机与数据透明化
 
@@ -210,8 +197,6 @@ print(assess_news_source("unknown_blog"))  # 输出：0.5
 - 事件推动全球20多个国家建立居民参与式水质监测网络。
 
 ---
-
-
 
 ### 3：中国"毒奶粉"事件中的科研伦理争议
 
@@ -346,7 +331,6 @@ print(assess_news_source("unknown_blog"))  # 输出：0.5
 ---
 ## 常见问题
 
-
 ### 1: 这里的“celebrated researcher”（著名研究员）指的是谁？
 
 1: 这里的“celebrated researcher”（著名研究员）指的是谁？
@@ -354,8 +338,6 @@ print(assess_news_source("unknown_blog"))  # 输出：0.5
 **A**: 根据相关报道和历史背景，这位研究员通常指的是麻省理工学院（MIT）的著名教授、化学家约翰·德谢泽。他在 20 世纪 50 年代至 70 年代期间，受多家食品和饮料公司（包括可口可乐和百事可乐）的委托，进行关于磷酸盐对健康影响的研究。
 
 ---
-
-
 
 ### 2: 事件中的“baby's poisoning”（婴儿中毒）具体指什么事件？
 
@@ -365,8 +347,6 @@ print(assess_news_source("unknown_blog"))  # 输出：0.5
 
 ---
 
-
-
 ### 3: 研究员是如何“obscure”（掩盖）这一问题的？
 
 3: 研究员是如何“obscure”（掩盖）这一问题的？
@@ -374,8 +354,6 @@ print(assess_news_source("unknown_blog"))  # 输出：0.5
 **A**: 约翰·德谢泽在受委托进行相关研究后，虽然发现高剂量的磷酸盐会对健康造成负面影响，但他选择性地发表了对行业有利的研究结果。他主导了一项研究，声称高磷酸盐饮食是安全的，甚至是有益的。为了得出这一结论，他使用了饮食结构非常特殊的实验小鼠，这些小鼠的饮食本身就能抵消高磷酸盐带来的负面影响。此外，他还向监管机构淡化磷酸盐的风险，甚至在面对质疑时，试图将责任归咎于婴儿本身可能存在的潜在疾病，而非食品添加剂。
 
 ---
-
-
 
 ### 4: 这项研究的后续影响是什么？
 
@@ -385,8 +363,6 @@ print(assess_news_source("unknown_blog"))  # 输出：0.5
 
 ---
 
-
-
 ### 5: 这一掩盖行为是如何被发现的？
 
 5: 这一掩盖行为是如何被发现的？
@@ -395,29 +371,11 @@ print(assess_news_source("unknown_blog"))  # 输出：0.5
 
 ---
 
-
-
 ### 6: 这对现代食品安全监管有什么启示？
 
 6: 这对现代食品安全监管有什么启示？
 
 **A**: 该事件是“利益冲突”影响科学研究的典型案例。它揭示了当科学研究由商业利益资助时，研究结果可能会被操纵以赞助者的利益为重，而非公众健康。这促使现代科学界和监管机构更加重视资金来源的披露，强调独立研究的重要性，并要求对可能影响公共安全的食品添加剂进行更严格、长期的独立审查。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 请分析标题 "Did a celebrated researcher obscure a baby's poisoning?" 中的语言技巧。该标题使用了疑问句式，请分析这种句式在新闻传播中的心理暗示作用，以及它如何在不直接陈述事实的情况下引导读者的情绪。
-
-### 提示**: 思考“无罪推定”原则在媒体标题中的体现。对比陈述句（例如“研究员掩盖了婴儿中毒”）与疑问句在法律责任风险和读者信任建立上的区别。关注“Obscure”一词的模糊性。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://www.newyorker.com/magazine/2026/02/02/did-a-celebrated-researcher-obscure-a-fatal-poisoning](https://www.newyorker.com/magazine/2026/02/02/did-a-celebrated-researcher-obscure-a-fatal-poisoning)
@@ -426,7 +384,6 @@ print(assess_news_source("unknown_blog"))  # 输出：0.5
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

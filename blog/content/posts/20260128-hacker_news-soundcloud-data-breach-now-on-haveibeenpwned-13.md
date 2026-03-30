@@ -119,37 +119,8 @@ external_url: https://haveibeenpwned.com/Breach/SoundCloud
 ---
 ## 💻 代码示例
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 ## 📚 案例研究
-
 
 ### 1：某电商初创公司遭遇撞库攻击
 
@@ -170,8 +141,6 @@ external_url: https://haveibeenpwned.com/Breach/SoundCloud
 
 ---
 
-
-
 ### 2：跨国 SaaS 企业的合规性整改
 
  2：跨国 SaaS 企业的合规性整改
@@ -190,8 +159,6 @@ external_url: https://haveibeenpwned.com/Breach/SoundCloud
 🔐 通过技术手段自动化了部分安全审计工作，减少了安全团队人工审核密码策略的工作量。
 
 ---
-
-
 
 ### 3：个人开发者的开源项目安全增强
 
@@ -302,7 +269,6 @@ external_url: https://haveibeenpwned.com/Breach/SoundCloud
 ---
 ## ❓ 常见问题
 
-
 ### 1: SoundCloud 最近到底发生了什么数据泄露事件？🤔
 
 1: SoundCloud 最近到底发生了什么数据泄露事件？🤔
@@ -310,8 +276,6 @@ external_url: https://haveibeenpwned.com/Breach/SoundCloud
 **A**: 根据网络安全媒体的报道，SoundCloud 在近期发生了一起数据泄露事件。一个包含大量用户数据的数据库被泄露，并在暗网或黑客论坛上流传。随后，这些数据被上传到了著名的数据泄露查询网站 **Have I Been Pwned (HIBP)**。这意味着用户的凭证（如邮箱和密码）可能已经暴露，面临被恶意利用的风险。
 
 ---
-
-
 
 ### 2: 我应该如何检查我的账号是否在这次泄露中受影响？🔍
 
@@ -324,8 +288,6 @@ external_url: https://haveibeenpwned.com/Breach/SoundCloud
 4. 如果该邮箱出现在 SoundCloud 的泄露列表中，网站会显示具体的泄露事件详情（通常是“SoundCloud”或相关名称）以及泄露的数据类型。
 
 ---
-
-
 
 ### 3: 这次泄露中具体暴露了哪些数据信息？💾
 
@@ -340,8 +302,6 @@ external_url: https://haveibeenpwned.com/Breach/SoundCloud
 
 ---
 
-
-
 ### 4: 如果我的账号在泄露名单中，我该立即采取哪些安全措施？🛡️
 
 4: 如果我的账号在泄露名单中，我该立即采取哪些安全措施？🛡️
@@ -353,8 +313,6 @@ external_url: https://haveibeenpwned.com/Breach/SoundCloud
 
 ---
 
-
-
 ### 5: 如果我早已删除了 SoundCloud 账号，还需要担心吗？🗑️
 
 5: 如果我早已删除了 SoundCloud 账号，还需要担心吗？🗑️
@@ -365,8 +323,6 @@ external_url: https://haveibeenpwned.com/Breach/SoundCloud
 
 ---
 
-
-
 ### 6: Have I Been Pwned (HIBP) 是什么？它安全吗？🔐
 
 6: Have I Been Pwned (HIBP) 是什么？它安全吗？🔐
@@ -374,22 +330,6 @@ external_url: https://haveibeenpwned.com/Breach/SoundCloud
 **A**: **Have I Been Pwned (HIBP)** 是全球最受信赖的数据泄露查询网站之一，由著名网络安全专家 Troy Hunt 创建。
 *   **工作原理**：它收集了从各种违规事件中泄露的数十亿条账户记录，允许用户免费查询自己的邮箱是否曾暴露。
 *   **安全性**：在 HIBP 网站上查询邮箱是**安全**的。您只需要输入邮箱地址，网站不会索要您的密码，也不会存储您的查询意图（除非您选择订阅通知服务）。它是个人网络安全检查的首选工具。
-
----
-## 🎯 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**: 登录 Have I Been Pwned (HIBP) 网站，查询一个你常用的电子邮箱地址。如果该邮箱出现在 SoundCloud（或任何其他站点）的数据泄露事件中，请详细解读页面返回的“泄露类型”和“涉及的数据种类”（如：邮箱、哈希密码、IP地址等），并解释为什么单纯的“邮箱泄露”也需要引起警惕。
-
-### 提示**: 重点关注 HIBP 对此次事件的描述，特别是关于密码存储方式的信息。思考如果你的邮箱密码与其他网站共享，会发生什么？
-
-### 
-
----
 ## 🔗 引用
 
 - **原文链接**: [https://haveibeenpwned.com/Breach/SoundCloud](https://haveibeenpwned.com/Breach/SoundCloud)

@@ -75,9 +75,6 @@ scenarios: ["AI/ML项目", "大语言模型"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：自动生成API文档
 def generate_api_doc(func):
@@ -111,9 +108,6 @@ def calculate_discount(price: float, discount_rate: float = 0.1) -> float:
 print(calculate_discount.__doc__)
 ```
 
-
-
-
 ```python
 # 示例2：安全处理用户输入
 def sanitize_input(user_input: str) -> str:
@@ -135,9 +129,6 @@ user_input = '<script>alert("XSS")</script>'
 clean_input = sanitize_input(user_input)
 print(clean_input)  # 输出: scriptalertXSS/script
 ```
-
-
-
 
 ```python
 # 示例3：批量重命名文件
@@ -168,10 +159,8 @@ def batch_rename_files(directory: str, pattern: str, replacement: str) -> None:
 # batch_rename_files("/path/to/files", r"(\d{4})-(\d{2})-(\d{2})", r"\3-\2-\1")
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某金融科技公司后台系统重构
 
@@ -199,8 +188,6 @@ def batch_rename_files(directory: str, pattern: str, replacement: str) -> None:
 
 ---
 
-
-
 ### 2：医疗健康数据分析平台
 
  2：医疗健康数据分析平台
@@ -226,8 +213,6 @@ def batch_rename_files(directory: str, pattern: str, replacement: str) -> None:
 - 数据处理错误率降低60%
 
 ---
-
-
 
 ### 3：电商网站个性化推荐系统
 
@@ -352,7 +337,6 @@ Codex 类应用的核心价值在于"查找"。简单的全文搜索往往无法
 ---
 ## 常见问题
 
-
 ### 1: The Codex App 是什么？它主要提供什么功能？
 
 1: The Codex App 是什么？它主要提供什么功能？
@@ -360,8 +344,6 @@ Codex 类应用的核心价值在于"查找"。简单的全文搜索往往无法
 **A**: The Codex App 是一款基于 OpenAI Codex 模型构建的应用程序。它的核心功能是将自然语言指令直接转化为可执行的代码。开发者或用户可以通过简单的英文描述他们想要实现的功能，Codex App 就能自动生成相应的 Python、JavaScript 等多种编程语言的代码片段。它主要用于辅助编程、快速构建原型、解释复杂代码逻辑以及编写自动化脚本，旨在大幅提升软件开发的效率。
 
 ---
-
-
 
 ### 2: 使用 The Codex App 需要具备编程基础吗？
 
@@ -371,8 +353,6 @@ Codex 类应用的核心价值在于"查找"。简单的全文搜索往往无法
 
 ---
 
-
-
 ### 3: The Codex App 支持哪些编程语言或开发环境？
 
 3: The Codex App 支持哪些编程语言或开发环境？
@@ -380,8 +360,6 @@ Codex 类应用的核心价值在于"查找"。简单的全文搜索往往无法
 **A**: The Codex App 基于 OpenAI 的技术，支持数十种编程语言，其中对 Python、JavaScript、TypeScript、Ruby、Go 和 Swift 等主流语言的支撑最为出色。它通常能够理解上下文环境，支持在各种主流 IDE（如 VS Code）插件或特定的 Web 界面中使用。具体的兼容性取决于该 App 的具体实现方式，但通常涵盖了现代软件开发中最常用的技术栈。
 
 ---
-
-
 
 ### 4: AI 生成的代码是否可以直接用于生产环境？
 
@@ -391,8 +369,6 @@ Codex 类应用的核心价值在于"查找"。简单的全文搜索往往无法
 
 ---
 
-
-
 ### 5: The Codex App 是免费的吗？如何收费？
 
 5: The Codex App 是免费的吗？如何收费？
@@ -401,29 +377,11 @@ Codex 类应用的核心价值在于"查找"。简单的全文搜索往往无法
 
 ---
 
-
-
 ### 6: The Codex App 与 GitHub Copilot 有什么区别？
 
 6: The Codex App 与 GitHub Copilot 有什么区别？
 
 **A**: 两者底层都基于 OpenAI 的 Codex 技术，但应用场景不同。GitHub Copilot 主要作为代码编辑器的插件存在，侧重于在编写代码过程中提供“自动补全”和“整行函数建议”功能。而 The Codex App（如果指代的是独立的交互式应用）可能更侧重于“自然语言生成完整代码块”或“解释代码”的交互体验，不一定局限于特定的编辑器环境。简单来说，Copilot 更像是一个副驾驶，而独立的 Codex App 更像是一个智能编程助手。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**:
-
-### 在 Codex App 的开发中，如何设计一个高效的文件读取模块，使其能够处理不同编码格式的文本文件（如 UTF-8、GBK、ASCII）？
-
-### 提示**:
-
----
 ## 引用
 
 - **原文链接**: [https://openai.com/index/introducing-the-codex-app](https://openai.com/index/introducing-the-codex-app)
@@ -432,7 +390,6 @@ Codex 类应用的核心价值在于"查找"。简单的全文搜索往往无法
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

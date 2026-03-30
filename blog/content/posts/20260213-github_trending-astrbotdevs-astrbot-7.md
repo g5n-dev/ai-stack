@@ -42,8 +42,6 @@ Relevant source files
   * [README_zh-TW.md](https://github.com/AstrBotDevs/AstrBot/blob/5e5207da/README_zh-TW.md)
   * [astrbot/core/utils/metrics.py](https://github.com/AstrBotDevs/AstrBot/blob/5e5207da/astrbot/core/utils/metrics.py)
 
-
-
 ## Purpose and Scope
 
 This page provides a high-level introduction to AstrBot, covering its purpose, architecture, capabilities, and deployment options. It serves as the entry point for understanding the system's design and how its components interact. For detailed information about specific subsystems, refer to the following pages:
@@ -56,8 +54,6 @@ This page provides a high-level introduction to AstrBot, covering its purpose, a
   * For agent and tool capabilities, see [Agent System and Tool Execution](/AstrBotDevs/AstrBot/6-agent-system-and-tool-execution)
   * For plugin development, see [Plugin System (Stars)](/AstrBotDevs/AstrBot/7-plugin-system-\(stars\))
   * For web interface details, see [Dashboard and Web Interface](/AstrBotDevs/AstrBot/8-dashboard-and-web-interface)
-
-
 
 ## What is AstrBot
 
@@ -80,7 +76,6 @@ Production Ready| Built-in safety, rate limiting, context management, persistent
 AstrBot follows a layered architecture with clear separation of concerns. The system consists of dual entry points (CLI and Dashboard), a central configuration core, a platform-agnostic message processing pipeline, extensive AI provider support, and a powerful extension system.
 
 ### High-Level Component Relationships
-
 
 This diagram maps the major architectural layers to their corresponding code locations. The system's message flow is bidirectional: platforms → event queue → pipeline → agent → providers → response pipeline → platforms.
 
@@ -149,8 +144,6 @@ Provider Type| Purpose| Example Implementations
   * **LLMOps Platforms:** Dify, Coze, Alibaba Cloud Bailian (智能体接入)
   * **Compatible APIs:** Any OpenAI-compatible API endpoint
 
-
-
 Provider configuration uses a template system with `provider_sources` (templates) and `provider` instances (active configurations).
 
 **Sources:** [README.md159-201](https://github.com/AstrBotDevs/AstrBot/blob/5e5207da/README.md#L159-L201) [README_en.md144-186](https://github.com/AstrBotDevs/AstrBot/blob/5e5207da/README_en.md#L144-L186)
@@ -158,7 +151,6 @@ Provider configuration uses a template system with `provider_sources` (templates
 ### Agentic Capabilities
 
 The agent system provides advanced autonomous capabilities beyond simple Q&A:
-
 
 **Agent Features:**
 
@@ -397,9 +389,6 @@ AstrBot 在抽象层做了一个**“大统一”**的尝试。它将**不同 IM
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：基础消息处理与回复
 def handle_message(bot, message):
@@ -424,9 +413,6 @@ def handle_message(bot, message):
 # 说明：这个示例展示了如何实现基础的消息监听和自动回复功能，
 # 包括关键词匹配和动态内容生成（如获取当前时间）
 ```
-
-
-
 
 ```python
 # 示例2：插件系统扩展
@@ -456,9 +442,6 @@ class WeatherPlugin(Plugin):
 # 实现了命令处理和模拟数据返回，是扩展AstrBot功能的基础方式
 ```
 
-
-
-
 ```python
 # 示例3：定时任务管理
 from AstrBot import Scheduler
@@ -483,10 +466,8 @@ def setup_scheduled_tasks(bot):
 # 包括每日定时执行和周期性执行两种常见场景
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某二次元游戏社区（约 50,000 人）
 
@@ -509,8 +490,6 @@ def setup_scheduled_tasks(bot):
 
 ---
 
-
-
 ### 2：高校计算机学院新生答疑群
 
  2：高校计算机学院新生答疑群
@@ -531,8 +510,6 @@ def setup_scheduled_tasks(bot):
 覆盖了 90% 的常见重复性问题，助教的工作量减少了约 70%。新生获取信息的准确性和及时性得到保障，群聊氛围更加有序。该方案随后被推广至学生会及其他学院使用，成为校内智能服务的标准工具。
 
 ---
-
-
 
 ### 3：远程技术团队开发协作组
 
@@ -759,7 +736,6 @@ AstrBot 可能涉及图片生成、表情包处理等功能。图片处理通常
 - 具备高度的可配置性和灵活性，支持适配多种通信协议以适应不同的使用场景。
 - 拥有活跃的社区支持和详细的文档，降低了新手的学习和上手门槛。
 
-
 ---
 ## 学习路径
 
@@ -850,7 +826,6 @@ AstrBot 可能涉及图片生成、表情包处理等功能。图片处理通常
 ---
 ## 常见问题
 
-
 ### 1: AstrBot 是什么？
 
 1: AstrBot 是什么？
@@ -858,8 +833,6 @@ AstrBot 可能涉及图片生成、表情包处理等功能。图片处理通常
 **A**: AstrBot 是一个基于 Python 开发的跨平台 QQ/OneBot 机器人框架。它旨在提供一个轻量级、高性能且易于扩展的解决方案，用于管理聊天机器人的插件、指令和事件响应。该项目在 GitHub 上较为活跃，支持多种适配器（如 Lagrange、NapCat 等），允许用户通过简单的配置实现丰富的自动化功能。
 
 ---
-
-
 
 ### 2: 如何安装和部署 AstrBot？
 
@@ -874,8 +847,6 @@ AstrBot 可能涉及图片生成、表情包处理等功能。图片处理通常
 
 ---
 
-
-
 ### 3: AstrBot 支持哪些平台或协议？
 
 3: AstrBot 支持哪些平台或协议？
@@ -887,8 +858,6 @@ AstrBot 可能涉及图片生成、表情包处理等功能。图片处理通常
 
 ---
 
-
-
 ### 4: 如何为 AstrBot 安装和管理插件？
 
 4: 如何为 AstrBot 安装和管理插件？
@@ -899,8 +868,6 @@ AstrBot 可能涉及图片生成、表情包处理等功能。图片处理通常
 插件通常以 Python 文件或特定的压缩包形式存在。
 
 ---
-
-
 
 ### 5: 启动时报错 "ModuleNotFoundError" 或依赖缺失怎么办？
 
@@ -914,8 +881,6 @@ AstrBot 可能涉及图片生成、表情包处理等功能。图片处理通常
 
 ---
 
-
-
 ### 6: AstrBot 是免费的吗？是否可以商用？
 
 6: AstrBot 是免费的吗？是否可以商用？
@@ -923,8 +888,6 @@ AstrBot 可能涉及图片生成、表情包处理等功能。图片处理通常
 **A**: AstrBot 是一个开源项目，遵循 AGPL-3.0 协议。这意味着它是免费供个人学习和使用的。关于商用，由于采用了 AGPL 协议，如果你将其作为服务提供给他人或在商业项目中使用，通常需要公开你的源代码修改。在使用前，请务必查阅项目仓库中的 LICENSE 文件以确认具体的法律条款。
 
 ---
-
-
 
 ### 7: 遇到连接失败（无法连接到反向 WebSocket）该如何排查？
 
@@ -934,22 +897,6 @@ AstrBot 可能涉及图片生成、表情包处理等功能。图片处理通常
 1.  **协议端配置**：确认你的 OneBot 实现端（如 NapCat）已开启正向 WebSocket 或反向 WebSocket，且地址与 AstrBot 配置文件中填写的一致。
 2.  **网络端口**：检查服务器防火墙或本地防火墙是否放行了对应的端口。
 3.  **地址格式**：确认配置文件中的 IP 地址不是 `127.0.0.1`（除非在同一台机器），如果是 Docker 或远程部署，应使用局域网 IP 或公网 IP。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 在 AstrBot 的插件系统中，如何编写一个简单的指令插件，使得当用户发送特定关键词（如“ping”）时，机器人能够自动回复“pong”？
-
-### 提示**:
-
-### 查看官方文档中关于插件的基础结构说明。
-
----
 ## 实践建议
 
 基于 AstrBot 作为 "Agentic IM Chatbot infrastructure" 的定位，以下是针对实际部署、开发和维护场景的 6 条实践建议：
@@ -993,7 +940,6 @@ AstrBot 依赖插件扩展功能，插件崩溃不应拖垮主进程。
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

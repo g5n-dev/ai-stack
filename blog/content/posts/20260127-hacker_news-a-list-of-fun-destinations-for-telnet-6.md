@@ -141,26 +141,8 @@ Telnet 作为早期的网络协议，除了用于设备调试，还拥有许多�
 ---
 ## 💻 代码示例
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 ## 📚 案例研究
-
 
 ### 1：DevOps 工程师的实时网络连通性验证
 
@@ -186,8 +168,6 @@ telnet target-server 3306
 - 🛠 **跨平台支持**：在 Linux、Windows、macOS 上均可用。  
 
 ---
-
-
 
 ### 2：教育机构的 Telnet 趣味学习实验
 
@@ -220,8 +200,6 @@ telnet target-server 3306
 - 💡 **激发兴趣**：部分学生课后自发探索 Telnet 其他用途（如访问 ASCII 艺术站点）。  
 
 ---
-
-
 
 ### 3：游戏开发者的怀旧 Telnet 服务
 
@@ -353,7 +331,6 @@ telnet target-server 3306
 ---
 ## ❓ 常见问题
 
-
 ### 1: 什么是 Telnet？为什么现在还有人使用它？
 
 1: 什么是 Telnet？为什么现在还有人使用它？
@@ -367,8 +344,6 @@ telnet target-server 3306
 4.  **IoT 与硬件**：一些老旧或简单的工业设备仍然内置 Telnet 接口。
 
 ---
-
-
 
 ### 2: 我该如何访问这些有趣的 Telnet 目的地？需要什么软件？
 
@@ -385,8 +360,6 @@ telnet target-server 3306
     *   输入相同的命令即可，系统通常自带支持。
 
 ---
-
-
 
 ### 3: 有哪些经典的“好玩”的 Telnet 地址推荐？
 
@@ -409,8 +382,6 @@ telnet target-server 3306
 
 ---
 
-
-
 ### 4: 为什么有些 Telnet 服务连接不上或显示“Connection refused”？
 
 4: 为什么有些 Telnet 服务连接不上或显示“Connection refused”？
@@ -423,8 +394,6 @@ telnet target-server 3306
 
 ---
 
-
-
 ### 5: 使用 Telnet 安全吗？会不会感染病毒？
 
 5: 使用 Telnet 安全吗？会不会感染病毒？
@@ -436,29 +405,11 @@ telnet target-server 3306
 
 ---
 
-
-
 ### 6: 我能看到一个隐藏的“黑盒”或 ASCII 艺术画，但屏幕显示乱码怎么办？
 
 6: 我能看到一个隐藏的“黑盒”或 ASCII 艺术画，但屏幕显示乱码怎么办？
 
 **A**: 这
-
----
-## 🎯 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**: 尝试使用 `telnet` 连接到经典的 ASCII 艺术电影服务器 `towel.blinkenlights.nl` (端口 23)。如果你成功连接了，请思考：在数据传输过程中，为什么有时候画面会出现卡顿或字符丢失？
-
-### 提示**: Telnet 协议最初是为哪些环境设计的？它是否包含像现代视频流那样的缓冲或纠错机制？
-
-### 
-
----
 ## 🔗 引用
 
 - **原文链接**: [https://telnet.org/htm/places.htm](https://telnet.org/htm/places.htm)

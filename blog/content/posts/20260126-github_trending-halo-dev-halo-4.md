@@ -34,8 +34,6 @@ Relevant source files
 
   * [README.md](https://github.com/halo-dev/halo/blob/974c645b/README.md)
 
-
-
 This document provides an introduction to Halo, a powerful open-source website building tool. It covers the project's purpose, deployment options, business model with community and professional editions, and high-level system architecture. For detailed information about specific subsystems, please refer to the corresponding sections in the architecture documentation.
 
 ## What is Halo?
@@ -49,12 +47,9 @@ Halo operates on a dual-model approach:
   * **Community Edition** : Free and open-source under GPL-v3.0 license, providing core website building functionality
   * **Professional Edition** : Commercial offering with enhanced features including SMS verification, site privatization, LDAP authentication, third-party login integration, and custom branding capabilities
 
-
-
 Sources: [README.md7](https://github.com/halo-dev/halo/blob/974c645b/README.md#L7-L7) [README.md51-53](https://github.com/halo-dev/halo/blob/974c645b/README.md#L51-L53) [README.md59-63](https://github.com/halo-dev/halo/blob/974c645b/README.md#L59-L63)
 
 ## High-Level Halo Platform Architecture
-
 
 Sources: [README.md7-14](https://github.com/halo-dev/halo/blob/974c645b/README.md#L7-L14)
 
@@ -68,8 +63,6 @@ Sources: [README.md7-14](https://github.com/halo-dev/halo/blob/974c645b/README.m
   * **Internationalization** : Comprehensive i18n support across all user interfaces
   * **Modern Tech Stack** : Spring Boot 3 with WebFlux, Vue.js 3 with Composition API, and reactive programming patterns
 
-
-
 Sources: [README.md51-57](https://github.com/halo-dev/halo/blob/974c645b/README.md#L51-L57)
 
 ## Deployment Options
@@ -80,15 +73,12 @@ Halo provides multiple deployment methods to suit different environments and use
 
 The quickest way to get started with Halo is using Docker:
 
-
 ### Cloud Development Environments
 
 For quick testing and development, Halo supports cloud-based environments:
 
   * **Gitpod** : Browser-based development environment
   * **ClawCloud Run** : One-click deployment for testing
-
-
 
 ### Production Deployment with 1Panel
 
@@ -98,8 +88,6 @@ For production deployments, Halo recommends using 1Panel, an open-source Linux s
   * SSL certificate management
   * Automated upgrade and backup tasks
 
-
-
 ### Online Demo
 
 Experience Halo without installation:
@@ -107,8 +95,6 @@ Experience Halo without installation:
   * Demo site: `https://demo.halo.run`
   * Admin console: `https://demo.halo.run/console`
   * Credentials: `demo` / `P@ssw0rd123..`
-
-
 
 Sources: [README.md30-42](https://github.com/halo-dev/halo/blob/974c645b/README.md#L30-L42) [README.md44-49](https://github.com/halo-dev/halo/blob/974c645b/README.md#L44-L49)
 
@@ -128,13 +114,11 @@ Sources: [README.md7-14](https://github.com/halo-dev/halo/blob/974c645b/README.m
 
 ### Runtime Plugin Management System
 
-
 Sources: [README.md55-57](https://github.com/halo-dev/halo/blob/974c645b/README.md#L55-L57)
 
 ## Frontend Architecture and Package System
 
 ### UI Monorepo Structure
-
 
 Sources: [README.md46-49](https://github.com/halo-dev/halo/blob/974c645b/README.md#L46-L49)
 
@@ -149,8 +133,6 @@ Sources: [README.md46-49](https://github.com/halo-dev/halo/blob/974c645b/README.
   * Multi-language support
   * Available through official application market and community repositories
 
-
-
 **Professional Edition (Commercial)**
 
   * All community features plus: 
@@ -160,8 +142,6 @@ Sources: [README.md46-49](https://github.com/halo-dev/halo/blob/974c645b/README.
     * Third-party social login (OAuth)
     * Custom logo and branding options
     * Professional technical support
-
-
 
 ### Extension Marketplace
 
@@ -438,37 +418,8 @@ Halo 的核心哲学是 **“约定优于配置”** 与 **“组合优于继承
 ---
 ## 💻 实用代码示例
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 ## 📚 真实案例研究
-
 
 ### 1：技术团队知识库与博客平台搭建（某互联网初创公司）
 
@@ -494,8 +445,6 @@ Halo 的核心哲学是 **“约定优于配置”** 与 **“组合优于继承
 
 ---  
 
-
-
 ### 2：高校计算机系课程作业提交系统（某 211 高校）
 
  2：高校计算机系课程作业提交系统（某 211 高校）  
@@ -519,8 +468,6 @@ Halo 的核心哲学是 **“约定优于配置”** 与 **“组合优于继承
 - 代码历史版本可追溯，近 3 年作业数据完整归档  
 
 ---  
-
-
 
 ### 3：个人技术品牌建设（独立开发者）
 
@@ -721,7 +668,6 @@ Halo 默认主题和插件包含大量 CSS/JS 资源。如果直接从服务器�
 - 🌍 优秀的开发者体验与扩展性**：项目结构清晰，文档详尽，提供了丰富的开发文档和 SDK，极大降低了二次开发和自定义功能集成的门槛。
 - ☁️ 轻松实现容器化与云原生部署**：完美支持 Docker 容器化部署，提供一键启动脚本和标准的 Docker 镜像，能够快速在云服务器或 Kubernetes 环境中上线。
 
-
 ---
 ## 🗺️ 循序渐进的学习路径
 
@@ -812,7 +758,6 @@ Halo 默认主题和插件包含大量 CSS/JS 资源。如果直接从服务器�
 ---
 ## ❓ 常见问题解答
 
-
 ### 1: Halo 是什么？适合用来做什么？
 
 1: Halo 是什么？适合用来做什么？
@@ -820,8 +765,6 @@ Halo 默认主题和插件包含大量 CSS/JS 资源。如果直接从服务器�
 **A**: Halo 是一款现代化的开源建站工具，目前已被重构为基于 Spring Boot 3.0 的前后端分离架构。它非常适合用来搭建个人博客、企业官网、知识库或文档站点。Halo 具有轻量、易用、高性能的特点，支持通过插件和主题进行高度定制，且拥有友好的用户界面，即使是技术小白也能轻松上手。
 
 ---
-
-
 
 ### 2: Halo 的系统环境要求是什么？支持在哪些平台上部署？
 
@@ -834,8 +777,6 @@ Halo 默认主题和插件包含大量 CSS/JS 资源。如果直接从服务器�
 
 ---
 
-
-
 ### 3: Halo 与 WordPress 相比有什么优势？
 
 3: Halo 与 WordPress 相比有什么优势？
@@ -846,8 +787,6 @@ Halo 默认主题和插件包含大量 CSS/JS 资源。如果直接从服务器�
 *   **扩展性**：Halo 采用插件化架构，主题开发采用了模板引擎，逻辑清晰，便于开发者进行二次开发和功能扩展。
 
 ---
-
-
 
 ### 4: 如何迁移从旧版本或其他博客程序（如 Hexo, Typecho）的数据？
 
@@ -860,8 +799,6 @@ Halo 默认主题和插件包含大量 CSS/JS 资源。如果直接从服务器�
 
 ---
 
-
-
 ### 5: 如果我想修改网站外观或增加功能，该如何操作？
 
 5: 如果我想修改网站外观或增加功能，该如何操作？
@@ -873,8 +810,6 @@ Halo 默认主题和插件包含大量 CSS/JS 资源。如果直接从服务器�
 
 ---
 
-
-
 ### 6: 使用 Docker 部署 Halo 是最佳实践吗？
 
 6: 使用 Docker 部署 Halo 是最佳实践吗？
@@ -883,22 +818,6 @@ Halo 默认主题和插件包含大量 CSS/JS 资源。如果直接从服务器�
 *   **环境隔离**：Docker 容器可以避免因本地 Java 版本或数据库配置不同导致的问题。
 *   **部署简单**：官方提供了标准的 Docker 镜像和 `docker-compose.yml` 配置文件，只需几条命令即可启动包含数据库和 Halo 本身的完整服务。
 *   **便于维护**：升级版本时只需拉取新镜像并重启容器，数据可以通过挂载卷（Volume）持久化保存，非常安全且方便。
-
----
-## 🎯 挑战与思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**: 快速构建与启动
-
-### 请使用 Docker Compose 在本地快速启动一个 Halo 2.x 实例，并成功访问后台管理界面。在启动过程中，请尝试修改默认端口（例如改为 8090）。
-
-### 提示**:
-
----
 ## 💡 实践建议
 
 以下是针对 **Halo** 开源建站工具的 5-7 条实践建议，涵盖了部署、维护、性能优化及安全防护等实际场景：

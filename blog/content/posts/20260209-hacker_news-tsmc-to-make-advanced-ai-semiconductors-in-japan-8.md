@@ -73,9 +73,6 @@ scenarios: ["AI/ML项目"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：模拟半导体工厂产能规划
 def calculate_production_capacity(monthly_capacity, utilization_rate, months):
@@ -99,9 +96,6 @@ tsmc_japan_capacity = 50000  # 假设日本工厂月产能5万片
 utilization = 0.85  # 85%利用率
 print(f"年产能: {calculate_production_capacity(tsmc_japan_capacity, utilization, 12):,.0f}片")
 ```
-
-
-
 
 ```python
 # 示例2：半导体供应链风险评估
@@ -135,9 +129,6 @@ critical_parts = ['光刻机', '光刻胶', 'EDA工具']
 print(f"供应链风险: {assess_supply_risk(suppliers, critical_parts)}")
 ```
 
-
-
-
 ```python
 # 示例3：半导体技术节点演进模拟
 def simulate_tech_progress(current_node, years, improvement_rate=0.7):
@@ -166,10 +157,8 @@ for year, node in enumerate(future_nodes, 2023):
     print(f"{year}年: {node:.1f}纳米")
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：索尼半导体解决方案公司
 
@@ -188,8 +177,6 @@ for year, node in enumerate(future_nodes, 2023):
 通过台积电在日本本土的先进制造，索尼成功实现了高端图像处理芯片的就近供应，缩短了研发与生产的周转时间，降低了运输成本和地缘政治风险。这巩固了索尼在高端图像传感器市场的垄断地位，并确保了未来AI视觉处理芯片的产能稳定性。
 
 ---
-
-
 
 ### 2：日本汽车产业转型（以电装 DENSO 为例）
 
@@ -310,7 +297,6 @@ for year, node in enumerate(future_nodes, 2023):
 ---
 ## 常见问题
 
-
 ### 1: 台积电将在日本制造哪些类型的半导体？
 
 1: 台积电将在日本制造哪些类型的半导体？
@@ -318,8 +304,6 @@ for year, node in enumerate(future_nodes, 2023):
 **A**: 根据报道，台积电计划在日本生产的是先进 AI 半导体。这表明其位于日本熊本的工厂不仅限于生产汽车和传感器所需的成熟制程芯片（如 22/28 纳米），还将向更先进的制程节点迈进。市场普遍预期，台积电日本二厂（JASM）将采用 6 纳米或 7 纳米制程技术，这些技术虽然不是台积电目前最顶尖的 3 纳米或 2 纳米，但属于高性能计算（HPC）和人工智能加速器所需的先进工艺范畴。
 
 ---
-
-
 
 ### 2: 为什么台积电选择在日本而不是仅在台湾生产这些芯片？
 
@@ -329,8 +313,6 @@ for year, node in enumerate(future_nodes, 2023):
 
 ---
 
-
-
 ### 3: 该项目涉及哪些主要合作伙伴或投资方？
 
 3: 该项目涉及哪些主要合作伙伴或投资方？
@@ -338,8 +320,6 @@ for year, node in enumerate(future_nodes, 2023):
 **A**: 该项目主要由台积电（TSMC）主导，与其合资伙伴共同推进。这些合作伙伴包括日本电子巨头索尼和汽车零部件供应商电装。此外，日本政府在其中扮演了关键角色，通过经济产业省提供了强有力的财政支持。据报道，日本政府将承担工厂建设成本的一半左右，以重建日本作为全球半导体强国的地位。
 
 ---
-
-
 
 ### 4: 这些芯片何时能够量产？
 
@@ -349,8 +329,6 @@ for year, node in enumerate(future_nodes, 2023):
 
 ---
 
-
-
 ### 5: 这对全球 AI 芯片市场意味着什么？
 
 5: 这对全球 AI 芯片市场意味着什么？
@@ -359,29 +337,11 @@ for year, node in enumerate(future_nodes, 2023):
 
 ---
 
-
-
 ### 6: 日本是否具备支持先进半导体制造的生态系统？
 
 6: 日本是否具备支持先进半导体制造的生态系统？
 
 **A**: 是的。日本在半导体制造的上游环节拥有强大的优势。虽然日本过去几十年在芯片制造领域的市场份额有所下降，但在半导体材料（如光刻胶、高纯度化学品）和制造设备领域，日本企业依然占据全球主导地位。台积电创始人张忠谋曾公开称赞日本拥有优秀的制造文化和人才。台积电在日本设厂，能够更贴近其关键材料供应商，从而优化供应链效率。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 请分析台积电（TSMC）在日本熊本建立先进半导体制造工厂的三个主要地理或经济优势，并解释为什么这些因素对芯片制造至关重要。
-
-### 提示**: 考虑半导体制造对水、电以及供应链稳定性的特殊需求，同时回顾日本在半导体材料和精密制造设备领域的传统地位。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://apnews.com/article/semiconductors-tsmc-japan-taiwan-ai-11256f2bfde73ca23d08331ad138d6d5](https://apnews.com/article/semiconductors-tsmc-japan-taiwan-ai-11256f2bfde73ca23d08331ad138d6d5)
@@ -390,7 +350,6 @@ for year, node in enumerate(future_nodes, 2023):
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

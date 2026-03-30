@@ -65,9 +65,6 @@ scenarios: ["AI/ML项目", "DevOps/运维", "命令行工具"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：自动化服务器资源监控
 import psutil
@@ -96,9 +93,6 @@ def monitor_resources(interval=5, threshold=80):
 if __name__ == "__main__":
     monitor_resources(threshold=75)
 ```
-
-
-
 
 ```python
 # 示例2：自动化Docker容器管理
@@ -129,9 +123,6 @@ def manage_containers():
 if __name__ == "__main__":
     manage_containers()
 ```
-
-
-
 
 ```python
 # 示例3：云资源成本分析器
@@ -177,10 +168,8 @@ if __name__ == "__main__":
     analyze_cloud_costs("cost_data.json")
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某中型SaaS公司的微服务架构迁移
 
@@ -205,8 +194,6 @@ if __name__ == "__main__":
 
 ---
 
-
-
 ### 2：跨国电商平台的Kubernetes集群管理
 
  2：跨国电商平台的Kubernetes集群管理
@@ -230,8 +217,6 @@ if __name__ == "__main__":
 - 安全补丁部署时间从3天缩短至2小时
 
 ---
-
-
 
 ### 3：金融科技公司的合规审计自动化
 
@@ -363,7 +348,6 @@ if __name__ == "__main__":
 ---
 ## 常见问题
 
-
 ### 1: Claude Code for Infrastructure 是什么？
 
 1: Claude Code for Infrastructure 是什么？
@@ -371,8 +355,6 @@ if __name__ == "__main__":
 **A**: Claude Code for Infrastructure 是 Anthropic 推出的一个专门针对基础设施代码的 AI 编程助手。它基于 Claude 3.5 Sonnet 模型，专门优化了处理基础设施即代码的能力，包括 Terraform、Kubernetes 配置、CI/CD 管道等场景。该工具可以直接集成到开发者的工作流中，帮助生成、审查和优化基础设施代码。
 
 ---
-
-
 
 ### 2: 与普通 Claude 或 GitHub Copilot 相比，它有什么优势？
 
@@ -387,8 +369,6 @@ if __name__ == "__main__":
 
 ---
 
-
-
 ### 3: 支持哪些基础设施工具和语言？
 
 3: 支持哪些基础设施工具和语言？
@@ -401,8 +381,6 @@ if __name__ == "__main__":
 - **编程语言**：支持 HCL、YAML、JSON、Python 等相关配置语言
 
 ---
-
-
 
 ### 4: 如何在本地环境中安装和使用？
 
@@ -417,8 +395,6 @@ if __name__ == "__main__":
 
 ---
 
-
-
 ### 5: 它如何处理敏感信息和凭据？
 
 5: 它如何处理敏感信息和凭据？
@@ -431,8 +407,6 @@ if __name__ == "__main__":
 5. **审计日志**：所有 API 调用都会记录，便于安全审计
 
 ---
-
-
 
 ### 6: 定价模式是怎样的？
 
@@ -447,8 +421,6 @@ if __name__ == "__main__":
 
 ---
 
-
-
 ### 7: 它能处理多大规模的基础设施代码库？
 
 7: 它能处理多大规模的基础设施代码库？
@@ -459,22 +431,6 @@ if __name__ == "__main__":
 3. **模块化处理**：对于超大型项目，可以按模块分别处理
 4. **性能优化**：支持增量分析，只处理变更的部分
 5. **实际案例**：已成功处理包含数千个 Terraform 文件的企业级基础设施代码库
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 设计一个自动化脚本，使用 Claude Code 分析一个简单的 Terraform 配置文件（包含 EC2 实例和 S3 存储桶），并生成一份包含潜在安全风险（如开放端口、未加密存储）的检查报告。
-
-### 提示**: 考虑如何将 Terraform 配置转换为可读的文本格式，以及如何构建 Prompt 让 Claude 识别常见的安全配置问题。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://www.fluid.sh](https://www.fluid.sh)
@@ -483,7 +439,6 @@ if __name__ == "__main__":
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

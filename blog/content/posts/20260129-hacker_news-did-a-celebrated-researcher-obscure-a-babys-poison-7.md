@@ -110,9 +110,6 @@ scenarios: ["AI/ML项目"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：关键词匹配与上下文提取
 def extract_context(text, keywords, window=50):
@@ -144,9 +141,6 @@ Dr. Smith later admitted to omitting critical data.
 """
 print(extract_context(sample_text, ["researcher", "poisoning", "data"]))
 ```
-
-
-
 
 ```python
 # 示例2：时间线分析工具
@@ -181,9 +175,6 @@ timeline = [
 ]
 print(analyze_timeline(timeline))
 ```
-
-
-
 
 ```python
 # 示例3：文本相似度检测
@@ -223,10 +214,8 @@ suspicious = "Did a famous researcher hide a baby's poisoning?"
 print(detect_similarity(original, suspicious))
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：Flint饮用水危机公共卫生数据调查
 
@@ -242,8 +231,6 @@ print(detect_similarity(original, suspicious))
 
 ---
 
-
-
 ### 2：Vioxx药物安全数据争议
 
  2：Vioxx药物安全数据争议
@@ -257,8 +244,6 @@ print(detect_similarity(original, suspicious))
 **效果**: 2004年默克公司全球撤回Vioxx，最终支付89亿美元和解诉讼。该案直接促成2007年《FDA修正案》通过，要求新药上市后必须进行强制性安全跟踪研究。Graham开发的监测方法现被用于COVID-19疫苗安全性评估。
 
 ---
-
-
 
 ### 3：加州中央井农业污染数据争议
 
@@ -352,7 +337,6 @@ print(detect_similarity(original, suspicious))
 ---
 ## 常见问题
 
-
 ### 1: 文中提到的“celebrated researcher”（著名研究员）具体指谁？
 
 1: 文中提到的“celebrated researcher”（著名研究员）具体指谁？
@@ -360,8 +344,6 @@ print(detect_similarity(original, suspicious))
 **A**: 根据相关资料，这位研究员是麻省理工学院（MIT）的教授兼儿科医生罗伯特·哈里斯博士。他在 20 世纪 50 年代因在婴儿营养和代谢疾病方面的研究而闻名，并曾获得拉斯克奖。
 
 ---
-
-
 
 ### 2: 事件中提到的“baby's poisoning”（婴儿中毒）是指什么？
 
@@ -371,8 +353,6 @@ print(detect_similarity(original, suspicious))
 
 ---
 
-
-
 ### 3: 这位研究员是如何“obscure”（掩盖）这一中毒事件的？
 
 3: 这位研究员是如何“obscure”（掩盖）这一中毒事件的？
@@ -380,8 +360,6 @@ print(detect_similarity(original, suspicious))
 **A**: 调查显示，哈里斯博士在受雇于食品制造商进行调查后，将中毒原因归咎于一种名为“婴儿痤疮”的常见皮肤病。他在报告和声明中淡化了砷的毒性影响，声称检测出的砷含量是“无害的”。这一干预使得公共卫生部门推迟了行动，导致受污染食品销售时间延长。
 
 ---
-
-
 
 ### 4: 这一事件是如何被重新发现的？
 
@@ -391,8 +369,6 @@ print(detect_similarity(original, suspicious))
 
 ---
 
-
-
 ### 5: 这起事件对当时的食品安全法规产生了什么影响？
 
 5: 这起事件对当时的食品安全法规产生了什么影响？
@@ -401,29 +377,11 @@ print(detect_similarity(original, suspicious))
 
 ---
 
-
-
 ### 6: 为什么这个故事在几十年后仍然重要？
 
 6: 为什么这个故事在几十年后仍然重要？
 
 **A**: 这个故事涉及科学诚信、利益冲突以及企业责任等核心问题。它警示人们，当权威科学家受到商业利益影响时，可能会对公众健康造成风险。此外，它也提醒媒体和公众在面对权威结论时保持批判性思维的重要性。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 假设你是一名调查记者，需要快速核实文中提到的“著名研究人员”的身份。请列出至少三个可以用来交叉验证该研究人员学术背景和过往发表记录的权威来源或数据库。
-
-### 提示**: 关注学术界常用的引文索引、机构官方网站以及专业的学术社交网络。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://www.newyorker.com/magazine/2026/02/02/did-a-celebrated-researcher-obscure-a-fatal-poisoning](https://www.newyorker.com/magazine/2026/02/02/did-a-celebrated-researcher-obscure-a-fatal-poisoning)
@@ -432,7 +390,6 @@ print(detect_similarity(original, suspicious))
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

@@ -76,9 +76,6 @@ scenarios: ["Web应用开发"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：基础FlashAttention实现
 def flash_attention(Q, K, V, block_size=64):
@@ -129,9 +126,6 @@ def flash_attention(Q, K, V, block_size=64):
     return O
 ```
 
-
-
-
 ```python
 # 示例2：Tensorized Attention实现
 def tensorized_attention(Q, K, V, heads=8):
@@ -163,9 +157,6 @@ def tensorized_attention(Q, K, V, heads=8):
     output = output.transpose(1, 2).contiguous().view(batch_size, seq_len, d_model)
     return output
 ```
-
-
-
 
 ```python
 # 示例3：内存高效的注意力计算
@@ -199,10 +190,8 @@ def memory_efficient_attention(Q, K, V, chunk_size=1024):
     return output
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某头部自动驾驶科技公司（基于Tesla Autopilot技术路线的同类实践）
 
@@ -218,8 +207,6 @@ def memory_efficient_attention(Q, K, V, chunk_size=1024):
 
 ---
 
-
-
 ### 2：某大型互联网企业超长上下文LLM推理服务
 
  2：某大型互联网企业超长上下文LLM推理服务
@@ -233,8 +220,6 @@ def memory_efficient_attention(Q, K, V, chunk_size=1024):
 **效果**: 系统在处理100万token长度的上下文时，推理首字生成时间（TTFT）缩短了60%以上，单张A100/H100显卡的最大可处理序列长度提升了2倍。这使得知识库助手能够稳定处理整本书籍级别的文档，同时将单次查询的GPU算力成本降低了约35%。
 
 ---
-
-
 
 ### 3：AlphaFold 3 类生物制药研发平台
 
@@ -341,7 +326,6 @@ def memory_efficient_attention(Q, K, V, chunk_size=1024):
 ---
 ## 常见问题
 
-
 ### 1: 什么是 FlashAttention-T，它与原始的 FlashAttention 有何不同？
 
 1: 什么是 FlashAttention-T，它与原始的 FlashAttention 有何不同？
@@ -349,8 +333,6 @@ def memory_efficient_attention(Q, K, V, chunk_size=1024):
 **A**: FlashAttention-T 是对原始 FlashAttention 算法的一种扩展和优化。原始的 FlashAttention 通过对 GPU 内存访问模式的优化（利用分块和重计算）来加速注意力机制并减少内存占用。FlashAttention-T 则进一步引入了“张量化”的概念。它旨在通过利用现代硬件（特别是 GPU 的 Tensor Core）上的张量核心操作，将注意力计算中的更多部分融合到高度优化的矩阵乘法中。简而言之，FlashAttention-T 试图在保持算法数值稳定性和内存效率的同时，进一步挖掘硬件的并行计算能力，以实现比标准 FlashAttention 更高的吞吐量。
 
 ---
-
-
 
 ### 2: FlashAttention-T 主要解决了哪些技术瓶颈？
 
@@ -363,8 +345,6 @@ def memory_efficient_attention(Q, K, V, chunk_size=1024):
 
 ---
 
-
-
 ### 3: FlashAttention-T 是否兼容现有的深度学习框架（如 PyTorch）？
 
 3: FlashAttention-T 是否兼容现有的深度学习框架（如 PyTorch）？
@@ -373,8 +353,6 @@ def memory_efficient_attention(Q, K, V, chunk_size=1024):
 
 ---
 
-
-
 ### 4: 使用 FlashAttention-T 是否会改变模型的训练结果或精度？
 
 4: 使用 FlashAttention-T 是否会改变模型的训练结果或精度？
@@ -382,8 +360,6 @@ def memory_efficient_attention(Q, K, V, chunk_size=1024):
 **A**: 理论上不应改变。FlashAttention-T 设计为标准注意力机制的一种“即插即用”的高效替代品。它必须保证数值上的等价性（在浮点误差允许范围内）。就像 FlashAttention 一样，它通过重计算来减少内存使用，但这在数学上与标准的反向传播逻辑是一致的。然而，由于浮点运算顺序的改变或底层实现的差异（例如使用不同的原子操作或累加方式），可能会产生极其微小的数值差异，但这通常不会影响模型的最终收敛性和精度。
 
 ---
-
-
 
 ### 5: 哪些类型的模型或应用最能从 FlashAttention-T 中受益？
 
@@ -396,8 +372,6 @@ def memory_efficient_attention(Q, K, V, chunk_size=1024):
 
 ---
 
-
-
 ### 6: FlashAttention-T 对硬件有什么特殊要求吗？
 
 6: FlashAttention-T 对硬件有什么特殊要求吗？
@@ -406,29 +380,11 @@ def memory_efficient_attention(Q, K, V, chunk_size=1024):
 
 ---
 
-
-
 ### 7: 相比于 FlashAttention-2，FlashAttention-T 有什么具体的优势？
 
 7: 相比于 FlashAttention-2，FlashAttention-T 有什么具体的优势？
 
 **A**: FlashAttention-2 主要通过改进工作分配（减少线程块间的通信）和非矩阵乘法操作的并行化来提升速度。而 FlashAttention-T 的核心在于“张量化”。FlashAttention-T 可能会针对特定的矩阵形状进行调优，利用更底层的 WMMA（Warp Matrix Multiply-Accumulate）指令集。在某些特定的头维度和序列长度配置下，FlashAttention-T 能够比 FlashAttention-2 更充分地占用 Tensor Core，从而在计算密集型任务中获得更高的 FLOPs 利用率。简单来说，FlashAttention-2 优化了线程调度，而 FlashAttention-T 优化了计算单元的微
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**：在标准 Transformer 实现中，计算 Attention Score 时通常需要计算 $N \times N$ 的矩阵。请解释 FlashAttention 是如何通过分块计算来避免显存中存储这个巨大的 $N \times N$ 矩阵的？它利用了硬件的什么特性来加速这一过程？
-
-### 提示**：考虑计算机体系结构中的不同存储层级（如 HBM 和 SRAM）的带宽与容量差异，以及 Softmax 计算的可分解性质。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://dl.acm.org/doi/10.1145/3774934.3786425](https://dl.acm.org/doi/10.1145/3774934.3786425)
@@ -437,7 +393,6 @@ def memory_efficient_attention(Q, K, V, chunk_size=1024):
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

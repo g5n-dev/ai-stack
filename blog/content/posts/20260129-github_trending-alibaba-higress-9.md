@@ -38,8 +38,6 @@ Relevant source files
   * [README_JP.md](https://github.com/alibaba/higress/blob/8deceb4d/README_JP.md)
   * [README_ZH.md](https://github.com/alibaba/higress/blob/8deceb4d/README_ZH.md)
 
-
-
 ## Purpose and Scope
 
 This document provides a comprehensive overview of Higress, an AI Native API Gateway built on Istio and Envoy. It covers the system's architecture, core components, and primary use cases. For detailed information about specific subsystems, refer to the Core Architecture (page 2), Build and Deployment (page 3), WASM Plugin System (page 4), AI Gateway Features (page 5), MCP System (page 6), and Development Guide (page 7) sections.
@@ -73,7 +71,6 @@ Higress implements a control plane and data plane separation derived from Istio'
 
 **Component Deployment Diagram:**
 
-
 **Binary and Process Mapping:**
 
 Binary| Source Entry Point| Deployment Location| Primary Functions  
@@ -92,7 +89,6 @@ Sources: [README.md32](https://github.com/alibaba/higress/blob/8deceb4d/README.m
 ### Configuration Flow and Controller Architecture
 
 **Configuration Update Sequence:**
-
 
 **Controller Registry and Responsibilities:**
 
@@ -336,9 +332,6 @@ AI Gateway 的实现原理在于 Envoy Filter 的深度定制。当请求到达�
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：基于Higress的API网关路由配置
 from higress import Gateway, Route, Plugin
@@ -379,9 +372,6 @@ gateway = setup_api_gateway()
 print(f"网关配置完成，路由数量: {len(gateway.routes)}")
 ```
 
-
-
-
 ```python
 # 示例2：Higress插件开发示例
 from higress import Plugin, PluginContext
@@ -415,9 +405,6 @@ plugin_context = PluginContext(
 )
 plugin.on_request(plugin_context)
 ```
-
-
-
 
 ```python
 # 示例3：Higress服务发现与负载均衡
@@ -467,10 +454,8 @@ def configure_service_discovery():
 selected_instance = configure_service_discovery()
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：阿里巴巴内部电商业务
 
@@ -492,8 +477,6 @@ selected_instance = configure_service_discovery()
 
 ---
 
-
-
 ### 2：某在线教育平台
 
  2：某在线教育平台
@@ -513,8 +496,6 @@ selected_instance = configure_service_discovery()
 - 开发团队专注于业务逻辑，网关相关问题的处理时间减少60%。
 
 ---
-
-
 
 ### 3：某金融科技公司
 
@@ -717,7 +698,6 @@ HTTP/3 基于 QUIC 协议，解决了 TCP 队头阻塞问题，尤其在不稳�
 - 具备完善的流量治理能力，包括金丝雀发布、负载均衡、限流熔断及服务鉴权等企业级特性。
 - 拥有自研的 AI 网关插件能力，能够方便地对接 LLM 大模型服务并进行流量管理。
 
-
 ---
 ## 学习路径
 
@@ -811,7 +791,6 @@ HTTP/3 基于 QUIC 协议，解决了 TCP 队头阻塞问题，尤其在不稳�
 ---
 ## 常见问题
 
-
 ### 1: Higress 是什么？它与云原生网关和 API 网关有什么关系？
 
 1: Higress 是什么？它与云原生网关和 API 网关有什么关系？
@@ -819,8 +798,6 @@ HTTP/3 基于 QUIC 协议，解决了 TCP 队头阻塞问题，尤其在不稳�
 **A**: Higress 是一个开源的、基于云原生架构的 API 网关。它是在阿里云内部多年网关技术沉淀的基础上，结合了 Envoy 和 Istio 的优势构建而成的。简单来说，它是一个云原生网关，可以作为微服务架构中的流量入口，负责处理南北向（外部访问内部服务）的流量管理，同时也具备处理东西向（服务间通信）流量的能力。它旨在提供一站式的流量管理、安全防护和插件扩展能力。
 
 ---
-
-
 
 ### 2: Higress 与 Nginx、Kong 或 APISIX 等传统网关相比有什么优势？
 
@@ -835,8 +812,6 @@ HTTP/3 基于 QUIC 协议，解决了 TCP 队头阻塞问题，尤其在不稳�
 
 ---
 
-
-
 ### 3: Higress 与 K8s Ingress (如 Nginx Ingress Controller) 有什么区别？
 
 3: Higress 与 K8s Ingress (如 Nginx Ingress Controller) 有什么区别？
@@ -849,8 +824,6 @@ HTTP/3 基于 QUIC 协议，解决了 TCP 队头阻塞问题，尤其在不稳�
 
 ---
 
-
-
 ### 4: Higress 是否支持热更新？修改配置是否需要重启服务？
 
 4: Higress 是否支持热更新？修改配置是否需要重启服务？
@@ -861,8 +834,6 @@ HTTP/3 基于 QUIC 协议，解决了 TCP 队头阻塞问题，尤其在不稳�
 2.  **插件热更新**：得益于 WASM 技术的应用，您可以在不重启 Higress 进程的情况下，动态加载、卸载或更新业务逻辑插件。这解决了传统网关（如 Nginx 修改 Lua 脚本或配置）通常需要 Reload 导致的连接瞬断问题。
 
 ---
-
-
 
 ### 5: Higress 的安全性如何？是否支持 WAF 和认证鉴权？
 
@@ -877,8 +848,6 @@ HTTP/3 基于 QUIC 协议，解决了 TCP 队头阻塞问题，尤其在不稳�
 
 ---
 
-
-
 ### 6: 如何从 Nginx 或 Kong 迁移到 Higress？迁移成本高吗？
 
 6: 如何从 Nginx 或 Kong 迁移到 Higress？迁移成本高吗？
@@ -886,22 +855,6 @@ HTTP/3 基于 QUIC 协议，解决了 TCP 队头阻塞问题，尤其在不稳�
 **A**: Higress 社区非常重视迁移体验，提供了多种工具和兼容策略来降低迁移成本。
 
 1.  **Nginx 兼容**：Higress 提供了 Nginx Ingress 注解的兼容支持。对于使用 Nginx Ingress Controller 的用户，可以直接将 Ingress 资源迁移，H
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: Higress 基于 Envoy 构建，但默认配置通常需要调整以适应非容器化环境。请尝试在本地 Docker 环境中快速部署 Higress，并配置一个简单的路由规则，将路径 `/api/v1` 的流量转发到一个运行在本地 8080 端口的模拟后端服务（如 httpbin.org）。
-
-### 提示**: 需要重点查看 Higress 的 Docker Compose 部署文档，注意网关与后端服务的容器网络连通性，以及 Ingress Route 资源中 `path` 和 `service` 字段的配置方式。
-
-### 
-
----
 ## 实践建议
 
 以下是针对 Higress（阿里云开源的 AI 原生 API 网关）的 6 条实践建议，侧重于生产环境落地与 AI 流量治理：
@@ -943,7 +896,6 @@ AI
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

@@ -95,9 +95,6 @@ scenarios: ["AI/ML项目"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：检测网站是否屏蔽Internet Archive
 import requests
@@ -127,9 +124,6 @@ def check_archive_access(url):
 # 使用示例
 check_archive_access("https://example.com")
 ```
-
-
-
 
 ```python
 # 示例2：使用User-Agent轮换规避AI爬虫检测
@@ -169,9 +163,6 @@ def fetch_with_rotating_ua(url):
 print(fetch_with_rotating_ua("https://example.com"))
 ```
 
-
-
-
 ```python
 # 示例3：检查网站robots.txt是否禁止AI爬虫
 import requests
@@ -207,10 +198,8 @@ def check_robots_txt(url):
 check_robots_txt("https://example.com")
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：纽约时报
 
@@ -226,8 +215,6 @@ check_robots_txt("https://example.com")
 
 ---
 
-
-
 ### 2：路透社
 
  2：路透社
@@ -241,8 +228,6 @@ check_robots_txt("https://example.com")
 **效果**: 2024年，路透社与OpenAI达成多年合作协议，后者将支付费用使用其新闻内容。同时，通过技术限制，路透社成功减少了未经授权的内容抓取，保护了其商业利益。
 
 ---
-
-
 
 ### 3：Conde Nast
 
@@ -349,7 +334,6 @@ check_robots_txt("https://example.com")
 ---
 ## 常见问题
 
-
 ### 1: 为什么新闻出版机构要限制 Internet Archive 的访问权限？
 
 1: 为什么新闻出版机构要限制 Internet Archive 的访问权限？
@@ -357,8 +341,6 @@ check_robots_txt("https://example.com")
 **A**: 此次限制访问的主要原因是新闻出版机构对人工智能（AI）公司抓取其内容用于模型训练的担忧。虽然 Internet Archive 长期以来通过其“Wayback Machine”提供网页存档服务，但 AI 抓取工具开始滥用该平台，大规模下载存档的新闻内容。出版商认为，这种未经授权的抓取和用于商业 AI 训练的行为侵犯了其版权，因此他们通过设置 robots.txt 文件或直接阻止来自 Internet Archive IP 地址的请求，以切断 AI 公司获取其数据的途径。
 
 ---
-
-
 
 ### 2: Internet Archive 在这个事件中扮演了什么角色？
 
@@ -368,8 +350,6 @@ check_robots_txt("https://example.com")
 
 ---
 
-
-
 ### 3: 这种限制访问对普通用户有什么影响？
 
 3: 这种限制访问对普通用户有什么影响？
@@ -377,8 +357,6 @@ check_robots_txt("https://example.com")
 **A**: 对普通用户最直接的影响是，他们将无法通过 Internet Archive 的 Wayback Machine 访问被限制出版商的历史新闻页面。当用户尝试查看某篇过期的新闻报道或已被删除的文章时，可能会遇到“Blocked”或“Unavailable”的提示。这意味着互联网的一部分历史记录可能会因此永久缺失，用户失去了查阅过去新闻的重要渠道，这对于依赖网络存档进行研究、验证事实或回顾历史的个人和机构来说是一个重大损失。
 
 ---
-
-
 
 ### 4: 什么是 robots.txt 协议，它在此事件中起什么作用？
 
@@ -388,8 +366,6 @@ check_robots_txt("https://example.com")
 
 ---
 
-
-
 ### 5: AI 抓取与搜索引擎抓取有什么区别，为何出版商对此反应如此强烈？
 
 5: AI 抓取与搜索引擎抓取有什么区别，为何出版商对此反应如此强烈？
@@ -398,29 +374,11 @@ check_robots_txt("https://example.com")
 
 ---
 
-
-
 ### 6: 新闻出版商与 AI 公司之间的法律争议核心是什么？
 
 6: 新闻出版商与 AI 公司之间的法律争议核心是什么？
 
 **A**: 核心争议在于“合理使用”原则与版权侵权之间的界限。AI 公司通常认为，为了训练模型而公开抓取互联网数据属于合理使用，类似于人类阅读书籍学习知识。然而，新闻出版商则主张，AI 公司大规模、商业性地使用其受版权保护的内容用于训练竞争性产品，并不属于合理使用，而是直接的版权侵权。此次限制 Internet Archive 是出版商在法律诉讼之外，采取的一种通过技术手段保护自身数据资产的防御性措施。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**:
-
-### 请分析新闻机构限制 Internet Archive 访问的技术实现路径。假设你是一家新闻网站的技术负责人，你需要在 `robots.txt` 文件中配置规则，仅允许搜索引擎爬虫访问，而阻止 Internet Archive 的 `Wayback Machine` 机器人抓取网站内容。请写出具体的配置规则。
-
-### 提示**:
-
----
 ## 引用
 
 - **原文链接**: [https://www.niemanlab.org/2026/01/news-publishers-limit-internet-archive-access-due-to-ai-scraping-concerns](https://www.niemanlab.org/2026/01/news-publishers-limit-internet-archive-access-due-to-ai-scraping-concerns)
@@ -429,7 +387,6 @@ check_robots_txt("https://example.com")
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

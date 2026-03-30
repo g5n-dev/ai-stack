@@ -91,9 +91,6 @@ scenarios: ["大语言模型"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：基于AGENTS.md的动态任务规划
 def dynamic_task_planner(user_query):
@@ -126,9 +123,6 @@ def dynamic_task_planner(user_query):
 # 测试用例
 print(dynamic_task_planner("紧急分析销售数据"))
 ```
-
-
-
 
 ```python
 # 示例2：自适应工具选择
@@ -168,9 +162,6 @@ print(agent.select_tools({
 }))
 ```
 
-
-
-
 ```python
 # 示例3：上下文感知决策
 def context_aware_decision(context):
@@ -196,10 +187,8 @@ execution_history = {
 print(context_aware_decision(execution_history))
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某大型电商智能客服系统重构
 
@@ -218,8 +207,6 @@ print(context_aware_decision(execution_history))
 在相同的 Agent 评估基准下，新架构的复杂任务处理成功率提升至 85% 以上。系统不再需要频繁更新意图模版，维护成本降低 40%。更重要的是，由于 Agent 具备了更强的上下文理解能力，客服转人工率下降了 20 个百分点，显著提升了用户体验。
 
 ---
-
-
 
 ### 2：企业级内部知识库助手
 
@@ -339,7 +326,6 @@ print(context_aware_decision(execution_history))
 ---
 ## 常见问题
 
-
 ### 1: 什么是 AGENTS.md，它与传统的“技能”定义有何不同？
 
 1: 什么是 AGENTS.md，它与传统的“技能”定义有何不同？
@@ -347,8 +333,6 @@ print(context_aware_decision(execution_history))
 **A**: AGENTS.md 是一种用于定义 AI Agent 行为的规范或文档格式。与传统的“技能”定义相比，AGENTS.md 提供了更结构化的描述方式。技能通常指代单一功能的封装或 API 调用，而 AGENTS.md 倾向于描述一个完整的实体，涵盖角色设定、记忆管理、任务拆解逻辑以及环境交互反馈循环。
 
 ---
-
-
 
 ### 2: 为什么在评估中 AGENTS.md 的表现会优于技能？
 
@@ -358,8 +342,6 @@ print(context_aware_decision(execution_history))
 
 ---
 
-
-
 ### 3: AGENTS.md 是否会取代现有的 ReAct 框架或工具调用功能？
 
 3: AGENTS.md 是否会取代现有的 ReAct 框架或工具调用功能？
@@ -367,8 +349,6 @@ print(context_aware_decision(execution_history))
 **A**: 不会。AGENTS.md 主要属于**描述和组织层**，而 ReAct（推理+行动）和工具调用属于执行机制。AGENTS.md 为这些执行机制提供了结构化的输入数据和定义。可以将 AGENTS.md 视为一种优化 Agent 配置的元数据格式，它与现有的 ReAct 框架协同工作，而非替代关系。
 
 ---
-
-
 
 ### 4: 这种方法对 Agent 开发者有什么实际的好处？
 
@@ -378,8 +358,6 @@ print(context_aware_decision(execution_history))
 
 ---
 
-
-
 ### 5: AGENTS.md 面临的主要挑战或局限性是什么？
 
 5: AGENTS.md 面临的主要挑战或局限性是什么？
@@ -388,29 +366,11 @@ print(context_aware_decision(execution_history))
 
 ---
 
-
-
 ### 6: 这一趋势对 RAG（检索增强生成）架构有什么影响？
 
 6: 这一趋势对 RAG（检索增强生成）架构有什么影响？
 
 **A**: AGENTS.md 可能会改变 RAG 系统的实现方式。传统的 RAG 侧重于检索静态知识片段，而结合 AGENTS.md 的 Agent 系统会将“如何检索”及“如何利用检索工具”纳入定义中。这意味着 RAG 不仅是数据检索，更成为 Agent 能力的一部分。未来的 RAG 系统可能会更多地依赖这种结构化描述来决定查询时机和 API 调用策略。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 在传统的软件开发中，"函数"（Function）与 AI 智能体语境下的 "技能"（Skill）有什么核心区别？为什么一个简单的函数调用不足以被称为具备 "Agent" 属性？
-
-### 提示**: 请从自主性、输入输出的确定性以及执行过程是否需要模型推理来判断。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://vercel.com/blog/agents-md-outperforms-skills-in-our-agent-evals](https://vercel.com/blog/agents-md-outperforms-skills-in-our-agent-evals)
@@ -419,7 +379,6 @@ print(context_aware_decision(execution_history))
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

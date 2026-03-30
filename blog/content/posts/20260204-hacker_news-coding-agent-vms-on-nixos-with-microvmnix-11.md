@@ -79,9 +79,6 @@ scenarios: ["DevOps/运维"]
 ---
 ## 代码示例
 
-
-
-
 ```nix
 # 示例1：创建基础MicroVM配置
 # flake.nix
@@ -116,9 +113,6 @@ scenarios: ["DevOps/运维"]
 }
 ```
 
-
-
-
 ```nix
 # 示例2：添加持久化存储
 # flake.nix
@@ -151,9 +145,6 @@ scenarios: ["DevOps/运维"]
   };
 }
 ```
-
-
-
 
 ```nix
 # 示例3：网络配置与端口转发
@@ -196,10 +187,8 @@ scenarios: ["DevOps/运维"]
 }
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某金融科技初创公司的 CI/CD 基础设施重构
 
@@ -221,8 +210,6 @@ scenarios: ["DevOps/运维"]
 
 ---
 
-
-
 ### 2：SaaS 平台的多租户隔离与预览环境
 
  2：SaaS 平台的多租户隔离与预览环境
@@ -242,8 +229,6 @@ scenarios: ["DevOps/运维"]
 - 由于 Nix 的不可变存储特性，VM 镜像的复用和分发极其高效，大大降低了存储成本。
 
 ---
-
-
 
 ### 3：开源项目的本地开发环境标准化
 
@@ -354,7 +339,6 @@ scenarios: ["DevOps/运维"]
 ---
 ## 常见问题
 
-
 ### 1: 什么是 Microvm.nix，它与传统的 NixOS 虚拟机或容器有何不同？
 
 1: 什么是 Microvm.nix，它与传统的 NixOS 虚拟机或容器有何不同？
@@ -364,8 +348,6 @@ scenarios: ["DevOps/运维"]
 1.  **资源开销与性能**：与传统的完整虚拟机相比，Microvms 启动速度极快（毫秒级），内存占用极低。与容器相比，它提供了更强的隔离性，因为它运行在独立的内核上下文中，而不是共享宿主机内核。
 2.  **安全性**：Microvms 提供了类似容器的轻量级体验，但通过基于 KVM 的虚拟化技术，提供了接近裸机虚拟机的安全边界。这对于处理不受信任代码（如 Coding Agent）的场景非常理想，可以防止恶意代码逃逸到宿主机。
 3.  **管理方式**：它通过 NixOS 的配置管理（`configuration.nix`）进行声明式定义，使得虚拟机的网络、存储和启动配置可以像管理软件包一样进行版本控制和复现。
-
-
 
 ### 2: 为什么选择在 NixOS 上使用 Microvms 来运行 Coding Agents，而不是直接使用 Docker 或 Conda 环境？
 
@@ -377,8 +359,6 @@ scenarios: ["DevOps/运维"]
 2.  **系统兼容性**：某些 AI 工具可能对宿主机操作系统有特定要求。Microvm 允许你在当前的 NixOS 宿主机上运行其他版本的 Linux 内核或特定的用户空间环境，而无需修改宿主机的核心配置。
 3.  **安全性（沙箱）**：Coding Agents 拥有执行代码和修改文件的能力，这带来了潜在的安全风险。将它们运行在 Microvm 中提供了一个强隔离的沙箱环境，即使 Agent 产生了破坏性代码或被恶意利用，也仅限于虚拟机内部，不会影响宿主机的文件系统或网络。
 
-
-
 ### 3: Microvm.nix 的网络配置是如何工作的？如何让宿主机与 Microvm 通信？
 
 3: Microvm.nix 的网络配置是如何工作的？如何让宿主机与 Microvm 通信？
@@ -388,8 +368,6 @@ scenarios: ["DevOps/运维"]
 1.  **默认模式**：通常情况下，Microvm 会通过 `virtio-net` 与宿主机建立一个点对点的连接。Microvm 内部会看到一个网络接口（如 `eth0`），宿主机也会对应生成一个接口（如 `tap0` 或 `vm-microvm-*`）。
 2.  **网络配置**：在 NixOS 配置中，你可以通过 `microvm.veth` 或 `microvm.interfaces` 来定义网络。通常不需要复杂的桥接配置，只需在 Microvm 的配置中指定 IP 地址，并在宿主机上配置对应的路由或 IP 地址即可实现互通。
 3.  **SSH 访问**：为了方便管理，通常会在 Microvm 内部启用 SSH 服务。由于 Microvm 启动极快，你可以编写脚本在 Microvm 启动后立即通过 SSH 密钥登录进去执行命令，这对于自动化 Coding Agent 的工作流非常有用。
-
-
 
 ### 4: 如何通过 Microvm.nix 管理持久化存储？虚拟机重启后数据会丢失吗？
 
@@ -401,29 +379,11 @@ scenarios: ["DevOps/运维"]
 2.  **块设备映射**：你也可以创建一个镜像文件（如 `.img` 文件）并将其作为虚拟块设备传递给 Microvm。这种方式更接近传统虚拟机的磁盘使用方式，适合需要完整磁盘权限的场景。
 对于 Coding Agent 的使用场景，通常建议挂载宿主机的代码仓库目录到 Microvm 中，这样 Agent 可以直接读写代码，且数据在宿主机上是持久保存的。
 
-
-
 ### 5: 使用 Microvm.nix 时，如何处理图形界面（GUI）应用或需要显示输出的场景？
 
 5: 使用 Microvm.nix 时，如何处理图形界面（GUI）应用或需要显示输出的场景？
 
 **A**: 虽然 Micro
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 使用 `microvm.nix` 定义一个名为 `basic-agent` 的最小化虚拟机配置。该虚拟机需要运行一个基于 NixOS 的系统，并仅开启 SSH 服务以允许外部连接。请写出对应的 Nix 表达式配置。
-
-### 提示**: 你需要导入 `<nixpkgs/nixos/modules/virtualisation/microvm.nix>` 模块，并在 `microvm.vmlinux` 设置中指定使用 `qemu` 作为 Hypervisor。不要忘记在 `networking` 部分配置 `firewall.allowedTCPPorts` 以开放 SSH 端口。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://michael.stapelberg.ch/posts/2026-02-01-coding-agent-microvm-nix](https://michael.stapelberg.ch/posts/2026-02-01-coding-agent-microvm-nix)
@@ -432,7 +392,6 @@ scenarios: ["DevOps/运维"]
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

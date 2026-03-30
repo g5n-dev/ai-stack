@@ -130,32 +130,8 @@ external_url: https://www.zackliscio.com/posts/rip-low-code-2014-2025
 ---
 ## 💻 代码示例
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 ## 📚 案例研究
-
 
 ### 1：某大型跨国商业银行
 
@@ -178,8 +154,6 @@ external_url: https://www.zackliscio.com/posts/rip-low-code-2014-2025
 - 🛡️ **合规与安全**：收编了影子 IT，所有数据流转重新回到企业受控环境中，审计合规率达到 100%。
 
 ---
-
-
 
 ### 2：国内头部新能源汽车制造商
 
@@ -297,7 +271,6 @@ external_url: https://www.zackliscio.com/posts/rip-low-code-2014-2025
 ---
 ## ❓ 常见问题
 
-
 ### 1: 为什么 Hacker News 上的用户认为低代码平台在 2014-2025 年间“失败”或“死亡”了？
 
 1: 为什么 Hacker News 上的用户认为低代码平台在 2014-2025 年间“失败”或“死亡”了？
@@ -310,8 +283,6 @@ external_url: https://www.zackliscio.com/posts/rip-low-code-2014-2025
 3.  **局限性**：对于复杂的业务逻辑、高性能要求或高度定制化的用户体验，低代码平台往往力不从心。
 
 ---
-
-
 
 ### 2: 如果低代码没有“死”，它目前真正的定位是什么？
 
@@ -328,8 +299,6 @@ external_url: https://www.zackliscio.com/posts/rip-low-code-2014-2025
 
 ---
 
-
-
 ### 3: 为什么“公民开发者”最终没有取代专业工程师？
 
 3: 为什么“公民开发者”最终没有取代专业工程师？
@@ -341,8 +310,6 @@ external_url: https://www.zackliscio.com/posts/rip-low-code-2014-2025
 *   **全局视角缺失**：专业工程师不仅要考虑功能，还要考虑安全性、可扩展性、性能和架构一致性，这是低代码工具很难自动化的。
 
 ---
-
-
 
 ### 4: 文中提到的 2014-2025 时间段有什么特殊意义？
 
@@ -356,8 +323,6 @@ external_url: https://www.zackliscio.com/posts/rip-low-code-2014-2025
 
 ---
 
-
-
 ### 5: AI 编程（如 Copilot）的出现是否加速了“传统低代码”的消亡？
 
 5: AI 编程（如 Copilot）的出现是否加速了“传统低代码”的消亡？
@@ -370,8 +335,6 @@ external_url: https://www.zackliscio.com/posts/rip-low-code-2014-2025
 
 ---
 
-
-
 ### 6: 低代码平台通常面临哪些被开发者诟病的“黑盒”问题？
 
 6: 低代码平台通常面临哪些被开发者诟病的“黑盒”问题？
@@ -380,22 +343,6 @@ external_url: https://www.zackliscio.com/posts/rip-low-code-2014-2025
 
 *   **不可控的生成代码**：平台生成的底层代码往往臃肿、低效，且开发者无法直接修改。
 *   **调试困难**：当出现 Bug
-
----
-## 🎯 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**:
-
-### 低代码平台的核心承诺是“10倍开发效率”。请尝试计算：如果一个传统全栈开发团队构建一个包含 CRUD（增删改查）、权限管理和移动端适配的内部管理系统需要 40 人天，在低代码平台中实施同一项目，通常涉及哪些隐形成本（如：学习曲线、逻辑调试、UI 微调）？请列出至少 3 个常被忽视的“低代码税”项目。
-
-### 提示**:
-
----
 ## 🔗 引用
 
 - **原文链接**: [https://www.zackliscio.com/posts/rip-low-code-2014-2025](https://www.zackliscio.com/posts/rip-low-code-2014-2025)

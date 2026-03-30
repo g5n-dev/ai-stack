@@ -34,8 +34,6 @@ Relevant source files
 
   * [README.md](https://github.com/shadow1ng/fscan/blob/805af82a/README.md)
 
-
-
 ## Purpose and Scope
 
 Fscan is a comprehensive intranet scanning tool designed for security assessment and vulnerability detection. This document provides an overview of the tool's purpose, key features, architecture, and operational workflow. The tool employs a modular plugin-based design that facilitates extensibility and maintenance.
@@ -75,7 +73,6 @@ Fscan is built on a modular, plugin-based architecture that facilitates extensib
 
 ### Core System Architecture
 
-
 Sources: [README.md16](https://github.com/shadow1ng/fscan/blob/805af82a/README.md#L16-L16) [README.md289-292](https://github.com/shadow1ng/fscan/blob/805af82a/README.md#L289-L292)
 
 ## Scan Workflow
@@ -84,14 +81,11 @@ Fscan follows a systematic workflow when conducting scans, starting from user in
 
 ### Scanning Process Flow
 
-
 The workflow begins with parsing command-line arguments to determine the scan configuration and mode. Based on the selected mode, fscan will execute different scanning paths:
 
   1. **Host Mode** : Performs host discovery, port scanning, and service detection
   2. **Web Mode** : Focuses on web vulnerability scanning
   3. **Local Mode** : Gathers information from the local system
-
-
 
 The tool then selects and executes relevant plugins based on discovered services or specified targets, collecting and formatting results for output.
 
@@ -102,7 +96,6 @@ Sources: [README.md117-125](https://github.com/shadow1ng/fscan/blob/805af82a/REA
 Fscan's functionality is implemented through a comprehensive plugin system that allows for easy extension and maintenance:
 
 ### Plugin Architecture
-
 
 The plugin system is designed as a "hot-swappable" architecture, allowing for quick development and integration of new scanning capabilities. Plugins register with the central registry and are called based on discovered services or user specifications.
 
@@ -134,8 +127,6 @@ Fscan is designed to support various security assessment scenarios:
   3. **Web Application Security** : Scan web applications for security issues and vulnerabilities
   4. **Credential Testing** : Verify the strength of authentication mechanisms for network services
   5. **Information Gathering** : Collect valuable system and network information for security analysis
-
-
 
 Sources: [README.md49-74](https://github.com/shadow1ng/fscan/blob/805af82a/README.md#L49-L74)
 
@@ -390,37 +381,8 @@ fscan 在抽象层做了一个有趣的决策：**将“协议交互的复杂性
 ---
 ## 💻 实用代码示例
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 ## 📚 真实案例研究
-
 
 ### 1：某大型电商平台企业安全部
 
@@ -442,8 +404,6 @@ fscan 在抽象层做了一个有趣的决策：**将“协议交互的复杂性
 
 ---
 
-
-
 ### 2：某政务云红蓝对抗演练
 
  2：某政务云红蓝对抗演练
@@ -463,8 +423,6 @@ fscan 在抽象层做了一个有趣的决策：**将“协议交互的复杂性
 - 📊 **资产盘点**：顺带梳理出了 50 多个未登记的“僵尸资产”，消除了安全死角。
 
 ---
-
-
 
 ### 3：某互联网初创公司渗透测试团队
 
@@ -678,7 +636,6 @@ Web 指纹识别和目录扫描速度提升 30%-50%，显著降低网络 I/O 带
 - 全方位的资产探测能力** 🌐
 - 支持存活主机检测（ICM/Ping）、TCP/UDP 端口扫描以及常见服务（如 SSH, RDP, SMB, FTP 等）的指纹识别，帮助攻击者快速绘制内网拓扑。
 
-
 ---
 ## 🗺️ 循序渐进的学习路径
 
@@ -761,7 +718,6 @@ Web 指纹识别和目录扫描速度提升 30%-50%，显著降低网络 I/O 带
 ---
 ## ❓ 常见问题解答
 
-
 ### 1: fscan 是什么？它的主要功能是什么？
 
 1: fscan 是什么？它的主要功能是什么？
@@ -778,8 +734,6 @@ Web 指纹识别和目录扫描速度提升 30%-50%，显著降低网络 I/O 带
 
 ---
 
-
-
 ### 2: 如何下载和使用 fscan？支持哪些操作系统？
 
 2: 如何下载和使用 fscan？支持哪些操作系统？
@@ -791,8 +745,6 @@ Web 指纹识别和目录扫描速度提升 30%-50%，显著降低网络 I/O 带
     *   Linux: `./fscan -h`
 
 ---
-
-
 
 ### 3: fscan 扫描速度很快，会不会导致网络拥堵或触发 IDS/IPS 报警？
 
@@ -806,8 +758,6 @@ Web 指纹识别和目录扫描速度提升 30%-50%，显著降低网络 I/O 带
 
 ---
 
-
-
 ### 4: fscan 与其他扫描器（如 Nmap、Masscan）相比有什么优势？
 
 4: fscan 与其他扫描器（如 Nmap、Masscan）相比有什么优势？
@@ -819,8 +769,6 @@ Web 指纹识别和目录扫描速度提升 30%-50%，显著降低网络 I/O 带
 
 ---
 
-
-
 ### 5: fscan 扫描结果中的高危漏洞（如 MS17-010、SMB 漏洞）可以直接利用吗？
 
 5: fscan 扫描结果中的高危漏洞（如 MS17-010、SMB 漏洞）可以直接利用吗？
@@ -831,8 +779,6 @@ Web 指纹识别和目录扫描速度提升 30%-50%，显著降低网络 I/O 带
 *   **利用**：你需要配合专门的漏洞利用工具（如 MS17-010 的 exploit 脚本）来进一步攻击。fscan 的主要作用是帮你“找洞”，而不是“打洞”。
 
 ---
-
-
 
 ### 6: 常用的 fscan 扫描命令示例有哪些？
 
@@ -847,22 +793,6 @@ Web 指纹识别和目录扫描速度提升 30%-50%，显著降低网络 I/O 带
     `./fscan -h 192.168.1.1 -p ssh -user root -pwd password.txt`
 *   **指定并发和超时**：
     `./fscan -h 192.168.1.1/24 -t 10 -time 3`
-
----
-## 🎯 挑战与思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**:
-
-### 使用 `fscan` 对本地网段（如 192.168.1.x）进行存活主机发现，并识别出开放端口最多的前 3 台主机。
-
-### 提示**:
-
----
 ## 💡 实践建议
 
 针对 **shadow1ng/fscan** 这款内网综合扫描利器，以下是 6 条基于实战经验的优化建议，涵盖效率提升、隐蔽性、结果处理及常见误区：

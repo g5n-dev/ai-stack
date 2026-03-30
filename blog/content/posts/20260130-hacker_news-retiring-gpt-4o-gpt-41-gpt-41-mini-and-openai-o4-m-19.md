@@ -76,9 +76,6 @@ OpenAI 宣布退役 GPT-4o 并快速迭代至 GPT-4.1 系列，标志着大模�
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：检查模型是否已退役
 def is_model_deprecated(model_name):
@@ -100,9 +97,6 @@ print(is_model_deprecated("GPT-4o"))  # 输出: True
 print(is_model_deprecated("gpt-3.5-turbo"))  # 输出: False
 ```
 
-
-
-
 ```python
 # 示例2：获取替代模型建议
 def get_alternative_model(model_name):
@@ -123,9 +117,6 @@ def get_alternative_model(model_name):
 print(get_alternative_model("GPT-4o"))  # 输出: gpt-4-turbo
 print(get_alternative_model("gpt-4.1-mini"))  # 输出: gpt-3.5-turbo
 ```
-
-
-
 
 ```python
 # 示例3：批量检查模型状态
@@ -152,10 +143,8 @@ print(check_models_status(models_to_check))
 # 输出: {'GPT-4o': '已退役', 'gpt-3.5-turbo': '可用', 'openai-o4-mini': '已退役'}
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某 SaaS 初创公司后台服务迁移
 
@@ -174,8 +163,6 @@ print(check_models_status(models_to_check))
 迁移过程在 48 小时内完成，未发生服务中断。测试数据显示，新模型 `GPT-4.1-mini` 在处理复杂指令时的遵循能力比旧模型提升了约 15%，且在相同任务下的延迟降低了 10%。虽然单价略有调整，但由于准确率的提升减少了人工修正的环节，整体运营成本保持稳定，确保了客户服务的连续性。
 
 ---
-
-
 
 ### 2：跨国金融企业内部知识库升级
 
@@ -284,7 +271,6 @@ print(check_models_status(models_to_check))
 ---
 ## 常见问题
 
-
 ### 1: 哪些具体的模型版本正在被退役？
 
 1: 哪些具体的模型版本正在被退役？
@@ -292,8 +278,6 @@ print(check_models_status(models_to_check))
 **A**: 根据公告，OpenAI 正在退役以下模型：GPT-4o、GPT-4.1、GPT-4.1 mini 以及 OpenAI o4-mini。这些特定的模型标识符将不再在 ChatGPT 的模型选择器中可用，相关的 API 端点也将逐步停止服务。
 
 ---
-
-
 
 ### 2: 这些模型何时会完全停止服务？
 
@@ -303,8 +287,6 @@ print(check_models_status(models_to_check))
 
 ---
 
-
-
 ### 3: 我应该迁移到哪个新模型？
 
 3: 我应该迁移到哪个新模型？
@@ -312,8 +294,6 @@ print(check_models_status(models_to_check))
 **A**: OpenAI 在退役旧模型时，通常会推荐替代产品。对于 GPT-4.1 和 GPT-4o 的用户，主要推荐的替代品通常是 **GPT-4o** 或更新的 **GPT-4o mini**（如果适用）。对于 o4-mini 的用户，建议迁移到最新的推理模型系列（如 **o1** 或 **o3** 系列中的对应 mini 版本，具体取决于官方当前的命名策略）。建议查看官方文档中的“模型迁移指南”，以确定与您当前使用模型性能最匹配的替代品。
 
 ---
-
-
 
 ### 4: 如果我是 API 开发者，我的代码需要做哪些修改？
 
@@ -323,8 +303,6 @@ print(check_models_status(models_to_check))
 
 ---
 
-
-
 ### 5: 我的历史聊天记录会被删除吗？
 
 5: 我的历史聊天记录会被删除吗？
@@ -332,8 +310,6 @@ print(check_models_status(models_to_check))
 **A**: 不会。模型退役主要影响的是生成新回复的能力。您在 ChatGPT 界面中拥有的过往对话历史（即由这些旧模型生成的聊天记录）通常会被保留在您的账户中。您仍然可以查看和阅读旧的对话，只是无法继续使用已退役的模型在这些特定对话中生成新的回复。
 
 ---
-
-
 
 ### 6: 为什么要退役这些模型？
 
@@ -343,29 +319,11 @@ print(check_models_status(models_to_check))
 
 ---
 
-
-
 ### 7: 如果我发现新模型的性能不如旧模型，该怎么办？
 
 7: 如果我发现新模型的性能不如旧模型，该怎么办？
 
 **A**: 虽然新模型通常在基准测试中表现更好，但在某些特定场景或边缘案例中，用户可能会感觉到输出风格或逻辑的差异。如果您遇到这种情况，建议通过 OpenAI 的官方反馈渠道提交具体案例。此外，对于 API 用户，可以尝试微调系统提示词，以引导新模型更好地适应您的特定任务需求。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 假设你正在维护一个依赖 OpenAI API 的自动化脚本，该脚本目前硬编码了模型名称 `gpt-4o`。鉴于 OpenAI 宣布将逐步淘汰该模型，请编写一段 Python 代码，利用环境变量或配置文件来管理模型名称，以便在模型退役时能够无缝切换到新模型（如 `gpt-4o-2024-08-06` 或 `gpt-4o-mini`），而无需修改源代码。
-
-### 提示**: 考虑使用 Python 的 `os.environ` 或 `dotenv` 库。在代码中定义一个默认值，并允许通过环境变量覆盖它。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://openai.com/index/retiring-gpt-4o-and-older-models](https://openai.com/index/retiring-gpt-4o-and-older-models)
@@ -374,7 +332,6 @@ print(check_models_status(models_to_check))
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

@@ -118,9 +118,6 @@ Airfoil (2024) 版本不仅是一次界面上的“整容”，更是一次内�
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：计算机翼的升力系数
 def calculate_lift_coefficient(angle_of_attack, airfoil_data):
@@ -147,9 +144,6 @@ naca0012_data = {'cl_0': 0.1, 'cla': 6.28}  # NACA 0012翼型数据
 lift_coeff = calculate_lift_coefficient(5, naca0012_data)
 print(f"5度攻角下的升力系数: {lift_coeff:.3f}")
 ```
-
-
-
 
 ```python
 # 示例2：翼型几何参数计算
@@ -185,9 +179,6 @@ print("翼型几何参数:")
 for key, value in geometry.items():
     print(f"{key}: {value:.4f} m" if 'radius' not in key else f"{key}: {value:.6f} m")
 ```
-
-
-
 
 ```python
 # 示例3：翼型性能优化
@@ -225,10 +216,8 @@ optimal_thickness = optimize_airfoil(0.5, 1e6)
 print(f"优化后的翼型厚度比: {optimal_thickness:.3f}")
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：高性能无人机续航优化项目
 
@@ -243,8 +232,6 @@ print(f"优化后的翼型厚度比: {optimal_thickness:.3f}")
 **效果**: 通过 Airfoil 的快速仿真，团队在两周内完成了 50 多种翼型变体的评估。最终选定的优化翼型方案将巡航阻力系数降低了 18%，使无人机的实际飞行时间延长至 125 分钟，超额完成设计指标，并将研发成本降低了约 30%。
 
 ---
-
-
 
 ### 2：小型垂直轴风力发电机（VAWT）叶片设计
 
@@ -351,7 +338,6 @@ print(f"优化后的翼型厚度比: {optimal_thickness:.3f}")
 ---
 ## 常见问题
 
-
 ### 1: Airfoil 到底是什么软件，它的主要功能是什么？
 
 1: Airfoil 到底是什么软件，它的主要功能是什么？
@@ -359,8 +345,6 @@ print(f"优化后的翼型厚度比: {optimal_thickness:.3f}")
 **A**: Airfoil 是一款由 Rogue Amoeba 公司开发的音频流媒体传输工具，主要运行在 macOS 平台上。它的核心功能是允许用户将电脑上任何应用程序播放的音频（不仅仅是音乐软件，还包括浏览器、系统提示音、游戏声音等）无线传输到 AirPlay、Google Cast、蓝牙以及运行了 Airfoil Satellite 的其他设备上。简单来说，它打破了系统默认音频输出的限制，让用户可以自由控制音频的去向。
 
 ---
-
-
 
 ### 2: 2024 版本的 Airfoil 相比旧版本有哪些重要更新？
 
@@ -370,8 +354,6 @@ print(f"优化后的翼型厚度比: {optimal_thickness:.3f}")
 
 ---
 
-
-
 ### 3: Airfoil 和 macOS 自带的 AirPlay 功能有什么区别？
 
 3: Airfoil 和 macOS 自带的 AirPlay 功能有什么区别？
@@ -379,8 +361,6 @@ print(f"优化后的翼型厚度比: {optimal_thickness:.3f}")
 **A**: 虽然 macOS 自带了屏幕镜像和音频输出的 AirPlay 功能，但 Airfoil 提供了更强大的专业级控制。主要区别在于：1. **源选择**：系统 AirPlay 通常只能输出特定应用的音频或系统全局音频，而 Airfoil 可以精确选择每一个正在运行的应用程序进行单独传输。2. **设备同步**：Airfoil 拥有极佳的同步功能，可以让多个不同品牌的接收设备毫秒级同步播放，消除回声。3. **元数据传输**：Airfoil 能将歌曲标题、封面等信息传输到支持的接收设备上显示。
 
 ---
-
-
 
 ### 4: 使用 Airfoil 是否需要在接收端安装额外的软件？
 
@@ -390,8 +370,6 @@ print(f"优化后的翼型厚度比: {optimal_thickness:.3f}")
 
 ---
 
-
-
 ### 5: Airfoil 的试用版和付费版有什么限制？
 
 5: Airfoil 的试用版和付费版有什么限制？
@@ -399,8 +377,6 @@ print(f"优化后的翼型厚度比: {optimal_thickness:.3f}")
 **A**: Airfoil 提供免费试用版，通常允许用户完整体验软件功能，但在试用期或未激活状态下，音频传输过程中会每隔一段时间（例如每 10 分钟或 20 分钟）插入一段静态噪音或语音提示，直到用户购买并输入正版许可证代码才能移除这些干扰。购买许可证通常是终身授权，并包含一定时期内的免费更新。
 
 ---
-
-
 
 ### 6: 为什么我在使用 Airfoil 时遇到了音频延迟或不同步的问题？
 
@@ -410,29 +386,11 @@ print(f"优化后的翼型厚度比: {optimal_thickness:.3f}")
 
 ---
 
-
-
 ### 7: Airfoil 能捕获来自 Spotify、Netflix 或受保护内容的音频吗？
 
 7: Airfoil 能捕获来自 Spotify、Netflix 或受保护内容的音频吗？
 
 **A**: 可以。Airfoil 的核心优势之一就是利用“虚拟音频捕获”机制，它能够捕获系统内部发出的任何声音。这意味着即便像 Spotify 这样使用 DRM 保护或禁止第三方录制的应用，Airfoil 依然可以将其音频流实时抓取并传输到其他设备，因为它本质上是在音频输出层进行拦截，而不是破解文件加密。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: 网络延迟测量工具
-
-### 问题**: 在 Airfoil 的使用场景中，音频传输的延迟是一个关键指标。请设计一个简单的命令行工具或脚本，用于测量从音频源发出信号到 Airfoil 接收端接收到信号之间的网络延迟。你需要模拟发送一个时间戳，并计算往返时间。
-
-### 提示**: 考虑使用 UDP 协议（Airfoil 常用协议）发送带有当前时间戳的数据包，接收端收到后立即返回，计算时间差。注意处理时钟同步问题。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://ciechanow.ski/airfoil](https://ciechanow.ski/airfoil)
@@ -441,7 +399,6 @@ print(f"优化后的翼型厚度比: {optimal_thickness:.3f}")
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

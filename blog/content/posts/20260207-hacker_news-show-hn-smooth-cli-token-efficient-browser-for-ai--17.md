@@ -78,9 +78,6 @@ Smooth CLI 实际上是在构建一个“受限环境”。对于开发者工具
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：Token优化器 - 压缩HTML内容
 from bs4 import BeautifulSoup
@@ -126,9 +123,6 @@ html_content = """
 print(optimize_html_tokens(html_content))
 ```
 
-
-
-
 ```python
 # 示例2：智能分块器 - 处理长文档
 def chunk_document(text: str, chunk_size: int = 1000, overlap: int = 100) -> list:
@@ -159,9 +153,6 @@ chunks = chunk_document(long_text)
 print(f"文档被分为 {len(chunks)} 个块")
 print(f"第一个块: {chunks[0][:50]}...")
 ```
-
-
-
 
 ```python
 # 示例3：动态提示词生成器
@@ -194,10 +185,8 @@ context_vars = {
 print(generate_dynamic_prompt(prompt_template, context_vars))
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：DataFlow Analytics —— 自动化竞品监控 Agent
 
@@ -213,8 +202,6 @@ print(generate_dynamic_prompt(prompt_template, context_vars))
 
 ---
 
-
-
 ### 2：DevOps 自动化平台 —— Serverless 环境下的运维脚本
 
  2：DevOps 自动化平台 —— Serverless 环境下的运维脚本
@@ -228,8 +215,6 @@ print(generate_dynamic_prompt(prompt_template, context_vars))
 **效果**: 运维 Agent 的部署包大小从 500MB 以上缩减到了几十 MB。冷启动时间从平均 8 秒降低到了 1 秒以内，极大地减少了超时错误的发生。团队成功将这套监控 Agent 迁移到了完全 Serverless 的架构上，不仅降低了服务器维护成本，还提高了系统的弹性伸缩能力。
 
 ---
-
-
 
 ### 3：开源知识库项目 —— 高性价比的网页归档与检索
 
@@ -336,7 +321,6 @@ print(generate_dynamic_prompt(prompt_template, context_vars))
 ---
 ## 常见问题
 
-
 ### 1: Smooth CLI 的主要功能是什么，它与传统的浏览器工具有何区别？
 
 1: Smooth CLI 的主要功能是什么，它与传统的浏览器工具有何区别？
@@ -344,8 +328,6 @@ print(generate_dynamic_prompt(prompt_template, context_vars))
 **A**: Smooth CLI 是一个专为 AI 智能体设计的命令行浏览器工具。它的主要目标是解决 AI 智能体在浏览网页时面临的上下文窗口限制和 Token 消耗过高的问题。与传统的浏览器自动化工具（如 Selenium 或 Puppeteer）不同，Smooth CLI 专注于“Token 高效”。它会智能地提取网页的核心内容，过滤掉广告、导航栏、脚本和 CSS 样式等对 AI 无用的噪音信息，从而显著减少输入到大语言模型的 Token 数量，降低 API 调用成本并提高处理速度。
 
 ---
-
-
 
 ### 2: 为什么 AI 智能体需要专门的浏览器，直接抓取 HTML 不行吗？
 
@@ -355,8 +337,6 @@ print(generate_dynamic_prompt(prompt_template, context_vars))
 
 ---
 
-
-
 ### 3: Smooth CLI 支持哪些操作系统和运行环境？
 
 3: Smooth CLI 支持哪些操作系统和运行环境？
@@ -364,8 +344,6 @@ print(generate_dynamic_prompt(prompt_template, context_vars))
 **A**: 作为一个 CLI（命令行界面）工具，Smooth CLI 通常设计为跨平台运行。它支持主流的操作系统，包括 Linux、macOS 和 Windows。由于它是为 AI 智能体构建底层基础设施，因此它很容易集成到基于 Python 或 Node.js 的 AI Agent 框架中（例如 LangChain 或 AutoGPT），也可以作为独立工具通过终端命令直接调用。
 
 ---
-
-
 
 ### 4: 该工具如何处理动态网页或需要 JavaScript 渲染的内容？
 
@@ -375,8 +353,6 @@ print(generate_dynamic_prompt(prompt_template, context_vars))
 
 ---
 
-
-
 ### 5: 使用 Smooth CLI 能节省多少 Token 成本？
 
 5: 使用 Smooth CLI 能节省多少 Token 成本？
@@ -385,29 +361,11 @@ print(generate_dynamic_prompt(prompt_template, context_vars))
 
 ---
 
-
-
 ### 6: 对于非程序员或普通用户，这个工具有什么用途吗？
 
 6: 对于非程序员或普通用户，这个工具有什么用途吗？
 
 **A**: 虽然 Smooth CLI 主要面向开发者和 AI 智能体开发者，但普通用户也可以利用它进行高效的网页信息提取。例如，你可以使用它快速将复杂的网页文章转换为干净的 Markdown 格式以便阅读，或者结合本地大模型（如 Llama 3）在命令行中快速总结网页内容，而无需忍受大量无关信息的干扰。它本质上是一个极其强大的“网页去广告转阅读模式”的后端工具。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: DOM 树的语义化简化
-
-### 问题**: 在传统的 Web 自动化或爬虫开发中，我们通常使用 CSS 选择器或 XPath 来定位元素。然而，对于 AI Agent 而言，直接阅读这些选择器非常困难。请设计一种数据结构或中间表示格式，能够将复杂的 HTML DOM 树转换为对 LLM 友好的简化文本流，同时保留元素的层级关系和交互属性（如 id、text、href）。
-
-### 提示**: 思考如何将嵌套的树状结构扁平化。可以参考 Accessibility Tree 的思路，或者设计一种类似简化的 Markdown 格式，只保留 AI 关心的元数据，过滤掉用于样式的 class 和 div 垃圾信息。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://docs.smooth.sh/cli/overview](https://docs.smooth.sh/cli/overview)
@@ -416,7 +374,6 @@ print(generate_dynamic_prompt(prompt_template, context_vars))
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

@@ -127,18 +127,8 @@ external_url: https://github.com/cacoos/trackhands
 ---
 ## 💻 代码示例
 
-
-
-
-
-
-
-
-
-
 ---
 ## 📚 案例研究
-
 
 ### 1：自由插画师 "小林" 的专注力重塑
 
@@ -157,8 +147,6 @@ external_url: https://github.com/cacoos/trackhands
 
 ---
 
-
-
 ### 2：远程开发团队 "CodeFlow" 的健康协作实验
 
  2：远程开发团队 "CodeFlow" 的健康协作实验
@@ -175,8 +163,6 @@ external_url: https://github.com/cacoos/trackhands
 *   **📊 产出质量**：因为避免了过度焦虑导致的盲目操作，代码提交的出错率在一个月内下降了约 15%。
 
 ---
-
-
 
 ### 3：某金融交易员 "Tom" 的风险控制辅助
 
@@ -290,7 +276,6 @@ external_url: https://github.com/cacoos/trackhands
 ---
 ## ❓ 常见问题
 
-
 ### 1: 这款软件是如何检测我在咬指甲的？需要连接摄像头吗？
 
 1: 这款软件是如何检测我在咬指甲的？需要连接摄像头吗？
@@ -300,8 +285,6 @@ external_url: https://github.com/cacoos/trackhands
 为了保护隐私，通常这类应用会在本地进行处理，视频流不会上传到云端。当然，在检测不到您或者您不使用该功能时，您可以在软件设置中暂时关闭摄像头权限。
 
 ---
-
-
 
 ### 2: 一旦检测到我在咬指甲，软件具体会做什么来“阻止”我？
 
@@ -318,8 +301,6 @@ external_url: https://github.com/cacoos/trackhands
 
 ---
 
-
-
 ### 3: 如果我只是用手托着下巴、打哈欠或者吃东西，会被误判吗？
 
 3: 如果我只是用手托着下巴、打哈欠或者吃东西，会被误判吗？
@@ -333,8 +314,6 @@ external_url: https://github.com/cacoos/trackhands
 尽管如此，误判可能仍无法完全避免。大多数此类软件都会提供“白名单模式”或暂停功能，允许您在吃饭或思考时暂时关闭监控。
 
 ---
-
-
 
 ### 4: 如果我不小心被锁定了，或者软件出故障了一直黑屏，我该怎么办？
 
@@ -350,8 +329,6 @@ external_url: https://github.com/cacoos/trackhands
 
 ---
 
-
-
 ### 5: 这款软件支持 Windows、macOS 和 Linux 吗？
 
 5: 这款软件支持 Windows、macOS 和 Linux 吗？
@@ -362,8 +339,6 @@ external_url: https://github.com/cacoos/trackhands
 
 ---
 
-
-
 ### 6: 既然是监控摄像头，我的隐私安全有保障吗？
 
 6: 既然是监控摄像头，我的隐私安全有保障吗？
@@ -373,22 +348,6 @@ external_url: https://github.com/cacoos/trackhands
 2.  **无录制功能**：软件只读取摄像头的实时数据流进行帧分析，而不会保存视频或截图到硬盘。
 
 如果您非常在意隐私，建议在下载后查看其开源代码，或者在网络防火墙中禁止该软件联网，以确保它只能在离线状态下运行。
-
----
-## 🎯 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**:
-
-### 实现一个基础的状态机。当检测到“咬指甲”信号（例如模拟的键盘快捷键或摄像头像素变化）时，应用程序应立即进入“冷却期”，并在屏幕中央显示一个全屏遮罩，遮挡所有工作内容。
-
-### 提示**:
-
----
 ## 🔗 引用
 
 - **原文链接**: [https://github.com/cacoos/trackhands](https://github.com/cacoos/trackhands)

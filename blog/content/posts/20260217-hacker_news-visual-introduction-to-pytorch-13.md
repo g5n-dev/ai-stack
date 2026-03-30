@@ -87,9 +87,6 @@ scenarios: ["Web应用开发"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：使用PyTorch实现线性回归
 import torch
@@ -140,9 +137,6 @@ def linear_regression_example():
 
 linear_regression_example()
 ```
-
-
-
 
 ```python
 # 示例2：使用PyTorch构建简单的图像分类器
@@ -225,10 +219,8 @@ def image_classifier_example():
 image_classifier_example()
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：特斯拉自动驾驶系统
 
@@ -244,8 +236,6 @@ image_classifier_example()
 
 ---
 
-
-
 ### 2：OpenAI的GPT-3语言模型
 
  2：OpenAI的GPT-3语言模型
@@ -259,8 +249,6 @@ image_classifier_example()
 **效果**: PyTorch使OpenAI能够成功训练出GPT-3模型，该模型在自然语言处理任务中表现出卓越的性能，广泛应用于文本生成、翻译和问答系统等领域。
 
 ---
-
-
 
 ### 3：Facebook的深度学习推荐系统
 
@@ -383,7 +371,6 @@ image_classifier_example()
 ---
 ## 常见问题
 
-
 ### 1: PyTorch 与 TensorFlow 等其他深度学习框架相比有哪些核心优势？
 
 1: PyTorch 与 TensorFlow 等其他深度学习框架相比有哪些核心优势？
@@ -397,8 +384,6 @@ image_classifier_example()
 
 ---
 
-
-
 ### 2: 初学者应该如何理解 PyTorch 中的“张量”？
 
 2: 初学者应该如何理解 PyTorch 中的“张量”？
@@ -410,8 +395,6 @@ image_classifier_example()
 3.  **自动求导**：张量还内置了自动求导机制。如果你将一个张量的 `requires_grad` 属性设置为 `True`，PyTorch 就会自动跟踪对该张量的所有运算，并在反向传播时自动计算梯度。
 
 ---
-
-
 
 ### 3: 什么是 Autograd（自动微分），它在 PyTorch 中是如何工作的？
 
@@ -427,8 +410,6 @@ image_classifier_example()
 
 ---
 
-
-
 ### 4: 学习 PyTorch 之前需要掌握哪些基础知识？
 
 4: 学习 PyTorch 之前需要掌握哪些基础知识？
@@ -442,8 +423,6 @@ image_classifier_example()
 
 ---
 
-
-
 ### 5: PyTorch 中的 `nn.Module` 是什么，为什么它很重要？
 
 5: PyTorch 中的 `nn.Module` 是什么，为什么它很重要？
@@ -454,22 +433,6 @@ image_classifier_example()
 2.  **层的管理**：任何你定义的层（如卷积层 `nn.Conv2d`、全连接层 `nn.Linear`）都是 `nn.Module` 的子类。
 3.  **嵌套结构**：你可以将一个模块嵌套在另一个模块中。例如，一个神经网络模型是一个大模块，它包含多个层（小模块）。
 4.  **核心方法**：使用 `nn.Module` 时，你通常需要重写 `__init__` 方法（定义层的结构）和 `forward` 方法（定义数据如何在层之间流动）。这种
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: 张量基础操作
-
-### 问题**: 在 PyTorch 中创建一个形状为 (3, 4) 的随机张量，并将其所有元素乘以 10。然后，找出该张量中大于 5 的元素个数。
-
-### 提示**: 使用 `torch.randn` 或 `torch.rand` 生成张量，利用布尔索引或比较运算符统计满足条件的元素数量。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://0byte.io/articles/pytorch_introduction.html](https://0byte.io/articles/pytorch_introduction.html)
@@ -478,7 +441,6 @@ image_classifier_example()
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

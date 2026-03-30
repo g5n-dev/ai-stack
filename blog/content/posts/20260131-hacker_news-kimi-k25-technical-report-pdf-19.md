@@ -72,9 +72,6 @@ Kimi k1.5 技术报告（注：通常指代 Kimi k1.5 或其对应的长上下�
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：模拟长上下文分块检索
 def retrieve_relevant_chunks(query, chunks, top_k=3):
@@ -104,9 +101,6 @@ text_chunks = [
 print(retrieve_relevant_chunks("Kimi的上下文能力", text_chunks))
 ```
 
-
-
-
 ```python
 # 示例2：模拟MoE模型的路由决策
 class MoERouter:
@@ -129,9 +123,6 @@ router = MoERouter()
 print(router.route("如何解这个方程？"))
 ```
 
-
-
-
 ```python
 # 示例3：模拟上下文压缩算法
 def compress_context(original_text, compression_ratio=0.5):
@@ -149,10 +140,8 @@ long_text = "Kimi是月之暗面推出的AI助手。它支持超长上下文处�
 print(compress_context(long_text))
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：Moonshot AI 自主研发的数学推理强化
 
@@ -167,8 +156,6 @@ print(compress_context(long_text))
 **效果**: 据技术报告披露，Kimi k2.5 的数学推理能力实现了对 GPT-4o 和 Claude 3.5 Sonnet 的超越。在 MATH（高中数学竞赛）基准测试中，模型得分大幅提升，能够处理更复杂的科学计算和逻辑推理任务，显著增强了用户在学术研究和技术开发场景下的使用体验。
 
 ---
-
-
 
 ### 2：长上下文场景下的智能体任务处理
 
@@ -276,7 +263,6 @@ print(compress_context(long_text))
 ---
 ## 常见问题
 
-
 ### 1: Kimi k1.5 与 Kimi k2.5 在模型架构和推理能力上有什么主要区别？
 
 1: Kimi k1.5 与 Kimi k2.5 在模型架构和推理能力上有什么主要区别？
@@ -284,8 +270,6 @@ print(compress_context(long_text))
 **A**: 根据 Moonshot AI 发布的技术报告，Kimi k2.5 是对前代 Kimi k1.5 模型的全面升级。虽然两者都基于 Transformer 架构并采用了 MoE（混合专家）架构，但 k2.5 在推理能力上有显著提升。k2.5 专注于强化长上下文处理和复杂的数学/代码推理任务。报告指出，k2.5 在长上下文“大海捞针”测试中保持了极高的准确率，并且在数学和代码基准测试（如 MATH、LiveCodeBench）中的表现逼近甚至超过了 OpenAI o1 等前沿模型。此外，k2.5 引入了更优化的对齐算法，使得模型在遵循复杂指令和输出格式时更加稳定。
 
 ---
-
-
 
 ### 2: Kimi k2.5 的上下文窗口支持多长？在长文本处理上有哪些技术亮点？
 
@@ -295,8 +279,6 @@ print(compress_context(long_text))
 
 ---
 
-
-
 ### 3: Kimi k2.5 是如何实现“类 o1”的推理能力的？是否使用了强化学习？
 
 3: Kimi k2.5 是如何实现“类 o1”的推理能力的？是否使用了强化学习？
@@ -304,8 +286,6 @@ print(compress_context(long_text))
 **A**: 是的，Kimi k2.5 的核心提升之一在于其引入了类似于 OpenAI o1 的“慢思考”或“系统2”推理能力。技术报告显示，Moonshot AI 在 k2.5 的训练流程中大规模引入了强化学习（RL），特别是基于规则的奖励和基于模型的奖励相结合的策略。通过这种强化学习对齐（RLAIF/RLHF），模型学会了在回答复杂问题前进行更长的内部思维链思考，自我反思并修正错误。这种机制使得模型在面对数学证明、代码调试和逻辑陷阱时，能通过“思考更多”来显著提高最终答案的准确性。
 
 ---
-
-
 
 ### 4: 在数学和代码能力方面，Kimi k2.5 的具体表现数据如何？
 
@@ -315,8 +295,6 @@ print(compress_context(long_text))
 
 ---
 
-
-
 ### 5: Kimi k2.5 的 MoE（混合专家）架构有什么特点？参数量是多少？
 
 5: Kimi k2.5 的 MoE（混合专家）架构有什么特点？参数量是多少？
@@ -324,8 +302,6 @@ print(compress_context(long_text))
 **A**: Kimi k2.5 采用了稀疏混合专家架构。虽然报告未公开确切的参数总细节，但通过分析其性能和架构描述，k2.5 拥有极其庞大的参数总量（可能达到万亿级别），但在推理时只激活其中一部分参数。这种设计使得模型在保持极高智能水平的同时，推理成本和速度得到了优化。k2.5 的 MoE 架构针对长上下文和多语言场景进行了专门的专家路由优化，确保在处理不同领域（如文学、编程、数学）问题时能调用最合适的专家子网络。
 
 ---
-
-
 
 ### 6: Kimi k2.5 目前是否已经开源或开放 API 使用？
 
@@ -335,29 +311,11 @@ print(compress_context(long_text))
 
 ---
 
-
-
 ### 7: 社区和 Hacker News 对 Kimi k2.5 的评价主要集中在哪些方面？
 
 7: 社区和 Hacker News 对 Kimi k2.5 的评价主要集中在哪些方面？
 
 **A**: 在 Hacker News 的讨论区，用户对 Kimi k2.5 的评价主要集中在以下几点：首先是对其长文本能力的认可，认为这是目前市面上最实用的功能之一；其次是对其“类 o1”推理能力的讨论，许多开发者
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: Kimi k2.5 在长上下文处理能力上进行了优化。请分析在处理超长文本（例如 1M+ tokens）时，仅仅增加上下文窗口大小会带来哪些显存的边际效应问题？在工程实现上，通常采用哪种技术来降低推理时的显存占用？
-
-### 提示**: 关注 Transformer 架构中 KV Cache 的空间复杂度与序列长度的关系，思考如何不存储完整的注意力历史。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://github.com/MoonshotAI/Kimi-K2.5/blob/master/tech_report.pdf](https://github.com/MoonshotAI/Kimi-K2.5/blob/master/tech_report.pdf)
@@ -366,7 +324,6 @@ print(compress_context(long_text))
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

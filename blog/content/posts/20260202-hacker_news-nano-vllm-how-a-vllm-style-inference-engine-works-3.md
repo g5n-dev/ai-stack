@@ -78,9 +78,6 @@ scenarios: ["大语言模型"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：基础KV Cache实现
 class KVCache:
@@ -106,9 +103,6 @@ kv_cache = KVCache()
 kv_cache.update("user_1", {"k": "hello", "v": "world"})
 print(kv_cache.get("user_1"))  # 输出: {'k': 'hello', 'v': 'world'}
 ```
-
-
-
 
 ```python
 # 示例2：连续批处理调度器
@@ -138,9 +132,6 @@ scheduler.add_request("req1")
 scheduler.add_request("req2")
 print(scheduler.process_batch())  # 输出: ['processed_req1', 'processed_req2']
 ```
-
-
-
 
 ```python
 # 示例3：PagedAttention内存管理
@@ -172,10 +163,8 @@ memory.free_sequence("seq1", [block1, block2])
 print("Memory freed")
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：字节跳动内部推荐系统推理优化
 
@@ -196,8 +185,6 @@ print("Memory freed")
 - **成本降低**：由于单卡处理能力大幅提升，达到同样推理性能所需的服务器数量显著减少，大幅降低了基础设施的总体拥有成本（TCO）。
 
 ---
-
-
 
 ### 2：知名开源大模型平台 LMSYS Chatbot Arena
 
@@ -319,7 +306,6 @@ PagedAttention 是 vLLM 及 Nano-vLLM 的核心创新，它将 KV Cache 分块�
 ---
 ## 常见问题
 
-
 ### 1: 什么是 vLLM，它与传统的 LLM 推理引擎（如 HuggingFace Transformers）有何核心区别？
 
 1: 什么是 vLLM，它与传统的 LLM 推理引擎（如 HuggingFace Transformers）有何核心区别？
@@ -331,8 +317,6 @@ PagedAttention 是 vLLM 及 Nano-vLLM 的核心创新，它将 KV Cache 分块�
 vLLM 引入了一种名为 **PagedAttention** 的技术，借鉴了操作系统中分页的概念。它将 KV 缓存（Key-Value Cache，存储模型上下文信息的内存）分成一个个固定的“块”。这种机制允许 vLLM 在物理显存不足时，更灵活地在 GPU 和 CPU 之间交换数据，并且极大地减少了内存碎片。这使得 vLLM 在处理大批量请求和长上下文时，吞吐量通常是传统方法的数倍（官方数据称可达 24 倍）。
 
 ---
-
-
 
 ### 2: 为什么 KV Cache 会成为 LLM 推理的性能瓶颈？
 
@@ -346,8 +330,6 @@ vLLM 引入了一种名为 **PagedAttention** 的技术，借鉴了操作系统�
 
 ---
 
-
-
 ### 3: 文章标题提到的 "Nano-vLLM" 指的是什么？它是 vLLM 的精简版吗？
 
 3: 文章标题提到的 "Nano-vLLM" 指的是什么？它是 vLLM 的精简版吗？
@@ -359,8 +341,6 @@ vLLM 引入了一种名为 **PagedAttention** 的技术，借鉴了操作系统�
 这种 "Nano" 实现的目的是为了让开发者能够通过阅读较少的代码，直观地理解 vLLM 的核心工作原理，而不需要陷入庞大的工业级代码库中。它通常用于学术讲解或技术博客的源码分析环节。
 
 ---
-
-
 
 ### 4: vLLM 的 PagedAttention 机制具体是如何工作的？
 
@@ -377,8 +357,6 @@ vLLM 引入了一种名为 **PagedAttention** 的技术，借鉴了操作系统�
 
 ---
 
-
-
 ### 5: 使用 vLLM 进行推理时，对硬件有什么特殊要求吗？
 
 5: 使用 vLLM 进行推理时，对硬件有什么特殊要求吗？
@@ -388,22 +366,6 @@ vLLM 引入了一种名为 **PagedAttention** 的技术，借鉴了操作系统�
 1.  **显存容量**：由于 vLLM 优化了显存管理，它允许你将显存利用率推到接近 100%。这意味着如果你的 GPU 显存较小（如消费级的 16GB 或 24GB 显卡），vLLM 相比传统方案能让你跑更大的模型或处理更长的上下文。
 2.  **GPU 架构**：vLLM 高度依赖 CUDA 核心，因此主要支持 NVIDIA 显卡。它利用了 CUDA Graph 等技术来减少内核启动的开销。
 3.  **兼容性**：虽然 vLLM 主要是为了 GPU 设计，但它也支持在某些场景下结合 CPU 使用（Offload），不过性能会大幅下降。为了获得 vLL
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 在传统的 LLM 推理服务中，当并发用户增加时，显存占用往往不成比例地增长，导致吞吐量下降。请解释 vLLM 引入的 PagedAttention 技术核心概念是什么，以及它是如何借鉴操作系统的虚拟内存管理思想来解决显存碎片化问题的？
-
-### 提示**: 考虑 KV Cache 的管理方式，思考将连续的显存块切分为固定大小的块所带来的灵活性，以及这种机制如何允许系统在显存不足时进行更高效的调度。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://neutree.ai/blog/nano-vllm-part-1](https://neutree.ai/blog/nano-vllm-part-1)
@@ -412,7 +374,6 @@ vLLM 引入了一种名为 **PagedAttention** 的技术，借鉴了操作系统�
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

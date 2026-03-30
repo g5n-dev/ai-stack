@@ -70,9 +70,6 @@ scenarios: ["AI/ML项目", "大语言模型"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：使用AI辅助生成单元测试
 def calculate_discount(price, discount_rate):
@@ -102,9 +99,6 @@ def test_calculate_discount():
 test_calculate_discount()
 print("所有测试通过！")
 ```
-
-
-
 
 ```python
 # 示例2：使用AI优化代码性能
@@ -142,9 +136,6 @@ find_duplicates_fast(test_data)
 print(f"快版本耗时: {time.time() - start:.4f}秒")
 ```
 
-
-
-
 ```python
 # 示例3：使用AI生成文档字符串
 def calculate_compound_interest(principal, rate, time, n=1):
@@ -173,10 +164,8 @@ print(f"年复利: {calculate_compound_interest(1000, 0.05, 10):.2f}")
 print(f"月复利: {calculate_compound_interest(1000, 0.05, 10, 12):.2f}")
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某中型金融科技公司的后端重构项目
 
@@ -195,8 +184,6 @@ print(f"月复利: {calculate_compound_interest(1000, 0.05, 10, 12):.2f}")
 
 ---
 
-
-
 ### 2：某 SaaS 初创公司的测试覆盖计划
 
  2：某 SaaS 初创公司的测试覆盖计划
@@ -213,8 +200,6 @@ print(f"月复利: {calculate_compound_interest(1000, 0.05, 10, 12):.2f}")
 - **开发体验**: 开发者从重复的编写测试样板代码中解放出来，能够将更多精力投入到业务功能的创新中，团队士气得到提升。
 
 ---
-
-
 
 ### 3：某全球物流企业的遗留系统维护
 
@@ -311,7 +296,6 @@ print(f"月复利: {calculate_compound_interest(1000, 0.05, 10, 12):.2f}")
 2. 对比分析：要求 AI 对比不同技术选型的优劣（例如“使用 Redis vs Memcached 做缓存”）。
 3. 学习模式：利用 AI 解释复杂的正则表达式或晦涩的语法糖，将其转化为学习机会。
 
-
 ---
 ## 学习要点
 
@@ -326,7 +310,6 @@ print(f"月复利: {calculate_compound_interest(1000, 0.05, 10, 12):.2f}")
 ---
 ## 常见问题
 
-
 ### 1: 使用 AI 编写代码是否会导致开发者自身技能退化？
 
 1: 使用 AI 编写代码是否会导致开发者自身技能退化？
@@ -334,8 +317,6 @@ print(f"月复利: {calculate_compound_interest(1000, 0.05, 10, 12):.2f}")
 **A**: 这是一个非常普遍的担忧。目前的共识是，AI 更像是一个“副驾驶”而非“替代者”。如果开发者只是盲目地复制粘贴 AI 生成的代码而不去理解其逻辑，那么技能确实可能会退化。然而，如果将其用作**学习工具**和**效率放大器**，效果则截然不同。有效的做法是：利用 AI 来生成样板代码、探索不熟悉的 API 或寻找算法思路，然后由开发者亲自进行 Code Review（代码审查）、调试和重构。通过这种方式，开发者可以将精力从繁琐的语法记忆转移到更高层次的系统架构和业务逻辑设计上，从而实际上提升技术能力。
 
 ---
-
-
 
 ### 2: AI 生成的代码往往包含安全漏洞或 Bug，如何确保代码质量？
 
@@ -349,8 +330,6 @@ print(f"月复利: {calculate_compound_interest(1000, 0.05, 10, 12):.2f}")
 
 ---
 
-
-
 ### 3: 如何编写高质量的 Prompt 以获得可用的代码？
 
 3: 如何编写高质量的 Prompt 以获得可用的代码？
@@ -363,8 +342,6 @@ print(f"月复利: {calculate_compound_interest(1000, 0.05, 10, 12):.2f}")
 
 ---
 
-
-
 ### 4: AI 生成的代码往往缺乏可读性，如何解决这一问题？
 
 4: AI 生成的代码往往缺乏可读性，如何解决这一问题？
@@ -375,8 +352,6 @@ print(f"月复利: {calculate_compound_interest(1000, 0.05, 10, 12):.2f}")
 3.  **分解任务**：不要让 AI 一次性生成整个大模块。将其拆分为小函数或小步骤，逐步生成并整合，这样每一段代码的逻辑都更清晰。
 
 ---
-
-
 
 ### 5: 企业使用 AI 编程时，如何处理代码隐私和数据泄露风险？
 
@@ -389,8 +364,6 @@ print(f"月复利: {calculate_compound_interest(1000, 0.05, 10, 12):.2f}")
 
 ---
 
-
-
 ### 6: AI 编程工具（如 Copilot, ChatGPT, Cursor）应该如何选择？
 
 6: AI 编程工具（如 Copilot, ChatGPT, Cursor）应该如何选择？
@@ -400,22 +373,6 @@ print(f"月复利: {calculate_compound_interest(1000, 0.05, 10, 12):.2f}")
 2.  **ChatGPT / Claude**：适合处理复杂的逻辑解释、算法设计、生成测试数据或进行大规模的代码重构。它们更适合对话式的开发，而非实时的编码。
 3.  **Cursor**：这是一个集成了 AI 能力的代码编辑器，它允许 AI 直接修改整个文件或跨文件引用，非常适合快速理解新项目或进行大规模的代码迁移。
 建议开发者结合使用：在 IDE 中使用 Copilot 保持编码流，遇到难题时使用 ChatGPT/Claude 深入探讨。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: 代码性能优化
-
-### 问题**: 假设你让 AI 生成一个函数来计算斐波那契数列的第 N 项。AI 返回了一个使用递归的解法。虽然代码是正确的，但在计算 N=50 时运行极慢。请通过 Prompt Engineering（提示词工程），在不修改代码逻辑的前提下，引导 AI 重写出性能更优的代码版本。
-
-### 提示**: 思考如何在提示词中明确指定算法的时间复杂度要求，或者要求 AI 使用特定的算法策略（如记忆化或迭代）来替代递归。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://heidenstedt.org/posts/2026/how-to-effectively-write-quality-code-with-ai](https://heidenstedt.org/posts/2026/how-to-effectively-write-quality-code-with-ai)
@@ -424,7 +381,6 @@ print(f"月复利: {calculate_compound_interest(1000, 0.05, 10, 12):.2f}")
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

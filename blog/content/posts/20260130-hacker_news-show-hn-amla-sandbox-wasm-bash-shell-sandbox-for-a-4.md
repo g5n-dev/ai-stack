@@ -65,9 +65,6 @@ Amla Sandbox 通过将 WebAssembly (WASM) 技术与 Bash 环境深度集成，�
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：安全执行AI生成的命令
 def safe_execute_command(command: str):
@@ -105,9 +102,6 @@ print(safe_execute_command("ls -la"))  # 安全执行
 print(safe_execute_command("rm -rf /"))  # 会被阻止
 ```
 
-
-
-
 ```python
 # 示例2：限制资源使用
 def run_with_limits(code: str):
@@ -140,9 +134,6 @@ def run_with_limits(code: str):
 print(run_with_limits("print('Hello from sandbox')"))  # 正常执行
 print(run_with_limits("x = 'a' * 1024 * 1024 * 1024"))  # 会超出内存限制
 ```
-
-
-
 
 ```python
 # 示例3：文件系统隔离
@@ -179,10 +170,8 @@ print(isolated_file_operation("test.txt", "Hello from sandbox"))  # 安全操作
 print(isolated_file_operation("/etc/passwd", "hack"))  # 无法访问系统文件
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某 DevSecOps 自动化平台的安全执行环境
 
@@ -203,8 +192,6 @@ print(isolated_file_operation("/etc/passwd", "hack"))  # 无法访问系统文�
 - 用户可以在浏览器中实时查看 AI 生成脚本的执行过程和输出，极大地提升了平台的安全透明度和用户信任感。
 
 ---
-
-
 
 ### 2：在线编程教育平台的交互式 AI 导师
 
@@ -317,7 +304,6 @@ print(isolated_file_operation("/etc/passwd", "hack"))  # 无法访问系统文�
 ---
 ## 常见问题
 
-
 ### 1: Amla Sandbox 的主要用途是什么？
 
 1: Amla Sandbox 的主要用途是什么？
@@ -325,8 +311,6 @@ print(isolated_file_operation("/etc/passwd", "hack"))  # 无法访问系统文�
 **A**: Amla Sandbox 是一个专为 AI 智能体设计的沙箱环境。它的核心功能是在浏览器或服务器端提供一个基于 WebAssembly (WASM) 的隔离式 Bash Shell。这使得 AI 智能体能够安全地执行 Shell 命令、运行脚本或处理文件系统操作，而不会对宿主机器造成安全风险。它主要用于需要 AI 具备执行代码或系统操作能力的场景，例如自动化任务、数据分析或动态代码执行。
 
 ---
-
-
 
 ### 2: 为什么选择 WebAssembly (WASM) 而不是传统的 Docker 容器或虚拟机？
 
@@ -339,8 +323,6 @@ print(isolated_file_operation("/etc/passwd", "hack"))  # 无法访问系统文�
 
 ---
 
-
-
 ### 3: Amla Sandbox 如何确保 AI 智能体执行命令时的安全性？
 
 3: Amla Sandbox 如何确保 AI 智能体执行命令时的安全性？
@@ -348,8 +330,6 @@ print(isolated_file_operation("/etc/passwd", "hack"))  # 无法访问系统文�
 **A**: 安全性是 Amla Sandbox 的核心设计考量。首先，它通过 WebAssembly 的能力机制限制了系统访问权限，例如默认情况下禁止网络访问或直接读写宿主机敏感文件。其次，它通常在一个隔离的虚拟文件系统中运行，这意味着即使智能体尝试删除文件或修改系统设置，也仅限于沙箱内部的临时环境，不会影响实际的服务器或用户计算机。
 
 ---
-
-
 
 ### 4: 这个沙箱支持哪些常见的 Linux 工具和命令？
 
@@ -359,8 +339,6 @@ print(isolated_file_operation("/etc/passwd", "hack"))  # 无法访问系统文�
 
 ---
 
-
-
 ### 5: 我可以将 Amla Sandbox 集成到我自己的 AI 应用程序中吗？
 
 5: 我可以将 Amla Sandbox 集成到我自己的 AI 应用程序中吗？
@@ -369,29 +347,11 @@ print(isolated_file_operation("/etc/passwd", "hack"))  # 无法访问系统文�
 
 ---
 
-
-
 ### 6: 使用 Amla Sandbox 会遇到哪些性能限制？
 
 6: 使用 Amla Sandbox 会遇到哪些性能限制？
 
 **A**: 虽然 WASM 的启动速度很快，但在处理计算密集型任务时，其性能可能略低于原生代码。此外，由于沙箱的隔离特性，文件系统 I/O 操作可能比直接在宿主机上操作要慢。另一个潜在的限制是内存，WASM 环境通常有内存上限的配置，如果 AI 智能体尝试处理超大文件，可能会受到内存限制的影响。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 在 Amla Sandbox 环境中，编写一个简单的 Bash 脚本，该脚本接收一个文件路径作为参数，并返回该文件的大小（以字节为单位）以及行数。要求脚本必须处理文件不存在的情况，并返回明确的错误信息。
-
-### 提示**: 考虑使用 `wc` 命令获取文件信息，并利用 `if [ -f "$file" ]` 语法进行条件判断。注意在 WASM 环境中，文件系统通常是虚拟的，确保测试前已创建了相应的测试文件。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://github.com/amlalabs/amla-sandbox](https://github.com/amlalabs/amla-sandbox)
@@ -400,7 +360,6 @@ print(isolated_file_operation("/etc/passwd", "hack"))  # 无法访问系统文�
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

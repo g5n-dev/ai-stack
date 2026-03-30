@@ -34,8 +34,6 @@ Relevant source files
 
   * [README.md](https://github.com/lss233/kirara-ai/blob/8295a5de/README.md)
 
-
-
 Kirara AI is a multi-platform chatbot framework that integrates large language models (LLMs) with instant messaging platforms through a flexible workflow-based automation system. The system provides a unified interface for deploying AI-powered conversational agents across platforms like Telegram, QQ, Discord, and WeChat, while supporting multiple LLM providers including OpenAI, Claude, Gemini, and local models.
 
 This document covers the high-level architecture and core components of the Kirara AI system. For detailed information about specific subsystems, see [Architecture](/lss233/kirara-ai/2-architecture), [Core Components](/lss233/kirara-ai/3-core-components), [Plugin System](/lss233/kirara-ai/4-plugin-system), and [Deployment](/lss233/kirara-ai/5-deployment).
@@ -51,19 +49,15 @@ Kirara AI serves as a comprehensive chatbot framework that abstracts the complex
   * Maintain conversational context and memory across sessions
   * Administer the entire system through a web-based management interface
 
-
-
 ## High-Level Architecture
 
 The Kirara AI system follows a layered architecture with clear separation between platform adapters, core orchestration logic, and AI model integrations.
 
 ### Core System Components
 
-
 Sources: [README.md1-267](https://github.com/lss233/kirara-ai/blob/8295a5de/README.md#L1-L267) diagrams provided in context
 
 ### Message Processing Flow
-
 
 Sources: [README.md1-267](https://github.com/lss233/kirara-ai/blob/8295a5de/README.md#L1-L267) system architecture analysis
 
@@ -93,8 +87,6 @@ The system integrates with multiple AI model providers through a unified adapter
   * **Local Models** \- Ollama, custom deployments
   * **Chinese Providers** \- DeepSeek, Qwen, Minimax, Kimi, Doubao
 
-
-
 Sources: [README.md84](https://github.com/lss233/kirara-ai/blob/8295a5de/README.md#L84-L84)
 
 ### Workflow Automation
@@ -106,8 +98,6 @@ The workflow system enables complex automation scenarios through:
   * **Conditional Logic** \- Rule-based message routing and processing
   * **Cross-platform Messaging** \- Send messages across different platforms
   * **Media Processing** \- Handle images, audio, and documents
-
-
 
 Sources: [README.md92](https://github.com/lss233/kirara-ai/blob/8295a5de/README.md#L92-L92) system architecture analysis
 
@@ -121,8 +111,6 @@ The system provides comprehensive management capabilities:
   * **Workflow Designer** \- Visual workflow creation and editing
   * **System Monitoring** \- Real-time system status and logging
 
-
-
 Sources: [README.md58-75](https://github.com/lss233/kirara-ai/blob/8295a5de/README.md#L58-L75) [README.md93](https://github.com/lss233/kirara-ai/blob/8295a5de/README.md#L93-L93)
 
 ## System Components Overview
@@ -135,8 +123,6 @@ The Kirara AI architecture consists of several key subsystems:
   * **[Media Management](/lss233/kirara-ai/3.4-media-management)** \- File storage, metadata, and cleanup systems
   * **[Workflow System](/lss233/kirara-ai/3.5-workflow-system)** \- Declarative automation engine with block-based processing
   * **[Memory System](/lss233/kirara-ai/3.6-memory-system)** \- Conversational context and persistence management
-
-
 
 Each component is implemented as part of the plugin architecture, allowing for modular deployment and extensibility. The [Plugin System](/lss233/kirara-ai/4-plugin-system) documentation covers the registration and dependency injection mechanisms that enable this modularity.
 
@@ -408,26 +394,8 @@ Kirara AI 的核心哲学是 **"Convention over Configuration" (约定优于配�
 ---
 ## 💻 实用代码示例
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 ## 📚 真实案例研究
-
 
 ### 1：AIGC 社区内容审核平台 🛡️
 
@@ -449,8 +417,6 @@ Kirara AI 的核心哲学是 **"Convention over Configuration" (约定优于配�
 
 ---
 
-
-
 ### 2：独立游戏工作室自动化测试 🎮
 
  2：独立游戏工作室自动化测试 🎮
@@ -470,8 +436,6 @@ Kirara AI 的核心哲学是 **"Convention over Configuration" (约定优于配�
 - 正式版上线后剧情相关 bug 减少 80%  
 
 ---
-
-
 
 ### 3：跨境电商智能商品描述生成 🌍
 
@@ -753,7 +717,6 @@ GPU利用率提升40%，服务稳定性提升90%
 - 🛠️ **技术栈优势**：采用 **TypeScript** 编写，具有良好的类型安全性和代码可维护性，适合开发者进行二次开发或部署。
 - 🚀 **部署便利性**：项目提供了开箱即用的解决方案，用户只需配置 API Key 和相关服务凭证即可快速搭建属于自己的 AI 聊天机器人。
 
-
 ---
 ## 🗺️ 循序渐进的学习路径
 
@@ -848,7 +811,6 @@ GPU利用率提升40%，服务稳定性提升90%
 ---
 ## ❓ 常见问题解答
 
-
 ### 1: lss233 的 kirara-ai 项目主要是什么？
 
 1: lss233 的 kirara-ai 项目主要是什么？
@@ -856,8 +818,6 @@ GPU利用率提升40%，服务稳定性提升90%
 **A**: `kirara-ai`（通常被称为 Kirara）是由开发者 lss233 在 GitHub 上发布的一个开源项目。根据目前的趋势，它通常被定位为一个**高性能、跨平台的 AI 模型推理框架**或**前端/客户端工具**。
 
 该项目的主要目的是为了让用户能更方便地在本地或云端运行各种大语言模型（LLM）或其他 AI 模型。它可能集成了对多种推理后端（如 llama.cpp, gguf, vLLM 等）的支持，并提供了一个美观的 Web 界面或桌面客户端，允许用户像聊天一样与 AI 交互，而无需编写复杂的代码。
-
-
 
 ### 2: 如何安装和运行 kirara-ai？
 
@@ -873,8 +833,6 @@ GPU利用率提升40%，服务稳定性提升90%
     *   运行启动命令（如 `npm run dev` 或 `python main.py`）。
 3.  **客户端下载**：如果项目提供了编译好的可执行文件，你可以直接从项目的 Releases 页面下载对应系统的版本进行安装。
 
-
-
 ### 3: 这个项目支持哪些 AI 模型？
 
 3: 这个项目支持哪些 AI 模型？
@@ -887,8 +845,6 @@ GPU利用率提升40%，服务稳定性提升90%
 
 *建议查看项目的官方文档 `README.md` 以获取最具体的兼容性列表。*
 
-
-
 ### 4: 遇到“模型加载失败”或“显存不足”怎么办？
 
 4: 遇到“模型加载失败”或“显存不足”怎么办？
@@ -900,8 +856,6 @@ GPU利用率提升40%，服务稳定性提升90%
 3.  **释放显存**：确保没有其他占用 GPU 的程序在运行。
 4.  **检查 offload 设置**：确认 `n_gpu_layers` 设置正确，让模型尽可能多的层运行在 GPU 上，而不是 CPU 上。
 
-
-
 ### 5: 项目是开源免费的吗？可以用于商业用途吗？
 
 5: 项目是开源免费的吗？可以用于商业用途吗？
@@ -911,8 +865,6 @@ GPU利用率提升40%，服务稳定性提升90%
 关于商业用途，你需要查看项目根目录下的 **`LICENSE`** 文件。
 *   如果是 **MIT** 或 **Apache 2.0** 协议，通常允许商业使用，只需保留版权声明。
 *   请务必遵守相应的开源协议条款。
-
-
 
 ### 6: 如何参与贡献或报告 Bug？
 
@@ -924,8 +876,6 @@ GPU利用率提升40%，服务稳定性提升90%
 2.  **功能建议**：同样在 Issues 页面，提出你的新功能构想。
 3.  **提交代码**：如果你懂编程，可以 Fork 该项目，修改代码后提交 **Pull Request (PR)**，作者审核通过后就会合并进主分支。
 
-
-
 ### 7: 它和 Ollama 或 LM Studio 有什么区别？
 
 7: 它和 Ollama 或 LM Studio 有什么区别？
@@ -933,22 +883,6 @@ GPU利用率提升40%，服务稳定性提升90%
 **A**: 虽然它们都是 AI 运行工具，但侧重点可能不同：
 
 *   **Ollama**：
-
----
-## 🎯 挑战与思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**: 假设你需要为 `kirara-ai` 项目编写一个简单的欢迎脚本。请编写一段 Python 代码，实现从 `config.json` 文件中读取机器人的名字，并打印出 `"{机器人名字} 已上线，准备就绪！"`。如果文件不存在，则捕获异常并打印 `"配置文件丢失，请检查 config.json"`。
-
-### 提示**:
-
-### 尝试使用 Python 内置的 `json` 库和 `open()` 函数。
-
----
 ## 💡 实践建议
 
 基于 `kirara-ai` 的功能特性（多平台接入、多模态、工作流、DeepSeek/Ollama支持等），以下是 7 条针对实际部署和使用的实践建议：

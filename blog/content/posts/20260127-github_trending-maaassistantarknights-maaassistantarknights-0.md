@@ -40,8 +40,6 @@ Relevant source files
   * [docs/zh-cn/readme.md](https://github.com/MaaAssistantArknights/MaaAssistantArknights/blob/c7db3681/docs/zh-cn/readme.md)
   * [docs/zh-tw/readme.md](https://github.com/MaaAssistantArknights/MaaAssistantArknights/blob/c7db3681/docs/zh-tw/readme.md)
 
-
-
 This document provides a high-level introduction to the MAA (MAA Assistant Arknights) codebase architecture, its core components, and the relationships between major subsystems. It is intended as an entry point for developers and technical users who need to understand how the system is organized.
 
 For detailed information about specific subsystems, see:
@@ -51,8 +49,6 @@ For detailed information about specific subsystems, see:
   * Specific automation features: [Automation Features](/MaaAssistantArknights/MaaAssistantArknights/4-automation-features)
   * User interfaces: [User Interfaces](/MaaAssistantArknights/MaaAssistantArknights/5-user-interfaces)
   * Build and deployment: [Development and Build System](/MaaAssistantArknights/MaaAssistantArknights/6-development-and-build-system)
-
-
 
 ## What is MAA?
 
@@ -65,14 +61,11 @@ The software operates by:
   3. Executing predefined task sequences based on game state
   4. Injecting touch/click inputs back to the device
 
-
-
 **Sources:** [README.md1-202](https://github.com/MaaAssistantArknights/MaaAssistantArknights/blob/c7db3681/README.md#L1-L202) [docs/en-us/readme.md1-192](https://github.com/MaaAssistantArknights/MaaAssistantArknights/blob/c7db3681/docs/en-us/readme.md#L1-L192)
 
 ## System Architecture Overview
 
 MAA follows a layered architecture that separates user interfaces from the core automation engine, with a resource layer providing configuration data and game content information.
-
 
 **Key characteristics:**
 
@@ -81,14 +74,11 @@ MAA follows a layered architecture that separates user interfaces from the core 
   * **Plugin architecture** : Roguelike system uses plugins for theme-specific logic
   * **Multi-regional support** : Resource inheritance allows localization without duplicating base data
 
-
-
 **Sources:** [README.md33-58](https://github.com/MaaAssistantArknights/MaaAssistantArknights/blob/c7db3681/README.md#L33-L58) [CHANGELOG.md1-165](https://github.com/MaaAssistantArknights/MaaAssistantArknights/blob/c7db3681/CHANGELOG.md#L1-L165) High-Level Diagrams 1 & 2
 
 ## Core Components
 
 The following diagram maps the major functional subsystems to their primary code locations:
-
 
 **Core execution flow:**
 
@@ -97,8 +87,6 @@ The following diagram maps the major functional subsystems to their primary code
   3. `AsstStart()` begins sequential task execution via `InterfaceTask` implementations
   4. Each task uses `Controller` for screenshots and `VisionHelper` for recognition
   5. `TaskData` singleton provides configuration loaded from [resource/](https://github.com/MaaAssistantArknights/MaaAssistantArknights/blob/c7db3681/resource/) directory
-
-
 
 **Sources:** [include/AsstCaller.h1-200](https://github.com/MaaAssistantArknights/MaaAssistantArknights/blob/c7db3681/include/AsstCaller.h#L1-L200) [README.md120-132](https://github.com/MaaAssistantArknights/MaaAssistantArknights/blob/c7db3681/README.md#L120-L132) High-Level Diagrams 2 & 5
 
@@ -123,12 +111,9 @@ Layer| Technology| Purpose
   * **Linux** : AppImage distribution, CLI-focused
   * **macOS** : Universal binaries (x86_64 + ARM64), XCFramework
 
-
-
 **Sources:** [README.md144-164](https://github.com/MaaAssistantArknights/MaaAssistantArknights/blob/c7db3681/README.md#L144-L164) [docs/en-us/readme.md136-154](https://github.com/MaaAssistantArknights/MaaAssistantArknights/blob/c7db3681/docs/en-us/readme.md#L136-L154) High-Level Diagram 3
 
 ## Multi-Platform Build Architecture
-
 
 **CI/CD characteristics:**
 
@@ -136,8 +121,6 @@ Layer| Technology| Purpose
   * MaaDeps system provides pre-built dependencies to speed up compilation
   * OTA (Over-The-Air) update system generates delta patches between versions
   * Resource updates run every 20 minutes independently from code releases
-
-
 
 **Sources:** [README.md44-46](https://github.com/MaaAssistantArknights/MaaAssistantArknights/blob/c7db3681/README.md#L44-L46) High-Level Diagram 3, [CHANGELOG.md87-96](https://github.com/MaaAssistantArknights/MaaAssistantArknights/blob/c7db3681/CHANGELOG.md#L87-L96)
 
@@ -412,37 +395,8 @@ MaaAssistantArknights 不仅仅是一个游戏外挂，它是**现代软件工�
 ---
 ## 💻 实用代码示例
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 ## 📚 真实案例研究
-
 
 ### 1：高校“明日方舟”社团自动化运营
 
@@ -469,8 +423,6 @@ MaaAssistantArknights 不仅仅是一个游戏外挂，它是**现代软件工�
 
 ---
 
-
-
 ### 2：云手机租赁服务提供商
 
  2：云手机租赁服务提供商
@@ -495,8 +447,6 @@ MaaAssistantArknights 不仅仅是一个游戏外挂，它是**现代软件工�
 - **收益增长**：挂机服务的稳定性提升了平台口碑，季度营收增长了约 30%。
 
 ---
-
-
 
 ### 3：重度肝帝玩家的多账号管理
 
@@ -734,7 +684,6 @@ MaaAssistantArknights 不仅仅是一个游戏外挂，它是**现代软件工�
 - 🎨 **现代化 UI 框架**：前端界面使用 Flutter 构建，实现了高性能的跨平台渲染，证明了非 Web 技术栈在桌面/移动端混合开发中的优势。
 - 🧩 **非侵入式操作**：完全基于屏幕像素识别与模拟点击，无需修改游戏安装包，展示了在封闭系统环境下实现自动化测试的最佳实践。
 
-
 ---
 ## 🗺️ 循序渐进的学习路径
 
@@ -815,7 +764,6 @@ MaaAssistantArknights 不仅仅是一个游戏外挂，它是**现代软件工�
 ---
 ## ❓ 常见问题解答
 
-
 ### 1: 什么是 MaaAssistantArknights (Maa)？它主要用来做什么？
 
 1: 什么是 MaaAssistantArknights (Maa)？它主要用来做什么？
@@ -829,8 +777,6 @@ MaaAssistantArknights 不仅仅是一个游戏外挂，它是**现代软件工�
 
 ---
 
-
-
 ### 2: 运行 Maa 需要什么配置？支持哪些平台？
 
 2: 运行 Maa 需要什么配置？支持哪些平台？
@@ -843,8 +789,6 @@ MaaAssistantArknights 不仅仅是一个游戏外挂，它是**现代软件工�
 
 ---
 
-
-
 ### 3: 使用 Maa 会被封号吗？安全吗？
 
 3: 使用 Maa 会被封号吗？安全吗？
@@ -854,8 +798,6 @@ MaaAssistantArknights 不仅仅是一个游戏外挂，它是**现代软件工�
 *   **风险提示**：虽然风险极低，但任何第三方工具都存在一定的理论风险。建议不要长时间不间断运行（如挂机 24 小时），合理使用“自动公招”等高识别率功能以降低人工审查风险。
 
 ---
-
-
 
 ### 4: 如何设置“自动基建”换班？为什么有时候干员没有换进去？
 
@@ -870,8 +812,6 @@ MaaAssistantArknights 不仅仅是一个游戏外挂，它是**现代软件工�
     4.  **识别错误**：极少数情况下干员立绘相似或皮肤导致识别失败，可以在日志中查看。
 
 ---
-
-
 
 ### 5: 模拟器应该使用哪一个？连接时出现“连接失败”怎么办？
 
@@ -889,8 +829,6 @@ MaaAssistantArknights 不仅仅是一个游戏外挂，它是**现代软件工�
 
 ---
 
-
-
 ### 6: Maa 的“自动战斗”支持哪些关卡？需要代理吗？
 
 6: Maa 的“自动战斗”支持哪些关卡？需要代理吗？
@@ -899,22 +837,6 @@ MaaAssistantArknights 不仅仅是一个游戏外挂，它是**现代软件工�
 *   **战斗逻辑**：
     1.  **自动编队**：支持根据预设的“作业”自动编队。
     2.  **代理作战**：如果关卡已经通过代理作战（
-
----
-## 🎯 挑战与思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**: 识别与定位
-
-### Maa 核心功能之一是基于图像识别的自动化。请尝试分析 Maa 是如何识别“理智不足”或“活动奖励”这类特定 UI 元素的。
-
-### 如果让你设计一个简单的脚本，判断当前游戏界面是否停留在“基建”界面，你会选择图像匹配还是颜色阈值判断？为什么？
-
----
 ## 💡 实践建议
 
 基于《明日方舟》小助手 (MaaAssistantArknights) 的实际使用场景，以下是 6 条实践建议，帮助您实现高效、稳定的“长草”体验：

@@ -38,8 +38,6 @@ Relevant source files
   * [README_EN.md](https://github.com/DSPBluePrints/FactoryBluePrints/blob/59c41020/README_EN.md)
   * [update.bat](https://github.com/DSPBluePrints/FactoryBluePrints/blob/59c41020/update.bat)
 
-
-
 ## Purpose and Scope
 
 This document provides a comprehensive overview of the FactoryBluePrints repository, a community-driven collection of factory blueprints for the game Dyson Sphere Program. It explains the system's purpose, architecture, and core components. For detailed installation instructions, see [Installation Guide](/DSPBluePrints/FactoryBluePrints/2-installation-guide). For information about the update process, see [Update Process](/DSPBluePrints/FactoryBluePrints/3-update-process).
@@ -53,8 +51,6 @@ FactoryBluePrints is a GitHub repository designed to store, organize, and distri
   * Simple update mechanism that requires minimal technical knowledge
   * Organized categorization of blueprints by function and purpose
 
-
-
 The repository uses Git for version control but encapsulates the complexity behind user-friendly scripts, making it accessible to all players regardless of technical background.
 
 Sources: [README.md14-19](https://github.com/DSPBluePrints/FactoryBluePrints/blob/59c41020/README.md#L14-L19) [README_EN.md14-19](https://github.com/DSPBluePrints/FactoryBluePrints/blob/59c41020/README_EN.md#L14-L19)
@@ -63,15 +59,12 @@ Sources: [README.md14-19](https://github.com/DSPBluePrints/FactoryBluePrints/blo
 
 The FactoryBluePrints system connects three key components: the GitHub repository (central storage), local repositories (user installations), and the game itself.
 
-
 **Technical Implementation Details:**
 
   * The GitHub repository serves as the central storage for all blueprints
   * Release packages are created using `Makefile` with optimized compression
   * MinGit is bundled with the repository to eliminate external Git dependencies
   * The `update.bat` script provides a simple interface for Git operations
-
-
 
 Sources: [README.md43-52](https://github.com/DSPBluePrints/FactoryBluePrints/blob/59c41020/README.md#L43-L52) [README_EN.md43-52](https://github.com/DSPBluePrints/FactoryBluePrints/blob/59c41020/README_EN.md#L43-L52) [Makefile4-6](https://github.com/DSPBluePrints/FactoryBluePrints/blob/59c41020/Makefile#L4-L6)
 
@@ -80,7 +73,6 @@ Sources: [README.md43-52](https://github.com/DSPBluePrints/FactoryBluePrints/blo
 The FactoryBluePrints system consists of several key components that work together to provide a seamless user experience.
 
 ### Component Relationships
-
 
 Sources: [update.bat1-93](https://github.com/DSPBluePrints/FactoryBluePrints/blob/59c41020/update.bat#L1-L93) [Makefile1-15](https://github.com/DSPBluePrints/FactoryBluePrints/blob/59c41020/Makefile#L1-L15) [README.md43-56](https://github.com/DSPBluePrints/FactoryBluePrints/blob/59c41020/README.md#L43-L56) [README_EN.md43-56](https://github.com/DSPBluePrints/FactoryBluePrints/blob/59c41020/README_EN.md#L43-L56)
 
@@ -102,7 +94,6 @@ The update mechanism is a critical part of the system that allows users to easil
 
 ### Update Process Flow
 
-
 Key technical operations performed by `update.bat`:
 
   1. Validates installation path and environment
@@ -112,8 +103,6 @@ Key technical operations performed by `update.bat`:
   5. Performs repository update via `git pull origin main`
   6. Provides detailed error reporting and logging
 
-
-
 Sources: [update.bat1-93](https://github.com/DSPBluePrints/FactoryBluePrints/blob/59c41020/update.bat#L1-L93)
 
 ## Distribution System
@@ -122,7 +111,6 @@ The distribution system uses `Makefile` to create optimized packages for initial
 
 ### Distribution Process
 
-
 The `Makefile` implements several important optimization techniques:
 
   * Git repository repacking with optimized parameters (`--window-memory=0 --depth=4095`)
@@ -130,14 +118,11 @@ The `Makefile` implements several important optimization techniques:
   * Multi-threading for faster compression (`-mt32`)
   * Recovery record for archive integrity (`-rr1p`)
 
-
-
 Sources: [Makefile1-15](https://github.com/DSPBluePrints/FactoryBluePrints/blob/59c41020/Makefile#L1-L15)
 
 ## User Workflow
 
 The typical user experience with FactoryBluePrints follows a specific flow designed to be accessible even to those unfamiliar with Git or version control systems.
-
 
 Sources: [README.md47-56](https://github.com/DSPBluePrints/FactoryBluePrints/blob/59c41020/README.md#L47-L56) [README_EN.md48-56](https://github.com/DSPBluePrints/FactoryBluePrints/blob/59c41020/README_EN.md#L48-L56)
 
@@ -155,9 +140,6 @@ The FactoryBluePrints system is designed around several key principles:
 
   5. **Accessibility** : Documentation is provided in multiple languages to serve a global user base.
 
-
-
-
 Sources: [README.md14-40](https://github.com/DSPBluePrints/FactoryBluePrints/blob/59c41020/README.md#L14-L40) [README_EN.md14-40](https://github.com/DSPBluePrints/FactoryBluePrints/blob/59c41020/README_EN.md#L14-L40) [update.bat1-93](https://github.com/DSPBluePrints/FactoryBluePrints/blob/59c41020/update.bat#L1-L93)
 
 ## Community Engagement
@@ -167,8 +149,6 @@ The FactoryBluePrints repository is supported by an active community network:
   * GitHub repository for code contributions and issue reporting
   * QQ groups for community discussion and blueprint sharing
   * Collaborative moderation and curation of submitted blueprints
-
-
 
 For more information about contributing your own blueprints to the repository, see [Contributing to FactoryBluePrints](/DSPBluePrints/FactoryBluePrints/6-contributing-to-factoryblueprints).
 
@@ -447,34 +427,8 @@ Individual blueprint aut
 ---
 ## 💻 实用代码示例
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 ## 📚 真实案例研究
-
 
 ### 1：某Fabless芯片设计公司的验证环境迁移
 
@@ -499,8 +453,6 @@ Individual blueprint aut
 
 ---
 
-
-
 ### 2：AI加速器团队的自动化验证流水线
 
  2：AI加速器团队的自动化验证流水线
@@ -523,8 +475,6 @@ Individual blueprint aut
 *   **快速迭代**：当RTL架构发生变更时，只需更新配置文件中的“蓝图”参数，验证环境即可自动适配，无需重写代码。
 
 ---
-
-
 
 ### 3：跨国半导体企业的IP核复用标准化
 
@@ -733,7 +683,6 @@ Individual blueprint aut
 - ⚡ **性能优化与抽象的平衡**：DSP 蓝图特别强调了在保持代码可读性的同时，如何利用硬件加速（如 SIMD、FPGA）或内存管理技巧来满足实时性要求。
 - 🧩 **高内聚低耦合的设计实践**：观察这些优秀开源项目的代码结构，学习如何将复杂的信号处理流水线或工厂逻辑拆解为职责单一、相互独立的模块。
 
-
 ---
 ## 🗺️ 循序渐进的学习路径
 
@@ -810,7 +759,6 @@ Individual blueprint aut
 ---
 ## ❓ 常见问题解答
 
-
 ### 1: DSPBluePrints 和 FactoryBluePrints 具体是什么游戏的项目？
 
 1: DSPBluePrints 和 FactoryBluePrints 具体是什么游戏的项目？
@@ -820,8 +768,6 @@ Individual blueprint aut
 *   **FactoryBluePrints** 则通常指代该社区中**玩家分享的蓝图集合**或**蓝图库**。这些“工厂蓝图”包含了高效的流水线布局，帮助玩家解决生产瓶颈。
 
 ---
-
-
 
 ### 2: 我该如何使用这些蓝图文件？
 
@@ -834,8 +780,6 @@ Individual blueprint aut
 
 ---
 
-
-
 ### 3: 使用这些蓝图需要安装特定的游戏模组（MOD）吗？
 
 3: 使用这些蓝图需要安装特定的游戏模组（MOD）吗？
@@ -844,8 +788,6 @@ Individual blueprint aut
 这些蓝图通常依赖于 **"Blueprint Mod"**（蓝图 MOD）。虽然游戏本体后续更新中加入了一些类似的复制粘贴功能，但 GitHub 上这类开源项目通常提供的是高级功能（如跨存档导入导出、云端同步等）。你需要先下载并安装对应的 MOD 插件（如 `DSPModUnlocker` 和具体的蓝图 MOD），才能使用这些社区分享的高级蓝图文件。
 
 ---
-
-
 
 ### 4: 这些蓝图文件是否会占用大量游戏内存或导致卡顿？
 
@@ -857,8 +799,6 @@ Individual blueprint aut
 
 ---
 
-
-
 ### 5: 项目中提到的 "Github_trending" 是什么意思？
 
 5: 项目中提到的 "Github_trending" 是什么意思？
@@ -867,30 +807,12 @@ Individual blueprint aut
 
 ---
 
-
-
 ### 6: 如果我使用的游戏版本更新了，这些旧蓝图还能用吗？
 
 6: 如果我使用的游戏版本更新了，这些旧蓝图还能用吗？
 
 **A**: 大部分情况下是**兼容**的。
 戴森球计划的更新通常会保留基础的配方逻辑。但是，如果开发者对某些物品的生产配方、堆叠数或建筑占地面积进行了修改，旧的蓝图可能会出现“报错”或无法放置的情况。此时通常需要等待蓝图工具的作者更新解析器，或者手动微调蓝图。
-
----
-## 🎯 挑战与思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**:
-
-### 假设你需要在 `FactoryBluePrints` 中为某种资源（例如“铁板”）添加一个新的自动化生产线蓝图。请描述该蓝图最少需要包含哪些核心元数据（Metadata）才能被系统识别和使用？
-
-### 提示**:
-
----
 ## 💡 实践建议
 
 你好！这是一个非常实用的《戴森球计划》蓝图仓库。为了帮助玩家更高效地利用这些蓝图来建设自己的星际工厂，以下是 **6 条实践建议**：

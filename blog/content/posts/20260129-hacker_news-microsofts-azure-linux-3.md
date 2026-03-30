@@ -50,7 +50,6 @@ Azure Linux 的发布标志着微软“拥抱开源”战略的进一步深化�
 ---
 ## 评论
 
-
 ### 中心观点
 **微软发布 Azure Linux 标志着其云战略从“支持开源”彻底转向“拥有并优化开源底层”，旨在通过垂直整合来降低云基础设施的熵增与攻击面，以追求极致的性能与控制力。**
 
@@ -106,9 +105,6 @@ Azure Linux 本身并没有创造全新的 Linux 技术栈，它是现有的 RPM
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：检查系统是否为Azure Linux
 import platform
@@ -134,9 +130,6 @@ if is_azure_linux():
 else:
     print("当前系统不是Azure Linux")
 ```
-
-
-
 
 ```python
 # 示例2：获取Azure Linux版本信息
@@ -164,9 +157,6 @@ if version:
     print(f"代号: {version.get('codename')}")
 ```
 
-
-
-
 ```python
 # 示例3：检查Azure Linux内核版本
 def get_kernel_version():
@@ -187,10 +177,8 @@ if 'azure' in kernel.lower():
     print("这是Azure优化的内核")
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：Microsoft Azure 超大规模基础设施（内部应用）
 
@@ -209,8 +197,6 @@ if 'azure' in kernel.lower():
 通过 Azure Linux，微软成功实现了对基础设施操作系统的完全控制，显著降低了维护成本和安全风险。该系统针对云环境进行了极致精简，实现了更快的启动时间和更小的内存占用。目前，Azure Linux 已成为 Azure 服务端云基础设施的默认操作系统，并作为 AKS 的底层基础 OS，为数百万用户提供稳定的云服务。
 
 ---
-
-
 
 ### 2：Azure Kubernetes Service (AKS) 的底层 OS 支持
 
@@ -374,7 +360,6 @@ Azure Linux 对容器技术有良好支持，特别是与 Azure Kubernetes Servi
 ---
 ## 常见问题
 
-
 ### 1: Microsoft Azure Linux 到底是什么？它是 Ubuntu 的替代品吗？
 
 1: Microsoft Azure Linux 到底是什么？它是 Ubuntu 的替代品吗？
@@ -384,8 +369,6 @@ Azure Linux 对容器技术有良好支持，特别是与 Azure Kubernetes Servi
 它的主要目的是为 Azure 的 Kubernetes 服务（AKS）以及 Azure 的超融合基础设施（HCI）提供底层操作系统支持。它的设计理念是“云原生”，注重安全性、性能和轻量化，非常适合作为容器宿主，而不是作为一个功能齐全的通用服务器操作系统（如带有完整 GUI 或大量桌面应用支持）。
 
 ---
-
-
 
 ### 2: 微软为什么要开发自己的 Linux 发行版？
 
@@ -399,8 +382,6 @@ Azure Linux 对容器技术有良好支持，特别是与 Azure Kubernetes Servi
 
 ---
 
-
-
 ### 3: Azure Linux 基于什么技术？它使用 RPM 还是 DEB 包管理？
 
 3: Azure Linux 基于什么技术？它使用 RPM 还是 DEB 包管理？
@@ -411,8 +392,6 @@ Azure Linux 对容器技术有良好支持，特别是与 Azure Kubernetes Servi
 
 ---
 
-
-
 ### 4: 普通用户可以在自己的电脑或本地服务器上安装和使用 Azure Linux 吗？
 
 4: 普通用户可以在自己的电脑或本地服务器上安装和使用 Azure Linux 吗？
@@ -422,8 +401,6 @@ Azure Linux 对容器技术有良好支持，特别是与 Azure Kubernetes Servi
 Azure Linux 缺乏许多桌面环境所需的硬件驱动支持和图形界面配置工具。它的安装过程、系统管理和维护主要面向云运维工程师和开发者。如果你需要一个稳定、受社区支持的 Linux 服务器系统，Ubuntu Server、Rocky Linux 或 AlmaLinux 通常是更合适的选择。Azure Linux 的定位主要还是作为 Azure 云服务后端的一个“引擎”。
 
 ---
-
-
 
 ### 5: Azure Linux 和之前微软发布的 WSL (Windows Subsystem for Linux) 有什么区别？
 
@@ -436,8 +413,6 @@ Azure Linux 缺乏许多桌面环境所需的硬件驱动支持和图形界面�
 
 ---
 
-
-
 ### 6: Azure Linux 是开源的吗？我可以查看它的源代码吗？
 
 6: Azure Linux 是开源的吗？我可以查看它的源代码吗？
@@ -445,22 +420,6 @@ Azure Linux 缺乏许多桌面环境所需的硬件驱动支持和图形界面�
 **A**: 是的，Azure Linux 是开源项目。
 
 微软在 GitHub 上公开了 Azure Linux 的源代码和构建工具。这符合微软近年来积极拥抱开源的战略。开发者可以查看其构建配置、提交 Bug 报告，甚至可以根据其许可证（通常是 MIT 许可证）自由使用和修改代码。这种透明度有助于增强云客户对微软基础设施安全性的信任。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: Microsoft Azure Linux 是基于哪个开源发行版构建的？请列出该发行版的主要特点，并解释为什么微软选择它作为 Azure Linux 的基础，而不是直接使用 Ubuntu 或 Debian。
-
-### 提示**: 关注 Azure Linux 的前身 CBL-Mariner 的技术文档，特别是关于包管理和系统架构的描述。思考云基础设施对操作系统内核和用户空间工具的特定需求。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://github.com/microsoft/azurelinux](https://github.com/microsoft/azurelinux)
@@ -469,7 +428,6 @@ Azure Linux 缺乏许多桌面环境所需的硬件驱动支持和图形界面�
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

@@ -82,9 +82,6 @@ scenarios: ["AI/ML项目", "大语言模型"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：创建一个简单的React组件渲染Agent
 from tambo import Agent, ReactComponent
@@ -109,9 +106,6 @@ def create_render_agent():
 agent = create_render_agent()
 print(agent.render_component("HelloWorld"))
 ```
-
-
-
 
 ```python
 # 示例2：带状态管理的React组件
@@ -145,9 +139,6 @@ def create_stateful_component():
 counter_agent = create_stateful_component()
 print(counter_agent.render_component("Counter"))
 ```
-
-
-
 
 ```python
 # 示例3：组件间通信与事件处理
@@ -199,10 +190,8 @@ interactive_agent = create_interactive_components()
 print(interactive_agent.render_component("ParentComponent"))
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某智能客服 SaaS 平台（假设名为 "SupportFlow"）
 
@@ -223,8 +212,6 @@ SupportFlow 是一家为中大型电商企业提供智能客服系统的 SaaS �
 3.  **转化率提升**：数据显示，使用可视化的 UI 交互后，用户点击“确认退货”或“立即支付”等操作的转化率比纯文本链接提高了 30% 以上。
 
 ---
-
-
 
 ### 2：企业级内部知识库搜索助手（假设名为 "CorpInsight"）
 
@@ -345,7 +332,6 @@ LLM 生成内容通常需要时间。如果用户等待 Agent 完成所有推理
 ---
 ## 常见问题
 
-
 ### 1: Tambo 1.0 的核心功能是什么，它与传统的 AI Agent 框架有何不同？
 
 1: Tambo 1.0 的核心功能是什么，它与传统的 AI Agent 框架有何不同？
@@ -353,8 +339,6 @@ LLM 生成内容通常需要时间。如果用户等待 Agent 完成所有推理
 **A**: Tambo 1.0 是一个开源工具包，专门用于构建能够渲染 React 组件的 AI Agent。与传统的基于文本交互或仅能调用简单 API 接口的 Agent 框架不同，Tambo 的核心在于“UI 生成能力”。它允许开发者定义一组 React 组件，并将这些组件的接口暴露给 LLM（大语言模型）。当 Agent 需要与用户交互时，它不是返回纯文本，而是根据上下文判断，直接调用并渲染相应的 React 组件（如按钮、表单、图表等），从而提供更丰富、结构化的用户界面体验。
 
 ---
-
-
 
 ### 2: 在技术实现上，Tambo 是如何让 LLM 准确地渲染出正确的 React 组件的？
 
@@ -364,8 +348,6 @@ LLM 生成内容通常需要时间。如果用户等待 Agent 完成所有推理
 
 ---
 
-
-
 ### 3: 使用 Tambo 构建应用时，开发者必须使用特定的前端框架（如 Next.js）吗？
 
 3: 使用 Tambo 构建应用时，开发者必须使用特定的前端框架（如 Next.js）吗？
@@ -373,8 +355,6 @@ LLM 生成内容通常需要时间。如果用户等待 Agent 完成所有推理
 **A**: 虽然 Tambo 主要是为了解决 React 生态系统的 UI 渲染问题而设计的，因此它天然最适合基于 React 的项目（如 Next.js、Remix 或 Vite + React），但它本身是一个工具包，并不强制绑定特定的全栈框架。只要你的项目支持 React 组件的渲染环境，你就可以集成 Tambo。不过，对于需要后端支持 LLM 流式传输和密钥管理的场景，Tambo 通常会配合 Node.js 环境或 Serverless 函数使用，以提供完整的 Agent 服务能力。
 
 ---
-
-
 
 ### 4: Tambo 支持哪些大语言模型（LLM）？我是否被限制只能使用 OpenAI 的模型？
 
@@ -384,8 +364,6 @@ LLM 生成内容通常需要时间。如果用户等待 Agent 完成所有推理
 
 ---
 
-
-
 ### 5: 将 React 组件的执行权交给 AI 控制是否存在安全风险？Tambo 有哪些安全措施？
 
 5: 将 React 组件的执行权交给 AI 控制是否存在安全风险？Tambo 有哪些安全措施？
@@ -393,8 +371,6 @@ LLM 生成内容通常需要时间。如果用户等待 Agent 完成所有推理
 **A**: 这是一个非常关键的问题。将 UI 渲染权交给 AI 确实存在风险，例如 LLM 可能会生成恶意参数或尝试传入不合规的数据。为了应对这些风险，Tambo 实施了严格的服务端验证机制。当 LLM 决定渲染一个组件时，它生成的 JSON 参数必须符合开发者预定义的 Schema。Tambo 会在实际渲染前对这些参数进行校验（Validation），如果参数类型错误或缺失必要字段，渲染请求会被拒绝。此外，Tambo 鼓励开发者将敏感的业务逻辑保留在 React 组件的后端实现中，而不是暴露在客户端，从而确保即使 AI 发出指令，也只能执行被严格限制的操作。
 
 ---
-
-
 
 ### 6: 对于初学者来说，上手 Tambo 1.0 的难度大吗？是否有现成的模板或示例？
 
@@ -404,29 +380,11 @@ LLM 生成内容通常需要时间。如果用户等待 Agent 完成所有推理
 
 ---
 
-
-
 ### 7: Tambo 1.0 目前的成熟度如何，是否推荐用于生产环境？
 
 7: Tambo 1.0 目前的成熟度如何，是否推荐用于生产环境？
 
 **A**: 鉴于版本号为 1.0，这通常意味着该工具已经具备了核心功能并完成了初步的测试，可以用于构建实际的应用程序。然而，对于任何开源的 AI 基础设施工具，是否直接用于生产环境取决于具体的业务需求和对稳定性的要求。如果项目高度依赖 AI 生成 UI 的准确性，建议在开发环境中进行充分的测试，特别是针对 LLM 可能产生的幻觉或格式错误进行边缘情况的处理。目前看来，它非常适合用于构建内部工具、
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**：在 Tambo 的架构中，Agent 输出的数据通常是非结构化文本（如 JSON 或 Markdown）。请设计一个基础的数据流，将 Agent 返回的简单 JSON 对象（例如 `{ "title": "Hello World", "count": 0 }`）解析并传递给一个标准的 React 函数组件进行渲染。你需要确保类型安全，防止 Agent 输出错误的数据格式导致组件崩溃。
-
-### 提示**：考虑使用 TypeScript 的接口定义 Agent 输出的结构，并在 React 组件内部或外部添加一个数据清洗层，处理可能缺失的字段。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://github.com/tambo-ai/tambo](https://github.com/tambo-ai/tambo)
@@ -435,7 +393,6 @@ LLM 生成内容通常需要时间。如果用户等待 Agent 完成所有推理
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

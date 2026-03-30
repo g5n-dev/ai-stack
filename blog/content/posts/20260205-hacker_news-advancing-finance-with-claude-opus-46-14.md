@@ -81,9 +81,6 @@ scenarios: ["大语言模型", "AI/ML项目"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：智能财务报告摘要生成
 def generate_financial_summary(report_text):
@@ -116,9 +113,6 @@ def generate_financial_summary(report_text):
 sample_report = "本季度营收12.5亿元，同比增长8%..."
 print(generate_financial_summary(sample_report))
 ```
-
-
-
 
 ```python
 # 示例2：金融风险预警系统
@@ -161,9 +155,6 @@ sample_transaction = {
 }
 print(risk_assessment(sample_transaction))
 ```
-
-
-
 
 ```python
 # 示例3：投资组合优化建议
@@ -210,10 +201,8 @@ sample_market = {
 print(optimize_portfolio(sample_holdings, sample_market))
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：全球性投资银行自动化财报分析
 
@@ -233,8 +222,6 @@ print(optimize_portfolio(sample_holdings, sample_market))
 
 ---
 
-
-
 ### 2：企业并购（M&A）尽职调查加速
 
  2：企业并购（M&A）尽职调查加速
@@ -252,8 +239,6 @@ print(optimize_portfolio(sample_holdings, sample_market))
 尽职调查团队在两周内完成了对所有关键文件的审查，比原计划提前了一周。Claude 帮助团队识别出了几项可能在未来引发合规风险的隐藏协议。这不仅加速了交易进程，还为客户争取到了更有利的谈判筹码，最终促成了交易的成功签约。
 
 ---
-
-
 
 ### 3：金融合规与监管政策解读
 
@@ -372,14 +357,11 @@ print(optimize_portfolio(sample_holdings, sample_market))
 ---
 ## 常见问题
 
-
 ### 1: Claude Opus 4.6 是什么？它与之前的版本有何不同？
 
 1: Claude Opus 4.6 是什么？它与之前的版本有何不同？
 
 **A**: Claude Opus 4.6 是 Anthropic 公司推出的最新一代人工智能模型。根据标题 "Advancing finance with Claude Opus 4.6" 来看，该版本似乎专门针对金融领域的应用进行了优化或展示。虽然截至 2024 年初，Claude 的主要版本为 Opus 3（Sonnet 3.5 等），但 "Opus 4.6" 可能指代特定的内部版本、未来的更新路线图，或者是特定社区（如 Hacker News）讨论的假设性/定制化版本。通常，新一代模型会在上下文窗口长度、推理能力、数学计算精度以及降低幻觉方面进行升级，这对于处理复杂金融数据和合规性要求至关重要。
-
-
 
 ### 2: Claude Opus 4.6 在金融行业有哪些具体的应用场景？
 
@@ -392,8 +374,6 @@ print(optimize_portfolio(sample_holdings, sample_market))
 4. **代码生成与数据分析**：辅助金融工程师编写 Python/R 代码进行量化分析，或直接解释复杂的 SQL 查询结果。
 5. **欺诈检测**：分析交易模式以识别异常行为。
 
-
-
 ### 3: 相较于 GPT-4 或其他模型，Claude Opus 在处理金融任务时有何优势？
 
 3: 相较于 GPT-4 或其他模型，Claude Opus 在处理金融任务时有何优势？
@@ -402,8 +382,6 @@ print(optimize_portfolio(sample_holdings, sample_market))
 1. **更大的上下文窗口**：Claude 以支持 200,000 token 甚至更大的上下文窗口而闻名，这意味着它可以一次性分析整个季度的财报文档或长篇法律合同，而无需分段处理，从而保持信息的连贯性。
 2. **降低幻觉率**：在金融领域，准确性至关重要。Anthropic 在模型对齐和宪法式 AI（Constitutional AI）方面的研究，使得 Claude 在面对敏感问题时往往表现出更高的谨慎性和事实准确性。
 3. **可解释性**：金融机构通常需要了解 AI 得出结论的依据，Claude 在推理链条的展示上往往表现较好。
-
-
 
 ### 4: 使用 Claude Opus 4.6 处理金融数据是否存在安全或隐私风险？
 
@@ -414,8 +392,6 @@ print(optimize_portfolio(sample_holdings, sample_market))
 2. **模型幻觉**：模型可能会自信地编造不存在的财务法规或数据，导致错误的决策。
 3. **解决方案**：为了解决这些问题，许多金融机构选择使用企业版 API（承诺不使用训练数据）或在本地部署模型。此外，通常会设置"人机回环"（Human-in-the-loop），由专业人士最终审核 AI 的输出。
 
-
-
 ### 5: Claude Opus 4.6 能够直接执行交易或提供投资建议吗？
 
 5: Claude Opus 4.6 能够直接执行交易或提供投资建议吗？
@@ -424,8 +400,6 @@ print(optimize_portfolio(sample_holdings, sample_market))
 *   **信息处理**：它可以快速整理影响市场的新闻和情绪。
 *   **策略回测辅助**：帮助编写用于回测交易策略的代码。
 *   **投资建议限制**：在大多数合规框架下，AI 不能提供具有法律效力的个性化投资建议（IA），除非该系统经过严格的金融监管认证，并且有持牌人类顾问的监督。因此，它通常被视为"副驾驶"而非"自动驾驶"系统。
-
-
 
 ### 6: Hacker News 社区对 "Advancing finance with Claude Opus 4.6" 这一话题通常关注哪些点？
 
@@ -436,22 +410,6 @@ print(optimize_portfolio(sample_holdings, sample_market))
 2. **实际落地案例**：询问是否有具体的基准测试数据，证明其在金融任务上确实优于 GPT-4 或 Llama 3。
 3. **行业影响**：讨论 AI 是否会取代初级金融分析师，以及这对金融就业市场的冲击。
 4. **数据可靠性**：讨论大模型在处理数学计算和金融数据时的"准确性天花板"，以及如何通过 RAG（检索增强生成）技术来解决这一问题。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 假设你是一名金融分析师，需要利用 Claude Opus 4.6 的长上下文能力来分析一份长达 200 页的季度财报（10-Q）。请设计一个 Prompt（提示词），要求模型准确提取出 "管理层讨论与分析"（MD&A）部分中关于未来市场风险的三个关键点，并忽略掉所有历史数据描述。
-
-### 提示**: 思考如何利用上下文定位技术。你需要明确告诉模型忽略哪些部分，并重点关注特定章节的结构化提取。考虑使用 "角色扮演" 和 "任务约束" 相结合的方法。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://claude.com/blog/opus-4-6-finance](https://claude.com/blog/opus-4-6-finance)
@@ -460,7 +418,6 @@ print(optimize_portfolio(sample_holdings, sample_market))
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

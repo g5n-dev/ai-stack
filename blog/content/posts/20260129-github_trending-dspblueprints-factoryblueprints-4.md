@@ -39,8 +39,6 @@ Relevant source files
   * [README_EN.md](https://github.com/DSPBluePrints/FactoryBluePrints/blob/59c41020/README_EN.md)
   * [update.bat](https://github.com/DSPBluePrints/FactoryBluePrints/blob/59c41020/update.bat)
 
-
-
 ## Purpose and Scope
 
 This document provides a comprehensive overview of the FactoryBluePrints repository, a community-driven collection of factory blueprints for the game Dyson Sphere Program. It explains the system's purpose, architecture, and core components. For detailed installation instructions, see [Installation Guide](/DSPBluePrints/FactoryBluePrints/2-installation-guide). For information about the update process, see [Update Process](/DSPBluePrints/FactoryBluePrints/3-update-process).
@@ -54,8 +52,6 @@ FactoryBluePrints is a GitHub repository designed to store, organize, and distri
   * Simple update mechanism that requires minimal technical knowledge
   * Organized categorization of blueprints by function and purpose
 
-
-
 The repository uses Git for version control but encapsulates the complexity behind user-friendly scripts, making it accessible to all players regardless of technical background.
 
 Sources: [README.md14-19](https://github.com/DSPBluePrints/FactoryBluePrints/blob/59c41020/README.md#L14-L19) [README_EN.md14-19](https://github.com/DSPBluePrints/FactoryBluePrints/blob/59c41020/README_EN.md#L14-L19)
@@ -64,15 +60,12 @@ Sources: [README.md14-19](https://github.com/DSPBluePrints/FactoryBluePrints/blo
 
 The FactoryBluePrints system connects three key components: the GitHub repository (central storage), local repositories (user installations), and the game itself.
 
-
 **Technical Implementation Details:**
 
   * The GitHub repository serves as the central storage for all blueprints
   * Release packages are created using `Makefile` with optimized compression
   * MinGit is bundled with the repository to eliminate external Git dependencies
   * The `update.bat` script provides a simple interface for Git operations
-
-
 
 Sources: [README.md43-52](https://github.com/DSPBluePrints/FactoryBluePrints/blob/59c41020/README.md#L43-L52) [README_EN.md43-52](https://github.com/DSPBluePrints/FactoryBluePrints/blob/59c41020/README_EN.md#L43-L52) [Makefile4-6](https://github.com/DSPBluePrints/FactoryBluePrints/blob/59c41020/Makefile#L4-L6)
 
@@ -81,7 +74,6 @@ Sources: [README.md43-52](https://github.com/DSPBluePrints/FactoryBluePrints/blo
 The FactoryBluePrints system consists of several key components that work together to provide a seamless user experience.
 
 ### Component Relationships
-
 
 Sources: [update.bat1-93](https://github.com/DSPBluePrints/FactoryBluePrints/blob/59c41020/update.bat#L1-L93) [Makefile1-15](https://github.com/DSPBluePrints/FactoryBluePrints/blob/59c41020/Makefile#L1-L15) [README.md43-56](https://github.com/DSPBluePrints/FactoryBluePrints/blob/59c41020/README.md#L43-L56) [README_EN.md43-56](https://github.com/DSPBluePrints/FactoryBluePrints/blob/59c41020/README_EN.md#L43-L56)
 
@@ -103,7 +95,6 @@ The update mechanism is a critical part of the system that allows users to easil
 
 ### Update Process Flow
 
-
 Key technical operations performed by `update.bat`:
 
   1. Validates installation path and environment
@@ -113,8 +104,6 @@ Key technical operations performed by `update.bat`:
   5. Performs repository update via `git pull origin main`
   6. Provides detailed error reporting and logging
 
-
-
 Sources: [update.bat1-93](https://github.com/DSPBluePrints/FactoryBluePrints/blob/59c41020/update.bat#L1-L93)
 
 ## Distribution System
@@ -123,7 +112,6 @@ The distribution system uses `Makefile` to create optimized packages for initial
 
 ### Distribution Process
 
-
 The `Makefile` implements several important optimization techniques:
 
   * Git repository repacking with optimized parameters (`--window-memory=0 --depth=4095`)
@@ -131,14 +119,11 @@ The `Makefile` implements several important optimization techniques:
   * Multi-threading for faster compression (`-mt32`)
   * Recovery record for archive integrity (`-rr1p`)
 
-
-
 Sources: [Makefile1-15](https://github.com/DSPBluePrints/FactoryBluePrints/blob/59c41020/Makefile#L1-L15)
 
 ## User Workflow
 
 The typical user experience with FactoryBluePrints follows a specific flow designed to be accessible even to those unfamiliar with Git or version control systems.
-
 
 Sources: [README.md47-56](https://github.com/DSPBluePrints/FactoryBluePrints/blob/59c41020/README.md#L47-L56) [README_EN.md48-56](https://github.com/DSPBluePrints/FactoryBluePrints/blob/59c41020/README_EN.md#L48-L56)
 
@@ -156,9 +141,6 @@ The FactoryBluePrints system is designed around several key principles:
 
   5. **Accessibility** : Documentation is provided in multiple languages to serve a global user base.
 
-
-
-
 Sources: [README.md14-40](https://github.com/DSPBluePrints/FactoryBluePrints/blob/59c41020/README.md#L14-L40) [README_EN.md14-40](https://github.com/DSPBluePrints/FactoryBluePrints/blob/59c41020/README_EN.md#L14-L40) [update.bat1-93](https://github.com/DSPBluePrints/FactoryBluePrints/blob/59c41020/update.bat#L1-L93)
 
 ## Community Engagement
@@ -168,8 +150,6 @@ The FactoryBluePrints repository is supported by an active community network:
   * GitHub repository for code contributions and issue reporting
   * QQ groups for community discussion and blueprint sharing
   * Collaborative moderation and curation of submitted blueprints
-
-
 
 For more information about contributing your own blueprints to the repository, see [Contributing to FactoryBluePrints](/DSPBluePrints/FactoryBluePrints/6-contributing-to-factoryblueprints).
 
@@ -398,9 +378,6 @@ FactoryBluePrints 是一个针对《戴森球计划》游戏的社区驱动型�
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：工厂模式创建不同类型的蓝图对象
 class BluePrint:
@@ -436,9 +413,6 @@ dsp_bp = create_blueprint("dsp", "音频滤波器")
 print(factory_bp.describe())  # 输出：这是一个工厂蓝图：自动化生产线，用于生产设施规划
 print(dsp_bp.describe())      # 输出：这是一个DSP蓝图：音频滤波器，用于数字信号处理
 ```
-
-
-
 
 ```python
 # 示例2：蓝图注册与动态调用
@@ -481,9 +455,6 @@ print(factory_bp.name)          # 输出：装配线
 print(dsp_bp.sample_rate)       # 输出：44100
 ```
 
-
-
-
 ```python
 # 示例3：蓝图版本控制与兼容性检查
 class VersionedBluePrint:
@@ -505,10 +476,8 @@ print(bp1.is_compatible_with("2.0"))  # 输出：True (2.1 >= 2.0)
 print(bp2.is_compatible_with("2.9"))  # 输出：False (3.0不兼容2.x系列)
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某头部互联网广告技术公司
 
@@ -530,8 +499,6 @@ print(bp2.is_compatible_with("2.9"))  # 输出：False (3.0不兼容2.x系列)
 
 ---
 
-
-
 ### 2：大型跨国零售集团（私有化部署）
 
  2：大型跨国零售集团（私有化部署）
@@ -550,8 +517,6 @@ print(bp2.is_compatible_with("2.9"))  # 输出：False (3.0不兼容2.x系列)
 3. **策略复用**：在某一区域测试成功的“高价值客户召回”蓝图，被迅速复制到其他区域，实现了全球范围内的营销增效。
 
 ---
-
-
 
 ### 3：AdTech 初创公司（从MVP到规模化）
 
@@ -761,7 +726,6 @@ print(bp2.is_compatible_with("2.9"))  # 输出：False (3.0不兼容2.x系列)
 - 代码结构清晰地分离了计算逻辑与硬件实现细节，使得算法工程师能够专注于数学逻辑而非底层硬件时序。
 - 开源社区通过这些 BluePrints 推动了信号处理领域的标准化，为构建可移植的高性能硬件加速器提供了参考。
 
-
 ---
 ## 学习路径
 
@@ -856,7 +820,6 @@ print(bp2.is_compatible_with("2.9"))  # 输出：False (3.0不兼容2.x系列)
 ---
 ## 常见问题
 
-
 ### 1: DSPBluePrints 和 FactoryBluePrints 主要是什么内容？
 
 1: DSPBluePrints 和 FactoryBluePrints 主要是什么内容？
@@ -864,8 +827,6 @@ print(bp2.is_compatible_with("2.9"))  # 输出：False (3.0不兼容2.x系列)
 **A**: 这两个项目通常与游戏《戴森球计划》相关。DSPBluePrints 是一个专注于该游戏蓝图（建筑布局）分享的开源项目或工具，旨在帮助玩家保存、导入和分享高效的工厂设计。FactoryBluePrints 则可能是类似的蓝图管理库，或者是针对不同游戏（如《幸福工厂》）的蓝图系统，但在 GitHub 趋势中，它们通常指代自动化建设游戏的布局方案集合，包含从基础资源自动化到复杂的物流和生产链设计。
 
 ---
-
-
 
 ### 2: 如何使用这些仓库中的蓝图？
 
@@ -875,8 +836,6 @@ print(bp2.is_compatible_with("2.9"))  # 输出：False (3.0不兼容2.x系列)
 
 ---
 
-
-
 ### 3: 这些蓝图的构建是否包含优化过的流水线？
 
 3: 这些蓝图的构建是否包含优化过的流水线？
@@ -884,8 +843,6 @@ print(bp2.is_compatible_with("2.9"))  # 输出：False (3.0不兼容2.x系列)
 **A**: 是的，GitHub 上流行的蓝图仓库通常包含经过社区验证的高效布局。这些蓝图往往考虑了生产效率、空间利用率、能源消耗以及物流（如传送带和分拣器）的拥堵问题。许多高级蓝图会使用“塔式”堆叠设计或“网格化”布局，以最大化单位面积内的产出。
 
 ---
-
-
 
 ### 4: 贡献自己的蓝图到这些项目有什么要求？
 
@@ -895,8 +852,6 @@ print(bp2.is_compatible_with("2.9"))  # 输出：False (3.0不兼容2.x系列)
 
 ---
 
-
-
 ### 5: 这些项目支持哪些游戏版本？
 
 5: 这些项目支持哪些游戏版本？
@@ -905,29 +860,11 @@ print(bp2.is_compatible_with("2.9"))  # 输出：False (3.0不兼容2.x系列)
 
 ---
 
-
-
 ### 6: 除了蓝图文件，这些仓库还提供哪些资源？
 
 6: 除了蓝图文件，这些仓库还提供哪些资源？
 
 **A**: 除了核心的蓝图数据文件，这些仓库通常还包含详细的使用文档、构建指南、计算器工具（用于计算原材料需求）以及相关的教程链接。有些项目还会提供一个展示大厅，以图片或视频的形式展示蓝图的运行效果，帮助用户在下载前进行筛选。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: 蓝图环路检测
-
-### 问题**: 在自动化游戏的蓝图管理中，经常需要处理物品的流动方向。假设你有一个基础的传送带蓝图，你需要编写一个简单的算法来检测传送带网络中是否存在死循环（即物品一直在转圈无法到达目的地）。给定一个有向图表示传送带的连接关系，请判断是否存在环路。
-
-### 提示**: 可以使用深度优先搜索（DFS）或拓扑排序来解决。维护一个访问状态数组，记录节点是否正在被访问中。
-
-### 
-
----
 ## 实践建议
 
 基于《戴森球计划》蓝图仓库的特性，以下是 6 条针对实际游戏体验的优化建议：
@@ -965,7 +902,6 @@ print(bp2.is_compatible_with("2.9"))  # 输出：False (3.0不兼容2.x系列)
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

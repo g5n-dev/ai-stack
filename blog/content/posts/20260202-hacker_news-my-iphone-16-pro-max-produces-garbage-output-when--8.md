@@ -79,9 +79,6 @@ scenarios: ["AI/ML项目", "大语言模型"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：解决LLM输出乱码问题（编码修复）
 def fix_llm_encoding(text):
@@ -102,9 +99,6 @@ fixed_output = fix_llm_encoding(garbled_output)
 print(fixed_output)  # 输出: "This is a garbled output with é characters"
 ```
 
-
-
-
 ```python
 # 示例2：清理LLM输出中的控制字符
 def clean_llm_output(text):
@@ -124,9 +118,6 @@ messy_output = "Hello\x07World\r\n\tThis is a test\x1b"
 cleaned_output = clean_llm_output(messy_output)
 print(cleaned_output)  # 输出: "HelloWorld\n\tThis is a test"
 ```
-
-
-
 
 ```python
 # 示例3：处理LLM输出中的重复内容
@@ -154,10 +145,8 @@ cleaned_output = deduplicate_llm_output(repetitive_output)
 print(cleaned_output)  # 输出: "This is a test. Another sentence."
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：移动端隐私优先的本地医疗问答助手
 
@@ -178,8 +167,6 @@ print(cleaned_output)  # 输出: "This is a test. Another sentence."
 通过上述调整，模型在 iPhone 16 Pro Max 上的输出质量得到了显著提升。在处理 1000 字以内的医学问答时，回复的连贯性和准确率从原来的不足 50% 提升至 92%，且完全消除了乱码现象。医生可以在查房过程中依靠手机快速获取指南建议，且所有数据仅保留在本地，完美解决了隐私合规问题。
 
 ---
-
-
 
 ### 2：现场勘测的实时多语言转写与摘要工具
 
@@ -293,7 +280,6 @@ print(cleaned_output)  # 输出: "This is a test. Another sentence."
 ---
 ## 常见问题
 
-
 ### 1: 为什么我的 iPhone 16 Pro Max 运行 MLX 框架下的 LLM（大语言模型）时会出现乱码或无意义文本？
 
 1: 为什么我的 iPhone 16 Pro Max 运行 MLX 框架下的 LLM（大语言模型）时会出现乱码或无意义文本？
@@ -301,8 +287,6 @@ print(cleaned_output)  # 输出: "This is a test. Another sentence."
 **A**: 这种现象通常被称为“幻觉”或模型崩坏，主要原因可能与**量化精度**有关。MLX 框架允许在设备端运行模型，为了在有限的内存下运行大参数模型，用户通常会使用 4-bit 或更低精度的量化模型。iPhone 16 Pro Max 虽然内存较大，但如果加载的模型权重文件本身在量化过程中出现校准错误，或者推理上下文长度超出了模型训练时的窗口限制，就会导致输出逻辑断裂，生成乱码。此外，MLX 某些版本的 KV Cache 设置不当也可能导致推理错误累积。
 
 ---
-
-
 
 ### 2: iPhone 16 Pro Max 的硬件性能是否足以支持未经严重量化的高质量模型？
 
@@ -312,8 +296,6 @@ print(cleaned_output)  # 输出: "This is a test. Another sentence."
 
 ---
 
-
-
 ### 3: 如何判断是软件问题还是硬件问题导致的输出异常？
 
 3: 如何判断是软件问题还是硬件问题导致的输出异常？
@@ -321,8 +303,6 @@ print(cleaned_output)  # 输出: "This is a test. Another sentence."
 **A**: 这是一个软件与模型兼容性的问题，而非硬件故障。iPhone 的 A 系列芯片在浮点运算上非常稳定。如果遇到“垃圾输出”，首先应检查 MLX 框架及其 Python 绑定是否为最新版本。其次，检查使用的提示词模板是否与模型要求的格式一致。如果简单的提示词（如“Hello”）能正常回答，但复杂逻辑出错，则说明模型在处理长序列或复杂逻辑时出现了数值溢出或注意力机制失效。
 
 ---
-
-
 
 ### 4: MLX 框架在 iOS 上的内存管理机制是否会导致模型上下文丢失？
 
@@ -332,8 +312,6 @@ print(cleaned_output)  # 输出: "This is a test. Another sentence."
 
 ---
 
-
-
 ### 5: 除了模型本身，还有哪些设置参数可能导致输出质量下降？
 
 5: 除了模型本身，还有哪些设置参数可能导致输出质量下降？
@@ -341,8 +319,6 @@ print(cleaned_output)  # 输出: "This is a test. Another sentence."
 **A**: 关键的超参数包括 **Temperature（温度）**、**Top-p（采样概率）** 和 **Repetition Penalty（重复惩罚）**。如果 Temperature 设置过高（接近 1.0 或更高），模型输出会变得非常随机和发散；如果 Repetition Penalty 设置不当，模型可能会陷入死循环或输出奇怪的重复字符。建议将 Temperature 设置在 0.7 左右，Top-p 设置为 0.9，以获得最符合逻辑的输出。
 
 ---
-
-
 
 ### 6: 社区目前有什么推荐的解决方案来修复 iPhone 上的 MLX 推理问题？
 
@@ -353,22 +329,6 @@ print(cleaned_output)  # 输出: "This is a test. Another sentence."
 2. **调整推理上下文**：减小 `context_window` 大小，因为移动端生成极长文本时容易出错。
 3. **回退版本**：如果问题出现在最新的 MLX Beta 版本中，尝试回退到上一个稳定版本，因为新版本对 Metal API 的调用可能存在未修复的 Bug。
 4. **使用流式输出检查**：开启流式输出，观察模型是在第一个 token 就出错，还是在生成过程中逐渐退化，这有助于定位是加载问题还是推理问题。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 在移动端运行大语言模型（LLM）时，量化是减少显存占用的关键技术。请解释将模型从 FP16（16位浮点数）量化为 4-bit 整数（INT4）时，模型参数的磁盘占用空间理论上会减少多少倍？并计算一个 8GB 大小的 FP16 模型在量化后大约占用多少空间。
-
-### 提示**: 关注浮点数与整数的位深差异，并考虑量化通常仅针对权重参数，而不一定改变激活值的显存占用。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://journal.rafaelcosta.me/my-thousand-dollar-iphone-cant-do-math](https://journal.rafaelcosta.me/my-thousand-dollar-iphone-cant-do-math)
@@ -377,7 +337,6 @@ print(cleaned_output)  # 输出: "This is a test. Another sentence."
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

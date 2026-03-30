@@ -53,8 +53,6 @@ Relevant source files
   * [sites/docs/CHANGELOG.md](https://github.com/didi/LogicFlow/blob/5ce9fe62/sites/docs/CHANGELOG.md)
   * [sites/docs/package.json](https://github.com/didi/LogicFlow/blob/5ce9fe62/sites/docs/package.json)
 
-
-
 This document provides a comprehensive introduction to LogicFlow, a flowchart editing framework. It covers the project's purpose, architecture philosophy, package organization, and core technical components. For detailed information on specific subsystems, see [Repository Organization](/didi/LogicFlow/1.1-repository-organization) for package structure, [Key Concepts](/didi/LogicFlow/1.2-key-concepts) for fundamental abstractions, and [Getting Started](/didi/LogicFlow/1.3-getting-started) for installation and usage.
 
 ## What is LogicFlow
@@ -69,7 +67,6 @@ The project is hosted at <https://github.com/didi/LogicFlow> and published as mu
 
 LogicFlow follows a **model-view separation** architecture where data models (BaseNodeModel, BaseEdgeModel) are decoupled from view components (BaseNode, BaseEdge). State changes in models automatically trigger view updates through MobX reactive programming. Communication between components occurs exclusively through a centralized EventEmitter, enabling loose coupling and extensibility.
 
-
 **Key architectural decisions:**
 
   * **Preact for rendering** : Core uses Preact (not React) to minimize bundle size while maintaining compatibility
@@ -77,14 +74,11 @@ LogicFlow follows a **model-view separation** architecture where data models (Ba
   * **Event-driven** : 40+ event types enable decoupled communication between core, extensions, and applications
   * **Plugin system** : Extensions modify behavior by intercepting lifecycle hooks and listening to events
 
-
-
 **Sources:** [packages/core/src/LogicFlow.tsx1-100](https://github.com/didi/LogicFlow/blob/5ce9fe62/packages/core/src/LogicFlow.tsx#L1-L100) [packages/core/src/model/GraphModel.ts1-50](https://github.com/didi/LogicFlow/blob/5ce9fe62/packages/core/src/model/GraphModel.ts#L1-L50) [packages/core/package.json42-50](https://github.com/didi/LogicFlow/blob/5ce9fe62/packages/core/package.json#L42-L50)
 
 ## Package Ecosystem
 
 LogicFlow is organized as a pnpm monorepo with published packages and example applications:
-
 
 Package| Version| Purpose| Build Outputs  
 ---|---|---|---  
@@ -101,12 +95,9 @@ Package| Version| Purpose| Build Outputs
   * **CJS** (`lib/index.js`): For Node.js and older bundlers
   * **UMD** (`dist/index.min.js`): For direct browser usage via CDN (unpkg, jsdelivr)
 
-
-
 **Sources:** [packages/core/package.json1-56](https://github.com/didi/LogicFlow/blob/5ce9fe62/packages/core/package.json#L1-L56) [packages/extension/package.json1-60](https://github.com/didi/LogicFlow/blob/5ce9fe62/packages/extension/package.json#L1-L60) [packages/layout/package.json1-48](https://github.com/didi/LogicFlow/blob/5ce9fe62/packages/layout/package.json#L1-L48) [packages/react-node-registry/package.json1-47](https://github.com/didi/LogicFlow/blob/5ce9fe62/packages/react-node-registry/package.json#L1-L47) [packages/vue-node-registry/package.json1-55](https://github.com/didi/LogicFlow/blob/5ce9fe62/packages/vue-node-registry/package.json#L1-L55)
 
 ## Core Technology Stack
-
 
 **Key technical choices:**
 
@@ -115,17 +106,13 @@ Package| Version| Purpose| Build Outputs
   3. **TypeScript compilation** : `tsc --target es5` ensures wide browser support
   4. **No CSS-in-JS** : Styles are separate LESS files compiled to CSS for better caching
 
-
-
 **Sources:** [packages/core/package.json42-55](https://github.com/didi/LogicFlow/blob/5ce9fe62/packages/core/package.json#L42-L55) [packages/core/src/util/StepDrag.ts1-50](https://github.com/didi/LogicFlow/blob/5ce9fe62/packages/core/src/util/StepDrag.ts#L1-L50)
 
 ## Entry Points and Initialization
 
 The primary entry point is the `LogicFlow` class, which orchestrates all subsystems:
 
-
 **Minimal initialization code:**
-
 
 **Configuration options** are passed to the constructor and stored in [packages/core/src/options.ts1-50](https://github.com/didi/LogicFlow/blob/5ce9fe62/packages/core/src/options.ts#L1-L50) Key options include:
 
@@ -399,37 +386,8 @@ LogicFlow 在“**图形渲染**”与“**业务逻辑**”之间建立了一�
 ---
 ## 💻 实用代码示例
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 ## 📚 真实案例研究
-
 
 ### 1：滴滴 - 小桔云图业务流程编排平台
 
@@ -450,8 +408,6 @@ LogicFlow 在“**图形渲染**”与“**业务逻辑**”之间建立了一�
 ✅ **系统稳定性增强**：通过 LogicFlow 提供的校验机制，在流程设计阶段即可规避死循环或断头路等逻辑错误。
 
 ---
-
-
 
 ### 2：某大型 B2B SaaS 企业 - 审批流与业务自动化中心
 
@@ -683,7 +639,6 @@ LogicFlow 在“**图形渲染**”与“**业务逻辑**”之间建立了一�
 - 数据驱动** 🔄：严格遵循**数据驱动视图**的理念，流程图的所有渲染状态均由底层数据模型决定，极大简化了前端状态管理的复杂度。
 - 生态兼容** 🧩：虽然基于 SVG 技术实现，但支持与主流前端框架（React/Vue）无缝集成，使得在不同技术栈的项目中接入成本极低。
 
-
 ---
 ## 🗺️ 循序渐进的学习路径
 
@@ -774,7 +729,6 @@ LogicFlow 在“**图形渲染**”与“**业务逻辑**”之间建立了一�
 ---
 ## ❓ 常见问题解答
 
-
 ### 1: 什么是 LogicFlow？它是用来解决什么问题的？
 
 1: 什么是 LogicFlow？它是用来解决什么问题的？
@@ -784,8 +738,6 @@ LogicFlow 在“**图形渲染**”与“**业务逻辑**”之间建立了一�
 与 ECharts 等侧重于**数据可视化**的图表库不同，LogicFlow 侧重于**编辑与交互**。它提供了一套完整的流程图编辑能力，包括节点拖拽、连线、属性配置等，同时支持基于 Vue/React 进行深度定制，让开发者能够专注于业务逻辑，而无需从零构建画布交互。
 
 ---
-
-
 
 ### 2: LogicFlow 支持哪些前端框架？如何集成？
 
@@ -801,8 +753,6 @@ LogicFlow 在“**图形渲染**”与“**业务逻辑**”之间建立了一�
 
 ---
 
-
-
 ### 3: 如何自定义节点的样式或内部内容（HTML/Vue组件）？
 
 3: 如何自定义节点的样式或内部内容（HTML/Vue组件）？
@@ -814,8 +764,6 @@ LogicFlow 在“**图形渲染**”与“**业务逻辑**”之间建立了一�
 3.  **自定义节点**：通过继承 `RectNode`、`CircleNode` 等类，重写 `getShape` 或 `getNodeShape` 方法，使用 SVG 绘制任意复杂的图形。配合 Vue/React 适配器，你甚至可以直接将一个 `.vue` 或 `.jsx` 组件作为节点的主体渲染，实现复杂的业务表单交互。
 
 ---
-
-
 
 ### 4: LogicFlow 生成的流程图数据格式是怎样的？如何保存？
 
@@ -829,8 +777,6 @@ LogicFlow 在“**图形渲染**”与“**业务逻辑**”之间建立了一�
 
 ---
 
-
-
 ### 5: LogicFlow 是否支持移动端或触摸屏操作？
 
 5: LogicFlow 是否支持移动端或触摸屏操作？
@@ -841,8 +787,6 @@ LogicFlow 在“**图形渲染**”与“**业务逻辑**”之间建立了一�
 
 ---
 
-
-
 ### 6: 如何控制画布的缩放、平移以及限制节点拖出边界？
 
 6: 如何控制画布的缩放、平移以及限制节点拖出边界？
@@ -852,22 +796,6 @@ LogicFlow 在“**图形渲染**”与“**业务逻辑**”之间建立了一�
 *   **缩放与平移**：可以使用 `lf.zoom()`、`lf.resetZoom()`、`lf.translate()` 等方法通过代码控制，也可以通过配置 `plugins` 引入 `DndPanel`（拖拽面板）或 `Menu` 等增强交互。
 *   **网格背景**：使用 `Grid` 插件可以开启吸附网格功能，方便对齐。
 *   **边界限制**：可以通过设置 `width` 和 `height` 限制画布大小，或者监听 `node:mousemove` 事件，在回调函数中计算坐标，强制将节点限制在可视区域内，防止拖出界外。
-
----
-## 🎯 挑战与思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**: 基于 LogicFlow 快速搭建一个包含“开始”、“处理”和“结束”三个节点的标准流程图，并实现节点之间的连线功能。如何确保连线只能从特定节点（如“开始”）流出？
-
-### 提示**: 可以通过设置节点类型（Type）和连线规则（Edge Type）来限制连线的起点和终点，确保流程图符合业务逻辑。
-
-### 
-
----
 ## 💡 实践建议
 
 基于 **Didi / LogicFlow** 的仓库特性（专注于业务自定义的流程图编辑框架），以下是 6 条针对实际开发场景的实践建议，涵盖了架构设计、交互优化及性能维护：

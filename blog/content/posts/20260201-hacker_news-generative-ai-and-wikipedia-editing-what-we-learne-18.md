@@ -96,9 +96,6 @@ scenarios: ["AI/ML项目", "大语言模型"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：检测维基百科文本是否由AI生成
 import requests
@@ -130,9 +127,6 @@ def check_ai_generated_content(article_url):
 result = check_ai_generated_content("https://zh.wikipedia.org/wiki/人工智能")
 print(f"AI生成概率: {result['ai_probability']:.2%}")
 ```
-
-
-
 
 ```python
 # 示例2：自动检测维基百科编辑冲突
@@ -178,9 +172,6 @@ def detect_edit_conflicts(page_title, hours=24):
 conflicts = detect_edit_conflicts("人工智能", hours=48)
 print(f"发现 {len(conflicts)} 个潜在编辑冲突")
 ```
-
-
-
 
 ```python
 # 示例3：AI辅助生成维基百科引用格式
@@ -251,10 +242,8 @@ web_source = {
 print(generate_wikipedia_citation(web_source))
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：维基百科社区与 LLM 的协作试点（针对“低资源语言”的条目扩充）
 
@@ -274,8 +263,6 @@ print(generate_wikipedia_citation(web_source))
 
 ---
 
-
-
 ### 2：自动化维护“信息更新”与“死链检测”
 
  2：自动化维护“信息更新”与“死链检测”
@@ -293,8 +280,6 @@ print(generate_wikipedia_citation(web_source))
 实时热点类条目的准确率在事件发生后 24 小时内的更新率从 30% 提升至 85% 以上。死链的修复效率提高了数倍，大幅减少了维护性编辑的工作负担，让人类编辑能腾出精力进行内容深度拓展。
 
 ---
-
-
 
 ### 3：针对“恶意破坏”的智能回滚与内容修复
 
@@ -405,7 +390,6 @@ print(generate_wikipedia_citation(web_source))
 ---
 ## 常见问题
 
-
 ### 1: 生成式 AI 在 2025 年对维基百科编辑产生了哪些主要影响？
 
 1: 生成式 AI 在 2025 年对维基百科编辑产生了哪些主要影响？
@@ -413,8 +397,6 @@ print(generate_wikipedia_citation(web_source))
 **A**: 到 2025 年，生成式 AI 对维基百科的影响主要体现在两个方面。首先是**编辑量的激增**，大量由 AI 生成或辅助撰写的条目被提交，导致社区审核压力剧增。其次是**内容真实性的挑战**，AI 模型虽然能生成流畅的文本，但经常出现“幻觉”，即编造虚假的引用或事实，这使得维基百科社区不得不花费更多精力去核实和清理这些低质量内容。
 
 ---
-
-
 
 ### 2: 维基百科社区是如何应对 AI 生成的低质量内容的？
 
@@ -424,8 +406,6 @@ print(generate_wikipedia_citation(web_source))
 
 ---
 
-
-
 ### 3: 大语言模型（LLM）在训练数据中遇到的主要瓶颈是什么？
 
 3: 大语言模型（LLM）在训练数据中遇到的主要瓶颈是什么？
@@ -433,8 +413,6 @@ print(generate_wikipedia_citation(web_source))
 **A**: 2025 年的一个核心发现是**高质量训练数据的枯竭**。由于维基百科被视为互联网上最干净、结构化程度最高的数据集之一，它一直是 LLM 的重要训练来源。然而，随着 AI 模型开始用生成的内容污染互联网（即“模型崩溃” Model Collapse 现象），未来的模型如果继续使用这些被 AI 污染的数据进行训练，其输出质量将不可避免地下降。这使得维基百科这种由人类严格审核的数据变得愈发珍贵。
 
 ---
-
-
 
 ### 4: 维基媒体基金会与 OpenAI 或 Google 等科技巨头的关系发生了什么变化？
 
@@ -444,8 +422,6 @@ print(generate_wikipedia_citation(web_source))
 
 ---
 
-
-
 ### 5: 生成式 AI 是否改变了维基百科的“中立观点”（NPOV）原则？
 
 5: 生成式 AI 是否改变了维基百科的“中立观点”（NPOV）原则？
@@ -454,29 +430,11 @@ print(generate_wikipedia_citation(web_source))
 
 ---
 
-
-
 ### 6: 对于普通用户而言，如何区分维基百科上的内容是由人类还是 AI 撰写的？
 
 6: 对于普通用户而言，如何区分维基百科上的内容是由人类还是 AI 撰写的？
 
 **A**: 仅从文本表面很难完全区分，但 AI 生成的内容通常具有以下特征：**语气过于平滑但缺乏实质性细节**、**引用文献看起来很正规但实际上并不存在或内容不匹配**（即虚假引用）、以及**对复杂争议的描述过于简单化**。在 2025 年，最可靠的方法依然是查看页面的“编辑历史”和“讨论页”，观察是否有经验丰富的编辑者进行了核实和标记。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**:
-
-### 假设你是一名维基百科编辑，你需要核实一个条目中新增的由 AI 生成的段落。该段落关于“2024年夏季奥运会”的金牌分布，数据看起来非常详尽，但缺乏引用。请列出三个具体的步骤，以验证这些数据的真实性，并说明如果找不到来源，应如何处理该段落。
-
-### 提示**:
-
----
 ## 引用
 
 - **原文链接**: [https://wikiedu.org/blog/2026/01/29/generative-ai-and-wikipedia-editing-what-we-learned-in-2025](https://wikiedu.org/blog/2026/01/29/generative-ai-and-wikipedia-editing-what-we-learned-in-2025)
@@ -485,7 +443,6 @@ print(generate_wikipedia_citation(web_source))
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

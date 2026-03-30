@@ -107,33 +107,10 @@ external_url: https://www.bbc.com/news/articles/c1m77dmxlvlo
 ---
 ## 💻 代码示例
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 **说明**: 创建了一个简单的铁路维护预警系统，可以记录和管理类似新闻中提到的轨道断裂等安全隐患，优先处理高严重等级的问题。
-
 
 ---
 ## 📚 案例研究
-
 
 ### 1：西班牙国家铁路 (ADIF) 铁路基础设施监测系统升级
 
@@ -158,8 +135,6 @@ external_url: https://www.bbc.com/news/articles/c1m77dmxlvlo
 
 ---
 
-
-
 ### 2：日本新干线地震早期预警系统（URED）
 
  2：日本新干线地震早期预警系统（URED）
@@ -182,8 +157,6 @@ external_url: https://www.bbc.com/news/articles/c1m77dmxlvlo
 🌍 系统被德国、意大利等多国高铁网络引进  
 
 ---
-
-
 
 ### 3：德国DB Netz数字孪生轨道维护平台
 
@@ -291,7 +264,6 @@ external_url: https://www.bbc.com/news/articles/c1m77dmxlvlo
 ---
 ## ❓ 常见问题
 
-
 ### 1: 这份报道中提到的“西班牙轨道断裂”具体是指哪一起事故？
 
 1: 这份报道中提到的“西班牙轨道断裂”具体是指哪一起事故？
@@ -299,8 +271,6 @@ external_url: https://www.bbc.com/news/articles/c1m77dmxlvlo
 **A**: 该报道指的是发生于 **2013年7月24日** 的**西班牙圣地亚哥-德孔波斯特拉火车脱轨事故**（Santiago de Compostela rail disaster）。这是西班牙历史上最严重的铁路事故之一。当时，一列从马德里开往费罗尔的阿尔维亚高速列车在途经圣地亚哥-德孔波斯特拉附近的一个弯道时发生脱轨并翻覆，导致80人死亡，144人受伤。
 
 ---
-
-
 
 ### 2: “轨道断裂”这一发现为何对事故调查如此重要？
 
@@ -310,8 +280,6 @@ external_url: https://www.bbc.com/news/articles/c1m77dmxlvlo
 然而，最新报告指出轨道在列车撞击前就已经存在断裂（fractured），这意味着**基础设施的故障**可能在事故中扮演了关键角色。它暗示了轨道维护可能存在疏漏，或者断裂的轨道影响了列车在通过弯道时的稳定性，从而加剧了脱轨的严重程度。
 
 ---
-
-
 
 ### 3: 轨道断裂通常是由什么原因引起的？
 
@@ -325,8 +293,6 @@ external_url: https://www.bbc.com/news/articles/c1m77dmxlvlo
 
 ---
 
-
-
 ### 4: 这份新报告是否会推翻此前对司机的指控？
 
 4: 这份新报告是否会推翻此前对司机的指控？
@@ -336,29 +302,11 @@ external_url: https://www.bbc.com/news/articles/c1m77dmxlvlo
 
 ---
 
-
-
 ### 5: 目前关于这一新发现有什么争议吗？
 
 5: 目前关于这一新发现有什么争议吗？
 
 **A**: 是的，存在一定的技术和法律争议。一方面，受害者家属和部分专家长期以来一直怀疑轨道维护存在问题，新报告证实了他们的猜测；另一方面，负责管理铁路基础设施的西班牙国铁（Adif）可能会面临关于为何未能通过常规检查发现该断裂的质问。此外，由于事故发生在十年前，证据的保存和追溯可能成为后续法律诉讼的焦点。
-
----
-## 🎯 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**:
-
-### 假设你是一名前端开发者，需要根据事故调查报告（JSON 格式）生成一个简报。请编写一个 Python 脚本，提取报告标题 "Spanish track was fractured..." 中的关键实体（国家、事件类型、基础设施）。如果输入文本变成了 "US bridge collapsed during rush hour"，你的脚本是否还能通用？
-
-### 提示**:
-
----
 ## 🔗 引用
 
 - **原文链接**: [https://www.bbc.com/news/articles/c1m77dmxlvlo](https://www.bbc.com/news/articles/c1m77dmxlvlo)

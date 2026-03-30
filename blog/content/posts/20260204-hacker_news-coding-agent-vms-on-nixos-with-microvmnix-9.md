@@ -95,9 +95,6 @@ scenarios: ["DevOps/运维"]
 ---
 ## 代码示例
 
-
-
-
 ```nix
 # 示例1：创建一个基础的 Coding Agent VM 配置
 # 这个示例展示了如何使用 microvm.nix 创建一个最小化的 NixOS 虚拟机
@@ -147,7 +144,6 @@ scenarios: ["DevOps/运维"]
 }
 ```
 
-
 ---
 
 ```nix
@@ -188,7 +184,6 @@ scenarios: ["DevOps/运维"]
   '';
 }
 ```
-
 
 ---
 
@@ -239,10 +234,8 @@ scenarios: ["DevOps/运维"]
 }
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某金融科技初创公司的 CI/CD 基础设施重构
 
@@ -258,8 +251,6 @@ scenarios: ["DevOps/运维"]
 
 ---
 
-
-
 ### 2：高度监管环境下的多租户 SaaS 开发平台
 
  2：高度监管环境下的多租户 SaaS 开发平台
@@ -273,8 +264,6 @@ scenarios: ["DevOps/运维"]
 **效果**: 实现了轻量级但强隔离的沙箱环境，满足合规要求。由于 MicroVM 内核与 Host 共享，大幅减少了磁盘占用和攻击面。通过 NixOS 的原子性升级，实现了整个集群的无宕机部署和回滚。
 
 ---
-
-
 
 ### 3：AI 辅助编程工具的本地化沙箱执行
 
@@ -383,7 +372,6 @@ scenarios: ["DevOps/运维"]
 ---
 ## 常见问题
 
-
 ### 1: 什么是 Microvm.nix，它与传统的 NixOS 虚拟机或 Docker 容器有何区别？
 
 1: 什么是 Microvm.nix，它与传统的 NixOS 虚拟机或 Docker 容器有何区别？
@@ -396,8 +384,6 @@ scenarios: ["DevOps/运维"]
 
 ---
 
-
-
 ### 2: 为什么选择在 NixOS 上使用 MicroVM 部署 Coding Agent（编程代理），而不是直接在宿主机上运行？
 
 2: 为什么选择在 NixOS 上使用 MicroVM 部署 Coding Agent（编程代理），而不是直接在宿主机上运行？
@@ -409,8 +395,6 @@ scenarios: ["DevOps/运维"]
 3.  **资源管理**：MicroVM 允许精细地控制每个 Agent 实例的 CPU 和内存资源，防止单个 Agent 占用过多资源导致宿主机卡顿。
 
 ---
-
-
 
 ### 3: Microvm.nix 的网络配置通常是如何处理的？Coding Agent 如何访问外部网络？
 
@@ -426,8 +410,6 @@ scenarios: ["DevOps/运维"]
 
 ---
 
-
-
 ### 4: 在 Microvm.nix 环境中，如何处理文件共享？即如何在宿主机和虚拟机之间传递代码文件？
 
 4: 在 Microvm.nix 环境中，如何处理文件共享？即如何在宿主机和虚拟机之间传递代码文件？
@@ -440,8 +422,6 @@ scenarios: ["DevOps/运维"]
 
 ---
 
-
-
 ### 5: 使用 Microvm.nix 管理 Coding Agent VMs 时，如何处理持久化存储和数据保存？
 
 5: 使用 Microvm.nix 管理 Coding Agent VMs 时，如何处理持久化存储和数据保存？
@@ -453,8 +433,6 @@ scenarios: ["DevOps/运维"]
 
 ---
 
-
-
 ### 6: Microvm.nix 的性能开销如何？能否满足高频交互的开发需求？
 
 6: Microvm.nix 的性能开销如何？能否满足高频交互的开发需求？
@@ -463,22 +441,6 @@ scenarios: ["DevOps/运维"]
 
 *   **启动时间**：由于裁剪了不必要的硬件检测和启动服务，MicroVM 通常能在不到一秒的时间内完成启动并到达登录提示符或直接启动服务。
 *   **运行损耗**：虽然虚拟化比容器多了一层内核抽象，但得益于 KVM（基于内核的虚拟机）硬件加速，CPU 计算性能损耗极小。主要的性能瓶颈通常在于 I/O 操作（如文件读写），但在使用 `virtio` 驱动的情况下，
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 在使用 `microvm.nix` 定义虚拟机时，如何显式指定虚拟机的内存大小和 vCPU 数量？请写出一个基础的 NixOS 配置片段，将虚拟机资源限制为 512MB 内存和 1 个 vCPU。
-
-### 提示**: 查看 `microvm.nix` 的配置选项，寻找与 `memSize` 和 `vcpu` 相关的参数。这通常是在虚拟机的配置模块中直接设置的。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://michael.stapelberg.ch/posts/2026-02-01-coding-agent-microvm-nix](https://michael.stapelberg.ch/posts/2026-02-01-coding-agent-microvm-nix)
@@ -487,7 +449,6 @@ scenarios: ["DevOps/运维"]
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

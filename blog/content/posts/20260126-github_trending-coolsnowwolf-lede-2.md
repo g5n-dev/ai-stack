@@ -74,8 +74,6 @@ Relevant source files
   * [target/sdk/files/Makefile](https://github.com/coolsnowwolf/lede/blob/a8189d93/target/sdk/files/Makefile)
   * [target/toolchain/Config.in](https://github.com/coolsnowwolf/lede/blob/a8189d93/target/toolchain/Config.in)
 
-
-
 This document provides a comprehensive introduction to the LEDE (Linux Embedded Development Environment) project, a fork of OpenWrt that serves as a highly customizable router and embedded Linux distribution. This page covers the system's purpose, overall architecture, main features, and how the various components work together.
 
 ## Purpose and Scope
@@ -87,19 +85,15 @@ LEDE is designed to be a flexible firmware framework for network devices, primar
   * Extending functionality through a package management system
   * Supporting a wide range of hardware platforms (Rockchip, MediaTek, Qualcomm IPQ, x86, and more)
 
-
-
 For detailed build procedures, see [Build System](/coolsnowwolf/lede/2-build-system). For device-specific information, see [Device Support](/coolsnowwolf/lede/3-device-support).
 
 ## Project Overview
-
 
 Sources: [README.md](https://github.com/coolsnowwolf/lede/blob/a8189d93/README.md) [include/target.mk10-62](https://github.com/coolsnowwolf/lede/blob/a8189d93/include/target.mk#L10-L62) [target/linux/x86/Makefile7-24](https://github.com/coolsnowwolf/lede/blob/a8189d93/target/linux/x86/Makefile#L7-L24) [package/base-files/Makefile39-46](https://github.com/coolsnowwolf/lede/blob/a8189d93/package/base-files/Makefile#L39-L46)
 
 ## System Architecture
 
 The LEDE system architecture consists of several key components that work together to create a customizable firmware:
-
 
 Sources: [package/base-files/Makefile39-75](https://github.com/coolsnowwolf/lede/blob/a8189d93/package/base-files/Makefile#L39-L75) [package/base-files/files/bin/config_generate1-50](https://github.com/coolsnowwolf/lede/blob/a8189d93/package/base-files/files/bin/config_generate#L1-L50) [package/lean/default-settings/files/zzz-default-settings1-30](https://github.com/coolsnowwolf/lede/blob/a8189d93/package/lean/default-settings/files/zzz-default-settings#L1-L30)
 
@@ -116,7 +110,6 @@ Default Settings| `package/lean/default-settings`| Custom regional and feature s
 User Configuration| `/etc/config/*`| User-defined settings  
   
 The configuration generation process:
-
 
 Sources: [package/base-files/files/bin/config_generate486-527](https://github.com/coolsnowwolf/lede/blob/a8189d93/package/base-files/files/bin/config_generate#L486-L527) [package/lean/default-settings/files/zzz-default-settings1-64](https://github.com/coolsnowwolf/lede/
 
@@ -192,7 +185,6 @@ Sources: [package/base-files/files/bin/config_generate486-527](https://github.co
 
 ---
 ## 🎯 深度评价
-
 
 这是一份基于技术哲学与工程实用主义的双重评价。该仓库是 OpenWrt 社区中最著名的“非官方”衍生项目之一，俗称“Lean 大佬”源。
 
@@ -331,37 +323,8 @@ Lean's LEDE 并非一个从零开始的独立操作系统，而是基于 **OpenW
 ---
 ## 💻 实用代码示例
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 ## 📚 真实案例研究
-
 
 ### 1：智慧校园网络改造项目 🎓
 
@@ -388,8 +351,6 @@ Lean's LEDE 并非一个从零开始的独立操作系统，而是基于 **OpenW
 
 ---
 
-
-
 ### 2：跨国企业分支机构组网 🌍
 
  2：跨国企业分支机构组网 🌍
@@ -414,8 +375,6 @@ Lean's LEDE 并非一个从零开始的独立操作系统，而是基于 **OpenW
 - 满足欧盟 GDPR 要求的数据本地化存储需求  
 
 ---
-
-
 
 ### 3：智能家居 IoT 网络优化 🏠
 
@@ -682,7 +641,6 @@ Lean's LEDE 并非一个从零开始的独立操作系统，而是基于 **OpenW
 - 📦 **高度的可定制性**：用户可以根据需求通过 `make menuconfig` 自由选择加载的功能模块，打造精简或全能的系统。
 - 🔄 **紧跟上游更新**：代码库会定期跟进 OpenWRT 官方内核和 Linux 内核的更新，确保安全性与新硬件的适配。
 
-
 ---
 ## 🗺️ 循序渐进的学习路径
 
@@ -767,7 +725,6 @@ Lean's LEDE 并非一个从零开始的独立操作系统，而是基于 **OpenW
 ---
 ## ❓ 常见问题解答
 
-
 ### 1: 什么是 coolsnowwolf/lede 项目？它和官方 OpenWrt 有什么区别？
 
 1: 什么是 coolsnowwolf/lede 项目？它和官方 OpenWrt 有什么区别？
@@ -781,8 +738,6 @@ Lean's LEDE 并非一个从零开始的独立操作系统，而是基于 **OpenW
 4.  **非官方：** 它不是 OpenWrt 官方的发行版，属于第三方修改版，主要面向有一定 Linux 基础的进阶用户。
 
 ---
-
-
 
 ### 2: 编译固件时出现“feeds update failed”或找不到特定插件怎么办？
 
@@ -802,8 +757,6 @@ Lean's LEDE 并非一个从零开始的独立操作系统，而是基于 **OpenW
 
 ---
 
-
-
 ### 3: 如何选择适合我的路由器的配置文件？
 
 3: 如何选择适合我的路由器的配置文件？
@@ -819,31 +772,11 @@ Lean's LEDE 并非一个从零开始的独立操作系统，而是基于 **OpenW
 
 ---
 
-
-
 ### 4: 编译过程中提示 "V2ray" 或 "PassWall" 插件编译失败怎么办？
 
 4: 编译过程中提示 "V2ray" 或 "PassWall" 插件编译失败怎么办？
 
 **A**: 这类涉及代理或科学上网的插件通常依赖于 Go 语言环境或特定的外部库。
-
-
-
----
-## 🎯 挑战与思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**:
-
-### Coolsnowwolf/lede 仓库拥有数千个 Star，许多新手想直接下载使用。请找出该仓库提供的**预编译固件下载地址**（通常是 README 中的链接），并描述如何根据你的路由器硬件型号选择正确的文件。
-
-### 提示**:
-
----
 ## 💡 实践建议
 
 以下是针对 Lean's LEDE 源码仓库 (`coolsnowwolf/lede`) 的 6 条实践建议，旨在帮助你更高效、安全地编译 OpenWrt 固件：

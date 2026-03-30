@@ -86,9 +86,6 @@ scenarios: ["AI/ML项目"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：监控聊天机器人响应时间
 import time
@@ -118,9 +115,6 @@ def monitor_response_time():
 monitor_response_time()
 ```
 
-
-
-
 ```python
 # 示例2：分析用户反馈情感
 from textblob import TextBlob
@@ -143,9 +137,6 @@ print(analyze_sentiment("这个聊天机器人很有帮助！"))  # 正面
 print(analyze_sentiment("回答完全不对，很失望"))      # 负面
 print(analyze_sentiment("还可以，没什么特别的"))      # 中性
 ```
-
-
-
 
 ```python
 # 示例3：检测异常问题模式
@@ -174,10 +165,8 @@ user_complaint = "系统经常崩溃，而且响应很慢，显示错误代码50
 print(detect_problem_patterns(user_complaint))  # 输出: ['崩溃', '慢', '错误代码500']
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某中型科技公司的代码审查效率瓶颈
 
@@ -204,8 +193,6 @@ print(detect_problem_patterns(user_complaint))  # 输出: ['崩溃', '慢', '错
 
 ---
 
-
-
 ### 2：某制造业企业的文档自动化挑战
 
  2：某制造业企业的文档自动化挑战
@@ -230,8 +217,6 @@ print(detect_problem_patterns(user_complaint))  # 输出: ['崩溃', '慢', '错
 - 内部调研显示，技术团队对文档满意度评分从3.2/5升至4.6/5。
 
 ---
-
-
 
 ### 3：某医疗机构的临床决策支持系统
 
@@ -362,7 +347,6 @@ Copilot 的问题表明，AI 可能会误解指令或产生幻觉。如果 AI �
 ---
 ## 常见问题
 
-
 ### 1: 微软 Copilot 目前具体遇到了哪些问题？
 
 1: 微软 Copilot 目前具体遇到了哪些问题？
@@ -375,8 +359,6 @@ Copilot 的问题表明，AI 可能会误解指令或产生幻觉。如果 AI �
 
 ---
 
-
-
 ### 2: 导致 Copilot 运行出现问题的原因是什么？
 
 2: 导致 Copilot 运行出现问题的原因是什么？
@@ -387,8 +369,6 @@ Copilot 的问题表明，AI 可能会误解指令或产生幻觉。如果 AI �
 3.  **依赖上游服务**：Copilot 严重依赖 OpenAI 的 API 服务，如果上游 OpenAI 出现波动，Copilot 也会受到影响。
 
 ---
-
-
 
 ### 3: 用户目前在使用 Copilot 时主要有哪些抱怨？
 
@@ -401,8 +381,6 @@ Copilot 的问题表明，AI 可能会误解指令或产生幻觉。如果 AI �
 
 ---
 
-
-
 ### 4: 微软 Copilot 的频繁故障是否与 OpenAI 有关？
 
 4: 微软 Copilot 的频繁故障是否与 OpenAI 有关？
@@ -412,8 +390,6 @@ Copilot 的问题表明，AI 可能会误解指令或产生幻觉。如果 AI �
 2.  然而，也有很多时候 Copilot 独立于 ChatGPT 发生故障。这通常是因为微软自身的云服务（Azure）出现问题，或者是 Copilot 特有的中间层软件在处理请求时发生了错误，与 OpenAI 的核心模型状态无关。
 
 ---
-
-
 
 ### 5: 如果遇到 Copilot 无法使用，有哪些临时的解决方案？
 
@@ -427,8 +403,6 @@ Copilot 的问题表明，AI 可能会误解指令或产生幻觉。如果 AI �
 
 ---
 
-
-
 ### 6: 这次故障对微软的 AI 战略有何影响？
 
 6: 这次故障对微软的 AI 战略有何影响？
@@ -437,22 +411,6 @@ Copilot 的问题表明，AI 可能会误解指令或产生幻觉。如果 AI �
 1.  **用户信任度**：企业客户和普通用户需要高可靠性的工具。频繁的“运行遇到问题”可能会阻碍用户从传统搜索向 AI 搜索的迁移，影响微软试图通过 AI 重塑搜索体验的目标。
 2.  **竞争压力**：这给了竞争对手（如 Google 的 Gemini 或其他 AI 工具）展示其稳定性的机会。
 3.  **产品整合挑战**：这凸显了将生成式 AI 深度整合到操作系统和办公软件中的复杂性，微软需要解决基础设施的鲁棒性问题，以支撑其庞大的 AI 愿景。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 假设你正在测试一个类似 Copilot 的 AI 助手，用户输入了一个包含恶意代码的提示词，试图绕过安全限制。请设计一个简单的“输入清洗”函数逻辑，用伪代码或自然语言描述如何检测并拒绝这种明显的攻击性输入。
-
-### 提示**: 考虑关键词匹配和字符模式识别。你需要关注输入字符串中是否包含特定的系统命令或敏感操作符，并定义一个明确的拒绝响应机制。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://www.wsj.com/tech/ai/microsofts-pivotal-ai-product-is-running-into-big-problems-ce235b28](https://www.wsj.com/tech/ai/microsofts-pivotal-ai-product-is-running-into-big-problems-ce235b28)
@@ -461,7 +419,6 @@ Copilot 的问题表明，AI 可能会误解指令或产生幻觉。如果 AI �
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

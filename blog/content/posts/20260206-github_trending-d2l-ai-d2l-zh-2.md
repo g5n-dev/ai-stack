@@ -48,8 +48,6 @@ Relevant source files
   * [static/frontpage/_images/zhangge.jpg](https://github.com/d2l-ai/d2l-zh/blob/e6b18cce/static/frontpage/_images/zhangge.jpg)
   * [static/frontpage/frontpage.html](https://github.com/d2l-ai/d2l-zh/blob/e6b18cce/static/frontpage/frontpage.html)
 
-
-
 The D2L.ai repository is an open-source project that provides a comprehensive deep learning educational resource known as "动手学深度学习" (Dive into Deep Learning). This repository contains the source code for a textbook with executable code examples that work across multiple deep learning frameworks including PyTorch, MXNet, TensorFlow, and PaddlePaddle.
 
 ## Purpose and Scope
@@ -62,14 +60,11 @@ The D2L.ai project aims to create a unified learning resource that:
   4. Enables rapid iteration to keep pace with the fast-evolving field
   5. Supports a community platform for questions and knowledge exchange
 
-
-
 As stated in the repository README: "The best way to understand deep learning is to learn by doing." The textbook has been adopted by over 500 universities across 70+ countries as teaching material.
 
 ## Repository Architecture
 
 The repository is organized into three primary components: textbook content, code implementation, and the build system.
-
 
 Sources: README.md, INFO.md, static/frontpage/frontpage.html
 
@@ -81,14 +76,11 @@ The content consists of markdown files organized in chapter directories:
   * `chapter_multilayer-perceptrons/`: Covers neural network basics
   * Additional chapters for CNNs, RNNs, attention mechanisms, etc.
 
-
-
 Each chapter contains markdown files with embedded code cells that can be executed as Jupyter notebooks. The content follows a progressive approach, introducing concepts from basic to advanced.
 
 ### Code Implementation
 
 One of the key features of the repository is the unified `d2l` package that provides a consistent API across different deep learning frameworks:
-
 
 Sources: static/frontpage/frontpage.html, README.md
 
@@ -102,8 +94,6 @@ The build system includes:
   * Build scripts for converting markdown to different formats
   * Documentation generation tools
 
-
-
 The build process can generate HTML, PDF, and other formats from the source files, allowing the content to be accessed in various ways.
 
 Sources: INFO.md
@@ -111,7 +101,6 @@ Sources: INFO.md
 ## Learning Pathway
 
 The content follows a structured learning pathway designed to build knowledge progressively:
-
 
 Sources: chapter_introduction/index.md, static/frontpage/frontpage.html
 
@@ -124,12 +113,9 @@ This pathway starts with basic concepts and gradually introduces more complex mo
   5. Attention mechanisms and Transformers for NLP
   6. Optimization techniques and practical considerations
 
-
-
 ## Educational Approach
 
 The textbook combines three key elements to create an effective learning experience:
-
 
 Sources: static/frontpage/frontpage.html, README.md
 
@@ -137,14 +123,11 @@ Sources: static/frontpage/frontpage.html, README.md
   2. **Figures** : Visual illustrations explaining concepts and architectures
   3. **Code** : Executable implementations demonstrating practical applications
 
-
-
 Each chapter is designed as a Jupyter notebook, allowing readers to run code examples, modify parameters, and experiment with different approaches.
 
 ## Framework Integration
 
 The repository's design supports multiple deep learning frameworks through a unified API:
-
 
 Sources: static/frontpage/frontpage.html
 
@@ -154,8 +137,6 @@ This approach allows the same conceptual material to be presented consistently a
   * TensorFlow: Yuan Tang
   * PaddlePaddle: Wu Gaosheng, Hu Liujun, Zhang Ge, Xie Jiehang
 
-
-
 ## Usage Environments
 
 The textbook content can be accessed and executed in various environments:
@@ -163,8 +144,6 @@ The textbook content can be accessed and executed in various environments:
   1. **Local Installation** : Running on personal computers with installed dependencies
   2. **Cloud Platforms** : Using services like Amazon SageMaker, SageMaker Studio Lab, or Google Colab
   3. **Containerized Environments** : Deploying in Docker containers for consistent environments
-
-
 
 Sources: static/frontpage/frontpage.html, README.md
 
@@ -439,9 +418,6 @@ class Module(nn.Module, d2l.HyperParameters):
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：自动生成学习进度报告
 def generate_progress_report(chapters_completed, total_chapters):
@@ -466,9 +442,6 @@ def generate_progress_report(chapters_completed, total_chapters):
 # 测试
 print(generate_progress_report(15, 50))
 ```
-
-
-
 
 ```python
 # 示例2：代码练习自动评分系统
@@ -516,9 +489,6 @@ test_cases = [((1, 2), 3), ((2, 3), 5), ((3, 4), 7)]
 print(auto_grade_exercise(student_code, test_cases))
 ```
 
-
-
-
 ```python
 # 示例3：学习资源推荐系统
 def recommend_resources(user_level, interests):
@@ -554,10 +524,8 @@ def recommend_resources(user_level, interests):
 print(recommendate_resources("中级", ["机器学习", "自然语言处理"]))
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某高校计算机系深度学习课程改革
 
@@ -582,8 +550,6 @@ print(recommendate_resources("中级", ["机器学习", "自然语言处理"]))
 
 ---
 
-
-
 ### 2：金融科技公司算法团队内部培训
 
  2：金融科技公司算法团队内部培训
@@ -606,8 +572,6 @@ print(recommendate_resources("中级", ["机器学习", "自然语言处理"]))
 3. 建立了标准化的模型开发流程，代码可维护性大幅提升。
 
 ---
-
-
 
 ### 3：医疗影像创业公司模型选型与验证
 
@@ -864,7 +828,6 @@ print(recommendate_resources("中级", ["机器学习", "自然语言处理"]))
 - 适合不同背景读者：初学者可系统学习基础，开发者可快速查阅代码实现，研究者可参考前沿技术解析。
 - 配套资源丰富，包括免费在线版本、PDF下载、视频课程及社区贡献的翻译和扩展材料。
 
-
 ---
 ## 学习路径
 
@@ -997,14 +960,11 @@ print(recommendate_resources("中级", ["机器学习", "自然语言处理"]))
 ---
 ## 常见问题
 
-
 ### 1: d2l-ai/d2l-zh 是什么项目？
 
 1: d2l-ai/d2l-zh 是什么项目？
 
 **A**: d2l-ai/d2l-zh 是《动手学深度学习》（Dive into Deep Learning）一书的开源代码仓库。该项目由亚马逊资深科学家 Aston Zhang 等人发起，提供了一套基于交互式学习的深度学习教材。它的特点是将文字、数学公式、代码和图表紧密结合在同一个文档中（通常使用 Jupyter Notebook 格式），旨在帮助读者在实践中深入理解深度学习的原理与算法。
-
-
 
 ### 2: 这本书支持哪些深度学习框架？
 
@@ -1012,15 +972,11 @@ print(recommendate_resources("中级", ["机器学习", "自然语言处理"]))
 
 **A**: 该项目提供了多个版本以适配不同的主流深度学习框架。目前主要支持 Apache MXNet、PyTorch 和 TensorFlow。用户可以根据自己的学习需求或开发环境，在 GitHub 仓库中切换到对应的分支（如 `pytorch` 分支或 `tensorflow` 分支）来获取相应框架的代码和教学内容。
 
-
-
 ### 3: 如何在本地运行和阅读这本书的代码？
 
 3: 如何在本地运行和阅读这本书的代码？
 
 **A**: 运行该项目的代码通常需要配置 Python 环境。推荐使用 Anaconda 来管理环境，并安装相应的深度学习框架（如 PyTorch 或 TensorFlow）以及 `d2l` 软件包。安装完成后，你可以通过克隆 GitHub 仓库下载源码，然后在本地启动 Jupyter Notebook 或 JupyterLab，打开 `.ipynb` 文件即可一边阅读理论，一边运行代码块进行实验。
-
-
 
 ### 4: d2l-zh 和 d2l-en 有什么区别？
 
@@ -1028,37 +984,17 @@ print(recommendate_resources("中级", ["机器学习", "自然语言处理"]))
 
 **A**: `d2l-zh` 是该项目的中文版仓库，主要包含简体中文的翻译内容以及针对中文读者的优化；而 `d2l-en` 是英文原版仓库。两者的核心内容和代码逻辑基本一致，但更新进度可能略有不同。通常建议中文用户使用 `d2l-zh`，以便获得更好的阅读体验和本地化的社区支持。
 
-
-
 ### 5: 遇到代码报错或环境配置问题该如何解决？
 
 5: 遇到代码报错或环境配置问题该如何解决？
 
 **A**: 深度学习框架更新频繁，可能会导致旧版教材代码出现兼容性问题。首先建议检查代码仓库的 `Issue` 板块，通常会有其他用户讨论类似的报错。其次，确保安装了正确版本的框架和依赖库（查看仓库根目录下的 `requirements.txt` 或安装说明）。如果问题依然存在，可以尝试在 GitHub Issues 中提出详细的问题描述和错误日志，维护者或社区成员通常会提供帮助。
 
-
-
 ### 6: 除了阅读代码，还有其他学习资源吗？
 
 6: 除了阅读代码，还有其他学习资源吗？
 
 **A**: 除了 GitHub 上的代码和文档，该项目还提供了配套的教学视频。这些视频通常由书籍作者录制，可以在 Bilibili 或 YouTube 等视频平台上找到。此外，官方还提供了在线阅读版，用户无需配置本地环境，直接在浏览器中即可查看教材并运行代码。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 在 D2L 的源代码仓库中，找到用于定义 `d2l` 包核心功能的 `__init__.py` 文件。列出该文件中导入的前三个核心模块（如 `torch`、`matplotlib` 等），并说明它们在深度学习框架中的主要作用。
-
-### 提示**: 可以在仓库根目录下的 `d2l` 文件夹中查找 `__init__.py` 文件。导入的模块通常用于数据处理、可视化或模型训练。
-
-### 
-
----
 ## 实践建议
 
 基于该仓库作为高人气深度学习教材（Dive into Deep Learning）的特性，以下是针对实际开发、学习及教学场景的 5 条实践建议：
@@ -1102,7 +1038,6 @@ print(recommendate_resources("中级", ["机器学习", "自然语言处理"]))
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

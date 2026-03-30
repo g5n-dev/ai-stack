@@ -38,8 +38,6 @@ Relevant source files
   * [README_JP.md](https://github.com/alibaba/higress/blob/8deceb4d/README_JP.md)
   * [README_ZH.md](https://github.com/alibaba/higress/blob/8deceb4d/README_ZH.md)
 
-
-
 ## Purpose and Scope
 
 This document provides a comprehensive overview of Higress, an AI Native API Gateway built on Istio and Envoy. It covers the system's architecture, core components, and primary use cases. For detailed information about specific subsystems, refer to the Core Architecture (page 2), Build and Deployment (page 3), WASM Plugin System (page 4), AI Gateway Features (page 5), MCP System (page 6), and Development Guide (page 7) sections.
@@ -73,7 +71,6 @@ Higress implements a control plane and data plane separation derived from Istio'
 
 **Component Deployment Diagram:**
 
-
 **Binary and Process Mapping:**
 
 Binary| Source Entry Point| Deployment Location| Primary Functions  
@@ -92,7 +89,6 @@ Sources: [README.md32](https://github.com/alibaba/higress/blob/8deceb4d/README.m
 ### Configuration Flow and Controller Architecture
 
 **Configuration Update Sequence:**
-
 
 **Controller Registry and Responsibilities:**
 
@@ -318,9 +314,6 @@ Higress 的功能定位已经从传统的微服务网关进化为**AI Native API
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：动态路由配置
 def dynamic_routing():
@@ -353,9 +346,6 @@ def dynamic_routing():
 # 说明：这个示例展示了如何基于Higress的动态路由能力实现流量分流，
 # 在实际部署中，这些路由规则会通过Higress的配置API动态更新
 ```
-
-
-
 
 ```python
 # 示例2：请求认证与鉴权
@@ -398,9 +388,6 @@ def auth_middleware():
 # 说明：这个示例展示了如何在Higress中实现认证中间件，
 # 实际部署中这些逻辑会作为Wasm插件在Higress网关层执行
 ```
-
-
-
 
 ```python
 # 示例3：流量控制与限流
@@ -450,10 +437,8 @@ def rate_limiting():
 # 在Higress中可以通过配置更强大的限流规则，包括基于IP、用户等的限流
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：阿里巴巴内部核心业务（如淘宝、天猫等）
 
@@ -479,8 +464,6 @@ def rate_limiting():
 3.  **标准化落地**：通过 Higress 统一了内部流量网关与微服务网关的架构层，降低了运维复杂度，并沉淀了一套可复用的网关插件生态。
 
 ---
-
-
 
 ### 2：AIGC（生成式 AI）应用提供商
 
@@ -683,7 +666,6 @@ def rate_limiting():
 - 兼容 Nginx Ingress 注解和传统网关配置，大大降低了用户从 Nginx 或传统架构迁移到云原生网关的门槛。
 - 支持多集群管理和多租户场景，非常适合大型企业或微服务架构下的统一流量入口治理。
 
-
 ---
 ## 学习路径
 
@@ -779,7 +761,6 @@ def rate_limiting():
 ---
 ## 常见问题
 
-
 ### 1: Higress 是什么？它与阿里巴巴有什么关系？
 
 1: Higress 是什么？它与阿里巴巴有什么关系？
@@ -787,8 +768,6 @@ def rate_limiting():
 **A**: Higress 是阿里云推出的一款云原生 API 网关。它基于阿里内部多年在网关领域的实践，并结合了开源社区中 Kong 和 Envoy 的优势而构建。Higress 旨在提供标准、云原生的 API 网关能力，支持 Kubernetes Ingress 以及 North-South（南北向）和 East-West（东西向）流量管理。它不仅服务于阿里云的内部业务，也作为开源项目提供给社区使用，帮助企业降低云原生 API 网关的落地门槛。
 
 ---
-
-
 
 ### 2: Higress 与 Nginx、Kong 或 APISIX 等传统网关相比有什么核心优势？
 
@@ -803,8 +782,6 @@ def rate_limiting():
 
 ---
 
-
-
 ### 3: Higress 是否支持从 Nginx 或 Kong 迁移？迁移成本高吗？
 
 3: Higress 是否支持从 Nginx 或 Kong 迁移？迁移成本高吗？
@@ -816,8 +793,6 @@ def rate_limiting():
 3.  **配置同步**：对于存量系统，Higress 支持通过 Nacos 等配置中心进行配置同步，帮助用户逐步切换流量。
 
 ---
-
-
 
 ### 4: Higress 支持哪些类型的流量管理和路由策略？
 
@@ -832,8 +807,6 @@ def rate_limiting():
 
 ---
 
-
-
 ### 5: Higress 的插件是如何工作的？是否必须用 Go 或 C++ 编写？
 
 5: Higress 的插件是如何工作的？是否必须用 Go 或 C++ 编写？
@@ -847,8 +820,6 @@ def rate_limiting():
 
 ---
 
-
-
 ### 6: Higress 是开源的吗？可以在生产环境使用吗？
 
 6: Higress 是开源的吗？可以在生产环境使用吗？
@@ -858,22 +829,6 @@ def rate_limiting():
 1.  **生产就绪**：Higress 的内核源自阿里内部生产环境广泛使用的 Istio 和 Envoy 深度定制版本，经过了“双十一”等大流量场景的验证，具备极高的稳定性。
 2.  **社区支持**：作为 GitHub Trending 项目，它拥有活跃的社区支持，阿里云团队也在持续进行维护和更新。
 3.  **商业化版本**：对于需要企业级 SLA 保障、更高阶的安全防护或技术支持的用户，可以直接使用阿里云
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**:
-
-### 在本地 Docker 环境中快速部署 Higress，并创建一个简单的路由规则，将访问 `/hello` 的 HTTP 请求转发到一个运行在 8080 端口的本地后端服务（如 nginx 容器）。
-
-### 提示**:
-
----
 ## 实践建议
 
 基于 Higress 作为 AI Native API 网关的定位，结合其在阿里巴巴内部及开源社区的实际应用场景，以下是 7 条实践建议：
@@ -919,7 +874,6 @@ def rate_limiting():
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

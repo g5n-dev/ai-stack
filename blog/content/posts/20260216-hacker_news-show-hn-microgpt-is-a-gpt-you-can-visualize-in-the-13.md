@@ -83,9 +83,6 @@ Microgpt 试图通过在浏览器端实现极简架构的 Transformer 模型并�
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：基础GPT模型实现
 import torch
@@ -120,9 +117,6 @@ class SimpleGPT(nn.Module):
 
 # 说明：这个示例展示了如何用PyTorch实现一个基础的GPT模型结构，包含词嵌入、位置编码和Transformer解码器层。
 ```
-
-
-
 
 ```python
 # 示例2：文本生成可视化
@@ -162,9 +156,6 @@ def visualize_generation(model, prompt, max_length=50):
 # 说明：这个示例展示了如何在生成文本时实时可视化每个token的概率分布，帮助理解模型决策过程。
 ```
 
-
-
-
 ```python
 # 示例3：注意力权重可视化
 import torch
@@ -191,10 +182,8 @@ def visualize_attention(model, input_ids):
 # 说明：这个示例展示了如何可视化GPT模型中注意力层的权重，帮助理解模型如何关注输入序列中的不同部分。
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：高校《深度学习基础》课程教学辅助
 
@@ -213,8 +202,6 @@ def visualize_attention(model, input_ids):
 学生能够清晰地看到神经网络内部的“神经元”激活状态和注意力流向。通过可视化的概率分布图，学生直观理解了模型为何选择某个特定的词作为输出。课程结束后，学生对核心概念的掌握测试成绩提升了约 30%，且初学者在本地环境运行代码的成功率显著提高。
 
 ---
-
-
 
 ### 2：前端工程师的 AI 原理验证项目
 
@@ -326,7 +313,6 @@ def visualize_attention(model, input_ids):
 ---
 ## 常见问题
 
-
 ### 1: Microgpt 是什么？它与标准的 ChatGPT 或其他大型语言模型有何不同？
 
 1: Microgpt 是什么？它与标准的 ChatGPT 或其他大型语言模型有何不同？
@@ -334,8 +320,6 @@ def visualize_attention(model, input_ids):
 **A**: Microgpt 是一个旨在用于教育目的和可视化演示的极简版 GPT（生成式预训练变换模型）。与 OpenAI 的 ChatGPT 或 GPT-4 等拥有数十亿甚至数万亿参数的巨型工业模型不同，Microgpt 通常只包含非常少的层数和参数（例如在演示中可能只有几层）。它的核心价值不在于生成高质量的现实世界文本，而在于将神经网络内部复杂的“黑盒”运算过程（如注意力机制、前馈传播和矩阵乘法）通过图形化的方式在浏览器中直接展示出来，帮助用户直观地理解 Transformer 架构的工作原理。
 
 ---
-
-
 
 ### 2: 运行 Microgpt 需要安装 Python 环境或下载大文件吗？
 
@@ -345,8 +329,6 @@ def visualize_attention(model, input_ids):
 
 ---
 
-
-
 ### 3: 既然它也是 GPT，为什么它生成的文本质量不如 ChatGPT？
 
 3: 既然它也是 GPT，为什么它生成的文本质量不如 ChatGPT？
@@ -354,8 +336,6 @@ def visualize_attention(model, input_ids):
 **A**: 模型的智能程度与其规模（参数量）和训练数据量高度相关。ChatGPT 是在数千亿个 token 的海量数据上训练出来的，拥有数千亿参数。而 Microgpt 为了可视化展示和浏览器运行的轻量化，通常会大幅缩减模型层数、隐藏层维度和注意力头数量。这种“微型”模型捕捉语言复杂模式的能力非常有限，因此它生成的文本往往缺乏逻辑连贯性，更多是展示模型如何基于概率逐字生成的数学过程，而非实用的对话工具。
 
 ---
-
-
 
 ### 4: 我可以在可视化界面中调整哪些参数？
 
@@ -370,8 +350,6 @@ def visualize_attention(model, input_ids):
 
 ---
 
-
-
 ### 5: 这个项目适合什么人群使用？
 
 5: 这个项目适合什么人群使用？
@@ -383,29 +361,11 @@ def visualize_attention(model, input_ids):
 
 ---
 
-
-
 ### 6: Microgpt 是开源的吗？我可以基于它进行开发吗？
 
 6: Microgpt 是开源的吗？我可以基于它进行开发吗？
 
 **A**: 根据此类“Show HN”项目的常规性质，Microgpt 通常是开源的（通常托管在 GitHub 上）。这意味着你可以自由查看其源代码，了解如何用 JavaScript 或 WebGPU 实现矩阵运算，甚至可以 Fork 该项目并添加更多的可视化功能或增加模型规模。但具体的使用权限需参考该项目的具体开源许可证。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 在浏览器中实现 GPT 模型的前向传播时，最基础的计算单元是矩阵乘法。请尝试仅使用原生 JavaScript（不依赖 TensorFlow.js 或 ONNX Runtime 等库），编写一个函数来计算两个二维矩阵的乘积。
-
-### 提示**: 回顾线性代数中矩阵乘法的定义，即结果矩阵的第 $i$ 行第 $j$ 列元素等于左矩阵第 $i$ 行与右矩阵第 $j$ 列对应元素的乘积之和。你需要使用嵌套循环来遍历行和列。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://microgpt.boratto.ca](https://microgpt.boratto.ca)
@@ -414,7 +374,6 @@ def visualize_attention(model, input_ids):
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

@@ -69,9 +69,6 @@ scenarios: ["命令行工具"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：基础Peon语音通知系统
 import pygame
@@ -115,9 +112,6 @@ class PeonVoiceSystem:
 peon = PeonVoiceSystem()
 peon.notify("任务完成")
 ```
-
-
-
 
 ```python
 # 示例2：带状态跟踪的增强版通知系统
@@ -175,9 +169,6 @@ peon.notify_progress(-1)  # 错误
 peon.notify_progress(100)  # 完成
 ```
 
-
-
-
 ```python
 # 示例3：集成到开发工具的装饰器实现
 from functools import wraps
@@ -223,10 +214,8 @@ except ValueError:
     pass
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：独立游戏工作室的自动化开发流程
 
@@ -246,8 +235,6 @@ except ValueError:
 
 ---
 
-
-
 ### 2：大型科技公司的内部黑客马拉松项目
 
  2：大型科技公司的内部黑客马拉松项目
@@ -265,8 +252,6 @@ except ValueError:
 该项目在黑客马拉松中获得了"最佳趣味性"奖项。演示证明，高辨识度的游戏化音效能有效降低认知负荷。虽然未立即成为公司标准，但该小组随后将其作为开源项目发布，供社区使用，增加了工具的个性化选项。
 
 ---
-
-
 
 ### 3：远程全栈开发者的个性化工作流
 
@@ -392,7 +377,6 @@ except ValueError:
 ---
 ## 常见问题
 
-
 ### 1: 什么是 "Warcraft III Peon Voice Notifications for Claude Code"？
 
 1: 什么是 "Warcraft III Peon Voice Notifications for Claude Code"？
@@ -400,8 +384,6 @@ except ValueError:
 **A**: 这是一个针对 Claude Code（Anthropic 的 CLI 工具）的插件或扩展。它的主要功能是将代码执行过程中的状态反馈或通知，替换为《魔兽争霸 III》（Warcraft III）中“苦工”的经典语音台词。例如，当代码构建完成或出现错误时，不再是单调的系统提示音，而是播放 "Work Complete"（工作完成）或 "Job done"（任务完成）等语音，旨在为枯燥的编程工作增加趣味性。
 
 ---
-
-
 
 ### 2: 安装这个插件需要哪些前置条件？
 
@@ -414,8 +396,6 @@ except ValueError:
 
 ---
 
-
-
 ### 3: 如何配置特定的语音通知？
 
 3: 如何配置特定的语音通知？
@@ -423,8 +403,6 @@ except ValueError:
 **A**: 配置方法通常涉及修改 Claude Code 的配置文件或插件的设置文件。你需要将特定的代码事件（如 `success`, `error`, `warning`）映射到对应的音频文件路径。例如，你可以设置当 `Task Succeeded` 事件触发时，播放 `work_complete.mp3`。具体的配置语法请参考该项目的 `README.md` 文档，通常是一个 JSON 或 YAML 格式的映射表。
 
 ---
-
-
 
 ### 4: 该插件是否支持《魔兽争霸 III》中的所有种族语音？
 
@@ -434,8 +412,6 @@ except ValueError:
 
 ---
 
-
-
 ### 5: 使用该插件会影响 Claude Code 的性能吗？
 
 5: 使用该插件会影响 Claude Code 的性能吗？
@@ -443,8 +419,6 @@ except ValueError:
 **A**: 通常不会。该插件的工作原理是在特定的钩子或事件触发时调用系统的音频播放命令。这种操作非常轻量，几乎不会占用额外的 CPU 或内存资源，也不会拖慢代码编译或执行的速度。唯一的“开销”可能是你在听到语音时会忍不住会心一笑，从而稍微分散注意力。
 
 ---
-
-
 
 ### 6: 如果遇到无法播放声音的情况，该如何排查？
 
@@ -455,22 +429,6 @@ except ValueError:
 2.  **检查音频路径**：确认配置文件中指向的音频文件路径是绝对路径且文件确实存在。
 3.  **播放器兼容性**：确认你的操作系统安装了必要的命令行音频播放工具（如 Linux 上的 `aplay` 或 `paplay`，macOS 上的 `afplay`，Windows 通常是默认关联）。
 4.  **日志输出**：查看 Claude Code 的运行日志，检查是否有关于音频调用的报错信息。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 实现一个基础函数，将文本转换为类似《魔兽争霸3》苦工的语音风格。要求：将所有文本转为小写，并在每个句子末尾添加 "job done"。
-
-### 提示**: 可以使用字符串的 `toLowerCase()` 方法和简单的字符串拼接操作。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://github.com/tonyyont/peon-ping](https://github.com/tonyyont/peon-ping)
@@ -479,7 +437,6 @@ except ValueError:
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

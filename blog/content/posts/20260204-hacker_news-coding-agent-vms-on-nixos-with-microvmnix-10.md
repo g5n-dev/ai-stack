@@ -84,9 +84,6 @@ scenarios: ["DevOps/运维"]
 ---
 ## 代码示例
 
-
-
-
 ```nix
 # 示例1：创建一个基础的MicroVM配置
 # 这个示例展示了如何使用microvm.nix创建一个最简单的虚拟机配置
@@ -109,9 +106,6 @@ scenarios: ["DevOps/运维"]
   };
 }
 ```
-
-
-
 
 ```nix
 # 示例2：带网络配置的MicroVM
@@ -139,9 +133,6 @@ scenarios: ["DevOps/运维"]
   };
 }
 ```
-
-
-
 
 ```nix
 # 示例3：带持久化存储的MicroVM
@@ -174,10 +165,8 @@ scenarios: ["DevOps/运维"]
 }
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某金融科技初创公司的 CI/CD 基础设施重构
 
@@ -200,8 +189,6 @@ scenarios: ["DevOps/运维"]
 - 通过 Nix 的精确哈希机制，实现了构建产物的 100% 可复现，极大地简化了审计和合规流程。
 
 ---
-
-
 
 ### 2：SaaS 平台的多租户隔离与开发环境标准化
 
@@ -313,7 +300,6 @@ scenarios: ["DevOps/运维"]
 ---
 ## 常见问题
 
-
 ### 1: 什么是 Microvm.nix，它与标准的 NixOS 虚拟机或容器有何不同？
 
 1: 什么是 Microvm.nix，它与标准的 NixOS 虚拟机或容器有何不同？
@@ -323,8 +309,6 @@ scenarios: ["DevOps/运维"]
 它利用 Linux 的 KVM（基于内核的虚拟机）技术来运行微虚拟机，但通过最小化客户机操作系统和资源占用，使其启动速度极快（毫秒级）且内存开销极低。与容器相比，它提供了更强的隔离性（独立的内核），与标准虚拟机相比，它拥有更接近原生的性能和更便捷的 NixOS 集成体验。它是构建 Coding Agent VMs 的理想基础，因为它既保证了隔离性，又不会像传统虚拟机那样笨重。
 
 ---
-
-
 
 ### 2: 为什么选择在 NixOS 上运行 Coding Agent（编程代理），而不是在 Ubuntu 或 macOS 上？
 
@@ -338,8 +322,6 @@ scenarios: ["DevOps/运维"]
 
 ---
 
-
-
 ### 3: Microvm.nix 的性能开销如何？它适合高频创建和销毁吗？
 
 3: Microvm.nix 的性能开销如何？它适合高频创建和销毁吗？
@@ -351,8 +333,6 @@ scenarios: ["DevOps/运维"]
 *   **存储效率**：基于 NixOS 的存储机制，如果多个 Microvm 共享相同的系统包，它们在磁盘上只存储一份副本。这使得在有限的硬件资源上同时运行数十个 Coding Agent VMs 成为可能。
 
 ---
-
-
 
 ### 4: 如何配置 Microvm 以支持 Coding Agent 所需的网络访问？
 
@@ -380,8 +360,6 @@ scenarios: ["DevOps/运维"]
 使用 `macvtap` 可以让虚拟机直接出现在宿主机的网络子网中，就像局域网内的另一台独立物理机一样，拥有独立的 IP 地址，非常适合需要网络通信的 Agent 任务。
 
 ---
-
-
 
 ### 5: 我能否将宿主机的代码目录直接传递给 Microvm 中的 Agent 进行处理？
 
@@ -411,27 +389,9 @@ Microvm.nix 支持通过配置将宿主机的目录共享给虚拟机。这意�
 
 ---
 
-
-
 ### 6: 使用 Microvm.nix 管理 Coding Agent 环境时，如何处理 GPU 透传或高性能计算需求
 
 6: 使用 Microvm.nix 管理 Coding Agent 环境时，如何处理 GPU 透传或高性能计算需求
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 在使用 `microvm.nix` 定义虚拟机时，如何通过配置将宿主机上的一个特定目录（例如项目源码目录）以只读方式挂载到虚拟机内的 `/mnt/code` 路径？
-
-### 提示**: 查看 `microvm.nix` 关于 `shares` 或 9p 文件系统的配置选项，注意区分只读（`ro`）与读写挂载的参数差异。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://michael.stapelberg.ch/posts/2026-02-01-coding-agent-microvm-nix](https://michael.stapelberg.ch/posts/2026-02-01-coding-agent-microvm-nix)
@@ -440,7 +400,6 @@ Microvm.nix 支持通过配置将宿主机的目录共享给虚拟机。这意�
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

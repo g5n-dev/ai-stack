@@ -43,8 +43,6 @@ Relevant source files
   * [channel/wechat/wechat_channel.py](https://github.com/zhayujie/chatgpt-on-wechat/blob/3db5e70a/channel/wechat/wechat_channel.py)
   * [config-template.json](https://github.com/zhayujie/chatgpt-on-wechat/blob/3db5e70a/config-template.json)
 
-
-
 This document provides a comprehensive introduction to the chatgpt-on-wechat (CoW) system - an intelligent conversational bot framework that integrates large language models with various messaging platforms. The system allows users to interact with AI models like GPT-4o, Claude, Gemini, and others through messaging platforms including WeChat, DingTalk, Feishu, and more.
 
 For specific deployment instructions, see [Deployment](/zhayujie/chatgpt-on-wechat/8-deployment), and for configuration details, see [Configuration](/zhayujie/chatgpt-on-wechat/7-configuration).
@@ -58,8 +56,6 @@ The chatgpt-on-wechat system serves as a flexible bridge between messaging platf
   3. Extensibility through a plugin architecture
   4. Integration with knowledge bases for domain-specific applications
 
-
-
 The system supports both personal and enterprise use cases, from simple chatbots to complex AI assistants with specialized knowledge.
 
 Sources: [README.md9-20](https://github.com/zhayujie/chatgpt-on-wechat/blob/3db5e70a/README.md#L9-L20)
@@ -68,7 +64,6 @@ Sources: [README.md9-20](https://github.com/zhayujie/chatgpt-on-wechat/blob/3db5
 
 The system follows a modular architecture with several key components working together to process messages, generate responses, and manage the flow of information.
 
-
 **Core Components Diagram**
 
 Sources: [app.py28-41](https://github.com/zhayujie/chatgpt-on-wechat/blob/3db5e70a/app.py#L28-L41) [channel/channel_factory.py8-51](https://github.com/zhayujie/chatgpt-on-wechat/blob/3db5e70a/channel/channel_factory.py#L8-L51)
@@ -76,7 +71,6 @@ Sources: [app.py28-41](https://github.com/zhayujie/chatgpt-on-wechat/blob/3db5e7
 ## Message Flow
 
 Messages flow through the system following a consistent pattern, with plugins having the opportunity to intercept and handle messages before they reach the default processing path.
-
 
 **Message Processing Flow Diagram**
 
@@ -105,7 +99,6 @@ Sources: [README.md13-20](https://github.com/zhayujie/chatgpt-on-wechat/blob/3db
 
 The system supports multiple messaging platforms through its channel architecture. Each channel handles the specific communication protocol of its platform.
 
-
 **Channel Hierarchy Diagram**
 
 Sources: [channel/channel_factory.py8-51](https://github.com/zhayujie/chatgpt-on-wechat/blob/3db5e70a/channel/channel_factory.py#L8-L51) [channel/wechat/wechat_channel.py109-115](https://github.com/zhayujie/chatgpt-on-wechat/blob/3db5e70a/channel/wechat/wechat_channel.py#L109-L115) [channel/wechat/wcf_channel.py26-38](https://github.com/zhayujie/chatgpt-on-wechat/blob/3db5e70a/channel/wechat/wcf_channel.py#L26-L38)
@@ -133,7 +126,6 @@ Sources: [README.md9](https://github.com/zhayujie/chatgpt-on-wechat/blob/3db5e70
 
 The system features a robust plugin architecture that allows for extending functionality:
 
-
 **Plugin System Diagram**
 
 Sources: [app.py32](https://github.com/zhayujie/chatgpt-on-wechat/blob/3db5e70a/app.py#L32-L32) [README.md19](https://github.com/zhayujie/chatgpt-on-wechat/blob/3db5e70a/README.md#L19-L19)
@@ -158,7 +150,6 @@ Sources: [config-template.json1-37](https://github.com/zhayujie/chatgpt-on-wecha
 ## Application Entry Point
 
 The system starts from `app.py`, which initializes the configuration, creates and starts the appropriate channel, and loads plugins:
-
 
 **Application Startup Diagram**
 
@@ -395,9 +386,6 @@ CoW 的范式是 **“中间件聚合”**。它不生产模型，也不生产�
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：调用ChatGPT API进行对话
 import openai
@@ -425,7 +413,6 @@ user_input = "你好，请介绍一下你自己"
 reply = chat_with_gpt(user_input, api_key)
 print("机器人回复:", reply)
 ```
-
 
 ---
 
@@ -457,7 +444,6 @@ def auto_reply(msg):
 itchat.auto_login(hotReload=True)  # 热登录，避免每次扫码
 itchat.run()  # 启动监听
 ```
-
 
 ---
 
@@ -498,10 +484,8 @@ def save_chat_log(user, message, reply, filename="chat_log.json"):
 save_chat_log("张三", "你好", "你好，张三！我是自动回复机器人。")
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某跨境电商团队内部知识库与客服辅助
 
@@ -524,8 +508,6 @@ save_chat_log("张三", "你好", "你好，张三！我是自动回复机器人
 3. **工作流集成**：无需切换应用，在微信生态内完成了从“提问”到“解决”的闭环。
 
 ---
-
-
 
 ### 2：高校科研小组的文献阅读与代码辅助助手
 
@@ -756,7 +738,6 @@ save_chat_log("张三", "你好", "你好，张三！我是自动回复机器人
 - 项目活跃度高，持续更新适配OpenAI最新API（如GPT-4），确保长期可用性。
 - 开源协议宽松（MIT），适合二次开发或商业集成，但需注意微信账号风控风险。
 
-
 ---
 ## 学习路径
 
@@ -863,7 +844,6 @@ save_chat_log("张三", "你好", "你好，张三！我是自动回复机器人
 ---
 ## 常见问题
 
-
 ### 1: 什么是 zhayujie/chatgpt-on-wechat 项目？
 
 1: 什么是 zhayujie/chatgpt-on-wechat 项目？
@@ -871,8 +851,6 @@ save_chat_log("张三", "你好", "你好，张三！我是自动回复机器人
 **A**: `zhayujie/chatgpt-on-wechat` 是一个开源项目，旨在将 ChatGPT（或支持 OpenAI API 格式的其他大语言模型）接入到微信个人号中。它基于 `itchat` 或 `wechaty` 等微信协议库实现，允许用户通过微信直接与 AI 进行对话，支持多用户私聊、群聊互动、语音识别以及上下文记忆等功能。该项目通常需要部署在服务器或本地运行，并配置相应的 API Key 才能使用。
 
 ---
-
-
 
 ### 2: 部署该项目需要哪些准备工作？
 
@@ -886,8 +864,6 @@ save_chat_log("张三", "你好", "你好，张三！我是自动回复机器人
 
 ---
 
-
-
 ### 3: 运行项目时微信登录提示“已开启微信账号保护”或无法扫码怎么办？
 
 3: 运行项目时微信登录提示“已开启微信账号保护”或无法扫码怎么办？
@@ -899,8 +875,6 @@ save_chat_log("张三", "你好", "你好，张三！我是自动回复机器人
 **解决方案**：建议使用注册时间较长、实名认证且状态正常的微信号。如果依然无法登录，可以尝试使用项目支持的其他协议（如 `wechaty`，通常需要使用 Docker 部署并配合 Puppet 服务），或者考虑使用部署在云端的已登录方案。
 
 ---
-
-
 
 ### 4: 如何在微信群里让 AI 回复特定消息，而不是回复所有消息？
 
@@ -914,8 +888,6 @@ save_chat_log("张三", "你好", "你好，张三！我是自动回复机器人
 
 ---
 
-
-
 ### 5: 除了 OpenAI 官方 API，该项目支持国内的大模型（如文心一言、通义千问）吗？
 
 5: 除了 OpenAI 官方 API，该项目支持国内的大模型（如文心一言、通义千问）吗？
@@ -924,8 +896,6 @@ save_chat_log("张三", "你好", "你好，张三！我是自动回复机器人
 **操作方法**：在配置文件中，将 `api_base` 地址修改为国内服务商提供的 API 端点地址，并将 `api_key` 替换为对应的 Key 即可。部分项目版本也可能直接集成了对国内模型的支持，具体需参考项目的 `README` 文档说明。
 
 ---
-
-
 
 ### 6: 使用过程中遇到报错 "Check your api key and model" 怎么办？
 
@@ -936,22 +906,6 @@ save_chat_log("张三", "你好", "你好，张三！我是自动回复机器人
 2. **模型名称错误**：检查配置的 `model` 字段（如 `gpt-3.5-turbo`）。如果你使用的是中转 API 或其他兼容接口，模型名称可能需要填写特定的值（例如 `gpt-3.5-turbo-0301` 或服务商自定义的名称）。
 3. **网络问题**：如果你直接连接 OpenAI 官方 API，请确保服务器能够访问 OpenAI 的服务（即具备科学上网环境）。如果网络不通，会导致请求失败并报错。
 4. **余额不足**：如果是绑定了信用卡的 OpenAI 账号，请确认账户内余额是否
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 基础环境搭建与配置
-
-### 请尝试在本地部署该项目，并使其能够成功回复你的第一条消息。在配置过程中，如何正确区分并填入 `open_ai_api_key` 和其他配置参数？
-
-### 提示**:
-
----
 ## 实践建议
 
 基于 `zhayujie/chatgpt-on-wechat` 项目的特性和常见使用场景，以下是 6 条实践建议：
@@ -998,7 +952,6 @@ save_chat_log("张三", "你好", "你好，张三！我是自动回复机器人
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

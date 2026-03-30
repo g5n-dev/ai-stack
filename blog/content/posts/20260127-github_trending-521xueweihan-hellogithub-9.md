@@ -36,8 +36,6 @@ Relevant source files
   * [README_en.md](https://github.com/521xueweihan/HelloGitHub/blob/99a5e3f5/README_en.md)
   * [README_ja.md](https://github.com/521xueweihan/HelloGitHub/blob/99a5e3f5/README_ja.md)
 
-
-
 ## Purpose and Scope
 
 This document provides a comprehensive overview of the HelloGitHub project, an initiative aimed at sharing interesting, entry-level open source projects from GitHub to make them more accessible to developers. This overview introduces the project's mission, structure, and core components.
@@ -58,7 +56,6 @@ Sources: [README.md15-17](https://github.com/521xueweihan/HelloGitHub/blob/99a5e
 
 ### HelloGitHub Ecosystem
 
-
 Sources: [README.md15-22](https://github.com/521xueweihan/HelloGitHub/blob/99a5e3f5/README.md#L15-L22) [README_en.md15-23](https://github.com/521xueweihan/HelloGitHub/blob/99a5e3f5/README_en.md#L15-L23) [README_ja.md15-23](https://github.com/521xueweihan/HelloGitHub/blob/99a5e3f5/README_ja.md#L15-L23)
 
 ## Content Publication Cycle
@@ -66,7 +63,6 @@ Sources: [README.md15-22](https://github.com/521xueweihan/HelloGitHub/blob/99a5e
 HelloGitHub releases new issues on the 28th of each month. Each issue contains a curated list of open source projects categorized by programming language and special topics. The content includes popular projects, entry-level projects, tools, books, learning resources, and enterprise-level projects.
 
 ### Publication Flow
-
 
 Sources: [README.md17](https://github.com/521xueweihan/HelloGitHub/blob/99a5e3f5/README.md#L17-L17) [README_en.md23](https://github.com/521xueweihan/HelloGitHub/blob/99a5e3f5/README_en.md#L23-L23) [README_ja.md23](https://github.com/521xueweihan/HelloGitHub/blob/99a5e3f5/README_ja.md#L23-L23)
 
@@ -86,7 +82,6 @@ Sources: [README.md19-33](https://github.com/521xueweihan/HelloGitHub/blob/99a5e
 
 ### Content Categorization
 
-
 Sources: [README.md21-31](https://github.com/521xueweihan/HelloGitHub/blob/99a5e3f5/README.md#L21-L31) [README_en.md25-34](https://github.com/521xueweihan/HelloGitHub/blob/99a5e3f5/README_en.md#L25-L34) [README_ja.md25-34](https://github.com/521xueweihan/HelloGitHub/blob/99a5e3f5/README_ja.md#L25-L34)
 
 ## Distribution Channels
@@ -96,8 +91,6 @@ HelloGitHub content is distributed through three primary channels:
   1. **GitHub Repository** : The main repository at [521xueweihan/HelloGitHub](https://github.com/521xueweihan/HelloGitHub/blob/99a5e3f5/521xueweihan/HelloGitHub) contains all published issues and is the primary source of content.
   2. **HelloGitHub Website** : The dedicated website (hellogithub.com) provides an enhanced reading experience with additional features.
   3. **WeChat Official Account** : For Chinese users, content is also distributed through a WeChat official account.
-
-
 
 Sources: [README.md19-20](https://github.com/521xueweihan/HelloGitHub/blob/99a5e3f5/README.md#L19-L20) [README_en.md23](https://github.com/521xueweihan/HelloGitHub/blob/99a5e3f5/README_en.md#L23-L23) [README_ja.md23](https://github.com/521xueweihan/HelloGitHub/blob/99a5e3f5/README_ja.md#L23-L23)
 
@@ -112,7 +105,6 @@ Sources: [README.md34](https://github.com/521xueweihan/HelloGitHub/blob/99a5e3f5
 The project is supported by sponsors who receive visibility in the README files and on the website. Content is licensed under Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License (CC BY-NC-ND 4.0), which allows sharing with attribution but prohibits commercial use and derivative works.
 
 ### Sponsorship Structure
-
 
 Sources: [README.md36-71](https://github.com/521xueweihan/HelloGitHub/blob/99a5e3f5/README.md#L36-L71) [README_en.md37-39](https://github.com/521xueweihan/HelloGitHub/blob/99a5e3f5/README_en.md#L37-L39) [README_ja.md37-39](https://github.com/521xueweihan/HelloGitHub/blob/99a5e3f5/README_ja.md#L37-L39)
 
@@ -359,37 +351,8 @@ HelloGitHub 不是一个“硬核”的代码仓库，它是一个**技术媒体
 ---
 ## 💻 实用代码示例
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 ## 📚 真实案例研究
-
 
 ### 1：中小科技公司的开源技术社区搭建
 
@@ -413,8 +376,6 @@ HelloGitHub 不是一个“硬核”的代码仓库，它是一个**技术媒体
 
 ---  
 
-
-
 ### 2：高校计算机专业的开源实践课程
 
  2：高校计算机专业的开源实践课程  
@@ -436,8 +397,6 @@ HelloGitHub 不是一个“硬核”的代码仓库，它是一个**技术媒体
 - ✨ 3名学生因参与 HelloGitHub 推荐的项目获得企业实习机会，其中1人贡献被合并。  
 
 ---  
-
-
 
 ### 3：开源爱好者自媒体的内容创作
 
@@ -691,7 +650,6 @@ GitHub Trending 内容更新频率固定，适合预渲染为静态页面，减�
 - 💡 **展示了“长期主义”的运营价值**：作者 521xueweihan 坚持长期更新高质量内容，证明了在技术领域，持续输出利他价值能获得巨大的社区影响力（GitHub Trending 常客）。
 - 🤝 **不仅是教程，更是“开源文化的布道”**：它通过推荐非盈利、非商业化的优秀个人项目，引导新手关注 Star 背后的“人”与“精神”，培养健康的开源参与习惯。
 
-
 ---
 ## 🗺️ 循序渐进的学习路径
 
@@ -787,7 +745,6 @@ GitHub Trending 内容更新频率固定，适合预渲染为静态页面，减�
 ---
 ## ❓ 常见问题解答
 
-
 ### 1: HelloGitHub 是什么？它是做什么用的？
 
 1: HelloGitHub 是什么？它是做什么用的？
@@ -798,8 +755,6 @@ HelloGitHub 是一个专注于发现和分享有趣、入门级开源项目的�
 它的主要目标是帮助对编程感兴趣的人（特别是初学者）找到适合阅读和学习的代码库。它通常通过月刊、月刊列表或 GitHub Trending 的形式，推荐那些**代码清晰、文档友好、实用性强的开源项目**，让读者不仅能找到好用的工具，还能通过阅读源码来提升编程技术 👍。
 
 ---
-
-
 
 ### 2: "521xueweihan" 这个 ID 代表什么含义？
 
@@ -816,8 +771,6 @@ HelloGitHub 是一个专注于发现和分享有趣、入门级开源项目的�
 
 ---
 
-
-
 ### 3: HelloGitHub 推荐的项目适合什么水平的开发者？
 
 3: HelloGitHub 推荐的项目适合什么水平的开发者？
@@ -832,8 +785,6 @@ HelloGitHub 推荐的项目非常广泛，但特别侧重于**初学者和中级
 当然，其中也会包含一些极具价值的高级项目，适合进阶学习 🚀。
 
 ---
-
-
 
 ### 4: 如何向 HelloGitHub 投稿或推荐自己的开源项目？
 
@@ -851,8 +802,6 @@ HelloGitHub 非常欢迎社区参与和投稿 🤝。
 
 ---
 
-
-
 ### 5: "来源：github_trending" 是什么意思？
 
 5: "来源：github_trending" 是什么意思？
@@ -864,8 +813,6 @@ GitHub Trending 是 GitHub 官方的一个展示页面，会根据星标增长�
 被标记为“来源：github_trending”，意味着 HelloGitHub 在当时因为非常受欢迎（Star 数激增）而登上了趋势榜，引起了更多人的关注 🔥。
 
 ---
-
-
 
 ### 6: 关注 HelloGitHub 对学习编程有什么具体帮助？
 
@@ -881,8 +828,6 @@ GitHub Trending 是 GitHub 官方的一个展示页面，会根据星标增长�
 
 ---
 
-
-
 ### 7: 除了 GitHub，在哪里可以看到 HelloGitHub 的内容？
 
 7: 除了 GitHub，在哪里可以看到 HelloGitHub 的内容？
@@ -896,22 +841,6 @@ HelloGitHub 已经发展成为一个全渠道的技术媒体品牌 📢。
 3.  **社交媒体**：如掘金、知乎等平台也有官方账号发布文章。
 
 建议关注其微信公众号，获取最新的月刊推送是最方便的方式 🗓️。
-
----
-## 🎯 挑战与思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**: HelloGitHub 项目通常包含数百个开源项目的介绍链接。请编写一个简单的 Python 脚本（或使用 Shell 脚本），从 HelloGitHub 的 GitHub 仓库 `README.md` 文件中提取出最近一期的所有项目名称和对应的 GitHub 链接。
-
-### 提示**:
-
-### 可以尝试使用 Python 的 `requests` 库获取内容，配合 `re` (正则表达式) 模块或者 HTML 解析库（如 `BeautifulSoup`）来匹配 Markdown 格式的链接 `[项目名](URL)`。
-
----
 ## 💡 实践建议
 
 以下针对 **521xueweihan/HelloGitHub** 这一仓库的实践建议，旨在帮助维护者更高效地运营内容，也帮助使用者更好地利用这一资源。

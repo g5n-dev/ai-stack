@@ -74,9 +74,6 @@ scenarios: ["AI/ML项目", "大语言模型"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：基础城市状态监控
 def monitor_city_status(api_base_url="http://localhost:8000"):
@@ -112,9 +109,6 @@ def monitor_city_status(api_base_url="http://localhost:8000"):
 # 说明：这个示例展示了AI代理如何通过REST API获取城市状态，
 # 并根据简单规则触发决策建议，是AI决策的基础感知模块。
 ```
-
-
-
 
 ```python
 # 示例2：自动化区域规划
@@ -169,10 +163,8 @@ def auto_zone_development(api_base_url="http://localhost:8000", zone_type="resid
 # 结合经济约束条件执行自动化的区域规划操作。
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某智慧城市交通管理优化项目
 
@@ -187,8 +179,6 @@ def auto_zone_development(api_base_url="http://localhost:8000", zone_type="resid
 **效果**: 该系统上线后，AI Agent在仿真环境中成功验证了动态绿波带控制策略。实际应用数据显示，试点区域的早晚高峰平均通行速度提升了15%，拥堵指数下降了12%。更重要的是，该系统将交通策略的验证周期从传统的数周缩短到了数小时，极大地提升了城市应对突发交通状况的韧性。
 
 ---
-
-
 
 ### 2：大型供应链网络韧性测试平台
 
@@ -299,7 +289,6 @@ def auto_zone_development(api_base_url="http://localhost:8000", zone_type="resid
 ---
 ## 常见问题
 
-
 ### 1: 什么是 "Show HN"，这个项目具体是做什么的？
 
 1: 什么是 "Show HN"，这个项目具体是做什么的？
@@ -307,8 +296,6 @@ def auto_zone_development(api_base_url="http://localhost:8000", zone_type="resid
 **A**: "Show HN" 是 Hacker News 社区的一个传统标签，用于展示开发者自己独立开发的业余项目或新产品。在这个特定的案例中，开发者创建了一个系统，让 AI 智能体通过 REST API（一种软件接口）来控制经典游戏《模拟城市》。这意味着 AI 不是通过图像识别来“看”屏幕，而是通过代码层面的数据交换来获取城市状态（如人口、资金、电力）并下达指令（如建设道路、规划区域）。
 
 ---
-
-
 
 ### 2: AI 智能体是如何通过 REST API 玩游戏的，这与人类玩游戏有何不同？
 
@@ -318,8 +305,6 @@ def auto_zone_development(api_base_url="http://localhost:8000", zone_type="resid
 
 ---
 
-
-
 ### 3: 使用 REST API 而不是屏幕截图进行控制有什么优势？
 
 3: 使用 REST API 而不是屏幕截图进行控制有什么优势？
@@ -327,8 +312,6 @@ def auto_zone_development(api_base_url="http://localhost:8000", zone_type="resid
 **A**: 这种方法通常被称为“工具使用”或“上帝模式”接口，具有显著优势。首先是**效率**，AI 无需运行昂贵的计算机视觉模型来解析屏幕上的像素，可以直接获取精确的结构化数据（如具体的资金数值）。其次是**速度**，绕过图形渲染大大加快了游戏循环的迭代速度，使 AI 能在短时间内模拟更多的游戏年份。最后是**确定性**，消除了视觉噪音或 UI 动画可能带来的误判。
 
 ---
-
-
 
 ### 4: 目前这个 AI 智能体的表现如何？它能玩好《模拟城市》吗？
 
@@ -338,8 +321,6 @@ def auto_zone_development(api_base_url="http://localhost:8000", zone_type="resid
 
 ---
 
-
-
 ### 5: 这个项目使用了什么技术栈或大模型？
 
 5: 这个项目使用了什么技术栈或大模型？
@@ -347,8 +328,6 @@ def auto_zone_development(api_base_url="http://localhost:8000", zone_type="resid
 **A**: 虽然具体的代码实现细节取决于开发者的选择，但此类项目通常使用 Python 编写 AI 控制逻辑。后端可能使用 Node.js、Python (Flask/FastAPI) 或其他语言来封装游戏引擎。在 AI 模型方面，可能会使用具备强大推理能力的闭源模型（如 OpenAI 的 GPT-4 或 Anthropic 的 Claude），或者是开源的微调模型，通过编写特定的 Prompt 或 Function Calling 机制来让模型理解 API 的调用规范。
 
 ---
-
-
 
 ### 6: 这个项目的意义是什么，除了玩游戏还有什么应用前景？
 
@@ -358,29 +337,11 @@ def auto_zone_development(api_base_url="http://localhost:8000", zone_type="resid
 
 ---
 
-
-
 ### 7: 我可以在自己的电脑上运行这个项目吗？
 
 7: 我可以在自己的电脑上运行这个项目吗？
 
 **A**: 这取决于开发者是否开源了完整的代码。通常这类 Show HN 项目会在 GitHub 上提供仓库链接。如果你想运行它，你需要克隆代码库，按照说明配置游戏服务器环境，并拥有访问所用 AI 模型的 API Key（例如 OpenAI API Key）。需要注意的是，运行 AI 模型调用可能会产生一定的 API 费用，且需要具备基本的编程环境配置能力。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: 基础 API 设计
-
-### 问题**: 设计一个基础的 REST API 端点（Endpoint），允许外部代理获取城市当前的财政状态（资金、收入、支出）。请定义 URL 路径、HTTP 方法以及返回的 JSON 数据结构。
-
-### 提示**: 考虑使用 HTTP GET 方法，路径应体现资源层级（如 `/api/city/finance`）。JSON 结构应包含键值对，确保字段命名清晰且符合编程惯例（如驼峰命名法）。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://hallucinatingsplines.com](https://hallucinatingsplines.com)
@@ -389,7 +350,6 @@ def auto_zone_development(api_base_url="http://localhost:8000", zone_type="resid
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

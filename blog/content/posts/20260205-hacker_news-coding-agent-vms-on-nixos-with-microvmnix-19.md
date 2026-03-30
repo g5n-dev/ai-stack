@@ -85,9 +85,6 @@ scenarios: ["DevOps/运维"]
 ---
 ## 代码示例
 
-
-
-
 ```nix
 # 示例1：创建一个基础的Coding Agent VM配置
 # 这个配置定义了一个最小化的NixOS虚拟机，适合作为代码执行环境
@@ -124,9 +121,6 @@ scenarios: ["DevOps/运维"]
   ];
 }
 ```
-
-
-
 
 ```nix
 # 示例2：添加持久化存储和网络隔离
@@ -169,9 +163,6 @@ scenarios: ["DevOps/运维"]
 }
 ```
 
-
-
-
 ```nix
 # 示例3：自动化部署和资源限制
 { config, lib, pkgs, ... }: {
@@ -211,10 +202,8 @@ scenarios: ["DevOps/运维"]
 }
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某金融科技初创公司的 CI/CD 管道优化
 
@@ -233,8 +222,6 @@ scenarios: ["DevOps/运维"]
 
 ---
 
-
-
 ### 2：某开源工具开发者的本地开发环境标准化
 
  2：某开源工具开发者的本地开发环境标准化
@@ -251,8 +238,6 @@ scenarios: ["DevOps/运维"]
 - MicroVM 提供了接近原生的性能，且不会污染宿主机的操作系统，贡献者可以随时删除 VM 回归干净状态。
 
 ---
-
-
 
 ### 3：SaaS 平台的多租户隔离与测试
 
@@ -374,7 +359,6 @@ scenarios: ["DevOps/运维"]
 ---
 ## 常见问题
 
-
 ### 1: 什么是 Microvm.nix，它与标准的 NixOS 虚拟机有何不同？
 
 1: 什么是 Microvm.nix，它与标准的 NixOS 虚拟机有何不同？
@@ -385,8 +369,6 @@ scenarios: ["DevOps/运维"]
 3.  **设计目的**：标准 VM 更像是一个完整的系统环境，而 MicroVM 更接近于容器（Container）的隔离级别，但提供了更强的内核级隔离，非常适合用作 Coding Agent 的沙箱环境。
 
 ---
-
-
 
 ### 2: 为什么选择在 NixOS 上使用 MicroVM 运行 Coding Agent，而不是直接使用 Docker 或 Podman？
 
@@ -400,8 +382,6 @@ scenarios: ["DevOps/运维"]
 
 ---
 
-
-
 ### 3: Microvm.nix 的性能开销如何？能否满足编译或运行代码的需求？
 
 3: Microvm.nix 的性能开销如何？能否满足编译或运行代码的需求？
@@ -413,8 +393,6 @@ scenarios: ["DevOps/运维"]
 
 ---
 
-
-
 ### 4: 如何在 NixOS 配置中通过 Microvm.nix 定义和管理这些 Coding Agent 虚拟机？
 
 4: 如何在 NixOS 配置中通过 Microvm.nix 定义和管理这些 Coding Agent 虚拟机？
@@ -424,8 +402,6 @@ scenarios: ["DevOps/运维"]
 例如，你可以定义一个名为 `agent-01` 的微虚拟机，指定它使用 512M 内存和 1 个 vCPU，并指向一个包含特定开发环境（如 Python + Node.js）的 NixOS 配置。配置完成后，通过 `systemctl` 启动对应的 microvm 服务即可。这种方式使得虚拟机的管理像管理系统服务一样简单。
 
 ---
-
-
 
 ### 5: Coding Agent 在 MicroVM 中生成的文件如何持久化或与宿主机交互？
 
@@ -438,30 +414,12 @@ scenarios: ["DevOps/运维"]
 
 ---
 
-
-
 ### 6: 使用 Microvm.nix 部署这种架构有哪些潜在的缺点或挑战？
 
 6: 使用 Microvm.nix 部署这种架构有哪些潜在的缺点或挑战？
 
 **A**: 尽管优势明显，但也存在一些挑战：
 1.  **调试
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 在使用 `microvm.nix` 定义虚拟机时，如何将宿主机上的一个特定目录（例如包含源代码的 `/home/user/project`）以只读权限挂载到虚拟机内的 `/mnt/project` 目录？
-
-### 提示**: 查阅 `microvm.nix` 关于文件系统共享的配置选项，重点关注 `shares` 字段的定义以及 `mountPoint` 和 `proto` 属性的设置。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://michael.stapelberg.ch/posts/2026-02-01-coding-agent-microvm-nix](https://michael.stapelberg.ch/posts/2026-02-01-coding-agent-microvm-nix)
@@ -470,7 +428,6 @@ scenarios: ["DevOps/运维"]
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

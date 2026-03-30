@@ -38,8 +38,6 @@ Relevant source files
   * [README_JP.md](https://github.com/alibaba/higress/blob/8deceb4d/README_JP.md)
   * [README_ZH.md](https://github.com/alibaba/higress/blob/8deceb4d/README_ZH.md)
 
-
-
 ## Purpose and Scope
 
 This document provides a comprehensive overview of Higress, an AI Native API Gateway built on Istio and Envoy. It covers the system's architecture, core components, and primary use cases. For detailed information about specific subsystems, refer to the Core Architecture (page 2), Build and Deployment (page 3), WASM Plugin System (page 4), AI Gateway Features (page 5), MCP System (page 6), and Development Guide (page 7) sections.
@@ -73,7 +71,6 @@ Higress implements a control plane and data plane separation derived from Istio'
 
 **Component Deployment Diagram:**
 
-
 **Binary and Process Mapping:**
 
 Binary| Source Entry Point| Deployment Location| Primary Functions  
@@ -92,7 +89,6 @@ Sources: [README.md32](https://github.com/alibaba/higress/blob/8deceb4d/README.m
 ### Configuration Flow and Controller Architecture
 
 **Configuration Update Sequence:**
-
 
 **Controller Registry and Responsibilities:**
 
@@ -346,9 +342,6 @@ Higress 通过 Envoy Filter 机制，在 HTTP Filter Chain 中插入自定义的
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：Higress 网关路由配置
 from higress import Gateway, Route, Plugin
@@ -382,9 +375,6 @@ gateway = configure_gateway()
 print(f"网关配置完成，监听端口: {gateway.port}")
 ```
 
-
-
-
 ```python
 # 示例2：Higress 动态路由更新
 from higress import Gateway, Route, UpdatePolicy
@@ -416,9 +406,6 @@ def dynamic_route_update():
 # 使用示例
 dynamic_route_update()
 ```
-
-
-
 
 ```python
 # 示例3：Higress 监控指标收集
@@ -452,10 +439,8 @@ def monitor_gateway():
 monitor_gateway()
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：阿里巴巴内部电商业务
 
@@ -476,8 +461,6 @@ monitor_gateway()
 - 开发效率提升50%，插件热更新能力减少了90%的网关重启时间  
 
 ---
-
-
 
 ### 2：某头部在线教育平台
 
@@ -500,8 +483,6 @@ monitor_gateway()
 - 第三方服务调用成功率从97%提升至99.8%，故障定位效率提高70%  
 
 ---
-
-
 
 ### 3：金融科技企业A的开放平台
 
@@ -708,7 +689,6 @@ Higress 旨在打通微服务生态，能够直接从 Nacos、Consul、ZooKeeper
 - 支持多协议接入，不仅处理 HTTP/HTTPS，还原生支持 gRPC、Dubbo 等微服务协议，实现了南北向与东西向流量的统一管理。
 - 通过对接 Prometheus 等可观测性组件，提供了详细的指标监控与日志追踪能力，便于运维人员进行故障排查与性能分析。
 
-
 ---
 ## 学习路径
 
@@ -801,7 +781,6 @@ Higress 旨在打通微服务生态，能够直接从 Nacos、Consul、ZooKeeper
 ---
 ## 常见问题
 
-
 ### 1: Higress 是什么？它与阿里巴巴有什么关系？
 
 1: Higress 是什么？它与阿里巴巴有什么关系？
@@ -809,8 +788,6 @@ Higress 旨在打通微服务生态，能够直接从 Nacos、Consul、ZooKeeper
 **A**: Higress 是一个基于阿里内部多年实践沉淀的下一代云原生 API 网关。它是在 2022 年由阿里巴巴开源的，源自阿里巴巴内部用于处理双十一等高并发场景的网关技术。Higress 的设计初衷是结合 K8s 的云原生能力与 Istio 的服务治理能力，同时提供高性能的流量管理。它不仅支持阿里巴巴内部的生态，也完全兼容开源标准，旨在解决传统网关在云原生环境下的痛点。
 
 ---
-
-
 
 ### 2: Higress 与 Nginx、Envoy 或 Apache APISIX 等网关相比有什么核心优势？
 
@@ -824,8 +801,6 @@ Higress 旨在打通微服务生态，能够直接从 Nacos、Consul、ZooKeeper
 
 ---
 
-
-
 ### 3: Higress 是否支持从 Nginx 或 Ingress Controller（如 Nginx Ingress）进行迁移？
 
 3: Higress 是否支持从 Nginx 或 Ingress Controller（如 Nginx Ingress）进行迁移？
@@ -837,8 +812,6 @@ Higress 旨在打通微服务生态，能够直接从 Nacos、Consul、ZooKeeper
 
 ---
 
-
-
 ### 4: Higress 如何处理流量管理和安全防护？
 
 4: Higress 如何处理流量管理和安全防护？
@@ -849,8 +822,6 @@ Higress 旨在打通微服务生态，能够直接从 Nacos、Consul、ZooKeeper
 3.  **WAF 模块**：虽然核心是网关，但它可以通过插件形式集成 WAF 功能，或者与阿里云 WAF 等安全产品联动，提供深度防御。
 
 ---
-
-
 
 ### 5: Higress 支持哪些类型的插件？如何扩展功能？
 
@@ -864,8 +835,6 @@ Higress 旨在打通微服务生态，能够直接从 Nacos、Consul、ZooKeeper
 
 ---
 
-
-
 ### 6: Higress 的性能表现如何？是否支持高可用部署？
 
 6: Higress 的性能表现如何？是否支持高可用部署？
@@ -874,22 +843,6 @@ Higress 旨在打通微服务生态，能够直接从 Nacos、Consul、ZooKeeper
 1.  **性能表现**：底层基于 Envoy，处理长连接和短连接的能力极强。在单核性能上，能够处理数万 QPS，且延迟保持在毫秒级。
 2.  **高可用部署**：作为云原生应用，Higress 无状态设计，支持在 Kubernetes 中通过 Deployment 进行多副本部署。结合 Kubernetes 的 Service 和健康检查机制，可以实现故障自动摘除和自动扩缩容。
 3.  **热更新**：配置变更和插件更新通过配置中心（如 N
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: Higress 基于 Envoy 构建，但为了适应云原生环境，它对 Envoy 做了哪些架构上的核心改变？请列举两点主要区别。
-
-### 提示**: 思考 Higress 如何处理配置管理（是否使用静态文件还是动态服务）以及它如何与阿里云的生态（如 K8s Ingress Controller）进行集成。
-
-### 
-
----
 ## 实践建议
 
 ### 实践建议
@@ -936,7 +889,6 @@ Higress 旨在打通微服务生态，能够直接从 Nacos、Consul、ZooKeeper
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

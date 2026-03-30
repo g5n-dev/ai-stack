@@ -53,8 +53,6 @@ Relevant source files
   * [feedauthor/update.json](https://github.com/xiaojieonly/Ehviewer_CN_SXJ/blob/70faa8a4/feedauthor/update.json)
   * [gradle/wrapper/gradle-wrapper.properties](https://github.com/xiaojieonly/Ehviewer_CN_SXJ/blob/70faa8a4/gradle/wrapper/gradle-wrapper.properties)
 
-
-
 ## Purpose and Scope
 
 EhViewer CN SXJ is an Android client application for browsing, viewing, and downloading galleries from E-Hentai and ExHentai websites. This document provides a high-level introduction to the application's architecture, core components, and design principles.
@@ -66,8 +64,6 @@ For detailed information about specific subsystems:
   * Network communication and API integration: see [Network and API Integration](/xiaojieonly/Ehviewer_CN_SXJ/9-network-and-api-integration)
   * Download management: see [Download Management System](/xiaojieonly/Ehviewer_CN_SXJ/7-download-management-system)
   * Database schema and data models: see [Database and Data Management](/xiaojieonly/Ehviewer_CN_SXJ/8-database-and-data-management)
-
-
 
 **Sources:** [README.md1-135](https://github.com/xiaojieonly/Ehviewer_CN_SXJ/blob/70faa8a4/README.md#L1-L135) [app/build.gradle1-199](https://github.com/xiaojieonly/Ehviewer_CN_SXJ/blob/70faa8a4/app/build.gradle#L1-L199)
 
@@ -104,16 +100,12 @@ EhViewer CN SXJ provides comprehensive functionality for E-Hentai content consum
   * Tag system with translation support (10+ languages)
   * Content filtering and blacklist management
 
-
-
 ### Gallery Management
 
   * Cloud-synced favorites (10 categories)
   * Local favorites for offline access
   * Reading history with timestamps
   * Quick search templates for frequent queries
-
-
 
 ### Download System
 
@@ -123,8 +115,6 @@ EhViewer CN SXJ provides comprehensive functionality for E-Hentai content consum
   * Archive download from H@H (Hentai@Home) servers
   * Label-based organization and filtering
 
-
-
 ### Reader Features
 
   * Multiple reading modes (left-to-right, right-to-left, vertical)
@@ -132,8 +122,6 @@ EhViewer CN SXJ provides comprehensive functionality for E-Hentai content consum
   * Page preloading for smooth reading
   * Reading progress tracking
   * Archive file support (.zip, .rar, .7z)
-
-
 
 ### Network Resilience
 
@@ -144,21 +132,16 @@ EhViewer CN SXJ provides comprehensive functionality for E-Hentai content consum
   * Domain fronting capability
   * Proxy configuration support
 
-
-
 ### Localization
 
   * 10 supported languages: Chinese (Simplified/Traditional/Hong Kong), Japanese, Korean, English, German, Thai, French, Spanish
   * Tag translation database with community contributions
-
-
 
 **Sources:** [README.md1-135](https://github.com/xiaojieonly/Ehviewer_CN_SXJ/blob/70faa8a4/README.md#L1-L135) [app/src/main/AndroidManifest.xml1-295](https://github.com/xiaojieonly/Ehviewer_CN_SXJ/blob/70faa8a4/app/src/main/AndroidManifest.xml#L1-L295) [app/build.gradle36](https://github.com/xiaojieonly/Ehviewer_CN_SXJ/blob/70faa8a4/app/build.gradle#L36-L36)
 
 * * *
 
 ## High-Level Architecture
-
 
 **Architecture Description:**
 
@@ -266,37 +249,8 @@ EhViewer CN SXJ follows a layered architecture with clear separation of concerns
 ---
 ## 💻 实用代码示例
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 ## 📚 真实案例研究
-
 
 ### 1：某二次元同人创作团队
 
@@ -323,8 +277,6 @@ EhViewer CN SXJ follows a layered architecture with clear separation of concerns
 
 ---
 
-
-
 ### 2：独立插画师IP运营
 
  2：独立插画师IP运营
@@ -349,8 +301,6 @@ EhViewer CN SXJ follows a layered architecture with clear separation of concerns
 💡 移动办公时间增加40%，客户满意度达4.9/5.0
 
 ---
-
-
 
 ### 3：高校ACG社团资源库
 
@@ -564,7 +514,6 @@ GitHub Trending 上的项目更新频繁。为了获取最新功能（如修复�
 - 🌐 开源协作**：展示了 GitHub 社区对于特定细分领域工具的持续迭代与技术支持趋势。
 - (注：由于输入文本仅为简短的路径/用户名，以上总结基于该标识符通常代表的知名开源项目背景进行的概括。)*
 
-
 ---
 ## 🗺️ 循序渐进的学习路径
 
@@ -663,7 +612,6 @@ GitHub Trending 上的项目更新频繁。为了获取最新功能（如修复�
 ---
 ## ❓ 常见问题解答
 
-
 ### 1: Ehviewer_CN_SXJ 是什么？它与原版 EhViewer 有什么区别？
 
 1: Ehviewer_CN_SXJ 是什么？它与原版 EhViewer 有什么区别？
@@ -671,22 +619,6 @@ GitHub Trending 上的项目更新频繁。为了获取最新功能（如修复�
 **A**: **Ehviewer_CN_SXJ** 是基于开源项目 **EhViewer** 的一个第三方维护版本（Fork）。
 *   **原版 EhViewer**：曾是 Android 平台上最强大的 E-Hentai/Gallery 客户端，但原作者已停止更新。
 *   **CN_SXJ 版本**：由开发者 `xiaojieonly` 接管并进行持续维护。它修复了原版无法登录、无法加载图片等因网站 API 变动
-
----
-## 🎯 挑战与思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**:
-
-### 请简要说明 `Ehviewer_CN_SXJ` 这个项目名称中 "CN" 和 "SXJ" 最可能代表的含义是什么？这暗示了该版本与原版 E-Hentai Viewer 相比有什么主要区别？
-
-### 提示**:
-
----
 ## 💡 实践建议
 
 基于 **Ehviewer-CN-SXJ** (Ehviewer 同步分支/修改版) 作为一个针对 EH/ExH 站点的第三方 Android 客户端，考虑到其数据敏感性和功能特殊性，以下是 5-7 条针对实际使用场景的实践建议：

@@ -36,8 +36,6 @@ Relevant source files
   * [README_EN.md](https://github.com/JoeanAmier/TikTokDownloader/blob/9fefb9a7/README_EN.md)
   * [src/application/TikTokDownloader.py](https://github.com/JoeanAmier/TikTokDownloader/blob/9fefb9a7/src/application/TikTokDownloader.py)
 
-
-
 ## Purpose and Scope
 
 TikTokDownloader (also known as DouK-Downloader) is an open-source, HTTP-based data collection and file download tool for the Douyin (抖音) and TikTok platforms. The project provides a complete solution for acquiring content metadata, downloading media files, and persisting collected data in multiple formats. It is built using Python 3.12 and the HTTPX library, offering both interactive and programmatic access methods.
@@ -68,14 +66,11 @@ Key technical features include:
   * **Proxy Support** : Configurable HTTP/HTTPS/SOCKS proxy for network requests
   * **Authentication Management** : Cookie extraction from clipboard, browsers (Chromium/Firefox/Safari), or manual input
 
-
-
 **Sources:** [README.md24-75](https://github.com/JoeanAmier/TikTokDownloader/blob/9fefb9a7/README.md#L24-L75) [README_EN.md25-76](https://github.com/JoeanAmier/TikTokDownloader/blob/9fefb9a7/README_EN.md#L25-L76)
 
 ## Dual-Platform Architecture
 
 The system implements symmetric dual-platform support through parallel API implementations and unified data processing:
-
 
 The `Parameter` class in [src/config/parameter.py](https://github.com/JoeanAmier/TikTokDownloader/blob/9fefb9a7/src/config/parameter.py) maintains separate configuration states for each platform, including platform-specific cookies, headers, and API endpoints. The `Extractor` class in [src/extract/extractor.py](https://github.com/JoeanAmier/TikTokDownloader/blob/9fefb9a7/src/extract/extractor.py) normalizes platform-specific API responses into unified data structures for downstream processing.
 
@@ -84,7 +79,6 @@ The `Parameter` class in [src/config/parameter.py](https://github.com/JoeanAmier
 ## Operational Modes
 
 TikTokDownloader provides four distinct operational modes, each suited for different use cases:
-
 
 ### Mode Descriptions
 
@@ -103,7 +97,6 @@ Each mode initializes with a shared `Parameter` instance that provides configura
 
 The application follows a structured initialization and runtime lifecycle:
 
-
 Key lifecycle components:
 
   * **Initialization** ([TikTokDownloader.py57-76](https://github.com/JoeanAmier/TikTokDownloader/blob/9fefb9a7/TikTokDownloader.py#L57-L76)): Creates console, settings, database, and cookie manager instances
@@ -111,8 +104,6 @@ Key lifecycle components:
   * **Parameter Setup** ([TikTokDownloader.py387-406](https://github.com/JoeanAmier/TikTokDownloader/blob/9fefb9a7/TikTokDownloader.py#L387-L406)): Initializes runtime state with settings, authentication, and HTTP clients
   * **Background Thread** ([TikTokDownloader.py417-438](https://github.com/JoeanAmier/TikTokDownloader/blob/9fefb9a7/TikTokDownloader.py#L417-L438)): Periodically updates authentication tokens (msToken, ttwid) at `COOKIE_UPDATE_INTERVAL`
   * **Cleanup** ([TikTokDownloader.py440-445](https://github.com/JoeanAmier/TikTokDownloader/blob/9fefb9a7/TikTokDownloader.py#L440-L445)): Closes HTTP clients, stops background thread, removes empty directories
-
-
 
 **Sources:** [src/application/TikTokDownloader.py57-105](https://github.com/JoeanAmier/TikTokDownloader/blob/9fefb9a7/src/application/TikTokDownloader.py#L57-L105) [src/application/TikTokDownloader.py387-445](https://github.com/JoeanAmier/TikTokDownloader/blob/9fefb9a7/src/application/TikTokDownloader.py#L387-L445)
 
@@ -377,15 +368,8 @@ TikTokDownloader 在**“协议逆向工程”**这一层上进行了抽象。
 ---
 ## 💻 实用代码示例
 
-
-
-
-
-
-
 ---
 ## 📚 真实案例研究
-
 
 ### 1：某高校数字媒体研究项目 🎓
 
@@ -404,8 +388,6 @@ TikTokDownloader 在**“协议逆向工程”**这一层上进行了抽象。
 
 ---
 
-
-
 ### 2：某MCN机构内容运营团队 🎥
 
  2：某MCN机构内容运营团队 🎥
@@ -422,8 +404,6 @@ TikTokDownloader 在**“协议逆向工程”**这一层上进行了抽象。
 - **工作流优化**：从手动截屏和录屏转变为自动化下载，运营团队的工作效率显著提高。  
 
 ---
-
-
 
 ### 3：某短视频剪辑工作室 ✂️
 
@@ -659,7 +639,6 @@ TikTokDownloader 在**“协议逆向工程”**这一层上进行了抽象。
 - 🧩 **核心依赖集成**：利用 `yt-dlp` 强大的媒体解析能力，并结合 `Playwright` 处理复杂的动态网页渲染和加密参数。
 - 📂 **元数据管理**：在下载多媒体文件的同时，能够提取并保存作者简介、音乐信息、评论数据等详细元数据到数据库或文件中。
 
-
 ---
 ## 🗺️ 循序渐进的学习路径
 
@@ -742,7 +721,6 @@ TikTokDownloader 在**“协议逆向工程”**这一层上进行了抽象。
 ---
 ## ❓ 常见问题解答
 
-
 ### 1: 这个项目是用来做什么的？🤔
 
 1: 这个项目是用来做什么的？🤔
@@ -751,8 +729,6 @@ TikTokDownloader 在**“协议逆向工程”**这一层上进行了抽象。
 它的主要功能是帮助用户批量下载 TikTok 上的视频，并支持保存视频原画质、作者昵称、ID、描述文案以及音乐信息。此外，它还支持下载主页作品、收藏/喜欢列表以及用户合辑，并提供了基于 GUI（图形界面）和 CLI（命令行）的多种使用方式，非常适合需要备份或管理 TikTok 内容的用户。
 
 ---
-
-
 
 ### 2: 如何安装和运行这个软件？🛠️
 
@@ -769,8 +745,6 @@ TikTokDownloader 在**“协议逆向工程”**这一层上进行了抽象。
 
 ---
 
-
-
 ### 3: 使用时需要登录账号吗？🔒
 
 3: 使用时需要登录账号吗？🔒
@@ -780,8 +754,6 @@ TikTokDownloader 在**“协议逆向工程”**这一层上进行了抽象。
 *   **私密内容**：如果你需要下载自己账号下的“喜欢/收藏”列表，或者下载私密账号的视频，则必须在软件的设置界面中登录你的 TikTok 账号（通常支持扫描二维码登录或输入 Cookie）。
 
 ---
-
-
 
 ### 4: 下载的视频没有声音或者是水印，怎么解决？🎵
 
@@ -794,8 +766,6 @@ TikTokDownloader 在**“协议逆向工程”**这一层上进行了抽象。
 
 ---
 
-
-
 ### 5: 为什么下载到 99% 突然停止或报错？⚠️
 
 5: 为什么下载到 99% 突然停止或报错？⚠️
@@ -807,8 +777,6 @@ TikTokDownloader 在**“协议逆向工程”**这一层上进行了抽象。
 
 ---
 
-
-
 ### 6: 支持批量下载和断点续传吗？📥
 
 6: 支持批量下载和断点续传吗？📥
@@ -819,30 +787,12 @@ TikTokDownloader 在**“协议逆向工程”**这一层上进行了抽象。
 
 ---
 
-
-
 ### 7: 手机上可以使用这个工具吗？📱
 
 7: 手机上可以使用这个工具吗？📱
 
 **A**: **不方便直接使用**。
 这是一个桌面端或命令行工具，主要是为 **Windows / macOS / Linux** 电脑设计的。虽然通过 Termux 等工具在安卓手机上理论上可以运行 Python 脚本，但配置非常复杂且容易出错。如果你是手机用户，建议寻找专门在手机端运行的类似 APP，或者使用电脑端操作后传输到手机。
-
----
-## 🎯 挑战与思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**:
-
-### TikTok 的视频链接通常包含一长串无意义的参数（例如 `?is_from_webapp=1&sender_device=pc`）。请设计一个简单的预处理函数，利用 Python 的 `urllib.parse` 库，从用户输入的杂乱 URL 中提取出纯净的视频 ID（例如 `7123456789012345678`）。
-
-### 提示**:
-
----
 ## 💡 实践建议
 
 以下是基于 **TikTokDownloader (JoeanAmier)** 仓库功能的 7 条实践建议，旨在帮助您更高效、稳定地使用该工具进行数据采集和下载。

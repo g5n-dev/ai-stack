@@ -87,9 +87,6 @@ eBPF 和 Namespaces 并不是新技术，但将其专门应用于“约束 AI Ag
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：基础沙箱隔离（使用subprocess运行受限命令）
 import subprocess
@@ -119,9 +116,6 @@ def run_in_sandbox(command, allowed_dirs=["/tmp/sandbox"]):
 print(run_in_sandbox(["ls", "-l"]))
 ```
 
-
-
-
 ```python
 # 示例2：资源限制（使用cgroups限制CPU/内存）
 import subprocess
@@ -150,9 +144,6 @@ def run_with_limits(command, cpu_quota=50000, memory_mb=100):
 # 测试示例（限制50% CPU和100MB内存运行Python脚本）
 print(run_with_limits("python3 -c 'while True: pass'"))
 ```
-
-
-
 
 ```python
 # 示例3：网络隔离（使用iptables限制出站连接）
@@ -187,10 +178,8 @@ def restrict_network(container_id):
 restrict_network("a1b2c3d4")
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：金融科技公司的自动化交易代理安全隔离
 
@@ -209,8 +198,6 @@ restrict_network("a1b2c3d4")
 实施沙箱隔离后，系统成功拦截了数次由异常输入触发的越权尝试。即使 AI 模型输出了危险的系统指令，沙箱层也能立即阻断执行。这使得该机构能够在保证资金安全的前提下，放心地赋予 AI 代理更高的自主决策权，最终将交易策略的迭代周期缩短了 40%。
 
 ---
-
-
 
 ### 2：企业级 SaaS 平台的数据处理合规
 
@@ -321,7 +308,6 @@ restrict_network("a1b2c3d4")
 ---
 ## 常见问题
 
-
 ### 1: Matchlock 是什么？它主要解决什么问题？
 
 1: Matchlock 是什么？它主要解决什么问题？
@@ -329,8 +315,6 @@ restrict_network("a1b2c3d4")
 **A**: Matchlock 是一款专为 AI Agent（人工智能代理）设计的安全工具，旨在解决 AI 模型在执行代码或处理外部任务时的安全问题。它通过提供一个基于 Linux 的沙箱环境，确保 AI Agent 的工作负载被严格隔离和限制。简单来说，它防止了 AI Agent 在执行不可信代码或访问系统资源时对宿主机造成破坏或泄露敏感数据，从而弥补了当前大模型在执行层安全性上的不足。
 
 ---
-
-
 
 ### 2: 为什么 AI Agent 需要专门的沙箱环境，而不是直接运行在服务器上？
 
@@ -340,8 +324,6 @@ restrict_network("a1b2c3d4")
 
 ---
 
-
-
 ### 3: Matchlock 与现有的容器技术（如 Docker）有什么区别？
 
 3: Matchlock 与现有的容器技术（如 Docker）有什么区别？
@@ -349,8 +331,6 @@ restrict_network("a1b2c3d4")
 **A**: 虽然 Matchlock 的底层也利用了 Linux 的隔离特性，与 Docker 等容器技术有相似之处，但它的设计初衷和配置策略完全不同。Docker 通常用于通用的应用部署，默认配置可能对 AI Agent 来说过于宽松或存在安全盲区。Matchlock 是专门针对 AI 的工作负载优化的，它预设了更严格的安全策略，专注于防止代码执行逃逸和数据泄露，并且可能针对 AI 模型的输入输出特性进行了特定的拦截和过滤处理。
 
 ---
-
-
 
 ### 4: 使用 Matchlock 会影响 AI Agent 的性能或响应速度吗？
 
@@ -360,8 +340,6 @@ restrict_network("a1b2c3d4")
 
 ---
 
-
-
 ### 5: Matchlock 支持哪些类型的操作系统和部署环境？
 
 5: Matchlock 支持哪些类型的操作系统和部署环境？
@@ -369,8 +347,6 @@ restrict_network("a1b2c3d4")
 **A**: 由于 Matchlock 是基于 Linux 内核特性构建的，它原生支持 Linux 操作系统。对于非 Linux 环境（如 Windows 或 macOS），通常可以通过虚拟机或 WSL2（Windows Subsystem for Linux）来运行。在部署方面，它既可以部署在本地服务器上，用于保护本地运行的 LLM（大语言模型），也可以集成到云端的 AI 服务架构中，作为微服务的一部分来保障云端 Agent 的安全。
 
 ---
-
-
 
 ### 6: Matchlock 是否能防止所有类型的 AI 攻击（如提示词注入）？
 
@@ -380,29 +356,11 @@ restrict_network("a1b2c3d4")
 
 ---
 
-
-
 ### 7: 对于开发者而言，集成 Matchlock 到现有的 AI 应用中是否复杂？
 
 7: 对于开发者而言，集成 Matchlock 到现有的 AI 应用中是否复杂？
 
 **A**: 这取决于 Matchlock 的具体实现接口，但通常这类工具的设计初衷就是为了易于集成。如果它提供了标准的 API 或 CLI 接口，开发者只需将原本直接在系统执行的命令，改为通过 Matchlock 提供的接口在沙箱中执行即可。虽然需要一定的配置工作（例如定义允许的网络访问或文件挂载权限），但相比于从零开始构建一套安全的隔离环境，使用 Matchlock 能大幅降低开发门槛和时间成本。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 在 Linux 环境下，如何使用 `unshare` 命令创建一个最基本的隔离环境，使得在该环境中运行的进程无法看到宿主机的其他进程，且拥有独立的进程 ID (PID) 空间？
-
-### 提示**: 研究 `unshare` 命令的 `--pid` 和 `--fork` 参数，并注意在新的 PID namespace 中需要正确初始化进程。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://github.com/jingkaihe/matchlock](https://github.com/jingkaihe/matchlock)
@@ -411,7 +369,6 @@ restrict_network("a1b2c3d4")
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

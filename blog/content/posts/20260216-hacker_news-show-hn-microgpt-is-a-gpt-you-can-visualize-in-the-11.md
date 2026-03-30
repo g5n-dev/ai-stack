@@ -91,9 +91,6 @@ scenarios: ["大语言模型"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：实现简单的GPT文本生成可视化
 import numpy as np
@@ -129,9 +126,6 @@ def visualize_gpt_generation():
 # 运行示例
 visualize_gpt_generation()
 ```
-
-
-
 
 ```python
 # 示例2：浏览器端GPT文本生成模拟
@@ -185,9 +179,6 @@ generated = micro_gpt.generate(input_tokens)
 print(f"生成的token序列: {generated}")
 ```
 
-
-
-
 ```python
 # 示例3：实时可视化GPT生成过程
 import ipywidgets as widgets
@@ -230,10 +221,8 @@ class GPTVisualizer:
 visualizer = GPTVisualizer()
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：高校AI课程教学辅助项目
 
@@ -255,8 +244,6 @@ visualizer = GPTVisualizer()
 
 ---
 
-
-
 ### 2：SaaS 产品前端团队的技术分享与培训
 
  2：SaaS 产品前端团队的技术分享与培训
@@ -276,8 +263,6 @@ visualizer = GPTVisualizer()
 - 技术视野拓展：帮助纯前端工程师消除了对 AI 算法的神秘感，部分成员甚至开始尝试在浏览器端运行更轻量级的模型。
 
 ---
-
-
 
 ### 3：开源教育社区的“算法可视化”贡献
 
@@ -414,7 +399,6 @@ visualizer = GPTVisualizer()
 ---
 ## 常见问题
 
-
 ### 1: Microgpt 是什么？它与 ChatGPT 有什么区别？
 
 1: Microgpt 是什么？它与 ChatGPT 有什么区别？
@@ -428,8 +412,6 @@ visualizer = GPTVisualizer()
 
 ---
 
-
-
 ### 2: 我需要安装什么软件或环境才能运行 Microgpt？
 
 2: 我需要安装什么软件或环境才能运行 Microgpt？
@@ -441,8 +423,6 @@ visualizer = GPTVisualizer()
 3.  **无依赖**：它不需要后端 API 密钥或庞大的机器学习库依赖。
 
 ---
-
-
 
 ### 3: 这个工具适合初学者学习深度学习吗？
 
@@ -457,8 +437,6 @@ Microgpt 的优势在于：
 
 ---
 
-
-
 ### 4: Microgpt 支持训练模型吗？还是只能进行推理？
 
 4: Microgpt 支持训练模型吗？还是只能进行推理？
@@ -469,8 +447,6 @@ Microgpt 的优势在于：
 *   **训练限制**：由于浏览器的计算资源限制以及 JavaScript 的性能瓶颈，在浏览器中从头训练一个大型语言模型通常是不现实的。Microgpt 可能会包含一个微小的预训练模型，或者允许你加载极小数据集进行演示性的训练步骤，但它不是用来训练生产级模型的工具。
 
 ---
-
-
 
 ### 5: 它使用什么技术栈实现的？为什么选择在浏览器中运行？
 
@@ -485,8 +461,6 @@ Microgpt 的优势在于：
 
 ---
 
-
-
 ### 6: 我可以用 Microgpt 来构建我自己的 AI 应用吗？
 
 6: 我可以用 Microgpt 来构建我自己的 AI 应用吗？
@@ -496,22 +470,6 @@ Microgpt 的优势在于：
 *   **性能问题**：相比于 Python（C++/CUDA 底层），JavaScript 在处理大规模矩阵运算时效率较低。
 *   **功能局限**：它缺少现代 LLM 所需的分词器、长上下文管理、高效的 KV Cache 优化等高级功能。
 *   **适用场景**：如果你想构建应用，应该使用 LangChain、Transformers 或 OpenAI API。如果你想搞懂 GPT 是怎么算出来的，那么请使用 Microgpt。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 在浏览器中实现一个简单的 Tokenizer（分词器），将输入的英文文本转换为整数 ID 序列。要求能够处理基本的单词拆分，并建立一个简单的词汇表映射。
-
-### 提示**: 可以先尝试按空格进行简单的字符串分割，利用 JavaScript 的 Map 或对象来存储单词到 ID 的映射关系。思考一下如何处理不在词汇表中的未知词。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://microgpt.boratto.ca](https://microgpt.boratto.ca)
@@ -520,7 +478,6 @@ Microgpt 的优势在于：
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

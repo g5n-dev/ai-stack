@@ -38,8 +38,6 @@ Relevant source files
   * [README_JP.md](https://github.com/alibaba/higress/blob/8deceb4d/README_JP.md)
   * [README_ZH.md](https://github.com/alibaba/higress/blob/8deceb4d/README_ZH.md)
 
-
-
 ## Purpose and Scope
 
 This document provides a comprehensive overview of Higress, an AI Native API Gateway built on Istio and Envoy. It covers the system's architecture, core components, and primary use cases. For detailed information about specific subsystems, refer to the Core Architecture (page 2), Build and Deployment (page 3), WASM Plugin System (page 4), AI Gateway Features (page 5), MCP System (page 6), and Development Guide (page 7) sections.
@@ -73,7 +71,6 @@ Higress implements a control plane and data plane separation derived from Istio'
 
 **Component Deployment Diagram:**
 
-
 **Binary and Process Mapping:**
 
 Binary| Source Entry Point| Deployment Location| Primary Functions  
@@ -92,7 +89,6 @@ Sources: [README.md32](https://github.com/alibaba/higress/blob/8deceb4d/README.m
 ### Configuration Flow and Controller Architecture
 
 **Configuration Update Sequence:**
-
 
 **Controller Registry and Responsibilities:**
 
@@ -348,9 +344,6 @@ Higress 的核心定位是 **"AI Native API Gateway"**。它建立在 **云原�
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：Higress 网关路由配置
 def configure_higress_route():
@@ -384,9 +377,6 @@ def configure_higress_route():
 gateway = configure_higress_route()
 gateway.start()  # 启动网关
 ```
-
-
-
 
 ```python
 # 示例2：Higress 插件开发
@@ -431,9 +421,6 @@ auth_plugin = custom_auth_plugin()
 gateway.register_plugin(auth_plugin)
 ```
 
-
-
-
 ```python
 # 示例3：Higress 流量管理
 def traffic_splitting():
@@ -463,10 +450,8 @@ gateway = traffic_splitting()
 gateway.start()
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：阿里巴巴内部电商业务体系
 
@@ -491,8 +476,6 @@ gateway.start()
 
 ---
 
-
-
 ### 2：萝卜运力（RoboTaxi）基础设施平台
 
  2：萝卜运力（RoboTaxi）基础设施平台
@@ -515,8 +498,6 @@ gateway.start()
 3.  **开发效率提升**：开发人员可以使用 Go 或 C++ 编写 Wasm 插件，无需重启网关即可动态下发配置，大幅提升了迭代速度。
 
 ---
-
-
 
 ### 3：DeepFlow 可观测性平台集成
 
@@ -722,7 +703,6 @@ DeepFlow 采用 Higress 作为其云原生网关，利用 Higress 对 Istio 和 
 - 它提供了开箱即用的流量治理能力，包括负载均衡、灰度发布、限流熔断以及服务安全防护。
 - 作为一站式网关，它同时支持南北向（流量入口）和东西向（服务间）流量管理，简化了微服务架构的网络拓扑。
 
-
 ---
 ## 学习路径
 
@@ -835,7 +815,6 @@ DeepFlow 采用 Higress 作为其云原生网关，利用 Higress 对 Istio 和 
 ---
 ## 常见问题
 
-
 ### 1: Higress 是什么？它与 Nginx 或 Kong 有什么区别？
 
 1: Higress 是什么？它与 Nginx 或 Kong 有什么区别？
@@ -846,8 +825,6 @@ DeepFlow 采用 Higress 作为其云原生网关，利用 Higress 对 Istio 和 
 
 ---
 
-
-
 ### 2: Higress 与 Istio 的关系是什么？它是否可以替代 Istio 的 Ingress Gateway？
 
 2: Higress 与 Istio 的关系是什么？它是否可以替代 Istio 的 Ingress Gateway？
@@ -857,8 +834,6 @@ DeepFlow 采用 Higress 作为其云原生网关，利用 Higress 对 Istio 和 
 虽然标准的 Istio Ingress Gateway 功能强大，但在配置管理、协议转换（如 Dubbo 转 HTTP）以及对接阿里云内部生态方面存在一定的局限性。Higress 在保持 Istio 标准 API 兼容的同时，提供了更友好的控制台、更丰富的插件扩展能力以及更高的性能稳定性，特别适合作为 Kubernetes 集群的统一流量入口。
 
 ---
-
-
 
 ### 3: 如何在 Kubernetes 集群中快速安装 Higress？
 
@@ -877,8 +852,6 @@ DeepFlow 采用 Higress 作为其云原生网关，利用 Higress 对 Istio 和 
 
 ---
 
-
-
 ### 4: Higress 支持哪些类型的路由配置？是否支持 Dubbo 服务？
 
 4: Higress 支持哪些类型的路由配置？是否支持 Dubbo 服务？
@@ -893,8 +866,6 @@ DeepFlow 采用 Higress 作为其云原生网关，利用 Higress 对 Istio 和 
 
 ---
 
-
-
 ### 5: Higress 的插件机制是如何工作的？能否编写自定义插件？
 
 5: Higress 的插件机制是如何工作的？能否编写自定义插件？
@@ -908,8 +879,6 @@ Higress 提供了一个插件市场，内置了许多常用插件（如 Keyless 
 
 ---
 
-
-
 ### 6: Higress 如何保证高可用性和性能？
 
 6: Higress 如何保证高可用性和性能？
@@ -919,22 +888,6 @@ Higress 提供了一个插件市场，内置了许多常用插件（如 Keyless 
 1.  **底层优化**: 基于 Envoy C++ 内核，相比纯 Java 网关具有更高的并发处理能力和更低的资源消耗。
 2.  **热更新**: 配置变更通过控制台下发给数据平面，Envoy 可以通过 xDS 协议动态更新配置，无需重启进程，从而保证流量不中断。
 3.  **健康检查**: 自动对接 Kubernetes 的服务发现，实时摘除不健康的 Pod 实例，将
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 在本地 Docker 环境中快速部署 Higress，并配置一个简单的路由转发规则，将访问 `/httpbin/` 路径的流量转发到公共测试服务 `httpbin.org`。
-
-### 提示**:
-
-### 需要查阅 Higress 的官方 Docker 镜像启动命令，注意端口映射（默认 80/443）。
-
----
 ## 实践建议
 
 基于 Higress 作为 "AI Native API Gateway" 的定位，结合其作为云原生 API 网关的特性，以下是 6 条针对实际生产环境的实践建议：
@@ -976,7 +929,6 @@ Higress 提供了一个插件市场，内置了许多常用插件（如 Keyless 
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

@@ -94,9 +94,6 @@ scenarios: ["大语言模型"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：通过OpenAI兼容接口连接本地模型
 from openai import OpenAI
@@ -121,9 +118,6 @@ def connect_local_model():
 # 使用示例
 print(connect_local_model())
 ```
-
-
-
 
 ```python
 # 示例2：自动降级到本地模型的智能客户端
@@ -169,9 +163,6 @@ messages = [{"role": "user", "content": "解释什么是递归"}]
 print(client.chat(messages))
 ```
 
-
-
-
 ```python
 # 示例3：检测配额状态并切换模型
 import requests
@@ -216,10 +207,8 @@ def smart_model_switch(api_key, user_message):
 print(smart_model_switch("your-api-key", "如何学习编程？"))
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某AI初创公司
 
@@ -241,8 +230,6 @@ print(smart_model_switch("your-api-key", "如何学习编程？"))
 
 ---
 
-
-
 ### 2：某高校研究团队
 
  2：某高校研究团队
@@ -262,8 +249,6 @@ print(smart_model_switch("your-api-key", "如何学习编程？"))
 - 研究成本降低了约60%  
 
 ---
-
-
 
 ### 3：某金融科技公司
 
@@ -398,7 +383,6 @@ print(smart_model_switch("your-api-key", "如何学习编程？"))
 ---
 ## 常见问题
 
-
 ### 1: 当 Claude API 配额用尽时，如何配置本地模型作为替代方案？
 
 1: 当 Claude API 配额用尽时，如何配置本地模型作为替代方案？
@@ -417,8 +401,6 @@ print(smart_model_switch("your-api-key", "如何学习编程？"))
 
 ---
 
-
-
 ### 2: 本地模型的性能与 Claude 原生模型相比如何？
 
 2: 本地模型的性能与 Claude 原生模型相比如何？
@@ -430,8 +412,6 @@ print(smart_model_switch("your-api-key", "如何学习编程？"))
 - 适用场景：适合代码补全、简单问答等任务，复杂推理建议仍用 Claude
 
 ---
-
-
 
 ### 3: 哪些本地模型最适合作为 Claude 的替代品？
 
@@ -445,8 +425,6 @@ print(smart_model_switch("your-api-key", "如何学习编程？"))
 
 ---
 
-
-
 ### 4: 切换到本地模型后如何处理原有的 Claude 特定功能？
 
 4: 切换到本地模型后如何处理原有的 Claude 特定功能？
@@ -459,8 +437,6 @@ print(smart_model_switch("your-api-key", "如何学习编程？"))
 
 ---
 
-
-
 ### 5: 使用本地模型有哪些硬件要求？
 
 5: 使用本地模型有哪些硬件要求？
@@ -472,8 +448,6 @@ print(smart_model_switch("your-api-key", "如何学习编程？"))
 - 可通过量化技术（4-bit/5-bit）降低显存需求
 
 ---
-
-
 
 ### 6: 如何在 Claude Code 中实现自动切换机制？
 
@@ -495,8 +469,6 @@ print(smart_model_switch("your-api-key", "如何学习编程？"))
 
 ---
 
-
-
 ### 7: 本地模型方案有哪些隐私和安全优势？
 
 7: 本地模型方案有哪些隐私和安全优势？
@@ -507,22 +479,6 @@ print(smart_model_switch("your-api-key", "如何学习编程？"))
 - 审计能力：可完全控制模型运行日志
 - 合规性：适合金融、医疗等对数据出境有严格要求的行业
 - 但需注意本地模型本身可能存在的安全漏洞
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 在本地部署一个开源大模型（如 Llama 3 或 Mistral），并通过命令行工具（如 Ollama 或 LM Studio）验证其可用性。确保模型能正常响应简单的文本提示。
-
-### 提示**: 优先选择对硬件要求较低的模型（如 7B 参数版本），并检查本地环境是否满足最低内存和 GPU 要求。可通过官方文档快速验证安装步骤。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://boxc.net/blog/2026/claude-code-connecting-to-local-models-when-your-quota-runs-out](https://boxc.net/blog/2026/claude-code-connecting-to-local-models-when-your-quota-runs-out)
@@ -531,7 +487,6 @@ print(smart_model_switch("your-api-key", "如何学习编程？"))
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

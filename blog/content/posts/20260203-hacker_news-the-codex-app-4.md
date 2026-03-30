@@ -70,9 +70,6 @@ scenarios: ["大语言模型", "AI/ML项目"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：从 Hacker News 获取最新文章标题
 import requests
@@ -101,9 +98,6 @@ def get_hacker_news_titles(limit=5):
 print(get_hacker_news_titles())
 ```
 
-
-
-
 ```python
 # 示例2：分析 Hacker News 文章点赞数
 import requests
@@ -128,9 +122,6 @@ def analyze_hacker_news_points():
 # 测试
 print(analyze_hacker_news_points())
 ```
-
-
-
 
 ```python
 # 示例3：监控 Hacker News 特定关键词
@@ -168,10 +159,8 @@ def monitor_hacker_news(keyword, interval=300):
 # monitor_hacker_news("Python")
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：Replit 的 Ghostwriter 自动补全功能
 
@@ -191,8 +180,6 @@ Ghostwriter 的发布显著提升了用户的编码速度。根据 Replit 的反
 
 ---
 
-
-
 ### 2：GitHub Copilot 的技术核心
 
  2：GitHub Copilot 的技术核心
@@ -210,8 +197,6 @@ GitHub 与 OpenAI 合作，基于 OpenAI Codex 技术构建了 GitHub Copilot。
 GitHub Copilot 已成为全球开发者广泛使用的工具。在早期的技术预览版期间，它生成了近 40% 的新代码。数据显示，使用 Copilot 的开发者在编写重复性代码时的速度提高了 55%，并且能够帮助开发者快速学习不熟悉的语言或框架，极大地释放了开发者的创造力。
 
 ---
-
-
 
 ### 3：Quadratic 的数据电子表格助手
 
@@ -367,7 +352,6 @@ Quadratic 集成了基于 Codex 的 AI 助手。用户不再需要死记硬背 E
 ---
 ## 常见问题
 
-
 ### 1: The Codex App 是什么？它主要用来做什么？
 
 1: The Codex App 是什么？它主要用来做什么？
@@ -375,8 +359,6 @@ Quadratic 集成了基于 Codex 的 AI 助手。用户不再需要死记硬背 E
 **A**: The Codex App 是一款基于 OpenAI Codex 模型开发的代码生成与辅助工具。它能够理解自然语言指令，并将其转换为可执行的代码。其主要功能包括：根据注释生成代码片段、解释现有代码逻辑、在不同编程语言之间进行翻译、以及为开发者提供自动补全和调试建议，旨在提高软件开发的效率和准确性。
 
 ---
-
-
 
 ### 2: 使用 The Codex App 需要付费吗？
 
@@ -386,8 +368,6 @@ Quadratic 集成了基于 Codex 的 AI 助手。用户不再需要死记硬背 E
 
 ---
 
-
-
 ### 3: The Codex App 支持哪些编程语言？
 
 3: The Codex App 支持哪些编程语言？
@@ -395,8 +375,6 @@ Quadratic 集成了基于 Codex 的 AI 助手。用户不再需要死记硬背 E
 **A**: The Codex App 支持市面上绝大多数主流的编程语言。这包括但不限于 Python、JavaScript、TypeScript、Java、C++、C#、Ruby、Go、PHP、Swift 以及 SQL 等。由于 Codex 模型是在公开的代码库上进行训练的，它对多种语法和框架都有很好的理解能力。
 
 ---
-
-
 
 ### 4: 我输入的代码会被用于训练模型吗？隐私安全如何保障？
 
@@ -406,8 +384,6 @@ Quadratic 集成了基于 Codex 的 AI 助手。用户不再需要死记硬背 E
 
 ---
 
-
-
 ### 5: The Codex App 生成的代码可以直接用于生产环境吗？
 
 5: The Codex App 生成的代码可以直接用于生产环境吗？
@@ -415,8 +391,6 @@ Quadratic 集成了基于 Codex 的 AI 助手。用户不再需要死记硬背 E
 **A**: 虽然 Codex 生成的代码通常语法正确且逻辑通顺，但直接将其用于生产环境存在风险。生成的代码可能包含安全漏洞、效率问题或未处理的边缘情况。最佳实践是将 Codex 视为一个强大的“副驾驶”，生成的代码必须经过经验丰富的开发者进行审查、测试和调试后，才能部署到生产环境中。
 
 ---
-
-
 
 ### 6: 如果 The Codex App 生成的代码有误，我该如何修正？
 
@@ -429,29 +403,11 @@ Quadratic 集成了基于 Codex 的 AI 助手。用户不再需要死记硬背 E
 
 ---
 
-
-
 ### 7: The Codex App 与 GitHub Copilot 有什么区别？
 
 7: The Codex App 与 GitHub Copilot 有什么区别？
 
 **A**: 两者虽然底层技术都源自 OpenAI 的 Codex 模型，但应用形态不同。GitHub Copilot 主要作为代码编辑器（如 VS Code）的插件存在，侧重于实时的行内自动补全和建议。而 The Codex App（如果是指独立的网页或移动端应用）可能更侧重于通过对话式界面来生成完整的函数、脚本或解答具体的编程问题，使用场景可能更加独立和灵活。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 假设 Codex App 允许用户通过自然语言指令来操作界面元素。请设计一个简单的正则表达式，用于从用户的输入指令中提取出“颜色”参数（例如：“将背景颜色改为深蓝色”应提取出“深蓝色”）。
-
-### 提示**: 考虑中文语境下的关键词定位（如“颜色”、“改为”），并注意正则表达式中贪婪与非贪婪匹配的区别，确保截取关键词后的内容。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://openai.com/index/introducing-the-codex-app](https://openai.com/index/introducing-the-codex-app)
@@ -460,7 +416,6 @@ Quadratic 集成了基于 Codex 的 AI 助手。用户不再需要死记硬背 E
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

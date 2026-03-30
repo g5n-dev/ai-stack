@@ -116,32 +116,8 @@ external_url: https://potch.me/2026/snow-simulation-toy.html
 ---
 ## 💻 代码示例
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 ## 📚 案例研究
-
 
 ### 1：独立开发者 Demo（"Winter Wonder.js"）
 
@@ -161,8 +137,6 @@ external_url: https://potch.me/2026/snow-simulation-toy.html
 
 ---
 
-
-
 ### 2：游戏原型工作室（Pixel Frost）
 
  2：游戏原型工作室（Pixel Frost）
@@ -180,8 +154,6 @@ external_url: https://potch.me/2026/snow-simulation-toy.html
 决策效率提升了数倍。团队在 10 分钟内就确定了一组完美的参数，并将这组数值直接复制到了主游戏项目的配置文件中。这个微型工具最终也被保留下来，作为关卡设计调整天气效果的标准辅助工具。
 
 ---
-
-
 
 ### 3：电商节日活动页（某时尚品牌）
 
@@ -339,7 +311,6 @@ external_url: https://potch.me/2026/snow-simulation-toy.html
 ---
 ## ❓ 常见问题
 
-
 ### 1: 这款“Snow Simulation Toy”具体是什么原理制作的？
 
 1: 这款“Snow Simulation Toy”具体是什么原理制作的？
@@ -349,8 +320,6 @@ external_url: https://potch.me/2026/snow-simulation-toy.html
 2.  **表面积与光线折射**：当粉末吸水膨胀后，会形成大量不规则的微小颗粒。这些颗粒堆积在一起时，颗粒之间充满了空气。光线照射在这些颗粒和空气的交界处会发生漫反射，从而在视觉上呈现出白色的、蓬松的雪花质感。这种效果在视觉上非常逼真，但触感通常是凉爽潮湿的，而非干燥的。
 
 ---
-
-
 
 ### 2: 这个模拟雪玩具适合多大的孩子使用？安全吗？
 
@@ -363,8 +332,6 @@ external_url: https://potch.me/2026/snow-simulation-toy.html
 
 ---
 
-
-
 ### 3: 我可以用家里的普通材料（如面粉或盐）来代替购买的材料吗？
 
 3: 我可以用家里的普通材料（如面粉或盐）来代替购买的材料吗？
@@ -374,8 +341,6 @@ external_url: https://potch.me/2026/snow-simulation-toy.html
 *   **专用材料**：专用雪粉吸水后体积能膨胀数十倍甚至上百倍，重量极轻，且手感冰凉，这是普通粉末无法比拟的。如果你想体验类似效果，有些DIY爱好者会尝试使用撕碎的白色棉絮或泡沫颗粒，但那属于另一种模拟方式（模拟干雪），而非这种吸水凝胶（模拟湿雪）。
 
 ---
-
-
 
 ### 4: 这种“人造雪”可以重复使用吗？保存方法是什么？
 
@@ -389,8 +354,6 @@ external_url: https://potch.me/2026/snow-simulation-toy.html
 
 ---
 
-
-
 ### 5: 在 Hacker News 的讨论中，开发者们通常如何看待这类项目的代码或技术实现？
 
 5: 在 Hacker News 的讨论中，开发者们通常如何看待这类项目的代码或技术实现？
@@ -402,30 +365,12 @@ external_url: https://potch.me/2026/snow-simulation-toy.html
 
 ---
 
-
-
 ### 6: 玩这个玩具会不会弄脏家里或桌子？好清理吗？
 
 6: 玩这个玩具会不会弄脏家里或桌子？好清理吗？
 
 **A**: 这取决于玩具的状态：
 *   **湿润状态（已吸水）**：非常好清理。此时的“雪”是凝胶
-
----
-## 🎯 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**: 实现基础的粒子下落运动
-
-### 请编写代码让 100 个雪花粒子从屏幕顶端生成，并以恒定的速度垂直下落。当雪花超出屏幕底部边界时，将其重置到顶部随机位置，形成无限循环。
-
-### 提示**:
-
----
 ## 🔗 引用
 
 - **原文链接**: [https://potch.me/2026/snow-simulation-toy.html](https://potch.me/2026/snow-simulation-toy.html)

@@ -74,9 +74,6 @@ PyTorch 已成为机器学习领域的主流框架，但抽象的代码逻辑往
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：张量创建与基本操作
 import torch
@@ -109,9 +106,6 @@ def tensor_operations():
 # 说明：这个示例展示了PyTorch张量的创建、基本运算和设备检查，是理解PyTorch数据结构的基础。
 ```
 
-
-
-
 ```python
 # 示例2：自动求导与梯度计算
 import torch
@@ -141,9 +135,6 @@ def autograd_example():
 
 # 说明：这个示例展示了PyTorch的自动微分系统，这是神经网络训练的核心功能，可以自动计算梯度。
 ```
-
-
-
 
 ```python
 # 示例3：简单神经网络训练
@@ -190,10 +181,8 @@ def simple_nn_training():
 # 说明：这个示例展示了完整的神经网络训练流程，包括数据准备、模型定义、损失计算和参数优化，是PyTorch的核心应用场景。
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：Tesla 自动驾驶系统
 
@@ -215,8 +204,6 @@ Tesla 采用 PyTorch 作为其深度学习框架，利用其动态计算图和�
 
 ---
 
-
-
 ### 2：OpenAI GPT-3 语言模型
 
  2：OpenAI GPT-3 语言模型
@@ -236,8 +223,6 @@ OpenAI 使用 PyTorch 作为主要框架，结合其分布式训练工具（如 
 - GPT-3 在多项 NLP 任务中取得领先性能，为后续研究奠定基础。
 
 ---
-
-
 
 ### 3：Facebook AI Research (FAIR) 图像识别
 
@@ -371,7 +356,6 @@ FAIR 使用 PyTorch 开发了基于卷积神经网络（CNN）的图像识别模
 ---
 ## 常见问题
 
-
 ### 1: PyTorch 与 TensorFlow 等其他深度学习框架相比，主要的核心优势是什么？
 
 1: PyTorch 与 TensorFlow 等其他深度学习框架相比，主要的核心优势是什么？
@@ -383,8 +367,6 @@ FAIR 使用 PyTorch 开发了基于卷积神经网络（CNN）的图像识别模
 此外，PyTorch 的 API 设计与 Python 的科学计算库 NumPy 非常相似，这使得从 NumPy 迁移到 PyTorch 的学习曲线非常平缓。虽然 TensorFlow 2.x 后来也引入了动态图功能，但 PyTorch 在学术界和前沿研究领域依然占据主导地位，因为它的设计哲学更符合研究人员的直觉，能够快速验证新的算法想法。
 
 ---
-
-
 
 ### 2: PyTorch 中的 Tensor（张量）与 NumPy 的 Array（数组）有什么区别和联系？
 
@@ -401,8 +383,6 @@ FAIR 使用 PyTorch 开发了基于卷积神经网络（CNN）的图像识别模
 *   **自动求导：** PyTorch Tensor 支持自动微分机制。通过设置 `requires_grad=True`，PyTorch 会自动跟踪对该张量的所有操作，并在反向传播时自动计算梯度，这是神经网络训练的关键。NumPy 则不具备这一功能，需要手动实现梯度计算。
 
 ---
-
-
 
 ### 3: 在 PyTorch 中，`requires_grad` 参数的作用是什么？它是如何实现自动求导的？
 
@@ -422,8 +402,6 @@ FAIR 使用 PyTorch 开发了基于卷积神经网络（CNN）的图像识别模
 
 ---
 
-
-
 ### 4: 对于初学者，应该直接学习 PyTorch 还是先掌握 NumPy？
 
 4: 对于初学者，应该直接学习 PyTorch 还是先掌握 NumPy？
@@ -439,8 +417,6 @@ FAIR 使用 PyTorch 开发了基于卷积神经网络（CNN）的图像识别模
 
 ---
 
-
-
 ### 5: PyTorch 中的 DataLoader 和 Dataset 是什么？为什么需要它们？
 
 5: PyTorch 中的 DataLoader 和 Dataset 是什么？为什么需要它们？
@@ -449,22 +425,6 @@ FAIR 使用 PyTorch 开发了基于卷积神经网络（CNN）的图像识别模
 
 **Dataset:**
 `Dataset` 是一个
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: 张量操作与类型转换
-
-### 问题**:
-
-### 创建一个形状为 (3, 4) 的随机张量，并将其所有元素的数据类型从默认的 float32 转换为 int64。接着，提取这个张量的第一行和最后一列。
-
-### 提示**:
-
----
 ## 引用
 
 - **原文链接**: [https://0byte.io/articles/pytorch_introduction.html](https://0byte.io/articles/pytorch_introduction.html)
@@ -473,7 +433,6 @@ FAIR 使用 PyTorch 开发了基于卷积神经网络（CNN）的图像识别模
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

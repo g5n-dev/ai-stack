@@ -79,9 +79,6 @@ Tambo 1.0 通过构建一套标准化的开源工具包，试图解决 AI Agent 
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：基础React组件渲染
 from tambo import Agent, ReactComponent
@@ -168,10 +165,8 @@ def render_composed_components():
 # 适合用于模块化开发大型应用界面。
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某智能客服系统 SaaS 提供商
 
@@ -187,8 +182,6 @@ def render_composed_components():
 
 ---
 
-
-
 ### 2：内部数据查询与分析平台
 
  2：内部数据查询与分析平台
@@ -202,8 +195,6 @@ def render_composed_components():
 **效果**: 运营人员获取数据的平均时间从 2 小时缩短至 30 秒。直观的图表展示降低了数据理解门槛，使得跨部门决策速度显著加快。
 
 ---
-
-
 
 ### 3：下一代 AI 内容生成 CMS
 
@@ -311,7 +302,6 @@ def render_composed_components():
 ---
 ## 常见问题
 
-
 ### 1: Tambo 1.0 的核心功能是什么，它与传统的 AI Agent 框架有何不同？
 
 1: Tambo 1.0 的核心功能是什么，它与传统的 AI Agent 框架有何不同？
@@ -319,8 +309,6 @@ def render_composed_components():
 **A**: Tambo 1.0 是一个开源工具包，专门用于构建能够渲染 React 组件的 AI Agent。与传统的仅限于文本输出或调用 API 的 Agent 框架不同，Tambo 允许 Agent 直接生成并渲染交互式 UI 组件。这意味着 Agent 不仅可以回答用户问题，还可以直接展示动态的界面元素，例如数据可视化图表、交互式表单或配置面板，从而极大地增强了 Agent 与用户的交互能力和表现力。
 
 ---
-
-
 
 ### 2: Tambo 1.0 是如何工作的，其技术实现原理是什么？
 
@@ -330,8 +318,6 @@ def render_composed_components():
 
 ---
 
-
-
 ### 3: 使用 Tambo 1. 构建 Agent 需要哪些技术栈或前提条件？
 
 3: 使用 Tambo 1. 构建 Agent 需要哪些技术栈或前提条件？
@@ -339,8 +325,6 @@ def render_composed_components():
 **A**: 由于 Tambo 专注于渲染 React 组件，主要的使用前提是熟悉 React 生态系统。通常你需要一个基于 React 的前端框架（如 Next.js、Vite 或 Create React App）。此外，你需要配置一个 LLM 提供商（如 OpenAI 的 GPT-4 或 Anthropic 的 Claude），因为 Agent 需要模型来理解意图并决定渲染哪个组件。Tambo 旨在简化这一过程，开发者不需要编写复杂的胶水代码即可将模型输出连接到 UI。
 
 ---
-
-
 
 ### 4: Tambo 1.0 的安全性如何，Agent 是否会执行任意代码？
 
@@ -350,8 +334,6 @@ def render_composed_components():
 
 ---
 
-
-
 ### 5: Tambo 1.0 目前处于什么阶段，适合在生产环境中使用吗？
 
 5: Tambo 1.0 目前处于什么阶段，适合在生产环境中使用吗？
@@ -360,29 +342,11 @@ def render_composed_components():
 
 ---
 
-
-
 ### 6: 我该如何开始使用 Tambo 1.0？
 
 6: 我该如何开始使用 Tambo 1.0？
 
 **A**: 通常开始使用此类开源工具包的步骤包括：首先，访问其 GitHub 仓库或官方文档网站阅读安装指南；其次，通过包管理器（如 npm 或 yarn）将其安装到你的 React 项目中；最后，按照官方提供的快速开始教程，配置 LLM API Key，定义几个简单的 React 组件，并创建一个 Agent 实例来测试组件的自动渲染功能。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: 环境搭建与基础渲染
-
-### 问题**: 请尝试安装 Tambo 1.0，并编写一个 Agent，当用户发送特定指令（如 "显示当前时间"）时，返回一个简单的 React 组件来显示当前的系统时间。
-
-### 提示**: 关注 Tambo 的初始化配置，以及如何定义一个最基础的 Tool 函数使其返回 JSX 结构。你需要确保 Agent 能够正确解析并渲染这段 JSX。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://github.com/tambo-ai/tambo](https://github.com/tambo-ai/tambo)
@@ -391,7 +355,6 @@ def render_composed_components():
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

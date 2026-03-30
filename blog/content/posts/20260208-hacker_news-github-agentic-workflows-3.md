@@ -78,9 +78,6 @@ GitHub Agentic Workflows 一文精准地捕捉到了 AI 软件工程的下一波
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：自动化代码审查与修复
 def auto_code_review():
@@ -125,9 +122,6 @@ def calculate_sum(numbers):
 auto_code_review()
 ```
 
-
-
-
 ```python
 # 示例2：智能Issue分类与路由
 def classify_issue(issue_text):
@@ -161,9 +155,6 @@ for issue in test_issues:
     print(f"Issue: {issue}\n分类: {category}\n")
 ```
 
-
-
-
 ```python
 # 示例3：自动化工作流触发器
 def workflow_trigger(event_type, payload):
@@ -188,10 +179,8 @@ workflow_trigger("pull_request", {"number": 42, "author": "dev1"})
 workflow_trigger("release", {"version": "v1.0.0", "notes": "首次正式发布"})
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：Cognition 公司 (Devin AI 开发团队)
 
@@ -215,8 +204,6 @@ Cognition 实施了深度的 GitHub Agentic Workflow。他们构建了具备“�
 
 ---
 
-
-
 ### 2：PyTorch 开源社区
 
  2：PyTorch 开源社区
@@ -236,8 +223,6 @@ PyTorch 社区引入了基于 Agentic Workflow 的自动化工具（如 Facebook
 引入 Agentic Workflow 后，PyTorch 社区的维护负担显著减轻。文档更新的准确性和及时性大幅提升，减少了因文档过时导致的用户困惑。自动化重构代理使得涉及数千个文件的大型更改能够在数小时内完成并合并，而过去这通常需要数周的人工协调工作。
 
 ---
-
-
 
 ### 3：Salesforce (内部开发流程)
 
@@ -379,7 +364,6 @@ Salesforce 采用了“左移”的 Agentic Workflow 策略。他们集成了 AI
 ---
 ## 常见问题
 
-
 ### 1: 什么是 GitHub Agentic Workflows？它与传统的 CI/CD 有什么区别？
 
 1: 什么是 GitHub Agentic Workflows？它与传统的 CI/CD 有什么区别？
@@ -387,8 +371,6 @@ Salesforce 采用了“左移”的 Agentic Workflow 策略。他们集成了 AI
 **A**: GitHub Agentic Workflows 是 GitHub 推出的一种结合了人工智能代理（AI Agents）的自动化工作流功能。传统的 CI/CD（持续集成/持续部署）主要依赖于预定义的脚本和静态命令，而 Agentic Workflows 允许开发者调用具备推理能力的 AI 代理。这些代理可以根据上下文自主分析代码、理解意图，并执行复杂的多步骤任务（如代码审查、Bug 修复、依赖项升级或文档生成），而不仅仅是机械地运行预设的命令。它标志着从“脚本自动化”向“智能自动化”的转变。
 
 ---
-
-
 
 ### 2: 目前 GitHub Agentic Workflows 支持哪些具体的 AI 模型或服务？
 
@@ -398,8 +380,6 @@ Salesforce 采用了“左移”的 Agentic Workflow 策略。他们集成了 AI
 
 ---
 
-
-
 ### 3: 使用 AI 代理运行工作流是否会增加安全风险，例如泄露代码机密？
 
 3: 使用 AI 代理运行工作流是否会增加安全风险，例如泄露代码机密？
@@ -408,8 +388,6 @@ Salesforce 采用了“左移”的 Agentic Workflow 策略。他们集成了 AI
 
 ---
 
-
-
 ### 4: 开发者如何编写一个 Agentic Workflow？是否需要学习新的语言？
 
 4: 开发者如何编写一个 Agentic Workflow？是否需要学习新的语言？
@@ -417,8 +395,6 @@ Salesforce 采用了“左移”的 Agentic Workflow 策略。他们集成了 AI
 **A**: 开发者不需要学习全新的语言，因为 Agentic Workflows 是基于现有的 GitHub Actions 语法构建的。GitHub 在现有的 YAML 配置文件中引入了新的原语来调用 AI 代理。开发者可以通过自然语言描述任务的意图，或者使用特定的函数调用工具来指示代理执行操作。例如，不再是编写具体的 Bash 脚本来查找漏洞，而是编写一个步骤，指示代理“扫描此拉取请求中的安全漏洞并提出修复建议”。
 
 ---
-
-
 
 ### 5: Agentic Workflows 的主要应用场景有哪些？
 
@@ -432,29 +408,11 @@ Salesforce 采用了“左移”的 Agentic Workflow 策略。他们集成了 AI
 
 ---
 
-
-
 ### 6: 目前该功能处于什么阶段？普通用户可以立即使用吗？
 
 6: 目前该功能处于什么阶段？普通用户可以立即使用吗？
 
 **A**: GitHub Agentic Workflows 目前处于技术预览或内测阶段。GitHub 通常会先向部分企业客户或 Copilot X 候选名单上的用户开放访问权限，以便收集反馈并优化性能。虽然相关功能已经在 GitHub Universe 大会上演示，但全面公测（GA）和面向所有用户的开放仍需等待一段时间。开发者可以关注 GitHub 的官方博客或加入等待列表以获取早期访问权限。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 在 GitHub Copilot Workspace 的上下文中，"Agent"（代理）与传统的 AI Chatbot（聊天机器人）在处理 Issue 时有何核心区别？
-
-### 提示**: 请从“自主性”和“任务执行流程”的角度进行对比。思考是你在不断输入指令引导它，还是它根据一个目标自动规划步骤。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://github.github.io/gh-aw](https://github.github.io/gh-aw)
@@ -463,7 +421,6 @@ Salesforce 采用了“左移”的 Agentic Workflow 策略。他们集成了 AI
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

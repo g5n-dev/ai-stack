@@ -38,8 +38,6 @@ Relevant source files
   * [README_JP.md](https://github.com/alibaba/higress/blob/8deceb4d/README_JP.md)
   * [README_ZH.md](https://github.com/alibaba/higress/blob/8deceb4d/README_ZH.md)
 
-
-
 ## Purpose and Scope
 
 This document provides a comprehensive overview of Higress, an AI Native API Gateway built on Istio and Envoy. It covers the system's architecture, core components, and primary use cases. For detailed information about specific subsystems, refer to the Core Architecture (page 2), Build and Deployment (page 3), WASM Plugin System (page 4), AI Gateway Features (page 5), MCP System (page 6), and Development Guide (page 7) sections.
@@ -73,7 +71,6 @@ Higress implements a control plane and data plane separation derived from Istio'
 
 **Component Deployment Diagram:**
 
-
 **Binary and Process Mapping:**
 
 Binary| Source Entry Point| Deployment Location| Primary Functions  
@@ -92,7 +89,6 @@ Sources: [README.md32](https://github.com/alibaba/higress/blob/8deceb4d/README.m
 ### Configuration Flow and Controller Architecture
 
 **Configuration Update Sequence:**
-
 
 **Controller Registry and Responsibilities:**
 
@@ -309,9 +305,6 @@ Higress 的功能集可以概括为“传统网关能力 + AI 增强能力”。
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：Higress网关路由配置
 def configure_higress_route():
@@ -349,9 +342,6 @@ def configure_higress_route():
 # 说明：这个示例展示了如何使用Higress的Python SDK配置网关路由规则，
 # 将不同API路径的请求转发到相应的后端服务，实现微服务架构中的API网关功能。
 ```
-
-
-
 
 ```python
 # 示例2：Higress流量治理
@@ -393,9 +383,6 @@ def configure_traffic_management():
 # 包括金丝雀发布（灰度发布）和基于地理位置的流量分割，
 # 帮助团队安全地发布新功能并优化全球用户体验。
 ```
-
-
-
 
 ```python
 # 示例3：Higress安全防护配置
@@ -449,10 +436,8 @@ def configure_security_policies():
 # 以及WAF防护常见Web攻击，帮助保护后端服务安全。
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：阿里巴巴内部电商业务
 
@@ -479,8 +464,6 @@ def configure_security_policies():
 
 ---
 
-
-
 ### 2：某在线教育平台
 
  2：某在线教育平台
@@ -505,8 +488,6 @@ def configure_security_policies():
 3. 成功应对了单日10倍流量突增的挑战。
 
 ---
-
-
 
 ### 3：某跨国物流企业
 
@@ -715,7 +696,6 @@ def configure_security_policies():
 - 采用高性能架构设计，支持高并发流量处理与动态路由配置，降低运维复杂度
 - 提供企业级可观测性（Prometheus/Grafana 集成）与精细化限流熔断能力
 
-
 ---
 ## 学习路径
 
@@ -811,7 +791,6 @@ def configure_security_policies():
 ---
 ## 常见问题
 
-
 ### 1: Higress 是什么？它与阿里云和云原生社区有什么关系？
 
 1: Higress 是什么？它与阿里云和云原生社区有什么关系？
@@ -821,8 +800,6 @@ def configure_security_policies():
 Higress 遵循云原生计算基金会（CNCF）的云原生技术栈标准，深度集成了 Envoy 和 Istio。简单来说，它建立在 Envoy 高性能网络代理库之上，并兼容 Istio 的 API 标准，旨在解决云原生时代下的流量管理、安全防护和微服务治理问题。它是从阿里内部业务孵化出来的成熟技术，回馈给开源社区。
 
 ---
-
-
 
 ### 2: Higress 与 Nginx、Apache APISIX 或 Kong 等传统网关相比有什么优势？
 
@@ -836,8 +813,6 @@ Higress 遵循云原生计算基金会（CNCF）的云原生技术栈标准，�
 
 ---
 
-
-
 ### 3: Higress 是否支持从 Nginx 或 Ingress Controller 进行迁移？
 
 3: Higress 是否支持从 Nginx 或 Ingress Controller 进行迁移？
@@ -848,8 +823,6 @@ Higress 遵循云原生计算基金会（CNCF）的云原生技术栈标准，�
 2.  **Ingress Controller 替换**：在 Kubernetes 环境中，Higress 可以直接作为 Ingress Controller 部署。它兼容 Kubernetes Ingress API，同时也支持 Gateway API（来自 SIG-NETWORK），可以平滑替代原有的 Nginx Ingress Controller。
 
 ---
-
-
 
 ### 4: Higress 支持哪些类型的插件？如何开发自定义插件？
 
@@ -866,8 +839,6 @@ Higress 遵循云原生计算基金会（CNCF）的云原生技术栈标准，�
 
 ---
 
-
-
 ### 5: Higress 的性能表现如何？能否支撑高并发业务？
 
 5: Higress 的性能表现如何？能否支撑高并发业务？
@@ -880,27 +851,7 @@ Higress 遵循云原生计算基金会（CNCF）的云原生技术栈标准，�
 
 ---
 
-
-
 ### 
-
-
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: Higress 基于 Envoy 构建，但默认配置可能无法满足所有需求。请尝试在本地 Docker 环境中部署 Higress，并创建一个简单的路由规则，将访问 `/httpbin/` 路径的流量转发到后端的 `httpbin.org` 服务，同时移除请求前缀。
-
-### 提示**:
-
-### 需要查阅 Higress 的 Docker 快速开始文档。
-
----
 ## 实践建议
 
 以下是为 Alibaba Higress 仓库提供的 6 条实践建议，侧重于 AI 网关的实际落地与生产环境运维：
@@ -942,7 +893,6 @@ AI 场景下，单一模型提供商可能不稳定或限流。利用 Higress �
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

@@ -36,8 +36,6 @@ Relevant source files
 
   * [README.md](https://github.com/lss233/kirara-ai/blob/8295a5de/README.md)
 
-
-
 Kirara AI is a multi-platform chatbot framework that integrates large language models (LLMs) with instant messaging platforms through a flexible workflow-based automation system. The system provides a unified interface for deploying AI-powered conversational agents across platforms like Telegram, QQ, Discord, and WeChat, while supporting multiple LLM providers including OpenAI, Claude, Gemini, and local models.
 
 This document covers the high-level architecture and core components of the Kirara AI system. For detailed information about specific subsystems, see [Architecture](/lss233/kirara-ai/2-architecture), [Core Components](/lss233/kirara-ai/3-core-components), [Plugin System](/lss233/kirara-ai/4-plugin-system), and [Deployment](/lss233/kirara-ai/5-deployment).
@@ -53,19 +51,15 @@ Kirara AI serves as a comprehensive chatbot framework that abstracts the complex
   * Maintain conversational context and memory across sessions
   * Administer the entire system through a web-based management interface
 
-
-
 ## High-Level Architecture
 
 The Kirara AI system follows a layered architecture with clear separation between platform adapters, core orchestration logic, and AI model integrations.
 
 ### Core System Components
 
-
 Sources: [README.md1-267](https://github.com/lss233/kirara-ai/blob/8295a5de/README.md#L1-L267) diagrams provided in context
 
 ### Message Processing Flow
-
 
 Sources: [README.md1-267](https://github.com/lss233/kirara-ai/blob/8295a5de/README.md#L1-L267) system architecture analysis
 
@@ -95,8 +89,6 @@ The system integrates with multiple AI model providers through a unified adapter
   * **Local Models** \- Ollama, custom deployments
   * **Chinese Providers** \- DeepSeek, Qwen, Minimax, Kimi, Doubao
 
-
-
 Sources: [README.md84](https://github.com/lss233/kirara-ai/blob/8295a5de/README.md#L84-L84)
 
 ### Workflow Automation
@@ -108,8 +100,6 @@ The workflow system enables complex automation scenarios through:
   * **Conditional Logic** \- Rule-based message routing and processing
   * **Cross-platform Messaging** \- Send messages across different platforms
   * **Media Processing** \- Handle images, audio, and documents
-
-
 
 Sources: [README.md92](https://github.com/lss233/kirara-ai/blob/8295a5de/README.md#L92-L92) system architecture analysis
 
@@ -123,8 +113,6 @@ The system provides comprehensive management capabilities:
   * **Workflow Designer** \- Visual workflow creation and editing
   * **System Monitoring** \- Real-time system status and logging
 
-
-
 Sources: [README.md58-75](https://github.com/lss233/kirara-ai/blob/8295a5de/README.md#L58-L75) [README.md93](https://github.com/lss233/kirara-ai/blob/8295a5de/README.md#L93-L93)
 
 ## System Components Overview
@@ -137,8 +125,6 @@ The Kirara AI architecture consists of several key subsystems:
   * **[Media Management](/lss233/kirara-ai/3.4-media-management)** \- File storage, metadata, and cleanup systems
   * **[Workflow System](/lss233/kirara-ai/3.5-workflow-system)** \- Declarative automation engine with block-based processing
   * **[Memory System](/lss233/kirara-ai/3.6-memory-system)** \- Conversational context and persistence management
-
-
 
 Each component is implemented as part of the plugin architecture, allowing for modular deployment and extensibility. The [Plugin System](/lss233/kirara-ai/4-plugin-system) documentation covers the registration and dependency injection mechanisms that enable this modularity.
 
@@ -379,9 +365,6 @@ Kirara AI 在抽象层上做了一件极具野心但也充满风险的事：**�
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：基础AI对话功能
 import openai
@@ -406,9 +389,6 @@ def basic_chat():
 # 调用示例
 basic_chat()
 ```
-
-
-
 
 ```python
 # 示例2：多轮对话管理
@@ -440,9 +420,6 @@ print(manager.get_response("你好"))
 print(manager.get_response("刚才我说了什么？"))
 ```
 
-
-
-
 ```python
 # 示例3：流式响应处理
 import openai
@@ -467,10 +444,8 @@ def stream_chat():
 stream_chat()
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某中型互联网公司内部知识库优化
 
@@ -485,8 +460,6 @@ stream_chat()
 **效果**: 文档检索时间从平均 15 分钟缩短至 30 秒以内，新员工入职培训周期缩短了 20%。由于数据完全本地化，也解决了公司对于代码和文档隐私泄露的担忧。
 
 ---
-
-
 
 ### 2：独立开发者构建的隐私优先笔记应用
 
@@ -712,7 +685,6 @@ stream_chat()
 - 项目兼容多种主流模型格式，具备良好的扩展性
 - 代码结构清晰，便于开发者进行二次开发或集成到现有系统中
 
-
 ---
 ## 学习路径
 
@@ -801,7 +773,6 @@ stream_chat()
 ---
 ## 常见问题
 
-
 ### 1: lss233/kirara-ai 是一个什么样的项目？
 
 1: lss233/kirara-ai 是一个什么样的项目？
@@ -810,8 +781,6 @@ stream_chat()
 
 ---
 
-
-
 ### 2: 该项目支持哪些大语言模型（LLM）？
 
 2: 该项目支持哪些大语言模型（LLM）？
@@ -819,8 +788,6 @@ stream_chat()
 **A**: kirara-ai 设计为模型无关的框架，通常支持市面上主流的模型接口。这包括但不限于 OpenAI API（兼容 GPT-3.5, GPT-4 等）、Claude、以及基于 OpenAI 格式部署的开源模型（如 Llama 3, Mistral, Qwen 等）。具体的支持列表通常会在项目的文档或配置文件示例中详细列出，用户可以通过配置 API Key 或本地模型地址来接入。
 
 ---
-
-
 
 ### 3: 如何部署和安装 kirara-ai？
 
@@ -832,8 +799,6 @@ stream_chat()
 具体的部署步骤请参考项目仓库中的 `README.md` 或 `docs` 目录。
 
 ---
-
-
 
 ### 4: 项目是否支持插件或功能扩展？
 
@@ -847,8 +812,6 @@ stream_chat()
 
 ---
 
-
-
 ### 5: 运行该项目需要什么样的服务器配置？
 
 5: 运行该项目需要什么样的服务器配置？
@@ -858,8 +821,6 @@ stream_chat()
 *   **本地运行开源模型**：如果使用该项目部署本地 LLM，则需要强大的 GPU（显存需大于模型大小，例如运行 7B 参数模型通常需要 8GB-16GB 显存）以及足够的系统内存。
 
 ---
-
-
 
 ### 6: 如何处理 API 密钥和敏感数据的安全性？
 
@@ -872,8 +833,6 @@ stream_chat()
 
 ---
 
-
-
 ### 7: 遇到报错或启动失败该如何排查？
 
 7: 遇到报错或启动失败该如何排查？
@@ -883,22 +842,6 @@ stream_chat()
 2.  **核对依赖**：确认 Python 版本是否符合要求（通常为 Python 3.10+），并使用 `pip install -r requirements.txt` 安装了所有依赖库。
 3.  **配置文件**：检查 YAML 或 JSON 配置文件的格式是否正确（缩进、标点等），确认填写的 API 地址和 Key 是否有效。
 4.  **网络问题**：如果服务器在国内，访问 OpenAI 等 API 可能会遇到网络限制，需要配置代理或使用中转服务。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 在 GitHub 上找到 `lss233` 的用户主页，并列出该用户贡献最活跃的前三个非 fork 仓库的名称。
-
-### 提示**: 使用 GitHub 的搜索语法 `user:lss233` 可以快速定位用户，注意在筛选仓库时需要排除 "Fork" 的来源，观察仓库的 "Updated" 时间戳来判断活跃度。
-
-### 
-
----
 ## 实践建议
 
 基于 `lss233/kirara-ai` 仓库的功能特性（多平台接入、多模态、工作流、人设调教），以下是针对实际部署和使用场景的 6 条实践建议：
@@ -950,7 +893,6 @@ stream_chat()
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

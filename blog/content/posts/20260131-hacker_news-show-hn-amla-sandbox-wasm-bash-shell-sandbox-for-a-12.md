@@ -88,9 +88,6 @@ Amla Sandbox 通过将 WASM（WebAssembly）与 Bash 环境结合，提出了一
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：创建安全的沙箱环境执行命令
 import subprocess
@@ -124,9 +121,6 @@ def run_in_sandbox(command: str) -> dict:
 print(run_in_sandbox("ls -l"))
 ```
 
-
-
-
 ```python
 # 示例2：资源限制的沙箱执行
 import resource
@@ -159,9 +153,6 @@ def run_with_limits(command: str, max_memory: int=100*1024*1024, max_time: int=5
 # 使用示例 - 限制内存100MB，CPU时间5秒
 print(run_with_limits("python -c 'a = [1]*10000000'"))
 ```
-
-
-
 
 ```python
 # 示例3：基于Docker的隔离沙箱
@@ -197,10 +188,8 @@ def run_in_docker(command: str, image: str="ubuntu:latest"):
 print(run_in_docker("apt-get update && apt-get install -y curl"))
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某企业级 SaaS 平台的自动化运维助手
 
@@ -220,8 +209,6 @@ AI 能够在几秒钟内模拟出命令执行的结果（例如模拟解析日�
 
 ---
 
-
-
 ### 2：在线编程教育平台的代码评测系统
 
  2：在线编程教育平台的代码评测系统
@@ -239,8 +226,6 @@ AI 能够在几秒钟内模拟出命令执行的结果（例如模拟解析日�
 实现了毫秒级的沙箱启动和销毁，能够支持高并发的学生同时在线实操。WASM 的安全隔离特性彻底解决了学生恶意代码逃逸的风险，服务器资源利用率相比 Docker 容器提升了 3 倍以上。
 
 ---
-
-
 
 ### 3：AI 辅助软件开发工具（Local IDE 插件）
 
@@ -364,7 +349,6 @@ AI Agent 可能会因为生成死循环代码或等待死锁而长时间占用�
 ---
 ## 常见问题
 
-
 ### 1: Amla Sandbox 的核心功能是什么，它与传统的 Docker 容器有何不同？
 
 1: Amla Sandbox 的核心功能是什么，它与传统的 Docker 容器有何不同？
@@ -377,8 +361,6 @@ AI Agent 可能会因为生成死循环代码或等待死锁而长时间占用�
 3.  **可移植性**：WASM 是编译目标，可以在任何支持 WASI (WebAssembly System Interface) 的运行时（如浏览器、服务器端）中运行，不依赖特定的 Linux 内核版本。
 
 ---
-
-
 
 ### 2: 为什么 AI Agent 需要专门的沙箱环境，直接在主机上运行脚本有什么风险？
 
@@ -394,8 +376,6 @@ Amla Sandbox 通过严格的隔离机制，确保 AI 只能访问授权的文件
 
 ---
 
-
-
 ### 3: Amla Sandbox 支持哪些常见的 Linux 工具和编程语言？
 
 3: Amla Sandbox 支持哪些常见的 Linux 工具和编程语言？
@@ -410,8 +390,6 @@ Amla Sandbox 通过严格的隔离机制，确保 AI 只能访问授权的文件
 
 ---
 
-
-
 ### 4: 如何在 Amla Sandbox 中处理文件输入和输出（I/O）？
 
 4: 如何在 Amla Sandbox 中处理文件输入和输出（I/O）？
@@ -425,8 +403,6 @@ Amla Sandbox 通过严格的隔离机制，确保 AI 只能访问授权的文件
 
 ---
 
-
-
 ### 5: Amla Sandbox 是否支持网络请求，AI 如何通过它获取外部数据？
 
 5: Amla Sandbox 是否支持网络请求，AI 如何通过它获取外部数据？
@@ -437,22 +413,6 @@ Amla Sandbox 通过严格的隔离机制，确保 AI 只能访问授权的文件
 1.  **显式授权**：管理员在启动沙箱时，明确开启网络权限，并配置防火墙规则，仅允许访问特定的白名单域名。
 2.  **宿主机代理**：AI Agent 不直接发起网络请求，而是通过特定的工具接口调用宿主机提供的代理服务，由宿主机验证请求的合法性后再执行网络操作并将结果返回给沙箱。
 3.  **预加载数据**：在沙箱启动前，由宿主机将所需的远程数据下载并挂载到沙箱文件系统中，供 AI
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 尝试在 Amla Sandbox 中使用 `echo` 命令配合重定向操作符（`>`）创建一个包含 "Hello WASM" 文本的文件，然后使用 `cat` 命令验证文件内容。接着，尝试删除该文件。
-
-### 提示**: 注意观察文件系统的持久性。当你刷新页面或重新初始化 Shell 后，刚才创建的文件是否还存在？思考这与宿主机原生的 Bash 环境有何不同。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://github.com/amlalabs/amla-sandbox](https://github.com/amlalabs/amla-sandbox)
@@ -461,7 +421,6 @@ Amla Sandbox 通过严格的隔离机制，确保 AI 只能访问授权的文件
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

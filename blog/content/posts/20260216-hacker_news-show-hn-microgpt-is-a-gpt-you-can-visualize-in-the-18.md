@@ -81,9 +81,6 @@ Microgpt 是一款优秀的“极客向”教学工具，它成功地将复杂�
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：基础GPT模型可视化
 import numpy as np
@@ -109,9 +106,6 @@ seq_len = 10
 attention_weights = np.random.rand(seq_len, seq_len)  # 随机生成注意力权重
 visualize_attention(attention_weights)
 ```
-
-
-
 
 ```python
 # 示例2：交互式文本生成
@@ -139,9 +133,6 @@ prompt = "今天天气"
 generated = generate_text_interactive(prompt)
 print(f"生成的文本: {generated}")
 ```
-
-
-
 
 ```python
 # 示例3：模型性能分析
@@ -180,10 +171,8 @@ for result in performance:
     print(f"文本长度: {result['text_length']}, 处理时间: {result['processing_time']:.2f}秒, 生成token数: {result['generated_tokens']}")
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某高校人工智能通识课教学项目
 
@@ -202,8 +191,6 @@ for result in performance:
 通过可视化界面，学生能够实时看到输入的文本是如何被分解并向量化的，以及权重如何在层与层之间传递。这种“所见即所得”的演示方式极大地降低了理解门槛，课程互动率提升了40%，学生成功构建了从数学原理到代码实现的完整认知链路。
 
 ---
-
-
 
 ### 2：前端开发者个人博客的交互式增强
 
@@ -322,7 +309,6 @@ for result in performance:
 ---
 ## 常见问题
 
-
 ### 1: Microgpt 是什么？它与 ChatGPT 等标准 GPT 模型有何不同？
 
 1: Microgpt 是什么？它与 ChatGPT 等标准 GPT 模型有何不同？
@@ -330,8 +316,6 @@ for result in performance:
 **A**: Microgpt 是一个专门用于教育目的和可视化演示的极简 GPT（生成式预训练变换器）实现。与 ChatGPT 等生产级大型语言模型不同，Microgpt 并不追求海量参数或复杂的指令微调。它的核心价值在于“可视化”：它将 GPT 模型的内部运作机制（如 Token 的预测、注意力机制的权重、矩阵运算等）直接在浏览器中以图形化的方式呈现出来。它旨在帮助开发者、学生和 AI 爱好者直观地理解 Transformer 架构是如何一步步处理文本并生成输出的。
 
 ---
-
-
 
 ### 2: 运行 Microgpt 需要强大的本地硬件（如高端 GPU）支持吗？
 
@@ -341,8 +325,6 @@ for result in performance:
 
 ---
 
-
-
 ### 3: 既然它是一个 GPT 模型，我可以用它来代替 ChatGPT 进行日常写作或编程吗？
 
 3: 既然它是一个 GPT 模型，我可以用它来代替 ChatGPT 进行日常写作或编程吗？
@@ -350,8 +332,6 @@ for result in performance:
 **A**: 不建议。Microgpt 是一个教学工具，而非通用生产力工具。它的模型容量非常有限，上下文窗口很短，且没有经过海量真实世界数据的预训练和复杂的对齐训练。因此，它生成的文本通常缺乏逻辑连贯性、事实准确性，也无法处理复杂的推理任务。它的用途是让你“看见”模型思考的过程，而不是获得高质量的思考结果。
 
 ---
-
-
 
 ### 4: Microgpt 支持哪些可视化功能？我能看到模型的哪些部分？
 
@@ -365,8 +345,6 @@ for result in performance:
 
 ---
 
-
-
 ### 5: 该项目是开源的吗？我可以用来学习如何从零构建 Transformer 吗？
 
 5: 该项目是开源的吗？我可以用来学习如何从零构建 Transformer 吗？
@@ -374,8 +352,6 @@ for result in performance:
 **A**: 这类在 Hacker News 上展示的项目通常都是开源的（通常托管在 GitHub 上）。Microgpt 的代码库通常经过精简，去除了工程优化代码，保留了核心的数学逻辑。对于想要深入理解 Transformer 架构细节的开发者来说，阅读 Microgpt 的源码并结合其可视化界面进行调试，是学习 GPT 原理的绝佳途径，比阅读庞大复杂的 GPT-3 或 Llama 代码库要容易理解得多。
 
 ---
-
-
 
 ### 6: Microgpt 使用了什么技术栈来实现浏览器端的计算？
 
@@ -389,8 +365,6 @@ for result in performance:
 
 ---
 
-
-
 ### 7: 我该如何开始使用 Microgpt？
 
 7: 我该如何开始使用 Microgpt？
@@ -399,22 +373,6 @@ for result in performance:
 1.  访问项目提供的演示网站链接。
 2.  在输入框中输入一段简短的文本，点击“生成”或“推理”。
 由于这是一个可视化工具，建议输入较短的句子，以便更清晰地观察模型内部每一步的变化和注意力分配情况。部分版本还允许用户调整参数（如温度 Top-K），以观察随机性如何影响生成结果。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 在浏览器中实现一个简单的 Tokenizer（分词器），能够将输入的英文文本转换为整数 ID 列表，并支持将 ID 列表还原回文本。要求不依赖任何第三方 NLP 库，仅使用原生 JavaScript。
-
-### 提示**:
-
-### 可以基于最基础的“单词”级别进行切分，按空格和标点符号分割。
-
----
 ## 引用
 
 - **原文链接**: [https://microgpt.boratto.ca](https://microgpt.boratto.ca)
@@ -423,7 +381,6 @@ for result in performance:
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

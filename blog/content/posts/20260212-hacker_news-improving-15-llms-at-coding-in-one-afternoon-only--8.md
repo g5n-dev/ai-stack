@@ -98,9 +98,6 @@ scenarios: ["大语言模型", "AI/ML项目"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：动态提示词模板生成
 def generate_dynamic_prompt(task_type: str, difficulty: int) -> str:
@@ -127,9 +124,6 @@ def generate_dynamic_prompt(task_type: str, difficulty: int) -> str:
 # 测试
 print(generate_dynamic_prompt("debug", 3))
 ```
-
-
-
 
 ```python
 # 示例2：多模型结果评估器
@@ -158,9 +152,6 @@ results = evaluate_llm_outputs(
 )
 print(results)
 ```
-
-
-
 
 ```python
 # 示例3：自适应测试用例生成
@@ -192,10 +183,8 @@ def generate_test_cases(code: str, complexity: str) -> list:
 print(generate_test_cases("def add_one(x): return x+1", "medium"))
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某中型金融科技公司的内部开发效率提升
 
@@ -210,8 +199,6 @@ print(generate_test_cases("def add_one(x): return x+1", "medium"))
 **效果**: 在一个下午完成配置后，针对内部特定模块的代码生成可用性从约 40% 提升至 85% 以上。开发人员表示，AI 现在能准确引用内部私有库，代码风格也完全符合团队规范，极大减少了代码审查和重构的时间。
 
 ---
-
-
 
 ### 2：某 SaaS 初创公司的客户服务自动化升级
 
@@ -319,7 +306,6 @@ print(generate_test_cases("def add_one(x): return x+1", "medium"))
 ---
 ## 常见问题
 
-
 ### 1: 这篇文章的核心发现是什么？为什么标题强调“Only the Harness Changed”（只改变了测试工具）？
 
 1: 这篇文章的核心发现是什么？为什么标题强调“Only the Harness Changed”（只改变了测试工具）？
@@ -329,8 +315,6 @@ print(generate_test_cases("def add_one(x): return x+1", "medium"))
 标题强调“Only the Harness Changed”是为了突显一个关键点：许多模型在之前的基准测试中表现不佳，并非因为模型本身缺乏编程能力，而是因为测试工具或评估流程存在缺陷。例如，旧的测试工具可能对输出格式过于严苛、对超时处理不当，或者未能正确处理某些依赖库。一旦修复了这些测试工具中的问题，15个LLM的得分普遍大幅提升。这说明我们之前可能低估了这些模型的实际编码潜力。
 
 ---
-
-
 
 ### 2: 文章中提到的“Harness”具体指什么？它是如何影响模型评分的？
 
@@ -347,8 +331,6 @@ print(generate_test_cases("def add_one(x): return x+1", "medium"))
 
 ---
 
-
-
 ### 3: 哪些大型语言模型（LLM）受益于这种测试方法的改进？
 
 3: 哪些大型语言模型（LLM）受益于这种测试方法的改进？
@@ -356,8 +338,6 @@ print(generate_test_cases("def add_one(x): return x+1", "medium"))
 **A**: 根据文章标题，共有15个不同的LLM参与了此次评估并从中受益。虽然具体的模型列表需要查阅文章全文，但这通常涵盖了从开源模型（如各种规模的Code Llama、WizardCoder等）到可能闭源的API模型。文章的重点在于，这并非某一个特定模型的特例，而是一种普遍现象：当评估标准更加科学和健壮时，大多数模型的编程得分都会出现明显的“通胀”或提升。
 
 ---
-
-
 
 ### 4: 这项研究对目前LLM排行榜（Leaderboards）的可信度有什么影响？
 
@@ -370,8 +350,6 @@ print(generate_test_cases("def add_one(x): return x+1", "medium"))
 
 ---
 
-
-
 ### 5: 对于开发者和研究人员来说，这篇文章有什么实际意义？
 
 5: 对于开发者和研究人员来说，这篇文章有什么实际意义？
@@ -383,8 +361,6 @@ print(generate_test_cases("def add_one(x): return x+1", "medium"))
 
 ---
 
-
-
 ### 6: 这种“改进Harness”的方法是否意味着模型变聪明了？
 
 6: 这种“改进Harness”的方法是否意味着模型变聪明了？
@@ -392,22 +368,6 @@ print(generate_test_cases("def add_one(x): return x+1", "medium"))
 **A**: 不，模型本身并没有变聪明。模型的权重、参数和知识库在这次“改进”过程中完全没有改变。
 
 这就像是一个学生参加考试，如果试卷的题目表述不清或者阅卷老师改错了，学生的分数就会很低。如果我们修正了试卷的表述（更清晰的Prompt）或者更换了更公正的阅卷老师（更好的Harness），学生的分数就会上升，反映其真实水平。文章揭示的是：**我们之前低估了模型的能力，而不是模型突然获得了能力。**
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 在文章提到的测试中，仅仅改变了“Harness”（测试工具/评估框架）就显著提升了 LLM 的代码生成表现。请分析，对于一个代码生成任务，评估框架中除了“提示词”本身之外，还有哪三个最关键的配置参数可能会直接影响模型的输出结果？
-
-### 提示**: 思考一下模型是如何接收上下文的，以及它是如何被要求返回结果的。考虑输入的“形式”和输出的“约束”。例如，模型是独立生成代码还是在现有代码中补全？输出是否需要特定的格式标记？
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [http://blog.can.ac/2026/02/12/the-harness-problem](http://blog.can.ac/2026/02/12/the-harness-problem)
@@ -416,7 +376,6 @@ print(generate_test_cases("def add_one(x): return x+1", "medium"))
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

@@ -140,32 +140,8 @@ external_url: https://emsh.cat/one-human-one-agent-one-browser
 ---
 ## 💻 代码示例
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 ## 📚 案例研究
-
 
 ### 1：某智能客服技术公司的自动化测试平台
 
@@ -186,8 +162,6 @@ external_url: https://emsh.cat/one-human-one-agent-one-browser
 *   **效率飞跃**：从编写测试到执行，耗时缩短了 50% 以上，真正实现了“人写逻辑，Agent 执行”的高效协作。
 
 ---
-
-
 
 ### 2：跨境电商供应链的数据采集系统
 
@@ -299,7 +273,6 @@ external_url: https://emsh.cat/one-human-one-agent-one-browser
 ---
 ## ❓ 常见问题
 
-
 ### 1: “One Human + One Agent = One Browser” 这个标题究竟是什么意思？
 
 1: “One Human + One Agent = One Browser” 这个标题究竟是什么意思？
@@ -310,8 +283,6 @@ external_url: https://emsh.cat/one-human-one-agent-one-browser
 这意味着浏览器不仅仅是被动渲染网页的工具，它具备一定的自主性或辅助能力，能够理解用户意图、自动化执行任务（如自动填表、导航）或协助开发者进行调试。标题强调了这种“人机协作”模式是构建现代浏览器的全新尝试。
 
 ---
-
-
 
 ### 2: 20K LOC（约2万行代码）对于构建一个浏览器来说意味着什么？这是一个复杂的浏览器吗？
 
@@ -324,8 +295,6 @@ external_url: https://emsh.cat/one-human-one-agent-one-browser
 
 ---
 
-
-
 ### 3: 这个项目使用了哪些编程语言和技术栈？
 
 3: 这个项目使用了哪些编程语言和技术栈？
@@ -335,8 +304,6 @@ external_url: https://emsh.cat/one-human-one-agent-one-browser
 *   也有可能使用 **C++** 或 **Zig**，但考虑到 20K LOC 的控制力，Rust 的可能性最大。具体的 Agent 部分可能会集成 Python 或基于大模型（LLM）的 API。
 
 ---
-
-
 
 ### 4: 这个内置的 "Agent" 具体能做什么？它是如何工作的？
 
@@ -349,8 +316,6 @@ external_url: https://emsh.cat/one-human-one-agent-one-browser
 
 ---
 
-
-
 ### 5: 既然已经有 Chrome 和 Firefox 了，为什么还要从零写一个浏览器？
 
 5: 既然已经有 Chrome 和 Firefox 了，为什么还要从零写一个浏览器？
@@ -362,8 +327,6 @@ external_url: https://emsh.cat/one-human-one-agent-one-browser
 
 ---
 
-
-
 ### 6: 这个浏览器目前可以用来日常上网吗？
 
 6: 这个浏览器目前可以用来日常上网吗？
@@ -374,29 +337,11 @@ external_url: https://emsh.cat/one-human-one-agent-one-browser
 
 ---
 
-
-
 ### 7: 我可以在哪里看到这个项目的源代码？
 
 7: 我可以在哪里看到这个项目的源代码？
 
 **A**: 由于这是一个 "Show HN"（Hacker News 上的分享帖），通常作者会在帖子正文或评论中附上 **GitHub 仓库链接
-
----
-## 🎯 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**: 事件循环的基础实现
-
-### 浏览器核心是“输入 -> 处理 -> 渲染”的循环。请尝试用你熟悉的语言（如 Python 或 JS）实现一个最简单的命令行 REPL（Read-Eval-Print Loop）。它需要接收用户输入的简单数学表达式（如 `1 + 1`），解析并打印结果，同时能处理 `exit` 命令退出。
-
-### 提示**: 考虑使用 `while True` 循环，并利用 `try-catch` 块来捕获解析错误，防止程序意外崩溃。
-
----
 ## 🔗 引用
 
 - **原文链接**: [https://emsh.cat/one-human-one-agent-one-browser](https://emsh.cat/one-human-one-agent-one-browser)

@@ -116,9 +116,6 @@ Airfoil 在 2024 年依然是 Mac 平台上功能最强大、最成熟的音频�
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：计算翼型的升力系数
 def calculate_lift_coefficient(angle_of_attack, air_density, velocity, area):
@@ -141,9 +138,6 @@ cl = calculate_lift_coefficient(5, 1.225, 50, 10)
 print(f"升力系数: {cl:.2f}")
 ```
 
-
-
-
 ```python
 # 示例2：翼型几何参数计算
 def calculate_camber_mean_line(x_coords, y_coords):
@@ -163,9 +157,6 @@ y_upper = [0, 0.05, 0.08, 0.09, 0.08, 0.07, 0.06, 0.05, 0.04, 0.02, 0]
 mean_line = calculate_camber_mean_line(x, y_upper)
 print(f"中弧线坐标: {mean_line}")
 ```
-
-
-
 
 ```python
 # 示例3：翼型气动性能优化
@@ -196,10 +187,8 @@ best_alpha = optimize_angle_of_attack(calculate_lift_coefficient, target)
 print(f"达到升力系数{target}的最佳攻角约为: {best_alpha}°")
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某跨境电商平台独立站项目
 
@@ -223,8 +212,6 @@ print(f"达到升力系数{target}的最佳攻角约为: {best_alpha}°")
 
 ---
 
-
-
 ### 2：某 SaaS 初创公司的用户激活优化
 
  2：某 SaaS 初创公司的用户激活优化
@@ -246,8 +233,6 @@ print(f"达到升力系数{target}的最佳攻角约为: {best_alpha}°")
 - 客服咨询量减少 35%，常见问题自助解决率提高  
 
 ---
-
-
 
 ### 3：某传统零售商的私域流量运营
 
@@ -369,7 +354,6 @@ print(f"达到升力系数{target}的最佳攻角约为: {best_alpha}°")
 ---
 ## 常见问题
 
-
 ### 1: Airfoil 是什么软件，它的主要功能是什么？
 
 1: Airfoil 是什么软件，它的主要功能是什么？
@@ -377,8 +361,6 @@ print(f"达到升力系数{target}的最佳攻角约为: {best_alpha}°")
 **A**: Airfoil 是由 Rogue Amoeba 公司开发的一款 macOS 音频转发工具。它的核心功能是允许用户将计算机上任何应用程序的音频流无线传输到 AirPlay、Blueooth、Sonos、Chromecast 以及其他支持的接收设备上。与 macOS 自带的 AirPlay 功能不同，Airfoil 能够将系统级音频（如 Spotify、网页视频、游戏声音等）发送到多个不同类型的设备中，实现多房间同步播放。
 
 ---
-
-
 
 ### 2: Airfoil 2024 版本相比旧版本有哪些主要更新？
 
@@ -388,8 +370,6 @@ print(f"达到升力系数{target}的最佳攻角约为: {best_alpha}°")
 
 ---
 
-
-
 ### 3: Airfoil 对于非 Apple 设备（如 Windows PC 或普通蓝牙音箱）的支持如何？
 
 3: Airfoil 对于非 Apple 设备（如 Windows PC 或普通蓝牙音箱）的支持如何？
@@ -397,8 +377,6 @@ print(f"达到升力系数{target}的最佳攻角约为: {best_alpha}°")
 **A**: Airfoil 原生运行于 macOS 平台上。对于接收端，它具有极强的兼容性。除了标准的 AirPlay 设备外，Airfoil 还可以连接到蓝牙扬声器、普通蓝牙耳机以及运行了配套软件 Airfoil Satellite 的 Windows PC、iOS 设备或 Android 设备。这意味着你可以将 Mac 上的声音发送到另一台作为接收端的 Windows 电脑上。不过，Airfoil 本身并不在 Windows 上作为发送端运行（该公司有单独的 Windows 版本 Airfoil for Windows，但功能迭代通常慢于 Mac 版）。
 
 ---
-
-
 
 ### 4: 使用 Airfoil 进行音频传输时会有延迟吗？是否适合观看视频？
 
@@ -408,8 +386,6 @@ print(f"达到升力系数{target}的最佳攻角约为: {best_alpha}°")
 
 ---
 
-
-
 ### 5: Airfoil 的价格模式是怎样的？买断制还是订阅制？
 
 5: Airfoil 的价格模式是怎样的？买断制还是订阅制？
@@ -417,8 +393,6 @@ print(f"达到升力系数{target}的最佳攻角约为: {best_alpha}°")
 **A**: Airfoil 采用的是传统的买断制授权模式，而非近年来流行的订阅制。用户支付一次费用即可获得当前主要版本的永久使用权。Rogue Amoeba 通常会为在上一代主要版本发布后购买的用户提供免费升级到新版本的资格，而对于拥有旧版本授权的用户，通常会提供折扣升级价格。此外，购买“Magic Bundle”通常可以包含该公司旗下的多款音频工具。
 
 ---
-
-
 
 ### 6: 为什么有时候 Airfoil 无法捕获某些应用程序（如 Netflix 或 Spotify）的音频？
 
@@ -428,29 +402,11 @@ print(f"达到升力系数{target}的最佳攻角约为: {best_alpha}°")
 
 ---
 
-
-
 ### 7: Airfoil Satellite 是什么，必须使用它吗？
 
 7: Airfoil Satellite 是什么，必须使用它吗？
 
 **A**: Airfoil Satellite 是 Rogue Amoeba 提供的免费配套应用，可在 iOS、Android 和 Windows 上运行。它的作用是将这些设备变成 Airfoil 的音频接收端。如果你只想将 Mac 的音频发送到 AirPlay 设备或蓝牙音箱，则不需要安装 Satellite。但如果你想把音频发送到另一台电脑、iPhone 或 Android 手机上，那么你就必须在接收端安装并运行 Airfoil Satellite 应用才能建立连接。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**:
-
-### Airfoil (2024) 强调了本地优先和隐私保护。请设计一个简单的命令行脚本（使用 Python 或 Bash），该脚本可以读取本地 Markdown 文件，并生成一个包含所有二级标题的目录索引，且不依赖任何云端 API。
-
-### 提示**:
-
----
 ## 引用
 
 - **原文链接**: [https://ciechanow.ski/airfoil](https://ciechanow.ski/airfoil)
@@ -459,7 +415,6 @@ print(f"达到升力系数{target}的最佳攻角约为: {best_alpha}°")
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

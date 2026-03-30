@@ -82,9 +82,6 @@ Amla Sandbox 通过将 WebAssembly (WASM) 与 Bash 环境结合，为 AI Agent �
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：AI代理安全执行系统命令
 import subprocess
@@ -125,9 +122,6 @@ print(safe_command_execution("ls -l", allowed))
 print(safe_command_execution("rm -rf /", allowed))  # 会被拦截
 ```
 
-
-
-
 ```python
 # 示例2：沙箱资源使用监控
 import psutil
@@ -162,9 +156,6 @@ class SandboxMonitor:
 monitor = SandboxMonitor(max_memory_mb=50)
 print(monitor.check_resources())
 ```
-
-
-
 
 ```python
 # 示例3：隔离的文件系统操作
@@ -209,10 +200,8 @@ print(f"沙箱目录: {sandbox_fs.temp_dir}")
 sandbox_fs.cleanup()
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某 AI 编程教育平台
 
@@ -233,8 +222,6 @@ sandbox_fs.cleanup()
 - **交互体验**: 命令执行实现了毫秒级响应，极大地提升了教学过程中的即时反馈感。
 
 ---
-
-
 
 ### 2：企业级内部运维自动化 Agent
 
@@ -348,7 +335,6 @@ sandbox_fs.cleanup()
 ---
 ## 常见问题
 
-
 ### 1: Amla Sandbox 的主要用途是什么？
 
 1: Amla Sandbox 的主要用途是什么？
@@ -356,8 +342,6 @@ sandbox_fs.cleanup()
 **A**: Amla Sandbox 是一个专为 AI 代理（AI Agents）设计的基于 WebAssembly (WASM) 的 Bash Shell 沙箱环境。它的主要用途是允许 AI 代理在一个安全、隔离的环境中执行 Bash 命令和运行代码。这解决了当前 AI 应用开发中的一个痛点：如何安全地赋予 AI 代理执行系统命令的能力，而不会对宿主服务器造成安全风险。通过使用 WASM 技术，它确保了代码执行的安全性，防止恶意命令逃逸到真实操作系统中。
 
 ---
-
-
 
 ### 2: 为什么选择 WebAssembly (WASM) 而不是传统的 Docker 容器或虚拟机？
 
@@ -367,8 +351,6 @@ sandbox_fs.cleanup()
 
 ---
 
-
-
 ### 3: AI 代理如何与 Amla Sandbox 进行交互？
 
 3: AI 代理如何与 Amla Sandbox 进行交互？
@@ -377,8 +359,6 @@ sandbox_fs.cleanup()
 
 ---
 
-
-
 ### 4: Amla Sandbox 支持哪些操作系统和发行版？
 
 4: Amla Sandbox 支持哪些操作系统和发行版？
@@ -386,8 +366,6 @@ sandbox_fs.cleanup()
 **A**: 由于 Amla Sandbox 是基于 WebAssembly 构建的，它并不直接依赖底层的宿主操作系统（如 Linux、Windows 或 macOS）。在沙箱内部，它通常模拟了一个轻量级的 Linux 环境（通常基于 BusyBox 或类似的精简用户空间工具）。这意味着只要宿主环境能够运行 WASM 运行时，Amla Sandbox 就能工作，具有极高的跨平台兼容性。
 
 ---
-
-
 
 ### 5: 该沙箱环境是否支持网络请求或文件持久化？
 
@@ -399,8 +377,6 @@ sandbox_fs.cleanup()
 
 ---
 
-
-
 ### 6: 与直接在服务器上运行 Shell 脚本相比，使用 Amla Sandbox 会有性能损耗吗？
 
 6: 与直接在服务器上运行 Shell 脚本相比，使用 Amla Sandbox 会有性能损耗吗？
@@ -409,29 +385,11 @@ sandbox_fs.cleanup()
 
 ---
 
-
-
 ### 7: Amla Sandbox 是否开源？如何开始使用？
 
 7: Amla Sandbox 是否开源？如何开始使用？
 
 **A**: 根据标准的 "Show HN" 惯例，这类项目通常会在 GitHub 上开源以供社区试用和反馈。开发者通常可以通过克隆项目的代码仓库，阅读 README 文档来了解如何在本地运行或将其作为库集成到自己的项目中。具体的安装步骤通常涉及安装 WASM 运行时（如 WasmEdge、Wasmtime 等）以及配置相应的 Python 或 JavaScript 客户端库。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 尝试在 Amla Sandbox 中编写一个简单的 Bash 脚本，用于递归查找当前目录下所有扩展名为 `.log` 的文件，并统计这些文件的总行数。请将结果输出到标准输出。
-
-### 提示**:
-
-### 考虑使用 `find` 命令来定位文件。
-
----
 ## 引用
 
 - **原文链接**: [https://github.com/amlalabs/amla-sandbox](https://github.com/amlalabs/amla-sandbox)
@@ -440,7 +398,6 @@ sandbox_fs.cleanup()
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

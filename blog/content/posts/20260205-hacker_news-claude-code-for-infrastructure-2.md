@@ -81,9 +81,6 @@ scenarios: ["AI/ML项目", "DevOps/运维", "大语言模型"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：自动检测并修复AWS EC2安全组配置
 import boto3
@@ -130,9 +127,6 @@ def check_and_fix_security_group(group_id):
 # 使用示例
 # check_and_fix_security_group('sg-1234567890abcdef0')
 ```
-
-
-
 
 ```python
 # 示例2：监控Kubernetes集群资源使用情况
@@ -184,9 +178,6 @@ def check_pod_resources(namespace="default"):
 # 使用示例
 # check_pod_resources("production")
 ```
-
-
-
 
 ```python
 # 示例3：自动化Docker容器健康检查
@@ -240,10 +231,8 @@ def monitor_container_health(container_name, max_retries=3):
 # monitor_container_health("my-web-app")
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：初创科技公司 DevOps 自动化转型
 
@@ -263,8 +252,6 @@ def monitor_container_health(container_name, max_retries=3):
 
 ---
 
-
-
 ### 2：金融机构遗留系统迁移
 
  2：金融机构遗留系统迁移
@@ -282,8 +269,6 @@ def monitor_container_health(container_name, max_retries=3):
 原本预计三个月的迁移准备工作缩短至六周。代码合规性审查通过率显著提高，因为 AI 生成的代码遵循了最佳实践并附带详细注释。团队知识转移效率大幅提升。
 
 ---
-
-
 
 ### 3：电商平台云成本优化项目
 
@@ -409,7 +394,6 @@ def monitor_container_health(container_name, max_retries=3):
 ---
 ## 常见问题
 
-
 ### 1: Claude Code for Infrastructure 是什么？
 
 1: Claude Code for Infrastructure 是什么？
@@ -417,8 +401,6 @@ def monitor_container_health(container_name, max_retries=3):
 **A**: Claude Code for Infrastructure 是 Anthropic 推出的一个专门针对基础设施和 DevOps 领域的 AI 编程助手。它基于 Claude 3.5 Sonnet 模型，专门优化了处理基础设施代码（如 Terraform、Kubernetes 配置、CI/CD 管道等）的能力。与通用代码助手不同，它更专注于云资源配置、容器编排和自动化部署等基础设施即代码场景。
 
 ---
-
-
 
 ### 2: 它与 ChatGPT 或 GitHub Copilot 有什么区别？
 
@@ -431,8 +413,6 @@ def monitor_container_health(container_name, max_retries=3):
 4. **多云支持**：对 AWS、Azure、GCP 等主流云平台的资源有更好的支持
 
 ---
-
-
 
 ### 3: 它支持哪些基础设施工具和语言？
 
@@ -448,8 +428,6 @@ def monitor_container_health(container_name, max_retries=3):
 
 ---
 
-
-
 ### 4: 如何确保生成的代码符合安全和合规要求？
 
 4: 如何确保生成的代码符合安全和合规要求？
@@ -461,8 +439,6 @@ def monitor_container_health(container_name, max_retries=3):
 4. **代码审查**：可以像人工审查一样检查代码中的潜在风险
 
 ---
-
-
 
 ### 5: 是否可以集成到现有的开发工作流中？
 
@@ -477,8 +453,6 @@ def monitor_container_health(container_name, max_retries=3):
 
 ---
 
-
-
 ### 6: 定价模式是怎样的？
 
 6: 定价模式是怎样的？
@@ -491,8 +465,6 @@ def monitor_container_health(container_name, max_retries=3):
 
 ---
 
-
-
 ### 7: 它能处理多大规模的基础设施代码？
 
 7: 它能处理多大规模的基础设施代码？
@@ -504,22 +476,6 @@ def monitor_container_health(container_name, max_retries=3):
 4. **模块化代码**：支持 Terraform 模块和 Helm Charts 等复用结构
 
 实际性能取决于具体订阅计划，企业版支持更大的代码库和更频繁的调用。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 假设你需要使用 Claude Code 修改一个简单的 Nginx 配置文件，将默认端口从 80 改为 8080。请描述你会如何向 Claude 提出这个需求，以及你期望 Claude 返回什么样的结果？
-
-### 提示**: 考虑提示词的精确性，以及 Claude Code 是如何定位和修改特定配置行的。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://www.fluid.sh](https://www.fluid.sh)
@@ -528,7 +484,6 @@ def monitor_container_health(container_name, max_retries=3):
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

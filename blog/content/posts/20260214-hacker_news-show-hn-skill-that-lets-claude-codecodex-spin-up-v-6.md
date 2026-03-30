@@ -69,9 +69,6 @@ scenarios: ["DevOps/运维", "大语言模型"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：使用SSH远程启动GPU虚拟机
 import subprocess
@@ -108,9 +105,6 @@ def start_gpu_vm(hostname, username, key_path):
 # 使用示例
 start_gpu_vm("192.168.1.100", "your_username", "/path/to/private_key")
 ```
-
-
-
 
 ```python
 # 示例2：使用Docker运行GPU加速的机器学习模型
@@ -151,9 +145,6 @@ def run_gpu_model(model_path, gpu_id=0):
 # 使用示例
 container = run_gpu_model("/path/to/your/model.py", gpu_id=0)
 ```
-
-
-
 
 ```python
 # 示例3：监控GPU使用情况并自动扩展虚拟机
@@ -206,10 +197,8 @@ def monitor_and_scale_gpu(threshold=80, check_interval=60):
 monitor_and_scale_gpu(threshold=80, check_interval=60)
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某 AI 创业公司的模型微调团队
 
@@ -229,8 +218,6 @@ monitor_and_scale_gpu(threshold=80, check_interval=60)
 
 ---
 
-
-
 ### 2：某开源项目的自动化测试与基准测试
 
  2：某开源项目的自动化测试与基准测试
@@ -248,8 +235,6 @@ monitor_and_scale_gpu(threshold=80, check_interval=60)
 实现了完全自动化的硬件兼容性测试流程。维护者无需手动干预即可获得详细的性能报告，确保了代码在高端 GPU 上的兼容性，显著降低了版本发布时的技术债务风险。
 
 ---
-
-
 
 ### 3：数据科学咨询公司的原型验证
 
@@ -374,7 +359,6 @@ monitor_and_scale_gpu(threshold=80, check_interval=60)
 ---
 ## 常见问题
 
-
 ### 1: 这个工具的主要功能是什么，它解决了什么问题？
 
 1: 这个工具的主要功能是什么，它解决了什么问题？
@@ -385,8 +369,6 @@ monitor_and_scale_gpu(threshold=80, check_interval=60)
 
 ---
 
-
-
 ### 2: 它支持哪些云服务提供商或平台？
 
 2: 它支持哪些云服务提供商或平台？
@@ -396,8 +378,6 @@ monitor_and_scale_gpu(threshold=80, check_interval=60)
 具体的支持列表取决于该工具（Skill）后端集成的 SDK。通常情况下，它需要通过 API 密钥与这些云服务商进行交互，因此用户需要拥有相应的云账户并配置好凭证。
 
 ---
-
-
 
 ### 3: 使用这个工具安全吗？AI 会不会误操作导致我的云账单暴增？
 
@@ -413,8 +393,6 @@ monitor_and_scale_gpu(threshold=80, check_interval=60)
 
 ---
 
-
-
 ### 4: 我需要什么前提条件才能使用这个 Skill？
 
 4: 我需要什么前提条件才能使用这个 Skill？
@@ -428,8 +406,6 @@ monitor_and_scale_gpu(threshold=80, check_interval=60)
 
 ---
 
-
-
 ### 5: 它是如何处理 GPU 驱动和 CUDA 环境的？
 
 5: 它是如何处理 GPU 驱动和 CUDA 环境的？
@@ -439,8 +415,6 @@ monitor_and_scale_gpu(threshold=80, check_interval=60)
 许多此类工具会使用预配置的机器学习镜像（如深度学习 AMI 或 CUDA 容器），这样实例启动后就已经具备了运行 PyTorch 或 TensorFlow 的环境，无需用户手动繁琐地配置依赖库。
 
 ---
-
-
 
 ### 6: 任务完成后，虚拟机会自动销毁吗？
 
@@ -452,8 +426,6 @@ monitor_and_scale_gpu(threshold=80, check_interval=60)
 
 ---
 
-
-
 ### 7: 这个工具适合什么样的使用场景？
 
 7: 这个工具适合什么样的使用场景？
@@ -464,22 +436,6 @@ monitor_and_scale_gpu(threshold=80, check_interval=60)
 2.  **模型训练与微调**: 开发者可以指示 AI 调整模型参数，并自动启动 GPU 进行训练，而无需手动配置服务器。
 3.  **远程编译**: 对于本地算力不足的大型项目（如 C++ 内核编译），可以指示 AI 在高配 VM 上完成编译并返回二进制文件。
 4.  **环境测试**: 快速验证代码在不同硬件或操作系统配置下的表现。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 假设你需要使用 Codex 或 Claude Code 编写一个 Python 脚本，该脚本通过 SSH 连接到一台远程服务器并执行 `ls -l` 命令。请设计这个脚本的逻辑流程，并说明如何安全地处理服务器连接凭证（如密码或密钥）。
-
-### 提示**: 考虑使用 `paramiko` 库或 Python 的 `subprocess` 模块调用 SSH 命令。对于凭证管理，可以探索环境变量或配置文件（如 `.env`）的使用方式。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://cloudrouter.dev](https://cloudrouter.dev)
@@ -488,7 +444,6 @@ monitor_and_scale_gpu(threshold=80, check_interval=60)
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

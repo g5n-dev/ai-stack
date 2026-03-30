@@ -116,9 +116,6 @@ Shelvy Books 展示了在生成式 AI 时代，个人开发者通过“垂直化
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：书籍信息爬取与解析
 import requests
@@ -153,9 +150,6 @@ def scrape_book_info(url):
 book_info = scrape_book_info("https://example.com/book/123")
 print(book_info)
 ```
-
-
-
 
 ```python
 # 示例2：书籍评分分析
@@ -192,9 +186,6 @@ result = analyze_book_ratings("book_ratings.csv")
 print(f"平均评分: {result['statistics']['平均评分']:.2f}")
 print("评分分布:\n", result['distribution'])
 ```
-
-
-
 
 ```python
 # 示例3：书籍推荐系统
@@ -235,10 +226,8 @@ recommended = recommend_books("Python编程", books_dataframe)
 print(recommended)
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：独立开发者/技术作者
 
@@ -261,8 +250,6 @@ print(recommended)
 - **维护便利**：当技术栈更新导致代码变动时，他只需更新 Markdown 源文件并重新构建，无需手动调整版面。
 
 ---
-
-
 
 ### 2：初创科技公司内部知识库
 
@@ -399,7 +386,6 @@ print(recommended)
 ---
 ## 常见问题
 
-
 ### 1: Shelvy Books 是什么？
 
 1: Shelvy Books 是什么？
@@ -407,8 +393,6 @@ print(recommended)
 **A**: Shelvy Books 是一个专为书籍爱好者设计的工具或平台。根据 "Show HN" 的上下文，这通常意味着这是一个开发者发布的新项目。它可能是一个用于管理个人书架、追踪阅读进度、发现新书或进行书籍元数据整理的独立应用或网站。其核心功能通常侧重于提供比传统阅读软件更简洁、更高效或更具个性化的书籍管理体验。
 
 ---
-
-
 
 ### 2: Shelvy Books 是免费的吗？
 
@@ -418,8 +402,6 @@ print(recommended)
 
 ---
 
-
-
 ### 3: 我的数据安全吗？Shelvy Books 是否支持导出？
 
 3: 我的数据安全吗？Shelvy Books 是否支持导出？
@@ -428,8 +410,6 @@ print(recommended)
 
 ---
 
-
-
 ### 4: 它支持哪些平台？
 
 4: 它支持哪些平台？
@@ -437,8 +417,6 @@ print(recommended)
 **A**: 这取决于该项目的具体技术栈。常见的 "Show HN" 书籍应用通常以 Web 应用（网页版）为主，方便跨平台使用。部分项目也会提供 macOS、Windows 客户端或 iOS/Android 移动端应用。如果它是基于 Electron 或 Tauri 构建的，可能会有桌面客户端；如果是 PWA（渐进式 Web 应用），则可以在浏览器中直接安装使用。
 
 ---
-
-
 
 ### 5: Shelvy Books 与 Goodreads 相比有什么优势？
 
@@ -452,8 +430,6 @@ print(recommended)
 
 ---
 
-
-
 ### 6: 如何将我在其他平台（如豆瓣或 Goodreads）的读书笔记导入？
 
 6: 如何将我在其他平台（如豆瓣或 Goodreads）的读书笔记导入？
@@ -461,8 +437,6 @@ print(recommended)
 **A**: 许多新兴书籍管理工具都意识到了用户迁移数据的痛点。Shelvy Books 很可能提供了 CSV 导入功能。用户通常可以在原平台（如 Goodreads）导出图书列表的 CSV 文件，然后在 Shelvy Books 的设置中找到导入选项进行上传。如果该应用没有直接提供，可能需要使用第三方脚本进行格式转换。
 
 ---
-
-
 
 ### 7: 如果我遇到 Bug 或有功能建议，该如何联系开发者？
 
@@ -473,22 +447,6 @@ print(recommended)
 2.  访问项目的 GitHub 仓库（如果是开源项目）提交 Issue。
 3.  通过官网提供的电子邮件或社交媒体链接联系。
 这是帮助项目改进的最佳时机，开发者通常会非常积极地回应早期用户的反馈。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 在 Shelvy Books 的数据模型中，书籍通常包含标题、作者和出版年份。请编写一个函数，接收一个书籍对象列表作为输入，返回一个新列表，仅包含出版年份在 2000 年及之后的书籍。
-
-### 提示**: 你可以使用数组的 `filter` 方法。注意处理输入列表为空的情况，确保函数在这种情况下依然健壮。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://shelvybooks.com](https://shelvybooks.com)
@@ -497,7 +455,6 @@ print(recommended)
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

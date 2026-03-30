@@ -96,9 +96,6 @@ LLM 推理加速正从依赖硬件堆叠转向算法架构层面的结构性突�
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：KV Cache优化
 def kv_cache_example():
@@ -129,9 +126,6 @@ def kv_cache_example():
     output = model(input_tensor)
     print(f"缓存的Key形状: {output[0].shape}, Value形状: {output[1].shape}")
 ```
-
-
-
 
 ```python
 # 示例2：动态批处理
@@ -165,9 +159,6 @@ def dynamic_batching_example():
             print(result)
 ```
 
-
-
-
 ```python
 # 示例3：量化加速
 def quantization_example():
@@ -195,10 +186,8 @@ def quantization_example():
     print(f"量化输出: {quantized_layer(input_tensor).shape}")
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：Character.AI - 大规模实时对话系统
 
@@ -213,8 +202,6 @@ def quantization_example():
 **效果**: 通过这些优化，Character.AI 成功地将推理延迟降低到了用户几乎无法感知的程度，实现了流畅的实时对话体验。这不仅提升了用户留存率，还大幅降低了每次对话的算力成本，使得在消费级硬件上运行复杂模型成为可能。
 
 ---
-
-
 
 ### 2：LMSYS Org - Vicuna 模型与 Chatbot Arena
 
@@ -356,7 +343,6 @@ KV Cache 是一种缓存机制，用于存储模型在生成过程中的键值�
 ---
 ## 常见问题
 
-
 ### 1: 什么是 LLM 推理中的 KV Cache（键值缓存），为什么它对加速至关重要？
 
 1: 什么是 LLM 推理中的 KV Cache（键值缓存），为什么它对加速至关重要？
@@ -366,8 +352,6 @@ KV Cache 是一种缓存机制，用于存储模型在生成过程中的键值�
 KV Cache 的作用是在第一轮计算时存储每一层的 Key 和 Value 向量。在后续生成新 token 时，只需将新 token 的 Key/Value 与缓存中的历史数据拼接，从而避免重复计算。这虽然增加了显存占用，但将计算复杂度从 $O(N^2)$ 降低到了 $O(N)$，极大提升了生成速度。
 
 ---
-
-
 
 ### 2: 什么是 Multi-Query Attention (MQA) 和 Grouped-Query Attention (GQA)，它们如何加速推理？
 
@@ -381,8 +365,6 @@ Multi-Query Attention (MQA) 让所有的 Attention 头共享同一组 Key 和 Va
 
 ---
 
-
-
 ### 3: 什么是 Continuous Batching（连续批处理）或 Dynamic Batching（动态批处理）？
 
 3: 什么是 Continuous Batching（连续批处理）或 Dynamic Batching（动态批处理）？
@@ -392,8 +374,6 @@ Multi-Query Attention (MQA) 让所有的 Attention 头共享同一组 Key 和 Va
 Continuous Batching（在 vLLM 等框架中也称为 Iteration-Level Scheduling）允许在批次内的某些序列生成结束后，立即插入新的序列进入批次。系统不再等待整个批次完成，而是在每个迭代步骤（生成一个 token）后动态调整批次中的请求。这种技术极大提高了 GPU 的利用率，特别是在高并发、请求长度差异大的在线服务场景中，能将吞吐量提升数倍。
 
 ---
-
-
 
 ### 4: 什么是 Speculative Decoding（推测解码）？
 
@@ -405,8 +385,6 @@ Continuous Batching（在 vLLM 等框架中也称为 Iteration-Level Scheduling�
 
 ---
 
-
-
 ### 5: 什么是 Flash Attention，它与普通 Attention 有何不同？
 
 5: 什么是 Flash Attention，它与普通 Attention 有何不同？
@@ -417,8 +395,6 @@ Continuous Batching（在 vLLM 等框架中也称为 Iteration-Level Scheduling�
 
 ---
 
-
-
 ### 6: 什么是量化，常见的 4-bit 量化是如何工作的？
 
 6: 什么是量化，常见的 4-bit 量化是如何工作的？
@@ -426,22 +402,6 @@ Continuous Batching（在 vLLM 等框架中也称为 Iteration-Level Scheduling�
 **A**: 量化是指降低模型参数的数值精度，例如将标准的 16-bit 浮点数（FP16）或 32-bit 浮点数（FP32）参数转换为 4-bit 整数（INT4）。
 
 4-bit 量化通过将参数的数值范围映射到仅有的 16 个离散级别（$2^4$）来工作。虽然这会损失一定的数值精度，从而可能导致模型输出质量轻微下降，但它能将模型显存占用减少约 75%。显存占用的减少意味着更大的批次可以放入 GPU，或者显存带宽压力降低，从而直接转化为推理速度的提升。现代量化技术（如 GPTQ、AWQ）还能最小化这种精度损失，使得 4-bit 模型在保持近乎原版性能的同时，实现极快的推理速度。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 在 LLM 推理中，KV Cache（键值缓存）是优化生成速度的核心技术。请解释 KV Cache 具体缓存了哪些数据，以及它是如何避免在生成每一个新 token 时进行重复计算的。
-
-### 提示**: 关注 Transformer 架构中的自注意力机制。思考在解码阶段，当序列长度增加 1 时，哪些矩阵乘法的结果是可以被复用的，而不需要重新对整个历史序列进行计算。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://www.seangoedecke.com/fast-llm-inference](https://www.seangoedecke.com/fast-llm-inference)
@@ -450,7 +410,6 @@ Continuous Batching（在 vLLM 等框架中也称为 Iteration-Level Scheduling�
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

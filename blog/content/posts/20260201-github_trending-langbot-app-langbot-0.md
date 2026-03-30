@@ -44,8 +44,6 @@ Relevant source files
   * [README_TW.md](https://github.com/langbot-app/LangBot/blob/023281ae/README_TW.md)
   * [README_VI.md](https://github.com/langbot-app/LangBot/blob/023281ae/README_VI.md)
 
-
-
 ## Purpose and Scope
 
 This document provides a high-level overview of LangBot, a production-grade instant messaging (IM) bot platform. It covers the system's purpose, architecture, key components, technology stack, and deployment models. For detailed information about specific subsystems, refer to:
@@ -55,8 +53,6 @@ This document provides a high-level overview of LangBot, a production-grade inst
   * Deployment instructions: [Deployment Options](/langbot-app/LangBot/1.3-deployment-options)
   * Backend implementation: [Core Backend System](/langbot-app/LangBot/3-core-backend-system)
   * Frontend implementation: [Web Management Interface](/langbot-app/LangBot/8-web-management-interface)
-
-
 
 * * *
 
@@ -85,7 +81,6 @@ Capability| Description
 
 ### High-Level Architecture Diagram
 
-
 **Description:** This diagram shows the complete LangBot system architecture mapped to actual code entities. The system consists of six major layers: external services, web frontend (React/Next.js), backend core (Python/Quart), data persistence, message processing, AI integration, and plugin/extension systems. Each node represents concrete modules, classes, or services in the codebase. The web frontend communicates with the backend via REST APIs and WebSocket connections, while the backend orchestrates message flow through adapters, security layers, pipeline stages, and AI providers.
 
 **Sources:** [README.md1-177](https://github.com/langbot-app/LangBot/blob/023281ae/README.md#L1-L177) [README_EN.md1-151](https://github.com/langbot-app/LangBot/blob/023281ae/README_EN.md#L1-L151) System Architecture diagrams from context
@@ -93,7 +88,6 @@ Capability| Description
 * * *
 
 ### Core Components and Code Entities
-
 
 **Description:** This diagram bridges natural language system descriptions to concrete code entities in the LangBot codebase. Starting from `main.py`, the application bootstraps through `BootingStage` implementations including `LoadConfigStage` (loads `config.yaml`) and `DBMigration` (database schema). The web UI components (`BotForm`, `PipelineFormComponent`, `ModelsDialog`, etc.) communicate with backend service classes (`BotService`, `PipelineService`, `ModelService`, etc.) through the Quart API layer at `/api/v1/*`. Message processing flows through platform adapters to security layers and pipeline stages, integrating with LLM providers, RAG manager, and plugin systems. All configuration and state is persisted to SQL databases and vector databases.
 
@@ -149,8 +143,6 @@ LangBot supports multiple deployment models to accommodate different use cases:
   * **Use Case:** Local development, quick testing
   * **Prerequisites:** Python 3.10+, uv package manager
 
-
-
 ### Docker Compose (Standard)
 
   * **Image:** `rockchin/langbot:latest`
@@ -158,16 +150,12 @@ LangBot supports multiple deployment models to accommodate different use cases:
   * **Use Case:** Production self-hosted deployment
   * **Storage:** Docker volumes for persistence
 
-
-
 ### Kubernetes (Enterprise)
 
   * **Manifests:** `docker/README_K8S.md`
   * **Features:** Pod autoscaling, service mesh integration
   * **Use Case:** Large-scale enterprise deployments
   * **Storage:** Persistent volumes for SQL/vector databases
-
-
 
 ### Cloud Platforms (Managed)
 
@@ -180,7 +168,6 @@ Platform| Deployment Method| Configuration
 ### Multi-Stage Docker Build
 
 The Docker build process uses a multi-stage approach:
-
 
 **Description:** The Dockerfile first builds the Next.js frontend using Node.js, then copies the static assets into a Python runtime image. This produces a single container image that includes both the web UI and the backend API.
 
@@ -281,9 +268,6 @@ LangBot 基于 **NoneBot2** 框架构建，采用 Python 的 `asyncio` 库实现
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：基础对话机器人
 def simple_chatbot():
@@ -310,9 +294,6 @@ def simple_chatbot():
         if user_input == "再见":
             break
 ```
-
-
-
 
 ```python
 # 示例2：带意图识别的聊天机器人
@@ -366,9 +347,6 @@ def intent_based_chatbot():
         print(f"机器人：{response}")
 ```
 
-
-
-
 ```python
 # 示例3：带上下文记忆的对话系统
 def context_aware_chatbot():
@@ -416,10 +394,8 @@ def context_aware_chatbot():
             break
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某跨境电商平台的智能客服系统
 
@@ -446,8 +422,6 @@ def context_aware_chatbot():
 
 ---
 
-
-
 ### 2：某国际教育机构的语言学习助手
 
  2：某国际教育机构的语言学习助手
@@ -472,8 +446,6 @@ def context_aware_chatbot():
 - 教师人力成本降低50%，覆盖用户量扩大3倍。
 
 ---
-
-
 
 ### 3：某跨国企业的内部知识库问答系统
 
@@ -708,7 +680,6 @@ LangBot 作为语言模型应用，对于相同的用户输入往往会生成完
 - 提供实时反馈机制，帮助用户纠正语法错误并优化语言表达。
 - 项目文档完善，便于快速部署和二次开发，降低技术门槛。
 
-
 ---
 ## 学习路径
 
@@ -799,7 +770,6 @@ LangBot 作为语言模型应用，对于相同的用户输入往往会生成完
 ---
 ## 常见问题
 
-
 ### 1: LangBot 是什么？它的主要功能是什么？
 
 1: LangBot 是什么？它的主要功能是什么？
@@ -807,8 +777,6 @@ LangBot 作为语言模型应用，对于相同的用户输入往往会生成完
 **A**: LangBot 是一个基于 GitHub 上流行的开源项目构建的应用程序。它通常被设计为一个语言学习助手或自动化聊天机器人框架。其主要功能包括利用大型语言模型（LLM）来帮助用户练习语言对话、翻译文本、解释语法，或者作为一个可定制的 Bot 框架集成到各种平台（如 Discord、Telegram 或网页应用）中，以提供智能交互服务。
 
 ---
-
-
 
 ### 2: 如何部署和安装 LangBot？
 
@@ -818,8 +786,6 @@ LangBot 作为语言模型应用，对于相同的用户输入往往会生成完
 
 ---
 
-
-
 ### 3: 使用 LangBot 是否需要付费，或者需要 API Key？
 
 3: 使用 LangBot 是否需要付费，或者需要 API Key？
@@ -827,8 +793,6 @@ LangBot 作为语言模型应用，对于相同的用户输入往往会生成完
 **A**: LangBot 本身作为一个开源软件通常是免费的，但它依赖于底层的语言模型 API（例如 OpenAI 的 GPT-4 或其他模型）。这意味着你需要自己提供 API Key 才能使其核心功能正常工作。因此，产生的费用取决于你使用的第三方 API 的调用成本。如果你使用的是本地运行的开源模型（如 Llama），则可能不需要付费 API Key，但对硬件配置有较高要求。
 
 ---
-
-
 
 ### 4: LangBot 支持哪些语言或平台？
 
@@ -838,8 +802,6 @@ LangBot 作为语言模型应用，对于相同的用户输入往往会生成完
 
 ---
 
-
-
 ### 5: 遇到运行错误或连接 API 失败该怎么办？
 
 5: 遇到运行错误或连接 API 失败该怎么办？
@@ -848,29 +810,11 @@ LangBot 作为语言模型应用，对于相同的用户输入往往会生成完
 
 ---
 
-
-
 ### 6: 我可以自定义 LangBot 的角色设定或提示词吗？
 
 6: 我可以自定义 LangBot 的角色设定或提示词吗？
 
 **A**: 是的，大多数此类应用都允许用户自定义系统提示词。你可以在配置文件中找到相关设置（通常标记为 `system_prompt` 或 `character_settings`）。通过修改这些字段，你可以设定 Bot 的身份、说话风格、知识范围以及特定的行为限制，从而让它更符合你的具体使用场景，例如扮演严格的老师或随和的聊天伙伴。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 在 LangBot 中实现一个基础功能，使其能够统计用户与机器人之间的对话轮数。每当用户发送一条消息，计数器加一，并在回复中显示当前的对话轮数。
-
-### 提示**: 可以在对话状态中维护一个简单的计数器变量，每次处理用户输入时更新该变量，并将其插入到回复模板中。
-
-### 
-
----
 ## 实践建议
 
 基于 `langbot-app` (LangBot) 作为一个生产级多平台智能机器人开发平台的特性，以下是针对实际开发、部署和运维场景的 6 条实践建议：
@@ -915,7 +859,6 @@ LangBot 作为语言模型应用，对于相同的用户输入往往会生成完
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

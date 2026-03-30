@@ -74,9 +74,6 @@ Ghidra MCP Server 项目通过 Model Context Protocol 将 Ghidra 的原生功能
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：使用MCP调用Ghidra的函数分析工具
 from mcp_client import Client  # 假设的MCP客户端库
@@ -107,9 +104,6 @@ def analyze_function(binary_path, function_name):
 # 使用示例
 # analyze_function("/path/to/binary", "main")
 ```
-
-
-
 
 ```python
 # 示例2：批量模式匹配搜索敏感字符串
@@ -144,9 +138,6 @@ def search_sensitive_strings(binary_path, patterns):
 # results = search_sensitive_strings("/path/to/binary", patterns)
 ```
 
-
-
-
 ```python
 # 示例3：自动生成函数调用关系图
 def generate_call_graph(binary_path, output_format="dot"):
@@ -177,10 +168,8 @@ def generate_call_graph(binary_path, output_format="dot"):
 # generate_call_graph("/path/to/binary", "dot")
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某大型互联网金融公司安全应急响应团队
 
@@ -200,8 +189,6 @@ def generate_call_graph(binary_path, output_format="dot"):
 
 ---
 
-
-
 ### 2：某工控系统制造商嵌入式研发部门
 
  2：某工控系统制造商嵌入式研发部门
@@ -219,8 +206,6 @@ def generate_call_graph(binary_path, output_format="dot"):
 AI 辅助工具迅速发现编译器在处理特定指针运算时进行了错误的激进优化，导致空指针引用未被正确检查。研发人员据此调整了编译器标志，在 1 天内解决了困扰团队一周的崩溃问题，确保了产品的按时交付。
 
 ---
-
-
 
 ### 3：某恶意软件研究实验室
 
@@ -331,7 +316,6 @@ AI 成功从 5,000 多个函数中精准锁定了 3 个自定义加密函数。�
 ---
 ## 常见问题
 
-
 ### 1: 什么是 Ghidra MCP Server，它与直接使用 Ghidra 有什么区别？
 
 1: 什么是 Ghidra MCP Server，它与直接使用 Ghidra 有什么区别？
@@ -339,8 +323,6 @@ AI 成功从 5,000 多个函数中精准锁定了 3 个自定义加密函数。�
 **A**: Ghidra MCP Server 是一个基于 Model Context Protocol (MCP) 的服务器工具，它将 Ghidra 的强大逆向工程功能暴露给支持 MCP 的大语言模型（如 Claude、Desktop AI 等）。与直接在 Ghidra 图形界面（GUI）中操作不同，该服务器允许 AI 模型直接调用 Ghidra 的底层 API 来分析二进制文件。这意味着你可以通过自然语言与 AI 对话，让 AI 自动执行反编译、查找交叉引用、分析函数调用图等操作，从而实现真正的“AI 辅助”逆向工程，极大地提高了分析恶意软件或大型二进制文件的效率。
 
 ---
-
-
 
 ### 2: 该项目声称包含 "110 tools"，具体指的是什么？
 
@@ -350,8 +332,6 @@ AI 成功从 5,000 多个函数中精准锁定了 3 个自定义加密函数。�
 
 ---
 
-
-
 ### 3: 如何安装和运行 Ghidra MCP Server？
 
 3: 如何安装和运行 Ghidra MCP Server？
@@ -359,8 +339,6 @@ AI 成功从 5,000 多个函数中精准锁定了 3 个自定义加密函数。�
 **A**: 安装通常需要以下步骤：首先，你需要确保本地已安装 Python 环境。其次，通过 Git 克隆该项目源码或下载压缩包。在项目目录下，通常会有一个 `requirements.txt` 文件，你需要运行 `pip install -r requirements.txt` 来安装必要的 Python 依赖库（如 `mcp` 相关库）。最后，你需要配置你的 AI 客户端（例如 Claude Desktop 或其他支持 MCP 的应用），在配置文件中指定该服务器的启动命令（通常是 `python /path/to/server.py`）以及 Ghidra 的安装路径或项目路径，然后重启客户端即可建立连接。
 
 ---
-
-
 
 ### 4: 使用该工具是否存在安全风险，特别是将代码发送给 AI 时？
 
@@ -370,8 +348,6 @@ AI 成功从 5,000 多个函数中精准锁定了 3 个自定义加密函数。�
 
 ---
 
-
-
 ### 5: 它支持哪些 AI 客户端，是否必须使用 Claude？
 
 5: 它支持哪些 AI 客户端，是否必须使用 Claude？
@@ -379,8 +355,6 @@ AI 成功从 5,000 多个函数中精准锁定了 3 个自定义加密函数。�
 **A**: 虽然该工具在 Hacker News 的展示中可能主要提及了 Claude（因为 MCP 最初由 Anthropic 推动），但理论上任何支持 Model Context Protocol (MCP) 标准的 AI 客户端都可以使用此服务器。这包括 Cline (VS Code 插件)、Continue 以及其他集成了 MCP 支持的桌面端 AI 应用。只要客户端能够加载 MCP 服务器配置，它就能让底层的 LLM 调用 Ghidra 的这 110 个工具。
 
 ---
-
-
 
 ### 6: Ghidra 是否需要处于运行状态，或者是否需要安装 Ghidra 才能使用？
 
@@ -390,29 +364,11 @@ AI 成功从 5,000 多个函数中精准锁定了 3 个自定义加密函数。�
 
 ---
 
-
-
 ### 7: 如果 AI 对 Ghidra API 的调用出现错误，该如何处理？
 
 7: 如果 AI 对 Ghidra API 的调用出现错误，该如何处理？
 
 **A**: AI 调用工具可能会因为参数错误（如提供了无效的内存地址）、上下文缺失或 Ghidra 项目未正确加载而失败。如果遇到这种情况，你可以在聊天界面查看 AI 返回的错误信息。常见的解决方法包括：确保 Ghidra 中已经导入了正确的二进制文件且当前项目处于打开状态；明确告诉 AI 当前的分析上下文（例如“当前焦点在 0x100001234 处”）；或者手动在 Ghidra 中确认该地址或函数确实存在。由于 AI 是通过工具交互的，它有时也会尝试自我修正，或者你可以指导它重试。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 假设你已经部署了 Ghidra MCP Server 并连接到了大语言模型（LLM）。请设计一个 Prompt（提示词），指导 AI 仅利用 MCP 提供的工具，自动完成以下任务：在当前 Ghidra 项目中查找所有名为 `checkLicense` 的函数，并返回它们的内存地址。
-
-### 提示**: 思考如何明确告知 AI 限制工具调用的范围（仅使用查询/搜索类工具），并指定输出的具体格式。你需要熟悉 MCP 中用于列出函数或通过名称搜索符号的工具名称。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://github.com/bethington/ghidra-mcp](https://github.com/bethington/ghidra-mcp)
@@ -421,7 +377,6 @@ AI 成功从 5,000 多个函数中精准锁定了 3 个自定义加密函数。�
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

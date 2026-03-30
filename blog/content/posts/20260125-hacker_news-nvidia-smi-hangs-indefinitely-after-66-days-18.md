@@ -122,32 +122,8 @@ external_url: https://github.com/NVIDIA/open-gpu-kernel-modules/issues/971
 ---
 ## 💻 代码示例
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 ## 📚 案例研究
-
 
 ### 1：某头部自动驾驶公司仿真训练平台 🚗
 
@@ -170,8 +146,6 @@ external_url: https://github.com/NVIDIA/open-gpu-kernel-modules/issues/971
 
 ---
 
-
-
 ### 2：某大型互联网公司 AIGC 推理服务 🤖
 
  2：某大型互联网公司 AIGC 推理服务 🤖
@@ -191,8 +165,6 @@ external_url: https://github.com/NVIDIA/open-gpu-kernel-modules/issues/971
 - ✅ 运维团队不再需要为了规避 Bug 而进行月度重启，大幅降低了运维人力成本。
 
 ---
-
-
 
 ### 3：某高校超算中心科研计算集群 🧪
 
@@ -308,7 +280,6 @@ external_url: https://github.com/NVIDIA/open-gpu-kernel-modules/issues/971
 ---
 ## ❓ 常见问题
 
-
 ### 1: 为什么我的显卡监控工具（如 nvidia-smi）在系统运行约 66 天后会突然卡死或无响应？
 
 1: 为什么我的显卡监控工具（如 nvidia-smi）在系统运行约 66 天后会突然卡死或无响应？
@@ -324,8 +295,6 @@ external_url: https://github.com/NVIDIA/open-gpu-kernel-modules/issues/971
 
 ---
 
-
-
 ### 2: 这种挂起是硬件故障还是软件 Bug？
 
 2: 这种挂起是硬件故障还是软件 Bug？
@@ -335,8 +304,6 @@ external_url: https://github.com/NVIDIA/open-gpu-kernel-modules/issues/971
 显卡硬件本身工作正常，计算任务通常可以继续运行。问题出在管理显卡的软件（驱动）无法正确处理“时间回绕”现象。这并不意味着你的显卡坏了，也不代表系统需要立即重启硬件，但通常需要重启软件或服务来恢复监控功能。
 
 ---
-
-
 
 ### 3: 除了 nvidia-smi 卡死，还有其他症状吗？
 
@@ -348,8 +315,6 @@ external_url: https://github.com/NVIDIA/open-gpu-kernel-modules/issues/971
 3.  **其他 CUDA 任务不受影响**：已经运行在 GPU 上的深度学习训练任务通常不会因此中断，因为它们直接与 GPU 交互，不经过监控接口。
 
 ---
-
-
 
 ### 4: 我该如何临时修复这个问题？
 
@@ -367,8 +332,6 @@ external_url: https://github.com/NVIDIA/open-gpu-kernel-modules/issues/971
 
 ---
 
-
-
 ### 5: 有什么办法可以防止这个问题再次发生？
 
 5: 有什么办法可以防止这个问题再次发生？
@@ -379,8 +342,6 @@ Nvidia 在后续的驱动版本中修复了这个问题。建议升级到最新�
 
 ---
 
-
-
 ### 6: 这个 Bug 影响哪些版本的驱动？
 
 6: 这个 Bug 影响哪些版本的驱动？
@@ -390,22 +351,6 @@ Nvidia 在后续的驱动版本中修复了这个问题。建议升级到最新�
 *   它在较旧的版本（如 375.xx, 410.xx, 418.xx）中非常常见。
 *   即使在较新的版本（如 535.xx）中，根据社区反馈，依然存在类似的溢出问题。
 *   **建议**：无论使用哪个版本，一旦遇到监控卡死，首先检查系统运行时间（`uptime`），如果接近 50-70 天大关，大概率就是这个问题。更新到官方发布的最新长期支持版（LTS）驱动通常是修补此类问题的途径。
-
----
-## 🎯 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**:
-
-### 当你执行 `nvidia-smi` 命令发现它卡死（hang）时，在不重启服务器的情况下，哪三个 Linux 命令可以帮助你确认是 GPU 硬件失去响应、NVIDIA 驱程崩溃，还是仅仅是该 CLI 工具本身的问题？
-
-### 提示**:
-
----
 ## 🔗 引用
 
 - **原文链接**: [https://github.com/NVIDIA/open-gpu-kernel-modules/issues/971](https://github.com/NVIDIA/open-gpu-kernel-modules/issues/971)

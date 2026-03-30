@@ -88,9 +88,6 @@ scenarios: ["AI/ML项目", "大语言模型"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：自动生成技能的无效性验证
 def validate_generated_skills(skills):
@@ -114,9 +111,6 @@ auto_generated_skills = ["run", "jump", "analyze_data", "communicate", "think"]
 valid_count, invalid_count = validate_generated_skills(auto_generated_skills)
 print(f"有效技能: {valid_count}, 无效技能: {invalid_count}")
 ```
-
-
-
 
 ```python
 # 示例2：人工设计技能与自动生成技能的对比
@@ -145,9 +139,6 @@ print(f"人工技能平均长度: {result['manual_avg_length']:.2f}")
 print(f"自动技能平均长度: {result['auto_avg_length']:.2f}")
 ```
 
-
-
-
 ```python
 # 示例3：技能实用性评分系统
 def score_skill_utility(skill, keywords):
@@ -172,10 +163,8 @@ for skill in skills_to_score:
     print(f"技能 '{skill}' 的实用性评分: {score}")
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某头部电商平台智能客服项目
 
@@ -195,8 +184,6 @@ for skill in skills_to_score:
 
 ---
 
-
-
 ### 2：某金融科技公司代码辅助工具试点
 
  2：某金融科技公司代码辅助工具试点
@@ -214,8 +201,6 @@ for skill in skills_to_score:
 开发效率提升了 20%，同时保证了代码的安全性。这一转变表明，在工程实践中，模型自生成的复杂逻辑往往不可用，只有将 AI 限制在人类可控的辅助范围内，才能产生实际价值。
 
 ---
-
-
 
 ### 3：某企业级数据自动化分析平台
 
@@ -327,7 +312,6 @@ for skill in skills_to_score:
 ---
 ## 常见问题
 
-
 ### 1: 这项研究的核心结论是什么？为什么说“自我生成的技能是无用的”？
 
 1: 这项研究的核心结论是什么？为什么说“自我生成的技能是无用的”？
@@ -338,8 +322,6 @@ for skill in skills_to_score:
 
 ---
 
-
-
 ### 2: 这项研究主要针对了哪些 AI Agent 框架或方法？
 
 2: 这项研究主要针对了哪些 AI Agent 框架或方法？
@@ -349,8 +331,6 @@ for skill in skills_to_score:
 这些框架通常遵循一个特定的循环：模型接收任务 -> 生成代码/技能 -> 执行代码 -> 观察结果 -> 将成功的代码保存为“技能”以供将来使用。研究特别指出了这种机制在处理复杂推理任务时的局限性。虽然讨论中常提及 AutoGPT、BabyAGI 或 LangChain 等相关概念，但该研究主要从理论和实验层面验证了“自我生成技能库”这一特定设计的有效性，发现这种“记忆”机制并没有像人们预期那样提高模型解决新问题的能力。
 
 ---
-
-
 
 ### 3: 为什么“自我生成的技能”无法提升 Agent 的性能？
 
@@ -364,8 +344,6 @@ for skill in skills_to_score:
 
 ---
 
-
-
 ### 4: 这项研究是否意味着 Agent 框架和“工具使用”的概念是失败的？
 
 4: 这项研究是否意味着 Agent 框架和“工具使用”的概念是失败的？
@@ -377,8 +355,6 @@ for skill in skills_to_score:
 
 ---
 
-
-
 ### 5: 该研究对未来的 AI Agent 开发者有什么实际建议？
 
 5: 该研究对未来的 AI Agent 开发者有什么实际建议？
@@ -389,22 +365,6 @@ for skill in skills_to_score:
 2.  **优先使用确定性工具**：如果需要工具，应优先使用经过验证的、确定性的代码或 API，而不是依赖模型生成的、可能不稳定的代码片段。
 3.  **简化架构**：许多 Agent 系统可能因为过度设计而变得臃肿。这项研究支持“奥卡姆剃刀”原则：如果简单的提示词工程就能达到与复杂 Agent 系统相同甚至更好的效果，那么应该选择更简单的方案。
 4.  **关注检索质量而非生成数量**：如果必须使用知识库，应关注如何从高质量的外部数据源检索信息，而不是让模型自我生成并积累可能带有噪声的内部数据。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 在自主智能体系统中，"工具使用"（Tool Use）与"自主生成技能"（Self-generated Skills）在实现层面有何本质区别？请列举一个具体的场景（例如：预订机票），描述这两种方式分别是如何完成任务的。
-
-### 提示**: 思考"调用外部函数"与"通过提示词让模型模拟行为"之间的差异。关注输入和输出的确定性。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://arxiv.org/abs/2602.12670](https://arxiv.org/abs/2602.12670)
@@ -413,7 +373,6 @@ for skill in skills_to_score:
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

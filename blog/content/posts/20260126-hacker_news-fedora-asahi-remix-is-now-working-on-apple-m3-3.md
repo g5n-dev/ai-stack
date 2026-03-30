@@ -111,37 +111,8 @@ Asahi Linux 项目团队宣布，其 Fedora Asahi Remix 系统现已正式支持
 ---
 ## 💻 代码示例
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 ## 📚 案例研究
-
 
 ### 1：高校嵌入式系统实验室的教学环境升级
 
@@ -163,8 +134,6 @@ M3 芯片发布初期，主流 Linux 发行版（如 Ubuntu、Arch Linux）无�
 
 ---
 
-
-
 ### 2：全栈开发者的本地 ARM64 架构验证
 
  2：全栈开发者的本地 ARM64 架构验证
@@ -184,8 +153,6 @@ M3 芯片发布初期，主流 Linux 发行版（如 Ubuntu、Arch Linux）无�
 💰 **成本节约**：无需额外购买 Linux 开发机，一台设备完美覆盖了 macOS 和 Linux 两种开发场景。
 
 ---
-
-
 
 ### 3：开源社区驱动的 Apple Silicon 硬件回收利用
 
@@ -299,7 +266,6 @@ M3 芯片发布初期，主流 Linux 发行版（如 Ubuntu、Arch Linux）无�
 ---
 ## ❓ 常见问题
 
-
 ### 1: Fedora Asahi Remix 是什么？它与标准的 Fedora 有何不同？
 
 1: Fedora Asahi Remix 是什么？它与标准的 Fedora 有何不同？
@@ -310,8 +276,6 @@ M3 芯片发布初期，主流 Linux 发行版（如 Ubuntu、Arch Linux）无�
 
 ---
 
-
-
 ### 2: 在 Apple M3 芯片上运行 Fedora Asahi Remix 目前状态如何？
 
 2: 在 Apple M3 芯片上运行 Fedora Asahi Remix 目前状态如何？
@@ -321,8 +285,6 @@ M3 芯片发布初期，主流 Linux 发行版（如 Ubuntu、Arch Linux）无�
 这意味着开发者和技术爱好者现在可以在最新的 MacBook Pro、MacBook Air 和 Mac mini 上安装该系统。尽管底层硬件架构发生了变化，Asahi Linux 团队通过逆向工程成功实现了对 M3 GPU 和其他关键组件的支持，使得图形界面和基本功能（如 Wi-Fi、音频、USB-C 等）能够正常工作。
 
 ---
-
-
 
 ### 3: 在 M3 Mac 上安装 Fedora Asashi Remix 有什么风险？
 
@@ -336,8 +298,6 @@ M3 芯片发布初期，主流 Linux 发行版（如 Ubuntu、Arch Linux）无�
 
 ---
 
-
-
 ### 4: 我可以在 M3 Mac 上同时保留 macOS 和 Linux 吗？
 
 4: 我可以在 M3 Mac 上同时保留 macOS 和 Linux 吗？
@@ -347,8 +307,6 @@ M3 芯片发布初期，主流 Linux 发行版（如 Ubuntu、Arch Linux）无�
 不过需要注意的是，安装 Linux 通常需要从 macOS 的磁盘中划分出未分配空间，这会压缩 macOS 的可用容量。
 
 ---
-
-
 
 ### 5: M3 版本的性能表现如何？特别是 GPU 加速和游戏体验？
 
@@ -362,8 +320,6 @@ M3 芯片发布初期，主流 Linux 发行版（如 Ubuntu、Arch Linux）无�
 
 ---
 
-
-
 ### 6: 普通用户现在可以用 M3 Mac 将其作为主力机使用吗？
 
 6: 普通用户现在可以用 M3 Mac 将其作为主力机使用吗？
@@ -374,22 +330,6 @@ M3 芯片发布初期，主流 Linux 发行版（如 Ubuntu、Arch Linux）无�
 *   **不适合人群**：需要稳定办公环境、依赖特定商业软件（如 Adobe 全家桶）或不愿意折腾驱动问题的用户。
 
 尽管体验已经非常出色，但在电源管理、休眠唤醒以及硬件驱动的完善度上，macOS 依然是这些设备最稳妥的选择。
-
----
-## 🎯 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**: Apple Silicon (M系列芯片) 的架构基于 ARM，而传统 PC (如大多数 ThinkPad) 主要基于 x86_64 架构。请列出 Fedora Asahi Remix 在这两类硬件上启动时，固件（Firmware）层面最本质的一个区别是什么？
-
-### 提示**:
-
-### 想一想在按下开机键后，x86 机器首先执行的是存储在主板上的什么代码？
-
----
 ## 🔗 引用
 
 - **原文链接**: [https://bsky.app/profile/did:plc:okydh7e54e2nok65kjxdklvd/post/3mdd55paffk2o](https://bsky.app/profile/did:plc:okydh7e54e2nok65kjxdklvd/post/3mdd55paffk2o)

@@ -80,9 +80,6 @@ OpenAI 与英伟达之间原本传闻的价值高达 100 亿美元的算力交�
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：新闻标题情感分析
 from textblob import TextBlob
@@ -101,9 +98,6 @@ title = "The $100B megadeal between OpenAI and Nvidia is on ice"
 sentiment = analyze_sentiment(title)
 print(f"标题: {title}\n情感极性: {sentiment:.2f}")
 ```
-
-
-
 
 ```python
 # 示例2：关键实体提取
@@ -127,9 +121,6 @@ for ent, label in entities:
     print(f"{ent} ({label})")
 ```
 
-
-
-
 ```python
 # 示例3：新闻标题简化
 def simplify_title(title):
@@ -150,10 +141,8 @@ simplified = simplify_title(title)
 print(f"原始标题: {title}\n简化标题: {simplified}")
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：Microsoft Azure 与 OpenAI 的算力基础设施合作
 
@@ -179,8 +168,6 @@ print(f"原始标题: {title}\n简化标题: {simplified}")
 
 ---
 
-
-
 ### 2：Meta 的生成式 AI 算力优化项目
 
  2：Meta 的生成式 AI 算力优化项目
@@ -204,8 +191,6 @@ Meta 计划在其社交平台（如 Facebook、Instagram）中集成生成式 AI
 - 通过开源策略，Meta 吸引了超过 10 万开发者参与生态建设，间接降低了研发投入。
 
 ---
-
-
 
 ### 3：Stability AI 的分布式算力网络
 
@@ -323,7 +308,6 @@ Meta 计划在其社交平台（如 Facebook、Instagram）中集成生成式 AI
 ---
 ## 常见问题
 
-
 ### 1: OpenAI 与 Nvidia 之间所谓的 1000 亿美元交易具体指什么？
 
 1: OpenAI 与 Nvidia 之间所谓的 1000 亿美元交易具体指什么？
@@ -331,8 +315,6 @@ Meta 计划在其社交平台（如 Facebook、Instagram）中集成生成式 AI
 **A**: 这指的是 OpenAI 计划向 Nvidia 采购价值高达 1000 亿美元的硬件设施（主要是 GPU），用于构建驱动下一代人工智能模型的超级计算机。该预算不仅包含芯片成本，还涵盖了数据中心基础设施建设及运营费用。这笔采购被视为科技史上规模最大的硬件交易之一，旨在满足 OpenAI 训练 GPT-5 及后续模型对算力的需求。
 
 ---
-
-
 
 ### 2: 为什么这笔巨额交易目前被搁置或“冻结”了？
 
@@ -342,8 +324,6 @@ Meta 计划在其社交平台（如 Facebook、Instagram）中集成生成式 AI
 
 ---
 
-
-
 ### 3: 这笔交易对 OpenAI 和 Nvidia 的股价有何影响？
 
 3: 这笔交易对 OpenAI 和 Nvidia 的股价有何影响？
@@ -351,8 +331,6 @@ Meta 计划在其社交平台（如 Facebook、Instagram）中集成生成式 AI
 **A**: 市场反应呈现出博弈心态。对于 Nvidia，虽然巨额订单推迟看似不利，但市场普遍认为这源于产能不足而非需求疲软，其核心业务基本面未受根本性冲击。对于 OpenAI 及其支持者 Microsoft，这引发了市场对其算力扩张速度能否支撑模型迭代的担忧。不过，交易放缓在短期内可能缓解资本支出压力，长期影响则取决于 OpenAI 的替代方案落地情况。
 
 ---
-
-
 
 ### 4: 除了产能不足，还有哪些技术或战略因素导致了这一局面的出现？
 
@@ -362,8 +340,6 @@ Meta 计划在其社交平台（如 Facebook、Instagram）中集成生成式 AI
 
 ---
 
-
-
 ### 5: 这是否意味着人工智能硬件的泡沫正在破裂？
 
 5: 这是否意味着人工智能硬件的泡沫正在破裂？
@@ -372,29 +348,11 @@ Meta 计划在其社交平台（如 Facebook、Instagram）中集成生成式 AI
 
 ---
 
-
-
 ### 6: OpenAI 目前有哪些替代方案来应对算力缺口？
 
 6: OpenAI 目前有哪些替代方案来应对算力缺口？
 
 **A**: 面对 Nvidia 芯片交付延迟，OpenAI 可能采取多种方案。一是继续采购 Nvidia 上一代产品（如 H100）以维持算力扩容；二是加速与 AMD 合作，利用其 MI 系列芯片作为补充；三是推进定制芯片研发，设计针对其工作负载的推理和训练芯片。此外，通过软件优化提高硬件利用率，以及利用微软 Azure 的多样化算力资源，也是其应对策略的重要组成部分。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: 商业与技术动因分析
-
-### 问题**：
-
-### 针对 OpenAI 与英伟达之间涉及 GB200 GPU 的大额采购交易目前处于停滞状态这一报道，请列举并分析导致这一商业行为搁置的三个最可能原因。分析需结合当前 AI 硬件市场的供需关系以及 OpenAI 的战略布局。
-
-### 提示**：
-
----
 ## 引用
 
 - **原文链接**: [https://www.wsj.com/tech/ai/the-100-billion-megadeal-between-openai-and-nvidia-is-on-ice-aa3025e3](https://www.wsj.com/tech/ai/the-100-billion-megadeal-between-openai-and-nvidia-is-on-ice-aa3025e3)
@@ -403,7 +361,6 @@ Meta 计划在其社交平台（如 Facebook、Instagram）中集成生成式 AI
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

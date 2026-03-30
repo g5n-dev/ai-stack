@@ -80,9 +80,6 @@ Ghidra 的强大分析能力结合 AI 的上下文理解，正在改变逆向工
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：自动化函数分析
 def analyze_function(ghidra_api, function_name):
@@ -120,9 +117,6 @@ def analyze_function(ghidra_api, function_name):
 # 说明：这个示例展示了如何通过Ghidra API自动分析函数的基本属性，
 # 包括入口点、大小、参数数量和调用约定等关键信息。
 ```
-
-
-
 
 ```python
 # 示例2：交叉引用分析工具
@@ -174,9 +168,6 @@ def analyze_xrefs(ghidra_api, address):
 # 帮助理解代码的调用关系和数据流向。
 ```
 
-
-
-
 ```python
 # 示例3：模式搜索与标注
 def search_and_annotate(ghidra_api, pattern, comment):
@@ -227,10 +218,8 @@ def search_and_annotate(ghidra_api, pattern, comment):
 # 适用于识别已知结构或标记可疑代码段。
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某大型互联网安全公司 - 恶意软件样本自动化分析
 
@@ -250,8 +239,6 @@ def search_and_annotate(ghidra_api, pattern, comment):
 
 ---
 
-
-
 ### 2：某工业控制系统（ICS）制造商 - 遗留固件维护与合规审计
 
  2：某工业控制系统（ICS）制造商 - 遗留固件维护与合规审计
@@ -269,8 +256,6 @@ def search_and_annotate(ghidra_api, pattern, comment):
 在两周内完成了原本预估需要三个月才能完成的固件安全审计工作。AI 成功识别出了 3 个潜在的远程代码执行漏洞和 5 个不安全的加密实现。此外，AI 自动生成的函数注释和结构体定义，为团队重建了一份可用的技术文档，极大地降低了后续维护的门槛。
 
 ---
-
-
 
 ### 3：某政企机构红队演练 - 针对闭源软件的漏洞挖掘
 
@@ -382,7 +367,6 @@ def search_and_annotate(ghidra_api, pattern, comment):
 ---
 ## 常见问题
 
-
 ### 1: 什么是 Ghidra MCP Server，它解决了什么问题？
 
 1: 什么是 Ghidra MCP Server，它解决了什么问题？
@@ -392,8 +376,6 @@ def search_and_annotate(ghidra_api, pattern, comment):
 在此之前，AI 只能通过复制粘贴代码片段来辅助分析，无法直接操作 Ghidra。通过这个服务器，AI 可以直接调用 Ghidra 的 API 来执行反编译、获取数据、分析函数流图等操作。这使得 AI 能够更深入地理解二进制文件的上下文，从而实现真正的“AI 辅助自动化逆向工程”，大幅提高了分析恶意软件或破解软件的效率。
 
 ---
-
-
 
 ### 2: 要使用 Ghidra MCP Server，需要哪些技术环境和依赖？
 
@@ -407,8 +389,6 @@ def search_and_annotate(ghidra_api, pattern, comment):
 4.  **Java 运行时**：Ghidra 本身依赖 Java，因此必须配置好 JAVA_HOME 环境变量。
 
 ---
-
-
 
 ### 3: 该工具声称提供 110 种工具，具体包含哪些功能？
 
@@ -426,8 +406,6 @@ def search_and_annotate(ghidra_api, pattern, comment):
 
 ---
 
-
-
 ### 4: 在本地运行此服务器是否存在安全风险？
 
 4: 在本地运行此服务器是否存在安全风险？
@@ -439,8 +417,6 @@ def search_and_annotate(ghidra_api, pattern, comment):
 3.  **建议**：建议在隔离的虚拟机或沙箱环境中运行此类工具，并仔细检查 MCP 配置文件中允许 AI 调用的具体工具列表，避免开启高风险的系统级操作权限。
 
 ---
-
-
 
 ### 5: 如何在 Claude Desktop 中配置和连接这个 MCP Server？
 
@@ -464,8 +440,6 @@ def search_and_annotate(ghidra_api, pattern, comment):
 
 ---
 
-
-
 ### 6: 与直接使用 Ghidra 脚本相比，使用 AI 驱动的 MCP Server 有什么优势？
 
 6: 与直接使用 Ghidra 脚本相比，使用 AI 驱动的 MCP Server 有什么优势？
@@ -473,22 +447,6 @@ def search_and_annotate(ghidra_api, pattern, comment):
 **A**: 直接编写 Ghidra 脚本（Python 或 Java）虽然强大，但门槛较高，且需要预先明确分析逻辑。AI 驱动的 MCP Server 的优势在于：
 
 *   **交互式分析**：你可以用自然语言提出模糊
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**：在 Ghidra 中，MCP Server 需要通过配置文件连接到 AI 模型。假设你正在部署该服务器，但 AI 模型 API 返回了 `401 Unauthorized` 错误。请分析最可能的原因是什么，并说明在 Ghidra 的 MCP 配置文件中应检查哪个字段来修复此问题。
-
-### 提示**：401 错误通常与身份验证失败有关。请检查 MCP Server 配置中用于与模型提供商通信的凭证部分。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://github.com/bethington/ghidra-mcp](https://github.com/bethington/ghidra-mcp)
@@ -497,7 +455,6 @@ def search_and_annotate(ghidra_api, pattern, comment):
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

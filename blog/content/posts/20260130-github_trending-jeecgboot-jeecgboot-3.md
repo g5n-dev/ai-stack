@@ -40,8 +40,6 @@ Relevant source files
   * [jeecg-boot/README.md](https://github.com/jeecgboot/JeecgBoot/blob/b7a3da89/jeecg-boot/README.md)
   * [jeecgboot-vue3/README.md](https://github.com/jeecgboot/JeecgBoot/blob/b7a3da89/jeecgboot-vue3/README.md)
 
-
-
 ## Purpose and Scope
 
 This document introduces JeecgBoot as an enterprise-level AI low-code development platform, explaining its core value proposition and position in the enterprise software ecosystem. It provides the conceptual foundation for understanding how JeecgBoot combines code generation, visual development, and AI capabilities into a unified platform.
@@ -56,8 +54,6 @@ For detailed technical information:
   * AI platform capabilities: see [AI Platform (AIGC)](/jeecgboot/JeecgBoot/3-ai-platform-\(aigc\))
   * Low-code features: see [Low-Code Development Platform](/jeecgboot/JeecgBoot/5-low-code-development-platform)
 
-
-
 ## What is JeecgBoot?
 
 JeecgBoot is an enterprise-grade AI-enhanced low-code development platform built on Spring Boot 3.5.5, Vue 3, and Spring Cloud Alibaba 2023.0.3.3. The platform provides three development approaches:
@@ -66,14 +62,10 @@ JeecgBoot is an enterprise-grade AI-enhanced low-code development platform built
   2. **OnlineCoding** \- Zero-code visual configuration through `@jeecg/online` package and `OnlineCgformHeadController`
   3. **AI Platform** \- LLM integration via `jeecg-boot-module-airag` module with RAG using LangChain4j
 
-
-
 The architecture supports two deployment modes:
 
   * **Monolithic** : `jeecg-system-start` (single JAR, port 8080)
   * **Microservices** : `jeecg-cloud-gateway` (port 9999) → `jeecg-system-cloud-start` (port 7001) + `jeecg-demo-cloud-start` (port 7002)
-
-
 
 **Current Version** : 3.9.0 (Released: December 1, 2025)  
 **License** : Apache License 2.0  
@@ -83,8 +75,6 @@ The architecture supports two deployment modes:
   * Backend: `jeecg-boot` (Java/Maven)
   * Frontend: `jeecgboot-vue3` (Vue3/TypeScript/Vite)
 
-
-
 Sources: [README.md1-44](https://github.com/jeecgboot/JeecgBoot/blob/b7a3da89/README.md#L1-L44) [jeecg-boot/README.md1-44](https://github.com/jeecgboot/JeecgBoot/blob/b7a3da89/jeecg-boot/README.md#L1-L44) [README.md159-190](https://github.com/jeecgboot/JeecgBoot/blob/b7a3da89/README.md#L159-L190)
 
 ## Core Value Proposition
@@ -92,7 +82,6 @@ Sources: [README.md1-44](https://github.com/jeecgboot/JeecgBoot/blob/b7a3da89/RE
 JeecgBoot addresses the automation vs. flexibility trade-off through a four-tier development paradigm:
 
 **Four-Tier Development Flow**
-
 
 **Development Approach by Complexity:**
 
@@ -109,16 +98,12 @@ Feature Type| Code Path| Key Components| Exit Point
   * **AI Integration** : `AiragChatServiceImpl` calls `LangChain4jService` → LLM → generates `OnlineCgformHeadEntity` configuration
   * **Security From Day 1** : Generated controllers include `@RequiresPermissions`, `QueryGenerator` for data permissions
 
-
-
 **Code Generator Templates** (`jeecg-boot-base-core/src/main/resources/jeecg/code-template-online`):
 
   * `jeecgOneMain.ftl` \- Single table CRUD
   * `jeecgTreeMain.ftl` \- Tree structure
   * `jeecgOneToMany.ftl` \- One-to-many relations
   * `jvxeOnlineMain.ftl` \- Inline editable tables
-
-
 
 Sources: [README.md20-36](https://github.com/jeecgboot/JeecgBoot/blob/b7a3da89/README.md#L20-L36) [jeecg-boot/README.md19-33](https://github.com/jeecgboot/JeecgBoot/blob/b7a3da89/jeecg-boot/README.md#L19-L33) [README.md111-157](https://github.com/jeecgboot/JeecgBoot/blob/b7a3da89/README.md#L111-L157)
 
@@ -127,7 +112,6 @@ Sources: [README.md20-36](https://github.com/jeecgboot/JeecgBoot/blob/b7a3da89/R
 JeecgBoot supports two deployment architectures using shared business logic modules:
 
 **Architecture Mode Diagram**
-
 
 **Module Comparison:**
 
@@ -148,16 +132,12 @@ Business logic classes in `jeecg-module-system/jeecg-system-biz/src/main/java/or
   * **Monolithic** : Run `jeecg-module-system/jeecg-system-start/src/main/java/org/jeecg/JeecgSystemApplication.java`
   * **Microservices** : Run `jeecg-server-cloud/jeecg-cloud-gateway` \+ `jeecg-server-cloud/jeecg-system-cloud-start`
 
-
-
 **Key Classes:**
 
   * `org.jeecg.JeecgSystemApplication` \- Monolithic main class
   * `org.jeecg.cloud.JeecgCloudGatewayApplication` \- Gateway main class
   * `org.jeecg.cloud.JeecgSystemCloudApplication` \- System service main class
   * `com.alibaba.nacos.client.NacosConfigService` \- Config center client
-
-
 
 Sources: [README.md72-82](https://github.com/jeecgboot/JeecgBoot/blob/b7a3da89/README.md#L72-L82) [jeecg-boot/README.md218-243](https://github.com/jeecgboot/JeecgBoot/blob/b7a3da89/jeecg-boot/README.md#L218-L243)
 
@@ -167,9 +147,7 @@ The platform consists of two primary repositories with Maven multi-module (backe
 
 **Backend Repository Structure** (`jeecg-boot/`)
 
-
 **Frontend Repository Structure** (`jeecgboot-vue3/`)
-
 
 **Key Directory Paths:**
 
@@ -413,9 +391,6 @@ JeecgBoot 的核心哲学是 **“约定优于配置”** 和 **“元数据驱�
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：使用JeecgBoot的AutoPOI功能导出Excel
 import org.jeecgframework.poi.excel.ExcelExportUtil;
@@ -446,9 +421,6 @@ public class ExportExcelExample {
     }
 }
 ```
-
-
-
 
 ```python
 # 示例2：使用JeecgBoot的QueryGenerator动态查询
@@ -490,9 +462,6 @@ public class UserController {
 }
 ```
 
-
-
-
 ```python
 # 示例3：使用JeecgBoot的权限注解控制接口访问
 import org.jeecg.common.aspect.annotation.AutoLog;
@@ -516,10 +485,8 @@ public class UserDeleteController extends JeecgController<User, IUserService> {
 }
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某大型物流供应链管理系统
 
@@ -535,8 +502,6 @@ public class UserDeleteController extends JeecgController<User, IUserService> {
 
 ---
 
-
-
 ### 2：智慧园区物联网综合管理平台
 
  2：智慧园区物联网综合管理平台
@@ -550,8 +515,6 @@ public class UserDeleteController extends JeecgController<User, IUserService> {
 **效果**: 项目在2个月内完成了从0到1的交付。低代码特性的应用使得后期园区新增业务流程（如会议室预定）时，仅需配置即可上线，极大降低了运维成本，获得了园区管理方的高度认可。
 
 ---
-
-
 
 ### 3：医疗行业SaaS ERP系统
 
@@ -728,7 +691,6 @@ public class UserDeleteController extends JeecgController<User, IUserService> {
 - 社区活跃，文档齐全，提供丰富的技术支持和插件生态，适合快速搭建企业级管理系统。
 - 遵循 Apache 2.0 开源协议，可免费商用，适合中小团队或企业快速构建原型或生产级应用。
 
-
 ---
 ## 学习路径
 
@@ -831,7 +793,6 @@ public class UserDeleteController extends JeecgController<User, IUserService> {
 ---
 ## 常见问题
 
-
 ### 1: JeecgBoot 是什么？它主要解决了什么问题？
 
 1: JeecgBoot 是什么？它主要解决了什么问题？
@@ -839,8 +800,6 @@ public class UserDeleteController extends JeecgController<User, IUserService> {
 **A**: JeecgBoot 是一款基于代码生成器的低代码开发平台，采用前后端分离架构。它开源了核心代码（基于 Apache 2.0 协议），主要解决 Java 开发中重复性高、效率低下的问题。通过在线代码生成器，它可以快速生成单表、一对多、树形等功能的 CRUD 代码，极大地提升了企业级应用（如 ERP、OA、大屏可视化等）的开发效率，让开发者能专注于核心业务逻辑。
 
 ---
-
-
 
 ### 2: JeecgBoot 的技术栈主要包含哪些？
 
@@ -853,8 +812,6 @@ public class UserDeleteController extends JeecgController<User, IUserService> {
 *   **核心特性**：内置了代码生成器、积木式表单设计器、报表设计器（如 JimuReport）等生产力工具。
 
 ---
-
-
 
 ### 3: 对于新手，如何快速运行 JeecgBoot 项目？
 
@@ -876,8 +833,6 @@ public class UserDeleteController extends JeecgController<User, IUserService> {
 
 ---
 
-
-
 ### 4: JeecgBoot 生成的代码可以商用吗？关于开源协议有什么限制？
 
 4: JeecgBoot 生成的代码可以商用吗？关于开源协议有什么限制？
@@ -887,8 +842,6 @@ public class UserDeleteController extends JeecgController<User, IUserService> {
 *   **注意事项**：虽然核心代码宽松，但 JeecgBoot 集成的某些特定插件或子模块可能采用不同的协议（部分可能涉及收费或保留版权要求）。在使用特定的付费组件（如高级报表功能或特定的在线服务）时，建议查阅具体的子模块协议说明。
 
 ---
-
-
 
 ### 5: 如何使用 JeecgBoot 的代码生成器（Online Code Generator）？
 
@@ -905,8 +858,6 @@ public class UserDeleteController extends JeecgController<User, IUserService> {
 
 ---
 
-
-
 ### 6: JeecgBoot 与若依（RuoYi）框架相比有什么区别？
 
 6: JeecgBoot 与若依（RuoYi）框架相比有什么区别？
@@ -915,22 +866,6 @@ public class UserDeleteController extends JeecgController<User, IUserService> {
 
 *   **代码生成方式**：JeecgBoot 强调“Online”在线化，其 Online 表单开发功能非常强大，允许用户在网页上通过拖拽和配置直接生成表单和页面，甚至不需要重新部署即可改变部分逻辑；若依则更偏向于传统的“代码生成”模式，即配置后下载代码模板到本地进行二次开发。
 *   **技术深度**：JeecgBoot 在低代码组件的封装上更为激进，
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 在 JeecgBoot 的代码生成器配置中，如何通过修改数据库表的设计（如字段注释、字段类型），让生成的代码包含“必填项”校验规则？
-
-### 提示**: 关注代码生成器是如何读取数据库元数据的，特别是 `META` 信息中的注释字段。
-
-### 
-
----
 ## 实践建议
 
 基于 JeecgBoot 作为“AI低代码平台”的定位及其技术架构（通常基于 Spring Boot + Vue/React），以下是针对实际开发场景的 7 条实践建议：
@@ -973,7 +908,6 @@ JeecgBoot 前端通常基于 Vue3，且集成了 AI 聊天组件，这可能涉�
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

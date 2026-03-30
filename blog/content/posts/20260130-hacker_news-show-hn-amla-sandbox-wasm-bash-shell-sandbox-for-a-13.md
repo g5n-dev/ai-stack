@@ -79,9 +79,6 @@ Amla Sandbox 通过 WebAssembly (WASM) 技术构建了一个轻量级、高安�
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：安全执行用户输入的命令
 def execute_command_safely(command: str):
@@ -103,7 +100,6 @@ def execute_command_safely(command: str):
 print(execute_command_safely("ls -la"))
 print(execute_command_safely("rm -rf /"))  # 会被沙箱拦截
 ```
-
 
 ---
 
@@ -128,7 +124,6 @@ def run_with_limits(command: str, timeout: int = 5):
 # 测试
 print(run_with_limits("while true; do echo '无限循环'; done", timeout=1))
 ```
-
 
 ---
 
@@ -156,10 +151,8 @@ def safe_file_operations():
 print(safe_file_operations())
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某AI编程教育平台
 
@@ -181,8 +174,6 @@ print(safe_file_operations())
 
 ---
 
-
-
 ### 2：企业内部DevOps自动化工具
 
  2：企业内部DevOps自动化工具
@@ -202,8 +193,6 @@ print(safe_file_operations())
 - **开发效率**：新入职的工程师通过该工具排查问题的平均时间缩短了30%。
 
 ---
-
-
 
 ### 3：云端配置生成与验证SaaS
 
@@ -336,7 +325,6 @@ WASM 运行时及其编译的 C/C++ 库（如 `musl` 或 `glibc`）可能
 ---
 ## 常见问题
 
-
 ### 1: Amla Sandbox 的核心功能是什么，它与标准的 Docker 容器有何不同？
 
 1: Amla Sandbox 的核心功能是什么，它与标准的 Docker 容器有何不同？
@@ -344,8 +332,6 @@ WASM 运行时及其编译的 C/C++ 库（如 `musl` 或 `glibc`）可能
 **A**: Amla Sandbox 是一个专为 AI Agent（人工智能代理）设计的 WebAssembly (WASM) Bash Shell 沙盒环境。其核心功能是允许 AI 代码执行器在一个隔离、安全且不可变的环境中运行 Shell 命令和脚本。与标准的 Docker 容器不同，Amla 利用 WebAssembly 技术构建，这带来了几个关键差异：首先，它的启动速度极快，几乎是毫秒级的，而 Docker 容器通常需要数秒来启动；其次，它提供了更严格的安全隔离和资源限制，天然适合处理不可信的 AI 生成代码；最后，由于 WASM 的特性，它可以在浏览器端或轻量级运行时中高效运行，而不依赖重量级的 Linux 内核虚拟化。
 
 ---
-
-
 
 ### 2: 为什么 AI Agent 需要专门的沙盒环境，直接在宿主机上运行脚本有什么风险？
 
@@ -355,8 +341,6 @@ WASM 运行时及其编译的 C/C++ 库（如 `musl` 或 `glibc`）可能
 
 ---
 
-
-
 ### 3: Amla Sandbox 支持哪些常见的 Linux 工具和命令？
 
 3: Amla Sandbox 支持哪些常见的 Linux 工具和命令？
@@ -364,8 +348,6 @@ WASM 运行时及其编译的 C/C++ 库（如 `musl` 或 `glibc`）可能
 **A**: 由于 Amla 基于 WASM 构建，它并非直接运行原生的 Linux 二进制文件，而是通过 WASI (WebAssembly System Interface) 与宿主机交互或运行编译为 WASM 的工具。通常，这类沙盒会支持标准的 POSIX Shell 命令（如 `cd`, `ls`, `cat`, `echo`, `grep` 等）以及常见的文件操作。对于复杂的工具链（如 Python, Node.js, Curl 等），支持程度取决于具体的实现配置（例如是否嵌入了特定的 WASM 运行时如 Wasmtime 或 Wasmer）。用户通常可以通过配置层来添加特定的依赖，但无法直接运行未经编译的原生 Linux ELF 可执行文件。
 
 ---
-
-
 
 ### 4: 在网络连接方面，Amla Sandbox 是如何处理的？
 
@@ -375,8 +357,6 @@ WASM 运行时及其编译的 C/C++ 库（如 `musl` 或 `glibc`）可能
 
 ---
 
-
-
 ### 5: 如何将 Amla Sandbox 集成到我自己的 AI 应用程序中？
 
 5: 如何将 Amla Sandbox 集成到我自己的 AI 应用程序中？
@@ -385,29 +365,11 @@ WASM 运行时及其编译的 C/C++ 库（如 `musl` 或 `glibc`）可能
 
 ---
 
-
-
 ### 6: Amla Sandbox 的性能表现如何，能否满足高并发场景下的需求？
 
 6: Amla Sandbox 的性能表现如何，能否满足高并发场景下的需求？
 
 **A**: 基于 WASM 的沙盒在性能上具有显著优势，特别是在冷启动时间和内存占用方面。由于 WASM 模块体积小且加载快，Amla Sandbox 可以在极短的时间内启动成百上千个隔离实例，这非常适合高并发的 AI Agent 场景。相比于传统的虚拟机或容器技术，WASM 的上下文切换开销更低。然而，对于计算密集型任务（如复杂的数学运算），WASM 的运行效率可能略低于原生代码，但对于绝大多数 Shell 脚本和 I/O 密集型任务，其性能是完全足够的。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: 基础文件检查
-
-### 问题**：在 Amla Sandbox 环境中，编写一个 Bash 脚本，接收用户输入的一个文件名作为参数。如果该文件存在，则输出 "File exists" 并打印其行数；如果不存在，则输出 "File not found" 并以非零状态码退出。
-
-### 提示**：这是一个基础的 Bash 脚本练习。你需要使用 `$1` 来获取参数，利用 `if` 语句配合 `[ -e "$file" ]` 来判断文件是否存在。统计行数可以使用 `wc -l` 命令。记得使用 `exit 1` 来设置非零退出码。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://github.com/amlalabs/amla-sandbox](https://github.com/amlalabs/amla-sandbox)
@@ -416,7 +378,6 @@ WASM 运行时及其编译的 C/C++ 库（如 `musl` 或 `glibc`）可能
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

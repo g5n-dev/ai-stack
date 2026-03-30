@@ -31,7 +31,6 @@ scenarios: ["AI/ML项目"]
 ---
 ## 评论
 
-
 **中心观点：**
 Firefox 新增 AI 功能的“关闭控制权”不仅是产品功能的迭代，更是对当前 Web 隐私焦虑与 AI 泛滥化趋势的一次**防御性战略回应**，旨在通过“可拒绝权”来巩固其核心用户群体的信任壁垒。
 
@@ -90,9 +89,6 @@ Firefox 新增 AI 功能的“关闭控制权”不仅是产品功能的迭代�
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：检查Firefox是否启用了AI功能
 import subprocess
@@ -118,9 +114,6 @@ def check_firefox_ai_features():
 # 使用示例
 print(check_firefox_ai_features())
 ```
-
-
-
 
 ```python
 # 示例2：批量禁用Firefox AI功能
@@ -152,9 +145,6 @@ def disable_firefox_ai_features(profile_path):
 # 使用示例
 print(disable_firefox_ai_features("/path/to/firefox/profile"))
 ```
-
-
-
 
 ```python
 # 示例3：监控Firefox AI功能使用情况
@@ -200,10 +190,8 @@ def monitor_ai_feature_usage(profile_path):
 print(monitor_ai_feature_usage("/path/to/firefox/profile"))
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某金融科技初创公司
 
@@ -219,8 +207,6 @@ print(monitor_ai_feature_usage("/path/to/firefox/profile"))
 
 ---
 
-
-
 ### 2：某高校数字人文研究项目组
 
  2：某高校数字人文研究项目组
@@ -234,8 +220,6 @@ print(monitor_ai_feature_usage("/path/to/firefox/profile"))
 **效果**: 研究人员能够获取未被算法篡改的原始网页信息，保证了学术研究的严谨性。同时，纯净的浏览环境使得第三方抓取脚本运行更加稳定，数据归档的准确率得到了保障。
 
 ---
-
-
 
 ### 3：隐私倡导型独立开发者
 
@@ -343,7 +327,6 @@ print(monitor_ai_feature_usage("/path/to/firefox/profile"))
 ---
 ## 常见问题
 
-
 ### 1: Firefox 为什么要增加关闭 AI 功能的控制选项？
 
 1: Firefox 为什么要增加关闭 AI 功能的控制选项？
@@ -351,8 +334,6 @@ print(monitor_ai_feature_usage("/path/to/firefox/profile"))
 **A**: 这一举措主要是为了响应用户对隐私保护和数据控制权的强烈需求。虽然人工智能（AI）功能可以提升浏览体验，但它们通常涉及将用户数据发送到云端服务器进行处理，甚至可能用于训练第三方模型。许多用户对此类数据传输持谨慎态度。Mozilla 作为一个高度重视隐私和用户选择权的组织，希望通过提供明确的开关，让用户能够自主决定是否启用这些实验性或涉及数据交互的 AI 功能，从而建立更透明的信任关系。
 
 ---
-
-
 
 ### 2: 这些新增加的控制选项具体能控制哪些功能？
 
@@ -365,8 +346,6 @@ print(monitor_ai_feature_usage("/path/to/firefox/profile"))
 
 ---
 
-
-
 ### 3: 这些 AI 功能默认是开启的还是关闭的？
 
 3: 这些 AI 功能默认是开启的还是关闭的？
@@ -374,8 +353,6 @@ print(monitor_ai_feature_usage("/path/to/firefox/profile"))
 **A**: 目前 Mozilla 的策略倾向于“选择加入”而非强制捆绑。通常情况下，这些涉及云服务或数据上传的 AI 功能默认是不开启的，或者处于一种未激活状态。新增的控制选项允许那些在早期测试中不小心启用了功能，或者对默认设置不放心的用户，拥有一个明确的“总开关”来确保浏览器没有在后台悄悄使用 AI 服务。
 
 ---
-
-
 
 ### 4: 如果我关闭了这些 AI 功能，会影响浏览器的正常运行吗？
 
@@ -385,8 +362,6 @@ print(monitor_ai_feature_usage("/path/to/firefox/profile"))
 
 ---
 
-
-
 ### 5: 我在哪里可以找到这些新的设置选项？
 
 5: 我在哪里可以找到这些新的设置选项？
@@ -394,8 +369,6 @@ print(monitor_ai_feature_usage("/path/to/firefox/profile"))
 **A**: 这些选项通常被放置在 Firefox 的“设置”菜单中。用户可以通过点击菜单按钮进入“设置”，然后在“隐私与安全”或专门的“实验性功能”板块中寻找。相关的设置项可能会被标记为“Firefox AI”、“数据推荐”或“本地模型服务”等。如果某些功能属于 Nightly 或 Beta 版本的测试内容，可能需要通过在 `about:config` 页面中修改特定的配置首选项来控制。
 
 ---
-
-
 
 ### 6: Firefox 是自己开发这些 AI 模型，还是与其他公司合作？
 
@@ -405,29 +378,11 @@ print(monitor_ai_feature_usage("/path/to/firefox/profile"))
 
 ---
 
-
-
 ### 7: 相比 Chrome 和 Edge，Firefox 在 AI 方面的策略有何不同？
 
 7: 相比 Chrome 和 Edge，Firefox 在 AI 方面的策略有何不同？
 
 **A**: 虽然 Chrome 和 Edge 正在积极将 AI 深度集成到浏览器核心体验中（如自动标签分组、写作助手、侧边栏聊天等），且往往难以完全移除，但 Firefox 的策略更强调**隐私**和**本地化**。Firefox 更倾向于利用本地设备的能力（如通过 WebGPU 和 WebNN 标准）来运行 AI，以保护用户数据不被上传。此外，Firefox 提供了比 Chrome/Edge 更为显式的“关闭开关”，而不是仅仅将 AI 功能隐藏在设置深处，这体现了 Mozilla “把用户放在首位”的产品哲学。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 假设你是 Firefox 的产品经理，需要为“关闭 AI 功能”设计一个用户界面开关。请列出在 `about:preferences`（设置页面）的隐私与安全标签下，该开关应该包含的三个关键 UI 元素（如标签文本、状态描述等），并解释为什么这些元素对用户透明度至关重要。
-
-### 提示**: 考虑用户在看到这个开关时，需要立刻明白哪三个核心信息：它是什么？当前状态如何？开启或关闭后的后果是什么？
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://www.macrumors.com/2026/02/02/firefox-ai-toggle](https://www.macrumors.com/2026/02/02/firefox-ai-toggle)
@@ -436,7 +391,6 @@ print(monitor_ai_feature_usage("/path/to/firefox/profile"))
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

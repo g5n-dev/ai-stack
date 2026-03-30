@@ -41,8 +41,6 @@ Relevant source files
   * [rime_ice.schema.yaml](https://github.com/iDvel/rime-ice/blob/49e5ed73/rime_ice.schema.yaml)
   * [squirrel.yaml](https://github.com/iDvel/rime-ice/blob/49e5ed73/squirrel.yaml)
 
-
-
 ## Purpose and Scope
 
 This document provides a high-level overview of the **rime-ice** repository, a comprehensive configuration package for the Rime Input Method Engine. It covers the system architecture, major components, repository structure, and how these elements interact to provide Chinese input functionality.
@@ -55,8 +53,6 @@ For detailed information on specific subsystems, see:
   * Emoji, symbols, and character lookup: [Special Features](/iDvel/rime-ice/5-special-features)
   * Installation and platform-specific setup: [Configuration and Deployment](/iDvel/rime-ice/6-configuration-and-deployment)
 
-
-
 ## What is rime-ice?
 
 **rime-ice** (雾凇拼音) is a production-ready configuration repository for [Rime Input Method Engine](https://rime.im/) that provides:
@@ -67,14 +63,11 @@ For detailed information on specific subsystems, see:
   * **Extension features** : Emoji input, symbol lookup, error correction, calculator, date/time input, and more
   * **Platform support** : Cross-platform compatibility via various Rime frontends (Squirrel, Weasel, fcitx5, Trime, Hamster)
 
-
-
 **Sources:** [README.md1-21](https://github.com/iDvel/rime-ice/blob/49e5ed73/README.md#L1-L21) [rime_ice.schema.yaml1-17](https://github.com/iDvel/rime-ice/blob/49e5ed73/rime_ice.schema.yaml#L1-L17)
 
 ## System Architecture
 
 The following diagram shows the major subsystems and their relationships:
-
 
 The architecture consists of four layers:
 
@@ -83,12 +76,9 @@ The architecture consists of four layers:
   3. **Processing Layer** : Dynamic transformation and enhancement logic
   4. **Frontend Layer** : Platform-specific UI and behavior configuration
 
-
-
 **Sources:** [rime_ice.schema.yaml1-434](https://github.com/iDvel/rime-ice/blob/49e5ed73/rime_ice.schema.yaml#L1-L434) [default.yaml1-369](https://github.com/iDvel/rime-ice/blob/49e5ed73/default.yaml#L1-L369) [rime_ice.dict.yaml1-221](https://github.com/iDvel/rime-ice/blob/49e5ed73/rime_ice.dict.yaml#L1-L221)
 
 ## Repository Structure
-
 
 **Key directories:**
 
@@ -126,7 +116,6 @@ Schema ID| Name| Config File
 
 The dictionary system uses a hierarchical import structure defined in `rime_ice.dict.yaml`:
 
-
 English input is handled separately through `melt_eng.dict.yaml` and `en_dicts/` directory.
 
 **Sources:** [rime_ice.dict.yaml7-17](https://github.com/iDvel/rime-ice/blob/49e5ed73/rime_ice.dict.yaml#L7-L17) [README.md71-86](https://github.com/iDvel/rime-ice/blob/49e5ed73/README.md#L71-L86)
@@ -134,7 +123,6 @@ English input is handled separately through `melt_eng.dict.yaml` and `en_dicts/`
 ### Processing Pipeline
 
 Each schema defines a four-stage processing pipeline in its `engine` section:
-
 
 **Pipeline components** (from `rime_ice.schema.yaml`):
 
@@ -169,7 +157,6 @@ Lua Module| Trigger| Function
 
 Configuration files follow an inheritance and patching system:
 
-
 **Configuration precedence** (highest to lowest):
 
   1. `*.custom.yaml` user patches
@@ -177,14 +164,11 @@ Configuration files follow an inheritance and patching system:
   3. `default.yaml` global settings
   4. Built-in Rime defaults
 
-
-
 **Sources:** [default.yaml1-369](https://github.com/iDvel/rime-ice/blob/49e5ed73/default.yaml#L1-L369) [rime_ice.schema.yaml1-434](https://github.com/iDvel/rime-ice/blob/49e5ed73/rime_ice.schema.yaml#L1-L434)
 
 ## Data Flow: Input to Output
 
 The following diagram traces how user input is transformed into output:
-
 
 **Key processing points:**
 
@@ -423,9 +407,6 @@ rime-ice 是一个集成了丰富词库、多样输入方案和智能 Lua 脚本
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：从GitHub API获取rime-ice仓库的star数
 import requests
@@ -450,9 +431,6 @@ stars = get_repo_stars()
 if stars is not None:
     print(f"rime-ice当前star数: {stars}")
 ```
-
-
-
 
 ```python
 # 示例2：解析rime-ice的README.md获取下载链接
@@ -481,9 +459,6 @@ print("找到的下载链接:")
 for link in links:
     print(link)
 ```
-
-
-
 
 ```python
 # 示例3：检查rime-ice是否有新版本发布
@@ -518,10 +493,8 @@ if release:
     print(f"下载地址: {release['download_url']}")
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某中型科技公司的研发团队效率提升项目
 
@@ -544,8 +517,6 @@ if release:
 - 自动化工具减少人工维护成本，每年节省约200工时。
 
 ---
-
-
 
 ### 2：开源社区文档本地化项目
 
@@ -780,7 +751,6 @@ if release:
 - 活跃的社区支持和详细的文档，便于用户快速上手和解决常见问题。
 - 通过模块化设计，用户可以灵活启用或禁用特定功能，避免冗余配置。
 
-
 ---
 ## 学习路径
 
@@ -892,7 +862,6 @@ if release:
 ---
 ## 常见问题
 
-
 ### 1: 什么是 Rime-ice？它与 Rime 输入法是什么关系？
 
 1: 什么是 Rime-ice？它与 Rime 输入法是什么关系？
@@ -900,8 +869,6 @@ if release:
 **A**: Rime-ice 是一个基于 Rime（中州韵）输入法引擎的开源输入法配置方案（方案名称为 `ice`）。Rime 本身只是一个引擎，用户通常需要自行配置才能获得良好的体验。Rime-ice 的出现是为了解决“开箱即用”的问题，它整合了雾凇拼音词库，并针对简体中文输入进行了深度的定制和优化。它旨在提供一个无需复杂配置、安装即可使用的高质量输入体验，是 Rime 众多方案中非常流行的一个。
 
 ---
-
-
 
 ### 2: 如何安装和使用 Rime-ice？
 
@@ -916,8 +883,6 @@ if release:
 
 ---
 
-
-
 ### 3: Rime-ice 的词库来源是什么？词量如何？
 
 3: Rime-ice 的词库来源是什么？词量如何？
@@ -925,8 +890,6 @@ if release:
 **A**: Rime-ice 默认使用的是 **雾凇拼音** 词库。这是一个维护活跃、质量较高的开源词库，它整合了多个主流词库（如系统词库、网络流行语、计算机术语等）并进行去重和清洗。其词量非常庞大，通常包含数十万甚至上百万条词条，能够满足绝大多数日常输入、编程和专业术语的需求。此外，用户也可以通过自定义 `custom_phrase.txt` 或 `dict` 文件来扩充个人词库。
 
 ---
-
-
 
 ### 4: 如何在 Rime-ice 中启用“五笔”、“地球拼音”或其他方案？
 
@@ -940,8 +903,6 @@ if release:
 
 ---
 
-
-
 ### 5: 为什么我输入时没有看到候选词，或者候选词显示乱码？
 
 5: 为什么我输入时没有看到候选词，或者候选词显示乱码？
@@ -954,8 +915,6 @@ if release:
 
 ---
 
-
-
 ### 6: 如何自定义 Rime-ice 的外观（皮肤）和按键习惯？
 
 6: 如何自定义 Rime-ice 的外观（皮肤）和按键习惯？
@@ -964,22 +923,6 @@ if release:
 1.  **外观主题**：可以通过修改 `weasel.custom.yaml`（Windows）或 `squirrel.custom.yaml`（macOS）来调整候选窗的样式，包括字体、颜色、边框等。也可以使用社区制作的主题文件。
 2.  **按键习惯**：在 `ice.custom.yaml` 中修改 `switcher` 或 `key_binder` 配置。例如，你可以将 `Ctrl+K` 设置为“以词定字”，或者修改翻页键（默认通常是逗号和句号）。
 **重要提示**：所有的自定义修改都建议在 `*.custom.yaml` 文件中进行，而不是直接修改原文件，这样在更新 Rime-ice 时不会覆盖你的个性化设置。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 在 Rime 输入法配置中，如何通过修改 `default.custom.yaml` 文件，将“中/英文切换”的快捷键从默认的 `Ctrl+Space` 修改为仅按 `F4` 键？
-
-### 提示**: 你需要关注 `switcher` 配置节点下的 `hotkeys` 选项。Rime 的配置采用覆盖机制，注意保留原有的 `reset` 键值，只修改 `toggle` 部分。
-
-### 
-
----
 ## 实践建议
 
 以下是针对 `rime-ice` (雾凇拼音) 仓库的 6 条实践建议，旨在帮助用户规避常见错误并提升输入体验：
@@ -1011,7 +954,6 @@ if release:
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

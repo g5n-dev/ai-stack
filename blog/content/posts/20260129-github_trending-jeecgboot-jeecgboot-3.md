@@ -40,8 +40,6 @@ Relevant source files
   * [jeecg-boot/README.md](https://github.com/jeecgboot/JeecgBoot/blob/b7a3da89/jeecg-boot/README.md)
   * [jeecgboot-vue3/README.md](https://github.com/jeecgboot/JeecgBoot/blob/b7a3da89/jeecgboot-vue3/README.md)
 
-
-
 ## Purpose and Scope
 
 This document introduces JeecgBoot as an enterprise-level AI low-code development platform, explaining its core value proposition and position in the enterprise software ecosystem. It provides the conceptual foundation for understanding how JeecgBoot combines code generation, visual development, and AI capabilities into a unified platform.
@@ -56,8 +54,6 @@ For detailed technical information:
   * AI platform capabilities: see [AI Platform (AIGC)](/jeecgboot/JeecgBoot/3-ai-platform-\(aigc\))
   * Low-code features: see [Low-Code Development Platform](/jeecgboot/JeecgBoot/5-low-code-development-platform)
 
-
-
 ## What is JeecgBoot?
 
 JeecgBoot is an enterprise-grade AI-enhanced low-code development platform built on Spring Boot 3.5.5, Vue 3, and Spring Cloud Alibaba 2023.0.3.3. The platform provides three development approaches:
@@ -66,14 +62,10 @@ JeecgBoot is an enterprise-grade AI-enhanced low-code development platform built
   2. **OnlineCoding** \- Zero-code visual configuration through `@jeecg/online` package and `OnlineCgformHeadController`
   3. **AI Platform** \- LLM integration via `jeecg-boot-module-airag` module with RAG using LangChain4j
 
-
-
 The architecture supports two deployment modes:
 
   * **Monolithic** : `jeecg-system-start` (single JAR, port 8080)
   * **Microservices** : `jeecg-cloud-gateway` (port 9999) → `jeecg-system-cloud-start` (port 7001) + `jeecg-demo-cloud-start` (port 7002)
-
-
 
 **Current Version** : 3.9.0 (Released: December 1, 2025)  
 **License** : Apache License 2.0  
@@ -83,8 +75,6 @@ The architecture supports two deployment modes:
   * Backend: `jeecg-boot` (Java/Maven)
   * Frontend: `jeecgboot-vue3` (Vue3/TypeScript/Vite)
 
-
-
 Sources: [README.md1-44](https://github.com/jeecgboot/JeecgBoot/blob/b7a3da89/README.md#L1-L44) [jeecg-boot/README.md1-44](https://github.com/jeecgboot/JeecgBoot/blob/b7a3da89/jeecg-boot/README.md#L1-L44) [README.md159-190](https://github.com/jeecgboot/JeecgBoot/blob/b7a3da89/README.md#L159-L190)
 
 ## Core Value Proposition
@@ -92,7 +82,6 @@ Sources: [README.md1-44](https://github.com/jeecgboot/JeecgBoot/blob/b7a3da89/RE
 JeecgBoot addresses the automation vs. flexibility trade-off through a four-tier development paradigm:
 
 **Four-Tier Development Flow**
-
 
 **Development Approach by Complexity:**
 
@@ -109,16 +98,12 @@ Feature Type| Code Path| Key Components| Exit Point
   * **AI Integration** : `AiragChatServiceImpl` calls `LangChain4jService` → LLM → generates `OnlineCgformHeadEntity` configuration
   * **Security From Day 1** : Generated controllers include `@RequiresPermissions`, `QueryGenerator` for data permissions
 
-
-
 **Code Generator Templates** (`jeecg-boot-base-core/src/main/resources/jeecg/code-template-online`):
 
   * `jeecgOneMain.ftl` \- Single table CRUD
   * `jeecgTreeMain.ftl` \- Tree structure
   * `jeecgOneToMany.ftl` \- One-to-many relations
   * `jvxeOnlineMain.ftl` \- Inline editable tables
-
-
 
 Sources: [README.md20-36](https://github.com/jeecgboot/JeecgBoot/blob/b7a3da89/README.md#L20-L36) [jeecg-boot/README.md19-33](https://github.com/jeecgboot/JeecgBoot/blob/b7a3da89/jeecg-boot/README.md#L19-L33) [README.md111-157](https://github.com/jeecgboot/JeecgBoot/blob/b7a3da89/README.md#L111-L157)
 
@@ -127,7 +112,6 @@ Sources: [README.md20-36](https://github.com/jeecgboot/JeecgBoot/blob/b7a3da89/R
 JeecgBoot supports two deployment architectures using shared business logic modules:
 
 **Architecture Mode Diagram**
-
 
 **Module Comparison:**
 
@@ -148,16 +132,12 @@ Business logic classes in `jeecg-module-system/jeecg-system-biz/src/main/java/or
   * **Monolithic** : Run `jeecg-module-system/jeecg-system-start/src/main/java/org/jeecg/JeecgSystemApplication.java`
   * **Microservices** : Run `jeecg-server-cloud/jeecg-cloud-gateway` \+ `jeecg-server-cloud/jeecg-system-cloud-start`
 
-
-
 **Key Classes:**
 
   * `org.jeecg.JeecgSystemApplication` \- Monolithic main class
   * `org.jeecg.cloud.JeecgCloudGatewayApplication` \- Gateway main class
   * `org.jeecg.cloud.JeecgSystemCloudApplication` \- System service main class
   * `com.alibaba.nacos.client.NacosConfigService` \- Config center client
-
-
 
 Sources: [README.md72-82](https://github.com/jeecgboot/JeecgBoot/blob/b7a3da89/README.md#L72-L82) [jeecg-boot/README.md218-243](https://github.com/jeecgboot/JeecgBoot/blob/b7a3da89/jeecg-boot/README.md#L218-L243)
 
@@ -167,9 +147,7 @@ The platform consists of two primary repositories with Maven multi-module (backe
 
 **Backend Repository Structure** (`jeecg-boot/`)
 
-
 **Frontend Repository Structure** (`jeecgboot-vue3/`)
-
 
 **Key Directory Paths:**
 
@@ -414,9 +392,6 @@ JeecgBoot 在抽象层上做了一个大胆的决定：**将“业务逻辑的�
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：动态表单字段生成器
 def generate_dynamic_form(fields):
@@ -450,9 +425,6 @@ fields = [
 print(generate_dynamic_form(fields))
 ```
 
-
-
-
 ```python
 # 示例2：数据权限过滤器
 def filter_by_permission(data, user_role):
@@ -476,9 +448,6 @@ data = [
     {"id": 3, "content": "文档3", "owner": "user2"}
 ]
 ```
-
-
-
 
 ```python
 # 示例3：快速CRUD生成器
@@ -517,10 +486,8 @@ fields = [{"name": "username"}, {"name": "password"}, {"name": "email"}]
 print(generate_crud_code("user", fields))
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某大型制造企业供应链管理系统
 
@@ -547,8 +514,6 @@ print(generate_crud_code("user", fields))
 
 ---
 
-
-
 ### 2：智慧城市政务服务平台
 
  2：智慧城市政务服务平台
@@ -573,8 +538,6 @@ print(generate_crud_code("user", fields))
 - 通过等保三级认证，数据泄露风险降低95%
 
 ---
-
-
 
 ### 3：连锁零售智能门店管理系统
 
@@ -780,7 +743,6 @@ JeecgBoot集成了大量组件（如Ant Design Vue, CKEditor, Report等），导
 - 集成流程引擎功能，支持在线表单设计和工作流审批业务
 - 具备完善的移动端解决方案，支持Uniapp跨平台开发
 
-
 ---
 ## 学习路径
 
@@ -871,7 +833,6 @@ JeecgBoot集成了大量组件（如Ant Design Vue, CKEditor, Report等），导
 ---
 ## 常见问题
 
-
 ### 1: JeecgBoot 是什么？它主要解决了什么问题？
 
 1: JeecgBoot 是什么？它主要解决了什么问题？
@@ -886,8 +847,6 @@ JeecgBoot集成了大量组件（如Ant Design Vue, CKEditor, Report等），导
 
 ---
 
-
-
 ### 2: JeecgBoot 支持哪些数据库？是否支持国产化数据库？
 
 2: JeecgBoot 支持哪些数据库？是否支持国产化数据库？
@@ -897,8 +856,6 @@ JeecgBoot集成了大量组件（如Ant Design Vue, CKEditor, Report等），导
 此外，由于 JeecgBoot 采用了 MyBatis-Plus 作为持久层框架，并通过标准的 SQL 语法编写，因此对国产数据库也有很好的支持，包括但不限于达梦（DM）、人大金仓（Kingbase）、南大通用（GBase）等。在配置文件中切换数据库驱动和连接地址即可完成切换。
 
 ---
-
-
 
 ### 3: 如何解决代码生成后，二次开发生成的代码会被覆盖的问题？
 
@@ -912,8 +869,6 @@ JeecgBoot集成了大量组件（如Ant Design Vue, CKEditor, Report等），导
 
 ---
 
-
-
 ### 4: JeecgBoot 的前端技术栈是什么？是否支持 React？
 
 4: JeecgBoot 的前端技术栈是什么？是否支持 React？
@@ -923,8 +878,6 @@ JeecgBoot集成了大量组件（如Ant Design Vue, CKEditor, Report等），导
 随着技术发展，官方也推出了 **Vue 3 + Ant Design Vue** 版本以适应最新的前端生态。同时，JeecgBoot 社区也维护了一个基于 **React + Umi + Ant Design** 的版本（JeecgBoot React 版），满足不同团队的技术栈偏好。开发者可以根据项目需求选择对应的前端脚手架。
 
 ---
-
-
 
 ### 5: JeecgBoot 是否支持微服务架构？如何与 Spring Cloud 集成？
 
@@ -937,8 +890,6 @@ JeecgBoot集成了大量组件（如Ant Design Vue, CKEditor, Report等），导
 
 ---
 
-
-
 ### 6: JeecgBoot 的数据权限是如何实现的？
 
 6: JeecgBoot 的数据权限是如何实现的？
@@ -948,22 +899,6 @@ JeecgBoot集成了大量组件（如Ant Design Vue, CKEditor, Report等），导
 1.  **注解驱动**：通过在 Mapper 接口方法上添加 `@PermissionData` 注解，框架会自动在 SQL 执行前拼接数据权限过滤条件（如 WHERE 部门ID = xxx）。
 2.  **规则配置**：在系统后台的“数据权限规则”菜单中，管理员可以配置具体的规则字段（如 `create_by` 或 `dept_id`）和规则条件。
 3.  **组件支持**：前端列表组件会配合后端，确保用户只能看到符合其权限的数据。这种方式实现了业务代码与权限逻辑的解耦，开发者无需手动在 SQL 中编写繁琐的过滤代码。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: JeecgBoot 提供了强大的代码生成器。假设你有一张包含 `id`, `name`, `age` 的数据库表 `student`，请尝试使用代码生成器生成前后端代码，并实现一个最基础的 CRUD（增删改查）功能。在生成后，如何修改配置使得“年龄”字段在列表页默认不可见，但在新增/编辑页必须填写？
-
-### 提示**: 关注代码生成器生成的 `vue` 文件中的 `columns` 配置项以及 `form` 表单的 `rules` 校验规则属性。
-
-### 
-
----
 ## 实践建议
 
 基于 JeecgBoot 作为“AI低代码平台”的定位及其强大的代码生成器特性，以下是针对实际开发场景的 6 条实践建议：
@@ -1009,7 +944,6 @@ JeecgBoot集成了大量组件（如Ant Design Vue, CKEditor, Report等），导
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

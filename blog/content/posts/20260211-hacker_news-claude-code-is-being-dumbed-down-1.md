@@ -91,9 +91,6 @@ scenarios: ["AI/ML项目"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：计算文本的困惑度(Perplexity)来评估模型质量
 import math
@@ -122,9 +119,6 @@ sample_text = "这是一个测试文本 用于计算困惑度"
 perplexity = calculate_perplexity(sample_text)
 print(f"文本困惑度: {perplexity:.2f}")
 ```
-
-
-
 
 ```python
 # 示例2：检测模型回答是否过于简单化
@@ -160,9 +154,6 @@ is_simplified, reason = detect_oversimplification(test_response)
 print(f"是否过度简化: {is_simplified}, 原因: {reason}")
 ```
 
-
-
-
 ```python
 # 示例3：比较不同版本模型的输出质量
 from difflib import SequenceMatcher
@@ -197,10 +188,8 @@ print(f"相似度: {comparison['similarity']:.2%}")
 print(f"新增词汇: {comparison['added_words']}, 移除词汇: {comparison['removed_words']}")
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某电商平台客服系统优化
 
@@ -224,8 +213,6 @@ print(f"新增词汇: {comparison['added_words']}, 移除词汇: {comparison['re
 
 ---
 
-
-
 ### 2：金融科技公司风控系统升级
 
  2：金融科技公司风控系统升级
@@ -247,8 +234,6 @@ print(f"新增词汇: {comparison['added_words']}, 移除词汇: {comparison['re
 - 客户满意度显著提升，新增客户量增长30%。
 
 ---
-
-
 
 ### 3：医疗诊断辅助系统开发
 
@@ -381,22 +366,6 @@ print(f"新增词汇: {comparison['added_words']}, 移除词汇: {comparison['re
 - 这种"降智"现象反映了AI开发中在能力、安全性和可靠性之间难以平衡的根本性挑战
 - 开发者社区呼吁Anthropic透明化模型调整策略，并提供更多控制选项让用户在安全性和能力间自主选择
 - 事件凸显了AI编程工具在实际生产环境中面临的可靠性问题，以及用户对模型一致性的高度依赖
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 假设你是一名AI工具的产品经理，需要设计一个实验来验证"Claude Code是否被简化了"。请列出至少3个可量化的评估指标，并说明如何通过这些指标客观地衡量代码能力的强弱。
-
-### 提示**: 考虑代码生成的准确性、复杂度以及解决实际问题的能力。避免主观判断，寻找可测量的数据点。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://symmetrybreak.ing/blog/claude-code-is-being-dumbed-down](https://symmetrybreak.ing/blog/claude-code-is-being-dumbed-down)
@@ -405,7 +374,6 @@ print(f"新增词汇: {comparison['added_words']}, 移除词汇: {comparison['re
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

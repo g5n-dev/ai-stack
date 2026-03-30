@@ -91,9 +91,6 @@ scenarios: ["大语言模型"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：基于OpenAI API的简单编码代理
 def coding_agent(prompt, model="gpt-3.5-turbo"):
@@ -127,9 +124,6 @@ def coding_agent(prompt, model="gpt-3.5-turbo"):
 print(coding_agent("快速排序算法"))
 ```
 
-
-
-
 ```python
 # 示例2：带代码执行验证的代理
 def validated_coding_agent(prompt):
@@ -157,9 +151,6 @@ def validated_coding_agent(prompt):
 # 使用示例
 validated_coding_agent("计算斐波那契数列")
 ```
-
-
-
 
 ```python
 # 示例3：多步骤任务分解代理
@@ -196,10 +187,8 @@ def task_breakdown_agent(complex_task):
 print(task_breakdown_agent("实现一个带用户认证的博客系统"))
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某中型 SaaS 平台的后端维护
 
@@ -218,8 +207,6 @@ print(task_breakdown_agent("实现一个带用户认证的博客系统"))
 该编码代理成功处理了超过 15,000 行代码的自动化重构，准确率达到 98%，且生成的代码无需人工修改即可通过 Linter 检查。开发人员从重复劳动中解放出来，能够专注于业务逻辑开发，原定需要两周的代码清理工作在两天内即告完成。
 
 ---
-
-
 
 ### 2：数据科学团队的自动化脚本生成
 
@@ -350,7 +337,6 @@ print(task_breakdown_agent("实现一个带用户认证的博客系统"))
 ---
 ## 常见问题
 
-
 ### 1: 什么是 "Opinionated"（有主见/固执）的编程代理？它与通用的 AI 编程助手（如 GitHub Copilot）有什么区别？
 
 1: 什么是 "Opinionated"（有主见/固执）的编程代理？它与通用的 AI 编程助手（如 GitHub Copilot）有什么区别？
@@ -363,8 +349,6 @@ print(task_breakdown_agent("实现一个带用户认证的博客系统"))
 3.  **受限范围**：它可能只支持特定的语言或框架，但在该范围内表现远超通用模型。
 
 ---
-
-
 
 ### 2: 为什么作者强调 "Minimal"（极简）？在构建 AI Agent 时，功能不是越多越好吗？
 
@@ -379,8 +363,6 @@ print(task_breakdown_agent("实现一个带用户认证的博客系统"))
 
 ---
 
-
-
 ### 3: 构建 "Opinionated" 的 Agent 通常面临哪些主要的技术挑战？
 
 3: 构建 "Opinionated" 的 Agent 通常面临哪些主要的技术挑战？
@@ -393,8 +375,6 @@ print(task_breakdown_agent("实现一个带用户认证的博客系统"))
 
 ---
 
-
-
 ### 4: 在开发过程中，作者通常使用哪种大语言模型（LLM）作为底层引擎？
 
 4: 在开发过程中，作者通常使用哪种大语言模型（LLM）作为底层引擎？
@@ -405,8 +385,6 @@ print(task_breakdown_agent("实现一个带用户认证的博客系统"))
 *   对于 "Minimal" 的实现，有些开发者甚至会尝试使用更小、更快的模型（如 Llama 3 或 GPT-4o-mini）来处理特定子任务，以降低成本和延迟。
 
 ---
-
-
 
 ### 5: 这种 "Opinionated and Minimal" 的 Agent 适合什么样的使用场景？
 
@@ -420,30 +398,12 @@ print(task_breakdown_agent("实现一个带用户认证的博客系统"))
 
 ---
 
-
-
 ### 6: 对于想要尝试构建自己编程代理的开发者，有什么建议的起步方式？
 
 6: 对于想要尝试构建自己编程代理的开发者，有什么建议的起步方式？
 
 **A**: 基于此类文章的经验，建议的起步方式如下：
 1.  **不要从零开始**：不要试图直接
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**:
-
-### 设计一个基于规则的简单代理，它只能执行文件系统操作（读取、写入、创建文件）。请定义一套极简的指令集（DSL），例如 "WRITE file.txt content"，并编写一个解析器将自然语言意图映射到这些指令。重点在于如何通过限制功能范围来保证系统的安全性。
-
-### 提示**:
-
----
 ## 引用
 
 - **原文链接**: [https://mariozechner.at/posts/2025-11-30-pi-coding-agent](https://mariozechner.at/posts/2025-11-30-pi-coding-agent)
@@ -452,7 +412,6 @@ print(task_breakdown_agent("实现一个带用户认证的博客系统"))
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

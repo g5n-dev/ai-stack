@@ -61,7 +61,6 @@ external_url: https://visualrambling.space/dithering-part-2
 ---
 ## 🎯 深度评价
 
-
 ---
 
 ### 一、 逻辑解构与哲学定位
@@ -123,32 +122,8 @@ external_url: https://visualrambling.space/dithering-part-2
 ---
 ## 💻 代码示例
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 ## 📚 案例研究
-
 
 ### 1：复古游戏开发（像素风模拟）
 
@@ -170,8 +145,6 @@ external_url: https://visualrambling.space/dithering-part-2
 
 ---
 
-
-
 ### 2：工业打印系统（低内存设备优化）
 
  2：工业打印系统（低内存设备优化）
@@ -191,8 +164,6 @@ external_url: https://visualrambling.space/dithering-part-2
 - 通过低成本 MCU 实现了高质量灰度输出，无需升级硬件。
 
 ---
-
-
 
 ### 3：Web 图像压缩优化（渐进式加载）
 
@@ -301,7 +272,6 @@ external_url: https://visualrambling.space/dithering-part-2
 ---
 ## ❓ 常见问题
 
-
 ### 1: 什么是有序抖动，它与随机抖动有什么本质区别？
 
 1: 什么是有序抖动，它与随机抖动有什么本质区别？
@@ -313,8 +283,6 @@ external_url: https://visualrambling.space/dithering-part-2
 *   **有序抖动**使用一个确定性的、固定大小的矩阵（通常是 Bayer 矩阵），按照特定的空间顺序遍历图像。这使得产生的噪声在视觉上更加均匀、颗粒感更细腻，且不会出现明显的随机杂点。🖼️
 
 ---
-
-
 
 ### 2: 我经常听说 Bayer 矩阵，它在有序抖动中起什么作用？
 
@@ -332,8 +300,6 @@ external_url: https://visualrambling.space/dithering-part-2
 
 ---
 
-
-
 ### 3: 为什么有时我的图像在使用有序抖动后会有明显的网格状纹理？
 
 3: 为什么有时我的图像在使用有序抖动后会有明显的网格状纹理？
@@ -347,8 +313,6 @@ external_url: https://visualrambling.space/dithering-part-2
 *   对图像进行轻微的预处理（如加入微量随机噪声）来打破这种规律的几何结构。📉
 
 ---
-
-
 
 ### 4: 有序抖动相比误差扩散算法（如 Floyd-Steinberg）有什么优缺点？
 
@@ -366,8 +330,6 @@ external_url: https://visualrambling.space/dithering-part-2
 
 ---
 
-
-
 ### 5: 为什么文章标题是“Part 2”？前一部分通常讲什么？
 
 5: 为什么文章标题是“Part 2”？前一部分通常讲什么？
@@ -380,8 +342,6 @@ external_url: https://visualrambling.space/dithering-part-2
 
 ---
 
-
-
 ### 6: 在现代编程中，我需要自己写有序抖动算法吗？
 
 6: 在现代编程中，我需要自己写有序抖动算法吗？
@@ -390,22 +350,6 @@ external_url: https://visualrambling.space/dithering-part-2
 
 *   **底层应用**：在编写 Shader（着色器）、嵌入式系统固件或特定的图像处理库（如 PIL/Pillow, OpenCV 的底层实现）时，可能会直接用到。
 *   **常规开发**：大多数现代图像处理库已经内置了优化的抖动功能。例如，在 Web 开发中保存
-
----
-## 🎯 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**:
-
-### 基础实现。请编写一个简单的函数，不依赖任何图像处理库，将一张灰度图像转换为 1位（黑白）图像。要求实现最基础的阈值处理，即设定一个固定的阈值（如 128），大于该阈值的像素设为白（255），小于设为黑（0）。
-
-### 提示**:
-
----
 ## 🔗 引用
 
 - **原文链接**: [https://visualrambling.space/dithering-part-2](https://visualrambling.space/dithering-part-2)

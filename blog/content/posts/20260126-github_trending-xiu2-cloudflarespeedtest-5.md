@@ -35,8 +35,6 @@ Relevant source files
   * [README.md](https://github.com/XIU2/CloudflareSpeedTest/blob/013c27c0/README.md)
   * [main.go](https://github.com/XIU2/CloudflareSpeedTest/blob/013c27c0/main.go)
 
-
-
 CloudflareSpeedTest is a command-line tool designed to test Cloudflare CDN IP addresses for latency and download speed performance, helping users identify optimal IPs for improved website access. This tool addresses performance issues often encountered when accessing Cloudflare-backed websites from regions with suboptimal default IP assignments.
 
 For installation instructions, see [Installation](/XIU2/CloudflareSpeedTest/1.1-installation). For quick usage guidance, see [Quick Start Guide](/XIU2/CloudflareSpeedTest/1.2-quick-start-guide).
@@ -45,13 +43,11 @@ For installation instructions, see [Installation](/XIU2/CloudflareSpeedTest/1.1-
 
 CloudflareSpeedTest follows a modular architecture organized into specialized components that handle different aspects of the testing process.
 
-
 Sources: [main.go12-13](https://github.com/XIU2/CloudflareSpeedTest/blob/013c27c0/main.go#L12-L13) [README.md24-109](https://github.com/XIU2/CloudflareSpeedTest/blob/013c27c0/README.md#L24-L109)
 
 ## Core Workflow
 
 The CloudflareSpeedTest workflow consists of several sequential phases that transform raw IP data into usable performance metrics.
-
 
 Sources: [main.go128-144](https://github.com/XIU2/CloudflareSpeedTest/blob/013c27c0/main.go#L128-L144) [README.md24-109](https://github.com/XIU2/CloudflareSpeedTest/blob/013c27c0/README.md#L24-L109)
 
@@ -82,8 +78,6 @@ CloudflareSpeedTest offers two latency testing modes:
   1. **TCPing** (Default): Measures TCP connection establishment time
   2. **HTTPing** : Measures HTTP request-response time
 
-
-
 These tests provide insights into connection reliability and responsiveness.
 
 #### Download Speed Testing
@@ -94,12 +88,9 @@ For IPs that pass latency thresholds, the system can perform download speed test
   * Measures transfer rate in MB/s
   * Uses exponentially weighted moving average for stable measurements
 
-
-
 Sources: [README.md147-151](https://github.com/XIU2/CloudflareSpeedTest/blob/013c27c0/README.md#L147-L151) [README.md355-385](https://github.com/XIU2/CloudflareSpeedTest/blob/013c27c0/README.md#L355-L385)
 
 ## Data Flow
-
 
 Sources: [main.go129-138](https://github.com/XIU2/CloudflareSpeedTest/blob/013c27c0/main.go#L129-L138) [README.md80-116](https://github.com/XIU2/CloudflareSpeedTest/blob/013c27c0/README.md#L80-L116)
 
@@ -122,8 +113,6 @@ This output shows:
   * Average latency (ms)
   * Download speed (MB/s)
 
-
-
 The complete results are also saved to `result.csv` in the current directory for further analysis or processing.
 
 Sources: [README.md80-116](https://github.com/XIU2/CloudflareSpeedTest/blob/013c27c0/README.md#L80-L116)
@@ -136,8 +125,6 @@ CloudflareSpeedTest integrates with various systems through additional scripts t
   * **DNS Configurators** : Configure DNS servers with optimal IPs
   * **Proxy Configurators** : Set up proxy configurations using optimal IPs
 
-
-
 For more information on extension scripts, see [Extension Scripts](/XIU2/CloudflareSpeedTest/5-extension-scripts).
 
 Sources: [README.md640-652](https://github.com/XIU2/CloudflareSpeedTest/blob/013c27c0/README.md#L640-L652)
@@ -149,8 +136,6 @@ Sources: [README.md640-652](https://github.com/XIU2/CloudflareSpeedTest/blob/013
   3. **Network Troubleshooting** : Identifying and resolving connectivity issues with Cloudflare CDN
   4. **Cross-CDN Testing** : The tool can be adapted to test other CDNs besides Cloudflare
 
-
-
 Sources: [README.md9-21](https://github.com/XIU2/CloudflareSpeedTest/blob/013c27c0/README.md#L9-L21) [README.md642-644](https://github.com/XIU2/CloudflareSpeedTest/blob/013c27c0/README.md#L642-L644)
 
 ## Technical Limitations
@@ -159,8 +144,6 @@ Sources: [README.md9-21](https://github.com/XIU2/CloudflareSpeedTest/blob/013c27
   * When using HTTPing mode, high concurrency may trigger rate limiting
   * Performance varies by geographic location, network conditions, and time of day
   * IP performance may change over time due to Cloudflare's Anycast routing
-
-
 
 Sources: [README.md77](https://github.com/XIU2/CloudflareSpeedTest/blob/013c27c0/README.md#L77-L77) [README.md367](https://github.com/XIU2/CloudflareSpeedTest/blob/013c27c0/README.md#L367-L367)
 
@@ -386,32 +369,8 @@ CST 在抽象层上做了一个大胆的决定：**它接管了 DNS 的职责**�
 ---
 ## 💻 实用代码示例
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 ## 📚 真实案例研究
-
 
 ### 1：跨国电商团队的远程协作加速
 
@@ -426,8 +385,6 @@ CST 在抽象层上做了一个大胆的决定：**它接管了 DNS 的职责**�
 **效果**: 🚀 **内部系统访问延迟从平均 200ms+ 降低至 25ms 左右**，页面加载实现“秒开”。团队在进行 Git 代码拉取和推送时的速度显著提升，彻底解决了下午时段的连接超时问题，极大地提升了跨国团队的协作效率。
 
 ---
-
-
 
 ### 2：个人流媒体爱好者的家庭网络优化
 
@@ -624,7 +581,6 @@ CST 在抽象层上做了一个大胆的决定：**它接管了 DNS 的职责**�
 - ⚙️ **高度灵活的参数配置**：允许自定义测速端口、并发线程数、超时时间以及测试用的下载文件大小（10MB-200MB），适应不同网络环境。
 - 📊 **丰富的结果输出**：支持将测速结果导出为 CSV 文件或生成专用格式的结果文件，方便二次分析或导入其他工具。
 
-
 ---
 ## 🗺️ 循序渐进的学习路径
 
@@ -711,7 +667,6 @@ CST 在抽象层上做了一个大胆的决定：**它接管了 DNS 的职责**�
 ---
 ## ❓ 常见问题解答
 
-
 ### 1: CloudflareST 测速后，IP 无法访问网站或延迟很高怎么办？
 
 1: CloudflareST 测速后，IP 无法访问网站或延迟很高怎么办？
@@ -723,8 +678,6 @@ CST 在抽象层上做了一个大胆的决定：**它接管了 DNS 的职责**�
 3.  **建议操作**：不要只看排名第一的 IP。建议从测速结果的前 10-20 个 IP 中挑选，然后手动在你的浏览器或代理软件中逐个尝试，找到那个既稳定速度又快的 IP。
 
 ---
-
-
 
 ### 2: 脚本运行时提示 "Too many open files" 或运行中断怎么办？
 
@@ -740,8 +693,6 @@ CST 在抽象层上做了一个大胆的决定：**它接管了 DNS 的职责**�
 
 ---
 
-
-
 ### 3: Windows 下双击运行程序，结果窗口一闪而过，看不到结果怎么办？
 
 3: Windows 下双击运行程序，结果窗口一闪而过，看不到结果怎么办？
@@ -754,8 +705,6 @@ CST 在抽象层上做了一个大胆的决定：**它接管了 DNS 的职责**�
 4.  这样程序结束后，窗口依然会保持打开状态，你可以查看结果或导出的 CSV 文件。
 
 ---
-
-
 
 ### 4: 如何使用该工具优化 Cloudflare CDN 或反向代理的速度？
 
@@ -771,8 +720,6 @@ CST 在抽象层上做了一个大胆的决定：**它接管了 DNS 的职责**�
 
 ---
 
-
-
 ### 5: 测速结果生成的 `result.csv` 文件内容是什么？如何排序？
 
 5: 测速结果生成的 `result.csv` 文件内容是什么？如何排序？
@@ -784,8 +731,6 @@ CST 在抽象层上做了一个大胆的决定：**它接管了 DNS 的职责**�
 *   **如何使用**：如果下载速度很多都是满速（例如 10Mbps+），建议你再参考 **平均延迟** 列，选择延迟最低且速度满足要求的那一行 IP。
 
 ---
-
-
 
 ### 6: 运行脚本提示 "Permission denied" 权限不足怎么办？
 
@@ -799,8 +744,6 @@ CST 在抽象层上做了一个大胆的决定：**它接管了 DNS 的职责**�
 
 ---
 
-
-
 ### 7: 如何指定测速的端口或上传/下载速度限制？
 
 7: 如何指定测速的端口或上传/下载速度限制？
@@ -808,22 +751,6 @@ CST 在抽象层上做了一个大胆的决定：**它接管了 DNS 的职责**�
 **A**: CloudflareST 支持丰富的自定义参数。
 
 *   **指定端口 (`-tp`)**: 默认 443。如果想测 80 端口或 2083 端口，可使用 `./CloudflareST -tp 44
-
----
-## 🎯 挑战与思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**: 环境准备与基础运行
-
-### 项目通常使用 Go 语言编写。请尝试配置 Go 开发环境，克隆该仓库并成功编译出适用于你当前操作系统（Windows/macOS/Linux）的可执行文件。
-
-### 提示**:
-
----
 ## 💡 实践建议
 
 这里针对 **XIU2/CloudflareSpeedTest** 这个项目的实际使用场景，为您提供 7 条实践建议与避坑指南：

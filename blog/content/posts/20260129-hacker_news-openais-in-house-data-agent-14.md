@@ -80,9 +80,6 @@ OpenAI 正在构建并整合内部专有的数据分析智能体，这标志着 
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：自动化数据清洗与预处理
 import pandas as pd
@@ -129,9 +126,6 @@ data = {
 cleaned_data = clean_data(data)
 print(cleaned_data)
 ```
-
-
-
 
 ```python
 # 示例2：智能数据分类与标注
@@ -181,9 +175,6 @@ for text, category in results:
     print(f"文本: {text} -> 类别: {category}")
 ```
 
-
-
-
 ```python
 # 示例3：数据异常检测系统
 from sklearn.ensemble import IsolationForest
@@ -218,10 +209,8 @@ for idx, val in anomalies:
     print(f"索引: {idx}, 值: {val[0]}")
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：Klarna（全球支付与金融科技巨头）
 
@@ -244,8 +233,6 @@ Klarna 利用 OpenAI 的技术（基于 GPT-4 等模型）构建并部署了一�
 
 ---
 
-
-
 ### 2：PwC（普华永道 - 全球专业咨询服务）
 
  2：PwC（普华永道 - 全球专业咨询服务）
@@ -265,8 +252,6 @@ PwC 与 OpenAI 建立了企业级合作关系，构建了专属的内部 AI Agen
 - PwC 还将此能力作为服务产品化的一部分，向其客户提供基于生成式 AI 的税务和法律咨询服务，创造了新的商业价值。
 
 ---
-
-
 
 ### 3：Wix（网站建设平台）
 
@@ -390,7 +375,6 @@ Wix 推出了 "Wix Studio" 和 "AI Website Builder"，集成了类似 OpenAI In-
 ---
 ## 常见问题
 
-
 ### 1: OpenAI 内部数据代理 的主要功能是什么？
 
 1: OpenAI 内部数据代理 的主要功能是什么？
@@ -398,8 +382,6 @@ Wix 推出了 "Wix Studio" 和 "AI Website Builder"，集成了类似 OpenAI In-
 **A**: OpenAI 内部数据代理 是一个专门设计的工具，旨在帮助开发者和企业更高效地检索、处理和管理数据。它能够自动化数据清洗、格式转换和查询优化等任务，特别适用于需要快速整合多源数据的场景。通过该工具，用户可以减少手动操作，提升数据处理效率，同时确保数据的准确性和一致性。
 
 ---
-
-
 
 ### 2: 该数据代理与 OpenAI 的其他工具有何区别？
 
@@ -409,8 +391,6 @@ Wix 推出了 "Wix Studio" 和 "AI Website Builder"，集成了类似 OpenAI In-
 
 ---
 
-
-
 ### 3: 如何使用 OpenAI 内部数据代理？
 
 3: 如何使用 OpenAI 内部数据代理？
@@ -418,8 +398,6 @@ Wix 推出了 "Wix Studio" 和 "AI Website Builder"，集成了类似 OpenAI In-
 **A**: 使用该数据代理通常需要通过 OpenAI 的 API 或 SDK 进行集成。用户需要提供数据源（如数据库、文件或 API 端点），然后通过调用数据代理的接口来执行操作。具体步骤包括：1. 配置数据源连接；2. 定义数据处理任务（如查询或转换）；3. 调用 API 并获取结果。OpenAI 还提供了详细的文档和示例代码，帮助开发者快速上手。
 
 ---
-
-
 
 ### 4: 数据代理是否支持实时数据处理？
 
@@ -429,8 +407,6 @@ Wix 推出了 "Wix Studio" 和 "AI Website Builder"，集成了类似 OpenAI In-
 
 ---
 
-
-
 ### 5: 使用该数据代理是否需要额外的费用？
 
 5: 使用该数据代理是否需要额外的费用？
@@ -438,8 +414,6 @@ Wix 推出了 "Wix Studio" 和 "AI Website Builder"，集成了类似 OpenAI In-
 **A**: 费用取决于具体的使用场景和调用方式。如果通过 OpenAI 的 API 使用数据代理，可能会按照调用次数或数据处理量收费。具体定价需参考 OpenAI 的官方价格表。此外，某些高级功能（如大规模数据处理或定制化集成）可能需要额外的企业级许可。建议在正式使用前咨询 OpenAI 的销售团队以获取准确的报价。
 
 ---
-
-
 
 ### 6: 数据代理的安全性如何保障？
 
@@ -449,29 +423,11 @@ Wix 推出了 "Wix Studio" 和 "AI Website Builder"，集成了类似 OpenAI In-
 
 ---
 
-
-
 ### 7: 是否支持自定义数据处理逻辑？
 
 7: 是否支持自定义数据处理逻辑？
 
 **A**: 是的，OpenAI 内部数据代理 允许用户通过脚本或插件扩展其功能。用户可以编写自定义的数据处理逻辑（如 Python 或 SQL 脚本），并通过 API 将其集成到数据代理的工作流中。此外，OpenAI 还提供了一些预定义的模板和函数库，帮助用户快速实现常见的处理需求。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 基础 RAG 系统构建
-
-### 问题**:
-
-### 假设你需要为 OpenAI 的内部文档构建一个简单的检索增强生成（RAG）系统。请设计一个基础流程，说明如何将非结构化的文本数据转化为向量数据库，并处理一个简单的用户查询，例如“如何重置 API 密钥？”。请描述从数据摄入到最终答案生成的三个核心步骤。
-
-### 提示**:
-
----
 ## 引用
 
 - **原文链接**: [https://openai.com/index/inside-our-in-house-data-agent](https://openai.com/index/inside-our-in-house-data-agent)
@@ -480,7 +436,6 @@ Wix 推出了 "Wix Studio" 和 "AI Website Builder"，集成了类似 OpenAI In-
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

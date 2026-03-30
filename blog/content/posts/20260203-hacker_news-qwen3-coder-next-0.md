@@ -92,9 +92,6 @@ scenarios: ["大语言模型", "AI/ML项目"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：Hacker News热门故事获取器
 import requests
@@ -131,7 +128,6 @@ if __name__ == "__main__":
         print(f"{idx}. {story['title']}")
         print(f"   链接: {story['link']}\n")
 ```
-
 
 ---
 
@@ -179,7 +175,6 @@ if __name__ == "__main__":
     print(f"故事{story_id}的评论情感分析结果: {result}")
 ```
 
-
 ---
 
 ```python
@@ -226,10 +221,8 @@ if __name__ == "__main__":
     generate_wordcloud(sample_data)
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某中型金融科技公司内部研发效能提升
 
@@ -248,8 +241,6 @@ if __name__ == "__main__":
 实施两个月后，统计数据显示开发人员的编码效率提升了约 25%，人均每日有效代码行数显著增加。代码审查的轮次减少了 40%，大部分语法错误和不符合规范的代码风格在 IDE 阶段即被修正。高级工程师反馈，他们得以从琐碎的审查工作中解放出来，将更多精力投入到系统架构设计等高价值工作中。
 
 ---
-
-
 
 ### 2：某工业自动化企业的遗留系统重构项目
 
@@ -361,7 +352,6 @@ if __name__ == "__main__":
 ---
 ## 常见问题
 
-
 ### 1: Qwen3-Coder-Next 是什么？它与 Qwen2.5-Coder 有什么区别？
 
 1: Qwen3-Coder-Next 是什么？它与 Qwen2.5-Coder 有什么区别？
@@ -373,8 +363,6 @@ if __name__ == "__main__":
 4.  **指令遵循**：在遵循多层嵌套的复杂指令方面表现更好，生成的代码更符合开发者的具体约束。
 
 ---
-
-
 
 ### 2: Qwen3-Coder-Next 目前是否开源？如何获取使用？
 
@@ -388,8 +376,6 @@ if __name__ == "__main__":
 
 ---
 
-
-
 ### 3: 相比于 GPT-4 和 Claude 3.5 Sonnet，Qwen3-Coder-Next 的实际表现如何？
 
 3: 相比于 GPT-4 和 Claude 3.5 Sonnet，Qwen3-Coder-Next 的实际表现如何？
@@ -402,8 +388,6 @@ if __name__ == "__main__":
 
 ---
 
-
-
 ### 4: 运行 Qwen3-Coder-Next 需要什么样的硬件配置？
 
 4: 运行 Qwen3-Coder-Next 需要什么样的硬件配置？
@@ -414,8 +398,6 @@ if __name__ == "__main__":
 3.  **内存**：如果使用 CPU 进行推理（例如通过 llama.cpp），系统内存（RAM）至少需要是模型大小的 1.5 到 2 倍。
 
 ---
-
-
 
 ### 5: 如何在 VS Code 中配置和使用 Qwen3-Coder-Next？
 
@@ -433,27 +415,9 @@ if __name__ == "__main__":
 
 ---
 
-
-
 ### 6: Qwen3-Coder-Next 支持哪些代码补全功能？
 
 6: Qwen3-Coder-Next 支持哪些代码补全功能？
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 针对模型名称 "Qwen3-Coder-Next"，请设计一个 Python 函数，要求能够自动解析类似的模型版本号字符串（如 "v2.5.1", "Qwen3-Coder-Next"），并提取出其中的主版本号（Major Version）。对于 "Qwen3-Coder-Next"，提取结果应为 "3"。
-
-### 提示**: 考虑使用 Python 的 `re` (正则表达式) 模块。你需要定义一个模式来匹配数字，注意处理字符串开头可能存在的非数字字符。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://qwen.ai/blog?id=qwen3-coder-next](https://qwen.ai/blog?id=qwen3-coder-next)
@@ -462,7 +426,6 @@ if __name__ == "__main__":
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

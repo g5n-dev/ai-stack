@@ -87,9 +87,6 @@ scenarios: ["Web应用开发"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：实现分块注意力机制的核心逻辑
 def chunked_attention(query, key, value, chunk_size=64):
@@ -140,9 +137,6 @@ def chunked_attention(query, key, value, chunk_size=64):
 # 通过将大矩阵分解为小块计算，显著减少了内存访问次数。
 ```
 
-
-
-
 ```python
 # 示例2：内存高效的注意力计算
 def memory_efficient_attention(Q, K, V, chunk_size=64):
@@ -180,9 +174,6 @@ def memory_efficient_attention(Q, K, V, chunk_size=64):
 # 特别适合处理长序列，可以显著降低内存使用。
 ```
 
-
-
-
 ```python
 # 示例3：融合softmax和矩阵乘法操作
 def fused_attention(Q, K, V):
@@ -209,10 +200,8 @@ def fused_attention(Q, K, V):
 # 使用CUDA内核或其他优化技术来实现真正的融合操作。
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：MosaicML (现为 Databricks) 的 MPT 模型系列
 
@@ -228,8 +217,6 @@ def fused_attention(Q, K, V):
 
 ---
 
-
-
 ### 2：LMSYS Org 的 Vicuna 与 FastChat 生态系统
 
  2：LMSYS Org 的 Vicuna 与 FastChat 生态系统
@@ -243,8 +230,6 @@ def fused_attention(Q, K, V):
 **效果**: 集成该技术后，Vicuna 模型的生成长文本的延迟显著降低，Token 生成速度（Throughput）提升了约 30%-50%。这使得 LMSYS 能够在单张 A100 显卡上服务更多的并发用户，并支持更长的对话历史，极大降低了部署成本。
 
 ---
-
-
 
 ### 3：Hugging Face 的 TRL (Transformer Reinforcement Learning) 库
 
@@ -364,7 +349,6 @@ def fused_attention(Q, K, V):
 ---
 ## 常见问题
 
-
 ### 1: FlashAttention-T 中的 "T" 具体代表什么？它与之前的 FlashAttention-2 有什么核心区别？
 
 1: FlashAttention-T 中的 "T" 具体代表什么？它与之前的 FlashAttention-2 有什么核心区别？
@@ -377,8 +361,6 @@ def fused_attention(Q, K, V):
 
 ---
 
-
-
 ### 2: FlashAttention-T 是如何解决 Transformer 推理中的“内存墙”问题的？
 
 2: FlashAttention-T 是如何解决 Transformer 推理中的“内存墙”问题的？
@@ -390,8 +372,6 @@ FlashAttention-T 解决这一问题的手段主要包括两个方面：
 2.  **张量化计算**：通过将算法重写为高度并行的张量形式，它增加了每次从内存加载数据后进行的计算量。这意味着 GPU 在等待数据的同时，可以进行更密集的数学运算，从而“隐藏”内存延迟。这种高算术强度使得计算单元的利用率接近饱和，从而突破了单纯依赖内存带宽的限制。
 
 ---
-
-
 
 ### 3: FlashAttention-T 主要针对哪些硬件架构进行了优化？在普通的消费级显卡（如 RTX 4090）上能跑吗？
 
@@ -407,8 +387,6 @@ FlashAttention-T 解决这一问题的手段主要包括两个方面：
 
 ---
 
-
-
 ### 4: 在实际应用中，FlashAttention-T 对长文本序列的处理有何优势？
 
 4: 在实际应用中，FlashAttention-T 对长文本序列的处理有何优势？
@@ -421,8 +399,6 @@ FlashAttention-T 解决这一问题的手段主要包括两个方面：
 
 ---
 
-
-
 ### 5: FlashAttention-T 是否支持训练，还是仅用于推理加速？
 
 5: FlashAttention-T 是否支持训练，还是仅用于推理加速？
@@ -433,27 +409,9 @@ FlashAttention-T 解决这一问题的手段主要包括两个方面：
 
 ---
 
-
-
 ### 6: FlashAttention-T 与 P
 
 6: FlashAttention-T 与 P
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**：FlashAttention 的核心思想是通过 Tiling（分块）技术将注意力计算的分块加载到 SRAM 中以减少 HBM 访问次数。请解释为什么在标准的 Attention 实现中，HBM 的访问量是 $O(N^2)$ 级别的，而 FlashAttention 能将其降低到 $O(N^2)$ 但常数更小？此外，请计算在一个特定的 Batch Size 和 Head 数量下，标准 Attention 需要读取 HBM 多少次（假设 $N=2048, d=64$）。
-
-### 提示**：关注点积矩阵 $S \in \mathbb{R}^{N \times N}$ 的生成过程。标准实现需要先读取完整的 $Q, K$ 计算 $S$，写入 HBM，再读取 $S$ 和 $V$ 计算 $O$。对比 FlashAttention 在 SRAM 中完成 Softmax 和部分结果累加的流程，计算具体的浮点数运算量与内存字节数的比率。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://dl.acm.org/doi/10.1145/3774934.3786425](https://dl.acm.org/doi/10.1145/3774934.3786425)
@@ -462,7 +420,6 @@ FlashAttention-T 解决这一问题的手段主要包括两个方面：
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

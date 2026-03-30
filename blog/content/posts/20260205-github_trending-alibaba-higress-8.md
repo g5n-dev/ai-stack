@@ -38,8 +38,6 @@ Relevant source files
   * [README_JP.md](https://github.com/alibaba/higress/blob/8deceb4d/README_JP.md)
   * [README_ZH.md](https://github.com/alibaba/higress/blob/8deceb4d/README_ZH.md)
 
-
-
 ## Purpose and Scope
 
 This document provides a comprehensive overview of Higress, an AI Native API Gateway built on Istio and Envoy. It covers the system's architecture, core components, and primary use cases. For detailed information about specific subsystems, refer to the Core Architecture (page 2), Build and Deployment (page 3), WASM Plugin System (page 4), AI Gateway Features (page 5), MCP System (page 6), and Development Guide (page 7) sections.
@@ -73,7 +71,6 @@ Higress implements a control plane and data plane separation derived from Istio'
 
 **Component Deployment Diagram:**
 
-
 **Binary and Process Mapping:**
 
 Binary| Source Entry Point| Deployment Location| Primary Functions  
@@ -92,7 +89,6 @@ Sources: [README.md32](https://github.com/alibaba/higress/blob/8deceb4d/README.m
 ### Configuration Flow and Controller Architecture
 
 **Configuration Update Sequence:**
-
 
 **Controller Registry and Responsibilities:**
 
@@ -346,9 +342,6 @@ Higress 在抽象层上做了一个大胆的决定：**将“流量治理”与�
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：Higress网关路由配置
 def setup_higress_route():
@@ -373,9 +366,6 @@ def setup_higress_route():
 # 说明：这个示例展示了如何使用Higress配置基本的路由规则，
 # 将/api/v1/开头的请求转发到service-a服务，并启用限流和认证插件
 ```
-
-
-
 
 ```python
 # 示例2：Higress插件开发
@@ -408,9 +398,6 @@ def custom_auth_plugin():
 # 实现基于JWT的认证功能，验证失败返回401状态码
 ```
 
-
-
-
 ```python
 # 示例3：Higress流量管理
 def traffic_splitting():
@@ -440,10 +427,8 @@ def traffic_splitting():
 # 将带有x-canary头的请求或10%的随机流量引导到新版本服务
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：阿里巴巴内部电商业务
 
@@ -467,8 +452,6 @@ def traffic_splitting():
 
 ---
 
-
-
 ### 2：某跨国金融科技公司
 
  2：某跨国金融科技公司
@@ -490,8 +473,6 @@ def traffic_splitting():
 - 安全事件响应时间从小时级降至分钟级。
 
 ---
-
-
 
 ### 3：某在线教育平台
 
@@ -710,7 +691,6 @@ Higress 能够无缝对接主流服务注册中心（如 Nacos, Consul, ZooKeepe
 - 它支持 WASM (WebAssembly) 技术，允许开发者使用 C/C++、Go、Rust 等多种语言编写高性能、热加载的扩展插件。
 - 架构上实现了控制面与数据面的分离，支持将 K8s 服务注册发现与 Nacos、Consul 等传统注册中心进行统一融合。
 
-
 ---
 ## 学习路径
 
@@ -815,7 +795,6 @@ Higress 能够无缝对接主流服务注册中心（如 Nacos, Consul, ZooKeepe
 ---
 ## 常见问题
 
-
 ### 1: Higress 是什么？它与 Nginx 或 Kong 等网关相比有什么区别？
 
 1: Higress 是什么？它与 Nginx 或 Kong 等网关相比有什么区别？
@@ -830,8 +809,6 @@ Higress 能够无缝对接主流服务注册中心（如 Nacos, Consul, ZooKeepe
 
 ---
 
-
-
 ### 2: Higress 是否兼容 Nginx 的配置？迁移成本高吗？
 
 2: Higress 是否兼容 Nginx 的配置？迁移成本高吗？
@@ -842,8 +819,6 @@ Higress 能够无缝对接主流服务注册中心（如 Nacos, Consul, ZooKeepe
 3.  **迁移成本**：对于标准的 HTTP/HTTPS 路由、反向代理和负载均衡配置，迁移成本较低。主要的工作量通常在于将定制的 Lua 模块或复杂的 Nginx 配置逻辑转换为 Higress 的原生插件或 Wasm 插件。
 
 ---
-
-
 
 ### 3: Higress 如何处理插件扩展？是否支持热加载？
 
@@ -856,8 +831,6 @@ Higress 能够无缝对接主流服务注册中心（如 Nacos, Consul, ZooKeepe
 
 ---
 
-
-
 ### 4: 在高并发场景下，Higress 的性能表现如何？
 
 4: 在高并发场景下，Higress 的性能表现如何？
@@ -868,8 +841,6 @@ Higress 能够无缝对接主流服务注册中心（如 Nacos, Consul, ZooKeepe
 3.  **资源消耗**：得益于 Envoy 的高效内存管理，Higress 在处理大量并发连接时，内存和 CPU 的占用率相对平稳。
 
 ---
-
-
 
 ### 5: Higress 支持哪些服务发现机制？如何对接 Kubernetes 或 Nacos？
 
@@ -883,29 +854,11 @@ Higress 能够无缝对接主流服务注册中心（如 Nacos, Consul, ZooKeepe
 
 ---
 
-
-
 ### 6: Higress 是否支持全链路灰度发布（金丝雀发布）？
 
 6: Higress 是否支持全链路灰度发布（金丝雀发布）？
 
 **A**: 是的
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 快速部署与路由验证
-
-### 假设你有一个运行在 `localhost:8080` 的后端服务（例如一个简单的 Python Flask 或 Node.js 应用）。请编写一个 Higress 的 Ingress 配置文件，将访问网关 `/hello` 路径的流量转发到该后端服务，并验证请求头中是否包含特定的 `Host` 字段。
-
-### 提示**: 参考 Higress 官方文档中的 "Ingress" 或 "Gateway API" 配置章节。你需要定义一个 `Ingress` 资源，并在 `spec.rules` 中配置 `http.paths`。注意 `backend.service` 的名称和端口需要与你的本地服务对应（如果是在本地 Docker 环境测试，可能需要使用 `ExternalName` Service 或特定的 hostAlias）。
-
----
 ## 实践建议
 
 以下是针对 Higress（阿里云开源的 AI Native API 网关）的 6 条实践建议，涵盖了从流量接入、模型管理到生产环境运维的各个关键环节：
@@ -948,7 +901,6 @@ Higress 能够无缝对接主流服务注册中心（如 Nacos, Consul, ZooKeepe
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

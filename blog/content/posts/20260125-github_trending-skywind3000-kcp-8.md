@@ -35,8 +35,6 @@ Relevant source files
   * [README.en.md](https://github.com/skywind3000/kcp/blob/f4f3a89c/README.en.md)
   * [README.md](https://github.com/skywind3000/kcp/blob/f4f3a89c/README.md)
 
-
-
 KCP is a fast and reliable ARQ (Automatic Repeat reQuest) protocol that trades 10-20% additional bandwidth for 30-40% lower average latency and 3x lower maximum latency compared to TCP. It is designed for real-time applications where responsiveness is more critical than bandwidth efficiency.
 
 This page introduces KCP's purpose, design philosophy, and key characteristics. For detailed protocol mechanisms, see [Protocol Fundamentals](/skywind3000/kcp/1.1-protocol-fundamentals). For specific features, see [Key Features](/skywind3000/kcp/1.2-key-features). For API documentation, see [API Reference](/skywind3000/kcp/2-api-reference).
@@ -51,15 +49,12 @@ KCP is implemented as a **pure algorithm** with no system calls or dependencies.
 
 Title: KCP's Transport-Agnostic Architecture
 
-
 KCP does not perform I/O operations. The user must:
 
   1. Provide an `output` callback function to send packets (set in `ikcpcb->output`)
   2. Call `ikcp_input()` when packets arrive from the network
   3. Call `ikcp_update()` periodically with the current time in milliseconds
   4. Implement the underlying transport layer (typically UDP)
-
-
 
 This design allows KCP to run on any platform and integrate with any event loop or networking framework.
 
@@ -91,8 +86,6 @@ KCP achieves lower latency through:
   * Hybrid UNA+ACK acknowledgment system
   * Optional non-yielding flow control
 
-
-
 Sources: [README.md26-52](https://github.com/skywind3000/kcp/blob/f4f3a89c/README.md#L26-L52) [README.en.md25-66](https://github.com/skywind3000/kcp/blob/f4f3a89c/README.en.md#L25-L66)
 
 ## When to Use KCP
@@ -108,8 +101,6 @@ KCP is designed for real-time applications where low latency is critical:
   * **Live streaming** : Interactive broadcast with minimal delay
   * **Financial trading** : Time-sensitive data transmission
 
-
-
 ### When NOT to Use KCP
 
 KCP may not be appropriate for:
@@ -119,8 +110,6 @@ KCP may not be appropriate for:
   * **Shared networks with strict fairness requirements** : KCP's aggressive retransmission can use more bandwidth
   * **Battery-constrained devices** : More frequent retransmissions increase power usage
 
-
-
 ### Network Conditions
 
 KCP excels in challenging network conditions:
@@ -129,8 +118,6 @@ KCP excels in challenging network conditions:
   * Variable latency (jitter)
   * Network congestion
 
-
-
 In ideal network conditions (0% loss, stable latency), KCP and TCP perform similarly. The benefits become apparent under realistic Internet conditions.
 
 Sources: [README.md19-213](https://github.com/skywind3000/kcp/blob/f4f3a89c/README.md#L19-L213) [README.en.md18-234](https://github.com/skywind3000/kcp/blob/f4f3a89c/README.en.md#L18-L234)
@@ -138,7 +125,6 @@ Sources: [README.md19-213](https://github.com/skywind3000/kcp/blob/f4f3a89c/READ
 ## Core Architecture
 
 Title: KCP Core Data Structures and Queue System
-
 
 ### Key Structures
 
@@ -152,15 +138,11 @@ Title: KCP Core Data Structures and Queue System
   * Timing: `rx_srtt`, `rx_rttval`, `rx_rto`, `rx_minrto`
   * `output`: Callback function pointer for sending packets
 
-
-
 **`IKCPSEG`** ([ikcp.h239-255](https://github.com/skywind3000/kcp/blob/f4f3a89c/ikcp.h#L239-L255)): Represents a protocol segment. Contains:
 
   * Header: `conv`, `cmd`, `frg`, `wnd`, `ts`, `sn`, `una`, `len`
   * Retransmission state: `resendts`, `rto`, `fastack`, `xmit`
   * Payload: `data` array
-
-
 
 **Queue System** : Four intrusive linked lists (`IQUEUEHEAD`) manage packet flow:
 
@@ -169,14 +151,11 @@ Title: KCP Core Data Structures and Queue System
   3. **`rcv_buf`** : Received out-of-order segments awaiting reordering
   4. **`rcv_queue`** : In-order segments ready for the application to read
 
-
-
 Sources: [ikcp.h239-340](https://github.com/skywind3000/kcp/blob/f4f3a89c/ikcp.h#L239-L340) [ikcp.c1-1115](https://github.com/skywind3000/kcp/blob/f4f3a89c/ikcp.c#L1-L1115)
 
 ## Data Flow Through KCP
 
 Title: Complete Packet Lifecycle Through KCP Functions
-
 
 ### Send Path
 
@@ -191,9 +170,6 @@ Title: Complete Packet Lifecycle Through KCP Functions
      * Implements fast retransmit (when `fastack >= resend`)
      * Calls `output()` callback to send packets
   4. **`output()`** callback: User-provided function that sends the packet over UDP or other transport.
-
-
-
 
 ### Receive Path
 
@@ -436,31 +412,6 @@ KCP 协议头部包含 24 字节，比 TCP 的 20 字节略大，但携带了更
 ---
 ## 💻 实用代码示例
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 ## ⚖️ 与同类方案对比
 
@@ -644,7 +595,6 @@ KCP默认每收到一个数据包都会立即回复ACK，但在高丢包网络�
 - 📦 **协议轻量与高效**：基于 UDP 封装，头部开销极小且支持无连接的传输模式，相比 TCP 更节省服务器资源与带宽成本。
 - 🌐 **跨平台与语言无关**：核心协议简洁，已被移植至 C, Go, Python, Java, JavaScript 等多种语言，具备极高的通用性。
 
-
 ---
 ## 🗺️ 循序渐进的学习路径
 
@@ -740,7 +690,6 @@ KCP默认每收到一个数据包都会立即回复ACK，但在高丢包网络�
 ---
 ## ❓ 常见问题解答
 
-
 ### 1: KCP 协议是什么？它与 TCP 有什么区别？
 
 1: KCP 协议是什么？它与 TCP 有什么区别？
@@ -752,8 +701,6 @@ KCP默认每收到一个数据包都会立即回复ACK，但在高丢包网络�
 *   **KCP**：追求**低延迟**。它通过牺牲一定的带宽（发送冗余数据）来换取更快的响应速度。KCP 将往返延迟（RTT）降低了 30%-40%，且最大延迟减少了一倍，非常适合实时游戏、音视频通话和即时通讯场景。
 
 ---
-
-
 
 ### 2: KCP 是如何做到比 TCP 更快的？
 
@@ -767,8 +714,6 @@ KCP默认每收到一个数据包都会立即回复ACK，但在高丢包网络�
 4.  **非延迟 ACK**：TCP 为了合并 ACK 通常会延迟发送；KCP 要求接收方立即发送 ACK，确保发送方能迅速感知状态。
 
 ---
-
-
 
 ### 3: 在什么场景下应该使用 KCP 而不是 TCP 或 UDP？
 
@@ -788,8 +733,6 @@ KCP默认每收到一个数据包都会立即回复ACK，但在高丢包网络�
 
 ---
 
-
-
 ### 4: KCP 既然这么好用，为什么没有被广泛用于取代 TCP？
 
 4: KCP 既然这么好用，为什么没有被广泛用于取代 TCP？
@@ -801,8 +744,6 @@ KCP默认每收到一个数据包都会立即回复ACK，但在高丢包网络�
 3.  **生态兼容性**：全球互联网基础设施（路由器、防火墙、运营商）均针对 TCP 进行了深度优化，UDP 端口在某些网络环境下可能被限速或阻断。
 
 ---
-
-
 
 ### 5: 如何在项目中集成 KCP？支持哪些语言？
 
@@ -816,8 +757,6 @@ KCP默认每收到一个数据包都会立即回复ACK，但在高丢包网络�
 
 ---
 
-
-
 ### 6: 使用 KCP 时有哪些关键的配置参数？
 
 6: 使用 KCP 时有哪些关键的配置参数？
@@ -825,22 +764,6 @@ KCP默认每收到一个数据包都会立即回复ACK，但在高丢包网络�
 **A**: KCP 提供了丰富的 `set` 接口来调整性能，最关键的参数包括：
 
 1.  **`nodelay`**：是否启用 `nodelay` 模式
-
----
-## 🎯 挑战与思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**:
-
-### KCP 协议设计了一种独特的 RTO (Retransmission TimeOut) 计算，而非像 TCP 那样主要依赖 RTT (Round Trip Time) 的平滑值。请阅读源码中关于 `ikcp_update` 和 `ikcp_flush` 的逻辑，回答：当网络突然发生拥塞导致丢包时，KCP 相比传统的 TCP 算法，能更快地察觉到丢包并重传的关键机制是什么？这给低延迟传输带来了什么具体优势？
-
-### 提示**:
-
----
 ## 💡 实践建议
 
 针对 **skywind3000/kcp** 这个仓库，KCP 是一个著名的快速 ARQ 协议实现，它通过牺牲一定的带宽来换取极低的延迟。以下是 5-7 条针对实际开发场景的实践建议：

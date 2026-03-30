@@ -43,8 +43,6 @@ Relevant source files
   * [channel/wechat/wechat_channel.py](https://github.com/zhayujie/chatgpt-on-wechat/blob/3db5e70a/channel/wechat/wechat_channel.py)
   * [config-template.json](https://github.com/zhayujie/chatgpt-on-wechat/blob/3db5e70a/config-template.json)
 
-
-
 This document provides a comprehensive introduction to the chatgpt-on-wechat (CoW) system - an intelligent conversational bot framework that integrates large language models with various messaging platforms. The system allows users to interact with AI models like GPT-4o, Claude, Gemini, and others through messaging platforms including WeChat, DingTalk, Feishu, and more.
 
 For specific deployment instructions, see [Deployment](/zhayujie/chatgpt-on-wechat/8-deployment), and for configuration details, see [Configuration](/zhayujie/chatgpt-on-wechat/7-configuration).
@@ -58,8 +56,6 @@ The chatgpt-on-wechat system serves as a flexible bridge between messaging platf
   3. Extensibility through a plugin architecture
   4. Integration with knowledge bases for domain-specific applications
 
-
-
 The system supports both personal and enterprise use cases, from simple chatbots to complex AI assistants with specialized knowledge.
 
 Sources: [README.md9-20](https://github.com/zhayujie/chatgpt-on-wechat/blob/3db5e70a/README.md#L9-L20)
@@ -68,7 +64,6 @@ Sources: [README.md9-20](https://github.com/zhayujie/chatgpt-on-wechat/blob/3db5
 
 The system follows a modular architecture with several key components working together to process messages, generate responses, and manage the flow of information.
 
-
 **Core Components Diagram**
 
 Sources: [app.py28-41](https://github.com/zhayujie/chatgpt-on-wechat/blob/3db5e70a/app.py#L28-L41) [channel/channel_factory.py8-51](https://github.com/zhayujie/chatgpt-on-wechat/blob/3db5e70a/channel/channel_factory.py#L8-L51)
@@ -76,7 +71,6 @@ Sources: [app.py28-41](https://github.com/zhayujie/chatgpt-on-wechat/blob/3db5e7
 ## Message Flow
 
 Messages flow through the system following a consistent pattern, with plugins having the opportunity to intercept and handle messages before they reach the default processing path.
-
 
 **Message Processing Flow Diagram**
 
@@ -105,7 +99,6 @@ Sources: [README.md13-20](https://github.com/zhayujie/chatgpt-on-wechat/blob/3db
 
 The system supports multiple messaging platforms through its channel architecture. Each channel handles the specific communication protocol of its platform.
 
-
 **Channel Hierarchy Diagram**
 
 Sources: [channel/channel_factory.py8-51](https://github.com/zhayujie/chatgpt-on-wechat/blob/3db5e70a/channel/channel_factory.py#L8-L51) [channel/wechat/wechat_channel.py109-115](https://github.com/zhayujie/chatgpt-on-wechat/blob/3db5e70a/channel/wechat/wechat_channel.py#L109-L115) [channel/wechat/wcf_channel.py26-38](https://github.com/zhayujie/chatgpt-on-wechat/blob/3db5e70a/channel/wechat/wcf_channel.py#L26-L38)
@@ -133,7 +126,6 @@ Sources: [README.md9](https://github.com/zhayujie/chatgpt-on-wechat/blob/3db5e70
 
 The system features a robust plugin architecture that allows for extending functionality:
 
-
 **Plugin System Diagram**
 
 Sources: [app.py32](https://github.com/zhayujie/chatgpt-on-wechat/blob/3db5e70a/app.py#L32-L32) [README.md19](https://github.com/zhayujie/chatgpt-on-wechat/blob/3db5e70a/README.md#L19-L19)
@@ -158,7 +150,6 @@ Sources: [config-template.json1-37](https://github.com/zhayujie/chatgpt-on-wecha
 ## Application Entry Point
 
 The system starts from `app.py`, which initializes the configuration, creates and starts the appropriate channel, and loads plugins:
-
 
 **Application Startup Diagram**
 
@@ -416,9 +407,6 @@ CoW 在抽象层上做了一个极其明智的决策：**将 IM 协议的复杂�
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：自动回复功能
 def auto_reply(message):
@@ -438,9 +426,6 @@ def auto_reply(message):
 # 测试自动回复
 print(auto_reply("你好"))  # 输出：你好！我是ChatGPT机器人，有什么可以帮助你的吗？
 ```
-
-
-
 
 ```python
 # 示例2：消息过滤功能
@@ -463,9 +448,6 @@ def filter_message(message):
 print(filter_message("这是一条正常消息"))  # 输出：True
 print(filter_message("这是一条广告消息"))   # 输出：False
 ```
-
-
-
 
 ```python
 # 示例3：用户命令处理
@@ -494,10 +476,8 @@ print(handle_command("status"))   # 输出：机器人运行正常
 print(handle_command("unknown"))  # 输出：未知命令，请输入help查看可用命令
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某跨境电商团队的内部知识库助手
 
@@ -517,8 +497,6 @@ print(handle_command("unknown"))  # 输出：未知命令，请输入help查看�
 
 ---
 
-
-
 ### 2：个人开发者的“英语作文批改”私教服务
 
  2：个人开发者的“英语作文批改”私教服务
@@ -536,8 +514,6 @@ print(handle_command("unknown"))  # 输出：未知命令，请输入help查看�
 实现了服务的 24 小时自动化交付。开发者无需实时在线，机器人即可自动完成批改并回复。该模式下，开发者能够同时服务的客户数量翻了 5 倍，且因反馈迅速，用户付费转化率得到了显著提升。
 
 ---
-
-
 
 ### 3：中小科技公司的代码审查辅助机器人
 
@@ -808,7 +784,6 @@ ChatGPT-on-Wechat 项目使用 SQLAlchemy 作为 ORM 框架，默认配置可能
 - 持续更新维护，社区活跃，修复了常见问题并优化了性能。
 - 开源且文档完善，适合开发者二次开发或学习相关技术。
 
-
 ---
 ## 学习路径
 
@@ -914,7 +889,6 @@ ChatGPT-on-Wechat 项目使用 SQLAlchemy 作为 ORM 框架，默认配置可能
 ---
 ## 常见问题
 
-
 ### 1: 什么是 zhayujie / chatgpt-on-wechat 项目？
 
 1: 什么是 zhayujie / chatgpt-on-wechat 项目？
@@ -922,8 +896,6 @@ ChatGPT-on-Wechat 项目使用 SQLAlchemy 作为 ORM 框架，默认配置可能
 **A**: 该项目是一个基于大语言模型（如 ChatGPT、微软 Azure、GPT4 等）的微信机器人项目。它支持多种 AI 模型接入，并使用 Python 编写。该项目旨在帮助用户通过微信接口与 AI 进行交互，实现自动回复、上下文对话等功能。它是 GitHub 上非常热门的开源项目之一，适用于个人微信或企业微信的自动化场景。
 
 ---
-
-
 
 ### 2: 部署该项目需要哪些技术基础和环境？
 
@@ -938,8 +910,6 @@ ChatGPT-on-Wechat 项目使用 SQLAlchemy 作为 ORM 框架，默认配置可能
 
 ---
 
-
-
 ### 3: 如何配置 OpenAI API Key？
 
 3: 如何配置 OpenAI API Key？
@@ -952,8 +922,6 @@ ChatGPT-on-Wechat 项目使用 SQLAlchemy 作为 ORM 框架，默认配置可能
 
 ---
 
-
-
 ### 4: 使用微信机器人会导致封号吗？
 
 4: 使用微信机器人会导致封号吗？
@@ -965,8 +933,6 @@ ChatGPT-on-Wechat 项目使用 SQLAlchemy 作为 ORM 框架，默认配置可能
 
 ---
 
-
-
 ### 5: 如何支持多模型接入（如 Azure, GPT4, 国内模型）？
 
 5: 如何支持多模型接入（如 Azure, GPT4, 国内模型）？
@@ -977,8 +943,6 @@ ChatGPT-on-Wechat 项目使用 SQLAlchemy 作为 ORM 框架，默认配置可能
 3. **国内模型**：对于国内的大模型（如文心一言、通义千问等），项目通常提供了适配器或特定的接入方式，需参考项目文档中的具体说明进行 `channel` 配置。
 
 ---
-
-
 
 ### 6: 项目部署后无法回复消息或报错怎么办？
 
@@ -993,8 +957,6 @@ ChatGPT-on-Wechat 项目使用 SQLAlchemy 作为 ORM 框架，默认配置可能
 
 ---
 
-
-
 ### 7: 如何使用 Docker 快速部署该项目？
 
 7: 如何使用 Docker 快速部署该项目？
@@ -1005,22 +967,6 @@ ChatGPT-on-Wechat 项目使用 SQLAlchemy 作为 ORM 框架，默认配置可能
 3. **构建镜像**：在项目根目录下运行 `docker-compose build` 命令构建镜像。
 4. **启动服务**：运行 `docker-compose up -d` 启动容器。
 5. **查看状态**：使用 `docker logs <container_id>` 查看运行日志，确认服务正常启动并扫描二维码登录微信。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 部署基础环境与依赖排查
-
-### 在尝试运行该项目时，开发者常遇到因 Python 版本不兼容或依赖库缺失导致的报错。请基于项目文档，列出该项目所需的最低 Python 版本要求，并说明如何使用 `requirements.txt` 文件一次性安装所有依赖。
-
-### 提示**: 关注项目根目录下的配置文件，以及 Python 包管理工具 pip 的常用命令参数。
-
----
 ## 实践建议
 
 ### 1. Token 预算与成本控制
@@ -1070,7 +1016,6 @@ ChatGPT-on-Wechat 项目使用 SQLAlchemy 作为 ORM 框架，默认配置可能
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

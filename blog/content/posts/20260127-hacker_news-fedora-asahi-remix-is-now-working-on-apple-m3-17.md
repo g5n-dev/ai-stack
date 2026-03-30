@@ -114,37 +114,8 @@ Asahi Linux 项目团队宣布，经过对 M3 芯片架构（包括 CPU、GPU、
 ---
 ## 💻 代码示例
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 ## 📚 案例研究
-
 
 ### 1：Alia (Web 性能测试基准开发团队)
 
@@ -160,8 +131,6 @@ Asahi Linux 项目团队宣布，经过对 M3 芯片架构（包括 CPU、GPU、
 
 ---
 
-
-
 ### 2：嵌入式 Linux 交叉编译环境
 
  2：嵌入式 Linux 交叉编译环境
@@ -175,8 +144,6 @@ Asahi Linux 项目团队宣布，经过对 M3 芯片架构（包括 CPU、GPU、
 **效果**: 团队消除了环境差异导致的 Bug，固件编译迭代速度比此前在 x86 远程服务器上编译提升了 40%。同时，M3 设备优异的能效比让开发人员在长时间编译任务中拥有了更长的电池续航。 💻🔋
 
 ---
-
-
 
 ### 3：Hector (开源计算机视觉库维护者)
 
@@ -285,7 +252,6 @@ Asahi Linux 项目团队宣布，经过对 M3 芯片架构（包括 CPU、GPU、
 ---
 ## ❓ 常见问题
 
-
 ### 1: Fedora Asahi Remix 是什么？它支持 Apple M3 芯片意味着什么？
 
 1: Fedora Asahi Remix 是什么？它支持 Apple M3 芯片意味着什么？
@@ -295,8 +261,6 @@ Asahi Linux 项目团队宣布，经过对 M3 芯片架构（包括 CPU、GPU、
 宣布支持 Apple M3 意味着开发者已经成功攻克了 M3 芯片（包括 M3、M3 Pro 和 M3 Max）的硬件底层驱动难题。现在，用户可以在配备最新 M3 芯片的 MacBook Air、MacBook Pro 上安装并运行 Linux 系统，且基本功能（如显示、输入、Wi-Fi）可正常使用。这标志着该项目在硬件兼容性上保持了与苹果硬件更新的同步。
 
 ---
-
-
 
 ### 2: 目前 M3 版本的系统稳定性如何？适合作为主力机使用吗？
 
@@ -313,8 +277,6 @@ Asahi Linux 项目团队宣布，经过对 M3 芯片架构（包括 CPU、GPU、
 
 ---
 
-
-
 ### 3: 安装 Fedora Asahi Remix 会影响 macOS 的使用吗？可以双系统吗？
 
 3: 安装 Fedora Asahi Remix 会影响 macOS 的使用吗？可以双系统吗？
@@ -326,8 +288,6 @@ Asahi Linux 项目团队宣布，经过对 M3 芯片架构（包括 CPU、GPU、
 ⚠️ **注意**：在安装任何类 Linux 系统到 Apple Silicon 之前，**必须**完整备份你的数据，因为分区操作具有不可逆的风险，且可能需要先降级或重装 macOS 才能完成某些底层固件的配置。
 
 ---
-
-
 
 ### 4: 为什么在 Apple Silicon 上运行 Linux 这么难？Asashi 是怎么做到的？
 
@@ -343,8 +303,6 @@ Asahi Linux 项目团队宣布，经过对 M3 芯片架构（包括 CPU、GPU、
 
 ---
 
-
-
 ### 5: 支持 M3 芯片后，有哪些功能是受限的或者无法使用的？
 
 5: 支持 M3 芯片后，有哪些功能是受限的或者无法使用的？
@@ -357,29 +315,11 @@ Asahi Linux 项目团队宣布，经过对 M3 芯片架构（包括 CPU、GPU、
 
 ---
 
-
-
 ### 6: 我该如何安装 Fedora Asahi Remix？
 
 6: 我该如何安装 Fedora Asahi Remix？
 
 **A**: 安装过程是完全自动化的，但必须在 macOS 环境下进行
-
----
-## 🎯 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**:
-
-### Fedora Asahi Remix 成功在 Apple M3 上运行，其核心基础是 Asahi Linux 项目对 Apple Silicon 架构的长期逆向工程。请列出 Apple Silicon 芯片（如 M1/M2/M3）与传统的 x86_64 架构（如 Intel/AMD 处理器）在指令集上的两个主要区别，并说明这对操作系统移植有何影响？
-
-### 提示**:
-
----
 ## 🔗 引用
 
 - **原文链接**: [https://bsky.app/profile/did:plc:okydh7e54e2nok65kjxdklvd/post/3mdd55paffk2o](https://bsky.app/profile/did:plc:okydh7e54e2nok65kjxdklvd/post/3mdd55paffk2o)

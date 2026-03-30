@@ -65,9 +65,6 @@ scenarios: ["AI/ML项目", "大语言模型"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：使用Ghidra MCP Server自动化分析二进制文件中的可疑函数
 import requests
@@ -114,9 +111,6 @@ def analyze_suspicious_function(binary_path, function_name):
 # analyze_suspicious_function("malware.exe", "suspicious_encrypt")
 ```
 
-
-
-
 ```python
 # 示例2：批量提取二进制文件中的所有字符串常量
 import requests
@@ -156,9 +150,6 @@ def extract_all_strings(binary_path):
 # 使用示例
 # extract_all_strings("target_app.exe")
 ```
-
-
-
 
 ```python
 # 示例3：自动化识别二进制文件中的安全漏洞模式
@@ -212,10 +203,8 @@ def detect_vulnerability_patterns(binary_path):
 # detect_vulnerability_patterns("legacy_app.exe")
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某大型互联网安全公司 - 恶意软件样本自动化分析
 
@@ -235,8 +224,6 @@ def detect_vulnerability_patterns(binary_path):
 分析团队的效率提升了约 40%。初级分析师现在可以在 AI 的辅助下，在几分钟内完成原本需要数小时才能完成的初步代码审计。AI 能够处理 80% 的常规性代码检查工作，使高级分析师能够腾出精力专注于 20% 的高级 APT 攻击样本，显著缩短了威胁情报的产出周期。
 
 ---
-
-
 
 ### 2：某遗留软件维护企业 - 未知二进制协议解析
 
@@ -350,7 +337,6 @@ AI 自动识别了数据包解析的循环逻辑，并利用 Ghidra 的类型分
 ---
 ## 常见问题
 
-
 ### 1: 什么是 Ghidra MCP Server，它与直接使用 Ghidra 有什么区别？
 
 1: 什么是 Ghidra MCP Server，它与直接使用 Ghidra 有什么区别？
@@ -359,8 +345,6 @@ AI 自动识别了数据包解析的循环逻辑，并利用 Ghidra 的类型分
 
 ---
 
-
-
 ### 2: 该项目支持哪些 AI 客户端，如何配置？
 
 2: 该项目支持哪些 AI 客户端，如何配置？
@@ -368,8 +352,6 @@ AI 自动识别了数据包解析的循环逻辑，并利用 Ghidra 的类型分
 **A**: 由于该项目实现了 Model Context Protocol (MCP) 标准，理论上任何支持 MCP 协议的 AI 客户端都可以使用它。目前主要支持的是 Anthropic 的 Claude（特别是 Claude Desktop）以及基于 MCP 的其他 AI 开发环境。配置通常涉及在客户端的配置文件中添加该 MCP Server 的命令路径、启动参数以及必要的环境变量（如 Ghidra 的安装路径）。具体的配置步骤通常可以在项目的 README 文件中找到。
 
 ---
-
-
 
 ### 3: "110 tools" 具体指的是哪些功能？
 
@@ -384,8 +366,6 @@ AI 自动识别了数据包解析的循环逻辑，并利用 Ghidra 的类型分
 
 ---
 
-
-
 ### 4: 在安装和运行 Ghidra MCP Server 时，有哪些常见的依赖或环境问题？
 
 4: 在安装和运行 Ghidra MCP Server 时，有哪些常见的依赖或环境问题？
@@ -397,8 +377,6 @@ AI 自动识别了数据包解析的循环逻辑，并利用 Ghidra 的类型分
 
 ---
 
-
-
 ### 5: 使用 AI 辅助逆向工程是否会泄露代码隐私或敏感数据？
 
 5: 使用 AI 辅助逆向工程是否会泄露代码隐私或敏感数据？
@@ -408,8 +386,6 @@ AI 自动识别了数据包解析的循环逻辑，并利用 Ghidra 的类型分
 2. **本地部署**：为了解决隐私问题，建议结合使用本地部署的开源大模型（如 Ollama 运行的 Llama 3），这样所有数据都在本地处理，不会外泄。
 
 ---
-
-
 
 ### 6: AI 在分析大型二进制文件时是否会遇到上下文限制？
 
@@ -421,8 +397,6 @@ AI 自动识别了数据包解析的循环逻辑，并利用 Ghidra 的类型分
 
 ---
 
-
-
 ### 7: 如果 AI 给出的分析建议是错误的，该如何验证？
 
 7: 如果 AI 给出的分析建议是错误的，该如何验证？
@@ -430,22 +404,6 @@ AI 自动识别了数据包解析的循环逻辑，并利用 Ghidra 的类型分
 **A**: AI 在逆向工程中主要起辅助作用，其输出（如对某个函数功能的推测）可能存在幻觉或误判。
 1. **人工复核**：Ghidra MCP Server 最大的优势在于它连接了真实的 Ghidra。AI 的建议（例如“这个函数可能是解密密钥的”）应当被视为一种“高级索引”。用户必须在 Ghidra 图形界面中打开对应的函数，结合 AI 提供的线索，亲自查看反编译代码和汇编逻辑。
 2. **工具验证**：利用 Ghidra 内
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: 基础导航与函数枚举
-
-### 问题**: 假设你需要使用 Ghidra MCP Server 分析一个简单的二进制文件，该文件在运行时会打印 "Hello, World!"。请设计一个具体的 Prompt（提示词），指示 AI 通过 MCP 工具首先定位程序的入口点，然后列出所有被调用的函数名称。
-
-### 提示**: 你需要明确指定 AI 使用哪些特定的 MCP 工具（如 `get_functions` 或 `get_current_address`），并要求它以特定的格式（如 JSON 或列表）返回结果，以便于后续阅读。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://github.com/bethington/ghidra-mcp](https://github.com/bethington/ghidra-mcp)
@@ -454,7 +412,6 @@ AI 自动识别了数据包解析的循环逻辑，并利用 Ghidra 的类型分
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

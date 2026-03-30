@@ -82,9 +82,6 @@ scenarios: ["AI/ML项目"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：获取PR中AI生成的代码行
 def get_ai_generated_lines(pr_diff):
@@ -112,9 +109,6 @@ def get_ai_generated_lines(pr_diff):
 # 通过检测常见的AI生成标记（如"Copilot"或"ChatGPT"）来定位这些代码。
 ```
 
-
-
-
 ```python
 # 示例2：统计PR中AI代码贡献比例
 def calculate_ai_contribution_ratio(ai_lines, total_lines):
@@ -133,9 +127,6 @@ def calculate_ai_contribution_ratio(ai_lines, total_lines):
 # 说明：这个示例展示了如何计算PR中AI生成代码的占比，
 # 帮助开发者了解AI工具在代码贡献中的实际参与程度。
 ```
-
-
-
 
 ```python
 # 示例3：生成AI代码贡献报告
@@ -166,10 +157,8 @@ def generate_ai_contribution_report(pr_data):
 # 包含PR基本信息、AI生成代码的文件分布和总体贡献比例。
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某中型金融科技初创公司
 
@@ -188,8 +177,6 @@ def generate_ai_contribution_report(pr_data):
 代码审查的效率提升了约 30%。审查者能根据插件提示，对 AI 生成的代码采取“零信任”策略，重点检查逻辑漏洞；同时，开发者意识到 AI 代码会被标记，在使用 AI 辅助时变得更加谨慎，主动承担起“复核人”的责任，显著减少了低质量代码的合并。
 
 ---
-
-
 
 ### 2：某大型跨国企业内部开源平台团队
 
@@ -335,7 +322,6 @@ def generate_ai_contribution_report(pr_data):
 ---
 ## 常见问题
 
-
 ### 1: 这个 GitHub 浏览器插件的主要功能是什么？
 
 1: 这个 GitHub 浏览器插件的主要功能是什么？
@@ -343,8 +329,6 @@ def generate_ai_contribution_report(pr_data):
 **A**: 该插件的核心功能是在 GitHub 的 Pull Request（合并请求）页面中，利用人工智能技术自动分析代码变更，并识别（"指责"或归因）具体的代码贡献者。它旨在解决多人协作时，当某段代码出现问题或需要审查时，难以快速确定“是谁写了这段代码”或“谁应该对这段逻辑负责”的痛点。通过 AI 分析，它比单纯的 Git Blame 命令更能理解代码的语义和上下文，从而提供更准确的作者归属信息。
 
 ---
-
-
 
 ### 2: 插件是如何利用 AI 来判定代码归属的？
 
@@ -354,8 +338,6 @@ def generate_ai_contribution_report(pr_data):
 
 ---
 
-
-
 ### 3: 该插件支持哪些浏览器以及如何安装？
 
 3: 该插件支持哪些浏览器以及如何安装？
@@ -363,8 +345,6 @@ def generate_ai_contribution_report(pr_data):
 **A**: 虽然具体的插件名称可能因开发者而异，但此类工具通常支持主流的 Chromium 内核浏览器（如 Google Chrome, Microsoft Edge, Brave 等）以及 Firefox。安装方式通常是通过浏览器的扩展商店（如 Chrome Web Store）进行搜索并添加。如果该工具是开源项目，用户也可能需要从 GitHub 仓库发布页面下载源码并自行加载（Load Unpacked）到浏览器中进行使用。
 
 ---
-
-
 
 ### 4: 使用该插件是否需要配置 API 密钥或付费？
 
@@ -374,8 +354,6 @@ def generate_ai_contribution_report(pr_data):
 
 ---
 
-
-
 ### 5: 它与 GitHub 原生的 "Blame" 功能有何区别？
 
 5: 它与 GitHub 原生的 "Blame" 功能有何区别？
@@ -383,8 +361,6 @@ def generate_ai_contribution_report(pr_data):
 **A**: GitHub 原生的 "Blame" 功能显示的是每一行代码最后一次被修改的提交记录和作者。这在代码经过多次迭代、重构或仅进行过微小的格式修正时，往往无法反映代码的原始作者意图。该 AI 插件的优势在于其“语义理解”能力，它可以忽略非实质性的修改（如变量重命名、空格调整），通过 AI 模型综合判断代码逻辑的真正来源。简而言之，Git Blame 告诉你“谁最后碰了这行字”，而该插件试图告诉你“谁真正写了这段逻辑”。
 
 ---
-
-
 
 ### 6: 插件是否会泄露我的私有代码或仓库数据？
 
@@ -394,8 +370,6 @@ def generate_ai_contribution_report(pr_data):
 
 ---
 
-
-
 ### 7: 为什么有时候 AI 的归因结果是不准确的？
 
 7: 为什么有时候 AI 的归因结果是不准确的？
@@ -404,22 +378,6 @@ def generate_ai_contribution_report(pr_data):
 1. **上下文不足**：如果 PR 中的代码片段非常短，或者缺少足够的导入和依赖信息，AI 难以理解其意图。
 2. **复杂的重构历史**：如果代码经过了多次彻底的重写，原始逻辑可能已经面目全非，AI 可能难以追溯到最初的作者。
 3. **模型限制**：AI 模型本身可能会产生“幻觉”，或者在处理极其冷门或混乱的代码风格时出现误判。因此，该插件应被视为辅助审查工具，而非法律或人事上的绝对依据。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 设计一个基础的数据抓取逻辑。在 GitHub Pull Request 的文件变更视图中，如何通过 DOM 操作准确提取出当前页面显示的所有“新增代码行”及其对应的行号？
-
-### 提示**:
-
-### GitHub 的 diff 视图通常使用特定的 CSS 类来区分添加、删除和修改的代码行。请检查 `<tr>` 元素的 class 属性（例如包含 `added` 的类名），并注意行号通常位于独立的 `<td>` 单元格中。
-
----
 ## 引用
 
 - **原文链接**: [https://blog.rbby.dev/posts/github-ai-contribution-blame-for-pull-requests](https://blog.rbby.dev/posts/github-ai-contribution-blame-for-pull-requests)
@@ -428,7 +386,6 @@ def generate_ai_contribution_report(pr_data):
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

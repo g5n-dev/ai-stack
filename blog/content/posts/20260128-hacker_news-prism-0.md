@@ -120,26 +120,8 @@ external_url: https://openai.com/index/introducing-prism
 ---
 ## 💻 代码示例
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 ## 📚 案例研究
-
 
 ### 1：某大型跨国零售集团
 
@@ -157,8 +139,6 @@ external_url: https://openai.com/index/introducing-prism
 - 🔄 **业务敏捷性增强**：当底层表结构发生变化时，只需在 Prism 中更新一处定义，所有下游报表自动适配，无需逐个修改。
 
 ---
-
-
 
 ### 2：某高速成长的 B2B SaaS 独角兽
 
@@ -287,7 +267,6 @@ external_url: https://openai.com/index/introducing-prism
 ---
 ## ❓ 常见问题
 
-
 ### 1: 什么是 Prism？它在新闻行业中有什么作用？
 
 1: 什么是 Prism？它在新闻行业中有什么作用？
@@ -299,8 +278,6 @@ external_url: https://openai.com/index/introducing-prism
 虽然官方声称该计划主要用于针对外国目标的反恐情报收集，但由于服务器位于美国，它也涉及了大量美国国内用户的通信数据，这在新闻和隐私保护领域引发了巨大的争议。📰
 
 ---
-
-
 
 ### 2: Prism 计划是如何运作的？科技公司是主动配合的吗？
 
@@ -317,8 +294,6 @@ external_url: https://openai.com/index/introducing-prism
 
 ---
 
-
-
 ### 3: Prism 与 Hacker News 有什么关系？为什么我会在这里看到它？
 
 3: Prism 与 Hacker News 有什么关系？为什么我会在这里看到它？
@@ -334,8 +309,6 @@ Hacker News 是一家由创业孵化器 Y Combinator 运营的计算机科学新
 
 ---
 
-
-
 ### 4: Prism 计划是否合法？它是依据什么法律执行的？
 
 4: Prism 计划是否合法？它是依据什么法律执行的？
@@ -349,8 +322,6 @@ Hacker News 是一家由创业孵化器 Y Combinator 运营的计算机科学新
 
 ---
 
-
-
 ### 5: Prism 计划曝光后产生了什么长期影响？
 
 5: Prism 计划曝光后产生了什么长期影响？
@@ -359,22 +330,6 @@ Hacker News 是一家由创业孵化器 Y Combinator 运营的计算机科学新
 
 1.  **科技巨头的透明度改革**：为了挽回用户信任，Google、Facebook、Apple 和 Microsoft 等公司开始发布**透明度报告**，详细披露政府索取用户数据的次数，并开始大力加强端到端加密技术。
 2.  **加密技术的普及**：HTTPS（SSL/TLS）成为网站的标配。在此之前，许多网站默认使用不安全的 HTTP。同时，Signal、Telegram
-
----
-## 🎯 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**: 尝试构建一个最简单的 Prism 概念验证：实现一个函数 `extract_values`，输入是一个包含不同类型数据（如 `User` 对象、`SystemLog` 对象）的混合列表，输出仅包含所有对象中的 `created_at` 时间戳列表。
-
-### 提示**:
-
-### 不要为每种类型编写单独的提取逻辑。尝试定义一个 `TimestampExtractor` 接口，然后让 `User` 和 `SystemLog` 实现该接口。思考如何在运行时统一调用这些对象的方法，而不需要关心它们具体的类型。
-
----
 ## 🔗 引用
 
 - **原文链接**: [https://openai.com/index/introducing-prism](https://openai.com/index/introducing-prism)

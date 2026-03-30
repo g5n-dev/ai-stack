@@ -126,37 +126,8 @@ external_url: https://reasonablypolymorphic.com/blog/arrows-to-arrows
 ---
 ## 💻 代码示例
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 ## 📚 案例研究
-
 
 ### 1：医疗诊断AI系统（IBM Watson Health 类似场景）
 
@@ -177,8 +148,6 @@ external_url: https://reasonablypolymorphic.com/blog/arrows-to-arrows
 
 ---
 
-
-
 ### 2：企业级知识库智能搜索
 
  2：企业级知识库智能搜索
@@ -198,8 +167,6 @@ external_url: https://reasonablypolymorphic.com/blog/arrows-to-arrows
 - 用户自助解决率提升了 **25%**，显著降低了人工客服的压力。🚀
 
 ---
-
-
 
 ### 3：金融反欺诈交易网络分析
 
@@ -334,7 +301,6 @@ external_url: https://reasonablypolymorphic.com/blog/arrows-to-arrows
 ---
 ## ❓ 常见问题
 
-
 ### 1: "Arrows to Arrows, Categories to Queries" 这个标题具体是什么意思？它指的是什么技术或概念？
 
 1: "Arrows to Arrows, Categories to Queries" 这个标题具体是什么意思？它指的是什么技术或概念？
@@ -345,8 +311,6 @@ external_url: https://reasonablypolymorphic.com/blog/arrows-to-arrows
 *   **"Categories to Queries" (范畴到查询的转换)**：这指的是如何利用范畴论的数学框架来构建和优化**数据库查询语言**（如 SQL、GraphQL 或更高级的 Conjunctive Queries）。简单来说，就是将复杂的业务逻辑（范畴）映射成高效的数据库检索操作（查询）。
 
 ---
-
-
 
 ### 2: 为什么开发者需要关注范畴论？它对实际的工程代码有什么帮助？
 
@@ -360,8 +324,6 @@ external_url: https://reasonablypolymorphic.com/blog/arrows-to-arrows
 
 ---
 
-
-
 ### 3: 文中提到的 "Category Theory" (范畴论) 与 "Conjunctive Queries" (合取查询) 有什么具体联系？
 
 3: 文中提到的 "Category Theory" (范畴论) 与 "Conjunctive Queries" (合取查询) 有什么具体联系？
@@ -373,8 +335,6 @@ external_url: https://reasonablypolymorphic.com/blog/arrows-to-arrows
 
 ---
 
-
-
 ### 4: 学习这些概念会让我失业吗？AI 是否会自动处理这些底层逻辑？
 
 4: 学习这些概念会让我失业吗？AI 是否会自动处理这些底层逻辑？
@@ -385,8 +345,6 @@ external_url: https://reasonablypolymorphic.com/blog/arrows-to-arrows
 *   **更高的抽象层**：了解这些原理让你从“写代码的人”变成“架构设计者”。当工具越来越自动化，懂得底层原理（为什么这样查询更快？为什么这个架构是可组合的？）的人才将更具不可替代性。
 
 ---
-
-
 
 ### 5: 如果我想开始学习，应该从哪里入手？直接去读数学教科书吗？
 
@@ -402,29 +360,11 @@ external_url: https://reasonablypolymorphic.com/blog/arrows-to-arrows
 
 ---
 
-
-
 ### 6: 这个话题在 Hacker News 上为什么这么火？
 
 6: 这个话题在 Hacker News 上为什么这么火？
 
 **A**: Hacker News 的受众主要是资深工程师和计算机极客，这个话题
-
----
-## 🎯 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**: 试着在脑海中构建一个简单的类 SQL 查询场景（比如 `SELECT * FROM Users WHERE age > 18`）。请画出两个简单的“盒子”（对象），并用一个带有箭头的线条（态射/Morphism）将它们连接起来。思考一下：在这个关系图中，箭头代表的是“数据流向”还是“逻辑筛选条件”？
-
-### 提示**: 思考“查询”本质上是否就是一种从一个集合（全量数据）到另一个集合（子集）的映射。
-
-### 
-
----
 ## 🔗 引用
 
 - **原文链接**: [https://reasonablypolymorphic.com/blog/arrows-to-arrows](https://reasonablypolymorphic.com/blog/arrows-to-arrows)

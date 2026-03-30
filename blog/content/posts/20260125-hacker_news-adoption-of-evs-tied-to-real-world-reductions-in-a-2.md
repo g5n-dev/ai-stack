@@ -110,37 +110,8 @@ external_url: https://keck.usc.edu/news/adoption-of-electric-vehicles-tied-to-re
 ---
 ## 💻 代码示例
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 ## 📚 案例研究
-
 
 ### 1：美国加州“零排放汽车”计划
 
@@ -160,8 +131,6 @@ external_url: https://keck.usc.edu/news/adoption-of-electric-vehicles-tied-to-re
 
 ---
 
-
-
 ### 2：中国深圳“蓝天保卫战”与纯电动公交全覆盖
 
  2：中国深圳“蓝天保卫战”与纯电动公交全覆盖
@@ -179,8 +148,6 @@ external_url: https://keck.usc.edu/news/adoption-of-electric-vehicles-tied-to-re
 ✨ 深圳成为了全球首个公交车和出租车全面电动化的特大城市。实际监测数据显示，公共交通全面电动化后，深圳每年减少二氧化碳排放量超过135万吨，燃油消耗减少约15万吨。城市空气质量优良率（AQI）显著提升，不仅大幅降低了市中心区域的尾气排放，还显著降低了交通噪音，为市民创造了更宜居的城市环境。
 
 ---
-
-
 
 ### 3：英国伦敦优化充电网络与空气质量改善
 
@@ -290,7 +257,6 @@ external_url: https://keck.usc.edu/news/adoption-of-electric-vehicles-tied-to-re
 ---
 ## ❓ 常见问题
 
-
 ### 1: 🌫️ 这项研究的核心结论是什么？电动车真的能减少空气污染吗？
 
 1: 🌫️ 这项研究的核心结论是什么？电动车真的能减少空气污染吗？
@@ -300,8 +266,6 @@ external_url: https://keck.usc.edu/news/adoption-of-electric-vehicles-tied-to-re
 该研究通过分析真实世界的数据（而非仅依赖理论模型），证实了随着电动车（EV）渗透率的提高，当地的空气质量指标得到了显著改善。具体来说，研究监测了诸如 PM2.5、氮氧化物（NOx）等有害污染物的浓度，发现在电动车普及率较高的地区，这些污染物的排放量出现了明显下降。这有力地反驳了此前一些质疑声音（例如认为电动车只是将污染转移到了发电厂），表明尽管考虑到发电环节的排放，电动车在全生命周期内仍然能有效减少总体污染。
 
 ---
-
-
 
 ### 2: 📊 研究是如何量化“真实世界”的污染减少的？
 
@@ -313,8 +277,6 @@ external_url: https://keck.usc.edu/news/adoption-of-electric-vehicles-tied-to-re
 
 ---
 
-
-
 ### 3: ⚡ 这种污染减少的效果是否受到当地电网能源结构的影响？
 
 3: ⚡ 这种污染减少的效果是否受到当地电网能源结构的影响？
@@ -325,8 +287,6 @@ external_url: https://keck.usc.edu/news/adoption-of-electric-vehicles-tied-to-re
 
 ---
 
-
-
 ### 4: 🤧 这种污染减少对公共卫生有什么具体影响？
 
 4: 🤧 这种污染减少对公共卫生有什么具体影响？
@@ -336,8 +296,6 @@ external_url: https://keck.usc.edu/news/adoption-of-electric-vehicles-tied-to-re
 研究暗示，随着电动车带来的尾气排放减少，由空气污染引发的哮喘发作、支气管炎以及其他心血管疾病的发病率可能会随之下降。这意味着在电动车普及率高的社区，居民不仅能享受更好的空气质量，还能减少因空气污染导致的医疗支出和过早死亡，这是电动车社会效益中除降低碳排放外的一个重要组成部分。
 
 ---
-
-
 
 ### 5: 🚗 既然有污染减少的证据，为什么还有人质疑电动车的环保性？
 
@@ -352,8 +310,6 @@ external_url: https://keck.usc.edu/news/adoption-of-electric-vehicles-tied-to-re
 
 ---
 
-
-
 ### 6: 📈 这项研究结果对未来政策制定有什么启示？
 
 6: 📈 这项研究结果对未来政策制定有什么启示？
@@ -361,22 +317,6 @@ external_url: https://keck.usc.edu/news/adoption-of-electric-vehicles-tied-to-re
 **A**: 这项研究为政府制定更严格的排放标准和推行电动车激励政策提供了强有力的科学依据。
 
 既然数据证实了电动车能切实改善空气质量，政策制定者可以更有信心地投资充电基础设施、提供购车补贴，或设定燃油车禁售的时间表。此外，这也表明转向电动车不仅是应对气候变化（减少二氧化碳）的长期战略，也是解决当下城市公共卫生危机（减少致病污染物）的有效手段。
-
----
-## 🎯 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**:
-
-### 如果一项研究表明，电动汽车（EV）的普及率提高了 20%，但某城市的空气质量监测数据（PM2.5）在同期仅下降了 5%。请列出至少三个可能的原因，解释为什么“减排效果”看起来不如“普及率”那么显著？
-
-### 提示**:
-
----
 ## 🔗 引用
 
 - **原文链接**: [https://keck.usc.edu/news/adoption-of-electric-vehicles-tied-to-real-world-reductions-in-air-pollution-study-finds](https://keck.usc.edu/news/adoption-of-electric-vehicles-tied-to-real-world-reductions-in-air-pollution-study-finds)

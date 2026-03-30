@@ -38,8 +38,6 @@ Relevant source files
   * [README_JP.md](https://github.com/alibaba/higress/blob/8deceb4d/README_JP.md)
   * [README_ZH.md](https://github.com/alibaba/higress/blob/8deceb4d/README_ZH.md)
 
-
-
 ## Purpose and Scope
 
 This document provides a comprehensive overview of Higress, an AI Native API Gateway built on Istio and Envoy. It covers the system's architecture, core components, and primary use cases. For detailed information about specific subsystems, refer to the Core Architecture (page 2), Build and Deployment (page 3), WASM Plugin System (page 4), AI Gateway Features (page 5), MCP System (page 6), and Development Guide (page 7) sections.
@@ -73,7 +71,6 @@ Higress implements a control plane and data plane separation derived from Istio'
 
 **Component Deployment Diagram:**
 
-
 **Binary and Process Mapping:**
 
 Binary| Source Entry Point| Deployment Location| Primary Functions  
@@ -92,7 +89,6 @@ Sources: [README.md32](https://github.com/alibaba/higress/blob/8deceb4d/README.m
 ### Configuration Flow and Controller Architecture
 
 **Configuration Update Sequence:**
-
 
 **Controller Registry and Responsibilities:**
 
@@ -331,9 +327,6 @@ Higress 的架构设计体现了**云原生**与**AI 原生**深度融合的趋�
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：Higress API网关基础路由配置
 from higress import Gateway, Route
@@ -366,9 +359,6 @@ def setup_basic_routing():
 
 setup_basic_routing()
 ```
-
-
-
 
 ```python
 # 示例2：基于权重的金丝雀发布
@@ -412,9 +402,6 @@ def monitor_canary(canary, duration):
 canary_release()
 ```
 
-
-
-
 ```python
 # 示例3：基于请求头的流量路由
 from higress import HeaderBasedRouter
@@ -449,10 +436,8 @@ def header_routing():
 header_routing()
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：阿里巴巴内部电商业务（淘天集团）
 
@@ -476,8 +461,6 @@ header_routing()
 
 ---
 
-
-
 ### 2：萝卜运力（智能出行平台）
 
  2：萝卜运力（智能出行平台）
@@ -499,8 +482,6 @@ header_routing()
 3. 性能稳定：在高并发场景下，Higress 保持了低延迟和高吞吐量，支撑了业务高峰期的平稳运行。
 
 ---
-
-
 
 ### 3：识货（运动消费电商平台）
 
@@ -704,7 +685,6 @@ WASM 插件的执行会增加少量的网络延迟，应避免在插件中进行
 - 内置了对 Dubbo、gRPC 及 HTTP 等多协议的统一支持，解决了传统网关需要多套组件维护的痛点。
 - 提供了强大的安全防护功能（如 WAF）和完善的可观测性（Metrics/Traces/Logs），适合生产环境高可用部署。
 
-
 ---
 ## 学习路径
 
@@ -797,7 +777,6 @@ WASM 插件的执行会增加少量的网络延迟，应避免在插件中进行
 ---
 ## 常见问题
 
-
 ### 1: Higress 是什么？它与阿里云和 Nginx 有什么关系？
 
 1: Higress 是什么？它与阿里云和 Nginx 有什么关系？
@@ -809,8 +788,6 @@ WASM 插件的执行会增加少量的网络延迟，应避免在插件中进行
 2.  **与 Nginx 的关系**：Higress 兼容 Nginx 的 Ingress Annotation 语法，这意味着用户可以从传统的 Nginx Ingress 平滑迁移到 Higress。在底层技术上，Higress 基于 Istio，并使用 Rust 编写了高性能的数据平面（基于 Tengine-OpenResty 的重构），以提供比传统 Nginx 更高的处理能力和更低的延迟。
 
 ---
-
-
 
 ### 2: Higress 与 Kong 或 APISIX 等传统 API 网关相比有什么优势？
 
@@ -825,8 +802,6 @@ WASM 插件的执行会增加少量的网络延迟，应避免在插件中进行
 
 ---
 
-
-
 ### 3: Higress 是否支持从 Nginx 或 Nginx Ingress Controller 迁移？
 
 3: Higress 是否支持从 Nginx 或 Nginx Ingress Controller 迁移？
@@ -837,8 +812,6 @@ WASM 插件的执行会增加少量的网络延迟，应避免在插件中进行
 2.  **注解兼容**：对于 Kubernetes 用户，Higress 兼容 Nginx Ingress Controller 的大部分常用 Annotation（注解）。这意味着你通常不需要修改大量的 YAML 配置，只需将 Ingress Class 修改为 `higress`，即可将流量切换到 Higress 进行管理。
 
 ---
-
-
 
 ### 4: Higress 的性能表现如何？是否支持高并发？
 
@@ -852,8 +825,6 @@ WASM 插件的执行会增加少量的网络延迟，应避免在插件中进行
 
 ---
 
-
-
 ### 5: Higress 支持 Dubbo 服务吗？
 
 5: Higress 支持 Dubbo 服务吗？
@@ -864,8 +835,6 @@ Higress 原生支持 Dubbo、Dubbo3 (Triple) 协议。它可以将 HTTP/HTTPS �
 
 ---
 
-
-
 ### 6: 如何在 Higress 中扩展功能？是否支持自定义插件？
 
 6: 如何在 Higress 中扩展功能？是否支持自定义插件？
@@ -874,22 +843,6 @@ Higress 原生支持 Dubbo、Dubbo3 (Triple) 协议。它可以将 HTTP/HTTPS �
 
 1.  **Wasm (WebAssembly) 插件**：这是 Higress 推荐的扩展方式。开发者可以使用 Go、C++、Rust 或 AssemblyScript 编写逻辑，编译为 Wasm 文件后上传。Wasm 插件运行在沙箱环境中，安全性高，且支持动态热加载，不会影响主网关进程的稳定性。
 2.  **原生插件**：Higress 内置了大量的开箱即用插件，如认证鉴权（KeyAuth, JWT）、流量控制（限流、熔断）、可观测性（
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 本地快速部署与路由转发
-
-### 问题**:
-
-### 在本地 Docker 环境中快速部署一套 Higress 网关，并创建一个简单的路由规则，将访问 `/httpbin/` 路径的流量转发到公共的测试服务（如 httpbin.org:80）。
-
-### 提示**:
-
----
 ## 实践建议
 
 以下是基于 Higress 作为 AI 网关/API 网关的 7 条实践建议，涵盖了 AI 服务对接、流量管理、可观测性及安全防护等实际场景：
@@ -936,7 +889,6 @@ AI 模型通常采用 Server
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

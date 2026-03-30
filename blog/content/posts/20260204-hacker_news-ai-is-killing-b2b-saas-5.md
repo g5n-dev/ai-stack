@@ -31,7 +31,6 @@ scenarios: ["AI/ML项目"]
 ---
 ## 评论
 
-
 #### 1. 中心观点
 文章认为，生成式AI（Generative AI）的兴起将从根本上瓦解传统B2B SaaS的商业模式，因为AI能够以接近零的边际成本提供软件功能，导致基于“功能订阅”和“用户席位”的传统收费模式崩溃，价值将从软件层转移至数据层与模型层。
 
@@ -93,9 +92,6 @@ scenarios: ["AI/ML项目"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：AI驱动的客户反馈分析
 def analyze_customer_feedback(feedback_list):
@@ -141,9 +137,6 @@ feedbacks = [
 
 print(analyze_customer_feedback(feedbacks))
 ```
-
-
-
 
 ```python
 # 示例2：智能客户流失预测
@@ -204,9 +197,6 @@ customer = {
 
 print(predict_churn(customer))
 ```
-
-
-
 
 ```python
 # 示例3：自动化销售邮件生成
@@ -271,10 +261,8 @@ customer = {
 print(generate_sales_email(customer))
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：Jasper.ai
 
@@ -290,8 +278,6 @@ print(generate_sales_email(customer))
 
 ---
 
-
-
 ### 2：Chegg
 
  2：Chegg
@@ -305,8 +291,6 @@ print(generate_sales_email(customer))
 **效果**: 虽然股价和用户规模尚未完全恢复到巅峰水平，但 Chegg 止住了单纯的用户流失趋势。通过将自身定位从“答案库”转变为“AI 导师”，它试图在 AI 时代重新定义价值。不过，该案例仍被视作 AI 原生能力摧毁传统垂直 SaaS 商业模式的典型警示。
 
 ---
-
-
 
 ### 3：Midjourney 与 Adobe Photoshop
 
@@ -398,7 +382,6 @@ print(generate_sales_email(customer))
 ---
 ## 常见问题
 
-
 ### 1: 为什么说 AI 正在“杀死”传统的 B2B SaaS 模式？
 
 1: 为什么说 AI 正在“杀死”传统的 B2B SaaS 模式？
@@ -406,8 +389,6 @@ print(generate_sales_email(customer))
 **A**: 这种观点主要基于 AI 技术对软件价值主张的根本性重构。传统的 B2B SaaS 通常通过提供标准化的工作流工具来收取订阅费，其核心价值在于软件的功能性。然而，生成式 AI 的出现使得“即问即答”成为可能，用户不再需要通过复杂的软件界面或繁琐的流程来完成工作。当 AI 能够直接生成结果（如文案、代码、分析报告）时，许多作为中间层的 SaaS 工具变得不再必要。这导致软件从“功能提供者”转变为“智能服务提供者”，传统的菜单式交互和基于座席的订阅模式面临被淘汰的风险。
 
 ---
-
-
 
 ### 2: AI 如何改变 B2B SaaS 的收费模式？
 
@@ -417,8 +398,6 @@ print(generate_sales_email(customer))
 
 ---
 
-
-
 ### 3: 垂直领域的 SaaS 公司会被通用大模型（如 GPT-4）取代吗？
 
 3: 垂直领域的 SaaS 公司会被通用大模型（如 GPT-4）取代吗？
@@ -427,8 +406,6 @@ print(generate_sales_email(customer))
 
 ---
 
-
-
 ### 4: AI 是否降低了 B2B SaaS 的创业门槛？
 
 4: AI 是否降低了 B2B SaaS 的创业门槛？
@@ -436,8 +413,6 @@ print(generate_sales_email(customer))
 **A**: 是的，AI 极大地降低了构建产品的门槛，但也提高了建立护城河的难度。现在，一个小型团队甚至个人开发者利用开源模型和 API，就能在短时间内构建出以往需要数十人团队才能完成的 SaaS 产品（如自动生成营销邮件、代码审查工具等）。这导致了市场上同质化产品的爆发式增长。然而，这也意味着竞争变得极度激烈。由于缺乏技术壁垒，产品极易被复制或被大模型厂商的原生功能覆盖，因此初创公司必须在用户体验、私有数据积累或特定场景的深度上下足功夫，才能避免快速被市场淘汰。
 
 ---
-
-
 
 ### 5: 在 AI 时代，B2B SaaS 公司的核心竞争力是什么？
 
@@ -450,8 +425,6 @@ print(generate_sales_email(customer))
 
 ---
 
-
-
 ### 6: 客户为什么愿意为 AI 功能付费，而不是直接使用 ChatGPT？
 
 6: 客户为什么愿意为 AI 功能付费，而不是直接使用 ChatGPT？
@@ -461,22 +434,6 @@ print(generate_sales_email(customer))
 2.  **上下文集成**：通用 AI 无法访问企业内部的 CRM、ERP 数据库。SaaS 产品能结合企业内部数据提供精准答案。
 3.  **特定工作流优化**：通用 AI 生成的是通用内容，而 SaaS 产品能生成符合特定业务规范、格式和逻辑的输出，减少人工修改成本。
 4.  **责任归属**：企业需要明确的供应商来承担服务质量和法律责任，而不是面对一个黑盒模型。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 请列举出三个传统 B2B SaaS 产品中，最容易被 AI Agent（智能体）直接替代或重构的具体功能模块，并简述理由。
-
-### 提示**: 思考那些主要依赖“人工检索信息”或“基于规则生成内容”的高频重复性功能，例如数据录入、基础报告生成或简单的客户问答。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://nmn.gl/blog/ai-killing-b2b-saas](https://nmn.gl/blog/ai-killing-b2b-saas)
@@ -485,7 +442,6 @@ print(generate_sales_email(customer))
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

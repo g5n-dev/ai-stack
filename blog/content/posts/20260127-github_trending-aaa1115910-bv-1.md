@@ -49,8 +49,6 @@ Relevant source files
   * [app/tv/src/main/kotlin/dev/aaa1115910/bv/tv/screens/search/SearchInputScreen.kt](https://github.com/aaa1115910/bv/blob/763c7447/app/tv/src/main/kotlin/dev/aaa1115910/bv/tv/screens/search/SearchInputScreen.kt)
   * [player/tv/src/main/kotlin/dev/aaa1115910/bv/player/tv/controller/PlayStateTips.kt](https://github.com/aaa1115910/bv/blob/763c7447/player/tv/src/main/kotlin/dev/aaa1115910/bv/player/tv/controller/PlayStateTips.kt)
 
-
-
 BV (~~Bug Video~~) is a third-party Bilibili client application for Android platforms, supporting both mobile devices and Android TV. The application provides users with access to Bilibili's video content, user authentication, search functionality, and social features through a native Android interface built with Jetpack Compose.
 
 This document covers the overall architecture and key systems of the BV application. For detailed information about specific subsystems, see [Architecture](/aaa1115910/bv/2-architecture) for the multi-module structure, [Video Player System](/aaa1115910/bv/3-video-player-system) for media playback functionality, [User Interface](/aaa1115910/bv/4-user-interface) for platform-specific UI implementations, and [Bilibili API Integration](/aaa1115910/bv/5-bilibili-api-integration) for external service communication.
@@ -69,22 +67,17 @@ BV serves as a comprehensive Bilibili client that replicates core platform funct
   * Following/subscription management for anime and content creators
   * Proxy support for region-restricted content access
 
-
-
 **Platform Support:**
 
   * Android Mobile (phones and tablets)
   * Android TV (television and set-top box devices)
   * Minimum Android 6.0+ requirement
 
-
-
 Sources: [README.md17-49](https://github.com/aaa1115910/bv/blob/763c7447/README.md#L17-L49) [app/shared/src/main/res/values/strings.xml9-66](https://github.com/aaa1115910/bv/blob/763c7447/app/shared/src/main/res/values/strings.xml#L9-L66)
 
 ## Application Architecture Overview
 
 BV follows a multi-module Android architecture pattern with clear separation between shared functionality, platform-specific implementations, and external service integration.
-
 
 **Module Architecture:**
 
@@ -95,14 +88,11 @@ BV follows a multi-module Android architecture pattern with clear separation bet
   * **player** : Video player implementation supporting ExoPlayer and VLC backends
   * **utils** : Common utility functions and helpers
 
-
-
 Sources: [app/shared/build.gradle.kts162-165](https://github.com/aaa1115910/bv/blob/763c7447/app/shared/build.gradle.kts#L162-L165) [app/mobile/build.gradle.kts70](https://github.com/aaa1115910/bv/blob/763c7447/app/mobile/build.gradle.kts#L70-L70) [app/tv/build.gradle.kts70](https://github.com/aaa1115910/bv/blob/763c7447/app/tv/build.gradle.kts#L70-L70)
 
 ## Core System Components
 
 The application is built around several key subsystems that handle different aspects of the Bilibili client functionality.
-
 
 **Authentication System:**
 
@@ -110,23 +100,17 @@ The application is built around several key subsystems that handle different asp
   * Login state management through `AppQrLoginViewModel`
   * Persistent user session storage with `AuthData` entities
 
-
-
 **Search & Discovery:**
 
   * Real-time search suggestions and hotword integration
   * Local search history persistence via `SearchHistoryDao`
   * Multi-platform search UI with `SearchInputScreen`
 
-
-
 **Region Management:**
 
   * Automatic mainland China detection using network utilities
   * Platform-specific region blocking screens for mobile and TV
   * Application termination when used in restricted regions
-
-
 
 Sources: [app/shared/src/main/kotlin/dev/aaa1115910/bv/viewmodel/login/AppQrLoginViewModel.kt34-142](https://github.com/aaa1115910/bv/blob/763c7447/app/shared/src/main/kotlin/dev/aaa1115910/bv/viewmodel/login/AppQrLoginViewModel.kt#L34-L142) [app/tv/src/main/kotlin/dev/aaa1115910/bv/tv/screens/search/SearchInputScreen.kt65-105](https://github.com/aaa1115910/bv/blob/763c7447/app/tv/src/main/kotlin/dev/aaa1115910/bv/tv/screens/search/SearchInputScreen.kt#L65-L105) [app/shared/src/main/kotlin/dev/aaa1115910/bv/dao/SearchHistoryDao.kt10-32](https://github.com/aaa1115910/bv/blob/763c7447/app/shared/src/main/kotlin/dev/aaa1115910/bv/dao/SearchHistoryDao.kt#L10-L32)
 
@@ -141,16 +125,12 @@ BV provides tailored user experiences for different Android platforms while main
   * TV-specific video player controls and overlay system
   * Soft keyboard implementation for search input
 
-
-
 **Mobile Features:**
 
   * Touch-optimized interfaces and gesture support
   * Adaptive layouts for different screen sizes
   * Mobile-specific navigation patterns
   * Standard Android UI components and material design
-
-
 
 **Shared Components:**
 
@@ -384,34 +364,8 @@ BV provides tailored user experiences for different Android platforms while main
 ---
 ## 💻 实用代码示例
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 ## 📚 真实案例研究
-
 
 ### 1：某大型电商平台的智能客服升级
 
@@ -436,8 +390,6 @@ BV provides tailored user experiences for different Android platforms while main
 
 ---
 
-
-
 ### 2：新能源车企的电池故障预测系统
 
  2：新能源车企的电池故障预测系统  
@@ -460,8 +412,6 @@ BV provides tailored user experiences for different Android platforms while main
 - 🚗 售后维修成本降低30%  
 
 ---
-
-
 
 ### 3：跨国物流公司的路径优化项目
 
@@ -716,7 +666,6 @@ BV provides tailored user experiences for different Android platforms while main
 - 3. 是否有特定的学习领域需要重点关注？（如编程语言、开发工具、系统架构等）
 - 完整的信息将帮助我精准提取 5-7 个关键要点，并按重要性排序呈现。期待您的补充说明！ 📝
 
-
 ---
 ## 🗺️ 循序渐进的学习路径
 
@@ -831,7 +780,6 @@ BV provides tailored user experiences for different Android platforms while main
 ---
 ## ❓ 常见问题解答
 
-
 ### 1: “aaa1115910 / bv” 是一个什么样的项目？
 
 1: “aaa1115910 / bv” 是一个什么样的项目？
@@ -839,8 +787,6 @@ BV provides tailored user experiences for different Android platforms while main
 **A**: 这是一个在 GitHub Trending（趋势榜）上出现的开源项目。根据典型的 GitHub 命名规则，`aaa1115910` 是该项目维护者的用户名，而 `bv` 则是该项目的仓库名称。由于具体的项目内容会随时间更新，通常这类出现在趋势榜的项目可能是热门的开发工具、框架、有趣的实验性项目或资源合集。建议直接访问该项目的 GitHub 主页以获取最准确的描述、README 文档和代码详情。
 
 ---
-
-
 
 ### 2: 如何在本地获取并运行这个项目？
 
@@ -860,8 +806,6 @@ BV provides tailored user experiences for different Android platforms while main
 
 ---
 
-
-
 ### 3: 这个项目需要什么环境或依赖？
 
 3: 这个项目需要什么环境或依赖？
@@ -875,8 +819,6 @@ BV provides tailored user experiences for different Android platforms while main
 具体的版本要求通常会在 `README.md` 或上述配置文件中列出。
 
 ---
-
-
 
 ### 4: 我想给这个项目贡献代码，该如何操作？
 
@@ -892,8 +834,6 @@ BV provides tailored user experiences for different Android platforms while main
 
 ---
 
-
-
 ### 5: 如果遇到 Bug 或有新功能建议，应该在哪里反馈？
 
 5: 如果遇到 Bug 或有新功能建议，应该在哪里反馈？
@@ -906,29 +846,11 @@ BV provides tailored user experiences for different Android platforms while main
 
 ---
 
-
-
 ### 6: 什么是 GitHub Trending？为什么这个项目会出现在那里？
 
 6: 什么是 GitHub Trending？为什么这个项目会出现在那里？
 
 **A**: GitHub Trending（趋势榜）是 GitHub 的一个排行榜，展示当前最受关注、热度上升最快的仓库。项目 `aaa1115910 / bv` 出现在这里说明它在最近 24 小时或一周内获得了大量的 Star（标星）、Fork（复刻）或者讨论热度。这通常意味着该项目解决了一个普遍的问题、技术非常新颖，或者受到了技术社区的广泛关注。
-
----
-## 🎯 挑战与思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**: 字符串清洗与格式化
-
-### 请编写一个函数，将输入的字符串 `aaa1115910 /` 转换为纯小写格式，并去除所有的空格和斜杠符号（例如将 "aaa1115910 /" 变为 "aaa1115910"）。
-
-### 提示**: 可以使用 Python 的 `.replace()` 方法链式调用，或者使用正则表达式 `re.sub()` 来匹配非字母数字字符。
-
----
 ## 💡 实践建议
 
 这是一个基于哔哩哔哩 API 的第三方 Android 客户端项目。针对此类涉及视频流媒体、逆向工程 API 以及大规模 UI 开发的项目，以下是 6 条实践建议：

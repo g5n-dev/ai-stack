@@ -42,8 +42,6 @@ Relevant source files
   * [ui/mainwindow.ui](https://github.com/MatsuriDayo/nekoray/blob/adef6cd4/ui/mainwindow.ui)
   * [ui/mainwindow_grpc.cpp](https://github.com/MatsuriDayo/nekoray/blob/adef6cd4/ui/mainwindow_grpc.cpp)
 
-
-
 NekoBox is a Qt-based cross-platform GUI proxy configuration manager that uses sing-box as its backend engine. This page introduces the project's purpose, core features, and high-level architecture to help developers understand how the system works as a whole. For specific implementation details about components, please refer to their dedicated pages.
 
 ## Purpose and Scope
@@ -79,9 +77,6 @@ The application supports multiple operating systems (primarily Windows and Linux
 
   * **Group Organization** : Organize profiles into manageable groups
 
-
-
-
 Sources: [README.md2-61](https://github.com/MatsuriDayo/nekoray/blob/adef6cd4/README.md#L2-L61)
 
 ## High-Level Architecture
@@ -90,11 +85,9 @@ NekoBox follows a multi-process architecture with clear separation between the u
 
 ### Architecture Overview Diagram
 
-
 Sources: [ui/mainwindow.cpp55-103](https://github.com/MatsuriDayo/nekoray/blob/adef6cd4/ui/mainwindow.cpp#L55-L103) [ui/mainwindow_grpc.cpp37-54](https://github.com/MatsuriDayo/nekoray/blob/adef6cd4/ui/mainwindow_grpc.cpp#L37-L54) [db/ConfigBuilder.cpp73-92](https://github.com/MatsuriDayo/nekoray/blob/adef6cd4/db/ConfigBuilder.cpp#L73-L92)
 
 ### Data Flow and Process Interaction
-
 
 Sources: [ui/mainwindow_grpc.cpp285-349](https://github.com/MatsuriDayo/nekoray/blob/adef6cd4/ui/mainwindow_grpc.cpp#L285-L349) [db/ConfigBuilder.cpp73-92](https://github.com/MatsuriDayo/nekoray/blob/adef6cd4/db/ConfigBuilder.cpp#L73-L92)
 
@@ -114,8 +107,6 @@ Key responsibilities:
   * Displaying logs and connection information
   * Managing system proxy and VPN settings
 
-
-
 Sources: [ui/mainwindow.cpp55-442](https://github.com/MatsuriDayo/nekoray/blob/adef6cd4/ui/mainwindow.cpp#L55-L442) [ui/mainwindow.h36-204](https://github.com/MatsuriDayo/nekoray/blob/adef6cd4/ui/mainwindow.h#L36-L204)
 
 ### ProfileManager and Entity System
@@ -128,8 +119,6 @@ Key classes:
   * `ProxyEntity`: Represents a proxy configuration (server, port, protocol, etc.)
   * `Bean`: Base class for different protocol-specific configuration classes
   * `Group`: Collection of profiles with additional properties like subscription URLs
-
-
 
 Sources: [ui/mainwindow.cpp62-65](https://github.com/MatsuriDayo/nekoray/blob/adef6cd4/ui/mainwindow.cpp#L62-L65) [ui/mainwindow.cpp456-467](https://github.com/MatsuriDayo/nekoray/blob/adef6cd4/ui/mainwindow.cpp#L456-L467)
 
@@ -144,8 +133,6 @@ Key features:
   * Managing routing rules
   * Configuring DNS settings
 
-
-
 Sources: [db/ConfigBuilder.cpp73-92](https://github.com/MatsuriDayo/nekoray/blob/adef6cd4/db/ConfigBuilder.cpp#L73-L92) [db/ConfigBuilder.cpp174-385](https://github.com/MatsuriDayo/nekoray/blob/adef6cd4/db/ConfigBuilder.cpp#L174-L385)
 
 ### Core Communication
@@ -159,12 +146,9 @@ Main operations:
   * Connection monitoring
   * Testing proxy latency and speed
 
-
-
 Sources: [ui/mainwindow_grpc.cpp37-54](https://github.com/MatsuriDayo/nekoray/blob/adef6cd4/ui/mainwindow_grpc.cpp#L37-L54) [ui/mainwindow_grpc.cpp285-349](https://github.com/MatsuriDayo/nekoray/blob/adef6cd4/ui/mainwindow_grpc.cpp#L285-L349)
 
 ## Component Relationships
-
 
 Sources: [ui/mainwindow.cpp285-488](https://github.com/MatsuriDayo/nekoray/blob/adef6cd4/ui/mainwindow.cpp#L285-L488) [ui/mainwindow.h36-204](https://github.com/MatsuriDayo/nekoray/blob/adef6cd4/ui/mainwindow.h#L36-L204)
 
@@ -178,10 +162,7 @@ The configuration flow in NekoBox follows a structured path from the user interf
   4. **Core Loading** : The configuration is sent to the core via gRPC
   5. **Proxy Establishment** : The core establishes the proxy connections based on the configuration
 
-
-
 ### Configuration Build Process
-
 
 Sources: [db/ConfigBuilder.cpp73-92](https://github.com/MatsuriDayo/nekoray/blob/adef6cd4/db/ConfigBuilder.cpp#L73-L92) [db/ConfigBuilder.cpp389-729](https://github.com/MatsuriDayo/nekoray/blob/adef6cd4/db/ConfigBuilder.cpp#L389-L729)
 
@@ -451,37 +432,8 @@ NekoRay 的核心哲学是 **"配置即代码" (Configuration as Code)** 的图�
 ---
 ## 💻 实用代码示例
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 ## 📚 真实案例研究
-
 
 ### 1：海外留学生小王的学术访问项目
 
@@ -497,8 +449,6 @@ NekoRay 的核心哲学是 **"配置即代码" (Configuration as Code)** 的图�
 
 ---  
 
-
-
 ### 2：跨国企业远程办公网络优化
 
  2：跨国企业远程办公网络优化  
@@ -512,8 +462,6 @@ NekoRay 的核心哲学是 **"配置即代码" (Configuration as Code)** 的图�
 **效果**: 视频会议丢包率从15%降至2%以下，Git同步成功率提升至99.8%，每月减少约20小时的故障排查时间。  
 
 ---  
-
-
 
 ### 3：独立开发者的全球化部署测试
 
@@ -722,7 +670,6 @@ async_logger->flush_on(spdlog::level::warn);
 - 特色功能：** 内置 **Smart Tunnel**（智能隧道）功能和 **Fake IP** 模式，能显著优化连接性能和分流规则 🚀。
 - 自动化工具：** 提供 **Subscription**（订阅）自动更新功能，支持一键配置，极大降低了使用门槛 🔄。
 
-
 ---
 ## 🗺️ 循序渐进的学习路径
 
@@ -745,15 +692,12 @@ async_logger->flush_on(spdlog::level::warn);
 ---
 ## ❓ 常见问题解答
 
-
 ### 1: MatsuriDayo 和 NekoRay 之间有什么关系？
 
 1: MatsuriDayo 和 NekoRay 之间有什么关系？
 
 **A**: 
 MatsuriDayo 是 NekoRay 的主要开发者。NekoRay 是一款基于 Qt 开发的开源代理工具，专为 Windows 平台设计（也可通过 Wine 在 macOS/Linux 上运行）。它支持多种协议（如 V2Ray, Trojan, NaïveProxy 等），并以其内核稳定性（通常使用 sing-box 或 Xray-core）和图形化管理界面的易用性而受到欢迎。
-
-
 
 ### 2: NekoRay 支持哪些代理协议？
 
@@ -771,8 +715,6 @@ NekoRay 支持非常广泛的协议，包括但不限于：
 
 ---
 
-
-
 ### 3: 为什么有时候无法连接服务器？常见原因是什么？
 
 3: 为什么有时候无法连接服务器？常见原因是什么？
@@ -781,22 +723,6 @@ NekoRay 支持非常广泛的协议，包括但不限于：
 导致无法连接的常见原因通常有以下几点：
 1.  **节点失效**: 订阅地址过期或服务器端维护，请尝试更新订阅。
 2.  **防火墙/杀毒软件拦截**: Windows Defender 或第三方
-
----
-## 🎯 挑战与思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单] 🌟
-
-### 问题**: 完整部署与自检
-
-### 在本地成功下载并运行 Nekoray 后，尝试导入一个测试用的配置节点。请截图证明你能够成功连接到测试节点（例如访问 Google 或 YouTube），并指出在软件界面中哪两个指标直接反映了连接的延迟与速度？
-
-### 提示**: 关注主界面右侧的节点列表区域，以及底部的“实时日志”或“速度图”组件。注意观察“延迟”与“上下行速度”的区别。
-
----
 ## 💡 实践建议
 
 这是一个针对 **Nekoray** 仓库的实用建议指南。

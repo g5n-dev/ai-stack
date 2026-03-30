@@ -73,9 +73,6 @@ scenarios: ["大语言模型", "AI/ML项目"]
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：检测API配额并自动切换到本地模型
 import os
@@ -123,9 +120,6 @@ result = smart_api_call("解释什么是量子计算")
 print(result)
 ```
 
-
-
-
 ```python
 # 示例2：配置本地模型优先级和回退策略
 from openai import OpenAI
@@ -151,10 +145,8 @@ class ModelRouter:
                 "name": "mistral",
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：独立开发者张三的个人项目
 
@@ -171,8 +163,6 @@ class ModelRouter:
 - 成本控制：避免了超支费用，本地模型运行成本仅为每月约15美元（服务器电费）
 - 用户留存：后续调查显示，92%的用户未察觉服务异常，仅8%的用户反馈"分析速度略慢"
 
-
-
 ### 2：某金融科技公司的内部工具开发
 
  2：某金融科技公司的内部工具开发
@@ -187,8 +177,6 @@ class ModelRouter:
 - 开发连续性：20名开发者在3天内完成了约150次代码生成请求，未出现服务中断
 - 混合模式验证：团队发现70%的简单代码生成任务（如单元测试、CRUD操作）在本地模型上效果相当
 - 流程优化：促使公司建立了"API优先+本地兜底"的混合架构方案，后续采购预算降低40%
-
-
 
 ### 3：开源项目AI-Helper的持续集成
 
@@ -210,7 +198,6 @@ class ModelRouter:
 
 ---
 ## 最佳实践
-
 
 首先，理解主题：Claude Code 是一个工具或环境，可能是Anthropic的Claude代码解释器，或者是一个代码生成/执行环境。但这里具体是 "Claude Code: connect to a local model when your quota runs out"，意思是在你的配额用完时连接到本地模型。可能是指使用Claude API时，如果API调用配额用尽，可以回退到本地运行的模型（如开源模型）来继续提供服务。这类似于降级策略。
 
@@ -316,7 +303,6 @@ class ModelRouter:
 ---
 ## 常见问题
 
-
 ### 1: 什么是 Claude Code，它如何与本地模型连接？
 
 1: 什么是 Claude Code，它如何与本地模型连接？
@@ -324,8 +310,6 @@ class ModelRouter:
 **A**: Claude Code 是 Anthropic 推出的一个命令行工具，旨在帮助开发者通过终端直接与 Claude AI 进行交互，主要用于代码生成、调试和解释等任务。当您的 API 配额用尽或无法访问云端 API 时，您可以配置 Claude Code 连接到本地运行的模型（如通过 Ollama 或 LM Studio 部署的 LLaMA、Mistral 等）。这通常涉及修改配置文件，将 API 端点指向本地服务（例如 `http://localhost:11434`），并确保请求格式与目标模型兼容。
 
 ---
-
-
 
 ### 2: 如何配置 Claude Code 以使用本地模型？
 
@@ -339,8 +323,6 @@ class ModelRouter:
 
 ---
 
-
-
 ### 3: 使用本地模型有哪些限制？
 
 3: 使用本地模型有哪些限制？
@@ -352,8 +334,6 @@ class ModelRouter:
 - **配置复杂性**：需要手动处理依赖、端口冲突等问题。
 
 ---
-
-
 
 ### 4: 常见的连接问题有哪些，如何解决？
 
@@ -367,8 +347,6 @@ class ModelRouter:
 
 ---
 
-
-
 ### 5: 是否可以在本地模型和云端 API 之间切换？
 
 5: 是否可以在本地模型和云端 API 之间切换？
@@ -380,8 +358,6 @@ class ModelRouter:
 
 ---
 
-
-
 ### 6: 使用本地模型是否安全？
 
 6: 使用本地模型是否安全？
@@ -392,8 +368,6 @@ class ModelRouter:
 
 ---
 
-
-
 ### 7: 推荐哪些本地模型用于 Claude Code？
 
 7: 推荐哪些本地模型用于 Claude Code？
@@ -403,22 +377,6 @@ class ModelRouter:
 - **Mistral 7B**：高效且轻量，适合代码生成。
 - **CodeLlama**：专为代码优化，但可能需要更多资源。
 选择时需考虑硬件能力、任务需求和模型许可证。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 在本地部署一个开源大语言模型（如 Llama 3 或 Mistral），并通过命令行工具（如 Ollama 或 LM Studio）完成一次基本的对话交互。记录下从下载模型到获得第一个回复的完整步骤。
-
-### 提示**: 首先选择一个支持本地推理的工具，确保你的硬件满足最低要求（如 GPU 内存），然后使用该工具的命令行接口加载模型并测试。
-
-### 
-
----
 ## 引用
 
 - **原文链接**: [https://boxc.net/blog/2026/claude-code-connecting-to-local-models-when-your-quota-runs-out](https://boxc.net/blog/2026/claude-code-connecting-to-local-models-when-your-quota-runs-out)
@@ -427,7 +385,6 @@ class ModelRouter:
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接

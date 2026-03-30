@@ -42,8 +42,6 @@ Relevant source files
   * [README_zh-TW.md](https://github.com/AstrBotDevs/AstrBot/blob/5e5207da/README_zh-TW.md)
   * [astrbot/core/utils/metrics.py](https://github.com/AstrBotDevs/AstrBot/blob/5e5207da/astrbot/core/utils/metrics.py)
 
-
-
 ## Purpose and Scope
 
 This page provides a high-level introduction to AstrBot, covering its purpose, architecture, capabilities, and deployment options. It serves as the entry point for understanding the system's design and how its components interact. For detailed information about specific subsystems, refer to the following pages:
@@ -56,8 +54,6 @@ This page provides a high-level introduction to AstrBot, covering its purpose, a
   * For agent and tool capabilities, see [Agent System and Tool Execution](/AstrBotDevs/AstrBot/6-agent-system-and-tool-execution)
   * For plugin development, see [Plugin System (Stars)](/AstrBotDevs/AstrBot/7-plugin-system-\(stars\))
   * For web interface details, see [Dashboard and Web Interface](/AstrBotDevs/AstrBot/8-dashboard-and-web-interface)
-
-
 
 ## What is AstrBot
 
@@ -80,7 +76,6 @@ Production Ready| Built-in safety, rate limiting, context management, persistent
 AstrBot follows a layered architecture with clear separation of concerns. The system consists of dual entry points (CLI and Dashboard), a central configuration core, a platform-agnostic message processing pipeline, extensive AI provider support, and a powerful extension system.
 
 ### High-Level Component Relationships
-
 
 This diagram maps the major architectural layers to their corresponding code locations. The system's message flow is bidirectional: platforms → event queue → pipeline → agent → providers → response pipeline → platforms.
 
@@ -149,8 +144,6 @@ Provider Type| Purpose| Example Implementations
   * **LLMOps Platforms:** Dify, Coze, Alibaba Cloud Bailian (智能体接入)
   * **Compatible APIs:** Any OpenAI-compatible API endpoint
 
-
-
 Provider configuration uses a template system with `provider_sources` (templates) and `provider` instances (active configurations).
 
 **Sources:** [README.md159-201](https://github.com/AstrBotDevs/AstrBot/blob/5e5207da/README.md#L159-L201) [README_en.md144-186](https://github.com/AstrBotDevs/AstrBot/blob/5e5207da/README_en.md#L144-L186)
@@ -158,7 +151,6 @@ Provider configuration uses a template system with `provider_sources` (templates
 ### Agentic Capabilities
 
 The agent system provides advanced autonomous capabilities beyond simple Q&A:
-
 
 **Agent Features:**
 
@@ -381,9 +373,6 @@ AstrBot 的范式是 **"Batteries-Included" (内置电池)**。它试图成为�
 ---
 ## 代码示例
 
-
-
-
 ```python
 # 示例1：消息自动回复功能
 def auto_reply_handler(message: str) -> str:
@@ -411,9 +400,6 @@ def auto_reply_handler(message: str) -> str:
 print(auto_reply_handler("今天天气怎么样"))  # 输出：今天天气晴朗，温度25°C
 print(auto_reply_handler("讲个笑话"))        # 输出：程序员笑话
 ```
-
-
-
 
 ```python
 # 示例2：待办事项管理器
@@ -451,9 +437,6 @@ print(manager.list_todos())              # 列出待办
 print(manager.remove_todo(0))            # 完成第一个待办
 ```
 
-
-
-
 ```python
 # 示例3：简单命令解析器
 def command_parser(command: str) -> str:
@@ -488,10 +471,8 @@ print(command_parser("重复 你好"))       # 输出：你好 你好
 print(command_parser("反转 hello"))     # 输出：olleh
 ```
 
-
 ---
 ## 案例研究
-
 
 ### 1：某二次元游戏社区运营团队
 
@@ -518,8 +499,6 @@ print(command_parser("反转 hello"))     # 输出：olleh
 
 ---
 
-
-
 ### 2：某高校计算机系技术社团
 
  2：某高校计算机系技术社团
@@ -544,8 +523,6 @@ print(command_parser("反转 hello"))     # 输出：olleh
 - 社团成员留存率提高 35%，技术分享活动参与度增长 45%。
 
 ---
-
-
 
 ### 3：某小型电商团队私域运营
 
@@ -759,7 +736,6 @@ print(command_parser("反转 hello"))     # 输出：olleh
 - 项目提供了详细的开发文档和活跃的社区支持，降低了二次开发和部署的门槛。
 - 代码结构清晰且开源，适合用于学习 Python 异步编程及机器人框架的设计模式。
 
-
 ---
 ## 学习路径
 
@@ -852,7 +828,6 @@ print(command_parser("反转 hello"))     # 输出：olleh
 ---
 ## 常见问题
 
-
 ### 1: AstrBot 是什么？它主要用于什么场景？
 
 1: AstrBot 是什么？它主要用于什么场景？
@@ -860,8 +835,6 @@ print(command_parser("反转 hello"))     # 输出：olleh
 **A**: AstrBot 是一个基于 Python 开发的多功能异步机器人框架，主要针对 QQ、Telegram 等即时通讯平台。它被设计为一个轻量级、高性能且易于扩展的解决方案，允许用户通过插件系统来实现各种功能，如群组管理、娱乐互动、消息转发、API 调用等。它非常适合用于搭建社区管理机器人、个人助手或自动化工具。
 
 ---
-
-
 
 ### 2: 如何安装和部署 AstrBot？
 
@@ -877,8 +850,6 @@ print(command_parser("反转 hello"))     # 输出：olleh
 
 ---
 
-
-
 ### 3: AstrBot 支持哪些平台？如何连接 QQ 或 Telegram？
 
 3: AstrBot 支持哪些平台？如何连接 QQ 或 Telegram？
@@ -890,8 +861,6 @@ print(command_parser("反转 hello"))     # 输出：olleh
 
 ---
 
-
-
 ### 4: 如何为 AstrBot 安装和管理插件？
 
 4: 如何为 AstrBot 安装和管理插件？
@@ -902,8 +871,6 @@ print(command_parser("反转 hello"))     # 输出：olleh
 *   **依赖管理**：某些插件可能需要额外的第三方库，安装插件前请阅读插件说明，使用 `pip` 安装其依赖。
 
 ---
-
-
 
 ### 5: 运行 AstrBot 时报错 "ModuleNotFoundError" 或依赖缺失怎么办？
 
@@ -917,8 +884,6 @@ print(command_parser("反转 hello"))     # 输出：olleh
 
 ---
 
-
-
 ### 6: AstrBot 的数据存储在哪里？如何备份？
 
 6: AstrBot 的数据存储在哪里？如何备份？
@@ -929,8 +894,6 @@ print(command_parser("反转 hello"))     # 输出：olleh
 
 ---
 
-
-
 ### 7: 遇到 "KeyError" 或 "Connection Refused" 错误该如何排查？
 
 7: 遇到 "KeyError" 或 "Connection Refused" 错误该如何排查？
@@ -938,22 +901,6 @@ print(command_parser("反转 hello"))     # 输出：olleh
 **A**:
 *   **Connection Refused (连接被拒绝)**：这通常意味着 AstrBot 无法连接到协议端（如 NapCat 或 Go-cqhttp）。请检查配置文件中的 IP 地址和端口号是否正确，确认协议端是否已启动，以及防火墙是否放行了相关端口。
 *   **KeyError (键错误)**：这通常是由于配置文件格式错误或缺少必要的配置项引起的。请检查 `config.yml` 等配置文件，确保缩进（YAML 对缩进敏感）正确，且所有必填项都已填写。如果是在使用插件时报错，可能是插件版本与 AstrBot 核心版本不兼容。
-
----
-## 思考题
-
-
-### ## 挑战与思考题
-
-### ### 挑战 1: [简单]
-
-### 问题**: 尝试在本地环境搭建并运行 AstrBot。在配置过程中，如何正确填写 `ws_reverse_url` 字段以确保 Bot 能够成功连接到你的聊天平台（如 OneBot）？
-
-### 提示**: 阅读项目文档中关于 `config.yml` 的配置说明，关注 WebSocket 反向代理的通信机制以及客户端（Bot）与服务端（聊天平台接口）的连接方向。
-
-### 
-
----
 ## 实践建议
 
 基于 AstrBot 作为一个集成多平台、大模型及插件系统的 Agent 型聊天机器人框架，以下是针对实际部署与开发的 6 条实践建议：
@@ -1003,7 +950,6 @@ AstrBot 支持多种数据库后端（如 SQLite, PostgreSQL, MySQL）。如果�
 > 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
 
 ---
-
 
 ---
 ## 站内链接
