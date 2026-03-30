@@ -19,7 +19,29 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
-class NoTextContentError(ValueError):
+class LLMRequestError(RuntimeError):
+    def __init__(self, message: str, *, category: str, retryable: bool = False):
+        self.category = category
+        self.retryable = retryable
+        super().__init__(message)
+
+
+class LLMAuthError(LLMRequestError):
+    def __init__(self, message: str):
+        super().__init__(message, category="auth", retryable=False)
+
+
+class LLMTransientAPIError(LLMRequestError):
+    def __init__(self, message: str):
+        super().__init__(message, category="transient_api", retryable=True)
+
+
+class LLMCompatibilityError(LLMRequestError):
+    def __init__(self, message: str):
+        super().__init__(message, category="compatibility", retryable=False)
+
+
+class NoTextContentError(LLMCompatibilityError, ValueError):
     def __init__(self, block_types: list[str], stop_reason: str | None = None):
         self.block_types = block_types
         self.stop_reason = stop_reason
@@ -37,12 +59,24 @@ class NullAnthropicClient:
         max_tokens: Optional[int] = None,
         *,
         temperature: Optional[float] = None,
+        purpose: str = "generation",
     ) -> str:
         return ""
 
 
 class AnthropicClient:
     """Anthropic API 客户端封装"""
+
+    PURPOSE_GENERATION = "generation"
+    PURPOSE_CLASSIFICATION = "classification"
+    PURPOSE_METADATA = "metadata"
+    PURPOSE_TAG_INTRO = "tag_intro"
+    SUPPORTED_PURPOSES = {
+        PURPOSE_GENERATION,
+        PURPOSE_CLASSIFICATION,
+        PURPOSE_METADATA,
+        PURPOSE_TAG_INTRO,
+    }
 
     def __init__(self, config_path='config/anthropic.yaml', runtime_profile: str | None = None):
         load_project_env()
@@ -127,6 +161,34 @@ class AnthropicClient:
             request["thinking"] = {"type": "disabled"}
         return request
 
+    def _normalize_purpose(self, purpose: str | None) -> str:
+        value = str(purpose or self.PURPOSE_GENERATION).strip().lower()
+        if value in self.SUPPORTED_PURPOSES:
+            return value
+        return self.PURPOSE_GENERATION
+
+    def _purpose_policy(self, purpose: str, configured_max_retries: int) -> Dict[str, int | bool]:
+        purpose = self._normalize_purpose(purpose)
+        if self._is_minimax_backend():
+            return {
+                "allow_structural_fallback": purpose in {
+                    self.PURPOSE_GENERATION,
+                    self.PURPOSE_CLASSIFICATION,
+                },
+                "api_retries": min(max(0, configured_max_retries), 1)
+                if purpose == self.PURPOSE_GENERATION
+                else 0,
+            }
+        return {
+            "allow_structural_fallback": purpose in {
+                self.PURPOSE_GENERATION,
+                self.PURPOSE_CLASSIFICATION,
+            },
+            "api_retries": max(0, configured_max_retries)
+            if purpose == self.PURPOSE_GENERATION
+            else 0,
+        }
+
     def _fallback_max_tokens(self, max_tokens: int) -> int:
         configured_max = self.config.get("max_tokens", max_tokens)
         try:
@@ -178,6 +240,43 @@ class AnthropicClient:
             return False
         return getattr(message, "stop_reason", None) == "max_tokens"
 
+    def _looks_like_auth_error(self, text: str) -> bool:
+        lowered = str(text or "").lower()
+        return any(
+            hint in lowered
+            for hint in [
+                "authentication",
+                "unauthorized",
+                "forbidden",
+                "invalid api key",
+                "身份验证失败",
+                "认证失败",
+                "鉴权失败",
+                "invalid x-api-key",
+            ]
+        )
+
+    def _classify_api_error(self, error: anthropic.APIError) -> LLMRequestError:
+        status_code = getattr(error, "status_code", None)
+        message = str(error)
+        if status_code in {401, 403} or self._looks_like_auth_error(message):
+            return LLMAuthError(message)
+        retryable = isinstance(
+            error,
+            (
+                getattr(anthropic, "RateLimitError", anthropic.APIError),
+                getattr(anthropic, "APITimeoutError", anthropic.APIError),
+                getattr(anthropic, "APIConnectionError", anthropic.APIError),
+                getattr(anthropic, "InternalServerError", anthropic.APIError),
+            ),
+        )
+        if status_code is not None and isinstance(status_code, int):
+            if status_code in {408, 409, 429} or status_code >= 500:
+                retryable = True
+        if retryable:
+            return LLMTransientAPIError(message)
+        return LLMRequestError(message, category="api", retryable=False)
+
     def _init_client(self) -> anthropic.Anthropic:
         """初始化 Anthropic 客户端"""
         api_key = self.config.get('api_key')
@@ -199,6 +298,7 @@ class AnthropicClient:
         max_tokens: Optional[int] = None,
         *,
         temperature: Optional[float] = None,
+        purpose: str = PURPOSE_GENERATION,
     ) -> str:
         """
         创建消息并获取响应
@@ -216,6 +316,7 @@ class AnthropicClient:
             or self.config.get('model')
             or self._default_model()
         )
+        purpose = self._normalize_purpose(purpose)
         temperature = temperature if temperature is not None else self.config.get('temperature', 0.7)
         max_retries = self.config.get("llm_max_retries", 3)
         try:
@@ -223,9 +324,10 @@ class AnthropicClient:
         except Exception:
             max_retries = 3
         max_retries = max(0, max_retries)
+        policy = self._purpose_policy(purpose, max_retries)
 
-        attempt = 0
-        retried_truncated_text = False
+        api_attempt = 0
+        structural_fallback_used = False
         while True:
             try:
                 with self._semaphore:
@@ -241,13 +343,19 @@ class AnthropicClient:
                 try:
                     response_text = self._extract_text_from_message(message)
                 except NoTextContentError as e:
-                    if ("thinking" in e.block_types) and self._is_minimax_backend():
+                    if (
+                        policy["allow_structural_fallback"]
+                        and self._is_minimax_backend()
+                        and (not structural_fallback_used)
+                        and ("thinking" in e.block_types)
+                    ):
                         fallback_max_tokens = self._fallback_max_tokens(current_max_tokens)
                         logger.info(
                             "MiniMax returned thinking without text; retrying once with thinking disabled "
                             f"and max_tokens={fallback_max_tokens}"
                         )
                         current_max_tokens = fallback_max_tokens
+                        structural_fallback_used = True
                         with self._semaphore:
                             fallback_message = self.client.messages.create(
                                 **self._build_request_kwargs(
@@ -263,7 +371,11 @@ class AnthropicClient:
                     else:
                         raise
 
-                if self._should_retry_truncated_text(message=message, text=response_text) and not retried_truncated_text:
+                if (
+                    policy["allow_structural_fallback"]
+                    and self._should_retry_truncated_text(message=message, text=response_text)
+                    and (not structural_fallback_used)
+                ):
                     fallback_max_tokens = self._fallback_max_tokens(current_max_tokens)
                     if fallback_max_tokens > current_max_tokens:
                         logger.info(
@@ -271,41 +383,37 @@ class AnthropicClient:
                             f"{fallback_max_tokens}"
                         )
                         current_max_tokens = fallback_max_tokens
-                        retried_truncated_text = True
+                        structural_fallback_used = True
                         continue
                 return response_text
 
             except anthropic.APIError as e:
-                retryable = isinstance(
-                    e,
-                    (
-                        getattr(anthropic, "RateLimitError", anthropic.APIError),
-                        getattr(anthropic, "APITimeoutError", anthropic.APIError),
-                        getattr(anthropic, "APIConnectionError", anthropic.APIError),
-                        getattr(anthropic, "InternalServerError", anthropic.APIError),
-                    ),
-                )
-                status_code = getattr(e, "status_code", None)
-                if status_code is not None and isinstance(status_code, int) and status_code >= 500:
-                    retryable = True
+                classified = self._classify_api_error(e)
+                if classified.retryable and api_attempt < int(policy["api_retries"]):
+                    backoff = min(30.0, (2 ** api_attempt)) + random.uniform(0, 0.5)
+                    logger.warning(
+                        "Anthropic API retrying in %.2fs (attempt %s/%s, purpose=%s)",
+                        backoff,
+                        api_attempt + 1,
+                        int(policy["api_retries"]),
+                        purpose,
+                    )
+                    time.sleep(backoff)
+                    api_attempt += 1
+                    continue
+                logger.error(f"Anthropic API error ({classified.category}): {e}")
+                raise classified from e
 
-                if (not retryable) or attempt >= max_retries:
-                    logger.error(f"Anthropic API error: {e}")
-                    raise
-
-                backoff = min(30.0, (2 ** attempt)) + random.uniform(0, 0.5)
-                logger.warning(f"Anthropic API retrying in {backoff:.2f}s (attempt {attempt + 1}/{max_retries})")
-                time.sleep(backoff)
-                attempt += 1
+            except LLMRequestError as e:
+                logger.error(f"LLM request failed ({e.category}, purpose={purpose}): {e}")
+                raise
 
             except Exception as e:
-                if attempt >= max_retries:
-                    logger.error(f"Failed to create message: {e}")
-                    raise
-                backoff = min(30.0, (2 ** attempt)) + random.uniform(0, 0.5)
-                logger.warning(f"LLM call retrying in {backoff:.2f}s (attempt {attempt + 1}/{max_retries})")
-                time.sleep(backoff)
-                attempt += 1
+                if self._looks_like_auth_error(str(e)):
+                    logger.error(f"Anthropic API error (auth): {e}")
+                    raise LLMAuthError(str(e)) from e
+                logger.error(f"Failed to create message (purpose={purpose}): {e}")
+                raise LLMRequestError(str(e), category="unknown", retryable=False) from e
 
 
 if __name__ == '__main__':

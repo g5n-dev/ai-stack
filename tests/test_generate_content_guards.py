@@ -83,6 +83,11 @@ class GenerateContentGuardsTest(unittest.TestCase):
         self.assertTrue(self.module.looks_like_llm_auth_failure("403 Forbidden"))
         self.assertFalse(self.module.looks_like_llm_auth_failure("timeout while reading response"))
 
+    def test_detects_compat_failure_reason(self):
+        self.assertTrue(self.module.looks_like_llm_compat_failure("No text content found in response blocks: ['thinking']"))
+        self.assertTrue(self.module.looks_like_llm_compat_failure("LLM request failed (compatibility, purpose=classification)"))
+        self.assertFalse(self.module.looks_like_llm_compat_failure("403 Forbidden"))
+
     def test_summarizes_auth_failed_items(self):
         summary = self.module.summarize_processed_postability(
             {
@@ -105,6 +110,30 @@ class GenerateContentGuardsTest(unittest.TestCase):
         self.assertEqual(summary["skipped_items"], 2)
         self.assertEqual(summary["auth_error_items"], 1)
         self.assertEqual(summary["auth_error_examples"], ["github_trending: repo-a"])
+
+    def test_summarizes_compat_and_guard_failed_items(self):
+        summary = self.module.summarize_processed_postability(
+            {
+                "github_trending": [
+                    {
+                        "title": "repo-a",
+                        "skip_post": True,
+                        "moderation_reason": "LLM request failed (compatibility, purpose=classification)",
+                        "moderation_error_category": "compatibility",
+                    },
+                    {
+                        "title": "repo-b",
+                        "skip_post": True,
+                        "guard_failed_sections": ["engaging_intro", "deep_comment"],
+                    },
+                ]
+            }
+        )
+
+        self.assertEqual(summary["compat_error_items"], 1)
+        self.assertEqual(summary["compat_error_examples"], ["github_trending: repo-a"])
+        self.assertEqual(summary["guard_failed_items"], 1)
+        self.assertEqual(summary["guard_failed_examples"], ["github_trending: repo-b [engaging_intro,deep_comment]"])
 
     def test_raise_for_fatal_post_generation_state_on_auth_failure(self):
         generator = self.module.SuperEnhancedContentGenerator.__new__(self.module.SuperEnhancedContentGenerator)
@@ -130,6 +159,32 @@ class GenerateContentGuardsTest(unittest.TestCase):
                 "auth_error_examples": ["github_trending: repo-a"],
             },
         )
+
+    def test_raise_for_fatal_post_generation_state_on_compat_failure(self):
+        generator = self.module.SuperEnhancedContentGenerator.__new__(self.module.SuperEnhancedContentGenerator)
+
+        with self.assertRaisesRegex(RuntimeError, "MiniMax compatibility failed and no Markdown posts were created"):
+            generator._raise_for_fatal_post_generation_state(
+                posts_created=0,
+                postability={
+                    "total_items": 4,
+                    "compat_error_items": 2,
+                    "compat_error_examples": ["github_trending: repo-a"],
+                },
+            )
+
+    def test_raise_for_fatal_post_generation_state_on_guard_failure(self):
+        generator = self.module.SuperEnhancedContentGenerator.__new__(self.module.SuperEnhancedContentGenerator)
+
+        with self.assertRaisesRegex(RuntimeError, "Generated content failed output guards and no Markdown posts were created"):
+            generator._raise_for_fatal_post_generation_state(
+                posts_created=0,
+                postability={
+                    "total_items": 4,
+                    "guard_failed_items": 2,
+                    "guard_failed_examples": ["github_trending: repo-b [engaging_intro]"],
+                },
+            )
 
 
 if __name__ == "__main__":

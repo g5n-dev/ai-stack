@@ -11,7 +11,7 @@ import logging
 import re
 import json
 
-from .anthropic_client import AnthropicClient
+from .anthropic_client import AnthropicClient, LLMRequestError
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -73,19 +73,32 @@ class AIThemeFilter:
             content["ai_related"] = True
             content["ai_reason"] = "Filter disabled"
             content["ai_confidence"] = 1.0
+            content["ai_filter_mode"] = "disabled"
             return content
 
         try:
-            result = self._check_ai_relevance(content)
-            content["ai_related"] = result.is_ai_related
-            content["ai_reason"] = result.reason
-            content["ai_confidence"] = result.confidence
+            result, mode = self._check_ai_relevance(content)
+            self._apply_filter_result(content, result, mode=mode)
             return content
-        except Exception as e:
+        except LLMRequestError as e:
+            if e.category in {"compatibility", "transient_api"}:
+                logger.warning(f"AI relevance check degraded to fallback: {e}")
+                fallback = self._fallback(content)
+                self._apply_filter_result(content, fallback, mode="fallback")
+                content["ai_error_category"] = e.category
+                return content
             logger.error(f"Failed to check AI relevance: {e}")
             content["ai_related"] = False
             content["ai_reason"] = f"Error: {e}"
             content["ai_confidence"] = 0.0
+            content["ai_filter_mode"] = "llm"
+            content["ai_error_category"] = e.category
+            return content
+        except Exception as e:
+            logger.error(f"Failed to check AI relevance: {e}")
+            fallback = self._fallback(content)
+            self._apply_filter_result(content, fallback, mode="fallback")
+            content["ai_error_category"] = "unknown"
             return content
 
     def moderate(self, content: Dict[str, Any]) -> Dict[str, Any]:
@@ -99,16 +112,33 @@ class AIThemeFilter:
                 "violence": False,
                 "low_quality": False,
             }
+            content["moderation_mode"] = "disabled"
             return content
 
         try:
-            result = self._check_moderation(content)
-            content["should_publish"] = result.should_publish
-            content["moderation_reason"] = result.reason
-            content["moderation_confidence"] = result.confidence
-            content["moderation_flags"] = result.flags
+            result, mode = self._check_moderation(content)
+            self._apply_moderation_result(content, result, mode=mode)
             return content
-        except Exception as e:
+        except LLMRequestError as e:
+            if e.category in {"compatibility", "transient_api"}:
+                logger.warning(f"Moderation degraded after provider issue: {e}")
+                try:
+                    result, _ = self._check_moderation(content, compact=True)
+                    self._apply_moderation_result(content, result, mode="retry")
+                    content["moderation_error_category"] = e.category
+                    return content
+                except LLMRequestError as retry_error:
+                    logger.warning(f"Compact moderation retry failed: {retry_error}")
+                    fallback = self._fallback_moderation(content)
+                    self._apply_moderation_result(content, fallback, mode="fallback")
+                    content["moderation_error_category"] = retry_error.category
+                    return content
+                except Exception as retry_error:
+                    logger.warning(f"Compact moderation retry failed: {retry_error}")
+                    fallback = self._fallback_moderation(content)
+                    self._apply_moderation_result(content, fallback, mode="fallback")
+                    content["moderation_error_category"] = "unknown"
+                    return content
             logger.error(f"Failed to moderate content: {e}")
             content["should_publish"] = False
             content["moderation_reason"] = f"Error: {e}"
@@ -119,9 +149,30 @@ class AIThemeFilter:
                 "violence": False,
                 "low_quality": True,
             }
+            content["moderation_mode"] = "llm"
+            content["moderation_error_category"] = e.category
+            return content
+        except Exception as e:
+            logger.error(f"Failed to moderate content: {e}")
+            fallback = self._fallback_moderation(content)
+            self._apply_moderation_result(content, fallback, mode="fallback")
+            content["moderation_error_category"] = "unknown"
             return content
 
-    def _check_ai_relevance(self, content: Dict[str, Any]) -> FilterResult:
+    def _apply_filter_result(self, content: Dict[str, Any], result: FilterResult, *, mode: str) -> None:
+        content["ai_related"] = result.is_ai_related
+        content["ai_reason"] = result.reason
+        content["ai_confidence"] = result.confidence
+        content["ai_filter_mode"] = mode
+
+    def _apply_moderation_result(self, content: Dict[str, Any], result: ModerationResult, *, mode: str) -> None:
+        content["should_publish"] = result.should_publish
+        content["moderation_reason"] = result.reason
+        content["moderation_confidence"] = result.confidence
+        content["moderation_flags"] = result.flags
+        content["moderation_mode"] = mode
+
+    def _check_ai_relevance(self, content: Dict[str, Any]) -> tuple[FilterResult, str]:
         source = (content.get("source") or "").strip()
         title = (content.get("catchy_title") or content.get("title") or "").strip()
         description = (content.get("description_translated") or content.get("description") or "").strip()
@@ -170,23 +221,23 @@ AI相关主题包括但不限于：
 
 只输出JSON，不要其他内容："""
 
-        try:
-            raw = self.client.create_message(prompt, max_tokens=200, temperature=0.1)
-            parsed = self._parse_result(raw)
+        raw = self.client.create_message(
+            prompt,
+            max_tokens=200,
+            temperature=0.1,
+            purpose="classification",
+        )
+        parsed = self._parse_result(raw)
 
-            if parsed:
-                if self.strict_mode:
-                    if parsed.confidence < self.min_confidence:
-                        parsed.is_ai_related = False
-                        parsed.reason = f"置信度不足 ({parsed.confidence:.2f} < {self.min_confidence})"
-                return parsed
+        if parsed:
+            if self.strict_mode and parsed.confidence < self.min_confidence:
+                parsed.is_ai_related = False
+                parsed.reason = f"置信度不足 ({parsed.confidence:.2f} < {self.min_confidence})"
+            return parsed, "llm"
 
-        except Exception as e:
-            logger.warning(f"LLM check failed, using fallback: {e}")
+        return self._fallback(content), "fallback"
 
-        return self._fallback(content)
-
-    def _check_moderation(self, content: Dict[str, Any]) -> ModerationResult:
+    def _check_moderation(self, content: Dict[str, Any], *, compact: bool = False) -> tuple[ModerationResult, str]:
         source = (content.get("source") or "").strip()
         title = (content.get("catchy_title") or content.get("title") or "").strip()
         url = (content.get("url") or content.get("external_url") or "").strip()
@@ -221,7 +272,41 @@ AI相关主题包括但不限于：
 
         context = "\n".join(context_lines)
 
-        prompt = f"""你是一个严格的内容审核员，负责决定内容是否应该发布到“AI Stack”技术站点。
+        prompt = self._build_moderation_prompt(context, compact=compact)
+
+        raw = self.client.create_message(
+            prompt,
+            max_tokens=180 if compact else 250,
+            temperature=0.1,
+            purpose="classification",
+        )
+        parsed = self._parse_moderation_result(raw)
+        if parsed:
+            if self.strict_mode and parsed.confidence < self.min_confidence:
+                parsed.should_publish = False
+                parsed.reason = f"置信度不足 ({parsed.confidence:.2f} < {self.min_confidence})"
+            return parsed, "llm"
+
+        return self._fallback_moderation(content), "fallback"
+
+    def _build_moderation_prompt(self, context: str, *, compact: bool = False) -> str:
+        if compact:
+            return f"""你是 AI Stack 的内容审核器。请仅基于给定内容判断是否可发布。
+
+只拦截以下情况：
+1) 明确与 AI/机器学习/大模型/Agent/RAG/Prompt/AI应用 无关
+2) 明确包含宗教、暴力、血腥、仇恨、极端主义
+3) 内容为空、只有标题、或明显是提示词/解释性废话
+
+输出严格 JSON：
+{{"should_publish": true/false, "reason": "中文，<=40字", "confidence": 0.0-1.0, "flags": {{"non_tech": true/false, "religion": true/false, "violence": true/false, "low_quality": true/false}}}}
+
+内容：
+{context}
+
+只输出 JSON。"""
+
+        return f"""你是一个严格的内容审核员，负责决定内容是否应该发布到“AI Stack”技术站点。
 
 审核标准（全部满足才可发布）：
 1) 必须与 AI/机器学习/大模型/Agent/RAG/Prompt 工程/AI应用开发/AI工具/AI论文 强相关
@@ -245,16 +330,6 @@ AI相关主题包括但不限于：
 {context}
 
 只输出 JSON，不要其他内容："""
-
-        raw = self.client.create_message(prompt, max_tokens=250, temperature=0.1)
-        parsed = self._parse_moderation_result(raw)
-        if parsed:
-            if self.strict_mode and parsed.confidence < self.min_confidence:
-                parsed.should_publish = False
-                parsed.reason = f"置信度不足 ({parsed.confidence:.2f} < {self.min_confidence})"
-            return parsed
-
-        return self._fallback_moderation(content)
 
     def _parse_result(self, raw: str) -> Optional[FilterResult]:
         if not raw or not raw.strip():
@@ -346,19 +421,19 @@ AI相关主题包括但不限于：
         )
 
     def _fallback_moderation(self, content: Dict[str, Any]) -> ModerationResult:
-        filtered = self.filter(dict(content))
-        ai_related = bool(filtered.get("ai_related", False))
+        fallback_result = self._fallback(dict(content))
+        ai_related = bool(fallback_result.is_ai_related)
         if ai_related:
             return ModerationResult(
                 should_publish=True,
                 reason="fallback: AI相关",
-                confidence=float(filtered.get("ai_confidence", 0.5) or 0.5),
+                confidence=float(fallback_result.confidence or 0.5),
                 flags={"non_tech": False, "religion": False, "violence": False, "low_quality": False},
             )
         return ModerationResult(
             should_publish=False,
             reason="fallback: 非AI或不确定",
-            confidence=float(filtered.get("ai_confidence", 0.3) or 0.3),
+            confidence=float(fallback_result.confidence or 0.3),
             flags={"non_tech": True, "religion": False, "violence": False, "low_quality": True},
         )
 

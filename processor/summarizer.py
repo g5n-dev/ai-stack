@@ -36,7 +36,7 @@ class ContentSummarizer:
 
         try:
             prompt = self._build_summary_prompt(content, style)
-            summary = self.client.create_message(prompt, max_tokens=500)
+            summary = self.client.create_message(prompt, max_tokens=500, purpose="generation")
             text = normalize_generated_markdown(
                 summary or "",
                 wrapper_headings={"摘要", "摘要/简介", "核心摘要"},

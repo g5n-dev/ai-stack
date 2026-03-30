@@ -16,6 +16,19 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
+def _env_flag(name: str, default: bool) -> bool:
+    raw = os.environ.get(name)
+    if raw is None:
+        return default
+    return raw.strip().lower() not in {"0", "false", "no", "off"}
+
+
+def get_tag_graph_runtime_options() -> Dict[str, bool]:
+    return {
+        "enable_content_mining": _env_flag("TAG_GRAPH_ENABLE_CONTENT_MINING", True),
+    }
+
+
 class TagGraphBuilder:
     """标签图谱构建器 - 基于文章标签共现关系和内容挖掘构建图谱"""
 
@@ -304,7 +317,8 @@ class TagGraphBuilder:
 def export_tag_graph(
     output_path: str = "blog/static/data/tag-graph.json",
     min_cooccurrence: int = 1,
-    enable_content_mining: bool = True
+    enable_content_mining: bool = True,
+    content_dir: str = "blog/content/posts",
 ) -> Path:
     """导出标签图谱数据（包含标签和概念层）"""
     import sys
@@ -316,6 +330,7 @@ def export_tag_graph(
         min_cooccurrence=min_cooccurrence,
         enable_content_mining=enable_content_mining,
         existing_output_path=output_path,
+        content_dir=content_dir,
     )
 
     output = Path(output_path)
@@ -328,8 +343,9 @@ def export_tag_graph(
 
 def build_tag_graph_data(
     min_cooccurrence: int = 1,
-    enable_content_mining: bool = True,
+    enable_content_mining: Optional[bool] = None,
     existing_output_path: Optional[str] = None,
+    content_dir: str = "blog/content/posts",
 ) -> Dict[str, Any]:
     import sys
     from pathlib import Path
@@ -354,7 +370,11 @@ def build_tag_graph_data(
             except Exception as e:
                 logger.warning(f"Failed to load existing tag descriptions: {e}")
 
-    builder = TagGraphBuilder(enable_content_mining=enable_content_mining)
+    runtime_options = get_tag_graph_runtime_options()
+    if enable_content_mining is None:
+        enable_content_mining = runtime_options["enable_content_mining"]
+
+    builder = TagGraphBuilder(content_dir=content_dir, enable_content_mining=enable_content_mining)
     builder.extract_tags_from_articles()
 
     def is_default_tag_description(tag_name: str, desc: str) -> bool:
@@ -434,7 +454,12 @@ def build_tag_graph_data(
                 )
 
                 try:
-                    raw = client.create_message(prompt, max_tokens=140, temperature=0.3)
+                    raw = client.create_message(
+                        prompt,
+                        max_tokens=140,
+                        temperature=0.3,
+                        purpose="tag_intro",
+                    )
                     intro = (raw or "").strip().strip('"').strip()
                     if intro:
                         tag_data["description"] = intro.replace("\r\n", "\n").strip()
@@ -499,11 +524,13 @@ def export_tag_graph_split(
     enable_content_mining: bool = True,
     hot_tag_limit: int = 250,
     hot_concept_limit: int = 150,
+    content_dir: str = "blog/content/posts",
 ) -> Path:
     result = build_tag_graph_data(
         min_cooccurrence=min_cooccurrence,
         enable_content_mining=enable_content_mining,
         existing_output_path="blog/static/data/tag-graph/tag.json",
+        content_dir=content_dir,
     )
     return write_tag_graph_split_from_result(
         result=result,
@@ -615,9 +642,10 @@ def write_tag_graph_split_from_result(
 
 
 if __name__ == "__main__":
+    runtime_options = get_tag_graph_runtime_options()
     result = build_tag_graph_data(
         min_cooccurrence=1,
-        enable_content_mining=True,
+        enable_content_mining=runtime_options["enable_content_mining"],
         existing_output_path="blog/static/data/tag-graph/tag.json",
     )
     out_dir = write_tag_graph_split_from_result(result=result)

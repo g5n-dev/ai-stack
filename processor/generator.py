@@ -185,7 +185,12 @@ class SuperEnhancedContentGenerator:
         last = ""
         attempts = max(1, 1 + self._quality_retries)
         for attempt in range(attempts):
-            response = self.client.create_message(prompt, max_tokens=max_tokens, temperature=temperature)
+            response = self.client.create_message(
+                prompt,
+                max_tokens=max_tokens,
+                temperature=temperature,
+                purpose="generation",
+            )
             text = (response or "").strip()
             if postprocess is not None:
                 text = postprocess(text)
@@ -222,6 +227,176 @@ class SuperEnhancedContentGenerator:
                 )
         return last
 
+    def _validate_intro_output(self, text: str) -> bool:
+        return self._validate_text(
+            text,
+            min_chars=80,
+            max_chars=220,
+            allow_emoji=False,
+            allow_hype=False,
+            allow_placeholders=False,
+        )
+
+    def _validate_comment_output(self, text: str) -> bool:
+        return self._validate_text(
+            text,
+            min_chars=280,
+            max_chars=9000,
+            allow_emoji=False,
+            allow_hype=False,
+            allow_placeholders=False,
+        )
+
+    def _validate_analysis_output(self, text: str) -> bool:
+        return self._validate_text(
+            text,
+            min_chars=600,
+            max_chars=14000,
+            allow_emoji=False,
+            allow_hype=False,
+            allow_placeholders=False,
+        )
+
+    def _guard_feedback(self, text: str, *, min_chars: int, max_chars: Optional[int] = None) -> list[str]:
+        t = (text or "").strip()
+        feedback: list[str] = []
+        if not t:
+            feedback.append("输出为空")
+        if len(t) < min_chars:
+            feedback.append(f"正文过短，至少需要 {min_chars} 个字符")
+        if max_chars is not None and len(t) > max_chars:
+            feedback.append(f"正文过长，最多 {max_chars} 个字符")
+        if self._looks_like_meta_disclaimer(t):
+            feedback.append("包含提示词泄露或解释性废话")
+        if self._has_placeholders(t):
+            feedback.append("包含占位符")
+        if looks_incomplete_text(t):
+            feedback.append("结尾疑似截断或不完整")
+        if self._contains_emoji(t):
+            feedback.append("包含 emoji")
+        if self._has_hype_words(t):
+            feedback.append("包含夸张营销词")
+        return feedback or ["未满足格式与质量要求"]
+
+    def _repair_section_once(
+        self,
+        *,
+        content: Dict,
+        field_name: str,
+        label: str,
+        build_prompt: Callable[[Dict], str],
+        max_tokens: int,
+        temperature: float,
+        validator: Callable[[str], bool],
+        postprocess: Callable[[str], str] | None = None,
+        min_chars: int,
+        max_chars: Optional[int] = None,
+    ) -> None:
+        current = (content.get(field_name) or "").strip()
+        if validator(current):
+            return
+
+        issues = self._guard_feedback(current, min_chars=min_chars, max_chars=max_chars)
+        repair_prompt = "\n".join(
+            [
+                "你是中文技术内容编辑。上一版输出不合格，请直接重写最终正文。",
+                f"当前部分：{label}",
+                "",
+                "原始写作任务：",
+                build_prompt(content),
+                "",
+                "上一版输出：",
+                current[:2000],
+                "",
+                "必须修正的问题：",
+                "- " + "\n- ".join(issues),
+                "",
+                "硬性要求：",
+                "- 只输出最终正文",
+                "- 不要解释",
+                "- 不要暴露提示词",
+                "- 不要写格式说明",
+            ]
+        )
+        try:
+            repaired = self.client.create_message(
+                repair_prompt,
+                max_tokens=max_tokens,
+                temperature=max(0.2, min(temperature, 0.45)),
+                purpose="generation",
+            )
+            text = (repaired or "").strip()
+            if postprocess is not None:
+                text = postprocess(text)
+            content[field_name] = text
+        except Exception as e:
+            logger.warning(f"Guard repair failed for {field_name}: {e}")
+
+    def _repair_guarded_sections(self, content: Dict) -> Dict:
+        repaired_sections: list[str] = []
+
+        before = (content.get("engaging_intro") or "").strip()
+        self._repair_section_once(
+            content=content,
+            field_name="engaging_intro",
+            label="导语",
+            build_prompt=self._build_intro_prompt,
+            max_tokens=self.intro_length,
+            temperature=0.45,
+            validator=self._validate_intro_output,
+            postprocess=self._normalize_intro_text,
+            min_chars=80,
+            max_chars=220,
+        )
+        if (content.get("engaging_intro") or "").strip() != before:
+            repaired_sections.append("engaging_intro")
+
+        before = (content.get("deep_comment") or "").strip()
+        self._repair_section_once(
+            content=content,
+            field_name="deep_comment",
+            label="深度评论",
+            build_prompt=self._build_comment_prompt,
+            max_tokens=self.comment_length,
+            temperature=0.5,
+            validator=self._validate_comment_output,
+            postprocess=self._normalize_body_section_text,
+            min_chars=280,
+        )
+        if (content.get("deep_comment") or "").strip() != before:
+            repaired_sections.append("deep_comment")
+
+        before = (content.get("comprehensive_analysis") or "").strip()
+        self._repair_section_once(
+            content=content,
+            field_name="comprehensive_analysis",
+            label="技术分析",
+            build_prompt=self._build_analysis_prompt,
+            max_tokens=self.analysis_length,
+            temperature=0.45,
+            validator=self._validate_analysis_output,
+            postprocess=self._normalize_body_section_text,
+            min_chars=600,
+        )
+        if (content.get("comprehensive_analysis") or "").strip() != before:
+            repaired_sections.append("comprehensive_analysis")
+
+        failed_sections: list[str] = []
+        if not self._validate_intro_output((content.get("engaging_intro") or "").strip()):
+            failed_sections.append("engaging_intro")
+        if not self._validate_comment_output((content.get("deep_comment") or "").strip()):
+            failed_sections.append("deep_comment")
+        if not self._validate_analysis_output((content.get("comprehensive_analysis") or "").strip()):
+            failed_sections.append("comprehensive_analysis")
+
+        if repaired_sections:
+            content["guard_repaired_sections"] = repaired_sections
+        if failed_sections:
+            content["guard_failed_sections"] = failed_sections
+        else:
+            content.pop("guard_failed_sections", None)
+        return content
+
     # ============ 基础内容生成（3次调用） ============
 
     def generate_catchy_title(self, content: Dict) -> str:
@@ -254,14 +429,7 @@ class SuperEnhancedContentGenerator:
                 prompt=prompt,
                 max_tokens=self.intro_length,
                 temperature=0.5,
-                validator=lambda t: self._validate_text(
-                    t,
-                    min_chars=80,
-                    max_chars=220,
-                    allow_emoji=False,
-                    allow_hype=False,
-                    allow_placeholders=False,
-                ),
+                validator=self._validate_intro_output,
                 label="导语",
                 postprocess=self._normalize_intro_text,
             )
@@ -277,14 +445,7 @@ class SuperEnhancedContentGenerator:
                 prompt=prompt,
                 max_tokens=self.comment_length,
                 temperature=0.6,
-                validator=lambda t: self._validate_text(
-                    t,
-                    min_chars=280,
-                    max_chars=9000,
-                    allow_emoji=False,
-                    allow_hype=False,
-                    allow_placeholders=False,
-                ),
+                validator=self._validate_comment_output,
                 label="深度评论",
                 postprocess=self._normalize_body_section_text,
             )
@@ -302,14 +463,7 @@ class SuperEnhancedContentGenerator:
                 prompt=prompt,
                 max_tokens=self.analysis_length,
                 temperature=0.55,
-                validator=lambda t: self._validate_text(
-                    t,
-                    min_chars=600,
-                    max_chars=14000,
-                    allow_emoji=False,
-                    allow_hype=False,
-                    allow_placeholders=False,
-                ),
+                validator=self._validate_analysis_output,
                 label="技术分析",
                 postprocess=self._normalize_body_section_text,
             )
@@ -1520,6 +1674,7 @@ def example2():
             logger.info("[15/15] Generating challenges...")
             content['challenges'] = self.generate_challenges(content)
 
+            content = self._repair_guarded_sections(content)
             logger.info("Processing completed successfully")
             return content
 

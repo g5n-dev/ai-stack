@@ -76,6 +76,13 @@ _AUTH_FAILURE_HINTS = (
     "token",
 )
 
+_COMPAT_FAILURE_HINTS = (
+    "no text content found in response blocks",
+    "thinking without text",
+    "stop_reason=max_tokens",
+    "compatibility",
+)
+
 
 def _looks_like_prompt_leak_line(line: str) -> bool:
     s = str(line or "").strip()
@@ -230,12 +237,24 @@ def looks_like_llm_auth_failure(text: str) -> bool:
     return any(hint in lowered or hint in s for hint in _AUTH_FAILURE_HINTS)
 
 
+def looks_like_llm_compat_failure(text: str) -> bool:
+    s = str(text or "").strip()
+    if not s:
+        return False
+    lowered = s.lower()
+    return any(hint in lowered for hint in _COMPAT_FAILURE_HINTS)
+
+
 def summarize_processed_postability(processed_data: dict) -> dict:
     summary = {
         "total_items": 0,
         "skipped_items": 0,
         "auth_error_items": 0,
         "auth_error_examples": [],
+        "compat_error_items": 0,
+        "compat_error_examples": [],
+        "guard_failed_items": 0,
+        "guard_failed_examples": [],
     }
 
     if not isinstance(processed_data, dict):
@@ -262,6 +281,23 @@ def summarize_processed_postability(processed_data: dict) -> dict:
                 if len(summary["auth_error_examples"]) < 3:
                     title = str(item.get("title") or item.get("catchy_title") or "Untitled").strip()
                     summary["auth_error_examples"].append(f"{source}: {title}")
+            compat_categories = {
+                str(item.get("ai_error_category") or "").strip(),
+                str(item.get("moderation_error_category") or "").strip(),
+                str(item.get("processing_error_category") or "").strip(),
+            }
+            if "compatibility" in compat_categories or any(looks_like_llm_compat_failure(reason) for reason in reasons):
+                summary["compat_error_items"] += 1
+                if len(summary["compat_error_examples"]) < 3:
+                    title = str(item.get("title") or item.get("catchy_title") or "Untitled").strip()
+                    summary["compat_error_examples"].append(f"{source}: {title}")
+            guard_failed_sections = item.get("guard_failed_sections", [])
+            if isinstance(guard_failed_sections, list) and guard_failed_sections:
+                summary["guard_failed_items"] += 1
+                if len(summary["guard_failed_examples"]) < 3:
+                    title = str(item.get("title") or item.get("catchy_title") or "Untitled").strip()
+                    sections = ",".join(str(x) for x in guard_failed_sections[:3])
+                    summary["guard_failed_examples"].append(f"{source}: {title} [{sections}]")
 
     return summary
 
@@ -525,6 +561,8 @@ class SuperEnhancedContentGenerator:
     def _raise_for_fatal_post_generation_state(self, *, posts_created: int, postability: dict) -> None:
         total_items = int(postability.get("total_items", 0) or 0)
         auth_error_items = int(postability.get("auth_error_items", 0) or 0)
+        compat_error_items = int(postability.get("compat_error_items", 0) or 0)
+        guard_failed_items = int(postability.get("guard_failed_items", 0) or 0)
 
         if posts_created > 0:
             if auth_error_items > 0:
@@ -532,6 +570,18 @@ class SuperEnhancedContentGenerator:
                     "Some content failed due to LLM authentication issues: items=%s examples=%s",
                     auth_error_items,
                     ", ".join(postability.get("auth_error_examples", [])) or "n/a",
+                )
+            if compat_error_items > 0:
+                logger.warning(
+                    "Some content hit MiniMax compatibility issues: items=%s examples=%s",
+                    compat_error_items,
+                    ", ".join(postability.get("compat_error_examples", [])) or "n/a",
+                )
+            if guard_failed_items > 0:
+                logger.warning(
+                    "Some content failed output guards after regeneration: items=%s examples=%s",
+                    guard_failed_items,
+                    ", ".join(postability.get("guard_failed_examples", [])) or "n/a",
                 )
             return
 
@@ -543,6 +593,18 @@ class SuperEnhancedContentGenerator:
             raise RuntimeError(
                 "LLM authentication failed and no Markdown posts were created. "
                 "Check ANTHROPIC_AUTH_TOKEN, ANTHROPIC_BASE_URL, and ANTHROPIC_MODEL. "
+                f"Examples: {examples}"
+            )
+        if compat_error_items > 0:
+            examples = ", ".join(postability.get("compat_error_examples", [])) or "n/a"
+            raise RuntimeError(
+                "MiniMax compatibility failed and no Markdown posts were created. "
+                f"Examples: {examples}"
+            )
+        if guard_failed_items > 0:
+            examples = ", ".join(postability.get("guard_failed_examples", [])) or "n/a"
+            raise RuntimeError(
+                "Generated content failed output guards and no Markdown posts were created. "
                 f"Examples: {examples}"
             )
 
@@ -619,6 +681,11 @@ class SuperEnhancedContentGenerator:
             return True
         if item.get("should_publish") is False:
             return True
+        guard_failed_sections = [
+            str(section).strip()
+            for section in (item.get("guard_failed_sections") or [])
+            if str(section).strip()
+        ]
         for k in [
             "summary",
             "engaging_intro",
@@ -629,7 +696,12 @@ class SuperEnhancedContentGenerator:
             "generated_comment",
         ]:
             if self._looks_like_meta_disclaimer(item.get(k, "")):
-                return True
+                if k not in guard_failed_sections:
+                    guard_failed_sections.append(k)
+        if guard_failed_sections:
+            item["guard_failed_sections"] = guard_failed_sections
+            item["guard_failure_reason"] = f"guard_failed: {', '.join(guard_failed_sections)}"
+            return True
         return False
 
     def _generate_slug(self, title: str, index: int) -> str:

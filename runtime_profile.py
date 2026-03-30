@@ -51,6 +51,10 @@ def apply_anthropic_runtime_profile(config: Dict[str, Any] | None, profile: str 
     result["llm_max_retries"] = 1
     result["disable_thinking"] = True
 
+    ai_filter = result.setdefault("ai_filter", {})
+    ai_filter["strict_mode"] = False
+    ai_filter["min_confidence"] = 0.5
+
     generation = result.setdefault("generation", {})
     generation["intro_length"] = 220
     generation["comment_length"] = 500

@@ -37,7 +37,7 @@ class ContentTranslator:
 
         try:
             prompt = self._build_translation_prompt(content, target_lang)
-            translation = self.client.create_message(prompt, max_tokens=2000)
+            translation = self.client.create_message(prompt, max_tokens=2000, purpose="generation")
             return translation.strip()
 
         except Exception as e:

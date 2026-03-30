@@ -13,12 +13,24 @@ ROOT = Path(__file__).resolve().parent.parent
 
 def _load_module(module_name: str, relative_path: str):
     fake_anthropic = types.ModuleType("anthropic")
+    class _FakeAPIError(Exception):
+        def __init__(self, message="error", *, status_code=None):
+            super().__init__(message)
+            self.status_code = status_code
+    class _FakeRateLimitError(_FakeAPIError):
+        pass
+    class _FakeAPITimeoutError(_FakeAPIError):
+        pass
+    class _FakeAPIConnectionError(_FakeAPIError):
+        pass
+    class _FakeInternalServerError(_FakeAPIError):
+        pass
     fake_anthropic.Anthropic = object
-    fake_anthropic.APIError = Exception
-    fake_anthropic.RateLimitError = Exception
-    fake_anthropic.APITimeoutError = Exception
-    fake_anthropic.APIConnectionError = Exception
-    fake_anthropic.InternalServerError = Exception
+    fake_anthropic.APIError = _FakeAPIError
+    fake_anthropic.RateLimitError = _FakeRateLimitError
+    fake_anthropic.APITimeoutError = _FakeAPITimeoutError
+    fake_anthropic.APIConnectionError = _FakeAPIConnectionError
+    fake_anthropic.InternalServerError = _FakeInternalServerError
     fake_yaml = types.ModuleType("yaml")
     fake_yaml.safe_load = lambda *args, **kwargs: {}
 
@@ -70,7 +82,10 @@ class _FakeMessagesAPI:
         self.calls.append(kwargs)
         if not self.responses:
             raise AssertionError("No more fake responses configured")
-        return self.responses.pop(0)
+        response = self.responses.pop(0)
+        if isinstance(response, BaseException):
+            raise response
+        return response
 
 
 class _FakeClient:
@@ -170,7 +185,7 @@ class AnthropicResponseParsingTest(unittest.TestCase):
         self.assertEqual(client.client.messages.calls[0]["max_tokens"], 300)
         self.assertEqual(client.client.messages.calls[1]["max_tokens"], 2048)
 
-    def test_truncated_retry_uses_larger_budget_after_thinking_fallback(self):
+    def test_thinking_then_truncated_response_uses_only_one_structural_fallback(self):
         client = self.anthropic_client_module.AnthropicClient.__new__(self.anthropic_client_module.AnthropicClient)
         client.config = {
             "base_url": "https://api.minimaxi.com/anthropic",
@@ -184,16 +199,55 @@ class AnthropicResponseParsingTest(unittest.TestCase):
             [
                 _Message([_ThinkingBlock()], stop_reason="max_tokens"),
                 _Message([_TextBlock("partial answer")], stop_reason="max_tokens"),
-                _Message([_TextBlock("complete answer")], stop_reason="end_turn"),
             ]
         )
 
         text = client.create_message("prompt", max_tokens=200, temperature=0.1)
 
-        self.assertEqual(text, "complete answer")
-        self.assertEqual(len(client.client.messages.calls), 3)
+        self.assertEqual(text, "partial answer")
+        self.assertEqual(len(client.client.messages.calls), 2)
         self.assertEqual(client.client.messages.calls[1]["max_tokens"], 2048)
-        self.assertEqual(client.client.messages.calls[2]["max_tokens"], 4096)
+
+    def test_generation_purpose_retries_transient_api_once(self):
+        client = self.anthropic_client_module.AnthropicClient.__new__(self.anthropic_client_module.AnthropicClient)
+        client.config = {
+            "base_url": "https://api.minimaxi.com/anthropic",
+            "max_tokens": 8192,
+            "llm_max_retries": 1,
+            "temperature": 0.3,
+            "min_fallback_max_tokens": 2048,
+        }
+        client._semaphore = contextlib.nullcontext()
+        error = self.anthropic_client_module.anthropic.APIConnectionError("timeout")
+        client.client = _FakeClient(
+            [
+                error,
+                _Message([_TextBlock("final answer")], stop_reason="end_turn"),
+            ]
+        )
+
+        text = client.create_message("prompt", max_tokens=300, temperature=0.1, purpose="generation")
+
+        self.assertEqual(text, "final answer")
+        self.assertEqual(len(client.client.messages.calls), 2)
+
+    def test_classification_purpose_does_not_retry_transient_api(self):
+        client = self.anthropic_client_module.AnthropicClient.__new__(self.anthropic_client_module.AnthropicClient)
+        client.config = {
+            "base_url": "https://api.minimaxi.com/anthropic",
+            "max_tokens": 8192,
+            "llm_max_retries": 1,
+            "temperature": 0.3,
+            "min_fallback_max_tokens": 2048,
+        }
+        client._semaphore = contextlib.nullcontext()
+        error = self.anthropic_client_module.anthropic.APIConnectionError("timeout")
+        client.client = _FakeClient([error])
+
+        with self.assertRaises(self.anthropic_client_module.LLMTransientAPIError):
+            client.create_message("prompt", max_tokens=300, temperature=0.1, purpose="classification")
+
+        self.assertEqual(len(client.client.messages.calls), 1)
 
     def test_twitter_analyzer_extracts_text_from_mixed_blocks(self):
         analyzer = self.twitter_analyzer_module.TwitterContentAnalyzer.__new__(self.twitter_analyzer_module.TwitterContentAnalyzer)

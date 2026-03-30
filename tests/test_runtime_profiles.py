@@ -68,6 +68,8 @@ class RuntimeProfileTest(unittest.TestCase):
 
         self.assertEqual(profiled["llm_concurrency"], 2)
         self.assertEqual(profiled["llm_max_retries"], 1)
+        self.assertFalse(profiled["ai_filter"]["strict_mode"])
+        self.assertEqual(profiled["ai_filter"]["min_confidence"], 0.5)
         self.assertEqual(profiled["generation"]["intro_length"], 220)
         self.assertEqual(profiled["generation"]["comment_length"], 500)
         self.assertEqual(profiled["generation"]["analysis_length"], 900)

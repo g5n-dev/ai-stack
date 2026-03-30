@@ -242,10 +242,20 @@ jobs:
           PYTHONPATH: /home/runner/work/ai-stack/ai-stack
           ANTHROPIC_AUTH_TOKEN: ${{ secrets.ANTHROPIC_AUTH_TOKEN }}
           ANTHROPIC_BASE_URL: ${{ secrets.ANTHROPIC_BASE_URL }}
+          TAG_GRAPH_ENABLE_CONTENT_MINING: "0"
+          TAG_INTRO_ENABLED: "0"
+          TAG_INTRO_MAX_NEW: "0"
         run: |
           echo "=== Building Tag Graph ==="
           if [ -f processor/tag_graph.py ]; then
-            python3 -m processor.tag_graph
+            python3 -m processor.tag_graph || {
+              if [ -f blog/static/data/tag-graph/index.json ] && [ -f blog/static/data/tag-graph/tag.json ]; then
+                echo "Tag graph build failed, reusing existing graph artifacts"
+              else
+                echo "Tag graph build failed and no fallback graph artifacts exist"
+                exit 1
+              fi
+            }
           else
             echo "Tag graph generator not found, skipping..."
           fi

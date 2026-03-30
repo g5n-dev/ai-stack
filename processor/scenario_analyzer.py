@@ -73,7 +73,12 @@ class ScenarioAnalyzer:
 
         try:
             prompt = self._build_prompt(content)
-            raw = self.client.create_message(prompt, max_tokens=800, temperature=self.temperature)
+            raw = self.client.create_message(
+                prompt,
+                max_tokens=800,
+                temperature=self.temperature,
+                purpose="metadata",
+            )
             result = self._parse_result(raw)
 
             if not result:
