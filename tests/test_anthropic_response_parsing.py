@@ -115,6 +115,14 @@ class AnthropicResponseParsingTest(unittest.TestCase):
 
         self.assertEqual(text, "part 1\n\npart 2")
 
+    def test_extract_text_accepts_dict_block_without_type_when_text_present(self):
+        client = self.anthropic_client_module.AnthropicClient.__new__(self.anthropic_client_module.AnthropicClient)
+        message = _Message([{"text": "compat answer"}])
+
+        text = client._extract_text_from_message(message)
+
+        self.assertEqual(text, "compat answer")
+
     def test_default_model_switches_for_minimax(self):
         client = self.anthropic_client_module.AnthropicClient.__new__(self.anthropic_client_module.AnthropicClient)
         client.config = {"base_url": "https://api.minimaxi.com/anthropic"}
@@ -159,6 +167,29 @@ class AnthropicResponseParsingTest(unittest.TestCase):
         self.assertEqual(len(client.client.messages.calls), 2)
         self.assertEqual(client.client.messages.calls[0]["thinking"], {"type": "disabled"})
         self.assertEqual(client.client.messages.calls[1]["thinking"], {"type": "disabled"})
+        self.assertEqual(client.client.messages.calls[1]["max_tokens"], 2048)
+
+    def test_metadata_purpose_retries_thinking_only_minimax_response_once(self):
+        client = self.anthropic_client_module.AnthropicClient.__new__(self.anthropic_client_module.AnthropicClient)
+        client.config = {
+            "base_url": "https://api.minimaxi.com/anthropic",
+            "max_tokens": 8192,
+            "llm_max_retries": 0,
+            "temperature": 0.3,
+            "min_fallback_max_tokens": 2048,
+        }
+        client._semaphore = contextlib.nullcontext()
+        client.client = _FakeClient(
+            [
+                _Message([_ThinkingBlock()], stop_reason="max_tokens"),
+                _Message([_TextBlock('{"tags":["AI"]}')], stop_reason="end_turn"),
+            ]
+        )
+
+        text = client.create_message("prompt", max_tokens=200, temperature=0.1, purpose="metadata")
+
+        self.assertEqual(text, '{"tags":["AI"]}')
+        self.assertEqual(len(client.client.messages.calls), 2)
         self.assertEqual(client.client.messages.calls[1]["max_tokens"], 2048)
 
     def test_create_message_retries_text_response_stopped_by_max_tokens_once(self):

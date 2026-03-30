@@ -174,6 +174,8 @@ class AnthropicClient:
                 "allow_structural_fallback": purpose in {
                     self.PURPOSE_GENERATION,
                     self.PURPOSE_CLASSIFICATION,
+                    self.PURPOSE_METADATA,
+                    self.PURPOSE_TAG_INTRO,
                 },
                 "api_retries": min(max(0, configured_max_retries), 1)
                 if purpose == self.PURPOSE_GENERATION
@@ -183,6 +185,8 @@ class AnthropicClient:
             "allow_structural_fallback": purpose in {
                 self.PURPOSE_GENERATION,
                 self.PURPOSE_CLASSIFICATION,
+                self.PURPOSE_METADATA,
+                self.PURPOSE_TAG_INTRO,
             },
             "api_retries": max(0, configured_max_retries)
             if purpose == self.PURPOSE_GENERATION
@@ -217,8 +221,9 @@ class AnthropicClient:
 
             text = ""
             if isinstance(block, dict):
-                if block.get("type") == "text":
-                    text = str(block.get("text") or "")
+                candidate_text = block.get("text")
+                if block.get("type") == "text" or (candidate_text and not block.get("type")):
+                    text = str(candidate_text or "")
             elif getattr(block, "type", None) == "text":
                 text = str(getattr(block, "text", "") or "")
             elif hasattr(block, "text"):
