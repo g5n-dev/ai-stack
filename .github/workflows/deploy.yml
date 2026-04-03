@@ -34,7 +34,7 @@ jobs:
   build-and-deploy:
     if: ${{ !(github.event_name == 'push' && github.actor == 'github-actions[bot]') }}
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 90
     steps:
       - name: Checkout main branch
         uses: actions/checkout@v4
