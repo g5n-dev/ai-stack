@@ -62,6 +62,7 @@
 <body class="bg-deep-navy selection:bg-muted-teal selection:text-deep-navy font-display">
     {{ $posts := where .Site.RegularPages "Type" "posts" }}
     {{ $posts = sort $posts "Date" "desc" }}
+    {{ $latestPost := cond (gt (len $posts) 0) (index $posts 0) nil }}
 
     <div class="rain-container">
         <div class="rain-streak r1"></div>
@@ -117,11 +118,11 @@
                         <span class="font-medium">12ms</span>
                     </div>
                     <div class="flex flex-col border-l border-muted-teal/10 pl-8">
-                        <span class="text-muted-teal/50 text-[10px] tracking-normal">最近同步</span>
+                        <span class="text-muted-teal/50 text-[10px] tracking-normal">最新内容</span>
                         <span class="font-medium text-off-white">
-                            {{ with (first 1 $posts) }}{{ (index . 0).Date.Format "2006-01-02 15:04" }}{{ else }}N/A{{
-                            end }}
+                            {{ with $latestPost }}{{ .Date.Format "2006-01-02 15:04" }}{{ else }}N/A{{ end }}
                         </span>
+                        <span class="text-[9px] text-off-white/35 tracking-normal">非站点部署时间</span>
                     </div>
                     <div class="flex flex-col border-l border-muted-teal/10 pl-8">
                         <span class="text-muted-teal/50 text-[10px] tracking-normal">当前时间</span>

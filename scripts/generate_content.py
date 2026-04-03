@@ -672,6 +672,56 @@ class SuperEnhancedContentGenerator:
         ]
         return any(w in t for w in banned)
 
+    def _drop_guard_failed_sections(self, item: dict, sections: list[str]) -> list[str]:
+        dropped: list[str] = []
+        for section in sections:
+            name = str(section or "").strip()
+            if not name:
+                continue
+            if name in item:
+                item.pop(name, None)
+                dropped.append(name)
+        if dropped:
+            item["guard_dropped_sections"] = dropped
+        return dropped
+
+    def _has_publishable_body(self, item: dict) -> bool:
+        text_fields = [
+            "summary",
+            "description_translated",
+            "description",
+            "deepwiki_content",
+            "comprehensive_analysis",
+            "analysis",
+            "best_practices",
+            "comparison_analysis",
+            "performance_tips",
+            "practical_recommendations",
+            "learning_path",
+        ]
+        for field in text_fields:
+            value = str(item.get(field) or "").strip()
+            if not value:
+                continue
+            if self._looks_like_meta_disclaimer(value):
+                continue
+            return True
+
+        list_fields = [
+            "code_examples",
+            "case_studies",
+            "learning_takeaways",
+            "faq",
+            "challenges",
+            "related_resources",
+        ]
+        for field in list_fields:
+            value = item.get(field)
+            if isinstance(value, list) and len(value) > 0:
+                return True
+
+        return False
+
     def _should_skip_post(self, item: dict) -> bool:
         if not isinstance(item, dict):
             return True
@@ -700,8 +750,11 @@ class SuperEnhancedContentGenerator:
                     guard_failed_sections.append(k)
         if guard_failed_sections:
             item["guard_failed_sections"] = guard_failed_sections
-            item["guard_failure_reason"] = f"guard_failed: {', '.join(guard_failed_sections)}"
-            return True
+            dropped_sections = self._drop_guard_failed_sections(item, guard_failed_sections)
+            if not self._has_publishable_body(item):
+                item["guard_failure_reason"] = f"guard_failed: {', '.join(guard_failed_sections)}"
+                return True
+            item["guard_failure_reason"] = f"guard_dropped: {', '.join(dropped_sections or guard_failed_sections)}"
         return False
 
     def _generate_slug(self, title: str, index: int) -> str:

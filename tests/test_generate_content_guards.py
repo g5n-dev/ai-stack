@@ -186,6 +186,39 @@ class GenerateContentGuardsTest(unittest.TestCase):
                 },
             )
 
+    def test_should_not_skip_post_when_guard_failed_sections_are_dropped(self):
+        generator = self.module.SuperEnhancedContentGenerator.__new__(self.module.SuperEnhancedContentGenerator)
+        item = {
+            "title": "repo-a",
+            "summary": "这是一段正常摘要，仍然足够支撑文章发布。",
+            "engaging_intro": "由于您提供的标题有限，我将基于常见技术写法生成内容。",
+            "deep_comment": "由于您提供的内容有限，我只能给出泛化评价。",
+            "guard_failed_sections": ["engaging_intro", "deep_comment"],
+        }
+
+        should_skip = generator._should_skip_post(item)
+
+        self.assertFalse(should_skip)
+        self.assertEqual(item["guard_dropped_sections"], ["engaging_intro", "deep_comment"])
+        self.assertNotIn("engaging_intro", item)
+        self.assertNotIn("deep_comment", item)
+        self.assertEqual(item["guard_failure_reason"], "guard_dropped: engaging_intro, deep_comment")
+
+    def test_should_skip_post_when_guard_failed_sections_leave_no_publishable_body(self):
+        generator = self.module.SuperEnhancedContentGenerator.__new__(self.module.SuperEnhancedContentGenerator)
+        item = {
+            "title": "repo-a",
+            "engaging_intro": "由于您提供的标题有限，我将基于常见技术写法生成内容。",
+            "deep_comment": "由于您提供的内容有限，我只能给出泛化评价。",
+            "guard_failed_sections": ["engaging_intro", "deep_comment"],
+        }
+
+        should_skip = generator._should_skip_post(item)
+
+        self.assertTrue(should_skip)
+        self.assertEqual(item["guard_dropped_sections"], ["engaging_intro", "deep_comment"])
+        self.assertEqual(item["guard_failure_reason"], "guard_failed: engaging_intro, deep_comment")
+
 
 if __name__ == "__main__":
     unittest.main()
