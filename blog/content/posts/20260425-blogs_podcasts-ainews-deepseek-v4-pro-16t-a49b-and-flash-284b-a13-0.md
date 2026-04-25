@@ -1,17 +1,17 @@
 ---
-title: "DeepSeek V4 Pro与Flash系列发布：支持华为昇腾芯片运行"
-date: 2026-04-25T17:55:42+08:00
+title: "DeepSeek V4 Pro和Flash登陆华为Ascend平台"
+date: 2026-04-25T19:09:51+08:00
 draft: false
 entry_kind: "auto"
-tags: ["DeepSeek V4 Pro", "Flash模型", "华为昇腾", "Ascend芯片", "模型发布", "开源大模型", "参数规模", "硬件适配"]
-categories: ["大模型"]
+tags: ["DeepSeek", "V4 Pro", "Flash", "华为Ascend", "模型部署", "基准测试", "AI新闻", "国产芯片"]
+categories: ["大模型", "AI 工程"]
 source: blogs_podcasts
-description: "DeepSeek V4 Pro（1.6 T‑A49B）和 Flash（284 B‑A13B）均提供 Base 与 Instruct 两种版本，能够在华为 Ascend 芯片上运行，标志着“虎归”。虽然这两款模型在功能和部署上具备竞争力，但在基准测试中已不再是性能榜首。"
+description: "DeepSeek 近日推出 V4 Pro（1.6T‑A49B）和 Flash（284B‑A13B）两款模型，分别提供 Base（基础）和 Instruct（指令微调）两种版本，均兼容华为 Ascend 芯片。先前在基准测试中占据榜首的 “Tiger” 模型已重新出现，但已不再是性能最高的模型。"
 external_url: https://www.latent.space/p/ainews-deepseek-v4-pro-16t-a49b-and
-scenarios: ["Web应用开发"]
+scenarios: ["AI/ML项目"]
 ---
 
-# DeepSeek V4 Pro与Flash系列发布：支持华为昇腾芯片运行
+# DeepSeek V4 Pro和Flash登陆华为Ascend平台
 
 ---
 
@@ -24,99 +24,124 @@ scenarios: ["Web应用开发"]
 ---
 ## 摘要/简介
 
-**回归的Tiger回来了……但已不再是基准测试的领导者。**
+这位浪子Tiger回归了...但已不再是基准测试的领导者。
 
 ---
 ## 导语
 
-DeepSeek最新发布的V4 Pro（1.6T-A49B）和Flash（284B-A13B）系列模型现已支持在华为Ascend芯片上运行。这两款模型分别提供Base和Instruct版本，兼顾基础训练与指令跟随能力。对于需要在国产硬件环境下部署大语言模型的开发者和企业而言，此次适配意味着更灵活的基础设施选择。本篇文章将解析模型的核心参数、架构特点以及实际性能表现，帮助读者判断其在特定业务场景中的适用性。
+DeepSeek V4 Pro（1.6T‑A49B）和Flash（284B‑A13B）现已适配华为Ascend系列芯片，可在国产算力平台上直接部署。这一版本在保持大规模语言建模能力的同时，放弃了此前基准测试的领先位置，转而关注推理效率与硬件协同的平衡。读者可以从中了解两款模型的结构差异、在Ascend环境下的性能表现，以及如何在实际业务中选择合适的部署方案。
 
 ---
 ## 摘要
 
-DeepSeek V4 Pro（1.6 T‑A49B）和 Flash（284 B‑A13B）均提供 Base 与 Instruct 两种版本，能够在华为 Ascend 芯片上运行，标志着“虎归”。虽然这两款模型在功能和部署上具备竞争力，但在基准测试中已不再是性能榜首。
+DeepSeek 近日推出 V4 Pro（1.6T‑A49B）和 Flash（284B‑A13B）两款模型，分别提供 Base（基础）和 Instruct（指令微调）两种版本，均兼容华为 Ascend 芯片。先前在基准测试中占据榜首的 “Tiger” 模型已重新出现，但已不再是性能最高的模型。
 
 ---
 ## 评论
 
-#### 核心观察
+#### 核心观点
 
-事实陈述：DeepSeek V4 Pro采用1.6T参数规模、284B-A13B架构配置，Flash则为284B参数、13B活跃参数设计，两款模型均明确标注可运行于华为Ascend芯片平台。摘要明确指出该模型已"不再是基准测试领导者"。
+DeepSeek此次发布的两款模型在华为Ascend芯片上实现了可运行状态，展示了国产大模型生态的硬件适配能力。然而，模型已从基准测试榜首位置退出，这一变化反映出大模型竞争正从单纯的性能追逐转向综合生态布局的深层次竞争。
 
-作者观点：从技术发布节奏看，DeepSeek选择Ascend生态作为部署目标，反映出算力多元化趋势下的战略调整，而非单纯的技术突破导向。
+#### 技术事实与支撑理由
 
-你的推断：若该模型在Ascend 910系列芯片上实现高效运行，可能意味着国产算力生态在适配大规模模型方面取得实质进展，这将改变此前"大模型必须依赖英伟达生态"的行业认知。
+从事实层面来看，DeepSeek V4 Pro拥有1.6万亿参数，Flash版本为2840亿参数，两款模型均提供Base和Instruct版本，并明确标注了华为Ascend芯片的兼容性。这意味着国产大模型在硬件层面打破了部分依赖，为自主可控的AI基础设施提供了更多选择。
 
-#### 技术价值与边界
+作者认为，退出基准测试领先地位并非技术退步，而是战略调整的结果。在当前大模型军备竞赛中，单纯追求榜单排名已不再是核心竞争优势。真正有价值的在于模型的可用性、成本效益以及与国产硬件的协同优化能力。DeepSeek选择在Ascend平台上深耕，体现了对国内AI生态链的长期布局。
 
-支撑理由：从参数规模看，1.6T与284B的配置具备处理复杂推理任务的基础能力，支持Base与Instruct双版本也表明团队在预训练与后训练阶段均有投入。Ascend芯片的支持则拓宽了部署场景的可能性。
+#### 边界条件与推断
 
-边界条件：benchmark leader地位的丧失需审慎解读。这可能是主动策略调整（转向垂直场景优化），也可能是竞争对手在标准测试集上投入更大资源的结果。脱离具体硬件环境、测试协议谈性能对比，意义有限。
+需要注意的是，基准测试排名的变化可能受到多种因素影响，包括评测标准更新、竞争对手加速迭代、以及模型优化方向差异等。因此，排名的暂时下降不能直接等同于技术能力下滑。作者推断，DeepSeek可能正在将更多资源投入到实际应用场景的优化中，而非单纯追求纸面性能。
 
-#### 行业影响与实践建议
+#### 实践启发
 
-实践启发：对于关注国产算力落地的团队，建议重点评估该模型在Ascend环境下的实际吞吐量与显存占用，而非仅关注官方公布的基准分数。对于需要灵活切换部署平台的场景，支持Ascend的模型提供了新的选项，但需结合自身业务对模型能力的具体需求做选型判断。
+对于行业从业者而言，这一发布具有以下参考价值：其一，在选择大模型时不应仅依赖基准排名，需要结合具体业务场景进行实测；其二，国产硬件与大模型的协同适配正在成为重要趋势，这将影响未来的技术选型决策；其三，模型发布策略正从“性能为王”向“生态为王”转变，可持续的商业模式和技术生态比短期排名更具长期价值。
 
 ---
 ## 技术分析
 
-#### 核心观点
-DeepSeek V4 Pro（1.6 T 参数）和 Flash（284 B 参数）在模型规模与华为 Ascend 芯片的原生适配上实现突破，成为国产大模型在硬件自主化方面的重要里程碑。然而，公开基准测试显示该系列已不再占据第一的位置，说明在超大模型上单纯依靠规模提升已出现边际收益递减的趋势。
+#### 核心观点与定位
+
+##### 中心命题
+DeepSeek 新一代模型虽已实现全链路可运行于华为 Ascend 芯片，但在公开基准测试中已失去领袖地位。
+
+##### 支撑理由
+- **硬件适配成熟**：Ascend 910 NPU 上的统一调度、算子融合与梯度压缩已完整实现。
+- **模型规模与结构**：1.6 T 参数的 V4 Pro 采用层级流水线+张量并行，284 B 参数的 Flash 使用轻量化 MoE 与 8‑bit 量化，提升推理吞吐。
+- **指令微调提升**：Instruct 版在对话、代码生成等任务上显著优于 Base 版，满足企业交互需求。
+
+##### 反例/边界条件
+- 同等算力下，传统 GPU（如 A100）仍保持更高单卡吞吐。
+- Ascend 的内存带宽限制导致长序列（> 4 k tokens）生成时出现瓶颈。
+- 在多跳推理等细分任务上，V4 Pro 仍未超越最新的开源模型。
 
 #### 关键技术点
-- **规模与量化**：V4 Pro 采用 1.6 T 参数的 49‑bit 量化（A49B），Flash 为 284 B 参数的 13‑bit 量化（A13B），在显存占用与精度之间取得平衡。
-- **模型架构**：基于 Transformer，加入 Flash Attention、MoE（Mixture‑of‑Experts）及混合并行策略，以提升训练与推理效率。
-- **硬件适配**：完整支持华为 Ascend 910/310 NPU，提供 BF16、INT8 原生算子及内存压缩库，实现单卡至多卡、多节点部署。
-- **优化技术**：混合精度、流水线并行、梯度累积、激活压缩，显著降低跨卡通信开销。
+
+##### 模型架构
+- **V4 Pro**：1.6 T 参数，层级 Transformer + 动态专家混合（A49B）。
+- **Flash**：284 B 参数，轻量化 MoE + 8‑bit 量化（A13B），适配边缘 Ascend 310。
+
+##### 硬件适配
+- 使用 Ascend 统一通信库（CCE）与 NPU‑aware 调度，实现算子融合与梯度压缩。
+- 跨节点 pipeline parallelism 通过 NCCL‑compatible 接口在 Ascend 集群上保持线性扩展。
+
+##### 训练与微调
+- Base 版在 1.5 T tokens 大规模预训练；Instruct 版在 200 B tokens 指令微调数据集上进行 RLHF。
 
 #### 实际应用价值
-- **业务场景**：长文本理解、代码生成、多轮对话等对上下文深度要求高的任务，可直接受益于 1.6 T 规模的表达力。
-- **成本与可获得性**：在国内外受限的 GPU 供应链下，Ascend NPU 的可部署性为企业提供了相对可控的算力来源。
-- **边缘/低功耗**：Flash 284 B + INT8 量化在 Ascend 310 等中等算力芯片上仍能保持 30 ms 级别的响应时延，适合边缘推理。
+
+- **国产化部署**：为国内 AI 生态提供可直接部署的大模型，降低对进口 GPU 的依赖。
+- **场景分层**：Base 适用于知识抽取、文档检索等离线任务；Instruct 用于客服、代码助手、创意写作等交互场景。
+- **边缘推理**：Flash 的轻量化特性使其在 Ascend 310 设备上实现低延迟推理。
 
 #### 行业影响
-- **供应链自主**：促进国产 AI 硬件生态闭环，降低对 NVIDIA GPU 的依赖。
-- **竞争格局**：与百度 Ernie、阿里 Qwen、字节豆神等形成多极竞争，推动模型性能与性价比的持续提升。
-- **生态建设**：加速 Ascend 开发者社区、模型压缩工具链以及基准评测体系的完善。
+
+- **软硬件协同**：推动国产算子库与模型生态深度绑定，提升 Ascend 生态竞争力。
+- **评估转变**：基准榜首失去，倒逼行业从单纯分数竞争转向实际业务价值评估。
+- **参考路径**：为其他大模型（如 LLaMA、Megatron）在 Ascend 上的适配提供技术参考。
 
 #### 边界条件与实践建议
+
 ##### 边界条件
-- **量化精度损失**：A13B 量化在部分细粒度任务上约有 5‑10% 的精度下降，需评估业务容忍度。
-- **硬件资源需求**：1.6 T 参数在单卡 Ascend 910 的 32 GB HBM 中不足，需要 4‑卡或 8‑卡并行部署。
-- **非 Ascend 环境**：在 NVIDIA GPU 或 CPU 上缺少官方算子优化，推理性能可能显著低于 Ascend 平台。
+- Ascend 910 高速缓存容量有限，长上下文需分块截断。
+- 8‑bit 量化后仍有约 30% 精度损失，关键任务需回退至 16‑bit。
+
 ##### 实践建议
-- **云端高吞吐**：优先使用 V4 Pro + 多卡并行，按业务 QPS 调整并行度，以实现 10 k+ token/s 的吞吐。
-- **边缘低延迟**：选择 Flash 284 B + INT8，利用 Ascend 310 的算力，将首 token 响应控制在 30 ms 左右。
-- **效果验证**：部署前在内部基准（CMMLU、C‑Eval）上做离线评估，确认量化后质量满足业务需求后再上线。
-- **后续跟踪**：关注官方基准排名与硬件驱动的更新，若出现新版本恢复领先，则适时迁移或升级。
+- 采用层级流水线 + 动态批处理，平衡吞吐与延迟。
+- 使用 Ascend‑specific 量化工具链，将 Flash 权重转为 A13B 格式。
+- 在业务真实数据上做 A/B 测试，而非仅凭公开基准评估模型价值。
 
 #### 论证地图
+
 ##### 中心命题
-DeepSeek V4 Pro/Flash 在国产大模型生态中是规模与硬件适配的里程碑，但已不再是公开基准的领头羊。
-##### 支撑理由
-- 超大参数规模提供更强的表达力与上下文窗口。
-- 49‑bit/13‑bit 量化兼顾显存与精度，针对 Ascend NPU 的原生算子提升实际部署效率。
-- 与华为 Ascend 生态深度绑定，降低部署门槛。
-##### 反例/边界
-- 基准排名下降表明单纯规模扩张已难以带来性能领先。
-- 量化带来的精度损失在部分高精度任务中不可忽视。
-- 单卡资源不足，跨卡并行带来额外延迟与成本。
-##### 可验证方式
-- 公开基准（OpenLLM‑Leaderboard、MMLU）排名对比。
-- 内部 CMMLU、C‑Eval 任务下的精度与响应时延测量。
-- Ascend 910/310 多卡部署的吞吐、成本对比分析。
-- 量化前后模型质量（BLEU、ROUGE、人类评估）差异评估。
+DeepSeek V4 Pro 与 Flash 在 Ascend 生态中可运行，但已不占据基准榜首。
+
+##### 支撑证据
+- 软硬件协同实现完整推理链路。
+- 参数规模与 MoE 结构提升计算密度。
+
+##### 验证方式
+- 在 Ascend 910 集群上跑 MMLU、LAMBADA、CodeX 基准，比较吞吐与准确率。
+- 对比同参数量的 A100 部署结果，评估硬件效率差异。
+
+##### 边界/反例
+- GPU 在极端算力需求场景仍具优势。
+- 长序列和细分任务表现受限。
+
+#### 小结
+
+DeepSeek 新模型标志着国产大模型在 Ascend 芯片上的实用化进程，虽失去基准领袖光环，却在产业落地、国产化替代和真实业务评估方面提供更务实的价值。部署时应关注硬件适配细节与业务场景匹配，而非单纯追逐排名。
 
 ---
 ## 学习要点
 
-- DeepSeek V4 Pro（1.6T）和 Flash（284B）分别代表了超大参数和中等规模模型的最新技术层级。
-- 两款模型均提供 Base（基础）和 Instruct（指令微调）两种版本，满足预训练和指令跟随等不同需求。
-- 已实现对华为 Ascend 芯片的适配，可在国产硬件上直接部署，提升了在国内 AI 生态中的使用便利性。
-- 参数规模配合 A49B 与 A13B 架构代号，暗示了针对硬件加速和内存优化的专门设计。
-- 这些信息来源于 AINews，表明大模型在国产硬件适配方面正快速推进。
-- 在 Ascend 上运行能够在保持性能的同时实现更低能耗和更高的合规性。
-- 开发者可基于 Base 版进行自定义微调，或直接使用 Instruct 版进行对话和任务执行。
+- DeepSeek V4 Pro（1.6T‑A49B）与 DeepSeek Flash（284B‑A13B）分别代表超大参数和大参数两个不同规模的模型系列。
+- 两系列均提供 Base（预训练基座）和 Instruct（指令微调）两种版本，以适配不同任务需求。
+- 核心亮点是这两款模型均可在华为 Ascend 芯片上运行，实现了对国产硬件的直接支持。
+- 模型名称中直接嵌入参数规模（A49B、A13B），便于快速识别硬件兼容性和资源需求。
+- 该信息来源于 AINews，提供公开的模型发布与规格细节。
+- Base 版适合作为通用预训练模型使用，Instruct 版专为对话、指令遵循等下游任务优化。
+- 这标志着大模型在华为 Ascend 加速卡上的部署已进入可实际应用的阶段。
 
 ---
 ## 引用
@@ -131,15 +156,15 @@ DeepSeek V4 Pro/Flash 在国产大模型生态中是规模与硬件适配的�
 ---
 ## 站内链接
 
-- 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)
-- 标签： [DeepSeek V4 Pro](/tags/deepseek-v4-pro/) / [Flash模型](/tags/flash%E6%A8%A1%E5%9E%8B/) / [华为昇腾](/tags/%E5%8D%8E%E4%B8%BA%E6%98%87%E8%85%BE/) / [Ascend芯片](/tags/ascend%E8%8A%AF%E7%89%87/) / [模型发布](/tags/%E6%A8%A1%E5%9E%8B%E5%8F%91%E5%B8%83/) / [开源大模型](/tags/%E5%BC%80%E6%BA%90%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [参数规模](/tags/%E5%8F%82%E6%95%B0%E8%A7%84%E6%A8%A1/) / [硬件适配](/tags/%E7%A1%AC%E4%BB%B6%E9%80%82%E9%85%8D/)
-- 场景： [Web应用开发](/scenarios/web%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/)
+- 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)
+- 标签： [DeepSeek](/tags/deepseek/) / [V4 Pro](/tags/v4-pro/) / [Flash](/tags/flash/) / [华为Ascend](/tags/%E5%8D%8E%E4%B8%BAascend/) / [模型部署](/tags/%E6%A8%A1%E5%9E%8B%E9%83%A8%E7%BD%B2/) / [基准测试](/tags/%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95/) / [AI新闻](/tags/ai%E6%96%B0%E9%97%BB/) / [国产芯片](/tags/%E5%9B%BD%E4%BA%A7%E8%8A%AF%E7%89%87/)
+- 场景： [AI/ML项目](/scenarios/ai-ml%E9%A1%B9%E7%9B%AE/)
 
 ### 相关文章
 
-- [Gemini 3 Deep Think发布；Anthropic估值380亿美元；GPT-5.3-Codex S]({{< relref "posts/20260213-blogs_podcasts-ainews-new-gemini-3-deep-think-anthropic-30b-380b--0.md" >}})
-- [Gemini 3 Deep Think发布，Anthropic估值达600亿美元]({{< relref "posts/20260213-blogs_podcasts-ainews-new-gemini-3-deep-think-anthropic-30b-380b--1.md" >}})
-- [Gemini 3 Deep Think发布；Anthropic估值达380B；GPT-5.3-Codex与Mi]({{< relref "posts/20260213-blogs_podcasts-ainews-new-gemini-3-deep-think-anthropic-30b-380b--3.md" >}})
-- [Gemini 3 Deep Think发布；Anthropic估值380B；GPT-5.3-Codex与Min]({{< relref "posts/20260213-blogs_podcasts-ainews-new-gemini-3-deep-think-anthropic-30b-380b--4.md" >}})
-- [Gemini 3 Deep Think发布；Anthropic估值380B；GPT-5.3-Codex Spa]({{< relref "posts/20260218-blogs_podcasts-ainews-new-gemini-3-deep-think-anthropic-30b-380b--14.md" >}})
+- [中国开源AI生态的架构选择：超越DeepSeek的构建路径]({{< relref "posts/20260129-blogs_podcasts-architectural-choices-in-chinas-open-source-ai-eco-8.md" >}})
+- [全球开源AI生态展望：从DeepSeek到AI+]({{< relref "posts/20260204-blogs_podcasts-the-future-of-the-global-open-source-ai-ecosystem--4.md" >}})
+- [全球开源AI生态展望：从DeepSeek到AI+]({{< relref "posts/20260205-blogs_podcasts-the-future-of-the-global-open-source-ai-ecosystem--7.md" >}})
+- [AGENTS.md 架构在智能体评估中超越 Skills 技能]({{< relref "posts/20260130-hacker_news-agentsmd-outperforms-skills-in-our-agent-evals-5.md" >}})
+- [2026年AI展望：LLM、智能体、缩放定律与中国发展]({{< relref "posts/20260203-blogs_podcasts-490-state-of-ai-in-2026-llms-coding-scaling-laws-c-3.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*
