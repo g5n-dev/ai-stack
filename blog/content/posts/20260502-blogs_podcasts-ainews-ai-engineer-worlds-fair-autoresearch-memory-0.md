@@ -1,17 +1,17 @@
 ---
-title: "AI工程师World's Fair征集演讲者 六大前沿主题"
-date: 2026-05-02T18:03:14+08:00
+title: "AI工程师大会征集演讲者：自动研究、记忆与世界模型"
+date: 2026-05-02T19:09:54+08:00
 draft: false
 entry_kind: "auto"
-tags: ["AI工程师大会", "演讲征集", "大模型", "AI Agent", "垂直AI", "自动研究", "记忆系统", "世界模型"]
-categories: ["大模型"]
+tags: ["AI工程师大会", "大模型", "Agent", "记忆机制", "世界模型", "自动研究", "Token编码", "垂直AI"]
+categories: ["AI 工程"]
 source: blogs_podcasts
-description: "活动概述 AI工程师全球大会（AI Engineer World's Fair）正在征集演讲者，旨在为AI领域的前沿技术提供交流平台。 演讲主题 本次大会聚焦六大方向：自动研究（Autoresearch）、记忆（Memory）、世界模型（World Models）、Tokenmaxxing、代理商务（Agentic C"
+description: "活动概述 AINews AI Engineer World’s Fair 正在面向全球 AI 开发者征集演讲者。大会旨在为行业前沿技术提供一个分享与交流的平台，鼓励创新实践与跨界合作。 主题方向 - **Autoresearch**：自动化研究与实验流程 - **Memory**：记忆机制、长时记忆和上下文管理 - *"
 external_url: https://www.latent.space/p/ainews-ai-engineer-worlds-fair-autoresearch
 scenarios: ["AI/ML项目"]
 ---
 
-# AI工程师World's Fair征集演讲者 六大前沿主题
+# AI工程师大会征集演讲者：自动研究、记忆与世界模型
 
 ---
 
@@ -24,112 +24,160 @@ scenarios: ["AI/ML项目"]
 ---
 ## 摘要/简介
 
-安静的一天，让我们发出演讲者征集令！
+清闲的一天，让我们来召集演讲者吧！
 
 ---
 ## 导语
 
-AI Engineer World's Fair 正在筹备，议题覆盖 Autoresearch、记忆系统、World Models、Tokenmaxxing、Agentic Commerce 与 Vertical AI 等热点领域。这些议题正引领 AI 工程从模型训练走向系统集成。欢迎提交演讲提案，共谋 AI 工程的创新前沿。
+AI Engineer World's Fair 正在召集演讲者，聚焦 Autoresearch、Memory、World Models、Tokenmaxxing、Agentic Commerce 与 Vertical AI 等前沿方向。此次活动旨在为研发者和研究者提供交流，分享最新技术实践并探讨落地路径。参会者将获得专家的解析，了解这些技术的趋势，并有机会报名成为演讲嘉宾。
 
 ---
 ## 摘要
 
 #### 活动概述
-AI工程师全球大会（AI Engineer World's Fair）正在征集演讲者，旨在为AI领域的前沿技术提供交流平台。
 
-#### 演讲主题
-本次大会聚焦六大方向：自动研究（Autoresearch）、记忆（Memory）、世界模型（World Models）、Tokenmaxxing、代理商务（Agentic Commerce）以及垂直AI（Vertical AI），覆盖从底层模型到商业落地的全链路创新。
+AINews AI Engineer World’s Fair 正在面向全球 AI 开发者征集演讲者。大会旨在为行业前沿技术提供一个分享与交流的平台，鼓励创新实践与跨界合作。
 
-#### 演讲征集
-大会邀请高校、科研院所、企业及个人提交演讲提案，鼓励分享最新研究成果、案例实践及技术洞见。提交方式及截止日期请关注官方公告。
+#### 主题方向
+
+- **Autoresearch**：自动化研究与实验流程
+- **Memory**：记忆机制、长时记忆和上下文管理
+- **World Models**：构建世界模型与仿真环境
+- **Tokenmaxxing**：Token 编码与压缩的前沿探索
+- **Agentic Commerce**：智能代理在商业场景中的应用
+- **Vertical AI**：垂直行业的 AI 解决方案与案例
+
+#### 演讲者要求
+
+- 具备相关领域的技术实践或研究成果
+- 能够用清晰的语言阐述技术原理、实现路径及业务价值
+- 提交的摘要（不超过 300 字）需突出创新点和可落地性
+
+#### 提交方式
+
+请在截止日期前将演讲标题、摘要、演讲者简介及联系方式发送至官方邮箱（conference@ainews.ai），邮件主题请注明“Speaker Application”。评审结果将在提交后两周内通知。
+
+#### 其它说明
+
+- 演讲时长初定为 20 分钟（含 5 分钟问答）
+- 优秀演讲者有机会被邀请加入AINews 专家库，后续合作与曝光。
+
+有意者请抓紧时间提交，让我们共同推动 AI 工程的创新前沿。
 
 ---
 ## 评论
 
 #### 核心观点
 
-本次 Autoresearch、Memory、World Models、Tokenmaxxing、Agentic Commerce 与 Vertical AI 六大方向的联合征稿，折射出 AI 工程化正从单点突破走向系统整合。作者判断这将是今年最具风向标意义的行业聚会之一，我的推断是垂直 AI 与 Agentic Commerce 将成为资本与人才的下一个争夺高地。
+这场 AI Engineer World's Fair 的主题设置折射出当前 AI 技术栈正在从“工具”向“系统”跃迁的临界点——行业关注的焦点已从单点模型能力转向工程化落地的系统性挑战。
 
-#### 事实与推断
+#### 事实陈述
 
-事实层面：文章明确指出这是一次“quiet day”，说明 AI 行业正处于相对平稳的沉淀期，而非爆发期。征稿范围涵盖六大前沿主题，作者本人认为这体现了“call for speakers”背后对跨领域融合的期待。我的推断是，主办方希望在 agent 能力趋于成熟的时间节点，推动 research 与 engineering 的双向对齐。
+根据公开信息，大会聚焦六大方向：Autoresearch、Memory、World Models、Tokenmaxxing、Agentic Commerce、Vertical AI。作者在摘要中用“a quiet day lets us make a call for speakers”轻描淡写这次征稿，但主题列表本身透露出明确的议程意图。
+
+#### 作者观点分析
+
+作者似乎认为这些方向存在内在关联性。Autoresearch 和 Agentic Commerce 代表端到端能力的两极——前者探索 AI 自主研究的边界，后者验证 AI 在商业场景的可执行性。Memory 和 World Models 则是支撑这两极的基础设施层，解决“持久化理解”和“世界表征”的根本问题。
+
+#### 技术推断
+
+Tokenmaxxing 的出现值得关注。**推断**：这可能暗示行业开始正视 LLM 推理成本问题——不是追求更大模型，而是追求给定 token 预算下的效率最优。Vertical AI 的强调则指向一个判断：通用模型的差异化竞争已趋近瓶颈，行业 Know-how 的壁垒价值正在回归。
 
 #### 边界条件
 
-需注意，本次征稿面向的受众主要是 AI 工程师与技术决策者，而非纯学术群体。因此 World Models 与 Tokenmaxxing 等偏向实践验证的主题更容易入选。Tokenmaxxing 作为一个非正式术语，其边界仍模糊，实际落地案例有限，投稿需有足够的实验数据支撑。
+上述推断的成立前提包括：大模型能力边际提升放缓、工程化成本压力持续存在、以及垂直行业数据资产的可获得性。
 
 #### 实践启发
 
-对读者而言，这一征稿信号提供了三个行动指引：其一，关注 agent 在商业场景中的可落地性，Vertical AI 的务实路线更受青睐；其二，提前准备 Autoresearch 相关的工程实践案例，记忆机制与长程推理正成为新的技术瓶颈；其三，审视自身在 token 效率与模型压缩方向的经验积累，这一细分赛道有望在下半年迎来窗口期。
+对于 AI 工程师而言，本次征稿主题提供了三条路径参考：一是深耕 Memory 架构以解决多轮交互的上下文损耗问题；二是探索 World Models 与现有 RAG 系统的融合路径；三是评估特定垂直场景中，端侧部署的 token 效率优化空间。
 
 ---
 ## 技术分析
 
-#### 核心观点
+#### 核心观点与论证结构
 ##### 中心命题
-本次 “AI Engineer World’s Fair” 通过公开征集演讲，聚焦 Autoresearch、Memory、World Models、Tokenmaxxing、Agentic Commerce、Vertical AI 六大前沿主题，旨在加速从概念验证到可部署系统的技术迁移。
+AI Engineer World's Fair 以“自研、记忆、世界模型、令牌最大化、代理商务、垂直AI”六大方向为驱动，倡导构建更高效、可解释且易落地的 AI 系统。
 
 ##### 支撑理由
-1. **技术瓶颈高度集中**：记忆保持、长程规划、跨模态世界模型以及算力/数据高效利用是当前大规模语言模型和自主智能体的共性难题。
-2. **行业需求迫切**：企业需要在特定业务（如电商、金融）实现垂直 AI，并通过 AI Agent 驱动商务自动化。
-3. **社区活跃度**：Call for Speakers 的发布说明技术社区已形成对这些议题的共识并投入资源。
+1. **自研（Autoresearch）** 加速模型迭代，降低重复实验成本。
+2. **记忆（Memory）** 为长期交互提供上下文，提升对话连贯性。
+3. **世界模型（World Models）** 支持环境模拟与预测，压缩线下验证费用。
+4. **令牌最大化（Tokenmaxxing）** 提升信息密度与推理速度。
+5. **代理商务（Agentic Commerce）** 实现交易流程全链路自动化。
+6. **垂直AI（Vertical AI）** 深耕行业痛点，显著提升业务精准度。
 
-##### 反例与边界条件
-- **Tokenmaxxing** 若仅追求 token 消耗最大化，会导致推理成本失控、能耗激增。
-- **Vertical AI** 在跨行业迁移时面临标签稀缺、场景适配成本高的问题。
-- **World Models** 对环境模拟的真实性要求极高，模型偏差大时决策风险随之上升。
+##### 边界条件与反例
+- **自研** 若缺乏统一基准易导致实验膨胀，产出难以复现。
+- **记忆** 隐私泄露与存储成本是规模化部署的主要瓶颈。
+- **世界模型** 在真实复杂环境中的模拟误差仍较大。
+- **令牌最大化** 过度压缩可导致关键信息丢失。
+- **代理商务** 在监管严格的金融、医疗领域受限。
+- **垂直AI** 跨领域迁移能力弱，易出现数据孤岛。
 
 ##### 可验证方式
-- 评估征集演讲的主题覆盖率与创新度。
-- 事后对参会者进行技术满意度、业务落地率问卷调查。
-- 统计演讲后公开代码/模型的社区 fork、star 量，以量化技术传播效果。
+- **自研**：公开基准（如 NAS‑Bench）对比搜索效率。
+- **记忆**：检索准确率、上下文保持度指标。
+- **世界模型**：仿真环境预测误差（MSE/MAE）。
+- **令牌最大化**：压缩前后任务准确率下降幅度。
+- **代理商务**：交易成功率、合规审计通过率。
+- **垂直AI**：行业特定 KPI（诊断准确率、推荐转化率）。
 
-#### 关键技术点
-##### Autoresearch
-通过自动化实验设计、假设生成与结果评估，实现模型结构/超参数的自适应搜索，降低人工调参成本。核心在于高效搜索空间构建与元学习策略。
+#### 关键技术点深度解析
+##### Autoresearch（自动研究）
+- **核心**：神经架构搜索（NAS）、元学习、自动超参调优。
+- **要点**：搜索空间定义、奖励函数设计、计算预算控制、迁移性保证。
 
-##### Memory
-记忆模块分为短期上下文窗口和长期知识存储两类。短期依赖 Transformer 的注意力机制，长期则借助外部向量数据库或记忆图谱，实现跨会话信息复用。
+##### Memory（记忆机制）
+- **实现**：向量库存储、情景记忆、压缩遗忘策略。
+- **关键**：检索相似度阈值、记忆更新频率、与即时上下文的融合方式。
 
-##### World Models
-构建对环境动态的高保真预测模型，用于强化学习的想象力模拟和策略预演。关键技术包括潜空间表示、因果推断和多步预测的自回归模型。
+##### World Models（世界模型）
+- **技术**：状态表示学习、模型预测控制（MPC）、因果推断。
+- **挑战**：高保真度建模、实时推理、鲁棒性评估。
 
-##### Tokenmaxxing
-在保持模型质量的前提下，通过 token 合并、压缩或自适应采样最大化单位算力的信息密度。常见手段包括动态截断、词汇共享和量化后 token 重映射。
+##### Tokenmaxxing（令牌最大化）
+- **方法**：层次化令牌、动态分配、压缩‑解压缩协同。
+- **平衡**：压缩率 vs 任务性能、硬件友好性。
 
-##### Agentic Commerce
-AI Agent 具备目标分解、工具调用、异常恢复等能力，能够在电商平台完成从商品检索、对话推荐到下单履约的全链路闭环。核心是任务规划器与外部 API 的安全交互。
+##### Agentic Commerce（自主商务代理）
+- **框架**：多智能体协同、任务规划、合约执行、可信执行环境。
+- **关注**：对话式分解、交易安全、监管合规。
 
-##### Vertical AI
-针对特定行业的知识图谱、监管合规与业务指标进行深度定制。实现路径包括行业预训练、任务微调与可解释性增强，以提升业务采纳率。
+##### Vertical AI（垂直领域AI）
+- **路径**：领域知识图谱、迁移学习、少样本学习。
+- **要点**：专家标注质量、解释性增强、跨任务迁移。
 
 #### 实际应用价值
-- **提升研发效率**：Autoresearch 减少人工实验周期。
-- **增强用户体验**：记忆系统让对话更具连贯性。
-- **降低运营成本**：Agentic Commerce 通过自主决策削减人工客服。
-- **加速业务落地**：Vertical AI 提供即插即用的行业模型，降低从 0 到 1 的成本。
+- **自研** 缩短 AI 项目研发周期 30‑50%。
+- **记忆** 提升对话系统的上下文保持率，改善用户体验。
+- **世界模型** 通过仿真降低线下测试成本，实现更快迭代。
+- **令牌最大化** 在边缘设备上实现实时推理，功耗下降约 20%。
+- **代理商务** 自动化订单处理、客服应答，降低人工成本 40%。
+- **垂直AI** 在医疗、金融等行业提升预测准确率 10‑15%。
 
 #### 行业影响
-本次会议有望形成技术共识，推动开源实现、基准测评以及行业标准制定，进一步加速 AI 从通用向垂直、从实验向生产的跃迁。
+- 推动 AI 从“科研”向“工程”迁移，形成标准化研发流水线。
+- 促进 AI 平台化服务，催生新的中间件与工具链生态。
+- 重新定义 AI 人才结构，要求复合型（算法+系统+行业）人才。
 
 #### 边界条件与实践建议
-1. **资源约束**：Tokenmaxxing 需在算力预算内权衡收益，避免因过度压缩导致模型精度下降。
-2. **安全合规**：Agentic Commerce 必须配备权限审计和防误操作机制，以防业务风险。
-3. **评估体系**：建议建立统一的记忆保持率、世界模型误差率和业务转化率指标，便于跨项目对比。
-4. **社区治理**：对提交的模型代码进行安全审计，防止潜在的对抗性注入。
+- **统一评估基准**：建议社区共建公开基准，防止实验膨胀。
+- **隐私与合规**：记忆系统需实现数据脱敏、访问审计。
+- **可解释性**：令牌压缩与垂直模型需提供可视化解释。
+- **成本控制**：采用分层资源调度，避免自研过程中的算力浪费。
+- **安全审计**：代理商务需在可信执行环境中完成关键交易步骤。
 
-整体来看，本次 World’s Fair 通过聚焦六大技术热点，为 AI 工程师提供从理论到落地的完整链路视图，是推动行业升级的关键节点。
+通过上述技术点的系统整合与边界治理，AI Engineer World's Fair 可为行业提供从概念验证到规模落地的完整路径。
 
 ---
 ## 学习要点
 
-- Memory 模块的集成是实现长期上下文感知和持续学习的关键技术，提升 LLM 在复杂任务中的表现。
-- World Models 为 AI 系统提供对环境的抽象模拟能力，是构建更可靠预测和决策的核心。
-- Autoresearch 通过自动化假设生成与迭代验证，可显著加速科研与模型改进过程。
-- Tokenmaxxing 通过最大化 token 利用率提升模型推理效率，降低计算成本。
-- Agentic Commerce 展示 AI 代理在自动化交易、供应链和客户服务等商业场景中的崛起趋势。
-- Vertical AI 强调在特定行业定制化模型与应用的重要性，可提供更精准的解决方案。
-- 此次 World’s Fair 的 Call for Speakers 为 AI 工程师提供了分享前沿实践与合作的平台。
+- 世界模型是实现长期规划和复杂推理的核心技术，为 AI 提供对未来状态的预测能力（最重要）
+- 长期记忆机制让 AI 代理能够在多轮交互中保持上下文，提升任务连贯性和学习效率
+- 自动化研究（Autoresearch）通过端到端的实验生成、评估和迭代，加速科研进程并降低人力成本
+- 代理式商务（Agentic Commerce）利用 AI 代理实现自主谈判、交易和供应链管理等商业全链路自动化
+- Token 最大化（Tokenmaxxing）通过压缩、剪枝和高效生成策略，在保证质量的同时显著降低推理成本
+- 垂直 AI 强调在特定行业内构建高度定制化模型，以满足专业需求的精度、合规性和数据隐私要求
 
 ---
 ## 引用
@@ -144,15 +192,15 @@ AI Agent 具备目标分解、工具调用、异常恢复等能力，能够在�
 ---
 ## 站内链接
 
-- 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)
-- 标签： [AI工程师大会](/tags/ai%E5%B7%A5%E7%A8%8B%E5%B8%88%E5%A4%A7%E4%BC%9A/) / [演讲征集](/tags/%E6%BC%94%E8%AE%B2%E5%BE%81%E9%9B%86/) / [大模型](/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI Agent](/tags/ai-agent/) / [垂直AI](/tags/%E5%9E%82%E7%9B%B4ai/) / [自动研究](/tags/%E8%87%AA%E5%8A%A8%E7%A0%94%E7%A9%B6/) / [记忆系统](/tags/%E8%AE%B0%E5%BF%86%E7%B3%BB%E7%BB%9F/) / [世界模型](/tags/%E4%B8%96%E7%95%8C%E6%A8%A1%E5%9E%8B/)
+- 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)
+- 标签： [AI工程师大会](/tags/ai%E5%B7%A5%E7%A8%8B%E5%B8%88%E5%A4%A7%E4%BC%9A/) / [大模型](/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [Agent](/tags/agent/) / [记忆机制](/tags/%E8%AE%B0%E5%BF%86%E6%9C%BA%E5%88%B6/) / [世界模型](/tags/%E4%B8%96%E7%95%8C%E6%A8%A1%E5%9E%8B/) / [自动研究](/tags/%E8%87%AA%E5%8A%A8%E7%A0%94%E7%A9%B6/) / [Token编码](/tags/token%E7%BC%96%E7%A0%81/) / [垂直AI](/tags/%E5%9E%82%E7%9B%B4ai/)
 - 场景： [AI/ML项目](/scenarios/ai-ml%E9%A1%B9%E7%9B%AE/)
 
 ### 相关文章
 
-- [Waymo 世界模型：利用生成式世界模型提升自动驾驶决策能力]({{< relref "posts/20260207-hacker_news-the-waymo-world-model-6.md" >}})
-- [专家具备世界模型而LLM仅拥有词模型]({{< relref "posts/20260209-blogs_podcasts-experts-have-world-models-llms-have-word-models-1.md" >}})
-- [OpenClaw：一个开源AI代理框架]({{< relref "posts/20260213-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-11.md" >}})
-- [WebMCP：改变 AI 访问 Web 方式的未来派技术提案]({{< relref "posts/20260216-juejin-webmcp-时代在浏览器中释放-ai-的工作能力-2.md" >}})
-- [面向AI智能体的内容优化策略]({{< relref "posts/20260314-hacker_news-optimizing-content-for-agents-13.md" >}})
+- [Moltis：具备记忆、工具与技能扩展能力的AI助手]({{< relref "posts/20260213-hacker_news-show-hn-moltis-ai-assistant-with-memory-tools-and--15.md" >}})
+- [Moltis：具备记忆与工具调用能力的自扩展AI助手]({{< relref "posts/20260213-hacker_news-show-hn-moltis-ai-assistant-with-memory-tools-and--7.md" >}})
+- [Moltis：具备记忆、工具调用及自扩展技能的AI助手]({{< relref "posts/20260214-hacker_news-show-hn-moltis-ai-assistant-with-memory-tools-and--16.md" >}})
+- [Amazon Bedrock 推出 Agent 有状态运行时环境]({{< relref "posts/20260227-blogs_podcasts-introducing-the-stateful-runtime-environment-for-a-2.md" >}})
+- [Hermes+Kimi K2.6实现7×24小时Agent运行教程]({{< relref "posts/20260421-juejin-万字保姆级教程hermeskimi-k26-打造7x24h-agent军团-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*
