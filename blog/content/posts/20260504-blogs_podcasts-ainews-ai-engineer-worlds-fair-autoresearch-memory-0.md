@@ -1,17 +1,17 @@
 ---
-title: "AI工程师全球大会征集演讲者，聚焦垂直AI与Agentic Commerce等前沿议题"
-date: 2026-05-04T00:09:50+08:00
+title: "AI工程师世界大会演讲者征集：六大前沿方向"
+date: 2026-05-04T03:12:33+08:00
 draft: false
 entry_kind: "auto"
-tags: ["AI Agent", "垂直AI", "自动化研究", "世界模型", "记忆机制", "Token优化", "代理商务", "前沿AI"]
-categories: ["AI 工程"]
+tags: ["AI工程师", "智能体", "世界模型", "垂直AI", "Token优化", "前沿技术", "开发者大会", "研究动态"]
+categories: ["AI 工程", "大模型"]
 source: blogs_podcasts
-description: "会议概述 AI Engineer World’s Fair 将围绕前沿 AI 技术与实践展开，聚焦 **Autoresearch、Memory、World Models、Tokenmaxxing、Agentic Commerce、Vertical AI** 六大主题，探讨自动化研究、记忆机制、世界建模、代币最大化、代理"
+description: "AI工程师World’s Fair正在征集演讲嘉宾，聚焦以下前沿议题：自动研究（Autoresearch）、记忆机制（Memory）、世界模型（World Models）、Tokenmaxxing、代理商务（Agentic Commerce）以及垂直AI（Vertical AI）。大会旨在汇聚全球AI工程师与研究者，分"
 external_url: https://www.latent.space/p/ainews-ai-engineer-worlds-fair-autoresearch
 scenarios: ["AI/ML项目"]
 ---
 
-# AI工程师全球大会征集演讲者，聚焦垂直AI与Agentic Commerce等前沿议题
+# AI工程师世界大会演讲者征集：六大前沿方向
 
 ---
 
@@ -24,101 +24,53 @@ scenarios: ["AI/ML项目"]
 ---
 ## 摘要/简介
 
-一个安静的日子，让我们发出演讲者征集令！
+**安静的一天，让我们发出演讲者征集令！**
 
 ---
 ## 导语
 
-AI Engineer World’s Fair 正在面向全球征集演讲者，聚焦自主研究、记忆机制、世界模型、Token 最大化、代理商务以及垂直 AI 等前沿议题。这些方向正处于快速迭代阶段，对行业的技术路线和产品设计有直接影响。无论你是学术研究者还是工业实践者，都可以借此机会分享经验、获取反馈，甚至推动合作。
+AI Engineer World’s Fair 正式面向社区征集演讲者，聚焦自研模型、记忆机制、世界模型、Token 优化、代理商务和垂直 AI 等前沿议题。这些方向正驱动 AI 系统从实验走向真实场景，想要站在技术前沿的开发者与研究者值得关注。通过提交演讲，您可以直接与业界领袖交流，分享最新成果并推动行业对话。
 
 ---
 ## 摘要
 
-#### 会议概述
-AI Engineer World’s Fair 将围绕前沿 AI 技术与实践展开，聚焦 **Autoresearch、Memory、World Models、Tokenmaxxing、Agentic Commerce、Vertical AI** 六大主题，探讨自动化研究、记忆机制、世界建模、代币最大化、代理商务以及垂直行业 AI 应用等热点方向。
-
-#### 演讲主题
-- **Autoresearch**：AI 自动化科研与实验设计
-- **Memory**：长期记忆与上下文保持技术
-- **World Models**：构建通用世界模型的理论与实现
-- **Tokenmaxxing**：在语言模型中最大化 token 效用的方法
-- **Agentic Commerce**：AI 代理驱动的商业交易与决策
-- **Vertical AI**：针对金融、医疗、制造等行业的垂直 AI 解决方案
-
-#### 演讲者征集
-- 欢迎研究者、工程师、产品经理及行业专家提交演讲提案。
-- 提案需围绕上述主题，突出创新性、实用性或前沿探索。
-- 提交方式：请访问官方链接填写演讲摘要（不超过 300 字）与个人简介。
-- 截止时间：请关注官方公告的最新时间。
-
-有意向的演讲者可围绕自己熟悉的领域，选取上述任一主题或交叉方向，提供案例、实验结果或技术实现思路。大会旨在为 AI 从业者提供一个共享成果、交流经验的平台，期待各类高质量分享。
+AI工程师World’s Fair正在征集演讲嘉宾，聚焦以下前沿议题：自动研究（Autoresearch）、记忆机制（Memory）、世界模型（World Models）、Tokenmaxxing、代理商务（Agentic Commerce）以及垂直AI（Vertical AI）。大会旨在汇聚全球AI工程师与研究者，分享最新技术突破、实践经验与行业洞见。欢迎具有相关项目或研究成果的专家提交演讲摘要，详情请关注官方公告。
 
 ---
 ## 评论
 
-#### 会议主题的核心观察
+#### 核心观察
 
-本次AI Engineer World's Fair的主题设置折射出一个关键趋势：AI技术正从通用能力展示转向垂直场景深度渗透。**事实陈述**：会议列出了Autoresearch、Memory、World Models、Tokenmaxxing、Agentic Commerce和Vertical AI六个方向作为征稿主题。**作者观点**：这表明AI工程化的重心已从模型本身转向应用层和系统层，开发者社区的关注点正在从“如何训练更好的模型”向“如何更好地部署和使用模型”迁移。
+本次AI Engineer World's Fair的演讲者征集涵盖六个方向，呈现出当前AI工程领域的几个显著特征：基础研究与商业应用并行、技术深度与垂直场景结合、以及对AI自主性的持续探索。
 
-#### 技术演进的支撑逻辑
+#### 事实陈述
 
-从技术维度看，这六个主题并非孤立存在，而是反映了当前AI应用的几个核心挑战。Memory（记忆能力）指向AI系统的状态管理问题；World Models（世界模型）试图解决AI对物理和社会常识的理解；Autoresearch（自动化研究）则体现了AI辅助科研的探索。**作者观点**：Tokenmaxxing可能涉及推理效率优化，而Agentic Commerce和Vertical AI则直指商业落地的两个维度——自主执行和行业定制。
+会议设置的六大主题包括：Autoresearch（自动化研究）、Memory（记忆系统）、World Models（世界模型）、Tokenmaxxing（Token优化）、Agentic Commerce（代理商务）和Vertical AI（垂直AI）。这些都是当前AI工程社区讨论热度较高的方向。摘要提到“a quiet day”，说明目前并非会议高峰期，而是处于前期准备阶段。
 
-#### 边界条件与不确定性
+#### 作者观点
 
-**推断**：这些方向仍处于早期探索阶段。World Models的实现路径尚未收敛，Agentic Commerce的商业模式也有待验证。Vertical AI虽然概念清晰，但垂直行业的数据获取和合规成本可能限制其扩张速度。会议以"Call for Speakers"的形式呈现，说明这些方向更需要实践者的经验和案例分享，而非已成型的解决方案。
+从主题设置来看，这次会议试图覆盖从底层技术到上层应用的完整链条。World Models和Memory更多涉及基础能力建设，而Agentic Commerce和Vertical AI则指向明确的商业落地场景。这种组合表明组织者希望吸引两类受众：关注技术前沿的研究型工程师，以及关注落地价值的应用型开发者。
 
-#### 实践启发
+#### 推断与启发
 
-**推断**：对于AI从业者，这个会议主题提供了几个值得关注的方向：如何在实际产品中实现持久记忆机制、如何针对特定行业设计轻量化AI解决方案、如何评估自主代理系统的可靠性边界。建议关注会议的实际案例分享，而非单纯的技术理论探讨，这更有助于把握行业落地的真实痛点和进展。
+Tokenmaxxing这个概念的出现值得关注。它暗示在模型能力趋于同质化的背景下，工程层面的优化——尤其是推理成本控制——正成为新的竞争维度。Agentic Commerce的提法也值得注意，它可能代表AI在电商、营销等场景中从辅助工具向决策主体的演进。
 
----
-## 技术分析
+从实践角度，Vertical AI的议题设置呼应了行业对专业化AI解决方案的需求。在通用大模型难以完全满足特定行业合规性、数据隐私或性能要求的背景下，垂直化定制正在成为可行的路径。
 
-#### 核心观点与技术要点
+#### 边界条件
 
-本次AI Engineer World's Fair的征稿聚焦于六大前沿技术方向，旨在汇集行业顶尖实践者分享AI工程领域的最新突破。核心命题在于探讨如何将大语言模型从对话界面拓展为能够自主执行复杂任务的智能系统。
-
-##### 关键技术点分析
-
-**自动研究（Autoresearch）** 代表了AI从被动响应向主动探索的转变。该技术通过构建自动化研究工作流，使模型能够自主进行文献检索、实验设计和假设验证。关键技术挑战在于如何确保研究过程的严谨性和结论的可重复性。
-
-**记忆系统（Memory）** 是实现真正智能代理的基础设施。当前技术路径包括向量数据库、图结构和混合存储架构。核心问题在于如何在长期记忆与短期上下文之间建立高效的信息检索机制，以及如何处理记忆冲突和过时信息的更新策略。
-
-**世界模型（World Models）** 旨在构建AI对物理世界和数字环境的统一表征。该技术涉及状态空间表示、因果推理和模拟预测能力。其应用价值体现在机器人控制、游戏AI和自动化决策等场景。
-
-**Token优化（Tokenmaxxing）** 关注模型推理过程中的计算效率。通过动态token分配、投机解码和缓存复用等技术，可以显著降低推理成本。实践建议是在延迟敏感场景优先考虑首token延迟，在批量处理场景则侧重吞吐量和总token消耗的优化。
-
-**代理商务（Agentic Commerce）** 将AI代理能力嵌入商业交易流程，包括自动化采购、供应链优化和智能定价等应用。技术实现需要解决授权机制、责任归属和交易安全等合规问题。
-
-**垂直AI（Vertical AI）** 针对特定行业场景进行深度定制，典型领域包括医疗、法律、金融和制造。关键技术差异在于领域知识融合、监管合规处理和专业术语理解能力的构建。
-
-#### 实际应用价值与行业影响
-
-从产业视角看，这些技术方向的汇合正在催生新一代AI原生应用的开发范式。垂直AI的成熟将加速传统行业的数字化转型，降低中小企业获取AI能力的门槛。代理商务模式的落地则可能重塑电子商务和供应链管理的业务逻辑。
-
-行业影响还体现在对AI工程师技能要求的重新定义上。未来的AI工程实践者需要具备跨领域的系统设计能力，能够在模型能力、推理效率和业务需求之间进行综合权衡。
-
-#### 边界条件与实践建议
-
-需要审慎评估的边界条件包括：大模型在复杂推理任务中的可靠性边界、代理系统的安全控制机制、以及垂直AI在不同监管环境下的合规适配性。
-
-实践建议方面，对于希望参与该会议的演讲者，建议重点展示可复现的实验结果和真实的业务价值验证，避免纯理论性的概念阐述。对于企业技术决策者，应关注这些技术的成熟度评估和自身业务场景的匹配程度，制定分阶段的集成路线图。
-
-#### 论证地图总结
-
-中心命题为“AI工程正在从模型构建向系统设计和应用集成演进”，支撑理由包括算力成本下降、开源模型能力提升以及企业数字化需求的增长。反例和边界条件主要体现在特定领域对可解释性和安全性的严格要求可能限制技术应用速度。可验证方式建议通过小规模试点项目收集性能指标和用户反馈数据，形成技术选型的决策依据。
+上述推断基于对主题名称的字面理解和当前行业趋势的类比。实际演讲内容可能超出这些预设方向，具体技术深度和商业价值仍取决于入选演讲的质量和会议的实际呈现。
 
 ---
 ## 学习要点
 
-- 记忆（Memory）机制是实现长期上下文和持续学习的关键技术，是当前AI模型提升的重要方向。
-- 世界模型（World Models）为AI提供环境模拟和预测能力，是构建通用智能的核心组件。
-- Tokenmaxxing（令牌最大化）是一种新的资源利用策略，旨在通过优化令牌分配提升模型效率。
-- 代理式商务（Agentic Commerce）标志着AI代理将在商业交易中承担自主决策和执行的角色。
-- 垂直AI（Vertical AI）强调针对特定行业的定制化解决方案，以实现更高的准确性和业务价值。
-- 自动研究（Autoresearch）展示了AI在自动化科学发现和实验设计中的潜力。
-- 会议正在征集演讲者，体现了社区协作和跨领域知识共享的重要性。
+- AI Engineer World's Fair 是一个聚焦前沿 AI 工程技术的全球会议，汇聚 Autoresearch、Memory、World Models 等关键主题。
+- Autoresearch 通过自动化研究流程提升模型迭代速度，是加速 AI 创新的关键手段。
+- Memory 技术为长程对话和持续学习提供上下文保持能力，是下一代交互系统的基础。
+- World Models 通过构建逼真的模拟环境，使 AI 能在虚拟世界中进行高效训练和策略探索。
+- Tokenmaxxing 强调在保持性能的前提下最大化 token 利用率，显著降低成本和延迟。
+- Agentic Commerce 利用 AI 代理实现端到端的商业交易，推动自动化商务流程的落地。
+- Vertical AI 通过深耕特定行业需求，提供高度定制化、可落地的 AI 解决方案。
 
 ---
 ## 引用
@@ -133,15 +85,15 @@ AI Engineer World’s Fair 将围绕前沿 AI 技术与实践展开，聚焦 **A
 ---
 ## 站内链接
 
-- 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)
-- 标签： [AI Agent](/tags/ai-agent/) / [垂直AI](/tags/%E5%9E%82%E7%9B%B4ai/) / [自动化研究](/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E7%A0%94%E7%A9%B6/) / [世界模型](/tags/%E4%B8%96%E7%95%8C%E6%A8%A1%E5%9E%8B/) / [记忆机制](/tags/%E8%AE%B0%E5%BF%86%E6%9C%BA%E5%88%B6/) / [Token优化](/tags/token%E4%BC%98%E5%8C%96/) / [代理商务](/tags/%E4%BB%A3%E7%90%86%E5%95%86%E5%8A%A1/) / [前沿AI](/tags/%E5%89%8D%E6%B2%BFai/)
+- 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)
+- 标签： [AI工程师](/tags/ai%E5%B7%A5%E7%A8%8B%E5%B8%88/) / [智能体](/tags/%E6%99%BA%E8%83%BD%E4%BD%93/) / [世界模型](/tags/%E4%B8%96%E7%95%8C%E6%A8%A1%E5%9E%8B/) / [垂直AI](/tags/%E5%9E%82%E7%9B%B4ai/) / [Token优化](/tags/token%E4%BC%98%E5%8C%96/) / [前沿技术](/tags/%E5%89%8D%E6%B2%BF%E6%8A%80%E6%9C%AF/) / [开发者大会](/tags/%E5%BC%80%E5%8F%91%E8%80%85%E5%A4%A7%E4%BC%9A/) / [研究动态](/tags/%E7%A0%94%E7%A9%B6%E5%8A%A8%E6%80%81/)
 - 场景： [AI/ML项目](/scenarios/ai-ml%E9%A1%B9%E7%9B%AE/)
 
 ### 相关文章
 
+- [专家依赖世界模型，大语言模型仅有词模型]({{< relref "posts/20260208-blogs_podcasts-experts-have-world-models-llms-have-word-models-0.md" >}})
+- [专家依赖世界模型决策，LLM需超越词模型以实现推理]({{< relref "posts/20260209-blogs_podcasts-experts-have-world-models-llms-have-word-models-0.md" >}})
+- [专家依赖世界模型推断隐藏状态，大语言模型需突破词模型局限]({{< relref "posts/20260210-blogs_podcasts-experts-have-world-models-llms-have-word-models-3.md" >}})
+- [专家依赖世界模型而LLM仅基于词模型预测]({{< relref "posts/20260210-blogs_podcasts-experts-have-world-models-llms-have-word-models-4.md" >}})
 - [AI工程师大会招募演讲者：垂直AI、自动研究、世界模型]({{< relref "posts/20260503-blogs_podcasts-ainews-ai-engineer-worlds-fair-autoresearch-memory-0.md" >}})
-- [Context Graphs 与 Agent Traces：解析 AI 智能体的记忆与回溯机制]({{< relref "posts/20260205-blogs_podcasts-ainews-context-graphs-and-agent-traces-3.md" >}})
-- [Vercel AI SDK 子代理：解决复杂 Agent 系统上下文爆炸问题]({{< relref "posts/20260213-juejin-vercel-ai-sdk-使用指南-子代理-subagents-1.md" >}})
-- [OpenAI内部数据代理：结合GPT‑5与记忆快速分析海量数据]({{< relref "posts/20260129-blogs_podcasts-inside-openais-in-house-data-agent-1.md" >}})
-- [Waymo 世界模型：利用生成式世界模型提升自动驾驶决策能力]({{< relref "posts/20260207-hacker_news-the-waymo-world-model-6.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*
