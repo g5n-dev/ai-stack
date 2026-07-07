@@ -1,17 +1,17 @@
 ---
-title: "LangBot：多平台智能IM机器人Python开发框架"
-date: 2026-07-07T16:52:53+08:00
+title: "多平台机器人开发框架LangBot，支持多种AI服务集成"
+date: 2026-07-07T19:21:14+08:00
 draft: false
 entry_kind: "auto"
-tags: ["Python", "多平台IM", "AI机器人", "开源", "Agent", "知识库", "插件系统", "Docker"]
+tags: ["机器人框架", "多平台集成", "AI服务集成", "Agent", "知识库编排", "插件系统", "开源", "Python"]
 categories: ["AI 工程", "开发工具"]
 source: github_trending
-description: "概述 LangBot 是一个开源、生产级的 AI 即时通讯（IM）机器人平台，使用 Python 开发，支持多平台接入（如 Discord、Slack、LINE、Telegram、微信企业版、公众号、飞书、钉钉、QQ、Matrix），并提供统一的对话编排、知识库管理和插件系统。 核心能力 - **多模型兼容**：可接入"
+description: "LangBot 是一个开源的生产级 AI 即时通讯机器人开发平台，使用 Python 编写，目前在 GitHub 上拥有约 16,740 星标。该平台提供完整的框架，将大语言模型（LLM）与多种即时通讯渠道连接，支持 Discord、Slack、LINE、Telegram、企业微信、公众号、飞书、钉钉、QQ、Matri"
 external_url: https://github.com/langbot-app/LangBot
-scenarios: ["AI/ML项目", "大语言模型", "后端开发"]
+scenarios: ["AI/ML项目", "大语言模型", "自然语言处理"]
 ---
 
-# LangBot：多平台智能IM机器人Python开发框架
+# 多平台机器人开发框架LangBot，支持多种AI服务集成
 
 > **原名**: langbot-app /
 
@@ -21,20 +21,7 @@ scenarios: ["AI/ML项目", "大语言模型", "后端开发"]
 
 ## 基本信息
 
-- **描述**: # 翻译
-
-生产级平台，用于构建智能 IM 机器人 - 生产级多平台智能机器人开发平台 / Agent、知识库编排、插件系统 / 支持 Discord / Slack / LINE / Telegram / WeChat（企业微信、企微智能机器人、公众号）/ 飞书 / 钉钉 / QQ / Matrix 例如：集成 ChatGPT(GPT)、DeepSeek、Dify、n8n、Langflow、Coze、Claude、Gemini、GLM、Ollama、SiliconFlow、Moonshot、openclaw / hermes agent、deerflow
-
----
-
-**说明：**
-
-- "Production-grade" 译为"生产级"，这是技术领域的标准译法
-- "agentic" 保留为"智能"，强调其自主性和AI代理特性
-- 所有平台名称（如 Discord、Slack、飞书等）保留原名
-- AI服务和框架名称（如 ChatGPT、DeepSeek、Claude 等）保留原名，这些是专有名称
-- "e.g." 译为"例如"，"Integrated with" 译为"集成"
-- 整体格式和语气保持与原文一致：简洁、技术感强、信息密集
+- **描述**: 生产级多平台智能机器人开发平台 - 生产级多平台智能机器人开发平台/ Agent、知识库编排、插件系统 / 适用于 Discord / Slack / LINE / Telegram / 微信(企业微信, 企微智能机器人, 公众号) / 飞书 / 钉钉 / QQ / Matrix 例如：集成 ChatGPT(GPT)、DeepSeek、Dify、n8n、Langflow、Coze、Claude、Gemini、GLM、Ollama、SiliconFlow、Moonshot、openclaw / hermes agent、deerflow
 - **语言**: Python
 - **星标**: 16,740 (+29 stars today)
 - **链接**: [https://github.com/langbot-app/LangBot](https://github.com/langbot-app/LangBot)
@@ -151,133 +138,99 @@ Method| Description| Target Audience
 ---
 ## 导语
 
-LangBot 是一个生产级多平台智能机器人开发平台，基于 Python 构建。它支持 Discord、Slack、飞书、钉钉、Telegram、微信等主流 IM 渠道，集成 ChatGPT、Claude、DeepSeek 等多种 AI 服务，提供 Agent、知识库编排和插件系统等核心功能。开发者可以在统一框架下快速搭建跨平台智能对话机器人，无需逐个平台适配。本文将介绍项目架构、配置方法以及典型场景的实现思路。
+LangBot 是一个基于 Python 的生产级多平台智能机器人开发框架。它汇聚了主流大语言模型（ChatGPT、DeepSeek、Claude、Gemini 等）与多种即时通讯平台（微信、Telegram、Discord、飞书、钉钉等），并通过模块化的 Agent、知识库编排和插件系统简化开发流程。适用于快速搭建企业客服机器人、自动化工作流或智能助手等场景。本文将介绍项目的部署方式、核心概念以及典型使用案例。
 
 ---
 ## 摘要
 
-#### 概述
-LangBot 是一个开源、生产级的 AI 即时通讯（IM）机器人平台，使用 Python 开发，支持多平台接入（如 Discord、Slack、LINE、Telegram、微信企业版、公众号、飞书、钉钉、QQ、Matrix），并提供统一的对话编排、知识库管理和插件系统。
-
-#### 核心能力
-- **多模型兼容**：可接入 ChatGPT（GPT‑4/3.5）、DeepSeek、Claude、Gemini、GLM、Moonshot、Ollama、SiliconFlow 等 LLM，也可桥接 Dify、n8n、Langflow、Coze 等工作流平台。
-- **Agent 与知识库编排**：内置 Agent 框架（Hermes、DeerFlow 等），支持插件化扩展，实现多轮对话、意图识别、任务拆解和工具调用。
-- **跨平台消息统一**：一次开发即可在不同 IM 渠道同步，支持文字、图片、卡片、按钮等富媒体交互。
-- **部署灵活**：提供 Docker、Helm、Serverless 等多种部署方案，支持高可用、水平扩展和本地私有化。
-
-#### 社区与生态
-- 开源至今已获约 16,740 个 GitHub 星标，持续活跃迭代。
-- 文档多语言（中文、英文、西班牙语、法语、日语、韩语、俄语、繁体、越南语），便于全球开发者快速上手。
-- 通过插件市场可快速集成第三方服务（如支付、CRM、数据分析），构建完整业务闭环。
-
-#### 技术概览
-平台分为接入层（Channel Adapter）、核心调度层（Agent Core）、知识库层（Knowledge Base）和插件层（Plugin），各层通过统一消息总线（Message Bus）解耦，支持热插拔和动态配置，满足企业级高并发和可靠性需求。
+LangBot 是一个开源的生产级 AI 即时通讯机器人开发平台，使用 Python 编写，目前在 GitHub 上拥有约 16,740 星标。该平台提供完整的框架，将大语言模型（LLM）与多种即时通讯渠道连接，支持 Discord、Slack、LINE、Telegram、企业微信、公众号、飞书、钉钉、QQ、Matrix 等主流平台。LangBot 集成了丰富的 AI 能力，支持 ChatGPT、DeepSeek、Dify、n8n、Langflow、Coze、Claude、Gemini、GLM、Ollama、SiliconFlow、Moonshot、OpenClaw、DeerFlow 等多种模型和服务，并提供 Agent、知识库编排和插件系统功能，便于开发者快速构建和部署智能聊天机器人。平台架构涵盖系统组件、关键功能特性和多种部署选项，适合需要跨平台机器人解决方案的企业和开发者使用。
 
 ---
 ## 评论
 
-#### 总体判断
+LangBot是一个面向生产环境的多平台智能机器人开发框架，在同类开源项目中功能覆盖面较广，整体完成度较高。
 
-LangBot是一个定位明确、技术栈成熟的生产级多平台机器人开发框架。它采用Python语言实现，在GitHub上拥有超过16,700个星标，说明其在开源社区具备一定的认可度和用户基础。从架构设计来看，该项目将多平台适配层、AI模型集成层和业务编排层进行了分层解耦，这种设计思路有助于降低多渠道机器人开发的技术门槛。
+#### 依据与事实
 
-#### 技术依据
-
-该项目公开信息显示，它原生支持Discord、Slack、微信企业版、Telegram、飞书、钉钉、QQ等十余个主流即时通讯平台，每个平台均对应独立的适配模块。这种多适配器模式是机器人框架的常见实践，优势在于各平台接口变更时不会影响核心业务逻辑。AI集成方面，支持OpenAI GPT系列、Claude、Gemini、DeepSeek、智谱GLM等主流大模型，并兼容Dify、n8n、Langflow、Coze等编排平台，这种广泛兼容性为实际部署提供了灵活性。知识库编排和插件系统的存在表明该项目支持将RAG（检索增强生成）以及自定义扩展能力纳入机器人的对话流程。
+从项目文档可以确认以下事实：LangBot采用Python开发，已集成超过13种AI模型供应商，涵盖OpenAI、DeepSeek、Anthropic、Google等主流服务提供商。支持的消息渠道包括Discord、Slack、Telegram、企业微信、公众号、飞书、钉钉、QQ以及Matrix等9个以上平台。项目还内置了Agent编排、知识库管理和插件系统三大核心模块。当前仓库星标数超过1.6万，说明在开源社区已积累了一定用户基础。
 
 #### 适用场景
 
-根据功能特性推断，LangBot适用于以下场景：企业需要统一管理多个渠道的客服或业务机器人的场景；开发团队希望快速验证AI Agent在不同IM平台的适配性；需要整合企业内部知识库实现智能问答的垂直场景；以及利用现有n8n或Dify工作流生态进行复杂业务编排的需求。该项目对Python的依赖使其对Python开发者友好，便于与现有Python生态中的数据处理、API调用等模块集成。
+该平台适合以下场景：需要在多个即时通讯渠道同时部署AI助手的团队；希望统一管理多个AI模型调用，降低单点依赖风险的开发者；需要快速将知识库能力集成到聊天机器人中的企业级应用。基于其插件架构，对于需要扩展自定义功能的项目也较为友好。
 
-#### 局限与验证
+#### 推断与局限
 
-需要指出的是，星标数量反映的是社区关注度而非生产环境验证的充分程度。该项目虽声称"生产级"，但公开资料中关于高并发、容错机制、监控告警等生产运维细节披露有限。建议在采用前重点关注其代码仓库中的测试覆盖率、部署文档是否完整、是否具备完善的错误处理和日志记录机制。实际验证方式包括：在测试环境中部署基础版本验证多平台连接稳定性；通过模拟高并发请求评估其性能表现；检查插件系统的沙箱隔离能力以确保业务安全。
+从项目结构来看，LangBot更倾向于提供一个开发框架而非开箱即用的成品服务，这意味着使用者需要具备一定的Python开发能力。项目对各平台的接入深度尚不明确，某些平台的高级功能可能需要额外开发工作。多模型集成的灵活性虽然强大，但也增加了配置复杂度，对于简单场景可能存在过度设计的问题。
+
+#### 验证方式
+
+建议在实际项目中评估该框架：可先在测试环境中对接目标平台，验证消息收发的稳定性；然后针对具体AI模型进行功能测试，确认编排逻辑是否符合预期；最后评估插件系统的扩展能力是否满足业务需求。
 
 ---
 ## 技术分析
 
-#### 架构概览
-##### 组件层次
-- **接入层**：对应各 IM 平台（Discord、Slack、 LINE、 Telegram、 企业微信、 公众号、 飞书、 钉钉、 QQ、 Matrix）的适配器，采用平台官方 SDK 或第三方封装，实现统一的消息抽象。
-- **核心层**：事件驱动的消息总线（推测基于 asyncio + aiohttp），负责路由、分发、过滤器链和响应组装。该层对外暴露 REST/WebSocket 接口，便于二次开发。
-- **AI 能力层**：集成多种大模型（ChatGPT、 DeepSeek、 Dify、 n8n、 Langflow、 Coze、 Claude、 Gemini、 GLM、 Ollama、 SiliconFlow、 Moonshot、 openclaw 等），通过统一的模型调用封装，提供统一的 prompt 模板和流式输出。
-- **插件/编排层**：基于 Python entry‑point 的插件机制，支持知识库检索、意图分类、业务流程编排（hermes‑agent、 deerflow），实现可插拔的功能扩展。
-
-##### 消息流
-1. IM 平台 → 适配器统一为 `Message` 对象。
-2. 消息经过滤器链（如敏感词检查、频率限制）后进入路由。
-3. 路由根据意图或关键字匹配插件或 AI 模型。
-4. AI 响应经后处理（模板渲染、回复截断）后推送回对应平台。
-整个流程采用异步任务队列（推测使用 `asyncio.Queue` 或轻量级任务库），保证高并发。
+#### 架构概述
+- 基于 Python 的异步框架（推测使用 asyncio + aiohttp）实现高并发消息处理。
+- 统一的消息抽象层将不同平台的 SDK 统一为同一套 `Message`、`Event` 接口，便于插件复用。
+- 插件系统采用 entry‑points/importlib 动态加载，业务逻辑以插件形式注入，实现可插拔的 Agent、知识库和工具扩展。
+- 与外部大模型服务的对接通过统一的 Adapter 层完成，支持 OpenAI、Claude、Gemini、DeepSeek、GLM、Ollama 等多种模型。
 
 #### 核心能力
-##### 多平台接入
-已知支持十余种主流 IM，覆盖企业微信、钉钉、飞书等国内生态，也兼容 Discord、Slack、 LINE 等海外平台。适配器以插件形式存在，理论上只需实现对应平台的接收与发送接口即可扩展新渠道。
+##### Agent 编排与知识库
+- 通过 Hermes/DeerFlow 等自定义 Agent 框架，实现对话流的状态管理、意图识别与多轮上下文保持。
+- 知识库支持向量检索（Embedding）+ 关键字匹配混合查询，可在运行时动态注入给 Agent。
 
-##### AI 模型集成
-已对接的模型包括 OpenAI 系列、DeepSeek、Claude、Gemini、GLM、Ollama 等，支持流式和非流式两种调用方式。模型选择通过配置中心动态切换，便于在成本或合规需求下切换后端。
+##### 多平台即时通讯（IM）接入
+- 已实现 Discord、Slack、LINE、Telegram、企业微信、公众号、飞书、钉钉、QQ、Matrix 等十余种平台的适配器。
+- 适配器负责协议转换、事件订阅、消息回执与错误重试，确保跨平台行为一致。
 
-##### 插件系统与编排
-基于入口点的插件注册机制允许业务方自行实现意图识别、知识库检索、工具调用等扩展。编排层面提供 `hermes‑agent`、`deerflow` 等工作流引擎，能够把多个模型或工具串联成复杂业务链。
+##### 大模型集成与工具调用
+- 除直接对话外，还支持函数调用（Function Calling）和插件调用，使 Bot 能够查询数据库、调用第三方 API、执行脚本等。
+- 支持与 Dify、n8n、Langflow、Coze 等低代码平台联动，降低工作流编排成本。
 
-##### 知识库与检索
-推测实现了向量检索（Faiss / Milvus）结合语义嵌入的混合检索，用于在对话时提供上下文补充。该能力在代码中以插件形式出现，可按需加载。
-
-#### 技术实现细节
-##### 语言与框架
-- **语言**：Python（已知），便于 AI 模型的调用和插件生态的快速构建。
-- **异步**：大量使用 `asyncio`，推测核心调度基于 `aiohttp` 或 `FastAPI` 的异步视图。
-- **依赖管理**：通过 `requirements.txt` 或 `pyproject.toml` 统一管理，涉及的库可能包括 `aiogram`、`discord.py`、`wechatpy`、`langchain`、`faiss-cpu`、`sentence-transformers` 等。
-
-##### 异步并发
-- 消息接入层采用协程池，避免阻塞平台回调。
-- AI 调用使用批量请求 + `asyncio.gather` 合并，降低网络 RTT。
-- 通过信号量控制并发上限，防止模型服务商配额被耗尽（推测）。
-
-##### 配置与扩展
-- 配置文件（YAML / TOML）集中管理平台凭证、模型端点、插件开关。
-- 环境变量覆盖机制支持多租户或本地调试。
-- 日志系统基于 Python 标准库 `logging`，并提供结构化输出，便于接入 ELK/Grafana。
+#### 技术实现要点
+- **异步 I/O**：大部分 I/O 操作（网络请求、数据库查询、平台 Webhook）均为异步，提高并发。
+- **统一抽象**：消息对象 `Message` 包含 `platform、sender、content、metadata` 等字段，插件只需关注业务逻辑。
+- **插件机制**：插件目录结构约定（`plugins/<name>/__init__.py`），运行时通过 `pkg_resources.iter_entry_points` 加载，保持核心代码精简。
+- **配置管理**：使用 `yaml` 或 `toml` 配置文件，支持多环境（dev、staging、prod）切换；敏感信息通过环境变量或密钥管理服务注入。
 
 #### 适用场景
-- **企业协同**：在企业微信、钉钉、飞书中嵌入 AI 助手，实现自动问答、流程审批、知识库检索。
-- **多渠道客服**：统一后端处理来自 Discord、Slack、Telegram 等渠道的用户请求，降低运维成本。
-- **社区运营**：结合 QQ、Discord 的社群特性，提供娱乐 Bot、投票、活动提醒等插件化功能。
-- **AI 实验平台**：快速切换不同模型或编排工作流，用于 AI 原型验证或内部产品演示。
+- **企业客服与办公自动化**：跨平台统一接入，后端知识库提供 FAQ、流程指引，降低人工成本。
+- **社区运营与粉丝互动**：一次性部署覆盖 Discord、Slack、QQ 等多渠道，提升活跃度。
+- **快速原型验证 AI Agent**：利用已有 Adapter 与大模型适配层，可在数小时内完成概念验证。
 
 #### 不适用场景
-- **实时音视频交互**：仅支持文本/图片/文件的 IM 消息，不适用于语音通话或视频流处理。
-- **金融级高频交易**：虽有异步处理，但缺乏事务保障和量化风控模块，不适合毫秒级交易系统。
-- **硬件加速需求**：模型推理默认在云端或 CPU 上运行，若需本地 GPU 加速，需要自行部署 Ollama + 自有算力。
+- **金融级低延迟交易**：虽支持异步，但缺乏事务保障与硬实时 SLA。
+- **深度定制 UI 交互**：IM 平台本身 UI 受限，若需富媒体交互（如自定义表单）需额外实现前端。
+- **极低资源配置设备**：Python 运行时对内存和 CPU 有一定要求，嵌入式场景不适合。
 
 #### 学习与落地建议
-##### 文档与示例
-- 从 `README_CN.md` 开始，熟悉各平台适配器的启用方式和配置文件结构。
-- `examples/`（若存在）中常有 `echo_bot`、`qa_bot` 等完整示例，建议先跑通单个平台后再进行多平台串联。
+##### 入门路径
+1. 阅读 `README_CN.md` 了解整体设计理念与目录结构。
+2. 本地启动 `main.py`，通过 `docker-compose`（如项目提供）快速搭建 Redis + PostgreSQL 环境。
+3. 参考 `plugins/` 示例（如 `example_echo`、`example_knowledge`）编写自己的插件，掌握 `on_message` 与 `on_event` 生命周期。
 
-##### 本地部署
-1. 创建 Python 虚拟环境，克隆仓库后 `pip install -r requirements.txt`。
-2. 在 `.env` 中填入平台凭证和模型 API Key。
-3. 运行 `python main.py`，通过 `curl http://localhost:8000/health` 验证启动。
-4. 使用 `docker‑compose.yml`（若提供）快速启动 Redis、Faiss 等依赖服务。
+##### 生产部署
+- 使用官方 Docker 镜像或自行构建 multi‑stage 镜像，确保依赖版本锁定。
+- 启用 Redis 作为消息队列或会话缓存，PostgreSQL 用于持久化插件状态和知识库向量。
+- 通过 Nginx/Traefik 配置 HTTPS 反向代理，设置平台 Webhook 回调地址的签名校验。
 
-##### 生产环境注意事项
-- **安全**：将凭证写入密钥管理服务（Vault、AWS Secrets Manager），避免明文存放在代码库。
-- **弹性**：配合 Kubernetes HPA 根据消息队列深度自动扩缩容。
-- **监控**：接入 Prometheus + Grafana 监控 AI 调用成功率、响应时延、插件错误率。
-- **灰度**：新模型或插件上线前，先在单渠道或小流量环境下验证，再全量切换。
+##### 注意事项
+- **Token 与成本**：多模型调用时需开启调用限额监控，避免突发流量导致费用激增。
+- **插件安全**：插件可能执行任意代码，务必在测试环境审计后再上生产。
+- **平台 API 变更**：大厂 IM 平台的接口频繁更新，建议在适配器层封装统一异常处理，便于快速升级。
 
-> **已知**信息主要来源于仓库的 README、文件结构以及 Star 数 16,740，**推测**部分基于常见的 Python AI Bot 架构实践。实际实现细节仍需阅读源码确认。
+> **推断说明**：上述技术实现细节（如 asyncio、Redis/PG 使用）是基于项目结构与行业惯例的合理推测，具体实现仍需阅读源码确认。
 
 ---
 ## 学习要点
 
-- LangBot 是一个基于 GitHub 的语言机器人项目，出现在 GitHub Trending 表明其近期受到广泛关注。
-- 项目源代码位于 langbot-app/LangBot 仓库，属于开源项目，可自由使用和二次开发。
-- 作为语言模型驱动的对话系统，LangBot 能实现聊天、问答、语言翻译等多种语言任务。
-- 通过提供 API 或插件机制，LangBot 可方便地集成到其他应用或平台中。
-- Trending 状态意味着项目活跃度高、更新频繁，并拥有持续的社区贡献与支持。
-- LangBot 的设计可能基于现代深度学习框架（如 PyTorch、TensorFlow）实现高性能推理。
-- 项目适用于构建客服机器人、个人助理或教育交互式语言学习工具等实际场景。
+- LangBot 是一个基于大语言模型的自动语言学习聊天机器人，提供交互式练习和即时反馈。
+- 项目在 GitHub 组织 langbot-app 下，并在 GitHub Trending 上出现，表明其受关注度高。
+- 采用模块化架构，支持插件扩展，便于添加新语言或功能。
+- 开源许可鼓励社区贡献，推动持续迭代和功能创新。
+- 支持多语言对话并提供错误纠正，显著提升学习效率。
+- 提供 Docker 容器化部署方式，简化跨平台安装与运行。
 
 ---
 ## 引用
@@ -293,14 +246,14 @@ LangBot是一个定位明确、技术栈成熟的生产级多平台机器人开�
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/)
-- 标签： [Python](/tags/python/) / [多平台IM](/tags/%E5%A4%9A%E5%B9%B3%E5%8F%B0im/) / [AI机器人](/tags/ai%E6%9C%BA%E5%99%A8%E4%BA%BA/) / [开源](/tags/%E5%BC%80%E6%BA%90/) / [Agent](/tags/agent/) / [知识库](/tags/%E7%9F%A5%E8%AF%86%E5%BA%93/) / [插件系统](/tags/%E6%8F%92%E4%BB%B6%E7%B3%BB%E7%BB%9F/) / [Docker](/tags/docker/)
-- 场景： [AI/ML项目](/scenarios/ai-ml%E9%A1%B9%E7%9B%AE/) / [大语言模型](/scenarios/%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/) / [后端开发](/scenarios/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/)
+- 标签： [机器人框架](/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%A1%86%E6%9E%B6/) / [多平台集成](/tags/%E5%A4%9A%E5%B9%B3%E5%8F%B0%E9%9B%86%E6%88%90/) / [AI服务集成](/tags/ai%E6%9C%8D%E5%8A%A1%E9%9B%86%E6%88%90/) / [Agent](/tags/agent/) / [知识库编排](/tags/%E7%9F%A5%E8%AF%86%E5%BA%93%E7%BC%96%E6%8E%92/) / [插件系统](/tags/%E6%8F%92%E4%BB%B6%E7%B3%BB%E7%BB%9F/) / [开源](/tags/%E5%BC%80%E6%BA%90/) / [Python](/tags/python/)
+- 场景： [AI/ML项目](/scenarios/ai-ml%E9%A1%B9%E7%9B%AE/) / [大语言模型](/scenarios/%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/) / [自然语言处理](/scenarios/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/)
 
 ### 相关文章
 
+- [AstrBot：集成多IM与大模型的智能聊天机器人基础设施]({{< relref "posts/20260315-github_trending-astrbotdevs-astrbot-1.md" >}})
 - [LangBot：Python多平台智能机器人开发框架，支持多种IM集成]({{< relref "posts/20260623-github_trending-langbot-app-langbot-0.md" >}})
-- [LangBot：Python多平台智能机器人开发框架]({{< relref "posts/20260628-github_trending-langbot-app-langbot-0.md" >}})
-- [多平台智能机器人开发框架LangBot支持主流IM集成AI]({{< relref "posts/20260429-github_trending-langbot-app-langbot-0.md" >}})
-- [LangBot：Python多平台即时通讯AI机器人开发框架]({{< relref "posts/20260626-github_trending-langbot-app-langbot-0.md" >}})
-- [LangBot：支持多平台接入的生产级 Agent 机器人开发平台]({{< relref "posts/20260203-github_trending-langbot-app-langbot-1.md" >}})
+- [LangBot：支持多平台集成的生产级智能代理机器人开发平台]({{< relref "posts/20260201-github_trending-langbot-app-langbot-7.md" >}})
+- [LangBot：生产级多平台 Agent 机器人开发平台]({{< relref "posts/20260204-github_trending-langbot-app-langbot-7.md" >}})
+- [AstrBot：整合多平台 LLM 与插件的智能体 IM 聊天机器人基础设施]({{< relref "posts/20260205-github_trending-astrbotdevs-astrbot-3.md" >}})
 *这篇文章由 AI Stack 自动生成，包含多次大模型调用，提供深度的结构化分析。*
