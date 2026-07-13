@@ -6,6 +6,7 @@ from pathlib import Path
 import pytest
 
 import scripts.shadow_compare as shadow
+from ai_stack.shadow_evidence import load_shadow_evidence
 from scripts.shadow_compare import ShadowComparisonError, compare_trees, main
 
 
@@ -130,6 +131,83 @@ def test_cli_fails_closed_without_writing_report(tmp_path: Path) -> None:
         == 1
     )
     assert not output.exists()
+
+
+def test_cli_can_append_comparison_to_content_addressed_evidence_chain(
+    tmp_path: Path,
+) -> None:
+    baseline = tmp_path / "baseline"
+    candidate = tmp_path / "candidate"
+    _site(baseline)
+    _site(candidate)
+    output = tmp_path / "report.json"
+    evidence = tmp_path / "ops/shadow"
+
+    assert (
+        main(
+            [
+                "--baseline",
+                str(baseline),
+                "--candidate",
+                str(candidate),
+                "--report",
+                str(output),
+                "--code-sha",
+                "a" * 40,
+                "--content-sha",
+                "b" * 40,
+                "--evidence-root",
+                str(evidence),
+                "--run-id",
+                "shadow-build-1",
+                "--completed-at",
+                "2026-07-13T08:00:00Z",
+                "--full-build",
+            ]
+        )
+        == 0
+    )
+    records = load_shadow_evidence(evidence)
+    assert len(records) == 1
+    assert records[0].run_id == "shadow-build-1"
+    assert records[0].full_build is True
+    assert records[0].code_sha == "a" * 40
+    assert records[0].content_sha == "b" * 40
+
+
+def test_cli_requires_complete_evidence_identity_and_rejects_replay(
+    tmp_path: Path,
+) -> None:
+    baseline = tmp_path / "baseline"
+    candidate = tmp_path / "candidate"
+    _site(baseline)
+    _site(candidate)
+    evidence = tmp_path / "ops/shadow"
+    common = [
+        "--baseline",
+        str(baseline),
+        "--candidate",
+        str(candidate),
+        "--report",
+        str(tmp_path / "report.json"),
+        "--code-sha",
+        "a" * 40,
+        "--content-sha",
+        "b" * 40,
+        "--evidence-root",
+        str(evidence),
+        "--run-id",
+        "shadow-build-1",
+        "--completed-at",
+        "2026-07-13T08:00:00Z",
+    ]
+    assert main(common) == 0
+    assert main(common) == 1
+
+    incomplete = common.copy()
+    del incomplete[incomplete.index("--run-id") : incomplete.index("--run-id") + 2]
+    incomplete[incomplete.index("--evidence-root") + 1] = str(tmp_path / "other")
+    assert main(incomplete) == 1
 
 
 def test_rejects_invalid_identity_non_utf8_html_and_hardlinks(tmp_path: Path) -> None:

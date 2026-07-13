@@ -14,6 +14,7 @@ from .migrations import (
     MigrationSafetyError,
     copy_content_migration,
     dedupe_plan,
+    validate_dedupe_execution_gate,
 )
 from .pipeline import (
     PipelineError,
@@ -131,6 +132,7 @@ def _parser() -> argparse.ArgumentParser:
     dedupe.add_argument("--expected-source-sha")
     dedupe.add_argument("--backup-id")
     dedupe.add_argument("--max-changes", type=int)
+    dedupe.add_argument("--shadow-evidence-root", type=Path)
     return parser
 
 
@@ -347,21 +349,23 @@ def _migration(args: argparse.Namespace) -> int:
         return 0
     if args.migration == "dedupe":
         if args.execute:
-            missing = [
-                flag
-                for flag, value in (
-                    ("--expected-source-sha", args.expected_source_sha),
-                    ("--backup-id", args.backup_id),
-                    ("--max-changes", args.max_changes),
-                )
-                if value is None
-            ]
-            if missing:
-                raise MigrationSafetyError("--execute requires " + ", ".join(missing))
-            raise MigrationSafetyError(
-                "dedupe execution is blocked until 24 shadow runs and the 7-day soak complete"
+            validate_dedupe_execution_gate(
+                content_root=args.content_root,
+                expected_source_sha=args.expected_source_sha,
+                backup_id=args.backup_id,
+                max_changes=args.max_changes,
+                shadow_evidence_root=args.shadow_evidence_root,
             )
-        _print_json(dedupe_plan(args.content_root))
+            raise MigrationSafetyError(
+                "dedupe mutation engine is not implemented; no mutation was performed"
+            )
+        _print_json(
+            dedupe_plan(
+                args.content_root,
+                shadow_evidence_root=args.shadow_evidence_root,
+                expected_source_sha=args.expected_source_sha,
+            )
+        )
         return 0
     raise AssertionError("unreachable migration")
 

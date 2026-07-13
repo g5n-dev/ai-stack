@@ -11,9 +11,15 @@ import sys
 import tempfile
 from collections.abc import Sequence
 from dataclasses import dataclass
+from datetime import datetime
 from hashlib import sha256
 from html.parser import HTMLParser
 from pathlib import Path
+
+from ai_stack.shadow_evidence import (
+    ShadowEvidenceError,
+    append_shadow_evidence,
+)
 
 
 class ShadowComparisonError(RuntimeError):
@@ -219,12 +225,57 @@ def _parser() -> argparse.ArgumentParser:
     parser.add_argument("--report", type=Path, required=True)
     parser.add_argument("--code-sha")
     parser.add_argument("--content-sha")
+    parser.add_argument("--evidence-root", type=Path)
+    parser.add_argument("--run-id")
+    parser.add_argument("--completed-at")
+    parser.add_argument("--full-build", action="store_true")
+    parser.add_argument("--expected-previous-digest")
     return parser
+
+
+def _evidence_time(value: str) -> datetime:
+    if not value.endswith("Z"):
+        raise ShadowComparisonError("--completed-at must be a UTC timestamp ending in Z")
+    try:
+        parsed = datetime.fromisoformat(value[:-1] + "+00:00")
+    except ValueError as exc:
+        raise ShadowComparisonError("--completed-at is invalid") from exc
+    if parsed.isoformat().replace("+00:00", "Z") != value:
+        raise ShadowComparisonError("--completed-at must be canonical")
+    return parsed
+
+
+def _validate_evidence_args(args: argparse.Namespace) -> datetime | None:
+    optional_evidence = (
+        args.run_id,
+        args.completed_at,
+        args.expected_previous_digest,
+        args.full_build,
+    )
+    if args.evidence_root is None:
+        if any(optional_evidence):
+            raise ShadowComparisonError("shadow evidence options require --evidence-root")
+        return None
+    missing = [
+        flag
+        for flag, value in (
+            ("--run-id", args.run_id),
+            ("--completed-at", args.completed_at),
+            ("--code-sha", args.code_sha),
+            ("--content-sha", args.content_sha),
+        )
+        if value is None
+    ]
+    if missing:
+        raise ShadowComparisonError("--evidence-root requires " + ", ".join(missing))
+    assert isinstance(args.completed_at, str)
+    return _evidence_time(args.completed_at)
 
 
 def main(argv: Sequence[str] | None = None) -> int:
     args = _parser().parse_args(argv)
     try:
+        completed_at = _validate_evidence_args(args)
         report = compare_trees(
             args.baseline,
             args.candidate,
@@ -232,7 +283,22 @@ def main(argv: Sequence[str] | None = None) -> int:
             content_sha=args.content_sha,
         )
         _atomic_json(args.report, report)
-    except (OSError, ShadowComparisonError) as exc:
+        if args.evidence_root is not None:
+            assert completed_at is not None
+            assert isinstance(args.run_id, str)
+            assert isinstance(args.code_sha, str)
+            assert isinstance(args.content_sha, str)
+            append_shadow_evidence(
+                args.evidence_root,
+                report=report,
+                run_id=args.run_id,
+                completed_at=completed_at,
+                full_build=args.full_build,
+                code_sha=args.code_sha,
+                content_sha=args.content_sha,
+                expected_previous_digest=args.expected_previous_digest,
+            )
+    except (OSError, ShadowComparisonError, ShadowEvidenceError) as exc:
         print(json.dumps({"error": str(exc)}, sort_keys=True), file=sys.stderr)
         return 1
     print(json.dumps(report, ensure_ascii=False, sort_keys=True))
