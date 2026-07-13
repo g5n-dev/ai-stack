@@ -53,13 +53,17 @@ def test_every_remote_action_is_pinned_to_a_full_commit() -> None:
 
 def test_pr_ci_keeps_branch_update_contract_and_has_no_secrets() -> None:
     workflow, text = _workflow("ci.yml")
+    assert workflow["name"] == "PR CI"
     triggers = workflow["on"]
     assert isinstance(triggers, dict)
-    assert "pull_request" in triggers
+    assert set(triggers) == {"pull_request", "workflow_dispatch"}
     pull_request = triggers["pull_request"]
     assert isinstance(pull_request, dict)
     assert pull_request == {"branches": ["main"]}
-    assert "workflow_dispatch" in triggers
+    assert workflow["concurrency"] == {
+        "group": "pr-ci-${{ github.event.pull_request.number || github.ref }}",
+        "cancel-in-progress": "true",
+    }
     assert workflow["permissions"] == {"contents": "read"}
     assert "${{ secrets." not in text
     assert "cancel-in-progress: true" in text
@@ -102,6 +106,10 @@ def test_deploy_preserves_public_triggers_but_uses_one_explicit_dag() -> None:
     push = triggers["push"]
     assert isinstance(push, dict)
     assert push["branches"] == ["main"]
+    assert workflow["concurrency"] == {
+        "group": "build-and-deploy-main",
+        "cancel-in-progress": "false",
+    }
     assert workflow["permissions"] == {"contents": "read"}
     assert all(forbidden not in text for forbidden in FORBIDDEN_GIT)
 
@@ -324,11 +332,47 @@ def test_delete_workflow_is_break_glass_dry_run_and_bounded() -> None:
 
 def test_monitoring_is_read_only_and_does_not_claim_fake_metrics() -> None:
     workflow, text = _workflow("monitoring.yml")
+    assert workflow["name"] == "System Monitoring & Content Quality Tracking"
     triggers = workflow["on"]
     assert isinstance(triggers, dict)
+    assert set(triggers) == {"schedule", "workflow_dispatch"}
     assert triggers["schedule"] == [{"cron": "0 */6 * * *"}]
-    assert "workflow_dispatch" in triggers
+    assert workflow["concurrency"] == {
+        "group": "production-monitoring",
+        "cancel-in-progress": "true",
+    }
     assert workflow["permissions"] == {"contents": "read"}
     assert "analytics_data.json" not in text
     assert "engagement_data.json" not in text
     assert "Total Token" not in text
+
+
+def test_branch_architecture_describes_current_ledgers_and_ci_contract() -> None:
+    document = (ROOT / "docs" / "BRANCH_ARCHITECTURE.md").read_text(
+        encoding="utf-8"
+    )
+
+    for required in (
+        "main`：只保存代码",
+        "content`：orphan 内容账本",
+        "ops`：orphan 运维事实账本",
+        "PR CI",
+        "Build and Deploy",
+        "System Monitoring & Content Quality Tracking",
+        "0 * * * *",
+        "0 */6 * * *",
+        "Unit Tests",
+        "[skip ci]",
+        "CAS",
+        "release sequence",
+    ):
+        assert required in document
+
+    for obsolete in (
+        "sync-to-gh-pages.yml",
+        "gh-pages-content.yml",
+        "git merge -X theirs",
+        "force-with-lease",
+        "50+ LLM",
+    ):
+        assert obsolete not in document
