@@ -8,6 +8,15 @@ venv/
 env/
 ENV/
 .venv
+.coverage
+coverage.xml
+htmlcov/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+
+# Node
+node_modules/
 
 # 环境变量
 .env

@@ -3,10 +3,13 @@ Twitter publisher
 Twitter/X 推送模块
 """
 
-import os
-import tweepy
-from typing import Dict, List
 import logging
+import os
+import re
+
+import tweepy
+
+from content_security import validate_public_url
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -15,13 +18,23 @@ logger = logging.getLogger(__name__)
 class TwitterPublisher:
     """Twitter 推送器"""
 
-    def __init__(self, api_key=None, api_secret=None, access_token=None,
-                 access_token_secret=None, bearer_token=None):
-        self.api_key = api_key or os.environ.get('TWITTER_API_KEY')
-        self.api_secret = api_secret or os.environ.get('TWITTER_API_SECRET')
-        self.access_token = access_token or os.environ.get('TWITTER_ACCESS_TOKEN')
-        self.access_token_secret = access_token_secret or os.environ.get('TWITTER_ACCESS_TOKEN_SECRET')
-        self.bearer_token = bearer_token or os.environ.get('TWITTER_BEARER_TOKEN')
+    def __init__(
+        self,
+        api_key=None,
+        api_secret=None,
+        access_token=None,
+        access_token_secret=None,
+        bearer_token=None,
+        max_length=280,
+    ):
+        self.api_key = api_key or os.environ.get("TWITTER_API_KEY")
+        self.api_secret = api_secret or os.environ.get("TWITTER_API_SECRET")
+        self.access_token = access_token or os.environ.get("TWITTER_ACCESS_TOKEN")
+        self.access_token_secret = access_token_secret or os.environ.get(
+            "TWITTER_ACCESS_TOKEN_SECRET"
+        )
+        self.bearer_token = bearer_token or os.environ.get("TWITTER_BEARER_TOKEN")
+        self.max_length = int(max_length)
 
         self.client = self._init_client()
 
@@ -39,7 +52,7 @@ class TwitterPublisher:
                 consumer_secret=self.api_secret,
                 access_token=self.access_token,
                 access_token_secret=self.access_token_secret,
-                wait_on_rate_limit=True
+                wait_on_rate_limit=True,
             )
             logger.info("Twitter client initialized")
             return client
@@ -71,7 +84,7 @@ class TwitterPublisher:
             logger.error(f"Failed to post tweet: {e}")
             return False
 
-    def tweet_with_media(self, text: str, media_paths: List[str]) -> bool:
+    def tweet_with_media(self, text: str, media_paths: list[str]) -> bool:
         """
         发布带媒体的推文
 
@@ -102,7 +115,7 @@ class TwitterPublisher:
             logger.error(f"Failed to post tweet with media: {e}")
             return False
 
-    def format_tweet(self, content: Dict, max_length=280) -> str:
+    def format_tweet(self, content: dict, max_length=None) -> str:
         """
         格式化内容为推文
 
@@ -113,9 +126,11 @@ class TwitterPublisher:
         Returns:
             str: 格式化后的推文
         """
-        title = content.get('title', '')
-        summary = content.get('summary', '')
-        url = content.get('url', '')
+        max_length = self.max_length if max_length is None else int(max_length)
+        title = re.sub(r"[\x00-\x1f\x7f]+", " ", str(content.get("title", ""))).strip()
+        summary = re.sub(r"[\x00-\x1f\x7f]+", " ", str(content.get("summary", ""))).strip()
+        raw_url = str(content.get("url") or "")
+        url = validate_public_url(raw_url) if raw_url else ""
 
         # 构建推文
         tweet_parts = []
@@ -129,21 +144,23 @@ class TwitterPublisher:
         if url:
             tweet_parts.append(url)
 
-        tweet = '\n'.join(tweet_parts)
+        tweet = "\n".join(tweet_parts)
 
         # 添加标签
-        tags = content.get('tags', [])
+        tags = content.get("tags", [])
         if tags:
-            hashtags = ' '.join([f"#{tag}" for tag in tags[:3]])
-            tweet = f"{tweet}\n\n{hashtags}"
+            safe_tags = [re.sub(r"[^\w]", "", str(tag), flags=re.UNICODE) for tag in tags[:3]]
+            hashtags = " ".join(f"#{tag}" for tag in safe_tags if tag)
+            if hashtags:
+                tweet = f"{tweet}\n\n{hashtags}"
 
         # 截断
         if len(tweet) > max_length:
-            tweet = tweet[:max_length-3] + '...'
+            tweet = tweet[: max_length - 3] + "..."
 
         return tweet
 
-    def publish_content(self, content: Dict) -> bool:
+    def publish_content(self, content: dict) -> bool:
         """
         推送内容到 Twitter
 
@@ -154,7 +171,7 @@ class TwitterPublisher:
             bool: 是否成功
         """
         try:
-            tweet_text = self.format_tweet(content)
+            tweet_text = self.format_tweet(content, self.max_length)
             return self.tweet(tweet_text)
 
         except Exception as e:
@@ -162,15 +179,15 @@ class TwitterPublisher:
             return False
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # 测试 Twitter 推送
     publisher = TwitterPublisher()
 
     test_content = {
-        'title': 'GitHub Trending: awesome-project',
-        'summary': 'A powerful tool for developers',
-        'url': 'https://github.com/user/awesome-project',
-        'tags': ['github', 'trending', 'AI']
+        "title": "GitHub Trending: awesome-project",
+        "summary": "A powerful tool for developers",
+        "url": "https://github.com/user/awesome-project",
+        "tags": ["github", "trending", "AI"],
     }
 
     success = publisher.publish_content(test_content)

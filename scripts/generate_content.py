@@ -193,10 +193,21 @@ def sanitize_prompt_leaks_in_posts(*, posts_dir: Path) -> tuple[int, int]:
     return changed_files, removed_lines_total
 
 
-def sanitize_public_markdown_text(*, text: str) -> tuple[str, int]:
+def sanitize_public_markdown_text(
+    *, text: str, validate_security: bool = True
+) -> tuple[str, int]:
     if not text:
         return text, 0
-    return remove_markdown_sections_by_heading(text, {"思考题", "挑战与思考题"})
+    sanitized, removed = remove_markdown_sections_by_heading(
+        text, {"思考题", "挑战与思考题"}
+    )
+    # Imported lazily so lightweight guard tests can load this legacy script
+    # without importing the complete crawler/publisher dependency graph.
+    if validate_security:
+        from content_security import validate_markdown_document
+
+        validate_markdown_document(sanitized)
+    return sanitized, removed
 
 
 def sanitize_public_sections_in_posts(*, posts_dir: Path) -> tuple[int, int]:
@@ -214,7 +225,13 @@ def sanitize_public_sections_in_posts(*, posts_dir: Path) -> tuple[int, int]:
         except Exception:
             continue
 
-        sanitized, removed = sanitize_public_markdown_text(text=original)
+        # This maintenance pass predates the strict publishing contract and
+        # traverses historical posts that still contain legacy relrefs.  New
+        # documents are validated before their first write; historical content
+        # is migrated separately and never silently rewritten here.
+        sanitized, removed = sanitize_public_markdown_text(
+            text=original, validate_security=False
+        )
         if removed <= 0:
             continue
 
@@ -935,7 +952,12 @@ class SuperEnhancedContentGenerator:
 
     def _relref(self, content_path: str) -> str:
         p = str(content_path or "").strip().lstrip("/")
-        return f'{{{{< relref "{p}" >}}}}'
+        filename = Path(p).name
+        if not filename.endswith(".md"):
+            return ""
+        slug = filename[:-3]
+        encoded_slug = urllib.parse.quote(slug, safe="-._~")
+        return f"/posts/{encoded_slug}/"
 
     def _post_entry_from_data(self, filename: str, item: dict) -> dict:
         title = item.get('catchy_title') or item.get('title_translated') or item.get('title', '')
@@ -1049,7 +1071,8 @@ class SuperEnhancedContentGenerator:
             for p in related_posts:
                 title = (p.get("title") or "").strip() or (p.get("filename") or "")
                 href = self._relref(p.get("content_path") or "")
-                section.append(f"- [{title}]({href})")
+                if href:
+                    section.append(f"- [{title}]({href})")
 
         insert_at = len(lines)
         for i in range(len(lines) - 1, -1, -1):
