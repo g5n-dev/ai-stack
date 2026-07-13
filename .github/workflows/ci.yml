@@ -51,6 +51,8 @@ jobs:
           tests/test_evidence_pipeline.py tests/test_git_cas_writer.py
           tests/test_intelligence.py tests/test_llm_gateway.py tests/test_outbox.py
           tests/test_publishers.py tests/test_release_guard.py
+          tests/test_migration_safety.py tests/test_pipeline_cli.py
+          tests/test_pipeline_safety.py
           tests/test_security_configuration.py tests/test_shadow_compare.py
           tests/test_validate_public_content_cli.py
           tests/test_workflow_security.py
@@ -78,6 +80,8 @@ jobs:
           tests/test_evidence_pipeline.py tests/test_git_cas_writer.py
           tests/test_intelligence.py tests/test_llm_gateway.py tests/test_outbox.py
           tests/test_publishers.py tests/test_release_guard.py
+          tests/test_migration_safety.py tests/test_pipeline_cli.py
+          tests/test_pipeline_safety.py
           tests/test_security_configuration.py tests/test_shadow_compare.py
           tests/test_validate_public_content_cli.py
           tests/test_workflow_security.py
@@ -109,6 +113,7 @@ jobs:
       - name: Checkout exact revision
         uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
         with:
+          fetch-depth: 0
           persist-credentials: false
 
       - name: Install locked Python toolchain
@@ -143,12 +148,24 @@ jobs:
           npm test
 
       - name: Reject unsafe changed Markdown
-        run: uv run python scripts/validate_public_content.py --changed-markdown
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          set -euo pipefail
+          args=(--changed-markdown)
+          if [ "$EVENT_NAME" = "pull_request" ]; then
+            args+=(--base-sha "$BASE_SHA")
+          fi
+          uv run python scripts/validate_public_content.py "${args[@]}"
 
       - name: Build Hugo and Pagefind
         run: |
+          uv run python scripts/build_related_index.py \
+            --content-dir blog/content/posts \
+            --output blog/data/related/index.json
           hugo --source blog --baseURL "https://ai-stack.site/" --minify --cleanDestinationDir
-          npm exec -- pagefind --site blog/public
+          npm run build:search
 
       - name: Revalidate final DOM
         run: >-

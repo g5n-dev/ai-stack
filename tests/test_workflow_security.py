@@ -67,6 +67,10 @@ def test_pr_ci_keeps_branch_update_contract_and_has_no_secrets() -> None:
     jobs = _jobs(workflow)
     assert "unit-tests" in jobs
     assert jobs["unit-tests"]["name"] == "Unit Tests"
+    static_site = _job_text(jobs["static-site"])
+    assert "fetch-depth: '0'" in static_site
+    assert "--base-sha" in static_site
+    assert "github.event.pull_request.base.sha" in static_site
 
     for required in (
         "uv sync --frozen",
@@ -77,8 +81,13 @@ def test_pr_ci_keeps_branch_update_contract_and_has_no_secrets() -> None:
         "npm ci",
         "npm audit",
         "npm test",
+        "npm run build:search",
+        "build_related_index.py",
         "hugo",
         "validate_public_content",
+        "tests/test_pipeline_cli.py",
+        "tests/test_pipeline_safety.py",
+        "tests/test_migration_safety.py",
     ):
         assert required in text
 
@@ -156,6 +165,68 @@ def test_deploy_jobs_enforce_credential_separation_and_revalidate_artifacts() ->
         assert "artifact_guard.py" in job
     assert "git_cas_writer.py" in text
     assert "release_guard.py" in _job_text(jobs["deploy"])
+
+
+def test_deploy_binds_main_code_and_keeps_cas_writers_on_named_branches() -> None:
+    workflow, _ = _workflow("deploy.yml")
+    jobs = _jobs(workflow)
+    crawl = _job_text(jobs["crawl"])
+    content_writer = _job_text(jobs["persist_result"])
+    receipt_writer = _job_text(jobs["persist_receipt"])
+    content_runs = "\n".join(
+        str(step.get("run", ""))
+        for step in jobs["persist_result"]["steps"]  # type: ignore[union-attr]
+        if isinstance(step, dict)
+    )
+    receipt_runs = "\n".join(
+        str(step.get("run", ""))
+        for step in jobs["persist_receipt"]["steps"]  # type: ignore[union-attr]
+        if isinstance(step, dict)
+    )
+
+    assert "github.event_name == 'push' && github.sha || 'main'" in crawl
+    assert "ref: content" in content_writer
+    assert "symbolic-ref --quiet --short HEAD" in content_runs
+    assert "ref: ops" in receipt_writer
+    assert "symbolic-ref --quiet --short HEAD" in receipt_runs
+    assert "needs.persist_discovery.outputs.content_sha" in content_writer
+    assert "needs.reserve_budget.outputs.ops_sha" in receipt_writer
+
+
+def test_build_finalizes_public_tree_before_packaging_release_metadata() -> None:
+    workflow, _ = _workflow("deploy.yml")
+    steps = _jobs(workflow)["build"]["steps"]
+    assert isinstance(steps, list)
+    release_step = next(
+        step for step in steps if isinstance(step, dict) and step.get("id") == "release"
+    )
+    build = release_step["run"]
+    assert isinstance(build, str)
+
+    render = build.index("ai-stack render")
+    hugo = build.index("hugo --source blog")
+    pagefind = build.index("npm run build:search")
+    dom_validation = build.index("validate_public_content.py --rendered-root")
+    finalize = build.index("release_guard.py create")
+    package = build.index("artifact_guard.py pack")
+
+    assert render < hugo < pagefind < dom_validation < finalize < package
+    assert "build_related_index.py" in build
+    assert "build-handoff/state/release-basis.json" in build
+    assert "build-handoff/state/release.json" in build
+    assert "build-handoff/state/public-tree-manifest.json" in build
+    assert 'json.load(open("build-handoff/state/release.json"))["artifact_digest"]' in build
+    assert 'json.load(open("build-handoff/state/release.json"))["release_id"]' in build
+    assert "archive_sha256" not in build
+
+
+def test_hugo_external_mount_keeps_local_pages_and_uses_content_ledger() -> None:
+    mount = ROOT / "blog" / "ledger-mount.toml"
+    text = mount.read_text(encoding="utf-8")
+
+    assert 'source = "content"' in text
+    assert 'source = "../content-ledger/content"' in text
+    assert text.count('target = "content"') == 2
 
 
 def test_delete_workflow_is_break_glass_dry_run_and_bounded() -> None:

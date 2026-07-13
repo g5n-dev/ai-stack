@@ -34,7 +34,7 @@ jobs:
       - name: Checkout exact code revision
         uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
         with:
-          ref: ${{ github.sha }}
+          ref: ${{ github.event_name == 'push' && github.sha || 'main' }}
           persist-credentials: false
       - name: Install locked Python toolchain
         uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e # v6
@@ -160,6 +160,7 @@ jobs:
             --profile discovery --archive validated-transfer/discovery.tar \
             --manifest validated-transfer/discovery.manifest.json --extract-to validated
           base_content_sha=$(git -C ../ledger rev-parse HEAD)
+          test "$(git -C ../ledger symbolic-ref --quiet --short HEAD)" = "content"
           uv run ai-stack process --phase persist-discovery \
             --run-id "$RUN_ID" --input validated --state-root ../ledger
           result=$(uv run python scripts/git_cas_writer.py commit-and-push \
@@ -213,6 +214,7 @@ jobs:
           set -euo pipefail
           uv sync --frozen --all-groups
           base_ops_sha=$(git -C ../ops-ledger rev-parse HEAD)
+          test "$(git -C ../ops-ledger symbolic-ref --quiet --short HEAD)" = "ops"
           uv run ai-stack process --phase reserve-budget \
             --run-id "$RUN_ID" --input ../content-ledger --state-root ../ops-ledger
           result=$(uv run python scripts/git_cas_writer.py commit-and-push \
@@ -341,7 +343,7 @@ jobs:
       - name: Checkout exact content parent
         uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
         with:
-          ref: ${{ needs.persist_discovery.outputs.content_sha }}
+          ref: content
           path: ledger
           fetch-depth: 1
           persist-credentials: true
@@ -368,6 +370,7 @@ jobs:
             --profile validated --archive validated-transfer/validated.tar \
             --manifest validated-transfer/validated.manifest.json --extract-to validated
           base_content_sha=$(git -C ../ledger rev-parse HEAD)
+          test "$(git -C ../ledger symbolic-ref --quiet --short HEAD)" = "content"
           test "$base_content_sha" = "${{ needs.persist_discovery.outputs.content_sha }}"
           uv run ai-stack process --phase persist-result \
             --run-id "$RUN_ID" --input validated --state-root ../ledger
@@ -442,15 +445,23 @@ jobs:
           uv run ai-stack render --run-id "$RUN_ID" \
             --code-sha "$CODE_SHA" --content-sha "$CONTENT_SHA" --ops-sha "$OPS_SHA" \
             --content-root content-ledger --ops-root ops-ledger --output build-handoff
+          uv run python scripts/build_related_index.py \
+            --content-dir content-ledger/content/posts \
+            --output blog/data/related/index.json
           hugo --source blog --config config.toml,ledger-mount.toml \
             --baseURL "$SITE_BASE_URL" --minify --cleanDestinationDir
-          npm exec -- pagefind --site blog/public
+          npm run build:search
           uv run python scripts/validate_public_content.py --rendered-root blog/public
+          uv run python scripts/release_guard.py create \
+            --public-root blog/public \
+            --basis build-handoff/state/release-basis.json \
+            --output build-handoff/state/release.json
+          test -f build-handoff/state/public-tree-manifest.json
           uv run python scripts/artifact_guard.py pack \
             --profile release --root build-handoff \
             --archive release-transfer/release.tar \
             --manifest release-transfer/release.manifest.json
-          artifact_digest=$(python -c 'import json; print(json.load(open("release-transfer/release.manifest.json"))["archive_sha256"])')
+          artifact_digest=$(python -c 'import json; print(json.load(open("build-handoff/state/release.json"))["artifact_digest"])')
           release_id=$(python -c 'import json; print(json.load(open("build-handoff/state/release.json"))["release_id"])')
           echo "artifact_digest=$artifact_digest" >> "$GITHUB_OUTPUT"
           echo "release_id=$release_id" >> "$GITHUB_OUTPUT"
@@ -606,7 +617,7 @@ jobs:
       - name: Checkout exact ops parent
         uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
         with:
-          ref: ${{ needs.reserve_budget.outputs.ops_sha }}
+          ref: ops
           path: ops-ledger
           fetch-depth: 1
           persist-credentials: true
@@ -632,6 +643,8 @@ jobs:
             --profile receipt --archive receipt-transfer/receipt.tar \
             --manifest receipt-transfer/receipt.manifest.json --extract-to receipt
           base_ops_sha=$(git -C ../ops-ledger rev-parse HEAD)
+          test "$(git -C ../ops-ledger symbolic-ref --quiet --short HEAD)" = "ops"
+          test "$base_ops_sha" = "${{ needs.reserve_budget.outputs.ops_sha }}"
           uv run ai-stack process --phase persist-receipt \
             --run-id "$RUN_ID" --input receipt --state-root ../ops-ledger
           uv run python scripts/git_cas_writer.py commit-and-push \

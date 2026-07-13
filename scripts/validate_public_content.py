@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import re
 import subprocess
 import sys
 from collections.abc import Iterable, Sequence
@@ -19,8 +20,17 @@ from content_security import (  # noqa: E402
     validate_markdown_document,
 )
 
+_GIT_SHA = re.compile(r"(?:[0-9a-f]{40}|[0-9a-f]{64})\Z")
 
-def _changed_markdown_files() -> list[Path]:
+
+def _changed_markdown_files(
+    *,
+    base_sha: str | None = None,
+    project_root: Path = PROJECT_ROOT,
+) -> list[Path]:
+    if base_sha is not None and not _GIT_SHA.fullmatch(base_sha.casefold()):
+        raise ValueError("--base-sha must be a full Git SHA")
+    revision = f"{base_sha.casefold()}...HEAD" if base_sha is not None else "HEAD"
     commands = (
         [
             "git",
@@ -28,7 +38,7 @@ def _changed_markdown_files() -> list[Path]:
             "--name-only",
             "--diff-filter=ACMR",
             "-z",
-            "HEAD",
+            revision,
             "--",
             "blog/content/posts",
         ],
@@ -36,10 +46,10 @@ def _changed_markdown_files() -> list[Path]:
     )
     names: set[str] = set()
     for command in commands:
-        output = subprocess.check_output(command, cwd=PROJECT_ROOT)
+        output = subprocess.check_output(command, cwd=project_root)
         names.update(name for name in output.decode("utf-8").split("\0") if name)
     return sorted(
-        (PROJECT_ROOT / name for name in names if name.endswith(".md")),
+        (project_root / name for name in names if name.endswith(".md")),
         key=lambda path: str(path),
     )
 
@@ -64,7 +74,7 @@ def _markdown_files(args: argparse.Namespace) -> list[Path]:
         root = Path(root_value)
         candidates.extend(root.rglob("*.md"))
     if args.changed_markdown:
-        candidates.extend(_changed_markdown_files())
+        candidates.extend(_changed_markdown_files(base_sha=args.base_sha))
     return _safe_files(candidates, suffix=".md")
 
 
@@ -81,6 +91,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--markdown-file", action="append", default=[])
     parser.add_argument("--markdown-root", action="append", default=[])
     parser.add_argument("--changed-markdown", action="store_true")
+    parser.add_argument("--base-sha")
     parser.add_argument("--rendered-file", action="append", default=[])
     parser.add_argument("--rendered-root", action="append", default=[])
     return parser
@@ -93,7 +104,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     try:
         markdown_files = _markdown_files(args)
         rendered_files, has_explicit_rendered_files = _rendered_files(args)
-    except (OSError, subprocess.SubprocessError, ContentSecurityError) as exc:
+    except (OSError, ValueError, subprocess.SubprocessError, ContentSecurityError) as exc:
         print(f"content-security: discovery failed: {exc}", file=sys.stderr)
         return 1
 
