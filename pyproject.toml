@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "g5n-ai-stack"
+version = "0.1.0"
+description = "Typed, deterministic foundations for the AI Stack pipeline"
+requires-python = ">=3.10"
+
+[project.scripts]
+ai-stack = "ai_stack.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["ai_stack*"]
