@@ -897,6 +897,7 @@ def _release_handoff(
         schema_version="1.0",
         release_seq=sequence,
         artifact_digest=digest,
+        artifact_digest_kind="public_tree_manifest_v1",
         generated_at="2026-07-13T08:00:00Z",
     )
     (root / "state").mkdir(parents=True)

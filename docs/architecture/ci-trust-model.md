@@ -90,6 +90,23 @@ sequence 不得覆盖更高 sequence。回滚不是移动分支指针，而是�
 才允许渠道密钥进入进程。渠道调用超时且结果不明时写入
 `UNKNOWN`，不得自动重发，也不得声称 exactly-once。
 
+## 为什么 Pages 上传前还要做压缩体积门禁
+
+固定 SHA 的
+[`actions/upload-pages-artifact`](https://github.com/actions/upload-pages-artifact/blob/56afc609e74202658d3ffba0e8f6dda462b719fa/action.yml)
+先把公开目录打成单一 `artifact.tar`，再交给 upload-artifact；后者的官方输入契约把
+[`compression-level: 6`](https://github.com/actions/upload-artifact/blob/ea165f8d65b6e75b540449e92b4886f43607fa02/action.yml)
+定义为默认 zlib 级别。因此 release guard 在不改变 workflow 的前提下，使用固定 tar/ZIP 元数据、
+排序路径和 level 6 做一次流式临时估算。90 MiB 起写入 `warning` 状态，达到 100 MiB 直接失败。
+估算只用于在昂贵上传前保守拦截，不宣称与 GitHub 内部归档逐字节相同。
+
+压缩率不能绕过原始树防护：单文件 16 MiB、总原始字节 256 MiB、拒绝 symlink/hardlink/可执行位
+仍先执行。文件数熔断为 30,000；仅 tar 的 512 字节/文件固定头在该边界就有 14.65 MiB，故它是
+对 inode、遍历和归档头开销的资源上限；目录项另有 30,000 熔断，且估算 tar 包含根与目录头。
+这些都不是放宽后的发布目标。`public_tree_manifest_v2` 同时记录
+HTML `route_count` 与规范路由摘要；校验器兼容 N-1 的 v1，但 descriptor kind 必须与 manifest
+schema 一致。
+
 ## 并发、缓存与失败语义
 
 - PR CI 对同一 PR 启用 `cancel-in-progress`，避免浪费旧提交的算力；新提交仍完整执行检查。

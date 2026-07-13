@@ -244,7 +244,7 @@ def test_pipeline_cli_runs_a_fail_closed_static_source_brief_round_trip(
     capsys.readouterr()
     descriptor = load_release_descriptor(descriptor_path)
     assert descriptor.release_id == release["release_id"]
-    assert descriptor.artifact_digest_kind == "public_tree_manifest_v1"
+    assert descriptor.artifact_digest_kind == "public_tree_manifest_v2"
     assert len(descriptor.artifact_digest) == 64
 
     assert (

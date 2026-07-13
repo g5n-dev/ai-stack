@@ -5,15 +5,19 @@ from __future__ import annotations
 import argparse
 import hashlib
 import hmac
+import io
 import json
 import os
 import re
 import stat
+import tarfile
 import tempfile
+import zipfile
 from collections.abc import Mapping, Sequence
 from dataclasses import dataclass
 from datetime import datetime
 from pathlib import Path
+from typing import BinaryIO
 
 
 class ReleaseValidationError(ValueError):
@@ -23,13 +27,34 @@ class ReleaseValidationError(ValueError):
 _GIT_SHA = re.compile(r"(?:[0-9a-f]{40}|[0-9a-f]{64})\Z")
 _SHA256 = re.compile(r"[0-9a-f]{64}\Z")
 _SCHEMA_VERSION = re.compile(r"[1-9][0-9]*\.[0-9]+\Z")
-_ARTIFACT_DIGEST_KIND = "public_tree_manifest_v1"
+_ARTIFACT_DIGEST_KIND = "public_tree_manifest_v2"
+_SUPPORTED_ARTIFACT_DIGEST_KINDS = frozenset(
+    {"public_tree_manifest_v1", _ARTIFACT_DIGEST_KIND}
+)
 _BASIS_SCHEMA_VERSION = "release_basis_v1"
-_TREE_SCHEMA_VERSION = "public_tree_manifest_v1"
-_MAX_PUBLIC_FILES = 20_000
+_TREE_SCHEMA_VERSION = "public_tree_manifest_v2"
+_PREVIOUS_TREE_SCHEMA_VERSION = "public_tree_manifest_v1"
+_SUPPORTED_TREE_SCHEMA_VERSIONS = frozenset(
+    {_PREVIOUS_TREE_SCHEMA_VERSION, _TREE_SCHEMA_VERSION}
+)
+# At 30k files, POSIX tar's mandatory 512-byte header alone is already
+# 14.65 MiB.  This fuse bounds traversal/inode pressure and deliberately stops
+# the current oversized topology before upload; it is not an acceptance target.
+_MAX_PUBLIC_FILES = 30_000
+_MAX_PUBLIC_DIRECTORIES = 30_000
 _MAX_PUBLIC_FILE_BYTES = 16 * 1024 * 1024
 _MAX_PUBLIC_TREE_BYTES = 256 * 1024 * 1024
 _MAX_TREE_MANIFEST_BYTES = 8 * 1024 * 1024
+_PAGES_ARTIFACT_WARNING_BYTES = 90 * 1024 * 1024
+_MAX_PAGES_ARTIFACT_BYTES = 100 * 1024 * 1024
+_PAGES_ARTIFACT_SCHEMA_VERSION = "pages_artifact_estimate_v1"
+_PAGES_ARTIFACT_ARCHIVE_NAME = "artifact.tar"
+_PAGES_ARTIFACT_COMPRESSION = "zip_deflate"
+_PAGES_ARTIFACT_COMPRESSION_LEVEL = 6
+_TREE_V1_FIELDS = frozenset({"schema_version", "file_count", "total_bytes", "files"})
+_TREE_V2_FIELDS = _TREE_V1_FIELDS.union(
+    {"route_count", "route_digest", "pages_artifact"}
+)
 _FIELDS = frozenset(
     {
         "release_id",
@@ -62,7 +87,7 @@ class ReleaseDescriptor:
             raise ReleaseValidationError("invalid content_sha")
         if not isinstance(self.artifact_digest, str) or not _SHA256.fullmatch(self.artifact_digest):
             raise ReleaseValidationError("invalid artifact_digest")
-        if self.artifact_digest_kind != _ARTIFACT_DIGEST_KIND:
+        if self.artifact_digest_kind not in _SUPPORTED_ARTIFACT_DIGEST_KINDS:
             raise ReleaseValidationError("invalid artifact_digest_kind")
         if not isinstance(self.schema_version, str) or not _SCHEMA_VERSION.fullmatch(
             self.schema_version
@@ -260,6 +285,107 @@ def load_release_basis(path: Path | str) -> ReleaseBasis:
     return ReleaseBasis.from_mapping(raw)
 
 
+def _html_routes(paths: Sequence[str]) -> list[str]:
+    routes: list[str] = []
+    for relative in paths:
+        if not relative.endswith(".html"):
+            continue
+        if relative == "index.html":
+            route = "/"
+        elif relative.endswith("/index.html"):
+            route = f"/{relative.removesuffix('index.html')}"
+        else:
+            route = f"/{relative}"
+        routes.append(route)
+    routes.sort()
+    if len(routes) != len(set(routes)):
+        raise ReleaseValidationError("public tree contains duplicate HTML routes")
+    return routes
+
+
+def _route_digest(routes: Sequence[str]) -> str:
+    return hashlib.sha256(_canonical_json_bytes(list(routes))).hexdigest()
+
+
+def _pages_artifact_status(estimated_bytes: int) -> str:
+    if (
+        not isinstance(estimated_bytes, int)
+        or isinstance(estimated_bytes, bool)
+        or estimated_bytes <= 0
+    ):
+        raise ReleaseValidationError("Pages artifact estimate must be positive")
+    if estimated_bytes >= _MAX_PAGES_ARTIFACT_BYTES:
+        raise ReleaseValidationError(
+            "estimated Pages artifact reaches the 100 MiB hard limit"
+        )
+    if estimated_bytes >= _PAGES_ARTIFACT_WARNING_BYTES:
+        return "warning"
+    return "ok"
+
+
+def _pages_artifact_metadata(
+    estimated_bytes: int,
+    *,
+    directory_count: int,
+    file_count: int,
+) -> dict[str, object]:
+    return {
+        "schema_version": _PAGES_ARTIFACT_SCHEMA_VERSION,
+        "archive_name": _PAGES_ARTIFACT_ARCHIVE_NAME,
+        "compression": _PAGES_ARTIFACT_COMPRESSION,
+        "compression_level": _PAGES_ARTIFACT_COMPRESSION_LEVEL,
+        "estimated_bytes": estimated_bytes,
+        "warning_at_bytes": _PAGES_ARTIFACT_WARNING_BYTES,
+        "hard_limit_bytes": _MAX_PAGES_ARTIFACT_BYTES,
+        "status": _pages_artifact_status(estimated_bytes),
+        "directory_count": directory_count,
+        "tar_entry_count": 1 + directory_count + file_count,
+    }
+
+
+def _validate_pages_artifact_metadata(value: object, *, file_count: int) -> None:
+    fields = {
+        "schema_version",
+        "archive_name",
+        "compression",
+        "compression_level",
+        "estimated_bytes",
+        "warning_at_bytes",
+        "hard_limit_bytes",
+        "status",
+        "directory_count",
+        "tar_entry_count",
+    }
+    if not isinstance(value, dict) or set(value) != fields:
+        raise ReleaseValidationError("Pages artifact estimate fields are invalid")
+    expected_constants: dict[str, object] = {
+        "schema_version": _PAGES_ARTIFACT_SCHEMA_VERSION,
+        "archive_name": _PAGES_ARTIFACT_ARCHIVE_NAME,
+        "compression": _PAGES_ARTIFACT_COMPRESSION,
+        "compression_level": _PAGES_ARTIFACT_COMPRESSION_LEVEL,
+        "warning_at_bytes": _PAGES_ARTIFACT_WARNING_BYTES,
+        "hard_limit_bytes": _MAX_PAGES_ARTIFACT_BYTES,
+    }
+    if any(value.get(field) != expected for field, expected in expected_constants.items()):
+        raise ReleaseValidationError("Pages artifact estimate policy is invalid")
+    estimated_bytes = value.get("estimated_bytes")
+    if not isinstance(estimated_bytes, int) or isinstance(estimated_bytes, bool):
+        raise ReleaseValidationError("Pages artifact estimate is invalid")
+    if value.get("status") != _pages_artifact_status(estimated_bytes):
+        raise ReleaseValidationError("Pages artifact estimate status is invalid")
+    directory_count = value.get("directory_count")
+    tar_entry_count = value.get("tar_entry_count")
+    if (
+        not isinstance(directory_count, int)
+        or isinstance(directory_count, bool)
+        or not 0 <= directory_count <= _MAX_PUBLIC_DIRECTORIES
+        or not isinstance(tar_entry_count, int)
+        or isinstance(tar_entry_count, bool)
+        or tar_entry_count != 1 + directory_count + file_count
+    ):
+        raise ReleaseValidationError("Pages artifact directory inventory is invalid")
+
+
 def _load_public_tree_manifest(path: Path | str) -> dict[str, object]:
     manifest_path = Path(path)
     try:
@@ -279,10 +405,14 @@ def _load_public_tree_manifest(path: Path | str) -> dict[str, object]:
         raise ReleaseValidationError("invalid public tree manifest JSON") from exc
     if not isinstance(raw, dict):
         raise ReleaseValidationError("public tree manifest must be a JSON object")
-    if set(raw) != {"schema_version", "file_count", "total_bytes", "files"}:
-        raise ReleaseValidationError("public tree manifest fields are invalid")
-    if raw.get("schema_version") != _TREE_SCHEMA_VERSION:
+    schema_version = raw.get("schema_version")
+    if schema_version not in _SUPPORTED_TREE_SCHEMA_VERSIONS:
         raise ReleaseValidationError("public tree manifest schema is invalid")
+    expected_fields = (
+        _TREE_V2_FIELDS if schema_version == _TREE_SCHEMA_VERSION else _TREE_V1_FIELDS
+    )
+    if set(raw) != expected_fields:
+        raise ReleaseValidationError("public tree manifest fields are invalid")
     file_count = raw.get("file_count")
     total_bytes = raw.get("total_bytes")
     files = raw.get("files")
@@ -299,6 +429,7 @@ def _load_public_tree_manifest(path: Path | str) -> dict[str, object]:
         raise ReleaseValidationError("public tree manifest totals are invalid")
 
     seen: set[str] = set()
+    paths: list[str] = []
     calculated_bytes = 0
     previous_path = ""
     for entry in files:
@@ -327,10 +458,26 @@ def _load_public_tree_manifest(path: Path | str) -> dict[str, object]:
         if not isinstance(digest, str) or not _SHA256.fullmatch(digest):
             raise ReleaseValidationError("public tree manifest file digest is invalid")
         seen.add(relative)
+        paths.append(relative)
         previous_path = relative
         calculated_bytes += size
     if calculated_bytes != total_bytes:
         raise ReleaseValidationError("public tree manifest totals are invalid")
+    if schema_version == _TREE_SCHEMA_VERSION:
+        routes = _html_routes(paths)
+        route_count = raw.get("route_count")
+        route_digest = raw.get("route_digest")
+        if (
+            not routes
+            or not isinstance(route_count, int)
+            or isinstance(route_count, bool)
+            or route_count != len(routes)
+            or not isinstance(route_digest, str)
+            or not _SHA256.fullmatch(route_digest)
+            or not hmac.compare_digest(route_digest, _route_digest(routes))
+        ):
+            raise ReleaseValidationError("public tree HTML route inventory is invalid")
+        _validate_pages_artifact_metadata(raw.get("pages_artifact"), file_count=file_count)
     return raw
 
 
@@ -339,22 +486,315 @@ def validate_public_tree_manifest_digest(
     manifest_path: Path | str,
 ) -> None:
     manifest = _load_public_tree_manifest(manifest_path)
+    if descriptor.artifact_digest_kind != manifest["schema_version"]:
+        raise ReleaseValidationError("public tree manifest digest kind mismatch")
     actual = hashlib.sha256(_canonical_json_bytes(manifest)).hexdigest()
     if not hmac.compare_digest(actual, descriptor.artifact_digest):
         raise ReleaseValidationError("public tree manifest digest mismatch")
+
+
+def _file_version(details: os.stat_result) -> tuple[int, ...]:
+    return (
+        details.st_dev,
+        details.st_ino,
+        details.st_mode,
+        details.st_nlink,
+        details.st_size,
+        details.st_mtime_ns,
+        details.st_ctime_ns,
+    )
+
+
+def _hash_public_file(path: Path, initial: os.stat_result, relative: str) -> tuple[int, str]:
+    flags = os.O_RDONLY | getattr(os, "O_NOFOLLOW", 0)
+    try:
+        file_descriptor = os.open(path, flags)
+    except OSError as exc:
+        raise ReleaseValidationError(f"public file is unreadable: {path}") from exc
+    try:
+        opened = os.fstat(file_descriptor)
+        if _file_version(initial) != _file_version(opened):
+            raise ReleaseValidationError(f"public file changed while opening: {relative}")
+        digest = hashlib.sha256()
+        size = 0
+        while True:
+            chunk = os.read(file_descriptor, 1024 * 1024)
+            if not chunk:
+                break
+            digest.update(chunk)
+            size += len(chunk)
+        closed = os.fstat(file_descriptor)
+    except OSError as exc:
+        raise ReleaseValidationError(f"public file changed while hashing: {relative}") from exc
+    finally:
+        os.close(file_descriptor)
+    try:
+        final = path.lstat()
+    except OSError as exc:
+        raise ReleaseValidationError(f"public file changed while hashing: {relative}") from exc
+    if (
+        _file_version(opened) != _file_version(closed)
+        or _file_version(opened) != _file_version(final)
+        or size != opened.st_size
+    ):
+        raise ReleaseValidationError(f"public file changed while hashing: {relative}")
+    return size, digest.hexdigest()
+
+
+class _HashingReader(io.RawIOBase):
+    def __init__(self, source: BinaryIO) -> None:
+        super().__init__()
+        self._source = source
+        self.digest = hashlib.sha256()
+        self.bytes_read = 0
+
+    def readable(self) -> bool:
+        return True
+
+    def read(self, size: int = -1) -> bytes:
+        chunk = self._source.read(size)
+        self.digest.update(chunk)
+        self.bytes_read += len(chunk)
+        return chunk
+
+
+def _write_deterministic_tar(
+    public_root: Path,
+    files: Sequence[dict[str, object]],
+    directories: Sequence[str],
+    destination: Path,
+) -> None:
+    try:
+        archive = tarfile.open(
+            destination,
+            mode="w",
+            format=tarfile.PAX_FORMAT,
+            encoding="utf-8",
+            errors="strict",
+        )
+    except (OSError, tarfile.TarError) as exc:
+        raise ReleaseValidationError("cannot create Pages artifact estimate tar") from exc
+    file_entries: dict[str, dict[str, object]] = {}
+    for file_entry in files:
+        relative = file_entry.get("path")
+        if not isinstance(relative, str) or relative in file_entries:
+            raise ReleaseValidationError("public tree manifest file entry is invalid")
+        file_entries[relative] = file_entry
+    if len(directories) != len(set(directories)):
+        raise ReleaseValidationError("public tree directory inventory is invalid")
+    archive_entries: list[tuple[str, dict[str, object] | None]] = [
+        (".", None),
+        *((relative, None) for relative in directories),
+        *file_entries.items(),
+    ]
+    archive_entries.sort(key=lambda item: item[0])
+    with archive:
+        for relative, archive_entry in archive_entries:
+            if archive_entry is None:
+                path = public_root if relative == "." else public_root / relative
+                try:
+                    initial = path.lstat()
+                except OSError as exc:
+                    raise ReleaseValidationError(
+                        f"public directory changed after tree scan: {relative}"
+                    ) from exc
+                if path.is_symlink() or not stat.S_ISDIR(initial.st_mode):
+                    raise ReleaseValidationError(
+                        f"public directory changed after tree scan: {relative}"
+                    )
+                tar_info = tarfile.TarInfo(relative)
+                tar_info.size = 0
+                tar_info.mode = 0o755
+                tar_info.uid = 0
+                tar_info.gid = 0
+                tar_info.uname = ""
+                tar_info.gname = ""
+                tar_info.mtime = 0
+                tar_info.type = tarfile.DIRTYPE
+                tar_info.pax_headers = {}
+                try:
+                    archive.addfile(tar_info)
+                    final = path.lstat()
+                except (OSError, tarfile.TarError) as exc:
+                    raise ReleaseValidationError(
+                        f"public directory changed while archiving: {relative}"
+                    ) from exc
+                if _file_version(initial) != _file_version(final):
+                    raise ReleaseValidationError(
+                        f"public directory changed while archiving: {relative}"
+                    )
+                continue
+            expected_size = archive_entry["bytes"]
+            expected_digest = archive_entry["sha256"]
+            if (
+                not isinstance(relative, str)
+                or not isinstance(expected_size, int)
+                or isinstance(expected_size, bool)
+                or not isinstance(expected_digest, str)
+            ):
+                raise ReleaseValidationError("public tree manifest file entry is invalid")
+            path = public_root / relative
+            try:
+                initial = path.lstat()
+            except OSError as exc:
+                raise ReleaseValidationError(
+                    f"public file changed after tree hash: {relative}"
+                ) from exc
+            if (
+                path.is_symlink()
+                or not stat.S_ISREG(initial.st_mode)
+                or initial.st_nlink != 1
+                or initial.st_mode & 0o111
+                or initial.st_size != expected_size
+            ):
+                raise ReleaseValidationError(f"public file changed after tree hash: {relative}")
+            flags = os.O_RDONLY | getattr(os, "O_NOFOLLOW", 0)
+            try:
+                file_descriptor = os.open(path, flags)
+            except OSError as exc:
+                raise ReleaseValidationError(
+                    f"public file changed after tree hash: {relative}"
+                ) from exc
+            try:
+                with os.fdopen(file_descriptor, "rb", closefd=True) as source:
+                    opened = os.fstat(source.fileno())
+                    if _file_version(initial) != _file_version(opened):
+                        raise ReleaseValidationError(
+                            f"public file changed after tree hash: {relative}"
+                        )
+                    reader = _HashingReader(source)
+                    tar_info = tarfile.TarInfo(relative)
+                    tar_info.size = expected_size
+                    tar_info.mode = 0o644
+                    tar_info.uid = 0
+                    tar_info.gid = 0
+                    tar_info.uname = ""
+                    tar_info.gname = ""
+                    tar_info.mtime = 0
+                    tar_info.type = tarfile.REGTYPE
+                    tar_info.pax_headers = {}
+                    try:
+                        archive.addfile(tar_info, reader)
+                    except (OSError, tarfile.TarError) as exc:
+                        raise ReleaseValidationError(
+                            f"public file changed while archiving: {relative}"
+                        ) from exc
+                    closed = os.fstat(source.fileno())
+            except OSError as exc:
+                raise ReleaseValidationError(
+                    f"public file changed while archiving: {relative}"
+                ) from exc
+            try:
+                final = path.lstat()
+            except OSError as exc:
+                raise ReleaseValidationError(
+                    f"public file changed while archiving: {relative}"
+                ) from exc
+            if (
+                _file_version(opened) != _file_version(closed)
+                or _file_version(opened) != _file_version(final)
+                or reader.bytes_read != expected_size
+                or not hmac.compare_digest(reader.digest.hexdigest(), expected_digest)
+            ):
+                raise ReleaseValidationError(f"public file changed after tree hash: {relative}")
+
+
+def _write_deterministic_zip(tar_path: Path, destination: Path) -> int:
+    member = zipfile.ZipInfo(
+        filename=_PAGES_ARTIFACT_ARCHIVE_NAME,
+        date_time=(1980, 1, 1, 0, 0, 0),
+    )
+    member.compress_type = zipfile.ZIP_DEFLATED
+    member.create_system = 3
+    member.external_attr = (stat.S_IFREG | 0o644) << 16
+    member.extra = b""
+    member.comment = b""
+    # ZipFile.open has no public per-entry level argument before Python 3.13.
+    # ZipInfo stores the explicit level used by the stdlib's streaming writer.
+    member._compresslevel = _PAGES_ARTIFACT_COMPRESSION_LEVEL  # type: ignore[attr-defined]
+    try:
+        with zipfile.ZipFile(
+            destination,
+            mode="w",
+            compression=zipfile.ZIP_DEFLATED,
+            compresslevel=_PAGES_ARTIFACT_COMPRESSION_LEVEL,
+            allowZip64=False,
+        ) as archive:
+            with tar_path.open("rb") as source, archive.open(member, mode="w") as target:
+                while True:
+                    chunk = source.read(1024 * 1024)
+                    if not chunk:
+                        break
+                    target.write(chunk)
+                    if archive.fp is None or archive.fp.tell() >= _MAX_PAGES_ARTIFACT_BYTES:
+                        raise ReleaseValidationError(
+                            "estimated Pages artifact reaches the 100 MiB hard limit"
+                        )
+    except ReleaseValidationError:
+        raise
+    except (OSError, ValueError, zipfile.BadZipFile, zipfile.LargeZipFile) as exc:
+        raise ReleaseValidationError("cannot create Pages artifact estimate ZIP") from exc
+    try:
+        estimated_bytes = destination.stat().st_size
+    except OSError as exc:
+        raise ReleaseValidationError("Pages artifact estimate ZIP is unreadable") from exc
+    _pages_artifact_status(estimated_bytes)
+    return estimated_bytes
+
+
+def _estimate_pages_artifact(
+    public_root: Path,
+    files: list[dict[str, object]],
+    directories: list[str],
+) -> int:
+    try:
+        with tempfile.TemporaryDirectory(prefix="ai-stack-pages-estimate-") as temporary:
+            temporary_root = Path(temporary)
+            tar_path = temporary_root / _PAGES_ARTIFACT_ARCHIVE_NAME
+            zip_path = temporary_root / "artifact.zip"
+            _write_deterministic_tar(public_root, files, directories, tar_path)
+            return _write_deterministic_zip(tar_path, zip_path)
+    except ReleaseValidationError:
+        raise
+    except OSError as exc:
+        raise ReleaseValidationError("cannot allocate Pages artifact estimate files") from exc
 
 
 def _public_tree_manifest(public_root: Path) -> dict[str, object]:
     if public_root.is_symlink() or not public_root.is_dir():
         raise ReleaseValidationError("public root must be a regular directory")
     files: list[dict[str, object]] = []
+    directories: list[str] = []
     total_bytes = 0
     for current, directory_names, file_names in os.walk(public_root, followlinks=False):
         current_path = Path(current)
+        directory_names.sort()
+        file_names.sort()
         for name in directory_names:
             directory = current_path / name
-            if directory.is_symlink():
+            try:
+                directory_details = directory.lstat()
+            except OSError as exc:
+                raise ReleaseValidationError(
+                    f"public directory is unreadable: {directory}"
+                ) from exc
+            if directory.is_symlink() or not stat.S_ISDIR(directory_details.st_mode):
                 raise ReleaseValidationError(f"public tree contains symlink: {directory}")
+            relative_directory = directory.relative_to(public_root).as_posix()
+            if (
+                not relative_directory
+                or relative_directory.startswith("/")
+                or "\\" in relative_directory
+                or any(
+                    part in {"", ".", ".."} for part in relative_directory.split("/")
+                )
+            ):
+                raise ReleaseValidationError(
+                    f"unsafe public directory path: {relative_directory!r}"
+                )
+            directories.append(relative_directory)
+            if len(directories) > _MAX_PUBLIC_DIRECTORIES:
+                raise ReleaseValidationError("public tree contains too many directories")
         for name in file_names:
             path = current_path / name
             try:
@@ -377,29 +817,8 @@ def _public_tree_manifest(public_root: Path) -> dict[str, object]:
                 or any(part in {"", ".", ".."} for part in relative.split("/"))
             ):
                 raise ReleaseValidationError(f"unsafe public path: {relative!r}")
-            flags = os.O_RDONLY | getattr(os, "O_NOFOLLOW", 0)
-            descriptor = os.open(path, flags)
-            try:
-                opened = os.fstat(descriptor)
-                digest = hashlib.sha256()
-                size = 0
-                while True:
-                    chunk = os.read(descriptor, 1024 * 1024)
-                    if not chunk:
-                        break
-                    digest.update(chunk)
-                    size += len(chunk)
-                closed = os.fstat(descriptor)
-            finally:
-                os.close(descriptor)
-            if (
-                opened.st_ino != closed.st_ino
-                or opened.st_size != closed.st_size
-                or opened.st_mtime_ns != closed.st_mtime_ns
-                or size != opened.st_size
-            ):
-                raise ReleaseValidationError(f"public file changed while hashing: {relative}")
-            files.append({"path": relative, "bytes": size, "sha256": digest.hexdigest()})
+            size, digest = _hash_public_file(path, details, relative)
+            files.append({"path": relative, "bytes": size, "sha256": digest})
             total_bytes += size
             if len(files) > _MAX_PUBLIC_FILES:
                 raise ReleaseValidationError("public tree contains too many files")
@@ -408,10 +827,22 @@ def _public_tree_manifest(public_root: Path) -> dict[str, object]:
     if not files:
         raise ReleaseValidationError("public tree must not be empty")
     files.sort(key=lambda item: str(item["path"]))
+    directories.sort()
+    routes = _html_routes([str(item["path"]) for item in files])
+    if not routes:
+        raise ReleaseValidationError("public tree must contain at least one HTML route")
+    estimated_bytes = _estimate_pages_artifact(public_root, files, directories)
     return {
         "schema_version": _TREE_SCHEMA_VERSION,
         "file_count": len(files),
         "total_bytes": total_bytes,
+        "route_count": len(routes),
+        "route_digest": _route_digest(routes),
+        "pages_artifact": _pages_artifact_metadata(
+            estimated_bytes,
+            directory_count=len(directories),
+            file_count=len(files),
+        ),
         "files": files,
     }
 

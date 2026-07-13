@@ -2,6 +2,9 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
+import tarfile
+import zipfile
 from pathlib import Path
 
 import pytest
@@ -32,6 +35,7 @@ def _release(
     code_sha: str = CODE_A,
     content_sha: str = CONTENT_A,
     artifact_digest: str = ARTIFACT_A,
+    artifact_digest_kind: str = "public_tree_manifest_v2",
 ) -> ReleaseDescriptor:
     return ReleaseDescriptor(
         code_sha=code_sha,
@@ -39,6 +43,7 @@ def _release(
         schema_version="1.0",
         release_seq=sequence,
         artifact_digest=artifact_digest,
+        artifact_digest_kind=artifact_digest_kind,
         generated_at="2026-07-13T08:00:00Z",
     )
 
@@ -109,7 +114,11 @@ def test_public_tree_manifest_digest_is_recomputed_and_structurally_validated(
     digest = hashlib.sha256(
         json.dumps(manifest, sort_keys=True, separators=(",", ":")).encode()
     ).hexdigest()
-    descriptor = _release(7, artifact_digest=digest)
+    descriptor = _release(
+        7,
+        artifact_digest=digest,
+        artifact_digest_kind="public_tree_manifest_v1",
+    )
     path = tmp_path / "public-tree-manifest.json"
     path.write_text(json.dumps(manifest), encoding="utf-8")
 
@@ -119,6 +128,260 @@ def test_public_tree_manifest_digest_is_recomputed_and_structurally_validated(
     path.write_text(json.dumps(manifest), encoding="utf-8")
     with pytest.raises(ReleaseValidationError, match="public tree manifest totals"):
         validate_public_tree_manifest_digest(descriptor, path)
+
+
+def test_v2_manifest_binds_html_routes_and_pages_artifact_estimate(
+    tmp_path: Path,
+) -> None:
+    public = tmp_path / "public"
+    (public / "posts/one").mkdir(parents=True)
+    (public / "assets").mkdir()
+    (public / "index.html").write_text("home", encoding="utf-8")
+    (public / "404.html").write_text("missing", encoding="utf-8")
+    (public / "posts/one/index.html").write_text("post", encoding="utf-8")
+    (public / "assets/site.css").write_text("body{}", encoding="utf-8")
+
+    first = release_guard._public_tree_manifest(public)
+    second = release_guard._public_tree_manifest(public)
+    expected_routes = ["/", "/404.html", "/posts/one/"]
+
+    assert first == second
+    assert first["schema_version"] == "public_tree_manifest_v2"
+    assert first["route_count"] == 3
+    assert first["route_digest"] == hashlib.sha256(
+        json.dumps(expected_routes, separators=(",", ":")).encode()
+    ).hexdigest()
+    assert first["pages_artifact"] == second["pages_artifact"]
+    assert first["pages_artifact"]["compression_level"] == 6  # type: ignore[index]
+    assert first["pages_artifact"]["status"] == "ok"  # type: ignore[index]
+    assert first["pages_artifact"]["directory_count"] == 3  # type: ignore[index]
+    assert first["pages_artifact"]["tar_entry_count"] == 8  # type: ignore[index]
+
+
+@pytest.mark.parametrize("field", ["route_count", "route_digest"])
+def test_v2_manifest_rejects_forged_route_inventory(tmp_path: Path, field: str) -> None:
+    public = tmp_path / "public"
+    public.mkdir()
+    (public / "index.html").write_text("safe", encoding="utf-8")
+    manifest = release_guard._public_tree_manifest(public)
+    manifest[field] = 2 if field == "route_count" else "f" * 64
+    path = tmp_path / "tree.json"
+    path.write_text(json.dumps(manifest), encoding="utf-8")
+    descriptor = _release(
+        1,
+        artifact_digest=hashlib.sha256(
+            json.dumps(manifest, sort_keys=True, separators=(",", ":")).encode()
+        ).hexdigest(),
+    )
+
+    with pytest.raises(ReleaseValidationError, match="HTML route inventory"):
+        validate_public_tree_manifest_digest(descriptor, path)
+
+
+@pytest.mark.parametrize(
+    ("field", "value", "reason"),
+    [
+        ("status", "ok-if-you-ignore-the-size", "status"),
+        ("estimated_bytes", 100 * 1024 * 1024, "100 MiB"),
+        ("compression_level", 0, "policy"),
+    ],
+)
+def test_v2_manifest_rejects_forged_pages_artifact_estimate(
+    tmp_path: Path,
+    field: str,
+    value: object,
+    reason: str,
+) -> None:
+    public = tmp_path / "public"
+    public.mkdir()
+    (public / "index.html").write_text("safe", encoding="utf-8")
+    manifest = release_guard._public_tree_manifest(public)
+    pages_artifact = manifest["pages_artifact"]
+    assert isinstance(pages_artifact, dict)
+    pages_artifact[field] = value
+    path = tmp_path / "tree.json"
+    path.write_text(json.dumps(manifest), encoding="utf-8")
+    descriptor = _release(
+        1,
+        artifact_digest=hashlib.sha256(
+            json.dumps(manifest, sort_keys=True, separators=(",", ":")).encode()
+        ).hexdigest(),
+    )
+
+    with pytest.raises(ReleaseValidationError, match=reason):
+        validate_public_tree_manifest_digest(descriptor, path)
+
+
+def test_v1_tree_manifest_and_descriptor_remain_readable(tmp_path: Path) -> None:
+    manifest = {
+        "schema_version": "public_tree_manifest_v1",
+        "file_count": 1,
+        "total_bytes": 4,
+        "files": [
+            {
+                "path": "index.html",
+                "bytes": 4,
+                "sha256": hashlib.sha256(b"safe").hexdigest(),
+            }
+        ],
+    }
+    digest = hashlib.sha256(
+        json.dumps(manifest, sort_keys=True, separators=(",", ":")).encode()
+    ).hexdigest()
+    descriptor = _release(
+        1,
+        artifact_digest=digest,
+        artifact_digest_kind="public_tree_manifest_v1",
+    )
+    descriptor_path = tmp_path / "release.json"
+    tree_path = tmp_path / "tree.json"
+    write_release_descriptor(descriptor_path, descriptor)
+    tree_path.write_text(json.dumps(manifest), encoding="utf-8")
+
+    assert load_release_descriptor(descriptor_path) == descriptor
+    validate_public_tree_manifest_digest(descriptor, tree_path)
+
+
+def test_pages_artifact_soft_and_hard_size_boundaries() -> None:
+    warning = release_guard._PAGES_ARTIFACT_WARNING_BYTES
+    maximum = release_guard._MAX_PAGES_ARTIFACT_BYTES
+
+    assert release_guard._pages_artifact_status(warning - 1) == "ok"
+    assert release_guard._pages_artifact_status(warning) == "warning"
+    assert release_guard._pages_artifact_status(maximum - 1) == "warning"
+    with pytest.raises(ReleaseValidationError, match="100 MiB"):
+        release_guard._pages_artifact_status(maximum)
+
+
+def test_compressible_payload_cannot_bypass_raw_tree_limit(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    public = tmp_path / "public"
+    public.mkdir()
+    (public / "index.html").write_bytes(b"0" * 4_096)
+    monkeypatch.setattr(release_guard, "_MAX_PUBLIC_TREE_BYTES", 4_095)
+
+    with pytest.raises(ReleaseValidationError, match="total size limit"):
+        release_guard._public_tree_manifest(public)
+
+
+def test_pages_artifact_hard_failure_cleans_temporary_archives(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    public = tmp_path / "public"
+    public.mkdir()
+    (public / "index.html").write_bytes(os.urandom(4_096))
+    scratch = tmp_path / "scratch"
+    scratch.mkdir()
+    monkeypatch.setattr(release_guard.tempfile, "tempdir", str(scratch))
+    monkeypatch.setattr(release_guard, "_MAX_PAGES_ARTIFACT_BYTES", 128)
+
+    with pytest.raises(ReleaseValidationError, match="100 MiB"):
+        release_guard._public_tree_manifest(public)
+
+    assert list(scratch.iterdir()) == []
+
+
+def test_tar_and_single_member_level_6_zip_are_byte_deterministic(
+    tmp_path: Path,
+) -> None:
+    public = tmp_path / "public"
+    (public / "posts/one").mkdir(parents=True)
+    (public / "index.html").write_text("home", encoding="utf-8")
+    (public / "posts/one/index.html").write_text("post", encoding="utf-8")
+    manifest = release_guard._public_tree_manifest(public)
+    files = manifest["files"]
+    assert isinstance(files, list)
+    directories = ["posts", "posts/one"]
+    first_tar = tmp_path / "first.tar"
+    second_tar = tmp_path / "second.tar"
+    first_zip = tmp_path / "first.zip"
+    second_zip = tmp_path / "second.zip"
+
+    release_guard._write_deterministic_tar(public, files, directories, first_tar)
+    release_guard._write_deterministic_tar(public, files, directories, second_tar)
+    release_guard._write_deterministic_zip(first_tar, first_zip)
+    release_guard._write_deterministic_zip(second_tar, second_zip)
+
+    assert first_tar.read_bytes() == second_tar.read_bytes()
+    assert first_zip.read_bytes() == second_zip.read_bytes()
+    with zipfile.ZipFile(first_zip) as archive:
+        assert archive.namelist() == ["artifact.tar"]
+        entry = archive.getinfo("artifact.tar")
+        assert entry.compress_type == zipfile.ZIP_DEFLATED
+        assert entry.date_time == (1980, 1, 1, 0, 0, 0)
+        assert archive.read("artifact.tar") == first_tar.read_bytes()
+        assert archive.testzip() is None
+    with tarfile.open(first_tar) as archive:
+        members = archive.getmembers()
+        assert [member.name for member in members] == [
+            ".",
+            "index.html",
+            "posts",
+            "posts/one",
+            "posts/one/index.html",
+        ]
+        assert all(
+            member.mode == (0o755 if member.isdir() else 0o644) for member in members
+        )
+        assert all(member.uid == member.gid == member.mtime == 0 for member in members)
+
+
+def test_pages_artifact_rejects_file_changed_after_tree_hash(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    public = tmp_path / "public"
+    public.mkdir()
+    page = public / "index.html"
+    page.write_bytes(b"before")
+    original = release_guard._estimate_pages_artifact
+
+    def mutate_before_estimate(
+        root: Path,
+        files: list[dict[str, object]],
+        directories: list[str],
+    ) -> int:
+        page.write_bytes(b"after!")
+        return original(root, files, directories)
+
+    monkeypatch.setattr(release_guard, "_estimate_pages_artifact", mutate_before_estimate)
+
+    with pytest.raises(ReleaseValidationError, match="changed after tree hash"):
+        release_guard._public_tree_manifest(public)
+
+
+def test_public_file_fuse_is_30k_and_boundary_is_enforced(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    assert release_guard._MAX_PUBLIC_FILES == 30_000
+    public = tmp_path / "public"
+    public.mkdir()
+    (public / "index.html").write_text("safe", encoding="utf-8")
+    (public / "asset.css").write_text("safe", encoding="utf-8")
+    monkeypatch.setattr(release_guard, "_MAX_PUBLIC_FILES", 2)
+    release_guard._public_tree_manifest(public)
+    monkeypatch.setattr(release_guard, "_MAX_PUBLIC_FILES", 1)
+
+    with pytest.raises(ReleaseValidationError, match="too many files"):
+        release_guard._public_tree_manifest(public)
+
+
+def test_empty_directory_flood_is_bounded(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    public = tmp_path / "public"
+    public.mkdir()
+    (public / "index.html").write_text("safe", encoding="utf-8")
+    (public / "empty").mkdir()
+    monkeypatch.setattr(release_guard, "_MAX_PUBLIC_DIRECTORIES", 0)
+
+    with pytest.raises(ReleaseValidationError, match="too many directories"):
+        release_guard._public_tree_manifest(public)
 
 
 def test_verify_cli_binds_candidate_to_healthy_state_and_public_tree(
@@ -140,7 +403,13 @@ def test_verify_cli_binds_candidate_to_healthy_state_and_public_tree(
     digest = hashlib.sha256(
         json.dumps(tree, sort_keys=True, separators=(",", ":")).encode()
     ).hexdigest()
-    candidate = _release(8, code_sha=CODE_B, content_sha=CONTENT_B, artifact_digest=digest)
+    candidate = _release(
+        8,
+        code_sha=CODE_B,
+        content_sha=CONTENT_B,
+        artifact_digest=digest,
+        artifact_digest_kind="public_tree_manifest_v1",
+    )
     candidate_path = tmp_path / "candidate.json"
     current_path = tmp_path / "current.json"
     tree_path = tmp_path / "tree.json"
@@ -406,7 +675,7 @@ def test_create_cli_hashes_the_final_public_tree_and_keeps_transport_digest_sepa
     ).encode("utf-8")
     assert result["artifact_digest"] == descriptor.artifact_digest
     assert descriptor.artifact_digest == hashlib.sha256(manifest_bytes).hexdigest()
-    assert descriptor.artifact_digest_kind == "public_tree_manifest_v1"
+    assert descriptor.artifact_digest_kind == "public_tree_manifest_v2"
     assert "transport_archive_digest" not in descriptor.to_dict()
     assert {item["path"] for item in tree_manifest["files"]} == {
         "api/v1/manifest.json",
