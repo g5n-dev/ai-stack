@@ -65,6 +65,14 @@ jobs:
           fetch-depth: 1
           persist-credentials: true
 
+      - name: Checkout immutable backup records
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        with:
+          ref: ops
+          path: ops-ledger
+          fetch-depth: 1
+          persist-credentials: false
+
       - name: Install locked Python toolchain
         uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e # v6
         with:
@@ -90,6 +98,7 @@ jobs:
             --reason "$REASON"
             --expected-source-sha "$EXPECTED_SOURCE_SHA"
             --backup-id "$BACKUP_ID"
+            --backup-record "../ops-ledger/backups/${BACKUP_ID}.json"
             --max-changes "$MAX_CHANGES"
           )
           if [ "$DRY_RUN" = "true" ]; then

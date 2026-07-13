@@ -2,14 +2,17 @@
 
 from __future__ import annotations
 
-from dataclasses import dataclass
+import argparse
 import hashlib
+import json
 import os
-from pathlib import Path, PurePosixPath
 import re
 import stat
 import subprocess
-from typing import Sequence
+import sys
+from collections.abc import Sequence
+from dataclasses import dataclass
+from pathlib import Path, PurePosixPath
 
 
 class UnsafeWriteError(RuntimeError):
@@ -237,3 +240,48 @@ class GitCASWriter:
         if result.returncode != 0:
             detail = " ".join((result.stdout or "", result.stderr or "")).strip()
             raise CASConflictError(f"fast-forward push rejected: {detail}")
+
+
+def _parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(description=__doc__)
+    commands = parser.add_subparsers(dest="command", required=True)
+    commit = commands.add_parser("commit-and-push")
+    commit.add_argument("--repository", type=Path, required=True)
+    commit.add_argument("--branch", required=True)
+    commit.add_argument("--allowed-root", action="append", required=True)
+    commit.add_argument("--expected-base", required=True)
+    commit.add_argument("--message", required=True)
+    commit.add_argument("--remote", default="origin")
+    return parser
+
+
+def main(argv: Sequence[str] | None = None) -> int:
+    args = _parser().parse_args(argv)
+    try:
+        writer = GitCASWriter(
+            args.repository,
+            branch=args.branch,
+            allowed_roots=args.allowed_root,
+        )
+        commit = writer.commit(expected_base=args.expected_base, message=args.message)
+        writer.push(commit, remote=args.remote)
+    except (OSError, subprocess.SubprocessError, UnsafeWriteError, CASConflictError) as exc:
+        print(f"git-cas-writer: {exc}", file=sys.stderr)
+        return 2
+    print(
+        json.dumps(
+            {
+                "changed": commit.changed,
+                "commit_sha": commit.commit_sha,
+                "parent_sha": commit.parent_sha,
+                "paths": commit.paths,
+            },
+            separators=(",", ":"),
+            sort_keys=True,
+        )
+    )
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

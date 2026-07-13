@@ -1,5 +1,14 @@
 #!/usr/bin/env python3
 
+"""Legacy manual Twitter integration runner.
+
+This module performs live network/model calls and is therefore excluded from
+the hermetic pytest suite.  It remains executable directly for an operator-led
+diagnostic run.
+"""
+
+__test__ = False
+
 import sys
 import os
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))

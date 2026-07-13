@@ -1,7 +1,8 @@
 from __future__ import annotations
 
-from pathlib import Path
+import json
 import subprocess
+from pathlib import Path
 
 import pytest
 
@@ -10,6 +11,7 @@ from scripts.git_cas_writer import (
     CASConflictError,
     GitCASWriter,
     UnsafeWriteError,
+    main,
 )
 
 
@@ -175,3 +177,54 @@ def test_push_verifies_recorded_parent(tmp_path: Path) -> None:
 
     with pytest.raises(CASConflictError, match="parent changed"):
         writer.push(forged)
+
+
+def test_cli_commits_pushes_and_reports_exact_sha(
+    tmp_path: Path,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
+    _, remote = _seed_remote(tmp_path)
+    clone = _clone(remote, tmp_path / "clone")
+    base = _git(clone, "rev-parse", "HEAD")
+    (clone / "content" / "event.json").write_text("{}\n", encoding="utf-8")
+
+    assert (
+        main(
+            [
+                "commit-and-push",
+                "--repository",
+                str(clone),
+                "--branch",
+                "content",
+                "--allowed-root",
+                "content",
+                "--expected-base",
+                base,
+                "--message",
+                "persist event",
+            ]
+        )
+        == 0
+    )
+    result = json.loads(capsys.readouterr().out)
+    assert result["changed"] is True
+    assert _git(remote, "rev-parse", "refs/heads/content") == result["commit_sha"]
+
+    assert (
+        main(
+            [
+                "commit-and-push",
+                "--repository",
+                str(clone),
+                "--branch",
+                "ops",
+                "--allowed-root",
+                "ops",
+                "--expected-base",
+                result["commit_sha"],
+                "--message",
+                "wrong branch",
+            ]
+        )
+        == 2
+    )
