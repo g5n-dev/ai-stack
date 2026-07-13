@@ -103,4 +103,9 @@ weight = 6
 [outputs]
 home = ["HTML", "RSS"]
 page = ["HTML"]
-section = ["HTML", "RSS"]
+section = ["HTML"]
+taxonomy = ["HTML"]
+term = ["HTML"]
+
+[services.rss]
+limit = 50
