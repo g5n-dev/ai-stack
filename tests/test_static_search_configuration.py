@@ -41,6 +41,17 @@ def test_search_page_is_semantic_keyboard_ready_and_self_hosted() -> None:
 
     script = soup.select_one('script[src="/js/search.js"]')
     assert script is not None
+
+    template_text = template.read_text(encoding="utf-8")
+    for low_contrast_class in (
+        "text-primary/70",
+        "text-muted-teal/70",
+        "text-off-white/45",
+    ):
+        assert low_contrast_class not in template_text
+
+    search_script = (ROOT / "blog/static/js/search.js").read_text(encoding="utf-8")
+    assert "text-muted-teal/60" not in search_script
     assert not template.read_text(encoding="utf-8").__contains__("https://cdn.")
 
 

@@ -111,7 +111,7 @@
         document,
         item,
         "p",
-        "mt-2 text-xs font-mono text-muted-teal/60",
+        "mt-2 text-xs font-mono text-muted-teal",
         metadata,
       );
       appendTextElement(
