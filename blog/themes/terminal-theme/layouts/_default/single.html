@@ -12,6 +12,7 @@
     {{- $metaDescription = (.Plain | plainify | truncate 200) -}}
     {{- end -}}
     <meta name="description" content="{{ $metaDescription }}" />
+    {{ partial "pagefind-metadata.html" . }}
     <link rel="canonical" href="{{ .Permalink }}" />
     <meta property="og:site_name" content="{{ .Site.Title }}" />
     <meta property="og:title" content="{{ .Title }} - {{ .Site.Title }}" />
@@ -163,7 +164,7 @@
                         </div>
                     </div>
 
-                    <div
+                    <div data-pagefind-body
                         class="post-content prose prose-invert max-w-none font-display text-base md:text-lg text-slate-300 leading-relaxed">
                         {{ .Content }}
                     </div>

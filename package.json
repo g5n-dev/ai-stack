@@ -2,11 +2,14 @@
   "name": "ai-stack-static-assets",
   "private": true,
   "scripts": {
-    "build:css": "tailwindcss -c tailwind.config.js -i blog/assets/tailwind.css -o blog/static/css/tailwind.css --minify"
+    "build:css": "tailwindcss -c tailwind.config.js -i blog/assets/tailwind.css -o blog/static/css/tailwind.css --minify",
+    "build:search": "pagefind --site blog/public",
+    "test": "node --test tests/js/*.mjs"
   },
   "devDependencies": {
     "@tailwindcss/forms": "0.5.11",
     "@tailwindcss/typography": "0.5.20",
+    "pagefind": "1.5.2",
     "tailwindcss": "3.4.17"
   }
 }
