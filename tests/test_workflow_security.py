@@ -58,7 +58,7 @@ def test_pr_ci_keeps_branch_update_contract_and_has_no_secrets() -> None:
     assert "pull_request" in triggers
     pull_request = triggers["pull_request"]
     assert isinstance(pull_request, dict)
-    assert pull_request["branches"] == ["main"]
+    assert pull_request == {"branches": ["main"]}
     assert "workflow_dispatch" in triggers
     assert workflow["permissions"] == {"contents": "read"}
     assert "${{ secrets." not in text
@@ -256,6 +256,10 @@ def test_delete_workflow_is_break_glass_dry_run_and_bounded() -> None:
 
 def test_monitoring_is_read_only_and_does_not_claim_fake_metrics() -> None:
     workflow, text = _workflow("monitoring.yml")
+    triggers = workflow["on"]
+    assert isinstance(triggers, dict)
+    assert triggers["schedule"] == [{"cron": "0 */6 * * *"}]
+    assert "workflow_dispatch" in triggers
     assert workflow["permissions"] == {"contents": "read"}
     assert "analytics_data.json" not in text
     assert "engagement_data.json" not in text

@@ -2,7 +2,7 @@ name: System Monitoring & Content Quality Tracking
 
 on:
   schedule:
-    - cron: "17 */6 * * *"
+    - cron: "0 */6 * * *"
   workflow_dispatch:
 
 concurrency:
