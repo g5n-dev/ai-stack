@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 import os
 import threading
 from collections.abc import Generator
@@ -183,3 +184,11 @@ def test_pagefind_index_contains_article_body_and_facets(public_dir: Path) -> No
     assert soup.select_one('[data-pagefind-filter="source[content]"]') is not None
     assert soup.select_one('[data-pagefind-filter="date[content]"]') is not None
     assert any((public_dir / "pagefind").rglob("*.pf_index"))
+    assert not any((public_dir / "pagefind").rglob("*.pf_fragment"))
+    catalog = json.loads((public_dir / "pagefind/catalog.json").read_text(encoding="utf-8"))
+    manifest = json.loads(
+        (public_dir / "pagefind/catalog.manifest.json").read_text(encoding="utf-8")
+    )
+    assert catalog["schema_version"] == "pagefind_result_catalog_v1"
+    assert catalog["record_count"] == len(catalog["records"])
+    assert manifest["catalog_gzip_bytes"] <= 1024 * 1024

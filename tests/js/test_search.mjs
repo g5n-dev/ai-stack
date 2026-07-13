@@ -107,6 +107,33 @@ function fakeSearchDocument() {
 }
 
 
+function resultCatalog(records) {
+  return {
+    schema_version: "pagefind_result_catalog_v1",
+    summary_codepoints: 120,
+    record_count: Object.keys(records).length,
+    source_fragment_tree_sha256: "a".repeat(64),
+    basis: {
+      basis_schema_version: "repository_build_basis_v1",
+      code_sha: "b".repeat(40),
+      content_sha: "c".repeat(40),
+    },
+    records,
+  };
+}
+
+
+function catalogRecord(index) {
+  return {
+    url: `/result-${index}/`,
+    summary: `excerpt ${index}`,
+    title: `Result ${index}`,
+    source: "arxiv",
+    date: "2026-07-13",
+  };
+}
+
+
 test("normalizes exact Pagefind filters and drops empty values", () => {
   const filters = Search.normalizeFilters({
     source: " arxiv ",
@@ -226,6 +253,8 @@ test("initializes Pagefind once, populates safe facets and renders a bounded res
   document.ids["search-source"].value = "arxiv";
   let initializeCalls = 0;
   let filterCalls = 0;
+  let catalogCalls = 0;
+  let fragmentDataCalls = 0;
   const pagefind = {
     async init() {
       initializeCalls += 1;
@@ -244,24 +273,37 @@ test("initializes Pagefind once, populates safe facets and renders a bounded res
       assert.deepEqual(options, { filters: { source: "arxiv" } });
       return {
         results: Array.from({ length: 25 }, (_, index) => ({
+          id: `zh-cn_${index.toString(16).padStart(7, "0")}`,
           async data() {
-            return {
-              url: `/result-${index}/`,
-              plain_excerpt: `excerpt ${index}`,
-              meta: { title: `Result ${index}`, source: "arxiv", date: "2026-07-13" },
-            };
+            fragmentDataCalls += 1;
+            throw new Error("the compact catalog must replace fragment downloads");
           },
         })),
       };
     },
   };
+  const records = Object.fromEntries(
+    Array.from({ length: 25 }, (_, index) => [
+      `zh-cn_${index.toString(16).padStart(7, "0")}`,
+      catalogRecord(index),
+    ]),
+  );
 
-  const controller = Search.initializeSearchPage(document, async () => pagefind);
+  const controller = Search.initializeSearchPage(
+    document,
+    async () => pagefind,
+    async () => {
+      catalogCalls += 1;
+      return resultCatalog(records);
+    },
+  );
   await Promise.all([controller.loadFilters(), controller.loadFilters()]);
   await controller.runSearch();
 
   assert.equal(initializeCalls, 1);
   assert.equal(filterCalls, 1);
+  assert.equal(catalogCalls, 1);
+  assert.equal(fragmentDataCalls, 0);
   assert.equal(document.ids["search-source"].children.length, 3);
   assert.equal(document.ids["search-entities"].children[0].value, "entity-openai");
   assert.equal(document.ids["search-tags"].children[0].value, "智能体");
@@ -285,6 +327,149 @@ test("fails closed with an accessible status when the index cannot initialize", 
   assert.equal(document.ids["search-results"].children.length, 0);
   assert.equal(document.ids["search-status"].textContent, "检索暂时不可用，请稍后重试。");
   assert.equal(document.ids["search-submit"].disabled, false);
+});
+
+
+test("fails closed when the result catalog is unavailable and retries on the next search", async () => {
+  const document = fakeSearchDocument();
+  document.ids["search-query"].value = "retry";
+  const pagefind = {
+    async init() {},
+    async search() {
+      return { results: [{ id: "zh-cn_123abcd" }] };
+    },
+  };
+  let catalogCalls = 0;
+  const controller = Search.initializeSearchPage(
+    document,
+    async () => pagefind,
+    async () => {
+      catalogCalls += 1;
+      if (catalogCalls === 1) {
+        throw new Error("catalog unavailable");
+      }
+      return resultCatalog({ "zh-cn_123abcd": catalogRecord(1) });
+    },
+  );
+
+  await controller.runSearch();
+  assert.equal(document.ids["search-results"].children.length, 0);
+  assert.equal(document.ids["search-status"].textContent, "检索结果目录加载失败，请稍后重试。");
+
+  await controller.runSearch();
+  assert.equal(catalogCalls, 2);
+  assert.equal(document.ids["search-results"].children.length, 1);
+  assert.equal(document.ids["search-results"].children[0].children[0].textContent, "Result 1");
+});
+
+
+test("rejects incomplete or malformed catalog records instead of downloading fragments", async () => {
+  const document = fakeSearchDocument();
+  document.ids["search-query"].value = "missing";
+  let fragmentDataCalls = 0;
+  const pagefind = {
+    async init() {},
+    async search() {
+      return {
+        results: [{
+          id: "zh-cn_123abcd",
+          async data() {
+            fragmentDataCalls += 1;
+          },
+        }],
+      };
+    },
+  };
+  const controller = Search.initializeSearchPage(
+    document,
+    async () => pagefind,
+    async () => resultCatalog({}),
+  );
+
+  await controller.runSearch();
+
+  assert.equal(fragmentDataCalls, 0);
+  assert.equal(document.ids["search-results"].children.length, 0);
+  assert.equal(document.ids["search-status"].textContent, "检索结果目录不完整，请稍后重试。");
+});
+
+
+test("validates catalog text limits by Unicode code point rather than UTF-16 unit", () => {
+  const summary = "🚀".repeat(120);
+  const value = resultCatalog({
+    "zh-cn_123abcd": { ...catalogRecord(1), summary },
+  });
+
+  const catalog = Search.validateCatalog(value);
+
+  assert.equal(catalog.records["zh-cn_123abcd"].summary, summary);
+  assert.equal(Array.from(summary).length, 120);
+  assert.equal(summary.length, 240);
+});
+
+
+test("normalizes a same-origin Unicode catalog URL without rejecting it", () => {
+  const value = resultCatalog({
+    "zh-cn_123abcd": { ...catalogRecord(1), url: "/posts/中文路径/" },
+  });
+
+  const catalog = Search.validateCatalog(value);
+
+  assert.equal(
+    catalog.records["zh-cn_123abcd"].url,
+    "/posts/%E4%B8%AD%E6%96%87%E8%B7%AF%E5%BE%84/",
+  );
+});
+
+
+test("a late search cannot overwrite the newest catalog-backed result", async () => {
+  const document = fakeSearchDocument();
+  let releaseFirst;
+  let markFirstStarted;
+  const firstStarted = new Promise((resolve) => {
+    markFirstStarted = resolve;
+  });
+  const firstResponse = new Promise((resolve) => {
+    releaseFirst = resolve;
+  });
+  let catalogCalls = 0;
+  const pagefind = {
+    async init() {},
+    async search(query) {
+      if (query === "first") {
+        markFirstStarted();
+        return firstResponse;
+      }
+      return { results: [{ id: "zh-cn_2222222" }] };
+    },
+  };
+  const controller = Search.initializeSearchPage(
+    document,
+    async () => pagefind,
+    async () => {
+      catalogCalls += 1;
+      return resultCatalog({
+        "zh-cn_1111111": { ...catalogRecord(1), title: "Old result" },
+        "zh-cn_2222222": { ...catalogRecord(2), title: "Newest result" },
+      });
+    },
+  );
+
+  document.ids["search-query"].value = "first";
+  const oldSearch = controller.runSearch();
+  await firstStarted;
+  document.ids["search-query"].value = "second";
+  await controller.runSearch();
+  releaseFirst({ results: [{ id: "zh-cn_1111111" }] });
+  await oldSearch;
+
+  assert.equal(catalogCalls, 1);
+  assert.equal(document.ids["search-results"].children.length, 1);
+  assert.equal(
+    document.ids["search-results"].children[0].children[0].textContent,
+    "Newest result",
+  );
+  assert.equal(document.ids["search-status"].textContent, "找到 1 条，当前显示 1 条。");
 });
 
 

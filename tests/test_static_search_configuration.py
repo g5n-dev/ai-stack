@@ -14,8 +14,14 @@ def test_pagefind_and_node_test_runner_are_exactly_locked() -> None:
     lock = json.loads((ROOT / "package-lock.json").read_text(encoding="utf-8"))
 
     assert package["devDependencies"]["pagefind"] == "1.5.2"
-    assert package["scripts"]["build:search"] == "pagefind --site blog/public"
-    assert package["scripts"]["test"] == "node --test tests/js/*.mjs"
+    assert package["scripts"]["build:search"] == (
+        "pagefind --site blog/public && "
+        "uv run python scripts/build_pagefind_catalog.py --public-root blog/public"
+    )
+    assert package["scripts"]["test"] == (
+        "node --test tests/js/*.mjs && "
+        "uv run pytest -q tests/test_pagefind_catalog.py tests/test_static_search_configuration.py"
+    )
     assert lock["packages"][""]["devDependencies"]["pagefind"] == "1.5.2"
     assert lock["packages"]["node_modules/pagefind"]["version"] == "1.5.2"
 
@@ -52,6 +58,8 @@ def test_search_page_is_semantic_keyboard_ready_and_self_hosted() -> None:
 
     search_script = (ROOT / "blog/static/js/search.js").read_text(encoding="utf-8")
     assert "text-muted-teal/60" not in search_script
+    assert "result.data(" not in search_script
+    assert 'fetch("/pagefind/catalog.json"' in search_script
     assert not template.read_text(encoding="utf-8").__contains__("https://cdn.")
 
 

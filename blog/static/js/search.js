@@ -22,6 +22,165 @@
   const MAX_FILTER_VALUE_LENGTH = 200;
   const MAX_RESULTS = 20;
   const MAX_SUGGESTIONS = 100;
+  const MAX_CATALOG_RECORDS = 20000;
+  const CATALOG_SCHEMA_VERSION = "pagefind_result_catalog_v1";
+  const FRAGMENT_ID = /^[a-z0-9][a-z0-9-]{0,15}_[0-9a-f]{7}$/u;
+  const SHA256 = /^[0-9a-f]{64}$/u;
+  const GIT_SHA = /^(?:[0-9a-f]{40}|[0-9a-f]{64})$/u;
+
+  function catalogFailure(kind) {
+    const error = new Error(`catalog ${kind}`);
+    error.catalogFailure = kind;
+    return error;
+  }
+
+  function isPlainObject(value) {
+    return value !== null && typeof value === "object" && !Array.isArray(value);
+  }
+
+  function hasExactFields(value, fields) {
+    const keys = Object.keys(value).sort();
+    return keys.length === fields.length
+      && keys.every((key, index) => key === fields[index]);
+  }
+
+  function canonicalCatalogText(value, maxLength) {
+    if (
+      typeof value !== "string"
+      || value.length === 0
+      || Array.from(value).length > maxLength
+    ) {
+      throw catalogFailure("incomplete");
+    }
+    const canonical = value
+      .normalize("NFKC")
+      .replace(/[\p{Cc}\p{Cf}\p{Cs}\p{Co}\p{Cn}]/gu, "")
+      .trim()
+      .replace(/\s+/gu, " ");
+    if (!canonical || canonical !== value) {
+      throw catalogFailure("incomplete");
+    }
+    return canonical;
+  }
+
+  function normalizeCatalogRecord(value) {
+    const fields = ["date", "source", "summary", "title", "url"];
+    if (!isPlainObject(value) || !hasExactFields(value, fields)) {
+      throw catalogFailure("incomplete");
+    }
+    const url = safeResultUrl(value.url);
+    if (url === "#") {
+      throw catalogFailure("incomplete");
+    }
+    const date = canonicalCatalogText(value.date, 10);
+    if (!/^\d{4}-\d{2}-\d{2}$/u.test(date)) {
+      throw catalogFailure("incomplete");
+    }
+    return Object.freeze({
+      url,
+      title: canonicalCatalogText(value.title, 300),
+      source: canonicalCatalogText(value.source, 200),
+      date,
+      summary: canonicalCatalogText(value.summary, 120),
+    });
+  }
+
+  function validateCatalogBasis(value) {
+    if (!isPlainObject(value) || !GIT_SHA.test(value.code_sha || "")
+      || !GIT_SHA.test(value.content_sha || "")) {
+      throw catalogFailure("incomplete");
+    }
+    if (value.basis_schema_version === "repository_build_basis_v1") {
+      if (!hasExactFields(value, ["basis_schema_version", "code_sha", "content_sha"])) {
+        throw catalogFailure("incomplete");
+      }
+      return;
+    }
+    const releaseFields = [
+      "basis_schema_version",
+      "code_sha",
+      "content_sha",
+      "generated_at",
+      "release_basis_sha256",
+      "release_seq",
+      "schema_version",
+    ];
+    if (
+      value.basis_schema_version !== "release_basis_v1"
+      || !hasExactFields(value, releaseFields)
+      || !SHA256.test(value.release_basis_sha256 || "")
+      || !Number.isSafeInteger(value.release_seq)
+      || value.release_seq <= 0
+      || typeof value.schema_version !== "string"
+      || !/^[1-9][0-9]*\.[0-9]+$/u.test(value.schema_version)
+      || typeof value.generated_at !== "string"
+      || !/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$/u.test(value.generated_at)
+    ) {
+      throw catalogFailure("incomplete");
+    }
+  }
+
+  function validateCatalog(value) {
+    const fields = [
+      "basis",
+      "record_count",
+      "records",
+      "schema_version",
+      "source_fragment_tree_sha256",
+      "summary_codepoints",
+    ];
+    if (
+      !isPlainObject(value)
+      || !hasExactFields(value, fields)
+      || value.schema_version !== CATALOG_SCHEMA_VERSION
+      || value.summary_codepoints !== 120
+      || !SHA256.test(value.source_fragment_tree_sha256 || "")
+      || !Number.isSafeInteger(value.record_count)
+      || value.record_count <= 0
+      || value.record_count > MAX_CATALOG_RECORDS
+      || !isPlainObject(value.records)
+    ) {
+      throw catalogFailure("incomplete");
+    }
+    validateCatalogBasis(value.basis);
+    const identifiers = Object.keys(value.records);
+    if (identifiers.length !== value.record_count) {
+      throw catalogFailure("incomplete");
+    }
+    const records = Object.create(null);
+    for (const identifier of identifiers) {
+      if (!FRAGMENT_ID.test(identifier)) {
+        throw catalogFailure("incomplete");
+      }
+      records[identifier] = normalizeCatalogRecord(value.records[identifier]);
+    }
+    return Object.freeze({
+      records: Object.freeze(records),
+      recordCount: value.record_count,
+      sourceFragmentTreeSha256: value.source_fragment_tree_sha256,
+    });
+  }
+
+  function catalogResult(catalog, result) {
+    const identifier = result?.id;
+    if (
+      typeof identifier !== "string"
+      || !FRAGMENT_ID.test(identifier)
+      || !Object.hasOwn(catalog.records, identifier)
+    ) {
+      throw catalogFailure("incomplete");
+    }
+    const record = catalog.records[identifier];
+    return {
+      url: record.url,
+      plain_excerpt: record.summary,
+      meta: {
+        title: record.title,
+        source: record.source,
+        date: record.date,
+      },
+    };
+  }
 
   function normalizeFilterValue(value) {
     if (value === undefined || value === null || value === "") {
@@ -167,7 +326,30 @@
     return import("/pagefind/pagefind.js");
   }
 
-  function initializeSearchPage(document, loadPagefind = defaultPagefindLoader) {
+  async function defaultCatalogLoader() {
+    let response;
+    try {
+      response = await fetch("/pagefind/catalog.json", {
+        cache: "force-cache",
+        credentials: "same-origin",
+      });
+      if (!response.ok) {
+        throw catalogFailure("load");
+      }
+      return await response.json();
+    } catch (error) {
+      if (error?.catalogFailure) {
+        throw error;
+      }
+      throw catalogFailure("load");
+    }
+  }
+
+  function initializeSearchPage(
+    document,
+    loadPagefind = defaultPagefindLoader,
+    loadCatalog = defaultCatalogLoader,
+  ) {
     const form = document.getElementById("search-form");
     if (!form) {
       return null;
@@ -184,6 +366,7 @@
     };
 
     let pagefindPromise;
+    let catalogPromise;
     let filtersPromise;
     let filtersLoaded = false;
     let searchSequence = 0;
@@ -196,6 +379,21 @@
         });
       }
       return pagefindPromise;
+    }
+
+    async function getCatalog() {
+      if (!catalogPromise) {
+        catalogPromise = Promise.resolve(loadCatalog())
+          .then(validateCatalog)
+          .catch((error) => {
+            catalogPromise = undefined;
+            if (error?.catalogFailure) {
+              throw error;
+            }
+            throw catalogFailure("load");
+          });
+      }
+      return catalogPromise;
     }
 
     async function loadFilters() {
@@ -245,9 +443,10 @@
           status.textContent = "输入关键词或至少选择一个过滤条件。";
           return;
         }
-        const visibleResults = await Promise.all(
-          search.results.slice(0, MAX_RESULTS).map((result) => result.data()),
-        );
+        const catalog = search.results.length > 0 ? await getCatalog() : null;
+        const visibleResults = search.results
+          .slice(0, MAX_RESULTS)
+          .map((result) => catalogResult(catalog, result));
         if (sequence !== searchSequence) {
           return;
         }
@@ -258,7 +457,13 @@
       } catch (error) {
         if (sequence === searchSequence) {
           results.replaceChildren();
-          status.textContent = "检索暂时不可用，请稍后重试。";
+          if (error?.catalogFailure === "load") {
+            status.textContent = "检索结果目录加载失败，请稍后重试。";
+          } else if (error?.catalogFailure === "incomplete") {
+            status.textContent = "检索结果目录不完整，请稍后重试。";
+          } else {
+            status.textContent = "检索暂时不可用，请稍后重试。";
+          }
         }
       } finally {
         if (sequence === searchSequence) {
@@ -286,7 +491,7 @@
       }, 0);
     });
 
-    return Object.freeze({ getPagefind, loadFilters, runSearch });
+    return Object.freeze({ getCatalog, getPagefind, loadFilters, runSearch });
   }
 
   return {
@@ -298,5 +503,6 @@
     rankFilterValues,
     renderResults,
     safeResultUrl,
+    validateCatalog,
   };
 }));
