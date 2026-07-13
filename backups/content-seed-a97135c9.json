@@ -1,0 +1,8 @@
+{
+  "archive_sha256": "a485e8ac7585f5ee25b6485573c830e373a8106487a437701cd5c5ee1506f7a6",
+  "backup_id": "content-seed-a97135c9",
+  "immutable_release_url": "https://github.com/g5n-dev/ai-stack/releases/tag/content-seed-a97135c9",
+  "schema_version": "backup_record_v1",
+  "source_sha": "a97135c9a8a5481d8caffa140d3d54888c9c2c0f",
+  "verified_at": "2026-07-13T09:44:39Z"
+}
