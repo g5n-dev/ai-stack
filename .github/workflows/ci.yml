@@ -163,7 +163,9 @@ jobs:
           uv run python scripts/build_related_index.py \
             --content-dir blog/content/posts \
             --output blog/data/related/index.json
-          hugo --source blog --baseURL "https://ai-stack.site/" --minify --cleanDestinationDir
+          build_clock=$(uv run python -c 'import json; value=json.load(open("blog/data/related/index.json", encoding="utf-8")).get("data_as_of"); assert isinstance(value, str) and value; print(value)')
+          hugo --source blog --baseURL "https://ai-stack.site/" \
+            --clock "$build_clock" --minify --cleanDestinationDir
           npm run build:search
 
       - name: Revalidate final DOM

@@ -448,8 +448,10 @@ jobs:
           uv run python scripts/build_related_index.py \
             --content-dir content-ledger/content/posts \
             --output blog/data/related/index.json
+          build_clock=$(uv run python -c 'import json; value=json.load(open("blog/data/related/index.json", encoding="utf-8")).get("data_as_of"); assert isinstance(value, str) and value; print(value)')
           hugo --source blog --config config.toml,ledger-mount.toml \
-            --baseURL "$SITE_BASE_URL" --minify --cleanDestinationDir
+            --baseURL "$SITE_BASE_URL" --clock "$build_clock" \
+            --minify --cleanDestinationDir
           npm run build:search
           uv run python scripts/validate_public_content.py --rendered-root blog/public
           uv run python scripts/release_guard.py create \

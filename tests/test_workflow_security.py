@@ -75,6 +75,17 @@ def test_pr_ci_keeps_branch_update_contract_and_has_no_secrets() -> None:
     assert "fetch-depth: '0'" in static_site
     assert "--base-sha" in static_site
     assert "github.event.pull_request.base.sha" in static_site
+    static_steps = jobs["static-site"]["steps"]
+    assert isinstance(static_steps, list)
+    static_build_step = next(
+        step
+        for step in static_steps
+        if isinstance(step, dict) and step.get("name") == "Build Hugo and Pagefind"
+    )
+    static_build = static_build_step["run"]
+    assert isinstance(static_build, str)
+    assert "data_as_of" in static_build
+    assert '--clock "$build_clock"' in static_build
 
     for required in (
         "uv sync --frozen",
@@ -288,6 +299,8 @@ def test_build_finalizes_public_tree_before_packaging_release_metadata() -> None
 
     assert render < hugo < pagefind < dom_validation < finalize < package
     assert "build_related_index.py" in build
+    assert "data_as_of" in build
+    assert '--clock "$build_clock"' in build
     assert "build-handoff/state/release-basis.json" in build
     assert "build-handoff/state/release.json" in build
     assert "build-handoff/state/public-tree-manifest.json" in build
