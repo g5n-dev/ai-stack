@@ -97,8 +97,8 @@ def test_deploy_preserves_public_triggers_but_uses_one_explicit_dag() -> None:
     assert workflow["name"] == "Build and Deploy"
     triggers = workflow["on"]
     assert isinstance(triggers, dict)
-    assert "schedule" in triggers
-    assert "workflow_dispatch" in triggers
+    assert set(triggers) == {"schedule", "workflow_dispatch", "push"}
+    assert triggers["schedule"] == [{"cron": "0 * * * *"}]
     push = triggers["push"]
     assert isinstance(push, dict)
     assert push["branches"] == ["main"]
