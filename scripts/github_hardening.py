@@ -552,7 +552,10 @@ def _validate_expected_contract(
             "branch",
             ["refs/heads/content", "refs/heads/ops"],
         ),
-        "ai-stack/backup-tags-v1": ("tag", ["refs/tags/backup-*"]),
+        "ai-stack/backup-tags-v1": (
+            "tag",
+            ["refs/tags/backup-*", "refs/tags/content-seed-*"],
+        ),
     }
     for name, (target, includes) in expected_refs.items():
         ruleset = by_name[name]
@@ -660,13 +663,22 @@ def _validate_expected_contract(
         "protected_branches": False,
         "custom_branch_policies": True,
     }
-    expected_branch_policies = [{"name": "main", "type": "branch"}]
+    main_branch_policy = [{"name": "main", "type": "branch"}]
+    expected_branch_policies = {
+        "github-pages": [
+            {"name": "gh-pages", "type": "branch"},
+            {"name": "main", "type": "branch"},
+        ],
+        "production-publish": main_branch_policy,
+        "data-deletion": main_branch_policy,
+    }
     for name, environment in environments_by_name.items():
         if (
             environment.get("wait_timer") != 0
             or environment.get("prevent_self_review") is not False
             or environment.get("deployment_branch_policy") != expected_policy
-            or environment.get("deployment_branch_policies") != expected_branch_policies
+            or environment.get("deployment_branch_policies")
+            != expected_branch_policies[name]
         ):
             raise GitHubHardeningError(f"environment {name} policy is invalid")
     for name in ("github-pages", "production-publish"):
