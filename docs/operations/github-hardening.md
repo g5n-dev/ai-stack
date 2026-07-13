@@ -49,8 +49,8 @@ update/create 的幂等语义继续。不要使用旧摘要重试。
 - Actions 默认 `GITHUB_TOKEN` 为 read，且 `can_approve_pull_request_reviews=false`。
 - immutable releases 开启后，已发布 release 的资产和 tag 受保护；应先创建 draft、上传并校验
   全部资产，最后发布，因为发布后资产不可改。
-- `main` 禁止删除和 force push，必须从 PR 合入，并要求稳定检查 `Unit Tests`、`static-site`、
-  `browser-e2e`。PR 规则的 approving review count 为 0：它强制 PR 和检查，但不会虚称已经建立
+- `main` 禁止删除和 force push，必须从 PR 合入，并要求稳定检查 `Unit Tests`、`secret-scan`、
+  `static-site`、`browser-e2e`。PR 规则的 approving review count 为 0：它强制 PR 和检查，但不会虚称已经建立
   双人审批；单维护者仓库若直接要求 1 个非作者审批会造成永久阻塞。
 - `content`/`ops` 禁止删除、force push 和 merge commit（`required_linear_history`），但这些规则
   本身只约束更新形状，不会把普通 fast-forward push 自动限定为某个 writer。

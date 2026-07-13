@@ -41,6 +41,7 @@
             "required_status_checks": [
               {"context": "Unit Tests"},
               {"context": "browser-e2e"},
+              {"context": "secret-scan"},
               {"context": "static-site"}
             ],
             "strict_required_status_checks_policy": true

@@ -154,6 +154,7 @@ def test_expected_configuration_encodes_the_repository_security_contract() -> No
     assert [check["context"] for check in contexts] == [
         "Unit Tests",
         "browser-e2e",
+        "secret-scan",
         "static-site",
     ]
 
