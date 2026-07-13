@@ -1,8 +1,8 @@
 {
-  "backup_id": "git-main-b71a275d",
+  "backup_id": "git-main-8b6addc4",
   "canonicalization": "none-byte-exact-seed",
   "deduplicated": false,
-  "file_count": 6675,
+  "file_count": 6676,
   "schema_version": "content_branch_v1",
-  "source_sha": "b71a275de15c8ee27f6f0428b4bac901d63001f6"
+  "source_sha": "8b6addc4d9d35ab731e5f843351b5e72494fb37f"
 }
