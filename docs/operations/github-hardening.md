@@ -54,9 +54,12 @@ update/create 的幂等语义继续。不要使用旧摘要重试。
   双人审批；单维护者仓库若直接要求 1 个非作者审批会造成永久阻塞。
 - `content`/`ops` 禁止删除、force push 和 merge commit（`required_linear_history`），但这些规则
   本身只约束更新形状，不会把普通 fast-forward push 自动限定为某个 writer。
-- `backup-*` tag 创建后禁止更新和删除；创建本身仍允许，以便先产生新备份 tag。
-- `github-pages`、`production-publish`、`data-deletion` 都只生成 `main` 的 custom deployment branch
-  policy。前两者用于隔离 Pages/渠道凭据但不要求人工审批；`data-deletion` 把仓库 owner 配为
+- `backup-*` 与 `content-seed-*` tag 创建后禁止更新和删除；创建本身仍允许，以便先产生新的、
+  不可移动的备份或内容种子 tag。
+- `github-pages` 保留既有 `gh-pages` 并增加 `main` 的 custom deployment branch policy，避免改变
+  原 Pages 发布路径，同时允许新协调流程从 `main` 部署。`production-publish`、`data-deletion`
+  仍只允许 `main`。前两个 Environment 用于隔离 Pages/渠道凭据但不要求人工审批；
+  `data-deletion` 把仓库 owner 配为
   required reviewer，且 `prevent_self_review=false`，在单维护者仓库中仍保留一次显式 Environment
   审批而不自锁。若后续增加独立管理员，应把它改为独立 reviewer 并开启禁止自审。
 

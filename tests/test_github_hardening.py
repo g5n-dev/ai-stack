@@ -170,6 +170,10 @@ def test_expected_configuration_encodes_the_repository_security_contract() -> No
 
     backup_rules = rulesets["ai-stack/backup-tags-v1"]
     assert backup_rules["target"] == "tag"
+    assert backup_rules["conditions"]["ref_name"]["include"] == [
+        "refs/tags/backup-*",
+        "refs/tags/content-seed-*",
+    ]
     assert {rule["type"] for rule in backup_rules["rules"]} == {"deletion", "update"}
 
     environments = {item["name"]: item for item in expected["environments"]}  # type: ignore[index]
@@ -177,10 +181,16 @@ def test_expected_configuration_encodes_the_repository_security_contract() -> No
     assert environments["data-deletion"]["reviewers"] == [
         {"type": "User", "id": OWNER_ID}
     ]
-    assert all(
-        environment["deployment_branch_policies"] == [{"name": "main", "type": "branch"}]
-        for environment in environments.values()
-    )
+    assert environments["github-pages"]["deployment_branch_policies"] == [
+        {"name": "gh-pages", "type": "branch"},
+        {"name": "main", "type": "branch"},
+    ]
+    assert environments["production-publish"]["deployment_branch_policies"] == [
+        {"name": "main", "type": "branch"}
+    ]
+    assert environments["data-deletion"]["deployment_branch_policies"] == [
+        {"name": "main", "type": "branch"}
+    ]
 
 
 def test_collect_snapshot_is_canonical_and_treats_immutable_404_as_disabled() -> None:
@@ -452,6 +462,73 @@ def test_unapproved_managed_environment_policy_is_reported_and_blocks_apply() ->
             expected_snapshot_digest=snapshot_digest(snapshot),
         )
     assert api.writes == []
+
+
+def test_existing_github_pages_and_main_policies_are_managed_as_an_unordered_set() -> None:
+    environment = {
+        "id": 502,
+        "name": "github-pages",
+        "protection_rules": [],
+        "deployment_branch_policy": {
+            "protected_branches": False,
+            "custom_branch_policies": True,
+        },
+    }
+    responses = _base_responses(environments=[environment])
+    policies_endpoint = (
+        f"/repos/{REPOSITORY}/environments/github-pages/deployment-branch-policies"
+        "?per_page=100&page=1"
+    )
+    responses[("GET", policies_endpoint)] = {
+        "total_count": 2,
+        "branch_policies": [
+            {"id": 2, "name": "main", "type": "branch"},
+            {"id": 1, "name": "gh-pages", "type": "branch"},
+        ],
+    }
+    snapshot = collect_snapshot(FakeGitHubApi(responses), REPOSITORY)
+
+    plan = build_plan(snapshot, _expected_config())
+    operations = plan["operations"]
+    assert isinstance(operations, list)
+
+    assert plan["unmanaged_environment_policies"] == []
+    assert not any(
+        operation["id"].startswith("environment/github-pages/branch-policy/")
+        for operation in operations
+    )
+
+
+def test_expected_contract_rejects_missing_pages_or_content_seed_protection() -> None:
+    _, snapshot = _snapshot()
+
+    missing_pages_policy = copy.deepcopy(_expected_config())
+    environments = missing_pages_policy["environments"]
+    assert isinstance(environments, list)
+    github_pages = next(
+        environment
+        for environment in environments
+        if isinstance(environment, dict) and environment.get("name") == "github-pages"
+    )
+    github_pages["deployment_branch_policies"] = [{"name": "main", "type": "branch"}]
+    with pytest.raises(GitHubHardeningError, match="environment github-pages policy"):
+        build_plan(snapshot, missing_pages_policy)
+
+    missing_content_seed = copy.deepcopy(_expected_config())
+    rulesets = missing_content_seed["rulesets"]
+    assert isinstance(rulesets, list)
+    backup_ruleset = next(
+        ruleset
+        for ruleset in rulesets
+        if isinstance(ruleset, dict) and ruleset.get("name") == "ai-stack/backup-tags-v1"
+    )
+    conditions = backup_ruleset["conditions"]
+    assert isinstance(conditions, dict)
+    ref_name = conditions["ref_name"]
+    assert isinstance(ref_name, dict)
+    ref_name["include"] = ["refs/tags/backup-*"]
+    with pytest.raises(GitHubHardeningError, match="backup-tags-v1 ref scope"):
+        build_plan(snapshot, missing_content_seed)
 
 
 def test_named_rulesets_are_idempotently_updated_or_created_without_touching_others() -> None:

@@ -72,7 +72,7 @@
       "bypass_actors": [],
       "conditions": {
         "ref_name": {
-          "include": ["refs/tags/backup-*"],
+          "include": ["refs/tags/backup-*", "refs/tags/content-seed-*"],
           "exclude": []
         }
       },
@@ -95,7 +95,10 @@
         "protected_branches": false,
         "custom_branch_policies": true
       },
-      "deployment_branch_policies": [{"name": "main", "type": "branch"}]
+      "deployment_branch_policies": [
+        {"name": "gh-pages", "type": "branch"},
+        {"name": "main", "type": "branch"}
+      ]
     },
     {
       "name": "production-publish",
