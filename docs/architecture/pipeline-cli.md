@@ -163,6 +163,7 @@ uv run python scripts/shadow_full_build.py \
   --command-input pagefind_config=pagefind.yml \
   --command-input catalog_wrapper=scripts/build_pagefind_catalog.py \
   --command-input catalog_core=ai_stack/pagefind_catalog.py \
+  --command-input release_basis=build-handoff/state/release-basis.json \
   --report full-shadow-report.json \
   --code-sha CODE_SHA --content-sha CONTENT_SHA \
   --evidence-root OPS_LEDGER/ops/migrations/shadow \
@@ -171,10 +172,11 @@ uv run python scripts/shadow_full_build.py \
 ```
 
 `--pagefind-runner` must name the resolved regular runner file, not a symlink.
-The command hashes the package lock, runner, command argv, Pagefind config, and
-every named wrapper/catalog input; verifies the exact Pagefind and platform
-package versions and npm integrity values; and rejects duplicate input names or
-symlinked path components. It never executes the recorded command: callers
+The command hashes the package lock, runner, command argv, Pagefind config,
+package and catalog code, and the exact generated release basis; verifies the
+exact Pagefind and platform package versions and npm integrity values; and
+rejects duplicate input names or symlinked path components. It never executes
+the recorded command: callers
 first build the production-format bundle, including catalog generation and
 fragment removal when configured, and then attest that exact directory. It
 verifies an additive-only injection: no pre-existing
