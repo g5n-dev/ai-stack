@@ -16,9 +16,19 @@ def test_article_template_has_a_script_csp_and_no_unsafe_content_cast() -> None:
     template = (
         ROOT / "blog" / "themes" / "terminal-theme" / "layouts" / "_default" / "single.html"
     ).read_text(encoding="utf-8")
+    shared_head = (
+        ROOT
+        / "blog"
+        / "themes"
+        / "terminal-theme"
+        / "layouts"
+        / "partials"
+        / "site-head.html"
+    ).read_text(encoding="utf-8")
 
-    assert 'http-equiv="Content-Security-Policy"' in template
-    assert "script-src 'self'" in template
+    assert 'partial "site-head.html"' in template
+    assert 'http-equiv="Content-Security-Policy"' in shared_head
+    assert "script-src 'self'" in shared_head
     assert "safeHTML" not in template
     assert "cdn.tailwindcss.com" not in template
     assert "fonts.googleapis.com" not in template

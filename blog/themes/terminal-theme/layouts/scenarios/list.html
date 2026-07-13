@@ -2,71 +2,7 @@
 <html class="dark" lang="{{ .Site.LanguageCode }}">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{ .Title }} - {{ .Site.Title }}</title>
-    <meta name="description" content="NEXUS ARCHIVE - Knowledge Graph Visualization" />
-    <link rel="canonical" href="{{ .Permalink }}" />
-    <meta property="og:site_name" content="{{ .Site.Title }}" />
-    <meta property="og:title" content="{{ .Title }} - {{ .Site.Title }}" />
-    <meta property="og:description" content="NEXUS ARCHIVE - Knowledge Graph Visualization" />
-    <meta property="og:url" content="{{ .Permalink }}" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image"
-        content="{{ (.Site.Params.default_og_image | default .Site.Params.profile_image | default `/img/profile-holo.png`) | absURL }}" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="{{ .Title }} - {{ .Site.Title }}" />
-    <meta name="twitter:description" content="NEXUS ARCHIVE - Knowledge Graph Visualization" />
-    <meta name="twitter:image"
-        content="{{ (.Site.Params.default_og_image | default .Site.Params.profile_image | default `/img/profile-holo.png`) | absURL }}" />
-    {{ with .Site.Params.twitter }}
-    <meta name="twitter:site" content="{{ . }}" />{{ end }}
-
-    <link href="https://fonts.googleapis.com" rel="preconnect" />
-    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"
-        rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
-
-    <script src="https://unpkg.com/cytoscape@3.29.2/dist/cytoscape.min.js"></script>
-    <script src="/js/layout-base.js"></script>
-    <script src="/js/cose-base.js"></script>
-    <script src="/js/cytoscape-cose-bilkent.js"></script>
-    <script src="https://unpkg.com/dagre@0.8.5/dist/dagre.min.js"></script>
-    <script src="/js/cytoscape-dagre.js"></script>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-
-    <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#4db6ac",
-                        "deep-navy": "#060a14",
-                        "muted-teal": "#26a69a",
-                        "off-white": "#d1d5db",
-                        "terminal-bg": "#0a111a",
-                        "surface-dark": "#0a111a",
-                        "surface-border": "#152232",
-                    },
-                    fontFamily: {
-                        "display": ["Space Grotesk", "Noto Sans SC", "ui-sans-serif", "system-ui", "sans-serif"],
-                        "mono": ["Space Mono", "ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", "Noto Sans SC", "monospace"],
-                    },
-                    backgroundImage: {
-                        'grid-pattern': "linear-gradient(to right, #152626 1px, transparent 1px), linear-gradient(to bottom, #152626 1px, transparent 1px)",
-                    }
-                },
-            },
-        }
-    </script>
-
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/graph.css" />
+    {{ partial "site-head.html" (dict "Page" . "Description" "NEXUS ARCHIVE - Knowledge Graph Visualization" "Styles" (slice "/css/graph.css")) }}
 
     <style>
         @keyframes rain-fall {
@@ -144,8 +80,6 @@
         }
     </style>
 
-    <script src="/js/cytoscape-graph-engine.js"></script>
-    <script src="/js/cytoscape-graph-renderer.js"></script>
 </head>
 
 <body
@@ -228,14 +162,14 @@
             <!-- Graph Viewport -->
             <div class="absolute inset-0 z-10 overflow-hidden flex items-center justify-center" id="graph-viewport">
                 <div id="graph-container" class="graph-container">
-                    <!-- D3 Canvas will be injected here -->
+                    <!-- Graph UI 2.0 is integrated from its protected branch after the static product cutover. -->
                     <div id="graph-loading"
-                        class="absolute inset-0 flex items-center justify-center pointer-events-none z-50">
+                        class="absolute inset-0 flex items-center justify-center pointer-events-none z-50"
+                        role="status" aria-live="polite">
                         <div
                             class="flex flex-col items-center gap-3 bg-background-dark/80 p-6 rounded-lg border border-surface-border backdrop-blur-md">
-                            <div class="loader-ring"></div>
                             <span
-                                class="text-primary/60 text-xs font-mono tracking-widest blink">INITIALIZING_NEURAL_LINK...</span>
+                                class="text-primary/60 text-xs font-mono tracking-widest">GRAPH_UI_PENDING_INTEGRATION</span>
                         </div>
                     </div>
                 </div>
@@ -273,7 +207,7 @@
                     <div class="flex items-center gap-2">
                         <span
                             class="w-1.5 h-1.5 rounded-full bg-primary/80 shadow-[0_0_10px_rgba(77,182,172,0.45)]"></span>
-                        <span id="story-status" class="text-[10px] font-mono text-primary/60 tracking-wider">LIVE</span>
+                        <span id="story-status" class="text-[10px] font-mono text-primary/60 tracking-wider">SNAPSHOT</span>
                     </div>
                 </div>
                 <div class="h-px w-full bg-gradient-to-r from-muted-teal/25 to-transparent"></div>
@@ -374,7 +308,7 @@
                     <!-- Metrics -->
                     <div class="space-y-2">
                         <div class="flex justify-between text-[10px] text-primary font-mono">
-                            <span>DATA_INTEGRITY</span>
+                            <span>DATA_CHECKSUM</span>
                             <span>98.4%</span>
                         </div>
                         <div class="h-1 w-full bg-surface-border rounded-full overflow-hidden">
@@ -424,237 +358,6 @@
         </main>
     </div>
 
-    <!-- Init Script -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const container = document.getElementById('graph-container');
-            const loading = document.getElementById('graph-loading');
-            const timeEl = document.getElementById("current-time");
-            const abortController = new AbortController();
-            let disposed = false;
-            let timeTimer = null;
-            let dataWorker = null;
-
-            function hardDispose() {
-                if (disposed) return;
-                disposed = true;
-                abortController.abort();
-                if (dataWorker) {
-                    dataWorker.terminate();
-                    dataWorker = null;
-                }
-                if (timeTimer) {
-                    clearInterval(timeTimer);
-                    timeTimer = null;
-                }
-                if (window.graphRenderer && typeof window.graphRenderer.destroy === "function") {
-                    window.graphRenderer.destroy();
-                }
-                if (window.graphEngine && typeof window.graphEngine.destroy === "function") {
-                    window.graphEngine.destroy();
-                }
-                window.graphRenderer = null;
-                window.graphEngine = null;
-            }
-
-            function softPause() {
-                if (timeTimer) {
-                    clearInterval(timeTimer);
-                    timeTimer = null;
-                }
-                if (window.graphEngine && typeof window.graphEngine.pause === "function") {
-                    window.graphEngine.pause();
-                }
-            }
-
-            function softResume() {
-                if (disposed) return;
-                updateCurrentTime();
-                if (!timeTimer) {
-                    timeTimer = setInterval(updateCurrentTime, 1000);
-                }
-                if (window.graphEngine && typeof window.graphEngine.resume === "function") {
-                    window.graphEngine.resume();
-                }
-            }
-
-            window.addEventListener("pagehide", (e) => {
-                if (e && e.persisted) {
-                    softPause();
-                    return;
-                }
-                hardDispose();
-            });
-
-            window.addEventListener("pageshow", (e) => {
-                if (e && e.persisted) {
-                    softResume();
-                }
-            });
-
-            // Critical Check: Container
-            if (!container) {
-                console.error("CRITICAL ERROR: DOM element #graph-container not found. Graph cannot render.");
-                return;
-            }
-
-            // Non-Critical Check: Loading Overlay
-            if (!loading) {
-                console.warn("WARNING: DOM element #graph-loading not found. Loading state will not be visible.");
-            }
-
-            // Safe accessor for loading sub-elements
-            const loadingMsg = loading ? loading.querySelector('span') : null;
-            const loader = loading ? loading.querySelector('.loader-ring') : null;
-
-            function showError(msg) {
-                console.error(msg);
-                if (loadingMsg) {
-                    loadingMsg.textContent = "ERR: " + msg;
-                    loadingMsg.className = "text-red-500 text-xs font-mono tracking-widest";
-                }
-                if (loader) {
-                    loader.style.borderColor = '#ef4444';
-                    loader.style.borderLeftColor = 'transparent';
-                    loader.classList.remove('animate-spin');
-                }
-            }
-
-            if (typeof CytoscapeGraphEngine === 'undefined') {
-                showError("CytoscapeGraphEngine Script Load Failed.");
-                return;
-            }
-
-            function updateCurrentTime() {
-                if (!timeEl) return;
-                const now = new Date();
-                const year = now.getFullYear();
-                const month = String(now.getMonth() + 1).padStart(2, "0");
-                const day = String(now.getDate()).padStart(2, "0");
-                const hours = String(now.getHours()).padStart(2, "0");
-                const minutes = String(now.getMinutes()).padStart(2, "0");
-                const seconds = String(now.getSeconds()).padStart(2, "0");
-                timeEl.textContent = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
-            }
-
-            updateCurrentTime();
-            timeTimer = setInterval(updateCurrentTime, 1000);
-
-            function loadJsonWithWorker(url, label) {
-                return new Promise((resolve, reject) => {
-                    const w = new Worker('/js/data-parser-worker.js');
-                    w.onmessage = function (e) {
-                        const { type, data, error, progress } = e.data || {};
-                        if (type === 'progress') {
-                            if (loadingMsg) {
-                                const p = typeof progress === "number" ? progress : 0;
-                                loadingMsg.textContent = `${label || "LOADING"}... ${p}%`;
-                            }
-                            return;
-                        }
-                        if (type === 'parsing') {
-                            if (loadingMsg) loadingMsg.textContent = `${label || "PARSING"}...`;
-                            return;
-                        }
-                        if (type === 'success') {
-                            w.terminate();
-                            resolve(data);
-                            return;
-                        }
-                        if (type === 'error') {
-                            w.terminate();
-                            reject(new Error(error || "Data Load Failed"));
-                        }
-                    };
-                    w.onerror = function (err) {
-                        w.terminate();
-                        reject(err);
-                    };
-                    w.postMessage({ url });
-                });
-            }
-
-            window.dataWorkerFactory = function (url) {
-                return loadJsonWithWorker(url);
-            };
-
-            const splitBaseUrl = "/data/tag-graph/";
-
-            if (loadingMsg) loadingMsg.textContent = "BOOTSTRAP...";
-
-            fetch(`${splitBaseUrl}index.json`)
-                .then(r => {
-                    if (!r.ok) throw new Error(`HTTP error! status: ${r.status}`);
-                    return r.json();
-                })
-                .then(async (index) => {
-                    if (!index || disposed) return;
-                    const files = index?.files || {};
-                    const layers = index?.layers || {};
-                    const defaults = index?.defaults || {};
-
-                    const coreUrl = `${splitBaseUrl}${files.core || "core.json"}`;
-                    const tagHotUrl = `${splitBaseUrl}${files.tagHot || "tag.hot.json"}`;
-                    const conceptHotUrl = `${splitBaseUrl}${files.conceptHot || "concept.hot.json"}`;
-
-                    const core = await loadJsonWithWorker(coreUrl, "LOADING CORE");
-                    if (disposed) return;
-
-                    const initData = {
-                        nodes: Array.isArray(core?.nodes) ? core.nodes : [],
-                        links: Array.isArray(core?.links) ? core.links : [],
-                        layers: layers,
-                        split_base_url: splitBaseUrl,
-                        split_files: files,
-                        initial_visible_layers: defaults?.initial_visible_layers || [],
-                        full_layers: ["language", "framework", "model", "application", "scenario"]
-                    };
-
-                    try {
-                        if (window.graphEngine && typeof window.graphEngine.destroy === "function") {
-                            window.graphEngine.destroy();
-                        }
-                        window.graphEngine = new CytoscapeGraphEngine(container, initData);
-
-                        if (typeof CytoscapeGraphRenderer !== 'undefined') {
-                            if (window.graphRenderer && typeof window.graphRenderer.destroy === "function") {
-                                window.graphRenderer.destroy();
-                            }
-                            window.graphRenderer = new CytoscapeGraphRenderer(window.graphEngine);
-                        }
-                    } catch (initErr) {
-                        showError(initErr.message);
-                        console.error("Graph Init Error:", initErr);
-                        return;
-                    }
-
-                    try {
-                        const [tagHot, conceptHot] = await Promise.all([
-                            loadJsonWithWorker(tagHotUrl, "LOADING HOT TAGS"),
-                            loadJsonWithWorker(conceptHotUrl, "LOADING HOT CONCEPTS")
-                        ]);
-                        if (disposed) return;
-                        if (window.graphEngine && typeof window.graphEngine.addGraphData === "function") {
-                            window.graphEngine.addGraphData(tagHot || {});
-                            window.graphEngine.addGraphData(conceptHot || {});
-                        }
-                    } catch (hotErr) {
-                        console.warn("Hot Data Load Failed:", hotErr);
-                    }
-
-                    if (loading) {
-                        loading.classList.add('opacity-0', 'transition-opacity', 'duration-500');
-                        setTimeout(() => loading.remove(), 500);
-                    }
-                })
-                .catch(error => {
-                    if (disposed) return;
-                    if (error && error.name === "AbortError") return;
-                    showError(error.message || "Data Load Failed");
-                    console.error("Graph Error:", error);
-                });
-        });
-    </script>
 </body>
 
 </html>
