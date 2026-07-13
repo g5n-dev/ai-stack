@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* The former Google Material Symbols font was remote executable styling.
+   Keep labels out of the visual flow until icons are replaced with local SVG. */
+.material-symbols-outlined {
+  font-size: 0;
+}

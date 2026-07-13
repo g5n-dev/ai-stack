@@ -39,7 +39,7 @@ paginate = 10
 paginatePath = "page"
 
 [params.comments]
-enabled = true
+enabled = false
 provider = "utterances"   # GitHub Issues
 repo = "g5n-dev/ai-stack"
 issue_term = "pathname"
@@ -54,7 +54,7 @@ lineNumbersInTable = true
 noClasses = false
 
 [markup.goldmark.renderer]
-unsafe = true
+unsafe = false
 
 [taxonomies]
 tag = "tags"

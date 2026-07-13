@@ -219,6 +219,48 @@ class GenerateContentGuardsTest(unittest.TestCase):
         self.assertEqual(item["guard_dropped_sections"], ["engaging_intro", "deep_comment"])
         self.assertEqual(item["guard_failure_reason"], "guard_failed: engaging_intro, deep_comment")
 
+    def test_public_markdown_guard_accepts_safe_complete_document(self):
+        document = (
+            "---\n"
+            "title: Safe post\n"
+            "date: 2026-07-13\n"
+            "external_url: https://example.com/source\n"
+            "---\n\n"
+            "## Summary\n\n[Source](https://example.com/source)\n"
+        )
+
+        sanitized, removed = self.module.sanitize_public_markdown_text(text=document)
+
+        self.assertEqual(sanitized, document)
+        self.assertEqual(removed, 0)
+
+    def test_public_markdown_guard_fails_closed_before_write(self):
+        document = (
+            "---\n"
+            "title: Unsafe post\n"
+            "date: 2026-07-13\n"
+            "---\n\n"
+            "[click](javascript:alert(1))\n"
+        )
+
+        with self.assertRaisesRegex(ValueError, "unsafe-url"):
+            self.module.sanitize_public_markdown_text(text=document)
+
+    def test_related_post_links_do_not_emit_hugo_shortcodes(self):
+        generator = self.module.SuperEnhancedContentGenerator.__new__(
+            self.module.SuperEnhancedContentGenerator
+        )
+
+        link = generator._relref(
+            "posts/20260713-hacker_news-safe-project-0.md"
+        )
+
+        self.assertEqual(
+            link,
+            "/posts/20260713-hacker_news-safe-project-0/",
+        )
+        self.assertNotIn("{{", link)
+
 
 if __name__ == "__main__":
     unittest.main()
