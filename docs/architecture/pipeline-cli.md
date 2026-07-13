@@ -92,5 +92,40 @@ ai-stack migrate restore SOURCE_ROOT --target-root TARGET_ROOT
 
 All default to dry-run. `--execute` requires `--expected-source-sha`,
 `--backup-id`, and `--max-changes`. Seed and restore never overwrite or delete a
-file. Dedupe execution remains blocked until 24 shadow runs and the seven-day
-soak gate have actually completed.
+file. Dedupe additionally caps `--max-changes` at 100 and requires an exact
+`--shadow-evidence-root` from the `ops` ledger.
+
+Each shadow comparison can append an audit record while retaining the existing
+standalone report:
+
+```text
+uv run python scripts/shadow_compare.py \
+  --baseline legacy-public --candidate ledger-public \
+  --report shadow-report.json \
+  --code-sha CODE_SHA --content-sha CONTENT_SHA \
+  --evidence-root OPS_LEDGER/ops/migrations/shadow \
+  --run-id RUN_ID --completed-at 2026-07-13T08:00:00Z \
+  --full-build --expected-previous-digest PREVIOUS_SHA256
+```
+
+Omit `--expected-previous-digest` only for the first record. Reports live under
+`reports/<sha256>.json`; ordered records live under
+`records/<sequence>-<sha256>.json` and bind the previous record digest. Both are
+canonical JSON and append-only. A mismatch is recorded as `FAILED`, resets the
+current success window, and can never count toward the gate. Duplicate run IDs,
+timestamp reordering, future timestamps, chain gaps, report tampering, and
+code/content SHA mismatches fail closed.
+
+`ai-stack migrate dedupe --shadow-evidence-root ...` reports three independently
+verified thresholds: 24 consecutive successful runs, three successful full-tree
+build comparisons, and seven elapsed days since the start of the uninterrupted
+window. The latest evidence must bind the requested source SHA. Passing these
+checks does **not** mutate content in this release: the dedupe mutation engine is
+intentionally absent, so `--execute` stops after validation with zero changes.
+
+The filesystem hash chain detects mutation relative to its anchored head; it
+cannot by itself prove that an untrusted producer actually executed a build.
+Production use therefore still requires the protected `ops` writer, Git
+fast-forward/CAS, validated cross-job artifacts, and an externally retained head
+digest. Removing old records also requires a separately signed archive anchor;
+the current verifier expects an unbroken chain beginning at sequence 1.

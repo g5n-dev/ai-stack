@@ -7,10 +7,16 @@ import re
 import stat
 import subprocess
 import tempfile
+from datetime import datetime
 from pathlib import Path
 from typing import Any
 
 from .inventory import scan_markdown_inventory
+from .shadow_evidence import (
+    ShadowEvidenceError,
+    ShadowGateResult,
+    evaluate_shadow_gate,
+)
 from .stores import UnsafeStorePathError
 
 _GIT_SHA = re.compile(r"^[0-9a-f]{40}$")
@@ -236,10 +242,85 @@ def copy_content_migration(
     }
 
 
-def dedupe_plan(content_root: Path) -> dict[str, Any]:
+def _verified_shadow_gate(
+    evidence_root: Path,
+    *,
+    expected_content_sha: str | None,
+    as_of: datetime | None = None,
+) -> ShadowGateResult:
+    try:
+        return evaluate_shadow_gate(
+            evidence_root,
+            as_of=as_of,
+            expected_content_sha=expected_content_sha,
+        )
+    except ShadowEvidenceError as exc:
+        raise MigrationSafetyError(f"shadow migration evidence is invalid: {exc}") from exc
+
+
+def validate_dedupe_execution_gate(
+    *,
+    content_root: Path,
+    expected_source_sha: str | None,
+    backup_id: str | None,
+    max_changes: int | None,
+    shadow_evidence_root: Path | None,
+    as_of: datetime | None = None,
+) -> ShadowGateResult:
+    """Validate every prerequisite without performing a dedupe mutation."""
+
+    validate_execution_gate(
+        execute=True,
+        expected_source_sha=expected_source_sha,
+        backup_id=backup_id,
+        max_changes=max_changes,
+        actual_source_sha=source_revision(content_root),
+    )
+    if (
+        not isinstance(max_changes, int)
+        or isinstance(max_changes, bool)
+        or not 1 <= max_changes <= 100
+    ):
+        raise MigrationSafetyError("dedupe --max-changes must be between 1 and 100")
+    if shadow_evidence_root is None:
+        raise MigrationSafetyError("dedupe --execute requires --shadow-evidence-root")
+    assert isinstance(expected_source_sha, str)
+    gate = _verified_shadow_gate(
+        shadow_evidence_root,
+        expected_content_sha=expected_source_sha.casefold(),
+        as_of=as_of,
+    )
+    if not gate.ready:
+        raise MigrationSafetyError(
+            "dedupe shadow/soak gate is not satisfied: " + ", ".join(gate.reasons)
+        )
+    return gate
+
+
+def dedupe_plan(
+    content_root: Path,
+    *,
+    shadow_evidence_root: Path | None = None,
+    expected_source_sha: str | None = None,
+    as_of: datetime | None = None,
+) -> dict[str, Any]:
     report = scan_markdown_inventory(content_root, dry_run=True)
     report["migration"] = "dedupe"
-    report["execution_blocked"] = "requires_24_shadow_runs_and_7_day_soak"
+    if shadow_evidence_root is None:
+        report["shadow_gate"] = None
+        report["execution_blocked"] = "requires_24_shadow_runs_and_7_day_soak"
+    else:
+        gate = _verified_shadow_gate(
+            shadow_evidence_root,
+            expected_content_sha=expected_source_sha,
+            as_of=as_of,
+        )
+        report["shadow_gate"] = gate.to_dict()
+        report["execution_blocked"] = (
+            "dedupe_mutation_not_implemented"
+            if gate.ready
+            else "requires_24_shadow_runs_3_full_builds_and_7_day_soak"
+        )
     report["mutation_performed"] = False
     return report
 
@@ -249,5 +330,6 @@ __all__ = [
     "copy_content_migration",
     "dedupe_plan",
     "source_revision",
+    "validate_dedupe_execution_gate",
     "validate_execution_gate",
 ]
