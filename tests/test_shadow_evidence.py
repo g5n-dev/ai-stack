@@ -246,13 +246,46 @@ def test_tampering_gaps_and_current_content_mismatch_are_rejected(tmp_path: Path
         load_shadow_evidence(clean, as_of=NOW)
 
 
-def test_full_build_requires_a_successful_nonempty_html_comparison(tmp_path: Path) -> None:
+def test_failed_full_build_is_recorded_and_resets_the_gate(tmp_path: Path) -> None:
     failed = _report(tmp_path, "mismatch", matches=False)
+    root = tmp_path / "evidence"
+    record = append_shadow_evidence(
+        root,
+        report=failed,
+        run_id="failed-full",
+        completed_at=NOW - timedelta(hours=1),
+        full_build=True,
+        code_sha=CODE_SHA,
+        content_sha=CONTENT_SHA,
+        expected_previous_digest=None,
+        now=NOW,
+    )
+
+    gate = evaluate_shadow_gate(root, as_of=NOW, expected_content_sha=CONTENT_SHA)
+    assert record.status == "FAILED"
+    assert record.full_build is True
+    assert gate.consecutive_successful_runs == 0
+    assert gate.full_build_count == 0
+    assert "latest_shadow_run_failed" in gate.reasons
+
+
+def test_successful_full_build_requires_a_nonempty_html_comparison(tmp_path: Path) -> None:
+    baseline = tmp_path / "empty/baseline"
+    candidate = tmp_path / "empty/candidate"
+    baseline.mkdir(parents=True)
+    candidate.mkdir(parents=True)
+    empty = compare_trees(
+        baseline,
+        candidate,
+        code_sha=CODE_SHA,
+        content_sha=CONTENT_SHA,
+    )
+
     with pytest.raises(ShadowEvidenceError, match="full build"):
         append_shadow_evidence(
-            tmp_path / "evidence",
-            report=failed,
-            run_id="failed-full",
+            tmp_path / "empty-evidence",
+            report=empty,
+            run_id="empty-full",
             completed_at=NOW - timedelta(hours=1),
             full_build=True,
             code_sha=CODE_SHA,

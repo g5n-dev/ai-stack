@@ -432,9 +432,10 @@ def _load_records(root: Path, *, as_of: datetime) -> tuple[ShadowEvidenceRecord,
         expected_status = "SUCCEEDED" if matches else "FAILED"
         if status != expected_status:
             raise ShadowEvidenceError(f"shadow evidence status contradicts its report: {run_id}")
-        if full_build and (
-            status != "SUCCEEDED"
-            or not _successful_report_is_nonempty(reports[report_digest])
+        if (
+            full_build
+            and status == "SUCCEEDED"
+            and not _successful_report_is_nonempty(reports[report_digest])
         ):
             raise ShadowEvidenceError(
                 "full build evidence requires a successful nonempty HTML tree"
@@ -516,9 +517,10 @@ def append_shadow_evidence(
 
         matches = _validate_report(report, code_sha=code_sha, content_sha=content_sha)
         status = "SUCCEEDED" if matches else "FAILED"
-        if full_build and (
-            status != "SUCCEEDED"
-            or not _successful_report_is_nonempty(report)
+        if (
+            full_build
+            and status == "SUCCEEDED"
+            and not _successful_report_is_nonempty(report)
         ):
             raise ShadowEvidenceError(
                 "full build evidence requires a successful nonempty HTML tree"

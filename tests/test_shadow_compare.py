@@ -175,6 +175,45 @@ def test_cli_can_append_comparison_to_content_addressed_evidence_chain(
     assert records[0].content_sha == "b" * 40
 
 
+def test_cli_records_a_failed_full_build_before_returning_mismatch(
+    tmp_path: Path,
+) -> None:
+    baseline = tmp_path / "baseline"
+    candidate = tmp_path / "candidate"
+    _site(baseline)
+    _site(candidate, title="changed")
+    evidence = tmp_path / "ops/shadow"
+
+    assert (
+        main(
+            [
+                "--baseline",
+                str(baseline),
+                "--candidate",
+                str(candidate),
+                "--report",
+                str(tmp_path / "report.json"),
+                "--code-sha",
+                "a" * 40,
+                "--content-sha",
+                "b" * 40,
+                "--evidence-root",
+                str(evidence),
+                "--run-id",
+                "failed-full-build",
+                "--completed-at",
+                "2026-07-13T08:00:00Z",
+                "--full-build",
+            ]
+        )
+        == 2
+    )
+    records = load_shadow_evidence(evidence)
+    assert len(records) == 1
+    assert records[0].status == "FAILED"
+    assert records[0].full_build is True
+
+
 def test_cli_requires_complete_evidence_identity_and_rejects_replay(
     tmp_path: Path,
 ) -> None:
