@@ -41,8 +41,12 @@ MAX_TOTAL_FRAGMENT_COMPRESSED_BYTES = 256 * 1024 * 1024
 MAX_CATALOG_BYTES = 32 * 1024 * 1024
 MAX_CATALOG_GZIP_BYTES = 1024 * 1024
 MAX_MANIFEST_BYTES = 128 * 1024
+CATALOG_GZIP_LEVEL = 6
 
-_FRAGMENT_ID = re.compile(r"[a-z0-9][a-z0-9-]{0,15}_[0-9a-f]{7}\Z")
+# Pagefind starts with seven hexadecimal hash characters and extends the hash
+# when two fragments collide.  Accept the complete SHA-1 suffix so a future
+# collision cannot make a valid index undeployable.
+_FRAGMENT_ID = re.compile(r"[a-z0-9][a-z0-9-]{0,15}_[0-9a-f]{7,40}\Z")
 _GIT_SHA = re.compile(r"(?:[0-9a-f]{40}|[0-9a-f]{64})\Z")
 _SHA256 = re.compile(r"[0-9a-f]{64}\Z")
 _SCHEMA_VERSION = re.compile(r"[1-9][0-9]*\.[0-9]+\Z")
@@ -791,7 +795,9 @@ def verify_catalog_artifact(
         raise PagefindCatalogError("catalog digest does not match its manifest")
     if manifest.get("catalog_bytes") != len(catalog_bytes):
         raise PagefindCatalogError("catalog byte count does not match its manifest")
-    gzip_bytes = len(gzip.compress(catalog_bytes, compresslevel=9, mtime=0))
+    gzip_bytes = len(
+        gzip.compress(catalog_bytes, compresslevel=CATALOG_GZIP_LEVEL, mtime=0)
+    )
     if gzip_bytes > MAX_CATALOG_GZIP_BYTES or manifest.get("catalog_gzip_bytes") != gzip_bytes:
         raise PagefindCatalogError("catalog gzip size does not match its manifest")
 
@@ -888,7 +894,9 @@ def convert_pagefind_fragments(
     catalog_bytes = _canonical_json(catalog_payload)
     if len(catalog_bytes) > MAX_CATALOG_BYTES:
         raise PagefindCatalogError("catalog size exceeds the safety limit")
-    catalog_gzip_bytes = len(gzip.compress(catalog_bytes, compresslevel=9, mtime=0))
+    catalog_gzip_bytes = len(
+        gzip.compress(catalog_bytes, compresslevel=CATALOG_GZIP_LEVEL, mtime=0)
+    )
     if catalog_gzip_bytes > MAX_CATALOG_GZIP_BYTES:
         raise PagefindCatalogError("catalog gzip size exceeds the safety limit")
     catalog_digest = hashlib.sha256(catalog_bytes).hexdigest()

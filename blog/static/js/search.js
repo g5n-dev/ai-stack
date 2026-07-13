@@ -24,7 +24,7 @@
   const MAX_SUGGESTIONS = 100;
   const MAX_CATALOG_RECORDS = 20000;
   const CATALOG_SCHEMA_VERSION = "pagefind_result_catalog_v1";
-  const FRAGMENT_ID = /^[a-z0-9][a-z0-9-]{0,15}_[0-9a-f]{7}$/u;
+  const FRAGMENT_ID = /^[a-z0-9][a-z0-9-]{0,15}_[0-9a-f]{7,40}$/u;
   const SHA256 = /^[0-9a-f]{64}$/u;
   const GIT_SHA = /^(?:[0-9a-f]{40}|[0-9a-f]{64})$/u;
 

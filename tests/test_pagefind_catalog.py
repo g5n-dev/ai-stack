@@ -140,6 +140,19 @@ def test_converts_complete_catalog_binds_basis_then_removes_only_fragments(
     assert verify_catalog_artifact(catalog_path, manifest_path) == report
 
 
+def test_accepts_pagefind_hashes_extended_after_a_short_hash_collision(
+    tmp_path: Path,
+) -> None:
+    public = tmp_path / "public"
+    extended_id = "zh-cn_123abcde"
+    _write_fragment(public, fragment_id=extended_id)
+
+    convert_pagefind_fragments(public, code_sha=CODE_SHA, content_sha=CONTENT_SHA)
+
+    catalog = json.loads((public / "pagefind/catalog.json").read_text(encoding="utf-8"))
+    assert extended_id in catalog["records"]
+
+
 @pytest.mark.parametrize(
     "url",
     [
