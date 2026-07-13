@@ -9,6 +9,7 @@
   "devDependencies": {
     "@tailwindcss/forms": "0.5.11",
     "@tailwindcss/typography": "0.5.20",
+    "axe-core": "4.12.1",
     "pagefind": "1.5.2",
     "tailwindcss": "3.4.17"
   }

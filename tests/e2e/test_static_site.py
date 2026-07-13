@@ -12,6 +12,9 @@ import pytest
 from bs4 import BeautifulSoup
 from playwright.sync_api import Browser, Page, Request, expect, sync_playwright
 
+ROOT = Path(__file__).resolve().parents[2]
+AXE_SCRIPT = ROOT / "node_modules" / "axe-core" / "axe.min.js"
+
 
 class _QuietStaticHandler(SimpleHTTPRequestHandler):
     def log_message(self, format: str, *args: object) -> None:  # noqa: A002
@@ -63,6 +66,9 @@ def browser() -> Generator[Browser, None, None]:
 @pytest.fixture
 def page(browser: Browser) -> Generator[Page, None, None]:
     context = browser.new_context(reduced_motion="reduce")
+    if not AXE_SCRIPT.is_file():
+        pytest.fail("npm ci must install the exact axe-core runtime before browser tests")
+    context.add_init_script(path=AXE_SCRIPT)
     page = context.new_page()
     try:
         yield page
@@ -144,6 +150,24 @@ def test_search_page_passes_basic_automated_wcag_checks(page: Page, site_url: st
     assert response is not None and response.ok
 
     assert _basic_wcag_violations(page) == []
+    violations = page.evaluate(
+        """
+        async () => {
+          const result = await axe.run(document, {
+            runOnly: {
+              type: "tag",
+              values: ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"],
+            },
+          });
+          return result.violations.map((violation) => ({
+            id: violation.id,
+            impact: violation.impact,
+            targets: violation.nodes.map((node) => node.target),
+          }));
+        }
+        """
+    )
+    assert violations == []
 
 
 def test_pagefind_index_contains_article_body_and_facets(public_dir: Path) -> None:
