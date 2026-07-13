@@ -38,10 +38,38 @@ python scripts/release_guard.py create \
 
 This command hashes a canonical manifest of the completed `blog/public` tree.
 The manifest is path-sorted and records each path, byte length, and SHA-256. Its
-digest is stored as `artifact_digest` with kind `public_tree_manifest_v1` in the
-external release descriptor. The transport tar SHA produced later by
+digest is stored as `artifact_digest` with kind `public_tree_manifest_v2` in the
+external release descriptor. Readers accept v2 and N-1 v1, but the descriptor
+kind must match the tree schema. The transport tar SHA produced later by
 `artifact_guard` remains a separate cross-permission transfer check; it is never
 used as the release artifact digest.
+
+Manifest v2 also binds the deployable HTML surface. `index.html` becomes `/`,
+`path/index.html` becomes `/path/`, and every other `.html` path becomes its
+absolute public path. `route_count` and the SHA-256 of the canonical sorted route
+array make route loss or addition visible independently of byte totals.
+
+The release guard models the Pages transport because the pinned
+[`actions/upload-pages-artifact` action](https://github.com/actions/upload-pages-artifact/blob/56afc609e74202658d3ffba0e8f6dda462b719fa/action.yml)
+first creates `artifact.tar` and then uploads that one file. The official pinned
+[`actions/upload-artifact` input contract](https://github.com/actions/upload-artifact/blob/ea165f8d65b6e75b540449e92b4886f43607fa02/action.yml)
+documents zlib level 6 as the default. The guard therefore creates a temporary,
+path-sorted tar (including root and directory entries) with fixed
+uid/gid/mode/time metadata and streams it into a
+single-member deterministic ZIP using DEFLATE level 6. This is a conservative
+pre-upload estimate, not a claim that its bytes are identical to GitHub's
+runner-side archive.
+
+All pre-existing limits remain fail-closed: regular non-executable files only,
+no symlinks or hardlinks, 16 MiB per file, and 256 MiB raw tree size. The file
+fuse is 30,000, with a separate 30,000-directory fuse; even the mandatory
+512-byte tar header per file is 14.65 MiB at that count, so the fuses bound
+traversal/inode and archive-header pressure. They are not artifact acceptance
+targets. The deterministic Pages estimate records
+`ok` below 90 MiB and `warning` from 90 MiB, and rejects 100 MiB or more. Every
+file is reopened with no-follow semantics and checked against its first-pass
+size, digest, inode, timestamps, mode, and link count; temporary tar/ZIP files
+are removed on success and failure.
 
 The release ID is independently derived from:
 
