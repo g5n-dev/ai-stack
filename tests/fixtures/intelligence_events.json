@@ -1,0 +1,144 @@
+{
+  "entities": [
+    {
+      "entity_id": "entity-openai",
+      "kind": "organization",
+      "name": "OpenAI"
+    },
+    {
+      "entity_id": "entity-agent-sdk",
+      "kind": "project",
+      "name": "Agent SDK"
+    },
+    {
+      "entity_id": "entity-context-protocol",
+      "kind": "concept",
+      "name": "Context Protocol"
+    }
+  ],
+  "events": [
+    {
+      "canonical_event_id": "evt-agent-1",
+      "entities": ["entity-agent-sdk"],
+      "event_id": "evt-agent-1",
+      "occurred_at": "2026-07-13T11:00:00Z",
+      "source": "github",
+      "source_weight": 1.0,
+      "status": "PERSISTED",
+      "tags": ["Agent"],
+      "title": "Agent SDK 发布新版本",
+      "topics": ["agents"],
+      "updated_at": "2026-07-13T11:10:00Z",
+      "url": "https://example.com/agent-sdk"
+    },
+    {
+      "canonical_event_id": "evt-agent-1",
+      "event_id": "observation-agent-1-hn",
+      "occurred_at": "2026-07-13T10:50:00Z",
+      "source": "github",
+      "source_weight": 1.0,
+      "status": "MERGED",
+      "topics": ["untrusted-topic"]
+    },
+    {
+      "canonical_event_id": "evt-agent-1",
+      "event_id": "observation-agent-1-rss",
+      "occurred_at": "2026-07-13T10:40:00Z",
+      "source": "github",
+      "source_weight": 1.0,
+      "status": "ALIAS",
+      "topics": ["untrusted-topic"]
+    },
+    {
+      "canonical_event_id": "evt-agent-2",
+      "entities": ["entity-openai"],
+      "event_id": "evt-agent-2",
+      "occurred_at": "2026-07-13T09:00:00Z",
+      "source": "arxiv",
+      "source_weight": 0.8,
+      "status": "VALIDATED",
+      "tags": ["Agent", "Research"],
+      "title": "Agent 规划论文",
+      "topics": ["agents", "llm"],
+      "updated_at": "2026-07-13T09:15:00Z",
+      "url": "https://example.com/agent-paper"
+    },
+    {
+      "canonical_event_id": "evt-agent-3",
+      "entities": ["entity-context-protocol"],
+      "event_id": "evt-agent-3",
+      "occurred_at": "2026-07-13T07:00:00Z",
+      "source": "blog",
+      "source_weight": 0.6,
+      "status": "HEALTHY",
+      "tags": ["Protocol"],
+      "title": "Context Protocol 实践",
+      "topics": ["agents", "llm"],
+      "updated_at": "2026-07-13T07:20:00Z",
+      "url": "https://example.com/context-protocol"
+    },
+    {
+      "canonical_event_id": "evt-agent-4",
+      "event_id": "evt-agent-4",
+      "occurred_at": "2026-07-12T10:00:00Z",
+      "source": "github",
+      "source_weight": 0.7,
+      "status": "PERSISTED",
+      "tags": ["Agent"],
+      "title": "Agent 工具链更新",
+      "topics": ["agents"],
+      "url": "https://example.com/agent-tools"
+    },
+    {
+      "canonical_event_id": "evt-agent-5",
+      "event_id": "evt-agent-5",
+      "occurred_at": "2026-07-11T10:00:00Z",
+      "source": "newsletter",
+      "source_weight": 0.5,
+      "status": "PERSISTED",
+      "tags": ["Agent"],
+      "title": "Agent 生态观察",
+      "topics": ["agents"],
+      "url": "https://example.com/agent-ecosystem"
+    },
+    {
+      "canonical_event_id": "evt-private",
+      "event_id": "evt-private",
+      "occurred_at": "2026-07-13T08:00:00Z",
+      "public": false,
+      "source": "internal",
+      "source_weight": 1.0,
+      "status": "QUARANTINED",
+      "title": "不得公开",
+      "topics": ["agents"]
+    },
+    {
+      "canonical_event_id": "evt-orphan",
+      "event_id": "orphan-alias",
+      "occurred_at": "2026-07-13T06:00:00Z",
+      "source": "rss",
+      "source_weight": 0.4,
+      "status": "ALIAS",
+      "title": "没有 canonical 记录的别名",
+      "topics": ["agents"]
+    }
+  ],
+  "graph": [
+    {
+      "edge_id": "edge-1",
+      "evidence_event_ids": ["evt-agent-1"],
+      "from": "entity-agent-sdk",
+      "to": "entity-openai",
+      "type": "related_to",
+      "weight": 0.8
+    },
+    {
+      "edge_id": "edge-2",
+      "evidence_event_ids": ["evt-agent-3"],
+      "from": "entity-context-protocol",
+      "to": "entity-agent-sdk",
+      "type": "used_by",
+      "weight": 0.6
+    }
+  ]
+}
