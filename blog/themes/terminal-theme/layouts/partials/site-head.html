@@ -1,0 +1,34 @@
+{{- $page := index . "Page" -}}
+{{- $title := index . "Title" | default (printf "%s - %s" $page.Title $page.Site.Title) -}}
+{{- $description := index . "Description" | default $page.Site.Params.description -}}
+{{- $canonical := index . "Canonical" | default $page.Permalink -}}
+{{- $pageType := index . "Type" | default "website" -}}
+{{- $image := ($page.Site.Params.default_og_image | default $page.Site.Params.profile_image | default `/img/profile-holo.png`) | absURL -}}
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; base-uri 'none'; object-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' https: data:; font-src 'self'; connect-src 'self'; worker-src 'self'; frame-src 'none'; form-action 'self'; upgrade-insecure-requests" />
+<title>{{ $title }}</title>
+<meta name="description" content="{{ $description }}" />
+<link rel="canonical" href="{{ $canonical }}" />
+<meta property="og:site_name" content="{{ $page.Site.Title }}" />
+<meta property="og:title" content="{{ $title }}" />
+<meta property="og:description" content="{{ $description }}" />
+<meta property="og:url" content="{{ $canonical }}" />
+<meta property="og:type" content="{{ $pageType }}" />
+<meta property="og:image" content="{{ $image }}" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="{{ $title }}" />
+<meta name="twitter:description" content="{{ $description }}" />
+<meta name="twitter:image" content="{{ $image }}" />
+{{- with $page.Site.Params.twitter }}
+<meta name="twitter:site" content="{{ . }}" />
+{{- end }}
+<link rel="stylesheet" href="/css/tailwind.css" />
+<link rel="stylesheet" href="/css/style.css" />
+{{- range (index . "Styles" | default (slice)) }}
+<link rel="stylesheet" href="{{ . }}" />
+{{- end }}
+{{- range (index . "Scripts" | default (slice)) }}
+<script src="{{ . }}" defer></script>
+{{- end }}

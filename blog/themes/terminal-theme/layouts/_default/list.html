@@ -6,25 +6,7 @@
 <html class="dark" lang="{{ .Site.LanguageCode }}">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{ .Title }} - {{ .Site.Title }}</title>
-    <meta name="description" content="{{ .Site.Params.description }}" />
-    <link rel="canonical" href="{{ $paginator.URL | absURL }}" />
-    <meta property="og:site_name" content="{{ .Site.Title }}" />
-    <meta property="og:title" content="{{ .Title }} - {{ .Site.Title }}" />
-    <meta property="og:description" content="{{ .Site.Params.description }}" />
-    <meta property="og:url" content="{{ .Permalink }}" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image"
-        content="{{ (.Site.Params.default_og_image | default .Site.Params.profile_image | default `/img/profile-holo.png`) | absURL }}" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="{{ .Title }} - {{ .Site.Title }}" />
-    <meta name="twitter:description" content="{{ .Site.Params.description }}" />
-    <meta name="twitter:image"
-        content="{{ (.Site.Params.default_og_image | default .Site.Params.profile_image | default `/img/profile-holo.png`) | absURL }}" />
-    {{ with .Site.Params.twitter }}
-    <meta name="twitter:site" content="{{ . }}" />{{ end }}
+    {{ partial "site-head.html" (dict "Page" . "Canonical" ($paginator.URL | absURL) "Scripts" (slice "/js/terminal.js")) }}
 
     {{- $ldHomeItem := dict "@type" "ListItem" "position" 1 "name" .Site.Title "item" ("/" | absURL) -}}
     {{- $ldBreadcrumbItems := slice $ldHomeItem -}}
@@ -43,39 +25,6 @@
     $ldBreadcrumbItems -}}
     <script type="application/ld+json">{{ $ldBreadcrumb | jsonify }}</script>
 
-    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
-    <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#4db6ac",
-                        "deep-navy": "#060a14",
-                        "muted-teal": "#26a69a",
-                        "off-white": "#d1d5db",
-                        "terminal-bg": "#0a111a",
-                        "las-vegas-orange": "#d97706",
-                    },
-                    fontFamily: {
-                        "display": ["Space Grotesk", "Noto Sans SC", "ui-sans-serif", "system-ui", "sans-serif"],
-                        "mono": ["Space Mono", "ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", "Noto Sans SC", "monospace"]
-                    },
-                },
-            },
-        }
-    </script>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap"
-        rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700&display=swap"
-        rel="stylesheet" />
-
-    <link rel="stylesheet" href="/css/style.css" />
-
-    <script src="/js/terminal.js" defer></script>
 </head>
 
 <body class="bg-deep-navy selection:bg-muted-teal selection:text-deep-navy font-display">
@@ -302,7 +251,7 @@
                     <span class="text-muted-teal/40 font-mono text-[9px] tracking-widest uppercase">Link: STABLE</span>
                     <div class="flex items-center gap-2 text-primary/60">
                         <span class="material-symbols-outlined text-base">cloud_queue</span>
-                        <span class="text-[9px] font-bold tracking-widest uppercase">Live_Sync</span>
+                        <span class="text-[9px] font-bold tracking-widest uppercase">Snapshot_Mode</span>
                     </div>
                 </div>
             </div>
