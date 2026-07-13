@@ -54,6 +54,7 @@ jobs:
           tests/test_pipeline_safety.py
           tests/test_security_configuration.py tests/test_shadow_compare.py
           tests/test_shadow_evidence.py
+          tests/test_template_hardening.py
           tests/test_validate_public_content_cli.py
           tests/test_workflow_security.py
 
@@ -84,6 +85,7 @@ jobs:
           tests/test_pipeline_safety.py
           tests/test_security_configuration.py tests/test_shadow_compare.py
           tests/test_shadow_evidence.py
+          tests/test_template_hardening.py
           tests/test_validate_public_content_cli.py
           tests/test_workflow_security.py
 
@@ -181,9 +183,11 @@ jobs:
           args: >-
             --offline --no-progress
             --root-dir '${{ github.workspace }}/blog/public'
+            --index-files index.html
             './blog/public/**/*.html'
           fail: true
           jobSummary: false
+          lycheeVersion: v0.24.2
 
       - name: Upload site for isolated browser tests
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4

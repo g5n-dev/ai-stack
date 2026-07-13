@@ -143,18 +143,19 @@
                         {{ .Content }}
                     </div>
 
-                    {{ with .Params.tags }}
+                    {{ with .GetTerms "tags" }}
                     <div class="mt-12 pt-8 border-t border-muted-teal/10 flex flex-wrap items-center gap-2">
                         {{ range . }}
-                        <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}/"
+                        <a href="{{ .RelPermalink }}"
                             class="px-2.5 py-1 rounded-full border border-muted-teal/15 bg-terminal-bg/40 text-muted-teal/60 text-[10px] font-mono tracking-wide hover:bg-muted-teal/10 hover:text-primary transition-colors">
-                            {{ . }}
+                            {{ .Data.Term }}
                         </a>
                         {{ end }}
                     </div>
                     {{ end }}
 
                     <!-- 应用场景展示区 -->
+                    {{- $scenarioTerms := .GetTerms "scenarios" -}}
                     {{ with .Params.scenarios }}
                     <div class="mt-12 pt-8 border-t border-muted-teal/10">
                         <div class="flex items-center gap-3 mb-6">
@@ -181,9 +182,14 @@
                             {{- $scenarioConfidence = (index . "confidence") -}}
                             {{- end -}}
                             {{- end -}}
-                            {{- $scenarioSlug := urlize (printf "%v" $scenarioName) -}}
+                            {{- $scenarioURL := "/scenarios/" -}}
+                            {{- range $scenarioTerms -}}
+                            {{- if eq (printf "%v" .Data.Term) (printf "%v" $scenarioName) -}}
+                            {{- $scenarioURL = .RelPermalink -}}
+                            {{- end -}}
+                            {{- end -}}
                             {{- $scenarioConfidenceWidth := printf "w-[%.0f%%]" (mul $scenarioConfidence 100) -}}
-                            <a href="/scenarios/{{ $scenarioSlug }}/"
+                            <a href="{{ $scenarioURL }}"
                                 class="glass-panel rounded-lg p-5 border-l-2 border-primary/50 hover:border-primary transition-all group block">
                                 <div class="flex items-center gap-3 mb-3">
                                     <span

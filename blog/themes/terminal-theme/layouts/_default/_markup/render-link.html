@@ -1,0 +1,47 @@
+{{- $href := .Destination -}}
+{{- $page := .Page -}}
+{{- $label := .PlainText -}}
+{{- $labelKey := replace (replace (replace (replace $label "’" "'") "‘" "'") "“" "\"") "”" "\"" -}}
+{{- $taxonomy := "" -}}
+{{- range slice "tags" "categories" "scenarios" -}}
+  {{- if hasPrefix $href (printf "/%s/" .) -}}
+    {{- $taxonomy = . -}}
+  {{- end -}}
+{{- end -}}
+{{- with $taxonomy -}}
+  {{- $matchedURL := "" -}}
+  {{- $matchCount := 0 -}}
+  {{- range $page.GetTerms . -}}
+    {{- $term := printf "%v" .Data.Term -}}
+    {{- $termKey := replace (replace (replace (replace $term "’" "'") "‘" "'") "“" "\"") "”" "\"" -}}
+    {{- if eq $termKey $labelKey -}}
+      {{- $matchedURL = .RelPermalink -}}
+      {{- $matchCount = add $matchCount 1 -}}
+    {{- end -}}
+  {{- end -}}
+  {{- if eq $matchCount 1 -}}
+    {{- $href = $matchedURL -}}
+  {{- end -}}
+{{- end -}}
+{{- $externalURL := printf "%v" ($page.Params.external_url | default "") -}}
+{{- $source := printf "%v" ($page.Params.source | default "") -}}
+{{- $deepWikiHref := replace (replace $href `\(` "(") `\)` ")" -}}
+{{- $validGitHubURL := eq (len (findRE `^https://github\.com/[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+/?$` $externalURL)) 1 -}}
+{{- $unsafeRelative := gt (len (findRE `(?i)(%2e|%2f|%5c|\\|(?:^|/)\.{1,2}(?:/|$))` $deepWikiHref)) 0 -}}
+{{- if and (eq $source "github_trending") $validGitHubURL (not $unsafeRelative) (strings.Contains $page.RawContent "DeepWiki") -}}
+  {{- with urls.Parse $externalURL -}}
+    {{- if and (eq .Scheme "https") (eq (lower .Host) "github.com") -}}
+      {{- $repoPath := strings.TrimSuffix "/" .Path -}}
+      {{- $repoPrefix := printf "%s/" $repoPath -}}
+      {{- $chapter := strings.TrimPrefix $repoPrefix $deepWikiHref -}}
+      {{- $validChapter := eq (len (findRE `^[0-9]+(?:\.[0-9]+)*-[A-Za-z0-9][A-Za-z0-9._()~%+-]*(?:[?#][A-Za-z0-9._~%=&+-]*)?$` $chapter)) 1 -}}
+      {{- if and (hasPrefix $deepWikiHref $repoPrefix) $validChapter -}}
+        {{- $href = printf "https://deepwiki.com%s" $deepWikiHref -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+<a href="{{ $href }}"
+  {{- with .Title }} title="{{ . }}"{{ end -}}
+  {{- if (urls.Parse $href).IsAbs }} rel="external"{{ end -}}
+>{{- .Text -}}</a>

@@ -96,7 +96,11 @@ def test_pr_ci_keeps_branch_update_contract_and_has_no_secrets() -> None:
     link_args = link_inputs["args"]
     assert isinstance(link_args, str)
     assert "--root-dir '${{ github.workspace }}/blog/public'" in link_args
+    assert "--index-files index.html" in link_args
+    for forbidden in ("--exclude", "--ignore", "--accept"):
+        assert forbidden not in link_args
     assert link_inputs["jobSummary"] == "false"
+    assert link_inputs["lycheeVersion"] == "v0.24.2"
 
     for required in (
         "uv sync --frozen",
@@ -114,6 +118,7 @@ def test_pr_ci_keeps_branch_update_contract_and_has_no_secrets() -> None:
         "tests/test_pipeline_cli.py",
         "tests/test_pipeline_safety.py",
         "tests/test_migration_safety.py",
+        "tests/test_template_hardening.py",
     ):
         assert required in text
 

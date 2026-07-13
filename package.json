@@ -4,7 +4,7 @@
   "scripts": {
     "build:css": "tailwindcss -c tailwind.config.js -i blog/assets/tailwind.css -o blog/static/css/tailwind.css --minify",
     "build:search": "pagefind --site blog/public && uv run python scripts/build_pagefind_catalog.py --public-root blog/public",
-    "test": "node --test tests/js/*.mjs && uv run pytest -q tests/test_pagefind_catalog.py tests/test_static_search_configuration.py"
+    "test": "node --test tests/js/*.mjs && uv run pytest -q tests/test_pagefind_catalog.py tests/test_static_search_configuration.py tests/test_template_hardening.py"
   },
   "devDependencies": {
     "@tailwindcss/forms": "0.5.11",

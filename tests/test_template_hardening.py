@@ -182,6 +182,125 @@ def test_single_page_resolves_related_entries_by_stable_id_in_constant_lookup(
 
 
 @pytest.mark.skipif(shutil.which("hugo") is None, reason="Hugo is not installed")
+def test_article_links_resolve_taxonomy_routes_and_deepwiki_origin_relatives(
+    tmp_path: Path,
+) -> None:
+    site = tmp_path / "site"
+    (site / "content/posts").mkdir(parents=True)
+    themes_dir = ROOT / "blog/themes"
+    (site / "hugo.toml").write_text(
+        textwrap.dedent(
+            f"""\
+            baseURL = "https://fixture.example/"
+            languageCode = "zh-CN"
+            title = "Link Fixture"
+            theme = "terminal-theme"
+            themesDir = "{themes_dir.as_posix()}"
+            disableKinds = ["home", "RSS", "sitemap", "robotsTXT", "404"]
+
+            [params]
+            description = "fixture"
+            profile_image = "/img/profile-holo.png"
+
+            [taxonomies]
+            tag = "tags"
+            scenario = "scenarios"
+            """
+        ),
+        encoding="utf-8",
+    )
+    (site / "content/posts/alpha.md").write_text(
+        textwrap.dedent(
+            """\
+            ---
+            title: Alpha
+            date: 2026-07-13T00:00:00+00:00
+            source: github_trending
+            external_url: https://github.com/Owner/Repo
+            tags: [blogs_podcasts, CI/CD, "AIE World's Fair"]
+            scenarios: [AI/ML项目]
+            ---
+
+            [blogs_podcasts](/tags/blogs-podcasts/)
+            [AIE World's Fair](/tags/aie-world-s-fair/)
+            [AI/ML项目](/scenarios/ai-ml%E9%A1%B9%E7%9B%AE/)
+            [DeepWiki chapter](/Owner/Repo/2-system-architecture)
+            [Escaped DeepWiki](/Owner/Repo/3-system-\\(safe\\))
+            [GitHub repository path](/Owner/Repo/blob/main/README.md)
+            [Real local route](/about/)
+            [Unknown taxonomy label](/tags/blogs-podcasts/)
+            [Owner mismatch](/Other/Repo/2-system-architecture)
+            [Encoded traversal](/Owner/Repo/%2e%2e/private)
+            """
+        ),
+        encoding="utf-8",
+    )
+    (site / "content/posts/beta.md").write_text(
+        textwrap.dedent(
+            """\
+            ---
+            title: Beta
+            date: 2026-07-12T00:00:00+00:00
+            source: github_trending
+            external_url: https://github.com/Owner/Repo?unexpected=query
+            ---
+
+            DeepWiki
+
+            [Invalid source URL](/Owner/Repo/3-deployment)
+            """
+        ),
+        encoding="utf-8",
+    )
+
+    result = subprocess.run(
+        [
+            "hugo",
+            "--source",
+            str(site),
+            "--destination",
+            str(site / "public"),
+            "--quiet",
+        ],
+        check=False,
+        capture_output=True,
+        text=True,
+        timeout=60,
+    )
+    assert result.returncode == 0, result.stderr
+
+    html = (site / "public/posts/alpha/index.html").read_text(encoding="utf-8")
+    soup = BeautifulSoup(html, "html.parser")
+    hrefs: dict[str, set[str | None]] = {}
+    for link in soup.select("a[href]"):
+        hrefs.setdefault(link.get_text(" ", strip=True), set()).add(link.get("href"))
+
+    assert hrefs["blogs_podcasts"] == {"/tags/blogs_podcasts/"}
+    assert hrefs["AIE World’s Fair"] == {"/tags/aie-worlds-fair/"}
+    assert hrefs["AI/ML项目"] == {"/scenarios/ai/ml%E9%A1%B9%E7%9B%AE/"}
+    assert hrefs["DeepWiki chapter"] == (
+        {"https://deepwiki.com/Owner/Repo/2-system-architecture"}
+    )
+    assert hrefs["Escaped DeepWiki"] == (
+        {"https://deepwiki.com/Owner/Repo/3-system-%28safe%29"}
+    )
+    assert hrefs["GitHub repository path"] == {"/Owner/Repo/blob/main/README.md"}
+    assert hrefs["Real local route"] == {"/about/"}
+    assert hrefs["CI/CD"] == {"/tags/ci/cd/"}
+    assert hrefs["Unknown taxonomy label"] == {"/tags/blogs-podcasts/"}
+    assert hrefs["Owner mismatch"] == {"/Other/Repo/2-system-architecture"}
+    assert hrefs["Encoded traversal"] == {"/Owner/Repo/%2e%2e/private"}
+
+    beta = BeautifulSoup(
+        (site / "public/posts/beta/index.html").read_text(encoding="utf-8"),
+        "html.parser",
+    )
+    invalid_source_link = beta.find("a", string="Invalid source URL")
+    assert invalid_source_link is not None
+    assert invalid_source_link.get("href") == "/Owner/Repo/3-deployment"
+
+
+@pytest.mark.skipif(shutil.which("hugo") is None, reason="Hugo is not installed")
 def test_rendered_core_pages_have_basic_keyboard_accessibility(tmp_path: Path) -> None:
     public = tmp_path / "public"
     result = subprocess.run(
