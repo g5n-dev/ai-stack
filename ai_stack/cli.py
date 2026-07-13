@@ -21,6 +21,7 @@ from .pipeline import (
     generate,
     persist_discovery,
     persist_receipt,
+    persist_release,
     persist_result,
     publish,
     render,
@@ -74,6 +75,7 @@ def _parser() -> argparse.ArgumentParser:
             "reserve-budget",
             "generate",
             "persist-result",
+            "persist-release",
             "persist-receipt",
         ),
         required=True,
@@ -83,6 +85,10 @@ def _parser() -> argparse.ArgumentParser:
     process.add_argument("--state-root", type=Path)
     process.add_argument("--ops-root", type=Path)
     process.add_argument("--output", type=Path)
+    process.add_argument("--expected-release-id")
+    process.add_argument("--expected-code-sha")
+    process.add_argument("--expected-content-sha")
+    process.add_argument("--expected-artifact-digest")
 
     render_command = commands.add_parser("render")
     render_command.add_argument("--run-id", required=True)
@@ -247,6 +253,13 @@ def _require_phase_path(args: argparse.Namespace, field: str, phase: str) -> Pat
     return value
 
 
+def _require_phase_text(args: argparse.Namespace, field: str, phase: str) -> str:
+    value = getattr(args, field)
+    if not isinstance(value, str) or not value:
+        raise PipelineError(f"process --phase {phase} requires --{field.replace('_', '-')}")
+    return value
+
+
 def _process(args: argparse.Namespace) -> int:
     phase = str(args.phase)
     if phase == "persist-discovery":
@@ -273,6 +286,18 @@ def _process(args: argparse.Namespace) -> int:
             run_id=args.run_id,
             input_root=args.input,
             state_root=_require_phase_path(args, "state_root", phase),
+        )
+    elif phase == "persist-release":
+        result = persist_release(
+            run_id=args.run_id,
+            input_root=args.input,
+            state_root=_require_phase_path(args, "state_root", phase),
+            expected_release_id=_require_phase_text(args, "expected_release_id", phase),
+            expected_code_sha=_require_phase_text(args, "expected_code_sha", phase),
+            expected_content_sha=_require_phase_text(args, "expected_content_sha", phase),
+            expected_artifact_digest=_require_phase_text(
+                args, "expected_artifact_digest", phase
+            ),
         )
     elif phase == "persist-receipt":
         result = persist_receipt(

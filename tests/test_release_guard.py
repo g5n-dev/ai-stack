@@ -11,8 +11,10 @@ from scripts.release_guard import (
     ReleaseDescriptor,
     ReleaseValidationError,
     assert_release_is_fresh,
+    assert_release_matches,
     load_release_descriptor,
     main,
+    validate_public_tree_manifest_digest,
     write_release_descriptor,
 )
 
@@ -79,6 +81,110 @@ def test_compensation_rollback_uses_higher_sequence_with_old_shas() -> None:
     compensation = _release(12)
 
     assert_release_is_fresh(compensation, current)
+
+
+def test_exact_release_match_accepts_only_the_same_descriptor() -> None:
+    candidate = _release(12, code_sha=CODE_B, artifact_digest=ARTIFACT_B)
+
+    assert_release_matches(candidate, candidate)
+    with pytest.raises(ReleaseValidationError, match="healthy release mismatch"):
+        assert_release_matches(candidate, _release(12, code_sha=CODE_B))
+
+
+def test_public_tree_manifest_digest_is_recomputed_and_structurally_validated(
+    tmp_path: Path,
+) -> None:
+    manifest = {
+        "schema_version": "public_tree_manifest_v1",
+        "file_count": 1,
+        "total_bytes": 5,
+        "files": [
+            {
+                "path": "index.html",
+                "bytes": 5,
+                "sha256": hashlib.sha256(b"safe\n").hexdigest(),
+            }
+        ],
+    }
+    digest = hashlib.sha256(
+        json.dumps(manifest, sort_keys=True, separators=(",", ":")).encode()
+    ).hexdigest()
+    descriptor = _release(7, artifact_digest=digest)
+    path = tmp_path / "public-tree-manifest.json"
+    path.write_text(json.dumps(manifest), encoding="utf-8")
+
+    validate_public_tree_manifest_digest(descriptor, path)
+
+    manifest["total_bytes"] = 6
+    path.write_text(json.dumps(manifest), encoding="utf-8")
+    with pytest.raises(ReleaseValidationError, match="public tree manifest totals"):
+        validate_public_tree_manifest_digest(descriptor, path)
+
+
+def test_verify_cli_binds_candidate_to_healthy_state_and_public_tree(
+    tmp_path: Path,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
+    tree = {
+        "schema_version": "public_tree_manifest_v1",
+        "file_count": 1,
+        "total_bytes": 4,
+        "files": [
+            {
+                "path": "index.html",
+                "bytes": 4,
+                "sha256": hashlib.sha256(b"safe").hexdigest(),
+            }
+        ],
+    }
+    digest = hashlib.sha256(
+        json.dumps(tree, sort_keys=True, separators=(",", ":")).encode()
+    ).hexdigest()
+    candidate = _release(8, code_sha=CODE_B, content_sha=CONTENT_B, artifact_digest=digest)
+    candidate_path = tmp_path / "candidate.json"
+    current_path = tmp_path / "current.json"
+    tree_path = tmp_path / "tree.json"
+    write_release_descriptor(candidate_path, candidate)
+    write_release_descriptor(current_path, candidate)
+    tree_path.write_text(json.dumps(tree), encoding="utf-8")
+
+    assert (
+        main(
+            [
+                "verify",
+                "--candidate",
+                str(candidate_path),
+                "--current",
+                str(current_path),
+                "--tree-manifest",
+                str(tree_path),
+                "--expected-release-id",
+                candidate.release_id,
+                "--expected-code-sha",
+                CODE_B,
+                "--expected-content-sha",
+                CONTENT_B,
+                "--expected-artifact-digest",
+                digest,
+            ]
+        )
+        == 0
+    )
+    assert json.loads(capsys.readouterr().out)["release_id"] == candidate.release_id
+
+    write_release_descriptor(tmp_path / "different.json", _release(9))
+    with pytest.raises(ReleaseValidationError, match="healthy release mismatch"):
+        main(
+            [
+                "verify",
+                "--candidate",
+                str(candidate_path),
+                "--current",
+                str(tmp_path / "different.json"),
+                "--tree-manifest",
+                str(tree_path),
+            ]
+        )
 
 
 @pytest.mark.parametrize(
@@ -166,6 +272,12 @@ def test_refuses_missing_symlink_directory_and_oversized_manifest(tmp_path: Path
     link.symlink_to(target)
     with pytest.raises(ReleaseValidationError, match="small regular file"):
         load_release_descriptor(link)
+
+    hardlink = tmp_path / "hardlink.json"
+    hardlink.hardlink_to(target)
+    with pytest.raises(ReleaseValidationError, match="small regular file"):
+        load_release_descriptor(hardlink)
+    hardlink.unlink()
 
     target.write_bytes(b" " * (64 * 1024 + 1))
     with pytest.raises(ReleaseValidationError, match="small regular file"):

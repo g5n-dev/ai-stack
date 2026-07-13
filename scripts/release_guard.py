@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import hmac
 import json
 import os
 import re
@@ -28,6 +29,7 @@ _TREE_SCHEMA_VERSION = "public_tree_manifest_v1"
 _MAX_PUBLIC_FILES = 20_000
 _MAX_PUBLIC_FILE_BYTES = 16 * 1024 * 1024
 _MAX_PUBLIC_TREE_BYTES = 256 * 1024 * 1024
+_MAX_TREE_MANIFEST_BYTES = 8 * 1024 * 1024
 _FIELDS = frozenset(
     {
         "release_id",
@@ -199,13 +201,33 @@ def assert_release_is_fresh(
         )
 
 
+def assert_release_matches(
+    candidate: ReleaseDescriptor,
+    current: ReleaseDescriptor,
+) -> None:
+    """Require a consumer to use the descriptor persisted after health.
+
+    Freshness is the deploy-time rule.  Publisher consumption happens after
+    the candidate has become the current healthy release, so it needs exact
+    equality instead of another monotonicity comparison.
+    """
+
+    if candidate != current:
+        raise ReleaseValidationError("healthy release mismatch")
+
+
 def load_release_descriptor(path: Path | str) -> ReleaseDescriptor:
     manifest = Path(path)
     try:
         stat = manifest.lstat()
     except OSError as exc:
         raise ReleaseValidationError("release manifest is unreadable") from exc
-    if manifest.is_symlink() or not manifest.is_file() or stat.st_size > 64 * 1024:
+    if (
+        manifest.is_symlink()
+        or not manifest.is_file()
+        or stat.st_nlink != 1
+        or stat.st_size > 64 * 1024
+    ):
         raise ReleaseValidationError("release manifest must be a small regular file")
     try:
         raw = json.loads(manifest.read_text(encoding="utf-8"))
@@ -236,6 +258,90 @@ def load_release_basis(path: Path | str) -> ReleaseBasis:
     if not isinstance(raw, dict):
         raise ReleaseValidationError("release basis must be a JSON object")
     return ReleaseBasis.from_mapping(raw)
+
+
+def _load_public_tree_manifest(path: Path | str) -> dict[str, object]:
+    manifest_path = Path(path)
+    try:
+        details = manifest_path.lstat()
+    except OSError as exc:
+        raise ReleaseValidationError("public tree manifest is unreadable") from exc
+    if (
+        manifest_path.is_symlink()
+        or not stat.S_ISREG(details.st_mode)
+        or details.st_nlink != 1
+        or details.st_size > _MAX_TREE_MANIFEST_BYTES
+    ):
+        raise ReleaseValidationError("public tree manifest must be a bounded regular file")
+    try:
+        raw = json.loads(manifest_path.read_text(encoding="utf-8"))
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError) as exc:
+        raise ReleaseValidationError("invalid public tree manifest JSON") from exc
+    if not isinstance(raw, dict):
+        raise ReleaseValidationError("public tree manifest must be a JSON object")
+    if set(raw) != {"schema_version", "file_count", "total_bytes", "files"}:
+        raise ReleaseValidationError("public tree manifest fields are invalid")
+    if raw.get("schema_version") != _TREE_SCHEMA_VERSION:
+        raise ReleaseValidationError("public tree manifest schema is invalid")
+    file_count = raw.get("file_count")
+    total_bytes = raw.get("total_bytes")
+    files = raw.get("files")
+    if (
+        not isinstance(file_count, int)
+        or isinstance(file_count, bool)
+        or not 0 < file_count <= _MAX_PUBLIC_FILES
+        or not isinstance(total_bytes, int)
+        or isinstance(total_bytes, bool)
+        or not 0 <= total_bytes <= _MAX_PUBLIC_TREE_BYTES
+        or not isinstance(files, list)
+        or len(files) != file_count
+    ):
+        raise ReleaseValidationError("public tree manifest totals are invalid")
+
+    seen: set[str] = set()
+    calculated_bytes = 0
+    previous_path = ""
+    for entry in files:
+        if not isinstance(entry, dict) or set(entry) != {"path", "bytes", "sha256"}:
+            raise ReleaseValidationError("public tree manifest file entry is invalid")
+        relative = entry.get("path")
+        size = entry.get("bytes")
+        digest = entry.get("sha256")
+        if (
+            not isinstance(relative, str)
+            or len(relative) > 1_024
+            or any(ord(character) < 32 for character in relative)
+            or relative.startswith("/")
+            or "\\" in relative
+            or any(part in {"", ".", ".."} for part in relative.split("/"))
+            or relative in seen
+            or relative <= previous_path
+        ):
+            raise ReleaseValidationError("public tree manifest path is invalid")
+        if (
+            not isinstance(size, int)
+            or isinstance(size, bool)
+            or not 0 <= size <= _MAX_PUBLIC_FILE_BYTES
+        ):
+            raise ReleaseValidationError("public tree manifest file size is invalid")
+        if not isinstance(digest, str) or not _SHA256.fullmatch(digest):
+            raise ReleaseValidationError("public tree manifest file digest is invalid")
+        seen.add(relative)
+        previous_path = relative
+        calculated_bytes += size
+    if calculated_bytes != total_bytes:
+        raise ReleaseValidationError("public tree manifest totals are invalid")
+    return raw
+
+
+def validate_public_tree_manifest_digest(
+    descriptor: ReleaseDescriptor,
+    manifest_path: Path | str,
+) -> None:
+    manifest = _load_public_tree_manifest(manifest_path)
+    actual = hashlib.sha256(_canonical_json_bytes(manifest)).hexdigest()
+    if not hmac.compare_digest(actual, descriptor.artifact_digest):
+        raise ReleaseValidationError("public tree manifest digest mismatch")
 
 
 def _public_tree_manifest(public_root: Path) -> dict[str, object]:
@@ -435,11 +541,13 @@ def _validate_expected(
     code_sha: str | None,
     content_sha: str | None,
     artifact_digest: str | None,
+    release_id: str | None,
 ) -> None:
     expected = {
         "code_sha": code_sha,
         "content_sha": content_sha,
         "artifact_digest": artifact_digest,
+        "release_id": release_id,
     }
     for field_name, expected_value in expected.items():
         if expected_value is not None and getattr(descriptor, field_name) != expected_value:
@@ -459,9 +567,22 @@ def _parser() -> argparse.ArgumentParser:
     validate = subparsers.add_parser("validate", help="reject forged or stale release metadata")
     validate.add_argument("--candidate", type=Path, required=True)
     validate.add_argument("--current", type=Path)
+    validate.add_argument("--tree-manifest", type=Path)
+    validate.add_argument("--expected-release-id")
     validate.add_argument("--expected-code-sha")
     validate.add_argument("--expected-content-sha")
     validate.add_argument("--expected-artifact-digest")
+    verify = subparsers.add_parser(
+        "verify",
+        help="bind a post-health consumer to the exact persisted healthy release",
+    )
+    verify.add_argument("--candidate", type=Path, required=True)
+    verify.add_argument("--current", type=Path, required=True)
+    verify.add_argument("--tree-manifest", type=Path, required=True)
+    verify.add_argument("--expected-release-id")
+    verify.add_argument("--expected-code-sha")
+    verify.add_argument("--expected-content-sha")
+    verify.add_argument("--expected-artifact-digest")
     return parser
 
 
@@ -477,13 +598,21 @@ def main(argv: Sequence[str] | None = None) -> int:
         return 0
     candidate = load_release_descriptor(args.candidate)
     current = load_release_descriptor(args.current) if args.current else None
-    assert_release_is_fresh(candidate, current)
+    if args.command == "verify":
+        if current is None:  # argparse requires it, retained for type narrowing.
+            raise ReleaseValidationError("current healthy release is required")
+        assert_release_matches(candidate, current)
+    else:
+        assert_release_is_fresh(candidate, current)
     _validate_expected(
         candidate,
         code_sha=args.expected_code_sha,
         content_sha=args.expected_content_sha,
         artifact_digest=args.expected_artifact_digest,
+        release_id=args.expected_release_id,
     )
+    if args.tree_manifest is not None:
+        validate_public_tree_manifest_digest(candidate, args.tree_manifest)
     print(json.dumps(candidate.to_dict(), separators=(",", ":"), sort_keys=True))
     return 0
 

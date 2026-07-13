@@ -47,6 +47,7 @@ POLICY_VERSION = "evidence-policy-v1"
 MAX_HANDOFF_FILES = 2_000
 MAX_HANDOFF_FILE_BYTES = 2 * 1024 * 1024
 MAX_HANDOFF_BYTES = 64 * 1024 * 1024
+MAX_RELEASE_STATE_FILE_BYTES = 8 * 1024 * 1024
 MAX_GENERATED_ITEMS = 5
 
 _RUN_ID = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._-]{0,127}$")
@@ -232,7 +233,8 @@ def _materialize_tree(destination: Path, files: Mapping[str, bytes]) -> None:
         raise
 
 
-def _read_regular(path: Path) -> bytes:
+def _read_regular(path: Path, *, max_file_bytes: int | None = None) -> bytes:
+    limit = MAX_HANDOFF_FILE_BYTES if max_file_bytes is None else max_file_bytes
     try:
         details = path.lstat()
     except OSError as exc:
@@ -241,7 +243,7 @@ def _read_regular(path: Path) -> bytes:
         path.is_symlink()
         or not stat.S_ISREG(details.st_mode)
         or details.st_nlink != 1
-        or details.st_size > MAX_HANDOFF_FILE_BYTES
+        or details.st_size > limit
     ):
         raise PipelineError(f"handoff path is not a safe regular file: {path}")
     return path.read_bytes()
@@ -257,7 +259,12 @@ def _read_json(path: Path) -> dict[str, Any]:
     return cast(dict[str, Any], value)
 
 
-def _scan_tree(root: Path, allowed: Sequence[str]) -> dict[str, bytes]:
+def _scan_tree(
+    root: Path,
+    allowed: Sequence[str],
+    *,
+    max_file_bytes: int | None = None,
+) -> dict[str, bytes]:
     if root.is_symlink() or not root.is_dir():
         raise PipelineError(f"handoff root must be a regular directory: {root}")
     result: dict[str, bytes] = {}
@@ -272,7 +279,7 @@ def _scan_tree(root: Path, allowed: Sequence[str]) -> dict[str, bytes]:
             relative = path.relative_to(root).as_posix()
             if not any(PurePosixPath(relative).match(pattern) for pattern in allowed):
                 raise PipelineError(f"unexpected handoff path: {relative}")
-            payload = _read_regular(path)
+            payload = _read_regular(path, max_file_bytes=max_file_bytes)
             result[relative] = payload
             total += len(payload)
             if len(result) > MAX_HANDOFF_FILES or total > MAX_HANDOFF_BYTES:
@@ -1390,6 +1397,92 @@ def publish(*, run_id: str, input_root: Path, output: Path, config_path: Path) -
     }
 
 
+def persist_release(
+    *,
+    run_id: str,
+    input_root: Path,
+    state_root: Path,
+    expected_release_id: str,
+    expected_code_sha: str,
+    expected_content_sha: str,
+    expected_artifact_digest: str,
+) -> dict[str, Any]:
+    """Append and advance the current healthy release after production health.
+
+    The per-release record is immutable.  ``current-healthy.json`` may only
+    advance to a higher sequence or be replayed with the exact same descriptor.
+    Git CAS supplies the branch-level compare-and-swap around these file writes.
+    """
+
+    from scripts.release_guard import (
+        ReleaseValidationError,
+        assert_release_is_fresh,
+        load_release_descriptor,
+        validate_public_tree_manifest_digest,
+    )
+
+    run_id = _require_run_id(run_id)
+    _scan_tree(
+        input_root,
+        (
+            "state/release-basis.json",
+            "state/release.json",
+            "state/public-tree-manifest.json",
+            "content/outbox/*.json",
+        ),
+        max_file_bytes=MAX_RELEASE_STATE_FILE_BYTES,
+    )
+    try:
+        candidate = load_release_descriptor(input_root / "state/release.json")
+        validate_public_tree_manifest_digest(
+            candidate,
+            input_root / "state/public-tree-manifest.json",
+        )
+        expected = {
+            "release_id": expected_release_id,
+            "code_sha": expected_code_sha,
+            "content_sha": expected_content_sha,
+            "artifact_digest": expected_artifact_digest,
+        }
+        for field, value in expected.items():
+            if getattr(candidate, field) != value:
+                raise ReleaseValidationError(f"{field} does not match workflow input")
+
+        current_path = state_root / "ops/releases/current-healthy.json"
+        current = (
+            load_release_descriptor(current_path)
+            if current_path.exists() or current_path.is_symlink()
+            else None
+        )
+        if current != candidate:
+            assert_release_is_fresh(candidate, current)
+
+        archive_relative = (
+            f"ops/releases/healthy/{candidate.release_seq:020d}-{candidate.release_id}.json"
+        )
+        archive_path = state_root / archive_relative
+        if archive_path.exists() or archive_path.is_symlink():
+            existing_archive = load_release_descriptor(archive_path)
+            if existing_archive != candidate:
+                raise ReleaseValidationError("healthy release archive collision")
+    except ReleaseValidationError as exc:
+        raise PipelineError(str(exc)) from exc
+
+    payload = _json_bytes(candidate.to_dict())
+    archive_changed = _atomic_ledger_write(state_root, archive_relative, payload)
+    advanced = _atomic_ledger_write(
+        state_root,
+        "ops/releases/current-healthy.json",
+        payload,
+    )
+    return {
+        "run_id": run_id,
+        "release_id": candidate.release_id,
+        "release_seq": candidate.release_seq,
+        "persisted": bool(archive_changed or advanced),
+    }
+
+
 def persist_receipt(*, run_id: str, input_root: Path, state_root: Path) -> dict[str, Any]:
     run_id = _require_run_id(run_id)
     _scan_tree(input_root, ("state/receipt.json", "ops/receipts/*.json"))
@@ -1461,6 +1554,7 @@ __all__ = [
     "crawl",
     "generate",
     "persist_discovery",
+    "persist_release",
     "persist_receipt",
     "persist_result",
     "publish",

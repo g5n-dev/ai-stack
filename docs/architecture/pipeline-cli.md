@@ -52,7 +52,23 @@ hash(schema_version, release_seq, code_sha, content_sha)
 It intentionally excludes the public-tree digest because public API files embed
 the release ID. This removes any self-referential hashing cycle.
 
-Publishing and receipt persistence then use:
+Deploy first validates the candidate against the previous
+`ops/releases/current-healthy.json`. After production health succeeds, the
+secret-free ops writer persists the exact descriptor both as an append-only
+record and as the current healthy pointer:
+
+```text
+ai-stack process --phase persist-release --run-id RUN \
+  --input release --state-root OPS_LEDGER \
+  --expected-release-id RELEASE_ID \
+  --expected-code-sha CODE_SHA --expected-content-sha CONTENT_SHA \
+  --expected-artifact-digest PUBLIC_TREE_DIGEST
+```
+
+The publisher checks `release/state/release.json` for exact equality with that
+healthy pointer and recomputes the digest of
+`release/state/public-tree-manifest.json` before channel credentials enter its
+step. Publishing and receipt persistence then use:
 
 ```text
 ai-stack publish --run-id RUN --input release/content/outbox --output receipts
