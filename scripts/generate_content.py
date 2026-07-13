@@ -2110,8 +2110,30 @@ class SuperEnhancedContentGenerator:
                     continue
 
 
-def main():
-    """主函数"""
+_UNIFIED_CLI_COMMANDS = {
+    "crawl",
+    "process",
+    "render",
+    "publish",
+    "validate",
+    "status",
+    "resume",
+    "migrate",
+}
+
+
+def main(argv=None):
+    """兼容入口。
+
+    新的分阶段命令直接委托 ``ai-stack`` CLI；原有参数仍走历史兼容路径，
+    便于本地维护脚本在迁移窗口内继续使用。
+    """
+    arguments = list(sys.argv[1:] if argv is None else argv)
+    if arguments and arguments[0] in _UNIFIED_CLI_COMMANDS:
+        from ai_stack.cli import main as unified_cli_main
+
+        return unified_cli_main(arguments)
+
     parser = argparse.ArgumentParser(description="AI Stack content generator")
     parser.add_argument("--crawl-duration-hours", type=float, default=0, help="长时间抓取（小时），0 表示单次抓取")
     parser.add_argument("--crawl-interval-minutes", type=int, default=30, help="长时间抓取时的间隔（分钟）")
@@ -2138,7 +2160,7 @@ def main():
         help="运行档位：default（本地完整模式）或 ci（GitHub Actions 轻量模式）",
     )
 
-    args = parser.parse_args()
+    args = parser.parse_args(arguments)
 
     if args.sanitize_relrefs_only:
         content_root = project_root / "blog" / "content"
