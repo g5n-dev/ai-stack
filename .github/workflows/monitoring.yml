@@ -2,285 +2,72 @@ name: System Monitoring & Content Quality Tracking
 
 on:
   schedule:
-    - cron: "0 */6 * * *"
+    - cron: "17 */6 * * *"
   workflow_dispatch:
 
+concurrency:
+  group: production-monitoring
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
 jobs:
-  monitor-main-branch:
-    name: Monitor Main Branch
+  health:
+    name: production-health
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
-      - name: Checkout main branch
-        uses: actions/checkout@v4
+      - name: Checkout monitoring code
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
         with:
-          ref: main
-          fetch-depth: 0
+          persist-credentials: false
 
-      - name: Check main branch activity
+      - name: Verify protected ledger refs exist
+        env:
+          REPOSITORY: ${{ github.repository }}
         run: |
-          last_commit=$(git log -1 --format="%cd" --date=iso)
-          commit_count=$(git rev-list --count HEAD)
-          echo "Last commit: $last_commit"
-          echo "Total commits: $commit_count"
+          set -euo pipefail
+          git ls-remote --exit-code "https://github.com/${REPOSITORY}.git" refs/heads/main
+          git ls-remote --exit-code "https://github.com/${REPOSITORY}.git" refs/heads/content
+          git ls-remote --exit-code "https://github.com/${REPOSITORY}.git" refs/heads/ops
 
-  monitor-gh-pages-branch:
-    name: Monitor gh-pages Branch
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout gh-pages branch
-        uses: actions/checkout@v4
-        with:
-          ref: gh-pages
-          fetch-depth: 0
-
-      - name: Check gh-pages activity
+      - name: Verify production manifest and immutable release
         run: |
-          last_commit=$(git log -1 --format="%cd" --date=iso)
-          commit_count=$(git rev-list --count HEAD)
-          echo "Last commit: $last_commit"
-          echo "Total commits: $commit_count"
+          set -euo pipefail
+          curl --fail --silent --show-error --retry 3 \
+            --output /tmp/manifest.json \
+            https://ai-stack.site/api/v1/manifest.json
+          python3 - <<'PY'
+          import json
+          from datetime import UTC, datetime, timedelta
+          from pathlib import Path
+          from urllib.request import urlopen
 
-      - name: Check content freshness
-        run: |
-          if [ -d "blog/content/posts" ]; then
-            post_count=$(find blog/content/posts -name "*.md" -type f 2>/dev/null | wc -l)
-            echo "📝 Total posts: $post_count"
-            if [ "$post_count" -eq 0 ]; then
-              echo "⚠️  No posts found!"
-            fi
-          else
-            echo "ℹ️  Posts directory not found"
-          fi
+          root = json.loads(Path("/tmp/manifest.json").read_text(encoding="utf-8"))
+          release = root.get("active_release")
+          cutoff = root.get("data_as_of")
+          if not isinstance(release, str) or not release:
+              raise SystemExit("missing active_release")
+          if root.get("realtime") is not False:
+              raise SystemExit("manifest must explicitly say realtime=false")
+          parsed = datetime.fromisoformat(str(cutoff).replace("Z", "+00:00"))
+          if parsed < datetime.now(UTC) - timedelta(hours=8):
+              raise SystemExit(f"data is stale: {cutoff}")
+          url = f"https://ai-stack.site/api/v1/releases/{release}/manifest.json"
+          with urlopen(url, timeout=20) as response:
+              immutable = json.load(response)
+          if immutable.get("release_id") != release:
+              raise SystemExit("root and immutable release disagree")
+          print(json.dumps({"release_id": release, "data_as_of": cutoff}, sort_keys=True))
+          PY
 
-      - name: Check built site
-        run: |
-          if [ -f "index.html" ]; then
-            html_files=$(find . -name "*.html" -type f | wc -l)
-            echo "🌐 Built HTML files: $html_files"
-          else
-            echo "⚠️  index.html not found - site may not be built"
-          fi
-
-  monitor-content-quality:
-    name: Monitor Content Quality
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout gh-pages branch
-        uses: actions/checkout@v4
-        with:
-          ref: gh-pages
-          fetch-depth: 0
-
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: "3.11"
-
-      - name: Analyze content quality
-        run: |
-          echo "=== Content Quality Metrics ==="
-
-          if [ -d "blog/content/posts" ]; then
-            total_posts=$(find blog/content/posts -name "*.md" -type f 2>/dev/null | wc -l)
-            echo "📊 Total posts: $total_posts"
-            
-            if [ "$total_posts" -gt 0 ]; then
-              avg_words=$(find blog/content/posts -name "*.md" -exec wc -w {} \; | awk '{sum+=$1} END {print sum/NR}')
-              echo "📈 Average word count: ${avg_words}"
-              
-              avg_chars=$(find blog/content/posts -name "*.md" -exec wc -c {} \; | awk '{sum+=$1} END {print sum/NR}')
-              echo "📏 Average character count: ${avg_chars}"
-              
-              total_tags=$(grep -h "^tags:" blog/content/posts/*.md 2>/dev/null | wc -l || echo 0)
-              echo "🏷️  Posts with tags: $total_tags"
-              
-              deep_analysis_count=$(grep -l "deep analysis\|technical analysis\|innovation insight" blog/content/posts/*.md 2>/dev/null | wc -l || echo 0)
-              echo "🔬 Deep analysis posts: $deep_analysis_count"
-            fi
-          else
-            echo "ℹ️  Posts directory not found"
-          fi
-
-      - name: Check knowledge graph
-        run: |
-          echo "=== Knowledge Graph Metrics ==="
-
-          if [ -f "knowledge_graph.json" ]; then
-            nodes=$(python3 -c "import json; data=json.load(open('knowledge_graph.json')); print(len(data.get('nodes', [])))" 2>/dev/null || echo 0)
-            edges=$(python3 -c "import json; data=json.load(open('knowledge_graph.json')); print(len(data.get('edges', [])))" 2>/dev/null || echo 0)
-            echo "🕸️  Knowledge Graph Nodes: $nodes"
-            echo "🔗 Knowledge Graph Edges: $edges"
-          else
-            echo "ℹ️  Knowledge graph file not found"
-          fi
-
-      - name: Check tag quality
-        run: |
-          echo "=== Tag System Metrics ==="
-
-          if [ -f "tags_data.json" ]; then
-            unique_tags=$(python3 -c "import json; data=json.load(open('tags_data.json')); print(len(data.get('tags', [])))" 2>/dev/null || echo 0)
-            echo "🏷️  Unique tags: $unique_tags"
-            
-            high_weight_tags=$(python3 -c "import json; data=json.load(open('tags_data.json')); high_tags=[t for t in data.get('tags', []) if t.get('weight', 0) > 0.7]; print(len(high_tags))" 2>/dev/null || echo 0)
-            echo "⭐ High-weight tags: $high_weight_tags"
-          else
-            echo "ℹ️  Tag data file not found"
-          fi
-
-  monitor-user-value:
-    name: Monitor User Value
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout gh-pages branch
-        uses: actions/checkout@v4
-        with:
-          ref: gh-pages
-          fetch-depth: 0
-
-      - name: Analyze user value metrics
-        run: |
-          echo "=== User Value Metrics ==="
-
-          if [ -f "analytics_data.json" ]; then
-            page_views=$(python3 -c "import json; data=json.load(open('analytics_data.json')); print(data.get('page_views', 0))" 2>/dev/null || echo 0)
-            unique_visitors=$(python3 -c "import json; data=json.load(open('analytics_data.json')); print(data.get('unique_visitors', 0))" 2>/dev/null || echo 0)
-            avg_time_on_page=$(python3 -c "import json; data=json.load(open('analytics_data.json')); print(data.get('avg_time_on_page', 0))" 2>/dev/null || echo 0)
-            
-            echo "👀 Page views: $page_views"
-            echo "👤 Unique visitors: $unique_visitors"
-            echo "⏱️  Avg time on page: ${avg_time_on_page}s"
-          else
-            echo "ℹ️  Analytics data not available"
-          fi
-
-      - name: Check engagement metrics
-        run: |
-          echo "=== Engagement Metrics ==="
-
-          if [ -f "engagement_data.json" ]; then
-            comments=$(python3 -c "import json; data=json.load(open('engagement_data.json')); print(data.get('total_comments', 0))" 2>/dev/null || echo 0)
-            likes=$(python3 -c "import json; data=json.load(open('engagement_data.json')); print(data.get('total_likes', 0))" 2>/dev/null || echo 0)
-            shares=$(python3 -c "import json; data=json.load(open('engagement_data.json')); print(data.get('total_shares', 0))" 2>/dev/null || echo 0)
-            
-            echo "💬 Total comments: $comments"
-            echo "👍 Total likes: $likes"
-            echo "🔄 Total shares: $shares"
-          else
-            echo "ℹ️  Engagement data not available"
-          fi
-
-  monitor-token-usage:
-    name: Monitor Token Usage
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout gh-pages branch
-        uses: actions/checkout@v4
-        with:
-          ref: gh-pages
-          fetch-depth: 0
-
-      - name: Analyze token consumption
-        run: |
-          echo "=== Token Usage Metrics ==="
-
-          if [ -f "token_usage.json" ]; then
-            total_tokens=$(python3 -c "import json; data=json.load(open('token_usage.json')); print(data.get('total_tokens', 0))" 2>/dev/null || echo 0)
-            avg_tokens_per_article=$(python3 -c "import json; data=json.load(open('token_usage.json')); print(data.get('avg_tokens_per_article', 0))" 2>/dev/null || echo 0)
-            llm_calls=$(python3 -c "import json; data=json.load(open('token_usage.json')); print(data.get('llm_calls', 0))" 2>/dev/null || echo 0)
-            
-            echo "🔢 Total tokens consumed: $total_tokens"
-            echo "📊 Avg tokens per article: $avg_tokens_per_article"
-            echo "🤖 Total LLM calls: $llm_calls"
-            
-            if [ "$llm_calls" -lt 50 ]; then
-              echo "⚠️  WARNING: LLM calls below expected threshold (50+)"
-            else
-              echo "✅ LLM calls within expected range"
-            fi
-          else
-            echo "ℹ️  Token usage data not available"
-          fi
-
-  monitor-sync-status:
-    name: Monitor Sync Status
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout both branches
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Fetch both branches
-        run: |
-          git fetch origin main:main gh-pages:gh-pages || echo "Some branches not available"
-
-      - name: Compare branch commits
-        run: |
-          if git rev-parse --verify main >/dev/null 2>&1; then
-            main_commit=$(git rev-parse main)
-            echo "main: $main_commit"
-            main_date=$(git log -1 --format="%cd" --date=iso main)
-            echo "main last commit: $main_date"
-          fi
-
-          if git rev-parse --verify gh-pages >/dev/null 2>&1; then
-            gh_pages_commit=$(git rev-parse gh-pages)
-            echo "gh-pages: $gh_pages_commit"
-            gh_pages_date=$(git log -1 --format="%cd" --date=iso gh-pages)
-            echo "gh-pages last commit: $gh_pages_date"
-          fi
-
-  generate-report:
-    name: Generate Monitoring Report
-    runs-on: ubuntu-latest
-    needs:
-      [
-        monitor-main-branch,
-        monitor-gh-pages-branch,
-        monitor-content-quality,
-        monitor-user-value,
-        monitor-token-usage,
-        monitor-sync-status,
-      ]
-    if: always()
-    steps:
-      - name: Generate summary report
-        run: |
-          cat > monitoring_report.md << EOF
-          # System Monitoring Report
-
-          Generated: $(date -u +%Y-%m-%dT%H:%M:%SZ)
-          Repository: ${{ github.repository }}
-
-          ## Branch Status
-          - Main Branch: ${{ needs.monitor-main-branch.result }}
-          - gh-pages Branch: ${{ needs.monitor-gh-pages-branch.result }}
-
-          ## Content Quality
-          - Content Quality: ${{ needs.monitor-content-quality.result }}
-
-          ## User Value
-          - User Value: ${{ needs.monitor-user-value.result }}
-
-          ## Token Usage
-          - Token Usage: ${{ needs.monitor-token-usage.result }}
-
-          ## Sync Status
-          - Branch Sync: ${{ needs.monitor-sync-status.result }}
-
-          ## Overall Health
-          ${{ needs.monitor-main-branch.result == 'success' && needs.monitor-gh-pages-branch.result == 'success' && needs.monitor-content-quality.result == 'success' && needs.monitor-user-value.result == 'success' && needs.monitor-token-usage.result == 'success' && needs.monitor-sync-status.result == 'success' && '✅ All systems operational' || '⚠️ Some issues detected' }}
-          EOF
-          cat monitoring_report.md
-
-      - name: Summary
+      - name: Publish factual summary
         if: always()
         run: |
-          echo "## Monitoring Summary" >> $GITHUB_STEP_SUMMARY
-          echo "- Main Branch: ${{ needs.monitor-main-branch.result }}" >> $GITHUB_STEP_SUMMARY
-          echo "- gh-pages Branch: ${{ needs.monitor-gh-pages-branch.result }}" >> $GITHUB_STEP_SUMMARY
-          echo "- Content Quality: ${{ needs.monitor-content-quality.result }}" >> $GITHUB_STEP_SUMMARY
-          echo "- User Value: ${{ needs.monitor-user-value.result }}" >> $GITHUB_STEP_SUMMARY
-          echo "- Token Usage: ${{ needs.monitor-token-usage.result }}" >> $GITHUB_STEP_SUMMARY
-          echo "- Sync Status: ${{ needs.monitor-sync-status.result }}" >> $GITHUB_STEP_SUMMARY
+          {
+            echo "## Production monitoring"
+            echo "- Run: ${{ github.run_id }}"
+            echo "- Result: ${{ job.status }}"
+            echo "- Checked: branch refs, root manifest, immutable release, freshness"
+          } >> "$GITHUB_STEP_SUMMARY"

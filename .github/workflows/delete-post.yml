@@ -1,263 +1,100 @@
-name: Delete Post
+name: Break-glass Content Deletion
 
 on:
   workflow_dispatch:
     inputs:
-      mode:
-        description: "single: delete one post by path; scan: LLM-moderate and delete"
-        required: false
-        default: "scan"
+      target_path:
+        description: "Exact relative path on content branch"
+        required: true
+        type: string
+      reason:
+        description: "Only secret leakage, PII, or legal deletion is permitted"
+        required: true
         type: choice
         options:
-          - single
-          - scan
-      post_path:
-        description: "Relative path under blog/content/posts (e.g. blog/content/posts/20260101-xxx.md)"
-        required: false
+          - secret_leakage
+          - pii
+          - legal_request
+      expected_source_sha:
+        description: "Expected content branch HEAD"
+        required: true
         type: string
-      scan_limit:
-        description: "How many latest posts to scan (mode=scan)"
-        required: false
-        default: "80"
+      backup_id:
+        description: "Verified backup identifier"
+        required: true
+        type: string
+      max_changes:
+        description: "Hard deletion limit (1-100)"
+        required: true
+        default: "1"
         type: string
       dry_run:
-        description: "Only validate and show planned changes"
-        required: false
+        description: "Preview only; execution also requires Environment approval"
+        required: true
         default: true
         type: boolean
 
 concurrency:
-  group: delete-post-main
+  group: break-glass-content-delete
   cancel-in-progress: false
 
 permissions:
-  contents: write
-
-env:
-  ANTHROPIC_AUTH_TOKEN: ${{ secrets.ANTHROPIC_AUTH_TOKEN }}
-  ANTHROPIC_BASE_URL: ${{ secrets.ANTHROPIC_BASE_URL }}
+  contents: read
 
 jobs:
-  delete-post:
+  delete:
+    name: approved-delete
     runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment: data-deletion
+    permissions:
+      contents: write
     steps:
-      - name: Checkout main branch
-        uses: actions/checkout@v4
+      - name: Checkout trusted deletion code
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
         with:
           ref: main
-          fetch-depth: 0
+          path: code
+          persist-credentials: false
 
-      - name: Configure Git
-        run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-
-      - name: Set up Python
-        uses: actions/setup-python@v4
+      - name: Checkout exact content ledger
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
         with:
-          python-version: "3.11"
-          cache: "pip"
+          ref: content
+          path: ledger
+          fetch-depth: 1
+          persist-credentials: true
 
-      - name: Install Python dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
+      - name: Install locked Python toolchain
+        uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e # v6
+        with:
+          version: "0.8.17"
+          enable-cache: true
+          cache-dependency-glob: code/uv.lock
 
-      - name: Validate inputs and execute
+      - name: Validate and apply bounded deletion
         env:
-          MODE: ${{ inputs.mode }}
-          POST_PATH: ${{ inputs.post_path }}
-          SCAN_LIMIT: ${{ inputs.scan_limit }}
+          TARGET_PATH: ${{ inputs.target_path }}
+          REASON: ${{ inputs.reason }}
+          EXPECTED_SOURCE_SHA: ${{ inputs.expected_source_sha }}
+          BACKUP_ID: ${{ inputs.backup_id }}
+          MAX_CHANGES: ${{ inputs.max_changes }}
           DRY_RUN: ${{ inputs.dry_run }}
+        working-directory: code
         run: |
           set -euo pipefail
-
-          MODE="${MODE:-scan}"
-          if [ "${MODE}" != "single" ] && [ "${MODE}" != "scan" ]; then
-            echo "mode must be one of: single, scan"
-            exit 1
+          uv sync --frozen --all-groups
+          args=(
+            --repository ../ledger
+            --target-path "$TARGET_PATH"
+            --reason "$REASON"
+            --expected-source-sha "$EXPECTED_SOURCE_SHA"
+            --backup-id "$BACKUP_ID"
+            --max-changes "$MAX_CHANGES"
+          )
+          if [ "$DRY_RUN" = "true" ]; then
+            args+=(--dry-run)
+          else
+            args+=(--execute)
           fi
-
-          if [ "${MODE}" = "single" ]; then
-            if [ -z "${POST_PATH}" ]; then
-              echo "post_path is required when mode=single"
-              exit 1
-            fi
-
-            case "${POST_PATH}" in
-              /*)
-                echo "post_path must be a relative path"
-                exit 1
-                ;;
-            esac
-
-            case "${POST_PATH}" in
-              *..*)
-                echo "post_path must not contain '..'"
-                exit 1
-                ;;
-            esac
-
-            case "${POST_PATH}" in
-              blog/content/posts/*.md)
-                ;;
-              *)
-                echo "post_path must match: blog/content/posts/*.md"
-                exit 1
-                ;;
-            esac
-
-            if [ ! -f "${POST_PATH}" ]; then
-              echo "File not found: ${POST_PATH}"
-              exit 1
-            fi
-
-            git rm -f "${POST_PATH}"
-            git status --porcelain
-          fi
-
-          if [ "${MODE}" = "scan" ]; then
-            python - <<'PY'
-            import json
-            import os
-            import re
-            import subprocess
-            from pathlib import Path
-
-            import yaml
-
-            from processor.anthropic_client import AnthropicClient
-            from processor.ai_filter import AIThemeFilter
-
-            scan_limit = int((os.environ.get("SCAN_LIMIT") or "80").strip() or 80)
-
-            cmd = f"git ls-files 'blog/content/posts/*.md' | sort -r | head -n {scan_limit}"
-            paths = subprocess.check_output(["bash", "-lc", cmd], text=True).splitlines()
-
-            def extract_frontmatter_and_body(path: Path) -> tuple[dict, str]:
-                text = path.read_text(encoding="utf-8", errors="ignore")
-                if not text.startswith("---"):
-                    return {}, text
-                parts = text.split("\n---\n", 1)
-                if len(parts) != 2:
-                    return {}, text
-                fm_raw = parts[0].lstrip("-").strip("\n")
-                body = parts[1]
-                try:
-                    fm = yaml.safe_load(fm_raw) or {}
-                    if not isinstance(fm, dict):
-                        fm = {}
-                except Exception:
-                    fm = {}
-                return fm, body
-
-            def looks_like_meta_disclaimer(t: str) -> bool:
-                s = (t or "").strip()
-                if not s:
-                    return False
-                banned = ["由于您提供", "仅为标题", "我将基于", "鉴于您提供", "无法从提供", "我无法从"]
-                return any(b in s for b in banned)
-
-            config_path = "config/anthropic.yaml"
-            client = AnthropicClient(config_path)
-            cfg = yaml.safe_load(Path(config_path).read_text(encoding="utf-8")) or {}
-            ai_filter_cfg = ((cfg.get("anthropic") or {}).get("ai_filter") or {})
-            flt = AIThemeFilter(client, ai_filter_cfg)
-
-            to_delete: list[str] = []
-            report: list[dict] = []
-
-            for p in paths:
-                path = Path(p)
-                if not path.exists():
-                    continue
-                fm, body = extract_frontmatter_and_body(path)
-                title = str(fm.get("title") or "").strip()
-                description = str(fm.get("description") or "").strip()
-                tags = fm.get("tags", [])
-                categories = fm.get("categories", [])
-                source = str(fm.get("source") or "").strip()
-                external_url = str(fm.get("external_url") or fm.get("url") or "").strip()
-
-                body_snippet = re.sub(r"\s+", " ", body.strip())[:900]
-                if looks_like_meta_disclaimer(body_snippet):
-                    to_delete.append(p)
-                    report.append({"path": p, "title": title, "decision": "delete", "reason": "low_quality_meta_disclaimer"})
-                    continue
-
-                content = {
-                    "source": source,
-                    "title": title,
-                    "catchy_title": title,
-                    "description": description,
-                    "summary": body_snippet,
-                    "tags": tags if isinstance(tags, list) else [],
-                    "categories": categories if isinstance(categories, list) else [],
-                    "url": external_url,
-                }
-
-                content = flt.filter(content)
-                content = flt.moderate(content)
-
-                should_publish = bool(content.get("should_publish", True))
-                ai_related = bool(content.get("ai_related", True))
-                if (not should_publish) or (not ai_related):
-                    to_delete.append(p)
-                    report.append(
-                        {
-                            "path": p,
-                            "title": title,
-                            "decision": "delete",
-                            "ai_related": ai_related,
-                            "should_publish": should_publish,
-                            "moderation_reason": content.get("moderation_reason", ""),
-                            "moderation_confidence": content.get("moderation_confidence", 0.0),
-                            "moderation_flags": content.get("moderation_flags", {}),
-                            "ai_reason": content.get("ai_reason", ""),
-                            "ai_confidence": content.get("ai_confidence", 0.0),
-                        }
-                    )
-                else:
-                    report.append(
-                        {
-                            "path": p,
-                            "title": title,
-                            "decision": "keep",
-                            "moderation_confidence": content.get("moderation_confidence", 0.0),
-                        }
-                    )
-
-            Path("moderation-report.json").write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
-            Path("to-delete.txt").write_text("\n".join(to_delete) + ("\n" if to_delete else ""), encoding="utf-8")
-            print(f"scanned={len(paths)} delete={len(to_delete)} report=moderation-report.json")
-            PY
-
-            if [ ! -f to-delete.txt ] || [ ! -s to-delete.txt ]; then
-              echo "No files to delete"
-              exit 0
-            fi
-
-            echo "Planned deletions:"
-            cat to-delete.txt
-
-            if [ "${DRY_RUN}" = "true" ]; then
-              echo "Dry run: skipping delete/commit/push"
-              exit 0
-            fi
-
-            git pull --rebase --autostash origin main || (git rebase --abort && git reset --hard origin/main)
-            xargs -I {} git rm -f {} < to-delete.txt
-            git status --porcelain
-            git commit -m "Moderation delete posts [skip ci]"
-            git push origin HEAD:main
-            exit 0
-          fi
-
-          if [ "${DRY_RUN}" = "true" ]; then
-            echo "Dry run: skipping commit/push"
-            exit 0
-          fi
-
-          git pull --rebase --autostash origin main || (git rebase --abort && git reset --hard origin/main)
-          git commit -m "Delete post: $(basename "${POST_PATH}") [skip ci]"
-          git push origin HEAD:main
+          uv run python scripts/break_glass_delete.py "${args[@]}"
