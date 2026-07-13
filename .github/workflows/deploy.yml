@@ -479,7 +479,7 @@ jobs:
 
   deploy:
     name: deploy-exact-release
-    needs: [crawl, persist_result, build]
+    needs: [crawl, reserve_budget, persist_result, build]
     runs-on: ubuntu-latest
     timeout-minutes: 10
     environment:
@@ -495,6 +495,12 @@ jobs:
         with:
           ref: ${{ needs.crawl.outputs.code_sha }}
           persist-credentials: false
+      - name: Checkout release state at the reserved ops revision
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        with:
+          ref: ${{ needs.reserve_budget.outputs.ops_sha }}
+          path: ops-ledger
+          persist-credentials: false
       - name: Download exact release metadata
         uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
         with:
@@ -507,11 +513,13 @@ jobs:
             --profile release --archive release-transfer/release.tar \
             --manifest release-transfer/release.manifest.json --extract-to release
           args=(--candidate release/state/release.json \
+            --tree-manifest release/state/public-tree-manifest.json \
+            --expected-release-id "${{ needs.build.outputs.release_id }}" \
             --expected-code-sha "${{ needs.crawl.outputs.code_sha }}" \
             --expected-content-sha "${{ needs.persist_result.outputs.content_sha }}" \
             --expected-artifact-digest "${{ needs.build.outputs.artifact_digest }}")
-          if [ -f release/state/current-release.json ]; then
-            args+=(--current release/state/current-release.json)
+          if [ -f ops-ledger/ops/releases/current-healthy.json ]; then
+            args+=(--current ops-ledger/ops/releases/current-healthy.json)
           fi
           python3 scripts/release_guard.py validate "${args[@]}"
       - name: Configure GitHub Pages
@@ -522,7 +530,7 @@ jobs:
 
   health:
     name: production-health
-    needs: [build, deploy]
+    needs: [crawl, persist_result, build, deploy]
     runs-on: ubuntu-latest
     timeout-minutes: 5
     permissions:
@@ -531,13 +539,31 @@ jobs:
       - name: Verify deployed release identity
         env:
           EXPECTED_RELEASE: ${{ needs.build.outputs.release_id }}
+          EXPECTED_CODE_SHA: ${{ needs.crawl.outputs.code_sha }}
+          EXPECTED_CONTENT_SHA: ${{ needs.persist_result.outputs.content_sha }}
         run: |
           set -euo pipefail
           for attempt in 1 2 3 4 5; do
             if curl --fail --silent --show-error --output manifest.json \
               "${SITE_BASE_URL}api/v1/manifest.json"; then
-              actual=$(python3 -c 'import json; print(json.load(open("manifest.json"))["active_release"])')
-              if [ "$actual" = "$EXPECTED_RELEASE" ]; then
+              if python3 - <<'PY'
+          import json
+          import os
+
+          with open("manifest.json", encoding="utf-8") as handle:
+              manifest = json.load(handle)
+          build = manifest.get("build")
+          expected = {
+              "release_id": os.environ["EXPECTED_RELEASE"],
+              "code_sha": os.environ["EXPECTED_CODE_SHA"],
+              "content_sha": os.environ["EXPECTED_CONTENT_SHA"],
+          }
+          if manifest.get("active_release") != expected["release_id"]:
+              raise SystemExit(1)
+          if not isinstance(build, dict) or any(build.get(key) != value for key, value in expected.items()):
+              raise SystemExit(1)
+          PY
+              then
                 exit 0
               fi
             fi
@@ -546,9 +572,84 @@ jobs:
           echo "production did not converge to expected release" >&2
           exit 1
 
+  persist_release:
+    name: persist-healthy-release
+    needs: [crawl, reserve_budget, persist_result, build, health]
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    outputs:
+      ops_sha: ${{ steps.persist.outputs.commit_sha }}
+    steps:
+      - name: Checkout trusted release writer
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        with:
+          ref: ${{ needs.crawl.outputs.code_sha }}
+          path: code
+          persist-credentials: false
+      - name: Checkout exact ops parent
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        with:
+          ref: ops
+          path: ops-ledger
+          fetch-depth: 1
+          persist-credentials: true
+      - name: Install locked Python toolchain
+        uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e # v6
+        with:
+          version: "0.8.17"
+          enable-cache: true
+          cache-dependency-glob: code/uv.lock
+      - name: Download exact healthy release
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: release-${{ needs.crawl.outputs.run_id }}
+          path: code/release-transfer
+      - name: Revalidate and CAS-persist healthy release
+        id: persist
+        working-directory: code
+        env:
+          RUN_ID: ${{ needs.crawl.outputs.run_id }}
+          RELEASE_ID: ${{ needs.build.outputs.release_id }}
+          CODE_SHA: ${{ needs.crawl.outputs.code_sha }}
+          CONTENT_SHA: ${{ needs.persist_result.outputs.content_sha }}
+          ARTIFACT_DIGEST: ${{ needs.build.outputs.artifact_digest }}
+        run: |
+          set -euo pipefail
+          uv sync --frozen --all-groups
+          uv run python scripts/artifact_guard.py validate \
+            --profile release --archive release-transfer/release.tar \
+            --manifest release-transfer/release.manifest.json --extract-to release
+          base_ops_sha=$(git -C ../ops-ledger rev-parse HEAD)
+          test "$(git -C ../ops-ledger symbolic-ref --quiet --short HEAD)" = "ops"
+          test "$base_ops_sha" = "${{ needs.reserve_budget.outputs.ops_sha }}"
+          args=(--candidate release/state/release.json \
+            --tree-manifest release/state/public-tree-manifest.json \
+            --expected-release-id "$RELEASE_ID" \
+            --expected-code-sha "$CODE_SHA" \
+            --expected-content-sha "$CONTENT_SHA" \
+            --expected-artifact-digest "$ARTIFACT_DIGEST")
+          if [ -f ../ops-ledger/ops/releases/current-healthy.json ]; then
+            args+=(--current ../ops-ledger/ops/releases/current-healthy.json)
+          fi
+          uv run python scripts/release_guard.py validate "${args[@]}"
+          uv run ai-stack process --phase persist-release \
+            --run-id "$RUN_ID" --input release --state-root ../ops-ledger \
+            --expected-release-id "$RELEASE_ID" \
+            --expected-code-sha "$CODE_SHA" \
+            --expected-content-sha "$CONTENT_SHA" \
+            --expected-artifact-digest "$ARTIFACT_DIGEST"
+          result=$(uv run python scripts/git_cas_writer.py commit-and-push \
+            --repository ../ops-ledger --branch ops \
+            --allowed-root ops --allowed-root state \
+            --expected-base "$base_ops_sha" \
+            --message "Persist healthy release ${RUN_ID}")
+          echo "commit_sha=$(python -c 'import json,sys; print(json.load(sys.stdin)["commit_sha"])' <<< "$result")" >> "$GITHUB_OUTPUT"
+
   publish:
     name: publish-outbox
-    needs: [crawl, build, health]
+    needs: [crawl, persist_result, build, health, persist_release]
     runs-on: ubuntu-latest
     timeout-minutes: 10
     environment: production-publish
@@ -566,26 +667,51 @@ jobs:
           version: "0.8.17"
           enable-cache: true
           cache-dependency-glob: uv.lock
+      - name: Checkout exact healthy release state
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        with:
+          ref: ${{ needs.persist_release.outputs.ops_sha }}
+          path: ops-ledger
+          persist-credentials: false
       - name: Download exact release outbox
         uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
         with:
           name: release-${{ needs.crawl.outputs.run_id }}
           path: release-transfer
-      - name: Consume enabled channels only after health
+      - name: Revalidate exact healthy release without channel credentials
         env:
-          TWITTER_API_KEY: ${{ secrets.TWITTER_API_KEY }}
-          TWITTER_API_SECRET: ${{ secrets.TWITTER_API_SECRET }}
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-          WECHAT_APP_ID: ${{ secrets.WECHAT_APP_ID }}
-          WECHAT_APP_SECRET: ${{ secrets.WECHAT_APP_SECRET }}
-          RUN_ID: ${{ needs.crawl.outputs.run_id }}
+          RELEASE_ID: ${{ needs.build.outputs.release_id }}
+          CODE_SHA: ${{ needs.crawl.outputs.code_sha }}
+          CONTENT_SHA: ${{ needs.persist_result.outputs.content_sha }}
+          ARTIFACT_DIGEST: ${{ needs.build.outputs.artifact_digest }}
         run: |
           set -euo pipefail
           uv sync --frozen --all-groups
           uv run python scripts/artifact_guard.py validate \
             --profile release --archive release-transfer/release.tar \
             --manifest release-transfer/release.manifest.json --extract-to release
+          uv run python scripts/release_guard.py verify \
+            --candidate release/state/release.json \
+            --current ops-ledger/ops/releases/current-healthy.json \
+            --tree-manifest release/state/public-tree-manifest.json \
+            --expected-release-id "$RELEASE_ID" \
+            --expected-code-sha "$CODE_SHA" \
+            --expected-content-sha "$CONTENT_SHA" \
+            --expected-artifact-digest "$ARTIFACT_DIGEST"
+      - name: Consume enabled channels only after exact health binding
+        env:
+          TWITTER_API_KEY: ${{ secrets.TWITTER_API_KEY }}
+          TWITTER_API_SECRET: ${{ secrets.TWITTER_API_SECRET }}
+          TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+          TWITTER_ACCESS_TOKEN_SECRET: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
+          TWITTER_BEARER_TOKEN: ${{ secrets.TWITTER_BEARER_TOKEN }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          WECHAT_APPID: ${{ secrets.WECHAT_APPID }}
+          WECHAT_SECRET: ${{ secrets.WECHAT_SECRET }}
+          RUN_ID: ${{ needs.crawl.outputs.run_id }}
+        run: |
+          set -euo pipefail
           uv run ai-stack publish --run-id "$RUN_ID" \
             --input release/content/outbox --output receipt-handoff
           uv run python scripts/artifact_guard.py pack \
@@ -602,7 +728,7 @@ jobs:
 
   persist_receipt:
     name: persist-receipt
-    needs: [crawl, reserve_budget, publish]
+    needs: [crawl, persist_release, publish]
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
@@ -644,7 +770,7 @@ jobs:
             --manifest receipt-transfer/receipt.manifest.json --extract-to receipt
           base_ops_sha=$(git -C ../ops-ledger rev-parse HEAD)
           test "$(git -C ../ops-ledger symbolic-ref --quiet --short HEAD)" = "ops"
-          test "$base_ops_sha" = "${{ needs.reserve_budget.outputs.ops_sha }}"
+          test "$base_ops_sha" = "${{ needs.persist_release.outputs.ops_sha }}"
           uv run ai-stack process --phase persist-receipt \
             --run-id "$RUN_ID" --input receipt --state-root ../ops-ledger
           uv run python scripts/git_cas_writer.py commit-and-push \

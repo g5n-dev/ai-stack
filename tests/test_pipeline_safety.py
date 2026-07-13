@@ -16,6 +16,7 @@ from ai_stack.models import (
 )
 from ai_stack.pipeline import PipelineError
 from ai_stack.stores import FileOpsStore
+from scripts.release_guard import ReleaseDescriptor, write_release_descriptor
 
 CODE_SHA = "a" * 40
 
@@ -727,6 +728,34 @@ def test_publish_records_sent_failed_and_unknown_without_blind_retry(
         assert result["unknown_count"] == unknown
 
 
+def test_default_disabled_channels_never_initialize_or_send(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    outbox = tmp_path / "outbox"
+    key = _outbox(outbox, "run-disabled")
+    real_import = pipeline.importlib.import_module
+
+    def reject_publisher_import(name: str) -> object:
+        if name == "publisher.main":
+            raise AssertionError("disabled channel attempted to initialize a publisher")
+        return real_import(name)
+
+    monkeypatch.setattr(pipeline.importlib, "import_module", reject_publisher_import)
+    output = tmp_path / "receipts"
+    result = pipeline.publish(
+        run_id="run-disabled",
+        input_root=outbox,
+        output=output,
+        config_path=Path(__file__).resolve().parents[1] / "config/publisher.yaml",
+    )
+
+    receipt = json.loads((output / f"ops/receipts/{key}.json").read_text(encoding="utf-8"))
+    assert result["unknown_count"] == 0
+    assert receipt["status"] == "disabled"
+    assert receipt["attempts"] == 0
+
+
 def test_persist_receipt_maps_every_terminal_status_and_is_idempotent(
     tmp_path: Path,
 ) -> None:
@@ -837,4 +866,140 @@ def test_persist_receipt_rejects_bad_status_and_operation_collision(tmp_path: Pa
             run_id="run-bad",
             input_root=handoff,
             state_root=tmp_path / "collision",
+        )
+
+
+def _release_handoff(
+    root: Path,
+    *,
+    sequence: int,
+    code_sha: str = "a" * 40,
+    content_sha: str = "b" * 40,
+) -> ReleaseDescriptor:
+    tree = {
+        "schema_version": "public_tree_manifest_v1",
+        "file_count": 1,
+        "total_bytes": 4,
+        "files": [
+            {
+                "path": "index.html",
+                "bytes": 4,
+                "sha256": pipeline._sha256_bytes(b"safe"),
+            }
+        ],
+    }
+    digest = pipeline._sha256_bytes(
+        json.dumps(tree, sort_keys=True, separators=(",", ":")).encode()
+    )
+    descriptor = ReleaseDescriptor(
+        code_sha=code_sha,
+        content_sha=content_sha,
+        schema_version="1.0",
+        release_seq=sequence,
+        artifact_digest=digest,
+        generated_at="2026-07-13T08:00:00Z",
+    )
+    (root / "state").mkdir(parents=True)
+    (root / "content/outbox").mkdir(parents=True)
+    write_release_descriptor(root / "state/release.json", descriptor)
+    (root / "state/public-tree-manifest.json").write_text(
+        json.dumps(tree), encoding="utf-8"
+    )
+    (root / "state/release-basis.json").write_text("{}", encoding="utf-8")
+    (root / "content/outbox/index.json").write_text("{}", encoding="utf-8")
+    return descriptor
+
+
+def test_persist_healthy_release_is_append_only_monotonic_and_idempotent(
+    tmp_path: Path,
+) -> None:
+    handoff = tmp_path / "release"
+    descriptor = _release_handoff(handoff, sequence=7)
+    ops = tmp_path / "ops"
+
+    first = pipeline.persist_release(
+        run_id="run-release",
+        input_root=handoff,
+        state_root=ops,
+        expected_release_id=descriptor.release_id,
+        expected_code_sha=descriptor.code_sha,
+        expected_content_sha=descriptor.content_sha,
+        expected_artifact_digest=descriptor.artifact_digest,
+    )
+    second = pipeline.persist_release(
+        run_id="run-release",
+        input_root=handoff,
+        state_root=ops,
+        expected_release_id=descriptor.release_id,
+        expected_code_sha=descriptor.code_sha,
+        expected_content_sha=descriptor.content_sha,
+        expected_artifact_digest=descriptor.artifact_digest,
+    )
+
+    current = ops / "ops/releases/current-healthy.json"
+    archive = ops / (
+        f"ops/releases/healthy/{descriptor.release_seq:020d}-{descriptor.release_id}.json"
+    )
+    assert first["persisted"] is True
+    assert second["persisted"] is False
+    assert json.loads(current.read_text(encoding="utf-8")) == descriptor.to_dict()
+    assert current.read_bytes() == archive.read_bytes()
+
+    stale = tmp_path / "stale"
+    stale_descriptor = _release_handoff(stale, sequence=6, code_sha="c" * 40)
+    with pytest.raises(PipelineError, match="stale release sequence"):
+        pipeline.persist_release(
+            run_id="run-stale",
+            input_root=stale,
+            state_root=ops,
+            expected_release_id=stale_descriptor.release_id,
+            expected_code_sha=stale_descriptor.code_sha,
+            expected_content_sha=stale_descriptor.content_sha,
+            expected_artifact_digest=stale_descriptor.artifact_digest,
+        )
+
+
+def test_persist_healthy_release_rejects_forged_identity_tree_and_extra_files(
+    tmp_path: Path,
+) -> None:
+    base = tmp_path / "base"
+    descriptor = _release_handoff(base, sequence=1)
+
+    with pytest.raises(PipelineError, match="workflow input"):
+        pipeline.persist_release(
+            run_id="run-forged",
+            input_root=base,
+            state_root=tmp_path / "ops-forged",
+            expected_release_id=descriptor.release_id,
+            expected_code_sha="f" * 40,
+            expected_content_sha=descriptor.content_sha,
+            expected_artifact_digest=descriptor.artifact_digest,
+        )
+
+    tree_tamper = tmp_path / "tree-tamper"
+    shutil.copytree(base, tree_tamper)
+    _rewrite_json(tree_tamper / "state/public-tree-manifest.json", {"total_bytes": 9})
+    with pytest.raises(PipelineError, match="public tree manifest"):
+        pipeline.persist_release(
+            run_id="run-tree",
+            input_root=tree_tamper,
+            state_root=tmp_path / "ops-tree",
+            expected_release_id=descriptor.release_id,
+            expected_code_sha=descriptor.code_sha,
+            expected_content_sha=descriptor.content_sha,
+            expected_artifact_digest=descriptor.artifact_digest,
+        )
+
+    extra = tmp_path / "extra"
+    shutil.copytree(base, extra)
+    (extra / "state/unexpected.json").write_text("{}", encoding="utf-8")
+    with pytest.raises(PipelineError, match="unexpected handoff path"):
+        pipeline.persist_release(
+            run_id="run-extra",
+            input_root=extra,
+            state_root=tmp_path / "ops-extra",
+            expected_release_id=descriptor.release_id,
+            expected_code_sha=descriptor.code_sha,
+            expected_content_sha=descriptor.content_sha,
+            expected_artifact_digest=descriptor.artifact_digest,
         )

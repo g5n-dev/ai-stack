@@ -28,6 +28,7 @@ crawl
   -> build-exact-revision
   -> deploy
   -> production-health
+  -> persist-healthy-release
   -> publish-outbox
   -> persist-receipt
 ```
@@ -49,6 +50,7 @@ Git 写权限，也不得同时拥有渠道密钥和 Git 写权限。
 | 模型生成 | `contents: read` | 模型密钥 | 候选文章 artifact |
 | content writer | `contents: write`（仅 `content` 身份） | 无模型密钥 | 事件、证据、文章修订 |
 | Pages build/deploy | read + `pages/id-token` | 无模型/渠道密钥 | 固定双 SHA 的站点 |
+| 健康 release writer | `contents: write`（仅 `ops` 身份） | 无渠道密钥 | 当前健康 descriptor 与追加历史 |
 | Publisher | 无 Git 写权 | 单一渠道密钥 | 平台回执 artifact |
 | Receipt writer | `contents: write`（仅 `ops` 身份） | 无渠道密钥 | receipt/UNKNOWN 状态 |
 
@@ -82,7 +84,10 @@ HTML 和 `/api/v1` 固定引用同一个 `release_id`。部署前读取 `ops` �
 sequence 不得覆盖更高 sequence。回滚不是移动分支指针，而是用更高 sequence 重新部署一组已验证的
 旧 `code_sha + content_sha`，因此预算和已发送回执不会随内容回滚。
 
-只有部署后的生产健康检查成功，publisher 才能消费 outbox。渠道调用超时且结果不明时写入
+部署 job 从预算预留时绑定的 `ops_sha` 读取上一个 `current-healthy.json`，在 Pages 切换前拒绝
+相等或更低 sequence。生产健康检查成功后，独立 ops writer 以 CAS 追加 descriptor 历史并推进
+`current-healthy.json`；publisher 随后以只读方式精确匹配该状态，并复算 public-tree manifest 摘要，
+才允许渠道密钥进入进程。渠道调用超时且结果不明时写入
 `UNKNOWN`，不得自动重发，也不得声称 exactly-once。
 
 ## 并发、缓存与失败语义

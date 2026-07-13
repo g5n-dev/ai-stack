@@ -113,6 +113,9 @@ _PROFILES: Mapping[str, ArtifactPolicy] = {
     "release": ArtifactPolicy(
         allowed_roots=("content", "state"),
         allowed_suffixes=_SAFE_SUFFIXES,
+        # One bounded entry per public file makes this manifest larger than
+        # ordinary handoff JSON while it remains inside the 64 MiB total cap.
+        max_file_bytes=8 * 1024 * 1024,
     ),
     "receipt": ArtifactPolicy(
         allowed_roots=("ops", "state"),

@@ -630,6 +630,8 @@ def test_packaging_rejects_disallowed_suffix_hardlink_and_file_count(
 
 
 def test_rejects_invalid_webp_subtype_and_unknown_profile(tmp_path: Path) -> None:
+    assert guard._profile_policy("release").max_file_bytes == 8 * 1024 * 1024
+
     artifact = tmp_path / "image.tar"
     payload = b"RIFF\x04\x00\x00\x00NOPE"
     expected = _write_tar(

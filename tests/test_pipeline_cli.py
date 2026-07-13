@@ -250,6 +250,34 @@ def test_pipeline_cli_runs_a_fail_closed_static_source_brief_round_trip(
     assert (
         main(
             [
+                "process",
+                "--phase",
+                "persist-release",
+                "--run-id",
+                "run-100-1",
+                "--input",
+                str(build_handoff),
+                "--state-root",
+                str(ops_ledger),
+                "--expected-release-id",
+                descriptor.release_id,
+                "--expected-code-sha",
+                descriptor.code_sha,
+                "--expected-content-sha",
+                descriptor.content_sha,
+                "--expected-artifact-digest",
+                descriptor.artifact_digest,
+            ]
+        )
+        == 0
+    )
+    healthy = json.loads(capsys.readouterr().out)
+    assert healthy["persisted"] is True
+    assert _read_json(ops_ledger / "ops/releases/current-healthy.json") == descriptor.to_dict()
+
+    assert (
+        main(
+            [
                 "publish",
                 "--run-id",
                 "run-100-1",
@@ -285,6 +313,29 @@ def test_pipeline_cli_runs_a_fail_closed_static_source_brief_round_trip(
     )
     receipt_persistence = json.loads(capsys.readouterr().out)
     assert receipt_persistence["persisted_receipts"] == 0
+
+
+def test_persist_release_cli_requires_all_exact_workflow_inputs(
+    tmp_path: Path,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
+    assert (
+        main(
+            [
+                "process",
+                "--phase",
+                "persist-release",
+                "--run-id",
+                "run-missing",
+                "--input",
+                str(tmp_path / "release"),
+                "--state-root",
+                str(tmp_path / "ops"),
+            ]
+        )
+        == 1
+    )
+    assert "--expected-release-id" in capsys.readouterr().err
 
 
 def test_crawl_fails_closed_when_every_source_is_empty(
