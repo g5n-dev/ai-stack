@@ -86,6 +86,17 @@ def test_pr_ci_keeps_branch_update_contract_and_has_no_secrets() -> None:
     assert isinstance(static_build, str)
     assert "data_as_of" in static_build
     assert '--clock "$build_clock"' in static_build
+    link_step = next(
+        step
+        for step in static_steps
+        if isinstance(step, dict) and step.get("name") == "Check internal links"
+    )
+    link_inputs = link_step["with"]
+    assert isinstance(link_inputs, dict)
+    link_args = link_inputs["args"]
+    assert isinstance(link_args, str)
+    assert "--root-dir '${{ github.workspace }}/blog/public'" in link_args
+    assert link_inputs["jobSummary"] == "false"
 
     for required in (
         "uv sync --frozen",
