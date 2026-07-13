@@ -1,0 +1,51 @@
+{{- $pages := .RegularPages.ByDate.Reverse -}}
+{{- $paginator := .Paginate $pages 50 -}}
+<!DOCTYPE html>
+<html class="dark" lang="{{ .Site.LanguageCode }}">
+<head>
+    {{ partial "site-head.html" (dict "Page" . "Canonical" ($paginator.URL | absURL) "Scripts" (slice "/js/terminal.js")) }}
+</head>
+<body data-pagefind-ignore="all" class="bg-deep-navy selection:bg-muted-teal selection:text-deep-navy font-display">
+    <div class="relative flex min-h-screen w-full flex-col">
+        <header class="w-full border-b border-muted-teal/20 bg-deep-navy">
+            <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between gap-6">
+                <a href="/" class="flex items-center gap-3 text-primary">
+                    <span class="material-symbols-outlined text-2xl" aria-hidden="true">terminal</span>
+                    <span class="text-lg font-bold tracking-widest">{{ .Site.Title }}</span>
+                </a>
+                <nav aria-label="主导航" class="flex flex-wrap justify-end gap-5 text-xs text-off-white/70">
+                    {{ range .Site.Menus.main }}
+                    <a class="hover:text-primary" href="{{ .URL }}">{{ .Name }}</a>
+                    {{ end }}
+                </nav>
+            </div>
+        </header>
+
+        <main class="flex-1 w-full px-4 md:px-8 py-10">
+            <div class="w-full max-w-4xl mx-auto">
+                <div class="border-b border-muted-teal/20 pb-5 mb-6">
+                    <p class="text-primary/70 text-xs font-mono tracking-wide">{{ .Data.Plural | upper }} / TERM</p>
+                    <h1 class="mt-2 text-off-white text-3xl font-light">{{ .Title }}</h1>
+                    <p class="mt-2 text-muted-teal/55 text-xs font-mono">共 {{ len $pages }} 篇</p>
+                </div>
+
+                <ol class="divide-y divide-muted-teal/10 border-y border-muted-teal/10">
+                    {{ range $paginator.Pages }}
+                    <li class="py-4">
+                        <a href="{{ .RelPermalink }}" data-taxonomy-entry="{{ .RelPermalink }}"
+                            class="group flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
+                            <span class="text-off-white/85 group-hover:text-primary">{{ .Title }}</span>
+                            <span class="shrink-0 text-muted-teal/50 text-xs font-mono">
+                                {{ .Date.Format "2006-01-02" }}{{ with .Params.source }} · {{ upper . }}{{ end }}
+                            </span>
+                        </a>
+                    </li>
+                    {{ end }}
+                </ol>
+
+                {{ partial "pagination.html" $paginator }}
+            </div>
+        </main>
+    </div>
+</body>
+</html>

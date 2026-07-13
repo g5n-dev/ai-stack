@@ -1,0 +1,49 @@
+{{- $terms := .Pages.ByTitle -}}
+{{- $paginator := .Paginate $terms 50 -}}
+<!DOCTYPE html>
+<html class="dark" lang="{{ .Site.LanguageCode }}">
+<head>
+    {{ partial "site-head.html" (dict "Page" . "Canonical" ($paginator.URL | absURL) "Scripts" (slice "/js/terminal.js")) }}
+</head>
+<body data-pagefind-ignore="all" class="bg-deep-navy selection:bg-muted-teal selection:text-deep-navy font-display">
+    <div class="relative flex min-h-screen w-full flex-col">
+        <header class="w-full border-b border-muted-teal/20 bg-deep-navy">
+            <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between gap-6">
+                <a href="/" class="flex items-center gap-3 text-primary">
+                    <span class="material-symbols-outlined text-2xl" aria-hidden="true">terminal</span>
+                    <span class="text-lg font-bold tracking-widest">{{ .Site.Title }}</span>
+                </a>
+                <nav aria-label="主导航" class="flex flex-wrap justify-end gap-5 text-xs text-off-white/70">
+                    {{ range .Site.Menus.main }}
+                    <a class="hover:text-primary" href="{{ .URL }}">{{ .Name }}</a>
+                    {{ end }}
+                </nav>
+            </div>
+        </header>
+
+        <main class="flex-1 w-full px-4 md:px-8 py-10">
+            <div class="w-full max-w-4xl mx-auto">
+                <div class="border-b border-muted-teal/20 pb-5 mb-6">
+                    <p class="text-primary/70 text-xs font-mono tracking-wide">TAXONOMY</p>
+                    <h1 class="mt-2 text-off-white text-3xl font-light">{{ .Title }}</h1>
+                    <p class="mt-2 text-muted-teal/55 text-xs font-mono">共 {{ len $terms }} 项</p>
+                </div>
+
+                <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 border-y border-muted-teal/10">
+                    {{ range $paginator.Pages }}
+                    <li class="border-b border-muted-teal/10 last:border-b-0">
+                        <a href="{{ .RelPermalink }}" data-term-link="{{ .RelPermalink }}"
+                            class="flex items-center justify-between gap-4 py-4 text-off-white/80 hover:text-primary">
+                            <span>{{ .Title }}</span>
+                            <span class="shrink-0 text-muted-teal/50 text-xs font-mono">{{ len .RegularPages }}</span>
+                        </a>
+                    </li>
+                    {{ end }}
+                </ul>
+
+                {{ partial "pagination.html" $paginator }}
+            </div>
+        </main>
+    </div>
+</body>
+</html>

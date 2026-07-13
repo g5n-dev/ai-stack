@@ -1,0 +1,28 @@
+{{- $pages := where .Site.RegularPages "Type" "posts" -}}
+{{- $pages = $pages.ByDate.Reverse -}}
+{{- $limit := .Site.Config.Services.RSS.Limit -}}
+{{- if lt $limit 1 -}}
+  {{- $limit = 50 -}}
+{{- end -}}
+{{- $feed := .OutputFormats.Get "RSS" -}}
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>{{ .Site.Title | transform.XMLEscape }}</title>
+    <link>{{ .Permalink }}</link>
+    <description>{{ .Site.Params.description | transform.XMLEscape }}</description>
+    <generator>Hugo</generator>
+    <language>{{ .Site.LanguageCode }}</language>
+    {{- with $feed }}
+    <atom:link href="{{ .Permalink }}" rel="self" type="application/rss+xml" />
+    {{- end }}
+    {{- range first $limit $pages }}
+    <item>
+      <title>{{ .Title | transform.XMLEscape }}</title>
+      <link>{{ .Permalink }}</link>
+      <guid isPermaLink="true">{{ .Permalink }}</guid>
+      <pubDate>{{ .PublishDate.Format "Mon, 02 Jan 2006 15:04:05 -0700" }}</pubDate>
+      <description>{{ .Plain | truncate 240 | transform.XMLEscape }}</description>
+    </item>
+    {{- end }}
+  </channel>
+</rss>
