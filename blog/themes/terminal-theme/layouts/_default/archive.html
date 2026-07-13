@@ -1,3 +1,9 @@
+{{- $monthNames := dict "01" "一月" "02" "二月" "03" "三月" "04" "四月" "05" "五月" "06" "六月" "07" "七月" "08" "八月" "09" "九月" "10" "十月" "11" "十一月" "12" "十二月" -}}
+{{- $pages := where .Site.RegularPages "Section" "posts" -}}
+{{- $pages = $pages.ByDate.Reverse -}}
+{{- $paginator := .Paginate $pages 50 -}}
+{{- $pageItems := $paginator.Pages -}}
+{{- $yearGroups := $pageItems.GroupByDate "2006" -}}
 <!DOCTYPE html>
 <html class="dark" lang="{{ .Site.LanguageCode }}">
 
@@ -6,6 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>时间线归档 - {{ .Site.Title }}</title>
     <meta name="description" content="{{ .Site.Params.description }}" />
+    <link rel="canonical" href="{{ $paginator.URL | absURL }}" />
 
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
     <script id="tailwind-config">
@@ -91,13 +98,13 @@
                 <div class="text-center mb-12">
                     <span class="text-primary/70 text-[12px] font-bold tracking-wide mb-2 block">TEMPORAL ARCHIVE</span>
                     <h1 class="text-off-white text-4xl font-light tracking-tight font-display mb-4">时间线归档</h1>
-                    <p class="text-off-white/40 text-sm">共 {{ len .Site.RegularPages }} 篇文章，跨越 {{
-                        .Site.RegularPages.GroupByDate "2006" | len }} 年</p>
+                    <p class="text-off-white/40 text-sm">共 {{ len $pages }} 篇文章；当前第 {{
+                        $paginator.PageNumber }} / {{ $paginator.TotalPages }} 页</p>
                 </div>
 
                 <!-- 年份导航 -->
                 <nav class="flex flex-wrap justify-center gap-3 mb-12">
-                    {{ range .Site.RegularPages.GroupByDate "2006" }}
+                    {{ range $yearGroups }}
                     <a href="#year-{{ .Key }}"
                         class="px-4 py-2 rounded-full border border-muted-teal/20 bg-muted-teal/5 hover:bg-primary/10 hover:border-primary/30 text-off-white/70 hover:text-primary text-[11px] font-mono tracking-wide transition-all">
                         {{ .Key }}
@@ -113,7 +120,7 @@
                     </div>
 
                     <div class="space-y-12">
-                        {{ range .Site.RegularPages.GroupByDate "2006" }}
+                        {{ range $yearGroups }}
                         {{$year := .Key}}
 
                         <!-- 年份区块 -->
@@ -132,8 +139,7 @@
                             <div class="space-y-8 ml-8 md:ml-12">
                                 {{ range .Pages.GroupByDate "2006-01" }}
                                 {{$month := index (split .Key "-") 1}}
-                                {{$monthName := index (slice "一月" "二月" "三月" "四月" "五月" "六月" "七月" "八月" "九月" "十月" "十一月"
-                                "十二月") (sub (int $month) 1)}}
+                                {{$monthName := index $monthNames $month}}
 
                                 <div class="relative">
                                     <!-- 月份标签 -->
@@ -149,7 +155,7 @@
                                     <!-- 文章列表 -->
                                     <div class="space-y-2 ml-5">
                                         {{ range .Pages }}
-                                        <a href="{{ .RelPermalink }}"
+                                        <a href="{{ .RelPermalink }}" data-archive-entry="{{ .RelPermalink }}"
                                             class="group flex items-start gap-4 p-3 rounded-lg hover:bg-muted-teal/5 transition-all">
                                             <span
                                                 class="text-off-white/25 text-[11px] font-mono pt-0.5 group-hover:text-primary/50">{{
@@ -198,6 +204,8 @@
                         返回顶部
                     </a>
                 </div>
+
+                {{ partial "pagination.html" $paginator }}
             </div>
         </main>
 
