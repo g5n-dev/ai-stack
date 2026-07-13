@@ -1,0 +1,34 @@
+{{- $paginator := . -}}
+{{- if gt $paginator.TotalPages 1 -}}
+<nav class="mt-10 flex flex-wrap items-center justify-center gap-2 text-[11px] font-mono"
+    aria-label="分页导航" data-pagination data-current-page="{{ $paginator.PageNumber }}"
+    data-total-pages="{{ $paginator.TotalPages }}">
+    {{- with $paginator.Prev }}
+    <a href="{{ .URL }}" rel="prev"
+        class="px-3 py-2 rounded border border-muted-teal/20 text-off-white/60 hover:text-primary hover:border-primary/30 transition-colors">上一页</a>
+    {{- end }}
+
+    {{- $currentPage := $paginator.PageNumber -}}
+    {{- $totalPages := $paginator.TotalPages -}}
+    {{- range $paginator.Pagers -}}
+        {{- $isBoundary := or (eq .PageNumber 1) (eq .PageNumber $totalPages) -}}
+        {{- $isNearby := and (ge .PageNumber (sub $currentPage 2)) (le .PageNumber (add $currentPage 2)) -}}
+        {{- if or $isBoundary $isNearby -}}
+            {{- if eq .PageNumber $currentPage }}
+    <span aria-current="page"
+        class="px-3 py-2 rounded border border-primary/40 bg-primary/10 text-primary">{{ .PageNumber }}</span>
+            {{- else }}
+    <a href="{{ .URL }}"
+        class="px-3 py-2 rounded border border-muted-teal/20 text-off-white/60 hover:text-primary hover:border-primary/30 transition-colors">{{ .PageNumber }}</a>
+            {{- end }}
+        {{- end -}}
+    {{- end }}
+
+    {{- with $paginator.Next }}
+    <a href="{{ .URL }}" rel="next"
+        class="px-3 py-2 rounded border border-muted-teal/20 text-off-white/60 hover:text-primary hover:border-primary/30 transition-colors">下一页</a>
+    {{- end }}
+</nav>
+{{- else -}}
+<div data-pagination data-current-page="1" data-total-pages="1" hidden></div>
+{{- end -}}
