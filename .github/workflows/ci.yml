@@ -15,8 +15,8 @@ permissions:
   contents: read
 
 jobs:
-  quality:
-    name: quality
+  unit-tests:
+    name: Unit Tests
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -41,10 +41,12 @@ jobs:
           ai_stack content_security.py
           processor/evidence_pipeline.py processor/intelligence.py processor/llm_gateway.py
           publisher/outbox.py
-          scripts/artifact_guard.py scripts/build_intelligence.py scripts/git_cas_writer.py
+          scripts/artifact_guard.py scripts/break_glass_delete.py
+          scripts/build_intelligence.py scripts/git_cas_writer.py
           scripts/release_guard.py scripts/validate_public_content.py
           tests/test_ai_stack_cli.py tests/test_ai_stack_domain.py tests/test_ai_stack_store.py
-          tests/test_artifact_guard.py tests/test_content_security.py
+          tests/test_artifact_guard.py tests/test_break_glass_delete.py
+          tests/test_content_security.py
           tests/test_evidence_pipeline.py tests/test_git_cas_writer.py
           tests/test_intelligence.py tests/test_llm_gateway.py tests/test_outbox.py
           tests/test_publishers.py tests/test_release_guard.py
@@ -62,11 +64,13 @@ jobs:
           --cov=ai_stack --cov=content_security
           --cov=processor.evidence_pipeline --cov=processor.llm_gateway
           --cov=publisher.outbox --cov=scripts.artifact_guard
+          --cov=scripts.break_glass_delete
           --cov=scripts.git_cas_writer --cov=scripts.release_guard
           --cov-report=term-missing --cov-report=xml
           --cov-fail-under=80
           tests/test_ai_stack_cli.py tests/test_ai_stack_domain.py tests/test_ai_stack_store.py
-          tests/test_artifact_guard.py tests/test_content_security.py
+          tests/test_artifact_guard.py tests/test_break_glass_delete.py
+          tests/test_content_security.py
           tests/test_evidence_pipeline.py tests/test_git_cas_writer.py
           tests/test_intelligence.py tests/test_llm_gateway.py tests/test_outbox.py
           tests/test_publishers.py tests/test_release_guard.py

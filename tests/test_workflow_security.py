@@ -64,6 +64,10 @@ def test_pr_ci_keeps_branch_update_contract_and_has_no_secrets() -> None:
     assert "${{ secrets." not in text
     assert "cancel-in-progress: true" in text
 
+    jobs = _jobs(workflow)
+    assert "unit-tests" in jobs
+    assert jobs["unit-tests"]["name"] == "Unit Tests"
+
     for required in (
         "uv sync --frozen",
         "ruff check",
