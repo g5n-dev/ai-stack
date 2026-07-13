@@ -314,8 +314,9 @@ def test_hugo_external_mount_keeps_local_pages_and_uses_content_ledger() -> None
     text = mount.read_text(encoding="utf-8")
 
     assert 'source = "content"' in text
-    assert 'source = "../content-ledger/content"' in text
-    assert text.count('target = "content"') == 2
+    assert 'source = "../content-ledger/content/posts"' in text
+    assert 'target = "content/posts"' in text
+    assert text.count('target = "content"') == 1
 
 
 def test_delete_workflow_is_break_glass_dry_run_and_bounded() -> None:

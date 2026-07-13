@@ -1,9 +1,10 @@
 {{- $pages := .RegularPages.ByDate.Reverse -}}
 {{- $paginator := .Paginate $pages 50 -}}
+{{- $termTitle := .Data.Term | default .Title -}}
 <!DOCTYPE html>
 <html class="dark" lang="{{ .Site.LanguageCode }}">
 <head>
-    {{ partial "site-head.html" (dict "Page" . "Canonical" ($paginator.URL | absURL) "Scripts" (slice "/js/terminal.js")) }}
+    {{ partial "site-head.html" (dict "Page" . "Title" (printf "%s - %s" $termTitle .Site.Title) "Canonical" ($paginator.URL | absURL) "Scripts" (slice "/js/terminal.js")) }}
 </head>
 <body data-pagefind-ignore="all" class="bg-deep-navy selection:bg-muted-teal selection:text-deep-navy font-display">
     <div class="relative flex min-h-screen w-full flex-col">
@@ -25,7 +26,7 @@
             <div class="w-full max-w-4xl mx-auto">
                 <div class="border-b border-muted-teal/20 pb-5 mb-6">
                     <p class="text-primary/70 text-xs font-mono tracking-wide">{{ .Data.Plural | upper }} / TERM</p>
-                    <h1 class="mt-2 text-off-white text-3xl font-light">{{ .Title }}</h1>
+                    <h1 class="mt-2 text-off-white text-3xl font-light">{{ $termTitle }}</h1>
                     <p class="mt-2 text-muted-teal/55 text-xs font-mono">共 {{ len $pages }} 篇</p>
                 </div>
 

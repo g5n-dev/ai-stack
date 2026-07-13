@@ -59,6 +59,25 @@ def test_list_templates_exclude_duplicate_navigation_text_from_pagefind() -> Non
     assert "data-pagefind-body" not in taxonomy
 
 
+def test_taxonomy_and_sitemap_order_do_not_depend_on_mount_traversal() -> None:
+    term = (BLOG / "themes/terminal-theme/layouts/partials/compact-term.html").read_text(
+        encoding="utf-8"
+    )
+    taxonomy = (
+        BLOG / "themes/terminal-theme/layouts/partials/compact-taxonomy.html"
+    ).read_text(encoding="utf-8")
+    sitemap = (BLOG / "themes/terminal-theme/layouts/sitemap.xml").read_text(
+        encoding="utf-8"
+    )
+
+    assert "$termTitle := .Data.Term" in term
+    assert '"Title" (printf "%s - %s" $termTitle .Site.Title)' in term
+    assert "{{ $termTitle }}" in term
+    assert 'sort .Pages "Data.Term"' in taxonomy
+    assert "{{ .Data.Term }}" in taxonomy
+    assert 'sort (where .Pages "Sitemap.Disable" "ne" true) "Permalink"' in sitemap
+
+
 @pytest.mark.skipif(shutil.which("hugo") is None, reason="Hugo is not installed")
 def test_fixture_build_has_bounded_feeds_and_fifty_item_taxonomy_pages(
     tmp_path: Path,
