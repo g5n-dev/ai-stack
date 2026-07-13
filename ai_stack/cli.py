@@ -130,6 +130,7 @@ def _parser() -> argparse.ArgumentParser:
     dedupe.add_argument("content_root", type=Path, nargs="?", default=Path("blog/content/posts"))
     dedupe.add_argument("--execute", action="store_true")
     dedupe.add_argument("--expected-source-sha")
+    dedupe.add_argument("--expected-code-sha")
     dedupe.add_argument("--backup-id")
     dedupe.add_argument("--max-changes", type=int)
     dedupe.add_argument("--shadow-evidence-root", type=Path)
@@ -352,6 +353,7 @@ def _migration(args: argparse.Namespace) -> int:
             validate_dedupe_execution_gate(
                 content_root=args.content_root,
                 expected_source_sha=args.expected_source_sha,
+                expected_code_sha=args.expected_code_sha,
                 backup_id=args.backup_id,
                 max_changes=args.max_changes,
                 shadow_evidence_root=args.shadow_evidence_root,
@@ -364,6 +366,7 @@ def _migration(args: argparse.Namespace) -> int:
                 args.content_root,
                 shadow_evidence_root=args.shadow_evidence_root,
                 expected_source_sha=args.expected_source_sha,
+                expected_code_sha=args.expected_code_sha,
             )
         )
         return 0

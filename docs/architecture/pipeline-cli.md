@@ -95,8 +95,8 @@ All default to dry-run. `--execute` requires `--expected-source-sha`,
 file. Dedupe additionally caps `--max-changes` at 100 and requires an exact
 `--shadow-evidence-root` from the `ops` ledger.
 
-Each shadow comparison can append an audit record while retaining the existing
-standalone report:
+Each Hugo-only shadow comparison can append an audit record while retaining the
+existing standalone report:
 
 ```text
 uv run python scripts/shadow_compare.py \
@@ -105,8 +105,63 @@ uv run python scripts/shadow_compare.py \
   --code-sha CODE_SHA --content-sha CONTENT_SHA \
   --evidence-root OPS_LEDGER/ops/migrations/shadow \
   --run-id RUN_ID --completed-at 2026-07-13T08:00:00Z \
-  --full-build --expected-previous-digest PREVIOUS_SHA256
+  --expected-previous-digest PREVIOUS_SHA256
 ```
+
+`shadow_compare.py` writes the complete report, including all external-link
+sets, to `--report` and the content-addressed evidence store. Its stdout is a
+bounded `shadow_compare_summary_v1`: counts, tree digests, at most 20 paths per
+difference class, the canonical report digest, and the appended record digest.
+External-link values are never copied into Actions logs.
+
+The ordinary comparison CLI cannot claim a successful `--full-build`. A
+qualifying full build must first produce two byte-identical Hugo trees, run
+Pagefind 1.5.2 once against an isolated copy of that common input, and inject
+only the resulting regular-file `pagefind/` subtree into both final tree
+copies. The full-build attestation is then generated with:
+
+```text
+uv run python scripts/shadow_full_build.py \
+  --hugo-baseline legacy-hugo-public \
+  --hugo-candidate ledger-hugo-public \
+  --final-baseline legacy-final-public \
+  --final-candidate ledger-final-public \
+  --pagefind-bundle shared-pagefind-bundle \
+  --package-lock package-lock.json \
+  --pagefind-runner node_modules/pagefind/lib/runner/bin.cjs \
+  --platform-package @pagefind/linux-x64 \
+  --pagefind-command npm run build:search \
+  --command-input pagefind_config=pagefind.yml \
+  --command-input wrapper=scripts/build_search.mjs \
+  --command-input catalog=scripts/build_search_catalog.mjs \
+  --report full-shadow-report.json \
+  --code-sha CODE_SHA --content-sha CONTENT_SHA \
+  --evidence-root OPS_LEDGER/ops/migrations/shadow \
+  --run-id RUN_ID --completed-at 2026-07-13T08:00:00Z \
+  --expected-previous-digest PREVIOUS_SHA256
+```
+
+`--pagefind-runner` must name the resolved regular runner file, not a symlink.
+The command hashes the package lock, runner, command argv, Pagefind config, and
+every named wrapper/catalog input; verifies the exact Pagefind and platform
+package versions and npm integrity values; and rejects duplicate input names or
+symlinked path components. It never executes the recorded command: callers
+first build the production-format bundle, including catalog generation and
+fragment removal when configured, and then attest that exact directory. It
+verifies an additive-only injection: no pre-existing
+`pagefind/` files, no removed or changed Hugo paths, no additions outside the
+allowlisted prefix, and both added subtrees equal the same bundle digest. The
+final comparison still covers every path and byte; `compare_trees` has no
+ignore or exclusion mode.
+
+The resulting `shadow_full_build_v1` report references the pre-injection and
+post-injection `shadow_compare_v1` reports by digest. All three objects are
+stored under `reports/<sha256>.json`; the ordered record still uses the
+unchanged `shadow_migration_evidence_v1` hash-chain schema. Legacy v1 full-build
+records remain readable and preserve their original digest, but do not satisfy
+the new three-full-build threshold. The full-build CLI likewise prints only a
+bounded `shadow_full_build_summary_v1`, including the report and record digests;
+the complete composite remains in `--report` and the evidence store.
 
 Omit `--expected-previous-digest` only for the first record. Reports live under
 `reports/<sha256>.json`; ordered records live under
@@ -116,12 +171,22 @@ current success window, and can never count toward the gate. Duplicate run IDs,
 timestamp reordering, future timestamps, chain gaps, report tampering, and
 code/content SHA mismatches fail closed.
 
-`ai-stack migrate dedupe --shadow-evidence-root ...` reports three independently
-verified thresholds: 24 consecutive successful runs, three successful full-tree
-build comparisons, and seven elapsed days since the start of the uninterrupted
-window. The latest evidence must bind the requested source SHA. Passing these
-checks does **not** mutate content in this release: the dedupe mutation engine is
-intentionally absent, so `--execute` stops after validation with zero changes.
+`ai-stack migrate dedupe --shadow-evidence-root ... --expected-code-sha
+CODE_SHA --expected-source-sha CONTENT_SHA` reports three independently
+verified thresholds: 24 consecutive successful runs, three qualifying shared
+Pagefind full-build attestations, and seven elapsed days since the start of the
+uninterrupted window. Supplying an expected code or content SHA scopes the
+entire latest streak, not only its last record: any run with another identity
+breaks the window. The CLI requires the current code SHA whenever shadow
+evidence is used, so 24 runs produced by an older implementation cannot unlock
+a cutover or dedupe under newer code. Passing these checks does **not** mutate
+content in this release: the dedupe mutation engine is intentionally absent, so
+`--execute` stops after validation with zero changes.
+
+The shared-bundle profile proves “identical Hugo input + one content-addressed
+Pagefind bundle injected into both outputs + identical complete final trees.”
+It deliberately does **not** claim that two independent Pagefind 1.5.2 runs
+produce byte-identical output.
 
 The filesystem hash chain detects mutation relative to its anchored head; it
 cannot by itself prove that an untrusted producer actually executed a build.

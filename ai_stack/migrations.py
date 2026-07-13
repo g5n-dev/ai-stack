@@ -246,6 +246,7 @@ def _verified_shadow_gate(
     evidence_root: Path,
     *,
     expected_content_sha: str | None,
+    expected_code_sha: str | None,
     as_of: datetime | None = None,
 ) -> ShadowGateResult:
     try:
@@ -253,6 +254,7 @@ def _verified_shadow_gate(
             evidence_root,
             as_of=as_of,
             expected_content_sha=expected_content_sha,
+            expected_code_sha=expected_code_sha,
         )
     except ShadowEvidenceError as exc:
         raise MigrationSafetyError(f"shadow migration evidence is invalid: {exc}") from exc
@@ -262,6 +264,7 @@ def validate_dedupe_execution_gate(
     *,
     content_root: Path,
     expected_source_sha: str | None,
+    expected_code_sha: str | None,
     backup_id: str | None,
     max_changes: int | None,
     shadow_evidence_root: Path | None,
@@ -284,10 +287,13 @@ def validate_dedupe_execution_gate(
         raise MigrationSafetyError("dedupe --max-changes must be between 1 and 100")
     if shadow_evidence_root is None:
         raise MigrationSafetyError("dedupe --execute requires --shadow-evidence-root")
+    if expected_code_sha is None:
+        raise MigrationSafetyError("dedupe --execute requires --expected-code-sha")
     assert isinstance(expected_source_sha, str)
     gate = _verified_shadow_gate(
         shadow_evidence_root,
         expected_content_sha=expected_source_sha.casefold(),
+        expected_code_sha=expected_code_sha.casefold(),
         as_of=as_of,
     )
     if not gate.ready:
@@ -302,6 +308,7 @@ def dedupe_plan(
     *,
     shadow_evidence_root: Path | None = None,
     expected_source_sha: str | None = None,
+    expected_code_sha: str | None = None,
     as_of: datetime | None = None,
 ) -> dict[str, Any]:
     report = scan_markdown_inventory(content_root, dry_run=True)
@@ -310,9 +317,14 @@ def dedupe_plan(
         report["shadow_gate"] = None
         report["execution_blocked"] = "requires_24_shadow_runs_and_7_day_soak"
     else:
+        if expected_code_sha is None:
+            raise MigrationSafetyError(
+                "dedupe with --shadow-evidence-root requires --expected-code-sha"
+            )
         gate = _verified_shadow_gate(
             shadow_evidence_root,
             expected_content_sha=expected_source_sha,
+            expected_code_sha=expected_code_sha,
             as_of=as_of,
         )
         report["shadow_gate"] = gate.to_dict()

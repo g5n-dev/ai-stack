@@ -16,6 +16,7 @@ from hashlib import sha256
 from html.parser import HTMLParser
 from pathlib import Path
 
+from ai_stack._json import canonical_json_bytes
 from ai_stack.shadow_evidence import (
     ShadowEvidenceError,
     append_shadow_evidence,
@@ -31,6 +32,7 @@ _MAX_FILES = 200_000
 _MAX_FILE_BYTES = 128 * 1024 * 1024
 _MAX_TOTAL_BYTES = 10 * 1024 * 1024 * 1024
 _MAX_DIFFERENCES = 500
+_MAX_SUMMARY_DIFFERENCES = 20
 
 
 class _ExternalLinkParser(HTMLParser):
@@ -198,6 +200,61 @@ def compare_trees(
     return report
 
 
+def summarize_report(
+    report: dict[str, object],
+    *,
+    record_digest: str | None,
+) -> dict[str, object]:
+    """Return a bounded log-safe view while preserving the full report on disk."""
+
+    def difference_list(field: str) -> list[object]:
+        value = report.get(field)
+        return value[:_MAX_SUMMARY_DIFFERENCES] if isinstance(value, list) else []
+
+    external_links = report.get("external_links")
+    baseline_links = report.get("baseline_external_links")
+    candidate_links = report.get("candidate_external_links")
+    difference_counts = {
+        field: report.get(field)
+        for field in ("missing_path_count", "extra_path_count", "changed_path_count")
+    }
+    summary_truncated = bool(report.get("differences_truncated")) or any(
+        isinstance(count, int) and count > _MAX_SUMMARY_DIFFERENCES
+        for count in difference_counts.values()
+    )
+    report_digest = "sha256:" + sha256(canonical_json_bytes(report) + b"\n").hexdigest()
+    return {
+        "schema_version": "shadow_compare_summary_v1",
+        "report_schema_version": report.get("schema_version"),
+        "matches": report.get("matches"),
+        "code_sha": report.get("code_sha"),
+        "content_sha": report.get("content_sha"),
+        "file_count": report.get("file_count"),
+        "html_count": report.get("html_count"),
+        "baseline_file_count": report.get("baseline_file_count"),
+        "candidate_file_count": report.get("candidate_file_count"),
+        "baseline_html_count": report.get("baseline_html_count"),
+        "candidate_html_count": report.get("candidate_html_count"),
+        "baseline_tree_sha256": report.get("baseline_tree_sha256"),
+        "candidate_tree_sha256": report.get("candidate_tree_sha256"),
+        "external_links_match": report.get("external_links_match"),
+        "external_link_count": len(external_links) if isinstance(external_links, list) else None,
+        "baseline_external_link_count": (
+            len(baseline_links) if isinstance(baseline_links, list) else None
+        ),
+        "candidate_external_link_count": (
+            len(candidate_links) if isinstance(candidate_links, list) else None
+        ),
+        **difference_counts,
+        "missing_paths": difference_list("missing_paths"),
+        "extra_paths": difference_list("extra_paths"),
+        "changed_paths": difference_list("changed_paths"),
+        "differences_truncated": summary_truncated,
+        "report_digest": report_digest,
+        "record_digest": record_digest,
+    }
+
+
 def _atomic_json(path: Path, value: dict[str, object]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     payload = (
@@ -274,6 +331,7 @@ def _validate_evidence_args(args: argparse.Namespace) -> datetime | None:
 
 def main(argv: Sequence[str] | None = None) -> int:
     args = _parser().parse_args(argv)
+    record_digest: str | None = None
     try:
         completed_at = _validate_evidence_args(args)
         report = compare_trees(
@@ -288,7 +346,7 @@ def main(argv: Sequence[str] | None = None) -> int:
             assert isinstance(args.run_id, str)
             assert isinstance(args.code_sha, str)
             assert isinstance(args.content_sha, str)
-            append_shadow_evidence(
+            record = append_shadow_evidence(
                 args.evidence_root,
                 report=report,
                 run_id=args.run_id,
@@ -298,10 +356,17 @@ def main(argv: Sequence[str] | None = None) -> int:
                 content_sha=args.content_sha,
                 expected_previous_digest=args.expected_previous_digest,
             )
+            record_digest = record.record_digest
     except (OSError, ShadowComparisonError, ShadowEvidenceError) as exc:
         print(json.dumps({"error": str(exc)}, sort_keys=True), file=sys.stderr)
         return 1
-    print(json.dumps(report, ensure_ascii=False, sort_keys=True))
+    print(
+        json.dumps(
+            summarize_report(report, record_digest=record_digest),
+            ensure_ascii=False,
+            sort_keys=True,
+        )
+    )
     return 0 if report["matches"] else 2
 
 
