@@ -7,6 +7,7 @@
 </head>
 
 <body class="bg-deep-navy selection:bg-muted-teal selection:text-deep-navy font-display overflow-x-hidden">
+    {{ $buildTime := .Site.Data.related.index.data_as_of | time.AsTime }}
     <div class="rain-container"></div>
     <div class="fog-container"></div>
     <div class="ambient-glow"></div>
@@ -209,7 +210,7 @@
         <footer class="border-t border-muted-teal/10 bg-deep-navy/90 backdrop-blur py-6 mt-auto relative z-20">
             <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
                 <div class="text-[10px] text-off-white/40 font-mono flex flex-col gap-1">
-                    <p>SESSION ID: {{ now.Format "20060102-150405" }}</p>
+                    <p>SESSION ID: {{ $buildTime.Format "20060102-150405" }}</p>
                     <p>ENCRYPTION: 256-BIT</p>
                 </div>
                 <div class="flex gap-4 items-center">
@@ -224,7 +225,7 @@
                 </div>
                 <div class="text-right text-[10px] text-off-white/30 font-mono">
                     <p class="animate-pulse">SYSTEM STATUS: ONLINE</p>
-                    <p>© {{ now.Year }} {{ .Site.Title }}</p>
+                    <p>© {{ $buildTime.Year }} {{ .Site.Title }}</p>
                 </div>
             </div>
 

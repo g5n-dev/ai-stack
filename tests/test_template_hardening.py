@@ -73,6 +73,19 @@ def test_templates_have_no_unsafe_casts_or_hard_coded_trust_claims() -> None:
     assert "CITATION_GRAPH: LINKED" not in templates
 
 
+def test_visible_build_identifiers_use_the_content_clock_not_wall_time() -> None:
+    index = (LAYOUT_ROOT / "index.html").read_text(encoding="utf-8")
+    about = (LAYOUT_ROOT / "about/single.html").read_text(encoding="utf-8")
+
+    for template in (index, about):
+        assert ".Site.Data.related.index.data_as_of | time.AsTime" in template
+        assert "now." not in template
+
+    assert '$buildTime.Format "15:04:05"' in index
+    assert '$buildTime.Format "20060102-150405"' in about
+    assert "$buildTime.Year" in about
+
+
 def test_graph_template_is_a_non_executable_integration_placeholder() -> None:
     template = (LAYOUT_ROOT / "scenarios/list.html").read_text(encoding="utf-8")
 
