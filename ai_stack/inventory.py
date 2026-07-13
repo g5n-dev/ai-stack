@@ -5,12 +5,12 @@ import os
 import re
 import uuid
 from collections import defaultdict
+from collections.abc import Iterator
 from pathlib import Path
-from typing import Any, Iterator
+from typing import Any
 
 from .identity import canonicalize_url
 from .stores import UnsafeStorePathError
-
 
 _EXTERNAL_URL = re.compile(
     r"^\s*(?:external_url|externalUrl|external-url)\s*[:=]\s*(.*?)\s*$"

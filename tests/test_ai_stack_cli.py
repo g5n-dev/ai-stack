@@ -1,15 +1,14 @@
 from __future__ import annotations
 
 import json
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
 from ai_stack.cli import main
 from ai_stack.models import RunManifest, StepResult, StepStatus, WorkflowStatus
 from ai_stack.stores import FileContentStore
 
-
-NOW = datetime(2026, 7, 13, tzinfo=timezone.utc)
+NOW = datetime(2026, 7, 13, tzinfo=UTC)
 
 
 def write_post(path: Path, external_url: str | None, *, title: str) -> None:

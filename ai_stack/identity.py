@@ -8,7 +8,6 @@ from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 
 from ._json import canonical_json_bytes, sha256_hex
 
-
 CANONICALIZATION_VERSION = "url-v1"
 _TRACKING_PARAMETERS = {
     "dclid",

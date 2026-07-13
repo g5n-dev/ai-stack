@@ -6,13 +6,13 @@ saved source snapshot.  It does not claim that the source itself is true.
 
 from __future__ import annotations
 
+import hmac
+import html
+import re
+from collections.abc import Mapping, Sequence
 from dataclasses import dataclass
 from enum import Enum
 from hashlib import sha256
-import html
-import hmac
-import re
-from typing import Mapping, Sequence
 from urllib.parse import urlsplit
 
 

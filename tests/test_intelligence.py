@@ -4,20 +4,19 @@ import hashlib
 import json
 import tempfile
 import unittest
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
 from processor.intelligence import (
-    IntelligenceValidationError,
     TREND_FORMULA,
+    IntelligenceValidationError,
     build_static_intelligence,
-    canonical_events,
     calculate_trends,
+    canonical_events,
 )
 
-
 FIXTURE_PATH = Path(__file__).parent / "fixtures" / "intelligence_events.json"
-AS_OF = datetime(2026, 7, 13, 12, 0, tzinfo=timezone.utc)
+AS_OF = datetime(2026, 7, 13, 12, 0, tzinfo=UTC)
 
 
 def load_fixture():
@@ -46,7 +45,8 @@ class CanonicalEventTest(unittest.TestCase):
                 "evt-agent-5",
             ],
         )
-        self.assertNotIn("untrusted-topic", {topic for event in result for topic in event["topics"]})
+        emitted_topics = {topic for event in result for topic in event["topics"]}
+        self.assertNotIn("untrusted-topic", emitted_topics)
 
     def test_latest_revision_wins_without_mutating_input(self):
         events = [
@@ -126,7 +126,9 @@ class TrendV1Test(unittest.TestCase):
         ]
 
         with_duplicates = calculate_trends(events, as_of=AS_OF)["windows"]["24h"]["trends"][0]
-        without_duplicates = calculate_trends(without_aliases, as_of=AS_OF)["windows"]["24h"]["trends"][0]
+        without_duplicates = calculate_trends(without_aliases, as_of=AS_OF)["windows"][
+            "24h"
+        ]["trends"][0]
 
         self.assertEqual(with_duplicates["components"], without_duplicates["components"])
         self.assertLess(with_duplicates["score"], without_duplicates["score"])
@@ -276,7 +278,12 @@ class StaticIntelligenceBuildTest(unittest.TestCase):
                 emitted.extend(payload["items"])
 
             self.assertEqual(len(emitted), 5)
-            self.assertTrue(all(event["event_id"] == event["canonical_event_id"] for event in emitted))
+            self.assertTrue(
+                all(
+                    event["event_id"] == event["canonical_event_id"]
+                    for event in emitted
+                )
+            )
 
     def test_feed_metadata_is_static_local_and_format_explicit(self):
         fixture = load_fixture()

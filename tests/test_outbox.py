@@ -1,6 +1,5 @@
 import unittest
 
-
 from publisher.outbox import (
     InMemoryOutboxStore,
     OutboxDispatcher,

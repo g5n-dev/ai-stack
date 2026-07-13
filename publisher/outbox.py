@@ -2,10 +2,10 @@
 
 from __future__ import annotations
 
-from dataclasses import dataclass, replace
 import hashlib
+from collections.abc import Callable
+from dataclasses import dataclass, replace
 from threading import Lock
-from typing import Callable
 
 
 @dataclass(frozen=True)
@@ -26,15 +26,15 @@ class PublishResult:
             raise ValueError("only failed results may be retryable")
 
     @classmethod
-    def sent(cls, provider_message_id: str) -> "PublishResult":
+    def sent(cls, provider_message_id: str) -> PublishResult:
         return cls(status="sent", provider_message_id=provider_message_id)
 
     @classmethod
-    def unknown(cls, detail: str) -> "PublishResult":
+    def unknown(cls, detail: str) -> PublishResult:
         return cls(status="unknown", detail=detail)
 
     @classmethod
-    def failed(cls, detail: str, *, retryable: bool) -> "PublishResult":
+    def failed(cls, detail: str, *, retryable: bool) -> PublishResult:
         return cls(status="failed", detail=detail, retryable=retryable)
 
 
@@ -61,8 +61,18 @@ class InMemoryOutboxStore:
         with self._lock:
             existing = self._values.get(record.idempotency_key)
             if existing is not None:
-                comparable = (existing.event_revision, existing.platform, existing.template_version, existing.payload)
-                incoming = (record.event_revision, record.platform, record.template_version, record.payload)
+                comparable = (
+                    existing.event_revision,
+                    existing.platform,
+                    existing.template_version,
+                    existing.payload,
+                )
+                incoming = (
+                    record.event_revision,
+                    record.platform,
+                    record.template_version,
+                    record.payload,
+                )
                 if comparable != incoming:
                     raise ValueError("idempotency key collision with different payload")
                 return replace(existing)
@@ -98,7 +108,7 @@ class OutboxDispatcher:
 
     @staticmethod
     def make_key(event_revision: str, platform: str, template_version: str) -> str:
-        raw = f"{event_revision}\x1f{platform}\x1f{template_version}".encode("utf-8")
+        raw = f"{event_revision}\x1f{platform}\x1f{template_version}".encode()
         return hashlib.sha256(raw).hexdigest()
 
     def enqueue(

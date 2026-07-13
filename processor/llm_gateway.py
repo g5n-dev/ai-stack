@@ -2,10 +2,10 @@
 
 from __future__ import annotations
 
-from dataclasses import dataclass, replace
-from datetime import datetime, timezone
 import hashlib
 import json
+from dataclasses import dataclass, replace
+from datetime import UTC, datetime
 from threading import Lock
 from typing import Protocol
 from uuid import uuid4
@@ -92,17 +92,31 @@ class InMemoryBudgetStore:
         now: datetime,
     ) -> BudgetReservation:
         with self._lock:
-            day = now.astimezone(timezone.utc).date()
-            daily = [item for item in self._items if item.created_at.astimezone(timezone.utc).date() == day]
+            day = now.astimezone(UTC).date()
+            daily = [item for item in self._items if item.created_at.astimezone(UTC).date() == day]
             run_items = [item for item in self._items if item.run_id == run_id]
             item_items = [item for item in self._items if item.item_id == item_id]
             limits = (
                 (len(item_items) + 1, policy.max_calls_per_item, "item call"),
                 (len(run_items) + 1, policy.max_calls_per_run, "run call"),
                 (len(daily) + 1, policy.max_calls_per_day, "daily call"),
-                (sum(item.reserved_tokens for item in item_items) + reserved_tokens, policy.max_tokens_per_item, "item token"),
-                (sum(item.reserved_tokens for item in run_items) + reserved_tokens, policy.max_tokens_per_run, "run token"),
-                (sum(item.reserved_tokens for item in daily) + reserved_tokens, policy.max_tokens_per_day, "daily token"),
+                (
+                    sum(item.reserved_tokens for item in item_items)
+                    + reserved_tokens,
+                    policy.max_tokens_per_item,
+                    "item token",
+                ),
+                (
+                    sum(item.reserved_tokens for item in run_items)
+                    + reserved_tokens,
+                    policy.max_tokens_per_run,
+                    "run token",
+                ),
+                (
+                    sum(item.reserved_tokens for item in daily) + reserved_tokens,
+                    policy.max_tokens_per_day,
+                    "daily token",
+                ),
             )
             for actual, maximum, label in limits:
                 if actual > maximum:
@@ -206,7 +220,7 @@ class LLMGateway:
             reserved_tokens=estimated_input_tokens + max_tokens,
             cache_key=key,
             policy=self.policy,
-            now=datetime.now(timezone.utc),
+            now=datetime.now(UTC),
         )
         try:
             response = self.provider.generate(

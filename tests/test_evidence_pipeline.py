@@ -1,6 +1,5 @@
-from hashlib import sha256
 import unittest
-
+from hashlib import sha256
 
 from processor.evidence_pipeline import EvidenceGate, PublicationTier
 
@@ -13,7 +12,13 @@ class EvidenceGateTest(unittest.TestCase):
             "snap-2": "The maintainers describe the release as experimental.",
         }
 
-    def evidence(self, evidence_id: str, snapshot_id: str, snippet: str, **changes: object) -> dict[str, object]:
+    def evidence(
+        self,
+        evidence_id: str,
+        snapshot_id: str,
+        snippet: str,
+        **changes: object,
+    ) -> dict[str, object]:
         snapshot = self.snapshots[snapshot_id]
         start_character = snapshot.index(snippet)
         start_byte = len(snapshot[:start_character].encode("utf-8"))

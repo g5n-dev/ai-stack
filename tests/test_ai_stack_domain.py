@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
 import pytest
 
@@ -30,8 +30,7 @@ from ai_stack.models import (
     WorkflowStatus,
 )
 
-
-NOW = datetime(2026, 7, 13, 8, 0, tzinfo=timezone.utc)
+NOW = datetime(2026, 7, 13, 8, 0, tzinfo=UTC)
 
 
 def test_canonical_url_and_stable_ids_are_order_independent() -> None:
@@ -181,7 +180,7 @@ def test_domain_records_reject_invalid_time_ranges_and_support_score() -> None:
             seed_item_id="itm_seed",
             member_item_ids=("itm_seed",),
             first_seen=NOW,
-            last_seen=datetime(2026, 7, 12, tzinfo=timezone.utc),
+            last_seen=datetime(2026, 7, 12, tzinfo=UTC),
         )
     with pytest.raises(ValueError, match="source_support"):
         ArticleRevision(

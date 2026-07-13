@@ -16,11 +16,10 @@ import re
 import tempfile
 from collections import defaultdict
 from collections.abc import Iterable, Mapping, Sequence
-from datetime import datetime, timedelta, timezone
+from datetime import UTC, datetime, timedelta
 from pathlib import Path
 from typing import Any
 from urllib.parse import urlsplit
-
 
 API_SCHEMA_VERSION = "intelligence_api_v1"
 TREND_SCHEMA_VERSION = "trend_v1"
@@ -64,11 +63,11 @@ def _stable_json_bytes(value: Any) -> bytes:
         )
     except (TypeError, ValueError) as exc:
         raise IntelligenceValidationError(f"value is not deterministic JSON: {exc}") from exc
-    return f"{serialized}\n".encode("utf-8")
+    return f"{serialized}\n".encode()
 
 
 def _isoformat_utc(value: datetime) -> str:
-    return value.astimezone(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z")
+    return value.astimezone(UTC).isoformat(timespec="seconds").replace("+00:00", "Z")
 
 
 def _parse_timestamp(value: datetime | str, *, field: str) -> datetime:
@@ -87,7 +86,7 @@ def _parse_timestamp(value: datetime | str, *, field: str) -> datetime:
 
     if parsed.tzinfo is None or parsed.utcoffset() is None:
         raise IntelligenceValidationError(f"{field} must include a timezone")
-    return parsed.astimezone(timezone.utc)
+    return parsed.astimezone(UTC)
 
 
 def _event_timestamp(event: Mapping[str, Any]) -> datetime:
@@ -95,7 +94,8 @@ def _event_timestamp(event: Mapping[str, Any]) -> datetime:
         if event.get(field):
             return _parse_timestamp(event[field], field=field)
     raise IntelligenceValidationError(
-        f"event {event.get('event_id', '<missing>')} requires occurred_at, first_seen, or published_at"
+        f"event {event.get('event_id', '<missing>')} requires occurred_at, first_seen, "
+        "or published_at"
     )
 
 
@@ -382,7 +382,9 @@ def _validate_base_url(base_url: str) -> str:
     if parsed.scheme not in {"http", "https"} or not parsed.netloc:
         raise IntelligenceValidationError("base_url must be an absolute HTTP(S) URL")
     if parsed.username or parsed.password or parsed.query or parsed.fragment:
-        raise IntelligenceValidationError("base_url must not include credentials, query, or fragment")
+        raise IntelligenceValidationError(
+            "base_url must not include credentials, query, or fragment"
+        )
     return normalized
 
 

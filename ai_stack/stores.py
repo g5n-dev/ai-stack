@@ -6,10 +6,11 @@ import os
 import re
 import stat
 import uuid
+from collections.abc import Iterator, Mapping
 from contextlib import contextmanager
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any, Iterator, Mapping, Protocol, cast, runtime_checkable
+from typing import Any, Protocol, cast, runtime_checkable
 
 from ._json import canonical_json_bytes, sha256_hex
 from .models import (
@@ -22,7 +23,6 @@ from .models import (
     SourceItem,
     model_to_dict,
 )
-
 
 _RECORD_ID = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._:-]{0,255}$")
 _MANIFEST_ID = re.compile(r"^man_[0-9a-f]{64}$")

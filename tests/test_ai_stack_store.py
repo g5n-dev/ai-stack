@@ -3,7 +3,7 @@ from __future__ import annotations
 import hashlib
 import json
 import os
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
 import pytest
@@ -29,8 +29,7 @@ from ai_stack.stores import (
     UnsafeStorePathError,
 )
 
-
-NOW = datetime(2026, 7, 13, tzinfo=timezone.utc)
+NOW = datetime(2026, 7, 13, tzinfo=UTC)
 
 
 def source(native_id: str = "repo-1") -> SourceItem:
@@ -75,7 +74,7 @@ def test_semantically_identical_refetch_is_a_noop(tmp_path: Path) -> None:
         source=original.source,
         native_id=original.native_id,
         canonical_url=original.canonical_url,
-        fetched_at=datetime(2026, 7, 14, tzinfo=timezone.utc),
+        fetched_at=datetime(2026, 7, 14, tzinfo=UTC),
         payload=original.payload,
     )
 

@@ -1,9 +1,10 @@
 from __future__ import annotations
 
+from collections.abc import Mapping, Sequence
 from dataclasses import dataclass, field
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from enum import Enum
-from typing import Any, Mapping, Sequence, cast
+from typing import Any, cast
 
 from ._json import freeze_json, json_ready, parse_datetime, sha256_digest
 from .identity import (
@@ -71,7 +72,7 @@ class OperationStatus(str, Enum):
 def _utc(value: datetime, field_name: str) -> datetime:
     if value.tzinfo is None or value.utcoffset() is None:
         raise ValueError(f"{field_name} must be timezone-aware")
-    return value.astimezone(timezone.utc)
+    return value.astimezone(UTC)
 
 
 def _required(value: str, field_name: str) -> str:
@@ -127,7 +128,7 @@ class SourceItem:
         object.__setattr__(self, "item_id", expected)
 
     @classmethod
-    def from_dict(cls, value: Mapping[str, Any]) -> "SourceItem":
+    def from_dict(cls, value: Mapping[str, Any]) -> SourceItem:
         return cls(
             source=value["source"],
             native_id=value.get("native_id"),
@@ -169,7 +170,7 @@ class Revision:
         object.__setattr__(self, "content_digest", expected_digest)
 
     @classmethod
-    def from_dict(cls, value: Mapping[str, Any]) -> "Revision":
+    def from_dict(cls, value: Mapping[str, Any]) -> Revision:
         return cls(
             item_id=value["item_id"],
             normalized_payload=value["normalized_payload"],
@@ -211,7 +212,7 @@ class Event:
         object.__setattr__(self, "event_id", expected)
 
     @classmethod
-    def from_dict(cls, value: Mapping[str, Any]) -> "Event":
+    def from_dict(cls, value: Mapping[str, Any]) -> Event:
         return cls(
             seed_item_id=value["seed_item_id"],
             member_item_ids=tuple(value["member_item_ids"]),
@@ -253,7 +254,7 @@ class Evidence:
         object.__setattr__(self, "evidence_id", expected)
 
     @classmethod
-    def from_dict(cls, value: Mapping[str, Any]) -> "Evidence":
+    def from_dict(cls, value: Mapping[str, Any]) -> Evidence:
         return cls(
             source_url=value["source_url"],
             snapshot_digest=value["snapshot_digest"],
@@ -323,7 +324,7 @@ class ArticleRevision:
         )
 
     @classmethod
-    def from_dict(cls, value: Mapping[str, Any]) -> "ArticleRevision":
+    def from_dict(cls, value: Mapping[str, Any]) -> ArticleRevision:
         return cls(
             event_id=value["event_id"],
             generation_key=value["generation_key"],
@@ -365,7 +366,7 @@ class StepResult:
         object.__setattr__(self, "metadata", freeze_json(self.metadata))
 
     @classmethod
-    def from_dict(cls, value: Mapping[str, Any]) -> "StepResult":
+    def from_dict(cls, value: Mapping[str, Any]) -> StepResult:
         return cls(
             step=value["step"],
             status=StepStatus(value["status"]),
@@ -422,7 +423,7 @@ class RunManifest:
         return next((step for step in ordered_steps if step not in completed), None)
 
     @classmethod
-    def from_dict(cls, value: Mapping[str, Any]) -> "RunManifest":
+    def from_dict(cls, value: Mapping[str, Any]) -> RunManifest:
         return cls(
             run_id=value["run_id"],
             code_sha=value["code_sha"],
@@ -470,7 +471,7 @@ class OperationRecord:
         object.__setattr__(self, "metadata", freeze_json(self.metadata))
 
     @classmethod
-    def from_dict(cls, value: Mapping[str, Any]) -> "OperationRecord":
+    def from_dict(cls, value: Mapping[str, Any]) -> OperationRecord:
         return cls(
             operation_id=value["operation_id"],
             kind=OperationKind(value["kind"]),
