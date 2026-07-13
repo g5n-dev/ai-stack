@@ -159,9 +159,10 @@ uv run python scripts/shadow_full_build.py \
   --pagefind-runner node_modules/pagefind/lib/runner/bin.cjs \
   --platform-package @pagefind/linux-x64 \
   --pagefind-command npm run build:search \
+  --command-input package_json=package.json \
   --command-input pagefind_config=pagefind.yml \
-  --command-input wrapper=scripts/build_search.mjs \
-  --command-input catalog=scripts/build_search_catalog.mjs \
+  --command-input catalog_wrapper=scripts/build_pagefind_catalog.py \
+  --command-input catalog_core=ai_stack/pagefind_catalog.py \
   --report full-shadow-report.json \
   --code-sha CODE_SHA --content-sha CONTENT_SHA \
   --evidence-root OPS_LEDGER/ops/migrations/shadow \
