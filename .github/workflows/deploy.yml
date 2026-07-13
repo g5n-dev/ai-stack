@@ -13,770 +13,289 @@ concurrency:
   cancel-in-progress: false
 
 permissions:
-  contents: read
+  contents: write
+  pages: write
+  id-token: write
 
 env:
+  ANTHROPIC_AUTH_TOKEN: ${{ secrets.ANTHROPIC_AUTH_TOKEN }}
+  ANTHROPIC_BASE_URL: ${{ secrets.ANTHROPIC_BASE_URL }}
+  ANTHROPIC_MODEL: ${{ secrets.ANTHROPIC_MODEL }}
+  SEARXNG_BASE_URL: ${{ secrets.SEARXNG_BASE_URL }}
   AI_STACK_RUNTIME_PROFILE: ci
   SITE_BASE_URL: https://ai-stack.site/
-  PYTHONUTF8: "1"
+  SITEMAP_PATH: blog/public/sitemap.xml
+  BING_INDEXNOW_API_KEY: ${{ secrets.BING_INDEXNOW_API_KEY }}
+  BING_INDEXNOW_MAX_URLS: "80"
+  GOOGLE_INDEXING_API_KEY: ${{ secrets.GOOGLE_INDEXING_API_KEY }}
+  GOOGLE_INDEXING_API_URL: ${{ secrets.GOOGLE_INDEXING_API_URL }}
 
 jobs:
-  crawl:
-    name: crawl
+  build-and-deploy:
+    if: ${{ !(github.event_name == 'push' && github.actor == 'github-actions[bot]') }}
     runs-on: ubuntu-latest
-    timeout-minutes: 10
-    permissions:
-      contents: read
-    outputs:
-      run_id: ${{ steps.identity.outputs.run_id }}
-      code_sha: ${{ steps.identity.outputs.code_sha }}
+    timeout-minutes: 90
     steps:
-      - name: Checkout exact code revision
-        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+      - name: Checkout main branch
+        uses: actions/checkout@v4
         with:
-          ref: ${{ github.event_name == 'push' && github.sha || 'main' }}
-          persist-credentials: false
-      - name: Install locked Python toolchain
-        uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e # v6
-        with:
-          version: "0.8.17"
-          enable-cache: true
-          cache-dependency-glob: uv.lock
-      - name: Bind immutable run identity
-        id: identity
-        run: |
-          set -euo pipefail
-          echo "run_id=run-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}" >> "$GITHUB_OUTPUT"
-          echo "code_sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
-      - name: Crawl without model credentials
-        env:
-          SEARXNG_BASE_URL: ${{ secrets.SEARXNG_BASE_URL }}
-          RUN_ID: ${{ steps.identity.outputs.run_id }}
-        run: |
-          set -euo pipefail
-          uv sync --frozen --all-groups
-          uv run ai-stack crawl --run-id "$RUN_ID" --output handoff
-          uv run python scripts/artifact_guard.py pack \
-            --profile discovery --root handoff \
-            --archive transfer/discovery.tar \
-            --manifest transfer/discovery.manifest.json
-      - name: Upload discovery handoff
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
-        with:
-          name: discovery-${{ steps.identity.outputs.run_id }}
-          path: transfer
-          if-no-files-found: error
-          retention-days: 7
+          ref: main
+          fetch-depth: 0
 
-  validate_discovery:
-    name: validate-discovery
-    needs: crawl
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    permissions:
-      contents: read
-    steps:
-      - name: Checkout validator code
-        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
-        with:
-          ref: ${{ needs.crawl.outputs.code_sha }}
-          persist-credentials: false
-      - name: Install locked Python toolchain
-        uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e # v6
-        with:
-          version: "0.8.17"
-          enable-cache: true
-          cache-dependency-glob: uv.lock
-      - name: Download untrusted discovery artifact
-        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
-        with:
-          name: discovery-${{ needs.crawl.outputs.run_id }}
-          path: transfer
-      - name: Revalidate discovery and package validated handoff
-        env:
-          RUN_ID: ${{ needs.crawl.outputs.run_id }}
+      - name: Configure Git
         run: |
-          set -euo pipefail
-          uv sync --frozen --all-groups
-          uv run python scripts/artifact_guard.py validate \
-            --profile discovery --archive transfer/discovery.tar \
-            --manifest transfer/discovery.manifest.json --extract-to handoff
-          uv run ai-stack validate --kind discovery --input handoff --output validated
-          uv run python scripts/artifact_guard.py pack \
-            --profile discovery --root validated \
-            --archive validated-transfer/discovery.tar \
-            --manifest validated-transfer/discovery.manifest.json
-      - name: Upload validated discovery
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
-        with:
-          name: validated-discovery-${{ needs.crawl.outputs.run_id }}
-          path: validated-transfer
-          if-no-files-found: error
-          retention-days: 7
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
 
-  persist_discovery:
-    name: persist-discovery
-    needs: [crawl, validate_discovery]
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    permissions:
-      contents: write
-    outputs:
-      content_sha: ${{ steps.persist.outputs.commit_sha }}
-    steps:
-      - name: Checkout trusted writer code
-        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+      - name: Set up Python
+        uses: actions/setup-python@v4
         with:
-          ref: ${{ needs.crawl.outputs.code_sha }}
-          path: code
-          persist-credentials: false
-      - name: Checkout content ledger
-        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
-        with:
-          ref: content
-          path: ledger
-          fetch-depth: 1
-          persist-credentials: true
-      - name: Install locked Python toolchain
-        uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e # v6
-        with:
-          version: "0.8.17"
-          enable-cache: true
-          cache-dependency-glob: code/uv.lock
-      - name: Download validated discovery
-        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
-        with:
-          name: validated-discovery-${{ needs.crawl.outputs.run_id }}
-          path: code/validated-transfer
-      - name: CAS-persist discovery
-        id: persist
-        working-directory: code
-        env:
-          RUN_ID: ${{ needs.crawl.outputs.run_id }}
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install Python dependencies
         run: |
-          set -euo pipefail
-          uv sync --frozen --all-groups
-          uv run python scripts/artifact_guard.py validate \
-            --profile discovery --archive validated-transfer/discovery.tar \
-            --manifest validated-transfer/discovery.manifest.json --extract-to validated
-          base_content_sha=$(git -C ../ledger rev-parse HEAD)
-          test "$(git -C ../ledger symbolic-ref --quiet --short HEAD)" = "content"
-          uv run ai-stack process --phase persist-discovery \
-            --run-id "$RUN_ID" --input validated --state-root ../ledger
-          result=$(uv run python scripts/git_cas_writer.py commit-and-push \
-            --repository ../ledger --branch content \
-            --allowed-root content --allowed-root state \
-            --expected-base "$base_content_sha" \
-            --message "Persist discovery ${RUN_ID}")
-          echo "commit_sha=$(python -c 'import json,sys; print(json.load(sys.stdin)["commit_sha"])' <<< "$result")" >> "$GITHUB_OUTPUT"
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
 
-  reserve_budget:
-    name: reserve-budget
-    needs: [crawl, persist_discovery]
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    permissions:
-      contents: write
-    outputs:
-      ops_sha: ${{ steps.reserve.outputs.commit_sha }}
-    steps:
-      - name: Checkout trusted budget code
-        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
-        with:
-          ref: ${{ needs.crawl.outputs.code_sha }}
-          path: code
-          persist-credentials: false
-      - name: Checkout exact content state
-        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
-        with:
-          ref: ${{ needs.persist_discovery.outputs.content_sha }}
-          path: content-ledger
-          persist-credentials: false
-      - name: Checkout ops ledger
-        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
-        with:
-          ref: ops
-          path: ops-ledger
-          fetch-depth: 1
-          persist-credentials: true
-      - name: Install locked Python toolchain
-        uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e # v6
-        with:
-          version: "0.8.17"
-          enable-cache: true
-          cache-dependency-glob: code/uv.lock
-      - name: Reserve worst-case budget before model job
-        id: reserve
-        working-directory: code
-        env:
-          RUN_ID: ${{ needs.crawl.outputs.run_id }}
+      - name: Run MiniMax response parsing tests
         run: |
-          set -euo pipefail
-          uv sync --frozen --all-groups
-          base_ops_sha=$(git -C ../ops-ledger rev-parse HEAD)
-          test "$(git -C ../ops-ledger symbolic-ref --quiet --short HEAD)" = "ops"
-          uv run ai-stack process --phase reserve-budget \
-            --run-id "$RUN_ID" --input ../content-ledger --state-root ../ops-ledger
-          result=$(uv run python scripts/git_cas_writer.py commit-and-push \
-            --repository ../ops-ledger --branch ops \
-            --allowed-root ops --allowed-root state \
-            --expected-base "$base_ops_sha" \
-            --message "Reserve budget ${RUN_ID}")
-          echo "commit_sha=$(python -c 'import json,sys; print(json.load(sys.stdin)["commit_sha"])' <<< "$result")" >> "$GITHUB_OUTPUT"
+          python3 -m unittest tests/test_anthropic_response_parsing.py
 
-  generate:
-    name: generate
-    needs: [crawl, persist_discovery, reserve_budget]
-    runs-on: ubuntu-latest
-    timeout-minutes: 15
-    permissions:
-      contents: read
-    steps:
-      - name: Checkout exact generator code
-        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
-        with:
-          ref: ${{ needs.crawl.outputs.code_sha }}
-          persist-credentials: false
-      - name: Checkout exact content state
-        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
-        with:
-          ref: ${{ needs.persist_discovery.outputs.content_sha }}
-          path: content-ledger
-          persist-credentials: false
-      - name: Checkout exact budget reservation
-        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
-        with:
-          ref: ${{ needs.reserve_budget.outputs.ops_sha }}
-          path: ops-ledger
-          persist-credentials: false
-      - name: Install locked Python toolchain
-        uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e # v6
-        with:
-          version: "0.8.17"
-          enable-cache: true
-          cache-dependency-glob: uv.lock
-      - name: Generate structured candidates without Git credentials
-        env:
-          ANTHROPIC_AUTH_TOKEN: ${{ secrets.ANTHROPIC_AUTH_TOKEN }}
-          ANTHROPIC_BASE_URL: ${{ secrets.ANTHROPIC_BASE_URL }}
-          ANTHROPIC_MODEL: ${{ secrets.ANTHROPIC_MODEL }}
-          RUN_ID: ${{ needs.crawl.outputs.run_id }}
+      - name: Run search fallback tests
         run: |
-          set -euo pipefail
-          uv sync --frozen --all-groups
-          uv run ai-stack process --phase generate --run-id "$RUN_ID" \
-            --input content-ledger --ops-root ops-ledger --output handoff
-          uv run python scripts/artifact_guard.py pack \
-            --profile generated --root handoff \
-            --archive transfer/generated.tar \
-            --manifest transfer/generated.manifest.json
-      - name: Upload generated candidates
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
-        with:
-          name: generated-${{ needs.crawl.outputs.run_id }}
-          path: transfer
-          if-no-files-found: error
-          retention-days: 7
+          python3 -m unittest tests/test_search_fallback.py
 
-  validate_result:
-    name: validate-result
-    needs: [crawl, generate]
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    permissions:
-      contents: read
-    steps:
-      - name: Checkout validator code
-        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
-        with:
-          ref: ${{ needs.crawl.outputs.code_sha }}
-          persist-credentials: false
-      - name: Install locked Python toolchain
-        uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e # v6
-        with:
-          version: "0.8.17"
-          enable-cache: true
-          cache-dependency-glob: uv.lock
-      - name: Download untrusted generated artifact
-        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
-        with:
-          name: generated-${{ needs.crawl.outputs.run_id }}
-          path: transfer
-      - name: Deterministically validate evidence and content safety
-        env:
-          RUN_ID: ${{ needs.crawl.outputs.run_id }}
+      - name: Install Playwright browsers
         run: |
-          set -euo pipefail
-          uv sync --frozen --all-groups
-          uv run python scripts/artifact_guard.py validate \
-            --profile generated --archive transfer/generated.tar \
-            --manifest transfer/generated.manifest.json --extract-to generated
-          uv run ai-stack validate --kind generated --input generated --output validated
-          uv run python scripts/artifact_guard.py pack \
-            --profile validated --root validated \
-            --archive validated-transfer/validated.tar \
-            --manifest validated-transfer/validated.manifest.json
-      - name: Upload validated results
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
-        with:
-          name: validated-result-${{ needs.crawl.outputs.run_id }}
-          path: validated-transfer
-          if-no-files-found: error
-          retention-days: 7
+          if pip show playwright > /dev/null 2>&1; then
+            playwright install chromium
+            playwright install-deps chromium
+          else
+            echo "Playwright not found, skipping browser installation"
+          fi
 
-  persist_result:
-    name: persist-result
-    needs: [crawl, persist_discovery, validate_result]
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    permissions:
-      contents: write
-    outputs:
-      content_sha: ${{ steps.persist.outputs.commit_sha }}
-    steps:
-      - name: Checkout trusted writer code
-        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
-        with:
-          ref: ${{ needs.crawl.outputs.code_sha }}
-          path: code
-          persist-credentials: false
-      - name: Checkout exact content parent
-        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
-        with:
-          ref: content
-          path: ledger
-          fetch-depth: 1
-          persist-credentials: true
-      - name: Install locked Python toolchain
-        uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e # v6
-        with:
-          version: "0.8.17"
-          enable-cache: true
-          cache-dependency-glob: code/uv.lock
-      - name: Download validated result artifact
-        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
-        with:
-          name: validated-result-${{ needs.crawl.outputs.run_id }}
-          path: code/validated-transfer
-      - name: CAS-persist validated results
-        id: persist
-        working-directory: code
-        env:
-          RUN_ID: ${{ needs.crawl.outputs.run_id }}
-        run: |
-          set -euo pipefail
-          uv sync --frozen --all-groups
-          uv run python scripts/artifact_guard.py validate \
-            --profile validated --archive validated-transfer/validated.tar \
-            --manifest validated-transfer/validated.manifest.json --extract-to validated
-          base_content_sha=$(git -C ../ledger rev-parse HEAD)
-          test "$(git -C ../ledger symbolic-ref --quiet --short HEAD)" = "content"
-          test "$base_content_sha" = "${{ needs.persist_discovery.outputs.content_sha }}"
-          uv run ai-stack process --phase persist-result \
-            --run-id "$RUN_ID" --input validated --state-root ../ledger
-          result=$(uv run python scripts/git_cas_writer.py commit-and-push \
-            --repository ../ledger --branch content \
-            --allowed-root content --allowed-root state \
-            --expected-base "$base_content_sha" \
-            --message "Persist validated result ${RUN_ID}")
-          echo "commit_sha=$(python -c 'import json,sys; print(json.load(sys.stdin)["commit_sha"])' <<< "$result")" >> "$GITHUB_OUTPUT"
-
-  build:
-    name: build-exact-release
-    needs: [crawl, reserve_budget, persist_result]
-    runs-on: ubuntu-latest
-    timeout-minutes: 15
-    permissions:
-      contents: read
-    outputs:
-      release_id: ${{ steps.release.outputs.release_id }}
-      artifact_digest: ${{ steps.release.outputs.artifact_digest }}
-    steps:
-      - name: Checkout exact code SHA
-        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
-        with:
-          ref: ${{ needs.crawl.outputs.code_sha }}
-          persist-credentials: false
-      - name: Checkout exact content SHA
-        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
-        with:
-          ref: ${{ needs.persist_result.outputs.content_sha }}
-          path: content-ledger
-          persist-credentials: false
-      - name: Checkout exact ops SHA
-        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
-        with:
-          ref: ${{ needs.reserve_budget.outputs.ops_sha }}
-          path: ops-ledger
-          persist-credentials: false
-      - name: Install locked Python toolchain
-        uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e # v6
-        with:
-          version: "0.8.17"
-          enable-cache: true
-          cache-dependency-glob: uv.lock
-      - name: Install locked Node toolchain
-        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
-        with:
-          node-version: "22.21.1"
-          cache: npm
-      - name: Install locked Hugo
-        uses: peaceiris/actions-hugo@2752ce1d29631191ea3f27c23495fa06139a5b78 # v3
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: "0.153.4"
           extended: true
-      - name: Revalidate exact ledger inputs
-        run: |
-          set -euo pipefail
-          uv sync --frozen --all-groups
-          npm ci
-          uv run ai-stack validate --state-root content-ledger/state
-          uv run ai-stack validate --state-root ops-ledger/state
-      - name: Render one content-addressed release
-        id: release
+
+      - name: Run crawler
         env:
-          RUN_ID: ${{ needs.crawl.outputs.run_id }}
-          CODE_SHA: ${{ needs.crawl.outputs.code_sha }}
-          CONTENT_SHA: ${{ needs.persist_result.outputs.content_sha }}
-          OPS_SHA: ${{ needs.reserve_budget.outputs.ops_sha }}
+          PYTHONPATH: /home/runner/work/ai-stack/ai-stack
+          ANTHROPIC_AUTH_TOKEN: ${{ secrets.ANTHROPIC_AUTH_TOKEN }}
+          ANTHROPIC_BASE_URL: ${{ secrets.ANTHROPIC_BASE_URL }}
+          SEARXNG_BASE_URL: ${{ secrets.SEARXNG_BASE_URL }}
         run: |
-          set -euo pipefail
-          npm run build:css
-          uv run ai-stack render --run-id "$RUN_ID" \
-            --code-sha "$CODE_SHA" --content-sha "$CONTENT_SHA" --ops-sha "$OPS_SHA" \
-            --content-root content-ledger --ops-root ops-ledger --output build-handoff
-          uv run python scripts/build_related_index.py \
-            --content-dir content-ledger/content/posts \
-            --output blog/data/related/index.json
-          build_clock=$(uv run python -c 'import json; value=json.load(open("blog/data/related/index.json", encoding="utf-8")).get("data_as_of"); assert isinstance(value, str) and value; print(value)')
-          hugo --source blog --config config.toml,ledger-mount.toml \
-            --baseURL "$SITE_BASE_URL" --clock "$build_clock" \
-            --minify --cleanDestinationDir
-          npm run build:search
-          uv run python scripts/validate_public_content.py --rendered-root blog/public
-          uv run python scripts/release_guard.py create \
-            --public-root blog/public \
-            --basis build-handoff/state/release-basis.json \
-            --output build-handoff/state/release.json
-          test -f build-handoff/state/public-tree-manifest.json
-          uv run python scripts/artifact_guard.py pack \
-            --profile release --root build-handoff \
-            --archive release-transfer/release.tar \
-            --manifest release-transfer/release.manifest.json
-          artifact_digest=$(python -c 'import json; print(json.load(open("build-handoff/state/release.json"))["artifact_digest"])')
-          release_id=$(python -c 'import json; print(json.load(open("build-handoff/state/release.json"))["release_id"])')
-          echo "artifact_digest=$artifact_digest" >> "$GITHUB_OUTPUT"
-          echo "release_id=$release_id" >> "$GITHUB_OUTPUT"
-      - name: Upload exact release metadata
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
-        with:
-          name: release-${{ needs.crawl.outputs.run_id }}
-          path: release-transfer
-          if-no-files-found: error
-          retention-days: 30
-      - name: Upload exact Pages artifact
-        uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3
+          echo "=== Generating Posts (crawl + process + write markdown, runtime_profile=${AI_STACK_RUNTIME_PROFILE}) ==="
+          if [ -f scripts/generate_content.py ]; then
+            python3 scripts/generate_content.py --dedupe-scope global --runtime-profile "${AI_STACK_RUNTIME_PROFILE}"
+          else
+            echo "Content generator not found, skipping..."
+          fi
+
+      - name: Moderation cleanup (LLM)
+        if: ${{ env.AI_STACK_RUNTIME_PROFILE != 'ci' }}
+        env:
+          PYTHONPATH: /home/runner/work/ai-stack/ai-stack
+          ANTHROPIC_AUTH_TOKEN: ${{ secrets.ANTHROPIC_AUTH_TOKEN }}
+          ANTHROPIC_BASE_URL: ${{ secrets.ANTHROPIC_BASE_URL }}
+        run: |
+          echo "=== Moderation Cleanup (scan newly changed posts) ==="
+          if [ -z "${ANTHROPIC_AUTH_TOKEN}" ]; then
+            echo "ANTHROPIC_AUTH_TOKEN not set, skipping moderation cleanup"
+            exit 0
+          fi
+          python3 - <<'PY'
+          import os
+          import re
+          import subprocess
+          from pathlib import Path
+
+          import yaml
+
+          from processor.anthropic_client import AnthropicClient
+          from processor.ai_filter import AIThemeFilter
+
+          def list_changed_posts() -> list[str]:
+              out = subprocess.check_output(["git", "status", "--porcelain"], text=True)
+              paths: list[str] = []
+              for line in out.splitlines():
+                  if len(line) < 4:
+                      continue
+                  path = line[3:].strip()
+                  if not path:
+                      continue
+                  if path.startswith("blog/content/posts/") and path.endswith(".md") and not path.endswith("/.gitkeep"):
+                      paths.append(path)
+              deduped: list[str] = []
+              seen: set[str] = set()
+              for p in paths:
+                  if p in seen:
+                      continue
+                  seen.add(p)
+                  deduped.append(p)
+              return deduped
+
+          def extract_frontmatter_and_body(path: Path) -> tuple[dict, str]:
+              text = path.read_text(encoding="utf-8", errors="ignore")
+              if not text.startswith("---"):
+                  return {}, text
+              parts = text.split("\n---\n", 1)
+              if len(parts) != 2:
+                  return {}, text
+              fm_raw = parts[0].lstrip("-").strip("\n")
+              body = parts[1]
+              try:
+                  fm = yaml.safe_load(fm_raw) or {}
+                  if not isinstance(fm, dict):
+                      fm = {}
+              except Exception:
+                  fm = {}
+              return fm, body
+
+          def looks_like_meta_disclaimer(t: str) -> bool:
+              s = (t or "").strip()
+              if not s:
+                  return False
+              banned = ["由于您提供", "仅为标题", "我将基于", "鉴于您提供", "无法从提供", "我无法从"]
+              return any(b in s for b in banned)
+
+          config_path = "config/anthropic.yaml"
+          client = AnthropicClient(config_path)
+          cfg = yaml.safe_load(Path(config_path).read_text(encoding="utf-8")) or {}
+          ai_filter_cfg = ((cfg.get("anthropic") or {}).get("ai_filter") or {})
+          flt = AIThemeFilter(client, ai_filter_cfg)
+
+          changed = list_changed_posts()
+          if not changed:
+              print("No changed posts to moderate")
+              raise SystemExit(0)
+
+          deleted: list[str] = []
+          for p in changed:
+              path = Path(p)
+              if not path.exists():
+                  continue
+              fm, body = extract_frontmatter_and_body(path)
+              title = str(fm.get("title") or "").strip()
+              description = str(fm.get("description") or "").strip()
+              tags = fm.get("tags", [])
+              categories = fm.get("categories", [])
+              source = str(fm.get("source") or "").strip()
+              external_url = str(fm.get("external_url") or fm.get("url") or "").strip()
+
+              body_snippet = re.sub(r"\s+", " ", body.strip())[:900]
+              if looks_like_meta_disclaimer(body_snippet):
+                  deleted.append(p)
+                  continue
+
+              content = {
+                  "source": source,
+                  "title": title,
+                  "catchy_title": title,
+                  "description": description,
+                  "summary": body_snippet,
+                  "tags": tags if isinstance(tags, list) else [],
+                  "categories": categories if isinstance(categories, list) else [],
+                  "url": external_url,
+              }
+
+              content = flt.filter(content)
+              content = flt.moderate(content)
+
+              should_publish = bool(content.get("should_publish", True))
+              ai_related = bool(content.get("ai_related", True))
+              if (not should_publish) or (not ai_related):
+                  deleted.append(p)
+
+          if not deleted:
+              print(f"Moderation OK: scanned={len(changed)} deleted=0")
+              raise SystemExit(0)
+
+          for p in deleted:
+              proc = subprocess.run(["git", "rm", "-f", p], capture_output=True, text=True)
+              if proc.returncode != 0:
+                  try:
+                      Path(p).unlink(missing_ok=True)
+                  except Exception:
+                      pass
+          print(f"Moderation done: scanned={len(changed)} deleted={len(deleted)}")
+          for p in deleted:
+              print(f"- deleted {p}")
+          PY
+
+      - name: Sanitize broken relref links
+        env:
+          PYTHONPATH: /home/runner/work/ai-stack/ai-stack
+        run: |
+          echo "=== Sanitizing broken relref links ==="
+          if [ -f scripts/generate_content.py ]; then
+            python3 scripts/generate_content.py --sanitize-relrefs-only
+          else
+            echo "Content generator not found, skipping relref sanitization"
+          fi
+
+      - name: Build tag graph
+        env:
+          PYTHONPATH: /home/runner/work/ai-stack/ai-stack
+          ANTHROPIC_AUTH_TOKEN: ${{ secrets.ANTHROPIC_AUTH_TOKEN }}
+          ANTHROPIC_BASE_URL: ${{ secrets.ANTHROPIC_BASE_URL }}
+          TAG_GRAPH_ENABLE_CONTENT_MINING: "0"
+          TAG_INTRO_ENABLED: "0"
+          TAG_INTRO_MAX_NEW: "0"
+        run: |
+          echo "=== Building Tag Graph ==="
+          if [ -f processor/tag_graph.py ]; then
+            python3 -m processor.tag_graph || {
+              if [ -f blog/static/data/tag-graph/index.json ] && [ -f blog/static/data/tag-graph/tag.json ]; then
+                echo "Tag graph build failed, reusing existing graph artifacts"
+              else
+                echo "Tag graph build failed and no fallback graph artifacts exist"
+                exit 1
+              fi
+            }
+          else
+            echo "Tag graph generator not found, skipping..."
+          fi
+
+      - name: Build Hugo site
+        run: |
+          echo "=== Building Hugo Site ==="
+          if [ -f blog/config.toml ]; then
+            cd blog
+            hugo --baseURL "https://ai-stack.site/" --minify --cleanDestinationDir
+          else
+            echo "Hugo config not found, skipping build"
+            exit 1
+          fi
+
+      - name: Prepare IndexNow key file
+        run: |
+          if [ -n "${BING_INDEXNOW_API_KEY}" ]; then
+            mkdir -p blog/public
+            printf '%s' "${BING_INDEXNOW_API_KEY}" > "blog/public/${BING_INDEXNOW_API_KEY}.txt"
+          fi
+
+      - name: Commit changes
+        run: |
+          git pull --rebase --autostash origin main || (git rebase --abort && git reset --hard origin/main)
+          git add -A
+          git diff --cached --quiet || git commit -m "Update content and build $(date +'%Y-%m-%d %H:%M:%S') [skip ci]"
+          git push origin HEAD:main || (git pull --rebase --autostash origin main && git push origin HEAD:main)
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
           path: blog/public
 
-  deploy:
-    name: deploy-exact-release
-    needs: [crawl, reserve_budget, persist_result, build]
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    permissions:
-      contents: read
-      pages: write
-      id-token: write
-    steps:
-      - name: Checkout release guard
-        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
-        with:
-          ref: ${{ needs.crawl.outputs.code_sha }}
-          persist-credentials: false
-      - name: Checkout release state at the reserved ops revision
-        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
-        with:
-          ref: ${{ needs.reserve_budget.outputs.ops_sha }}
-          path: ops-ledger
-          persist-credentials: false
-      - name: Download exact release metadata
-        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
-        with:
-          name: release-${{ needs.crawl.outputs.run_id }}
-          path: release-transfer
-      - name: Reject stale or forged release
-        run: |
-          set -euo pipefail
-          python3 scripts/artifact_guard.py validate \
-            --profile release --archive release-transfer/release.tar \
-            --manifest release-transfer/release.manifest.json --extract-to release
-          args=(--candidate release/state/release.json \
-            --tree-manifest release/state/public-tree-manifest.json \
-            --expected-release-id "${{ needs.build.outputs.release_id }}" \
-            --expected-code-sha "${{ needs.crawl.outputs.code_sha }}" \
-            --expected-content-sha "${{ needs.persist_result.outputs.content_sha }}" \
-            --expected-artifact-digest "${{ needs.build.outputs.artifact_digest }}")
-          if [ -f ops-ledger/ops/releases/current-healthy.json ]; then
-            args+=(--current ops-ledger/ops/releases/current-healthy.json)
-          fi
-          python3 scripts/release_guard.py validate "${args[@]}"
-      - name: Configure GitHub Pages
-        uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5
-      - name: Deploy immutable Pages artifact
+      - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4
+        uses: actions/deploy-pages@v4
 
-  health:
-    name: production-health
-    needs: [crawl, persist_result, build, deploy]
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-    permissions:
-      contents: read
-    steps:
-      - name: Verify deployed release identity
-        env:
-          EXPECTED_RELEASE: ${{ needs.build.outputs.release_id }}
-          EXPECTED_CODE_SHA: ${{ needs.crawl.outputs.code_sha }}
-          EXPECTED_CONTENT_SHA: ${{ needs.persist_result.outputs.content_sha }}
+      - name: Notify search engines (IndexNow/Google)
         run: |
-          set -euo pipefail
-          for attempt in 1 2 3 4 5; do
-            if curl --fail --silent --show-error --output manifest.json \
-              "${SITE_BASE_URL}api/v1/manifest.json"; then
-              if python3 - <<'PY'
-          import json
-          import os
-
-          with open("manifest.json", encoding="utf-8") as handle:
-              manifest = json.load(handle)
-          build = manifest.get("build")
-          expected = {
-              "release_id": os.environ["EXPECTED_RELEASE"],
-              "code_sha": os.environ["EXPECTED_CODE_SHA"],
-              "content_sha": os.environ["EXPECTED_CONTENT_SHA"],
-          }
-          if manifest.get("active_release") != expected["release_id"]:
-              raise SystemExit(1)
-          if not isinstance(build, dict) or any(build.get(key) != value for key, value in expected.items()):
-              raise SystemExit(1)
-          PY
-              then
-                exit 0
-              fi
-            fi
-            if [ "$attempt" -lt 5 ]; then sleep 10; fi
-          done
-          echo "production did not converge to expected release" >&2
-          exit 1
-
-  persist_release:
-    name: persist-healthy-release
-    needs: [crawl, reserve_budget, persist_result, build, health]
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    permissions:
-      contents: write
-    outputs:
-      ops_sha: ${{ steps.persist.outputs.commit_sha }}
-    steps:
-      - name: Checkout trusted release writer
-        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
-        with:
-          ref: ${{ needs.crawl.outputs.code_sha }}
-          path: code
-          persist-credentials: false
-      - name: Checkout exact ops parent
-        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
-        with:
-          ref: ops
-          path: ops-ledger
-          fetch-depth: 1
-          persist-credentials: true
-      - name: Install locked Python toolchain
-        uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e # v6
-        with:
-          version: "0.8.17"
-          enable-cache: true
-          cache-dependency-glob: code/uv.lock
-      - name: Download exact healthy release
-        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
-        with:
-          name: release-${{ needs.crawl.outputs.run_id }}
-          path: code/release-transfer
-      - name: Revalidate and CAS-persist healthy release
-        id: persist
-        working-directory: code
-        env:
-          RUN_ID: ${{ needs.crawl.outputs.run_id }}
-          RELEASE_ID: ${{ needs.build.outputs.release_id }}
-          CODE_SHA: ${{ needs.crawl.outputs.code_sha }}
-          CONTENT_SHA: ${{ needs.persist_result.outputs.content_sha }}
-          ARTIFACT_DIGEST: ${{ needs.build.outputs.artifact_digest }}
-        run: |
-          set -euo pipefail
-          uv sync --frozen --all-groups
-          uv run python scripts/artifact_guard.py validate \
-            --profile release --archive release-transfer/release.tar \
-            --manifest release-transfer/release.manifest.json --extract-to release
-          base_ops_sha=$(git -C ../ops-ledger rev-parse HEAD)
-          test "$(git -C ../ops-ledger symbolic-ref --quiet --short HEAD)" = "ops"
-          test "$base_ops_sha" = "${{ needs.reserve_budget.outputs.ops_sha }}"
-          args=(--candidate release/state/release.json \
-            --tree-manifest release/state/public-tree-manifest.json \
-            --expected-release-id "$RELEASE_ID" \
-            --expected-code-sha "$CODE_SHA" \
-            --expected-content-sha "$CONTENT_SHA" \
-            --expected-artifact-digest "$ARTIFACT_DIGEST")
-          if [ -f ../ops-ledger/ops/releases/current-healthy.json ]; then
-            args+=(--current ../ops-ledger/ops/releases/current-healthy.json)
+          if [ -f scripts/notify_search_engines.py ]; then
+            python3 scripts/notify_search_engines.py || true
           fi
-          uv run python scripts/release_guard.py validate "${args[@]}"
-          uv run ai-stack process --phase persist-release \
-            --run-id "$RUN_ID" --input release --state-root ../ops-ledger \
-            --expected-release-id "$RELEASE_ID" \
-            --expected-code-sha "$CODE_SHA" \
-            --expected-content-sha "$CONTENT_SHA" \
-            --expected-artifact-digest "$ARTIFACT_DIGEST"
-          result=$(uv run python scripts/git_cas_writer.py commit-and-push \
-            --repository ../ops-ledger --branch ops \
-            --allowed-root ops --allowed-root state \
-            --expected-base "$base_ops_sha" \
-            --message "Persist healthy release ${RUN_ID}")
-          echo "commit_sha=$(python -c 'import json,sys; print(json.load(sys.stdin)["commit_sha"])' <<< "$result")" >> "$GITHUB_OUTPUT"
-
-  publish:
-    name: publish-outbox
-    needs: [crawl, persist_result, build, health, persist_release]
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    environment: production-publish
-    permissions:
-      contents: read
-    steps:
-      - name: Checkout publisher code
-        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
-        with:
-          ref: ${{ needs.crawl.outputs.code_sha }}
-          persist-credentials: false
-      - name: Install locked Python toolchain
-        uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e # v6
-        with:
-          version: "0.8.17"
-          enable-cache: true
-          cache-dependency-glob: uv.lock
-      - name: Checkout exact healthy release state
-        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
-        with:
-          ref: ${{ needs.persist_release.outputs.ops_sha }}
-          path: ops-ledger
-          persist-credentials: false
-      - name: Download exact release outbox
-        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
-        with:
-          name: release-${{ needs.crawl.outputs.run_id }}
-          path: release-transfer
-      - name: Revalidate exact healthy release without channel credentials
-        env:
-          RELEASE_ID: ${{ needs.build.outputs.release_id }}
-          CODE_SHA: ${{ needs.crawl.outputs.code_sha }}
-          CONTENT_SHA: ${{ needs.persist_result.outputs.content_sha }}
-          ARTIFACT_DIGEST: ${{ needs.build.outputs.artifact_digest }}
-        run: |
-          set -euo pipefail
-          uv sync --frozen --all-groups
-          uv run python scripts/artifact_guard.py validate \
-            --profile release --archive release-transfer/release.tar \
-            --manifest release-transfer/release.manifest.json --extract-to release
-          uv run python scripts/release_guard.py verify \
-            --candidate release/state/release.json \
-            --current ops-ledger/ops/releases/current-healthy.json \
-            --tree-manifest release/state/public-tree-manifest.json \
-            --expected-release-id "$RELEASE_ID" \
-            --expected-code-sha "$CODE_SHA" \
-            --expected-content-sha "$CONTENT_SHA" \
-            --expected-artifact-digest "$ARTIFACT_DIGEST"
-      - name: Consume enabled channels only after exact health binding
-        env:
-          TWITTER_API_KEY: ${{ secrets.TWITTER_API_KEY }}
-          TWITTER_API_SECRET: ${{ secrets.TWITTER_API_SECRET }}
-          TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
-          TWITTER_ACCESS_TOKEN_SECRET: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
-          TWITTER_BEARER_TOKEN: ${{ secrets.TWITTER_BEARER_TOKEN }}
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-          WECHAT_APPID: ${{ secrets.WECHAT_APPID }}
-          WECHAT_SECRET: ${{ secrets.WECHAT_SECRET }}
-          RUN_ID: ${{ needs.crawl.outputs.run_id }}
-        run: |
-          set -euo pipefail
-          uv run ai-stack publish --run-id "$RUN_ID" \
-            --input release/content/outbox --output receipt-handoff
-          uv run python scripts/artifact_guard.py pack \
-            --profile receipt --root receipt-handoff \
-            --archive receipt-transfer/receipt.tar \
-            --manifest receipt-transfer/receipt.manifest.json
-      - name: Upload untrusted channel receipt
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
-        with:
-          name: receipt-${{ needs.crawl.outputs.run_id }}
-          path: receipt-transfer
-          if-no-files-found: error
-          retention-days: 30
-
-  persist_receipt:
-    name: persist-receipt
-    needs: [crawl, persist_release, publish]
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    permissions:
-      contents: write
-    steps:
-      - name: Checkout trusted receipt writer
-        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
-        with:
-          ref: ${{ needs.crawl.outputs.code_sha }}
-          path: code
-          persist-credentials: false
-      - name: Checkout exact ops parent
-        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
-        with:
-          ref: ops
-          path: ops-ledger
-          fetch-depth: 1
-          persist-credentials: true
-      - name: Install locked Python toolchain
-        uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e # v6
-        with:
-          version: "0.8.17"
-          enable-cache: true
-          cache-dependency-glob: code/uv.lock
-      - name: Download channel receipt
-        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
-        with:
-          name: receipt-${{ needs.crawl.outputs.run_id }}
-          path: code/receipt-transfer
-      - name: Revalidate and CAS-persist receipt
-        working-directory: code
-        env:
-          RUN_ID: ${{ needs.crawl.outputs.run_id }}
-        run: |
-          set -euo pipefail
-          uv sync --frozen --all-groups
-          uv run python scripts/artifact_guard.py validate \
-            --profile receipt --archive receipt-transfer/receipt.tar \
-            --manifest receipt-transfer/receipt.manifest.json --extract-to receipt
-          base_ops_sha=$(git -C ../ops-ledger rev-parse HEAD)
-          test "$(git -C ../ops-ledger symbolic-ref --quiet --short HEAD)" = "ops"
-          test "$base_ops_sha" = "${{ needs.persist_release.outputs.ops_sha }}"
-          uv run ai-stack process --phase persist-receipt \
-            --run-id "$RUN_ID" --input receipt --state-root ../ops-ledger
-          uv run python scripts/git_cas_writer.py commit-and-push \
-            --repository ../ops-ledger --branch ops \
-            --allowed-root ops --allowed-root state \
-            --expected-base "$base_ops_sha" \
-            --message "Persist receipt ${RUN_ID}"

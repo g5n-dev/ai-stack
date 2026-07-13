@@ -19,221 +19,30 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - name: Checkout exact revision
-        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
-          persist-credentials: false
+          python-version: "3.11"
+          cache: "pip"
 
-      - name: Install locked Python toolchain
-        uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e # v6
-        with:
-          version: "0.8.17"
-          enable-cache: true
-          cache-dependency-glob: uv.lock
-
-      - name: Sync exact Python dependencies
-        run: uv sync --frozen --all-groups
-
-      - name: Ruff
-        run: >-
-          uv run ruff check
-          ai_stack content_security.py
-          processor/evidence_pipeline.py processor/intelligence.py processor/llm_gateway.py
-          publisher/outbox.py
-          scripts/artifact_guard.py scripts/break_glass_delete.py
-          scripts/build_intelligence.py scripts/git_cas_writer.py
-          scripts/release_guard.py scripts/shadow_compare.py
-          scripts/validate_public_content.py
-          tests/test_ai_stack_cli.py tests/test_ai_stack_domain.py tests/test_ai_stack_store.py
-          tests/test_artifact_guard.py tests/test_break_glass_delete.py
-          tests/test_content_security.py
-          tests/test_evidence_pipeline.py tests/test_git_cas_writer.py
-          tests/test_intelligence.py tests/test_llm_gateway.py tests/test_outbox.py
-          tests/test_publishers.py tests/test_release_guard.py
-          tests/test_migration_safety.py tests/test_pipeline_cli.py
-          tests/test_pipeline_safety.py
-          tests/test_security_configuration.py tests/test_shadow_compare.py
-          tests/test_shadow_evidence.py
-          tests/test_template_hardening.py
-          tests/test_validate_public_content_cli.py
-          tests/test_workflow_security.py
-
-      - name: Strict type checks
+      - name: Install Python dependencies
         run: |
-          uv run mypy --strict ai_stack
-          uv run mypy --strict scripts/shadow_compare.py
-          uv run mypy content_security.py scripts/validate_public_content.py
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
 
-      - name: Stable tests and critical-path coverage
-        run: >-
-          uv run pytest
-          --cov=ai_stack --cov=content_security
-          --cov=processor.evidence_pipeline --cov=processor.llm_gateway
-          --cov=publisher.outbox --cov=scripts.artifact_guard
-          --cov=scripts.break_glass_delete
-          --cov=scripts.git_cas_writer --cov=scripts.release_guard
-          --cov=scripts.shadow_compare
-          --cov-report=term-missing --cov-report=xml
-          --cov-fail-under=80
-          tests/test_ai_stack_cli.py tests/test_ai_stack_domain.py tests/test_ai_stack_store.py
-          tests/test_artifact_guard.py tests/test_break_glass_delete.py
-          tests/test_content_security.py
-          tests/test_evidence_pipeline.py tests/test_git_cas_writer.py
-          tests/test_intelligence.py tests/test_llm_gateway.py tests/test_outbox.py
-          tests/test_publishers.py tests/test_release_guard.py
-          tests/test_migration_safety.py tests/test_pipeline_cli.py
-          tests/test_pipeline_safety.py
-          tests/test_security_configuration.py tests/test_shadow_compare.py
-          tests/test_shadow_evidence.py
-          tests/test_template_hardening.py
-          tests/test_validate_public_content_cli.py
-          tests/test_workflow_security.py
-
-      - name: Python dependency audit
-        run: uv run pip-audit
-
-  secret-scan:
-    name: secret-scan
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    steps:
-      - name: Checkout full comparison range
-        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
-        with:
-          fetch-depth: 0
-          persist-credentials: false
-
-      - name: Scan committed changes for secrets
-        uses: gitleaks/gitleaks-action@ff98106e4c7b2bc287b24eaf42907196329070c7 # v2
+      - name: Run stable unit test suite
         env:
-          GITHUB_TOKEN: ${{ github.token }}
-
-  static-site:
-    name: static-site
-    runs-on: ubuntu-latest
-    timeout-minutes: 15
-    steps:
-      - name: Checkout exact revision
-        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
-        with:
-          fetch-depth: 0
-          persist-credentials: false
-
-      - name: Install locked Python toolchain
-        uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e # v6
-        with:
-          version: "0.8.17"
-          enable-cache: true
-          cache-dependency-glob: uv.lock
-
-      - name: Install locked Node toolchain
-        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
-        with:
-          node-version: "22.21.1"
-          cache: npm
-
-      - name: Install locked Hugo
-        uses: peaceiris/actions-hugo@2752ce1d29631191ea3f27c23495fa06139a5b78 # v3
-        with:
-          hugo-version: "0.153.4"
-          extended: true
-
-      - name: Install exact dependencies
+          PYTHONPATH: ${{ github.workspace }}
         run: |
-          uv sync --frozen --all-groups
-          npm ci
-
-      - name: Audit and reproduce static assets
-        run: |
-          npm audit --audit-level=high
-          npm run build:css
-          git diff --exit-code -- blog/static/css/tailwind.css
-          npm test
-
-      - name: Reject unsafe changed Markdown
-        env:
-          BASE_SHA: ${{ github.event.pull_request.base.sha }}
-          EVENT_NAME: ${{ github.event_name }}
-        run: |
-          set -euo pipefail
-          args=(--changed-markdown)
-          if [ "$EVENT_NAME" = "pull_request" ]; then
-            args+=(--base-sha "$BASE_SHA")
-          fi
-          uv run python scripts/validate_public_content.py "${args[@]}"
-
-      - name: Build Hugo and Pagefind
-        run: |
-          uv run python scripts/build_related_index.py \
-            --content-dir blog/content/posts \
-            --output blog/data/related/index.json
-          build_clock=$(uv run python -c 'import json; value=json.load(open("blog/data/related/index.json", encoding="utf-8")).get("data_as_of"); assert isinstance(value, str) and value; print(value)')
-          hugo --source blog --baseURL "https://ai-stack.site/" \
-            --clock "$build_clock" --minify --cleanDestinationDir
-          npm run build:search
-
-      - name: Revalidate final DOM
-        run: >-
-          uv run python scripts/validate_public_content.py
-          --rendered-root blog/public
-
-      - name: Check internal links
-        uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2
-        with:
-          args: >-
-            --offline --no-progress
-            --root-dir '${{ github.workspace }}/blog/public'
-            --index-files index.html
-            './blog/public/**/*.html'
-          fail: true
-          jobSummary: false
-          lycheeVersion: v0.24.2
-
-      - name: Upload site for isolated browser tests
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
-        with:
-          name: pr-static-site-${{ github.run_id }}
-          path: blog/public
-          if-no-files-found: error
-          retention-days: 3
-
-  browser-e2e:
-    name: browser-e2e
-    needs: static-site
-    runs-on: ubuntu-latest
-    timeout-minutes: 15
-    steps:
-      - name: Checkout test code
-        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
-        with:
-          persist-credentials: false
-
-      - name: Install locked Python toolchain
-        uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e # v6
-        with:
-          version: "0.8.17"
-          enable-cache: true
-          cache-dependency-glob: uv.lock
-
-      - name: Install locked Node toolchain
-        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
-        with:
-          node-version: "22.21.1"
-          cache: npm
-
-      - name: Download exact static site artifact
-        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
-        with:
-          name: pr-static-site-${{ github.run_id }}
-          path: blog/public
-
-      - name: Install browser runtime
-        run: |
-          uv sync --frozen --all-groups
-          npm ci
-          uv run playwright install --with-deps chromium
-
-      - name: Run keyboard and accessibility smoke tests
-        env:
-          AI_STACK_PUBLIC_DIR: ${{ github.workspace }}/blog/public
-        run: uv run pytest -q tests/e2e/test_static_site.py
+          python3 -m unittest \
+            tests.test_ai_filter_fallback \
+            tests.test_anthropic_response_parsing \
+            tests.test_generate_content_guards \
+            tests.test_generator_guard_repair \
+            tests.test_markdown_normalizer \
+            tests.test_runtime_profiles \
+            tests.test_search_fallback \
+            tests.test_tag_graph_runtime

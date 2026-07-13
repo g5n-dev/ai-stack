@@ -1,6 +1,9 @@
 # Unified pipeline CLI contract
 
-The CLI preserves the existing GitHub Actions trigger contract while making each
+The CLI is implemented as a dormant migration target. The current upgrade PR does
+not wire it into `.github/workflows/*.yml`; those files remain byte-identical to
+`origin/main`. A later, separately reviewed Actions migration can preserve the
+existing trigger contract while making each
 trust boundary explicit. Every cross-job directory contains only `content/`,
 `ops/`, and/or `state/` paths and must be repackaged by `artifact_guard`.
 

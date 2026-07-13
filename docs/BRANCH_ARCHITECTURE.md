@@ -1,7 +1,12 @@
 # 分支架构与 CI 合并契约
 
-状态：P0 迁移基线。本文同时说明目标架构、过渡期事实，以及为什么 GitHub Actions
-必须保持当前的外部行为。
+状态：P0 迁移基线，目标协调器尚未启用。本文同时说明目标架构、过渡期事实，以及为什么
+GitHub Actions 必须保持当前行为。
+
+> 合并边界：当前升级 PR 不修改任何 `.github/workflows/*.yml` 字节。四个 workflow 与
+> `origin/main@8b6addc4d9d35ab731e5f843351b5e72494fb37f` 逐字一致；目标协调 DAG 尚未接入 GitHub Actions。
+> 新的 CAS、预算、artifact guard、release health 和 outbox 代码只是待切换能力，不能据此宣称生产
+> 权限隔离、安全删除或双 SHA 发布已经生效。
 
 ## 结论
 
@@ -22,18 +27,18 @@ GC/prune 和历史重写。
 
 ## CI 外部契约：分支更新和合并时不得变化
 
-工作流内部可以升级为更安全的 DAG，但以下外部合同必须保持稳定：
+本 PR 将“不得变化”解释为完整 workflow 字节契约，而不只是名称和触发器相同。当前行为如下：
 
 | 场景 | 工作流名 | 精确触发器 | 稳定检查/行为 |
 | --- | --- | --- | --- |
-| 功能分支更新、PR 新提交 | `PR CI` | `pull_request` → `main`；`workflow_dispatch` | 必需检查 `Unit Tests` 保持同名；同一 PR 的旧运行可取消，新 SHA 必须完整重跑 |
-| PR 合并或直接推送到 main | `Build and Deploy` | `push` → `main` | 构建精确代码 SHA；生产副作用必须晚于健康检查 |
-| 周期性采集唤醒 | `Build and Deploy` | `0 * * * *`；`workflow_dispatch` | `cancel-in-progress: false`；cron 只表示唤醒，不表示数据游标完整 |
-| 生产巡检 | `System Monitoring & Content Quality Tracking` | `0 */6 * * *`；`workflow_dispatch` | 全程只读，不生成虚构指标 |
+| 功能分支更新、PR 新提交 | `PR CI` | `pull_request` → `main`；`workflow_dispatch` | 单 job `unit-tests`，显示名 `Unit Tests`；同一 PR 的旧运行可取消 |
+| PR 合并或直接推送到 main | `Build and Deploy` | `push` → `main` | 保留旧单 job `build-and-deploy`、bot-push 过滤和现有写权限 |
+| 周期性采集唤醒 | `Build and Deploy` | `0 * * * *`；`workflow_dispatch` | `cancel-in-progress: false`；继续执行旧 main 工作树生成/提交/部署链 |
+| 生产巡检 | `System Monitoring & Content Quality Tracking` | `0 */6 * * *`；`workflow_dispatch` | 保留现有 7 个 monitoring jobs 和仓库默认 token 语义 |
 
-`content`、`ops` 提交不匹配上述 push 分支，因此不会触发代码 PR CI 或递归部署。ruleset 应绑定稳定的
-检查名，而不是内部 job 数量。任何修改工作流名称、触发分支、cron、`Unit Tests` 名称或并发语义的
-Pull Request，都应被仓库测试直接拒绝。
+`content`、`ops` 提交不匹配上述 push 分支，因此不会触发代码 PR CI 或递归部署。测试以四个文件的
+SHA-256 锁住完整基线，任何字节变化都必须进入后续独立的 Actions 迁移 PR，而不能夹带在本次代码、
+内容或图谱升级中。
 
 ## 为什么旧 Action 会是一个大 Job
 
@@ -54,9 +59,10 @@ Pull Request，都应被仓库测试直接拒绝。
 递归运行；如果先保护 `main` 禁止机器人写入，却没有切换内容账本，内容刷新会停止；如果先启用新 writer
 而未冻结旧 writer，则两个系统会争用不同事实源。
 
-## 新 Action 保持外壳，替换内部信任模型
+## 目标 Action 信任模型（尚未接入）
 
-`Build and Deploy` 仍保留原工作流名、三个触发入口和并发组，但内部改为单一可信协调 DAG：
+后续独立迁移应保留 `Build and Deploy` 的工作流名、三个触发入口和并发组，再把内部切换为单一可信
+协调 DAG：
 
 ```text
 crawl
@@ -74,9 +80,8 @@ crawl
   → persist-receipt(ops CAS)
 ```
 
-这里的“不改变 CI 流程”指外部触发、检查名和开发者合并体验不变，不是继续保留旧系统的危险内部实现。
-功能分支每次更新仍触发 `PR CI`；合并到 `main` 后仍触发 `Build and Deploy`；小时任务仍按原 cron 唤醒；
-只是内部增加可验证的权限边界和失败传播。
+以上 DAG 是已实现但未接线的目标，不描述本 PR 合并后的 GitHub Actions 事实。切换它会改变 job/check、
+DAG、权限、Environment 和副作用顺序，因此必须在 ruleset、环境审批和回滚窗口就绪后单独评审。
 
 关键边界：
 
@@ -133,14 +138,15 @@ crawl
 只有密钥泄漏、PII 或法律删除请求可以进入独立 break-glass 删除流程；该流程默认 dry-run、绑定预期
 源 SHA、备份 ID 和变更上限，并要求受保护 Environment 审批。
 
-## 运维核对
+## 当前 PR 运维核对
 
 - PR 分支更新后，GitHub 上显示 `PR CI / Unit Tests`，名称未变化。
 - 合并到 `main` 后，显示 `Build and Deploy`，触发来源仍为 push。
 - 小时运行仍使用 `0 * * * *`，六小时巡检仍使用 `0 */6 * * *`。
-- `main` 不接受数据 writer；`content` 与 `ops` 不触发代码部署。
-- 页面公开真实 build SHA、content SHA、最近健康刷新时间和来源降级状态。
-- 任何发布失败都停在明确状态，不以空列表、原始对象或通知成功伪装整体成功。
+- 四个 workflow 的 SHA-256 与 `origin/main` 基线完全一致。
+- `content` 与 `ops` 不触发代码部署，但旧 workflow 仍可能把生成内容写回 `main`。
+- 仓库 ruleset、默认只读 Actions 权限和受保护 Environment 未实际启用前，不宣称强推/删除防护或
+  权限分离已经落地。
 
 更细的 job 权限、artifact 复验和 release 状态说明见
 [GitHub Actions 信任模型](architecture/ci-trust-model.md)；CLI 与迁移参数见

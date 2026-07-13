@@ -1,5 +1,9 @@
 # GitHub Actions 信任模型与发布状态机
 
+> 状态：目标设计，尚未接入 GitHub Actions。当前升级 PR 为满足合并时 CI 流程不变，四个
+> `.github/workflows/*.yml` 与 `origin/main` 保持逐字一致。本文件描述后续独立 Actions 迁移 PR
+> 应实现的信任边界，不代表当前生产配置。
+
 状态：P0 设计基线。此文档解释每个触发器、权限和门禁存在的原因。
 
 ## 不变的触发契约
