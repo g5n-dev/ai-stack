@@ -108,10 +108,14 @@ def test_cli_writes_canonical_report_and_returns_two_for_mismatch(
     )
     written = json.loads(output.read_text(encoding="utf-8"))
     printed = json.loads(capsys.readouterr().out)
-    assert written == printed
     assert written["matches"] is False
     assert written["code_sha"] == "a" * 40
     assert written["content_sha"] == "b" * 40
+    assert printed["schema_version"] == "shadow_compare_summary_v1"
+    assert printed["matches"] is False
+    assert printed["changed_paths"] == ["index.html"]
+    assert printed["record_digest"] is None
+    assert "external_links" not in printed
 
 
 def test_cli_fails_closed_without_writing_report(tmp_path: Path) -> None:
@@ -133,7 +137,7 @@ def test_cli_fails_closed_without_writing_report(tmp_path: Path) -> None:
     assert not output.exists()
 
 
-def test_cli_can_append_comparison_to_content_addressed_evidence_chain(
+def test_plain_compare_cli_cannot_claim_a_provenance_full_build(
     tmp_path: Path,
 ) -> None:
     baseline = tmp_path / "baseline"
@@ -165,14 +169,10 @@ def test_cli_can_append_comparison_to_content_addressed_evidence_chain(
                 "--full-build",
             ]
         )
-        == 0
+        == 1
     )
-    records = load_shadow_evidence(evidence)
-    assert len(records) == 1
-    assert records[0].run_id == "shadow-build-1"
-    assert records[0].full_build is True
-    assert records[0].code_sha == "a" * 40
-    assert records[0].content_sha == "b" * 40
+    assert json.loads(output.read_text(encoding="utf-8"))["matches"] is True
+    assert load_shadow_evidence(evidence) == ()
 
 
 def test_cli_records_a_failed_full_build_before_returning_mismatch(
@@ -216,6 +216,7 @@ def test_cli_records_a_failed_full_build_before_returning_mismatch(
 
 def test_cli_requires_complete_evidence_identity_and_rejects_replay(
     tmp_path: Path,
+    capsys: pytest.CaptureFixture[str],
 ) -> None:
     baseline = tmp_path / "baseline"
     candidate = tmp_path / "candidate"
@@ -241,6 +242,13 @@ def test_cli_requires_complete_evidence_identity_and_rejects_replay(
         "2026-07-13T08:00:00Z",
     ]
     assert main(common) == 0
+    summary = json.loads(capsys.readouterr().out)
+    assert summary["schema_version"] == "shadow_compare_summary_v1"
+    assert summary["record_digest"].startswith("sha256:")
+    assert summary["report_digest"].startswith("sha256:")
+    records = load_shadow_evidence(evidence)
+    assert summary["record_digest"] == records[0].record_digest
+    assert summary["report_digest"] == records[0].report_digest
     assert main(common) == 1
 
     incomplete = common.copy()
@@ -290,3 +298,45 @@ def test_enforces_bounded_tree_limits(
 
     with pytest.raises(ShadowComparisonError, match=reason):
         compare_trees(baseline, candidate)
+
+
+def test_cli_stdout_is_bounded_while_report_keeps_complete_external_links(
+    tmp_path: Path,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
+    baseline = tmp_path / "baseline"
+    candidate = tmp_path / "candidate"
+    baseline.mkdir()
+    candidate.mkdir()
+    links = "".join(
+        f'<a href="https://source.example/items/{index}">item</a>'
+        for index in range(2_000)
+    )
+    (baseline / "index.html").write_text(links, encoding="utf-8")
+    (candidate / "index.html").write_text(links, encoding="utf-8")
+    output = tmp_path / "report.json"
+
+    assert (
+        main(
+            [
+                "--baseline",
+                str(baseline),
+                "--candidate",
+                str(candidate),
+                "--report",
+                str(output),
+                "--code-sha",
+                "a" * 40,
+                "--content-sha",
+                "b" * 40,
+            ]
+        )
+        == 0
+    )
+    stdout = capsys.readouterr().out
+    summary = json.loads(stdout)
+    report = json.loads(output.read_text(encoding="utf-8"))
+    assert len(report["external_links"]) == 2_000
+    assert summary["external_link_count"] == 2_000
+    assert "external_links" not in summary
+    assert len(stdout.encode("utf-8")) < 16_000

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import shutil
 from datetime import UTC, datetime, timedelta
 from hashlib import sha256
 from pathlib import Path
@@ -15,6 +16,7 @@ from ai_stack.shadow_evidence import (
     load_shadow_evidence,
 )
 from scripts.shadow_compare import compare_trees
+from scripts.shadow_full_build import build_shared_pagefind_report
 
 CODE_SHA = "a" * 40
 CONTENT_SHA = "b" * 40
@@ -42,6 +44,62 @@ def _report(tmp_path: Path, name: str, *, matches: bool = True) -> dict[str, obj
     )
 
 
+def _full_report(tmp_path: Path, name: str):
+    root = tmp_path / name
+    hugo_baseline = root / "hugo-baseline"
+    hugo_candidate = root / "hugo-candidate"
+    _site(hugo_baseline)
+    _site(hugo_candidate)
+    bundle = root / "bundle"
+    bundle.mkdir()
+    (bundle / "pagefind.js").write_text("export const index = 1;\n", encoding="utf-8")
+    final_baseline = root / "final-baseline"
+    final_candidate = root / "final-candidate"
+    shutil.copytree(hugo_baseline, final_baseline)
+    shutil.copytree(hugo_candidate, final_candidate)
+    shutil.copytree(bundle, final_baseline / "pagefind")
+    shutil.copytree(bundle, final_candidate / "pagefind")
+    package_lock = root / "package-lock.json"
+    package_lock.write_text(
+        json.dumps(
+            {
+                "lockfileVersion": 3,
+                "packages": {
+                    "node_modules/pagefind": {
+                        "version": "1.5.2",
+                        "integrity": (
+                            "sha512-XTUaK0hXMCu2jszWE584JGQT7y284TmMV9l/HX3rnG5uo3rHI/"
+                            "uHU56XTyyyPFjeWEBxECbAi0CaFDJOONtG0Q=="
+                        ),
+                    },
+                    "node_modules/@pagefind/darwin-arm64": {
+                        "version": "1.5.2",
+                        "integrity": (
+                            "sha512-MXpI+7HsAdPkvJ0gk9xj9g541BCqBZOBbdwj9g6lB5LCj6kSV6"
+                            "nqDSjzcAJwvOsfu0fjwvC8hQU+ecfhp+MpiQ=="
+                        ),
+                    },
+                },
+            }
+        ),
+        encoding="utf-8",
+    )
+    runner = root / "pagefind.cjs"
+    runner.write_text("// pinned runner\n", encoding="utf-8")
+    return build_shared_pagefind_report(
+        hugo_baseline=hugo_baseline,
+        hugo_candidate=hugo_candidate,
+        final_baseline=final_baseline,
+        final_candidate=final_candidate,
+        pagefind_bundle=bundle,
+        package_lock=package_lock,
+        pagefind_runner=runner,
+        platform_package="@pagefind/darwin-arm64",
+        code_sha=CODE_SHA,
+        content_sha=CONTENT_SHA,
+    )
+
+
 def _append_successful_window(
     root: Path,
     report: dict[str, object],
@@ -49,15 +107,20 @@ def _append_successful_window(
     now: datetime = NOW,
     content_sha: str = CONTENT_SHA,
 ) -> str:
+    full_bundle = _full_report(root.parent, f"{root.name}-full-build")
     previous: str | None = None
     started_at = now - timedelta(days=8)
     for index in range(24):
+        is_full_build = index in {0, 8, 16}
         previous = append_shadow_evidence(
             root,
-            report=report,
+            report=full_bundle.report if is_full_build else report,
+            supporting_reports=(
+                full_bundle.supporting_reports if is_full_build else ()
+            ),
             run_id=f"shadow-{index + 1:02d}",
             completed_at=started_at + timedelta(hours=index * 6),
-            full_build=index in {0, 8, 16},
+            full_build=is_full_build,
             code_sha=CODE_SHA,
             content_sha=content_sha,
             expected_previous_digest=previous,
@@ -88,9 +151,9 @@ def test_content_addressed_chain_unlocks_only_after_all_three_thresholds(
 
     report_files = list((root / "reports").glob("*.json"))
     record_files = sorted((root / "records").glob("*.json"))
-    assert len(report_files) == 1
+    assert len(report_files) == 3
     assert len(record_files) == 24
-    assert report_files[0].stem == records[0].report_digest.removeprefix("sha256:")
+    assert (root / "reports" / f"{records[0].report_digest.removeprefix('sha256:')}.json").exists()
     assert record_files[-1].stem.endswith(head.removeprefix("sha256:"))
 
 
@@ -103,7 +166,7 @@ def test_duplicate_run_order_future_and_chain_forgery_are_rejected(tmp_path: Pat
         report=report,
         run_id="shadow-1",
         completed_at=completed,
-        full_build=True,
+        full_build=False,
         code_sha=CODE_SHA,
         content_sha=CONTENT_SHA,
         expected_previous_digest=None,
@@ -169,7 +232,7 @@ def test_failure_resets_window_and_report_sha_binding_is_fail_closed(tmp_path: P
         report=good,
         run_id="shadow-1",
         completed_at=NOW - timedelta(days=8),
-        full_build=True,
+        full_build=False,
         code_sha=CODE_SHA,
         content_sha=CONTENT_SHA,
         expected_previous_digest=None,
@@ -191,7 +254,7 @@ def test_failure_resets_window_and_report_sha_binding_is_fail_closed(tmp_path: P
         report=good,
         run_id="shadow-3",
         completed_at=NOW - timedelta(days=6),
-        full_build=True,
+        full_build=False,
         code_sha=CODE_SHA,
         content_sha=CONTENT_SHA,
         expected_previous_digest=previous,
@@ -281,7 +344,7 @@ def test_successful_full_build_requires_a_nonempty_html_comparison(tmp_path: Pat
         content_sha=CONTENT_SHA,
     )
 
-    with pytest.raises(ShadowEvidenceError, match="full build"):
+    with pytest.raises(ShadowEvidenceError, match="provenance"):
         append_shadow_evidence(
             tmp_path / "empty-evidence",
             report=empty,
@@ -413,6 +476,10 @@ def test_dedupe_execute_requires_gate_caps_batch_and_still_performs_no_mutation(
         "--shadow-evidence-root",
         str(evidence),
     ]
+    assert cli_main([*common, "--max-changes", "100"]) == 2
+    assert "--expected-code-sha" in capsys.readouterr().err
+
+    common.extend(["--expected-code-sha", CODE_SHA])
     assert cli_main([*common, "--max-changes", "101"]) == 2
     assert "between 1 and 100" in capsys.readouterr().err
 
@@ -446,6 +513,24 @@ def test_dedupe_dry_run_reports_verified_gate_without_unlocking_mutation(
                 str(evidence),
                 "--expected-source-sha",
                 CONTENT_SHA,
+            ]
+        )
+        == 2
+    )
+    assert "--expected-code-sha" in capsys.readouterr().err
+
+    assert (
+        cli_main(
+            [
+                "migrate",
+                "dedupe",
+                str(posts),
+                "--shadow-evidence-root",
+                str(evidence),
+                "--expected-source-sha",
+                CONTENT_SHA,
+                "--expected-code-sha",
+                CODE_SHA,
             ]
         )
         == 0

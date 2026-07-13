@@ -6,13 +6,15 @@ still supplies the cross-machine serialization and durable trust anchor.
 
 from __future__ import annotations
 
+import base64
+import binascii
 import fcntl
 import hashlib
 import json
 import os
 import re
 import stat
-from collections.abc import Iterator, Mapping
+from collections.abc import Iterator, Mapping, Sequence
 from contextlib import contextmanager
 from dataclasses import dataclass
 from datetime import UTC, datetime, timedelta
@@ -24,6 +26,9 @@ from ._json import canonical_json_bytes
 EVIDENCE_SCHEMA = "shadow_migration_evidence_v1"
 GATE_SCHEMA = "shadow_migration_gate_v1"
 REPORT_SCHEMA = "shadow_compare_v1"
+FULL_BUILD_REPORT_SCHEMA = "shadow_full_build_v1"
+FULL_BUILD_PROFILE = "hugo_exact_shared_pagefind_v1"
+PAGEFIND_STRATEGY = "single_build_shared_injection"
 MIN_CONSECUTIVE_RUNS = 24
 MIN_FULL_BUILDS = 3
 MIN_SOAK = timedelta(days=7)
@@ -33,6 +38,11 @@ _DIGEST = re.compile(r"sha256:([0-9a-f]{64})\Z")
 _RUN_ID = re.compile(r"[A-Za-z0-9][A-Za-z0-9._:-]{0,127}\Z")
 _REPORT_FILE = re.compile(r"([0-9a-f]{64})\.json\Z")
 _RECORD_FILE = re.compile(r"([0-9]{20})-([0-9a-f]{64})\.json\Z")
+_NPM_INTEGRITY = re.compile(r"sha512-[A-Za-z0-9+/]+={0,2}\Z")
+_PAGEFIND_PLATFORM = re.compile(
+    r"@pagefind/(?:darwin|freebsd|linux|windows)-(?:arm64|x64)\Z"
+)
+_COMMAND_INPUT_NAME = re.compile(r"[a-z][a-z0-9_.-]{0,63}\Z")
 _MAX_EVIDENCE_FILE_BYTES = 16 * 1024 * 1024
 _MAX_RECORDS = 100_000
 
@@ -48,6 +58,7 @@ class ShadowEvidenceRecord:
     completed_at: datetime
     status: str
     full_build: bool
+    full_build_profile: str | None
     code_sha: str
     content_sha: str
     report_digest: str
@@ -248,7 +259,7 @@ def _require_nonnegative_int(value: object, field: str) -> int:
     return value
 
 
-def _validate_report(
+def _validate_compare_report(
     report: Mapping[str, Any],
     *,
     code_sha: str,
@@ -332,7 +343,291 @@ def _validate_report(
     return matches
 
 
-def _successful_report_is_nonempty(report: Mapping[str, Any]) -> bool:
+def _require_exact_fields(
+    value: Mapping[str, Any],
+    expected: set[str],
+    field: str,
+) -> None:
+    if set(value) != expected:
+        raise ShadowEvidenceError(f"{field} schema is invalid")
+
+
+def _require_mapping(value: object, field: str) -> Mapping[str, Any]:
+    if not isinstance(value, Mapping):
+        raise ShadowEvidenceError(f"{field} must be an object")
+    return value
+
+
+def _require_npm_integrity(value: object, field: str) -> str:
+    if not isinstance(value, str) or not _NPM_INTEGRITY.fullmatch(value):
+        raise ShadowEvidenceError(f"{field} must be a pinned sha512 npm integrity")
+    try:
+        decoded = base64.b64decode(value.removeprefix("sha512-"), validate=True)
+    except (binascii.Error, ValueError) as exc:
+        raise ShadowEvidenceError(f"{field} must be a pinned sha512 npm integrity") from exc
+    if len(decoded) != 64:
+        raise ShadowEvidenceError(f"{field} must be a pinned sha512 npm integrity")
+    return value
+
+
+def _validate_delta(value: object, field: str) -> tuple[str, int, int, int, int]:
+    delta = _require_mapping(value, field)
+    _require_exact_fields(
+        delta,
+        {
+            "added_tree_sha256",
+            "added_path_count",
+            "removed_path_count",
+            "changed_path_count",
+            "outside_prefix_path_count",
+        },
+        field,
+    )
+    return (
+        _require_digest(delta.get("added_tree_sha256"), f"{field} added tree digest"),
+        _require_nonnegative_int(delta.get("added_path_count"), f"{field} added_path_count"),
+        _require_nonnegative_int(
+            delta.get("removed_path_count"), f"{field} removed_path_count"
+        ),
+        _require_nonnegative_int(
+            delta.get("changed_path_count"), f"{field} changed_path_count"
+        ),
+        _require_nonnegative_int(
+            delta.get("outside_prefix_path_count"),
+            f"{field} outside_prefix_path_count",
+        ),
+    )
+
+
+def _validate_full_build_report(
+    report: Mapping[str, Any],
+    *,
+    code_sha: str,
+    content_sha: str,
+    reports: Mapping[str, Mapping[str, Any]],
+) -> bool:
+    _require_exact_fields(
+        report,
+        {
+            "schema_version",
+            "matches",
+            "code_sha",
+            "content_sha",
+            "comparison_profile",
+            "hugo_report_digest",
+            "final_report_digest",
+            "pagefind",
+        },
+        "shadow full build report",
+    )
+    if report.get("schema_version") != FULL_BUILD_REPORT_SCHEMA:
+        raise ShadowEvidenceError("shadow full build report schema is invalid")
+    matches = report.get("matches")
+    if not isinstance(matches, bool):
+        raise ShadowEvidenceError("shadow full build matches status is invalid")
+    if report.get("code_sha") != code_sha or report.get("content_sha") != content_sha:
+        raise ShadowEvidenceError("shadow full build identity does not match the evidence")
+    _require_sha(report.get("code_sha"), "full build code_sha")
+    _require_sha(report.get("content_sha"), "full build content_sha")
+    if report.get("comparison_profile") != FULL_BUILD_PROFILE:
+        raise ShadowEvidenceError("shadow full build comparison profile is invalid")
+
+    hugo_digest = _require_digest(report.get("hugo_report_digest"), "Hugo report digest")
+    final_digest = _require_digest(report.get("final_report_digest"), "final report digest")
+    try:
+        hugo_report = reports[hugo_digest]
+        final_report = reports[final_digest]
+    except KeyError as exc:
+        raise ShadowEvidenceError("shadow full build supporting report is missing") from exc
+    if (
+        hugo_report.get("schema_version") != REPORT_SCHEMA
+        or final_report.get("schema_version") != REPORT_SCHEMA
+    ):
+        raise ShadowEvidenceError("shadow full build supporting report schema is invalid")
+    hugo_matches = _validate_compare_report(
+        hugo_report, code_sha=code_sha, content_sha=content_sha
+    )
+    final_matches = _validate_compare_report(
+        final_report, code_sha=code_sha, content_sha=content_sha
+    )
+
+    pagefind = _require_mapping(report.get("pagefind"), "pagefind provenance")
+    _require_exact_fields(
+        pagefind,
+        {
+            "strategy",
+            "input_tree_sha256",
+            "output_prefix",
+            "bundle_tree_sha256",
+            "bundle_file_count",
+            "bundle_total_bytes",
+            "bundle_html_count",
+            "preexisting_output_path_count",
+            "baseline_delta",
+            "candidate_delta",
+            "tool",
+        },
+        "pagefind provenance",
+    )
+    if pagefind.get("strategy") != PAGEFIND_STRATEGY:
+        raise ShadowEvidenceError("pagefind provenance strategy is invalid")
+    if pagefind.get("output_prefix") != "pagefind/":
+        raise ShadowEvidenceError("pagefind output prefix is invalid")
+    input_tree = _require_digest(pagefind.get("input_tree_sha256"), "pagefind input tree")
+    bundle_tree = _require_digest(pagefind.get("bundle_tree_sha256"), "pagefind bundle tree")
+    bundle_files = _require_nonnegative_int(
+        pagefind.get("bundle_file_count"), "pagefind bundle_file_count"
+    )
+    _require_nonnegative_int(pagefind.get("bundle_total_bytes"), "pagefind bundle_total_bytes")
+    bundle_html = _require_nonnegative_int(
+        pagefind.get("bundle_html_count"), "pagefind bundle_html_count"
+    )
+    preexisting = _require_nonnegative_int(
+        pagefind.get("preexisting_output_path_count"),
+        "pagefind preexisting_output_path_count",
+    )
+    baseline_delta = _validate_delta(pagefind.get("baseline_delta"), "baseline delta")
+    candidate_delta = _validate_delta(pagefind.get("candidate_delta"), "candidate delta")
+
+    tool = _require_mapping(pagefind.get("tool"), "pagefind tool")
+    _require_exact_fields(
+        tool,
+        {
+            "name",
+            "version",
+            "package_lock_sha256",
+            "npm_integrity",
+            "platform_package",
+            "platform_integrity",
+            "runner_sha256",
+            "command",
+            "command_inputs",
+            "command_sha256",
+        },
+        "pagefind tool",
+    )
+    if tool.get("name") != "pagefind":
+        raise ShadowEvidenceError("pagefind tool name is invalid")
+    if tool.get("version") != "1.5.2":
+        raise ShadowEvidenceError("pagefind tool version is invalid")
+    _require_digest(tool.get("package_lock_sha256"), "package-lock digest")
+    _require_npm_integrity(tool.get("npm_integrity"), "pagefind npm integrity")
+    platform_package = tool.get("platform_package")
+    if not isinstance(platform_package, str) or not _PAGEFIND_PLATFORM.fullmatch(
+        platform_package
+    ):
+        raise ShadowEvidenceError("pagefind platform package is invalid")
+    _require_npm_integrity(tool.get("platform_integrity"), "platform npm integrity")
+    _require_digest(tool.get("runner_sha256"), "pagefind runner digest")
+    command = tool.get("command")
+    if (
+        not isinstance(command, list)
+        or not 1 <= len(command) <= 32
+        or any(
+            not isinstance(argument, str)
+            or not argument
+            or len(argument) > 256
+            or any(ord(character) < 32 for character in argument)
+            for argument in command
+        )
+    ):
+        raise ShadowEvidenceError("pagefind command identity is invalid")
+    command_inputs = tool.get("command_inputs")
+    if not isinstance(command_inputs, list) or len(command_inputs) > 32:
+        raise ShadowEvidenceError("pagefind command inputs are invalid")
+    normalized_inputs: list[dict[str, str]] = []
+    seen_names: set[str] = set()
+    for item in command_inputs:
+        value = _require_mapping(item, "pagefind command input")
+        _require_exact_fields(value, {"name", "sha256"}, "pagefind command input")
+        name = value.get("name")
+        if (
+            not isinstance(name, str)
+            or not _COMMAND_INPUT_NAME.fullmatch(name)
+            or name in seen_names
+        ):
+            raise ShadowEvidenceError("pagefind command input name is invalid")
+        seen_names.add(name)
+        normalized_inputs.append(
+            {
+                "name": name,
+                "sha256": _require_digest(
+                    value.get("sha256"), f"pagefind command input {name} digest"
+                ),
+            }
+        )
+    if normalized_inputs != sorted(normalized_inputs, key=lambda item: item["name"]):
+        raise ShadowEvidenceError("pagefind command inputs must be sorted")
+    command_sha = _require_digest(tool.get("command_sha256"), "pagefind command digest")
+    expected_command_sha = _digest(
+        canonical_json_bytes(
+            {
+                "schema_version": "shared_pagefind_command_v1",
+                "command": command,
+                "inputs": normalized_inputs,
+            }
+        )
+    )
+    if command_sha != expected_command_sha:
+        raise ShadowEvidenceError("pagefind command identity digest is invalid")
+
+    hugo_tree = "sha256:" + str(hugo_report.get("baseline_tree_sha256", ""))
+    candidate_hugo_tree = "sha256:" + str(hugo_report.get("candidate_tree_sha256", ""))
+    hugo_files = hugo_report.get("file_count")
+    hugo_html = hugo_report.get("html_count")
+    final_files = final_report.get("file_count")
+    final_html = final_report.get("html_count")
+    derived_matches = (
+        hugo_matches
+        and final_matches
+        and isinstance(hugo_files, int)
+        and not isinstance(hugo_files, bool)
+        and hugo_files > 0
+        and isinstance(hugo_html, int)
+        and not isinstance(hugo_html, bool)
+        and hugo_html > 0
+        and input_tree == hugo_tree == candidate_hugo_tree
+        and bundle_files > 0
+        and preexisting == 0
+        and baseline_delta == (bundle_tree, bundle_files, 0, 0, 0)
+        and candidate_delta == (bundle_tree, bundle_files, 0, 0, 0)
+        and final_files == hugo_files + bundle_files
+        and final_html == hugo_html + bundle_html
+    )
+    if matches != derived_matches:
+        raise ShadowEvidenceError("shadow full build report contradicts its provenance")
+    return matches
+
+
+def _validate_report(
+    report: Mapping[str, Any],
+    *,
+    code_sha: str,
+    content_sha: str,
+    reports: Mapping[str, Mapping[str, Any]] | None = None,
+) -> bool:
+    schema = report.get("schema_version")
+    if schema == REPORT_SCHEMA:
+        return _validate_compare_report(report, code_sha=code_sha, content_sha=content_sha)
+    if schema == FULL_BUILD_REPORT_SCHEMA:
+        return _validate_full_build_report(
+            report,
+            code_sha=code_sha,
+            content_sha=content_sha,
+            reports=reports or {},
+        )
+    raise ShadowEvidenceError("shadow report schema is invalid")
+
+
+def _successful_report_is_nonempty(
+    report: Mapping[str, Any],
+    reports: Mapping[str, Mapping[str, Any]],
+) -> bool:
+    if report.get("schema_version") == FULL_BUILD_REPORT_SCHEMA:
+        final_digest = report.get("final_report_digest")
+        if not isinstance(final_digest, str) or final_digest not in reports:
+            return False
+        report = reports[final_digest]
     file_count = report.get("file_count")
     html_count = report.get("html_count")
     return (
@@ -427,7 +722,10 @@ def _load_records(root: Path, *, as_of: datetime) -> tuple[ShadowEvidenceRecord,
         if not isinstance(full_build, bool):
             raise ShadowEvidenceError(f"shadow evidence full_build flag is invalid: {run_id}")
         matches = _validate_report(
-            reports[report_digest], code_sha=code_sha, content_sha=content_sha
+            reports[report_digest],
+            code_sha=code_sha,
+            content_sha=content_sha,
+            reports=reports,
         )
         expected_status = "SUCCEEDED" if matches else "FAILED"
         if status != expected_status:
@@ -435,7 +733,7 @@ def _load_records(root: Path, *, as_of: datetime) -> tuple[ShadowEvidenceRecord,
         if (
             full_build
             and status == "SUCCEEDED"
-            and not _successful_report_is_nonempty(reports[report_digest])
+            and not _successful_report_is_nonempty(reports[report_digest], reports)
         ):
             raise ShadowEvidenceError(
                 "full build evidence requires a successful nonempty HTML tree"
@@ -447,6 +745,12 @@ def _load_records(root: Path, *, as_of: datetime) -> tuple[ShadowEvidenceRecord,
                 completed_at=completed_at,
                 status=status,
                 full_build=full_build,
+                full_build_profile=(
+                    FULL_BUILD_PROFILE
+                    if reports[report_digest].get("schema_version")
+                    == FULL_BUILD_REPORT_SCHEMA
+                    else None
+                ),
                 code_sha=code_sha,
                 content_sha=content_sha,
                 report_digest=report_digest,
@@ -476,6 +780,7 @@ def append_shadow_evidence(
     root: Path | str,
     *,
     report: Mapping[str, Any],
+    supporting_reports: Sequence[Mapping[str, Any]] | str | bytes = (),
     run_id: str,
     completed_at: datetime,
     full_build: bool,
@@ -502,6 +807,8 @@ def append_shadow_evidence(
         _require_digest(expected_previous_digest, "expected previous evidence digest")
     if not isinstance(full_build, bool):
         raise ShadowEvidenceError("full_build must be a boolean")
+    if isinstance(supporting_reports, (str, bytes)):
+        raise ShadowEvidenceError("supporting_reports must be a sequence of objects")
 
     with _locked(evidence_root):
         records = _load_records(evidence_root, as_of=checked_at)
@@ -515,12 +822,45 @@ def append_shadow_evidence(
         if records and completed <= records[-1].completed_at:
             raise ShadowEvidenceError("completed_at must be strictly later than the prior run")
 
-        matches = _validate_report(report, code_sha=code_sha, content_sha=content_sha)
+        available_reports = _load_reports(evidence_root / "reports")
+        support_objects: list[tuple[Path, bytes]] = []
+        for support in supporting_reports:
+            if not isinstance(support, Mapping):
+                raise ShadowEvidenceError("supporting report must be an object")
+            if support.get("schema_version") != REPORT_SCHEMA:
+                raise ShadowEvidenceError("supporting report schema is invalid")
+            _validate_compare_report(support, code_sha=code_sha, content_sha=content_sha)
+            support_data = _payload_bytes(support)
+            support_digest = _digest(support_data)
+            available_reports[support_digest] = support
+            support_objects.append(
+                (
+                    evidence_root
+                    / "reports"
+                    / (support_digest.removeprefix("sha256:") + ".json"),
+                    support_data,
+                )
+            )
+
+        matches = _validate_report(
+            report,
+            code_sha=code_sha,
+            content_sha=content_sha,
+            reports=available_reports,
+        )
         status = "SUCCEEDED" if matches else "FAILED"
         if (
             full_build
             and status == "SUCCEEDED"
-            and not _successful_report_is_nonempty(report)
+            and report.get("schema_version") != FULL_BUILD_REPORT_SCHEMA
+        ):
+            raise ShadowEvidenceError(
+                "successful full build requires shared Pagefind provenance"
+            )
+        if (
+            full_build
+            and status == "SUCCEEDED"
+            and not _successful_report_is_nonempty(report, available_reports)
         ):
             raise ShadowEvidenceError(
                 "full build evidence requires a successful nonempty HTML tree"
@@ -529,6 +869,8 @@ def append_shadow_evidence(
         report_data = _payload_bytes(report)
         report_digest = _digest(report_data)
         report_path = evidence_root / "reports" / (report_digest.removeprefix("sha256:") + ".json")
+        for support_path, support_data in support_objects:
+            _create_once(support_path, support_data)
         _create_once(report_path, report_data)
 
         sequence = len(records) + 1
@@ -558,6 +900,11 @@ def append_shadow_evidence(
             completed_at=completed,
             status=status,
             full_build=full_build,
+            full_build_profile=(
+                FULL_BUILD_PROFILE
+                if report.get("schema_version") == FULL_BUILD_REPORT_SCHEMA
+                else None
+            ),
             code_sha=code_sha,
             content_sha=content_sha,
             report_digest=report_digest,
@@ -583,12 +930,19 @@ def evaluate_shadow_gate(
     records = load_shadow_evidence(root, as_of=checked_at)
     streak: list[ShadowEvidenceRecord] = []
     for record in records:
-        if record.status == "SUCCEEDED":
+        identity_matches = (
+            (expected_content_sha is None or record.content_sha == expected_content_sha)
+            and (expected_code_sha is None or record.code_sha == expected_code_sha)
+        )
+        if record.status == "SUCCEEDED" and identity_matches:
             streak.append(record)
         else:
             streak.clear()
 
-    full_build_count = sum(record.full_build for record in streak)
+    full_build_count = sum(
+        record.full_build and record.full_build_profile == FULL_BUILD_PROFILE
+        for record in streak
+    )
     soak_seconds = (
         max(0, int((checked_at - streak[0].completed_at).total_seconds())) if streak else 0
     )
@@ -623,10 +977,13 @@ def evaluate_shadow_gate(
 
 __all__ = [
     "EVIDENCE_SCHEMA",
+    "FULL_BUILD_PROFILE",
+    "FULL_BUILD_REPORT_SCHEMA",
     "GATE_SCHEMA",
     "MIN_CONSECUTIVE_RUNS",
     "MIN_FULL_BUILDS",
     "MIN_SOAK",
+    "PAGEFIND_STRATEGY",
     "ShadowEvidenceError",
     "ShadowEvidenceRecord",
     "ShadowGateResult",
