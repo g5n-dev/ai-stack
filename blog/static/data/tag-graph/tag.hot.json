@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-14T07:13:01Z",
+  "generated_at": "2026-07-14T10:28:27Z",
   "layer": "tag",
   "layers": {
     "application": {
@@ -26493,7 +26493,7 @@
       "strength": 1,
       "target": "tag:多模态",
       "type": "cooccurrence",
-      "weight": 84
+      "weight": 83
     },
     {
       "id": "edge:cooccurrence:tag:LLM->tag:多语言",
@@ -32853,7 +32853,7 @@
       "strength": 1,
       "target": "tag:多模态",
       "type": "cooccurrence",
-      "weight": 49
+      "weight": 48
     },
     {
       "id": "edge:cooccurrence:tag:Python->tag:多语言",
@@ -42549,7 +42549,7 @@
       "strength": 1,
       "target": "tag:开源",
       "type": "cooccurrence",
-      "weight": 6
+      "weight": 5
     },
     {
       "id": "edge:cooccurrence:tag:多模态->tag:开源模型",
@@ -54556,7 +54556,7 @@
       "legacy_id": "blogs_podcasts",
       "level": 6,
       "name": "blogs_podcasts",
-      "rank": 11331,
+      "rank": 11333,
       "related_count": 0,
       "weighted_degree": 0
     },
@@ -55015,7 +55015,7 @@
       "legacy_id": "hacker_news",
       "level": 6,
       "name": "hacker_news",
-      "rank": 11332,
+      "rank": 11334,
       "related_count": 0,
       "weighted_degree": 0
     },
@@ -56244,11 +56244,11 @@
       "weighted_degree": 427
     },
     {
-      "article_count": 307,
+      "article_count": 306,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:插件系统",
-      "degree": 768,
+      "degree": 765,
       "description": "多模态指能够同时理解、处理或生成文本、图像、音频及视频等多种异构数据的技术能力。它广泛应用于AI绘图、智能体交互及大模型评测，旨在提升人工智能对现实世界的感知与认知水平。",
       "id": "tag:多模态",
       "layer": "tag",
@@ -56257,8 +56257,8 @@
       "level": 6,
       "name": "多模态",
       "rank": 9,
-      "related_count": 768,
-      "weighted_degree": 2148
+      "related_count": 765,
+      "weighted_degree": 2141
     },
     {
       "article_count": 47,
@@ -56635,11 +56635,11 @@
       "weighted_degree": 406
     },
     {
-      "article_count": 169,
+      "article_count": 170,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
-      "degree": 475,
+      "degree": 482,
       "description": "性能优化指通过改进算法、资源调度或底层实现，提升软件系统运行效率与响应速度，常涉及内存管理、并发处理、编译器优化等技术，广泛应用于移动应用、Web服务、AI推理等场景。",
       "id": "tag:性能优化",
       "layer": "tag",
@@ -56647,9 +56647,9 @@
       "legacy_id": "性能优化",
       "level": 6,
       "name": "性能优化",
-      "rank": 28,
-      "related_count": 475,
-      "weighted_degree": 1183
+      "rank": 27,
+      "related_count": 482,
+      "weighted_degree": 1190
     },
     {
       "article_count": 76,
@@ -57480,7 +57480,7 @@
       "legacy_id": "生成式AI",
       "level": 6,
       "name": "生成式AI",
-      "rank": 27,
+      "rank": 28,
       "related_count": 540,
       "weighted_degree": 1183
     },
