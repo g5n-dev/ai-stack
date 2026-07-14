@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-14T12:37:48Z",
+  "generated_at": "2026-07-14T14:32:28Z",
   "layer": "tag",
   "layers": {
     "application": {
@@ -16682,10 +16682,10 @@
     {
       "id": "edge:cooccurrence:tag:Bedrock->tag:多智能体",
       "source": "tag:Bedrock",
-      "strength": 0.5,
+      "strength": 1,
       "target": "tag:多智能体",
       "type": "cooccurrence",
-      "weight": 1
+      "weight": 2
     },
     {
       "id": "edge:cooccurrence:tag:Bedrock->tag:多模态",
@@ -26141,7 +26141,7 @@
       "strength": 1,
       "target": "tag:Python",
       "type": "cooccurrence",
-      "weight": 161
+      "weight": 160
     },
     {
       "id": "edge:cooccurrence:tag:LLM->tag:Qwen",
@@ -26605,7 +26605,7 @@
       "strength": 1,
       "target": "tag:开源",
       "type": "cooccurrence",
-      "weight": 72
+      "weight": 71
     },
     {
       "id": "edge:cooccurrence:tag:LLM->tag:开源工具",
@@ -32853,7 +32853,7 @@
       "strength": 1,
       "target": "tag:多模态",
       "type": "cooccurrence",
-      "weight": 48
+      "weight": 49
     },
     {
       "id": "edge:cooccurrence:tag:Python->tag:多语言",
@@ -32917,7 +32917,7 @@
       "strength": 1,
       "target": "tag:开源",
       "type": "cooccurrence",
-      "weight": 13
+      "weight": 12
     },
     {
       "id": "edge:cooccurrence:tag:Python->tag:开源工具",
@@ -43381,7 +43381,7 @@
       "strength": 1,
       "target": "tag:模型压缩",
       "type": "cooccurrence",
-      "weight": 4
+      "weight": 5
     },
     {
       "id": "edge:cooccurrence:tag:大模型->tag:模型发布",
@@ -43486,6 +43486,14 @@
       "target": "tag:知识库",
       "type": "cooccurrence",
       "weight": 2
+    },
+    {
+      "id": "edge:cooccurrence:tag:大模型->tag:神经网络",
+      "source": "tag:大模型",
+      "strength": 0.5,
+      "target": "tag:神经网络",
+      "type": "cooccurrence",
+      "weight": 1
     },
     {
       "id": "edge:cooccurrence:tag:大模型->tag:科学发现",
@@ -51317,7 +51325,7 @@
       "strength": 1,
       "target": "tag:神经网络",
       "type": "cooccurrence",
-      "weight": 3
+      "weight": 4
     },
     {
       "id": "edge:cooccurrence:tag:模型压缩->tag:算法",
@@ -54003,7 +54011,7 @@
       "article_count": 408,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:tag:插件系统",
+      "community_id": "community:other",
       "degree": 1158,
       "description": "AI Agent 指具备感知、推理及执行能力的智能体，能够利用大模型自主规划任务并调用工具以实现特定目标，广泛应用于自动化工作流、智能测评及工业仿真等领域。",
       "id": "tag:AI Agent",
@@ -54556,7 +54564,7 @@
       "legacy_id": "blogs_podcasts",
       "level": 6,
       "name": "blogs_podcasts",
-      "rank": 11335,
+      "rank": 11339,
       "related_count": 0,
       "weighted_degree": 0
     },
@@ -54853,7 +54861,7 @@
       "article_count": 76,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:tag:插件系统",
+      "community_id": "community:other",
       "degree": 231,
       "description": "GitHub是全球最大的代码托管与开源协作平台，汇聚了海量的开源项目与技术资源，常用于版本控制、代码共享以及开发者社区的协作交流。",
       "id": "tag:GitHub",
@@ -54913,7 +54921,7 @@
       "legacy_id": "GPT",
       "level": 6,
       "name": "GPT",
-      "rank": 123,
+      "rank": 124,
       "related_count": 133,
       "weighted_degree": 371
     },
@@ -54930,7 +54938,7 @@
       "legacy_id": "GPT-5",
       "level": 6,
       "name": "GPT-5",
-      "rank": 101,
+      "rank": 102,
       "related_count": 157,
       "weighted_degree": 434
     },
@@ -55015,7 +55023,7 @@
       "legacy_id": "hacker_news",
       "level": 6,
       "name": "hacker_news",
-      "rank": 11336,
+      "rank": 11340,
       "related_count": 0,
       "weighted_degree": 0
     },
@@ -55177,7 +55185,7 @@
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:插件系统",
-      "degree": 3471,
+      "degree": 3474,
       "description": "LLM指大语言模型，是具备千亿级参数规模、能处理复杂任务（如代码生成、智能体构建）的AI基础技术，与AI原生应用、安全及科学计算等领域紧密相关。",
       "id": "tag:LLM",
       "layer": "tag",
@@ -55186,7 +55194,7 @@
       "level": 6,
       "name": "LLM",
       "rank": 1,
-      "related_count": 3469,
+      "related_count": 3472,
       "weighted_degree": 14766.2
     },
     {
@@ -55397,7 +55405,7 @@
       "article_count": 102,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:tag:插件系统",
+      "community_id": "community:other",
       "degree": 321,
       "description": "OpenClaw 是面向 AI 智能体生态的基础设施项目，旨在为 AI Agents 提供底层支持与连接能力，通常与多智能体协作、Bot 生态及社交网络平台 Moltbook 密切相关。",
       "id": "tag:OpenClaw",
@@ -55466,7 +55474,7 @@
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:插件系统",
-      "degree": 440,
+      "degree": 439,
       "description": "Python 是一种广泛用于后端开发、数据分析、自动化脚本及人工智能领域的编程语言。它凭借简洁的语法和丰富的第三方库，成为构建 AI Agent、量化交易工具及各类自动化应用的首选技术。",
       "id": "tag:Python",
       "layer": "tag",
@@ -55475,7 +55483,7 @@
       "level": 6,
       "name": "Python",
       "rank": 14,
-      "related_count": 439,
+      "related_count": 438,
       "weighted_degree": 1856.6
     },
     {
@@ -55644,7 +55652,7 @@
       "legacy_id": "Stable Diffusion",
       "level": 6,
       "name": "Stable Diffusion",
-      "rank": 164,
+      "rank": 165,
       "related_count": 86,
       "weighted_degree": 287.6
     },
@@ -56227,11 +56235,11 @@
       "weighted_degree": 266
     },
     {
-      "article_count": 61,
+      "article_count": 62,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
-      "degree": 262,
+      "degree": 268,
       "description": "多智能体是指由多个具备感知、推理和行动能力的智能体组成的系统，它们通过协作或竞争解决复杂问题，常与AI Agent、LLM等技术相关，应用于社交网络、规模化科学和信任机制构建等场景。",
       "id": "tag:多智能体",
       "layer": "tag",
@@ -56239,16 +56247,16 @@
       "legacy_id": "多智能体",
       "level": 6,
       "name": "多智能体",
-      "rank": 102,
-      "related_count": 262,
-      "weighted_degree": 427
+      "rank": 100,
+      "related_count": 268,
+      "weighted_degree": 434
     },
     {
-      "article_count": 306,
+      "article_count": 307,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:插件系统",
-      "degree": 765,
+      "degree": 770,
       "description": "多模态指能够同时理解、处理或生成文本、图像、音频及视频等多种异构数据的技术能力。它广泛应用于AI绘图、智能体交互及大模型评测，旨在提升人工智能对现实世界的感知与认知水平。",
       "id": "tag:多模态",
       "layer": "tag",
@@ -56257,8 +56265,8 @@
       "level": 6,
       "name": "多模态",
       "rank": 9,
-      "related_count": 765,
-      "weighted_degree": 2141
+      "related_count": 770,
+      "weighted_degree": 2148
     },
     {
       "article_count": 47,
@@ -56278,11 +56286,11 @@
       "weighted_degree": 329
     },
     {
-      "article_count": 199,
+      "article_count": 200,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:插件系统",
-      "degree": 838,
+      "degree": 843,
       "description": "大模型通常指基于海量数据训练的深度神经网络，具备强大的通用智能与涌现能力，是当前AI编程、生态构建及科技竞争的核心驱动力。",
       "id": "tag:大模型",
       "layer": "tag",
@@ -56291,8 +56299,8 @@
       "level": 6,
       "name": "大模型",
       "rank": 20,
-      "related_count": 838,
-      "weighted_degree": 1391
+      "related_count": 843,
+      "weighted_degree": 1398
     },
     {
       "article_count": 31,
@@ -56482,11 +56490,11 @@
       "weighted_degree": 462
     },
     {
-      "article_count": 181,
+      "article_count": 180,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:插件系统",
-      "degree": 615,
+      "degree": 611,
       "description": "开源指源代码可公开访问、自由使用和分发的软件或模型，常与AI基础模型、编程工具及数据集相关，促进技术协作与创新。",
       "id": "tag:开源",
       "layer": "tag",
@@ -56495,8 +56503,8 @@
       "level": 6,
       "name": "开源",
       "rank": 25,
-      "related_count": 615,
-      "weighted_degree": 1265
+      "related_count": 611,
+      "weighted_degree": 1258
     },
     {
       "article_count": 42,
@@ -56936,7 +56944,7 @@
       "legacy_id": "数据分析",
       "level": 6,
       "name": "数据分析",
-      "rank": 100,
+      "rank": 101,
       "related_count": 199,
       "weighted_degree": 434
     },
@@ -57145,11 +57153,11 @@
       "weighted_degree": 686
     },
     {
-      "article_count": 52,
+      "article_count": 53,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
-      "degree": 219,
+      "degree": 222,
       "description": "模型压缩是指通过剪枝、量化或知识蒸馏等技术，在尽量保持精度的前提下显著降低深度学习模型的参数量与计算开销，从而实现轻量化部署。该技术常与卷积神经网络、大语言模型及异构计算场景下的高效推理紧密相关。",
       "id": "tag:模型压缩",
       "layer": "tag",
@@ -57157,9 +57165,9 @@
       "legacy_id": "模型压缩",
       "level": 6,
       "name": "模型压缩",
-      "rank": 124,
-      "related_count": 219,
-      "weighted_degree": 364
+      "rank": 122,
+      "related_count": 222,
+      "weighted_degree": 371
     },
     {
       "article_count": 167,
@@ -57531,16 +57539,16 @@
       "legacy_id": "知识库",
       "level": 6,
       "name": "知识库",
-      "rank": 122,
+      "rank": 123,
       "related_count": 145,
       "weighted_degree": 371
     },
     {
-      "article_count": 96,
+      "article_count": 97,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:PaddlePaddle",
-      "degree": 314,
+      "degree": 320,
       "description": "神经网络是一种受人脑结构启发的机器学习模型，通过多层神经元连接进行特征提取与模式识别，广泛应用于计算机视觉、自然语言处理及边缘计算推理优化等领域。",
       "id": "tag:神经网络",
       "layer": "tag",
@@ -57549,8 +57557,8 @@
       "level": 6,
       "name": "神经网络",
       "rank": 56,
-      "related_count": 314,
-      "weighted_degree": 672
+      "related_count": 320,
+      "weighted_degree": 679
     },
     {
       "article_count": 47,
@@ -57726,7 +57734,7 @@
       "article_count": 381,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:tag:插件系统",
+      "community_id": "community:other",
       "degree": 878,
       "description": "自动化是指利用技术手段让流程在无人干预下自动运行，涵盖从脚本工具到AI智能体的各类应用，旨在提升效率并解放人力。",
       "id": "tag:自动化",
@@ -58150,13 +58158,13 @@
   ],
   "stats": {
     "links_by_type": {
-      "cooccurrence": 6685,
+      "cooccurrence": 6686,
       "semantic": 47
     },
     "nodes_by_layer": {
       "tag": 250
     },
-    "total_links": 6732,
+    "total_links": 6733,
     "total_nodes": 250
   },
   "version": 2
