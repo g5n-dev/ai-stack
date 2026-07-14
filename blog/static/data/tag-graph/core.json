@@ -1,1161 +1,1800 @@
 {
-  "nodes": [
-    {
-      "id": "python",
-      "name": "Python",
-      "layer": "language",
-      "layer_name": "编程语言",
-      "level": 1,
-      "color": "#4db6ac",
-      "category": "language",
-      "icon": "",
-      "description": "简洁优雅的通用编程语言，AI/ML领域首选"
-    },
-    {
-      "id": "typescript",
-      "name": "TypeScript",
-      "layer": "language",
-      "layer_name": "编程语言",
-      "level": 1,
-      "color": "#4db6ac",
-      "category": "language",
-      "icon": "",
-      "description": "带类型的JavaScript，大型项目必备"
-    },
-    {
-      "id": "javascript",
-      "name": "JavaScript",
-      "layer": "language",
-      "layer_name": "编程语言",
-      "level": 1,
-      "color": "#4db6ac",
-      "category": "language",
-      "icon": "",
-      "description": "Web开发的基石语言"
-    },
-    {
-      "id": "go",
-      "name": "Go",
-      "layer": "language",
-      "layer_name": "编程语言",
-      "level": 1,
-      "color": "#4db6ac",
-      "category": "language",
-      "icon": "",
-      "description": "高性能并发编程语言，云原生时代的C语言"
-    },
-    {
-      "id": "rust",
-      "name": "Rust",
-      "layer": "language",
-      "layer_name": "编程语言",
-      "level": 1,
-      "color": "#4db6ac",
-      "category": "language",
-      "icon": "",
-      "description": "内存安全的高性能系统编程语言"
-    },
-    {
-      "id": "java",
-      "name": "Java",
-      "layer": "language",
-      "layer_name": "编程语言",
-      "level": 1,
-      "color": "#4db6ac",
-      "category": "language",
-      "icon": "",
-      "description": "企业级应用开发的经典选择"
-    },
-    {
-      "id": "cpp",
-      "name": "C++",
-      "layer": "language",
-      "layer_name": "编程语言",
-      "level": 1,
-      "color": "#4db6ac",
-      "category": "language",
-      "icon": "",
-      "description": "高性能计算和系统编程"
-    },
-    {
-      "id": "swift",
-      "name": "Swift",
-      "layer": "language",
-      "layer_name": "编程语言",
-      "level": 1,
-      "color": "#4db6ac",
-      "category": "language",
-      "icon": "",
-      "description": "Apple生态的现代编程语言"
-    },
-    {
-      "id": "pytorch",
-      "name": "PyTorch",
-      "layer": "framework",
-      "layer_name": "框架层",
-      "level": 2,
-      "color": "#26a69a",
-      "category": "ml",
-      "icon": "",
-      "description": "深度学习研究框架，动态图先驱"
-    },
-    {
-      "id": "tensorflow",
-      "name": "TensorFlow",
-      "layer": "framework",
-      "layer_name": "框架层",
-      "level": 2,
-      "color": "#26a69a",
-      "category": "ml",
-      "icon": "",
-      "description": "工业级ML框架，生产环境首选"
-    },
-    {
-      "id": "django",
-      "name": "Django",
-      "layer": "framework",
-      "layer_name": "框架层",
-      "level": 2,
-      "color": "#26a69a",
-      "category": "web",
-      "icon": "",
-      "description": "全功能Python Web框架，大而全"
-    },
-    {
-      "id": "fastapi",
-      "name": "FastAPI",
-      "layer": "framework",
-      "layer_name": "框架层",
-      "level": 2,
-      "color": "#26a69a",
-      "category": "web",
-      "icon": "",
-      "description": "现代异步Python Web框架，性能卓越"
-    },
-    {
-      "id": "flask",
-      "name": "Flask",
-      "layer": "framework",
-      "layer_name": "框架层",
-      "level": 2,
-      "color": "#26a69a",
-      "category": "web",
-      "icon": "",
-      "description": "轻量级Python微框架"
-    },
-    {
-      "id": "langchain",
-      "name": "LangChain",
-      "layer": "framework",
-      "layer_name": "框架层",
-      "level": 2,
-      "color": "#26a69a",
-      "category": "ai",
-      "icon": "",
-      "description": "LLM应用开发框架，Agent编排利器"
-    },
-    {
-      "id": "transformers",
-      "name": "Transformers",
-      "layer": "framework",
-      "layer_name": "框架层",
-      "level": 2,
-      "color": "#26a69a",
-      "category": "ai",
-      "icon": "",
-      "description": "HuggingFace预训练模型库"
-    },
-    {
-      "id": "react",
-      "name": "React",
-      "layer": "framework",
-      "layer_name": "框架层",
-      "level": 2,
-      "color": "#26a69a",
-      "category": "frontend",
-      "icon": "",
-      "description": "组件化前端框架，声明式UI"
-    },
-    {
-      "id": "vue",
-      "name": "Vue",
-      "layer": "framework",
-      "layer_name": "框架层",
-      "level": 2,
-      "color": "#26a69a",
-      "category": "frontend",
-      "icon": "",
-      "description": "渐进式JavaScript框架，易学易用"
-    },
-    {
-      "id": "nextjs",
-      "name": "Next.js",
-      "layer": "framework",
-      "layer_name": "框架层",
-      "level": 2,
-      "color": "#26a69a",
-      "category": "frontend",
-      "icon": "",
-      "description": "React全栈框架，SSR/SSG解决方案"
-    },
-    {
-      "id": "nuxt",
-      "name": "Nuxt",
-      "layer": "framework",
-      "layer_name": "框架层",
-      "level": 2,
-      "color": "#26a69a",
-      "category": "frontend",
-      "icon": "",
-      "description": "Vue全栈框架"
-    },
-    {
-      "id": "svelte",
-      "name": "Svelte",
-      "layer": "framework",
-      "layer_name": "框架层",
-      "level": 2,
-      "color": "#26a69a",
-      "category": "frontend",
-      "icon": "",
-      "description": "编译时框架，无虚拟DOM"
-    },
-    {
-      "id": "gin",
-      "name": "Gin",
-      "layer": "framework",
-      "layer_name": "框架层",
-      "level": 2,
-      "color": "#26a69a",
-      "category": "backend",
-      "icon": "",
-      "description": "高性能Go Web框架"
-    },
-    {
-      "id": "echo",
-      "name": "Echo",
-      "layer": "framework",
-      "layer_name": "框架层",
-      "level": 2,
-      "color": "#26a69a",
-      "category": "backend",
-      "icon": "",
-      "description": "简洁的Go Web框架"
-    },
-    {
-      "id": "axum",
-      "name": "Axum",
-      "layer": "framework",
-      "layer_name": "框架层",
-      "level": 2,
-      "color": "#26a69a",
-      "category": "backend",
-      "icon": "",
-      "description": "基于Tokio的异步Rust Web框架"
-    },
-    {
-      "id": "actix",
-      "name": "Actix",
-      "layer": "framework",
-      "layer_name": "框架层",
-      "level": 2,
-      "color": "#26a69a",
-      "category": "backend",
-      "icon": "",
-      "description": "高性能Rust Web框架"
-    },
-    {
-      "id": "llm",
-      "name": "大语言模型",
-      "layer": "model",
-      "layer_name": "模型层",
-      "level": 3,
-      "color": "#d97706",
-      "category": "nlp",
-      "icon": "auto_awesome",
-      "description": "GPT、Claude等大型语言模型，理解与生成文本"
-    },
-    {
-      "id": "cv",
-      "name": "计算机视觉",
-      "layer": "model",
-      "layer_name": "模型层",
-      "level": 3,
-      "color": "#d97706",
-      "category": "vision",
-      "icon": "visibility",
-      "description": "图像识别、目标检测、图像生成等视觉模型"
-    },
-    {
-      "id": "nlp",
-      "name": "自然语言处理",
-      "layer": "model",
-      "layer_name": "模型层",
-      "level": 3,
-      "color": "#d97706",
-      "category": "nlp",
-      "icon": "chat",
-      "description": "文本分析、情感分析、命名实体识别"
-    },
-    {
-      "id": "diffusion",
-      "name": "扩散模型",
-      "layer": "model",
-      "layer_name": "模型层",
-      "level": 3,
-      "color": "#d97706",
-      "category": "generative",
-      "icon": "gradient",
-      "description": "Stable Diffusion等图像生成模型"
-    },
-    {
-      "id": "multimodal",
-      "name": "多模态模型",
-      "layer": "model",
-      "layer_name": "模型层",
-      "level": 3,
-      "color": "#d97706",
-      "category": "multimodal",
-      "icon": "view_in_ar",
-      "description": "图文、音视频等多模态理解模型"
-    },
-    {
-      "id": "embedding",
-      "name": "向量嵌入",
-      "layer": "model",
-      "layer_name": "模型层",
-      "level": 3,
-      "color": "#d97706",
-      "category": "embedding",
-      "icon": "scatter_plot",
-      "description": "文本向量表示，语义搜索基础"
-    },
-    {
-      "id": "rag",
-      "name": "RAG应用",
-      "layer": "application",
-      "layer_name": "应用层",
-      "level": 4,
-      "color": "#8b5cf6",
-      "category": "ai",
-      "icon": "library_books",
-      "description": "检索增强生成，结合知识库的问答系统"
-    },
-    {
-      "id": "agent",
-      "name": "AI Agent",
-      "layer": "application",
-      "layer_name": "应用层",
-      "level": 4,
-      "color": "#8b5cf6",
-      "category": "ai",
-      "icon": "smart_toy",
-      "description": "自主决策的AI智能体，任务规划与执行"
-    },
-    {
-      "id": "chatbot",
-      "name": "聊天机器人",
-      "layer": "application",
-      "layer_name": "应用层",
-      "level": 4,
-      "color": "#8b5cf6",
-      "category": "ai",
-      "icon": "forum",
-      "description": "对话式AI助手"
-    },
-    {
-      "id": "webapp",
-      "name": "Web应用",
-      "layer": "application",
-      "layer_name": "应用层",
-      "level": 4,
-      "color": "#8b5cf6",
-      "category": "web",
-      "icon": "web",
-      "description": "Web应用程序"
-    },
-    {
-      "id": "api",
-      "name": "API服务",
-      "layer": "application",
-      "layer_name": "应用层",
-      "level": 4,
-      "color": "#8b5cf6",
-      "category": "backend",
-      "icon": "api",
-      "description": "RESTful/GraphQL API服务"
-    },
-    {
-      "id": "dashboard",
-      "name": "数据仪表板",
-      "layer": "application",
-      "layer_name": "应用层",
-      "level": 4,
-      "color": "#8b5cf6",
-      "category": "data",
-      "icon": "dashboard",
-      "description": "数据可视化仪表板"
-    },
-    {
-      "id": "automation",
-      "name": "自动化工具",
-      "layer": "application",
-      "layer_name": "应用层",
-      "level": 4,
-      "color": "#8b5cf6",
-      "category": "tools",
-      "icon": "auto_fix",
-      "description": "自动化脚本和工具"
-    },
-    {
-      "id": "monitoring",
-      "name": "监控系统",
-      "layer": "application",
-      "layer_name": "应用层",
-      "level": 4,
-      "color": "#8b5cf6",
-      "category": "devops",
-      "icon": "monitor_heart",
-      "description": "系统监控与告警"
-    },
-    {
-      "id": "web_dev",
-      "name": "Web应用开发",
-      "layer": "scenario",
-      "layer_name": "场景层",
-      "level": 5,
-      "color": "#ec4899",
-      "category": "web",
-      "icon": "web",
-      "description": "构建响应式网站、单页应用和Web服务"
-    },
-    {
-      "id": "frontend",
-      "name": "前端开发",
-      "layer": "scenario",
-      "layer_name": "场景层",
-      "level": 5,
-      "color": "#ec4899",
-      "category": "web",
-      "icon": "desktop_windows",
-      "description": "用户界面开发、组件库和前端框架"
-    },
-    {
-      "id": "backend",
-      "name": "后端开发",
-      "layer": "scenario",
-      "layer_name": "场景层",
-      "level": 5,
-      "color": "#ec4899",
-      "category": "web",
-      "icon": "dns",
-      "description": "服务器端逻辑、API开发和微服务架构"
-    },
-    {
-      "id": "fullstack",
-      "name": "全栈开发",
-      "layer": "scenario",
-      "layer_name": "场景层",
-      "level": 5,
-      "color": "#ec4899",
-      "category": "web",
-      "icon": "layers",
-      "description": "同时处理前端和后端开发的完整解决方案"
-    },
-    {
-      "id": "ai_ml",
-      "name": "AI/ML项目",
-      "layer": "scenario",
-      "layer_name": "场景层",
-      "level": 5,
-      "color": "#ec4899",
-      "category": "ai",
-      "icon": "psychology",
-      "description": "人工智能和机器学习项目开发"
-    },
-    {
-      "id": "nlp_scene",
-      "name": "自然语言处理",
-      "layer": "scenario",
-      "layer_name": "场景层",
-      "level": 5,
-      "color": "#ec4899",
-      "category": "ai",
-      "icon": "chat",
-      "description": "文本分析、语言模型和文本处理应用"
-    },
-    {
-      "id": "cv_scene",
-      "name": "计算机视觉",
-      "layer": "scenario",
-      "layer_name": "场景层",
-      "level": 5,
-      "color": "#ec4899",
-      "category": "ai",
-      "icon": "visibility",
-      "description": "图像识别、目标检测和视觉处理"
-    },
-    {
-      "id": "data_science",
-      "name": "数据科学",
-      "layer": "scenario",
-      "layer_name": "场景层",
-      "level": 5,
-      "color": "#ec4899",
-      "category": "ai",
-      "icon": "analytics",
-      "description": "数据分析、统计建模和数据挖掘"
-    },
-    {
-      "id": "llm_scene",
-      "name": "大语言模型",
-      "layer": "scenario",
-      "layer_name": "场景层",
-      "level": 5,
-      "color": "#ec4899",
-      "category": "ai",
-      "icon": "auto_awesome",
-      "description": "LLM应用开发、提示工程和模型微调"
-    },
-    {
-      "id": "rag_scene",
-      "name": "RAG应用",
-      "layer": "scenario",
-      "layer_name": "场景层",
-      "level": 5,
-      "color": "#ec4899",
-      "category": "ai",
-      "icon": "library_books",
-      "description": "检索增强生成、知识库问答系统"
-    },
-    {
-      "id": "devops",
-      "name": "DevOps/运维",
-      "layer": "scenario",
-      "layer_name": "场景层",
-      "level": 5,
-      "color": "#ec4899",
-      "category": "infra",
-      "icon": "settings",
-      "description": "CI/CD、部署自动化和系统运维"
-    },
-    {
-      "id": "cloud",
-      "name": "云原生/容器",
-      "layer": "scenario",
-      "layer_name": "场景层",
-      "level": 5,
-      "color": "#ec4899",
-      "category": "infra",
-      "icon": "cloud",
-      "description": "Docker、Kubernetes和云原生应用"
-    },
-    {
-      "id": "kubernetes",
-      "name": "Kubernetes",
-      "layer": "scenario",
-      "layer_name": "场景层",
-      "level": 5,
-      "color": "#ec4899",
-      "category": "infra",
-      "icon": "hub",
-      "description": "K8s集群管理、容器编排和服务网格"
-    },
-    {
-      "id": "security",
-      "name": "安全工具",
-      "layer": "scenario",
-      "layer_name": "场景层",
-      "level": 5,
-      "color": "#ec4899",
-      "category": "infra",
-      "icon": "shield",
-      "description": "安全扫描、漏洞检测和防护工具"
-    },
-    {
-      "id": "monitoring_scene",
-      "name": "监控/日志",
-      "layer": "scenario",
-      "layer_name": "场景层",
-      "level": 5,
-      "color": "#ec4899",
-      "category": "infra",
-      "icon": "monitor_heart",
-      "description": "系统监控、日志收集和分析平台"
-    },
-    {
-      "id": "database",
-      "name": "数据库",
-      "layer": "scenario",
-      "layer_name": "场景层",
-      "level": 5,
-      "color": "#ec4899",
-      "category": "infra",
-      "icon": "storage",
-      "description": "数据库管理、ORM和数据持久化"
-    },
-    {
-      "id": "cli",
-      "name": "命令行工具",
-      "layer": "scenario",
-      "layer_name": "场景层",
-      "level": 5,
-      "color": "#ec4899",
-      "category": "tools",
-      "icon": "terminal",
-      "description": "CLI工具、终端应用和命令行界面"
-    },
-    {
-      "id": "automation_scene",
-      "name": "自动化脚本",
-      "layer": "scenario",
-      "layer_name": "场景层",
-      "level": 5,
-      "color": "#ec4899",
-      "category": "tools",
-      "icon": "auto_fix",
-      "description": "任务自动化、工作流和批处理脚本"
-    },
-    {
-      "id": "testing",
-      "name": "测试工具",
-      "layer": "scenario",
-      "layer_name": "场景层",
-      "level": 5,
-      "color": "#ec4899",
-      "category": "tools",
-      "icon": "bug_report",
-      "description": "单元测试、集成测试和质量保证"
-    },
-    {
-      "id": "documentation",
-      "name": "文档工具",
-      "layer": "scenario",
-      "layer_name": "场景层",
-      "level": 5,
-      "color": "#ec4899",
-      "category": "tools",
-      "icon": "description",
-      "description": "文档生成、静态站点和知识库"
-    },
-    {
-      "id": "editor",
-      "name": "编辑器/IDE",
-      "layer": "scenario",
-      "layer_name": "场景层",
-      "level": 5,
-      "color": "#ec4899",
-      "category": "tools",
-      "icon": "edit",
-      "description": "代码编辑器、IDE和开发工具"
-    },
-    {
-      "id": "productivity",
-      "name": "效率工具",
-      "layer": "scenario",
-      "layer_name": "场景层",
-      "level": 5,
-      "color": "#ec4899",
-      "category": "tools",
-      "icon": "bolt",
-      "description": "提高开发效率的实用工具集"
-    },
-    {
-      "id": "mobile",
-      "name": "移动应用",
-      "layer": "scenario",
-      "layer_name": "场景层",
-      "level": 5,
-      "color": "#ec4899",
-      "category": "other",
-      "icon": "phone_android",
-      "description": "iOS、Android和跨平台移动应用"
-    },
-    {
-      "id": "game",
-      "name": "游戏开发",
-      "layer": "scenario",
-      "layer_name": "场景层",
-      "level": 5,
-      "color": "#ec4899",
-      "category": "other",
-      "icon": "sports_esports",
-      "description": "游戏引擎、游戏开发和游戏工具"
-    },
-    {
-      "id": "iot",
-      "name": "物联网",
-      "layer": "scenario",
-      "layer_name": "场景层",
-      "level": 5,
-      "color": "#ec4899",
-      "category": "other",
-      "icon": "sensors",
-      "description": "IoT设备、传感器和边缘计算"
-    },
-    {
-      "id": "blockchain",
-      "name": "区块链",
-      "layer": "scenario",
-      "layer_name": "场景层",
-      "level": 5,
-      "color": "#ec4899",
-      "category": "other",
-      "icon": "currency_bitcoin",
-      "description": "智能合约、DApp和区块链工具"
-    },
-    {
-      "id": "desktop",
-      "name": "桌面应用",
-      "layer": "scenario",
-      "layer_name": "场景层",
-      "level": 5,
-      "color": "#ec4899",
-      "category": "other",
-      "icon": "laptop",
-      "description": "跨平台桌面应用和GUI程序"
-    },
-    {
-      "id": "embedded",
-      "name": "嵌入式系统",
-      "layer": "scenario",
-      "layer_name": "场景层",
-      "level": 5,
-      "color": "#ec4899",
-      "category": "other",
-      "icon": "memory",
-      "description": "嵌入式开发、固件和硬件接口"
-    },
-    {
-      "id": "design",
-      "name": "设计工具",
-      "layer": "scenario",
-      "layer_name": "场景层",
-      "level": 5,
-      "color": "#ec4899",
-      "category": "design",
-      "icon": "palette",
-      "description": "UI/UX设计、原型和设计系统"
-    },
-    {
-      "id": "visualization",
-      "name": "数据可视化",
-      "layer": "scenario",
-      "layer_name": "场景层",
-      "level": 5,
-      "color": "#ec4899",
-      "category": "design",
-      "icon": "bar_chart",
-      "description": "图表、仪表板和数据展示"
-    },
-    {
-      "id": "animation",
-      "name": "动画/3D",
-      "layer": "scenario",
-      "layer_name": "场景层",
-      "level": 5,
-      "color": "#ec4899",
-      "category": "design",
-      "icon": "3d_rotation",
-      "description": "3D渲染、动画和图形效果"
-    }
-  ],
-  "links": [
-    {
-      "source": "python",
-      "target": "pytorch",
-      "strength": 1.0
-    },
-    {
-      "source": "python",
-      "target": "tensorflow",
-      "strength": 1.0
-    },
-    {
-      "source": "python",
-      "target": "django",
-      "strength": 1.0
-    },
-    {
-      "source": "python",
-      "target": "fastapi",
-      "strength": 1.0
-    },
-    {
-      "source": "python",
-      "target": "flask",
-      "strength": 1.0
-    },
-    {
-      "source": "python",
-      "target": "langchain",
-      "strength": 1.0
-    },
-    {
-      "source": "python",
-      "target": "transformers",
-      "strength": 1.0
-    },
-    {
-      "source": "typescript",
-      "target": "react",
-      "strength": 1.0
-    },
-    {
-      "source": "typescript",
-      "target": "nextjs",
-      "strength": 1.0
-    },
-    {
-      "source": "typescript",
-      "target": "svelte",
-      "strength": 1.0
-    },
-    {
-      "source": "javascript",
-      "target": "vue",
-      "strength": 1.0
-    },
-    {
-      "source": "javascript",
-      "target": "react",
-      "strength": 0.5
-    },
-    {
-      "source": "go",
-      "target": "gin",
-      "strength": 1.0
-    },
-    {
-      "source": "go",
-      "target": "echo",
-      "strength": 1.0
-    },
-    {
-      "source": "rust",
-      "target": "axum",
-      "strength": 1.0
-    },
-    {
-      "source": "rust",
-      "target": "actix",
-      "strength": 1.0
-    },
-    {
-      "source": "pytorch",
-      "target": "llm",
-      "strength": 1.0
-    },
-    {
-      "source": "pytorch",
-      "target": "cv",
-      "strength": 1.0
-    },
-    {
-      "source": "pytorch",
-      "target": "nlp",
-      "strength": 1.0
-    },
-    {
-      "source": "pytorch",
-      "target": "diffusion",
-      "strength": 1.0
-    },
-    {
-      "source": "pytorch",
-      "target": "multimodal",
-      "strength": 1.0
-    },
-    {
-      "source": "pytorch",
-      "target": "embedding",
-      "strength": 1.0
-    },
-    {
-      "source": "tensorflow",
-      "target": "llm",
-      "strength": 1.0
-    },
-    {
-      "source": "tensorflow",
-      "target": "cv",
-      "strength": 1.0
-    },
-    {
-      "source": "tensorflow",
-      "target": "nlp",
-      "strength": 1.0
-    },
-    {
-      "source": "transformers",
-      "target": "llm",
-      "strength": 1.0
-    },
-    {
-      "source": "transformers",
-      "target": "nlp",
-      "strength": 1.0
-    },
-    {
-      "source": "transformers",
-      "target": "multimodal",
-      "strength": 1.0
-    },
-    {
-      "source": "langchain",
-      "target": "llm",
-      "strength": 1.0
-    },
-    {
-      "source": "langchain",
-      "target": "embedding",
-      "strength": 1.0
-    },
-    {
-      "source": "llm",
-      "target": "rag",
-      "strength": 1.0
-    },
-    {
-      "source": "llm",
-      "target": "agent",
-      "strength": 1.0
-    },
-    {
-      "source": "llm",
-      "target": "chatbot",
-      "strength": 1.0
-    },
-    {
-      "source": "nlp",
-      "target": "rag",
-      "strength": 1.0
-    },
-    {
-      "source": "nlp",
-      "target": "chatbot",
-      "strength": 1.0
-    },
-    {
-      "source": "cv",
-      "target": "webapp",
-      "strength": 0.5
-    },
-    {
-      "source": "embedding",
-      "target": "rag",
-      "strength": 1.0
-    },
-    {
-      "source": "multimodal",
-      "target": "agent",
-      "strength": 0.8
-    },
-    {
-      "source": "diffusion",
-      "target": "webapp",
-      "strength": 0.5
-    },
-    {
-      "source": "react",
-      "target": "webapp",
-      "strength": 1.0
-    },
-    {
-      "source": "vue",
-      "target": "webapp",
-      "strength": 1.0
-    },
-    {
-      "source": "nextjs",
-      "target": "webapp",
-      "strength": 1.0
-    },
-    {
-      "source": "django",
-      "target": "webapp",
-      "strength": 1.0
-    },
-    {
-      "source": "django",
-      "target": "api",
-      "strength": 1.0
-    },
-    {
-      "source": "fastapi",
-      "target": "api",
-      "strength": 1.0
-    },
-    {
-      "source": "fastapi",
-      "target": "webapp",
-      "strength": 1.0
-    },
-    {
-      "source": "flask",
-      "target": "api",
-      "strength": 1.0
-    },
-    {
-      "source": "flask",
-      "target": "webapp",
-      "strength": 1.0
-    },
-    {
-      "source": "gin",
-      "target": "api",
-      "strength": 1.0
-    },
-    {
-      "source": "echo",
-      "target": "api",
-      "strength": 1.0
-    },
-    {
-      "source": "axum",
-      "target": "api",
-      "strength": 1.0
-    },
-    {
-      "source": "actix",
-      "target": "api",
-      "strength": 1.0
-    },
-    {
-      "source": "webapp",
-      "target": "web_dev",
-      "strength": 1.0
-    },
-    {
-      "source": "webapp",
-      "target": "frontend",
-      "strength": 1.0
-    },
-    {
-      "source": "webapp",
-      "target": "backend",
-      "strength": 1.0
-    },
-    {
-      "source": "webapp",
-      "target": "fullstack",
-      "strength": 1.0
-    },
-    {
-      "source": "api",
-      "target": "backend",
-      "strength": 1.0
-    },
-    {
-      "source": "api",
-      "target": "fullstack",
-      "strength": 1.0
-    },
-    {
-      "source": "rag",
-      "target": "rag_scene",
-      "strength": 1.0
-    },
-    {
-      "source": "rag",
-      "target": "ai_ml",
-      "strength": 1.0
-    },
-    {
-      "source": "rag",
-      "target": "nlp_scene",
-      "strength": 1.0
-    },
-    {
-      "source": "agent",
-      "target": "ai_ml",
-      "strength": 1.0
-    },
-    {
-      "source": "agent",
-      "target": "llm_scene",
-      "strength": 1.0
-    },
-    {
-      "source": "chatbot",
-      "target": "ai_ml",
-      "strength": 1.0
-    },
-    {
-      "source": "chatbot",
-      "target": "llm_scene",
-      "strength": 1.0
-    },
-    {
-      "source": "dashboard",
-      "target": "data_science",
-      "strength": 1.0
-    },
-    {
-      "source": "dashboard",
-      "target": "visualization",
-      "strength": 1.0
-    },
-    {
-      "source": "automation",
-      "target": "automation_scene",
-      "strength": 1.0
-    },
-    {
-      "source": "automation",
-      "target": "productivity",
-      "strength": 1.0
-    },
-    {
-      "source": "monitoring",
-      "target": "monitoring_scene",
-      "strength": 1.0
-    },
-    {
-      "source": "monitoring",
-      "target": "devops",
-      "strength": 1.0
-    }
-  ],
+  "generated_at": "2026-07-14T00:24:08Z",
   "layers": {
-    "language": {
-      "name": "编程语言",
-      "level": 1,
-      "color": "#4db6ac"
-    },
-    "framework": {
-      "name": "框架层",
-      "level": 2,
-      "color": "#26a69a"
-    },
-    "model": {
-      "name": "模型层",
-      "level": 3,
-      "color": "#d97706"
-    },
     "application": {
-      "name": "应用层",
+      "color": "#7aa6b8",
       "level": 4,
-      "color": "#8b5cf6"
-    },
-    "scenario": {
-      "name": "场景层",
-      "level": 5,
-      "color": "#ec4899"
-    },
-    "tag": {
-      "name": "标签层",
-      "level": 6,
-      "color": "#f59e0b"
+      "name": "应用层"
     },
     "concept": {
-      "name": "概念层",
+      "color": "#67e8f9",
       "level": 7,
-      "color": "#6366f1"
+      "name": "概念层"
+    },
+    "framework": {
+      "color": "#26a69a",
+      "level": 2,
+      "name": "框架层"
+    },
+    "language": {
+      "color": "#4db6ac",
+      "level": 1,
+      "name": "编程语言"
+    },
+    "model": {
+      "color": "#d97706",
+      "level": 3,
+      "name": "模型层"
+    },
+    "scenario": {
+      "color": "#cbd5e1",
+      "level": 5,
+      "name": "场景层"
+    },
+    "tag": {
+      "color": "#f59e0b",
+      "level": 6,
+      "name": "标签层"
     }
   },
+  "links": [
+    {
+      "id": "edge:relation:tech:actix->tech:api",
+      "source": "tech:actix",
+      "strength": 1,
+      "target": "tech:api",
+      "type": "relation",
+      "weight": 1
+    },
+    {
+      "id": "edge:relation:tech:agent->tech:ai_ml",
+      "source": "tech:agent",
+      "strength": 1,
+      "target": "tech:ai_ml",
+      "type": "relation",
+      "weight": 1
+    },
+    {
+      "id": "edge:relation:tech:agent->tech:llm_scene",
+      "source": "tech:agent",
+      "strength": 1,
+      "target": "tech:llm_scene",
+      "type": "relation",
+      "weight": 1
+    },
+    {
+      "id": "edge:relation:tech:api->tech:backend",
+      "source": "tech:api",
+      "strength": 1,
+      "target": "tech:backend",
+      "type": "relation",
+      "weight": 1
+    },
+    {
+      "id": "edge:relation:tech:api->tech:fullstack",
+      "source": "tech:api",
+      "strength": 1,
+      "target": "tech:fullstack",
+      "type": "relation",
+      "weight": 1
+    },
+    {
+      "id": "edge:relation:tech:automation->tech:automation_scene",
+      "source": "tech:automation",
+      "strength": 1,
+      "target": "tech:automation_scene",
+      "type": "relation",
+      "weight": 1
+    },
+    {
+      "id": "edge:relation:tech:automation->tech:productivity",
+      "source": "tech:automation",
+      "strength": 1,
+      "target": "tech:productivity",
+      "type": "relation",
+      "weight": 1
+    },
+    {
+      "id": "edge:relation:tech:axum->tech:api",
+      "source": "tech:axum",
+      "strength": 1,
+      "target": "tech:api",
+      "type": "relation",
+      "weight": 1
+    },
+    {
+      "id": "edge:relation:tech:chatbot->tech:ai_ml",
+      "source": "tech:chatbot",
+      "strength": 1,
+      "target": "tech:ai_ml",
+      "type": "relation",
+      "weight": 1
+    },
+    {
+      "id": "edge:relation:tech:chatbot->tech:llm_scene",
+      "source": "tech:chatbot",
+      "strength": 1,
+      "target": "tech:llm_scene",
+      "type": "relation",
+      "weight": 1
+    },
+    {
+      "id": "edge:relation:tech:cv->tech:webapp",
+      "source": "tech:cv",
+      "strength": 0.5,
+      "target": "tech:webapp",
+      "type": "relation",
+      "weight": 0.5
+    },
+    {
+      "id": "edge:relation:tech:dashboard->tech:data_science",
+      "source": "tech:dashboard",
+      "strength": 1,
+      "target": "tech:data_science",
+      "type": "relation",
+      "weight": 1
+    },
+    {
+      "id": "edge:relation:tech:dashboard->tech:visualization",
+      "source": "tech:dashboard",
+      "strength": 1,
+      "target": "tech:visualization",
+      "type": "relation",
+      "weight": 1
+    },
+    {
+      "id": "edge:relation:tech:diffusion->tech:webapp",
+      "source": "tech:diffusion",
+      "strength": 0.5,
+      "target": "tech:webapp",
+      "type": "relation",
+      "weight": 0.5
+    },
+    {
+      "id": "edge:relation:tech:django->tech:api",
+      "source": "tech:django",
+      "strength": 1,
+      "target": "tech:api",
+      "type": "relation",
+      "weight": 1
+    },
+    {
+      "id": "edge:relation:tech:django->tech:webapp",
+      "source": "tech:django",
+      "strength": 1,
+      "target": "tech:webapp",
+      "type": "relation",
+      "weight": 1
+    },
+    {
+      "id": "edge:relation:tech:echo->tech:api",
+      "source": "tech:echo",
+      "strength": 1,
+      "target": "tech:api",
+      "type": "relation",
+      "weight": 1
+    },
+    {
+      "id": "edge:relation:tech:embedding->tech:rag",
+      "source": "tech:embedding",
+      "strength": 1,
+      "target": "tech:rag",
+      "type": "relation",
+      "weight": 1
+    },
+    {
+      "id": "edge:relation:tech:fastapi->tech:api",
+      "source": "tech:fastapi",
+      "strength": 1,
+      "target": "tech:api",
+      "type": "relation",
+      "weight": 1
+    },
+    {
+      "id": "edge:relation:tech:fastapi->tech:webapp",
+      "source": "tech:fastapi",
+      "strength": 1,
+      "target": "tech:webapp",
+      "type": "relation",
+      "weight": 1
+    },
+    {
+      "id": "edge:relation:tech:flask->tech:api",
+      "source": "tech:flask",
+      "strength": 1,
+      "target": "tech:api",
+      "type": "relation",
+      "weight": 1
+    },
+    {
+      "id": "edge:relation:tech:flask->tech:webapp",
+      "source": "tech:flask",
+      "strength": 1,
+      "target": "tech:webapp",
+      "type": "relation",
+      "weight": 1
+    },
+    {
+      "id": "edge:relation:tech:gin->tech:api",
+      "source": "tech:gin",
+      "strength": 1,
+      "target": "tech:api",
+      "type": "relation",
+      "weight": 1
+    },
+    {
+      "id": "edge:relation:tech:go->tech:echo",
+      "source": "tech:go",
+      "strength": 1,
+      "target": "tech:echo",
+      "type": "relation",
+      "weight": 1
+    },
+    {
+      "id": "edge:relation:tech:go->tech:gin",
+      "source": "tech:go",
+      "strength": 1,
+      "target": "tech:gin",
+      "type": "relation",
+      "weight": 1
+    },
+    {
+      "id": "edge:relation:tech:javascript->tech:react",
+      "source": "tech:javascript",
+      "strength": 0.5,
+      "target": "tech:react",
+      "type": "relation",
+      "weight": 0.5
+    },
+    {
+      "id": "edge:relation:tech:javascript->tech:vue",
+      "source": "tech:javascript",
+      "strength": 1,
+      "target": "tech:vue",
+      "type": "relation",
+      "weight": 1
+    },
+    {
+      "id": "edge:relation:tech:langchain->tech:embedding",
+      "source": "tech:langchain",
+      "strength": 1,
+      "target": "tech:embedding",
+      "type": "relation",
+      "weight": 1
+    },
+    {
+      "id": "edge:relation:tech:langchain->tech:llm",
+      "source": "tech:langchain",
+      "strength": 1,
+      "target": "tech:llm",
+      "type": "relation",
+      "weight": 1
+    },
+    {
+      "id": "edge:relation:tech:llm->tech:agent",
+      "source": "tech:llm",
+      "strength": 1,
+      "target": "tech:agent",
+      "type": "relation",
+      "weight": 1
+    },
+    {
+      "id": "edge:relation:tech:llm->tech:chatbot",
+      "source": "tech:llm",
+      "strength": 1,
+      "target": "tech:chatbot",
+      "type": "relation",
+      "weight": 1
+    },
+    {
+      "id": "edge:relation:tech:llm->tech:rag",
+      "source": "tech:llm",
+      "strength": 1,
+      "target": "tech:rag",
+      "type": "relation",
+      "weight": 1
+    },
+    {
+      "id": "edge:relation:tech:monitoring->tech:devops",
+      "source": "tech:monitoring",
+      "strength": 1,
+      "target": "tech:devops",
+      "type": "relation",
+      "weight": 1
+    },
+    {
+      "id": "edge:relation:tech:monitoring->tech:monitoring_scene",
+      "source": "tech:monitoring",
+      "strength": 1,
+      "target": "tech:monitoring_scene",
+      "type": "relation",
+      "weight": 1
+    },
+    {
+      "id": "edge:relation:tech:multimodal->tech:agent",
+      "source": "tech:multimodal",
+      "strength": 0.8,
+      "target": "tech:agent",
+      "type": "relation",
+      "weight": 0.8
+    },
+    {
+      "id": "edge:relation:tech:nextjs->tech:webapp",
+      "source": "tech:nextjs",
+      "strength": 1,
+      "target": "tech:webapp",
+      "type": "relation",
+      "weight": 1
+    },
+    {
+      "id": "edge:relation:tech:nlp->tech:chatbot",
+      "source": "tech:nlp",
+      "strength": 1,
+      "target": "tech:chatbot",
+      "type": "relation",
+      "weight": 1
+    },
+    {
+      "id": "edge:relation:tech:nlp->tech:rag",
+      "source": "tech:nlp",
+      "strength": 1,
+      "target": "tech:rag",
+      "type": "relation",
+      "weight": 1
+    },
+    {
+      "id": "edge:relation:tech:python->tech:django",
+      "source": "tech:python",
+      "strength": 1,
+      "target": "tech:django",
+      "type": "relation",
+      "weight": 1
+    },
+    {
+      "id": "edge:relation:tech:python->tech:fastapi",
+      "source": "tech:python",
+      "strength": 1,
+      "target": "tech:fastapi",
+      "type": "relation",
+      "weight": 1
+    },
+    {
+      "id": "edge:relation:tech:python->tech:flask",
+      "source": "tech:python",
+      "strength": 1,
+      "target": "tech:flask",
+      "type": "relation",
+      "weight": 1
+    },
+    {
+      "id": "edge:relation:tech:python->tech:langchain",
+      "source": "tech:python",
+      "strength": 1,
+      "target": "tech:langchain",
+      "type": "relation",
+      "weight": 1
+    },
+    {
+      "id": "edge:relation:tech:python->tech:pytorch",
+      "source": "tech:python",
+      "strength": 1,
+      "target": "tech:pytorch",
+      "type": "relation",
+      "weight": 1
+    },
+    {
+      "id": "edge:relation:tech:python->tech:tensorflow",
+      "source": "tech:python",
+      "strength": 1,
+      "target": "tech:tensorflow",
+      "type": "relation",
+      "weight": 1
+    },
+    {
+      "id": "edge:relation:tech:python->tech:transformers",
+      "source": "tech:python",
+      "strength": 1,
+      "target": "tech:transformers",
+      "type": "relation",
+      "weight": 1
+    },
+    {
+      "id": "edge:relation:tech:pytorch->tech:cv",
+      "source": "tech:pytorch",
+      "strength": 1,
+      "target": "tech:cv",
+      "type": "relation",
+      "weight": 1
+    },
+    {
+      "id": "edge:relation:tech:pytorch->tech:diffusion",
+      "source": "tech:pytorch",
+      "strength": 1,
+      "target": "tech:diffusion",
+      "type": "relation",
+      "weight": 1
+    },
+    {
+      "id": "edge:relation:tech:pytorch->tech:embedding",
+      "source": "tech:pytorch",
+      "strength": 1,
+      "target": "tech:embedding",
+      "type": "relation",
+      "weight": 1
+    },
+    {
+      "id": "edge:relation:tech:pytorch->tech:llm",
+      "source": "tech:pytorch",
+      "strength": 1,
+      "target": "tech:llm",
+      "type": "relation",
+      "weight": 1
+    },
+    {
+      "id": "edge:relation:tech:pytorch->tech:multimodal",
+      "source": "tech:pytorch",
+      "strength": 1,
+      "target": "tech:multimodal",
+      "type": "relation",
+      "weight": 1
+    },
+    {
+      "id": "edge:relation:tech:pytorch->tech:nlp",
+      "source": "tech:pytorch",
+      "strength": 1,
+      "target": "tech:nlp",
+      "type": "relation",
+      "weight": 1
+    },
+    {
+      "id": "edge:relation:tech:rag->tech:ai_ml",
+      "source": "tech:rag",
+      "strength": 1,
+      "target": "tech:ai_ml",
+      "type": "relation",
+      "weight": 1
+    },
+    {
+      "id": "edge:relation:tech:rag->tech:nlp_scene",
+      "source": "tech:rag",
+      "strength": 1,
+      "target": "tech:nlp_scene",
+      "type": "relation",
+      "weight": 1
+    },
+    {
+      "id": "edge:relation:tech:rag->tech:rag_scene",
+      "source": "tech:rag",
+      "strength": 1,
+      "target": "tech:rag_scene",
+      "type": "relation",
+      "weight": 1
+    },
+    {
+      "id": "edge:relation:tech:react->tech:webapp",
+      "source": "tech:react",
+      "strength": 1,
+      "target": "tech:webapp",
+      "type": "relation",
+      "weight": 1
+    },
+    {
+      "id": "edge:relation:tech:rust->tech:actix",
+      "source": "tech:rust",
+      "strength": 1,
+      "target": "tech:actix",
+      "type": "relation",
+      "weight": 1
+    },
+    {
+      "id": "edge:relation:tech:rust->tech:axum",
+      "source": "tech:rust",
+      "strength": 1,
+      "target": "tech:axum",
+      "type": "relation",
+      "weight": 1
+    },
+    {
+      "id": "edge:relation:tech:tensorflow->tech:cv",
+      "source": "tech:tensorflow",
+      "strength": 1,
+      "target": "tech:cv",
+      "type": "relation",
+      "weight": 1
+    },
+    {
+      "id": "edge:relation:tech:tensorflow->tech:llm",
+      "source": "tech:tensorflow",
+      "strength": 1,
+      "target": "tech:llm",
+      "type": "relation",
+      "weight": 1
+    },
+    {
+      "id": "edge:relation:tech:tensorflow->tech:nlp",
+      "source": "tech:tensorflow",
+      "strength": 1,
+      "target": "tech:nlp",
+      "type": "relation",
+      "weight": 1
+    },
+    {
+      "id": "edge:relation:tech:transformers->tech:llm",
+      "source": "tech:transformers",
+      "strength": 1,
+      "target": "tech:llm",
+      "type": "relation",
+      "weight": 1
+    },
+    {
+      "id": "edge:relation:tech:transformers->tech:multimodal",
+      "source": "tech:transformers",
+      "strength": 1,
+      "target": "tech:multimodal",
+      "type": "relation",
+      "weight": 1
+    },
+    {
+      "id": "edge:relation:tech:transformers->tech:nlp",
+      "source": "tech:transformers",
+      "strength": 1,
+      "target": "tech:nlp",
+      "type": "relation",
+      "weight": 1
+    },
+    {
+      "id": "edge:relation:tech:typescript->tech:nextjs",
+      "source": "tech:typescript",
+      "strength": 1,
+      "target": "tech:nextjs",
+      "type": "relation",
+      "weight": 1
+    },
+    {
+      "id": "edge:relation:tech:typescript->tech:react",
+      "source": "tech:typescript",
+      "strength": 1,
+      "target": "tech:react",
+      "type": "relation",
+      "weight": 1
+    },
+    {
+      "id": "edge:relation:tech:typescript->tech:svelte",
+      "source": "tech:typescript",
+      "strength": 1,
+      "target": "tech:svelte",
+      "type": "relation",
+      "weight": 1
+    },
+    {
+      "id": "edge:relation:tech:vue->tech:webapp",
+      "source": "tech:vue",
+      "strength": 1,
+      "target": "tech:webapp",
+      "type": "relation",
+      "weight": 1
+    },
+    {
+      "id": "edge:relation:tech:webapp->tech:backend",
+      "source": "tech:webapp",
+      "strength": 1,
+      "target": "tech:backend",
+      "type": "relation",
+      "weight": 1
+    },
+    {
+      "id": "edge:relation:tech:webapp->tech:frontend",
+      "source": "tech:webapp",
+      "strength": 1,
+      "target": "tech:frontend",
+      "type": "relation",
+      "weight": 1
+    },
+    {
+      "id": "edge:relation:tech:webapp->tech:fullstack",
+      "source": "tech:webapp",
+      "strength": 1,
+      "target": "tech:fullstack",
+      "type": "relation",
+      "weight": 1
+    },
+    {
+      "id": "edge:relation:tech:webapp->tech:web_dev",
+      "source": "tech:webapp",
+      "strength": 1,
+      "target": "tech:web_dev",
+      "type": "relation",
+      "weight": 1
+    }
+  ],
+  "nodes": [
+    {
+      "article_count": 0,
+      "category": "backend",
+      "color": "#26a69a",
+      "community_id": null,
+      "degree": 2,
+      "description": "高性能Rust Web框架",
+      "icon": "",
+      "id": "tech:actix",
+      "layer": "framework",
+      "layer_name": "框架层",
+      "legacy_id": "actix",
+      "level": 2,
+      "name": "Actix",
+      "rank": 11304,
+      "weighted_degree": 2
+    },
+    {
+      "article_count": 1048,
+      "category": "ai",
+      "color": "#7aa6b8",
+      "community_id": null,
+      "degree": 84,
+      "description": "自主决策的AI智能体，任务规划与执行",
+      "icon": "smart_toy",
+      "id": "tech:agent",
+      "layer": "application",
+      "layer_name": "应用层",
+      "legacy_id": "agent",
+      "level": 4,
+      "name": "AI Agent",
+      "rank": 1121,
+      "weighted_degree": 51.8
+    },
+    {
+      "article_count": 3185,
+      "category": "ai",
+      "color": "#cbd5e1",
+      "community_id": null,
+      "degree": 477,
+      "description": "人工智能和机器学习项目开发",
+      "icon": "psychology",
+      "id": "tech:ai_ml",
+      "layer": "scenario",
+      "layer_name": "场景层",
+      "legacy_id": "ai_ml",
+      "level": 5,
+      "name": "AI/ML项目",
+      "rank": 165,
+      "weighted_degree": 287.4
+    },
+    {
+      "article_count": 0,
+      "category": "design",
+      "color": "#cbd5e1",
+      "community_id": null,
+      "degree": 0,
+      "description": "3D渲染、动画和图形效果",
+      "icon": "3d_rotation",
+      "id": "tech:animation",
+      "layer": "scenario",
+      "layer_name": "场景层",
+      "legacy_id": "animation",
+      "level": 5,
+      "name": "动画/3D",
+      "rank": 11329,
+      "weighted_degree": 0
+    },
+    {
+      "article_count": 238,
+      "category": "backend",
+      "color": "#7aa6b8",
+      "community_id": null,
+      "degree": 59,
+      "description": "RESTful/GraphQL API服务",
+      "icon": "api",
+      "id": "tech:api",
+      "layer": "application",
+      "layer_name": "应用层",
+      "legacy_id": "api",
+      "level": 4,
+      "name": "API服务",
+      "rank": 1564,
+      "weighted_degree": 39
+    },
+    {
+      "article_count": 6,
+      "category": "tools",
+      "color": "#7aa6b8",
+      "community_id": null,
+      "degree": 3,
+      "description": "自动化脚本和工具",
+      "icon": "auto_fix",
+      "id": "tech:automation",
+      "layer": "application",
+      "layer_name": "应用层",
+      "legacy_id": "automation",
+      "level": 4,
+      "name": "自动化工具",
+      "rank": 11298,
+      "weighted_degree": 2.6
+    },
+    {
+      "article_count": 3,
+      "category": "tools",
+      "color": "#cbd5e1",
+      "community_id": null,
+      "degree": 2,
+      "description": "任务自动化、工作流和批处理脚本",
+      "icon": "auto_fix",
+      "id": "tech:automation_scene",
+      "layer": "scenario",
+      "layer_name": "场景层",
+      "legacy_id": "automation_scene",
+      "level": 5,
+      "name": "自动化脚本",
+      "rank": 11314,
+      "weighted_degree": 1.6
+    },
+    {
+      "article_count": 0,
+      "category": "backend",
+      "color": "#26a69a",
+      "community_id": null,
+      "degree": 2,
+      "description": "基于Tokio的异步Rust Web框架",
+      "icon": "",
+      "id": "tech:axum",
+      "layer": "framework",
+      "layer_name": "框架层",
+      "legacy_id": "axum",
+      "level": 2,
+      "name": "Axum",
+      "rank": 11305,
+      "weighted_degree": 2
+    },
+    {
+      "article_count": 9,
+      "category": "web",
+      "color": "#cbd5e1",
+      "community_id": null,
+      "degree": 3,
+      "description": "服务器端逻辑、API开发和微服务架构",
+      "icon": "dns",
+      "id": "tech:backend",
+      "layer": "scenario",
+      "layer_name": "场景层",
+      "legacy_id": "backend",
+      "level": 5,
+      "name": "后端开发",
+      "rank": 11296,
+      "weighted_degree": 2.6
+    },
+    {
+      "article_count": 0,
+      "category": "other",
+      "color": "#cbd5e1",
+      "community_id": null,
+      "degree": 0,
+      "description": "智能合约、DApp和区块链工具",
+      "icon": "currency_bitcoin",
+      "id": "tech:blockchain",
+      "layer": "scenario",
+      "layer_name": "场景层",
+      "legacy_id": "blockchain",
+      "level": 5,
+      "name": "区块链",
+      "rank": 11330,
+      "weighted_degree": 0
+    },
+    {
+      "article_count": 90,
+      "category": "ai",
+      "color": "#7aa6b8",
+      "community_id": null,
+      "degree": 6,
+      "description": "对话式AI助手",
+      "icon": "forum",
+      "id": "tech:chatbot",
+      "layer": "application",
+      "layer_name": "应用层",
+      "legacy_id": "chatbot",
+      "level": 4,
+      "name": "聊天机器人",
+      "rank": 11274,
+      "weighted_degree": 5.2
+    },
+    {
+      "article_count": 90,
+      "category": "tools",
+      "color": "#cbd5e1",
+      "community_id": null,
+      "degree": 7,
+      "description": "CLI工具、终端应用和命令行界面",
+      "icon": "terminal",
+      "id": "tech:cli",
+      "layer": "scenario",
+      "layer_name": "场景层",
+      "legacy_id": "cli",
+      "level": 5,
+      "name": "命令行工具",
+      "rank": 11280,
+      "weighted_degree": 4.2
+    },
+    {
+      "article_count": 18,
+      "category": "infra",
+      "color": "#cbd5e1",
+      "community_id": null,
+      "degree": 6,
+      "description": "Docker、Kubernetes和云原生应用",
+      "icon": "cloud",
+      "id": "tech:cloud",
+      "layer": "scenario",
+      "layer_name": "场景层",
+      "legacy_id": "cloud",
+      "level": 5,
+      "name": "云原生/容器",
+      "rank": 11285,
+      "weighted_degree": 3.6
+    },
+    {
+      "article_count": 31,
+      "category": "language",
+      "color": "#4db6ac",
+      "community_id": null,
+      "degree": 3,
+      "description": "高性能计算和系统编程",
+      "icon": "",
+      "id": "tech:cpp",
+      "layer": "language",
+      "layer_name": "编程语言",
+      "legacy_id": "cpp",
+      "level": 1,
+      "name": "C++",
+      "rank": 11308,
+      "weighted_degree": 1.8
+    },
+    {
+      "article_count": 142,
+      "category": "vision",
+      "color": "#d97706",
+      "community_id": null,
+      "degree": 5,
+      "description": "图像识别、目标检测、图像生成等视觉模型",
+      "icon": "visibility",
+      "id": "tech:cv",
+      "layer": "model",
+      "layer_name": "模型层",
+      "legacy_id": "cv",
+      "level": 3,
+      "name": "计算机视觉",
+      "rank": 11283,
+      "weighted_degree": 3.7
+    },
+    {
+      "article_count": 142,
+      "category": "ai",
+      "color": "#cbd5e1",
+      "community_id": null,
+      "degree": 2,
+      "description": "图像识别、目标检测和视觉处理",
+      "icon": "visibility",
+      "id": "tech:cv_scene",
+      "layer": "scenario",
+      "layer_name": "场景层",
+      "legacy_id": "cv_scene",
+      "level": 5,
+      "name": "计算机视觉",
+      "rank": 11315,
+      "weighted_degree": 1.2
+    },
+    {
+      "article_count": 3,
+      "category": "data",
+      "color": "#7aa6b8",
+      "community_id": null,
+      "degree": 3,
+      "description": "数据可视化仪表板",
+      "icon": "dashboard",
+      "id": "tech:dashboard",
+      "layer": "application",
+      "layer_name": "应用层",
+      "legacy_id": "dashboard",
+      "level": 4,
+      "name": "数据仪表板",
+      "rank": 11299,
+      "weighted_degree": 2.6
+    },
+    {
+      "article_count": 99,
+      "category": "ai",
+      "color": "#cbd5e1",
+      "community_id": null,
+      "degree": 7,
+      "description": "数据分析、统计建模和数据挖掘",
+      "icon": "analytics",
+      "id": "tech:data_science",
+      "layer": "scenario",
+      "layer_name": "场景层",
+      "legacy_id": "data_science",
+      "level": 5,
+      "name": "数据科学",
+      "rank": 11278,
+      "weighted_degree": 4.6
+    },
+    {
+      "article_count": 3,
+      "category": "infra",
+      "color": "#cbd5e1",
+      "community_id": null,
+      "degree": 1,
+      "description": "数据库管理、ORM和数据持久化",
+      "icon": "storage",
+      "id": "tech:database",
+      "layer": "scenario",
+      "layer_name": "场景层",
+      "legacy_id": "database",
+      "level": 5,
+      "name": "数据库",
+      "rank": 11325,
+      "weighted_degree": 0.6
+    },
+    {
+      "article_count": 8,
+      "category": "design",
+      "color": "#cbd5e1",
+      "community_id": null,
+      "degree": 3,
+      "description": "UI/UX设计、原型和设计系统",
+      "icon": "palette",
+      "id": "tech:design",
+      "layer": "scenario",
+      "layer_name": "场景层",
+      "legacy_id": "design",
+      "level": 5,
+      "name": "设计工具",
+      "rank": 11310,
+      "weighted_degree": 1.8
+    },
+    {
+      "article_count": 9,
+      "category": "other",
+      "color": "#cbd5e1",
+      "community_id": null,
+      "degree": 2,
+      "description": "跨平台桌面应用和GUI程序",
+      "icon": "laptop",
+      "id": "tech:desktop",
+      "layer": "scenario",
+      "layer_name": "场景层",
+      "legacy_id": "desktop",
+      "level": 5,
+      "name": "桌面应用",
+      "rank": 11319,
+      "weighted_degree": 1.2
+    },
+    {
+      "article_count": 131,
+      "category": "infra",
+      "color": "#cbd5e1",
+      "community_id": null,
+      "degree": 2,
+      "description": "CI/CD、部署自动化和系统运维",
+      "icon": "settings",
+      "id": "tech:devops",
+      "layer": "scenario",
+      "layer_name": "场景层",
+      "legacy_id": "devops",
+      "level": 5,
+      "name": "DevOps/运维",
+      "rank": 11311,
+      "weighted_degree": 1.6
+    },
+    {
+      "article_count": 150,
+      "category": "generative",
+      "color": "#d97706",
+      "community_id": null,
+      "degree": 12,
+      "description": "Stable Diffusion等图像生成模型",
+      "icon": "gradient",
+      "id": "tech:diffusion",
+      "layer": "model",
+      "layer_name": "模型层",
+      "legacy_id": "diffusion",
+      "level": 3,
+      "name": "扩散模型",
+      "rank": 5295,
+      "weighted_degree": 7.5
+    },
+    {
+      "article_count": 0,
+      "category": "web",
+      "color": "#26a69a",
+      "community_id": null,
+      "degree": 3,
+      "description": "全功能Python Web框架，大而全",
+      "icon": "",
+      "id": "tech:django",
+      "layer": "framework",
+      "layer_name": "框架层",
+      "legacy_id": "django",
+      "level": 2,
+      "name": "Django",
+      "rank": 11291,
+      "weighted_degree": 3
+    },
+    {
+      "article_count": 0,
+      "category": "tools",
+      "color": "#cbd5e1",
+      "community_id": null,
+      "degree": 0,
+      "description": "文档生成、静态站点和知识库",
+      "icon": "description",
+      "id": "tech:documentation",
+      "layer": "scenario",
+      "layer_name": "场景层",
+      "legacy_id": "documentation",
+      "level": 5,
+      "name": "文档工具",
+      "rank": 11331,
+      "weighted_degree": 0
+    },
+    {
+      "article_count": 0,
+      "category": "backend",
+      "color": "#26a69a",
+      "community_id": null,
+      "degree": 2,
+      "description": "简洁的Go Web框架",
+      "icon": "",
+      "id": "tech:echo",
+      "layer": "framework",
+      "layer_name": "框架层",
+      "legacy_id": "echo",
+      "level": 2,
+      "name": "Echo",
+      "rank": 11306,
+      "weighted_degree": 2
+    },
+    {
+      "article_count": 0,
+      "category": "tools",
+      "color": "#cbd5e1",
+      "community_id": null,
+      "degree": 0,
+      "description": "代码编辑器、IDE和开发工具",
+      "icon": "edit",
+      "id": "tech:editor",
+      "layer": "scenario",
+      "layer_name": "场景层",
+      "legacy_id": "editor",
+      "level": 5,
+      "name": "编辑器/IDE",
+      "rank": 11332,
+      "weighted_degree": 0
+    },
+    {
+      "article_count": 0,
+      "category": "other",
+      "color": "#cbd5e1",
+      "community_id": null,
+      "degree": 0,
+      "description": "嵌入式开发、固件和硬件接口",
+      "icon": "memory",
+      "id": "tech:embedded",
+      "layer": "scenario",
+      "layer_name": "场景层",
+      "legacy_id": "embedded",
+      "level": 5,
+      "name": "嵌入式系统",
+      "rank": 11333,
+      "weighted_degree": 0
+    },
+    {
+      "article_count": 21,
+      "category": "embedding",
+      "color": "#d97706",
+      "community_id": null,
+      "degree": 6,
+      "description": "文本向量表示，语义搜索基础",
+      "icon": "scatter_plot",
+      "id": "tech:embedding",
+      "layer": "model",
+      "layer_name": "模型层",
+      "legacy_id": "embedding",
+      "level": 3,
+      "name": "向量嵌入",
+      "rank": 11276,
+      "weighted_degree": 4.8
+    },
+    {
+      "article_count": 0,
+      "category": "web",
+      "color": "#26a69a",
+      "community_id": null,
+      "degree": 3,
+      "description": "现代异步Python Web框架，性能卓越",
+      "icon": "",
+      "id": "tech:fastapi",
+      "layer": "framework",
+      "layer_name": "框架层",
+      "legacy_id": "fastapi",
+      "level": 2,
+      "name": "FastAPI",
+      "rank": 11292,
+      "weighted_degree": 3
+    },
+    {
+      "article_count": 2,
+      "category": "web",
+      "color": "#26a69a",
+      "community_id": null,
+      "degree": 4,
+      "description": "轻量级Python微框架",
+      "icon": "",
+      "id": "tech:flask",
+      "layer": "framework",
+      "layer_name": "框架层",
+      "legacy_id": "flask",
+      "level": 2,
+      "name": "Flask",
+      "rank": 11287,
+      "weighted_degree": 3.6
+    },
+    {
+      "article_count": 18,
+      "category": "web",
+      "color": "#cbd5e1",
+      "community_id": null,
+      "degree": 2,
+      "description": "用户界面开发、组件库和前端框架",
+      "icon": "desktop_windows",
+      "id": "tech:frontend",
+      "layer": "scenario",
+      "layer_name": "场景层",
+      "legacy_id": "frontend",
+      "level": 5,
+      "name": "前端开发",
+      "rank": 11312,
+      "weighted_degree": 1.6
+    },
+    {
+      "article_count": 18,
+      "category": "web",
+      "color": "#cbd5e1",
+      "community_id": null,
+      "degree": 3,
+      "description": "同时处理前端和后端开发的完整解决方案",
+      "icon": "layers",
+      "id": "tech:fullstack",
+      "layer": "scenario",
+      "layer_name": "场景层",
+      "legacy_id": "fullstack",
+      "level": 5,
+      "name": "全栈开发",
+      "rank": 11295,
+      "weighted_degree": 2.6
+    },
+    {
+      "article_count": 14,
+      "category": "other",
+      "color": "#cbd5e1",
+      "community_id": null,
+      "degree": 2,
+      "description": "游戏引擎、游戏开发和游戏工具",
+      "icon": "sports_esports",
+      "id": "tech:game",
+      "layer": "scenario",
+      "layer_name": "场景层",
+      "legacy_id": "game",
+      "level": 5,
+      "name": "游戏开发",
+      "rank": 11317,
+      "weighted_degree": 1.2
+    },
+    {
+      "article_count": 0,
+      "category": "backend",
+      "color": "#26a69a",
+      "community_id": null,
+      "degree": 2,
+      "description": "高性能Go Web框架",
+      "icon": "",
+      "id": "tech:gin",
+      "layer": "framework",
+      "layer_name": "框架层",
+      "legacy_id": "gin",
+      "level": 2,
+      "name": "Gin",
+      "rank": 11307,
+      "weighted_degree": 2
+    },
+    {
+      "article_count": 13,
+      "category": "language",
+      "color": "#4db6ac",
+      "community_id": null,
+      "degree": 4,
+      "description": "高性能并发编程语言，云原生时代的C语言",
+      "icon": "",
+      "id": "tech:go",
+      "layer": "language",
+      "layer_name": "编程语言",
+      "legacy_id": "go",
+      "level": 1,
+      "name": "Go",
+      "rank": 11290,
+      "weighted_degree": 3.2
+    },
+    {
+      "article_count": 13,
+      "category": "other",
+      "color": "#cbd5e1",
+      "community_id": null,
+      "degree": 2,
+      "description": "IoT设备、传感器和边缘计算",
+      "icon": "sensors",
+      "id": "tech:iot",
+      "layer": "scenario",
+      "layer_name": "场景层",
+      "legacy_id": "iot",
+      "level": 5,
+      "name": "物联网",
+      "rank": 11318,
+      "weighted_degree": 1.2
+    },
+    {
+      "article_count": 21,
+      "category": "language",
+      "color": "#4db6ac",
+      "community_id": null,
+      "degree": 3,
+      "description": "企业级应用开发的经典选择",
+      "icon": "",
+      "id": "tech:java",
+      "layer": "language",
+      "layer_name": "编程语言",
+      "legacy_id": "java",
+      "level": 1,
+      "name": "Java",
+      "rank": 11309,
+      "weighted_degree": 1.8
+    },
+    {
+      "article_count": 20,
+      "category": "language",
+      "color": "#4db6ac",
+      "community_id": null,
+      "degree": 4,
+      "description": "Web开发的基石语言",
+      "icon": "",
+      "id": "tech:javascript",
+      "layer": "language",
+      "layer_name": "编程语言",
+      "legacy_id": "javascript",
+      "level": 1,
+      "name": "JavaScript",
+      "rank": 11294,
+      "weighted_degree": 2.7
+    },
+    {
+      "article_count": 21,
+      "category": "infra",
+      "color": "#cbd5e1",
+      "community_id": null,
+      "degree": 1,
+      "description": "K8s集群管理、容器编排和服务网格",
+      "icon": "hub",
+      "id": "tech:kubernetes",
+      "layer": "scenario",
+      "layer_name": "场景层",
+      "legacy_id": "kubernetes",
+      "level": 5,
+      "name": "Kubernetes",
+      "rank": 11324,
+      "weighted_degree": 0.6
+    },
+    {
+      "article_count": 35,
+      "category": "ai",
+      "color": "#26a69a",
+      "community_id": null,
+      "degree": 5,
+      "description": "LLM应用开发框架，Agent编排利器",
+      "icon": "",
+      "id": "tech:langchain",
+      "layer": "framework",
+      "layer_name": "框架层",
+      "legacy_id": "langchain",
+      "level": 2,
+      "name": "LangChain",
+      "rank": 11281,
+      "weighted_degree": 4.2
+    },
+    {
+      "article_count": 2287,
+      "category": "nlp",
+      "color": "#d97706",
+      "community_id": null,
+      "degree": 67,
+      "description": "GPT、Claude等大型语言模型，理解与生成文本",
+      "icon": "auto_awesome",
+      "id": "tech:llm",
+      "layer": "model",
+      "layer_name": "模型层",
+      "legacy_id": "llm",
+      "level": 3,
+      "name": "大语言模型",
+      "rank": 1309,
+      "weighted_degree": 43
+    },
+    {
+      "article_count": 2287,
+      "category": "ai",
+      "color": "#cbd5e1",
+      "community_id": null,
+      "degree": 62,
+      "description": "LLM应用开发、提示工程和模型微调",
+      "icon": "auto_awesome",
+      "id": "tech:llm_scene",
+      "layer": "scenario",
+      "layer_name": "场景层",
+      "legacy_id": "llm_scene",
+      "level": 5,
+      "name": "大语言模型",
+      "rank": 1565,
+      "weighted_degree": 38
+    },
+    {
+      "article_count": 0,
+      "category": "other",
+      "color": "#cbd5e1",
+      "community_id": null,
+      "degree": 0,
+      "description": "iOS、Android和跨平台移动应用",
+      "icon": "phone_android",
+      "id": "tech:mobile",
+      "layer": "scenario",
+      "layer_name": "场景层",
+      "legacy_id": "mobile",
+      "level": 5,
+      "name": "移动应用",
+      "rank": 11334,
+      "weighted_degree": 0
+    },
+    {
+      "article_count": 1,
+      "category": "devops",
+      "color": "#7aa6b8",
+      "community_id": null,
+      "degree": 3,
+      "description": "系统监控与告警",
+      "icon": "monitor_heart",
+      "id": "tech:monitoring",
+      "layer": "application",
+      "layer_name": "应用层",
+      "legacy_id": "monitoring",
+      "level": 4,
+      "name": "监控系统",
+      "rank": 11300,
+      "weighted_degree": 2.6
+    },
+    {
+      "article_count": 0,
+      "category": "infra",
+      "color": "#cbd5e1",
+      "community_id": null,
+      "degree": 1,
+      "description": "系统监控、日志收集和分析平台",
+      "icon": "monitor_heart",
+      "id": "tech:monitoring_scene",
+      "layer": "scenario",
+      "layer_name": "场景层",
+      "legacy_id": "monitoring_scene",
+      "level": 5,
+      "name": "监控/日志",
+      "rank": 11322,
+      "weighted_degree": 1
+    },
+    {
+      "article_count": 8,
+      "category": "multimodal",
+      "color": "#d97706",
+      "community_id": null,
+      "degree": 4,
+      "description": "图文、音视频等多模态理解模型",
+      "icon": "view_in_ar",
+      "id": "tech:multimodal",
+      "layer": "model",
+      "layer_name": "模型层",
+      "legacy_id": "multimodal",
+      "level": 3,
+      "name": "多模态模型",
+      "rank": 11288,
+      "weighted_degree": 3.4
+    },
+    {
+      "article_count": 9,
+      "category": "frontend",
+      "color": "#26a69a",
+      "community_id": null,
+      "degree": 3,
+      "description": "React全栈框架，SSR/SSG解决方案",
+      "icon": "",
+      "id": "tech:nextjs",
+      "layer": "framework",
+      "layer_name": "框架层",
+      "legacy_id": "nextjs",
+      "level": 2,
+      "name": "Next.js",
+      "rank": 11297,
+      "weighted_degree": 2.6
+    },
+    {
+      "article_count": 86,
+      "category": "nlp",
+      "color": "#d97706",
+      "community_id": null,
+      "degree": 8,
+      "description": "文本分析、情感分析、命名实体识别",
+      "icon": "chat",
+      "id": "tech:nlp",
+      "layer": "model",
+      "layer_name": "模型层",
+      "legacy_id": "nlp",
+      "level": 3,
+      "name": "自然语言处理",
+      "rank": 11265,
+      "weighted_degree": 6.8
+    },
+    {
+      "article_count": 86,
+      "category": "ai",
+      "color": "#cbd5e1",
+      "community_id": null,
+      "degree": 4,
+      "description": "文本分析、语言模型和文本处理应用",
+      "icon": "chat",
+      "id": "tech:nlp_scene",
+      "layer": "scenario",
+      "layer_name": "场景层",
+      "legacy_id": "nlp_scene",
+      "level": 5,
+      "name": "自然语言处理",
+      "rank": 11293,
+      "weighted_degree": 2.8
+    },
+    {
+      "article_count": 0,
+      "category": "frontend",
+      "color": "#26a69a",
+      "community_id": null,
+      "degree": 0,
+      "description": "Vue全栈框架",
+      "icon": "",
+      "id": "tech:nuxt",
+      "layer": "framework",
+      "layer_name": "框架层",
+      "legacy_id": "nuxt",
+      "level": 2,
+      "name": "Nuxt",
+      "rank": 11335,
+      "weighted_degree": 0
+    },
+    {
+      "article_count": 37,
+      "category": "tools",
+      "color": "#cbd5e1",
+      "community_id": null,
+      "degree": 3,
+      "description": "提高开发效率的实用工具集",
+      "icon": "bolt",
+      "id": "tech:productivity",
+      "layer": "scenario",
+      "layer_name": "场景层",
+      "legacy_id": "productivity",
+      "level": 5,
+      "name": "效率工具",
+      "rank": 11302,
+      "weighted_degree": 2.2
+    },
+    {
+      "article_count": 276,
+      "category": "language",
+      "color": "#4db6ac",
+      "community_id": null,
+      "degree": 12,
+      "description": "简洁优雅的通用编程语言，AI/ML领域首选",
+      "icon": "",
+      "id": "tech:python",
+      "layer": "language",
+      "layer_name": "编程语言",
+      "legacy_id": "python",
+      "level": 1,
+      "name": "Python",
+      "rank": 4910,
+      "weighted_degree": 10
+    },
+    {
+      "article_count": 40,
+      "category": "ml",
+      "color": "#26a69a",
+      "community_id": null,
+      "degree": 8,
+      "description": "深度学习研究框架，动态图先驱",
+      "icon": "",
+      "id": "tech:pytorch",
+      "layer": "framework",
+      "layer_name": "框架层",
+      "legacy_id": "pytorch",
+      "level": 2,
+      "name": "PyTorch",
+      "rank": 4959,
+      "weighted_degree": 7.6
+    },
+    {
+      "article_count": 292,
+      "category": "ai",
+      "color": "#7aa6b8",
+      "community_id": null,
+      "degree": 12,
+      "description": "检索增强生成，结合知识库的问答系统",
+      "icon": "library_books",
+      "id": "tech:rag",
+      "layer": "application",
+      "layer_name": "应用层",
+      "legacy_id": "rag",
+      "level": 4,
+      "name": "RAG应用",
+      "rank": 4911,
+      "weighted_degree": 9.6
+    },
+    {
+      "article_count": 292,
+      "category": "ai",
+      "color": "#cbd5e1",
+      "community_id": null,
+      "degree": 7,
+      "description": "检索增强生成、知识库问答系统",
+      "icon": "library_books",
+      "id": "tech:rag_scene",
+      "layer": "scenario",
+      "layer_name": "场景层",
+      "legacy_id": "rag_scene",
+      "level": 5,
+      "name": "RAG应用",
+      "rank": 11277,
+      "weighted_degree": 4.6
+    },
+    {
+      "article_count": 24,
+      "category": "frontend",
+      "color": "#26a69a",
+      "community_id": null,
+      "degree": 5,
+      "description": "组件化前端框架，声明式UI",
+      "icon": "",
+      "id": "tech:react",
+      "layer": "framework",
+      "layer_name": "框架层",
+      "legacy_id": "react",
+      "level": 2,
+      "name": "React",
+      "rank": 11284,
+      "weighted_degree": 3.7
+    },
+    {
+      "article_count": 55,
+      "category": "language",
+      "color": "#4db6ac",
+      "community_id": null,
+      "degree": 4,
+      "description": "内存安全的高性能系统编程语言",
+      "icon": "",
+      "id": "tech:rust",
+      "layer": "language",
+      "layer_name": "编程语言",
+      "legacy_id": "rust",
+      "level": 1,
+      "name": "Rust",
+      "rank": 11289,
+      "weighted_degree": 3.2
+    },
+    {
+      "article_count": 25,
+      "category": "infra",
+      "color": "#cbd5e1",
+      "community_id": null,
+      "degree": 4,
+      "description": "安全扫描、漏洞检测和防护工具",
+      "icon": "shield",
+      "id": "tech:security",
+      "layer": "scenario",
+      "layer_name": "场景层",
+      "legacy_id": "security",
+      "level": 5,
+      "name": "安全工具",
+      "rank": 11301,
+      "weighted_degree": 2.4
+    },
+    {
+      "article_count": 0,
+      "category": "frontend",
+      "color": "#26a69a",
+      "community_id": null,
+      "degree": 1,
+      "description": "编译时框架，无虚拟DOM",
+      "icon": "",
+      "id": "tech:svelte",
+      "layer": "framework",
+      "layer_name": "框架层",
+      "legacy_id": "svelte",
+      "level": 2,
+      "name": "Svelte",
+      "rank": 11323,
+      "weighted_degree": 1
+    },
+    {
+      "article_count": 19,
+      "category": "language",
+      "color": "#4db6ac",
+      "community_id": null,
+      "degree": 2,
+      "description": "Apple生态的现代编程语言",
+      "icon": "",
+      "id": "tech:swift",
+      "layer": "language",
+      "layer_name": "编程语言",
+      "legacy_id": "swift",
+      "level": 1,
+      "name": "Swift",
+      "rank": 11316,
+      "weighted_degree": 1.2
+    },
+    {
+      "article_count": 15,
+      "category": "ml",
+      "color": "#26a69a",
+      "community_id": null,
+      "degree": 5,
+      "description": "工业级ML框架，生产环境首选",
+      "icon": "",
+      "id": "tech:tensorflow",
+      "layer": "framework",
+      "layer_name": "框架层",
+      "legacy_id": "tensorflow",
+      "level": 2,
+      "name": "TensorFlow",
+      "rank": 11279,
+      "weighted_degree": 4.6
+    },
+    {
+      "article_count": 4,
+      "category": "tools",
+      "color": "#cbd5e1",
+      "community_id": null,
+      "degree": 2,
+      "description": "单元测试、集成测试和质量保证",
+      "icon": "bug_report",
+      "id": "tech:testing",
+      "layer": "scenario",
+      "layer_name": "场景层",
+      "legacy_id": "testing",
+      "level": 5,
+      "name": "测试工具",
+      "rank": 11320,
+      "weighted_degree": 1.2
+    },
+    {
+      "article_count": 3,
+      "category": "ai",
+      "color": "#26a69a",
+      "community_id": null,
+      "degree": 6,
+      "description": "HuggingFace预训练模型库",
+      "icon": "",
+      "id": "tech:transformers",
+      "layer": "framework",
+      "layer_name": "框架层",
+      "legacy_id": "transformers",
+      "level": 2,
+      "name": "Transformers",
+      "rank": 11275,
+      "weighted_degree": 5.2
+    },
+    {
+      "article_count": 15,
+      "category": "language",
+      "color": "#4db6ac",
+      "community_id": null,
+      "degree": 4,
+      "description": "带类型的JavaScript，大型项目必备",
+      "icon": "",
+      "id": "tech:typescript",
+      "layer": "language",
+      "layer_name": "编程语言",
+      "legacy_id": "typescript",
+      "level": 1,
+      "name": "TypeScript",
+      "rank": 11286,
+      "weighted_degree": 3.6
+    },
+    {
+      "article_count": 15,
+      "category": "design",
+      "color": "#cbd5e1",
+      "community_id": null,
+      "degree": 2,
+      "description": "图表、仪表板和数据展示",
+      "icon": "bar_chart",
+      "id": "tech:visualization",
+      "layer": "scenario",
+      "layer_name": "场景层",
+      "legacy_id": "visualization",
+      "level": 5,
+      "name": "数据可视化",
+      "rank": 11313,
+      "weighted_degree": 1.6
+    },
+    {
+      "article_count": 12,
+      "category": "frontend",
+      "color": "#26a69a",
+      "community_id": null,
+      "degree": 5,
+      "description": "渐进式JavaScript框架，易学易用",
+      "icon": "",
+      "id": "tech:vue",
+      "layer": "framework",
+      "layer_name": "框架层",
+      "legacy_id": "vue",
+      "level": 2,
+      "name": "Vue",
+      "rank": 11282,
+      "weighted_degree": 3.8
+    },
+    {
+      "article_count": 39,
+      "category": "web",
+      "color": "#cbd5e1",
+      "community_id": null,
+      "degree": 18,
+      "description": "构建响应式网站、单页应用和Web服务",
+      "icon": "web",
+      "id": "tech:web_dev",
+      "layer": "scenario",
+      "layer_name": "场景层",
+      "legacy_id": "web_dev",
+      "level": 5,
+      "name": "Web应用开发",
+      "rank": 4909,
+      "weighted_degree": 11.2
+    },
+    {
+      "article_count": 11,
+      "category": "web",
+      "color": "#7aa6b8",
+      "community_id": null,
+      "degree": 14,
+      "description": "Web应用程序",
+      "icon": "web",
+      "id": "tech:webapp",
+      "layer": "application",
+      "layer_name": "应用层",
+      "legacy_id": "webapp",
+      "level": 4,
+      "name": "Web应用",
+      "rank": 4908,
+      "weighted_degree": 12.2
+    }
+  ],
   "stats": {
-    "total_nodes": 69,
-    "total_links": 71
-  }
+    "links_by_type": {
+      "relation": 71
+    },
+    "nodes_by_layer": {
+      "application": 8,
+      "framework": 16,
+      "language": 8,
+      "model": 6,
+      "scenario": 31
+    },
+    "total_links": 71,
+    "total_nodes": 69
+  },
+  "version": 2
 }

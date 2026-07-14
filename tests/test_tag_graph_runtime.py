@@ -59,7 +59,8 @@ class TagGraphRuntimeTest(unittest.TestCase):
 
             self.assertIn("nodes", tag_payload)
             self.assertIn("links", tag_payload)
-            self.assertTrue(any(node.get("id") == "LLM" for node in tag_payload["nodes"]))
+            self.assertEqual(tag_payload.get("version"), 2)
+            self.assertTrue(any(node.get("id") == "tag:LLM" for node in tag_payload["nodes"]))
 
 
 if __name__ == "__main__":
