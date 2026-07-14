@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-14T10:28:27Z",
+  "generated_at": "2026-07-14T12:37:48Z",
   "layer": "tag",
   "layers": {
     "application": {
@@ -54131,7 +54131,7 @@
       "legacy_id": "AI助手",
       "level": 6,
       "name": "AI助手",
-      "rank": 116,
+      "rank": 117,
       "related_count": 196,
       "weighted_degree": 378.6
     },
@@ -54510,11 +54510,11 @@
       "weighted_degree": 2856
     },
     {
-      "article_count": 54,
+      "article_count": 55,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
-      "degree": 163,
+      "degree": 169,
       "description": "Bedrock通常指代亚马逊云科技推出的全托管基础模型服务，支持通过AgentCore等组件构建具备上下文管理与异步任务处理能力的智能体架构。",
       "id": "tag:Bedrock",
       "layer": "tag",
@@ -54522,9 +54522,9 @@
       "legacy_id": "Bedrock",
       "level": 6,
       "name": "Bedrock",
-      "rank": 118,
-      "related_count": 163,
-      "weighted_degree": 378
+      "rank": 115,
+      "related_count": 169,
+      "weighted_degree": 385
     },
     {
       "article_count": 29,
@@ -54556,7 +54556,7 @@
       "legacy_id": "blogs_podcasts",
       "level": 6,
       "name": "blogs_podcasts",
-      "rank": 11333,
+      "rank": 11335,
       "related_count": 0,
       "weighted_degree": 0
     },
@@ -54981,7 +54981,7 @@
       "legacy_id": "GPU",
       "level": 6,
       "name": "GPU",
-      "rank": 117,
+      "rank": 118,
       "related_count": 179,
       "weighted_degree": 378
     },
@@ -55015,7 +55015,7 @@
       "legacy_id": "hacker_news",
       "level": 6,
       "name": "hacker_news",
-      "rank": 11334,
+      "rank": 11336,
       "related_count": 0,
       "weighted_degree": 0
     },
@@ -55177,7 +55177,7 @@
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:插件系统",
-      "degree": 3470,
+      "degree": 3471,
       "description": "LLM指大语言模型，是具备千亿级参数规模、能处理复杂任务（如代码生成、智能体构建）的AI基础技术，与AI原生应用、安全及科学计算等领域紧密相关。",
       "id": "tag:LLM",
       "layer": "tag",
@@ -55186,7 +55186,7 @@
       "level": 6,
       "name": "LLM",
       "rank": 1,
-      "related_count": 3468,
+      "related_count": 3469,
       "weighted_degree": 14766.2
     },
     {
@@ -55236,7 +55236,7 @@
       "legacy_id": "Meta",
       "level": 6,
       "name": "Meta",
-      "rank": 115,
+      "rank": 116,
       "related_count": 132,
       "weighted_degree": 385
     },
@@ -55466,7 +55466,7 @@
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:插件系统",
-      "degree": 439,
+      "degree": 440,
       "description": "Python 是一种广泛用于后端开发、数据分析、自动化脚本及人工智能领域的编程语言。它凭借简洁的语法和丰富的第三方库，成为构建 AI Agent、量化交易工具及各类自动化应用的首选技术。",
       "id": "tag:Python",
       "layer": "tag",
@@ -55475,7 +55475,7 @@
       "level": 6,
       "name": "Python",
       "rank": 14,
-      "related_count": 438,
+      "related_count": 439,
       "weighted_degree": 1856.6
     },
     {
@@ -56282,7 +56282,7 @@
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:插件系统",
-      "degree": 840,
+      "degree": 838,
       "description": "大模型通常指基于海量数据训练的深度神经网络，具备强大的通用智能与涌现能力，是当前AI编程、生态构建及科技竞争的核心驱动力。",
       "id": "tag:大模型",
       "layer": "tag",
@@ -56291,7 +56291,7 @@
       "level": 6,
       "name": "大模型",
       "rank": 20,
-      "related_count": 840,
+      "related_count": 838,
       "weighted_degree": 1391
     },
     {
@@ -56486,7 +56486,7 @@
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:插件系统",
-      "degree": 614,
+      "degree": 615,
       "description": "开源指源代码可公开访问、自由使用和分发的软件或模型，常与AI基础模型、编程工具及数据集相关，促进技术协作与创新。",
       "id": "tag:开源",
       "layer": "tag",
@@ -56495,7 +56495,7 @@
       "level": 6,
       "name": "开源",
       "rank": 25,
-      "related_count": 614,
+      "related_count": 615,
       "weighted_degree": 1265
     },
     {
@@ -57149,7 +57149,7 @@
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
-      "degree": 220,
+      "degree": 219,
       "description": "模型压缩是指通过剪枝、量化或知识蒸馏等技术，在尽量保持精度的前提下显著降低深度学习模型的参数量与计算开销，从而实现轻量化部署。该技术常与卷积神经网络、大语言模型及异构计算场景下的高效推理紧密相关。",
       "id": "tag:模型压缩",
       "layer": "tag",
@@ -57158,7 +57158,7 @@
       "level": 6,
       "name": "模型压缩",
       "rank": 124,
-      "related_count": 220,
+      "related_count": 219,
       "weighted_degree": 364
     },
     {
