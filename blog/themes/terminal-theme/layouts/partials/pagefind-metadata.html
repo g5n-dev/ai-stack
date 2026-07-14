@@ -1,0 +1,33 @@
+{{- $kind := lower (.Params.entry_kind | default "") -}}
+{{- $isManual := or (eq $kind "manual") (and (eq $kind "") (not .Params.source)) -}}
+{{- $source := .Params.source | default (cond $isManual "manual" "system") -}}
+{{- $date := .Date.Format "2006-01-02" -}}
+<meta data-pagefind-meta="title[content]" content="{{ .Title }}" />
+<meta data-pagefind-meta="source[content]" content="{{ $source }}" />
+<meta data-pagefind-meta="date[content]" content="{{ $date }}" />
+<meta data-pagefind-filter="source[content]" content="{{ $source }}" />
+<meta data-pagefind-filter="date[content]" content="{{ $date }}" />
+<meta data-pagefind-sort="date[content]" content="{{ .Date.Format "20060102" }}" />
+{{- range (.Params.tags | default (slice)) }}
+<meta data-pagefind-filter="tag[content]" content="{{ . }}" />
+{{- end }}
+{{- range (.Params.scenarios | default (slice)) }}
+{{- $scenarioName := . -}}
+{{- if reflect.IsMap . -}}
+{{- $scenarioName = (index . "name") | default (index . "id") -}}
+{{- end -}}
+{{- with $scenarioName }}
+<meta data-pagefind-filter="scenario[content]" content="{{ printf "%v" . }}" />
+{{- end }}
+{{- end }}
+{{- range (.Params.entity_ids | default .Params.entities | default (slice)) }}
+{{- $entityID := "" -}}
+{{- if reflect.IsMap . -}}
+{{- $entityID = (index . "entity_id") | default (index . "id") -}}
+{{- else if $.Params.entity_ids -}}
+{{- $entityID = printf "%v" . -}}
+{{- end -}}
+{{- with $entityID }}
+<meta data-pagefind-filter="entity[content]" content="{{ . }}" />
+{{- end }}
+{{- end }}

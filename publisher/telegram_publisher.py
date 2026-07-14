@@ -3,10 +3,13 @@ Telegram publisher
 Telegram 推送模块
 """
 
-import os
-import requests
-from typing import Dict, List
 import logging
+import os
+from html import escape
+
+import requests
+
+from content_security import validate_public_url
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -15,12 +18,20 @@ logger = logging.getLogger(__name__)
 class TelegramPublisher:
     """Telegram 推送器"""
 
-    def __init__(self, bot_token=None, chat_id=None):
-        self.bot_token = bot_token or os.environ.get('TELEGRAM_BOT_TOKEN')
-        self.chat_id = chat_id or os.environ.get('TELEGRAM_CHAT_ID')
+    def __init__(
+        self,
+        bot_token=None,
+        chat_id=None,
+        parse_mode="HTML",
+        disable_web_page_preview=False,
+    ):
+        self.bot_token = bot_token or os.environ.get("TELEGRAM_BOT_TOKEN")
+        self.chat_id = chat_id or os.environ.get("TELEGRAM_CHAT_ID")
+        self.parse_mode = parse_mode
+        self.disable_web_page_preview = disable_web_page_preview
         self.api_url = f"https://api.telegram.org/bot{self.bot_token}"
 
-    def send_message(self, text: str, parse_mode='HTML') -> bool:
+    def send_message(self, text: str, parse_mode="HTML") -> bool:
         """
         发送文本消息
 
@@ -34,10 +45,10 @@ class TelegramPublisher:
         try:
             url = f"{self.api_url}/sendMessage"
             data = {
-                'chat_id': self.chat_id,
-                'text': text,
-                'parse_mode': parse_mode,
-                'disable_web_page_preview': False
+                "chat_id": self.chat_id,
+                "text": text,
+                "parse_mode": parse_mode,
+                "disable_web_page_preview": self.disable_web_page_preview,
             }
 
             response = requests.post(url, json=data, timeout=30)
@@ -63,11 +74,7 @@ class TelegramPublisher:
         """
         try:
             url = f"{self.api_url}/sendPhoto"
-            data = {
-                'chat_id': self.chat_id,
-                'photo': photo_url,
-                'caption': caption
-            }
+            data = {"chat_id": self.chat_id, "photo": photo_url, "caption": caption}
 
             response = requests.post(url, json=data, timeout=30)
             response.raise_for_status()
@@ -79,7 +86,7 @@ class TelegramPublisher:
             logger.error(f"Failed to send Telegram photo: {e}")
             return False
 
-    def format_message(self, content: Dict) -> str:
+    def format_message(self, content: dict) -> str:
         """
         格式化内容为 Telegram 消息
 
@@ -89,10 +96,11 @@ class TelegramPublisher:
         Returns:
             str: 格式化后的消息（HTML 格式）
         """
-        title = content.get('title', '')
-        summary = content.get('summary', '')
-        url = content.get('url', '')
-        source = content.get('source', '')
+        title = escape(str(content.get("title", "")), quote=True)
+        summary = escape(str(content.get("summary", "")), quote=True)
+        raw_url = str(content.get("url") or "")
+        url = escape(validate_public_url(raw_url), quote=True) if raw_url else ""
+        source = escape(str(content.get("source", "")).upper(), quote=True)
 
         # 构建 HTML 消息
         message_parts = []
@@ -103,7 +111,7 @@ class TelegramPublisher:
 
         # 来源标签
         if source:
-            message_parts.append(f"📌 <i>[{source.upper()}]</i>")
+            message_parts.append(f"📌 <i>[{source}]</i>")
 
         # 摘要
         if summary:
@@ -114,13 +122,14 @@ class TelegramPublisher:
             message_parts.append(f"\n🔗 <a href='{url}'>查看详情</a>")
 
         # AI 生成内容
-        if content.get('generated_comment'):
-            message_parts.append(f"\n\n💭 <b>AI 评论：</b>")
-            message_parts.append(f"{content['generated_comment'][:300]}...")
+        if content.get("generated_comment"):
+            message_parts.append("\n\n💭 <b>AI 评论：</b>")
+            generated_comment = escape(str(content["generated_comment"])[:300], quote=True)
+            message_parts.append(f"{generated_comment}...")
 
-        return '\n'.join(message_parts)
+        return "\n".join(message_parts)
 
-    def publish_content(self, content: Dict) -> bool:
+    def publish_content(self, content: dict) -> bool:
         """
         推送内容到 Telegram
 
@@ -132,13 +141,13 @@ class TelegramPublisher:
         """
         try:
             message = self.format_message(content)
-            return self.send_message(message, parse_mode='HTML')
+            return self.send_message(message, parse_mode=self.parse_mode)
 
         except Exception as e:
             logger.error(f"Failed to publish content to Telegram: {e}")
             return False
 
-    def publish_batch(self, contents: List[Dict]) -> List[bool]:
+    def publish_batch(self, contents: list[dict]) -> list[bool]:
         """
         批量推送内容
 
@@ -159,16 +168,16 @@ class TelegramPublisher:
         return results
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # 测试 Telegram 推送
     publisher = TelegramPublisher()
 
     test_content = {
-        'title': 'GitHub Trending: awesome-project',
-        'summary': 'A powerful tool for developers with many stars',
-        'url': 'https://github.com/user/awesome-project',
-        'source': 'github_trending',
-        'generated_comment': 'This project has great potential and is worth watching.'
+        "title": "GitHub Trending: awesome-project",
+        "summary": "A powerful tool for developers with many stars",
+        "url": "https://github.com/user/awesome-project",
+        "source": "github_trending",
+        "generated_comment": "This project has great potential and is worth watching.",
     }
 
     success = publisher.publish_content(test_content)

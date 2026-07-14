@@ -1,26 +1,12 @@
+{{- $monthNames := dict "01" "一月" "02" "二月" "03" "三月" "04" "四月" "05" "五月" "06" "六月" "07" "七月" "08" "八月" "09" "九月" "10" "十月" "11" "十一月" "12" "十二月" -}}
+{{- $pages := .RegularPages.ByDate.Reverse -}}
+{{- $paginator := .Paginate $pages 50 -}}
+{{- $pageItems := $paginator.Pages -}}
 <!DOCTYPE html>
 <html class="dark" lang="{{ .Site.LanguageCode }}">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{ .Title }} - {{ .Site.Title }}</title>
-    <meta name="description" content="{{ .Site.Params.description }}" />
-    <link rel="canonical" href="{{ .Permalink }}" />
-    <meta property="og:site_name" content="{{ .Site.Title }}" />
-    <meta property="og:title" content="{{ .Title }} - {{ .Site.Title }}" />
-    <meta property="og:description" content="{{ .Site.Params.description }}" />
-    <meta property="og:url" content="{{ .Permalink }}" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image"
-        content="{{ (.Site.Params.default_og_image | default .Site.Params.profile_image | default `/img/profile-holo.png`) | absURL }}" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="{{ .Title }} - {{ .Site.Title }}" />
-    <meta name="twitter:description" content="{{ .Site.Params.description }}" />
-    <meta name="twitter:image"
-        content="{{ (.Site.Params.default_og_image | default .Site.Params.profile_image | default `/img/profile-holo.png`) | absURL }}" />
-    {{ with .Site.Params.twitter }}
-    <meta name="twitter:site" content="{{ . }}" />{{ end }}
+    {{ partial "site-head.html" (dict "Page" . "Canonical" ($paginator.URL | absURL) "Scripts" (slice "/js/terminal.js")) }}
 
     {{- $ldHomeItem := dict "@type" "ListItem" "position" 1 "name" .Site.Title "item" ("/" | absURL) -}}
     {{- $ldBreadcrumbItems := slice $ldHomeItem -}}
@@ -39,42 +25,9 @@
     $ldBreadcrumbItems -}}
     <script type="application/ld+json">{{ $ldBreadcrumb | jsonify }}</script>
 
-    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
-    <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#4db6ac",
-                        "deep-navy": "#060a14",
-                        "muted-teal": "#26a69a",
-                        "off-white": "#d1d5db",
-                        "terminal-bg": "#0a111a",
-                        "las-vegas-orange": "#d97706",
-                    },
-                    fontFamily: {
-                        "display": ["Space Grotesk", "Noto Sans SC", "ui-sans-serif", "system-ui", "sans-serif"],
-                        "mono": ["Space Mono", "ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", "Noto Sans SC", "monospace"]
-                    },
-                },
-            },
-        }
-    </script>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap"
-        rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700&display=swap"
-        rel="stylesheet" />
-
-    <link rel="stylesheet" href="/css/style.css" />
-
-    <script src="/js/terminal.js" defer></script>
 </head>
 
-<body class="bg-deep-navy selection:bg-muted-teal selection:text-deep-navy font-display">
+<body data-pagefind-ignore="all" class="bg-deep-navy selection:bg-muted-teal selection:text-deep-navy font-display">
     <div class="rain-container">
         <div class="rain-streak r1"></div>
         <div class="rain-streak r2"></div>
@@ -142,53 +95,7 @@
                 <!-- 侧边栏筛选器 -->
                 <aside class="hidden lg:block w-56 flex-shrink-0">
                     <div class="sticky top-8 space-y-6">
-                        <!-- 年份筛选 -->
-                        <div class="glass-panel rounded-lg p-4">
-                            <h3
-                                class="text-primary/70 text-[11px] font-bold tracking-wide mb-3 flex items-center gap-2">
-                                <span class="material-symbols-outlined text-sm">calendar_month</span>
-                                按年份筛选
-                            </h3>
-                            <ul class="space-y-1">
-                                {{ range .Site.RegularPages.GroupByDate "2006" }}
-                                {{$year := .Key}}
-                                {{ $count := len .Pages }}
-                                <li>
-                                    <a href="/posts/?year={{ $year }}"
-                                        class="flex items-center justify-between px-3 py-1.5 rounded text-[11px] transition-all text-off-white/50 hover:bg-muted-teal/5 hover:text-off-white/70">
-                                        <span>{{ $year }}</span>
-                                        <span class="font-mono text-off-white/30">{{ $count }}</span>
-                                    </a>
-                                </li>
-                                {{ end }}
-                            </ul>
-                        </div>
-
-                        <!-- 月份筛选 -->
-                        <div class="glass-panel rounded-lg p-4">
-                            <h3
-                                class="text-primary/70 text-[11px] font-bold tracking-wide mb-3 flex items-center gap-2">
-                                <span class="material-symbols-outlined text-sm">date_range</span>
-                                按月份筛选
-                            </h3>
-                            <ul class="space-y-1">
-                                {{ range .Site.RegularPages.GroupByDate "2006-01" }}
-                                {{$yearMonth := .Key}}
-                                {{ $year := index (split $yearMonth "-") 0 }}
-                                {{ $month := index (split $yearMonth "-") 1 }}
-                                {{ $monthName := index (slice "一月" "二月" "三月" "四月" "五月" "六月" "七月" "八月" "九月" "十月" "十一月"
-                                "十二月") (sub (int $month) 1) }}
-                                {{ $count := len .Pages }}
-                                <li>
-                                    <a href="/posts/?month={{ $yearMonth }}"
-                                        class="flex items-center justify-between px-3 py-1.5 rounded text-[11px] transition-all text-off-white/50 hover:bg-muted-teal/5 hover:text-off-white/70">
-                                        <span>{{ $year }}年{{ $monthName }}</span>
-                                        <span class="font-mono text-off-white/30">{{ $count }}</span>
-                                    </a>
-                                </li>
-                                {{ end }}
-                            </ul>
-                        </div>
+                        {{ partialCached "period-filters.html" .Site .Site.Language.Lang }}
 
                         <!-- 快速链接 -->
                         <div class="glass-panel rounded-lg p-4">
@@ -213,58 +120,12 @@
                             </ul>
                         </div>
 
-                        <!-- 应用场景标签云 -->
-                        {{ $scenarios := slice }}
-                        {{ range .Site.RegularPages }}
-                        {{ range .Params.scenarios }}
-                        {{ $scenarios = $scenarios | append . }}
-                        {{ end }}
-                        {{ end }}
-                        {{ if gt (len $scenarios) 0 }}
-                        <div class="glass-panel rounded-lg p-4">
-                            <h3
-                                class="text-primary/70 text-[11px] font-bold tracking-wide mb-3 flex items-center gap-2">
-                                <span class="material-symbols-outlined text-sm">explore</span>
-                                应用场景
-                            </h3>
-                            <div class="flex flex-wrap gap-2">
-                                {{ range .Site.Taxonomies.scenarios.Alphabetical }}
-                                {{- $scenarioTerm := .Term -}}
-                                <a href="{{ .Page.RelPermalink }}"
-                                    class="scenario-tag px-2 py-1 rounded border border-primary/15 bg-primary/5 hover:bg-primary/10 text-primary/70 text-[10px] font-mono tracking-wide transition-all flex items-center gap-1"
-                                    title="{{ len .Pages }} 个项目">
-                                    {{- $scenarioIcon := "category" -}}
-                                    {{- range .Pages -}}
-                                    {{- range .Params.scenarios -}}
-                                    {{- $scenarioName := . -}}
-                                    {{- $scenarioIconCandidate := "" -}}
-                                    {{- if reflect.IsMap . -}}
-                                    {{- $scenarioName = (index . "name") -}}
-                                    {{- if isset . "icon" -}}
-                                    {{- $scenarioIconCandidate = (index . "icon") -}}
-                                    {{- end -}}
-                                    {{- end -}}
-                                    {{- if eq (printf "%v" $scenarioName) (printf "%v" $scenarioTerm) -}}
-                                    {{- if $scenarioIconCandidate -}}
-                                    {{- $scenarioIcon = $scenarioIconCandidate -}}
-                                    {{- end -}}
-                                    {{- end -}}
-                                    {{- end -}}
-                                    {{- end -}}
-                                    <span class="material-symbols-outlined text-[10px] align-middle">{{ $scenarioIcon
-                                        }}</span>
-                                    {{ .Term }}
-                                </a>
-                                {{ end }}
-                            </div>
-                        </div>
-                        {{ end }}
+                        {{ partialCached "scenario-filter.html" .Site .Site.Language.Lang }}
                     </div>
                 </aside>
 
                 <!-- 主内容区 -->
                 <div class="flex-1 min-w-0">
-                    {{ $pages := .RegularPages }}
                     <div class="flex items-end justify-between border-b border-muted-teal/10 pb-6 mb-8">
                         <div class="flex flex-col">
                             <span class="text-primary/70 text-[12px] font-bold tracking-wide mb-1">目录</span>
@@ -277,11 +138,10 @@
 
                     <!-- 按年月分组显示 -->
                     <div class="space-y-8">
-                        {{ range $pages.GroupByDate "2006-01" }}
+                        {{ range $pageItems.GroupByDate "2006-01" }}
                         {{$year := index (split .Key "-") 0}}
                         {{$month := index (split .Key "-") 1}}
-                        {{$monthName := index (slice "一月" "二月" "三月" "四月" "五月" "六月" "七月" "八月" "九月" "十月" "十一月" "十二月") (sub
-                        (int $month) 1)}}
+                        {{$monthName := index $monthNames $month}}
 
                         <section class="posts-month-group space-y-4" data-year-month="{{ .Key }}" data-year="{{ $year }}"
                             data-month="{{ $month }}">
@@ -371,6 +231,8 @@
                         class="hidden mt-10 text-center text-off-white/35 text-sm border border-muted-teal/10 bg-muted-teal/5 rounded-xl py-10">
                         无匹配条目
                     </div>
+
+                    {{ partial "pagination.html" $paginator }}
                 </div>
             </div>
         </main>
@@ -389,7 +251,7 @@
                     <span class="text-muted-teal/40 font-mono text-[9px] tracking-widest uppercase">Link: STABLE</span>
                     <div class="flex items-center gap-2 text-primary/60">
                         <span class="material-symbols-outlined text-base">cloud_queue</span>
-                        <span class="text-[9px] font-bold tracking-widest uppercase">Live_Sync</span>
+                        <span class="text-[9px] font-bold tracking-widest uppercase">Snapshot_Mode</span>
                     </div>
                 </div>
             </div>

@@ -1,0 +1,82 @@
+[build-system]
+requires = ["setuptools==80.9.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ai-stack"
+version = "0.1.0"
+description = "Evidence-oriented static AI intelligence publishing pipeline"
+requires-python = ">=3.11,<3.14"
+dependencies = [
+  "aiohttp==3.14.1",
+  "anthropic==0.75.0",
+  "beautifulsoup4==4.14.3",
+  "feedparser==6.0.12",
+  "html2text==2025.4.15",
+  "httpx==0.28.1",
+  "lxml==6.1.0",
+  "pandas==3.0.0",
+  "playwright==1.57.0",
+  "python-dateutil==2.9.0.post0",
+  "python-dotenv==1.2.2",
+  "python-telegram-bot==22.5",
+  "pyyaml==6.0.1",
+  "requests==2.33.0",
+  "tqdm==4.67.1",
+  "tweepy==4.16.0",
+]
+
+[project.scripts]
+ai-stack = "ai_stack.cli:main"
+
+[dependency-groups]
+dev = [
+  "mypy==1.19.1",
+  "pip-audit==2.9.0",
+  "pytest==9.0.3",
+  "pytest-cov==7.0.0",
+  "ruff==0.14.13",
+  "types-pyyaml==6.0.12.20260518",
+  "types-requests==2.33.0.20260712",
+]
+
+[tool.setuptools.packages.find]
+include = ["ai_stack*"]
+
+[tool.pytest.ini_options]
+addopts = "--strict-config --strict-markers"
+testpaths = ["tests"]
+
+[tool.coverage.run]
+branch = true
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = true
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["B", "E", "F", "I", "UP"]
+
+[tool.mypy]
+python_version = "3.11"
+ignore_missing_imports = true
+no_implicit_optional = false
+show_error_codes = true
+warn_redundant_casts = true
+warn_unused_configs = true
+warn_unused_ignores = true
+
+[[tool.mypy.overrides]]
+module = ["ai_stack.*", "content_security", "scripts.validate_public_content"]
+check_untyped_defs = true
+disallow_any_generics = true
+disallow_incomplete_defs = true
+disallow_untyped_defs = true
+no_implicit_reexport = true
+strict_equality = true
+warn_return_any = true
+warn_unreachable = true

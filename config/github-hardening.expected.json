@@ -1,0 +1,127 @@
+{
+  "schema_version": "github_hardening_expected_v1",
+  "api_version": "2026-03-10",
+  "actions": {
+    "default_workflow_permissions": "read",
+    "can_approve_pull_request_reviews": false
+  },
+  "immutable_releases": {
+    "enabled": true
+  },
+  "rulesets": [
+    {
+      "name": "ai-stack/main-protection-v1",
+      "target": "branch",
+      "enforcement": "active",
+      "bypass_actors": [],
+      "conditions": {
+        "ref_name": {
+          "include": ["refs/heads/main"],
+          "exclude": []
+        }
+      },
+      "rules": [
+        {"type": "deletion"},
+        {"type": "non_fast_forward"},
+        {
+          "type": "pull_request",
+          "parameters": {
+            "allowed_merge_methods": ["merge", "squash"],
+            "dismiss_stale_reviews_on_push": true,
+            "require_code_owner_review": false,
+            "require_last_push_approval": false,
+            "required_approving_review_count": 0,
+            "required_review_thread_resolution": true
+          }
+        },
+        {
+          "type": "required_status_checks",
+          "parameters": {
+            "do_not_enforce_on_create": true,
+            "required_status_checks": [
+              {"context": "Unit Tests"},
+              {"context": "browser-e2e"},
+              {"context": "secret-scan"},
+              {"context": "static-site"}
+            ],
+            "strict_required_status_checks_policy": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "ai-stack/data-branches-v1",
+      "target": "branch",
+      "enforcement": "active",
+      "bypass_actors": [],
+      "conditions": {
+        "ref_name": {
+          "include": ["refs/heads/content", "refs/heads/ops"],
+          "exclude": []
+        }
+      },
+      "rules": [
+        {"type": "deletion"},
+        {"type": "non_fast_forward"},
+        {"type": "required_linear_history"}
+      ]
+    },
+    {
+      "name": "ai-stack/backup-tags-v1",
+      "target": "tag",
+      "enforcement": "active",
+      "bypass_actors": [],
+      "conditions": {
+        "ref_name": {
+          "include": ["refs/tags/backup-*", "refs/tags/content-seed-*"],
+          "exclude": []
+        }
+      },
+      "rules": [
+        {"type": "deletion"},
+        {
+          "type": "update",
+          "parameters": {"update_allows_fetch_and_merge": false}
+        }
+      ]
+    }
+  ],
+  "environments": [
+    {
+      "name": "github-pages",
+      "wait_timer": 0,
+      "prevent_self_review": false,
+      "reviewers": [],
+      "deployment_branch_policy": {
+        "protected_branches": false,
+        "custom_branch_policies": true
+      },
+      "deployment_branch_policies": [
+        {"name": "gh-pages", "type": "branch"},
+        {"name": "main", "type": "branch"}
+      ]
+    },
+    {
+      "name": "production-publish",
+      "wait_timer": 0,
+      "prevent_self_review": false,
+      "reviewers": [],
+      "deployment_branch_policy": {
+        "protected_branches": false,
+        "custom_branch_policies": true
+      },
+      "deployment_branch_policies": [{"name": "main", "type": "branch"}]
+    },
+    {
+      "name": "data-deletion",
+      "wait_timer": 0,
+      "prevent_self_review": false,
+      "reviewers": [{"type": "User", "id": "$REPOSITORY_OWNER_ID"}],
+      "deployment_branch_policy": {
+        "protected_branches": false,
+        "custom_branch_policies": true
+      },
+      "deployment_branch_policies": [{"name": "main", "type": "branch"}]
+    }
+  ]
+}

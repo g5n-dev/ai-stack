@@ -1,5 +1,14 @@
 #!/usr/bin/env python3
 
+"""Legacy manual end-to-end runner.
+
+The functions below perform live crawling, model calls, repository writes and a
+full Hugo build.  They are intentionally not collected by pytest; the hermetic
+CI browser suite lives under ``tests/e2e``.
+"""
+
+__test__ = False
+
 import sys
 import os
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))

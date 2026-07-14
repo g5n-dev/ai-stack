@@ -1,350 +1,153 @@
-# 分支架构文档
+# 分支架构与 CI 合并契约
 
-## 概述
+状态：P0 迁移基线，目标协调器尚未启用。本文同时说明目标架构、过渡期事实，以及为什么
+GitHub Actions 必须保持当前行为。
 
-本项目使用两个主要分支：`main` 和 `gh-pages`，每个分支都有特定的职责和工作流程。
+> 合并边界：当前升级 PR 不修改任何 `.github/workflows/*.yml` 字节。四个 workflow 与
+> `origin/main@8b6addc4d9d35ab731e5f843351b5e72494fb37f` 逐字一致；目标协调 DAG 尚未接入 GitHub Actions。
+> 新的 CAS、预算、artifact guard、release health 和 outbox 代码只是待切换能力，不能据此宣称生产
+> 权限隔离、安全删除或双 SHA 发布已经生效。
 
-**核心理念：**
-- **不吝啬 token，追求卓越内容** - 通过大量高质量 LLM 调用生成深度、创新、实用的内容
-- **构建有价值的技术栈图谱** - 自动化构建具有指导性、吸引人、对人有价值的技术知识图谱
-- **好内容、好标签、好图谱** - 三位一体的内容质量标准
+## 结论
 
-## 分支职责
+目标分支职责如下：
 
-### main 分支
+- `main`：只保存代码、锁文件、配置、模板、测试和架构文档；不再追加生成文章或构建产物。
+- `content`：orphan 内容账本，保存 canonical 当前态、事件、修订、短证据快照、路由和有限媒体。
+- `ops`：orphan 运维事实账本，保存预算、release sequence、outbox、发布回执和备份记录。
+- 功能分支：通过 Pull Request 合并到 `main`，默认使用 `codex/` 前缀。
 
-**主要职责：**
-- 存储源代码和配置文件
-- 开发和测试新功能
-- 持续优化内容生成策略
-- 触发到 gh-pages 的自动同步
+`content` 和 `ops` 没有共同祖先，也不与 `main` 相互 merge。它们只能由对应的 CAS writer
+在预期父 SHA 上 fast-forward 更新。任何常规路径都禁止 reset、rebase、force push、删除分支、
+GC/prune 和历史重写。
 
-**包含内容：**
-- 爬虫代码 (`crawler/`)
-- 内容处理器 (`processor/`)
-- 发布器 (`publisher/`)
-- 脚本工具 (`scripts/`)
-- 配置文件 (`config/`)
-- UI 组件和主题 (`blog/themes/`)
-- Hugo 配置 (`blog/config.toml`)
-- 依赖文件 (`requirements.txt`)
-- 文档 (`docs/`)
+过渡期内，远端 `main` 仍含历史生成内容，旧发布流程仍可能向它写入。只有完成影子运行、完整构建、
+稳定期、备份和最终增量同步后，才会冻结旧 writer 并切换到上述目标状态。在切换前启用阻止旧 writer
+的分支规则会直接中断现网，因此仓库规则和新工作流必须在同一个受控切换窗口生效。
 
-**工作流：**
-- 推送到 main 分支触发：
-  1. 同步到 gh-pages（通过 [sync-to-gh-pages.yml](../.github/workflows/sync-to-gh-pages.yml)）
-  2. gh-pages 构建和部署（通过 [gh-pages-content.yml](../.github/workflows/gh-pages-content.yml)）
+## CI 外部契约：分支更新和合并时不得变化
 
-### gh-pages 分支
+本 PR 将“不得变化”解释为完整 workflow 字节契约，而不只是名称和触发器相同。当前行为如下：
 
-**主要职责：**
-- 执行深度内容生成和处理
-- 构建和维护技术栈知识图谱
-- 生成高质量、有深度的技术文章
-- 部署到 GitHub Pages
-- 监控内容质量和用户价值
+| 场景 | 工作流名 | 精确触发器 | 稳定检查/行为 |
+| --- | --- | --- | --- |
+| 功能分支更新、PR 新提交 | `PR CI` | `pull_request` → `main`；`workflow_dispatch` | 单 job `unit-tests`，显示名 `Unit Tests`；同一 PR 的旧运行可取消 |
+| PR 合并或直接推送到 main | `Build and Deploy` | `push` → `main` | 保留旧单 job `build-and-deploy`、bot-push 过滤和现有写权限 |
+| 周期性采集唤醒 | `Build and Deploy` | `0 * * * *`；`workflow_dispatch` | `cancel-in-progress: false`；继续执行旧 main 工作树生成/提交/部署链 |
+| 生产巡检 | `System Monitoring & Content Quality Tracking` | `0 */6 * * *`；`workflow_dispatch` | 保留现有 7 个 monitoring jobs 和仓库默认 token 语义 |
 
-**包含内容：**
-- 生成的 HTML 文件
-- 深度技术分析文章（多轮 LLM 增强生成）
-- 技术栈图谱数据（JSON/Knowledge Graph）
-- 高质量标签体系
-- 静态资源（CSS, JS, 图片）
-- GitHub Pages 配置（.nojekyll, CNAME）
-- 同步的源代码（从 main）
+`content`、`ops` 提交不匹配上述 push 分支，因此不会触发代码 PR CI 或递归部署。测试以四个文件的
+SHA-256 锁住完整基线，任何字节变化都必须进入后续独立的 Actions 迁移 PR，而不能夹带在本次代码、
+内容或图谱升级中。
 
-**工作流：**
-- 定时任务（每天 UTC 02:00）触发深度内容更新：
-  1. 从 main 合并最新代码和爬虫逻辑
-  2. 运行深度内容生成脚本（50+ LLM 调用，确保质量）
-     - 技术趋势深度分析
-     - 代码质量多维评估
-     - 最佳实践归纳总结
-     - 创新洞察挖掘
-     - 指导性建议生成
-  3. 构建和维护技术栈知识图谱
-     - 技术实体识别和关联
-     - 依赖关系映射
-     - 生态圈分析
-     - 技术演进追踪
-  4. 生成高质量标签体系
-     - 多维度标签分类
-     - 标签权重计算
-     - 标签关联分析
-  5. 使用 Hugo 构建网站
-  6. 部署到 GitHub Pages
+## 为什么旧 Action 会是一个大 Job
 
-## 同步机制
+旧系统把四种事实放在同一个 `main` 工作树：源代码、抓取输入、生成 Markdown 和 Hugo 输出。因此一次
+定时运行必须按顺序完成“检出 main → 安装依赖 → 抓取/生成 → 构建图谱 → Hugo 构建 → 提交生成文件
+→ 部署 Pages”。它不是无缘无故写成单 Job，而是由单分支持久化模型推导出的：
 
-### main → gh-pages 同步
+1. 抓取结果只有写回当前工作树才会在下次运行继续存在，所以 job 需要 `contents: write`。
+2. 同一进程既生成内容又部署，模型密钥、Git 写权和 Pages 权限自然集中在一起。
+3. 机器人提交生成内容后也会命中 `push main`；`[skip ci]` 和 bot actor 条件用于阻断自触发循环。
+4. 多次小时任务可能重叠，`cancel-in-progress: false` 避免一个已开始写内容的运行在中途被取消。
+5. 并发写同一分支会冲突，旧实现用工作树级同步和宽泛暂存解决；这在内容较少时能工作，但无法证明
+   无丢失，也扩大了误删和密钥泄漏半径。
+6. 小时 cron 是低成本调度器，不保存 crawler cursor；GitHub 排队、超时或失败都可能造成间隔，因此
+   它只能是唤醒信号。
 
-**触发条件：**
-- 推送到 main 分支
-- 手动触发 [sync-to-gh-pages.yml](../.github/workflows/sync-to-gh-pages.yml)
+所以迁移不能只“改几行 YAML”。如果先删除 `[skip ci]` 或 bot 防循环，却仍让旧 job 写 `main`，会产生
+递归运行；如果先保护 `main` 禁止机器人写入，却没有切换内容账本，内容刷新会停止；如果先启用新 writer
+而未冻结旧 writer，则两个系统会争用不同事实源。
 
-**同步内容：**
-- UI 组件和主题文件
-- 爬虫脚本和逻辑
-- 配置文件
-- 依赖文件
+## 目标 Action 信任模型（尚未接入）
 
-**保留内容：**
-- gh-pages 特有的部署配置
-- 已生成的文章和内容
-- .nojekyll 和 CNAME 文件
+后续独立迁移应保留 `Build and Deploy` 的工作流名、三个触发入口和并发组，再把内部切换为单一可信
+协调 DAG：
 
-**同步策略：**
-- 使用 Git merge 策略 `-X theirs` 优先使用 gh-pages 的变更
-- 忽略空格变化以减少冲突
-- 强制推送（force-with-lease）确保同步成功
-
-## 工作流文件
-
-### Main 分支工作流
-
-1. **[sync-to-gh-pages.yml](../.github/workflows/sync-to-gh-pages.yml)**
-   - 同步 main 到 gh-pages
-   - 确保源代码一致性
-   - 不执行构建（构建由内容生成工作流负责）
-
-### gh-pages 分支工作流
-
-1. **[gh-pages-content.yml](../.github/workflows/gh-pages-content.yml)**
-   - **深度内容生成**（核心工作流）
-   - 从 main 合并最新代码和爬虫逻辑
-   - 多轮 LLM 内容增强（50+ LLM 调用）
-     - 第一轮：基础信息收集和整理
-     - 第二轮：深度技术分析
-     - 第三轮：创新洞察挖掘
-     - 第四轮：最佳实践归纳
-     - 第五轮：指导性建议生成
-     - 第六轮：内容质量优化
-   - 技术栈知识图谱构建
-   - 高质量标签体系生成
-   - Hugo 构建和部署
-   - 社交媒体发布（Twitter, Telegram, WeChat）
-
-### 监控工作流
-
-1. **[monitoring.yml](../.github/workflows/monitoring.yml)**
-   - 内容质量监控（每 6 小时）
-   - 工作流执行状态监控
-   - Token 消耗统计
-   - 用户价值指标跟踪
-   - 告警通知（Slack, Telegram）
-
-## 冲突解决策略
-
-### 常见冲突场景
-
-1. **代码同步冲突**
-   - 使用 `git merge -X theirs` 优先保留 gh-pages 的变更
-   - 自动忽略空格变化
-
-2. **配置文件冲突**
-   - main 分支的配置文件作为源
-   - gh-pages 可以有特定的覆盖配置
-
-3. **内容文件冲突**
-   - 自动生成的内容保留在 gh-pages
-   - 手动编辑的内容使用合并策略
-
-### 验证脚本
-
-[verify_sync.py](../scripts/verify_sync.py) 脚本用于：
-- 检查关键目录是否同步
-- 验证文件一致性
-- 生成同步报告
-- 检测配置完整性
-
-## 部署流程
-
-### 从 main 部署（代码同步）
-
-```
-main 分支提交（新功能或优化）
-    ↓
-触发 sync-to-gh-pages.yml
-    ↓
-同步最新代码到 gh-pages
-    ↓
-确保 gh-pages 使用最新爬虫和生成逻辑
-    ↓
-推送 gh-pages
-    ↓
-触发 gh-pages-content.yml 进行深度内容生成
+```text
+crawl
+  → validate-discovery
+  → persist-discovery(content CAS)
+  → reserve-budget(ops CAS)
+  → generate(no Git write)
+  → validate-result
+  → persist-result(content CAS)
+  → build(code_sha + content_sha)
+  → deploy
+  → production-health
+  → persist-healthy-release(ops CAS)
+  → publish-outbox
+  → persist-receipt(ops CAS)
 ```
 
-### 定时深度内容更新
+以上 DAG 是已实现但未接线的目标，不描述本 PR 合并后的 GitHub Actions 事实。切换它会改变 job/check、
+DAG、权限、Environment 和副作用顺序，因此必须在 ruleset、环境审批和回滚窗口就绪后单独评审。
 
-```
-定时触发 (每天 UTC 02:00)
-    ↓
-触发 gh-pages-content.yml
-    ↓
-从 main 合并最新代码和爬虫逻辑
-    ↓
-多轮 LLM 内容增强（50+ 调用）
-    ├─ 第一轮：基础信息收集和整理
-    ├─ 第二轮：深度技术分析
-    ├─ 第三轮：创新洞察挖掘
-    ├─ 第四轮：最佳实践归纳
-    ├─ 第五轮：指导性建议生成
-    └─ 第六轮：内容质量优化
-    ↓
-构建技术栈知识图谱
-    ├─ 技术实体识别和关联
-    ├─ 依赖关系映射
-    ├─ 生态圈分析
-    └─ 技术演进追踪
-    ↓
-生成高质量标签体系
-    ├─ 多维度标签分类
-    ├─ 标签权重计算
-    └─ 标签关联分析
-    ↓
-Hugo 构建
-    ↓
-推送 gh-pages
-    ↓
-社交媒体发布（Twitter, Telegram, WeChat）
-```
+关键边界：
 
-## 监控和告警
+- 有模型密钥的 job 只有读权限；content writer 无模型密钥。
+- publisher 有渠道密钥但无 Git 写权；receipt writer 无渠道密钥。
+- 跨 job artifact 一律视为不可信，并复验路径、类型、大小、数量、摘要、schema、密钥特征和最终 DOM。
+- writer 只暂存白名单目录，并以 expected SHA 执行 CAS；冲突后重新读取、确定性归并，不改写历史。
+- 每次部署固定 `code_sha + content_sha + schema_version + release sequence + artifact_digest`。
+- 只有生产健康后才推进健康 release、消费 outbox 和持久化回执。
+- 外部发送是 at-least-once；超时结果进入 `UNKNOWN`，不得盲目重发。
 
-### 监控指标
+## 分支更新与合并规程
 
-**内容质量指标：**
-- 深度分析文章数量
-- LLM 调用次数和 Token 消耗
-- 内容质量评分（多维度评估）
-- 技术栈图谱节点和边数量
-- 标签覆盖度和准确性
+### 代码分支
 
-**用户价值指标：**
-- 文章阅读量和互动率
-- 技术图谱查询次数
-- 标签检索效率
-- 用户反馈评分
-- 内容复用率
+1. 从已知 `main` SHA 创建功能分支。
+2. 更新分支只允许普通提交；需要吸收远端变化时使用可审计 merge，不重写已共享历史。
+3. PR 的每个新 SHA 都必须运行同名 `PR CI`，至少保持 `Unit Tests` 这一稳定 required check。
+4. CI 通过并完成评审后合并；合并提交触发原名 `Build and Deploy`。
+5. 自动化身份不得审批自己的 PR，也不得绕过 ruleset。
 
-**技术指标：**
-- 工作流状态（成功/失败率）
-- 同步延迟（main → gh-pages）
-- 构建状态（Hugo 构建成功率）
-- API 调用成功率
+### 数据分支
 
-### 告警渠道
+1. writer 检出 `content` 或 `ops` 的精确父 SHA。
+2. 验证 artifact 与业务 schema，只生成白名单路径。
+3. 本地提交后，以远端仍等于预期父 SHA 为条件 fast-forward push。
+4. 如果 CAS 失败，丢弃尚未发布的临时工作目录，读取新 HEAD，按稳定 ID 合并后重算；绝不覆盖赢家。
+5. 同一输入重跑应得到 0 新页面、0 模型调用、0 Git 变化和 0 重复通知。
 
-- **Slack**: 主要通知渠道
-- **Telegram**: 紧急告警
-- **GitHub Actions Summary**: 工作流摘要
+`main`、`content`、`ops` 之间不做普通内容合并。站点构建使用 Hugo mount 从精确 `content_sha` 读取内容，
+而不是把内容复制回代码分支。
 
-### 告警触发条件
+## 安全切换顺序
 
-- 工作流失败
-- 内容质量评分低于阈值
-- Token 消耗异常（突然下降）
-- 同步延迟超过 24 小时
-- 知识图谱更新失败
-- 检测到安全问题
+以下步骤必须按顺序完成，不能用一次大合并替代：
 
-## 最佳实践
+1. 验证原脏工作区可逐字节恢复，并验证本地与不可变 release 备份。
+2. 将现有内容原样种入 `content`，建立独立 `ops`，不同时去重、改 URL 或升级图谱。
+3. 连续完成至少 24 次影子运行和 3 次完整影子构建；文章数、路由、外链和逐文件哈希一致。
+4. 冻结旧 workflow，等待所有旧运行结束，再做一次最终增量同步。
+5. 在同一切换窗口启用 Actions 默认只读、ruleset、Environment 审批和新协调 workflow。
+6. 用固定双 SHA 部署，执行生产健康检查；失败时不推进健康 release。
+7. 稳定运行至少 7 天后，才允许每批最多 100 篇的历史精确 URL 去重。
+8. 最后才从 `main` HEAD 移走生成内容；不清理既有 Git 历史。
 
-### 内容生成策略
+只要任一门禁缺证据，迁移和去重命令必须 fail closed。时间门禁不能靠伪造时间戳或重复 run ID 补齐。
 
-**核心原则：**
-- **不吝啬 Token** - 大量使用 LLM 调用确保内容深度和质量
-- **多轮迭代优化** - 每篇内容至少经过 6 轮 LLM 增强
-- **追求创新性** - 不仅整理信息，更要挖掘独特见解
-- **注重实用性** - 每篇内容都要有明确的指导价值
+## 回滚
 
-**内容质量标准：**
-1. **深度分析** - 不止于表面描述，深入技术原理和实现细节
-2. **创新洞察** - 提供独特的视角和发现
-3. **最佳实践** - 总结可复用的经验和模式
-4. **指导性** - 给出具体的实施建议和路径
-5. **吸引力** - 用有趣的方式呈现技术内容
+回滚不是回退数据分支，也不是强推旧提交。应分配更高的 release sequence，重新部署已验证的旧
+`code_sha + content_sha` 组合。这样预算预留、发送回执和 `UNKNOWN` 状态不会倒退，恢复站点也无需
+重新调用模型。
 
-**技术栈图谱构建：**
-- 自动识别技术实体（框架、库、工具、概念）
-- 建立实体间的关系（依赖、替代、集成）
-- 追踪技术演进历史和趋势
-- 生成多维度的标签体系
+只有密钥泄漏、PII 或法律删除请求可以进入独立 break-glass 删除流程；该流程默认 dry-run、绑定预期
+源 SHA、备份 ID 和变更上限，并要求受保护 Environment 审批。
 
-### 开发流程
+## 当前 PR 运维核对
 
-1. 在 main 分支开发和优化爬虫、内容生成逻辑
-2. 提交新功能或改进到 main
-3. 触发 sync-to-gh-pages.yml 同步最新代码
-4. gh-pages-content.yml 使用最新逻辑生成深度内容
-5. 监控内容质量和用户价值指标
-6. 持续优化内容生成策略
+- PR 分支更新后，GitHub 上显示 `PR CI / Unit Tests`，名称未变化。
+- 合并到 `main` 后，显示 `Build and Deploy`，触发来源仍为 push。
+- 小时运行仍使用 `0 * * * *`，六小时巡检仍使用 `0 */6 * * *`。
+- 四个 workflow 的 SHA-256 与 `origin/main` 基线完全一致。
+- `content` 与 `ops` 不触发代码部署，但旧 workflow 仍可能把生成内容写回 `main`。
+- 仓库 ruleset、默认只读 Actions 权限和受保护 Environment 未实际启用前，不宣称强推/删除防护或
+  权限分离已经落地。
 
-### 分支管理
-
-- **main**: 主开发分支（源代码、爬虫、生成逻辑）
-- **gh-pages**: 内容部署分支（深度文章、知识图谱、网站）
-- **feature/***: 功能开发分支
-- **hotfix/***: 紧急修复分支
-
-### 代码提交规范
-
-- 提交信息清晰描述变更
-- 注重内容生成逻辑的改进
-- 使用 `[skip ci]` 跳过不必要的 CI
-- 重大变更更新文档
-
-## 故障排查
-
-### 同步失败
-
-1. 检查 [sync-to-gh-pages.yml](../.github/workflows/sync-to-gh-pages.yml) 日志
-2. 验证 Git 权限和 OAuth scope
-3. 检查冲突解决策略（-X theirs）
-
-### 内容生成失败
-
-1. 检查 [gh-pages-content.yml](../.github/workflows/gh-pages-content.yml) 日志
-2. 验证 API 密钥配置（OpenAI, Anthropic 等）
-3. 检查 Token 配额和消耗情况
-4. 查看多轮 LLM 调用的日志输出
-5. 验证爬虫是否成功抓取数据
-
-### 内容质量下降
-
-1. 检查内容质量评分指标
-2. 查看 LLM 调用次数是否异常减少
-3. 审查内容生成策略配置
-4. 分析用户反馈数据
-
-### 知识图谱更新失败
-
-1. 检查图谱构建脚本日志
-2. 验证数据格式和结构
-3. 查看实体识别和关联逻辑
-4. 检查数据库存储状态
-
-### 部署失败
-
-1. 检查 GitHub Pages 配置
-2. 验证 .nojekyll 文件
-3. 查看 GitHub Actions 日志
-4. 检查 Hugo 构建输出
-
-## 相关文件
-
-- [工作流配置](../.github/workflows/)
-- [验证脚本](../scripts/verify_sync.py)
-- [配置文件](../config/)
-- [部署文档](../DEPLOYMENT.md)
-- [系统设计文档](../docs/系统设计文档.md)
-
-## 变更日志
-
-- 2026-01-24: 重新定位项目目标，强调高质量内容生成
-  - 核心理念：不吝啬 token，追求卓越内容
-  - 构建有价值的技术栈图谱
-  - 多轮 LLM 内容增强（50+ 调用）
-  - 强调深度分析、创新洞察、实用指导
-- 2026-01-24: 初始版本，建立分支架构和工作流
+更细的 job 权限、artifact 复验和 release 状态说明见
+[GitHub Actions 信任模型](architecture/ci-trust-model.md)；CLI 与迁移参数见
+[统一流水线 CLI](architecture/pipeline-cli.md)。

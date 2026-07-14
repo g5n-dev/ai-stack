@@ -2,64 +2,11 @@
 <html class="dark" lang="{{ .Site.LanguageCode }}">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{ .Site.Title }}</title>
-    <meta name="description" content="{{ .Site.Params.description }}" />
-    <link rel="canonical" href="{{ .Permalink }}" />
-    <meta property="og:site_name" content="{{ .Site.Title }}" />
-    <meta property="og:title" content="{{ .Site.Title }}" />
-    <meta property="og:description" content="{{ .Site.Params.description }}" />
-    <meta property="og:url" content="{{ .Permalink }}" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image"
-        content="{{ (.Site.Params.default_og_image | default .Site.Params.profile_image | default `/img/profile-holo.png`) | absURL }}" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="{{ .Site.Title }}" />
-    <meta name="twitter:description" content="{{ .Site.Params.description }}" />
-    <meta name="twitter:image"
-        content="{{ (.Site.Params.default_og_image | default .Site.Params.profile_image | default `/img/profile-holo.png`) | absURL }}" />
-    {{ with .Site.Params.twitter }}
-    <meta name="twitter:site" content="{{ . }}" />{{ end }}
-
-    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
-    <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#4db6ac",
-                        "deep-navy": "#060a14",
-                        "muted-teal": "#26a69a",
-                        "off-white": "#d1d5db",
-                        "terminal-bg": "#0a111a",
-                        "las-vegas-orange": "#d97706",
-                    },
-                    fontFamily: {
-                        "display": ["Space Grotesk", "Noto Sans SC", "ui-sans-serif", "system-ui", "sans-serif"],
-                        "mono": ["Space Mono", "ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", "Noto Sans SC", "monospace"]
-                    },
-                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
-                },
-            },
-        }
-    </script>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap"
-        rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700&display=swap"
-        rel="stylesheet" />
-
-    <link rel="stylesheet" href="/css/style.css" />
-
-    <script src="/js/terminal.js" defer></script>
+    {{ partial "site-head.html" (dict "Page" . "Title" .Site.Title "Scripts" (slice "/js/terminal.js")) }}
 </head>
 
 <body class="bg-deep-navy selection:bg-muted-teal selection:text-deep-navy font-display">
+    {{ $buildTime := .Site.Data.related.index.data_as_of | time.AsTime }}
     {{ $posts := where .Site.RegularPages "Type" "posts" }}
     {{ $posts = sort $posts "Date" "desc" }}
     {{ $latestPost := cond (gt (len $posts) 0) (index $posts 0) nil }}
@@ -192,7 +139,7 @@
                                 </div>
                                 <p class="text-off-white/80 text-[12px] leading-relaxed">神经归档访问授权：{{ .Site.Params.author
                                     }}</p>
-                                <p class="text-muted-teal/40 text-[10px] mt-1.5 font-mono">{{ now.Format "15:04:05" }}
+                                <p class="text-muted-teal/40 text-[10px] mt-1.5 font-mono">{{ $buildTime.Format "15:04:05" }}
                                 </p>
                             </div>
                             <div class="relative pl-6 pb-2">
@@ -200,7 +147,7 @@
                                     class="absolute -left-[5px] top-0 size-2 rounded-full bg-off-white/10 border border-muted-teal/20">
                                 </div>
                                 <p class="text-off-white/60 text-[12px] leading-relaxed">基线变更：去重模块 + DeepWiki 增强已上线</p>
-                                <p class="text-muted-teal/40 text-[10px] mt-1.5 font-mono">{{ now.AddDate 0 0 -1 |
+                                <p class="text-muted-teal/40 text-[10px] mt-1.5 font-mono">{{ $buildTime.AddDate 0 0 -1 |
                                     time.Format "15:04:05" }}</p>
                             </div>
                         </div>
@@ -384,7 +331,7 @@
                         AES-256</span>
                     <div class="flex items-center gap-2 text-primary/60">
                         <span class="material-symbols-outlined text-base">cloud_queue</span>
-                        <span class="text-[9px] font-bold tracking-widest uppercase">Live_Sync</span>
+                        <span class="text-[9px] font-bold tracking-widest uppercase">Snapshot_Mode</span>
                     </div>
                 </div>
             </div>

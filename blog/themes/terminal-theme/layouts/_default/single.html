@@ -2,31 +2,12 @@
 <html class="dark" lang="{{ .Site.LanguageCode }}">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{ .Title }} - {{ .Site.Title }}</title>
     {{- $metaDescription := .Description -}}
     {{- if not $metaDescription -}}
     {{- $metaDescription = (.Plain | plainify | truncate 200) -}}
     {{- end -}}
-    <meta name="description" content="{{ $metaDescription }}" />
-    <link rel="canonical" href="{{ .Permalink }}" />
-    <meta property="og:site_name" content="{{ .Site.Title }}" />
-    <meta property="og:title" content="{{ .Title }} - {{ .Site.Title }}" />
-    <meta property="og:description"
-        content="{{ $metaDescription }}" />
-    <meta property="og:url" content="{{ .Permalink }}" />
-    <meta property="og:type" content="article" />
-    <meta property="og:image"
-        content="{{ (.Params.og_image | default .Params.image | default .Site.Params.default_og_image | default .Site.Params.profile_image | default `/img/profile-holo.png`) | absURL }}" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="{{ .Title }} - {{ .Site.Title }}" />
-    <meta name="twitter:description"
-        content="{{ $metaDescription }}" />
-    <meta name="twitter:image"
-        content="{{ (.Params.og_image | default .Params.image | default .Site.Params.default_og_image | default .Site.Params.profile_image | default `/img/profile-holo.png`) | absURL }}" />
-    {{ with .Site.Params.twitter }}
-    <meta name="twitter:site" content="{{ . }}" />{{ end }}
+    {{ partial "site-head.html" (dict "Page" . "Description" $metaDescription "Type" "article" "Scripts" (slice "/js/terminal.js")) }}
+    {{ partial "pagefind-metadata.html" . }}
 
     {{- $ldImage := (.Params.og_image | default .Params.image | default .Site.Params.default_og_image | default
     .Site.Params.profile_image | default `/img/profile-holo.png`) | absURL -}}
@@ -58,39 +39,6 @@
     $ldBreadcrumbItems -}}
     <script type="application/ld+json">{{ $ldBreadcrumb | jsonify }}</script>
 
-    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
-    <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#4db6ac",
-                        "deep-navy": "#060a14",
-                        "muted-teal": "#26a69a",
-                        "off-white": "#d1d5db",
-                        "terminal-bg": "#0a111a",
-                        "las-vegas-orange": "#d97706",
-                    },
-                    fontFamily: {
-                        "display": ["Space Grotesk", "Noto Sans SC", "ui-sans-serif", "system-ui", "sans-serif"],
-                        "mono": ["Space Mono", "ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", "Noto Sans SC", "monospace"]
-                    },
-                },
-            },
-        }
-    </script>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap"
-        rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700&display=swap"
-        rel="stylesheet" />
-
-    <link rel="stylesheet" href="/css/style.css" />
-
-    <script src="/js/terminal.js" defer></script>
 </head>
 
 <body class="bg-deep-navy selection:bg-muted-teal selection:text-deep-navy font-display">
@@ -190,26 +138,24 @@
                         </div>
                     </div>
 
-                    <div
+                    <div data-pagefind-body
                         class="post-content prose prose-invert max-w-none font-display text-base md:text-lg text-slate-300 leading-relaxed">
-                        {{- $content := .Content -}}
-                        {{- $content = replaceRE "<h1([^>]*)>" "<h2$1>" $content -}}
-                        {{- $content = replaceRE "</h1>" "</h2>" $content -}}
-                        {{- $content | safeHTML -}}
+                        {{ .Content }}
                     </div>
 
-                    {{ with .Params.tags }}
+                    {{ with .GetTerms "tags" }}
                     <div class="mt-12 pt-8 border-t border-muted-teal/10 flex flex-wrap items-center gap-2">
                         {{ range . }}
-                        <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}/"
+                        <a href="{{ .RelPermalink }}"
                             class="px-2.5 py-1 rounded-full border border-muted-teal/15 bg-terminal-bg/40 text-muted-teal/60 text-[10px] font-mono tracking-wide hover:bg-muted-teal/10 hover:text-primary transition-colors">
-                            {{ . }}
+                            {{ .Data.Term }}
                         </a>
                         {{ end }}
                     </div>
                     {{ end }}
 
                     <!-- 应用场景展示区 -->
+                    {{- $scenarioTerms := .GetTerms "scenarios" -}}
                     {{ with .Params.scenarios }}
                     <div class="mt-12 pt-8 border-t border-muted-teal/10">
                         <div class="flex items-center gap-3 mb-6">
@@ -236,9 +182,14 @@
                             {{- $scenarioConfidence = (index . "confidence") -}}
                             {{- end -}}
                             {{- end -}}
-                            {{- $scenarioSlug := urlize (printf "%v" $scenarioName) -}}
+                            {{- $scenarioURL := "/scenarios/" -}}
+                            {{- range $scenarioTerms -}}
+                            {{- if eq (printf "%v" .Data.Term) (printf "%v" $scenarioName) -}}
+                            {{- $scenarioURL = .RelPermalink -}}
+                            {{- end -}}
+                            {{- end -}}
                             {{- $scenarioConfidenceWidth := printf "w-[%.0f%%]" (mul $scenarioConfidence 100) -}}
-                            <a href="/scenarios/{{ $scenarioSlug }}/"
+                            <a href="{{ $scenarioURL }}"
                                 class="glass-panel rounded-lg p-5 border-l-2 border-primary/50 hover:border-primary transition-all group block">
                                 <div class="flex items-center gap-3 mb-3">
                                     <span
@@ -258,23 +209,6 @@
                                 </div>
                             </a>
                             {{ end }}
-                        </div>
-                    </div>
-                    {{ end }}
-
-                    {{ if and (eq .Type "posts") (.Site.Params.comments.enabled) (.Site.Params.comments.repo) }}
-                    <div class="mt-10 pt-8 border-t border-muted-teal/10">
-                        <div class="terminal-glass rounded-2xl p-5 md:p-8 border border-muted-teal/10">
-                            <div class="flex items-center justify-between gap-4 mb-4">
-                                <div class="text-primary/75 text-[11px] font-mono tracking-wide">评论</div>
-                                <div class="text-off-white/30 text-[10px] font-mono tracking-wide">GitHub Issues</div>
-                            </div>
-
-                            <script src="https://utteranc.es/client.js" repo="{{ .Site.Params.comments.repo }}"
-                                issue-term="{{ .Site.Params.comments.issue_term | default " pathname" }}"
-                                label="{{ .Site.Params.comments.label | default " comment" }}"
-                                theme="{{ .Site.Params.comments.theme | default " github-dark" }}"
-                                crossorigin="anonymous" async></script>
                         </div>
                     </div>
                     {{ end }}
@@ -324,31 +258,19 @@
                             <div
                                 class="absolute inset-0 overflow-hidden px-4 py-3 font-mono text-[10px] leading-loose text-primary/60">
                                 <div class="log-scroller">
-                                    <div class="opacity-60">&gt; ESTABLISHING_SECURE_LINK...</div>
-                                    <div class="text-primary">&gt; HANDSHAKE_PROTOCOL_INIT [OK]</div>
-                                    <div>&gt; DECRYPTING_PACKET_X99</div>
-                                    <div>&gt; KEY_GENERATION: RSA-4096 AUTHENTICATED</div>
-                                    <div class="text-muted-teal">&gt; PACKET_RECONSTRUCTION COMPLETE</div>
-                                    <div>&gt; BUFFER_OVERFLOW_CHECK... PASSED</div>
-                                    <div>&gt; CONTENT_LANGUAGE: ZH-CN [OK]</div>
-                                    <div>&gt; DEDUPE_LAYER: NOMINAL</div>
-                                    <div>&gt; CITATION_GRAPH: LINKED</div>
-                                    <div>&gt; RENDER_PIPELINE: HUGO [OK]</div>
-                                    <div class="text-primary">&gt; INTEGRITY_VERIFIED_99.9%</div>
-                                    <div>&gt; ACCESS_GRANTED: USER_K</div>
+                                    <div class="opacity-60">&gt; STATIC_ARTIFACT_LOADED</div>
+                                    <div class="text-primary">&gt; RENDER_PIPELINE: HUGO</div>
+                                    <div>&gt; CONTENT_POLICY: MARKDOWN_ONLY</div>
+                                    <div>&gt; ACTIVE_HTML: BLOCKED</div>
+                                    <div class="text-muted-teal">&gt; SECURITY_GATE: ENABLED</div>
+                                    <div>&gt; SOURCE_SUPPORT: SEE CITATIONS</div>
                                     <br />
-                                    <div class="opacity-60">&gt; ESTABLISHING_SECURE_LINK...</div>
-                                    <div class="text-primary">&gt; HANDSHAKE_PROTOCOL_INIT [OK]</div>
-                                    <div>&gt; DECRYPTING_PACKET_X99</div>
-                                    <div>&gt; KEY_GENERATION: RSA-4096 AUTHENTICATED</div>
-                                    <div class="text-muted-teal">&gt; PACKET_RECONSTRUCTION COMPLETE</div>
-                                    <div>&gt; BUFFER_OVERFLOW_CHECK... PASSED</div>
-                                    <div>&gt; CONTENT_LANGUAGE: ZH-CN [OK]</div>
-                                    <div>&gt; DEDUPE_LAYER: NOMINAL</div>
-                                    <div>&gt; CITATION_GRAPH: LINKED</div>
-                                    <div>&gt; RENDER_PIPELINE: HUGO [OK]</div>
-                                    <div class="text-primary">&gt; INTEGRITY_VERIFIED_99.9%</div>
-                                    <div>&gt; ACCESS_GRANTED: USER_K</div>
+                                    <div class="opacity-60">&gt; STATIC_ARTIFACT_LOADED</div>
+                                    <div class="text-primary">&gt; RENDER_PIPELINE: HUGO</div>
+                                    <div>&gt; CONTENT_POLICY: MARKDOWN_ONLY</div>
+                                    <div>&gt; ACTIVE_HTML: BLOCKED</div>
+                                    <div class="text-muted-teal">&gt; SECURITY_GATE: ENABLED</div>
+                                    <div>&gt; SOURCE_SUPPORT: SEE CITATIONS</div>
                                 </div>
                             </div>
                         </div>
@@ -389,24 +311,36 @@
                     </div>
 
                     {{- $related := slice -}}
-                    {{- if .Params.tags -}}
-                    {{- $pool := where (where .Site.RegularPages "Type" "posts") "Permalink" "ne" .Permalink -}}
-                    {{- $related = where $pool "Params.tags" "intersect" .Params.tags -}}
-                    {{- $related = first 6 (sort $related "Date" "desc") -}}
+                    {{- $relatedIndex := .Site.Data.related.index -}}
+                    {{- with $relatedIndex -}}
+                    {{- $byRoute := $.Site.Data.related.index.by_route | default (dict) -}}
+                    {{- $byID := $.Site.Data.related.index.by_id | default (dict) -}}
+                    {{- $related = index $byRoute $.RelPermalink | default (slice) -}}
+                    {{- if eq (len $related) 0 -}}
+                    {{- range (slice $.Params.event_id $.Params.article_revision_id $.Params.item_id $.Params.id) -}}
+                    {{- if and (eq (len $related) 0) . -}}
+                    {{- $indexedRoute := index $byID (printf "%v" .) -}}
+                    {{- with $indexedRoute -}}
+                    {{- $related = index $byRoute . | default (slice) -}}
+                    {{- end -}}
+                    {{- end -}}
+                    {{- end -}}
+                    {{- end -}}
                     {{- end -}}
 
                     {{ if gt (len $related) 0 }}
-                    <div class="terminal-glass rounded-xl p-5 border border-primary/20">
+                    <div class="terminal-glass rounded-xl p-5 border border-primary/20"
+                        data-related-source="offline-index">
                         <div class="text-[10px] font-mono text-primary/45 tracking-wide mb-4">相关条目</div>
                         <div class="space-y-3">
                             {{ range $related }}
-                            <a class="block group" href="{{ .RelPermalink }}" data-entry-link="{{ .RelPermalink }}"
-                                data-entry-title="{{ .Title }}">
+                            <a class="block group" href="{{ .route }}" data-entry-link="{{ .route }}"
+                                data-entry-title="{{ .title }}">
                                 <div
                                     class="text-[11px] text-off-white/80 font-medium group-hover:text-primary transition-colors">
-                                    {{ .Title }}</div>
-                                <div class="text-[10px] text-muted-teal/40 font-mono tracking-wide mt-1">{{ .Date.Format
-                                    "2006-01-02" }}</div>
+                                    {{ .title }}</div>
+                                <div class="text-[10px] text-muted-teal/40 font-mono tracking-wide mt-1">{{
+                                    time.Format "2006-01-02" .published_at }}</div>
                             </a>
                             {{ end }}
                         </div>
@@ -430,7 +364,7 @@
                     <span class="text-muted-teal/40 font-mono text-[9px] tracking-widest uppercase">Link: STABLE</span>
                     <div class="flex items-center gap-2 text-primary/60">
                         <span class="material-symbols-outlined text-base">cloud_queue</span>
-                        <span class="text-[9px] font-bold tracking-widest uppercase">Live_Sync</span>
+                        <span class="text-[9px] font-bold tracking-widest uppercase">Snapshot_Mode</span>
                     </div>
                 </div>
             </div>

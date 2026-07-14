@@ -1,13 +1,13 @@
 # Python dependencies for AI Stack Blog System
 
 # HTTP requests
-requests==2.31.0
-aiohttp==3.13.3
+requests==2.33.0
+aiohttp==3.14.1
 httpx==0.28.1
 
 # Web scraping
 beautifulsoup4==4.14.3
-lxml==6.0.2
+lxml==6.1.0
 feedparser==6.0.12
 playwright==1.57.0
 
@@ -25,7 +25,7 @@ python-telegram-bot==22.5
 python-dateutil==2.9.0.post0
 
 # Logging and utilities
-python-dotenv==1.0.0
+python-dotenv==1.2.2
 
 # Data processing
 pandas==3.0.0

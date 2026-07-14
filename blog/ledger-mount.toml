@@ -1,0 +1,10 @@
+[module]
+  # The exact content SHA checked out by the workflow must win for overlapping
+  # post paths.  Local pages (about, archive, search) remain available from the
+  # code revision until they are migrated deliberately.
+  [[module.mounts]]
+    source = "../content-ledger/content/posts"
+    target = "content/posts"
+  [[module.mounts]]
+    source = "content"
+    target = "content"
