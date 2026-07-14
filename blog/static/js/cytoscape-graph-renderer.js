@@ -1,340 +1,657 @@
 /**
- * AI Stack Cytoscape Graph Renderer
- * Adapts the Cytoscape Graph Engine to the "Nexus Archive" UI
+ * DOM workbench adapter for CytoscapeGraphEngine.
+ * All data-derived content is written through textContent/createElement.
  */
-
 (function (global) {
-  "use strict";
+    "use strict";
 
-  class CytoscapeGraphRenderer {
-    constructor(engine) {
-      this.engine = engine;
-      this._typing = null;
-      this._listeners = [];
-      this._liveStatsTimer = null;
+    const MODE_LABELS = {
+        overview: "总览",
+        community: "社区",
+        focus: "邻域"
+    };
 
-      this.sidebar = document.getElementById("detail-sidebar");
-      this.searchInput = document.getElementById("graph-search");
-      this.filterContainer = document.getElementById("active-filters");
-      this.storyDock = document.getElementById("story-dock");
-      this.storyFields = {
-        title: document.getElementById("story-title"),
-        subtitle: document.getElementById("story-subtitle"),
-        status: document.getElementById("story-status"),
-        lines: document.getElementById("story-lines"),
-      };
+    const STAGE_LABELS = {
+        overview: "OVERVIEW / CORE ONLY",
+        community: "COMMUNITY / PULSE FIELD",
+        focus: "FOCUS / 1-HOP NEIGHBORHOOD"
+    };
 
-      this.fields = {
-        id: document.getElementById("sidebar-id"),
-        title: document.getElementById("sidebar-title"),
-        layer: document.getElementById("sidebar-layer"),
-        date: document.getElementById("sidebar-date"),
-        category: document.getElementById("sidebar-category"),
-        desc: document.getElementById("sidebar-desc"),
-        connCount: document.getElementById("sidebar-connections-count"),
-        connBar: document.getElementById("sidebar-connections-bar"),
-        tags: document.getElementById("sidebar-tags"),
-      };
-
-      this._init();
+    function setText(element, value, fallback = "—") {
+        if (!element) return;
+        const normalized = value === null || value === undefined || value === ""
+            ? fallback
+            : String(value);
+        element.textContent = normalized;
     }
 
-    _listen(target, type, handler, options) {
-      if (!target || !target.addEventListener) return;
-      target.addEventListener(type, handler, options);
-      this._listeners.push({ target, type, handler, options });
+    function clearChildren(element) {
+        if (!element) return;
+        while (element.firstChild) element.removeChild(element.firstChild);
     }
 
-    _unlistenAll() {
-      this._listeners.forEach(({ target, type, handler, options }) => {
-        try {
-          target.removeEventListener(type, handler, options);
-        } catch (_) {
+    function formatMetric(value, fallback = "0") {
+        const number = Number(value);
+        if (!Number.isFinite(number)) return fallback;
+        return new Intl.NumberFormat("zh-CN", { maximumFractionDigits: 2 }).format(number);
+    }
+
+    class CytoscapeGraphRenderer {
+        constructor(engine) {
+            if (!engine) throw new Error("Graph renderer requires an engine");
+            this.engine = engine;
+            this._listeners = [];
+            this._searchTimer = null;
+            this._searchSequence = 0;
+            this._searchItems = [];
+            this._activeSearchIndex = -1;
+            this._active = false;
+            this._busy = false;
+            this._detailNode = null;
+
+            this.elements = {
+                workbench: global.document.getElementById("graph-workbench"),
+                loading: global.document.getElementById("graph-loading"),
+                error: global.document.getElementById("graph-error"),
+                errorMessage: global.document.getElementById("graph-error-message"),
+                liveState: global.document.getElementById("graph-live-state"),
+                search: global.document.getElementById("graph-search"),
+                searchResults: global.document.getElementById("graph-search-results"),
+                searchStatus: global.document.getElementById("graph-search-status"),
+                detail: global.document.getElementById("graph-detail"),
+                detailClose: global.document.getElementById("graph-detail-close"),
+                detailFocus: global.document.getElementById("detail-focus-node"),
+                detailKicker: global.document.getElementById("detail-kicker"),
+                detailCommunityStatus: global.document.getElementById("detail-community-status"),
+                detailCommunityPulse: global.document.getElementById("detail-community-pulse"),
+                detailCommunityInsights: global.document.getElementById("detail-community-insights"),
+                detailCommunityMembers: global.document.getElementById("detail-community-members"),
+                detailCommunityLinks: global.document.getElementById("detail-community-links"),
+                detailCommunityMemberCount: global.document.getElementById("detail-community-member-count"),
+                stageMode: global.document.getElementById("stage-mode-label"),
+                capacity: global.document.getElementById("graph-capacity"),
+                consoleScope: global.document.getElementById("console-scope"),
+                zoomLevel: global.document.getElementById("graph-zoom-level"),
+                stats: {
+                    nodes: global.document.getElementById("stat-visible-nodes"),
+                    edges: global.document.getElementById("stat-visible-edges"),
+                    articles: global.document.getElementById("stat-total-articles"),
+                    mode: global.document.getElementById("stat-mode"),
+                    generatedAt: global.document.getElementById("stat-generated-at")
+                },
+                detailFields: {
+                    name: global.document.getElementById("detail-name"),
+                    id: global.document.getElementById("detail-id"),
+                    layer: global.document.getElementById("detail-layer"),
+                    category: global.document.getElementById("detail-category"),
+                    description: global.document.getElementById("detail-description"),
+                    articles: global.document.getElementById("detail-articles"),
+                    degree: global.document.getElementById("detail-degree"),
+                    weightedDegree: global.document.getElementById("detail-weighted-degree"),
+                    rank: global.document.getElementById("detail-rank"),
+                    community: global.document.getElementById("detail-community")
+                },
+                detailLabels: {
+                    id: global.document.getElementById("detail-label-id"),
+                    layer: global.document.getElementById("detail-label-layer"),
+                    category: global.document.getElementById("detail-label-category"),
+                    community: global.document.getElementById("detail-label-community"),
+                    articles: global.document.getElementById("detail-label-articles"),
+                    degree: global.document.getElementById("detail-label-degree"),
+                    weightedDegree: global.document.getElementById("detail-label-weighted-degree"),
+                    rank: global.document.getElementById("detail-label-rank")
+                }
+            };
+            this.modeButtons = Array.from(global.document.querySelectorAll("[data-graph-mode]"));
+            this.layerInputs = Array.from(global.document.querySelectorAll("[data-graph-layer]"));
+
+            this.activate();
         }
-      });
-      this._listeners = [];
-    }
 
-    _init() {
-      this._bindToolbar();
-      this._bindSearch();
-      this._bindSidebar();
-      this._renderFilters();
-      this._bindEvents();
-      this._startLiveStats();
-      this._setStoryIdle();
-    }
+        activate() {
+            if (this._active) return this;
+            this._active = true;
+            this._bindToolbar();
+            this._bindModes();
+            this._bindLayers();
+            this._bindSearch();
+            this._bindDetail();
+            this._bindEngineEvents();
+            this._bindKeyboardShortcuts();
 
-    _bindToolbar() {
-      const zoomIn = document.getElementById("btn-zoom-in");
-      this._listen(zoomIn, "click", () => {
-        this.engine.zoomIn();
-      });
-
-      const zoomOut = document.getElementById("btn-zoom-out");
-      this._listen(zoomOut, "click", () => {
-        this.engine.zoomOut();
-      });
-
-      const reset = document.getElementById("btn-reset");
-      this._listen(reset, "click", () => {
-        this.engine.resetView();
-        this._closeSidebar();
-      });
-
-      const fit = document.getElementById("btn-fit");
-      this._listen(fit, "click", () => {
-        this.engine.fitToScreen();
-      });
-    }
-
-    _bindSearch() {
-      if (!this.searchInput) return;
-      this._listen(this.searchInput, "input", (e) => {
-        this.engine.search(e.target.value);
-      });
-    }
-
-    _bindSidebar() {
-      const close = document.getElementById("btn-close-sidebar");
-      this._listen(close, "click", () => {
-        this._closeSidebar();
-      });
-
-      const focus = document.getElementById("btn-focus-node");
-      this._listen(focus, "click", () => {
-        if (this.engine.selectedNode) {
-          this.engine.focusNode(this.engine.selectedNode.data('id'));
+            Promise.resolve(this.engine.ready)
+                .then(() => this._syncReadyState())
+                .catch((error) => this._showError(error));
+            return this;
         }
-      });
-    }
 
-    _renderFilters() {
-      if (!this.filterContainer) return;
-      this.filterContainer.innerHTML = "";
+        _listen(target, type, handler, options) {
+            if (!target?.addEventListener) return;
+            target.addEventListener(type, handler, options);
+            this._listeners.push({ target, type, handler, options });
+        }
 
-      const layers = this.engine.data.layers;
-      const sortedLayers = Object.entries(layers).sort((a, b) => a[1].level - b[1].level);
-
-      sortedLayers.forEach(([key, layer]) => {
-        const btn = document.createElement("button");
-        btn.className = "flex items-center gap-1 bg-surface-dark text-slate-400 text-[10px] px-2 py-0.5 rounded border border-surface-border hover:border-primary/50 hover:text-primary transition-colors";
-        btn.innerHTML = `
-          <div class="size-1.5 rounded-full" style="background-color: ${layer.color}"></div>
-          <span>${layer.name}</span>
-        `;
-
-        let isActive = this.engine?.visibleLayers?.has(key);
-        btn.style.opacity = isActive ? "1" : "0.4";
-        this._listen(btn, "click", () => {
-          const next = !isActive;
-          btn.disabled = true;
-          Promise.resolve(this.engine.toggleLayer(key))
-            .then(() => {
-              isActive = next;
-              btn.style.opacity = isActive ? "1" : "0.4";
-            })
-            .finally(() => {
-              btn.disabled = false;
+        _bindToolbar() {
+            this._listen(global.document.getElementById("btn-zoom-in"), "click", () => {
+                this.engine.zoomIn();
             });
-        });
-
-        this.filterContainer.appendChild(btn);
-      });
-
-      this.filterContainer.classList.remove("hidden");
-    }
-
-    _clearTyping() {
-      if (this._typing?.timer) {
-        clearTimeout(this._typing.timer);
-      }
-      if (this._typing?.caret && this._typing.caret.parentNode) {
-        this._typing.caret.remove();
-      }
-      this._typing = null;
-    }
-
-    _typeText(el, text, opts = {}) {
-      if (!el) return;
-      const reduceMotion = global.matchMedia && global.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      const raw = (text || "").toString();
-      const maxLen = typeof opts.maxLen === "number" ? opts.maxLen : 420;
-      const content = raw.length > maxLen ? `${raw.slice(0, maxLen)}…` : raw;
-
-      this._clearTyping();
-
-      if (reduceMotion) {
-        el.textContent = content;
-        return;
-      }
-
-      el.textContent = "";
-      const textNode = document.createTextNode("");
-      const caret = document.createElement("span");
-      caret.textContent = "▍";
-      caret.className = "blink";
-      caret.style.marginLeft = "2px";
-      caret.style.color = "rgba(77,182,172,0.9)";
-      el.appendChild(textNode);
-      el.appendChild(caret);
-
-      const speed = typeof opts.speed === "number" ? opts.speed : 14;
-      const jitter = typeof opts.jitter === "number" ? opts.jitter : 10;
-      const startDelay = typeof opts.startDelay === "number" ? opts.startDelay : 60;
-      let i = 0;
-
-      const step = () => {
-        if (!this._typing || this._typing.el !== el) return;
-        i = Math.min(content.length, i + 1);
-        textNode.nodeValue = content.slice(0, i);
-        if (i >= content.length) {
-          caret.remove();
-          this._typing = null;
-          return;
+            this._listen(global.document.getElementById("btn-zoom-out"), "click", () => {
+                this.engine.zoomOut();
+            });
+            this._listen(global.document.getElementById("btn-fit"), "click", () => {
+                this.engine.fitToScreen();
+            });
+            this._listen(global.document.getElementById("btn-reset"), "click", async () => {
+                try {
+                    await this.engine.resetView();
+                    this._closeDetail();
+                    this._clearSearch();
+                } catch (error) {
+                    this._showError(error);
+                }
+            });
         }
-        this._typing.timer = setTimeout(step, speed + Math.floor(Math.random() * jitter));
-      };
 
-      this._typing = {
-        el,
-        caret,
-        timer: setTimeout(step, startDelay),
-      };
-    }
-
-    _openSidebar(node) {
-      if (!this.sidebar) return;
-
-      this.fields.id.textContent = `HEX_${node.id.toUpperCase().substring(0, 6)}`;
-      this.fields.title.textContent = node.name;
-      this.fields.layer.textContent = node.layerName || "UNKNOWN LAYER";
-      this.fields.layer.style.color = node.color;
-
-      if (this.fields.date) this.fields.date.textContent = this._formatTs().slice(0, 10);
-      this._typeText(
-        this.fields.desc,
-        node.description || "No secure data available for this node. Access restricted or packet loss detected.",
-        { speed: 12, jitter: 16, startDelay: 80, maxLen: 520 }
-      );
-      this.fields.category.textContent = (node.category || "General").toUpperCase();
-
-      const linkCount = node.connections || node.degree || 0;
-      this.fields.connCount.textContent = linkCount;
-      const pct = Math.min(100, linkCount * 10);
-      this.fields.connBar.style.width = `${pct}%`;
-
-      this.fields.tags.innerHTML = "";
-      const tags = [node.layer, node.category, "SECURE"];
-      tags.forEach(tag => {
-        const span = document.createElement("span");
-        span.className = "px-2 py-1 rounded bg-surface-border/50 text-slate-300 text-xs border border-transparent";
-        span.textContent = `#${tag.toUpperCase()}`;
-        this.fields.tags.appendChild(span);
-      });
-
-      this.sidebar.classList.remove("hidden-panel");
-    }
-
-    _closeSidebar() {
-      if (this.sidebar) {
-        this.sidebar.classList.add("hidden-panel");
-      }
-      this._clearTyping();
-      this.engine.selectedNode = null;
-    }
-
-    _setStoryIdle() {
-      if (!this.storyDock || !this.storyFields?.lines) return;
-      if (this.storyFields.title) this.storyFields.title.textContent = "GRAPH_SESSION";
-      if (this.storyFields.subtitle) this.storyFields.subtitle.textContent = "SECTOR_ID: AI_STACK // MODE: MAP";
-      if (this.storyFields.status) this.storyFields.status.textContent = "LIVE";
-      this.storyFields.lines.innerHTML = [
-        "<div>BOOTSTRAP: LINK_STATUS=STABLE</div>",
-        "<div>TIP: HOVER NODE TO TRACE ROUTES</div>",
-        "<div>TIP: CLICK NODE TO LOCK FOCUS</div>",
-      ].join("");
-    }
-
-    _formatTs(d = new Date()) {
-      const pad = (n) => String(n).padStart(2, "0");
-      return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())} ${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`;
-    }
-
-    _updateStory(node, mode) {
-      if (!this.storyDock || !this.storyFields?.lines) return;
-      if (!node) {
-        this._setStoryIdle();
-        return;
-      }
-
-      const ts = this._formatTs();
-      const linkCount = node.connections || node.degree || 0;
-      const layerName = (node.layerName || node.layer || "UNKNOWN").toString().toUpperCase();
-      const tag = mode === "select" ? "FOCUS_LOCK" : "TRACE";
-
-      if (this.storyFields.title) this.storyFields.title.textContent = node.name || "UNKNOWN_NODE";
-      if (this.storyFields.subtitle) this.storyFields.subtitle.textContent = `LAYER: ${layerName} // LINKS: ${linkCount}`;
-      if (this.storyFields.status) this.storyFields.status.textContent = mode === "select" ? "LOCKED" : "LIVE";
-
-      const lines = [
-        `${ts} // ${tag}::${layerName}`,
-        `NODE_ID=HEX_${String(node.id || "").toUpperCase().substring(0, 6)}`,
-        `SIGNAL=OK // ROUTES=${linkCount}`,
-        `DESC=${(node.description || "NO_SECURE_PAYLOAD").toString().slice(0, 72)}`,
-      ];
-      this.storyFields.lines.innerHTML = lines.map((l) => `<div>${l}</div>`).join("");
-    }
-
-    _bindEvents() {
-      this._listen(this.engine.container, "nodeSelect", (e) => {
-        if (e.detail) {
-          this._openSidebar(e.detail);
-          this._updateStory(e.detail, "select");
+        _bindModes() {
+            this.modeButtons.forEach((button) => {
+                this._listen(button, "click", async () => {
+                    if (this._busy) return;
+                    const mode = button.dataset.graphMode;
+                    if (!mode) return;
+                    this._setBusy(true);
+                    try {
+                        await this.engine.setMode(mode);
+                    } catch (error) {
+                        this._showError(error);
+                    } finally {
+                        this._setBusy(false);
+                    }
+                });
+            });
         }
-      });
 
-      this._listen(this.engine.container, "nodeHover", (e) => {
-        if (this.engine.selectedNode) return;
-        this._updateStory(e.detail, "hover");
-      });
-
-      this._listen(document, "keydown", (e) => {
-        if (e.key === "Escape") {
-          this._closeSidebar();
-          this._setStoryIdle();
+        _bindLayers() {
+            this.layerInputs.forEach((input) => {
+                this._listen(input, "change", async () => {
+                    const layer = input.dataset.graphLayer;
+                    if (!layer) return;
+                    input.disabled = true;
+                    try {
+                        const visible = await this.engine.toggleLayer(layer);
+                        input.checked = visible;
+                        this._updateStats();
+                    } catch (error) {
+                        input.checked = !input.checked;
+                        this._showError(error);
+                    } finally {
+                        input.disabled = false;
+                    }
+                });
+            });
         }
-      });
-    }
 
-    _startLiveStats() {
-      const pingEl = document.getElementById("sys-ping");
-      const memEl = document.getElementById("sys-mem");
+        _bindSearch() {
+            const input = this.elements.search;
+            if (!input) return;
+            this._listen(input, "input", () => {
+                if (this._searchTimer) global.clearTimeout(this._searchTimer);
+                const query = input.value;
+                if (!query.trim()) {
+                    this._clearSearch(false);
+                    this.engine.search("").catch(() => {});
+                    return;
+                }
+                const sequence = ++this._searchSequence;
+                setText(this.elements.searchStatus, "正在搜索…", "");
+                this._searchTimer = global.setTimeout(async () => {
+                    try {
+                        const items = await this.engine.search(query);
+                        if (sequence !== this._searchSequence) return;
+                        this._renderSearchResults(items);
+                    } catch (error) {
+                        if (sequence !== this._searchSequence) return;
+                        this._renderSearchResults([]);
+                        this._showError(error);
+                    }
+                }, 100);
+            });
 
-      if (!pingEl || !memEl) return;
-
-      this._liveStatsTimer = setInterval(() => {
-        const ping = 8 + Math.floor(Math.random() * 24);
-        pingEl.textContent = `${ping}ms`;
-
-        if (Math.random() > 0.9) {
-          const mem = 60 + Math.floor(Math.random() * 5);
-          memEl.textContent = `${mem}TB`;
+            this._listen(input, "keydown", (event) => {
+                if (event.key === "ArrowDown") {
+                    event.preventDefault();
+                    this._moveSearchSelection(1);
+                } else if (event.key === "ArrowUp") {
+                    event.preventDefault();
+                    this._moveSearchSelection(-1);
+                } else if (event.key === "Enter") {
+                    if (this._searchItems.length === 0) return;
+                    event.preventDefault();
+                    const index = this._activeSearchIndex >= 0 ? this._activeSearchIndex : 0;
+                    this._chooseSearchResult(this._searchItems[index]);
+                } else if (event.key === "Escape") {
+                    event.preventDefault();
+                    this._clearSearch();
+                    this.engine.clearSelection();
+                }
+            });
         }
-      }, 2000);
+
+        _bindDetail() {
+            this._listen(this.elements.detailClose, "click", () => {
+                this.engine.clearSelection();
+                this._closeDetail();
+            });
+            this._listen(this.elements.detailFocus, "click", async () => {
+                const nodeId = this.engine.selectedNodeId;
+                if (!nodeId || this._busy) return;
+                this._setBusy(true);
+                try {
+                    if (this._detailNode?.layer === "community") {
+                        if (this.engine.expandedCommunityId === nodeId) this.engine.fitToScreen();
+                        else await this.engine.expandCommunity(nodeId);
+                    } else {
+                        await this.engine.focusNode(nodeId);
+                    }
+                } catch (error) {
+                    this._showError(error);
+                } finally {
+                    this._setBusy(false);
+                }
+            });
+        }
+
+        _bindEngineEvents() {
+            const container = this.engine.container;
+            this._listen(container, "graph:ready", (event) => this._syncReadyState(event.detail));
+            this._listen(container, "graph:modechange", (event) => {
+                const mode = event.detail?.mode || this.engine.mode;
+                this._setActiveMode(mode);
+                this._updateStats(event.detail);
+                this._syncLayerInputs();
+            });
+            this._listen(container, "graph:selectionchange", (event) => {
+                const node = event.detail?.node || null;
+                if (node) this._openDetail(node);
+                else this._closeDetail();
+                this._syncFocusControls(Boolean(node));
+                this._updateStats();
+            });
+            this._listen(container, "graph:layerchange", () => {
+                this._syncLayerInputs();
+                this._updateStats();
+            });
+            this._listen(container, "graph:viewportchange", (event) => {
+                const zoom = Number(event.detail?.zoom);
+                if (Number.isFinite(zoom)) {
+                    setText(this.elements.zoomLevel, `${Math.round(zoom * 100)}%`);
+                }
+            });
+            this._listen(container, "graph:error", (event) => {
+                this._showError(event.detail?.message || "图谱操作失败");
+            });
+            this._listen(container, "graph:progress", (event) => {
+                const progress = Number(event.detail?.progress);
+                if (Number.isFinite(progress)) {
+                    setText(this.elements.liveState, `同步 ${Math.max(0, Math.min(100, progress))}%`);
+                }
+            });
+        }
+
+        _bindKeyboardShortcuts() {
+            this._listen(global.document, "keydown", (event) => {
+                if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k") {
+                    event.preventDefault();
+                    this.elements.search?.focus();
+                    this.elements.search?.select();
+                    return;
+                }
+                if (event.key === "Escape" && global.document.activeElement !== this.elements.search) {
+                    this.engine.clearSelection();
+                    this._closeDetail();
+                }
+            });
+        }
+
+        _renderSearchResults(items) {
+            const list = this.elements.searchResults;
+            if (!list) return;
+            clearChildren(list);
+            this._searchItems = Array.isArray(items) ? items.slice(0, 10) : [];
+            this._activeSearchIndex = -1;
+
+            this._searchItems.forEach((item, index) => {
+                const option = global.document.createElement("li");
+                option.id = `graph-search-option-${index}`;
+                option.setAttribute("role", "option");
+                option.setAttribute("aria-selected", "false");
+
+                const button = global.document.createElement("button");
+                button.type = "button";
+                button.className = "graph-search-result";
+                const title = global.document.createElement("span");
+                title.className = "graph-search-result__name";
+                title.textContent = String(item.name || item.id || "未知节点");
+                const meta = global.document.createElement("span");
+                meta.className = "graph-search-result__meta";
+                const rank = Number(item.rank) > 0 ? ` · #${item.rank}` : "";
+                meta.textContent = `${item.layer || "node"}${rank}`;
+                button.append(title, meta);
+                this._listen(button, "click", () => this._chooseSearchResult(item));
+                option.appendChild(button);
+                list.appendChild(option);
+            });
+
+            const hasResults = this._searchItems.length > 0;
+            list.hidden = !hasResults;
+            this.elements.search?.setAttribute("aria-expanded", String(hasResults));
+            setText(
+                this.elements.searchStatus,
+                hasResults ? `找到 ${this._searchItems.length} 个结果` : "未找到匹配节点",
+                ""
+            );
+        }
+
+        _moveSearchSelection(delta) {
+            if (this._searchItems.length === 0) return;
+            const length = this._searchItems.length;
+            this._activeSearchIndex = (this._activeSearchIndex + delta + length) % length;
+            const options = Array.from(this.elements.searchResults?.querySelectorAll("[role='option']") || []);
+            options.forEach((option, index) => {
+                const active = index === this._activeSearchIndex;
+                option.setAttribute("aria-selected", String(active));
+                option.classList.toggle("is-active", active);
+                if (active) option.scrollIntoView({ block: "nearest" });
+            });
+            const active = options[this._activeSearchIndex];
+            if (active) this.elements.search?.setAttribute("aria-activedescendant", active.id);
+        }
+
+        async _chooseSearchResult(item) {
+            if (!item?.id || this._busy) return;
+            this._setBusy(true);
+            this._hideSearchResults();
+            try {
+                await this.engine.focusNode(item.id);
+            } catch (error) {
+                this._showError(error);
+            } finally {
+                this._setBusy(false);
+            }
+        }
+
+        _hideSearchResults() {
+            if (this.elements.searchResults) this.elements.searchResults.hidden = true;
+            this.elements.search?.setAttribute("aria-expanded", "false");
+            this.elements.search?.removeAttribute("aria-activedescendant");
+            this._activeSearchIndex = -1;
+        }
+
+        _clearSearch(clearInput = true) {
+            this._searchSequence += 1;
+            if (this._searchTimer) {
+                global.clearTimeout(this._searchTimer);
+                this._searchTimer = null;
+            }
+            if (clearInput && this.elements.search) this.elements.search.value = "";
+            clearChildren(this.elements.searchResults);
+            this._searchItems = [];
+            this._hideSearchResults();
+            setText(this.elements.searchStatus, "", "");
+        }
+
+        _openDetail(node) {
+            const fields = this.elements.detailFields;
+            const labels = this.elements.detailLabels;
+            const isCommunity = node.layer === "community";
+            const insight = isCommunity
+                ? this.engine.getCommunityInsights(node.id)
+                : null;
+            this._detailNode = node;
+            setText(fields.name, node.name || node.id);
+            setText(fields.id, node.id);
+            setText(fields.layer, isCommunity ? "标签社区" : (node.layerName || node.layer));
+            setText(fields.category, isCommunity ? "聚合社区" : (node.category || "general"));
+            setText(
+                fields.description,
+                node.description || (isCommunity
+                    ? `${node.name || "当前"}社区汇聚 ${formatMetric(insight.memberCount)} 个标签热点，按真实关联强度展示与相邻社区的共现流。`
+                    : "该节点暂无摘要。"),
+                "该节点暂无摘要。"
+            );
+            setText(
+                fields.degree,
+                formatMetric(isCommunity
+                    ? (node.node_count ?? insight.memberCount ?? node.degree)
+                    : (node.degree ?? node.connections))
+            );
+            setText(
+                fields.articles,
+                formatMetric(isCommunity
+                    ? insight.topMembers.length
+                    : (node.article_count ?? node.articles))
+            );
+            setText(
+                fields.weightedDegree,
+                formatMetric(isCommunity
+                    ? insight.connectionStrength
+                    : node.weighted_degree)
+            );
+            setText(fields.rank, Number(node.rank) > 0 ? `#${node.rank}` : "—");
+            setText(fields.community, isCommunity ? node.id : (node.community_id ?? node.community ?? "—"));
+            setText(this.elements.detailKicker, isCommunity ? "COMMUNITY INTELLIGENCE" : "NODE INTELLIGENCE");
+            setText(labels.id, isCommunity ? "社区 ID" : "ID");
+            setText(labels.layer, "图层");
+            setText(labels.category, "类别");
+            setText(labels.community, isCommunity ? "社区标识" : "社区");
+            setText(labels.articles, isCommunity ? "核心节点" : "文章");
+            setText(labels.degree, isCommunity ? "节点数量" : "连接");
+            setText(labels.weightedDegree, isCommunity ? "连接强度" : "加权度");
+            setText(labels.rank, isCommunity ? "社区排名" : "排名");
+            if (this.elements.detailCommunityStatus) {
+                this.elements.detailCommunityStatus.hidden = !isCommunity;
+                setText(
+                    this.elements.detailCommunityStatus,
+                    isCommunity && Number(node.rank) > 0
+                        ? String(Number(node.rank)).padStart(2, "0")
+                        : "—"
+                );
+            }
+            if (this.elements.detailCommunityPulse) {
+                this.elements.detailCommunityPulse.hidden = !isCommunity;
+                const state = this.elements.detailCommunityPulse.querySelector("strong");
+                setText(
+                    state,
+                    isCommunity && this.engine.expandedCommunityId === node.id
+                        ? "活跃 · 已展开"
+                        : "活跃 · 聚合态"
+                );
+            }
+            if (this.elements.detailCommunityInsights) {
+                this.elements.detailCommunityInsights.hidden = !isCommunity;
+            }
+            if (isCommunity) this._renderCommunityInsights(insight);
+            else {
+                clearChildren(this.elements.detailCommunityMembers);
+                clearChildren(this.elements.detailCommunityLinks);
+            }
+            setText(
+                this.elements.detailFocus,
+                isCommunity
+                    ? (this.engine.expandedCommunityId === node.id ? "适配社区势场" : "展开中心热点")
+                    : "进入节点邻域"
+            );
+
+            const panel = this.elements.detail;
+            if (!panel) return;
+            panel.dataset.detailKind = isCommunity ? "community" : "node";
+            panel.classList.toggle("is-community", isCommunity);
+            this.elements.workbench?.classList.add("has-detail");
+            panel.hidden = false;
+            panel.setAttribute("aria-hidden", "false");
+            panel.classList.remove("animate__fadeOutRight");
+            panel.classList.add("animate__fadeInRight", "is-open");
+        }
+
+        _renderCommunityInsights(insight) {
+            const members = this.elements.detailCommunityMembers;
+            const links = this.elements.detailCommunityLinks;
+            clearChildren(members);
+            clearChildren(links);
+            setText(
+                this.elements.detailCommunityMemberCount,
+                `${formatMetric(insight?.memberCount)} 节点`
+            );
+
+            (insight?.topMembers || []).slice(0, 6).forEach((member) => {
+                const item = global.document.createElement("li");
+                const rank = global.document.createElement("span");
+                rank.className = "detail-intel-list__rank";
+                rank.setAttribute("aria-hidden", "true");
+                const name = global.document.createElement("strong");
+                name.textContent = String(member.name || member.id || "未知热点");
+                const metric = global.document.createElement("span");
+                metric.className = "detail-intel-list__metric";
+                const score = member.weightedDegree || member.degree || member.articleCount || 0;
+                metric.textContent = score > 0 ? formatMetric(score) : "热点";
+                item.append(rank, name, metric);
+                members?.appendChild(item);
+            });
+
+            (insight?.relatedCommunities || []).slice(0, 4).forEach((related) => {
+                const item = global.document.createElement("li");
+                const arrow = global.document.createElement("img");
+                arrow.className = "detail-intel-list__arrow";
+                arrow.src = String(links?.dataset.arrowIcon || "/vendor/material-symbols/arrow-forward.svg");
+                arrow.alt = "";
+                arrow.width = 16;
+                arrow.height = 16;
+                const name = global.document.createElement("strong");
+                name.textContent = String(related.name || related.id || "关联社区");
+                const metric = global.document.createElement("span");
+                metric.className = "detail-intel-list__metric";
+                metric.textContent = formatMetric(related.weight);
+                item.append(arrow, name, metric);
+                links?.appendChild(item);
+            });
+        }
+
+        _closeDetail() {
+            this._detailNode = null;
+            this.elements.workbench?.classList.remove("has-detail");
+            const panel = this.elements.detail;
+            if (!panel) return;
+            panel.classList.remove("animate__fadeInRight", "is-open");
+            panel.setAttribute("aria-hidden", "true");
+            panel.hidden = true;
+        }
+
+        _setBusy(busy) {
+            this._busy = Boolean(busy);
+            this.modeButtons.forEach((button) => {
+                button.disabled = this._busy;
+            });
+            if (this.elements.detailFocus) {
+                this.elements.detailFocus.disabled = this._busy || !this.engine.selectedNodeId;
+            }
+            setText(this.elements.liveState, this._busy ? "计算中" : "在线");
+        }
+
+        _setActiveMode(mode) {
+            this.modeButtons.forEach((button) => {
+                const active = button.dataset.graphMode === mode;
+                button.classList.toggle("is-active", active);
+                button.setAttribute("aria-pressed", String(active));
+            });
+            setText(this.elements.stats.mode, MODE_LABELS[mode] || mode);
+            setText(this.elements.stageMode, STAGE_LABELS[mode] || String(mode).toUpperCase());
+            this.elements.workbench?.classList.remove(
+                "is-mode-overview",
+                "is-mode-community",
+                "is-mode-focus"
+            );
+            this.elements.workbench?.classList.add(`is-mode-${mode}`);
+        }
+
+        _syncFocusControls(hasSelection) {
+            const focusButton = this.modeButtons.find((button) => button.dataset.graphMode === "focus");
+            if (focusButton) focusButton.disabled = this._busy;
+            if (this.elements.detailFocus) this.elements.detailFocus.disabled = this._busy || !hasSelection;
+        }
+
+        _syncLayerInputs() {
+            this.layerInputs.forEach((input) => {
+                input.checked = this.engine.visibleLayers.has(input.dataset.graphLayer);
+            });
+        }
+
+        _syncReadyState() {
+            if (!this.engine?.cy || this.engine.isDestroyed) return;
+            if (this.elements.loading) this.elements.loading.hidden = true;
+            if (this.elements.error) this.elements.error.hidden = true;
+            setText(this.elements.liveState, "在线");
+            this._setActiveMode(this.engine.mode || "overview");
+            this._syncLayerInputs();
+            this._syncFocusControls(Boolean(this.engine.selectedNodeId));
+            setText(this.elements.zoomLevel, `${Math.round((this.engine.cy?.zoom?.() || 1) * 100)}%`);
+            this._updateStats();
+        }
+
+        _updateStats(detail = {}) {
+            const visibleNodes = detail.visibleNodes ?? this.engine.cy?.nodes(":visible")?.length ?? 0;
+            const visibleEdges = detail.visibleEdges ?? this.engine.cy?.edges(":visible")?.length ?? 0;
+            const stats = this.engine.data?.stats || {};
+            const totalArticles = stats.total_articles ?? stats.tag_stats?.total_articles ?? 0;
+            setText(this.elements.stats.nodes, formatMetric(visibleNodes));
+            setText(this.elements.stats.edges, formatMetric(visibleEdges));
+            setText(this.elements.stats.articles, formatMetric(totalArticles));
+            setText(this.elements.stats.mode, MODE_LABELS[this.engine.mode] || this.engine.mode);
+            setText(this.elements.stats.generatedAt, this._formatGeneratedAt(this.engine.data?.generated_at));
+            setText(
+                this.elements.capacity,
+                `${MODE_LABELS[this.engine.mode] || "当前"}预算：${visibleNodes} 节点 / ${visibleEdges} 连线`
+            );
+            setText(
+                this.elements.consoleScope,
+                `${MODE_LABELS[this.engine.mode] || "当前"}范围：${visibleNodes} 节点 / ${visibleEdges} 连线`
+            );
+        }
+
+        _formatGeneratedAt(value) {
+            if (!value) return "—";
+            const date = new Date(value);
+            if (Number.isNaN(date.getTime())) return String(value);
+            return new Intl.DateTimeFormat("zh-CN", {
+                year: "numeric",
+                month: "2-digit",
+                day: "2-digit",
+                hour: "2-digit",
+                minute: "2-digit",
+                hour12: false
+            }).format(date);
+        }
+
+        _showError(error) {
+            const message = error?.message || String(error || "图谱操作失败");
+            setText(this.elements.errorMessage, message);
+            if (this.elements.error) this.elements.error.hidden = false;
+            setText(this.elements.liveState, "连接失败");
+        }
+
+        destroy() {
+            if (!this._active) return;
+            this._active = false;
+            this._searchSequence += 1;
+            if (this._searchTimer) global.clearTimeout(this._searchTimer);
+            this._searchTimer = null;
+            this._listeners.forEach(({ target, type, handler, options }) => {
+                target.removeEventListener?.(type, handler, options);
+            });
+            this._listeners = [];
+            this._searchItems = [];
+            this.elements.workbench?.classList.remove("has-detail");
+            this.engine = null;
+        }
     }
 
-    destroy() {
-      this._clearTyping();
-      if (this._liveStatsTimer) {
-        clearInterval(this._liveStatsTimer);
-        this._liveStatsTimer = null;
-      }
-      this._unlistenAll();
-      this.engine = null;
-    }
-  }
-
-  global.CytoscapeGraphRenderer = CytoscapeGraphRenderer;
-
+    global.CytoscapeGraphRenderer = CytoscapeGraphRenderer;
 })(typeof window !== "undefined" ? window : this);

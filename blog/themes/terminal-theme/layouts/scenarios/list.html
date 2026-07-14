@@ -1,363 +1,252 @@
-<!DOCTYPE html>
-<html class="dark" lang="{{ .Site.LanguageCode }}">
-
+<!doctype html>
+<html lang="{{ .Site.LanguageCode }}" class="dark graph-page">
 <head>
-    {{ partial "site-head.html" (dict "Page" . "Description" "NEXUS ARCHIVE - Knowledge Graph Visualization" "Styles" (slice "/css/graph.css")) }}
-
-    <style>
-        @keyframes rain-fall {
-            0% {
-                background-position: 0 0;
-            }
-
-            100% {
-                background-position: 20px 100vh;
-            }
-        }
-
-        .rain-layer {
-            background-image: linear-gradient(to bottom, rgba(13, 242, 242, 0) 0%, rgba(13, 242, 242, 0.05) 50%, rgba(13, 242, 242, 0) 100%);
-            background-size: 2px 200px;
-            background-repeat: repeat;
-            animation: rain-fall 1s linear infinite;
-            opacity: 0.15;
-            pointer-events: none;
-        }
-
-        .text-glow {
-            text-shadow: 0 0 10px rgba(13, 242, 242, 0.5);
-        }
-
-        /* Graph container specific */
-        .graph-container {
-            width: 100%;
-            height: 100%;
-            position: relative;
-        }
-
-        canvas {
-            display: block;
-            outline: none;
-        }
-
-        /* Sidebar transitions */
-        .sidebar-panel {
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .sidebar-panel.hidden-panel {
-            transform: translateX(100%);
-        }
-
-        /* Loading animation */
-        .loader-ring {
-            border: 2px solid rgba(13, 242, 242, 0.1);
-            border-left-color: #0df2f2;
-            border-radius: 50%;
-            width: 24px;
-            height: 24px;
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        .blink {
-            animation: blinker 1s linear infinite;
-        }
-
-        @keyframes blinker {
-            50% {
-                opacity: 0;
-            }
-        }
-    </style>
-
+{{- $graphAssetVersion := "20260714-production-v11" -}}
+{{- $graphStyles := slice
+  ("vendor/animate.css/animate-4.1.1.min.css" | relURL)
+  (printf "%s?v=%s" ("css/graph.css" | relURL) $graphAssetVersion)
+-}}
+{{- $graphScripts := slice
+  ("vendor/cytoscape/cytoscape-3.34.0.min.js" | relURL)
+  ("vendor/dagre/dagre-0.8.5.min.js" | relURL)
+  ("js/cytoscape-dagre.js" | relURL)
+  (printf "%s?v=%s" ("js/cytoscape-graph-engine.js" | relURL) $graphAssetVersion)
+  (printf "%s?v=%s" ("js/cytoscape-graph-renderer.js" | relURL) $graphAssetVersion)
+  (printf "%s?v=%s" ("js/graph-workbench.js" | relURL) $graphAssetVersion)
+-}}
+{{ partial "site-head.html" (dict
+  "Page" .
+  "Title" (printf "%s · %s" .Title .Site.Title)
+  "Description" "AI Stack 动态场景知识图谱：从技术总览到社区与节点邻域的渐进探索。"
+  "Styles" $graphStyles
+  "Scripts" $graphScripts
+) }}
+  <meta name="theme-color" content="#060a14">
 </head>
+<body class="graph-body">
+  <div class="graph-atmosphere" aria-hidden="true">
+    <div class="graph-grid"></div>
+    <div class="graph-glow graph-glow--teal"></div>
+    <div class="graph-glow graph-glow--amber"></div>
+    <div class="graph-scanlines"></div>
+  </div>
 
-<body
-    class="bg-deep-navy text-off-white font-display overflow-hidden relative selection:bg-muted-teal selection:text-deep-navy">
+  <div class="graph-shell">
+    <header class="w-full border-b border-muted-teal/20 bg-deep-navy sticky top-0 z-40">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        <div class="flex items-center gap-3 text-primary">
+          <span class="material-symbols-outlined text-2xl">terminal</span>
+          <h2 class="text-xl font-bold tracking-widest">{{ .Site.Title }}</h2>
+        </div>
+        <nav class="hidden md:flex gap-8 text-xs font-medium tracking-widest text-off-white/60" aria-label="主导航">
+          {{ range .Site.Menus.main }}
+          <a class="hover:text-primary transition-colors" href="{{ .URL | relURL }}">{{ .Name }}</a>
+          {{ end }}
+        </nav>
+        <div class="flex items-center gap-3">
+          <div class="hidden lg:flex flex-col border-l border-muted-teal/10 pl-3">
+            <span class="text-muted-teal/50 text-[10px] tracking-normal">更新</span>
+            <span class="font-medium text-off-white text-[11px] font-mono">1h</span>
+          </div>
+          <a href="{{ .Site.Params.github }}"
+            class="hidden sm:flex items-center px-3 py-1.5 border border-muted-teal/30 rounded text-[11px] text-primary font-bold tracking-wide bg-muted-teal/5 hover:bg-muted-teal/10 transition-colors">
+            安全连接
+          </a>
+          <a href="{{ "index.xml" | relURL }}"
+            class="bg-muted-teal/10 hover:bg-muted-teal/20 text-off-white p-2 rounded border border-muted-teal/20 transition-all"
+            aria-label="订阅 RSS">
+            <span class="material-symbols-outlined text-sm block">rss_feed</span>
+          </a>
+          <div class="flex items-center gap-2 pl-2 border-l border-muted-teal/10">
+            <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+            <span class="text-[10px] tracking-wider text-green-500 font-mono">SYS_STABLE</span>
+          </div>
+        </div>
+      </div>
+    </header>
 
-    <div class="rain-container">
-        <div class="rain-streak r1"></div>
-        <div class="rain-streak r2"></div>
-        <div class="rain-streak r3"></div>
-        <div class="rain-streak r4"></div>
-        <div class="rain-streak r5"></div>
-        <div class="rain-streak r6"></div>
-        <div class="rain-streak r7"></div>
-        <div class="rain-streak r8"></div>
-        <div class="rain-streak r9"></div>
-        <div class="rain-streak r10"></div>
-    </div>
-    <div class="fog-container">
-        <div class="fog-cloud animate-fog" style="top: 10%; left: -20%;"></div>
-        <div class="fog-grey animate-fog-slow" style="top: 40%; right: -20%;"></div>
-        <div class="fog-teal animate-smoke" style="top: 18%; left: -40%; opacity: 0.65;"></div>
-        <div class="fog-amber animate-smoke-reverse" style="top: 55%; right: -35%; opacity: 0.55;"></div>
-    </div>
-    <div class="ambient-glow"></div>
-    <div class="scanlines"></div>
+    <main
+      id="graph-workbench"
+      class="graph-workbench"
+      data-index-url="{{ printf "%s?v=%s" ("data/tag-graph/index.json" | relURL) $graphAssetVersion }}"
+      data-worker-url="{{ printf "%s?v=%s" ("js/data-parser-worker.js" | relURL) $graphAssetVersion }}"
+    >
+      <h1 class="sr-only">{{ .Title }}</h1>
 
-    <!-- Frame Overlay -->
-    <div class="frame-overlay hidden md:block">
-        <div class="frame-corner tl"></div>
-        <div class="frame-corner tr"></div>
-        <div class="frame-corner bl"></div>
-        <div class="frame-corner br"></div>
-        <div class="frame-label top-left">LINK_STATUS: STABLE // ENCODING: UTF-8</div>
-        <div class="frame-label bottom-right">SECTOR_ID: AI_STACK // MODE: GRAPH</div>
-    </div>
+      <section class="graph-console" aria-label="知识图谱控制台">
+        <div class="console-heading">
+          <div>
+            <p class="console-kicker">INTELLIGENCE TOPOLOGY</p>
+            <h2>动态场景知识图谱</h2>
+          </div>
+          <span id="graph-live-state" class="console-state" aria-live="polite">同步中</span>
+        </div>
 
-    <div class="relative flex h-screen w-full flex-col overflow-hidden z-10">
-        <header class="w-full border-b border-muted-teal/20 bg-deep-navy sticky top-0 z-40">
-            <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-                <div class="flex items-center gap-3 text-primary">
-                    <span class="material-symbols-outlined text-2xl">terminal</span>
-                    <h2 class="text-xl font-bold tracking-widest">{{ .Site.Title }}</h2>
-                </div>
-                <nav class="hidden md:flex gap-8 text-xs font-medium tracking-widest text-off-white/60">
-                    {{ range .Site.Menus.main }}
-                    <a class="hover:text-primary transition-colors" href="{{ .URL }}">{{ .Name }}</a>
-                    {{ end }}
-                </nav>
-                <div class="flex items-center gap-3">
-                    <div class="hidden lg:flex flex-col border-l border-muted-teal/10 pl-3">
-                        <span class="text-muted-teal/50 text-[10px] tracking-normal">时间</span>
-                        <span id="current-time" class="font-medium text-off-white text-[11px] font-mono">--:--:--</span>
-                    </div>
-                    <a href="{{ .Site.Params.github }}"
-                        class="hidden sm:flex items-center px-3 py-1.5 border border-muted-teal/30 rounded text-[11px] text-primary font-bold tracking-wide bg-muted-teal/5 hover:bg-muted-teal/10 transition-colors">
-                        安全连接
-                    </a>
-                    <a href="/index.xml"
-                        class="bg-muted-teal/10 hover:bg-muted-teal/20 text-off-white p-2 rounded border border-muted-teal/20 transition-all"
-                        aria-label="RSS">
-                        <span class="material-symbols-outlined text-sm block">rss_feed</span>
-                    </a>
-                    <div class="flex items-center gap-2 pl-2 border-l border-muted-teal/10">
-                        <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-                        <span class="text-[10px] tracking-wider text-green-500 font-mono">SYS_STABLE</span>
-                    </div>
-                </div>
+        <div class="mode-switcher" role="group" aria-label="图谱探索模式">
+          <button type="button" class="mode-button is-active" data-graph-mode="overview" aria-pressed="true">
+            <span>01</span> 技术总览
+          </button>
+          <button type="button" class="mode-button" data-graph-mode="community" aria-pressed="false">
+            <span>02</span> 标签社区
+          </button>
+          <button type="button" class="mode-button" data-graph-mode="focus" aria-pressed="false"
+            aria-describedby="focus-mode-hint" title="查看当前节点的强关联邻域；未选择时从最高排名节点开始">
+            <span>03</span> 节点邻域
+          </button>
+          <p id="focus-mode-hint" class="sr-only">查看当前节点的强关联邻域；未选择节点时从最高排名节点开始。</p>
+        </div>
+
+        <div class="graph-search animate__animated animate__fadeInUp">
+          <label for="graph-search">搜索技术、标签或概念</label>
+          <div class="graph-search__field">
+            <input
+              id="graph-search"
+              type="search"
+              role="combobox"
+              aria-autocomplete="list"
+              aria-controls="graph-search-results"
+              aria-expanded="false"
+              autocomplete="off"
+              spellcheck="false"
+              placeholder="例如：API、RAG、Agent"
+            >
+            <kbd>⌘ K</kbd>
+          </div>
+          <ul id="graph-search-results" class="graph-search-results" role="listbox" aria-label="搜索结果" hidden></ul>
+          <p id="graph-search-status" class="sr-only" aria-live="polite"></p>
+        </div>
+
+        <details class="console-section animate__animated animate__fadeIn" open>
+          <summary>图层筛选</summary>
+          <div class="layer-filters" role="group" aria-label="可见图层">
+            <label><input type="checkbox" data-graph-layer="language" aria-label="语言" checked><span class="layer-dot layer-dot--language"></span>语言</label>
+            <label><input type="checkbox" data-graph-layer="framework" aria-label="框架" checked><span class="layer-dot layer-dot--framework"></span>框架</label>
+            <label><input type="checkbox" data-graph-layer="model" aria-label="模型" checked><span class="layer-dot layer-dot--model"></span>模型</label>
+            <label><input type="checkbox" data-graph-layer="application" aria-label="应用" checked><span class="layer-dot layer-dot--application"></span>应用</label>
+            <label><input type="checkbox" data-graph-layer="scenario" aria-label="场景" checked><span class="layer-dot layer-dot--scenario"></span>场景</label>
+            <label><input type="checkbox" data-graph-layer="tag" aria-label="标签" checked><span class="layer-dot layer-dot--tag"></span>标签</label>
+            <label><input type="checkbox" data-graph-layer="concept" aria-label="概念" checked><span class="layer-dot layer-dot--concept"></span>概念</label>
+          </div>
+        </details>
+
+        <section class="console-section graph-telemetry" aria-labelledby="telemetry-heading">
+          <div class="section-heading">
+            <h3 id="telemetry-heading">实时遥测</h3>
+            <span id="stat-mode">总览</span>
+          </div>
+          <dl>
+            <div><dt>可见节点</dt><dd id="stat-visible-nodes">—</dd></div>
+            <div><dt>可见连线</dt><dd id="stat-visible-edges">—</dd></div>
+            <div><dt>归档文章</dt><dd id="stat-total-articles">—</dd></div>
+            <div><dt>生成时间</dt><dd id="stat-generated-at">—</dd></div>
+          </dl>
+        </section>
+
+        <p id="console-scope" class="console-hint">总览范围：核心图 / 分层加载</p>
+      </section>
+
+      <section class="graph-stage" aria-label="知识图谱画布">
+        <div id="graph-container" class="graph-container" tabindex="0" aria-label="可缩放的知识图谱。使用搜索选择节点，或点击画布节点查看详情。"></div>
+
+        <div class="graph-stage__mode-chip" aria-hidden="true">
+          <img src="{{ "vendor/material-symbols/center-focus-strong.svg" | relURL }}" width="16" height="16" alt="">
+          <span>社区总览</span>
+        </div>
+
+        <div id="graph-loading" class="graph-state graph-state--loading animate__animated animate__fadeIn" role="status" aria-live="polite">
+          <span class="graph-loader" aria-hidden="true"></span>
+          <strong>正在建立图谱链路</strong>
+          <small>仅载入轻量核心拓扑</small>
+        </div>
+
+        <div id="graph-error" class="graph-state graph-state--error animate__animated animate__fadeInUp" role="alert" hidden>
+          <strong>图谱链路中断</strong>
+          <p id="graph-error-message">数据暂时不可用。</p>
+          <button type="button" id="graph-retry">重新连接</button>
+        </div>
+
+        <div class="graph-stage__meta" aria-hidden="true">
+          <span>SEMANTIC ZOOM</span>
+          <span id="stage-mode-label">OVERVIEW / CORE ONLY</span>
+        </div>
+
+        <div class="graph-toolbar" role="group" aria-label="图谱视图控制">
+          <button type="button" id="btn-fit" aria-label="适配可见图谱">
+            <img src="{{ "vendor/material-symbols/fullscreen.svg" | relURL }}" width="19" height="19" alt="">
+          </button>
+          <button type="button" id="btn-zoom-out" aria-label="缩小图谱">
+            <img src="{{ "vendor/material-symbols/zoom-out.svg" | relURL }}" width="19" height="19" alt="">
+          </button>
+          <output id="graph-zoom-level" aria-live="polite">100%</output>
+          <button type="button" id="btn-zoom-in" aria-label="放大图谱">
+            <img src="{{ "vendor/material-symbols/zoom-in.svg" | relURL }}" width="19" height="19" alt="">
+          </button>
+          <button type="button" id="btn-reset" aria-label="重置图谱与选择">
+            <img src="{{ "vendor/material-symbols/center-focus-strong.svg" | relURL }}" width="19" height="19" alt="">
+          </button>
+        </div>
+
+        <p class="graph-capacity" id="graph-capacity" aria-live="polite">首屏预算：核心节点 / 核心连线</p>
+      </section>
+
+      <aside id="graph-detail" class="graph-detail animate__animated" data-detail-kind="node" aria-labelledby="detail-name" aria-hidden="true" hidden>
+        <div class="graph-detail__header">
+          <div>
+            <p id="detail-kicker">NODE INTELLIGENCE</p>
+            <div class="graph-detail__title-row">
+              <h2 id="detail-name">节点详情</h2>
+              <span id="detail-community-status" class="detail-community-status" hidden>活跃</span>
             </div>
-        </header>
+          </div>
+          <button type="button" id="graph-detail-close" aria-label="关闭节点详情">
+            <img src="{{ "vendor/material-symbols/close.svg" | relURL }}" width="20" height="20" alt="">
+          </button>
+        </div>
 
-        <main class="flex-1 relative flex overflow-hidden">
-            <h1 class="sr-only">{{ .Title }}</h1>
-            <div class="absolute inset-0 pointer-events-none">
-                <div class="absolute inset-0 bg-grid-pattern bg-[length:44px_44px] opacity-[0.07]"></div>
-                <div
-                    class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(38,166,154,0.08)_0%,rgba(6,10,20,0.92)_62%,rgba(6,10,20,1)_100%)]">
-                </div>
+        <div class="graph-detail__body">
+          <p id="detail-community-pulse" class="detail-community-pulse" hidden>
+            <span>社区状态</span><strong>已展开</strong>
+          </p>
+
+          <dl class="detail-identity">
+            <div><dt id="detail-label-id">ID</dt><dd id="detail-id">—</dd></div>
+            <div><dt id="detail-label-layer">图层</dt><dd id="detail-layer">—</dd></div>
+            <div><dt id="detail-label-category">类别</dt><dd id="detail-category">—</dd></div>
+            <div><dt id="detail-label-community">社区</dt><dd id="detail-community">—</dd></div>
+          </dl>
+
+          <section class="detail-summary-section">
+            <h3>情报摘要</h3>
+            <p id="detail-description">选择节点后显示真实图谱数据。</p>
+          </section>
+
+          <section class="detail-metric-section">
+            <h3>节点指标</h3>
+            <dl class="detail-metrics">
+              <div><dt id="detail-label-articles">文章</dt><dd id="detail-articles">0</dd></div>
+              <div><dt id="detail-label-degree">连接</dt><dd id="detail-degree">0</dd></div>
+              <div><dt id="detail-label-weighted-degree">加权度</dt><dd id="detail-weighted-degree">0</dd></div>
+              <div><dt id="detail-label-rank">排名</dt><dd id="detail-rank">—</dd></div>
+            </dl>
+          </section>
+
+          <section id="detail-community-insights" class="detail-community-insights" hidden>
+            <div class="detail-list-block">
+              <div class="detail-list-heading"><h3>核心节点</h3><span id="detail-community-member-count">0</span></div>
+              <ol id="detail-community-members" class="detail-intel-list"></ol>
             </div>
-
-            <!-- Graph Viewport -->
-            <div class="absolute inset-0 z-10 overflow-hidden flex items-center justify-center" id="graph-viewport">
-                <div id="graph-container" class="graph-container">
-                    <!-- Graph UI 2.0 is integrated from its protected branch after the static product cutover. -->
-                    <div id="graph-loading"
-                        class="absolute inset-0 flex items-center justify-center pointer-events-none z-50"
-                        role="status" aria-live="polite">
-                        <div
-                            class="flex flex-col items-center gap-3 bg-background-dark/80 p-6 rounded-lg border border-surface-border backdrop-blur-md">
-                            <span
-                                class="text-primary/60 text-xs font-mono tracking-widest">GRAPH_UI_PENDING_INTEGRATION</span>
-                        </div>
-                    </div>
-                </div>
+            <div class="detail-list-block">
+              <div class="detail-list-heading"><h3>主要关联</h3><span>关联流</span></div>
+              <ul id="detail-community-links" class="detail-intel-list detail-intel-list--links" data-arrow-icon="{{ "vendor/material-symbols/arrow-forward.svg" | relURL }}"></ul>
             </div>
+          </section>
 
-            <div class="absolute top-6 left-6 z-40 w-80 max-w-[calc(100vw-3rem)]">
-                <div
-                    class="bg-terminal-bg/70 backdrop-blur-xl border border-muted-teal/15 rounded-lg p-1 shadow-lg shadow-black/50">
-                    <div class="flex items-center px-3 py-2 gap-3">
-                        <span class="material-symbols-outlined text-off-white/40 text-lg">search</span>
-                        <input id="graph-search"
-                            class="bg-transparent border-none focus:ring-0 text-primary placeholder:text-off-white/25 text-sm font-mono w-full p-0 h-8 uppercase tracking-wider"
-                            placeholder="FILTER_NODES..." type="text" autocomplete="off" />
-                    </div>
-                    <!-- Active Filters Container -->
-                    <div id="active-filters"
-                        class="flex flex-wrap gap-2 px-3 pb-2 pt-1 border-t border-muted-teal/10 hidden">
-                        <!-- Filters injected via JS -->
-                    </div>
-                </div>
-            </div>
+          <button type="button" id="detail-focus-node" class="detail-focus-button">进入节点邻域</button>
+        </div>
+      </aside>
+    </main>
+  </div>
 
-            <aside id="story-dock"
-                class="hidden lg:flex absolute top-6 right-6 z-30 w-[340px] flex-col gap-3 terminal-glass rounded-xl p-4 border border-muted-teal/15">
-                <div class="flex items-start justify-between gap-4">
-                    <div class="min-w-0">
-                        <div class="text-primary/75 text-[10px] font-mono tracking-[0.2em]">MISSION_LOG</div>
-                        <div id="story-title" class="text-off-white/85 text-sm tracking-wide mt-1 truncate">
-                            GRAPH_SESSION</div>
-                        <div id="story-subtitle"
-                            class="text-off-white/35 text-[10px] font-mono tracking-wide mt-0.5 truncate">
-                            SECTOR_ID: AI_STACK // MODE: MAP
-                        </div>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <span
-                            class="w-1.5 h-1.5 rounded-full bg-primary/80 shadow-[0_0_10px_rgba(77,182,172,0.45)]"></span>
-                        <span id="story-status" class="text-[10px] font-mono text-primary/60 tracking-wider">SNAPSHOT</span>
-                    </div>
-                </div>
-                <div class="h-px w-full bg-gradient-to-r from-muted-teal/25 to-transparent"></div>
-                <div class="flex flex-col gap-2">
-                    <div class="text-off-white/35 text-[10px] font-mono tracking-wide">RIGHT_CHANNEL</div>
-                    <div id="story-lines" class="space-y-2 text-[11px] font-mono text-off-white/60 leading-relaxed">
-                        <div>BOOTSTRAP: LINK_STATUS=STABLE</div>
-                        <div>TIP: HOVER NODE TO TRACE ROUTES</div>
-                        <div>TIP: CLICK NODE TO LOCK FOCUS</div>
-                    </div>
-                </div>
-            </aside>
-
-            <!-- Orbital Controls (Bottom Center) -->
-            <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-40">
-                <div
-                    class="flex items-center gap-1 bg-surface-dark/90 backdrop-blur-md border border-surface-border rounded-lg p-1.5 shadow-[0_0_30px_rgba(0,0,0,0.8)]">
-                    <button id="btn-zoom-in"
-                        class="w-10 h-10 flex items-center justify-center rounded text-slate-400 hover:text-primary hover:bg-primary/10 transition-colors"
-                        title="Zoom In">
-                        <span class="material-symbols-outlined">add</span>
-                    </button>
-                    <button id="btn-zoom-out"
-                        class="w-10 h-10 flex items-center justify-center rounded text-slate-400 hover:text-primary hover:bg-primary/10 transition-colors"
-                        title="Zoom Out">
-                        <span class="material-symbols-outlined">remove</span>
-                    </button>
-                    <div class="w-px h-6 bg-surface-border mx-1"></div>
-                    <button id="btn-reset"
-                        class="w-10 h-10 flex items-center justify-center rounded text-slate-400 hover:text-primary hover:bg-primary/10 transition-colors"
-                        title="Reset View">
-                        <span class="material-symbols-outlined">center_focus_strong</span>
-                    </button>
-                    <button id="btn-fit"
-                        class="w-10 h-10 flex items-center justify-center rounded text-primary bg-primary/10 hover:bg-primary/20 transition-colors border border-primary/20 shadow-[0_0_10px_rgba(13,242,242,0.1)]"
-                        title="Fit to Screen">
-                        <span class="material-symbols-outlined">crop_free</span>
-                    </button>
-                </div>
-                <div class="text-center mt-2">
-                    <p class="text-[10px] text-primary/40 font-mono tracking-[0.2em] uppercase">Orbital_Controls</p>
-                </div>
-            </div>
-
-            <!-- Detail Sidebar (Right) -->
-            <aside id="detail-sidebar"
-                class="sidebar-panel hidden-panel fixed top-0 bottom-0 right-0 w-full sm:w-[420px] md:w-[460px] lg:w-[520px] z-50 bg-surface-dark/95 backdrop-blur-xl border-l border-surface-border shadow-2xl flex flex-col">
-                <!-- Header -->
-                <div class="px-6 py-5 border-b border-surface-border flex justify-between items-start bg-black/20">
-                    <div>
-                        <h3 class="text-primary text-[10px] tracking-[0.2em] font-bold mb-1 opacity-70 font-mono">
-                            DATA_PACKET_ID: <span id="sidebar-id">#UNKNOWN</span></h3>
-                        <h2 class="text-white text-xl font-bold leading-tight tracking-wide">NODE_DETAILS</h2>
-                    </div>
-                    <button id="btn-close-sidebar" class="text-slate-500 hover:text-primary transition-colors">
-                        <span class="material-symbols-outlined">close</span>
-                    </button>
-                </div>
-
-                <!-- Content -->
-                <div class="flex-1 overflow-y-auto px-6 py-6 space-y-6 custom-scrollbar">
-                    <!-- Title Section -->
-                    <div class="space-y-4">
-                        <div
-                            class="flex items-center gap-2 text-primary/60 text-xs font-mono border border-primary/20 rounded px-2 py-1 w-fit bg-primary/5">
-                            <span class="material-symbols-outlined text-sm">public</span>
-                            <span id="sidebar-layer">STATUS: ACTIVE</span>
-                        </div>
-                        <h2 id="sidebar-title"
-                            class="text-2xl font-bold text-white tracking-wide font-display text-glow">
-                            Node Title</h2>
-                        <div class="flex flex-wrap gap-4 text-xs text-slate-400 font-mono">
-                            <span class="flex items-center gap-1">
-                                <span class="material-symbols-outlined text-[14px]">calendar_today</span>
-                                <span id="sidebar-date">2026-01-24</span>
-                            </span>
-                            <span class="flex items-center gap-1">
-                                <span class="material-symbols-outlined text-[14px]">category</span>
-                                <span id="sidebar-category">UNCATEGORIZED</span>
-                            </span>
-                        </div>
-                    </div>
-
-                    <!-- Abstract -->
-                    <div class="space-y-3">
-                        <h4
-                            class="text-primary text-xs font-bold tracking-[0.1em] border-b border-surface-border pb-1 mb-2 font-mono">
-                            ABSTRACT_SUMMARY</h4>
-                        <div
-                            class="bg-black/20 border border-surface-border rounded-lg p-4 min-h-[160px] md:min-h-[190px]">
-                            <p id="sidebar-desc"
-                                class="text-slate-200 text-[15px] leading-6 font-light font-display whitespace-pre-wrap">
-                                Awaiting data retrieval...
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Metrics -->
-                    <div class="space-y-2">
-                        <div class="flex justify-between text-[10px] text-primary font-mono">
-                            <span>DATA_CHECKSUM</span>
-                            <span>98.4%</span>
-                        </div>
-                        <div class="h-1 w-full bg-surface-border rounded-full overflow-hidden">
-                            <div class="h-full bg-primary w-[98%] shadow-[0_0_10px_#0df2f2]"></div>
-                        </div>
-                        <div class="flex justify-between text-[10px] text-primary font-mono pt-2">
-                            <span>CONNECTION_STRENGTH</span>
-                            <span id="sidebar-connections-count">-</span>
-                        </div>
-                        <div class="h-1 w-full bg-surface-border rounded-full overflow-hidden">
-                            <div id="sidebar-connections-bar"
-                                class="h-full bg-primary w-[0%] shadow-[0_0_10px_#0df2f2] transition-all duration-1000">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Linked Nodes (Tags) -->
-                    <div class="space-y-3">
-                        <h4
-                            class="text-primary text-xs font-bold tracking-[0.1em] border-b border-surface-border pb-1 font-mono">
-                            SYSTEM_TAGS</h4>
-                        <div id="sidebar-tags" class="flex flex-wrap gap-2">
-                            <!-- Tags injected here -->
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Footer Action -->
-                <div class="p-6 border-t border-surface-border bg-black/20">
-                    <button id="btn-focus-node"
-                        class="w-full flex items-center justify-center gap-2 bg-primary/10 hover:bg-primary/20 text-primary border border-primary/30 font-bold py-3 px-4 rounded transition-all tracking-widest shadow-[0_0_15px_rgba(13,242,242,0.1)] hover:shadow-[0_0_20px_rgba(13,242,242,0.3)]">
-                        <span class="material-symbols-outlined">center_focus_weak</span>
-                        FOCUS_NODE
-                    </button>
-                </div>
-            </aside>
-
-            <!-- System Status Overlay (Bottom Right) -->
-            <div class="fixed bottom-6 right-6 z-20 hidden md:block opacity-50 pointer-events-none select-none">
-                <div class="text-[10px] text-primary font-mono text-right leading-tight">
-                    SYS.DIAGNOSTICS<br />
-                    MEM: <span id="sys-mem">64TB</span> // OK<br />
-                    NET: SECURE // <span id="sys-ping" class="animate-pulse">12ms</span>
-                </div>
-            </div>
-
-        </main>
-    </div>
-
+  <noscript>该知识图谱需要 JavaScript 才能运行。</noscript>
 </body>
-
 </html>

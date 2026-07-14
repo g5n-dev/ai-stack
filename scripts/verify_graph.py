@@ -1,133 +1,171 @@
+#!/usr/bin/env python3
+"""Fast graph workbench smoke test with a minimal Hugo content fixture."""
+
+from __future__ import annotations
+
+import argparse
+import functools
 import http.server
-import socketserver
+import shutil
+import subprocess
+import sys
+import tempfile
 import threading
-import time
-from playwright.sync_api import sync_playwright
+from pathlib import Path
 
-PORT = 13131
-DIRECTORY = "blog/public"
-SCREENSHOT_PATH = "blog/tmp_scenarios_sidebar.png"
 
-class Handler(http.server.SimpleHTTPRequestHandler):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, directory=DIRECTORY, **kwargs)
+ROOT = Path(__file__).resolve().parents[1]
+BLOG = ROOT / "blog"
+FIXTURE_CONTENT = ROOT / "tests" / "fixtures" / "hugo_content"
 
-def start_server():
-    with socketserver.TCPServer(("", PORT), Handler) as httpd:
-        print(f"Serving at http://localhost:{PORT}")
-        httpd.serve_forever()
 
-def verify():
-    # Start server in background
-    server_thread = threading.Thread(target=start_server, daemon=True)
-    server_thread.start()
-    time.sleep(2) # Wait for server to start
+class QuietHandler(http.server.SimpleHTTPRequestHandler):
+    def log_message(self, _format: str, *args: object) -> None:
+        return
 
-    with sync_playwright() as p:
-        browser = p.chromium.launch()
-        page = browser.new_page(viewport={"width": 1280, "height": 720})
-        
-        print(f"Navigating to http://localhost:{PORT}/scenarios/")
-        
-        # Capture console logs
-        page.on("console", lambda msg: print(f"BROWSER CONSOLE [{msg.type}]: {msg.text}"))
-        page.on("pageerror", lambda exc: print(f"BROWSER UNCAUGHT ERROR: {exc}"))
 
-        try:
-            response = page.goto(f"http://localhost:{PORT}/scenarios/")
-            print(f"Page load status: {response.status}")
-            
-            # Wait a bit for JS to run
-            time.sleep(3)
-            
-            # Check for Graph Container
-            container = page.query_selector("#graph-container")
-            if container:
-                print("SUCCESS: #graph-container found.")
-            else:
-                print("FAILURE: #graph-container NOT found.")
+def build_fixture(destination: Path) -> None:
+    if not shutil.which("hugo"):
+        raise RuntimeError("Hugo is not installed")
+    subprocess.run(
+        [
+            "hugo",
+            "--source",
+            str(BLOG),
+            "--contentDir",
+            str(FIXTURE_CONTENT),
+            "--destination",
+            str(destination),
+            "--cleanDestinationDir",
+            "--noBuildLock",
+            "--minify",
+        ],
+        cwd=ROOT,
+        check=True,
+        capture_output=True,
+        text=True,
+    )
 
-            # Check for Canvas (GraphEngine output)
-            canvas = page.query_selector("#graph-container canvas")
-            if canvas:
-                print("SUCCESS: Graph Canvas found. Engine initialized.")
-            else:
-                print("FAILURE: Graph Canvas NOT found.")
 
-            # Open sidebar by simulating a nodeSelect event
-            node_id = page.evaluate(
+def verify(public_dir: Path, screenshot: Path | None = None) -> list[str]:
+    from playwright.sync_api import sync_playwright
+
+    failures: list[str] = []
+    handler = functools.partial(QuietHandler, directory=str(public_dir))
+    server = http.server.ThreadingHTTPServer(("127.0.0.1", 0), handler)
+    thread = threading.Thread(target=server.serve_forever, daemon=True)
+    thread.start()
+    url = f"http://127.0.0.1:{server.server_port}/scenarios/"
+
+    try:
+        with sync_playwright() as playwright:
+            browser = playwright.chromium.launch()
+            page = browser.new_page(viewport={"width": 1280, "height": 720})
+            page.on("pageerror", lambda error: failures.append(f"page error: {error}"))
+            page.on(
+                "requestfailed",
+                lambda request: failures.append(
+                    f"request failed: {request.url} ({request.failure})"
+                ),
+            )
+
+            def capture_console(message) -> None:
+                text = message.text
+                if message.type == "error" or "invalid selector" in text.casefold():
+                    failures.append(f"console {message.type}: {text}")
+
+            page.on("console", capture_console)
+
+            response = page.goto(url, wait_until="domcontentloaded")
+            if response is None or response.status != 200:
+                failures.append(f"unexpected navigation status: {getattr(response, 'status', None)}")
+
+            try:
+                page.wait_for_selector("#graph-workbench.is-ready", timeout=20_000)
+                page.wait_for_function(
+                    "window.graphEngine && graphEngine.cy && graphEngine.cy.nodes().length > 0",
+                    timeout=20_000,
+                )
+            except Exception as exc:
+                failures.append(f"graph did not become ready: {exc}")
+
+            runtime = page.evaluate(
                 """() => {
                   const engine = window.graphEngine;
-                  if (!engine || !engine.data || !Array.isArray(engine.data.nodes)) return null;
-                  const prefer = engine.data.nodes.find(n => n && n.layer === "tag") || engine.data.nodes[0];
-                  return prefer ? prefer.id : null;
+                  return {
+                    canvas: Boolean(document.querySelector('#graph-container canvas')),
+                    nodeCount: engine?.cy?.nodes().length || 0,
+                    edgeCount: engine?.cy?.edges().length || 0,
+                    api: ['setMode', 'focusNode', 'clearSelection', 'pause', 'resume', 'destroy']
+                      .every((name) => typeof engine?.[name] === 'function')
+                  };
                 }"""
             )
-            if node_id:
-                print(f"Selecting node: {node_id}")
-                page.evaluate(
-                    """(id) => {
-                      const engine = window.graphEngine;
-                      if (!engine) return;
-                      const node = engine.getNodeInfo(id);
-                      if (!node) return;
-                      engine.container.dispatchEvent(new CustomEvent("graph:nodeSelect", { detail: node, bubbles: true }));
-                    }""",
-                    node_id,
-                )
-                page.wait_for_selector("#detail-sidebar:not(.hidden-panel)", timeout=5000)
-                time.sleep(1)
+            if not runtime["canvas"]:
+                failures.append("Cytoscape canvas is missing")
+            if runtime["nodeCount"] <= 0:
+                failures.append("no graph nodes were rendered")
+            if not runtime["api"]:
+                failures.append("public graph engine API is incomplete")
 
-                sidebar_metrics = page.evaluate(
-                    """() => {
-                      const sidebar = document.getElementById("detail-sidebar");
-                      const desc = document.getElementById("sidebar-desc");
-                      const descWrap = desc ? desc.parentElement : null;
-                      const s = sidebar ? sidebar.getBoundingClientRect() : null;
-                      const d = desc ? desc.getBoundingClientRect() : null;
-                      const w = descWrap ? descWrap.getBoundingClientRect() : null;
-                      const style = desc ? getComputedStyle(desc) : null;
-                      return {
-                        sidebar: s ? { width: s.width, height: s.height } : null,
-                        desc: d ? { width: d.width, height: d.height } : null,
-                        descWrap: w ? { width: w.width, height: w.height } : null,
-                        fontSize: style ? style.fontSize : null,
-                        lineHeight: style ? style.lineHeight : null,
-                        descTextLen: desc ? (desc.textContent || "").trim().length : 0,
-                      };
-                    }"""
-                )
-                print(f"Sidebar metrics: {sidebar_metrics}")
+            if runtime["nodeCount"] > 0:
+                page.evaluate("() => graphEngine.cy.nodes().first().emit('tap')")
+                try:
+                    page.wait_for_selector('#graph-detail[aria-hidden="false"]', timeout=5_000)
+                except Exception as exc:
+                    failures.append(f"node detail did not open: {exc}")
+                detail = page.locator("#detail-name").inner_text().strip()
+                if not detail or detail == "节点详情":
+                    failures.append("selected node detail is empty")
+                page.wait_for_timeout(450)
 
-                page.screenshot(path=SCREENSHOT_PATH, full_page=True)
-                print(f"Saved screenshot: {SCREENSHOT_PATH}")
+            if screenshot:
+                screenshot.parent.mkdir(parents=True, exist_ok=True)
+                page.screenshot(path=str(screenshot), full_page=True)
 
-                if sidebar_metrics.get("sidebar") and sidebar_metrics["sidebar"]["width"] < 380:
-                    print("FAILURE: Sidebar width too small.")
-                if sidebar_metrics.get("descWrap") and sidebar_metrics["descWrap"]["height"] < 180:
-                    print("FAILURE: Description box height too small.")
-                if sidebar_metrics.get("descTextLen", 0) == 0:
-                    print("FAILURE: Description text missing.")
-            else:
-                print("FAILURE: Could not find a node id to select for sidebar test.")
-
-            # Check for Loading Error Message
-            loading_msg = page.query_selector("#graph-loading span")
-            if loading_msg:
-                text = loading_msg.inner_text()
-                color = loading_msg.evaluate("el => getComputedStyle(el).color")
-                print(f"Loading Message: '{text}' (Color: {color})")
-                
-                if "ERR" in text or "rgb(239, 68, 68)" in color: # red-500 is ~ rgb(239, 68, 68)
-                    print("FAILURE: Error message detected in UI.")
-            else:
-                print("INFO: Loading message element not found (maybe removed on success?)")
-
-        except Exception as e:
-            print(f"TEST EXCEPTION: {e}")
-        
-        finally:
             browser.close()
+    finally:
+        server.shutdown()
+        server.server_close()
+        thread.join(timeout=2)
+
+    return failures
+
+
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--public-dir",
+        type=Path,
+        help="Use an existing Hugo public directory instead of building the minimal fixture.",
+    )
+    parser.add_argument("--screenshot", type=Path, help="Optional screenshot output path.")
+    return parser.parse_args()
+
+
+def main() -> int:
+    args = parse_args()
+    try:
+        if args.public_dir:
+            failures = verify(args.public_dir.resolve(), args.screenshot)
+        else:
+            with tempfile.TemporaryDirectory(prefix="ai-stack-graph-verify-") as tmp_dir:
+                public_dir = Path(tmp_dir) / "public"
+                build_fixture(public_dir)
+                failures = verify(public_dir, args.screenshot)
+    except Exception as exc:
+        print(f"FAIL: {exc}", file=sys.stderr)
+        return 1
+
+    if failures:
+        for failure in failures:
+            print(f"FAIL: {failure}", file=sys.stderr)
+        print(f"Graph verification failed with {len(failures)} issue(s).", file=sys.stderr)
+        return 1
+
+    print("Graph verification passed.")
+    return 0
+
 
 if __name__ == "__main__":
-    verify()
+    raise SystemExit(main())

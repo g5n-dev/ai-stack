@@ -86,13 +86,20 @@ def test_visible_build_identifiers_use_the_content_clock_not_wall_time() -> None
     assert "$buildTime.Year" in about
 
 
-def test_graph_template_is_a_non_executable_integration_placeholder() -> None:
+def test_graph_template_uses_the_self_hosted_progressive_runtime() -> None:
     template = (LAYOUT_ROOT / "scenarios/list.html").read_text(encoding="utf-8")
 
-    assert "GRAPH_UI_PENDING_INTEGRATION" in template
-    assert "cytoscape.min.js" not in template
-    assert "dagre.min.js" not in template
-    assert "graph-page.js" not in template
+    assert "GRAPH_UI_PENDING_INTEGRATION" not in template
+    assert 'id="graph-workbench"' in template
+    assert "cytoscape-3.34.0.min.js" in template
+    assert "dagre-0.8.5.min.js" in template
+    assert "cytoscape-graph-engine.js" in template
+    assert "cytoscape-graph-renderer.js" in template
+    assert "graph-workbench.js" in template
+    assert "data-parser-worker.js" in template
+    assert 'partial "site-head.html"' in template
+    assert "https://unpkg.com" not in template
+    assert "cdn.tailwindcss.com" not in template
 
 
 @pytest.mark.skipif(shutil.which("hugo") is None, reason="Hugo is not installed")

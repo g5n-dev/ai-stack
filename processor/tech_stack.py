@@ -32,12 +32,12 @@ TECH_LAYERS = {
     "application": {
         "name": "应用层",
         "level": 4,
-        "color": "#8b5cf6"
+        "color": "#7aa6b8"
     },
     "scenario": {
         "name": "场景层",
         "level": 5,
-        "color": "#ec4899"
+        "color": "#cbd5e1"
     }
 }
 
