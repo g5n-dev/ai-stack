@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-14T03:09:06Z",
+  "generated_at": "2026-07-14T04:42:01Z",
   "layer": "tag",
   "layers": {
     "application": {
@@ -3885,7 +3885,7 @@
       "strength": 1,
       "target": "tag:Claude Code",
       "type": "cooccurrence",
-      "weight": 81
+      "weight": 80
     },
     {
       "id": "edge:cooccurrence:tag:AI 编程->tag:Codex",
@@ -3893,7 +3893,7 @@
       "strength": 1,
       "target": "tag:Codex",
       "type": "cooccurrence",
-      "weight": 16
+      "weight": 15
     },
     {
       "id": "edge:cooccurrence:tag:AI 编程->tag:Copilot",
@@ -4037,7 +4037,7 @@
       "strength": 1,
       "target": "tag:OpenAI",
       "type": "cooccurrence",
-      "weight": 8
+      "weight": 7
     },
     {
       "id": "edge:cooccurrence:tag:AI 编程->tag:OpenClaw",
@@ -4205,7 +4205,7 @@
       "strength": 1,
       "target": "tag:大模型",
       "type": "cooccurrence",
-      "weight": 4
+      "weight": 3
     },
     {
       "id": "edge:cooccurrence:tag:AI 编程->tag:工作流",
@@ -4269,7 +4269,7 @@
       "strength": 1,
       "target": "tag:开发者工具",
       "type": "cooccurrence",
-      "weight": 18
+      "weight": 17
     },
     {
       "id": "edge:cooccurrence:tag:AI 编程->tag:开源",
@@ -6325,7 +6325,7 @@
       "strength": 1,
       "target": "tag:Codex",
       "type": "cooccurrence",
-      "weight": 2
+      "weight": 3
     },
     {
       "id": "edge:cooccurrence:tag:AI安全->tag:DeepSeek",
@@ -6365,7 +6365,7 @@
       "strength": 1,
       "target": "tag:LLM",
       "type": "cooccurrence",
-      "weight": 75
+      "weight": 76
     },
     {
       "id": "edge:cooccurrence:tag:AI安全->tag:Linux",
@@ -6917,7 +6917,7 @@
       "strength": 1,
       "target": "tag:隐私保护",
       "type": "cooccurrence",
-      "weight": 4
+      "weight": 5
     },
     {
       "id": "edge:cooccurrence:tag:AI安全->tag:鲁棒性",
@@ -9805,7 +9805,7 @@
       "strength": 1,
       "target": "tag:Claude Code",
       "type": "cooccurrence",
-      "weight": 18
+      "weight": 19
     },
     {
       "id": "edge:cooccurrence:tag:AI编程->tag:Codex",
@@ -9813,7 +9813,7 @@
       "strength": 1,
       "target": "tag:Codex",
       "type": "cooccurrence",
-      "weight": 27
+      "weight": 28
     },
     {
       "id": "edge:cooccurrence:tag:AI编程->tag:Copilot",
@@ -9925,7 +9925,7 @@
       "strength": 1,
       "target": "tag:OpenAI",
       "type": "cooccurrence",
-      "weight": 21
+      "weight": 22
     },
     {
       "id": "edge:cooccurrence:tag:AI编程->tag:OpenClaw",
@@ -10125,7 +10125,7 @@
       "strength": 1,
       "target": "tag:大模型",
       "type": "cooccurrence",
-      "weight": 12
+      "weight": 13
     },
     {
       "id": "edge:cooccurrence:tag:AI编程->tag:容器化",
@@ -19245,7 +19245,7 @@
       "strength": 1,
       "target": "tag:开发者工具",
       "type": "cooccurrence",
-      "weight": 14
+      "weight": 13
     },
     {
       "id": "edge:cooccurrence:tag:Claude Code->tag:开源项目",
@@ -19693,7 +19693,7 @@
       "strength": 1,
       "target": "tag:LLM",
       "type": "cooccurrence",
-      "weight": 41
+      "weight": 42
     },
     {
       "id": "edge:cooccurrence:tag:Codex->tag:MCP",
@@ -19925,7 +19925,7 @@
       "strength": 1,
       "target": "tag:开发者工具",
       "type": "cooccurrence",
-      "weight": 5
+      "weight": 4
     },
     {
       "id": "edge:cooccurrence:tag:Codex->tag:性能优化",
@@ -20142,6 +20142,14 @@
       "target": "tag:软件开发",
       "type": "cooccurrence",
       "weight": 2
+    },
+    {
+      "id": "edge:cooccurrence:tag:Codex->tag:隐私保护",
+      "source": "tag:Codex",
+      "strength": 0.5,
+      "target": "tag:隐私保护",
+      "type": "cooccurrence",
+      "weight": 1
     },
     {
       "id": "edge:cooccurrence:tag:Copilot->tag:Cursor",
@@ -26509,7 +26517,7 @@
       "strength": 1,
       "target": "tag:大模型",
       "type": "cooccurrence",
-      "weight": 41
+      "weight": 40
     },
     {
       "id": "edge:cooccurrence:tag:LLM->tag:大模型应用",
@@ -26605,7 +26613,7 @@
       "strength": 1,
       "target": "tag:开源",
       "type": "cooccurrence",
-      "weight": 72
+      "weight": 71
     },
     {
       "id": "edge:cooccurrence:tag:LLM->tag:开源工具",
@@ -27272,6 +27280,14 @@
       "weight": 16
     },
     {
+      "id": "edge:cooccurrence:tag:LLM->tag:语音合成",
+      "source": "tag:LLM",
+      "strength": 0.5,
+      "target": "tag:语音合成",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
       "id": "edge:cooccurrence:tag:LLM->tag:资源调度",
       "source": "tag:LLM",
       "strength": 1,
@@ -27341,7 +27357,7 @@
       "strength": 1,
       "target": "tag:隐私保护",
       "type": "cooccurrence",
-      "weight": 16
+      "weight": 17
     },
     {
       "id": "edge:cooccurrence:tag:LLM->tag:预训练",
@@ -30946,10 +30962,10 @@
     {
       "id": "edge:cooccurrence:tag:OpenAI->tag:开发者工具",
       "source": "tag:OpenAI",
-      "strength": 1,
+      "strength": 0.5,
       "target": "tag:开发者工具",
       "type": "cooccurrence",
-      "weight": 2
+      "weight": 1
     },
     {
       "id": "edge:cooccurrence:tag:OpenAI->tag:强化学习",
@@ -32869,7 +32885,7 @@
       "strength": 1,
       "target": "tag:大模型",
       "type": "cooccurrence",
-      "weight": 8
+      "weight": 7
     },
     {
       "id": "edge:cooccurrence:tag:Python->tag:工作流",
@@ -32917,7 +32933,7 @@
       "strength": 1,
       "target": "tag:开源",
       "type": "cooccurrence",
-      "weight": 13
+      "weight": 12
     },
     {
       "id": "edge:cooccurrence:tag:Python->tag:开源工具",
@@ -33138,10 +33154,10 @@
     {
       "id": "edge:cooccurrence:tag:Python->tag:语音合成",
       "source": "tag:Python",
-      "strength": 0.5,
+      "strength": 1,
       "target": "tag:语音合成",
       "type": "cooccurrence",
-      "weight": 1
+      "weight": 2
     },
     {
       "id": "edge:cooccurrence:tag:Python->tag:语音识别",
@@ -43181,7 +43197,7 @@
       "strength": 1,
       "target": "tag:开发者工具",
       "type": "cooccurrence",
-      "weight": 3
+      "weight": 2
     },
     {
       "id": "edge:cooccurrence:tag:大模型->tag:开源",
@@ -43189,7 +43205,7 @@
       "strength": 1,
       "target": "tag:开源",
       "type": "cooccurrence",
-      "weight": 13
+      "weight": 12
     },
     {
       "id": "edge:cooccurrence:tag:大模型->tag:开源工具",
@@ -43381,7 +43397,7 @@
       "strength": 1,
       "target": "tag:模型压缩",
       "type": "cooccurrence",
-      "weight": 4
+      "weight": 3
     },
     {
       "id": "edge:cooccurrence:tag:大模型->tag:模型发布",
@@ -54068,11 +54084,11 @@
       "weighted_degree": 343.6
     },
     {
-      "article_count": 222,
+      "article_count": 221,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
-      "degree": 468,
+      "degree": 466,
       "description": "AI 编程指利用人工智能技术辅助或自动完成代码生成、审查与调试等开发任务，正通过大模型与智能工具重塑软件工程流程与开发者体验。",
       "id": "tag:AI 编程",
       "layer": "tag",
@@ -54081,8 +54097,8 @@
       "level": 6,
       "name": "AI 编程",
       "rank": 16,
-      "related_count": 467,
-      "weighted_degree": 1554.6
+      "related_count": 465,
+      "weighted_degree": 1547.6
     },
     {
       "article_count": 41,
@@ -54153,11 +54169,11 @@
       "weighted_degree": 518.6
     },
     {
-      "article_count": 208,
+      "article_count": 209,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
-      "degree": 588,
+      "degree": 591,
       "description": "AI安全旨在确保人工智能系统在设计、部署和使用过程中免受恶意攻击、滥用或意外伤害，涵盖对抗性攻击防御、数据隐私保护、内容安全过滤及系统鲁棒性提升等领域。",
       "id": "tag:AI安全",
       "layer": "tag",
@@ -54166,8 +54182,8 @@
       "level": 6,
       "name": "AI安全",
       "rank": 17,
-      "related_count": 587,
-      "weighted_degree": 1456.6
+      "related_count": 590,
+      "weighted_degree": 1463.6
     },
     {
       "article_count": 28,
@@ -54289,11 +54305,11 @@
       "weighted_degree": 245.6
     },
     {
-      "article_count": 158,
+      "article_count": 159,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
-      "degree": 420,
+      "degree": 422,
       "description": "AI编程指利用人工智能技术辅助或自动完成软件开发任务，涵盖代码生成、调试及优化等环节，通常与代码助手、人机协作及大语言模型应用紧密相关。",
       "id": "tag:AI编程",
       "layer": "tag",
@@ -54302,8 +54318,8 @@
       "level": 6,
       "name": "AI编程",
       "rank": 32,
-      "related_count": 419,
-      "weighted_degree": 1105.6
+      "related_count": 421,
+      "weighted_degree": 1112.6
     },
     {
       "article_count": 31,
@@ -54556,7 +54572,7 @@
       "legacy_id": "blogs_podcasts",
       "level": 6,
       "name": "blogs_podcasts",
-      "rank": 11330,
+      "rank": 11329,
       "related_count": 0,
       "weighted_degree": 0
     },
@@ -54646,11 +54662,11 @@
       "weighted_degree": 476.6
     },
     {
-      "article_count": 166,
+      "article_count": 167,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
-      "degree": 300,
+      "degree": 306,
       "description": "Codex通常指代基于大语言模型的智能代码生成与自动化系统，是AI工程与智能体架构的核心组件，通过Agent循环机制实现编程任务的自主编排与执行。",
       "id": "tag:Codex",
       "layer": "tag",
@@ -54659,8 +54675,8 @@
       "level": 6,
       "name": "Codex",
       "rank": 29,
-      "related_count": 300,
-      "weighted_degree": 1162
+      "related_count": 306,
+      "weighted_degree": 1169
     },
     {
       "article_count": 70,
@@ -55015,7 +55031,7 @@
       "legacy_id": "hacker_news",
       "level": 6,
       "name": "hacker_news",
-      "rank": 11331,
+      "rank": 11330,
       "related_count": 0,
       "weighted_degree": 0
     },
@@ -55168,16 +55184,16 @@
       "legacy_id": "Llama 3.1",
       "level": 6,
       "name": "Llama 3.1",
-      "rank": 205,
+      "rank": 206,
       "related_count": 67,
       "weighted_degree": 245
     },
     {
-      "article_count": 2110,
+      "article_count": 2111,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:插件系统",
-      "degree": 3468,
+      "degree": 3471,
       "description": "LLM指大语言模型，是具备千亿级参数规模、能处理复杂任务（如代码生成、智能体构建）的AI基础技术，与AI原生应用、安全及科学计算等领域紧密相关。",
       "id": "tag:LLM",
       "layer": "tag",
@@ -55186,8 +55202,8 @@
       "level": 6,
       "name": "LLM",
       "rank": 1,
-      "related_count": 3466,
-      "weighted_degree": 14759.2
+      "related_count": 3469,
+      "weighted_degree": 14766.2
     },
     {
       "article_count": 33,
@@ -55381,7 +55397,7 @@
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:战略转型",
-      "degree": 975,
+      "degree": 976,
       "description": "OpenAI 是全球领先的人工智能研究实验室，专注于通用人工智能（AGI）技术的研发，其推出的 ChatGPT、GPT-4 等大模型产品深刻推动了 AIGC、AI 智能体及 AI 基础设施领域的创新与发展。",
       "id": "tag:OpenAI",
       "layer": "tag",
@@ -55390,7 +55406,7 @@
       "level": 6,
       "name": "OpenAI",
       "rank": 2,
-      "related_count": 975,
+      "related_count": 976,
       "weighted_degree": 3688
     },
     {
@@ -55440,7 +55456,7 @@
       "legacy_id": "Prompt Engineering",
       "level": 6,
       "name": "Prompt Engineering",
-      "rank": 207,
+      "rank": 208,
       "related_count": 141,
       "weighted_degree": 238
     },
@@ -55466,7 +55482,7 @@
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:插件系统",
-      "degree": 439,
+      "degree": 440,
       "description": "Python 是一种广泛用于后端开发、数据分析、自动化脚本及人工智能领域的编程语言。它凭借简洁的语法和丰富的第三方库，成为构建 AI Agent、量化交易工具及各类自动化应用的首选技术。",
       "id": "tag:Python",
       "layer": "tag",
@@ -55475,7 +55491,7 @@
       "level": 6,
       "name": "Python",
       "rank": 14,
-      "related_count": 438,
+      "related_count": 439,
       "weighted_degree": 1856.6
     },
     {
@@ -55695,7 +55711,7 @@
       "legacy_id": "vLLM",
       "level": 6,
       "name": "vLLM",
-      "rank": 206,
+      "rank": 207,
       "related_count": 65,
       "weighted_degree": 245
     },
@@ -56137,7 +56153,7 @@
       "legacy_id": "向量检索",
       "level": 6,
       "name": "向量检索",
-      "rank": 209,
+      "rank": 210,
       "related_count": 107,
       "weighted_degree": 238
     },
@@ -56278,11 +56294,11 @@
       "weighted_degree": 329
     },
     {
-      "article_count": 200,
+      "article_count": 198,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:插件系统",
-      "degree": 843,
+      "degree": 834,
       "description": "大模型通常指基于海量数据训练的深度神经网络，具备强大的通用智能与涌现能力，是当前AI编程、生态构建及科技竞争的核心驱动力。",
       "id": "tag:大模型",
       "layer": "tag",
@@ -56291,8 +56307,8 @@
       "level": 6,
       "name": "大模型",
       "rank": 20,
-      "related_count": 843,
-      "weighted_degree": 1398
+      "related_count": 834,
+      "weighted_degree": 1384
     },
     {
       "article_count": 31,
@@ -56465,11 +56481,11 @@
       "weighted_degree": 818
     },
     {
-      "article_count": 66,
+      "article_count": 65,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
-      "degree": 239,
+      "degree": 237,
       "description": "开发者工具指用于辅助软件编写、调试及维护的各类软件与平台，涵盖从传统调试器到现代AI编程助手及代码审查工具，旨在提升开发效率与代码质量。",
       "id": "tag:开发者工具",
       "layer": "tag",
@@ -56477,16 +56493,16 @@
       "legacy_id": "开发者工具",
       "level": 6,
       "name": "开发者工具",
-      "rank": 90,
-      "related_count": 239,
-      "weighted_degree": 462
+      "rank": 92,
+      "related_count": 237,
+      "weighted_degree": 455
     },
     {
-      "article_count": 181,
+      "article_count": 180,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:插件系统",
-      "degree": 614,
+      "degree": 611,
       "description": "开源指源代码可公开访问、自由使用和分发的软件或模型，常与AI基础模型、编程工具及数据集相关，促进技术协作与创新。",
       "id": "tag:开源",
       "layer": "tag",
@@ -56495,8 +56511,8 @@
       "level": 6,
       "name": "开源",
       "rank": 25,
-      "related_count": 614,
-      "weighted_degree": 1265
+      "related_count": 611,
+      "weighted_degree": 1258
     },
     {
       "article_count": 42,
@@ -56681,7 +56697,7 @@
       "legacy_id": "战略合作",
       "level": 6,
       "name": "战略合作",
-      "rank": 204,
+      "rank": 205,
       "related_count": 73,
       "weighted_degree": 245
     },
@@ -57378,7 +57394,7 @@
       "legacy_id": "注意力机制",
       "level": 6,
       "name": "注意力机制",
-      "rank": 92,
+      "rank": 91,
       "related_count": 204,
       "weighted_degree": 462
     },
@@ -57429,7 +57445,7 @@
       "legacy_id": "生产力",
       "level": 6,
       "name": "生产力",
-      "rank": 91,
+      "rank": 90,
       "related_count": 205,
       "weighted_degree": 462
     },
@@ -57927,11 +57943,11 @@
       "weighted_degree": 329
     },
     {
-      "article_count": 34,
+      "article_count": 35,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
-      "degree": 84,
+      "degree": 90,
       "description": "语音合成是一种将文字信息转化为语音信号的技术，属于自然语言处理领域。它涉及模型训练、声调修正等，常用于构建小模型或普通话语音系统。",
       "id": "tag:语音合成",
       "layer": "tag",
@@ -57939,9 +57955,9 @@
       "legacy_id": "语音合成",
       "level": 6,
       "name": "语音合成",
-      "rank": 210,
-      "related_count": 84,
-      "weighted_degree": 238
+      "rank": 203,
+      "related_count": 90,
+      "weighted_degree": 245
     },
     {
       "article_count": 35,
@@ -57956,7 +57972,7 @@
       "legacy_id": "语音识别",
       "level": 6,
       "name": "语音识别",
-      "rank": 203,
+      "rank": 204,
       "related_count": 85,
       "weighted_degree": 245
     },
@@ -58097,11 +58113,11 @@
       "weighted_degree": 580
     },
     {
-      "article_count": 62,
+      "article_count": 63,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
-      "degree": 263,
+      "degree": 268,
       "description": "隐私保护指通过技术手段与法律框架保障个人数据安全及控制权，涉及AI代理安全、数据泄露防护、GDPR合规及设备追踪风险等场景。",
       "id": "tag:隐私保护",
       "layer": "tag",
@@ -58110,8 +58126,8 @@
       "level": 6,
       "name": "隐私保护",
       "rank": 99,
-      "related_count": 263,
-      "weighted_degree": 434
+      "related_count": 268,
+      "weighted_degree": 441
     },
     {
       "article_count": 34,
@@ -58126,7 +58142,7 @@
       "legacy_id": "预训练",
       "level": 6,
       "name": "预训练",
-      "rank": 208,
+      "rank": 209,
       "related_count": 134,
       "weighted_degree": 238
     },
@@ -58150,13 +58166,13 @@
   ],
   "stats": {
     "links_by_type": {
-      "cooccurrence": 6685,
+      "cooccurrence": 6687,
       "semantic": 47
     },
     "nodes_by_layer": {
       "tag": 250
     },
-    "total_links": 6732,
+    "total_links": 6734,
     "total_nodes": 250
   },
   "version": 2
