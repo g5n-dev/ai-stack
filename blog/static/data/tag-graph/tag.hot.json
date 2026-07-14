@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-14T14:32:28Z",
+  "generated_at": "2026-07-14T15:29:48Z",
   "layer": "tag",
   "layers": {
     "application": {
@@ -14573,7 +14573,7 @@
       "strength": 1,
       "target": "tag:LLM",
       "type": "cooccurrence",
-      "weight": 78
+      "weight": 79
     },
     {
       "id": "edge:cooccurrence:tag:Amazon Bedrock->tag:LLM应用",
@@ -14741,7 +14741,7 @@
       "strength": 1,
       "target": "tag:多智能体",
       "type": "cooccurrence",
-      "weight": 3
+      "weight": 4
     },
     {
       "id": "edge:cooccurrence:tag:Amazon Bedrock->tag:多模态",
@@ -16682,10 +16682,10 @@
     {
       "id": "edge:cooccurrence:tag:Bedrock->tag:多智能体",
       "source": "tag:Bedrock",
-      "strength": 1,
+      "strength": 0.5,
       "target": "tag:多智能体",
       "type": "cooccurrence",
-      "weight": 2
+      "weight": 1
     },
     {
       "id": "edge:cooccurrence:tag:Bedrock->tag:多模态",
@@ -20933,7 +20933,7 @@
       "strength": 1,
       "target": "tag:Python",
       "type": "cooccurrence",
-      "weight": 28
+      "weight": 29
     },
     {
       "id": "edge:cooccurrence:tag:DeepSeek->tag:Qwen",
@@ -21034,10 +21034,10 @@
     {
       "id": "edge:cooccurrence:tag:DeepSeek->tag:开源",
       "source": "tag:DeepSeek",
-      "strength": 0.5,
+      "strength": 1,
       "target": "tag:开源",
       "type": "cooccurrence",
-      "weight": 1
+      "weight": 2
     },
     {
       "id": "edge:cooccurrence:tag:DeepSeek->tag:开源模型",
@@ -26485,7 +26485,7 @@
       "strength": 1,
       "target": "tag:多智能体",
       "type": "cooccurrence",
-      "weight": 29
+      "weight": 30
     },
     {
       "id": "edge:cooccurrence:tag:LLM->tag:多模态",
@@ -26725,7 +26725,7 @@
       "strength": 1,
       "target": "tag:推理优化",
       "type": "cooccurrence",
-      "weight": 62
+      "weight": 63
     },
     {
       "id": "edge:cooccurrence:tag:LLM->tag:推理加速",
@@ -26909,7 +26909,7 @@
       "strength": 1,
       "target": "tag:模型压缩",
       "type": "cooccurrence",
-      "weight": 17
+      "weight": 18
     },
     {
       "id": "edge:cooccurrence:tag:LLM->tag:模型发布",
@@ -32853,7 +32853,7 @@
       "strength": 1,
       "target": "tag:多模态",
       "type": "cooccurrence",
-      "weight": 49
+      "weight": 48
     },
     {
       "id": "edge:cooccurrence:tag:Python->tag:多语言",
@@ -32917,7 +32917,7 @@
       "strength": 1,
       "target": "tag:开源",
       "type": "cooccurrence",
-      "weight": 12
+      "weight": 13
     },
     {
       "id": "edge:cooccurrence:tag:Python->tag:开源工具",
@@ -43381,7 +43381,7 @@
       "strength": 1,
       "target": "tag:模型压缩",
       "type": "cooccurrence",
-      "weight": 5
+      "weight": 4
     },
     {
       "id": "edge:cooccurrence:tag:大模型->tag:模型发布",
@@ -43486,14 +43486,6 @@
       "target": "tag:知识库",
       "type": "cooccurrence",
       "weight": 2
-    },
-    {
-      "id": "edge:cooccurrence:tag:大模型->tag:神经网络",
-      "source": "tag:大模型",
-      "strength": 0.5,
-      "target": "tag:神经网络",
-      "type": "cooccurrence",
-      "weight": 1
     },
     {
       "id": "edge:cooccurrence:tag:大模型->tag:科学发现",
@@ -48389,7 +48381,7 @@
       "strength": 1,
       "target": "tag:模型压缩",
       "type": "cooccurrence",
-      "weight": 8
+      "weight": 9
     },
     {
       "id": "edge:cooccurrence:tag:推理优化->tag:模型发布",
@@ -51325,7 +51317,7 @@
       "strength": 1,
       "target": "tag:神经网络",
       "type": "cooccurrence",
-      "weight": 4
+      "weight": 3
     },
     {
       "id": "edge:cooccurrence:tag:模型压缩->tag:算法",
@@ -54011,7 +54003,7 @@
       "article_count": 408,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:other",
+      "community_id": "community:tag:插件系统",
       "degree": 1158,
       "description": "AI Agent 指具备感知、推理及执行能力的智能体，能够利用大模型自主规划任务并调用工具以实现特定目标，广泛应用于自动化工作流、智能测评及工业仿真等领域。",
       "id": "tag:AI Agent",
@@ -54139,7 +54131,7 @@
       "legacy_id": "AI助手",
       "level": 6,
       "name": "AI助手",
-      "rank": 117,
+      "rank": 116,
       "related_count": 196,
       "weighted_degree": 378.6
     },
@@ -54348,11 +54340,11 @@
       "weighted_degree": 273.6
     },
     {
-      "article_count": 273,
+      "article_count": 274,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
-      "degree": 429,
+      "degree": 434,
       "description": "Amazon Bedrock 是 AWS 提供的全托管生成式 AI 服务，允许用户通过 API 访问多种基础模型和大语言模型，常用于构建智能代理、优化 IT 运营及基础设施管理。",
       "id": "tag:Amazon Bedrock",
       "layer": "tag",
@@ -54361,8 +54353,8 @@
       "level": 6,
       "name": "Amazon Bedrock",
       "rank": 12,
-      "related_count": 429,
-      "weighted_degree": 1911
+      "related_count": 434,
+      "weighted_degree": 1918
     },
     {
       "article_count": 70,
@@ -54518,11 +54510,11 @@
       "weighted_degree": 2856
     },
     {
-      "article_count": 55,
+      "article_count": 54,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
-      "degree": 169,
+      "degree": 163,
       "description": "Bedrock通常指代亚马逊云科技推出的全托管基础模型服务，支持通过AgentCore等组件构建具备上下文管理与异步任务处理能力的智能体架构。",
       "id": "tag:Bedrock",
       "layer": "tag",
@@ -54530,9 +54522,9 @@
       "legacy_id": "Bedrock",
       "level": 6,
       "name": "Bedrock",
-      "rank": 115,
-      "related_count": 169,
-      "weighted_degree": 385
+      "rank": 118,
+      "related_count": 163,
+      "weighted_degree": 378
     },
     {
       "article_count": 29,
@@ -54564,7 +54556,7 @@
       "legacy_id": "blogs_podcasts",
       "level": 6,
       "name": "blogs_podcasts",
-      "rank": 11339,
+      "rank": 11344,
       "related_count": 0,
       "weighted_degree": 0
     },
@@ -54773,11 +54765,11 @@
       "weighted_degree": 294
     },
     {
-      "article_count": 79,
+      "article_count": 80,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:插件系统",
-      "degree": 187,
+      "degree": 189,
       "description": "DeepSeek 是中国领先的开源大模型研发机构，专注于高性能 LLM 与 AI 基础设施构建，其技术成果常被用于对比 ChatGPT、Llama 等主流方案，并推动国内 AI 生态与 Agent 架构的创新发展。",
       "id": "tag:DeepSeek",
       "layer": "tag",
@@ -54786,8 +54778,8 @@
       "level": 6,
       "name": "DeepSeek",
       "rank": 73,
-      "related_count": 187,
-      "weighted_degree": 553
+      "related_count": 189,
+      "weighted_degree": 560
     },
     {
       "article_count": 131,
@@ -54861,7 +54853,7 @@
       "article_count": 76,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:other",
+      "community_id": "community:tag:插件系统",
       "degree": 231,
       "description": "GitHub是全球最大的代码托管与开源协作平台，汇聚了海量的开源项目与技术资源，常用于版本控制、代码共享以及开发者社区的协作交流。",
       "id": "tag:GitHub",
@@ -54989,7 +54981,7 @@
       "legacy_id": "GPU",
       "level": 6,
       "name": "GPU",
-      "rank": 118,
+      "rank": 117,
       "related_count": 179,
       "weighted_degree": 378
     },
@@ -55023,7 +55015,7 @@
       "legacy_id": "hacker_news",
       "level": 6,
       "name": "hacker_news",
-      "rank": 11340,
+      "rank": 11345,
       "related_count": 0,
       "weighted_degree": 0
     },
@@ -55181,11 +55173,11 @@
       "weighted_degree": 245
     },
     {
-      "article_count": 2111,
+      "article_count": 2113,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:插件系统",
-      "degree": 3474,
+      "degree": 3483,
       "description": "LLM指大语言模型，是具备千亿级参数规模、能处理复杂任务（如代码生成、智能体构建）的AI基础技术，与AI原生应用、安全及科学计算等领域紧密相关。",
       "id": "tag:LLM",
       "layer": "tag",
@@ -55194,8 +55186,8 @@
       "level": 6,
       "name": "LLM",
       "rank": 1,
-      "related_count": 3472,
-      "weighted_degree": 14766.2
+      "related_count": 3481,
+      "weighted_degree": 14780.2
     },
     {
       "article_count": 33,
@@ -55244,7 +55236,7 @@
       "legacy_id": "Meta",
       "level": 6,
       "name": "Meta",
-      "rank": 116,
+      "rank": 115,
       "related_count": 132,
       "weighted_degree": 385
     },
@@ -55405,7 +55397,7 @@
       "article_count": 102,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:other",
+      "community_id": "community:tag:插件系统",
       "degree": 321,
       "description": "OpenClaw 是面向 AI 智能体生态的基础设施项目，旨在为 AI Agents 提供底层支持与连接能力，通常与多智能体协作、Bot 生态及社交网络平台 Moltbook 密切相关。",
       "id": "tag:OpenClaw",
@@ -56239,7 +56231,7 @@
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
-      "degree": 268,
+      "degree": 267,
       "description": "多智能体是指由多个具备感知、推理和行动能力的智能体组成的系统，它们通过协作或竞争解决复杂问题，常与AI Agent、LLM等技术相关，应用于社交网络、规模化科学和信任机制构建等场景。",
       "id": "tag:多智能体",
       "layer": "tag",
@@ -56248,15 +56240,15 @@
       "level": 6,
       "name": "多智能体",
       "rank": 100,
-      "related_count": 268,
+      "related_count": 267,
       "weighted_degree": 434
     },
     {
-      "article_count": 307,
+      "article_count": 306,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:插件系统",
-      "degree": 770,
+      "degree": 765,
       "description": "多模态指能够同时理解、处理或生成文本、图像、音频及视频等多种异构数据的技术能力。它广泛应用于AI绘图、智能体交互及大模型评测，旨在提升人工智能对现实世界的感知与认知水平。",
       "id": "tag:多模态",
       "layer": "tag",
@@ -56265,8 +56257,8 @@
       "level": 6,
       "name": "多模态",
       "rank": 9,
-      "related_count": 770,
-      "weighted_degree": 2148
+      "related_count": 765,
+      "weighted_degree": 2141
     },
     {
       "article_count": 47,
@@ -56286,11 +56278,11 @@
       "weighted_degree": 329
     },
     {
-      "article_count": 200,
+      "article_count": 199,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:插件系统",
-      "degree": 843,
+      "degree": 840,
       "description": "大模型通常指基于海量数据训练的深度神经网络，具备强大的通用智能与涌现能力，是当前AI编程、生态构建及科技竞争的核心驱动力。",
       "id": "tag:大模型",
       "layer": "tag",
@@ -56299,8 +56291,8 @@
       "level": 6,
       "name": "大模型",
       "rank": 20,
-      "related_count": 843,
-      "weighted_degree": 1398
+      "related_count": 840,
+      "weighted_degree": 1391
     },
     {
       "article_count": 31,
@@ -56490,11 +56482,11 @@
       "weighted_degree": 462
     },
     {
-      "article_count": 180,
+      "article_count": 181,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:插件系统",
-      "degree": 611,
+      "degree": 614,
       "description": "开源指源代码可公开访问、自由使用和分发的软件或模型，常与AI基础模型、编程工具及数据集相关，促进技术协作与创新。",
       "id": "tag:开源",
       "layer": "tag",
@@ -56503,8 +56495,8 @@
       "level": 6,
       "name": "开源",
       "rank": 25,
-      "related_count": 611,
-      "weighted_degree": 1258
+      "related_count": 614,
+      "weighted_degree": 1265
     },
     {
       "article_count": 42,
@@ -56762,11 +56754,11 @@
       "weighted_degree": 343
     },
     {
-      "article_count": 125,
+      "article_count": 126,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
-      "degree": 360,
+      "degree": 364,
       "description": "推理优化是指通过改进算法架构、训练策略或工程部署手段，提升大模型在生成内容时的逻辑准确性、响应速度及资源利用效率。它通常与高效蒸馏、稀疏MoE及强化学习等前沿技术紧密相关。",
       "id": "tag:推理优化",
       "layer": "tag",
@@ -56775,8 +56767,8 @@
       "level": 6,
       "name": "推理优化",
       "rank": 45,
-      "related_count": 360,
-      "weighted_degree": 875
+      "related_count": 364,
+      "weighted_degree": 882
     },
     {
       "article_count": 99,
@@ -57157,7 +57149,7 @@
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
-      "degree": 222,
+      "degree": 224,
       "description": "模型压缩是指通过剪枝、量化或知识蒸馏等技术，在尽量保持精度的前提下显著降低深度学习模型的参数量与计算开销，从而实现轻量化部署。该技术常与卷积神经网络、大语言模型及异构计算场景下的高效推理紧密相关。",
       "id": "tag:模型压缩",
       "layer": "tag",
@@ -57166,7 +57158,7 @@
       "level": 6,
       "name": "模型压缩",
       "rank": 122,
-      "related_count": 222,
+      "related_count": 224,
       "weighted_degree": 371
     },
     {
@@ -57544,11 +57536,11 @@
       "weighted_degree": 371
     },
     {
-      "article_count": 97,
+      "article_count": 96,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:PaddlePaddle",
-      "degree": 320,
+      "degree": 314,
       "description": "神经网络是一种受人脑结构启发的机器学习模型，通过多层神经元连接进行特征提取与模式识别，广泛应用于计算机视觉、自然语言处理及边缘计算推理优化等领域。",
       "id": "tag:神经网络",
       "layer": "tag",
@@ -57557,8 +57549,8 @@
       "level": 6,
       "name": "神经网络",
       "rank": 56,
-      "related_count": 320,
-      "weighted_degree": 679
+      "related_count": 314,
+      "weighted_degree": 672
     },
     {
       "article_count": 47,
@@ -57734,7 +57726,7 @@
       "article_count": 381,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:other",
+      "community_id": "community:tag:插件系统",
       "degree": 878,
       "description": "自动化是指利用技术手段让流程在无人干预下自动运行，涵盖从脚本工具到AI智能体的各类应用，旨在提升效率并解放人力。",
       "id": "tag:自动化",
@@ -58158,13 +58150,13 @@
   ],
   "stats": {
     "links_by_type": {
-      "cooccurrence": 6686,
+      "cooccurrence": 6685,
       "semantic": 47
     },
     "nodes_by_layer": {
       "tag": 250
     },
-    "total_links": 6733,
+    "total_links": 6732,
     "total_nodes": 250
   },
   "version": 2
