@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-14T00:24:08Z",
+  "generated_at": "2026-07-14T01:39:46Z",
   "layer": "tag",
   "layers": {
     "application": {
@@ -5370,8 +5370,16 @@
     {
       "id": "edge:cooccurrence:tag:AI助手->tag:Claude Code",
       "source": "tag:AI助手",
-      "strength": 0.5,
+      "strength": 1,
       "target": "tag:Claude Code",
+      "type": "cooccurrence",
+      "weight": 2
+    },
+    {
+      "id": "edge:cooccurrence:tag:AI助手->tag:Codex",
+      "source": "tag:AI助手",
+      "strength": 0.5,
+      "target": "tag:Codex",
       "type": "cooccurrence",
       "weight": 1
     },
@@ -5482,10 +5490,10 @@
     {
       "id": "edge:cooccurrence:tag:AI助手->tag:代码生成",
       "source": "tag:AI助手",
-      "strength": 0.5,
+      "strength": 1,
       "target": "tag:代码生成",
       "type": "cooccurrence",
-      "weight": 1
+      "weight": 2
     },
     {
       "id": "edge:cooccurrence:tag:AI助手->tag:企业应用",
@@ -5517,7 +5525,7 @@
       "strength": 1,
       "target": "tag:大模型",
       "type": "cooccurrence",
-      "weight": 5
+      "weight": 6
     },
     {
       "id": "edge:cooccurrence:tag:AI助手->tag:大模型应用",
@@ -9797,7 +9805,7 @@
       "strength": 1,
       "target": "tag:Claude",
       "type": "cooccurrence",
-      "weight": 24
+      "weight": 23
     },
     {
       "id": "edge:cooccurrence:tag:AI编程->tag:Claude Code",
@@ -9813,7 +9821,7 @@
       "strength": 1,
       "target": "tag:Codex",
       "type": "cooccurrence",
-      "weight": 28
+      "weight": 27
     },
     {
       "id": "edge:cooccurrence:tag:AI编程->tag:Copilot",
@@ -10181,7 +10189,7 @@
       "strength": 1,
       "target": "tag:开发者工具",
       "type": "cooccurrence",
-      "weight": 12
+      "weight": 11
     },
     {
       "id": "edge:cooccurrence:tag:AI编程->tag:开源",
@@ -10420,14 +10428,6 @@
       "source": "tag:AI编程",
       "strength": 0.5,
       "target": "tag:行业趋势",
-      "type": "cooccurrence",
-      "weight": 1
-    },
-    {
-      "id": "edge:cooccurrence:tag:AI编程->tag:语言模型",
-      "source": "tag:AI编程",
-      "strength": 0.5,
-      "target": "tag:语言模型",
       "type": "cooccurrence",
       "weight": 1
     },
@@ -18181,7 +18181,7 @@
       "strength": 1,
       "target": "tag:Codex",
       "type": "cooccurrence",
-      "weight": 39
+      "weight": 38
     },
     {
       "id": "edge:cooccurrence:tag:Claude->tag:Cursor",
@@ -18605,7 +18605,7 @@
       "strength": 1,
       "target": "tag:开发者工具",
       "type": "cooccurrence",
-      "weight": 15
+      "weight": 14
     },
     {
       "id": "edge:cooccurrence:tag:Claude->tag:开源",
@@ -18901,7 +18901,7 @@
       "strength": 1,
       "target": "tag:语言模型",
       "type": "cooccurrence",
-      "weight": 5
+      "weight": 4
     },
     {
       "id": "edge:cooccurrence:tag:Claude->tag:跨区域推理",
@@ -18941,7 +18941,7 @@
       "strength": 1,
       "target": "tag:Codex",
       "type": "cooccurrence",
-      "weight": 2
+      "weight": 3
     },
     {
       "id": "edge:cooccurrence:tag:Claude Code->tag:Copilot",
@@ -19125,7 +19125,7 @@
       "strength": 1,
       "target": "tag:代码生成",
       "type": "cooccurrence",
-      "weight": 21
+      "weight": 22
     },
     {
       "id": "edge:cooccurrence:tag:Claude Code->tag:代码质量",
@@ -19173,7 +19173,7 @@
       "strength": 1,
       "target": "tag:大模型",
       "type": "cooccurrence",
-      "weight": 3
+      "weight": 4
     },
     {
       "id": "edge:cooccurrence:tag:Claude Code->tag:大模型应用",
@@ -19797,7 +19797,7 @@
       "strength": 1,
       "target": "tag:代码生成",
       "type": "cooccurrence",
-      "weight": 67
+      "weight": 68
     },
     {
       "id": "edge:cooccurrence:tag:Codex->tag:估值",
@@ -19853,7 +19853,7 @@
       "strength": 1,
       "target": "tag:大模型",
       "type": "cooccurrence",
-      "weight": 9
+      "weight": 10
     },
     {
       "id": "edge:cooccurrence:tag:Codex->tag:大模型应用",
@@ -19925,7 +19925,7 @@
       "strength": 1,
       "target": "tag:开发者工具",
       "type": "cooccurrence",
-      "weight": 5
+      "weight": 4
     },
     {
       "id": "edge:cooccurrence:tag:Codex->tag:性能优化",
@@ -20118,14 +20118,6 @@
       "target": "tag:行业动态",
       "type": "cooccurrence",
       "weight": 3
-    },
-    {
-      "id": "edge:cooccurrence:tag:Codex->tag:语言模型",
-      "source": "tag:Codex",
-      "strength": 0.5,
-      "target": "tag:语言模型",
-      "type": "cooccurrence",
-      "weight": 1
     },
     {
       "id": "edge:cooccurrence:tag:Codex->tag:资源调度",
@@ -38557,7 +38549,7 @@
       "strength": 1,
       "target": "tag:大模型",
       "type": "cooccurrence",
-      "weight": 13
+      "weight": 14
     },
     {
       "id": "edge:cooccurrence:tag:代码生成->tag:大模型应用",
@@ -45318,14 +45310,6 @@
       "target": "tag:自动化测试",
       "type": "cooccurrence",
       "weight": 2
-    },
-    {
-      "id": "edge:cooccurrence:tag:开发者工具->tag:语言模型",
-      "source": "tag:开发者工具",
-      "strength": 0.5,
-      "target": "tag:语言模型",
-      "type": "cooccurrence",
-      "weight": 1
     },
     {
       "id": "edge:cooccurrence:tag:开发者工具->tag:软件工程",
@@ -53977,7 +53961,7 @@
       "legacy_id": "Agentic AI",
       "level": 6,
       "name": "Agentic AI",
-      "rank": 141,
+      "rank": 140,
       "related_count": 144,
       "weighted_degree": 336
     },
@@ -54135,11 +54119,11 @@
       "weighted_degree": 343.6
     },
     {
-      "article_count": 54,
+      "article_count": 55,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
-      "degree": 197,
+      "degree": 201,
       "description": "AI助手通常指利用人工智能技术辅助用户完成各类任务的软件工具，常与提升生产力、优化工作流及产品设计相关，旨在成为支持深度思考与独立工作的智能伙伴。",
       "id": "tag:AI助手",
       "layer": "tag",
@@ -54147,9 +54131,9 @@
       "legacy_id": "AI助手",
       "level": 6,
       "name": "AI助手",
-      "rank": 116,
-      "related_count": 196,
-      "weighted_degree": 378.6
+      "rank": 114,
+      "related_count": 200,
+      "weighted_degree": 385.6
     },
     {
       "article_count": 74,
@@ -54266,7 +54250,7 @@
       "legacy_id": "AI智能体",
       "level": 6,
       "name": "AI智能体",
-      "rank": 144,
+      "rank": 143,
       "related_count": 193,
       "weighted_degree": 329.6
     },
@@ -54305,11 +54289,11 @@
       "weighted_degree": 245.6
     },
     {
-      "article_count": 159,
+      "article_count": 158,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
-      "degree": 424,
+      "degree": 420,
       "description": "AI编程指利用人工智能技术辅助或自动完成软件开发任务，涵盖代码生成、调试及优化等环节，通常与代码助手、人机协作及大语言模型应用紧密相关。",
       "id": "tag:AI编程",
       "layer": "tag",
@@ -54318,8 +54302,8 @@
       "level": 6,
       "name": "AI编程",
       "rank": 32,
-      "related_count": 423,
-      "weighted_degree": 1112.6
+      "related_count": 419,
+      "weighted_degree": 1105.6
     },
     {
       "article_count": 31,
@@ -54611,11 +54595,11 @@
       "weighted_degree": 350
     },
     {
-      "article_count": 259,
+      "article_count": 258,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
-      "degree": 562,
+      "degree": 560,
       "description": "Claude 是 Anthropic 开发的大语言模型，以强大的编程能力和安全性著称，常用于 AI 编程助手、Agent 开发及构建 MCP 生态应用。",
       "id": "tag:Claude",
       "layer": "tag",
@@ -54624,15 +54608,15 @@
       "level": 6,
       "name": "Claude",
       "rank": 15,
-      "related_count": 562,
-      "weighted_degree": 1812
+      "related_count": 560,
+      "weighted_degree": 1805
     },
     {
-      "article_count": 152,
+      "article_count": 153,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
-      "degree": 341,
+      "degree": 344,
       "description": "Claude Code 是 Anthropic 推出的 AI 编程工具，专注于通过自动化重构、代码迁移及多智能体协作来提升开发效率，常与 Rust 迁移、DevOps 及性能基准测试等场景深度结合。",
       "id": "tag:Claude Code",
       "layer": "tag",
@@ -54640,9 +54624,9 @@
       "legacy_id": "Claude Code",
       "level": 6,
       "name": "Claude Code",
-      "rank": 34,
-      "related_count": 341,
-      "weighted_degree": 1064
+      "rank": 33,
+      "related_count": 344,
+      "weighted_degree": 1071
     },
     {
       "article_count": 68,
@@ -55235,7 +55219,7 @@
       "legacy_id": "MCP",
       "level": 6,
       "name": "MCP",
-      "rank": 33,
+      "rank": 34,
       "related_count": 313,
       "weighted_degree": 1071
     },
@@ -55252,7 +55236,7 @@
       "legacy_id": "Meta",
       "level": 6,
       "name": "Meta",
-      "rank": 115,
+      "rank": 116,
       "related_count": 132,
       "weighted_degree": 385
     },
@@ -55286,7 +55270,7 @@
       "legacy_id": "MIT",
       "level": 6,
       "name": "MIT",
-      "rank": 143,
+      "rank": 142,
       "related_count": 123,
       "weighted_degree": 336
     },
@@ -55575,7 +55559,7 @@
       "legacy_id": "Rust",
       "level": 6,
       "name": "Rust",
-      "rank": 114,
+      "rank": 115,
       "related_count": 174,
       "weighted_degree": 385.6
     },
@@ -55886,11 +55870,11 @@
       "weighted_degree": 378
     },
     {
-      "article_count": 316,
+      "article_count": 317,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
-      "degree": 665,
+      "degree": 668,
       "description": "代码生成指利用人工智能技术自动编写软件代码的过程，通常与AI编程助手、低代码平台及智能体等工具紧密相关，旨在提升开发效率并辅助程序员完成重复性编码任务。",
       "id": "tag:代码生成",
       "layer": "tag",
@@ -55899,8 +55883,8 @@
       "level": 6,
       "name": "代码生成",
       "rank": 8,
-      "related_count": 665,
-      "weighted_degree": 2211
+      "related_count": 668,
+      "weighted_degree": 2218
     },
     {
       "article_count": 56,
@@ -56294,11 +56278,11 @@
       "weighted_degree": 329
     },
     {
-      "article_count": 198,
+      "article_count": 199,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:插件系统",
-      "degree": 835,
+      "degree": 838,
       "description": "大模型通常指基于海量数据训练的深度神经网络，具备强大的通用智能与涌现能力，是当前AI编程、生态构建及科技竞争的核心驱动力。",
       "id": "tag:大模型",
       "layer": "tag",
@@ -56307,8 +56291,8 @@
       "level": 6,
       "name": "大模型",
       "rank": 20,
-      "related_count": 835,
-      "weighted_degree": 1384
+      "related_count": 838,
+      "weighted_degree": 1391
     },
     {
       "article_count": 31,
@@ -56442,7 +56426,7 @@
       "legacy_id": "工程实践",
       "level": 6,
       "name": "工程实践",
-      "rank": 140,
+      "rank": 139,
       "related_count": 191,
       "weighted_degree": 336
     },
@@ -56481,11 +56465,11 @@
       "weighted_degree": 818
     },
     {
-      "article_count": 66,
+      "article_count": 65,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
-      "degree": 241,
+      "degree": 237,
       "description": "开发者工具指用于辅助软件编写、调试及维护的各类软件与平台，涵盖从传统调试器到现代AI编程助手及代码审查工具，旨在提升开发效率与代码质量。",
       "id": "tag:开发者工具",
       "layer": "tag",
@@ -56493,9 +56477,9 @@
       "legacy_id": "开发者工具",
       "level": 6,
       "name": "开发者工具",
-      "rank": 90,
-      "related_count": 241,
-      "weighted_degree": 462
+      "rank": 92,
+      "related_count": 237,
+      "weighted_degree": 455
     },
     {
       "article_count": 180,
@@ -57394,7 +57378,7 @@
       "legacy_id": "注意力机制",
       "level": 6,
       "name": "注意力机制",
-      "rank": 92,
+      "rank": 91,
       "related_count": 204,
       "weighted_degree": 462
     },
@@ -57445,7 +57429,7 @@
       "legacy_id": "生产力",
       "level": 6,
       "name": "生产力",
-      "rank": 91,
+      "rank": 90,
       "related_count": 205,
       "weighted_degree": 462
     },
@@ -57926,11 +57910,11 @@
       "weighted_degree": 981.2
     },
     {
-      "article_count": 48,
+      "article_count": 47,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
-      "degree": 193,
+      "degree": 187,
       "description": "语言模型是一种能够根据上下文预测或生成文本序列的概率模型，通常与自然语言处理、生成式AI及自回归方法密切相关。",
       "id": "tag:语言模型",
       "layer": "tag",
@@ -57938,9 +57922,9 @@
       "legacy_id": "语言模型",
       "level": 6,
       "name": "语言模型",
-      "rank": 139,
-      "related_count": 193,
-      "weighted_degree": 336
+      "rank": 144,
+      "related_count": 187,
+      "weighted_degree": 329
     },
     {
       "article_count": 34,
@@ -58074,7 +58058,7 @@
       "legacy_id": "逆向工程",
       "level": 6,
       "name": "逆向工程",
-      "rank": 142,
+      "rank": 141,
       "related_count": 144,
       "weighted_degree": 336
     },
@@ -58166,13 +58150,13 @@
   ],
   "stats": {
     "links_by_type": {
-      "cooccurrence": 6687,
+      "cooccurrence": 6685,
       "semantic": 47
     },
     "nodes_by_layer": {
       "tag": 250
     },
-    "total_links": 6734,
+    "total_links": 6732,
     "total_nodes": 250
   },
   "version": 2

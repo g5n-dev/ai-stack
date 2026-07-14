@@ -2,21 +2,21 @@
   "algorithm": "deterministic-weighted-label-propagation",
   "communities": [
     {
-      "article_count": 3545,
+      "article_count": 3546,
       "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/01-73999481e243.json",
+      "hotspot_file": "community-hotspots/01-5b2715ee7cae.json",
       "id": "community:tag:插件系统",
       "leader_id": "tag:LLM",
       "name": "LLM",
       "node_count": 79,
       "rank": 1,
-      "tag_occurrences": 6164,
-      "weighted_degree": 43125.4
+      "tag_occurrences": 6165,
+      "weighted_degree": 43132.4
     },
     {
       "article_count": 599,
       "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/02-b07b11b4502d.json",
+      "hotspot_file": "community-hotspots/02-c27e75abcca1.json",
       "id": "community:tag:战略转型",
       "leader_id": "tag:OpenAI",
       "name": "OpenAI",
@@ -28,7 +28,7 @@
     {
       "article_count": 469,
       "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/03-63ee68db2d60.json",
+      "hotspot_file": "community-hotspots/03-412b71785340.json",
       "id": "community:tag:PaddlePaddle",
       "leader_id": "tag:深度学习",
       "name": "深度学习",
@@ -40,7 +40,7 @@
     {
       "article_count": 66,
       "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/04-c703b5e56877.json",
+      "hotspot_file": "community-hotspots/04-dc0da944cc8c.json",
       "id": "community:tag:Scaling without Slop",
       "leader_id": "tag:AI资讯",
       "name": "AI资讯",
@@ -52,7 +52,7 @@
     {
       "article_count": 61,
       "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/05-88cc22afce68.json",
+      "hotspot_file": "community-hotspots/05-abed8534378b.json",
       "id": "community:tag:低秩更新",
       "leader_id": "tag:持续学习",
       "name": "持续学习",
@@ -64,7 +64,7 @@
     {
       "article_count": 256,
       "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/06-42a46c6c3f06.json",
+      "hotspot_file": "community-hotspots/06-275c30e498de.json",
       "id": "community:tag:外部工具",
       "leader_id": "tag:MCP",
       "name": "MCP",
@@ -76,7 +76,7 @@
     {
       "article_count": 143,
       "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/07-9be08ef1d9cf.json",
+      "hotspot_file": "community-hotspots/07-34842da93ae3.json",
       "id": "community:tag:开源贡献",
       "leader_id": "tag:HackerNews",
       "name": "HackerNews",
@@ -88,7 +88,7 @@
     {
       "article_count": 34,
       "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/08-9dc68462a29c.json",
+      "hotspot_file": "community-hotspots/08-d423bb527ee0.json",
       "id": "community:tag:威胁模型",
       "leader_id": "tag:METR",
       "name": "METR",
@@ -100,7 +100,7 @@
     {
       "article_count": 70,
       "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/09-286bfdf01fc9.json",
+      "hotspot_file": "community-hotspots/09-bca0cc22921c.json",
       "id": "community:tag:弱势群体",
       "leader_id": "tag:幻觉",
       "name": "幻觉",
@@ -112,7 +112,7 @@
     {
       "article_count": 138,
       "hotspot_count": 23,
-      "hotspot_file": "community-hotspots/10-93e3b3058a82.json",
+      "hotspot_file": "community-hotspots/10-0f78e3f26859.json",
       "id": "community:tag:Gemini 3",
       "leader_id": "tag:推理模型",
       "name": "推理模型",
@@ -124,7 +124,7 @@
     {
       "article_count": 135,
       "hotspot_count": 23,
-      "hotspot_file": "community-hotspots/11-d7394bd969a6.json",
+      "hotspot_file": "community-hotspots/11-fb902557b513.json",
       "id": "community:tag:LIME",
       "leader_id": "tag:可解释性",
       "name": "可解释性",
@@ -141,11 +141,11 @@
       "name": "其他",
       "node_count": 10918,
       "rank": 12,
-      "tag_occurrences": 43482,
-      "weighted_degree": 303911.4
+      "tag_occurrences": 43481,
+      "weighted_degree": 303904.4
     }
   ],
-  "generated_at": "2026-07-14T00:24:08Z",
+  "generated_at": "2026-07-14T01:39:46Z",
   "iterations": 15,
   "limit": 11,
   "links": [
@@ -235,7 +235,7 @@
       "strength": 1,
       "target": "community:tag:插件系统",
       "type": "community",
-      "weight": 29766
+      "weight": 29773
     },
     {
       "id": "edge:community:community:tag:Gemini 3->community:tag:LIME",
