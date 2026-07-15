@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:SpeechAnalyzer",
-  "generated_at": "2026-07-15T06:00:41Z",
+  "generated_at": "2026-07-15T15:05:07Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -377,7 +377,7 @@
       "legacy_id": "API对比",
       "level": 6,
       "name": "API对比",
-      "rank": 1875,
+      "rank": 1877,
       "related_count": 7,
       "weighted_degree": 7.6
     },
@@ -394,7 +394,7 @@
       "legacy_id": "Audio",
       "level": 6,
       "name": "Audio",
-      "rank": 2076,
+      "rank": 2082,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -411,7 +411,7 @@
       "legacy_id": "Moonshine",
       "level": 6,
       "name": "Moonshine",
-      "rank": 2754,
+      "rank": 2759,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -428,7 +428,7 @@
       "legacy_id": "SpeechAnalyzer",
       "level": 6,
       "name": "SpeechAnalyzer",
-      "rank": 3148,
+      "rank": 3153,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -445,7 +445,7 @@
       "legacy_id": "Xcode",
       "level": 6,
       "name": "Xcode",
-      "rank": 3365,
+      "rank": 3371,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -462,7 +462,7 @@
       "legacy_id": "架构解析",
       "level": 6,
       "name": "架构解析",
-      "rank": 5340,
+      "rank": 5346,
       "related_count": 7,
       "weighted_degree": 7
     }

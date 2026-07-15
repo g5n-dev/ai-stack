@@ -21,13 +21,13 @@
     "core": "core.json",
     "focusShards": [
       "focus-shards/000-5caba6acdb4b.json",
-      "focus-shards/001-3ef8e5f4e48b.json",
+      "focus-shards/001-3f511b4b403f.json",
       "focus-shards/002-8a1cbfddbeae.json",
-      "focus-shards/003-0f234797a7d7.json",
+      "focus-shards/003-47e3a287fe2a.json",
       "focus-shards/004-ca5c3d2c7203.json",
       "focus-shards/005-84ba6dda7fbf.json",
       "focus-shards/006-3d135ffcce6d.json",
-      "focus-shards/007-ded214091c0a.json",
+      "focus-shards/007-ae39b086e40d.json",
       "focus-shards/008-8061eddc9a4e.json",
       "focus-shards/009-a8903c6a40e3.json",
       "focus-shards/010-971bed7a7624.json",
@@ -37,7 +37,7 @@
       "focus-shards/014-c7740fc27a8e.json",
       "focus-shards/015-c919afc2ae56.json",
       "focus-shards/016-0b2f2429630f.json",
-      "focus-shards/017-a5774f35acae.json",
+      "focus-shards/017-6d36c6bfdc79.json",
       "focus-shards/018-1e991672744d.json",
       "focus-shards/019-7ae1207774d8.json",
       "focus-shards/020-2180428f0fab.json",
@@ -55,7 +55,7 @@
       "focus-shards/032-77441a941fde.json",
       "focus-shards/033-89fe56d486e5.json",
       "focus-shards/034-9507d4aa7916.json",
-      "focus-shards/035-92f156add693.json",
+      "focus-shards/035-52405614ab03.json",
       "focus-shards/036-265070720d4f.json",
       "focus-shards/037-212243e24ea1.json",
       "focus-shards/038-19f18eca8bfb.json",
@@ -73,7 +73,7 @@
       "focus-shards/050-8ef576bf2d2a.json",
       "focus-shards/051-1f406c2973ca.json",
       "focus-shards/052-0bfcfe67be60.json",
-      "focus-shards/053-8979edb328ed.json",
+      "focus-shards/053-697e4e88f4c4.json",
       "focus-shards/054-206612c7e2f1.json",
       "focus-shards/055-e67488901f3e.json",
       "focus-shards/056-d2ff1e9ce2d1.json",
@@ -96,8 +96,8 @@
       "focus-shards/073-1c29c532cf94.json",
       "focus-shards/074-684d9b804f60.json",
       "focus-shards/075-188c3956483c.json",
-      "focus-shards/076-2f461e581402.json",
-      "focus-shards/077-d32617a7b392.json",
+      "focus-shards/076-2deac32e3886.json",
+      "focus-shards/077-6cb5d3f6e523.json",
       "focus-shards/078-0bb18259fc7b.json",
       "focus-shards/079-1039cfedd505.json",
       "focus-shards/080-2cfefb5d29bf.json",
@@ -110,7 +110,7 @@
       "focus-shards/087-7ff468c670f0.json",
       "focus-shards/088-4c360da3916e.json",
       "focus-shards/089-ef5c8da403d2.json",
-      "focus-shards/090-1db4ad3cc443.json",
+      "focus-shards/090-9c3274816379.json",
       "focus-shards/091-73b05c31ecbc.json",
       "focus-shards/092-f54898bb43cc.json",
       "focus-shards/093-6378f22c9cc1.json",
@@ -123,8 +123,8 @@
       "focus-shards/100-80d8cbb13e4f.json",
       "focus-shards/101-ac7e65a4d248.json",
       "focus-shards/102-14adbca01c24.json",
-      "focus-shards/103-9ebddb193d86.json",
-      "focus-shards/104-aaf6a9165dda.json",
+      "focus-shards/103-eca2baafec1e.json",
+      "focus-shards/104-010f21213593.json",
       "focus-shards/105-9b50a75d5a3c.json",
       "focus-shards/106-088c20425fa4.json",
       "focus-shards/107-769223a22818.json",
@@ -138,7 +138,7 @@
       "focus-shards/115-c8f67f52f96d.json",
       "focus-shards/116-b786cd0fc81e.json",
       "focus-shards/117-2f4412ce96fc.json",
-      "focus-shards/118-b4091f3acc02.json",
+      "focus-shards/118-28d9637096d9.json",
       "focus-shards/119-b10262110332.json",
       "focus-shards/120-0fd2de7172b3.json",
       "focus-shards/121-46695316ed13.json",
@@ -153,7 +153,7 @@
     "tag": "tag.json",
     "tagHot": "tag.hot.json"
   },
-  "generated_at": "2026-07-15T12:45:47Z",
+  "generated_at": "2026-07-15T15:05:07Z",
   "layers": {
     "application": {
       "color": "#7aa6b8",
@@ -193,7 +193,7 @@
   },
   "stats": {
     "links_by_type": {
-      "cooccurrence": 47789,
+      "cooccurrence": 47818,
       "relation": 71,
       "semantic": 540
     },
@@ -203,14 +203,14 @@
       "language": 8,
       "model": 6,
       "scenario": 31,
-      "tag": 6971
+      "tag": 6977
     },
     "tag_stats": {
       "archived_article_files_skipped": 379,
-      "archived_article_groups_skipped": 379,
+      "archived_article_groups_skipped": 378,
       "avg_concepts_per_article": 0,
-      "avg_tags_per_article": 7.874811463046757,
-      "canonical_duplicate_files_skipped": 0,
+      "avg_tags_per_article": 7.8694779116465865,
+      "canonical_duplicate_files_skipped": 1,
       "incomplete_article_files_skipped": 0,
       "incomplete_article_groups_skipped": 0,
       "most_used_concepts": [],
@@ -278,16 +278,16 @@
       ],
       "synthetic_article_files_skipped": 0,
       "synthetic_article_groups_skipped": 0,
-      "total_articles": 1989,
+      "total_articles": 1992,
       "total_concept_links": 0,
       "total_concepts": 0,
-      "total_tag_links": 47789,
-      "total_tags": 6971
+      "total_tag_links": 47818,
+      "total_tags": 6977
     },
-    "total_articles": 1989,
+    "total_articles": 1992,
     "total_communities": 12,
-    "total_links": 48400,
-    "total_nodes": 7040
+    "total_links": 48429,
+    "total_nodes": 7046
   },
   "version": 2
 }

@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:Flux",
-  "generated_at": "2026-07-15T06:00:41Z",
+  "generated_at": "2026-07-15T15:05:07Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -25,6 +25,14 @@
       "source": "tag:Stable Diffusion",
       "strength": 1,
       "target": "tag:图像生成",
+      "type": "cooccurrence",
+      "weight": 4
+    },
+    {
+      "id": "edge:cooccurrence:tag:arxiv->tag:cs.CV",
+      "source": "tag:arxiv",
+      "strength": 1,
+      "target": "tag:cs.CV",
       "type": "cooccurrence",
       "weight": 4
     },
@@ -251,14 +259,6 @@
       "target": "tag:控制论",
       "type": "cooccurrence",
       "weight": 1
-    },
-    {
-      "id": "edge:cooccurrence:tag:Stable Diffusion->tag:交互指南",
-      "source": "tag:Stable Diffusion",
-      "strength": 0.5,
-      "target": "tag:交互指南",
-      "type": "cooccurrence",
-      "weight": 1
     }
   ],
   "nodes": [
@@ -275,7 +275,7 @@
       "legacy_id": "扩散模型",
       "level": 6,
       "name": "扩散模型",
-      "rank": 30,
+      "rank": 31,
       "related_count": 229,
       "weighted_degree": 308.6
     },
@@ -348,6 +348,23 @@
       "weighted_degree": 28
     },
     {
+      "article_count": 15,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Flux",
+      "degree": 5,
+      "description": "arXiv是一个涵盖物理、计算机、数学等领域的开放获取预印本仓储，用于发布尚未经过同行评审的学术初稿，是追踪计算机科学（如机器学习、密码学）前沿研究的重要来源。",
+      "id": "tag:arxiv",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "arxiv",
+      "level": 6,
+      "name": "arxiv",
+      "rank": 906,
+      "related_count": 5,
+      "weighted_degree": 15
+    },
+    {
       "article_count": 1,
       "category": "article_tag",
       "color": "#f59e0b",
@@ -360,7 +377,7 @@
       "legacy_id": "Diffusion",
       "level": 6,
       "name": "Diffusion",
-      "rank": 1893,
+      "rank": 1895,
       "related_count": 7,
       "weighted_degree": 7.6
     },
@@ -377,7 +394,7 @@
       "legacy_id": "CFG",
       "level": 6,
       "name": "CFG",
-      "rank": 2158,
+      "rank": 2163,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -394,7 +411,7 @@
       "legacy_id": "Flux",
       "level": 6,
       "name": "Flux",
-      "rank": 2397,
+      "rank": 2402,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -411,7 +428,7 @@
       "legacy_id": "SMC-CFG",
       "level": 6,
       "name": "SMC-CFG",
-      "rank": 3124,
+      "rank": 3129,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -428,7 +445,7 @@
       "legacy_id": "交互指南",
       "level": 6,
       "name": "交互指南",
-      "rank": 3524,
+      "rank": 3530,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -445,7 +462,7 @@
       "legacy_id": "图像保护",
       "level": 6,
       "name": "图像保护",
-      "rank": 4210,
+      "rank": 4216,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -462,14 +479,31 @@
       "legacy_id": "控制论",
       "level": 6,
       "name": "控制论",
-      "rank": 4961,
+      "rank": 4967,
       "related_count": 7,
       "weighted_degree": 7
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Flux",
+      "degree": 1,
+      "description": "文章标签: cs.SE",
+      "id": "tag:cs.SE",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "cs.SE",
+      "level": 6,
+      "name": "cs.SE",
+      "rank": 7026,
+      "related_count": 1,
+      "weighted_degree": 1
     }
   ],
   "stats": {
     "total_links": 32,
-    "total_nodes": 12
+    "total_nodes": 14
   },
   "version": 2
 }

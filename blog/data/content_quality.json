@@ -1,5 +1,5 @@
 {
-  "active_count": 1989,
+  "active_count": 1992,
   "archived_count": 379,
   "complete_count": 0,
   "legacy_analysis_count": 1981,
@@ -10200,6 +10200,12 @@
       "reasons": [],
       "status": "legacy_analysis"
     },
+    "posts/20260715-arxiv-watermark-forensics-for-generative-models-an-infor-0-c71fbb3c8b.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260715-arxiv-win-by-silence-deletion-non-monotonicity-autonomou-0-60cfb873ce.md": {
       "reasons": [
         "concise_source_card"
@@ -10238,6 +10244,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260715-blogs_podcasts-scaling-ux-testing-with-amazon-nova-act-a-new-appr-0-d3d801b9b9.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260715-blogs_podcasts-scaling-ux-testing-with-amazon-nova-act-a-new-appr-0.md": {
       "reasons": [
         "archived_content"
@@ -10249,6 +10261,12 @@
         "archived_content"
       ],
       "status": "archived"
+    },
+    "posts/20260715-juejin-别再自己拼凑了这款-vue-35-严肃产品级组件库把-ai-对话工作流和复杂数据全包了-0-a67f0e165a.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -10256,8 +10274,8 @@
     "archived_content": 379
   },
   "schema_version": "content_quality_manifest_v3",
-  "source_brief_count": 8,
-  "source_file_count": 2368,
-  "source_tree_sha256": "0eb211f5f033115a8454cb0ab8a90aa152e2a2eb5941d96fea91b6082a872c41",
+  "source_brief_count": 11,
+  "source_file_count": 2371,
+  "source_tree_sha256": "c918881aa3aa905e7fe0a2ca8fb906f2202c8960133d88b785e4e0f397ea2d08",
   "warning_counts": {}
 }

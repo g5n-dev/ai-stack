@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:面试考点",
-  "generated_at": "2026-07-15T06:00:41Z",
+  "generated_at": "2026-07-15T15:05:07Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -445,7 +445,7 @@
       "legacy_id": "Context",
       "level": 6,
       "name": "Context",
-      "rank": 1539,
+      "rank": 1540,
       "related_count": 12,
       "weighted_degree": 14
     },
@@ -462,7 +462,7 @@
       "legacy_id": "大模型原理",
       "level": 6,
       "name": "大模型原理",
-      "rank": 1568,
+      "rank": 1569,
       "related_count": 12,
       "weighted_degree": 14
     },
@@ -479,7 +479,7 @@
       "legacy_id": "AI 术语",
       "level": 6,
       "name": "AI 术语",
-      "rank": 1712,
+      "rank": 1714,
       "related_count": 7,
       "weighted_degree": 7.6
     },
@@ -496,7 +496,7 @@
       "legacy_id": "AI 概念",
       "level": 6,
       "name": "AI 概念",
-      "rank": 1715,
+      "rank": 1717,
       "related_count": 7,
       "weighted_degree": 7.6
     },
@@ -513,7 +513,7 @@
       "legacy_id": "Apideck CLI",
       "level": 6,
       "name": "Apideck CLI",
-      "rank": 1873,
+      "rank": 1875,
       "related_count": 7,
       "weighted_degree": 7.6
     },
@@ -530,7 +530,7 @@
       "legacy_id": "Self-Feedback",
       "level": 6,
       "name": "Self-Feedback",
-      "rank": 3081,
+      "rank": 3086,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -547,7 +547,7 @@
       "legacy_id": "Token 节省",
       "level": 6,
       "name": "Token 节省",
-      "rank": 3232,
+      "rank": 3238,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -564,7 +564,7 @@
       "legacy_id": "工具分发",
       "level": 6,
       "name": "工具分发",
-      "rank": 4568,
+      "rank": 4574,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -581,7 +581,7 @@
       "legacy_id": "自扩展",
       "level": 6,
       "name": "自扩展",
-      "rank": 6227,
+      "rank": 6233,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -598,7 +598,7 @@
       "legacy_id": "面试考点",
       "level": 6,
       "name": "面试考点",
-      "rank": 6871,
+      "rank": 6877,
       "related_count": 7,
       "weighted_degree": 7
     }

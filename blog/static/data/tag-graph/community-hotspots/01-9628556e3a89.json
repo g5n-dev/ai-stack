@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:P-EAGLE",
-  "generated_at": "2026-07-15T06:00:41Z",
+  "generated_at": "2026-07-15T15:05:07Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -479,7 +479,7 @@
       "legacy_id": "Flash Attention",
       "level": 6,
       "name": "Flash Attention",
-      "rank": 1544,
+      "rank": 1545,
       "related_count": 12,
       "weighted_degree": 14
     },
@@ -496,7 +496,7 @@
       "legacy_id": "AI 基准",
       "level": 6,
       "name": "AI 基准",
-      "rank": 1703,
+      "rank": 1705,
       "related_count": 7,
       "weighted_degree": 7.6
     },
@@ -513,7 +513,7 @@
       "legacy_id": "DSpark",
       "level": 6,
       "name": "DSpark",
-      "rank": 2313,
+      "rank": 2318,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -530,7 +530,7 @@
       "legacy_id": "EAGLE",
       "level": 6,
       "name": "EAGLE",
-      "rank": 2325,
+      "rank": 2330,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -547,7 +547,7 @@
       "legacy_id": "EWSJF",
       "level": 6,
       "name": "EWSJF",
-      "rank": 2359,
+      "rank": 2364,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -564,7 +564,7 @@
       "legacy_id": "P-EAGLE",
       "level": 6,
       "name": "P-EAGLE",
-      "rank": 2860,
+      "rank": 2865,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -581,7 +581,7 @@
       "legacy_id": "XLA",
       "level": 6,
       "name": "XLA",
-      "rank": 3371,
+      "rank": 3377,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -598,7 +598,7 @@
       "legacy_id": "混合负载",
       "level": 6,
       "name": "混合负载",
-      "rank": 5582,
+      "rank": 5588,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -615,7 +615,7 @@
       "legacy_id": "特征选择",
       "level": 6,
       "name": "特征选择",
-      "rank": 5677,
+      "rank": 5683,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -632,7 +632,7 @@
       "legacy_id": "调度器",
       "level": 6,
       "name": "调度器",
-      "rank": 6498,
+      "rank": 6504,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -649,7 +649,7 @@
       "legacy_id": "队头阻塞",
       "level": 6,
       "name": "队头阻塞",
-      "rank": 6800,
+      "rank": 6806,
       "related_count": 7,
       "weighted_degree": 7
     }
