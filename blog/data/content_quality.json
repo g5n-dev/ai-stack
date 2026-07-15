@@ -1,5 +1,5 @@
 {
-  "active_count": 1922,
+  "active_count": 1923,
   "archived_count": 448,
   "complete_count": 0,
   "legacy_analysis_count": 1910,
@@ -10392,6 +10392,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260715-blogs_podcasts-sciencesofts-hipaa-compliant-ai-voice-scheduler-bu-0-f6db292609.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260715-juejin-designmd把-ai-生成-ui-从凭感觉变成可验证工程-0.md": {
       "reasons": [
         "archived_content"
@@ -10410,8 +10416,8 @@
     "archived_content": 448
   },
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 12,
-  "source_file_count": 2370,
-  "source_tree_sha256": "5485f8a188dded4b4bb5cb4bc0186ef360ab4721d83d5efb5ca0d98c8546cae5",
+  "source_brief_count": 13,
+  "source_file_count": 2371,
+  "source_tree_sha256": "1997067d13e8e7cb450ce9cfa10568e282f16025060356f2dd7c57dc1c0fe6d8",
   "warning_counts": {}
 }

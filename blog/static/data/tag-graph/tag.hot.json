@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-15T15:05:07Z",
+  "generated_at": "2026-07-15T15:49:17Z",
   "layer": "tag",
   "layers": {
     "application": {
@@ -36004,7 +36004,7 @@
       "legacy_id": "AI Agents",
       "level": 6,
       "name": "AI Agents",
-      "rank": 134,
+      "rank": 135,
       "related_count": 76,
       "weighted_degree": 91.6
     },
@@ -36332,11 +36332,11 @@
       "weighted_degree": 309
     },
     {
-      "article_count": 13,
+      "article_count": 14,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
-      "degree": 79,
+      "degree": 85,
       "description": "文章标签: Amazon Nova",
       "id": "tag:Amazon Nova",
       "layer": "tag",
@@ -36344,9 +36344,9 @@
       "legacy_id": "Amazon Nova",
       "level": 6,
       "name": "Amazon Nova",
-      "rank": 136,
-      "related_count": 79,
-      "weighted_degree": 91
+      "rank": 133,
+      "related_count": 85,
+      "weighted_degree": 97
     },
     {
       "article_count": 73,
@@ -36888,7 +36888,7 @@
       "legacy_id": "hacker_news",
       "level": 6,
       "name": "hacker_news",
-      "rank": 6825,
+      "rank": 6829,
       "related_count": 0,
       "weighted_degree": 0
     },
@@ -38146,7 +38146,7 @@
       "legacy_id": "多语言",
       "level": 6,
       "name": "多语言",
-      "rank": 135,
+      "rank": 136,
       "related_count": 82,
       "weighted_degree": 91
     },
@@ -39727,7 +39727,7 @@
       "legacy_id": "自然语言处理",
       "level": 6,
       "name": "自然语言处理",
-      "rank": 133,
+      "rank": 134,
       "related_count": 76,
       "weighted_degree": 92.2
     },

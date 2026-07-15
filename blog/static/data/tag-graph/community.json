@@ -4,7 +4,7 @@
     {
       "article_count": 797,
       "hotspot_count": 21,
-      "hotspot_file": "community-hotspots/01-543ddbf48550.json",
+      "hotspot_file": "community-hotspots/01-20f251ed8330.json",
       "id": "community:tag:面试考点",
       "leader_id": "tag:LLM",
       "name": "LLM",
@@ -16,7 +16,7 @@
     {
       "article_count": 65,
       "hotspot_count": 17,
-      "hotspot_file": "community-hotspots/02-2b7c042b81ca.json",
+      "hotspot_file": "community-hotspots/02-5e7bd464b20d.json",
       "id": "community:tag:SpeechAnalyzer",
       "leader_id": "tag:开源模型",
       "name": "开源模型",
@@ -28,7 +28,7 @@
     {
       "article_count": 77,
       "hotspot_count": 15,
-      "hotspot_file": "community-hotspots/03-e957a07e7e96.json",
+      "hotspot_file": "community-hotspots/03-bfff6e352926.json",
       "id": "community:tag:P-EAGLE",
       "leader_id": "tag:性能优化",
       "name": "性能优化",
@@ -40,7 +40,7 @@
     {
       "article_count": 86,
       "hotspot_count": 14,
-      "hotspot_file": "community-hotspots/04-9071e8bbad61.json",
+      "hotspot_file": "community-hotspots/04-2f256b9e48cb.json",
       "id": "community:tag:Flux",
       "leader_id": "tag:扩散模型",
       "name": "扩散模型",
@@ -52,7 +52,7 @@
     {
       "article_count": 7,
       "hotspot_count": 14,
-      "hotspot_file": "community-hotspots/05-94164db985a0.json",
+      "hotspot_file": "community-hotspots/05-61e1b663e4da.json",
       "id": "community:tag:移动开发",
       "leader_id": "tag:Android",
       "name": "Android",
@@ -64,7 +64,7 @@
     {
       "article_count": 107,
       "hotspot_count": 13,
-      "hotspot_file": "community-hotspots/06-6f80b371778f.json",
+      "hotspot_file": "community-hotspots/06-9ff2cc09b79b.json",
       "id": "community:tag:行业格局",
       "leader_id": "tag:OpenAI",
       "name": "OpenAI",
@@ -76,7 +76,7 @@
     {
       "article_count": 34,
       "hotspot_count": 13,
-      "hotspot_file": "community-hotspots/07-c18dd54284d5.json",
+      "hotspot_file": "community-hotspots/07-c0ba4aaf0c6d.json",
       "id": "community:tag:Autotab",
       "leader_id": "tag:Cursor",
       "name": "Cursor",
@@ -88,7 +88,7 @@
     {
       "article_count": 67,
       "hotspot_count": 12,
-      "hotspot_file": "community-hotspots/08-3385e1b1c16f.json",
+      "hotspot_file": "community-hotspots/08-7e5bce10f441.json",
       "id": "community:tag:Gemini 3",
       "leader_id": "tag:模型发布",
       "name": "模型发布",
@@ -100,7 +100,7 @@
     {
       "article_count": 59,
       "hotspot_count": 12,
-      "hotspot_file": "community-hotspots/09-5748c60e8d63.json",
+      "hotspot_file": "community-hotspots/09-4860026ed475.json",
       "id": "community:tag:Folo",
       "leader_id": "tag:开源项目",
       "name": "开源项目",
@@ -112,7 +112,7 @@
     {
       "article_count": 53,
       "hotspot_count": 12,
-      "hotspot_file": "community-hotspots/10-d7c3fc56ed49.json",
+      "hotspot_file": "community-hotspots/10-4fe5bd39d3f8.json",
       "id": "community:tag:Clippy",
       "leader_id": "tag:AI 助手",
       "name": "AI 助手",
@@ -124,7 +124,7 @@
     {
       "article_count": 47,
       "hotspot_count": 12,
-      "hotspot_file": "community-hotspots/11-a860f99f36fc.json",
+      "hotspot_file": "community-hotspots/11-7d389260b08f.json",
       "id": "community:tag:SF6",
       "leader_id": "tag:计算机视觉",
       "name": "计算机视觉",
@@ -134,18 +134,18 @@
       "weighted_degree": 449.2
     },
     {
-      "article_count": 1907,
+      "article_count": 1908,
       "hotspot_count": 0,
       "id": "community:other",
       "leader_id": null,
       "name": "其他",
-      "node_count": 6610,
+      "node_count": 6614,
       "rank": 12,
-      "tag_occurrences": 13138,
-      "weighted_degree": 91994.4
+      "tag_occurrences": 13145,
+      "weighted_degree": 92036.4
     }
   ],
-  "generated_at": "2026-07-15T15:05:07Z",
+  "generated_at": "2026-07-15T15:49:17Z",
   "iterations": 6,
   "limit": 11,
   "links": [
@@ -519,7 +519,7 @@
     }
   ],
   "stats": {
-    "assigned_nodes": 6765,
+    "assigned_nodes": 6769,
     "detected_communities": 1417,
     "emitted_communities": 12,
     "total_communities": 12,
