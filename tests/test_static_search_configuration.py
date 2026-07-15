@@ -64,6 +64,8 @@ def test_search_page_is_semantic_keyboard_ready_and_self_hosted() -> None:
     assert "text-muted-teal/60" not in search_script
     assert "result.data(" not in search_script
     assert 'fetch("/pagefind/catalog.json"' in search_script
+    assert 'cache: refresh ? "reload" : "no-cache"' in search_script
+    assert 'cache: "force-cache"' not in search_script
     assert not template.read_text(encoding="utf-8").__contains__("https://cdn.")
 
 

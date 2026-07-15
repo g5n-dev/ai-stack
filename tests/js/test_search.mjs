@@ -366,6 +366,7 @@ test("fails closed when the result catalog is unavailable and retries on the nex
 test("rejects incomplete or malformed catalog records instead of downloading fragments", async () => {
   const document = fakeSearchDocument();
   document.ids["search-query"].value = "missing";
+  let catalogCalls = 0;
   let fragmentDataCalls = 0;
   const pagefind = {
     async init() {},
@@ -383,14 +384,66 @@ test("rejects incomplete or malformed catalog records instead of downloading fra
   const controller = Search.initializeSearchPage(
     document,
     async () => pagefind,
-    async () => resultCatalog({}),
+    async () => {
+      catalogCalls += 1;
+      return resultCatalog({});
+    },
   );
 
   await controller.runSearch();
 
+  assert.equal(catalogCalls, 2);
   assert.equal(fragmentDataCalls, 0);
   assert.equal(document.ids["search-results"].children.length, 0);
   assert.equal(document.ids["search-status"].textContent, "检索结果目录不完整，请稍后重试。");
+});
+
+
+test("revalidates once when a cached catalog misses a current Pagefind result", async () => {
+  const document = fakeSearchDocument();
+  document.ids["search-query"].value = "ScienceSoft";
+  let fragmentDataCalls = 0;
+  const pagefind = {
+    async init() {},
+    async search() {
+      return {
+        results: [{
+          id: "zh-cn_5dd2374",
+          async data() {
+            fragmentDataCalls += 1;
+          },
+        }],
+      };
+    },
+  };
+  const catalogOptions = [];
+  const controller = Search.initializeSearchPage(
+    document,
+    async () => pagefind,
+    async (options) => {
+      catalogOptions.push(options);
+      if (catalogOptions.length === 1) {
+        return resultCatalog({ "zh-cn_123abcd": catalogRecord(1) });
+      }
+      return resultCatalog({
+        "zh-cn_5dd2374": {
+          ...catalogRecord(2),
+          title: "ScienceSoft’s HIPAA-compliant AI voice scheduler built on AWS",
+        },
+      });
+    },
+  );
+
+  await controller.runSearch();
+
+  assert.deepEqual(catalogOptions, [{ refresh: false }, { refresh: true }]);
+  assert.equal(fragmentDataCalls, 0);
+  assert.equal(document.ids["search-results"].children.length, 1);
+  assert.equal(
+    document.ids["search-results"].children[0].children[0].textContent,
+    "ScienceSoft’s HIPAA-compliant AI voice scheduler built on AWS",
+  );
+  assert.equal(document.ids["search-status"].textContent, "找到 1 条，当前显示 1 条。");
 });
 
 

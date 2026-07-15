@@ -326,11 +326,11 @@
     return import("/pagefind/pagefind.js");
   }
 
-  async function defaultCatalogLoader() {
+  async function defaultCatalogLoader({ refresh = false } = {}) {
     let response;
     try {
       response = await fetch("/pagefind/catalog.json", {
-        cache: "force-cache",
+        cache: refresh ? "reload" : "no-cache",
         credentials: "same-origin",
       });
       if (!response.ok) {
@@ -381,9 +381,12 @@
       return pagefindPromise;
     }
 
-    async function getCatalog() {
+    async function getCatalog({ refresh = false } = {}) {
+      if (refresh) {
+        catalogPromise = undefined;
+      }
       if (!catalogPromise) {
-        catalogPromise = Promise.resolve(loadCatalog())
+        catalogPromise = Promise.resolve(loadCatalog({ refresh }))
           .then(validateCatalog)
           .catch((error) => {
             catalogPromise = undefined;
@@ -394,6 +397,21 @@
           });
       }
       return catalogPromise;
+    }
+
+    async function mapCatalogResults(searchResults) {
+      for (let attempt = 0; attempt < 2; attempt += 1) {
+        try {
+          const catalog = await getCatalog({ refresh: attempt === 1 });
+          return searchResults.map((result) => catalogResult(catalog, result));
+        } catch (error) {
+          if (attempt === 0 && error?.catalogFailure === "incomplete") {
+            continue;
+          }
+          throw error;
+        }
+      }
+      throw catalogFailure("incomplete");
     }
 
     async function loadFilters() {
@@ -443,10 +461,9 @@
           status.textContent = "输入关键词或至少选择一个过滤条件。";
           return;
         }
-        const catalog = search.results.length > 0 ? await getCatalog() : null;
-        const visibleResults = search.results
-          .slice(0, MAX_RESULTS)
-          .map((result) => catalogResult(catalog, result));
+        const visibleResults = search.results.length > 0
+          ? await mapCatalogResults(search.results.slice(0, MAX_RESULTS))
+          : [];
         if (sequence !== searchSequence) {
           return;
         }
