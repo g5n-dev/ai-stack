@@ -33,10 +33,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 英伟达PersonaPlex 7B登陆苹果芯片：Swift实现全双工语音交互
-
----
-
 ## 基本信息
 
 - **作者**: ipotapov

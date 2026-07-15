@@ -28,9 +28,12 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: '💡 原名: MatsuriDayo / nekoray Relevant source files .github/workflows/update-pkgbuild.yml
+  README.md db/ConfigBuilder.cpp translations/faIR.ts translations/zhCN.ts ui/mainwindow.cpp
+  ui/mainwindow.h'
 ---
 
-# 🚀 🔥GitHub爆款：MatsuriDayo/nekoray！网络神器震撼来袭！
+## 🚀 🔥GitHub爆款：MatsuriDayo/nekoray！网络神器震撼来袭！
 
 > 💡 **原名**: MatsuriDayo /
 
@@ -47,9 +50,8 @@ source_support: 0.0
 - **DeepWiki**: [https://deepwiki.com/MatsuriDayo/nekoray](https://deepwiki.com/MatsuriDayo/nekoray)
 
 ---
-## 📚 DeepWiki 速览（节选）
 
-# NekoBox Overview
+## NekoBox Overview
 
 Relevant source files
 
@@ -309,7 +311,6 @@ NekoBox（项目代码仓库 nekoray）是一个基于 Qt 框架开发的跨平�
 
 ---
 
-# 🧱 NekoRay / NekoBox 技术深度分析报告
 
 ## 1. 技术架构深度剖析
 

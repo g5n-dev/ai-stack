@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 基于 LangChain.js 与 ReAct 循环实现 AI 编程助手
-
----
-
 ## 基本信息
 
 - **作者**: 董员外

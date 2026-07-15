@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# DVC与SageMaker AI MLflow构建端到端ML血缘追踪
-
----
-
 ## 基本信息
 
 - **来源**: AWS Machine Learning Blog (blog)
@@ -175,7 +171,6 @@ MLflow Apps 提供模型注册、审批和工作流编排能力，其血缘模�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [数据](/categories/%E6%95%B0%E6%8D%AE/)

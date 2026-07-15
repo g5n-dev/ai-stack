@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# FedCova：抗噪标签的鲁棒联邦协方差学习框架
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.04062v1

@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 超越星级评分：基于LLM与文本分类的细粒度情感分析框架
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.21082v1

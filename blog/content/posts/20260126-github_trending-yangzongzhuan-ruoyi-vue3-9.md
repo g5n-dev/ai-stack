@@ -25,9 +25,12 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: '💡 原名: yangzongzhuan / RuoYi-Vue3 Relevant source files README.md bin/package.bat
+  package.json src/assets/images/pay.png src/layout/components/Settings/index.vue
+  src/main.js src/views/index.vue This'
 ---
 
-# 🚀 🚀若依Vue3重磅发布！前后端分离+企业级神器🔥
+## 🚀 🚀若依Vue3重磅发布！前后端分离+企业级神器🔥
 
 > 💡 **原名**: yangzongzhuan /
 
@@ -44,9 +47,8 @@ source_support: 0.0
 - **DeepWiki**: [https://deepwiki.com/yangzongzhuan/RuoYi-Vue3](https://deepwiki.com/yangzongzhuan/RuoYi-Vue3)
 
 ---
-## 📚 DeepWiki 速览（节选）
 
-# Overview
+## Overview
 
 Relevant source files
 
@@ -298,7 +300,6 @@ DeepWiki 摘录显示，该项目提供了详细的文档支持，涵盖了核�
 #### 7. 对比优势：vs. Ant Design Pro vs. Vue-Vben-Admin ⚔️
 *   **
 
----
 ## 🔍 全面技术分析
 
 这是一份关于 **RuoYi-Vue3** 仓库的超级深入技术分析。RuoYi（若依）在国内 Java 开源社区具有极高的知名度，几乎成为了中小型企业级后台管理系统的“事实标准”之一。该仓库是其基于 **Vue 3 + Vite** 前端技术栈的最新迭代版本。
@@ -307,7 +308,6 @@ DeepWiki 摘录显示，该项目提供了详细的文档支持，涵盖了核�
 
 ---
 
-# 🚀 RuoYi-Vue3 深度技术全景分析
 
 ## 1. 技术架构深度剖析
 

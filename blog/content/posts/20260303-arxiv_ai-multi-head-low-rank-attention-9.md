@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 多头低秩注意力机制
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.02188v1

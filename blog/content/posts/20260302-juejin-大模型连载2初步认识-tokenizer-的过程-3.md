@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 大模型连载2：初步认识 tokenizer 的过程
-
----
-
 ## 基本信息
 
 - **作者**: 董章鱼是个攻城狮

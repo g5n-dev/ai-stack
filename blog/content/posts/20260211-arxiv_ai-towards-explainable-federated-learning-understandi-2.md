@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 迈向可解释联邦学习：理解差分隐私的影响
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.10100v1
@@ -205,7 +201,6 @@ source_support: 0.0
 
 ---
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/) / [安全](/categories/%E5%AE%89%E5%85%A8/)

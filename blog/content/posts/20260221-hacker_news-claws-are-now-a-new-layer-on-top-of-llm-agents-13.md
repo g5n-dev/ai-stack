@@ -36,10 +36,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Claws 成为 LLM 智能体顶层新抽象层
-
----
-
 ## 基本信息
 
 - **作者**: Cyphase

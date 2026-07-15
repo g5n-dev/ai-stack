@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# BioTradingArena：用于评估LLM预测生物科技股票走势的基准
-
----
-
 ## 基本信息
 
 - **作者**: dchu17
@@ -432,7 +428,6 @@ BioTradingArena 被引入作为一个标准化的验证工具。社区开发者�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [数据](/categories/%E6%95%B0%E6%8D%AE/)

@@ -38,10 +38,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# SemiAnalysis谈2000亿美元AI支出与谷歌2027年盈利隐忧
-
----
-
 ## 基本信息
 
 - **来源**: Latent Space (blog)

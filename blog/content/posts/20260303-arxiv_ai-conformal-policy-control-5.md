@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Conformal Policy Control：一种基于保形预测的策略控制方法
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.02196v1

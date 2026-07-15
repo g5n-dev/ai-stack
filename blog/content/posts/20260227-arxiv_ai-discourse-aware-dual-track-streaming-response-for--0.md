@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 面向低延迟口语对话的语篇感知双流响应生成
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.23266v1

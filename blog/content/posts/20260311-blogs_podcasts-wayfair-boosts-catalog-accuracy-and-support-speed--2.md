@@ -35,10 +35,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Wayfair利用OpenAI优化产品目录并自动化工单分拣
-
----
-
 ## 基本信息
 
 - **来源**: OpenAI Blog (blog)

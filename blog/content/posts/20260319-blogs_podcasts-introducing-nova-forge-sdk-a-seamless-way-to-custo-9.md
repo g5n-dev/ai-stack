@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Nova Forge SDK发布：简化企业LLM定制流程
-
----
-
 ## 基本信息
 
 - **来源**: AWS Machine Learning Blog (blog)

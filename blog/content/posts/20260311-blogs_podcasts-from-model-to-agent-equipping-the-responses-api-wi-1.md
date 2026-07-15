@@ -38,10 +38,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# OpenAI 利用 Responses API 构建具备文件与状态管理的代理运行时
-
----
-
 ## 基本信息
 
 - **来源**: OpenAI Blog (blog)

@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# GPT-5 Pro破解三年免疫学谜团助力癌症研究
-
----
-
 ## 基本信息
 
 - **来源**: OpenAI Blog (blog)
@@ -166,7 +162,6 @@ GPT-5 Pro在此次研究中的应用涉及三个核心技术层次。第一层�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

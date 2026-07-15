@@ -37,10 +37,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 2025年12月AI回顾：编程范式的永久性变革
-
----
-
 ## 基本信息
 
 - **来源**: Latent Space (blog)

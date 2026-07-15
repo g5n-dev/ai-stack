@@ -67,10 +67,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# LangBot：生产级多平台智能体IM机器人开发平台
-
----
-
 ## 基本信息
 
 - **描述**: Production-grade platform for building agentic IM bots - 生产级多平台智能机器人开发平台. 提供 Agent、知识库编排、插件系统 / Bots for Discord / Slack / LINE / Telegram / WeChat(企业微信, 企微智能机器人, 公众号) / 飞书 / 钉钉 / QQ / Satori e.g. Integrated with ChatGPT(GPT), DeepSeek, Dify, n8n, Langflow, Coze, Claude, Gemini, MiniMax, Ollama, SiliconFlow, Moonshot, GLM, clawdbot / openclaw
@@ -107,7 +103,6 @@ This document provides a high-level technical overview of the LangBot platform a
 
 * * *
 
----
 
 ## 导语
 

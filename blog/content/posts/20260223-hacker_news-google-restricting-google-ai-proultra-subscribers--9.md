@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 谷歌限制使用OpenClaw的AI Pro/Ultra订阅用户
-
----
-
 ## 基本信息
 
 - **作者**: srigi

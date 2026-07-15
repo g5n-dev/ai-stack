@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AI在前后端开发中的差异化落地：基于任务确定性的应用策略
-
----
-
 ## 基本信息
 
 - **作者**: 木易士心

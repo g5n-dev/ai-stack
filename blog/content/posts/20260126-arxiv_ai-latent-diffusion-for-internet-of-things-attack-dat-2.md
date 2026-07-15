@@ -24,9 +24,11 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: 本文提出了一种基于潜在扩散模型的方法，旨在解决物联网入侵检测系统（IDS）中因良性流量与攻击流量数据类别不平衡而导致的机器学习性能下降问题。
+  现有的数据增强方法通常难以同时兼顾样本的保真度、多样性和计算效率。对此，研究者在DDoS、Mirai和中间人三种典型物联网攻击场景下进行了实验，对比了下游IDS性能及生成质量。
 ---
 
-# 📚 🔥IoT攻击数据生成神器！Latent Diffusion让入侵检测更准！
+## 📚 🔥IoT攻击数据生成神器！Latent Diffusion让入侵检测更准！
 
 ---
 
@@ -125,7 +127,6 @@ source_support: 0.0
 
 ---
 
-# 🛡️ 深度分析报告：基于潜在扩散模型的物联网入侵检测攻击数据生成
 
 ## 1. 研究背景与问题 🌍
 

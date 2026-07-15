@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 土耳其语子词策略大规模评估：数据、词表与形态交互
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.06942v1
@@ -132,7 +128,6 @@ Duygu Altinok 的这项工作针对形态丰富语言（MRL）——特别是土
 
 ---
 
-# 大规模土耳其语子词策略优化：数据、词汇与形态交互的系统评估
 
 ## 1. 研究背景与问题
 
@@ -507,7 +502,6 @@ Duygu Altinok 的这项工作针对形态丰富语言（MRL）——特别是土
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [数据](/categories/%E6%95%B0%E6%8D%AE/)

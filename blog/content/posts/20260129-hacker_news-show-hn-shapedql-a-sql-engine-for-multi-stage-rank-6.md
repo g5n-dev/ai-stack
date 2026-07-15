@@ -31,10 +31,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# ShapedQL：支持多阶段排序与RAG的SQL引擎
-
----
-
 ## 基本信息
 
 - **作者**: tullie
@@ -472,7 +468,6 @@ ShapedQL 的独特之处在于它允许你在单个查询中定义并执行这�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [数据](/categories/%E6%95%B0%E6%8D%AE/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Codex用户数半年增长10倍至700万是否已超Claude Code
-
----
-
 ## 基本信息
 
 - **来源**: Latent Space (blog)
@@ -134,7 +130,6 @@ Codex用户规模的爆发式增长正在重塑代码生成工具市场的竞争
 
 ---
 
----
 ## 站内链接
 
 - 分类： [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/) / [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

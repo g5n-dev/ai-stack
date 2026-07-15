@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 谷歌发布 Android Bench：Gemini-3.1 Pro 开发基准测试领先
-
----
-
 ## 基本信息
 
 - **作者**: 恋猫de小郭

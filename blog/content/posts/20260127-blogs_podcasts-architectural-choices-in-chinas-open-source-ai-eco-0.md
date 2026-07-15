@@ -33,10 +33,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 中国开源AI生态架构选择：DeepSeek之外的技术路径
-
----
-
 ## 基本信息
 
 - **来源**: Hugging Face Blog (blog)
@@ -103,9 +99,7 @@ source_support: 0.0
 *   **开源 vs 闭源的边界：** DeepSeek虽开源权重，但其核心训练数据管道并未完全公开。文章若认为“架构开源”等于“生态壁垒消除”，可能
 
 ---
-## 技术分析
 
-# 中国开源AI生态的技术架构演进与差异化路径
 
 ## 1. 核心观点分析
 
@@ -271,7 +265,6 @@ source_support: 0.0
 ---
 
 
----
 ## 站内链接
 
 - 分类： [开源生态](/categories/%E5%BC%80%E6%BA%90%E7%94%9F%E6%80%81/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

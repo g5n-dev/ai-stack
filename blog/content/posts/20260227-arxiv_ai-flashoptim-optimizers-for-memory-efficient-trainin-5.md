@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# FlashOptim：面向内存高效训练的优化器
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.23349v1

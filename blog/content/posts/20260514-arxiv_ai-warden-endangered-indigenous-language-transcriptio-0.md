@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# WARDEN模型：6小时数据实现濒危原住民语言转录翻译
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2605.13846v1
@@ -175,7 +171,6 @@ Wardaman与Sundanese具有足够音系相似性（**可证伪**：对比两种�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/) / [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

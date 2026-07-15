@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# SPQ：大语言模型压缩的集成技术
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.18420v1

@@ -19,10 +19,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# CNN Explainer：在浏览器中交互式学习卷积神经网络
-
----
-
 ## 基本信息
 
 - **作者**: vismit2000

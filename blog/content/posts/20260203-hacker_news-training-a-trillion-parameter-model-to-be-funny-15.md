@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 训练万亿参数模型使其具备幽默感
-
----
-
 ## 基本信息
 
 - **作者**: sdan
@@ -435,7 +431,6 @@ ChatGPT 展现了惊人的幽默感和创造力，能够编写脱口秀脚本、
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

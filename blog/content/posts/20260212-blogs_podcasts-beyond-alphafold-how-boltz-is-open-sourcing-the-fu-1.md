@@ -39,10 +39,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Boltz 开源平台：基于 AlphaFold 遗产加速药物发现
-
----
-
 ## 基本信息
 
 - **来源**: Latent Space (blog)
@@ -101,7 +97,6 @@ AlphaFold 的出现彻底改变了生物学界对蛋白质结构的预测能力�
 
 ---
 
-# 深度分析报告：超越AlphaFold——Boltz与开源药物发现的未来
 
 ## 1. 核心观点深度解读
 
@@ -353,7 +348,6 @@ AI 模型的性能上限取决于训练数据的质量。在开源和利用大�
 ---
 
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [开源生态](/categories/%E5%BC%80%E6%BA%90%E7%94%9F%E6%80%81/)

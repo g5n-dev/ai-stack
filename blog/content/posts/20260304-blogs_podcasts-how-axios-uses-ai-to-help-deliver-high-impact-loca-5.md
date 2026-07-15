@@ -33,10 +33,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Axios利用AI赋能本地记者并优化新闻生产流程
-
----
-
 ## 基本信息
 
 - **来源**: OpenAI Blog (blog)

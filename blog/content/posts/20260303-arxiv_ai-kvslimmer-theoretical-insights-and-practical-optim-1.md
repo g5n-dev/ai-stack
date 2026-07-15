@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# KVSlimmer：非对称KV合并的理论洞察与优化
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.00907v1

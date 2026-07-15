@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# LLM驱动的VR导览系统如何帮助视障用户实现无障碍体验
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.09964v1

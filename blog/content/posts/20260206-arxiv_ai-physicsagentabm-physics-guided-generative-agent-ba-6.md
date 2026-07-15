@@ -31,10 +31,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# PhysicsAgentABM：物理引导的生成式智能体建模
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.06030v1
@@ -127,9 +123,7 @@ PhysicsAgentABM 试图解决当前基于大语言模型（LLM）的多智能体�
     *   **纯生成式ABM（如Stanford的Generative Agents）：** 优势在于行为极其丰富、逼真；劣势在于算力昂贵、容易产生
 
 ---
-## 技术分析
 
-# PhysicsAgentABM: Physics-Guided Generative Agent-Based Modeling 技术分析
 
 ## 1. 问题定义与挑战
 
@@ -423,7 +417,6 @@ PhysicsAgentABM 试图解决当前基于大语言模型（LLM）的多智能体�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/) / [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

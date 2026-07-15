@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 谷歌将为五角大楼提供AI智能体
-
----
-
 ## 基本信息
 
 - **作者**: 1vuio0pswjnm7

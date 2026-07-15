@@ -37,10 +37,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Debian 暂不对 AI 生成代码贡献制定决策
-
----
-
 ## 基本信息
 
 - **作者**: jwilk

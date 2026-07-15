@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Qwen3.5 122B与35B模型本地实现Sonnet 4.5性能
-
----
-
 ## 基本信息
 
 - **作者**: lostmsu

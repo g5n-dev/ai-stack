@@ -46,8 +46,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# ChatGPT中文调教指南：多场景提示词与使用技巧
-
 > **原名**: PlexPt /
 
       awesome-chatgpt-prompts-zh
@@ -63,9 +61,8 @@ source_support: 0.0
 - **DeepWiki**: [https://deepwiki.com/PlexPt/awesome-chatgpt-prompts-zh](https://deepwiki.com/PlexPt/awesome-chatgpt-prompts-zh)
 
 ---
-## DeepWiki 速览（节选）
 
-# Overview
+## Overview
 
 Relevant source files
 
@@ -244,7 +241,7 @@ awesome-chatgpt-prompts-zh 是一个精选的 ChatGPT 中文提示词库，旨�
 
 ---
 
-# 1. 技术架构深度剖析
+## 1. 技术架构深度剖析
 
 ### 技术栈与架构模式
 该项目本质上是一个**静态内容存储库**，采用了最简化的技术栈：
@@ -268,7 +265,7 @@ awesome-chatgpt-prompts-zh 是一个精选的 ChatGPT 中文提示词库，旨�
 
 ---
 
-# 2. 核心功能详细解读
+## 2. 核心功能详细解读
 
 ### 主要功能与使用场景
 该仓库的核心功能是**角色扮演**与**任务引导**。它通过精心设计的自然语言指令，强制 ChatGPT 进入特定的思维模式。
@@ -293,7 +290,7 @@ awesome-chatgpt-prompts-zh 是一个精选的 ChatGPT 中文提示词库，旨�
 
 ---
 
-# 3. 技术实现细节
+## 3. 技术实现细节
 
 ### 关键算法或技术方案
 虽然不涉及代码算法，但提示词工程遵循一套**语义逻辑算法**：
@@ -313,7 +310,7 @@ awesome-chatgpt-prompts-zh 是一个精选的 ChatGPT 中文提示词库，旨�
 
 ---
 
-# 4. 适用场景分析
+## 4. 适用场景分析
 
 ### 适合使用的项目
 *   **快速原型验证**：当你需要快速生成一份文案、代码片段或方案框架时，直接调用对应的“角色”提示词可以跳过反复沟通的过程。
@@ -330,7 +327,7 @@ awesome-chatgpt-prompts-zh 是一个精选的 ChatGPT 中文提示词库，旨�
 
 ---
 
-# 5. 发展趋势展望
+## 5. 发展趋势展望
 
 ### 技术演进方向
 *   **从“提示词”到“智能体”**：未来的提示词将不再是一次性的输入，而是包含状态记忆、工具调用能力的 Agent 配置文件。
@@ -345,7 +342,7 @@ awesome-chatgpt-prompts-zh 是一个精选的 ChatGPT 中文提示词库，旨�
 
 ---
 
-# 6. 学习建议
+## 6. 学习建议
 
 ### 适合什么水平的开发者
 *   **初级**：直接复制使用，感受 AI 的能力边界。
@@ -359,7 +356,7 @@ awesome-chatgpt-prompts-zh 是一个精选的 ChatGPT 中文提示词库，旨�
 
 ---
 
-# 7. 最佳实践建议
+## 7. 最佳实践建议
 
 ### 如何正确使用
 1.  **精确复制**：确保复制完整的上下文，特别是“不要做...”的否定约束部分。
@@ -374,7 +371,7 @@ awesome-chatgpt-prompts-zh 是一个精选的 ChatGPT 中文提示词库，旨�
 
 ---
 
-# 8. 哲学与方法论：第一性原理与权衡
+## 8. 哲学与方法论：第一性原理与权衡
 
 ### 抽象层与复杂性转移
 *   **抽象层**：该项目在**“意图表达”**层进行了抽象。它将复杂的编程逻辑或专业知识封装成了**自然语言模板**。
@@ -906,7 +903,6 @@ print(enhance_prompt_quality("如何用Python读取CSV文件？"))
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [效率与方法论](/categories/%E6%95%88%E7%8E%87%E4%B8%8E%E6%96%B9%E6%B3%95%E8%AE%BA/)

@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# GitHub浏览器插件：在PR中标注AI生成的代码
-
----
-
 ## 基本信息
 
 - **作者**: rbbydotdev
@@ -478,7 +474,6 @@ CTO 在审查代码时发现，不同初级开发者对 AI 输出结果的依赖
 
 ---
 
----
 ## 站内链接
 
 - 分类： [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

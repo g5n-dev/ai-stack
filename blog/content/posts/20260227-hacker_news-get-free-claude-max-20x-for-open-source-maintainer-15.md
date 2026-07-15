@@ -35,10 +35,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 开源维护者可免费获得 Claude Max 20 倍额度
-
----
-
 ## 基本信息
 
 - **作者**: zhisme

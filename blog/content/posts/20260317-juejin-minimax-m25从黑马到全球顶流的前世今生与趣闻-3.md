@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# MiniMax M2.5：108天极速迭代，MoE与Agent原生架构重塑全球AI格局
-
----
-
 ## 基本信息
 
 - **作者**: 艾醒

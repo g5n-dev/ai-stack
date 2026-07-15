@@ -32,10 +32,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Vibe coding 会重蹈创客运动的覆辙吗
-
----
-
 ## 基本信息
 
 - **作者**: itunpredictable

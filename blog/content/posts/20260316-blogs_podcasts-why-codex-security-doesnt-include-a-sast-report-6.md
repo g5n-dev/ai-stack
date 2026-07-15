@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 为何 Codex Security 不采用 SAST 报告：利用 AI 约束推理与验证减少误报
-
----
-
 ## 基本信息
 
 - **来源**: OpenAI Blog (blog)

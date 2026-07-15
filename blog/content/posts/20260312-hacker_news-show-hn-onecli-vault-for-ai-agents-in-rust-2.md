@@ -34,10 +34,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Show HN: OneCLI – 用 Rust 构建的 AI Agent 密钥管理工具
-
----
-
 ## 基本信息
 
 - **作者**: guyb3

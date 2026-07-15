@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 清华团队开源！1 键生成多 Agent 智能体 AI 课堂
-
----
-
 ## 基本信息
 
 - **作者**: 逛逛GitHub

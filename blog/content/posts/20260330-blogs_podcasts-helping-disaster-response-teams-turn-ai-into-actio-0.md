@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 亚洲灾害响应AI行动转化工作坊启动
-
----
-
 ## 基本信息
 
 - **来源**: OpenAI Blog (blog)
@@ -125,7 +121,6 @@ OpenAI与盖茨基金会合作举办的研讨会聚焦于如何帮助亚太地�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [产品与创业](/categories/%E4%BA%A7%E5%93%81%E4%B8%8E%E5%88%9B%E4%B8%9A/)

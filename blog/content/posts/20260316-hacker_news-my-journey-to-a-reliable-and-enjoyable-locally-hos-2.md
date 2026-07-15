@@ -31,10 +31,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 打造可靠且好用的本地语音助手实践指南
-
----
-
 ## 基本信息
 
 - **作者**: Vaslo

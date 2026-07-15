@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 生成式AI提升Wi-Fi视觉系统穿透遮挡能力
-
----
-
 ## 基本信息
 
 - **来源**: MIT News (Machine Learning) (blog)

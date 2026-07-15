@@ -40,10 +40,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# OpenAI前沿评估负责人：SWE-Bench Verified后的智能体评测新方向
-
----
-
 ## 基本信息
 
 - **来源**: Latent Space (blog)

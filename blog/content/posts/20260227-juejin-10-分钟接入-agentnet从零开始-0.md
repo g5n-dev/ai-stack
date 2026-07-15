@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 10分钟接入AgentNet：从零开始的实践指南
-
----
-
 ## 基本信息
 
 - **作者**: 用户757010416612

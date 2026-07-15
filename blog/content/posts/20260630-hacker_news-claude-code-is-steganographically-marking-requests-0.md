@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Claude Code被指隐写标记请求
-
----
-
 ## 基本信息
 
 - **作者**: kirushik
@@ -85,7 +81,6 @@ Claude Code 最近被发现在其请求中嵌入隐蔽的视觉标记，形成�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [安全](/categories/%E5%AE%89%E5%85%A8/) / [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/)

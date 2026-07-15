@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Headwise Chunking：面向上下文并行的内存高效方案
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.21196v1

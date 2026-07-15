@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 面向大模型终端能力扩展的数据工程研究
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.21193v1

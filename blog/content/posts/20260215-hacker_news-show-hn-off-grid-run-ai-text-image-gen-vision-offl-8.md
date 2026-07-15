@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Off Grid：手机端离线运行AI文本、图像及视觉模型
-
----
-
 ## 基本信息
 
 - **作者**: ali_chherawalla
@@ -433,7 +429,6 @@ def offline_image_recognition():
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

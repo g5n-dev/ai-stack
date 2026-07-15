@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 本地AI Agent Memory系统建设：存储策略与检索注入机制
-
----
-
 ## 基本信息
 
 - **作者**: trsoliu

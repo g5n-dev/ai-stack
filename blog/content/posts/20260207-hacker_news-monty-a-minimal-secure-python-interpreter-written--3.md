@@ -35,10 +35,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Monty：Rust 编写的极简安全 Python 解释器
-
----
-
 ## 基本信息
 
 - **作者**: dmpetrov
@@ -496,7 +492,6 @@ Monty 的优势在于**应用级隔离**和**轻量化**：
 
 ---
 
----
 ## 站内链接
 
 - 分类： [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/) / [安全](/categories/%E5%AE%89%E5%85%A8/)

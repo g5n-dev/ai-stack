@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# ChatGPT搜索与深度研究功能教程
-
----
-
 ## 基本信息
 
 - **来源**: OpenAI Blog (blog)
@@ -129,7 +125,6 @@ ChatGPT研究功能的成熟正在重塑知识工作的生产方式。传统研�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [效率与方法论](/categories/%E6%95%88%E7%8E%87%E4%B8%8E%E6%96%B9%E6%B3%95%E8%AE%BA/)

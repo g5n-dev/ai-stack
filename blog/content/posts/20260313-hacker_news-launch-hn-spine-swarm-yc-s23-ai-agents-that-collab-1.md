@@ -31,10 +31,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Spine Swarm：支持 AI 智能体在可视化画布上协作
-
----
-
 ## 基本信息
 
 - **作者**: a24venka

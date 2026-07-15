@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# OpenClaw 记忆系统指南：让 AI 持久化记住用户偏好
-
----
-
 ## 基本信息
 
 - **作者**: 码森林

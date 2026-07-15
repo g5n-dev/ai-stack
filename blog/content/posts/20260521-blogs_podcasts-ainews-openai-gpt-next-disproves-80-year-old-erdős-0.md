@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# OpenAI GPT-next千美元内否证80年Erdős平面问题
-
----
-
 ## 基本信息
 
 - **来源**: Latent Space (blog)
@@ -121,7 +117,6 @@ AI在数学证明领域的成功应用，预示着科学研究方法论的潜在
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

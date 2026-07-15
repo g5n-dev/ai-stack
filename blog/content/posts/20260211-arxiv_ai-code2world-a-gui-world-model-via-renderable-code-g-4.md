@@ -1,5 +1,5 @@
 ---
-title: 'Code2World: A GUI World Model via Renderable Code Gener'
+title: 'Code2World: A GUI World Model via Renderable Code Generation'
 date: 2026-02-11 03:18:02+08:00
 draft: false
 entry_kind: auto
@@ -18,10 +18,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Code2World: A GUI World Model via Renderable Code Generation
-
 ---
 
 ## 基本信息
@@ -306,7 +302,6 @@ source_support: 0.0
 ---
 
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/)

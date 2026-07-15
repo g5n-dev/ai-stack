@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 为何Adam在$β_1=β_2$时更优：缺失的梯度尺度不变性原理
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2601.21739v1
@@ -497,7 +493,6 @@ $$ v_t = \beta_2 v_{t-1} + (1 - \beta_2) g_t^2 $$
 
 ---
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

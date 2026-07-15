@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# OpenClaw 集成阿里云 SLS 构建 AI Agent 可观测体系
-
----
-
 ## 基本信息
 
 - **作者**: 阿里云云原生

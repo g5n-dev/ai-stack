@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# OpenHands 框架解析：CodeActAgent 架构与设计原则
-
----
-
 ## 基本信息
 
 - **作者**: 罗西的思考

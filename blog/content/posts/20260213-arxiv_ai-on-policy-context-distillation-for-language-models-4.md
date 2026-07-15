@@ -31,10 +31,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 面向语言模型的在线上下文蒸馏方法
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.12275v1
@@ -118,7 +114,6 @@ OPCD 结合了“在策略蒸馏”与“上下文蒸馏”技术。其核心机
 
 ---
 
-# 论文深入分析：On-Policy Context Distillation for Language Models
 
 ## 1. 研究背景与问题
 
@@ -559,7 +554,6 @@ OCD 则可以被视为一种更接近监督学习的方法。它通过采样和�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

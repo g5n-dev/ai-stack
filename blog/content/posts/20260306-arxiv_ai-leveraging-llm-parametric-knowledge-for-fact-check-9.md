@@ -31,10 +31,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 利用大模型参数化知识实现无检索的事实核查
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.05471v1

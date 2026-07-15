@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 探索Transformer在表格数据变分自编码器中的位置
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2601.20854v1
@@ -122,7 +118,6 @@ source_support: 0.0
 
 ---
 
-# 深入分析：Transformer在表格数据变分自编码器中的位置探索
 
 ## 1. 研究背景与问题
 
@@ -531,7 +526,6 @@ $$ \log p(x) \geq \mathbb{E}_{q(z|x)}[\log p(x|z)] - D_{KL}(q(z|x) || p(z)) $$
 
 ---
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/) / [数据](/categories/%E6%95%B0%E6%8D%AE/)

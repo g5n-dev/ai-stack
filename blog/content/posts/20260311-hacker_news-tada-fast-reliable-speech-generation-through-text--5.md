@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# TADA：通过文本-声学同步实现快速可靠的语音生成
-
----
-
 ## 基本信息
 
 - **作者**: smusamashah

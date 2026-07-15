@@ -37,10 +37,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Replit Agent 4：面向知识工作的智能体
-
----
-
 ## 基本信息
 
 - **来源**: Latent Space (blog)

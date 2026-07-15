@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 跨架构蒸馏技术助力扩散大语言模型
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2604.26951v1
@@ -158,7 +154,6 @@ TIDE 为算力受限环境（如边缘设备、低功耗服务器）提供了一
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# EWSJF：面向混合负载LLM推理的自适应调度器
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2601.21758v1
@@ -335,7 +331,6 @@ EWSJF 将 GPU 的显存和计算资源动态划分为两部分，分别服务于
 
 ---
 
----
 ## 站内链接
 
 - 分类： [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/) / [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

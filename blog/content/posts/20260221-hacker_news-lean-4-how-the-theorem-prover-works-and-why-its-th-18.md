@@ -33,10 +33,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Lean 4 定理证明器工作原理及其在 AI 领域的新优势
-
----
-
 ## 基本信息
 
 - **作者**: tesserato

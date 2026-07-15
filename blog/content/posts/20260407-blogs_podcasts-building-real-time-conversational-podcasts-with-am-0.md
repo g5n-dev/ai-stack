@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 使用Amazon Nova Sonic构建AI对话播客自动生成方案
-
----
-
 ## 基本信息
 
 - **来源**: AWS Machine Learning Blog (blog)
@@ -117,7 +113,6 @@ Nova Sonic采用持续流式输出机制，音频片段在生成过程中即刻�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

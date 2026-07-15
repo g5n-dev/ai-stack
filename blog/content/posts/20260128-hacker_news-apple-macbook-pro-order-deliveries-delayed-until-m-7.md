@@ -20,9 +20,11 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: 💻 想买新MacBook Pro？你的钱包可能要等上一个月才能“掏空”了！ 苹果官网刚刷新的交货日期让人倒吸一口凉气：MacBook Pro
+  Pro机型的订单延迟到3月中旬才能发货——这比往年同期慢了近两周！💸 是芯片短缺卷土重来？还是苹果在憋什么“大招”？
 ---
 
-# 📰 ⚠️MacBook Pro新机告急！发货推迟至3月中旬，果粉还要等多久？
+## 📰 ⚠️MacBook Pro新机告急！发货推迟至3月中旬，果粉还要等多久？
 
 ---
 

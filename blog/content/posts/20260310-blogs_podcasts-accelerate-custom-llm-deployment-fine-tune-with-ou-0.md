@@ -37,10 +37,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 在 EC2 上使用 Oumi 微调并部署 Llama 至 Amazon Bedrock
-
----
-
 ## 基本信息
 
 - **来源**: AWS Machine Learning Blog (blog)

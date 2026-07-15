@@ -24,9 +24,11 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: BONO-Bench：一种具有可追溯帕累托集的双目标数值优化综合测试套件 背景与问题： 在多目标优化研究中，基准测试是评估启发式优化器性能的关键。然而，现有的测试问题构建方法存在显著缺陷：
+  手工构建的问题：虽然最优解易于理解，但性质不切实际且存在偏差。 组合单目标问题：虽然更接近现实且复杂，但缺乏对问题特性的控制和理解。 提出的解决方案： 本文提出了一种用于双目标数值优化问题的广泛问题生成方法。
 ---
 
-# 📚 🚀BONO-Bench：可追溯Pareto集的双目标优化基准测试！
+## 📚 🚀BONO-Bench：可追溯Pareto集的双目标优化基准测试！
 
 ---
 
@@ -157,7 +159,6 @@ source_support: 0.0
 
 ---
 
-# 🔬 BONO-Bench 深度解析报告：可追溯帕累托集的双目标数值优化基准
 
 ## 1. 研究背景与问题 🧩
 

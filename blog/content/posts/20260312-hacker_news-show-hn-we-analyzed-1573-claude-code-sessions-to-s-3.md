@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 分析1573次Claude Code会话以探究AI代理工作机制
-
----
-
 ## 基本信息
 
 - **作者**: keks0r

@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Show HN: Wispr Flow 等工具的免费替代方案
-
----
-
 ## 基本信息
 
 - **作者**: zachlatta
@@ -457,7 +453,6 @@ Sarah 开始使用这款开源工具作为她的字幕工作流核心。她利�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [效率与方法论](/categories/%E6%95%88%E7%8E%87%E4%B8%8E%E6%96%B9%E6%B3%95%E8%AE%BA/) / [产品与创业](/categories/%E4%BA%A7%E5%93%81%E4%B8%8E%E5%88%9B%E4%B8%9A/)

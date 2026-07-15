@@ -25,9 +25,11 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: 准备好了吗？一场关于AI智商的“宫斗”大戏正在上演！ 🎮⚡️ 想象一下这样的场景：全球公认的最强“文科生”大模型Claude Opus，正在俄罗斯方块的对战屏幕前苦思冥想，试图用最复杂的逻辑堆叠方块；而另一边，被视为“轻量级选手”的Gemini
+  Flash，却像开了“天眼”一般，以迅雷不及掩耳之势疯狂消除——最终，Gemini Flash竟然拿下了66%的压倒性胜率！
 ---
 
-# 📰 ⚡️俄罗斯方块爆杀Opus！Gemini Flash胜率66%震撼实测🎮
+## 📰 ⚡️俄罗斯方块爆杀Opus！Gemini Flash胜率66%震撼实测🎮
 
 ---
 

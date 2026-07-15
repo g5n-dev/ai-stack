@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 用Codex AI一天开发微信拼豆小程序照片生成图纸功能
-
----
-
 ## 基本信息
 
 - **作者**: 鲁大猿
@@ -108,7 +104,6 @@ AI 代码生成大幅缩短从概念到可运行原型的周期；自然语言�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [产品与创业](/categories/%E4%BA%A7%E5%93%81%E4%B8%8E%E5%88%9B%E4%B8%9A/)

@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 数学、计算机科学与人工智能综合资源指南
-
----
-
 ## 基本信息
 
 - **作者**: HenryNdubuaku
@@ -384,7 +380,6 @@ print(binary_search([1, 3, 5, 7, 9], 2))  # 输出: -1
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [数据](/categories/%E6%95%B0%E6%8D%AE/)

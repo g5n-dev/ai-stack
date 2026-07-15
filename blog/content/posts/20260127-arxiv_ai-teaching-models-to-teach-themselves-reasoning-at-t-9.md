@@ -24,9 +24,11 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: 总结： 本文探讨了大型推理模型如何突破自身学习瓶颈的问题。针对强化学习在微调过程中因初始成功率低而训练信号稀疏导致停滞的现象，研究人员提出了一个核心问题：预训练语言模型能否利用潜在知识，为其无法解决的问题自动生成课程？
+  为此，作者设计了 SOAR（一种自我改进框架）。该框架采用元强化学习机制，包含“教师”和“学生”两个模型副本。
 ---
 
-# 📚 突破极限！AI如何教会自己推理？🤯 边缘学习性的惊天秘密！🚀
+## 📚 突破极限！AI如何教会自己推理？🤯 边缘学习性的惊天秘密！🚀
 
 ---
 
@@ -130,7 +132,7 @@ source_support: 0.0
 
 ---
 
-# 🧠 深度解析：Teaching Models to Teach Themselves
+## 🧠 深度解析：Teaching Models to Teach Themselves
 **——探索大模型在“可学习性边缘”的元推理突破**
 
 这篇论文针对当前大语言模型（LLM）推理能力的瓶颈问题，提出了一种极具洞察力的解决方案。它不仅仅是一个算法改进，更是对**“模型如何学习”**这一元问题的深刻探讨。

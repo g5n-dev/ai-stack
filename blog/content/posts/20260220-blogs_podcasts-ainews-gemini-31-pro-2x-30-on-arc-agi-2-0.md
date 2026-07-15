@@ -40,10 +40,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 谷歌Gemini 3.1 Pro发布：ARC-AGI 2性能达3.0两倍
-
----
-
 ## 基本信息
 
 - **来源**: Latent Space (blog)

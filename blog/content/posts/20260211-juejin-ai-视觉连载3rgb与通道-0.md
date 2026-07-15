@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AI视觉连载3：RGB图像模式与通道原理解析
-
----
-
 ## 基本信息
 
 - **作者**: 董章鱼是个攻城狮
@@ -236,7 +232,6 @@ RGB（红、绿、蓝）是数字图像中最常见的色彩模式之一。与�
 ---
 
 
----
 ## 站内链接
 
 - 分类： [数据](/categories/%E6%95%B0%E6%8D%AE/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

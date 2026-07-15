@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 针对平滑对抗学习的统计查询下界研究
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.21191v1

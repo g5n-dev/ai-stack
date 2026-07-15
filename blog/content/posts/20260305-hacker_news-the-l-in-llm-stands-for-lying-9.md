@@ -32,10 +32,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# LLM中的L代表谎言：大语言模型的幻觉问题分析
-
----
-
 ## 基本信息
 
 - **作者**: LorenDB

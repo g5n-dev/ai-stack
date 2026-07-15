@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AI Agent 开发入门技术栈选型指南
-
----
-
 ## 基本信息
 
 - **作者**: Div布局师

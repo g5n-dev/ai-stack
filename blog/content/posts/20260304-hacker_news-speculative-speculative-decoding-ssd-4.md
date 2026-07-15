@@ -31,10 +31,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 推测性推测解码：SSD加速大模型推理
-
----
-
 ## 基本信息
 
 - **作者**: E-Reverance

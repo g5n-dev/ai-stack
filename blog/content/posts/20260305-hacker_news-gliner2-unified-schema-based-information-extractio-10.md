@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# GLiNER2：基于统一架构的通用信息抽取模型
-
----
-
 ## 基本信息
 
 - **作者**: apwheele

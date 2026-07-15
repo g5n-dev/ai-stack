@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 软件开发生命周期已死？AI 编码智能体如何颠覆 SDLC
-
----
-
 ## 基本信息
 
 - **作者**: NikoAI编程

@@ -21,9 +21,10 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: 【重磅】一场视频创作的“像素革命”悄然降临！ 🚀 想象一下，你正用手机拍摄一段绝美的Vlog，夕阳余晖洒满屏幕，但当你按下录制键的那一刻，所有的色彩、氛围、光影瞬间变得平淡无奇——你辛辛苦苦构思的视觉创意，就这样被死板的摄像头参数“阉割”了。
 ---
 
-# 📰 🔥Fuzzy Studio：视频/摄像头实时特效，创意爆棚！
+## 📰 🔥Fuzzy Studio：视频/摄像头实时特效，创意爆棚！
 
 ---
 

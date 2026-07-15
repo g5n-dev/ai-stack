@@ -36,10 +36,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Mercury 2：基于扩散模型的快速推理大语言模型
-
----
-
 ## 基本信息
 
 - **作者**: fittingopposite

@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# SFedHIFI：基于发放率的脉冲联邦学习异构信息融合
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.14956v1

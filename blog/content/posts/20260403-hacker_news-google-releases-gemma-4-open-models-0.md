@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 谷歌发布Gemma 4开源模型
-
----
-
 ## 基本信息
 
 - **作者**: jeffmcjunkin
@@ -89,7 +85,6 @@ Gemma 4在企业内部部署、隐私敏感场景及定制化应用开发中展�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [开源生态](/categories/%E5%BC%80%E6%BA%90%E7%94%9F%E6%80%81/)

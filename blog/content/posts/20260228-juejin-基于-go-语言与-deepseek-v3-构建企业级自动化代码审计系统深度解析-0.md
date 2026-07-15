@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 基于DeepSeek-V3与Go构建企业级代码审计系统
-
----
-
 ## 基本信息
 
 - **作者**: 无爱如何释怀

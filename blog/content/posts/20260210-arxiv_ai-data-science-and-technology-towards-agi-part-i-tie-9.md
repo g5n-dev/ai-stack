@@ -1,5 +1,5 @@
 ---
-title: 'Data Science and Technology Towards AGI Part I: Tiered'
+title: 'Data Science and Technology Towards AGI Part I: Tiered Data Management'
 date: 2026-02-10 22:46:04+08:00
 draft: false
 entry_kind: auto
@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Data Science and Technology Towards AGI Part I: Tiered Data Management
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.09003v1
@@ -56,9 +52,7 @@ source_support: 0.0
 实验结果表明，这种分层感知的数据利用方式显著提升了训练效率和模型性能。作者已发布相关数据集和处理工具以促进社区研究。
 
 ---
-## 技术分析
 
-# 技术分析报告：迈向AGI的分层级数据管理
 
 ## 1. 研究背景与核心问题
 
@@ -359,7 +353,6 @@ source_support: 0.0
 
 ---
 
----
 ## 站内链接
 
 - 分类： [数据](/categories/%E6%95%B0%E6%8D%AE/) / [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

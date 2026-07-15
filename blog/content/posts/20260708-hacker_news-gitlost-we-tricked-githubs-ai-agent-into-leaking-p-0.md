@@ -25,10 +25,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# GitLost利用指令注入诱导GitHub AI代理泄露私有仓库
-
----
-
 ## 基本信息
 
 - **作者**: ColinEberhardt
@@ -82,7 +78,6 @@ source_support: 0.0
 
 ---
 
----
 ## 站内链接
 
 - 分类： [安全](/categories/%E5%AE%89%E5%85%A8/)

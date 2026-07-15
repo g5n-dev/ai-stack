@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 基于SSE的AI对话流式消息架构与字段设计
-
----
-
 ## 基本信息
 
 - **作者**: 小王同志i

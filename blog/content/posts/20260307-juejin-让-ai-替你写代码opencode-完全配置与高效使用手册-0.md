@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# OpenCode 配置指南与高效使用手册
-
----
-
 ## 基本信息
 
 - **作者**: gyx_这个杀手不太冷静

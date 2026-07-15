@@ -32,10 +32,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AI全局分析助力细胞生物学研究与实验规划
-
----
-
 ## 基本信息
 
 - **来源**: MIT News (Machine Learning) (blog)

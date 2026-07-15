@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# OpenClaw 体验：AI 编程工具的安装与实战应用
-
----
-
 ## 基本信息
 
 - **作者**: 孟健AI编程

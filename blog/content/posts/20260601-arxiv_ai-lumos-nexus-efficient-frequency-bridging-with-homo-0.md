@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 同构潜在空间频率桥接优化视频统一模型
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2605.31603v1
@@ -148,7 +144,6 @@ Lumos‑Nexus采用两阶段设计。训练阶段仅对轻量生成器进行对�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/) / [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

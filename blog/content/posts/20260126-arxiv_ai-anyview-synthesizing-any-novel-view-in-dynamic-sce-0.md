@@ -24,9 +24,11 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: AnyView：动态场景中的任意新视角合成 现代生成式视频模型虽然能生成高质量的视频，但在高度动态的真实场景中，难以保持多视角和时空的一致性。为此，本文推出了
+  AnyView，这是一个基于扩散的视频生成框架，旨在实现“动态视角合成”。
 ---
 
-# 📚 🚀动态场景新视角合成！AnyView实现任意视角自由切换！🤯
+## 📚 🚀动态场景新视角合成！AnyView实现任意视角自由切换！🤯
 
 ---
 
@@ -144,7 +146,6 @@ source_support: 0.0
 
 ---
 
-# 🕸️ AnyView: 深度解析动态场景中的任意视角合成
 
 ## 1. 研究背景与问题
 

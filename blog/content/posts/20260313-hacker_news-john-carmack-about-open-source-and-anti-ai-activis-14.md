@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 约翰·卡马克谈开源与反AI激进主义
-
----
-
 ## 基本信息
 
 - **作者**: tzury

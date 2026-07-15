@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# LangChain 实战：处理大型文档与跨文档摘要
-
----
-
 ## 基本信息
 
 - **作者**: 数据智能老司机

@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Spring AI 结构化输出转换器实战：告别字符串解析，拥抱类型安全
-
----
-
 ## 基本信息
 
 - **作者**: 玹外之音
@@ -212,7 +208,6 @@ Spring AI 底层通常依赖 Jackson 或类似的 JSON 库进行映射：
 ---
 
 
----
 ## 站内链接
 
 - 分类： [后端](/categories/%E5%90%8E%E7%AB%AF/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

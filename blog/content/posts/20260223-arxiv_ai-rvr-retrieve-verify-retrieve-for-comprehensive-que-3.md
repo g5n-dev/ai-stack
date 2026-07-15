@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# RVR：检索-验证-检索框架提升综合问答能力
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.18425v1

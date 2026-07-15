@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Anthropic 获 30 亿美元 G 轮融资，投后估值达 380 亿美元
-
----
-
 ## 基本信息
 
 - **作者**: ryanhn
@@ -392,7 +388,6 @@ Poe 选择集成 Anthropic 的 Claude 系列模型，包括 Claude 3 Opus 和 Cl
 
 ---
 
----
 ## 站内链接
 
 - 分类： [产品与创业](/categories/%E4%BA%A7%E5%93%81%E4%B8%8E%E5%88%9B%E4%B8%9A/) / [开源生态](/categories/%E5%BC%80%E6%BA%90%E7%94%9F%E6%80%81/)

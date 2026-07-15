@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# MiniMax首份财报：ARR破1.5亿美元并预判2026年三大PMF
-
----
-
 ## 基本信息
 
 - **作者**: 量子位

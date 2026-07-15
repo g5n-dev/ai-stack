@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 前端 Agent 工作流编排：Tool 注册、思维链可视化与实时 DAG 渲染
-
----
-
 ## 基本信息
 
 - **作者**: 进击的尘埃

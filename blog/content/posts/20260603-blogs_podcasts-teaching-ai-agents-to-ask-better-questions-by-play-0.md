@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 海战棋游戏帮助AI学会高效提问
-
----
-
 ## 基本信息
 
 - **来源**: MIT News (Machine Learning) (blog)
@@ -160,7 +156,6 @@ MIT团队选择经典的海战棋（Battleship）作为AI代理提问能力的�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [效率与方法论](/categories/%E6%95%88%E7%8E%87%E4%B8%8E%E6%96%B9%E6%B3%95%E8%AE%BA/)

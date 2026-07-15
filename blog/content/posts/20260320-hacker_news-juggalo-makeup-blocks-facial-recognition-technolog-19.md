@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 研究称小丑妆容可干扰面部识别技术
-
----
-
 ## 基本信息
 
 - **作者**: speckx

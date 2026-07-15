@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# TaxonRL：基于中间奖励的可解释细粒度视觉推理
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.04380v1

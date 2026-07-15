@@ -25,10 +25,8 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 英国政府斥资410万英镑委托普华永道建设AI技能中心
-
+description: 英国政府近期斥资 410 万英镑委托普华永道开发的“AI 技能中心”，不仅是一份高额的政府合同，更折射出公共部门在技术人才储备上的紧迫需求。本文将梳理该项目的具体背景与资金细节，分析其背后的战略意图，并探讨这一举措对于英国
+  AI 生态建设的实际影响。通过阅读，您可以了解这笔公共支出的具体去向，以及它如何试图填补日益扩大的数字技能缺口。
 ---
 
 ## 基本信息
@@ -359,7 +357,6 @@ print(assess_risk_factors("AI技能中心", 4.1, 12, 20))
 
 ---
 
----
 ## 站内链接
 
 - 分类： [产品与创业](/categories/%E4%BA%A7%E5%93%81%E4%B8%8E%E5%88%9B%E4%B8%9A/) / [开源生态](/categories/%E5%BC%80%E6%BA%90%E7%94%9F%E6%80%81/)

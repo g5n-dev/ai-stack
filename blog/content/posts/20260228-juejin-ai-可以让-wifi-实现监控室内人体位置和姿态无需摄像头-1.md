@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# WiFi-DensePose项目利用AI分析信号实现无摄像头人体姿态感知
-
----
-
 ## 基本信息
 
 - **作者**: 恋猫de小郭

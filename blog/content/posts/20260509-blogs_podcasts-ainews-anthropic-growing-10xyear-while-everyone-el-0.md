@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Anthropic逆势十倍增长其他科技企业裁员超10%
-
----
-
 ## 基本信息
 
 - **来源**: Latent Space (blog)
@@ -187,7 +183,6 @@ Anthropic 的 10 倍增长是安全对齐商业价值的实证。
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [产品与创业](/categories/%E4%BA%A7%E5%93%81%E4%B8%8E%E5%88%9B%E4%B8%9A/)

@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 基于 Next.js 构建入门级智能水果推荐 Demo
-
----
-
 ## 基本信息
 
 - **作者**: 印刻君

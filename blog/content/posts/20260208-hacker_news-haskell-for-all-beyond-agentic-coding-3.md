@@ -35,10 +35,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Haskell 通用编程：超越智能体编码的范式
-
----
-
 ## 基本信息
 
 - **作者**: RebelPotato
@@ -96,7 +92,6 @@ source_support: 0.0
 
 ---
 
----
 ## 代码示例
 
 ```python
@@ -453,7 +448,6 @@ Standard Chartered 的核心技术开发部门决定采用 Haskell 作为主要�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/) / [效率与方法论](/categories/%E6%95%88%E7%8E%87%E4%B8%8E%E6%96%B9%E6%B3%95%E8%AE%BA/)

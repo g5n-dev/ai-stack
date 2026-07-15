@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# UniWeTok：统一二进制分词器支持2^128码本规模
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.14178v1
@@ -111,14 +107,12 @@ UniWeTok 是一种专为统一多模态大语言模型（MLLM）设计的统一�
 *   **挑战**：训练如此高维的离散模型对初始化非常敏感。如果论文未提供详细的初始化策略（如如何预热二值化过程），复现者极易遇到梯度爆炸或特征坍塌。
 *   **
 
----
 ## 技术分析
 
 以下是对论文 **《UniWeTok: An Unified Binary Tokenizer with Codebook Size $\mathit{2^{128}}$ for Unified Multimodal Large Language Model》** 的深入分析报告。
 
 ---
 
-# UniWeTok 论文深度分析报告
 
 ## 1. 研究背景与问题
 
@@ -497,7 +491,6 @@ UniWeTok 将分词器与 LLM 解耦，这意味着分词器可以独立于 LLM �
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

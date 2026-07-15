@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Next.js + Ollama + Qwen3 构建本地流式聊天应用
-
----
-
 ## 基本信息
 
 - **作者**: 倾颜

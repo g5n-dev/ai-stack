@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# DeepMind研究：多智能体协作瓶颈与Agent能力天花板分析
-
----
-
 ## 基本信息
 
 - **作者**: 机器之心

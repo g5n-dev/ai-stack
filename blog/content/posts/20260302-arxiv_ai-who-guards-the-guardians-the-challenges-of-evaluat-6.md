@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 评估学习表征可识别性的挑战与难点
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.24278v1

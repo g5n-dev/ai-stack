@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# OpenAI 收购 Astral 布局 Python 开发工具
-
----
-
 ## 基本信息
 
 - **来源**: OpenAI Blog (blog)

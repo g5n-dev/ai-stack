@@ -37,10 +37,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AI工程师会是最后一个职业吗
-
----
-
 ## 基本信息
 
 - **来源**: Latent Space (blog)

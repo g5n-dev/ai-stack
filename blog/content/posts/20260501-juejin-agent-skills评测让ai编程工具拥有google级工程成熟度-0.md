@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Agent Skills实测：AI编程工具的工程成熟度评测
-
----
-
 ## 基本信息
 
 - **作者**: RxGc
@@ -121,7 +117,6 @@ AI编程工具在代码生成能力上已经取得显著进步，但在工程成
 
 ---
 
----
 ## 站内链接
 
 - 分类： [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

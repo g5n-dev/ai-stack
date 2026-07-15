@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# OpenSpec 与 ECC：定位差异与构建团队工作流程
-
----
-
 ## 基本信息
 
 - **作者**: 王小酱

@@ -36,10 +36,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Fay：数字人与大语言模型连通业务系统的Agent框架
-
----
-
 ## 基本信息
 
 - **描述**: fay 是一个帮助数字人（2.5d、3d、移动、pc、网页）或大语言模型（openai 兼容、deepseek）连通业务系统的 agent 框架。

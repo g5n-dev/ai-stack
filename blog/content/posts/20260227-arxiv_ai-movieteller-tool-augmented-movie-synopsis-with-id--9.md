@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# MovieTeller：工具增强且ID一致的渐进式摘要生成
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.23228v1

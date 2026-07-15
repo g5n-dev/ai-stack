@@ -31,10 +31,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 基于锚点机制实现模型一致性
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.23360v1

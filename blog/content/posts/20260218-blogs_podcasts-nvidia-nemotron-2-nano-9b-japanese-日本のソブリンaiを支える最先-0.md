@@ -37,10 +37,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# NVIDIA Nemotron 2 Nano 9B 日语模型：支持日本主权AI的小规模语言模型
-
----
-
 ## 基本信息
 
 - **来源**: Hugging Face Blog (blog)
@@ -94,9 +90,7 @@ source_support: 0.0
 4.  **跨语言干扰测试**：输入日英混合内容，观察模型是否会出现语言混淆或逻辑崩坏，以此评估其在真实跨国业务场景中的鲁棒性。
 
 ---
-## 技术分析
 
-# 技术分析
 
 ## 1. 核心观点深度解读
 
@@ -267,7 +261,6 @@ Nemotron 2 Nano 9B Japanese 针对 TensorRT-LLM 进行了深度优化。为了�
 ---
 
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [开源生态](/categories/%E5%BC%80%E6%BA%90%E7%94%9F%E6%80%81/)

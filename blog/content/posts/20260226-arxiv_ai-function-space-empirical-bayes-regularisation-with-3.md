@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 函数空间经验贝叶斯正则化：基于t分布先验
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.22015v1

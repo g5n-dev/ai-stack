@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 审查大模型作为秘密知识提取的自然测试床
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.05494v1

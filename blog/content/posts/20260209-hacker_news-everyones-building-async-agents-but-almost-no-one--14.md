@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 人人都在构建异步智能体 但鲜有人能定义其概念
-
----
-
 ## 基本信息
 
 - **作者**: kmansm27
@@ -475,7 +471,6 @@ Klarna 部署了由 OpenAI 技术驱动的客服 Agent。该 Agent 被定义为�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

@@ -21,10 +21,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Claude Code Agent Teams多实例协作原理与主流框架对比
-
----
-
 ## 基本信息
 
 - **作者**: 易安说AI
@@ -179,7 +175,6 @@ Claude Opus 4.6 推出的 Agent Teams 功能，让多个 AI 实例协同编写�
 ---
 
 
----
 ## 站内链接
 
 - 分类： [效率与方法论](/categories/%E6%95%88%E7%8E%87%E4%B8%8E%E6%96%B9%E6%B3%95%E8%AE%BA/)

@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Claude-File-Recovery：恢复 ~/.claude 会话中的文件
-
----
-
 ## 基本信息
 
 - **作者**: rikk3rt

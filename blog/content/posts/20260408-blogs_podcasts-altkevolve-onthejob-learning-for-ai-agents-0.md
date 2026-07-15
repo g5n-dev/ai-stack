@@ -25,10 +25,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# ALTK-Evolve让AI代理边工作边学习
-
----
-
 ## 基本信息
 
 - **来源**: Hugging Face Blog (blog)
@@ -76,7 +72,6 @@ ALTK‑Evolve的核心贡献在于推动AI系统从“训练即冻结”向“�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

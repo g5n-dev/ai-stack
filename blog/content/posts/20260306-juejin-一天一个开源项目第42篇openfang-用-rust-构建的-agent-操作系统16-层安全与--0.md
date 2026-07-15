@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# OpenFang：Rust 构建的 Agent 操作系统，16 层安全与 7 个自主 Hands
-
----
-
 ## 基本信息
 
 - **作者**: 冬奇Lab

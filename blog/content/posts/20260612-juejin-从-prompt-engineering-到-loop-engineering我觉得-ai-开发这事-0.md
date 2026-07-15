@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 从Prompt Engineering到Loop Engineering：AI开发从提问走向运转
-
----
-
 ## 基本信息
 
 - **作者**: 超级东哥CyberFD
@@ -99,7 +95,6 @@ Loop Engineering 并非万能解。在确定性强的任务中，传统的线性
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [效率与方法论](/categories/%E6%95%88%E7%8E%87%E4%B8%8E%E6%96%B9%E6%B3%95%E8%AE%BA/)

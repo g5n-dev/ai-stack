@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 利用大语言模型实现确定性编程
-
----
-
 ## 基本信息
 
 - **作者**: todsacerdoti

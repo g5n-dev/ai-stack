@@ -32,10 +32,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AttentionRetriever：注意力层即长文档检索器
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.12278v1
@@ -129,7 +125,6 @@ source_support: 0.0
 
 ---
 
-# AttentionRetriever：深入分析报告
 
 ## 1. 研究背景与问题
 
@@ -555,7 +550,6 @@ AttentionRetriever 的创新在于它没有设计新的交互函数（如ColBERT
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

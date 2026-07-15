@@ -36,10 +36,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 基于 SageMaker Unified Studio 构建离线特征存储
-
----
-
 ## 基本信息
 
 - **来源**: AWS Machine Learning Blog (blog)

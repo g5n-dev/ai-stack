@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AI生成代码的隐性成本：验证债务
-
----
-
 ## 基本信息
 
 - **作者**: xfz

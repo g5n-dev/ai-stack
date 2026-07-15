@@ -35,10 +35,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# LLM不生成正确代码而是生成看似合理的代码
-
----
-
 ## 基本信息
 
 - **作者**: dnw

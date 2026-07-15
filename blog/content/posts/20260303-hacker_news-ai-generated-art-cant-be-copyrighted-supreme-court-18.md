@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 最高法院拒绝受理：AI生成艺术作品不受版权保护
-
----
-
 ## 基本信息
 
 - **作者**: duggan

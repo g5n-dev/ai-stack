@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# DexCompose：复用灵巧策略实现单手多任务操作
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2606.28323v1
@@ -151,7 +147,6 @@ DexCompose的差异化在于引入指级细粒度的动作所有权概念，并�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/)

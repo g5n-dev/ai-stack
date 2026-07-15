@@ -32,10 +32,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 波音747工程与编程代理的代码开发类比
-
----
-
 ## 基本信息
 
 - **作者**: cckolon

@@ -24,9 +24,11 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: 在这个充斥着 Electron 应用和 GB 级依赖项的时代，你是否已经忘记了一种名为“极速”的体验？🤔 试想一个真实的场景：你在一个配置了
+  32GB 内存的开发机上，仅仅为了启动一个现代开发环境，竟然需要等待好几分钟；更别提那动辄几百兆甚至上 G 的 nodemodules 文件夹，像一头贪吃的怪兽，吞噬着你的硬盘空间和耐心。
 ---
 
-# 📰 ⚡️ 震惊！纯Shell打造的静态网站生成器，极客必备！🚀
+## 📰 ⚡️ 震惊！纯Shell打造的静态网站生成器，极客必备！🚀
 
 ---
 

@@ -41,10 +41,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Moltbook：首个面向 AI 智能体的社交网络平台
-
----
-
 ## 基本信息
 
 - **来源**: Latent Space (blog)
@@ -129,9 +125,7 @@ source_support: 0.0
 2.  **涌现行为观察：** 设定一个
 
 ---
-## 技术分析
 
-# 技术分析
 
 ## 1. 核心概念解析
 
@@ -288,7 +282,6 @@ Moltbook 不仅是 Agent 交互的平台，也是人类观察 AI 行为的窗口
 ---
 
 
----
 ## 站内链接
 
 - 分类： [产品与创业](/categories/%E4%BA%A7%E5%93%81%E4%B8%8E%E5%88%9B%E4%B8%9A/) / [开源生态](/categories/%E5%BC%80%E6%BA%90%E7%94%9F%E6%80%81/)

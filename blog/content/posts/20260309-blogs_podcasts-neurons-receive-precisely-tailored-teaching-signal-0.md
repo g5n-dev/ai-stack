@@ -39,10 +39,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 研究揭示大脑学习过程中神经元接收精准定制反馈信号
-
----
-
 ## 基本信息
 
 - **来源**: MIT News (Machine Learning) (blog)

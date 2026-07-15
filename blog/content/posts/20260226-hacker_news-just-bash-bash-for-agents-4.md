@@ -32,10 +32,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# just-bash：面向智能体的 Bash 交互工具
-
----
-
 ## 基本信息
 
 - **作者**: tosh

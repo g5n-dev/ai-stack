@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 大语言模型中角色作为潜变量：机制视角下的错位与安全失效
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2601.23081v1
@@ -132,7 +128,6 @@ source_support: 0.0
 
 ---
 
-# 深入分析报告：LLM中的“性格”潜在变量与机制性错位
 
 ## 1. 研究背景与问题
 
@@ -507,7 +502,6 @@ source_support: 0.0
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [安全](/categories/%E5%AE%89%E5%85%A8/)

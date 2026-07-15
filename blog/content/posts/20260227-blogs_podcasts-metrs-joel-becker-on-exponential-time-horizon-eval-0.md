@@ -38,10 +38,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# METR探讨指数级时间线评估、威胁模型与AI生产力边界
-
----
-
 ## 基本信息
 
 - **来源**: Latent Space (blog)

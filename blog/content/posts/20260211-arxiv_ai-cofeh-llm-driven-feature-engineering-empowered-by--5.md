@@ -19,10 +19,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# CoFEH：LLM驱动的协同贝叶斯特征工程框架
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.09851v1
@@ -145,7 +141,6 @@ source_support: 0.0
 ---
 
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/)

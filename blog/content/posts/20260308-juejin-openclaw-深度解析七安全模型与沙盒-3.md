@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# OpenClaw深度解析七：共享服务器部署的安全模型与沙盒
-
----
-
 ## 基本信息
 
 - **作者**: 冬奇Lab

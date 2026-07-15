@@ -1,5 +1,5 @@
 ---
-title: 'AIEWF Daily Dispatch: Loops, Software Factories & Forwa'
+title: 'AIEWF Daily Dispatch: Loops, Software Factories & Forward Deployed Engineers'
 date: 2026-07-01 12:25:18+08:00
 draft: false
 entry_kind: auto
@@ -25,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# AIEWF Daily Dispatch: Loops, Software Factories & Forward Deployed Engineers
-
 ---
 
 ## 基本信息
@@ -109,7 +105,6 @@ source_support: 0.0
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [开源生态](/categories/%E5%BC%80%E6%BA%90%E7%94%9F%E6%80%81/)

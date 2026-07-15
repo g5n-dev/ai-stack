@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Ralph Wiggum：AI编码代理的自治循环框架
-
----
-
 ## 基本信息
 
 - **作者**: 多厘

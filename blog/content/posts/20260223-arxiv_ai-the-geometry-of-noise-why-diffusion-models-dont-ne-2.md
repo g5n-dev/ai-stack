@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 扩散模型无需噪声调节的几何学原理
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.18428v1

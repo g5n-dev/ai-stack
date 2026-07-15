@@ -36,10 +36,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# OpenEnv实践：评估真实环境中的工具调用智能体
-
----
-
 ## 基本信息
 
 - **来源**: Hugging Face Blog (blog)
@@ -104,9 +100,7 @@ source_support: 0.0
     这篇文章可能会推动 Agent 评估标准从“单一问答准确性”向“环境交互鲁棒性”和“执行效率”方向转变。
 
 ---
-## 技术分析
 
-# 技术分析
 
 ## 1. 核心观点深度解读
 
@@ -258,7 +252,6 @@ OpenEnv 的最大创新在于其**模块化与可扩展的架构设计**。它�
 ---
 
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

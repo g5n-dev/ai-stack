@@ -31,10 +31,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AWS跨区域推理：满足欧盟数据安全的AI模型访问方案
-
----
-
 ## 基本信息
 
 - **来源**: AWS Machine Learning Blog (blog)
@@ -197,7 +193,6 @@ AWS跨区域推理功能是帮助欧洲企业在满足数据合规要求的同�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/) / [安全](/categories/%E5%AE%89%E5%85%A8/)

@@ -25,10 +25,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Hugging Face模型一键迁移至SageMaker Studio指南
-
----
-
 ## 基本信息
 
 - **来源**: Hugging Face Blog (blog)
@@ -132,7 +128,6 @@ AWS 与 Hugging Face 的深度整合形成示范效应，促使 Google Vertex AI
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

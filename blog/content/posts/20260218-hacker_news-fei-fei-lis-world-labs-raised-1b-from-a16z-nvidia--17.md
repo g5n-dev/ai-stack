@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 李飞飞World Labs获10亿美元融资：英伟达与A16Z领投，加速世界模型研发
-
----
-
 ## 基本信息
 
 - **作者**: aanet
@@ -372,7 +368,6 @@ Waymo 开发了基于“世界模型”架构的模拟与预测系统。该系�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [产品与创业](/categories/%E4%BA%A7%E5%93%81%E4%B8%8E%E5%88%9B%E4%B8%9A/) / [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

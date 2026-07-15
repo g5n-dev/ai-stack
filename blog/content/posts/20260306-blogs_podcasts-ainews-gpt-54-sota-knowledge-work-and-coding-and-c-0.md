@@ -39,10 +39,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# OpenAI 发布 GPT 5.4：集成 CUA 模型，强化知识工作与编程能力
-
----
-
 ## 基本信息
 
 - **来源**: Latent Space (blog)

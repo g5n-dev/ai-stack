@@ -38,10 +38,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Moonshot Kimi K2.5：半价超越Sonnet 4.5，原生图文视频与百并发Agent管理
-
----
-
 ## 基本信息
 
 - **来源**: Latent Space (blog)
@@ -128,9 +124,7 @@ Moonshot AI通过发布Kimi k2.5，在保持极低推理成本的同时实现了
 4.  **成本核算审计
 
 ---
-## 技术分析
 
-# 技术分析
 
 ## 1. 核心观点深度解读
 
@@ -288,7 +282,6 @@ Kimi K2.5 在击败 Sonnet 4.5 的评测中展现了极强的逻辑推理能力�
 ---
 
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [开源生态](/categories/%E5%BC%80%E6%BA%90%E7%94%9F%E6%80%81/)

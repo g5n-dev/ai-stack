@@ -35,10 +35,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AI News：数十场发布会背后的共同主题是“闭环”
-
----
-
 ## 基本信息
 
 - **来源**: Latent Space (blog)

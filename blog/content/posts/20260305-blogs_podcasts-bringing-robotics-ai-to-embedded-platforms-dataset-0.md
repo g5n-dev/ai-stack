@@ -42,10 +42,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 将机器人AI引入嵌入式平台：数据集录制、VLA微调与端侧优化
-
----
-
 ## 基本信息
 
 - **来源**: Hugging Face Blog (blog)

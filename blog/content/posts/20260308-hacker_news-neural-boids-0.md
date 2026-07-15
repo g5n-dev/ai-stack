@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 模拟鸟群行为的神经网络算法 Neural Boids
-
----
-
 ## 基本信息
 
 - **作者**: ecto

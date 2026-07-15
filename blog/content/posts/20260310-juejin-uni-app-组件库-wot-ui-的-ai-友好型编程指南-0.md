@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Wot UI 组件库 AI 友好型编程指南
-
----
-
 ## 基本信息
 
 - **作者**: 不如摸鱼去

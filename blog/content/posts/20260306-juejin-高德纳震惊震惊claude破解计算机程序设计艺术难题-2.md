@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 高德纳称赞Claude协助解决《计算机程序设计艺术》难题
-
----
-
 ## 基本信息
 
 - **作者**: 机器之心

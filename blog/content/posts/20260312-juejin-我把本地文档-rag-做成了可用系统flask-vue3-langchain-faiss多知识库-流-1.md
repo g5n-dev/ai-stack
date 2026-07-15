@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 我把本地文档 RAG 做成了可用系统：Flask + Vue3 + LangChain + FAISS（多知识
-
----
-
 ## 基本信息
 
 - **作者**: 心在飞扬AI

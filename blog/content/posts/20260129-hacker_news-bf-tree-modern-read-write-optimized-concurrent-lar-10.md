@@ -25,10 +25,7 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Bf-Tree：面向大规模数据的读写优化并发范围索引
-
+description: 随着数据规模的持续增长，构建一个既能高效处理并发请求，又能突破内存瓶颈的索引结构，成为了数据库系统设计中的核心挑战。本文介绍的 Bf-Tree，作为一种现代化的读写优化并发索引方案，针对超大规模数据集的查询场景提供了新的解决思路。通过剖析其架构设计与核心机制，读者将深入了解该索引如何在保持高性能的同时，有效解决数据持久化与并发控制之间的平衡问题。
 ---
 
 ## 基本信息
@@ -417,7 +414,6 @@ Bf-Tree 设计为现代存储介质（尤其是 NVMe SSD）优化。它通常采
 
 ---
 
----
 ## 站内链接
 
 - 分类： [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/) / [数据](/categories/%E6%95%B0%E6%8D%AE/)

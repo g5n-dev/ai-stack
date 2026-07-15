@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 通过神经机制稀疏化高效发现近似因果抽象
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.24266v1

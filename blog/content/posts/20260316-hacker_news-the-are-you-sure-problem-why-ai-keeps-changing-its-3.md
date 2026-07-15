@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AI反复改变决策的“你确定吗”问题解析
-
----
-
 ## 基本信息
 
 - **作者**: turoczy

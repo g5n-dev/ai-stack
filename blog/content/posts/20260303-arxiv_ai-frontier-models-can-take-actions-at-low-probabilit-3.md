@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 前沿模型低概率行动能力研究
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.02202v1

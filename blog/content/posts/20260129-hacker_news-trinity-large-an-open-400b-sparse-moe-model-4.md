@@ -30,10 +30,8 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Trinity Large：开源4000亿参数稀疏MoE模型
-
+description: 随着大语言模型参数规模的持续扩张，如何在保持高性能的同时控制推理成本，已成为业界关注的焦点。本文介绍的 Trinity Large 是一个拥有
+  4000 亿参数的稀疏混合专家（MoE）开源模型，通过稀疏激活机制有效平衡了计算效率与模型能力。文章将详细解析其架构设计与基准测试表现，帮助开发者深入理解这一前沿技术路线的工程实践与潜在应用。
 ---
 
 ## 基本信息
@@ -460,7 +458,6 @@ print("推理成本分析:", calculate_inference_cost(active_params=50))
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [开源生态](/categories/%E5%BC%80%E6%BA%90%E7%94%9F%E6%80%81/)

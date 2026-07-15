@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AI Agent调度失控：Agent Harness统一协调方案
-
----
-
 ## 基本信息
 
 - **作者**: gyx_这个杀手不太冷静
@@ -127,7 +123,6 @@ AI Agent 的“多兵作战”虽能带来单点效率，但缺乏统一管理�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

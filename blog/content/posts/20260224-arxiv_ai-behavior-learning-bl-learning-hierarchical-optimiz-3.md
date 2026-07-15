@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 行为学习：从数据中学习分层优化结构
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.20152v1

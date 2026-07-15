@@ -36,10 +36,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Anthropic估值达190亿美元；Qwen团队离职；Gemini与GPT升级快模型
-
----
-
 ## 基本信息
 
 - **来源**: Latent Space (blog)

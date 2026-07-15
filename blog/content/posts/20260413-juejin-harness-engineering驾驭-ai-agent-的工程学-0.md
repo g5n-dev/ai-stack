@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AI Agent 工程学：换模型为何仅提升 0.7%
-
----
-
 ## 基本信息
 
 - **作者**: ai_coder_小村儿
@@ -96,7 +92,6 @@ LangChain 通过一次端到端实验验证：在同一模型上，仅更换更�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

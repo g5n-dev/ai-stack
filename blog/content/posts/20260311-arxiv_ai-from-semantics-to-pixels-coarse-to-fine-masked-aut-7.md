@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 从语义到像素：用于分层视觉理解的粗到细掩码自编码器
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.09955v1

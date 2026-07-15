@@ -38,10 +38,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AWS SageMaker集成Dottxt Outlines实现LLM结构化输出
-
----
-
 ## 基本信息
 
 - **来源**: AWS Machine Learning Blog (blog)

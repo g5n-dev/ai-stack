@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AI编程工程化：Skill机制封装工作流赋予AI专业能力
-
----
-
 ## 基本信息
 
 - **作者**: XPoet

@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 大模型时代为什么需要理解LangChain
-
----
-
 ## 基本信息
 
 - **作者**: 杨艺韬
@@ -43,9 +39,8 @@ source_support: 0.0
 随着大语言模型能力的快速提升，构建高效、可维护的 AI 应用变得尤为重要。LangChain 通过模块化的组件和链式调用，为开发者提供了统一的抽象层，能够快速集成检索、记忆和外部工具等关键功能。掌握 LangChain 的核心概念与实践方法，可以帮助团队在实际项目中缩短开发周期，避免重复造轮子，并更好地把握大模型落地的技术路径。
 
 ---
-## 描述
 
-# 翻译
+## 翻译
 
 第1章 为什么需要理解 LangChain
 
@@ -98,7 +93,6 @@ source_support: 0.0
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/)

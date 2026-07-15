@@ -1,5 +1,6 @@
 ---
-title: 'Agent-to-agent collaboration: Using Amazon Nova 2 Lite'
+title: 'Agent-to-agent collaboration: Using Amazon Nova 2 Lite and Amazon Nova Act
+  for multi-agent systems'
 date: 2026-02-11 01:40:26+08:00
 draft: false
 entry_kind: auto
@@ -29,10 +30,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Agent-to-agent collaboration: Using Amazon Nova 2 Lite and Amazon Nova Act for multi-agent systems
-
 ---
 
 ## 基本信息
@@ -175,7 +172,6 @@ Agent 协作可能会遇到不可预见的情况
 ---
 
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

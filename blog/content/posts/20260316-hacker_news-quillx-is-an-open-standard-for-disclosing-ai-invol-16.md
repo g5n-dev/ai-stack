@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Quillx：披露软件项目AI参与度的开放标准
-
----
-
 ## 基本信息
 
 - **作者**: qainsights

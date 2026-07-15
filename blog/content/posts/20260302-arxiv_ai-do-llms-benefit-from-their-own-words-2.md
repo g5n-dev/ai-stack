@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# LLM是否受益于自身生成文本的反馈训练
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.24287v1

@@ -40,10 +40,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Gemini 3.1 Pro：针对复杂任务设计的智能模型
-
----
-
 ## 基本信息
 
 - **来源**: Google DeepMind (blog)

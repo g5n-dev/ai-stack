@@ -33,10 +33,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 根据系统硬件配置自动调整大模型规模
-
----
-
 ## 基本信息
 
 - **作者**: bilsbie

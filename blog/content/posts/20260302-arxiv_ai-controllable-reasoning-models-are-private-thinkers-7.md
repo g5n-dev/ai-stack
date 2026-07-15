@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 可控推理模型：具备隐私保护能力的思维链
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.24210v1

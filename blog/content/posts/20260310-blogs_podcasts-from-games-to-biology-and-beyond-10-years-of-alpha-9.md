@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AlphaGo十周年：从游戏到生物科学加速AGI发展
-
----
-
 ## 基本信息
 
 - **来源**: Google DeepMind (blog)

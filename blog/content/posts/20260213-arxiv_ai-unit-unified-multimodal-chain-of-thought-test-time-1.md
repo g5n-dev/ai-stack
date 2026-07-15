@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# UniT：统一多模态思维链测试时扩展方法
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.12279v1
@@ -139,7 +135,6 @@ UniT 的应用价值极高，特别是在**具身智能**领域。传统的机�
 
 ---
 
-# UniT: Unified Multimodal Chain-of-Thought Test-time Scaling 深度分析报告
 
 ## 1. 研究背景与问题
 
@@ -566,7 +561,6 @@ UniT 强调使用单一的 Transformer 解码器来处理所有模态的生成�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

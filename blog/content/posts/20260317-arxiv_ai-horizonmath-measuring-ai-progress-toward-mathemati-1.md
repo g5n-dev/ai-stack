@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# HorizonMath：自动验证技术评估AI数学发现能力
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.15617v1

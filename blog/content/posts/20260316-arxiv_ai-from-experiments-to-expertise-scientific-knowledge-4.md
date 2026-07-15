@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 从实验到专家：AI计算研究中的科学知识整合
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.13191v1

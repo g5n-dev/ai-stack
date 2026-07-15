@@ -34,10 +34,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AI不是同事而是外骨骼：增强人类能力的角色定位
-
----
-
 ## 基本信息
 
 - **作者**: benbeingbin

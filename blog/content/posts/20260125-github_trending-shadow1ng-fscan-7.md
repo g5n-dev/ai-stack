@@ -24,9 +24,12 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: '💡 原名: shadow1ng / fscan Relevant source files README.md Fscan is a comprehensive
+  intranet scanning tool designed for security assessment and vulnerability detection.
+  This document provides an'
 ---
 
-# 🚀 🚀shadow1ng/fscan：内网渗透神器！一键扫描，漏洞无处遁形！🔥
+## 🚀 🚀shadow1ng/fscan：内网渗透神器！一键扫描，漏洞无处遁形！🔥
 
 > 💡 **原名**: shadow1ng /
 
@@ -43,9 +46,8 @@ source_support: 0.0
 - **DeepWiki**: [https://deepwiki.com/shadow1ng/fscan](https://deepwiki.com/shadow1ng/fscan)
 
 ---
-## 📚 DeepWiki 速览（节选）
 
-# Overview of fscan
+## Overview of fscan
 
 Relevant source files
 
@@ -273,7 +275,6 @@ fscan 不仅仅是一个扫描器，它是**内网安全评估领域的“瑞士
 
 ---
 
-# 🛡️ fscan 深度技术剖析：内网扫描的“瑞士军刀”
 
 ## 1. 技术架构深度剖析 🏗️
 

@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 为何尚未出现真正的AI游戏
-
----
-
 ## 基本信息
 
 - **作者**: pavel_lishin

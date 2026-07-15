@@ -41,10 +41,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 研究显示AI聊天机器人向弱势用户提供的信息准确性较低
-
----
-
 ## 基本信息
 
 - **来源**: MIT News (Machine Learning) (blog)

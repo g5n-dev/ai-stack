@@ -40,10 +40,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Agent Lab 收购 Graphite 与 Autotab，推出 Cloud Agents 开启软件开发第
-
----
-
 ## 基本信息
 
 - **来源**: Latent Space (blog)

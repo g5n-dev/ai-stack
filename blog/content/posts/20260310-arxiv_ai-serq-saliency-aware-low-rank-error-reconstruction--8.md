@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# SERQ：基于显著性感知的低秩误差重构LLM量化方法
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.08185v1

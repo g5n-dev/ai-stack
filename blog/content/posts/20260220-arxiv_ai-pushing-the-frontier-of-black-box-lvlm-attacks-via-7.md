@@ -31,10 +31,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 通过细粒度细节定位推进黑盒LVLM攻击边界
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.17645v1

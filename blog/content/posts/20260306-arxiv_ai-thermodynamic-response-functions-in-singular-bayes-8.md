@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 奇异贝叶斯模型中的热力学响应函数研究
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.05480v1

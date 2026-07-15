@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 重新思考大模型强化学习中的信任区域机制
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.04879v1
@@ -114,7 +110,6 @@ source_support: 0.0
 
 ---
 
-# 深入分析：Rethinking the Trust Region in LLM Reinforcement Learning
 
 ## 1. 研究背景与问题
 
@@ -534,7 +529,6 @@ DPPO可能在以下情况失效：
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

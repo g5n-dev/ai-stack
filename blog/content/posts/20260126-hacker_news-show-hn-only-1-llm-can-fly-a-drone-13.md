@@ -24,9 +24,10 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: 【引言】 ⚡️ 你敢相信吗？一个AI模型能让无人机像老鹰一样精准飞行，而其他顶级LLM只能看着它“坠毁”？ 最近，一项令人瞠目结舌的实验震撼了AI圈：在10个最先进的大语言模型中，只有1个能成功控制无人机完成复杂飞行任务，其余全部“翻车”——有的直接撞墙，有的在空中打转，甚至有的连起飞都做不到！
 ---
 
-# 📰 震惊！仅1个大模型能操控无人机！🚀🤯
+## 📰 震惊！仅1个大模型能操控无人机！🚀🤯
 
 ---
 

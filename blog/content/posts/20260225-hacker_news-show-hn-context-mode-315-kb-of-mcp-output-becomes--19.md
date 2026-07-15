@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Context Mode 将 315 KB MCP 输出压缩至 5.4 KB
-
----
-
 ## 基本信息
 
 - **作者**: mksglu

@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 面向高效高分辨率GUI智能体的时空令牌剪枝
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.23235v1

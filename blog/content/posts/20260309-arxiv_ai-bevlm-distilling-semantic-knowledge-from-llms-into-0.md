@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# BEVLM：将LLM语义知识蒸馏至鸟瞰图表征
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.06576v1

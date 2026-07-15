@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Android AI Agent四层架构与安全设计实战解析
-
----
-
 ## 基本信息
 
 - **作者**: 陆业聪

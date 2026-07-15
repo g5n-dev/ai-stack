@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# FairMed-XGB：贝叶斯优化的多指标可解释框架用于医疗数据人口公平性
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.14947v1

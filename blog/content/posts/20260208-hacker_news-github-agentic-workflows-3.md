@@ -33,10 +33,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# GitHub Agentic 工作流：AI 智能体自主编写代码
-
----
-
 ## 基本信息
 
 - **作者**: mooreds
@@ -443,7 +439,6 @@ Salesforce 采用了“左移”的 Agentic Workflow 策略。他们集成了 AI
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/)

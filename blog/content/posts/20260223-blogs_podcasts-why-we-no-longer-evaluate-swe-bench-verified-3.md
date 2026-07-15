@@ -34,10 +34,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# SWE-bench Verified 数据泄露与测试缺陷分析：为何应迁移至 SWE-bench Pro
-
----
-
 ## 基本信息
 
 - **来源**: OpenAI Blog (blog)

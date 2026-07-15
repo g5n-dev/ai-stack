@@ -35,10 +35,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Qwen3.5-397B-A17B：最小Open-Opus级高效模型
-
----
-
 ## 基本信息
 
 - **来源**: Latent Space (blog)

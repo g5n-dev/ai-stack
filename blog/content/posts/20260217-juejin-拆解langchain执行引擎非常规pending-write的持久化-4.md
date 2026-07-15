@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 拆解LangChain执行引擎：非常规Pending Write的持久化
-
----
-
 ## 基本信息
 
 - **作者**: JaydenAI
@@ -210,7 +206,6 @@ PendingWrite三元组的第二部分表示写入的Channel，但对于一些特�
 ---
 
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [后端](/categories/%E5%90%8E%E7%AB%AF/)

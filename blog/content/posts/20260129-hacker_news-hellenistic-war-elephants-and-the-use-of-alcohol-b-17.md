@@ -22,10 +22,7 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 希腊化时期战象及其战前酒精使用研究
-
+description: 在希腊化时代的战争中，战象不仅是重型突击力量，其战斗效能往往取决于战前的状态管理。本文探讨了当时军队如何利用酒精来调节大象的攻击性与应激反应，揭示了后勤保障与战术运用之间的紧密联系。通过分析历史案例，读者可以了解古代将领如何平衡动物生理特征与战场需求，从而更深入地理解这一时期的军事指挥艺术。
 ---
 
 ## 基本信息
@@ -408,7 +405,6 @@ for terrain in ['平原', '森林', '山地']:
 
 ---
 
----
 ## 站内链接
 
 - 分类： [生活与杂谈](/categories/%E7%94%9F%E6%B4%BB%E4%B8%8E%E6%9D%82%E8%B0%88/)

@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# MathNet：全球多模态数学推理与检索基准
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2604.18584v1
@@ -157,7 +153,6 @@ MathNet 是高质量、大规模、多模态、多语言的奥林匹克数学题
 
 ---
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/) / [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

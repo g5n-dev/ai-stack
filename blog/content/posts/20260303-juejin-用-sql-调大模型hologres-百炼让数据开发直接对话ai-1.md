@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Hologres集成百炼：SQL直接调用大模型实现全模态分析
-
----
-
 ## 基本信息
 
 - **作者**: 阿里云大数据AI技术

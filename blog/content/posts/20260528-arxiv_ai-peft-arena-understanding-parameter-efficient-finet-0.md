@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 从稳定性与可塑性视角评估参数高效微调：PEFT-Arena平台
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2605.28819v1
@@ -141,7 +137,6 @@ PEFT-Arena为PEFT方法的标准化评测提供了可复用的基准框架，有
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

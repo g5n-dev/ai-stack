@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Agent Skills 概念解析及其在 Agent 开发中的应用
-
----
-
 ## 基本信息
 
 - **作者**: 前端双越老师

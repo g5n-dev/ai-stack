@@ -31,10 +31,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# OpenCode 完全指南：打造 10 万 Star 的开源 AI 编码 Agent
-
----
-
 ## 基本信息
 
 - **作者**: javaTodo

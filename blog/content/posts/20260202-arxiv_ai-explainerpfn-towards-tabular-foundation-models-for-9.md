@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# ExplainerPFN：面向表格数据的无模型零样本特征重要性估计
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2601.23068v1
@@ -137,7 +133,7 @@ ExplainerPFN基于TabPFN构建，其训练流程如下：
 
 ---
 
-# 1. 研究背景与问题
+## 1. 研究背景与问题
 
 **核心问题**
 本研究致力于解决在**黑盒**环境下的**零样本特征重要性估计**问题。具体而言，如何在不访问目标模型内部参数、不计算梯度、甚至不依赖任何特定模型预测结果（即“无模型”）的情况下，仅凭输入数据的分布特征，准确推断出各特征对预测任务的贡献度（Shapley值）。
@@ -155,7 +151,7 @@ ExplainerPFN基于TabPFN构建，其训练流程如下：
 
 ---
 
-# 2. 核心方法与创新
+## 2. 核心方法与创新
 
 **核心方法：ExplainerPFN**
 ExplainerPFN 是一个基于**Prior-Data Fitted Networks (PFN)** 的表格基础模型。它不针对特定的下游任务进行训练，而是利用合成数据进行预训练，从而学会直接从原始数据分布中推断特征重要性。
@@ -172,7 +168,7 @@ ExplainerPFN 是一个基于**Prior-Data Fitted Networks (PFN)** 的表格基础
 
 ---
 
-# 3. 理论基础
+## 3. 理论基础
 
 **理论基础：Shapley值与因果模型**
 1.  **Shapley值**：定义为特征 $i$ 在所有可能的特征联盟 $S$ 中的边际贡献的加权平均值。公式为：
@@ -188,7 +184,7 @@ ExplainerPFN 是一个基于**Prior-Data Fitted Networks (PFN)** 的表格基础
 
 ---
 
-# 4. 实验与结果
+## 4. 实验与结果
 
 **实验设计**
 作者在两类数据集上进行了评估：
@@ -206,7 +202,7 @@ ExplainerPFN 是一个基于**Prior-Data Fitted Networks (PFN)** 的表格基础
 
 ---
 
-# 5. 应用前景
+## 5. 应用前景
 
 **实际应用场景**
 1.  **数据审计与清洗**：在模型开发之前，快速识别数据集中的关键特征和冗余特征。
@@ -221,7 +217,7 @@ ExplainerPFN 是一个基于**Prior-Data Fitted Networks (PFN)** 的表格基础
 
 ---
 
-# 6. 研究启示
+## 6. 研究启示
 
 **对领域的启示**
 1.  **解释即服务**：未来解释器可能不再依附于特定的预测模型，而是作为一种独立的基础设施存在。
@@ -234,7 +230,7 @@ ExplainerPFN 是一个基于**Prior-Data Fitted Networks (PFN)** 的表格基础
 
 ---
 
-# 7. 学习建议
+## 7. 学习建议
 
 **适合读者**
 - 从事可解释性AI（XAI）研究的学者。
@@ -254,7 +250,7 @@ ExplainerPFN 是一个基于**Prior-Data Fitted Networks (PFN)** 的表格基础
 
 ---
 
-# 8. 相关工作对比
+## 8. 相关工作对比
 
 | 维度 | ExplainerPFN (本文) | 传统 SHAP (TreeSHAP/KernelSHAP) | LLM-based Explainers |
 | :--- | :--- | :--- | :--- |
@@ -269,7 +265,7 @@ ExplainerPFN 在表格数据的零样本解释领域具有开创性地位。它�
 
 ---
 
-# 9. 研究哲学：可证伪性与边界
+## 9. 研究哲学：可证伪性与边界
 
 **关键假设与归纳偏置**
 - **假设**：数据的联合分布 $P(X, Y)$ 中包含了一个“理想”的 Shapley 值分布，且该分布在不同数据集间是可迁移的。
@@ -551,7 +547,6 @@ ExplainerPFN 在表格数据的零样本解释领域具有开创性地位。它�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

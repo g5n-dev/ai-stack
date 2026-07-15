@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 粒子引导扩散模型求解偏微分方程
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2601.23262v1
@@ -126,7 +122,6 @@ source_support: 0.0
 
 ---
 
-# 论文深入分析：Particle-Guided Diffusion Models for Partial Differential Equations
 
 ## 1. 研究背景与问题
 
@@ -532,7 +527,6 @@ PGDM在算法层面的创新性较高，它巧妙地将粒子滤波引入扩散�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/) / [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

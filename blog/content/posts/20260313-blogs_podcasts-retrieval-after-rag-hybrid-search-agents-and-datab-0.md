@@ -42,10 +42,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# RAG后的检索：混合搜索、Agent与数据库设计
-
----
-
 ## 基本信息
 
 - **来源**: Latent Space (blog)

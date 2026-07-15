@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# StrongDM团队利用AI实现无代码预览的软件开发
-
----
-
 ## 基本信息
 
 - **作者**: simonw
@@ -422,7 +418,6 @@ Klarna 与 OpenAI 合作，基于 GPT-4 模型构建了一个高度自动化的 
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/)

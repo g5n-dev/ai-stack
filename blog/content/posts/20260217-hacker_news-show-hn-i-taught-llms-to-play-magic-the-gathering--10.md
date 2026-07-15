@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 让大语言模型互斗万智牌的实验项目
-
----
-
 ## 基本信息
 
 - **作者**: GregorStocks
@@ -403,7 +399,6 @@ MTG 的核心在于堆栈交互，即响应对手的动作。LLM 容易忘记上
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [开源生态](/categories/%E5%BC%80%E6%BA%90%E7%94%9F%E6%80%81/)

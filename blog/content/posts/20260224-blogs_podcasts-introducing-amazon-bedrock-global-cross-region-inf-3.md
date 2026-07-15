@@ -37,10 +37,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Amazon Bedrock 现支持中东跨区域推理使用 Anthropic Claude 模型
-
----
-
 ## 基本信息
 
 - **来源**: AWS Machine Learning Blog (blog)

@@ -39,10 +39,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 亚马逊利用 Nova 模型自动化新履约中心运营就绪测试
-
----
-
 ## 基本信息
 
 - **来源**: AWS Machine Learning Blog (blog)
@@ -134,9 +130,8 @@ source_support: 0.0
     *   **验证：** 进行为期 3 个月的 A/B 测试，保留一组人工验收队伍作为对照组，计算 AI 模型的准确率是否达到 99.9
 
 ---
-## 技术分析
 
-# 深度分析：亚马逊利用 Amazon Nova 模型自动化新履约中心的运营准备测试
+## 深度分析：亚马逊利用 Amazon Nova 模型自动化新履约中心的运营准备测试
 
 基于提供的标题和摘要，本文将深入剖析亚马逊如何利用生成式AI和多模态大语言模型来解决物流基础设施运营中的关键痛点。以下是从八个维度进行的全面分析。
 
@@ -411,7 +406,6 @@ source_support: 0.0
 ---
 
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

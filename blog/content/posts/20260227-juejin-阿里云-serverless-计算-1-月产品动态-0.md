@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 阿里云 Serverless 1月动态：LangChain 与 AgentRun 部署指南
-
----
-
 ## 基本信息
 
 - **作者**: 阿里云云原生

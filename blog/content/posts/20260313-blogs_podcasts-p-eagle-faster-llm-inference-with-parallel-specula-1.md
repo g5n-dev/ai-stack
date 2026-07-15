@@ -38,10 +38,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# P-EAGLE：vLLM 集成并行推测解码加速 LLM 推理
-
----
-
 ## 基本信息
 
 - **来源**: AWS Machine Learning Blog (blog)

@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Sam Altman阐述AGI造福人类的五项原则
-
----
-
 ## 基本信息
 
 - **来源**: OpenAI Blog (blog)
@@ -117,7 +113,6 @@ OpenAI 的五项原则通过建立系统性的技术伦理框架，为 AGI 的�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [产品与创业](/categories/%E4%BA%A7%E5%93%81%E4%B8%8E%E5%88%9B%E4%B8%9A/) / [安全](/categories/%E5%AE%89%E5%85%A8/)

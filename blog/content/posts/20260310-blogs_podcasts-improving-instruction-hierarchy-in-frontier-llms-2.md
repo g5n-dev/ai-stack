@@ -35,10 +35,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# IH-Challenge训练提升前沿大模型指令层级与防御能力
-
----
-
 ## 基本信息
 
 - **来源**: OpenAI Blog (blog)

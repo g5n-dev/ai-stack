@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Folo：支持AI摘要与多端同步的开源信息阅读器
-
----
-
 ## 基本信息
 
 - **作者**: 冬奇Lab
@@ -186,7 +182,6 @@ source_support: 0.0
 ---
 
 
----
 ## 站内链接
 
 - 分类： [开源生态](/categories/%E5%BC%80%E6%BA%90%E7%94%9F%E6%80%81/) / [产品与创业](/categories/%E4%BA%A7%E5%93%81%E4%B8%8E%E5%88%9B%E4%B8%9A/)

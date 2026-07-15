@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 面向安全智能体系统的策略编译器
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.16708v1

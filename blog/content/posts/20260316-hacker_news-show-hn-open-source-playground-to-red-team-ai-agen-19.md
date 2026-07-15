@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 开源红队测试平台：针对AI智能体的漏洞利用与评估
-
----
-
 ## 基本信息
 
 - **作者**: zachdotai

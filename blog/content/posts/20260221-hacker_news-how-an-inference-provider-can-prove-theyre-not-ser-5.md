@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 推理服务商如何证明未提供量化模型
-
----
-
 ## 基本信息
 
 - **作者**: FrasiertheLion

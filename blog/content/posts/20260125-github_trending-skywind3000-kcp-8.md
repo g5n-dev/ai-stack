@@ -21,9 +21,12 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: '💡 原名: skywind3000 / kcp Relevant source files README.en.md README.md
+  KCP is a fast and reliable ARQ (Automatic Repeat reQuest) protocol that trades 10-20%
+  additional bandwidth for 30-40% lower'
 ---
 
-# 🚀 🚀 KCP：极速可靠传输！🔥 GitHub之星Skywind3000力作！⚡️
+## 🚀 🚀 KCP：极速可靠传输！🔥 GitHub之星Skywind3000力作！⚡️
 
 > 💡 **原名**: skywind3000 /
 
@@ -40,9 +43,8 @@ source_support: 0.0
 - **DeepWiki**: [https://deepwiki.com/skywind3000/kcp](https://deepwiki.com/skywind3000/kcp)
 
 ---
-## 📚 DeepWiki 速览（节选）
 
-# Overview
+## Overview
 
 Relevant source files
 
@@ -296,7 +298,6 @@ KCP 是一个在网络传输领域具有里程碑意义的项目。它不仅仅�
 
 ---
 
-# 🔥 KCP 协议深度技术剖析与应用指南
 
 ## 1. 技术架构深度剖析 🏗️
 

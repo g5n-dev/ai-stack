@@ -40,10 +40,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 使用 veRL 和 Ray 在 SageMaker 上训练 CodeFu-7B 模型
-
----
-
 ## 基本信息
 
 - **来源**: AWS Machine Learning Blog (blog)

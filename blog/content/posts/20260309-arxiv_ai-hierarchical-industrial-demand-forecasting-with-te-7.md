@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 分层工业需求预测：时序与不确定性解释
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.06555v1

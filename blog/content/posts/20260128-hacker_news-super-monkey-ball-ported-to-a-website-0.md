@@ -21,9 +21,12 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: 你还记得 2001 年那个暑假吗？为了那一颗在狭窄赛道上疯狂滚动的透明猴子球，多少玩家的手心全是汗水，甚至因为太激动而捏爆了手柄？🎮 这款被誉为“3D
+  版迷宫鼻祖”的《超级猴子球》，曾是无数人的童年噩梦与快乐源泉。 然而，二十年后的今天，当我们早已把 GameCube 扔进储藏室，还有谁会想起那只叫 AiAi
+  的小猴子？ 答案是：一位疯狂的天才，竟然把这款经典游戏完完整整地“搬”进了浏览器里！
 ---
 
-# 📰 🔥网页也能玩！超级猴子球移植上线！🐒🎮
+## 📰 🔥网页也能玩！超级猴子球移植上线！🐒🎮
 
 ---
 

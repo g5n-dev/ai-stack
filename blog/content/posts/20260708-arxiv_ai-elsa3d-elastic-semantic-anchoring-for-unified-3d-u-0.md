@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# ELSA3D基于弹性语义锚定的3D统一理解与生成
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2607.06565v1
@@ -92,7 +88,6 @@ ELSA3D 提出弹性语义锚定机制，旨在解决统一三维基础模型中�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

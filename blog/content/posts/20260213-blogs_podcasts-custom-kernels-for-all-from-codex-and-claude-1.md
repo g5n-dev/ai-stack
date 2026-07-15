@@ -44,10 +44,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Codex与Claude赋能定制化内核开发
-
----
-
 ## 基本信息
 
 - **来源**: Hugging Face Blog (blog)
@@ -122,9 +118,7 @@ source_support: 0.0
     *   *观察：* 评估代码的可读性和逻辑清晰度。AI生成的代码往往缺乏注释或逻辑跳跃，这会影响长期维护。
 
 ---
-## 技术分析
 
-# 深度技术分析：基于 LLM 的定制化计算内核生成范式
 
 ## 1. 核心技术原理与架构
 
@@ -302,7 +296,6 @@ LLM 生成的代码可能包含微妙的逻辑错误或数值精度问题。
 ---
 
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/)

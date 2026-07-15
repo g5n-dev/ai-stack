@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# SageMaker上用Isaac Lab训练Unitree H1人形机器人策略
-
----
-
 ## 基本信息
 
 - **来源**: AWS Machine Learning Blog (blog)
@@ -162,7 +158,6 @@ Spot 实例可降低 60% 计算成本，配合自动伸缩策略实现只在需�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

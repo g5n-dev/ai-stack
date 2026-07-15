@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# DeepMind和A24达成影视AI研究合作
-
----
-
 ## 基本信息
 
 - **来源**: Google DeepMind (blog)
@@ -147,7 +143,6 @@ DeepMind近年来在多模态模型、生成式AI和强化学习方面持续突�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

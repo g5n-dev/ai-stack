@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 神经渲染技术探索与应用实践
-
----
-
 ## 基本信息
 
 - **作者**: ingve
@@ -464,7 +460,6 @@ AI 成功学会了《赛车马力欧》的核心机制，并生成了一个可�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

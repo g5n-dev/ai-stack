@@ -21,9 +21,11 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: 本文介绍了一种在缺乏真实标签（Ground Truth）情况下提升模型性能的校准新框架。 随着Villalobos等人预测公开人类文本将在未来十年耗尽，无监督改进模型变得至关重要。为此，研究者提出了一种无标签后处理方法：利用一个较弱但校准良好的“参考模型”，来优化一个性能强大但校准较差的“目标模型”。
+  该方法的核心理论依据是：当且仅当两个模型互不校准时，严格性能提升才成为可能。
 ---
 
-# 📚 无需真值！🔥颠覆性校准技术来了！🤯
+## 📚 无需真值！🔥颠覆性校准技术来了！🤯
 
 ---
 
@@ -138,7 +140,7 @@ source_support: 0.0
 
 ---
 
-# 🎯 论文深度剖析：无真实标签下的模型校准
+## 🎯 论文深度剖析：无真实标签下的模型校准
 
 **论文标题**：Calibration without Ground Truth  
 **核心洞察**：利用“弱但准”的参考模型，通过数学上的“无套利”原理，校准“强但偏”的目标模型。

@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# NVIDIA GR00T N1.7开源推理模型赋能人形机器人
-
----
-
 ## 基本信息
 
 - **来源**: Hugging Face Blog (blog)
@@ -129,7 +125,6 @@ NVIDIA开放了完整的模型权重、预训练数据和微调工具链。开�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [开源生态](/categories/%E5%BC%80%E6%BA%90%E7%94%9F%E6%80%81/)

@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Spring AI MCP 结合 WebFlux SSE 构建 AI 天气助手
-
----
-
 ## 基本信息
 
 - **作者**: 玹外之音

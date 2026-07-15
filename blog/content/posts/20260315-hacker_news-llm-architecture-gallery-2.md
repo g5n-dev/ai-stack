@@ -31,10 +31,9 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# LLM Architecture Gallery
-
+description: '词嵌入和位置编码 标准的Transformer解码器结构 因果掩码确保自回归生成 适合理解LLM的核心组件 实现了简化的注意力机制 保存中间层的注意力权重
+  使用matplotlib可视化注意力模式 帮助理解模型如何关注输入的不同部分 背景: Klarna 是欧洲领先的“先买后付”（BNPL）银行和购物服务提供商，拥有超过
+  1.5 亿全球用户。'
 ---
 
 ## 基本信息

@@ -21,9 +21,11 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: 这是一个为您定制的超级引人入胜的引言，融合了震撼数据、颠覆性观点和强烈的情绪感染力： 想象一下，你花了几千个深夜，在GitHub上呕心沥血维护着一个开源项目，只为那一点点纯粹的成就感。突然有一天，一个只懂业务逻辑的“小白”来了，他不仅不懂算法，甚至连代码里的分号都懒得敲。他只是对着AI工具念叨了一句：“帮我写个像Instagram那样的图片滤镜。”⏱️
+  不到5秒钟，一个功能完备的App诞生了。
 ---
 
-# 📰 Vibe coding杀死开源？开发者的末日还是新生？💀🔥
+## 📰 Vibe coding杀死开源？开发者的末日还是新生？💀🔥
 
 ---
 

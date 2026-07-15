@@ -42,10 +42,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# OpenClaw：GitHub 增长最快的开源 AI 智能体框架
-
----
-
 ## 基本信息
 
 - **来源**: Lex Fridman Podcast (podcast)
@@ -165,9 +161,7 @@ OpenClaw 作为一个现象级的开源 AI Agent 框架，通过极致的工程�
 1.  **GitHub Star 历史趋势分析（指标）：** 观察 OpenClaw 的 Star 增长曲线在 3 个月后是否趋于平缓。如果出现断崖式下跌，说明它是“ hype-driven（炒作驱动）”；如果保持活跃的 Commit 和 Issue 讨论，则说明具备真实生命力。
 
 ---
-## 技术分析
 
-# OpenClaw 技术架构与开发模式分析
 
 ## 1. 核心观点与设计理念
 
@@ -325,7 +319,6 @@ OpenClaw 为企业快速部署内部 AI 工具提供了一种可行的技术方�
 ---
 
 
----
 ## 站内链接
 
 - 分类： [开源生态](/categories/%E5%BC%80%E6%BA%90%E7%94%9F%E6%80%81/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

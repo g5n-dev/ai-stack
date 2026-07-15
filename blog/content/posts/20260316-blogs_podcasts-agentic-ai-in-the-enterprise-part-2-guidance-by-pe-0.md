@@ -36,10 +36,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AWS生成式AI创新中心：企业代理型AI落地指南（角色篇）
-
----
-
 ## 基本信息
 
 - **来源**: AWS Machine Learning Blog (blog)

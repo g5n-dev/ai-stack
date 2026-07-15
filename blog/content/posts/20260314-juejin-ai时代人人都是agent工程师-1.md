@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AI编程工具普及：从传统职能转向Agent工程师
-
----
-
 ## 基本信息
 
 - **作者**: 刀法如飞

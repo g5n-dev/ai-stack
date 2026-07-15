@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 以对象为中心的表征是否更利于组合泛化
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.16689v1

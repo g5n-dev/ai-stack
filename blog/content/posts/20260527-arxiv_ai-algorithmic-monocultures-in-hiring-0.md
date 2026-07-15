@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 招聘算法的同质化风险分析
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2605.27371v1
@@ -111,7 +107,6 @@ source_support: 0.0
 
 ---
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/) / [数据](/categories/%E6%95%B0%E6%8D%AE/)

@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AI能否像艺术史学家一样解读视觉语言模型的艺术风格识别机制
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.11024v1

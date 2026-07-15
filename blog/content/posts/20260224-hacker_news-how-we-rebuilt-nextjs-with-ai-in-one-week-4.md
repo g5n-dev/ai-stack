@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 我们如何在一周内用AI重构Next.js
-
----
-
 ## 基本信息
 
 - **作者**: ghostwriternr

@@ -22,10 +22,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 测试驱动代理开发结合图分析减少AI代码回归
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.17973v1

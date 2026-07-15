@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AG-UI协议集成Amazon Bedrock AgentCore构建生成式UI
-
----
-
 ## 基本信息
 
 - **来源**: AWS Machine Learning Blog (blog)
@@ -156,7 +152,6 @@ AG‑UI 与 CopilotKit 在 Bedrock AgentCore 上的结合，使 AI agent 能够�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

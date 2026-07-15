@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Amazon Nova Forge 如何缓解大模型微调中的灾难性遗忘
-
----
-
 ## 基本信息
 
 - **作者**: 亚马逊云开发者

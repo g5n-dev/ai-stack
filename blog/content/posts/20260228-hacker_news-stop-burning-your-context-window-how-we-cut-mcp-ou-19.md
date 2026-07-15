@@ -33,10 +33,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# MCP服务器将Claude Code上下文消耗降低98%
-
----
-
 ## 基本信息
 
 - **作者**: mksglu

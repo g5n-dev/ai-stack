@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Dex4D：任务无关点跟踪策略实现灵巧操作跨域迁移
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.15828v1
@@ -137,7 +133,6 @@ source_support: 0.0
 
 ---
 
-# 深入分析：Dex4D —— 任务无关的点追踪策略与灵巧操作
 
 ## 1. 研究背景与问题
 
@@ -525,7 +520,6 @@ Dex4D 揭示了**“以运动为中心”**的学习范式可能比“以任务�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

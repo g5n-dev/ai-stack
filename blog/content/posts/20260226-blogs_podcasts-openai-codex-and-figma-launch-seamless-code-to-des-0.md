@@ -34,10 +34,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# OpenAI Codex 集成 Figma 实现代码与设计无缝协作
-
----
-
 ## 基本信息
 
 - **来源**: OpenAI Blog (blog)

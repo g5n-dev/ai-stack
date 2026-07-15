@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 干预下基于部分因果学习的有效选择性共形推断
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.02204v1

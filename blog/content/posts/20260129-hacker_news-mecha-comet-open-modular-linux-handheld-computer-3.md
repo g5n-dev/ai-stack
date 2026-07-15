@@ -17,10 +17,7 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Mecha Comet：开源模块化 Linux 掌上电脑
-
+description: Mecha Comet 是一款基于 Linux 的开源模块化掌上电脑，其核心设计理念在于通过高度可定制的硬件架构，赋予用户对设备的完全掌控权。在当前移动设备日益封闭的生态下，这种开放性为开发者与极客提供了难得的硬件探索空间。本文将深入解析其模块化设计细节与性能表现，帮助读者评估这款设备是否满足你对自由与扩展性的需求。
 ---
 
 ## 基本信息
@@ -476,7 +473,6 @@ Mecha Comet 的引入打破了传统工业设备封闭的生态壁垒。通过�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [效率与方法论](/categories/%E6%95%88%E7%8E%87%E4%B8%8E%E6%96%B9%E6%B3%95%E8%AE%BA/)

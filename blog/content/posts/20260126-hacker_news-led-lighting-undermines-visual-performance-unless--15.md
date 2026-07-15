@@ -20,9 +20,10 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: 👁️‍🗨️ 视觉警报：你以为的“完美”照明，正在悄悄毁掉你的眼睛！ 试想这样一个场景：现代办公室里灯火通明，节能高效的LED灯发出冷白的光芒，号称“清晰无比”。然而，你是否也有过这样的时刻：明明光线充足，你的眼睛却感到异常干涩、酸痛？在看电脑屏幕时，文字边缘似乎变得模糊，甚至无法准确判断物体的质感？
 ---
 
-# 📰 💡LED照明正在悄悄毁掉你的视力？除非补全宽光谱！
+## 📰 💡LED照明正在悄悄毁掉你的视力？除非补全宽光谱！
 
 ---
 

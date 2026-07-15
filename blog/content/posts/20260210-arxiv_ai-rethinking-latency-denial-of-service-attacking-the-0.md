@@ -19,10 +19,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 针对LLM服务框架而非模型的延迟型拒绝服务攻击研究
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.07878v1
@@ -319,7 +315,6 @@ source_support: 0.0
 ---
 
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/)

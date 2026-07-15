@@ -33,10 +33,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# CMU 10-202 现代人工智能导论课程资源
-
----
-
 ## 基本信息
 
 - **作者**: vismit2000

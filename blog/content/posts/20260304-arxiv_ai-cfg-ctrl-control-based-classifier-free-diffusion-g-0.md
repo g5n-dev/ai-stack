@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# CFG-Ctrl：基于分类器无关的扩散模型控制引导方法
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.03281v1

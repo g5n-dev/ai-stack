@@ -34,10 +34,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 首个医疗机器人数据集及基础物理AI模型发布
-
----
-
 ## 基本信息
 
 - **来源**: Hugging Face Blog (blog)

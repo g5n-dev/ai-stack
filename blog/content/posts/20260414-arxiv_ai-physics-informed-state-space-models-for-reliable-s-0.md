@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 物理信息状态空间模型的离网系统太阳辐照度预测
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2604.11807v1
@@ -150,7 +146,6 @@ source_support: 0.0
 
 ---
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/)

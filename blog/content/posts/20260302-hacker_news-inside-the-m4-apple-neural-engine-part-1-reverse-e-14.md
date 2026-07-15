@@ -34,10 +34,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# M4苹果神经引擎逆向工程：架构解析
-
----
-
 ## 基本信息
 
 - **作者**: zdw

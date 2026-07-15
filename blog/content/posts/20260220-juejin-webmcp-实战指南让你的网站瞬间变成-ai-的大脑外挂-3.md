@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# WebMCP 协议实战：通过原生接口实现 AI 对网页的低延迟精准操作
-
----
-
 ## 基本信息
 
 - **作者**: 前端小小栈

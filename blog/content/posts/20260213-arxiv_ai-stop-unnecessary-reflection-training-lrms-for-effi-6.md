@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 训练LRM模型：自适应反思与长度协调惩罚提升推理效率
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.12113v1
@@ -134,7 +130,6 @@ source_support: 0.0
 
 ---
 
-# 深入分析论文：Stop Unnecessary Reflection
 
 ## 1. 研究背景与问题
 
@@ -529,7 +524,6 @@ $$ R_{total} = R_{accuracy} - \alpha \cdot R_{reflection} - \lambda(c) \cdot R_{
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

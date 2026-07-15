@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# V2M-Zero：零样本时间对齐视频配乐生成模型
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.11042v1

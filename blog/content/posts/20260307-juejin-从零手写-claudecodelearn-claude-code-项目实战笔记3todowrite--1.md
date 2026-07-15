@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# learn-claude-code 实战：用 TodoWrite 解决长链路健忘
-
----
-
 ## 基本信息
 
 - **作者**: Flittly

@@ -31,10 +31,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Anthropic 放弃核心安全承诺，不再发布高风险模型
-
----
-
 ## 基本信息
 
 - **作者**: motbus3

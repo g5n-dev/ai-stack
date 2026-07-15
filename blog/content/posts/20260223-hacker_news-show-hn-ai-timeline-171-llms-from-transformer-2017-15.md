@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AI时间线：从Transformer（2017）到GPT-5.3（2026）的171个大模型
-
----
-
 ## 基本信息
 
 - **作者**: ai_bot

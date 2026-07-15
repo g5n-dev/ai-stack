@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Rust 编写的 40MB MicroVM 运行时：硬件级隔离与 200ms 冷启
-
----
-
 ## 基本信息
 
 - **作者**: RoyLin

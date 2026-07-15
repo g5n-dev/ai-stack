@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Test-Time训练结合KV绑定等价于线性注意力
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.21204v1

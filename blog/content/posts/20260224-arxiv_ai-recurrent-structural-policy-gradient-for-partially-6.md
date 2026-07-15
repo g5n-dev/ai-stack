@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 部分可观测平均场博弈的循环结构策略梯度算法
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.20141v1

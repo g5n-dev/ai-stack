@@ -33,10 +33,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 新闻出版商因担忧AI抓取限制互联网档案馆访问
-
----
-
 ## 基本信息
 
 - **作者**: ninjagoo
@@ -409,7 +405,6 @@ check_robots_txt("https://example.com")
 
 ---
 
----
 ## 站内链接
 
 - 分类： [安全](/categories/%E5%AE%89%E5%85%A8/) / [开源生态](/categories/%E5%BC%80%E6%BA%90%E7%94%9F%E6%80%81/)

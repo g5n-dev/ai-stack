@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 扩散对偶性第二章：Ψ采样器与高效课程
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.21185v1

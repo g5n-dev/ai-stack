@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Anthropic、OpenAI与美国政府关系时间线
-
----
-
 ## 基本信息
 
 - **作者**: vldszn

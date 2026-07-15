@@ -31,10 +31,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Spatial-TTT：基于测试时训练的流式视觉空间智能
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.12255v1

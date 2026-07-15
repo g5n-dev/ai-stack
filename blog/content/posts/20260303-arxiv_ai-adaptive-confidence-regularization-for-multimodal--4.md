@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 自适应置信度正则化用于多模态失效检测
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.02200v1

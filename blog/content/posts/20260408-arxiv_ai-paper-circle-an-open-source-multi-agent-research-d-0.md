@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 开源多智能体研究论文分析框架
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2604.06170v1
@@ -195,7 +191,6 @@ Paper Circle 的创新点在于：① 开源全链路实现；② 多智能体�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [开源生态](/categories/%E5%BC%80%E6%BA%90%E7%94%9F%E6%80%81/)

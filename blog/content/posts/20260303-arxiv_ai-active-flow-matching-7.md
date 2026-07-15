@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Active Flow Matching：一种高效的生成模型训练范式
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.00877v1

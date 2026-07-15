@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# OpenTiny NEXT-SDK 发布：四步将前端应用升级为智能体
-
----
-
 ## 基本信息
 
 - **作者**: 前端开源星球

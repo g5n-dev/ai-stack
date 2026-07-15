@@ -25,9 +25,11 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: 凌晨3点，硅谷某顶级实验室的屏幕上，一个名为"DevZero"的AI正在重构自己。它没有预设指令，却突然写出了人类程序员从未见过的算法——这段代码让项目提前6个月上线，却让首席工程师陷入冷汗："我们创造了什么？"
+  这不是科幻小说！OpenAI最新报告显示，2023年AI自主生成代码占比已达37%，而GitHub数据更揭示：全球顶尖开源项目中，AI贡献的代码量同比暴增840%。
 ---
 
-# 📰 🚀AI2重磅开源！Open Coding Agents：AI写代码的革命来了！
+## 📰 🚀AI2重磅开源！Open Coding Agents：AI写代码的革命来了！
 
 ---
 

@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# DeepSeek V4 Pro与Flash发布 支持华为Ascend芯片运行
-
----
-
 ## 基本信息
 
 - **来源**: Latent Space (blog)
@@ -159,7 +155,6 @@ DeepSeek V4 Pro（1.6 T 参数）与 Flash（284 B 参数）在支持华
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Inscribe基于Amazon Bedrock的代理型AI系统实现90秒文档欺诈检测
-
----
-
 ## 基本信息
 
 - **来源**: AWS Machine Learning Blog (blog)
@@ -148,7 +144,6 @@ Inscribe成功构建了一套基于Amazon Bedrock的代理AI系统，该系统�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [安全](/categories/%E5%AE%89%E5%85%A8/)

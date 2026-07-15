@@ -23,10 +23,8 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# LM Studio 0.4 发布：支持本地运行 Llama 3 与多模型并行
-
+description: 随着本地化大模型工具的迭代，如何在有限的硬件资源下获得更流畅的推理体验，已成为许多开发者的核心诉求。LM Studio 0.4 版本针对底层架构进行了深度优化，不仅显著降低了显存占用，还引入了更灵活的模型管理机制。本文将详细解析此次更新的关键技术点与实测表现，帮助你在本地环境中构建更高效、可控的
+  AI 工作流。
 ---
 
 ## 基本信息
@@ -414,7 +412,6 @@ interactive_chat()
 
 ---
 
----
 ## 站内链接
 
 - 分类： [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/) / [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

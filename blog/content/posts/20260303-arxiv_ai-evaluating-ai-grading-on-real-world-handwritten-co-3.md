@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 基于大规模真实手写数学数据评估AI阅卷性能
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.00895v1

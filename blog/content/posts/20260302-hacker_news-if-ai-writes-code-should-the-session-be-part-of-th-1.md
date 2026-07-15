@@ -32,10 +32,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AI编写代码时是否应将会话记录纳入提交
-
----
-
 ## 基本信息
 
 - **作者**: mandel_x

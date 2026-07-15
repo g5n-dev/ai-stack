@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 基于资格推理与分节强化学习的引理可靠利用
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.00998v1
@@ -125,7 +121,6 @@ source_support: 0.0
 
 ---
 
-# 论文深入分析：RULES —— 基于资格推理与分区域感知强化学习的引理可靠利用
 
 ## 1. 研究背景与问题
 
@@ -521,7 +516,6 @@ Isabelle 是一个通用的交互式定理证明助手，拥有庞大的数学�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

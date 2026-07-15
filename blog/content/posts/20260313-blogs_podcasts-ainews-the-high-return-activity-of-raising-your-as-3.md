@@ -35,10 +35,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# OpenAI研究员探讨提升大语言模型期望的高回报活动
-
----
-
 ## 基本信息
 
 - **来源**: Latent Space (blog)

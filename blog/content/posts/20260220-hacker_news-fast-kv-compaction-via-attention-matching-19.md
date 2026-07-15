@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 利用注意力匹配加速 KV 键值对压缩
-
----
-
 ## 基本信息
 
 - **作者**: cbracketdash

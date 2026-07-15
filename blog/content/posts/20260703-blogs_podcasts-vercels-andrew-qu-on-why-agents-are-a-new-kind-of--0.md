@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Vercel首席谈代理：软件形态的演进之路
-
----
-
 ## 基本信息
 
 - **来源**: Latent Space (blog)
@@ -150,7 +146,6 @@ Agent-readable Website的概念尚处于早期阶段，相关标准和最佳实�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

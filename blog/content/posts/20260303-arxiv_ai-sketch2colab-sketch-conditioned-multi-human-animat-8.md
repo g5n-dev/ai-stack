@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Sketch2Colab：基于可控流蒸馏的草图多人动画生成
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.02190v1

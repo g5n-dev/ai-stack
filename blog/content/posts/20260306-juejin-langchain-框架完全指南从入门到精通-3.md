@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# LangChain 框架完全指南：基于 LLM 的应用开发
-
----
-
 ## 基本信息
 
 - **作者**: 哈里谢顿

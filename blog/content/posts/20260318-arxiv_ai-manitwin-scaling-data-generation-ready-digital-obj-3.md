@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# ManiTwin：面向数据生成的10万级数字物体数据集
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.16866v1

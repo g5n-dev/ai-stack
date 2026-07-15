@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Codex多场景编程能力解析
-
----
-
 ## 基本信息
 
 - **作者**: mikeevans
@@ -77,7 +73,6 @@ Codex在以下场景表现受限：需要深厚业务领域知识的系统设计
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/)

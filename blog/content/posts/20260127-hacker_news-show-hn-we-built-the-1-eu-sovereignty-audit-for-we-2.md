@@ -24,9 +24,11 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: 这是一个为您量身定制的引言，旨在瞬间抓住读者的注意力，并完美引出关于“数字主权”的硬核技术文章： 你是否想过，当你仅仅为了验证一个邮箱格式，随手在代码里引入了一个看似无害的
+  JavaScript 库时，你的网站实际上已经“背叛”了它的数据？
 ---
 
-# 📰 🚀网站合规必备！首个欧盟主权审计工具，你的网站合规了吗？
+## 📰 🚀网站合规必备！首个欧盟主权审计工具，你的网站合规了吗？
 
 ---
 

@@ -19,10 +19,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# FlagOS携Qwen3-8B镜像登陆阿里云PAI平台
-
----
-
 ## 基本信息
 
 - **作者**: 阿里云大数据AI技术

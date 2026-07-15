@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Anthropic Claude Opus 4.6开源代码检出500个零日漏洞
-
----
-
 ## 基本信息
 
 - **作者**: speckx
@@ -453,7 +449,6 @@ Claude Opus 4.6 在一周内标记了 8 个严重的逻辑缺陷，其中包括�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [安全](/categories/%E5%AE%89%E5%85%A8/) / [开源生态](/categories/%E5%BC%80%E6%BA%90%E7%94%9F%E6%80%81/)

@@ -1,5 +1,5 @@
 ---
-title: Iberdrola 如何利用 Amazon Bedrock AgentCore 优化 ServiceNow I
+title: Iberdrola 如何利用 Amazon Bedrock AgentCore 优化 ServiceNow IT 运营
 date: 2026-02-10 22:46:04+08:00
 draft: false
 entry_kind: auto
@@ -36,10 +36,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Iberdrola 如何利用 Amazon Bedrock AgentCore 优化 ServiceNow IT 运营
-
 ---
 
 ## 基本信息
@@ -227,7 +223,6 @@ Amazon Bedrock Agent 的核心能力在于调用 Action Groups。为了最大化
 ---
 
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

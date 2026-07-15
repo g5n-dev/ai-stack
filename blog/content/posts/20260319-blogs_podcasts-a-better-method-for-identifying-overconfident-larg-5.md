@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 新指标识别AI模型过度自信 降低幻觉风险
-
----
-
 ## 基本信息
 
 - **来源**: MIT News (Machine Learning) (blog)

@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# ASMR-Bench：机器学习研究破坏行为审计基准
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2604.16286v1
@@ -109,7 +105,6 @@ ASMR-Bench由9个机器学习研究代码库组成，每个代码库配套经人
 
 ---
 
----
 ## 站内链接
 
 - 分类： [安全](/categories/%E5%AE%89%E5%85%A8/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

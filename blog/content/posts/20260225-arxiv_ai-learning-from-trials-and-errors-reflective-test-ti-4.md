@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 基于试错反思的具身大模型测试时规划
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.21198v1

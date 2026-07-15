@@ -1,5 +1,5 @@
 ---
-title: NVIDIA Nemotron 3 Ultra登陆SageMaker JumpStart，推理速度提升5倍成本
+title: NVIDIA Nemotron 3 Ultra登陆SageMaker JumpStart，推理速度提升5倍成本降低30%
 date: 2026-06-04 18:31:38+08:00
 draft: false
 entry_kind: auto
@@ -25,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# NVIDIA Nemotron 3 Ultra登陆SageMaker JumpStart，推理速度提升5倍成本降低30%
-
 ---
 
 ## 基本信息
@@ -139,7 +135,6 @@ Nemotron 3 Ultra的推出强化了NVIDIA在企业AI推理市场的布局。不�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

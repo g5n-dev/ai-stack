@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# DanceOPD在线策略生成式场蒸馏方法
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2606.27377v1
@@ -141,7 +137,6 @@ DanceOPD的核心启示在于：流匹配框架的统一状态空间为多能力
 
 ---
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

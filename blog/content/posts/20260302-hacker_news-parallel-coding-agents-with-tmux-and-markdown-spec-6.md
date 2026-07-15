@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 基于 tmux 和 Markdown 规格构建并行编码智能体
-
----
-
 ## 基本信息
 
 - **作者**: schipperai

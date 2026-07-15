@@ -36,10 +36,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# OpenAI完成66亿美元融资，投后估值达1570亿美元
-
----
-
 ## 基本信息
 
 - **来源**: Latent Space (blog)

@@ -26,9 +26,11 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: 引言：从噪点到秩序——揭秘有序抖动的艺术 你有没有过这样的经历：明明拍了一张色彩丰富的照片，存成低格式后却惨不忍睹？📸 细节全无，色彩断层，就像被粗暴的“像素化”恶魔吞噬了一样！这背后，正是数字图像处理中一个令人头疼的问题——量化误差。
+  传统的随机抖动（如Floyd-Steinberg算法）虽然能缓解这一问题，却会引入恼人的噪点，让画面显得脏乱。
 ---
 
-# 📰 🚀告别噪点！有序抖动算法：让像素画面更清晰的魔法✨
+## 📰 🚀告别噪点！有序抖动算法：让像素画面更清晰的魔法✨
 
 ---
 

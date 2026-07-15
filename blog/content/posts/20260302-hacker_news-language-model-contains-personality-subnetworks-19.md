@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 语言模型存在可独立调控的个性子网络
-
----
-
 ## 基本信息
 
 - **作者**: PaulHoule

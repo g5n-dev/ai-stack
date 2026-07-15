@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 可验证高并行移动GUI智能体仿真平台
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2605.26114v1
@@ -84,7 +80,6 @@ MobileGym 在实验可重复性和规模上具备显著优势，为 GUI 代理�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

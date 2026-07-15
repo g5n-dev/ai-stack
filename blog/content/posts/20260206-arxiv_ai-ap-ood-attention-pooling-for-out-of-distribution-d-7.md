@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AP-OOD：基于注意力池化的分布外检测方法
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.06031v1
@@ -123,7 +119,6 @@ AP-OOD在文本OOD检测任务中设立了新的最先进水平（SOTA），显�
 
 ---
 
-# AP-OOD: 基于注意力池化的分布外检测方法深度分析
 
 ## 1. 研究背景与问题
 
@@ -532,7 +527,6 @@ AP-OOD 通过引入注意力机制，解决了上述问题，使模型能够专�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/) / [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

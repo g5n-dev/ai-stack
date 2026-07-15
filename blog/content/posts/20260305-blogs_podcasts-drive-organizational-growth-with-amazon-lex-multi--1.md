@@ -42,10 +42,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 利用 Amazon Lex 多开发者 CI/CD 流水线推动组织增长
-
----
-
 ## 基本信息
 
 - **来源**: AWS Machine Learning Blog (blog)

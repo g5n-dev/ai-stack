@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 仓库 Agent 就绪度评估：发现基础设施短板
-
----
-
 ## 基本信息
 
 - **作者**: 挖坑的张师傅
@@ -42,9 +38,8 @@ source_support: 0.0
 随着 AI 编程助手在团队中的普及，如何判断现有的工程基础设施是否能够充分发挥其效能变得尤为关键。本文聚焦 Agent Readiness，探讨在引入 AI Coding Agent 前需要审视的关键环节，帮助开发团队识别潜在的短板并有针对性地进行改进，从而提升研发效率与代码质量。
 
 ---
-## 描述
 
-# 中文翻译
+## 中文翻译
 
 **Agent Readiness**
 
@@ -91,7 +86,6 @@ Agent Readiness的价值不在于告诉你该不该用AI Coding Agent，而在�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/)

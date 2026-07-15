@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 网页指令与凭证泄露：自动化代理的安全风险
-
----
-
 ## 基本信息
 
 - **作者**: everlier

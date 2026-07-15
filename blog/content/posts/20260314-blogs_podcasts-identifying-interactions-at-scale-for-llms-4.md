@@ -36,10 +36,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 面向大规模语言模型的交互识别与归因分析
-
----
-
 ## 基本信息
 
 - **来源**: BAIR Blog (blog)

@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# STRIDE训练数据归因：稀疏恢复与子集扰动方法
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2606.05165v1
@@ -155,7 +151,6 @@ STRIDE 成功将归因任务从参数空间的梯度追踪转向激活空间的�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

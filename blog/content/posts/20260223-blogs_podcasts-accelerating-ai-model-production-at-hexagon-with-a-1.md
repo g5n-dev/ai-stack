@@ -37,10 +37,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Hexagon 利用 SageMaker HyperPod 加速分割模型预训练
-
----
-
 ## 基本信息
 
 - **来源**: AWS Machine Learning Blog (blog)

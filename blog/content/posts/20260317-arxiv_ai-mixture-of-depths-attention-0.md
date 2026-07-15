@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Mixture-of-Depths 动态分配计算资源的注意力机制
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.15619v1

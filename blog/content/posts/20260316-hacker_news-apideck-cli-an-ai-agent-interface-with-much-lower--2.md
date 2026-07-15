@@ -33,10 +33,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Apideck CLI：比MCP更低上下文消耗的AI代理接口
-
----
-
 ## 基本信息
 
 - **作者**: gertjandewilde

@@ -31,10 +31,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Spring AI 多模态实战：构建图像理解应用
-
----
-
 ## 基本信息
 
 - **作者**: 玹外之音

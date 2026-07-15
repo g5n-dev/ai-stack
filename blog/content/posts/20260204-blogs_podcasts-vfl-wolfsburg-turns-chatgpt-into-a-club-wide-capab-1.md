@@ -33,10 +33,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 沃尔夫斯堡：将ChatGPT转化为全俱乐部能力的实践
-
----
-
 ## 基本信息
 
 - **来源**: OpenAI Blog (blog)
@@ -139,7 +135,6 @@ VfL Wolfsburg 的案例表明，通过关注人本身，并将AI视为一种全�
 
 ---
 
-# VfL Wolfsburg（沃尔夫斯堡足球俱乐部）全员应用ChatGPT案例技术分析
 
 ## 1. 核心观点深度解读
 
@@ -310,7 +305,6 @@ GenAI落地的关键在于组织架构和企业文化的适配。文章主张通
 ---
 
 
----
 ## 站内链接
 
 - 分类： [产品与创业](/categories/%E4%BA%A7%E5%93%81%E4%B8%8E%E5%88%9B%E4%B8%9A/) / [效率与方法论](/categories/%E6%95%88%E7%8E%87%E4%B8%8E%E6%96%B9%E6%B3%95%E8%AE%BA/)

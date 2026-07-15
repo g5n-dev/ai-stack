@@ -63,8 +63,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 阿里开源 Higress：AI 原生 API 网关
-
 > **原名**: alibaba /
 
       higress
@@ -80,9 +78,8 @@ source_support: 0.0
 - **DeepWiki**: [https://deepwiki.com/alibaba/higress](https://deepwiki.com/alibaba/higress)
 
 ---
-## DeepWiki 速览（节选）
 
-# Overview
+## Overview
 
 Relevant source files
 
@@ -255,7 +252,6 @@ Higress 继承了 Istio 和 Envoy 的优秀基因，架构设计清晰，代码�
 
 ---
 
-# Higress 深度技术分析报告
 
 ## 1. 技术架构深度剖析
 
@@ -923,7 +919,6 @@ def rate_limiting():
 
 ---
 
----
 ## 站内链接
 
 - 分类： [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/) / [开源生态](/categories/%E5%BC%80%E6%BA%90%E7%94%9F%E6%80%81/)

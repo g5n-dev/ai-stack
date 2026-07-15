@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# CountBot工具系统设计：从抽象基类到JSON Schema实现
-
----
-
 ## 基本信息
 
 - **作者**: 用户57985476971

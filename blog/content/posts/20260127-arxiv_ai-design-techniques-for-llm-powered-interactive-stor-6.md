@@ -24,9 +24,11 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: 这篇文章介绍了Dramamancer系统，这是一个利用大语言模型（LLM）技术来革新互动叙事的设计案例。它旨在解决互动故事中“作者意图”与“玩家自主权”之间的矛盾。
+  主要内容包括： 核心机制：Dramamancer 使用 LLM 将作者预先创作的故事架构转化为由玩家驱动的动态游戏体验。 设计目标：通过生成式技术，在保持叙事连贯性的同时，赋予玩家更高的自由度。
 ---
 
-# 📚 🎭LLM驱动的交互式叙事设计：Dramamancer案例研究！🚀
+## 📚 🎭LLM驱动的交互式叙事设计：Dramamancer案例研究！🚀
 
 ---
 
@@ -128,7 +130,6 @@ source_support: 0.0
 
 ---
 
-# 📜 论文深度解析：Design Techniques for LLM-Powered Interactive Storytelling (Dramamancer)
 
 ## 1. 研究背景与问题 🎭
 

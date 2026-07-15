@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 原生主动感知推理赋能多模态理解
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2606.19341v1
@@ -143,7 +139,6 @@ OmniAgent 是首个原生全模态智能体，将视频理解建模为基于 POM
 
 ---
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/) / [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

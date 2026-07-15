@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Show HN: Axe – A 12MB binary that replaces your AI fram
-
----
-
 ## 基本信息
 
 - **作者**: jrswab

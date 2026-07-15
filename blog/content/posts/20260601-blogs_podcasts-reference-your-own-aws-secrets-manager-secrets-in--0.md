@@ -1,5 +1,5 @@
 ---
-title: AWS Secrets Manager为AgentCore Identity新增密钥引用功能，支持直接使用预先
+title: AWS Secrets Manager为AgentCore Identity新增密钥引用功能，支持直接使用预先配置的密钥并保留完整管理控制权
 date: 2026-06-01 23:28:09+08:00
 draft: false
 entry_kind: auto
@@ -25,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# AWS Secrets Manager为AgentCore Identity新增密钥引用功能，支持直接使用预先配置的密钥并保留完整管理控制权
-
 ---
 
 ## 基本信息
@@ -171,7 +167,6 @@ AgentCore 通过 `aws:source-arn` 与 Secrets Manager 资源策略配合，在�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [安全](/categories/%E5%AE%89%E5%85%A8/)

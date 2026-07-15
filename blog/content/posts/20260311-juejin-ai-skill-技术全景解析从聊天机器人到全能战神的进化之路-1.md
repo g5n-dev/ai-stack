@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AI Skill 技术全景解析：从聊天机器人到全能智能体的进化
-
----
-
 ## 基本信息
 
 - **作者**: badhope

@@ -38,10 +38,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# LinqAlpha利用Amazon Bedrock构建“魔鬼代言人”代理评估投资论点
-
----
-
 ## 基本信息
 
 - **来源**: AWS Machine Learning Blog (blog)
@@ -124,9 +120,7 @@ LinqAlpha 选择 **Amazon Bedrock** 作为底层基础架构，主要利用了�
 LinqAlpha的实践揭示了AI Agent在金融领域的成熟度正在提升，即从单一的信息处理走向复杂的逻辑对抗。然而，其核心瓶颈不在于Prompt的技巧，而在于如何通过RAG和事实核查机制，确保AI生成的“反方观点”是基于事实的犀利洞察，而非一本正经的胡说八道。对于机构而言，这应当被视为增强研究广度的工具，而非替代深度思考的黑箱。
 
 ---
-## 技术分析
 
-# 技术分析
 
 ## 1. 核心观点深度解读
 
@@ -279,7 +273,6 @@ LLM 输出的通常是文本形式的反驳意见，难以直接纳入投资决�
 ---
 
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [产品与创业](/categories/%E4%BA%A7%E5%93%81%E4%B8%8E%E5%88%9B%E4%B8%9A/)

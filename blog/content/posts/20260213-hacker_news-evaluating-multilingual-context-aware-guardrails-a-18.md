@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 评估多语言上下文护栏：人道主义大模型应用
-
----
-
 ## 基本信息
 
 - **作者**: benbreen
@@ -393,7 +389,6 @@ TWB 实施了一套专门针对低资源语言的上下文感知护栏。该系�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [安全](/categories/%E5%AE%89%E5%85%A8/)

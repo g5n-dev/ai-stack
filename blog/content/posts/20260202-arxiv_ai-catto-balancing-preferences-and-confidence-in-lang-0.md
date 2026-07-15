@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# CATTO：平衡语言模型偏好与置信度的方法
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2601.23096v1
@@ -118,7 +114,6 @@ source_support: 0.0
 
 ---
 
-# CATTO: 平衡语言模型中的偏好与置信度 —— 深度分析报告
 
 ## 1. 研究背景与问题
 
@@ -524,7 +519,6 @@ CATTO 的优势主要体现在：
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

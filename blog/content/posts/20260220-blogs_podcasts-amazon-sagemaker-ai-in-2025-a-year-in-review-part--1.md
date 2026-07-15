@@ -34,10 +34,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Amazon SageMaker AI 2025回顾：可观测性与模型定制托管增强
-
----
-
 ## 基本信息
 
 - **来源**: AWS Machine Learning Blog (blog)

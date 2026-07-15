@@ -19,10 +19,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 大模型技术解析：Transformer架构与RoPE位置编码
-
----
-
 ## 基本信息
 
 - **作者**: Memory_荒年

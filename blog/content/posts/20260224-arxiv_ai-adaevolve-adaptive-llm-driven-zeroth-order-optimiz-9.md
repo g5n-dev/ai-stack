@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AdaEvolve：基于大语言模型的自适应零阶优化框架
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.20133v1

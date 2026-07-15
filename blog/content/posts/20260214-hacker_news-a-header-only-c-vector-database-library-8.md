@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 仅头文件的 C 语言向量数据库库
-
----
-
 ## 基本信息
 
 - **作者**: abdimoalim
@@ -442,7 +438,6 @@ C 语言不具备异常处理机制，库通常通过返回整数错误码或设
 
 ---
 
----
 ## 站内链接
 
 - 分类： [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/) / [后端](/categories/%E5%90%8E%E7%AB%AF/)

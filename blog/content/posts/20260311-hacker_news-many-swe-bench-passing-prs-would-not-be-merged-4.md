@@ -31,10 +31,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# SWE-bench基准测试通过率与实际PR合并率存在偏差
-
----
-
 ## 基本信息
 
 - **作者**: mustaphah

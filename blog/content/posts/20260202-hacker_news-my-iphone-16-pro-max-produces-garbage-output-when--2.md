@@ -37,10 +37,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# iPhone 16 Pro Max 运行 MLX 大模型输出质量异常
-
----
-
 ## 基本信息
 
 - **作者**: rafaelcosta
@@ -383,7 +379,6 @@ Khanmigo 成功地将 GPT-4 转化为一个引导型导师，而不是作弊工�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/)

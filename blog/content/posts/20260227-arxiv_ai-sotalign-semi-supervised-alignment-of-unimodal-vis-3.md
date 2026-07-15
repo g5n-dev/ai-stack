@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# SOTAlign：基于最优传输的单模态视觉与语言模型半监督对齐
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.23353v1

@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 开源项目研究：Cursor AI 以牺牲代码质量换取开发速度
-
----
-
 ## 基本信息
 
 - **作者**: wek

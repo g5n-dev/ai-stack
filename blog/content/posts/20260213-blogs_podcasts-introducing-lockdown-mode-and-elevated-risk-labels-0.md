@@ -43,10 +43,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# ChatGPT推出锁定模式与高危标签以防范提示词注入及数据外泄
-
----
-
 ## 基本信息
 
 - **来源**: OpenAI Blog (blog)
@@ -153,7 +149,6 @@ OpenAI 通过引入“锁定模式”和“高风险标签”，试图从架构�
 
 ---
 
-# 深度分析报告：ChatGPT 的“锁定模式”与高风险标签
 
 ## 1. 核心观点深度解读
 
@@ -415,7 +410,6 @@ AI 安全将逐渐从“模型安全”转向“系统安全”。未来的 AI A
 ---
 
 
----
 ## 站内链接
 
 - 分类： [安全](/categories/%E5%AE%89%E5%85%A8/) / [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

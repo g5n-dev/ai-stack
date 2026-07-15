@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# LlamaIndex官方方案：用AgentFS沙盒构建安全AI编码智能体
-
----
-
 ## 基本信息
 
 - **作者**: 倔强青铜三

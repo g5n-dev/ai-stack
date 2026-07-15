@@ -23,9 +23,10 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: 🔥 想象一下：你刚刚发送了一封绝密邮件，以为它像被锁进银行金库一样安全——但此刻，全球最流行的加密工具正悄悄为黑客留着一扇“后窗”！ 去年，某金融机构的加密系统被攻破时，调查团队震惊地发现：攻击者没有破解密钥，而是利用OpenSSL处理加密数据的代码缺陷，直接绕过了所有防护。这类漏洞就像藏在银行保险柜里的弹簧锁——看似坚固，实则一推就开。
 ---
 
-# 📰 🚨OpenSSL严重漏洞！CMS解析栈溢出，立即修复！
+## 📰 🚨OpenSSL严重漏洞！CMS解析栈溢出，立即修复！
 
 ---
 

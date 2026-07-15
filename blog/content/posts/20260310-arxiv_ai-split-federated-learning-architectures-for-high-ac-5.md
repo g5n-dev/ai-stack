@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 面向高精度低时延训练的拆分联邦学习架构
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.08687v1

@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 大模型AI编程实测：Opus 4.6与K2.5等模型排序对比
-
----
-
 ## 基本信息
 
 - **作者**: 雨夜之寂

@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 面向大语言模型的时间引导机制
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2601.21744v1
@@ -116,7 +112,6 @@ source_support: 0.0
 
 ---
 
-# 深入分析论文：Temporal Guidance for Large Language Models
 
 ## 1. 研究背景与问题
 
@@ -528,7 +523,6 @@ TeGu的主要创新在于**视角的转换**。它将MTP这一训练加速技术
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

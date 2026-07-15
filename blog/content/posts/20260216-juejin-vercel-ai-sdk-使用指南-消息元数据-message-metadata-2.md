@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Vercel AI SDK 指南：利用消息元数据传递时间戳与 Token 用量
-
----
-
 ## 基本信息
 
 - **作者**: ZaneAI
@@ -268,7 +264,6 @@ export async function POST(req: Request) {
 ---
 
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [前端](/categories/%E5%89%8D%E7%AB%AF/)

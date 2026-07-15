@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Anthropic 推出 Cowork 功能：macOS 无预警生成 10GB 虚拟机包
-
----
-
 ## 基本信息
 
 - **作者**: mystcb

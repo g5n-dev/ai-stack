@@ -31,10 +31,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Transformers.js v4 预览版发布，现已上线 NPM
-
----
-
 ## 基本信息
 
 - **来源**: Hugging Face Blog (blog)
@@ -90,9 +86,7 @@ Transformers.js v4 的最大创新不在于算法，而在于**工程化栈的�
 3.  **降级兼容方案**：必须检测 `navigator.userAgent` 和
 
 ---
-## 技术分析
 
-# 技术分析：Transformers.js v4 预览版深度解析
 
 ## 1. 核心架构变革：从 WASM 到 WebGPU 的性能跃迁
 
@@ -223,7 +217,6 @@ v4 版本对 API 进行了重新设计，使其更符合现代 JavaScript 开发
 ---
 
 
----
 ## 站内链接
 
 - 分类： [前端](/categories/%E5%89%8D%E7%AB%AF/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

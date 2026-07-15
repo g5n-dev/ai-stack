@@ -35,10 +35,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Claude Sonnet 4.6 发布：基于 4.5 的升级与局限
-
----
-
 ## 基本信息
 
 - **来源**: Latent Space (blog)

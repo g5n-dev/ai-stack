@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 通过低秩近似优化大模型动量状态以降低显存占用
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.24283v1

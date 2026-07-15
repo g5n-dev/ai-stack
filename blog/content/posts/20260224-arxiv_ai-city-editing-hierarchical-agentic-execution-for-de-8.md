@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 城市编辑：面向依赖感知的分层智能体城市地理空间修改
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.19326v1

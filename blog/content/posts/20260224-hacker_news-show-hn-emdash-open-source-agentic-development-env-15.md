@@ -36,10 +36,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Show HN: Emdash – 开源智能体开发环境
-
----
-
 ## 基本信息
 
 - **作者**: onecommit

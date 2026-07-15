@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 视觉语言动作模型的免标定自由视角方法
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2607.05396v1
@@ -157,7 +153,6 @@ CamVLA 将末端执行器的动作预测在**局部相机坐标系**下进行，
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

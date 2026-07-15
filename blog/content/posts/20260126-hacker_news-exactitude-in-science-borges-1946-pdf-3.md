@@ -23,9 +23,10 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: 【引言】 你敢相信吗？一张 1:1 的地图，竟然成了摧毁一个帝国的元凶！ 🗺️💥 1946年，文学巨匠博尔斯（Jorge Luis Borges）在《论科学的精确性》中描绘了一个荒诞而令人窒息的场景：在这个虚构的帝国里，人们对“精确”的渴望达到了病态的巅峰。绘图师们不屑于任何省略，他们执着地要将每一座山丘、每一粒尘土、甚至每一片落叶都完美复刻。
 ---
 
-# 📰 博尔赫斯《科学的精确性》(1946)！🔥烧脑神作！📄PDF
+## 📰 博尔赫斯《科学的精确性》(1946)！🔥烧脑神作！📄PDF
 
 ---
 
@@ -272,7 +273,6 @@ Waymo 开发了一套**高精地图** 系统，通过激光雷达对道路环境
 
 ---
 
----
 ## 🎓 学习要点
 
 - 基于博尔赫斯《科学的精确性》（On Exactitude in Science）及其引发的广泛讨论，以下是5个关键要点：

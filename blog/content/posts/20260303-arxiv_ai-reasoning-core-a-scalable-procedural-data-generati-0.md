@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Reasoning Core：面向符号预训练与后训练的可扩展程序化数据生成套件
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.02208v1

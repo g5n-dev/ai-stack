@@ -34,10 +34,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 利用 Amazon Nova 基础模型增强联络中心分析能力
-
----
-
 ## 基本信息
 
 - **来源**: AWS Machine Learning Blog (blog)

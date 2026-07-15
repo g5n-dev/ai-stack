@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 科学推理模型引入拒答机制以提升准确性
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.14189v1
@@ -127,7 +123,6 @@ source_support: 0.0
 
 ---
 
-# 论文深入分析：科学推理中的“拒答”意识
 
 ## 1. 研究背景与问题
 
@@ -535,7 +530,6 @@ source_support: 0.0
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

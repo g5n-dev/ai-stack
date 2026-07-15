@@ -36,10 +36,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# NVIDIA NeMo Retriever 推出通用智能体检索流水线
-
----
-
 ## 基本信息
 
 - **来源**: Hugging Face Blog (blog)

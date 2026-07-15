@@ -39,10 +39,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AWS团队评估Nova Forge：VOC分类任务实测与开源模型对比
-
----
-
 ## 基本信息
 
 - **来源**: AWS Machine Learning Blog (blog)

@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 结构因果瓶颈模型：通过因果约束优化表征学习
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.08682v1

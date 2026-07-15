@@ -31,10 +31,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# POET-X：通过正交变换扩展实现大模型高效训练
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.05500v1

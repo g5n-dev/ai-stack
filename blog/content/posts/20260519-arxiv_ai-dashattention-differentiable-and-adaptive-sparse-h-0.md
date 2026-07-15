@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 可微分自适应稀疏分层注意力
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2605.18753v1
@@ -182,7 +178,6 @@ DashAttention 在 **块数自适应** 与 **全程可微** 两个方面优于前
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

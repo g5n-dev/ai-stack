@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 评估大语言模型金融智能：SuperInvesting AI基准测试
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.08704v1

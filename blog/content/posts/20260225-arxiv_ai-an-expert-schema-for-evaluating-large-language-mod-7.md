@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 学术问答系统中大模型错误评估的专家框架
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.21059v1

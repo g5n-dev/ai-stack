@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Claude Code 技能演示：构建完整 Godot 游戏
-
----
-
 ## 基本信息
 
 - **作者**: htdt

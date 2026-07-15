@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 用Strands Evals系统评估AI代理的实践指南
-
----
-
 ## 基本信息
 
 - **来源**: AWS Machine Learning Blog (blog)

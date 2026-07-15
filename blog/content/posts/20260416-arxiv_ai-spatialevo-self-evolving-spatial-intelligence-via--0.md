@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# SpatialEvo基于确定性几何环境的自演化空间智能方法
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2604.14144v1
@@ -146,7 +142,6 @@ DGE的理论基础来自计算几何和逆投影几何。例如，对于点云�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

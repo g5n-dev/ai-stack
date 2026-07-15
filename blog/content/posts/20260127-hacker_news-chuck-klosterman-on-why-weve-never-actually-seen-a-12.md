@@ -20,9 +20,11 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: 这是一个为你定制的超级引人入胜的引言： 👀 请诚实地回答我一个问题： 上周日你坐在电视前，在那场万人瞩目的“超级之夜”里欢呼雀跃时，你真的以为自己看到的是一场真实的足球比赛吗？
+  如果此时你正准备反驳，请先看这组令人背脊发凉的数据：在一场顶级的90分钟职业对决中，每一队虽然拥有11名首发球员，但如果不计算死球和换人时间，真正的有效比赛时间往往只有60分钟左右。
 ---
 
-# 📰 从未看过一场真正的足球赛？🤔Chuck Klosterman 揭秘背后的真相！🔥
+## 📰 从未看过一场真正的足球赛？🤔Chuck Klosterman 揭秘背后的真相！🔥
 
 ---
 

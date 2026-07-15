@@ -1,5 +1,6 @@
 ---
-title: Pure C, CPU-only inference with Mistral Voxtral Realtim
+title: Pure C, CPU-only inference with Mistral Voxtral Realtime 4B speech to text
+  model
 date: 2026-02-10 05:22:57+08:00
 draft: false
 entry_kind: auto
@@ -31,10 +32,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Pure C, CPU-only inference with Mistral Voxtral Realtime 4B speech to text model
-
 ---
 
 ## 基本信息
@@ -403,7 +400,6 @@ Linux 桌面环境碎片化严重，且许多极简发行版（如 Gentoo 或 Al
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [后端](/categories/%E5%90%8E%E7%AB%AF/)

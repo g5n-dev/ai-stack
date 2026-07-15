@@ -33,10 +33,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# OpenAI 承诺 750 万美元资助独立 AI 对齐研究
-
----
-
 ## 基本信息
 
 - **来源**: OpenAI Blog (blog)

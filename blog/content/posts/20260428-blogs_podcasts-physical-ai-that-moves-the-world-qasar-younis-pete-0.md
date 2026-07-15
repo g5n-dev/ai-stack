@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 对话Applied Intuition高管：AI驱动采矿设备无人机卡车战舰
-
----
-
 ## 基本信息
 
 - **来源**: Latent Space (blog)
@@ -160,7 +156,6 @@ Physical AI 是实现全球工业自动化的关键技术路径，能够在对
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

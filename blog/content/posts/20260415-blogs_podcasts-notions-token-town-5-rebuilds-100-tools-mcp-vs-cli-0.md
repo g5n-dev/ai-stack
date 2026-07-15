@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Notion联合创始人谈Token Town：知识工作AI智能体即将面世
-
----
-
 ## 基本信息
 
 - **来源**: Latent Space (blog)
@@ -149,7 +145,6 @@ Notion的实践验证了"AI代理作为软件工厂"这一命题的可行性。S
 
 ---
 
----
 ## 站内链接
 
 - 分类： [产品与创业](/categories/%E4%BA%A7%E5%93%81%E4%B8%8E%E5%88%9B%E4%B8%9A/)

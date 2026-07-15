@@ -21,9 +21,10 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: 自蒸馏技术实现持续学习 核心问题： 基础模型在持续学习（Continual Learning）中面临巨大挑战：如何在获取新技能和知识的同时，不导致原有能力的退化（即“灾难性遗忘”）。虽然基于策略的强化学习可以减少遗忘，但通常缺乏明确的奖励函数；而目前主流的监督微调（SFT）虽然基于专家演示，但其本质上是离策略的，容易导致对旧知识的遗忘。
 ---
 
-# 📚 ✨告别遗忘！Self-Distillation解锁持续学习新范式！
+## 📚 ✨告别遗忘！Self-Distillation解锁持续学习新范式！
 
 ---
 

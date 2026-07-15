@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# MC-Search：基于结构化长推理链的多模态智能体搜索评估与增强
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.00873v1

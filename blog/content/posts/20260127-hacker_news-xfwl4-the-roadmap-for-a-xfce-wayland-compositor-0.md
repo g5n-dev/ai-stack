@@ -27,9 +27,11 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: 这里为您撰写了一个引人入胜的引言，融合了悬念、痛点与对未来的展望： 想象一下，当你还在为 1996 年诞生的 X11 协议打补丁时，整个图形世界的地基早已悄然崩塌。
+  🌍 你有没有经历过这种绝望的时刻：在 Linux 桌面上优雅地移动窗口，突然屏幕出现诡异的花屏？或者当你只是想调整一下屏幕分辨率，那个古老且丑陋的配置界面仿佛在嘲笑你的无奈？
 ---
 
-# 📰 Xfce要上Wayland了！🚀 路线图首曝🗺️
+## 📰 Xfce要上Wayland了！🚀 路线图首曝🗺️
 
 ---
 

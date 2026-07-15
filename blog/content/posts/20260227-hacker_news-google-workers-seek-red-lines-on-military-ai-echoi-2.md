@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 谷歌员工效仿Anthropic，要求为军事AI设定红线
-
----
-
 ## 基本信息
 
 - **作者**: mikece

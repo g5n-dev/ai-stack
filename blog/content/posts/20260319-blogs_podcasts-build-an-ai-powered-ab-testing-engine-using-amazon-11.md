@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 使用 Amazon Bedrock 构建 AI 驱动 A/B 测试引擎
-
----
-
 ## 基本信息
 
 - **来源**: AWS Machine Learning Blog (blog)

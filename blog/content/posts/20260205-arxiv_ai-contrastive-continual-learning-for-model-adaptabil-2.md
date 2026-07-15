@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 面向物联网模型适应性的对比持续学习方法
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.04881v1
@@ -126,7 +122,6 @@ source_support: 0.0
 
 ---
 
-# 深入分析：物联网中的对比持续学习（CCL）以提升模型适应性
 
 ## 1. 研究背景与问题
 
@@ -512,7 +507,6 @@ source_support: 0.0
 
 ---
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/) / [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/)

@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 面向分析师的Python大语言模型实战指南
-
----
-
 ## 基本信息
 
 - **作者**: apwheele

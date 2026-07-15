@@ -21,9 +21,11 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: 想象一下，在一个阳光明媚的周二，全网科技媒体都在疯狂刷屏：“AI 刚刚在 20 分钟内从零开始构建了一个浏览器！” 🤯 恐惧与敬畏瞬间抓住了你的眼球——代码仓库截图精美，演示视频丝滑流畅。你不仅惊叹于技术的飞跃，甚至开始担心作为程序员的自己是否明天就会失业。
+  但是，请先深吸一口气，因为这可能是一场精心策划的魔术，而不是进化的奇迹。
 ---
 
-# 📰 AI造浏览器？别急着吹！先看代码仓库！🔍
+## 📰 AI造浏览器？别急着吹！先看代码仓库！🔍
 
 ---
 

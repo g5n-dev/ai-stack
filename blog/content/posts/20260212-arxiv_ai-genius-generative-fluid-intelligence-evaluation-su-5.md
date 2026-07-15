@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# GENIUS：生成式流体智能评估套件
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.11144v1
@@ -119,9 +115,7 @@ GENIUS 论文针对当前多模态模型（LMMs）评估中过分依赖静态知
     *   **优势：** 相比于 **MMBench** 或 **SEED-Bench** 等多模
 
 ---
-## 技术分析
 
-# GENIUS: 生成式流体智能评估套件 - 技术分析
 
 ## 1. 研究背景与问题
 
@@ -408,7 +402,6 @@ GENIUS 的核心区别在于其“生成式”和“动态”特性：
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

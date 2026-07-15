@@ -21,9 +21,12 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: 这是一个为您精心打造的引言，旨在瞬间抓住读者的眼球： 还记得那块只有信用卡大小、却曾引爆全球创客热潮的“小电脑”吗？🔥 2012年，当第一代树莓派（Raspberry
+  Pi 1）带着仅有的 700MHz 单核处理器问世时，没人敢奢望它能运行复杂的 3D 游戏，流畅浏览网页都显得有些吃力。那时，它更多是作为孩子们的编程启蒙玩具而存在。
+  然而，时光飞逝，当年的“玩具”早已今非昔比。
 ---
 
-# 📰 🔥树莓派极速大乱斗！Pi 1到Pi 5性能巅峰对决，谁才是最强王者？
+## 📰 🔥树莓派极速大乱斗！Pi 1到Pi 5性能巅峰对决，谁才是最强王者？
 
 ---
 

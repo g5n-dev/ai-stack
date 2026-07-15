@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# MM-WebAgent层级式多模态代理的网页生成
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2604.15309v1
@@ -173,7 +169,6 @@ MM‑WebAgent 采用**全局‑局部**两层代理：全局代理负责整体�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

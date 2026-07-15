@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 重新认识Markdown：用结构化思维编写高质量Prompt
-
----
-
 ## 基本信息
 
 - **作者**: TF男孩

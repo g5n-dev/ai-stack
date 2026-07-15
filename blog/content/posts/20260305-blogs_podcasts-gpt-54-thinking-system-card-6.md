@@ -40,10 +40,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# GPT-5.4 Thinking 系统卡发布：揭示模型推理机制与安全策略
-
----
-
 ## 基本信息
 
 - **来源**: OpenAI Blog (blog)

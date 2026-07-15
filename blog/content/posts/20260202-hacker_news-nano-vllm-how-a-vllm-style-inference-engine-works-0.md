@@ -31,10 +31,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Nano-vLLM 原理：vLLM 风格推理引擎的实现机制
-
----
-
 ## 基本信息
 
 - **作者**: yz-yu
@@ -433,7 +429,6 @@ vLLM 借鉴了操作系统中分页内存管理的思想，将 KV Cache 划分�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/)

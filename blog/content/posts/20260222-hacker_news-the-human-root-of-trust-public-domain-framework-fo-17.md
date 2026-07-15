@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 人类信任根：面向智能体问责的公共领域框架
-
----
-
 ## 基本信息
 
 - **作者**: 3du4rd0v3g4

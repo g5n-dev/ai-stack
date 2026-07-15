@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 英伟达与OpenAI取消百亿美元收购案 转向30亿美元投资
-
----
-
 ## 基本信息
 
 - **作者**: zerosizedweasle

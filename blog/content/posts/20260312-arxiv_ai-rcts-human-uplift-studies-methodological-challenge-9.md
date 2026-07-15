@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 前沿AI评估：RCT与人类提升研究的方法挑战与解决方案
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.11001v1

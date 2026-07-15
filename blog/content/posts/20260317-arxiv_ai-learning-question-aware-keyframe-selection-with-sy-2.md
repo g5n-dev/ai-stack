@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 合成监督学习优化视频问答关键帧选择
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.14953v1

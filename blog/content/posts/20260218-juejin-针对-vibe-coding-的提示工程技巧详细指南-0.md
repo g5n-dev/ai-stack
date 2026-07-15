@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Vibe Coding 提示工程技巧与直觉式开发指南
-
----
-
 ## 基本信息
 
 - **作者**: lynnss_ai
@@ -175,7 +171,6 @@ Vibe Coding 的本质是“感觉驱动”的快速开发：用 AI 工具（如 
 ---
 
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [效率与方法论](/categories/%E6%95%88%E7%8E%87%E4%B8%8E%E6%96%B9%E6%B3%95%E8%AE%BA/)

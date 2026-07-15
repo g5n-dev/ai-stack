@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AGENTS.md 概览与工具链：提升 AI Coding 仓库上下文理解
-
----
-
 ## 基本信息
 
 - **作者**: 恋猫de小郭

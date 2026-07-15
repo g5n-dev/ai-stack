@@ -33,10 +33,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 谷歌发布 Gemini 2.5 Pro：支持 100 万上下文窗口
-
----
-
 ## 基本信息
 
 - **作者**: MallocVoidstar

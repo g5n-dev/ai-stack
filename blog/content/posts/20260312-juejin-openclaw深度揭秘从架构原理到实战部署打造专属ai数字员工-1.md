@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# OpenClaw架构原理与实战部署：打造专属AI数字员工
-
----
-
 ## 基本信息
 
 - **作者**: 北辰alk

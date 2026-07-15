@@ -70,10 +70,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AstrBot：集成多平台与大模型的Agent型聊天机器人基础设施
-
----
-
 ## 基本信息
 
 - **描述**: 集成众多 IM 平台、大模型、插件与 AI 功能的 Agent 型 IM 聊天机器人基础设施，可作为 OpenClaw 的替代方案。✨

@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# OpenAI与巴西新闻集团合作 提升ChatGPT信息来源透明度
-
----
-
 ## 基本信息
 
 - **来源**: OpenAI Blog (blog)
@@ -96,7 +92,6 @@ OpenAI与巴西两大媒体集团的内容合作，标志着头部AI企业在内
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

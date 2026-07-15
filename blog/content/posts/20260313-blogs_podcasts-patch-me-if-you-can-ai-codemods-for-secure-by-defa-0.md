@@ -40,10 +40,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AI 代码修改技术助力 Android 应用实现默认安全
-
----
-
 ## 基本信息
 
 - **来源**: Meta Engineering (blog)

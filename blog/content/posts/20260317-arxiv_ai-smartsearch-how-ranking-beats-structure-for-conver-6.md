@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# SmartSearch：排序机制如何优化对话记忆检索
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.15599v1

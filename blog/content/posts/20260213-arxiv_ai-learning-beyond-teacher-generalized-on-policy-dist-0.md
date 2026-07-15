@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 基于奖励外推的广义在线策略蒸馏算法
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.12125v1
@@ -115,7 +111,6 @@ source_support: 0.0
 
 ---
 
-# 论文深度分析：广义在线策略蒸馏与奖励外推
 
 ## 1. 研究背景与问题
 
@@ -544,7 +539,6 @@ R2-D2 可以被视为 PPO 的一种泛化形式。它在保持基于策略更新
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

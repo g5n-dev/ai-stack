@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Mac运行TRELLIS.2图像转3D无需Nvidia GPU
-
----
-
 ## 基本信息
 
 - **作者**: shivampkumar
@@ -83,7 +79,6 @@ TRELLIS.2 展示了在 Apple Silicon 上完成从单张图像生成三维网格�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [开源生态](/categories/%E5%BC%80%E6%BA%90%E7%94%9F%E6%80%81/)

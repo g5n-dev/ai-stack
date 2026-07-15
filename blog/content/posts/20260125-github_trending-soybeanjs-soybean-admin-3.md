@@ -21,9 +21,12 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: '💡 原名: soybeanjs / soybean-admin Relevant source files CHANGELOG.md LICENSE
+  README.enUS.md README.md package.json packages/alova/package.json packages/axios/package.json
+  packages/color/package.json'
 ---
 
-# 🚀 🔥 soybean-admin！打造极美后台的神级方案 🚀
+## 🚀 🔥 soybean-admin！打造极美后台的神级方案 🚀
 
 > 💡 **原名**: soybeanjs /
 
@@ -40,9 +43,8 @@ source_support: 0.0
 - **DeepWiki**: [https://deepwiki.com/soybeanjs/soybean-admin](https://deepwiki.com/soybeanjs/soybean-admin)
 
 ---
-## 📚 DeepWiki 速览（节选）
 
-# Overview
+## Overview
 
 Relevant source files
 
@@ -295,9 +297,8 @@ SoybeanAdmin 旨在提供一个开箱即用的企业级后台解决方案，涵�
 ### 6
 
 ---
-## 🔍 全面技术分析
 
-# 🧠 Soybean Admin 深度技术分析报告
+## 🧠 Soybean Admin 深度技术分析报告
 
 基于 GitHub 仓库 `soybeanjs/soybean-admin`（13.8k+ stars），这是一个典型的**“现代前端工程化即实践”**的产物。它不仅仅是一个后台模板，更是一套基于 **Vue3 + Vite7 生态**的**企业级 Monorepo 解决方案**。
 

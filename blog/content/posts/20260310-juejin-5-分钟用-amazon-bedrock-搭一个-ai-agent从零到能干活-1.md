@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 5分钟用Amazon Bedrock搭建能调API的AI Agent
-
----
-
 ## 基本信息
 
 - **作者**: 亚马逊云开发者

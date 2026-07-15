@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Cloudflare 全栈基础设施助力 AI 应用落地
-
----
-
 ## 基本信息
 
 - **作者**: CharlieWang

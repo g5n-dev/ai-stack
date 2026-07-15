@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 现成图像模型可攻破图像保护方案
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.22197v1

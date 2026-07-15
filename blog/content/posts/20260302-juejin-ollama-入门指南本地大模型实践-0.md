@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Ollama 本地部署开源大模型指南与代码实践
-
----
-
 ## 基本信息
 
 - **作者**: Web路灯

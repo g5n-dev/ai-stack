@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Chronos：基于结构化事件检索的时序感知对话智能体
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.16862v1

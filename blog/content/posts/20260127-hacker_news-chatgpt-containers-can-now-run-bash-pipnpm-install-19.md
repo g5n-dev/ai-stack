@@ -26,9 +26,10 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: 想象一下，你正在与一位拥有无限知识的超级大脑对话，但当你让它运行一段简单的代码或安装一个常用的Python库时，它却只能无奈地摊手——这就是过去几个月里，无数开发者和AI爱好者面对ChatGPT时的“痛点天花板”。直到最近，OpenAI悄然为ChatGPT的容器环境解锁了bash终端、pip/npm包管理器以及文件下载功能，这个消息如同一颗深水炸弹，瞬间引爆了整个技术社区！
 ---
 
-# 📰 ChatGPT容器大升级！支持bash、pip/npm安装包及文件下载🚀
+## 📰 ChatGPT容器大升级！支持bash、pip/npm安装包及文件下载🚀
 
 ---
 

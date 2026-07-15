@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Open-AutoGLM：基于视觉语言模型的手机端智能助理框架
-
----
-
 ## 基本信息
 
 - **作者**: 冬奇Lab

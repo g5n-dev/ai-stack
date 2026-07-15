@@ -25,9 +25,11 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: '💡 原名: xiaojieonly / EhviewerCNSXJ Relevant source files README.md app/build.gradle
+  app/src/main/cpp/CMakeLists.txt app/src/main/cpp/jni/image/CMakeLists.txt'
 ---
 
-# 🚀 🚀Ehviewer优化版来了！性能飙升+功能革新，看图神器必装！
+## 🚀 🚀Ehviewer优化版来了！性能飙升+功能革新，看图神器必装！
 
 > 💡 **原名**: xiaojieonly /
 
@@ -44,9 +46,8 @@ source_support: 0.0
 - **DeepWiki**: [https://deepwiki.com/xiaojieonly/Ehviewer_CN_SXJ](https://deepwiki.com/xiaojieonly/Ehviewer_CN_SXJ)
 
 ---
-## 📚 DeepWiki 速览（节选）
 
-# Overview
+## Overview
 
 Relevant source files
 
@@ -288,7 +289,6 @@ Ehviewer_CN_SXJ 是一个活跃度较高的 Android 客户端项目，专注于�
 
 ---
 
-# 📱 Ehviewer_CN_SXJ 深度技术分析报告
 
 ## 1. 技术架构深度剖析
 

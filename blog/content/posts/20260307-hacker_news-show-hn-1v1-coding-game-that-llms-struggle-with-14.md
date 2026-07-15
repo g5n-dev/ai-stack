@@ -31,10 +31,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 展示 LLM 表现不佳的 1v1 编程游戏
-
----
-
 ## 基本信息
 
 - **作者**: levmiseri

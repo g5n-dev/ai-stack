@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Facebook Reels好友气泡：提升社交内容发现效率
-
----
-
 ## 基本信息
 
 - **来源**: Meta Engineering (blog)

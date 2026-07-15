@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 多尺度自适应邻域感知Transformer用于图欺诈检测
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.03106v1

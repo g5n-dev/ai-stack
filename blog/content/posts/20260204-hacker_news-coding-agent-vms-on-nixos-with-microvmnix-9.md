@@ -35,10 +35,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Microvm.nix：在 NixOS 上构建 Coding Agent 虚拟机
-
----
-
 ## 基本信息
 
 - **作者**: secure
@@ -491,7 +487,6 @@ Devbox 是一个旨在简化开发环境管理的开源项目。为了确保软�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/) / [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/)

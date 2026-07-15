@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 继承性目标漂移：情境压力如何削弱智能体目标
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.03258v1

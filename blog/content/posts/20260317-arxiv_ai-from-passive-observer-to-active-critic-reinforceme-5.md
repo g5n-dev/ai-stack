@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 强化学习激发过程推理能力提升机器人操控性能
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.15600v1

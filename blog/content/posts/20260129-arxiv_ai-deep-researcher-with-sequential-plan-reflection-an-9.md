@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Deep Researcher：序列规划反思与候选交叉
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2601.20843v1
@@ -131,9 +127,7 @@ source_support: 0.0
     *   **关键假设**：假设基座
 
 ---
-## 技术分析
 
-# 技术架构分析：Deep Researcher Reflect Evolve
 
 ## 1. 问题定义与背景
 
@@ -420,7 +414,6 @@ Deep Researcher Reflect Evolve 的区别在于：
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

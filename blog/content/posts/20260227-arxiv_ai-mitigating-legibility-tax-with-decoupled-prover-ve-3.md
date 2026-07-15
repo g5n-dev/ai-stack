@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 缓解可读性代价：基于解耦证明者-验证者博弈的方法
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.23248v1

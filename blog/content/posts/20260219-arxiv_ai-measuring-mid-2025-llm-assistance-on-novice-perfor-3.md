@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 评估LLM辅助对生物学新手表现的影响
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.16703v1

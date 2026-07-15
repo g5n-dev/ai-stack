@@ -22,10 +22,8 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 黑客伪造ADS-B信号在雷达上绘制JD Vance表情包
-
+description: 近期，有研究人员利用伪造的 ADS-B 信号，在空中交通监控雷达上成功“绘制”出了关于 JD·万斯的梗图。这一事件不仅展示了广播式自动相关监视系统在安全验证上的脆弱性，也揭示了公共数据源极易被操纵的现实。本文将详细复盘这一技术实现过程，并探讨其对航空网络安全防御的深层启示。
+  您提供的英文内容可以简洁总结如下： 有人使用伪造的ADS-B信号，在航空追踪系统中绘制出了JD·万斯的表情包。
 ---
 
 ## 基本信息
@@ -370,7 +368,6 @@ ADS-B 是一种被动监视技术（依赖飞机广播），而二次监视雷�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [安全](/categories/%E5%AE%89%E5%85%A8/)

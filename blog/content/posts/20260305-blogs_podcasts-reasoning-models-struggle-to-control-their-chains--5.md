@@ -43,10 +43,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# OpenAI推出CoT-Control：强化推理模型思维链的可监控性
-
----
-
 ## 基本信息
 
 - **来源**: OpenAI Blog (blog)

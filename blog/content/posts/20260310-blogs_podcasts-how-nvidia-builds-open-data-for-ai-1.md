@@ -31,10 +31,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# NVIDIA构建AI开放数据的策略与实践
-
----
-
 ## 基本信息
 
 - **来源**: Hugging Face Blog (blog)

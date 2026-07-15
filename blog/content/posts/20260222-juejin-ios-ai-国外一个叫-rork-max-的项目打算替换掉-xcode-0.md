@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Rork Max 推出 AI 平台：浏览器端构建原生 Swift 应用
-
----
-
 ## 基本信息
 
 - **作者**: 恋猫de小郭

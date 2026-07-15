@@ -45,10 +45,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Gemini 3 Deep Think：强化推理能力以应对科研与工程挑战
-
----
-
 ## 基本信息
 
 - **来源**: Google DeepMind (blog)
@@ -128,9 +124,7 @@ Gemini 3 Deep Think 推出了我们最专业的推理模式更新，旨在应对
 为了验证文章
 
 ---
-## 技术分析
 
-# Gemini 3 Deep Think：技术深度解析
 
 ## 1. 核心观点深度解读
 
@@ -271,7 +265,6 @@ Gemini 3 Deep Think 推出了我们最专业的推理模式更新，旨在应对
 ---
 
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

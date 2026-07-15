@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 德意志电信如何用OpenAI重塑电信业务
-
----
-
 ## 基本信息
 
 - **来源**: OpenAI Blog (blog)
@@ -108,7 +104,6 @@ Deutsche Telekom的实践具有示范效应，将加速其他运营商的AI转�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [产品与创业](/categories/%E4%BA%A7%E5%93%81%E4%B8%8E%E5%88%9B%E4%B8%9A/)

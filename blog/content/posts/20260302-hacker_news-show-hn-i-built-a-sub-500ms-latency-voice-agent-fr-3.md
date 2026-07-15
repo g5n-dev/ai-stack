@@ -34,10 +34,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 从零构建延迟低于500毫秒的语音智能体
-
----
-
 ## 基本信息
 
 - **作者**: nicktikhonov

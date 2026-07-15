@@ -24,9 +24,12 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: '💡 原名: XIU2 / CloudflareSpeedTest Relevant source files README.md main.go
+  CloudflareSpeedTest is a command-line tool designed to test Cloudflare CDN IP addresses
+  for latency and download speed'
 ---
 
-# 🚀 🚀 Cloudflare测速神器！秒级优选最快IP，网速飞起！🔥
+## 🚀 🚀 Cloudflare测速神器！秒级优选最快IP，网速飞起！🔥
 
 > 💡 **原名**: XIU2 /
 
@@ -43,9 +46,8 @@ source_support: 0.0
 - **DeepWiki**: [https://deepwiki.com/XIU2/CloudflareSpeedTest](https://deepwiki.com/XIU2/CloudflareSpeedTest)
 
 ---
-## 📚 DeepWiki 速览（节选）
 
-# Overview
+## Overview
 
 Relevant source files
 
@@ -182,9 +184,8 @@ Sources: [README.md9-21](https://github.com/XIU2/CloudflareSpeedTest/blob/013c27
 Sources: [README.md77](https://github.com/XIU2/CloudflareSpeedTest/blob/013c27c0/README.md#L77-L77) [README.md367](https://github.com/XIU2/CloudflareSpeedTest/blob/013c27c0/README.md#L367-L367)
 
 ---
-## ✨ 引人入胜的引言
 
-# 🚀 网速起飞的秘密武器！24k+ 星的 CloudflareSpeedTest 到底有多神？
+## 🚀 网速起飞的秘密武器！24k+ 星的 CloudflareSpeedTest 到底有多神？
 
 ---
 
@@ -307,7 +308,6 @@ Sources: [README.md77](https://github.com/XIU2/CloudflareSpeedTest/blob/013c27c0
 
 ---
 
-# 🌩 CloudflareSpeedTest 深度技术剖析
 
 ## 1. 技术架构深度剖析
 

@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Freestyle沙箱：专为AI编程代理设计
-
----
-
 ## 基本信息
 
 - **作者**: benswerd
@@ -91,7 +87,6 @@ Freestyle的差异化竞争力不在底层技术，而在产品化程度。当�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

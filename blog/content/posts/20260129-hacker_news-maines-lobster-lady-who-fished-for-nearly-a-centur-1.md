@@ -24,10 +24,8 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 缅因州“龙虾女士”去世：捕捞近百年，享年105岁
-
+description: 缅因州著名的“龙虾夫人”弗吉尼亚·奥利弗以近一个世纪的坚持，诠释了何为终身职业。她在105岁高龄离世，其故事不仅是对渔业传统的致敬，更引发了关于老龄化社会与职业价值的深层思考。本文将回顾她非凡的一生，探讨其背后蕴含的生活态度与时代意义。
+  缅因州著名的“龙虾女士”弗吉尼亚·奥利弗（Virginia Oliver）于近日去世，享年105岁。
 ---
 
 ## 基本信息
@@ -398,7 +396,6 @@ print(result)  # 输出：{'捕龙虾人': 86.0, '教师': 58.0}
 
 ---
 
----
 ## 站内链接
 
 - 分类： [生活与杂谈](/categories/%E7%94%9F%E6%B4%BB%E4%B8%8E%E6%9D%82%E8%B0%88/)

@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Duet Space：面向非开发者的多任务AI工作台
-
----
-
 ## 基本信息
 
 - **作者**: Yangfan
@@ -188,7 +184,6 @@ Duet Space 试图通过重构交互界面（从单对话框转向多工作台）
 ---
 
 
----
 ## 站内链接
 
 - 分类： [产品与创业](/categories/%E4%BA%A7%E5%93%81%E4%B8%8E%E5%88%9B%E4%B8%9A/)

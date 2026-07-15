@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 神经元群体选择性随尺度的差异化特征
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2606.03990v1
@@ -137,7 +133,6 @@ Rosetta Neurons的规模演化规律为模型设计提供新思路。通过识�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

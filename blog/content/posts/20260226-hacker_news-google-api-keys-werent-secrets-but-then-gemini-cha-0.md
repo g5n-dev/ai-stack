@@ -33,10 +33,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 谷歌API密钥曾非机密，但Gemini改变了规则
-
----
-
 ## 基本信息
 
 - **作者**: hiisthisthingon

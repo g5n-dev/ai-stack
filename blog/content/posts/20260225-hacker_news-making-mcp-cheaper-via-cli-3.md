@@ -35,10 +35,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 通过CLI优化降低MCP使用成本
-
----
-
 ## 基本信息
 
 - **作者**: thellimist

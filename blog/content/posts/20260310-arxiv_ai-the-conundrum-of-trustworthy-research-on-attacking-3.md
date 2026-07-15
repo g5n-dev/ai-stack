@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 针对个人隐私移除技术的可信攻击研究困境
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.08207v1

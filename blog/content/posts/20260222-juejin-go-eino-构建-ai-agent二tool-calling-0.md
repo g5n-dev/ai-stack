@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Go 结合 Eino 实现 Tool Calling 构建 AI Agent
-
----
-
 ## 基本信息
 
 - **作者**: 楚兴

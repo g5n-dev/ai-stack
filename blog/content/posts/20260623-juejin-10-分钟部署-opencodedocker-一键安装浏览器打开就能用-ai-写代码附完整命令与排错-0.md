@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Docker一键部署OpenCode浏览器访问即用AI编程
-
----
-
 ## 基本信息
 
 - **作者**: 程序员老赵
@@ -114,7 +110,6 @@ docker run -d -p 8080:8080 --name opencode openeuler/opencode:latest
 
 ---
 
----
 ## 站内链接
 
 - 分类： [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/) / [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/)

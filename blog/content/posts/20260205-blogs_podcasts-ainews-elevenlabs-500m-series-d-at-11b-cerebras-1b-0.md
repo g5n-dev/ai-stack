@@ -42,10 +42,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# ElevenLabs获5亿美元融资，Cerebras估值达230亿美元
-
----
-
 ## 基本信息
 
 - **来源**: Latent Space (blog)
@@ -134,9 +130,8 @@ SOTA 音频模型、高速芯片和 Koding Agents，这就是你需要的一切�
 这篇文章是对当前 AI
 
 ---
-## 技术分析
 
-# 深度分析：SOTA Audio Models, Fast Chips, and Koding Agents
+## 深度分析：SOTA Audio Models, Fast Chips, and Koding Agents
 
 基于文章标题 **"[AINews] ElevenLabs $500m Series D at $11B, Cerebras $1B Series H at $23B, Vibe Coding -> Agentic Engineering"** 及其摘要 **"SOTA Audio models, Fast Chips, and Koding Agents are all you need."**，以下是对该文章核心观点和技术要点的深入分析。
 
@@ -389,7 +384,6 @@ SOTA 音频模型、高速芯片和 Koding Agents，这就是你需要的一切�
 ---
 
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [产品与创业](/categories/%E4%BA%A7%E5%93%81%E4%B8%8E%E5%88%9B%E4%B8%9A/)

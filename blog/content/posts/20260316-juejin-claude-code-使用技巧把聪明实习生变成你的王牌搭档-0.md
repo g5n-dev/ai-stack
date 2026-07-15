@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Claude Code 实战指南：从智能助手到结对编程搭档
-
----
-
 ## 基本信息
 
 - **作者**: codingWhat

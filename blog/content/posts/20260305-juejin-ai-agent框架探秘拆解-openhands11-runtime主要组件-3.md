@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# OpenHands框架拆解：Runtime组件与数据流解析
-
----
-
 ## 基本信息
 
 - **作者**: 罗西的思考

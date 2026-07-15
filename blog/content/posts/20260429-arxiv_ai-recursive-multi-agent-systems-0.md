@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 递归多智能体系统
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2604.25917v1
@@ -141,7 +137,6 @@ RecursiveMAS框架将多智能体系统统一建模为潜在空间的递归计�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

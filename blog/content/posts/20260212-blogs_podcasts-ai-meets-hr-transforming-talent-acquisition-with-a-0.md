@@ -49,10 +49,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 基于 Amazon Bedrock 构建AI招聘系统优化人才获取流程
-
----
-
 ## 基本信息
 
 - **来源**: AWS Machine Learning Blog (blog)
@@ -154,7 +150,6 @@ source_support: 0.0
 
 ---
 
-# AI meets HR: 深度技术分析报告
 
 ## 1. 核心观点深度解读
 
@@ -431,7 +426,6 @@ AWS、Google Cloud、Microsoft Azure等云厂商将成为HR Tech底层的核心�
 ---
 
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [产品与创业](/categories/%E4%BA%A7%E5%93%81%E4%B8%8E%E5%88%9B%E4%B8%9A/)

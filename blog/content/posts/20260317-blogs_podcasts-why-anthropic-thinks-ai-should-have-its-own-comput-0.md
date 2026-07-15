@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Anthropic为何认为AI应拥有专属电脑
-
----
-
 ## 基本信息
 
 - **来源**: Latent Space (blog)

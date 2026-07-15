@@ -21,9 +21,10 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: 这是一个为您量身定制的、极具吸引力的引言，旨在瞬间抓住读者的注意力： 仅仅 18 个月，我们就见证了一场对“代码尊严”的屠杀。 你敢相信吗？曾经引以为傲的“全栈工程师”，正在迅速退化为“自然语言提示员”。
 ---
 
-# 📰 两年“Vibecoding”后，我为何回归手写？🖊️🚀
+## 📰 两年“Vibecoding”后，我为何回归手写？🖊️🚀
 
 ---
 

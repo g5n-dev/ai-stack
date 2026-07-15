@@ -31,10 +31,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# RedSage：网络安全通用大模型
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2601.22159v1
@@ -135,7 +131,6 @@ RedSage 是一个专注于网络安全领域的开源通用大语言模型（LLM
 
 ---
 
-# RedSage: 网络安全通用大模型深度分析报告
 
 ## 1. 研究背景与问题
 
@@ -482,7 +477,6 @@ RedSage 推进的是**“方法”**而非纯粹的**“理解”**。它提供�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [安全](/categories/%E5%AE%89%E5%85%A8/) / [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

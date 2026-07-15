@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# OpenClaw：开源自托管AI Agent网关与自动化任务调度
-
----
-
 ## 基本信息
 
 - **作者**: kymjs张涛

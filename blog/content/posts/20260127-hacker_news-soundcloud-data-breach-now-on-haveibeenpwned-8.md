@@ -25,9 +25,11 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: 💥 你的“音乐灵魂”或许正在裸奔！ 想象一下：深夜，你戴着耳机，沉浸在 SoundCloud 那些小众而独特的独立音乐中，以为自己只是网络大潮中一个匿名的听众。但就在此刻，在大洋彼岸的某个阴暗服务器角落，你的邮箱、你的真实姓名、甚至你那从未公开过的“私密歌单”，正被打包成廉价的商品，在黑客论坛上以几美元的价格挂牌出售！
+  🎭 这不是科幻小说，而是刚刚发生的现实。
 ---
 
-# 📰 🚨SoundCloud数据泄露！HaveIBeenPwned紧急更新！
+## 📰 🚨SoundCloud数据泄露！HaveIBeenPwned紧急更新！
 
 ---
 

@@ -34,10 +34,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AI编写软件时的验证责任归属与挑战
-
----
-
 ## 基本信息
 
 - **作者**: todsacerdoti

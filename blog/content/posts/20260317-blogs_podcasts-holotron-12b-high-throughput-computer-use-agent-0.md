@@ -31,10 +31,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Holotron-12B：高吞吐率计算机使用智能体
-
----
-
 ## 基本信息
 
 - **来源**: Hugging Face Blog (blog)

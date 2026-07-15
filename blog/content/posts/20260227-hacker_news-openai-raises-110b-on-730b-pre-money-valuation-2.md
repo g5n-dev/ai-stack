@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# OpenAI融资66亿美元投后估值达1570亿美元
-
----
-
 ## 基本信息
 
 - **作者**: zlatkov

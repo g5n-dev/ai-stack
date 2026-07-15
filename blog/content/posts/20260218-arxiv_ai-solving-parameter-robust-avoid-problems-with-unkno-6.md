@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 利用强化学习解决未知可行性的参数鲁棒避障问题
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.15817v1
@@ -113,7 +109,6 @@ source_support: 0.0
 
 ---
 
-# 深入分析：利用强化学习解决未知可行性的参数鲁棒规避问题
 
 ## 1. 研究背景与问题
 
@@ -508,7 +503,6 @@ FGE的形式化基于以下逻辑：
 
 ---
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

@@ -31,10 +31,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 扩展验证比扩展策略学习更能有效实现视觉-语言-动作对齐
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.12281v1
@@ -126,7 +122,6 @@ source_support: 0.0
 
 ---
 
-# 深入分析：Scaling Verification Can Be More Effective than Scaling Policy Learning for Vision-Language-Action Alignment
 
 ## 1. 研究背景与问题
 
@@ -549,7 +544,6 @@ CoVer 的创新性在于将**搜索**引入了VLA的推理阶段，并提出了�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

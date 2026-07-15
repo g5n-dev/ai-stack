@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 基于流策略梯度的机器人控制方法
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.02481v1
@@ -124,7 +120,6 @@ source_support: 0.0
 
 ---
 
-# 深入分析：用于机器人控制的流策略梯度
 
 ## 1. 研究背景与问题
 
@@ -504,7 +499,6 @@ Critic 网络的训练
 
 ---
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/) / [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

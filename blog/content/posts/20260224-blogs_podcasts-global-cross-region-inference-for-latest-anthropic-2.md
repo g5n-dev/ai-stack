@@ -38,10 +38,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 亚马逊Bedrock在亚太五区上线Anthropic模型全球跨区域推理
-
----
-
 ## 基本信息
 
 - **来源**: AWS Machine Learning Blog (blog)

@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Cerebras 60亿美元IPO：从低调到爆发
-
----
-
 ## 基本信息
 
 - **来源**: Latent Space (blog)
@@ -170,7 +166,6 @@ Cerebras 的 60 B 美元 IPO 估值在技术突破和市场需求双重驱动�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/) / [产品与创业](/categories/%E4%BA%A7%E5%93%81%E4%B8%8E%E5%88%9B%E4%B8%9A/)

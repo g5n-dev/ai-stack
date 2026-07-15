@@ -33,10 +33,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# LLM 应用中的认知负荷与用户疲劳问题研究
-
----
-
 ## 基本信息
 
 - **作者**: tjohnell

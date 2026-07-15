@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# OpenAI 指南：从传统编程转向 Agent 编程以提升代码质量
-
----
-
 ## 基本信息
 
 - **作者**: 恋猫de小郭

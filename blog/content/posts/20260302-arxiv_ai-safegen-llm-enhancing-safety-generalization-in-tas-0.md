@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# SafeGen-LLM：增强机器人系统任务规划的安全泛化能力
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.24235v1

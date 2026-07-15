@@ -40,10 +40,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 使用MCP将外部工具集成至Amazon Quick Agents的六步指南
-
----
-
 ## 基本信息
 
 - **来源**: AWS Machine Learning Blog (blog)

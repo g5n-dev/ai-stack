@@ -38,10 +38,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 构建Amazon智能体评估框架：通用工作流与Bedrock指标库
-
----
-
 ## 基本信息
 
 - **来源**: AWS Machine Learning Blog (blog)
@@ -132,9 +128,7 @@ source_support: 0.0
     *   *验证：* 如果引入该框架后，新业务 Agent 的评估启动时间没有显著缩短（例如减少
 
 ---
-## 技术分析
 
-# 评估AI智能体：亚马逊构建代理式系统的技术分析
 
 ## 1. 核心观点概述
 
@@ -286,7 +280,6 @@ source_support: 0.0
 ---
 
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

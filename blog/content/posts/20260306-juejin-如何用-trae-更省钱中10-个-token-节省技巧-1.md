@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# TRAE省钱指南：基于AI Coding心法的10个Token节省技巧
-
----
-
 ## 基本信息
 
 - **作者**: TRAE_ai

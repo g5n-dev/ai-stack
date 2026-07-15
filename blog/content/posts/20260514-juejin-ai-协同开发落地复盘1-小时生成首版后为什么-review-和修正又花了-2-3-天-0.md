@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AI生成首版快但review修正耗时：一次协同开发复盘
-
----
-
 ## 基本信息
 
 - **作者**: 花椒技术
@@ -134,7 +130,6 @@ AI 在协同开发中能够快速生成可运行代码，但“生成效率”�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [效率与方法论](/categories/%E6%95%88%E7%8E%87%E4%B8%8E%E6%96%B9%E6%B3%95%E8%AE%BA/)

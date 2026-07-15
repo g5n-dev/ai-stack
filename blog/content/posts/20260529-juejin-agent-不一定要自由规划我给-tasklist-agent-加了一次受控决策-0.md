@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Tasklist Agent受控决策实现方法
-
----
-
 ## 基本信息
 
 - **作者**: 倾颜
@@ -125,7 +121,6 @@ If you actually need a different translation (e.g., to another language) or want
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

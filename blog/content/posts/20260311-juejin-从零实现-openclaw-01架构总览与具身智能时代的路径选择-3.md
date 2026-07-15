@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# OpenClaw架构总览与具身智能时代的工程路径
-
----
-
 ## 基本信息
 
 - **作者**: Wu_Dylan

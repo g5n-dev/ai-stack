@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 自动研究智能体的反馈循环与人类核心作用
-
----
-
 ## 基本信息
 
 - **来源**: Latent Space (blog)
@@ -152,7 +148,6 @@ autoresearch代表了一种从“人工调优”到“自动进化”的范式�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

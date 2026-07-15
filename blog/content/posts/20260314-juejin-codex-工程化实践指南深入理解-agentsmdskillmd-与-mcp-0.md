@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Codex 工程化实践：解析 AGENTS.md、SKILL.md 与 MCP
-
----
-
 ## 基本信息
 
 - **作者**: Lei_official

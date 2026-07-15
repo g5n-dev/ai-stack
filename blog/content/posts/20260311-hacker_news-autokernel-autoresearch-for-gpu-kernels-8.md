@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AutoKernel：面向GPU内核的自动化研究工具
-
----
-
 ## 基本信息
 
 - **作者**: frozenseven

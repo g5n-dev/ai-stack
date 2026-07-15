@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 提示词工程指南：掌握角色设定与任务约束
-
----
-
 ## 基本信息
 
 - **作者**: ECH00O00

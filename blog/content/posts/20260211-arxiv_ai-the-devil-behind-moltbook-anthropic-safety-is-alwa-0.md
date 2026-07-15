@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Moltbook 漏洞：自进化 AI 社会中 Anthropic 安全机制失效
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.09877v1
@@ -70,7 +66,6 @@ source_support: 0.0
 ---
 
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [安全](/categories/%E5%AE%89%E5%85%A8/)

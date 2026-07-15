@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 辅助RAG系统自动化评估资源：助力新闻可信度评估
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.24277v1

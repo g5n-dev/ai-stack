@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Amazon Bedrock AgentCore数据集管理实现随代理扩展的测试套件
-
----
-
 ## 基本信息
 
 - **来源**: AWS Machine Learning Blog (blog)
@@ -37,9 +33,8 @@ source_support: 0.0
 - **链接**: [https://aws.amazon.com/blogs/machine-learning/build-a-test-suite-that-grows-with-your-agent-with-dataset-management-in-amazon-bedrock-agentcore](https://aws.amazon.com/blogs/machine-learning/build-a-test-suite-that-grows-with-your-agent-with-dataset-management-in-amazon-bedrock-agentcore)
 
 ---
-## 摘要/简介
 
-# 翻译
+## 翻译
 
 代理评估在结合快速变化的在线信号与稳定的离线基准时最为强大。为了了解您的代理是否真正随时间改进，您需要一个固定的基准来配合您不断变化的真实世界流量。在 Amazon Bedrock AgentCore 中将评估基准的测试用例作为数据集进行管理，为版本化测试固件带来了规范化的方法 **[...]**
 
@@ -157,7 +152,6 @@ Agent评估体系需要平衡动态变化与稳定基准，这反映了当前AI�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

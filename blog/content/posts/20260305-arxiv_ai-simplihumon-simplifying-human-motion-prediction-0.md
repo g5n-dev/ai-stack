@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# SimpliHuMoN：简化人体运动预测的框架
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.04399v1

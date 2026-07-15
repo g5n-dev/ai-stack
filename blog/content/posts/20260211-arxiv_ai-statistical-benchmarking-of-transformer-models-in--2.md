@@ -20,10 +20,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Transformer模型在低信噪比时间序列预测中的统计基准测试
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.09869v1
@@ -157,7 +153,6 @@ source_support: 0.0
 ---
 
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/)

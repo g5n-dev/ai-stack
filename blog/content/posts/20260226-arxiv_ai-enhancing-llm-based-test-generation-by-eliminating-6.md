@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 通过剔除已覆盖代码增强大模型测试生成
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.21997v1

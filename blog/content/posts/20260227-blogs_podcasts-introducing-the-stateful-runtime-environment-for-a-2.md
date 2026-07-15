@@ -32,10 +32,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Amazon Bedrock 推出 Agent 有状态运行时环境
-
----
-
 ## 基本信息
 
 - **来源**: OpenAI Blog (blog)

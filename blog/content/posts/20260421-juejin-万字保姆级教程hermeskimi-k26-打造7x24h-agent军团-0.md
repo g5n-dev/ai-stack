@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Hermes+Kimi K2.6实现7×24小时Agent运行教程
-
----
-
 ## 基本信息
 
 - **作者**: 苍何
@@ -144,7 +140,6 @@ Hermes与Kimi K2.6的结合为多Agent系统提供了技术可行性的验证，
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

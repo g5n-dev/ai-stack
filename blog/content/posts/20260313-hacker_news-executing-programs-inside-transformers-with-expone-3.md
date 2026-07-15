@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 在Transformer内部执行程序以实现指数级推理加速
-
----
-
 ## 基本信息
 
 - **作者**: u1hcw9nx

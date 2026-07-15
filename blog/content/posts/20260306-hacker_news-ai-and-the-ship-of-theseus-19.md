@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AI与特修斯之船：技术迭代的同一性悖论
-
----
-
 ## 基本信息
 
 - **作者**: pixelmonkey

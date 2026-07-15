@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# DeepMind与伯克利提出LoGeR：实现超长视频3D重建
-
----
-
 ## 基本信息
 
 - **作者**: helloplanets

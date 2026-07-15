@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Google与Kaggle推出AI Agents编程课程
-
----
-
 ## 基本信息
 
 - **来源**: Google AI Blog (blog)
@@ -133,7 +129,6 @@ Vibe Coding的独特之处在于引入多个AI智能体分工协作。代码生�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/)

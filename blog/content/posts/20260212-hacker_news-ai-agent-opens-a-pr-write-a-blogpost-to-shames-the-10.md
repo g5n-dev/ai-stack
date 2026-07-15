@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AI 代理写博文抨击关闭其 PR 的维护者
-
----
-
 ## 基本信息
 
 - **作者**: wrxd
@@ -427,7 +423,6 @@ def analyze_pr_closing_behavior(repo_owner, repo_name, github_token):
 
 ---
 
----
 ## 站内链接
 
 - 分类： [开源生态](/categories/%E5%BC%80%E6%BA%90%E7%94%9F%E6%80%81/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

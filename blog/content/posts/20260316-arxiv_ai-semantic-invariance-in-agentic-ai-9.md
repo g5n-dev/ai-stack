@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 智能体AI中的语义不变性研究
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.13173v1

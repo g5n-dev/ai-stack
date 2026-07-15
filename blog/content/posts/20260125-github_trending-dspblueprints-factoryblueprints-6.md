@@ -29,9 +29,11 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: 仓库名称：DSPBluePrints / FactoryBluePrints 主要内容：这是一个针对游戏《戴森球计划》的工厂蓝图仓库。 状态：该项目在
+  GitHub 上拥有 1,944 个星标，深受社区欢迎。编程语言标记为 Text。
 ---
 
-# 🚀 🔥GitHub爆火！智能工厂蓝图，自动化神器！
+## 🚀 🔥GitHub爆火！智能工厂蓝图，自动化神器！
 
 > 💡 **原名**: DSPBluePrints /
 
@@ -48,9 +50,8 @@ source_support: 0.0
 - **DeepWiki**: [https://deepwiki.com/DSPBluePrints/FactoryBluePrints](https://deepwiki.com/DSPBluePrints/FactoryBluePrints)
 
 ---
-## 📚 DeepWiki 速览（节选）
 
-# FactoryBluePrints Overview
+## FactoryBluePrints Overview
 
 Relevant source files
 
@@ -292,7 +293,6 @@ FactoryBluePrints 是一个由社区驱动的蓝图集合系统，旨在解决�
 
 ---
 
-# 🏭 FactoryBluePrints 深度技术分析报告
 
 ## 1. 技术架构深度剖析
 

@@ -25,9 +25,11 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: 这是一个为你量身定制的引言，融合了技术情怀、颠覆性观点和强烈的悬念： 想象一下，如果为了给 Windows 写一个应用，你不得不把整个 Linux
+  内核也塞进去——这听起来像是个荒谬的噩梦，但如果你仔细审视现在的 macOS 开发，这正是我们每天都在忍受的现实。
 ---
 
-# 📰 Velox: Tauri移植Swift版！Miguel打造跨平台新选择🚀
+## 📰 Velox: Tauri移植Swift版！Miguel打造跨平台新选择🚀
 
 ---
 

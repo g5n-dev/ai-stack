@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# LangChain Runnable：AI 流程工程化的核心接口
-
----
-
 ## 基本信息
 
 - **作者**: swipe
@@ -109,7 +105,6 @@ LangChain 的核心不是一堆 API 粘合剂，而是 **Runnable** 统一接口
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

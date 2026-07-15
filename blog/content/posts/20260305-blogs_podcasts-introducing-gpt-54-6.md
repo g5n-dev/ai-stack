@@ -40,10 +40,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# OpenAI发布GPT-5.4：百万token上下文，强化代码与工具调用
-
----
-
 ## 基本信息
 
 - **来源**: OpenAI Blog (blog)

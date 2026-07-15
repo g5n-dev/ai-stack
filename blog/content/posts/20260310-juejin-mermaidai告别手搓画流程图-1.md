@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Mermaid结合AI辅助生成流程图与工程图表
-
----
-
 ## 基本信息
 
 - **作者**: 程序新视界

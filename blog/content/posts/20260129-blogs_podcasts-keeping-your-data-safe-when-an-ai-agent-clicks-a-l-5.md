@@ -27,10 +27,8 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# OpenAI 如何防范 AI 代理点击链接时的数据泄露与提示注入
-
+description: 了解当 AI 代理打开链接时，OpenAI 如何通过内置安全措施保护用户数据，防范基于 URL 的数据泄露和提示注入。 随着 AI 代理开始自主浏览网页，用户数据的交互边界正变得日益模糊。当
+  AI 代表用户点击链接时，如何防范基于 URL 的数据泄露与提示注入攻击，已成为确保系统安全的关键。
 ---
 
 ## 基本信息
@@ -362,7 +360,6 @@ OpenAI通过构建基于沙箱的隔离环境、严格的流量过滤规则以�
 ---
 
 
----
 ## 站内链接
 
 - 分类： [安全](/categories/%E5%AE%89%E5%85%A8/) / [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

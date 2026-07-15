@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 基于Spring AI构建类OpenClaw自主Agent的实现方案
-
----
-
 ## 基本信息
 
 - **作者**: 百越平民

@@ -50,10 +50,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# kirara-ai：多模态AI聊天机器人，支持多平台接入与工作流
-
----
-
 ## 基本信息
 
 - **描述**: 🤖 可 DIY 的 多模态 AI 聊天机器人 | 🚀 快速接入 微信、 QQ、Telegram、等聊天平台 | 🦈支持DeepSeek、Grok、Claude、Ollama、Gemini、OpenAI | 工作流系统、网页搜索、AI画图、人设调教、虚拟女仆、语音对话 |

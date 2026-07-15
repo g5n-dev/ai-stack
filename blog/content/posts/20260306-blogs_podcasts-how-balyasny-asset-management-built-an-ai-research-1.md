@@ -38,10 +38,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Balyasny 融合 GPT-5.4 与 Agent 工作流构建 AI 投研引擎
-
----
-
 ## 基本信息
 
 - **来源**: OpenAI Blog (blog)

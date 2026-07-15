@@ -26,10 +26,7 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Show HN: AI agents play SimCity through a REST API
-
+description: 中心观点 文章展示了一种通过REST API将经典模拟游戏《SimCity》转化为大语言模型（LLM）Agent测试床的技术实践，这不仅验证了AI在复杂系统管理中的规划能力，也为构建具身智能的“数字孪生”训练环境提供了低成本、高语义的替代方案。
 ---
 
 ## 基本信息
@@ -368,7 +365,6 @@ def auto_zone_development(api_base_url="http://localhost:8000", zone_type="resid
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [开源生态](/categories/%E5%BC%80%E6%BA%90%E7%94%9F%E6%80%81/)

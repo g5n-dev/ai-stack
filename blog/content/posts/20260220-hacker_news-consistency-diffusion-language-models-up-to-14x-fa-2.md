@@ -33,10 +33,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 一致性扩散语言模型提速14倍且无损质量
-
----
-
 ## 基本信息
 
 - **作者**: zagwdt

@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# ZeroClaw：零开销全Rust自主AI助手与OpenClaw对比
-
----
-
 ## 基本信息
 
 - **作者**: 冬奇Lab
@@ -212,7 +208,6 @@ ZeroClaw 是 AI 基础设施领域的“瑞士军刀”，它非常适合追求�
 ---
 
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [开源生态](/categories/%E5%BC%80%E6%BA%90%E7%94%9F%E6%80%81/)

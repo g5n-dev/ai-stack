@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Claude Opus 4.7发布 相比4.6全面提升
-
----
-
 ## 基本信息
 
 - **来源**: Latent Space (blog)
@@ -152,7 +148,6 @@ Claude Opus 4.7代表当前语言模型技术的最前沿，能够在各类任�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# oh-my-opencode-slim：体积缩减80%的AI编程精简版
-
----
-
 ## 基本信息
 
 - **作者**: 三金得鑫

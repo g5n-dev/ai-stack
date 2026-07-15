@@ -34,10 +34,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 混合系统助力机器人在动态环境中导航及提升装配效率
-
----
-
 ## 基本信息
 
 - **来源**: MIT News (Machine Learning) (blog)

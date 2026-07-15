@@ -35,10 +35,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Anthropic指控DeepSeek等三家中国公司遭超1600万次蒸馏攻击
-
----
-
 ## 基本信息
 
 - **来源**: Latent Space (blog)

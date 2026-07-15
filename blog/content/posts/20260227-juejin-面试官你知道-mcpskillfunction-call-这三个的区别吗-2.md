@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 后端面试高频考点：MCP、Skill 与 Function Call 的区别
-
----
-
 ## 基本信息
 
 - **作者**: Java编程爱好者

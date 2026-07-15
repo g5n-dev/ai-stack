@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 利用大模型生成判断数据提升应用商店排序相关性
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.23234v1

@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Harpoon：面向条件表格扩散模型的广义流形引导
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.07875v1
@@ -64,7 +60,6 @@ source_support: 0.0
 
 ---
 
-# 论文深入分析：Harpoon
 
 ## 1. 研究背景与问题
 
@@ -360,7 +355,6 @@ HARPOON 是一种基于**流形引导**的推理阶段算法。它不改变模�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/) / [数据](/categories/%E6%95%B0%E6%8D%AE/)

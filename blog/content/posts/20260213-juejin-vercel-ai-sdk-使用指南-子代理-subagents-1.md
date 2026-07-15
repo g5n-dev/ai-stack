@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Vercel AI SDK 子代理：解决复杂 Agent 系统上下文爆炸问题
-
----
-
 ## 基本信息
 
 - **作者**: ZaneAI
@@ -214,7 +210,6 @@ Vercel AI SDK 的核心优势在于与 Next.js 的深度集成及流式传输。
 ---
 
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/)

@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Show HN: 本地日志查看器优化 Claude Code CLI 输出
-
----
-
 ## 基本信息
 
 - **作者**: matt1398
@@ -407,7 +403,6 @@ Claude Code 的默认 CLI 输出流式极快且缺乏格式化，导致在生成
 
 ---
 
----
 ## 站内链接
 
 - 分类： [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/) / [效率与方法论](/categories/%E6%95%88%E7%8E%87%E4%B8%8E%E6%96%B9%E6%B3%95%E8%AE%BA/)

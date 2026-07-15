@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# VideoGPA：提取几何先验实现三维一致视频生成
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2601.23286v1
@@ -121,7 +117,6 @@ VideoGPA 试图解决当前视频生成领域（特别是基于扩散模型，�
 
 ---
 
-# VideoGPA: 深度解析报告
 
 ## 1. 研究背景与问题
 
@@ -504,7 +499,6 @@ VideoGPA的核心在于“提取几何先验”。你需要理解为什么直接
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Phi-4多模态推理模型的训练经验与技术解析
-
----
-
 ## 基本信息
 
 - **作者**: tosh

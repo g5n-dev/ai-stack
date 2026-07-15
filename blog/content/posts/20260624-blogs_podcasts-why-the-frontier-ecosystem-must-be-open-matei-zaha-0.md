@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Databricks双高管畅谈构建Agent Cloud的核心要素
-
----
-
 ## 基本信息
 
 - **来源**: Latent Space (blog)
@@ -164,7 +160,6 @@ Zaharia和Xin的核心观点包括：首先，封闭生态会导致创新垄断�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [开源生态](/categories/%E5%BC%80%E6%BA%90%E7%94%9F%E6%80%81/)

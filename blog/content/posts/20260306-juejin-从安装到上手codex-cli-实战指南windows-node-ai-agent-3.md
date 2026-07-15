@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# OpenAI Codex CLI 终端实战指南：安装配置与代码修改
-
----
-
 ## 基本信息
 
 - **作者**: G探险者

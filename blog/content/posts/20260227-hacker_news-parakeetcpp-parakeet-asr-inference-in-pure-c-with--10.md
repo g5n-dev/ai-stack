@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Parakeet.cpp：基于Metal GPU加速的纯C++ ASR推理
-
----
-
 ## 基本信息
 
 - **作者**: noahkay13

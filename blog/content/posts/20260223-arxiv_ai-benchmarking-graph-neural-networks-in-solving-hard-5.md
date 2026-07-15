@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 基准测试图神经网络在解决难约束满足问题中的性能
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.18419v1

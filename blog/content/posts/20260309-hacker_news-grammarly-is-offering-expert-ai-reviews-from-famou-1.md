@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Grammarly推出生者与逝者名作家风格的AI写作审阅
-
----
-
 ## 基本信息
 
 - **作者**: jmsflknr

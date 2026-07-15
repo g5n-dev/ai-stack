@@ -25,10 +25,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 内核更新内容一览
-
----
-
 ## 基本信息
 
 - **来源**: Hugging Face Blog (blog)
@@ -161,7 +157,6 @@ Kernels 本次更新能够在大规模 Transformer 推理中实现 **可量化�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/)

@@ -24,9 +24,11 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: 这是一个为您定制的引言，旨在瞬间抓住读者的眼球并引发强烈的好奇心： 100,000 行代码。整整一个月。零人工编写。 🤯 如果是你，敢接下这个看似不可能的任务吗？
+  把庞大且遗留的 TypeScript 代码库移植到 Rust，这通常是资深工程师眼中的“地狱模式”。Rust 的学习曲线如悬崖般陡峭，内存安全检查严苛到令人发指，更别提还要处理数以万计的业务逻辑边界。
 ---
 
-# 📰 🚀 1个月！Claude Code助阵10万行TS到Rust的史诗级迁移🔥
+## 📰 🚀 1个月！Claude Code助阵10万行TS到Rust的史诗级迁移🔥
 
 ---
 

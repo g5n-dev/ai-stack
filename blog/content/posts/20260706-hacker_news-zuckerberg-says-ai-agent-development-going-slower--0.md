@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 扎克伯格：AI代理开发进展不及预期
-
----
-
 ## 基本信息
 
 - **作者**: cwwc
@@ -87,7 +83,6 @@ Meta公司CEO马克·扎克伯格在最近的公开讲话中坦言，人工智�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

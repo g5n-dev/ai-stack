@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Pinecone Explorer：Pinecone 向量数据库桌面 GUI
-
----
-
 ## 基本信息
 
 - **作者**: arsentjev
@@ -374,7 +370,6 @@ def manage_vectors():
 
 ---
 
----
 ## 站内链接
 
 - 分类： [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/) / [数据](/categories/%E6%95%B0%E6%8D%AE/)

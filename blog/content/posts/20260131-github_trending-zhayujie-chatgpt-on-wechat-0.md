@@ -59,8 +59,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# CowAgent：具备主动思考与长期记忆的大模型 AI 助理
-
 > **原名**: zhayujie /
 
       chatgpt-on-wechat
@@ -76,9 +74,8 @@ source_support: 0.0
 - **DeepWiki**: [https://deepwiki.com/zhayujie/chatgpt-on-wechat](https://deepwiki.com/zhayujie/chatgpt-on-wechat)
 
 ---
-## DeepWiki 速览（节选）
 
-# Overview
+## Overview
 
 Relevant source files
 
@@ -298,7 +295,6 @@ chatgpt-on-wechat（CoW）是当前中文社区最成熟、生态最丰富的“
 
 ---
 
-# ChatGPT-on-WeChat 深度技术分析报告
 
 ## 1. 技术架构深度剖析
 
@@ -1061,7 +1057,6 @@ ChatGPT-on-Wechat 项目使用 SQLAlchemy 作为 ORM 框架，默认配置可能
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [开源生态](/categories/%E5%BC%80%E6%BA%90%E7%94%9F%E6%80%81/)

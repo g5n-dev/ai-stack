@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# V-RAG：检索增强技术驱动AI视频生成
-
----
-
 ## 基本信息
 
 - **来源**: AWS Machine Learning Blog (blog)

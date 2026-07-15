@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Antfly：Go 实现的分布式多模态搜索与图谱记忆系统
-
----
-
 ## 基本信息
 
 - **作者**: kingcauchy

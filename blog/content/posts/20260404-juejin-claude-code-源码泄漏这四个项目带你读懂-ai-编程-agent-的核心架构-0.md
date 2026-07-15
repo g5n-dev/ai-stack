@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Claude Code源码泄漏：四个开源项目解析AI编程Agent架构
-
----
-
 ## 基本信息
 
 - **作者**: 陈佬昔编程人生
@@ -117,7 +113,6 @@ Claude Code 源码泄漏为外部观察者提供了难得的内部视角，但�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [开源生态](/categories/%E5%BC%80%E6%BA%90%E7%94%9F%E6%80%81/)

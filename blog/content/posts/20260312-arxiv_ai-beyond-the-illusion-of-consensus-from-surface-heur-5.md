@@ -31,10 +31,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# LLM评测新范式：从表面启发式到知识 grounded 评估
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.11027v1

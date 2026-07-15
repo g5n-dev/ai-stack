@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 基于LangChain的后端AI流式对话实现
-
----
-
 ## 基本信息
 
 - **作者**: Lee川
@@ -41,9 +37,7 @@ source_support: 0.0
 在前后端分离的开发中，将AI对话能力迁移到后端可以提升响应速度、降低前端依赖，并更好地管理密钥和安全策略。LangChain作为成熟的AI编排框架，提供了简洁的流式输出接口，使得在服务端实现实时对话变得轻而易举。通过本文，你将掌握从环境搭建、模型调用到流式响应的完整实现思路，并了解如何结合LangChain与现有后端框架完成高可用的AI服务。
 
 ---
-## 描述
 
-# LangChain 加持：后端 AI 流式对话的优雅实现
 
 ## 从 mock 到后端：为什么要把 AI 调用搬到服务端
 
@@ -91,7 +85,6 @@ source_support: 0.0
 
 ---
 
----
 ## 站内链接
 
 - 分类： [后端](/categories/%E5%90%8E%E7%AB%AF/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

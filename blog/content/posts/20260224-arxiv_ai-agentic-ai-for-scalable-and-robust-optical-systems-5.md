@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 代理式AI实现光学系统可扩展鲁棒控制
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.20144v1

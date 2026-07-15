@@ -25,9 +25,9 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: EdgeTunnel 是一个基于 VLESS 协议的开源代理方案，旨在利用 Cloudflare Workers 或 Node.js 等边缘计算环境构建网络隧道。该项目通过将核心代理逻辑部署至无服务器平台，帮助用户在受限网络环境下实现稳定、低成本的流量转发。本文将梳理
+  EdgeTunnel 的系统架构，解析其核心源码与配置文件，并探讨其在不同运行时中的实现细节。
 ---
-
-# 在边缘/无服务器运行时中运行 V2ray
 
 > **原名**: zizifn /
 
@@ -44,9 +44,8 @@ source_support: 0.0
 - **DeepWiki**: [https://deepwiki.com/zizifn/edgetunnel](https://deepwiki.com/zizifn/edgetunnel)
 
 ---
-## DeepWiki 速览（节选）
 
-# EdgeTunnel Overview
+## EdgeTunnel Overview
 
 Relevant source files
 
@@ -270,9 +269,8 @@ zizifn/edgetunnel 是 Serverless 代理领域的标杆项目，它成功地将�
 4.  **流量伪装**：通过 Curl 查看返回
 
 ---
-## 技术分析
 
-# EdgeTunnel (zizifn/edgetunnel) 技术深度分析报告
+## EdgeTunnel (zizifn/edgetunnel) 技术深度分析报告
 
 EdgeTunnel 是一个在 GitHub 上获得极高关注度（8.2k+ stars）的开源项目，它通过在 Cloudflare Workers 等 Edge Runtime（边缘运行时）中部署 V2Ray 核心，实现了无服务器架构的代理隧道。本文将从技术架构、核心功能、实现细节、适用场景、发展趋势、学习建议、最佳实践以及工程哲学八个维度进行深入剖析。
 
@@ -827,7 +825,6 @@ BBR 算法在高延迟或丢包网络中表现优于传统 Cubic 算法，可显
 
 ---
 
----
 ## 站内链接
 
 - 分类： [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/) / [安全](/categories/%E5%AE%89%E5%85%A8/)

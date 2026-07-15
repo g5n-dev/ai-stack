@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 易车基于Apache Doris构建湖仓一体架构加速AI业务落地
-
----
-
 ## 基本信息
 
 - **作者**: SelectDB

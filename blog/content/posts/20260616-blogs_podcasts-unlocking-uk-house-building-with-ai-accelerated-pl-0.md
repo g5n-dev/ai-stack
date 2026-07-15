@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 英政府与DeepMind合作AI原型加速住房审批
-
----
-
 ## 基本信息
 
 - **来源**: Google DeepMind (blog)
@@ -126,7 +122,6 @@ source_support: 0.0
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

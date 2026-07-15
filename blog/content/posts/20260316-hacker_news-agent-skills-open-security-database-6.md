@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Agent Skills：面向智能体的开放安全数据库
-
----
-
 ## 基本信息
 
 - **作者**: 4ppsec

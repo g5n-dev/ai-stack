@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 理性看待AI对代码库的改变
-
----
-
 ## 基本信息
 
 - **作者**: benswerd

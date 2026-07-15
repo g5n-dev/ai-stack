@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# TG-ASR：基于并行门控交叉注意力的翻译引导低资源语音识别
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.22039v1

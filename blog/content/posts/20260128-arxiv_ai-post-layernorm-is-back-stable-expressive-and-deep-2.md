@@ -21,9 +21,11 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: 本文介绍了一种名为 Keel 的新型 Transformer 架构，旨在解决大语言模型（LLM）在深度扩展时面临的训练不稳定问题。 背景与问题：
+  当前 LLM 的发展遭遇瓶颈，单纯增加宽度收益递减，而增加深度虽然理论上能提升表达能力，但现有的 Transformer 架构（广泛使用的 Pre-LayerNorm）在极深层数下难以训练。
 ---
 
-# 📚 🔥Post-LayerNorm强势回归！稳定、高效、深度训练的新神器！
+## 📚 🔥Post-LayerNorm强势回归！稳定、高效、深度训练的新神器！
 
 ---
 
@@ -128,7 +130,6 @@ Keel 证明了结合 Highway 连接的 Post-LN 为构建深度可扩展的 LLM �
 
 ---
 
-# 📜 论文深度分析报告：Post-LayerNorm Is Back
 
 ## 1. 研究背景与问题
 

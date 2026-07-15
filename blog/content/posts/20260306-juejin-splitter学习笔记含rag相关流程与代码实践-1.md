@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# LangChain文本分割器原理、参数配置与RAG实践
-
----
-
 ## 基本信息
 
 - **作者**: UIUV

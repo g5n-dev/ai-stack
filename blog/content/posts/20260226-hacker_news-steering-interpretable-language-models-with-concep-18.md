@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 用概念代数引导可解释的语言模型
-
----
-
 ## 基本信息
 
 - **作者**: luulinh90s

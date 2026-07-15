@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 代理站点技术：Adobe根据用户意图生成网页
-
----
-
 ## 基本信息
 
 - **来源**: Latent Space (blog)
@@ -182,7 +178,6 @@ Agentic sites（意图驱动的自组装网站）将成为未来主流 Web 形�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [前端](/categories/%E5%89%8D%E7%AB%AF/)

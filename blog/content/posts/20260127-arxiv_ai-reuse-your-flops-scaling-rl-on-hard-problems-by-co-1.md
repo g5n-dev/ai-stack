@@ -24,9 +24,11 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: 本文介绍了一种名为 PrefixRL 的新方法，旨在解决大型语言模型（LLM）在强化学习（RL）推理过程中面临的计算浪费和学习效率低下的问题，特别是在解决复杂推理任务时。
+  背景与挑战： 传统的强化学习方法在处理困难问题时，往往难以找到正确的推理轨迹，导致策略梯度消失和学习停滞。
 ---
 
-# 📚 🚀RL新突破！复用FLOPs，硬难题上通过离线前缀扩展
+## 📚 🚀RL新突破！复用FLOPs，硬难题上通过离线前缀扩展
 
 ---
 
@@ -141,7 +143,6 @@ PrefixRL 提出了一种新的策略：**利用成功的离轨轨迹的前缀**�
 
 ---
 
-# 🔬 深度解析：PrefixRL —— 通过复用离轨前缀实现强化学习的高效扩展
 
 ## 1. 研究背景与问题 🧩
 

@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 面向未审查AI生成代码的自动化验证研究
-
----
-
 ## 基本信息
 
 - **作者**: peterlavigne

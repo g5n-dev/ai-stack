@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AI临床协作：探索医疗新模式
-
----
-
 ## 基本信息
 
 - **来源**: Google DeepMind (blog)
@@ -135,7 +131,6 @@ AI协同临床的有效性受限于若干前提：高质量标注训练数据的
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

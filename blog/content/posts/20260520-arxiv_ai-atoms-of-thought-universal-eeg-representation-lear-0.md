@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 通用EEG表征学习：基于微状态的方法
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2605.20182v1
@@ -159,7 +155,6 @@ EEG 信号高维、噪声多、跨被试差异大，传统手工特征（功率�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

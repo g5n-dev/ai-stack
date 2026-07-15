@@ -37,10 +37,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 利用Amazon Bedrock构建具备记忆与身份验证的智能活动助理
-
----
-
 ## 基本信息
 
 - **来源**: AWS Machine Learning Blog (blog)

@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 强化注意力学习：基于奖励反馈的注意力机制优化方法
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.04884v1
@@ -125,7 +121,6 @@ RAL表明将注意力策略作为多模态后训练的一种原则性且通用�
 
 ---
 
-# 深入分析：Reinforced Attention Learning (RAL)
 
 ## 1. 研究背景与问题
 
@@ -536,7 +531,6 @@ RAL推进的是**“方法”**。它提供了一套更高效的训练范式。�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

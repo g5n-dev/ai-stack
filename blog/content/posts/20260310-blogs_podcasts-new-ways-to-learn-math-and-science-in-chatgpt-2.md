@@ -37,10 +37,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# ChatGPT推出数理交互式可视化讲解功能
-
----
-
 ## 基本信息
 
 - **来源**: OpenAI Blog (blog)

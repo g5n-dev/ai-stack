@@ -31,10 +31,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Chamber：面向GPU基础设施的AI协作助手
-
----
-
 ## 基本信息
 
 - **作者**: jshen96

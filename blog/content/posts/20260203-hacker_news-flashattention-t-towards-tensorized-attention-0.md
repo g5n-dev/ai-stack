@@ -32,10 +32,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# FlashAttention-T：张量化注意力机制优化方案
-
----
-
 ## 基本信息
 
 - **作者**: matt_d
@@ -424,7 +420,6 @@ Hugging Face 在其 `transformers` 库中全面集成了 FlashAttention（以及
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

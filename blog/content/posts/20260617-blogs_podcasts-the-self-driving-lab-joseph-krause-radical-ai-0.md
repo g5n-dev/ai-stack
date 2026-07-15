@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 材料研究护城河为何在实验室而非模型
-
----
-
 ## 基本信息
 
 - **来源**: Latent Space (blog)
@@ -116,7 +112,6 @@ source_support: 0.0
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

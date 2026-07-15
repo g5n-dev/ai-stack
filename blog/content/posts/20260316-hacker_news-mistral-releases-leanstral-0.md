@@ -33,10 +33,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Leanstral：面向可信编码与形式化证明的开源智能体
-
----
-
 ## 基本信息
 
 - **作者**: Poudlardo

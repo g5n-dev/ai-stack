@@ -31,10 +31,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 面向硬件加速器的运行时可重构多精度量化乘法按位脉动阵列架构
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.23334v1

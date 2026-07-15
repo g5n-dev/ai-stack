@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 神经优化器宽度缩放：行列归一化与超参迁移
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.09952v1

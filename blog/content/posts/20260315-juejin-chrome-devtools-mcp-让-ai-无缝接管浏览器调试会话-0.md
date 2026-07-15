@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Chrome DevTools MCP 支持编码助手直接接管浏览器调试会话
-
----
-
 ## 基本信息
 
 - **作者**: BingoGo

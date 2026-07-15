@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 唯杰WebCAD编辑平台发布：集成AI智能体，支持CAD与GIS高性能展示
-
----
-
 ## 基本信息
 
 - **作者**: vjmap

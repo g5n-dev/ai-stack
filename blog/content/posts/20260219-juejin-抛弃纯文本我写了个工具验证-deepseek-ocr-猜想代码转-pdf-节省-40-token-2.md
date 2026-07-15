@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# DeepSeek-OCR 验证：代码转 PDF 节省 40% Token
-
----
-
 ## 基本信息
 
 - **作者**: TingjiaInFuture

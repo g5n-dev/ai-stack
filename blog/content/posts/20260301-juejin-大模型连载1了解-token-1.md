@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 大模型连载1：理解自然语言处理与大模型中的 Token 概念
-
----
-
 ## 基本信息
 
 - **作者**: 董章鱼是个攻城狮

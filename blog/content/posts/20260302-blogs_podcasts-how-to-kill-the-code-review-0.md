@@ -39,10 +39,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 2025年人工编码消亡与2026年代码评审终结
-
----
-
 ## 基本信息
 
 - **来源**: Latent Space (blog)

@@ -40,10 +40,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AWS生成式AI中心高管指南：如何将智能体AI投入生产
-
----
-
 ## 基本信息
 
 - **来源**: AWS Machine Learning Blog (blog)

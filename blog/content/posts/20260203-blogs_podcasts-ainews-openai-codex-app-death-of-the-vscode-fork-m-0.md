@@ -40,10 +40,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# OpenAI Codex 应用：VSCode 分支终结与多任务工作树
-
----
-
 ## 基本信息
 
 - **来源**: Latent Space (blog)
@@ -139,9 +135,7 @@ source_support: 0.0
 3.  **自动化技能的集成**：AI 开始具备串联不同工具（如终端、编辑器、浏览器）的能力
 
 ---
-## 技术分析
 
-# 技术分析报告：AI原生开发范式的崛起与工具链重构
 
 ## 1. 核心观点深度解读
 
@@ -280,7 +274,6 @@ source_support: 0.0
 ---
 
 
----
 ## 站内链接
 
 - 分类： [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

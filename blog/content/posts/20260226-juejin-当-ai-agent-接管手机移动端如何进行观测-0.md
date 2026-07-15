@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AI Agent接管手机：移动端观测技术与事件特征提取
-
----
-
 ## 基本信息
 
 - **作者**: 阿里云云原生

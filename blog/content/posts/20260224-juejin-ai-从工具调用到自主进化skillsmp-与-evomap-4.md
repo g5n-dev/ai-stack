@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AI Agent 进化论：从 SkillSMP 到 EvoMap 的技术栈演进
-
----
-
 ## 基本信息
 
 - **作者**: lizhongxuan

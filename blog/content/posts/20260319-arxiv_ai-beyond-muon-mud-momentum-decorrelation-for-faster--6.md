@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# MUD优化器通过动量去相关加速Transformer训练
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.17970v1

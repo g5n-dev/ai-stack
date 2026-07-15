@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 美国国家实验室：30张图3D重建化工厂气体泄漏
-
----
-
 ## 基本信息
 
 - **作者**: CoovallyAIHub

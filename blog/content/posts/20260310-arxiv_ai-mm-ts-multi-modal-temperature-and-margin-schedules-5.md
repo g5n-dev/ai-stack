@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# MM-TS：面向长尾数据对比学习的多模态温控与边界调度
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.08202v1

@@ -43,10 +43,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# OpenAI 实时接入系统：速率限制与额度管理保障 Sora 和 Codex 访问
-
----
-
 ## 基本信息
 
 - **来源**: OpenAI Blog (blog)
@@ -140,9 +136,8 @@ OpenAI 通过构建一套融合了实时速率限制、精细化使用追踪与�
 3.  **Dashboard 追踪**：检查 OpenAI 提供的 Usage Dashboard，验证其数据更新延迟。如果资源消耗数据近乎实时（延迟低于 5 秒），则证实了文章中提到的“Real-time access system”的存在。
 
 ---
-## 技术分析
 
-# Beyond rate limits: scaling access to Codex and Sora 深度分析
+## Beyond rate limits: scaling access to Codex and Sora 深度分析
 
 这篇文章虽然篇幅可能不长，但它揭示了OpenAI在解决生成式AI（特别是计算密集型模型如Sora和Codex）商业化过程中最棘手的问题之一：**如何在资源受限的情况下，实现公平、高效且可扩展的用户访问控制**。这不仅仅是技术问题，更是经济学与系统设计的结合。
 
@@ -382,7 +377,6 @@ Codex（代码生成）和 Sora（视频生成）属于计算密集型任务，�
 ---
 
 
----
 ## 站内链接
 
 - 分类： [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

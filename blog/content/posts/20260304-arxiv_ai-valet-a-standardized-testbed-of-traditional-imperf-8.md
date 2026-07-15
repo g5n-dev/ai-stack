@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Valet：传统不完美信息卡牌游戏标准化测试基准
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.03252v1

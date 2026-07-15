@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 探索JEPA架构在实时语音翻译中的应用
-
----
-
 ## 基本信息
 
 - **作者**: christiansafka

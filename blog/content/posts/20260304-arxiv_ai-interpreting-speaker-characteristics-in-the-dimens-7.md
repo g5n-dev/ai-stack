@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 自监督语音特征在说话人特性维度上的可解释性研究
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.03096v1

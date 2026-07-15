@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 小米MWC展示AI技术：从对话框走向物理世界控制
-
----
-
 ## 基本信息
 
 - **作者**: 量子位

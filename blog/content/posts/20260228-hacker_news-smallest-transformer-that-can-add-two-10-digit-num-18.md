@@ -35,10 +35,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 能计算两个10位数加法的最小Transformer模型
-
----
-
 ## 基本信息
 
 - **作者**: ks2048

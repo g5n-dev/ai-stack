@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# PixelGen：引入感知损失的像素扩散模型性能超越潜在扩散
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.02493v1
@@ -115,9 +111,7 @@ PixelGen 摆脱了对 VAE、潜在表示和辅助阶段的依赖，提供了一�
     *   **劣势**：与LDM相比，PixelGen的计算效率明显较低。LDM在4x8的空间进行扩散，而PixelGen在512x512或更高的空间扩散，显存和算力
 
 ---
-## 技术分析
 
-# 技术分析：PixelGen 架构与感知优化机制
 
 ## 1. 核心问题与架构权衡
 
@@ -402,7 +396,6 @@ PixelGen 提出了一种端到端的像素级扩散框架，其核心创新在�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

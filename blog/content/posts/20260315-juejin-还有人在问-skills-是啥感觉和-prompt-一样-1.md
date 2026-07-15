@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Claude Skills 与 Prompt 的区别：可复用工作流封装与代码审查实践
-
----
-
 ## 基本信息
 
 - **作者**: 三金得鑫

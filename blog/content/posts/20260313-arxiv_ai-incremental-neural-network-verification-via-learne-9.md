@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 基于学习冲突的增量神经网络验证方法
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.12232v1

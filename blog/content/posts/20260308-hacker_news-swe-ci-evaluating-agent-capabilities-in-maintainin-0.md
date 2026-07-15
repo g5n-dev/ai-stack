@@ -32,10 +32,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# SWE-CI：基于CI流程评估AI Agent代码库维护能力
-
----
-
 ## 基本信息
 
 - **作者**: mpweiher

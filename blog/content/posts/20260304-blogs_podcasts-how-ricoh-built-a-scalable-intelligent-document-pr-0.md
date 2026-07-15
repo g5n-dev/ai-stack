@@ -35,10 +35,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Ricoh 基于 AWS 构建可扩展智能文档处理方案
-
----
-
 ## 基本信息
 
 - **来源**: AWS Machine Learning Blog (blog)

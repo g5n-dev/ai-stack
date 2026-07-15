@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 迈向智能体系统规模化科学：工作原理与适用条件
-
----
-
 ## 基本信息
 
 - **作者**: gmays
@@ -445,7 +441,6 @@ Imandra 构建了一个基于符号推理的 Agent 系统。这不仅仅是生�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

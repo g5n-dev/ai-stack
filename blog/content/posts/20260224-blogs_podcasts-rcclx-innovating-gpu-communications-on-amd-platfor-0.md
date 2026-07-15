@@ -39,10 +39,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Meta 开源 RCCLX：优化 AMD 平台 GPU 通信加速 AI 训练
-
----
-
 ## 基本信息
 
 - **来源**: Meta Engineering (blog)

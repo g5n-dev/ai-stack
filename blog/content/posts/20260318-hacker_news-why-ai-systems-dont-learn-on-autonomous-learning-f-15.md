@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 为何AI系统难以自主学习：认知科学视角的解析
-
----
-
 ## 基本信息
 
 - **作者**: aanet

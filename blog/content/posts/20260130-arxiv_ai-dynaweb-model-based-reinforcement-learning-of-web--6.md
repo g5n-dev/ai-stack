@@ -32,10 +32,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# DynaWeb：基于模型的强化学习网页智能体
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2601.22149v1
@@ -133,7 +129,6 @@ DynaWeb证明了通过“想象力”（即利用世界模型进行模拟）来�
 
 ---
 
-# DynaWeb: 基于模型的强化学习网络智能体 —— 深度分析报告
 
 ## 1. 研究背景与问题
 
@@ -519,7 +514,6 @@ DynaWeb 的理论基础主要建立在 **基于模型的强化学习** 和 **规
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

@@ -37,10 +37,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 基于Amazon Nova Canvas构建可扩展虚拟试穿方案
-
----
-
 ## 基本信息
 
 - **来源**: AWS Machine Learning Blog (blog)

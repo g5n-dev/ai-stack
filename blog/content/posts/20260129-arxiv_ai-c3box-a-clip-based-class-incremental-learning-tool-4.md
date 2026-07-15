@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# C3Box：基于CLIP的类增量学习工具箱
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2601.20852v1
@@ -146,7 +142,6 @@ https://github.com/LAMDA-CL/C3Box
 
 ---
 
-# C3Box: 基于CLIP的类增量学习工具箱 深度分析报告
 
 ## 1. 研究背景与问题
 
@@ -499,7 +494,6 @@ C3Box的价值在于它能够**剥离噪音**。通过统一配置，研究者�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

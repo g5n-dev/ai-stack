@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# MXNorm：复用MXFP块缩放实现高效张量归一化
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.13180v1

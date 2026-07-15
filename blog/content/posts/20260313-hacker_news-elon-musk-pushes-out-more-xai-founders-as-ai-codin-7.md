@@ -31,10 +31,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 马斯克辞退更多 xAI 联合创始人，AI 编码项目进展受阻
-
----
-
 ## 基本信息
 
 - **作者**: merksittich

@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# $L_p$校准误差的变分估计方法
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.24230v1

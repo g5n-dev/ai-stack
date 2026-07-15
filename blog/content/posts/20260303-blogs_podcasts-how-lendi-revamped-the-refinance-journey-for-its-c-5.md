@@ -38,10 +38,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Lendi 基于 Amazon Bedrock 16周构建AI贷款助手
-
----
-
 ## 基本信息
 
 - **来源**: AWS Machine Learning Blog (blog)

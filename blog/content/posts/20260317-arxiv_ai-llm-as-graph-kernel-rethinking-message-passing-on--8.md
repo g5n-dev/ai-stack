@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# LLM作为图核：文本丰富图的消息传递重思考
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.14937v1

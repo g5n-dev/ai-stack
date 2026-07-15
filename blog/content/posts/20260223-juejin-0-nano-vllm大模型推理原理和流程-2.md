@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# nano-vllm：vLLM 极简实现与大模型推理流程解析
-
----
-
 ## 基本信息
 
 - **作者**: IguoChan

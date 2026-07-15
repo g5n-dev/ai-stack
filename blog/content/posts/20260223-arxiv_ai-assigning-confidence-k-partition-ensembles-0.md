@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 为K分区集成模型分配置信度以提升预测性能
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.18435v1

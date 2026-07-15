@@ -26,9 +26,12 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: '💡 原名: MaaAssistantArknights / MaaAssistantArknights Relevant source
+  files CHANGELOG.md README.md docs/en-us/readme.md docs/ja-jp/readme.md docs/ko-kr/readme.md
+  docs/zh-cn/readme.md'
 ---
 
-# 🚀 🔥明日方舟全自动作业神器！MaaAA让托管变简单！🚀
+## 🚀 🔥明日方舟全自动作业神器！MaaAA让托管变简单！🚀
 
 > 💡 **原名**: MaaAssistantArknights /
 
@@ -45,9 +48,8 @@ source_support: 0.0
 - **DeepWiki**: [https://deepwiki.com/MaaAssistantArknights/MaaAssistantArknights](https://deepwiki.com/MaaAssistantArknights/MaaAssistantArknights)
 
 ---
-## 📚 DeepWiki 速览（节选）
 
-# Overview
+## Overview
 
 Relevant source files
 
@@ -267,7 +269,7 @@ MAA 不仅仅是一个游戏脚本，它是**非侵入式视觉自动化技术**
 
 ---
 
-# 🤖 MAA (MaaAssistantArknights) 深度技术剖析与应用分析
+## 🤖 MAA (MaaAssistantArknights) 深度技术剖析与应用分析
 
 **MaaAssistantArknights (MAA)** 不仅仅是一个游戏挂机脚本，它是一个基于 **C++** 编写的、高性能、跨平台的 **UI自动化框架**。它通过“图像识别”与“输入模拟”相结合的方式，解决了在移动端及特定PC环境下难以通过传统 API (如 Windows UI Automation) 进行自动化操作的难题。
 

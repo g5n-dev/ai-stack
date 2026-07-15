@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AI Design-to-Code 的两个根本问题与解法
-
----
-
 ## 基本信息
 
 - **作者**: w934423231
@@ -170,7 +166,6 @@ AI 不仅仅生成 UI 代码，还会尝试解析设计稿中的交互意图（�
 ---
 
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [前端](/categories/%E5%89%8D%E7%AB%AF/)

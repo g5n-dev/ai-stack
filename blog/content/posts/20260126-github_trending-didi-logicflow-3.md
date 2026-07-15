@@ -26,9 +26,12 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: '💡 原名: didi / LogicFlow Relevant source files .github/workflows/PULLREQUESTTEMPLATE.md
+  .github/workflows/updatecontributors.yml CONTRIBUTING.md CONTRUBUTING.en-US.md README.en-US.md
+  README.md'
 ---
 
-# 🚀 🔥滴滴力荐！LogicFlow：让你的流程图开发效率提升10倍！🚀
+## 🚀 🔥滴滴力荐！LogicFlow：让你的流程图开发效率提升10倍！🚀
 
 > 💡 **原名**: didi /
 
@@ -45,9 +48,8 @@ source_support: 0.0
 - **DeepWiki**: [https://deepwiki.com/didi/LogicFlow](https://deepwiki.com/didi/LogicFlow)
 
 ---
-## 📚 DeepWiki 速览（节选）
 
-# Overview
+## Overview
 
 Relevant source files
 
@@ -275,7 +277,6 @@ LogicFlow 的本质是**“复杂性转移”**。它没有消除编写业务代
 
 ---
 
-# 🧠 Didi LogicFlow 深度技术剖析报告
 
 ## 1. 技术架构深度剖析：分层与解耦的艺术
 

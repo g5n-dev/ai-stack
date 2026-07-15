@@ -37,10 +37,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Anthropic 正式发布 100 万 token 上下文窗口
-
----
-
 ## 基本信息
 
 - **来源**: Latent Space (blog)

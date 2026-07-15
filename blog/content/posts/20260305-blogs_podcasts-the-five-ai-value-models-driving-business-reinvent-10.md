@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 五种AI价值模型：从员工熟练度到流程重塑的业务演进
-
----
-
 ## 基本信息
 
 - **来源**: OpenAI Blog (blog)

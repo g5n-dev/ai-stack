@@ -25,9 +25,11 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: '💡 原名: aaa1115910 / bv Relevant source files README.md app/mobile/build.gradle.kts
+  app/mobile/src/main/kotlin/dev/aaa1115910/bv/mobile/activities/MainActivity.kt'
 ---
 
-# 🚀 GitHub热榜爆火！aaa1115910/bv：超强工具库，开发者必备！🔥
+## 🚀 GitHub热榜爆火！aaa1115910/bv：超强工具库，开发者必备！🔥
 
 > 💡 **原名**: aaa1115910 /
 
@@ -44,9 +46,8 @@ source_support: 0.0
 - **DeepWiki**: [https://deepwiki.com/aaa1115910/bv](https://deepwiki.com/aaa1115910/bv)
 
 ---
-## 📚 DeepWiki 速览（节选）
 
-# Overview
+## Overview
 
 Relevant source files
 
@@ -271,7 +272,6 @@ BV provides tailored user experiences for different Android platforms while main
 
 ---
 
-# 📱 aaa1115910/bv 深度技术分析报告
 
 ## 1. 技术架构深度剖析 🏗️
 

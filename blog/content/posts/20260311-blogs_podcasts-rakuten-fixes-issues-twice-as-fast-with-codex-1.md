@@ -37,10 +37,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 乐天利用 OpenAI Codex 将 MTTR 缩减 50% 并加速 CI/CD 审查
-
----
-
 ## 基本信息
 
 - **来源**: OpenAI Blog (blog)

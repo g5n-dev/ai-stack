@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# VLM游戏智能体UE5统一基准测试发布
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2606.09826v1
@@ -119,7 +115,6 @@ OmniGameArena为游戏AI研发提供了标准化的评测环境，有助于加�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

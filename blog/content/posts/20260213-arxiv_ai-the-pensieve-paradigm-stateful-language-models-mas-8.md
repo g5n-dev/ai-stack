@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Pensieve范式：有状态语言模型自主管理上下文
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.12108v1
@@ -134,7 +130,6 @@ The Pensieve Paradigm 提出了一种极具潜力的架构，试图解决LLM的�
 
 ---
 
-# 深度分析报告：The Pensieve Paradigm
 
 ## 1. 研究背景与问题
 
@@ -512,7 +507,6 @@ Pensieve Paradigm 的核心在于“有状态”。模型不仅要处理输入�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

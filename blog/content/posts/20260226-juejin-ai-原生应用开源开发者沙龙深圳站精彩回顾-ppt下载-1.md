@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AI原生应用开源开发者沙龙深圳站回顾及PPT下载
-
----
-
 ## 基本信息
 
 - **作者**: 阿里云云原生

@@ -19,10 +19,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Clawe：面向智能体团队的开源Trello替代方案
-
----
-
 ## 基本信息
 
 - **作者**: Jonathanfishner
@@ -228,7 +224,6 @@ print(f"任务2当前负责人：{board['lists'][0]['cards'][1]['assignee']}")
 
 ---
 
----
 ## 站内链接
 
 - 分类： [效率与方法论](/categories/%E6%95%88%E7%8E%87%E4%B8%8E%E6%96%B9%E6%B3%95%E8%AE%BA/)

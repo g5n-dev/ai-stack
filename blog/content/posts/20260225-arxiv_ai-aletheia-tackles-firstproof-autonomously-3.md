@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Aletheia模型自主攻克FirstProof数学定理证明
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.21201v1

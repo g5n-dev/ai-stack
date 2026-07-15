@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# RN-D：基于正则化网络的离散分类演员与同策强化学习
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2601.23075v1
@@ -125,9 +121,7 @@ source_support: 0.0
     *   **
 
 ---
-## 技术分析
 
-# 技术分析：RN-D 算法核心机制
 
 ## 1. 问题定义与动机
 
@@ -421,7 +415,6 @@ RN-D 的核心创新点在于“Discretized Categorical Actors”和“Regulariz
 
 ---
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

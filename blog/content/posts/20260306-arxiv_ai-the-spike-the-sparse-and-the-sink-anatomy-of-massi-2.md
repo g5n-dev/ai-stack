@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 大模型激活机制研究：尖峰、稀疏性与注意力汇
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.05498v1

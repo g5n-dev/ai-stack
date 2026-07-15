@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Chrome浏览器AI模式：网页探索新体验
-
----
-
 ## 基本信息
 
 - **来源**: Google AI Blog (blog)
@@ -151,7 +147,6 @@ AI Mode在结构化信息丰富的网页（如电商产品页、数据仪表盘�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [产品与创业](/categories/%E4%BA%A7%E5%93%81%E4%B8%8E%E5%88%9B%E4%B8%9A/) / [前端](/categories/%E5%89%8D%E7%AB%AF/)

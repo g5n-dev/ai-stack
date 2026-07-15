@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Murakkab系统提升AI工作流速度和能效
-
----
-
 ## 基本信息
 
 - **来源**: MIT News (Machine Learning) (blog)
@@ -138,7 +134,6 @@ Murakkab的出现对AI基础设施市场具有示范意义。该系统展示了�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/)

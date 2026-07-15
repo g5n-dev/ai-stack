@@ -24,9 +24,11 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: 本文介绍了一项利用脑磁图（MEG）数据直接解码人类情感的研究。 背景与问题： 虽然现有的数据集已将大脑数据与语音或文本对齐，但目前尚无带有情感注释的脑数据集。为了填补这一空白，研究人员旨在探索从大脑活动中解码情感的方法。
+  方法： 数据注释： 研究人员利用预训练的“文本到情感”模型，为受试者听有声读物时的非侵入式MEG脑记录数据添加情感标签。
 ---
 
-# 📚 MEG情绪分析新突破！🔬脑数据标注+情感计算，解锁大脑密码！🧠✨
+## 📚 MEG情绪分析新突破！🔬脑数据标注+情感计算，解锁大脑密码！🧠✨
 
 ---
 
@@ -130,7 +132,6 @@ source_support: 0.0
 
 ---
 
-# 🧠 深度解析：MEGnifying Emotion —— 从大脑信号直接解码情感
 
 ## 1. 研究背景与问题
 

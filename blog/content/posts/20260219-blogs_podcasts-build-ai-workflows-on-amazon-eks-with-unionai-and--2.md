@@ -42,10 +42,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 基于 Union.ai 和 Flyte 在 Amazon EKS 上构建 AI 工作流
-
----
-
 ## 基本信息
 
 - **来源**: AWS Machine Learning Blog (blog)

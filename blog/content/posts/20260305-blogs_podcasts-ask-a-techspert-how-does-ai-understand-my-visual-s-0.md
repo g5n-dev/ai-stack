@@ -42,10 +42,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AI如何理解视觉搜索：技术原理解析
-
----
-
 ## 基本信息
 
 - **来源**: Google AI Blog (blog)

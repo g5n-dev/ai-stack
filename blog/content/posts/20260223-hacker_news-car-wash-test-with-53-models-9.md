@@ -32,10 +32,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 53款模型“洗车”测试：评估大模型代码生成鲁棒性
-
----
-
 ## 基本信息
 
 - **作者**: felix089

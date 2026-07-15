@@ -26,9 +26,11 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: 试想一下，如果把你过去十年的每一次心跳、每一晚的睡眠、甚至是每一次焦虑时的心率飙升，全部摊开在一张桌子上，那会是什么样的景象？📊 我刚刚做了一件近乎疯狂的事：我将自己整整十年的
+  Apple Watch 健康数据——这数百万条记录着我身体隐秘波动“代码”——毫无保留地喂给了 ChatGPT。 结果，我得到的不是冷冰冰的图表，而是一份让我后背发凉的诊断书。
 ---
 
-# 📰 用ChatGPT分析十年Apple Watch数据后，我立马给医生打了电话！🩺📱
+## 📰 用ChatGPT分析十年Apple Watch数据后，我立马给医生打了电话！🩺📱
 
 ---
 

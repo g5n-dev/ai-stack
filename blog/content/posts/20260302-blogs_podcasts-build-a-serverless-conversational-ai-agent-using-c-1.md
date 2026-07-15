@@ -37,10 +37,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 基于Bedrock与LangGraph构建SageMaker AI对话代理
-
----
-
 ## 基本信息
 
 - **来源**: AWS Machine Learning Blog (blog)

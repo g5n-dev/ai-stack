@@ -34,10 +34,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Claude Code 推出远程控制功能
-
----
-
 ## 基本信息
 
 - **作者**: empressplay

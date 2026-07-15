@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Impermanent：时间序列预测时序泛化实时基准
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.08707v1

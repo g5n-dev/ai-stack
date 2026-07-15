@@ -36,10 +36,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 智能体时代应重拾文学化编程范式
-
----
-
 ## 基本信息
 
 - **作者**: horseradish

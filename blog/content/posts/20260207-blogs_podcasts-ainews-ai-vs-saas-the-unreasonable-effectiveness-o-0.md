@@ -37,10 +37,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AI vs SaaS：OpenClow、Cursor 与 MCP UI 的核心主线
-
----
-
 ## 基本信息
 
 - **来源**: Latent Space (blog)
@@ -132,9 +128,7 @@ source_support: 0.0
 *   **对于企业：** 在评估 AI 工具时，应重点考察其跨系统的上下文保持能力及数据安全机制，而非单一的界面功能。
 
 ---
-## 技术分析
 
-# [AINews] 深度分析：AI vs SaaS —— 集中式AI心跳的非凡效力
 
 ## 1. 核心观点深度解读
 
@@ -283,7 +277,6 @@ source_support: 0.0
 ---
 
 
----
 ## 站内链接
 
 - 分类： [产品与创业](/categories/%E4%BA%A7%E5%93%81%E4%B8%8E%E5%88%9B%E4%B8%9A/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

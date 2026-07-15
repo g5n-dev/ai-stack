@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 面向时空物理系统的表征学习
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.13227v1

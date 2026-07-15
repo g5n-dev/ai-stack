@@ -31,10 +31,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# STAMP：面向文本隐私的选择性任务感知机制
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.12237v1

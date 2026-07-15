@@ -33,10 +33,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Gemini接入Lyria 3模型支持文字图像生成30秒音乐
-
----
-
 ## 基本信息
 
 - **来源**: Google DeepMind (blog)

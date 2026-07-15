@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# OpenClaw 视频自动化：15分钟出片成本0.1元
-
----
-
 ## 基本信息
 
 - **作者**: 孟健AI编程
@@ -205,7 +201,6 @@ source_support: 0.0
 ---
 
 
----
 ## 站内链接
 
 - 分类： [效率与方法论](/categories/%E6%95%88%E7%8E%87%E4%B8%8E%E6%96%B9%E6%B3%95%E8%AE%BA/) / [开源生态](/categories/%E5%BC%80%E6%BA%90%E7%94%9F%E6%80%81/)

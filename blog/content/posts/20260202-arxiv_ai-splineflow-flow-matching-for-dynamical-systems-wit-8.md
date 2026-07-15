@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# SplineFlow：基于B样条插值的动力系统流匹配方法
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2601.23072v1
@@ -123,7 +119,6 @@ source_support: 0.0
 
 ---
 
-# SplineFlow：基于B样条插值的流匹配算法深度分析
 
 ## 1. 研究背景与问题
 
@@ -543,7 +538,6 @@ SplineFlow 通过使用 B 样条基函数来构建流场，使得模型能够学
 
 ---
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/) / [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

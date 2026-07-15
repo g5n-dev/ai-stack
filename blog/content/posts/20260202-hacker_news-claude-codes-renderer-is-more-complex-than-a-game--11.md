@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Claude Code 渲染器架构复杂度超越游戏引擎
-
----
-
 ## 基本信息
 
 - **作者**: dboon
@@ -418,7 +414,6 @@ VS Code 的远程开发扩展允许开发者通过 SSH 或容器连接到远程�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/)

@@ -31,10 +31,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# SeeThrough3D：文本生成图像中的遮挡感知三维控制
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.23359v1

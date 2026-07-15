@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Beehive：多工作区智能体编排工具
-
----
-
 ## 基本信息
 
 - **作者**: mst98

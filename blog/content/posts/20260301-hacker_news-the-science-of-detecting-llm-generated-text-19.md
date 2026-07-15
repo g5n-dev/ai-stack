@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# LLM生成文本检测：原理、方法与技术挑战
-
----
-
 ## 基本信息
 
 - **作者**: vinhnx

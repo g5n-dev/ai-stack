@@ -31,10 +31,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# RoboPocket：利用手机即时优化机器人策略
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.05504v1

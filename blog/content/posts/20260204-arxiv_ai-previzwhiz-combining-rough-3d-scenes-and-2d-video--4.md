@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# PrevizWhiz：结合粗略3D场景与2D视频引导生成视频预演
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.03838v1
@@ -136,7 +132,6 @@ source_support: 0.0
 
 ---
 
-# 深度分析报告：PrevizWhiz —— 融合粗略3D场景与2D视频的生成式预演系统
 
 ## 1. 研究背景与问题
 
@@ -518,7 +513,6 @@ PrevizWhiz并没有发明新的生成模型架构，它的核心贡献在于**�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

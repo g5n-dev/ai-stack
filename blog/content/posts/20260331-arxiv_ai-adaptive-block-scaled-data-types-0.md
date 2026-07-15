@@ -20,10 +20,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 自适应块缩放数据类型
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.28765v1
@@ -164,7 +160,6 @@ IF4 的低开销特性使其适合作为 **边缘端/移动端 LLM 加速器** �
 
 ---
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/)

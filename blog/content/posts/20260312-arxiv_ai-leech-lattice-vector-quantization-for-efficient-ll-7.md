@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Leech 格点向量量化实现高效大模型压缩
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.11021v1

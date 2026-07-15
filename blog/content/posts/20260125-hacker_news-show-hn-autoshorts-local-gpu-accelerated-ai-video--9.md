@@ -21,9 +21,10 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: 这是一个为你量身定制的引言，旨在瞬间抓住读者的眼球，直击痛点并激发好奇心： 想象一下这个场景：当你正享受着周末的咖啡☕，你的电脑却在后台疯狂运转，利用闲置的显卡算力，短短几小时内就自动生成了10条高质量的短视频，并且已经准备发布全网。这不是科幻电影，而是当下顶级创作者的“隐秘外挂”🤖。
 ---
 
-# 📰 🔥Show HN: AutoShorts！本地GPU加速的AI视频神器✨
+## 📰 🔥Show HN: AutoShorts！本地GPU加速的AI视频神器✨
 
 ---
 

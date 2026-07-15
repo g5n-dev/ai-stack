@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# RNN引入记忆缓存机制以实现动态增长的存储能力
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.24281v1

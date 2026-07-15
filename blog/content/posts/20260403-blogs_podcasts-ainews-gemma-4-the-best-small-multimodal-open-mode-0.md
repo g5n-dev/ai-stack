@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Google Gemma 4小型多模态开源模型性能大幅提升
-
----
-
 ## 基本信息
 
 - **来源**: Latent Space (blog)
@@ -157,7 +153,6 @@ Gemma 4的发布强化了Google在开源模型领域的竞争力，对Meta的LLa
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [开源生态](/categories/%E5%BC%80%E6%BA%90%E7%94%9F%E6%80%81/)

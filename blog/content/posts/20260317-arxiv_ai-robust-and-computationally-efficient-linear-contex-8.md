@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 对抗性腐蚀与重尾噪声下的鲁棒高效线性情境赌博机
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.15596v1

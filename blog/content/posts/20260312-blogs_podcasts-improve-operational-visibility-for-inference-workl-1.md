@@ -34,10 +34,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Amazon Bedrock 新增 CloudWatch 指标，提升推理任务可观测性
-
----
-
 ## 基本信息
 
 - **来源**: AWS Machine Learning Blog (blog)

@@ -31,10 +31,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 生成式模型的实用价值评估与适用场景分析
-
----
-
 ## 基本信息
 
 - **作者**: takira

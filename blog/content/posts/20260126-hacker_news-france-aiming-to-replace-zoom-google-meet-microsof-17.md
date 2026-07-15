@@ -25,9 +25,11 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: 🇫🇷 法国放大招了！一场颠覆全球科技格局的“数字独立战争”已经打响！ 🚨 你是否想象过这样一个场景：当你习惯性地打开 Zoom 或 Teams
+  进行一场绝密会议时，大洋彼岸的数据洪流正在悄无声息地流向硅谷的服务器？🛑 在这个万物互联的时代，我们似乎已经习惯了享受美国科技巨头带来的“免费便利”。
 ---
 
-# 📰 🇫🇷 法国向科技巨头宣战！自研视频会议App能否终结美企垄断？
+## 📰 🇫🇷 法国向科技巨头宣战！自研视频会议App能否终结美企垄断？
 
 ---
 

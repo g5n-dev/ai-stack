@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 轻量级后门攻击针对多编码器扩散模型研究
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.04064v1

@@ -33,10 +33,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 杨立昆筹集10亿美元研发具物理世界理解力的AI
-
----
-
 ## 基本信息
 
 - **作者**: helloplanets

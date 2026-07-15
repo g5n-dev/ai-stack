@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 从复杂动力学到DynFormer：重新思考PDE的Transformer架构
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.03112v1

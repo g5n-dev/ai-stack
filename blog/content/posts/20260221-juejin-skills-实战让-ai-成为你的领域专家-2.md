@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Claude Code Skills 系统实战：构建领域专家级助手
-
----
-
 ## 基本信息
 
 - **作者**: 冬奇Lab

@@ -33,10 +33,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Claude Sonnet 4.6发布：兼顾性能与成本，支持长文本
-
----
-
 ## 基本信息
 
 - **作者**: adocomplete
@@ -421,7 +417,6 @@ print(classify_hn_post("What's your favorite programming language?"))
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [产品与创业](/categories/%E4%BA%A7%E5%93%81%E4%B8%8E%E5%88%9B%E4%B8%9A/)

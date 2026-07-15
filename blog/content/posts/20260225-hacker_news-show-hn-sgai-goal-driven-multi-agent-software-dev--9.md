@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Sgai：基于GOAL.md的目标驱动多代理软件开发工具
-
----
-
 ## 基本信息
 
 - **作者**: sandgardenhq

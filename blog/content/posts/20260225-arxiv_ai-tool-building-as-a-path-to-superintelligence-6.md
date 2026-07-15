@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 工具构建：通往高级智能的路径
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.21061v1

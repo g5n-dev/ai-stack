@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 闭式自适应地标核实现点云与图分类可证明推断
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2605.04046v1
@@ -159,7 +155,6 @@ PALACE框架包含三个关键技术创新。首先是基于Lebesgue数准则的
 
 ---
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/)

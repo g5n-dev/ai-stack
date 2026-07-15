@@ -35,10 +35,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Jido 2.0：基于 Elixir 的 Agent 框架
-
----
-
 ## 基本信息
 
 - **作者**: mikehostetler

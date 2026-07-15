@@ -25,10 +25,8 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Mousefood：为微控制器构建嵌入式终端UI
-
+description: Mousefood 是一个专为微控制器设计的嵌入式终端 UI 框架，旨在解决资源受限环境下的交互开发难题。它允许开发者通过简单的命令行界面实现设备控制，无需复杂的图形库支持，从而显著降低硬件门槛和开发成本。通过本文，你将了解
+  Mousefood 的核心设计理念，并掌握如何利用它快速构建高效、轻量的嵌入式交互界面。
 ---
 
 ## 基本信息
@@ -423,7 +421,6 @@ def state_machine_ui():
 
 ---
 
----
 ## 站内链接
 
 - 分类： [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/) / [开源生态](/categories/%E5%BC%80%E6%BA%90%E7%94%9F%E6%80%81/)

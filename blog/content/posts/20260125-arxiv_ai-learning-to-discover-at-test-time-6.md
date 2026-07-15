@@ -21,9 +21,11 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: 本文介绍了一种名为TTT-Discover（Test-Time Training to Discover）的新方法，旨在利用人工智能解决科学难题并发现新的最优解。
+  核心方法： 与以往（如AlphaEvolve）仅提示冻结大语言模型（LLM）进行搜索不同，TTT-Discover在测试阶段对模型进行强化学习。这使得LLM能够针对当前的具体测试问题继续训练和积累经验。
 ---
 
-# 📚 测试时也能发现新规律？🤯AI解锁动态学习能力！
+## 📚 测试时也能发现新规律？🤯AI解锁动态学习能力！
 
 ---
 
@@ -143,7 +145,6 @@ source_support: 0.0
 
 ---
 
-# 深度分析报告：Learning to Discover at Test Time (TTT-Discover)
 
 ## 1. 研究背景与问题
 

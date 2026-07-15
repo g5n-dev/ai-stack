@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Cursor Cloud Agent 的安全密钥管理方案
-
----
-
 ## 基本信息
 
 - **作者**: vmatsiiako

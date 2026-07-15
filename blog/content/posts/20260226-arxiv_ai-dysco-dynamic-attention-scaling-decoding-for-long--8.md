@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# DySCO：面向长上下文大模型的动态注意力缩放解码
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.22175v1

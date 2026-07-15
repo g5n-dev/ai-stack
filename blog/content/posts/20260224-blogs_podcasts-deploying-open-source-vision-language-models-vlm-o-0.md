@@ -36,10 +36,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 在Jetson上部署开源视觉语言模型
-
----
-
 ## 基本信息
 
 - **来源**: Hugging Face Blog (blog)

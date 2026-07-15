@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# TeamOut：利用AI代理规划公司团建活动
-
----
-
 ## 基本信息
 
 - **作者**: vincentalbouy

@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 离线强化学习：面向离动力学环境的局部动力学感知域适应
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.21072v1

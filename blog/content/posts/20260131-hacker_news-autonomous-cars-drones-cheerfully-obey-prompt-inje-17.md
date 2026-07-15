@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 自动驾驶与无人机易受路牌提示词攻击
-
----
-
 ## 基本信息
 
 - **作者**: breve
@@ -382,7 +378,6 @@ AI模型不应孤立地处理单个指令。系统必须具备全局上下文感
 
 ---
 
----
 ## 站内链接
 
 - 分类： [安全](/categories/%E5%AE%89%E5%85%A8/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

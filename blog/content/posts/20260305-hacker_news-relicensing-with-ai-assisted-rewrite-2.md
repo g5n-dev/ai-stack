@@ -33,10 +33,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 利用 AI 辅助代码重写实现许可证变更
-
----
-
 ## 基本信息
 
 - **作者**: tuananh

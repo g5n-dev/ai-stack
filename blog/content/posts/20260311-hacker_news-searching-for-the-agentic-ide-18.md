@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 探索 Agent 化 IDE 的演进方向
-
----
-
 ## 基本信息
 
 - **作者**: bigwheels

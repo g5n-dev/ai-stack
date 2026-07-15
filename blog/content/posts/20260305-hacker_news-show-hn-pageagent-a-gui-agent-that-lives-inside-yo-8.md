@@ -32,10 +32,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# PageAgent：运行于 Web 应用内部的 GUI 智能体
-
----
-
 ## 基本信息
 
 - **作者**: simon_luv_pho

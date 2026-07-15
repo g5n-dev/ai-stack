@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# BitNet：面向本地CPU的千亿参数1比特模型
-
----
-
 ## 基本信息
 
 - **作者**: redm

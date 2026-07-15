@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 大语言模型道德冷漠现象的机制起源研究
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.15615v1

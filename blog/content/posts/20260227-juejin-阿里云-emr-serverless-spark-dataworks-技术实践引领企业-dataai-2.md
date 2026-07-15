@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 阿里云 DataWorks 开源湖仓智能平台技术实践
-
----
-
 ## 基本信息
 
 - **作者**: 阿里云大数据AI技术

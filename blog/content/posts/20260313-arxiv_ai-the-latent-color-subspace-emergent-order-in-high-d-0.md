@@ -31,10 +31,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 潜在色彩子空间：高维混沌中的涌现秩序
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.12261v1

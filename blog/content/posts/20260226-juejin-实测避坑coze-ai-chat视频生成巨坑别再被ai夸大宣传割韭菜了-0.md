@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Coze AI Chat视频生成实测：开发流程与生成效果解析
-
----
-
 ## 基本信息
 
 - **作者**: FE_C_P小麦

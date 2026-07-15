@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# OpenClaw Skills 功能集成与开发指南
-
----
-
 ## 基本信息
 
 - **作者**: DigitalOcean

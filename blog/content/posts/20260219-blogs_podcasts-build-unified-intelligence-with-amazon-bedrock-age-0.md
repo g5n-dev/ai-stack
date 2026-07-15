@@ -37,10 +37,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 利用 Amazon Bedrock AgentCore 构建统一智能系统
-
----
-
 ## 基本信息
 
 - **来源**: AWS Machine Learning Blog (blog)

@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# FISMO：基于Fisher结构的动量正交化优化器
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2601.21750v1
@@ -142,7 +138,6 @@ FISMO在**大模型微调**和**持续学习**中具有极高的潜力。
 
 ---
 
-# 深入分析报告：FISMO: Fisher-Structured Momentum-Orthogonalized Optimizer
 
 ## 1. 研究背景与问题
 
@@ -516,7 +511,6 @@ FISMO 采用了**结构化近似**的方法。它通常假设 Fisher 矩阵具�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

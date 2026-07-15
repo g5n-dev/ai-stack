@@ -31,10 +31,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 好奇心即知识：基于主动推理的自一致学习与无遗憾优化
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.06029v1
@@ -119,7 +115,6 @@ source_support: 0.0
 
 ---
 
-# 深入分析：Curiosity is Knowledge
 
 ## 1. 研究背景与问题
 
@@ -524,7 +519,6 @@ $$ G(\pi) = \underbrace{\mathbb{E}_q [\ln p(o|\pi)]}_{\text{Pragmatic (Reward)}}
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

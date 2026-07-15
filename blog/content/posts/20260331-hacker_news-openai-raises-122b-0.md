@@ -19,10 +19,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# OpenAI融资1220亿美元
-
----
-
 ## 基本信息
 
 - **作者**: surprisetalk
@@ -84,7 +80,6 @@ OpenAI 获得 122 亿美元融资，标志其估值已突破千亿美元，成�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [效率与方法论](/categories/%E6%95%88%E7%8E%87%E4%B8%8E%E6%96%B9%E6%B3%95%E8%AE%BA/)

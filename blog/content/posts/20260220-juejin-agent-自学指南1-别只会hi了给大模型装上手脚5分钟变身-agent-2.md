@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Agent 开发实战：赋予大模型工具调用能力
-
----
-
 ## 基本信息
 
 - **作者**: 杨天宇ttx

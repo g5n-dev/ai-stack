@@ -32,10 +32,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# OpenAI 联合西北太平洋国家实验室推出 DraftNEPABench，加速联邦许可流程
-
----
-
 ## 基本信息
 
 - **来源**: OpenAI Blog (blog)

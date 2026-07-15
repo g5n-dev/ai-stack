@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Continue：源码控制的AI检查与CI强制执行
-
----
-
 ## 基本信息
 
 - **作者**: sestinj
@@ -412,7 +408,6 @@ CI 流程自动拦截了 15% 包含潜在安全风险的合并请求。开发者
 
 ---
 
----
 ## 站内链接
 
 - 分类： [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

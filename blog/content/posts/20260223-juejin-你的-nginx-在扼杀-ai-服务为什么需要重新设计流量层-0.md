@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AI服务流量层重构：应对长时思考与即时响应的调度难题
-
----
-
 ## 基本信息
 
 - **作者**: RoyLin

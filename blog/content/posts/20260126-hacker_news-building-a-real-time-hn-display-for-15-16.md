@@ -24,9 +24,11 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: 引言： 想象一下——每天清晨，你的手机屏幕亮起，推送的不是垃圾广告，而是实时滚动的全球科技热点：AI突破、加密货币暴涨、硅谷巨头裁员……你瞥一眼就知道今天该聊什么、该投资什么、该警惕什么。⚡
+  但现实是残酷的：99%的创业者、投资者和科技爱好者都在被信息洪流淹没。
 ---
 
-# 📰 💥仅15刀打造实时HN显示器！低成本DIY硬件指南
+## 📰 💥仅15刀打造实时HN显示器！低成本DIY硬件指南
 
 ---
 

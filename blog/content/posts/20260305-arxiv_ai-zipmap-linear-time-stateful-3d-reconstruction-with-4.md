@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# ZipMap：基于测试时训练的线性时间有状态3D重建
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.04385v1

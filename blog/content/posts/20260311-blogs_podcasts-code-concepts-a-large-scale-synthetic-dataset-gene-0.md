@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Code Concepts：基于编程概念种子的大规模合成数据集
-
----
-
 ## 基本信息
 
 - **来源**: Hugging Face Blog (blog)

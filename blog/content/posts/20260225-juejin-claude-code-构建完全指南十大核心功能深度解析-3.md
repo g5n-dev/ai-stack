@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Claude Code 构建指南：自定义子代理与核心功能解析
-
----
-
 ## 基本信息
 
 - **作者**: 王小酱

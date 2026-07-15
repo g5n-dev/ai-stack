@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# GLM-5.2：开源模型强化前端编程推理
-
----
-
 ## 基本信息
 
 - **来源**: Latent Space (blog)
@@ -130,7 +126,6 @@ GLM-5.2的发布对前端AI辅助编程市场格局产生直接影响。当前�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [前端](/categories/%E5%89%8D%E7%AB%AF/)

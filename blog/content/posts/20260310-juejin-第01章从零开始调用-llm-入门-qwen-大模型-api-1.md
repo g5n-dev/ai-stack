@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 从零开始调用 Qwen 大模型 API 的入门指南
-
----
-
 ## 基本信息
 
 - **作者**: 阿聪谈架构

@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Avey-B：基于注意力机制的高效视觉Transformer模型
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.15814v1
@@ -142,7 +138,6 @@ source_support: 0.0
 
 ---
 
-# Avey-B 论文深度分析报告
 
 ## 1. 研究背景与问题
 
@@ -627,7 +622,6 @@ Avey-B 可能是一个新兴方法，持续跟踪其改进版本和社区反馈�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

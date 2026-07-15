@@ -31,10 +31,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Rowboat：将工作转化为知识图谱的AI助手
-
----
-
 ## 基本信息
 
 - **作者**: segmenta
@@ -423,7 +419,6 @@ Rowboat 的核心价值在于将碎片化的工作内容转化为结构化的知
 
 ---
 
----
 ## 站内链接
 
 - 分类： [产品与创业](/categories/%E4%BA%A7%E5%93%81%E4%B8%8E%E5%88%9B%E4%B8%9A/) / [开源生态](/categories/%E5%BC%80%E6%BA%90%E7%94%9F%E6%80%81/)

@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 神经网络计算的因果解释：基于贡献分解方法
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.06557v1

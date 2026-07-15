@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 零基础学 Agent ：拆解一个 Agent 的「零件清单」——8 个模块逐一讲透 第 2 期
-
----
-
 ## 基本信息
 
 - **作者**: AI淇橦学

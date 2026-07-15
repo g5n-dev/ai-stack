@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AI 编程工程化：用 Command 封装 Prompt 快速触发指令
-
----
-
 ## 基本信息
 
 - **作者**: XPoet

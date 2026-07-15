@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# HP与OpenAI深化合作 AI落地企业运营三大场景
-
----
-
 ## 基本信息
 
 - **来源**: OpenAI Blog (blog)
@@ -153,7 +149,6 @@ HP 通过 Frontier 与 OpenAI 的深度合作，能够在客户体验、软件�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

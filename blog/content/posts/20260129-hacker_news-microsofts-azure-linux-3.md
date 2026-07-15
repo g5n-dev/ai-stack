@@ -23,10 +23,8 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 微软推出 Azure Linux 发行版，用于优化云端基础设施
-
+description: 随着云原生技术的普及，底层基础设施的定制化已成为各大云厂商提升性能的关键。微软近期发布的 Azure Linux，正是这一趋势下的产物，旨在为
+  Azure 服务提供更高效、更安全的专用运行环境。本文将深入解析该系统的技术特点与架构设计，帮助开发者理解其背后的技术考量，以及它如何影响未来的云端应用部署策略。
 ---
 
 ## 基本信息
@@ -443,7 +441,6 @@ Azure Linux 缺乏许多桌面环境所需的硬件驱动支持和图形界面�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/) / [开源生态](/categories/%E5%BC%80%E6%BA%90%E7%94%9F%E6%80%81/)

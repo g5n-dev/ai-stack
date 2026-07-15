@@ -32,10 +32,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Stripe 编码代理 Minions：技术实现与工作流解析
-
----
-
 ## 基本信息
 
 - **作者**: ludovicianul

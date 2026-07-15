@@ -35,10 +35,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 让编程代理通过 Chrome DevTools MCP 调试浏览器会话
-
----
-
 ## 基本信息
 
 - **作者**: xnx

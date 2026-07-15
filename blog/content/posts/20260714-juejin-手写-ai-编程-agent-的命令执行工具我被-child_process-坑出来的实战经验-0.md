@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AI编程Agent使用child_process命令执行的实战经验
-
----
-
 ## 基本信息
 
 - **作者**: To_OC
@@ -117,7 +113,6 @@ child_process 是实现可靠、可控命令执行的必备手段，关键在于
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [后端](/categories/%E5%90%8E%E7%AB%AF/)

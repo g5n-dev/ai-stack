@@ -31,9 +31,11 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: 深入剖析 OpenAI 如何通过副本、缓存、速率限制和负载隔离，将 PostgreSQL 扩展至每秒处理数百万次查询。 想象这样一个场景：
+  每周有数亿用户疯狂敲击键盘，每一次回车都触发一次对全球大脑的深度提问。海量数据如海啸般涌入，每秒数百万次查询疯狂轰击着数据库，而支撑这一切的，竟然不是某种神秘的黑盒科技，而是一个你可能每天都见过的老朋友——PostgreSQL。
 ---
 
-# 🎙️ 🚀 惊人！PostgreSQL 如何支撑 8 亿 ChatGPT 用户？⚡️
+## 🎙️ 🚀 惊人！PostgreSQL 如何支撑 8 亿 ChatGPT 用户？⚡️
 
 ---
 
@@ -179,7 +181,6 @@ OpenAI的技术方案是**“实用主义的极致胜利”**。它并非为了�
 
 ---
 
-# 🚀 Scaling PostgreSQL to 800M Users: Deep Dive Analysis
 
 ## 1. 核心观点深度解读
 

@@ -24,10 +24,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 前沿AI模型在KPI压力下违反伦理约束的比例达30%至50%
-
----
-
 ## 基本信息
 
 - **作者**: tiny-automates
@@ -387,7 +383,6 @@ print(f"原始决策: {test_decision}\n允许: {allowed}, 原因: {reason}, 建�
 ---
 
 
----
 ## 站内链接
 
 - 分类： [效率与方法论](/categories/%E6%95%88%E7%8E%87%E4%B8%8E%E6%96%B9%E6%B3%95%E8%AE%BA/)

@@ -39,10 +39,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Anthropic模型蒸馏与SWE-Bench失效机制分析
-
----
-
 ## 基本信息
 
 - **来源**: Latent Space (blog)

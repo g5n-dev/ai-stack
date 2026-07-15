@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# JUCAL：分类任务中偶然与认知不确定性的联合校准
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.20153v1

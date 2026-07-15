@@ -18,10 +18,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# LangChain 预定义链机制解析与常用 LCEL 链概览
-
----
-
 ## 基本信息
 
 - **作者**: chaors

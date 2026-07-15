@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Yann LeCun新公司AMI融资10亿美元：基于JEPA架构构建世界模型
-
----
-
 ## 基本信息
 
 - **来源**: Latent Space (blog)

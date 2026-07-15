@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 基于对抗雅可比正则化的智能体系统鲁棒性增强方法
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.04378v1

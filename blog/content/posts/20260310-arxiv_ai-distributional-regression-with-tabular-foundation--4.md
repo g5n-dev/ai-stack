@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 表格基础模型分布回归：基于适当评分规则的预测评估
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.08206v1

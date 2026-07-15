@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# PP-Claw：Go 语言复刻的轻量级 AI Agent 全栈方案
-
----
-
 ## 基本信息
 
 - **作者**: DevYK

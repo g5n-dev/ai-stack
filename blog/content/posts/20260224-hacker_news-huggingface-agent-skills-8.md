@@ -33,10 +33,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# HuggingFace Agent 技能框架：工具调用与任务编排解析
-
----
-
 ## 基本信息
 
 - **作者**: armcat

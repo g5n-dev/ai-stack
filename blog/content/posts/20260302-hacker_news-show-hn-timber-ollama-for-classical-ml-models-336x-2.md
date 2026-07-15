@@ -32,10 +32,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Timber：比 Python 快 336 倍的经典机器学习模型工具
-
----
-
 ## 基本信息
 
 - **作者**: kossisoroyce

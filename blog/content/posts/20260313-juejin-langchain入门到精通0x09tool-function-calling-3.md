@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# LangChain实战：利用Tool与Function Calling突破大模型能力边界
-
----
-
 ## 基本信息
 
 - **作者**: chaors

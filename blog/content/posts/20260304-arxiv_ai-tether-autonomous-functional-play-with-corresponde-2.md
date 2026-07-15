@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Tether：基于对应关系轨迹扭曲的自主功能玩
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.03278v1

@@ -25,9 +25,8 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: rime-ice 是一款针对 Rime 输入法引擎的长期维护配置方案，旨在提供开箱即用的简体中文词库与排版体验。该项目解决了用户自行配置繁琐、词库更新滞后的问题，适合希望提升输入效率但不想投入过多维护精力的开发者及普通用户。本文将介绍其架构设计、核心组件及部署方式，帮助你快速构建稳定的本地输入环境。
 ---
-
-# Rime 配置雾凇拼音：长期维护的简体词库
 
 > **原名**: iDvel /
 
@@ -44,9 +43,8 @@ source_support: 0.0
 - **DeepWiki**: [https://deepwiki.com/iDvel/rime-ice](https://deepwiki.com/iDvel/rime-ice)
 
 ---
-## DeepWiki 速览（节选）
 
-# Overview
+## Overview
 
 Relevant source files
 
@@ -272,9 +270,7 @@ rime-ice 是一个集成了丰富词库、多样输入方案和智能 Lua 脚本
 1.  **极低性能设备**：如十年前的旧电脑或内存极低的嵌入式设备
 
 ---
-## 技术分析
 
-# Rime-ice 深度技术分析报告
 
 ## 1. 技术架构深度剖析
 
@@ -968,7 +964,6 @@ if release:
 
 ---
 
----
 ## 站内链接
 
 - 分类： [开源生态](/categories/%E5%BC%80%E6%BA%90%E7%94%9F%E6%80%81/) / [效率与方法论](/categories/%E6%95%88%E7%8E%87%E4%B8%8E%E6%96%B9%E6%B3%95%E8%AE%BA/)

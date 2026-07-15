@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Understudy：演示一次即可教会桌面代理执行任务
-
----
-
 ## 基本信息
 
 - **作者**: bayes-song

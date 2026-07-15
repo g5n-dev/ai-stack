@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 英伟达投资数据中心创企Nscale 估值达146亿美元
-
----
-
 ## 基本信息
 
 - **作者**: voxadam

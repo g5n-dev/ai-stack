@@ -25,10 +25,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AI降低知识门槛，资金门槛却在悄然上升
-
----
-
 ## 基本信息
 
 - **作者**: 小虎AI生活
@@ -95,7 +91,6 @@ AI确实在降低技术知识获取的门槛，使更多人能够快速进入AI�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [产品与创业](/categories/%E4%BA%A7%E5%93%81%E4%B8%8E%E5%88%9B%E4%B8%9A/)

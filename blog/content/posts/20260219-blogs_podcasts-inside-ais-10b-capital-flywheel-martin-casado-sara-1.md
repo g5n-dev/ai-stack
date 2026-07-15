@@ -40,10 +40,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# a16z对话：Anthropic与OpenAI的博弈及AI基础设施投资逻辑
-
----
-
 ## 基本信息
 
 - **来源**: Latent Space (blog)

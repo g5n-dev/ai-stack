@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# JS 实现流式接口处理与 AI 对话内容渲染
-
----
-
 ## 基本信息
 
 - **作者**: Setsuna_F_Seiei

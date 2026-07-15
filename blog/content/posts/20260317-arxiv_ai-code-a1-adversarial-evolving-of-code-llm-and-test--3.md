@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Code-A1：基于强化学习的代码与测试大模型对抗进化
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.15611v1

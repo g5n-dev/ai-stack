@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 提升推理语言模型的参数化知识获取能力
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.22193v1

@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 我为何选择加入 OpenAI
-
----
-
 ## 基本信息
 
 - **作者**: SerCe
@@ -417,7 +413,6 @@ Stripe 使用 OpenAI 的模型优化欺诈检测系统，通过分析交易上�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [产品与创业](/categories/%E4%BA%A7%E5%93%81%E4%B8%8E%E5%88%9B%E4%B8%9A/) / [生活与杂谈](/categories/%E7%94%9F%E6%B4%BB%E4%B8%8E%E6%9D%82%E8%B0%88/)

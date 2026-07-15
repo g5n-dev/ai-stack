@@ -40,10 +40,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 基于Amazon Nova与OpenSearch构建可扩展多模态视频语义搜索系统
-
----
-
 ## 基本信息
 
 - **来源**: AWS Machine Learning Blog (blog)

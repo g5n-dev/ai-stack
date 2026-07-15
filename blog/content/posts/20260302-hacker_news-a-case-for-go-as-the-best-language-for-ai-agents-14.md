@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Go语言作为AI智能体开发首选语言的可行性分析
-
----
-
 ## 基本信息
 
 - **作者**: karakanb

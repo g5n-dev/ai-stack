@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AgentDropoutV2：测试时剪枝优化多智能体系统信息流
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.23258v1

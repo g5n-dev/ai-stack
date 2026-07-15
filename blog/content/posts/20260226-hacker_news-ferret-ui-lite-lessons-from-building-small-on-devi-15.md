@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Ferret-UI Lite：端侧轻量级GUI Agent构建经验
-
----
-
 ## 基本信息
 
 - **作者**: CharlesW

@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 神经细胞自动机预训练语言模型研究
-
----
-
 ## 基本信息
 
 - **作者**: shmublu

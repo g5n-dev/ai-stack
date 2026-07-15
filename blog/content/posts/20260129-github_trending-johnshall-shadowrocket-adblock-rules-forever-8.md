@@ -24,9 +24,9 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: Shadowrocket-ADBlock-Rules-Forever 是一个针对 Shadowrocket 代理工具的规则维护项目，旨在提供高效的广告拦截与流量管理方案。该项目通过
+  GitHub Actions 实现每日自动更新，确保规则库的时效性，并提供标准版与轻量级选项以适应不同需求。本文将介绍项目的核心功能、规则订阅方式及配置指南，帮助用户优化网络体验。
 ---
-
-# Shadowrocket 广告过滤规则库每日自动更新
 
 > **原名**: Johnshall /
 
@@ -43,9 +43,8 @@ source_support: 0.0
 - **DeepWiki**: [https://deepwiki.com/Johnshall/Shadowrocket-ADBlock-Rules-Forever](https://deepwiki.com/Johnshall/Shadowrocket-ADBlock-Rules-Forever)
 
 ---
-## DeepWiki 速览（节选）
 
-# Overview
+## Overview
 
 Relevant source files
 
@@ -189,9 +188,7 @@ Shadowrocket-ADBlock-Rules-Forever 是一个针对 Shadowrocket 代理工具的�
 4.  **配置导入**：尝试直接使用仓库提供的配置链接在 Shadowrocket 中下载，确认是否无需二次修改即可直接启用。
 
 ---
-## 技术分析
 
-# Shadowrocket-ADBlock-Rules-Forever 技术实现分析
 
 ## 1. 架构设计与工作流
 
@@ -802,7 +799,6 @@ Shadowrocket-ADBlock-Rules-Forever 是一个动态维护的广告拦截规则集
 
 ---
 
----
 ## 站内链接
 
 - 分类： [开源生态](/categories/%E5%BC%80%E6%BA%90%E7%94%9F%E6%80%81/)

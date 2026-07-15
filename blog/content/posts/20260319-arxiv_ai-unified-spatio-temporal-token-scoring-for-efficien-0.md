@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 统一时空Token评分提升视频VLM效率
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.18004v1

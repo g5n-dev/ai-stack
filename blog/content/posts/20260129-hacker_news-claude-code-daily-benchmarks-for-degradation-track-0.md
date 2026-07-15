@@ -39,10 +39,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Claude Code 每日基准测试：追踪模型性能退化
-
----
-
 ## 基本信息
 
 - **作者**: qwesr123
@@ -447,7 +443,6 @@ if __name__ == "__main__":
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/)

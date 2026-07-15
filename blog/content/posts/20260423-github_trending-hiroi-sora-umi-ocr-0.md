@@ -33,8 +33,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Umi-OCR：开源免费离线OCR工具，支持PDF文档与二维码识别
-
 > **原名**: hiroi-sora /
 
       Umi-OCR
@@ -50,9 +48,8 @@ source_support: 0.0
 - **DeepWiki**: [https://deepwiki.com/hiroi-sora/Umi-OCR](https://deepwiki.com/hiroi-sora/Umi-OCR)
 
 ---
-## DeepWiki 速览（节选）
 
-# Overview
+## Overview
 
 Relevant source files
 
@@ -296,7 +293,6 @@ Umi‑OCR是一款成熟、功能完整的开源离线OCR工具，拥有45 k+�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/) / [开源生态](/categories/%E5%BC%80%E6%BA%90%E7%94%9F%E6%80%81/)

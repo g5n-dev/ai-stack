@@ -31,10 +31,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# TailLoR：保护主成分的参数高效持续学习方法
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2606.06494v1
@@ -172,7 +168,6 @@ TailLoR 的核心思想——保护主奇异方向、在长尾空间进行微调
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

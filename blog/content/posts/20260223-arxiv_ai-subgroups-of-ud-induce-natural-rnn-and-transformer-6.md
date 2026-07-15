@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# U(d)子群自然导出RNN与Transformer架构
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.18417v1

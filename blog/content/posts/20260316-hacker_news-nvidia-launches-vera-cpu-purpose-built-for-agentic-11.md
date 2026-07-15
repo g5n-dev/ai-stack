@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 英伟达发布Vera CPU：专用于代理式AI
-
----
-
 ## 基本信息
 
 - **作者**: lewismenelaws

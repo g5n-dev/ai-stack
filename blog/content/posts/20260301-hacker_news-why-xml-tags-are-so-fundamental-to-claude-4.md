@@ -34,10 +34,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# XML标签为何是Claude模型架构的核心基础
-
----
-
 ## 基本信息
 
 - **作者**: glth

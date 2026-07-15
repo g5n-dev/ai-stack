@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Agent First Engineering：零人工代码与百万行规模的开发实践
-
----
-
 ## 基本信息
 
 - **作者**: 知识药丸

@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 规模难以克服语用学：报告偏差对视觉语言推理的影响
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.23351v1

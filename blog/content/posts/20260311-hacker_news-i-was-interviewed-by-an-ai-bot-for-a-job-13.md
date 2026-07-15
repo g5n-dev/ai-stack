@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# I Was Interviewed by an AI Bot for a Job
-
----
-
 ## 基本信息
 
 - **作者**: speckx

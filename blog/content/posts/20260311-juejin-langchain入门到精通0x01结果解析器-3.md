@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# LangChain结果解析器：将大模型非结构化输出转为结构化数据
-
----
-
 ## 基本信息
 
 - **作者**: chaors

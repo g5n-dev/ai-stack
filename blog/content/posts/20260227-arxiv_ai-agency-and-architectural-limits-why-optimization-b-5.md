@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 基于优化的系统为何难以实现规范响应：代理与架构限制
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.23239v1

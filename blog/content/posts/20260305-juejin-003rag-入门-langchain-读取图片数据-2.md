@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# LangChain 实现图片 OCR 与多模态 RAG 数据读取
-
----
-
 ## 基本信息
 
 - **作者**: zone7739

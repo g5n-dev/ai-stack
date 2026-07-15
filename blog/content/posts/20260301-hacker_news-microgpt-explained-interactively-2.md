@@ -31,10 +31,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# MicroGPT 交互式原理解析
-
----
-
 ## 基本信息
 
 - **作者**: growingswe

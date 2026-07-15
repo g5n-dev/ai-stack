@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 将Codex视为中级工程师的Windows工作流实践
-
----
-
 ## 基本信息
 
 - **作者**: Lei_official

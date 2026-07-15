@@ -31,10 +31,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 语言模型对差异论元标记处理的类型学对齐差异
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.17653v1

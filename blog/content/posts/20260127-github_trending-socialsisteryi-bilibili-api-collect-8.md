@@ -24,9 +24,12 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: '💡 原名: SocialSisterYi / bilibili-API-collect Relevant source files .gitignore
+  README.md The bilibili-API-collect project is a community-driven documentation effort
+  that collects, researches, and'
 ---
 
-# 🚀 🚀B站API神库！开源界新宠🔥开发者必备！
+## 🚀 🚀B站API神库！开源界新宠🔥开发者必备！
 
 > 💡 **原名**: SocialSisterYi /
 
@@ -43,9 +46,8 @@ source_support: 0.0
 - **DeepWiki**: [https://deepwiki.com/SocialSisterYi/bilibili-API-collect](https://deepwiki.com/SocialSisterYi/bilibili-API-collect)
 
 ---
-## 📚 DeepWiki 速览（节选）
 
-# Bilibili API Overview
+## Bilibili API Overview
 
 Relevant source files
 

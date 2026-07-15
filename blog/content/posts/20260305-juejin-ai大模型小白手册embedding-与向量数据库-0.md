@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AI大模型指南：Embedding技术与向量数据库原理
-
----
-
 ## 基本信息
 
 - **作者**: 树獭非懒

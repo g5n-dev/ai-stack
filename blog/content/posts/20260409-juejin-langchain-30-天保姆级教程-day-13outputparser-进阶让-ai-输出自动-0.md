@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# LangChain Day 13：OutputParser结构化输出与自动重试
-
----
-
 ## 基本信息
 
 - **作者**: Csvn
@@ -45,9 +41,8 @@ source_support: 0.0
 本篇文章将介绍带重试机制的结构化输出方案，能够在检测到输出格式异常时自动重新生成，无需人工干预。阅读后你将了解如何在 LangChain 中实现自动重试、定制错误处理逻辑，以及如何在生产环境中构建更可靠的数据解析流程。
 
 ---
-## 描述
 
-# 中文翻译
+## 中文翻译
 
 🎯 **一、为什么需要"带重试的结构化输出"？**
 
@@ -133,7 +128,6 @@ result = chain.invoke({"question": "返回姓名和年龄"})
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

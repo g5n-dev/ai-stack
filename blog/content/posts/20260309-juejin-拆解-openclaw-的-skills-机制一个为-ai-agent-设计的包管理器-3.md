@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# OpenClaw Skills机制：三层渐进式加载与依赖管理的AI Agent框架
-
----
-
 ## 基本信息
 
 - **作者**: yangpow2

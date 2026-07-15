@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 多候选人译后编辑中的后见质量预测实验
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.04083v1

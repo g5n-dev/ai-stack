@@ -1,5 +1,6 @@
 ---
-title: 'MARTI-MARS$^2$: Scaling Multi-Agent Self-Search via Rei'
+title: 'MARTI-MARS$^2$: Scaling Multi-Agent Self-Search via Reinforcement Learning
+  for Code Generation'
 date: 2026-02-10 03:34:40+08:00
 draft: false
 entry_kind: auto
@@ -19,10 +20,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# MARTI-MARS$^2$: Scaling Multi-Agent Self-Search via Reinforcement Learning for Code Generation
-
 ---
 
 ## 基本信息
@@ -64,7 +61,6 @@ MARTI-MARS$^2$ 将多智能体协作探索过程构建为一个动态且可学�
 ---
 
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/)

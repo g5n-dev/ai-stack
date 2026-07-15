@@ -31,10 +31,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# MonarchRT：面向实时视频生成的高效注意力机制
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.12271v1
@@ -136,7 +132,6 @@ MonarchRT 针对实时视频生成中扩散 Transformer 计算成本高昂的瓶
 
 ---
 
-# 深度分析报告：MonarchRT —— 实时视频生成的高效注意力机制
 
 ## 1. 研究背景与问题
 
@@ -549,7 +544,6 @@ Monarch 层在某些特定的硬件加速器上可能需要自定义算子支持
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/)

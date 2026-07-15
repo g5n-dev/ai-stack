@@ -36,10 +36,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 英伟达工程师探讨行星级智能体推理与光速计算
-
----
-
 ## 基本信息
 
 - **来源**: Latent Space (blog)

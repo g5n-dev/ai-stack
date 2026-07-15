@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 理性人无目标论：AI对齐应基于实践协调而非终极目的
-
----
-
 ## 基本信息
 
 - **来源**: The Gradient (blog)

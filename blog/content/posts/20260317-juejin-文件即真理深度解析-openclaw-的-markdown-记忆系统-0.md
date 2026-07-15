@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 深度解析 OpenClaw：基于 Markdown 的 AI 记忆系统
-
----
-
 ## 基本信息
 
 - **作者**: 花草树木

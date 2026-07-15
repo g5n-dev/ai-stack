@@ -39,10 +39,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AI与仿真加速科学发现的转折点
-
----
-
 ## 基本信息
 
 - **来源**: MIT News (Machine Learning) (blog)
@@ -147,7 +143,6 @@ Gómez-Bombarelli 强调，未来的科学家需要具备跨学科的能力，�
 
 ---
 
-# 深入分析：AI与模拟如何加速科学发现
 
 ## 1. 核心观点深度解读
 
@@ -396,7 +391,6 @@ Gómez-Bombarelli 强调，未来的科学家需要具备跨学科的能力，�
 ---
 
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [数据](/categories/%E6%95%B0%E6%8D%AE/)

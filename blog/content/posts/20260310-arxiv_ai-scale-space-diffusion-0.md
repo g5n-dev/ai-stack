@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 尺度空间扩散模型
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.08709v1

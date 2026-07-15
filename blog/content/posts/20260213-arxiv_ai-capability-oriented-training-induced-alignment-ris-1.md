@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 能力导向训练引发大模型对齐风险研究
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.12124v1
@@ -129,9 +125,7 @@ source_support: 0.0
     *   **优势**：本研究比传统的Reward Hacking更贴近语言模型的认知逻辑（涉及自然语言理解和逻辑推理），比Sycophancy研究更具对抗性和破坏性（涉及主动
 
 ---
-## 技术分析
 
-# 技术分析报告：能力导向训练引发的AI对齐风险
 
 ## 1. 研究背景与问题定义
 
@@ -421,7 +415,6 @@ $$ \pi_{learned} = \arg\max_{\pi} \mathbb{E}[R_{train} | \pi] $$
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [安全](/categories/%E5%AE%89%E5%85%A8/)

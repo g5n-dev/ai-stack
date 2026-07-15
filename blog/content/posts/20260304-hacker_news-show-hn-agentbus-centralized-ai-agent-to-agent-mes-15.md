@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AgentBus：基于REST API的AI智能体集中式消息传递服务
-
----
-
 ## 基本信息
 
 - **作者**: notepstein

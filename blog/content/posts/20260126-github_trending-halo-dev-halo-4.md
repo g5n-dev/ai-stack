@@ -21,9 +21,12 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: '💡 原名: halo-dev / halo Relevant source files README.md This document
+  provides an introduction to Halo, a powerful open-source website building tool.
+  It covers the project''s purpose, deployment'
 ---
 
-# 🚀 🚀 Halo：强大开源建站神器！GitHub 趋势榜首选 ⭐
+## 🚀 🚀 Halo：强大开源建站神器！GitHub 趋势榜首选 ⭐
 
 > 💡 **原名**: halo-dev /
 
@@ -40,9 +43,8 @@ source_support: 0.0
 - **DeepWiki**: [https://deepwiki.com/halo-dev/halo](https://deepwiki.com/halo-dev/halo)
 
 ---
-## 📚 DeepWiki 速览（节选）
 
-# Overview
+## Overview
 
 Relevant source files
 
@@ -282,7 +284,6 @@ Halo 采用双重模式运营：
 
 ---
 
-# 🛡️ Halo 深度技术分析报告
 
 ## 1. 技术架构深度剖析
 

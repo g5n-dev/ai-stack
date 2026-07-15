@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 从数据统计到特征几何：相关性如何塑造叠加态
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.09972v1

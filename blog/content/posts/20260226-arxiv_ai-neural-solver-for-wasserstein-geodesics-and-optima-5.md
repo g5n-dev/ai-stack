@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 用于Wasserstein测地线与最优传输动力学的神经求解器
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.22003v1

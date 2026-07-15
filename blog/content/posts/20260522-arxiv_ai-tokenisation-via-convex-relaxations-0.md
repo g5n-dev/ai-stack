@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 基于凸松弛的分词方法
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2605.22821v1
@@ -112,7 +108,6 @@ ConvexTok为词元化提供了可验证的优化框架，兼具性能提升与�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

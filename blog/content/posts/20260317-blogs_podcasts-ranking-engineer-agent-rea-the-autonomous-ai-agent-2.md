@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Meta 排序工程师代理：自主管理广告排序模型全生命周期
-
----
-
 ## 基本信息
 
 - **来源**: Meta Engineering (blog)

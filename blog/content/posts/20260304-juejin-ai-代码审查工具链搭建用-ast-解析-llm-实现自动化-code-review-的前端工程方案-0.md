@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AST 解析结合 LLM 实现自动化 Code Review 的前端工程方案
-
----
-
 ## 基本信息
 
 - **作者**: 进击的尘埃

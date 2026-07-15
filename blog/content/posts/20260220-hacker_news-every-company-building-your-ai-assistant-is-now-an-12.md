@@ -33,10 +33,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 打造AI助手的公司如今都转型成了广告公司
-
----
-
 ## 基本信息
 
 - **作者**: ajuhasz

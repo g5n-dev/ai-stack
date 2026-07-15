@@ -30,10 +30,8 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 展示 LLM 工具数据传输的中间人代理
-
+description: 大语言模型（LLM）应用在提供便利的同时，其数据交互过程往往是一个“黑盒”，用户难以知晓工具究竟发送了哪些信息。本文介绍一款中间人代理工具，旨在帮助开发者和隐私敏感用户直接监控并分析这些
+  API 请求的原始内容。通过阅读，你将了解如何利用该工具捕获流量，从而更清晰地掌握本地数据与云端模型交互的具体细节。
 ---
 
 ## 基本信息
@@ -468,7 +466,6 @@ LLM API 的调用成本与 Token 使用量直接相关。MitM 代理位于流量
 
 ---
 
----
 ## 站内链接
 
 - 分类： [安全](/categories/%E5%AE%89%E5%85%A8/) / [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/)

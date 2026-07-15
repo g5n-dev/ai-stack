@@ -34,10 +34,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AI 开发理念：在技术前沿之后一步
-
----
-
 ## 基本信息
 
 - **作者**: Ozzie_osman
@@ -419,7 +415,6 @@ print(cache.cache.keys())  # 会看到预加载的相关数据
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [效率与方法论](/categories/%E6%95%88%E7%8E%87%E4%B8%8E%E6%96%B9%E6%B3%95%E8%AE%BA/)

@@ -39,10 +39,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Sonrai 利用 SageMaker AI 构建合规 MLOps，加速精准医学试验
-
----
-
 ## 基本信息
 
 - **来源**: AWS Machine Learning Blog (blog)

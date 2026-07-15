@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 基础模型越来越强，Agent工程还值得做吗
-
----
-
 ## 基本信息
 
 - **作者**: 唐某人丶
@@ -110,7 +106,6 @@ AI模型的参数规模与推理速度持续突破，但agent工程的价值并�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 编码代理的成功对通用AI系统的启示
-
----
-
 ## 基本信息
 
 - **作者**: jbmilgrom
@@ -424,7 +420,6 @@ Klarna 部署了基于 OpenAI 技术构建的 AI Agent 系统。与之前的聊�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

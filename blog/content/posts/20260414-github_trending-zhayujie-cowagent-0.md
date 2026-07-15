@@ -35,8 +35,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# CowAgent：开源跨平台多模型AI助理框架
-
 > **原名**: zhayujie /
 
       CowAgent
@@ -52,9 +50,8 @@ source_support: 0.0
 - **DeepWiki**: [https://deepwiki.com/zhayujie/CowAgent](https://deepwiki.com/zhayujie/CowAgent)
 
 ---
-## DeepWiki 速览（节选）
 
-# CowAgent Overview
+## CowAgent Overview
 
 Relevant source files
 
@@ -291,7 +288,6 @@ CowAgent 采用分层模块化架构，从代码结构可观察到明确的层�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/)

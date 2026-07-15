@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# SceneCritic：3D室内场景合成的符号化评估器
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2604.13035v1
@@ -178,7 +174,6 @@ SceneCritic 是一种符号化的平面布局评估器，基于手动构建的�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/) / [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

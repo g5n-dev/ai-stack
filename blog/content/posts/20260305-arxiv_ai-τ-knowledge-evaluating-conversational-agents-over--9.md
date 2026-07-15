@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# τ-Knowledge：评估非结构化知识中的对话智能体
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.04370v1

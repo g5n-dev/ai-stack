@@ -43,10 +43,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# MIT与哈佛合作深度学习模型可提前一年预测心衰恶化
-
----
-
 ## 基本信息
 
 - **来源**: MIT News (Machine Learning) (blog)

@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# GPT-5在法律推理实验中表现优于联邦法官
-
----
-
 ## 基本信息
 
 - **作者**: droidjj
@@ -374,7 +370,6 @@ LexisNexis 推出了 Lexis+ AI，这是一个集成了生成式 AI 的法律检�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

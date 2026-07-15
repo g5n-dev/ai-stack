@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Spring AI 多模型对话实战：统一接口与 Redis 记忆
-
----
-
 ## 基本信息
 
 - **作者**: 求知摆渡
@@ -186,7 +182,6 @@ Spring AI 为 Java 生态接入大模型提供了标准化的解决方案，但�
 ---
 
 
----
 ## 站内链接
 
 - 分类： [后端](/categories/%E5%90%8E%E7%AB%AF/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

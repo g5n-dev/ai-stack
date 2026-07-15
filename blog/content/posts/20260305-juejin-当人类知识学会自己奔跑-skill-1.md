@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 当人类知识学会自己奔跑：Skill 属性与 AI 工程化实践
-
----
-
 ## 基本信息
 
 - **作者**: 用户257659575909

@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Claude Code新增goal功能：自动跨轮执行至目标达成
-
----
-
 ## 基本信息
 
 - **作者**: HLAIA光子
@@ -92,7 +88,6 @@ Claude Code推出的goal功能标志着AI辅助开发从“对话式交互”向
 
 ---
 
----
 ## 站内链接
 
 - 分类： [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/)

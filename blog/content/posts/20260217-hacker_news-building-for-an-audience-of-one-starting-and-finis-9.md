@@ -32,10 +32,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 面向个人受众：利用AI启动并完成副业项目
-
----
-
 ## 基本信息
 
 - **作者**: lorisdev
@@ -139,7 +135,7 @@ MIT
 """
     return readme_content
 
-# 使用示例
+## 使用示例
 readme = generate_readme(
     "AI-Powered Todo List",
     "一个使用AI辅助开发的待办事项应用",
@@ -456,7 +452,6 @@ Interior AI 迅速成为设计师和房主的热门工具，在社交媒体上�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [产品与创业](/categories/%E4%BA%A7%E5%93%81%E4%B8%8E%E5%88%9B%E4%B8%9A/) / [效率与方法论](/categories/%E6%95%88%E7%8E%87%E4%B8%8E%E6%96%B9%E6%B3%95%E8%AE%BA/)

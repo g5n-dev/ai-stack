@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# NanoGPT慢速运行实现10倍数据效率方案
-
----
-
 ## 基本信息
 
 - **作者**: sdpmas

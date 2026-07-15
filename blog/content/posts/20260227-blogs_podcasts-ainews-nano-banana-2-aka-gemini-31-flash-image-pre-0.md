@@ -38,10 +38,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Gemini 2.0 Flash 登场：超越 GPT-4o，成新 SOTA 图像生成模型
-
----
-
 ## 基本信息
 
 - **来源**: Latent Space (blog)

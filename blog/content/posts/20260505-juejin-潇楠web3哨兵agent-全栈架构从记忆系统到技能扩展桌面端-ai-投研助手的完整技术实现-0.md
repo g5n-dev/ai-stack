@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Agent全栈架构：记忆系统与技能扩展的桌面端AI投研实现
-
----
-
 ## 基本信息
 
 - **作者**: 潇楠Web3哨兵
@@ -119,7 +115,6 @@ Agent 充当系统的大脑，整合记忆、技能与跨链数据，实现桌�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [后端](/categories/%E5%90%8E%E7%AB%AF/)

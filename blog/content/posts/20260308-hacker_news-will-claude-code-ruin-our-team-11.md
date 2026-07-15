@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Claude Code 会如何影响开发团队工作流
-
----
-
 ## 基本信息
 
 - **作者**: YounesDz

@@ -20,10 +20,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 无需训练的图神经网络跨架构合并方法
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.19332v1

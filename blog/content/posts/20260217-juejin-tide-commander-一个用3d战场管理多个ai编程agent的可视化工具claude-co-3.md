@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Tide Commander：多AI编程代理的3D战场可视化工具
-
----
-
 ## 基本信息
 
 - **作者**: 用户83352530287
@@ -178,7 +174,6 @@ Tide Commander 是一个创新的可视化工具，旨在解决同时运行多�
 ---
 
 
----
 ## 站内链接
 
 - 分类： [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/) / [效率与方法论](/categories/%E6%95%88%E7%8E%87%E4%B8%8E%E6%96%B9%E6%B3%95%E8%AE%BA/)

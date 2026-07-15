@@ -25,10 +25,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 单GPU训练Nanochat：自动Agent实现全流程研究
-
----
-
 ## 基本信息
 
 - **作者**: simonpure

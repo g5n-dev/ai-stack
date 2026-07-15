@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# FablePool：提示词众筹与公开构建模式
-
----
-
 ## 基本信息
 
 - **作者**: matthewbarras
@@ -87,7 +83,6 @@ FablePool尝试将众筹机制引入AI开发领域，是一种将prompt商品化
 
 ---
 
----
 ## 站内链接
 
 - 分类： [产品与创业](/categories/%E4%BA%A7%E5%93%81%E4%B8%8E%E5%88%9B%E4%B8%9A/)

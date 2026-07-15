@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AgentFactory：子代理积累复用的自演进框架
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.18000v1

@@ -34,10 +34,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 单张RTX 3090运行Llama 3.1 70B：NVMe直通GPU方案
-
----
-
 ## 基本信息
 
 - **作者**: xaskasdf

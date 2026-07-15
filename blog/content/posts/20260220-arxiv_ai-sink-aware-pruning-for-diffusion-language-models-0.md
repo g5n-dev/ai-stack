@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 面向扩散语言模型的感知汇点剪枝方法
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.17664v1

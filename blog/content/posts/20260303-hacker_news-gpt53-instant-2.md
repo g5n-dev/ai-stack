@@ -31,10 +31,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# GPT-5.3即时版：提升日常对话流畅度与实用性
-
----
-
 ## 基本信息
 
 - **来源**: OpenAI Blog (blog)

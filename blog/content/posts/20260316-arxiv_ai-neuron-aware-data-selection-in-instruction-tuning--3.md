@@ -22,10 +22,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 面向神经元的大模型指令调优数据选择方法
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.13201v1

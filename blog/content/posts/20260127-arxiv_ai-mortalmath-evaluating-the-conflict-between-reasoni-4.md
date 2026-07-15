@@ -24,9 +24,12 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: MortalMATH：评估推理目标与紧急语境冲突的总结 本文探讨了大型语言模型（LLMs）在过度优化“深度推理”能力时，可能引发的安全隐患。
+  研究背景与目的 随着模型越来越专注于复杂任务的正确执行，研究者提出这种对计算的过度专注是否会导致“隧道视野”，从而忽略紧急情况下的安全性。 方法：MortalMATH基准测试
+  研究团队推出了MortalMATH基准，包含150个测试场景。
 ---
 
-# 📚 MortalMATH：当推理目标遇上紧急语境，冲突何解？🧠🔥
+## 📚 MortalMATH：当推理目标遇上紧急语境，冲突何解？🧠🔥
 
 ---
 
@@ -142,7 +145,6 @@ source_support: 0.0
 
 ---
 
-# 🧠 MortalMATH：当推理成为“死神”——深度解析
 
 ## 1. 研究背景与问题：理性的阴暗面 🌗
 

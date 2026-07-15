@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Claude Code Skill 应基于项目需求构建
-
----
-
 ## 基本信息
 
 - **作者**: ai_coder_小村儿
@@ -110,7 +106,6 @@ GitHub 上存在大量高 star 的 Claude Code Skill 模板，可作为学习示
 
 ---
 
----
 ## 站内链接
 
 - 分类： [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/) / [效率与方法论](/categories/%E6%95%88%E7%8E%87%E4%B8%8E%E6%96%B9%E6%B3%95%E8%AE%BA/)

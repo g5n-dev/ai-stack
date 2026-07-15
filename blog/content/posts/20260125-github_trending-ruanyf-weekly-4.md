@@ -25,9 +25,12 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: '💡 原名: ruanyf / weekly Relevant source files README.md docs/issue-106.md
+  docs/issue-28.md docs/issue-329.md docs/issue-340.md docs/issue-349.md docs/issue-350.md
+  docs/issue-351.md docs/issue-352.md'
 ---
 
-# 🚀 💥ruanyf/weekly：技术趋势+深度解读，助你高效掌握前沿！
+## 🚀 💥ruanyf/weekly：技术趋势+深度解读，助你高效掌握前沿！
 
 > 💡 **原名**: ruanyf /
 
@@ -44,9 +47,8 @@ source_support: 0.0
 - **DeepWiki**: [https://deepwiki.com/ruanyf/weekly](https://deepwiki.com/ruanyf/weekly)
 
 ---
-## 📚 DeepWiki 速览（节选）
 
-# Overview
+## Overview
 
 Relevant source files
 

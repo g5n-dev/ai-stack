@@ -21,9 +21,12 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: PyraTok 是一种名为“语言对齐金字塔令牌化器”的新技术，旨在解决当前视频理解和生成系统中离散视频 VAE 存在的局限性。 主要解决的问题：
+  现有的视频令牌化器通常在单一尺度上学习视觉码本，词汇量有限且语言监督较弱。这导致跨模态（视觉与语言）对齐效果差，零样本迁移能力不足。 核心创新： PyraTok
+  引入了“语言对齐金字塔量化”模块，能够跨越多种时空分辨率学习语义结构化的离散潜在表示。
 ---
 
-# 📚 🔥PyraTok！视频生成神器：语言对齐金字塔Tokenizer震撼来袭！
+## 📚 🔥PyraTok！视频生成神器：语言对齐金字塔Tokenizer震撼来袭！
 
 ---
 
@@ -136,7 +139,6 @@ PyraTok 引入了“语言对齐金字塔量化”模块，能够跨越多种时
 
 ---
 
-# 📽️ PyraTok 深度解析：打破视频与语言壁垒的“金字塔”
 
 ## 1. 研究背景与问题 🧩
 

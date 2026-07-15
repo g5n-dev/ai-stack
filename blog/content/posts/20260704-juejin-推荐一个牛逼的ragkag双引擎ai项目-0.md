@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# RAG+KAG双引擎AI知识库项目实战
-
----
-
 ## 基本信息
 
 - **作者**: 苏三说技术
@@ -103,7 +99,6 @@ source_support: 0.0
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

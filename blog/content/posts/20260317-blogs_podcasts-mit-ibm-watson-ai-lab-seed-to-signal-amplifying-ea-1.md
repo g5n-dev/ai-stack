@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# MIT-IBM Watson AI Lab：产学研关系加速早期科研与职业发展
-
----
-
 ## 基本信息
 
 - **来源**: MIT News (Machine Learning) (blog)

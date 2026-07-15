@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# LangGraph 框架指南：构建基于有向图与状态管理的生产级 AI 工作流
-
----
-
 ## 基本信息
 
 - **作者**: 哈里谢顿

@@ -48,10 +48,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Z.ai发布GLM-5开源模型，性能超越Opus 4.5
-
----
-
 ## 基本信息
 
 - **来源**: Latent Space (blog)
@@ -308,7 +304,6 @@ GLM 系列持续关注多模态原生的技术路线。GLM-5 的创新可能主�
 ---
 
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [开源生态](/categories/%E5%BC%80%E6%BA%90%E7%94%9F%E6%80%81/)

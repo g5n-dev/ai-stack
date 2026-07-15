@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 在TPU上移植Flash Attention的工程实践与挑战
-
----
-
 ## 基本信息
 
 - **作者**: azhng

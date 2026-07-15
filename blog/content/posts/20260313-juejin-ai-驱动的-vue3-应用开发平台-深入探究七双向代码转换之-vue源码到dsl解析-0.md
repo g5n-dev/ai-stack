@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# VTJ解析器：Vue SFC转低代码DSL的原理与实现
-
----
-
 ## 基本信息
 
 - **作者**: 踩着两条虫

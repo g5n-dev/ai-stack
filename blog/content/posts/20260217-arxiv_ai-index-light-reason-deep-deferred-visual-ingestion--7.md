@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 延迟视觉摄入优化图文密集文档问答
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.14162v1
@@ -145,7 +141,6 @@ DVI将“QA准确率”问题转化为“页面定位”问题。一旦找到正
 
 ---
 
-# 深度分析报告：Index Light, Reason Deep
 
 ## 1. 研究背景与问题
 
@@ -550,7 +545,6 @@ DVI的设计基于以下核心假设：
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

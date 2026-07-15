@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 企业规模化AI的实践路径与关键要素
-
----
-
 ## 基本信息
 
 - **来源**: OpenAI Blog (blog)
@@ -135,7 +131,6 @@ AI规模化存在明显边界。技术层面，复杂多变的业务场景对模
 
 ---
 
----
 ## 站内链接
 
 - 分类： [效率与方法论](/categories/%E6%95%88%E7%8E%87%E4%B8%8E%E6%96%B9%E6%B3%95%E8%AE%BA/)

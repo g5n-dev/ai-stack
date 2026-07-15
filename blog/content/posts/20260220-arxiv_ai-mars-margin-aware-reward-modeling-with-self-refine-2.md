@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# MARS：基于边际感知与自我精炼的奖励建模
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.17658v1

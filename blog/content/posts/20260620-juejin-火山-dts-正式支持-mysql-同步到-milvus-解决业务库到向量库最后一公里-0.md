@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 火山DTS实现MySQL数据自动同步至Milvus向量库
-
----
-
 ## 基本信息
 
 - **作者**: 火山引擎Agent社区
@@ -93,7 +89,6 @@ DTS本身是企业级数据迁移工具，具备断点续传、增量同步等�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [数据](/categories/%E6%95%B0%E6%8D%AE/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

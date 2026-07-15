@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Klaw.sh：面向 AI 智能体的 Kubernetes 编排工具
-
----
-
 ## 基本信息
 
 - **作者**: eftalyurtseven
@@ -404,7 +400,6 @@ AI Agent 编写的代码可能包含逻辑错误。绝对不应允许 Agent 直�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/)

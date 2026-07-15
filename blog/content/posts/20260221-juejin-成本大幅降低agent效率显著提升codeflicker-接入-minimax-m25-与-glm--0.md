@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# CodeFlicker 接入 MiniMax M2.5 与 GLM-5：降本增效，提升 Agent 效率
-
----
-
 ## 基本信息
 
 - **作者**: Yangfan

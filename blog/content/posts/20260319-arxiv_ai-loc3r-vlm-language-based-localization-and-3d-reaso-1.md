@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Loc3R-VLM语言驱动定位与3D推理视觉模型
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.18002v1

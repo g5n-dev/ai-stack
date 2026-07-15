@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Railway创始人谈代理原生云：300万用户与自建数据中心
-
----
-
 ## 基本信息
 
 - **来源**: Latent Space (blog)
@@ -161,7 +157,6 @@ Railway 将云平台定位为 **Agent‑Native**（代理原生），让 AI 编�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [产品与创业](/categories/%E4%BA%A7%E5%93%81%E4%B8%8E%E5%88%9B%E4%B8%9A/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

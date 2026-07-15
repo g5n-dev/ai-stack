@@ -39,10 +39,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Amazon Nova 强化微调：原理、应用场景与实现指南
-
----
-
 ## 基本信息
 
 - **来源**: AWS Machine Learning Blog (blog)

@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# TabICLv2：更优性能与可扩展性的开源表格基础模型
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.11139v1
@@ -124,9 +120,7 @@ TabICLv2 的成功主要基于以下三个方面的创新：
 *   **论文声称**：
 
 ---
-## 技术分析
 
-# TabICLv2 技术分析
 
 ## 1. 研究背景与问题
 
@@ -431,7 +425,6 @@ TabICLv2 的设计基于**分布外泛化**的假设：
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

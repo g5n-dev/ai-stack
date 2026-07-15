@@ -31,10 +31,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# COMIC：基于智能体的素描喜剧生成框架
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.11048v1

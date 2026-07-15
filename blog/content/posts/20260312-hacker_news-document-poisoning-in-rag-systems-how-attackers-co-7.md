@@ -34,10 +34,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# RAG系统文档投毒攻击：攻击者如何污染AI数据源
-
----
-
 ## 基本信息
 
 - **作者**: aminerj

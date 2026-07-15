@@ -32,9 +32,10 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: 深入解析 Codex 代理循环，说明 Codex CLI 如何使用 Responses API 编排模型、工具、提示词和性能。 想象这样一个场景：你是一位正在为最后期限冲刺的软件工程师，面对着数千行复杂的遗留代码，你需要重构一个关键模块。过去，这需要花费数小时去理解逻辑、手动编写枯燥的样板代码。但现在，你只需在终端敲下一行简洁的指令，几秒钟内，一个智能体仿佛“附体”般接管了你的IDE。
 ---
 
-# 🎙️ 深度解密Agent循环！🚀从Codex看AI Agent的核心架构与价值🔍
+## 🎙️ 深度解密Agent循环！🚀从Codex看AI Agent的核心架构与价值🔍
 
 ---
 
@@ -166,7 +167,6 @@ Codex 智能体的循环依赖于 Responses API 的强大编排能力，其工�
 
 ---
 
-# 🔍 深度技术剖析：解构 Codex Agent 循环
 
 ## 1. 核心观点深度解读
 

@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AGI 定义变迁与时间线演进分析
-
----
-
 ## 基本信息
 
 - **作者**: skandium

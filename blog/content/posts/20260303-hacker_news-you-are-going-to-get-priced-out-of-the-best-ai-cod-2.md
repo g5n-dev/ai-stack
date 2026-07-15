@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 优质AI编程工具订阅费上涨，开发者面临成本压力
-
----
-
 ## 基本信息
 
 - **作者**: fi-le

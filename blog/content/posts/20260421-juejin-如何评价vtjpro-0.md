@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# VTJ.PRO：Vue 3开源AI低代码平台核心解析
-
----
-
 ## 基本信息
 
 - **作者**: 踩着两条虫
@@ -122,7 +118,6 @@ VTJ.PRO 作为 Vue 3 生态下的“AI+低代码”平台，在技术创新层�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [前端](/categories/%E5%89%8D%E7%AB%AF/) / [开源生态](/categories/%E5%BC%80%E6%BA%90%E7%94%9F%E6%80%81/)

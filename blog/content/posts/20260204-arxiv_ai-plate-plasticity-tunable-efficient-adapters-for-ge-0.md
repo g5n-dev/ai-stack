@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# PLATE：面向几何感知持续学习的可塑性调谐高效适配器
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.03846v1
@@ -130,7 +126,6 @@ PLATE 是一种无需过往任务数据的持续学习方法，它通过利用�
 
 ---
 
-# 深入分析：PLATE —— 无需旧数据的几何感知持续学习方法
 
 ## 1. 研究背景与问题
 
@@ -498,7 +493,6 @@ PLATE属于**Method-driven**的创新。它并没有提出全新的学习范式�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

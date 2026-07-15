@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 基于不完美人体运动数据学习人形机器人网球技能
-
----
-
 ## 基本信息
 
 - **作者**: danielmorozoff

@@ -32,10 +32,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# LocalGPT：基于Rust构建的本地优先AI助手，支持持久化记忆
-
----
-
 ## 基本信息
 
 - **作者**: yi_wang
@@ -432,7 +428,6 @@ print(f"AI响应: {response}")
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/)

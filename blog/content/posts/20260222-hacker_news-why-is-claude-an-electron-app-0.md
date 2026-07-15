@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 为何 Claude 选择基于 Electron 框架开发
-
----
-
 ## 基本信息
 
 - **作者**: dbreunig

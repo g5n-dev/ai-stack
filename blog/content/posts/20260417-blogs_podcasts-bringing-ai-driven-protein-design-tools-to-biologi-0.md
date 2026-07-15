@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 生物学家可用的开源AI蛋白质设计工具
-
----
-
 ## 基本信息
 
 - **来源**: MIT News (Machine Learning) (blog)
@@ -95,7 +91,6 @@ OpenProtein.AI通过开源策略降低AI蛋白质设计的技术门槛，有望�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [开源生态](/categories/%E5%BC%80%E6%BA%90%E7%94%9F%E6%80%81/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

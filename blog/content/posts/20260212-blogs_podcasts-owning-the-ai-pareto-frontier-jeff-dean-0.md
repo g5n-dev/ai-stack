@@ -45,10 +45,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Jeff Dean：重写搜索栈、TPU 与稀疏万亿参数模型
-
----
-
 ## 基本信息
 
 - **来源**: Latent Space (blog)
@@ -145,9 +141,7 @@ Jeff Dean 通过主导软硬件协同设计，确立了 Google 在 AI 领域的�
 3.  **观察窗口**：在未来 1-2 年内，观察 Google 是否能将其内部技术（如 TPU）通过 GCP 成功商业化。如果市场份额未能显著
 
 ---
-## 技术分析
 
-# 技术分析
 
 ## 1. 核心观点深度解读
 
@@ -303,7 +297,6 @@ Jeff Dean 通过主导软硬件协同设计，确立了 Google 在 AI 领域的�
 ---
 
 
----
 ## 站内链接
 
 - 分类： [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/) / [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

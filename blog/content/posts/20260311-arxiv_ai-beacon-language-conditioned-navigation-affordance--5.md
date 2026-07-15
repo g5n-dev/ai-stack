@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# BEACON：遮挡条件下的语言导航可行性预测
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.09961v1

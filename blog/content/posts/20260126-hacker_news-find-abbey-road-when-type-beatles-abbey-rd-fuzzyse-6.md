@@ -24,9 +24,11 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: 当用户在搜索框敲下“披头士艾比路”时，他们期待看到那张经典的斑马线专辑封面，而不是一堆冷冰冰的“语法错误”提示。 想象一下：你的数据库里明明躺着价值百万的黄金内容，却因为一个微小的拼写错误或关键词差异，被残酷地拒之门外。这就像你明明站在宝藏面前，却因为少拿了一把钥匙，只能空手而归！🔍💔
+  为什么传统的 SQL 查询总是如此“死板”？ 它们精确得令人发指，却对人类的“模糊”天性视而不见。
 ---
 
-# 📰 🔥Postgres最强搜索！模糊+语义，精准匹配Abbey Road！🚀
+## 📰 🔥Postgres最强搜索！模糊+语义，精准匹配Abbey Road！🚀
 
 ---
 

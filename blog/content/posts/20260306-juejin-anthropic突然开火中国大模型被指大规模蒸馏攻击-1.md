@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Anthropic指控三家中国公司大规模蒸馏模型
-
----
-
 ## 基本信息
 
 - **作者**: IvanCodes

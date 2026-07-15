@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# VAUQ：面向LVLM自评估的视觉感知不确定性量化
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.21054v1

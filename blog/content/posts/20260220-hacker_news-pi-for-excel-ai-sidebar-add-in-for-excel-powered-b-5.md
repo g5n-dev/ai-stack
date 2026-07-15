@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Pi for Excel：基于 Pi 的 Excel 侧边栏 AI 助手
-
----
-
 ## 基本信息
 
 - **作者**: rahimnathwani

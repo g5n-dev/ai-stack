@@ -35,10 +35,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 设计抗提示注入的AI代理：限制高风险操作与保护敏感数据
-
----
-
 ## 基本信息
 
 - **来源**: OpenAI Blog (blog)

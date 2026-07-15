@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# ConGA框架：机器翻译性别标注指南
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.17962v1

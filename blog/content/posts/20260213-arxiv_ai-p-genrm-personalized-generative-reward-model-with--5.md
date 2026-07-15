@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# P-GenRM：个性化生成式奖励模型与基于用户的测试时缩放
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.12116v1
@@ -134,7 +130,6 @@ P-GenRM 通过以下创新设计解决了上述问题：
 
 ---
 
-# 深入分析报告：P-GenRM: Personalized Generative Reward Model with Test-time User-based Scaling
 
 ## 1. 研究背景与问题
 
@@ -540,7 +535,6 @@ P-GenRM 通过引入个性化机制和测试时用户缩放，使得模型能够
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

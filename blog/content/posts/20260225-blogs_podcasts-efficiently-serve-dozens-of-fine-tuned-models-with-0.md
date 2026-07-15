@@ -37,10 +37,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 在 SageMaker AI 与 Bedrock 上利用 vLLM 高效部署多 LoRA 模型
-
----
-
 ## 基本信息
 
 - **来源**: AWS Machine Learning Blog (blog)

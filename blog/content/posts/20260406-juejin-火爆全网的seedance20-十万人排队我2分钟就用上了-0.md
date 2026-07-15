@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# SeedDance2.0快速上手：跳过万人排队，两分钟体验AI视频生成
-
----
-
 ## 基本信息
 
 - **作者**: AI袋鼠帝
@@ -64,7 +60,6 @@ Seedance2.0近日在网络上引发热议，因其能够快速生成高质量AI�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 指令微调LLM的紧凑提示实现论辩成分联合检测
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.03095v1

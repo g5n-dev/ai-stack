@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 基于TeslaMate数据库的OpenClaw行车数据接入方案
-
----
-
 ## 基本信息
 
 - **作者**: 诚实可靠小郎君_dpc

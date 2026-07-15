@@ -35,10 +35,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Agent Safehouse：macOS 原生沙箱技术保护本地 Agent
-
----
-
 ## 基本信息
 
 - **作者**: atombender

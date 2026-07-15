@@ -40,10 +40,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 在印度使用 Amazon Bedrock 跨区域推理运行 Claude 模型
-
----
-
 ## 基本信息
 
 - **来源**: AWS Machine Learning Blog (blog)

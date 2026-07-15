@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 315晚会曝光大模型投毒：操纵AI推荐虚假信息
-
----
-
 ## 基本信息
 
 - **作者**: uzong

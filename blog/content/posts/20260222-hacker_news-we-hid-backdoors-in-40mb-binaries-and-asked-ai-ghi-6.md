@@ -31,10 +31,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AI与Ghidra协同分析40MB二进制文件中的隐藏后门
-
----
-
 ## 基本信息
 
 - **作者**: jakozaur

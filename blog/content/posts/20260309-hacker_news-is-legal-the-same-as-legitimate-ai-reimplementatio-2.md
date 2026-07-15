@@ -31,10 +31,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AI重新实现与Copyleft侵蚀：合法与正当性辨析
-
----
-
 ## 基本信息
 
 - **作者**: dahlia

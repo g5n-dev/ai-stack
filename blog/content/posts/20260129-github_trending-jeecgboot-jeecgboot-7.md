@@ -45,8 +45,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Java低代码平台JeecgBoot：AI+零代码双模式
-
 > **原名**: jeecgboot /
 
       JeecgBoot
@@ -77,9 +75,8 @@ source_support: 0.0
 - **DeepWiki**: [https://deepwiki.com/jeecgboot/JeecgBoot](https://deepwiki.com/jeecgboot/JeecgBoot)
 
 ---
-## DeepWiki 速览（节选）
 
-# JeecgBoot Overview
+## JeecgBoot Overview
 
 Relevant source files
 
@@ -331,7 +328,6 @@ JeecgBoot采用前后端分离的微服务架构（根据仓库结构推断）�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

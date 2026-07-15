@@ -36,10 +36,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 本地运行AI的可行性评估与硬件需求分析
-
----
-
 ## 基本信息
 
 - **作者**: ricardbejarano

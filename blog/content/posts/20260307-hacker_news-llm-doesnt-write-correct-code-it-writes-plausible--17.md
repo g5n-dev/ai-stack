@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 大模型生成的代码看似合理实则存在错误
-
----
-
 ## 基本信息
 
 - **作者**: pretext

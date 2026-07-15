@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Superpower方法论：提升AI编程准确率与交付质量
-
----
-
 ## 基本信息
 
 - **作者**: 码森林

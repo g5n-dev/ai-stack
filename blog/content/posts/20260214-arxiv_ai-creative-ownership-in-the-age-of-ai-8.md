@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AI时代的创意所有权界定
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.12270v1
@@ -114,9 +110,7 @@ Annie Liang 与 Jay Lu 的《Creative Ownership in the Age of AI》是一篇将�
 *   **优劣分析：** 本文优于纯法学讨论的实证性，优于纯工程讨论的经济学解释力。但劣势在于，其数学
 
 ---
-## 技术分析
 
-# 技术分析
 
 ## 1. 研究背景与核心问题
 
@@ -384,7 +378,6 @@ Annie Liang 与 Jay Lu 的《Creative Ownership in the Age of AI》是一篇将�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

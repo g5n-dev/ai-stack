@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 仅解码器模型的机器翻译性别消歧诊断
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.17952v1

@@ -20,10 +20,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Long-Horizon Traffic Forecasting via Incident-Aware Con
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.16857v1

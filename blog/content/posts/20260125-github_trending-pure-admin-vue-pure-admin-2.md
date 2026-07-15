@@ -26,9 +26,12 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: '💡 原名: pure-admin / vue-pure-admin Relevant source files .markdownlint.json
+  CHANGELOG.enUS.md CHANGELOG.md CHANGELOG.zhCN.md README.en-US.md README.md build/optimize.ts
+  locales/en.yaml'
 ---
 
-# 🚀 ⚡️ pure-admin：开源最强Vue3管理后台！🔥
+## 🚀 ⚡️ pure-admin：开源最强Vue3管理后台！🔥
 
 > 💡 **原名**: pure-admin /
 
@@ -45,9 +48,8 @@ source_support: 0.0
 - **DeepWiki**: [https://deepwiki.com/pure-admin/vue-pure-admin](https://deepwiki.com/pure-admin/vue-pure-admin)
 
 ---
-## 📚 DeepWiki 速览（节选）
 
-# Overview
+## Overview
 
 Relevant source files
 
@@ -296,7 +298,6 @@ Sources: [README.md1-226](https://github.com/pure-admin/vue-pure-admin/blob/b203
 
 ---
 
-# 🚀 pure-admin/vue-pure-admin 深度技术剖析报告
 
 ## 1. 技术架构深度剖析 🏗️
 

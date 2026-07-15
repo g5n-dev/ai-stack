@@ -31,10 +31,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AI 为旧 MacBook 编写缺失的 FreeBSD Wi-Fi 驱动
-
----
-
 ## 基本信息
 
 - **作者**: varankinv

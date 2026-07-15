@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 伦敦首届AI工程师大会回顾
-
----
-
 ## 基本信息
 
 - **来源**: Latent Space (blog)
@@ -142,7 +138,6 @@ AIE Europe 系列会议正在构建欧洲 AI 工程实践的社区生态。跨�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

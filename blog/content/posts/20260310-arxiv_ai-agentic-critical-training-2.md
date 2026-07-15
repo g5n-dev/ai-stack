@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Agentic Critical Training：基于批判性反馈的大模型推理能力提升机制
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.08706v1

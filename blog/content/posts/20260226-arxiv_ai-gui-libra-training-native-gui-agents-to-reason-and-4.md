@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# GUI-Libra：动作感知监督与可验证RL训练原生GUI智能体
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.22190v1

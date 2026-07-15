@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# OpenClash 架构解析：节点、Canvas 与子 Agent 设计逻辑
-
----
-
 ## 基本信息
 
 - **作者**: 冬奇Lab

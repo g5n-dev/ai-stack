@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 基于预测集的最优决策方法
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.00989v1
@@ -121,7 +117,7 @@ Tao Wang与Edgar Dobriban的这篇论文《Optimal Decision-Making Based on Pred
 
 ---
 
-# 1. 研究背景与问题
+## 1. 研究背景与问题
 
 ### 核心问题
 该论文致力于解决**如何利用预测集进行最优决策**的问题。具体而言，当模型给出的输出是一个集合（预测集）而非单点预测时，决策者应当采取何种行动才能最小化损失或风险？
@@ -140,7 +136,7 @@ Tao Wang与Edgar Dobriban的这篇论文《Optimal Decision-Making Based on Pred
 
 ---
 
-# 2. 核心方法与创新
+## 2. 核心方法与创新
 
 ### 核心方法：风险最优共形预测 (ROCP)
 论文提出了**ROCP (Risk-Optimal Conformal Prediction)** 框架。这是一个两步走的策略：
@@ -162,7 +158,7 @@ Tao Wang与Edgar Dobriban的这篇论文《Optimal Decision-Making Based on Pred
 
 ---
 
-# 3. 理论基础
+## 3. 理论基础
 
 ### 理论依据：决策论与鲁棒优化
 论文的理论基石是 **Wald's 统计决策理论**。
@@ -179,7 +175,7 @@ $$ \min_{C \in \mathcal{C}} \sup_{P \in \mathcal{P}_{\text{amb}}} \mathbb{E}_{(X
 
 ---
 
-# 4. 实验与结果
+## 4. 实验与结果
 
 ### 实验设计
 作者在两个高风险领域进行了评估：
@@ -195,7 +191,7 @@ $$ \min_{C \in \mathcal{C}} \sup_{P \in \mathcal{P}_{\text{amb}}} \mathbb{E}_{(X
 
 ---
 
-# 5. 应用前景
+## 5. 应用前景
 
 ### 实际应用场景
 1.  **辅助医疗诊断**：医生不仅需要知道“可能是什么病”，还需要知道“如果没在这个列表里，是否需要进一步检查”。ROCP 可以根据漏诊的严重程度生成检查清单。
@@ -207,7 +203,7 @@ $$ \min_{C \in \mathcal{C}} \sup_{P \in \mathcal{P}_{\text{amb}}} \mathbb{E}_{(X
 
 ---
 
-# 6. 研究启示
+## 6. 研究启示
 
 ### 对领域的启示
 这篇论文是 **"Conformal Prediction for Decision Making"** 这一新兴方向的奠基性工作之一。它启示研究者：
@@ -220,7 +216,7 @@ $$ \min_{C \in \mathcal{C}} \sup_{P \in \mathcal{P}_{\text{amb}}} \mathbb{E}_{(X
 
 ---
 
-# 7. 学习建议
+## 7. 学习建议
 
 ### 适合读者
 - 从事不确定性量化研究的研究生。
@@ -239,7 +235,7 @@ $$ \min_{C \in \mathcal{C}} \sup_{P \in \mathcal{P}_{\text{amb}}} \mathbb{E}_{(X
 
 ---
 
-# 8. 相关工作对比
+## 8. 相关工作对比
 
 | 对比维度 | 传统共形预测 | 异构共形预测 | 本文 (ROCP) |
 | :--- | :--- | :--- | :--- |
@@ -255,7 +251,7 @@ $$ \min_{C \in \mathcal{C}} \sup_{P \in \mathcal{P}_{\text{amb}}} \mathbb{E}_{(X
 
 ---
 
-# 9. 研究哲学：可证伪性与边界
+## 9. 研究哲学：可证伪性与边界
 
 ### 关键假设与归纳偏置
 1.  **可交换性假设**：这是所有共形预测的基石。假设数据是独立同分布的，或者至少是可交换的。如果数据分布发生剧烈漂移（如非平稳时间序列），ROCP 的覆盖率保证将失效。
@@ -527,7 +523,6 @@ $$ \min_{C \in \mathcal{C}} \sup_{P \in \mathcal{P}_{\text{amb}}} \mathbb{E}_{(X
 
 ---
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/) / [数据](/categories/%E6%95%B0%E6%8D%AE/)

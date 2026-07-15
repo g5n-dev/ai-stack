@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 机器遗忘中保护未删除数据的隐私防御机制
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.16697v1

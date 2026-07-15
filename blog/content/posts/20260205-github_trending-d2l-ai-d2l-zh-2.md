@@ -47,8 +47,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 动手学深度学习：面向中文读者的可运行教材
-
 > **原名**: d2l-ai /
 
       d2l-zh
@@ -64,9 +62,8 @@ source_support: 0.0
 - **DeepWiki**: [https://deepwiki.com/d2l-ai/d2l-zh](https://deepwiki.com/d2l-ai/d2l-zh)
 
 ---
-## DeepWiki 速览（节选）
 
-# Overview
+## Overview
 
 Relevant source files
 
@@ -268,9 +265,7 @@ The D2L.ai repository provides a comprehensive approach to deep learning educati
 1.  **环境测试**
 
 ---
-## 技术分析
 
-# 《动手学深度学习》技术架构深度解析
 
 ## 1. 技术架构深度剖析
 
@@ -1071,7 +1066,6 @@ print(recommendate_resources("中级", ["机器学习", "自然语言处理"]))
 
 ---
 
----
 ## 站内链接
 
 - 分类： [开源生态](/categories/%E5%BC%80%E6%BA%90%E7%94%9F%E6%80%81/) / [数据](/categories/%E6%95%B0%E6%8D%AE/)

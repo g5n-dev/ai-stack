@@ -25,9 +25,11 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: 🚑 想象一下，你的胸口突然剧痛，心跳加速。 在生死攸关的瞬间，你颤抖着双手打开 Google，搜索“心脏病发作前兆”。🔍 你以为会看到梅奥诊所或
+  WebMD 的专业建议，但 Google 闪亮登场的新 AI 摘要（AI Overviews）却把目光投向了另一个地方——YouTube。🎥 这听起来像是个荒诞的笑话，但却是正在发生的硬核现实！
 ---
 
-# 📰 谷歌健康搜索惊现YouTube>医疗网站？AI Overview引争议！🤖🏥
+## 📰 谷歌健康搜索惊现YouTube>医疗网站？AI Overview引争议！🤖🏥
 
 ---
 

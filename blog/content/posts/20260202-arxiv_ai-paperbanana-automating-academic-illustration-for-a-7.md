@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# PaperBanana：面向AI科研人员的学术绘图自动化工具
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2601.23265v1
@@ -138,7 +134,6 @@ PaperBanana 为学术插图的自动化生成铺平了道路，显著减轻了�
 
 ---
 
-# PaperBanana：为AI科学家自动化学术绘图的深度分析报告
 
 ## 1. 研究背景与问题
 
@@ -526,7 +521,6 @@ PaperBanana 的核心创新不在于发明了新的生成算法，而在于**系
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

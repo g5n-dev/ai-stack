@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# PHINN-EEG：梦境脑电拓扑分析与动态Betti曲线分类
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2607.09662v1
@@ -161,7 +157,6 @@ PSD、AR 系数等在噪声鲁棒性上表现良好，但在捕捉网络循环�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/)

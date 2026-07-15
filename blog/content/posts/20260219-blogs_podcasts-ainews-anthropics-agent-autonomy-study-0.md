@@ -37,10 +37,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Anthropic 公布 METR 数据评估 Agent 自主能力
-
----
-
 ## 基本信息
 
 - **来源**: Latent Space (blog)

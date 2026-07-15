@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# SokoBench：评估大模型长程规划与推理能力
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2601.20856v1
@@ -150,7 +146,6 @@ SokoBench 填补了纯逻辑、长视界规划的空白。
 
 ---
 
-# 深入分析报告：SokoBench——评估大型语言模型的长视界规划与推理能力
 
 ## 1. 研究背景与问题
 
@@ -548,7 +543,6 @@ SokoBench 指出，仅看最终的成功率是不够的。为了全面评估模�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AI 正在摧毁开源生态，且技术尚未成熟
-
----
-
 ## 基本信息
 
 - **作者**: delduca

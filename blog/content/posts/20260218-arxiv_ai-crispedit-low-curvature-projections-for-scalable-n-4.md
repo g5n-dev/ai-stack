@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# CrispEdit：低曲率投影实现可扩展的大模型无损编辑
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.15823v1
@@ -126,9 +122,7 @@ CrispEdit 是一个可扩展且基于原则的二阶编辑算法，主要创新�
     1.
 
 ---
-## 技术分析
 
-# CrispEdit: 低曲率投影实现可扩展的非破坏性 LLM 编辑
 
 ## 1. 研究背景与问题
 
@@ -439,7 +433,6 @@ CrispEdit 的理论基础主要建立在**二阶优化**和**信息几何**之�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

@@ -43,10 +43,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# xAI 推出 Grok Imagine API：顶级视频模型与低延迟定价
-
----
-
 ## 基本信息
 
 - **来源**: Latent Space (blog)
@@ -131,9 +127,7 @@ xAI 巩固了其作为前沿实验室的地位，并准备与 SpaceX 合并
     *   *验证点：* 观察在负载增加时，其宣称的“Best Latency”是否
 
 ---
-## 技术分析
 
-# 技术分析：xAI Grok 视频生成模型与基础设施垂直整合
 
 ## 1. 核心观点深度解读
 
@@ -290,7 +284,6 @@ xAI 巩固了其作为前沿实验室的地位，并准备与 SpaceX 合并
 ---
 
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [产品与创业](/categories/%E4%BA%A7%E5%93%81%E4%B8%8E%E5%88%9B%E4%B8%9A/)

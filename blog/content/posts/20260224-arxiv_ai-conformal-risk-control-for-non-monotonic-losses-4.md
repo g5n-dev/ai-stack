@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 非单调损失函数的保形风险控制方法
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.20151v1

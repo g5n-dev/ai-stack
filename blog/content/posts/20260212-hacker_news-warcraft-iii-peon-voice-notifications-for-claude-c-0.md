@@ -33,10 +33,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Warcraft III 农民语音通知功能接入 Claude Code
-
----
-
 ## 基本信息
 
 - **作者**: doppp
@@ -497,7 +493,6 @@ TechFlow 为金融客户提供高频交易系统，其 DevOps 团队需要 24/7 
 
 ---
 
----
 ## 站内链接
 
 - 分类： [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

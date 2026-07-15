@@ -24,9 +24,11 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: 引言 试想一下，如果我们能拥有一台“显微镜”，不仅能看到大型语言模型（LLM）在数万亿参数的迷宫中是如何“思考”的，还能实时窥探它们在训练过程中穿越的“地形”起伏，那将会是怎样一番景象？🤔
+  长期以来，AI 研究者面临着一个巨大的悖论：我们建造了越来越宏伟的模型，却对它们内部的优化地貌（Loss Landscape）知之甚少。
 ---
 
-# 📚 🔥LLM训练动力学新突破！可扩展损失景观曲率度量🚀
+## 📚 🔥LLM训练动力学新突破！可扩展损失景观曲率度量🚀
 
 ---
 
@@ -144,7 +146,6 @@ source_support: 0.0
 
 ---
 
-# 深度分析报告：一种用于分析LLM训练动态的可扩展损失景观曲率度量
 
 ## 1. 研究背景与问题 🔍
 

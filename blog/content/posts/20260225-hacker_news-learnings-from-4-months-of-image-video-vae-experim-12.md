@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 四个月图像视频VAE实验的技术总结与经验
-
----
-
 ## 基本信息
 
 - **作者**: schopra909

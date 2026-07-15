@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 基于内部激活监测生成过程中的突发奖励黑客行为
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.04069v1

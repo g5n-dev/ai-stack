@@ -35,10 +35,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 警惕AI总结幻觉：多语言安全与大模型护栏机制
-
----
-
 ## 基本信息
 
 - **作者**: benbreen

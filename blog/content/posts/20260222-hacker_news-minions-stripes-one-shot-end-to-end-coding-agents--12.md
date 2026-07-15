@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Stripe 发布 Minions：端到端一次性编码代理
-
----
-
 ## 基本信息
 
 - **作者**: kiyanwang

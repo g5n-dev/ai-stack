@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Mozilla组建AI联盟以对抗OpenAI与Anthropic
-
----
-
 ## 基本信息
 
 - **作者**: donutshop
@@ -402,7 +398,6 @@ Mozilla 的行动部分源于对现有 AI 安全措施的不信任。最佳实�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [开源生态](/categories/%E5%BC%80%E6%BA%90%E7%94%9F%E6%80%81/) / [产品与创业](/categories/%E4%BA%A7%E5%93%81%E4%B8%8E%E5%88%9B%E4%B8%9A/)

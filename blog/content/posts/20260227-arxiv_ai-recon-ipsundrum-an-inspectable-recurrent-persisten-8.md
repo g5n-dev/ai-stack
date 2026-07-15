@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# ReCoN-Ipsundrum：具备情感耦合控制与机制关联意识指标的可检查循环持久代理
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.23232v1

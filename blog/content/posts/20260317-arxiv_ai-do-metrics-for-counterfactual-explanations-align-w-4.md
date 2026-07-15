@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 反事实解释指标与用户感知的一致性研究
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.15607v1

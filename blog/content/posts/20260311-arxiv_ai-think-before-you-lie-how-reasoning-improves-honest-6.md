@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 推理机制如何提升大模型的诚实度
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.09957v1

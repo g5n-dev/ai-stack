@@ -21,9 +21,11 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: 这里为您撰写了一个极具吸引力、直击痛点的引言： 你是否意识到，就在你阅读这句话的短短几秒钟里，你的手指可能正不自觉地伸向嘴边？ 🛑 停！先别动。
+  想象一下这样一个真实的场景：为了准备一场至关重要的演示汇报，你在电脑前枯坐了整整一下午，大脑飞速运转，手指却也在疯狂“加班”——你焦虑地啃咬着指甲，直到指尖渗血、甲床受损。
 ---
 
-# 📰 ⚠️一咬指甲就强制关机？这款桌面App太狠了！🖥️🚫
+## 📰 ⚠️一咬指甲就强制关机？这款桌面App太狠了！🖥️🚫
 
 ---
 

@@ -37,10 +37,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Bedrock Robotics用视觉语言模型规模化标注物理AI训练数据
-
----
-
 ## 基本信息
 
 - **来源**: AWS Machine Learning Blog (blog)

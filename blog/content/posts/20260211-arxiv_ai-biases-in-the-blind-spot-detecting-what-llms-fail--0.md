@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# LLM盲区偏差检测：识别模型未提及内容
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.10117v1
@@ -117,7 +113,6 @@ Iván Arcuschin 等人的这篇论文针对大型语言模型（LLM）安全性�
 
 ---
 
-# 论文深度分析：Biases in the Blind Spot: Detecting What LLMs Fail to Mention
 
 ## 1. 研究背景与问题
 
@@ -396,7 +391,6 @@ Iván Arcuschin 等人的这篇论文针对大型语言模型（LLM）安全性�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [安全](/categories/%E5%AE%89%E5%85%A8/)

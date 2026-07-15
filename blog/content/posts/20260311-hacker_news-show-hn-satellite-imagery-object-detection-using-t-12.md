@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 基于文本提示的卫星影像目标检测
-
----
-
 ## 基本信息
 
 - **作者**: eyasu6464

@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 开源权重不等同于开源训练过程
-
----
-
 ## 基本信息
 
 - **作者**: addiefoote8

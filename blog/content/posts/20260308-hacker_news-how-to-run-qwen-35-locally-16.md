@@ -32,10 +32,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 如何在本地部署运行 Qwen 3.5 大模型
-
----
-
 ## 基本信息
 
 - **作者**: Curiositry

@@ -24,9 +24,11 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: 这里为你撰写了一个极具吸引力的引言，融合了真实痛点、反直觉的观点和强烈的情绪感染力： 凌晨 3 点，你被一阵急促的 On-call 电话惊醒
+  📱，心脏狂跳不止。你的系统挂了，不是因为流量激增，而是因为一个看似无害的第三方服务响应慢了 500 毫秒。 结果呢？ 你的消息队列瞬间被堵塞，成千上万条交易数据像失控的列车一样发生堆积，整个业务链条瞬间瘫痪。
 ---
 
-# 📰 🚀 事件驱动系统的救星！用PostgreSQL实现死信队列，架构师必看！
+## 📰 🚀 事件驱动系统的救星！用PostgreSQL实现死信队列，架构师必看！
 
 ---
 

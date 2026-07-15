@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Rust 驱动的 RAG 文档分块工具：速度提升 40 倍且内存恒定
-
----
-
 ## 基本信息
 
 - **作者**: kriralabs

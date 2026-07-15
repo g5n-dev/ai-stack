@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# InftyThink+: 基于强化学习的高效无限视野推理框架
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.06960v1
@@ -128,7 +124,6 @@ InftyThink+ 通过强化学习实现了推理过程中决策的动态优化，�
 
 ---
 
-# InftyThink+ 论文深度分析报告
 
 ## 1. 研究背景与问题
 
@@ -505,7 +500,6 @@ InftyThink+ 将推理过程形式化为 POMDP：
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

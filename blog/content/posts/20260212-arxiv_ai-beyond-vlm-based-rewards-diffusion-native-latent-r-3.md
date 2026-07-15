@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 超越VLM奖励：扩散原生潜在奖励建模
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.11146v1
@@ -144,7 +140,6 @@ DiNa-LRM在图像质量和生成多样性上均优于基于VLM的奖励模型，
 
 ---
 
-# 论文深入分析：Beyond VLM-Based Rewards: Diffusion-Native Latent Reward Modeling
 
 ## 1. 研究背景与问题
 
@@ -518,7 +513,6 @@ DiNa-LRM在图像质量和生成多样性上均优于基于VLM的奖励模型，
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

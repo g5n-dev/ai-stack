@@ -21,9 +21,11 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: 还记得那个让无数人在键盘前抓狂、绞尽脑汁输入“go north”或“open door”的年代吗？作为文字冒险游戏的鼻祖，《Zork》系列曾是几代极客的图腾，拥有着令人神往的庞大世界。但今天，面对那个只有冰冷文本的复古界面，你还愿意在没有一张图片、没有一点提示的黑暗迷宫中摸索多久？
+  这不仅仅是怀旧的门槛，更是现代玩家与经典之间的“次元壁”。
 ---
 
-# 📰 🚀用LLM重写ZORKS！让AI玩转文字冒险游戏，这波操作太硬核了！
+## 📰 🚀用LLM重写ZORKS！让AI玩转文字冒险游戏，这波操作太硬核了！
 
 ---
 

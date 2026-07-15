@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# OpenAI推合作伙伴网络 1.5亿美元助企业AI转型
-
----
-
 ## 基本信息
 
 - **来源**: OpenAI Blog (blog)
@@ -125,7 +121,6 @@ OpenAI Partner Network的1.5亿美元投资标志着企业AI应用从概念验�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [产品与创业](/categories/%E4%BA%A7%E5%93%81%E4%B8%8E%E5%88%9B%E4%B8%9A/)

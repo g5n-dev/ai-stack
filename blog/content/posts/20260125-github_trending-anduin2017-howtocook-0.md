@@ -25,9 +25,11 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: '💡 原名: Anduin2017 / HowToCook Relevant source files .github/readme-generate.js
+  .github/templates/mkdocstemplate.yml .github/templates/readmetemplate.md .github/workflows/build.yml'
 ---
 
-# 🚀 🔥Anduin2017+HowToCook：GitHub超火！编程与烹饪完美结合！
+## 🚀 🔥Anduin2017+HowToCook：GitHub超火！编程与烹饪完美结合！
 
 > 💡 **原名**: Anduin2017 /
 
@@ -44,9 +46,8 @@ source_support: 0.0
 - **DeepWiki**: [https://deepwiki.com/Anduin2017/HowToCook](https://deepwiki.com/Anduin2017/HowToCook)
 
 ---
-## 📚 DeepWiki 速览（节选）
 
-# Overview
+## Overview
 
 Relevant source files
 
@@ -266,7 +267,6 @@ HowToCook 并没有消除做菜本身的复杂性（化学反应与物理操作�
 
 ---
 
-# 🥘 HowToCook 仓库深度技术分析报告
 
 ## 1. 技术架构深度剖析
 

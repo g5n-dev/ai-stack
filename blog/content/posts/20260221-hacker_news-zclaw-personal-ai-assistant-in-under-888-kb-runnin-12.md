@@ -37,10 +37,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# zclaw：体积小于888 KB的ESP32个人AI助手
-
----
-
 ## 基本信息
 
 - **作者**: tosh

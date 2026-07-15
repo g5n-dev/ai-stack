@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# OpenHands 拆解（九）：AgentController 的设计思路
-
----
-
 ## 基本信息
 
 - **作者**: 罗西的思考

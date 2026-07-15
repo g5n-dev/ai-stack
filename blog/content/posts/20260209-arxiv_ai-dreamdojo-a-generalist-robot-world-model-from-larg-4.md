@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# DreamDojo：基于大规模人类视频的通用机器人世界模型
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.06949v1
@@ -122,7 +118,6 @@ DreamDojo 试图解决机器人学习中的“数据规模”与“动作对齐�
 
 ---
 
-# DreamDojo: 基于大规模人类视频的通用机器人世界模型深度解析
 
 ## 1. 研究背景与问题
 
@@ -551,7 +546,6 @@ DreamDojo 通过以下方式克服这种差异：
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

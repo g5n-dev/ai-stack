@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AI Agent 测试核心难题：非确定性输出下的验证方法
-
----
-
 ## 基本信息
 
 - **作者**: Div布局师

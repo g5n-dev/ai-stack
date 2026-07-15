@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 超越vLLM性能的自研推理栈技术解析
-
----
-
 ## 基本信息
 
 - **作者**: lukebechtel

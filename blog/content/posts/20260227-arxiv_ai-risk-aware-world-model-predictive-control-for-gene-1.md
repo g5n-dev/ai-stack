@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 风险感知世界模型预测控制提升端到端自动驾驶泛化性
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.23259v1

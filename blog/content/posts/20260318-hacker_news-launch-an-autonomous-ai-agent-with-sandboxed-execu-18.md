@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Launch an autonomous AI agent with sandboxed execution
-
----
-
 ## 基本信息
 
 - **作者**: wiseprobe

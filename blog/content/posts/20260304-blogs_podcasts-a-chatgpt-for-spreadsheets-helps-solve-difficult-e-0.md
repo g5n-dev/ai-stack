@@ -37,10 +37,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 电子表格AI工具加速解决电网优化与车辆设计等复杂工程问题
-
----
-
 ## 基本信息
 
 - **来源**: MIT News (Machine Learning) (blog)

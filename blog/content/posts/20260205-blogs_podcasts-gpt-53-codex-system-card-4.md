@@ -33,10 +33,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# GPT-5.3-Codex：融合推理与编程的智能体模型
-
----
-
 ## 基本信息
 
 - **来源**: OpenAI Blog (blog)
@@ -271,7 +267,6 @@ GPT-5.3-Codex 被定义为“Agentic（代理型）”编程模型，这标志�
 ---
 
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 从LLM到Agent：一文拆解AI核心概念与演进
-
----
-
 ## 基本信息
 
 - **作者**: 毅航

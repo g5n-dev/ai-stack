@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 面向自动定理证明的最小智能体框架
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.24273v1

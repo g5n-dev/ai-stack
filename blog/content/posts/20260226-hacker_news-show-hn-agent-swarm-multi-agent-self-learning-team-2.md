@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Agent Swarm：开源多智能体自学习团队框架
-
----
-
 ## 基本信息
 
 - **作者**: tarasyarema

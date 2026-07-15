@@ -31,10 +31,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Mistral AI 发布 Forge 模型微调工具
-
----
-
 ## 基本信息
 
 - **作者**: pember

@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Mistral Voxtral Mini 4B 浏览器端实时语音 Rust 实现
-
----
-
 ## 基本信息
 
 - **作者**: Curiositry
@@ -402,7 +398,6 @@ Rust 编译为 WebAssembly (Wasm) 后，能够提供接近原生的性能。对�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [前端](/categories/%E5%89%8D%E7%AB%AF/)

@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Spotify AI DJ 推荐机制缺陷与算法局限性分析
-
----
-
 ## 基本信息
 
 - **作者**: ingve

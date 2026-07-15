@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Speculative Decoding：推测解码加速大模型推理
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.03251v1

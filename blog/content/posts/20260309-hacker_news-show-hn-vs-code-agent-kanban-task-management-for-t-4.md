@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# VS Code Agent Kanban：面向 AI 辅助开发者的任务管理工具
-
----
-
 ## 基本信息
 
 - **作者**: gbro3n

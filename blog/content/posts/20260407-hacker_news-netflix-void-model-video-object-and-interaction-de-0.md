@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Netflix Void模型实现交互与视频对象删除功能
-
----
-
 ## 基本信息
 
 - **作者**: bobsoap
@@ -87,7 +83,6 @@ Netflix的Void模型揭示了流媒体平台在内容生命周期管理中的关
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

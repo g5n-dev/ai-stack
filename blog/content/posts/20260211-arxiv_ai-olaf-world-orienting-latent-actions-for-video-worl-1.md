@@ -21,10 +21,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Olaf-World：面向视频世界模型的潜在动作定向方法
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.10104v1
@@ -61,7 +57,6 @@ source_support: 0.0
 
 ---
 
-# Olaf-World: 面向视频世界模型的潜在动作定向深度分析
 
 ## 1. 研究背景与问题
 
@@ -483,7 +478,6 @@ Codebook 的容量需要仔细调整，过小会导致信息丢失，过大则�
 ---
 
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/)

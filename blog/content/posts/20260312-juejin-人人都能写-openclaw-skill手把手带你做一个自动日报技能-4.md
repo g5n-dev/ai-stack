@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# OpenClow Skill 开发实战：手把手实现自动日报技能
-
----
-
 ## 基本信息
 
 - **作者**: 亚马逊云开发者

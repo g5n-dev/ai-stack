@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# KV Cache与位置编码：大模型推理加速原理
-
----
-
 ## 基本信息
 
 - **作者**: 树獭叔叔

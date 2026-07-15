@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# OpenAI融资110亿美元 亚马逊英伟达软银参投
-
----
-
 ## 基本信息
 
 - **作者**: throwaw12

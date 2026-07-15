@@ -48,10 +48,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# GPT-5.2 推导出理论物理新结果
-
----
-
 ## 基本信息
 
 - **作者**: davidbarker
@@ -411,7 +407,6 @@ CERN 引入 GPT-5.2 辅助进行理论推导和数据分析。不同于以往的
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

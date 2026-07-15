@@ -25,10 +25,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Anthropic超越OpenAI登顶AI创企估值榜首
-
----
-
 ## 基本信息
 
 - **作者**: Bolat14
@@ -84,7 +80,6 @@ Anthropic的Claude系列模型在企业级AI应用场景中建立了明确优势
 
 ---
 
----
 ## 站内链接
 
 - 分类： [产品与创业](/categories/%E4%BA%A7%E5%93%81%E4%B8%8E%E5%88%9B%E4%B8%9A/)

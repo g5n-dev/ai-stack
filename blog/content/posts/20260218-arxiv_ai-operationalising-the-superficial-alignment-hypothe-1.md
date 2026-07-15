@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 基于任务复杂度的浅层对齐假说操作化研究
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.15829v1
@@ -110,7 +106,6 @@ source_support: 0.0
 
 ---
 
-# 论文深入分析：通过任务复杂度运作“浅层对齐假设”
 
 ## 1. 研究背景与问题
 
@@ -494,7 +489,6 @@ source_support: 0.0
 
 ---
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/) / [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

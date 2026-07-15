@@ -32,10 +32,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 研究：自生成的智能体技能通常无效
-
----
-
 ## 基本信息
 
 - **作者**: mustaphah
@@ -394,7 +390,6 @@ for skill in skills_to_score:
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

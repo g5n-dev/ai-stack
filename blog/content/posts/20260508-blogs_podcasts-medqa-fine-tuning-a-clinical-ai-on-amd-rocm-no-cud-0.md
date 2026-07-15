@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 在AMD ROCm上微调MedQA临床AI：无需CUDA
-
----
-
 ## 基本信息
 
 - **来源**: Hugging Face Blog (blog)
@@ -151,7 +147,6 @@ MedQA 项目尝试在 AMD ROCm 平台上对医学诊断模型进行微调，以�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

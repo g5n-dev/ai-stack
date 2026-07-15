@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Flutter计划支持Packaged AI Assets以提升AI理解能力
-
----
-
 ## 基本信息
 
 - **作者**: 恋猫de小郭
@@ -201,7 +197,6 @@ source_support: 0.0
 ---
 
 
----
 ## 站内链接
 
 - 分类： [前端](/categories/%E5%89%8D%E7%AB%AF/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

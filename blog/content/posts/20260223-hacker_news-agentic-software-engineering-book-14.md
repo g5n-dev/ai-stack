@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Agentic 软件工程：智能体驱动的开发范式
-
----
-
 ## 基本信息
 
 - **作者**: bananaflag

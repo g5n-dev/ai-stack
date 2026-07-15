@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AI工程化门槛降低，全员皆可参与模型开发
-
----
-
 ## 基本信息
 
 - **作者**: sn0wflak3s

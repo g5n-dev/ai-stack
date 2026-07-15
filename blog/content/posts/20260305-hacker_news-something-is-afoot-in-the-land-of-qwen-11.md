@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Qwen 模型动态更新与能力演进分析
-
----
-
 ## 基本信息
 
 - **作者**: simonw

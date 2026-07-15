@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AI技能如何悄然实现工作日自动化
-
----
-
 ## 基本信息
 
 - **作者**: rkrizanovskis

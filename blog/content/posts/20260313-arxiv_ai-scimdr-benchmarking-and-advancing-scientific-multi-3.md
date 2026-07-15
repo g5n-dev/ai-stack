@@ -31,10 +31,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# SciMDR：科学多模态文档推理基准与进展
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.12249v1

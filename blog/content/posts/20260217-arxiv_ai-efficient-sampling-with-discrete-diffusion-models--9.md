@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 离散扩散模型高效采样：具备锐利性与自适应保证
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.15008v1
@@ -125,7 +121,6 @@ source_support: 0.0
 
 ---
 
-# 论文深入分析：基于离散扩散模型的高效采样
 
 ## 1. 研究背景与问题
 
@@ -527,7 +522,6 @@ source_support: 0.0
 
 ---
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/) / [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

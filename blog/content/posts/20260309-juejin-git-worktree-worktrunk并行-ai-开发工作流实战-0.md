@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Git Worktree 实战：实现 AI 开发并行工作流
-
----
-
 ## 基本信息
 
 - **作者**: RickeyBoy

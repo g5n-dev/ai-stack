@@ -31,10 +31,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Meta提示、上下文工程与规格驱动的开发系统
-
----
-
 ## 基本信息
 
 - **作者**: stefankuehnel

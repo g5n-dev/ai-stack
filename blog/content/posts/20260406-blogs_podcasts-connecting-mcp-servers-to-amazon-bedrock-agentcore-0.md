@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AgentCore Gateway授权码流程连接MCP服务器教程
-
----
-
 ## 基本信息
 
 - **来源**: AWS Machine Learning Blog (blog)
@@ -40,9 +36,8 @@ source_support: 0.0
 - **链接**: [https://aws.amazon.com/blogs/machine-learning/connecting-mcp-servers-to-amazon-bedrock-agentcore-gateway-using-authorization-code-flow](https://aws.amazon.com/blogs/machine-learning/connecting-mcp-servers-to-amazon-bedrock-agentcore-gateway-using-authorization-code-flow)
 
 ---
-## 摘要/简介
 
-# 中文翻译
+## 中文翻译
 
 Amazon Bedrock AgentCore Gateway 提供了一个集中层，用于管理 AI 代理如何连接到组织内的各种工具和 MCP 服务器。在本文中，我们将逐步介绍如何配置 AgentCore Gateway 以使用授权码流程（Authorization Code flow）连接到受 OAuth 保护的 MCP 服务器。
 
@@ -217,7 +212,6 @@ AgentCore Gateway 通过标准化的 Authorization Code 流程，实现对受保
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/)

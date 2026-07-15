@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 可恢复视觉令牌路由：重新路由而非删除
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2606.12412v1
@@ -144,7 +140,6 @@ Reroute 可在资源受限的移动或嵌入式设备上实现更高效的视觉
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

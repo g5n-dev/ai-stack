@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 基于认知上下文学习构建大模型多智能体系统的信任机制
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2601.21742v1
@@ -124,9 +120,7 @@ source_support: 0.0
     *   **vs. 社会推理增强Agent**：一些研究使用“辩论”来达成
 
 ---
-## 技术分析
 
-# 论文技术分析：Epistemic Context Learning (ECL)
 
 ## 1. 问题定义与动机
 
@@ -420,7 +414,6 @@ ECL 的核心在于处理“已知”与“未知”。代理应具备评估自�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

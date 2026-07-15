@@ -31,10 +31,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 基于超单纯形投影的可微零一损失函数
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.23336v1

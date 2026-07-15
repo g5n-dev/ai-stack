@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Mine and Refine：优化电商搜索检索的分级相关性
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.17654v1

@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 甲骨龙拟裁员3万人以资助AI数据中心建设
-
----
-
 ## 基本信息
 
 - **作者**: ljoshua

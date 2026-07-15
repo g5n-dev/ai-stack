@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 韧性经济下AI驱动创业的多目标优化方法
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.08692v1

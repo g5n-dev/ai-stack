@@ -31,10 +31,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 面向WebGIS开发的双螺旋治理：构建可靠智能体
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.04390v1

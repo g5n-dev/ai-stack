@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# CUDA Agent：面向高性能内核生成的大规模智能体强化学习框架
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.24286v1

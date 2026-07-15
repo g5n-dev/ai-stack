@@ -31,10 +31,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# GitAgent：将任意 Git 仓库转化为 AI 智能体的开源标准
-
----
-
 ## 基本信息
 
 - **作者**: sivasurend

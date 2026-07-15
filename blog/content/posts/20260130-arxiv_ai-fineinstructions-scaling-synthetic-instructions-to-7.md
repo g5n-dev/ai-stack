@@ -31,10 +31,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# FineInstructions：将合成指令数据扩展至预训练规模
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2601.22146v1
@@ -139,7 +135,6 @@ source_support: 0.0
 
 ---
 
-# 深入分析报告：FineInstructions —— 合成指令数据的预训练规模扩展
 
 ## 1. 研究背景与问题
 
@@ -555,7 +550,6 @@ FineInstructions的重要性在于它打破了数据规模的瓶颈。如果能�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

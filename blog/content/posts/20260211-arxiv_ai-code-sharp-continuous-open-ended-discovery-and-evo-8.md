@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# CODE-SHARP：基于分层奖励程序的技能持续演化框架
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.10085v1
@@ -127,7 +123,6 @@ source_support: 0.0
 
 ---
 
-# CODE-SHARP: 开放式技能发现与演化框架深度分析
 
 ## 1. 研究背景与问题
 
@@ -512,7 +507,6 @@ CODE-SHARP 强调技能的可重用性。在编写奖励程序时，应尽量使
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

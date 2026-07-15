@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# RNN基础：循环神经网络的核心原理与作用
-
----
-
 ## 基本信息
 
 - **作者**: 山间小僧
@@ -92,7 +88,6 @@ Seq2Seq 在 RNN 基础上提出编码‑解码框架：编码器将输入序列�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

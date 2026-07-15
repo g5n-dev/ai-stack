@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Adam为何优于SGD：二阶矩归一化产生更尖锐的尾部
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.03099v1

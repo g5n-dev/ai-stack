@@ -21,9 +21,12 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: 引言： 你能想象一个没有 Hacker News 的开发者世界吗？过去一年，这个硅谷“技术风向标”的 Show HN 板块每月发帖量暴增
+  120%——相当于每 3 个新项目里就有 2 个在争夺你仅有的 5 分钟注意力时间 ⏱️。但更令人不安的是：那些曾经引发万人热议的“年度最佳项目”，如今为何在首页存活时间从平均
+  8 小时暴跌到 2 小时？
 ---
 
-# 📰 Show HN发帖量同比翻倍！黑客社区为何彻底沸腾？🚀🔥
+## 📰 Show HN发帖量同比翻倍！黑客社区为何彻底沸腾？🚀🔥
 
 ---
 

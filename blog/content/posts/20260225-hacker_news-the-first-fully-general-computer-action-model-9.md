@@ -32,10 +32,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 首个完全通用的计算机动作模型
-
----
-
 ## 基本信息
 
 - **作者**: nee1r

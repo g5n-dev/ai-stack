@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 构建生产级最近邻系统的工程实践与经验总结
-
----
-
 ## 基本信息
 
 - **作者**: Jashwanth01

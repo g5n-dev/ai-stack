@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Anthropic 发布 AI 熟练度指数以评估教育领域应用
-
----
-
 ## 基本信息
 
 - **作者**: armcat

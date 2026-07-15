@@ -26,9 +26,10 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: 🔥 想象一下：你手里捧着搭载M3芯片的MacBook Air，性能炸裂，却只能运行macOS——这就像把法拉利引擎装在拖拉机里！ 去年苹果M3系列发布时，Geekbench多核跑分突破14000分，比前代提升17%📊。但开发者们却在社交媒体上集体哀嚎："为什么我们不能用这颗芯片跑Linux？
 ---
 
-# 📰 🔥炸裂！Fedora Asahi Remix成功登陆苹果M3！Linux体验再升级！
+## 📰 🔥炸裂！Fedora Asahi Remix成功登陆苹果M3！Linux体验再升级！
 
 ---
 

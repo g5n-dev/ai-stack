@@ -31,10 +31,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 推出模块化扩散模型：可组合的扩散流水线构建模块
-
----
-
 ## 基本信息
 
 - **来源**: Hugging Face Blog (blog)

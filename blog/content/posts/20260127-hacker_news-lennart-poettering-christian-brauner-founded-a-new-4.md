@@ -25,9 +25,11 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: 在这个开源世界的代码丛林里，你是否想过，究竟有多少现代数字生活的“底层逻辑”是由两个人改写的？ 让我们看一组令人震撼的数据：全球 99%
+  的超级计算机、绝大多数的云服务器容器，以及你桌面上那台时尚的 Linux 电脑，几乎都离不开两个核心项目的支撑——systemd 和 LXC。
 ---
 
-# 📰 Linux 两位大神联手创业！Systemd 之父 Poettering 出击！🚀
+## 📰 Linux 两位大神联手创业！Systemd 之父 Poettering 出击！🚀
 
 ---
 

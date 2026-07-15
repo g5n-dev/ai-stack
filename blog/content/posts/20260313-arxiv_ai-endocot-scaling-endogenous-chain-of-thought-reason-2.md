@@ -31,10 +31,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# EndoCoT：扩散模型内生思维链推理扩展方法
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.12252v1

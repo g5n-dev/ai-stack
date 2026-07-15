@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 超网络：面向层级数据的神经网络架构
-
----
-
 ## 基本信息
 
 - **作者**: mkmccjr
@@ -430,7 +426,6 @@ AlphaStar 采用了基于超网络的模块化架构。在这个架构中，一�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/) / [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

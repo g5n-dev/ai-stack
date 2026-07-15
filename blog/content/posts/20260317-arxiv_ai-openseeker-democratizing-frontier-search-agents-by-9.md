@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# OpenSeeker：通过完全开源训练数据降低前沿搜索代理门槛
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.15594v1

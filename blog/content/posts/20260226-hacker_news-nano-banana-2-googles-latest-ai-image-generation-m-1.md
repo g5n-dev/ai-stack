@@ -31,10 +31,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 谷歌发布 Nano Banana 2 AI 图像生成模型
-
----
-
 ## 基本信息
 
 - **作者**: davidbarker

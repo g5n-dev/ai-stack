@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 物理学家监督AI开发科学软件案例研究
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2605.30353v1
@@ -162,7 +158,6 @@ CLAX-PT模块的理论基础是单环微扰理论在宇宙学中的应用，涉�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/)

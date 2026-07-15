@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Calibrate-Then-Act：大模型智能体的成本感知探索
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.16699v1

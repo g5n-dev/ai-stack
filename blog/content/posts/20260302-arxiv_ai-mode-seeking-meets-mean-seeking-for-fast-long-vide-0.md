@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 模式寻优结合均值寻优实现快速长视频生成
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.24289v1

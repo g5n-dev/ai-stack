@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 基于能量函数的语言模型特征级微调方法
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.12248v1

@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 展示代码库与 LLM 上下文窗口适配度的徽章工具
-
----
-
 ## 基本信息
 
 - **作者**: jimminyx

@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Mistral AI巴黎峰会参会笔记
-
----
-
 ## 基本信息
 
 - **作者**: vnglst
@@ -73,7 +69,6 @@ Mistral AI成立于2023年，总部位于巴黎，是欧洲最具代表性的开
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

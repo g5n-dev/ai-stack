@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 基于PPO的树搜索蒸馏技术优化语言模型
-
----
-
 ## 基本信息
 
 - **作者**: at2005

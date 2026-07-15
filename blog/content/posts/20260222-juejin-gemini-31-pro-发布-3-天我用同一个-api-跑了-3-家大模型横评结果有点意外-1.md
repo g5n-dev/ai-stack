@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Gemini 2.5 Pro实测：同API对比三款大模型找Bug能力
-
----
-
 ## 基本信息
 
 - **作者**: ofox

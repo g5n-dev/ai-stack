@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 最后一篇人类撰写的论文：智能体原生研究产物
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2604.24658v1
@@ -162,7 +158,6 @@ Ara 通过四层结构将科研叙事与工程实现统一为机器可执行工�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

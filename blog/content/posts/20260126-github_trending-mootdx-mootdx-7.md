@@ -24,9 +24,12 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: '💡 原名: mootdx / mootdx Relevant source files .coveragerc README.md docs/setup.md
+  mkdocs.yml mootdx/init.py sample/basicquotes.py This document provides an introduction
+  to MooTDX, a Python library'
 ---
 
-# 🚀 🚀Mootdx：Python金融数据神器！行情/财报/选股一站式搞定！💰
+## 🚀 🚀Mootdx：Python金融数据神器！行情/财报/选股一站式搞定！💰
 
 > 💡 **原名**: mootdx /
 
@@ -43,9 +46,8 @@ source_support: 0.0
 - **DeepWiki**: [https://deepwiki.com/mootdx/mootdx](https://deepwiki.com/mootdx/mootdx)
 
 ---
-## 📚 DeepWiki 速览（节选）
 
-# Overview
+## Overview
 
 Relevant source files
 

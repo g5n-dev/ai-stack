@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AgentRx：基于执行轨迹的AI智能体故障诊断
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.02475v1
@@ -132,7 +128,6 @@ AI Agent 的执行过程通常是概率性的、长周期的、涉及多智能�
 
 ---
 
-# AgentRx: AI Agent 失败诊断的深度剖析
 
 ## 1. 研究背景与问题
 
@@ -545,7 +540,6 @@ AgentRx 的研究表明，许多失败发生在推理链条的早期且会向后
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

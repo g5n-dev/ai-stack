@@ -24,9 +24,11 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: TikTokDownloader（亦称 DouK-Downloader）是一个基于 HTTP 的开源数据采集与文件下载工具，专门针对 抖音
+  和 TikTok 平台。该项目旨在为用户提供一套完整的解决方案，用于获取平台内容的元数据、下载多媒体文件，并将采集的数据持久化存储。
 ---
 
-# 🚀 🚀TikTok视频一键下载！开源神器JoeanAmier强势来袭！
+## 🚀 🚀TikTok视频一键下载！开源神器JoeanAmier强势来袭！
 
 > 💡 **原名**: JoeanAmier /
 
@@ -43,9 +45,8 @@ source_support: 0.0
 - **DeepWiki**: [https://deepwiki.com/JoeanAmier/TikTokDownloader](https://deepwiki.com/JoeanAmier/TikTokDownloader)
 
 ---
-## 📚 DeepWiki 速览（节选）
 
-# TikTokDownloader Overview
+## TikTokDownloader Overview
 
 Relevant source files
 
@@ -236,7 +237,6 @@ System Component| Primary Classes| File Paths| Responsibilities
 
 ---
 
-# TikTokDownloader 深度技术分析报告
 
 ## 1. 技术架构深度剖析 🏗️
 

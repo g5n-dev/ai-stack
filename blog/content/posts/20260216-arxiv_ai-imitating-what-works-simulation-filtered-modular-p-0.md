@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 仿真筛选模块化策略：从人类视频学习有效行为
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.13197v1
@@ -125,7 +121,6 @@ source_support: 0.0
 
 ---
 
-# 深入分析：基于仿真过滤的模块化策略学习
 
 ## 1. 研究背景与问题
 
@@ -593,7 +588,6 @@ $$ G^* = \arg\max_{G \in \mathcal{G}_{candidates}} P(Success(O, G, \tau_{video})
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

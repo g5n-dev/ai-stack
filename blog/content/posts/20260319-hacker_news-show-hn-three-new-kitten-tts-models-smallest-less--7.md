@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Kitten TTS 三款新模型：小体积低于 25MB
-
----
-
 ## 基本信息
 
 - **作者**: rohan_joshi

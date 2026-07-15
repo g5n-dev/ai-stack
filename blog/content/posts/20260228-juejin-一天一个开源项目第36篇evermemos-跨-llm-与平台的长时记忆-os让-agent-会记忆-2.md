@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# EverMemOS：开源Agent长时记忆系统，LoCoMo推理准确率93%
-
----
-
 ## 基本信息
 
 - **作者**: 冬奇Lab

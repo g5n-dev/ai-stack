@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Super Dev：面向商业交付的AI工程流水线编排工具
-
----
-
 ## 基本信息
 
 - **作者**: ExcellentWe

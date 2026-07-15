@@ -34,10 +34,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# IBM与UC伯克利利用IT-Bench和MAST诊断企业智能体失败原因
-
----
-
 ## 基本信息
 
 - **来源**: Hugging Face Blog (blog)

@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# CLAUDE.md：规范 Claude Code 行为与工作流的最佳实践指南
-
----
-
 ## 基本信息
 
 - **作者**: 乘风gg

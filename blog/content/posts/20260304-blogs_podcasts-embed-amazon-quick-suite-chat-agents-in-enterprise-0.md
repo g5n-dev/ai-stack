@@ -34,10 +34,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 利用 Quick Suite 嵌入式 SDK 在企业门户中一键部署聊天代理
-
----
-
 ## 基本信息
 
 - **来源**: AWS Machine Learning Blog (blog)

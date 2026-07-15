@@ -32,10 +32,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Claude 推出合作伙伴网络，扩大企业级 AI 应用生态
-
----
-
 ## 基本信息
 
 - **作者**: gmays

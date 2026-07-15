@@ -41,10 +41,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Jesse Thaler：AI与数理科学的双向桥梁与未来愿景
-
----
-
 ## 基本信息
 
 - **来源**: MIT News (Machine Learning) (blog)

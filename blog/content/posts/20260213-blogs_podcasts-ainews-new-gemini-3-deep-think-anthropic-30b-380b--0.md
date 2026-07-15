@@ -1,5 +1,5 @@
 ---
-title: Gemini 3 Deep Think发布；Anthropic估值380B；GPT-5.3-Codex与Min
+title: Gemini 3 Deep Think发布；Anthropic估值380B；GPT-5.3-Codex与MiniMax M2.5亮相
 date: 2026-02-13 16:50:30+08:00
 draft: false
 entry_kind: auto
@@ -42,10 +42,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Gemini 3 Deep Think发布；Anthropic估值380B；GPT-5.3-Codex与MiniMax M2.5亮相
-
 ---
 
 ## 基本信息
@@ -102,9 +98,7 @@ source_support: 0.0
 3.  **实验：** 对比Gemini Deep Think与GPT-4o在**数学奥林匹克竞赛题目**上的耗时与准确率曲线，验证“延长推理时间”是否线性提升准确率。
 
 ---
-## 技术分析
 
-# 技术分析：模型架构演进与算力成本博弈
 
 ## 1. 核心观点深度解读
 
@@ -277,7 +271,6 @@ AI 行业迭代速度极快（如从 Gemini 到 Deep Think，再到 GPT-5.3）�
 ---
 
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [产品与创业](/categories/%E4%BA%A7%E5%93%81%E4%B8%8E%E5%88%9B%E4%B8%9A/)

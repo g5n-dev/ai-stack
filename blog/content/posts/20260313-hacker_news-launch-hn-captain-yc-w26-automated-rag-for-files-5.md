@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Captain：面向文件的自动化检索增强生成系统
-
----
-
 ## 基本信息
 
 - **作者**: CMLewis

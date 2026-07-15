@@ -31,10 +31,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# BiGain：面向生成与分类任务的统一Token压缩
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.12240v1

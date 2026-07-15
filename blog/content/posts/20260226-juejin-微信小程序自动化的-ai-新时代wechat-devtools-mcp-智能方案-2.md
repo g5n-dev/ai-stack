@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# wechat-devtools-mcp：基于官方库的微信小程序自动化方案
-
----
-
 ## 基本信息
 
 - **作者**: FliPPeDround

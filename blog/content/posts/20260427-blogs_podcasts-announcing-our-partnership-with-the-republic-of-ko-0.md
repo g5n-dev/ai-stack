@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Google DeepMind与韩国合作 探索AI科研新方向
-
----
-
 ## 基本信息
 
 - **来源**: Google DeepMind (blog)
@@ -156,7 +152,6 @@ Google DeepMind 与韩国政府、科研机构及高校正式建立合作伙伴�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

@@ -39,10 +39,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# OpenAI与Anthropic编码模型之争：Claude Opus 4.6对决GPT 5.3 Codex
-
----
-
 ## 基本信息
 
 - **来源**: Latent Space (blog)
@@ -104,9 +100,8 @@ OpenAI 与 Anthropic 之间的顶尖代码模型竞争进一步升级，双方�
     *   针对未来的高版本模型，测试其在海量代码输入中精准定位并修改微小依赖或逻辑错误的能力，以验证文章关于“代码库级重构”的假设是否成立。
 
 ---
-## 技术分析
 
-# OpenAI 与 Anthropic 的代码生成模型之争：深度分析报告
+## OpenAI 与 Anthropic 的代码生成模型之争：深度分析报告
 
 基于文章标题 **[AINews] OpenAI and Anthropic go to war: Claude Opus 4.6 vs GPT 5.3 Codex** 及其摘要 "The battle of the SOTA Coding Models steps up a notch"（最先进代码模型之战升级），本文将针对这场假设性的、代表未来技术巅峰的 AI 编程对决进行深度剖析。
 
@@ -358,7 +353,6 @@ OpenAI 和 Anthropic 的二强对决可能导致**垂直领域的代码模型**�
 ---
 
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/)

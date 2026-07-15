@@ -39,10 +39,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Claude Code一周年：将撰写GitHub 25%-50%代码与全球内存短缺解读
-
----
-
 ## 基本信息
 
 - **来源**: Latent Space (blog)

@@ -31,10 +31,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# GLM-OCR：面向复杂文档理解的多模态OCR模型
-
----
-
 ## 基本信息
 
 - **作者**: ms7892
@@ -418,7 +414,6 @@ def extract_invoice_info(image_path):
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

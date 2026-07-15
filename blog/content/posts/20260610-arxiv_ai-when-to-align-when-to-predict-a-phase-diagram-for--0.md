@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 多模态学习何时对齐何时预测相位图揭示规律
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2606.11190v1
@@ -157,7 +153,6 @@ source_support: 0.0
 
 ---
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/)

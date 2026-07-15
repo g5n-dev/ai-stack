@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 用合成人物角色提升韩国AI智能体人口统计贴合度
-
----
-
 ## 基本信息
 
 - **来源**: Hugging Face Blog (blog)
@@ -93,7 +89,6 @@ source_support: 0.0
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [数据](/categories/%E6%95%B0%E6%8D%AE/)

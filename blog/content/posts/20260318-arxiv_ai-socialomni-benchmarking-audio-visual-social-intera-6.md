@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# SocialOmni：全模态模型视听社交交互基准测试
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.16859v1

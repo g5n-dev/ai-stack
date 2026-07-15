@@ -24,9 +24,10 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: 标题：赋能低资源环境医疗设备可持续性：面向生物医学技术人员的AI诊断与支持平台 摘要总结： 本研究旨在解决低收入和中等收入国家（LMICs）医疗设备因缺乏及时维护、技术支持不足而导致的闲置或故障问题。研究开发并验证了一款由人工智能驱动的支持平台，旨在协助生物医学技术人员实时诊断和修复医疗设备。
 ---
 
-# 📚 🏥资源受限地区医疗设备也能“永续”？AI平台赋能技师！🚀
+## 📚 🏥资源受限地区医疗设备也能“永续”？AI平台赋能技师！🚀
 
 ---
 
@@ -148,7 +149,6 @@ source_support: 0.0
 
 ---
 
-# 📜 深度分析报告：AI 赋能低资源环境下的医疗设备可持续性
 
 ## 1. 🏥 研究背景与问题
 

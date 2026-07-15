@@ -26,9 +26,10 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: 当你的地图应用在用户眼前卡顿，每一次缩放都像加载世纪网页时，你是否想过——问题可能不在代码，而在地图瓦片的“基因”？ 🌍💥 去年，某知名外卖平台发现，其用户在城市高密度区域的地图加载时间比郊区慢3倍，导致订单流失率飙升40%。而全球最大地图服务商的年数据传输量高达12PB，其中70%的带宽竟被传统矢量瓦片格式浪费！更讽刺的是，这些瓦片的设计初衷是为了“高效”，如今却成了性能瓶颈的元凶。
 ---
 
-# 📰 MapLibre Tile：现代高效矢量切片格式！🚀
+## 📰 MapLibre Tile：现代高效矢量切片格式！🚀
 
 ---
 

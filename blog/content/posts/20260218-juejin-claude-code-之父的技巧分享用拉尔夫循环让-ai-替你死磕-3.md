@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Claude Code 联合创始人分享：30 天提交 259 个 PR 的自动化开发流
-
----
-
 ## 基本信息
 
 - **作者**: javaTodo
@@ -194,7 +190,6 @@ Claude Code 联合创始人鲍里斯·切尔尼（Boris Cherny）最近晒了组
 ---
 
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [效率与方法论](/categories/%E6%95%88%E7%8E%87%E4%B8%8E%E6%96%B9%E6%B3%95%E8%AE%BA/)

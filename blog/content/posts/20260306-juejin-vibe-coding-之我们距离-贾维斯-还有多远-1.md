@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Vibe Coding：优化人机协作模式与AI管家系统构想
-
----
-
 ## 基本信息
 
 - **作者**: vivo互联网技术

@@ -25,10 +25,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 知名创意人用AI为小商家制作广告的案例
-
----
-
 ## 基本信息
 
 - **来源**: Google AI Blog (blog)
@@ -149,7 +145,6 @@ AI 辅助的创意生产能够在保持品牌核心价值的前提下，显著�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [产品与创业](/categories/%E4%BA%A7%E5%93%81%E4%B8%8E%E5%88%9B%E4%B8%9A/)

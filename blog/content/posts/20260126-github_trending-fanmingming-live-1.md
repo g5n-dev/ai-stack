@@ -21,9 +21,11 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: '💡 原名: fanmingming / live 你是否也曾有过这样的时刻：忙碌了一整天，只想窝在沙发里，打开电视看一场球赛或重温一部经典老剧，结果却被满屏的“资源失效”、“无法播放”或是加载转圈的缓冲图标泼了一盆冷水？🛑
+  在这个信息爆炸但“围墙”高筑的时代，想要找到一份真正稳定、极速且纯净的直播源，竟成了一件奢侈的事情？'
 ---
 
-# 🚀 冯明明 GitHub 热榜第一！🔥 实时项目火爆全网！⚡️
+## 🚀 冯明明 GitHub 热榜第一！🔥 实时项目火爆全网！⚡️
 
 > 💡 **原名**: fanmingming /
 

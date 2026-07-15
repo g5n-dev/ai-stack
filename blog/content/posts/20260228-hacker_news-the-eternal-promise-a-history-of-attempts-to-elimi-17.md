@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 程序员淘汰史：自动化编程尝试的演进与局限
-
----
-
 ## 基本信息
 
 - **作者**: dinvlad

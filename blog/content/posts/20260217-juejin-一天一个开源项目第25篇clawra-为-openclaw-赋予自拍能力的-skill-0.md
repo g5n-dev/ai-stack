@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Clawra：集成 fal.ai 与 xAI Grok 实现 AI 助手固定形象自拍
-
----
-
 ## 基本信息
 
 - **作者**: 冬奇Lab
@@ -245,7 +241,6 @@ Clawra 是由 SumeLabs 开发的一个开源 Skill（技能/插件），专门�
 ---
 
 
----
 ## 站内链接
 
 - 分类： [开源生态](/categories/%E5%BC%80%E6%BA%90%E7%94%9F%E6%80%81/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

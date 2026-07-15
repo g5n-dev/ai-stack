@@ -37,10 +37,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AWS基于LLM的分离式推理技术解析与SageMaker HyperPod部署实践
-
----
-
 ## 基本信息
 
 - **来源**: AWS Machine Learning Blog (blog)

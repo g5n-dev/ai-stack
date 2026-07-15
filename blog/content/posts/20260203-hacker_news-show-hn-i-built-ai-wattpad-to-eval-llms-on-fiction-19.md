@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 构建AI版Wattpad以评估大模型小说创作能力
-
----
-
 ## 基本信息
 
 - **作者**: jauws
@@ -406,7 +402,6 @@ Wattpad 等平台涵盖了从同人小说到悬疑惊悚等多种流派。一个
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [产品与创业](/categories/%E4%BA%A7%E5%93%81%E4%B8%8E%E5%88%9B%E4%B8%9A/)

@@ -32,10 +32,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 基于分词器的未知语言识别方法
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.17655v1

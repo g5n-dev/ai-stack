@@ -34,10 +34,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Hugging Face Hub 推出存储桶功能
-
----
-
 ## 基本信息
 
 - **来源**: Hugging Face Blog (blog)

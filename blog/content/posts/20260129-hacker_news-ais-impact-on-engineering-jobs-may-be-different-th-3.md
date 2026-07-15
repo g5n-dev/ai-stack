@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AI对工程类岗位的影响或与预期不同
-
----
-
 ## 基本信息
 
 - **作者**: rbanffy
@@ -404,7 +400,6 @@ AI 技术的迭代速度极快。今天的最佳实践可能在六个月后就�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [产品与创业](/categories/%E4%BA%A7%E5%93%81%E4%B8%8E%E5%88%9B%E4%B8%9A/)

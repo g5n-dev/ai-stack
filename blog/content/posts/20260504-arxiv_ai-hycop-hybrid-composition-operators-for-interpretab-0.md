@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 混合组合算子实现偏微分方程可解释学习
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2605.00820v1
@@ -116,7 +112,6 @@ HyCOP的模块化架构适用于多尺度耦合PDE、实时控制场景以及需
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

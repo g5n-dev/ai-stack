@@ -31,10 +31,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# FAMOSE：基于 ReAct 范式的自动化特征发现方法
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.17641v1

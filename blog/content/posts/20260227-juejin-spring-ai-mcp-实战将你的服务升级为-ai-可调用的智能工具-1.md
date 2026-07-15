@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Spring AI MCP 实战：将服务升级为 AI 可调用工具
-
----
-
 ## 基本信息
 
 - **作者**: 玹外之音

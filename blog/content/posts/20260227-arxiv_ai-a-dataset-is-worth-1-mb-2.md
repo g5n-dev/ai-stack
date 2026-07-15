@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 数据集压缩至1MB：小规模数据集的模型训练效果
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.23358v1

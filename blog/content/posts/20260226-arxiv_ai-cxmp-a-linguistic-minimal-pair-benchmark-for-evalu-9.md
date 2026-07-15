@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# CxMP：评估语言模型构式理解的语言学最小对子基准
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.21978v1

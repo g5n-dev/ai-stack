@@ -40,10 +40,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Granite 4.0 1B 语音模型：紧凑、多语言且适配边缘端
-
----
-
 ## 基本信息
 
 - **来源**: Hugging Face Blog (blog)

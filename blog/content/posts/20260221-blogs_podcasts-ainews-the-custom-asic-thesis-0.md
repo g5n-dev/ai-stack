@@ -38,10 +38,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Taalas 定制芯片实现 Llama 3.1 8B 每秒 16960 tok/s
-
----
-
 ## 基本信息
 
 - **来源**: Latent Space (blog)

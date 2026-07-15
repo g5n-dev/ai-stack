@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Claude 新增交互式图表生成与可视化绘图能力
-
----
-
 ## 基本信息
 
 - **作者**: adocomplete

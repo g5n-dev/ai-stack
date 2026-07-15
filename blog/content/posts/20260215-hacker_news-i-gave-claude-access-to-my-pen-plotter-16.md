@@ -34,10 +34,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 我让 Claude 控制笔式绘图仪
-
----
-
 ## 基本信息
 
 - **作者**: futurecat
@@ -441,7 +437,6 @@ Sisyphus 是一款 Kickstarter 众筹的桌面艺术设备，利用一个磁球�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [开源生态](/categories/%E5%BC%80%E6%BA%90%E7%94%9F%E6%80%81/)

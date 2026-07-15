@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Dify 实战：构建可复用前端 AI 工作流与标准化编码流程
-
----
-
 ## 基本信息
 
 - **作者**: 月亮有石头

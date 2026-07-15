@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Spring AI Lab：3分钟为Spring Boot项目集成AI对话功能
-
----
-
 ## 基本信息
 
 - **作者**: 不肯过江东丶
@@ -73,7 +69,6 @@ source_support: 0.0
 
 ---
 
----
 ## 站内链接
 
 - 分类： [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/) / [后端](/categories/%E5%90%8E%E7%AB%AF/)

@@ -31,10 +31,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# OpenAI在GenAI.mil部署定制ChatGPT服务美国国防团队
-
----
-
 ## 基本信息
 
 - **来源**: OpenAI Blog (blog)
@@ -102,9 +98,7 @@ OpenAI在GenAI.mil上部署定制版ChatGPT标志着生成式AI从“通用消�
     *   观察美国国会是否通过更严格的**“军用AI自主权限制法案”**。如果立法收紧，说明行业对AI失控的担忧超过了其带来的效率红利，这将限制此类应用的边界。
 
 ---
-## 技术分析
 
-# 技术分析：ChatGPT入驻GenAI.mil的架构与影响
 
 ## 1. 核心观点深度解读
 
@@ -274,7 +268,6 @@ AI 模型会产生“幻觉”，即生成看似合理但完全错误的信息�
 ---
 
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [安全](/categories/%E5%AE%89%E5%85%A8/)

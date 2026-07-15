@@ -38,10 +38,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 基于AWS与Hugging Face smolagents构建多模型医疗AI Agent
-
----
-
 ## 基本信息
 
 - **来源**: AWS Machine Learning Blog (blog)

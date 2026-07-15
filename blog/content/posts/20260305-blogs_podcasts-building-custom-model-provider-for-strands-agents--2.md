@@ -41,10 +41,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 在SageMaker上部署SGLang并集成Strands智能体自定义模型
-
----
-
 ## 基本信息
 
 - **来源**: AWS Machine Learning Blog (blog)

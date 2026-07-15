@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 动机优化：提升大语言模型任务表现的关键机制
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.21064v1

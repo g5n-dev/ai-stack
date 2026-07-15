@@ -20,10 +20,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Quantum-Audit：评估大语言模型量子计算推理能力极限
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.10092v1
@@ -171,7 +167,6 @@ Quantum-Audit揭示了LLM在量子计算领域虽然具备较强的基础能力�
 ---
 
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/)

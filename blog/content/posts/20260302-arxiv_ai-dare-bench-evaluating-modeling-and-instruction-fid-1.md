@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# DARE-bench：评估大模型数据科学建模与指令保真度
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.24288v1

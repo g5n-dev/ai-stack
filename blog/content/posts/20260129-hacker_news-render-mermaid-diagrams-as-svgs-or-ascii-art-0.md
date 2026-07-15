@@ -25,10 +25,8 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 将 Mermaid 图表渲染为 SVG 或 ASCII 文本
-
+description: 在编写技术文档或维护代码仓库时，Mermaid 已成为描述复杂流程与架构的通用选择。然而，不同展示环境对图表格式的要求往往存在差异，有时需要矢量图形以保证清晰度，有时则需要纯文本以适应终端显示。本文将介绍如何将
+  Mermaid 图表渲染为 SVG 或 ASCII 艺术字，帮助读者根据具体场景灵活选择输出格式，从而更高效地集成与分享可视化内容。
 ---
 
 ## 基本信息
@@ -423,7 +421,6 @@ Iceberg 的架构设计涉及多个组件的交互（如 Catalog、Metadata File
 
 ---
 
----
 ## 站内链接
 
 - 分类： [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/) / [前端](/categories/%E5%89%8D%E7%AB%AF/)

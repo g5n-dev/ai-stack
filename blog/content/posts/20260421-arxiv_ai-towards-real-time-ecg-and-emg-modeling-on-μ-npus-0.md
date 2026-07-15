@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# μNPUs上ECG和EMG的实时建模方法
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2604.18067v1
@@ -140,7 +136,6 @@ PhysioLite的技术路线在可穿戴健康监测、远程医疗和运动生理�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [数据](/categories/%E6%95%B0%E6%8D%AE/)

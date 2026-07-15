@@ -40,10 +40,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 基于 AWS CDK 集成 Rekognition 与 Neptune 构建智能图片搜索系统
-
----
-
 ## 基本信息
 
 - **来源**: AWS Machine Learning Blog (blog)

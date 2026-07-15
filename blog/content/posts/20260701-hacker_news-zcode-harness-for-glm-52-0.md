@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# ZCode：GLM-5.2模型利用框架
-
----
-
 ## 基本信息
 
 - **作者**: chvid
@@ -87,7 +83,6 @@ ZCode作为GLM-5.2的专用测试框架，其核心价值在于提供了标准�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/)

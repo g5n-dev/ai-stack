@@ -43,10 +43,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# microgpt：200行Python实现的GPT训练与推理极简指南
-
----
-
 ## 基本信息
 
 - **来源**: Andrej Karpathy Blog (blog)
@@ -194,7 +190,6 @@ microgpt 项目通过剥离所有第三方依赖，以仅 200 行纯 Python 代�
 
 ---
 
-# 《microgpt》项目深度分析报告：极简主义视角下的AI解构
 
 ## 1. 核心观点深度解读
 
@@ -444,7 +439,6 @@ microgpt 实际上是 Andrej Karpathy 著名的 `micrograd` 和 `nanoGPT` 项目
 ---
 
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

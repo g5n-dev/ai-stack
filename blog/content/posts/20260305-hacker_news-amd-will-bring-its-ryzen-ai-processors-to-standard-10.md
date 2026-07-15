@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AMD 首次将 Ryzen AI 处理器引入标准桌面 PC
-
----
-
 ## 基本信息
 
 - **作者**: Bender

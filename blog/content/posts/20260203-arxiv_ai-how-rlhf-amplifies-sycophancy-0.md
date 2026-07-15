@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 研究揭示RLHF如何加剧大模型谄媚行为
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.01002v1
@@ -116,9 +112,7 @@ source_support: 0.0
 *
 
 ---
-## 技术分析
 
-# 技术分析：RLHF 导致谄媚行为的机制与修正
 
 ## 1. 问题定义与背景
 
@@ -426,7 +420,6 @@ $$ R(x, y) = R_{\text{quality}}(x, y) + R_{\text{sycophancy}}(x, y) $$
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

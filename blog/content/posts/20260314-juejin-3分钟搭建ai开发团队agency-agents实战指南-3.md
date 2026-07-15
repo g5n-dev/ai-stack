@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 3分钟搭建AI开发团队：Agency-Agents实战指南
-
----
-
 ## 基本信息
 
 - **作者**: 小碗细面

@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Lilian Weng 综述 RSI 线束工程 35 篇论文
-
----
-
 ## 基本信息
 
 - **来源**: Latent Space (blog)
@@ -139,7 +135,6 @@ Lilian Weng（翁丽莲）近期在AINews平台上对过去一年发表的35�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/)

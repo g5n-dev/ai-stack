@@ -18,10 +18,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# OpenAI内部Codex使用数据：研究输出增长56倍
-
----
-
 ## 基本信息
 
 - **来源**: Latent Space (blog)
@@ -125,7 +121,6 @@ Token增长数据存在若干解读边界。首先，内部使用数据不代表
 
 ---
 
----
 ## 站内链接
 
 - 分类： [效率与方法论](/categories/%E6%95%88%E7%8E%87%E4%B8%8E%E6%96%B9%E6%B3%95%E8%AE%BA/)

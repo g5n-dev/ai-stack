@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Show HN: Mcp2cli – 一个CLI调用所有API，Token消耗比原生MCP减少96-99%
-
----
-
 ## 基本信息
 
 - **作者**: knowsuchagency

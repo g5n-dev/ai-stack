@@ -31,10 +31,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 打破“氛围编程”的迷思与局限
-
----
-
 ## 基本信息
 
 - **作者**: arjunbanker
@@ -432,7 +428,6 @@ PM 使用 Cursor 等 AI 编程工具快速生成了一个基于 React 的管理�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [效率与方法论](/categories/%E6%95%88%E7%8E%87%E4%B8%8E%E6%96%B9%E6%B3%95%E8%AE%BA/)

@@ -47,10 +47,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Goodfire AI 打造机械可解释性标杆并发布 API
-
----
-
 ## 基本信息
 
 - **来源**: Latent Space (blog)
@@ -133,9 +129,7 @@ Goodfire AI正在将AI模型的可解释性从理论探索转化为实际的生�
     *
 
 ---
-## 技术分析
 
-# 技术分析报告：机制可解释性的工程化实现与应用
 
 ## 1. 核心观点深度解读
 
@@ -301,7 +295,6 @@ SAE 的训练需要大量的计算资源和精细的超参数调整（如 L1 正
 ---
 
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

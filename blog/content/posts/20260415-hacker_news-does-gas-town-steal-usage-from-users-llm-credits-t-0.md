@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Gas Town被质疑窃取用户LLM用量进行自我优化
-
----
-
 ## 基本信息
 
 - **作者**: rektomatic
@@ -82,7 +78,6 @@ Gas Town 使用用户使用数据来改进系统的行为并非“窃取”，�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [安全](/categories/%E5%AE%89%E5%85%A8/) / [产品与创业](/categories/%E4%BA%A7%E5%93%81%E4%B8%8E%E5%88%9B%E4%B8%9A/)

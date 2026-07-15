@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# SPEED-Bench：推测解码的统一多样化基准
-
----
-
 ## 基本信息
 
 - **来源**: Hugging Face Blog (blog)

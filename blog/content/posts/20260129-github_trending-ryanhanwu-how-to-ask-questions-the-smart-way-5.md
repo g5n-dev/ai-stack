@@ -25,9 +25,8 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: 在技术社区中，提问的质量往往决定了你获得答案的效率。本文介绍的是由 Eric S. Raymond 撰写的经典指南《提问的智慧》，它系统性地阐述了如何以专业、清晰的方式提出技术问题。无论你是初学者还是资深开发者，这份文档都能帮助你理解社区沟通的潜规则，从而更有效地获取帮助。本文将概述该项目的核心内容、适用场景以及其在技术交流中的实际价值。
 ---
-
-# Eric S. Raymond 撰文：如何正确提问以获得技术答案
 
 > **原名**: ryanhanwu /
 
@@ -44,9 +43,8 @@ source_support: 0.0
 - **DeepWiki**: [https://deepwiki.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way](https://deepwiki.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way)
 
 ---
-## DeepWiki 速览（节选）
 
-# Overview
+## Overview
 
 Relevant source files
 
@@ -871,7 +869,6 @@ ryanhanwu 的版本适合需要中文参考的开发者，而 Stack Overflow 帮
 
 ---
 
----
 ## 站内链接
 
 - 分类： [效率与方法论](/categories/%E6%95%88%E7%8E%87%E4%B8%8E%E6%96%B9%E6%B3%95%E8%AE%BA/) / [开源生态](/categories/%E5%BC%80%E6%BA%90%E7%94%9F%E6%80%81/)

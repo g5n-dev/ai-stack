@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 基于LLM的伪相关反馈系统性研究
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.11008v1

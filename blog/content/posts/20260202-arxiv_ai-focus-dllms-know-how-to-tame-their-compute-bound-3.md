@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# FOCUS：DLLMs如何突破算力瓶颈
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2601.23278v1
@@ -134,7 +130,6 @@ FOCUS系统已在GitHub上公开发布。
 
 ---
 
-# FOCUS: DLLMs Know How to Tame Their Compute Bound 深度解析
 
 ## 1. 研究背景与问题
 
@@ -516,7 +511,6 @@ FOCUS推进的是**“理解”**。它不仅仅是一个加速技巧，更揭�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

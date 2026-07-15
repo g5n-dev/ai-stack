@@ -21,9 +21,12 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: 这里有一个为你定制的、极具吸引力的引言： “你有没有想过，那个用了5年、依赖着沉重 Node.js 生态、甚至还需要 Docker 容器才能跑起来的古老项目，其实根本不需要任何服务器？”
+  就在上周，一位开发者仅仅用了一个周末，就把一个原本运行在昂贵 AWS 实例上的复杂 API 服务，奇迹般地塞进了几兆字节的空间里，不仅启动速度提升了100倍，连服务器账单直接变成了
+  $0！
 ---
 
-# 📰 ✨无需重构！直接将应用迁移至Cloudflare Workers！🚀
+## 📰 ✨无需重构！直接将应用迁移至Cloudflare Workers！🚀
 
 ---
 

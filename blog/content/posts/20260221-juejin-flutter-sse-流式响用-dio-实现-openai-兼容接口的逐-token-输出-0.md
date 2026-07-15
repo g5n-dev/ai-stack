@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Flutter SSE 流式响应：基于 Dio 实现 OpenAI 逐 Token 输出
-
----
-
 ## 基本信息
 
 - **作者**: 九狼

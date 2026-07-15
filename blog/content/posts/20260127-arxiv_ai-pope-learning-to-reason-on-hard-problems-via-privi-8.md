@@ -24,9 +24,10 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: 总结：POPE——利用特权同策略探索解决困难推理问题 核心问题 尽管强化学习（RL）增强了大语言模型（LLMs）的推理能力，但在面对“困难问题”时，现有的最先进方法往往失效。由于这些问题很难，同策略RL在探索时极难生成正确的解题路径，导致奖励为零，模型无法获得有效的学习信号来改进自身。
 ---
 
-# 📚 🔥POPE：用特权探索让AI学会解决复杂难题！
+## 📚 🔥POPE：用特权探索让AI学会解决复杂难题！
 
 ---
 
@@ -142,7 +143,6 @@ POPE不仅成功扩展了模型可解决的问题集，还在极具挑战性的�
 
 ---
 
-# 深度分析报告：POPE —— 利用特权同策略探索攻克推理难题
 
 ## 1. 研究背景与问题
 

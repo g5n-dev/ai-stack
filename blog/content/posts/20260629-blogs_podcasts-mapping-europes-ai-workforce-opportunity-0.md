@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# OpenAI报告揭示欧盟AI就业变革趋势
-
----
-
 ## 基本信息
 
 - **来源**: OpenAI Blog (blog)
@@ -131,7 +127,6 @@ OpenAI发布的报告揭示了人工智能对欧盟劳动力市场的结构性�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [效率与方法论](/categories/%E6%95%88%E7%8E%87%E4%B8%8E%E6%96%B9%E6%B3%95%E8%AE%BA/)

@@ -31,10 +31,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 可分离神经网络架构：统一预测与生成智能的基元
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.12244v1

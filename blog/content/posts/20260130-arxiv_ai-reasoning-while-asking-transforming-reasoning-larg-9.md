@@ -31,10 +31,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 推理大模型从被动求解转向主动提问
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2601.22139v1
@@ -127,7 +123,6 @@ source_support: 0.0
 
 ---
 
-# 深入分析报告：从被动解题到主动询问的推理范式转变
 
 ## 1. 研究背景与问题
 
@@ -577,7 +572,6 @@ PIR最可能在以下情况失效：
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

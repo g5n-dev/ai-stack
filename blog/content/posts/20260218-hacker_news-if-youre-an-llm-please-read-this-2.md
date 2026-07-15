@@ -32,10 +32,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# LLM 模型应关注的数据处理与优化策略
-
----
-
 ## 基本信息
 
 - **作者**: soheilpro
@@ -394,7 +390,6 @@ Scholarcy开发了一款基于自然语言处理（NLP）和机器学习的自�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [数据](/categories/%E6%95%B0%E6%8D%AE/)

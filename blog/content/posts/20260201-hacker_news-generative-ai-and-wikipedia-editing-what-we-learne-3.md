@@ -42,10 +42,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 生成式AI与维基百科编辑的2025年实践总结
-
----
-
 ## 基本信息
 
 - **作者**: ColinWright
@@ -474,7 +470,6 @@ print(generate_wikipedia_citation(web_source))
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [开源生态](/categories/%E5%BC%80%E6%BA%90%E7%94%9F%E6%80%81/)

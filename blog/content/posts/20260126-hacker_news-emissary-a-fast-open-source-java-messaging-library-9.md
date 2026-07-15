@@ -21,9 +21,11 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: 🔥 "双十一"大促0.1秒延迟损失2亿订单？某电商系统因消息队列崩溃致全平台瘫痪！ 2023年黑色星期五，欧洲头部零售商的消息系统在流量洪峰中"爆雷"，1.2亿用户请求瞬间卡死——而幕后黑手竟是一个被广泛使用的Java消息库。更令人震惊的是，测试显示：当并发量突破5万时，其延迟会指数级暴涨至秒级！😱
+  你是否也曾遭遇过这些噩梦？ ❌ Kafka/RabbitMQ配置复杂到需要专门团队维护？
 ---
 
-# 📰 🚀Emissary：超快开源Java消息库！颠覆性能极限？
+## 📰 🚀Emissary：超快开源Java消息库！颠覆性能极限？
 
 ---
 

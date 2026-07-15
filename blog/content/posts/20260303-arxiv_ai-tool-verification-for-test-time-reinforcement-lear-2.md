@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 测试时强化学习的工具验证方法
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.02203v1

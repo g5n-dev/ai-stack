@@ -20,10 +20,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 视频扩散模型因果性与去噪过程可分离
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.10095v1
@@ -120,7 +116,7 @@ source_support: 0.0
 
 ---
 
-# 1. 研究背景与问题
+## 1. 研究背景与问题
 
 ### 核心问题
 该论文致力于解决**视频扩散模型在推理过程中存在的计算冗余与效率瓶颈问题**。具体而言，作者质疑了现有主流视频生成模型中“时序因果推理”与“空间去噪”必须深度耦合的固有假设，试图将两者解耦以实现大幅度的加速。
@@ -140,7 +136,7 @@ source_support: 0.0
 
 ---
 
-# 2. 核心方法与创新
+## 2. 核心方法与创新
 
 ### 核心方法：SCD (Separable Causal Diffusion)
 论文提出了**可分离因果扩散模型**。该架构的核心思想是将视频生成的过程分解为两个独立且串行的阶段：
@@ -166,7 +162,7 @@ source_support: 0.0
 
 ---
 
-# 3. 理论基础
+## 3. 理论基础
 
 ### 理论依据
 论文的理论基础建立在**扩散模型的逐步去噪特性**与**神经网络的层次化特征表示**之上：
@@ -186,7 +182,7 @@ $$ P(\text{Temporal Context}) \times P(X_{t-1} | X_t, \text{Temporal Context}) $
 
 ---
 
-# 4. 实验与结果
+## 4. 实验与结果
 
 ### 实验设计
 作者在多个合成数据集（如Moving MNIST, ShapeNet）和真实视频数据集（如UCF-101, Kinetics-600）上进行了评估。
@@ -209,7 +205,7 @@ $$ P(\text{Temporal Context}) \times P(X_{t-1} | X_t, \text{Temporal Context}) $
 
 ---
 
-# 5. 应用前景
+## 5. 应用前景
 
 ### 实际应用场景
 1.  **实时视频聊天与直播**：低延迟是关键，SCD的架构非常适合需要快速响应的流式视频生成。
@@ -221,7 +217,7 @@ $$ P(\text{Temporal Context}) \times P(X_{t-1} | X_t, \text{Temporal Context}) $
 
 ---
 
-# 6. 研究启示
+## 6. 研究启示
 
 ### 对领域的启示
 这篇论文是对当前视频扩散模型“堆砌参数、暴力计算”路线的一次重要反思。它启示研究者：
@@ -234,7 +230,7 @@ $$ P(\text{Temporal Context}) \times P(X_{t-1} | X_t, \text{Temporal Context}) $
 
 ---
 
-# 7. 学习建议
+## 7. 学习建议
 
 ### 适合读者
 *   从事计算机视觉、视频生成、扩散模型研究的研究生和工程师。
@@ -252,7 +248,7 @@ $$ P(\text{Temporal Context}) \times P(X_{t-1} | X_t, \text{Temporal Context}) $
 
 ---
 
-# 8. 相关工作对比
+## 8. 相关工作对比
 
 ### 与同类研究对比
 *   **vs. AnimateDiff (2023)**：AnimateDiff通过插入轻量级Adapter将图像模型转为视频模型，但它在每一步都计算时序注意力。SCD可以看作是AnimateDiff思想的进阶版——既然是Adapter，为什么不能只运行一次？
@@ -264,7 +260,7 @@ $$ P(\text{Temporal Context}) \times P(X_{t-1} | X_t, \text{Temporal Context}) $
 
 ---
 
-# 9. 研究哲学：可证伪性与边界
+## 9. 研究哲学：可证伪性与边界
 
 ### 关键假设与归纳偏置
 *   **假设**：视频的“时序语义”与“空间像素”在特征空间中是正交或可分离的。
@@ -440,7 +436,6 @@ $$ P(\text{Temporal Context}) \times P(X_{t-1} | X_t, \text{Temporal Context}) $
 ---
 
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/)

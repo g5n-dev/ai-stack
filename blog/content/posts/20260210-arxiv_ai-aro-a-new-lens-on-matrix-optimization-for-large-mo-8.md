@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# ARO：面向大模型矩阵优化的新视角
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.09006v1
@@ -109,9 +105,7 @@ source_support: 0.0
 ARO论文试图从矩阵结构的物理意义出发解决优化问题，这是一个具有启发性的视角。如果其实验结果在同等计算资源下成立，它可能成为大模型训练优化器的一个重要分支。然而，其工程实现的复杂度与
 
 ---
-## 技术分析
 
-# ARO: A New Lens On Matrix Optimization For Large Models - 深度分析
 
 ## 1. 研究背景与问题
 
@@ -420,7 +414,6 @@ ARO 的主要贡献在于**视角的转换**。它证明了直接利用矩阵的
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

@@ -31,10 +31,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 不要信任 AI 智能体
-
----
-
 ## 基本信息
 
 - **作者**: gronky_

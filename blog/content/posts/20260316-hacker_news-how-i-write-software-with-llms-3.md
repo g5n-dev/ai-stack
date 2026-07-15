@@ -33,10 +33,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 利用大语言模型辅助软件开发的实践方法
-
----
-
 ## 基本信息
 
 - **作者**: indigodaddy

@@ -37,10 +37,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 大林建设采用ChatGPT Enterprise推动全球建筑业务人才发展
-
----
-
 ## 基本信息
 
 - **来源**: OpenAI Blog (blog)
@@ -126,9 +122,7 @@ source_support: 0.0
 *   **行业影响（4/5）：** 作为日本建筑巨头（五大建筑承包商之一），Taisei的举动具有信号意义。它预示着建筑业正在从“AutoCAD（辅助绘图）”时代
 
 ---
-## 技术分析
 
-# 技术分析：大成建设的企业级AI应用实践
 
 ## 1. 核心观点深度解读
 
@@ -293,7 +287,6 @@ source_support: 0.0
 ---
 
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [产品与创业](/categories/%E4%BA%A7%E5%93%81%E4%B8%8E%E5%88%9B%E4%B8%9A/)

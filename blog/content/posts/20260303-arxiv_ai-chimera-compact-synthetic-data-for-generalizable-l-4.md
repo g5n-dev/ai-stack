@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# CHIMERA：用于提升大模型推理泛化能力的紧凑合成数据
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.00889v1

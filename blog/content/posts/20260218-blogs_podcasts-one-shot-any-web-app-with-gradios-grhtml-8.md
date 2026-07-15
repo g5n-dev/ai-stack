@@ -33,10 +33,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 利用 Gradio gr.HTML 组件一键封装任意 Web 应用
-
----
-
 ## 基本信息
 
 - **来源**: Hugging Face Blog (blog)
@@ -101,9 +97,7 @@ Gradio 的 `gr.HTML` 组件允许开发者直接在界面中嵌入自定义代�
     *   **反方**：这是在“缝合怪”。如果 UI 复杂到需要引入 React，为什么不直接用 Next.js 或 Vite 全栈开发？Python 运行 JS 虚拟机的性能开销和调试难度（无法使用 Chrome Devtools 直接调试
 
 ---
-## 技术分析
 
-# 技术分析：利用 Gradio gr.HTML 实现 One-Shot Web 应用
 
 ## 1. 核心观点深度解读
 
@@ -315,7 +309,6 @@ Gradio 的 DOM 结构在不同版本间可能变化，直接依赖 DOM 选择符
 ---
 
 
----
 ## 站内链接
 
 - 分类： [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/) / [前端](/categories/%E5%89%8D%E7%AB%AF/)

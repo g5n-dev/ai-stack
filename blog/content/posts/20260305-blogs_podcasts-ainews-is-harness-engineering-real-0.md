@@ -31,10 +31,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AI工程争议：Harness Engineering是否成立
-
----
-
 ## 基本信息
 
 - **来源**: Latent Space (blog)

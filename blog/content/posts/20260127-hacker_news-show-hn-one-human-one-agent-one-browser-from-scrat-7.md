@@ -25,9 +25,11 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: 引言： 🚀 你敢相信吗？一个浏览器，20,000行代码，一个人+一个AI代理，从零写起！ 在技术圈，我们早已习惯“浏览器 = 巨型工程”的认知——Chrome有2000万行代码，Firefox超过1300万行，连轻量级的Safari也依赖庞大的团队和数年迭代。但今天，一个颠覆性的实验正在挑战这一常识：
+  一位开发者，仅用20K行代码，在AI Agent的辅助下，从零构建了一个功能完整的浏览器！
 ---
 
-# 📰 🚀一人+一智能体=从零打造浏览器！仅20K行代码惊艳全场！
+## 📰 🚀一人+一智能体=从零打造浏览器！仅20K行代码惊艳全场！
 
 ---
 

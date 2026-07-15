@@ -24,9 +24,10 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: 本文介绍了 AgentDrive，一个专为评估和训练自动驾驶系统中智能体推理能力而设计的开源基准数据集。 主要背景与挑战： 随着大型语言模型（LLM）的发展，将其集成到自动驾驶系统中以进行感知、规划和决策已成为趋势。然而，由于缺乏大规模、结构化且涉及安全关键场景的基准数据，此类“具身智能”模型的评估与训练一直面临挑战。
 ---
 
-# 📚 AgentDrive：首个开放基准！🚗 LLM生成场景驱动Agent智能推理
+## 📚 AgentDrive：首个开放基准！🚗 LLM生成场景驱动Agent智能推理
 
 ---
 
@@ -142,7 +143,6 @@ AgentDrive 数据集、AgentDrive-MCQ 基准、评估代码及相关材料已在
 
 ---
 
-# 🚗 AgentDrive 深度解析：重塑自动驾驶智能体的认知基准
 
 ## 1. 研究背景与问题
 

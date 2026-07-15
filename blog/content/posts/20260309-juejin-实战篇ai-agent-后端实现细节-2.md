@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AI Agent后端实战：统一接入多模型提供商的架构设计
-
----
-
 ## 基本信息
 
 - **作者**: Div布局师

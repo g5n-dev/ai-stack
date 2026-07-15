@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# A.R.I.S.：基于深度学习的电子废弃物自动分类系统
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.17642v1

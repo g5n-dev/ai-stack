@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# VS Code提交自动附Copilot标识 用户质疑合理性
-
----
-
 ## 基本信息
 
 - **作者**: indrora
@@ -93,7 +89,6 @@ VS Code 的 Git 集成依赖操作系统层面的 git 客户端，当 Copilot �
 
 ---
 
----
 ## 站内链接
 
 - 分类： [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

@@ -39,10 +39,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Project Genie 四个技巧：创建新世界与自定义圆形全景
-
----
-
 ## 基本信息
 
 - **来源**: Google AI Blog (blog)

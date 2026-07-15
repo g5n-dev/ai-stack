@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 爱芯元智混合精度NPU助其登顶全球中高端边缘AI芯片市场
-
----
-
 ## 基本信息
 
 - **作者**: indieAI
