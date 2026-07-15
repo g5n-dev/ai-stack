@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:P-EAGLE",
-  "generated_at": "2026-07-15T16:48:07Z",
+  "generated_at": "2026-07-15T20:22:07Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -377,7 +377,7 @@
       "legacy_id": "Speculative Decoding",
       "level": 6,
       "name": "Speculative Decoding",
-      "rank": 984,
+      "rank": 985,
       "related_count": 14,
       "weighted_degree": 14
     },
@@ -394,7 +394,7 @@
       "legacy_id": "模型加速",
       "level": 6,
       "name": "模型加速",
-      "rank": 1195,
+      "rank": 1196,
       "related_count": 14,
       "weighted_degree": 14
     },
@@ -411,7 +411,7 @@
       "legacy_id": "论文解读",
       "level": 6,
       "name": "论文解读",
-      "rank": 1303,
+      "rank": 1304,
       "related_count": 14,
       "weighted_degree": 14
     },
@@ -428,7 +428,7 @@
       "legacy_id": "PagedAttention",
       "level": 6,
       "name": "PagedAttention",
-      "rank": 1554,
+      "rank": 1555,
       "related_count": 10,
       "weighted_degree": 14
     },
@@ -445,7 +445,7 @@
       "legacy_id": "AI 基准",
       "level": 6,
       "name": "AI 基准",
-      "rank": 1650,
+      "rank": 1651,
       "related_count": 7,
       "weighted_degree": 7.6
     },
@@ -462,7 +462,7 @@
       "legacy_id": "DSpark",
       "level": 6,
       "name": "DSpark",
-      "rank": 2252,
+      "rank": 2253,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -479,7 +479,7 @@
       "legacy_id": "EAGLE",
       "level": 6,
       "name": "EAGLE",
-      "rank": 2264,
+      "rank": 2265,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -496,7 +496,7 @@
       "legacy_id": "P-EAGLE",
       "level": 6,
       "name": "P-EAGLE",
-      "rank": 2778,
+      "rank": 2779,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -513,7 +513,7 @@
       "legacy_id": "特征选择",
       "level": 6,
       "name": "特征选择",
-      "rank": 5499,
+      "rank": 5500,
       "related_count": 7,
       "weighted_degree": 7
     }

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-15T18:27:57Z",
+  "generated_at": "2026-07-15T20:22:07Z",
   "layer": "tag",
   "layers": {
     "application": {
@@ -424,14 +424,6 @@
       "weight": 1
     },
     {
-      "id": "edge:cooccurrence:tag:AI->tag:SFT",
-      "source": "tag:AI",
-      "strength": 0.5,
-      "target": "tag:SFT",
-      "type": "cooccurrence",
-      "weight": 1
-    },
-    {
       "id": "edge:cooccurrence:tag:AI->tag:Stable Diffusion",
       "source": "tag:AI",
       "strength": 0.5,
@@ -670,6 +662,14 @@
       "target": "tag:机器学习",
       "type": "cooccurrence",
       "weight": 2
+    },
+    {
+      "id": "edge:cooccurrence:tag:AI->tag:来源快报",
+      "source": "tag:AI",
+      "strength": 0.5,
+      "target": "tag:来源快报",
+      "type": "cooccurrence",
+      "weight": 1
     },
     {
       "id": "edge:cooccurrence:tag:AI->tag:架构设计",
@@ -9832,6 +9832,14 @@
       "weight": 3
     },
     {
+      "id": "edge:cooccurrence:tag:Amazon Bedrock->tag:来源快报",
+      "source": "tag:Amazon Bedrock",
+      "strength": 1,
+      "target": "tag:来源快报",
+      "type": "cooccurrence",
+      "weight": 2
+    },
+    {
       "id": "edge:cooccurrence:tag:Amazon Bedrock->tag:架构设计",
       "source": "tag:Amazon Bedrock",
       "strength": 0.5,
@@ -9960,14 +9968,6 @@
       "weight": 1
     },
     {
-      "id": "edge:cooccurrence:tag:Amazon Nova->tag:SFT",
-      "source": "tag:Amazon Nova",
-      "strength": 0.5,
-      "target": "tag:SFT",
-      "type": "cooccurrence",
-      "weight": 1
-    },
-    {
       "id": "edge:cooccurrence:tag:Amazon Nova->tag:图像生成",
       "source": "tag:Amazon Nova",
       "strength": 0.5,
@@ -10012,6 +10012,14 @@
       "source": "tag:Amazon Nova",
       "strength": 0.5,
       "target": "tag:技术选型",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Amazon Nova->tag:来源快报",
+      "source": "tag:Amazon Nova",
+      "strength": 0.5,
+      "target": "tag:来源快报",
       "type": "cooccurrence",
       "weight": 1
     },
@@ -16408,14 +16416,6 @@
       "weight": 1
     },
     {
-      "id": "edge:cooccurrence:tag:KV Cache->tag:SFT",
-      "source": "tag:KV Cache",
-      "strength": 0.5,
-      "target": "tag:SFT",
-      "type": "cooccurrence",
-      "weight": 1
-    },
-    {
       "id": "edge:cooccurrence:tag:KV Cache->tag:Transformer",
       "source": "tag:KV Cache",
       "strength": 1,
@@ -16652,14 +16652,6 @@
       "source": "tag:LLM",
       "strength": 1,
       "target": "tag:Rust",
-      "type": "cooccurrence",
-      "weight": 3
-    },
-    {
-      "id": "edge:cooccurrence:tag:LLM->tag:SFT",
-      "source": "tag:LLM",
-      "strength": 1,
-      "target": "tag:SFT",
       "type": "cooccurrence",
       "weight": 3
     },
@@ -22400,134 +22392,6 @@
       "weight": 0.6
     },
     {
-      "id": "edge:cooccurrence:tag:SFT->tag:多智能体",
-      "source": "tag:SFT",
-      "strength": 0.5,
-      "target": "tag:多智能体",
-      "type": "cooccurrence",
-      "weight": 1
-    },
-    {
-      "id": "edge:cooccurrence:tag:SFT->tag:多模态",
-      "source": "tag:SFT",
-      "strength": 0.5,
-      "target": "tag:多模态",
-      "type": "cooccurrence",
-      "weight": 1
-    },
-    {
-      "id": "edge:cooccurrence:tag:SFT->tag:开源",
-      "source": "tag:SFT",
-      "strength": 0.5,
-      "target": "tag:开源",
-      "type": "cooccurrence",
-      "weight": 1
-    },
-    {
-      "id": "edge:cooccurrence:tag:SFT->tag:强化学习",
-      "source": "tag:SFT",
-      "strength": 1,
-      "target": "tag:强化学习",
-      "type": "cooccurrence",
-      "weight": 2
-    },
-    {
-      "id": "edge:cooccurrence:tag:SFT->tag:微调",
-      "source": "tag:SFT",
-      "strength": 0.5,
-      "target": "tag:微调",
-      "type": "cooccurrence",
-      "weight": 1
-    },
-    {
-      "id": "edge:cooccurrence:tag:SFT->tag:持续学习",
-      "source": "tag:SFT",
-      "strength": 0.5,
-      "target": "tag:持续学习",
-      "type": "cooccurrence",
-      "weight": 1
-    },
-    {
-      "id": "edge:cooccurrence:tag:SFT->tag:推理能力",
-      "source": "tag:SFT",
-      "strength": 0.5,
-      "target": "tag:推理能力",
-      "type": "cooccurrence",
-      "weight": 1
-    },
-    {
-      "id": "edge:cooccurrence:tag:SFT->tag:本地部署",
-      "source": "tag:SFT",
-      "strength": 0.5,
-      "target": "tag:本地部署",
-      "type": "cooccurrence",
-      "weight": 1
-    },
-    {
-      "id": "edge:cooccurrence:tag:SFT->tag:模型优化",
-      "source": "tag:SFT",
-      "strength": 0.5,
-      "target": "tag:模型优化",
-      "type": "cooccurrence",
-      "weight": 1
-    },
-    {
-      "id": "edge:cooccurrence:tag:SFT->tag:模型压缩",
-      "source": "tag:SFT",
-      "strength": 0.5,
-      "target": "tag:模型压缩",
-      "type": "cooccurrence",
-      "weight": 1
-    },
-    {
-      "id": "edge:cooccurrence:tag:SFT->tag:模型微调",
-      "source": "tag:SFT",
-      "strength": 0.5,
-      "target": "tag:模型微调",
-      "type": "cooccurrence",
-      "weight": 1
-    },
-    {
-      "id": "edge:cooccurrence:tag:SFT->tag:模型训练",
-      "source": "tag:SFT",
-      "strength": 1,
-      "target": "tag:模型训练",
-      "type": "cooccurrence",
-      "weight": 3
-    },
-    {
-      "id": "edge:cooccurrence:tag:SFT->tag:灾难性遗忘",
-      "source": "tag:SFT",
-      "strength": 1,
-      "target": "tag:灾难性遗忘",
-      "type": "cooccurrence",
-      "weight": 2
-    },
-    {
-      "id": "edge:cooccurrence:tag:SFT->tag:网络安全",
-      "source": "tag:SFT",
-      "strength": 0.5,
-      "target": "tag:网络安全",
-      "type": "cooccurrence",
-      "weight": 1
-    },
-    {
-      "id": "edge:cooccurrence:tag:SFT->tag:边缘计算",
-      "source": "tag:SFT",
-      "strength": 0.5,
-      "target": "tag:边缘计算",
-      "type": "cooccurrence",
-      "weight": 1
-    },
-    {
-      "id": "edge:cooccurrence:tag:SFT->tag:长上下文",
-      "source": "tag:SFT",
-      "strength": 0.5,
-      "target": "tag:长上下文",
-      "type": "cooccurrence",
-      "weight": 1
-    },
-    {
       "id": "edge:cooccurrence:tag:SOTA->tag:Transformer",
       "source": "tag:SOTA",
       "strength": 0.5,
@@ -24198,14 +24062,6 @@
       "target": "tag:RL",
       "type": "cooccurrence",
       "weight": 2
-    },
-    {
-      "id": "edge:cooccurrence:tag:cs.LG->tag:SFT",
-      "source": "tag:cs.LG",
-      "strength": 0.5,
-      "target": "tag:SFT",
-      "type": "cooccurrence",
-      "weight": 1
     },
     {
       "id": "edge:cooccurrence:tag:cs.LG->tag:Transformer",
@@ -36315,7 +36171,7 @@
       "weighted_degree": 49.6
     },
     {
-      "article_count": 46,
+      "article_count": 47,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
@@ -36329,7 +36185,7 @@
       "name": "Amazon Bedrock",
       "rank": 29,
       "related_count": 232,
-      "weighted_degree": 313
+      "weighted_degree": 316
     },
     {
       "article_count": 14,
@@ -36395,7 +36251,7 @@
       "legacy_id": "arxiv",
       "level": 6,
       "name": "arxiv",
-      "rank": 916,
+      "rank": 917,
       "related_count": 5,
       "weighted_degree": 14
     },
@@ -37418,23 +37274,6 @@
       "rank": 56,
       "related_count": 135,
       "weighted_degree": 189
-    },
-    {
-      "article_count": 7,
-      "category": "article_tag",
-      "color": "#f59e0b",
-      "community_id": "community:other",
-      "degree": 43,
-      "description": "文章标签: SFT",
-      "id": "tag:SFT",
-      "layer": "tag",
-      "layer_name": "标签层",
-      "legacy_id": "SFT",
-      "level": 6,
-      "name": "SFT",
-      "rank": 249,
-      "related_count": 43,
-      "weighted_degree": 49
     },
     {
       "article_count": 28,
@@ -39018,6 +38857,23 @@
       "weighted_degree": 385
     },
     {
+      "article_count": 8,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:other",
+      "degree": 14,
+      "description": "文章标签: 来源快报",
+      "id": "tag:来源快报",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "来源快报",
+      "level": 6,
+      "name": "来源快报",
+      "rank": 577,
+      "related_count": 14,
+      "weighted_degree": 22
+    },
+    {
       "article_count": 40,
       "category": "article_tag",
       "color": "#f59e0b",
@@ -40142,13 +39998,13 @@
   ],
   "stats": {
     "links_by_type": {
-      "cooccurrence": 4434,
+      "cooccurrence": 4416,
       "semantic": 47
     },
     "nodes_by_layer": {
       "tag": 250
     },
-    "total_links": 4481,
+    "total_links": 4463,
     "total_nodes": 250
   },
   "version": 2

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-15T18:27:57Z",
+  "generated_at": "2026-07-15T20:22:07Z",
   "layers": {
     "application": {
       "color": "#7aa6b8",
@@ -1778,7 +1778,7 @@
       "legacy_id": "webapp",
       "level": 4,
       "name": "Web应用",
-      "rank": 1562,
+      "rank": 1563,
       "weighted_degree": 12.2
     }
   ],

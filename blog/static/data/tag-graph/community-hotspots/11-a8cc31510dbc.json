@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:SF6",
-  "generated_at": "2026-07-15T16:48:07Z",
+  "generated_at": "2026-07-15T20:22:07Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -309,7 +309,7 @@
       "legacy_id": "NeRF",
       "level": 6,
       "name": "NeRF",
-      "rank": 851,
+      "rank": 852,
       "related_count": 17,
       "weighted_degree": 21
     },
@@ -326,7 +326,7 @@
       "legacy_id": "DIRSIG",
       "level": 6,
       "name": "DIRSIG",
-      "rank": 2241,
+      "rank": 2242,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -343,7 +343,7 @@
       "legacy_id": "LoGeR",
       "level": 6,
       "name": "LoGeR",
-      "rank": 2586,
+      "rank": 2587,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -360,7 +360,7 @@
       "legacy_id": "SF6",
       "level": 6,
       "name": "SF6",
-      "rank": 2999,
+      "rank": 3000,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -377,7 +377,7 @@
       "legacy_id": "伯克利",
       "level": 6,
       "name": "伯克利",
-      "rank": 3571,
+      "rank": 3572,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -394,7 +394,7 @@
       "legacy_id": "图形学",
       "level": 6,
       "name": "图形学",
-      "rank": 4092,
+      "rank": 4093,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -411,7 +411,7 @@
       "legacy_id": "实时渲染",
       "level": 6,
       "name": "实时渲染",
-      "rank": 4332,
+      "rank": 4333,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -428,7 +428,7 @@
       "legacy_id": "气体检测",
       "level": 6,
       "name": "气体检测",
-      "rank": 5327,
+      "rank": 5328,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -445,7 +445,7 @@
       "legacy_id": "红外成像",
       "level": 6,
       "name": "红外成像",
-      "rank": 5831,
+      "rank": 5832,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -462,7 +462,7 @@
       "legacy_id": "美国国家实验室",
       "level": 6,
       "name": "美国国家实验室",
-      "rank": 5931,
+      "rank": 5932,
       "related_count": 7,
       "weighted_degree": 7
     }

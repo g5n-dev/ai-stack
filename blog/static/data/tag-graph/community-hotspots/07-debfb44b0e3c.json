@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:Autotab",
-  "generated_at": "2026-07-15T16:48:07Z",
+  "generated_at": "2026-07-15T20:22:07Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -343,7 +343,7 @@
       "legacy_id": "Agent Lab",
       "level": 6,
       "name": "Agent Lab",
-      "rank": 1608,
+      "rank": 1609,
       "related_count": 7,
       "weighted_degree": 7.6
     },
@@ -360,7 +360,7 @@
       "legacy_id": "Cloud Agents",
       "level": 6,
       "name": "Cloud Agents",
-      "rank": 1834,
+      "rank": 1835,
       "related_count": 7,
       "weighted_degree": 7.6
     },
@@ -377,7 +377,7 @@
       "legacy_id": "Astral",
       "level": 6,
       "name": "Astral",
-      "rank": 2019,
+      "rank": 2020,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -394,7 +394,7 @@
       "legacy_id": "Autotab",
       "level": 6,
       "name": "Autotab",
-      "rank": 2034,
+      "rank": 2035,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -411,7 +411,7 @@
       "legacy_id": "GPT-3",
       "level": 6,
       "name": "GPT-3",
-      "rank": 2397,
+      "rank": 2398,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -428,7 +428,7 @@
       "legacy_id": "Graphite",
       "level": 6,
       "name": "Graphite",
-      "rank": 2417,
+      "rank": 2418,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -445,7 +445,7 @@
       "legacy_id": "商业动态",
       "level": 6,
       "name": "商业动态",
-      "rank": 4058,
+      "rank": 4059,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -462,7 +462,7 @@
       "legacy_id": "规划与执行",
       "level": 6,
       "name": "规划与执行",
-      "rank": 6141,
+      "rank": 6142,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -479,7 +479,7 @@
       "legacy_id": "远程控制",
       "level": 6,
       "name": "远程控制",
-      "rank": 6447,
+      "rank": 6448,
       "related_count": 7,
       "weighted_degree": 7
     }

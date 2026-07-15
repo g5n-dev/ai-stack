@@ -1,5 +1,5 @@
 {
-  "active_count": 1926,
+  "active_count": 1927,
   "archived_count": 448,
   "complete_count": 0,
   "legacy_analysis_count": 1910,
@@ -10416,6 +10416,15 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260716-blogs_podcasts-built-technologies-builds-an-ai-powered-document-i-0-5bfda91086.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
+    },
     "posts/20260716-blogs_podcasts-celebrating-25-years-of-visual-search-innovation-0-bbfc4b37a7.md": {
       "reasons": [
         "concise_source_card"
@@ -10434,8 +10443,10 @@
     "archived_content": 448
   },
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 16,
-  "source_file_count": 2374,
-  "source_tree_sha256": "492d85f3bed9196121f8e2482d15c794362f94ff7746fae7cf787c77d1c5bc53",
-  "warning_counts": {}
+  "source_brief_count": 17,
+  "source_file_count": 2375,
+  "source_tree_sha256": "68b25f2772c34849e18a1bf212eb71eb7e51a7f5f89ba13edbfcf9467341423f",
+  "warning_counts": {
+    "source_excerpt_truncated": 1
+  }
 }
