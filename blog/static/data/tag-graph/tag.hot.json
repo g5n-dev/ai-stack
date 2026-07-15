@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-14T18:42:06Z",
+  "generated_at": "2026-07-15T03:26:59Z",
   "layer": "tag",
   "layers": {
     "application": {
@@ -8733,7 +8733,7 @@
       "strength": 1,
       "target": "tag:LLM",
       "type": "cooccurrence",
-      "weight": 6
+      "weight": 7
     },
     {
       "id": "edge:cooccurrence:tag:AI智能体->tag:Linux",
@@ -8834,10 +8834,10 @@
     {
       "id": "edge:cooccurrence:tag:AI智能体->tag:基准测试",
       "source": "tag:AI智能体",
-      "strength": 0.5,
+      "strength": 1,
       "target": "tag:基准测试",
       "type": "cooccurrence",
-      "weight": 1
+      "weight": 2
     },
     {
       "id": "edge:cooccurrence:tag:AI智能体->tag:基础设施",
@@ -26461,7 +26461,7 @@
       "strength": 1,
       "target": "tag:基准测试",
       "type": "cooccurrence",
-      "weight": 80
+      "weight": 81
     },
     {
       "id": "edge:cooccurrence:tag:LLM->tag:基础设施",
@@ -48061,7 +48061,7 @@
       "strength": 1,
       "target": "tag:智能体",
       "type": "cooccurrence",
-      "weight": 2
+      "weight": 3
     },
     {
       "id": "edge:cooccurrence:tag:持续学习->tag:模型压缩",
@@ -53944,7 +53944,7 @@
       "legacy_id": "Agentic",
       "level": 6,
       "name": "Agentic",
-      "rank": 231,
+      "rank": 232,
       "related_count": 77,
       "weighted_degree": 210
     },
@@ -53961,7 +53961,7 @@
       "legacy_id": "Agentic AI",
       "level": 6,
       "name": "Agentic AI",
-      "rank": 140,
+      "rank": 141,
       "related_count": 144,
       "weighted_degree": 336
     },
@@ -53995,7 +53995,7 @@
       "legacy_id": "AI",
       "level": 6,
       "name": "AI",
-      "rank": 23,
+      "rank": 24,
       "related_count": 543,
       "weighted_degree": 1300.6
     },
@@ -54233,16 +54233,16 @@
       "legacy_id": "AI教育",
       "level": 6,
       "name": "AI教育",
-      "rank": 235,
+      "rank": 236,
       "related_count": 110,
       "weighted_degree": 203.6
     },
     {
-      "article_count": 47,
+      "article_count": 48,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
-      "degree": 194,
+      "degree": 199,
       "description": "AI智能体是指能够感知环境、自主决策并采取行动以实现目标的智能系统，通常与大语言模型、强化学习及自动化工具相关，是构建AI生态和实现复杂任务自动化的核心组件。",
       "id": "tag:AI智能体",
       "layer": "tag",
@@ -54250,9 +54250,9 @@
       "legacy_id": "AI智能体",
       "level": 6,
       "name": "AI智能体",
-      "rank": 143,
-      "related_count": 193,
-      "weighted_degree": 329.6
+      "rank": 139,
+      "related_count": 198,
+      "weighted_degree": 336.6
     },
     {
       "article_count": 38,
@@ -54556,7 +54556,7 @@
       "legacy_id": "blogs_podcasts",
       "level": 6,
       "name": "blogs_podcasts",
-      "rank": 11348,
+      "rank": 11357,
       "related_count": 0,
       "weighted_degree": 0
     },
@@ -54709,7 +54709,7 @@
       "legacy_id": "cs.CL",
       "level": 6,
       "name": "cs.CL",
-      "rank": 234,
+      "rank": 235,
       "related_count": 138,
       "weighted_degree": 207
     },
@@ -54743,7 +54743,7 @@
       "legacy_id": "Cursor",
       "level": 6,
       "name": "Cursor",
-      "rank": 146,
+      "rank": 147,
       "related_count": 142,
       "weighted_degree": 329
     },
@@ -54879,7 +54879,7 @@
       "legacy_id": "GLM-5",
       "level": 6,
       "name": "GLM-5",
-      "rank": 233,
+      "rank": 234,
       "related_count": 71,
       "weighted_degree": 209
     },
@@ -55015,7 +55015,7 @@
       "legacy_id": "hacker_news",
       "level": 6,
       "name": "hacker_news",
-      "rank": 11349,
+      "rank": 11358,
       "related_count": 0,
       "weighted_degree": 0
     },
@@ -55173,11 +55173,11 @@
       "weighted_degree": 245
     },
     {
-      "article_count": 2113,
+      "article_count": 2114,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:插件系统",
-      "degree": 3483,
+      "degree": 3487,
       "description": "LLM指大语言模型，是具备千亿级参数规模、能处理复杂任务（如代码生成、智能体构建）的AI基础技术，与AI原生应用、安全及科学计算等领域紧密相关。",
       "id": "tag:LLM",
       "layer": "tag",
@@ -55186,8 +55186,8 @@
       "level": 6,
       "name": "LLM",
       "rank": 1,
-      "related_count": 3481,
-      "weighted_degree": 14780.2
+      "related_count": 3485,
+      "weighted_degree": 14787.2
     },
     {
       "article_count": 33,
@@ -55270,7 +55270,7 @@
       "legacy_id": "MIT",
       "level": 6,
       "name": "MIT",
-      "rank": 142,
+      "rank": 143,
       "related_count": 123,
       "weighted_degree": 336
     },
@@ -55746,7 +55746,7 @@
       "legacy_id": "YC",
       "level": 6,
       "name": "YC",
-      "rank": 230,
+      "rank": 231,
       "related_count": 101,
       "weighted_degree": 210
     },
@@ -56001,7 +56001,7 @@
       "legacy_id": "具身智能",
       "level": 6,
       "name": "具身智能",
-      "rank": 147,
+      "rank": 148,
       "related_count": 140,
       "weighted_degree": 329
     },
@@ -56176,11 +56176,11 @@
       "weighted_degree": 511
     },
     {
-      "article_count": 186,
+      "article_count": 187,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
-      "degree": 493,
+      "degree": 497,
       "description": "基准测试是衡量AI模型、Agent或系统在特定任务上性能与表现的标准化评估方法，常用于模型对比、能力评估及工业场景落地验证。",
       "id": "tag:基准测试",
       "layer": "tag",
@@ -56188,9 +56188,9 @@
       "legacy_id": "基准测试",
       "level": 6,
       "name": "基准测试",
-      "rank": 24,
-      "related_count": 493,
-      "weighted_degree": 1300
+      "rank": 23,
+      "related_count": 497,
+      "weighted_degree": 1307
     },
     {
       "article_count": 93,
@@ -56273,7 +56273,7 @@
       "legacy_id": "多语言",
       "level": 6,
       "name": "多语言",
-      "rank": 145,
+      "rank": 146,
       "related_count": 145,
       "weighted_degree": 329
     },
@@ -56397,11 +56397,11 @@
       "weighted_degree": 301
     },
     {
-      "article_count": 46,
+      "article_count": 47,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
-      "degree": 186,
+      "degree": 193,
       "description": "工程化指将AI开发与编程实践系统化、标准化的方法，与AI基础设施、工具链及代码重构相关，旨在提升开发效率与代码质量。",
       "id": "tag:工程化",
       "layer": "tag",
@@ -56409,9 +56409,9 @@
       "legacy_id": "工程化",
       "level": 6,
       "name": "工程化",
-      "rank": 149,
-      "related_count": 186,
-      "weighted_degree": 322
+      "rank": 144,
+      "related_count": 193,
+      "weighted_degree": 329
     },
     {
       "article_count": 48,
@@ -56426,7 +56426,7 @@
       "legacy_id": "工程实践",
       "level": 6,
       "name": "工程实践",
-      "rank": 139,
+      "rank": 140,
       "related_count": 191,
       "weighted_degree": 336
     },
@@ -56720,11 +56720,11 @@
       "weighted_degree": 259
     },
     {
-      "article_count": 29,
+      "article_count": 30,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:低秩更新",
-      "degree": 125,
+      "degree": 131,
       "description": "持续学习旨在让模型在获取新知识的同时保留旧技能，从而解决神经网络训练中常见的灾难性遗忘问题。该领域与类增量学习、上下文学习及大模型微调技术紧密相关。",
       "id": "tag:持续学习",
       "layer": "tag",
@@ -56732,9 +56732,9 @@
       "legacy_id": "持续学习",
       "level": 6,
       "name": "持续学习",
-      "rank": 237,
-      "related_count": 125,
-      "weighted_degree": 203
+      "rank": 230,
+      "related_count": 131,
+      "weighted_degree": 210
     },
     {
       "article_count": 49,
@@ -57009,11 +57009,11 @@
       "weighted_degree": 252
     },
     {
-      "article_count": 370,
+      "article_count": 371,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:插件系统",
-      "degree": 928,
+      "degree": 934,
       "description": "智能体通常指具备感知、推理和执行能力的自主AI系统，与强化学习、大模型应用及自动化编程等方向紧密相关，旨在通过独立决策完成复杂任务。",
       "id": "tag:智能体",
       "layer": "tag",
@@ -57022,8 +57022,8 @@
       "level": 6,
       "name": "智能体",
       "rank": 7,
-      "related_count": 928,
-      "weighted_degree": 2588
+      "related_count": 934,
+      "weighted_degree": 2595
     },
     {
       "article_count": 41,
@@ -57565,7 +57565,7 @@
       "legacy_id": "科学发现",
       "level": 6,
       "name": "科学发现",
-      "rank": 148,
+      "rank": 149,
       "related_count": 118,
       "weighted_degree": 329
     },
@@ -57582,7 +57582,7 @@
       "legacy_id": "稀疏模型",
       "level": 6,
       "name": "稀疏模型",
-      "rank": 232,
+      "rank": 233,
       "related_count": 52,
       "weighted_degree": 210
     },
@@ -57922,7 +57922,7 @@
       "legacy_id": "语言模型",
       "level": 6,
       "name": "语言模型",
-      "rank": 144,
+      "rank": 145,
       "related_count": 187,
       "weighted_degree": 329
     },
@@ -58058,7 +58058,7 @@
       "legacy_id": "逆向工程",
       "level": 6,
       "name": "逆向工程",
-      "rank": 141,
+      "rank": 142,
       "related_count": 144,
       "weighted_degree": 336
     },
@@ -58143,7 +58143,7 @@
       "legacy_id": "鲁棒性",
       "level": 6,
       "name": "鲁棒性",
-      "rank": 236,
+      "rank": 237,
       "related_count": 151,
       "weighted_degree": 203
     }
