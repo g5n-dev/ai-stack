@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:SpeechAnalyzer",
-  "generated_at": "2026-07-15T20:22:07Z",
+  "generated_at": "2026-07-15T23:15:32Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -326,7 +326,7 @@
       "legacy_id": "Apple",
       "level": 6,
       "name": "Apple",
-      "rank": 605,
+      "rank": 606,
       "related_count": 21,
       "weighted_degree": 21
     },
@@ -343,7 +343,7 @@
       "legacy_id": "C语言",
       "level": 6,
       "name": "C语言",
-      "rank": 609,
+      "rank": 610,
       "related_count": 21,
       "weighted_degree": 21
     },
@@ -360,7 +360,7 @@
       "legacy_id": "Mistral",
       "level": 6,
       "name": "Mistral",
-      "rank": 716,
+      "rank": 717,
       "related_count": 20,
       "weighted_degree": 21
     },
@@ -377,7 +377,7 @@
       "legacy_id": "Voxtral",
       "level": 6,
       "name": "Voxtral",
-      "rank": 724,
+      "rank": 725,
       "related_count": 20,
       "weighted_degree": 21
     },
@@ -394,7 +394,7 @@
       "legacy_id": "性能评测",
       "level": 6,
       "name": "性能评测",
-      "rank": 750,
+      "rank": 751,
       "related_count": 20,
       "weighted_degree": 21
     },
@@ -411,7 +411,7 @@
       "legacy_id": "Whisper",
       "level": 6,
       "name": "Whisper",
-      "rank": 787,
+      "rank": 788,
       "related_count": 19,
       "weighted_degree": 21
     },
@@ -428,7 +428,7 @@
       "legacy_id": "CPU推理",
       "level": 6,
       "name": "CPU推理",
-      "rank": 932,
+      "rank": 933,
       "related_count": 14,
       "weighted_degree": 14
     },
@@ -445,7 +445,7 @@
       "legacy_id": "API对比",
       "level": 6,
       "name": "API对比",
-      "rank": 1824,
+      "rank": 1827,
       "related_count": 7,
       "weighted_degree": 7.6
     },
@@ -462,7 +462,7 @@
       "legacy_id": "Moonshine",
       "level": 6,
       "name": "Moonshine",
-      "rank": 2674,
+      "rank": 2678,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -479,7 +479,7 @@
       "legacy_id": "SpeechAnalyzer",
       "level": 6,
       "name": "SpeechAnalyzer",
-      "rank": 3056,
+      "rank": 3060,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -496,7 +496,7 @@
       "legacy_id": "Xcode",
       "level": 6,
       "name": "Xcode",
-      "rank": 3263,
+      "rank": 3266,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -513,7 +513,7 @@
       "legacy_id": "实时转录",
       "level": 6,
       "name": "实时转录",
-      "rank": 4342,
+      "rank": 4345,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -530,7 +530,7 @@
       "legacy_id": "架构解析",
       "level": 6,
       "name": "架构解析",
-      "rank": 5177,
+      "rank": 5180,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -547,7 +547,7 @@
       "legacy_id": "浏览器端",
       "level": 6,
       "name": "浏览器端",
-      "rank": 5383,
+      "rank": 5386,
       "related_count": 7,
       "weighted_degree": 7
     }

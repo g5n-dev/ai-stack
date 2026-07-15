@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:Clippy",
-  "generated_at": "2026-07-15T20:22:07Z",
+  "generated_at": "2026-07-15T23:15:32Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -326,7 +326,7 @@
       "legacy_id": "智能化",
       "level": 6,
       "name": "智能化",
-      "rank": 799,
+      "rank": 800,
       "related_count": 19,
       "weighted_degree": 21
     },
@@ -343,7 +343,7 @@
       "legacy_id": "结构化提示",
       "level": 6,
       "name": "结构化提示",
-      "rank": 864,
+      "rank": 866,
       "related_count": 16,
       "weighted_degree": 21
     },
@@ -360,7 +360,7 @@
       "legacy_id": "角色设定",
       "level": 6,
       "name": "角色设定",
-      "rank": 1299,
+      "rank": 1300,
       "related_count": 14,
       "weighted_degree": 14
     },
@@ -394,7 +394,7 @@
       "legacy_id": "AI人格化",
       "level": 6,
       "name": "AI人格化",
-      "rank": 1691,
+      "rank": 1694,
       "related_count": 7,
       "weighted_degree": 7.6
     },
@@ -411,7 +411,7 @@
       "legacy_id": "Clippy",
       "level": 6,
       "name": "Clippy",
-      "rank": 2129,
+      "rank": 2133,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -428,7 +428,7 @@
       "legacy_id": "任务约束",
       "level": 6,
       "name": "任务约束",
-      "rank": 3536,
+      "rank": 3539,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -445,7 +445,7 @@
       "legacy_id": "工具性",
       "level": 6,
       "name": "工具性",
-      "rank": 4437,
+      "rank": 4440,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -462,7 +462,7 @@
       "legacy_id": "深度思考",
       "level": 6,
       "name": "深度思考",
-      "rank": 5401,
+      "rank": 5404,
       "related_count": 7,
       "weighted_degree": 7
     }

@@ -27,7 +27,7 @@
       "focus-shards/004-7a725af0a10c.json",
       "focus-shards/005-f55e598925d3.json",
       "focus-shards/006-75fbcb8beaaa.json",
-      "focus-shards/007-3d726d4ab250.json",
+      "focus-shards/007-fe4f0ba99f83.json",
       "focus-shards/008-119ff7c935f3.json",
       "focus-shards/009-fd95fd0f342b.json",
       "focus-shards/010-0652c91e8694.json",
@@ -80,7 +80,7 @@
       "focus-shards/057-3c27184241e1.json",
       "focus-shards/058-f3069f5d2e51.json",
       "focus-shards/059-7316b41f20f9.json",
-      "focus-shards/060-376899488ed4.json",
+      "focus-shards/060-2a7854787c97.json",
       "focus-shards/061-51163ebe3659.json",
       "focus-shards/062-0628c761f430.json",
       "focus-shards/063-46fd3f1a6dd5.json",
@@ -90,7 +90,7 @@
       "focus-shards/067-37d52dd02ec2.json",
       "focus-shards/068-811b187eafaf.json",
       "focus-shards/069-dd299d27c58c.json",
-      "focus-shards/070-2e634e80f900.json",
+      "focus-shards/070-c059462c60c3.json",
       "focus-shards/071-13dd0e783e06.json",
       "focus-shards/072-e65374533d69.json",
       "focus-shards/073-6b9aa5f3e6d3.json",
@@ -129,7 +129,7 @@
       "focus-shards/106-5537cbe68020.json",
       "focus-shards/107-4ae2d860c5ff.json",
       "focus-shards/108-9403388fcbd1.json",
-      "focus-shards/109-15dc28f3cf4e.json",
+      "focus-shards/109-fe26223f632f.json",
       "focus-shards/110-ecaf32fae905.json",
       "focus-shards/111-cc5a1d99e8c5.json",
       "focus-shards/112-68f97f8dca6b.json",
@@ -153,7 +153,7 @@
     "tag": "tag.json",
     "tagHot": "tag.hot.json"
   },
-  "generated_at": "2026-07-15T22:15:26Z",
+  "generated_at": "2026-07-15T23:15:32Z",
   "layers": {
     "application": {
       "color": "#7aa6b8",
@@ -193,9 +193,9 @@
   },
   "stats": {
     "links_by_type": {
-      "cooccurrence": 46278,
+      "cooccurrence": 46280,
       "relation": 71,
-      "semantic": 535
+      "semantic": 536
     },
     "nodes_by_layer": {
       "application": 8,
@@ -203,13 +203,13 @@
       "language": 8,
       "model": 6,
       "scenario": 31,
-      "tag": 6774
+      "tag": 6775
     },
     "tag_stats": {
       "archived_article_files_skipped": 448,
       "archived_article_groups_skipped": 448,
       "avg_concepts_per_article": 0,
-      "avg_tags_per_article": 7.858475894245723,
+      "avg_tags_per_article": 7.855958549222798,
       "canonical_duplicate_files_skipped": 0,
       "incomplete_article_files_skipped": 0,
       "incomplete_article_groups_skipped": 0,
@@ -278,16 +278,16 @@
       ],
       "synthetic_article_files_skipped": 0,
       "synthetic_article_groups_skipped": 0,
-      "total_articles": 1929,
+      "total_articles": 1930,
       "total_concept_links": 0,
       "total_concepts": 0,
-      "total_tag_links": 46278,
-      "total_tags": 6774
+      "total_tag_links": 46280,
+      "total_tags": 6775
     },
-    "total_articles": 1929,
+    "total_articles": 1930,
     "total_communities": 12,
-    "total_links": 46884,
-    "total_nodes": 6843
+    "total_links": 46887,
+    "total_nodes": 6844
   },
   "version": 2
 }

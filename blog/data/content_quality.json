@@ -1,5 +1,5 @@
 {
-  "active_count": 1929,
+  "active_count": 1930,
   "archived_count": 448,
   "complete_count": 0,
   "legacy_analysis_count": 1910,
@@ -10431,6 +10431,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260716-blogs_podcasts-exploring-hierarchical-interest-representation-for-0-235fa230d8.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260716-blogs_podcasts-monitor-amazon-sagemaker-pipelines-cross-account-w-0-341d7ce40d.md": {
       "reasons": [
         "concise_source_card"
@@ -10455,9 +10461,9 @@
     "archived_content": 448
   },
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 19,
-  "source_file_count": 2377,
-  "source_tree_sha256": "da64834fbdeb479a345644061c337ebeb1d56f74da530649ad1dd8aa1dc643de",
+  "source_brief_count": 20,
+  "source_file_count": 2378,
+  "source_tree_sha256": "2c651123a178a70db12384a8d3fb7b3df75e3a85f392cf6455c29f6487fecbdc",
   "warning_counts": {
     "source_excerpt_truncated": 1
   }
