@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 开源 LLM 推理引擎 ZSE：冷启动时间 3.9 秒
-
----
-
 ## 基本信息
 
 - **作者**: zyoralabs

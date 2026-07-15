@@ -16,8 +16,8 @@ categories:
 - 大模型
 - 效率与方法论
 source: github_trending
-description: 该仓库名为 ** **，由用户 **PlexPt** 创建，是一个旨在帮助中文用户高效使用 ChatGPT的指南。该项目在GitHub上拥有超过5.8万颗星，人气很高。
-  以下是该内容的总结： **1. 核心功能与目的** 该仓库是一个精心整理的**中文提示词集合**。它为用户提供了可以直接复制并粘贴到ChatGPT对话
+description: awesome-chatgpt-prompts-zh 是一个精选的 ChatGPT 中文提示词库，旨在帮助用户通过预设指令引导模型扮演特定角色或执行专业任务。该项目收录了覆盖多种场景的现成指令，适合希望提升
+  AI 交互精准度与效率的中文用户参考。本文将介绍其核心内容、适用场景及使用方法，助你快速掌握如何让 ChatGPT 更好地响应你的需求。
 external_url: https://github.com/PlexPt/awesome-chatgpt-prompts-zh
 scenarios:
 - 大语言模型
@@ -46,8 +46,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# ChatGPT中文调教指南：多场景提示词与使用技巧
-
 > **原名**: PlexPt /
 
       awesome-chatgpt-prompts-zh
@@ -63,9 +61,8 @@ source_support: 0.0
 - **DeepWiki**: [https://deepwiki.com/PlexPt/awesome-chatgpt-prompts-zh](https://deepwiki.com/PlexPt/awesome-chatgpt-prompts-zh)
 
 ---
-## DeepWiki 速览（节选）
 
-# Overview
+## Overview
 
 Relevant source files
 
@@ -88,17 +85,17 @@ Sources: [README.md1-61](https://github.com/PlexPt/awesome-chatgpt-prompts-zh/bl
 
 The repository organizes prompts based on the diverse capabilities of ChatGPT, which include but are not limited to:
 
-Category| Description  
----|---  
-Academic Writing| Writing various types of academic papers including technical, literary, and social science papers  
-Creative Writing| Creating novels, stories, scripts, poetry, and other creative literary works  
-Content Creation| Producing SEO articles, blog posts, social media content, and product descriptions  
-Business Writing| Developing business plans, market research reports, marketing strategies, and commercial communications  
-Technical Documentation| Writing user manuals, technical specifications, API documentation, and code comments  
-Translation| Translating between English and Chinese for academic texts, business documents, and more  
-Data Analysis| Performing statistical analysis, text analysis, and data visualization  
-Educational Materials| Creating course outlines, teaching materials, and training plans  
-  
+Category| Description
+---|---
+Academic Writing| Writing various types of academic papers including technical, literary, and social science papers
+Creative Writing| Creating novels, stories, scripts, poetry, and other creative literary works
+Content Creation| Producing SEO articles, blog posts, social media content, and product descriptions
+Business Writing| Developing business plans, market research reports, marketing strategies, and commercial communications
+Technical Documentation| Writing user manuals, technical specifications, API documentation, and code comments
+Translation| Translating between English and Chinese for academic texts, business documents, and more
+Data Analysis| Performing statistical analysis, text analysis, and data visualization
+Educational Materials| Creating course outlines, teaching materials, and training plans
+
 Sources: [README.md31-61](https://github.com/PlexPt/awesome-chatgpt-prompts-zh/blob/367ed18b/README.md#L31-L61)
 
 ## Main Prompt Categories
@@ -117,14 +114,14 @@ Sources: [README.md79-82](https://github.com/PlexPt/awesome-chatgpt-prompts-zh/b
 
 The repository contains hundreds of prompt examples. Here are a few representative samples:
 
-Role| Prompt (abbreviated)| Purpose  
----|---|---  
-Linux Terminal| "I want you to act as a Linux terminal. I will type commands and you will reply with what the terminal should show..."| Simulates a Linux command line interface  
-English Translator| "I want you to act as an English translator, spelling corrector and improver..."| Translates text to English with improved phrasing  
-Paper Editor| "Please act as a paper editing expert, revising the abstract section of the paper from the perspective of paper review..."| Helps refine academic paper abstracts  
-Front-end Assistant| "I want you to act as a front-end development expert. I will provide specific information about front-end code problems..."| Helps solve front-end development issues  
-Interviewer| "I want you to act as an interviewer. I will be the candidate and you will ask me interview questions..."| Conducts job interviews for specific positions  
-  
+Role| Prompt (abbreviated)| Purpose
+---|---|---
+Linux Terminal| "I want you to act as a Linux terminal. I will type commands and you will reply with what the terminal should show..."| Simulates a Linux command line interface
+English Translator| "I want you to act as an English translator, spelling corrector and improver..."| Translates text to English with improved phrasing
+Paper Editor| "Please act as a paper editing expert, revising the abstract section of the paper from the perspective of paper review..."| Helps refine academic paper abstracts
+Front-end Assistant| "I want you to act as a front-end development expert. I will provide specific information about front-end code problems..."| Helps solve front-end development issues
+Interviewer| "I want you to act as an interviewer. I will be the candidate and you will ask me interview questions..."| Conducts job interviews for specific positions
+
 Sources: [README.md84-119](https://github.com/PlexPt/awesome-chatgpt-prompts-zh/blob/367ed18b/README.md#L84-L119)
 
 ## Special Role-Playing Prompts
@@ -244,7 +241,7 @@ awesome-chatgpt-prompts-zh 是一个精选的 ChatGPT 中文提示词库，旨�
 
 ---
 
-# 1. 技术架构深度剖析
+## 1. 技术架构深度剖析
 
 ### 技术栈与架构模式
 该项目本质上是一个**静态内容存储库**，采用了最简化的技术栈：
@@ -268,7 +265,7 @@ awesome-chatgpt-prompts-zh 是一个精选的 ChatGPT 中文提示词库，旨�
 
 ---
 
-# 2. 核心功能详细解读
+## 2. 核心功能详细解读
 
 ### 主要功能与使用场景
 该仓库的核心功能是**角色扮演**与**任务引导**。它通过精心设计的自然语言指令，强制 ChatGPT 进入特定的思维模式。
@@ -293,7 +290,7 @@ awesome-chatgpt-prompts-zh 是一个精选的 ChatGPT 中文提示词库，旨�
 
 ---
 
-# 3. 技术实现细节
+## 3. 技术实现细节
 
 ### 关键算法或技术方案
 虽然不涉及代码算法，但提示词工程遵循一套**语义逻辑算法**：
@@ -313,7 +310,7 @@ awesome-chatgpt-prompts-zh 是一个精选的 ChatGPT 中文提示词库，旨�
 
 ---
 
-# 4. 适用场景分析
+## 4. 适用场景分析
 
 ### 适合使用的项目
 *   **快速原型验证**：当你需要快速生成一份文案、代码片段或方案框架时，直接调用对应的“角色”提示词可以跳过反复沟通的过程。
@@ -330,7 +327,7 @@ awesome-chatgpt-prompts-zh 是一个精选的 ChatGPT 中文提示词库，旨�
 
 ---
 
-# 5. 发展趋势展望
+## 5. 发展趋势展望
 
 ### 技术演进方向
 *   **从“提示词”到“智能体”**：未来的提示词将不再是一次性的输入，而是包含状态记忆、工具调用能力的 Agent 配置文件。
@@ -345,7 +342,7 @@ awesome-chatgpt-prompts-zh 是一个精选的 ChatGPT 中文提示词库，旨�
 
 ---
 
-# 6. 学习建议
+## 6. 学习建议
 
 ### 适合什么水平的开发者
 *   **初级**：直接复制使用，感受 AI 的能力边界。
@@ -359,7 +356,7 @@ awesome-chatgpt-prompts-zh 是一个精选的 ChatGPT 中文提示词库，旨�
 
 ---
 
-# 7. 最佳实践建议
+## 7. 最佳实践建议
 
 ### 如何正确使用
 1.  **精确复制**：确保复制完整的上下文，特别是“不要做...”的否定约束部分。
@@ -374,7 +371,7 @@ awesome-chatgpt-prompts-zh 是一个精选的 ChatGPT 中文提示词库，旨�
 
 ---
 
-# 8. 哲学与方法论：第一性原理与权衡
+## 8. 哲学与方法论：第一性原理与权衡
 
 ### 抽象层与复杂性转移
 *   **抽象层**：该项目在**“意图表达”**层进行了抽象。它将复杂的编程逻辑或专业知识封装成了**自然语言模板**。
@@ -398,12 +395,12 @@ awesome-chatgpt-prompts-zh 是一个精选的 ChatGPT 中文提示词库，旨�
 def create_structured_prompt(role, task, context=""):
     """
     根据角色、任务和上下文生成符合最佳实践的提示词。
-    
+
     参数:
         role (str): AI扮演的角色，例如"资深Python工程师"。
         task (str): 需要完成的具体任务描述。
         context (str, optional): 补充背景信息。默认为空。
-        
+
     返回:
         str: 格式化后的完整提示词。
     """
@@ -433,22 +430,22 @@ print(create_structured_prompt(
 # 示例2：提示词模板管理类
 class PromptTemplateManager:
     """集中管理并复用常用的提示词模板"""
-    
+
     def __init__(self):
         self.templates = {
             "code_review": "请审查以下代码，重点关注：\n1. 潜在Bug\n2. 性能瓶颈\n3. 代码规范\n\n```python\n{code}\n```",
             "explain_concept": "请用{style}的风格解释'{concept}'这个概念，目标受众是{audience}。",
             "debug_helper": "代码运行时遇到了'{error}'错误。\n代码片段如下：\n```python\n{code}\n```\n请分析可能的原因并提供解决方案。"
         }
-    
+
     def get_template(self, template_name, **kwargs):
         """
         获取指定模板并填充参数。
-        
+
         参数:
             template_name (str): 模板名称。
             **kwargs: 模板变量。
-            
+
         返回:
             str: 填充后的提示词。
         """
@@ -474,10 +471,10 @@ print(manager.get_template(
 def enhance_prompt_quality(user_query):
     """
     自动为简单的用户查询补充结构化指令，以提升回答质量。
-    
+
     参数:
         user_query (str): 用户的原始提问。
-        
+
     返回:
     """
     enhanced_instruction = f"""请针对以下问题提供详细解答：
@@ -498,75 +495,69 @@ print(enhance_prompt_quality("如何用Python读取CSV文件？"))
 
 ### 1：某跨境电商平台的客服自动化优化
 
- 1：某跨境电商平台的客服自动化优化
-
-**背景**:  
+**背景**:
 某跨境电商平台主要面向欧美市场，日均订单量超过10万单，客服团队需要处理大量关于物流查询、退换货政策及产品咨询的重复性问题。由于时差和语言差异，客服响应速度和准确性成为用户投诉的主要原因之一。
 
-**问题**:  
-1. 客服团队人力成本高，且难以覆盖24小时服务。  
-2. 重复性问题占比高达70%，导致客服效率低下。  
+**问题**:
+1. 客服团队人力成本高，且难以覆盖24小时服务。
+2. 重复性问题占比高达70%，导致客服效率低下。
 3. 多语言支持不足，非英语用户咨询响应慢。
 
-**解决方案**:  
-引入基于ChatGPT的智能客服系统，通过fine-tuning模型，结合平台知识库和常见问题库，实现自动化问答。具体步骤包括：  
-1. 整理平台历史客服对话数据，标注高频问题和标准答案。  
-2. 使用ChatGPT API进行模型训练，优化多语言理解能力。  
+**解决方案**:
+引入基于ChatGPT的智能客服系统，通过fine-tuning模型，结合平台知识库和常见问题库，实现自动化问答。具体步骤包括：
+1. 整理平台历史客服对话数据，标注高频问题和标准答案。
+2. 使用ChatGPT API进行模型训练，优化多语言理解能力。
 3. 集成至现有客服系统，设置人工接管规则（如复杂问题自动转接）。
 
-**效果**:  
-1. 客服响应时间从平均30分钟缩短至1分钟内。  
-2. 人力成本降低40%，客服团队可专注于复杂问题处理。  
-3. 用户满意度提升25%，投诉率下降18%。  
+**效果**:
+1. 客服响应时间从平均30分钟缩短至1分钟内。
+2. 人力成本降低40%，客服团队可专注于复杂问题处理。
+3. 用户满意度提升25%，投诉率下降18%。
 
 ---
 
 ### 2：某在线教育平台的个性化学习助手
 
- 2：某在线教育平台的个性化学习助手
-
-**背景**:  
+**背景**:
 某在线教育平台提供K12学科辅导，用户以中小学生为主。平台发现，学生在课后作业和复习中缺乏即时反馈，导致学习效果不佳，家长对平台服务的满意度下降。
 
-**问题**:  
-1. 学生提交作业后，教师批改周期长（通常24小时以上）。  
-2. 无法针对学生的薄弱知识点提供即时练习和讲解。  
+**问题**:
+1. 学生提交作业后，教师批改周期长（通常24小时以上）。
+2. 无法针对学生的薄弱知识点提供即时练习和讲解。
 3. 家长无法实时了解孩子的学习进度。
 
-**解决方案**:  
-开发基于ChatGPT的个性化学习助手，功能包括：  
-1. 实时批改作业，提供错误解析和知识点讲解。  
-2. 根据学生答题记录，生成个性化练习题和复习计划。  
+**解决方案**:
+开发基于ChatGPT的个性化学习助手，功能包括：
+1. 实时批改作业，提供错误解析和知识点讲解。
+2. 根据学生答题记录，生成个性化练习题和复习计划。
 3. 通过自然语言交互，解答学生疑问并引导学习思路。
 
-**效果**:  
-1. 作业批改效率提升90%，学生获得即时反馈。  
-2. 平台用户留存率提高15%，家长付费意愿增强。  
-3. 学生平均成绩提升12%，学习时长增加20%。  
+**效果**:
+1. 作业批改效率提升90%，学生获得即时反馈。
+2. 平台用户留存率提高15%，家长付费意愿增强。
+3. 学生平均成绩提升12%，学习时长增加20%。
 
 ---
 
 ### 3：某科技公司的代码审查辅助工具
 
- 3：某科技公司的代码审查辅助工具
-
-**背景**:  
+**背景**:
 某科技公司开发团队规模约50人，每日代码提交量超过500次。传统代码审查依赖人工，耗时长且容易遗漏潜在问题，影响开发效率和代码质量。
 
-**问题**:  
-1. 代码审查周期长（平均2-3天），拖慢项目进度。  
-2. 人工审查难以覆盖所有安全漏洞和性能问题。  
+**问题**:
+1. 代码审查周期长（平均2-3天），拖慢项目进度。
+2. 人工审查难以覆盖所有安全漏洞和性能问题。
 3. 新员工代码风格不一致，增加维护成本。
 
-**解决方案**:  
-集成ChatGPT的代码审查工具，实现以下功能：  
-1. 自动分析代码逻辑，标记潜在漏洞（如SQL注入、空指针引用）。  
-2. 提供优化建议（如算法复杂度降低、命名规范调整）。  
+**解决方案**:
+集成ChatGPT的代码审查工具，实现以下功能：
+1. 自动分析代码逻辑，标记潜在漏洞（如SQL注入、空指针引用）。
+2. 提供优化建议（如算法复杂度降低、命名规范调整）。
 3. 生成审查报告，供开发团队参考和修正。
 
-**效果**:  
-1. 代码审查时间缩短60%，项目交付速度提升。  
-2. 线上bug减少35%，系统稳定性显著提高。  
+**效果**:
+1. 代码审查时间缩短60%，项目交付速度提升。
+2. 线上bug减少35%，系统稳定性显著提高。
 3. 新员工代码质量达标率从70%提升至95%。
 
 ---
@@ -747,7 +738,7 @@ print(enhance_prompt_quality("如何用Python读取CSV文件？"))
 - OpenAI官方文档中的提示词工程指南
 - 《提示工程入门》在线课程
 
-**学习建议**: 
+**学习建议**:
 从仓库中挑选5-10个基础提示词进行实践，尝试修改并观察输出变化。建议每天练习至少3个不同场景的提示词。
 
 ---
@@ -767,7 +758,7 @@ print(enhance_prompt_quality("如何用Python读取CSV文件？"))
 - 提示工程社区的最佳实践分享
 - 《高级提示工程》专题文章
 
-**学习建议**: 
+**学习建议**:
 尝试构建自己的提示词库，针对特定工作场景设计3-5个实用提示词模板。参与社区讨论，学习他人的解决方案。
 
 ---
@@ -787,7 +778,7 @@ print(enhance_prompt_quality("如何用Python读取CSV文件？"))
 - 提示工程研究论文与前沿动态
 - 企业级提示词工程案例研究
 
-**学习建议**: 
+**学习建议**:
 选择一个专业领域深入实践，设计完整的提示词解决方案。建立评估体系，持续优化提示词效果。关注行业动态，保持学习。
 
 ---
@@ -807,7 +798,7 @@ print(enhance_prompt_quality("如何用Python读取CSV文件？"))
 - 开源社区的协作项目
 - 行业专家的深度分享
 
-**学习建议**: 
+**学习建议**:
 参与开源项目贡献提示词，分享自己的实践经验。尝试将提示词工程与其他技术结合，探索创新应用场景。建立个人知识体系，成为领域专家。
 
 ---
@@ -815,23 +806,17 @@ print(enhance_prompt_quality("如何用Python读取CSV文件？"))
 
 ### 1: awesome-chatgpt-prompts-zh 项目的主要内容是什么？
 
-1: awesome-chatgpt-prompts-zh 项目的主要内容是什么？
-
 **A**: 该项目是 "Awesome ChatGPT Prompts" 的中文翻译版本。它收集并整理了大量高质量的 ChatGPT 提示词。用户可以通过复制这些特定的提示词，让 ChatGPT 扮演特定的角色（如“Linux 终端”、“英语翻译”、“旅游指南”等）或执行特定的任务，从而显著提高 AI 生成内容的质量和准确性。
 
 ---
 
 ### 2: 如何使用这个仓库中的提示词？
 
-2: 如何使用这个仓库中的提示词？
-
 **A**: 使用非常简单。您只需在仓库的列表中找到您需要的角色或任务，点击提示词旁边的“复制”按钮，然后将该提示词发送给 ChatGPT。ChatGPT 接收到该指令后，就会进入您设定的角色模式，后续的对话都将基于该设定进行。例如，发送“充当英语翻译”后，您就可以发送中文让它翻译成英文。
 
 ---
 
 ### 3: 这个项目适合哪些人群？
-
-3: 这个项目适合哪些人群？
 
 **A**: 该项目适合所有希望提高 ChatGPT 使用效率的用户。特别是以下几类人群：
 1. **内容创作者**：需要快速生成文案、故事或脚本。
@@ -843,23 +828,17 @@ print(enhance_prompt_quality("如何用Python读取CSV文件？"))
 
 ### 4: 提示词库中的内容是固定的吗？我该如何贡献？
 
-4: 提示词库中的内容是固定的吗？我该如何贡献？
-
 **A**: 内容不是固定的。作为一个开源项目，它持续更新和优化。如果您有自己设计的、效果很好的提示词，非常欢迎贡献。您通常需要 Fork 该仓库，在相应的文件中添加您的提示词（遵循既定的格式），然后提交 Pull Request (PR) 给项目维护者审核。
 
 ---
 
 ### 5: 中文版提示词与原版有什么区别？
 
-5: 中文版提示词与原版有什么区别？
-
 **A**: 核心内容是一致的，主要是语言上的转换。中文版旨在降低中文用户的使用门槛，让用户能够更直观地理解每个提示词的用途。不过，部分涉及特定文化背景或语言双关语的提示词，在翻译时可能会根据中文语境进行适当的本地化调整，以确保在中文环境下的使用效果。
 
 ---
 
 ### 6: 为什么我使用了提示词，但 ChatGPT 的回答不如预期？
-
-6: 为什么我使用了提示词，但 ChatGPT 的回答不如预期？
 
 **A**: 这可能由以下几种原因造成：
 1. **模型版本**：您可能使用的是 GPT-3.5，而部分复杂的提示词在 GPT-4 上表现更好。
@@ -870,8 +849,6 @@ print(enhance_prompt_quality("如何用Python读取CSV文件？"))
 ---
 
 ### 7: 除了复制使用，我能否修改这些提示词？
-
-7: 除了复制使用，我能否修改这些提示词？
 
 **A**: 当然可以。仓库中的提示词被视为“Prompt 工程”的优秀范例。您完全可以根据自己的具体需求，在现有提示词的基础上进行修改、增加限制条件或扩充细节，以获得更符合您预期的结果。这也是学习如何编写高效提示词的一个很好的过程。
 ## 实践建议
@@ -906,7 +883,6 @@ print(enhance_prompt_quality("如何用Python读取CSV文件？"))
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [效率与方法论](/categories/%E6%95%88%E7%8E%87%E4%B8%8E%E6%96%B9%E6%B3%95%E8%AE%BA/)

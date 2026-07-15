@@ -25,9 +25,8 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: 在技术社区中，提问的质量往往决定了你获得答案的效率。本文介绍的是由 Eric S. Raymond 撰写的经典指南《提问的智慧》，它系统性地阐述了如何以专业、清晰的方式提出技术问题。无论你是初学者还是资深开发者，这份文档都能帮助你理解社区沟通的潜规则，从而更有效地获取帮助。本文将概述该项目的核心内容、适用场景以及其在技术交流中的实际价值。
 ---
-
-# Eric S. Raymond 撰文：如何正确提问以获得技术答案
 
 > **原名**: ryanhanwu /
 
@@ -44,9 +43,8 @@ source_support: 0.0
 - **DeepWiki**: [https://deepwiki.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way](https://deepwiki.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way)
 
 ---
-## DeepWiki 速览（节选）
 
-# Overview
+## Overview
 
 Relevant source files
 
@@ -354,11 +352,11 @@ import requests
 def check_repo_exists(owner, repo):
     """
     检查指定的GitHub仓库是否存在
-    
+
     参数:
         owner: 仓库所有者用户名
         repo: 仓库名称
-    
+
     返回:
         bool: 仓库是否存在
     """
@@ -378,17 +376,17 @@ import base64
 def get_repo_readme(owner, repo):
     """
     获取指定仓库的README内容
-    
+
     参数:
         owner: 仓库所有者用户名
         repo: 仓库名称
-    
+
     返回:
         str: README文件内容(如果存在)
     """
     url = f"https://api.github.com/repos/{owner}/{repo}/readme"
     response = requests.get(url)
-    
+
     if response.status_code == 200:
         content = response.json().get('content')
         return base64.b64decode(content).decode('utf-8')
@@ -407,21 +405,21 @@ from datetime import datetime
 def get_stargazers_history(owner, repo):
     """
     获取仓库的star历史记录(最近100次)
-    
+
     参数:
         owner: 仓库所有者用户名
         repo: 仓库名称
-    
+
     返回:
         list: 包含star记录的列表，每项包含时间戳
     """
     url = f"https://api.github.com/repos/{owner}/{repo}/stargazers"
     params = {'per_page': 100}
     response = requests.get(url, params=params)
-    
+
     if response.status_code == 200:
         stargazers = response.json()
-        return [datetime.strptime(s['starred_at'], "%Y-%m-%dT%H:%M:%SZ") 
+        return [datetime.strptime(s['starred_at'], "%Y-%m-%dT%H:%M:%SZ")
                 for s in stargazers]
     return []
 
@@ -679,7 +677,7 @@ ryanhanwu 的版本适合需要中文参考的开发者，而 Stack Overflow 帮
 - GitHub仓库ryanhanwu/How-To-Ask-Questions-The-Smart-Way的中文翻译
 - Stack Overflow的《如何提问》官方指南
 
-**学习建议**: 
+**学习建议**:
 - 先通读全文，不必强求记忆所有细节
 - 结合自己过往的提问经历进行反思
 - 在技术社区（如GitHub Issues、Stack Overflow）观察优质提问案例
@@ -701,7 +699,7 @@ ryanhanwu 的版本适合需要中文参考的开发者，而 Stack Overflow 帮
 - Eric Raymond的《提问的智慧》实战章节
 - 各大开源项目的CONTRIBUTING指南
 
-**学习建议**: 
+**学习建议**:
 - 每天分析3-5个社区中的真实提问案例
 - 尝试用模板改写自己过去的"糟糕提问"
 - 在非正式渠道（如学习小组）练习提问技巧
@@ -723,7 +721,7 @@ ryanhanwu 的版本适合需要中文参考的开发者，而 Stack Overflow 帮
 - 技术社区行为准则（如Python PEP 8）
 - 《程序员的职业素养》相关章节
 
-**学习建议**: 
+**学习建议**:
 - 参与实际开源项目的Issue讨论
 - 尝试用英文进行国际化社区提问
 - 记录自己的"提问-解决"全过程并复盘
@@ -745,7 +743,7 @@ ryanhanwu 的版本适合需要中文参考的开发者，而 Stack Overflow 帮
 - 知名技术博主的问答专栏
 - 企业技术支持案例库
 
-**学习建议**: 
+**学习建议**:
 - 在团队中分享提问经验
 - 定期更新自己的提问模板库
 - 尝试帮助他人优化提问质量
@@ -767,7 +765,7 @@ ryanhanwu 的版本适合需要中文参考的开发者，而 Stack Overflow 帮
 - 技术教育心理学资料
 - 开源社区治理案例
 
-**学习建议**: 
+**学习建议**:
 - 在团队中建立提问规范文档
 - 组织技术社区的提问工作坊
 - 持续关注并学习新兴社区的互动方式
@@ -777,23 +775,17 @@ ryanhanwu 的版本适合需要中文参考的开发者，而 Stack Overflow 帮
 
 ### 1: 《提问的智慧》是一本什么样的文档，主要面向谁？
 
-1: 《提问的智慧》是一本什么样的文档，主要面向谁？
-
 **A**: 《提问的智慧》是由 Eric S. Raymond 和 Rick Moen 撰写的一份经典指南。它主要面向那些在技术社区（如开源项目、论坛、邮件列表）中寻求帮助的人。文档的核心目的是教导用户如何以高效、礼貌且专业的方式提出技术问题，从而增加获得准确答案的概率。它不仅适用于初学者，也适用于希望提高沟通效率的资深开发者。
 
 ---
 
 ### 2: 为什么我在提问时经常被忽略，甚至遭到粗鲁的对待？
 
-2: 为什么我在提问时经常被忽略，甚至遭到粗鲁的对待？
-
 **A**: 根据该文档的观点，提问者被忽略通常是因为问题本身表现出提问者不愿意思考或不愿意先做功课。例如，提问格式混乱、显而易见的问题未先搜索、或要求别人代写代码。至于“粗鲁”的对待，文档指出，黑客文化通常推崇直接、直率的交流方式，这有时会被误解为无礼。此外，如果提问者显得是在浪费别人的时间（例如要求别人免费做本来应该付费的工作），很容易招致负面反馈。
 
 ---
 
 ### 3: 在提问之前，我应该做哪些准备工作？
-
-3: 在提问之前，我应该做哪些准备工作？
 
 **A**: 在提问之前，你应该严格遵循“三步走”策略：
 1.  **尝试自己解决**：通过阅读官方文档、使用搜索引擎（如 Google）、搜索项目 Issue 列表或 Stack Overflow 来寻找答案。
@@ -804,8 +796,6 @@ ryanhanwu 的版本适合需要中文参考的开发者，而 Stack Overflow 帮
 
 ### 4: 一个“聪明”的问题标题应该包含哪些要素？
 
-4: 一个“聪明”的问题标题应该包含哪些要素？
-
 **A**: 一个好的标题应该简洁且信息量大，能够让专家在不点开正文的情况下就判断问题所属的领域。
 *   **不要**使用类似“救命”、“菜鸟求助”、“有个问题”这种毫无信息量的标题。
 *   **要**包含具体的症状或环境信息。例如，与其写“程序出错了”，不如写“在 Python 3.8 中使用 requests 库通过代理连接超时”。这能精准吸引到懂行的人。
@@ -814,8 +804,6 @@ ryanhanwu 的版本适合需要中文参考的开发者，而 Stack Overflow 帮
 
 ### 5: 如何在提问中正确地粘贴代码或错误日志？
 
-5: 如何在提问中正确地粘贴代码或错误日志？
-
 **A**: 你应该始终使用代码块来粘贴代码或日志，而不是直接粘贴在正文中，这会破坏格式并难以阅读。
 *   **精简代码**：不要粘贴几百行无关的代码，要删除与问题无关的部分，只保留能复现问题的最小可运行示例。
 *   **准确复制**：不要凭记忆手打错误信息，一定要从终端复制粘贴，因为大小写或符号的差异可能导致完全不同的错误。
@@ -823,8 +811,6 @@ ryanhanwu 的版本适合需要中文参考的开发者，而 Stack Overflow 帮
 ---
 
 ### 6: 如果有人回答了我的问题，但我还是听不懂，该怎么办？
-
-6: 如果有人回答了我的问题，但我还是听不懂，该怎么办？
 
 **A**: 首先，不要直接回复“还是不懂”或“没用”。这会让回答者感到挫败。
 你应该：
@@ -835,8 +821,6 @@ ryanhanwu 的版本适合需要中文参考的开发者，而 Stack Overflow 帮
 ---
 
 ### 7: ryanhanwu/How-To-Ask-Questions-The-Smart-Way 这个仓库有什么特别之处？
-
-7: ryanhanwu/How-To-Ask-Questions-The-Smart-Way 这个仓库有什么特别之处？
 
 **A**: ryanhanwu 维护的这个仓库是《提问的智慧》的中文翻译版。虽然原文是英文经典，但这个仓库在中文开发者社区（特别是 GitHub 和中国技术圈）非常流行。它不仅提供了高质量的翻译，还方便中文用户分享给那些不擅长阅读英文技术文档的初学者，是提高社区整体提问质量的重要资源。
 ## 实践建议
@@ -871,7 +855,6 @@ ryanhanwu 的版本适合需要中文参考的开发者，而 Stack Overflow 帮
 
 ---
 
----
 ## 站内链接
 
 - 分类： [效率与方法论](/categories/%E6%95%88%E7%8E%87%E4%B8%8E%E6%96%B9%E6%B3%95%E8%AE%BA/) / [开源生态](/categories/%E5%BC%80%E6%BA%90%E7%94%9F%E6%80%81/)

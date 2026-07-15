@@ -16,8 +16,8 @@ categories:
 - AI 工程
 - 大模型
 source: blogs_podcasts
-description: '**总结：Meta 的 Ranking Engineer Agent (REA) 加速广告排序创新** Meta 推出的 **Ranking
-  Engineer Agent (REA)** 是一种自主 AI 代理，旨在加速其广告排序模型的端到端机器学习（ML）生命周期。它通过自主执行关键步骤（如生成假设、启动训练任务、调'
+description: Meta 的排序工程师代理（REA）能够自主执行端到端机器学习（ML）生命周期中用于广告排序模型的关键步骤。本文介绍了 REA 的机器学习实验能力：自主生成假设、启动训练任务、调试故障以及迭代结果。未来的文章将涵盖
+  REA 的更多能力。REA 减少了人工干预的需求。
 external_url: https://engineering.fb.com/2026/03/17/developer-tools/ranking-engineer-agent-rea-autonomous-ai-system-accelerating-meta-ads-ranking-innovation
 scenarios:
 - AI/ML项目
@@ -28,10 +28,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Meta 排序工程师代理：自主管理广告排序模型全生命周期
-
 ---
 
 ## 基本信息

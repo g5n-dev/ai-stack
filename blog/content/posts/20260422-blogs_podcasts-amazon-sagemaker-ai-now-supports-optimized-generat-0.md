@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Amazon SageMaker AI生成式AI推理推荐功能优化
-
----
-
 ## 基本信息
 
 - **来源**: AWS Machine Learning Blog (blog)
@@ -132,7 +128,6 @@ Amazon SageMaker AI 通过提供经过验证的最优部署配置和性能指标
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

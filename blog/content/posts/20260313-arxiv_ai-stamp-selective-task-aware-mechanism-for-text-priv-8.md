@@ -16,8 +16,8 @@ categories:
 - 大模型
 - 安全
 source: arxiv
-description: 以下是关于STAMP框架的中文总结： **STAMP：面向文本隐私的选择性任务感知机制** **概述** STAMP是一种新型的任务感知文本隐私化框架，旨在解决数据隐私保护与下游任务效用之间的平衡问题。与传统的“一刀切”隐私保护方法不同，STAMP通过更精细的分配策略，实现了更优的隐私-效用权衡。
-  **核心机制与创新*
+description: 针对文本隐私保护中通用模型往往导致下游任务性能受损的问题，本文提出了 STAMP 框架。该方法引入“选择性任务感知”机制，旨在通过区分不同任务对文本特征的依赖程度，在隐私脱敏与任务效用之间寻求更优的平衡。虽然摘要未披露具体的技术细节，无法从摘要确认其在不同数据集上的量化增益，但这一思路为构建兼顾隐私安全与实用性的
+  NLP 系统提供了新的参考方向。
 external_url: http://arxiv.org/abs/2603.12237v1
 scenarios:
 - Web应用开发
@@ -29,10 +29,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# STAMP：面向文本隐私的选择性任务感知机制
-
 ---
 
 ## 基本信息

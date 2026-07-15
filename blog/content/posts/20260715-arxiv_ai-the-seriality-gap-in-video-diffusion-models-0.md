@@ -16,7 +16,7 @@ categories:
 - 论文
 - 大模型
 source: arxiv
-description: 背景 视频生成模型常被用于预测物理系统的运动，如多球碰撞的连续过程。这类任务要求模型能够捕捉因果链的逐步延伸。 实验发现 在硬球多体碰撞实验中，标准双向视频扩散模型随因果链长度增加而性能下降，即使增加去噪步数也未能改善。匹配长度的单球控制（无球间相互作用）几乎不出现此下降，说明问题源自“依赖事件的序列化结构”，而非视频
+description: 视频生成模型常被用于预测物理系统的运动，如多球碰撞的连续过程。这类任务要求模型能够捕捉因果链的逐步延伸。 在硬球多体碰撞实验中，标准双向视频扩散模型随因果链长度增加而性能下降，即使增加去噪步数也未能改善。匹配长度的单球控制（无球间相互作用）几乎不出现此下降，说明问题源自“依赖事件的序列化结构”，而非视频时长本身。
 external_url: http://arxiv.org/abs/2607.13031v1
 scenarios:
 - Web应用开发
@@ -24,10 +24,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 视频扩散模型中的序列性差距
-
 ---
 
 ## 基本信息
@@ -140,7 +136,6 @@ source_support: 0.0
 
 ---
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/) / [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

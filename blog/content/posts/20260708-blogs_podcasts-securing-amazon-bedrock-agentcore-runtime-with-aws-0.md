@@ -16,9 +16,9 @@ categories:
 - 安全
 - 系统与基础设施
 source: blogs_podcasts
-description: 架构概览 通过在公网入口放置面向 Internet 的 ALB（Application Load Balancer），在其上绑定 AWS
-  WAF Web ACL，将流量统一先经过 WAF 过滤后，再通过 VPC Interface Endpoint 转发至 Amazon Bedrock AgentCore
-  Runtim
+description: 这篇文章为您展示了两种解决此问题的架构模式。两者均使用面向互联网的 ALB（应用负载均衡器），并通过 AWS WAF 进行流量过滤，然后经由
+  VPC Interface Endpoint 路由至 AgentCore Runtime。 模式一：在 ALB 和 VPC Endpoint 之间部署 AWS
+  Lambda 代理，使您能够完全控制请求转换逻辑。
 external_url: https://aws.amazon.com/blogs/machine-learning/securing-amazon-bedrock-agentcore-runtime-with-aws-waf
 scenarios:
 - AI/ML项目
@@ -26,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Amazon Bedrock AgentCore Runtime的WAF安全防护架构
-
 ---
 
 ## 基本信息
@@ -182,7 +178,6 @@ source_support: 0.0
 
 ---
 
----
 ## 站内链接
 
 - 分类： [安全](/categories/%E5%AE%89%E5%85%A8/) / [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/)

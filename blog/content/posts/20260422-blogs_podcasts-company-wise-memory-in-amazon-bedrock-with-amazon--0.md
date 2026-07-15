@@ -16,8 +16,8 @@ categories:
 - AI 工程
 - 系统与基础设施
 source: blogs_podcasts
-description: 功能概述 Amazon Bedrock 通过 Amazon Neptune 与 Mem0 实现 **公司级记忆**，为每个企业提供独立的持久上下文。AI
-  代理可以在多轮对话中持续学习、更新并调用该上下文，实现跨会话的智能响应。 关键技术点 - **持久化存储**：Neptune 提供图数据库能力，将公司特有信息以图结构
+description: Amazon Bedrock 中的公司级记忆功能由 Amazon Neptune 和 Mem0 提供支持，能够为 AI 智能体提供持久化的、公司特定的上下文——使它们能够在多次交互中学习、适应并智能响应。全球最大的杀毒软件公司之一
+  TrendMicro 开发了 Trend's Companion 聊天机器人，让客户能够通过自然的对话式交互来探索信息。
 external_url: https://aws.amazon.com/blogs/machine-learning/company-wise-memory-in-amazon-bedrock-with-amazon-neptune-and-mem0
 scenarios:
 - AI/ML项目
@@ -25,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Amazon Bedrock公司级记忆功能：Neptune与Mem0驱动AI上下文持久化
-
 ---
 
 ## 基本信息
@@ -177,7 +173,6 @@ Trend Micro 采用公司级记忆打造 **Trend Companion 聊天机器人**，
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/)

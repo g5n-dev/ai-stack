@@ -16,9 +16,8 @@ categories:
 - AI 工程
 - 开源生态
 source: blogs_podcasts
-description: 这是一篇关于启动世界上首个“AI for Science”（科学智能）播客的文章，以下是内容的中文总结： **文章标题：是时候“搞科学”了**
-  **副标题：为什么现在是推出世界首个 dedicated AI for Science 播客的最佳时机，以及 AI 工程师为何应关注此领域** **1. 背景与动机**
-  文章开
+description: 为什么现在正是推出全球首个专注“AI for Science”播客的恰当时机，以及AI工程师为何应予以关注 随着人工智能与基础科学的深度融合，“AI
+  for Science” 正成为推动科研范式变革的核心力量。在数据驱动与算法创新的共同作用下，这一领域不仅加速了新材料的发现与复杂系统的模拟，也为工程师提供了全新的技术挑战与职业机遇。
 external_url: https://www.latent.space/p/science
 scenarios:
 - AI/ML项目
@@ -39,10 +38,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 推出全球首个AI for Science播客的时机与意义
-
 ---
 
 ## 基本信息
@@ -155,7 +150,6 @@ AI for Science（科学智能）已从学术探索走向工程化落地，正处
 
 ---
 
-# 深度分析报告：AI for Science 的时代机遇与工程实践
 
 ## 1. 核心观点深度解读
 
@@ -399,7 +393,6 @@ AI for Science 的核心原理通常分为两类：
 ---
 
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [开源生态](/categories/%E5%BC%80%E6%BA%90%E7%94%9F%E6%80%81/)

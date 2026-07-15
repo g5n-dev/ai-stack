@@ -16,8 +16,7 @@ categories:
 - 论文
 - AI 工程
 source: arxiv
-description: 针对人形机器人在室内环境中的感知‑运动协同问题，提出VLK框架，以合成方式解决大规模视觉‑语言‑运动数据缺失的瓶颈。核心思路是利用3D Gaussian
-  Splatting在真实尺度的室内场景中进行高保真重建；随后在重建的场景中利用特权信息生成导航与物体交互的运动轨迹；再对这些轨迹渲染配对的自我中心图像与语言指令。最终
+description: 本文探讨了人形机器人在室内环境中的感知-运动协调难题，提出VLK框架加以应对。该框架利用3D Gaussian Splatting技术实现高保真场景重建，并基于重建场景中的特权信息生成导航与物体交互的运动轨迹，旨在突破大规模视觉-语言-运动数据匮乏的瓶颈。此研究为具身智能在室内场景的自主导航与灵巧操作提供新的解决思路。相关实验设置、评估指标及实际性能表现目前无法从摘要确认。
 external_url: http://arxiv.org/abs/2606.30645v1
 scenarios:
 - Web应用开发
@@ -25,10 +24,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# VLK：基于合成交互的人形机器人运动操作学习
-
 ---
 
 ## 基本信息
@@ -133,7 +128,6 @@ source_support: 0.0
 
 ---
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

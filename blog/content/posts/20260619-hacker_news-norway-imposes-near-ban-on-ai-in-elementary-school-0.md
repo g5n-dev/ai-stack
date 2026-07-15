@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 挪威小学近乎全面禁用AI工具
-
----
-
 ## 基本信息
 
 - **作者**: ilreb
@@ -85,7 +81,6 @@ source_support: 0.0
 
 ---
 
----
 ## 站内链接
 
 - 分类： [生活与杂谈](/categories/%E7%94%9F%E6%B4%BB%E4%B8%8E%E6%9D%82%E8%B0%88/)

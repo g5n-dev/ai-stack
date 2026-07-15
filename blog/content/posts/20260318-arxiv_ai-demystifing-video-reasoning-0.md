@@ -16,8 +16,8 @@ categories:
 - 大模型
 - 论文
 source: arxiv
-description: '**总结：揭秘视频推理机制** 这篇研究揭示了基于扩散的视频生成模型具备推理能力的新机制，挑战了传统的“帧链”假设，提出了“步链”机制。研究发现，推理能力主要在扩散去噪步骤中逐步显现，而非跨视频帧顺序展开。具体表现为模型在早期步骤中探索多个候选解，并逐步收敛至最终答案。
-  此外，研究识别了模型中的关键推理行为：包括支持持'
+description: 总结：揭秘视频推理机制 这篇研究揭示了基于扩散的视频生成模型具备推理能力的新机制，挑战了传统的“帧链”假设，提出了“步链”机制。研究发现，推理能力主要在扩散去噪步骤中逐步显现，而非跨视频帧顺序展开。具体表现为模型在早期步骤中探索多个候选解，并逐步收敛至最终答案。
+  此外，研究识别了模型中的关键推理行为：包括支持持续引用的工作记忆、允许从中间错误中恢复的自我修正与增强，以及先感知后行动的步骤分工。
 external_url: http://arxiv.org/abs/2603.16870v1
 scenarios:
 - Web应用开发
@@ -25,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Demystifing Video Reasoning
-
 ---
 
 ## 基本信息

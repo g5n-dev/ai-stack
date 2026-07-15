@@ -16,9 +16,9 @@ categories:
 - 大模型
 - 产品与创业
 source: blogs_podcasts
-description: '**《落地智能体 AI 第一部分：利益相关者指南》内容总结** **核心背景** AWS 生成式 AI 创新中心已协助超过 1,000
-  名客户将 AI 项目投入生产环境，并带来了数百万美元的可证实生产力提升。本文旨在为高层领导及业务负责人提供关于“智能体 AI（Agentic AI）”落地实施的指导建议。
-  **目标受众'
+description: AWS 生成式 AI 创新中心已帮助超过 1,000 位客户将 AI 投入生产，带来了数百万美元的经证实生产力提升。在这篇文章中，我们为整个
+  C-suite（高管层）的领导者分享指导：包括 CTO、CISO、CDO 以及首席数据科学/AI 官，还包括业务负责人和合规负责人。 随着企业将生成式 AI 从实验转向生产，如何系统化地落地
+  Agentic AI 已成为高管层面临的核心挑战。
 external_url: https://aws.amazon.com/blogs/machine-learning/operationalizing-agentic-ai-part-1-a-stakeholders-guide
 scenarios:
 - AI/ML项目
@@ -38,10 +38,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# AWS生成式AI中心高管指南：如何将智能体AI投入生产
-
 ---
 
 ## 基本信息

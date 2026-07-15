@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 微软转向AWS解决GitHub AI容量紧张
-
----
-
 ## 基本信息
 
 - **作者**: ilreb
@@ -86,7 +82,6 @@ GitHub Copilot等服务自发布以来用户增长显著，代码补全和生成
 
 ---
 
----
 ## 站内链接
 
 - 分类： [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/)

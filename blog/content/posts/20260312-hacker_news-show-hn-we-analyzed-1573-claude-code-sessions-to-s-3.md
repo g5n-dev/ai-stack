@@ -17,7 +17,7 @@ categories:
 - 数据
 source: hacker_news
 description: 对 AI 智能体（Agent）在实际开发中究竟如何运作，目前仍缺乏基于真实数据的实证研究。本文通过对 1,573 次 Claude Code
-  会话的深度分析，揭示了 AI 辅助编程在复杂任务中的行为模式、决策逻辑及其局限性。文章将带你透过数据看本质，理解 AI 智能体的真实表现，从而更准确地评估其能力边界，为技术选型与
+  会话的深度分析，揭示了 AI 辅助编程在复杂任务中的行为模式、决策逻辑及其局限性。文章将带你透过数据看本质，理解 AI 智能体的真实表现，从而更准确地评估其能力边界，为技术选型与工作流优化提供参考。
 external_url: https://github.com/obsessiondb/rudel
 scenarios:
 - AI/ML项目
@@ -28,10 +28,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 分析1573次Claude Code会话以探究AI代理工作机制
-
 ---
 
 ## 基本信息

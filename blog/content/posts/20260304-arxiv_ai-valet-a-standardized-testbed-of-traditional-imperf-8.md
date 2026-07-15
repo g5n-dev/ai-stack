@@ -16,7 +16,7 @@ categories:
 - 大模型
 - 论文
 source: arxiv
-description: 以下是对该内容的中文总结： **标题：Valet：传统不完美信息卡牌游戏的标准化测试平台** **核心问题与背景** 目前，针对不完美信息游戏（即拥有隐藏状态的游戏）的AI算法，通常只在个别游戏上进行性能对比。这种方法难以评估算法在不同游戏选择下的鲁棒性（稳健性）。由于隐藏手牌和随机抽牌等特性，卡牌游戏是研究不完美信息
+description: 针对不完美信息博弈算法评估缺乏统一标准的问题，本文介绍了 Valet 测试平台，该平台整合了多种传统纸牌游戏以提供标准化的基准环境。其核心贡献在于构建了一个可复现的测试框架，旨在减少因单一游戏特性带来的评估偏差。然而，摘要未详细说明其具体的算法对比机制及底层技术实现细节，这部分内容无法从摘要确认。该工作有望为研究不同策略在隐藏信息环境下的泛化能力提供新的评估范式。
 external_url: http://arxiv.org/abs/2603.03252v1
 scenarios:
 - AI/ML项目
@@ -26,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Valet：传统不完美信息卡牌游戏标准化测试基准
-
 ---
 
 ## 基本信息

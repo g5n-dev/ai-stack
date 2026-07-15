@@ -16,7 +16,8 @@ categories:
 - 大模型
 - AI 工程
 source: juejin
-description: Seedance2.0近日在网络上引发热议，因其能够快速生成高质量AI视频，吸引了近十万用户排队等待。袋鼠帝本人在看到B站某位AI视频创作者分享的精细工作流后，虽然承认该工作流产出的视频画面精美、运镜流畅，却感到操作过程复杂、门槛高。随后，他仅用两分钟便成功上手Seedance2.0，体验到其极简的操作界面和即时的渲染
+description: Seedance2.0 自发布以来，凭借强大的 AI 视频生成能力，成为众多创作者的焦点，却也导致了十万人排队的壮观场面。面对这种排队压力，许多人只能无奈等待。本文将演示如何在两分钟内绕过排队，直接使用
+  Seedance2.0，并提供实用的调参与输出技巧，帮助你在短时间内产出高质量视频。 Seedance2.0近日在网络上引发热议，因其能够快速生成高质量AI视频，吸引了近十万用户排队等待。
 external_url: https://juejin.cn/post/7625209638578552851
 scenarios:
 - AI/ML项目
@@ -24,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# SeedDance2.0快速上手：跳过万人排队，两分钟体验AI视频生成
-
 ---
 
 ## 基本信息
@@ -64,7 +61,6 @@ Seedance2.0近日在网络上引发热议，因其能够快速生成高质量AI�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

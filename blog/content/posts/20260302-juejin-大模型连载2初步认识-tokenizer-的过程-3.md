@@ -16,8 +16,8 @@ categories:
 - 大模型
 - AI 工程
 source: juejin
-description: 由于提供的内容在“像素之”处截断，以下总结基于文本中已呈现的完整部分进行概括： 本文是大模型连载系列文章的第二部分，旨在介绍 **Tokenizer（分词器）**
-  的初步概念与作用。 1. **核心概念回顾**： 文章首先承接上一节内容，重申了 **Token（词元）** 的定义。在自然语言处理（如文本生成、AI聊天）
+description: 继上一节对 Token 概念的探讨，本文将深入解析大模型处理文本的核心环节——Tokenizer 的工作流程。理解这一机制，有助于我们厘清模型如何将人类语言转化为可计算的向量，从而真正掌握大模型输入端的底层逻辑。通过本文，你将建立起对文本切分与
+  ID 映射过程的直观认知，为后续探究模型原理打下坚实基础。
 external_url: https://juejin.cn/post/7612288284083486746
 scenarios:
 - 大语言模型
@@ -26,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 大模型连载2：初步认识 tokenizer 的过程
-
 ---
 
 ## 基本信息

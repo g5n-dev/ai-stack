@@ -16,9 +16,8 @@ categories:
 - AI 工程
 - 产品与创业
 source: blogs_podcasts
-description: 背景 Abridge 是一家专注于医疗对话智能的企业，其 AI 原生平台已在美国数千家医院和诊所部署，目标是将每一次患者与临床医生的对话转化为结构化数据。
-  关键成果 - 截至目前，平台累计支持 **1 亿次** 门诊就诊。 - 临床医生平均每周节省 **10–20 小时** 的文档时间。 - 通过 AI 自动生成
-  Pr
+description: Abridge如何悄然将患者与临床医生的对话打造为医疗保健的“操作系统” 注：Abridge是一家专注于医疗对话AI的美国科技公司。标题中"operating
+  system"是比喻用法，喻指将医患对话确立为整个医疗系统的核心基础架构。 本文聚焦Abridge如何把每一次医患对话实时转写、结构化并直接写入电子健康记录，实现每日数百万次诊疗的语言数据自动流转。
 external_url: https://www.latent.space/p/abridge
 scenarios:
 - AI/ML项目
@@ -28,10 +27,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Abridge对话AI完成1亿次问诊节省10-20小时
-
 ---
 
 ## 基本信息
@@ -183,7 +178,6 @@ Abridge 将患者与临床医生的自然对话直接转化为结构化临床文
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [产品与创业](/categories/%E4%BA%A7%E5%93%81%E4%B8%8E%E5%88%9B%E4%B8%9A/)

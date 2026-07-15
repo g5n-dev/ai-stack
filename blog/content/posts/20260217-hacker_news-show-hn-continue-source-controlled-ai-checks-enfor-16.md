@@ -17,7 +17,7 @@ categories:
 - AI 工程
 source: hacker_news
 description: 在 AI 编程助手日益普及的今天，如何将生成的代码纳入现有的版本控制与质量保障体系，已成为工程团队面临的新挑战。Continue 试图通过“源代码控制的
-  AI 检查”来解决这个问题，它允许开发者将 AI 审查逻辑作为代码提交，并在 CI 流水线中强制执行。本文将介绍该工具的设计思路与集成方式，帮助你平衡开发效率与代码合
+  AI 检查”来解决这个问题，它允许开发者将 AI 审查逻辑作为代码提交，并在 CI 流水线中强制执行。本文将介绍该工具的设计思路与集成方式，帮助你平衡开发效率与代码合规性。
 external_url: https://docs.continue.dev
 scenarios:
 - AI/ML项目
@@ -26,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Continue：源码控制的AI检查与CI强制执行
-
 ---
 
 ## 基本信息
@@ -110,11 +106,11 @@ def check_code_quality(file_path):
     模拟AI代码审查工具的功能
     """
     import re
-    
+
     issues = []
     with open(file_path, 'r') as f:
         code = f.read()
-        
+
     # 模拟AI检查规则
     if 'TODO' in code:
         issues.append("发现未完成的TODO项")
@@ -122,7 +118,7 @@ def check_code_quality(file_path):
         issues.append("包含过多调试打印语句")
     if 'import *' in code:
         issues.append("使用了通配符导入")
-        
+
     return issues
 
 # 测试用例
@@ -138,26 +134,26 @@ def run_ai_checks_in_ci():
     """
     import os
     import json
-    
+
     # 1. 获取待检查的代码文件
     files = ['example.py', 'utils.py']  # 实际中从git获取
-    
+
     # 2. 运行AI检查
     results = {}
     for file in files:
         results[file] = check_code_quality(file)
-    
+
     # 3. 生成检查报告
     report = {
         'total_files': len(files),
         'issues_found': sum(len(v) for v in results.values()),
         'details': results
     }
-    
+
     # 4. 保存报告
     with open('ai_check_report.json', 'w') as f:
         json.dump(report, f, indent=2)
-    
+
     # 5. 根据问题数量决定CI是否通过
     if report['issues_found'] > 0:
         print(f"CI失败: 发现{report['issues_found']}个问题")
@@ -181,7 +177,7 @@ class AIChecker:
             'forbid_print': True,
             'require_docstring': True
         }
-    
+
     def check_file(self, file_path):
         """
         根据配置的规则检查文件
@@ -190,7 +186,7 @@ class AIChecker:
         issues = []
         with open(file_path, 'r') as f:
             lines = f.readlines()
-            
+
         for i, line in enumerate(lines, 1):
             # 检查行长度
             if len(line) > self.rules['max_line_length']:
@@ -200,7 +196,7 @@ class AIChecker:
                     'severity': 'warning',
                     'message': f"行长度超过{self.rules['max_line_length']}字符"
                 })
-            
+
             # 检查print语句
             if self.rules['forbid_print'] and 'print(' in line:
                 issues.append({
@@ -209,7 +205,7 @@ class AIChecker:
                     'severity': 'error',
                     'message': '禁止使用print语句'
                 })
-        
+
         return issues
 
 # 使用示例
@@ -223,8 +219,6 @@ print(f"发现{len(issues)}个问题")
 ## 案例研究
 
 ### 1：某中型金融科技初创公司
-
- 1：某中型金融科技初创公司
 
 **背景**:
 该公司拥有一支约 30 人的全栈开发团队，正在从单体架构向微服务迁移。为了加快迭代速度，团队开始广泛使用 GitHub Copilot 和 ChatGPT 辅助编写业务逻辑代码，代码提交量激增。
@@ -241,8 +235,6 @@ CI 流程自动拦截了 15% 包含潜在安全风险的合并请求。开发者
 ---
 
 ### 2：某企业级 SaaS 平台开发团队
-
- 2：某企业级 SaaS 平台开发团队
 
 **背景**:
 该团队维护着一个庞大的遗留代码库，拥有数千个单元测试用例。团队正在进行技术债务清理，要求开发人员在修改旧代码时必须同步更新相关的测试用例，以确保测试覆盖率不下降。
@@ -352,15 +344,11 @@ CI 流程自动拦截了 15% 包含潜在安全风险的合并请求。开发者
 
 ### 1: Continue 是什么？它与传统的 AI 编码助手（如 GitHub Copilot 或 ChatGPT）有什么区别？
 
-1: Continue 是什么？它与传统的 AI 编码助手（如 GitHub Copilot 或 ChatGPT）有什么区别？
-
 **A**: Continue 是一个开源的 AI 代码助手，但该 HN 帖子重点介绍的是其企业级功能，特别是“Source-controlled AI checks”（受源代码控制的 AI 检查）。与传统的 AI 助手仅用于生成代码或回答问题不同，Continue 的这项功能允许开发团队将 AI 审查规则写入代码仓库（例如在 `.continue` 配置文件中）。这意味着 AI 的审查标准是版本控制的一部分，类似于代码本身，可以随着项目的发展而演变，并且可以在 CI（持续集成）流程中强制执行。
 
 ---
 
 ### 2: 什么是“在 CI 中强制执行”，为什么这很重要？
-
-2: 什么是“在 CI 中强制执行”，为什么这很重要？
 
 **A**: “在 CI 中强制执行”意味着在代码合并到主分支之前的自动化构建和测试过程中，Continue 会根据预定义的规则运行 AI 检查。如果代码未能通过这些 AI 检查（例如存在安全漏洞、违反编码规范或包含未授权的 API 密钥），CI 管道将会失败，从而阻止代码合并。这很重要，因为它将 AI 从一个“建议性工具”转变为一个“质量把关者”，确保所有代码在部署前都经过了统一且严格的人工智能审查，无需人工逐行检查。
 
@@ -368,15 +356,11 @@ CI 流程自动拦截了 15% 包含潜在安全风险的合并请求。开发者
 
 ### 3: Continue 支持哪些 AI 模型？我是否必须使用特定的提供商？
 
-3: Continue 支持哪些 AI 模型？我是否必须使用特定的提供商？
-
 **A**: Continue 的一大优势是其对模型的中立性和广泛的兼容性。它支持连接到多种大语言模型（LLM），包括 OpenAI (GPT-4, GPT-3.5)、Anthropic (Claude)、开源模型（如 Llama, CodeLlama）以及通过 Ollama 或 Azure 等平台托管的模型。用户通常可以在配置文件中选择使用哪个模型，甚至可以根据不同的检查任务配置不同的模型（例如使用快速模型进行语法检查，使用强大的模型进行安全审计）。
 
 ---
 
 ### 4: 如果 AI 在 CI 中误报或给出错误的审查结果，我该怎么办？
-
-4: 如果 AI 在 CI 中误报或给出错误的审查结果，我该怎么办？
 
 **A**: 由于 AI 检查规则是源代码控制的，处理误报非常灵活。开发人员可以像修改代码一样修改 AI 的提示词或审查规则，以减少误报。此外，Continue 允许通过配置来调整检查的严格程度。如果 CI 因为某个边缘情况失败，团队可以更新配置文件以排除该情况，提交此配置更改，然后重新运行 CI。这种迭代过程使得 AI 审查规则能够不断优化，以适应特定项目的上下文。
 
@@ -384,23 +368,17 @@ CI 流程自动拦截了 15% 包含潜在安全风险的合并请求。开发者
 
 ### 5: 将 AI 检查集成到 CI 中会不会显著拖慢构建速度？
 
-5: 将 AI 检查集成到 CI 中会不会显著拖慢构建速度？
-
 **A**: 这是一个常见的担忧，因为调用 LLM API 需要时间。Continue 的设计考虑到了性能问题。它通常只针对变更的代码片段（diff）进行检查，而不是整个代码库，从而减少了 Token 的消耗和处理时间。此外，CI 中的 AI 检查通常是异步的或并行运行的。虽然确实会增加一些延迟，但为了捕获潜在的安全漏洞或昂贵的技术债务，这种时间成本通常被认为是值得的。团队也可以选择仅在特定分支（如主分支或发布候选分支）上运行完整的 AI 检查，以平衡速度和质量。
 
 ---
 
 ### 6: Continue 是开源的吗？它的安全性如何？
 
-6: Continue 是开源的吗？它的安全性如何？
-
 **A**: Continue 的核心代码是开源的，可以在 GitHub 上找到。这允许团队自托管、审查代码并根据需要进行修改。关于安全性，Continue 提供了多种选项：用户可以选择将代码发送到云端 API（如 OpenAI），也可以选择使用本地运行的开源模型（通过 Ollama 等）。对于对隐私要求极高的企业环境，使用本地模型或私有云实例可以确保代码不会泄露给外部第三方，同时仍然能利用 AI 进行自动化检查。
 
 ---
 
 ### 7: 如何开始使用 Continue 的 CI 检查功能？
-
-7: 如何开始使用 Continue 的 CI 检查功能？
 
 **A**: 通常步骤如下：首先，需要在项目根目录创建一个配置文件（例如 `.continue/config.json`），在其中定义你希望 AI 执行的检查规则和提示词。其次，安装 Continue 的 CLI 工具或将其集成到现有的 CI 配置文件中（如 GitHub Actions, GitLab CI, Jenkins 等）。最后，配置 CI 流程，在代码提交或拉取请求时触发 Continue 的检查命令。Continue 会读取配置，分析代码变更，并将结果输出到 CI 日志中，根据结果决定是否通过构建。
 ## 引用
@@ -412,7 +390,6 @@ CI 流程自动拦截了 15% 包含潜在安全风险的合并请求。开发者
 
 ---
 
----
 ## 站内链接
 
 - 分类： [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

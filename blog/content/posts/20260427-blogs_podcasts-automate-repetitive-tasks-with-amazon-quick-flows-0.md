@@ -16,8 +16,8 @@ categories:
 - AI 工程
 - 系统与基础设施
 source: blogs_podcasts
-description: 概述 Amazon Quick Flows 是一种低代码、拖拽式的自动化服务，旨在帮助企业快速消除重复性任务。它内置 AI 引擎，支持在流程中直接调用机器学习模型，实现从数据采集、分析到决策的全链路智能化。用户只需在可视化编辑器中定义触发条件、业务规则和通知动作，即可将人力密集的操作转为自动化工作流。
-  示例：从财务分析
+description: 本文将向您展示如何使用 Amazon Quick 构建您的第一个 AI 驱动的工作流程，从财务分析工具开始，逐步进阶到高级员工入职自动化。
+  在企业日常运营中，重复性任务往往占用大量人力，影响响应速度和准确性。Amazon Quick Flows 提供了一套低代码的 AI 驱动工作流平台，帮助团队快速构建自动化方案。
 external_url: https://aws.amazon.com/blogs/machine-learning/automate-repetitive-tasks-with-amazon-quick-flows
 scenarios:
 - AI/ML项目
@@ -26,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Amazon Quick Flows AI工作流程搭建指南
-
 ---
 
 ## 基本信息
@@ -152,7 +148,6 @@ Quick Flows的出现重新定义了企业自动化工具的能力边界。传统
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/)

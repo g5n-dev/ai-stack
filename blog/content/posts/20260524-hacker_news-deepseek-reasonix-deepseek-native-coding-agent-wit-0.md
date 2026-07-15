@@ -16,7 +16,7 @@ categories:
 - 开发工具
 - AI 工程
 source: hacker_news
-description: DeepSeek推出的Reasonix是面向开发者的原生编程助手，旨在通过高效缓存机制显著提升代码生成的响应速度并降低资源消耗。该工具在保持低使用成本的同时，提供可扩展的集成方案，适用于从小型原型到大规模生产环境的多种场景。本文将深入解析Reasonix的技术实现、性能基准以及最佳实践，帮助读者快速上手并在项目中实现效
+description: DeepSeek推出的Reasonix是面向开发者的原生编程助手，旨在通过高效缓存机制显著提升代码生成的响应速度并降低资源消耗。该工具在保持低使用成本的同时，提供可扩展的集成方案，适用于从小型原型到大规模生产环境的多种场景。本文将深入解析Reasonix的技术实现、性能基准以及最佳实践，帮助读者快速上手并在项目中实现效率提升。
 external_url: https://esengine.github.io/DeepSeek-Reasonix
 scenarios:
 - AI/ML项目
@@ -24,10 +24,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# DeepSeek发布原生编程代理 主打高缓存低费用
-
 ---
 
 ## 基本信息
@@ -91,7 +87,6 @@ DeepSeek Reasonix作为DeepSeek原生代码生成代理，其“高缓存+低成
 
 ---
 
----
 ## 站内链接
 
 - 分类： [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

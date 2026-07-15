@@ -16,9 +16,8 @@ categories:
 - 大模型
 - 产品与创业
 source: blogs_podcasts
-description: 基于提供的标题和简短介绍，以下是关于Dylan Patel（SemiAnalysis）在节目“In-Context Cooking”中谈话内容的总结：
-  **核心主题：人工智能的巨额资本支出、芯片战争与谷歌的未来危机** SemiAnalysis 创始人 Dylan Patel 在一档名为“**In-Context
-  Co
+description: 我们很高兴宣布我们的新节目《情境烹饪》，嘉宾在聊有趣话题的同时进行烹饪。 随着 AI 资本支出迈向 2000 亿美元规模，行业正面临芯片战争与利润压力的双重考验。SemiAnalysis
+  创始人 Dylan Patel 在本期的《情境烹饪》节目中，深入剖析了为何 Google 可能在 2027 年面临零利润困境，以及科技巨头们在算力竞赛中的真实处境。
 external_url: https://www.latent.space/p/dylanpatel-cooking
 scenarios:
 - AI/ML项目
@@ -36,10 +35,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# SemiAnalysis谈2000亿美元AI支出与谷歌2027年盈利隐忧
-
 ---
 
 ## 基本信息

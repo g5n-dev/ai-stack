@@ -25,10 +25,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# MCP快速入门指南
-
----
-
 ## 基本信息
 
 - **作者**: Dachande663
@@ -80,7 +76,6 @@ MCP Hello Page 通过最简代码示例，演示了 MCP 框架在页面加载、
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

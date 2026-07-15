@@ -16,8 +16,8 @@ categories:
 - 大模型
 - AI 工程
 source: blogs_podcasts
-description: RLVR 与 RLAIF 的适用场景 - **RLVR（可验证奖励）**：任务结果可直接度量（如分类准确率、指标阈值），适用于客观评估。
-  - **RLAIF（AI 反馈）**：任务结果需主观判断或无明确标准，利用大模型或人工反馈进行奖励估计，适用于生成式或对话类任务。 多维度奖励体系设计 - **细粒度拆分**：将任务
+description: 这篇文章展示了 Lambda 如何为 Amazon Nova 定制提供可扩展、成本优化的奖励函数。您将学习如何在不同场景下选择合适的方法：对于可客观验证的任务选择基于可验证奖励的强化学习（RLVR），对于主观评估任务选择基于
+  AI 反馈的强化学习（RLAIF）；如何设计多维度奖励系统以防止奖励 hacking；如何优化 Lambda 函数以适应训练规模；
 external_url: https://aws.amazon.com/blogs/machine-learning/how-to-build-effective-reward-functions-with-aws-lambda-for-amazon-nova-model-customization
 scenarios:
 - AI/ML项目
@@ -27,10 +27,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 使用Lambda设计Amazon Nova模型的奖励函数指南
-
 ---
 
 ## 基本信息
@@ -181,7 +177,6 @@ Lambda 提供可扩展、成本可控的奖励函数实现路径，能够同时�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

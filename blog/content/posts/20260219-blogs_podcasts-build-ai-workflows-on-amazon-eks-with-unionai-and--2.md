@@ -16,9 +16,9 @@ categories:
 - AI 工程
 - 系统与基础设施
 source: blogs_podcasts
-description: 本文介绍了如何利用 Union.ai 和 Flyte 在 Amazon EKS 上构建、编排及扩展 AI/ML 工作流，主要内容总结如下：
-  **1. 核心技术方案** 文章探讨了使用 **Flyte Python SDK** 来编排 AI/ML 工作流，并结合 **Union.ai 2.0** 系统实现其在
-  **Ama
+description: 在本文中，我们将介绍如何使用 Flyte Python SDK 来编排和扩展 AI/ML 工作流。我们将探讨 Union.ai 2.0 系统如何支持在
+  Amazon Elastic Kubernetes Service (Amazon EKS) 上部署 Flyte，并与 Amazon Simple Storage
+  Service (Amazon S3)、Amazon Aurora、AWS…
 external_url: https://aws.amazon.com/blogs/machine-learning/build-ai-workflows-on-amazon-eks-with-union-ai-and-flyte
 scenarios:
 - AI/ML项目
@@ -40,10 +40,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 基于 Union.ai 和 Flyte 在 Amazon EKS 上构建 AI 工作流
-
 ---
 
 ## 基本信息

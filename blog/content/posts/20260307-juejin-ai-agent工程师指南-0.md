@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AI Agent 工程师指南：深入解析 Zero-shot 与 Few-shot 核心概念
-
----
-
 ## 基本信息
 
 - **作者**: 哈里谢顿

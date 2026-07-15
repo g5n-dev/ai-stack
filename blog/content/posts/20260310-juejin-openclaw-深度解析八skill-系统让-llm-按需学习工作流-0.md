@@ -16,8 +16,9 @@ categories:
 - AI 工程
 - 系统与基础设施
 source: juejin
-description: 以下是对“OpenClaw 深度解析（八）：Skill 系统”内容的简洁总结： 核心目标：解决 LLM 工作流的选择与执行 本文探讨了如何让大语言模型（LLM）像人类一样“按需”掌握工作流，核心在于解决**工具发现**与**确定性执行**的问题。即让
-  AI 不仅知道“查天气”的命令，还能根据上下文判断何时使用、如何使用
+description: 大模型在实际应用中往往受限于静态知识库，难以根据外部环境动态调整行为。OpenClaw 的 Skill 系统通过设计标准化的技能描述与发现机制，让模型能够按需加载工作流并精准调用工具。本文将深入解析
+  SKILL.md 的格式设计、优先级匹配及确定性分发逻辑，帮助开发者掌握构建可扩展 AI 智能体的核心技术。 以下是对“OpenClaw 深度解析（八）：Skill
+  系统”内容的简洁总结…
 external_url: https://juejin.cn/post/7614889731939909659
 scenarios:
 - 大语言模型
@@ -26,10 +27,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# OpenClaw Skill 系统设计：LLM 按需学习工作流与工具分发机制
-
 ---
 
 ## 基本信息

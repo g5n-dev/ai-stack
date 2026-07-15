@@ -16,8 +16,8 @@ categories:
 - AI 工程
 - 大模型
 source: blogs_podcasts
-description: 随着企业对智能交互需求的增长，构建可扩展且易于维护的对话系统已成为技术团队的关键挑战。本文将详细介绍如何利用 Amazon Bedrock
-  上的 Claude 模型、LangGraph 以及托管在 Amazon SageMaker AI 上的 MLflow，打造一个无服务器的对话 AI 代理。通过阅读，您将掌握从状态管
+description: 本文探讨如何使用 Amazon Bedrock、LangGraph 以及 Amazon SageMaker AI 上托管的 MLflow
+  来构建一个智能对话代理。 随着企业对智能交互需求的增长，构建可扩展且易于维护的对话系统已成为技术团队的关键挑战。
 external_url: https://aws.amazon.com/blogs/machine-learning/build-a-serverless-conversational-ai-agent-using-claude-with-langgraph-and-managed-mlflow-on-amazon-sagemaker-ai
 scenarios:
 - AI/ML项目
@@ -35,10 +35,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 基于Bedrock与LangGraph构建SageMaker AI对话代理
-
 ---
 
 ## 基本信息

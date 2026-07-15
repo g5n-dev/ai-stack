@@ -16,8 +16,7 @@ categories:
 - 大模型
 - 数据
 source: arxiv
-description: '**DARE-bench：数据科学领域大模型评估与训练新基准** 随着大型语言模型（LLM）在解决复杂数据科学任务中的应用需求激增，构建精准的评估基准变得至关重要。针对现有基准中缺乏标准化流程感知评估（难以衡量指令遵循和过程保真度）以及准确标注训练数据稀缺的两大痛点，研究团队推出了
-  **DARE-bench**。这是一'
+description: 针对大语言模型在复杂数据科学任务中的应用，现有基准往往缺乏对流程感知及指令遵循能力的标准化评估。为此，该研究提出了 DARE-bench，旨在填补这一空白，同时缓解高质量标注训练数据稀缺的问题。通过引入新的评估维度，该工作有望提升模型在数据科学场景下的表现，但具体的改进幅度及泛化能力目前无法从摘要确认。
 external_url: http://arxiv.org/abs/2602.24288v1
 scenarios:
 - 大语言模型
@@ -28,10 +27,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# DARE-bench：评估大模型数据科学建模与指令保真度
-
 ---
 
 ## 基本信息

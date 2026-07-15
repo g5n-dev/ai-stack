@@ -16,9 +16,7 @@ categories:
 - 安全
 - 开发工具
 source: juejin
-description: 以下是对该内容的简洁总结： **背景与体验：** 作者近期在尝试使用去中心化 AI 代理平台 **HAPI**，体验所谓的 **“Vibe
-  Coding”**（氛围编程）。这种模式允许开发者在咖啡馆、徒步等非办公场景下，随时随地远程控制本地开发环境，带来了极大的自由感和便利性。 **发现的安全隐患：**
-  然而，在实际使
+description: HAPI 平台所倡导的“Vibe Coding”打破了物理空间的限制，让开发者能够在咖啡馆或徒步途中随时接入本地环境，极大地提升了远程工作的自由度。然而，这种便捷性也伴随着潜在的安全风险，特别是在设备身份识别与访问控制方面。本文将结合设备指纹认证技术，探讨如何在不牺牲灵活性的前提下，为远程开发环境构建一道坚实的安全防线。
 external_url: https://juejin.cn/post/7613772968724643875
 scenarios:
 - AI/ML项目
@@ -27,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# HAPI 结合设备指纹认证提升远程编程安全性
-
 ---
 
 ## 基本信息

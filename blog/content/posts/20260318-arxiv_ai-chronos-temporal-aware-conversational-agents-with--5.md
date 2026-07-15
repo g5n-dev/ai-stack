@@ -16,9 +16,8 @@ categories:
 - 大模型
 - 论文
 source: arxiv
-description: 本文介绍了**Chronos**，一种新型的时间感知对话代理记忆框架，旨在解决大型语言模型（LLM）在长期多轮交互（长达数月）中面临的关键挑战。
-  **核心问题：** 现有的记忆系统难以对跨越长期的时间锚定事实和演变的偏好进行推理，且缺乏针对长对话历史中多跳、时间敏感查询的有效检索策略。 **Chronos
-  的解决方案：
+description: 针对大型语言模型在长期交互中难以有效推理时间锚定事实与演变偏好的问题，本文提出了 Chronos 框架。该方法通过构建包含事件元组和完整上下文的双重日历索引，结合动态提示与迭代工具调用，实现了对长历史中多跳、时间敏感查询的精准检索。实验显示其在
+  LongMemEvalS 基准上取得了优异表现，但该框架在更复杂真实场景下的具体计算开销目前尚无法从摘要确认。
 external_url: http://arxiv.org/abs/2603.16862v1
 scenarios:
 - 大语言模型
@@ -27,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Chronos：基于结构化事件检索的时序感知对话智能体
-
 ---
 
 ## 基本信息

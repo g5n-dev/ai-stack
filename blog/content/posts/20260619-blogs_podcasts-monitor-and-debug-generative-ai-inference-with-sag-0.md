@@ -15,8 +15,9 @@ tags:
 categories:
 - 系统与基础设施
 source: blogs_podcasts
-description: 概述 Amazon SageMaker AI 提供全托管的实时推理托管服务，可将机器学习模型部署到由一个或多个计算实例支持的 SageMaker
-  端点，平台负责资源调配和自动扩缩。 关键端点架构 - **单模型端点 (SME)**：适用于单一模型的推理，性能和监控相对集中。 - **推理组件端点 (IC)**：支持在同
+description: Amazon SageMaker AI 为机器学习模型提供全托管的实时推理托管服务。您可以将模型部署到由一个或多个计算实例支持的 SageMaker
+  端点，SageMaker 负责配置和扩展。SageMaker 支持多种端点架构。本文重点介绍与生成式 AI 工作负载最相关的两种具有详细可观测性的端点：单模型端点（SME）和推理组件（IC）端点。
+  生成式AI模型的推理性能直接影响用户体验和系统成本。
 external_url: https://aws.amazon.com/blogs/machine-learning/monitor-and-debug-generative-ai-inference-with-sagemaker-detailed-metrics-and-insights-dashboard-on-cloudwatch
 scenarios:
 - AI/ML项目
@@ -24,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 使用CloudWatch监控SageMaker生成式AI推理端点指南
-
 ---
 
 ## 基本信息
@@ -106,7 +103,6 @@ SageMaker与CloudWatch的深度集成，为生成式AI推理提供了细粒度�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/)

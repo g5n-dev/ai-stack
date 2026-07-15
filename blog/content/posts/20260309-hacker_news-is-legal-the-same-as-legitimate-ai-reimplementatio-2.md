@@ -17,7 +17,8 @@ categories:
 - 安全
 source: hacker_news
 description: 在开源软件领域，“合法”与“正当”往往被视为同义词，但生成式 AI 的兴起正在打破这一共识。本文探讨了 AI 辅助代码重写对 Copyleft
-  许可证（如 GPL）核心机制的冲击，分析了当技术手段使“合规”变得容易时，为何“自由分享”的精神反而面临被架空的危机。通过厘清法律边界与道德预期的错位，文章旨在为开发者和维护者
+  许可证（如 GPL）核心机制的冲击，分析了当技术手段使“合规”变得容易时，为何“自由分享”的精神反而面临被架空的危机。通过厘清法律边界与道德预期的错位，文章旨在为开发者和维护者在
+  AI 时代如何重新审视代码授权提供参考。
 external_url: https://writings.hongminhee.org/2026/03/legal-vs-legitimate
 scenarios:
 - AI/ML项目
@@ -29,10 +30,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# AI重新实现与Copyleft侵蚀：合法与正当性辨析
-
 ---
 
 ## 基本信息

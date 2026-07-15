@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AI Agent SOUL.md 人格文件编写指南与核心模块解析
-
----
-
 ## 基本信息
 
 - **作者**: TechFind

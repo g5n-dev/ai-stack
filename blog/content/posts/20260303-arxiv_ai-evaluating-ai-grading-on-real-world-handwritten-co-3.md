@@ -16,7 +16,7 @@ categories:
 - 大模型
 - 数据
 source: arxiv
-description: 本文介绍了加州大学欧文分校进行的一项关于AI批改真实手写大学数学作业的大规模实证研究。 **背景与目的：** 针对大型本科STEM课程因教学负担重而导致反馈不足的问题，研究人员构建了一套基于OCR（光学字符识别）和大型语言模型（LLM）的AI评分系统。该系统旨在处理近800名学生的数千份手写微积分测验，通过结构化、评分
+description: 针对大学本科 STEM 课程因教学负担过重导致反馈不足的问题，本研究构建了一套基于光学字符识别（OCR）和大语言模型（LLM）的 AI 评分系统，并在加州大学尔湾分校开展了针对真实手写数学作业的大规模实证研究。文章详细评估了该系统在海量手写内容处理中的表现，试图为自动化教学评估建立新的基准。然而，摘要未披露具体的准确率数据或与人工评分的偏差分析，尚无法从摘要确认其在复杂数学逻辑判定上的实际鲁棒性。
 external_url: http://arxiv.org/abs/2603.00895v1
 scenarios:
 - AI/ML项目
@@ -25,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 基于大规模真实手写数学数据评估AI阅卷性能
-
 ---
 
 ## 基本信息

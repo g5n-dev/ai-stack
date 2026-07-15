@@ -16,8 +16,8 @@ categories:
 - AI 工程
 - 产品与创业
 source: blogs_podcasts
-description: AINews AI Engineer World's Fair 现已开启演讲者征集。大会围绕六大主题展开： Autoresearch（自动研究）
-  聚焦 AI 自动化实验、假设生成与验证的最新进展。 Memory（记忆） 探讨大模型的长期记忆、上下文保持与检索技术。 World Models（世界模型） 展示构建可交互、
+description: 译文： 今天比较清闲，我们可以发演讲者征集啦！ AI Engineer World's Fair 正在公开征集演讲者，聚焦 Autoresearch、记忆机制、世界模型、Tokenmaxxing、Agentic
+  Commerce 与垂直 AI 等前沿方向。随着大模型在工程实践中的快速落地，本次活动旨在为研究者与工程师提供分享最新技术、探讨实际挑战的舞台。
 external_url: https://www.latent.space/p/ainews-ai-engineer-worlds-fair-autoresearch
 scenarios:
 - AI/ML项目
@@ -28,10 +28,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# AI工程师大会征集演讲者
-
 ---
 
 ## 基本信息
@@ -205,7 +201,6 @@ AI Engineer World's Fair聚焦的前沿技术（Autoresearch、Memory、World Mo
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [产品与创业](/categories/%E4%BA%A7%E5%93%81%E4%B8%8E%E5%88%9B%E4%B8%9A/)

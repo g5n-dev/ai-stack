@@ -17,7 +17,7 @@ categories:
 - 开源生态
 source: hacker_news
 description: 英伟达与 OpenAI 近期终止了一项价值高达 1000 亿美元的未完成收购谈判，转而敲定了一笔 300 亿美元的新一轮投资协议。这一战略转向不仅标志着双方合作模式的重大调整，也折射出当前
-  AI 算力市场在巨额资本运作下的复杂博弈与理性回归。本文将深入解析这笔交易的背景与动因，并探讨其对未来 AI 硬件格局及行业生态的
+  AI 算力市场在巨额资本运作下的复杂博弈与理性回归。本文将深入解析这笔交易的背景与动因，并探讨其对未来 AI 硬件格局及行业生态的潜在影响。
 external_url: https://www.ft.com/content/dea24046-0a73-40b2-8246-5ac7b7a54323
 scenarios:
 - AI/ML项目
@@ -27,10 +27,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 英伟达与OpenAI取消百亿美元收购案 转向30亿美元投资
-
 ---
 
 ## 基本信息

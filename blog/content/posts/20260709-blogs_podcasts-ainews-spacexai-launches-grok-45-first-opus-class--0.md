@@ -15,8 +15,8 @@ tags:
 categories:
 - 大模型
 source: blogs_podcasts
-description: 发布概况 SpaceXAI 近期推出 Grok 4.5，这是收购 Cursor 后首个 Opus 级模型，标志着该公司在多模态大模型领域实现突破。
-  技术亮点 Grok 4.5 采用全新稀疏 Transformer 架构，参数量提升至约 1.2 万亿 tokens，训练数据覆盖公开网页、科研文献和专有代码库。与前代相比，
+description: SpaceXAI仍然比其他任何前沿实验室发展得更快。 SpaceXAI正式推出Grok 4.5，这是该公司在收购Cursor后发布的首个Opus级别模型。Grok
+  4.5的发布标志着SpaceXAI在大型语言模型领域再次实现突破，进一步巩固了其作为行业领军者的地位。
 external_url: https://www.latent.space/p/ainews-spacexai-launches-grok-45
 scenarios:
 - AI/ML项目
@@ -25,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# SpaceXAI推出Grok 4.5 首个Opus级模型
-
 ---
 
 ## 基本信息
@@ -142,7 +138,6 @@ Grok 4.5虽具备强大的通用能力，但在特定垂直领域的专业知识
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

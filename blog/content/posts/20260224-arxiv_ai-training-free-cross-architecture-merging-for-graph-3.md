@@ -9,8 +9,8 @@ tags:
 categories:
 - 论文
 source: arxiv
-description: '**H-GRAMA：无需训练的跨架构图神经网络合并方法** **核心问题** 现有模型合并技术受限于**同构架构**，难以融合不同类型的图神经网络（如GCN和GAT）。由于GNN的消息传递机制依赖图拓扑且对参数错位敏感，直接合并参数空间会导致性能下降。
-  **解决方案** H-GRAMA（异构图路由与消息对齐框架）通过以'
+description: 现有模型融合技术通常受限于同质架构，难以直接整合如 GCN 与 GAT 等不同类型的图神经网络。本文提出 H-GRAMA 方法，试图在不进行额外训练的前提下解决跨架构参数空间不匹配的问题，从而实现异质
+  GNN 的有效融合。虽然摘要未披露具体技术细节，但该工作若能克服图拓扑对参数对齐的敏感性，有望为降低图模型部署成本与提升集成效率提供新思路。
 external_url: http://arxiv.org/abs/2602.19332v1
 scenarios:
 - Web应用开发
@@ -18,10 +18,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 无需训练的图神经网络跨架构合并方法
-
 ---
 
 ## 基本信息

@@ -16,9 +16,8 @@ categories:
 - 开发工具
 - AI 工程
 source: blogs_podcasts
-description: Nova Forge SDK 定制实验总结 概述 Nova Forge SDK是亚马逊云服务提供的开发工具包，专门用于自定义Amazon
-  Nova模型。该SDK允许开发者利用Amazon SageMaker AI Training Jobs进行模型训练和定制。 核心功能 Nova Forge SDK的主要功能包括：
-  -
+description: 在这篇文章中，我们将带您逐步了解如何使用 Nova Forge SDK 通过 Amazon SageMaker AI Training Jobs
+  来训练 Amazon Nova 模型。 随着 Amazon Nova 在实际业务中的需求持续上升，定制化模型已成为提升性能的重要手段。
 external_url: https://aws.amazon.com/blogs/machine-learning/kick-off-nova-customization-experiments-using-nova-forge-sdk
 scenarios:
 - Web应用开发
@@ -28,10 +27,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Nova Forge SDK + SageMaker 训练 Nova 模型实战
-
 ---
 
 ## 基本信息

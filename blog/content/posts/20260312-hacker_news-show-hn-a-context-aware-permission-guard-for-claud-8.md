@@ -31,10 +31,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Show HN: 面向 Claude Code 的上下文感知权限守卫
-
----
-
 ## 基本信息
 
 - **作者**: schipperai

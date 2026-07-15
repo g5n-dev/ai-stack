@@ -16,9 +16,8 @@ categories:
 - AI 工程
 - 大模型
 source: blogs_podcasts
-description: 本文介绍了如何在 Amazon SageMaker 训练任务上，结合 veRL 和 Ray 框架训练 CodeFu-7B 模型。主要内容包括：
-  1. **目标模型**：CodeFu-7B 是一个拥有 70 亿参数、专为竞技编程设计的专用大语言模型。 2. **核心方法**：采用 **GRPO（组相对策略优化）**
-  算法
+description: 在这篇文章中，我们演示了如何利用 veRL 训练 CodeFu-7B——一款专为竞技编程量身定制的 70 亿参数模型，具体采用 Group
+  Relative Policy Optimization (GRPO) 算法，并在由 SageMaker 训练任务托管的分布式 Ray 集群中进行。
 external_url: https://aws.amazon.com/blogs/machine-learning/train-codefu-7b-with-verl-and-ray-on-amazon-sagemaker-training-jobs
 scenarios: []
 aliases:
@@ -38,10 +37,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 使用 veRL 和 Ray 在 SageMaker 上训练 CodeFu-7B 模型
-
 ---
 
 ## 基本信息

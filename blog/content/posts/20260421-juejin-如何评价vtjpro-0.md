@@ -16,9 +16,7 @@ categories:
 - 前端
 - 开源生态
 source: juejin
-description: VTJ.PRO 是面向 Vue 3 生态的开源“AI + 低代码”开发平台，旨在兼顾低代码的高效与手写代码的灵活。平台围绕两大核心能力展开：
-  双向代码转换 - **可视化→代码**：通过拖拽、属性配置等低代码 UI 编辑器，直接生成符合 Vue 3 Composition API 与 TypeScript
-  的单文件组件
+description: VTJ.PRO 是一款面向 Vue 3 生态的开源平台，将 AI 与低代码相结合，提供双向代码转换和智能辅助功能。它的出现旨在弥合传统低代码工具在灵活性上的不足，让开发者在保持手写代码自由度的同时，也能享受高效的可视化搭建体验。本文将对其核心特性进行解析，帮助技术团队评估该平台在实际项目中的适用性及潜在价值。
 external_url: https://juejin.cn/post/7631118732268142602
 scenarios:
 - AI/ML项目
@@ -26,10 +24,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# VTJ.PRO：Vue 3开源AI低代码平台核心解析
-
 ---
 
 ## 基本信息
@@ -122,7 +116,6 @@ VTJ.PRO 作为 Vue 3 生态下的“AI+低代码”平台，在技术创新层�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [前端](/categories/%E5%89%8D%E7%AB%AF/) / [开源生态](/categories/%E5%BC%80%E6%BA%90%E7%94%9F%E6%80%81/)

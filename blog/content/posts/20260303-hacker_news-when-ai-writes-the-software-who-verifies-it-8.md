@@ -17,7 +17,7 @@ categories:
 - 安全
 source: hacker_news
 description: 随着 AI 在代码生成领域的应用日益深入，软件开发的效率得到了显著提升，但随之而来的代码质量与安全性问题也愈发受到关注。当机器承担了大部分编写工作，谁来为最终产品的可靠性把关，已成为行业亟待解决的难题。本文将探讨
-  AI 编程环境下的验证挑战，并分析现有的技术手段与未来方向，帮助读者理解如何在自动化浪潮中构建有效的质量保
+  AI 编程环境下的验证挑战，并分析现有的技术手段与未来方向，帮助读者理解如何在自动化浪潮中构建有效的质量保障体系。
 external_url: https://leodemoura.github.io/blog/2026/02/28/when-ai-writes-the-worlds-software.html
 scenarios:
 - AI/ML项目
@@ -32,10 +32,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# AI编写软件时的验证责任归属与挑战
-
 ---
 
 ## 基本信息

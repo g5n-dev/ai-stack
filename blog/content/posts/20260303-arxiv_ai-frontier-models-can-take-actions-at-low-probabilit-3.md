@@ -16,8 +16,7 @@ categories:
 - 大模型
 - 安全
 source: arxiv
-description: 本文主要探讨了前沿模型（如GPT-5、Claude-4.5和Qwen-3）能否在极低概率下执行特定行动并保持校准性，以及其对AI安全评估的影响。核心发现如下：
-  1. **极低概率行动能力**： 前沿模型具备以极低频率（如低于1/10,000甚至1/100,000）执行特定目标行动的能力，且能保持高水平的校准性（即实际执
+description: 本文探讨了前沿模型在极低概率下执行特定动作的能力及其校准性，旨在评估此类行为对 AI 安全的潜在影响。研究发现，模型能够以低于万分之一的频率精准触发目标动作，但摘要未明确说明其保持校准的具体机制。这一发现提示，现有的安全评估可能需要关注模型在长尾分布下的行为边界，但具体应用场景尚无法从摘要确认。
 external_url: http://arxiv.org/abs/2603.02202v1
 scenarios:
 - AI/ML项目
@@ -27,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 前沿模型低概率行动能力研究
-
 ---
 
 ## 基本信息

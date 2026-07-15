@@ -31,10 +31,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Anthropic 否认 Claude Code 用户成本高达五千美元
-
----
-
 ## 基本信息
 
 - **作者**: jnord

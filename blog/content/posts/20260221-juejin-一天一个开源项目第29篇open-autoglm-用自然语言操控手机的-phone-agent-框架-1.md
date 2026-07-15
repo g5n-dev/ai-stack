@@ -16,8 +16,8 @@ categories:
 - 大模型
 - 开源生态
 source: juejin
-description: 以下是关于 **Open-AutoGLM** 的简洁总结： **项目概述** Open-AutoGLM 是由 **zai-org**（智谱AI团队）开源的一个基于大语言模型的**手机端智能助理框架**，以及对应的
-  **AutoGLM-Phone** 模型。该项目旨在通过自然语言指令直接操控智能手机，实现“动口不动手”的
+description: Open-AutoGLM 是由 zai-org 开源的手机端智能助理框架，它通过结合 ADB/HDC 协议与视觉语言模型，实现了仅凭自然语言指令即可自动操控智能手机的能力。这一项目标志着人机交互从“图形界面点击”向“语义意图驱动”的转变，为构建真正的
+  Phone Agent 提供了可行的技术路径。
 external_url: https://juejin.cn/post/7608382961723588658
 scenarios:
 - AI/ML项目
@@ -25,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Open-AutoGLM：基于视觉语言模型的手机端智能助理框架
-
 ---
 
 ## 基本信息

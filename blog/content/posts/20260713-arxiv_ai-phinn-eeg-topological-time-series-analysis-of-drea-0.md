@@ -15,8 +15,7 @@ tags:
 categories:
 - 论文
 source: arxiv
-description: PHINN‑EEG（持久同调启发神经网络）首次将拓扑时间序列分析引入梦境脑电研究。该方法在多通道苏醒前脑电上采用滑动窗口 Takens 延迟嵌入并结合
-  Vietoris‑Rips 过滤，提取“动态 Betti 曲线”，以几何结构而非单纯的能量特征来描述神经活动。结合拓扑条件下的流匹配（flow matching）技术，
+description: 梦境状态的脑电信号蕴含丰富的时空动态特征，但对其内容的自动解析仍是挑战。本文提出PHINN‑EEG框架，利用拓扑时间序列分析中的动态Betti曲线捕捉EEG的拓扑演化规律，实现梦境内容分类并基于拓扑条件生成神经信号。该方法为睡眠与梦境研究提供新视角，具体实验效果和数据集信息尚未披露，无法从摘要确认其实际性能，若验证成功可服务于睡眠监测与脑机接口等应用。
 external_url: http://arxiv.org/abs/2607.09662v1
 scenarios:
 - Web应用开发
@@ -26,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# PHINN-EEG：梦境脑电拓扑分析与动态Betti曲线分类
-
 ---
 
 ## 基本信息
@@ -161,7 +156,6 @@ PSD、AR 系数等在噪声鲁棒性上表现良好，但在捕捉网络循环�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/)

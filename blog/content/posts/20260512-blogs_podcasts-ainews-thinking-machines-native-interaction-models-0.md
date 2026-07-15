@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Thinking Machines发布276B-A12B实时语音交互模型
-
----
-
 ## 基本信息
 
 - **来源**: Latent Space (blog)
@@ -94,7 +90,6 @@ AINews报道，Thinking Machines发布了其原生交互模型——TML‑Intera
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

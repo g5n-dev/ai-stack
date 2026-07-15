@@ -35,10 +35,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Claude Code 的代码选择逻辑与决策机制
-
----
-
 ## 基本信息
 
 - **作者**: tin7in

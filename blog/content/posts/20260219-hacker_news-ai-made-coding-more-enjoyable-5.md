@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AI 提升编程愉悦感与开发效率
-
----
-
 ## 基本信息
 
 - **作者**: domysee

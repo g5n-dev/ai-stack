@@ -16,7 +16,7 @@ categories:
 - 开发工具
 source: hacker_news
 description: MAI-Code-1-Flash 是一套轻量高性能的前端框架，提供模块化组织、自动化构建和即时预览功能，帮助开发者在保持代码可维护性的同时，快速交付流畅动画页面。它采用零依赖设计，降低项目体积，并通过可视化调试工具实时监控渲染性能，使团队能够快速定位瓶颈。结合实战案例，本文演示如何使用
-  MAI-Code-1-Flash
+  MAI-Code-1-Flash 实现从原型到生产环境的全流程加速。
 external_url: https://microsoft.ai/news/introducingmai-code-1-flash
 scenarios:
 - AI/ML项目
@@ -24,10 +24,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# MAI-Code-1-Flash代码快速处理工具
-
 ---
 
 ## 基本信息
@@ -79,7 +75,6 @@ MAI‑Code‑1‑Flash 通过 Flash‑Attention 将代码生成的延迟压至�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/)

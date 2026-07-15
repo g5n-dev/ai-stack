@@ -16,8 +16,8 @@ categories:
 - 大模型
 - 系统与基础设施
 source: blogs_podcasts
-description: 以下是对该内容的中文简洁总结： **标题：亚马逊云科技在泰国、马来西亚、新加坡、印尼和台湾推出 Anthropic Claude 模型的全球跨区域推理**
-  **主要摘要：** 亚马逊云科技宣布在泰国、马来西亚、新加坡、印度尼西亚和台湾地区推出针对最新 Anthropic Claude 模型（包括 Opus、Sonnet
+description: 在本博文中，我们很高兴宣布 Global CRIS 现已面向泰国、马来西亚、新加坡、印度尼西亚和台湾地区的客户推出，并介绍技术实现步骤，以及分享配额管理最佳实践，以帮助您最大化
+  AI 推理部署的价值。我们还会提供有关生产环境部署最佳实践的指导。
 external_url: https://aws.amazon.com/blogs/machine-learning/global-cross-region-inference-for-latest-anthropic-claude-opus-sonnet-and-haiku-models-on-amazon-bedrock-in-thailand-malaysia-singapore-indonesia-and-taiwan
 scenarios:
 - Web应用开发
@@ -36,10 +36,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 亚马逊Bedrock在亚太五区上线Anthropic模型全球跨区域推理
-
 ---
 
 ## 基本信息

@@ -16,8 +16,9 @@ categories:
 - AI 工程
 - 系统与基础设施
 source: blogs_podcasts
-description: '**摘要：利用 Amazon Bedrock AgentCore 全栈模板加速代理应用开发** 本文主要介绍了如何部署和使用 **Fullstack
-  AgentCore Solution Template (FAST)**，旨在简化基于 Amazon Bedrock 的自主代理应用程序的开发流程。 **核心内容要点：*'
+description: In this post, you will learn how to deploy Fullstack AgentCore Solution
+  Template (FAST) to your Amazon Web Services (AWS) account, understand its architecture,
+  and see how to extend it for your…
 external_url: https://aws.amazon.com/blogs/machine-learning/accelerate-agentic-application-development-with-a-full-stack-starter-template-for-amazon-bedrock-agentcore
 scenarios:
 - AI/ML项目
@@ -28,10 +29,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 利用全栈模板加速开发基于Amazon Bedrock AgentCore的应用
-
 ---
 
 ## 基本信息
@@ -127,7 +124,6 @@ In this post, you will learn how to deploy Fullstack AgentCore Solution Template
 
 ---
 
-# 深度分析报告：全栈 AgentCore 解决方案模板 (FAST)
 
 ## 1. 核心观点深度解读
 
@@ -281,7 +277,6 @@ AWS 通过此类模板巩固其生态壁垒。一旦开发者习惯了 FAST 的�
 ---
 
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/)

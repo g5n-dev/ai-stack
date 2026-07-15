@@ -16,7 +16,7 @@ categories:
 - AI 工程
 - 开发工具
 source: hacker_news
-description: 在复杂开发场景中，如何让多个 AI 编程代理协同工作，正成为提升研发效率的关键课题。本文介绍了一种基于 tmux 和 Markdown 规范的并行编码模式，通过明确的任务分配与实时协作，有效解决了单一代理在处理大型项目时的局限性。阅读本文，你将掌握构建多代理系统的具体方法，了解如何利用现有工具实现更高效的自动化开发流程
+description: 在复杂开发场景中，如何让多个 AI 编程代理协同工作，正成为提升研发效率的关键课题。本文介绍了一种基于 tmux 和 Markdown 规范的并行编码模式，通过明确的任务分配与实时协作，有效解决了单一代理在处理大型项目时的局限性。阅读本文，你将掌握构建多代理系统的具体方法，了解如何利用现有工具实现更高效的自动化开发流程。
 external_url: https://schipper.ai/posts/parallel-coding-agents
 scenarios:
 - 大语言模型
@@ -28,10 +28,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 基于 tmux 和 Markdown 规格构建并行编码智能体
-
 ---
 
 ## 基本信息

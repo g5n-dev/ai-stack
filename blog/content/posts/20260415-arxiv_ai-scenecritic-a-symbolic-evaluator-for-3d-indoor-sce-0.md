@@ -16,8 +16,8 @@ categories:
 - 论文
 - 大模型
 source: arxiv
-description: 背景与问题 大模型（LLM）和视觉‑语言模型（VLM）在生成室内三维场景时常通过布局或场景图等中间结构来表达。然而现有的评估手段大多依赖模型对渲染视图的打分，容易受视角、提示词表述以及幻觉等因素影响，导致评价不稳定，难以判断生成结果的真实空间合理性。
-  SceneCritic 与 SceneOnto 我们提出 Scene
+description: 大模型（LLM）和视觉‑语言模型（VLM）在生成室内三维场景时常通过布局或场景图等中间结构来表达。然而现有的评估手段大多依赖模型对渲染视图的打分，容易受视角、提示词表述以及幻觉等因素影响，导致评价不稳定，难以判断生成结果的真实空间合理性。
+  我们提出 SceneCritic，一种符号化的平面布局评估器。其核心约束基于手动构建的结构化空间本体 SceneOnto。
 external_url: http://arxiv.org/abs/2604.13035v1
 scenarios:
 - 大语言模型
@@ -27,10 +27,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# SceneCritic：3D室内场景合成的符号化评估器
-
 ---
 
 ## 基本信息
@@ -178,7 +174,6 @@ SceneCritic 是一种符号化的平面布局评估器，基于手动构建的�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/) / [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

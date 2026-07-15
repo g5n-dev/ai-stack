@@ -16,8 +16,8 @@ categories:
 - 论文
 - 大模型
 source: arxiv
-description: 本文介绍了一种名为 **ST-FS-EB** 的新型贝叶斯深度学习（BDL）正则化框架，旨在解决模型在不确定性和分布偏移下的鲁棒性问题。
-  **核心背景与问题：** 传统的贝叶斯深度学习方法通常在函数空间变分推断（FSVI）中使用**高斯先验**。然而，高斯分布无法有效捕捉神经网络输出中普遍存在的**重尾（heavy-t
+description: 针对传统贝叶斯深度学习依赖高斯先验而难以捕捉神经网络重尾特性的局限，本文提出了 ST-FS-EB 正则化框架。该方法创新性地在函数空间引入学生氏
+  $t$ 先验，并结合经验贝叶斯策略与变分推断进行优化。实验表明，该模型显著提升了模型在分布内预测及分布外检测任务中的鲁棒性，但具体的计算开销及对超参数的敏感程度无法从摘要确认。
 external_url: http://arxiv.org/abs/2602.22015v1
 scenarios:
 - Web应用开发
@@ -25,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 函数空间经验贝叶斯正则化：基于t分布先验
-
 ---
 
 ## 基本信息

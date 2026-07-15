@@ -32,10 +32,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 自动推理检查重写聊天机器人的实现架构
-
----
-
 ## 基本信息
 
 - **来源**: AWS Machine Learning Blog (blog)
@@ -95,9 +91,7 @@ source_support: 0.0
 这篇文章虽然偏向技术实现细节，但其背后的思想——**用确定性逻辑约束概率性模型**——是当前AI从玩具走向生产环境的关键一步。它提醒从业者，不要试图通过微调模型来解决所有逻辑问题，有时外挂一个严格的“逻辑大脑”比训练一个更聪明的“嘴巴”更有效。
 
 ---
-## 技术分析
 
-# 技术分析
 
 ## 1. 核心观点深度解读
 
@@ -277,7 +271,6 @@ source_support: 0.0
 ---
 
 
----
 ## 站内链接
 
 - 分类： [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

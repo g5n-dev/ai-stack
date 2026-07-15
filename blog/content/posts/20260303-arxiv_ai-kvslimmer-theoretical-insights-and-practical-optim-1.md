@@ -16,8 +16,8 @@ categories:
 - 大模型
 - 论文
 source: arxiv
-description: '以下是关于《KVSlimmer: Theoretical Insights and Practical Optimizations for
-  Asymmetric KV Merging》的中文总结： **背景与问题** 随着大语言模型（LLM）的发展，键值（KV）缓存带来的计算与内存消耗日益增加，成为限制模型性能的关键瓶'
+description: 针对大语言模型推理中键值缓存带来的高计算与内存开销问题，本文提出了名为 KVSlimmer 的优化方案。作者通过建立理论框架分析了 KV
+  的非对称性，并据此推导出一种无需梯度计算、仅利用前向传播变量的闭式解算法，从而在降低推理成本的同时提升了压缩率。尽管摘要未明确提及具体的量化性能指标，但该研究为通过理论指导而非单纯经验观察来优化模型推理提供了新的思路。
 external_url: http://arxiv.org/abs/2603.00907v1
 scenarios:
 - 大语言模型
@@ -25,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# KVSlimmer：非对称KV合并的理论洞察与优化
-
 ---
 
 ## 基本信息

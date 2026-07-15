@@ -17,7 +17,7 @@ categories:
 - 论文
 source: hacker_news
 description: 随着软件工程自动化程度的提升，如何利用 AI 智能体通过持续集成（CI）流程来维护代码库，已成为提升开发效率的关键课题。本文介绍了 SWE-CI
-  这一全新基准测试，旨在客观评估智能体在真实 CI 环境中修复构建失败与测试用例的能力。通过阅读本文，读者将了解该数据集的构建方法及主流模型的表现差异，从而更准确地把握当前自动
+  这一全新基准测试，旨在客观评估智能体在真实 CI 环境中修复构建失败与测试用例的能力。通过阅读本文，读者将了解该数据集的构建方法及主流模型的表现差异，从而更准确地把握当前自动化代码维护技术的水平与局限。
 external_url: https://arxiv.org/abs/2603.03823
 scenarios:
 - AI/ML项目
@@ -30,10 +30,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# SWE-CI：基于CI流程评估AI Agent代码库维护能力
-
 ---
 
 ## 基本信息

@@ -17,7 +17,7 @@ categories:
 - 效率与方法论
 source: hacker_news
 description: 随着大语言模型（LLM）能力的持续进化，软件开发工作流正经历从“手工编写”到“人机协作”的深刻转型。本文作者结合自身实践，详细拆解了如何将
-  LLM 无缝融入编码环节，从而在保证代码质量的前提下显著提升交付效率。阅读此文，你将获得一套可落地的 AI 辅助编程方法论，学会如何构建提示词、调试模型输出，并重新定义工程师在现代
+  LLM 无缝融入编码环节，从而在保证代码质量的前提下显著提升交付效率。阅读此文，你将获得一套可落地的 AI 辅助编程方法论，学会如何构建提示词、调试模型输出，并重新定义工程师在现代技术栈中的核心角色。
 external_url: https://www.stavros.io/posts/how-i-write-software-with-llms
 scenarios:
 - 大语言模型
@@ -31,10 +31,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 利用大语言模型辅助软件开发的实践方法
-
 ---
 
 ## 基本信息

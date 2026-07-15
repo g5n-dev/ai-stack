@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 里约热内卢AI项目被指为现有模型拼装版本
-
----
-
 ## 基本信息
 
 - **作者**: unrvl22
@@ -86,7 +82,6 @@ source_support: 0.0
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

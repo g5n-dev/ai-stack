@@ -17,7 +17,7 @@ categories:
 - AI 工程
 source: juejin
 description: OpenAI Codex CLI 将自然语言处理能力直接集成至终端，打破了传统命令行操作的局限，为开发者提供了一种更流畅的交互方式。本文将详细介绍在
-  Windows 环境下配置 Node.js 并部署 Codex CLI 的完整流程，涵盖从环境搭建到 AI Agent 实战应用的关键步骤。通过阅读本文，你将掌握如何利用
+  Windows 环境下配置 Node.js 并部署 Codex CLI 的完整流程，涵盖从环境搭建到 AI Agent 实战应用的关键步骤。通过阅读本文，你将掌握如何利用该工具读取项目上下文、自动化修改文件及执行命令，从而显著提升日常开发效率。
 external_url: https://juejin.cn/post/7613658235174387727
 scenarios:
 - AI/ML项目
@@ -26,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# OpenAI Codex CLI 终端实战指南：安装配置与代码修改
-
 ---
 
 ## 基本信息

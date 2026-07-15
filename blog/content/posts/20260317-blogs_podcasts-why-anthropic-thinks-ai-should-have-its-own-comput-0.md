@@ -16,8 +16,8 @@ categories:
 - AI 工程
 - 开发工具
 source: blogs_podcasts
-description: 这篇文章（或访谈片段）主要介绍了 Anthropic 推出 **Claude Cowork** 和 **Claude Code Desktop**
-  背后的故事与核心愿景：**AI 应该拥有属于它自己的独立计算环境**。 以下是对内容的简洁总结： **1. 起源：意外的产物** Claude Cowork 的诞生并非始于
+description: 克劳德·考克是在一次事故中诞生的。 Claude Code Desktop 与 Claude Cowork 的出现，标志着 AI 交互模式正从单纯的对话窗口转向更深度的系统级协作。Anthropic
+  赋予 AI 独立的计算机环境，旨在解决传统大模型在处理复杂任务时面临的上下文限制与执行壁垒。
 external_url: https://www.latent.space/p/felix-anthropic
 scenarios:
 - AI/ML项目
@@ -28,10 +28,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Anthropic为何认为AI应拥有专属电脑
-
 ---
 
 ## 基本信息

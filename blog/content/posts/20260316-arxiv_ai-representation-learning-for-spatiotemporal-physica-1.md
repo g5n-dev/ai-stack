@@ -16,8 +16,7 @@ categories:
 - 论文
 - 数据
 source: arxiv
-description: 这篇文章探讨了针对时空物理系统的表征学习，主要观点总结如下： **1. 研究背景与局限** 传统的机器学习方法主要关注于“下一帧预测”，旨在训练能够模拟系统随时间演化的仿真器。然而，这些仿真器不仅训练成本高昂，而且在自回归预测中容易出现误差累积（compounding
-  errors）等性能问题。 **2. 研究视角的转
+description: 针对时空物理系统的建模，现有研究多受限于“下一帧预测”的范式，导致模型计算成本高昂且泛化能力受限。本文提出了一种基于表征学习的替代框架，旨在通过解构底层物理动态来提升模型的灵活性与可复用性。尽管具体的算法细节无法从摘要确认，但该工作为构建更高效的物理模拟器提供了新的思路，有望推动科学计算领域的范式转变。
 external_url: http://arxiv.org/abs/2603.13227v1
 scenarios:
 - Web应用开发
@@ -27,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 面向时空物理系统的表征学习
-
 ---
 
 ## 基本信息

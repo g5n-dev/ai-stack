@@ -16,9 +16,8 @@ categories:
 - AI 工程
 - 系统与基础设施
 source: juejin
-description: 以下是对您提供的阿里云 Serverless 计算产品动态的中文总结： **阿里云 Serverless 计算一月精选：LangChain
-  与 AgentRun 沙箱集成指南** 本月阿里云 Serverless 计算的重点聚焦于**AI 开发工具链的优化**，特别是围绕 **LangChain**
-  框架与 **Age
+description: 随着云原生架构的持续演进，Serverless 计算在提升开发效率与降低运维成本方面的优势愈发显著。阿里云近期发布了多项产品更新，不仅优化了底层基础设施，还重点增强了与
+  LangChain 等前沿 AI 框架的集成能力。
 external_url: https://juejin.cn/post/7611345744185278502
 scenarios:
 - AI/ML项目
@@ -27,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 阿里云 Serverless 1月动态：LangChain 与 AgentRun 部署指南
-
 ---
 
 ## 基本信息

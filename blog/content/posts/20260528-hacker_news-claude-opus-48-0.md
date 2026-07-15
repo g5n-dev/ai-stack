@@ -25,10 +25,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Claude Opus 4.8 发布
-
----
-
 ## 基本信息
 
 - **作者**: craigmart
@@ -84,7 +80,6 @@ Claude Opus 4.8在复杂推理与长文本理解任务上实现了显著提升�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

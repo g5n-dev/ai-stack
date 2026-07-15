@@ -16,7 +16,8 @@ categories:
 - 大模型
 - AI 工程
 source: juejin
-description: ReAct是一种让大型语言模型实现“边想边做”的框架。它把模型的推理过程拆解为思考（Thought）、行动（Action）和观察（Observation）三个环节，并在每一步根据上一步的观察结果生成下一步的思考和行动，形成循环。模型不再仅仅输出文字，而是能够主动调用外部工具（如搜索、计算、API），把工具的返回结果纳入
+description: ReAct是一种让大模型从被动应答转变为主动推理和行动的技术框架。与传统的问答模式不同，它通过思考、行动、观察的循环机制，使模型能够像人一样边想边做，真正调用工具完成复杂任务。掌握ReAct的原理，能帮助我们理解大模型如何突破“只会说不会做”的局限，实现更高水平的智能行为。
+  ReAct是一种让大型语言模型实现“边想边做”的框架。
 external_url: https://juejin.cn/post/7627365452814598154
 scenarios:
 - 大语言模型
@@ -24,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# ReAct让大模型掌握边想边做的循环机制
-
 ---
 
 ## 基本信息
@@ -101,7 +98,6 @@ ReAct并非万能。首先，工具的质量直接决定系统上限——如果
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

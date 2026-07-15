@@ -17,7 +17,7 @@ categories:
 - AI 工程
 source: hacker_news
 description: 随着大模型技术的快速迭代，Google 最新发布的 Gemini 3.1 Pro 在长上下文处理与复杂逻辑推理方面实现了显著提升。这一版本不仅增强了多模态理解能力，也为开发者提供了更稳定、高效的
-  API 接口，标志着通用人工智能向实用化迈出了关键一步。本文将深入解析其核心架构更新与实测表现，帮助您全面评估该模型在实际业
+  API 接口，标志着通用人工智能向实用化迈出了关键一步。本文将深入解析其核心架构更新与实测表现，帮助您全面评估该模型在实际业务场景中的应用潜力与适配性。
 external_url: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-pro
 scenarios:
 - 大语言模型
@@ -31,10 +31,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 谷歌发布 Gemini 2.5 Pro：支持 100 万上下文窗口
-
 ---
 
 ## 基本信息

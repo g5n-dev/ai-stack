@@ -46,10 +46,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# OpenAI 将在 ChatGPT 中下架 GPT-4o 等四款模型
-
----
-
 ## 基本信息
 
 - **作者**: rd
@@ -127,15 +123,15 @@ def check_model_status(api_key):
     """
     url = "https://api.openai.com/v1/models"
     headers = {"Authorization": f"Bearer {api_key}"}
-    
+
     try:
         response = requests.get(url, headers=headers)
         response.raise_for_status()
         models = response.json()["data"]
-        
+
         # 定义即将停用的模型列表
         retiring_models = ["gpt-4o", "gpt-4.1", "gpt-4.1-mini", "o4-mini"]
-        
+
         print("当前可用模型状态：")
         for model in models:
             model_id = model["id"]
@@ -143,7 +139,7 @@ def check_model_status(api_key):
                 print(f"[即将停用] {model_id} - 请尽快迁移")
             else:
                 print(f"[可用] {model_id}")
-                
+
     except Exception as e:
         print(f"查询失败: {str(e)}")
 
@@ -163,7 +159,7 @@ def migrate_model_config(config_path, new_model="gpt-4-turbo"):
     """
     with open(config_path, "r", encoding="utf-8") as f:
         config = json.load(f)
-    
+
     # 模型映射表
     model_mapping = {
         "gpt-4o": new_model,
@@ -171,14 +167,14 @@ def migrate_model_config(config_path, new_model="gpt-4-turbo"):
         "gpt-4.1-mini": "gpt-4-turbo",
         "o4-mini": "gpt-3.5-turbo"
     }
-    
+
     updated = False
     if "model" in config and config["model"] in model_mapping:
         old_model = config["model"]
         config["model"] = model_mapping[old_model]
         updated = True
         print(f"已迁移模型配置: {old_model} -> {config['model']}")
-    
+
     if updated:
         backup_path = config_path.parent / f"{config_path.stem}_backup{config_path.suffix}"
         with open(backup_path, "w", encoding="utf-8") as f:
@@ -205,12 +201,12 @@ def deprecated_model_check(func):
         # 检查模型参数
         model = kwargs.get("model", "")
         deprecated_models = ["gpt-4o", "gpt-4.1", "gpt-4.1-mini", "o4-mini"]
-        
+
         if any(m in model for m in deprecated_models):
             print(f"警告: 正在使用已停用的模型 {model}，建议迁移！")
             # 这里可以添加自动替换逻辑
             # kwargs["model"] = "gpt-4-turbo"
-        
+
         return func(*args, **kwargs)
     return wrapper
 
@@ -231,8 +227,6 @@ def call_openai_api(prompt, model="gpt-3.5-turbo"):
 
 ### 1：大型跨国银行的内部知识库迁移
 
- 1：大型跨国银行的内部知识库迁移
-
 **背景**:
 某大型跨国银行此前在内部合规与客服培训系统中广泛使用了 GPT-4o 模型。该系统用于处理复杂的金融法规查询、生成合规报告草稿以及辅助客服人员快速检索内部政策文档。
 
@@ -249,8 +243,6 @@ def call_openai_api(prompt, model="gpt-3.5-turbo"):
 
 ### 2：SaaS 初创公司的成本与性能平衡优化
 
- 2：SaaS 初创公司的成本与性能平衡优化
-
 **背景**:
 一家专注于自动化营销文案生成的 SaaS 初创公司，其核心产品依赖 GPT-4o-mini 为用户批量生成社交媒体帖子。由于用户量激增，API 调用成本成为制约公司盈利的主要瓶颈，同时旧版 mini 模型在处理多语言（特别是小语种）时的稳定性偶尔会出现波动。
 
@@ -266,8 +258,6 @@ OpenAI 宣布退役 GPT-4o-mini 及相关旧版本模型。公司面临的核心
 ---
 
 ### 3：在线教育平台的个性化辅导助手升级
-
- 3：在线教育平台的个性化辅导助手升级
 
 **背景**:
 一个知名的在线编程教育平台使用 GPT-4o 为其“AI 编程助手”提供支持，该功能负责实时回答学员的代码问题并提供调试建议。随着课程内容的更新，涉及更多复杂的数据结构和算法问题，旧模型在长代码逻辑分析上偶尔会出现“幻觉”或推理断裂。
@@ -373,15 +363,11 @@ OpenAI 宣布退役 GPT-4o-mini 及相关旧版本模型。公司面临的核心
 
 ### 1: 哪些具体的模型版本正在被退役？
 
-1: 哪些具体的模型版本正在被退役？
-
 **A**: 根据公告，OpenAI 正在退役以下模型版本：GPT-4o、GPT-4.1、GPT-4.1 mini 以及 OpenAI o4-mini。这些模型将不再在 ChatGPT 服务中可用。通常情况下，这种“退役”意味着这些特定的模型名称或版本 ID 将从 API 和 ChatGPT 的选项列表中移除，用户将被引导迁移到更新的模型版本（如 GPT-4o 系列的最新迭代或 GPT-4.1 的后继版本）。
 
 ---
 
 ### 2: 为什么要退役这些模型？
-
-2: 为什么要退役这些模型？
 
 **A**: OpenAI 决定退役旧模型通常基于几个核心原因：
 1.  **成本与效率优化**：维护多个旧版本模型需要巨大的计算资源。退役旧模型可以让 OpenAI 将算力集中在更先进、推理能力更强且能效比更高的新模型上。
@@ -392,8 +378,6 @@ OpenAI 宣布退役 GPT-4o-mini 及相关旧版本模型。公司面临的核心
 
 ### 3: 我现有的代码或应用如果依赖这些模型 API，会发生什么？
 
-3: 我现有的代码或应用如果依赖这些模型 API，会发生什么？
-
 **A**: 如果您的应用通过 API 调用了这些特定的模型名称（例如 `gpt-4o-2024-05-13` 或 `gpt-4.1-mini` 等），在退役日期后，相关的 API 请求将会失败，通常会返回“模型不存在”或类似的错误代码。
 为了避免服务中断，开发者必须尽快更新代码中的 `model` 参数。OpenAI 通常会建议迁移到推荐的替代模型（例如将 GPT-4.1 迁移到 GPT-4.1 的最新版本或 GPT-4o 的最新版本）。建议开发者查阅 OpenAI 官方文档中的“模型迁移指南”以确定具体的替代映射关系。
 
@@ -401,15 +385,11 @@ OpenAI 宣布退役 GPT-4o-mini 及相关旧版本模型。公司面临的核心
 
 ### 4: ChatGPT 的对话历史会受到影响吗？
 
-4: ChatGPT 的对话历史会受到影响吗？
-
 **A**: 不会完全消失，但显示名称可能会发生变化。对于 ChatGPT 的网页端和移动端用户，您过去使用这些模型生成的对话历史通常会被保留在您的账户中。但是，历史记录中的模型标识可能会更新为“退役”标签或自动映射到当前可用的最新模型名称上。您无法再继续在这些特定的旧对话中以“退役模型”的名义生成新回复，如果点击“继续生成”，系统可能会提示您模型已不可用并要求切换到新模型。
 
 ---
 
 ### 5: 我应该迁移到哪个模型作为替代？
-
-5: 我应该迁移到哪个模型作为替代？
 
 **A**: 替代方案取决于您原使用的模型和具体用途：
 *   **对于 GPT-4.1 用户**：通常建议迁移到 **GPT-4.1** 的最新版本（如果存在微调版本差异）或直接升级到 **GPT-4o**。GPT-4o 在多模态能力和速度上通常优于早期的 GPT-4 版本。
@@ -420,15 +400,11 @@ OpenAI 宣布退役 GPT-4o-mini 及相关旧版本模型。公司面临的核心
 
 ### 6: 如果这些模型比新模型便宜，我还能找到类似的低成本选项吗？
 
-6: 如果这些模型比新模型便宜，我还能找到类似的低成本选项吗？
-
 **A**: 是的。虽然旧版 mini 模型被退役，但 OpenAI 几乎总是会推出继任的“轻量级”或“迷你”模型来保持低成本的准入门槛。例如，**GPT-4o mini** 就是专门为了替代旧版小型模型而设计的，它在保持极低价格（甚至更低）的同时，性能和速度都有显著提升。因此，开发者应关注官方定价页面上最新的“mini”或“light”类模型，而不是试图继续使用已退役的旧版本。
 
 ---
 
 ### 7: 这次退役的时间表是怎样的？
-
-7: 这次退役的时间表是怎样的？
 
 **A**: 虽然具体的退役日期取决于 OpenAI 的官方公告，但通常遵循以下流程：
 1.  **公告期**：OpenAI 提前几周或几个月发布公告（即当前阶段）。
@@ -444,7 +420,6 @@ OpenAI 宣布退役 GPT-4o-mini 及相关旧版本模型。公司面临的核心
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [产品与创业](/categories/%E4%BA%A7%E5%93%81%E4%B8%8E%E5%88%9B%E4%B8%9A/)

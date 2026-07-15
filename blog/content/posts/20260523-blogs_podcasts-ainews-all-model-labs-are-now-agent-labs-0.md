@@ -16,8 +16,8 @@ categories:
 - 大模型
 - AI 工程
 source: blogs_podcasts
-description: 背景 近日，多个原本聚焦于模型研发的人工智能实验室相继宣布更名为“Agent Labs”。这一转变被业界形容为“all model labs
-  are now agent labs”，意味着从传统的模型构建向智能体（Agent）功能的全面升级。 关键趋势 - **实验室定位转变**：研发重心从“模型”转向“代理”，强调模
+description: 安静的一天，让我们把几条引言串在一起——随着所有模型实验室都成为代理实验室 近期，众多模型实验室陆续宣布将业务重心转向代理（Agent）研发，这标志着
+  AI 研发模式正从单一模型构建向多代理协同方向转变。本文通过梳理几家典型实验室的转型案例，解析背后的技术动因和生态布局，并探讨这一趋势对企业和研究者的实际影响。阅读后，读者可以快速了解当前代理实验室的核心特征及可能的行业走向。
 external_url: https://www.latent.space/p/ainews-all-model-labs-are-now-agent
 scenarios:
 - AI/ML项目
@@ -28,10 +28,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# AI实验室集体转型代理实验室
-
 ---
 
 ## 基本信息
@@ -185,7 +181,6 @@ All Model Labs 正式更名为 Agent Labs，标志着 AI 研发从“模型构�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

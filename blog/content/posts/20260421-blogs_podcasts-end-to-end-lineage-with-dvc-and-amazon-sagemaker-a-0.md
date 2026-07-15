@@ -16,9 +16,9 @@ categories:
 - AI 工程
 - 数据
 source: blogs_podcasts
-description: 背景 现代机器学习项目需要在数据、特征、模型和评估之间保持完整追溯。传统方式难以统一管理数据版本与实验追踪，导致血缘断裂。 关键组件 -
-  **DVC（Data Version Control）**：对原始数据、处理后的特征集以及模型文件进行版本化管理，并生成唯一的哈希标识。 - **Amazon
-  SageMaker A
+description: 在这篇文章中，我们将展示如何将 DVC（数据版本控制）、Amazon SageMaker AI 和 Amazon SageMaker AI
+  MLflow Apps 结合起来，构建端到端的 ML 模型血缘追踪。我们将详细介绍两种可部署的模式——数据集级血缘和记录级血缘——您可以使用随附的笔记本在您自己的
+  AWS 账户中运行。 在机器学习项目中，模型血缘追踪是确保数据可追溯性和实验可复现性的关键环节。
 external_url: https://aws.amazon.com/blogs/machine-learning/end-to-end-lineage-with-dvc-and-amazon-sagemaker-ai-mlflow-apps
 scenarios:
 - AI/ML项目
@@ -26,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# DVC与SageMaker AI MLflow构建端到端ML血缘追踪
-
 ---
 
 ## 基本信息
@@ -175,7 +171,6 @@ MLflow Apps 提供模型注册、审批和工作流编排能力，其血缘模�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [数据](/categories/%E6%95%B0%E6%8D%AE/)

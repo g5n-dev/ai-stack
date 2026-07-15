@@ -17,7 +17,7 @@ categories:
 - 产品与创业
 source: hacker_news
 description: 随着生成式 AI 的爆发，数据中心基础设施正面临前所未有的扩容压力。Nscale 作为一家专注于 AI 数据中心的初创公司，近期获得英伟达的战略支持，估值达到
-  146 亿美元，这标志着行业对高效算力部署的迫切需求。本文将梳理 Nscale 的业务模式与融资细节，并分析这一动向如何反映当前 AI 基础设施建设的竞争格局与
+  146 亿美元，这标志着行业对高效算力部署的迫切需求。本文将梳理 Nscale 的业务模式与融资细节，并分析这一动向如何反映当前 AI 基础设施建设的竞争格局与未来趋势。
 external_url: https://www.cnbc.com/2026/03/09/nscale-ai-data-center-nvidia-raise.html
 scenarios:
 - AI/ML项目
@@ -25,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 英伟达投资数据中心创企Nscale 估值达146亿美元
-
 ---
 
 ## 基本信息

@@ -16,8 +16,7 @@ categories:
 - 系统与基础设施
 - AI 工程
 source: blogs_podcasts
-description: Friend Bubbles 是 Meta 在 Reels 中推出的新功能，它把用户好友观看并作出反应的短视频聚合展示，帮助用户在海量内容中快速发现感兴趣的视频。表面上功能看似简单，但背后需要处理
-  billions 级别的用户行为数据、实时计算好友互动信号、实现高效推荐模型以及在高并发环境下的系统可靠性。Meta Te
+description: 表面上看，新的 Friend Bubbles 功能看起来足够简单。它会突出显示你的朋友们看过并互动过的 Reels。但有时候，看似最直接的功能却需要最深入的工程工作。
 external_url: https://engineering.fb.com/2026/05/13/ml-applications/reel-friends-building-social-discovery-that-scales-to-billions
 scenarios:
 - Web应用开发
@@ -25,10 +24,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Meta Reels Friend Bubbles：十亿级社交发现功能构建
-
 ---
 
 ## 基本信息
@@ -110,7 +105,6 @@ Friend Bubbles代表了大厂在社交推荐领域的技术方向：即在保护
 
 ---
 
----
 ## 站内链接
 
 - 分类： [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

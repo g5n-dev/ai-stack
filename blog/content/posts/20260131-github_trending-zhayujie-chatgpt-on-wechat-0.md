@@ -16,8 +16,8 @@ categories:
 - AI 工程
 - 开源生态
 source: github_trending
-description: '**项目总结：chatgpt-on-wechat** **1. 项目概述** （CoW）是一个开源的智能对话机器人框架，旨在作为大语言模型（LLM）与各类消息通讯平台之间的桥梁。该项目允许用户通过日常使用的聊天软件直接与先进的AI模型进行交互。
-  **2. 核心功能与特性** * **多平台接入：** 全面支持微信公众号'
+description: chatgpt-on-wechat 是一个基于大语言模型的智能对话框架，旨在将 AI 能力无缝接入微信、飞书及钉钉等即时通讯软件。该项目不仅支持接入
+  OpenAI、Claude 等多种模型，还具备处理文本、语音与文件的能力，能够帮助用户快速搭建个人助理或企业数字员工。本文将梳理该项目的核心架构、配置流程以及多渠道部署的关键要点。
 external_url: https://github.com/zhayujie/chatgpt-on-wechat
 scenarios:
 - 大语言模型
@@ -59,8 +59,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# CowAgent：具备主动思考与长期记忆的大模型 AI 助理
-
 > **原名**: zhayujie /
 
       chatgpt-on-wechat
@@ -76,9 +74,8 @@ source_support: 0.0
 - **DeepWiki**: [https://deepwiki.com/zhayujie/chatgpt-on-wechat](https://deepwiki.com/zhayujie/chatgpt-on-wechat)
 
 ---
-## DeepWiki 速览（节选）
 
-# Overview
+## Overview
 
 Relevant source files
 
@@ -128,19 +125,19 @@ Sources: [channel/wechat/wechat_channel.py180-222](https://github.com/zhayujie/c
 
 The chatgpt-on-wechat system supports a wide range of features to enhance user interaction:
 
-Feature| Description| Configuration Property  
----|---|---  
-Multi-platform Support| Supports WeChat, DingTalk, Feishu, Terminal, Web| `channel_type`  
-Multiple LLM Support| Integrates with GPT-4o, Claude, Gemini, and more| `model`  
-Voice Recognition| Converts voice messages to text| `speech_recognition`  
-Voice Replies| Generates voice responses from text| `voice_reply_voice`  
-Image Generation| Creates images based on text prompts| `image_create_prefix`  
-Image Recognition| Analyzes and describes images| Vision models support  
-Plugin System| Extends functionality through plugins| Plugin configuration  
-Knowledge Base| Custom knowledge bases via LinkAI| `use_linkai`  
-Multi-turn Conversations| Maintains conversation context| `conversation_max_tokens`  
-Group Chat Support| Supports AI responses in group chats| `group_name_white_list`  
-  
+Feature| Description| Configuration Property
+---|---|---
+Multi-platform Support| Supports WeChat, DingTalk, Feishu, Terminal, Web| `channel_type`
+Multiple LLM Support| Integrates with GPT-4o, Claude, Gemini, and more| `model`
+Voice Recognition| Converts voice messages to text| `speech_recognition`
+Voice Replies| Generates voice responses from text| `voice_reply_voice`
+Image Generation| Creates images based on text prompts| `image_create_prefix`
+Image Recognition| Analyzes and describes images| Vision models support
+Plugin System| Extends functionality through plugins| Plugin configuration
+Knowledge Base| Custom knowledge bases via LinkAI| `use_linkai`
+Multi-turn Conversations| Maintains conversation context| `conversation_max_tokens`
+Group Chat Support| Supports AI responses in group chats| `group_name_white_list`
+
 Sources: [README.md13-20](https://github.com/zhayujie/chatgpt-on-wechat/blob/3db5e70a/README.md#L13-L20) [config-template.json1-37](https://github.com/zhayujie/chatgpt-on-wechat/blob/3db5e70a/config-template.json#L1-L37)
 
 ## Supported Channels
@@ -155,19 +152,19 @@ Sources: [channel/channel_factory.py8-51](https://github.com/zhayujie/chatgpt-on
 
 The system leverages various AI models through a consistent Bot interface:
 
-Model| Description| Configuration Value  
----|---|---  
-GPT-4o| Latest OpenAI model with multimodal capabilities| `gpt-4o`  
-GPT-4o-mini| Smaller version of GPT-4o| `gpt-4o-mini`  
-GPT-4.1| Latest OpenAI text model| `gpt-4.1`  
-Claude| Anthropic's Claude models| `claude-3-7-sonnet-latest`  
-Gemini| Google's Gemini models| `gemini`  
-ChatGLM| Tsinghua University's GLM models| `glm-4`  
-KIMI| Moonshot AI's models| Multiple variants  
-Wenxin| Baidu's Wenxin models| `wenxin`  
-Xunfei| iFlytek's models| `xunfei`  
-LinkAI| LinkAI platform with knowledge base capabilities| via `use_linkai`  
-  
+Model| Description| Configuration Value
+---|---|---
+GPT-4o| Latest OpenAI model with multimodal capabilities| `gpt-4o`
+GPT-4o-mini| Smaller version of GPT-4o| `gpt-4o-mini`
+GPT-4.1| Latest OpenAI text model| `gpt-4.1`
+Claude| Anthropic's Claude models| `claude-3-7-sonnet-latest`
+Gemini| Google's Gemini models| `gemini`
+ChatGLM| Tsinghua University's GLM models| `glm-4`
+KIMI| Moonshot AI's models| Multiple variants
+Wenxin| Baidu's Wenxin models| `wenxin`
+Xunfei| iFlytek's models| `xunfei`
+LinkAI| LinkAI platform with knowledge base capabilities| via `use_linkai`
+
 Sources: [README.md9](https://github.com/zhayujie/chatgpt-on-wechat/blob/3db5e70a/README.md#L9-L9) [config-template.json3-4](https://github.com/zhayujie/chatgpt-on-wechat/blob/3db5e70a/config-template.json#L3-L4)
 
 ## Plugin System
@@ -182,17 +179,17 @@ Sources: [app.py32](https://github.com/zhayujie/chatgpt-on-wechat/blob/3db5e70a/
 
 The system is highly configurable through a JSON-based configuration file:
 
-Category| Configuration Options| Purpose  
----|---|---  
-Basic Settings| `channel_type`, `model`| Set the messaging platform and AI model  
-API Keys| `open_ai_api_key`, `claude_api_key`| Authentication for AI services  
-Chat Behavior| `single_chat_prefix`, `group_chat_prefix`| Control when the bot responds  
-Platform Settings| `group_name_white_list`| Control which groups the bot interacts with  
-Feature Toggles| `speech_recognition`, `voice_reply_voice`| Enable/disable features  
-Context Management| `conversation_max_tokens`| Control conversation memory  
-Character Settings| `character_desc`| Define the bot's personality  
-Integration| `use_linkai`, `linkai_api_key`| Enable LinkAI integration  
-  
+Category| Configuration Options| Purpose
+---|---|---
+Basic Settings| `channel_type`, `model`| Set the messaging platform and AI model
+API Keys| `open_ai_api_key`, `claude_api_key`| Authentication for AI services
+Chat Behavior| `single_chat_prefix`, `group_chat_prefix`| Control when the bot responds
+Platform Settings| `group_name_white_list`| Control which groups the bot interacts with
+Feature Toggles| `speech_recognition`, `voice_reply_voice`| Enable/disable features
+Context Management| `conversation_max_tokens`| Control conversation memory
+Character Settings| `character_desc`| Define the bot's personality
+Integration| `use_linkai`, `linkai_api_key`| Enable LinkAI integration
+
 Sources: [config-template.json1-37](https://github.com/zhayujie/chatgpt-on-wechat/blob/3db5e70a/config-template.json#L1-L37) [README.md153-177](https://github.com/zhayujie/chatgpt-on-wechat/blob/3db5e70a/README.md#L153-L177)
 
 ## Application Entry Point
@@ -298,7 +295,6 @@ chatgpt-on-wechat（CoW）是当前中文社区最成熟、生态最丰富的“
 
 ---
 
-# ChatGPT-on-WeChat 深度技术分析报告
 
 ## 1. 技术架构深度剖析
 
@@ -485,7 +481,7 @@ def filter_message(message):
     """
     # 定义敏感词列表
     sensitive_words = ["广告", "垃圾", "诈骗"]
-    
+
     # 检查消息中是否包含敏感词
     for word in sensitive_words:
         if word in message:
@@ -507,7 +503,7 @@ def handle_command(command):
     """
     # 去除命令前后的空格并转换为小写
     command = command.strip().lower()
-    
+
     # 根据不同命令执行不同操作
     if command == "help":
         return "可用命令：help、status、version"
@@ -529,54 +525,48 @@ print(handle_command("unknown"))  # 输出：未知命令，请输入help查看�
 
 ### 1：某跨境电商团队的内部知识库助手
 
- 1：某跨境电商团队的内部知识库助手
-
-**背景**:  
+**背景**:
 该团队主营欧美市场，成员分布在深圳、杭州和海外，日常沟通高度依赖微信群。团队积累了大量关于产品规格、物流政策和客户投诉话术的文档，但分散在飞书文档和本地硬盘中。
 
-**问题**:  
+**问题**:
 新员工入职培训周期长，老员工频繁在群内重复回答相同的基础问题（如“电池能否空运”或“退货地址”）。信息检索效率低，且由于时差问题，海外员工的咨询往往得不到及时回复。
 
-**解决方案**:  
+**解决方案**:
 基于 `chatgpt-on-wechat` 项目，团队搭建了一个私有化的企业微信机器人。通过配置，将团队内部的 FAQ 文档和产品手册投喂给 GPT 模型，建立知识库索引。机器人被拉入所有部门群，设置为“仅回答被 @ 的问题”。
 
-**效果**:  
+**效果**:
 机器人上线后，常见问题的响应时间从平均 2 小时（依赖人工）缩短至秒级。新员工通过向机器人提问，自助解决了 80% 的基础查询，老员工被打扰的频率显著降低，团队整体沟通效率提升了约 30%。
 
 ---
 
 ### 2：个人开发者的“英语作文批改”私教服务
 
- 2：个人开发者的“英语作文批改”私教服务
-
-**背景**:  
+**背景**:
 一位自由职业者开发者在微信朋友圈提供英语作文润色服务。用户将作文截图或文本发送给开发者，开发者使用 ChatGPT 进行批改后再发回给用户。
 
-**问题**:  
+**问题**:
 随着用户数量增加，手动复制粘贴文本到 ChatGPT 网页版、再将结果复制回微信的机械性操作占据了开发者大量时间，且容易出错。服务响应慢，导致用户体验不佳。
 
-**解决方案**:  
+**解决方案**:
 部署 `chatgpt-on-wechat` 项目，将微信号转化为自动化服务端口。开发者设定了特定的 Prompt（提示词），要求机器人扮演专业雅思写作考官的角色，对收到的文本进行语法纠错、词汇替换建议及逻辑评分。
 
-**效果**:  
+**效果**:
 实现了服务的 24 小时自动化交付。开发者无需实时在线，机器人即可自动完成批改并回复。该模式下，开发者能够同时服务的客户数量翻了 5 倍，且因反馈迅速，用户付费转化率得到了显著提升。
 
 ---
 
 ### 3：中小科技公司的代码审查辅助机器人
 
- 3：中小科技公司的代码审查辅助机器人
-
-**背景**:  
+**背景**:
 一家约 20 人的技术初创公司，使用微信群作为主要的即时通讯工具。团队经常在群里讨论代码片段或报错信息，但缺乏自动化的代码分析工具。
 
-**问题**:  
+**问题**:
 初级程序员在群里贴出报错日志时，往往需要等待高级工程师有空查看才能定位问题。此外，简单的代码风格检查（如 PEP 8 规范）也浪费了资深工程师的 Code Review 时间。
 
-**解决方案**:  
+**解决方案**:
 利用 `chatgpt-on-wechat` 接入公司技术交流群。配置机器人专门识别代码块或特定报错关键词。当检测到代码片段时，自动调用 GPT-4 模型进行分析，查找潜在的 Bug、安全漏洞或不符合规范的写法。
 
-**效果**:  
+**效果**:
 机器人在初级程序员发出代码后的 1 分钟内即可给出初步的修改建议，拦截了约 40% 的低级错误。资深工程师只需处理复杂的架构问题，节省了每天约 1.5 小时的重复性审查时间，加速了迭代周期。
 
 ---
@@ -609,7 +599,7 @@ print(handle_command("unknown"))  # 输出：未知命令，请输入help查看�
 
 ### 实践 1：容器化部署与隔离环境
 
-**说明**: 
+**说明**:
 该项目依赖 Python 环境及特定的库版本，直接在宿主机安装可能会导致依赖冲突或环境污染。使用 Docker 容器化部署可以确保运行环境的一致性，并简化配置流程。这是目前运行 ChatGPT-on-WeChat 最推荐的方式，能有效解决网络代理依赖及系统兼容性问题。
 
 **实施步骤**:
@@ -619,7 +609,7 @@ print(handle_command("unknown"))  # 输出：未知命令，请输入help查看�
 4. 根据实际需求修改 `docker-compose.yaml` 中的环境变量配置。
 5. 执行 `docker-compose up -d` 启动服务。
 
-**注意事项**: 
+**注意事项**:
 - 如果服务器位于中国大陆，建议在构建镜像前配置 Docker 的国内镜像源以加速拉取。
 - 确保服务器已安装 Docker Compose V2 版本以获得更好的兼容性。
 
@@ -627,7 +617,7 @@ print(handle_command("unknown"))  # 输出：未知命令，请输入help查看�
 
 ### 实践 2：API 密钥的安全管理
 
-**说明**: 
+**说明**:
 项目运行需要配置 OpenAI API Key 或其他大模型服务的密钥。将密钥硬编码在代码中或直接提交到 Git 仓库会造成严重的安全风险。应通过环境变量或独立的配置文件来管理敏感信息，并将其纳入 `.gitignore` 忽略列表。
 
 **实施步骤**:
@@ -636,7 +626,7 @@ print(handle_command("unknown"))  # 输出：未知命令，请输入help查看�
 3. 在配置文件中填入真实的 API Key。
 4. 检查 `.gitignore` 文件，确保该正式配置文件已被包含在忽略列表中。
 
-**注意事项**: 
+**注意事项**:
 - 定期轮换 API Key。
 - 如果使用 Docker，请通过 `docker-compose.yaml` 中的 `environment` 字段传递密钥，避免挂载包含明文密钥的文件到容器。
 
@@ -644,7 +634,7 @@ print(handle_command("unknown"))  # 输出：未知命令，请输入help查看�
 
 ### 实践 3：合理配置上下文与单次回复额度
 
-**说明**: 
+**说明**:
 大模型 API 通常按 Token 数量计费。如果不限制单次回复的 Token 数量或上下文长度，可能会导致单次对话成本过高或触发 API 的长度限制。此外，过长的上下文可能导致模型注意力分散。需要根据实际使用场景调整 `max_tokens` 和上下文截断策略。
 
 **实施步骤**:
@@ -653,7 +643,7 @@ print(handle_command("unknown"))  # 输出：未知命令，请输入help查看�
 3. 设置 `max_tokens` 参数（例如设置为 1000 或 2000，根据需求定）。
 4. 检查 `history` 相关配置，设置保留的历史对话轮数，防止上下文无限累积。
 
-**注意事项**: 
+**注意事项**:
 - 不同的模型（如 gpt-3.5-turbo, gpt-4, gpt-4-turbo）有不同的上下文窗口限制，请根据所选模型进行调整。
 - 对于群聊场景，建议适当减少上下文保留轮数以降低成本。
 
@@ -661,7 +651,7 @@ print(handle_command("unknown"))  # 输出：未知命令，请输入help查看�
 
 ### 实践 4：配置代理以解决网络限制
 
-**说明**: 
+**说明**:
 由于 OpenAI 服务在国内无法直接访问，且项目运行过程中需要实时请求 API，必须配置 HTTP/HTTPS 代理。如果代理配置不正确，程序将无法获取回复。同时，Docker 容器内部的代理配置与宿主机不同，需要特殊处理。
 
 **实施步骤**:
@@ -669,7 +659,7 @@ print(handle_command("unknown"))  # 输出：未知命令，请输入help查看�
 2. **非 Docker 环境**：在系统环境变量中设置 `HTTP_PROXY` 和 `HTTPS_PROXY`，或直接在项目配置文件中填写代理地址。
 3. **Docker 环境**：在 `docker-compose.yaml` 中修改 `environment` 部分，添加 `HTTP_PROXY` 和 `HTTPS_PROXY` 环境变量，指向宿主机的 IP（注意：容器内无法访问 `localhost`，需使用宿主机局域网 IP 或 Docker 内部网关 IP）。
 
-**注意事项**: 
+**注意事项**:
 - 确保代理服务器稳定运行，否则会导致微信机器人掉线或回复超时。
 - 验证代理是否支持 HTTPS 隧道。
 
@@ -677,7 +667,7 @@ print(handle_command("unknown"))  # 输出：未知命令，请输入help查看�
 
 ### 实践 5：设置日志级别与持久化存储
 
-**说明**: 
+**说明**:
 在生产环境中，为了排查故障和审计操作，必须保留日志。默认配置可能日志级别过高（如 DEBUG）导致磁盘占用过快，或过低（如 ERROR）导致无法追踪问题。应配置合适的日志级别，并利用 Docker 的 Volume 功能将日志持久化到宿主机。
 
 **实施步骤**:
@@ -686,7 +676,7 @@ print(handle_command("unknown"))  # 输出：未知命令，请输入help查看�
 3. 在 `volumes` 字段中添加映射，将容器内的日志目录（如 `/app/logs`）映射到宿主机指定目录。
 4. 配置系统的 Logrotate 工具或定期清理脚本，防止日志文件占满磁盘。
 
-**注意事项**: 
+**注意事项**:
 - DEBUG
 
 ---
@@ -695,7 +685,7 @@ print(handle_command("unknown"))  # 输出：未知命令，请输入help查看�
 
 ### 优化 1：数据库连接池配置优化
 
-**说明**:  
+**说明**:
 ChatGPT-on-Wechat 项目使用 SQLAlchemy 作为 ORM 框架，默认配置可能导致数据库连接频繁创建和销毁，增加系统开销。通过优化连接池参数可以显著提升数据库访问性能。
 
 **实施方法**:
@@ -708,7 +698,7 @@ ChatGPT-on-Wechat 项目使用 SQLAlchemy 作为 ORM 框架，默认配置可能
    ```
 2. 监控连接池使用情况，根据实际负载调整参数
 
-**预期效果**:  
+**预期效果**:
 - 数据库查询响应时间减少 30%-50%
 - 高并发场景下吞吐量提升 20%-40%
 
@@ -716,7 +706,7 @@ ChatGPT-on-Wechat 项目使用 SQLAlchemy 作为 ORM 框架，默认配置可能
 
 ### 优化 2：异步消息处理机制
 
-**说明**:  
+**说明**:
 当前项目采用同步方式处理微信消息，可能导致消息处理阻塞。引入异步处理机制可以显著提升消息吞吐量，特别是在处理大量并发消息时。
 
 **实施方法**:
@@ -724,7 +714,7 @@ ChatGPT-on-Wechat 项目使用 SQLAlchemy 作为 ORM 框架，默认配置可能
    ```python
    from celery import Celery
    app = Celery('tasks', broker='redis://localhost:6379/0')
-   
+
    @app.task
    def handle_message(msg):
        # 消息处理逻辑
@@ -733,7 +723,7 @@ ChatGPT-on-Wechat 项目使用 SQLAlchemy 作为 ORM 框架，默认配置可能
 2. 修改消息接收接口，将处理任务提交到队列
 3. 配置 worker 进程数量（建议为 CPU 核心数的 2-4 倍）
 
-**预期效果**:  
+**预期效果**:
 - 消息处理能力提升 3-5 倍
 - 消息响应延迟降低 60%-80%
 
@@ -741,7 +731,7 @@ ChatGPT-on-Wechat 项目使用 SQLAlchemy 作为 ORM 框架，默认配置可能
 
 ### 优化 3：缓存策略优化
 
-**说明**:  
+**说明**:
 频繁访问的数据（如用户信息、配置项等）可以通过缓存减少数据库访问。项目当前缺少系统级缓存机制。
 
 **实施方法**:
@@ -749,7 +739,7 @@ ChatGPT-on-Wechat 项目使用 SQLAlchemy 作为 ORM 框架，默认配置可能
    ```python
    import redis
    r = redis.Redis(host='localhost', port=6379, db=0)
-   
+
    def get_user_info(user_id):
        cached = r.get(f'user:{user_id}')
        if cached:
@@ -761,7 +751,7 @@ ChatGPT-on-Wechat 项目使用 SQLAlchemy 作为 ORM 框架，默认配置可能
    ```
 2. 对热点数据设置合理的过期时间（如 1 小时）
 
-**预期效果**:  
+**预期效果**:
 - 数据库查询次数减少 50%-70%
 - 平均响应时间缩短 40%-60%
 
@@ -769,7 +759,7 @@ ChatGPT-on-Wechat 项目使用 SQLAlchemy 作为 ORM 框架，默认配置可能
 
 ### 优化 4：图片处理优化
 
-**说明**:  
+**说明**:
 项目中的图片处理（如二维码生成、图片压缩等）可能成为性能瓶颈。优化图片处理流程可以显著提升响应速度。
 
 **实施方法**:
@@ -777,9 +767,9 @@ ChatGPT-on-Wechat 项目使用 SQLAlchemy 作为 ORM 框架，默认配置可能
    ```python
    from PIL import Image
    from concurrent.futures import ThreadPoolExecutor
-   
+
    executor = ThreadPoolExecutor(max_workers=4)
-   
+
    def process_image(img_path):
        with Image.open(img_path) as img:
            # 处理逻辑
@@ -788,7 +778,7 @@ ChatGPT-on-Wechat 项目使用 SQLAlchemy 作为 ORM 框架，默认配置可能
 2. 对常用图片尺寸进行预处理和缓存
 3. 使用 WebP 格式替代 JPEG/PNG（文件大小减少 25%-35%）
 
-**预期效果**:  
+**预期效果**:
 - 图片处理速度提升 50%-70%
 - 存储空间节省 30%-50%
 
@@ -796,7 +786,7 @@ ChatGPT-on-Wechat 项目使用 SQLAlchemy 作为 ORM 框架，默认配置可能
 
 ### 优化 5：日志系统优化
 
-**说明**:  
+**说明**:
 高频日志写入可能影响系统性能。优化日志记录策略可以减少 I/O 开销。
 
 **实施方法**:
@@ -804,12 +794,12 @@ ChatGPT-on-Wechat 项目使用 SQLAlchemy 作为 ORM 框架，默认配置可能
    ```python
    import logging
    from logging.handlers import QueueHandler, QueueListener
-   
+
    log_queue = queue.Queue(-1)
    handler = QueueHandler(log_queue)
    root = logging.getLogger()
    root.addHandler(handler)
-   
+
    listener = QueueListener(log_queue, logging.FileHandler('app.log'))
    listener.start()
    ```
@@ -935,15 +925,11 @@ ChatGPT-on-Wechat 项目使用 SQLAlchemy 作为 ORM 框架，默认配置可能
 
 ### 1: 什么是 zhayujie / chatgpt-on-wechat 项目？
 
-1: 什么是 zhayujie / chatgpt-on-wechat 项目？
-
 **A**: 该项目是一个基于大语言模型（如 ChatGPT、微软 Azure、GPT4 等）的微信机器人项目。它支持多种 AI 模型接入，并使用 Python 编写。该项目旨在帮助用户通过微信接口与 AI 进行交互，实现自动回复、上下文对话等功能。它是 GitHub 上非常热门的开源项目之一，适用于个人微信或企业微信的自动化场景。
 
 ---
 
 ### 2: 部署该项目需要哪些技术基础和环境？
-
-2: 部署该项目需要哪些技术基础和环境？
 
 **A**: 部署该项目通常需要用户具备以下基础：
 1. **编程基础**：了解 Python 基本语法，能够阅读和修改简单的配置代码。
@@ -956,8 +942,6 @@ ChatGPT-on-Wechat 项目使用 SQLAlchemy 作为 ORM 框架，默认配置可能
 
 ### 3: 如何配置 OpenAI API Key？
 
-3: 如何配置 OpenAI API Key？
-
 **A**: 配置 API Key 通常涉及以下步骤：
 1. **获取 Key**：登录 OpenAI 官网，在账户管理页面生成 API Key。
 2. **修改配置**：在项目根目录下找到配置文件（通常是 `config.json` 或 `.env` 文件，具体视版本而定）。
@@ -968,8 +952,6 @@ ChatGPT-on-Wechat 项目使用 SQLAlchemy 作为 ORM 框架，默认配置可能
 
 ### 4: 使用微信机器人会导致封号吗？
 
-4: 使用微信机器人会导致封号吗？
-
 **A**: 这是一个风险提示。该项目通常通过 Web 协议或 Hook 方式接入微信。
 1. **Web 协议风险**：基于 Web 协议（非官方接口）登录微信，虽然方便但存在被腾讯限制登录或封禁的风险，尤其是在频繁发送消息或被用户举报的情况下。
 2. **官方限制**：微信官方严厉打击外挂和自动化脚本，使用此类第三方工具需自行承担风险。
@@ -979,8 +961,6 @@ ChatGPT-on-Wechat 项目使用 SQLAlchemy 作为 ORM 框架，默认配置可能
 
 ### 5: 如何支持多模型接入（如 Azure, GPT4, 国内模型）？
 
-5: 如何支持多模型接入（如 Azure, GPT4, 国内模型）？
-
 **A**: 该项目设计灵活，支持通过配置文件切换不同的模型后端：
 1. **选择模型类型**：在配置文件中，通常有 `model` 或 `bot_type` 选项。
 2. **配置参数**：根据选择的模型（如 `gpt-4`, `azure`, `claude` 等），填写对应的 API 地址、API Key 和版本信息。
@@ -989,8 +969,6 @@ ChatGPT-on-Wechat 项目使用 SQLAlchemy 作为 ORM 框架，默认配置可能
 ---
 
 ### 6: 项目部署后无法回复消息或报错怎么办？
-
-6: 项目部署后无法回复消息或报错怎么办？
 
 **A**: 常见的排查步骤如下：
 1. **检查 API Key**：确认 Key 是否正确、是否有效（是否有余额或是否过期）。
@@ -1002,8 +980,6 @@ ChatGPT-on-Wechat 项目使用 SQLAlchemy 作为 ORM 框架，默认配置可能
 ---
 
 ### 7: 如何使用 Docker 快速部署该项目？
-
-7: 如何使用 Docker 快速部署该项目？
 
 **A**: Docker 部署可以简化环境配置，步骤如下：
 1. **安装 Docker**：确保服务器或本地已安装 Docker 及 Docker Compose。
@@ -1061,7 +1037,6 @@ ChatGPT-on-Wechat 项目使用 SQLAlchemy 作为 ORM 框架，默认配置可能
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [开源生态](/categories/%E5%BC%80%E6%BA%90%E7%94%9F%E6%80%81/)

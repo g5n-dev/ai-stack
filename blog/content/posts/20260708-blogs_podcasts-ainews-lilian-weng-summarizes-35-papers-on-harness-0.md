@@ -15,8 +15,8 @@ tags:
 categories:
 - 论文
 source: blogs_podcasts
-description: Lilian Weng（翁丽莲）近期在AINews平台上对过去一年发表的35篇关于“Harness Engineering for RSI”的论文进行系统归纳。Harness
-  Engineering在此指用于防止或减轻重复性 Strain Injury（RSI）的人机约束与辅助技术，涵盖可穿戴传感、姿态实时检测、自适应
+description: 宁静的一天让我们阅读一些精炼的见解 Lilian Weng 近期发布了针对 Harness Engineering for RSI 的论文综述，系统梳理了
+  35 篇相关研究。这一领域正逐渐成为机器学习工程实践中的关键环节，涉及如何高效构建和优化学习系统的底层框架。
 external_url: https://www.latent.space/p/ainews-lilian-weng-summarizes-35
 scenarios:
 - AI/ML项目
@@ -24,10 +24,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Lilian Weng 综述 RSI 线束工程 35 篇论文
-
 ---
 
 ## 基本信息
@@ -139,7 +135,6 @@ Lilian Weng（翁丽莲）近期在AINews平台上对过去一年发表的35�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/)

@@ -16,8 +16,8 @@ categories:
 - 大模型
 - 开源生态
 source: blogs_podcasts
-description: '**Qwen3.5-397B-A17B：高效能的Open-Opus级最小模型** 近日，Qwen团队发布了新模型**Qwen3.5-397B-A17B**，引发了广泛关注。该模型的核心亮点在于其在保持高性能（Open-Opus级别）的同时，实现了极高的参数效率，是目前已知最小的Open-Opus级模型。
-  **主要特点：'
+description: 恭喜 Qwen 团队！ Qwen 团队近期发布的 Qwen3.5-397B-A17B 模型，通过 14.4B 的活跃参数量实现了接近 Open-Opus
+  级别的性能，在保证模型能力的同时显著降低了推理成本。这一进展为平衡模型效果与部署效率提供了新的参考方案。本文将深入解析该模型的技术细节与实测表现，帮助开发者了解其在实际场景中的应用潜力。
 external_url: https://www.latent.space/p/ainews-qwen35-397b-a17b-the-smallest
 scenarios:
 - Web应用开发
@@ -33,10 +33,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Qwen3.5-397B-A17B：最小Open-Opus级高效模型
-
 ---
 
 ## 基本信息

@@ -16,9 +16,8 @@ categories:
 - AI 工程
 - 开发工具
 source: juejin
-description: 您提供的内容非常简短，以下是对其的总结： **oh-my-opencode-slim** 是 **oh-my-opencode** 的**精简版
-  AI 编程工具**。其主要特点如下： 1. **轻量高效**：体积比完整版缩小 **80%**，且 **Token 成本更低**。 2. **核心保留**：保留了核心的
-  **
+description: 面对日益复杂的 AI 编程工具，许多开发者开始寻求更轻量、成本更可控的解决方案。本文介绍的 oh-my-opencode-slim 正是为此而生，它在保留核心
+  Agent 能力的基础上，将体积缩减了 80%，并显著降低了 Token 消耗。通过阅读本文，你将了解该工具如何通过“适度自动化”提升开发掌控力，以及它是否适合你的短任务开发场景。
 external_url: https://juejin.cn/post/7610254281426468904
 scenarios:
 - AI/ML项目
@@ -27,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# oh-my-opencode-slim：体积缩减80%的AI编程精简版
-
 ---
 
 ## 基本信息

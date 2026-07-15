@@ -33,10 +33,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Moonshine 开源 STT 模型：精度超越 WhisperLargev3
-
----
-
 ## 基本信息
 
 - **作者**: petewarden

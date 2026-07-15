@@ -16,8 +16,7 @@ categories:
 - AI 工程
 - 大模型
 source: blogs_podcasts
-description: 问题背景 传统放射工作列表系统采用固定规则，忽视病例复杂性、放射科医生的专业领域、当前工作负荷、疲劳程度等关键上下文。这导致医生倾向于挑选容易、价值高的病例，而回避复杂病例，从而造成诊断延迟和治疗成本上升。
-  AI工作流优化方案 引入基于AI的智能代理，可实时评估病例难度、医生专长、工作负载和疲劳状态，动态生成符合多约束
+description: 许多医疗机构报告称，传统的工作列表系统依赖僵化的规则，忽视了关键背景信息、放射科医生的专业领域、当前工作量、疲劳程度以及病例的复杂性。这带来了一个持续性的挑战：放射科医生会优先选择更简单、更高价值的病例，而回避复杂的研究，从而导致诊断延误和成本增加。
 external_url: https://aws.amazon.com/blogs/machine-learning/intelligent-radiology-workflow-optimization-with-ai-agents-2
 scenarios:
 - AI/ML项目
@@ -25,10 +24,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# AI代理优化放射科工作流程：基于62家医院220万例研究
-
 ---
 
 ## 基本信息
@@ -140,7 +135,6 @@ AI代理系统持续采集并分析放射科医生的专业背景、历史报告
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

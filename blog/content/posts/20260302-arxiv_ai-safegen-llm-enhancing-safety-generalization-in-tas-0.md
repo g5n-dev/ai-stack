@@ -16,8 +16,7 @@ categories:
 - 大模型
 - 安全
 source: arxiv
-description: 本文介绍了名为 **SafeGen-LLM** 的大语言模型，旨在解决机器人系统任务规划中难以兼顾可扩展性、泛化能力与安全性的问题。 **主要背景与挑战：**
-  传统的经典规划器扩展性差，基于强化学习的方法泛化能力弱，而基础大语言模型（LLM）则无法保证规划过程的安全性。 **核心方案：** SafeGen-LLM 是一
+description: 针对机器人任务规划中可扩展性、泛化能力与安全性难以兼顾的问题，本文提出了大语言模型框架 SafeGen-LLM。该研究通过特定的安全增强机制，旨在提升模型在复杂任务规划中的鲁棒性与可靠性。虽然摘要未详述具体技术细节，无法从摘要确认其与底层控制模块的交互方式，但该工作为解决大模型在物理世界应用中的安全边界问题提供了新的思路，有望推动具身智能系统在更开放场景下的安全落地。
 external_url: http://arxiv.org/abs/2602.24235v1
 scenarios:
 - 大语言模型
@@ -25,10 +24,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# SafeGen-LLM：增强机器人系统任务规划的安全泛化能力
-
 ---
 
 ## 基本信息

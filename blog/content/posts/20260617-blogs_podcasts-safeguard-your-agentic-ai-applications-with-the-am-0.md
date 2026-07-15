@@ -16,8 +16,8 @@ categories:
 - AI 工程
 - 安全
 source: blogs_podcasts
-description: 功能概述 Amazon Bedrock Guardrails 推出全新 InvokeGuardrailChecks API，允许在代理 AI
-  应用中随时调用单个安全检查，而无需提前创建完整防护资源。该 API 支持多轮对话的每一步插入安全过滤，包括内容审查、敏感信息脱敏、合规校验等，并返回违规结果供业务自行处理或终止对
+description: 今天，我们宣布推出 Amazon Bedrock Guardrails 的新 API。通过此 API，您可以在代理式 AI 应用程序中的任意位置应用单独的安全防护措施（也称为安全检查），而无需创建防护栏资源。在这篇文章中，我们将介绍
+  InvokeGuardrailChecks API 的工作原理，以及如何使用它来构建安全的多轮代理式 AI 应用程序。
 external_url: https://aws.amazon.com/blogs/machine-learning/safeguard-your-agentic-ai-applications-with-the-amazon-bedrock-guardrails-invokeguardrailchecks-api
 scenarios:
 - AI/ML项目
@@ -26,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Amazon Bedrock Guardrails新增安全检查API
-
 ---
 
 ## 基本信息
@@ -127,7 +123,6 @@ InvokeGuardrailChecks API 的实际应用价值体现在三个层面。在开发
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [安全](/categories/%E5%AE%89%E5%85%A8/)

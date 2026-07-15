@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# SCOPE：场景上下文增量式少样本3D分割
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.06572v1

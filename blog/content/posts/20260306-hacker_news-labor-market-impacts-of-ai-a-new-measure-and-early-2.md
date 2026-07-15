@@ -34,10 +34,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AI劳动力市场影响：新测度方法与早期实证
-
----
-
 ## 基本信息
 
 - **作者**: jjwiseman

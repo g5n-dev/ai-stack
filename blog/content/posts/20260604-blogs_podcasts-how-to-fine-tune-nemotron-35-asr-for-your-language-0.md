@@ -25,10 +25,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 多语言领域口音适配：Nemotron 3.5 ASR微调教程
-
----
-
 ## 基本信息
 
 - **来源**: Hugging Face Blog (blog)
@@ -117,7 +113,6 @@ Nemotron 3.5 ASR的微调技术为语音识别系统的定制化提供了可行�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

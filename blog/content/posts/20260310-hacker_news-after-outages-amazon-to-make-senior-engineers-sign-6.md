@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 亚马逊要求高级工程师审核AI辅助代码变更
-
----
-
 ## 基本信息
 
 - **作者**: ndr42

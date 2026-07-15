@@ -15,8 +15,8 @@ tags:
 categories:
 - AI 工程
 source: juejin
-description: 核心概念 LangChain 常用的 PromptTemplate、ChatOpenAI、OutputParser 等组件本质上是围绕模型调用的包装，但它们各自独立、难以组合。把它们统一为
-  **Runnable** 接口后，所有操作（拼装 prompt、调用模型、解析输出）都实现了统一的 、 、 方法，从而形成可链式、
+description: LangChain 常被当作调模型的快捷封装，但它的核心其实是 Runnable 接口——一种把 AI 处理链路抽象为可组合步骤的设计方式。掌握
+  Runnable，能够在保持代码可读性的同时，把 Prompt、模型、输出解析等环节灵活拼接，实现从实验到生产的平滑迁移。本文将深入解析 Runnable 的基本概念与常见用法，并提供实际案例帮助读者快速上手。
 external_url: https://juejin.cn/post/7624461069679738889
 scenarios:
 - AI/ML项目
@@ -25,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# LangChain Runnable：AI 流程工程化的核心接口
-
 ---
 
 ## 基本信息
@@ -109,7 +105,6 @@ LangChain 的核心不是一堆 API 粘合剂，而是 **Runnable** 统一接口
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

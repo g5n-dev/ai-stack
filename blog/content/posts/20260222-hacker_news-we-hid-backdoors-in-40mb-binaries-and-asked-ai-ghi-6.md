@@ -18,7 +18,7 @@ categories:
 source: hacker_news
 description: 在软件安全领域，针对大型二进制文件的漏洞挖掘往往面临巨大的逆向工程挑战。本文介绍了一项实验，研究者在约 40MB 的二进制文件中植入后门，并尝试利用
   AI 辅助 Ghidra 进行自动化分析与检测。文章详细记录了这一过程的有效性与局限性，展示了当前技术手段在处理大规模代码时的实际表现。通过阅读本文，读者可以了解
-  AI
+  AI 在逆向工程中的真实应用潜力，以及如何将其融入现有的安全分析工作流中。
 external_url: https://quesma.com/blog/introducing-binaryaudit
 scenarios:
 - 大语言模型
@@ -29,10 +29,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# AI与Ghidra协同分析40MB二进制文件中的隐藏后门
-
 ---
 
 ## 基本信息

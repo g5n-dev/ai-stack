@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 纽约拟立法禁止聊天机器人提供医疗法律工程建议
-
----
-
 ## 基本信息
 
 - **作者**: bluepeter

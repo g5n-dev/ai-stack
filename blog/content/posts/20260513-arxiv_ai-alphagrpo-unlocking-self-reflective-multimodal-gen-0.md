@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AlphaGRPO：分解式可验证奖励赋能多模态生成自我反思
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2605.12495v1
@@ -169,7 +165,6 @@ AlphaGRPO 在奖励可验证性和自我反思能力上优于传统 GRPO 与 DPO
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

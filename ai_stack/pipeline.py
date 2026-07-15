@@ -33,7 +33,11 @@ from .models import (
     WorkflowStatus,
     model_to_dict,
 )
-from .source_contract import apply_source_contract, verify_source_contract
+from .source_contract import (
+    apply_source_contract,
+    publication_title_from_contract,
+    verify_source_contract,
+)
 from .stores import FileContentStore, FileOpsStore
 from .tag_taxonomy import normalize_tags
 
@@ -722,9 +726,21 @@ def reserve_budget(*, run_id: str, input_root: Path, state_root: Path) -> dict[s
 
 
 def _safe_title(payload: Mapping[str, Any], fallback: str) -> str:
+    if payload.get("content_mode") == "source_brief" and isinstance(
+        payload.get("evidence"), Mapping
+    ):
+        return publication_title_from_contract(payload)
+
     title = _plain_field(payload, ("title", "name", "headline"), fallback)
     title = "".join(character for character in title if ord(character) >= 32)
-    return title[:160] or "来源简讯"
+    if len(title) > 300:
+        shortened = title[:300].rstrip()
+        if shortened and not shortened[-1].isspace() and not title[300].isspace():
+            boundary = re.search(r"\s+\S*$", shortened)
+            if boundary is not None:
+                shortened = shortened[: boundary.start()].rstrip()
+        title = shortened
+    return title or "来源简讯"
 
 
 def _markdown_text(value: str) -> str:
@@ -734,6 +750,8 @@ def _markdown_text(value: str) -> str:
         .replace(">", "&gt;")
         .replace("[", "\\[")
         .replace("]", "\\]")
+        .replace("{", "&#123;")
+        .replace("}", "&#125;")
     )
 
 
@@ -774,9 +792,7 @@ def _validate_gate_payload_binding(
         if json_ready(gate_payload.get(field)) != expected:
             raise PipelineError(f"generated candidate gate payload {field} mismatch")
 
-    article_claim_ids = tuple(
-        str(claim.get("id") or "").strip() for claim in article.claims
-    )
+    article_claim_ids = tuple(str(claim.get("id") or "").strip() for claim in article.claims)
     if (
         article.event_id != event.event_id
         or article.evidence_ids != (evidence.evidence_id,)
@@ -821,13 +837,29 @@ def _candidate_from_envelope(
         "text": f"原始来源记录的标题为：{title}",
         "evidence_ids": [evidence.evidence_id],
     }
-    body = (
-        "## 基本信息\n\n"
-        f"- **来源标题**: {_markdown_text(title)}\n"
-        f"- **原始来源**: [查看原文]({item.canonical_url})\n\n"
-        "## 来源说明\n\n"
-        "这是自动生成的来源简讯，只复述已保存快照中可定位的字段，不包含扩展推断。"
+    capture_mode = str(item.payload.get("source_capture_mode") or "metadata_only")
+    source_text = str(item.payload.get("source_display_excerpt") or "").strip()
+    body_parts = [
+        "## 基本信息",
+        "",
+        f"- **来源标题**: {_markdown_text(title)}",
+        f"- **原始来源**: [查看原文]({item.canonical_url})",
+    ]
+    if capture_mode != "metadata_only" and source_text:
+        body_parts.extend(["", "## 来源摘要/节选", ""])
+        body_parts.extend(
+            f"> {_markdown_text(line)}" if line.strip() else ">"
+            for line in source_text.splitlines()
+        )
+    body_parts.extend(
+        [
+            "",
+            "## 来源说明",
+            "",
+            "本页完整呈现已保存的来源证据；来源抓取范围与任何截断状态以页面元数据为准，不包含扩展推断。",
+        ]
     )
+    body = "\n".join(body_parts)
     raw_tags = item.payload.get("tags", ())
     tags = tuple(normalize_tags(raw_tags, limit=8))
     article = ArticleRevision(
@@ -985,6 +1017,22 @@ def _markdown_document(
         ensure_ascii=False,
     )
     source_is_truncated = item.payload.get("source_is_truncated") is True
+    source_truncation_reason = json.dumps(
+        str(item.payload.get("source_truncation_reason") or ""),
+        ensure_ascii=False,
+    )
+    contract = item.payload.get("evidence")
+    contract_fields = contract.get("fields") if isinstance(contract, Mapping) else None
+    immutable_title = (
+        str(contract_fields.get("title") or "").strip()
+        if isinstance(contract_fields, Mapping)
+        else article.title
+    )
+    source_title_chars = len(immutable_title)
+    description = json.dumps(
+        "来源证据快报，仅呈现抓取时保存的来源字段；请以原始来源为准。",
+        ensure_ascii=False,
+    )
     return (
         "---\n"
         f"title: {title}\n"
@@ -1002,7 +1050,10 @@ def _markdown_document(
         f"extractor_version: {extractor_version}\n"
         f"discovery_method: {discovery_method}\n"
         f"source_is_truncated: {'true' if source_is_truncated else 'false'}\n"
+        f"source_truncation_reason: {source_truncation_reason}\n"
+        f"source_title_chars_original: {source_title_chars}\n"
         f"source_support: {article.source_support}\n"
+        f"description: {description}\n"
         f"tags: {tags}\n"
         "---\n\n"
         f"{article.body}\n"
@@ -1064,10 +1115,7 @@ def validate_generated(
                     "schema_version": "quarantine_v1",
                     "run_id": state["run_id"],
                     "article_revision_id": article.article_revision_id,
-                    "reasons": [
-                        f"post_quality:{reason}"
-                        for reason in post_analysis.fatal_reasons
-                    ],
+                    "reasons": [f"post_quality:{reason}" for reason in post_analysis.fatal_reasons],
                     "candidate_digest": _sha256_bytes(_json_bytes(candidate)),
                 }
             )

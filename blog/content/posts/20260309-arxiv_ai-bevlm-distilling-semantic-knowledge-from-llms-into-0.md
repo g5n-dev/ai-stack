@@ -16,8 +16,7 @@ categories:
 - 大模型
 - 论文
 source: arxiv
-description: '**BEVLM：将大语言模型语义知识蒸馏到鸟瞰图表示** **背景与问题：** 将大语言模型应用于自动驾驶有助于处理复杂决策和长尾场景，但现有方法通常独立处理多视角图像，导致计算冗余、空间一致性差，且难以进行精确的3D空间推理。此外，传统的鸟瞰图（BEV）表示虽具备空间结构，但缺乏基础视觉编码器的丰富语义。
-  **解决方'
+description: 如何将大语言模型（LLM）的语义优势引入自动驾驶的3D空间推理，是当前具身智能的关键问题。BEVLM框架提出通过蒸馏机制，将LLM的语义知识注入具备空间一致性的鸟瞰图（BEV）表示中，从而弥补传统BEV特征在语义理解上的不足。实验表明，该方法显著提升了跨视角推理的准确性与闭环驾驶性能，不过具体的计算开销与实时性表现无法从摘要确认。
 external_url: http://arxiv.org/abs/2603.06576v1
 scenarios:
 - 大语言模型
@@ -27,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# BEVLM：将LLM语义知识蒸馏至鸟瞰图表征
-
 ---
 
 ## 基本信息

@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 被盗 Gemini API 密钥致 48 小时内损失 8.2 万美元
-
----
-
 ## 基本信息
 
 - **作者**: salkahfi

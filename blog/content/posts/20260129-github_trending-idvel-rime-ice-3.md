@@ -25,9 +25,8 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: rime-ice 是一款针对 Rime 输入法引擎的长期维护配置方案，旨在提供开箱即用的简体中文词库与排版体验。该项目解决了用户自行配置繁琐、词库更新滞后的问题，适合希望提升输入效率但不想投入过多维护精力的开发者及普通用户。本文将介绍其架构设计、核心组件及部署方式，帮助你快速构建稳定的本地输入环境。
 ---
-
-# Rime 配置雾凇拼音：长期维护的简体词库
 
 > **原名**: iDvel /
 
@@ -44,9 +43,8 @@ source_support: 0.0
 - **DeepWiki**: [https://deepwiki.com/iDvel/rime-ice](https://deepwiki.com/iDvel/rime-ice)
 
 ---
-## DeepWiki 速览（节选）
 
-# Overview
+## Overview
 
 Relevant source files
 
@@ -99,15 +97,15 @@ The architecture consists of four layers:
 
 **Key directories:**
 
-Directory| Purpose| Example Files  
----|---|---  
-`/` (root)| Schema and configuration files| `rime_ice.schema.yaml`, `default.yaml`  
-`cn_dicts/`| Chinese vocabulary dictionaries| `base.dict.yaml`, `8105.dict.yaml`  
-`en_dicts/`| English and mixed-language vocabularies| `en.dict.yaml`, `cn_en.txt`  
-`lua/`| Dynamic processing scripts| `corrector.lua`, `pin_cand_filter.lua`  
-`opencc/`| Character transformation data| `emoji.json`, `s2t.json`  
-`others/`| Documentation, recipes, utilities| `CHANGELOG.md`, `recipes/`  
-  
+Directory| Purpose| Example Files
+---|---|---
+`/` (root)| Schema and configuration files| `rime_ice.schema.yaml`, `default.yaml`
+`cn_dicts/`| Chinese vocabulary dictionaries| `base.dict.yaml`, `8105.dict.yaml`
+`en_dicts/`| English and mixed-language vocabularies| `en.dict.yaml`, `cn_en.txt`
+`lua/`| Dynamic processing scripts| `corrector.lua`, `pin_cand_filter.lua`
+`opencc/`| Character transformation data| `emoji.json`, `s2t.json`
+`others/`| Documentation, recipes, utilities| `CHANGELOG.md`, `recipes/`
+
 **Sources:** [rime_ice.dict.yaml7-17](https://github.com/iDvel/rime-ice/blob/49e5ed73/rime_ice.dict.yaml#L7-L17) [README.md71-86](https://github.com/iDvel/rime-ice/blob/49e5ed73/README.md#L71-L86)
 
 ## Core Components
@@ -116,17 +114,17 @@ Directory| Purpose| Example Files
 
 The primary input method is `rime_ice` (full pinyin), with seven double pinyin variants sharing the same dictionary system:
 
-Schema ID| Name| Config File  
----|---|---  
-`rime_ice`| 雾凇拼音 (Full Pinyin)| `rime_ice.schema.yaml`  
-`double_pinyin_flypy`| 小鹤双拼| `double_pinyin_flypy.schema.yaml`  
-`double_pinyin_mspy`| 微软双拼| `double_pinyin_mspy.schema.yaml`  
-`double_pinyin_sogou`| 搜狗双拼| `double_pinyin_sogou.schema.yaml`  
-`double_pinyin`| 自然码双拼| `double_pinyin.schema.yaml`  
-`double_pinyin_abc`| 智能ABC双拼| `double_pinyin_abc.schema.yaml`  
-`double_pinyin_ziguang`| 紫光双拼| `double_pinyin_ziguang.schema.yaml`  
-`melt_eng`| English Input (auxiliary)| `melt_eng.schema.yaml`  
-  
+Schema ID| Name| Config File
+---|---|---
+`rime_ice`| 雾凇拼音 (Full Pinyin)| `rime_ice.schema.yaml`
+`double_pinyin_flypy`| 小鹤双拼| `double_pinyin_flypy.schema.yaml`
+`double_pinyin_mspy`| 微软双拼| `double_pinyin_mspy.schema.yaml`
+`double_pinyin_sogou`| 搜狗双拼| `double_pinyin_sogou.schema.yaml`
+`double_pinyin`| 自然码双拼| `double_pinyin.schema.yaml`
+`double_pinyin_abc`| 智能ABC双拼| `double_pinyin_abc.schema.yaml`
+`double_pinyin_ziguang`| 紫光双拼| `double_pinyin_ziguang.schema.yaml`
+`melt_eng`| English Input (auxiliary)| `melt_eng.schema.yaml`
+
 **Sources:** [default.yaml10-21](https://github.com/iDvel/rime-ice/blob/49e5ed73/default.yaml#L10-L21) [rime_ice.schema.yaml5-17](https://github.com/iDvel/rime-ice/blob/49e5ed73/rime_ice.schema.yaml#L5-L17)
 
 ### Dictionary System
@@ -143,31 +141,31 @@ Each schema defines a four-stage processing pipeline in its `engine` section:
 
 **Pipeline components** (from `rime_ice.schema.yaml`):
 
-Stage| Component Examples| Purpose  
----|---|---  
-**Processors**| `ascii_composer`, `speller`, `key_binder`| Input event handling  
-**Segmentors**| `abc_segmentor`, `punct_segmentor`| Input stream division  
-**Translators**| `script_translator`, `table_translator@melt_eng`| Candidate generation  
-**Filters**| `lua_filter@corrector`, `simplifier@emoji`| Result transformation  
-  
+Stage| Component Examples| Purpose
+---|---|---
+**Processors**| `ascii_composer`, `speller`, `key_binder`| Input event handling
+**Segmentors**| `abc_segmentor`, `punct_segmentor`| Input stream division
+**Translators**| `script_translator`, `table_translator@melt_eng`| Candidate generation
+**Filters**| `lua_filter@corrector`, `simplifier@emoji`| Result transformation
+
 **Sources:** [rime_ice.schema.yaml42-84](https://github.com/iDvel/rime-ice/blob/49e5ed73/rime_ice.schema.yaml#L42-L84)
 
 ### Extension Features (Lua)
 
 Dynamic functionality is implemented through Lua scripts in the `lua/` directory:
 
-Lua Module| Trigger| Function  
----|---|---  
-`corrector.lua`| Automatic| Error hints for common mistakes  
-`pin_cand_filter.lua`| Configuration| Pin specific candidates to top  
-`long_word_filter.lua`| Automatic| Prioritize longer words  
-`reduce_english_filter.lua`| Automatic| Lower priority of short English words  
-`date_translator.lua`| `rq`, `sj`, `xq`| Date, time, weekday  
-`lunar.lua`| `nl`, `N<date>`| Lunar calendar  
-`number_translator.lua`| `R<number>`| Number/currency conversion  
-`calc_translator.lua`| `cC<expression>`| Calculator  
-`unicode.lua`| `U<codepoint>`| Unicode character input  
-  
+Lua Module| Trigger| Function
+---|---|---
+`corrector.lua`| Automatic| Error hints for common mistakes
+`pin_cand_filter.lua`| Configuration| Pin specific candidates to top
+`long_word_filter.lua`| Automatic| Prioritize longer words
+`reduce_english_filter.lua`| Automatic| Lower priority of short English words
+`date_translator.lua`| `rq`, `sj`, `xq`| Date, time, weekday
+`lunar.lua`| `nl`, `N<date>`| Lunar calendar
+`number_translator.lua`| `R<number>`| Number/currency conversion
+`calc_translator.lua`| `cC<expression>`| Calculator
+`unicode.lua`| `U<codepoint>`| Unicode character input
+
 **Sources:** [rime_ice.schema.yaml60-84](https://github.com/iDvel/rime-ice/blob/49e5ed73/rime_ice.schema.yaml#L60-L84) [rime_ice.schema.yaml88-143](https://github.com/iDvel/rime-ice/blob/49e5ed73/rime_ice.schema.yaml#L88-L143) [README.md32-49](https://github.com/iDvel/rime-ice/blob/49e5ed73/README.md#L32-L49)
 
 ## Configuration Hierarchy
@@ -272,9 +270,7 @@ rime-ice 是一个集成了丰富词库、多样输入方案和智能 Lua 脚本
 1.  **极低性能设备**：如十年前的旧电脑或内存极低的嵌入式设备
 
 ---
-## 技术分析
 
-# Rime-ice 深度技术分析报告
 
 ## 1. 技术架构深度剖析
 
@@ -515,44 +511,40 @@ if release:
 
 ### 1：某中型科技公司的研发团队效率提升项目
 
- 1：某中型科技公司的研发团队效率提升项目
-
-**背景**:  
+**背景**:
 该团队在开发过程中使用多种编程语言（如Python、Go、Java），并依赖GitHub进行代码协作。随着项目规模扩大，代码审查和问题追踪变得低效，团队成员常因沟通不及时导致重复工作。
 
-**问题**:  
-- 代码审查流程混乱，关键反馈易被遗漏。  
-- 跨团队协作时，问题分配和优先级管理不清晰。  
+**问题**:
+- 代码审查流程混乱，关键反馈易被遗漏。
+- 跨团队协作时，问题分配和优先级管理不清晰。
 - 缺乏统一的工具链集成，导致信息孤岛。
 
-**解决方案**:  
+**解决方案**:
 引入GitHub的Advanced Security功能，结合GitHub Actions实现自动化代码扫描和CI/CD流水线。同时，使用GitHub Projects进行任务可视化管理，并配置GitHub Dependabot自动处理依赖漏洞。
 
-**效果**:  
-- 代码审查效率提升40%，关键问题平均修复时间缩短50%。  
-- 跨团队协作透明化，任务分配冲突减少60%。  
+**效果**:
+- 代码审查效率提升40%，关键问题平均修复时间缩短50%。
+- 跨团队协作透明化，任务分配冲突减少60%。
 - 自动化工具减少人工维护成本，每年节省约200工时。
 
 ---
 
 ### 2：开源社区文档本地化项目
 
- 2：开源社区文档本地化项目
-
-**背景**:  
+**背景**:
 一个流行的开源框架（如React或Vue）需要将英文文档翻译为中文，以服务全球开发者。社区志愿者分散在不同时区，协作难度大。
 
-**问题**:  
-- 翻译进度不透明，重复翻译或遗漏章节频发。  
-- 缺乏统一的术语管理，导致文档一致性差。  
+**问题**:
+- 翻译进度不透明，重复翻译或遗漏章节频发。
+- 缺乏统一的术语管理，导致文档一致性差。
 - 审核流程依赖人工邮件，效率低下。
 
-**解决方案**:  
+**解决方案**:
 使用GitHub的Discussions功能建立翻译任务看板，结合GitHub Actions自动检查术语表一致性。通过Pull Request Template强制提交者填写上下文信息，并配置Crowdin集成实现机器辅助翻译。
 
-**效果**:  
-- 翻译完成速度提升30%，术语一致性达到95%。  
-- 社区参与度提高，新增50名活跃贡献者。  
+**效果**:
+- 翻译完成速度提升30%，术语一致性达到95%。
+- 社区参与度提高，新增50名活跃贡献者。
 - 审核周期从平均7天缩短至2天，文档更新延迟减少70%。
 
 ---
@@ -877,15 +869,11 @@ if release:
 
 ### 1: 什么是 Rime-ice？它与 Rime 输入法是什么关系？
 
-1: 什么是 Rime-ice？它与 Rime 输入法是什么关系？
-
 **A**: Rime-ice 是一个基于 Rime（中州韵）输入法引擎的开源输入法配置方案（方案名称为 `ice`）。Rime 本身只是一个引擎，用户通常需要自行配置才能获得良好的体验。Rime-ice 的出现是为了解决“开箱即用”的问题，它整合了雾凇拼音词库，并针对简体中文输入进行了深度的定制和优化。它旨在提供一个无需复杂配置、安装即可使用的高质量输入体验，是 Rime 众多方案中非常流行的一个。
 
 ---
 
 ### 2: 如何安装和使用 Rime-ice？
-
-2: 如何安装和使用 Rime-ice？
 
 **A**: 安装 Rime-ice 通常需要以下几个步骤：
 1.  **安装 Rime 引擎**：首先需要在你的操作系统上安装 Rime 的发行版。Windows 上推荐使用 **小狼毫**，macOS 上推荐使用 **鼠须管**，Linux 上则使用 **ibus-rime** 或 **fcitx5-rime**。
@@ -898,15 +886,11 @@ if release:
 
 ### 3: Rime-ice 的词库来源是什么？词量如何？
 
-3: Rime-ice 的词库来源是什么？词量如何？
-
 **A**: Rime-ice 默认使用的是 **雾凇拼音** 词库。这是一个维护活跃、质量较高的开源词库，它整合了多个主流词库（如系统词库、网络流行语、计算机术语等）并进行去重和清洗。其词量非常庞大，通常包含数十万甚至上百万条词条，能够满足绝大多数日常输入、编程和专业术语的需求。此外，用户也可以通过自定义 `custom_phrase.txt` 或 `dict` 文件来扩充个人词库。
 
 ---
 
 ### 4: 如何在 Rime-ice 中启用“五笔”、“地球拼音”或其他方案？
-
-4: 如何在 Rime-ice 中启用“五笔”、“地球拼音”或其他方案？
 
 **A**: Rime-ice 的核心配置主要集中在 `ice.schema.yaml`。虽然它主打拼音，但 Rime 支持多方案共存。如果你想使用五笔或其他方案：
 1.  确保对应的方案文件（如 `wubi86.schema.yaml`）存在于你的 Rime 用户目录中。
@@ -918,8 +902,6 @@ if release:
 
 ### 5: 为什么我输入时没有看到候选词，或者候选词显示乱码？
 
-5: 为什么我输入时没有看到候选词，或者候选词显示乱码？
-
 **A**: 这种情况通常由以下原因造成：
 1.  **未重新部署**：修改配置文件后，必须点击“重新部署”才能生效。
 2.  **编译错误**：如果配置文件（YAML 格式）存在语法错误（如缩进不正确、使用了 Tab 键等），部署过程会失败。建议检查日志文件或使用 YAML 校验工具检查语法。
@@ -929,8 +911,6 @@ if release:
 ---
 
 ### 6: 如何自定义 Rime-ice 的外观（皮肤）和按键习惯？
-
-6: 如何自定义 Rime-ice 的外观（皮肤）和按键习惯？
 
 **A**: Rime-ice 允许高度自定义：
 1.  **外观主题**：可以通过修改 `weasel.custom.yaml`（Windows）或 `squirrel.custom.yaml`（macOS）来调整候选窗的样式，包括字体、颜色、边框等。也可以使用社区制作的主题文件。
@@ -968,7 +948,6 @@ if release:
 
 ---
 
----
 ## 站内链接
 
 - 分类： [开源生态](/categories/%E5%BC%80%E6%BA%90%E7%94%9F%E6%80%81/) / [效率与方法论](/categories/%E6%95%88%E7%8E%87%E4%B8%8E%E6%96%B9%E6%B3%95%E8%AE%BA/)

@@ -17,7 +17,7 @@ categories:
 - 数据
 source: arxiv
 description: 研究背景：大量用人单位使用同一家算法供应商的筛选系统，形成算法单一文化（algorithmic monoculture），可能导致同一批求职者和族裔群体被系统性拒绝。
-  数据：收集了300万求职者提交的400万份职位申请，所有申请均由同一家供应商的算法进行筛选。 结果1：种族差距显著。亚洲裔和黑人求职者分别有14.74%
+  数据：收集了300万求职者提交的400万份职位申请，所有申请均由同一家供应商的算法进行筛选。 结果1：种族差距显著。亚洲裔和黑人求职者分别有14.74%和25.87%的申请投向了依据美国就业歧视标准被认定为对相应族裔不利的岗位。
 external_url: http://arxiv.org/abs/2605.27371v1
 scenarios:
 - Web应用开发
@@ -25,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 招聘算法的同质化风险分析
-
 ---
 
 ## 基本信息
@@ -111,7 +107,6 @@ source_support: 0.0
 
 ---
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/) / [数据](/categories/%E6%95%B0%E6%8D%AE/)

@@ -40,10 +40,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 使用 Unsloth 与 Hugging Face Jobs 免费训练 AI 模型
-
----
-
 ## 基本信息
 
 - **来源**: Hugging Face Blog (blog)

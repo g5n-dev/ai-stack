@@ -17,7 +17,7 @@ categories:
 - 产品与创业
 source: hacker_news
 description: 随着生成式 AI 技术的普及，关于人工智能创作内容的版权归属问题一直是法律与创意产业关注的焦点。近期，美国最高法院拒绝受理相关上诉，这一司法动向实质上确立了
-  AI 生成作品目前无法获得版权保护的原则。对于创作者、开发者及企业法务而言，理解这一判决背后的逻辑至关重要。本文将解析案件细节及其对行业规范的影响，帮助读者厘清人
+  AI 生成作品目前无法获得版权保护的原则。对于创作者、开发者及企业法务而言，理解这一判决背后的逻辑至关重要。本文将解析案件细节及其对行业规范的影响，帮助读者厘清人机协作中的版权边界与合规风险。
 external_url: https://www.theverge.com/policy/887678/supreme-court-ai-art-copyright
 scenarios:
 - AI/ML项目
@@ -25,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 最高法院拒绝受理：AI生成艺术作品不受版权保护
-
 ---
 
 ## 基本信息

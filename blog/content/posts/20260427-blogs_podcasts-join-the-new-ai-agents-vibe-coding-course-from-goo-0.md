@@ -16,9 +16,8 @@ categories:
 - AI 工程
 - 开发工具
 source: blogs_podcasts
-description: 课程概述 Google 与 Kaggle 联合推出“AI Agents Vibe Coding”课程，旨在帮助学习者快速掌握构建和部署 AI
-  Agent 的实战技能。课程围绕“Vibe Coding”——即通过自然语言描述生成代码、调试和优化的全新开发模式，结合 Google Cloud 的强大算力和
-  Kaggle 的
+description: 笔记本电脑旁边的蜘蛛网 Google与Kaggle联合推出AI Agents Vibe Coding课程，聚焦当下快速发展的AI辅助编程领域。随着大语言模型能力持续提升，开发者的工作方式正经历深刻转变，vibe
+  coding作为新兴实践，帮助程序员通过自然语言与AI协作完成复杂项目。
 external_url: https://blog.google/innovation-and-ai/technology/developers-tools/kaggle-genai-intensive-course-vibe-coding-june-2026
 scenarios:
 - AI/ML项目
@@ -26,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Google与Kaggle推出AI Agents编程课程
-
 ---
 
 ## 基本信息
@@ -133,7 +128,6 @@ Vibe Coding的独特之处在于引入多个AI智能体分工协作。代码生�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/)

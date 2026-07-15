@@ -15,8 +15,8 @@ tags:
 categories:
 - AI 工程
 source: blogs_podcasts
-description: 概述 Hands‑free First Notice of Loss (FNOL) 系统通过结合 Strands Agents SDK 的领域推理能力与
-  Amazon Bedrock AgentCore Browser Tool 的实时门户交互，实现全自动化的报案受理。系统在不替代人工专家的前提下，自动完成重复性的屏幕
+description: 在这篇文章中，我们演示了如何将一个免手动 FNOL（首次损失通知）录入系统与使用 Strands Agents SDK 构建的领域推理智能体相结合，同时配合
+  Amazon Bedrock AgentCore 浏览器工具实现实时门户交互。这种方法既保留了人类的专业知识，又消除了重复性的屏幕操作工作。 在保险理赔流程中，首次损失通知（FNOL）往往是人工录入的瓶颈。
 external_url: https://aws.amazon.com/blogs/machine-learning/hands-free-first-notice-of-loss-using-strands-agents-and-amazon-bedrock-agentcore-browser-tool-for-intelligent-claims-intake
 scenarios:
 - AI/ML项目
@@ -25,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Strands Agents与Bedrock实现免手动智能理赔录入
-
 ---
 
 ## 基本信息
@@ -154,7 +150,6 @@ AgentCore Browser Tool提供了浏览器自动化能力，使Agent能够在保�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

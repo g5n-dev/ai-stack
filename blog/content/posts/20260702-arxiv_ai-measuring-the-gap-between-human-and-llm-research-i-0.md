@@ -16,8 +16,8 @@ categories:
 - 大模型
 - 论文
 source: arxiv
-description: 研究框架 从高质量学术论文中提取每篇的核心灵感来源——若干紧密相关的先前工作。利用这些文献的标题和摘要提示大模型生成新研究思路，以模拟人类构思过程。
-  评价维度 提出两维度研究品味分类表：①机会模式（bridge‑like、增量式、探索式等），②研究范式（合成方法、实证验证、理论推演等）。通过两维度分布对比人类论文引用与
+description: 从高质量学术论文中提取每篇的核心灵感来源——若干紧密相关的先前工作。利用这些文献的标题和摘要提示大模型生成新研究思路，以模拟人类构思过程。
+  提出两维度研究品味分类表：①机会模式（bridge‑like、增量式、探索式等），②研究范式（合成方法、实证验证、理论推演等）。通过两维度分布对比人类论文引用与模型生成想法的差异。
 external_url: http://arxiv.org/abs/2607.01233v1
 scenarios:
 - Web应用开发
@@ -25,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 人类与LLM研究想法的差距测量
-
 ---
 
 ## 基本信息
@@ -124,7 +120,6 @@ source_support: 0.0
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

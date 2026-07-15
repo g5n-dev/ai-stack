@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Transformer QKV投影变体对比研究
-
----
-
 ## 基本信息
 
 - **作者**: Anon84
@@ -80,7 +76,6 @@ source_support: 0.0
 
 ---
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/) / [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

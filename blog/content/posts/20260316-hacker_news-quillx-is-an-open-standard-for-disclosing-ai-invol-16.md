@@ -17,7 +17,7 @@ categories:
 - 产品与创业
 source: hacker_news
 description: 随着 AI 技术深度融入软件开发，如何透明地披露代码中的人工智能参与度已成为行业亟待解决的信任问题。Quillx 作为一项新兴的开放标准，旨在为项目提供一套规范化的披露机制，填补了当前生态中关于
-  AI 贡署名的空白。本文将深入解析 Quillx 的核心设计理念与运作逻辑，帮助开发者理解如何在保障知识产权的同时，构建更加
+  AI 贡署名的空白。本文将深入解析 Quillx 的核心设计理念与运作逻辑，帮助开发者理解如何在保障知识产权的同时，构建更加透明、可信的协作环境。
 external_url: https://github.com/QAInsights/AIx
 scenarios:
 - AI/ML项目
@@ -27,10 +27,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Quillx：披露软件项目AI参与度的开放标准
-
 ---
 
 ## 基本信息

@@ -16,8 +16,8 @@ categories:
 - AI 工程
 - 大模型
 source: blogs_podcasts
-description: 背景 在视觉购物、图像/文档理解、图表分析等场景中，需要验证模型生成的文本是否真正基于原始图像。传统纯文本评估只能检查文字本身，无法判断描述是否忠实于图像。
-  多模态评估思路 提出使用多模态大模型（MLLM）作为评判者，让模型同时读取图像与生成的文本，计算两者的对齐分数。通过比较图像特征和文本语义，评估 caption、
+description: 如果您正在构建视觉购物、图像或文档理解，又或是图表分析功能，您需要一种方法来验证模型的响应是否真正基于源图像。纯文本评估器无法判断字幕是否忠实描述了图像、提取的发票金额是否与文档一致，又或是屏幕摘要是否准确反映内容。
+  在构建视觉购物、文档理解或图表分析功能时，验证模型输出是否真正基于图像内容是一个核心挑战。传统的纯文本评估器在判断字幕是否忠实描述图像、提取信息是否与源文档一致时往往力不从心。
 external_url: https://aws.amazon.com/blogs/machine-learning/multimodal-evaluators-mllm-as-a-judge-for-image-to-text-tasks-in-strands-evals
 scenarios:
 - AI/ML项目
@@ -25,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 基于MLLM的多模态评估器验证图像文本一致性
-
 ---
 
 ## 基本信息
@@ -158,7 +154,6 @@ MLLM-as-a-judge范式标志着多模态系统评估从人工主导向自动化�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

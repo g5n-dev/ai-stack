@@ -16,8 +16,8 @@ categories:
 - AI 工程
 - 大模型
 source: blogs_podcasts
-description: '**摘要：** 本文介绍了如何利用开源 Python 库 **Hugging Face smolagents** 结合 **AWS 托管服务**，构建一个基于多模型框架的
-  **Agentic AI** 解决方案。 主要内容包括： 1. **开发工具**：使用 简化代理的构建与运行，仅需少量代码即可实现。 2. **集成'
+description: Hugging Face smolagents 是一个开源 Python 库，旨在通过几行代码即可轻松构建和运行 Agent。我们将向您展示如何通过将
+  Hugging Face smolagents 与 Amazon Web Services (AWS) 托管服务集成，来构建一个 Agent 化的 AI 解决方案。
 external_url: https://aws.amazon.com/blogs/machine-learning/agentic-ai-with-multi-model-framework-using-hugging-face-smolagents-on-aws
 scenarios:
 - AI/ML项目
@@ -36,10 +36,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 基于AWS与Hugging Face smolagents构建多模型医疗AI Agent
-
 ---
 
 ## 基本信息

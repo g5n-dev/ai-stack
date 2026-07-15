@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# PgAdmin 4 9.13 发布：集成 AI 助手面板
-
----
-
 ## 基本信息
 
 - **作者**: __natty__

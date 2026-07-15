@@ -17,7 +17,7 @@ categories:
 - 安全
 source: hacker_news
 description: 随着智能体（Agentic AI）在复杂任务中的自主性不断增强，传统的基于“信任”的安全机制正面临严峻考验。本文从游戏设计的独特视角出发，探讨了如何通过系统架构设计来规避对
-  AI 主观意愿的依赖，从而实现更本质的安全控制。读者将了解到一种将安全约束内置于底层逻辑的思路，这有助于我们在构建高可用 AI 系统时，从源头上降
+  AI 主观意愿的依赖，从而实现更本质的安全控制。读者将了解到一种将安全约束内置于底层逻辑的思路，这有助于我们在构建高可用 AI 系统时，从源头上降低潜在风险。
 external_url: https://github.com/Deso-PK/make-trust-irrelevant
 scenarios:
 - 大语言模型
@@ -26,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 让信任变得无关紧要：玩家视角下的智能体安全
-
 ---
 
 ## 基本信息
@@ -114,12 +110,12 @@ def safe_agent_execution(user_input: str) -> dict:
             capture_output=True,
             timeout=5  # 限制执行时间
         )
-        
+
         if result.returncode != 0:
             return {"error": result.stderr.decode()}
-            
+
         return {"output": result.stdout.decode()}
-        
+
     except subprocess.TimeoutExpired:
         return {"error": "执行超时"}
     except Exception as e:
@@ -138,7 +134,7 @@ class VerifiableAgentLog:
     def __init__(self):
         self.log_chain = []
         self.previous_hash = "0"
-    
+
     def add_decision(self, agent_id: str, action: str, rationale: str):
         """
         添加可验证的决策记录
@@ -154,16 +150,16 @@ class VerifiableAgentLog:
             "timestamp": timestamp,
             "prev_hash": self.previous_hash
         }
-        
+
         # 计算哈希链
         entry_hash = sha256(
             f"{agent_id}{action}{rationale}{timestamp}{self.previous_hash}".encode()
         ).hexdigest()
-        
+
         log_entry["hash"] = entry_hash
         self.log_chain.append(log_entry)
         self.previous_hash = entry_hash
-        
+
     def verify_integrity(self) -> bool:
         """验证日志完整性"""
         for i in range(1, len(self.log_chain)):
@@ -187,7 +183,7 @@ class MultiAgentSafety:
     def __init__(self, agents: List[str]):
         self.agents = agents
         self.min_votes = len(agents) // 2 + 1
-    
+
     def propose_action(self, agent_id: str, action: str) -> Dict:
         """
         代理提议行动
@@ -200,7 +196,7 @@ class MultiAgentSafety:
             # 模拟各代理的投票（实际应用中应调用真实代理）
             vote = random.choice(["approve", "reject"]) if agent != agent_id else "approve"
             votes.append({"agent": agent, "vote": vote})
-        
+
         approve_count = sum(1 for v in votes if v["vote"] == "approve")
         return {
             "action": action,
@@ -219,8 +215,6 @@ print(f"行动批准状态: {result['approved']}")
 
 ### 1：GitHub Copilot Workspace
 
- 1：GitHub Copilot Workspace
-
 **背景**:
 随着软件开发复杂度的增加，开发者需要处理海量代码库和复杂的依赖关系。传统的 AI 编程助手往往只能提供简单的代码补全，无法理解整个项目的上下文，也无法保证生成的代码符合项目的安全规范和逻辑一致性。
 
@@ -237,8 +231,6 @@ GitHub Copilot Workspace 引入了“代理式”能力，它不再仅仅是一�
 
 ### 2：Cognition AI (Devin)
 
- 2：Cognition AI (Devin)
-
 **背景**:
 软件工程中的许多任务（如修复 Bug、添加功能）是重复且繁琐的。传统的自动化脚本只能处理非常固定的流程，对于需要逻辑推理、查阅文档和多步骤操作的复杂任务无能为力。
 
@@ -254,8 +246,6 @@ Devin 作为一个自主的 AI 软件工程师，被设计为可以在沙箱环�
 ---
 
 ### 3：SWE-agent (由 Princeton University NLP Group 开发)
-
- 3：SWE-agent (由 Princeton University NLP Group 开发)
 
 **背景**:
 学术界和工业界一直在寻找解决 GitHub 上真实软件 Bug 的方法。现有的自动化程序修复（APR）技术通常只能在受限的环境中运行，面对真实的、庞大的开源项目时往往束手无策。
@@ -362,8 +352,6 @@ Devin 作为一个自主的 AI 软件工程师，被设计为可以在沙箱环�
 
 ### 1: 为什么文章标题强调“让信任变得无关紧要”？这是否意味着我们不需要信任 AI 代理？
 
-1: 为什么文章标题强调“让信任变得无关紧要”？这是否意味着我们不需要信任 AI 代理？
-
 **A**: 这里的“让信任变得无关紧要”并不是指我们可以盲目地使用 AI，而是指一种**系统设计哲学**。在传统的安全模型中，用户必须信任 AI 代理不会做出有害行为。然而，对于具有高度自主性的 AI 代理，这种基于“善意”的信任是脆弱且危险的。
 
 文章主张通过技术手段（如沙箱隔离、资源限制、可验证的代码执行）来构建系统，使得 AI 代理即使在被攻破、产生幻觉或表现出恶意行为时，也无法造成实质性的破坏。这种思路类似于**零信任网络架构**：默认不信任任何实体，而是通过严格的约束和验证机制来确保安全。因此，目标是构建一个“无论 AI 是否值得信任，系统都是安全的”环境。
@@ -371,8 +359,6 @@ Devin 作为一个自主的 AI 软件工程师，被设计为可以在沙箱环�
 ---
 
 ### 2: 文章中提到的“游戏视角”对 AI 安全有什么具体的借鉴意义？
-
-2: 文章中提到的“游戏视角”对 AI 安全有什么具体的借鉴意义？
 
 **A**: 游戏开发者处理“不可信代理”已有数十年的经验。在多人在线游戏（MMO）中，服务器永远不能信任客户端。因为客户端完全由玩家控制，玩家可以修改代码、内存或网络数据包来作弊。
 
@@ -385,8 +371,6 @@ Devin 作为一个自主的 AI 软件工程师，被设计为可以在沙箱环�
 
 ### 3: 什么是“沙箱”机制，为什么它对 Agentic AI 的安全至关重要？
 
-3: 什么是“沙箱”机制，为什么它对 Agentic AI 的安全至关重要？
-
 **A**: 沙箱是一种安全机制，用于将程序与操作系统或其他程序隔离开来。对于 Agentic AI（能够自主执行任务、调用工具的 AI），沙箱至关重要，因为这类 AI 通常被赋予执行代码、修改文件或访问网络的权限。
 
 如果没有沙箱，一个被恶意提示词注入或产生错误的 AI 代理可能会删除系统文件、泄露敏感数据或发起网络攻击。通过在容器（如 Docker）或微型虚拟机中运行 AI 代理，我们可以确保其活动范围被严格限制。即使 AI 被攻破，攻击者也无法逃逸到宿主机器，从而实现了“即使不信任它，也能安全运行”。
@@ -394,8 +378,6 @@ Devin 作为一个自主的 AI 软件工程师，被设计为可以在沙箱环�
 ---
 
 ### 4: 既然 AI 有“黑盒”特性，我们如何验证其行为是否符合预期？
-
-4: 既然 AI 有“黑盒”特性，我们如何验证其行为是否符合预期？
 
 **A**: 虽然 AI 神经网络本身的推理过程难以完全解释（黑盒），但 Agentic AI 的**输出行为**是可以被严格验证的。文章建议采用以下方法：
 
@@ -407,8 +389,6 @@ Devin 作为一个自主的 AI 软件工程师，被设计为可以在沙箱环�
 
 ### 5: 这种“无需信任”的安全模型是否会限制 AI 的能力和效率？
 
-5: 这种“无需信任”的安全模型是否会限制 AI 的能力和效率？
-
 **A**: 实施严格的安全措施确实会带来一定的性能开销和操作限制，但这是为了保障系统可用性必须付出的成本。实际上，这种模型通过以下方式反而可能提升长期的效率：
 
 1.  **减少灾难性恢复成本**：一次 AI 代理导致的安全事故可能造成巨大的经济损失和数据丢失，事前防御比事后修复更高效。
@@ -418,8 +398,6 @@ Devin 作为一个自主的 AI 软件工程师，被设计为可以在沙箱环�
 ---
 
 ### 6: 对于普通开发者来说，最应该优先实施的安全措施是什么？
-
-6: 对于普通开发者来说，最应该优先实施的安全措施是什么？
 
 **A**: 根据文章及社区共识，最优先的措施是**权限最小化**和**环境隔离**。
 
@@ -435,7 +413,6 @@ Devin 作为一个自主的 AI 软件工程师，被设计为可以在沙箱环�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [安全](/categories/%E5%AE%89%E5%85%A8/)

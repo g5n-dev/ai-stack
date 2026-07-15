@@ -16,8 +16,9 @@ categories:
 - AI 工程
 - 后端
 source: blogs_podcasts
-description: '**Rakuten 利用 Codex 显著提升开发效率与安全性** 日本乐天通过引入 OpenAI 的智能编程代理 Codex，成功实现了软件交付速度与安全性的双重提升。具体成效包括：
-  1. **故障恢复提速 50%**：将平均故障修复时间缩短了一半。 2. **流程自动化**：实现了持续集成/持续部署（CI/CD）审'
+description: Rakuten uses Codex, the coding agent from OpenAI, to ship software faster
+  and safer, reducing MTTR 50%, automating CI/CD reviews, and delivering full-stack
+  builds in weeks.
 external_url: https://openai.com/index/rakuten
 scenarios:
 - AI/ML项目
@@ -35,10 +36,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 乐天利用 OpenAI Codex 将 MTTR 缩减 50% 并加速 CI/CD 审查
-
 ---
 
 ## 基本信息

@@ -17,7 +17,7 @@ categories:
 - 前端
 source: hacker_news
 description: 在软件开发中，利用 AI 辅助重构核心框架通常被视为一项长期且高风险的挑战。本文详细记录了团队如何在一周内，利用 AI 技术对 Next.js
-  进行深度重构的完整过程与实战经验。通过阅读这篇文章，您将了解到具体的操作流程、遇到的典型技术障碍以及如何有效规避潜在风险，从而为未来在大型项目中应用 AI 提供切实可行的参考与
+  进行深度重构的完整过程与实战经验。通过阅读这篇文章，您将了解到具体的操作流程、遇到的典型技术障碍以及如何有效规避潜在风险，从而为未来在大型项目中应用 AI 提供切实可行的参考与借鉴。
 external_url: https://blog.cloudflare.com/vinext
 scenarios:
 - AI/ML项目
@@ -28,10 +28,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 我们如何在一周内用AI重构Next.js
-
 ---
 
 ## 基本信息

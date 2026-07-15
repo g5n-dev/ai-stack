@@ -35,10 +35,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 通往普及AI之路：实现每秒1.7万Token推理
-
----
-
 ## 基本信息
 
 - **作者**: sidnarsipur

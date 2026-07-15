@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 我们构建了安全可扩展的 Agent 沙箱基础设施
-
----
-
 ## 基本信息
 
 - **作者**: gregpr07

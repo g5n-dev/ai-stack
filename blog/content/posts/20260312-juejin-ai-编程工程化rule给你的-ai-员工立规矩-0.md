@@ -16,8 +16,8 @@ categories:
 - AI 工程
 - 开发工具
 source: juejin
-description: '**Rule 机制：为 AI 编程立规矩** 在 AI 编程工程化进程中，Claude Code 推出的 Rule 机制为 AI 员工行为设定了三层规范框架，通过全局、项目、目录级规则实现技术栈统一、编码规范落地与行为边界管控，让
-  AI 协同开发更符合团队工程化要求。 **一、三层规则体系构建行为边界** 1. **全'
+description: 在 AI 编程从尝鲜走向工程化的过程中，如何让 AI 持续遵循既定的技术选型与代码规范，已成为团队落地的关键痛点。本文将深入解析 Claude
+  Code 的 Rule 机制，通过构建全局、项目及目录三层规则体系，为 AI 设定清晰的行为边界与技术约束。阅读本文，你将掌握一套为 AI 员工“立规矩”的实用方法，从而在保障代码质量的前提下，真正实现人机协作的标准化与可预测性。
 external_url: https://juejin.cn/post/7616193982246862867
 scenarios:
 - AI/ML项目
@@ -25,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Claude Code Rule 机制：三层规则约束 AI 编程行为
-
 ---
 
 ## 基本信息

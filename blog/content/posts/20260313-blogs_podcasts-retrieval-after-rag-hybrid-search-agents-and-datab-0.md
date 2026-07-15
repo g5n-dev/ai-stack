@@ -16,8 +16,8 @@ categories:
 - 数据
 - AI 工程
 source: blogs_podcasts
-description: Turbopuffer 最初是作为一个阅读应用诞生的，后来逐渐演变成专注于检索增强生成（RAG）后处理的技术方案。在向量检索领域，它主要关注三个核心方向：混合搜索、智能代理优化以及数据库设计。
-  混合搜索是提升检索质量的关键策略。单纯依赖向量相似度搜索虽然能捕捉语义关联，但在处理精确匹配（如产品编号、专有名词）时往往表现
+description: Turbopuffer 源自一个阅读应用。 在构建 RAG（检索增强生成）应用时，单纯的向量相似度检索往往难以满足复杂场景对准确性的要求。本文基于
+  Turbopuffer 的工程实践，深入探讨了混合检索、智能体协作以及数据库设计在 RAG 流程中的关键作用。通过剖析实际案例，文章旨在为开发者提供优化检索架构的思路，帮助大家在面对海量数据时，更有效地平衡检索效率与结果质量。
 external_url: https://www.latent.space/p/turbopuffer
 scenarios:
 - RAG应用
@@ -40,10 +40,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# RAG后的检索：混合搜索、Agent与数据库设计
-
 ---
 
 ## 基本信息

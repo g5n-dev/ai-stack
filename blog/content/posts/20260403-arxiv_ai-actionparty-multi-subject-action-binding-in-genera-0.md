@@ -16,8 +16,7 @@ categories:
 - 大模型
 - AI 工程
 source: arxiv
-description: 背景与挑战 视频扩散技术的进步推动了“世界模型”在交互环境中的构建，但现有模型大多局限于单智能体场景，难以对场景中的多个主体同时进行控制，且在将特定动作与对应主体关联时存在困难。
-  方法：ActionParty - **主体状态 Tokens**：为每个主体引入潜在状态变量，持续捕获其在场景中的状态。 - **联合建模*
+description: 视频扩散技术的突破为交互式环境构建“全局世界模型”奠定了基础，但在游戏等多主体场景中，现有方法难以同步控制多个实体并精准关联其动作，这一瓶颈制约了生成式游戏的发展。ActionParty提出了多主体动作绑定框架，首次在单一生成模型中实现了多个角色动作的协同控制与实时响应。若方法有效，可为程序化内容生成、动态NPC行为设计等应用提供新的技术路径。
 external_url: http://arxiv.org/abs/2604.02330v1
 scenarios:
 - Web应用开发
@@ -28,10 +27,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# ActionParty：生成式视频游戏多主体动作绑定方法
-
 ---
 
 ## 基本信息
@@ -183,7 +178,6 @@ ActionParty 通过引入主体状态 Tokens、联合潜在建模与空间偏置�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

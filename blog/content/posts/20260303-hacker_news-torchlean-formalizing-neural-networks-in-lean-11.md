@@ -32,10 +32,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# TorchLean：基于 Lean 形式化验证的神经网络框架
-
----
-
 ## 基本信息
 
 - **作者**: matt_d

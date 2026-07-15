@@ -17,7 +17,7 @@ categories:
 - 论文
 source: hacker_news
 description: DSpark 提出基于推测解码的推理加速方案，旨在缩短大语言模型生成阶段的首 token 延迟并提升整体吞吐。该方案在主模型生成的同时并行运行轻量候选模型，提前预判可能的
-  token 序列，从而在保持输出质量的前提下显著降低计算资源消耗。读者可在本文了解 DSpark 的核心设计、实现细节及在不同规模模型上的实验对比，
+  token 序列，从而在保持输出质量的前提下显著降低计算资源消耗。读者可在本文了解 DSpark 的核心设计、实现细节及在不同规模模型上的实验对比，为实际部署提供可行的性能优化参考。
 external_url: https://github.com/deepseek-ai/DeepSpec/blob/main/DSpark_paper.pdf
 scenarios:
 - 大语言模型
@@ -27,10 +27,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# DSpark推测解码方法加速大语言模型推理
-
 ---
 
 ## 基本信息
@@ -86,7 +82,6 @@ DSparK提出的推测解码方法在LLM推理加速领域具有重要的技术�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

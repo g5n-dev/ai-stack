@@ -32,10 +32,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 代理工程的技术层级与能力演进
-
----
-
 ## 基本信息
 
 - **作者**: bombastic311

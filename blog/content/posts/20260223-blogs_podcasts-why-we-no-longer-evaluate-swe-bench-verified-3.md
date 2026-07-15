@@ -16,8 +16,8 @@ categories:
 - 大模型
 - 数据
 source: blogs_podcasts
-description: 以下是对该内容的中文总结： 我们决定不再评估 SWE-bench Verified，原因如下： 1. **数据污染日益严重**：该基准测试正受到越来越多的数据污染影响。
-  2. **衡量偏差**：它已无法准确衡量前沿编码领域的实际进展。 3. **技术缺陷**：我们的分析显示，该基准存在测试用例缺陷以及训练数据泄露的问题
+description: SWE-bench Verified 的数据污染日益严重，且无法准确衡量前沿代码进展。我们的分析表明其测试存在缺陷，并存在训练数据泄露。我们建议使用
+  SWE-bench Pro。 随着 SWE-bench Verified 被广泛采用，数据污染与测试缺陷使其难以准确反映前沿代码模型的进展。本文分析了该基准存在的数据泄露与评估局限性，并解释为何其已不再适用于当前的模型测试。
 external_url: https://openai.com/index/why-we-no-longer-evaluate-swe-bench-verified
 scenarios:
 - 大语言模型
@@ -32,10 +32,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# SWE-bench Verified 数据泄露与测试缺陷分析：为何应迁移至 SWE-bench Pro
-
 ---
 
 ## 基本信息

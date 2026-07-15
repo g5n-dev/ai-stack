@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 黄仁勋GTC 2026宣告：AI从生成式转向代理式
-
----
-
 ## 基本信息
 
 - **作者**: 米小虾
@@ -91,7 +87,6 @@ source_support: 0.0
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/)

@@ -16,8 +16,9 @@ categories:
 - 大模型
 - 论文
 source: arxiv
-description: 背景与动机 现实机器人部署时相机常被重新定位或更换，已有的视点鲁棒视觉-语言-动作（VLA）策略大多依赖外部提供相机外参，使用不便且脆弱。作者认为策略应自行推断相机位置，而非依赖标定。
-  方法概述 CamVLA 将操作控制与相机几何解耦，输出两项预测： 1. **相机中心动作**——在局部相机坐标系下的末端执行器动作（姿
+description: CamVLA 将操作控制与相机几何解耦，输出两项预测： 相机中心动作——在局部相机坐标系下的末端执行器动作（姿态），实现“我应该如何移动”与相机位置无关；
+  6‑DoF 手‑眼矩阵——描述相机相对于机器人基座的刚体变换，完成“我从哪儿看”。 随后通过确定性几何变换把这两项组合为机器人基座坐标系下的完整动作，实现 无标定、深度信息、单目
+  RGB 的策略部署。
 external_url: http://arxiv.org/abs/2607.05396v1
 scenarios:
 - Web应用开发
@@ -25,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 视觉语言动作模型的免标定自由视角方法
-
 ---
 
 ## 基本信息
@@ -157,7 +154,6 @@ CamVLA 将末端执行器的动作预测在**局部相机坐标系**下进行，
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

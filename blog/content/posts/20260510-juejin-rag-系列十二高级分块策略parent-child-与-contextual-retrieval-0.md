@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# RAG 分块进阶：Parent-Child 与 Contextual Retrieval 实现
-
----
-
 ## 基本信息
 
 - **作者**: 冬奇Lab
@@ -78,7 +74,6 @@ Naive 分块有什么根本缺陷？Parent-Child 如何用小块检索、大块�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [数据](/categories/%E6%95%B0%E6%8D%AE/)

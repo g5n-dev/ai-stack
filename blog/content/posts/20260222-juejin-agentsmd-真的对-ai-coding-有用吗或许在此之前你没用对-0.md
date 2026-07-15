@@ -16,8 +16,8 @@ categories:
 - AI 工程
 - 开发工具
 source: juejin
-description: 这份内容主要探讨了 ** ** 文件在 AI 编程中的实际价值、常见误区及最佳实践。核心观点是： 确实有用，但大多数开发者因为“没写对”导致效果不佳。
-  以下是简洁的总结： 1. 核心观点：它是什么与为什么重要 * **定义**： 是放置在项目根目录的典型上下文文件，被视为 Coding Agent（如 Cursor、C
+description: AGENTS.md 正逐渐成为 AI 编程助手理解项目上下文的关键入口，其质量直接决定了 Agent 能否精准执行开发任务。然而，许多团队仅仅将其视为简单的概览文档，未能充分发挥其在工作流编排与工具链定义上的潜力。本文将探讨如何构建高质量的
+  AGENTS.md，帮助开发者优化 AI 协作流程，从而在复杂的代码库中实现更高效的自动化开发。
 external_url: https://juejin.cn/post/7608214035263569974
 scenarios:
 - AI/ML项目
@@ -27,10 +27,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# AGENTS.md 概览与工具链：提升 AI Coding 仓库上下文理解
-
 ---
 
 ## 基本信息

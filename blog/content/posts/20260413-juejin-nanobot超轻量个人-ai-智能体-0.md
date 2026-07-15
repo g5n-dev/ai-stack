@@ -16,8 +16,8 @@ categories:
 - 大模型
 - 开源生态
 source: juejin
-description: 背景 Nanobot 由香港大学数据科学实验室（HKUDS）开源，旨在为个人用户提供轻量级的 AI 智能体解决方案。 核心理念 框架秉持“少即是多”的原则，以极简代码实现完整功能，突出简洁、高效和可维护性。
-  技术实现 - **代码规模**：约 4,000 行核心代码，降低学习与二次开发门槛。 - **功能完整**：集成
+description: Nanobot 是由香港大学数据科学实验室开源的超轻量级 AI Agent 框架。它以“少即是多”为核心理念，仅用约 4,000 行核心代码实现了完整的生产级
+  AI Agent 系统。该框架为开发者提供了一种快速构建和部署智能体的轻量化方案，降低了 AI 应用开发的门槛。
 external_url: https://juejin.cn/post/7627818680535842868
 scenarios:
 - AI/ML项目
@@ -25,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 香港大学开源Nanobot：4000行代码实现生产级AI Agent框架
-
 ---
 
 ## 基本信息
@@ -109,7 +105,6 @@ HKUDS开源的Nanobot框架定位为超轻量级个人AI智能体，代码规模
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [开源生态](/categories/%E5%BC%80%E6%BA%90%E7%94%9F%E6%80%81/)

@@ -16,8 +16,7 @@ categories:
 - 开源生态
 - 数据
 source: github_trending
-description: 该内容是对 GitHub 仓库 **d2l-ai/d2l-zh** 的介绍总结，主要包含以下要点： **1. 项目概况** * **名称**：d2l-ai/d2l-zh
-  * **全称**：《动手学深度学习》 * **特点**：这是一本面向中文读者的开源互动式书籍，具备“能运行、可讨论”的特性。书中包含可执行的代码示例，
+description: 《动手学深度学习》是一份面向中文读者的开源教程，提供可运行的代码与详尽的理论讲解，已被全球数百所高校广泛采纳。它适合希望系统掌握深度学习原理并具备工程实践能力的开发者与学生。本文将介绍该项目的内容结构、获取方式及其在学术界与工业界的应用价值。
 external_url: https://github.com/d2l-ai/d2l-zh
 scenarios:
 - AI/ML项目
@@ -47,8 +46,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 动手学深度学习：面向中文读者的可运行教材
-
 > **原名**: d2l-ai /
 
       d2l-zh
@@ -64,9 +61,8 @@ source_support: 0.0
 - **DeepWiki**: [https://deepwiki.com/d2l-ai/d2l-zh](https://deepwiki.com/d2l-ai/d2l-zh)
 
 ---
-## DeepWiki 速览（节选）
 
-# Overview
+## Overview
 
 Relevant source files
 
@@ -268,9 +264,7 @@ The D2L.ai repository provides a comprehensive approach to deep learning educati
 1.  **环境测试**
 
 ---
-## 技术分析
 
-# 《动手学深度学习》技术架构深度解析
 
 ## 1. 技术架构深度剖析
 
@@ -465,14 +459,14 @@ def generate_progress_report(chapters_completed, total_chapters):
     """
     progress = (chapters_completed / total_chapters) * 100
     report = f"学习进度：{progress:.1f}%\n"
-    
+
     if progress < 30:
         report += "建议：刚开始学习，建议每天坚持1-2小时"
     elif progress < 70:
         report += "建议：进入关键阶段，注意理论结合实践"
     else:
         report += "建议：即将完成，建议复习重点章节"
-    
+
     return report
 
 # 测试
@@ -491,16 +485,16 @@ def auto_grade_exercise(student_code, test_cases):
     score = 0
     max_score = len(test_cases)
     errors = []
-    
+
     # 安全执行学生代码
     try:
         exec_globals = {}
         exec(student_code, exec_globals)
         solution = exec_globals.get('solution')
-        
+
         if not solution:
             return 0, "未找到solution函数"
-            
+
         for input_data, expected in test_cases:
             try:
                 result = solution(*input_data)
@@ -510,10 +504,10 @@ def auto_grade_exercise(student_code, test_cases):
                     errors.append(f"输入{input_data}，期望{expected}，得到{result}")
             except Exception as e:
                 errors.append(f"输入{input_data}时出错：{str(e)}")
-                
+
     except Exception as e:
         return 0, f"代码执行错误：{str(e)}"
-    
+
     return (score/max_score)*100, "\n".join(errors)
 
 # 测试
@@ -548,12 +542,12 @@ def recommend_resources(user_level, interests):
             "自然语言处理": ["GPT系列研究", "大模型微调"]
         }
     }
-    
+
     recommendations = []
     for interest in interests:
         if interest in resources[user_level]:
             recommendations.extend(resources[user_level][interest])
-    
+
     return recommendations if recommendations else ["建议探索新领域"]
 
 # 测试
@@ -565,11 +559,9 @@ print(recommendate_resources("中级", ["机器学习", "自然语言处理"]))
 
 ### 1：某高校计算机系深度学习课程改革
 
- 1：某高校计算机系深度学习课程改革
-
 **背景**: 某高校计算机系计划将原有的研究生选修课《深度学习基础》升级为必修课。原有的课程内容主要基于英文教材和 PyTorch 官方文档，对于初学者来说，英文教材阅读门槛较高，且文档缺乏系统性的教学引导，导致学生上手困难，教学进度缓慢。
 
-**问题**: 
+**问题**:
 1. 缺乏适合中国学生的系统性中文教学材料。
 2. 理论知识与代码实践之间存在脱节，学生难以理解数学公式背后的代码实现。
 3. 缺乏统一的实验环境配置指南，学生在环境搭建上浪费了大量时间。
@@ -579,7 +571,7 @@ print(recommendate_resources("中级", ["机器学习", "自然语言处理"]))
 2. 使用 d2l-zh 提供的 Jupyter Notebook 笔记本作为课件和实验作业的基础。
 3. 指导学生利用 d2l-zh 社区提供的 Docker 镜像和 Colab 教程，统一实验环境。
 
-**效果**: 
+**效果**:
 1. 课程通过率提升了 20%，学生反馈中文教材极大降低了学习门槛。
 2. 实验作业完成质量显著提高，学生能够更快地复现经典论文（如 ResNet, BERT）的核心代码。
 3. 教师减少了约 30% 的答疑时间（主要涉及环境配置和基础语法），将精力更多集中在算法原理讲解上。
@@ -588,11 +580,9 @@ print(recommendate_resources("中级", ["机器学习", "自然语言处理"]))
 
 ### 2：金融科技公司算法团队内部培训
 
- 2：金融科技公司算法团队内部培训
-
 **背景**: 一家专注于量化交易的金融科技公司，其后台开发团队熟悉传统的 C++ 和 Java 开发，但缺乏深度学习背景。随着公司业务向智能投顾方向发展，需要快速让后端工程师掌握深度学习模型，以便将模型集成到现有的交易系统中。
 
-**问题**: 
+**问题**:
 1. 传统工程师转型学习 AI 时，面对繁杂的框架（如 TensorFlow, PyTorch）选择困难。
 2. 网上教程良莠不齐，很多教程过于侧重“调包”，缺乏对底层原理和模型训练过程的深入解析，导致工程师在实际优化模型时无从下手。
 3. 团队需要一种高效的、基于项目的学习方式。
@@ -602,7 +592,7 @@ print(recommendate_resources("中级", ["机器学习", "自然语言处理"]))
 2. 结合公司实际业务数据，模仿 d2l-zh 中的案例结构，构建房价预测和时序数据预测模型。
 3. 利用 d2l-zh 对 Gluon 和 PyTorch 的双语支持，团队最终选定 PyTorch 作为主力框架，并参考书中代码规范制定了内部的代码风格指南。
 
-**效果**: 
+**效果**:
 1. 在 2 个月内，团队成功从零搭建了第一个基于 LSTM 的市场情绪分析原型系统。
 2. 工程师不仅学会了调用 API，还掌握了如何自定义层和优化器，解决了模型在特定数据集上不收敛的问题。
 3. 建立了标准化的模型开发流程，代码可维护性大幅提升。
@@ -611,21 +601,19 @@ print(recommendate_resources("中级", ["机器学习", "自然语言处理"]))
 
 ### 3：医疗影像创业公司模型选型与验证
 
- 3：医疗影像创业公司模型选型与验证
-
 **背景**: 一家处于 A 轮融资阶段的医疗影像初创公司，核心产品是基于 CT 影像的辅助诊断系统。由于医疗数据标注成本极高且涉及隐私，公司需要在有限的算力和数据下，快速验证不同模型架构（如 3D CNN 与 Vision Transformer）的可行性。
 
-**问题**: 
+**问题**:
 1. 研究人员对最新的 Transformer 架构理解不深，且官方论文代码往往晦涩难懂，难以快速复现。
 2. 需要一个代码结构清晰、易于修改的基准代码，以便替换不同的骨干网络进行对比实验。
 3. 团队成员背景多元，需要统一的代码库来协作。
 
-**解决方案**: 
+**解决方案**:
 1. 研发团队参考 d2l-zh 中关于“注意力机制”和“现代卷积神经网络”的章节，快速理解了 ViT（Vision Transformer）和 ResNet 的核心实现逻辑。
 2. 直接基于 d2l-zh 提供的简洁代码片段进行修改，构建了适合小样本医疗数据的实验框架。
 3. 利用书中关于“数值稳定性”和“梯度消失/爆炸”的知识点，优化了深层网络的训练稳定性。
 
-**效果**: 
+**效果**:
 1. 仅用 3 周时间就完成了 ResNet-50 与 Swin Transformer 在公司私有数据集上的对比验证，比预期提前了 1 周。
 2. 通过复现书中的技巧（如混合精度训练），在显存受限的情况下，成功将训练 Batch Size 翻倍，加速了模型迭代周期。
 3. 最终选定的模型架构在保持精度的同时，推理延迟降低了 15%，满足了临床部署的实时性要求。
@@ -668,7 +656,7 @@ print(recommendate_resources("中级", ["机器学习", "自然语言处理"]))
 3. 激活环境并安装依赖：`pip install d2l torch torchvision`
 4. 验证安装：运行 `python -c "import d2l; print(d2l.__version__)"`
 
-**注意事项**: 
+**注意事项**:
 - 确保 PyTorch 版本与 CUDA 版本兼容
 - 定期更新依赖包但保持主版本稳定
 
@@ -684,7 +672,7 @@ print(recommendate_resources("中级", ["机器学习", "自然语言处理"]))
 3. 启动服务：`jupyter lab`
 4. 安装中文支持包（可选）：`pip install jupyterlab-language-pack-zh-CN`
 
-**注意事项**: 
+**注意事项**:
 - 为不同章节创建独立的工作目录
 - 定期清理不必要的输出单元格
 
@@ -700,7 +688,7 @@ print(recommendate_resources("中级", ["机器学习", "自然语言处理"]))
 3. 遇到错误时，使用 `%debug` 进入调试模式
 4. 对关键步骤添加断点和日志输出
 
-**注意事项**: 
+**注意事项**:
 - GPU 内存不足时，可减小批量大小
 - 长时间训练任务建议使用脚本而非 Notebook
 
@@ -716,7 +704,7 @@ print(recommendate_resources("中级", ["机器学习", "自然语言处理"]))
 3. 使用分支管理个人修改：`git checkout -b my-notes`
 4. 合并更新前先解决冲突
 
-**注意事项**: 
+**注意事项**:
 - 保留重要笔记的备份
 - 关注项目 Release Notes 了解重大变更
 
@@ -732,7 +720,7 @@ print(recommendate_resources("中级", ["机器学习", "自然语言处理"]))
 3. 提交 PR 前先搜索是否已有类似修改
 4. 参与翻译或文档改进工作
 
-**注意事项**: 
+**注意事项**:
 - 遵守社区行为准则
 - 提问前先查阅文档和已有 Issues
 
@@ -748,7 +736,7 @@ print(recommendate_resources("中级", ["机器学习", "自然语言处理"]))
 3. 数据加载使用多进程：`DataLoader(num_workers=4)`
 4. 对重复计算使用缓存机制
 
-**注意事项**: 
+**注意事项**:
 - 避免在循环中重复创建张量
 - 大型数据集使用内存映射文件
 
@@ -764,7 +752,7 @@ print(recommendate_resources("中级", ["机器学习", "自然语言处理"]))
 3. 实现关键算法的简化版本
 4. 建立个人知识图谱关联各章节内容
 
-**注意事项**: 
+**注意事项**:
 - 理论与实践相结合，每章至少运行一个示例
 - 定期回顾早期内容巩固基础
 
@@ -782,7 +770,7 @@ print(recommendate_resources("中级", ["机器学习", "自然语言处理"]))
 3. 修改HTML中的资源链接指向CDN域名
 4. 启用HTTPS和HTTP/2协议
 
-**预期效果**: 
+**预期效果**:
 - 静态资源加载速度提升40%-60%
 - 服务器带宽成本降低30%-50%
 
@@ -882,7 +870,7 @@ print(recommendate_resources("中级", ["机器学习", "自然语言处理"]))
 - NumPy和Pandas官方文档
 - LeetCode简单题练习
 
-**学习建议**: 
+**学习建议**:
 - 每天安排1-2小时学习数学概念
 - 通过实际编程练习巩固数学知识
 - 建立自己的代码库记录常用函数
@@ -906,7 +894,7 @@ print(recommendate_resources("中级", ["机器学习", "自然语言处理"]))
 - Kaggle入门竞赛
 - d2l-zh前几章内容
 
-**学习建议**: 
+**学习建议**:
 - 每学完一个算法立即实现代码
 - 使用公开数据集进行练习
 - 记录不同算法的适用场景和优缺点
@@ -931,7 +919,7 @@ print(recommendate_resources("中级", ["机器学习", "自然语言处理"]))
 - fast.ai课程
 - PyTorch官方教程
 
-**学习建议**: 
+**学习建议**:
 - 从简单的全连接网络开始实现
 - 逐步过渡到CNN和RNN
 - 使用GPU加速训练过程
@@ -957,7 +945,7 @@ print(recommendate_resources("中级", ["机器学习", "自然语言处理"]))
 - TensorFlow/PyTorch高级教程
 - DeepLearning.AI专项课程
 
-**学习建议**: 
+**学习建议**:
 - 复现经典论文中的模型
 - 尝试改进现有模型
 - 学习模型压缩和加速技术
@@ -983,7 +971,7 @@ print(recommendate_resources("中级", ["机器学习", "自然语言处理"]))
 - 领域顶会论文（CVPR/ACL/ICML等）
 - 工业界技术博客
 
-**学习建议**: 
+**学习建议**:
 - 选择感兴趣的方向深入钻研
 - 参与开源项目贡献代码
 - 定期总结项目经验
@@ -994,37 +982,25 @@ print(recommendate_resources("中级", ["机器学习", "自然语言处理"]))
 
 ### 1: d2l-ai/d2l-zh 是什么项目？
 
-1: d2l-ai/d2l-zh 是什么项目？
-
 **A**: d2l-ai/d2l-zh 是《动手学深度学习》（Dive into Deep Learning）一书的开源代码仓库。该项目由亚马逊资深科学家 Aston Zhang 等人发起，提供了一套基于交互式学习的深度学习教材。它的特点是将文字、数学公式、代码和图表紧密结合在同一个文档中（通常使用 Jupyter Notebook 格式），旨在帮助读者在实践中深入理解深度学习的原理与算法。
 
 ### 2: 这本书支持哪些深度学习框架？
-
-2: 这本书支持哪些深度学习框架？
 
 **A**: 该项目提供了多个版本以适配不同的主流深度学习框架。目前主要支持 Apache MXNet、PyTorch 和 TensorFlow。用户可以根据自己的学习需求或开发环境，在 GitHub 仓库中切换到对应的分支（如 `pytorch` 分支或 `tensorflow` 分支）来获取相应框架的代码和教学内容。
 
 ### 3: 如何在本地运行和阅读这本书的代码？
 
-3: 如何在本地运行和阅读这本书的代码？
-
 **A**: 运行该项目的代码通常需要配置 Python 环境。推荐使用 Anaconda 来管理环境，并安装相应的深度学习框架（如 PyTorch 或 TensorFlow）以及 `d2l` 软件包。安装完成后，你可以通过克隆 GitHub 仓库下载源码，然后在本地启动 Jupyter Notebook 或 JupyterLab，打开 `.ipynb` 文件即可一边阅读理论，一边运行代码块进行实验。
 
 ### 4: d2l-zh 和 d2l-en 有什么区别？
-
-4: d2l-zh 和 d2l-en 有什么区别？
 
 **A**: `d2l-zh` 是该项目的中文版仓库，主要包含简体中文的翻译内容以及针对中文读者的优化；而 `d2l-en` 是英文原版仓库。两者的核心内容和代码逻辑基本一致，但更新进度可能略有不同。通常建议中文用户使用 `d2l-zh`，以便获得更好的阅读体验和本地化的社区支持。
 
 ### 5: 遇到代码报错或环境配置问题该如何解决？
 
-5: 遇到代码报错或环境配置问题该如何解决？
-
 **A**: 深度学习框架更新频繁，可能会导致旧版教材代码出现兼容性问题。首先建议检查代码仓库的 `Issue` 板块，通常会有其他用户讨论类似的报错。其次，确保安装了正确版本的框架和依赖库（查看仓库根目录下的 `requirements.txt` 或安装说明）。如果问题依然存在，可以尝试在 GitHub Issues 中提出详细的问题描述和错误日志，维护者或社区成员通常会提供帮助。
 
 ### 6: 除了阅读代码，还有其他学习资源吗？
-
-6: 除了阅读代码，还有其他学习资源吗？
 
 **A**: 除了 GitHub 上的代码和文档，该项目还提供了配套的教学视频。这些视频通常由书籍作者录制，可以在 Bilibili 或 YouTube 等视频平台上找到。此外，官方还提供了在线阅读版，用户无需配置本地环境，直接在浏览器中即可查看教材并运行代码。
 ## 实践建议
@@ -1071,7 +1047,6 @@ print(recommendate_resources("中级", ["机器学习", "自然语言处理"]))
 
 ---
 
----
 ## 站内链接
 
 - 分类： [开源生态](/categories/%E5%BC%80%E6%BA%90%E7%94%9F%E6%80%81/) / [数据](/categories/%E6%95%B0%E6%8D%AE/)

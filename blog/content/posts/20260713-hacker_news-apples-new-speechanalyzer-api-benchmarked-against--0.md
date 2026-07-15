@@ -23,10 +23,9 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Apple语音分析API与Whisper基准测试对比
-
+description: Apple新推出的SpeechAnalyzer在基准测试中表现出比Whisper更低的延迟和相近的准确率，但其在真实设备和多语言场景下的表现仍存在局限。
+  事实陈述 文章给出的基准显示，SpeechAnalyzer在英文短句的词错误率（WER）约为5.2%，与Whisper的5.8%相当。 测试环境为MacBook
+  Pro M2，使用内部测试集，且只评估了实时流式转写。
 ---
 
 ## 基本信息
@@ -83,7 +82,6 @@ Apple新推出的SpeechAnalyzer在基准测试中表现出比Whisper更低的延
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

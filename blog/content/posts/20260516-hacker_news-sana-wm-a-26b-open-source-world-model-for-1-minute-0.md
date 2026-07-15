@@ -16,7 +16,7 @@ categories:
 - 大模型
 - 开源生态
 source: hacker_news
-description: SANA-WM 是一款参数规模为 2.6B 的开源世界模型，能够在单次推理中生成时长约 1 分钟、分辨率 720p 的视频内容。相比传统的视频合成方法，它在算力需求与生成质量之间取得了更佳平衡，为研究者和开发者提供了快速构建交互式场景或原型演示的可行方案。本文将解析其核心架构设计、关键训练策略以及在多项基准测试中的表现
+description: SANA-WM 是一款参数规模为 2.6B 的开源世界模型，能够在单次推理中生成时长约 1 分钟、分辨率 720p 的视频内容。相比传统的视频合成方法，它在算力需求与生成质量之间取得了更佳平衡，为研究者和开发者提供了快速构建交互式场景或原型演示的可行方案。本文将解析其核心架构设计、关键训练策略以及在多项基准测试中的表现，帮助读者快速上手并评估该模型在实际项目中的适用性。
 external_url: https://nvlabs.github.io/Sana/WM
 scenarios:
 - AI/ML项目
@@ -24,10 +24,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# SANA-WM开源世界模型：26亿参数生成1分钟720p视频
-
 ---
 
 ## 基本信息
@@ -86,7 +82,6 @@ SANA-WM是一个参数量为26亿的开源世界模型，支持生成720p分辨�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [开源生态](/categories/%E5%BC%80%E6%BA%90%E7%94%9F%E6%80%81/)

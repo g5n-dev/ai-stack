@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Nemotron 3 Nano 4B：面向高效本地 AI 的紧凑混合模型
-
----
-
 ## 基本信息
 
 - **来源**: Hugging Face Blog (blog)

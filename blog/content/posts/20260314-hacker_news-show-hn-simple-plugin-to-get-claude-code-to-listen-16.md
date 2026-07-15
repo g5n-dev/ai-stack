@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 让 Claude Code 支持语音输入的简易插件
-
----
-
 ## 基本信息
 
 - **作者**: itsankur

@@ -16,8 +16,8 @@ categories:
 - 大模型
 - 论文
 source: arxiv
-description: Active Flow Matching (AFM) 是一种新型算法，旨在解决离散扩散和流匹配模型难以与在线黑盒优化框架（如 VSD 和
-  CbAS）直接整合的问题。 **核心原理：** AFM 通过重新构建变分目标函数，使其能够基于流路径上的**条件端点分布**进行操作。这种机制允许利用基于梯度的方法引导流模型向高适应
+description: Active Flow Matching (AFM) 提出了一种旨在解决离散扩散与流匹配模型难以直接整合在线黑盒优化问题的算法框架。该方法通过重构基于流路径条件端点分布的变分目标函数，利用梯度引导模型向高适应度区域移动，并提供了前向与反向
+  KL 散度变体。实验显示，前向 KL AFM 在蛋白质与小分子设计任务中表现优异，能有效平衡探索与利用。
 external_url: http://arxiv.org/abs/2603.00877v1
 scenarios:
 - Web应用开发
@@ -25,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Active Flow Matching：一种高效的生成模型训练范式
-
 ---
 
 ## 基本信息

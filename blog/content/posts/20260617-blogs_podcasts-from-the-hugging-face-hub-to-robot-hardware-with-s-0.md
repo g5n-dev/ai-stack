@@ -16,7 +16,7 @@ categories:
 - AI 工程
 - 开源生态
 source: blogs_podcasts
-description: 本文探讨如何将 Hugging Face Hub 上的模型与 Strands Agents 框架以及 LeRobot 机器人硬件直接对接，实现从模型训练到现场控制的完整流程。通过实际案例，演示模型加载、任务编排和硬件驱动的关键步骤，帮助开发者快速搭建可部署的机器人系统。阅读后，读者将掌握端到端的实现思路与常见坑的解决方
+description: 本文探讨如何将 Hugging Face Hub 上的模型与 Strands Agents 框架以及 LeRobot 机器人硬件直接对接，实现从模型训练到现场控制的完整流程。通过实际案例，演示模型加载、任务编排和硬件驱动的关键步骤，帮助开发者快速搭建可部署的机器人系统。阅读后，读者将掌握端到端的实现思路与常见坑的解决方案。
 external_url: https://huggingface.co/blog/amazon/strands-lerobot-hub-to-hardware
 scenarios:
 - AI/ML项目
@@ -24,10 +24,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Strands Agents和LeRobot打通HF Hub与机器人硬件
-
 ---
 
 ## 基本信息
@@ -122,7 +118,6 @@ Strands Agents 与 LeRobot 通过把 Hugging Face Hub 上的模型、策�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [开源生态](/categories/%E5%BC%80%E6%BA%90%E7%94%9F%E6%80%81/)

@@ -1,5 +1,6 @@
 ---
-title: 'MARTI-MARS$^2$: Scaling Multi-Agent Self-Search via Rei'
+title: 'MARTI-MARS$^2$: Scaling Multi-Agent Self-Search via Reinforcement Learning
+  for Code Generation'
 date: 2026-02-10 03:34:40+08:00
 draft: false
 entry_kind: auto
@@ -9,9 +10,7 @@ tags:
 categories:
 - 论文
 source: arxiv
-description: 本文介绍了 **MARTI-MARS$^2$**，一种结合强化学习与多智能体树搜索的代码生成框架，旨在突破单一大语言模型（LLM）的性能瓶颈。
-  核心问题与动机 单智能体系统在复杂代码生成任务中面临性能天花板。现有的多智能体框架通常依赖基于提示词的交互或同质化参数训练，缺乏有效的错误纠正能力和策略多样性。
-  方法创新 MA
+description: 本文介绍了 MARTI-MARS$^2$，一种结合强化学习与多智能体树搜索的代码生成框架，旨在突破单一大语言模型（LLM）的性能瓶颈。 单智能体系统在复杂代码生成任务中面临性能天花板。现有的多智能体框架通常依赖基于提示词的交互或同质化参数训练，缺乏有效的错误纠正能力和策略多样性。
 external_url: http://arxiv.org/abs/2602.07848v1
 scenarios:
 - Web应用开发
@@ -19,10 +18,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# MARTI-MARS$^2$: Scaling Multi-Agent Self-Search via Reinforcement Learning for Code Generation
-
 ---
 
 ## 基本信息
@@ -64,7 +59,6 @@ MARTI-MARS$^2$ 将多智能体协作探索过程构建为一个动态且可学�
 ---
 
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/)

@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 从Vibe编码原型到可用产品仅需100小时
-
----
-
 ## 基本信息
 
 - **作者**: kiwieater

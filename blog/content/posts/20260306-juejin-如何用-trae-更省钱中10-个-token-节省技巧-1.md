@@ -16,9 +16,9 @@ categories:
 - AI 工程
 - 效率与方法论
 source: juejin
-description: 以下是对文中核心内容的简洁总结： 本文旨在指导用户如何通过优化 Prompt（提示词）来降低 TRAE 的使用成本。内容基于“AI Coding
-  六问心法”的逻辑框架，提炼出了 **10 个具体的 Token 节省技巧**。 核心原则是：**减少冗余输入，精准传达意图。** 以下是具体技巧总结： **一、
-  优化 Pro
+description: 在 AI 辅助编程日益普及的当下，Token 消耗直接关系到开发成本与运行效率。本文承接上篇内容，从“六问心法”的底层逻辑出发，梳理了 10
+  个针对具体场景的节省技巧。通过阅读，你将掌握一套系统化的提示词优化方法，在保证代码质量的同时，有效降低 TRAE 的使用费用。 以下是对文中核心内容的简洁总结：
+  本文旨在指导用户如何通过优化 Prompt（提示词）来降低 TRAE 的使用成本。
 external_url: https://juejin.cn/post/7613709178717962275
 scenarios:
 - AI/ML项目
@@ -27,10 +27,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# TRAE省钱指南：基于AI Coding心法的10个Token节省技巧
-
 ---
 
 ## 基本信息

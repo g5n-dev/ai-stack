@@ -17,7 +17,7 @@ categories:
 - 论文
 source: arxiv
 description: HyCOP是一种模块化框架，用于学习参数化偏微分方程（PDE）解算子。它把求解过程分解为若干基本模块——如平流、扩散、学习闭合项以及边界处理——并通过查询条件化的策略决定在何时调用哪个模块以及持续多长时间。策略本身通过对
-  regime 特征和状态统计进行条件化学习，而非一次性映射整个输入输出。与传统的单体神经网络算子不
+  regime 特征和状态统计进行条件化学习，而非一次性映射整个输入输出。
 external_url: http://arxiv.org/abs/2605.00820v1
 scenarios:
 - Web应用开发
@@ -27,10 +27,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 混合组合算子实现偏微分方程可解释学习
-
 ---
 
 ## 基本信息
@@ -116,7 +112,6 @@ HyCOP的模块化架构适用于多尺度耦合PDE、实时控制场景以及需
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

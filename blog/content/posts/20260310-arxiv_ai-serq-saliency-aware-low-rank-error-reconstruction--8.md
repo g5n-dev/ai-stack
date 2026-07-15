@@ -16,7 +16,7 @@ categories:
 - 大模型
 - 论文
 source: arxiv
-description: '**SERQ：基于显著性感知的低秩误差重建LLM量化方法总结** **背景与问题：** 训练后量化（PTQ）是降低大语言模型（LLM）部署成本的主流技术。现有方法常利用低秩适应（LoRA）来重建量化误差，但在W4A4（4位权重和4位激活）的高压缩设置下，现有方法往往面临严重的精度下降。此外，传统的低秩适应依赖两个连续因'
+description: 针对大语言模型在 W4A4 等高压缩比量化场景下易出现精度损失的问题，本文提出了一种名为 SERQ 的显著性感知低秩误差重建方法。该方法通过引入单一低秩补偿矩阵，联合缓解权重与激活的量化误差，并利用离线置换策略规避推理过程中的中间量化操作。实验表明，该方法在几乎不增加推理延迟的前提下有效提升了模型精度，但其具体的离线处理流程细节无法从摘要确认。
 external_url: http://arxiv.org/abs/2603.08185v1
 scenarios:
 - 大语言模型
@@ -24,10 +24,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# SERQ：基于显著性感知的低秩误差重构LLM量化方法
-
 ---
 
 ## 基本信息

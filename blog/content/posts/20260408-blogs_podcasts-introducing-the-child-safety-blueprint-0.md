@@ -16,8 +16,8 @@ categories:
 - 安全
 - AI 工程
 source: blogs_podcasts
-description: 目标与意义 OpenAI发布《儿童安全蓝图》，为构建安全、负责任的AI系统提供路线图，旨在保护未成年人免受不良信息侵害，并通过技术和设计赋能青少年在网络空间的安全成长。
-  关键措施 - **安全防护**：在模型训练、内容过滤和滥用检测等环节嵌入多层防护机制； - **年龄适配**：根据不同年龄段的需求设计交互界面和内容呈
+description: 探索OpenAI儿童安全蓝图——一份负责任地构建AI的路线图，包含安全防护措施、年龄适宜的设计，以及多方协作，致力于在网上保护和赋能年轻一代。
+  随着生成式AI在青少年中的渗透，如何在产品层面保障儿童安全已成为技术团队必须直面的课题。OpenAI发布的《儿童安全蓝图》系统阐述了安全防护机制、年龄适配设计以及多方协同的治理框架，旨在为开发者在构建负责任的AI系统时提供可操作的指引。
 external_url: https://openai.com/index/introducing-child-safety-blueprint
 scenarios:
 - AI/ML项目
@@ -25,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# OpenAI儿童安全蓝图：负责任AI开发路线图
-
 ---
 
 ## 基本信息
@@ -99,7 +95,6 @@ OpenAI发布《儿童安全蓝图》，为构建安全、负责任的AI系统提
 
 ---
 
----
 ## 站内链接
 
 - 分类： [安全](/categories/%E5%AE%89%E5%85%A8/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

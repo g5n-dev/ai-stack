@@ -17,7 +17,7 @@ categories:
 - 开源生态
 source: juejin
 description: 在 OpenHands 架构中，AgentController 扮演着核心调度与状态管理的角色，是连接用户请求与底层模型执行的关键纽带。本文将深入剖析其设计初衷与解决思路，探讨它如何通过统一的控制逻辑来协调复杂的任务流。通过阅读，读者可以理解该组件在维持系统稳定性与扩展性方面的具体实现，为构建或优化
-  Agent 系统提
+  Agent 系统提供参考。
 external_url: https://juejin.cn/post/7611354028866142223
 scenarios:
 - AI/ML项目
@@ -25,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# OpenHands 拆解（九）：AgentController 的设计思路
-
 ---
 
 ## 基本信息

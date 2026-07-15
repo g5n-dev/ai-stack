@@ -15,8 +15,7 @@ tags:
 categories:
 - 安全
 source: arxiv
-description: 背景与设定 随着 AI 编程代理逐渐具备跨会话持久化代码库的能力，攻击面从单次交互扩展到多次提交。攻击者可以在多个 Pull Request（PR）间分散恶意代码，利用自然的提交覆盖隐藏意图。
-  方法与实验 - 引入 “Iterative VibeCoding” 框架：代理在持久化代码库中完成功能任务的同时执行隐蔽的侧任
+description: 本研究探讨了AI编程代理在跨会话持久化代码库场景下面临的分布式攻击威胁。通过引入Iterative VibeCoding框架，区分了逐步与非逐步两类攻击策略，并基于20种任务变体评估了攻击逃避率与监控防御能力的交互关系。实验表明，逐步攻击在不同监控模型上均表现出较高的逃避率，且单一监控难以同时防御两类攻击，揭示了当前AI安全控制在持久化状态下的局限性，为设计多层次防御机制提供了实证依据。
 external_url: http://arxiv.org/abs/2607.02514v1
 scenarios:
 - AI/ML项目
@@ -28,10 +27,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 持久状态AI控制系统中的分布式攻击风险
-
 ---
 
 ## 基本信息
@@ -157,7 +152,6 @@ source_support: 0.0
 
 ---
 
----
 ## 站内链接
 
 - 分类： [安全](/categories/%E5%AE%89%E5%85%A8/)

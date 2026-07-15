@@ -1,8 +1,8 @@
 {
-  "active_count": 1992,
-  "archived_count": 379,
+  "active_count": 1922,
+  "archived_count": 448,
   "complete_count": 0,
-  "legacy_analysis_count": 1981,
+  "legacy_analysis_count": 1910,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
       "reasons": [
@@ -43,8 +43,10 @@
       "status": "archived"
     },
     "posts/20260125-arxiv_ai-pyratok-language-aligned-pyramidal-tokenizer-for-v-1.md": {
-      "reasons": [],
-      "status": "legacy_analysis"
+      "reasons": [
+        "archived_content"
+      ],
+      "status": "archived"
     },
     "posts/20260125-arxiv_ai-structured-hints-for-sample-efficient-lean-theorem-8.md": {
       "reasons": [
@@ -119,8 +121,10 @@
       "status": "legacy_analysis"
     },
     "posts/20260125-github_trending-matsuridayo-nekoray-1.md": {
-      "reasons": [],
-      "status": "legacy_analysis"
+      "reasons": [
+        "archived_content"
+      ],
+      "status": "archived"
     },
     "posts/20260125-github_trending-pure-admin-vue-pure-admin-2.md": {
       "reasons": [],
@@ -131,12 +135,16 @@
       "status": "legacy_analysis"
     },
     "posts/20260125-github_trending-shadow1ng-fscan-7.md": {
-      "reasons": [],
-      "status": "legacy_analysis"
+      "reasons": [
+        "archived_content"
+      ],
+      "status": "archived"
     },
     "posts/20260125-github_trending-skywind3000-kcp-8.md": {
-      "reasons": [],
-      "status": "legacy_analysis"
+      "reasons": [
+        "archived_content"
+      ],
+      "status": "archived"
     },
     "posts/20260125-github_trending-soybeanjs-soybean-admin-3.md": {
       "reasons": [],
@@ -215,8 +223,10 @@
       "status": "archived"
     },
     "posts/20260125-hacker_news-postmortem-our-first-vleo-satellite-mission-with-i-7.md": {
-      "reasons": [],
-      "status": "legacy_analysis"
+      "reasons": [
+        "archived_content"
+      ],
+      "status": "archived"
     },
     "posts/20260125-hacker_news-raspberry-pi-drag-race-pi-1-to-pi-5-performance-co-14.md": {
       "reasons": [],
@@ -277,8 +287,10 @@
       "status": "archived"
     },
     "posts/20260126-arxiv_ai-bono-bench-a-comprehensive-test-suite-for-bi-objec-4.md": {
-      "reasons": [],
-      "status": "legacy_analysis"
+      "reasons": [
+        "archived_content"
+      ],
+      "status": "archived"
     },
     "posts/20260126-arxiv_ai-empowering-medical-equipment-sustainability-in-low-5.md": {
       "reasons": [],
@@ -321,20 +333,26 @@
       "status": "archived"
     },
     "posts/20260126-github_trending-didi-logicflow-3.md": {
-      "reasons": [],
-      "status": "legacy_analysis"
+      "reasons": [
+        "archived_content"
+      ],
+      "status": "archived"
     },
     "posts/20260126-github_trending-fanmingming-live-1.md": {
-      "reasons": [],
-      "status": "legacy_analysis"
+      "reasons": [
+        "archived_content"
+      ],
+      "status": "archived"
     },
     "posts/20260126-github_trending-gaotianliuyun-gao-7.md": {
       "reasons": [],
       "status": "legacy_analysis"
     },
     "posts/20260126-github_trending-halo-dev-halo-4.md": {
-      "reasons": [],
-      "status": "legacy_analysis"
+      "reasons": [
+        "archived_content"
+      ],
+      "status": "archived"
     },
     "posts/20260126-github_trending-joeanamier-tiktokdownloader-8.md": {
       "reasons": [],
@@ -365,8 +383,10 @@
       "status": "legacy_analysis"
     },
     "posts/20260126-hacker_news-a-static-site-generator-written-in-posix-shell-5.md": {
-      "reasons": [],
-      "status": "legacy_analysis"
+      "reasons": [
+        "archived_content"
+      ],
+      "status": "archived"
     },
     "posts/20260126-hacker_news-after-two-years-of-vibecoding-im-back-to-writing-b-2.md": {
       "reasons": [],
@@ -543,8 +563,10 @@
       "status": "archived"
     },
     "posts/20260126-hacker_news-the-holy-grail-of-linux-binary-compatibility-musl--2.md": {
-      "reasons": [],
-      "status": "legacy_analysis"
+      "reasons": [
+        "archived_content"
+      ],
+      "status": "archived"
     },
     "posts/20260126-hacker_news-the-mountain-that-weighed-the-earth-8.md": {
       "reasons": [
@@ -585,8 +607,10 @@
       "status": "legacy_analysis"
     },
     "posts/20260126-hacker_news-vibe-coding-kills-open-source-11.md": {
-      "reasons": [],
-      "status": "legacy_analysis"
+      "reasons": [
+        "archived_content"
+      ],
+      "status": "archived"
     },
     "posts/20260126-hacker_news-video-games-as-art-10.md": {
       "reasons": [
@@ -611,8 +635,10 @@
       "status": "archived"
     },
     "posts/20260126-hacker_news-you-can-just-port-things-to-cloudflare-workers-6.md": {
-      "reasons": [],
-      "status": "legacy_analysis"
+      "reasons": [
+        "archived_content"
+      ],
+      "status": "archived"
     },
     "posts/20260127-arxiv_ai-ctelm-decoding-and-manipulating-embeddings-of-clin-0.md": {
       "reasons": [],
@@ -643,12 +669,16 @@
       "status": "legacy_analysis"
     },
     "posts/20260127-arxiv_ai-subword-based-comparative-linguistics-across-242-l-3.md": {
-      "reasons": [],
-      "status": "legacy_analysis"
+      "reasons": [
+        "archived_content"
+      ],
+      "status": "archived"
     },
     "posts/20260127-arxiv_ai-teaching-models-to-teach-themselves-reasoning-at-t-9.md": {
-      "reasons": [],
-      "status": "legacy_analysis"
+      "reasons": [
+        "archived_content"
+      ],
+      "status": "archived"
     },
     "posts/20260127-arxiv_ai-unsupervised-text-segmentation-via-kernel-change-p-5.md": {
       "reasons": [
@@ -689,8 +719,10 @@
       "status": "legacy_analysis"
     },
     "posts/20260127-github_trending-socialsisteryi-bilibili-api-collect-8.md": {
-      "reasons": [],
-      "status": "legacy_analysis"
+      "reasons": [
+        "archived_content"
+      ],
+      "status": "archived"
     },
     "posts/20260127-hacker_news-430k-year-old-well-preserved-wooden-tools-are-the--0.md": {
       "reasons": [],
@@ -701,8 +733,10 @@
       "status": "legacy_analysis"
     },
     "posts/20260127-hacker_news-a-list-of-fun-destinations-for-telnet-3.md": {
-      "reasons": [],
-      "status": "legacy_analysis"
+      "reasons": [
+        "archived_content"
+      ],
+      "status": "archived"
     },
     "posts/20260127-hacker_news-a-simulation-where-life-unfolds-in-real-time-6.md": {
       "reasons": [],
@@ -715,8 +749,10 @@
       "status": "archived"
     },
     "posts/20260127-hacker_news-ai2-open-coding-agents-11.md": {
-      "reasons": [],
-      "status": "legacy_analysis"
+      "reasons": [
+        "archived_content"
+      ],
+      "status": "archived"
     },
     "posts/20260127-hacker_news-amazon-to-shut-down-all-amazon-go-and-amazon-fresh-5.md": {
       "reasons": [
@@ -755,8 +791,10 @@
       "status": "legacy_analysis"
     },
     "posts/20260127-hacker_news-dithering-part-2-the-ordered-dithering-5.md": {
-      "reasons": [],
-      "status": "legacy_analysis"
+      "reasons": [
+        "archived_content"
+      ],
+      "status": "archived"
     },
     "posts/20260127-hacker_news-fbi-is-investigating-minnesota-signal-chats-tracki-5.md": {
       "reasons": [
@@ -803,8 +841,10 @@
       "status": "archived"
     },
     "posts/20260127-hacker_news-kimi-released-kimi-k25-open-source-visual-sota-age-2.md": {
-      "reasons": [],
-      "status": "legacy_analysis"
+      "reasons": [
+        "archived_content"
+      ],
+      "status": "archived"
     },
     "posts/20260127-hacker_news-knapsack-offline-internet-solution-satellite-datac-19.md": {
       "reasons": [
@@ -911,12 +951,16 @@
       "status": "archived"
     },
     "posts/20260127-hacker_news-the-enchiridion-by-epictetus-12.md": {
-      "reasons": [],
-      "status": "legacy_analysis"
+      "reasons": [
+        "archived_content"
+      ],
+      "status": "archived"
     },
     "posts/20260127-hacker_news-the-hidden-engineering-of-runways-3.md": {
-      "reasons": [],
-      "status": "legacy_analysis"
+      "reasons": [
+        "archived_content"
+      ],
+      "status": "archived"
     },
     "posts/20260127-hacker_news-the-threat-eating-away-at-museum-treasures-19.md": {
       "reasons": [
@@ -983,8 +1027,10 @@
       "status": "archived"
     },
     "posts/20260128-arxiv_ai-calibration-without-ground-truth-9.md": {
-      "reasons": [],
-      "status": "legacy_analysis"
+      "reasons": [
+        "archived_content"
+      ],
+      "status": "archived"
     },
     "posts/20260128-arxiv_ai-evaluation-of-oncotimia-an-llm-based-system-for-su-0.md": {
       "reasons": [
@@ -1387,8 +1433,10 @@
       "status": "legacy_analysis"
     },
     "posts/20260130-arxiv_ai-ewsjf-an-adaptive-scheduler-with-hybrid-partitioni-2.md": {
-      "reasons": [],
-      "status": "legacy_analysis"
+      "reasons": [
+        "archived_content"
+      ],
+      "status": "archived"
     },
     "posts/20260130-arxiv_ai-exploring-reasoning-reward-model-for-agents-4.md": {
       "reasons": [],
@@ -1501,8 +1549,10 @@
       "status": "legacy_analysis"
     },
     "posts/20260131-hacker_news-autonomous-cars-drones-cheerfully-obey-prompt-inje-17.md": {
-      "reasons": [],
-      "status": "legacy_analysis"
+      "reasons": [
+        "archived_content"
+      ],
+      "status": "archived"
     },
     "posts/20260131-hacker_news-claude-code-is-your-customer-16.md": {
       "reasons": [
@@ -1661,8 +1711,10 @@
       "status": "legacy_analysis"
     },
     "posts/20260203-arxiv_ai-agentrx-diagnosing-ai-agent-failures-from-executio-8.md": {
-      "reasons": [],
-      "status": "legacy_analysis"
+      "reasons": [
+        "archived_content"
+      ],
+      "status": "archived"
     },
     "posts/20260203-arxiv_ai-dealog-decentralized-multi-agents-log-mediated-rea-4.md": {
       "reasons": [
@@ -1717,16 +1769,20 @@
       "status": "archived"
     },
     "posts/20260203-arxiv_ai-reasoning-and-tool-use-compete-in-agentic-rlfrom-q-5.md": {
-      "reasons": [],
-      "status": "legacy_analysis"
+      "reasons": [
+        "archived_content"
+      ],
+      "status": "archived"
     },
     "posts/20260203-arxiv_ai-reliable-use-of-lemmas-via-eligibility-reasoning-a-2.md": {
       "reasons": [],
       "status": "legacy_analysis"
     },
     "posts/20260203-arxiv_ai-reward-free-alignment-for-conflicting-objectives-0.md": {
-      "reasons": [],
-      "status": "legacy_analysis"
+      "reasons": [
+        "archived_content"
+      ],
+      "status": "archived"
     },
     "posts/20260203-arxiv_ai-rlanything-forge-environment-policy-and-reward-mod-3.md": {
       "reasons": [],
@@ -1805,8 +1861,10 @@
       "status": "legacy_analysis"
     },
     "posts/20260203-hacker_news-training-a-trillion-parameter-model-to-be-funny-15.md": {
-      "reasons": [],
-      "status": "legacy_analysis"
+      "reasons": [
+        "archived_content"
+      ],
+      "status": "archived"
     },
     "posts/20260203-hacker_news-xcode-263-unlocks-the-power-of-agentic-coding-1.md": {
       "reasons": [],
@@ -1909,8 +1967,10 @@
       "status": "legacy_analysis"
     },
     "posts/20260204-hacker_news-writing-an-optimizing-tensor-compiler-from-scratch-18.md": {
-      "reasons": [],
-      "status": "legacy_analysis"
+      "reasons": [
+        "archived_content"
+      ],
+      "status": "archived"
     },
     "posts/20260205-arxiv_ai-contrastive-continual-learning-for-model-adaptabil-2.md": {
       "reasons": [],
@@ -1921,8 +1981,10 @@
       "status": "legacy_analysis"
     },
     "posts/20260205-arxiv_ai-cross-a-continual-robotic-simulation-suite-for-sca-6.md": {
-      "reasons": [],
-      "status": "legacy_analysis"
+      "reasons": [
+        "archived_content"
+      ],
+      "status": "archived"
     },
     "posts/20260205-arxiv_ai-multi-head-latentmoe-and-head-parallel-communicati-5.md": {
       "reasons": [],
@@ -2097,8 +2159,10 @@
       "status": "legacy_analysis"
     },
     "posts/20260206-arxiv_ai-wedge-sampling-efficient-tensor-completion-with-ne-0.md": {
-      "reasons": [],
-      "status": "legacy_analysis"
+      "reasons": [
+        "archived_content"
+      ],
+      "status": "archived"
     },
     "posts/20260206-blogs_podcasts-ainews-openai-and-anthropic-go-to-war-claude-opus--0.md": {
       "reasons": [],
@@ -2177,8 +2241,10 @@
       "status": "legacy_analysis"
     },
     "posts/20260207-hacker_news-installing-ollama-and-gemma-3b-on-linux-12.md": {
-      "reasons": [],
-      "status": "legacy_analysis"
+      "reasons": [
+        "archived_content"
+      ],
+      "status": "archived"
     },
     "posts/20260207-hacker_news-make-trust-irrelevant-a-gamers-take-on-agentic-ai--18.md": {
       "reasons": [],
@@ -2247,8 +2313,10 @@
       "status": "legacy_analysis"
     },
     "posts/20260209-arxiv_ai-dreamdojo-a-generalist-robot-world-model-from-larg-4.md": {
-      "reasons": [],
-      "status": "legacy_analysis"
+      "reasons": [
+        "archived_content"
+      ],
+      "status": "archived"
     },
     "posts/20260209-arxiv_ai-endogenous-resistance-to-activation-steering-in-la-8.md": {
       "reasons": [],
@@ -2337,8 +2405,10 @@
       "status": "archived"
     },
     "posts/20260210-arxiv_ai-emergent-misalignment-is-easy-narrow-misalignment--5.md": {
-      "reasons": [],
-      "status": "legacy_analysis"
+      "reasons": [
+        "archived_content"
+      ],
+      "status": "archived"
     },
     "posts/20260210-arxiv_ai-gebench-benchmarking-image-generation-models-as-gu-7.md": {
       "reasons": [],
@@ -2503,8 +2573,10 @@
       "status": "legacy_analysis"
     },
     "posts/20260211-arxiv_ai-quantum-audit-evaluating-the-reasoning-limits-of-l-6.md": {
-      "reasons": [],
-      "status": "legacy_analysis"
+      "reasons": [
+        "archived_content"
+      ],
+      "status": "archived"
     },
     "posts/20260211-arxiv_ai-statistical-benchmarking-of-transformer-models-in--2.md": {
       "reasons": [],
@@ -2843,8 +2915,10 @@
       "status": "archived"
     },
     "posts/20260213-arxiv_ai-p-genrm-personalized-generative-reward-model-with--5.md": {
-      "reasons": [],
-      "status": "legacy_analysis"
+      "reasons": [
+        "archived_content"
+      ],
+      "status": "archived"
     },
     "posts/20260213-arxiv_ai-scaling-verification-can-be-more-effective-than-sc-0.md": {
       "reasons": [],
@@ -2949,8 +3023,10 @@
       "status": "legacy_analysis"
     },
     "posts/20260213-juejin-本地-ai-助手如何安全暴露到公网ssh-反向隧道实战-4.md": {
-      "reasons": [],
-      "status": "legacy_analysis"
+      "reasons": [
+        "archived_content"
+      ],
+      "status": "archived"
     },
     "posts/20260213-juejin-阿里卷麻了千问-qwen-image-20-发布超强文字渲染信息图ppt-轻松做附实测提示词-1.md": {
       "reasons": [],
@@ -3065,8 +3141,10 @@
       "status": "legacy_analysis"
     },
     "posts/20260215-hacker_news-towards-autonomous-mathematics-research-3.md": {
-      "reasons": [],
-      "status": "legacy_analysis"
+      "reasons": [
+        "archived_content"
+      ],
+      "status": "archived"
     },
     "posts/20260215-hacker_news-two-different-tricks-for-fast-llm-inference-2.md": {
       "reasons": [],
@@ -3201,8 +3279,10 @@
       "status": "legacy_analysis"
     },
     "posts/20260216-juejin-vercel-ai-sdk-使用指南-消息元数据-message-metadata-2.md": {
-      "reasons": [],
-      "status": "legacy_analysis"
+      "reasons": [
+        "archived_content"
+      ],
+      "status": "archived"
     },
     "posts/20260216-juejin-webmcp-时代在浏览器中释放-ai-的工作能力-0.md": {
       "reasons": [],
@@ -3403,8 +3483,10 @@
       "status": "legacy_analysis"
     },
     "posts/20260218-arxiv_ai-solving-parameter-robust-avoid-problems-with-unkno-6.md": {
-      "reasons": [],
-      "status": "legacy_analysis"
+      "reasons": [
+        "archived_content"
+      ],
+      "status": "archived"
     },
     "posts/20260218-arxiv_ai-stabilizing-test-time-adaptation-of-high-dimension-5.md": {
       "reasons": [],
@@ -3487,8 +3569,10 @@
       "status": "legacy_analysis"
     },
     "posts/20260218-juejin-langchainjs-快速上手指南模型接入流式输出打造基础-2.md": {
-      "reasons": [],
-      "status": "legacy_analysis"
+      "reasons": [
+        "archived_content"
+      ],
+      "status": "archived"
     },
     "posts/20260218-juejin-openclaw怎么做到不串台能并行还总回对群-含源码解析-openclaw系列第1期-0.md": {
       "reasons": [],
@@ -3679,8 +3763,10 @@
       "status": "legacy_analysis"
     },
     "posts/20260220-arxiv_ai-pushing-the-frontier-of-black-box-lvlm-attacks-via-7.md": {
-      "reasons": [],
-      "status": "legacy_analysis"
+      "reasons": [
+        "archived_content"
+      ],
+      "status": "archived"
     },
     "posts/20260220-arxiv_ai-sink-aware-pruning-for-diffusion-language-models-0.md": {
       "reasons": [],
@@ -3987,8 +4073,10 @@
       "status": "legacy_analysis"
     },
     "posts/20260223-juejin-0-nano-vllm大模型推理原理和流程-2.md": {
-      "reasons": [],
-      "status": "legacy_analysis"
+      "reasons": [
+        "archived_content"
+      ],
+      "status": "archived"
     },
     "posts/20260223-juejin-2025ai这一年从卷参数到卷落地的转折之年-0.md": {
       "reasons": [],
@@ -4045,8 +4133,10 @@
       "status": "archived"
     },
     "posts/20260224-arxiv_ai-recurrent-structural-policy-gradient-for-partially-6.md": {
-      "reasons": [],
-      "status": "legacy_analysis"
+      "reasons": [
+        "archived_content"
+      ],
+      "status": "archived"
     },
     "posts/20260224-arxiv_ai-retinavision-xai-driven-augmented-regulation-for-p-9.md": {
       "reasons": [
@@ -4203,8 +4293,10 @@
       "status": "legacy_analysis"
     },
     "posts/20260225-arxiv_ai-motivation-is-something-you-need-5.md": {
-      "reasons": [],
-      "status": "legacy_analysis"
+      "reasons": [
+        "archived_content"
+      ],
+      "status": "archived"
     },
     "posts/20260225-arxiv_ai-multi-vector-index-compression-in-any-modality-2.md": {
       "reasons": [
@@ -4529,8 +4621,10 @@
       "status": "legacy_analysis"
     },
     "posts/20260226-juejin-android-平台-ai-agent-技术架构深度解析-3.md": {
-      "reasons": [],
-      "status": "legacy_analysis"
+      "reasons": [
+        "archived_content"
+      ],
+      "status": "archived"
     },
     "posts/20260226-juejin-crawl4aiai时代的数据采集利器从入门到实战-0.md": {
       "reasons": [
@@ -4591,8 +4685,10 @@
       "status": "legacy_analysis"
     },
     "posts/20260227-arxiv_ai-discourse-aware-dual-track-streaming-response-for--0.md": {
-      "reasons": [],
-      "status": "legacy_analysis"
+      "reasons": [
+        "archived_content"
+      ],
+      "status": "archived"
     },
     "posts/20260227-arxiv_ai-flashoptim-optimizers-for-memory-efficient-trainin-5.md": {
       "reasons": [],
@@ -4713,20 +4809,26 @@
       "status": "legacy_analysis"
     },
     "posts/20260227-juejin-ai-视觉连载7传统-cv-之高斯滤波实战-3.md": {
-      "reasons": [],
-      "status": "legacy_analysis"
+      "reasons": [
+        "archived_content"
+      ],
+      "status": "archived"
     },
     "posts/20260227-juejin-dify-构建-fe-工作流前端团队可复用-ai-工作流实战-1.md": {
-      "reasons": [],
-      "status": "legacy_analysis"
+      "reasons": [
+        "archived_content"
+      ],
+      "status": "archived"
     },
     "posts/20260227-juejin-spring-ai-mcp-实战将你的服务升级为-ai-可调用的智能工具-1.md": {
       "reasons": [],
       "status": "legacy_analysis"
     },
     "posts/20260227-juejin-一文搞懂激活函数-1.md": {
-      "reasons": [],
-      "status": "legacy_analysis"
+      "reasons": [
+        "archived_content"
+      ],
+      "status": "archived"
     },
     "posts/20260227-juejin-如何用-ai-做业务级-code-review-0.md": {
       "reasons": [
@@ -4753,8 +4855,10 @@
       "status": "legacy_analysis"
     },
     "posts/20260227-juejin-面试官你知道-mcpskillfunction-call-这三个的区别吗-2.md": {
-      "reasons": [],
-      "status": "legacy_analysis"
+      "reasons": [
+        "archived_content"
+      ],
+      "status": "archived"
     },
     "posts/20260228-blogs_podcasts-ainews-openai-closes-110b-raise-from-amazon-nvidia-0.md": {
       "reasons": [],
@@ -4929,8 +5033,10 @@
       "status": "legacy_analysis"
     },
     "posts/20260301-juejin-推理平台全景-2.md": {
-      "reasons": [],
-      "status": "legacy_analysis"
+      "reasons": [
+        "archived_content"
+      ],
+      "status": "archived"
     },
     "posts/20260301-juejin-轻松接入大语言模型api-04-0.md": {
       "reasons": [
@@ -4947,8 +5053,10 @@
       "status": "legacy_analysis"
     },
     "posts/20260302-arxiv_ai-adaptive-combinatorial-experimental-design-pareto--2.md": {
-      "reasons": [],
-      "status": "legacy_analysis"
+      "reasons": [
+        "archived_content"
+      ],
+      "status": "archived"
     },
     "posts/20260302-arxiv_ai-controllable-reasoning-models-are-private-thinkers-7.md": {
       "reasons": [],
@@ -5603,8 +5711,10 @@
       "status": "legacy_analysis"
     },
     "posts/20260305-juejin-网易有道龙虾-nas-服务器部署与实战指南-1.md": {
-      "reasons": [],
-      "status": "legacy_analysis"
+      "reasons": [
+        "archived_content"
+      ],
+      "status": "archived"
     },
     "posts/20260305-juejin-让ai自我进化斯坦福华人博士答辩视频火了庞若鸣参与评审-2.md": {
       "reasons": [],
@@ -5737,8 +5847,10 @@
       "status": "legacy_analysis"
     },
     "posts/20260306-juejin-splitter学习笔记含rag相关流程与代码实践-1.md": {
-      "reasons": [],
-      "status": "legacy_analysis"
+      "reasons": [
+        "archived_content"
+      ],
+      "status": "archived"
     },
     "posts/20260306-juejin-vibe-coding-之我们距离-贾维斯-还有多远-1.md": {
       "reasons": [],
@@ -6053,12 +6165,16 @@
       "status": "legacy_analysis"
     },
     "posts/20260309-juejin-实战篇ai-agent-后端实现细节-2.md": {
-      "reasons": [],
-      "status": "legacy_analysis"
+      "reasons": [
+        "archived_content"
+      ],
+      "status": "archived"
     },
     "posts/20260309-juejin-将openclaw接入飞书10分钟让你的ai员工直接操作你的文档和表格-0.md": {
-      "reasons": [],
-      "status": "legacy_analysis"
+      "reasons": [
+        "archived_content"
+      ],
+      "status": "archived"
     },
     "posts/20260309-juejin-拆解-openclaw-的-skills-机制一个为-ai-agent-设计的包管理器-3.md": {
       "reasons": [],
@@ -6265,8 +6381,10 @@
       "status": "legacy_analysis"
     },
     "posts/20260310-juejin-uni-app-组件库-wot-ui-的-ai-友好型编程指南-0.md": {
-      "reasons": [],
-      "status": "legacy_analysis"
+      "reasons": [
+        "archived_content"
+      ],
+      "status": "archived"
     },
     "posts/20260310-juejin-以界面重构文字genui-正式发布-0.md": {
       "reasons": [
@@ -6417,8 +6535,10 @@
       "status": "archived"
     },
     "posts/20260311-juejin-langchain中的rag-loader从网页加载文档并实现智能分割与检索-4.md": {
-      "reasons": [],
-      "status": "legacy_analysis"
+      "reasons": [
+        "archived_content"
+      ],
+      "status": "archived"
     },
     "posts/20260311-juejin-langchain入门到精通0x01结果解析器-3.md": {
       "reasons": [],
@@ -6623,8 +6743,10 @@
       "status": "legacy_analysis"
     },
     "posts/20260312-juejin-大模型全家桶除了transformer还有这些配料值得品-2.md": {
-      "reasons": [],
-      "status": "legacy_analysis"
+      "reasons": [
+        "archived_content"
+      ],
+      "status": "archived"
     },
     "posts/20260312-juejin-大模型垂直领域微调系列一认识微调-2.md": {
       "reasons": [],
@@ -6635,8 +6757,10 @@
       "status": "legacy_analysis"
     },
     "posts/20260312-juejin-我把本地文档-rag-做成了可用系统flask-vue3-langchain-faiss多知识库-流-1.md": {
-      "reasons": [],
-      "status": "legacy_analysis"
+      "reasons": [
+        "archived_content"
+      ],
+      "status": "archived"
     },
     "posts/20260312-juejin-第-20-届-d2-倒计时-7-大专场演讲44-个精彩话题d2-之夜畅聊-ai-终端的发展前景-0.md": {
       "reasons": [],
@@ -6715,8 +6839,10 @@
       "status": "legacy_analysis"
     },
     "posts/20260313-hacker_news-can-i-run-ai-locally-4.md": {
-      "reasons": [],
-      "status": "legacy_analysis"
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     },
     "posts/20260313-hacker_news-elon-musk-pushes-out-more-xai-founders-as-ai-codin-7.md": {
       "reasons": [],
@@ -6763,12 +6889,16 @@
       "status": "legacy_analysis"
     },
     "posts/20260313-juejin-ai-驱动的-vue3-应用开发平台-深入探究七双向代码转换之-vue源码到dsl解析-0.md": {
-      "reasons": [],
-      "status": "legacy_analysis"
+      "reasons": [
+        "archived_content"
+      ],
+      "status": "archived"
     },
     "posts/20260313-juejin-ai-驱动的-vue3-应用开发平台-深入探究六双向代码转换之dsl到vue代码生成-2.md": {
-      "reasons": [],
-      "status": "legacy_analysis"
+      "reasons": [
+        "archived_content"
+      ],
+      "status": "archived"
     },
     "posts/20260313-juejin-ai内容工厂20我把openclaw换成arkclaw接管了整个飞书-0.md": {
       "reasons": [],
@@ -6831,8 +6961,10 @@
       "status": "legacy_analysis"
     },
     "posts/20260314-juejin-ai时代人人都是agent工程师-1.md": {
-      "reasons": [],
-      "status": "legacy_analysis"
+      "reasons": [
+        "archived_content"
+      ],
+      "status": "archived"
     },
     "posts/20260314-juejin-codex-工程化实践指南深入理解-agentsmdskillmd-与-mcp-0.md": {
       "reasons": [],
@@ -6897,8 +7029,10 @@
       "status": "legacy_analysis"
     },
     "posts/20260315-juejin-315晚会曝光ai大模型被投毒让ai听话geo是什么带给我们什么思考-2.md": {
-      "reasons": [],
-      "status": "legacy_analysis"
+      "reasons": [
+        "archived_content"
+      ],
+      "status": "archived"
     },
     "posts/20260315-juejin-chrome-devtools-mcp-让-ai-无缝接管浏览器调试会话-0.md": {
       "reasons": [],
@@ -6917,8 +7051,10 @@
       "status": "archived"
     },
     "posts/20260315-juejin-基于-langchainjs-的前端-agent-工作流编排tool-注册思维链可视化与多步推理的实-2.md": {
-      "reasons": [],
-      "status": "legacy_analysis"
+      "reasons": [
+        "archived_content"
+      ],
+      "status": "archived"
     },
     "posts/20260315-juejin-本地-ai-agent-memory-系统建设方案-1.md": {
       "reasons": [],
@@ -7147,8 +7283,10 @@
       "status": "legacy_analysis"
     },
     "posts/20260317-arxiv_ai-mixture-of-depths-attention-0.md": {
-      "reasons": [],
-      "status": "legacy_analysis"
+      "reasons": [
+        "archived_content"
+      ],
+      "status": "archived"
     },
     "posts/20260317-arxiv_ai-openseeker-democratizing-frontier-search-agents-by-9.md": {
       "reasons": [],
@@ -7289,8 +7427,10 @@
       "status": "archived"
     },
     "posts/20260317-juejin-零基础学-agent-拆解一个-agent-的零件清单8-个模块逐一讲透-第-2-期-2.md": {
-      "reasons": [],
-      "status": "legacy_analysis"
+      "reasons": [
+        "archived_content"
+      ],
+      "status": "archived"
     },
     "posts/20260317-juejin-零成本本地大模型用-nextjs-ollama-qwen3-打造流式聊天应用-2.md": {
       "reasons": [],
@@ -7433,8 +7573,10 @@
       "status": "legacy_analysis"
     },
     "posts/20260319-hacker_news-show-hn-three-new-kitten-tts-models-smallest-less--7.md": {
-      "reasons": [],
-      "status": "legacy_analysis"
+      "reasons": [
+        "archived_content"
+      ],
+      "status": "archived"
     },
     "posts/20260319-juejin-我让-ai-操作网页之后开始不想点按钮了-0.md": {
       "reasons": [],
@@ -10244,17 +10386,11 @@
       ],
       "status": "source_brief"
     },
-    "posts/20260715-blogs_podcasts-scaling-ux-testing-with-amazon-nova-act-a-new-appr-0-d3d801b9b9.md": {
+    "posts/20260715-blogs_podcasts-scaling-ux-testing-with-amazon-nova-act-a-new-appr-0.md": {
       "reasons": [
         "concise_source_card"
       ],
       "status": "source_brief"
-    },
-    "posts/20260715-blogs_podcasts-scaling-ux-testing-with-amazon-nova-act-a-new-appr-0.md": {
-      "reasons": [
-        "archived_content"
-      ],
-      "status": "archived"
     },
     "posts/20260715-juejin-designmd把-ai-生成-ui-从凭感觉变成可验证工程-0.md": {
       "reasons": [
@@ -10271,11 +10407,11 @@
   },
   "quarantined_count": 0,
   "reason_counts": {
-    "archived_content": 379
+    "archived_content": 448
   },
-  "schema_version": "content_quality_manifest_v3",
-  "source_brief_count": 11,
-  "source_file_count": 2371,
-  "source_tree_sha256": "c918881aa3aa905e7fe0a2ca8fb906f2202c8960133d88b785e4e0f397ea2d08",
+  "schema_version": "content_quality_manifest_v4",
+  "source_brief_count": 12,
+  "source_file_count": 2370,
+  "source_tree_sha256": "5485f8a188dded4b4bb5cb4bc0186ef360ab4721d83d5efb5ca0d98c8546cae5",
   "warning_counts": {}
 }

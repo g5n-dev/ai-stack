@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 从ChatGPT到OpenClaw：梳理模型、工程与框架的AI进化脉络
-
----
-
 ## 基本信息
 
 - **作者**: 格砸

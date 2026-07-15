@@ -16,9 +16,7 @@ categories:
 - 论文
 - AI 工程
 source: arxiv
-description: 本文介绍了 **FedCova**，一种旨在解决联邦学习（FL）中分布式数据集存在**噪声标签**问题的鲁棒框架。 **背景与问题：**
-  在联邦学习中，分布式数据集中的噪声标签会导致严重的局部过拟合，进而损害全局模型的性能。现有的解决方案大多依赖于筛选干净的设备或对齐公共干净数据集，缺乏对模型自身鲁棒性的提升。
-  **核
+description: 在联邦学习面临分布式数据集存在噪声标签的挑战时，本文提出了 FedCova 这一鲁棒框架，旨在解决因噪声导致的局部过拟合及全局性能下降问题。区别于依赖外部干净数据的现有方案，该方法通过互信息最大化的特征编码与特征协方差视角，构建了无需辅助的统一学习流程，并利用子空间增强分类器来提升模型的内在鲁棒性。尽管摘要未详述具体的通信开销与理论边界，但实验表明其在不同噪声设置下均具有潜在的应用价值。
 external_url: http://arxiv.org/abs/2603.04062v1
 scenarios:
 - Web应用开发
@@ -26,10 +24,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# FedCova：抗噪标签的鲁棒联邦协方差学习框架
-
 ---
 
 ## 基本信息

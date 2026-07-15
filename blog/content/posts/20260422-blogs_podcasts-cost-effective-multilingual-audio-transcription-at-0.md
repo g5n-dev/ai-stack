@@ -16,9 +16,8 @@ categories:
 - AI 工程
 - 系统与基础设施
 source: blogs_podcasts
-description: 背景 随着多语言音频数据快速增长，企业需要在保持低费用的同时实现大规模转录。传统的自建集群成本高、维护复杂。 解决方案概述 本文展示了基于
-  Parakeet‑TDT（自研语音识别模型）和 AWS Batch 构建的自动、可扩展的转录管道。管道采用事件驱动架构：音频文件上传至 Amazon S3 后，触发
-  Lambda
+description: 在这篇文章中，我们将逐步构建一个可扩展的事件驱动转录管道，自动处理上传到亚马逊简单存储服务（Amazon S3）的音频文件，并向您展示如何利用Amazon
+  EC2 Spot实例和缓冲流式推理来进一步降低成本。 本文展示了基于 Parakeet‑TDT（自研语音识别模型）和 AWS Batch 构建的自动、可扩展的转录管道。
 external_url: https://aws.amazon.com/blogs/machine-learning/cost-effective-multilingual-audio-transcription-at-scale-with-parakeet-tdt-and-aws-batch
 scenarios:
 - Web应用开发
@@ -28,10 +27,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Parakeet-TDT与AWS Batch构建低成本多语言音频转录管道
-
 ---
 
 ## 基本信息
@@ -182,7 +177,6 @@ source_support: 0.0
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/)

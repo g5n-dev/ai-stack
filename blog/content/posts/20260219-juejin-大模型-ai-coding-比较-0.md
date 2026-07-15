@@ -16,9 +16,8 @@ categories:
 - 大模型
 - 开发工具
 source: juejin
-description: 这是一份关于大模型AI编程能力的实战对比总结，基于你提供的内容片段和行业普遍反馈，对主流模型在编程场景下的表现进行了梳理： **大模型 AI
-  编程实战对比总结** **1. 核心梯队排名** 根据多渠道测评及实战反馈，目前在 AI 编程领域的主流模型排名大致如下： * **T0 级（天花板）：** **Claude
-  3
+description: 随着大模型能力的快速迭代，AI 编程工具已成为开发者提升效率的重要辅助，但不同模型在实际代码场景中的表现差异往往被榜单排名所掩盖。本文结合作者的一线使用经验，跳过单纯的参数对比，重点考察了
+  Opus 4.6、K2.5 等主流模型在真实业务逻辑中的反馈质量与稳定性。通过这份基于实战的横向评测，希望能帮助你在选择开发助手时，找到更符合自身编码习惯与项目需求的模型，从而做出更理性的技术决策。
 external_url: https://juejin.cn/post/7607105207069065242
 scenarios:
 - AI/ML项目
@@ -26,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 大模型AI编程实测：Opus 4.6与K2.5等模型排序对比
-
 ---
 
 ## 基本信息

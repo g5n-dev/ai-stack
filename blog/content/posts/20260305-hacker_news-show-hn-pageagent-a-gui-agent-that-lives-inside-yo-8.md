@@ -17,7 +17,7 @@ categories:
 - AI 工程
 source: hacker_news
 description: 随着大模型能力的提升，如何让 AI 摆脱单纯的对话窗口，真正介入复杂的图形用户界面（GUI）操作，已成为自动化领域的焦点。PageAgent
-  作为一个直接集成在 Web 应用内部的 GUI Agent，突破了传统外部脚本或浏览器插件的局限，能够直接理解并操作应用界面。本文将介绍其技术架构与核心功能，探讨它如何通过“原生
+  作为一个直接集成在 Web 应用内部的 GUI Agent，突破了传统外部脚本或浏览器插件的局限，能够直接理解并操作应用界面。本文将介绍其技术架构与核心功能，探讨它如何通过“原生”视角实现更精准的自动化交互，以及开发者如何利用这一工具优化现有的工作流。
 external_url: https://alibaba.github.io/page-agent
 scenarios:
 - Web应用开发
@@ -30,10 +30,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# PageAgent：运行于 Web 应用内部的 GUI 智能体
-
 ---
 
 ## 基本信息

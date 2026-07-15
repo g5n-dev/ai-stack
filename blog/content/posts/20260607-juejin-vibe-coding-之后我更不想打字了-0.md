@@ -15,7 +15,8 @@ tags:
 categories:
 - 开发工具
 source: juejin
-description: 在体验 vibe coding 工具后，我发现敲代码的频率明显下降。AI 能根据自然语言或少量提示快速生成完整的代码块，省去逐行键入的繁琐步骤。与此同时，工具提供的实时补全、错误提示和自动化重构让整个开发过程更流畅、自然。随之而来的是对传统键盘输入的依赖减弱，甚至出现“不想打字”的感觉——因为大部分需求已经由模型完成，
+description: 在尝试 vibe coding 工具后，代码直接由人工智能补全，我发现自己对手动输入的冲动大幅下降。AI 能在瞬间完成重复性编码，让我们把精力集中在架构和业务逻辑上，但也让人担忧是否会淡化传统的编程技能。本文将分享使用感受，分析效率提升、学习路径以及保持主动编码的平衡点，为开发者提供可行的参考。
+  在体验 vibe coding 工具后，我发现敲代码的频率明显下降。
 external_url: https://juejin.cn/post/7648053214596284443
 scenarios:
 - AI/ML项目
@@ -23,10 +24,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Vibe Coding体验：代码生成替代手动编写
-
 ---
 
 ## 基本信息
@@ -91,7 +88,6 @@ source_support: 0.0
 
 ---
 
----
 ## 站内链接
 
 - 分类： [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/)

@@ -16,8 +16,7 @@ categories:
 - 论文
 - 大模型
 source: arxiv
-description: '**总结：从语义到像素：用于分层视觉理解的粗到细掩码自编码器 (C2FMAE)** **核心问题：** 现有的自监督视觉预训练方法存在内在矛盾：对比学习（CL）擅长捕捉全局语义但丢失细节，而掩码图像建模（MIM）虽保留纹理，却因语义无关的随机掩码导致“注意力漂移”，难以兼顾宏观语义与微观细节。
-  **提出方案：** 论文'
+description: 针对自监督学习中全局语义与局部细节难以兼顾的矛盾，本文提出了 C2FMAE 这一粗到细的掩码自编码器框架。该方法通过引入语义引导的掩码策略，试图在保留纹理信息的同时缓解注意力漂移问题。尽管其具体的层级解耦机制尚无法从摘要确认，但该工作为构建兼具宏观语义与微观细节的分层视觉理解模型提供了新思路。
 external_url: http://arxiv.org/abs/2603.09955v1
 scenarios:
 - Web应用开发
@@ -27,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 从语义到像素：用于分层视觉理解的粗到细掩码自编码器
-
 ---
 
 ## 基本信息

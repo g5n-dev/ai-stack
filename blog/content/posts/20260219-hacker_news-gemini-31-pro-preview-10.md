@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 谷歌发布 Gemini 3.1 Pro 预览版
-
----
-
 ## 基本信息
 
 - **作者**: MallocVoidstar

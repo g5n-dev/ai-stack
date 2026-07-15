@@ -16,8 +16,8 @@ categories:
 - AI 工程
 - 系统与基础设施
 source: blogs_podcasts
-description: 概述 本文演示了如何使用 Amazon Bedrock AgentCore（一个代理平台）与 Amazon Nova 2 Sonic，构建完整的全渠道（omnichannel）点单系统。AgentCore
-  提供安全、可扩展的 AI Agent 生命周期管理，支持任意框架和基础模型；Nova 2 Sonic 则提供实时的
+description: 在这篇文章中，我们将向您展示如何使用 Amazon Bedrock AgentCore（一个代理平台）构建一个完整的全渠道订购系统。该平台支持使用任何框架和基础模型大规模安全地构建、部署和运营高效的
+  AI 代理，以及 Amazon Nova 2 Sonic。 全渠道订购已成为企业提升客户体验和运营效率的关键能力。
 external_url: https://aws.amazon.com/blogs/machine-learning/omnichannel-ordering-with-amazon-bedrock-agentcore-and-amazon-nova-2-sonic
 scenarios:
 - AI/ML项目
@@ -26,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 使用 Amazon Bedrock AgentCore 构建全渠道 AI 订购系统
-
 ---
 
 ## 基本信息
@@ -155,7 +151,6 @@ Nova 2 Sonic在订购场景中的优势体现在三个方面：语音交互的�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/)

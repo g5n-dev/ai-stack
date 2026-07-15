@@ -17,7 +17,6 @@ categories:
 - AI 工程
 source: arxiv
 description: 在视觉‑语言‑动作（VLA）模型中，动作模块通常只从零开始学习运动，缺乏显式的动作先验，导致早期必须同时捕捉时序动作动态和跨模态对齐，在跨实体场景下尤为困难。本文提出在跨模态对齐之前先对动作模块进行动作先验预训练，形成两阶段训练框架。
-  阶段一：动作先验学习 使用轻量级的流匹配（flow‑matching）编码器‑解码器
 external_url: http://arxiv.org/abs/2606.26095v1
 scenarios:
 - Web应用开发
@@ -25,10 +24,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 学习动作先验实现跨具身机器人操作
-
 ---
 
 ## 基本信息
@@ -76,7 +71,6 @@ source_support: 0.0
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

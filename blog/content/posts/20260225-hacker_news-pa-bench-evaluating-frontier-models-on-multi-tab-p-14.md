@@ -32,10 +32,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# PA基准：评估Web智能体在真实个人助理工作流中的表现
-
----
-
 ## 基本信息
 
 - **作者**: shahules

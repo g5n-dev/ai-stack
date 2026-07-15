@@ -16,8 +16,8 @@ categories:
 - AI 工程
 - 安全
 source: blogs_podcasts
-description: Inscribe 利用 Amazon Bedrock 构建了一个代理式 AI 系统，该系统能够像资深欺诈分析师一样跨文档进行推理。通过对文档内容、结构、来源等多维度信息进行综合分析，系统可在
-  90 秒内识别出被篡改、伪造以及 AI 生成的文件，检测速度比传统人工审查提升约 20 倍。该系统在高检出率的同时保持了对检测结
+description: 在这篇文章中，您将了解 Inscribe 如何使用 Amazon Bedrock 开发了一个代理型 AI 系统，该系统能够像专业欺诈分析师一样跨文档进行推理。借助这个新的代理型
+  AI 系统，Inscribe 现在能够在 90 秒内检测出被篡改、伪造和 AI 生成的财务文档。与传统人工审核相比，这是 20 倍的提升，同时保持了金融服务法规所要求的准确性和可解释性。
 external_url: https://aws.amazon.com/blogs/machine-learning/how-inscribe-uses-amazon-bedrock-to-stop-document-fraud-in-seconds
 scenarios:
 - AI/ML项目
@@ -25,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Inscribe基于Amazon Bedrock的代理型AI系统实现90秒文档欺诈检测
-
 ---
 
 ## 基本信息
@@ -148,7 +144,6 @@ Inscribe成功构建了一套基于Amazon Bedrock的代理AI系统，该系统�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [安全](/categories/%E5%AE%89%E5%85%A8/)

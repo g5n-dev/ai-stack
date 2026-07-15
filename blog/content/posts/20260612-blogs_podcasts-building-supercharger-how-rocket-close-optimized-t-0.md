@@ -15,8 +15,9 @@ tags:
 categories:
 - AI 工程
 source: blogs_podcasts
-description: title operations在交易流程中常因数据分散、审批链条冗长而成为效率瓶颈。Rocket Close通过构建agentic AI系统，整合大语言模型、Amazon
-  Bedrock和MCP协议等多项技术，重新设计了整个工作流程。本文将详细展示技术实现的具体步骤、架构选择的设计考量、实践中获得的关键洞察，以及最终
+description: 在这篇文章中，我们探讨了 Rocket Close 如何使用 Strands Agents、大语言模型（LLMs）、Amazon Bedrock、Amazon
+  Bedrock Knowledge Bases 和 Model Context Protocol (MCP) 工具构建解决方案。我们涵盖了解决方案的功能特性、技术栈的设计理由、经验教训以及
+  Rocket Close 的业务影响。
 external_url: https://aws.amazon.com/blogs/machine-learning/building-supercharger-how-rocket-close-optimized-title-operations-with-agentic-ai
 scenarios:
 - AI/ML项目
@@ -28,10 +29,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Rocket Close如何用代理式AI构建标题优化系统
-
 ---
 
 ## 基本信息
@@ -154,7 +151,6 @@ Rocket Close 通过构建基于大语言模型（LLM）的代理（agentic A
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

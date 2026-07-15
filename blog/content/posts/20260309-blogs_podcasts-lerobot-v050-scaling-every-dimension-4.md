@@ -34,10 +34,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# LeRobot v0.5.0：扩展数据、模型与硬件支持
-
----
-
 ## 基本信息
 
 - **来源**: Hugging Face Blog (blog)

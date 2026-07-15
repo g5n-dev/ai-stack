@@ -16,8 +16,8 @@ categories:
 - 论文
 - AI 工程
 source: arxiv
-description: 核心目标 UniClawBench 旨在评估主动型智能体在真实、动态环境中的能力，克服现有基准依赖沙箱、单轮评测且将多能力混合在同一任务中的不足。
-  能力模型 基准围绕五项基础能力构建：技能使用、探索、长上下文推理、多模态理解、跨平台协同。每项能力对应具体的评测维度。 任务设计 基于上述能力设计了 400 条双语真实任务
+description: UniClawBench 旨在评估主动型智能体在真实、动态环境中的能力，克服现有基准依赖沙箱、单轮评测且将多能力混合在同一任务中的不足。
+  基准围绕五项基础能力构建：技能使用、探索、长上下文推理、多模态理解、跨平台协同。每项能力对应具体的评测维度。 基于上述能力设计了 400 条双语真实任务，涵盖日常工具操作、信息检索、跨系统交互等场景。
 external_url: http://arxiv.org/abs/2607.08768v1
 scenarios:
 - Web应用开发
@@ -29,10 +29,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# UniClawBench：主动代理真实任务通用基准
-
 ---
 
 ## 基本信息
@@ -140,7 +136,6 @@ UniClawBench的核心贡献在于打破传统评测的封闭性约束。论文�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

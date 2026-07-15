@@ -15,8 +15,7 @@ tags:
 categories:
 - 安全
 source: blogs_podcasts
-description: 背景 生成式人工智能在儿童内容、教育、娱乐等场景的渗透迅速增长，随之而来的是非法或不适宜内容的潜在风险。为了在模型发布前识别并抑制这些风险，需要有效的安全评估手段。
-  研究目标 在不直接向模型提供非法指令的前提下，快速检测生成式 AI 是否具备产生违规内容的能力，从而在部署前进行干预，保障儿童免受有害信息侵扰。 方法概述
+description: 研究人员开发了一种审计技术，用于检测生成式AI模型的恶意能力，无需通过提示它们生成非法输出来进行测试。 随着生成式AI在内容创作中的广泛应用，儿童接触非法生成内容的风险也在上升。研究团队提出一种新的审计方法，能够在不向模型提供非法提示的前提下，检测其潜在的恶意能力，从而帮助平台更早识别并阻止有害内容的生成。
 external_url: https://news.mit.edu/2026/new-method-keeps-kids-safe-from-illegal-ai-generated-content-0713
 scenarios:
 - AI/ML项目
@@ -24,10 +23,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 新审计技术可检测生成式AI恶意能力
-
 ---
 
 ## 基本信息
@@ -155,7 +150,6 @@ source_support: 0.0
 
 ---
 
----
 ## 站内链接
 
 - 分类： [安全](/categories/%E5%AE%89%E5%85%A8/)

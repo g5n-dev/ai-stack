@@ -16,8 +16,7 @@ categories:
 - 论文
 - 大模型
 source: arxiv
-description: '**V2M-Zero：基于零样本视频生成时间对齐音乐的方法** **背景与挑战** 现有的文本生成音乐模型难以生成与视频事件在时间上精确对齐的音乐，主要原因是缺乏细粒度的时序控制能力。
-  **核心创新** V2M-Zero 提出了一种**零样本**的视频生成音乐方法，不需要任何成对的“视频-音乐”训练数据。该方法基于一个'
+description: 针对视频生成音乐任务中常受限于成对训练数据稀缺的问题，本文提出了一种名为 V2M-Zero 的零样本生成框架。该方法的核心在于利用预训练编码器提取独立的“事件曲线”，通过匹配跨模态的时序变化强度而非具体语义内容，实现了无需成对数据训练的视频与音乐时间对齐。虽然摘要未详述具体的定量指标，但该策略为解决视听生成中的时序控制难题提供了新的技术路径。
 external_url: http://arxiv.org/abs/2603.11042v1
 scenarios:
 - 计算机视觉
@@ -27,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# V2M-Zero：零样本时间对齐视频配乐生成模型
-
 ---
 
 ## 基本信息

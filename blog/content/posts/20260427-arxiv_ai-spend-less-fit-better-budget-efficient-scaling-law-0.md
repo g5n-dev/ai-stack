@@ -16,8 +16,7 @@ categories:
 - 大模型
 - AI 工程
 source: arxiv
-description: 背景 扩展律用于规划数百万美元的训练运行，但其本身拟合往往已耗费数百万。在大规模工作流中，快速构建信息充分的试点实验集合本身就是预算分配的关键难题。
-  目标 将扩展律拟合重新定义为预算感知的顺序实验设计：在给定的异构成本实验池中，挑选最有助于在高价目标区域进行外推的实验，以最大化目标区域的外推精度。 方法 提出不确定性驱
+description: 在大规模模型训练中，扩展律的拟合本身已消耗可观资源，如何在有限预算下高效挑选关键实验以提升外推精度成为重要挑战。本文将其重新定义为预算感知的顺序实验设计，采用基于不确定性的动态预算分配，仅用约10%的总训练预算即可在多种基准上逼近全量实验的拟合效果，表明所提策略能够显著降低计算成本并为大规模训练的预算规划提供可行路径。
 external_url: http://arxiv.org/abs/2604.22753v1
 scenarios:
 - Web应用开发
@@ -27,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 预算高效缩放定律拟合：基于主动实验选择策略
-
 ---
 
 ## 基本信息
@@ -161,7 +156,6 @@ source_support: 0.0
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

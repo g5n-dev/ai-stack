@@ -17,7 +17,7 @@ categories:
 - 开源生态
 source: juejin
 description: OpenClaw 作为近期备受关注的开源 AI Agent 项目，标志着人工智能正从单一的对话交互向具备“手脚”的实体化任务执行演进。深入理解其架构原理与部署细节，对于希望构建自动化工作流或降低人力成本的团队而言至关重要。本文将剖析
-  OpenClaw 的核心设计，并演示如何将其落地为专属的数字员工，以帮助读者掌握构建智
+  OpenClaw 的核心设计，并演示如何将其落地为专属的数字员工，以帮助读者掌握构建智能化业务系统的关键技术。
 external_url: https://juejin.cn/post/7616184939038900259
 scenarios:
 - AI/ML项目
@@ -25,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# OpenClaw架构原理与实战部署：打造专属AI数字员工
-
 ---
 
 ## 基本信息

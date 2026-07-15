@@ -9,7 +9,7 @@ tags:
 categories:
 - 论文
 source: arxiv
-description: '**CoFEH：LLM驱动的特征工程与贝叶斯超参数优化协同框架** **背景与问题** 特征工程（FE）是自动化机器学习的关键环节，但传统方法面临诸多瓶颈：通常将其视为黑盒搜索，局限于预定义的搜索空间且缺乏领域知识。尽管大语言模型（LLM）能利用语义推理生成无界算子，现有方法仍局限于构建自由形式的FE流程，且大多仅执行'
+description: CoFEH：LLM驱动的特征工程与贝叶斯超参数优化协同框架 背景与问题 特征工程（FE）是自动化机器学习的关键环节，但传统方法面临诸多瓶颈：通常将其视为黑盒搜索，局限于预定义的搜索空间且缺乏领域知识。尽管大语言模型（LLM）能利用语义推理生成无界算子，现有方法仍局限于构建自由形式的FE流程，且大多仅执行特征生成等孤立子任务。
 external_url: http://arxiv.org/abs/2602.09851v1
 scenarios:
 - Web应用开发
@@ -17,10 +17,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# CoFEH：LLM驱动的协同贝叶斯特征工程框架
-
 ---
 
 ## 基本信息
@@ -145,7 +141,6 @@ source_support: 0.0
 ---
 
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/)

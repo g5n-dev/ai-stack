@@ -16,7 +16,7 @@ categories:
 - 论文
 - 大模型
 source: arxiv
-description: TaxonRL是一种结合强化学习与分层中间奖励机制的可解释细粒度视觉推理方法。传统视觉-语言模型在区分同一属或科内视觉相似物种的对比性分类任务中表现有限，为此，TaxonRL采用基于组相对策略优化的强化学习，将推理过程分解为物种、属、科等层级的分层预测，并通过中间奖励激励模型在最终分类前逐层显式推理各层级特征，从而在提
+description: 针对传统视觉-语言模型在区分近缘物种时表现受限的问题，本研究提出了TaxonRL框架，通过结合强化学习与分层中间奖励机制，将推理过程显式分解为物种、属、科等层级。该方法在Birds-to-Words数据集上取得了超越人类的精度，并生成可验证的推理轨迹，表明强制结构化推理有助于提升细粒度判别的透明度与泛化能力。
 external_url: http://arxiv.org/abs/2603.04380v1
 scenarios:
 - Web应用开发
@@ -26,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# TaxonRL：基于中间奖励的可解释细粒度视觉推理
-
 ---
 
 ## 基本信息

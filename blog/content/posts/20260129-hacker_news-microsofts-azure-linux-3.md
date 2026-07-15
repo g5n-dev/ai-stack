@@ -23,10 +23,8 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 微软推出 Azure Linux 发行版，用于优化云端基础设施
-
+description: 随着云原生技术的普及，底层基础设施的定制化已成为各大云厂商提升性能的关键。微软近期发布的 Azure Linux，正是这一趋势下的产物，旨在为
+  Azure 服务提供更高效、更安全的专用运行环境。本文将深入解析该系统的技术特点与架构设计，帮助开发者理解其背后的技术考量，以及它如何影响未来的云端应用部署策略。
 ---
 
 ## 基本信息
@@ -197,36 +195,32 @@ if 'azure' in kernel.lower():
 
 ### 1：Microsoft Azure 超大规模基础设施（内部应用）
 
- 1：Microsoft Azure 超大规模基础设施（内部应用）
-
-**背景**: 
+**背景**:
 作为全球第二大公有云提供商，Azure 运营着遍布全球的数据中心，运行着数百万台物理服务器。这些服务器支撑着从 Azure Kubernetes Service (AKS) 到 HDInsight 等各种核心服务。长期以来，Azure 内部使用的是基于 Ubuntu 的定制版 Linux，但随着规模的扩大，维护一个庞大的外部发行版分支变得日益复杂且低效。
 
-**问题**: 
+**问题**:
 直接使用上游 Linux 发行版（如 Ubuntu）进行深度定制会带来“分支发散”问题。当上游更新时，Azure 团队需要耗费大量精力去合并补丁，这导致了技术债务的积累。此外，为了优化 Azure 特有的硬件（如 FPGA 芯片）和软件栈，团队需要一个更轻量、启动更快、且完全由微软控制的内核和发行版，以减少不必要的软件包负担并提高安全性。
 
-**解决方案**: 
+**解决方案**:
 微软开发了 **Azure Linux**（原 CBL-Mariner）。这是一个轻量级的开源 Linux 发行版，专为 Azure 的内部基础设施和边缘产品构建。它采用了经过微软优化的 Linux 内核，并包含了一套符合云原生标准的包管理器和构建系统。Azure Linux 被部署在 Azure 底层的基础设施节点上，作为运行云服务的宿主操作系统。
 
-**效果**: 
+**效果**:
 通过 Azure Linux，微软成功实现了对基础设施操作系统的完全控制，显著降低了维护成本和安全风险。该系统针对云环境进行了极致精简，实现了更快的启动时间和更小的内存占用。目前，Azure Linux 已成为 Azure 服务端云基础设施的默认操作系统，并作为 AKS 的底层基础 OS，为数百万用户提供稳定的云服务。
 
 ---
 
 ### 2：Azure Kubernetes Service (AKS) 的底层 OS 支持
 
- 2：Azure Kubernetes Service (AKS) 的底层 OS 支持
-
-**背景**: 
+**背景**:
 Azure Kubernetes Service (AKS) 是 Azure 提供的托管 Kubernetes 服务，被大量企业用于部署容器化应用。在 AKS 的发展过程中，微软最初主要依赖 Ubuntu 作为节点操作系统。然而，随着企业客户对安全性、合规性以及性能要求的提高，单纯依赖第三方发行版逐渐显露出局限性。
 
-**问题**: 
+**问题**:
 许多企业客户，尤其是金融和医疗行业，对底层操作系统有严格的安全合规要求。使用通用的 Linux 发行版可能包含大量 AKS 集群运行所不需要的预装软件，从而增加了攻击面。此外，当内核出现安全漏洞时，依赖上游发行版的修复周期可能无法满足微软快速响应和发布补丁的需求。
 
-**解决方案**: 
+**解决方案**:
 微软将 **Azure Linux** 引入 AKS 生态系统，推出了 **Azure Linux 容器主机**（Mariner 作为基础 OS）。这为用户提供了一个全新的节点镜像选项。该 OS 专为容器工作负载优化，仅包含运行 Kubernetes 所需的最小组件，并由微软直接提供安全补丁和更新支持，消除了中间环节。
 
-**效果**: 
+**效果**:
 引入 Azure Linux 作为容器主机后，AKS 用户获得了更精简、更安全的运行环境。由于减少了不必要的软件包，系统的受攻击面显著降低，同时节点启动速度和运行性能得到了提升。对于微软而言，这意味着在处理关键内核安全漏洞（如 CVE）时，可以更快地向 AKS 用户提供修复补丁，而不必等待第三方发行版的排期，大大增强了云服务的安全韧性。
 
 ---
@@ -376,8 +370,6 @@ Azure Linux 对容器技术有良好支持，特别是与 Azure Kubernetes Servi
 
 ### 1: Microsoft Azure Linux 到底是什么？它是 Ubuntu 的替代品吗？
 
-1: Microsoft Azure Linux 到底是什么？它是 Ubuntu 的替代品吗？
-
 **A**: Microsoft Azure Linux（前身为 CBL-Mariner）是微软开源的一个 Linux 发行版。它并非设计为桌面用户或通用服务器的 Ubuntu 直接替代品，而是微软内部云基础设施的核心组件。
 
 它的主要目的是为 Azure 的 Kubernetes 服务（AKS）以及 Azure 的超融合基础设施（HCI）提供底层操作系统支持。它的设计理念是“云原生”，注重安全性、性能和轻量化，非常适合作为容器宿主，而不是作为一个功能齐全的通用服务器操作系统（如带有完整 GUI 或大量桌面应用支持）。
@@ -385,8 +377,6 @@ Azure Linux 对容器技术有良好支持，特别是与 Azure Kubernetes Servi
 ---
 
 ### 2: 微软为什么要开发自己的 Linux 发行版？
-
-2: 微软为什么要开发自己的 Linux 发行版？
 
 **A**: 微软开发 Azure Linux 主要出于对云基础设施的控制、安全性和效率的考量。
 
@@ -398,8 +388,6 @@ Azure Linux 对容器技术有良好支持，特别是与 Azure Kubernetes Servi
 
 ### 3: Azure Linux 基于什么技术？它使用 RPM 还是 DEB 包管理？
 
-3: Azure Linux 基于什么技术？它使用 RPM 还是 DEB 包管理？
-
 **A**: Azure Linux 是基于 RPM 和 DNF 包管理器的。
 
 这意味着它在技术架构上与 Fedora、RHEL（Red Hat Enterprise Linux）或 CentOS 更为相似，而不是基于 Debian 或 Ubuntu（后者使用 .deb 包）。然而，Azure Linux 的用户空间工具链非常精简，默认不包含许多标准 Linux 发行版中预装的图形界面或开发工具，它主要设计用于运行容器化工作负载。
@@ -407,8 +395,6 @@ Azure Linux 对容器技术有良好支持，特别是与 Azure Kubernetes Servi
 ---
 
 ### 4: 普通用户可以在自己的电脑或本地服务器上安装和使用 Azure Linux 吗？
-
-4: 普通用户可以在自己的电脑或本地服务器上安装和使用 Azure Linux 吗？
 
 **A**: 虽然技术上可以下载并运行 Azure Linux，但微软并不建议普通用户将其作为日常操作系统使用。
 
@@ -418,8 +404,6 @@ Azure Linux 缺乏许多桌面环境所需的硬件驱动支持和图形界面�
 
 ### 5: Azure Linux 和之前微软发布的 WSL (Windows Subsystem for Linux) 有什么区别？
 
-5: Azure Linux 和之前微软发布的 WSL (Windows Subsystem for Linux) 有什么区别？
-
 **A**: 这是两个完全不同的产品。
 
 *   **WSL** 是一个运行在 Windows 10/11 桌面版上的兼容层，允许用户在 Windows 内部直接运行 Linux 环境（如 Ubuntu、Debian 等）。它主要面向开发者，用于在 Windows 上进行 Linux 开发。
@@ -428,8 +412,6 @@ Azure Linux 缺乏许多桌面环境所需的硬件驱动支持和图形界面�
 ---
 
 ### 6: Azure Linux 是开源的吗？我可以查看它的源代码吗？
-
-6: Azure Linux 是开源的吗？我可以查看它的源代码吗？
 
 **A**: 是的，Azure Linux 是开源项目。
 
@@ -443,7 +425,6 @@ Azure Linux 缺乏许多桌面环境所需的硬件驱动支持和图形界面�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/) / [开源生态](/categories/%E5%BC%80%E6%BA%90%E7%94%9F%E6%80%81/)

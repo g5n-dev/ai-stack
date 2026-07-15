@@ -16,8 +16,8 @@ categories:
 - 论文
 - 大模型
 source: arxiv
-description: 本文提出了一种基于酉群 $U(d)$ 闭子群的序列建模统一框架。该研究使用极简公理推导出一个共享架构骨架，其中子群的选择直接决定了状态空间、切投影和更新映射，从而自然地导出了循环神经网络（RNN）和Transformer模型。
-  作者特别在 $O(d)$ 子群上进行了实例化，并在参数匹配的条件下，于 Tiny Shake
+description: 本文探讨了如何基于酉群闭子群构建序列建模的统一框架，通过极简公理推导出涵盖循环神经网络与Transformer的共享架构骨架。作者在正交群子群上的实例化及切空间线性混合扩展，展示了该框架在参数受限条件下提升模型性能的潜力。然而，该架构在更复杂的大规模任务中的泛化能力，尚无法从摘要确认。
+  本文提出了一种基于酉群 $U(d)$ 闭子群的序列建模统一框架。
 external_url: http://arxiv.org/abs/2602.18417v1
 scenarios:
 - Web应用开发
@@ -27,10 +27,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# U(d)子群自然导出RNN与Transformer架构
-
 ---
 
 ## 基本信息

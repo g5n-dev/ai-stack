@@ -16,7 +16,8 @@ categories:
 - 论文
 - AI 工程
 source: arxiv
-description: 以下是对内容的中文总结： **SFedHIFI：基于发放率的脉冲联邦学习异构信息融合** **背景与挑战** 脉冲联邦学习（SFL）结合了脉冲神经网络（SNN）的低能耗优势，已成为研究热点。然而，现有的SFL方法通常要求所有客户端使用同质模型，并假设它们拥有充足的计算资源。这导致在现实场景中，资源受限的客户端往往被排除
+description: 针对脉冲联邦学习（SFL）中现有方法难以适配资源受限异构设备的问题，本文提出了 SFedHIFI 框架。该研究通过引入通道级矩阵分解与基于发放率的异构信息融合机制，使客户端能够根据本地资源自适应部署不同规模的
+  SNN 模型，并实现跨尺度的有效聚合。虽然摘要未详述具体的通信开销对比，但该工作为在边缘端构建低能耗且具备高适应性的脉冲学习系统提供了新的技术路径。
 external_url: http://arxiv.org/abs/2603.14956v1
 scenarios:
 - Web应用开发
@@ -24,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# SFedHIFI：基于发放率的脉冲联邦学习异构信息融合
-
 ---
 
 ## 基本信息

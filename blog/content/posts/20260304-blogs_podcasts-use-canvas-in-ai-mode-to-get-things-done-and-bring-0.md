@@ -35,10 +35,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Canvas AI模式全美上线：支持文档起草与交互式工具构建
-
----
-
 ## 基本信息
 
 - **来源**: Google AI Blog (blog)

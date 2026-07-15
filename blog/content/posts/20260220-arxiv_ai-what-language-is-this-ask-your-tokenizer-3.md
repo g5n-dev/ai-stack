@@ -16,8 +16,7 @@ categories:
 - 大模型
 - 数据
 source: arxiv
-description: 本文介绍了**UniLID**，一种基于UnigramLM分词算法的新型语言识别（LID）方法。 **背景与问题：** 现有的LID系统虽然对高资源语言表现优异，但在低资源语言和相近语言（如方言）的识别上依然脆弱。
-  **核心方案：** UniLID利用UnigramLM的概率框架，在共享词表的基础上学习特定语言的单字分
+description: 针对现有语言识别系统在低资源语言及方言上表现脆弱的问题，本文提出了基于 UnigramLM 分词算法的 UniLID 方法。该方法通过利用分词器固有的语言统计特征，旨在提供一种轻量级且无需外部训练数据的识别方案。虽然摘要未详细披露其与大规模预训练模型的性能对比细节，但该研究为多语言文本处理提供了一种新的技术视角。
 external_url: http://arxiv.org/abs/2602.17655v1
 scenarios:
 - AI/ML项目
@@ -30,10 +29,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 基于分词器的未知语言识别方法
-
 ---
 
 ## 基本信息

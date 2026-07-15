@@ -16,8 +16,8 @@ categories:
 - AI 工程
 - 大模型
 source: juejin
-description: 以下是对该内容核心要点的简洁总结： **一、 背景与趋势** 随着 AutoGLM、豆包手机等 AI Agent（智能体）及自动化脚本的兴起，移动端交互方式正迎来变革。要让
-  AI 能够像人类一样操作手机，核心在于解决**“感知”**问题，即如何让 AI 精准地观测和理解手机屏幕上的内容。 **二、 核心技术原理：移动端
+description: 随着 AutoGLM、豆包等 AI Agent 的兴起，移动端交互正从传统的图形界面点击转向由模型直接接管操作。这一转变要求系统具备精准的“观测”能力，即从底层提取可被机器理解的事件特征。本文将深入解析
+  AI 操控手机的技术原理，并对比三种主流路径下的信息提取方案，帮助开发者厘清构建移动端 Agent 的关键技术细节。
 external_url: https://juejin.cn/post/7610979696307126281
 scenarios:
 - AI/ML项目
@@ -25,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# AI Agent接管手机：移动端观测技术与事件特征提取
-
 ---
 
 ## 基本信息

@@ -16,8 +16,9 @@ categories:
 - 开发工具
 - 效率与方法论
 source: juejin
-description: 基于提供的标题和简短描述，以下是对该主题内容的总结： **核心主题：利用 Git Worktree 与 Claude Code 实现多终端并发开发**
-  本文主要介绍了一套结合 **Git Worktree** 与 **Claude Code AI** 的高效开发工作流，旨在解决传统开发流程中因 AI 生成代码而产生的等
+description: 在依赖 AI 辅助编程时，频繁切换上下文导致的等待时间往往成为效率瓶颈。本文深入探讨 Git Worktree 与 Claude Code
+  的结合使用，通过实战演示如何在多终端环境下实现真正的并发开发。读者将掌握在 Android 项目中同步处理多任务的具体方法，从而显著减少闲置等待，将实际开发效率提升
+  2-3 倍。
 external_url: https://juejin.cn/post/7605214360085299236
 scenarios:
 - AI/ML项目
@@ -25,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Git Worktree 与 Claude Code 实现多终端并发开发
-
 ---
 
 ## 基本信息
@@ -144,8 +141,6 @@ source_support: 0.0
 
 ### 1: 什么是 Git Worktree，它与常规的分支切换有什么本质区别？
 
-1: 什么是 Git Worktree，它与常规的分支切换有什么本质区别？
-
 **A**: Git Worktree（工作树）是 Git 提供的一个机制，允许你在同一个仓库中同时检出多个分支到不同的目录。
 
 常规的 Git 开发流程通常只允许你检出一个分支（即工作区只有一个）。如果你需要在不同分支间切换，必须提交或暂存当前修改，然后执行 `git checkout`，这会导致工作区文件频繁变动，且无法同时并行工作。
@@ -157,8 +152,6 @@ Git Worktree 的本质区别在于**“空间换时间”**。它允许你在主
 
 
 ### 2: 在结合 Claude Code 使用时，Worktree 如何解决 AI 上下文污染和并发冲突问题？
-
-2: 在结合 Claude Code 使用时，Worktree 如何解决 AI 上下文污染和并发冲突问题？
 
 **A**: Claude Code 等 AI 编程助手通常需要读取整个工作区的文件来建立上下文。如果在单工作区下频繁切换分支，AI 容易产生“幻觉”，例如基于旧分支的代码给出建议，或者索引缓存未及时更新。
 
@@ -173,8 +166,6 @@ Git Worktree 的本质区别在于**“空间换时间”**。它允许你在主
 
 
 ### 3: 如何创建、列出和删除 Git Worktree？请提供最常用的实战命令。
-
-3: 如何创建、列出和删除 Git Worktree？请提供最常用的实战命令。
 
 **A**: 以下是 Git Worktree 的核心操作命令：
 
@@ -212,8 +203,6 @@ git worktree prune
 
 ### 4: 使用 Worktree 开发完成后，如何正确地进行代码合并和清理？
 
-4: 使用 Worktree 开发完成后，如何正确地进行代码合并和清理？
-
 **A**: 完整的收尾流程对于保持仓库整洁至关重要：
 
 1.  **提交与推送**：在 Worktree 目录中像平常一样进行代码提交。
@@ -234,8 +223,6 @@ git worktree prune
 
 ### 5: 在使用 Git Worktree 时有哪些常见的陷阱需要避免？
 
-5: 在使用 Git Worktree 时有哪些常见的陷阱需要避免？
-
 **A**: 实战中需要注意以下几点：
 
 1.  **不可在多个 Worktree 中检出到同一个分支**：你不能同时在一个 Worktree 的 `feature-x` 分支上进行开发，又在另一个 Worktree 切换到 `feature-x`。Git 会阻止这种操作，以防止 HEAD 指针冲突。不同的 Worktree 必须基于不同的分支。
@@ -252,7 +239,6 @@ git worktree prune
 ---
 
 
----
 ## 站内链接
 
 - 分类： [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/) / [效率与方法论](/categories/%E6%95%88%E7%8E%87%E4%B8%8E%E6%96%B9%E6%B3%95%E8%AE%BA/)

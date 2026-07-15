@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 逆向工程挑战：解析该神经网络架构
-
----
-
 ## 基本信息
 
 - **作者**: jsomers

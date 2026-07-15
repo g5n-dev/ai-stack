@@ -15,8 +15,8 @@ tags:
 categories:
 - 大模型
 source: blogs_podcasts
-description: Google DeepMind 与韩国政府、科研机构及高校正式建立合作伙伴关系，聚焦利用前沿 AI 大模型加速韩国的科学突破。双方将在基础研究、应用技术、人才培养和平台建设等方面开展深度合作，重点覆盖气候预测、医学诊断、材料科学等关键领域。合作内容包括共建
-  AI 研发实验室、共享数据资源、开展联合项目以及培养本土 AI
+description: Google DeepMind 与韩国合作，利用前沿 AI 模型加速科学突破。 Google DeepMind 与韩国政府及科研机构正式建立合作，携手部署最前沿的
+  AI 模型，旨在为科学发现提供强大算力与算法支持。通过共享资源与专业知识，双方将加速在气候、医学和材料等关键领域的研究进程，让全球科研工作者更快获得突破性的洞见，并提供开放的平台供韩国团队直接调用模型，推动跨学科创新。
 external_url: https://deepmind.google/blog/announcing-our-partnership-with-the-republic-of-korea
 scenarios:
 - AI/ML项目
@@ -24,10 +24,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Google DeepMind与韩国合作 探索AI科研新方向
-
 ---
 
 ## 基本信息
@@ -156,7 +152,6 @@ Google DeepMind 与韩国政府、科研机构及高校正式建立合作伙伴�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

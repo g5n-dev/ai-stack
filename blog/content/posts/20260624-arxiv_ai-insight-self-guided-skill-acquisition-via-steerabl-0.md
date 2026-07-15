@@ -16,7 +16,7 @@ categories:
 - 论文
 - AI 工程
 source: arxiv
-description: InSight致力于解决机器人技能获取中的关键挑战：如何使智能体能够自主学习和适应新任务。基于可操纵的视觉语言动作模型（VLAs），该框架提出了一种自引导学习方法，使系统能够在缺乏大规模人类示范的情况下，通过交互反馈实现技能精炼。该研究的潜在应用方向涵盖机器人学习、自动化任务执行等领域，但具体实验设置和性能评估结果尚无
+description: InSight致力于解决机器人技能获取中的关键挑战：如何使智能体能够自主学习和适应新任务。基于可操纵的视觉语言动作模型（VLAs），该框架提出了一种自引导学习方法，使系统能够在缺乏大规模人类示范的情况下，通过交互反馈实现技能精炼。该研究的潜在应用方向涵盖机器人学习、自动化任务执行等领域，但具体实验设置和性能评估结果尚无法从摘要确认。
 external_url: http://arxiv.org/abs/2606.24884v1
 scenarios:
 - Web应用开发
@@ -24,10 +24,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 可转向VLAs驱动的自我引导技能获取系统InSight
-
 ---
 
 ## 基本信息
@@ -94,7 +90,6 @@ InSight提出一种自导式技能获取框架，核心在于可转向VLAs的设
 
 ---
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

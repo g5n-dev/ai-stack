@@ -17,7 +17,7 @@ categories:
 - AI 工程
 source: blogs_podcasts
 description: vLLM 从 V0 演进到 V1，标志着在强化学习环境中对模型行为正确性的更高要求。不同于先进行错误纠正的思路，V1 采用先确保输出符合业务约束，再逐步完善纠正层的策略，从而在复杂交互中保持稳定表现。本文深入解析
-  V1 的设计动机、关键实现细节以及在真实任务中的实验结果，为希望在实际项目中平滑升级的开发者提供可操作的参
+  V1 的设计动机、关键实现细节以及在真实任务中的实验结果，为希望在实际项目中平滑升级的开发者提供可操作的参考。
 external_url: https://huggingface.co/blog/ServiceNow-AI/correctness-before-corrections
 scenarios:
 - 大语言模型
@@ -25,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# vLLM V0到V1：正确性优先于修正的RL演进
-
 ---
 
 ## 基本信息
@@ -124,7 +120,6 @@ vLLM从V0到V1的演进体现了**"正确性先于修正"**的核心设计哲学
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

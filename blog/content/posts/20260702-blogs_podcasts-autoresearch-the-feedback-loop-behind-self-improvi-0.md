@@ -15,8 +15,8 @@ tags:
 categories:
 - AI 工程
 source: blogs_podcasts
-description: Autoresearch 与反馈环 Autoresearch 是一套让 AI 智能体在执行任务后自动收集结果、评估效果并生成改进方案的系统。它通过把每一次运行的输出反馈给模型，使模型在下一轮迭代中能够针对具体错误或不足进行优化。
-  Agent “配方” 在 Introspection 平台，开发者把常用的任务流程、工具调
+description: Introspection联合创始人Roland Gavrilescu解读自动研究、智能体"配方"、自我改进循环，以及为何人类仍是软件工厂的核心。
+  在AI系统逐步承担研究任务的趋势下，如何让智能体实现自我改进成为业界关注的焦点。本文通过Introspection联合创始人Roland Gavrilescu的视角，解析自动研究的核心“配方”以及反馈循环的工作机制。
 external_url: https://www.latent.space/p/autoresearch-introspection
 scenarios:
 - AI/ML项目
@@ -24,10 +24,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 自动研究智能体的反馈循环与人类核心作用
-
 ---
 
 ## 基本信息
@@ -152,7 +148,6 @@ autoresearch代表了一种从“人工调优”到“自动进化”的范式�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

@@ -25,10 +25,8 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 将 Mermaid 图表渲染为 SVG 或 ASCII 文本
-
+description: 在编写技术文档或维护代码仓库时，Mermaid 已成为描述复杂流程与架构的通用选择。然而，不同展示环境对图表格式的要求往往存在差异，有时需要矢量图形以保证清晰度，有时则需要纯文本以适应终端显示。本文将介绍如何将
+  Mermaid 图表渲染为 SVG 或 ASCII 艺术字，帮助读者根据具体场景灵活选择输出格式，从而更高效地集成与分享可视化内容。
 ---
 
 ## 基本信息
@@ -118,7 +116,7 @@ def render_mermaid_to_svg():
         C --> E[结束]
         D --> E
     """
-    
+
     # 生成SVG文件
     Generate(mermaid_code, "output.svg")
     print("SVG文件已生成：output.svg")
@@ -148,7 +146,7 @@ def render_mermaid_to_ascii():
         John->>Bob: How about you?
         Bob-->>John: Jolly good!
     """
-    
+
     # 生成ASCII艺术图
     Generate(mermaid_code, "output.txt", format="txt")
     print("ASCII艺术图已生成：output.txt")
@@ -170,11 +168,11 @@ def render_dynamic_gantt():
         ("开发阶段", "a2", 2023, 2, 1, 40),
         ("测试阶段", "a3", 2023, 3, 15, 20)
     ]
-    
+
     mermaid_code = "gantt\n    title 项目进度\n    dateFormat YYYY-MM-DD\n"
     for name, id, year, month, duration, _ in tasks:
         mermaid_code += f"    {name} :{id}, {year}-{month:02d}-01, {duration}d\n"
-    
+
     # 生成PNG图片
     Generate(mermaid_code, "gantt.png", format="png")
     print("甘特图PNG已生成：gantt.png")
@@ -186,8 +184,6 @@ render_dynamic_gantt()
 ## 案例研究
 
 ### 1：开源项目 Apache Iceberg 官方文档
-
- 1：开源项目 Apache Iceberg 官方文档
 
 **背景**:
 Apache Iceberg 是一个开源的表格式，旨在解决大型数据湖中的难题。其官方文档托管在 GitHub 上，使用 Markdown 编写，旨在向开发者清晰解释其复杂的元数据管理机制、快照隔离以及表分区策略。
@@ -206,8 +202,6 @@ Iceberg 的架构设计涉及多个组件的交互（如 Catalog、Metadata File
 ---
 
 ### 2：某大型 SaaS 企业的研发知识库
-
- 2：某大型 SaaS 企业的研发知识库
 
 **背景**:
 该企业使用 Confluence 作为内部知识库，记录了大量微服务之间的调用关系、数据流向以及复杂的业务审批流程。这些文档由不同的产品经理和工程师协作维护。
@@ -332,8 +326,6 @@ Iceberg 的架构设计涉及多个组件的交互（如 Catalog、Metadata File
 
 ### 1: Mermaid 是什么，它主要用来解决什么问题？
 
-1: Mermaid 是什么，它主要用来解决什么问题？
-
 **A**: Mermaid 是一个基于 JavaScript 的开源绘图工具，它允许用户通过文本和代码的方式来生成图表。它的主要目的是解决文档编写和软件开发过程中“绘图难”和“维护难”的问题。
 
 通常，创建流程图、时序图或类图需要打开专门的图形界面软件（如 Visio 或 draw.io）进行拖拽和连线，这不仅耗时，而且在修改图表逻辑时非常不便。Mermaid 采用“代码即图表”的理念，用户只需编写简单的标记语法，即可实时渲染出专业的图表。这使得开发者可以将图表直接嵌入到 Markdown 文件、HTML 页面或 Wiki 中，实现图表的版本控制与文本的同步更新。
@@ -341,8 +333,6 @@ Iceberg 的架构设计涉及多个组件的交互（如 Catalog、Metadata File
 ---
 
 ### 2: 将 Mermaid 渲染为 SVG 和 ASCII art 各有什么优缺点？
-
-2: 将 Mermaid 渲染为 SVG 和 ASCII art 各有什么优缺点？
 
 **A**: 这两种输出格式分别适用于不同的场景：
 
@@ -357,8 +347,6 @@ Iceberg 的架构设计涉及多个组件的交互（如 Catalog、Metadata File
 ---
 
 ### 3: 如何在 Markdown 文件或网页中渲染 Mermaid 图表？
-
-3: 如何在 Markdown 文件或网页中渲染 Mermaid 图表？
 
 **A**: 渲染方式取决于你所使用的平台：
 
@@ -379,8 +367,6 @@ Iceberg 的架构设计涉及多个组件的交互（如 Catalog、Metadata File
 
 ### 4: 如果 Mermaid 代码有语法错误，渲染失败怎么办？
 
-4: 如果 Mermaid 代码有语法错误，渲染失败怎么办？
-
 **A**: 当 Mermaid 代码存在语法错误时，渲染引擎通常会抛出异常或显示错误信息。处理方法如下：
 
 1.  **查看调试信息**：在浏览器环境中，你可以打开开发者工具（F12）查看 Console 面板，Mermaid 通常会打印出具体的语法错误位置（例如第几行缺少分号）。
@@ -390,8 +376,6 @@ Iceberg 的架构设计涉及多个组件的交互（如 Catalog、Metadata File
 ---
 
 ### 5: Mermaid 支持哪些类型的图表？
-
-5: Mermaid 支持哪些类型的图表？
 
 **A**: Mermaid 支持非常广泛的图表类型，几乎涵盖了软件工程和业务流程中的大部分需求。主要包括：
 
@@ -409,8 +393,6 @@ Iceberg 的架构设计涉及多个组件的交互（如 Catalog、Metadata File
 
 ### 6: 生成的 SVG 图表可以进一步编辑或修改样式吗？
 
-6: 生成的 SVG 图表可以进一步编辑或修改样式吗？
-
 **A**: 是的，生成的 SVG 具有很强的可定制性：
 
 1.  **主题与配置**：在初始化 Mermaid 时，可以通过配置指令
@@ -423,7 +405,6 @@ Iceberg 的架构设计涉及多个组件的交互（如 Catalog、Metadata File
 
 ---
 
----
 ## 站内链接
 
 - 分类： [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/) / [前端](/categories/%E5%89%8D%E7%AB%AF/)

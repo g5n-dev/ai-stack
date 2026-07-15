@@ -16,8 +16,7 @@ categories:
 - 论文
 - AI 工程
 source: arxiv
-description: '**共形策略控制** 本文介绍了一种名为“共形策略控制”的方法，旨在解决高风险环境中智能体在安全探索与性能提升之间的平衡问题。 **核心挑战：**
-  智能体需要尝试新行为以探索环境并提升性能。但在高风险环境下，违反安全约束可能导致危害，迫使智能体下线，从而中断未来的交互与学习。虽然模仿旧有行为是安全的，但过度保守会阻碍探'
+description: 针对高风险环境中智能体在安全探索与性能提升之间的平衡难题，本文提出了一种名为“Conformal Policy Control”的方法。该方法通过引入共形预测机制，旨在严格约束智能体的行为以防止因违反安全限制而导致的中断。虽然摘要未详述具体算法细节，但该工作为在安全敏感场景下实现可靠的强化学习提供了新的控制思路。
 external_url: http://arxiv.org/abs/2603.02196v1
 scenarios:
 - AI/ML项目
@@ -27,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Conformal Policy Control：一种基于保形预测的策略控制方法
-
 ---
 
 ## 基本信息

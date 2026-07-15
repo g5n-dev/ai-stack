@@ -16,7 +16,7 @@ categories:
 - 大模型
 - AI 工程
 source: arxiv
-description: SciReasoner是一种多模态科学基础模型，专注于原生结构推理。它将蛋白质、小分子和无机晶体的坐标、拓扑和周期连通性统一离散化为结构感知词汇，使结构标记在推理过程中可定位为证据单元。在基因本体预测中，针对低同源或孤儿蛋白，SciReasoner将细胞组分的F_max从0.42提升至0.55；在化学逆合成方面，单步逆
+description: SciReasoner是一种多模态科学基础模型，专注于原生结构推理。它将蛋白质、小分子和无机晶体的坐标、拓扑和周期连通性统一离散化为结构感知词汇，使结构标记在推理过程中可定位为证据单元。在基因本体预测中，针对低同源或孤儿蛋白，SciReasoner将细胞组分的Fmax从0.42提升至0.55；在化学逆合成方面，单步逆合成准确率从0.63提升至0.72，并生成碎片级断开和前体验证追踪；
 external_url: http://arxiv.org/abs/2607.07708v1
 scenarios:
 - AI/ML项目
@@ -24,10 +24,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 深度原生结构推理实现结构性能透明理解
-
 ---
 
 ## 基本信息
@@ -163,7 +159,6 @@ SciReasoner 将蛋白质残基、分子原子以及晶体原胞的坐标、拓�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

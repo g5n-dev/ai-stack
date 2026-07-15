@@ -15,8 +15,8 @@ tags:
 categories:
 - 产品与创业
 source: juejin
-description: 背景 我使用 Codex 全 AI 在一天内完成了一个微信小程序——嘎嘎拼豆。 功能 该程序让用户上传任意照片，即可在几秒钟内生成对应的拼豆（Perler
-  bead）图纸和用色清单。核心功能包括：1）自动识别图片主体并裁剪合适尺寸；2）利用 AI 把图片颜色映射到常见的拼豆颜色库；3）输出像素化图纸和色块排列，便于用户
+description: 在一天之内，利用 OpenAI Codex 实现完整功能的微信小程序，并不是天方夜谭。本文通过「嘎嘎拼豆」这一实际案例，展示如何把用户上传的照片自动转换为拼豆图纸与用色清单，从而把原本繁琐的手工规划过程简化到几秒钟。读者不仅可以了解
+  Codex 在全栈开发中的实际应用，还能获得快速落地 AI 想法的具体思路与代码组织经验。
 external_url: https://juejin.cn/post/7658510258419220490
 scenarios:
 - AI/ML项目
@@ -24,10 +24,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 用Codex AI一天开发微信拼豆小程序照片生成图纸功能
-
 ---
 
 ## 基本信息
@@ -108,7 +104,6 @@ AI 代码生成大幅缩短从概念到可运行原型的周期；自然语言�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [产品与创业](/categories/%E4%BA%A7%E5%93%81%E4%B8%8E%E5%88%9B%E4%B8%9A/)

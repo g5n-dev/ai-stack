@@ -16,7 +16,7 @@ categories:
 - 论文
 - 大模型
 source: arxiv
-description: '**论文总结：LLM作为图核** **核心观点** 本文探讨了在富文本图（Text-Rich Graphs，即包含复杂结构和丰富文本信息的图）上进行学习的挑战。作者指出，传统方法及现有的LLM混合模型通常先将文本压缩为静态嵌入或摘要，这导致了信息丢失，且切断了结构更新与原始内容的联系。本文主张在富文本图中，文本不仅是节'
+description: 针对文本丰富图（Text-Rich Graphs）中结构化推理与文本语义难以协同的挑战，本文提出将大语言模型（LLM）重塑为图核，直接在消息传递机制中处理原始文本，从而避免了传统方法因预压缩导致的信息丢失。该框架通过动态上下文更新维持了结构与内容的紧密关联，但具体的计算效率优化策略无法从摘要确认。这一思路为复杂图结构上的深层语义理解提供了新的技术路径，有望推动知识图谱推理等下游任务的发展。
 external_url: http://arxiv.org/abs/2603.14937v1
 scenarios:
 - 大语言模型
@@ -24,10 +24,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# LLM作为图核：文本丰富图的消息传递重思考
-
 ---
 
 ## 基本信息

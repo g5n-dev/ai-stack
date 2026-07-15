@@ -15,9 +15,7 @@ tags:
 categories:
 - AI 工程
 source: juejin
-description: 背景 固定流程的 Tasklist Agent 只能按预设步骤执行，缺乏灵活性。为在保持安全的前提下引入有限决策，团队在 AI Mind
-  v0.1.1 中进行改造。 改造思路 - 将可选动作抽象为白名单，模型只能在白名单中选择下一步方向。 - 引入运行时状态机，对状态转换进行监控，确保不越界。 实现细节
-  - 在模型输出
+description: 在实际项目中，完全自由规划的Agent往往会导致不可预期的行为。通过在决策阶段加入受控的白名单机制，可以让系统在保持灵活性的同时严格遵守业务边界。本文将分享在TasklistAgent中实现受控决策的具体思路与实现细节，并提供可复用的代码示例。
 external_url: https://juejin.cn/post/7645147525191696422
 scenarios:
 - AI/ML项目
@@ -26,10 +24,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Tasklist Agent受控决策实现方法
-
 ---
 
 ## 基本信息
@@ -125,7 +119,6 @@ If you actually need a different translation (e.g., to another language) or want
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

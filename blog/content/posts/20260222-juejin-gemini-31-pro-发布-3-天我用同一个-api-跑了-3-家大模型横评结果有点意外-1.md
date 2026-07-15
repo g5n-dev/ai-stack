@@ -16,8 +16,8 @@ categories:
 - 大模型
 - AI 工程
 source: juejin
-description: 这篇文章主要分享了在 Google 发布 **Gemini 3.1 Pro** 三天后，作者使用同一段包含 3 个 bug 的代码，对 **Gemini
-  3.1 Pro**、**Claude** 和 **GPT-5**（推测指 GPT-4.5 或最新 OpenAI 模型）进行的横向评测对比结果。 以下是核心内容的总结：
+description: Gemini 3.1 Pro 发布后，其宣称的性能提升引发了广泛关注。为了验证其在实际开发场景中的表现，我们选取了一段包含三个典型 Bug
+  的代码，通过统一 API 调用，让 Gemini、Claude 与 GPT-5 进行了同台实测。结果显示，不同模型在代码定位与修复能力上的差异，远超许多开发者的预期。
 external_url: https://juejin.cn/post/7608028493722075142
 scenarios:
 - Web应用开发
@@ -25,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Gemini 2.5 Pro实测：同API对比三款大模型找Bug能力
-
 ---
 
 ## 基本信息

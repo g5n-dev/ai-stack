@@ -15,8 +15,8 @@ tags:
 categories:
 - 产品与创业
 source: blogs_podcasts
-description: 项目概述 OpenAI 正式推出合作伙伴网络（Partner Network），旨在为全球企业搭建 AI 采用、部署和转型的支撑平台。 投资规模
-  该网络将投入 1.5 亿美元（约 150 百万美元），用于技术资源、平台建设及合作伙伴赋能。 目标与价值 帮助合作伙伴加速在企业环境中落地 AI 解决方案，提升业务创新和数字
+description: OpenAI正式推出合作伙伴网络，将投资1.5亿美元助力全球合作伙伴加速企业AI的采用、部署与转型。 OpenAI 正式推出合作伙伴网络，并承诺投入
+  1.5 亿美元，以帮助全球合作伙伴在企业中快速落地 AI 技术。该计划通过技术共享、联合研发与市场联动，降低企业在 AI 采用过程中的成本与风险，推动业务创新与数字化转型。
 external_url: https://openai.com/index/introducing-openai-partner-network
 scenarios:
 - AI/ML项目
@@ -24,10 +24,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# OpenAI推合作伙伴网络 1.5亿美元助企业AI转型
-
 ---
 
 ## 基本信息
@@ -125,7 +121,6 @@ OpenAI Partner Network的1.5亿美元投资标志着企业AI应用从概念验�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [产品与创业](/categories/%E4%BA%A7%E5%93%81%E4%B8%8E%E5%88%9B%E4%B8%9A/)

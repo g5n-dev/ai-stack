@@ -15,8 +15,8 @@ tags:
 categories:
 - AI 工程
 source: blogs_podcasts
-description: 背景 机器人强化学习（RL）需要大量交互数据和计算资源，训练人形机器人策略尤为如此。采用云端高性能仿真平台可以显著提升训练效率并降低成本。
-  实现方案 利用 NVIDIA Isaac Lab 实现高精度物理仿真，配合 Amazon SageMaker AI 管理分布式训练任务。Isaac Lab 提供丰富的机器人模型库，
+description: 在本文中，我们将展示如何在 Amazon SageMaker AI 上使用 NVIDIA Isaac Lab 为 Unitree H1 人形机器人训练策略，并提供两种计算选项：Amazon
+  SageMaker HyperPod 和 Amazon SageMaker Training Jobs。 人形机器人运动控制的强化学习训练对计算资源有很高要求，资源调度和训练效率往往是规模化部署的主要瓶颈。
 external_url: https://aws.amazon.com/blogs/machine-learning/scale-robot-reinforcement-learning-with-nvidia-isaac-lab-on-amazon-sagemaker-ai
 scenarios:
 - Web应用开发
@@ -26,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# SageMaker上用Isaac Lab训练Unitree H1人形机器人策略
-
 ---
 
 ## 基本信息
@@ -162,7 +158,6 @@ Spot 实例可降低 60% 计算成本，配合自动伸缩策略实现只在需�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

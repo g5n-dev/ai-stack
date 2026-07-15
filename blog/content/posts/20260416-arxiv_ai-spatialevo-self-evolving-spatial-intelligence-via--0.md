@@ -16,8 +16,7 @@ categories:
 - 论文
 - AI 工程
 source: arxiv
-description: 关键挑战 三维空间推理是具身智能的核心能力，但高质量几何标注成本高昂，限制了模型的持续提升。已有的自进化方法依赖模型共识构造伪标签，导致模型错误被强化，难以纠正几何偏差。
-  方法概述 论文提出 **SpatialEvo**，以“确定性几何环境”（DGE）为核心，实现自进化训练。DGE 将未标注的三维点云与相机位姿转化为零
+description: 论文提出 SpatialEvo，以“确定性几何环境”（DGE）为核心，实现自进化训练。DGE 将未标注的三维点云与相机位姿转化为零噪声的交互预言机，无需模型参与即可精确计算空间真值，从而取代模型共识。
 external_url: http://arxiv.org/abs/2604.14144v1
 scenarios:
 - Web应用开发
@@ -27,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# SpatialEvo基于确定性几何环境的自演化空间智能方法
-
 ---
 
 ## 基本信息
@@ -146,7 +141,6 @@ DGE的理论基础来自计算几何和逆投影几何。例如，对于点云�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

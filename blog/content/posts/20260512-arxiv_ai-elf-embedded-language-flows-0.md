@@ -16,8 +16,7 @@ categories:
 - 论文
 - 大模型
 source: arxiv
-description: 背景 扩散与流模型在图像、视频等连续数据生成中表现突出，近年来被尝试用于语言建模。当前领先的扩散语言模型（DLM）大多在离散词符上操作，生成质量与采样步数仍受限。
-  核心设计 - **连续嵌入空间**：ELF 在整个前向过程保持连续嵌入，仅在最后时间步通过共享权重的网络映射到离散词符。 - **连续时间 Flow Mat
+description: 'ELF: Embedded Language Flows聚焦于将语言序列建模为连续的潜在流，以期提升序列信息的表达能力。该研究提出一种基于可逆变换的嵌入式语言流框架，但具体实现与实验细节在摘要中未展开，无法从摘要确认其性能提升的实际幅度。该工作或为基于流的语言表示提供新思路，仍需后续实验验证。'
 external_url: http://arxiv.org/abs/2605.10938v1
 scenarios:
 - 自然语言处理
@@ -25,10 +24,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# ELF：嵌入式语言流方法
-
 ---
 
 ## 基本信息
@@ -103,7 +98,6 @@ ELF的核心假设是连续嵌入空间能够保留足够的语言信息且可�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/) / [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

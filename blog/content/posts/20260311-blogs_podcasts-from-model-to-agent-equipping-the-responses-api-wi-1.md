@@ -16,9 +16,8 @@ categories:
 - 大模型
 - AI 工程
 source: blogs_podcasts
-description: 将大模型升级为具备自主规划与执行能力的智能体，关键在于如何安全、可控地赋予其操作计算机环境的能力。本文详细解析了 OpenAI 如何通过
-  Responses API 结合 Shell 工具与托管容器，构建出一个支持文件操作、工具调用及状态管理的代理运行时。通过阅读这篇文章，你将掌握构建可扩展 Agent
-  系统的工程化路
+description: OpenAI 如何利用 Responses API、Shell 工具和托管容器构建了一个代理运行时，以运行具备文件、工具和状态的安全、可扩展的代理。
+  将大模型升级为具备自主规划与执行能力的智能体，关键在于如何安全、可控地赋予其操作计算机环境的能力。
 external_url: https://openai.com/index/equip-responses-api-computer-environment
 scenarios:
 - AI/ML项目
@@ -36,10 +35,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# OpenAI 利用 Responses API 构建具备文件与状态管理的代理运行时
-
 ---
 
 ## 基本信息

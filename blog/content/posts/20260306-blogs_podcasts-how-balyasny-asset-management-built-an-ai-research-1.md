@@ -16,8 +16,8 @@ categories:
 - 大模型
 - AI 工程
 source: blogs_podcasts
-description: '**Balyasny Asset Management (BAM) 构建 AI 投研引擎的案例总结** **背景与目标** 全球知名的多策略对冲基金
-  Balyasny Asset Management (BAM) 面临着信息过载的挑战。为了在海量数据中保持竞争优势，他们致力于构建一个企业级的人工智能研究引擎，旨在利用大'
+description: 看看 Balyasny 如何借助 GPT-5.4、严格的模型评估以及 Agent 工作流打造 AI 研究系统，从而大规模提升投资分析。 随着大语言模型在金融领域的应用逐步深入，如何将前沿技术转化为可靠的生产力成为机构关注的焦点。本文详细拆解了
+  Balyasny Asset Management 如何利用 GPT-5.4 结合 Agent 工作流，构建出一套可扩展的 AI 投资研究系统。
 external_url: https://openai.com/index/balyasny-asset-management
 scenarios:
 - AI/ML项目
@@ -36,10 +36,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Balyasny 融合 GPT-5.4 与 Agent 工作流构建 AI 投研引擎
-
 ---
 
 ## 基本信息

@@ -16,8 +16,8 @@ categories:
 - 大模型
 - AI 工程
 source: blogs_podcasts
-description: 背景 今天市场相对平静，给了我们时间细细消化截至目前全球最重要的模型发布——这正是《Fable 指南》所聚焦的内容。 指南概述 《Fable
-  指南》对该模型的架构设计、训练数据、关键性能指标以及实际应用场景做了系统梳理。内容覆盖模型的创新点、优势与局限，并提供了部署、微调以及 Prompt 工程的实践建议，帮助读者快速
+description: 一个安静的日子，让我们得以消化迄今为止世界上最重要的模型发布…… 本周 AI 领域迎来一次重要的模型发布——The Field Guide
+  to Fable。该指南系统梳理了模型的核心架构、训练方法以及在多场景中的实践表现，为研究者和工程师提供了最新的技术参考。通过阅读本指南，读者可以快速掌握模型的关键特性，并在项目中有效地进行适配和优化。
 external_url: https://www.latent.space/p/ainews-the-field-guide-to-fable
 scenarios:
 - Web应用开发
@@ -25,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# AINews Fable指南：消化世界重要AI模型发布
-
 ---
 
 ## 基本信息
@@ -169,7 +165,6 @@ Fable 为迄今为止规模最大、技术突破最深、行业影响最广的�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

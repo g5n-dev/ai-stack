@@ -17,7 +17,7 @@ categories:
 - AI 工程
 source: hacker_news
 description: 在端侧 AI 落地的实践中，如何高效利用 Apple Silicon 的算力以实现低延迟交互，一直是开发者关注的重点。本文详细介绍了在 Apple
-  Silicon 上部署 Nvidia PersonaPlex 7B 的具体流程，重点解析了如何利用 Swift 实现全双工的语音交互模式。通过阅读这篇文章，读者将掌握从环境
+  Silicon 上部署 Nvidia PersonaPlex 7B 的具体流程，重点解析了如何利用 Swift 实现全双工的语音交互模式。通过阅读这篇文章，读者将掌握从环境搭建到模型推理的完整技术路径，并了解如何优化本地语音体验。
 external_url: https://blog.ivan.digital/nvidia-personaplex-7b-on-apple-silicon-full-duplex-speech-to-speech-in-native-swift-with-mlx-0aa5276f2e23
 scenarios:
 - 大语言模型
@@ -31,10 +31,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 英伟达PersonaPlex 7B登陆苹果芯片：Swift实现全双工语音交互
-
 ---
 
 ## 基本信息

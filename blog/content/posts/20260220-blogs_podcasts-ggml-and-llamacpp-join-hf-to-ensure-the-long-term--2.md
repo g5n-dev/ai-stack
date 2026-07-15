@@ -37,10 +37,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# GGML与llama.cpp加入HF推动本地AI长期发展
-
----
-
 ## 基本信息
 
 - **来源**: Hugging Face Blog (blog)

@@ -16,7 +16,7 @@ categories:
 - 大模型
 - 论文
 source: arxiv
-description: 研究背景 训练语言模型生成解释被视为提升模型自省能力的途径，但往往难以判断解释是忠实反映内部决策还是仅仅表面模仿。 关键发现 研究使用反事实行为的监督信号，让模型解释输入特征对预测的影响。实验意外发现，即使解释来源于模型自身的早期检查点或同族模型的固定反事实解释，模型在后续训练中仍能生成比训练目标更贴近自身当前行为的解
+description: 语言模型的解释生成能力一直是自省研究的核心议题，但难以区分解释究竟是模型真实决策的忠实反映还是表面化的模仿。本文通过反事实行为监督信号，探索输入特征对预测的影响机制。实验揭示了一个关键现象：即使训练解释来源于模型早期版本或固定规则，模型仍能逐步生成更贴近自身当前行为的解释，作者将此称为“内省耦合”。
 external_url: http://arxiv.org/abs/2606.32038v1
 scenarios:
 - Web应用开发
@@ -24,10 +24,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 内省式耦合自我解释训练追踪固定监督行为变化
-
 ---
 
 ## 基本信息
@@ -177,7 +173,6 @@ source_support: 0.0
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

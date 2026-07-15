@@ -16,8 +16,8 @@ categories:
 - 大模型
 - AI 工程
 source: blogs_podcasts
-description: 新发布的三款实时语音 API - **GPT‑Realtime‑2**：实现端到端低延迟（<300 ms）实时语音交互，支持多轮对话、情感识别等功能，适用于客服、语音助手等场景。
-  - **GPT‑Translate**：将语音即时翻译为目标语言，误差率和响应速度均创行业新高，可用于跨国会议、实时字幕等。 - **GPT
+description: OpenAI继续在各地部署GPT-5。 GPT‑Realtime‑2：实现端到端低延迟（<300 ms）实时语音交互，支持多轮对话、情感识别等功能，适用于客服、语音助手等场景。
+  GPT‑Translate：将语音即时翻译为目标语言，误差率和响应速度均创行业新高，可用于跨国会议、实时字幕等。
 external_url: https://www.latent.space/p/ainews-gpt-realtime-2-translate-and
 scenarios:
 - AI/ML项目
@@ -25,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# OpenAI发布GPT-Realtime-2等三项实时语音API
-
 ---
 
 ## 基本信息
@@ -142,7 +138,6 @@ OpenAI定义的实时语音处理标准将成为行业参考基准。其他厂�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

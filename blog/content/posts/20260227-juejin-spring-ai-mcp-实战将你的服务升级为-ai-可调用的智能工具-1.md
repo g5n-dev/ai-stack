@@ -17,7 +17,7 @@ categories:
 - AI 工程
 source: juejin
 description: 随着大模型技术的落地，如何让 AI 安全、标准化地调用业务系统成为开发者关注的焦点。MCP（Model Context Protocol）为此提供了一种高效的连接标准，而
-  Spring AI 则进一步简化了其在 Java 生态的集成。本文将带你通过实战案例，利用 Spring AI 封装 MCP 接口，将现有服务升级为
+  Spring AI 则进一步简化了其在 Java 生态的集成。本文将带你通过实战案例，利用 Spring AI 封装 MCP 接口，将现有服务升级为 AI 可直接调用的智能工具，从而构建起大模型与后端业务之间的稳固桥梁。
 external_url: https://juejin.cn/post/7611064285587128347
 scenarios:
 - AI/ML项目
@@ -26,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Spring AI MCP 实战：将服务升级为 AI 可调用工具
-
 ---
 
 ## 基本信息

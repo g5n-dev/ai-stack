@@ -16,9 +16,8 @@ categories:
 - AI 工程
 - 后端
 source: juejin
-description: 系统定位 「潇楠WEB3哨兵」是一个多链监控与交易平台，EVM/SOL 双链监控负责“眼睛”，电报 Bot 负责“嘴巴”，而 Agent
-  则是整个系统的“大脑”。它把感知层、执行层与用户的投研需求统一在同一个决策引擎中。 核心职责 - **信息整合**：聚合链上事件、社交信号、行情数据，形成统一的事实库。
-  - **记忆
+description: 「潇楠WEB3哨兵」将双链监控与电报交互分别定位为系统的“眼睛”和“嘴巴”，而 Agent 则承担起“大脑”的角色，实现跨链数据的记忆、推理与技能扩展。本文深入剖析其全栈架构，涵盖记忆系统的持久化与检索机制、插件化技能框架以及桌面端
+  AI 投研助手的完整实现细节，帮助开发者快速构建具备上下文感知能力的去中心化投研工具。
 external_url: https://juejin.cn/post/7635866179564584994
 scenarios:
 - AI/ML项目
@@ -26,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Agent全栈架构：记忆系统与技能扩展的桌面端AI投研实现
-
 ---
 
 ## 基本信息
@@ -119,7 +114,6 @@ Agent 充当系统的大脑，整合记忆、技能与跨链数据，实现桌�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [后端](/categories/%E5%90%8E%E7%AB%AF/)

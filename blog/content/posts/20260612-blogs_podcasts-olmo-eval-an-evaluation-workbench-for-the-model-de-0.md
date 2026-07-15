@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# olmo-eval：模型开发循环评估工作台
-
----
-
 ## 基本信息
 
 - **来源**: Hugging Face Blog (blog)
@@ -73,7 +69,6 @@ olmo-eval 作为模型开发循环中的评估工作台，其核心价值在于�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/)

@@ -16,9 +16,8 @@ categories:
 - 前端
 - 大模型
 source: juejin
-description: 本文介绍了如何利用 **Next.js**、**Ollama** 和 **Qwen3** 在本地搭建一个零成本的 AI 流式聊天应用。该方案无需昂贵的
-  API 密钥，适合个人开发者快速构建专属的本地 AI 工具。 以下是实现的核心要点总结： 1. **核心技术栈**： * **Next.js**：用于构建前端应用及
-  A
+description: 在本地环境运行大模型已成为降低开发成本与保护数据隐私的重要趋势。本文将详细介绍如何利用 Next.js、Ollama 和 Qwen3，从零构建一个支持流式输出的
+  AI 聊天应用。通过阅读本文，你将掌握无需 API 密钥即可在本地部署高性能模型的具体方法，从而搭建起完全属于自己的 AI 开发环境。
 external_url: https://juejin.cn/post/7617728986828816411
 scenarios:
 - 大语言模型
@@ -27,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Next.js + Ollama + Qwen3 构建本地流式聊天应用
-
 ---
 
 ## 基本信息

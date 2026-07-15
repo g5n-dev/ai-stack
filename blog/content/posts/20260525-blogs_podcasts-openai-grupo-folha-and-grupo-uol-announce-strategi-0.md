@@ -15,8 +15,8 @@ tags:
 categories:
 - 大模型
 source: blogs_podcasts
-description: OpenAI 与巴西媒体集团 Grupo Folha 和 Grupo UOL 建立战略内容合作伙伴关系，将两家主要新闻机构的可信报道引入
-  ChatGPT。此举旨在扩大用户在对话中获得巴西新闻的渠道，并通过引用和透明的方式标明来源，提升信息的可靠性和可追溯性。合作帮助传统媒体在 AI 时代获取新的分发方式，同时确保内容版
+description: OpenAI与Grupo Folha和Grupo UOL合作，将可信赖的巴西新闻引入ChatGPT，在归属和透明度方面扩展新闻获取渠道。
+  OpenAI与巴西媒体集团Folha和UOL达成内容合作协议，计划在ChatGPT中整合可信的新闻资源。此举旨在提升平台信息来源的归属和透明度，帮助用户在对话中获得更可靠的新闻背景。
 external_url: https://openai.com/index/grupo-folha-grupo-uol-partnership
 scenarios:
 - AI/ML项目
@@ -26,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# OpenAI与巴西新闻集团合作 提升ChatGPT信息来源透明度
-
 ---
 
 ## 基本信息
@@ -96,7 +92,6 @@ OpenAI与巴西两大媒体集团的内容合作，标志着头部AI企业在内
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

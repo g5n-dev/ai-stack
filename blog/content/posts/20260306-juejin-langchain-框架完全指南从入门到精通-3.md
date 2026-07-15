@@ -17,7 +17,7 @@ categories:
 - 大模型
 source: juejin
 description: LangChain 已成为构建基于大语言模型应用的事实标准框架，它通过模块化组件解决了 LLM 开发中的数据管理与流程编排难题。本文将系统梳理
-  LangChain 的核心概念、组件原理及实战技巧，帮助开发者从基础架构搭建进阶至复杂链路设计。无论你是初次接触还是寻求优化现有方案，这份指南都能为你提供清晰的开发路径与技术细
+  LangChain 的核心概念、组件原理及实战技巧，帮助开发者从基础架构搭建进阶至复杂链路设计。无论你是初次接触还是寻求优化现有方案，这份指南都能为你提供清晰的开发路径与技术细节。
 external_url: https://juejin.cn/post/7613977422997323822
 scenarios:
 - AI/ML项目
@@ -26,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# LangChain 框架完全指南：基于 LLM 的应用开发
-
 ---
 
 ## 基本信息

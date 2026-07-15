@@ -25,10 +25,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Firebase浏览器密钥未限制致13小时损失5.4万欧元
-
----
-
 ## 基本信息
 
 - **作者**: zanbezi
@@ -86,7 +82,6 @@ source_support: 0.0
 
 ---
 
----
 ## 站内链接
 
 - 分类： [安全](/categories/%E5%AE%89%E5%85%A8/)

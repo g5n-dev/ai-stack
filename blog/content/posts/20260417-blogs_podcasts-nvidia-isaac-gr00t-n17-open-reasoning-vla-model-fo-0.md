@@ -16,7 +16,7 @@ categories:
 - AI 工程
 - 开源生态
 source: blogs_podcasts
-description: NVIDIA 发布了 Isaac GR00T N1.7，这是一款面向人形机器人的开源推理视觉‑语言‑动作（VLA）模型。通过在感知、推理和运动控制之间建立统一的学习框架，它显著提升了机器人在动态环境中的任务完成率。本文将详细解析模型的核心架构、基准测试结果以及在真实场景中的部署要点，帮助研究者和工程师快速上手并评估其在
+description: NVIDIA 发布了 Isaac GR00T N1.7，这是一款面向人形机器人的开源推理视觉‑语言‑动作（VLA）模型。通过在感知、推理和运动控制之间建立统一的学习框架，它显著提升了机器人在动态环境中的任务完成率。本文将详细解析模型的核心架构、基准测试结果以及在真实场景中的部署要点，帮助研究者和工程师快速上手并评估其在实际项目中的适用性。
 external_url: https://huggingface.co/blog/nvidia/gr00t-n1-7
 scenarios:
 - Web应用开发
@@ -24,10 +24,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# NVIDIA GR00T N1.7开源推理模型赋能人形机器人
-
 ---
 
 ## 基本信息
@@ -129,7 +125,6 @@ NVIDIA开放了完整的模型权重、预训练数据和微调工具链。开�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [开源生态](/categories/%E5%BC%80%E6%BA%90%E7%94%9F%E6%80%81/)

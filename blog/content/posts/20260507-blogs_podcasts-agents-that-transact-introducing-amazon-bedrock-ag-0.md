@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 亚马逊AgentCore Payments预览：AI代理即时支付内容
-
----
-
 ## 基本信息
 
 - **来源**: AWS Machine Learning Blog (blog)
@@ -125,7 +121,6 @@ Amazon Bedrock AgentCore Payments 是亚马逊云服务在 AI Agent 领域的重
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [后端](/categories/%E5%90%8E%E7%AB%AF/)

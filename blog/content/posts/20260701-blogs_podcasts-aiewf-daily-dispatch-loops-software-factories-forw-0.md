@@ -1,5 +1,5 @@
 ---
-title: 'AIEWF Daily Dispatch: Loops, Software Factories & Forwa'
+title: 'AIEWF Daily Dispatch: Loops, Software Factories & Forward Deployed Engineers'
 date: 2026-07-01 12:25:18+08:00
 draft: false
 entry_kind: auto
@@ -16,8 +16,7 @@ categories:
 - AI 工程
 - 开源生态
 source: blogs_podcasts
-description: 在周二的AI工程师全球大会上，循环、代理工程和软件工厂成为热议话题。与会者围绕如何通过循环结构提升模型迭代效率展开深入讨论，探索了代理工程师在系统设计中的角色定位，并展示了软件工厂模式在规模化AI系统开发中的优势。与此同时，开放模型（open
-  models）也备受关注，聚焦社区驱动的模型共享、透明度提升以及在实际部署中
+description: 在周二的AI工程师世界博览会上，关于循环、代理工程以及软件工厂的兴起有很多讨论。同样热门的话题是：开源模型。 在周二的AI工程师世界博览会上，关于循环、代理工程以及软件工厂的讨论成为焦点，同时开源模型的快速发展也在持续塑造行业格局。这些议题反映了AI工程从实验向规模化生产转变的关键路径，对团队的技术选型和研发效率具有直接影响。本文将梳理展会核心观点，帮助读者快速把握当前趋势并为实际项目提供参考。
 external_url: https://www.latent.space/p/aiewf-daily-dispatch-loops
 scenarios:
 - AI/ML项目
@@ -25,10 +24,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# AIEWF Daily Dispatch: Loops, Software Factories & Forward Deployed Engineers
-
 ---
 
 ## 基本信息
@@ -109,7 +104,6 @@ source_support: 0.0
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [开源生态](/categories/%E5%BC%80%E6%BA%90%E7%94%9F%E6%80%81/)

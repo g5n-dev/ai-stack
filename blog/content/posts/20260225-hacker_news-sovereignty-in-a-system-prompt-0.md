@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 系统提示词中的主权归属与控制机制
-
----
-
 ## 基本信息
 
 - **作者**: 0x5FC3

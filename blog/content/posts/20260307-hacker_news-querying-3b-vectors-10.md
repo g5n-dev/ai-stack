@@ -31,10 +31,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 查询30亿级向量数据库的技术实现
-
----
-
 ## 基本信息
 
 - **作者**: surprisetalk

@@ -17,7 +17,7 @@ categories:
 - 产品与创业
 source: hacker_news
 description: 随着人工智能技术的快速迭代，如何准确评估团队或个人的 AI 应用能力已成为企业落地的关键挑战。Anthropic 推出的“AI 流畅度指数”提供了一套结构化的评估框架，旨在帮助组织量化其在理解、部署及管理
-  AI 工具方面的成熟度。本文将深入解读该指数的核心维度与评估标准，协助读者明确自身技术短板，并制定切实可行的能力提
+  AI 工具方面的成熟度。本文将深入解读该指数的核心维度与评估标准，协助读者明确自身技术短板，并制定切实可行的能力提升路径。
 external_url: https://www.anthropic.com/research/AI-fluency-index
 scenarios:
 - AI/ML项目
@@ -25,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Anthropic 发布 AI 熟练度指数以评估教育领域应用
-
 ---
 
 ## 基本信息

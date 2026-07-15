@@ -32,10 +32,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# IonRouter：低成本高吞吐推理引擎
-
----
-
 ## 基本信息
 
 - **作者**: vshah1016

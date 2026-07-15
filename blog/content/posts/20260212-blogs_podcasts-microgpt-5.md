@@ -16,8 +16,8 @@ categories:
 - 大模型
 - AI 工程
 source: blogs_podcasts
-description: 以下是关于 Andrej Karpathy 的艺术项目 **microgpt** 的内容总结： **项目概述** microgpt 是一个极简的大型语言模型（LLM）实现项目，其核心是一个仅包含约
-  **200 行纯 Python 代码**的单文件脚本。该项目没有任何外部依赖库，旨在将 LLM 的算法核心精简至极致，剔除
+description: 这是我关于新艺术项目 microgpt 的简短指南，这是一个仅 200 行纯 Python 的单文件，无任何外部依赖，却能够训练和推理 GPT。这个文件包含了所需的全部算法内容：文档数据集、分词器、自动求导引擎、类似
+  GPT-2 的神经网络架构、Adam 优化器、训练循环和推理循环。其他的一切都只是为了效率。我已无法将其进一步简化。
 external_url: http://karpathy.github.io/2026/02/12/microgpt
 scenarios:
 - 大语言模型
@@ -41,10 +41,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# microgpt：200行Python实现的GPT训练与推理极简指南
-
 ---
 
 ## 基本信息
@@ -194,7 +190,6 @@ microgpt 项目通过剥离所有第三方依赖，以仅 200 行纯 Python 代�
 
 ---
 
-# 《microgpt》项目深度分析报告：极简主义视角下的AI解构
 
 ## 1. 核心观点深度解读
 
@@ -444,7 +439,6 @@ microgpt 实际上是 Andrej Karpathy 著名的 `micrograd` 和 `nanoGPT` 项目
 ---
 
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

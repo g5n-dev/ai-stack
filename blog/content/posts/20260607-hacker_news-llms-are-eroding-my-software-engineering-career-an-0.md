@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# LLM冲击下的软件工程师职业困境分析
-
----
-
 ## 基本信息
 
 - **作者**: poisonfountain
@@ -83,7 +79,6 @@ LLM对编程工作的影响是真实的，但程度被高估。**事实陈述**�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [效率与方法论](/categories/%E6%95%88%E7%8E%87%E4%B8%8E%E6%96%B9%E6%B3%95%E8%AE%BA/)

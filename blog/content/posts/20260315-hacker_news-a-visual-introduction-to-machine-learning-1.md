@@ -32,10 +32,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 机器学习入门：可视化图解核心概念
-
----
-
 ## 基本信息
 
 - **作者**: vismit2000

@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Context Gateway：在LLM处理前压缩Agent上下文
-
----
-
 ## 基本信息
 
 - **作者**: ivzak

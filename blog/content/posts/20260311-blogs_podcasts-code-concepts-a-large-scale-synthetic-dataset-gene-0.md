@@ -16,7 +16,7 @@ categories:
 - 数据
 - 大模型
 source: blogs_podcasts
-description: 随着大语言模型在代码生成领域的应用日益深入，如何获取高质量且具备逻辑深度的训练数据成为关键挑战。本文介绍的 Code Concepts 数据集，通过从编程概念种子出发，利用大模型自动化生成了大规模的合成代码样本。这一方法不仅有效缓解了真实数据中的噪声与冗余问题，更为研究代码语义理解与逻辑推理提供了新的数据基准。读者将了
+description: 随着大语言模型在代码生成领域的应用日益深入，如何获取高质量且具备逻辑深度的训练数据成为关键挑战。本文介绍的 Code Concepts 数据集，通过从编程概念种子出发，利用大模型自动化生成了大规模的合成代码样本。这一方法不仅有效缓解了真实数据中的噪声与冗余问题，更为研究代码语义理解与逻辑推理提供了新的数据基准。读者将了解到该数据集的构建流程、质量评估结果及其在下游任务中的实际表现。
 external_url: https://huggingface.co/blog/nvidia/synthetic-code-concepts
 scenarios:
 - 大语言模型
@@ -28,10 +28,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Code Concepts：基于编程概念种子的大规模合成数据集
-
 ---
 
 ## 基本信息

@@ -16,7 +16,7 @@ categories:
 - 大模型
 - 开源生态
 source: blogs_podcasts
-description: 英伟达日前发布Cosmos‑3模型，首个面向物理AI推理与动作的开源全模态模型。它将视觉、语言和动作表征统一在同一框架，实现跨场景的通用决策能力，为机器人和自动驾驶等领域的研发提供统一基准。开发者可直接获取模型权重与预训练框架，在自有数据上快速微调或部署，显著降低创新门槛。本文将深入解析Cosmos‑3的核心架构、性能
+description: 英伟达日前发布Cosmos‑3模型，首个面向物理AI推理与动作的开源全模态模型。它将视觉、语言和动作表征统一在同一框架，实现跨场景的通用决策能力，为机器人和自动驾驶等领域的研发提供统一基准。开发者可直接获取模型权重与预训练框架，在自有数据上快速微调或部署，显著降低创新门槛。本文将深入解析Cosmos‑3的核心架构、性能指标以及典型应用案例，帮助读者快速上手并在实际项目中落地。
 external_url: https://huggingface.co/blog/nvidia/cosmos-3-for-physical-ai
 scenarios:
 - AI/ML项目
@@ -24,10 +24,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# NVIDIA Cosmos 3发布：首个物理AI开源全模态模型
-
 ---
 
 ## 基本信息
@@ -142,7 +138,6 @@ Cosmos 3 能实现跨场景、跨任务的通用物理 AI 推理与动作生�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [开源生态](/categories/%E5%BC%80%E6%BA%90%E7%94%9F%E6%80%81/)

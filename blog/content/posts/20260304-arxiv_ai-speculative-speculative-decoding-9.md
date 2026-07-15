@@ -16,8 +16,8 @@ categories:
 - 大模型
 - AI 工程
 source: arxiv
-description: '**Speculative Speculative Decoding (SSD) 简要总结** **背景与问题** 自回归（Autoregressive）解码因其顺序生成的特性成为推理速度的瓶颈。现有的“投机解码”通过利用快速草稿模型预测
-  token，再通过慢速目标模型并行验证，从而加速推理。然而，传统投机解码中的“推'
+description: 自回归生成的序列依赖特性限制了推理速度，尽管推测解码通过引入草稿模型实现了加速，但传统方法中“推测”与“验证”步骤的串行依赖仍构成瓶颈。本文提出
+  Speculative Speculative Decoding (SSD)，旨在通过进一步解耦或优化这一依赖关系来提升效率。摘要未详述具体技术路径，无法确认其是否引入了额外的模型或硬件假设。
 external_url: http://arxiv.org/abs/2603.03251v1
 scenarios:
 - Web应用开发
@@ -27,10 +27,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Speculative Decoding：推测解码加速大模型推理
-
 ---
 
 ## 基本信息

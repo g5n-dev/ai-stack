@@ -16,8 +16,8 @@ categories:
 - AI 工程
 - 系统与基础设施
 source: blogs_podcasts
-description: 背景与挑战 随着 AI 应用规模快速扩大，多步骤工作流（pipeline）已成为主流。然而，传统实现往往缺乏全局协同优化，导致计算资源浪费和能耗居高不下，成为部署成本的主要瓶颈。
-  Murakkab 系统概述 Murakkab 是一种新型系统，专门用于多步骤 AI 工作流的自动化设计与部署优化。其核心做法包括： - **
+description: 一个被称为 Murakkab 的新系统，优化了为 AI 应用提供支持的多步骤工作流程的设计和部署。 在 AI 系统逐步承担关键业务负载的背景下，工作流的执行效率和能耗已成为制约规模部署的瓶颈。Murakkab
+  通过对多步骤流程的调度策略与资源分配模型进行协同优化，实现了显著的速度提升与功耗下降。该方案为企业提供了一套可落地的技术路径，帮助在保证服务质量的同时实现绿色计算目标。
 external_url: https://news.mit.edu/2026/improving-ai-agent-speed-and-energy-efficiency-0625
 scenarios:
 - AI/ML项目
@@ -25,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Murakkab系统提升AI工作流速度和能效
-
 ---
 
 ## 基本信息
@@ -138,7 +134,6 @@ Murakkab的出现对AI基础设施市场具有示范意义。该系统展示了�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/)

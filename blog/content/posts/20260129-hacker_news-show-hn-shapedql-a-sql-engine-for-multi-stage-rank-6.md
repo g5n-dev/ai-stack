@@ -17,7 +17,7 @@ categories:
 - AI 工程
 source: hacker_news
 description: ShapedQL 是一款专为多阶段排序和检索增强生成（RAG）场景设计的 SQL 引擎，旨在解决传统查询语言在处理复杂排序逻辑时的局限性。它通过标准化的
-  SQL 语法，简化了从向量检索到重排序的整个流程，帮助开发者更高效地构建个性化推荐和智能问答系统。阅读本文，你将了解 ShapedQL 的核心功能，以及如何利用它优化
+  SQL 语法，简化了从向量检索到重排序的整个流程，帮助开发者更高效地构建个性化推荐和智能问答系统。阅读本文，你将了解 ShapedQL 的核心功能，以及如何利用它优化现有数据管道的检索精度。
 external_url: https://playground.shaped.ai
 scenarios:
 - RAG应用
@@ -29,10 +29,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# ShapedQL：支持多阶段排序与RAG的SQL引擎
-
 ---
 
 ## 基本信息
@@ -112,7 +108,7 @@ def multi_stage_ranking():
             embedding TEXT  -- 实际应用中应为向量存储
         )
     """)
-    
+
     # 插入测试数据
     products = [
         (1, "无线降噪耳机", "电子产品", 299.99, "[0.1, 0.8, 0.3]"),
@@ -120,21 +116,21 @@ def multi_stage_ranking():
         (3, "跑步鞋", "运动用品", 89.99, "[0.9, 0.1, 0.2]")
     ]
     conn.executemany("INSERT INTO products VALUES (?, ?, ?, ?, ?)", products)
-    
+
     # 多阶段查询：先按类别过滤再按价格排序
     query = """
-        SELECT name, price 
-        FROM products 
+        SELECT name, price
+        FROM products
         WHERE category = '电子产品'
         ORDER BY price DESC
         LIMIT 2
     """
     results = conn.execute(query).fetchall()
-    
+
     print("多阶段排序结果:")
     for row in results:
         print(f"产品: {row[0]}, 价格: ${row[1]}")
-    
+
     conn.close()
 
 multi_stage_ranking()
@@ -156,17 +152,17 @@ def rag_enhanced_query():
             vector_id INTEGER
         )
     """)
-    
+
     # 插入文档数据
     docs = [
         (1, "ShapedQL支持多阶段排序...", '{"author": "Alice", "date": "2023-10"}', 101),
         (2, "RAG技术结合检索与生成...", '{"author": "Bob", "date": "2023-11"}', 102)
     ]
     conn.executemany("INSERT INTO documents VALUES (?, ?, ?, ?)", docs)
-    
+
     # 模拟向量搜索返回的ID（实际应用中来自向量数据库）
     vector_search_results = [101, 102]
-    
+
     # 结合向量搜索结果的SQL查询
     query = f"""
         SELECT content, json_extract(metadata, '$.author') as author
@@ -175,11 +171,11 @@ def rag_enhanced_query():
         ORDER BY vector_id
     """
     results = conn.execute(query).fetchall()
-    
+
     print("\nRAG增强查询结果:")
     for row in results:
         print(f"内容: {row[0][:20]}... 作者: {row[1]}")
-    
+
     conn.close()
 
 rag_enhanced_query()
@@ -198,36 +194,36 @@ def dynamic_query_builder():
             salary REAL
         )
     """)
-    
+
     employees = [
         (1, "张三", "技术部", 8000),
         (2, "李四", "市场部", 7000),
         (3, "王五", "技术部", 9000)
     ]
     conn.executemany("INSERT INTO employees VALUES (?, ?, ?, ?)", employees)
-    
+
     # 用户输入条件
     filters = {
         "department": "技术部",
         "min_salary": 7500
     }
-    
+
     # 动态构建查询
     query = "SELECT name, salary FROM employees WHERE 1=1"
     params = []
-    
+
     if "department" in filters:
         query += " AND department = ?"
         params.append(filters["department"])
-    
+
     if "min_salary" in filters:
         query += " AND salary >= ?"
         params.append(filters["min_salary"])
-    
+
     print("\n动态查询结果:")
     for row in conn.execute(query, params).fetchall():
         print(f"员工: {row[0]}, 薪资: {row[1]}")
-    
+
     conn.close()
 
 dynamic_query_builder()
@@ -237,8 +233,6 @@ dynamic_query_builder()
 ## 案例研究
 
 ### 1：某垂直领域 SaaS 电商平台的产品搜索优化
-
- 1：某垂直领域 SaaS 电商平台的产品搜索优化
 
 **背景**:
 该平台拥有超过 500 万个 SKU（库存量单位），用户主要通过搜索栏查找商品。此前，系统使用的是基于 Elasticsearch 的传统倒排索引匹配（BM25），主要依据关键词频率进行排序。
@@ -259,8 +253,6 @@ dynamic_query_builder()
 
 ### 2：企业级内部知识库的智能问答系统
 
- 2：企业级内部知识库的智能问答系统
-
 **背景**:
 一家大型跨国金融机构拥有数百万份散落在 Wiki、Confluence 和 PDF 文档中的内部技术文档与合规政策。员工日常查找信息极其耗时，通常需要在多个关键词之间尝试不同的搜索组合。
 
@@ -279,8 +271,6 @@ dynamic_query_builder()
 ---
 
 ### 3：AI 驱动的新闻聚合与内容推荐平台
-
- 3：AI 驱动的新闻聚合与内容推荐平台
 
 **背景**:
 一个专注于科技和金融领域的新闻聚合应用，每天需要处理来自数千个来源的 5 万多篇文章。该应用的核心竞争力在于为用户提供最符合其兴趣且信息密度最高的内容流。
@@ -401,8 +391,6 @@ ShapedQL 既可以作为查询引擎，也可以作为特征存储。最佳实�
 
 ### 1: ShapedQL 与标准 SQL 或传统数据库有何不同？
 
-1: ShapedQL 与标准 SQL 或传统数据库有何不同？
-
 **A**: ShapedQL 并非旨在替代传统的关系型数据库（如 PostgreSQL 或 MySQL），而是作为一种位于其上层的查询引擎。传统的 SQL 主要擅长处理结构化数据的存储、检索和简单的聚合分析，但在处理涉及机器学习模型、向量搜索和复杂排序逻辑的“多阶段排序”时往往力不从心。
 
 ShapedQL 的核心优势在于它将**数据检索**（从数据库获取特征）、**AI 推理**（调用 Embedding 模型或 LLM）和**业务逻辑排序**（根据用户行为或规则重排）整合在了一个统一的 SQL 语法中。它允许开发者用类似 SQL 的语言直接定义 RAG（检索增强生成）流程和推荐系统的排序逻辑，而不需要编写繁琐的 Python 或 Java 代码来串联数据库调用和模型推理。
@@ -411,8 +399,6 @@ ShapedQL 的核心优势在于它将**数据检索**（从数据库获取特征�
 
 ### 2: ShapedQL 如何支持 RAG（检索增强生成）应用？
 
-2: ShapedQL 如何支持 RAG（检索增强生成）应用？
-
 **A**: ShapedQL 为 RAG 提供了原生的 SQL 支持，极大地简化了 RAG 管道的构建。在传统的开发流程中，开发者需要分别编写代码来处理文档切分、向量化、向量检索以及最后的上下文排序。
 
 在 ShapedQL 中，你可以直接通过 SQL 语句来执行这些操作。例如，你可以编写一个查询，首先通过向量相似度搜索检索出最相关的文档片段，然后利用 ShapedQL 的多阶段排序功能，根据特定的元数据或关键词匹配度对这些结果进行重排序，最后将优化后的上下文传递给大语言模型。这使得整个 RAG 流程变得声明式且易于调试。
@@ -420,8 +406,6 @@ ShapedQL 的核心优势在于它将**数据检索**（从数据库获取特征�
 ---
 
 ### 3: 什么是“多阶段排序”，为什么它很重要？
-
-3: 什么是“多阶段排序”，为什么它很重要？
 
 **A**: “多阶段排序”是现代推荐系统和搜索系统的核心概念，指在一个查询请求中，按照从粗到细的顺序，分多个步骤对结果集进行筛选和排序。
 
@@ -434,8 +418,6 @@ ShapedQL 的独特之处在于它允许你在单个查询中定义并执行这�
 
 ### 4: ShapedQL 的性能如何？它是否依赖外部向量数据库？
 
-4: ShapedQL 的性能如何？它是否依赖外部向量数据库？
-
 **A**: ShapedQL 的设计初衷是作为一个高效的计算引擎，它通常作为一个中间层运行。关于性能和依赖：
 
 *   **向量搜索**：ShapedQL 内部集成了高效的向量索引（通常基于 HNSW 等算法），这意味着它本身具备处理向量搜索的能力，不一定强制依赖外部的专用向量数据库（如 Pinecone 或 Milvus），尽管它也可以连接外部数据源。
@@ -446,8 +428,6 @@ ShapedQL 的独特之处在于它允许你在单个查询中定义并执行这�
 
 ### 5: 我的数据存储在哪里？ShapedQL 是否存储我的原始数据？
 
-5: 我的数据存储在哪里？ShapedQL 是否存储我的原始数据？
-
 **A**: ShapedQL 通常设计为无状态或轻状态的引擎，它不会取代你现有的数据仓库或数据库。
 
 *   **数据源**：你的原始数据（用户日志、文档内容、特征向量）通常仍然存储在你原本的数据库（如 PostgreSQL, Snowflake, BigQuery）或数据湖中。
@@ -457,8 +437,6 @@ ShapedQL 的独特之处在于它允许你在单个查询中定义并执行这�
 ---
 
 ### 6: 对于不熟悉 SQL 的开发者，上手 ShapedQL 有难度吗？
-
-6: 对于不熟悉 SQL 的开发者，上手 ShapedQL 有难度吗？
 
 **A**: 如果开发者已经熟悉标准 SQL，那么上手 ShapedQL 的门槛非常低，因为其语法是对 SQL 的自然扩展。ShapedQL 引入了特定的函数来处理机器学习相关的操作（例如 `VECTOR_SEARCH`, `RERANK`, `LLM_PROMPT` 等）。
 
@@ -472,7 +450,6 @@ ShapedQL 的独特之处在于它允许你在单个查询中定义并执行这�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [数据](/categories/%E6%95%B0%E6%8D%AE/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

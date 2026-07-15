@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Claude Code 针对核心功能开展 A/B 测试
-
----
-
 ## 基本信息
 
 - **作者**: ramoz

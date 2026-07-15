@@ -24,9 +24,9 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: TikTokDownloader（亦称 DouK-Downloader）是一个基于 HTTP 的开源数据采集与文件下载工具，专门针对 抖音
+  和 TikTok 平台。该项目旨在为用户提供一套完整的解决方案，用于获取平台内容的元数据、下载多媒体文件，并将采集的数据持久化存储。
 ---
-
-# 🚀 🚀TikTok视频一键下载！开源神器JoeanAmier强势来袭！
 
 > 💡 **原名**: JoeanAmier /
 
@@ -43,9 +43,8 @@ source_support: 0.0
 - **DeepWiki**: [https://deepwiki.com/JoeanAmier/TikTokDownloader](https://deepwiki.com/JoeanAmier/TikTokDownloader)
 
 ---
-## 📚 DeepWiki 速览（节选）
 
-# TikTokDownloader Overview
+## TikTokDownloader Overview
 
 Relevant source files
 
@@ -65,14 +64,14 @@ This overview introduces the project's capabilities, architecture, and operation
 
 TikTokDownloader provides comprehensive data collection and download functionality across both platforms:
 
-Capability Category| Douyin (抖音)| TikTok  
----|---|---  
-**Content Download**|  Videos, images, live photos, music, cover images| Videos, images, music, cover images  
-**Batch Operations**|  Account posts, likes, favorites, collection folders| Account posts, likes  
-**Live Content**|  Stream URL extraction, FFmpeg-based recording| Stream URL extraction, FFmpeg-based recording  
-**Data Collection**|  Comments, account details, search results, hot lists| Account details  
-**Content Organization**|  Mixes/collections| Mixes/playlists  
-  
+Capability Category| Douyin (抖音)| TikTok
+---|---|---
+**Content Download**|  Videos, images, live photos, music, cover images| Videos, images, music, cover images
+**Batch Operations**|  Account posts, likes, favorites, collection folders| Account posts, likes
+**Live Content**|  Stream URL extraction, FFmpeg-based recording| Stream URL extraction, FFmpeg-based recording
+**Data Collection**|  Comments, account details, search results, hot lists| Account details
+**Content Organization**|  Mixes/collections| Mixes/playlists
+
 Key technical features include:
 
   * **Watermark Removal** : Downloads content without platform watermarks
@@ -99,13 +98,13 @@ TikTokDownloader provides four distinct operational modes, each suited for diffe
 
 ### Mode Descriptions
 
-Mode| Primary Class| Entry Method| Use Case  
----|---|---|---  
-**Terminal Interactive**| `TikTok`| `complete()`| Menu-driven CLI for manual operations with 16+ functions  
-**Clipboard Monitor**| `ClipboardMonitor`| `monitor()`| Background service that auto-detects and processes platform links  
-**Web API**| `APIServer`| `server()`| FastAPI server (port 5555) for programmatic access via HTTP  
-**Web UI**|  N/A| `disable_function()`| Browser-based interface (under refactoring)  
-  
+Mode| Primary Class| Entry Method| Use Case
+---|---|---|---
+**Terminal Interactive**| `TikTok`| `complete()`| Menu-driven CLI for manual operations with 16+ functions
+**Clipboard Monitor**| `ClipboardMonitor`| `monitor()`| Background service that auto-detects and processes platform links
+**Web API**| `APIServer`| `server()`| FastAPI server (port 5555) for programmatic access via HTTP
+**Web UI**|  N/A| `disable_function()`| Browser-based interface (under refactoring)
+
 Each mode initializes with a shared `Parameter` instance that provides configuration, authentication, and HTTP client management. The `Database` instance provides persistent storage for configuration, download records, and collected data.
 
 **Sources:** [src/application/TikTokDownloader.py106-143](https://github.com/JoeanAmier/TikTokDownloader/blob/9fefb9a7/src/application/TikTokDownloader.py#L106-L143) [src/application/main_terminal.py](https://github.com/JoeanAmier/TikTokDownloader/blob/9fefb9a7/src/application/main_terminal.py) [src/application/main_monitor.py](https://github.com/JoeanAmier/TikTokDownloader/blob/9fefb9a7/src/application/main_monitor.py) [src/application/main_server.py](https://github.com/JoeanAmier/TikTokDownloader/blob/9fefb9a7/src/application/main_server.py) README diagrams (Diagram 3)
@@ -128,10 +127,10 @@ Key lifecycle components:
 
 The following table maps high-level system components to their primary code entities:
 
-System Component| Primary Classes| File Paths| Responsibilities  
----|---|---|---  
-**Application Orchestrator**| `TikTokDownloader`| [src/application/TikTokDownloader.py](https://github.com/JoeanAmier/TikTokDownloader/blob/9fefb9a7/src/application/TikTokDownloader.py)| Lifecycle management, mode selection, configuration updates  
-**Configuration Management**| `Parameter`, `Settings`| [src/config/parameter.py](https://github.com/JoeanAmier/TikTokDownloader/blob/9fefb9a7/src/config/parameter.py) [src/config/settings.py](https://github.com/JoeanAmier/TikTokDownloader/blob/9fefb9a7/src/config/settings.py)| Runtime state, settings file I/O, validation  
+System Component| Primary Classes| File Paths| Responsibilities
+---|---|---|---
+**Application Orchestrator**| `TikTokDownloader`| [src/application/TikTokDownloader.py](https://github.com/JoeanAmier/TikTokDownloader/blob/9fefb9a7/src/application/TikTokDownloader.py)| Lifecycle management, mode selection, configuration updates
+**Configuration Management**| `Parameter`, `Settings`| [src/config/parameter.py](https://github.com/JoeanAmier/TikTokDownloader/blob/9fefb9a7/src/config/parameter.py) [src/config/settings.py](https://github.com/JoeanAmier/TikTokDownloader/blob/9fefb9a7/src/config/settings.py)| Runtime state, settings file I/O, validation
 **Authentication**| `Cookie`, `MsToken`, `TtWid`, `ABogus`, `XBogus`| [src/module/cookie.py](https://github.com/JoeanAmier/TikTokDownloader/blob/9fefb9a7/src/module/cookie.py) [src/encrypt/](https://github.com/JoeanAmier/TikTokDownloader/blob/9fefb9a7/s
 
 [...truncated...]
@@ -236,7 +235,6 @@ System Component| Primary Classes| File Paths| Responsibilities
 
 ---
 
-# TikTokDownloader 深度技术分析报告
 
 ## 1. 技术架构深度剖析 🏗️
 
@@ -390,54 +388,48 @@ TikTokDownloader 在**“协议逆向工程”**这一层上进行了抽象。
 
 ### 1：某高校数字媒体研究项目 🎓
 
- 1：某高校数字媒体研究项目 🎓
+**背景**: 某高校传播学院的数字媒体研究团队正在开展一项关于“短视频平台内容传播机制”的课题研究。研究需要对过去一年内TikTok上特定话题下的热门视频进行内容分析、传播路径追踪以及视频特征提取。
 
-**背景**: 某高校传播学院的数字媒体研究团队正在开展一项关于“短视频平台内容传播机制”的课题研究。研究需要对过去一年内TikTok上特定话题下的热门视频进行内容分析、传播路径追踪以及视频特征提取。  
+**问题**: 研究团队面临的主要问题是无法批量下载TikTok视频，尤其是高清无水印版本。手动下载不仅效率低下，还可能因视频数量庞大（数千个）而影响研究进度。此外，部分视频因地区限制或账号隐私设置无法直接访问。
 
-**问题**: 研究团队面临的主要问题是无法批量下载TikTok视频，尤其是高清无水印版本。手动下载不仅效率低下，还可能因视频数量庞大（数千个）而影响研究进度。此外，部分视频因地区限制或账号隐私设置无法直接访问。  
+**解决方案**: 团队采用了 **JoeanAmier/TikTokDownloader** 工具，通过其API接口批量下载目标视频。该工具支持关键词搜索、用户主页抓取以及无水印高清下载，还能绕过部分地区限制。研究团队编写了简单的Python脚本，结合工具提供的功能，自动化完成了视频下载和元数据提取。
 
-**解决方案**: 团队采用了 **JoeanAmier/TikTokDownloader** 工具，通过其API接口批量下载目标视频。该工具支持关键词搜索、用户主页抓取以及无水印高清下载，还能绕过部分地区限制。研究团队编写了简单的Python脚本，结合工具提供的功能，自动化完成了视频下载和元数据提取。  
-
-**效果**:  
-- **效率提升**：原本需要数周的手动下载工作缩短至3天内完成。  
-- **数据完整性**：成功获取了95%以上的目标视频，包括部分原本受限的内容。  
-- **研究价值**：为后续的视频内容分析和传播模型构建提供了高质量的数据基础。  
+**效果**:
+- **效率提升**：原本需要数周的手动下载工作缩短至3天内完成。
+- **数据完整性**：成功获取了95%以上的目标视频，包括部分原本受限的内容。
+- **研究价值**：为后续的视频内容分析和传播模型构建提供了高质量的数据基础。
 
 ---
 
 ### 2：某MCN机构内容运营团队 🎥
 
- 2：某MCN机构内容运营团队 🎥
+**背景**: 一家专注于海外市场的MCN机构管理着数十个TikTok创作者账号，需要定期监控竞品账号的视频表现，并分析热门视频的创意趋势，以指导旗下创作者的内容优化。
 
-**背景**: 一家专注于海外市场的MCN机构管理着数十个TikTok创作者账号，需要定期监控竞品账号的视频表现，并分析热门视频的创意趋势，以指导旗下创作者的内容优化。  
+**问题**: 运营团队需要频繁下载竞品视频进行拆解分析，但TikTok官方不提供直接下载功能，且第三方工具往往存在水印、分辨率低或需要付费订阅的问题。此外，团队还需要提取视频的标题、标签和发布时间等元数据用于趋势分析。
 
-**问题**: 运营团队需要频繁下载竞品视频进行拆解分析，但TikTok官方不提供直接下载功能，且第三方工具往往存在水印、分辨率低或需要付费订阅的问题。此外，团队还需要提取视频的标题、标签和发布时间等元数据用于趋势分析。  
+**解决方案**: 运营团队采用了 **JoeanAmier/TikTokDownloader**，通过其命令行工具快速批量下载竞品视频，并利用工具的元数据提取功能同步获取视频的标题、标签和发布时间等信息。团队还结合内部的数据分析工具，对下载的视频内容进行分类和评分。
 
-**解决方案**: 运营团队采用了 **JoeanAmier/TikTokDownloader**，通过其命令行工具快速批量下载竞品视频，并利用工具的元数据提取功能同步获取视频的标题、标签和发布时间等信息。团队还结合内部的数据分析工具，对下载的视频内容进行分类和评分。  
-
-**效果**:  
-- **成本节约**：替代了昂贵的第三方数据服务，每月节省约2000美元的订阅费用。  
-- **决策优化**：通过分析竞品视频的创意趋势，旗下创作者的视频平均播放量提升了30%。  
-- **工作流优化**：从手动截屏和录屏转变为自动化下载，运营团队的工作效率显著提高。  
+**效果**:
+- **成本节约**：替代了昂贵的第三方数据服务，每月节省约2000美元的订阅费用。
+- **决策优化**：通过分析竞品视频的创意趋势，旗下创作者的视频平均播放量提升了30%。
+- **工作流优化**：从手动截屏和录屏转变为自动化下载，运营团队的工作效率显著提高。
 
 ---
 
 ### 3：某短视频剪辑工作室 ✂️
 
- 3：某短视频剪辑工作室 ✂️
+**背景**: 一家为电商客户提供短视频广告制作的剪辑工作室，需要大量参考TikTok上的热门广告视频，并将其中的创意片段（如转场、特效、BGM）提取出来，作为新广告的灵感来源或直接二次创作素材。
 
-**背景**: 一家为电商客户提供短视频广告制作的剪辑工作室，需要大量参考TikTok上的热门广告视频，并将其中的创意片段（如转场、特效、BGM）提取出来，作为新广告的灵感来源或直接二次创作素材。  
+**问题**: 工作室剪辑师每天需要浏览和下载数百个参考视频，但现有的下载工具要么存在水印干扰素材使用，要么无法批量处理，导致剪辑师花费大量时间在素材收集而非创作上。
 
-**问题**: 工作室剪辑师每天需要浏览和下载数百个参考视频，但现有的下载工具要么存在水印干扰素材使用，要么无法批量处理，导致剪辑师花费大量时间在素材收集而非创作上。  
+**解决方案**: 工作室技术部引入了 **JoeanAmier/TikTokDownloader**，通过其批量下载功能快速获取无水印高清参考视频，并利用工具的音频提取功能分离BGM。剪辑师随后将素材导入Premiere Pro进行二次创作。
 
-**解决方案**: 工作室技术部引入了 **JoeanAmier/TikTokDownloader**，通过其批量下载功能快速获取无水印高清参考视频，并利用工具的音频提取功能分离BGM。剪辑师随后将素材导入Premiere Pro进行二次创作。  
+**效果**:
+- **创作效率**：剪辑师的日均素材收集时间从2小时缩短至15分钟，更多时间专注于创意打磨。
+- **客户满意度**：参考热门视频的广告创意转化率提高了20%，客户复购率显著上升。
+- **版权合规**：工具支持无水印下载，避免了因水印问题导致的版权纠纷。
 
-**效果**:  
-- **创作效率**：剪辑师的日均素材收集时间从2小时缩短至15分钟，更多时间专注于创意打磨。  
-- **客户满意度**：参考热门视频的广告创意转化率提高了20%，客户复购率显著上升。  
-- **版权合规**：工具支持无水印下载，避免了因水印问题导致的版权纠纷。  
-
----  
+---
 
 以上案例均基于实际场景需求设计，突出了工具在不同领域的实用性和价值。
 
@@ -566,79 +558,79 @@ TikTokDownloader 在**“协议逆向工程”**这一层上进行了抽象。
 
 ## 性能优化建议
 
-### 🚀 优化 1：异步并发下载  
+### 🚀 优化 1：异步并发下载
 
-**说明**: TikTokDownloader 当前可能采用同步下载方式，导致下载速度受限于单个任务的处理时间。通过异步并发下载，可以同时处理多个视频/图片资源，显著提升整体下载效率。  
+**说明**: TikTokDownloader 当前可能采用同步下载方式，导致下载速度受限于单个任务的处理时间。通过异步并发下载，可以同时处理多个视频/图片资源，显著提升整体下载效率。
 
-**实施方法**:  
-1. 使用Python的 `asyncio` + `aiohttp` 替代同步的 `requests` 库。  
-2. 设置合理的并发控制（如 `asyncio.Semaphore`）避免过载。  
-3. 对批量下载任务分片处理（如每10个任务为一组）。  
+**实施方法**:
+1. 使用Python的 `asyncio` + `aiohttp` 替代同步的 `requests` 库。
+2. 设置合理的并发控制（如 `asyncio.Semaphore`）避免过载。
+3. 对批量下载任务分片处理（如每10个任务为一组）。
 
-**预期效果**: 下载速度提升 2-5倍（视网络和服务器并发能力而定）。  
-
----
-
-### 🚀 优化 2：缓存热门视频元数据  
-
-**说明**: 频繁请求TikTok API获取视频元数据（如标题、作者、封面）会产生重复流量和延迟。缓存热门内容可减少API调用次数。  
-
-**实施方法**:  
-1. 使用 `Redis` 或本地 SQLite 存储已下载视频的元数据。  
-2. 设置缓存过期时间（如24小时）。  
-3. 对API响应进行哈希校验，避免重复缓存。  
-
-**预期效果**: 减少 30-50% 的API请求量，降低延迟和封禁风险。  
+**预期效果**: 下载速度提升 2-5倍（视网络和服务器并发能力而定）。
 
 ---
 
-### 🚀 优化 3：动态调整请求限流  
+### 🚀 优化 2：缓存热门视频元数据
 
-**说明**: 固定的请求间隔可能导致效率低下或触发反爬限制。动态调整间隔可在安全范围内最大化请求频率。  
+**说明**: 频繁请求TikTok API获取视频元数据（如标题、作者、封面）会产生重复流量和延迟。缓存热门内容可减少API调用次数。
 
-**实施方法**:  
-1. 监控响应状态码，如遇 429（Too Many Requests）自动退避。  
-2. 采用指数退避算法（如初始间隔1s，超时后翻倍）。  
-3. 结合代理池轮换IP分散请求。  
+**实施方法**:
+1. 使用 `Redis` 或本地 SQLite 存储已下载视频的元数据。
+2. 设置缓存过期时间（如24小时）。
+3. 对API响应进行哈希校验，避免重复缓存。
 
-**预期效果**: 提升 20-40% 的请求稳定性，减少封禁概率。  
-
----
-
-### 🚀 优化 4：压缩与分片存储大文件  
-
-**说明**: 高清视频文件较大，直接存储占用磁盘空间且传输缓慢。压缩和分片可优化存储和传输效率。  
-
-**实施方法**:  
-1. 使用 `FFmpeg` 将视频压缩为H.264编码（降低码率20-30%）。  
-2. 分片存储（如每100MB一个分片），支持断点续传。  
-3. 对元数据采用JSON压缩（如 `gzip`）。  
-
-**预期效果**: 存储空间节省 25-40%，传输时间减少 15-30%。  
+**预期效果**: 减少 30-50% 的API请求量，降低延迟和封禁风险。
 
 ---
 
-### 🚀 优化 5：代理池健康检查  
+### 🚀 优化 3：动态调整请求限流
 
-**说明**: 代理失效会导致下载失败重试，浪费资源。定期检查代理健康性可提升任务成功率。  
+**说明**: 固定的请求间隔可能导致效率低下或触发反爬限制。动态调整间隔可在安全范围内最大化请求频率。
 
-**实施方法**:  
-1. 每小时对代理进行连通性测试（如访问 `httpbin.org/ip`）。  
-2. 自动剔除响应时间>500ms的代理。  
-3. 优先使用HTTPS代理避免中间人攻击。  
+**实施方法**:
+1. 监控响应状态码，如遇 429（Too Many Requests）自动退避。
+2. 采用指数退避算法（如初始间隔1s，超时后翻倍）。
+3. 结合代理池轮换IP分散请求。
 
-**预期效果**: 任务成功率提升 10-20%，减少无效重试。  
+**预期效果**: 提升 20-40% 的请求稳定性，减少封禁概率。
 
 ---
 
-### 🚀 优化 6：GPU加速视频处理  
+### 🚀 优化 4：压缩与分片存储大文件
 
-**说明**: 如涉及视频转码或水印处理，CPU计算可能成为瓶颈。GPU加速可大幅提升处理速度。  
+**说明**: 高清视频文件较大，直接存储占用磁盘空间且传输缓慢。压缩和分片可优化存储和传输效率。
 
-**实施方法**:  
-1. 使用 `NVENC`（NVIDIA GPU）或 `VCE`（AMD GPU）替代CPU编码。  
-2. 通过 `Docker` 部署支持GPU的容器环境。  
-3. 对批量处理任务启用并行化（如每GPU处理2个视频）。  
+**实施方法**:
+1. 使用 `FFmpeg` 将视频压缩为H.264编码（降低码率20-30%）。
+2. 分片存储（如每100MB一个分片），支持断点续传。
+3. 对元数据采用JSON压缩（如 `gzip`）。
+
+**预期效果**: 存储空间节省 25-40%，传输时间减少 15-30%。
+
+---
+
+### 🚀 优化 5：代理池健康检查
+
+**说明**: 代理失效会导致下载失败重试，浪费资源。定期检查代理健康性可提升任务成功率。
+
+**实施方法**:
+1. 每小时对代理进行连通性测试（如访问 `httpbin.org/ip`）。
+2. 自动剔除响应时间>500ms的代理。
+3. 优先使用HTTPS代理避免中间人攻击。
+
+**预期效果**: 任务成功率提升 10-20%，减少无效重试。
+
+---
+
+### 🚀 优化 6：GPU加速视频处理
+
+**说明**: 如涉及视频转码或水印处理，CPU计算可能成为瓶颈。GPU加速可大幅提升处理速度。
+
+**实施方法**:
+1. 使用 `NVENC`（NVIDIA GPU）或 `VCE`（AMD GPU）替代CPU编码。
+2. 通过 `Docker` 部署支持GPU的容器环境。
+3. 对批量处理任务启用并行化（如每GPU处理2个视频）。
 
 **预期效果**: 视频处理速度提升 3-10倍（取决于GPU性能）。
 
@@ -657,78 +649,78 @@ TikTokDownloader 在**“协议逆向工程”**这一层上进行了抽象。
 
 ## 学习路径
 
-### 阶段 1：环境搭建与基础语法 🛠️  
-**学习内容**:  
-- Python 基础语法（变量、循环、函数、类）  
-- 虚拟环境配置  
-- 基本命令行操作  
+### 阶段 1：环境搭建与基础语法 🛠️
+**学习内容**:
+- Python 基础语法（变量、循环、函数、类）
+- 虚拟环境配置
+- 基本命令行操作
 
-**学习时间**: 1-2周  
+**学习时间**: 1-2周
 
-**学习资源**:  
-- [Python 官方文档](https://docs.python.org/zh-cn/3/)  
-- [廖雪峰 Python 教程](https://www.liaoxuefeng.com/wiki/1016959663602400)  
-- GitHub 项目 `TikTokDownloader` 的 README 文件  
+**学习资源**:
+- [Python 官方文档](https://docs.python.org/zh-cn/3/)
+- [廖雪峰 Python 教程](https://www.liaoxuefeng.com/wiki/1016959663602400)
+- GitHub 项目 `TikTokDownloader` 的 README 文件
 
-**学习建议**:  
-- 实践运行项目中的简单代码片段，如打印视频标题或下载单个视频。  
-- 使用 `pip` 安装项目依赖，熟悉 `requirements.txt` 的作用。  
-
----
-
-### 阶段 2：项目结构与核心逻辑解析 🔍  
-**学习内容**:  
-- 分析 `TikTokDownloader` 的目录结构  
-- 理解核心模块（如 API 请求、视频下载、数据处理）  
-- 学习第三方库（如 `requests`、`yt-dlp`）  
-
-**学习时间**: 2-3周  
-
-**学习资源**:  
-- 项目源码注释（建议在 GitHub 上阅读带注释的分支）  
-- [Requests 库文档](https://requests.readthedocs.io/)  
-- [yt-dlp 使用指南](https://github.com/yt-dlp/yt-dlp)  
-
-**学习建议**:  
-- 绘制项目流程图，标注关键函数的调用关系。  
-- 尝试修改代码，例如更改视频保存路径或添加日志功能。  
+**学习建议**:
+- 实践运行项目中的简单代码片段，如打印视频标题或下载单个视频。
+- 使用 `pip` 安装项目依赖，熟悉 `requirements.txt` 的作用。
 
 ---
 
-### 阶段 3：功能扩展与优化 🚀  
-**学习内容**:  
-- 添加新功能（如批量下载、格式转换）  
-- 性能优化（多线程/异步下载）  
-- 错误处理与日志记录  
+### 阶段 2：项目结构与核心逻辑解析 🔍
+**学习内容**:
+- 分析 `TikTokDownloader` 的目录结构
+- 理解核心模块（如 API 请求、视频下载、数据处理）
+- 学习第三方库（如 `requests`、`yt-dlp`）
 
-**学习时间**: 3-4周  
+**学习时间**: 2-3周
 
-**学习资源**:  
-- [Python 多线程教程](https://docs.python.org/zh-cn/3/library/threading.html)  
-- 项目 Issues 区（参考用户提出的改进建议）  
-- 代码审查工具（如 Pylint）  
+**学习资源**:
+- 项目源码注释（建议在 GitHub 上阅读带注释的分支）
+- [Requests 库文档](https://requests.readthedocs.io/)
+- [yt-dlp 使用指南](https://github.com/yt-dlp/yt-dlp)
 
-**学习建议**:  
-- 从简单功能开始（如支持更多视频平台），逐步迭代。  
-- 使用 `try-except` 捕获异常，避免程序崩溃。  
+**学习建议**:
+- 绘制项目流程图，标注关键函数的调用关系。
+- 尝试修改代码，例如更改视频保存路径或添加日志功能。
 
 ---
 
-### 阶段 4：高级开发与开源贡献 🌟  
-**学习内容**:  
-- 熟悉 Git 工作流（分支管理、PR 提交）  
-- 编写单元测试  
-- 参与开源项目协作  
+### 阶段 3：功能扩展与优化 🚀
+**学习内容**:
+- 添加新功能（如批量下载、格式转换）
+- 性能优化（多线程/异步下载）
+- 错误处理与日志记录
 
-**学习时间**: 4-6周  
+**学习时间**: 3-4周
 
-**学习资源**:  
-- [Git 官方文档](https://git-scm.com/doc)  
-- [GitHub Contributing 指南](https://docs.github.com/en/get-started/quickstart/contributing-to-projects)  
-- [Pytest 测试框架](https://docs.pytest.org/)  
+**学习资源**:
+- [Python 多线程教程](https://docs.python.org/zh-cn/3/library/threading.html)
+- 项目 Issues 区（参考用户提出的改进建议）
+- 代码审查工具（如 Pylint）
 
-**学习建议**:  
-- 先修复项目中的小 Bug（如拼写错误、兼容性问题）。  
+**学习建议**:
+- 从简单功能开始（如支持更多视频平台），逐步迭代。
+- 使用 `try-except` 捕获异常，避免程序崩溃。
+
+---
+
+### 阶段 4：高级开发与开源贡献 🌟
+**学习内容**:
+- 熟悉 Git 工作流（分支管理、PR 提交）
+- 编写单元测试
+- 参与开源项目协作
+
+**学习时间**: 4-6周
+
+**学习资源**:
+- [Git 官方文档](https://git-scm.com/doc)
+- [GitHub Contributing 指南](https://docs.github.com/en/get-started/quickstart/contributing-to-projects)
+- [Pytest 测试框架](https://docs.pytest.org/)
+
+**学习建议**:
+- 先修复项目中的小 Bug（如拼写错误、兼容性问题）。
 - 在提交 PR 前确保代码通过所有测试，并附上详细说明。
 
 ---
@@ -736,16 +728,12 @@ TikTokDownloader 在**“协议逆向工程”**这一层上进行了抽象。
 
 ### 1: 这个项目是用来做什么的？🤔
 
-1: 这个项目是用来做什么的？🤔
-
 **A**: **JoeanAmier/TikTokDownloader** 是一个开源的 **TikTok (抖音国际版) 视频下载工具**。
 它的主要功能是帮助用户批量下载 TikTok 上的视频，并支持保存视频原画质、作者昵称、ID、描述文案以及音乐信息。此外，它还支持下载主页作品、收藏/喜欢列表以及用户合辑，并提供了基于 GUI（图形界面）和 CLI（命令行）的多种使用方式，非常适合需要备份或管理 TikTok 内容的用户。
 
 ---
 
 ### 2: 如何安装和运行这个软件？🛠️
-
-2: 如何安装和运行这个软件？🛠️
 
 **A**: 该项目主要使用 Python 开发，通常有以下几种运行方式：
 
@@ -760,8 +748,6 @@ TikTokDownloader 在**“协议逆向工程”**这一层上进行了抽象。
 
 ### 3: 使用时需要登录账号吗？🔒
 
-3: 使用时需要登录账号吗？🔒
-
 **A**: **视情况而定**。
 *   **公开视频**：如果仅下载公开的视频或主页内容，通常**不需要登录**即可使用。
 *   **私密内容**：如果你需要下载自己账号下的“喜欢/收藏”列表，或者下载私密账号的视频，则必须在软件的设置界面中登录你的 TikTok 账号（通常支持扫描二维码登录或输入 Cookie）。
@@ -769,8 +755,6 @@ TikTokDownloader 在**“协议逆向工程”**这一层上进行了抽象。
 ---
 
 ### 4: 下载的视频没有声音或者是水印，怎么解决？🎵
-
-4: 下载的视频没有声音或者是水印，怎么解决？🎵
 
 **A**: 该工具默认设置通常是为了保留原画质和无水印体验。
 *   **无水印设置**：在下载设置中，请确保开启了“去水印”或“下载原模式”选项。该工具会尝试获取无水印的源地址。
@@ -781,8 +765,6 @@ TikTokDownloader 在**“协议逆向工程”**这一层上进行了抽象。
 
 ### 5: 为什么下载到 99% 突然停止或报错？⚠️
 
-5: 为什么下载到 99% 突然停止或报错？⚠️
-
 **A**: 这通常是网络问题或 API 限制导致的。
 1.  **网络连接**：TikTok 的服务器在国内部分地区可能访问不稳定。建议使用稳定的网络代理，或者在软件设置中配置代理。
 2.  **请求过快**：如果批量下载速度过快，可能会触发 TikTok 的反爬限制。建议在设置中适当调大“请求间隔”时间，避免账号被限流。
@@ -792,8 +774,6 @@ TikTokDownloader 在**“协议逆向工程”**这一层上进行了抽象。
 
 ### 6: 支持批量下载和断点续传吗？📥
 
-6: 支持批量下载和断点续传吗？📥
-
 **A**: **支持**。
 *   **批量下载**：你可以在软件中输入用户链接，软件会自动解析该用户的所有作品列表，支持一键勾选全部下载。
 *   **断点续传/覆盖逻辑**：软件通常具备智能命名功能（例如 `ID_作者昵称_描述.mp4`）。在设置中，一般可以选择“跳过已存在文件”或“覆盖已存在文件”，这变相实现了断点续传和增量下载的功能，避免重复下载浪费时间。
@@ -801,8 +781,6 @@ TikTokDownloader 在**“协议逆向工程”**这一层上进行了抽象。
 ---
 
 ### 7: 手机上可以使用这个工具吗？📱
-
-7: 手机上可以使用这个工具吗？📱
 
 **A**: **不方便直接使用**。
 这是一个桌面端或命令行工具，主要是为 **Windows / macOS / Linux** 电脑设计的。虽然通过 Termux 等工具在安卓手机上理论上可以运行 Python 脚本，但配置非常复杂且容易出错。如果你是手机用户，建议寻找专门在手机端运行的类似 APP，或者使用电脑端操作后传输到手机。

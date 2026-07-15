@@ -36,6 +36,14 @@ def build_parser() -> argparse.ArgumentParser:
         type=Path,
         help="Optional audit manifest path; omitted by default so dry-run performs zero writes",
     )
+    parser.add_argument(
+        "--recovery-manifest",
+        type=Path,
+        help=(
+            "Explicitly enable reviewed, pinned Git-history body recovery; omitted by "
+            "default so planning never reads Git history"
+        ),
+    )
     apply_mode = parser.add_mutually_exclusive_group()
     apply_mode.add_argument("--apply", action="store_true", help="Apply via shadow/soak gate")
     apply_mode.add_argument(
@@ -71,12 +79,19 @@ def main(argv: Sequence[str] | None = None) -> int:
         if args.batch:
             if args.max_changes is None:
                 raise MigrationSafetyError("--batch requires --max-changes")
+            if args.recovery_manifest is not None:
+                raise MigrationSafetyError(
+                    "--recovery-manifest is a one-shot reviewed plan and cannot use --batch"
+                )
             plan = build_historical_repair_batch(
                 content_root=args.content_root,
                 max_changes=args.max_changes,
             )
         else:
-            plan = build_historical_repair_plan(content_root=args.content_root)
+            plan = build_historical_repair_plan(
+                content_root=args.content_root,
+                recovery_manifest_path=args.recovery_manifest,
+            )
         if args.manifest_output is not None:
             write_repair_manifest(args.manifest_output, plan.manifest)
         if args.apply or args.repository_apply:

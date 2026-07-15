@@ -16,8 +16,9 @@ categories:
 - 大模型
 - 产品与创业
 source: blogs_podcasts
-description: 这是一份关于**大成建设利用 ChatGPT Enterprise 推动人才培养与业务转型**的案例总结： **1. 核心目标** 日本知名建筑公司大成建设致力于将生成式
-  AI 技术融入其全球建筑业务。其核心目标是**重塑下一代人才培养模式**，并以此提升企业的整体生产力。 **2. 关键举措** * **引入工具**
+description: 大林建设株式会社使用 ChatGPT Enterprise 以支持人力资源主导的人才发展，并在其全球建筑业务中规模化应用生成式人工智能。
+  在传统建筑行业向数字化转型的过程中，如何有效利用生成式 AI 已成为企业提升竞争力的关键课题。本文以大林建设株式会社为例，详细解析了其引入 ChatGPT Enterprise
+  支持人力资源发展的具体实践。
 external_url: https://openai.com/index/taisei
 scenarios:
 - AI/ML项目
@@ -35,10 +36,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 大林建设采用ChatGPT Enterprise推动全球建筑业务人才发展
-
 ---
 
 ## 基本信息
@@ -126,9 +123,7 @@ source_support: 0.0
 *   **行业影响（4/5）：** 作为日本建筑巨头（五大建筑承包商之一），Taisei的举动具有信号意义。它预示着建筑业正在从“AutoCAD（辅助绘图）”时代
 
 ---
-## 技术分析
 
-# 技术分析：大成建设的企业级AI应用实践
 
 ## 1. 核心观点深度解读
 
@@ -293,7 +288,6 @@ source_support: 0.0
 ---
 
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [产品与创业](/categories/%E4%BA%A7%E5%93%81%E4%B8%8E%E5%88%9B%E4%B8%9A/)

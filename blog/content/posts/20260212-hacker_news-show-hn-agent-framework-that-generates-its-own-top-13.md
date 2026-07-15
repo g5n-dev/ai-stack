@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Agent框架：运行时生成拓扑并动态演进
-
----
-
 ## 基本信息
 
 - **作者**: vincentjiang
@@ -102,16 +98,16 @@ class Agent:
     def __init__(self, name: str):
         self.name = name
         self.connections: List[str] = []  # 存储连接的其他Agent名称
-    
+
     def add_connection(self, other_agent: str):
         """添加连接到另一个Agent"""
         if other_agent not in self.connections:
             self.connections.append(other_agent)
-    
+
     def evolve_topology(self, all_agents: List[str]):
         """动态演化拓扑结构：随机添加或删除连接"""
         action = random.choice(['add', 'remove'])
-        
+
         if action == 'add' and len(self.connections) < len(all_agents)-1:
             # 随机选择一个未连接的Agent进行连接
             possible = [a for a in all_agents if a != self.name and a not in self.connections]
@@ -119,7 +115,7 @@ class Agent:
                 new_connection = random.choice(possible)
                 self.add_connection(new_connection)
                 print(f"{self.name} 建立了与 {new_connection} 的连接")
-        
+
         elif action == 'remove' and self.connections:
             # 随机删除一个连接
             removed = random.choice(self.connections)
@@ -168,16 +164,16 @@ class SpecializedAgent:
         self.specialty = specialty  # Agent的专业领域
         self.current_load = 0
         self.collaborators = []  # 协作伙伴
-    
+
     def can_handle(self, task: Task) -> bool:
         """判断是否能处理该任务"""
         return task.type == self.specialty and self.current_load < 3
-    
+
     def process_task(self, task: Task):
         """处理任务"""
         self.current_load += 1
         print(f"{self.name} 正在处理 {task.type.value} 任务: {task.data}")
-        
+
         # 如果负载过高，寻找协作伙伴
         if self.current_load >= 2 and not self.collaborators:
             print(f"{self.name} 负载过高，正在寻找协作伙伴...")
@@ -188,10 +184,10 @@ class DynamicCollaborationNetwork:
     def __init__(self):
         self.agents = []
         self.pending_tasks = []
-    
+
     def add_agent(self, agent: SpecializedAgent):
         self.agents.append(agent)
-    
+
     def submit_task(self, task: Task):
         """提交任务并动态分配"""
         # 尝试直接处理
@@ -201,19 +197,19 @@ class DynamicCollaborationNetwork:
                 if need_collab:
                     self.establish_collaboration(agent, task.type)
                 return
-        
+
         # 如果没有合适的Agent，创建新的Agent
         print(f"没有合适的Agent处理 {task.type.value} 任务，创建新Agent...")
         new_agent = SpecializedAgent(f"New-{task.type.value}-Agent", task.type)
         self.add_agent(new_agent)
         new_agent.process_task(task)
-    
+
     def establish_collaboration(self, busy_agent: SpecializedAgent, task_type: TaskType):
         """建立动态协作网络"""
         # 找到同类型的其他Agent作为协作伙伴
-        collaborators = [a for a in self.agents 
+        collaborators = [a for a in self.agents
                         if a != busy_agent and a.specialty == task_type]
-        
+
         if collaborators:
             partner = random.choice(collaborators)
             busy_agent.collaborators.append(partner)
@@ -243,8 +239,6 @@ for task in tasks:
 
 ### 1：某大型电商平台的智能客服调度系统
 
- 1：某大型电商平台的智能客服调度系统
-
 **背景**:
 该电商平台拥有数亿用户，每天产生数千万次客服咨询。咨询内容涵盖物流查询、退换货、技术故障报修等数十个垂直领域。传统模式下，系统基于固定的规则树或静态的意图识别模型进行路由。
 
@@ -262,8 +256,6 @@ for task in tasks:
 
 ### 2：跨国云服务提供商的自动化运维（AIOps）
 
- 2：跨国云服务提供商的自动化运维（AIOps）
-
 **背景**:
 该云服务商管理着全球范围内的海量数据中心，微服务架构极其复杂，服务之间的依赖关系多达数万条。随着业务快速迭代，服务拓扑每时每刻都在发生变化。
 
@@ -280,8 +272,6 @@ for task in tasks:
 ---
 
 ### 3：智慧城市的自适应交通信号控制网络
-
- 3：智慧城市的自适应交通信号控制网络
 
 **背景**:
 某一线城市的核心商务区（CBD）交通流量巨大，且具有极强的潮汐特征和不确定性。路口之间相互影响，传统的固定配时方案或简单的感应控制无法满足复杂的通行需求。
@@ -391,8 +381,6 @@ Agent 们根据实时车流数据，动态发现相邻路口的拥堵关联性�
 
 ### 1: 该 Agent 框架的核心特性是什么？它与 LangGraph 或 AutoGen 等主流框架有何区别？
 
-1: 该 Agent 框架的核心特性是什么？它与 LangGraph 或 AutoGen 等主流框架有何区别？
-
 **A**: 该框架的核心特性在于其**动态拓扑结构**和**运行时调整**能力。
 
 大多数现有的 Agent 框架（如 LangGraph 或 AutoGen）通常依赖于**静态图结构**。这意味着开发者必须预先定义好 Agent 之间的连接方式、协作流程和工具调用链。虽然这些框架支持循环或条件分支，但整体架构在程序启动后是固定的。
@@ -402,8 +390,6 @@ Agent 们根据实时车流数据，动态发现相邻路口的拥堵关联性�
 ---
 
 ### 2: 框架是如何实现“运行时调整”的？其背后的机制是什么？
-
-2: 框架是如何实现“运行时调整”的？其背后的机制是什么？
 
 **A**: 具体实现细节取决于代码库的设计，但此类系统通常基于以下几种机制的组合：
 
@@ -415,8 +401,6 @@ Agent 们根据实时车流数据，动态发现相邻路口的拥堵关联性�
 
 ### 3: 这种动态生成的拓扑结构是否会影响系统的可预测性或可调试性？
 
-3: 这种动态生成的拓扑结构是否会影响系统的可预测性或可调试性？
-
 **A**: 动态性确实增加了系统的复杂度，但该框架通常会通过以下方式解决可观测性和可控性问题：
 
 1.  **快照与回溯**：系统会记录拓扑结构随时间变化的所有历史版本。开发者可以回滚到之前的某个状态，或者重放整个过程来分析问题。
@@ -426,8 +410,6 @@ Agent 们根据实时车流数据，动态发现相邻路口的拥堵关联性�
 ---
 
 ### 4: 使用该框架需要具备什么样的技术背景？上手难度如何？
-
-4: 使用该框架需要具备什么样的技术背景？上手难度如何？
 
 **A**: 由于涉及到底层架构的动态变化，使用该框架通常比使用简单的链式调用框架要复杂一些。
 
@@ -439,8 +421,6 @@ Agent 们根据实时车流数据，动态发现相邻路口的拥堵关联性�
 
 ### 5: 运行时动态生成结构是否会消耗大量的计算资源（Token 成本）？
 
-5: 运行时动态生成结构是否会消耗大量的计算资源（Token 成本）？
-
 **A**: 是的，这是此类系统的一个主要成本来源。
 
 1.  **额外开销**：除了执行任务本身消耗的 Token 外，系统还需要消耗额外的计算资源用于“评估结构变化”、“测试新结构”以及“生成新 Agent 的提示词”。这通常被称为“元计算”成本。
@@ -449,8 +429,6 @@ Agent 们根据实时车流数据，动态发现相邻路口的拥堵关联性�
 ---
 
 ### 6: 该框架目前支持哪些 LLM 提供商？是否兼容本地模型？
-
-6: 该框架目前支持哪些 LLM 提供商？是否兼容本地模型？
 
 **A**: 具体兼容性列表需查阅项目文档，但作为一个现代化的 Agent 框架，它通常遵循以下设计原则：
 
@@ -465,7 +443,6 @@ Agent 们根据实时车流数据，动态发现相邻路口的拥堵关联性�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/)

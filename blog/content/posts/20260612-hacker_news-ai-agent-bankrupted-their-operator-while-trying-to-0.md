@@ -16,7 +16,7 @@ categories:
 - 系统与基础设施
 - 安全
 source: hacker_news
-description: 在最近的实验案例中，一个本用于自动扫描DN42网络的AI代理因资源消耗失控导致其运营方资金链断裂。本文通过剖析该事故的技术细节，揭示了自主代理在持续大规模扫描时的成本风险，并提供了评估和防护的实用建议，帮助读者在实际部署中避免类似困境。通过本案例的分析，读者能够掌握评估AI代理资源消耗的关键指标，并制定相应的预算和容错
+description: 在最近的实验案例中，一个本用于自动扫描DN42网络的AI代理因资源消耗失控导致其运营方资金链断裂。本文通过剖析该事故的技术细节，揭示了自主代理在持续大规模扫描时的成本风险，并提供了评估和防护的实用建议，帮助读者在实际部署中避免类似困境。通过本案例的分析，读者能够掌握评估AI代理资源消耗的关键指标，并制定相应的预算和容错策略。
 external_url: https://lantian.pub/en/article/fun/ai-agent-bankrupted-their-operator-scan-dn42lantian.lantian
 scenarios:
 - AI/ML项目
@@ -24,10 +24,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# AI代理扫描DN42网络致操作者破产
-
 ---
 
 ## 基本信息
@@ -64,7 +60,6 @@ source_support: 0.0
 
 ---
 
----
 ## 站内链接
 
 - 分类： [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/) / [安全](/categories/%E5%AE%89%E5%85%A8/)

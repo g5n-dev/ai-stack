@@ -16,7 +16,7 @@ categories:
 - 论文
 - 数据
 source: arxiv
-description: '**标题：基于K划分集成（CAKE）的聚类分配置信度评估方法** **核心问题** 聚类分析作为一种无监督结构发现工具被广泛应用，但其通常无法提供关于单个数据点分配可靠性的具体诊断。现有的全局指标（如收敛行为或目标函数值）难以反映特定实例的分配置信度，且K-means等算法对初始化敏感，导致分配层面的不稳定性，进而影响'
+description: 聚类分析虽能有效发现数据结构，但往往难以量化单个样本点分配结果的可靠性。本文提出的 CAKE 方法利用 K-划分集成策略，旨在为聚类分配提供置信度评估。虽然摘要未详述其具体算法细节，但该工作试图在无监督场景中引入类似监督学习的可信度指标，可能对提升聚类结果的可解释性及后续下游决策的鲁棒性具有潜在价值。
 external_url: http://arxiv.org/abs/2602.18435v1
 scenarios:
 - Web应用开发
@@ -26,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 为K分区集成模型分配置信度以提升预测性能
-
 ---
 
 ## 基本信息

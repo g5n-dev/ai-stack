@@ -9,8 +9,7 @@ tags:
 categories:
 - 论文
 source: arxiv
-description: 本文介绍了一种名为 **NAIT (Neuron-Aware Instruction Tuning)** 的新型数据筛选框架，旨在解决大语言模型（LLM）指令调优中数据质量与效率的关键问题。
-  **背景与动机：** 指令调速能有效释放大模型的潜能，但研究表明过多的训练数据反而可能降低模型性能，而精选的高质量数据子集能显著
+description: 针对大模型指令微调中数据质量与效率的难题，本文提出了 NAIT（Neuron-Aware Instruction Tuning）框架。该方法通过分析模型神经元激活状态来筛选高质量数据，旨在缓解过量训练数据可能导致的性能退化问题。尽管摘要未详述具体算法细节，但该研究为理解模型内部机制与数据选择之间的关联提供了新视角，有望提升指令微调的鲁棒性。
 external_url: http://arxiv.org/abs/2603.13201v1
 scenarios:
 - Web应用开发
@@ -20,10 +19,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 面向神经元的大模型指令调优数据选择方法
-
 ---
 
 ## 基本信息

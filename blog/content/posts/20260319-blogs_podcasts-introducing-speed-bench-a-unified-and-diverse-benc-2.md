@@ -16,7 +16,7 @@ categories:
 - AI 工程
 - 论文
 source: blogs_podcasts
-description: 本文介绍 SPEED‑Bench，一个针对投机解码（speculative decoding）任务的统一且多维的评测基准。该基准汇集了多种生成场景与模型组合，旨在客观衡量加速比与生成质量之间的权衡，为研究者提供可比的实验平台。通过对基准结果的解读，读者可以快速了解当前主流投机解码方案的相对优势，并据此在系统设计中作出更
+description: 本文介绍 SPEED‑Bench，一个针对投机解码（speculative decoding）任务的统一且多维的评测基准。该基准汇集了多种生成场景与模型组合，旨在客观衡量加速比与生成质量之间的权衡，为研究者提供可比的实验平台。通过对基准结果的解读，读者可以快速了解当前主流投机解码方案的相对优势，并据此在系统设计中作出更有依据的决策。
 external_url: https://huggingface.co/blog/nvidia/speed-bench
 scenarios:
 - 大语言模型
@@ -25,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# SPEED-Bench：推测解码的统一多样化基准
-
 ---
 
 ## 基本信息

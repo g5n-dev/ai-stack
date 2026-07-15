@@ -16,7 +16,8 @@ categories:
 - AI 工程
 - 开发工具
 source: blogs_podcasts
-description: '**Replit Agent 4 发布：知识工作智能体的进化** Replit Agent 4 的发布标志着智能体技术在知识工作领域的突破性进展。作为新一代开发辅助工具，它通过强化推理能力和多模态交互，显著提升了处理复杂任务的效率。该版本特别优化了对自然语言指令的理解，使非技术用户也能通过对话式交互完成代码编写、调试和'
+description: Replit Agent 4 让我们回顾几个截然不同的发布。 Replit Agent 4 发布：知识工作智能体的进化 Replit Agent
+  4 的发布标志着智能体技术在知识工作领域的突破性进展。作为新一代开发辅助工具，它通过强化推理能力和多模态交互，显著提升了处理复杂任务的效率。该版本特别优化了对自然语言指令的理解，使非技术用户也能通过对话式交互完成代码编写、调试和部署等全流程开发工作。
 external_url: https://www.latent.space/p/ainews-replit-agent-4-the-knowledge
 scenarios:
 - AI/ML项目
@@ -35,10 +36,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Replit Agent 4：面向知识工作的智能体
-
 ---
 
 ## 基本信息

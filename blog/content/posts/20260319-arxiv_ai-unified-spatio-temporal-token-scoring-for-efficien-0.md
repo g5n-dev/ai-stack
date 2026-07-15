@@ -16,8 +16,9 @@ categories:
 - 论文
 - 大模型
 source: arxiv
-description: Spatio-Temporal Token Scoring（STTS）技术总结 研究背景与问题 视频视觉-语言模型（VLM）在处理视频问答等任务时面临计算效率的挑战。视频数据中存在大量时间和空间冗余，因此token剪枝成为提升效率的关键技术。然而，现有方法存在明显局限：
-  - **仅在ViT中剪枝**：适用于动作识别、物
+description: '| 评价维度 | 评估结论 | 信息完整度 | |---------|---------|-----------| | 创新性 | 潜在贡献明确，创新程度待验证
+  | 中 | | 理论贡献 | 需补充假设验证与理论支撑 | 低 | | 实验验证 | 无法评估，需完整实验数据 | 低 | | 应用前景 | 场景需求真实，价值取决于性能
+  | 中 | | 可复现性 | 初步描述不足，需方法细节 | 低…'
 external_url: http://arxiv.org/abs/2603.18004v1
 scenarios:
 - 大语言模型
@@ -27,10 +28,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 统一时空Token评分提升视频VLM效率
-
 ---
 
 ## 基本信息

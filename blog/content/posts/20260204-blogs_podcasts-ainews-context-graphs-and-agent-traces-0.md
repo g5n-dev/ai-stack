@@ -16,8 +16,8 @@ categories:
 - 大模型
 - AI 工程
 source: blogs_podcasts
-description: 随着大模型应用从单一问答向复杂任务演进，如何精准捕捉上下文关系并追踪 Agent 的执行路径，已成为提升系统可靠性的关键。本文深入探讨 Context
-  Graphs 与 Agent Traces 的技术原理，分析二者在解决幻觉与推理黑箱问题上的实际作用。通过阅读，读者将掌握构建可观测 AI 系统的核心方法，理解如何通过
+description: 宁静的一天让我们聚焦一个热议话题。 随着大模型应用从单一问答向复杂任务演进，如何精准捕捉上下文关系并追踪 Agent 的执行路径，已成为提升系统可靠性的关键。本文深入探讨
+  Context Graphs 与 Agent Traces 的技术原理，分析二者在解决幻觉与推理黑箱问题上的实际作用。通过阅读，读者将掌握构建可观测 AI 系统的核心方法，理解如何通过结构化数据与链路追踪优化模型输出。
 external_url: https://www.latent.space/p/ainews-context-graphs-hype-or-actually
 scenarios:
 - AI/ML项目
@@ -33,10 +33,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Context Graphs 与 Agent Traces：解析 AI 智能体的记忆与回溯机制
-
 ---
 
 ## 基本信息
@@ -110,9 +106,7 @@ source_support: 0.0
     *   **Hallucination Rate（幻觉率）
 
 ---
-## 技术分析
 
-# 技术分析：上下文图谱与智能体轨迹
 
 ## 1. 核心观点深度解读
 
@@ -270,7 +264,6 @@ source_support: 0.0
 ---
 
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

@@ -1,5 +1,5 @@
 ---
-title: 'ANCRe: Adaptive Neural Connection Reassignment for Effi'
+title: 'ANCRe: Adaptive Neural Connection Reassignment for Efficient Depth Scaling'
 date: 2026-02-10 14:00:18+08:00
 draft: false
 entry_kind: auto
@@ -16,8 +16,8 @@ categories:
 - 大模型
 - 论文
 source: arxiv
-description: '**总结：ANCRe（自适应神经连接重分配）** 本文提出了一种名为 **ANCRe（Adaptive Neural Connection
-  Reassignment）** 的新框架，旨在解决深度神经网络中深度层利用率不足的问题，提升模型训练效率与性能。 **核心背景与问题：** 增加网络深度是现代基础模型成功的关键，但'
+description: 总结：ANCRe（自适应神经连接重分配） 本文提出了一种名为 ANCRe（Adaptive Neural Connection Reassignment）
+  的新框架，旨在解决深度神经网络中深度层利用率不足的问题，提升模型训练效率与性能。 核心背景与问题： 增加网络深度是现代基础模型成功的关键，但研究表明深层往往未被充分利用。
 external_url: http://arxiv.org/abs/2602.09009v1
 scenarios:
 - Web应用开发
@@ -27,10 +27,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# ANCRe: Adaptive Neural Connection Reassignment for Efficient Depth Scaling
-
 ---
 
 ## 基本信息
@@ -160,7 +156,6 @@ source_support: 0.0
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

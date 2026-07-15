@@ -16,8 +16,7 @@ categories:
 - 大模型
 - AI 工程
 source: juejin
-description: 描述质量与工具选择 工具的描述是 LLM 判断“该不该调用”的关键信号。实验表明，描述越准确、关键词越贴合任务，工具被选中的概率越高。但存在反直觉的前提：**只有在
-  LLM 已具备足够上下文且描述不产生歧义时，高质量描述才能提升选择**；若描述中混入相似词或缺少前置条件，反而会导致误选。 错误处理：异常 vs 错误字符
+description: 在构建 LLM Agent 时，工具的设计本质是为模型服务，如何让模型精准选择并正确使用工具，直接决定系统的可靠性与任务完成率。本文通过三组对比实验，揭示描述质量、异常处理和粒度设计等关键因素对工具调用的影响，并提炼出五条可落地的设计原则，帮助开发者在实际项目中快速提升工具链表现。
 external_url: https://juejin.cn/post/7649040940744605759
 scenarios:
 - 大语言模型
@@ -25,10 +24,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# LLM工具选择：三个实验揭示描述质量与异常处理的影响
-
 ---
 
 ## 基本信息
@@ -110,7 +105,6 @@ source_support: 0.0
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

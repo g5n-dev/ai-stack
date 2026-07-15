@@ -16,8 +16,9 @@ categories:
 - 大模型
 - 论文
 source: arxiv
-description: 本文探讨了大型语言模型（LLMs）中“道德冷漠”的机制起源及解决方案。 **主要发现：** 现有的行为对齐技术往往忽视了表面顺从与内部不对齐表征之间的差异，导致模型面临长尾风险。研究指出，LLMs
-  存在一种内在的道德冷漠状态，即将不同的道德概念压缩成均匀的概率分布。 **验证与分析：** 通过基于原型理论和 Socia
+description: 本文探讨了大型语言模型（LLMs）中“道德冷漠”的机制起源及解决方案。 主要发现： 现有的行为对齐技术往往忽视了表面顺从与内部不对齐表征之间的差异，导致模型面临长尾风险。研究指出，LLMs
+  存在一种内在的道德冷漠状态，即将不同的道德概念压缩成均匀的概率分布。 验证与分析： 通过基于原型理论和 Social-Chemistry-101 数据集构建的
+  25.1 万个道德向量，研究分析了 23 个模型。
 external_url: http://arxiv.org/abs/2603.15615v1
 scenarios:
 - AI/ML项目
@@ -27,10 +28,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 大语言模型道德冷漠现象的机制起源研究
-
 ---
 
 ## 基本信息

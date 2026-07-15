@@ -35,10 +35,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Microgpt：可在浏览器中可视化的GPT模型
-
----
-
 ## 基本信息
 
 - **作者**: b44
@@ -129,15 +125,15 @@ def visualize_gpt_generation():
     # 加载预训练模型和分词器
     model = GPT2LMHeadModel.from_pretrained('gpt2')
     tokenizer = GPT2Tokenizer.from_pretrained('gpt2')
-    
+
     # 输入文本
     input_text = "The quick brown fox"
     inputs = tokenizer(input_text, return_tensors='pt')
-    
+
     # 生成文本并获取输出
     outputs = model(**inputs, output_attentions=True)
     attentions = outputs.attentions  # 获取注意力权重
-    
+
     # 可视化最后一层的注意力权重
     plt.figure(figsize=(10, 6))
     plt.imshow(attentions[-1][0][0].detach().numpy(), cmap='viridis')
@@ -165,7 +161,7 @@ class MicroGPT:
         self.embeddings = np.random.randn(vocab_size, d_model)
         # 简化的输出层
         self.output_layer = np.random.randn(d_model, vocab_size)
-    
+
     def generate(self, input_tokens, max_length=20):
         """
         模拟GPT的文本生成过程
@@ -178,19 +174,19 @@ class MicroGPT:
             # 获取最后一个token的嵌入
             last_token = generated[-1]
             embedding = self.embeddings[last_token]
-            
+
             # 简化的前向传播
             logits = np.dot(embedding, self.output_layer)
-            
+
             # 简单采样下一个token
             next_token = np.random.choice(self.vocab_size, p=self._softmax(logits))
             generated.append(next_token)
-            
+
             # 简单的停止条件
             if next_token == 50256:  # 假设50256是结束token
                 break
         return generated
-    
+
     @staticmethod
     def _softmax(x):
         e_x = np.exp(x - np.max(x))
@@ -222,21 +218,21 @@ class GPTVisualizer:
             disabled=False,
             layout={'width': '100%', 'height': '200px'}
         )
-        
+
         self.generate_btn = widgets.Button(
             description='开始生成',
             button_style='success'
         )
-        
+
         self.generate_btn.on_click(self.on_generate_click)
-        
+
         display(widgets.VBox([self.generate_btn, self.output_area]))
-    
+
     def on_generate_click(self, b):
         """模拟生成过程"""
         self.output_area.value = ""
         text = "The quick brown fox jumps over the lazy dog. "
-        
+
         for i in range(len(text)):
             self.output_area.value += text[i]
             time.sleep(0.1)  # 模拟生成延迟
@@ -249,8 +245,6 @@ visualizer = GPTVisualizer()
 ## 案例研究
 
 ### 1：高校AI课程教学辅助项目
-
- 1：高校AI课程教学辅助项目
 
 **背景**:
 某知名高校的人工智能导论课程面临教学挑战。学生在学习 Transformer 架构和 GPT 模型时，仅靠理论推导和数学公式难以直观理解“预测下一个词”的具体机制以及神经网络内部的权重变化过程。
@@ -270,8 +264,6 @@ visualizer = GPTVisualizer()
 
 ### 2：SaaS 产品前端团队的技术分享与培训
 
- 2：SaaS 产品前端团队的技术分享与培训
-
 **背景**:
 一家专注于企业级 SaaS 的前端开发团队，计划引入 AI 能力增强产品体验。然而，团队中大部分工程师精通 React/Vue 等视图框架，但对大语言模型（LLM）的内部运行机制了解甚少，导致在与后端 AI 团队协作时存在沟通壁垒。
 
@@ -289,8 +281,6 @@ visualizer = GPTVisualizer()
 ---
 
 ### 3：开源教育社区的“算法可视化”贡献
-
- 3：开源教育社区的“算法可视化”贡献
 
 **背景**:
 一个致力于降低算法学习门槛的全球性开源社区，其网站上已经包含了排序、动态规划等经典算法的可视化演示。随着 AI 热潮的兴起，社区管理员收到大量请求，希望增加关于大语言模型（LLM）工作原理的交互式演示。
@@ -320,7 +310,7 @@ visualizer = GPTVisualizer()
 3. 建立模块间通信机制（如事件总线）处理交互事件
 4. 为每个可视化组件添加配置接口（颜色、大小、动画速度等）
 
-**注意事项**: 
+**注意事项**:
 - 避免过度复杂的嵌套结构导致渲染性能下降
 - 确保模块接口向后兼容，便于后续扩展新功能
 
@@ -424,8 +414,6 @@ visualizer = GPTVisualizer()
 
 ### 1: Microgpt 是什么？它与 ChatGPT 有什么区别？
 
-1: Microgpt 是什么？它与 ChatGPT 有什么区别？
-
 **A**: Microgpt 是一个专为教育目的设计的极简版 GPT（生成式预训练变换模型）实现。与 OpenAI 的 ChatGPT 不同，Microgpt 并不旨在通过海量数据进行对话或回答复杂问题，而是一个可视化的、运行在浏览器中的教学工具。
 
 它的核心区别在于：
@@ -437,8 +425,6 @@ visualizer = GPTVisualizer()
 
 ### 2: 我需要安装什么软件或环境才能运行 Microgpt？
 
-2: 我需要安装什么软件或环境才能运行 Microgpt？
-
 **A**: 你通常不需要安装任何复杂的开发环境（如 Python、Conda 或配置 GPU）。根据该项目的特性，Microgpt 是基于 Web 技术构建的，这意味着：
 
 1.  **直接访问**：大多数情况下，你只需要一个现代的网页浏览器（如 Chrome、Firefox、Edge 或 Safari）。
@@ -448,8 +434,6 @@ visualizer = GPTVisualizer()
 ---
 
 ### 3: 这个工具适合初学者学习深度学习吗？
-
-3: 这个工具适合初学者学习深度学习吗？
 
 **A**: 非常适合。对于初学者来说，直接阅读 PyTorch 或 TensorFlow 的 GPT 实现代码往往难以直观理解矩阵运算和数据流动。
 
@@ -462,8 +446,6 @@ Microgpt 的优势在于：
 
 ### 4: Microgpt 支持训练模型吗？还是只能进行推理？
 
-4: Microgpt 支持训练模型吗？还是只能进行推理？
-
 **A**: 这取决于具体的实现版本，但大多数此类可视化工具（包括 Microgpt）主要侧重于**推理（Inference）和架构展示**。
 
 *   **推理**：它允许你输入文本，查看模型如何基于当前的权重生成下一个 token（词元）。
@@ -472,8 +454,6 @@ Microgpt 的优势在于：
 ---
 
 ### 5: 它使用什么技术栈实现的？为什么选择在浏览器中运行？
-
-5: 它使用什么技术栈实现的？为什么选择在浏览器中运行？
 
 **A**: Microgpt 通常使用标准的 Web 技术栈，主要是 **HTML5、CSS3 和 JavaScript**。为了处理矩阵运算，它可能会使用 TensorFlow.js 或类似的原生 JavaScript 数学库。
 
@@ -485,8 +465,6 @@ Microgpt 的优势在于：
 ---
 
 ### 6: 我可以用 Microgpt 来构建我自己的 AI 应用吗？
-
-6: 我可以用 Microgpt 来构建我自己的 AI 应用吗？
 
 **A**: 不建议。Microgpt 是一个**教学演示项目**，而非软件开发框架（SDK）。
 
@@ -502,7 +480,6 @@ Microgpt 的优势在于：
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [前端](/categories/%E5%89%8D%E7%AB%AF/)

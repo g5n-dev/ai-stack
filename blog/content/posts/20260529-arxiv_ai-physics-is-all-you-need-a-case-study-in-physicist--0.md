@@ -15,8 +15,7 @@ tags:
 categories:
 - 论文
 source: arxiv
-description: 背景与目标 一位物理学家在12个工作日、57轮会话中监督AI编码代理（Claude Code、Sonnet、Opus）构建CLAX‑PT——JAX平台的可微单环微扰理论模块。研究的核心是评估AI代理在科学软件开发中的角色：工具、合作作者或独立研究者。
-  实验概况 - 共记录并分类了15次监督事件，按干预程度划分为不同层级
+description: 本研究以物理学家监督AI编码代理开发CLAX‑PT模块为案例，探讨当前AI代理在科学软件开发中的实际能力边界。研究通过记录57轮会话中的15次监督事件，系统分析了AI在处理物理约束时暴露的典型问题：包括架构选择陷入局部最优导致目标物理无法表达，以及校准修正虽能通过现有预言测试却在参数变换后失效等。相关发现为评估AI在科学软件工程中的定位提供了实证参考，其影响范围或涉及该领域的研究范式与工具选择。
 external_url: http://arxiv.org/abs/2605.30353v1
 scenarios:
 - AI/ML项目
@@ -27,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 物理学家监督AI开发科学软件案例研究
-
 ---
 
 ## 基本信息
@@ -162,7 +157,6 @@ CLAX-PT模块的理论基础是单环微扰理论在宇宙学中的应用，涉�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/)

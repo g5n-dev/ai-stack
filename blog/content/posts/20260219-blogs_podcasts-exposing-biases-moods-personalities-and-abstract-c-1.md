@@ -39,10 +39,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 麻省理工学院新方法根除漏洞并提升大模型安全性与性能
-
----
-
 ## 基本信息
 
 - **来源**: MIT News (Machine Learning) (blog)

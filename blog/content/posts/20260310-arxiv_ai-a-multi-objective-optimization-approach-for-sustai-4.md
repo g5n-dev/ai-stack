@@ -16,8 +16,7 @@ categories:
 - 论文
 - 产品与创业
 source: arxiv
-description: 本文介绍了一种名为 **EcoAI-Resilience** 的多目标优化框架，旨在韧性经济体中推动可持续的AI驱动型创业发展。 **背景与挑战**
-  人工智能技术的飞速发展为经济增长带来了机遇，但其部署通常伴随巨大的能源消耗和环境成本。如何在利用AI增强经济韧性和解决环境问题的同时，最小化其自身的环境足迹，是当前面临的
+description: 针对AI在促进经济韧性时伴随的高能耗挑战，本文提出了EcoAI-Resilience多目标优化框架，旨在平衡可持续发展、经济韧性与环境足迹。该研究整合了多国跨部门数据，通过数学优化手段同时最大化正向影响并最小化环境成本，且模型预测精度显著优于传统基线方法。虽然摘要展示了具体的优化策略数值，但该框架在实际政策制定或商业部署中的具体应用效果，尚无法从摘要确认。
 external_url: http://arxiv.org/abs/2603.08692v1
 scenarios:
 - AI/ML项目
@@ -27,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 韧性经济下AI驱动创业的多目标优化方法
-
 ---
 
 ## 基本信息

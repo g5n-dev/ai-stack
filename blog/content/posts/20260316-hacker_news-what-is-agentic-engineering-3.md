@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 什么是智能体工程：定义、架构与应用场景
-
----
-
 ## 基本信息
 
 - **作者**: lumpa

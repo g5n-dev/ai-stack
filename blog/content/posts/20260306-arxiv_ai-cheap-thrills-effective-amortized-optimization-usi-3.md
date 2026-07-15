@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 廉价标签实现高效摊销优化
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.05495v1

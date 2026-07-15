@@ -16,8 +16,7 @@ categories:
 - 大模型
 - 论文
 source: arxiv
-description: '**摘要：利用指令微调大语言模型进行联合论辩成分检测** **背景与问题** 论辩成分检测是论辩挖掘的核心子任务，也是最具挑战性的环节之一。该任务要求同时完成两项工作：界定论辩文本的跨度（delimiting
-  argumentative spans）并将其分类为具体成分（如主张和前提）。目前针对该任务的研究相对较少，现'
+description: 论辩成分检测（ACD）通常被简化为序列标注或流水线模式，难以实现真正的端到端解析。本文提出一种基于指令微调大语言模型的新方法，利用紧凑的指令提示将ACD重构为语言生成任务，从而直接从文本中识别并分类论辩成分。实验显示该方法在标准基准上超越了现有最优系统，但摘要未详述其在不同数据分布下的具体泛化边界。这一尝试不仅拓展了生成式模型的应用场景，也为后续利用指令微调技术解决复杂结构化预测任务提供了新思路。
 external_url: http://arxiv.org/abs/2603.03095v1
 scenarios:
 - 大语言模型
@@ -26,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 指令微调LLM的紧凑提示实现论辩成分联合检测
-
 ---
 
 ## 基本信息

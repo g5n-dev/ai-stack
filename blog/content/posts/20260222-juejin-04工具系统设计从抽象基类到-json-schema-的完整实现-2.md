@@ -16,9 +16,8 @@ categories:
 - AI 工程
 - 后端
 source: juejin
-description: CountBot 工具系统设计总结 核心概述 CountBot 构建了一套完善的 AI Agent 工具调用系统，旨在实现类似 LangChain
-  等框架的功能。该系统不仅支持大模型（LLM）进行函数调用，还包含参数验证、错误处理和审计日志等企业级特性。 系统架构与设计模式 系统采用面向对象设计，核心组件包括：
-  1.
+description: 工具调用是构建现代 AI Agent 的核心能力，其系统的健壮性直接影响 Agent 的执行效率与可靠性。本文以 CountBot 为案例，详细拆解了一套包含参数校验与审计日志的完整工具系统设计。读者将了解到如何从抽象基类设计出发，结合
+  JSON Schema 实现工具的标准化定义与动态注册，从而在工程层面构建可扩展的工具调用框架。
 external_url: https://juejin.cn/post/7607989878778019892
 scenarios:
 - 大语言模型
@@ -27,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# CountBot工具系统设计：从抽象基类到JSON Schema实现
-
 ---
 
 ## 基本信息

@@ -17,7 +17,7 @@ categories:
 - AI 工程
 source: hacker_news
 description: 随着大语言模型应用场景的深入，如何让 Agent 更精准地执行复杂任务成为技术关键。本文介绍的 Claws 框架，通过在 LLM Agent
-  之上构建一个新的逻辑层，显著增强了模型对工具调用的控制力与稳定性。阅读本文，你将了解 Claws 的核心设计理念，以及它如何通过结构化的方式优化 Agent 的输出质量，从而提升
+  之上构建一个新的逻辑层，显著增强了模型对工具调用的控制力与稳定性。阅读本文，你将了解 Claws 的核心设计理念，以及它如何通过结构化的方式优化 Agent 的输出质量，从而提升实际工程落地的可靠性。
 external_url: https://twitter.com/karpathy/status/2024987174077432126
 scenarios:
 - 大语言模型
@@ -34,10 +34,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Claws 成为 LLM 智能体顶层新抽象层
-
 ---
 
 ## 基本信息

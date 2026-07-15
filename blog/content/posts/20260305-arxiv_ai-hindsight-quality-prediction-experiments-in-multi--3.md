@@ -16,8 +16,8 @@ categories:
 - 大模型
 - 论文
 source: arxiv
-description: '**中文总结：** 本文探讨了在大语言模型（LLM）兴起的背景下，机器翻译（MT）质量预测范式的演变。研究通过“后见之明”实验，在一个包含6000多个英语片段的多候选数据集上，对比了源端难度预测和候选端质量估计（QE）两种方法。
-  **核心发现：** 1. **LLM改变了预测可靠性：** 随着架构向LLM转型，既有的质'
+description: 随着大语言模型（LLM）的兴起，机器翻译质量预测的范式正在经历显著变化。本文通过“后见之明”实验，在多候选数据集上对比了源端难度预测与候选端质量估计（QE）的有效性。研究发现，LLM
+  的引入不仅改变了既有预测指标的可靠性，还缓解了文档级翻译面临的挑战。该研究为理解 LLM 时代翻译质量评估的演变提供了实证依据，但具体的模型优化细节无法从摘要确认。
 external_url: http://arxiv.org/abs/2603.04083v1
 scenarios:
 - 大语言模型
@@ -25,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 多候选人译后编辑中的后见质量预测实验
-
 ---
 
 ## 基本信息

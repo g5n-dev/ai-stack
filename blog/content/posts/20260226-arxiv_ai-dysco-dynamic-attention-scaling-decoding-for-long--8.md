@@ -16,8 +16,7 @@ categories:
 - 大模型
 - 论文
 source: arxiv
-description: '**DySCO：长上下文大模型的动态注意力缩放解码法** **1. 背景与问题** 理解和推理长上下文是当前大语言模型（LM）的关键能力。尽管现有模型支持的上下文窗口越来越大，但在处理长文本时，随着输入长度的增加，模型的准确性往往会下降。主要问题在于，模型在解码过程中难以始终将注意力集中在最相关的上下文上。
-  **2.'
+description: 长上下文大模型常因注意力分散而导致推理能力随输入长度增加而下降。为此，本文提出了无需训练的解码算法 DySCO，它利用模型内部的检索头识别关键信息，并通过动态缩放注意力权重来增强模型对相关上下文的聚焦能力。实验显示该方法能有效提升长文本推理性能，但其对特定模型架构的依赖性及泛化边界，尚无法从摘要中确认。
 external_url: http://arxiv.org/abs/2602.22175v1
 scenarios:
 - 大语言模型
@@ -27,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# DySCO：面向长上下文大模型的动态注意力缩放解码
-
 ---
 
 ## 基本信息

@@ -18,7 +18,7 @@ categories:
 source: hacker_news
 description: 随着大模型 Agent 技术的深入发展，如何让系统安全、高效地执行底层操作指令成为关键挑战。just-bash 项目通过精简的 Bash
   封装，为 AI Agent 提供了一套标准化的命令行交互方案，有效降低了复杂环境下的集成难度。本文将解析其设计理念与核心机制，帮助开发者掌握如何利用该工具提升
-  Agent 的本地执行
+  Agent 的本地执行能力与系统稳定性。
 external_url: https://github.com/vercel-labs/just-bash
 scenarios:
 - 命令行工具
@@ -30,10 +30,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# just-bash：面向智能体的 Bash 交互工具
-
 ---
 
 ## 基本信息

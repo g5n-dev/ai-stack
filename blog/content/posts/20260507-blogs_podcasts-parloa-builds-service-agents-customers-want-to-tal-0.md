@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Parloa利用OpenAI构建可扩展语音AI客服代理
-
----
-
 ## 基本信息
 
 - **来源**: OpenAI Blog (blog)
@@ -132,7 +128,6 @@ Parloa 采用 OpenAI 模型作为底层语言处理引擎，依赖其强大的�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

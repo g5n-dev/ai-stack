@@ -16,9 +16,7 @@ categories:
 - 后端
 - AI 工程
 source: juejin
-description: '**Spring AI 多模态实战：构建图像理解应用** **一、 背景与概述** 随着 GPT-4o、Claude 3、Gemini
-  等大模型的发布，多模态 AI（能够同时理解和处理文本、图像、音频等多种数据形式）已成为当前人工智能领域的热点。本文旨在通过实战教程，指导开发者使用 Spring
-  AI 框架从零开始构建'
+description: 随着大模型技术的演进，多模态 AI 正逐步成为连接视觉与语言理解的关键技术。本文将聚焦 Spring AI 框架，带你一步步构建具备图像理解能力的应用。通过实战代码与核心流程解析，你将掌握如何高效集成多模态模型，从而为业务场景赋予更智能的视觉交互能力。
 external_url: https://juejin.cn/post/7607255854145617958
 scenarios:
 - AI/ML项目
@@ -29,10 +27,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Spring AI 多模态实战：构建图像理解应用
-
 ---
 
 ## 基本信息

@@ -16,7 +16,7 @@ categories:
 - 大模型
 - AI 工程
 source: hacker_news
-description: ChatGPT Images 2.0是OpenAI在图像生成领域的最新升级，它在细节控制、生成速度和多模态交互上实现了显著提升。对需要在内容创作、产品原型或视觉实验中快速获取高质量图像的开发者而言，这套模型提供了更灵活的API接口和更低的调用成本。本文将深入解析其核心改进、实际使用技巧以及在不同场景中的表现，帮助读者快
+description: ChatGPT Images 2.0是OpenAI在图像生成领域的最新升级，它在细节控制、生成速度和多模态交互上实现了显著提升。对需要在内容创作、产品原型或视觉实验中快速获取高质量图像的开发者而言，这套模型提供了更灵活的API接口和更低的调用成本。本文将深入解析其核心改进、实际使用技巧以及在不同场景中的表现，帮助读者快速上手并充分利用新特性。
 external_url: https://openai.com/index/introducing-chatgpt-images-2-0
 scenarios:
 - AI/ML项目
@@ -26,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# ChatGPT图像生成能力升级至2.0版本
-
 ---
 
 ## 基本信息
@@ -66,7 +62,6 @@ ChatGPT Images 2.0是OpenAI在图像生成领域的最新升级，它在细节�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

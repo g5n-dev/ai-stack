@@ -16,7 +16,9 @@ categories:
 - AI 工程
 - 后端
 source: blogs_podcasts
-description: 以下是该内容的中文总结： **标题：传统软件测试的消亡与即时测试（JiTTesting）的复兴** **核心观点：** 随着**智能体开发**的崛起，软件工程领域正在经历一场剧变。这种新模式打破了保持了50年的传统开发与测试平衡，导致了传统测试方法的失效。为了适应这一变革，**即时测试**应运而生，旨在复兴并重塑测试领
+description: 产品简介 随着代理式软件开发的兴起，代码的编写、审查和发布速度在整个行业中达到了前所未有的高度。这也意味着测试框架必须适应这一瞬息万变的格局。更快的开发节奏需要更快的测试，以便在代码进入代码库时即时发现漏洞，而不必
+  ... 阅读更多... 文章《传统测试的消亡：代理式开发打破了一个拥有50年历史的领域，即时测试（JiTTesting）可以使其重获新生》最早发布于 Engineering
+  at…
 external_url: https://engineering.fb.com/2026/02/11/developer-tools/the-death-of-traditional-testing-agentic-development-jit-testing-revival
 scenarios:
 - 测试工具
@@ -39,10 +41,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 代理式开发加速测试演进，JiTTesting 重构传统流程
-
 ---
 
 ## 基本信息
@@ -147,9 +145,7 @@ source_support: 0.0
 该文章极具前瞻性地指出了软件工程领域正在发生的范式转移。它不仅批判了传统测试在AI时代的滞后性，更重要的是提出了JiTTesting这一解决方案。虽然文章可能低估了“AI测试AI”的盲区风险，但其指出的方向——测试必须变得即时、自动化且由AI驱动——无疑是行业发展的必经之路。对于从业者而言，现在开始学习如何设计测试策略和评估AI测试质量，比学习如何写测试脚本更为紧迫
 
 ---
-## 技术分析
 
-# 《传统测试的消亡：代理开发如何打破50年旧局与JiT测试的复兴》技术解析
 
 ## 1. 核心论点分析
 
@@ -309,7 +305,6 @@ source_support: 0.0
 ---
 
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [后端](/categories/%E5%90%8E%E7%AB%AF/)

@@ -16,8 +16,7 @@ categories:
 - 大模型
 - 数据
 source: arxiv
-description: 以下是对该内容的中文总结： **FAMOSE：基于ReAct范式的自动化特征发现框架** **背景与挑战** 特征工程是机器学习中的关键瓶颈，尤其是在处理表格数据时，从巨大的特征空间中寻找最优特征通常需要大量的领域专业知识。
-  **解决方案** 本文介绍了 **FAMOSE**（Feature AugMentation
+description: 特征工程往往受限于领域知识与特征空间的规模，自动化探索仍面临挑战。该研究提出了 FAMOSE 框架，利用 ReAct 范式将特征发现过程转化为推理与行动的交互循环，以实现更灵活的特征构建。摘要展示了其自动化能力，但具体的性能提升幅度及泛化性无法从摘要确认。该方法有望降低特征工程的门槛，为表格数据挖掘提供新的自动化工具。
 external_url: http://arxiv.org/abs/2602.17641v1
 scenarios:
 - Web应用开发
@@ -29,10 +28,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# FAMOSE：基于 ReAct 范式的自动化特征发现方法
-
 ---
 
 ## 基本信息

@@ -16,8 +16,8 @@ categories:
 - 开发工具
 - AI 工程
 source: juejin
-description: 前言 Claude Code 是一款终端内的 AI 编程 Agent，能够自主规划、调用工具、执行命令、修复错误，帮助程序员实现从代码编写到项目交付的全链路自动化。
-  推荐核心技能 1. 智能代码补全与生成 2. 自动化调试与错误定位 3. 单元测试与集成测试生成 4. 代码重构与性能优化 5. Git 自动化提交、合并
+description: Claude Code作为终端中的AI编程助手，正在改变开发者的工作方式。它能够自动完成代码编写、任务规划、工具调用和错误修复等日常工作，为程序员大幅提升效率。本次分享精选了11个实用的Claude
+  Code Skills，覆盖代码开发、调试优化和项目管理的关键场景。这些技巧经过实践验证，可帮助开发者快速掌握AI辅助编程的核心方法，将更多精力投入到更具创造性的工作中。
 external_url: https://juejin.cn/post/7629603625099116590
 scenarios:
 - AI/ML项目
@@ -25,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 11个Claude Code编程技巧
-
 ---
 
 ## 基本信息
@@ -113,7 +109,6 @@ Claude Code 是一款终端内的 AI 编程 Agent，能够自主规划、调用�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

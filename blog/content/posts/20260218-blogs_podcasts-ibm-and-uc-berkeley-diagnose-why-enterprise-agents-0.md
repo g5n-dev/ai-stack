@@ -17,7 +17,7 @@ categories:
 - 论文
 source: blogs_podcasts
 description: 企业级 AI 智能体在实际部署中往往难以达到预期效果，如何精准定位其短板成为技术落地的关键。IBM 与 UC Berkeley 联合发布的
-  IT-Bench 基准测试及 MAST 诊断框架，旨在通过系统化评估揭示智能体在复杂任务中的失败根因。本文将深入解析这一技术方案，帮助研发团队理解如何量化智能体能力，并利用诊断工具
+  IT-Bench 基准测试及 MAST 诊断框架，旨在通过系统化评估揭示智能体在复杂任务中的失败根因。本文将深入解析这一技术方案，帮助研发团队理解如何量化智能体能力，并利用诊断工具优化模型在真实场景中的稳定性与可靠性。
 external_url: https://huggingface.co/blog/ibm-research/itbenchandmast
 scenarios:
 - Web应用开发
@@ -32,10 +32,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# IBM与UC伯克利利用IT-Bench和MAST诊断企业智能体失败原因
-
 ---
 
 ## 基本信息

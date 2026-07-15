@@ -17,7 +17,7 @@ categories:
 - 系统与基础设施
 source: hacker_news
 description: 理解大模型推理引擎的底层逻辑，是构建高效 AI 应用的关键。本文以 Nano-vLLM 为例，深入剖析了类 vLLM 引擎的核心工作机制，特别是其内存管理与调度策略。通过阅读本文，开发者不仅能掌握
-  PagedAttention 与连续批处理等技术细节，还能获得从零实现高性能推理系统的实战经验，从而更好地优化模型部署成本
+  PagedAttention 与连续批处理等技术细节，还能获得从零实现高性能推理系统的实战经验，从而更好地优化模型部署成本与吞吐表现。
 external_url: https://neutree.ai/blog/nano-vllm-part-1
 scenarios:
 - 大语言模型
@@ -29,10 +29,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Nano-vLLM 原理：vLLM 风格推理引擎的实现机制
-
 ---
 
 ## 基本信息
@@ -106,14 +102,14 @@ class KVCacheManager:
         self.max_blocks = max_blocks
         self.blocks = {}  # 模拟显存块
         self.block_size = 16  # 每个块存储16个token的KV
-        
+
     def allocate_blocks(self, seq_len):
         """计算需要的块数量并分配"""
         required_blocks = (seq_len + self.block_size - 1) // self.block_size
         if required_blocks > self.max_blocks:
             raise MemoryError("超过最大显存限制")
         return [f"block_{i}" for i in range(required_blocks)]
-    
+
     def update_cache(self, block_ids, new_tokens):
         """更新缓存（模拟新token的KV写入）"""
         for block_id in block_ids:
@@ -138,28 +134,28 @@ class ContinuousBatchScheduler:
         self.max_batch_size = max_batch_size
         self.running_batches = []
         self.pending_requests = []
-        
+
     def add_request(self, request_id, tokens):
         """添加新请求到待处理队列"""
         self.pending_requests.append((request_id, tokens))
-        
+
     def schedule(self):
         """实现连续批处理调度"""
         # 1. 检查是否有完成的批次
         self.running_batches = [b for b in self.running_batches if len(b[1]) > 0]
-        
+
         # 2. 从待处理队列填充空位
         available_slots = self.max_batch_size - len(self.running_batches)
         new_requests = self.pending_requests[:available_slots]
         self.pending_requests = self.pending_requests[available_slots:]
-        
+
         # 3. 合并运行中和新请求
         self.running_batches.extend(new_requests)
-        
+
         # 4. 模拟处理（每个请求处理1个token）
         for req in self.running_batches:
             req[1].pop(0)  # 移除已处理的token
-            
+
         return self.running_batches
 
 # 测试用例
@@ -187,21 +183,21 @@ def estimate_gpu_memory(model_size_gb, seq_len, batch_size, precision="fp16"):
     """
     # 基础模型显存
     base_memory = model_size_gb
-    
+
     # KV Cache显存估算 (每个token约2MB for 7B模型 fp16)
     kv_cache_per_token = 2e-3  # GB
     kv_memory = seq_len * batch_size * kv_cache_per_token
-    
+
     # 激活值显存 (约为模型大小的10%)
     activation_memory = base_memory * 0.1
-    
+
     # 精度调整系数
     precision_factor = {
         "fp16": 1.0,
         "int8": 0.5,
         "int4": 0.25
     }.get(precision, 1.0)
-    
+
     total_memory = (base_memory + kv_memory + activation_memory) * precision_factor
     return total_memory
 
@@ -215,50 +211,46 @@ print(f"7B模型 int8 1024序列 批次16: {estimate_gpu_memory(13, 1024, 16, 'i
 
 ### 1：某大型互联网公司智能客服系统重构
 
- 1：某大型互联网公司智能客服系统重构
-
-**背景**:  
+**背景**:
 该公司原有的智能客服系统基于传统的 LLM 推理框架，随着用户量增长，日均请求量达到千万级，系统面临严重的性能瓶颈。客服场景对响应速度要求极高，平均延迟需控制在 200ms 以内，而现有框架在高并发下延迟飙升至 1 秒以上，且 GPU 资源利用率不足 40%。
 
-**问题**:  
-1. 传统推理框架的 KV Cache 管理效率低，导致显存浪费和频繁的内存碎片整理。  
-2. 请求调度策略简单，无法有效处理长短不一的对话序列，造成部分请求长时间排队。  
+**问题**:
+1. 传统推理框架的 KV Cache 管理效率低，导致显存浪费和频繁的内存碎片整理。
+2. 请求调度策略简单，无法有效处理长短不一的对话序列，造成部分请求长时间排队。
 3. 批处理机制僵化，难以动态调整批次大小，导致 GPU 算力闲置。
 
-**解决方案**:  
-采用 vLLM 风格的 PagedAttention 技术重构推理引擎，将 KV Cache 分页存储，并结合连续批处理和动态请求调度。具体实现包括：  
-- 引入块表管理 KV Cache，按需分配和释放显存页。  
-- 实现基于优先级的请求队列，优先处理短序列或高优先级用户请求。  
+**解决方案**:
+采用 vLLM 风格的 PagedAttention 技术重构推理引擎，将 KV Cache 分页存储，并结合连续批处理和动态请求调度。具体实现包括：
+- 引入块表管理 KV Cache，按需分配和释放显存页。
+- 实现基于优先级的请求队列，优先处理短序列或高优先级用户请求。
 - 优化 CUDA 内核，支持非连续张量的高效计算。
 
-**效果**:  
-1. GPU 显存利用率提升至 85% 以上，单卡吞吐量提高 3 倍。  
-2. 平均响应延迟降至 150ms，P99 延迟从 2 秒降至 400ms。  
+**效果**:
+1. GPU 显存利用率提升至 85% 以上，单卡吞吐量提高 3 倍。
+2. 平均响应延迟降至 150ms，P99 延迟从 2 秒降至 400ms。
 3. 在相同硬件规模下，系统可承载的并发用户数增长 200%，节省约 30% 的服务器成本。
 
 ---
 
 ### 2：自动驾驶仿真平台中的实时场景生成
 
- 2：自动驾驶仿真平台中的实时场景生成
-
-**背景**:  
+**背景**:
 某自动驾驶公司的仿真平台需要实时生成复杂的交通场景（如车辆、行人、天气变化等），依赖多模态大模型生成文本描述并转换为 3D 场景。原有系统基于开源推理框架，生成单个场景需 5-10 秒，无法满足实时仿真的需求（目标延迟 <1 秒）。
 
-**问题**:  
-1. 多模态模型推理时，不同模态（文本、图像）的 KV Cache 需求差异大，静态分配显存导致浪费。  
-2. 长序列场景生成时（如描述复杂路口），显存溢出频繁。  
+**问题**:
+1. 多模态模型推理时，不同模态（文本、图像）的 KV Cache 需求差异大，静态分配显存导致浪费。
+2. 长序列场景生成时（如描述复杂路口），显存溢出频繁。
 3. 推理引擎对混合精度计算支持不足，未充分利用 GPU Tensor Core。
 
-**解决方案**:  
-基于 vLLM 思想设计专用推理引擎，核心改进包括：  
-- 为文本和图像模态分别设计独立的 KV Cache 分页策略。  
-- 实现序列长度自适应的显存分配，支持超长序列（如 16k tokens）的推理。  
+**解决方案**:
+基于 vLLM 思想设计专用推理引擎，核心改进包括：
+- 为文本和图像模态分别设计独立的 KV Cache 分页策略。
+- 实现序列长度自适应的显存分配，支持超长序列（如 16k tokens）的推理。
 - 集成 FlashAttention 和 FP8 混合精度计算，优化计算密集型操作。
 
-**效果**:  
-1. 场景生成延迟从平均 7 秒降至 800ms，满足实时仿真要求。  
-2. 支持 32k 长度序列的稳定推理，显存溢出率降低 90%。  
+**效果**:
+1. 场景生成延迟从平均 7 秒降至 800ms，满足实时仿真要求。
+2. 支持 32k 长度序列的稳定推理，显存溢出率降低 90%。
 3. 在保持生成质量的前提下，单卡吞吐量提升 2.5 倍，仿真平台整体运行成本降低 40%。
 
 ---
@@ -361,8 +353,6 @@ PCIe 带宽限制了 GPU 与 CPU 之间交换数据的速度。因此，抢占�
 
 ### 1: 什么是 vLLM，它与传统的 LLM 推理引擎（如 HuggingFace Transformers）相比有什么核心优势？
 
-1: 什么是 vLLM，它与传统的 LLM 推理引擎（如 HuggingFace Transformers）相比有什么核心优势？
-
 **A**: vLLM 是一个专门为大语言模型（LLM）推理设计的高吞吐量、低内存占用的引擎。其核心优势在于引入了 **PagedAttention** 算法。
 
 传统的推理引擎（如使用 HuggingFace Transformers 库）通常采用连续内存管理来存储 KV Cache（键值缓存）。当处理长文本或高并发请求时，这种方式会导致严重的内存碎片化，并且为了预留空间往往需要过度分配内存，极大地限制了批处理大小。
@@ -372,8 +362,6 @@ vLLM 借鉴了操作系统中分页内存管理的思想，将 KV Cache 划分�
 ---
 
 ### 2: PagedAttention 具体是如何工作的，为什么它能提高显存利用率？
-
-2: PagedAttention 具体是如何工作的，为什么它能提高显存利用率？
 
 **A**: PagedAttention 是 vLLM 能够实现高性能的关键技术，其工作原理主要包含两个方面：
 
@@ -386,8 +374,6 @@ vLLM 借鉴了操作系统中分页内存管理的思想，将 KV Cache 划分�
 
 ### 3: vLLM 的连续批处理和传统推理引擎的静态批处理有什么区别？
 
-3: vLLM 的连续批处理和传统推理引擎的静态批处理有什么区别？
-
 **A**: 这是一个关于调度策略的区别，对系统吞吐量影响巨大。
 
 *   **静态批处理**：传统引擎通常在开始一个批次前，必须等待批次内的所有请求都处理完毕，才能开始下一批次。如果批次中有一个请求因为生成长度较长而未完成，整个批次的其他请求（即使已经生成完毕）都必须等待，导致 GPU 空转。
@@ -396,8 +382,6 @@ vLLM 借鉴了操作系统中分页内存管理的思想，将 KV Cache 划分�
 ---
 
 ### 4: 在实际部署中，使用 vLLM 相比直接使用 PyTorch 或 HuggingFace 能带来多大的性能提升？
-
-4: 在实际部署中，使用 vLLM 相比直接使用 PyTorch 或 HuggingFace 能带来多大的性能提升？
 
 **A**: 根据官方基准测试和社区反馈，性能提升通常非常显著，具体取决于模型大小和请求模式。
 
@@ -409,8 +393,6 @@ vLLM 借鉴了操作系统中分页内存管理的思想，将 KV Cache 划分�
 
 ### 5: vLLM 是否支持所有主流的大模型？它对 OpenAI API 兼容吗？
 
-5: vLLM 是否支持所有主流的大模型？它对 OpenAI API 兼容吗？
-
 **A**: vLLM 目前支持非常广泛的主流开源模型，包括但不限于 LLaMA、LLaMA 2、LLaMA 3、Mistral、Mixtral (MoE)、Qwen、Baichuan、Falcon 以及 ChatGLM 等。
 
 关于 API 兼容性，vLLM 提供了一个内置的 HTTP 服务器，它设计为与 OpenAI API 兼容。这意味着开发者可以非常容易地将原本调用 OpenAI 接口的代码中的 `base_url` 切换为部署了 vLLM 的服务器地址，而无需大幅修改客户端代码。这降低了从 OpenAI 迁移到私有化部署模型的门槛。
@@ -418,8 +400,6 @@ vLLM 借鉴了操作系统中分页内存管理的思想，将 KV Cache 划分�
 ---
 
 ### 6: vLLM 是否支持多 GPU 分布式推理或张量并行？
-
-6: vLLM 是否支持多 GPU 分布式推理或张量并行？
 
 **A**: 是的，vLLM 原生支持分布式推理。
 
@@ -433,7 +413,6 @@ vLLM 借鉴了操作系统中分页内存管理的思想，将 KV Cache 划分�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/)

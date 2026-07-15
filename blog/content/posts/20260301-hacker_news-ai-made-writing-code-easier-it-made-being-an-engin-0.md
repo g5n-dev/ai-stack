@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AI降低编码门槛的同时增加了工程师工作难度
-
----
-
 ## 基本信息
 
 - **作者**: saikatsg

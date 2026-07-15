@@ -32,10 +32,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# GPT-5.3 Instant 系统卡发布：模型规格与安全策略详解
-
----
-
 ## 基本信息
 
 - **来源**: OpenAI Blog (blog)

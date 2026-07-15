@@ -16,9 +16,8 @@ categories:
 - AI 工程
 - 系统与基础设施
 source: blogs_podcasts
-description: 背景 Amazon金融业务面临大量监管询问，传统人工检索与回复耗时且易出错。 实现方案 - 使用 Amazon Bedrock 等 AWS
-  生成式 AI 服务，搭建可扩展的 AI 应用。 - 为每个团队创建独立知识库，导入该团队专属文档和参考材料。 - 通过向量检索与检索增强生成（RAG）实现快速、精准的答案生成。
-  -
+description: 在这篇文章中，我们展示亚马逊金融科技团队如何使用 Amazon Bedrock 及其他 AWS 服务来构建可扩展的 AI 应用程序，以改变监管查询的处理方式。使用该解决方案的每个团队都会创建并维护自己的专属知识库，其中包含该团队特定的文档和参考资料。
+  面对日益严格的金融监管环境，团队需要快速、准确地响应各类监管查询。
 external_url: https://aws.amazon.com/blogs/machine-learning/how-amazon-finance-streamlines-regulatory-inquiries-by-using-generative-ai-on-aws
 scenarios:
 - AI/ML项目
@@ -27,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 亚马逊金融团队用Amazon Bedrock构建监管查询AI系统
-
 ---
 
 ## 基本信息
@@ -207,7 +202,6 @@ Amazon金融业务面临大量监管询问，传统人工检索与回复耗时�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/)

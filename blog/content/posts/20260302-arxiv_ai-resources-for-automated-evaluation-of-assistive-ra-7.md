@@ -16,8 +16,7 @@ categories:
 - 大模型
 - 数据
 source: arxiv
-description: 本文介绍了TREC 2025 DRAGUN任务的组织者为支持辅助性RAG系统评估所开发的自动化资源。这些系统旨在帮助读者评估新闻报道的可信度。
-  主要内容包括： 1. **任务设置**：包含两项任务，一是生成10个排名的调查问题，二是基于MS MARCO语料库生成250字的验证报告。 2. **人工评估标准**：评估员为
+description: 本文聚焦于辅助性检索增强生成系统在新闻可信度评估中的自动化评测问题。作者基于TREC 2025 DRAGUN任务，构建了包含人工评分细则与AutoJudge自动化流程在内的评测资源，并验证了自动评分与人工评估的高度一致性。该工作不仅为辅助阅读系统提供了可复用的评测基准，也为改进自动化RAG评估技术提供了实证支持，但其对模型生成内容的具体纠错能力尚无法从摘要确认。
 external_url: http://arxiv.org/abs/2602.24277v1
 scenarios:
 - RAG应用
@@ -27,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 辅助RAG系统自动化评估资源：助力新闻可信度评估
-
 ---
 
 ## 基本信息

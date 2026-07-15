@@ -16,8 +16,7 @@ categories:
 - 论文
 - 大模型
 source: arxiv
-description: 研究背景 传统的视频理解模型大多采用被动“全帧观看”方式，对每一帧均匀处理，导致计算成本随视频时长线性增长。虽然已有交互式框架尝试在查询时进行选择性采样，但仍需全局预扫描，上下文开销仍随视频长度增加而上升。
-  OmniAgent 思路 OmniAgent 是首个原生全模态智能体，将视频理解建模为基于 POMDP 的迭代
+description: 视频理解的计算效率一直是长视频处理中的核心挑战。传统被动观看方法对每一帧均匀处理，导致计算成本随视频时长线性增长。OmniAgent提出将视频理解建模为基于POMDP的主动感知过程，通过迭代的观察-思考-行动循环，将音频-视觉线索蒸馏为持久的文本记忆，从而将推理复杂度与原始视频时长解耦。
 external_url: http://arxiv.org/abs/2606.19341v1
 scenarios:
 - Web应用开发
@@ -27,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 原生主动感知推理赋能多模态理解
-
 ---
 
 ## 基本信息
@@ -143,7 +138,6 @@ OmniAgent 是首个原生全模态智能体，将视频理解建模为基于 POM
 
 ---
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/) / [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

@@ -16,8 +16,8 @@ categories:
 - 大模型
 - 数据
 source: arxiv
-description: 本文介绍了关于提升大语言模型（LLM）终端能力的数据工程研究，旨在填补当前顶尖终端智能体训练策略未公开的空白。主要贡献与成果总结如下： **1.
-  核心贡献** * **Terminal-Task-Gen 生成流程**：提出了一种轻量级的合成任务生成管道。该管道支持基于种子和基于技能的任务构建方式，能够高效创建训练所需的
+description: 本文探讨了如何通过数据工程提升大语言模型在终端环境中的操作能力，旨在填补高性能终端 Agent 缺乏公开训练策略的空白。研究提出了一套系统的数据处理方案，但具体的技术细节与模型架构无法从摘要确认。该工作有望推动自动化运维与智能交互系统的落地，为未来终端
+  Agent 的规模化应用提供数据层面的参考。
 external_url: http://arxiv.org/abs/2602.21193v1
 scenarios:
 - 大语言模型
@@ -27,10 +27,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 面向大模型终端能力扩展的数据工程研究
-
 ---
 
 ## 基本信息

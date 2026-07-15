@@ -17,7 +17,7 @@ categories:
 - AI 工程
 source: hacker_news
 description: Ghidra 的强大分析能力结合 AI 的上下文理解，正在改变逆向工程的工作方式。本文介绍的 Ghidra MCP Server 将 110
-  项核心功能接入 AI 助手，旨在解决传统分析流程中繁琐的手动切换问题。通过这一集成，读者可以了解如何让 AI 直接读取反汇编代码、自动识别函数结构，从而显著降低二进制分析的门槛并
+  项核心功能接入 AI 助手，旨在解决传统分析流程中繁琐的手动切换问题。通过这一集成，读者可以了解如何让 AI 直接读取反汇编代码、自动识别函数结构，从而显著降低二进制分析的门槛并提升效率。
 external_url: https://github.com/bethington/ghidra-mcp
 scenarios:
 - 大语言模型
@@ -35,10 +35,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Ghidra MCP Server：集成110种工具的AI逆向工程辅助服务
-
 ---
 
 ## 基本信息
@@ -119,12 +115,12 @@ def analyze_function(ghidra_api, function_name):
     program = ghidra_api.getCurrentProgram()
     # 获取函数管理器
     function_manager = program.getFunctionManager()
-    
+
     # 查找目标函数
     target_func = function_manager.getFunction(function_name)
     if not target_func:
         return {"error": "函数未找到"}
-    
+
     # 收集函数基本信息
     result = {
         "name": target_func.getName(),
@@ -133,11 +129,11 @@ def analyze_function(ghidra_api, function_name):
         "num_params": target_func.getParameterCount(),
         "calling_convention": target_func.getCallingConventionName()
     }
-    
+
     # 获取函数的引用情况
     result["references_to"] = len(list(target_func.getReferencesTo()))
     result["references_from"] = len(list(target_func.getReferencesFrom()))
-    
+
     return result
 
 # 说明：这个示例展示了如何通过Ghidra API自动分析函数的基本属性，
@@ -155,19 +151,19 @@ def analyze_xrefs(ghidra_api, address):
     """
     program = ghidra_api.getCurrentProgram()
     addr_factory = program.getAddressFactory()
-    
+
     try:
         # 转换地址格式
         target_addr = addr_factory.getAddress(address)
         # 获取所有引用
         refs = program.getReferenceManager().getReferencesTo(target_addr)
-        
+
         result = {
             "address": address,
             "incoming_refs": [],
             "outgoing_refs": []
         }
-        
+
         # 分类处理引用
         for ref in refs:
             ref_info = {
@@ -176,7 +172,7 @@ def analyze_xrefs(ghidra_api, address):
                 "is_primary": ref.isPrimary()
             }
             result["incoming_refs"].append(ref_info)
-            
+
         # 获取从该地址出发的引用
         from_refs = program.getReferenceManager().getReferencesFrom(target_addr)
         for ref in from_refs:
@@ -185,7 +181,7 @@ def analyze_xrefs(ghidra_api, address):
                 "type": ref.getReferenceType().getName()
             }
             result["outgoing_refs"].append(ref_info)
-            
+
         return result
     except Exception as e:
         return {"error": f"分析失败: {str(e)}"}
@@ -206,34 +202,34 @@ def search_and_annotate(ghidra_api, pattern, comment):
     """
     program = ghidra_api.getCurrentProgram()
     memory = program.getMemory()
-    
+
     # 转换搜索模式
     search_bytes = bytes.fromhex(pattern.replace(" ", ""))
     matches = []
-    
+
     # 遍历所有内存块
     for block in memory.getBlocks():
         # 跳过未初始化的块
         if not block.isInitialized():
             continue
-            
+
         # 在当前块中搜索模式
         addr = block.getStart()
         while addr.compareTo(block.getEnd()) < 0:
-            found_addr = memory.findBytes(addr, search_bytes, None, True, 
+            found_addr = memory.findBytes(addr, search_bytes, None, True,
                                         monitor=ghidra_api.getMonitor())
             if not found_addr or found_addr.compareTo(block.getEnd()) >= 0:
                 break
-                
+
             # 添加注释
             code_unit = program.getListing().getCodeUnitAt(found_addr)
             if code_unit:
                 code_unit.setComment(code_unit.PLATE_COMMENT, comment)
-                
+
             matches.append(str(found_addr))
             # 继续搜索下一个匹配
             addr = found_addr.add(1)
-    
+
     return {
         "pattern": pattern,
         "matches": len(matches),
@@ -248,8 +244,6 @@ def search_and_annotate(ghidra_api, pattern, comment):
 ## 案例研究
 
 ### 1：某大型互联网安全公司 - 恶意软件样本自动化分析
-
- 1：某大型互联网安全公司 - 恶意软件样本自动化分析
 
 **背景**:
 该公司的安全运营团队每天需要处理数百个从客户现场捕获的疑似恶意软件样本。由于人手不足，分析师只能对高优先级的样本进行深度人工逆向分析，大量低优先级或混淆严重的样本被搁置，导致潜在威胁响应滞后。
@@ -267,8 +261,6 @@ def search_and_annotate(ghidra_api, pattern, comment):
 
 ### 2：某工业控制系统（ICS）制造商 - 遗留固件维护与合规审计
 
- 2：某工业控制系统（ICS）制造商 - 遗留固件维护与合规审计
-
 **背景**:
 该制造商拥有一批运行了 15 年以上的工控设备，其底层固件由早已离职的工程师编写，且原始源代码和开发文档因年代久远而丢失。随着新的网络安全合规标准（如 IEC 62443）要求对设备进行安全审计，团队必须理解二进制固件中的特定协议实现。
 
@@ -284,8 +276,6 @@ def search_and_annotate(ghidra_api, pattern, comment):
 ---
 
 ### 3：某政企机构红队演练 - 针对闭源软件的漏洞挖掘
-
- 3：某政企机构红队演练 - 针对闭源软件的漏洞挖掘
 
 **背景**:
 在针对某关键基础设施的授权渗透测试中，红队成员发现目标系统使用了一款特定的闭源第三方通信软件。为了获取系统权限，红队需要针对该软件的特定版本寻找已知漏洞的利用点或挖掘 0-day 漏洞。
@@ -394,8 +384,6 @@ def search_and_annotate(ghidra_api, pattern, comment):
 
 ### 1: 什么是 Ghidra MCP Server，它解决了什么问题？
 
-1: 什么是 Ghidra MCP Server，它解决了什么问题？
-
 **A**: Ghidra MCP Server 是一个开源项目，它将 Ghidra（美国国家安全局开发的著名逆向工程工具）的 110 多个核心功能集成到了 MCP（Model Context Protocol）协议中。简单来说，它充当了 AI 模型（如 Claude、ChatGPT 等）与 Ghidra 之间的“翻译官”和桥梁。
 
 在此之前，AI 只能通过复制粘贴代码片段来辅助分析，无法直接操作 Ghidra。通过这个服务器，AI 可以直接调用 Ghidra 的 API 来执行反编译、获取数据、分析函数流图等操作。这使得 AI 能够更深入地理解二进制文件的上下文，从而实现真正的“AI 辅助自动化逆向工程”，大幅提高了分析恶意软件或破解软件的效率。
@@ -403,8 +391,6 @@ def search_and_annotate(ghidra_api, pattern, comment):
 ---
 
 ### 2: 要使用 Ghidra MCP Server，需要哪些技术环境和依赖？
-
-2: 要使用 Ghidra MCP Server，需要哪些技术环境和依赖？
 
 **A**: 使用该工具通常需要满足以下环境和依赖：
 
@@ -416,8 +402,6 @@ def search_and_annotate(ghidra_api, pattern, comment):
 ---
 
 ### 3: 该工具声称提供 110 种工具，具体包含哪些功能？
-
-3: 该工具声称提供 110 种工具，具体包含哪些功能？
 
 **A**: 这 110 种工具涵盖了 Ghidra 脚本 API（GhidraScript）的大部分核心功能，主要包括但不限于以下几类：
 
@@ -433,8 +417,6 @@ def search_and_annotate(ghidra_api, pattern, comment):
 
 ### 4: 在本地运行此服务器是否存在安全风险？
 
-4: 在本地运行此服务器是否存在安全风险？
-
 **A**: 这确实是一个需要认真考虑的问题。将 Ghidra 暴露给 AI 模型主要涉及以下风险：
 
 1.  **数据泄露**：AI 模型会将你发送的代码片段和分析结果上传到云端（如 OpenAI 或 Anthropic 的服务器）。如果你正在分析高度敏感的恶意软件样本或专有代码，这可能会导致机密泄露。
@@ -444,8 +426,6 @@ def search_and_annotate(ghidra_api, pattern, comment):
 ---
 
 ### 5: 如何在 Claude Desktop 中配置和连接这个 MCP Server？
-
-5: 如何在 Claude Desktop 中配置和连接这个 MCP Server？
 
 **A**: 配置过程通常涉及修改 Claude Desktop 的用户配置文件。具体步骤如下：
 
@@ -467,8 +447,6 @@ def search_and_annotate(ghidra_api, pattern, comment):
 
 ### 6: 与直接使用 Ghidra 脚本相比，使用 AI 驱动的 MCP Server 有什么优势？
 
-6: 与直接使用 Ghidra 脚本相比，使用 AI 驱动的 MCP Server 有什么优势？
-
 **A**: 直接编写 Ghidra 脚本（Python 或 Java）虽然强大，但门槛较高，且需要预先明确分析逻辑。AI 驱动的 MCP Server 的优势在于：
 
 *   **交互式分析**：你可以用自然语言提出模糊
@@ -481,7 +459,6 @@ def search_and_annotate(ghidra_api, pattern, comment):
 
 ---
 
----
 ## 站内链接
 
 - 分类： [安全](/categories/%E5%AE%89%E5%85%A8/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

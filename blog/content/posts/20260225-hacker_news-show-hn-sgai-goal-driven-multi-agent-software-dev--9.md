@@ -17,7 +17,7 @@ categories:
 - AI 工程
 source: hacker_news
 description: 随着软件工程自动化需求的提升，如何让 AI 代理从单纯的“对话者”转变为能独立完成复杂任务的“执行者”，成为了开发者关注的焦点。Sgai
-  作为一款基于目标驱动的多智能体开发工具，尝试通过将 文件转化为可运行代码，来解决这一难题。本文将深入剖析 Sgai 的核心架构与工作流，探讨它如何协调多个代理协同工作，并分析其目前的
+  作为一款基于目标驱动的多智能体开发工具，尝试通过将 GOAL.md 文件转化为可运行代码，来解决这一难题。本文将深入剖析 Sgai 的核心架构与工作流，探讨它如何协调多个代理协同工作，并分析其目前的优势与局限，帮助你判断它是否适合引入到现有的技术栈中。
 external_url: https://github.com/sandgardenhq/sgai
 scenarios:
 - AI/ML项目
@@ -26,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Sgai：基于GOAL.md的目标驱动多代理软件开发工具
-
 ---
 
 ## 基本信息

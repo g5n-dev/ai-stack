@@ -16,8 +16,7 @@ categories:
 - 大模型
 - 论文
 source: arxiv
-description: 本文探讨了视觉语言模型（VLM）在识别艺术风格方面的能力，并将其与艺术史家的分析方法进行了比较。主要发现如下： 1. **VLM在艺术领域的表现**：
-  VLM在视觉问答、物体检测等计算机视觉任务中表现优异，并逐渐在艺术分析与生成领域展现出强大能力。 2. **研究方法**： 计算机科学家与艺术史家合作，通过潜在空间分解
+description: 本文探讨了视觉-语言模型（VLM）在识别艺术风格时的表现，并将其与艺术史家的分析路径进行对比。研究通过构建新的数据集和评估框架，试图解构模型在处理风格特征时的内在逻辑。结果显示，模型虽能捕捉部分视觉特征，但在语义层面的理解机制上与人类专家存在差异。由于摘要信息有限，目前无法从摘要确认其在具体艺术史研究中的应用潜力及局限性。
 external_url: http://arxiv.org/abs/2603.11024v1
 scenarios:
 - AI/ML项目
@@ -26,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# AI能否像艺术史学家一样解读视觉语言模型的艺术风格识别机制
-
 ---
 
 ## 基本信息

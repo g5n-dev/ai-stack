@@ -16,8 +16,7 @@ categories:
 - 大模型
 - AI 工程
 source: arxiv
-description: '**SPQ：一种面向大语言模型压缩的集成技术** 本研究提出了一种名为 **SPQ（SVD-Pruning-Quantization）**
-  的大语言模型（LLM）集成压缩技术。SPQ 结合了保留方差的奇异值分解（SVD）、基于激活值的剪枝和训练后线性量化，旨在解决模型部署中的内存和效率问题。 **核心方法与组件：**'
+description: 针对大语言模型部署成本高昂的挑战，本文提出了一种名为 SPQ 的集成压缩技术，旨在通过结合奇异值分解、剪枝与量化来提升模型效率。该研究通过算法集成尝试在性能与资源占用之间寻求更优平衡，但由于摘要信息有限，具体的压缩精度保持率及泛化能力无法从摘要确认。若该方法有效，有望为资源受限场景下的模型部署提供一种新的技术路径。
 external_url: http://arxiv.org/abs/2602.18420v1
 scenarios:
 - 大语言模型
@@ -27,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# SPQ：大语言模型压缩的集成技术
-
 ---
 
 ## 基本信息

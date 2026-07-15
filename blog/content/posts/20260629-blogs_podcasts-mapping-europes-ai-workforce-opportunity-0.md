@@ -15,8 +15,7 @@ tags:
 categories:
 - 效率与方法论
 source: blogs_podcasts
-description: 报告概述 OpenAI 发布了一份针对欧盟的 AI 就业影响报告，利用大语言模型模拟 AI 技术的渗透速度，对欧盟成员国的岗位进行分类，评估哪些职业将面临自动化、增长或工作流程重塑。
-  关键发现 - **自动化风险岗位**：约 30% 的欧盟职位在未来 10‑15 年内可能被 AI 替代，主要集中在制造业流水线、基础客服
+description: 一份新的OpenAI报告描绘了人工智能可能如何重塑欧盟的就业格局，突出了哪些职业可能面临自动化、增长或工作流程的变化。 OpenAI最新报告聚焦欧盟就业格局在人工智能影响下的变化。随着AI技术加速渗透各行业，哪些岗位可能被自动化、哪些将产生新需求，已成为政策制定者与企业决策的重要参考。本文梳理报告核心数据与职业分类，帮助读者快速把握欧盟劳动力市场的潜在转型方向，并提供可操作的洞察。
 external_url: https://openai.com/index/mapping-ai-jobs-transition-eu
 scenarios:
 - AI/ML项目
@@ -24,10 +23,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# OpenAI报告揭示欧盟AI就业变革趋势
-
 ---
 
 ## 基本信息
@@ -131,7 +126,6 @@ OpenAI发布的报告揭示了人工智能对欧盟劳动力市场的结构性�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [效率与方法论](/categories/%E6%95%88%E7%8E%87%E4%B8%8E%E6%96%B9%E6%B3%95%E8%AE%BA/)

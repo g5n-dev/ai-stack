@@ -41,10 +41,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# GPT-5结合云自动化将无细胞蛋白合成成本降低40%
-
----
-
 ## 基本信息
 
 - **来源**: OpenAI Blog (blog)
@@ -121,9 +117,7 @@ OpenAI 的 GPT-5 模型与 Ginkgo Bioworks 的云端自动化技术相结合，�
 *   **争议二：
 
 ---
-## 技术分析
 
-# 技术分析：GPT-5 在无细胞蛋白质合成中的成本优化
 
 ## 1. 核心观点与逻辑推演
 
@@ -272,7 +266,6 @@ OpenAI 的 GPT-5 模型与 Ginkgo Bioworks 的云端自动化技术相结合，�
 ---
 
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

@@ -17,7 +17,7 @@ categories:
 - AI 工程
 source: hacker_news
 description: 随着机器学习模型在敏感场景的广泛应用, 保障推理过程的隐私成为关键挑战。Darkbloom 通过调度 macOS 设备闲置算力, 实现在本地完成加密推理,
-  既降低了数据传输风险, 又充分利用了用户硬件资源。本文将剖析其系统架构、隐私防护机制以及在真实设备上的性能表现, 帮助开发者快速评估并集成该方案, 以实现更安全的服
+  既降低了数据传输风险, 又充分利用了用户硬件资源。本文将剖析其系统架构、隐私防护机制以及在真实设备上的性能表现, 帮助开发者快速评估并集成该方案, 以实现更安全的服务部署。
 external_url: https://darkbloom.dev
 scenarios:
 - AI/ML项目
@@ -25,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Darkbloom：Mac闲置算力实现隐私推理
-
 ---
 
 ## 基本信息
@@ -86,7 +82,6 @@ Darkbloom 项目展示了一种利用分布式消费级硬件进行隐私保护�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

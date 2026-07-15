@@ -16,8 +16,8 @@ categories:
 - AI 工程
 - 大模型
 source: blogs_podcasts
-description: 在AWS中使用Dottxt Outlines实现大模型结构化输出 本文介绍了如何在AWS Marketplace中通过Amazon SageMaker集成Dottxt的Outlines框架，实现大语言模型（LLM）的结构化输出，解决传统LLM生成非结构化文本的局限性。
-  核心背景 传统LLM输出多为自由文本，难以直接用于
+description: 本文探讨了如何通过在 Amazon SageMaker 中使用 AWS Marketplace，将 Dottxt 的 Outlines 框架作为一种实现结构化输出的实用方法。
+  随着大语言模型（LLM）在企业级应用中的深入，如何确保模型输出的严格结构化与可解析性已成为工程落地的关键挑战。
 external_url: https://aws.amazon.com/blogs/machine-learning/generate-structured-output-from-llms-with-dottxt-outlines-in-aws
 scenarios:
 - 大语言模型
@@ -36,10 +36,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# AWS SageMaker集成Dottxt Outlines实现LLM结构化输出
-
 ---
 
 ## 基本信息

@@ -17,7 +17,7 @@ categories:
 - AI 工程
 source: juejin
 description: 随着 AI 编码助手的普及，如何将其与浏览器调试流程深度整合已成为开发者关注的焦点。Chrome DevTools MCP 近期新增的功能，允许
-  AI 直接接入现有的浏览器会话，打破了传统调试工具与智能助手之间的隔阂。本文将解析这一技术实现的原理，并探讨它如何帮助开发者利用 AI 快速定位问题，从而显著提升前端调试的效
+  AI 直接接入现有的浏览器会话，打破了传统调试工具与智能助手之间的隔阂。本文将解析这一技术实现的原理，并探讨它如何帮助开发者利用 AI 快速定位问题，从而显著提升前端调试的效率。
 external_url: https://juejin.cn/post/7616660062761943074
 scenarios:
 - AI/ML项目
@@ -26,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Chrome DevTools MCP 支持编码助手直接接管浏览器调试会话
-
 ---
 
 ## 基本信息

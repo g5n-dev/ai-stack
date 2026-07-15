@@ -43,10 +43,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Codex Security 预览：AI 代理分析上下文以高置信度修复漏洞
-
----
-
 ## 基本信息
 
 - **来源**: OpenAI Blog (blog)

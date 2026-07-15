@@ -16,9 +16,8 @@ categories:
 - 开源生态
 - 大模型
 source: github_trending
-description: 以下是对 **Fay 数字人框架** 的简洁总结： **1. 项目概述** Fay 是一个开源的数字人 Agent 框架，旨在将数字人（支持
-  2.5D、3D、移动端、PC 及网页版）与大语言模型（如 OpenAI 兼容模型、DeepSeek 等）连接，打通具体的业务系统。 **2. 核心功能与特性**
-  Fay 提供了丰
+description: Fay 是一个基于 Python 的开源 Agent 框架，旨在弥合大语言模型（如 OpenAI、DeepSeek）与数字人（2.5D、3D、Web
+  端）之间的技术鸿沟。它通过整合自然语言理解与角色动画，帮助开发者快速构建具备语音交互与认知流处理能力的对话系统，并支持在网站、移动端或嵌入式设备中部署。
 external_url: https://github.com/xszyou/Fay
 scenarios:
 - AI/ML项目
@@ -34,10 +33,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Fay：数字人与大语言模型连通业务系统的Agent框架
-
 ---
 
 ## 基本信息

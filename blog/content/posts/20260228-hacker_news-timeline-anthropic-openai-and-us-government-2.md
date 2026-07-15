@@ -17,7 +17,7 @@ categories:
 - 开源生态
 source: hacker_news
 description: 随着生成式 AI 的快速发展，Anthropic 和 OpenAI 已成为推动技术进步的关键力量，同时也与美国政府在安全监管方面展开了深度互动。理解这两家公司的演进历程及其与政策层面的互动，对于把握行业走向至关重要。本文通过梳理关键时间节点，旨在帮助读者厘清技术突破与政府监管之间的动态关系，并洞察未来
-  AI 治理的潜在
+  AI 治理的潜在趋势。
 external_url: https://anthropic-timeline.vercel.app
 scenarios:
 - AI/ML项目
@@ -25,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Anthropic、OpenAI与美国政府关系时间线
-
 ---
 
 ## 基本信息

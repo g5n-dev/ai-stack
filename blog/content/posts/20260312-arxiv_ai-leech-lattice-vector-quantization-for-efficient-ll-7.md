@@ -16,8 +16,7 @@ categories:
 - 大模型
 - 论文
 source: arxiv
-description: 本文介绍了**Leech格点向量量化（LLVQ）**，这是一种用于高效压缩大语言模型（LLM）的新方法。 **核心问题与动机：** 现有的标量量化方法受限于信息论边界，而普通的向量量化（VQ）虽能突破此限制，但通常需要昂贵的查找机制或显式存储码本，难以在实际中部署。
-  **解决方案（LLVQ）：** 论文利用**Leec
+description: 针对大语言模型压缩中传统标量量化受限、普通向量量化部署成本高昂的问题，本文提出了基于Leech格点的向量量化方法。作者利用24维Lech格点的数学特性，设计了支持索引与角向搜索的实用算法，在避免显式存储码本的同时实现了高效去量化。实验结果显示该方法在性能上优于现有主流方案，为高维格点理论在模型压缩中的落地提供了新思路，但其在不同硬件架构下的具体推理加速效果尚无法从摘要确认。
 external_url: http://arxiv.org/abs/2603.11021v1
 scenarios:
 - 大语言模型
@@ -27,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Leech 格点向量量化实现高效大模型压缩
-
 ---
 
 ## 基本信息

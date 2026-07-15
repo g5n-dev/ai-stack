@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Java开发者大模型应用指南：LangChain4j组件解析
-
----
-
 ## 基本信息
 
 - **作者**: 重庆穿山甲

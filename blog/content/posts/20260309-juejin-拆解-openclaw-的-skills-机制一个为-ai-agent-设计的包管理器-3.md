@@ -16,9 +16,7 @@ categories:
 - AI 工程
 - 开源生态
 source: juejin
-description: 以下是对 OpenClaw Skills 机制的总结： **核心定位：AI Agent 的“包管理器”** OpenClaw 的 Skills
-  机制旨在为 AI Agent 打造一个标准化的资源管理框架。它将**知识注入**、**工具集成**与**依赖管理**统一在一个声明式系统内，类似于编程语言中的包管理器（如
-  np
+description: 在 AI Agent 的开发中，如何高效管理上下文并解决运行时依赖，始终是工程落地的难点。OpenClaw 提出的 Skills 机制，本质上是一个专为智能体设计的“包管理器”，通过声明式框架统一了知识注入与工具集成。本文将拆解其三层渐进式加载与自动安装器的设计细节，助你掌握这一模块化能力，从而构建出更稳健、可扩展的智能体系统。
 external_url: https://juejin.cn/post/7614884374551707683
 scenarios:
 - AI/ML项目
@@ -27,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# OpenClaw Skills机制：三层渐进式加载与依赖管理的AI Agent框架
-
 ---
 
 ## 基本信息

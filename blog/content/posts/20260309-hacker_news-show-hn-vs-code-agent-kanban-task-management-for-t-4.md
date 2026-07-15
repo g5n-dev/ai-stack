@@ -17,7 +17,7 @@ categories:
 - 效率与方法论
 source: hacker_news
 description: 随着 AI 编程助手的普及，开发者的工作流正从单纯的代码编写转向对复杂任务的管理与协调。VS Code Agent Kanban 应运而生，它将看板方法直接集成到编辑器中，旨在解决
-  AI 辅助开发过程中常见的任务碎片化问题。本文将介绍这款工具的核心功能与设计思路，展示它如何帮助开发者更有效地追踪 AI 生成代码的进度，
+  AI 辅助开发过程中常见的任务碎片化问题。本文将介绍这款工具的核心功能与设计思路，展示它如何帮助开发者更有效地追踪 AI 生成代码的进度，从而在混合开发模式下保持井井有条。
 external_url: https://www.appsoftware.com/blog/introducing-vs-code-agent-kanban-task-management-for-the-ai-assisted-developer
 scenarios:
 - AI/ML项目
@@ -28,10 +28,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# VS Code Agent Kanban：面向 AI 辅助开发者的任务管理工具
-
 ---
 
 ## 基本信息

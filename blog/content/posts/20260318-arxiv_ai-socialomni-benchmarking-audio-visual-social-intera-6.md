@@ -16,8 +16,8 @@ categories:
 - 大模型
 - 论文
 source: arxiv
-description: '**内容总结：** 本文介绍了 **SocialOmni**，这是一个旨在评估全模态大语言模型（OLMs）**社交互动能力**的新基准。以下是核心要点：
-  1. **研究背景与动机**： 目前的 OLMs 评估主要集中于静态、以准确率为中心的任务，忽略了对自然对话中动态社交互动能力的评估。为了填补这一空白，SocialO'
+description: 针对全模态大语言模型（OLMs）在评估中常被忽视的动态社交互动能力，本文提出了名为 SocialOmni 的全新基准。该研究通过构建包含视听不一致场景的数据集，重点考察模型在说话人识别、打断时机控制及内容生成三个维度的综合表现。实验结果显示，现有主流
+  OLMs 在此类任务上存在显著的能力差异，但具体提升策略的有效性仍无法从摘要确认。
 external_url: http://arxiv.org/abs/2603.16859v1
 scenarios:
 - Web应用开发
@@ -25,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# SocialOmni：全模态模型视听社交交互基准测试
-
 ---
 
 ## 基本信息

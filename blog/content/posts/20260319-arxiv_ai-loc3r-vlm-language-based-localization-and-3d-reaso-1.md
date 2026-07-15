@@ -16,8 +16,7 @@ categories:
 - 大模型
 - 论文
 source: arxiv
-description: Loc3R‑VLM 是一种把 2D 视觉‑语言模型从单目视频中提升到三维空间理解的框架。它借鉴人类空间认知，提出两项联合训练目标： 1.
-  **全局布局重建**：构建场景的整体结构，使模型获得对空间几何的全局感知。 2. **显式情境建模**：锚定自我视角，实现视角感知的推理。 这两项目标直接为感知与语言提供三维空间的监
+description: 随着单目视频中语言与视觉的融合需求日益增长，如何让二维视觉‑语言模型获得可靠的三维空间感知成为关键问题。Loc3R‑VLM 通过提出全局布局重建与视角感知情境建模两项联合训练目标，并引入预训练三维模型的轻量相机位姿先验，实现了在语言驱动定位和情境三维问答任务上的当前最佳性能。
 external_url: http://arxiv.org/abs/2603.18002v1
 scenarios:
 - Web应用开发
@@ -27,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Loc3R-VLM语言驱动定位与3D推理视觉模型
-
 ---
 
 ## 基本信息

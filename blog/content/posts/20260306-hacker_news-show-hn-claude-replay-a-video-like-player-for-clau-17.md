@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Claude-replay：Claude Code 会话的视频化回放工具
-
----
-
 ## 基本信息
 
 - **作者**: es617

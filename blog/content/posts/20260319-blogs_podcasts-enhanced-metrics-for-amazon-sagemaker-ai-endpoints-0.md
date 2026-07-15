@@ -16,8 +16,8 @@ categories:
 - 系统与基础设施
 - AI 工程
 source: blogs_podcasts
-description: 亚马逊SageMaker AI端点增强指标发布 核心功能 亚马逊SageMaker AI端点现已支持增强指标功能，并提供可配置的指标发布频率设置。这一更新为用户提供了更细粒度的可见性，有助于更好地监控、故障排除和优化生产环境中的端点性能。
-  主要优势 **1. 深度可见性** 增强指标功能让用户能够更清晰地了解端点的运行
+description: SageMaker AI 端点现在支持可配置发布频率的增强型指标。此次发布提供了所需的精细可见性，以便您监控、排除故障并改进生产端点。 Amazon
+  SageMaker AI 端点现已支持可配置发布频率的增强型指标。通过细粒度的监控数据，开发团队能够实时观察模型推理过程中的关键表现，快速定位瓶颈并进行针对性优化。该功能帮助企业在生产环境中提升端点可靠性，降低运维成本。
 external_url: https://aws.amazon.com/blogs/machine-learning/enhanced-metrics-for-amazon-sagemaker-ai-endpoints-deeper-visibility-for-better-performance
 scenarios:
 - AI/ML项目
@@ -27,10 +27,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# SageMaker AI端点新增可配置频率增强指标
-
 ---
 
 ## 基本信息

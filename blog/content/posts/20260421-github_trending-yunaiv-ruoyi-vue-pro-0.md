@@ -16,9 +16,9 @@ categories:
 - 系统与基础设施
 - 开源生态
 source: github_trending
-description: 项目概述 RuoYi‑Vue‑Pro 是由 YunaiV 开发的开源企业级管理平台，采用 Spring Boot + MyBatis Plus
-  + Vue & Element 搭建。官方推荐，Star 已超过 36,666（今日+35），主要使用 Java 编写。 核心特性 - **权限体系**：RBAC
-  动态权限、数
+description: ruoyi-vue-pro 是基于 Spring Boot + MyBatis Plus + Vue & Element 构建的后台管理系统，提供微信小程序支持。内置
+  RBAC 动态权限、数据权限、SaaS 多租户、Flowable 工作流等模块，适合需要快速搭建后台管理系统的团队。项目还集成了商城、CRM、ERP、IM、AI
+  大模型、IoT 等扩展功能。
 external_url: https://github.com/YunaiV/ruoyi-vue-pro
 scenarios:
 - 后端开发
@@ -36,8 +36,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# RuoYi-Vue Pro：基于Spring Boot的多租户后台管理系统
-
 > **原名**: YunaiV /
 
       ruoyi-vue-pro
@@ -46,32 +44,15 @@ source_support: 0.0
 
 ## 基本信息
 
-- **描述**: 这段内容本身就是中文的，不需要翻译。😊
 
-不过，我注意到原文可能是想表达英文版本或者需要润色。我来提供几种优化版本供您参考：
-
----
-
-**版本一（保持原语气，略微润色）：**
-
-> 🔥 官方推荐 🔥 RuoYi-Vue 全新 Pro 版本，全面优化重构所有功能。基于 Spring Boot + MyBatis Plus + Vue & Element 实现的后台管理系统 + 微信小程序，支持 RBAC 动态权限、数据权限、SaaS 多租户、Flowable 工作流、三方登录、支付、短信、商城、CRM、ERP、MES、IM、AI 大模型、IoT 物联网等功能。您的 ⭐️ Star ⭐️，是作者前进的动力！
-
-**版本二（更正式商务风格）：**
-
-> 🔥 官方推荐 🔥 RuoYi-Vue Pro 全新发布，全面重构升级。基于 Spring Boot + MyBatis Plus + Vue & Element 的后台管理系统及微信小程序解决方案，具备 RBAC 动态权限、数据权限、SaaS 多租户、Flowable 工作流、三方登录、支付、短信、商城、CRM、ERP、MES、IM、AI 大模型、IoT 物联网等丰富功能。期待您的 ⭐️ Star ⭐️ 支持！
-
----
-
-请问您是需要润色中文内容，还是有其他语言的原文需要翻译？
 - **语言**: Java
 - **星标**: 36,666 (+35 stars today)
 - **链接**: [https://github.com/YunaiV/ruoyi-vue-pro](https://github.com/YunaiV/ruoyi-vue-pro)
 - **DeepWiki**: [https://deepwiki.com/YunaiV/ruoyi-vue-pro](https://deepwiki.com/YunaiV/ruoyi-vue-pro)
 
 ---
-## DeepWiki 速览（节选）
 
-# Overview
+## Overview
 
 Relevant source files
 
@@ -114,18 +95,18 @@ The project follows a multi-module Maven structure with clear separation of conc
 
 **`yudao-dependencies`** serves as a centralized Bill of Materials (BOM) that manages versions for 120+ dependencies, ensuring consistency across all modules. This includes Spring Boot (2.7.18), Spring Framework (5.3.39), MyBatis-Plus (3.5.15), Flowable (6.8.0), and numerous integration libraries.
 
-Dependency Category| Key Libraries| Purpose  
----|---|---  
-Core Framework| Spring Boot 2.7.18, Spring Security 5.8.16| Application foundation  
-Database| MyBatis-Plus 3.5.15, Druid 1.2.27, Dynamic DataSource 4.5.0| Data access and multi-DB support  
-Caching| Redisson 3.52.0| Redis client with advanced features  
-Workflow| Flowable 6.8.0| BPMN process engine  
-Message Queue| RocketMQ 2.3.5| Asynchronous messaging  
-Chinese DB| DM8 8.1.3, KingBase 8.6.0, OpenGauss 5.1.0| Domestic database support  
-IoT| TDengine 3.7.9| Time-series data storage  
-Payment| Alipay SDK 4.40.607, WeChat Java SDK 4.7.9| Payment gateway integration  
-Utilities| Hutool 5.8.42, Guava 33.5.0, MapStruct 1.6.3| Helper libraries  
-  
+Dependency Category| Key Libraries| Purpose
+---|---|---
+Core Framework| Spring Boot 2.7.18, Spring Security 5.8.16| Application foundation
+Database| MyBatis-Plus 3.5.15, Druid 1.2.27, Dynamic DataSource 4.5.0| Data access and multi-DB support
+Caching| Redisson 3.52.0| Redis client with advanced features
+Workflow| Flowable 6.8.0| BPMN process engine
+Message Queue| RocketMQ 2.3.5| Asynchronous messaging
+Chinese DB| DM8 8.1.3, KingBase 8.6.0, OpenGauss 5.1.0| Domestic database support
+IoT| TDengine 3.7.9| Time-series data storage
+Payment| Alipay SDK 4.40.607, WeChat Java SDK 4.7.9| Payment gateway integration
+Utilities| Hutool 5.8.42, Guava 33.5.0, MapStruct 1.6.3| Helper libraries
+
 **Sources:** [yudao-dependencies/pom.xml16-83](https://github.com/YunaiV/ruoyi-vue-pro/blob/342b1ab7/yudao-dependencies/pom.xml#L16-L83) [yudao-dependencies/pom.xml85-685](https://github.com/YunaiV/ruoyi-vue-pro/blob/342b1ab7/yudao-dependencies/pom.xml#L85-L685)
 
 ### Framework Layer
@@ -138,16 +119,16 @@ Utilities| Hutool 5.8.42, Guava 33.5.0, MapStruct 1.6.3| Helper libraries
 
 Business modules follow an **API/BIZ pattern** for clean separation between interfaces and implementations:
 
-Module Pattern| API Module| BIZ Module| Purpose  
----|---|---|---  
-System| N/A| `yudao-module-system`| Core system administration (always required)  
-Infrastructure| N/A| `yudao-module-infra`| Infrastructure services (always required)  
-Workflow| `yudao-module-bpm-api`| `yudao-module-bpm-biz`| Flowable integration (optional)  
-Payment| `yudao-module-pay-api`| `yudao-module-pay-biz`| Payment gateway abstraction (optional)  
-IoT| `yudao-module-iot-api`| `yudao-module-iot-biz`| Device management (optional)  
-AI| `yudao-module-ai-api`| `yudao-module-ai-biz`| LLM services (optional)  
-Mall| Multiple sub-modules| `yudao-module-product`, `yudao-module-trade`, `yudao-module-promotion`, `yudao-module-statistics`| E-commerce (optional)  
-  
+Module Pattern| API Module| BIZ Module| Purpose
+---|---|---|---
+System| N/A| `yudao-module-system`| Core system administration (always required)
+Infrastructure| N/A| `yudao-module-infra`| Infrastructure services (always required)
+Workflow| `yudao-module-bpm-api`| `yudao-module-bpm-biz`| Flowable integration (optional)
+Payment| `yudao-module-pay-api`| `yudao-module-pay-biz`| Payment gateway abstraction (optional)
+IoT| `yudao-module-iot-api`| `yudao-module-iot-biz`| Device management (optional)
+AI| `yudao-module-ai-api`| `yudao-module-ai-biz`| LLM services (optional)
+Mall| Multiple sub-modules| `yudao-module-product`, `yudao-module-trade`, `yudao-module-promotion`, `yudao-module-statistics`| E-commerce (optional)
+
 **Sources:** [pom.xml16-28](https://github.com/YunaiV/ruoyi-vue-pro/blob/342b1ab7/pom.xml#L16-L28) [yudao-server/pom.xml24-116](https://github.com/YunaiV/ruoyi-vue-pro/blob/342b1ab7/yudao-server/pom.xml#L24-L116)
 
 ### Application Layer
@@ -170,20 +151,20 @@ The system provides functionality across multiple business domains, organized as
 
 ### Backend Stack
 
-Layer| Technology| Version| Purpose  
----|---|---|---  
-**Runtime**|  Java| 8 (master) / 17/21 (master-jdk17)| JVM platform  
-**Framework**|  Spring Boot| 2.7.18| Application framework  
-**Security**|  Spring Security + OAuth2| 5.8.16| Authentication & authorization  
-**Database**|  MySQL / PostgreSQL / Oracle / DM8 / KingBase| 5.7+ / 9+ / 11g+| Primary data storage  
-**ORM**|  MyBatis-Plus| 3.5.15| Database access with auto-CRUD  
-**Cache**|  Redis + Redisson| 5.0+ / 3.52.0| Session, cache, locks  
-**Workflow**|  Flowable| 6.8.0| BPMN 2.0 process engine  
-**Job Scheduler**|  Quartz| 2.3.2| Scheduled tasks  
-**Message Queue**|  RocketMQ / Kafka / RabbitMQ| 2.3.5 / - / -| Async messaging  
-**API Docs**|  Knife4j (Swagger)| 4.5.0| REST API documentation  
-**Monitoring**|  Spring Boot Admin + SkyWalking| 2.7.15 / 8.12.0| APM and tracing  
-  
+Layer| Technology| Version| Purpose
+---|---|---|---
+**Runtime**|  Java| 8 (master) / 17/21 (master-jdk17)| JVM platform
+**Framework**|  Spring Boot| 2.7.18| Application framework
+**Security**|  Spring Security + OAuth2| 5.8.16| Authentication & authorization
+**Database**|  MySQL / PostgreSQL / Oracle / DM8 / KingBase| 5.7+ / 9+ / 11g+| Primary data storage
+**ORM**|  MyBatis-Plus| 3.5.15| Database access with auto-CRUD
+**Cache**|  Redis + Redisson| 5.0+ / 3.52.0| Session, cache, locks
+**Workflow**|  Flowable| 6.8.0| BPMN 2.0 process engine
+**Job Scheduler**|  Quartz| 2.3.2| Scheduled tasks
+**Message Queue**|  RocketMQ / Kafka / RabbitMQ| 2.3.5 / - / -| Async messaging
+**API Docs**|  Knife4j (Swagger)| 4.5.0| REST API documentation
+**Monitoring**|  Spring Boot Admin + SkyWalking| 2.7.15 / 8.12.0| APM and tracing
+
 **Sources:** [yudao-dependencies/pom.xml16-83](https://github.com/YunaiV/ruoyi-vue-pro/blob/342b1ab7/yudao-dependencies/pom.xml#L16-L83) [README.md310-331](https://github.com/YunaiV/ruoyi-vue-pro/blob/342b1ab7/README.md?plain=1#L310-L331)
 
 ### Multi-Database Support
@@ -191,7 +172,7 @@ Layer| Technology| Version| Purpose
 The system supports deployment on multiple database platforms through unified SQL scripts and driver abstraction:
 
   * **International:** MySQL, PostgreSQL, Oracle, SQL Server, MariaDB
-  * **Domestic (信创):** DM8 (达梦), 
+  * **Domestic (信创):** DM8 (达梦),
 
 [...truncated...]
 
@@ -309,7 +290,6 @@ SaaS多租户支持使单个实例可服务多个客户。内置商城、CRM、E
 
 ---
 
----
 ## 站内链接
 
 - 分类： [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/) / [开源生态](/categories/%E5%BC%80%E6%BA%90%E7%94%9F%E6%80%81/)

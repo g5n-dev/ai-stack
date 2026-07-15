@@ -16,8 +16,8 @@ categories:
 - AI 工程
 - 开源生态
 source: arxiv
-description: '**摘要：A.R.I.S. —— 基于深度学习的电子废弃物自动分拣系统** 本文介绍了一种名为 **A.R.I.S.**（自动回收识别系统）的创新解决方案，旨在利用深度学习技术解决电子废弃物回收中的资源流失问题。
-  **主要背景与痛点：** 传统的电子回收工艺由于缺乏有效的材料分离和识别能力，导致资源回收受限，造成了严重'
+description: 针对电子废弃物回收中因缺乏有效识别手段导致的资源流失问题，本文提出了名为 A.R.I.S. 的低成本自动化分拣系统。该研究利用 YOLOx
+  深度学习模型，对破碎后的金属、塑料及电路板进行实时分类，在保持极低推理延迟的同时实现了约 90% 的整体检测精度。该方案通过降低先进回收技术的应用门槛，有望提升材料回收效率并支持相关循环经济计划，但摘要未明确披露其在复杂光照或遮挡环境下的鲁棒性表现。
 external_url: http://arxiv.org/abs/2602.17642v1
 scenarios:
 - Web应用开发
@@ -25,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# A.R.I.S.：基于深度学习的电子废弃物自动分类系统
-
 ---
 
 ## 基本信息

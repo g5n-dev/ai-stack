@@ -34,10 +34,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Taalas技术解析：如何将大语言模型直接印制于芯片
-
----
-
 ## 基本信息
 
 - **作者**: beAroundHere

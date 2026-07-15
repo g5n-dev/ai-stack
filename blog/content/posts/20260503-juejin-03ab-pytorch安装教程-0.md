@@ -16,8 +16,8 @@ categories:
 - AI 工程
 - 开发工具
 source: juejin
-description: 简介 PyTorch 是 Facebook 于 2016 年发布的开源深度学习框架，以动态计算图和易用性在学术与工业界广受欢迎。相比 TensorFlow，PyTorch
-  的动态图使模型调试、梯度计算和自定义操作更直观。 安装前准备 1. 确认操作系统（Windows、Linux、macOS）和 Python 版本（建
+description: 在深度学习项目中，正确配置PyTorch环境是保证实验可重复和高效运行的前提。本教程详细介绍了从系统依赖检查到使用conda或pip完成框架安装的全流程，并针对常见错误提供了排查思路。阅读后，读者能够快速搭建可靠的开发环境，专注于模型实现而非调试难题。
+  PyTorch 是 Facebook 于 2016 年发布的开源深度学习框架，以动态计算图和易用性在学术与工业界广受欢迎。
 external_url: https://juejin.cn/post/7635465776091267122
 scenarios:
 - Web应用开发
@@ -27,10 +27,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# PyTorch安装教程
-
 ---
 
 ## 基本信息
@@ -43,12 +39,7 @@ source_support: 0.0
 
 在深度学习项目中，正确配置PyTorch环境是保证实验可重复和高效运行的前提。本教程详细介绍了从系统依赖检查到使用conda或pip完成框架安装的全流程，并针对常见错误提供了排查思路。阅读后，读者能够快速搭建可靠的开发环境，专注于模型实现而非调试难题。
 
----
-## 描述
 
-这段文字已经是中文了。如果您是想把它翻译成**英文**，或者希望我在中文的基础上进行润色、修正并保持原有的格式和语气，请告诉我您具体的需求，我很乐意帮助您。
-
----
 ## 摘要
 
 #### 简介
@@ -126,7 +117,6 @@ print(torch.cuda.is_available())   # GPU 版返回 True，CPU 版返回 False
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/)

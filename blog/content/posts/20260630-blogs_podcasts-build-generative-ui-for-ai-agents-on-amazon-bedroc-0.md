@@ -15,8 +15,9 @@ tags:
 categories:
 - AI 工程
 source: blogs_podcasts
-description: AG‑UI 与 FAST 集成 AG‑UI（Agent‑GUI Interface）是一种标准化协议，旨在把 AI Agent 的交互界面与后端模型解耦。Amazon
-  Bedrock AgentCore 通过 AG‑UI 与前端框架对接，开发者可在 FAST（Full‑stack AgentCore Solution
+description: 这篇帖子将逐步介绍 AG-UI 如何集成到 Fullstack AgentCore Solution Template (FAST) 中，以在
+  Amazon Bedrock AgentCore 上构建交互式代理前端。随后，我们将展示 CopilotKit 如何在此基础上扩展生成式 UI、共享状态和人在回路交互，所有功能均部署在
+  Amazon Bedrock AgentCore 上。
 external_url: https://aws.amazon.com/blogs/machine-learning/build-generative-ui-for-ai-agents-on-amazon-bedrock-agentcore-with-the-ag-ui-protocol
 scenarios:
 - AI/ML项目
@@ -24,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# AG-UI协议集成Amazon Bedrock AgentCore构建生成式UI
-
 ---
 
 ## 基本信息
@@ -156,7 +153,6 @@ AG‑UI 与 CopilotKit 在 Bedrock AgentCore 上的结合，使 AI agent 能够�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

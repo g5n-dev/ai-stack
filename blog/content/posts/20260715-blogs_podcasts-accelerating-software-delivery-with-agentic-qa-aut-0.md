@@ -15,9 +15,8 @@ tags:
 categories:
 - 开发工具
 source: blogs_podcasts
-description: 本文是 Amazon Nova Act agentic QA 自动化的第二部分，聚焦于 QA Studio 在大规模回归测试和流水线集成上的能力。QA
-  Studio 通过可组织的测试套件实现批量回归测试，套件内部支持并行执行，从而显著缩短测试周期；同时提供命令行接口（CLI），能够把基于代理的自动化测试无缝嵌入
-  CI/
+description: 在这篇文章中，我们将扩展之前的基础，展示 QA Studio 如何通过以下方式解决批量回归测试和管道集成问题：使用测试套件来组织和并行化执行，以及通过命令行接口将代理测试引入自动化
+  CI/CD 管道。 本文在前作的基础上，进一步演示如何利用 Amazon Nova Act 的 QA Studio 解决大规模回归测试、加速软件交付的效率瓶颈。
 external_url: https://aws.amazon.com/blogs/machine-learning/accelerating-software-delivery-with-agentic-qa-automation-using-amazon-nova-act-part-2
 scenarios:
 - AI/ML项目
@@ -25,10 +24,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Amazon Nova Act代理测试：批量回归与CI/CD集成
-
 ---
 
 ## 基本信息
@@ -128,7 +123,6 @@ QA Studio的测试套件机制解决了传统回归测试的两大痛点：执�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/)

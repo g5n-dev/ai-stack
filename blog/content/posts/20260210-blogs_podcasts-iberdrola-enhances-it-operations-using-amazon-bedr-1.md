@@ -1,5 +1,5 @@
 ---
-title: Iberdrola 如何利用 Amazon Bedrock AgentCore 优化 ServiceNow I
+title: Iberdrola 如何利用 Amazon Bedrock AgentCore 优化 ServiceNow IT 运营
 date: 2026-02-10 22:46:04+08:00
 draft: false
 entry_kind: auto
@@ -16,9 +16,9 @@ categories:
 - AI 工程
 - 大模型
 source: blogs_podcasts
-description: Iberdrola（伊比德罗拉）作为全球最大的公用事业公司之一，通过引入前沿的AI技术，成功实现了其 ServiceNow 平台中 IT
-  运营的革新。 在与 AWS 的合作中，Iberdrola 利用 **Amazon Bedrock AgentCore** 实施了多种智能体架构，重点聚焦于三大关键领域：
-  1. **优
+description: 作为全球规模最大的公用事业公司之一，Iberdrola 引入尖端人工智能技术，在 ServiceNow 中彻底变革其 IT 运营。通过与
+  AWS 合作，Iberdrola 借助 Amazon Bedrock AgentCore 实施了多种智能体架构，聚焦三大关键领域：在起草阶段优化变更请求验证、以情境智能丰富事件管理，以及利用对话式
+  AI 简化变更模型选择。
 external_url: https://aws.amazon.com/blogs/machine-learning/iberdrola-enhances-it-operations-using-amazon-bedrock-agentcore
 scenarios:
 - AI/ML项目
@@ -36,10 +36,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Iberdrola 如何利用 Amazon Bedrock AgentCore 优化 ServiceNow IT 运营
-
 ---
 
 ## 基本信息
@@ -134,7 +130,7 @@ Iberdrola（伊比德罗拉）作为全球最大的公用事业公司之一，�
 
 ### 实践 1：构建基于 Amazon Bedrock 的统一智能运维代理架构
 
-**说明**: 
+**说明**:
 利用 Amazon Bedrock 的 AgentCore 能力，构建一个集中式的智能运维代理。该代理作为中间层，连接底层基础设施数据与上层运维人员，通过自然语言处理理解运维意图，自动编排工具并执行修复操作，从而实现从被动响应到主动预测的转变。
 
 **实施步骤**:
@@ -143,14 +139,14 @@ Iberdrola（伊比德罗拉）作为全球最大的公用事业公司之一，�
 3. **配置工具组**: 通过 API 将监控工具（如 Datadog, Splunk）和执行工具（如 AWS Systems Manager）连接到 Bedrock Agent。
 4. **选择基础模型**: 根据任务复杂度选择合适的 FM（如 Claude 3 或 Anthropic 系列），平衡推理能力与响应速度。
 
-**注意事项**: 
+**注意事项**:
 确保代理具有最小权限原则，仅授予执行特定运维任务所需的 IAM 权限。
 
 ---
 
 ### 实践 2：实施 RAG 技术以增强领域知识准确性
 
-**说明**: 
+**说明**:
 单纯依赖大模型可能导致“幻觉”，在电力能源等关键行业中这是不可接受的。通过检索增强生成（RAG）技术，强制模型在回答问题或执行操作前，先从 Iberdrola 专有的内部文档中检索相关信息，确保生成的建议和代码符合公司特定的安全和操作标准。
 
 **实施步骤**:
@@ -159,14 +155,14 @@ Iberdrola（伊比德罗拉）作为全球最大的公用事业公司之一，�
 3. **提示词工程**: 在系统提示词中明确指示模型：“必须优先依据检索到的上下文信息回答，若未找到相关信息则回答不知道”。
 4. **持续微调**: 根据代理的反馈循环，定期更新检索策略和文档库。
 
-**注意事项**: 
+**注意事项**:
 需对知识库的访问进行严格控制，防止敏感的基础设施拓扑信息泄露给未授权人员。
 
 ---
 
 ### 实践 3：建立“人机协同”的验证与反馈闭环
 
-**说明**: 
+**说明**:
 在自动化运维的初期，保持“人在回路”至关重要。Iberdrola 的实践表明，在 Agent 执行高风险操作（如变更配置、删除资源）之前，引入人工审批机制，可以有效建立信任，并收集负反馈样本用于后续优化。
 
 **实施步骤**:
@@ -175,14 +171,14 @@ Iberdrola（伊比德罗拉）作为全球最大的公用事业公司之一，�
 3. **反馈收集**: 在每次交互结束后，增加用户满意度评价（点赞/点踩），并将这些数据存储在 S3 中用于后续分析。
 4. **监控与干预**: 使用 Amazon CloudWatch 监控 Agent 的行为，一旦检测到异常循环或错误，立即触发人工介入。
 
-**注意事项**: 
+**注意事项**:
 审批流程不应过于繁琐，以免影响运维效率，建议仅对涉及生产环境核心资源的操作设置人工关卡。
 
 ---
 
 ### 实践 4：标准化工具接口与 API 编排
 
-**说明**: 
+**说明**:
 Amazon Bedrock Agent 的核心能力在于调用 Action Groups。为了最大化效率，必须将现有的 IT 运维工具（无论是基于 AWS 的还是本地遗留系统）封装成标准化的 RESTful API。这使得 Agent 能够像拼积木一样组合不同工具的功能来解决复杂问题。
 
 **实施步骤**:
@@ -191,14 +187,14 @@ Amazon Bedrock Agent 的核心能力在于调用 Action Groups。为了最大化
 3. **错误处理标准化**: 统一 API 错误码和错误消息格式，使 Agent 能够解析错误并自动尝试重试或回滚。
 4. **Lambda 函数封装**: 对于复杂的逻辑，编写 AWS Lambda 函数作为中间层，处理多步骤的编排逻辑。
 
-**注意事项**: 
+**注意事项**:
 确保 API 的幂等性，防止因网络重试导致重复执行操作（例如重复重启同一台服务器）。
 
 ---
 
 ### 实践 5：利用 Guardrails 保障安全性与合规性
 
-**说明**: 
+**说明**:
 能源行业对数据安全和合规性要求极高。利用 Amazon Bedrock Guardrails 建立防护栏，防止 Agent 生成有害内容、提取敏感 PII（个人身份信息）或执行违反公司安全策略的指令。
 
 **实施步骤**:
@@ -227,7 +223,6 @@ Amazon Bedrock Agent 的核心能力在于调用 Action Groups。为了最大化
 ---
 
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

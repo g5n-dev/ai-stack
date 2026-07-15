@@ -17,7 +17,7 @@ categories:
 - 系统与基础设施
 source: blogs_podcasts
 description: CNC制造可行性分析是产品从设计到生产的关键环节，传统方法依赖人工经验，效率低且容易出错。MachinaCheck采用多智能体架构，将复杂的可行性评估分解为多个子任务，利用AMD
-  MI300X的大规模并行计算能力，实现了自动化、高精度的检查。该系统整合了工艺规划、刀具选择、夹具设计等专业知识域，为工程师提供全面的决策支
+  MI300X的大规模并行计算能力，实现了自动化、高精度的检查。该系统整合了工艺规划、刀具选择、夹具设计等专业知识域，为工程师提供全面的决策支持。
 external_url: https://huggingface.co/blog/lablab-ai-amd-developer-hackathon/machinacheck
 scenarios:
 - AI/ML项目
@@ -27,10 +27,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# MachinaCheck多智能体CNC可制造性系统构建
-
 ---
 
 ## 基本信息
@@ -151,7 +147,6 @@ MachinaCheck 通过在 AMD MI300X 上部署多智能体系统，实现对 CNC 
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/)

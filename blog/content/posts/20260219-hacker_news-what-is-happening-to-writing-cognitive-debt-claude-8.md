@@ -17,7 +17,7 @@ categories:
 - 效率与方法论
 source: hacker_news
 description: 随着 AI 工具的普及，写作正在经历一场深刻的变革，我们不仅要关注工具本身的迭代，更需审视其带来的“认知债务”及对技术工作流的实质性影响。本文将深入探讨
-  Claude Code 等工具如何重塑开发环境，并分析在 AI 辅助下，人类应如何重新定位思考与创作的关系。通过阅读本文，读者可以更清晰地理解当前技术生态的演变逻辑，
+  Claude Code 等工具如何重塑开发环境，并分析在 AI 辅助下，人类应如何重新定位思考与创作的关系。通过阅读本文，读者可以更清晰地理解当前技术生态的演变逻辑，并思考如何在自动化浪潮中保持认知的主动权。
 external_url: https://resobscura.substack.com/p/what-is-happening-to-writing
 scenarios:
 - AI/ML项目
@@ -28,10 +28,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 写作、认知债与Claude Code：AI周边现状观察
-
 ---
 
 ## 基本信息

@@ -38,10 +38,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 分享AI模型在First Proof数学挑战中的证明尝试
-
----
-
 ## 基本信息
 
 - **来源**: OpenAI Blog (blog)

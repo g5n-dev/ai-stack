@@ -40,10 +40,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Claude Code：面向基础设施的AI编程助手
-
----
-
 ## 基本信息
 
 - **作者**: aspectrr
@@ -121,22 +117,22 @@ def check_and_fix_security_group(group_id):
     解决方案：自动移除不安全的规则并添加限制性规则
     """
     ec2 = boto3.client('ec2')
-    
+
     # 获取当前安全组规则
     response = ec2.describe_security_groups(GroupIds=[group_id])
     rules = response['SecurityGroups'][0]['IpPermissions']
-    
+
     # 检查是否存在不安全的SSH规则
     for rule in rules:
         if rule['FromPort'] == 22 and rule['IpRanges'][0]['CidrIp'] == '0.0.0.0/0':
             print(f"发现不安全SSH规则，正在修复...")
-            
+
             # 移除不安全规则
             ec2.revoke_security_group_ingress(
                 GroupId=group_id,
                 IpPermissions=[rule]
             )
-            
+
             # 添加限制性规则(仅允许特定IP访问)
             ec2.authorize_security_group_ingress(
                 GroupId=group_id,
@@ -149,7 +145,7 @@ def check_and_fix_security_group(group_id):
             )
             print("安全组规则已修复")
             return True
-    
+
     print("未发现不安全规则")
     return False
 
@@ -171,21 +167,21 @@ def check_pod_resources(namespace="default"):
     # 加载kubeconfig配置
     config.load_kube_config()
     api = client.CoreV1Api()
-    
+
     # 获取指定命名空间下的所有Pod
     pods = api.list_namespaced_pod(namespace)
-    
+
     high_resource_pods = []
-    
+
     for pod in pods.items:
         pod_name = pod.metadata.name
         containers = pod.spec.containers
-        
+
         # 检查每个容器的资源限制
         for container in containers:
             limits = container.resources.limits or {}
             requests = container.resources.requests or {}
-            
+
             # 如果没有设置资源限制，记录为潜在问题
             if not limits.get('cpu') or not limits.get('memory'):
                 high_resource_pods.append({
@@ -194,7 +190,7 @@ def check_pod_resources(namespace="default"):
                     'issue': '未设置资源限制',
                     'timestamp': datetime.now().isoformat()
                 })
-    
+
     if high_resource_pods:
         print("发现资源配置不当的Pod:")
         for pod_info in high_resource_pods:
@@ -220,22 +216,22 @@ def monitor_container_health(container_name, max_retries=3):
     解决方案：自动检测并重启不健康的容器
     """
     client = docker.from_env()
-    
+
     try:
         container = client.containers.get(container_name)
     except docker.errors.NotFound:
         print(f"容器 {container_name} 不存在")
         return False
-    
+
     retry_count = 0
     while retry_count < max_retries:
         # 刷新容器状态
         container.reload()
-        
+
         # 检查容器健康状态
         if container.status == 'running':
             health_status = container.attrs.get('State', {}).get('Health', {}).get('Status')
-            
+
             if health_status == 'healthy':
                 print(f"容器 {container_name} 运行正常")
                 return True
@@ -252,7 +248,7 @@ def monitor_container_health(container_name, max_retries=3):
             container.start()
             retry_count += 1
             time.sleep(5)
-    
+
     print(f"容器 {container_name} 在 {max_retries} 次尝试后仍不健康")
     return False
 
@@ -264,8 +260,6 @@ def monitor_container_health(container_name, max_retries=3):
 ## 案例研究
 
 ### 1：初创科技公司 DevOps 自动化转型
-
- 1：初创科技公司 DevOps 自动化转型
 
 **背景**:
 一家快速发展的 B2B SaaS 初创公司，拥有约 15 名开发人员，但只有两名 DevOps 工程师。随着业务扩展，基础设施管理变得复杂，团队频繁需要处理 AWS 资源配置、Kubernetes 集群维护和 CI/CD 管道优化。
@@ -283,8 +277,6 @@ def monitor_container_health(container_name, max_retries=3):
 
 ### 2：金融机构遗留系统迁移
 
- 2：金融机构遗留系统迁移
-
 **背景**:
 一家传统银行的数字化转型项目，需要将部分核心业务从本地数据中心迁移至混合云环境。涉及大量旧有的 Shell 脚本和自定义配置文件，缺乏文档且原始维护人员已离职。
 
@@ -300,8 +292,6 @@ def monitor_container_health(container_name, max_retries=3):
 ---
 
 ### 3：电商平台云成本优化项目
-
- 3：电商平台云成本优化项目
 
 **背景**:
 一家中型电商公司在 AWS 上的月度支出达到六位数，但由于资源创建分散在多个团队，缺乏统一标准，存在大量未充分利用的资源。
@@ -424,15 +414,11 @@ def monitor_container_health(container_name, max_retries=3):
 
 ### 1: Claude Code for Infrastructure 是什么？
 
-1: Claude Code for Infrastructure 是什么？
-
 **A**: Claude Code for Infrastructure 是 Anthropic 推出的一个专门针对基础设施和 DevOps 领域的 AI 编程助手。它基于 Claude 3.5 Sonnet 模型，专门优化了处理基础设施代码（如 Terraform、Kubernetes 配置、CI/CD 管道等）的能力。与通用代码助手不同，它更专注于云资源配置、容器编排和自动化部署等基础设施即代码场景。
 
 ---
 
 ### 2: 它与 ChatGPT 或 GitHub Copilot 有什么区别？
-
-2: 它与 ChatGPT 或 GitHub Copilot 有什么区别？
 
 **A**: 主要区别在于：
 1. **领域专注性**：Claude Code for Infrastructure 专门针对基础设施代码优化，对 Terraform、Ansible、Docker、Kubernetes 等工具有更深的理解
@@ -443,8 +429,6 @@ def monitor_container_health(container_name, max_retries=3):
 ---
 
 ### 3: 它支持哪些基础设施工具和语言？
-
-3: 它支持哪些基础设施工具和语言？
 
 **A**: 目前主要支持：
 - **IaC 工具**：Terraform、CloudFormation、Pulumi
@@ -458,8 +442,6 @@ def monitor_container_health(container_name, max_retries=3):
 
 ### 4: 如何确保生成的代码符合安全和合规要求？
 
-4: 如何确保生成的代码符合安全和合规要求？
-
 **A**: 该工具内置了多项安全机制：
 1. **安全扫描**：自动检查常见的安全配置错误（如 S3 存储桶公开访问、安全组过于宽松等）
 2. **最佳实践**：遵循 CIS Benchmark 和云厂商安全指南
@@ -469,8 +451,6 @@ def monitor_container_health(container_name, max_retries=3):
 ---
 
 ### 5: 是否可以集成到现有的开发工作流中？
-
-5: 是否可以集成到现有的开发工作流中？
 
 **A**: 是的，提供多种集成方式：
 1. **IDE 插件**：VS Code、JetBrains 系列编辑器插件
@@ -483,8 +463,6 @@ def monitor_container_health(container_name, max_retries=3):
 
 ### 6: 定价模式是怎样的？
 
-6: 定价模式是怎样的？
-
 **A**: 根据官方信息：
 - **免费层**：每月有限的 API 调用次数，适合个人开发者试用
 - **专业版**：按使用量计费（基于 token 数量），适合小团队
@@ -494,8 +472,6 @@ def monitor_container_health(container_name, max_retries=3):
 ---
 
 ### 7: 它能处理多大规模的基础设施代码？
-
-7: 它能处理多大规模的基础设施代码？
 
 **A**: Claude Code for Infrastructure 能够处理：
 1. **大型单体仓库**：支持分析包含数千个配置文件的项目
@@ -513,7 +489,6 @@ def monitor_container_health(container_name, max_retries=3):
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/)

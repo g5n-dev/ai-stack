@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Symplex：分布式代理间语义协商的开源协议
-
----
-
 ## 基本信息
 
 - **作者**: olserra

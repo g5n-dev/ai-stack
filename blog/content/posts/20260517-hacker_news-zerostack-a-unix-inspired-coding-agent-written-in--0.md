@@ -16,7 +16,7 @@ categories:
 - 开发工具
 source: hacker_news
 description: Zerostack 是一款受 Unix 哲学启发的编程助手，全部核心代码采用 Rust 实现，以实现高效的内存管理和跨平台部署。该项目通过模块化的命令行接口和可组合的插件机制，让开发者能够在编辑、构建和调试等环节中实现统一的工作流。结合
-  Rust 的零成本抽象特性，Zerostack 在保持轻量级的同时，提供丰富的扩展
+  Rust 的零成本抽象特性，Zerostack 在保持轻量级的同时，提供丰富的扩展能力，适合追求高可靠性和性能的技术团队进行二次开发或日常使用。
 external_url: https://crates.io/crates/zerostack/1.0.0
 scenarios:
 - AI/ML项目
@@ -24,10 +24,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Zerostack：Unix风格纯Rust编码代理
-
 ---
 
 ## 基本信息
@@ -79,7 +75,6 @@ Zerostack 采用纯 Rust 实现，这一事实陈述表明开发团队对系统�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/)

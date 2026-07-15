@@ -16,9 +16,7 @@ categories:
 - AI 工程
 - 效率与方法论
 source: juejin
-description: 这段内容描述了一种名为“Agent First Engineering”（代理优先工程）的全新软件开发模式，其核心要点总结如下： **1.
-  惊人的开发成果** 该项目历时 **5个月**，实现了 **0行人工编写代码**，却构建出了**百万行代码级别**的复杂系统。这一成果打破了传统软件开发的边界，证明了
-  AI 代理已
+description: 当“0行人工代码”成为现实，工程范式正从“人写代码”转向“人定义Agent”。这不仅是效率提升，更是工程师角色的重构：从实现者转变为设计者与验收者。本文将探讨这一转变背后的逻辑，帮助工程师在AI主导的开发周期中找到新的价值锚点。
 external_url: https://juejin.cn/post/7613552054946332715
 scenarios:
 - AI/ML项目
@@ -26,10 +24,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Agent First Engineering：零人工代码与百万行规模的开发实践
-
 ---
 
 ## 基本信息

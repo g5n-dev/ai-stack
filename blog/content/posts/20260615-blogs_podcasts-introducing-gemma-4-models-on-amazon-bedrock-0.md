@@ -16,8 +16,9 @@ categories:
 - 大模型
 - AI 工程
 source: blogs_podcasts
-description: 概述 Gemma 4 系列模型已在 Amazon Bedrock 上线，由 Google DeepMind 开发，采用 Apache 2.0
-  开源许可，强调在多种部署环境下实现参数级智能优化。 主要模型 - **Gemma 4 31B**：稠密结构，适合大规模推理任务。 - **Gemma 4 26B‑A4B**：混合
+description: 今天，我们宣布Gemma 4系列在Amazon Bedrock上可用。Gemma 4由Google DeepMind构建，并以Apache
+  2.0许可证发布，是一系列开放权重模型，专注于在广泛的部署场景中实现每参数智能。该系列包含三个指令调优变体：Gemma 4 31B、Gemma 4 26B-A4B和Gemma
+  4 E2B。
 external_url: https://aws.amazon.com/blogs/machine-learning/introducing-gemma-4-models-on-amazon-bedrock
 scenarios:
 - Web应用开发
@@ -25,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Amazon Bedrock上线Gemma 4系列模型
-
 ---
 
 ## 基本信息
@@ -183,7 +180,6 @@ Gemma 4 在 Amazon Bedrock 上提供的开源权重模型，以“高参数�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

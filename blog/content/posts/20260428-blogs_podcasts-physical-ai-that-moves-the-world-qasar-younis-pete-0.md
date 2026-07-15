@@ -15,9 +15,8 @@ tags:
 categories:
 - AI 工程
 source: blogs_podcasts
-description: Applied Intuition 是一家专注于将人工智能嵌入实际物理系统的公司。其CEO Qasar Younis 与CTO Peter
-  Ludwig 在访谈中指出，公司的AI 技术已被部署在矿山钻机、无人机、卡车、战舰等最严苛的环境里，旨在让这些物理机器在极端对抗条件下实现自主运行与高效控制。他们强调，物理AI
-  不
+description: Applied Intuition 将人工智能技术应用于采矿设备、无人机、卡车、战舰及各类实体车辆，使其在最恶劣的对抗环境中运行。我们深入探访，与新近亮相的公司
+  CEO 和 CTO 进行对话。 Physical AI 正在重新定义人工智能在实体世界中的应用边界。
 external_url: https://www.latent.space/p/appliedintuition
 scenarios:
 - AI/ML项目
@@ -25,10 +24,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 对话Applied Intuition高管：AI驱动采矿设备无人机卡车战舰
-
 ---
 
 ## 基本信息
@@ -160,7 +155,6 @@ Physical AI 是实现全球工业自动化的关键技术路径，能够在对
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

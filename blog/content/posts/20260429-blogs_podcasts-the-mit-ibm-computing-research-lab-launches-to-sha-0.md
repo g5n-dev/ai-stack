@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# MIT-IBM联合实验室启动 聚焦AI与量子计算融合
-
----
-
 ## 基本信息
 
 - **来源**: MIT News (Machine Learning) (blog)
@@ -119,7 +115,6 @@ MIT-IBM计算研究实验室的设立标志着人工智能与量子计算融合�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/)

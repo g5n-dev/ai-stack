@@ -16,8 +16,9 @@ categories:
 - 开发工具
 - 效率与方法论
 source: juejin
-description: 核心观点 别直接 fork 他人的 Claude Code Skill。真正有价值的 Skill 必须从项目自身的工作流中“生长”出来，而非直接搬运别人的模板。
-  为何不宜直接 Fork 1. **通用性不足**：高 star 的模板虽然功能丰富，却往往是大而全的设计，未必贴合特定业务或团队习惯。 2. **维护成本高*
+description: 在 AI 编程工具不断迭代的今天，Claude Code 的 Skill 已成为提升效率的关键。然而，直接复制 GitHub 上高 star
+  模板往往只能得到表面功能，缺少与实际项目深度结合的适配性。本篇将拆解 Skill 的本质构成，提供从项目需求出发、逐步构建可复用 Skill 的实战路径，帮助读者摆脱盲目套用的迷茫，建立真正属于自己的
+  AI 编程能力。
 external_url: https://juejin.cn/post/7627001216109035572
 scenarios:
 - AI/ML项目
@@ -25,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Claude Code Skill 应基于项目需求构建
-
 ---
 
 ## 基本信息
@@ -110,7 +107,6 @@ GitHub 上存在大量高 star 的 Claude Code Skill 模板，可作为学习示
 
 ---
 
----
 ## 站内链接
 
 - 分类： [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/) / [效率与方法论](/categories/%E6%95%88%E7%8E%87%E4%B8%8E%E6%96%B9%E6%B3%95%E8%AE%BA/)

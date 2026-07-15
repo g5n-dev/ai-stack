@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 误差随时间前向传播机制解析
-
----
-
 ## 基本信息
 
 - **作者**: iNic

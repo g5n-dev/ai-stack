@@ -16,8 +16,8 @@ categories:
 - 效率与方法论
 - 大模型
 source: blogs_podcasts
-description: 要点概括 - 文章标题为《8 Gemini tips for organizing your space (and life)》，主旨是介绍如何利用
-  Google Gemini 智能助理提供的 8 条实用建议，帮助用户同时整理物理空间和工作生活。 - 内容围绕“空间整理”与“生活管理”两大方向展开，涵盖文件分类、邮件处
+description: 带插图的黑屏，插图包括：一台笔记本电脑，文件和电子邮件图标从中流出；一个面带微笑的人手持手机，查看清单；以及一个正在激活 Gemini Live
+  的用户。 在信息碎片化的时代，空间与时间的整理往往决定效率与心态。本文通过八个实用技巧，展示如何借助 Gemini 将工作环境、数字文件和个人日程统一规划，让繁琐的任务转化为清晰的行动清单，从而提升专注度，释放更多自由时间。
 external_url: https://blog.google/products-and-platforms/products/gemini/gemini-spring-cleaning-tips
 scenarios:
 - AI/ML项目
@@ -27,10 +27,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 8个Gemini技巧整理空间与生活
-
 ---
 
 ## 基本信息
@@ -140,7 +136,6 @@ Gemini 通过 AI 驱动的自动化整理，可显著提升个人与工作环境
 
 ---
 
----
 ## 站内链接
 
 - 分类： [效率与方法论](/categories/%E6%95%88%E7%8E%87%E4%B8%8E%E6%96%B9%E6%B3%95%E8%AE%BA/) / [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

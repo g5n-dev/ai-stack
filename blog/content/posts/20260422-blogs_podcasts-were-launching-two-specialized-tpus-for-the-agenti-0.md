@@ -15,8 +15,7 @@ tags:
 categories:
 - 系统与基础设施
 source: blogs_podcasts
-description: 背景 谷歌在 AI 硬件领域持续创新，第八代张量处理单元（TPU）首次推出两款专用芯片，专为“代理时代”（agentic era）设计。
-  关键特性 - **专用架构**：针对 AI 代理的任务调度、长期记忆与多步推理进行优化。 - **算力提升**：相比前代，TPU v8 在训练和推理吞吐上提升显著，能够支撑更大规模的
+description: 第八代谷歌 TPU 包含两款专用芯片，将为人工智能的未来提供动力。 谷歌在第八代TPU平台上推出两款专用加速芯片，聚焦代理式AI的工作负载。相比通用芯片，这些专用TPU在并行推理、长期状态维护等关键环节实现显著提升，为构建更高效、响应更快的智能代理提供硬件基础。读者将了解到新芯片的架构创新、性能指标以及在实际代理应用中的落地前景。
 external_url: https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/tpus-8t-8i-cloud-next
 scenarios:
 - AI/ML项目
@@ -24,10 +23,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 谷歌两款第八代TPU专为AI代理时代打造
-
 ---
 
 ## 基本信息
@@ -138,7 +133,6 @@ Google通过专用芯片路线与NVIDIA的通用GPU方案形成差异化竞争�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/)

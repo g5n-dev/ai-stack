@@ -16,8 +16,8 @@ categories:
 - 大模型
 - 系统与基础设施
 source: arxiv
-description: '以下是关于《CUDA Agent: Large-Scale Agentic RL for High-Performance CUDA Kernel
-  Generation》的中文总结： **核心问题** GPU内核优化是现代深度学习的基础，但通常需要深厚的硬件专业知识。尽管大语言模型（LLM）在通用编程领域表现出色，但在'
+description: 高性能 CUDA 核函数的生成通常依赖深厚的硬件专业知识，尽管大语言模型在通用编程领域表现优异，但其在此类高频优化任务中的性能仍显不足。本文提出
+  CUDA Agent，利用大规模智能体强化学习框架来提升核函数生成的质量。然而，摘要未详细披露具体的算法细节或基准测试数据，无法从摘要确认其相比现有方法的确切性能增益。若该方法有效，有望降低高性能计算的门槛并推动深度学习底层算子的自动优化研究。
 external_url: http://arxiv.org/abs/2602.24286v1
 scenarios:
 - 大语言模型
@@ -27,10 +27,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# CUDA Agent：面向高性能内核生成的大规模智能体强化学习框架
-
 ---
 
 ## 基本信息

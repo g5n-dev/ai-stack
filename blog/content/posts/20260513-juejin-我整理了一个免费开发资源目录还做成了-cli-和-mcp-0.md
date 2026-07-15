@@ -15,9 +15,8 @@ tags:
 categories:
 - 开发工具
 source: juejin
-description: 项目简介 作者将免费开发资源整合为目录，并提供 CLI 与 MCP 客户端，方便在本地或 CI 中快速调用。 目标用户 独立开发者、AI
-  爱好者，尤其是需要快速接入大语言模型（Groq、OpenRouter、Gemini）进行 Demo 演示或 Side Project 的人群。 核心优势 - 资源免费且持续更新
-  -
+description: 独立开发者在构建 AI 应用时，常常需要在多个平台间切换、整合各类接口和资源。作者整理了一份免费开发资源目录，并将其封装为 CLI 工具和
+  MCP 服务，方便开发者通过命令行快速查询、调用所需资源，省去繁琐的手动搜索和配置过程。对于经常做 AI Demo 或 Side Project 的开发者来说，这套工具能有效提升开发效率。
 external_url: https://juejin.cn/post/7639286906792427529
 scenarios:
 - 命令行工具
@@ -26,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 开发资源目录CLI与MCP工具
-
 ---
 
 ## 基本信息
@@ -42,18 +37,7 @@ source_support: 0.0
 
 独立开发者在构建 AI 应用时，常常需要在多个平台间切换、整合各类接口和资源。作者整理了一份免费开发资源目录，并将其封装为 CLI 工具和 MCP 服务，方便开发者通过命令行快速查询、调用所需资源，省去繁琐的手动搜索和配置过程。对于经常做 AI Demo 或 Side Project 的开发者来说，这套工具能有效提升开发效率。
 
----
-## 描述
 
-这段文字已经是中文了（简体中文），可能是您复制错了内容？
-
-如果您是想把它转换为**繁体中文**，可以这样表达：
-
-> 我最近發現了一個對獨立開發者很友好的寶藏站點。如果你也經常做 AI Demo、小工具、Side Project，應該會懂那種想接 LLM，要找 Groq、OpenRouter、Gemini，它一定適合。
-
-如果您有其他想要翻译的内容，请告诉我！
-
----
 ## 摘要
 
 #### 项目简介
@@ -113,7 +97,6 @@ source_support: 0.0
 
 ---
 
----
 ## 站内链接
 
 - 分类： [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/)

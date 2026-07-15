@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 从噪声到图像：扩散模型交互指南
-
----
-
 ## 基本信息
 
 - **作者**: simedw

@@ -24,10 +24,8 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 🎙️ 🚀Horizon 1000：AI如何引爆基层医疗革命？💡
-
+description: OpenAI 和盖茨基金会联合推出 Horizon 1000，这是一个 5000 万美元的试点项目，旨在提升非洲地区的 AI 医疗能力。该计划的目标是到
+  2028 年覆盖 1,000 家诊所。
 ---
 
 ## 📋 基本信息
@@ -133,7 +131,6 @@ OpenAI与盖茨基金会共同启动了名为“Horizon 1000”的试点项目�
 
 ---
 
-# Horizon 1000：重塑非洲基层医疗的 AI 深度解析
 
 ## 1. 核心观点深度解读
 

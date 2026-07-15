@@ -33,10 +33,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Cord：协调多层级 AI 智能体树状协作框架
-
----
-
 ## 基本信息
 
 - **作者**: gfortaine

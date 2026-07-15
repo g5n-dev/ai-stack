@@ -1,5 +1,5 @@
 ---
-title: "Watermark Forensics for Generative Models: An Informati"
+title: "Watermark Forensics for Generative Models: An Information-Theoretic Perspective"
 date: 2026-07-15T23:05:07+08:00
 draft: false
 entry_kind: "auto"
@@ -14,11 +14,10 @@ extractor_version: "source-contract-v1"
 discovery_method: "arxiv_api"
 source_is_truncated: false
 source_support: 1.0
+source_title_chars_original: 79
 description: "当前保存的是来源摘要，不代表论文全文。请以原始来源为准。"
 external_url: http://arxiv.org/abs/2607.13003v1
 ---
-
-# Watermark Forensics for Generative Models: An Informati
 
 ## 基本信息
 

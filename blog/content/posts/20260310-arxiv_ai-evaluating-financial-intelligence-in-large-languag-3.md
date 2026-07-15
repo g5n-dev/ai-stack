@@ -16,8 +16,8 @@ categories:
 - 大模型
 - 论文
 source: arxiv
-description: 本文介绍了关于评估大型语言模型金融智能的研究工作，主要内容总结如下： **1. 研究背景与目的** 尽管大型语言模型在金融分析和投资研究领域的应用日益广泛，但针对其金融推理能力的系统性评估仍然有限。为此，研究团队推出了
-  **AI金融智能基准**，这是一个多维度评估框架。 **2. 评估维度与对象** * **评估维度*
+description: 针对大型语言模型在金融分析领域缺乏系统性评估的问题，该研究提出了“AI金融智能基准”框架，从事实准确性、分析完整性等五个维度对主流模型进行了测试。结果显示，SuperInvesting
+  在综合性能和“幻觉”控制上表现最佳，而检索型模型在数据时效性方面具有特定优势。由于摘要信息截断，该基准对投资决策的具体影响及后续研究方向尚无法从摘要确认。
 external_url: http://arxiv.org/abs/2603.08704v1
 scenarios:
 - 大语言模型
@@ -28,10 +28,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 评估大语言模型金融智能：SuperInvesting AI基准测试
-
 ---
 
 ## 基本信息

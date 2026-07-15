@@ -16,9 +16,8 @@ categories:
 - 开源生态
 - AI 工程
 source: juejin
-description: 以下是对所提供内容的简要总结（基于目录结构推断的核心要点）： **概述：OpenCode 开源 AI 编码 Agent 完全指南** 本文档详细介绍了
-  **OpenCode**——一个在开源社区取得巨大成功的 AI 编程助手，深度剖析了其从零起步到获得 10 万星标（100K Star）的爆发式增长历程。 1.
-  **项
+description: OpenCode 作为近期在 GitHub 上迅速获得 10 万 Star 的开源 AI 编码 Agent，其爆发式增长不仅反映了开发者对自动化编码工具的迫切需求，也为研究开源项目的运营提供了宝贵样本。本文将深入剖析
+  OpenCode 的团队背景、核心架构与功能特性，帮助读者全面理解该项目的技术内核与成功路径，为开发者的技术选型与开源实践提供参考。
 external_url: https://juejin.cn/post/7611427196129394722
 scenarios:
 - AI/ML项目
@@ -29,10 +28,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# OpenCode 完全指南：打造 10 万 Star 的开源 AI 编码 Agent
-
 ---
 
 ## 基本信息

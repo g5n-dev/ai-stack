@@ -16,8 +16,8 @@ categories:
 - 开发工具
 - 效率与方法论
 source: juejin
-description: Mermaid+AI：告别手动画图，AI助你高效生成流程图 在软件开发中，流程图、时序图、类图等是基础技能，传统拖拽式绘图虽直观但耗时。如今，**Mermaid+AI**的组合正改变这一现状，让画图更高效。
-  **Mermaid的优势** Mermaid是一种基于文本的图表生成工具，通过简单语法即可快速创建流程图、时序图
+description: 在软件开发的日常工作中，绘制流程图、时序图等图表是梳理逻辑与沟通协作的基础环节。然而，传统的图形化拖拽操作往往耗时费力，难以应对频繁的代码变更与迭代需求。本文将介绍如何利用
+  Mermaid 结合 AI 能力，通过编写代码的方式快速生成图表，帮助开发者从繁琐的绘图工作中解脱出来，实现文档与代码的同步更新。
 external_url: https://juejin.cn/post/7615069320984657974
 scenarios:
 - AI/ML项目
@@ -25,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Mermaid结合AI辅助生成流程图与工程图表
-
 ---
 
 ## 基本信息

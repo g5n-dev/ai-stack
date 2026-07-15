@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 构建智能体文明：多智能体协作系统开源
-
----
-
 ## 基本信息
 
 - **作者**: urav

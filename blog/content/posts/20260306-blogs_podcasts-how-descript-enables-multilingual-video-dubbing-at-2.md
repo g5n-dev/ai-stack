@@ -42,10 +42,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Descript 利用 OpenAI 模型实现大规模多语言视频配音
-
----
-
 ## 基本信息
 
 - **来源**: OpenAI Blog (blog)

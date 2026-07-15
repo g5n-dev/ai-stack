@@ -16,8 +16,7 @@ categories:
 - 论文
 - 大模型
 source: arxiv
-description: 背景 预训练扩散模型被冻结为教师，为文本到3D、单步蒸馏、数据归因等下游任务提供梯度。这些梯度本质上是噪声层和高斯采样的蒙特卡洛（MC）期望，估计方差大，导致每次采样都需昂贵的上游计算（渲染、仿真、编码），成为计算瓶颈。
-  方法 CARV（Compute‑Aware Variance‑accounting）框架提出层次化
+description: 预训练扩散模型作为教师模型为下游任务提供梯度时，其梯度本质上是蒙特卡洛期望估计，方差较大导致每次采样都需要昂贵的上游计算，成为计算瓶颈。CARV框架通过层次化蒙特卡洛估计器，将上游计算在多个扩散噪声重采样间摊销，并结合重要性采样与分层逆累积分布函数构造，有效降低梯度方差。
 external_url: http://arxiv.org/abs/2605.21489v1
 scenarios:
 - Web应用开发
@@ -25,10 +24,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 扩散模型降低期望估计方差的方法
-
 ---
 
 ## 基本信息
@@ -159,7 +154,6 @@ CARV的有效性依赖以下关键假设：第一，扩散噪声时间步的梯�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/) / [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

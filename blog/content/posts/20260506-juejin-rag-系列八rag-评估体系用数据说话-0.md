@@ -25,10 +25,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# RAG评估实战：RAGAS四指标量化分析
-
----
-
 ## 基本信息
 
 - **作者**: 冬奇Lab
@@ -86,7 +82,6 @@ RAG 系统怎么知道好不好？ 用 RAGAS 四个核心指标（忠实度、�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

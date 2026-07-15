@@ -16,8 +16,7 @@ categories:
 - 大模型
 - 论文
 source: arxiv
-description: '以下是关于《RVR: Retrieve-Verify-Retrieve for Comprehensive Question Answering》的简洁总结：
-  **核心目标** 为了解决那些具有多种有效答案的复杂查询，本文提出了一种名为 **RVR（检索-验证-检索）** 的多轮检索框架，旨在最大化答案的覆盖率，确保全'
+description: 针对复杂问题往往包含多个有效答案且难以一次性穷尽的挑战，本文提出了名为 RVR（检索-验证-再检索）的多轮检索框架。该方法通过迭代式的检索与验证机制，旨在提升答案的召回率与覆盖全面性。然而，受限于摘要信息，其具体的验证策略与计算开销尚无法从摘要确认。该框架为提升问答系统的鲁棒性提供了新思路，有望在需要高覆盖率的复杂信息检索场景中发挥作用。
 external_url: http://arxiv.org/abs/2602.18425v1
 scenarios:
 - RAG应用
@@ -27,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# RVR：检索-验证-检索框架提升综合问答能力
-
 ---
 
 ## 基本信息

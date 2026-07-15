@@ -16,7 +16,7 @@ categories:
 - 大模型
 source: hacker_news
 description: Claude Sonnet 5 是 Anthropic 推出的最新一代 AI 模型，在推理能力、多模态处理和上下文理解方面实现了显著提升。相比前代版本，它在复杂任务处理中的表现更加稳定，响应速度也有明显优化。本文将深入解析
-  Claude Sonnet 5 的核心技术升级，探讨其在实际应用场景中的表现，并为开发者和企业提
+  Claude Sonnet 5 的核心技术升级，探讨其在实际应用场景中的表现，并为开发者和企业提供选型参考。
 external_url: https://www.anthropic.com/news/claude-sonnet-5
 scenarios:
 - 大语言模型
@@ -26,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Claude Sonnet 5发布与特性分析
-
 ---
 
 ## 基本信息
@@ -83,7 +79,6 @@ Anthropic官方披露的技术文档显示，Claude Sonnet 5的上下文窗口�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

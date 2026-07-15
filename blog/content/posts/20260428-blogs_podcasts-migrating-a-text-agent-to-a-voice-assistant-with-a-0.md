@@ -16,7 +16,7 @@ categories:
 - AI 工程
 - 大模型
 source: blogs_podcasts
-description: 本文探讨如何将基于文本的代理迁移为使用 Amazon Nova 2 Sonic 的语音助手，重点比较两种交互形态的需求差异并细化架构拆分与提示词适配的关键步骤。通过对工具与子代理复用的实战经验进行剖析，帮助开发者规避迁移中的常见陷阱，提升实现效率。阅读后，您将获得可直接落地的迁移方案、评估指标以及在实际项目中快速迭代的
+description: 在这篇文章中，我们将探讨如何将传统的文本代理迁移为使用 Amazon Nova 2 Sonic 的对话式语音助手。我们将比较文本代理和语音代理的需求，突出不同用例的设计优先级，分解代理架构，并解决常见的关注点，如工具和子代理的复用以及系统提示词适配。本文将帮助您顺利完成迁移过程并避开常见陷阱。
 external_url: https://aws.amazon.com/blogs/machine-learning/migrating-a-text-agent-to-a-voice-assistant-with-amazon-nova-2-sonic
 scenarios:
 - AI/ML项目
@@ -25,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 文本代理转语音助手：Nova Sonic迁移指南
-
 ---
 
 ## 基本信息
@@ -123,7 +119,6 @@ source_support: 0.0
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

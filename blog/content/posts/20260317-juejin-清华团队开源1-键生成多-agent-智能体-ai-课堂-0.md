@@ -16,8 +16,8 @@ categories:
 - 大模型
 - 开源生态
 source: juejin
-description: 以下是对该内容的总结： **核心事件：** 清华大学团队开源了一款“1 键生成多 Agent”系统，旨在打造全新的 AI 智能体课堂。 **解决痛点：**
-  该系统直击传统教育“千人一面”的弊端。在传统课堂中，老师难以兼顾每位学生的进度，导致“讲得太快有人跟不上，讲得太慢有人坐不住”，教学效率堪忧。 **解决方案与愿景：
+description: 面对传统课堂中“千人一面”的教学困境，个性化教育往往受限于师资精力而难以真正落地。清华团队近期开源的多智能体系统，通过一键生成专属 AI
+  助教，为这一难题提供了新的技术解法。本文将深入解析该项目的架构与运行机制，探讨它如何利用多 Agent 协作实现规模化的因材施教，并展望其对未来教育模式的深远影响。
 external_url: https://juejin.cn/post/7618044561076158470
 scenarios:
 - AI/ML项目
@@ -25,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 清华团队开源！1 键生成多 Agent 智能体 AI 课堂
-
 ---
 
 ## 基本信息

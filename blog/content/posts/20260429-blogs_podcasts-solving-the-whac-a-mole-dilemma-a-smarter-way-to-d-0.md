@@ -16,8 +16,7 @@ categories:
 - 论文
 - AI 工程
 source: blogs_podcasts
-description: 背景 视觉模型在训练数据不均衡时常学到系统性偏差，导致对特定群体的识别错误率显著升高。 现有方法的局限 传统去偏技术（如重加权、对抗训练或特征归一化）往往在抑制一种偏差的同时引入或放大其他维度的偏差，甚至导致模型整体性能下降。
-  WRING 的核心思路 WRING（Weighted Residual Iterative
+description: 一种名为WRING的新型去偏技术，能够避免现有去偏方法中可能产生或加剧的偏见。 视觉模型在关键场景中的偏见问题日益突出，传统去偏方法常在消除一种偏差时意外放大其他偏差，形成类似“打地鼠”的困境。为此，研究者提出WRING技术，通过对训练样本和特征空间重新加权约束，在保持模型性能的同时实现更均衡的偏差控制。
 external_url: https://news.mit.edu/2026/smarter-way-to-debias-ai-vision-models-0429
 scenarios:
 - AI/ML项目
@@ -27,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# WRING技术避免AI视觉模型去偏副作用
-
 ---
 
 ## 基本信息
@@ -164,7 +159,6 @@ WRING 以轻量级损失插件形式出现，可直接嵌入主流框架（Tenso
 
 ---
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

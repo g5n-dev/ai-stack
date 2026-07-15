@@ -16,8 +16,8 @@ categories:
 - 大模型
 - AI 工程
 source: blogs_podcasts
-description: 结构化提示 Amazon Nova 2 Lite 采用结构化方式提供内容审核提示，基于 MLCommons AILuminate 评估标准，将审核类别、严重程度等字段预定义后传入模型，保证结果一致且易于解释。AILuminate
-  分类体系可自行替换为自定义政策，提示模板保持不变，便于快速适配不同业务需求。 自由形式提示
+description: 在这篇文章中，您将学习如何使用结构化和自由格式方法为 Amazon Nova 2 Lite 设计内容审核提示，这些方法基于 MLCommons
+  AILuminate 评估标准。这些提示技术以 AILuminate 分类法为例，但它们同样适用于您自己的自定义审核策略。您可以替换为自己的类别定义，提示结构保持不变。
 external_url: https://aws.amazon.com/blogs/machine-learning/prompting-amazon-nova-2-for-content-moderation
 scenarios:
 - AI/ML项目
@@ -27,10 +27,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Amazon Nova 2 Lite内容审核提示设计方法
-
 ---
 
 ## 基本信息
@@ -173,7 +169,6 @@ Amazon Nova 2在内容审核领域的提示工程实践表明，AI审核正在�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

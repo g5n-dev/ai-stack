@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Off Grid：手机端离线运行AI文本、图像及视觉模型
-
----
-
 ## 基本信息
 
 - **作者**: ali_chherawalla
@@ -115,14 +111,14 @@ def offline_text_generation():
     需要安装：pip install transformers torch
     """
     from transformers import pipeline
-    
+
     # 初始化文本生成管道（使用小型模型）
     generator = pipeline('text-generation', model='gpt2', device=-1)  # -1表示使用CPU
-    
+
     # 生成文本
     prompt = "人工智能的未来"
     result = generator(prompt, max_length=50, num_return_sequences=1)
-    
+
     print("生成的文本：", result[0]['generated_text'])
 
 # 说明：这个示例展示了如何使用本地模型生成文本，
@@ -137,18 +133,18 @@ def offline_image_generation():
     需要安装：pip install diffusers torch accelerate
     """
     from diffusers import StableDiffusionPipeline
-    
+
     # 加载轻量级模型（约1GB）
     pipe = StableDiffusionPipeline.from_pretrained(
         "runwayml/stable-diffusion-v1-5",
         torch_dtype=torch.float16
     )
     pipe = pipe.to("cpu")  # 强制使用CPU
-    
+
     # 生成图像
     prompt = "一只在森林里的小猫，水彩画风格"
     image = pipe(prompt).images[0]
-    
+
     image.save("generated_image.png")
     print("图像已保存为 generated_image.png")
 
@@ -165,11 +161,11 @@ def offline_image_recognition():
     """
     from torchvision import models, transforms
     from PIL import Image
-    
+
     # 加载预训练模型
     model = models.mobilenet_v3_large(pretrained=True)
     model.eval()
-    
+
     # 图像预处理
     preprocess = transforms.Compose([
         transforms.Resize(256),
@@ -177,20 +173,20 @@ def offline_image_recognition():
         transforms.ToTensor(),
         transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
     ])
-    
+
     # 加载并处理图像
     img = Image.open("test_image.jpg")
     img_t = preprocess(img)
     batch_t = torch.unsqueeze(img_t, 0)
-    
+
     # 预测
     with torch.no_grad():
         output = model(batch_t)
-    
+
     # 显示结果
     with open('imagenet_classes.txt') as f:  # 需要下载分类标签文件
         classes = [line.strip() for line in f.readlines()]
-    
+
     _, index = torch.max(output, 1)
     percentage = torch.nn.functional.softmax(output, dim=1)[0] * 100
     print(f"识别结果: {classes[index[0]]} ({percentage[index[0]].item():.2f}%)")
@@ -203,8 +199,6 @@ def offline_image_recognition():
 ## 案例研究
 
 ### 1：偏远地区野生动物保护监测项目
-
- 1：偏远地区野生动物保护监测项目
 
 **背景**:
 某国际非政府组织（NGO）在非洲南部的一个偏远国家公园内开展反盗猎巡逻工作。该区域地形复杂，且完全没有电信运营商的信号覆盖，也没有稳定的电力供应。
@@ -222,8 +216,6 @@ def offline_image_recognition():
 
 ### 2：战地与灾难救援记者的独立报道工具
 
- 2：战地与灾难救援记者的独立报道工具
-
 **背景**:
 一名独立调查记者经常前往发生自然灾害或政治冲突的地区进行报道。这些地区的通信基础设施通常处于瘫痪状态，且记者出于安全考虑，不能使用联网设备以防定位追踪。
 
@@ -239,8 +231,6 @@ def offline_image_recognition():
 ---
 
 ### 3：高保密性企业的离线移动办公辅助
-
- 3：高保密性企业的离线移动办公辅助
 
 **背景**:
 一家从事前沿国防科技研发的公司实行严格的信息安全政策，员工在处理核心机密文件时，使用的终端设备必须物理隔离，禁止连接互联网或企业内网。
@@ -349,8 +339,6 @@ def offline_image_recognition():
 
 ### 1: 运行 Off Grid 需要什么样的手机硬件配置？
 
-1: 运行 Off Grid 需要什么样的手机硬件配置？
-
 **A**: 由于 Off Grid 依赖于在本地设备上运行大型语言模型（LLM）和图像生成模型，硬件性能是影响体验的关键因素。
 
 1.  **处理器（CPU/GPU）**：建议使用搭载高端芯片的手机，如 Snapdragon 8 Gen 2/3 或等效的 MediaTek 处理器。虽然 CPU 推理可行，但支持 GPU 加速（通过 Vulkan 或 Metal）的手机速度会快得多。
@@ -360,8 +348,6 @@ def offline_image_recognition():
 ---
 
 ### 2: 使用 Off Grid 运行 AI 模型是完全免费的吗？
-
-2: 使用 Off Grid 运行 AI 模型是完全免费的吗？
 
 **A**: 是的，在软件使用和模型推理层面通常是免费的，但需要注意以下几点：
 
@@ -373,8 +359,6 @@ def offline_image_recognition():
 
 ### 3: 离线运行 AI 模型的效果与云端服务（如 ChatGPT）相比如何？
 
-3: 离线运行 AI 模型的效果与云端服务（如 ChatGPT）相比如何？
-
 **A**: 两者各有优劣，主要取决于你的具体需求：
 
 1.  **性能差距**：云端服务器拥有顶级的 GPU 集群，运算速度极快且能运行参数量巨大的模型（如 GPT-4）。手机受限于功耗和散热，运行速度较慢（生成速度可能只有每秒几个到十几个 token），且通常只能运行参数量较小的模型（如 7B 或 14B），因此在逻辑推理、复杂指令遵循和创意写作的质量上，通常不如 GPT-4 等顶级云端模型。
@@ -385,8 +369,6 @@ def offline_image_recognition():
 
 ### 4: 应用运行时手机会发热严重吗？耗电情况如何？
 
-4: 应用运行时手机会发热严重吗？耗电情况如何？
-
 **A**: 是的，发热和耗电是本地推理的主要副作用。
 
 1.  **发热**：运行 AI 模型会 100% 占用 CPU 或 GPU，这会导致设备负载升高。在长时间生成文本或图像时，手机背面会明显发热，甚至可能触发系统的温控降频，导致生成速度变慢。
@@ -395,8 +377,6 @@ def offline_image_recognition():
 ---
 
 ### 5: 我可以在 Off Grid 中使用哪些类型的模型？
-
-5: 我可以在 Off Grid 中使用哪些类型的模型？
 
 **A**: Off Grid 通常支持标准的开源模型格式，具体取决于其集成的推理引擎（如 llama.cpp 或类似的后端）：
 
@@ -408,8 +388,6 @@ def offline_image_recognition():
 
 ### 6: 如果我更换了手机，如何迁移我的模型和聊天记录？
 
-6: 如果我更换了手机，如何迁移我的模型和聊天记录？
-
 **A**: 由于 Off Grid 是本地优先的应用，数据迁移通常需要手动操作：
 
 1.  **模型文件**：模型文件通常存储在应用的专用文件夹中。在更换手机前，建议先将模型文件通过数据线传输到电脑备份，或者在新手机上重新下载。
@@ -418,8 +396,6 @@ def offline_image_recognition():
 ---
 
 ### 7: 为什么生成图像的速度比生成文本慢很多？
-
-7: 为什么生成图像的速度比生成文本慢很多？
 
 **A**: 这是由于计算复杂度的本质差异决定的。
 
@@ -433,7 +409,6 @@ def offline_image_recognition():
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

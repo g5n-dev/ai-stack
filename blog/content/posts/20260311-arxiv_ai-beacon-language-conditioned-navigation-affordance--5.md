@@ -16,8 +16,7 @@ categories:
 - 大模型
 - 论文
 source: arxiv
-description: 以下是对论文内容的简洁总结： **核心问题** 现有的语言条件化局部导航方法通常依赖视觉语言模型（VLM）在图像空间（2D）中进行推理。这种做法存在显著缺陷：模型只能预测可见像素内的目标，无法推断被家具或行人等遮挡区域内的目标位置。
-  **提出方案：BEACON** 论文提出了BEACON模型，旨在解决遮挡条件下的导航目
+description: 针对视觉语言导航中遮挡物导致目标不可见的问题，本文提出了BEACON框架，通过预测被遮挡区域的导航 affordance 来提升机器人的路径规划能力。该方法利用语言指令作为条件，推断出视线之外的可行走区域，从而在动态或复杂环境中保持鲁棒性。虽然摘要未详述具体的网络架构细节，但该工作为解决遮挡场景下的具身智能导航提供了新的思路，有望推动服务机器人在非结构化环境中的实际应用。
 external_url: http://arxiv.org/abs/2603.09961v1
 scenarios:
 - Web应用开发
@@ -27,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# BEACON：遮挡条件下的语言导航可行性预测
-
 ---
 
 ## 基本信息

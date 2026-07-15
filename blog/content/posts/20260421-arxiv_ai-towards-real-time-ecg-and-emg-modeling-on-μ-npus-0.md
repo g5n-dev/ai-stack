@@ -16,8 +16,7 @@ categories:
 - AI 工程
 - 数据
 source: arxiv
-description: 背景 随着微控制器级可穿戴硬件的普及，近实时、离线、隐私保护的推理需求日益增长。然而，生理信号（如心电图 ECG、肌电图 EMG）分析仍因模型过大、算子复杂而难以在低功耗神经处理单元（μNPU）上运行。Transformer
-  类模型虽然性能领先，却因动态注意力而无法适配资源受限的 μNPU。 方法 本文提出 Physi
+description: 本研究旨在评估在低功耗神经处理单元（μNPU）上实现实时心电图（ECG）和肌电图（EMG）建模的可行性。通过模型压缩与硬件感知的协同优化，作者展示了在资源受限的嵌入式平台上进行快速生理信号推断的能力。该工作为可穿戴健康监测提供了边缘端高精度信号处理的潜在路径，但具体的精度与功耗表现仍需从完整论文中确认。
 external_url: http://arxiv.org/abs/2604.18067v1
 scenarios:
 - Web应用开发
@@ -25,10 +24,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# μNPUs上ECG和EMG的实时建模方法
-
 ---
 
 ## 基本信息
@@ -140,7 +135,6 @@ PhysioLite的技术路线在可穿戴健康监测、远程医疗和运动生理�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [数据](/categories/%E6%95%B0%E6%8D%AE/)

@@ -15,8 +15,7 @@ tags:
 categories:
 - 大模型
 source: blogs_podcasts
-description: 背景 随着 GPT‑4、PaLM 等巨型基础模型的出现，模型本身已经具备极强的大规模知识与推理能力，过去通过大量标注数据对特定任务进行微调的模式正受到挑战。
-  趋势与原因 1. **Prompt‑Engineering 与 RLHF 取代微调**：通过少量示例或强化学习对齐即可让模型完成新任务，成本与周期显著低于传统微调
+description: 安静的一天，让我们反思微调何去何从 随着大语言模型能力的持续提升，传统微调方法的边界正在被重新审视。曾经作为模型定制化核心手段的微调技术，如今面临效率、成本与通用性之间的权衡。本文将梳理当前微调实践中的核心挑战，并探讨在模型能力快速迭代的背景下，开发者如何在定制化需求与技术演进之间找到更合理的路径。
 external_url: https://www.latent.space/p/ainews-the-end-of-finetuning
 scenarios:
 - 大语言模型
@@ -25,10 +24,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# AI微调：从繁荣到反思
-
 ---
 
 ## 基本信息
@@ -143,7 +138,6 @@ source_support: 0.0
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

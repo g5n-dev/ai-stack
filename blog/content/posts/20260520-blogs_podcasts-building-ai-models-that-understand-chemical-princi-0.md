@@ -16,8 +16,8 @@ categories:
 - AI 工程
 - 数据
 source: blogs_podcasts
-description: 研究概述 Connor Coley 专注于化学与机器学习的交叉领域，致力于构建能够理解化学原理的人工智能模型，以加速新药化合物的发现与设计。其工作利用大数据、图神经网络和生成模型等技术，从分子结构中提取化学知识，实现高效且可解释的药物研发流程。通过将数据驱动的方法与化学领域知识相结合，Coley
-  的研究旨在提升预测分子
+description: Connor Coley 从事化学与机器学习的交叉领域工作，致力于发现和设计新药化合物。 在药物研发中，让人工智能真正掌握化学原理而非仅依赖数据统计，是提升分子设计理性化的关键。Connor
+  Coley 致力于构建能够理解反应机理和构效关系的模型，旨在加速新药发现并降低实验成本。本文将深入剖析其背后的算法思路、训练策略以及在真实化合物库中的表现，为科研人员和工程师提供可借鉴的实践指南。
 external_url: https://news.mit.edu/2026/building-ai-models-with-chemical-principles-connor-coley-0520
 scenarios:
 - AI/ML项目
@@ -25,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 构建理解化学原理的AI模型以加速新药发现
-
 ---
 
 ## 基本信息
@@ -148,7 +144,6 @@ Connor Coley 专注于化学与机器学习的交叉领域，致力于构建能�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [数据](/categories/%E6%95%B0%E6%8D%AE/)

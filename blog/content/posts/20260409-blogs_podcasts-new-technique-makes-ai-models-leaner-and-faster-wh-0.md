@@ -15,8 +15,7 @@ tags:
 categories:
 - 大模型
 source: blogs_podcasts
-description: 核心思路 利用控制理论的反馈机制，在模型训练过程中实时监测权重与激活的贡献度，动态削减冗余结构。与传统训练后剪枝不同，训练中即进行“在线修剪”，让网络自行学习保持关键路径。
-  效果与优势 实验表明，该方法在保持原有精度的前提下，可将参数量和计算量分别降低约30%~40%，显著减少 GPU 训练时间和能耗。由于剪枝在训练阶
+description: 研究人员利用控制理论在训练期间削减人工智能模型的不必要复杂性，从而在不牺牲性能的情况下降低计算成本。 在模型规模持续膨胀的背景下，如何在保持预测能力的同时削减训练资源成为关键挑战。研究团队引入控制理论，通过在训练过程中动态识别并去除冗余结构，实现模型体积与计算开销的同步下降。该方法已在多个基准上验证，为实际部署提供了更高效、经济的设计思路。
 external_url: https://news.mit.edu/2026/new-technique-makes-ai-models-leaner-faster-while-still-learning-0409
 scenarios:
 - Web应用开发
@@ -24,10 +23,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# AI模型训练中复杂性削减技术
-
 ---
 
 ## 基本信息
@@ -142,7 +137,6 @@ source_support: 0.0
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

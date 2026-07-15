@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 语言模型自我改进：代理发现与测试时扩展
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2605.08083v1
@@ -136,7 +132,6 @@ AutoTTS 的应用前景体现在多个层面。首先，它提供了一种自动
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

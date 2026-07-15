@@ -16,7 +16,7 @@ categories:
 - 大模型
 - AI 工程
 source: blogs_podcasts
-description: 在肿瘤临床数据规模快速增长、隐私监管日趋严格的背景下，如何实现跨机构安全协作成为关键难题。OncoAgent 引入双层多智能体框架，将差分隐私与任务调度相结合，在不暴露原始数据的前提下完成多方决策支持。该架构通过层次化任务分配和轻量级隐私计算，兼顾准确性与计算效率。本文将系统阐述框架设计、技术实现及在真实数据集上的性能
+description: 在肿瘤临床数据规模快速增长、隐私监管日趋严格的背景下，如何实现跨机构安全协作成为关键难题。OncoAgent 引入双层多智能体框架，将差分隐私与任务调度相结合，在不暴露原始数据的前提下完成多方决策支持。该架构通过层次化任务分配和轻量级隐私计算，兼顾准确性与计算效率。本文将系统阐述框架设计、技术实现及在真实数据集上的性能评估，为相关研发提供可落地的参考。
 external_url: https://huggingface.co/blog/lablab-ai-amd-developer-hackathon/oncoagent-official-paper
 scenarios:
 - AI/ML项目
@@ -28,10 +28,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# OncoAgent双层多智能体隐私保护肿瘤决策框架
-
 ---
 
 ## 基本信息
@@ -120,7 +116,6 @@ OncoAgent提出了一种创新的双层多智能体框架，专为隐私保护�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Autoresearch_at_home：类SETI项目利用闲置资源训练LLM
-
----
-
 ## 基本信息
 
 - **作者**: austinbaggio

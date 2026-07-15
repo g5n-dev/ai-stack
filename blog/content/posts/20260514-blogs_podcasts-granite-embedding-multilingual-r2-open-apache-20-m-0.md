@@ -23,10 +23,8 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Granite多语言嵌入R2：32K上下文开源模型
-
+description: 【事实】该模型为 IBM Granite 系列最新的多语言嵌入实现，采用 32K 上下文窗口并在 Apache 2.0 许可下开源。 【作者观点】作者声称其在
+  100 M 参数以下的多语言检索任务中达到最佳质量。 【推断】从已公开的 MTEB 排行榜数据来看，模型在多语言段落检索和语义相似度上确实领先同规模对手，预示其在低资源语言场景的竞争力。
 ---
 
 ## 基本信息
@@ -118,7 +116,6 @@ R2版本在架构层面进行了系统性优化。采用改进的Transformer编�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [开源生态](/categories/%E5%BC%80%E6%BA%90%E7%94%9F%E6%80%81/)

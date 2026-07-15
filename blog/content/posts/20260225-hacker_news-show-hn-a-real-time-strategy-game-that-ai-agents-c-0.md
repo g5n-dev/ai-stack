@@ -32,10 +32,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AI 智能体可参与的即时战略游戏演示
-
----
-
 ## 基本信息
 
 - **作者**: __cayenne__

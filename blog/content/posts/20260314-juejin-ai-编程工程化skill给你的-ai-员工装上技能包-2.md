@@ -16,8 +16,8 @@ categories:
 - AI 工程
 - 开发工具
 source: juejin
-description: 以下是基于您提供的文本片段的总结： **核心主题：AI 编程工程化中的 Skill 机制** **主要观点：** 本文介绍了在 AI 编程工程化实践中的一种核心机制——**Skill（技能包）**。其本质是将完整的
-  Prompt 工作流进行封装和打包。 **关键作用：** 1. **赋予专业能力**：通过 Skill
+description: 在 AI 编程的工程化实践中，如何将零散的 Prompt 转化为可复用的系统能力，已成为提升开发效率的关键。本文深入探讨 Skill 机制，通过封装完整的工作流，让
+  AI 能够继承专家经验并突破单次交互的能力上限。通过阅读，你将掌握如何为 AI 员工配置“技能包”，从而构建出更稳定、专业的智能开发助手。
 external_url: https://juejin.cn/post/7616660062761549858
 scenarios:
 - AI/ML项目
@@ -26,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# AI编程工程化：Skill机制封装工作流赋予AI专业能力
-
 ---
 
 ## 基本信息

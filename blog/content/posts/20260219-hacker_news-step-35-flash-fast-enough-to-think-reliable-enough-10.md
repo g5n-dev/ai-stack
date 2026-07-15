@@ -33,10 +33,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Step 3.5 Flash 开源：支持高速深度推理
-
----
-
 ## 基本信息
 
 - **作者**: kristianp

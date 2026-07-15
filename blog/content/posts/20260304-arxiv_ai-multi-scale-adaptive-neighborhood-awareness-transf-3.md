@@ -16,8 +16,7 @@ categories:
 - 论文
 - 安全
 source: arxiv
-description: 本文介绍了一种名为**多尺度邻域感知变换器**的模型，旨在解决图欺诈检测中现有图神经网络（GNN）面临的局限性。 **背景与问题：** 图欺诈检测对金融和社交媒体等领域至关重要。尽管现有的GNN方法表现尚可，但其固有的归纳偏差限制了模型效果，主要体现在：
-  1. **同质性假设**：假设相邻节点具有相似特征，但这并不适用
+description: 现有的图神经网络常受限于同质性假设与长距离依赖建模能力的不足，难以有效捕捉欺诈节点中复杂的结构异常。为此，本文提出了多尺度邻域感知变换器（MANDATE），通过多尺度位置编码与差异化嵌入策略，旨在缓解良性与欺诈节点间的分布差异并增强全局感知能力。尽管摘要未详述多关系嵌入的具体融合机制，但该模型为提升图欺诈检测的鲁棒性提供了新的技术思路。
 external_url: http://arxiv.org/abs/2603.03106v1
 scenarios:
 - Web应用开发
@@ -25,10 +24,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 多尺度自适应邻域感知Transformer用于图欺诈检测
-
 ---
 
 ## 基本信息

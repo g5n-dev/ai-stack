@@ -17,7 +17,7 @@ categories:
 - AI 工程
 source: hacker_news
 description: 随着 AI 编程助手的普及，文本编辑器的交互模式正在经历一场深刻的变革。本文探讨了 Emacs 和 Vim 这两款经典工具如何适应智能代码补全与上下文感知的新时代，分析了它们在效率与定制性方面的独特优势。通过对比传统编辑习惯与
-  AI 辅助开发的融合路径，读者将了解到如何在保留原有工作流的同时，有效利用现代技术提升编程体
+  AI 辅助开发的融合路径，读者将了解到如何在保留原有工作流的同时，有效利用现代技术提升编程体验。
 external_url: https://batsov.com/articles/2026/03/09/emacs-and-vim-in-the-age-of-ai
 scenarios:
 - AI/ML项目
@@ -29,10 +29,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# AI 时代的编辑器演进：Emacs 与 Vim 的智能化实践
-
 ---
 
 ## 基本信息

@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 当 AI 智能体搞崩生产环境，责任由谁承担
-
----
-
 ## 基本信息
 
 - **作者**: zenoware

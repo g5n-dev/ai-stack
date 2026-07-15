@@ -16,8 +16,8 @@ categories:
 - 开发工具
 - 大模型
 source: blogs_podcasts
-description: 用户规模激增 Codex 在过去 6 个月里用户数量增长超过 10 倍，已累计达到约 700 万用户；在最近的约一天内又新增约 100 万用户，显示出强劲的增长势头。
-  与 Claude Code 的对比 该数据引发了对 Codex 是否已超越竞争对手 Claude Code 的猜测。由于 Claude Code 近期未
+description: 一个安静的日子，让我们可以用 Claude Code 报告的沉默之声来核实一些数字…… 过去六个月，代码生成模型 Codex 的活跃用户数已突破
+  700 万，日均新增约一百万使用者，增长超过十倍。与此同时，业界正热议 Codex 是否已超越同类产品 Claude Code。
 external_url: https://www.latent.space/p/ainews-codex-usage-up-10x-in-6-months
 scenarios:
 - AI/ML项目
@@ -25,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Codex用户数半年增长10倍至700万是否已超Claude Code
-
 ---
 
 ## 基本信息
@@ -134,7 +130,6 @@ Codex用户规模的爆发式增长正在重塑代码生成工具市场的竞争
 
 ---
 
----
 ## 站内链接
 
 - 分类： [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/) / [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

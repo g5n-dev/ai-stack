@@ -15,7 +15,7 @@ tags:
 categories:
 - 大模型
 source: blogs_podcasts
-description: 在自然语言处理对实时交互需求日益增长的背景下，Nemotron‑Labs 提出了一种基于扩散机制的全新语言模型，旨在实现几乎瞬时的文本生成。该模型通过改进噪声调度和并行解码策略，在保持生成质量的同时大幅降低推理时延。本文将深入解析其核心架构、关键优化技术以及在不同场景下的性能评估，帮助开发者快速评估并迁移该技术至实际产
+description: 在自然语言处理对实时交互需求日益增长的背景下，Nemotron‑Labs 提出了一种基于扩散机制的全新语言模型，旨在实现几乎瞬时的文本生成。该模型通过改进噪声调度和并行解码策略，在保持生成质量的同时大幅降低推理时延。本文将深入解析其核心架构、关键优化技术以及在不同场景下的性能评估，帮助开发者快速评估并迁移该技术至实际产品。
 external_url: https://huggingface.co/blog/nvidia/nemotron-labs-diffusion
 scenarios:
 - AI/ML项目
@@ -24,10 +24,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 近光速文本生成：Nemotron-Labs扩散语言模型解析
-
 ---
 
 ## 基本信息
@@ -115,7 +111,6 @@ source_support: 0.0
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

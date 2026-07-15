@@ -16,8 +16,8 @@ categories:
 - 论文
 - AI 工程
 source: arxiv
-description: 背景与动机 大块时序测试时训练（LaCT）在长上下文三维重建上表现突出，但全塑性推理时更新容易导致灾难性遗忘和过拟合，通常只能采用覆盖全部输入的单一长块，限制了对任意长度序列的单遍处理能力。
-  弹性测试时训练（ETTT） 受弹性权重巩固启发，提出在每次快速权重更新时引入 Fisher 加权的弹性先验，围绕一个维护的锚状态
+description: 大块时序测试时训练（LaCT）在长上下文三维重建上表现突出，但全塑性推理时更新容易导致灾难性遗忘和过拟合，通常只能采用覆盖全部输入的单一长块，限制了对任意长度序列的单遍处理能力。
+  受弹性权重巩固启发，提出在每次快速权重更新时引入 Fisher 加权的弹性先验，围绕一个维护的锚状态进行约束。锚状态通过过去快速权重的指数移动平均持续演化，以在稳定性与可塑性之间取得平衡。
 external_url: http://arxiv.org/abs/2604.07350v1
 scenarios:
 - Web应用开发
@@ -25,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 弹性测试时训练实现快速空间记忆
-
 ---
 
 ## 基本信息
@@ -137,7 +133,6 @@ FSM是基于ETTT架构设计的四维重建模型，能够从长观测序列中�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

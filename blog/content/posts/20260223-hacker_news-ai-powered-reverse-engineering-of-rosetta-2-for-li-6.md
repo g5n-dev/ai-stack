@@ -17,7 +17,7 @@ categories:
 - AI 工程
 source: hacker_news
 description: 将 Rosetta 2 移植到 Linux 一直是技术社区关注的难点，而基于 AI 的逆向工程为这一挑战提供了全新的解决思路。本文详细阐述了如何利用机器学习技术分析二进制指令，从而在非苹果硬件上实现高效的代码翻译。通过阅读此文，读者不仅能了解底层二进制翻译机制的实现细节，还能掌握将现代
-  AI 方法应用于系统级编程的实用
+  AI 方法应用于系统级编程的实用技巧。
 external_url: https://github.com/Inokinoki/attesor
 scenarios:
 - 大语言模型
@@ -26,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# AI逆向工程实现Rosetta 2在Linux上的移植
-
 ---
 
 ## 基本信息

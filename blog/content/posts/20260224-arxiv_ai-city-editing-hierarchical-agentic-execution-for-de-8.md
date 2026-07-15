@@ -16,8 +16,7 @@ categories:
 - 大模型
 - 论文
 source: arxiv
-description: 本文介绍了名为 **City Editing** 的研究工作，旨在利用人工智能技术解决城市更新中地理空间布局修改效率低下的问题。以下是内容总结：
-  **1. 背景与问题** 随着城市发展，交通拥堵和功能失衡等问题日益突出，这要求对现有规划进行高效的“修改”而非“推倒重来”。然而，在实践中，即使是微小的城市变动也需要大量人
+description: 针对城市更新中地理空间布局修改依赖人工重绘、迭代效率低下的痛点，本文提出了 City Editing 这一分层智能体框架。该方法利用多模态推理将自然语言指令转化为对结构化地理数据的机器可执行任务，并通过多级协调机制处理空间要素间的依赖关系。这一尝试有望将城市规划从静态设计转变为可编程的动态交互模式，不过其在复杂场景下的具体执行精度目前尚无法从摘要确认。
 external_url: http://arxiv.org/abs/2602.19326v1
 scenarios:
 - Web应用开发
@@ -25,10 +24,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 城市编辑：面向依赖感知的分层智能体城市地理空间修改
-
 ---
 
 ## 基本信息

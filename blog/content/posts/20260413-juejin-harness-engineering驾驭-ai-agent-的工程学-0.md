@@ -15,8 +15,8 @@ tags:
 categories:
 - AI 工程
 source: juejin
-description: 背景与概念 Harness Engineering（驾驭工程）是一套系统化构建、测试、评估 AI Agent 的方法论，强调在实际使用场景（如终端交互）中持续迭代模型与工具的配合，而非单纯追求更大模型。
-  实验结果 LangChain 通过一次端到端实验验证：在同一模型上，仅更换更强大的模型后，终端任务的准确率仅提升 0
+description: 在 AI Agent 开发中，换用更强大的语言模型往往并不能带来预期的效果提升。Harness Engineering 这一概念，正是对这一现象的系统性回应——它将关注点从模型本身转向工程实践，探索如何通过系统化的方法论释放
+  AI Agent 的潜力。LangChain 的实验表明，同样的模型在不同工程配置下表现差异显著。
 external_url: https://juejin.cn/post/7628067175559381034
 scenarios:
 - AI/ML项目
@@ -24,10 +24,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# AI Agent 工程学：换模型为何仅提升 0.7%
-
 ---
 
 ## 基本信息
@@ -96,7 +92,6 @@ LangChain 通过一次端到端实验验证：在同一模型上，仅更换更�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

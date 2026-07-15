@@ -25,10 +25,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# ChatGPT 5.5 Pro上手体验
-
----
-
 ## 基本信息
 
 - **作者**: _alternator_
@@ -80,7 +76,6 @@ ChatGPT 5.5 Pro在多模态理解与复杂推理任务上展现了显著进步�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

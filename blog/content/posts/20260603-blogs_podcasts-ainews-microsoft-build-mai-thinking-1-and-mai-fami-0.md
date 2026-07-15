@@ -16,7 +16,8 @@ categories:
 - 大模型
 - AI 工程
 source: blogs_podcasts
-description: 在本次 Microsoft Build 大会上，推出了 MAI-Thinking-1 及 MAI 家族模型，展示了在推理能力与多模态任务上的技术突破。通过改进注意力机制和大规模预训练，这些模型实现了更高的计算效率和更精准的输出，成为企业构建智能应用的关键组件。对开发者而言，掌握新模型的特性和调用方式，有助于快速在项目中
+description: Microsoft Build 回顾，以及新的 MAI 模型技术细节 在本次 Microsoft Build 大会上，推出了 MAI-Thinking-1
+  及 MAI 家族模型，展示了在推理能力与多模态任务上的技术突破。通过改进注意力机制和大规模预训练，这些模型实现了更高的计算效率和更精准的输出，成为企业构建智能应用的关键组件。
 external_url: https://www.latent.space/p/ainews-microsoft-build-mai-thinking
 scenarios:
 - AI/ML项目
@@ -25,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 微软Build MAI模型技术解析
-
 ---
 
 ## 基本信息
@@ -174,7 +171,6 @@ MAI‑Thinking‑1 提供可插拔的“思考节点”，业务人员通过拖�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

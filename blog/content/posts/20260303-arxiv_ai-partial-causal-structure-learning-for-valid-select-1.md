@@ -16,8 +16,8 @@ categories:
 - 论文
 - 数据
 source: arxiv
-description: 本文介绍了一种在**干预实验**（如基因组学CRISPR筛选）中，通过**部分因果结构学习**来实现**有效选择性共形预测**的方法。核心内容总结如下：
-  **1. 背景与挑战** 选择性共形预测可通过识别与测试样本“可交换”的校准样本来缩小不确定性集。在干预场景下，这种可交换性通常仅存在于未受干预影响的变量子集（即非后
+description: 针对干预实验中因因果结构未知导致校准样本失效的问题，本文提出了一种结合部分因果结构学习的有效选择性共形预测方法。作者推导了有限样本下的鲁棒覆盖定理，并设计了无需完整因果图、仅针对后代节点进行二元判定的任务驱动型算法。该方法在保证覆盖率的同时降低了因果推断的难度，为
+  CRISPR 筛选等场景提供了更可靠的量化不确定性工具。
 external_url: http://arxiv.org/abs/2603.02204v1
 scenarios:
 - Web应用开发
@@ -27,10 +27,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 干预下基于部分因果学习的有效选择性共形推断
-
 ---
 
 ## 基本信息

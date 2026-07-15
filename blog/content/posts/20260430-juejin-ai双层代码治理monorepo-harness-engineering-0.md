@@ -16,9 +16,8 @@ categories:
 - AI 工程
 - 开发工具
 source: juejin
-description: Monorepo 优势 - **完整上下文**：所有模块、依赖、配置集中于同一仓库，AI 能一次性获取全部代码与依赖关系，降低跨仓库检索成本。
-  - **统一工具链**：统一的构建、测试、发布流程让 AI 在生成代码时遵循一致的标准，减少因环境差异导致的错误。 - **增量分析**：通过图的依赖关系，AI
-  可精准定位受影
+description: 在AI辅助编程工具日益普及的今天，许多团队发现AI生成的代码质量参差不齐，难以融入现有工程体系。这并非AI能力不足，而是项目组织方式与AI工作模式不匹配的结果。本篇文章介绍两层代码治理思路：Monorepo为AI提供完整的代码上下文视图，帮助其理解项目全貌；Harness
+  Engineering通过标准化执行框架，让AI的输出更加可控可靠。
 external_url: https://juejin.cn/post/7634325990316605494
 scenarios:
 - AI/ML项目
@@ -26,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# AI双层代码治理方案：Monorepo上下文+Harness规范执行
-
 ---
 
 ## 基本信息
@@ -43,9 +38,8 @@ source_support: 0.0
 在AI辅助编程工具日益普及的今天，许多团队发现AI生成的代码质量参差不齐，难以融入现有工程体系。这并非AI能力不足，而是项目组织方式与AI工作模式不匹配的结果。本篇文章介绍两层代码治理思路：Monorepo为AI提供完整的代码上下文视图，帮助其理解项目全貌；Harness Engineering通过标准化执行框架，让AI的输出更加可控可靠。阅读后你将掌握如何在既有工程实践基础上引入AI能力，找到适合自己团队的解决方案。
 
 ---
-## 描述
 
-# 中文翻译
+## 中文翻译
 
 AI 代码越来越强，但开发效率提升不明显？可能是项目结构的问题。这篇讲清楚两套方案：Monorepo 让 AI 看到完整上下文，Harness Engineering 让 AI 执行更规范。两者结合
 
@@ -108,7 +102,6 @@ AI 代码生成能力的提升并未直接转化为开发效率的显著改善�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/)

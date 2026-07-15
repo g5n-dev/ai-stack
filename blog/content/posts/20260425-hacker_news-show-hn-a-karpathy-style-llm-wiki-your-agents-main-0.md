@@ -16,7 +16,7 @@ categories:
 - 大模型
 - 开发工具
 source: hacker_news
-description: 本文介绍一种基于 Markdown 和 Git 的 LLM 维基系统，模仿 Karpathy 的做法，让代理（agents）在运行时自动维护文档。通过把知识沉淀在版本化的文本文件中，团队可以实现文档的持续更新、审计回滚以及跨工具的共享。阅读本文后，你可以获取完整的实现思路、关键代码片段以及部署步骤，帮助自己在项目里快速
+description: 本文介绍一种基于 Markdown 和 Git 的 LLM 维基系统，模仿 Karpathy 的做法，让代理（agents）在运行时自动维护文档。通过把知识沉淀在版本化的文本文件中，团队可以实现文档的持续更新、审计回滚以及跨工具的共享。阅读本文后，你可以获取完整的实现思路、关键代码片段以及部署步骤，帮助自己在项目里快速搭建同类知识库。
 external_url: https://github.com/nex-crm/wuphf
 scenarios:
 - 大语言模型
@@ -24,10 +24,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Karpathy风格LLM Wiki：代理自动维护Markdown文档
-
 ---
 
 ## 基本信息
@@ -58,7 +54,6 @@ source_support: 0.0
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/)

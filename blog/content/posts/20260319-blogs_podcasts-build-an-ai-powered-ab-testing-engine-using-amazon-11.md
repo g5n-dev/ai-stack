@@ -15,8 +15,9 @@ tags:
 categories:
 - AI 工程
 source: blogs_podcasts
-description: AI驱动的A/B测试引擎构建指南 概述 本文介绍如何利用亚马逊云服务构建一个AI驱动的A/B测试引擎，该系统能够通过分析用户上下文信息，智能地进行变体分配决策，从而提升传统A/B测试的效果。
-  技术架构 核心组件 **1. Amazon Bedrock** - 提供基础的大语言模型能力 - 支持多种AI模型的调用 - 作
+description: 本文向您展示如何使用 Amazon Bedrock、Amazon Elastic Container Service、Amazon DynamoDB
+  和模型上下文协议 (MCP) 构建 AI 驱动的 A/B 测试引擎。该系统通过分析用户上下文来改进传统的 A/B 测试，在实验期间做出更智能的变体分配决策。 传统的
+  A/B 测试在实验期间只能基于固定规则分配变体，难以适应用户行为的多样性。
 external_url: https://aws.amazon.com/blogs/machine-learning/build-an-ai-powered-a-b-testing-engine-using-amazon-bedrock
 scenarios:
 - Web应用开发
@@ -24,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 使用 Amazon Bedrock 构建 AI 驱动 A/B 测试引擎
-
 ---
 
 ## 基本信息

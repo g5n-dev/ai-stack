@@ -16,7 +16,7 @@ categories:
 - 开发工具
 - AI 工程
 source: hacker_news
-description: 随着大语言模型（LLM）深度融入开发工作流，代码库规模与模型上下文窗口之间的匹配度，正成为影响代码生成与理解效率的关键变量。本文介绍的一款开源工具，能够直观评估代码库对上下文窗口的适配情况，帮助开发者识别潜在的架构瓶颈。通过阅读，你将了解该工具的实现原理，以及如何利用它优化代码结构，从而在有限的上下文内获得更精准的模型
+description: 随着大语言模型（LLM）深度融入开发工作流，代码库规模与模型上下文窗口之间的匹配度，正成为影响代码生成与理解效率的关键变量。本文介绍的一款开源工具，能够直观评估代码库对上下文窗口的适配情况，帮助开发者识别潜在的架构瓶颈。通过阅读，你将了解该工具的实现原理，以及如何利用它优化代码结构，从而在有限的上下文内获得更精准的模型反馈。
 external_url: https://github.com/qwibitai/nanoclaw/tree/main/repo-tokens
 scenarios:
 - 大语言模型
@@ -28,10 +28,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 展示代码库与 LLM 上下文窗口适配度的徽章工具
-
 ---
 
 ## 基本信息

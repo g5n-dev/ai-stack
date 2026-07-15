@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 从隐藏向量到文本：LM Head 如何预测下一个词
-
----
-
 ## 基本信息
 
 - **作者**: 树獭叔叔

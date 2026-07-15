@@ -17,7 +17,8 @@ categories:
 - AI 工程
 source: hacker_news
 description: 在服务器管理与自动化运维领域，选择 MCP（模型上下文协议）还是传统的 CLI（命令行界面），往往取决于具体的使用场景与团队的工作流。CLI
-  凭借其精确的控制逻辑，依然是处理复杂系统任务的首选；而 MCP 则通过标准化的接口，显著降低了大语言模型与工具交互的门槛。本文将深入剖析两者的技术边界，探讨如何在保持系统安全性的
+  凭借其精确的控制逻辑，依然是处理复杂系统任务的首选；而 MCP 则通过标准化的接口，显著降低了大语言模型与工具交互的门槛。本文将深入剖析两者的技术边界，探讨如何在保持系统安全性的前提下，利用
+  MCP 提升开发效率，并帮助读者为不同项目选择最合适的交互方式。
 external_url: https://ejholmes.github.io/2026/02/28/mcp-is-dead-long-live-the-cli.html
 scenarios:
 - 命令行工具
@@ -34,10 +35,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# MCP 与 CLI 的适用场景对比分析
-
 ---
 
 ## 基本信息

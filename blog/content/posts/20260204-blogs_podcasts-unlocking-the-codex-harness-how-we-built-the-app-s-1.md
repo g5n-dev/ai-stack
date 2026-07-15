@@ -16,8 +16,8 @@ categories:
 - AI 工程
 - 后端
 source: blogs_podcasts
-description: '**内容总结：** 本文主要介绍了 **Codex App Server** 的构建过程及其核心功能。这是一个基于 **双向 JSON-RPC
-  API** 构建的服务器，旨在将 Codex 智能体嵌入到应用程序中。 **主要特性与能力包括：** 1. **双向通信**：利用 JSON-RPC 架构实现客户端与服务器之间'
+description: 了解如何使用 Codex 应用服务器嵌入 Codex 代理，它是一个双向 JSON-RPC API，支持流式进度、工具调用、审批与差异展示。
+  构建一个能够可靠处理复杂交互的 AI 应用，往往需要解决状态管理与工具调用的底层难题。Codex 应用服务器通过双向 JSON-RPC API，将代理能力无缝嵌入业务系统，支持流式进度、审批流程及差异展示。
 external_url: https://openai.com/index/unlocking-the-codex-harness
 scenarios:
 - 后端开发
@@ -33,10 +33,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 构建 Codex 应用服务器：嵌入代理与双向 JSON-RPC API 实践
-
 ---
 
 ## 基本信息
@@ -385,7 +381,6 @@ source_support: 0.0
 ---
 
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [后端](/categories/%E5%90%8E%E7%AB%AF/)

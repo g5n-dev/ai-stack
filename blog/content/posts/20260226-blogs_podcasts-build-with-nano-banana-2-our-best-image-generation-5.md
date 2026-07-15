@@ -34,10 +34,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 使用 Nano Banana 2 构建图像生成与编辑应用
-
----
-
 ## 基本信息
 
 - **来源**: Google AI Blog (blog)

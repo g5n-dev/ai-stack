@@ -16,8 +16,9 @@ categories:
 - 大模型
 - 论文
 source: blogs_podcasts
-description: 本文主要介绍了用于识别大型语言模型（LLMs）中关键交互行为的算法 **SPEX** 和 **ProxySPEX**。 **核心问题：**
-  理解和解释像LLMs这样的复杂机器学习系统是现代AI的关键挑战。为了构建更安全、可信赖的AI，研究人员通过**特征归因**、**数据归因**和**机制可解释性**等不同视角来分析模
+description: 理解复杂的机器学习系统，尤其是大型语言模型，是现代人工智能领域的一项关键挑战。可解释性研究旨在让模型构建者和受其影响的人类能够更清晰地看到决策过程，这是迈向更安全、更值得信赖的
+  AI 的一步。为了获得全面的理解，我们可以通过不同的视角来分析这些系统：特征归因，它分离出驱动预测的特定输入特征（Lundberg & Lee, 2017; Ribeiro
+  et al., 2022）；
 external_url: http://bair.berkeley.edu/blog/2026/03/13/spex
 scenarios:
 - 大语言模型
@@ -34,10 +35,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 面向大规模语言模型的交互识别与归因分析
-
 ---
 
 ## 基本信息

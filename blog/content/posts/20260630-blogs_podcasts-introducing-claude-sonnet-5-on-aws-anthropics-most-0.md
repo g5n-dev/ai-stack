@@ -16,8 +16,8 @@ categories:
 - 大模型
 - AI 工程
 source: blogs_podcasts
-description: 今天，Anthropic 在 Amazon Bedrock 与 Claude Platform on AWS 上线了全新一代的 Sonnet
-  模型——Claude Sonnet 5。这是首个基于最新一代架构的 Sonnet，在保持与前代相同价格的前提下，提供业界领先的综合智能。Sonnet 5 在代码编写、多步代理、办
+description: 今天，我们很高兴宣布，Anthropic最先进的Sonnet模型——Claude Sonnet 5现已登陆Amazon Bedrock和AWS上的Claude
+  Platform。Claude Sonnet 5是Anthropic最新一代的首个Sonnet模型，代表着一次意义重大的飞跃。它以Sonnet的定价提供一流智能水平，适用于编程、Agent和日常专业任务…
 external_url: https://aws.amazon.com/blogs/machine-learning/introducing-claude-sonnet-5-on-aws-anthropics-most-capable-sonnet-model
 scenarios:
 - AI/ML项目
@@ -25,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Anthropic Claude Sonnet 5登陆AWS Amazon Bedrock平台
-
 ---
 
 ## 基本信息
@@ -96,7 +92,6 @@ Claude Sonnet 5在AWS平台的发布是Anthropic企业级AI布局的重要一步
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

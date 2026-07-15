@@ -16,7 +16,7 @@ categories:
 - 论文
 - 大模型
 source: arxiv
-description: 以下是对该内容的中文总结： **论文标题：** JUCAL：分类任务中偶然不确定性与认知不确定性的联合校准 **核心问题：** 现有的主流分类校准方法（如温度缩放和共形方法）主要存在一个缺陷：它们无法平衡**偶然不确定性**（Aleatoric，即数据中的标签噪声）和**认知不确定性**（Epistemic，即模型本身
+description: 针对分类任务中现有校准方法难以兼顾偶然不确定性与认知不确定性的问题，本文提出了 JUCAL 方法，旨在实现两者的联合校准。该方法通过特定机制对两类不确定性进行协同处理，以提升模型预测的可靠性。尽管摘要未详述具体技术细节，无法从摘要确认其实现路径，但该工作为更精细的模型不确定性量化提供了新的思路，有望推动在噪声数据场景下的可信分类应用。
 external_url: http://arxiv.org/abs/2602.20153v1
 scenarios:
 - AI/ML项目
@@ -26,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# JUCAL：分类任务中偶然与认知不确定性的联合校准
-
 ---
 
 ## 基本信息

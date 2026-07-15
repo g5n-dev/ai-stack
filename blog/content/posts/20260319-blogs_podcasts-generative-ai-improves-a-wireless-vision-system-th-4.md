@@ -16,7 +16,7 @@ categories:
 - AI 工程
 - 系统与基础设施
 source: blogs_podcasts
-description: 该技术借助生成式人工智能提升无线视觉系统的穿透成像能力。通过捕获环境中Wi‑Fi信号的多径反射与散射，并利用深度生成模型对被遮挡区域进行重建，系统能够在视线受阻的情况下获取隐藏物体的位置、形状以及室内布局信息。机器人因此能够在墙壁、家具等障碍物后面更精准地探测目标、理解空间结构，显著提高室内导航、搜救、安防等场景的感知
+description: 凭借这项新技术，机器人可以利用反射的Wi-Fi信号更准确地检测隐藏物体，或者理解室内场景。 生成式 AI 为基于 Wi‑Fi 信号的无线视觉系统带来突破，使机器人能够在视线受阻时利用反射波检测隐藏物体并感知室内布局。该技术的核心在于通过生成模型弥补噪声和信号衰减，从而提升定位与识别的可靠性。随着机器人与智能家居等场景对全环境感知的需求增长，这一进展为实现更安全、更高效的自动化提供了关键技术支撑。
 external_url: https://news.mit.edu/2026/generative-ai-improves-wireless-vision-system-sees-through-obstructions-0319
 scenarios:
 - AI/ML项目
@@ -26,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 生成式AI提升Wi-Fi视觉系统穿透遮挡能力
-
 ---
 
 ## 基本信息

@@ -31,10 +31,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# NanoGPT Slowrun：有限数据与无限算力的语言建模
-
----
-
 ## 基本信息
 
 - **作者**: sdpmas

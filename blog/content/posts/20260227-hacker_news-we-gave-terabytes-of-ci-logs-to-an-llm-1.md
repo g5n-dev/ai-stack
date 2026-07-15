@@ -31,10 +31,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 利用大语言模型分析 TB 级 CI 日志数据
-
----
-
 ## 基本信息
 
 - **作者**: shad42

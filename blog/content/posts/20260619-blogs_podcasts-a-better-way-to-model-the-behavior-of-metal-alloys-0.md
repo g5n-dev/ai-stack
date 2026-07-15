@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# MIT新方法捕捉金属合金原子模式提升预测准确性
-
----
-
 ## 基本信息
 
 - **来源**: MIT News (Machine Learning) (blog)
@@ -85,7 +81,6 @@ MIT研究团队研发出一种更精准的金属合金行为建模方法。该�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

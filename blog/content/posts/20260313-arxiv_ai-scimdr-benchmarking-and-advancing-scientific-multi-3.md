@@ -16,8 +16,8 @@ categories:
 - 大模型
 - 数据
 source: arxiv
-description: 本文介绍了 **SciMDR**，一个旨在推进科学多模态文档推理能力的大规模数据集及相关框架。 **背景与挑战：** 为构建基础模型训练所需的科学多模态数据集，现有方法往往难以兼顾**规模**、**忠实度**与**真实感**。
-  **提出的解决方案：** 作者提出了一个“合成与再定位”框架，包含两个阶段： 1. **以声
+description: 科学多模态文档推理往往受限于数据集规模、保真度与真实性难以兼顾的困境。为此，本文提出了 SciMDR 数据集及“合成-重定位”框架，试图通过生成式方法构建高质量语料。该方法在提升模型推理能力方面的具体效果，目前无法从摘要确认。该工作为未来解决科学文档中的复杂跨模态逻辑推理提供了新的数据基准与思路。
+  本文介绍了 SciMDR，一个旨在推进科学多模态文档推理能力的大规模数据集及相关框架。
 external_url: http://arxiv.org/abs/2603.12249v1
 scenarios:
 - Web应用开发
@@ -29,10 +29,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# SciMDR：科学多模态文档推理基准与进展
-
 ---
 
 ## 基本信息

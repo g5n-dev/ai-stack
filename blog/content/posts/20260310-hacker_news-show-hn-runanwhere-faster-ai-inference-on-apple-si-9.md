@@ -36,10 +36,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# RunAnwhere：在 Apple Silicon 上实现更快的 AI 推理
-
----
-
 ## 基本信息
 
 - **作者**: sanchitmonga22

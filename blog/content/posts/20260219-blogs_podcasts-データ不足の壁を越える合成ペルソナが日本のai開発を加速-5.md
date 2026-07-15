@@ -38,10 +38,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 合成人设技术突破数据瓶颈，加速日本AI开发
-
----
-
 ## 基本信息
 
 - **来源**: Hugging Face Blog (blog)

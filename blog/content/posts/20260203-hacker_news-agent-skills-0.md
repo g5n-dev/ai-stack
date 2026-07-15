@@ -17,7 +17,8 @@ categories:
 - 大模型
 source: hacker_news
 description: Agent Skills 是大模型应用从“对话”走向“行动”的关键技术，它通过赋予模型调用外部工具的能力，显著提升了系统在复杂业务场景中的实用价值。本文将深入剖析
-  Agent Skills 的核心设计逻辑与落地难点，并结合实际案例探讨如何构建高效的工具调用体系。通过阅读，你将掌握一套可复用的技能设计方法论，为开发高可用
+  Agent Skills 的核心设计逻辑与落地难点，并结合实际案例探讨如何构建高效的工具调用体系。通过阅读，你将掌握一套可复用的技能设计方法论，为开发高可用、智能化的
+  Agent 应用提供参考。
 external_url: https://agentskills.io/home
 scenarios:
 - 大语言模型
@@ -36,10 +37,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Agent Skills：AI 智能体技能评估框架
-
 ---
 
 ## 基本信息
@@ -136,7 +133,7 @@ def get_hn_top_stories(limit=5):
     url = "https://hacker-news.firebaseio.com/v0/topstories.json"
     response = requests.get(url)
     story_ids = response.json()[:limit]
-    
+
     stories = []
     for story_id in story_ids:
         # 获取每篇文章的详细信息
@@ -146,7 +143,7 @@ def get_hn_top_stories(limit=5):
             "title": detail_response.get("title"),
             "url": detail_response.get("url", f"https://news.ycombinator.com/item?id={story_id}")
         })
-    
+
     return stories
 
 # 测试调用
@@ -171,14 +168,14 @@ def search_hn_by_date(keyword, days=7):
     url = "https://hacker-news.firebaseio.com/v0/newstories.json"
     response = requests.get(url)
     story_ids = response.json()[:500]  # 取最近500篇
-    
+
     threshold_time = datetime.now() - timedelta(days=days)
     matches = []
-    
+
     for story_id in story_ids:
         detail_url = f"https://hacker-news.firebaseio.com/v0/item/{story_id}.json"
         detail_response = requests.get(detail_url).json()
-        
+
         # 检查时间范围和关键词匹配
         if detail_response.get("time", 0) >= threshold_time.timestamp():
             title = detail_response.get("title", "").lower()
@@ -188,7 +185,7 @@ def search_hn_by_date(keyword, days=7):
                     "url": detail_response.get("url", f"https://news.ycombinator.com/item?id={story_id}"),
                     "time": datetime.fromtimestamp(detail_response.get("time")).strftime("%Y-%m-%d")
                 })
-    
+
     return matches
 
 # 测试调用
@@ -210,10 +207,10 @@ def get_user_comment_stats(username):
     # 获取用户信息
     user_url = f"https://hacker-news.firebaseio.com/v0/user/{username}.json"
     user_data = requests.get(user_url).json()
-    
+
     if not user_data:
         return {"error": "用户不存在"}
-    
+
     # 获取最近100条评论
     comment_ids = user_data.get("submitted", [])[:100]
     stats = {
@@ -222,18 +219,18 @@ def get_user_comment_stats(username):
         "avg_comment_length": 0,
         "top_comment": None
     }
-    
+
     total_length = 0
     max_score = -1
-    
+
     for comment_id in comment_ids:
         comment_url = f"https://hacker-news.firebaseio.com/v0/item/{comment_id}.json"
         comment_data = requests.get(comment_url).json()
-        
+
         if comment_data and comment_data.get("type") == "comment":
             text = comment_data.get("text", "")
             total_length += len(text)
-            
+
             # 寻找得分最高的评论
             score = comment_data.get("score", 0)
             if score > max_score:
@@ -242,7 +239,7 @@ def get_user_comment_stats(username):
                     "text": text[:100] + "..." if len(text) > 100 else text,
                     "score": score
                 }
-    
+
     stats["avg_comment_length"] = total_length / stats["total_comments"] if stats["total_comments"] > 0 else 0
     return stats
 
@@ -260,8 +257,6 @@ if __name__ == "__main__":
 
 ### 1：Cognition AI（Devin ）
 
- 1：Cognition AI（Devin ）
-
 **背景**:
 Cognition AI 是一家专注于 AI 编程代理的初创公司，其产品 Devin 被称为世界上第一个 AI 软件工程师。在早期开发阶段，团队面临如何让 LLM（大语言模型）在复杂、真实且具有多步骤的软件工程任务中保持上下文连贯性和准确性的挑战。
 
@@ -278,8 +273,6 @@ Devin 能够在 Upwork 等自由职业平台上完成真实的软件工程任务
 
 ### 2：Rabbit Inc.（R1 与 Large Action Model）
 
- 2：Rabbit Inc.（R1 与 Large Action Model）
-
 **背景**:
 Rabbit Inc. 是一家硬件初创公司，推出了便携式 AI 设备 Rabbit R1。他们的目标是通过自然语言界面取代传统的 APP 操作模式，让用户不再需要在手机屏幕上点击无数次的按钮来点咖啡、叫车或播放音乐。
 
@@ -295,8 +288,6 @@ Rabbit R1 在 CES 2024 上引起了巨大反响。通过这种基于技能的学
 ---
 
 ### 3：Imbue（原 Generally Intelligent）
-
- 3：Imbue（原 Generally Intelligent）
 
 **背景**:
 Imbue 是一家致力于构建具备推理能力的 AI 代理的公司，专注于让 AI 能够编写代码并解决复杂的实际问题。他们获得了数亿美元的融资，旨在解决 AI 在实际工作流中“不够聪明”的问题。
@@ -316,7 +307,7 @@ Imbue 的代理在编写功能性代码和解决复杂逻辑谜题方面的表�
 
 ### 实践 1：基于 LLM 的工具调用能力
 
-**说明**:  
+**说明**:
 利用大语言模型（LLM）的理解和推理能力，让 Agent 能够根据上下文自动选择并调用合适的工具或 API。这需要模型能够理解工具的描述、参数要求以及返回结果的含义。
 
 **实施步骤**:
@@ -324,7 +315,7 @@ Imbue 的代理在编写功能性代码和解决复杂逻辑谜题方面的表�
 2. 设计标准化的工具调用接口，确保模型能正确解析和执行
 3. 实现工具调用结果的反馈机制，让模型能根据结果决定下一步操作
 
-**注意事项**:  
+**注意事项**:
 - 工具描述应简洁明了，避免歧义
 - 需要处理工具调用失败的情况，设计重试或降级策略
 - 注意工具调用的权限和安全性控制
@@ -333,7 +324,7 @@ Imbue 的代理在编写功能性代码和解决复杂逻辑谜题方面的表�
 
 ### 实践 2：多步骤推理与规划
 
-**说明**:  
+**说明**:
 Agent 应具备将复杂任务分解为多个子任务的能力，并能够按照逻辑顺序执行这些子任务。这需要模型具备强大的推理能力和上下文记忆能力。
 
 **实施步骤**:
@@ -341,7 +332,7 @@ Agent 应具备将复杂任务分解为多个子任务的能力，并能够按�
 2. 实现执行状态的跟踪和管理，确保每一步都能正确完成
 3. 建立步骤间的依赖关系处理，支持动态调整执行计划
 
-**注意事项**:  
+**注意事项**:
 - 避免过度分解导致效率低下
 - 需要处理步骤执行失败的情况，支持回滚或跳过
 - 考虑并行执行独立步骤的可能性
@@ -350,7 +341,7 @@ Agent 应具备将复杂任务分解为多个子任务的能力，并能够按�
 
 ### 实践 3：上下文记忆管理
 
-**说明**:  
+**说明**:
 Agent 需要维护对话历史和任务执行状态，以便在多轮交互中保持连贯性。这包括短期记忆（当前对话）和长期记忆（历史经验和知识）。
 
 **实施步骤**:
@@ -358,7 +349,7 @@ Agent 需要维护对话历史和任务执行状态，以便在多轮交互中�
 2. 实现记忆检索机制，根据当前任务需求提取相关信息
 3. 建立记忆更新策略，确保重要信息被正确保存
 
-**注意事项**:  
+**注意事项**:
 - 控制记忆大小，避免上下文窗口溢出
 - 实现记忆的优先级管理，确保关键信息不被覆盖
 - 考虑隐私保护，避免存储敏感信息
@@ -367,7 +358,7 @@ Agent 需要维护对话历史和任务执行状态，以便在多轮交互中�
 
 ### 实践 4：错误处理与恢复
 
-**说明**:  
+**说明**:
 Agent 应具备识别错误、分析原因并采取恢复措施的能力。这包括对工具调用失败、数据解析错误、逻辑冲突等问题的处理。
 
 **实施步骤**:
@@ -375,7 +366,7 @@ Agent 应具备识别错误、分析原因并采取恢复措施的能力。这�
 2. 实现自动重试机制，对临时性错误进行自动恢复
 3. 设计降级方案，在无法完全恢复时提供替代解决方案
 
-**注意事项**:  
+**注意事项**:
 - 避免无限重试导致资源浪费
 - 记录错误日志，便于后续分析和优化
 - 向用户透明地报告错误状态和恢复进展
@@ -384,7 +375,7 @@ Agent 应具备识别错误、分析原因并采取恢复措施的能力。这�
 
 ### 实践 5：人类协作与反馈
 
-**说明**:  
+**说明**:
 在关键决策或不确定情况下，Agent 应能主动寻求人类介入。同时，通过人类反馈不断优化 Agent 的行为和决策能力。
 
 **实施步骤**:
@@ -392,7 +383,7 @@ Agent 应具备识别错误、分析原因并采取恢复措施的能力。这�
 2. 设计清晰的人机交互界面，便于人类理解和干预
 3. 建立反馈收集机制，将人类决策转化为学习样本
 
-**注意事项**:  
+**注意事项**:
 - 平衡自动化程度和人工干预频率
 - 确保人类反馈的及时性和准确性
 - 保护人类操作者的隐私和安全
@@ -401,7 +392,7 @@ Agent 应具备识别错误、分析原因并采取恢复措施的能力。这�
 
 ### 实践 6：安全与合规控制
 
-**说明**:  
+**说明**:
 Agent 的行为必须符合安全规范和法律法规要求，包括数据隐私保护、操作权限控制、有害内容过滤等。
 
 **实施步骤**:
@@ -409,7 +400,7 @@ Agent 的行为必须符合安全规范和法律法规要求，包括数据隐�
 2. 实现内容过滤机制，防止生成有害或违规内容
 3. 设计审计日志，记录所有关键操作和决策过程
 
-**注意事项**:  
+**注意事项**:
 - 定期审查和更新安全策略
 - 考虑不同地区的法规差异
 - 平衡安全性与功能性，避免过度限制
@@ -418,7 +409,7 @@ Agent 的行为必须符合安全规范和法律法规要求，包括数据隐�
 
 ### 实践 7：性能监控与优化
 
-**说明**:  
+**说明**:
 持续监控 Agent 的性能指标，包括响应时间、成功率、资源消耗等，并根据监控数据进行针对性优化。
 
 **实施步骤**:
@@ -426,7 +417,7 @@ Agent 的行为必须符合安全规范和法律法规要求，包括数据隐�
 2. 实现日志收集和分析系统，识别性能瓶颈
 3. 建立优化迭代流程，持续改进 Agent 表现
 
-**注意事项**:  
+**注意事项**:
 - 避免过度优化导致系统复杂化
 - 考虑成本效益比，优先优化高影响领域
 - 保持监控系统的轻量级，避免影响 Agent 性能
@@ -446,13 +437,9 @@ Agent 的行为必须符合安全规范和法律法规要求，包括数据隐�
 
 ### 1: 什么是 Agent Skills，它与传统的 AI 助手有何不同？
 
-1: 什么是 Agent Skills，它与传统的 AI 助手有何不同？
-
 **A**: Agent Skills（智能体技能）是指自主智能体所具备的特定能力或工具集。与传统的 AI 助手（主要基于预设的对话逻辑或单一的语言模型生成能力）不同，具备 Agent Skills 的智能体通常具有更强的自主性和交互性。它们不仅能理解自然语言，还能利用特定的“技能”来执行复杂任务，例如调用外部 API、操作软件、检索实时信息或编写代码。Agent Skills 赋予了 AI 智能体“动手”的能力，使其能够跨越单一的信息咨询范畴，直接完成用户的实际目标。
 
 ### 2: 开发 Agent Skills 的主要技术栈和工具有哪些？
-
-2: 开发 Agent Skills 的主要技术栈和工具有哪些？
 
 **A**: 开发 Agent Skills 的生态系统正在快速发展，目前主流的技术栈和工具通常包括以下几个层面：
 1. **编排框架**：如 LangChain、LangGraph、Microsoft Semantic Kernel 或 AutoGen。这些框架帮助开发者定义智能体的行为逻辑、技能调用顺序以及记忆管理。
@@ -462,8 +449,6 @@ Agent 的行为必须符合安全规范和法律法规要求，包括数据隐�
 
 ### 3: 如何确保 Agent Skills 在执行任务时的安全性？
 
-3: 如何确保 Agent Skills 在执行任务时的安全性？
-
 **A**: 赋予智能体执行技能的能力会带来新的安全风险，因此必须采取严格的防护措施：
 1. **权限最小化**：智能体在执行技能时应仅拥有完成任务所需的最小权限，避免给予其 unrestricted 的系统访问权。
 2. **人工确认机制**：对于高风险操作（如删除文件、发送邮件或执行资金交易），应设置“人在回路”机制，要求人工审核确认后才能执行。
@@ -471,8 +456,6 @@ Agent 的行为必须符合安全规范和法律法规要求，包括数据隐�
 4. **沙箱环境**：尽可能在隔离的容器或沙箱环境中运行代码类技能，防止影响宿主系统。
 
 ### 4: Agent Skills 在实际业务场景中有哪些具体应用？
-
-4: Agent Skills 在实际业务场景中有哪些具体应用？
 
 **A**: Agent Skills 的应用非常广泛，主要集中在需要自动化处理复杂流程的场景中：
 1. **研发辅助**：智能体可以使用代码编写与调试技能，自动修复 Bug 或重构代码库。
@@ -482,8 +465,6 @@ Agent 的行为必须符合安全规范和法律法规要求，包括数据隐�
 
 ### 5: 处理 Agent Skills 调用失败或错误的最佳实践是什么？
 
-5: 处理 Agent Skills 调用失败或错误的最佳实践是什么？
-
 **A**: 由于 Agent Skills 依赖外部系统，错误处理是构建鲁棒系统的关键：
 1. **自我修正与重试**：设计智能体在遇到错误时，能够分析错误信息并尝试修正参数后重新调用技能，而不是立即报错停止。
 2. **清晰的错误反馈**：当技能无法执行时，智能体应将技术错误转化为用户可理解的自然语言解释，并给出替代方案。
@@ -491,8 +472,6 @@ Agent 的行为必须符合安全规范和法律法规要求，包括数据隐�
 4. **日志记录**：详细记录技能调用的上下文和失败原因，以便开发者进行后续的调试和优化。
 
 ### 6: 未来 Agent Skills 的发展趋势是什么？
-
-6: 未来 Agent Skills 的发展趋势是什么？
 
 **A**: 未来的 Agent Skills 发展将呈现以下趋势：
 1. **多智能体协作**：不再依赖单一全能智能体，而是多个具备不同专业技能的智能体（如一个专门写代码，一个专门做数据分析）协同工作。
@@ -508,7 +487,6 @@ Agent 的行为必须符合安全规范和法律法规要求，包括数据隐�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

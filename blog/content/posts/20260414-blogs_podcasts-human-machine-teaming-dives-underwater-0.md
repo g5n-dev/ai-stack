@@ -16,8 +16,7 @@ categories:
 - AI 工程
 - 系统与基础设施
 source: blogs_podcasts
-description: 研究背景 水下环境对人类和机器的协同作业提出了严峻挑战：通讯受限于声波衰减和遮蔽，定位误差大，任务动态性强。传统做法是潜水员单独作业或使用遥控潜航器（ROV），但两者均难以实现实时信息共享与协同决策。
-  关键技术研发 - **硬件创新**：研发水下声学调制解调器、柔性传感器阵列以及可穿戴的姿态与生理监测装置，实现潜水员与
+description: 研究人员正在开发硬件和算法，以改善潜水员与执行海上任务的自主水下航行器之间的协作。 随着海洋资源勘探与水下设施维护需求的增长，潜水员与自主水下航行器的协同作业成为提升任务效率和安全的关键。研究团队通过硬件升级与算法创新，实现航行器对潜水员动作的实时感知与任务调整，构建更紧密的人机配合模式。
 external_url: https://news.mit.edu/2026/human-machine-teaming-dives-underwater-0414
 scenarios:
 - Web应用开发
@@ -25,10 +24,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 潜水员与自主航行器协作技术研究
-
 ---
 
 ## 基本信息
@@ -146,7 +141,6 @@ source_support: 0.0
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/)

@@ -17,7 +17,7 @@ categories:
 - 开源生态
 source: blogs_podcasts
 description: 随着模型与数据集规模的持续增长，如何高效地管理与存储大规模文件已成为开发者面临的核心挑战。Hugging Face Hub 推出的 Storage
-  Buckets 功能，正是为了解决这一痛点，它通过引入独立的存储桶机制，实现了与代码仓库解耦的灵活文件管理。本文将详细解析其技术原理与操作方法，帮助开发者优化资源流转，提升
+  Buckets 功能，正是为了解决这一痛点，它通过引入独立的存储桶机制，实现了与代码仓库解耦的灵活文件管理。本文将详细解析其技术原理与操作方法，帮助开发者优化资源流转，提升协作效率。
 external_url: https://huggingface.co/blog/storage-buckets
 scenarios:
 - Web应用开发
@@ -32,10 +32,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Hugging Face Hub 推出存储桶功能
-
 ---
 
 ## 基本信息

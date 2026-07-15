@@ -16,9 +16,8 @@ categories:
 - AI 工程
 - 效率与方法论
 source: juejin
-description: 以下是对该内容的简洁总结： **教程主题：零成本云端部署 OpenClaw 并接入飞书，实现 AI 自动抓取 ClawHub 数据并写入表格**
-  **主要内容：** 本教程提供了一份详尽的“喂饭级”指南，旨在帮助用户在**不花费任何成本**的情况下，将 OpenClaw 部署到云端，并实现与飞书平台的丝滑对接。
-  **核
+description: 将自动化脚本部署在云端并协同办公软件，是提升个人效率的关键一步。本文将详细介绍如何免费在云端部署 OpenClaw，并打通飞书实现数据流转。通过实战演示，你将掌握让
+  AI 自动抓取 ClawHub 技能并写入飞书表格的完整流程，从而实现信息的自动化采集与管理。
 external_url: https://juejin.cn/post/7609570581466742794
 scenarios:
 - AI/ML项目
@@ -26,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 零成本云端部署OpenClaw接入飞书自动抓取数据
-
 ---
 
 ## 基本信息

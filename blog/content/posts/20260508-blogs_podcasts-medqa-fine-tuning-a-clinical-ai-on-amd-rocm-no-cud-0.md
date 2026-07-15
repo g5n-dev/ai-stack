@@ -17,7 +17,7 @@ categories:
 - AI 工程
 source: blogs_podcasts
 description: MedQA 项目尝试在 AMD ROCm 平台上对医学诊断模型进行微调，以摆脱对 NVIDIA CUDA 的依赖。医学 AI 在临床辅助决策中扮演越来越重要的角色，而开源硬件生态的成熟为其提供了更灵活的部署选项。本文将详细说明在
-  ROCm 环境下的数据预处理、模型适配与性能评估流程，帮助开发者快速上手并验证模型在真实病
+  ROCm 环境下的数据预处理、模型适配与性能评估流程，帮助开发者快速上手并验证模型在真实病例上的表现。
 external_url: https://huggingface.co/blog/lablab-ai-amd-developer-hackathon/medqa
 scenarios:
 - AI/ML项目
@@ -27,10 +27,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 在AMD ROCm上微调MedQA临床AI：无需CUDA
-
 ---
 
 ## 基本信息
@@ -151,7 +147,6 @@ MedQA 项目尝试在 AMD ROCm 平台上对医学诊断模型进行微调，以�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

@@ -32,10 +32,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 基于脑数据重建视觉感知的数据集
-
----
-
 ## 基本信息
 
 - **作者**: katsee

@@ -36,10 +36,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 利用大语言模型实现大规模在线去匿名化
-
----
-
 ## 基本信息
 
 - **作者**: DalasNoin

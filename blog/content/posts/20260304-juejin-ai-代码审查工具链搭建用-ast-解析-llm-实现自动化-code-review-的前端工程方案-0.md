@@ -16,9 +16,8 @@ categories:
 - 前端
 - AI 工程
 source: juejin
-description: 这是一份基于标题、副标题及开头片段的**内容概要与重构**。 由于提供的文本在“不是没人 review,” 处中断，下文将基于**“AST
-  解析 + LLM 实现自动化 Code Review”**这一核心技术方案，为您梳理此类文章通常会涉及的关键技术路径与实施方案，以补全该工程方案的全貌。 ---
-  **AI 代码审查
+description: 随着团队规模扩大，Code Review 往往因沟通成本高而流于形式。本文探讨了一种结合 AST 静态解析与 LLM 语义分析的自动化工程方案，旨在解决人工审查的效率瓶颈。通过构建这套工具链，你将掌握如何精准定位代码片段并利用大模型生成高质量审查意见，从而在保障代码质量的同时，显著降低团队协作中的心智负担。
+  这是一份基于标题、副标题及开头片段的内容概要与重构。
 external_url: https://juejin.cn/post/7613237473859256329
 scenarios:
 - 大语言模型
@@ -26,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# AST 解析结合 LLM 实现自动化 Code Review 的前端工程方案
-
 ---
 
 ## 基本信息

@@ -16,8 +16,7 @@ categories:
 - 大模型
 - 论文
 source: arxiv
-description: DashAttention 提出一种可微分且自适应的稀疏层级注意力机制。现有方法如 NSA、InfLLMv2 采用 top‑k 选取粗粒度块并在其上进行细粒度
-  softmax，限制了每条查询选取的块数相同且阻断稀疏与稠密阶段的梯度流动。DashAttention 在第一阶段使用自适应的 α‑entmax 变换，根据查询
+description: Transformer模型中，全局注意力机制的计算复杂度随序列长度呈二次方增长，这在处理长序列时成为显著瓶颈。DashAttention提出了一种可微分且自适应的稀疏层次化注意力机制，在保持模型性能的同时提升计算效率。该方法可能对长文档理解、代码生成及多模态学习等需要处理长序列的任务产生影响。实际效果与可扩展性需参考完整论文评估。
 external_url: http://arxiv.org/abs/2605.18753v1
 scenarios:
 - 大语言模型
@@ -27,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 可微分自适应稀疏分层注意力
-
 ---
 
 ## 基本信息
@@ -182,7 +177,6 @@ DashAttention 在 **块数自适应** 与 **全程可微** 两个方面优于前
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

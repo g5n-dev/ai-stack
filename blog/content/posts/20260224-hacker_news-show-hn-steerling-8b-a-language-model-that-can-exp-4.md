@@ -33,10 +33,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Steerling-8B：可解释自身生成任一 Token 的语言模型
-
----
-
 ## 基本信息
 
 - **作者**: adebayoj

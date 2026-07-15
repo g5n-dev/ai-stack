@@ -15,8 +15,8 @@ tags:
 categories:
 - AI 工程
 source: blogs_podcasts
-description: 技能工程的概念 AI正从一次性全模型向模块化技能栈转变。把能力拆解为可复用、可解释的技能单元，便于调试、更新和组合，避免单体模型的黑箱和高昂的再训练成本。
-  人类判断的不可或缺 在“循环最大化”时代，虽然AI能够承担多数任务，但人类的精准、无误判断仍是训练监督信号的关键。人类的“完美判断”能防止错误在系统中累积，保证模型
+description: Paul Bakaus 与我们探讨在“loopmaxxing”时代中无可挑剔的人类判断，以及为何代理仍然需要人来引导他们。 随着 AI 代理在复杂工作流中扮演越来越重要的角色，单次生成的设计模式面临局限。本文围绕技能工程，探讨如何在
+  loopmaxxing 环境中保持人类判断的精准性，以及为何即使是最先进的模型仍离不开人的引导。
 external_url: https://www.latent.space/p/skill-engineering-design
 scenarios:
 - AI/ML项目
@@ -24,10 +24,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 技能工程视角下人类判断为何仍是AI代理的关键
-
 ---
 
 ## 基本信息
@@ -148,7 +144,6 @@ AI正从一次性全模型向模块化技能栈转变。把能力拆解为可复
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

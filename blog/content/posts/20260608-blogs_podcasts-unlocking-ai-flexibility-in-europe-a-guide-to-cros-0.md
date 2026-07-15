@@ -16,9 +16,8 @@ categories:
 - 系统与基础设施
 - 安全
 source: blogs_podcasts
-description: 背景 生成式 AI 与高性能算力需求快速增长，AWS 用户希望在多个区域获取最新模型，同时满足欧盟对数据安全、隐私和驻留的严格要求。 需求与挑战
-  1. 跨区域模型统一入口。 2. 低时延、高可用的请求路由。 3. 欧盟法规要求数据不出境。 4. 统一的安全、审计和治理。 解决方案 – Cross‑Region
-  Infe
+description: 凭借对最新的生成式AI模型和高性能加速计算的访问权限（这些在全球范围内需求旺盛），AWS客户需要工具来利用多个AWS区域中的模型可用性和容量，同时仍能满足其安全和隐私要求。Amazon
+  Bedrock上的跨区域推理（CRIS）通过自动跨多个区域路由请求来满足这些需求… 在欧洲开展生成式AI业务的企业面临跨区域部署的挑战，需要在多可用区之间灵活调度模型，同时确保数据合规和安全。
 external_url: https://aws.amazon.com/blogs/machine-learning/unlocking-ai-flexibility-in-europe-a-guide-to-cross-region-inference-for-eu-data-processing-and-model-access
 scenarios:
 - AI/ML项目
@@ -29,10 +28,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# AWS跨区域推理：满足欧盟数据安全的AI模型访问方案
-
 ---
 
 ## 基本信息
@@ -197,7 +192,6 @@ AWS跨区域推理功能是帮助欧洲企业在满足数据合规要求的同�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/) / [安全](/categories/%E5%AE%89%E5%85%A8/)

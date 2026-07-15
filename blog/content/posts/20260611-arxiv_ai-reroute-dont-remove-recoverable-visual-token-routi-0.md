@@ -17,7 +17,7 @@ categories:
 - 论文
 source: arxiv
 description: 视觉语言模型将图像投影为数百至上千个视觉 token，使解码阶段的注意力计算和 KV‑cache 存储成本显著上升。现有 token 精简方法大多遵循“评分‑删除”范式：先对
-  token 打分，保留得分最高的子集，永久丢弃其余 token。然而，这种不可逆操作容易导致误删——在浅层被低估的 token 可能在深层重新变
+  token 打分，保留得分最高的子集，永久丢弃其余 token。然而，这种不可逆操作容易导致误删——在浅层被低估的 token 可能在深层重新变得重要，尤其是涉及定位（grounding）的查询。
 external_url: http://arxiv.org/abs/2606.12412v1
 scenarios:
 - Web应用开发
@@ -25,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 可恢复视觉令牌路由：重新路由而非删除
-
 ---
 
 ## 基本信息
@@ -144,7 +140,6 @@ Reroute 可在资源受限的移动或嵌入式设备上实现更高效的视觉
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

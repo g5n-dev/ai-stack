@@ -16,9 +16,8 @@ categories:
 - 开发工具
 - AI 工程
 source: github_trending
-description: 项目简介 JeecgBoot 是企业级 AI 低代码平台，基于 Spring Boot 3.5.5、Vue 3、Spring Cloud
-  Alibaba 2023.0.3.3 构建，支持“零代码 + 低代码”双模式。零代码可在 5 分钟内完成业务系统搭建，低代码模式一键生成前后端代码，帮助开发者快速交付。
-  核心能力 1
+description: JeecgBoot 是一款面向企业的 AI 低代码开发平台，同时支持零代码和低代码两种模式。零代码场景下，5 分钟即可搭建业务系统；低代码模式则能一键生成前后端代码，大幅减少
+  Java 项目中的重复性工作。平台内置 AI 能力，兼容主流大模型，支持通过自然语言生成流程图、设计表单和构建系统。本文将介绍其核心功能、技术架构以及实际开发中的典型应用场景。
 external_url: https://github.com/jeecgboot/JeecgBoot
 scenarios:
 - 全栈开发
@@ -44,8 +43,6 @@ publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
-
-# Java低代码平台JeecgBoot：AI+零代码双模式
 
 > **原名**: jeecgboot /
 
@@ -77,9 +74,8 @@ source_support: 0.0
 - **DeepWiki**: [https://deepwiki.com/jeecgboot/JeecgBoot](https://deepwiki.com/jeecgboot/JeecgBoot)
 
 ---
-## DeepWiki 速览（节选）
 
-# JeecgBoot Overview
+## JeecgBoot Overview
 
 Relevant source files
 
@@ -116,9 +112,9 @@ The architecture supports two deployment modes:
   * **Monolithic** : `jeecg-system-start` (single JAR, port 8080)
   * **Microservices** : `jeecg-cloud-gateway` (port 9999) → `jeecg-system-cloud-start` (port 7001) + `jeecg-demo-cloud-start` (port 7002)
 
-**Current Version** : 3.9.0 (Released: December 1, 2025)  
-**License** : Apache License 2.0  
-**Vendor** : Beijing Guoju Software (北京国炬软件)  
+**Current Version** : 3.9.0 (Released: December 1, 2025)
+**License** : Apache License 2.0
+**Vendor** : Beijing Guoju Software (北京国炬软件)
 **Primary Repositories** :
 
   * Backend: `jeecg-boot` (Java/Maven)
@@ -134,12 +130,12 @@ JeecgBoot addresses the automation vs. flexibility trade-off through a four-tier
 
 **Development Approach by Complexity:**
 
-Feature Type| Code Path| Key Components| Exit Point  
----|---|---|---  
-**Simple CRUD**|  AI → OnlineCoding| `OnlCgformHeadEntity`, `OnlCgformFieldEntity`| Tier 2 (zero-code)  
-**Standard Business**|  Code Generator| `CodeGenerateOneToMany.ftl`, `jeecgOneMain.ftl`| Tier 3 (template + tweaks)  
-**Complex Logic**|  Generator + Custom| `ServiceImpl`, `Controller` with manual methods| Tier 4 (full control)  
-  
+Feature Type| Code Path| Key Components| Exit Point
+---|---|---|---
+**Simple CRUD**|  AI → OnlineCoding| `OnlCgformHeadEntity`, `OnlCgformFieldEntity`| Tier 2 (zero-code)
+**Standard Business**|  Code Generator| `CodeGenerateOneToMany.ftl`, `jeecgOneMain.ftl`| Tier 3 (template + tweaks)
+**Complex Logic**|  Generator + Custom| `ServiceImpl`, `Controller` with manual methods| Tier 4 (full control)
+
 **Implementation Details:**
 
   * **Generated Code Format** : Standard Vue3 SFC + Spring Boot `@RestController` classes (not proprietary DSL)
@@ -164,16 +160,16 @@ JeecgBoot supports two deployment architectures using shared business logic modu
 
 **Module Comparison:**
 
-Component| Monolithic| Microservices| Shared  
----|---|---|---  
-**Entry Point**| `JeecgSystemApplication.main()`| `JeecgCloudGatewayApplication.main()`| N/A  
-**Business Logic**| `jeecg-system-biz`| `jeecg-system-biz`| ✓ Identical  
-**Core Utilities**| `jeecg-boot-base-core`| `jeecg-boot-base-core`| ✓ Identical  
-**Configuration**| `application.yml` (local profile)| `bootstrap.yml` \+ Nacos config| Different  
-**Service Discovery**|  None| `@EnableDiscoveryClient`, `NacosNamingService`| Different  
-**API Gateway**|  None| `GatewayFilterFactory`, `RouteLocator`| Different  
-**Build Output**| `jeecg-system-start.jar` (single)| Multiple JARs| Different  
-  
+Component| Monolithic| Microservices| Shared
+---|---|---|---
+**Entry Point**| `JeecgSystemApplication.main()`| `JeecgCloudGatewayApplication.main()`| N/A
+**Business Logic**| `jeecg-system-biz`| `jeecg-system-biz`| ✓ Identical
+**Core Utilities**| `jeecg-boot-base-core`| `jeecg-boot-base-core`| ✓ Identical
+**Configuration**| `application.yml` (local profile)| `bootstrap.yml` \+ Nacos config| Different
+**Service Discovery**|  None| `@EnableDiscoveryClient`, `NacosNamingService`| Different
+**API Gateway**|  None| `GatewayFilterFactory`, `RouteLocator`| Different
+**Build Output**| `jeecg-system-start.jar` (single)| Multiple JARs| Different
+
 **Switching Mechanism:**
 
 Business logic classes in `jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/` remain unchanged. Only startup classes and configuration differ:
@@ -200,16 +196,16 @@ The platform consists of two primary repositories with Maven multi-module (backe
 
 **Key Directory Paths:**
 
-Module| Path| Purpose  
----|---|---  
-**Parent POM**| `jeecg-boot/pom.xml`| Dependency versions, modules list  
-**Core Utilities**| `jeecg-boot/jeecg-boot-base-core/src/main/java/org/jeecg/`| Shared utilities, config, annotations  
-**System Business**| `jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/`| User, role, dept, menu services  
-**Monolithic Entry**| `jeecg-boot/jeecg-module-system/jeecg-system-start/src/main/java/org/jeecg/JeecgSystemApplication.java`| Main class for single deployment  
-**Cloud Entry**| `jeecg-boot/jeecg-server-cloud/jeecg-system-cloud-start/src/main/java/org/jeecg/cloud/JeecgSystemCloudApplication.java`| Main class for microservices  
-**AI Module**| `jeecg-boot/jeecg-boot-module-airag/src/main/java/org/jeecg/modules/ai/`| AI chat, flows, knowledge base  
-**Vue Entry**| `jeecgboot-vue3/src/main.ts`| Frontend bootstrap  
-**Online Package**| `jeecgboot-vue3/packages/@jeecg/online/`| OnlineCoding components  
+Module| Path| Purpose
+---|---|---
+**Parent POM**| `jeecg-boot/pom.xml`| Dependency versions, modules list
+**Core Utilities**| `jeecg-boot/jeecg-boot-base-core/src/main/java/org/jeecg/`| Shared utilities, config, annotations
+**System Business**| `jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/`| User, role, dept, menu services
+**Monolithic Entry**| `jeecg-boot/jeecg-module-system/jeecg-system-start/src/main/java/org/jeecg/JeecgSystemApplication.java`| Main class for single deployment
+**Cloud Entry**| `jeecg-boot/jeecg-server-cloud/jeecg-system-cloud-start/src/main/java/org/jeecg/cloud/JeecgSystemCloudApplication.java`| Main class for microservices
+**AI Module**| `jeecg-boot/jeecg-boot-module-airag/src/main/java/org/jeecg/modules/ai/`| AI chat, flows, knowledge base
+**Vue Entry**| `jeecgboot-vue3/src/main.ts`| Frontend bootstrap
+**Online Package**| `jeecgboot-vue3/packages/@jeecg/online/`| OnlineCoding components
 **AI Flow Package**| `jeecgboot-
 
 [...truncated...]
@@ -331,7 +327,6 @@ JeecgBoot采用前后端分离的微服务架构（根据仓库结构推断）�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

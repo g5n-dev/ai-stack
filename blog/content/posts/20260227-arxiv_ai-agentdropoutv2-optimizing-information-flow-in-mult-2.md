@@ -16,7 +16,7 @@ categories:
 - 大模型
 - AI 工程
 source: arxiv
-description: '**AgentDropoutV2：通过测试时修正或拒绝修剪优化多智能体系统信息流** **1. 背景与问题** 多智能体系统（MAS）在复杂推理任务中表现出色，但存在一个关键弱点：单个智能体产生的错误信息会发生级联传播，严重影响系统整体表现。现有的解决方案通常依赖僵化的结构设计或昂贵的模型微调，限制了系统的可部署性和适'
+description: 针对多智能体系统中错误信息级联传播的问题，本文提出了 AgentDropoutV2 框架。该方法在测试时通过“修正或拒绝”的修剪策略动态优化信息流，利用检索增强机制拦截并修正潜在错误，从而在无需模型重训练的情况下提升系统鲁棒性。实验表明该策略显著改善了数学推理任务的表现，但其在非逻辑类任务中的泛化能力无法从摘要确认。
 external_url: http://arxiv.org/abs/2602.23258v1
 scenarios:
 - RAG应用
@@ -24,10 +24,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# AgentDropoutV2：测试时剪枝优化多智能体系统信息流
-
 ---
 
 ## 基本信息

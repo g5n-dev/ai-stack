@@ -16,8 +16,8 @@ categories:
 - 系统与基础设施
 - AI 工程
 source: blogs_podcasts
-description: 以下是对所提供内容的简洁总结： **Amazon SageMaker AI 2025 年度回顾（第二部分）：可观测性与定制托管功能的提升**
-  2025 年，Amazon SageMaker AI 在助力生成式 AI 工作负载的训练、调优和托管方面取得了多项进展。继第一部分探讨了“灵活训练计划”和推理组件的性价比提升后，
+description: 2025年，Amazon SageMaker AI 进行了多项改进，旨在帮助您训练、调优和托管生成式 AI 工作负载。在本系列的第 1 部分中，我们探讨了弹性训练计划以及对推理组件所做的性价比提升。在这篇文章中，我们将讨论在可观测性、模型定制和模型托管方面的增强功能。这些改进使得全新的一类客户用例能够在
+  SageMaker AI 上托管。
 external_url: https://aws.amazon.com/blogs/machine-learning/amazon-sagemaker-ai-in-2025-a-year-in-review-part-2-improved-observability-and-enhanced-features-for-sagemaker-ai-model-customization-and-hosting
 scenarios:
 - 大语言模型
@@ -32,10 +32,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Amazon SageMaker AI 2025回顾：可观测性与模型定制托管增强
-
 ---
 
 ## 基本信息

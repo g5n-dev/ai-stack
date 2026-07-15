@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# QIMMA质量优先阿拉伯语LLM排行榜
-
----
-
 ## 基本信息
 
 - **来源**: Hugging Face Blog (blog)
@@ -114,7 +110,6 @@ QIMMA的出现在阿拉伯语AI领域具有标准化意义。它有望成为该�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

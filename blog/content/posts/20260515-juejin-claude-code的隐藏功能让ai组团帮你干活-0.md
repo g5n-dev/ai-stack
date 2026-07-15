@@ -16,9 +16,9 @@ categories:
 - 开发工具
 - AI 工程
 source: juejin
-description: 核心功能 Claude Code 推出的 **Subagent** 与 **Agent Teams** 让多个 AI 实例可以协同工作，形成“AI
-  团队”。每个子代理（Subagent）负责特定模块或任务，而团队（Agent Teams）负责统筹、分配以及汇总结果，实现任务的分解‑执行‑合并。 解决上下文污染
-  在大项目
+description: 在大型软件开发中，上下文污染一直是影响 AI 辅助效率的核心难题。Claude Code 通过 Subagent 和 Agent Teams
+  功能，将 AI 的协作模式从单一辅助升级为团队协作，让多个 AI 代理能够分工处理不同任务。掌握这些隐藏功能，开发者能够更高效地管理复杂项目，同时深入理解 AI
+  在开发流程中的角色演变。
 external_url: https://juejin.cn/post/7639733278732894258
 scenarios:
 - AI/ML项目
@@ -26,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Claude Code多Agent协作：避免大项目上下文污染
-
 ---
 
 ## 基本信息
@@ -109,7 +105,6 @@ Claude Code 推出的 **Subagent** 与 **Agent Teams** 让多个 AI 实例可以
 
 ---
 
----
 ## 站内链接
 
 - 分类： [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

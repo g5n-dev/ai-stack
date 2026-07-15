@@ -36,10 +36,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AWS LMI 推理容器更新：提升性能与简化部署
-
----
-
 ## 基本信息
 
 - **来源**: AWS Machine Learning Blog (blog)

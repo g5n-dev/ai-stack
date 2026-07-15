@@ -16,8 +16,7 @@ categories:
 - 大模型
 - 论文
 source: arxiv
-description: 本文介绍了在文本到图像生成模型FLUX.1 [Dev]中，对变分自编码器（VAE）潜在空间色彩表示的一种新解释，揭示了其内部反映色相、饱和度和亮度的结构。
-  **主要发现与贡献：** 1. **潜在色彩子空间（LCS）解释：** 研究团队对FLUX.1模型的潜在空间进行了深入分析，发现其色彩信息的编码并非杂乱无章，而是呈
+description: 本文针对FLUX.1文生图模型中VAE潜在空间的色彩编码机制展开研究，揭示了其内部存在一种对应色相、饱和度及亮度的有序“潜在色彩子空间”结构。基于此发现，作者提出了一种无需训练的封闭形式数学操作方法，实现了对生成图像色彩的精确预测与控制。这一工作为提升生成模型的细粒度可控性提供了新的视角，不过其在其他架构模型上的泛化能力尚无法从摘要确认。
 external_url: http://arxiv.org/abs/2603.12261v1
 scenarios:
 - Web应用开发
@@ -29,10 +28,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 潜在色彩子空间：高维混沌中的涌现秩序
-
 ---
 
 ## 基本信息

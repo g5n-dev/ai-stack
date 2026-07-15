@@ -16,7 +16,7 @@ categories:
 - 大模型
 - 产品与创业
 source: blogs_podcasts
-description: '**Wayfair利用OpenAI提升目录准确性及支持速度** Wayfair正利用OpenAI的先进模型来优化其电商平台的客户支持体验和产品目录准确性。通过引入人工智能技术，该公司实现了工单分拣的自动化，并大规模增强了数百万种产品的属性信息。这一举措显著提高了运营效率，确保了产品信息的准确性，并加快了客户服务的响应速'
+description: Wayfair 利用 OpenAI 模型提升电商支持体验并提高产品目录准确性，实现了工单分拣的自动化，并大规模优化数百万产品属性。 面对海量SKU与复杂的用户咨询，家居电商巨头Wayfair正通过OpenAI模型重构其运营效率。本文将深入解析Wayfair如何利用生成式AI实现工单自动分拣，并大规模优化数百万级产品属性。
 external_url: https://openai.com/index/wayfair
 scenarios:
 - AI/ML项目
@@ -33,10 +33,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Wayfair利用OpenAI优化产品目录并自动化工单分拣
-
 ---
 
 ## 基本信息

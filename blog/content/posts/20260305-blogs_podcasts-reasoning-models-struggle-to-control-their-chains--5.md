@@ -16,8 +16,8 @@ categories:
 - 大模型
 - 安全
 source: blogs_podcasts
-description: OpenAI在研究推理模型时发现，这类模型在“控制自身思维链”方面存在显著困难，这一发现反而强化了“可监控性”作为人工智能安全核心保障的地位。
-  以下是主要内容的总结： 1. **核心发现**：OpenAI引入了名为“CoT-Control”（思维链控制）的测试机制。测试结果显示，虽然现代推理模型具备强大的逻辑推理能力，
+description: OpenAI 推出 CoT-Control，并发现推理模型难以有效控制其思维链，进一步突显了可监控性作为 AI 安全保障的重要性。 随着
+  OpenAI 推出 CoT-Control 并证实推理模型难以精准控制其思维链，我们再次直面 AI 安全中的核心矛盾：模型内部过程的不可控性。这一发现并非技术倒退，反而凸显了“可监控性”作为安全底座的必要性。
 external_url: https://openai.com/index/reasoning-models-chain-of-thought-controllability
 scenarios:
 - AI/ML项目
@@ -41,10 +41,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# OpenAI推出CoT-Control：强化推理模型思维链的可监控性
-
 ---
 
 ## 基本信息

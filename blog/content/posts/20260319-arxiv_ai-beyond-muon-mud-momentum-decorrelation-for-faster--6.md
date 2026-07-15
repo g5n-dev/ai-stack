@@ -16,8 +16,9 @@ categories:
 - 大模型
 - AI 工程
 source: arxiv
-description: MUD优化器技术总结 研究背景 当前大语言模型训练中，Muon等正交动量优化器通过极分解迭代对矩阵动量更新进行白化处理，能有效加速Transformer训练。然而，极分解近似计算需要多次大型矩阵乘法，导致显著的计算开销，且该开销与硬件密切相关。
-  MUD方法 本文提出**MUD（矩动量去相关，MomentUm Decor
+description: 时间-困惑度性能： 相比调优后的AdamW和Muon，wall-clock时间缩短10%-50% 每步收敛略慢于Muon，但因开销大幅降低，总体效率更高
+  吞吐量提升： 相比Muon，峰值tokens/s提升1.3-2.6倍 A100上GPT-2 large模型提升近3 论文声称：MUD通过三角白化替代Muon的极分解更新，实现更高效的矩阵动量白化处理。
+  推断评估：该创新点具有理论价值。
 external_url: http://arxiv.org/abs/2603.17970v1
 scenarios:
 - Web应用开发
@@ -27,10 +28,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# MUD优化器通过动量去相关加速Transformer训练
-
 ---
 
 ## 基本信息

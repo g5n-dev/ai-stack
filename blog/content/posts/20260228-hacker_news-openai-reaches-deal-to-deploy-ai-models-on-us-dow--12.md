@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# OpenAI 获准在美国防部机密网络部署 AI 模型
-
----
-
 ## 基本信息
 
 - **作者**: erhuve

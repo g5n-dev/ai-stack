@@ -16,7 +16,7 @@ categories:
 - 大模型
 - 论文
 source: blogs_podcasts
-description: OpenAI最新模型GPT‑next在平面单位距离问题上取得突破，成功证伪了已逾八十年的埃尔德什猜想。不同于传统证明需耗费大量算力，这项工作仅花费不到一千美元的计算资源，展示了语言模型在组合几何等高难度数学中的实用价值。本文将梳理其求解思路、关键数据结构及实验设置，帮助读者了解在有限预算下利用AI推动前沿数学研究的可行
+description: 安静的一天，但在 AI×数学方面有不错的结果。 OpenAI最新模型GPT‑next在平面单位距离问题上取得突破，成功证伪了已逾八十年的埃尔德什猜想。不同于传统证明需耗费大量算力，这项工作仅花费不到一千美元的计算资源，展示了语言模型在组合几何等高难度数学中的实用价值。本文将梳理其求解思路、关键数据结构及实验设置，帮助读者了解在有限预算下利用AI推动前沿数学研究的可行路径。
 external_url: https://www.latent.space/p/ainews-openai-gpt-next-disproves
 scenarios:
 - AI/ML项目
@@ -24,10 +24,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# OpenAI GPT-next千美元内否证80年Erdős平面问题
-
 ---
 
 ## 基本信息
@@ -121,7 +117,6 @@ AI在数学证明领域的成功应用，预示着科学研究方法论的潜在
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

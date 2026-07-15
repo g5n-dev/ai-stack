@@ -16,9 +16,8 @@ categories:
 - AI 工程
 - 后端
 source: blogs_podcasts
-description: 本文介绍了如何利用 Amazon Bedrock AgentCore 结合 Strands Agents 集成，构建能够处理长时间运行任务的
-  MCP（Model Context Protocol）服务器。为了实现这一目标，文章提出了一套综合性的解决方案，主要包含以下三个关键策略： 1. **上下文消息策略**：
-  针对长
+description: 在这篇文章中，我们为您提供了一套全面的方法来实现这一目标。首先，我们介绍一种上下文消息策略，该策略在长时间运行的操作期间保持服务器与客户端之间的持续通信。接下来，我们开发了一个异步任务管理框架，允许您的
+  AI 代理启动长时间运行的流程，而不会阻塞其他操作。
 external_url: https://aws.amazon.com/blogs/machine-learning/build-long-running-mcp-servers-on-amazon-bedrock-agentcore-with-strands-agents-integration
 scenarios:
 - AI/ML项目
@@ -47,10 +46,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 基于Amazon Bedrock AgentCore构建长时运行MCP服务器的异步框架
-
 ---
 
 ## 基本信息
@@ -182,7 +177,7 @@ source_support: 0.0
 4.  **异步任务管理:** 区别于同步等待，采用后台任务处理 + 状态轮询或推送的模式。
 
 ### 技术原理和实现方式
-*   **Context Message Strategy (上下文消息策略):** 
+*   **Context Message Strategy (上下文消息策略):**
     *   *原理：* 在客户端与服务器断开连接或等待期间，服务器端维护一个“上下文窗口”。当任务有更新时，服务器通过特定的消息格式将中间状态写入上下文。
     *   *实现：* 利用 Session ID 关联历史消息，确保 Agent 每次唤醒都能读取到之前的进度。
 *   **Asynchronous Task Framework (异步任务框架):**
@@ -275,7 +270,7 @@ source_support: 0.0
 **场景：** 企业级财报分析 Agent。
 用户上传 PDF 并提问：“分析这份财报的风险点并生成图表”。
 *   **传统模式（失败）：** Agent 读取 PDF -> 调用 Python 绘图 -> 耗时 90秒 -> 前端超时报错。
-*   **本文模式（成功）：** 
+*   **本文模式（成功）：**
     1. Agent 接收任务，创建 `Task_123`。
     2. 返回：“正在分析，预计耗时 2 分钟，任务 ID: Task_123”。
     3. 后台 Strands Agent 分步执行：OCR -> 数据清洗 -> 分析 -> 绘图。
@@ -403,7 +398,6 @@ source_support: 0.0
 ---
 
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [后端](/categories/%E5%90%8E%E7%AB%AF/)

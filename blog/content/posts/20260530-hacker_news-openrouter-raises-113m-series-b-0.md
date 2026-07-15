@@ -25,10 +25,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# OpenRouter完成1.13亿美元B轮融资
-
----
-
 ## 基本信息
 
 - **作者**: freeCandy
@@ -86,7 +82,6 @@ OpenRouter获得1.13亿美元B轮融资，不仅验证了AI模型聚合层的市
 
 ---
 
----
 ## 站内链接
 
 - 分类： [产品与创业](/categories/%E4%BA%A7%E5%93%81%E4%B8%8E%E5%88%9B%E4%B8%9A/)

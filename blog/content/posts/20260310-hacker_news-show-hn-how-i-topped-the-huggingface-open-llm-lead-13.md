@@ -31,10 +31,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 双游戏显卡登顶HuggingFace开源大模型榜单的方法
-
----
-
 ## 基本信息
 
 - **作者**: dnhkng

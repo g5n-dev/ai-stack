@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Sealos：AI 原生云操作系统
-
----
-
 ## 基本信息
 
 - **作者**: fanux
@@ -98,10 +94,10 @@ def auto_scaling_cloud_function(request_count):
     """
     base_instances = 1  # 基础实例数
     threshold = 100     # 每个实例能处理的请求数阈值
-    
+
     # 计算需要的实例数（向上取整）
     needed_instances = max(base_instances, (request_count + threshold - 1) // threshold)
-    
+
     return needed_instances
 
 # 测试用例
@@ -119,14 +115,14 @@ def optimize_cloud_resources(provider_pricing):
     """
     best_provider = None
     best_value = 0
-    
+
     for provider, (price, performance) in provider_pricing.items():
         # 计算性价比（性能/价格）
         value = performance / price
         if value > best_value:
             best_value = value
             best_provider = provider
-            
+
     return best_provider, best_value
 
 # 测试用例
@@ -152,7 +148,7 @@ def deploy_container(image_name, replicas, port):
     print(f"创建 {replicas} 个副本...")
     print(f"配置服务端口: {port}...")
     print("部署完成！")
-    
+
     return {
         "status": "running",
         "replicas": replicas,
@@ -167,8 +163,6 @@ print(deploy_container("nginx:latest", 3, 8080))
 ## 案例研究
 
 ### 1：某中型互联网科技公司微服务架构转型
-
- 1：某中型互联网科技公司微服务架构转型
 
 **背景**:
 该公司拥有一支约 50 人的开发团队，业务主要基于 Go 和 Node.js 构建。随着业务从单体架构向微服务迁移，管理的容器数量从几十个迅速增长到数百个，部署环境涉及开发、测试和生产多个阶段。
@@ -187,8 +181,6 @@ print(deploy_container("nginx:latest", 3, 8080))
 
 ### 2：某高校 AI 实验室算力集群管理
 
- 2：某高校 AI 实验室算力集群管理
-
 **背景**:
 该高校 AI 实验室拥有数台配备高性能 GPU 的服务器，供研究生和博士生进行模型训练和推理实验。用户群体流动性大，且需要频繁切换不同的深度学习框架（如 PyTorch, TensorFlow）及 CUDA 环境。
 
@@ -205,8 +197,6 @@ print(deploy_container("nginx:latest", 3, 8080))
 ---
 
 ### 3：初创 SaaS 公司的全球多区域部署
-
- 3：初创 SaaS 公司的全球多区域部署
 
 **背景**:
 一家 B2B SaaS 初创公司，服务对象分布在中国和北美。为了满足合规性要求和降低访问延迟，公司需要同时在阿里云（中国区域）和 AWS（美国区域）维护业务系统。
@@ -323,8 +313,6 @@ print(deploy_container("nginx:latest", 3, 8080))
 
 ### 1: Sealos 与传统的 Kubernetes (K8s) 管理平台（如 Rancher）有什么本质区别？
 
-1: Sealos 与传统的 Kubernetes (K8s) 管理平台（如 Rancher）有什么本质区别？
-
 **A**: Sealos 与传统 Kubernetes 管理平台最大的区别在于其设计哲学和架构定位。
 
 1.  **以应用为中心 vs 以基础设施为中心**：传统平台通常侧重于集群的生命周期管理和运维监控，操作复杂度高。而 Sealos 将 Kubernetes 彻底封装，用户无需感知 K8s 的存在，直接通过“应用”的概念进行管理。
@@ -332,8 +320,6 @@ print(deploy_container("nginx:latest", 3, 8080))
 3.  **极简与高性能**：Sealos 基于 Go 语言编写，架构极其轻量，没有引入沉重的 CRD（自定义资源定义）或复杂的依赖，性能更高，故障率更低。
 
 ### 2: Sealos 是如何实现“AI Native”的？它对 AI 开发者有什么具体帮助？
-
-2: Sealos 是如何实现“AI Native”的？它对 AI 开发者有什么具体帮助？
 
 **A**: Sealos 的“AI Native”特性意味着它从底层架构上就为 AI 工作负载进行了优化，而非简单的插件集成。
 
@@ -343,8 +329,6 @@ print(deploy_container("nginx:latest", 3, 8080))
 
 ### 3: Sealos 的计费模式是怎样的？为什么说它更省钱？
 
-3: Sealos 的计费模式是怎样的？为什么说它更省钱？
-
 **A**: Sealos 采用了一种独特的“基于使用量”的计费模式，这与传统的包月包年或复杂的节点计费不同。
 
 1.  **秒级计费**：Sealos 对 CPU、内存、存储等资源进行精确到秒的计量。用户只需为实际使用的资源付费，而不是为预配置的节点付费。
@@ -352,8 +336,6 @@ print(deploy_container("nginx:latest", 3, 8080))
 3.  **成本透明**：用户在控制台可以清晰地看到每一个应用或服务的实时资源消耗和费用产生情况，便于进行成本控制和优化。
 
 ### 4: 我的技术基础比较薄弱，能直接使用 Sealos 吗？
-
-4: 我的技术基础比较薄弱，能直接使用 Sealos 吗？
 
 **A**: 是的，这正是 Sealos 的核心设计目标之一。
 
@@ -363,16 +345,12 @@ print(deploy_container("nginx:latest", 3, 8080))
 
 ### 5: Sealos 是开源项目吗？其商业模式是什么？
 
-5: Sealos 是开源项目吗？其商业模式是什么？
-
 **A**: 是的，Sealos 是一个开源项目。
 
 1.  **开源核心**：其核心代码在 GitHub 上开源，拥有活跃的开发者社区。这意味着用户可以自由审查代码、自行部署或参与贡献，避免了厂商锁定。
 2.  **商业模式**：Sealos 提供两个版本。一个是开源的社区版，用户可以在自己的服务器上免费部署使用；另一个是托管的云服务版，由官方团队维护基础设施，用户按量付费，享受开箱即用的体验。这种模式类似于 Red Hat 或 MongoDB 的策略。
 
 ### 6: Sealos 的性能和稳定性如何保障？
-
-6: Sealos 的性能和稳定性如何保障？
 
 **A**: Sealos 在架构设计之初就将性能和稳定性作为首要考量。
 
@@ -381,8 +359,6 @@ print(deploy_container("nginx:latest", 3, 8080))
 3.  **大规模实践**：Sealos 已经在生产环境中支撑了大规模的用户集群，经过了高并发和大流量的实战检验，证明了其企业级的稳定性。
 
 ### 7: 如何将现有的应用迁移到 Sealos 上？
-
-7: 如何将现有的应用迁移到 Sealos 上？
 
 **A**: Sealos 提供了极高的兼容性，迁移过程
 ## 引用
@@ -394,7 +370,6 @@ print(deploy_container("nginx:latest", 3, 8080))
 
 ---
 
----
 ## 站内链接
 
 - 分类： [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/) / [开源生态](/categories/%E5%BC%80%E6%BA%90%E7%94%9F%E6%80%81/)

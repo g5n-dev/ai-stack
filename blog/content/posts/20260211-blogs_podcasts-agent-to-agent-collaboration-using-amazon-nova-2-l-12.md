@@ -1,5 +1,6 @@
 ---
-title: 'Agent-to-agent collaboration: Using Amazon Nova 2 Lite'
+title: 'Agent-to-agent collaboration: Using Amazon Nova 2 Lite and Amazon Nova Act
+  for multi-agent systems'
 date: 2026-02-11 01:40:26+08:00
 draft: false
 entry_kind: auto
@@ -16,9 +17,8 @@ categories:
 - 大模型
 - AI 工程
 source: blogs_podcasts
-description: 以下是对该内容的中文简洁总结： 本文主要介绍了如何利用 Amazon Bedrock 平台上的 Amazon Nova 2 Lite 和
-  Amazon Nova Act 模型，构建稳健的多智能体协作系统，以解决单一智能体架构的脆弱性问题。 **核心内容要点：** 1. **架构转型（从单智能体到多智能体）：**
-  文章指
+description: 本文介绍了如何在实践中实现 Amazon Bedrock 上的代理间协作，利用 Amazon Nova 2 Lite 进行规划、利用 Amazon
+  Nova Act 进行浏览器交互，将脆弱的单代理架构转变为可预测的多代理系统。 构建稳健的多智能体系统往往面临单点脆弱性与任务复杂度的双重挑战。
 external_url: https://aws.amazon.com/blogs/machine-learning/agent-to-agent-collaboration-using-amazon-nova-2-lite-and-amazon-nova-act-for-multi-agent-systems
 scenarios:
 - 大语言模型
@@ -29,10 +29,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Agent-to-agent collaboration: Using Amazon Nova 2 Lite and Amazon Nova Act for multi-agent systems
-
 ---
 
 ## 基本信息
@@ -175,7 +171,6 @@ Agent 协作可能会遇到不可预见的情况
 ---
 
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

@@ -18,6 +18,7 @@ categories:
 source: hacker_news
 description: 随着自动化调试需求的增加，让 Coding Agent 直接操作 Chrome DevTools 正成为一种高效的工作流。本文介绍了 Chrome
   DevTools MCP 的实现原理，展示了如何通过 Model Context Protocol 将 AI 接入浏览器会话。阅读后，你将掌握具体的配置步骤，理解如何授权
+  Agent 进行断点调试与网络分析，从而实现更精准的故障排查。
 external_url: https://developer.chrome.com/blog/chrome-devtools-mcp-debug-your-browser-session
 scenarios:
 - DevOps/运维
@@ -33,10 +34,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 让编程代理通过 Chrome DevTools MCP 调试浏览器会话
-
 ---
 
 ## 基本信息

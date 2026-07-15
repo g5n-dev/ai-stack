@@ -15,8 +15,7 @@ tags:
 categories:
 - AI 工程
 source: blogs_podcasts
-description: 背景 人工智能代理（AI agents）能够在虚拟空间中自动生成多样化的环境，为机器人提供大量在现实中难以获取的训练数据。 SceneSmith
-  系统 SceneSmith 通过多个协作的 AI agents 同时工作，快速构建高保真的三维场景，如厨房、酒店客房、客厅等。系统利用生成式模型和渲染引擎，自动生成符合物理规
+description: “SceneSmith”系统使用协作式AI智能体来创建逼真的3D环境（如厨房、酒店、客厅），机器人可以在这些环境中模拟日常家务。 AI智能体正通过协作方式生成高保真的虚拟场景，让机器人在多样化的三维环境中进行训练。相较于真实世界采样成本高昂且难以覆盖全部情景，虚拟环境能够快速提供大量可重复的交互数据。
 external_url: https://news.mit.edu/2026/ai-agents-create-virtual-playgrounds-to-help-robots-get-crucial-training-data-0713
 scenarios:
 - AI/ML项目
@@ -24,10 +23,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 协作式AI智能体生成3D环境供机器人模拟家务
-
 ---
 
 ## 基本信息
@@ -95,7 +90,6 @@ SceneSmith通过协作式AI agents生成高质量3D虚拟环境，为机器人�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

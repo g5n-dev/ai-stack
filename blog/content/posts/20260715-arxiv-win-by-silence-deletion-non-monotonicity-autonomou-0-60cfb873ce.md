@@ -1,5 +1,5 @@
 ---
-title: "Win by Silence: Deletion Non-Monotonicity, Autonomous E"
+title: "Win by Silence: Deletion Non-Monotonicity, Autonomous Exploitation, and Typed-State Gating in LLM Plan Evaluation"
 date: 2026-07-15T20:45:47+08:00
 draft: false
 entry_kind: "auto"
@@ -17,8 +17,6 @@ source_support: 1.0
 description: "当前保存的是来源摘要，不代表论文全文。请以原始来源为准。"
 external_url: http://arxiv.org/abs/2607.12986v1
 ---
-
-# Win by Silence: Deletion Non-Monotonicity, Autonomous E
 
 ## 基本信息
 

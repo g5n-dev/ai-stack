@@ -16,8 +16,8 @@ categories:
 - 大模型
 - 开源生态
 source: juejin
-description: '**EverMemOS：让 Agent 拥有记忆与推理能力的跨平台 OS** EverMemOS 是由 EverMind-AI 开源的一款面向大语言模型（LLM）与智能体的**长时记忆操作系统**。该项目旨在解决当前
-  Agent 普遍存在的“记不住、推不出”的痛点，通过构建结构化的记忆系统，显著提升了智能体的推理能力与'
+description: 大模型 Agent 的落地往往受限于记忆的碎片化与推理能力的割裂，导致难以处理复杂的长周期任务。本文深入解读开源项目 EverMemOS，分析其如何通过结构化抽取与智能检索机制，在
+  LoCoMo 基准测试中实现 93% 的推理准确率。读者将了解该系统的渐进式画像技术细节，以及如何利用它构建具备持久记忆与深度推理能力的生产级 Agent。
 external_url: https://juejin.cn/post/7611479802548092955
 scenarios:
 - RAG应用
@@ -26,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# EverMemOS：开源Agent长时记忆系统，LoCoMo推理准确率93%
-
 ---
 
 ## 基本信息

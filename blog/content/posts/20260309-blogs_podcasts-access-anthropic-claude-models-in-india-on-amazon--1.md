@@ -16,8 +16,8 @@ categories:
 - 大模型
 - AI 工程
 source: blogs_podcasts
-description: 以下是对该内容的中文简洁总结： **标题：在印度通过 Amazon Bedrock 使用全球跨区域推理访问 Anthropic Claude
-  模型** **概述：** 本文介绍了如何利用 **Amazon Bedrock** 的**全球跨区域推理（Global cross-Region Inference）**功能，在
+description: 在本篇文章中，您将了解如何在印度使用 Amazon Bedrock 的全球跨区域推理功能运行 Claude 模型。我们将为您介绍各 Claude
+  模型变体的能力，并提供一个代码示例助您快速上手，以便您立即开始开发生成式 AI 应用。 随着生成式 AI 应用的全球化部署需求日益增长，如何在特定区域高效调用大模型成为开发者关注的重点。
 external_url: https://aws.amazon.com/blogs/machine-learning/access-anthropic-claude-models-in-india-on-amazon-bedrock-with-global-cross-region-inference
 scenarios:
 - AI/ML项目
@@ -38,10 +38,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 在印度使用 Amazon Bedrock 跨区域推理运行 Claude 模型
-
 ---
 
 ## 基本信息

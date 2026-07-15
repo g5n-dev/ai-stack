@@ -16,8 +16,8 @@ categories:
 - 大模型
 - 论文
 source: arxiv
-description: 本文介绍了名为 **$\tau$-Knowledge** 的全新测试基准，旨在解决当前对话智能体在处理**非结构化知识**（如大量文档）与**工具使用**相结合时的评估难题。
-  **核心背景与问题：** 现有的基准测试通常将“信息检索”与“工具使用”分开评估，缺乏对真实场景中智能体**长期交互**能力的全面考察。而在金融
+description: 针对现有基准测试割裂评估信息检索与工具使用的局限，本文提出了 $\tau$-Knowledge 基准，旨在考察对话智能体在长期交互中协调非结构化知识与工具调用的能力。研究构建了模拟银行客服工作流的
+  $\tau$-Banking 环境，测试结果显示，即便是当前最先进的模型，其成功率也仅约为 25.5%，暴露了现有架构在复杂知识密集型场景下的显著不足。
 external_url: http://arxiv.org/abs/2603.04370v1
 scenarios:
 - RAG应用
@@ -27,10 +27,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# τ-Knowledge：评估非结构化知识中的对话智能体
-
 ---
 
 ## 基本信息

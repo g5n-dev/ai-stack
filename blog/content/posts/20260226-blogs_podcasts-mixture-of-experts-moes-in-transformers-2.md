@@ -35,10 +35,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Transformer架构中的混合专家模型原理与应用
-
----
-
 ## 基本信息
 
 - **来源**: Hugging Face Blog (blog)

@@ -15,7 +15,8 @@ tags:
 categories:
 - AI 工程
 source: blogs_podcasts
-description: 本文介绍如何利用 Amazon Quick 构建定制的 HR 入职代理。演示了如何让代理理解公司内部的入职流程、接入现有 HR 系统（如招聘、文档管理系统），并自动化常见任务，例如即时回答新员工提出的常见问题、自动跟踪入职文档的提交与完成状态。通过配置自然语言理解、知识库和工作流集成，企业可以显著提升新员工入职体验，减
+description: 在这篇文章中，我们将带您了解如何使用 Quick 构建自定义 HR 入职代理。我们将展示如何配置一个能够理解您组织流程、连接 HR 系统并自动化常见任务的代理，例如回答新员工问题和跟踪文档完成情况。
+  在企业对快速且一致的新员工入职体验需求不断提升的背景下，引入 AI 自动化成为提升 HR 效率的关键路径。
 external_url: https://aws.amazon.com/blogs/machine-learning/build-ai-powered-employee-onboarding-agents-with-amazon-quick
 scenarios:
 - AI/ML项目
@@ -23,10 +24,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 使用Quick构建AI入职代理：自动化新员工任务处理
-
 ---
 
 ## 基本信息
@@ -148,7 +145,6 @@ source_support: 0.0
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

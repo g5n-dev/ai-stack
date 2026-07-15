@@ -16,8 +16,8 @@ categories:
 - 大模型
 - AI 工程
 source: arxiv
-description: AdaEvolve 是一种新型的大语言模型（LLM）驱动进化优化框架，旨在解决现有自动程序生成系统中计算资源浪费和搜索效率低下的问题。 **背景与问题：**
-  当前的范式正从一次性生成转向“推理时搜索”，即利用 LLM 在进化循环中充当语义变异算子。然而，现有系统通常由静态调度控制，无法适应搜索过程中的非平稳动态。这种僵
+description: 针对现有自动程序生成系统中计算资源浪费与搜索效率不足的问题，本文提出了 AdaEvolve 这一由大语言模型驱动的自适应进化优化框架。该方法通过引入动态机制，旨在改进
+  LLM 作为语义变异算子在进化循环中的表现。虽然摘要未详述具体的自适应策略细节，但该工作为提升推理时搜索的效能提供了新的解决思路。
 external_url: http://arxiv.org/abs/2602.20133v1
 scenarios:
 - 大语言模型
@@ -27,10 +27,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# AdaEvolve：基于大语言模型的自适应零阶优化框架
-
 ---
 
 ## 基本信息

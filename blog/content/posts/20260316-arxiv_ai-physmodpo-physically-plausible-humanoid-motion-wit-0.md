@@ -16,7 +16,7 @@ categories:
 - 大模型
 - 论文
 source: arxiv
-description: '**PhysMoDPO：基于偏好优化的物理合理性人形运动生成总结** **背景与问题** 目前，文本生成人体运动的技术主要依托于在大规模数据上训练的扩散模型。为了将这些模型应用于角色动画和实体机器人控制，现有方法通常采用全身控制器（WBC），将扩散模型生成的运动转换为可执行的物理轨迹。然而，这种方法存在一个显著缺陷：虽'
+description: 现有文本描述的人体运动生成方法常依赖扩散模型配合全身控制器，但这在物理可行性上存在显著局限。PhysMoDPO 提出通过偏好优化直接增强模型的物理感知能力，旨在弥合生成动作与物理现实间的差距。虽然摘要未详述具体训练细节，但该方法有望提升角色动画与机器人控制的鲁棒性，为具身智能的运动生成提供了新的优化思路。
 external_url: http://arxiv.org/abs/2603.13228v1
 scenarios:
 - Web应用开发
@@ -26,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# PhysMoDPO：基于偏好优化的仿人运动生成
-
 ---
 
 ## 基本信息

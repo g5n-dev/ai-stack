@@ -16,8 +16,7 @@ categories:
 - 大模型
 - 论文
 source: arxiv
-description: 本文提出了一种名为 **“Mode Seeking meets Mean Seeking”** 的新训练范式，旨在解决从生成长视频（从秒级到分钟级）时面临的数据瓶颈：即高质量短视频数据丰富，但连贯的长视频数据稀缺且领域狭窄。
-  该方法的核心在于通过 **解耦扩散Transformer** 将局部保真度与长期连贯性分离开来
+description: 面对高质量长视频训练数据稀缺的瓶颈，本文提出了一种结合模式寻优与均值寻优的训练范式，通过解耦扩散Transformer将局部保真度与长期连贯性分离。该方法利用有限的长视频学习全局叙事结构，同时借助反向KL散度对齐短视频教师模型以继承局部真实感，从而实现了快速生成。尽管其具体的生成质量与计算效率尚无法从摘要确认，但该策略为解决视频生成中时长与保真度的矛盾提供了新思路。
 external_url: http://arxiv.org/abs/2602.24289v1
 scenarios:
 - Web应用开发
@@ -27,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 模式寻优结合均值寻优实现快速长视频生成
-
 ---
 
 ## 基本信息

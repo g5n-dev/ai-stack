@@ -17,7 +17,7 @@ categories:
 - 开源生态
 source: hacker_news
 description: 随着大模型能力的演进，AI 智能体正从简单的指令执行转向更复杂的自主操作，而浏览器正是它们与数字世界交互的核心入口。本文介绍的开源浏览器项目，专为智能体设计，旨在解决传统工具在自动化任务中的兼容性与控制难题。通过剖析其架构设计与实现细节，开发者可以深入了解如何构建更稳定、可控的
-  AI 应用基础设施，从而在智能体开发领域
+  AI 应用基础设施，从而在智能体开发领域获得新的技术视角。
 external_url: https://github.com/theredsix/agent-browser-protocol
 scenarios:
 - AI/ML项目
@@ -28,10 +28,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 面向AI智能体的开源浏览器
-
 ---
 
 ## 基本信息

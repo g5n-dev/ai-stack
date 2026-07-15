@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 从 Prompt 到 Agent Skill：AI 交互模式的架构设计与实现
-
----
-
 ## 基本信息
 
 - **作者**: 橙序员小站

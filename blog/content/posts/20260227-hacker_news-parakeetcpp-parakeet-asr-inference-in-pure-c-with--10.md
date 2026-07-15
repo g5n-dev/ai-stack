@@ -17,7 +17,7 @@ categories:
 - AI 工程
 source: hacker_news
 description: Parakeet.cpp 是一个基于纯 C++ 实现的自动语音识别（ASR）推理工具，其核心亮点在于针对 macOS 平台进行了 Metal
-  GPU 加速优化。在边缘计算与本地化部署需求日益增长的背景下，该工具为开发者提供了一种在 Apple Silicon 芯片上高效运行语音识别模型的新选择。阅读本文，你将了解其技术
+  GPU 加速优化。在边缘计算与本地化部署需求日益增长的背景下，该工具为开发者提供了一种在 Apple Silicon 芯片上高效运行语音识别模型的新选择。
 external_url: https://github.com/Frikallo/parakeet.cpp
 scenarios:
 - Web应用开发
@@ -27,10 +27,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Parakeet.cpp：基于Metal GPU加速的纯C++ ASR推理
-
 ---
 
 ## 基本信息

@@ -39,10 +39,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# PRX Part 3：24小时训练文本生成图像模型
-
----
-
 ## 基本信息
 
 - **来源**: Hugging Face Blog (blog)

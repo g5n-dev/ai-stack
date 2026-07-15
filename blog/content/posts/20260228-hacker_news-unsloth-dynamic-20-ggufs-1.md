@@ -32,10 +32,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Unsloth推出Dynamic 2.0 GGUF模型
-
----
-
 ## 基本信息
 
 - **作者**: tosh

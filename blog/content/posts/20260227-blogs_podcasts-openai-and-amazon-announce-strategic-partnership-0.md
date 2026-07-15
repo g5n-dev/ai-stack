@@ -42,10 +42,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# OpenAI与亚马逊达成战略合作：在AWS上引入Frontier平台扩展AI基础设施
-
----
-
 ## 基本信息
 
 - **来源**: OpenAI Blog (blog)

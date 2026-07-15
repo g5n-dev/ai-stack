@@ -16,8 +16,8 @@ categories:
 - AI 工程
 - 论文
 source: arxiv
-description: 以下是对该内容的中文总结： **AutoFigure：生成与优化出版级科学插图** **背景与痛点** 高质量的插图对于有效传达复杂的科学概念至关重要，但在学术界和工业界，手工创建这些插图一直是一个公认的效率瓶颈。
-  **研究成果：FigureBench 数据集** 为了解决这一问题，研究团队推出了 **FigureBe
+description: 科学论文配图的制作长期以来是科研产出的效率瓶颈，为此，该研究提出了名为 AutoFigure 的自动化生成与优化方案。文章构建了 FigureBench
+  数据集以支撑模型训练，并展示了从初稿到出版级配图的生成与精炼能力。虽然摘要未详述具体的技术架构与在多学科领域的泛化性能，无法从摘要确认其鲁棒性边界，但该工作为降低科研可视化成本提供了新的技术路径。
 external_url: http://arxiv.org/abs/2602.03828v1
 scenarios:
 - AI/ML项目
@@ -27,10 +27,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# AutoFigure：自动生成与润色出版级科学插图
-
 ---
 
 ## 基本信息
@@ -136,7 +132,6 @@ source_support: 0.0
 
 ---
 
-# AutoFigure：生成与优化出版级科学插图 —— 深度分析报告
 
 ## 1. 研究背景与问题
 
@@ -433,19 +428,13 @@ AutoFigure 的算法逻辑遵循 **ReAct（Reasoning + Acting）** 范式：
 
 ### 1: AutoFigure 是什么？
 
-1: AutoFigure 是什么？
-
 **A**: AutoFigure 是一个专为科研人员设计的自动化工具，旨在将原始数据直接转化为符合出版标准的科学图表。它解决了传统绘图流程中繁琐的手动调整问题，能够自动处理排版、配色和格式，显著降低时间成本。
 
 ### 2: 它与 Matplotlib 或 Illustrator 有何区别？
 
-2: 它与 Matplotlib 或 Illustrator 有何区别？
-
 **A**: 不同于需要编写复杂代码的编程库（如 Matplotlib）或需要手动操作的矢量软件（如 Illustrator），AutoFigure 结合了 AI 算法，能够**智能识别数据特征**并自动选择最佳的可视化方案。它减少了人工微调的需求，兼具代码的复现性和软件的易用性。
 
 ### 3: 支持哪些图表类型？
-
-3: 支持哪些图表类型？
 
 **A**: AutoFigure 广泛支持科研场景，包括：
 *   **统计图**：折线图、散点图、箱线图、柱状图。
@@ -454,25 +443,17 @@ AutoFigure 的算法逻辑遵循 **ReAct（Reasoning + Acting）** 范式：
 
 ### 4: 是否需要编程基础？
 
-4: 是否需要编程基础？
-
 **A**: 这取决于具体实现形式。虽然它可能提供 Python 代码库供高级用户调用，但其核心目标是**降低门槛**。用户通常只需提供数据文件和简单指令，无需编写底层绘图代码即可生成高质量图表。
 
 ### 5: 生成的图表能直接投稿吗？
-
-5: 生成的图表能直接投稿吗？
 
 **A**: 是的，“出版级”是其核心特性。AutoFigure 内置了对 Nature、Science 等期刊投稿规范的认知，能自动处理分辨率（300-600 dpi+）、文件格式（PDF/SVG/TIFF）及字体排版，通常无需后期修图即可直接用于投稿。
 
 ### 6: 如何获取该工具？
 
-6: 如何获取该工具？
-
 **A**: 作为 arXiv 论文项目，其代码通常会在 GitHub 开源。用户需配置相应的运行环境（如 Python），通过 API 或脚本输入数据（CSV/JSON 等）来生成图表。
 
 ### 7: 处理大规模数据的表现如何？
-
-7: 处理大规模数据的表现如何？
 
 **A**: AutoFigure 针对科学插图进行了优化，能够高效处理大规模数据集。它不仅能生成静态图表，还支持数据的快速迭代更新，确保在数据量较大时仍能保持图表的清晰度与逻辑性。
 ## 引用
@@ -484,7 +465,6 @@ AutoFigure 的算法逻辑遵循 **ReAct（Reasoning + Acting）** 范式：
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

@@ -15,8 +15,8 @@ tags:
 categories:
 - AI 工程
 source: blogs_podcasts
-description: Cursor 通过前向部署工程师（Forward Deployed Engineers）在企业内部落地 AI 代理（Agent），把这些代理视为“软件工厂”，实现业务流程的自动化和规模化。团队先深入业务场景，定制
-  AI 方案，随后在企业内部进行部署、监控和持续维护，确保方案符合安全、合规和可维护性要求。该模式强调跨职能
+description: Cursor公司的Pauline Brunet解释了她的前沿部署工程师团队如何帮助组织实施代理——本质上是在建立软件工厂。 在企业内部规模化部署
+  AI 仍是一项技术与管理双重挑战。Cursor 的前沿部署工程师团队通过为组织构建代理机制，将 AI 能力与业务流程深度融合，形成可复用的软件工厂模式。本文将详细阐述其实现路径、关键技术与实际收益，帮助读者把握在大型组织中落地的要点。
 external_url: https://www.latent.space/p/cursor-forward-deployed-engineers
 scenarios:
 - AI/ML项目
@@ -24,10 +24,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Cursor部署工程师如何帮企业落地AI代理
-
 ---
 
 ## 基本信息
@@ -165,7 +161,6 @@ FDE模式是将AI Agent在企业内实现规模化、可重复交付的关键路
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

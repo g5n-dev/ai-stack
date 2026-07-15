@@ -16,8 +16,9 @@ categories:
 - 安全
 - 开发工具
 source: blogs_podcasts
-description: ToolSimulator 是 Strands Evals SDK 中的 LLM 驱动的工具仿真框架，旨在大规模、安全地测试依赖外部工具的
-  AI 代理。 核心功能 - **仿真驱动**：通过大语言模型生成工具调用的模拟响应，无需真实 API 调用。 - **隐私保护**：避免在测试过程中暴露用户个人信息（PII），降低
+description: 您可以使用 ToolSimulator，这是一款由 LLM 驱动的工具模拟框架，集成于 Strands Evals 之中，能够对依赖外部工具的
+  AI 代理进行大规模且安全的全面测试。与其冒着风险进行实时 API 调用（可能暴露个人身份信息（PII）或触发意外操作），或退而求其次使用在多轮工作流中容易失效的静态模拟，不如利用
+  ToolSimulator 提供的 LLM 驱动模拟来验证您的代理。
 external_url: https://aws.amazon.com/blogs/machine-learning/toolsimulator-scalable-tool-testing-for-ai-agents
 scenarios:
 - AI/ML项目
@@ -27,10 +28,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# ToolSimulator：AI代理大规模安全测试工具
-
 ---
 
 ## 基本信息
@@ -141,7 +138,6 @@ ToolSimulator的出现填补了AI代理评测工具链的关键空白。此前�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [安全](/categories/%E5%AE%89%E5%85%A8/) / [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/)

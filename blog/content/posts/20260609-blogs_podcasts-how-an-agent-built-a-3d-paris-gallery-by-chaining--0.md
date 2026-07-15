@@ -16,7 +16,7 @@ categories:
 - AI 工程
 - 开源生态
 source: blogs_podcasts
-description: 当AI agent开始调用多种工具完成任务时，往往需要将不同的AI服务有机组合。本文通过一个具体案例，展示了如何利用Hugging Face平台上的多个Spaces，链式调用视觉模型和3D渲染能力，构建一座可交互的巴黎画廊。这个过程不仅演示了工具链式调用的实现思路，也为开发者提供了将多种AI能力整合到实际项目中的参考路
+description: 当AI agent开始调用多种工具完成任务时，往往需要将不同的AI服务有机组合。本文通过一个具体案例，展示了如何利用Hugging Face平台上的多个Spaces，链式调用视觉模型和3D渲染能力，构建一座可交互的巴黎画廊。这个过程不仅演示了工具链式调用的实现思路，也为开发者提供了将多种AI能力整合到实际项目中的参考路径。
 external_url: https://huggingface.co/blog/mishig/spaces-agents-md
 scenarios:
 - 大语言模型
@@ -24,10 +24,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 用Agent链接两个Hugging Face Spaces搭建3D巴黎画廊
-
 ---
 
 ## 基本信息
@@ -85,7 +81,6 @@ source_support: 0.0
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [开源生态](/categories/%E5%BC%80%E6%BA%90%E7%94%9F%E6%80%81/)

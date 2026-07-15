@@ -16,8 +16,7 @@ categories:
 - 大模型
 - 开发工具
 source: arxiv
-description: '**总结：迈向Python神经调试器** 本文介绍了**神经调试器**的概念，这是一种通过模拟传统调试器行为来增强代码执行能力的新型语言模型。
-  **背景与问题：** 此前的研究通过训练大语言模型（LLM）预测Python程序的逐行执行轨迹，将其转化为“神经解释器”。然而，这种方法缺乏人类开发者常用的**交互式控制**（'
+description: 针对大型语言模型在代码执行中缺乏交互控制的问题，本文提出了“神经调试器”这一概念，旨在通过模拟传统调试器的行为来增强模型的代码执行能力。该方法在已有的“神经解释器”基础上进行了改进，试图赋予模型对程序状态的动态干预能力。然而，具体的模型架构细节与训练策略尚无法从摘要确认。该研究若能实现，有望为自动化代码调试与程序理解提供更灵活的交互范式。
 external_url: http://arxiv.org/abs/2603.09951v1
 scenarios:
 - 大语言模型
@@ -28,10 +27,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Towards a Neural Debugger for Python
-
 ---
 
 ## 基本信息

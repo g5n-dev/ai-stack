@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 语言模型团队：分布式系统视角下的协作机制
-
----
-
 ## 基本信息
 
 - **作者**: jryio

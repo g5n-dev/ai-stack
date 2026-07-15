@@ -16,8 +16,7 @@ categories:
 - 论文
 - 大模型
 source: arxiv
-description: '以下是针对论文《TG-ASR: Translation-Guided Learning with Parallel Gated Cross
-  Attention for Low-Resource Automatic Speech Recognition》的简洁总结： **1. 背景与挑战** 许多语言的自动语音识别（AS'
+description: 针对低资源语言自动语音识别（ASR）中标注数据稀缺的瓶颈，本文提出了 TG-ASR 框架，旨在利用丰富的文本翻译数据来辅助模型训练。该方法引入并行门控交叉注意力机制，通过整合翻译信息来增强声学特征，从而提升识别性能。虽然摘要未详述具体的消融实验细节，无法从摘要确认其对不同噪声环境的鲁棒性，但该研究为利用跨语言文本资源缓解语音数据匮乏问题提供了新的技术思路。
 external_url: http://arxiv.org/abs/2602.22039v1
 scenarios:
 - Web应用开发
@@ -25,10 +24,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# TG-ASR：基于并行门控交叉注意力的翻译引导低资源语音识别
-
 ---
 
 ## 基本信息

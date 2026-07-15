@@ -17,7 +17,7 @@ categories:
 - AI 工程
 source: arxiv
 description: 随着移动端 GUI 代理在实际应用中的需求增长，如何在可控、可重复的环境中对其进行可靠评估成为关键问题。本文提出 MobileGym，一个兼具可验证性和高并行度的仿真平台，旨在为移动
-  GUI 代理的研究提供统一且可量化的测试框架。该平台的具体实现细节尚需进一步阅读原文方能确认，但其核心思路有望促进自动化 UI 测试、人
+  GUI 代理的研究提供统一且可量化的测试框架。该平台的具体实现细节尚需进一步阅读原文方能确认，但其核心思路有望促进自动化 UI 测试、人机交互优化等方向的实证研究。
 external_url: http://arxiv.org/abs/2605.26114v1
 scenarios:
 - Web应用开发
@@ -25,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 可验证高并行移动GUI智能体仿真平台
-
 ---
 
 ## 基本信息
@@ -84,7 +80,6 @@ MobileGym 在实验可重复性和规模上具备显著优势，为 GUI 代理�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

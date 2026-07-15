@@ -16,8 +16,8 @@ categories:
 - 论文
 - 数据
 source: arxiv
-description: '**FairMed-XGB：针对关键医疗数据人口统计公平性的贝叶斯优化可解释多指标框架总结** **背景与问题** 在重症监护环境中部署的机器学习模型常表现出人口统计偏差，尤其是性别差异，这破坏了临床信任并影响了治疗的公平性。
-  **解决方案** 本文提出了 **FairMed-XGB** 这一新颖框架。该框架旨在系统性'
+description: 针对重症监护环境中机器学习模型存在的人口统计偏差问题，本研究提出了 FairMed-XGB 框架。该框架通过集成多指标公平性损失函数与贝叶斯优化策略，在
+  XGBoost 分类器中实现了对性别预测偏差的系统性缓解与可解释性增强。在 MIMIC-IV-ED 和 eICU 数据集上的实验表明，该方法能显著降低统计均等差异与泰尔指数，且几乎未牺牲预测精度。
 external_url: http://arxiv.org/abs/2603.14947v1
 scenarios:
 - AI/ML项目
@@ -25,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# FairMed-XGB：贝叶斯优化的多指标可解释框架用于医疗数据人口公平性
-
 ---
 
 ## 基本信息

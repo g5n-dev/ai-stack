@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# OpenClow构建11个AI Agent实现自主观察与策略进化
-
----
-
 ## 基本信息
 
 - **作者**: 孟健AI编程

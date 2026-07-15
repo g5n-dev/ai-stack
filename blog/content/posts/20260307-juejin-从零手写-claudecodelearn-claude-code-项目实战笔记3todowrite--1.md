@@ -16,8 +16,8 @@ categories:
 - AI 工程
 - 大模型
 source: juejin
-description: 本文总结《从零手写 ClaudeCode：learn-claude-code 项目实战笔记》第3阶段（s03）的核心内容——**TodoWrite（待办写入）功能**。
-  1. 核心痛点 在长链路任务中，大模型（LLM）容易出现“健忘”现象。当任务步骤繁多时，模型往往在执行后续步骤时遗忘了前置的设定或中间结果，导致任务失
+description: 在构建长链路 Agent 应用的过程中，大模型在多步推理后往往会出现上下文“健忘”现象，导致任务执行中断。本文聚焦 learn-claude-code
+  项目的 TodoWrite 阶段，解析如何通过持久化待办事项机制来维护任务状态。读者将了解到具体的代码实现逻辑，以及如何利用这一模块增强模型在复杂场景下的连续执行能力。
 external_url: https://juejin.cn/post/7614205951298355246
 scenarios:
 - 大语言模型
@@ -25,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# learn-claude-code 实战：用 TodoWrite 解决长链路健忘
-
 ---
 
 ## 基本信息

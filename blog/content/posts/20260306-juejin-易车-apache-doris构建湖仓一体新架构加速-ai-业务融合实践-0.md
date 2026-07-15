@@ -16,8 +16,8 @@ categories:
 - 数据
 - 系统与基础设施
 source: juejin
-description: 易车 × Apache Doris：构建湖仓一体新架构，加速 AI 业务融合实践 随着数据量的爆发式增长及业务对实时性要求的不断提高，易车技术团队在实时湖仓建设上进行了持续探索。目前，易车已成功构建了一个基于
-  **Apache Doris、Paimon 和 Hive** 的湖仓一体化数据平台，实现了数据架构的统一与收敛
+description: 面对数据规模的高速增长与业务对实时性的严苛要求，如何构建统一且高效的数据底座已成为技术演进的关键。易车技术团队基于 Apache Doris
+  + Paimon + Hive 打造了湖仓一体化平台，不仅成功实现了架构的收敛与统一，更为 AI 业务的高效融合提供了支撑。本文将深入拆解其架构选型逻辑与落地细节，希望能为正在探索数据体系升级的团队提供参考。
 external_url: https://juejin.cn/post/7613680097549762575
 scenarios:
 - AI/ML项目
@@ -25,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 易车基于Apache Doris构建湖仓一体架构加速AI业务落地
-
 ---
 
 ## 基本信息

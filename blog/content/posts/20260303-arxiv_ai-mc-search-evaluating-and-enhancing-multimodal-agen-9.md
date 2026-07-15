@@ -16,8 +16,8 @@ categories:
 - 论文
 - 大模型
 source: arxiv
-description: '以下是关于《MC-Search: Evaluating and Enhancing Multimodal Agentic Search
-  with Structured Long Reasoning Chains》的中文总结： 随着多模态大语言模型（MLLM）向更具智能体的多模态检索增强生成（MM-RAG）演进，现有的基'
+description: 多模态智能体搜索系统正面临长链路推理评估的缺失，现有基准难以考察其自适应规划能力。为此，本文提出了 MC-Search 基准测试，通过 3,333
+  个涵盖五种推理结构的示例，引入了过程级指标以量化评估检索与规划质量。虽然摘要未详述具体模型表现，但该工作为未来提升智能体在复杂多模态任务中的推理鲁棒性提供了新的验证标准。
 external_url: http://arxiv.org/abs/2603.00873v1
 scenarios:
 - AI/ML项目
@@ -26,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# MC-Search：基于结构化长推理链的多模态智能体搜索评估与增强
-
 ---
 
 ## 基本信息

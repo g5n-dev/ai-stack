@@ -16,8 +16,8 @@ categories:
 - 前端
 - 大模型
 source: juejin
-description: 以下是对您提供内容的中文总结： 本文介绍了一个入门级实战 Demo，旨在通过 Next.js 框架简单构建一个类似淘宝的 AI 智能推荐助手。该示例聚焦于基础实现，具体功能是模拟一个**智能水果推荐系统**。
-  **核心要点：** * **技术栈**：主要使用 Next.js。 * **项目性质**：适合初学者的入门级演
+description: 电商推荐系统看似复杂，但其核心逻辑往往可以通过前端框架与基础算法的结合来模拟。本文将基于 Next.js 构建一个入门级的智能水果推荐 Demo，帮助开发者理解推荐系统的基本运作机制。通过拆解代码实现与数据流转，读者能够掌握如何利用现有技术栈，快速搭建一个具备基础推荐功能的
+  Web 应用原型。
 external_url: https://juejin.cn/post/7616702701867794458
 scenarios:
 - AI/ML项目
@@ -28,10 +28,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 基于 Next.js 构建入门级智能水果推荐 Demo
-
 ---
 
 ## 基本信息

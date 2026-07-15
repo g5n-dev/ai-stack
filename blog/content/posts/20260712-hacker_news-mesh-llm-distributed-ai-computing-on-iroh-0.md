@@ -17,7 +17,7 @@ categories:
 - 系统与基础设施
 source: hacker_news
 description: Mesh LLM 基于 iroh 实现分布式 AI 计算，将大规模语言模型推理任务拆分到多节点，提供弹性算力扩展。随着模型规模快速增长，单机算力难以满足实时需求，Mesh
-  LLM 通过高效调度和容错机制，为企业实现低延迟、高可用的部署方案。本文将深入解析其核心架构与调度算法，并提供实际部署案例，帮助开发者快速在自有集群
+  LLM 通过高效调度和容错机制，为企业实现低延迟、高可用的部署方案。本文将深入解析其核心架构与调度算法，并提供实际部署案例，帮助开发者快速在自有集群中实现模型并行。
 external_url: https://www.iroh.computer/blog/mesh-llm
 scenarios:
 - AI/ML项目
@@ -26,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# iroh赋能Mesh LLM实现分布式AI计算
-
 ---
 
 ## 基本信息
@@ -83,7 +79,6 @@ Mesh LLM 基于 iroh 实现分布式 AI 计算，将大规模语言模型推理�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/)

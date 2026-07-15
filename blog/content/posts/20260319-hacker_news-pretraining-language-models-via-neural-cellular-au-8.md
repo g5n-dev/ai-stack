@@ -16,7 +16,7 @@ categories:
 - 论文
 - 大模型
 source: hacker_news
-description: 本文探讨了将神经细胞自动机（Neural Cellular Automata）引入语言模型预训练的新方法。通过在离散格子空间中对词元进行局部交互式更新，模型能够在保持参数效率的同时学习更细粒度的上下文表示。实验结果表明，该方法在多项下游任务中取得了竞争力的性能，尤其在资源受限场景下表现尤为突出。本篇将详细解析其设计思路
+description: 本文探讨了将神经细胞自动机（Neural Cellular Automata）引入语言模型预训练的新方法。通过在离散格子空间中对词元进行局部交互式更新，模型能够在保持参数效率的同时学习更细粒度的上下文表示。实验结果表明，该方法在多项下游任务中取得了竞争力的性能，尤其在资源受限场景下表现尤为突出。本篇将详细解析其设计思路、实现细节以及与传统预训练范式的对比，为研究者和工程师提供可落地的参考。
 external_url: https://hanseungwook.github.io/blog/nca-pre-pre-training
 scenarios:
 - 大语言模型
@@ -25,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 神经细胞自动机预训练语言模型研究
-
 ---
 
 ## 基本信息

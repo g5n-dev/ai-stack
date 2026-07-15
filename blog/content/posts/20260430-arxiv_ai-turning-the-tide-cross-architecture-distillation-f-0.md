@@ -16,8 +16,8 @@ categories:
 - 大模型
 - 论文
 source: arxiv
-description: 背景 扩散大语言模型（dLLM）具备并行解码和双向上下文优势，但最新模型需数十亿参数才能达到竞争力。已有蒸馏方法只针对单架构内部步数压缩，未实现跨架构知识迁移，即教师模型与学生模型在结构、注意力机制和分词器上均不同。
-  TIDE 框架 首次提出跨架构 dLLM 蒸馏框架 TIDE，包含三大模块化组件： 1. **TIDA
+description: TIDE（Turing‑Informed Distillation for dLLM）是首个跨架构 dLLM 蒸馏框架，提出三大模块化组件：TIDAL、CompDemo、Reverse
+  CALM。（来自摘要） 通过这些组件的协同作用，TIDE 在教师‑学生结构、注意力实现及分词器均不同的情况下完成知识迁移。
 external_url: http://arxiv.org/abs/2604.26951v1
 scenarios:
 - Web应用开发
@@ -27,10 +27,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 跨架构蒸馏技术助力扩散大语言模型
-
 ---
 
 ## 基本信息
@@ -158,7 +154,6 @@ TIDE 为算力受限环境（如边缘设备、低功耗服务器）提供了一
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

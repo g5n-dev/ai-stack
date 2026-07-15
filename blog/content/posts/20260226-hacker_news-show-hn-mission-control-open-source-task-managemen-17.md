@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Mission Control：AI 智能体开源任务管理工具
-
----
-
 ## 基本信息
 
 - **作者**: meisnerd

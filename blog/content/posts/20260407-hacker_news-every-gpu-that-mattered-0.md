@@ -15,7 +15,7 @@ tags:
 categories:
 - 系统与基础设施
 source: hacker_news
-description: 过去二十年，GPU的架构演进与算力提升相互交织，深刻影响了图形渲染、深度学习和并行计算等多个领域。本文以关键产品的时间线为线索，剖析每一代标志性显卡在硬件设计、制程工艺和生态布局上的突破，并结合实际基准测试和行业案例，展示它们在不同阶段的实际贡献。阅读本篇后，读者可以系统把握GPU发展的脉络，辨别技术趋势背后的驱动因素
+description: 过去二十年，GPU的架构演进与算力提升相互交织，深刻影响了图形渲染、深度学习和并行计算等多个领域。本文以关键产品的时间线为线索，剖析每一代标志性显卡在硬件设计、制程工艺和生态布局上的突破，并结合实际基准测试和行业案例，展示它们在不同阶段的实际贡献。阅读本篇后，读者可以系统把握GPU发展的脉络，辨别技术趋势背后的驱动因素，为未来的硬件选型和技术布局提供参考。
 external_url: https://sheets.works/data-viz/every-gpu
 scenarios:
 - Web应用开发
@@ -23,10 +23,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 回顾历代重要GPU
-
 ---
 
 ## 基本信息
@@ -84,7 +80,6 @@ source_support: 0.0
 
 ---
 
----
 ## 站内链接
 
 - 分类： [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/)

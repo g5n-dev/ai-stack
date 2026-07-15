@@ -17,7 +17,7 @@ categories:
 - AI 工程
 source: juejin
 description: 在 AI 应用开发中，如何让大语言模型（LLM）与外部工具无缝集成一直是个难题。MCP（Model Context Protocol，模型上下文协议）为此提供了一个标准化的解决方案。本文将带你一步步实现一个基于
-  Spring WebFlux 的 Server-Sent Events（SSE）流式响应的 AI 天气助手，
+  Spring WebFlux 的 Server-Sent Events（SSE）流式响应的 AI 天气助手，展示如何通过 MCP 将实时天气查询能力赋予 LLM。
 external_url: https://juejin.cn/post/7608212715346690054
 scenarios:
 - AI/ML项目
@@ -27,10 +27,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Spring AI MCP 结合 WebFlux SSE 构建 AI 天气助手
-
 ---
 
 ## 基本信息

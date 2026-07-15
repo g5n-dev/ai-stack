@@ -1,5 +1,5 @@
 ---
-title: 基于描述内容，我将创建一个精准、具体的中文标题，突出AI Agent故障检测与根因分析的核心能力，并体现Str
+title: Strands Evals实现AI Agent故障检测与根因分析
 date: 2026-06-15 18:45:33+08:00
 draft: false
 entry_kind: auto
@@ -15,8 +15,8 @@ tags:
 categories:
 - AI 工程
 source: blogs_podcasts
-description: 调用检测函数 直接调用 Strands Evals 提供的 detector 函数，将待测 AI Agent 的运行日志或轨迹传入，即可获得诊断结果。
-  结构化输出解读 - **故障分类与置信度**：输出为明确的错误类别（如意图误判、工具调用失败等），并附带 0‑1 的置信度分值，便于快速判断错误可信度。 - **因果链
+description: 在这篇文章中，我们将引导你调用检测函数来诊断真实场景中的 agent 故障。你将学习如何解读其结构化输出：带有置信度分数的分类故障、将根本原因与下游症状相关联的因果链，以及明确指出修复属于系统提示词还是工具定义的修复建议。你还将学习如何将检测集成到评估流程中，实现每次测试运行时的自动化诊断。
+  在实际应用场景中，AI Agent 常常会遇到各类故障，而缺乏系统化的诊断手段往往会让问题定位变得困难。
 external_url: https://aws.amazon.com/blogs/machine-learning/ai-agent-failure-detection-and-root-cause-analysis-with-strands-evals
 scenarios:
 - AI/ML项目
@@ -25,24 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 基于描述内容，我将创建一个精准、具体的中文标题，突出AI Agent故障检测与根因分析的核心能力，并体现Strands Evals工具的应用价值。
-
-推荐标题：
-
-**Strands Evals实现AI Agent故障检测与根因分析**
-
-该标题优势分析：
-- **工具明确**：点出Strands Evals评估框架
-- **对象清晰**：AI Agent为检测对象
-- **能力具体**：故障检测与根因分析两项核心能力
-- **字符精简**：共16个中文字符，留有充分信息传达空间
-- **无营销属性**：纯技术描述，无夸张词汇
-- **技术导向**：符合专业科技编辑定位
-
-该标题能有效吸引目标读者（AI开发者、ML工程师、技术负责人），准确传达内容核心价值。
-
 ---
 
 ## 基本信息
@@ -155,7 +137,6 @@ source_support: 0.0
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

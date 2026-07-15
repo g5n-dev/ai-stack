@@ -17,7 +17,7 @@ categories:
 - 系统与基础设施
 source: hacker_news
 description: 随着大语言模型在各行业的渗透，越来越多开发者希望在本地设备上完成推理，以兼顾隐私与响应速度。2026 年新一代 Mini PC 在功耗、体积与算力之间实现了更优平衡，成为部署本地
-  LLM 的可行选择。本文梳理主流迷你主机的硬件配置，评估在典型模型规模下的实际性能，并针对不同需求提供选型建议，帮助读者快速搭建高效、低成本
+  LLM 的可行选择。本文梳理主流迷你主机的硬件配置，评估在典型模型规模下的实际性能，并针对不同需求提供选型建议，帮助读者快速搭建高效、低成本的本地推理环境。
 external_url: https://terminalbytes.com/best-mini-pc-for-local-llm-2026
 scenarios:
 - AI/ML项目
@@ -26,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 2026年本地大模型迷你PC
-
 ---
 
 ## 基本信息
@@ -87,7 +83,6 @@ source_support: 0.0
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/)

@@ -16,7 +16,7 @@ categories:
 - 开发工具
 - 系统与基础设施
 source: hacker_news
-description: Anthropic 推出的 Cowork 功能在 macOS 上悄然创建了 10GB 的虚拟机资源包，且未在执行前向用户发出明确提示。这一行为不仅占用了宝贵的磁盘空间，也引发了关于开发工具透明度与权限管理的讨论。本文将剖析该现象背后的技术细节，并提供清理磁盘及监控此类后台活动的具体方法，帮助开发者维护系统环境的整洁与可
+description: Anthropic 推出的 Cowork 功能在 macOS 上悄然创建了 10GB 的虚拟机资源包，且未在执行前向用户发出明确提示。这一行为不仅占用了宝贵的磁盘空间，也引发了关于开发工具透明度与权限管理的讨论。本文将剖析该现象背后的技术细节，并提供清理磁盘及监控此类后台活动的具体方法，帮助开发者维护系统环境的整洁与可控。
 external_url: https://github.com/anthropics/claude-code/issues/22543
 scenarios:
 - Web应用开发
@@ -24,10 +24,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Anthropic 推出 Cowork 功能：macOS 无预警生成 10GB 虚拟机包
-
 ---
 
 ## 基本信息

@@ -16,8 +16,8 @@ categories:
 - AI 工程
 - 大模型
 source: blogs_podcasts
-description: 以下是该内容的中文总结： **主题：利用 Amazon Nova Sonic 构建实时语音助手** **核心内容：** 这篇文章主要介绍了
-  **Amazon Nova Sonic** 如何通过双向流接口提供实时、类人的语音对话体验。文章重点阐述了 Nova Sonic 相较于传统的**级联架构**的优势，探讨了它如何解
+description: Amazon Nova Sonic 通过双向流式接口，提供实时的、近乎人类水准的语音对话。在这篇文章中，您将了解 Amazon Nova
+  Sonic 如何解决级联方法面临的某些挑战，简化语音 AI 智能体的构建，并提供自然的对话能力。我们还将提供有关何时选择每种方法的指导，以帮助您为语音 AI 项目做出明智的决策。
 external_url: https://aws.amazon.com/blogs/machine-learning/building-real-time-voice-assistants-with-amazon-nova-sonic-compared-to-cascading-architectures
 scenarios:
 - AI/ML项目
@@ -35,10 +35,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Amazon Nova Sonic 实时语音助手与级联架构对比
-
 ---
 
 ## 基本信息
@@ -228,7 +224,6 @@ Amazon Nova Sonic 通过双向流式接口，提供实时的、近乎人类水�
 ---
 
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

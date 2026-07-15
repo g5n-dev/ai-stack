@@ -16,7 +16,7 @@ categories:
 - 论文
 - AI 工程
 source: arxiv
-description: ConGA：上下文性别注释框架总结 **背景与问题** 机器翻译在处理跨语言性别差异时面临严峻挑战。当从无语法性别的语言（如英语）翻译到形态上有性别区分的语言（如意大利语）时，系统常默认使用男性形式，这不仅强化了性别偏见，也降低了翻译准确性。例如，英语中“doctor”可指任何性别的医生，但意大利语需明确选择“dott
+description: 背景与问题 机器翻译在处理跨语言性别差异时面临严峻挑战。当从无语法性别的语言（如英语）翻译到形态上有性别区分的语言（如意大利语）时，系统常默认使用男性形式，这不仅强化了性别偏见，也降低了翻译准确性。例如，英语中“doctor”可指任何性别的医生，但意大利语需明确选择“dottore”（男医生）或“dottoressa”（女医生）。
 external_url: http://arxiv.org/abs/2603.17962v1
 scenarios:
 - Web应用开发
@@ -26,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# ConGA框架：机器翻译性别标注指南
-
 ---
 
 ## 基本信息

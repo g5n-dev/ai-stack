@@ -17,7 +17,8 @@ categories:
 - AI 工程
 source: juejin
 description: 模型作为 LangChain 框架的底层基石，直接决定了基于语言模型构建的应用性能。本文将聚焦于 LangChain 的 Model I/O
-  模块，详细拆解从构建输入提示、调用模型到解析输出的完整工作流。通过阅读本文，你不仅能掌握模型交互的标准流程，还能学会如何通过结构化的方式优化提示词并处理复杂的返回结果，从而为构建
+  模块，详细拆解从构建输入提示、调用模型到解析输出的完整工作流。通过阅读本文，你不仅能掌握模型交互的标准流程，还能学会如何通过结构化的方式优化提示词并处理复杂的返回结果，从而为构建稳健的
+  LLM 应用打下坚实基础。
 external_url: https://juejin.cn/post/7606183276774096959
 scenarios:
 - AI/ML项目
@@ -26,10 +27,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# LangChain 模型 I/O 模块：提示构建、模型调用与输出解析
-
 ---
 
 ## 基本信息
@@ -121,9 +118,7 @@ source_support: 0.0
 
 ### 1: LangChain 中的提示词模板与直接使用字符串相比有什么核心优势？
 
-1: LangChain 中的提示词模板与直接使用字符串相比有什么核心优势？
-
-**A**: 
+**A**:
 虽然直接使用字符串拼接也可以构建提示词，但 LangChain 的提示词模板提供了以下关键优势：
 
 1.  **参数化与复用性**：可以将提示词中的变量（如用户输入、特定指令）抽象出来，通过代码动态填充，避免重复编写冗长的提示词。
@@ -136,9 +131,7 @@ source_support: 0.0
 
 ### 2: 如何在 LangChain 中处理大语言模型返回的原始文本，将其提取为结构化数据（如 JSON）？
 
-2: 如何在 LangChain 中处理大语言模型返回的原始文本，将其提取为结构化数据（如 JSON）？
-
-**A**: 
+**A**:
 LangChain 提供了强大的 **Output Parsers（输出解析器）** 来解决这一问题，主要流程如下：
 
 1.  **定义格式指令**：首先需要实例化一个解析器（例如 `PydanticOutputParser` 或 `SimpleJsonOutputParser`）。解析器会自动生成一个“格式说明”，告诉模型必须按照什么样的 JSON 结构或数据类型返回。
@@ -151,9 +144,7 @@ LangChain 提供了强大的 **Output Parsers（输出解析器）** 来解决�
 
 ### 3: 在调用模型时，`invoke` 方法、`batch` 方法和 `stream` 方法有什么区别？
 
-3: 在调用模型时，`invoke` 方法、`batch` 方法和 `stream` 方法有什么区别？
-
-**A**: 
+**A**:
 这三种方法对应了不同的交互模式，适用于不同的业务场景：
 
 *   **`invoke`（同步调用）**：这是最基础的方法。发送一个输入，等待模型计算完毕后返回完整结果。适用于大多数单次请求场景。
@@ -166,9 +157,7 @@ LangChain 提供了强大的 **Output Parsers（输出解析器）** 来解决�
 
 ### 4: 如何在 LangChain 中实现“少样本学习”，即在提示词中给模型提供示例？
 
-4: 如何在 LangChain 中实现“少样本学习”，即在提示词中给模型提供示例？
-
-**A**: 
+**A**:
 LangChain 提供了专门的功能来简化 Few-shot Prompting 的构建，主要有两种方式：
 
 1.  **使用 `FewShotPromptTemplate`**：这是经典的方法。你需要准备一个示例列表，每个示例包含输入和输出。LangChain 会将这些示例格式化后插入到主提示词中。
@@ -181,9 +170,7 @@ LangChain 提供了专门的功能来简化 Few-shot Prompting 的构建，主�
 
 ### 5: 当模型输出格式不正确或包含多余文本时，如何提高解析的成功率？
 
-5: 当模型输出格式不正确或包含多余文本时，如何提高解析的成功率？
-
-**A**: 
+**A**:
 这是实际开发中常见的问题，可以通过以下策略解决：
 
 2.  **使用带有重试机制的解析器**：LangChain 提供了 `OutputFixingParser`。它包装了一个基础解析器，当解析失败时，它会将错误信息和原始返回传回给 LLM，要求 LLM 自行修正格式错误。
@@ -199,7 +186,6 @@ LangChain 提供了专门的功能来简化 Few-shot Prompting 的构建，主�
 ---
 
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

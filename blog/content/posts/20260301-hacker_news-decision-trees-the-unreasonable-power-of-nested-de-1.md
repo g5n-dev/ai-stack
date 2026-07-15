@@ -36,10 +36,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 决策树：嵌套决策规则的非凡效能
-
----
-
 ## 基本信息
 
 - **作者**: mschnell

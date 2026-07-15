@@ -16,8 +16,9 @@ categories:
 - 大模型
 - AI 工程
 source: blogs_podcasts
-description: 以下是该内容的中文总结： **OpenAI发布GPT-5.4** OpenAI推出了全新升级的GPT-5.4模型。作为目前最强大且高效的旗舰级模型，GPT-5.4专为专业工作领域打造，旨在为用户提供卓越的性能支持。
-  该模型具备以下核心特点： * **行业领先的代码能力**：在编程与软件开发方面表现出色。 * **计算机
+description: 隆重推出 GPT-5.4，这是 OpenAI 迄今为止能力最强、效率最高的面向专业工作的前沿模型，具备业界领先的代码、计算机使用、工具搜索能力，以及
+  100 万 token 的上下文。 OpenAI 正式发布 GPT-5.4，将其定位为面向专业工作的前沿模型。该模型不仅在代码生成、计算机操作及工具搜索方面具备业界领先的性能，更通过
+  100 万 token 的上下文窗口大幅提升了信息处理效率。
 external_url: https://openai.com/index/introducing-gpt-5-4
 scenarios:
 - AI/ML项目
@@ -38,10 +39,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# OpenAI发布GPT-5.4：百万token上下文，强化代码与工具调用
-
 ---
 
 ## 基本信息

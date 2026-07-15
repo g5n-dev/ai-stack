@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 移除开源大模型审查机制的工具
-
----
-
 ## 基本信息
 
 - **作者**: mvdwoord

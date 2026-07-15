@@ -16,8 +16,7 @@ categories:
 - 论文
 - 安全
 source: arxiv
-description: 以下是关于《Protecting the Undeleted in Machine Unlearning》一文的中文总结： **核心问题**
-  论文指出，当前的“机器遗忘”旨在通过移除特定数据来模拟“完美重训练”。然而，研究证明这种追求完美重训练的方法及其对应的安全定义，会给**剩余数据（未被删除的数据）**带来严重的隐
+description: 针对当前机器遗忘研究普遍追求“完美重训练”而忽视剩余数据隐私风险的问题，本文提出了一种新的重构攻击，揭示了攻击者可利用删除请求反推未删除数据的隐患。作者据此重新定义了安全标准，旨在严格保护未被删除的数据免受波及。尽管摘要未详述具体算法实现，但该方案表明在保障隐私的同时，仍能支持统计学习等关键功能的实现，为平衡遗忘效果与系统安全性提供了新的理论视角。
 external_url: http://arxiv.org/abs/2602.16697v1
 scenarios:
 - Web应用开发
@@ -27,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 机器遗忘中保护未删除数据的隐私防御机制
-
 ---
 
 ## 基本信息

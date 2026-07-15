@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Banana-slides：基于 Banana Pro 的原生 AI PPT 生成应用
-
----
-
 ## 基本信息
 
 - **作者**: 冬奇Lab

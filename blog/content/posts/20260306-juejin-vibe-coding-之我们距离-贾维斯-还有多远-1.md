@@ -16,8 +16,8 @@ categories:
 - AI 工程
 - 产品与创业
 source: juejin
-description: '**文章核心总结：迈向“贾维斯”的路径与方法** 本文探讨了如何通过改进人机协作模式，向类似“贾维斯”的智能系统迈进。作者提出了一套从方法论到系统架构的完整思路，旨在解决当前AI协作中的痛点，提升开发与交互效率。
-  **一、 现有协作模式的改进方法** 为了拉近与“贾维斯”的距离，作者首先提出了三个具体的优化手段： 1.'
+description: 随着 AI 编程能力的演进，"Vibe Coding" 正在重塑人机协作的边界。本文探讨了从当前辅助工具向智能系统演进的关键路径，提出了通过场景模板化、决策记录与沟通优化来提升协作效率的方法。作者进一步构想了一个包含记忆、执行与学习层的
+  AI 管理系统，为构建更智能的交互模式提供了具体思路与方向。
 external_url: https://juejin.cn/post/7613673150078435355
 scenarios:
 - AI/ML项目
@@ -25,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Vibe Coding：优化人机协作模式与AI管家系统构想
-
 ---
 
 ## 基本信息

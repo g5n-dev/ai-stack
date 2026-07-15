@@ -16,8 +16,8 @@ categories:
 - 大模型
 - AI 工程
 source: blogs_podcasts
-description: Nova Forge SDK 简介 Nova Forge SDK是一款专为企业管理级AI应用设计的语言模型定制工具，旨在简化Nova模型的定制流程，让团队能够充分发挥语言模型的能力，同时降低技术门槛。
-  核心价值 该SDK的主要优势在于解决了LLM定制过程中的三大痛点： - **依赖管理**：自动化处理各类依赖关系，无需
+description: 今天，我们正式发布 Nova Forge SDK，让 LLM 定制变得更加触手可及，帮助团队充分发挥语言模型的全部潜力，无需面对依赖管理、镜像选择和配方配置等挑战，从而进一步降低使用门槛。
+  Nova Forge SDK 正式发布，为企业级语言模型定制提供一站式解决方案。该工具简化了依赖管理、镜像选择与配方配置等繁琐步骤，使团队能够更专注于模型能力的挖掘与业务创新。
 external_url: https://aws.amazon.com/blogs/machine-learning/introducing-nova-forge-sdk-a-seamless-way-to-customize-nova-models-for-enterprise-ai
 scenarios:
 - 大语言模型
@@ -28,10 +28,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Nova Forge SDK发布：简化企业LLM定制流程
-
 ---
 
 ## 基本信息

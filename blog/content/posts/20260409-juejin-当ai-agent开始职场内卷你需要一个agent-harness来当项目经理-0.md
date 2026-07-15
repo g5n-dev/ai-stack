@@ -15,8 +15,8 @@ tags:
 categories:
 - AI 工程
 source: juejin
-description: 背景 AI Agent 如 ChatGPT 等在个人工作中表现出色，能够快速完成代码、调试、文档等任务。然而，随着多个 Agent 被引入团队，协作难度急剧上升，出现“团队混乱”现象，导致工作流程失控、产出质量参差不齐。
-  问题表现 - **单点效率提升，整体协同下降**：单个 Agent 效率高，但缺乏统一调度，导致任
+description: 当AI Agent逐步进入日常工作场景，单个工具的高效表现往往在面对复杂任务时迅速失效。多个Agent协同工作时，缺乏统一的调度机制容易导致任务冲突、资源浪费乃至项目失控。本篇文章聚焦Agent
+  Harness这一框架，探讨如何为AI Agent搭建可控的工作环境，实现真正的“项目经理”式协调管理。
 external_url: https://juejin.cn/post/7626400485877252106
 scenarios:
 - AI/ML项目
@@ -24,10 +24,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# AI Agent调度失控：Agent Harness统一协调方案
-
 ---
 
 ## 基本信息
@@ -127,7 +123,6 @@ AI Agent 的“多兵作战”虽能带来单点效率，但缺乏统一管理�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

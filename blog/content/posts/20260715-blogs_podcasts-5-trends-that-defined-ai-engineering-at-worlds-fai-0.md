@@ -16,8 +16,8 @@ categories:
 - AI 工程
 - 系统与基础设施
 source: blogs_podcasts
-description: 核心转变 2026 年 AIE 世界博览会上，AI 工程正式进入以“代理”为中心的新阶段——从单纯“使用代理”转向“围绕代理构建系统”。这意味着技术栈、架构设计、部署方式乃至开发流程都围绕自主代理（Agent）进行组织，而非把代理当作单一工具来嵌入。
-  主要意义 1. **系统化**：代理不再是离散的插件，而是构成完整业
+description: 在今年的AIE世界博览会上，人工智能工程迈入了一个新阶段：围绕智能体构建系统，而不仅仅是利用智能体进行构建。 在今年的AIE世界博览会上，AI工程迈入了围绕智能体构建系统的新阶段。
+  这标志着从把AI视作单一工具向系统化设计的根本转变，要求开发者重新审视架构、交互和安全等关键维度。
 external_url: https://www.latent.space/p/aiewf26trends
 scenarios:
 - AI/ML项目
@@ -25,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 2026世博会AI工程五大趋势：围绕智能体构建系统
-
 ---
 
 ## 基本信息
@@ -84,7 +80,6 @@ source_support: 0.0
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/)

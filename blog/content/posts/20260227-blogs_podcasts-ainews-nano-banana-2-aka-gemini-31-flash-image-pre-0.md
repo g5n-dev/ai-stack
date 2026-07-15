@@ -16,8 +16,8 @@ categories:
 - 大模型
 - AI 工程
 source: blogs_podcasts
-description: 随着 Gemini 3.1 系列的首个模型 Nano Banana 2（即 Flash Image Preview）正式发布，图像生成领域迎来了新的
-  SOTA 基准。本文将深入解析该模型的技术细节与性能表现，探讨其在生成质量与效率上的突破。对于关注 AI 视觉发展的开发者与研究者而言，这不仅是了解前沿模型的机会，更能为
+description: 第一个 Gemini 3.1 模型来了…… 随着 Gemini 3.1 系列的首个模型 Nano Banana 2（即 Flash Image
+  Preview）正式发布，图像生成领域迎来了新的 SOTA 基准。本文将深入解析该模型的技术细节与性能表现，探讨其在生成质量与效率上的突破。对于关注 AI 视觉发展的开发者与研究者而言，这不仅是了解前沿模型的机会，更能为未来的应用落地提供重要参考。
 external_url: https://www.latent.space/p/ainews-nano-banana-2-aka-gemini-31
 scenarios:
 - AI/ML项目
@@ -36,10 +36,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Gemini 2.0 Flash 登场：超越 GPT-4o，成新 SOTA 图像生成模型
-
 ---
 
 ## 基本信息

@@ -15,8 +15,7 @@ tags:
 categories:
 - 系统与基础设施
 source: blogs_podcasts
-description: 背景 数据中心对存储性能的需求持续增长，但单纯增加硬件成本高、能耗大。如何在现有硬件上提升效率成为关键问题。 技术方案 研究团队设计了一套智能负载调度系统。该系统通过实时监测闪存存储块的读写压力，动态分配
-  I/O 请求，使得热点数据块得到均衡使用，避免局部过载。算法结合机器学习预测短期访问模式，提前迁移冷热数据，进一步
+description: 研究人员开发了一个系统，可以智能地平衡工作负载，以提高数据中心闪存硬件的效率。 随着数据中心规模持续扩大，如何在提升算力的同时控制硬件成本和能耗成为行业关注的核心问题。近期，研究团队设计了一套工作负载智能调度系统，通过在闪存层面动态分配资源，显著提升了硬件利用率并降低了冗余配置。该方案已在实际集群中验证，能够在不增加服务器数量的情况下实现性能提升，为运营者提供了一条兼顾效率与成本的技术路径。
 external_url: https://news.mit.edu/2026/helping-data-centers-deliver-higher-performance-less-hardware-0407
 scenarios:
 - Web应用开发
@@ -24,10 +23,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 智能工作负载平衡系统提升数据中心闪存效率
-
 ---
 
 ## 基本信息
@@ -125,7 +120,6 @@ source_support: 0.0
 
 ---
 
----
 ## 站内链接
 
 - 分类： [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/)

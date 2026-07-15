@@ -16,9 +16,8 @@ categories:
 - AI 工程
 - 产品与创业
 source: blogs_podcasts
-description: 以下是对该内容的中文总结： **文章主题：利用 Amazon Bedrock 构建智能招聘系统** 这篇文章介绍了如何利用 Amazon
-  Bedrock 及相关 AWS 服务创建一个人工智能驱动的招聘系统，旨在革新人才获取流程，同时保留必要的人工监管。以下是核心内容总结： **1. 核心目标**
-  该系统旨在通过生成式
+description: 在本文中，我们将展示如何使用 Amazon Bedrock、Amazon Bedrock Knowledge Bases、AWS Lambda
+  及其他 AWS 服务构建一个人工智能驱动的招聘系统，以提升职位描述撰写、候选人沟通和面试准备，同时保持人工监督。 随着生成式 AI 的深入应用，人力资源领域正迎来效率变革。
 external_url: https://aws.amazon.com/blogs/machine-learning/ai-meets-hr-transforming-talent-acquisition-with-amazon-bedrock
 scenarios:
 - RAG应用
@@ -47,10 +46,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 基于 Amazon Bedrock 构建AI招聘系统优化人才获取流程
-
 ---
 
 ## 基本信息
@@ -154,7 +149,6 @@ source_support: 0.0
 
 ---
 
-# AI meets HR: 深度技术分析报告
 
 ## 1. 核心观点深度解读
 
@@ -431,7 +425,6 @@ AWS、Google Cloud、Microsoft Azure等云厂商将成为HR Tech底层的核心�
 ---
 
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [产品与创业](/categories/%E4%BA%A7%E5%93%81%E4%B8%8E%E5%88%9B%E4%B8%9A/)

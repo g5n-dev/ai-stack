@@ -30,10 +30,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 让 Claude 编写 CUDA 内核并指导开源模型
-
----
-
 ## 基本信息
 
 - **来源**: Hugging Face Blog (blog)
@@ -83,9 +79,7 @@ source_support: 0.0
 4.  **长窗口依赖测试：** 观察当项目代码量超过上下文窗口（如>200k tokens）时，Claude能否保持代码逻辑的一致性和显存管理的正确性。
 
 ---
-## 技术分析
 
-# 深度技术分析：利用 Claude 构建 CUDA 内核与开源模型教学
 
 ## 1. 核心技术观点深度剖析
 
@@ -259,7 +253,6 @@ source_support: 0.0
 ---
 
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

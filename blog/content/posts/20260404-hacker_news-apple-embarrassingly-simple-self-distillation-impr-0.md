@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Apple自蒸馏技术简化代码生成流程
-
----
-
 ## 基本信息
 
 - **作者**: Anon84
@@ -89,7 +85,6 @@ Apple这篇论文提出的"Embarrassingly Simple Self-Distillation"方法，本�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

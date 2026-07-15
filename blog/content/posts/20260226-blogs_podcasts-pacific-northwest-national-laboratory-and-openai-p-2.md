@@ -16,8 +16,8 @@ categories:
 - 大模型
 - 数据
 source: blogs_podcasts
-description: 以下是该内容的中文总结： **太平洋西北国家实验室与 OpenAI 达成合作，旨在加速联邦许可流程** **核心成果：推出 DraftNEPABench
-  基准测试** 太平洋西北国家实验室（PNNL）与人工智能研究实验室 OpenAI 宣布建立合作伙伴关系，共同探索利用人工智能加速联邦政府环境审批流程。作为该合作的首个
+description: OpenAI 与西北太平洋国家实验室推出 DraftNEPABench，这是一项评估 AI 编程代理如何加速联邦许可流程的新基准——显示有望将
+  NEPA 文本起草时间缩短多达 15%，并推动基础设施审查的现代化。 联邦许可流程的复杂性常导致基础设施项目审批周期漫长，成为制约发展的关键瓶颈。
 external_url: https://openai.com/index/pacific-northwest-national-laboratory
 scenarios:
 - AI/ML项目
@@ -30,10 +30,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# OpenAI 联合西北太平洋国家实验室推出 DraftNEPABench，加速联邦许可流程
-
 ---
 
 ## 基本信息

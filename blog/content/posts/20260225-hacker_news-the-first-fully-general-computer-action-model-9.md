@@ -17,7 +17,7 @@ categories:
 - AI 工程
 source: hacker_news
 description: 随着大语言模型在文本处理上的成功，研究者正尝试将其能力延伸至真实的计算机操作环境。本文介绍首个通用的计算机动作模型，它不再局限于单一应用，而是能够基于界面截图理解并执行跨软件的复杂任务。对于关注
-  AI Agent 与人机交互前沿的读者而言，这项研究展示了模型从“理解世界”迈向“操作世界”的关键跨越，同时也揭示了通用自动
+  AI Agent 与人机交互前沿的读者而言，这项研究展示了模型从“理解世界”迈向“操作世界”的关键跨越，同时也揭示了通用自动化助手在落地过程中面临的挑战与机遇。
 external_url: https://si.inc/posts/fdm1
 scenarios:
 - 大语言模型
@@ -30,10 +30,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 首个完全通用的计算机动作模型
-
 ---
 
 ## 基本信息

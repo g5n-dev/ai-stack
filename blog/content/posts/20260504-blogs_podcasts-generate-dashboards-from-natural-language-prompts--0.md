@@ -16,8 +16,8 @@ categories:
 - AI 工程
 - 数据
 source: blogs_podcasts
-description: Amazon QuickSight 现已支持通过自然语言提示自动生成完整的多页仪表板。用户只需提供一份或多份数据集，并输入自然语言需求，系统即可在几分钟内完成从数据到可直接用于生产分析的仪表板的转换。此功能显著降低了传统仪表板搭建所需的手动操作时间，即使是有经验的
-  BI 专家也能受益。数据分析师可以快速构建周期性运营报
+description: 构建有意义的仪表板即使对经验丰富的BI专业人员也需要大量的手动设置。Amazon Quick现在能够根据自然语言提示生成完整的多页仪表板，在几分钟内将一个或多个数据集转化为可直接用于生产的分析。数据分析师构建定期运营报告、项目经理准备领导层评审，或工程师探索新数据集，都可以…
+  在数据驱动决策的背景下，快速将原始数据转化为可视化报告是提升业务效率的关键。
 external_url: https://aws.amazon.com/blogs/machine-learning/generate-dashboards-from-natural-language-prompts-in-amazon-quick
 scenarios:
 - AI/ML项目
@@ -25,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# QuickSight新增自然语言生成仪表板功能
-
 ---
 
 ## 基本信息
@@ -142,7 +138,6 @@ Amazon QuickSight 通过自然语言（NL）提示直接生成完整的多表仪
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [数据](/categories/%E6%95%B0%E6%8D%AE/)

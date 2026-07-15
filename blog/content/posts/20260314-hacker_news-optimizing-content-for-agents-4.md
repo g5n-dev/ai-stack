@@ -32,10 +32,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 面向AI代理的内容优化策略
-
----
-
 ## 基本信息
 
 - **作者**: vinhnx

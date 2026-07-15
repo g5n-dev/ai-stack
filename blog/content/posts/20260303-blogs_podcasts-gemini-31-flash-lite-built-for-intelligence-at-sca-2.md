@@ -38,10 +38,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Gemini 3.1 Flash-Lite：速度最快且最具成本效益的模型
-
----
-
 ## 基本信息
 
 - **来源**: Google DeepMind (blog)

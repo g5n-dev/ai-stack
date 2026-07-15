@@ -15,8 +15,8 @@ tags:
 categories:
 - 效率与方法论
 source: juejin
-description: 背景与动机 飞哥提到，许多人在使用 AI 铲子时发现它“不听话”：回答太虚、格式混乱，导致效率下降。这促使他推出《重构 AI 思维》系列，重点聚焦
-  Prompt Engineering，探讨如何下达“不可违抗的指令”。 Prompt Engineering 核心要素 1. **明确目标**：在指令开头说明期望的输出类型
+description: 在重构 AI 思维的第一步，Prompt Engineering 的质量往往决定了模型输出的可用性上限。本文系统梳理常见指令失效的根源，并提供结构化的写作技巧，帮助读者将模糊需求转化为模型不可违抗的指令，实现更一致、可控的
+  AI 响应和实用性。
 external_url: https://juejin.cn/post/7637027340086624290
 scenarios:
 - AI/ML项目
@@ -24,10 +24,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# AI思维重构：从Prompt工程到有效指令设计
-
 ---
 
 ## 基本信息
@@ -112,7 +108,6 @@ source_support: 0.0
 
 ---
 
----
 ## 站内链接
 
 - 分类： [效率与方法论](/categories/%E6%95%88%E7%8E%87%E4%B8%8E%E6%96%B9%E6%B3%95%E8%AE%BA/)

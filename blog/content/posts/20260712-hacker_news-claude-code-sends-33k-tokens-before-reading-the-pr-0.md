@@ -17,8 +17,7 @@ categories:
 - 开发工具
 source: hacker_news
 description: 在代码补全和生成任务中，模型在收到完整提示前就已经发送的 token 数量直接决定了调用成本和响应延迟。Claude Code 与 OpenCode
-  近期分别被测出在未读取提示时发送约 33k 与 7k tokens，这一差异意味着相同的 API 调用会产生截然不同的费用和吞吐量。本文通过实验对比，分析两者在预发
-  to
+  近期分别被测出在未读取提示时发送约 33k 与 7k tokens，这一差异意味着相同的 API 调用会产生截然不同的费用和吞吐量。
 external_url: https://systima.ai/blog/claude-code-vs-opencode-token-overhead
 scenarios:
 - AI/ML项目
@@ -26,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Claude Code读取提示前发送33k tokens，OpenCode仅7k
-
 ---
 
 ## 基本信息
@@ -86,7 +81,6 @@ source_support: 0.0
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/)

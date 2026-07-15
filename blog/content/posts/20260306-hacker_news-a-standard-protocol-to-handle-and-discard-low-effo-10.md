@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 处理与丢弃低质量AI生成拉取请求的标准协议
-
----
-
 ## 基本信息
 
 - **作者**: Muhammad523

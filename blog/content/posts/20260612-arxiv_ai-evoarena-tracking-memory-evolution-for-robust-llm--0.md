@@ -16,8 +16,7 @@ categories:
 - 大模型
 - 论文
 source: arxiv
-description: 背景与挑战 大规模语言模型（LLM）智能体在静态基准上表现优异，但真实环境不断变化，要求智能体持续对齐知识、技能与行为。现有评估多假设环境不变，难以反映动态部署需求。
-  EvoArena 基准 EvoArena 将环境变化建模为跨终端、软件和社会偏好三个领域的渐进更新序列，模拟真实系统的持续演化。任务覆盖从单步指令到跨阶
+description: EvoArena聚焦于在大规模语言模型（LLM）智能体运行时，如何捕捉记忆的动态演化并提升其在变化环境中的鲁棒性。该研究提出一种记忆追踪机制，旨在实时监测记忆更新过程，进而评估模型在动态场景下的适应能力。若实验结果验证该方法的有效性，或可为自适应对话系统、在线学习以及多任务协同等应用提供新的设计思路。具体的实现细节与评估指标尚需参考完整论文，无法从摘要确认。
 external_url: http://arxiv.org/abs/2606.13681v1
 scenarios:
 - 大语言模型
@@ -29,10 +28,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# EvoArena系统追踪动态环境中LLM代理的记忆进化
-
 ---
 
 ## 基本信息
@@ -169,7 +164,6 @@ EvoMem 增强了对环境证据的捕获，能够保存完整的动态环境状�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

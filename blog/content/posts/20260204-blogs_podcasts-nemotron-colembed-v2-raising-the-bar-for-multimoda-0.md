@@ -17,7 +17,7 @@ categories:
 - 数据
 source: blogs_podcasts
 description: 随着多模态信息检索需求的日益复杂，如何精准匹配跨模态内容已成为技术落地的关键瓶颈。本文介绍的 Nemotron ColEmbed V2 模型，凭借在
-  ViDoRe V3 排行榜上的优异表现，为解决这一难题提供了新思路。通过深入解析其架构设计与性能表现，读者将了解该模型如何提升检索系统的鲁棒性，以及如何将其应用于实际业务
+  ViDoRe V3 排行榜上的优异表现，为解决这一难题提供了新思路。通过深入解析其架构设计与性能表现，读者将了解该模型如何提升检索系统的鲁棒性，以及如何将其应用于实际业务场景以优化检索效果。
 external_url: https://huggingface.co/blog/nvidia/nemotron-colembed-v2
 scenarios:
 - RAG应用
@@ -35,10 +35,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Nemotron ColEmbed V2：基于ViDoRe V3的多模态检索模型
-
 ---
 
 ## 基本信息
@@ -87,9 +83,7 @@ NVIDIA Nemotron ColEmbed V2 在 ViDoRe V3 榜单的夺冠，不仅是一次 SOTA
 Nemotron ColEmbed V2 是一款**“工程导向”**的里程碑式模型。它用视觉算力换取了语义理解的深度，用 MRL 技术换取了部署的灵活性。对于追求高精度、复杂文档理解的企业而言，它是当前的不二之选；但对于算力敏感、超大规模的检索场景，它仍需配合传统的混合检索策略使用。
 
 ---
-## 技术分析
 
-# Nemotron ColEmbed V2 技术分析
 
 ## 1. 核心观点深度解读
 
@@ -239,7 +233,6 @@ Nemotron ColEmbed V2 的最大创新在于**在保持迟交互机制带来的高
 ---
 
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [数据](/categories/%E6%95%B0%E6%8D%AE/)

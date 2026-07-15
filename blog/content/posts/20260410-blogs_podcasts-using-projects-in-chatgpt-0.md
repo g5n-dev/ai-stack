@@ -16,8 +16,7 @@ categories:
 - 效率与方法论
 - AI 工程
 source: blogs_podcasts
-description: 项目（Projects）是 ChatGPT 中用于集中管理聊天、文件、指令和工作流的机制。用户可以在项目下创建多个会话，每个会话保留项目的上下文；可以将文档、代码、图片等上传到项目文件库，供对话时随时引用；还能在项目中预设系统指令或模板，使
-  AI 在特定场景下遵循统一的规则。通过这种方式，团队成员可以在同一项目空间内共
+description: 了解如何在 ChatGPT 中使用项目来组织聊天、文件和指令，管理正在进行的工作，并更有效地进行协作。 在ChatGPT中，项目功能为用户提供了结构化的方式来组织聊天、文件和指令，使得多任务处理更加清晰有序。通过统一管理正在进行的对话和资源，你可以避免信息散落、重复查找，从而显著提升工作效率。本文将帮助你快速掌握创建、配置和共享项目的技巧，并提供实操案例，让团队协作更加顺畅。
 external_url: https://openai.com/academy/projects
 scenarios:
 - AI/ML项目
@@ -25,10 +24,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 用ChatGPT项目组织聊天文件和指令
-
 ---
 
 ## 基本信息
@@ -140,7 +135,6 @@ Projects功能在复杂多项目管理、长期研究追踪和团队协作场景
 
 ---
 
----
 ## 站内链接
 
 - 分类： [效率与方法论](/categories/%E6%95%88%E7%8E%87%E4%B8%8E%E6%96%B9%E6%B3%95%E8%AE%BA/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

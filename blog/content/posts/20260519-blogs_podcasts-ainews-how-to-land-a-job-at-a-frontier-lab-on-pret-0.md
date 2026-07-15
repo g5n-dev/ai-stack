@@ -16,9 +16,7 @@ categories:
 - 大模型
 - AI 工程
 source: blogs_podcasts
-description: 本文分享在顶尖前沿实验室（如大型语言模型或强化学习研究团队）求职的经验，重点在于 pretraining 阶段的准备。主要建议包括： 关键技能
-  - 夯实机器学习与深度学习基础，熟悉 Transformer、Diffusion 等主流架构； - 掌握大规模分布式训练技巧，包括数据并行、模型并行、混合精度、梯度累积等。
-  项
+description: 谷歌 I/O 之前的安静一天，让我们推广一篇值得关注的博客文章 在AI前沿实验室的激烈竞争中，pretraining相关经验往往是简历筛选的关键。本文系统梳理了pretraining岗位的核心要求与面试环节，帮助工程师快速定位差距并制定提升方案。阅读后，读者可获得实用的准备策略，提高进入顶尖实验室的成功率。
 external_url: https://www.latent.space/p/ainews-how-to-land-a-job-at-a-frontier
 scenarios:
 - Web应用开发
@@ -26,10 +24,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 如何进入前沿AI实验室从事预训练工作
-
 ---
 
 ## 基本信息
@@ -135,7 +129,6 @@ source_support: 0.0
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

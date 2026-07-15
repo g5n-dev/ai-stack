@@ -16,8 +16,8 @@ categories:
 - 大模型
 - 开发工具
 source: juejin
-description: 谷歌近期推出了 **Android Bench** 基准测试，旨在评估大语言模型（LLM）在 Android 开发领域的实际表现。根据测试结果，**Gemini
-  2.5 Pro**（注：原文笔误为 3.1）展现了“遥遥领先”的优势。以下是核心要点总结： 1. **官方测试基准**：谷歌发布 Android Bench，
+description: 随着大语言模型在开发领域的应用日益深入，如何客观评估其在具体工程场景中的表现成为关键。谷歌近期推出的 Android Bench 基准测试，通过量化数据揭示了不同模型在
+  Android 开发任务中的实际效能差异。本文将解读这一测试结果与排名，帮助开发者了解各模型的优劣势，从而为技术选型提供更具参考价值的决策依据。
 external_url: https://juejin.cn/post/7614897667961143347
 scenarios:
 - AI/ML项目
@@ -26,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 谷歌发布 Android Bench：Gemini-3.1 Pro 开发基准测试领先
-
 ---
 
 ## 基本信息

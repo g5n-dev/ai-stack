@@ -16,8 +16,7 @@ categories:
 - 大模型
 - 前端
 source: blogs_podcasts
-description: GLM‑5.2 已正式发布，成为当前全球前端代码生成领域排名第一的开源模型。该模型在前端编码任务（如 React、Vue 等框架的组件生成、样式编写、交互逻辑实现）上实现了显著的性能提升，评测结果超过了此前的主流模型。团队同步推出了
-  IndexShare 技术，专用于推测解码（Speculative Decoding）
+description: 译文： 我们在世界上推出了一款全新的顶级开源模型！ 最近，智谱AI正式发布了GLM-5.2，宣称该模型在全球前端代码生成任务中取得了领先水平。作为开源项目，它不仅提供了高效的推理实现，还引入了IndexShare技术以加速投机解码过程。本文将详细分析GLM-5.2的技术架构、在实际项目中的基准表现，以及如何在现有工作流中快速集成并提升开发效率。
 external_url: https://www.latent.space/p/ainews-glm-52-the-top-frontend-coding
 scenarios:
 - Web应用开发
@@ -25,10 +24,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# GLM-5.2：开源模型强化前端编程推理
-
 ---
 
 ## 基本信息
@@ -130,7 +125,6 @@ GLM-5.2的发布对前端AI辅助编程市场格局产生直接影响。当前�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [前端](/categories/%E5%89%8D%E7%AB%AF/)

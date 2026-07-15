@@ -35,10 +35,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Microvm.nix：在 NixOS 上构建 Coding Agent 虚拟机
-
----
-
 ## 基本信息
 
 - **作者**: secure
@@ -111,14 +107,14 @@ source_support: 0.0
   microvm = {
     # 使用qemu作为虚拟化后端
     hypervisor = "qemu";
-    
+
     # 虚拟机基本配置
     vcpu = 2;          # 分配2个CPU核心
     mem = 1024;        # 分配1GB内存
-    
+
     # 网络配置（使用用户模式网络）
     network = "user";
-    
+
     # 共享主机目录到虚拟机
     shares = [{
       source = "/var/src";
@@ -126,7 +122,7 @@ source_support: 0.0
       tag = "src";
       proto = "9p";
     }];
-    
+
     # 虚拟机内运行的NixOS配置
     config = { config, pkgs, ... }: {
       # 安装基础开发工具
@@ -136,7 +132,7 @@ source_support: 0.0
         python3
         nodejs
       ];
-      
+
       # 配置网络
       networking.useDHCP = false;
       networking.defaultGateway = "10.0.2.2";
@@ -158,14 +154,14 @@ source_support: 0.0
     hypervisor = "qemu";
     vcpu = 4;
     mem = 2048;
-    
+
     # 添加持久化磁盘
     volumes = [{
       mountPoint = "/persist";
       image = "persist.img";
       size = 1024;  # 1GB
     }];
-    
+
     config = { config, pkgs, ... }: {
       # 配置文件系统
       fileSystems."/persist" = {
@@ -173,14 +169,14 @@ source_support: 0.0
         fsType = "ext4";
         autoFormat = true;
       };
-      
+
       # 安装数据库服务
       services.postgresql = {
         enable = true;
         package = pkgs.postgresql_15;
         dataDir = "/persist/db";
       };
-      
+
       # 确保持久化目录存在
       systemd.tmpfiles.rules = [
         "d /persist/db 0755 postgres postgres -"
@@ -202,7 +198,7 @@ source_support: 0.0
       hypervisor = "qemu";
       vcpu = 1;
       mem = 512;
-      
+
       config = { config, pkgs, ... }: {
         networking.firewall.allowedTCPPorts = [ 80 ];
         services.nginx = {
@@ -214,13 +210,13 @@ source_support: 0.0
         };
       };
     };
-    
+
     # 应用服务器
     app = {
       hypervisor = "qemu";
       vcpu = 2;
       mem = 1024;
-      
+
       config = { config, pkgs, ... }: {
         services.node-app = {
           enable = true;
@@ -228,13 +224,13 @@ source_support: 0.0
         };
       };
     };
-    
+
     # 数据库服务器
     db = {
       hypervisor = "qemu";
       vcpu = 1;
       mem = 512;
-      
+
       config = { config, pkgs, ... }: {
         services.mysql = {
           enable = true;
@@ -244,7 +240,7 @@ source_support: 0.0
       };
     };
   };
-  
+
   # 创建虚拟网络
   networking.bridges.mvnet.interfaces = [];
 }
@@ -254,8 +250,6 @@ source_support: 0.0
 ## 案例研究
 
 ### 1：某中型金融科技公司的 CI/CD 基础设施升级
-
- 1：某中型金融科技公司的 CI/CD 基础设施升级
 
 **背景**:
 该公司拥有一支约 40 人的后端开发团队，主要使用 Go 和 Rust 开发高频交易系统。代码库包含大量对系统依赖敏感的组件，且对构建环境的隔离性要求极高。
@@ -275,8 +269,6 @@ source_support: 0.0
 
 ### 2：开源开发者工具 "Devbox" 的后端测试沙箱
 
- 2：开源开发者工具 "Devbox" 的后端测试沙箱
-
 **背景**:
 Devbox 是一个旨在简化开发环境管理的开源项目。为了确保软件在各种 Linux 发行版上的兼容性，维护者需要在发布前进行大量的集成测试。
 
@@ -294,8 +286,6 @@ Devbox 是一个旨在简化开发环境管理的开源项目。为了确保软�
 ---
 
 ### 3：某 SaaS 公司的远程开发环境管理
-
- 3：某 SaaS 公司的远程开发环境管理
 
 **背景**:
 该公司采用远程优先的工作模式，并允许员工使用个人电脑（包括 macOS 和 Windows）进行开发。核心应用是一个复杂的单体应用，依赖于 PostgreSQL、Redis 以及多个特定的微服务。
@@ -411,8 +401,6 @@ Devbox 是一个旨在简化开发环境管理的开源项目。为了确保软�
 
 ### 1: 什么是 Microvm.nix，它与标准的 NixOS 虚拟机有何不同？
 
-1: 什么是 Microvm.nix，它与标准的 NixOS 虚拟机有何不同？
-
 **A**: Microvm.nix 是一个专为 NixOS 设计的模块化工具，用于创建和管理极简、轻量级的虚拟机。与标准的 NixOS 虚拟机或传统的 QEMU/KVM 虚拟机相比，Microvm.nix 专为快速启动和高密度部署而优化。
 
 主要区别在于：
@@ -425,8 +413,6 @@ Devbox 是一个旨在简化开发环境管理的开源项目。为了确保软�
 
 ### 2: 为什么选择在 NixOS 上使用 Microvms 来运行 Coding Agents，而不是直接使用 Docker 容器？
 
-2: 为什么选择在 NixOS 上使用 Microvms 来运行 Coding Agents，而不是直接使用 Docker 容器？
-
 **A**: 虽然 Docker 容器非常流行，但在运行 Coding Agents（特别是那些需要执行系统级操作或生成代码并运行的环境）时，Microvms 提供了更高的安全性和环境一致性。
 
 1.  **内核级隔离**：容器共享宿主机的内核，如果 Agent 需要加载内核模块或进行底层系统调用，可能会影响宿主机。Microvms 拥有独立的内核，完全隔离了故障域。
@@ -437,8 +423,6 @@ Devbox 是一个旨在简化开发环境管理的开源项目。为了确保软�
 ---
 
 ### 3: 如何使用 Microvm.nix 部署一个用于代码生成的虚拟机？
-
-3: 如何使用 Microvm.nix 部署一个用于代码生成的虚拟机？
 
 **A**: 部署过程主要涉及编写 NixOS 配置文件。以下是一个简化的概念流程：
 
@@ -465,8 +449,6 @@ Devbox 是一个旨在简化开发环境管理的开源项目。为了确保软�
 
 ### 4: Coding Agent 在 Microvm 中生成的代码如何持久化或与宿主机交互？
 
-4: Coding Agent 在 Microvm 中生成的代码如何持久化或与宿主机交互？
-
 **A**: 由于 Microvms 是隔离的环境，默认情况下文件系统是临时的（通常位于内存中）。要实现代码持久化或交互，通常采用以下几种方法：
 
 1.  **Virtio-fs (9p)**：这是最常用的方法。你可以在配置中将宿主机的一个目录挂载到虚拟机内。这样，Agent 在虚拟机内写入的文件会直接保存在宿主机上。
@@ -476,8 +458,6 @@ Devbox 是一个旨在简化开发环境管理的开源项目。为了确保软�
 ---
 
 ### 5: Microvms 的性能开销如何？是否会影响 AI 编程工具的响应速度？
-
-5: Microvms 的性能开销如何？是否会影响 AI 编程工具的响应速度？
 
 **A**: Microvms 的设计初衷就是为了在保持虚拟机隔离优势的同时，提供接近原生的性能。
 
@@ -491,7 +471,6 @@ Devbox 是一个旨在简化开发环境管理的开源项目。为了确保软�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/) / [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/)

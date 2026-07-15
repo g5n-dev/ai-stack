@@ -24,9 +24,10 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
+description: '💡 原名: XIU2 / CloudflareSpeedTest Relevant source files README.md main.go
+  CloudflareSpeedTest is a command-line tool designed to test Cloudflare CDN IP addresses
+  for latency and download speed'
 ---
-
-# 🚀 🚀 Cloudflare测速神器！秒级优选最快IP，网速飞起！🔥
 
 > 💡 **原名**: XIU2 /
 
@@ -43,9 +44,8 @@ source_support: 0.0
 - **DeepWiki**: [https://deepwiki.com/XIU2/CloudflareSpeedTest](https://deepwiki.com/XIU2/CloudflareSpeedTest)
 
 ---
-## 📚 DeepWiki 速览（节选）
 
-# Overview
+## Overview
 
 Relevant source files
 
@@ -78,14 +78,14 @@ Sources: [main.go128-144](https://github.com/XIU2/CloudflareSpeedTest/blob/013c2
 
 The system is highly configurable through a comprehensive set of command-line arguments that allow users to customize testing parameters.
 
-Parameter Category| Example Parameters| Description  
----|---|---  
-General Configuration| `-n`, `-v`, `-h`| Thread count, version info, help  
-Latency Testing| `-t`, `-tp`, `-httping`| Ping attempts, test port, HTTP mode  
-Download Testing| `-dn`, `-dt`, `-dd`| Download count, timeout, disable download  
-Filtering| `-tl`, `-tll`, `-tlr`, `-sl`| Max/min latency, loss rate, speed limit  
-Input/Output| `-f`, `-ip`, `-o`, `-p`| IP file, direct IP input, output file, display count  
-  
+Parameter Category| Example Parameters| Description
+---|---|---
+General Configuration| `-n`, `-v`, `-h`| Thread count, version info, help
+Latency Testing| `-t`, `-tp`, `-httping`| Ping attempts, test port, HTTP mode
+Download Testing| `-dn`, `-dt`, `-dd`| Download count, timeout, disable download
+Filtering| `-tl`, `-tll`, `-tlr`, `-sl`| Max/min latency, loss rate, speed limit
+Input/Output| `-f`, `-ip`, `-o`, `-p`| IP file, direct IP input, output file, display count
+
 Sources: [main.go20-104](https://github.com/XIU2/CloudflareSpeedTest/blob/013c27c0/main.go#L20-L104) [README.md129-188](https://github.com/XIU2/CloudflareSpeedTest/blob/013c27c0/README.md#L129-L188)
 
 ### Testing Modules
@@ -123,13 +123,13 @@ Sources: [main.go129-138](https://github.com/XIU2/CloudflareSpeedTest/blob/013c2
 ## Result Interpretation
 
 After testing completes, results are presented in a tabular format:
-    
-    
+
+
     IP 地址           已发送  已接收  丢包率  平均延迟  下载速度 (MB/s)
     104.27.200.69     4       4       0.00    146.23    28.64
     172.67.60.78      4       4       0.00    139.82    15.02
     ...
-    
+
 
 This output shows:
 
@@ -182,36 +182,35 @@ Sources: [README.md9-21](https://github.com/XIU2/CloudflareSpeedTest/blob/013c27
 Sources: [README.md77](https://github.com/XIU2/CloudflareSpeedTest/blob/013c27c0/README.md#L77-L77) [README.md367](https://github.com/XIU2/CloudflareSpeedTest/blob/013c27c0/README.md#L367-L367)
 
 ---
-## ✨ 引人入胜的引言
 
-# 🚀 网速起飞的秘密武器！24k+ 星的 CloudflareSpeedTest 到底有多神？
-
----
-
-**你是否经历过这样的绝望？**  
-深夜追更时突然转圈圈，游戏团战时延迟飙升，访问国外网站慢到怀疑人生……明明光纤入户，却因为 Cloudflare CDN 分配的“垃圾 IP”让网速坐了过山车？😤  
+## 🚀 网速起飞的秘密武器！24k+ 星的 CloudflareSpeedTest 到底有多神？
 
 ---
 
-### 🌩️ 当别人还在忍受“龟速”，你已悄悄用上“光速”通道！  
-这个 **24,384+ GitHub 星标的神器**，专门拯救被 Cloudflare CDN 虐到崩溃的网友！它像一位精准的狙击手，在 **全球 200 万+ Cloudflare IP** 中扫射，自动筛选出 **延迟最低、速度最快** 的黄金线路！⚡  
+**你是否经历过这样的绝望？**
+深夜追更时突然转圈圈，游戏团战时延迟飙升，访问国外网站慢到怀疑人生……明明光纤入户，却因为 Cloudflare CDN 分配的“垃圾 IP”让网速坐了过山车？😤
 
 ---
 
-### 🔥 为什么它能引爆全网？  
-✅ **颠覆性原理**：传统 CDN 等待“被分配”，而它主动**出击**——从海量 IP 中“优选”出最快线路！  
-✅ **实测震撼**：有用户反馈，原本 500ms 的延迟**直接降到 30ms**，下载速度从 2MB 飙升到 50MB！💥  
-✅ **全能战神**：不仅支持 Cloudflare，还兼容 Fastly、Akamai 等主流 CDN，甚至能测试任意网站解析 IP！  
-✅ **极简操作**：一条命令即可启动，小白也能秒变“网络优化大师”！  
+### 🌩️ 当别人还在忍受“龟速”，你已悄悄用上“光速”通道！
+这个 **24,384+ GitHub 星标的神器**，专门拯救被 Cloudflare CDN 虐到崩溃的网友！它像一位精准的狙击手，在 **全球 200 万+ Cloudflare IP** 中扫射，自动筛选出 **延迟最低、速度最快** 的黄金线路！⚡
 
 ---
 
-### 🌍 更刺激的是……  
-它竟然藏在**开源社区**的角落里，被无数程序员偷偷私藏！有人用它**解锁 4K 流媒体秒开**，有人靠它**游戏延迟碾压对手**……你确定不想看看自己的网速到底能有多快？  
+### 🔥 为什么它能引爆全网？
+✅ **颠覆性原理**：传统 CDN 等待“被分配”，而它主动**出击**——从海量 IP 中“优选”出最快线路！
+✅ **实测震撼**：有用户反馈，原本 500ms 的延迟**直接降到 30ms**，下载速度从 2MB 飙升到 50MB！💥
+✅ **全能战神**：不仅支持 Cloudflare，还兼容 Fastly、Akamai 等主流 CDN，甚至能测试任意网站解析 IP！
+✅ **极简操作**：一条命令即可启动，小白也能秒变“网络优化大师”！
 
 ---
 
-### 💡 **现在按下 STAR，你的网络体验将彻底改变！**  
+### 🌍 更刺激的是……
+它竟然藏在**开源社区**的角落里，被无数程序员偷偷私藏！有人用它**解锁 4K 流媒体秒开**，有人靠它**游戏延迟碾压对手**……你确定不想看看自己的网速到底能有多快？
+
+---
+
+### 💡 **现在按下 STAR，你的网络体验将彻底改变！**
 [点击探索 GitHub 仓库 →](https://github.com/XIU2/CloudflareSpeedTest)
 
 ---
@@ -307,7 +306,6 @@ Sources: [README.md77](https://github.com/XIU2/CloudflareSpeedTest/blob/013c27c0
 
 ---
 
-# 🌩 CloudflareSpeedTest 深度技术剖析
 
 ## 1. 技术架构深度剖析
 
@@ -374,24 +372,22 @@ Sources: [README.md77](https://github.com/XIU2/CloudflareSpeedTest/blob/013c27c0
 
 ### 1：多人在线游戏加速代理项目
 
- 1：多人在线游戏加速代理项目
-
-**背景**: 
+**背景**:
 一个面向东南亚玩家的《绝地求生》(PUBG) 游戏加速代理项目。由于该地区官方服务器节点较少，大量玩家依赖自建的 Cloudflare CDN 节点进行游戏流量转发（如 WARP 或 CF 优选 IP）。游戏对网络延迟极其敏感，超过 150ms 的延迟会严重影响竞技体验。
 
-**问题**: 
+**问题**:
 Cloudflare 在全球拥有海量的 IP 段，但不同 IP 的线路质量差异巨大。
 1. **人工测试效率低**：项目组原本手动测试 IP，每天只能验证几十个，无法覆盖优质 IP。
 2. **线路波动大**：白天好用的 IP 在晚高峰可能变得拥堵，导致玩家频繁掉线。
 3. **丢包率高**：随机分配的 IP 往往走绕路，导致丢包严重。
 
-**解决方案**: 
+**解决方案**:
 部署 **CloudflareSpeedTest** 定时任务。
 1. 编写脚本，每天在低峰期和高峰期自动运行测速。
 2. 针对东南亚主要运营商（如 Singtel, TrueMove 等）的入口进行专项测速，筛选“低延迟、零丢包”的优质 IP。
 3. 将测速结果自动更新到项目的 API 接口，客户端每隔 4 小时自动获取最新最佳 IP。
 
-**效果**: 
+**效果**:
 1. **平均延迟降低**：玩家平均延迟从原来的 180ms 降至 **75ms**。
 2. **留存率提升**：由于连接稳定性大幅提升（丢包率趋近于 0），该项目的付费用户月留存率提升了 **20%**。
 3. **运维效率**：完全替代了人工筛选，每天可测试超过 10,000 个 IP 段，确保始终使用最优线路。
@@ -402,23 +398,21 @@ Cloudflare 在全球拥有海量的 IP 段，但不同 IP 的线路质量差异�
 
 ### 2：跨国企业 SaaS 平台静态资源加速
 
- 2：跨国企业 SaaS 平台静态资源加速
-
-**背景**: 
+**背景**:
 一家服务于全球用户的 B2B 数据分析 SaaS 公司，其前端静态资源（JS/CSS/图片）托管在 Cloudflare 上。虽然 Cloudflare 全球覆盖广泛，但在某些特定地区（如南美洲和部分中东地区），默认分配的节点连接速度极慢，导致控制台加载时间长达 10 秒以上。
 
-**问题**: 
+**问题**:
 1. **用户体验差**：特定地区的客户频繁抱怨 Dashboard 加载失败或超时。
 2. **默认解析非最优**：Cloudflare 的默认 Anycast 机制在某些情况下会将流量引导至并非物理距离最近或负载最轻的节点。
 3. **缺乏针对性数据**：缺乏针对特定国家（如巴西、沙特）的详细测速数据来支撑路由优化决策。
 
-**解决方案**: 
+**解决方案**:
 运维团队利用 **CloudflareSpeedTest** 进行针对性优化。
 1. **地区性测速**：分别在巴西圣保罗和沙特利雅得的云服务器上运行该工具，专门测试当地网络到 Cloudflare 各大 IP 段的握手速度和下载速度。
 2. **制定白名单**：筛选出针对这些地区速度提升最明显的优选 IP。
 3. **配置分区域 DNS**：在 DNS 服务（如 Cloudflare Workers 或 PowerDNS）中配置逻辑，让来自特定国家 IP 的请求强制解析到筛选出的优选 IP 上。
 
-**效果**: 
+**效果**:
 1. **加载速度提升**：南美和中东用户的静态资源平均加载时间从 8.5秒 缩短至 **1.2秒**。
 2. **客户投诉减少**：关于“无法访问平台”的工单数量在一个月内下降了 **85%**。
 3. **零成本优化**：无需更换 CDN 提供商或购买昂贵的专线，仅通过脚本优化 IP 分配策略，大幅改善了全球服务的一致性。
@@ -429,23 +423,21 @@ Cloudflare 在全球拥有海量的 IP 段，但不同 IP 的线路质量差异�
 
 ### 3：个人开发者 / 网络媒体站 (MediaWiki 网站)
 
- 3：个人开发者 / 网络媒体站 (MediaWiki 网站)
-
-**背景**: 
+**背景**:
 一位个人开发者维护着一个访问量颇高的 Wiki 知识库站点（主要流量来自国内）。该站点启用了 Cloudflare 的 Universal SSL 进行加速和防护。虽然解决了访问问题，但默认的 Cloudflare 节点连接速度较慢，且经常被运营商干扰（如 SNI 阻断），导致国内用户访问体验不佳。
 
-**问题**: 
+**问题**:
 1. **访问不稳定**：默认的 Cloudflare IP 经常出现 520/522 错误，或者间歇性连接超时。
 2. **速度慢**：没有针对国内三大运营商（电信/联通/移动）进行优选，HTTPS 握手时间长。
 3. **维护成本高**：手动从论坛寻找“干净”的 IP 不仅耗时，而且往往很快就会被墙或失效。
 
-**解决方案**: 
+**解决方案**:
 开发者使用 **CloudflareSpeedTest** 搭建了一套自动化的优选系统。
 1. **定时测速**：在本地服务器运行工具，设置测速间隔（例如每 6 小时一次），专门测试启用 TLS 1.3 且支持 IPv4 的 IP。
 2. **多线程并发**：利用工具的高并发特性，快速扫描百万级 IP 段，找到延迟最低（通常 < 50ms）的 IP。
 3. **自动改 Host**：脚本自动将测速结果中最优的 3 个 IP 写入本地 DNS 服务器或服务器的 hosts 文件中。
 
-**效果**: 
+**效果**:
 1. **极速访问**：国内用户访问延迟从平均 300ms 降低至 **20-40ms**，首屏加载速度提升明显。
 2. **稳定性增强**：通过优选那些未被污染的 IP，成功规避了运营商的 QoS 限速和干扰，网站 365 天未出现 522 错误。
 3. **自动化运维**：开发者不再
@@ -465,24 +457,24 @@ Cloudflare 在全球拥有海量的 IP 段，但不同 IP 的线路质量差异�
 
 ### 优势分析
 
-- ✅ **优势1：全面的功能**  
+- ✅ **优势1：全面的功能**
   支持IPv4/IPv6双栈测试，可自定义端口范围，生成详细HTML报告。
 
-- ✅ **优势2：活跃的社区维护**  
+- ✅ **优势2：活跃的社区维护**
   持续更新适配最新Cloudflare IP段，修复已知问题。
 
-- ✅ **优势3：高效筛选**  
+- ✅ **优势3：高效筛选**
   内置智能过滤算法，快速识别低延迟IP。
 
 ### 不足分析
 
-- ⚠️ **不足1：仅限Cloudflare**  
+- ⚠️ **不足1：仅限Cloudflare**
   无法测试其他CDN服务商的IP质量。
 
-- ⚠️ **不足2：配置复杂度**  
+- ⚠️ **不足2：配置复杂度**
   高级功能需要理解较多参数（如线程数/超时设置）。
 
-- ⚠️ **不足3：无GUI版本**  
+- ⚠️ **不足3：无GUI版本**
   对非技术用户可能存在使用门槛。
 
 ---
@@ -499,7 +491,7 @@ Cloudflare 在全球拥有海量的 IP 段，但不同 IP 的线路质量差异�
 3. 调整 `-downloadTimeout`：建议设置为 `5` (秒) 或 `10` (秒)，快速剔除响应慢的IP。
 4. 调整 `-concurrency`（并发数）：如果你的网络环境较好，可适当调高至 `200` 或 `300` 以加快扫描速度。
 
-**注意事项**: 
+**注意事项**:
 - 如果是低配机器（如群晖/路由器）运行，请降低并发数以防内存溢出。
 - 免费版 Cloudflare 有速率限制，过大的并发可能导致后续IP被限速。
 
@@ -515,7 +507,7 @@ Cloudflare 在全球拥有海量的 IP 段，但不同 IP 的线路质量差异�
 3. **针对 Nginx/Caddy**：编写 Shell 脚本，提取最佳IP并替换配置文件中的 `resolver` 或 `proxy_pass` 地址，然后重启服务。
 4. 设置 Cron 定时任务（如每天凌晨3点）自动运行测速并应用。
 
-**注意事项**: 
+**注意事项**:
 - 替换IP后务必验证服务是否正常运行，建议在脚本中加入回滚机制。
 - 部分代理软件（如 v2ray/xray）可能需要重启核心才能生效。
 
@@ -530,7 +522,7 @@ Cloudflare 在全球拥有海量的 IP 段，但不同 IP 的线路质量差异�
 2. **地区过滤**：虽然项目本身主要测试延迟，但你可以结合 IP 地理位置库，预先排除非目标国家/地区的 IP 段（例如仅扫描美国电信运营商的 IP 段）。
 3. **白名单模式**：如果你有特定的 IP 段（如 /16 或 /24），可以直接指定程序只扫描这些段。
 
-**注意事项**: 
+**注意事项**:
 - 过于严格的过滤可能导致可用 IP 数量不足。
 - 扫描非标准端口（如 8080）可能速度较快，但安全性及稳定性不如 443 端口。
 
@@ -548,7 +540,7 @@ Cloudflare 在全球拥有海量的 IP 段，但不同 IP 的线路质量差异�
 3. **结果对比**：对比 IPv4 和 IPv6 的平均延迟和下载速度。
 4. 如果 IPv6 表现优异，在代理软件中优先配置 IPv6 的优选 IP。
 
-**注意事项**: 
+**注意事项**:
 - 某些老旧的代理客户端对 IPv6 支持不佳。
 - 混合部署时，确保 DNS 解析能正确返回 A 记录 (IPv4) 或 AAAA 记录 (IPv6)。
 
@@ -662,7 +654,7 @@ Cloudflare 在全球拥有海量的 IP 段，但不同 IP 的线路质量差异�
 - **参数详解**: 深入学习 `-f` (指定 IP 数据)、`-t` (测速线程)、`-n` (数量) 等核心参数的含义及调优。
 - **IP 数据获取**: 学习如何使用项目自带的 IP 数据，或者寻找第三方维护的更广泛的 IP 段数据。
 - **筛选标准**: 学习如何设置合理的延迟和丢包率阈值，过滤掉无效的高延迟 IP。
-- **定时任务**: 
+- **定时任务**:
   - **Windows**: 学习使用“任务计划程序”设置定时运行。
   - **Linux**: 学习编写简单的 Shell 脚本并配置 Crontab。
   - **群晖/路由器**: 了解如何在 OpenWrt 或 Synology DSM 中通过脚本调用。
@@ -703,7 +695,7 @@ Cloudflare 在全球拥有海量的 IP 段，但不同 IP 的线路质量差异�
 **学习内容**:
 - **Go 语言基础**: 了解 Go 语言的基本语法（变量、循环、并发 Goroutine），因为该项目是基于 Go 语言开发的。
 - **代码结构分析**: 阅读项目源码，理解 IP 扫描逻辑（Ping/HTTP 测速）、并发控制机制以及结果排序算法。
-- **自定义修改**: 
+- **自定义修改**:
   - 修改输出格式（如 JSON）
 
 ---
@@ -822,37 +814,37 @@ Cloudflare 在全球拥有海量的 IP 段，但不同 IP 的线路质量差异�
 
 ---
 
-### 1. **⚙️ 定制化 IP 测速范围**  
-- **操作**：通过 `-url` 参数指定目标域名（如 `https://www.cloudflare.com/cdn-cgi/trace`），结合 `-f` 自定义 IP 列表文件。  
-- **建议**：优先测试 Cloudflare 公开 IP 段（如 `104.16.0.0/12`），避免无效范围。可从 [Cloudflare IP List](https://www.cloudflare.com/ips/) 获取最新段。  
+### 1. **⚙️ 定制化 IP 测速范围**
+- **操作**：通过 `-url` 参数指定目标域名（如 `https://www.cloudflare.com/cdn-cgi/trace`），结合 `-f` 自定义 IP 列表文件。
+- **建议**：优先测试 Cloudflare 公开 IP 段（如 `104.16.0.0/12`），避免无效范围。可从 [Cloudflare IP List](https://www.cloudflare.com/ips/) 获取最新段。
 - **陷阱**：避免全量扫描（如 `/0`），会导致测试时间过长且结果冗余。
 
 ---
 
-### 2. **🚀 启用多线程加速测试**  
-- **操作**：使用 `-n 200` 指定并发线程数（默认 100），根据网络带宽调整（如家用宽带建议 100-300）。  
-- **建议**：结合 `-tl 200` 设置延迟阈值（毫秒），快速过滤高延迟 IP。  
+### 2. **🚀 启用多线程加速测试**
+- **操作**：使用 `-n 200` 指定并发线程数（默认 100），根据网络带宽调整（如家用宽带建议 100-300）。
+- **建议**：结合 `-tl 200` 设置延迟阈值（毫秒），快速过滤高延迟 IP。
 - **陷阱**：线程过高可能触发 ISP 限速或导致不稳定结果。
 
 ---
 
-### 3. **🌍 地理位置过滤**  
-- **操作**：通过 `-o` 输出结果后，用 `-sl` 指定速度下限（如 `1MB/s`），再用 `-t` 限制国家/地区（如 `CN`）。  
-- **建议**：优先选择本地 ISP 提供的 Cloudflare 节点（如中国电信用户筛选 `CN` + `CHINANET`）。  
+### 3. **🌍 地理位置过滤**
+- **操作**：通过 `-o` 输出结果后，用 `-sl` 指定速度下限（如 `1MB/s`），再用 `-t` 限制国家/地区（如 `CN`）。
+- **建议**：优先选择本地 ISP 提供的 Cloudflare 节点（如中国电信用户筛选 `CN` + `CHINANET`）。
 - **陷阱**：部分 IP 可能显示错误地理位置，需结合 Ping 延迟交叉验证。
 
 ---
 
-### 4. **🔁 定时任务与结果复用**  
-- **操作**：使用 Cron（Linux）或 Task Scheduler（Windows）设置每日测试，将结果保存到文件（`-dd result.csv`）。  
-- **建议**：用 `-dd` 生成详细报告，通过 `-r` 直接复用上次最优 IP（避免频繁变动）。  
+### 4. **🔁 定时任务与结果复用**
+- **操作**：使用 Cron（Linux）或 Task Scheduler（Windows）设置每日测试，将结果保存到文件（`-dd result.csv`）。
+- **建议**：用 `-dd` 生成详细报告，通过 `-r` 直接复用上次最优 IP（避免频繁变动）。
 - **陷阱**：定期清理旧结果文件，避免数据膨胀影响加载速度。
 
 ---
 
-### 5. **🛡️ 代理与安全策略**  
-- **操作**：若需测试代理后的 IP，通过 `-p` 指定代理（如 `socks5://127.0.0.1:1080`）。  
-- **建议**：测试后通过 Cloudflare API 更新 DNS 记录（需配合脚本），实现自动优选 IP 绑定。  
+### 5. **🛡️ 代理与安全策略**
+- **操作**：若需测试代理后的 IP，通过 `-p` 指定代理（如 `socks5://127.0.0.1:1080`）。
+- **建议**：测试后通过 Cloudflare API 更新 DNS 记录（需配合脚本），实现自动优选 IP 绑定。
 - **陷阱**：避免直接暴露 API Token，建议使用环境变量或加密
 
 ---

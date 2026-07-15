@@ -17,7 +17,7 @@ categories:
 - AI 工程
 source: juejin
 description: 随着 AI Agent 技术的演进，如何让模型更精准地调用外部工具已成为开发的关键。本文由资深工程师双越撰写，将深入解析 Agent Skills
-  的技术概念，并探讨其与其他 AI 技术的关联。通过阅读本文，读者不仅能厘清 Skills 的核心逻辑，还能掌握将其应用于实际 Agent 开发的具体方法，从而提升系统的可控
+  的技术概念，并探讨其与其他 AI 技术的关联。通过阅读本文，读者不仅能厘清 Skills 的核心逻辑，还能掌握将其应用于实际 Agent 开发的具体方法，从而提升系统的可控性与执行效率。
 external_url: https://juejin.cn/post/7614331029458026531
 scenarios:
 - 大语言模型
@@ -26,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Agent Skills 概念解析及其在 Agent 开发中的应用
-
 ---
 
 ## 基本信息

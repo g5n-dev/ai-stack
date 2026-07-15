@@ -17,7 +17,7 @@ categories:
 - 效率与方法论
 source: hacker_news
 description: 在代码生成和自动化工具日益普及的背景下，AI 正在改变程序员的日常工作方式。然而，速度并不总是衡量生产力的唯一指标，如何在利用 AI 提升代码质量的同时，避免不必要的迭代成本，成为值得深思的问题。本文分析了实际项目中
-  AI 辅助对编码效率与代码可维护性的影响，并提供实用的评估框架和优化思路，帮助开发者在技术选型和流程改
+  AI 辅助对编码效率与代码可维护性的影响，并提供实用的评估框架和优化思路，帮助开发者在技术选型和流程改进中做出更明智的决策。
 external_url: https://nolanlawson.com/2026/05/25/using-ai-to-write-better-code-more-slowly
 scenarios:
 - AI/ML项目
@@ -25,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# AI辅助编程为何反而更慢
-
 ---
 
 ## 基本信息
@@ -88,7 +84,6 @@ source_support: 0.0
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [效率与方法论](/categories/%E6%95%88%E7%8E%87%E4%B8%8E%E6%96%B9%E6%B3%95%E8%AE%BA/)

@@ -16,7 +16,7 @@ categories:
 - 产品与创业
 - 大模型
 source: hacker_news
-description: 随着 AI 助手日益普及，其背后的商业模式正在发生深刻转变：为了维持高昂的算力成本，几乎所有开发者都在尝试将广告植入智能对话的交互流程中。这一趋势不仅改变了产品的盈利逻辑，更直接影响了用户获取信息的客观性与体验。本文将深入分析这一行业现象，探讨广告植入的具体形式，并帮助读者理解在“免费”服务背后，我们的注意力是如何被重
+description: 随着 AI 助手日益普及，其背后的商业模式正在发生深刻转变：为了维持高昂的算力成本，几乎所有开发者都在尝试将广告植入智能对话的交互流程中。这一趋势不仅改变了产品的盈利逻辑，更直接影响了用户获取信息的客观性与体验。本文将深入分析这一行业现象，探讨广告植入的具体形式，并帮助读者理解在“免费”服务背后，我们的注意力是如何被重新定价与利用的。
 external_url: https://juno-labs.com/blogs/every-company-building-your-ai-assistant-is-an-ad-company
 scenarios:
 - AI/ML项目
@@ -31,10 +31,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 打造AI助手的公司如今都转型成了广告公司
-
 ---
 
 ## 基本信息

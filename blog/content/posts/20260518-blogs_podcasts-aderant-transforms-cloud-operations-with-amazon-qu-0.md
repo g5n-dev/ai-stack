@@ -16,8 +16,7 @@ categories:
 - AI 工程
 - 系统与基础设施
 source: blogs_podcasts
-description: 背景 Aderant 是一家面向法律及专业服务的技术公司，业务依赖多个供应商的云系统。以往跨系统查询和文档编写依赖手工操作，效率低下。 实现方案
-  - **统一搜索**：基于 Amazon QuickSight 的 AI 搜索功能，把六个供应商的数据源接入单一索引，实现自然语言查询和即时结果返回。 - **文档自动化**
+description: 在这篇文章中，我们将分享Aderant如何利用Amazon QuickSight的AI驱动功能，统一搜索六个供应商系统，并实现文档工作流程自动化，从而实现搜索速度提升90%、文档处理加速75%，以及其他人如何将这些方法应用到自身运营中。
 external_url: https://aws.amazon.com/blogs/machine-learning/aderant-transforms-cloud-operations-with-amazon-quick
 scenarios:
 - AI/ML项目
@@ -25,10 +24,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Aderant借助QuickSight AI统一六系统搜索文档处理加速75%
-
 ---
 
 ## 基本信息
@@ -156,7 +151,6 @@ Aderant的技术方案采用集中式索引加分布式数据源的模式。Amaz
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/)

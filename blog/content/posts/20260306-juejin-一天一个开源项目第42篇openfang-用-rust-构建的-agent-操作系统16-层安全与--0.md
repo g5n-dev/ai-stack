@@ -16,8 +16,9 @@ categories:
 - 系统与基础设施
 - 开源生态
 source: juejin
-description: 以下是对该内容的中文总结： **项目概览** **OpenFang** 是由 **RightNow-AI** 开源的 **Agent 操作系统**。该项目旨在为
-  AI 智能体提供一个高安全、高集成度的运行环境，其核心技术亮点是采用 **Rust 语言** 构建，并集成了强大的执行能力与严苛的安全防护。 **核心特性总结
+description: 随着 Agent 应用从单一任务向复杂系统演进，底层架构的可靠性与安全性成为关键瓶颈。OpenFang 作为 RightNow-AI 开源的
+  Agent 操作系统，选择以 Rust 构建核心，在单一二进制文件中集成了 16 层安全防护与 7 个自主 Hands。本文将深入解读其技术架构，分析它如何通过
+  40 个通道适配器实现高效交互，以及这种轻量级设计为开发者提供了怎样的工程参考。
 external_url: https://juejin.cn/post/7613971395927834651
 scenarios:
 - AI/ML项目
@@ -25,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# OpenFang：Rust 构建的 Agent 操作系统，16 层安全与 7 个自主 Hands
-
 ---
 
 ## 基本信息

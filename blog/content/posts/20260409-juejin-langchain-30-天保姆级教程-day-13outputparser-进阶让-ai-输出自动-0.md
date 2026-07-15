@@ -15,9 +15,8 @@ tags:
 categories:
 - AI 工程
 source: juejin
-description: 需求背景 - 仅靠 Prompt 指令仍可能导致模型输出不符合预期结构，解析 JSON 时出错。 - 需要在解析失败时自动重试，提高鲁棒性。
-  核心实现 - 用 Pydantic 定义期望模型（如 、 ）。 - 将 PydanticOutputParser 包装在 （或自带的重试装饰器）中。 - 通过
-  控制重试次数，一般
+description: 在 Day 6 中，我们已经掌握了使用 PydanticOutputParser 将大模型输出转换为结构化 JSON 的方法。然而在实际项目中，即使添加了详细的格式指令，模型仍可能偶尔“跑偏”，返回不符合预期的内容。
+  本篇文章将介绍带重试机制的结构化输出方案，能够在检测到输出格式异常时自动重新生成，无需人工干预。
 external_url: https://juejin.cn/post/7626391049497624591
 scenarios:
 - AI/ML项目
@@ -26,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# LangChain Day 13：OutputParser结构化输出与自动重试
-
 ---
 
 ## 基本信息
@@ -45,9 +40,8 @@ source_support: 0.0
 本篇文章将介绍带重试机制的结构化输出方案，能够在检测到输出格式异常时自动重新生成，无需人工干预。阅读后你将了解如何在 LangChain 中实现自动重试、定制错误处理逻辑，以及如何在生产环境中构建更可靠的数据解析流程。
 
 ---
-## 描述
 
-# 中文翻译
+## 中文翻译
 
 🎯 **一、为什么需要"带重试的结构化输出"？**
 
@@ -133,7 +127,6 @@ result = chain.invoke({"question": "返回姓名和年龄"})
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

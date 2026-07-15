@@ -32,10 +32,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Aqua：面向 AI 智能体的 CLI 消息工具
-
----
-
 ## 基本信息
 
 - **作者**: lyricat

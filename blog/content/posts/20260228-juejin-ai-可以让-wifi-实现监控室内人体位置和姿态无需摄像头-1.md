@@ -16,8 +16,7 @@ categories:
 - AI 工程
 - 开源生态
 source: juejin
-description: '**总结：WiFi-DensePose 技术——无摄像头实现人体姿态监控** 近日，一项名为 **WiFi-DensePose** 的技术在趋势榜上引发了广泛关注。该技术通过分析室内的
-  WiFi 信号，能够在不使用任何摄像头的情况下，精确感知并监控室内人体的位置与姿态。以下是该技术的核心要点总结： **1. 技术原理：'
+description: 利用 WiFi 信号进行人体感知，正逐渐从理论验证走向实际应用。近期备受关注的项目 wifi-densepose，展示了如何通过分析现有的无线信号波动，精确捕捉室内人体的位置与姿态。这种“无摄像头”的监控方式，不仅规避了光学隐私泄露的风险，也为家庭安防与医疗监护提供了新的技术路径。本文将解析其背后的技术原理，并探讨该方案在实际场景中的潜力与局限。
 external_url: https://juejin.cn/post/7611424094525931561
 scenarios:
 - Web应用开发
@@ -27,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# WiFi-DensePose项目利用AI分析信号实现无摄像头人体姿态感知
-
 ---
 
 ## 基本信息

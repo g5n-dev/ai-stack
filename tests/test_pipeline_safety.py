@@ -53,6 +53,54 @@ def _generated_fixture(
     return generated, content, ops
 
 
+def test_pipeline_candidate_publishes_complete_stored_rss_evidence(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    source_text = (
+        "Verified RSS paragraph with complete implementation evidence. " * 220
+    ) + "This is the complete final RSS sentence."
+    monkeypatch.setattr(
+        pipeline,
+        "_crawl_sources",
+        lambda **_kwargs: {
+            "blogs_podcasts": [
+                {
+                    "title": "Complete pipeline RSS evidence",
+                    "description": source_text,
+                    "url": "https://example.com/complete-pipeline-rss",
+                    "feed_url": "https://example.com/feed.xml",
+                    "source_is_truncated": False,
+                    "source_truncation_reason": "",
+                    "tags": ["AI"],
+                }
+            ]
+        },
+    )
+    monkeypatch.setattr(pipeline, "_code_sha", lambda: CODE_SHA)
+    discovery = tmp_path / "discovery-rss"
+    validated = tmp_path / "validated-rss"
+    content = tmp_path / "content-rss"
+    ops = tmp_path / "ops-rss"
+    generated = tmp_path / "generated-rss"
+
+    pipeline.crawl(run_id="run-rss", output=discovery)
+    pipeline.validate_discovery(input_root=discovery, output=validated)
+    pipeline.persist_discovery(
+        run_id="run-rss", input_root=validated, state_root=content
+    )
+    pipeline.reserve_budget(run_id="run-rss", input_root=content, state_root=ops)
+    pipeline.generate(
+        run_id="run-rss", input_root=content, ops_root=ops, output=generated
+    )
+
+    candidate_path = next((generated / "content/candidates").glob("*.json"))
+    candidate = json.loads(candidate_path.read_text(encoding="utf-8"))
+
+    assert len(candidate["source_item"]["payload"]["source_display_excerpt"]) > 6_000
+    assert "This is the complete final RSS sentence." in candidate["article"]["body"]
+    assert source_text in candidate["article"]["body"]
+
+
 @pytest.mark.parametrize(
     "value",
     ["", "/absolute", "content\\bad", "content/../bad", "other/file.json"],
@@ -604,8 +652,8 @@ def test_validated_loader_and_persistence_reject_tampered_contracts(
     markdown_path = next((tampered_markdown / "content/posts").glob("*.md"))
     markdown_path.write_text(
         markdown_path.read_text(encoding="utf-8").replace(
-            "这是自动生成的来源简讯",
-            "这是被验证后替换的来源简讯",
+            "本页完整呈现已保存的来源证据",
+            "本页被验证后替换了来源证据",
         ),
         encoding="utf-8",
     )

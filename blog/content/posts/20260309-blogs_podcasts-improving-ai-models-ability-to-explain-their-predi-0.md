@@ -38,10 +38,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 提升AI模型在医疗与自动驾驶等场景的可解释性
-
----
-
 ## 基本信息
 
 - **来源**: MIT News (Machine Learning) (blog)

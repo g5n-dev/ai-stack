@@ -17,7 +17,7 @@ categories:
 - 论文
 source: hacker_news
 description: 大语言模型（LLM）在生成文本方面表现惊人，但其核心机制决定了它并不理解真理，仅是根据概率预测下一个字，因此常被称为“随机鹦鹉”。这种“一本正经胡说八道”的现象并非简单的
-  bug，而是架构固有的特性。本文将深入剖析模型产生幻觉的技术根源，并探讨在无法彻底根除这一问题的前提下，开发者应如何调整评估策略，以在应用中有效识别
+  bug，而是架构固有的特性。本文将深入剖析模型产生幻觉的技术根源，并探讨在无法彻底根除这一问题的前提下，开发者应如何调整评估策略，以在应用中有效识别并规避此类风险。
 external_url: https://acko.net/blog/the-l-in-llm-stands-for-lying
 scenarios:
 - 大语言模型
@@ -30,10 +30,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# LLM中的L代表谎言：大语言模型的幻觉问题分析
-
 ---
 
 ## 基本信息

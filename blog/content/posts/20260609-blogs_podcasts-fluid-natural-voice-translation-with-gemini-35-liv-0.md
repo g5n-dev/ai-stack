@@ -16,8 +16,8 @@ categories:
 - 大模型
 - AI 工程
 source: blogs_podcasts
-description: Gemini 3.5 Live Translate 是一款流畅、自然的语音翻译系统，能够在几乎实时的速度下完成说话内容的口译。它依托大语言模型技术，实现更贴近人类语调的停顿、情感和重音，让对话听起来更自然。
-  该翻译能力已深度嵌入 Google 的三大产品： - **Google AI Studio**：为开发者提供 A
+description: Gemini 3.5 Live Translate 为 Google AI Studio、Google 翻译和 Google Meet 提供近乎实时的自然语音翻译。
+  Gemini 3.5 Live Translate实现了近乎实时的自然语音翻译，可集成至Google AI Studio、Google翻译和Google Meet等平台。随着全球化进程加速，跨语言沟通已成为日常工作与协作的基本需求。
 external_url: https://deepmind.google/blog/fluid-natural-voice-translation-with-gemini-35-live-translate
 scenarios:
 - AI/ML项目
@@ -25,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Gemini 3.5为Google应用带来流式语音翻译
-
 ---
 
 ## 基本信息
@@ -190,7 +186,6 @@ Gemini 3.5 Live Translate 能够实现 **自然、流畅、低延迟** 的
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

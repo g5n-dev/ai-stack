@@ -16,9 +16,9 @@ categories:
 - 大模型
 - AI 工程
 source: blogs_podcasts
-description: 今天，我们宣布在 Amazon Bedrock 上推出 Claude Cowork 和 Claude Code Desktop。用户可以直接在
-  Bedrock 上或通过 LLM 网关调用这些工具，实现从开发者桌面到全组织的统一 AI 协作。 集成方式 - **API 接入**：Claude Cowork
-  通过 Bedr
+description: 今天，我们很高兴在 Amazon Bedrock 中宣布推出 Claude Cowork。您现在可以通过 Amazon Bedrock 直接或使用
+  LLM 网关来运行 Cowork 和 Claude Code Desktop。在这篇文章中，我们将介绍 Claude Cowork 如何与 Amazon Bedrock
+  集成，并展示知识工作者如何在实际工作中使用它的示例。
 external_url: https://aws.amazon.com/blogs/machine-learning/from-developer-desks-to-the-whole-organization-running-claude-cowork-in-amazon-bedrock
 scenarios:
 - 大语言模型
@@ -29,10 +29,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 在Amazon Bedrock中运行Claude Cowork
-
 ---
 
 ## 基本信息
@@ -172,7 +168,6 @@ Claude Cowork的Bedrock集成代表了大模型企业落地的成熟路径：工
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

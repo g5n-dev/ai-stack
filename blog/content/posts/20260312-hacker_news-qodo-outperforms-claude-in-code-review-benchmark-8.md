@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Qodo在代码审查基准测试中超越Claude
-
----
-
 ## 基本信息
 
 - **作者**: bobismyuncle

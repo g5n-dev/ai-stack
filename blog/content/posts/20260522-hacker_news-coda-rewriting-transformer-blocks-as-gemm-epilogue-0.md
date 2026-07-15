@@ -17,7 +17,7 @@ categories:
 - 系统与基础设施
 source: hacker_news
 description: 在深度学习部署中，Transformer 的算子往往成为性能瓶颈。CODA 提出将 Transformer 块重新映射为 GEMM‑Epilogue
-  程序，以利用矩阵乘的高效实现和后处理融合来提升计算吞吐。通过对核心矩阵运算的重组与调度策略的改进，该方法在保持模型精度的前提下显著降低了延迟和能耗，为实际系统提供了可落地
+  程序，以利用矩阵乘的高效实现和后处理融合来提升计算吞吐。通过对核心矩阵运算的重组与调度策略的改进，该方法在保持模型精度的前提下显著降低了延迟和能耗，为实际系统提供了可落地的加速方案。
 external_url: https://arxiv.org/abs/2605.19269
 scenarios:
 - Web应用开发
@@ -25,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# CODA：将Transformer块重写为GEMM-Epilogue程序
-
 ---
 
 ## 基本信息
@@ -88,7 +84,6 @@ CODA提出将Transformer中的矩阵乘法核心（GEMM）与其后处理步骤�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/)

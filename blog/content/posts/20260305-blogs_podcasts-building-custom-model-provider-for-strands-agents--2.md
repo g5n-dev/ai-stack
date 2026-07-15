@@ -16,8 +16,9 @@ categories:
 - AI 工程
 - 后端
 source: blogs_podcasts
-description: 以下是针对所提供内容的中文总结： 本文旨在演示如何在 **Amazon SageMaker AI** 端点上托管大语言模型（LLM），并通过构建**自定义模型提供商**将其集成到
-  **Strands Agents** 智能体中。此过程主要针对那些不原生支持 Bedrock Messages API 格式的模型，通过自定
+description: 本文演示了当使用不支持 Bedrock Messages API 格式的、托管在 SageMaker 上的 LLM 时，如何为 Strands
+  智能体构建自定义模型解析器。我们将介绍如何使用 awslabs/ml-container-creator 在 SageMaker 上通过 SGLang 部署 Llama
+  3.1，然后实现一个自定义解析器将其与 Strands 智能体集成。
 external_url: https://aws.amazon.com/blogs/machine-learning/building-custom-model-provider-for-strands-agents-with-llms-hosted-on-sagemaker-ai-endpoints
 scenarios:
 - 后端开发
@@ -39,10 +40,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 在SageMaker上部署SGLang并集成Strands智能体自定义模型
-
 ---
 
 ## 基本信息

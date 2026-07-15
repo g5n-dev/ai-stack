@@ -1,0 +1,758 @@
+{
+  "audit_path": "historical-post-recovery-audit-v1.json",
+  "audit_sha256": "78a6bdda299d16d8634ec9348bcd200905b314d80116e66a0ded1dede99220e7",
+  "entries": [
+    {
+      "canonical_url": "https://github.com/Anduin2017/HowToCook",
+      "recovery_basis": "reviewed_complete_same_canonical_history",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "bdf2c17373597311339bd3d86dcb9a212bbe5e9863d81c9b6477dd5712d9bfeb",
+      "source_git_blob": "82857a16ffce68f9f10c2e1b91ea13c5a20a954f",
+      "source_path": "blog/content/posts/20260127-github_trending-anduin2017-howtocook-9.md",
+      "target_file_sha256": "4136d7e793960e481e7541357bd19798f451fff421b10bd6343d1fa0b9b365f2",
+      "target_path": "20260125-github_trending-anduin2017-howtocook-0.md"
+    },
+    {
+      "canonical_url": "https://github.com/DSPBluePrints/FactoryBluePrints",
+      "recovery_basis": "detected_truncation",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "73b45a1b467736f684ac5de49ad8ec69c410276a1dce19fc7aa0f3ee67bf9ea3",
+      "source_git_blob": "dc0d8ffbb82bda95bc8a9ea39dd6485ce99096a7",
+      "source_path": "blog/content/posts/20260129-github_trending-dspblueprints-factoryblueprints-4.md",
+      "target_file_sha256": "dadb25756882b9e0faa8c8931fe2d2cb80e194d60fb2cf73fdfc9f71fed1133b",
+      "target_path": "20260125-github_trending-dspblueprints-factoryblueprints-6.md"
+    },
+    {
+      "canonical_url": "https://github.com/pure-admin/vue-pure-admin",
+      "recovery_basis": "detected_truncation",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "7786ab72efb736e06b43ea7bfbcfa7fa8ce6524ee4eb81c41671d7a67f0060b4",
+      "source_git_blob": "8a3454a4ab8b5b0b255f42aefcb308a442da8b46",
+      "source_path": "blog/content/posts/20260128-github_trending-pure-admin-vue-pure-admin-6.md",
+      "target_file_sha256": "fb62dd59e898fddd4c6f642215407fcf7d9d711e4b053390b392b964031c365d",
+      "target_path": "20260125-github_trending-pure-admin-vue-pure-admin-2.md"
+    },
+    {
+      "canonical_url": "https://github.com/ruanyf/weekly",
+      "recovery_basis": "detected_truncation",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "be81fe026657048e4d7a81d329eb2505ffcbec029d7d6369405358bbc534dc0c",
+      "source_git_blob": "baddef04ea3cb8bc288100218123ac9a9e863286",
+      "source_path": "blog/content/posts/20260125-github_trending-ruanyf-weekly-4.md",
+      "target_file_sha256": "dc3003dff1a1a4d98967784da42be4c403f2f1a7165891a718325825ab11096b",
+      "target_path": "20260125-github_trending-ruanyf-weekly-4.md"
+    },
+    {
+      "canonical_url": "http://arxiv.org/abs/2601.16976v1",
+      "recovery_basis": "reviewed_complete_same_canonical_history",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "69ee6402ae04c0d3400b034fac289e1fde374e520df2e7fb1e68673b512d78df",
+      "source_git_blob": "99ea54954725877c432167e36b7da4e172dc1657",
+      "source_path": "blog/content/posts/20260127-arxiv_ai-latent-diffusion-for-internet-of-things-attack-dat-2.md",
+      "target_file_sha256": "2bb2985359be6e88878f7a3feaa08f1a4b92d9fd50a634e8ec5ae287271df817",
+      "target_path": "20260126-arxiv_ai-latent-diffusion-for-internet-of-things-attack-dat-2.md"
+    },
+    {
+      "canonical_url": "https://github.com/aaa1115910/bv",
+      "recovery_basis": "detected_truncation",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "f6a1f62989ba75da6a853374c149e62d29aeca380031ffdc07f532adeb9e2dc8",
+      "source_git_blob": "4d303a245f439e41e0818556e194d66a2e35ccc7",
+      "source_path": "blog/content/posts/20260126-github_trending-aaa1115910-bv-1.md",
+      "target_file_sha256": "d35e7e8d001d47ee4d3f1a4cbaaeaf65601e2ffee7c31e388a1b1af4f80e0b4b",
+      "target_path": "20260126-github_trending-aaa1115910-bv-1.md"
+    },
+    {
+      "canonical_url": "https://github.com/MaaAssistantArknights/MaaAssistantArknights",
+      "recovery_basis": "reviewed_complete_same_canonical_history",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "8817328380bcd35739ad6af403807edcbffb08aeb0026caf91f05ad1d9eb8c3c",
+      "source_git_blob": "42a087977fb605f8fdf1c5dafe597d827de7d9b4",
+      "source_path": "blog/content/posts/20260128-github_trending-maaassistantarknights-maaassistantarknights-0.md",
+      "target_file_sha256": "b187f51e0e5a7078c0655562f4b38514f9f3401657d4b1be17312cffc86877c8",
+      "target_path": "20260126-github_trending-maaassistantarknights-maaassistantarknights-4.md"
+    },
+    {
+      "canonical_url": "https://github.com/xiaojieonly/Ehviewer_CN_SXJ",
+      "recovery_basis": "reviewed_complete_same_canonical_history",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "d89b5b2da2571d848d35ba92fde0d4f6b466fcc2282ba4289ce659c871b0b993",
+      "source_git_blob": "4b79aaaf394a1bf10b6e2c03b6078cadf05f5c6d",
+      "source_path": "blog/content/posts/20260126-github_trending-xiaojieonly-ehviewer_cn_sxj-3.md",
+      "target_file_sha256": "67f6dea8ca35f95845fb1561b2a48070573e9b5d2e75a1ce810ee9bfc7e047d3",
+      "target_path": "20260126-github_trending-xiaojieonly-ehviewer_cn_sxj-3.md"
+    },
+    {
+      "canonical_url": "https://github.com/yangzongzhuan/RuoYi-Vue3",
+      "recovery_basis": "detected_truncation",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "e07193a9385c7bd41fb1d9648073b0dbf62992518208c612c990074dfed84091",
+      "source_git_blob": "129b61ff1619a16cb23b6bd78bebbeaf9f7f92a1",
+      "source_path": "blog/content/posts/20260128-github_trending-yangzongzhuan-ruoyi-vue3-4.md",
+      "target_file_sha256": "e64e762e0a1a3d55ba284fe4775e196e0091c4e5a1dea9509f8285ed41338bfb",
+      "target_path": "20260126-github_trending-yangzongzhuan-ruoyi-vue3-9.md"
+    },
+    {
+      "canonical_url": "https://rendiment.io/postgresql/2026/01/21/pgtrgm-pgvector-music.html",
+      "recovery_basis": "detected_truncation",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "e1ba9db3545f481b78fa88f0975bc5179632f8abee307b74f9a3996867fc6a9c",
+      "source_git_blob": "8889d80fb1858f80a7a5277f6e9e2012005edad2",
+      "source_path": "blog/content/posts/20260126-hacker_news-find-abbey-road-when-type-beatles-abbey-rd-fuzzyse-6.md",
+      "target_file_sha256": "2bd101880b305d4bac26e3e4af78d91cc2dee11489f4b0fbd342fec033c0597f",
+      "target_path": "20260126-hacker_news-find-abbey-road-when-type-beatles-abbey-rd-fuzzyse-6.md"
+    },
+    {
+      "canonical_url": "http://arxiv.org/abs/2601.18785v1",
+      "recovery_basis": "reviewed_complete_same_canonical_history",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "ada7c88f355f8f7de2e9207a273765156a740ad5747efebb421f5a29e322c464",
+      "source_git_blob": "ae0334d2a1d31e9fd9fc2abc27877efaafd68307",
+      "source_path": "blog/content/posts/20260128-arxiv_ai-design-techniques-for-llm-powered-interactive-stor-6.md",
+      "target_file_sha256": "cd6d06060f2f8dac488da9e5b8a18bac59d4d7a1f1d1c244a4c7a04ad8845416",
+      "target_path": "20260127-arxiv_ai-design-techniques-for-llm-powered-interactive-stor-6.md"
+    },
+    {
+      "canonical_url": "http://arxiv.org/abs/2601.18795v1",
+      "recovery_basis": "reviewed_complete_same_canonical_history",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "6517da02f3e76a208105f9866d61b1065f0eb596701e127da110155e31c03cb7",
+      "source_git_blob": "be99f65efd521d6c108cf4f96be3a81cae6a0f61",
+      "source_path": "blog/content/posts/20260128-arxiv_ai-reuse-your-flops-scaling-rl-on-hard-problems-by-co-1.md",
+      "target_file_sha256": "9ae5201c0703a2fa7461383647e521eea43763fb3b91fc1580c7580a450205cb",
+      "target_path": "20260127-arxiv_ai-reuse-your-flops-scaling-rl-on-hard-problems-by-co-1.md"
+    },
+    {
+      "canonical_url": "https://amutable.com/about",
+      "recovery_basis": "detected_truncation",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "df6e8642813905c7d454deb2c8da0942ef7971e2e787ca9ef0b94ac293c6c63d",
+      "source_git_blob": "4e500c1d3bf71b2d5c6ada8b0e9c30eeb8d6ff27",
+      "source_path": "blog/content/posts/20260128-hacker_news-lennart-poettering-christian-brauner-founded-a-new-8.md",
+      "target_file_sha256": "b039cde32d84ecb9654a21436ee45007b06869406b572176e69e11a42a3434f6",
+      "target_path": "20260127-hacker_news-lennart-poettering-christian-brauner-founded-a-new-4.md"
+    },
+    {
+      "canonical_url": "https://emsh.cat/one-human-one-agent-one-browser",
+      "recovery_basis": "detected_truncation",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "534002777506a65c6466e410a3c8190dc7927ff7e9c3dc43301b67b2270cc3a4",
+      "source_git_blob": "3aa9884d509666f6c23ec78850c64062759714a0",
+      "source_path": "blog/content/posts/20260127-hacker_news-show-hn-one-human-one-agent-one-browser-from-scrat-7.md",
+      "target_file_sha256": "9c9f25c8ea22183b25e23313768366caede1b7245b4e3a5bdc095b7ea0ee496a",
+      "target_path": "20260127-hacker_news-show-hn-one-human-one-agent-one-browser-from-scrat-7.md"
+    },
+    {
+      "canonical_url": "https://tetrisbench.com/tetrisbench",
+      "recovery_basis": "reviewed_complete_same_canonical_history",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "e6404f91cf1675cfc02ee9d479194fa44a80a9d5171247a3eb89a235cd3ff78a",
+      "source_git_blob": "c2093ac35e5c7610270745974bd1f64d8c2c274f",
+      "source_path": "blog/content/posts/20260127-hacker_news-show-hn-tetrisbench-gemini-flash-reaches-66-win-ra-12.md",
+      "target_file_sha256": "e6d57ce447f40ab09cfe4399954e33e712c0dc9820563956f120c140c22235a7",
+      "target_path": "20260127-hacker_news-show-hn-tetrisbench-gemini-flash-reaches-66-win-ra-6.md"
+    },
+    {
+      "canonical_url": "https://github.com/velox-apps/velox",
+      "recovery_basis": "reviewed_complete_same_canonical_history",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "0d3880c9fd5fb964109fa893b5b10d26cef355e3b82be459b82f7fbd25946584",
+      "source_git_blob": "aab8fbf1a654a0408714f1307503aeb5d556ecbd",
+      "source_path": "blog/content/posts/20260127-hacker_news-velox-a-port-of-tauri-to-swift-by-miguel-de-icaza-5.md",
+      "target_file_sha256": "4718a0d6f1dc3db2058d383ad18106feb08452d3cc7e93d57f55ffd9a93fcfd3",
+      "target_path": "20260127-hacker_news-velox-a-port-of-tauri-to-swift-by-miguel-de-icaza-8.md"
+    },
+    {
+      "canonical_url": "http://arxiv.org/abs/2601.20854v1",
+      "recovery_basis": "reviewed_complete_same_canonical_history",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "34bda5b9f4d22c1ecefb1b1b689f41a41ed77184d0b70d05289aa2c6e1c3603a",
+      "source_git_blob": "c4a12f1a1f5530b448e7e9348095892179fe1fbc",
+      "source_path": "blog/content/posts/20260130-arxiv_ai-exploring-transformer-placement-in-variational-aut-3.md",
+      "target_file_sha256": "f5c9dfe5f38582718296e6c44c79457b666bf8da8fa3a4aa85d279587e4d87f4",
+      "target_path": "20260129-arxiv_ai-exploring-transformer-placement-in-variational-aut-3.md"
+    },
+    {
+      "canonical_url": "https://github.com/alibaba/higress",
+      "recovery_basis": "detected_truncation",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "879a310e29b81bb46bc2e8e415616498cecc7890d785d704dece3ccd62f456b4",
+      "source_git_blob": "78a2ad24f1d8d2f633ead507dbacd78c13835691",
+      "source_path": "blog/content/posts/20260203-github_trending-alibaba-higress-2.md",
+      "target_file_sha256": "7d2a70ff32d7df1cc94259f0c02c0761cb117e40315cb51899f86a60ed8ec246",
+      "target_path": "20260129-github_trending-alibaba-higress-9.md"
+    },
+    {
+      "canonical_url": "https://vercel.com/blog/agents-md-outperforms-skills-in-our-agent-evals",
+      "recovery_basis": "reviewed_complete_same_canonical_history",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "c0f45ed707cecbe50873b1cedc2bc50f0f8d156675d362a523db9b07dbb02dc4",
+      "source_git_blob": "14597b079bebc25e334c24caad82432790e30707",
+      "source_path": "blog/content/posts/20260130-hacker_news-agentsmd-outperforms-skills-in-our-agent-evals-6.md",
+      "target_file_sha256": "803182d9c78d75e2c72fa3394feb62446ddae630ad8048c932a87bcbb200c477",
+      "target_path": "20260129-hacker_news-compressed-agentsmd-agent-skills-5.md"
+    },
+    {
+      "canonical_url": "https://mecha.so/comet",
+      "recovery_basis": "reviewed_complete_same_canonical_history",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "1fee93ef1e243b350724fedd3f82563e9fc88a816265d6a4cfcd46864a629cb2",
+      "source_git_blob": "cf8d410ebca90c1e9e9e310cf509418c9a0ac0db",
+      "source_path": "blog/content/posts/20260129-hacker_news-mecha-comet-open-modular-linux-handheld-computer-3.md",
+      "target_file_sha256": "f33e61dde802d3d02bc11bd3641b1bd15fdda74a3c70dba4a4a9e7c2c41913c8",
+      "target_path": "20260129-hacker_news-mecha-comet-open-modular-linux-handheld-computer-3.md"
+    },
+    {
+      "canonical_url": "https://github.com/jmuncor/sherlock",
+      "recovery_basis": "reviewed_complete_same_canonical_history",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "5df3d1244f0bed3bf380e512af7fec7829c059daf7809685f807eafff848e5ed",
+      "source_git_blob": "15f97d17e642c3b460e59cccafe402f60c498124",
+      "source_path": "blog/content/posts/20260129-hacker_news-show-hn-a-mitm-proxy-to-see-what-your-llm-tools-ar-16.md",
+      "target_file_sha256": "605ce2538386400ba857b1081b88855a7213acbe8ab39841136a31676ffb40f2",
+      "target_path": "20260129-hacker_news-show-hn-a-mitm-proxy-to-see-what-your-llm-tools-ar-9.md"
+    },
+    {
+      "canonical_url": "http://arxiv.org/abs/2601.22157v1",
+      "recovery_basis": "reviewed_complete_same_canonical_history",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "5347a5e6a45f101c96a4aac06fe83133731283b63dd960a926422c3831fb53b9",
+      "source_git_blob": "85098d79c9c2bc452d9798026e97d0a795b37737",
+      "source_path": "blog/content/posts/20260202-arxiv_ai-discovering-hidden-gems-in-model-repositories-1.md",
+      "target_file_sha256": "d98d93c05f1e87a2b006315b244d67ea3992d4b494cc7508e87218823a2c649b",
+      "target_path": "20260130-arxiv_ai-discovering-hidden-gems-in-model-repositories-1.md"
+    },
+    {
+      "canonical_url": "http://arxiv.org/abs/2601.22156v1",
+      "recovery_basis": "reviewed_complete_same_canonical_history",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "7d4aee55e04fda512ec1edfe87cc5a69a16f23ba96c8b10d3685c7fcf1c2b9d5",
+      "source_git_blob": "f12718fd4a67810229e6cd1b1cf041dde3fa4bd2",
+      "source_path": "blog/content/posts/20260131-arxiv_ai-hybrid-linear-attention-done-right-efficient-disti-2.md",
+      "target_file_sha256": "e06f06ede335bb0836508c87488c0c513f0e475ce83433b2b5484e3c8d14e722",
+      "target_path": "20260130-arxiv_ai-hybrid-linear-attention-done-right-efficient-disti-2.md"
+    },
+    {
+      "canonical_url": "http://arxiv.org/abs/2601.22155v1",
+      "recovery_basis": "reviewed_complete_same_canonical_history",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "a3e7d26457253fc23bc8b60b0d1a31832600a09af0dc79da45043e60e8f32f92",
+      "source_git_blob": "49fce470d93b3cdbe53018d2d36151643b956e06",
+      "source_path": "blog/content/posts/20260130-arxiv_ai-ueval-a-benchmark-for-unified-multimodal-generatio-3.md",
+      "target_file_sha256": "0df0698444756805045d77683d3b0a1a8fd06d330f6378feed4ee730036aa275",
+      "target_path": "20260130-arxiv_ai-ueval-a-benchmark-for-unified-multimodal-generatio-3.md"
+    },
+    {
+      "canonical_url": "https://research.google/blog/towards-a-science-of-scaling-agent-systems-when-and-why-agent-systems-work",
+      "recovery_basis": "reviewed_complete_same_canonical_history",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "25db9612163e1ba91360f0260f2f2e94787caf98e7d0ff42a5482e05f740d9da",
+      "source_git_blob": "e05ce38edcc88d6ae43bf7cd16ec49691d94211a",
+      "source_path": "blog/content/posts/20260201-hacker_news-towards-a-science-of-scaling-agent-systems-when-an-11.md",
+      "target_file_sha256": "c8fc01ff13f9f15461a68b00e479cc4252f1b02378bb833bc5b1bc1112d8cf57",
+      "target_path": "20260201-hacker_news-towards-a-science-of-scaling-agent-systems-when-an-11.md"
+    },
+    {
+      "canonical_url": "https://mariozechner.at/posts/2025-11-30-pi-coding-agent",
+      "recovery_basis": "reviewed_complete_same_canonical_history",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "295e0830c90e47afca201ee292ffb71792f5573d70ae10f91928c702848f99a4",
+      "source_git_blob": "07bb913548c4d3bdbe0a590af2392f63d344ad25",
+      "source_path": "blog/content/posts/20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-1.md",
+      "target_file_sha256": "f2af16e209aca9e30ff6d59f7c7311b64647640779cd21486343f56d6485b23c",
+      "target_path": "20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-1.md"
+    },
+    {
+      "canonical_url": "http://arxiv.org/abs/2601.23280v1",
+      "recovery_basis": "reviewed_complete_same_canonical_history",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "fb616373141dee64c89120be189996717118a04c51202923f69a3420e4bd4f87",
+      "source_git_blob": "926270f63d79cfa8aa348ba7e1a19ba021040fe9",
+      "source_path": "blog/content/posts/20260203-arxiv_ai-decoupled-diffusion-sampling-for-inverse-problems--2.md",
+      "target_file_sha256": "00e17a9b8f12b82aa00aba11fb252e6cef077f7d17dd1ac1a5cace089483ca8e",
+      "target_path": "20260202-arxiv_ai-decoupled-diffusion-sampling-for-inverse-problems--2.md"
+    },
+    {
+      "canonical_url": "https://www.koi.ai/blog/maliciouscorgi-the-cute-looking-ai-extensions-leaking-code-from-1-5-million-developers",
+      "recovery_basis": "reviewed_complete_same_canonical_history",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "4f0fec7a1a4a9d7c120622247d2e483af36a22ed647608c07c2cbac76ccb4976",
+      "source_git_blob": "031854fca300733cc28d1829231102d35d9d060e",
+      "source_path": "blog/content/posts/20260202-hacker_news-maliciouscorgi-ai-extensions-send-your-code-to-chi-7.md",
+      "target_file_sha256": "d3a15f8eacc1180480b13b335739fca94244a561e1e79663ec0f2a9d8e92452e",
+      "target_path": "20260202-hacker_news-maliciouscorgi-ai-extensions-send-your-code-to-chi-5.md"
+    },
+    {
+      "canonical_url": "https://blog.senko.net/sandboxing-ai-agents-in-linux",
+      "recovery_basis": "detected_truncation",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "042bfa292ac68b075214ffa844e556d6599680632ef42fe459e287ef631eaf53",
+      "source_git_blob": "9926bb62d8eb863132de95ac2c2278ed84348398",
+      "source_path": "blog/content/posts/20260203-hacker_news-sandboxing-ai-agents-in-linux-15.md",
+      "target_file_sha256": "ca616371d65f756d66cdeb2c248dd809fb487765a1a0383dd354334faca21fb2",
+      "target_path": "20260203-hacker_news-sandboxing-ai-agents-in-linux-15.md"
+    },
+    {
+      "canonical_url": "https://github.com/RAIL-Suite/RAIL",
+      "recovery_basis": "reviewed_complete_same_canonical_history",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "951b791420105c2d12737e2ed5d683e866844c303e330b1048ee1bcf211f62af",
+      "source_git_blob": "341b3d84537bd5915c251de1f598705b88989dbc",
+      "source_path": "blog/content/posts/20260203-hacker_news-show-hn-inverting-agent-model-app-as-clients-chat--11.md",
+      "target_file_sha256": "a718de5cef601e02b23e15339ead6bd794c04b993ac0dda01b8de82324a1e05f",
+      "target_path": "20260203-hacker_news-show-hn-inverting-agent-model-app-as-clients-chat--4.md"
+    },
+    {
+      "canonical_url": "https://arxiv.org/abs/2602.00294",
+      "recovery_basis": "reviewed_complete_same_canonical_history",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "aed5bc1e8df71f54b977986f937bc27fe8149f0fd2f04751114d91bc03391ed9",
+      "source_git_blob": "672422d832d5c9f96e3f8fd6969ba619f958cd1e",
+      "source_path": "blog/content/posts/20260204-hacker_news-attention-at-constant-cost-per-token-via-symmetry--0.md",
+      "target_file_sha256": "c18782119902c4a5404d180943d1c6ed24d019ff758e3442150cbfa482e1a183",
+      "target_path": "20260204-hacker_news-attention-at-constant-cost-per-token-via-symmetry--0.md"
+    },
+    {
+      "canonical_url": "https://boxc.net/blog/2026/claude-code-connecting-to-local-models-when-your-quota-runs-out",
+      "recovery_basis": "detected_truncation",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "a3698ad792ba2b97c0ea34bbc248dc5674e419b8a84827d29c153b76c94d7c5e",
+      "source_git_blob": "9946e9336235ab29450fa7a375c7110bf6c330af",
+      "source_path": "blog/content/posts/20260204-hacker_news-claude-code-connect-to-a-local-model-when-your-quo-5.md",
+      "target_file_sha256": "2b5f19cb631e32ad4f35948a0ca9f52de31d16ed61a1c0707c8f98a0c59476d6",
+      "target_path": "20260204-hacker_news-claude-code-connect-to-a-local-model-when-your-quo-5.md"
+    },
+    {
+      "canonical_url": "http://arxiv.org/abs/2602.04883v1",
+      "recovery_basis": "detected_truncation",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "656455fd9f197a21eba49059562ca2f7d03b1e30f7ba142e61c930b8dc689aa5",
+      "source_git_blob": "8b3345cdf632cb83886af905ba78cf51bba9e207",
+      "source_path": "blog/content/posts/20260206-arxiv_ai-protein-autoregressive-modeling-via-multiscale-str-1.md",
+      "target_file_sha256": "8fc061f9b8b5be6c71249595d4f693badfd259216a07f30dabcd469684539161",
+      "target_path": "20260205-arxiv_ai-protein-autoregressive-modeling-via-multiscale-str-1.md"
+    },
+    {
+      "canonical_url": "https://blog.sturdystatistics.com/posts/hnet_part_I",
+      "recovery_basis": "detected_truncation",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "061e33d44137fc16cbc4e0852856cd3df2cb7b0eece58d1b2a6588a358cb7082",
+      "source_git_blob": "73067283651eb59af11d8bd2c7ce77c26fada6c2",
+      "source_path": "blog/content/posts/20260206-hacker_news-hypernetworks-neural-networks-for-hierarchical-dat-19.md",
+      "target_file_sha256": "7c52722d622dce2f1dc5927d77cd2990fc030d15d8a16e8937051026b1765704",
+      "target_path": "20260205-hacker_news-hypernetworks-neural-networks-for-hierarchical-dat-16.md"
+    },
+    {
+      "canonical_url": "http://arxiv.org/abs/2602.06038v1",
+      "recovery_basis": "reviewed_complete_same_canonical_history",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "bdc7cd23033803d060c55c885e995c92345862adc23946b7daec8197b4ec5573",
+      "source_git_blob": "e406afc80d6dcd4d8686bbe9f751b558f8771dc8",
+      "source_path": "blog/content/posts/20260206-arxiv_ai-commcp-efficient-multi-agent-coordination-via-llm--3.md",
+      "target_file_sha256": "d5815901fb29bdcdb814e471413215094b73f35882f4777317b836a93ef2f520",
+      "target_path": "20260206-arxiv_ai-commcp-efficient-multi-agent-coordination-via-llm--3.md"
+    },
+    {
+      "canonical_url": "http://arxiv.org/abs/2602.06030v1",
+      "recovery_basis": "reviewed_complete_same_canonical_history",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "9ab8b5ffaf69324a4169929af456ce70f6f04b20b759c95910e7ecdb59563227",
+      "source_git_blob": "14c6f342fe36ab2ff6a453f56a7264500f2d8695",
+      "source_path": "blog/content/posts/20260207-arxiv_ai-physicsagentabm-physics-guided-generative-agent-ba-6.md",
+      "target_file_sha256": "de7446b314ac6a915d553c885f62c55f891e8264202f63893351f608c29c59bc",
+      "target_path": "20260206-arxiv_ai-physicsagentabm-physics-guided-generative-agent-ba-6.md"
+    },
+    {
+      "canonical_url": "http://arxiv.org/abs/2602.06043v1",
+      "recovery_basis": "reviewed_complete_same_canonical_history",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "6a05549b18a7ee174dfe3050a52aea09829a14922c768f650dd4ca836981df62",
+      "source_git_blob": "9250ebb0296513bd7fade91ae242bf470e555db6",
+      "source_path": "blog/content/posts/20260208-arxiv_ai-shared-lora-subspaces-for-almost-strict-continual--0.md",
+      "target_file_sha256": "cc5d819b3ff65fb9b0567cde3c44e45d14de67e12cacd245a8ac61693d345c2e",
+      "target_path": "20260206-arxiv_ai-shared-lora-subspaces-for-almost-strict-continual--0.md"
+    },
+    {
+      "canonical_url": "https://haskellforall.com/2026/02/beyond-agentic-coding",
+      "recovery_basis": "reviewed_complete_same_canonical_history",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "085615ec6a916719cdfb9ef553c0ef526231bfdb80b446e57539ff21d26c6473",
+      "source_git_blob": "432e95e952fe5ee47963c0e5df1c3b706797d5d3",
+      "source_path": "blog/content/posts/20260208-hacker_news-haskell-for-all-beyond-agentic-coding-3.md",
+      "target_file_sha256": "d94d2079f0e5707ad8aeaef0051923353745fc05b144245bf22061cb8ade81dd",
+      "target_path": "20260208-hacker_news-haskell-for-all-beyond-agentic-coding-3.md"
+    },
+    {
+      "canonical_url": "https://federicopereiro.com/llm-high",
+      "recovery_basis": "reviewed_complete_same_canonical_history",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "42805f1477c3e50314a6b747051c4a8a63a0f19af07cf523ef1e2909cb297d59",
+      "source_git_blob": "a97c9c5775c2f7fb7dc1da07241b4521c261ae2c",
+      "source_path": "blog/content/posts/20260208-hacker_news-llms-as-the-new-high-level-language-4.md",
+      "target_file_sha256": "28a7132248e8b68fbba99a8e23094b74fe6f66cdfa34a1eae20aaa29e0bbf26d",
+      "target_path": "20260208-hacker_news-llms-as-the-new-high-level-language-8.md"
+    },
+    {
+      "canonical_url": "https://cinegraphs.ai",
+      "recovery_basis": "reviewed_complete_same_canonical_history",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "bd07d4bcdc52adfbe2b6a76d6eb3402158c10e4565a264eca1c342592321fe2c",
+      "source_git_blob": "01d908c49b49806fea5affde8bd839900443b6d7",
+      "source_path": "blog/content/posts/20260208-hacker_news-show-hn-fine-tuned-qwen25-7b-on-100-films-for-prob-2.md",
+      "target_file_sha256": "4717359bdf2d7ecfae6fc085e2187013ba05ed313e4482afc35b2a1a9605ef6e",
+      "target_path": "20260208-hacker_news-show-hn-fine-tuned-qwen25-7b-on-100-films-for-prob-2.md"
+    },
+    {
+      "canonical_url": "https://www.omnara.com/blog/what-is-an-async-agent-really",
+      "recovery_basis": "reviewed_complete_same_canonical_history",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "aae98cbe1ddf7ec7d8ae4c7fb2e26c94428d577e24954ab12ddfe44d64795aac",
+      "source_git_blob": "179cf3e9bda16d8b0106ece877c24bf3837c0016",
+      "source_path": "blog/content/posts/20260210-hacker_news-everyones-building-async-agents-but-almost-no-one--11.md",
+      "target_file_sha256": "ea25479eca35b0319d16048d4909217d5ccb7ebcbd7fc9e9cd96aaeb02475cb7",
+      "target_path": "20260209-hacker_news-everyones-building-async-agents-but-almost-no-one--14.md"
+    },
+    {
+      "canonical_url": "https://github.com/antirez/voxtral.c",
+      "recovery_basis": "detected_truncation",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "09c472eeab75e6f003c98e9e5e4a10f5e98bdbc60b86bc1fe30575c6ce2fffd9",
+      "source_git_blob": "305e35bc4b8a910e6dfa426c818566908401fb68",
+      "source_path": "blog/content/posts/20260210-hacker_news-pure-c-cpu-only-inference-with-mistral-voxtral-rea-14.md",
+      "target_file_sha256": "452295f144575a0a4a98afe38903f11ab409c10a9e59130646feda02af05e1a6",
+      "target_path": "20260210-hacker_news-pure-c-cpu-only-inference-with-mistral-voxtral-rea-14.md"
+    },
+    {
+      "canonical_url": "https://github.com/tambo-ai/tambo",
+      "recovery_basis": "detected_truncation",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "394f8854048d2c6c2b1d0c4b9b01b323a4663f640c01590a528e05cc2a4a31b6",
+      "source_git_blob": "5fe41a82bf96a48f920b527b807847d5adc16ae5",
+      "source_path": "blog/content/posts/20260211-hacker_news-tambo-10-open-source-toolkit-for-agents-that-rende-12.md",
+      "target_file_sha256": "700d81849187b7a6ce02f65118dfecc9d0d04dacba2546e9f036f20d252c2154",
+      "target_path": "20260211-hacker_news-tambo-10-open-source-toolkit-for-agents-that-rende-12.md"
+    },
+    {
+      "canonical_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-deep-think",
+      "recovery_basis": "detected_truncation",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "8d625b14614895f522c2da82cd05299fb969e1642c8e33baad4a764766547603",
+      "source_git_blob": "a3b34cc312e708440d8898d276c0789b19a8f5d5",
+      "source_path": "blog/content/posts/20260213-hacker_news-gemini-3-deep-think-3.md",
+      "target_file_sha256": "b84d2c69505df2d0488f9037a7ebb62bd9f20c5348d087e065dc580165759888",
+      "target_path": "20260212-blogs_podcasts-gemini-3-deep-think-advancing-science-research-and-1.md"
+    },
+    {
+      "canonical_url": "http://arxiv.org/abs/2602.12268v1",
+      "recovery_basis": "reviewed_complete_same_canonical_history",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "455dd80c613f35bcc919bad5f6d42f85c667bbc3b864bcbde5324a5dd658f538",
+      "source_git_blob": "7c2278c0444b78a7853019a246ae31f85e916836",
+      "source_path": "blog/content/posts/20260215-arxiv_ai-cm2-reinforcement-learning-with-checklist-rewards--9.md",
+      "target_file_sha256": "e257a6e1833632c08c53ef16ce862b5d99b566dedfa0c86158097a5ab5a14a55",
+      "target_path": "20260213-arxiv_ai-cm2-reinforcement-learning-with-checklist-rewards--9.md"
+    },
+    {
+      "canonical_url": "https://www.seangoedecke.com/fast-llm-inference",
+      "recovery_basis": "detected_truncation",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "1f33f37c45cedb749af7df36a00127b66b85ebfcaeb571ce20e589d2888defc1",
+      "source_git_blob": "fdc2163437a527b13a90a6e1dc06f696692da152",
+      "source_path": "blog/content/posts/20260215-hacker_news-two-different-tricks-for-fast-llm-inference-3.md",
+      "target_file_sha256": "e318aeee23f7515a9d316283a513f443d2c449ca12e404dd51e32257d4504fd3",
+      "target_path": "20260215-hacker_news-two-different-tricks-for-fast-llm-inference-2.md"
+    },
+    {
+      "canonical_url": "https://juejin.cn/post/7606594349580763162",
+      "recovery_basis": "detected_truncation",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "c2cb85b063f30b648b2b8e0e42ae318d1d8a794ffd4396064b3c469e707ce0f4",
+      "source_git_blob": "63f19699e4bc2c48b39fadeeae55f1871e3876f2",
+      "source_path": "blog/content/posts/20260215-juejin-开源大模型涨价策略分析llama-35-与-glm-5-的商业化博弈-1.md",
+      "target_file_sha256": "3612d7421c97915be65b0b3c4e0e1df219e3b7192a2bfcf8c7f44a95ab680a93",
+      "target_path": "20260215-juejin-开源大模型涨价策略分析llama-35-与-glm-5-的商业化博弈-1.md"
+    },
+    {
+      "canonical_url": "http://arxiv.org/abs/2602.13165v1",
+      "recovery_basis": "reviewed_complete_same_canonical_history",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "299493d7ad7551b614aaf4c4e7c3d4746beee9c04604d969688de5b619ce51cd",
+      "source_git_blob": "1e855dc3046c9919f7c053271d1a8eb6d2102dd3",
+      "source_path": "blog/content/posts/20260217-arxiv_ai-asynchronous-verified-semantic-caching-for-tiered--8.md",
+      "target_file_sha256": "33b9a71fb7a278bfe21cde578b88c9f931c988f0e0f964e248e28dccad178d30",
+      "target_path": "20260216-arxiv_ai-asynchronous-verified-semantic-caching-for-tiered--8.md"
+    },
+    {
+      "canonical_url": "https://qwen.ai/blog?id=qwen3.5",
+      "recovery_basis": "reviewed_complete_same_canonical_history",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "50fdff63a655a9393fcaad0dfb35c712e3c9ceb70e292a929caaafeec802f0f6",
+      "source_git_blob": "34748afdbf8baea8e3e605d32af973748456bbf0",
+      "source_path": "blog/content/posts/20260216-hacker_news-qwen35-towards-native-multimodal-agents-5.md",
+      "target_file_sha256": "68214bf74edf01c6e358ad18b8e31833bc05246e00f5a0aeb94a9bcf607227b0",
+      "target_path": "20260216-hacker_news-qwen35-towards-native-multimodal-agents-3.md"
+    },
+    {
+      "canonical_url": "https://juejin.cn/post/7606728595557400611",
+      "recovery_basis": "reviewed_complete_same_canonical_history",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "6882870ea1863a26d110354c54251794363617de2bfeb1b6af168960a75beace",
+      "source_git_blob": "cb18e21ba4d65d9150b84c34eadfc16572d87703",
+      "source_path": "blog/content/posts/20260217-juejin-创业半年我用5个ai-agent替代了一个团队-4.md",
+      "target_file_sha256": "9578bb8ff8313600ed790a62c1c11214599ac73fb1781ffedf57e8ed7d75bc8f",
+      "target_path": "20260217-juejin-创业半年我用5个ai-agent替代了一个团队-0.md"
+    },
+    {
+      "canonical_url": "http://arxiv.org/abs/2602.15823v1",
+      "recovery_basis": "reviewed_complete_same_canonical_history",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "2a6c04424ede4a82f62ac23f524d23778b08546b35ca2c2c88044fcbe67a463b",
+      "source_git_blob": "95ef055c694a22761f68241255b0be111c56cf7e",
+      "source_path": "blog/content/posts/20260219-arxiv_ai-crispedit-low-curvature-projections-for-scalable-n-4.md",
+      "target_file_sha256": "894cca5e6c02bf45d118b765e564a24dc7fca4fab2a582f1f782b5fa358f1e4d",
+      "target_path": "20260218-arxiv_ai-crispedit-low-curvature-projections-for-scalable-n-4.md"
+    },
+    {
+      "canonical_url": "https://juejin.cn/post/7608236965553209387",
+      "recovery_basis": "reviewed_complete_same_canonical_history",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "477e86a47028be8c28c32598d088802b8ee330aca12c6c049a3880ea8784ce15",
+      "source_git_blob": "aa5b1ad18e78a86cc0edccd216bec11c73b97966",
+      "source_path": "blog/content/posts/20260220-juejin-无文档遗留系统的逆向梳理利用-ai-重建架构视图-0.md",
+      "target_file_sha256": "79fd3558cc22b8a09b2335896403bc80f672dd874e6f415797b2d18eae128db4",
+      "target_path": "20260219-juejin-无文档遗留系统的逆向梳理利用-ai-重建架构视图-2.md"
+    },
+    {
+      "canonical_url": "http://arxiv.org/abs/2602.17658v1",
+      "recovery_basis": "reviewed_complete_same_canonical_history",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "8c79ec64abf34659fac071447876bfdbfd732a90c81e26493634a6ff2180d095",
+      "source_git_blob": "b39cbd6f835ef42199d8ff750a44e939f0abec4f",
+      "source_path": "blog/content/posts/20260221-arxiv_ai-mars-margin-aware-reward-modeling-with-self-refine-2.md",
+      "target_file_sha256": "11aa85a2ba517f806f7d7be56c3e694f19b88bf218abf79449b57a25193d1509",
+      "target_path": "20260220-arxiv_ai-mars-margin-aware-reward-modeling-with-self-refine-2.md"
+    },
+    {
+      "canonical_url": "https://venturebeat.com/ai/lean4-how-the-theorem-prover-works-and-why-its-the-new-competitive-edge-in",
+      "recovery_basis": "reviewed_complete_same_canonical_history",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "2acc1d86129d9acf4d2723380e2b2eb57e79d37c0e8156a6d844a24bb8f91603",
+      "source_git_blob": "a5e7e4f0243c843ba2de3ba4fd09a7f57ae1788c",
+      "source_path": "blog/content/posts/20260221-hacker_news-lean-4-how-the-theorem-prover-works-and-why-its-th-18.md",
+      "target_file_sha256": "d9b743835b561634ce9de247debbc94665606f76eb9119a399cd6dded5a6f88b",
+      "target_path": "20260221-hacker_news-lean-4-how-the-theorem-prover-works-and-why-its-th-18.md"
+    },
+    {
+      "canonical_url": "https://juejin.cn/post/7608953699230105640",
+      "recovery_basis": "detected_truncation",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "4d297b773f6625f1861d085a54bcf1e152a6c5b5a6fbdedb875361dbd74c3a3a",
+      "source_git_blob": "a3492545db75a56436e16d06d26b0b1541a53f6e",
+      "source_path": "blog/content/posts/20260223-juejin-ai-agent-框架探秘拆解-openhands7-agent-1.md",
+      "target_file_sha256": "16ab6aec68454cc6a6aee6f1164ef5586ef77e3b2f5c2b47a4ad625444c58a84",
+      "target_path": "20260223-juejin-ai-agent-框架探秘拆解-openhands7-agent-1.md"
+    },
+    {
+      "canonical_url": "http://arxiv.org/abs/2602.21196v1",
+      "recovery_basis": "detected_truncation",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "0c34e1740437e26429d840243ec8a73bae6d542513bf22c93880d337778133b8",
+      "source_git_blob": "2250377ff029591820d078d9812671172af7f316",
+      "source_path": "blog/content/posts/20260226-arxiv_ai-untied-ulysses-memory-efficient-context-parallelis-5.md",
+      "target_file_sha256": "cdc959ed32b792133f0d30b7adea0c03f56f00d6682b426ab8ab3b19e5af1e44",
+      "target_path": "20260225-arxiv_ai-untied-ulysses-memory-efficient-context-parallelis-5.md"
+    },
+    {
+      "canonical_url": "https://juejin.cn/post/7610440539818590248",
+      "recovery_basis": "detected_truncation",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "6599a1c209a75058866b5d6c2912caf218ca408a2e7a8677afeaeb2ce7b89e0d",
+      "source_git_blob": "282c61da2a7999a0b38f8bb15499c13cde287316",
+      "source_path": "blog/content/posts/20260225-juejin-ai-agent框架探秘拆解-openhands8-codeactagent-3.md",
+      "target_file_sha256": "0d88a7dad079ba9a0592573ac7d997f8b593f2ac33467fa2bfa126bb7367a4de",
+      "target_path": "20260225-juejin-ai-agent框架探秘拆解-openhands8-codeactagent-2.md"
+    },
+    {
+      "canonical_url": "http://arxiv.org/abs/2602.23349v1",
+      "recovery_basis": "reviewed_complete_same_canonical_history",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "be71e68051e6cffa2f91b5e8876453d525be89f329a668759eaaecd75331a85c",
+      "source_git_blob": "5ec8add7519e3359d3fac37fe8d7119dfaa7d452",
+      "source_path": "blog/content/posts/20260301-arxiv_ai-flashoptim-optimizers-for-memory-efficient-trainin-5.md",
+      "target_file_sha256": "f11bf0b21e50f6e29cc37650ca83fdb64c2c673156e2b6fc65018b663b36f64e",
+      "target_path": "20260227-arxiv_ai-flashoptim-optimizers-for-memory-efficient-trainin-5.md"
+    },
+    {
+      "canonical_url": "http://arxiv.org/abs/2602.24266v1",
+      "recovery_basis": "reviewed_complete_same_canonical_history",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "94085e659b8207189c6f596869be4f8e32df64ccd54ad412ecddde0a4ad84381",
+      "source_git_blob": "8250d05ab1fdff9449d2948039c24aa06b0d9b1a",
+      "source_path": "blog/content/posts/20260303-arxiv_ai-efficient-discovery-of-approximate-causal-abstract-9.md",
+      "target_file_sha256": "0d0f9b0bb9606e34b9daa01a255ea04c57c0cc78babb741652df5ae0d6d44b6c",
+      "target_path": "20260302-arxiv_ai-efficient-discovery-of-approximate-causal-abstract-9.md"
+    },
+    {
+      "canonical_url": "http://arxiv.org/abs/2602.24281v1",
+      "recovery_basis": "reviewed_complete_same_canonical_history",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "7187603a4f28e6c70f595e7749112ac0cce0f70a1ad3f57c499518e313d17951",
+      "source_git_blob": "491bfaa07d4709d59973f61005082245b9ab8892",
+      "source_path": "blog/content/posts/20260303-arxiv_ai-memory-caching-rnns-with-growing-memory-5.md",
+      "target_file_sha256": "c55eee0ca34ead3c7e43b426fd5c1c173f40ad66002989e9b23365871867b64b",
+      "target_path": "20260302-arxiv_ai-memory-caching-rnns-with-growing-memory-5.md"
+    },
+    {
+      "canonical_url": "http://arxiv.org/abs/2602.24283v1",
+      "recovery_basis": "reviewed_complete_same_canonical_history",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "eeee29755c6086dbbfc72e993dd703751d614435cb5cd26d37b88c3c6afc2040",
+      "source_git_blob": "76bdc99788aaec9230b611f0bf91871ef00a570d",
+      "source_path": "blog/content/posts/20260303-arxiv_ai-taming-momentum-rethinking-optimizer-states-throug-4.md",
+      "target_file_sha256": "f6983bc41ffc7381c126a041859aeeac7d1dd60161af451d69bb06034f025947",
+      "target_path": "20260302-arxiv_ai-taming-momentum-rethinking-optimizer-states-throug-4.md"
+    },
+    {
+      "canonical_url": "https://juejin.cn/post/7612895343768698890",
+      "recovery_basis": "reviewed_complete_same_canonical_history",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "b6236dbcb3f0236867bd3ce0c88647b5878f100254106c7d027587bef3237e11",
+      "source_git_blob": "0fb7a28c558907b9ebaac83a00792c88a4609149",
+      "source_path": "blog/content/posts/20260303-juejin-ai视觉连载8传统-cv-之边缘检测-1.md",
+      "target_file_sha256": "7cae4a4ca989fea62f4bcb68c4a652c25a80410ea265f48084e47a746c91a3a1",
+      "target_path": "20260303-juejin-ai视觉连载8传统-cv-之边缘检测-1.md"
+    },
+    {
+      "canonical_url": "http://arxiv.org/abs/2603.04399v1",
+      "recovery_basis": "reviewed_complete_same_canonical_history",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "b4558e3d043f0b2bf1a18a21a6c1612f228bf9d136acd391f0d50f10ff22208a",
+      "source_git_blob": "dfedede7175b61db20b3f444c2439f97140c96c2",
+      "source_path": "blog/content/posts/20260306-arxiv_ai-simplihumon-simplifying-human-motion-prediction-0.md",
+      "target_file_sha256": "70d72cc8e38434819ad73c372e92d31a7eb447bafa03264d3dfae6f802fcefc2",
+      "target_path": "20260305-arxiv_ai-simplihumon-simplifying-human-motion-prediction-0.md"
+    },
+    {
+      "canonical_url": "https://juejin.cn/post/7613392309822767167",
+      "recovery_basis": "detected_truncation",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "616f5b6f61839b431d926f83ebd4142a36a54784bfb2c62634e6615575024936",
+      "source_git_blob": "a3efbcc6491e442626bd795017bc795a83e6655d",
+      "source_path": "blog/content/posts/20260305-juejin-agentopenclaw-opencode-打造助手-安装篇-2.md",
+      "target_file_sha256": "ad2c7e477c44dcc39fd6fa1a21138d5aea5ceefbbf90d21b4b31fc7ea54b81a6",
+      "target_path": "20260305-juejin-agentopenclaw-opencode-打造助手-安装篇-2.md"
+    },
+    {
+      "canonical_url": "http://arxiv.org/abs/2603.05471v1",
+      "recovery_basis": "reviewed_complete_same_canonical_history",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "7a0775d470dd61dc9f4d85c4dcd8c0ac8bfc4698e0868716b4eedd44797eff0a",
+      "source_git_blob": "20263f867bb5f99c6cb7fff76bdc6ff4251b6cb8",
+      "source_path": "blog/content/posts/20260309-arxiv_ai-leveraging-llm-parametric-knowledge-for-fact-check-9.md",
+      "target_file_sha256": "a5826e04f9588a781d2153a5521ae1265aa05f55fcd11d5508c3a12a56021604",
+      "target_path": "20260306-arxiv_ai-leveraging-llm-parametric-knowledge-for-fact-check-9.md"
+    },
+    {
+      "canonical_url": "http://arxiv.org/abs/2603.05480v1",
+      "recovery_basis": "detected_truncation",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "8870c627c0746af780a6968a37255fb7862be96d114b44981a69ee4f03db3e45",
+      "source_git_blob": "9e5c635239c51e724ff089bf86a971db27db0f1d",
+      "source_path": "blog/content/posts/20260309-arxiv_ai-thermodynamic-response-functions-in-singular-bayes-8.md",
+      "target_file_sha256": "c729d9b3725b2baccdc0ae8fa0b7b6d3787d4b9bd90cfaa90a391896b43be7ca",
+      "target_path": "20260306-arxiv_ai-thermodynamic-response-functions-in-singular-bayes-8.md"
+    },
+    {
+      "canonical_url": "https://juejin.cn/post/7614205951335301130",
+      "recovery_basis": "reviewed_complete_same_canonical_history",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "2e7f54d1703403f620d1709a9a44509597edff949b2850fde74276159d586d43",
+      "source_git_blob": "c385fd32ce125c1250ad0b0fbe7d49cfb3f041e4",
+      "source_path": "blog/content/posts/20260307-juejin-openclaw-深度解析六节点canvas-与子-agent-2.md",
+      "target_file_sha256": "00a073c3c56b4a1357aed2b781890597e4186f4f21f889df5464e233730bdf99",
+      "target_path": "20260307-juejin-openclaw-深度解析六节点canvas-与子-agent-1.md"
+    },
+    {
+      "canonical_url": "https://github.com/onecli/onecli",
+      "recovery_basis": "detected_truncation",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "f0e4ad6655feacaf53f36e8593c98fab6d1e142e12804e608fc837d736a82679",
+      "source_git_blob": "28b0ddfd2750dc2fbb78b49ddeb0cac14d763254",
+      "source_path": "blog/content/posts/20260312-hacker_news-show-hn-onecli-vault-for-ai-agents-in-rust-11.md",
+      "target_file_sha256": "35aea6f015375bf0210edbf6a2f469e11b09993cad104ddb25fdc300c1b2e42b",
+      "target_path": "20260312-hacker_news-show-hn-onecli-vault-for-ai-agents-in-rust-2.md"
+    },
+    {
+      "canonical_url": "http://arxiv.org/abs/2603.12248v1",
+      "recovery_basis": "detected_truncation",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "c36ffd7f6f1199145dfe0cc50038a25a19af4e18144e98dbb43e30fe8b890798",
+      "source_git_blob": "bfdaa8b2a17c9ab0c0e45e4eabe7bd90b26438ee",
+      "source_path": "blog/content/posts/20260315-arxiv_ai-matching-features-not-tokens-energy-based-fine-tun-4.md",
+      "target_file_sha256": "71759bf39d9f200a2b19bf596b83e7e0958c1e1bdb2c044f9e73593ef3e80519",
+      "target_path": "20260313-arxiv_ai-matching-features-not-tokens-energy-based-fine-tun-4.md"
+    },
+    {
+      "canonical_url": "http://arxiv.org/abs/2603.12255v1",
+      "recovery_basis": "reviewed_complete_same_canonical_history",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "c72f9cb22fbe0a97c2f32759449f00087a7adaa26e06a73d0be460df69b7a74d",
+      "source_git_blob": "db74a6911be8fcaff99fce38136014605df97893",
+      "source_path": "blog/content/posts/20260314-arxiv_ai-spatial-ttt-streaming-visual-based-spatial-intelli-1.md",
+      "target_file_sha256": "62bd8c6be602183c040596af5e8a1eca250886f6c4aab6e127ef0503ce70eaec",
+      "target_path": "20260313-arxiv_ai-spatial-ttt-streaming-visual-based-spatial-intelli-1.md"
+    },
+    {
+      "canonical_url": "https://www.canirun.ai",
+      "recovery_basis": "reviewed_complete_same_canonical_history",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "668701fd870b8671a681f79829a6a4a11c7df4ffc97b963d65dbfc654dc7830e",
+      "source_git_blob": "275a25989a45ca58ac1bfe5bdb01012906236117",
+      "source_path": "blog/content/posts/20260313-hacker_news-can-i-run-ai-locally-4.md",
+      "target_file_sha256": "8ee9ca2dd8e151b21d05e0f9d44d900d59ad8b53dc23e1c669a9de16c53ee8b5",
+      "target_path": "20260313-hacker_news-can-i-run-ai-locally-4.md"
+    },
+    {
+      "canonical_url": "https://juejin.cn/post/7616666752521404416",
+      "recovery_basis": "detected_truncation",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "9cc6b029afa4bc044ac61c272f6ae0410713717deabd7244693dd88042e2f3cd",
+      "source_git_blob": "de03e2c151fb9bb5972f8a63a5a301bad35d850b",
+      "source_path": "blog/content/posts/20260315-juejin-codex-工程化实践指南深入理解-agentsmdskillmd-与-mcp-2.md",
+      "target_file_sha256": "7864a9ddd36874f0149d25b22bdc72f06968f55ef21141b479996fb26153f1d6",
+      "target_path": "20260314-juejin-codex-工程化实践指南深入理解-agentsmdskillmd-与-mcp-0.md"
+    },
+    {
+      "canonical_url": "http://arxiv.org/abs/2603.13224v1",
+      "recovery_basis": "reviewed_complete_same_canonical_history",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "7c9a19b78a5b05d961cd438cf4fdbec91d6110d86386b3797af4b182680cfe82",
+      "source_git_blob": "d16d216ecdf58dd01302b200c258f17c344b317c",
+      "source_path": "blog/content/posts/20260316-arxiv_ai-visual-erm-reward-modeling-for-visual-equivalence-2.md",
+      "target_file_sha256": "5e5f92bcd55841437185c1a677d2e5730f5216a8a5df1ce77362022a1a87ba89",
+      "target_path": "20260316-arxiv_ai-visual-erm-reward-modeling-for-visual-equivalence-2.md"
+    },
+    {
+      "canonical_url": "http://arxiv.org/abs/2603.15596v1",
+      "recovery_basis": "reviewed_complete_same_canonical_history",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "2df13fb65d6c43861cd1c2d474ae3f8b4b2b96fc540fbe4b79555c5ce4e73083",
+      "source_git_blob": "40541797c16a512cb7e540b229bee24aea88125f",
+      "source_path": "blog/content/posts/20260318-arxiv_ai-robust-and-computationally-efficient-linear-contex-8.md",
+      "target_file_sha256": "9f581c60794589cc8447d441907c61c42ac940698d3aaedbc61a9bddf6e20d74",
+      "target_path": "20260317-arxiv_ai-robust-and-computationally-efficient-linear-contex-8.md"
+    },
+    {
+      "canonical_url": "http://arxiv.org/abs/2603.18000v1",
+      "recovery_basis": "detected_truncation",
+      "source_commit": "7bf9a6042e9f274b268e5ad047e7c6cbc1e3d9a3",
+      "source_file_sha256": "76d74c31055ddf6f2f3253cf2ef576d39b17791cf8c9f0475228931f730ba73f",
+      "source_git_blob": "a29a34dcbdbe4537fa315f3ef20df299e7fe54d5",
+      "source_path": "blog/content/posts/20260319-arxiv_ai-agentfactory-a-self-evolving-framework-through-exe-2.md",
+      "target_file_sha256": "977d60cd89eca24ffeb0a869ecc54908e0e42e85d6bb38e161b5830a2a46eff1",
+      "target_path": "20260319-arxiv_ai-agentfactory-a-self-evolving-framework-through-exe-2.md"
+    }
+  ],
+  "entry_count": 75,
+  "schema_version": "historical_git_recovery_manifest_v1"
+}

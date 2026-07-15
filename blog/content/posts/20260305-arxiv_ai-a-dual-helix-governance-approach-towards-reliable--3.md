@@ -16,8 +16,7 @@ categories:
 - AI 工程
 - 系统与基础设施
 source: arxiv
-description: 本文提出了一种面向WebGIS开发的**双螺旋治理框架**，旨在解决智能体AI在实际应用中的可靠性问题。 **主要问题：** WebGIS开发对严谨性要求极高，但现有的智能体AI常因大语言模型（LLM）的五大局限而失败：上下文约束、跨会话遗忘、随机性、指令执行失败以及适应性僵化。
-  **核心方案：** 文章指出这些问题属
+description: 针对大语言模型（LLM）在WebGIS开发中面临上下文约束与执行随机性等局限，本文提出了一种基于知识图谱的双螺旋治理框架。该方案通过外置化的知识、行为与技能轨道，将领域事实与执行协议从模型内部剥离，从而在不单纯依赖模型能力的前提下显著提升了系统的可靠性。实验显示，受治理的智能体能有效降低代码复杂度并优化结构，但该框架在更广泛场景下的通用性尚无法从摘要确认。
 external_url: http://arxiv.org/abs/2603.04390v1
 scenarios:
 - AI/ML项目
@@ -29,10 +28,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 面向WebGIS开发的双螺旋治理：构建可靠智能体
-
 ---
 
 ## 基本信息

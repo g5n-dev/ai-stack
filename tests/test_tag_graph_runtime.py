@@ -31,6 +31,8 @@ class TagGraphRuntimeTest(unittest.TestCase):
                     """\
                     ---
                     title: "Demo Agent Toolkit"
+                    date: 2026-01-01T00:00:00Z
+                    description: "Test fixture for runtime tag graph generation."
                     tags: ["LLM", "Agent"]
                     ---
 

@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# OpenAI校园网络学生社团兴趣表单
-
----
-
 ## 基本信息
 
 - **来源**: OpenAI Blog (blog)
@@ -133,7 +129,6 @@ OpenAI Campus Network的成功取决于能否在去中心化社团结构与中�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [产品与创业](/categories/%E4%BA%A7%E5%93%81%E4%B8%8E%E5%88%9B%E4%B8%9A/)

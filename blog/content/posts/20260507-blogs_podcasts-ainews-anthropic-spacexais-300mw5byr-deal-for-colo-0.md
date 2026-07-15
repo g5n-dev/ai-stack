@@ -16,8 +16,9 @@ categories:
 - 系统与基础设施
 - 大模型
 source: blogs_podcasts
-description: 合同概况 Anthropic 与 SpaceX 的人工智能部门 SpaceXai 达成 300 MW、每年约 5 亿美元的协议，用于建设代号为
-  Colossus I 的超大规模数据中心，合同涵盖电力、冷却及高速互联网络的整体交付。 财务增长 受益于该合作，Anthropic 的年度经常性收入（ARR）在过去一年实现约
+description: 而造王者选择了站队。 Anthropic 与 SpaceX 的人工智能部门 SpaceXai 达成 300 MW、每年约 5 亿美元的协议，用于建设代号为
+  Colossus I 的超大规模数据中心，合同涵盖电力、冷却及高速互联网络的整体交付。 受益于该合作，Anthropic 的年度经常性收入（ARR）在过去一年实现约
+  8000% 的年化增长，预计未来几个季度将保持三位数的增速。
 external_url: https://www.latent.space/p/ainews-anthropic-spacexais-300mw5byr
 scenarios:
 - AI/ML项目
@@ -25,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Anthropic携手Colossus I：300MW算力协议年费50亿
-
 ---
 
 ## 基本信息
@@ -116,7 +113,6 @@ Anthropic 与 SpaceX 的人工智能部门 SpaceXai 达成 300 MW、每年约 
 
 ---
 
----
 ## 站内链接
 
 - 分类： [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/) / [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

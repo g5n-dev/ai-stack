@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# LangChainGo框架解析：Go语言大模型应用开发实战
-
----
-
 ## 基本信息
 
 - **作者**: GetcharZp
@@ -108,7 +104,6 @@ LangChainGo 确实为 Go 生态填补了大模型应用开发的空白。Go 语�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

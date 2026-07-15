@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 思维导图与Markdown双向同步的AI写作工具
-
----
-
 ## 基本信息
 
 - **作者**: 修己xj
@@ -90,7 +86,6 @@ MindWord通过将思维导图与Markdown编辑器的双向同步，重新定义�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/) / [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

@@ -32,10 +32,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 如何使用 Claude Code：规划与执行的分离
-
----
-
 ## 基本信息
 
 - **作者**: vinhnx

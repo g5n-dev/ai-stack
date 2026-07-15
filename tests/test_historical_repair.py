@@ -34,6 +34,7 @@ def _write_post(
     path.parent.mkdir(parents=True, exist_ok=True)
     frontmatter = {
         "title": title or name.removesuffix(".md"),
+        "description": "用于历史修复测试的可核验固定摘要。",
         "date": date,
         "external_url": external_url,
         "tags": tags or [],
@@ -123,10 +124,7 @@ def test_pollution_is_detected_beyond_the_intro_without_flagging_normal_analysis
         root,
         "20260101-polluted.md",
         external_url="https://example.com/late-pollution",
-        body=(
-            "背景事实。" * 500
-            + "由于您没有提供原始正文，我将基于标题推演后续细节。"
-        ),
+        body=("背景事实。" * 500 + "由于您没有提供原始正文，我将基于标题推演后续细节。"),
         date="2026-01-01T00:00:00+08:00",
     )
     clean = _write_post(
@@ -138,9 +136,7 @@ def test_pollution_is_detected_beyond_the_intro_without_flagging_normal_analysis
     )
 
     group = _build(root).manifest["groups"][0]
-    polluted_quality = next(
-        item for item in group["candidates"] if item["path"] == polluted.name
-    )
+    polluted_quality = next(item for item in group["candidates"] if item["path"] == polluted.name)
 
     assert group["body_source"] == clean.name
     assert polluted_quality["polluted"] is True
@@ -284,10 +280,7 @@ def test_reviewed_historical_source_card_is_preserved_as_tier_c(
         root,
         "20260101-brief.md",
         external_url="https://example.com/brief",
-        body=(
-            "## 基本信息\n\n- **作者**: Ada\n\n"
-            "这是一段结构完整且简洁的来源叙述。"
-        ),
+        body=("## 基本信息\n\n- **作者**: Ada\n\n这是一段结构完整且简洁的来源叙述。"),
         date="2026-01-01T00:00:00+08:00",
     )
     original = route.read_text(encoding="utf-8")
@@ -529,9 +522,7 @@ def test_alias_and_relref_rewrite_plan_preserves_old_routes(tmp_path: Path) -> N
         date="2026-02-01T00:00:00+08:00",
     )
     referring = content / "guide.md"
-    referring.write_text(
-        '{{< relref "posts/20260201-duplicate.md" >}}\n', encoding="utf-8"
-    )
+    referring.write_text('{{< relref "posts/20260201-duplicate.md" >}}\n', encoding="utf-8")
 
     plan = _build(root)
     group = plan.manifest["groups"][0]
@@ -547,7 +538,7 @@ def test_alias_and_relref_rewrite_plan_preserves_old_routes(tmp_path: Path) -> N
             "to": f"posts/{canonical.name}",
         }
     ]
-    assert f'posts/{canonical.name}' in guide
+    assert f"posts/{canonical.name}" in guide
     assert duplicate.name not in guide
 
 
@@ -887,8 +878,7 @@ def test_stale_plan_is_rejected_before_any_mutation(tmp_path: Path, monkeypatch)
     plan = _build(root)
     canonical.write_text(canonical.read_text(encoding="utf-8") + "\n人工修改\n", encoding="utf-8")
     before = {
-        path.name: hashlib.sha256(path.read_bytes()).hexdigest()
-        for path in root.glob("*.md")
+        path.name: hashlib.sha256(path.read_bytes()).hexdigest() for path in root.glob("*.md")
     }
     monkeypatch.setattr(repair, "validate_dedupe_execution_gate", lambda **_kwargs: object())
 
@@ -946,9 +936,7 @@ def test_apply_enforces_max_changes_even_if_gate_adapter_is_stubbed(
     assert not (tmp_path / "backups").exists()
 
 
-def test_apply_rolls_back_every_file_when_atomic_phase_fails(
-    tmp_path: Path, monkeypatch
-) -> None:
+def test_apply_rolls_back_every_file_when_atomic_phase_fails(tmp_path: Path, monkeypatch) -> None:
     import ai_stack.historical_repair as repair
 
     content = tmp_path / "content"
@@ -1056,7 +1044,11 @@ def test_batch_selection_is_deterministic_and_keeps_canonical_groups_atomic(
     from ai_stack.historical_repair import build_historical_repair_batch
 
     root = tmp_path / "content/posts"
-    for prefix, url in (("c", "https://example.com/c"), ("a", "https://example.com/a"), ("b", "https://example.com/b")):
+    for prefix, url in (
+        ("c", "https://example.com/c"),
+        ("a", "https://example.com/a"),
+        ("b", "https://example.com/b"),
+    ):
         _write_post(
             root,
             f"{prefix}-route.md",
@@ -1129,9 +1121,7 @@ def test_batch_selection_rejects_a_canonical_group_larger_than_the_gate(
         )
 
 
-def test_cli_batch_dry_run_selects_a_safe_prefix_without_writing(
-    tmp_path: Path, capsys
-) -> None:
+def test_cli_batch_dry_run_selects_a_safe_prefix_without_writing(tmp_path: Path, capsys) -> None:
     from scripts.repair_historical_content import main
 
     root = tmp_path / "content/posts"

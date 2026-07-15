@@ -15,8 +15,8 @@ tags:
 categories:
 - 大模型
 source: juejin
-description: 背景 随着大模型能力快速提升，开发者担心在模型升级面前，投入大量时间优化 Agent 工程可能不再划算。 Agent工程的核心价值 系统化编排：将模型、记忆、工具、策略分层组装，实现可维护、可扩展的流程。
-  可靠性与安全：在多步推理、长时交互中提供错误捕获、回滚、审计等保障。 成本与性能控制：通过缓存、批处理、模型调度等
+description: 在基础模型能力快速提升的背景下，AI 应用开发者常会思考：投入大量精力优化 Agent 工程，是否在模型本身的一次升级面前失去价值？本文重新审视
+  Agent 工程的核心价值，并通过实际 Harness 案例展示在模型跃迁时保持系统可靠性与可扩展性的关键策略，帮助读者在实际项目中做出更理性的技术决策。
 external_url: https://juejin.cn/post/7649642814956568628
 scenarios:
 - AI/ML项目
@@ -24,10 +24,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 基础模型越来越强，Agent工程还值得做吗
-
 ---
 
 ## 基本信息
@@ -110,7 +106,6 @@ AI模型的参数规模与推理速度持续突破，但agent工程的价值并�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

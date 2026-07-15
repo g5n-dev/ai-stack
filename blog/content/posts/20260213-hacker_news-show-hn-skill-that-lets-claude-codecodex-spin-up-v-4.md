@@ -17,7 +17,7 @@ categories:
 - 开发工具
 source: hacker_news
 description: 随着 AI 辅助编程工具的普及，开发者对算力的需求已不再局限于本地资源。本文介绍了一项名为 Skill 的技术，它允许 Claude Code
-  或 Codex 直接调用云端 VM 和 GPU，从而将代码生成与资源部署无缝衔接。阅读本文，你将了解该工具的实现原理，以及如何利用它突破本地硬件限制，构建更流畅的云端开发工作流
+  或 Codex 直接调用云端 VM 和 GPU，从而将代码生成与资源部署无缝衔接。阅读本文，你将了解该工具的实现原理，以及如何利用它突破本地硬件限制，构建更流畅的云端开发工作流。
 external_url: https://cloudrouter.dev
 scenarios:
 - DevOps/运维
@@ -31,10 +31,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Skill工具：让Claude Code/Codex调用VMs和GPU
-
 ---
 
 ## 基本信息
@@ -116,7 +112,7 @@ import time
 def start_remote_vm(hostname, username, password, vm_name):
     """
     通过SSH连接到远程服务器并启动指定的虚拟机
-    
+
     参数:
         hostname (str): 远程服务器地址
         username (str): SSH用户名
@@ -127,23 +123,23 @@ def start_remote_vm(hostname, username, password, vm_name):
         # 创建SSH客户端
         ssh = paramiko.SSHClient()
         ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-        
+
         # 连接到远程服务器
         ssh.connect(hostname, username=username, password=password)
-        
+
         # 执行启动VM的命令
         stdin, stdout, stderr = ssh.exec_command(f"virsh start {vm_name}")
-        
+
         # 等待命令执行完成
         time.sleep(2)
-        
+
         # 检查命令执行结果
         exit_status = stdout.channel.recv_exit_status()
         if exit_status == 0:
             print(f"成功启动虚拟机: {vm_name}")
         else:
             print(f"启动虚拟机失败: {stderr.read().decode()}")
-            
+
     except Exception as e:
         print(f"发生错误: {str(e)}")
     finally:
@@ -158,11 +154,11 @@ start_remote_vm("192.168.1.100", "admin", "password", "my_vm")
 from openstack import connection
 import os
 
-def create_gpu_instance(auth_url, project_name, username, password, 
+def create_gpu_instance(auth_url, project_name, username, password,
                         image_id, flavor_id, network_id, gpu_count=1):
     """
     使用OpenStack API创建带有GPU的虚拟机实例
-    
+
     参数:
         auth_url (str): OpenStack认证服务地址
         project_name (str): 项目名称
@@ -180,7 +176,7 @@ def create_gpu_instance(auth_url, project_name, username, password,
         username=username,
         password=password
     )
-    
+
     try:
         # 创建服务器实例
         server = conn.compute.create_server(
@@ -191,10 +187,10 @@ def create_gpu_instance(auth_url, project_name, username, password,
             # 添加GPU资源请求
             scheduler_hints={"group": f"gpu-group-{gpu_count}"}
         )
-        
+
         print(f"成功创建GPU实例: {server.id}")
         return server.id
-        
+
     except Exception as e:
         print(f"创建GPU实例失败: {str(e)}")
         return None
@@ -220,7 +216,7 @@ import time
 def create_gpu_pod(pod_name, gpu_type="nvidia.com/gpu", gpu_count=1):
     """
     使用Kubernetes API创建带有GPU的Pod
-    
+
     参数:
         pod_name (str): Pod名称
         gpu_type (str): GPU资源类型
@@ -229,10 +225,10 @@ def create_gpu_pod(pod_name, gpu_type="nvidia.com/gpu", gpu_count=1):
     try:
         # 加载Kubernetes配置
         config.load_kube_config()
-        
+
         # 创建API客户端
         api = client.CoreV1Api()
-        
+
         # 定义Pod规格
         pod = client.V1Pod(
             metadata=client.V1ObjectMeta(name=pod_name),
@@ -250,11 +246,11 @@ def create_gpu_pod(pod_name, gpu_type="nvidia.com/gpu", gpu_count=1):
                 ]
             )
         )
-        
+
         # 创建Pod
         api.create_namespaced_pod(namespace="default", body=pod)
         print(f"成功创建GPU Pod: {pod_name}")
-        
+
         # 等待Pod就绪
         while True:
             pod_status = api.read_namespaced_pod(name=pod_name, namespace="default")
@@ -262,7 +258,7 @@ def create_gpu_pod(pod_name, gpu_type="nvidia.com/gpu", gpu_count=1):
                 print("GPU Pod已就绪")
                 break
             time.sleep(1)
-            
+
     except Exception as e:
         print(f"创建GPU Pod失败: {str(e)}")
 
@@ -274,8 +270,6 @@ create_gpu_pod("gpu-pod-example", gpu_count=2)
 ## 案例研究
 
 ### 1：AIGC 初创公司的快速原型验证
-
- 1：AIGC 初创公司的快速原型验证
 
 **背景**:
 一家专注于生成式 AI 应用的初创公司正在开发一款基于最新开源大模型（如 Llama 3 或 Stable Diffusion）的产品。团队规模较小，主要由算法工程师组成，缺乏专职的 DevOps 或后端运维人员。
@@ -293,8 +287,6 @@ create_gpu_pod("gpu-pod-example", gpu_count=2)
 
 ### 2：遗留系统的自动化安全审计
 
- 2：遗留系统的自动化安全审计
-
 **背景**:
 一家中型金融科技公司的安全团队需要对一个拥有 10 年历史的遗留 Java 系统进行全面的安全审计和代码重构。该系统部署在隔离的虚拟机环境中，依赖关系复杂，文档缺失。
 
@@ -310,8 +302,6 @@ create_gpu_pod("gpu-pod-example", gpu_count=2)
 ---
 
 ### 3：高校科研实验室的弹性算力调度
-
- 3：高校科研实验室的弹性算力调度
 
 **背景**:
 某高校计算机视觉研究实验室拥有数十名研究生，由于校级共享服务器资源紧张，学生经常需要排队等待 GPU 资源来运行训练实验。
@@ -417,15 +407,11 @@ create_gpu_pod("gpu-pod-example", gpu_count=2)
 
 ### 1: 这个工具的核心功能是什么？
 
-1: 这个工具的核心功能是什么？
-
 **A**: 该工具是一个技能扩展，旨在将 Claude Code 或 Codex 等 AI 编码模型与云基础设施管理相结合。它的核心功能是允许 AI 模型不仅仅是编写代码，还能直接执行操作来启动和管理虚拟机以及 GPU 实例。这意味着开发者可以通过自然语言指令，让 AI 自动完成开发环境的配置、服务器的部署以及高性能计算资源的分配，从而打通从“代码生成”到“环境部署”的最后一公里。
 
 ---
 
 ### 2: 使用该工具启动 GPU 实例的主要应用场景有哪些？
-
-2: 使用该工具启动 GPU 实例的主要应用场景有哪些？
 
 **A**: 启动 GPU 实例通常用于计算密集型任务，主要场景包括：
 1.  **机器学习与深度学习**：训练大型语言模型、计算机视觉模型或进行数据推理。
@@ -437,8 +423,6 @@ create_gpu_pod("gpu-pod-example", gpu_count=2)
 
 ### 3: 在安全性方面，将 AI 与云基础设施（如创建虚拟机）连接是否存在风险？
 
-3: 在安全性方面，将 AI 与云基础设施（如创建虚拟机）连接是否存在风险？
-
 **A**: 是的，这确实是一个高风险操作。为了安全起见，此类工具通常会实施严格的权限控制和安全沙箱机制：
 1.  **最小权限原则**：授予 AI 模型的身份仅拥有创建和管理特定资源的权限，而不能访问账户中的敏感数据或删除关键基础设施。
 2.  **人工确认机制**：在执行“创建资源”或“产生费用”的操作前，系统通常要求用户进行显式的人工确认，防止 AI 误操作导致意外扣费。
@@ -448,15 +432,11 @@ create_gpu_pod("gpu-pod-example", gpu_count=2)
 
 ### 4: 它支持哪些云服务提供商（如 AWS, Azure, GCP）？
 
-4: 它支持哪些云服务提供商（如 AWS, Azure, GCP）？
-
 **A**: 根据此类开源工具的常见设计，它通常通过 API 与云服务商进行交互。虽然具体的支持列表取决于该项目的实现细节，但一般设计上会倾向于支持主流的公有云提供商，例如 AWS（通过 EC2 API）、Google Cloud（通过 Compute Engine API）或 Azure。用户通常需要配置相应的 API 密钥或凭证文件，以便该技能能够代表用户向云服务商发起请求。
 
 ---
 
 ### 5: 相比于手动配置服务器，使用 AI 自动化部署有哪些优势？
-
-5: 相比于手动配置服务器，使用 AI 自动化部署有哪些优势？
 
 **A**: 主要优势在于效率和降低认知门槛：
 1.  **速度**：AI 可以在几秒钟内生成正确的配置脚本（如 Terraform 或 Cloud Formation 模板）并执行，大大缩短了环境搭建时间。
@@ -466,8 +446,6 @@ create_gpu_pod("gpu-pod-example", gpu_count=2)
 ---
 
 ### 6: 成本如何控制？是否会因为 AI 误操作导致高昂的云服务账单？
-
-6: 成本如何控制？是否会因为 AI 误操作导致高昂的云服务账单？
 
 **A**: 成本控制是此类工具的重点关注对象。除了上述的安全限制外，该工具可能包含以下成本控制特性：
 1.  **自动销毁**：可以设定任务（如模型训练）完成后自动终止实例。
@@ -482,7 +460,6 @@ create_gpu_pod("gpu-pod-example", gpu_count=2)
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/)

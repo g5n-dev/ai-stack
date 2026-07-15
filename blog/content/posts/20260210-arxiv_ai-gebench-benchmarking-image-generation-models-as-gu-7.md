@@ -16,8 +16,7 @@ categories:
 - 大模型
 - 论文
 source: arxiv
-description: 本文介绍了**GEBench**，这是一个专门用于评估图像生成模型在**图形用户界面（GUI）环境**中表现的基准测试。 **背景与动机：**
-  尽管当前的图像生成模型已具备根据用户指令预测未来GUI状态的能力，但现有的基准测试主要关注通用的视觉保真度，缺乏对GUI特定场景下**状态转换**和**时序连贯性**的深入评估
+description: 针对图像生成模型在GUI环境中的状态预测能力，现有通用基准往往难以有效评估其时序连贯性与交互逻辑。本文提出了GEBench数据集及多维度的GE-Score指标，通过涵盖单步交互与多步轨迹的样本，系统性地审视了模型在目标达成与UI合理性等方面的表现。实验揭示了现有模型在处理长交互序列时存在显著瓶颈，特别是在图标解释与定位精度上仍面临挑战。
 external_url: http://arxiv.org/abs/2602.09007v1
 scenarios:
 - Web应用开发
@@ -27,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# GEBench：将图像生成模型评估为GUI环境的基准
-
 ---
 
 ## 基本信息
@@ -204,7 +199,6 @@ source_support: 0.0
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

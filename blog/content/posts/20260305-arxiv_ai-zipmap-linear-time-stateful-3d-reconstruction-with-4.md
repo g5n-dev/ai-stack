@@ -16,7 +16,8 @@ categories:
 - 论文
 - AI 工程
 source: arxiv
-description: 以下是对该内容的中文总结： **ZipMap：线性时间的有状态3D重建与测试时训练** **背景与问题** 尽管前馈Transformer模型推动了3D视觉的快速发展，但现有的最先进方法（如VGGT和$π^3$）存在计算成本随输入图像数量呈**二次方增长**的问题。这导致它们在处理大规模图像数据集时效率低下。而现有的顺
+description: 针对大规模 3D 重建中计算成本随输入图像数量呈二次方增长的效率瓶颈，本文提出了 ZipMap 方法。该研究通过引入测试时训练机制，在保持状态的同时实现了线性时间复杂度的
+  3D 重建，从而显著降低了现有前沿方法的资源消耗。尽管摘要未详述具体的网络架构细节，但该方法有望提升大规模场景重建的推理速度与实用性。
 external_url: http://arxiv.org/abs/2603.04385v1
 scenarios:
 - 计算机视觉
@@ -24,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# ZipMap：基于测试时训练的线性时间有状态3D重建
-
 ---
 
 ## 基本信息

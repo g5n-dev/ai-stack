@@ -16,7 +16,7 @@ categories:
 - 大模型
 - AI 工程
 source: hacker_news
-description: OpenAI 已在 API 平台推出 GPT‑5.5 与 GPT‑5.5 Pro，两个模型在上下文窗口、推理速度和多媒体交互方面实现显著提升，并针对企业调用提供更灵活的计费方案。对需要在生产环境部署大语言模型的开发者而言，这些改进有助于降低成本并加快响应。本篇将对比两个模型的核心差异、接口使用方法及常见调优策略，帮助读
+description: OpenAI 已在 API 平台推出 GPT‑5.5 与 GPT‑5.5 Pro，两个模型在上下文窗口、推理速度和多媒体交互方面实现显著提升，并针对企业调用提供更灵活的计费方案。对需要在生产环境部署大语言模型的开发者而言，这些改进有助于降低成本并加快响应。本篇将对比两个模型的核心差异、接口使用方法及常见调优策略，帮助读者快速上手并在实际项目中落地。
 external_url: https://developers.openai.com/api/docs/changelog
 scenarios:
 - AI/ML项目
@@ -24,10 +24,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# OpenAI在API中推出GPT-5.5及Pro版
-
 ---
 
 ## 基本信息
@@ -90,7 +86,6 @@ OpenAI于近期正式在API平台上线GPT-5.5与GPT-5.5 Pro版本。GPT-5.5为�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

@@ -17,7 +17,7 @@ categories:
 - AI 工程
 source: hacker_news
 description: 随着开源模型能力的快速迭代，在本地运行高性能大模型已成为许多开发者的实际需求。本文深入评测了 Qwen3.5 的 122B 与 35B 版本，重点分析了其在消费级硬件上的部署可行性及推理表现。通过详细的数据对比与实测，我们将探讨这两个模型是否真正具备了媲美
-  Claude Sonnet 4.5 的核心能力，以及在本地环境
+  Claude Sonnet 4.5 的核心能力，以及在本地环境下的实际运行体验。
 external_url: https://venturebeat.com/technology/alibabas-new-open-source-qwen3-5-medium-models-offer-sonnet-4-5-performance
 scenarios:
 - 大语言模型
@@ -28,10 +28,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Qwen3.5 122B与35B模型本地实现Sonnet 4.5性能
-
 ---
 
 ## 基本信息

@@ -16,8 +16,8 @@ categories:
 - 论文
 - AI 工程
 source: arxiv
-description: 背景 科学出版物把迭代、分支的研究过程压缩成线性叙事，导致两方面的税收：叙事税收（失败的实验、被否决的假设被丢弃）和工程税收（审查所需的描述与可执行规格之间的差距导致实现细节缺失）。这对人类读者可接受，但对需要理解、复现、扩展工作的
-  AI 代理是致命的。 Ara 协议结构 为此提出 Agent‑Native Resea
+description: 科学出版物把迭代、分支的研究过程压缩成线性叙事，导致两方面的税收：叙事税收（失败的实验、被否决的假设被丢弃）和工程税收（审查所需的描述与可执行规格之间的差距导致实现细节缺失）。这对人类读者可接受，但对需要理解、复现、扩展工作的
+  AI 代理是致命的。 为此提出 Agent‑Native Research Artifact（Ara）协议，用机器可执行的研究包替代传统论文。
 external_url: http://arxiv.org/abs/2604.24658v1
 scenarios:
 - AI/ML项目
@@ -25,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 最后一篇人类撰写的论文：智能体原生研究产物
-
 ---
 
 ## 基本信息
@@ -162,7 +158,6 @@ Ara 通过四层结构将科研叙事与工程实现统一为机器可执行工�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

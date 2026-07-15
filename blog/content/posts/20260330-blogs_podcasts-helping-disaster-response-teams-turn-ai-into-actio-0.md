@@ -16,8 +16,8 @@ categories:
 - AI 工程
 - 产品与创业
 source: blogs_podcasts
-description: 背景 OpenAI 与比尔及梅琳达·盖茨基金会合作，在亚洲举办专题工作坊，旨在把人工智能技术快速转化为灾害应对的实际行动。工作坊聚焦亚太地区的自然灾害频发现状，汇聚政府、非政府组织、科研机构与技术企业提供跨界对话平台。
-  目标 1. 帮助灾害响应团队了解并掌握可用的 AI 工具与模型。 2. 共同探索 AI 在预警、灾情
+description: 亚洲灾害响应中的人工智能：OpenAI 与盖茨基金会工作坊 在亚洲自然灾害频发的背景下，如何将人工智能技术快速转化为应急决策和行动，已成为关键课题。OpenAI
+  与盖茨基金会共同举办的工作坊汇聚了灾害响应专家、AI 研究者以及实地救援组织，围绕模型部署、数据共享和跨部门协作等实操难题展开深入探讨。
 external_url: https://openai.com/index/helping-disaster-response-teams-asia
 scenarios:
 - AI/ML项目
@@ -25,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 亚洲灾害响应AI行动转化工作坊启动
-
 ---
 
 ## 基本信息
@@ -125,7 +121,6 @@ OpenAI与盖茨基金会合作举办的研讨会聚焦于如何帮助亚太地�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [产品与创业](/categories/%E4%BA%A7%E5%93%81%E4%B8%8E%E5%88%9B%E4%B8%9A/)

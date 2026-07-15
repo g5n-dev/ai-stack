@@ -16,8 +16,7 @@ categories:
 - 大模型
 - 论文
 source: arxiv
-description: 研究背景 语言模型在生成过程中是否会对当前策略的成功概率进行内部估计？本研究提出“价值轴”（value axis）概念，用以量化模型对“当前思路能否达成目标”的主观评估。
-  方法 在 Qwen3‑8B 上，利用合成的上下文强化学习数据构建价值轴。具体做法是将模型的内部激活向量在该轴上进行投影，从而得到一个标量值，代表模型
+description: 本研究旨在探讨大型语言模型是否能够在内部表示“价值轴”，即判断其生成内容是否在预期方向上前进。研究通过构造特定任务和探针，检验模型隐层激活与“是否在正确轨道”之间的对应关系，并提出一种评估框架，但因摘要未提供详细内容，相关细节无法从摘要确认。若该机制得到验证，可为模型自监督校准和对齐技术的改进提供新思路，亦可能影响价值判断在人机交互与伦理审查中的应用。
 external_url: http://arxiv.org/abs/2606.17056v1
 scenarios:
 - 大语言模型
@@ -27,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 语言模型方向判断的认知机制
-
 ---
 
 ## 基本信息
@@ -163,7 +158,6 @@ source_support: 0.0
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

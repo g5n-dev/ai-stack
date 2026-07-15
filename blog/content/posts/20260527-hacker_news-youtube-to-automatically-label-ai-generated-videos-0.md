@@ -28,10 +28,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# YouTube将自动标记AI生成视频
-
----
-
 ## 基本信息
 
 - **作者**: nopg
@@ -75,7 +71,6 @@ YouTube推出AI生成视频自动标签机制是平台在内容治理上的重�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [安全](/categories/%E5%AE%89%E5%85%A8/)

@@ -16,8 +16,8 @@ categories:
 - AI 工程
 - 大模型
 source: blogs_podcasts
-description: 活动概况 首届音乐技术研究展在本校新开设的研究生项目首批学员的作品展示中拉开帷幕，现场座无虚席，凸显了项目在跨学科创新中的吸引力。 主题演讲
-  副教授Anna Huang以《寻找人类与AI共鸣》为题发表主旨演讲，围绕人机协同创作、音乐生成模型及情感交互等前沿议题，阐述了在技术与艺术交汇处实现“共鸣”的路径，激励在场师生探
+description: 副教授Anna Huang在听众满座的情况下发表了主题演讲《在寻找人类与人工智能的共鸣》。 首届音乐技术研究展示会在新设研究生项目的首批学生成果中拉开帷幕。副教授Anna
+  Huang以“寻找人类与人工智能的共鸣”为主题，阐释了技术进步如何塑造音乐创作与体验的全新可能。观众满座，显示出学界对跨学科合作的强烈兴趣。通过本次活动的回顾，读者可以了解项目初期的创新探索以及未来音乐技术发展的趋势。
 external_url: https://news.mit.edu/2026/inaugural-mit-music-technology-research-showcase-celebrates-work-students-0629
 scenarios:
 - AI/ML项目
@@ -27,10 +27,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 首届音乐技术研究展示会展现首批研究生成果
-
 ---
 
 ## 基本信息
@@ -164,7 +160,6 @@ source_support: 0.0
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

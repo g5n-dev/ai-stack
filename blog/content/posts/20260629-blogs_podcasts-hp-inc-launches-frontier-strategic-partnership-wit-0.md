@@ -16,8 +16,8 @@ categories:
 - 大模型
 - AI 工程
 source: blogs_podcasts
-description: 合作概述 HP Inc. 与 OpenAI 共同启动 Frontier 战略伙伴关系，旨在把 OpenAI 前沿模型深度嵌入 HP 的业务全链路。合作规模已升级，以加速
-  AI 在客户体验、软件开发及企业运营等关键环节的落地，推动 HP 数字化转型与竞争力提升。 应用场景 - **客户体验**：通过生成式模型实现智能客服
+description: HP公司扩大其与OpenAI Frontier的合作伙伴关系，在客户体验、软件开发和 企业运营领域部署人工智能。 HP近日宣布将其与OpenAI
+  Frontier的战略合作进一步深化，计划在客户体验、软件开发以及企业运营等关键领域全面部署人工智能技术。此举不仅将帮助企业快速获取前沿AI能力，提升产品迭代效率，还能在提升客户满意度和优化内部流程方面带来显著收益。
 external_url: https://openai.com/index/hp-frontier-partnership
 scenarios:
 - AI/ML项目
@@ -25,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# HP与OpenAI深化合作 AI落地企业运营三大场景
-
 ---
 
 ## 基本信息
@@ -153,7 +149,6 @@ HP 通过 Frontier 与 OpenAI 的深度合作，能够在客户体验、软件�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

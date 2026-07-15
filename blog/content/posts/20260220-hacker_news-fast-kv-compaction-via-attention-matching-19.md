@@ -17,7 +17,7 @@ categories:
 - 论文
 source: hacker_news
 description: 随着键值（KV）缓存成为长上下文大模型推理的主要瓶颈，传统的压缩方法往往难以在保持生成质量的同时兼顾吞吐量。本文提出的“基于注意力匹配的快速
-  KV 压缩”技术，通过精准识别并剔除冗余 Token，有效缓解了显存压力与计算延迟。文章将深入解析该算法的设计原理与工程实现，帮助开发者理解如何利用这一策略，在不牺牲模型性能的前
+  KV 压缩”技术，通过精准识别并剔除冗余 Token，有效缓解了显存压力与计算延迟。文章将深入解析该算法的设计原理与工程实现，帮助开发者理解如何利用这一策略，在不牺牲模型性能的前提下提升推理效率。
 external_url: https://arxiv.org/abs/2602.16284
 scenarios:
 - 大语言模型
@@ -28,10 +28,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 利用注意力匹配加速 KV 键值对压缩
-
 ---
 
 ## 基本信息

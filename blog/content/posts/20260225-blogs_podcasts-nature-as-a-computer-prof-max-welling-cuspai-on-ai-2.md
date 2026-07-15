@@ -35,10 +35,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# CuspAI 探索全材料空间：Hinton 与 LeCun 顾问
-
----
-
 ## 基本信息
 
 - **来源**: Latent Space (blog)

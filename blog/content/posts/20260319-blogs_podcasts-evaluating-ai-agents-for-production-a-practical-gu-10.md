@@ -15,8 +15,8 @@ tags:
 categories:
 - AI 工程
 source: blogs_podcasts
-description: 评估生产环境中的AI代理：Strands Evals实用指南 概述 本文介绍如何使用**Strands Evals**对AI代理进行系统性评估，涵盖核心概念、内置评估器、多轮模拟能力以及实际集成方法。
-  核心要点 1. 核心概念 Strands Evals提供了一套标准化的AI代理评估框架，帮助开发者在生产环境中验证代理
+description: 在这篇文章中，我们展示如何使用 Strands Evals 对 AI 代理进行系统性评估。我们将深入探讨核心概念、内置评估器、多轮模拟能力，以及集成的实用方法和模式。
+  在将 AI 代理部署到生产环境前，系统性的评估是确保其可靠性和性能的关键步骤。Strands Evals 提供了一套完整的框架，涵盖核心概念、内置评估器以及多轮模拟能力，帮助开发者快速构建可重复的评估流程。
 external_url: https://aws.amazon.com/blogs/machine-learning/evaluating-ai-agents-for-production-a-practical-guide-to-strands-evals
 scenarios:
 - AI/ML项目
@@ -27,10 +27,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 用Strands Evals系统评估AI代理的实践指南
-
 ---
 
 ## 基本信息

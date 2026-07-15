@@ -16,7 +16,8 @@ categories:
 - 大模型
 - AI 工程
 source: hacker_news
-description: 随着大模型从简单的对话助手进化为能够自主规划任务的智能体，软件开发范式正在经历一场从“直觉编程”到“智能体工程”的深刻转型。GLM-5 的发布标志着这一技术路径的成熟，它不再仅仅依赖提示词的技巧，而是通过系统化的工程架构来实现复杂目标的拆解与执行。本文将深入剖析这一技术演进背后的逻辑，探讨开发者如何构建具备自主决策能力
+description: 随着大模型从简单的对话助手进化为能够自主规划任务的智能体，软件开发范式正在经历一场从“直觉编程”到“智能体工程”的深刻转型。GLM-5 的发布标志着这一技术路径的成熟，它不再仅仅依赖提示词的技巧，而是通过系统化的工程架构来实现复杂目标的拆解与执行。本文将深入剖析这一技术演进背后的逻辑，探讨开发者如何构建具备自主决策能力的
+  Agentic 系统，以及这将为未来的应用开发带来哪些实质性的改变与机遇。
 external_url: https://z.ai/blog/glm-5
 scenarios:
 - 大语言模型
@@ -30,10 +31,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# GLM-5：从直觉编程迈向智能体工程
-
 ---
 
 ## 基本信息
@@ -91,12 +88,12 @@ import time
 class TaskScheduler:
     def __init__(self):
         self.tasks = []
-    
+
     def add_task(self, task: Callable, priority: int = 0):
         """添加任务到调度队列，priority越高优先级越高"""
         self.tasks.append((task, priority))
         self.tasks.sort(key=lambda x: -x[1])  # 按优先级降序排列
-    
+
     def execute(self):
         """按优先级执行所有任务"""
         for task, _ in self.tasks:
@@ -127,17 +124,17 @@ class PromptOptimizer:
     def __init__(self, base_prompt: str):
         self.base_prompt = base_prompt
         self.modifiers = []
-    
+
     def add_context(self, context: str):
         """添加上下文信息"""
         self.modifiers.append(f"上下文: {context}")
         return self
-    
+
     def add_constraints(self, constraints: List[str]):
         """添加约束条件"""
         self.modifiers.extend([f"约束: {c}" for c in constraints])
         return self
-    
+
     def build(self) -> str:
         """构建最终优化后的提示词"""
         optimized = self.base_prompt + "\n"
@@ -164,12 +161,12 @@ class Agent(ABC):
     def perceive(self):
         """感知环境"""
         pass
-    
+
     @abstractmethod
     def decide(self):
         """做出决策"""
         pass
-    
+
     @abstractmethod
     def act(self):
         """执行动作"""
@@ -179,12 +176,12 @@ class TemperatureControlAgent(Agent):
     def __init__(self):
         self.temperature = 25
         self.target = 22
-    
+
     def perceive(self):
         """感知当前温度"""
         print(f"当前温度: {self.temperature}°C")
         return self.temperature
-    
+
     def decide(self):
         """决定调节方向"""
         if self.temperature > self.target:
@@ -193,7 +190,7 @@ class TemperatureControlAgent(Agent):
             return "升温"
         else:
             return "保持"
-    
+
     def act(self):
         """执行调节动作"""
         action = self.decide()
@@ -216,8 +213,6 @@ for _ in range(3):
 
 ### 1：某中型SaaS平台的客服自动化重构
 
- 1：某中型SaaS平台的客服自动化重构
-
 **背景**:
 一家处于B轮阶段的SaaS企业，其核心产品拥有复杂的API文档和不断更新的功能逻辑。随着用户量增长，人工客服团队面临巨大压力，急需引入智能客服系统。然而，传统的意图识别模型训练周期长，且无法有效处理未见过的新功能查询。
 
@@ -233,8 +228,6 @@ for _ in range(3):
 ---
 
 ### 2：跨国金融机构的研报自动化生成系统
-
- 2：跨国金融机构的研报自动化生成系统
 
 **背景**:
 一家跨国投行的分析师团队每天需要处理海量的全球新闻、财报数据和社交媒体情绪，以生成投资建议。由于数据源分散（结构化数据库与非结构化文本并存），分析师花费80%的时间在数据清洗和初步整理上，而非深度分析。
@@ -357,15 +350,11 @@ for _ in range(3):
 
 ### 1: 什么是 "Vibe Coding"（氛围编程），它与传统的编码方式有何不同？
 
-1: 什么是 "Vibe Coding"（氛围编程），它与传统的编码方式有何不同？
-
 **A**: "Vibe Coding" 是一种新兴的编程范式，指开发者主要依赖自然语言与 AI 模型交互来编写软件，而不是手动编写具体的语法代码。在这种模式下，开发者更像是一个产品经理或架构师，负责描述意图、审查代码结果和调整逻辑，而具体的实现细节（如语法、库函数调用）由 AI 模型自动完成。它与传统的"手写代码"（Hand-coding）不同，传统方式要求开发者具备深厚的语法记忆和实现能力，而 Vibe Coding 更侧重于对逻辑和业务需求的理解。
 
 ---
 
 ### 2: GLM-5 在从 Vibe Coding 向 Agentic Engineering（智能体工程）转变的过程中扮演什么角色？
-
-2: GLM-5 在从 Vibe Coding 向 Agentic Engineering（智能体工程）转变的过程中扮演什么角色？
 
 **A**: GLM-5 在这一转变中充当了核心引擎的角色。随着模型能力的提升，它不再仅仅是一个根据提示词生成代码片段的工具，而是演变成了一个能够自主规划、调用工具、反思并修复错误的智能体。在 Agentic Engineering 阶段，GLM-5 可以独立完成复杂的任务链条，例如从阅读文档、编写代码、运行测试到最终部署的全过程，从而将开发者的角色从"编写指令"进一步提升为"设计智能体工作流"。
 
@@ -373,15 +362,11 @@ for _ in range(3):
 
 ### 3: 什么是 Agentic Engineering（智能体工程），它解决了哪些痛点？
 
-3: 什么是 Agentic Engineering（智能体工程），它解决了哪些痛点？
-
 **A**: Agentic Engineering 是指构建能够自主感知环境、推理规划并执行操作以完成复杂目标的 AI 系统工程。它主要解决了 Vibe Coding 阶段存在的几个痛点：首先是上下文窗口和复杂度的限制，单纯的对话难以处理超大规模的系统架构；其次是可靠性的问题，智能体工程引入了"反思"（Reflection）和"自我修正"（Self-correction）机制，使得系统能够在执行失败时自动尝试替代方案，而不仅仅是一次性生成代码。
 
 ---
 
 ### 4: 对于开发者而言，随着 GLM-5 等模型的出现，未来的核心技能将发生什么变化？
-
-4: 对于开发者而言，随着 GLM-5 等模型的出现，未来的核心技能将发生什么变化？
 
 **A**: 开发者的核心技能将从"语法熟练度"和"代码实现能力"转向"系统设计能力"、"Prompt Engineering（提示词工程）"以及"AI 智能体编排能力"。未来的开发者需要懂得如何拆解复杂问题，如何设计 AI 智能体之间的协作流程，以及如何验证 AI 生成系统的安全性与准确性。虽然编写底层代码的需求减少，但对整体架构逻辑和业务逻辑把控的要求反而变得更高。
 
@@ -389,15 +374,11 @@ for _ in range(3):
 
 ### 5: GLM-5 的能力提升具体体现在哪些方面，足以支撑这种工程范式的转移？
 
-5: GLM-5 的能力提升具体体现在哪些方面，足以支撑这种工程范式的转移？
-
 **A**: 根据讨论，GLM-5 的提升主要体现在更强的逻辑推理能力、更长的上下文处理窗口以及更强的工具调用能力。它能够理解更模糊的指令，并在多步骤的任务中保持连贯性。此外，它具备更强的代码审查和调试能力，能够像人类工程师一样发现输出中的错误并进行迭代，这种"代理"属性是实现 Agentic Engineering 的基础，使得 AI 可以被信任去执行更关键的工程任务。
 
 ---
 
 ### 6: 这种转变是否意味着初级程序员或传统编码工作将被完全取代？
-
-6: 这种转变是否意味着初级程序员或传统编码工作将被完全取代？
 
 **A**: 并非完全取代，而是工作内容的转型。虽然单纯的"代码翻译"工作（将需求直接翻译成语法）可能会大幅减少，但对于系统底层原理的理解、调试复杂 AI 系统的能力、以及对业务逻辑的精准把控依然需要人类介入。初级程序员可能会更多地承担起"训练"和"监督" AI 智能体的角色，而不是从零开始编写每一行代码。人类的角色将从"建造者"转变为"管理者"和"架构师"。
 ## 引用
@@ -409,7 +390,6 @@ for _ in range(3):
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

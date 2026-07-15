@@ -17,7 +17,7 @@ categories:
 - AI 工程
 source: juejin
 description: 随着 AI 技术从模型层向应用层的深入，如何构建稳健的 AI 原生应用架构已成为开发者关注的核心议题。近日落幕的 AI 原生应用开源开发者沙龙（深圳站），正是围绕这一趋势，聚焦
-  AgentScope、RocketMQ 等关键开源技术，深入探讨了从理论框架到工程落地的全链路实践。本文将带您回顾活动现场的精彩观点与技术细节
+  AgentScope、RocketMQ 等关键开源技术，深入探讨了从理论框架到工程落地的全链路实践。
 external_url: https://juejin.cn/post/7611165150897586226
 scenarios:
 - AI/ML项目
@@ -25,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# AI原生应用开源开发者沙龙深圳站回顾及PPT下载
-
 ---
 
 ## 基本信息

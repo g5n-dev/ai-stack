@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 为何LLM后训练中Pass@k优化会降低Pass@1性能
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2602.21189v1

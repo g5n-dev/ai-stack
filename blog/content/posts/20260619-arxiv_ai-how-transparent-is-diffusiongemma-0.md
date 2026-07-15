@@ -16,9 +16,8 @@ categories:
 - 论文
 - 大模型
 source: arxiv
-description: 变量透明度 DiffusionGemma 的中间计算发生在连续潜空间，导致其可解释层级之间的串行深度约为自回归模型 Gemma 4 的 28.6
-  倍，透明度看似很低。但通过在去噪步骤之间插入可解释的 token 瓶颈，将信息映射到可解释状态，且不损失下游性能后，不透明串行深度可降至 Gemma 4 的 1.1
-  倍。 算
+description: DiffusionGemma 的中间计算发生在连续潜空间，导致其可解释层级之间的串行深度约为自回归模型 Gemma 4 的 28.6 倍，透明度看似很低。但通过在去噪步骤之间插入可解释的
+  token 瓶颈，将信息映射到可解释状态，且不损失下游性能后，不透明串行深度可降至 Gemma 4 的 1.1 倍。
 external_url: http://arxiv.org/abs/2606.20560v1
 scenarios:
 - Web应用开发
@@ -31,10 +30,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# DiffusionGemma透明度分析
-
 ---
 
 ## 基本信息
@@ -161,7 +156,6 @@ DiffusionGemma 的工作首次在扩散语言模型上系统引入可解释瓶�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/) / [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

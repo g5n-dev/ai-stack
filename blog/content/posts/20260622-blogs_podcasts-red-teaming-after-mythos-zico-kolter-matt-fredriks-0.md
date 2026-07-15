@@ -16,9 +16,8 @@ categories:
 - 安全
 - 大模型
 source: blogs_podcasts
-description: 在本次对话中，OpenAI 董事会成员 Zico Kolter 与 Gray Swan 创始人兼 CEO Matt Fredrikson
-  共同阐述 AI 安全的独特性。他们指出，AI 安全并非“把网络安全加在 AI 上”，而是需要全新的风险模型和防御思路。传统安全关注的是漏洞利用、代码注入和系统边界，而
-  AI 系统面临
+description: OpenAI董事会成员Zico Kolter与Gray Swan首席执行官Matt Fredrikson做客swyx访谈，解释为什么AI安全不仅仅是"AI赋能的网络安全"。
+  当AI系统的能力边界不断扩展，传统的安全评估方法逐渐暴露出局限性。
 external_url: https://www.latent.space/p/gray-swan
 scenarios:
 - AI/ML项目
@@ -28,10 +27,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Zico Kolter等解读AI安全：超越网络安全视角
-
 ---
 
 ## 基本信息
@@ -164,7 +159,6 @@ red-teaming方法适用于有明确能力边界的AI系统，对于通用性强�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [安全](/categories/%E5%AE%89%E5%85%A8/) / [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

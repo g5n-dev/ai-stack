@@ -17,7 +17,7 @@ categories:
 - 效率与方法论
 source: hacker_news
 description: 随着大模型驱动的智能 Agent 逐渐成为开发流程中的核心协作力量，代码与自然语言的界限正在变得模糊。这促使我们重新审视“文学编程”这一经典范式，即强调代码逻辑应像文章一样具备可读性与叙事性。本文将探讨在
-  Agent 时代，为何以文档为中心的编程理念变得至关重要，以及开发者如何通过重拾这一实践，提升人机协作的效率与系统
+  Agent 时代，为何以文档为中心的编程理念变得至关重要，以及开发者如何通过重拾这一实践，提升人机协作的效率与系统的可维护性。
 external_url: https://silly.business/blog/we-should-revisit-literate-programming-in-the-agent-era
 scenarios:
 - AI/ML项目
@@ -34,10 +34,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 智能体时代应重拾文学化编程范式
-
 ---
 
 ## 基本信息

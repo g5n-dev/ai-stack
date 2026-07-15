@@ -31,10 +31,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Sentrial：在用户之前捕获 AI Agent 运行故障
-
----
-
 ## 基本信息
 
 - **作者**: anayrshukla

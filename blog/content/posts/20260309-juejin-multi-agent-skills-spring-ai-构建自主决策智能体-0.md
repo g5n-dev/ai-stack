@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Multi-Agent 与 Skills 结合 Spring AI 构建自主决策智能体
-
----
-
 ## 基本信息
 
 - **作者**: 雨中飘荡的记忆

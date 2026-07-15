@@ -35,10 +35,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 工程化实践：在Agent优先架构中应用Codex
-
----
-
 ## 基本信息
 
 - **来源**: OpenAI Blog (blog)
@@ -118,7 +114,6 @@ source_support: 0.0
 
 ---
 
-# 深度分析报告：在智能体优先的世界中重构工具链工程
 
 ## 1. 核心观点深度解读
 
@@ -359,7 +354,6 @@ Codex 的效能高度依赖于输入上下文的质量。为了使 Agent 准确�
 ---
 
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/)

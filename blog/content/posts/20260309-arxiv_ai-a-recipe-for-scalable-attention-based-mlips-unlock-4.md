@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 基于全节点注意力机制的可扩展机器学习势函数构建方法
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.06567v1

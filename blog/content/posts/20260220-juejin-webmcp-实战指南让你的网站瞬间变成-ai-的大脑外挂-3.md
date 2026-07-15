@@ -18,7 +18,7 @@ categories:
 source: juejin
 description: 随着大模型能力的演进，如何让 AI 安全、精准地操作网页已成为连接智能与实际业务的关键。WebMCP 利用浏览器原生接口将网页功能直接注册为
   AI 的调用工具，在确保隐私受控的同时，实现了低延迟与高精度的操作体验。本文将带你深入 WebMCP 的实战细节，解析如何通过简单的 JS 函数注册，让你的网站真正成为
-  AI 可
+  AI 可直接调用的“大脑外挂”。
 external_url: https://juejin.cn/post/7607097714301042698
 scenarios:
 - Web应用开发
@@ -28,10 +28,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# WebMCP 协议实战：通过原生接口实现 AI 对网页的低延迟精准操作
-
 ---
 
 ## 基本信息

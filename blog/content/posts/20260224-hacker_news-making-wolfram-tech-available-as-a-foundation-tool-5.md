@@ -33,10 +33,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 将 Wolfram 技术作为 LLM 系统基础工具
-
----
-
 ## 基本信息
 
 - **作者**: surprisetalk

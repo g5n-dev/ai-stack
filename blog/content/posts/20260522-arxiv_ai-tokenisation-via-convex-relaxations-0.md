@@ -16,8 +16,8 @@ categories:
 - 论文
 - AI 工程
 source: arxiv
-description: 背景 当前 NLP 流程中，词元化（tokenisation）至关重要。BPE、Unigram 等常用算法采用贪心策略，仅在局部做最优决策，未全局考虑词汇表构造。
-  方法 我们将词元化器的构建形式化为线性规划，并利用凸优化求解，得到新算法 ConvexTok。该方法可在给定词汇规模下，求得近似全局最优的词表。 结果 实验
+description: 当前 NLP 流程中，词元化（tokenisation）至关重要。BPE、Unigram 等常用算法采用贪心策略，仅在局部做最优决策，未全局考虑词汇表构造。
+  我们将词元化器的构建形式化为线性规划，并利用凸优化求解，得到新算法 ConvexTok。该方法可在给定词汇规模下，求得近似全局最优的词表。
 external_url: http://arxiv.org/abs/2605.22821v1
 scenarios:
 - 自然语言处理
@@ -28,10 +28,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 基于凸松弛的分词方法
-
 ---
 
 ## 基本信息
@@ -112,7 +108,6 @@ ConvexTok为词元化提供了可验证的优化框架，兼具性能提升与�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

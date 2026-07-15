@@ -1,5 +1,5 @@
 ---
-title: 'Show HN: Axe – A 12MB binary that replaces your AI fram'
+title: 'Show HN: Axe – A 12MB binary that replaces your AI framework'
 date: 2026-03-12 14:57:45+08:00
 draft: false
 entry_kind: auto
@@ -28,10 +28,6 @@ content_mode: legacy_source_brief
 publication_tier: C
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Show HN: Axe – A 12MB binary that replaces your AI fram
-
 ---
 
 ## 基本信息

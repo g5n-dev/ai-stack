@@ -16,8 +16,7 @@ categories:
 - 大模型
 - 论文
 source: arxiv
-description: 研究背景与对象 本文探讨神经网络中神经元种群是否随模型规模呈可预测的演化，超越传统的宏观指标（如损失）。研究对象为Rosetta Neurons——在独立训练的模型间激活模式相似的神经元（Dravid
-  et al., 2023），分别在最大30B参数的语言模型和5B参数的视觉模型中进行分析。 主要发现 1. **亚线性
+description: 本文探讨神经网络中神经元群体的选择性是否随模型规模呈现可预测的变化。基于Rosetta Neurons在语言和视觉模型中的统计分析，作者发现其数量呈亚线性增长、占总神经元比例下降，规模增大伴随选择性增强和领域专化趋势。通过特征效用与神经元容量的权衡模型，作者解释了幂律尺度关系和极化效应，但对实际任务的效果仍需进一步验证，无法从摘要确认。
 external_url: http://arxiv.org/abs/2606.03990v1
 scenarios:
 - Web应用开发
@@ -27,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 神经元群体选择性随尺度的差异化特征
-
 ---
 
 ## 基本信息
@@ -137,7 +132,6 @@ Rosetta Neurons的规模演化规律为模型设计提供新思路。通过识�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

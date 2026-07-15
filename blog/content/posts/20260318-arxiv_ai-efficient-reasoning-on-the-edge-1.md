@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 边缘端高效推理：资源受限设备的模型优化方法
-
----
-
 ## 基本信息
 
 - **ArXiv ID**: 2603.16867v1

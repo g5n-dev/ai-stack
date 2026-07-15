@@ -15,8 +15,7 @@ tags:
 categories:
 - AI 工程
 source: juejin
-description: 目标 本节旨在帮助学习者建立可落地的基础认知，核心围绕两个主题： 1. **AI 在实际工作中的使用方式**——如何将 AI 嵌入业务流程、提升效率、支持创新产品。
-  2. **Agent、Skills、Rules、MCP 的概念区别**——理解各概念的定位、作用范围以及相互关系。 关键概念区别 - **Agent（智能
+description: 在实际业务中，如何把AI从概念转化为高效工具，是技术团队面临的关键挑战。本文聚焦Agent、Skills、Rules和MCP四种核心概念的区别与适用场景，帮助读者快速辨别各自优势，并提供可落地的使用思路。通过对比分析，你将掌握在不同任务阶段选择合适方案的原则，从而提升AI在实际工作流中的产出质量和效率。
 external_url: https://juejin.cn/post/7633205760817758251
 scenarios:
 - AI/ML项目
@@ -24,10 +23,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 实战AI应用：Agent、Skills、Rules、MCP区别
-
 ---
 
 ## 基本信息
@@ -105,7 +100,6 @@ source_support: 0.0
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

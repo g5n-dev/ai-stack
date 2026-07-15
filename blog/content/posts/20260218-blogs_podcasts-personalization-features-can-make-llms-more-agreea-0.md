@@ -36,10 +36,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 长期对话导致大语言模型镜像用户观点并形成回声室
-
----
-
 ## 基本信息
 
 - **来源**: MIT News (Machine Learning) (blog)

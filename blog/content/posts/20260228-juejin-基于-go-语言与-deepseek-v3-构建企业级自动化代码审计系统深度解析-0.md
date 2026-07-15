@@ -17,7 +17,7 @@ categories:
 - 安全
 source: juejin
 description: 随着软件供应链安全的重要性日益凸显，传统静态代码分析在效率与准确性上正面临挑战。本文深入解析如何结合 Go 语言的高并发特性与 DeepSeek-V3
-  大模型的语义理解能力，构建一套企业级自动化代码审计系统。通过剖析系统架构设计与核心实现逻辑，旨在帮助开发者掌握利用生成式 AI 优化 DevSecOps 流程、提升代码
+  大模型的语义理解能力，构建一套企业级自动化代码审计系统。通过剖析系统架构设计与核心实现逻辑，旨在帮助开发者掌握利用生成式 AI 优化 DevSecOps 流程、提升代码审计质量与效率的实战方法。
 external_url: https://juejin.cn/post/7611172799504859171
 scenarios:
 - 大语言模型
@@ -25,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 基于DeepSeek-V3与Go构建企业级代码审计系统
-
 ---
 
 ## 基本信息

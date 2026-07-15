@@ -16,8 +16,8 @@ categories:
 - AI 工程
 - 系统与基础设施
 source: blogs_podcasts
-description: '**New Relic 借助 AWS 生成式 AI 实现生产力转型** 通过与 **AWS 生成式 AI 创新中心** 的合作，New
-  Relic 将其虚拟助手 **NOVA** 从单一的知识助手升级为全方位的生产力引擎。这一案例深入探讨了构建企业级 AI 解决方案的技术架构、开发历程及关键经验，展示了如何利用生成式'
+description: 通过与生成式 AI 创新中心合作，New Relic NOVA（New Relic Omnipresence Virtual Assistant，New
+  Relic 全能虚拟助手）从知识助手演变为全面的效能引擎。我们将探讨技术架构、开发历程以及在构建企业级 AI 解决方案过程中的关键经验，该方案能够在大规模范围内实现可衡量的生产力提升。
 external_url: https://aws.amazon.com/blogs/machine-learning/new-relic-transforms-productivity-with-generative-ai-on-aws
 scenarios:
 - AI/ML项目
@@ -29,10 +29,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# New Relic NOVA：基于AWS的生成式AI效能引擎架构与实践
-
 ---
 
 ## 基本信息
@@ -107,7 +103,6 @@ New Relic 通过与 AWS Generative AI Innovation Center 合作，利用 RAG（�
 
 ---
 
-# 深度分析报告：New Relic 如何利用 AWS 生成式 AI 重塑生产力
 
 ## 1. 核心观点深度解读
 
@@ -358,7 +353,6 @@ New Relic 通过集成 Amazon Bedrock 等生成式 AI 服务，将传统的可�
 ---
 
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/)

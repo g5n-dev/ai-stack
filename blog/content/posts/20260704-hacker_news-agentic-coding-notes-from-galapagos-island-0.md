@@ -16,7 +16,7 @@ categories:
 - AI 工程
 - 开发工具
 source: hacker_news
-description: 本文记录了在加拉帕戈斯群岛进行智能体编程的实战经验，探讨了在网络受限且自然环境多变的条件下，如何保证自主编码代理的可靠性。作者通过对比传统开发流程，提炼出调度策略、容错机制和资源管理的关键设计，帮助团队在远端或边缘场景中保持高效迭代。阅读后，开发者可以借鉴分布式协作模式与自适应调试方案，提升在受限环境下的代码质量和交付
+description: 本文记录了在加拉帕戈斯群岛进行智能体编程的实战经验，探讨了在网络受限且自然环境多变的条件下，如何保证自主编码代理的可靠性。作者通过对比传统开发流程，提炼出调度策略、容错机制和资源管理的关键设计，帮助团队在远端或边缘场景中保持高效迭代。阅读后，开发者可以借鉴分布式协作模式与自适应调试方案，提升在受限环境下的代码质量和交付速度。
 external_url: https://danluu.com/ai-coding
 scenarios:
 - AI/ML项目
@@ -25,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# AI代理编程：加拉帕戈斯岛开发实践笔记
-
 ---
 
 ## 基本信息
@@ -87,7 +83,6 @@ source_support: 0.0
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/)

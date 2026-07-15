@@ -16,8 +16,7 @@ categories:
 - 论文
 - 大模型
 source: arxiv
-description: 背景 从无姿态多视角图像重建一致的三维几何与外观是计算机视觉的基本难题。现有视觉几何基础模型通过回归像素对齐点图显式预测几何，存在冗余和几何连续性不足的问题。
-  方法 提出IVGT（隐式视觉几何Transformer），在无姿态多视角图像上隐式建模连续一致的几何。模型在标准坐标系中学习连续神经场景表示，支持任意三维位置的
+description: 从无姿态多视角图像中重建一致的三维几何与外观是计算机视觉的核心难题。IVGT提出一种基于Transformer的隐式视觉几何模型，旨在通过几何约束提升神经场景表示的精度与鲁棒性。具体实现细节和性能提升幅度无法从摘要确认。若模型有效，可为自动驾驶、虚拟现实等三维感知应用提供新思路。
 external_url: http://arxiv.org/abs/2605.16258v1
 scenarios:
 - Web应用开发
@@ -25,10 +24,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# IVGT隐式视觉几何Transformer神经场景表示
-
 ---
 
 ## 基本信息
@@ -132,7 +127,6 @@ IVGT证明了Transformer架构与隐式表示结合的潜力，为无姿态多�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/) / [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

@@ -16,8 +16,9 @@ categories:
 - 安全
 - AI 工程
 source: blogs_podcasts
-description: 这篇文章（源自 Meta 工程博客）主要探讨了如何利用 **AI 代码修改**技术，在超大规模的移动开发环境中实现**“默认安全”**。
-  以下是内容总结： 1. **背景与挑战**： 在处理数百万行代码和数千名工程师的协作项目（如 Android 应用开发）时，即使看似简单的任务（如更新 API）也会变得极其艰巨。这在
+description: 即使是一些看似简单的工程任务——比如更新 API——当涉及数百万行代码和数千名工程师时，也可能变成浩大的工程，尤其是当这些变更涉及安全问题时。这一点在移动安全领域表现得尤为明显，因为某一类漏洞可能会在成百上千个
+  ... 中复现……阅读更多……本文《Patch Me If You Can：打造默认安全的 Android 应用的 AI 代码修改》首发于 Engineering
+  at Meta。
 external_url: https://engineering.fb.com/2026/03/13/android/ai-codemods-secure-by-default-android-apps-meta-tech-podcast
 scenarios:
 - AI/ML项目
@@ -38,10 +39,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# AI 代码修改技术助力 Android 应用实现默认安全
-
 ---
 
 ## 基本信息

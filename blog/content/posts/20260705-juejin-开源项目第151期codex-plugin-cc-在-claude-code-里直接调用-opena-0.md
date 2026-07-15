@@ -16,8 +16,8 @@ categories:
 - 开发工具
 - 开源生态
 source: juejin
-description: 项目简介 codex-plugin-cc 是 OpenAI 官方为 Claude Code 开发的插件，可在 Claude Code 环境中直接调用
-  OpenAI Codex，实现代码审查、任务委托等功能。 核心功能 - 7 条指令：常规代码审查、对抗性审查、任务委托、会话转移、后台状态管理等。 - 支持 Review
+description: codex-plugin-cc 是 OpenAI 官方为 Claude Code 开发的插件，可在 Claude Code 环境中直接调用
+  OpenAI Codex，实现代码审查、任务委托等功能。
 external_url: https://juejin.cn/post/7658565939235700771
 scenarios:
 - AI/ML项目
@@ -25,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# codex-plugin-cc：Claude Code中调用OpenAI Codex的插件
-
 ---
 
 ## 基本信息
@@ -100,7 +96,6 @@ codex-plugin-cc 是 OpenAI 官方为 Claude Code 开发的插件，可在 Claude
 
 ---
 
----
 ## 站内链接
 
 - 分类： [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/) / [开源生态](/categories/%E5%BC%80%E6%BA%90%E7%94%9F%E6%80%81/)

@@ -23,10 +23,7 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 纵向AI影响研究初步数据发布
-
+description: 该研究通过纵向数据，揭示了AI编程助手（如Copilot）在软件开发中的双重效应。 速度与质量的博弈：数据显示，AI在处理样板代码和重复性任务时，能带来30%-50%的效率提升。然而，这种提升并非无代价。研究指出，随着任务复杂度的提升，AI生成的代码往往缺乏深层架构考量，导致后期维护成本（技术债）显著增加。
 ---
 
 ## 基本信息

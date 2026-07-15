@@ -16,8 +16,7 @@ categories:
 - 论文
 - AI 工程
 source: arxiv
-description: 方法 使用大规模医学EEG数据，通过聚类将连续信号划分为离散微状态序列，构建统一的微状态分词器。该分词器可直接在不同下游任务中使用。 实验结果
-  在睡眠分期、情绪识别和运动想象三类任务上，微状态表示在多种模型中均优于传统时域、频域特征，性能提升显著，表现出更强的鲁棒性。 意义 微状态提供更高的可解释性和可扩展性，适用于认
+description: 脑电图（EEG）信号的高维性和个体差异性使得构建跨被试、跨任务的通用表示模型成为神经科学和脑机接口领域的核心挑战。该研究提出利用EEG微状态这一具有生理意义的特征作为统一表征的基础，通过微状态序列的时序动力学捕捉神经活动的共性模式。这一思路若验证有效，可能为跨被试EEG分析、神经疾病早期筛查以及脑机接口系统的通用化提供新的技术路径。
 external_url: http://arxiv.org/abs/2605.20182v1
 scenarios:
 - Web应用开发
@@ -25,10 +24,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 通用EEG表征学习：基于微状态的方法
-
 ---
 
 ## 基本信息
@@ -159,7 +154,6 @@ EEG 信号高维、噪声多、跨被试差异大，传统手工特征（功率�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

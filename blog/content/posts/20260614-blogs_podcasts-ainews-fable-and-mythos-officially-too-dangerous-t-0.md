@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AI项目Fable和Mythos被指危险无法发布
-
----
-
 ## 基本信息
 
 - **来源**: Latent Space (blog)
@@ -146,7 +142,6 @@ AI 生成叙事系统（Fable 与 Mythos）在缺乏完善安全防护的情况�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [安全](/categories/%E5%AE%89%E5%85%A8/)

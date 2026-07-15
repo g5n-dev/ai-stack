@@ -16,8 +16,7 @@ categories:
 - AI 工程
 - 系统与基础设施
 source: arxiv
-description: 获取鲁棒的灵巧抓取数据需要真实物理结果，但现有方式或慢或有偏，或缺乏接触验证。AutoDex 提出全自动化数据采集闭环：先用 20 台密集相机在严重遮挡下定位物体，执行带有碰撞监测的机械臂运动，判定抓取成功或失败，并在每次试验后主动复位物体以覆盖不同稳定姿态。该系统兼容
-  Allegro 与 Inspire 机械手，已在
+description: 获取鲁棒的灵巧抓取数据需要真实物理结果，但现有方式或慢或有偏，或缺乏接触验证。AutoDex 提出全自动化数据采集闭环：先用 20 台密集相机在严重遮挡下定位物体，执行带有碰撞监测的机械臂运动，判定抓取成功或失败，并在每次试验后主动复位物体以覆盖不同稳定姿态。
 external_url: http://arxiv.org/abs/2606.23689v1
 scenarios:
 - Web应用开发
@@ -27,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# AutoDex：面向真实场景的灵巧抓取数据自动采集系统
-
 ---
 
 ## 基本信息
@@ -133,7 +128,6 @@ AutoDex 为大规模真实抓取数据生成提供了可扩展方案，适用于
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/)

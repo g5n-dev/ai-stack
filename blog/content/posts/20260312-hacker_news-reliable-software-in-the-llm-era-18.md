@@ -29,10 +29,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# LLM时代的可靠软件构建方法
-
----
-
 ## 基本信息
 
 - **作者**: mempirate

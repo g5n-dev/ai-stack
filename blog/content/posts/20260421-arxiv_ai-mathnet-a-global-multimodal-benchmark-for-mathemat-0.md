@@ -16,9 +16,8 @@ categories:
 - 论文
 - 大模型
 source: arxiv
-description: 概述 MathNet 是高质量、大规模、多模态、多语言的奥林匹克数学题库与评测基准，涵盖 47 个国家、17 种语言、近 20 年赛事，共
-  30,676 道专家编写并提供完整解答，跨越代数、几何、组合等多个数学分支。 检索评测集 在核心数据之外，构建了人类专家挑选的等价及结构相似题目对，用于评估数学感知的检索系统。
-  支
+description: MathNet 是高质量、大规模、多模态、多语言的奥林匹克数学题库与评测基准，涵盖 47 个国家、17 种语言、近 20 年赛事，共 30,676
+  道专家编写并提供完整解答，跨越代数、几何、组合等多个数学分支。
 external_url: http://arxiv.org/abs/2604.18584v1
 scenarios:
 - Web应用开发
@@ -28,10 +27,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# MathNet：全球多模态数学推理与检索基准
-
 ---
 
 ## 基本信息
@@ -157,7 +152,6 @@ MathNet 是高质量、大规模、多模态、多语言的奥林匹克数学题
 
 ---
 
----
 ## 站内链接
 
 - 分类： [论文](/categories/%E8%AE%BA%E6%96%87/) / [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

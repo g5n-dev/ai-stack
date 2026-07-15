@@ -17,7 +17,7 @@ categories:
 - 效率与方法论
 source: juejin
 description: 将 Codex 视为具备协作能力的 AI Agent，而非简单的对话式 Chatbot，是提升开发效率的关键。本文将探讨在 Windows
-  环境下，如何像培养中级工程师一样，通过持续的项目上下文输入，让 Codex 逐渐理解业务逻辑与代码结构。读者将了解到如何构建高效的工作流，从而将 Codex 从一无所知的状态，转化
+  环境下，如何像培养中级工程师一样，通过持续的项目上下文输入，让 Codex 逐渐理解业务逻辑与代码结构。读者将了解到如何构建高效的工作流，从而将 Codex 从一无所知的状态，转化为真正能融入团队、承担具体开发任务的得力助手。
 external_url: https://juejin.cn/post/7616660809600516134
 scenarios:
 - AI/ML项目
@@ -25,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 将Codex视为中级工程师的Windows工作流实践
-
 ---
 
 ## 基本信息

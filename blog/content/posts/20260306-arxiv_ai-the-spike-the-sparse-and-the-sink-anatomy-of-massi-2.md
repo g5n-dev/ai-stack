@@ -16,7 +16,7 @@ categories:
 - 大模型
 - 论文
 source: arxiv
-description: 本文主要探讨了Transformer语言模型中的两种现象——**大规模激活**与**注意力汇聚**——及其共现机制与功能区别。研究通过实验表明，二者的关联主要源于模型架构设计（特别是预归一化配置），而非必然的功能依赖；其作用机制存在显著差异：大规模激活通过在少数通道中产生极端离群值，诱导出跨层的稳定隐藏表示，实质上充当
+description: 本文深入剖析了 Transformer 语言模型中“大规模激活”与“注意力汇聚”的共现机制与功能差异。研究指出，二者虽常同时出现，但作用机制截然不同：前者通过极端离群值充当“隐式参数”以维持全局表示，后者则通过局部调节引导短程依赖，且其关联主要源于预归一化架构。这一发现揭示了架构设计对模型行为的深层影响，虽具体优化路径无法从摘要确认，但为理解模型内在机制提供了新视角。
 external_url: http://arxiv.org/abs/2603.05498v1
 scenarios:
 - 大语言模型
@@ -28,10 +28,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 大模型激活机制研究：尖峰、稀疏性与注意力汇
-
 ---
 
 ## 基本信息

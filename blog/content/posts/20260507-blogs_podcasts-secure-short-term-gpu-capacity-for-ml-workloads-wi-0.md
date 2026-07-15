@@ -16,8 +16,9 @@ categories:
 - 系统与基础设施
 - AI 工程
 source: blogs_podcasts
-description: 需求背景 在机器学习项目中，常常出现短期 GPU 需求激增的情况，如负载测试、模型校验、限时 workshop 或发布前的推理容量准备。传统长期预留难以满足弹性需求，且可能导致资源浪费。
-  解决方案 - **EC2 Capacity Blocks for ML**：提供按需预留的短时 GPU 计算块，可在几分钟内启动，支
+description: 在这篇文章中，您将了解如何使用 Amazon Elastic Compute Cloud (Amazon EC2) ML 容量块和 Amazon
+  SageMaker 训练计划来获取短期工作负载的预留 GPU 容量。当您需要短期容量进行负载测试、模型验证、限时研讨会，或在发布前准备推理容量时，这些解决方案可以解决
+  GPU 可用性方面的挑战。
 external_url: https://aws.amazon.com/blogs/machine-learning/secure-short-term-gpu-capacity-for-ml-workloads-with-ec2-capacity-blocks-for-ml-and-sagemaker-training-plans
 scenarios:
 - Web应用开发
@@ -27,10 +28,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 通过EC2容量块与SageMaker计划获取短期GPU容量
-
 ---
 
 ## 基本信息
@@ -191,7 +188,6 @@ EC2 Capacity Blocks 与 SageMaker 训练计划能够可靠、灵活地满足短�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

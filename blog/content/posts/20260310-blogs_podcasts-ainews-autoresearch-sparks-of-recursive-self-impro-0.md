@@ -37,10 +37,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AI 递归自我改进能力推动 AGI 研究进展
-
----
-
 ## 基本信息
 
 - **来源**: Latent Space (blog)

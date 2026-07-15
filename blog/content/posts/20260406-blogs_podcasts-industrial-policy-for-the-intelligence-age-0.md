@@ -16,7 +16,7 @@ categories:
 - 系统与基础设施
 - 数据
 source: blogs_podcasts
-description: 本文概述了一种面向智能时代、以人为本的工业政策思路。该政策聚焦三大方向：①拓展机会，通过提升数字技能、建设创新平台和优化资源配置，使个人和企业能够充分利用人工智能带来的新空间；②共享繁荣，确保AI产生的高价值收益在社会各阶层广泛分配，侧重于公平税收、社会保障和普惠金融服务；③构建韧性制度，完善监管框架、数据治理和公共机
+description: 探索我们面向人工智能时代雄心勃勃、以人为本的产业政策理念——聚焦于扩大机会、共享繁荣、建设韧性制度，随着先进智能的不断演进。 在智能时代人工智能快速渗透各行业的背景下，传统产业政策面临重新定位的迫切需求。本篇文章提出以机会扩大、繁荣共享和制度韧性为核心的政策框架，帮助决策者在技术变革中保持前瞻性并实现可持续增长。通过案例分析与模型推演，读者可以获得针对不同发展阶段的具体路径建议和可操作的政策工具。
 external_url: https://openai.com/index/industrial-policy-for-the-intelligence-age
 scenarios:
 - Web应用开发
@@ -24,10 +24,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 智能时代产业政策：扩大机会共享繁荣
-
 ---
 
 ## 基本信息
@@ -89,7 +85,6 @@ source_support: 0.0
 
 ---
 
----
 ## 站内链接
 
 - 分类： [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/) / [数据](/categories/%E6%95%B0%E6%8D%AE/)

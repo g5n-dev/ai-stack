@@ -16,8 +16,8 @@ categories:
 - 大模型
 - 论文
 source: arxiv
-description: 研究背景 大规模神经网络的训练常采用大学习率，逼近“边缘稳定”状态，此时优化轨迹呈振荡甚至混沌特征。经验表明，这种混沌 regime 能带来更好的泛化性能，但其背后的机理尚未得到理论解释。
-  方法与理论 1. **随机动力系统视角**：将随机优化器建模为随机动力系统，发现其常收敛到分形吸引子（而非单纯极点），且该吸引子具
+description: 论文提出，在大学习率（LR）下随机优化器会收敛至分形吸引子，而非传统极小点。该吸引子具有低内蕴维数，并据此定义了“锐度维数”作为泛化的度量。作者声称这种混沌
+  regime 能解释大 LR 带来的更好测试性能，并给出基于 Lyapunov 维数的泛化界。
 external_url: http://arxiv.org/abs/2604.19740v1
 scenarios:
 - Web应用开发
@@ -27,10 +27,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 稳定性边界的泛化特性分析
-
 ---
 
 ## 基本信息
@@ -134,7 +130,6 @@ source_support: 0.0
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

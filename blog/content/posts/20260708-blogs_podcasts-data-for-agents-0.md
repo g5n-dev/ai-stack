@@ -16,7 +16,7 @@ categories:
 - AI 工程
 - 数据
 source: blogs_podcasts
-description: 在构建智能代理（Agent）系统时，数据是驱动其行为和决策的核心要素。没有高质量的训练和实时数据，即使模型再强大，也难以实现灵活的环境感知和持续学习。本文从数据采集、清洗、标注到实时供给的全链路视角，提供了系统化的方法论与实战案例，帮助开发者快速搭建可靠的数据管道。最终，读者将掌握如何通过数据提升代理的响应准确性、适应
+description: 在构建智能代理（Agent）系统时，数据是驱动其行为和决策的核心要素。没有高质量的训练和实时数据，即使模型再强大，也难以实现灵活的环境感知和持续学习。本文从数据采集、清洗、标注到实时供给的全链路视角，提供了系统化的方法论与实战案例，帮助开发者快速搭建可靠的数据管道。最终，读者将掌握如何通过数据提升代理的响应准确性、适应性和可解释性，实现业务场景的落地价值。
 external_url: https://huggingface.co/blog/nvidia/open-data-for-agents
 scenarios:
 - AI/ML项目
@@ -25,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# AI代理数据使用指南
-
 ---
 
 ## 基本信息
@@ -141,7 +137,6 @@ source_support: 0.0
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [数据](/categories/%E6%95%B0%E6%8D%AE/)

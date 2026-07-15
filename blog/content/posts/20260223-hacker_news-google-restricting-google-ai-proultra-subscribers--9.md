@@ -17,7 +17,7 @@ categories:
 - 产品与创业
 source: hacker_news
 description: 针对部分 Google AI Pro 和 Ultra 订阅用户因使用第三方工具 OpenClaw 而遭遇账号限制的现象，本文深入分析了这一冲突背后的技术原理与平台政策博弈。文章不仅探讨了
-  OpenClaw 如何通过 API 转接绕过官方限制，更剖析了 Google 在保障服务稳定性与打击滥用行为方面的考量。通过阅读本文
+  OpenClaw 如何通过 API 转接绕过官方限制，更剖析了 Google 在保障服务稳定性与打击滥用行为方面的考量。
 external_url: https://discuss.ai.google.dev/t/account-restricted-without-warning-google-ai-ultra-oauth-via-openclaw/122778
 scenarios:
 - AI/ML项目
@@ -27,10 +27,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 谷歌限制使用OpenClaw的AI Pro/Ultra订阅用户
-
 ---
 
 ## 基本信息

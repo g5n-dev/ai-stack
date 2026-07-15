@@ -16,8 +16,9 @@ categories:
 - 论文
 - 数据
 source: arxiv
-description: 以下是该内容的中文总结： **标题：全保真音频无损压缩的语言建模基准测试** **核心内容：** 本研究探讨了将基于原始波形的自回归“语言”模型（LM）重新用于音频无损压缩的效果，旨在解决先前工作仅限于8位音频的局限性，并验证其在16位和24位实际场景中的竞争力。
-  **主要发现与解决方案：** 1. **研究范围：**
+description: 针对全保真音频无损压缩中高分辨率波形建模的难题，本研究探讨了将自回归语言模型（LM）应用于16位及24位音频的可行性。作者提出了名为 Trilobyte
+  的字节级标记化方案，成功将计算复杂度从指数级降低至常数级，从而首次实现了基于 LM 的 24 位音频无损压缩。实验结果显示，该方法在 8 位和 16 位音频上优于
+  FLAC 标准，但其在更高位深下的压缩增益上限及具体提升幅度，尚无法从摘要确认。
 external_url: http://arxiv.org/abs/2603.08683v1
 scenarios:
 - Web应用开发
@@ -27,10 +28,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 无损全保真音频压缩的语言模型基准测试
-
 ---
 
 ## 基本信息

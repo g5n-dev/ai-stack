@@ -16,7 +16,7 @@ categories:
 - 论文
 - 大模型
 source: arxiv
-description: '**SOTAlign：基于最优传输的半监督视觉与语言模型对齐方法总结** **背景与动机：** “柏拉图表征假设”认为，不同模态的神经网络会趋向于收敛于共享的世界统计模型。近期研究利用这一点，通过轻量级对齐层来连接预训练的视觉和语言模型。然而，现有方法通常依赖对比损失和海量的成对样本，且无法有效利用未配对数据。本文提出'
+description: 现有的视觉-语言模型通常依赖大规模成对数据进行对齐，而本文提出了一种名为 SOTAlign 的半监督方法，旨在通过最优传输理论，利用未配对的图文数据来提升单模态模型的跨模态对齐能力。该方法在减少对标注数据依赖的同时，试图在标准基准测试中保持或提升检索性能。然而，具体的性能提升幅度及计算开销无法从摘要确认。这项工作为低资源场景下的多模态预训练提供了一种潜在的技术路径。
 external_url: http://arxiv.org/abs/2602.23353v1
 scenarios:
 - Web应用开发
@@ -28,10 +28,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# SOTAlign：基于最优传输的单模态视觉与语言模型半监督对齐
-
 ---
 
 ## 基本信息

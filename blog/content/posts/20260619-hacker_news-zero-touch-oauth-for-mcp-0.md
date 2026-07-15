@@ -17,7 +17,7 @@ categories:
 - 安全
 source: hacker_news
 description: Zero‑Touch OAuth for MCP 旨在实现授权流程的全自动化，使开发者无需手动干预即可完成身份验证与令牌管理。在多服务协同或跨平台调用时，繁琐的
-  OAuth 步骤往往成为集成瓶颈，影响系统的可扩展性与安全性。本文将剖析实现零接触授权的关键技术细节，包括令牌获取、刷新机制以及常见安全陷阱的防护策略，帮助团
+  OAuth 步骤往往成为集成瓶颈，影响系统的可扩展性与安全性。本文将剖析实现零接触授权的关键技术细节，包括令牌获取、刷新机制以及常见安全陷阱的防护策略，帮助团队快速落地可靠的身份认证方案。
 external_url: https://blog.modelcontextprotocol.io/posts/enterprise-managed-auth
 scenarios:
 - AI/ML项目
@@ -25,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# MCP零接触OAuth认证方案
-
 ---
 
 ## 基本信息
@@ -87,7 +83,6 @@ Zero-Touch OAuth for MCP代表了AI工具集成领域在认证机制上的重要
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [安全](/categories/%E5%AE%89%E5%85%A8/)

@@ -16,8 +16,7 @@ categories:
 - 大模型
 - AI 工程
 source: blogs_podcasts
-description: 定制策略选择 依据数据规模、领域相似度以及可用算力，选择合适的微调方式：全参数微调、适配器微调或提示学习。全参数微调适用于数据充足且领域差异大的情况；适配器或提示学习则在算力受限、保持通用能力时更安全。
-  关键训练参数 - **学习率**：一般比预训练时小1~2个数量级，建议使用学习率预热+余弦衰减。 - **批次大小*
+description: 微调领域特定任务意味着在不降低模型通用能力的前提下提升某一方面的表现，而要把握好这种平衡比看起来要困难得多。本文将带你了解如何在这两者之间找到平衡：从为你的数据和任务选择合适的定制策略，到配置那些对结果影响最大的训练参数（如学习率、批次大小和检查点保存）。我们还会讨论导致训练白费的常见错误，以及如何尽早发现这些问题，这样你就能提升领域性能而不损害通用能力，也不会在可以避免的失败上浪费算力。
 external_url: https://aws.amazon.com/blogs/machine-learning/the-art-and-science-of-hyperparameter-optimization-on-amazon-nova-forge
 scenarios:
 - Web应用开发
@@ -25,10 +24,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Amazon Nova Forge超参数优化：平衡领域性能与通用能力
-
 ---
 
 ## 基本信息
@@ -187,7 +182,6 @@ Fine‑tuning 必须在提升领域性能的同时保持模型的通用能力，
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

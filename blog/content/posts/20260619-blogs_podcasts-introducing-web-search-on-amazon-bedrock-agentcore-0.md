@@ -15,8 +15,9 @@ tags:
 categories:
 - AI 工程
 source: blogs_podcasts
-description: 功能特点 - 作为 Bedrock AgentCore 的插件提供，实时检索网页信息。 - 可自定义检索范围、过滤规则和结果截取方式，提升答案准确率。
-  - 与现有 AgentCore 工作流无缝对接，无需额外基础设施。 为何重要 - 弥补大模型训练数据的时效性缺陷，让 Agent 在运行时获取最新信息。 - 省去自行搭
+description: Amazon Bedrock AgentCore 上的网络搜索功能现已正式发布。在这篇文章中，我们将详细介绍 Amazon Bedrock
+  AgentCore 上的网络搜索功能有何独特之处、为何如此重要，以及如何通过几行代码将其接入。 Amazon Bedrock AgentCore 正式上线网络搜索功能，为
+  AI 应用提供了实时获取外部信息的渠道。
 external_url: https://aws.amazon.com/blogs/machine-learning/introducing-web-search-on-amazon-bedrock-agentcore
 scenarios:
 - 大语言模型
@@ -25,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Amazon Bedrock AgentCore网络搜索功能详解
-
 ---
 
 ## 基本信息
@@ -186,7 +183,6 @@ Web Search 作为一种外部信息获取能力，被抽象为 Amazon Bedrock Ag
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

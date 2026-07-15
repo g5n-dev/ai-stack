@@ -1,5 +1,6 @@
 ---
-title: Long-Horizon Traffic Forecasting via Incident-Aware Con
+title: Long-Horizon Traffic Forecasting via Incident-Aware Conformal Spatio-Temporal
+  Transformers
 date: 2026-03-18 08:22:04+08:00
 draft: false
 entry_kind: auto
@@ -10,7 +11,7 @@ categories:
 - 论文
 source: arxiv
 description: 本文介绍了一种名为“事件感知共形时空Transformer（Incident-Aware Conformal Spatio-Temporal
-  Transformers）”的方法，旨在解决长时距交通预测中面临的网络条件随机、事故干扰间歇以及空间依赖性随时间变化等挑战。 该研究基于俄亥俄州交通厅（ODOT）的交通流量数据及
+  Transformers）”的方法，旨在解决长时距交通预测中面临的网络条件随机、事故干扰间歇以及空间依赖性随时间变化等挑战。
 external_url: http://arxiv.org/abs/2603.16857v1
 scenarios:
 - Web应用开发
@@ -18,10 +19,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Long-Horizon Traffic Forecasting via Incident-Aware Con
-
 ---
 
 ## 基本信息

@@ -16,8 +16,7 @@ categories:
 - AI 工程
 - 效率与方法论
 source: blogs_podcasts
-description: 这段内容的核心观点可以总结为： **“人工代码审查将在2026年消亡。”** 基于这一激进的观点，其背后的逻辑和背景总结如下： 1. **前提：人工编码时代的结束**
-  文章首先指出，随着AI技术的爆发，由人类从零开始编写代码的时代已于2025年终结。代码的生成方式发生了根本性转变。 2. **必然性：旧模式的崩溃**
+description: 人类手写的代码在 2025 年消亡。代码评审将在 2026 年消亡。 随着 AI 编程能力的指数级跃升，人类手写代码的时代正走向终结，而传统的代码评审机制也面临被淘汰的风险。本文探讨了这一技术变革背后的必然逻辑，分析了为何现有流程已无法适应新的开发范式。通过阅读，你将理解代码生产方式的根本性转变，以及如何在人机协作的新常态下重新定义质量保证与工程效率。
 external_url: https://www.latent.space/p/reviews-dead
 scenarios:
 - AI/ML项目
@@ -37,10 +36,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 2025年人工编码消亡与2026年代码评审终结
-
 ---
 
 ## 基本信息

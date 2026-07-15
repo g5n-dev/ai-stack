@@ -16,8 +16,8 @@ categories:
 - AI 工程
 - 系统与基础设施
 source: blogs_podcasts
-description: 这段内容主要回顾了 **Claude Code 发布一周年** 的表现，并深入探讨了当前全球面临的 **内存（DRAM/HBM）短缺危机**。以下是核心观点的总结：
-  1. Claude Code：编程范式的变革 * **革命性影响**：SemiAnalysis 创始人 Doug O'Laughlin 极其看好 Clau
+description: 一期特别的双人播客，纪念 Claude Code 一周年：我们采访了它最热情的粉丝之一，他认为它将写出 GitHub 上 25%–50%
+  的代码，还深入解读了“内存紧缩”问题。 Claude Code 发布一周年之际，SemiAnalysis 创始人 Doug O'Laughlin 做客本期特别播客，深入探讨了这款工具对软件开发效率的实际影响。
 external_url: https://www.latent.space/p/valuemule
 scenarios:
 - AI/ML项目
@@ -37,10 +37,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Claude Code一周年：将撰写GitHub 25%-50%代码与全球内存短缺解读
-
 ---
 
 ## 基本信息

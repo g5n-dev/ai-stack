@@ -36,10 +36,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Ggml.ai 加入 Hugging Face 推动本地 AI 长期发展
-
----
-
 ## 基本信息
 
 - **作者**: lairv

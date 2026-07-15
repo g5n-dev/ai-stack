@@ -18,7 +18,7 @@ categories:
 source: hacker_news
 description: 处理超长视频序列的 3D 重建一直是计算机视觉领域的难点，因为传统方法难以在长时间跨度下保持定位的精确性与一致性。DeepMind 与 UC
   Berkeley 联合提出的 LoGeR，通过引入对齐几何正则化，有效解决了长序列中的累积误差与漂移问题。本文将深入解析该算法的核心原理，并探讨其如何在不依赖显式
-  SLAM 的情
+  SLAM 的情况下，实现从极长视频中恢复高质量、全局一致的 3D 场景结构。
 external_url: https://loger-project.github.io
 scenarios:
 - Web应用开发
@@ -28,10 +28,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# DeepMind与伯克利提出LoGeR：实现超长视频3D重建
-
 ---
 
 ## 基本信息

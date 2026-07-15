@@ -25,10 +25,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Cartesian物体定位系统实现零售产品实时追踪
-
----
-
 ## 基本信息
 
 - **来源**: MIT News (Machine Learning) (blog)
@@ -96,7 +92,6 @@ Cartesian基于MIT技术实现亚米级实时定位，为零售业库存可视�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [产品与创业](/categories/%E4%BA%A7%E5%93%81%E4%B8%8E%E5%88%9B%E4%B8%9A/)

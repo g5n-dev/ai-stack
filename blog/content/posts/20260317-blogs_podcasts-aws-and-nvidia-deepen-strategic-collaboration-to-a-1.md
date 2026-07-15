@@ -32,10 +32,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AWS与NVIDIA深化战略合作，加速AI从试点到生产
-
----
-
 ## 基本信息
 
 - **来源**: AWS Machine Learning Blog (blog)

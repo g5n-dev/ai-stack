@@ -17,7 +17,7 @@ categories:
 - 论文
 source: juejin
 description: 在自然语言处理与大模型的技术体系中，Token 是最基础且核心的原子概念，无论是 Transformer 架构还是各类生成式应用，都离不开对它的理解。然而，许多初学者往往容易忽视其背后的分词逻辑与计算原理，导致在实际应用中遇到瓶颈。本文作为专栏开篇，将深入剖析
-  Token 的定义与工作机制，帮助你建立清晰的知识框架，为
+  Token 的定义与工作机制，帮助你建立清晰的知识框架，为后续掌握大模型技术打下坚实基础。
 external_url: https://juejin.cn/post/7611830146090008622
 scenarios:
 - 自然语言处理
@@ -28,10 +28,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 大模型连载1：理解自然语言处理与大模型中的 Token 概念
-
 ---
 
 ## 基本信息

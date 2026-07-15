@@ -33,10 +33,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Introducing GPT-5.4 mini and nano
-
----
-
 ## 基本信息
 
 - **来源**: OpenAI Blog (blog)

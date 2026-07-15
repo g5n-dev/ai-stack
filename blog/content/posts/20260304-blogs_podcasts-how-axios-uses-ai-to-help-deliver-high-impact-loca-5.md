@@ -16,8 +16,9 @@ categories:
 - 产品与创业
 - 效率与方法论
 source: blogs_podcasts
-description: 随着人工智能技术逐步融入新闻生产流程，如何平衡效率与内容质量已成为媒体行业关注的焦点。本文基于 Axios 首席运营官 Allison Murphy
-  的分享，深入剖析了该公司如何利用 AI 赋能本地记者并优化编辑部工作流程。通过阅读本文，您将了解到 Axios 在保障新闻专业性的前提下，如何借助技术手段规模化地提供高影
+description: Axios 首席运营官 Allison Murphy 阐述了该公司如何利用人工智能赋能本地记者、优化编辑部工作流程，并规模化地提供高影响力的本地新闻。
+  随着人工智能技术逐步融入新闻生产流程，如何平衡效率与内容质量已成为媒体行业关注的焦点。本文基于 Axios 首席运营官 Allison Murphy 的分享，深入剖析了该公司如何利用
+  AI 赋能本地记者并优化编辑部工作流程。
 external_url: https://openai.com/index/axios-allison-murphy
 scenarios:
 - AI/ML项目
@@ -31,10 +32,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Axios利用AI赋能本地记者并优化新闻生产流程
-
 ---
 
 ## 基本信息

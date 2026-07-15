@@ -34,10 +34,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# OpenAI 收购 AI 安全平台 Promptfoo 以修复系统漏洞
-
----
-
 ## 基本信息
 
 - **来源**: OpenAI Blog (blog)

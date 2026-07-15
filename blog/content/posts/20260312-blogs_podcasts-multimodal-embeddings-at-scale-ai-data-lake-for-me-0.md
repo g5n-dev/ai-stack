@@ -16,8 +16,8 @@ categories:
 - AI 工程
 - 数据
 source: blogs_podcasts
-description: 本文介绍了如何利用 Amazon Nova 模型和 Amazon OpenSearch Service 构建一个可扩展的多模态视频搜索系统，旨在解决媒体和娱乐行业中处理大规模视频数据集的挑战。
-  核心概述 传统的视频搜索方法依赖于人工打标签或基于关键词的检索，这些方法不仅效率低下，且难以捕捉视频内容的丰富语义。本方案展示
+description: 本文向您介绍如何使用 Amazon Nova 模型和 Amazon OpenSearch Service 构建可扩展的多模态视频搜索系统，从而对海量视频数据集实现自然语言搜索。您将学习如何超越手动打标和基于关键词的搜索，实现能够完整捕捉视频内容丰富内涵的语义搜索。
+  随着媒体数据量的激增，传统的基于关键词的检索方式已难以满足对海量视频内容的深度挖掘需求。
 external_url: https://aws.amazon.com/blogs/machine-learning/multimodal-embeddings-at-scale-ai-data-lake-for-media-and-entertainment-workloads
 scenarios:
 - Web应用开发
@@ -38,10 +38,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 基于Amazon Nova与OpenSearch构建可扩展多模态视频语义搜索系统
-
 ---
 
 ## 基本信息

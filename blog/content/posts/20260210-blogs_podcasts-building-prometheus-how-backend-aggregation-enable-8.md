@@ -8,8 +8,8 @@ tags:
 categories:
 - 效率与方法论
 source: blogs_podcasts
-description: 这篇文章介绍了 Meta 在构建名为 Prometheus（Prometheus）的千兆瓦级 AI 集群时，后端聚合技术的关键作用。 主要内容总结如下：
-  1. **核心功能**：BAG 技术使得 Meta 能够无缝连接跨越多个数据中心和区域的数千个 GPU。 2. **网络架构**：该实现连接了两种不同的网络结构——*
+description: 我们正在分享后端聚合（BAG）在构建 Meta 千兆瓦级 AI 集群（如 Prometheus）中所发挥的作用。BAG 使我们能够无缝连接多个数据中心和区域的数千个
+  GPU。我们的 BAG 实现连接了两种不同的网络架构——可解聚合调度架构（DSF）和非调度架构（NSF）。
 external_url: https://engineering.fb.com/2026/02/09/data-center-engineering/building-prometheus-how-backend-aggregation-enables-gigawatt-scale-ai-clusters
 scenarios:
 - Web应用开发
@@ -20,10 +20,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 后端聚合技术如何支撑千兆瓦级AI集群Prometheus构建
-
 ---
 
 ## 基本信息
@@ -99,9 +95,8 @@ Meta 通过引入后端聚合（BAG）技术作为“网络套接字”，成功
 对于正在建设万卡集群的企业，不必盲目追求单一物理园区的完美。如果无法承担 Meta 级别的研发投入，应优先采用**物理隔离但逻辑统一**的存储方案，并谨慎评估跨地域训练对特定模型收敛性的影响。不要试图复现 BAG 的具体实现，而应关注其“解耦”的架构思想。
 
 ---
-## 技术分析
 
-# 技术分析
+## 技术分析
 
 **1. 核心架构理念**
 
@@ -229,7 +224,6 @@ AI 训练任务通常会产生周期性的指标尖峰（如 Loss 突降或梯�
 ---
 
 
----
 ## 站内链接
 
 - 分类： [效率与方法论](/categories/%E6%95%88%E7%8E%87%E4%B8%8E%E6%96%B9%E6%B3%95%E8%AE%BA/)

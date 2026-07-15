@@ -16,8 +16,9 @@ categories:
 - 大模型
 - AI 工程
 source: juejin
-description: 5分钟用Amazon Bedrock搭建AI Agent：从零到能干活 核心概述 利用Amazon Bedrock的Agent功能，无需本地环境配置或框架开发，快速搭建一个能理解意图并自动调用API的AI
-  Agent。以下是关键步骤总结： 1. **准备阶段** - 注册AWS账号并开通Amazon Bedrock服务
+description: 虽然 AI Agent 的讨论热度很高，但真正从零搭建并验证其工作流程的实践案例却相对稀缺。本文将跳过繁琐的环境配置与框架开发，直接利用
+  Amazon Bedrock 的托管功能，演示如何在 5 分钟内构建一个具备意图理解与 API 调用能力的 Agent。通过这篇经过实际验证的指南，读者可以快速掌握无代码构建
+  AI 应用的核心步骤，并直观地理解 Agent 的运行逻辑。
 external_url: https://juejin.cn/post/7615419563384274984
 scenarios:
 - AI/ML项目
@@ -27,10 +28,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 5分钟用Amazon Bedrock搭建能调API的AI Agent
-
 ---
 
 ## 基本信息

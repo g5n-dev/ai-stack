@@ -17,7 +17,7 @@ categories:
 - 论文
 source: hacker_news
 description: 在当前大模型追求参数规模的背景下，一项关于极小 Transformer 的研究为我们提供了新的视角。该模型仅使用极少的参数便成功掌握了两个
-  10 位数字的加法运算，挑战了人们对于神经网络容量与算法学习能力的传统认知。通过剖析这一案例，读者可以直观地理解模型如何从数据中归纳出数学规则，并重新审视在特定任务中效率与规模之间
+  10 位数字的加法运算，挑战了人们对于神经网络容量与算法学习能力的传统认知。通过剖析这一案例，读者可以直观地理解模型如何从数据中归纳出数学规则，并重新审视在特定任务中效率与规模之间的平衡关系。
 external_url: https://github.com/anadim/AdderBoard
 scenarios:
 - AI/ML项目
@@ -33,10 +33,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 能计算两个10位数加法的最小Transformer模型
-
 ---
 
 ## 基本信息

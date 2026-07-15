@@ -16,7 +16,7 @@ categories:
 - 大模型
 - 开发工具
 source: juejin
-description: 在实际项目中，很多开发者希望在不切换IDE的情况下，直接使用Claude Code进行代码生成和调试。然而，由于服务条款限制，Claude官方模型在国内常常不可用，导致工作流被迫中断。本文提供一套可在本地部署的多模型并存、互不影响、可回滚的方案，支持同时调用国产模型与Claude模型，帮助团队在合规的前提下保持高效开发
+description: 在实际项目中，很多开发者希望在不切换IDE的情况下，直接使用Claude Code进行代码生成和调试。然而，由于服务条款限制，Claude官方模型在国内常常不可用，导致工作流被迫中断。本文提供一套可在本地部署的多模型并存、互不影响、可回滚的方案，支持同时调用国产模型与Claude模型，帮助团队在合规的前提下保持高效开发。
 external_url: https://juejin.cn/post/7627006875628339238
 scenarios:
 - 大语言模型
@@ -25,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Claude Code 国内大模型配置：多模型并存可回滚
-
 ---
 
 ## 基本信息
@@ -89,7 +85,6 @@ Claude Code作为Anthropic推出的编程Agent，默认集成Claude系列模型�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/)

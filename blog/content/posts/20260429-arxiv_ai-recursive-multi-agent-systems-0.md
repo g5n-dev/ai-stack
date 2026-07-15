@@ -16,8 +16,8 @@ categories:
 - 大模型
 - 论文
 source: arxiv
-description: 研究背景 - 语言模型通过递归或循环在潜在空间迭代细化推理，成为新的扩展方向。 - 能否把递归思想从单一模型扩展到多智能体系统，实现合作的规模化？
-  RecursiveMAS 框架 - 将整个多智能体系统建模为统一的潜在空间递归计算。 - 轻量级 RecursiveLink 模块连接异构智能体，实现跨智能体的潜在状态传递
+description: 语言模型通过递归或循环在潜在空间迭代细化推理，成为新的扩展方向。 能否把递归思想从单一模型扩展到多智能体系统，实现合作的规模化？ 将整个多智能体系统建模为统一的潜在空间递归计算。
+  轻量级 RecursiveLink 模块连接异构智能体，实现跨智能体的潜在状态传递和内部生成。 采用内‑外环学习算法，通过共享梯度在多轮递归中联合优化。 递归链路仅在潜在空间传递信息，降低文本通信开销。
 external_url: http://arxiv.org/abs/2604.25917v1
 scenarios:
 - 大语言模型
@@ -27,10 +27,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 递归多智能体系统
-
 ---
 
 ## 基本信息
@@ -141,7 +137,6 @@ RecursiveMAS框架将多智能体系统统一建模为潜在空间的递归计�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)

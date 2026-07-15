@@ -16,8 +16,8 @@ categories:
 - 大模型
 - 安全
 source: blogs_podcasts
-description: 以下是针对所提供内容的中文总结： 本文介绍了一种名为 **IH-Challenge（指令层级挑战）** 的训练方法，旨在提升前沿大型语言模型（LLM）的**指令层级**能力。
-  该方法的核心机制是**训练模型优先遵循“受信任的指令”**。通过这种方式，IH-Challenge 能够显著改善模型在以下三个关键领域的表现：
+description: IH-Challenge 训练模型优先遵循可信指令，从而提升指令层级、安全可控性以及对提示注入攻击的防御能力。 在复杂的应用场景中，大语言模型常面临用户指令与系统预设指令之间的冲突，如何确保模型优先遵循可信指令成为关键挑战。本文介绍了
+  IH-Challenge 训练方法，旨在提升模型的指令层级理解能力与安全可控性。
 external_url: https://openai.com/index/instruction-hierarchy-challenge
 scenarios:
 - 大语言模型
@@ -33,10 +33,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# IH-Challenge训练提升前沿大模型指令层级与防御能力
-
 ---
 
 ## 基本信息

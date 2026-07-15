@@ -16,7 +16,7 @@ categories:
 - 论文
 - 大模型
 source: arxiv
-description: '**总结如下：** 本文介绍了一种基于神经网络的求解器，旨在计算源分布与目标分布之间的Wasserstein测地线及相关的速度场。该方法基于最优传输（OT）问题的动力学公式，通过将约束优化问题重构为极大极小问题，并利用深度神经网络逼近相关函数。这种方法不仅能提供Wasserstein测地线，还能恢复OT映射，从而支持直'
+description: 针对Wasserstein测地线计算这一复杂问题，本文提出了一种基于动力学表述的神经网络求解器。该方法通过将约束优化重构为极大极小问题，利用深度网络逼近相关函数，不仅实现了测地线计算，还能恢复OT映射以支持直接采样。实验验证了其在合成与真实数据上的有效性，但摘要未明确说明其相较于传统数值方法的具体精度提升幅度。该框架为学习粒子速度场及扩展至通用成本函数提供了灵活工具。
 external_url: http://arxiv.org/abs/2602.22003v1
 scenarios:
 - Web应用开发
@@ -24,10 +24,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 用于Wasserstein测地线与最优传输动力学的神经求解器
-
 ---
 
 ## 基本信息

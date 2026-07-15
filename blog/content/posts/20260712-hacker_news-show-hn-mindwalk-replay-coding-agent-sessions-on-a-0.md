@@ -17,7 +17,7 @@ categories:
 - 产品与创业
 source: hacker_news
 description: Mindwalk 提供了一种全新的方式来审视 AI 编码代理的工作过程。它将终端中抽象的指令序列转化为可交互的 3D 可视化地图，让开发者能够直观地追踪代理在代码库中的行动轨迹。在多代理协作或大规模重构的场景下，这种空间化的回放方式显著降低了理解和审查的难度。对于关注
-  AI 辅助开发效率的工程师而言，这是一个值得深入了
+  AI 辅助开发效率的工程师而言，这是一个值得深入了解的实用工具。
 external_url: https://github.com/cosmtrek/mindwalk
 scenarios:
 - AI/ML项目
@@ -25,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 在3D代码地图上回放编码代理会话
-
 ---
 
 ## 基本信息
@@ -87,7 +83,6 @@ Mindwalk提供了一种将AI编码会话时空化的创新思路，但其实际�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/) / [产品与创业](/categories/%E4%BA%A7%E5%93%81%E4%B8%8E%E5%88%9B%E4%B8%9A/)

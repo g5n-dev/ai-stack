@@ -17,7 +17,7 @@ categories:
 - 系统与基础设施
 source: blogs_podcasts
 description: 随着边缘计算能力的提升，在 NVIDIA Jetson 平台上部署视觉语言模型（VLM）已成为实现本地化智能分析的关键路径。相比于依赖云端
-  API，本地部署能够有效降低延迟并保障数据隐私，这对于机器人或工业检测等实时性要求高的场景尤为重要。本文将详细介绍如何在 Jetson 设备上运行开源 VLM，涵盖环境配置与模型优
+  API，本地部署能够有效降低延迟并保障数据隐私，这对于机器人或工业检测等实时性要求高的场景尤为重要。本文将详细介绍如何在 Jetson 设备上运行开源 VLM，涵盖环境配置与模型优化步骤，帮助开发者快速构建具备视觉理解能力的边缘应用。
 external_url: https://huggingface.co/blog/nvidia/cosmos-on-jetson
 scenarios:
 - AI/ML项目
@@ -34,10 +34,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 在Jetson上部署开源视觉语言模型
-
 ---
 
 ## 基本信息

@@ -10,7 +10,7 @@ categories:
 source: blogs_podcasts
 description: 在深度学习模型评估领域，DeepResearch Bench I 和 II 已成为衡量系统性能的重要标尺。本文详细解析了 NVIDIA AI-Q
   技术如何通过架构优化与算力调度，在这两项基准测试中位列榜首。通过拆解其背后的技术路径与工程实践，读者可以深入了解该模型在处理复杂任务时的核心优势，以及 NVIDIA
-  在推动
+  在推动 AI 基础设施性能边界方面的最新进展。
 external_url: https://huggingface.co/blog/nvidia/how-nvidia-won-deepresearch-bench
 scenarios:
 - Web应用开发
@@ -23,10 +23,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# NVIDIA AI-Q登顶DeepResearch Bench I与II榜单
-
 ---
 
 ## 基本信息

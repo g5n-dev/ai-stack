@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# Claude Code上线自动记忆功能，无需手动输入上下文
-
----
-
 ## 基本信息
 
 - **作者**: 风象南

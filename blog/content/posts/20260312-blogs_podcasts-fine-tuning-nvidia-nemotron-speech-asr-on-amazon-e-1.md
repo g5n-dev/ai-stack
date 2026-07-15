@@ -40,10 +40,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 在 EC2 上微调 NVIDIA Nemotron ASR 模型实现领域适配
-
----
-
 ## 基本信息
 
 - **来源**: AWS Machine Learning Blog (blog)

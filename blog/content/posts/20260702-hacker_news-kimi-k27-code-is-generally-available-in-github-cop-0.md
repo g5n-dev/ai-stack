@@ -18,6 +18,7 @@ categories:
 source: hacker_news
 description: Kimi K2.7 代码现已正式在 GitHub Copilot 中开放使用，进一步将自然语言理解与代码生成深度融合。相较于早期版本，K2.7
   在补全准确性、跨语言支持以及错误检测能力上都有显著提升，帮助开发者在日常编码中实现更快的迭代。通过本文，你将了解新功能的关键变化、典型应用场景以及实用配置技巧，快速在项目中发挥
+  K2.7 的优势。
 external_url: https://github.blog/changelog/2026-07-01-kimi-k2-7-is-now-available-in-github-copilot
 scenarios:
 - AI/ML项目
@@ -25,10 +26,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# Kimi K2.7 Code已在GitHub Copilot全面可用
-
 ---
 
 ## 基本信息
@@ -86,7 +83,6 @@ Kimi K2.7 Code进入GitHub Copilot是国产AI编程模型走向全球开发者�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/)

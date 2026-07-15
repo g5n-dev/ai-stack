@@ -16,8 +16,9 @@ categories:
 - AI 工程
 - 大模型
 source: juejin
-description: 以下是对 LangGraph 框架核心内容的中文总结： LangGraph 框架核心总结：构建生产级 AI 工作流 LangGraph 是一个专为构建**有状态**（Stateful）、**多参与者**（Multi-agent）的
-  AI 应用而设计的框架。它弥补了传统链式架构在处理复杂逻辑时的不足，是构建生产级 AI
+description: 随着大模型应用从简单的对话机器人向复杂的业务系统演进，如何构建具备状态管理与逻辑控制能力的生产级工作流，已成为开发者面临的核心挑战。LangGraph
+  作为基于有向图架构的新一代框架，通过引入循环机制与持久化检查点，有效弥补了传统链式结构在处理复杂逻辑时的局限性。本文将深入解析 LangGraph 的核心概念与工程实践，助你掌握构建高鲁棒性
+  AI 应用的关键技术。
 external_url: https://juejin.cn/post/7613943310969405486
 scenarios:
 - AI/ML项目
@@ -26,10 +27,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# LangGraph 框架指南：构建基于有向图与状态管理的生产级 AI 工作流
-
 ---
 
 ## 基本信息

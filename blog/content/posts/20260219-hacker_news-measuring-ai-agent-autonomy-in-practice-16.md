@@ -35,10 +35,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# AI智能体自主性评估的实践方法
-
----
-
 ## 基本信息
 
 - **作者**: jbredeche

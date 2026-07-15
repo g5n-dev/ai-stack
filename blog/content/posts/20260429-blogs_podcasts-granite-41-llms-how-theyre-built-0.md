@@ -26,10 +26,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# IBM Granite 4.1大模型构建技术揭秘
-
----
-
 ## 基本信息
 
 - **来源**: Hugging Face Blog (blog)
@@ -142,7 +138,6 @@ Granite 4.1 通过 **模块化架构 + 细粒度数据治理 + 可验证的对
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

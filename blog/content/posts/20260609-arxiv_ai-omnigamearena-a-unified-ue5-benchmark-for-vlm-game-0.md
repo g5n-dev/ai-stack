@@ -17,7 +17,7 @@ categories:
 - AI 工程
 source: arxiv
 description: OmniGameArena 是一个基于 Unreal Engine 5 的实时评测基准，包含 12 款新构建的游戏，涵盖 Solo（7 款）、PvP（3
-  款）和 Coop（2 款）三种模式，并提供统一的动作接口，使商业 VLM、开源 VLM 和专用游戏策略等不同类别的智能体能够在同一平台上公平比较。基准首先给出冷启动排
+  款）和 Coop（2 款）三种模式，并提供统一的动作接口，使商业 VLM、开源 VLM 和专用游戏策略等不同类别的智能体能够在同一平台上公平比较。
 external_url: http://arxiv.org/abs/2606.09826v1
 scenarios:
 - 游戏开发
@@ -27,10 +27,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# VLM游戏智能体UE5统一基准测试发布
-
 ---
 
 ## 基本信息
@@ -119,7 +115,6 @@ OmniGameArena为游戏AI研发提供了标准化的评测环境，有助于加�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# 企业级上下文层：构建 LLM 应用数据连接架构
-
----
-
 ## 基本信息
 
 - **作者**: zachperkel

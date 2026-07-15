@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import hashlib
 import hmac
+import re
 from collections.abc import Mapping
 from typing import Any
 from urllib.parse import urlsplit
@@ -20,7 +21,8 @@ EXTRACTOR_VERSION = "source-contract-v1"
 EVIDENCE_SCHEMA = "source_evidence_v1"
 _MAX_EVIDENCE_BYTES = 64 * 1024
 _MAX_STORED_SOURCE_BYTES = 24 * 1024
-_MAX_DISPLAY_EXCERPT_BYTES = 6_000
+_LEGACY_MAX_DISPLAY_EXCERPT_BYTES = 6_000
+_MAX_PUBLICATION_TITLE_CHARS = 300
 _ALLOWED_SOURCES = frozenset(
     {
         "arxiv",
@@ -46,7 +48,43 @@ def _truncate_utf8(value: str, limit: int) -> tuple[str, bool]:
     raw = str(value or "").encode("utf-8")
     if len(raw) <= limit:
         return str(value or ""), False
-    return raw[:limit].decode("utf-8", errors="ignore").rstrip(), True
+
+    prefix = raw[:limit].decode("utf-8", errors="ignore").rstrip()
+    consumed = len(prefix.encode("utf-8"))
+    remainder = raw[consumed:].decode("utf-8", errors="ignore")
+    if prefix and remainder:
+        left = prefix[-1]
+        right = remainder[0]
+        continues_token = (
+            not left.isspace()
+            and not right.isspace()
+            and (left.isalnum() or left in "_-")
+            and (right.isalnum() or right in "_-")
+        )
+        if continues_token:
+            boundary = re.search(r"\s+\S*$", prefix)
+            if boundary is not None and boundary.start() >= int(len(prefix) * 0.8):
+                prefix = prefix[: boundary.start()].rstrip()
+    return prefix, True
+
+
+def _truncate_title(value: str, limit: int) -> tuple[str, bool]:
+    title = str(value or "")
+    if len(title) <= limit:
+        return title, False
+
+    prefix = title[:limit].rstrip()
+    remainder = title[len(prefix) :]
+    if prefix and remainder and not prefix[-1].isspace() and not remainder[0].isspace():
+        boundary = re.search(r"\s+\S*$", prefix)
+        if boundary is not None:
+            prefix = prefix[: boundary.start()].rstrip()
+    return prefix, True
+
+
+def _publication_title(value: object) -> tuple[str, bool]:
+    normalized = " ".join(str(value or "").split()).strip()
+    return _truncate_title(normalized, _MAX_PUBLICATION_TITLE_CHARS)
 
 
 def _source_summary(source: str, item: Mapping[str, Any]) -> str:
@@ -88,7 +126,12 @@ def _capture(item: Mapping[str, Any]) -> tuple[str, str, str, str]:
         return "excerpt", "source_brief", original_summary, "rss_excerpt"
     if source == "github_trending":
         evidence = _text(item.get("description"))
-        return "metadata_only", "source_brief", evidence or _text(item.get("title")), "repository_metadata"
+        return (
+            "metadata_only",
+            "source_brief",
+            evidence or _text(item.get("title")),
+            "repository_metadata",
+        )
     if source in {"twitter", "reddit"}:
         evidence = _text(item.get("text") or item.get("selftext") or item.get("description"))
         if evidence:
@@ -189,6 +232,7 @@ def apply_source_contract(item: Mapping[str, Any]) -> dict[str, Any]:
     title = _text(result.get("title"))
     if not title:
         raise SourceContractError("source title is missing")
+    source_display_title, title_truncated = _publication_title(title)
     final_url = _canonical_url(result)
     if not final_url:
         raise SourceContractError("source external URL is missing or invalid")
@@ -206,23 +250,23 @@ def apply_source_contract(item: Mapping[str, Any]) -> dict[str, Any]:
     capture_mode, content_mode, raw_source_text, discovery_method = _capture(result)
     if capture_mode in {"abstract", "excerpt", "social_post"} and not raw_source_text:
         raise SourceContractError(f"{capture_mode} source text is missing")
-    source_payload_sha256 = "sha256:" + hashlib.sha256(
-        raw_source_text.encode("utf-8")
-    ).hexdigest()
+    source_payload_sha256 = "sha256:" + hashlib.sha256(raw_source_text.encode("utf-8")).hexdigest()
     source_text_chars_original = len(raw_source_text)
-    source_text, storage_truncated = _truncate_utf8(
-        raw_source_text, _MAX_STORED_SOURCE_BYTES
-    )
-    source_display_excerpt, display_truncated = _truncate_utf8(
-        source_text, _MAX_DISPLAY_EXCERPT_BYTES
-    )
+    source_text, storage_truncated = _truncate_utf8(raw_source_text, _MAX_STORED_SOURCE_BYTES)
+    # Publication must not silently discard evidence that was already captured and
+    # retained by the contract.  Older v1 records used a second 6 KB display cap;
+    # verification below keeps those immutable records readable, while every new
+    # record publishes the complete stored source text.
+    source_display_excerpt = source_text
     raw_original_summary = _source_summary(source, result)
-    original_summary, _ = _truncate_utf8(
-        raw_original_summary, _MAX_STORED_SOURCE_BYTES
-    )
+    original_summary, _ = _truncate_utf8(raw_original_summary, _MAX_STORED_SOURCE_BYTES)
     explicit_truncated = result.get("source_is_truncated") is True
     marker_truncated = "[...truncated...]" in source_text.casefold()
-    rss_limit_truncated = source == "blogs_podcasts" and len(raw_source_text) >= 2_000
+    legacy_rss_limit_truncated = (
+        source == "blogs_podcasts"
+        and len(raw_source_text) == 2_000
+        and "source_is_truncated" not in result
+    )
     truncation_reasons: list[str] = []
     if explicit_truncated:
         truncation_reasons.append(
@@ -230,12 +274,12 @@ def apply_source_contract(item: Mapping[str, Any]) -> dict[str, Any]:
         )
     if marker_truncated:
         truncation_reasons.append("explicit_truncation_marker")
-    if rss_limit_truncated:
+    if legacy_rss_limit_truncated:
         truncation_reasons.append("rss_excerpt_limit")
+    if title_truncated:
+        truncation_reasons.append("publication_title_limit")
     if storage_truncated:
         truncation_reasons.append("source_contract_limit")
-    if display_truncated:
-        truncation_reasons.append("publication_excerpt_limit")
     truncation_reason = ",".join(dict.fromkeys(truncation_reasons))
     is_truncated = bool(truncation_reasons)
 
@@ -275,6 +319,8 @@ def apply_source_contract(item: Mapping[str, Any]) -> dict[str, Any]:
             "final_url": final_url,
             "source_text_original": source_text,
             "source_display_excerpt": source_display_excerpt,
+            "source_display_title": source_display_title,
+            "source_title_chars_original": len(title),
             "source_text_chars": len(source_text),
             "source_text_chars_original": source_text_chars_original,
             "source_payload_sha256": source_payload_sha256,
@@ -326,6 +372,16 @@ def verify_source_contract(item: Mapping[str, Any]) -> None:
         raise SourceContractError("source external URL does not match evidence")
     if _text(item.get("title")) != _text(fields.get("title")):
         raise SourceContractError("source title does not match evidence")
+    expected_display_title, _ = _publication_title(fields.get("title"))
+    if (
+        "source_display_title" in item
+        and _text(item.get("source_display_title")) != expected_display_title
+    ):
+        raise SourceContractError("source display title does not match evidence")
+    if "source_title_chars_original" in item and item.get("source_title_chars_original") != len(
+        _text(fields.get("title"))
+    ):
+        raise SourceContractError("source title length does not match evidence")
     if _text(item.get("source_text_original")) != _text(fields.get("source_text")):
         raise SourceContractError("source text does not match evidence")
     if item.get("source_text_chars") != len(_text(fields.get("source_text"))):
@@ -338,36 +394,32 @@ def verify_source_contract(item: Mapping[str, Any]) -> None:
         raise SourceContractError("source fetch status mismatch")
     if _text(item.get("extractor_version")) != _text(evidence.get("extractor_version")):
         raise SourceContractError("source extractor version mismatch")
-    if _text(item.get("source_payload_sha256")) != _text(
-        evidence.get("source_payload_sha256")
-    ):
+    if _text(item.get("source_payload_sha256")) != _text(evidence.get("source_payload_sha256")):
         raise SourceContractError("source payload digest mismatch")
     _mode, _content_mode, current_source_payload, _method = _capture(item)
-    current_payload_digest = "sha256:" + hashlib.sha256(
-        current_source_payload.encode("utf-8")
-    ).hexdigest()
+    current_payload_digest = (
+        "sha256:" + hashlib.sha256(current_source_payload.encode("utf-8")).hexdigest()
+    )
     if current_payload_digest != _text(evidence.get("source_payload_sha256")):
         raise SourceContractError("source payload no longer matches evidence")
     if len(current_source_payload) != evidence.get("source_text_chars_original"):
         raise SourceContractError("source payload length no longer matches evidence")
-    if item.get("source_text_chars_original") != evidence.get(
-        "source_text_chars_original"
-    ):
+    if item.get("source_text_chars_original") != evidence.get("source_text_chars_original"):
         raise SourceContractError("source original text length mismatch")
-    if _text(item.get("source_summary_original")) != _text(
-        evidence.get("source_summary_original")
-    ):
+    if _text(item.get("source_summary_original")) != _text(evidence.get("source_summary_original")):
         raise SourceContractError("source summary does not match evidence")
-    expected_display_excerpt, _ = _truncate_utf8(
-        _text(fields.get("source_text")), _MAX_DISPLAY_EXCERPT_BYTES
-    )
+    evidence_truncation_reason = _text(evidence.get("truncation_reason"))
+    if "publication_excerpt_limit" in evidence_truncation_reason.split(","):
+        expected_display_excerpt, _ = _truncate_utf8(
+            _text(fields.get("source_text")), _LEGACY_MAX_DISPLAY_EXCERPT_BYTES
+        )
+    else:
+        expected_display_excerpt = _text(fields.get("source_text"))
     if _text(item.get("source_display_excerpt")) != expected_display_excerpt:
         raise SourceContractError("source display excerpt does not match evidence")
     if item.get("source_is_truncated") is not evidence.get("is_truncated"):
         raise SourceContractError("source truncation flag mismatch")
-    if _text(item.get("source_truncation_reason")) != _text(
-        evidence.get("truncation_reason")
-    ):
+    if _text(item.get("source_truncation_reason")) != _text(evidence.get("truncation_reason")):
         raise SourceContractError("source truncation reason mismatch")
     if _text(item.get("content_mode")) != "source_brief":
         raise SourceContractError("unsupported publication content mode")
@@ -382,10 +434,25 @@ def verify_source_contract(item: Mapping[str, Any]) -> None:
         raise SourceContractError("source evidence exceeds the size limit")
 
 
+def publication_title_from_contract(item: Mapping[str, Any]) -> str:
+    """Derive the bounded display title from signed immutable evidence."""
+
+    verify_source_contract(item)
+    evidence = item.get("evidence")
+    fields = evidence.get("fields") if isinstance(evidence, Mapping) else None
+    if not isinstance(fields, Mapping):
+        raise SourceContractError("source evidence fields are invalid")
+    title, _ = _publication_title(fields.get("title"))
+    if not title:
+        raise SourceContractError("source title is missing")
+    return title
+
+
 __all__ = [
     "EVIDENCE_SCHEMA",
     "EXTRACTOR_VERSION",
     "SourceContractError",
     "apply_source_contract",
+    "publication_title_from_contract",
     "verify_source_contract",
 ]

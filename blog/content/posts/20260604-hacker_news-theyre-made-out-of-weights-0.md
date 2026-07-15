@@ -16,7 +16,7 @@ categories:
 - AI 工程
 - 大模型
 source: hacker_news
-description: 在深度学习圈里常说‘它们是由权重构成的’，这并非夸张，而是对模型本质的精准描述。本文从权重的本质入手，分析其在网络结构、训练过程中的作用，并探讨如何通过合理设置和调优权重提升模型效果。阅读后，读者将对权重的形成机制有更清晰的认识，并掌握实用的调参思路。通过对权重分布的可视化，读者还能直观了解网络在学习过程中的变化，从而
+description: 在深度学习圈里常说‘它们是由权重构成的’，这并非夸张，而是对模型本质的精准描述。本文从权重的本质入手，分析其在网络结构、训练过程中的作用，并探讨如何通过合理设置和调优权重提升模型效果。阅读后，读者将对权重的形成机制有更清晰的认识，并掌握实用的调参思路。通过对权重分布的可视化，读者还能直观了解网络在学习过程中的变化，从而在实际项目中进行更有针对性的优化。
 external_url: https://maxleiter.com/blog/weights
 scenarios:
 - Web应用开发
@@ -24,10 +24,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 权重计算与初始化技术详解
-
 ---
 
 ## 基本信息
@@ -83,7 +79,6 @@ source_support: 0.0
 
 ---
 
----
 ## 站内链接
 
 - 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

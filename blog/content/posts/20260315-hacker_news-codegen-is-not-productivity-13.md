@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# CodeGen并非工程效能：代码生成与生产力的本质差异
-
----
-
 ## 基本信息
 
 - **作者**: donutshop

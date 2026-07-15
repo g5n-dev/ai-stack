@@ -16,8 +16,8 @@ categories:
 - 大模型
 - AI 工程
 source: blogs_podcasts
-description: 利用 Amazon Bedrock 与生成式 AI，Halliburton 搭建概念验证，实现自然语言查询自动转化为可执行的地震工作流，并提供针对
-  Seismic Engine 工具及文档的问答功能。技术方案包括在大语言模型上封装业务逻辑、检索增强生成（RAG）以及工作流模板映射，使系统既能解析用户意图，又能即时生成对
+description: 在这篇文章中，我们将探讨如何构建了一个概念验证（proof-of-concept），将自然语言查询转换为可执行的地震工作流程，同时为哈里伯顿（Halliburton）的地震引擎（Seismic
+  Engine）工具和文档提供问答能力。我们将介绍该解决方案的技术细节，分享显示工作流程加速高达95%的评估结果，并讨论关键经验教训，以帮助其他组织利用生成式AI增强其复杂的技术工作流程。
 external_url: https://aws.amazon.com/blogs/machine-learning/halliburton-enhances-seismic-workflow-creation-with-amazon-bedrock-and-generative-ai
 scenarios:
 - AI/ML项目
@@ -27,10 +27,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 哈里伯顿用生成式AI将自然语言查询转为地震工作流程
-
 ---
 
 ## 基本信息
@@ -120,7 +116,6 @@ Halliburton将生成式AI引入地震工作流构建是一次有价值的工业�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)

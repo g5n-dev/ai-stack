@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# OpenAI扩大Rosalind生物防御AI可信访问范围
-
----
-
 ## 基本信息
 
 - **来源**: OpenAI Blog (blog)
@@ -125,7 +121,6 @@ GPT-Rosalind基于大规模语言模型架构，具备处理复杂生物医学�
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [安全](/categories/%E5%AE%89%E5%85%A8/)

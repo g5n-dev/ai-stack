@@ -27,10 +27,6 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 ---
 
-# OpenAI发布GPT-5.5
-
----
-
 ## 基本信息
 
 - **作者**: rd
@@ -76,7 +72,6 @@ GPT-5.5 是最新一代大规模语言模型，在多模态理解和长期记忆
 
 ---
 
----
 ## 站内链接
 
 - 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)

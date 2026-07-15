@@ -17,7 +17,7 @@ categories:
 - AI 工程
 source: hacker_news
 description: 随着人工智能与生成式艺术的边界不断拓展，模拟群体行为已成为构建复杂动态场景的关键技术。本文介绍的 Neural Boids 方案，通过神经网络技术对传统
-  Boids 算法进行了深度重构，不仅提升了模拟效率，更赋予了群体行为更强的可塑性与真实感。阅读本文，读者将深入了解该模型的技术原理与实现细节，掌握如何利用这一前沿方法
+  Boids 算法进行了深度重构，不仅提升了模拟效率，更赋予了群体行为更强的可塑性与真实感。阅读本文，读者将深入了解该模型的技术原理与实现细节，掌握如何利用这一前沿方法优化自身的项目开发流程。
 external_url: https://campedersen.com/noid
 scenarios:
 - AI/ML项目
@@ -25,10 +25,6 @@ content_mode: legacy_analysis
 publication_tier: LEGACY
 source_provenance: legacy_no_snapshot
 source_support: 0.0
----
-
-# 模拟鸟群行为的神经网络算法 Neural Boids
-
 ---
 
 ## 基本信息
