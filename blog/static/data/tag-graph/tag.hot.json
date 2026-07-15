@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-15T06:00:41Z",
+  "generated_at": "2026-07-15T08:55:26Z",
   "layer": "tag",
   "layers": {
     "application": {
@@ -46637,7 +46637,7 @@
       "strength": 1,
       "target": "tag:自动驾驶",
       "type": "cooccurrence",
-      "weight": 4
+      "weight": 5
     },
     {
       "id": "edge:cooccurrence:tag:强化学习->tag:视觉语言模型",
@@ -53000,6 +53000,14 @@
       "weight": 3
     },
     {
+      "id": "edge:cooccurrence:tag:生成式AI->tag:自动化测试",
+      "source": "tag:生成式AI",
+      "strength": 0.5,
+      "target": "tag:自动化测试",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
       "id": "edge:cooccurrence:tag:生成式AI->tag:自动驾驶",
       "source": "tag:生成式AI",
       "strength": 1,
@@ -54556,7 +54564,7 @@
       "legacy_id": "blogs_podcasts",
       "level": 6,
       "name": "blogs_podcasts",
-      "rank": 11366,
+      "rank": 11372,
       "related_count": 0,
       "weighted_degree": 0
     },
@@ -54845,7 +54853,7 @@
       "legacy_id": "Gemini 3",
       "level": 6,
       "name": "Gemini 3",
-      "rank": 153,
+      "rank": 154,
       "related_count": 83,
       "weighted_degree": 308
     },
@@ -54947,7 +54955,7 @@
       "legacy_id": "GPT-5.3",
       "level": 6,
       "name": "GPT-5.3",
-      "rank": 154,
+      "rank": 155,
       "related_count": 70,
       "weighted_degree": 308
     },
@@ -55015,7 +55023,7 @@
       "legacy_id": "hacker_news",
       "level": 6,
       "name": "hacker_news",
-      "rank": 11367,
+      "rank": 11373,
       "related_count": 0,
       "weighted_degree": 0
     },
@@ -55066,7 +55074,7 @@
       "legacy_id": "Hugging Face",
       "level": 6,
       "name": "Hugging Face",
-      "rank": 64,
+      "rank": 65,
       "related_count": 183,
       "weighted_degree": 609
     },
@@ -55627,7 +55635,7 @@
       "legacy_id": "SOTA",
       "level": 6,
       "name": "SOTA",
-      "rank": 65,
+      "rank": 66,
       "related_count": 180,
       "weighted_degree": 608
     },
@@ -56550,11 +56558,11 @@
       "weighted_degree": 532
     },
     {
-      "article_count": 206,
+      "article_count": 207,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
-      "degree": 648,
+      "degree": 652,
       "description": "强化学习是一种通过与环境交互并利用奖励反馈来优化决策策略的机器学习方法，常被用于训练具备自主推理与控制能力的AI智能体及机器人系统。",
       "id": "tag:强化学习",
       "layer": "tag",
@@ -56562,9 +56570,9 @@
       "legacy_id": "强化学习",
       "level": 6,
       "name": "强化学习",
-      "rank": 19,
-      "related_count": 648,
-      "weighted_degree": 1442
+      "rank": 18,
+      "related_count": 652,
+      "weighted_degree": 1449
     },
     {
       "article_count": 28,
@@ -56596,7 +56604,7 @@
       "legacy_id": "微信机器人",
       "level": 6,
       "name": "微信机器人",
-      "rank": 155,
+      "rank": 156,
       "related_count": 32,
       "weighted_degree": 308
     },
@@ -56647,7 +56655,7 @@
       "legacy_id": "性能优化",
       "level": 6,
       "name": "性能优化",
-      "rank": 27,
+      "rank": 28,
       "related_count": 482,
       "weighted_degree": 1190
     },
@@ -57072,7 +57080,7 @@
       "legacy_id": "本地部署",
       "level": 6,
       "name": "本地部署",
-      "rank": 66,
+      "rank": 67,
       "related_count": 247,
       "weighted_degree": 607
     },
@@ -57259,7 +57267,7 @@
       "legacy_id": "模型架构",
       "level": 6,
       "name": "模型架构",
-      "rank": 67,
+      "rank": 68,
       "related_count": 264,
       "weighted_degree": 602
     },
@@ -57310,7 +57318,7 @@
       "legacy_id": "模型评估",
       "level": 6,
       "name": "模型评估",
-      "rank": 18,
+      "rank": 19,
       "related_count": 572,
       "weighted_degree": 1449
     },
@@ -57468,11 +57476,11 @@
       "weighted_degree": 469
     },
     {
-      "article_count": 169,
+      "article_count": 170,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
-      "degree": 540,
+      "degree": 547,
       "description": "生成式AI是指能够基于训练数据自动生成文本、图像、代码或3D模型等新内容的算法技术，通常涵盖大语言模型、AI Agent及其在科研、企业协作与创意领域的实际应用。",
       "id": "tag:生成式AI",
       "layer": "tag",
@@ -57480,9 +57488,9 @@
       "legacy_id": "生成式AI",
       "level": 6,
       "name": "生成式AI",
-      "rank": 28,
-      "related_count": 540,
-      "weighted_degree": 1183
+      "rank": 27,
+      "related_count": 547,
+      "weighted_degree": 1190
     },
     {
       "article_count": 95,
@@ -57740,11 +57748,11 @@
       "weighted_degree": 2667
     },
     {
-      "article_count": 86,
+      "article_count": 87,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
-      "degree": 241,
+      "degree": 248,
       "description": "自动化测试是指利用软件工具或脚本执行预设的测试流程，以验证软件功能、性能或质量是否符合预期。它通常与持续集成、回归测试及性能监控等DevOps实践紧密相关，旨在提升测试效率并保障代码质量。",
       "id": "tag:自动化测试",
       "layer": "tag",
@@ -57752,16 +57760,16 @@
       "legacy_id": "自动化测试",
       "level": 6,
       "name": "自动化测试",
-      "rank": 68,
-      "related_count": 241,
-      "weighted_degree": 602
+      "rank": 64,
+      "related_count": 248,
+      "weighted_degree": 609
     },
     {
-      "article_count": 43,
+      "article_count": 44,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:LIME",
-      "degree": 140,
+      "degree": 145,
       "description": "自动驾驶指利用车载传感器、人工智能算法和计算平台实现车辆在无人干预下的自主导航与行驶，涉及环境感知、路径规划、决策控制等核心技术，常与智能交通、多目标强化学习、传感器融合及安全防护等领域紧密相关。",
       "id": "tag:自动驾驶",
       "layer": "tag",
@@ -57769,9 +57777,9 @@
       "legacy_id": "自动驾驶",
       "level": 6,
       "name": "自动驾驶",
-      "rank": 156,
-      "related_count": 140,
-      "weighted_degree": 301
+      "rank": 153,
+      "related_count": 145,
+      "weighted_degree": 308
     },
     {
       "article_count": 28,
@@ -58150,13 +58158,13 @@
   ],
   "stats": {
     "links_by_type": {
-      "cooccurrence": 6685,
+      "cooccurrence": 6686,
       "semantic": 47
     },
     "nodes_by_layer": {
       "tag": 250
     },
-    "total_links": 6732,
+    "total_links": 6733,
     "total_nodes": 250
   },
   "version": 2
