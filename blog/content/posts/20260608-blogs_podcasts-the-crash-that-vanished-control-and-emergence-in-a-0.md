@@ -1,14 +1,29 @@
 ---
-title: "消失的崩溃：五模型经济中的控制与涌现"
-date: 2026-06-08T15:11:52+08:00
+title: 消失的崩溃：五模型经济中的控制与涌现
+date: 2026-06-08 15:11:52+08:00
 draft: false
-entry_kind: "auto"
-tags: ["多模型协作", "模型编排", "系统控制", "涌现行为", "LLM", "架构设计", "自主系统", "AI Agent"]
-categories: ["AI 工程"]
+entry_kind: auto
+tags:
+- 多模型协作
+- 模型编排
+- 系统控制
+- 涌现行为
+- LLM
+- 架构设计
+- 自主系统
+- AI Agent
+categories:
+- AI 工程
 source: blogs_podcasts
-description: "本文通过构建五模型经济体，重现了一次看似消失的市场崩盘现象，并探讨了控制机制与系统自发行为之间的交互作用。研究表明，微观层面的监管干预能够在宏观层面抑制危机的显现，却也可能掩盖潜在的系统脆弱性。读者将获得对经济模型中‘隐匿性危机’形成原理的深入理解，以及在政策制定中平衡控制与自组织的新思路。"
+description: 本文通过构建五模型经济体，重现了一次看似消失的市场崩盘现象，并探讨了控制机制与系统自发行为之间的交互作用。研究表明，微观层面的监管干预能够在宏观层面抑制危机的显现，却也可能掩盖潜在的系统脆弱性。读者将获得对经济模型中‘隐匿性危机’形成原理的深入理解，以及在政策制定中平衡控制与自组织的新思路。
 external_url: https://huggingface.co/blog/build-small-hackathon/thousand-token-wood-sim-v3
-scenarios: ["大语言模型", "AI/ML项目"]
+scenarios:
+- 大语言模型
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 消失的崩溃：五模型经济中的控制与涌现
@@ -91,9 +106,9 @@ scenarios: ["大语言模型", "AI/ML项目"]
 
 ### 相关文章
 
-- [Context Graphs 与 Agent Traces：解析 AI 智能体的记忆与回溯机制]({{< relref "posts/20260205-blogs_podcasts-ainews-context-graphs-and-agent-traces-3.md" >}})
-- [大模型API开发：Tools、MCP与Skills的本质区别]({{< relref "posts/20260215-juejin-手把手从-0-诠释大模型-api-的本质-tools-mcp-skills-1.md" >}})
-- [OpenHands 框架解析：Agent 状态管理与系统设计]({{< relref "posts/20260224-juejin-ai-agent-框架探秘拆解-openhands7-agent-4.md" >}})
+- [Context Graphs 与 Agent Traces：解析 AI 智能体的记忆与回溯机制]({{< relref "posts/20260204-blogs_podcasts-ainews-context-graphs-and-agent-traces-0.md" >}})
+- [大模型API开发：Tools、MCP与Skills的本质区别]({{< relref "posts/20260215-juejin-从-0-诠释大模型-api-的本质-tools-mcp-skills-0.md" >}})
+- [OpenHands 框架解析：Agent 状态管理与系统设计]({{< relref "posts/20260223-juejin-ai-agent-框架探秘拆解-openhands7-agent-1.md" >}})
 - [OpenHands 框架解析：CodeActAgent 架构与设计原则]({{< relref "posts/20260225-juejin-ai-agent框架探秘拆解-openhands8-codeactagent-2.md" >}})
-- [OpenHands框架拆解：CodeActAgent的设计与核心能力]({{< relref "posts/20260225-juejin-ai-agent框架探秘拆解-openhands8-codeactagent-3.md" >}})
+- [OpenHands框架拆解：CodeActAgent的设计与核心能力]({{< relref "posts/20260225-juejin-ai-agent框架探秘拆解-openhands8-codeactagent-2.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

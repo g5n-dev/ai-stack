@@ -1,12 +1,26 @@
 ---
-title: "🔥Fuzzy Studio：视频/摄像头实时特效，创意爆棚！"
-date: 2026-01-28T07:28:04+08:00
+title: 🔥Fuzzy Studio：视频/摄像头实时特效，创意爆棚！
+date: 2026-01-28 07:28:04+08:00
 draft: false
-entry_kind: "auto"
-tags: ["视频处理", "实时特效", "Webcam", "创意工具", "Show HN", "视频滤镜", "渲染", "SaaS"]
-categories: ["产品与创业", "前端"]
+entry_kind: auto
+tags:
+- 视频处理
+- 实时特效
+- Webcam
+- 创意工具
+- Show HN
+- 视频滤镜
+- 渲染
+- SaaS
+categories:
+- 产品与创业
+- 前端
 source: hacker_news
 external_url: https://fuzzy.ulyssepence.com
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 📰 🔥Fuzzy Studio：视频/摄像头实时特效，创意爆棚！

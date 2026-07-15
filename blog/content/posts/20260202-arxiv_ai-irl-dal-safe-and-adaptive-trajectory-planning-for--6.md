@@ -1,14 +1,32 @@
 ---
-title: "IRL-DAL：基于能量引导扩散模型的自动驾驶安全自适应轨迹规划"
-date: 2026-02-02T19:22:59+08:00
+title: IRL-DAL：基于能量引导扩散模型的自动驾驶安全自适应轨迹规划
+date: 2026-02-02 19:22:59+08:00
 draft: false
-entry_kind: "auto"
-tags: ["自动驾驶", "扩散模型", "逆向强化学习", "IRL", "轨迹规划", "PPO", "模仿学习", "计算机视觉"]
-categories: ["论文", "大模型"]
+entry_kind: auto
+tags:
+- 自动驾驶
+- 扩散模型
+- 逆向强化学习
+- IRL
+- 轨迹规划
+- PPO
+- 模仿学习
+- 计算机视觉
+categories:
+- 论文
+- 大模型
 source: arxiv
-description: "**论文总结：IRL-DAL——基于能量引导扩散模型的自动驾驶安全轨迹规划** 本文提出了一种名为**IRL-DAL**的新型逆向强化学习框架，旨在通过扩散模型实现自动驾驶车辆的安全与自适应轨迹规划。该方案结合了模仿学习、逆向强化学习（IRL）与近端策略优化（PPO），在Webots仿真环境中达到了极高的安全标准。 *"
+description: '**论文总结：IRL-DAL——基于能量引导扩散模型的自动驾驶安全轨迹规划** 本文提出了一种名为**IRL-DAL**的新型逆向强化学习框架，旨在通过扩散模型实现自动驾驶车辆的安全与自适应轨迹规划。该方案结合了模仿学习、逆向强化学习（IRL）与近端策略优化（PPO），在Webots仿真环境中达到了极高的安全标准。
+  *'
 external_url: http://arxiv.org/abs/2601.23266v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+aliases:
+- /posts/20260203-arxiv_ai-irl-dal-safe-and-adaptive-trajectory-planning-for--6/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # IRL-DAL：基于能量引导扩散模型的自动驾驶安全自适应轨迹规划
@@ -504,7 +522,7 @@ IRL-DAL 是一个分层级的决策与控制框架，主要包含三个核心组
 
 - [VideoGPA：提取几何先验实现三维一致视频生成]({{< relref "posts/20260202-arxiv_ai-videogpa-distilling-geometry-priors-for-3d-consist-0.md" >}})
 - [🚀动态场景新视角合成！AnyView实现任意视角自由切换！🤯]({{< relref "posts/20260126-arxiv_ai-anyview-synthesizing-any-novel-view-in-dynamic-sce-0.md" >}})
-- [🚀AnyView：动态场景任意新视角合成！开创性技术突破🔥]({{< relref "posts/20260127-arxiv_ai-anyview-synthesizing-any-novel-view-in-dynamic-sce-0.md" >}})
+- [🚀AnyView：动态场景任意新视角合成！开创性技术突破🔥]({{< relref "posts/20260126-arxiv_ai-anyview-synthesizing-any-novel-view-in-dynamic-sce-0.md" >}})
 - [🚛🚦高速公路卡车决策新突破！多目标强化学习让战术决策更高效！]({{< relref "posts/20260127-arxiv_ai-multi-objective-reinforcement-learning-for-efficie-7.md" >}})
-- [🚚🚀多目标强化学习！让卡车在高速车流中决策更高效、更智能！]({{< relref "posts/20260128-arxiv_ai-multi-objective-reinforcement-learning-for-efficie-7.md" >}})
+- [🚚🚀多目标强化学习！让卡车在高速车流中决策更高效、更智能！]({{< relref "posts/20260127-arxiv_ai-multi-objective-reinforcement-learning-for-efficie-7.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

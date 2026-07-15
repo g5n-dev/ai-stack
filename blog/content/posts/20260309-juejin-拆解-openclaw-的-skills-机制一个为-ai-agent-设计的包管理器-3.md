@@ -23,6 +23,10 @@ external_url: https://juejin.cn/post/7614884374551707683
 scenarios:
 - AI/ML项目
 - RAG应用
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # OpenClaw Skills机制：三层渐进式加载与依赖管理的AI Agent框架
@@ -192,7 +196,7 @@ OpenClaw 提供了标准化的开发工具链（CLI）来辅助发布。开发�
 ### 相关文章
 
 - [Vercel AI SDK 子代理：解决复杂 Agent 系统上下文爆炸问题]({{< relref "posts/20260213-juejin-vercel-ai-sdk-使用指南-子代理-subagents-1.md" >}})
-- [Kirara-AI：支持多平台接入的多模态聊天机器人框架]({{< relref "posts/20260130-github_trending-lss233-kirara-ai-2.md" >}})
+- [Kirara-AI：支持多平台接入的多模态聊天机器人框架]({{< relref "posts/20260127-github_trending-lss233-kirara-ai-2.md" >}})
 - [Clawra：集成 fal.ai 与 xAI Grok 实现 AI 助手固定形象自拍]({{< relref "posts/20260217-juejin-一天一个开源项目第25篇clawra-为-openclaw-赋予自拍能力的-skill-0.md" >}})
 - [OpenClaw：GitHub 增长最快的开源 AI 智能体框架]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-0.md" >}})
-- [Peter Steinberger 深度访谈：解析 GitHub 增长最快的开源 AI 代理框架 OpenCl]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-1.md" >}})
+- [Peter Steinberger 深度访谈：解析 GitHub 增长最快的开源 AI 代理框架 OpenCl]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-0.md" >}})

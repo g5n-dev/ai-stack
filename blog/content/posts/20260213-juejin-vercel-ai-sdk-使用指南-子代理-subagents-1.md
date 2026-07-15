@@ -1,14 +1,32 @@
 ---
-title: "Vercel AI SDK 子代理：解决复杂 Agent 系统上下文爆炸问题"
-date: 2026-02-13T11:27:57+08:00
+title: Vercel AI SDK 子代理：解决复杂 Agent 系统上下文爆炸问题
+date: 2026-02-13 11:27:57+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Vercel AI SDK", "AI Agent", "子代理", "上下文管理", "LLM", "Token优化", "RAG", "系统架构"]
-categories: ["AI 工程", "开发工具"]
+entry_kind: auto
+tags:
+- Vercel AI SDK
+- AI Agent
+- 子代理
+- 上下文管理
+- LLM
+- Token优化
+- RAG
+- 系统架构
+categories:
+- AI 工程
+- 开发工具
 source: juejin
-description: "以下是对该内容的总结： **核心痛点：上下文爆炸** 在构建复杂的 AI Agent 系统时，如果让主 Agent 直接处理长篇文档阅读、搜索引擎检索或代码库分析等任务，会产生海量的中间信息。这些信息会迅速消耗 Token（上下文窗口），导致成本增加、响应变慢，甚至超出模型处理限制。 **解决方案：子代理** 为解决上"
+description: 以下是对该内容的总结： **核心痛点：上下文爆炸** 在构建复杂的 AI Agent 系统时，如果让主 Agent 直接处理长篇文档阅读、搜索引擎检索或代码库分析等任务，会产生海量的中间信息。这些信息会迅速消耗
+  Token（上下文窗口），导致成本增加、响应变慢，甚至超出模型处理限制。 **解决方案：子代理** 为解决上
 external_url: https://juejin.cn/post/7606136581061509147
-scenarios: ["AI/ML项目", "大语言模型", "RAG应用"]
+scenarios:
+- AI/ML项目
+- 大语言模型
+- RAG应用
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Vercel AI SDK 子代理：解决复杂 Agent 系统上下文爆炸问题
@@ -205,9 +223,9 @@ Vercel AI SDK 的核心优势在于与 Next.js 的深度集成及流式传输。
 
 ### 相关文章
 
-- [Kirara-AI：支持多平台接入的多模态聊天机器人框架]({{< relref "posts/20260130-github_trending-lss233-kirara-ai-2.md" >}})
-- [迈向智能体系统规模化科学：工作原理与适用条件]({{< relref "posts/20260201-hacker_news-towards-a-science-of-scaling-agent-systems-when-an-13.md" >}})
-- [Context Graphs与Agent Traces：解析AI系统的上下文与追踪技术]({{< relref "posts/20260205-blogs_podcasts-ainews-context-graphs-and-agent-traces-5.md" >}})
+- [Kirara-AI：支持多平台接入的多模态聊天机器人框架]({{< relref "posts/20260127-github_trending-lss233-kirara-ai-2.md" >}})
+- [迈向智能体系统规模化科学：工作原理与适用条件]({{< relref "posts/20260201-hacker_news-towards-a-science-of-scaling-agent-systems-when-an-11.md" >}})
+- [Context Graphs与Agent Traces：解析AI系统的上下文与追踪技术]({{< relref "posts/20260204-blogs_podcasts-ainews-context-graphs-and-agent-traces-0.md" >}})
 - [基于大模型的多平台聊天机器人：支持微信飞书钉钉接入]({{< relref "posts/20260131-github_trending-zhayujie-chatgpt-on-wechat-0.md" >}})
-- [LangBot：生产级多平台智能体机器人开发平台]({{< relref "posts/20260201-github_trending-langbot-app-langbot-0.md" >}})
+- [LangBot：生产级多平台智能体机器人开发平台]({{< relref "posts/20260131-github_trending-langbot-app-langbot-7.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

@@ -20,6 +20,10 @@ description: 随着开源大模型逐渐成为行业基础设施，单纯开放�
 external_url: https://www.workshoplabs.ai/blog/open-weights-open-training
 scenarios:
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 开源权重不等同于开源训练过程

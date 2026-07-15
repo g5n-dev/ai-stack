@@ -22,6 +22,14 @@ external_url: https://si.inc/posts/fdm1
 scenarios:
 - 大语言模型
 - AI/ML项目
+aliases:
+- /posts/20260226-hacker_news-the-first-fully-general-computer-action-model-15/
+- /posts/20260226-hacker_news-the-first-fully-general-computer-action-model-16/
+- /posts/20260226-hacker_news-the-first-fully-general-computer-action-model-17/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 首个完全通用的计算机动作模型

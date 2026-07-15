@@ -1,14 +1,33 @@
 ---
-title: "全球深度调研AI代理：药物资产筛选与投资评估"
-date: 2026-02-17T22:35:47+08:00
+title: 全球深度调研AI代理：药物资产筛选与投资评估
+date: 2026-02-17 22:35:47+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI Agent", "生物医药", "资产筛选", "投资评估", "Bioptic", "多语言", "RAG", "BD"]
-categories: ["大模型", "产品与创业"]
+entry_kind: auto
+tags:
+- AI Agent
+- 生物医药
+- 资产筛选
+- 投资评估
+- Bioptic
+- 多语言
+- RAG
+- BD
+categories:
+- 大模型
+- 产品与创业
 source: arxiv
-description: "本文介绍了一种名为**Bioptic Agent**的AI智能体，旨在解决生物医药领域全球资产搜寻（Asset Scouting）的挑战。以下是内容的简洁总结： **1. 背景与痛点：** 生物医药创新的源头已发生转移，超过85%的专利申请来自美国以外，其中中国占据了全球近一半的专利总量和约30%的新药研发管线。然而，"
+description: 本文介绍了一种名为**Bioptic Agent**的AI智能体，旨在解决生物医药领域全球资产搜寻（Asset Scouting）的挑战。以下是内容的简洁总结：
+  **1. 背景与痛点：** 生物医药创新的源头已发生转移，超过85%的专利申请来自美国以外，其中中国占据了全球近一半的专利总量和约30%的新药研发管线。然而，
 external_url: http://arxiv.org/abs/2602.15019v1
-scenarios: ["AI/ML项目", "RAG应用"]
+scenarios:
+- AI/ML项目
+- RAG应用
+aliases:
+- /posts/20260218-arxiv_ai-hunt-globally-deep-research-ai-agents-for-drug-ass-4/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 全球深度调研AI代理：药物资产筛选与投资评估
@@ -424,9 +443,9 @@ Bioptic Agent 的设计参考了认知心理学中的**“系统2”思维**理�
 
 ### 相关文章
 
-- [LinqAlpha利用Amazon Bedrock构建投资论点压力测试AI]({{< relref "posts/20260212-blogs_podcasts-how-linqalpha-assesses-investment-theses-using-dev-4.md" >}})
+- [LinqAlpha利用Amazon Bedrock构建投资论点压力测试AI]({{< relref "posts/20260211-blogs_podcasts-how-linqalpha-assesses-investment-theses-using-dev-3.md" >}})
 - [Deep Researcher：序列规划反思与候选交叉]({{< relref "posts/20260129-arxiv_ai-deep-researcher-with-sequential-plan-reflection-an-9.md" >}})
-- [Amazon Bedrock AgentCore 浏览器更新：新增代理、配置文件及扩展支持]({{< relref "posts/20260214-blogs_podcasts-customize-ai-agent-browsing-with-proxies-profiles--1.md" >}})
-- [Kirara-AI：支持多平台接入的多模态聊天机器人框架]({{< relref "posts/20260130-github_trending-lss233-kirara-ai-2.md" >}})
+- [Amazon Bedrock AgentCore 浏览器更新：新增代理、配置文件及扩展支持]({{< relref "posts/20260213-blogs_podcasts-customize-ai-agent-browsing-with-proxies-profiles--0.md" >}})
+- [Kirara-AI：支持多平台接入的多模态聊天机器人框架]({{< relref "posts/20260127-github_trending-lss233-kirara-ai-2.md" >}})
 - [Vercel AI SDK 子代理：解决复杂 Agent 系统上下文爆炸问题]({{< relref "posts/20260213-juejin-vercel-ai-sdk-使用指南-子代理-subagents-1.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

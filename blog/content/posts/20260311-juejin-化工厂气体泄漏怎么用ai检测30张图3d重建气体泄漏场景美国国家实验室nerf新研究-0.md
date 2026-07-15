@@ -21,6 +21,10 @@ description: 以下是对该内容的中文总结： **核心研究：利用AI�
 external_url: https://juejin.cn/post/7615484384252624911
 scenarios:
 - Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 美国国家实验室：30张图3D重建化工厂气体泄漏
@@ -182,8 +186,8 @@ NeRF（Neural Radiance Fields，神经辐射场）是一种利用深度学习来
 
 ### 相关文章
 
-- [神经渲染技术探索与应用实践]({{< relref "posts/20260214-hacker_news-adventures-in-neural-rendering-11.md" >}})
-- [DeepMind与伯克利提出LoGeR：实现超长视频3D重建]({{< relref "posts/20260310-hacker_news-loger-3d-reconstruction-from-extremely-long-videos-13.md" >}})
+- [神经渲染技术探索与应用实践]({{< relref "posts/20260214-hacker_news-adventures-in-neural-rendering-6.md" >}})
+- [DeepMind与伯克利提出LoGeR：实现超长视频3D重建]({{< relref "posts/20260310-hacker_news-loger-3d-reconstruction-from-extremely-long-videos-14.md" >}})
 - [DeepMind与伯克利提出LoGeR：实现超长视频3D重建]({{< relref "posts/20260310-hacker_news-loger-3d-reconstruction-from-extremely-long-videos-14.md" >}})
 - [神经渲染技术探索：从原理到应用实践]({{< relref "posts/20260214-hacker_news-adventures-in-neural-rendering-6.md" >}})
-- [神经渲染技术探索与应用实践]({{< relref "posts/20260214-hacker_news-adventures-in-neural-rendering-7.md" >}})
+- [神经渲染技术探索与应用实践]({{< relref "posts/20260214-hacker_news-adventures-in-neural-rendering-6.md" >}})

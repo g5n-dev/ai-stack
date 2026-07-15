@@ -1,14 +1,30 @@
 ---
-title: "GPT-5在法律推理实验中表现优于联邦法官"
-date: 2026-02-12T05:30:02+08:00
+title: GPT-5在法律推理实验中表现优于联邦法官
+date: 2026-02-12 05:30:02+08:00
 draft: false
-entry_kind: "auto"
-tags: ["GPT-5", "法律推理", "联邦法官", "LLM", "AI评测", "Benchmark", "专业领域", "实验结果"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- GPT-5
+- 法律推理
+- 联邦法官
+- LLM
+- AI评测
+- Benchmark
+- 专业领域
+- 实验结果
+categories:
+- 大模型
+- 论文
 source: hacker_news
-description: "在近期的一项法律推理实验中，GPT-5 展现出了优于联邦法官的逻辑分析能力，这一结果引发了法律界对人工智能在复杂司法场景中应用潜力的重新审视。随着大模型在处理非结构化文本与逻辑推演方面的持续突破，技术介入司法流程已不再是单纯的设想，而是正在发生的现实。本文将详细拆解此次实验的设计与数据，分析模型在具体案例中的推理路径，"
+description: 在近期的一项法律推理实验中，GPT-5 展现出了优于联邦法官的逻辑分析能力，这一结果引发了法律界对人工智能在复杂司法场景中应用潜力的重新审视。随着大模型在处理非结构化文本与逻辑推演方面的持续突破，技术介入司法流程已不再是单纯的设想，而是正在发生的现实。本文将详细拆解此次实验的设计与数据，分析模型在具体案例中的推理路径，
 external_url: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6155012
-scenarios: ["大语言模型", "AI/ML项目"]
+scenarios:
+- 大语言模型
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # GPT-5在法律推理实验中表现优于联邦法官
@@ -368,9 +384,9 @@ LexisNexis 推出了 Lexis+ AI，这是一个集成了生成式 AI 的法律检�
 
 ### 相关文章
 
-- [OpenAI 内部数据代理：结合 GPT-5 与记忆机制实现分钟级数据洞察]({{< relref "posts/20260130-blogs_podcasts-inside-openais-in-house-data-agent-1.md" >}})
-- [AI 基准测试新进展：Game Arena 推进评估方法]({{< relref "posts/20260203-hacker_news-advancing-ai-benchmarking-with-game-arena-14.md" >}})
+- [OpenAI 内部数据代理：结合 GPT-5 与记忆机制实现分钟级数据洞察]({{< relref "posts/20260129-hacker_news-openais-in-house-data-agent-14.md" >}})
+- [AI 基准测试新进展：Game Arena 推进评估方法]({{< relref "posts/20260202-hacker_news-advancing-ai-benchmarking-with-game-arena-2.md" >}})
 - [Agent Skills：大模型智能体的技能评估框架]({{< relref "posts/20260203-hacker_news-agent-skills-0.md" >}})
 - [构建AI版Wattpad以评估大模型小说创作能力]({{< relref "posts/20260203-hacker_news-show-hn-i-built-ai-wattpad-to-eval-llms-on-fiction-19.md" >}})
-- [Agent Skills：AI 智能体技能评估框架]({{< relref "posts/20260204-hacker_news-agent-skills-11.md" >}})
+- [Agent Skills：AI 智能体技能评估框架]({{< relref "posts/20260203-hacker_news-agent-skills-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

@@ -1,14 +1,30 @@
 ---
-title: "大语言模型中角色作为潜变量：机制视角下的错位与安全失效"
-date: 2026-02-02T02:57:13+08:00
+title: 大语言模型中角色作为潜变量：机制视角下的错位与安全失效
+date: 2026-02-02 02:57:13+08:00
 draft: false
-entry_kind: "auto"
-tags: ["LLM", "对齐", "角色扮演", "越狱", "安全失效", "微调", "机制可解释性", "后门攻击"]
-categories: ["大模型", "安全"]
+entry_kind: auto
+tags:
+- LLM
+- 对齐
+- 角色扮演
+- 越狱
+- 安全失效
+- 微调
+- 机制可解释性
+- 后门攻击
+categories:
+- 大模型
+- 安全
 source: arxiv
-description: "以下是该内容的中文总结： 这项研究探讨了大型语言模型（LLM）中**以“性格”为潜在变量的机制**，旨在解释**突发性错位**及**条件性安全失效**的现象。 **核心发现：** 1. **对现有观点的修正：** 传统观点认为，在狭窄数据上微调模型导致的“突发性错位”，主要是因为错误或不安全内容的泛化。本研究指出这一观"
+description: 以下是该内容的中文总结： 这项研究探讨了大型语言模型（LLM）中**以“性格”为潜在变量的机制**，旨在解释**突发性错位**及**条件性安全失效**的现象。
+  **核心发现：** 1. **对现有观点的修正：** 传统观点认为，在狭窄数据上微调模型导致的“突发性错位”，主要是因为错误或不安全内容的泛化。本研究指出这一观
 external_url: http://arxiv.org/abs/2601.23081v1
-scenarios: ["大语言模型"]
+scenarios:
+- 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 大语言模型中角色作为潜变量：机制视角下的错位与安全失效
@@ -502,9 +518,9 @@ scenarios: ["大语言模型"]
 
 ### 相关文章
 
-- [💥MortalMATH：当推理目标遇上紧急场景，AI会“翻车”吗？]({{< relref "posts/20260128-arxiv_ai-mortalmath-evaluating-the-conflict-between-reasoni-4.md" >}})
+- [💥MortalMATH：当推理目标遇上紧急场景，AI会“翻车”吗？]({{< relref "posts/20260127-arxiv_ai-mortalmath-evaluating-the-conflict-between-reasoni-4.md" >}})
 - [CATTO：平衡语言模型偏好与置信度的方法]({{< relref "posts/20260202-arxiv_ai-catto-balancing-preferences-and-confidence-in-lang-0.md" >}})
 - [🔥Model Market Fit！PMF的终极解法？你的模型真的适配市场吗？]({{< relref "posts/20260127-hacker_news-model-market-fit-16.md" >}})
 - [RedSage：网络安全通用大模型]({{< relref "posts/20260130-arxiv_ai-redsage-a-cybersecurity-generalist-llm-0.md" >}})
-- [RedSage：网络安全通用大语言模型]({{< relref "posts/20260131-arxiv_ai-redsage-a-cybersecurity-generalist-llm-0.md" >}})
+- [RedSage：网络安全通用大语言模型]({{< relref "posts/20260130-arxiv_ai-redsage-a-cybersecurity-generalist-llm-0.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

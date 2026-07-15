@@ -23,6 +23,10 @@ scenarios:
 - AI/ML项目
 - 大语言模型
 - 命令行工具
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # wechat-devtools-mcp：基于官方库的微信小程序自动化方案
@@ -198,8 +202,8 @@ wechat-devtools-mcp 是一款专为微信小程序打造的 MCP 服务。它基�
 
 ### 相关文章
 
-- [构建极简且具倾向性的编程代理的经验总结]({{< relref "posts/20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-3.md" >}})
-- [构建极简编程代理的技术实践与经验总结]({{< relref "posts/20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-6.md" >}})
-- [Smooth CLI：面向 AI 智能体的低 Token 开销浏览器]({{< relref "posts/20260206-hacker_news-show-hn-smooth-cli-token-efficient-browser-for-ai--14.md" >}})
+- [构建极简且具倾向性的编程代理的经验总结]({{< relref "posts/20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-1.md" >}})
+- [构建极简编程代理的技术实践与经验总结]({{< relref "posts/20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-1.md" >}})
+- [Smooth CLI：面向 AI 智能体的低 Token 开销浏览器]({{< relref "posts/20260206-hacker_news-show-hn-smooth-cli-token-efficient-browser-for-ai--11.md" >}})
 - [Zuckerman：极简个人AI代理，具备代码自编辑能力]({{< relref "posts/20260201-hacker_news-show-hn-zuckerman-minimalist-personal-ai-agent-tha-12.md" >}})
-- [构建极简且固执的编程代理的经验总结]({{< relref "posts/20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-10.md" >}})
+- [构建极简且固执的编程代理的经验总结]({{< relref "posts/20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-1.md" >}})

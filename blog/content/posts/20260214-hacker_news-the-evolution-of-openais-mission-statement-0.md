@@ -1,14 +1,30 @@
 ---
-title: "OpenAI 使命声明演变：从通用人工智能到造福人类"
-date: 2026-02-14T00:52:22+08:00
+title: OpenAI 使命声明演变：从通用人工智能到造福人类
+date: 2026-02-14 00:52:22+08:00
 draft: false
-entry_kind: "auto"
-tags: ["OpenAI", "使命声明", "AGI", "通用人工智能", "公司战略", "AI安全", "非营利组织", "SamAltman"]
-categories: ["大模型", "产品与创业"]
+entry_kind: auto
+tags:
+- OpenAI
+- 使命声明
+- AGI
+- 通用人工智能
+- 公司战略
+- AI 安全
+- 非营利组织
+- SamAltman
+categories:
+- 大模型
+- 产品与创业
 source: hacker_news
-description: "OpenAI 的使命陈述从“造福全人类”演变为“创造通用人工智能”，折射出其战略重心与价值观的显著转变。这一变化不仅关乎一家公司的定位，更直接影响着整个 AI 行业对技术安全与商业化的平衡。本文将梳理其使命陈述的关键演变节点，并分析背后的深层逻辑，帮助读者理解 OpenAI 在行业竞争加剧背景下的核心选择。"
+description: OpenAI 的使命陈述从“造福全人类”演变为“创造通用人工智能”，折射出其战略重心与价值观的显著转变。这一变化不仅关乎一家公司的定位，更直接影响着整个
+  AI 行业对技术安全与商业化的平衡。本文将梳理其使命陈述的关键演变节点，并分析背后的深层逻辑，帮助读者理解 OpenAI 在行业竞争加剧背景下的核心选择。
 external_url: https://simonwillison.net/2026/Feb/13/openai-mission-statement
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # OpenAI 使命声明演变：从通用人工智能到造福人类
@@ -380,9 +396,9 @@ Duolingo 利用 OpenAI 的 GPT-4 模型推出了两个核心功能：**Roleplay*
 
 ### 相关文章
 
-- [Sam Altman 全员大会复盘与 AI Combinator 解析]({{< relref "posts/20260129-blogs_podcasts-ainews-sam-altmans-ai-combinator-2.md" >}})
-- [Sam Altman在市政厅会议发言回顾]({{< relref "posts/20260131-blogs_podcasts-ainews-sam-altmans-ai-combinator-4.md" >}})
-- [Sam Altman全员大会讲话要点与AI孵化器计划]({{< relref "posts/20260201-blogs_podcasts-ainews-sam-altmans-ai-combinator-4.md" >}})
-- [Sam Altman内部会复盘：OpenAI战略与AI孵化器走向]({{< relref "posts/20260202-blogs_podcasts-ainews-sam-altmans-ai-combinator-5.md" >}})
-- [Sam Altman全员大会讲话回顾：AI Combinator与未来方向]({{< relref "posts/20260202-blogs_podcasts-ainews-sam-altmans-ai-combinator-6.md" >}})
+- [Sam Altman 全员大会复盘与 AI Combinator 解析]({{< relref "posts/20260129-blogs_podcasts-ainews-sam-altmans-ai-combinator-0.md" >}})
+- [Sam Altman在市政厅会议发言回顾]({{< relref "posts/20260129-blogs_podcasts-ainews-sam-altmans-ai-combinator-0.md" >}})
+- [Sam Altman全员大会讲话要点与AI孵化器计划]({{< relref "posts/20260129-blogs_podcasts-ainews-sam-altmans-ai-combinator-0.md" >}})
+- [Sam Altman内部会复盘：OpenAI战略与AI孵化器走向]({{< relref "posts/20260129-blogs_podcasts-ainews-sam-altmans-ai-combinator-0.md" >}})
+- [Sam Altman全员大会讲话回顾：AI Combinator与未来方向]({{< relref "posts/20260129-blogs_podcasts-ainews-sam-altmans-ai-combinator-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

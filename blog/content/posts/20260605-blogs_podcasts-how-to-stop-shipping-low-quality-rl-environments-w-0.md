@@ -1,14 +1,28 @@
 ---
-title: "RL环境质量提升：训练曲线暴露的常见问题与修复方法"
-date: 2026-06-05T21:52:00+08:00
+title: RL环境质量提升：训练曲线暴露的常见问题与修复方法
+date: 2026-06-05 21:52:00+08:00
 draft: false
-entry_kind: "auto"
-tags: ["强化学习", "训练环境", "质量控制", "问题排查", "训练曲线", "测试框架", "AI工程", "机器学习"]
-categories: ["效率与方法论"]
+entry_kind: auto
+tags:
+- 强化学习
+- 训练环境
+- 质量控制
+- 问题排查
+- 训练曲线
+- 测试框架
+- AI 工程
+- 机器学习
+categories:
+- 效率与方法论
 source: blogs_podcasts
-description: "在强化学习项目中，环境质量直接决定了模型的收敛速度和最终表现。如果训练环境存在噪声、奖励信号不一致或观测空间设计缺陷，模型往往会出现退化甚至无法学习。本文梳理了多年观察训练曲线时反复出现的几类典型问题，并提供针对性的检测与修复方法，帮助你在上线前把环境质量提升到可靠水平。"
+description: 在强化学习项目中，环境质量直接决定了模型的收敛速度和最终表现。如果训练环境存在噪声、奖励信号不一致或观测空间设计缺陷，模型往往会出现退化甚至无法学习。本文梳理了多年观察训练曲线时反复出现的几类典型问题，并提供针对性的检测与修复方法，帮助你在上线前把环境质量提升到可靠水平。
 external_url: https://www.latent.space/p/bad-envs
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # RL环境质量提升：训练曲线暴露的常见问题与修复方法
@@ -82,9 +96,9 @@ scenarios: ["AI/ML项目"]
 
 ### 相关文章
 
-- [DARE-bench：评估大模型数据科学建模与指令保真度]({{< relref "posts/20260303-arxiv_ai-dare-bench-evaluating-modeling-and-instruction-fid-1.md" >}})
-- [基于16个开源RL库的Token流生成经验总结]({{< relref "posts/20260310-blogs_podcasts-keep-the-tokens-flowing-lessons-from-16-open-sourc-7.md" >}})
-- [自蒸馏方法提升代码生成效率]({{< relref "posts/20260404-hacker_news-simple-self-distillation-improves-code-generation-0.md" >}})
+- [DARE-bench：评估大模型数据科学建模与指令保真度]({{< relref "posts/20260302-arxiv_ai-dare-bench-evaluating-modeling-and-instruction-fid-1.md" >}})
+- [基于16个开源RL库的Token流生成经验总结]({{< relref "posts/20260310-blogs_podcasts-keep-the-tokens-flowing-lessons-from-16-open-sourc-2.md" >}})
+- [自蒸馏方法提升代码生成效率]({{< relref "posts/20260404-hacker_news-apple-embarrassingly-simple-self-distillation-impr-0.md" >}})
 - [SkillOpt：自进化智能体技能的优化策略]({{< relref "posts/20260525-arxiv_ai-skillopt-executive-strategy-for-self-evolving-agen-0.md" >}})
-- [通过文本反馈扩展强化学习的能力边界]({{< relref "posts/20260204-arxiv_ai-expanding-the-capabilities-of-reinforcement-learni-5.md" >}})
+- [通过文本反馈扩展强化学习的能力边界]({{< relref "posts/20260203-arxiv_ai-expanding-the-capabilities-of-reinforcement-learni-5.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

@@ -21,6 +21,14 @@ description: 以下是关于 **RoboPocket** 的中文总结： **RoboPocket** �
 external_url: http://arxiv.org/abs/2603.05504v1
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260307-arxiv_ai-robopocket-improve-robot-policies-instantly-with-y-0/
+- /posts/20260308-arxiv_ai-robopocket-improve-robot-policies-instantly-with-y-0/
+- /posts/20260309-arxiv_ai-robopocket-improve-robot-policies-instantly-with-y-0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # RoboPocket：利用手机即时优化机器人策略
@@ -440,6 +448,6 @@ RoboPocket 特别适合那些可以通过第一人称视觉远程操作完成的
 
 - [仿真筛选模块化策略：从人类视频学习有效行为]({{< relref "posts/20260216-arxiv_ai-imitating-what-works-simulation-filtered-modular-p-0.md" >}})
 - [BPP：聚焦关键历史帧的长上下文机器人模仿学习]({{< relref "posts/20260217-arxiv_ai-bpp-long-context-robot-imitation-learning-by-focus-8.md" >}})
-- [基于仿真过滤的模块化策略从人类视频学习有效行为]({{< relref "posts/20260217-arxiv_ai-imitating-what-works-simulation-filtered-modular-p-0.md" >}})
-- [BPP：聚焦关键历史帧的长上下文机器人模仿学习]({{< relref "posts/20260218-arxiv_ai-bpp-long-context-robot-imitation-learning-by-focus-8.md" >}})
+- [基于仿真过滤的模块化策略从人类视频学习有效行为]({{< relref "posts/20260216-arxiv_ai-imitating-what-works-simulation-filtered-modular-p-0.md" >}})
+- [BPP：聚焦关键历史帧的长上下文机器人模仿学习]({{< relref "posts/20260217-arxiv_ai-bpp-long-context-robot-imitation-learning-by-focus-8.md" >}})
 - [Squint：面向机器人具身迁移的快速视觉强化学习]({{< relref "posts/20260225-arxiv_ai-squint-fast-visual-reinforcement-learning-for-sim--1.md" >}})

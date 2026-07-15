@@ -1,14 +1,29 @@
 ---
-title: "Claude Code 账户登录锁定问题持续数小时"
-date: 2026-04-07T15:28:00+08:00
+title: Claude Code 账户登录锁定问题持续数小时
+date: 2026-04-07 15:28:00+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Claude Code", "登录锁定", "账户问题", "开发者工具", "Bug", "AI编程", "长时间故障", "用户体验"]
-categories: ["开发工具", "产品与创业"]
+entry_kind: auto
+tags:
+- Claude Code
+- 登录锁定
+- 账户问题
+- 开发者工具
+- Bug
+- AI 编程
+- 长时间故障
+- 用户体验
+categories:
+- 开发工具
+- 产品与创业
 source: hacker_news
-description: "Claude Code 是 Anthropic 推出的 AI 编程助手，近日大量用户反馈在执行关键任务时账户被强制登出，导致数小时的工作被迫中断。该问题主要出现在批量代码生成和长时间会话场景，官方已确认是后端令牌刷新机制的缺陷。为帮助受影响用户快速恢复工作，本文梳理了故障触发条件、临时规避措施以及官方后续修复时间线，并"
+description: Claude Code 是 Anthropic 推出的 AI 编程助手，近日大量用户反馈在执行关键任务时账户被强制登出，导致数小时的工作被迫中断。该问题主要出现在批量代码生成和长时间会话场景，官方已确认是后端令牌刷新机制的缺陷。为帮助受影响用户快速恢复工作，本文梳理了故障触发条件、临时规避措施以及官方后续修复时间线，并
 external_url: https://github.com/anthropics/claude-code/issues/44257
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Claude Code 账户登录锁定问题持续数小时
@@ -79,8 +94,8 @@ Claude Code 近期出现数小时登录锁定，凸显其可用性不足和危�
 ### 相关文章
 
 - [Claude Code Is Being Dumbed Down]({{< relref "posts/20260211-hacker_news-claude-code-is-being-dumbed-down-1.md" >}})
-- [Claude Code：面向开发者的AI编程代理]({{< relref "posts/20260131-hacker_news-claude-code-is-your-customer-7.md" >}})
+- [Claude Code：面向开发者的AI编程代理]({{< relref "posts/20260131-hacker_news-claude-code-is-your-customer-16.md" >}})
 - [Claude Code 全面集成至微软内部开发工作流]({{< relref "posts/20260202-hacker_news-claude-code-is-suddenly-everywhere-inside-microsof-2.md" >}})
-- [Claude Code 全面接入微软开发环境]({{< relref "posts/20260202-hacker_news-claude-code-is-suddenly-everywhere-inside-microsof-7.md" >}})
-- [编程助手正在解决错误的问题]({{< relref "posts/20260203-hacker_news-coding-assistants-are-solving-the-wrong-problem-12.md" >}})
+- [Claude Code 全面接入微软开发环境]({{< relref "posts/20260202-hacker_news-claude-code-is-suddenly-everywhere-inside-microsof-2.md" >}})
+- [编程助手正在解决错误的问题]({{< relref "posts/20260203-hacker_news-coding-assistants-are-solving-the-wrong-problem-3.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

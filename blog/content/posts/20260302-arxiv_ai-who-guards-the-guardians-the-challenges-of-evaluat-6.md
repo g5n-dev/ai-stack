@@ -21,6 +21,12 @@ description: 以下是对该内容的中文总结： 本文探讨了表征学习
 external_url: http://arxiv.org/abs/2602.24278v1
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260303-arxiv_ai-who-guards-the-guardians-the-challenges-of-evaluat-6/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 评估学习表征可识别性的挑战与难点
@@ -413,8 +419,8 @@ scenarios:
 
 ### 相关文章
 
-- [Learning on the Manifold: Unlocking Standard Diffusion]({{< relref "posts/20260212-arxiv_ai-learning-on-the-manifold-unlocking-standard-diffus-3.md" >}})
+- [Learning on the Manifold: Unlocking Standard Diffusion]({{< relref "posts/20260211-arxiv_ai-learning-on-the-manifold-unlocking-standard-diffus-3.md" >}})
 - [以对象为中心的表征在组合泛化任务中的表现评估]({{< relref "posts/20260219-arxiv_ai-are-object-centric-representations-better-at-compo-9.md" >}})
-- [SOTAlign：基于最优传输的单模态视觉与语言模型半监督对齐]({{< relref "posts/20260228-arxiv_ai-sotalign-semi-supervised-alignment-of-unimodal-vis-3.md" >}})
+- [SOTAlign：基于最优传输的单模态视觉与语言模型半监督对齐]({{< relref "posts/20260227-arxiv_ai-sotalign-semi-supervised-alignment-of-unimodal-vis-3.md" >}})
 - [超越预测不确定性！🚀结构约束下的可靠表征学习！🔥]({{< relref "posts/20260125-arxiv_ai-beyond-predictive-uncertainty-reliable-representat-7.md" >}})
-- [从上下文学习比预期更难]({{< relref "posts/20260206-hacker_news-learning-from-context-is-harder-than-we-thought-4.md" >}})
+- [从上下文学习比预期更难]({{< relref "posts/20260206-hacker_news-learning-from-context-is-harder-than-we-thought-6.md" >}})

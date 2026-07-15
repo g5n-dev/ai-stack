@@ -1,14 +1,29 @@
 ---
-title: "Google DeepMind与韩国合作 探索AI科研新方向"
-date: 2026-04-27T11:27:45+08:00
+title: Google DeepMind与韩国合作 探索AI科研新方向
+date: 2026-04-27 11:27:45+08:00
 draft: false
-entry_kind: "auto"
-tags: ["DeepMind", "韩国合作", "AI科研", "前沿模型", "科学突破", "跨国合作", "大模型", "AI模型"]
-categories: ["大模型"]
+entry_kind: auto
+tags:
+- DeepMind
+- 韩国合作
+- AI科研
+- 前沿模型
+- 科学突破
+- 跨国合作
+- 大模型
+- AI 模型
+categories:
+- 大模型
 source: blogs_podcasts
-description: "Google DeepMind 与韩国政府、科研机构及高校正式建立合作伙伴关系，聚焦利用前沿 AI 大模型加速韩国的科学突破。双方将在基础研究、应用技术、人才培养和平台建设等方面开展深度合作，重点覆盖气候预测、医学诊断、材料科学等关键领域。合作内容包括共建 AI 研发实验室、共享数据资源、开展联合项目以及培养本土 AI"
+description: Google DeepMind 与韩国政府、科研机构及高校正式建立合作伙伴关系，聚焦利用前沿 AI 大模型加速韩国的科学突破。双方将在基础研究、应用技术、人才培养和平台建设等方面开展深度合作，重点覆盖气候预测、医学诊断、材料科学等关键领域。合作内容包括共建
+  AI 研发实验室、共享数据资源、开展联合项目以及培养本土 AI
 external_url: https://deepmind.google/blog/announcing-our-partnership-with-the-republic-of-korea
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Google DeepMind与韩国合作 探索AI科研新方向
@@ -151,8 +166,8 @@ Google DeepMind 与韩国政府、科研机构及高校正式建立合作伙伴�
 ### 相关文章
 
 - [MSL发布Muse Spark首个全新架构前沿模型]({{< relref "posts/20260408-blogs_podcasts-ainews-meta-superintelligence-labs-announces-muse--0.md" >}})
-- [Meta发布Muse Spark，首个基于全新栈的前沿模型]({{< relref "posts/20260409-blogs_podcasts-ainews-meta-superintelligence-labs-announces-muse--0.md" >}})
+- [Meta发布Muse Spark，首个基于全新栈的前沿模型]({{< relref "posts/20260408-blogs_podcasts-ainews-meta-superintelligence-labs-announces-muse--0.md" >}})
 - [推出全球首个专注科学的人工智能播客及工程师关注理由]({{< relref "posts/20260129-blogs_podcasts-its-time-to-science-0.md" >}})
-- [OpenAI 将在 ChatGPT 中停用 GPT-4o 等四款模型]({{< relref "posts/20260130-hacker_news-retiring-gpt-4o-gpt-41-gpt-41-mini-and-openai-o4-m-15.md" >}})
-- [OpenAI将于2026年2月退役GPT-4o等四款模型]({{< relref "posts/20260131-blogs_podcasts-retiring-gpt-4o-gpt-41-gpt-41-mini-and-openai-o4-m-5.md" >}})
+- [OpenAI 将在 ChatGPT 中停用 GPT-4o 等四款模型]({{< relref "posts/20260129-hacker_news-retiring-gpt-4o-gpt-41-gpt-41-mini-and-openai-o4-m-2.md" >}})
+- [OpenAI将于2026年2月退役GPT-4o等四款模型]({{< relref "posts/20260129-hacker_news-retiring-gpt-4o-gpt-41-gpt-41-mini-and-openai-o4-m-2.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

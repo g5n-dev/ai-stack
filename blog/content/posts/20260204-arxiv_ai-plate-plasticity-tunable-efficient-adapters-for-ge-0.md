@@ -1,14 +1,32 @@
 ---
-title: "PLATE：面向几何感知持续学习的可塑性调谐高效适配器"
-date: 2026-02-04T23:12:07+08:00
+title: PLATE：面向几何感知持续学习的可塑性调谐高效适配器
+date: 2026-02-04 23:12:07+08:00
 draft: false
-entry_kind: "auto"
-tags: ["持续学习", "PLATE", "高效适配器", "几何感知", "灾难性遗忘", "预训练模型", "参数高效微调", "cs.LG"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- 持续学习
+- PLATE
+- 高效适配器
+- 几何感知
+- 灾难性遗忘
+- 预训练模型
+- 参数高效微调
+- cs.LG
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "**PLATE：无需旧数据的高效几何感知持续学习方法** **背景与问题** PLATE（Plasticity-Tunable Efficient Adapters）是一种针对预训练模型的持续学习方法，旨在解决基础模型适配中的一个实际痛点：**无需访问旧任务数据**。在现实场景中，预训练数据的分布往往不可用，这使得传统"
+description: '**PLATE：无需旧数据的高效几何感知持续学习方法** **背景与问题** PLATE（Plasticity-Tunable Efficient
+  Adapters）是一种针对预训练模型的持续学习方法，旨在解决基础模型适配中的一个实际痛点：**无需访问旧任务数据**。在现实场景中，预训练数据的分布往往不可用，这使得传统'
 external_url: http://arxiv.org/abs/2602.03846v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+aliases:
+- /posts/20260205-arxiv_ai-plate-plasticity-tunable-efficient-adapters-for-ge-0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # PLATE：面向几何感知持续学习的可塑性调谐高效适配器
@@ -494,6 +512,6 @@ PLATE属于**Method-driven**的创新。它并没有提出全新的学习范式�
 - [✨告别遗忘！Self-Distillation解锁持续学习新范式！]({{< relref "posts/20260128-arxiv_ai-self-distillation-enables-continual-learning-1.md" >}})
 - [进化策略导致大语言模型出现灾难性遗忘]({{< relref "posts/20260129-arxiv_ai-evolutionary-strategies-lead-to-catastrophic-forge-0.md" >}})
 - [C3Box：基于CLIP的类增量学习工具箱]({{< relref "posts/20260129-arxiv_ai-c3box-a-clip-based-class-incremental-learning-tool-4.md" >}})
-- [进化策略导致大语言模型出现灾难性遗忘]({{< relref "posts/20260130-arxiv_ai-evolutionary-strategies-lead-to-catastrophic-forge-0.md" >}})
-- [C3Box：基于CLIP的类增量学习工具箱]({{< relref "posts/20260130-arxiv_ai-c3box-a-clip-based-class-incremental-learning-tool-4.md" >}})
+- [进化策略导致大语言模型出现灾难性遗忘]({{< relref "posts/20260129-arxiv_ai-evolutionary-strategies-lead-to-catastrophic-forge-0.md" >}})
+- [C3Box：基于CLIP的类增量学习工具箱]({{< relref "posts/20260129-arxiv_ai-c3box-a-clip-based-class-incremental-learning-tool-4.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

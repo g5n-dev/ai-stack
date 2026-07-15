@@ -21,6 +21,20 @@ description: 本文介绍了如何在 Amazon SageMaker AI 和 Amazon Bedrock 上
 external_url: https://aws.amazon.com/blogs/machine-learning/efficiently-serve-dozens-of-fine-tuned-models-with-vllm-on-amazon-sagemaker-ai-and-amazon-bedrock
 scenarios:
 - 大语言模型
+aliases:
+- /posts/20260226-blogs_podcasts-efficiently-serve-dozens-of-fine-tuned-models-with-1/
+- /posts/20260226-blogs_podcasts-efficiently-serve-dozens-of-fine-tuned-models-with-11/
+- /posts/20260226-blogs_podcasts-efficiently-serve-dozens-of-fine-tuned-models-with-12/
+- /posts/20260226-blogs_podcasts-efficiently-serve-dozens-of-fine-tuned-models-with-13/
+- /posts/20260226-blogs_podcasts-efficiently-serve-dozens-of-fine-tuned-models-with-2/
+- /posts/20260226-blogs_podcasts-efficiently-serve-dozens-of-fine-tuned-models-with-3/
+- /posts/20260226-blogs_podcasts-efficiently-serve-dozens-of-fine-tuned-models-with-4/
+- /posts/20260226-blogs_podcasts-efficiently-serve-dozens-of-fine-tuned-models-with-7/
+- /posts/20260227-blogs_podcasts-efficiently-serve-dozens-of-fine-tuned-models-with-14/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 在 SageMaker AI 与 Bedrock 上利用 vLLM 高效部署多 LoRA 模型
@@ -321,8 +335,8 @@ vLLM 能够利用张量并行将模型分布到多个 GPU 上以处理更大的�
 
 ### 相关文章
 
-- [NVIDIA Nemotron 3 Nano 30B 模型现已在 Amazon SageMaker JumpS]({{< relref "posts/20260212-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-2.md" >}})
-- [NVIDIA Nemotron 3 Nano 30B 现已登陆 Amazon SageMaker JumpSt]({{< relref "posts/20260212-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-4.md" >}})
-- [NVIDIA Nemotron 3 Nano 30B 现已在 Amazon SageMaker JumpSta]({{< relref "posts/20260212-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-6.md" >}})
-- [NVIDIA Nemotron 3 Nano 30B 模型现已在 Amazon SageMaker JumpS]({{< relref "posts/20260213-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-12.md" >}})
-- [NVIDIA Nemotron 3 Nano 30B 现已登陆 Amazon SageMaker JumpSt]({{< relref "posts/20260212-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-0.md" >}})
+- [NVIDIA Nemotron 3 Nano 30B 模型现已在 Amazon SageMaker JumpS]({{< relref "posts/20260211-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-0.md" >}})
+- [NVIDIA Nemotron 3 Nano 30B 现已登陆 Amazon SageMaker JumpSt]({{< relref "posts/20260211-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-0.md" >}})
+- [NVIDIA Nemotron 3 Nano 30B 现已在 Amazon SageMaker JumpSta]({{< relref "posts/20260211-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-0.md" >}})
+- [NVIDIA Nemotron 3 Nano 30B 模型现已在 Amazon SageMaker JumpS]({{< relref "posts/20260211-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-0.md" >}})
+- [NVIDIA Nemotron 3 Nano 30B 现已登陆 Amazon SageMaker JumpSt]({{< relref "posts/20260211-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-0.md" >}})

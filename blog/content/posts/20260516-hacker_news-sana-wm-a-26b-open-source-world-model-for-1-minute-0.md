@@ -1,14 +1,29 @@
 ---
-title: "SANA-WM开源世界模型：26亿参数生成1分钟720p视频"
-date: 2026-05-16T16:17:32+08:00
+title: SANA-WM开源世界模型：26亿参数生成1分钟720p视频
+date: 2026-05-16 16:17:32+08:00
 draft: false
-entry_kind: "auto"
-tags: ["SANA-WM", "开源", "视频生成", "世界模型", "文生视频", "生成式AI", "720p", "大模型"]
-categories: ["大模型", "开源生态"]
+entry_kind: auto
+tags:
+- SANA-WM
+- 开源
+- 视频生成
+- 世界模型
+- 文生视频
+- 生成式 AI
+- 720p
+- 大模型
+categories:
+- 大模型
+- 开源生态
 source: hacker_news
-description: "SANA-WM 是一款参数规模为 2.6B 的开源世界模型，能够在单次推理中生成时长约 1 分钟、分辨率 720p 的视频内容。相比传统的视频合成方法，它在算力需求与生成质量之间取得了更佳平衡，为研究者和开发者提供了快速构建交互式场景或原型演示的可行方案。本文将解析其核心架构设计、关键训练策略以及在多项基准测试中的表现"
+description: SANA-WM 是一款参数规模为 2.6B 的开源世界模型，能够在单次推理中生成时长约 1 分钟、分辨率 720p 的视频内容。相比传统的视频合成方法，它在算力需求与生成质量之间取得了更佳平衡，为研究者和开发者提供了快速构建交互式场景或原型演示的可行方案。本文将解析其核心架构设计、关键训练策略以及在多项基准测试中的表现
 external_url: https://nvlabs.github.io/Sana/WM
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # SANA-WM开源世界模型：26亿参数生成1分钟720p视频
@@ -80,9 +95,9 @@ SANA-WM是一个参数量为26亿的开源世界模型，支持生成720p分辨�
 
 ### 相关文章
 
-- [PrevizWhiz：结合粗略3D场景与2D视频引导生成式预演]({{< relref "posts/20260205-arxiv_ai-previzwhiz-combining-rough-3d-scenes-and-2d-video--4.md" >}})
-- [Waymo世界模型：自动驾驶仿真的新前沿]({{< relref "posts/20260206-hacker_news-the-waymo-world-model-a-new-frontier-for-autonomou-0.md" >}})
+- [PrevizWhiz：结合粗略3D场景与2D视频引导生成式预演]({{< relref "posts/20260204-arxiv_ai-previzwhiz-combining-rough-3d-scenes-and-2d-video--4.md" >}})
 - [Waymo世界模型：自动驾驶仿真的新前沿]({{< relref "posts/20260206-hacker_news-the-waymo-world-model-a-new-frontier-for-autonomou-4.md" >}})
-- [Waymo 世界模型：端到端自动驾驶的仿真与预测架构]({{< relref "posts/20260207-hacker_news-the-waymo-world-model-1.md" >}})
-- [Waymo 世界模型：基于多传感器数据生成驾驶场景]({{< relref "posts/20260207-hacker_news-the-waymo-world-model-10.md" >}})
+- [Waymo世界模型：自动驾驶仿真的新前沿]({{< relref "posts/20260206-hacker_news-the-waymo-world-model-a-new-frontier-for-autonomou-4.md" >}})
+- [Waymo 世界模型：端到端自动驾驶的仿真与预测架构]({{< relref "posts/20260206-hacker_news-the-waymo-world-model-a-new-frontier-for-autonomou-4.md" >}})
+- [Waymo 世界模型：基于多传感器数据生成驾驶场景]({{< relref "posts/20260206-hacker_news-the-waymo-world-model-a-new-frontier-for-autonomou-4.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

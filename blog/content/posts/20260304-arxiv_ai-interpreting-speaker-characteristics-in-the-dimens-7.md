@@ -21,6 +21,10 @@ description: 以下是针对该内容的中文总结： **标题：解析自监�
 external_url: http://arxiv.org/abs/2603.03096v1
 scenarios:
 - Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 自监督语音特征在说话人特性维度上的可解释性研究
@@ -441,6 +445,6 @@ $$ \rho_i = \text{Spearman}(Y_{[:, i]}, f) $$
 
 - [基于熵排序流的非监督解耦表示学习模型]({{< relref "posts/20260209-arxiv_ai-from-core-to-detail-unsupervised-disentanglement-w-9.md" >}})
 - [PatchFormer：基于分层掩码重建的零样本多步预测时序基础模型]({{< relref "posts/20260129-arxiv_ai-patchformer-a-patch-based-time-series-foundation-m-7.md" >}})
-- [PatchFormer：基于分层掩码重建的零样本多步预测时序基础模型]({{< relref "posts/20260130-arxiv_ai-patchformer-a-patch-based-time-series-foundation-m-7.md" >}})
+- [PatchFormer：基于分层掩码重建的零样本多步预测时序基础模型]({{< relref "posts/20260129-arxiv_ai-patchformer-a-patch-based-time-series-foundation-m-7.md" >}})
 - [DeALOG：基于日志中介的去中心化多智能体推理框架]({{< relref "posts/20260203-arxiv_ai-dealog-decentralized-multi-agents-log-mediated-rea-4.md" >}})
-- [VideoGPA：提取几何先验实现三维一致性视频生成]({{< relref "posts/20260203-arxiv_ai-videogpa-distilling-geometry-priors-for-3d-consist-0.md" >}})
+- [VideoGPA：提取几何先验实现三维一致性视频生成]({{< relref "posts/20260202-arxiv_ai-videogpa-distilling-geometry-priors-for-3d-consist-0.md" >}})

@@ -1,14 +1,29 @@
 ---
-title: "SageMaker上构建Strands Agents与性能评估指南"
-date: 2026-04-27T17:50:52+08:00
+title: SageMaker上构建Strands Agents与性能评估指南
+date: 2026-04-27 17:50:52+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Strands Agents", "SageMaker", "基础模型", "MLflow", "A/B测试", "性能评估", "AI代理", "Serverless"]
-categories: ["AI 工程"]
+entry_kind: auto
+tags:
+- Strands Agents
+- SageMaker
+- 基础模型
+- MLflow
+- A/B测试
+- 性能评估
+- AI 代理
+- Serverless
+categories:
+- AI 工程
 source: blogs_podcasts
-description: "模型部署 使用 SageMaker JumpStart 直接启动预训练的基础模型，快速创建可托管的推理端点。端点支持自动伸缩，保证在高并发场景下仍能保持低延迟。 集成 Strands Agents 在 Strands Agents SDK 中把上述端点配置为模型后端，只需几行代码即可完成模型加载、对话管理与任务分发。S"
+description: 模型部署 使用 SageMaker JumpStart 直接启动预训练的基础模型，快速创建可托管的推理端点。端点支持自动伸缩，保证在高并发场景下仍能保持低延迟。
+  集成 Strands Agents 在 Strands Agents SDK 中把上述端点配置为模型后端，只需几行代码即可完成模型加载、对话管理与任务分发。S
 external_url: https://aws.amazon.com/blogs/machine-learning/build-strands-agents-with-sagemaker-ai-models-and-mlflow
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # SageMaker上构建Strands Agents与性能评估指南
@@ -124,9 +139,9 @@ scenarios: ["AI/ML项目"]
 
 ### 相关文章
 
-- [基于Bedrock与LangGraph在SageMaker构建无服务器对话代理]({{< relref "posts/20260303-blogs_podcasts-build-a-serverless-conversational-ai-agent-using-c-3.md" >}})
-- [基于Bedrock与LangGraph构建SageMaker AI对话代理]({{< relref "posts/20260303-blogs_podcasts-build-a-serverless-conversational-ai-agent-using-c-4.md" >}})
+- [基于Bedrock与LangGraph在SageMaker构建无服务器对话代理]({{< relref "posts/20260302-blogs_podcasts-build-a-serverless-conversational-ai-agent-using-c-1.md" >}})
+- [基于Bedrock与LangGraph构建SageMaker AI对话代理]({{< relref "posts/20260302-blogs_podcasts-build-a-serverless-conversational-ai-agent-using-c-1.md" >}})
 - [基于Bedrock与LangGraph构建SageMaker无服务器AI对话代理]({{< relref "posts/20260302-blogs_podcasts-build-a-serverless-conversational-ai-agent-using-c-1.md" >}})
-- [基于Bedrock与LangGraph在SageMaker构建无服务器对话代理]({{< relref "posts/20260302-blogs_podcasts-build-a-serverless-conversational-ai-agent-using-c-2.md" >}})
-- [基于Amazon SageMaker AI构建无服务器Claude对话代理]({{< relref "posts/20260302-blogs_podcasts-build-a-serverless-conversational-ai-agent-using-c-3.md" >}})
+- [基于Bedrock与LangGraph在SageMaker构建无服务器对话代理]({{< relref "posts/20260302-blogs_podcasts-build-a-serverless-conversational-ai-agent-using-c-1.md" >}})
+- [基于Amazon SageMaker AI构建无服务器Claude对话代理]({{< relref "posts/20260302-blogs_podcasts-build-a-serverless-conversational-ai-agent-using-c-1.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

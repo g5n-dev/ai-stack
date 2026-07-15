@@ -21,6 +21,12 @@ description: 本文介绍了一种在**干预实验**（如基因组学CRISPR筛
 external_url: http://arxiv.org/abs/2603.02204v1
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260304-arxiv_ai-partial-causal-structure-learning-for-valid-select-1/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 干预下基于部分因果学习的有效选择性共形推断
@@ -506,7 +512,7 @@ scenarios:
 ### 相关文章
 
 - [基于共形预测的策略控制方法]({{< relref "posts/20260303-arxiv_ai-conformal-policy-control-5.md" >}})
-- [知识嵌入潜在投影提升鲁棒表征学习]({{< relref "posts/20260220-arxiv_ai-knowledge-embedded-latent-projection-for-robust-re-0.md" >}})
+- [知识嵌入潜在投影提升鲁棒表征学习]({{< relref "posts/20260219-arxiv_ai-knowledge-embedded-latent-projection-for-robust-re-0.md" >}})
 - [非单调损失函数的保形风险控制方法]({{< relref "posts/20260224-arxiv_ai-conformal-risk-control-for-non-monotonic-losses-4.md" >}})
-- [非单调损失函数的共形风险控制方法]({{< relref "posts/20260225-arxiv_ai-conformal-risk-control-for-non-monotonic-losses-4.md" >}})
+- [非单调损失函数的共形风险控制方法]({{< relref "posts/20260224-arxiv_ai-conformal-risk-control-for-non-monotonic-losses-4.md" >}})
 - [评估学习表征可识别性的挑战与难点]({{< relref "posts/20260302-arxiv_ai-who-guards-the-guardians-the-challenges-of-evaluat-6.md" >}})

@@ -4,8 +4,8 @@ date: 2026-03-15 15:23:22+08:00
 draft: false
 entry_kind: auto
 tags:
-- AI编程
-- Prompt工程
+- AI 编程
+- Prompt 工程
 - 代码质量
 - 开发效率
 - Superpower方法论
@@ -22,6 +22,10 @@ external_url: https://juejin.cn/post/7616696042244636682
 scenarios:
 - AI/ML项目
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Superpower方法论：提升AI编程准确率与交付质量
@@ -148,7 +152,7 @@ scenarios:
 ### 相关文章
 
 - [利用AI高效编写高质量代码的实践方法]({{< relref "posts/20260206-hacker_news-how-to-effectively-write-quality-code-with-ai-3.md" >}})
-- [利用AI高效编写高质量代码的实践指南]({{< relref "posts/20260206-hacker_news-how-to-effectively-write-quality-code-with-ai-5.md" >}})
-- [利用AI高效编写高质量代码的实践指南]({{< relref "posts/20260206-hacker_news-how-to-effectively-write-quality-code-with-ai-6.md" >}})
-- [利用AI高效编写高质量代码的实践方法]({{< relref "posts/20260207-hacker_news-how-to-effectively-write-quality-code-with-ai-15.md" >}})
-- [利用AI高效编写高质量代码的实践指南]({{< relref "posts/20260207-hacker_news-how-to-effectively-write-quality-code-with-ai-16.md" >}})
+- [利用AI高效编写高质量代码的实践指南]({{< relref "posts/20260206-hacker_news-how-to-effectively-write-quality-code-with-ai-3.md" >}})
+- [利用AI高效编写高质量代码的实践指南]({{< relref "posts/20260206-hacker_news-how-to-effectively-write-quality-code-with-ai-3.md" >}})
+- [利用AI高效编写高质量代码的实践方法]({{< relref "posts/20260206-hacker_news-how-to-effectively-write-quality-code-with-ai-3.md" >}})
+- [利用AI高效编写高质量代码的实践指南]({{< relref "posts/20260206-hacker_news-how-to-effectively-write-quality-code-with-ai-3.md" >}})

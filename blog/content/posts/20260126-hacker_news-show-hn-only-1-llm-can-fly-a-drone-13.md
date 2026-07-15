@@ -1,12 +1,29 @@
 ---
-title: "震惊！仅1个大模型能操控无人机！🚀🤯"
-date: 2026-01-26T18:11:05+08:00
+title: 震惊！仅1个大模型能操控无人机！🚀🤯
+date: 2026-01-26 18:11:05+08:00
 draft: false
-entry_kind: "auto"
-tags: ["LLM", "AI Agent", "无人机", "GPT-4o", "Claude 3.5", "Llama 3.1", "具身智能", "自然语言控制"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- LLM
+- AI Agent
+- 无人机
+- GPT-4o
+- Claude 3.5
+- Llama 3.1
+- 具身智能
+- 自然语言控制
+categories:
+- 大模型
+- AI 工程
 source: hacker_news
 external_url: https://github.com/kxzk/snapbench
+scenarios: []
+aliases:
+- /posts/20260126-hacker_news-show-hn-only-1-llm-can-fly-a-drone-15/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 📰 震惊！仅1个大模型能操控无人机！🚀🤯

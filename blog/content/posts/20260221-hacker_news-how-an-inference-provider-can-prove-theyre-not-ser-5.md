@@ -20,6 +20,10 @@ description: 随着模型推理服务日益透明，如何验证服务商是否�
 external_url: https://tinfoil.sh/blog/2026-02-03-proving-model-identity
 scenarios:
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 推理服务商如何证明未提供量化模型

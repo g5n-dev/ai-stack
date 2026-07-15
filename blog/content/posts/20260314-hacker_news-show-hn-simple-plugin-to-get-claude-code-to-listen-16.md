@@ -20,6 +20,10 @@ description: 随着 AI 编程助手的普及，如何让交互更接近自然对
 external_url: https://www.gopeek.ai
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 让 Claude Code 支持语音输入的简易插件

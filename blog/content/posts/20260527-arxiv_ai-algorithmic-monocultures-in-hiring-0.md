@@ -1,14 +1,30 @@
 ---
-title: "招聘算法的同质化风险分析"
-date: 2026-05-27T13:13:11+08:00
+title: 招聘算法的同质化风险分析
+date: 2026-05-27 13:13:11+08:00
 draft: false
-entry_kind: "auto"
-tags: ["招聘算法", "同质化风险", "种族差距", "歧视分析", "系统性拒绝", "大数据", "就业不公平", "算法公平"]
-categories: ["论文", "数据"]
+entry_kind: auto
+tags:
+- 招聘算法
+- 同质化风险
+- 种族差距
+- 歧视分析
+- 系统性拒绝
+- 大数据
+- 就业不公平
+- 算法公平
+categories:
+- 论文
+- 数据
 source: arxiv
-description: "研究背景：大量用人单位使用同一家算法供应商的筛选系统，形成算法单一文化（algorithmic monoculture），可能导致同一批求职者和族裔群体被系统性拒绝。 数据：收集了300万求职者提交的400万份职位申请，所有申请均由同一家供应商的算法进行筛选。 结果1：种族差距显著。亚洲裔和黑人求职者分别有14.74%"
+description: 研究背景：大量用人单位使用同一家算法供应商的筛选系统，形成算法单一文化（algorithmic monoculture），可能导致同一批求职者和族裔群体被系统性拒绝。
+  数据：收集了300万求职者提交的400万份职位申请，所有申请均由同一家供应商的算法进行筛选。 结果1：种族差距显著。亚洲裔和黑人求职者分别有14.74%
 external_url: http://arxiv.org/abs/2605.27371v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 招聘算法的同质化风险分析
@@ -106,7 +122,7 @@ scenarios: ["Web应用开发"]
 
 - [基于嵌入的Top-$k$检索：理论上$\mathbb{R}^{2k}$维空间已足够]({{< relref "posts/20260129-arxiv_ai-mathbbr2k-is-theoretically-large-enough-for-embedd-8.md" >}})
 - [面向文本检索器域适应的影响引导采样方法]({{< relref "posts/20260130-arxiv_ai-influence-guided-sampling-for-domain-adaptation-of-1.md" >}})
-- [R^{2k}维度理论上足以支持基于嵌入的Top-k检索]({{< relref "posts/20260130-arxiv_ai-mathbbr2k-is-theoretically-large-enough-for-embedd-8.md" >}})
+- [R^{2k}维度理论上足以支持基于嵌入的Top-k检索]({{< relref "posts/20260129-arxiv_ai-mathbbr2k-is-theoretically-large-enough-for-embedd-8.md" >}})
 - [可扩展随机小波特征：带收敛保证的高效非平稳核近似]({{< relref "posts/20260203-arxiv_ai-scalable-random-wavelet-features-efficient-non-sta-8.md" >}})
 - [数据块模型中的精确恢复方法]({{< relref "posts/20260206-arxiv_ai-exact-recovery-in-the-data-block-model-8.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

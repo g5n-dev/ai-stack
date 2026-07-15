@@ -21,6 +21,10 @@ description: AI Agent 演进：从工具调用到自主进化 AI Agent（智能�
 external_url: https://juejin.cn/post/7610233341304291371
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AI Agent 进化论：从 SkillSMP 到 EvoMap 的技术栈演进
@@ -205,8 +209,8 @@ SkillSMP 和 EvoMap 是相辅相成的两个概念，共同构成了从工具到
 
 ### 相关文章
 
-- [AgentRx：基于执行轨迹的AI智能体故障诊断]({{< relref "posts/20260204-arxiv_ai-agentrx-diagnosing-ai-agent-failures-from-executio-8.md" >}})
+- [AgentRx：基于执行轨迹的AI智能体故障诊断]({{< relref "posts/20260203-arxiv_ai-agentrx-diagnosing-ai-agent-failures-from-executio-8.md" >}})
 - [大模型API本质解析：Tools、MCP与Skills的区别]({{< relref "posts/20260215-juejin-从-0-诠释大模型-api-的本质-tools-mcp-skills-0.md" >}})
-- [大模型API开发：Tools、MCP与Skills的本质区别]({{< relref "posts/20260215-juejin-手把手从-0-诠释大模型-api-的本质-tools-mcp-skills-1.md" >}})
-- [HuggingFace Agent 技能机制解析]({{< relref "posts/20260224-hacker_news-huggingface-agent-skills-3.md" >}})
+- [大模型API开发：Tools、MCP与Skills的本质区别]({{< relref "posts/20260215-juejin-从-0-诠释大模型-api-的本质-tools-mcp-skills-0.md" >}})
+- [HuggingFace Agent 技能机制解析]({{< relref "posts/20260224-hacker_news-huggingface-agent-skills-8.md" >}})
 - [HuggingFace Agent 技能框架：工具调用与任务编排解析]({{< relref "posts/20260224-hacker_news-huggingface-agent-skills-8.md" >}})

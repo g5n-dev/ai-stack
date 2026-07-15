@@ -1,14 +1,30 @@
 ---
-title: "Darkbloom：Mac闲置算力实现隐私推理"
-date: 2026-04-16T08:22:04+08:00
+title: Darkbloom：Mac闲置算力实现隐私推理
+date: 2026-04-16 08:22:04+08:00
 draft: false
-entry_kind: "auto"
-tags: ["隐私推理", "苹果芯片", "大模型", "分布式计算", "开源", "端侧AI", "本地部署", "算力优化"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- 隐私推理
+- 苹果芯片
+- 大模型
+- 分布式计算
+- 开源
+- 端侧AI
+- 本地部署
+- 算力优化
+categories:
+- 大模型
+- AI 工程
 source: hacker_news
-description: "随着机器学习模型在敏感场景的广泛应用, 保障推理过程的隐私成为关键挑战。Darkbloom 通过调度 macOS 设备闲置算力, 实现在本地完成加密推理, 既降低了数据传输风险, 又充分利用了用户硬件资源。本文将剖析其系统架构、隐私防护机制以及在真实设备上的性能表现, 帮助开发者快速评估并集成该方案, 以实现更安全的服"
+description: 随着机器学习模型在敏感场景的广泛应用, 保障推理过程的隐私成为关键挑战。Darkbloom 通过调度 macOS 设备闲置算力, 实现在本地完成加密推理,
+  既降低了数据传输风险, 又充分利用了用户硬件资源。本文将剖析其系统架构、隐私防护机制以及在真实设备上的性能表现, 帮助开发者快速评估并集成该方案, 以实现更安全的服
 external_url: https://darkbloom.dev
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Darkbloom：Mac闲置算力实现隐私推理
@@ -80,8 +96,8 @@ Darkbloom 项目展示了一种利用分布式消费级硬件进行隐私保护�
 ### 相关文章
 
 - [实测Gemma 4在iPhone上的性能表现]({{< relref "posts/20260405-hacker_news-gemma-4-on-iphone-0.md" >}})
-- [MDST引擎：基于WebGPU/WASM在浏览器运行GGUF模型]({{< relref "posts/20260215-hacker_news-mdst-engine-run-gguf-models-in-the-browser-with-we-17.md" >}})
-- [Unsloth发布Dynamic 2.0 GGUF模型]({{< relref "posts/20260228-hacker_news-unsloth-dynamic-20-ggufs-3.md" >}})
-- [BitNet：面向本地CPU的1000亿参数1比特模型]({{< relref "posts/20260311-hacker_news-bitnet-100b-param-1-bit-model-for-local-cpus-3.md" >}})
-- [BitNet：面向本地CPU的1000亿参数1比特模型]({{< relref "posts/20260312-hacker_news-bitnet-100b-param-1-bit-model-for-local-cpus-15.md" >}})
+- [MDST引擎：基于WebGPU/WASM在浏览器运行GGUF模型]({{< relref "posts/20260215-hacker_news-mdst-engine-run-gguf-models-in-the-browser-with-we-19.md" >}})
+- [Unsloth发布Dynamic 2.0 GGUF模型]({{< relref "posts/20260228-hacker_news-unsloth-dynamic-20-ggufs-1.md" >}})
+- [BitNet：面向本地CPU的1000亿参数1比特模型]({{< relref "posts/20260311-hacker_news-microsoft-bitnet-100b-param-1-bit-model-for-local--1.md" >}})
+- [BitNet：面向本地CPU的1000亿参数1比特模型]({{< relref "posts/20260311-hacker_news-microsoft-bitnet-100b-param-1-bit-model-for-local--1.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

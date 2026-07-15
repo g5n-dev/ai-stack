@@ -8,7 +8,7 @@ tags:
 - LLM
 - 数据投毒
 - 提示词注入
-- AI安全
+- AI 安全
 - 检索增强生成
 - 对抗攻击
 - 数据污染
@@ -22,6 +22,16 @@ scenarios:
 - RAG应用
 - 大语言模型
 - AI/ML项目
+aliases:
+- /posts/20260313-hacker_news-document-poisoning-in-rag-systems-how-attackers-co-11/
+- /posts/20260313-hacker_news-document-poisoning-in-rag-systems-how-attackers-co-15/
+- /posts/20260313-hacker_news-document-poisoning-in-rag-systems-how-attackers-co-5/
+- /posts/20260313-hacker_news-document-poisoning-in-rag-systems-how-attackers-co-6/
+- /posts/20260313-hacker_news-document-poisoning-in-rag-systems-how-attackers-co-9/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # RAG系统文档投毒攻击：攻击者如何污染AI数据源
@@ -305,8 +315,8 @@ Stack Overflow 官方采取了“数据合作化”策略来解决此问题。�
 
 ### 相关文章
 
-- [心理越狱揭示前沿模型内部冲突]({{< relref "posts/20260205-hacker_news-psychometric-jailbreaks-reveal-internal-conflict-i-11.md" >}})
+- [心理越狱揭示前沿模型内部冲突]({{< relref "posts/20260205-hacker_news-psychometric-jailbreaks-reveal-internal-conflict-i-10.md" >}})
 - [深度解析Skill/MCP/RAG等五大AI技术的底层逻辑]({{< relref "posts/20260212-juejin-深入理解skillmcpragagentopenclaw底层逻辑-2.md" >}})
-- [不要轻信盐值：AI摘要、多语言安全与大模型防护机制]({{< relref "posts/20260219-hacker_news-dont-trust-the-salt-ai-summarization-multilingual--2.md" >}})
+- [不要轻信盐值：AI摘要、多语言安全与大模型防护机制]({{< relref "posts/20260219-hacker_news-dont-trust-the-salt-ai-summarization-multilingual--1.md" >}})
 - [LLM生成文本检测：原理、方法与技术挑战]({{< relref "posts/20260301-hacker_news-the-science-of-detecting-llm-generated-text-19.md" >}})
 - [AI大模型应用指南：RAG技术原理与企业知识库搭建]({{< relref "posts/20260312-juejin-ai大模型小白手册-rag技术与应用-1.md" >}})

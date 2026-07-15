@@ -1,12 +1,26 @@
 ---
-title: "🚀Emissary：超快开源Java消息库！颠覆性能极限？"
-date: 2026-01-26T15:14:57+08:00
+title: 🚀Emissary：超快开源Java消息库！颠覆性能极限？
+date: 2026-01-26 15:14:57+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Java", "消息库", "高性能", "开源", "轻量级", "Emissary", "低延迟", "高吞吐"]
-categories: ["后端", "开源生态"]
+entry_kind: auto
+tags:
+- Java
+- 消息库
+- 高性能
+- 开源
+- 轻量级
+- Emissary
+- 低延迟
+- 高吞吐
+categories:
+- 后端
+- 开源生态
 source: hacker_news
 external_url: https://github.com/joel-jeremy/emissary
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 📰 🚀Emissary：超快开源Java消息库！颠覆性能极限？

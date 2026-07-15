@@ -1,14 +1,32 @@
 ---
-title: "训练万亿参数模型使其具备幽默感"
-date: 2026-02-03T03:49:30+08:00
+title: 训练万亿参数模型使其具备幽默感
+date: 2026-02-03 03:49:30+08:00
 draft: false
-entry_kind: "auto"
-tags: ["LLM", "幽默感", "万亿参数", "模型训练", "对齐", "微调", "RLHF", "NLP"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- LLM
+- 幽默感
+- 万亿参数
+- 模型训练
+- 对齐
+- 微调
+- RLHF
+- NLP
+categories:
+- 大模型
+- 论文
 source: hacker_news
-description: "随着大语言模型参数量的指数级增长，如何让万亿级模型真正理解并生成幽默感，已成为通向通用人工智能（AGI）的关键挑战之一。本文深入探讨了在如此巨大的规模下训练幽默能力的具体路径与难点，分析了数据配比与人类反馈对模型“情商”的影响。通过阅读这篇文章，读者可以了解当前顶尖研究团队是如何突破逻辑边界，赋予冷冰冰的代码以温度与幽"
+description: 随着大语言模型参数量的指数级增长，如何让万亿级模型真正理解并生成幽默感，已成为通向通用人工智能（AGI）的关键挑战之一。本文深入探讨了在如此巨大的规模下训练幽默能力的具体路径与难点，分析了数据配比与人类反馈对模型“情商”的影响。通过阅读这篇文章，读者可以了解当前顶尖研究团队是如何突破逻辑边界，赋予冷冰冰的代码以温度与幽
 external_url: https://jokegen.sdan.io/blog
-scenarios: ["大语言模型", "自然语言处理"]
+scenarios:
+- 大语言模型
+- 自然语言处理
+aliases:
+- /posts/20260203-hacker_news-training-a-trillion-parameter-model-to-be-funny-18/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 训练万亿参数模型使其具备幽默感
@@ -427,9 +445,9 @@ ChatGPT 展现了惊人的幽默感和创造力，能够编写脱口秀脚本、
 
 ### 相关文章
 
-- [Alyah：评估阿拉伯语大模型阿联酋方言能力]({{< relref "posts/20260129-blogs_podcasts-alyah-toward-robust-evaluation-of-emirati-dialect--8.md" >}})
-- [Alyah：评估阿拉伯语大模型阿联酋方言能力]({{< relref "posts/20260129-blogs_podcasts-alyah-toward-robust-evaluation-of-emirati-dialect--9.md" >}})
+- [Alyah：评估阿拉伯语大模型阿联酋方言能力]({{< relref "posts/20260127-blogs_podcasts-alyah-toward-robust-evaluation-of-emirati-dialect--0.md" >}})
+- [Alyah：评估阿拉伯语大模型阿联酋方言能力]({{< relref "posts/20260127-blogs_podcasts-alyah-toward-robust-evaluation-of-emirati-dialect--0.md" >}})
 - [大语言模型中角色作为潜变量：机制视角下的错位与安全失效]({{< relref "posts/20260202-arxiv_ai-character-as-a-latent-variable-in-large-language-m-6.md" >}})
 - [FineInstructions：将合成指令数据扩展至预训练规模]({{< relref "posts/20260130-arxiv_ai-fineinstructions-scaling-synthetic-instructions-to-7.md" >}})
-- [探索面向智能体的推理奖励模型]({{< relref "posts/20260201-arxiv_ai-exploring-reasoning-reward-model-for-agents-4.md" >}})
+- [探索面向智能体的推理奖励模型]({{< relref "posts/20260130-arxiv_ai-exploring-reasoning-reward-model-for-agents-4.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

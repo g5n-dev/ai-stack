@@ -21,6 +21,12 @@ description: '**总结：强化快速权重与后续序列预测（REFINE）** *
 external_url: http://arxiv.org/abs/2602.16704v1
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260220-arxiv_ai-reinforced-fast-weights-with-next-sequence-predict-2/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 强化快速权重与下一序列预测
@@ -429,7 +435,7 @@ Fast Weights的引入会显著增加显存占用。建议使用低秩分解或�
 ### 相关文章
 
 - [Anagent For Enhancing Scientific Table & Figure Analysi]({{< relref "posts/20260211-arxiv_ai-anagent-for-enhancing-scientific-table-figure-anal-9.md" >}})
-- [🔥POPE：利用特权探索破解硬核难题！]({{< relref "posts/20260128-arxiv_ai-pope-learning-to-reason-on-hard-problems-via-privi-8.md" >}})
-- [Kimi K2.5 技术报告发布：强化学习与长上下文能力升级]({{< relref "posts/20260130-hacker_news-kimi-k25-technical-report-pdf-2.md" >}})
-- [Kimi K2.5 技术报告发布：长上下文与多模态推理能力详解]({{< relref "posts/20260131-hacker_news-kimi-k25-technical-report-pdf-8.md" >}})
-- [探索面向智能体的推理奖励模型]({{< relref "posts/20260201-arxiv_ai-exploring-reasoning-reward-model-for-agents-4.md" >}})
+- [🔥POPE：利用特权探索破解硬核难题！]({{< relref "posts/20260127-arxiv_ai-pope-learning-to-reason-on-hard-problems-via-privi-8.md" >}})
+- [Kimi K2.5 技术报告发布：强化学习与长上下文能力升级]({{< relref "posts/20260130-hacker_news-kimi-k25-technical-report-pdf-10.md" >}})
+- [Kimi K2.5 技术报告发布：长上下文与多模态推理能力详解]({{< relref "posts/20260130-hacker_news-kimi-k25-technical-report-pdf-10.md" >}})
+- [探索面向智能体的推理奖励模型]({{< relref "posts/20260130-arxiv_ai-exploring-reasoning-reward-model-for-agents-4.md" >}})

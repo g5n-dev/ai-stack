@@ -19,6 +19,12 @@ description: 在用户服务领域，对话式 AI 正被广泛部署以降低成
 external_url: https://raymyers.org/post/dont-make-me-talk-to-your-chatbot
 scenarios:
 - AI/ML项目
+aliases:
+- /posts/20260304-hacker_news-dont-make-me-talk-to-your-chatbot-2/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 别强迫用户与聊天机器人交互

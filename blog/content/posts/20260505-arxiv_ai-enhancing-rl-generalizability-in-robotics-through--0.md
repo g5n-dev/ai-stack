@@ -1,14 +1,29 @@
 ---
-title: "机器人强化学习泛化能力：SHAP视角下的算法与超参数分析"
-date: 2026-05-05T03:00:38+08:00
+title: 机器人强化学习泛化能力：SHAP视角下的算法与超参数分析
+date: 2026-05-05 03:00:38+08:00
 draft: false
-entry_kind: "auto"
-tags: ["强化学习", "泛化能力", "SHAP", "可解释性", "机器人", "算法分析", "超参数优化", "机器学习"]
-categories: ["论文"]
+entry_kind: auto
+tags:
+- 强化学习
+- 泛化能力
+- SHAP
+- 可解释性
+- 机器人
+- 算法分析
+- 超参数优化
+- 机器学习
+categories:
+- 论文
 source: arxiv
-description: "背景 强化学习（RL）在机器人任务中取得显著进展，但模型性能对算法和超参数配置高度敏感，且跨环境的泛化差距限制了实际部署。 方法 提出基于SHAP的可解释框架，用于量化配置对泛化性能的影响。通过Shapley值的理论联系，建立配置与泛化能力的关系。 实现步骤 1. 在多种机器人环境中收集RL算法的性能数据。 2. 使用"
+description: 背景 强化学习（RL）在机器人任务中取得显著进展，但模型性能对算法和超参数配置高度敏感，且跨环境的泛化差距限制了实际部署。 方法 提出基于SHAP的可解释框架，用于量化配置对泛化性能的影响。通过Shapley值的理论联系，建立配置与泛化能力的关系。
+  实现步骤 1. 在多种机器人环境中收集RL算法的性能数据。 2. 使用
 external_url: http://arxiv.org/abs/2605.02867v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 机器人强化学习泛化能力：SHAP视角下的算法与超参数分析
@@ -173,9 +188,9 @@ scenarios: ["Web应用开发"]
 
 ### 相关文章
 
-- [为何AI系统难以自主学习：基于认知科学的视角]({{< relref "posts/20260318-hacker_news-why-ai-systems-dont-learn-on-autonomous-learning-f-13.md" >}})
+- [为何AI系统难以自主学习：基于认知科学的视角]({{< relref "posts/20260318-hacker_news-why-ai-systems-dont-learn-on-autonomous-learning-f-15.md" >}})
 - [为何AI系统难以自主学习：认知科学视角的解析]({{< relref "posts/20260318-hacker_news-why-ai-systems-dont-learn-on-autonomous-learning-f-15.md" >}})
 - [视觉语言模型能否通过交互学习直觉物理]({{< relref "posts/20260206-arxiv_ai-can-vision-language-models-learn-intuitive-physics-5.md" >}})
-- [视觉语言模型能否通过交互学习直观物理]({{< relref "posts/20260207-arxiv_ai-can-vision-language-models-learn-intuitive-physics-5.md" >}})
-- [视觉语言模型能否通过交互学习直观物理]({{< relref "posts/20260209-arxiv_ai-can-vision-language-models-learn-intuitive-physics-5.md" >}})
+- [视觉语言模型能否通过交互学习直观物理]({{< relref "posts/20260206-arxiv_ai-can-vision-language-models-learn-intuitive-physics-5.md" >}})
+- [视觉语言模型能否通过交互学习直观物理]({{< relref "posts/20260206-arxiv_ai-can-vision-language-models-learn-intuitive-physics-5.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

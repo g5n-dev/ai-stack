@@ -1,14 +1,30 @@
 ---
-title: "Mac运行TRELLIS.2图像转3D无需Nvidia GPU"
-date: 2026-04-20T03:02:47+08:00
+title: Mac运行TRELLIS.2图像转3D无需Nvidia GPU
+date: 2026-04-20 03:02:47+08:00
 draft: false
-entry_kind: "auto"
-tags: ["图像转3D", "Mac硅", "无GPU", "开源", "AI模型", "3D生成", "深度学习", "模型部署"]
-categories: ["AI 工程", "开源生态"]
+entry_kind: auto
+tags:
+- 图像转3D
+- Mac硅
+- 无GPU
+- 开源
+- AI 模型
+- 3D生成
+- 深度学习
+- 模型部署
+categories:
+- AI 工程
+- 开源生态
 source: hacker_news
-description: "TRELLIS.2 将二维图像直接转化为高质量三维模型，且已在苹果自研芯片上实现本地运行。这意味着在没有 Nvidia GPU 的情况下，开发者和小团队也能利用最新的图像到 3D 生成技术进行原型设计或内容创作。本文档将简要说明其部署步骤、关键性能指标以及在 macOS 环境下的实际使用体验，帮助读者快速上手并评估该方"
+description: TRELLIS.2 将二维图像直接转化为高质量三维模型，且已在苹果自研芯片上实现本地运行。这意味着在没有 Nvidia GPU 的情况下，开发者和小团队也能利用最新的图像到
+  3D 生成技术进行原型设计或内容创作。本文档将简要说明其部署步骤、关键性能指标以及在 macOS 环境下的实际使用体验，帮助读者快速上手并评估该方
 external_url: https://github.com/shivampkumar/trellis-mac
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Mac运行TRELLIS.2图像转3D无需Nvidia GPU
@@ -76,9 +92,9 @@ TRELLIS.2 展示了在 Apple Silicon 上完成从单张图像生成三维网格�
 
 ### 相关文章
 
-- [GGML与llama.cpp加入HF推动本地AI长期发展]({{< relref "posts/20260223-blogs_podcasts-ggml-and-llamacpp-join-hf-to-ensure-the-long-term--8.md" >}})
-- [d2l-zh：70多国500所高校选用的深度学习教材]({{< relref "posts/20260319-github_trending-d2l-ai-d2l-zh-3.md" >}})
+- [GGML与llama.cpp加入HF推动本地AI长期发展]({{< relref "posts/20260220-blogs_podcasts-ggml-and-llamacpp-join-hf-to-ensure-the-long-term--2.md" >}})
+- [d2l-zh：70多国500所高校选用的深度学习教材]({{< relref "posts/20260205-github_trending-d2l-ai-d2l-zh-2.md" >}})
 - [Kitten TTS 三款新模型：小体积低于 25MB]({{< relref "posts/20260319-hacker_news-show-hn-three-new-kitten-tts-models-smallest-less--7.md" >}})
-- [d2l-zh：被500余所大学采用的交互式深度学习教材]({{< relref "posts/20260320-github_trending-d2l-ai-d2l-zh-3.md" >}})
+- [d2l-zh：被500余所大学采用的交互式深度学习教材]({{< relref "posts/20260205-github_trending-d2l-ai-d2l-zh-2.md" >}})
 - [生物学家可用的开源AI蛋白质设计工具]({{< relref "posts/20260417-blogs_podcasts-bringing-ai-driven-protein-design-tools-to-biologi-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

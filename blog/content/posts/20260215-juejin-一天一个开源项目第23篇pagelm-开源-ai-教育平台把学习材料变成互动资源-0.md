@@ -1,14 +1,35 @@
 ---
-title: "PageLM：开源AI教育平台，将PDF文档转化为测验与播客"
-date: 2026-02-15T12:10:18+08:00
+title: PageLM：开源AI教育平台，将PDF文档转化为测验与播客
+date: 2026-02-15 12:10:18+08:00
 draft: false
-entry_kind: "auto"
-tags: ["PageLM", "AI教育", "NotebookLM", "PDF处理", "RAG", "TTS", "知识库", "学习工具"]
-categories: ["开源生态", "大模型"]
+entry_kind: auto
+tags:
+- PageLM
+- AI 教育
+- NotebookLM
+- PDF处理
+- RAG
+- TTS
+- 知识库
+- 学习工具
+categories:
+- 开源生态
+- 大模型
 source: juejin
-description: "以下是对 PageLM 项目的简洁总结： PageLM：开源 AI 教育平台，让学习材料“活”起来 **1. 项目概述** PageLM 是由 CaviraOSS 发起的开源项目（一天一个开源项目第23篇），定位为一款 **AI 驱动的教育平台**。它的核心灵感源自 Google 的 NotebookLM，旨在通过人工"
+description: 以下是对 PageLM 项目的简洁总结： PageLM：开源 AI 教育平台，让学习材料“活”起来 **1. 项目概述** PageLM
+  是由 CaviraOSS 发起的开源项目（一天一个开源项目第23篇），定位为一款 **AI 驱动的教育平台**。它的核心灵感源自 Google 的 NotebookLM，旨在通过人工
 external_url: https://juejin.cn/post/7606519452976873522
-scenarios: ["AI/ML项目", "RAG应用"]
+scenarios:
+- AI/ML项目
+- RAG应用
+aliases:
+- /posts/20260215-juejin-一天一个开源项目第23篇pagelm-开源-ai-教育平台把学习材料变成互动资源-1/
+- /posts/20260215-juejin-一天一个开源项目第23篇pagelm-开源-ai-教育平台把学习材料变成互动资源-2/
+- /posts/20260216-juejin-一天一个开源项目第23篇pagelm-开源-ai-教育平台把学习材料变成互动资源-2/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # PageLM：开源AI教育平台，将PDF文档转化为测验与播客
@@ -207,9 +228,9 @@ PageLM 本质上是一个**“文档互动化”工具**。它通过开源的方
 
 ### 相关文章
 
-- [LangBot：生产级多平台Agent智能机器人开发平台]({{< relref "posts/20260205-github_trending-langbot-app-langbot-7.md" >}})
-- [利用 Amazon Bedrock 构建AI驱动的招聘系统优化人才获取]({{< relref "posts/20260213-blogs_podcasts-ai-meets-hr-transforming-talent-acquisition-with-a-1.md" >}})
-- [利用 Amazon Bedrock 构建AI招聘系统以优化人才获取流程]({{< relref "posts/20260213-blogs_podcasts-ai-meets-hr-transforming-talent-acquisition-with-a-3.md" >}})
-- [基于 Amazon Bedrock 构建具备人工监管的 AI 招聘系统]({{< relref "posts/20260214-blogs_podcasts-ai-meets-hr-transforming-talent-acquisition-with-a-9.md" >}})
-- [利用 Amazon Bedrock 构建AI招聘系统优化人才获取流程]({{< relref "posts/20260215-blogs_podcasts-ai-meets-hr-transforming-talent-acquisition-with-a-8.md" >}})
+- [LangBot：生产级多平台Agent智能机器人开发平台]({{< relref "posts/20260131-github_trending-langbot-app-langbot-7.md" >}})
+- [利用 Amazon Bedrock 构建AI驱动的招聘系统优化人才获取]({{< relref "posts/20260212-blogs_podcasts-ai-meets-hr-transforming-talent-acquisition-with-a-0.md" >}})
+- [利用 Amazon Bedrock 构建AI招聘系统以优化人才获取流程]({{< relref "posts/20260212-blogs_podcasts-ai-meets-hr-transforming-talent-acquisition-with-a-0.md" >}})
+- [基于 Amazon Bedrock 构建具备人工监管的 AI 招聘系统]({{< relref "posts/20260212-blogs_podcasts-ai-meets-hr-transforming-talent-acquisition-with-a-0.md" >}})
+- [利用 Amazon Bedrock 构建AI招聘系统优化人才获取流程]({{< relref "posts/20260212-blogs_podcasts-ai-meets-hr-transforming-talent-acquisition-with-a-0.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

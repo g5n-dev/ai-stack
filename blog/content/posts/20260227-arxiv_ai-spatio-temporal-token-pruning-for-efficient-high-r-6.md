@@ -22,6 +22,10 @@ description: 以下是该内容的中文总结： **论文标题：面向高效�
 external_url: http://arxiv.org/abs/2602.23235v1
 scenarios:
 - Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 面向高效高分辨率GUI智能体的时空令牌剪枝
@@ -349,7 +353,7 @@ GUIPruner 使得智能体能够在最小资源消耗下，实现实时、高精�
 ### 相关文章
 
 - [VideoGPA：提取几何先验实现三维一致视频生成]({{< relref "posts/20260202-arxiv_ai-videogpa-distilling-geometry-priors-for-3d-consist-0.md" >}})
-- [共享LoRA子空间实现近乎严格的持续学习]({{< relref "posts/20260209-arxiv_ai-shared-lora-subspaces-for-almost-strict-continual--0.md" >}})
-- [UniT：统一多模态思维链测试时扩展]({{< relref "posts/20260214-arxiv_ai-unit-unified-multimodal-chain-of-thought-test-time-1.md" >}})
-- [UniT：统一多模态思维链测试时扩展方法]({{< relref "posts/20260216-arxiv_ai-unit-unified-multimodal-chain-of-thought-test-time-1.md" >}})
-- [CoPE-VideoLM：基于编解码基元的高效视频语言模型]({{< relref "posts/20260217-arxiv_ai-cope-videolm-codec-primitives-for-efficient-video--2.md" >}})
+- [共享LoRA子空间实现近乎严格的持续学习]({{< relref "posts/20260206-arxiv_ai-shared-lora-subspaces-for-almost-strict-continual--0.md" >}})
+- [UniT：统一多模态思维链测试时扩展]({{< relref "posts/20260213-arxiv_ai-unit-unified-multimodal-chain-of-thought-test-time-1.md" >}})
+- [UniT：统一多模态思维链测试时扩展方法]({{< relref "posts/20260213-arxiv_ai-unit-unified-multimodal-chain-of-thought-test-time-1.md" >}})
+- [CoPE-VideoLM：基于编解码基元的高效视频语言模型]({{< relref "posts/20260216-arxiv_ai-cope-videolm-codec-primitives-for-efficient-video--2.md" >}})

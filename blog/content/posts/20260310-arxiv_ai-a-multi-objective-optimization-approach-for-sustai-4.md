@@ -21,6 +21,12 @@ description: 本文介绍了一种名为 **EcoAI-Resilience** 的多目标优化
 external_url: http://arxiv.org/abs/2603.08692v1
 scenarios:
 - AI/ML项目
+aliases:
+- /posts/20260311-arxiv_ai-a-multi-objective-optimization-approach-for-sustai-4/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 韧性经济下AI驱动创业的多目标优化方法
@@ -427,8 +433,8 @@ AI 在文中被定位为实现可持续创业和增强经济韧性的核心驱�
 
 ### 相关文章
 
-- [YC孵化Livedocs：面向数据分析的AI原生笔记本]({{< relref "posts/20260210-hacker_news-launch-hn-livedocs-yc-w22-an-ai-native-notebook-fo-13.md" >}})
-- [Pi for Excel：Excel 的 AI 侧边栏插件]({{< relref "posts/20260220-hacker_news-pi-for-excel-ai-sidebar-add-in-for-excel-10.md" >}})
-- [OpenAI推出Excel版ChatGPT及金融数据集成，由GPT-5.4驱动加速受监管环境分析]({{< relref "posts/20260306-blogs_podcasts-introducing-chatgpt-for-excel-and-new-financial-da-11.md" >}})
-- [OpenAI推Excel版ChatGPT：GPT-5.4驱动集成金融数据加速建模]({{< relref "posts/20260306-blogs_podcasts-introducing-chatgpt-for-excel-and-new-financial-da-13.md" >}})
+- [YC孵化Livedocs：面向数据分析的AI原生笔记本]({{< relref "posts/20260210-hacker_news-launch-hn-livedocs-yc-w22-an-ai-native-notebook-fo-2.md" >}})
+- [Pi for Excel：Excel 的 AI 侧边栏插件]({{< relref "posts/20260220-hacker_news-pi-for-excel-ai-sidebar-add-in-for-excel-powered-b-5.md" >}})
+- [OpenAI推出Excel版ChatGPT及金融数据集成，由GPT-5.4驱动加速受监管环境分析]({{< relref "posts/20260305-blogs_podcasts-introducing-chatgpt-for-excel-and-new-financial-da-11.md" >}})
+- [OpenAI推Excel版ChatGPT：GPT-5.4驱动集成金融数据加速建模]({{< relref "posts/20260305-blogs_podcasts-introducing-chatgpt-for-excel-and-new-financial-da-11.md" >}})
 - [Gemini for Sheets Beta发布：支持描述生成表格与复杂数据分析]({{< relref "posts/20260310-blogs_podcasts-gemini-in-google-sheets-just-achieved-state-of-the-0.md" >}})

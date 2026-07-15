@@ -1,14 +1,29 @@
 ---
-title: "Gemma 4推理加速：多token预测drafters技术"
-date: 2026-05-05T19:45:40+08:00
+title: Gemma 4推理加速：多token预测drafters技术
+date: 2026-05-05 19:45:40+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Gemma 4", "推理加速", "多token预测", "Drafters", "LLM", "推理优化", "Google", "模型部署"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- Gemma 4
+- 推理加速
+- 多token预测
+- Drafters
+- LLM
+- 推理优化
+- Google
+- 模型部署
+categories:
+- 大模型
+- AI 工程
 source: hacker_news
-description: "在大模型推理中，速度往往直接决定产品体验。Gemma 4 通过引入多 token 预测 drafters，实现显著加速。本文将解析该技术的实现原理、性能提升以及在实际部署中的注意事项。我们还会提供基准测试结果，帮助开发者评估在不同硬件环境下的收益。"
+description: 在大模型推理中，速度往往直接决定产品体验。Gemma 4 通过引入多 token 预测 drafters，实现显著加速。本文将解析该技术的实现原理、性能提升以及在实际部署中的注意事项。我们还会提供基准测试结果，帮助开发者评估在不同硬件环境下的收益。
 external_url: https://blog.google/innovation-and-ai/technology/developers-tools/multi-token-prediction-gemma-4
-scenarios: ["大语言模型"]
+scenarios:
+- 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Gemma 4推理加速：多token预测drafters技术
@@ -71,9 +86,9 @@ scenarios: ["大语言模型"]
 
 ### 相关文章
 
-- [NVIDIA Nemotron 3 Nano 30B 模型现已在 Amazon SageMaker JumpS]({{< relref "posts/20260212-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-2.md" >}})
-- [Mercury 2：基于扩散模型的最快推理大语言模型]({{< relref "posts/20260225-hacker_news-mercury-2-the-fastest-reasoning-llm-powered-by-dif-2.md" >}})
-- [Unsloth Dynamic 2.0 发布：支持 GGUF 格式]({{< relref "posts/20260228-hacker_news-unsloth-dynamic-20-ggufs-15.md" >}})
-- [Gemini 3.1 Flash-Lite：Gemini 3 系列中速度最快、性价比最高的模型]({{< relref "posts/20260304-blogs_podcasts-gemini-31-flash-lite-built-for-intelligence-at-sca-11.md" >}})
-- [P-EAGLE：vLLM集成并行推测解码加速LLM推理]({{< relref "posts/20260314-blogs_podcasts-p-eagle-faster-llm-inference-with-parallel-specula-1.md" >}})
+- [NVIDIA Nemotron 3 Nano 30B 模型现已在 Amazon SageMaker JumpS]({{< relref "posts/20260211-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-0.md" >}})
+- [Mercury 2：基于扩散模型的最快推理大语言模型]({{< relref "posts/20260225-hacker_news-mercury-2-the-fastest-reasoning-llm-powered-by-dif-19.md" >}})
+- [Unsloth Dynamic 2.0 发布：支持 GGUF 格式]({{< relref "posts/20260228-hacker_news-unsloth-dynamic-20-ggufs-1.md" >}})
+- [Gemini 3.1 Flash-Lite：Gemini 3 系列中速度最快、性价比最高的模型]({{< relref "posts/20260303-blogs_podcasts-gemini-31-flash-lite-built-for-intelligence-at-sca-2.md" >}})
+- [P-EAGLE：vLLM集成并行推测解码加速LLM推理]({{< relref "posts/20260313-blogs_podcasts-p-eagle-faster-llm-inference-with-parallel-specula-1.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

@@ -11,7 +11,7 @@ tags:
 - 线性代数
 - 激活空间
 - 模型对齐
-- AI安全
+- AI 安全
 categories:
 - 大模型
 - 论文
@@ -21,6 +21,10 @@ external_url: https://www.guidelabs.ai/post/steerling-steering-8b
 scenarios:
 - 大语言模型
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 用概念代数引导可解释的语言模型

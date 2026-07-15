@@ -22,6 +22,10 @@ external_url: https://juejin.cn/post/7617728986828947483
 scenarios:
 - 大语言模型
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Amazon Nova Forge 如何缓解大模型微调中的灾难性遗忘
@@ -161,8 +165,8 @@ Nova Forge 对数据的容错率和利用率更高。在全量微调中，如果
 
 ### 相关文章
 
-- [文生图模型训练设计：消融实验的经验总结]({{< relref "posts/20260204-blogs_podcasts-training-design-for-text-to-image-models-lessons-f-4.md" >}})
-- [LLM智能体新增Claws层以增强能力]({{< relref "posts/20260222-hacker_news-claws-are-now-a-new-layer-on-top-of-llm-agents-16.md" >}})
-- [Qwen3.5 微调指南]({{< relref "posts/20260305-hacker_news-qwen35-fine-tuning-guide-17.md" >}})
+- [文生图模型训练设计：消融实验的经验总结]({{< relref "posts/20260203-blogs_podcasts-training-design-for-text-to-image-models-lessons-f-0.md" >}})
+- [LLM智能体新增Claws层以增强能力]({{< relref "posts/20260221-hacker_news-claws-are-now-a-new-layer-on-top-of-llm-agents-13.md" >}})
+- [Qwen3.5 微调指南]({{< relref "posts/20260304-hacker_news-qwen35-fine-tuning-guide-unsloth-documentation-7.md" >}})
 - [大模型垂直领域微调系列：认识微调]({{< relref "posts/20260312-juejin-大模型垂直领域微调系列一认识微调-2.md" >}})
-- [训练万亿参数模型以生成幽默内容]({{< relref "posts/20260203-hacker_news-training-a-trillion-parameter-model-to-be-funny-18.md" >}})
+- [训练万亿参数模型以生成幽默内容]({{< relref "posts/20260203-hacker_news-training-a-trillion-parameter-model-to-be-funny-15.md" >}})

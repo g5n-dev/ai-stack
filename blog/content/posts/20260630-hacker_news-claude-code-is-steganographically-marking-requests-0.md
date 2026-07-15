@@ -1,14 +1,31 @@
 ---
-title: "Claude Code被指隐写标记请求"
-date: 2026-06-30T18:24:54+08:00
+title: Claude Code被指隐写标记请求
+date: 2026-06-30 18:24:54+08:00
 draft: false
-entry_kind: "auto"
-tags: ["隐写", "安全", "隐私", "AI", "大模型", "开发工具", "Claude", "请求"]
-categories: ["安全", "开发工具"]
+entry_kind: auto
+tags:
+- 隐写
+- 安全
+- 隐私
+- AI
+- 大模型
+- 开发工具
+- Claude
+- 请求
+categories:
+- 安全
+- 开发工具
 source: hacker_news
-description: "Claude Code 最近被发现在其请求中嵌入隐蔽的视觉标记，形成一种基于图像的隐写机制。这种标记在视觉层面几乎不可察觉，却能被特定算法识别并用于追踪或验证请求来源。本文将剖析该隐写技术的实现细节，评估其对隐私与安全的影响，并提供检测和防御的实用建议。对开发者而言，了解这种隐蔽标记有助于在调试和审计时防止误判，同时也"
+description: Claude Code 最近被发现在其请求中嵌入隐蔽的视觉标记，形成一种基于图像的隐写机制。这种标记在视觉层面几乎不可察觉，却能被特定算法识别并用于追踪或验证请求来源。本文将剖析该隐写技术的实现细节，评估其对隐私与安全的影响，并提供检测和防御的实用建议。对开发者而言，了解这种隐蔽标记有助于在调试和审计时防止误判，同时也
 external_url: https://thereallo.dev/blog/claude-code-prompt-steganography
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+aliases:
+- /posts/20260701-hacker_news-claude-code-is-steganographically-marking-requests-0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Claude Code被指隐写标记请求
@@ -80,6 +97,6 @@ Claude Code 最近被发现在其请求中嵌入隐蔽的视觉标记，形成�
 - [MosaicLeaks：研究代理能否保守秘密]({{< relref "posts/20260618-blogs_podcasts-mosaicleaks-can-your-research-agent-keep-a-secret-0.md" >}})
 - [微软Copilot协作功能存在文件外泄漏洞]({{< relref "posts/20260525-hacker_news-microsoft-copilot-cowork-exfiltrates-files-0.md" >}})
 - [Anthropic开源AI漏洞发现框架]({{< relref "posts/20260604-hacker_news-anthropics-open-source-framework-for-ai-powered-vu-0.md" >}})
-- [Claude Opus 4.6 发布]({{< relref "posts/20260206-hacker_news-claude-opus-46-3.md" >}})
+- [Claude Opus 4.6 发布]({{< relref "posts/20260205-hacker_news-claude-opus-46-2.md" >}})
 - [Anthropic发布Claude Opus 4.7]({{< relref "posts/20260416-hacker_news-claude-opus-47-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

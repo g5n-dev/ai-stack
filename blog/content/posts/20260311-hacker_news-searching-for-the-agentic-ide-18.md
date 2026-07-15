@@ -22,6 +22,10 @@ external_url: https://twitter.com/karpathy/status/2031616709560610993
 scenarios:
 - 大语言模型
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 探索 Agent 化 IDE 的演进方向

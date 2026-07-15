@@ -1,14 +1,31 @@
 ---
-title: "基于文本反馈扩展强化学习的能力"
-date: 2026-02-03T23:08:59+08:00
+title: 基于文本反馈扩展强化学习的能力
+date: 2026-02-03 23:08:59+08:00
 draft: false
-entry_kind: "auto"
-tags: ["强化学习", "RLHF", "文本反馈", "RLTF", "自蒸馏", "逻辑推理", "模型训练", "AI对齐"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- 强化学习
+- RLHF
+- 文本反馈
+- RLTF
+- 自蒸馏
+- 逻辑推理
+- 模型训练
+- AI对齐
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "以下是该内容的中文总结： **标题：利用文本反馈扩展强化学习的能力** **核心问题与动机** 当前大语言模型（LLM）后训练中常用的强化学习（RL）主要依赖二元奖励或偏好标签，这种每轮仅提供“一比特”信息的方式过于贫乏。而在另一极端，知识蒸馏能提供密集的监督，但需要昂贵且难以扩展的演示数据。本文探讨了一种介于两者之间"
+description: 以下是该内容的中文总结： **标题：利用文本反馈扩展强化学习的能力** **核心问题与动机** 当前大语言模型（LLM）后训练中常用的强化学习（RL）主要依赖二元奖励或偏好标签，这种每轮仅提供“一比特”信息的方式过于贫乏。而在另一极端，知识蒸馏能提供密集的监督，但需要昂贵且难以扩展的演示数据。本文探讨了一种介于两者之间
 external_url: http://arxiv.org/abs/2602.02482v1
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+aliases:
+- /posts/20260204-arxiv_ai-expanding-the-capabilities-of-reinforcement-learni-5/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 基于文本反馈扩展强化学习的能力
@@ -559,9 +576,9 @@ scenarios: ["AI/ML项目"]
 
 ### 相关文章
 
-- [🔥模型自学革命！突破可学习性边界，推理能力暴涨！]({{< relref "posts/20260128-arxiv_ai-teaching-models-to-teach-themselves-reasoning-at-t-9.md" >}})
-- [🚀GPT-OSS智能体RL训练解密！从0到1实战复盘🔥]({{< relref "posts/20260127-blogs_podcasts-unlocking-agentic-rl-training-for-gpt-oss-a-practi-2.md" >}})
-- [🔥实战复盘：解锁GPT-OSS的智能体RL训练秘籍！]({{< relref "posts/20260128-blogs_podcasts-unlocking-agentic-rl-training-for-gpt-oss-a-practi-5.md" >}})
-- [探索面向智能体的推理奖励模型]({{< relref "posts/20260201-arxiv_ai-exploring-reasoning-reward-model-for-agents-4.md" >}})
-- [🔥POPE：利用特权探索破解硬核难题！]({{< relref "posts/20260128-arxiv_ai-pope-learning-to-reason-on-hard-problems-via-privi-8.md" >}})
+- [🔥模型自学革命！突破可学习性边界，推理能力暴涨！]({{< relref "posts/20260127-arxiv_ai-teaching-models-to-teach-themselves-reasoning-at-t-9.md" >}})
+- [🚀GPT-OSS智能体RL训练解密！从0到1实战复盘🔥]({{< relref "posts/20260127-blogs_podcasts-unlocking-agentic-rl-training-for-gpt-oss-a-practi-0.md" >}})
+- [🔥实战复盘：解锁GPT-OSS的智能体RL训练秘籍！]({{< relref "posts/20260127-blogs_podcasts-unlocking-agentic-rl-training-for-gpt-oss-a-practi-0.md" >}})
+- [探索面向智能体的推理奖励模型]({{< relref "posts/20260130-arxiv_ai-exploring-reasoning-reward-model-for-agents-4.md" >}})
+- [🔥POPE：利用特权探索破解硬核难题！]({{< relref "posts/20260127-arxiv_ai-pope-learning-to-reason-on-hard-problems-via-privi-8.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

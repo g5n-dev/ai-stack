@@ -1,14 +1,31 @@
 ---
-title: "OpenAI与巴西新闻集团合作 提升ChatGPT信息来源透明度"
-date: 2026-05-25T23:20:30+08:00
+title: OpenAI与巴西新闻集团合作 提升ChatGPT信息来源透明度
+date: 2026-05-25 23:20:30+08:00
 draft: false
-entry_kind: "auto"
-tags: ["OpenAI", "ChatGPT", "新闻合作", "巴西媒体", "内容透明度", "信息获取", "数据来源", "媒体合作"]
-categories: ["大模型"]
+entry_kind: auto
+tags:
+- OpenAI
+- ChatGPT
+- 新闻合作
+- 巴西媒体
+- 内容透明度
+- 信息获取
+- 数据来源
+- 媒体合作
+categories:
+- 大模型
 source: blogs_podcasts
-description: "OpenAI 与巴西媒体集团 Grupo Folha 和 Grupo UOL 建立战略内容合作伙伴关系，将两家主要新闻机构的可信报道引入 ChatGPT。此举旨在扩大用户在对话中获得巴西新闻的渠道，并通过引用和透明的方式标明来源，提升信息的可靠性和可追溯性。合作帮助传统媒体在 AI 时代获取新的分发方式，同时确保内容版"
+description: OpenAI 与巴西媒体集团 Grupo Folha 和 Grupo UOL 建立战略内容合作伙伴关系，将两家主要新闻机构的可信报道引入
+  ChatGPT。此举旨在扩大用户在对话中获得巴西新闻的渠道，并通过引用和透明的方式标明来源，提升信息的可靠性和可追溯性。合作帮助传统媒体在 AI 时代获取新的分发方式，同时确保内容版
 external_url: https://openai.com/index/grupo-folha-grupo-uol-partnership
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+aliases:
+- /posts/20260526-blogs_podcasts-openai-grupo-folha-and-grupo-uol-announce-strategi-0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # OpenAI与巴西新闻集团合作 提升ChatGPT信息来源透明度
@@ -89,8 +106,8 @@ OpenAI与巴西两大媒体集团的内容合作，标志着头部AI企业在内
 ### 相关文章
 
 - [OpenAI 将在 ChatGPT 中停用 GPT-4o 等四款模型]({{< relref "posts/20260129-hacker_news-retiring-gpt-4o-gpt-41-gpt-41-mini-and-openai-o4-m-2.md" >}})
-- [OpenAI 将在 ChatGPT 中下架 GPT-4o 等四款模型]({{< relref "posts/20260129-hacker_news-retiring-gpt-4o-gpt-41-gpt-41-mini-and-openai-o4-m-4.md" >}})
-- [OpenAI将于2026年2月退役ChatGPT中多款GPT‑4及o4模型]({{< relref "posts/20260130-blogs_podcasts-retiring-gpt-4o-gpt-41-gpt-41-mini-and-openai-o4-m-4.md" >}})
-- [OpenAI将于2026年2月退役ChatGPT内多款GPT‑4及o4‑mini模型]({{< relref "posts/20260130-blogs_podcasts-retiring-gpt-4o-gpt-41-gpt-41-mini-and-openai-o4-m-5.md" >}})
-- [OpenAI 将在 ChatGPT 中下架 GPT-4o 等四款模型]({{< relref "posts/20260130-hacker_news-retiring-gpt-4o-gpt-41-gpt-41-mini-and-openai-o4-m-11.md" >}})
+- [OpenAI 将在 ChatGPT 中下架 GPT-4o 等四款模型]({{< relref "posts/20260129-hacker_news-retiring-gpt-4o-gpt-41-gpt-41-mini-and-openai-o4-m-2.md" >}})
+- [OpenAI将于2026年2月退役ChatGPT中多款GPT‑4及o4模型]({{< relref "posts/20260129-hacker_news-retiring-gpt-4o-gpt-41-gpt-41-mini-and-openai-o4-m-2.md" >}})
+- [OpenAI将于2026年2月退役ChatGPT内多款GPT‑4及o4‑mini模型]({{< relref "posts/20260129-hacker_news-retiring-gpt-4o-gpt-41-gpt-41-mini-and-openai-o4-m-2.md" >}})
+- [OpenAI 将在 ChatGPT 中下架 GPT-4o 等四款模型]({{< relref "posts/20260129-hacker_news-retiring-gpt-4o-gpt-41-gpt-41-mini-and-openai-o4-m-2.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

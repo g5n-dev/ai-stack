@@ -1,14 +1,32 @@
 ---
-title: "基于标准化的扩散模型对称性重思考与分子图生成"
-date: 2026-02-17T22:35:47+08:00
+title: 基于标准化的扩散模型对称性重思考与分子图生成
+date: 2026-02-17 22:35:47+08:00
 draft: false
-entry_kind: "auto"
-tags: ["扩散模型", "分子图生成", "对称性", "标准化", "cs.LG", "生成式模型", "Equivariance", "AI for Science"]
-categories: ["论文", "大模型"]
+entry_kind: auto
+tags:
+- 扩散模型
+- 分子图生成
+- 对称性
+- 标准化
+- cs.LG
+- 生成式模型
+- Equivariance
+- AI for Science
+categories:
+- 论文
+- 大模型
 source: arxiv
-description: "**总结：通过规范化重新审视基于对称性的扩散模型及其在分子图生成中的应用** 本文提出了一种名为**“规范化”**的新视角，用于处理科学和化学领域中具有群对称性（如排列和旋转不变性）的生成任务。该方法挑战了传统依赖架构约束（如等变去噪器）的做法，旨在通过更简单的非等变模型实现更优的性能。 **核心方法：** 作者提出的"
+description: '**总结：通过规范化重新审视基于对称性的扩散模型及其在分子图生成中的应用** 本文提出了一种名为**“规范化”**的新视角，用于处理科学和化学领域中具有群对称性（如排列和旋转不变性）的生成任务。该方法挑战了传统依赖架构约束（如等变去噪器）的做法，旨在通过更简单的非等变模型实现更优的性能。
+  **核心方法：** 作者提出的'
 external_url: http://arxiv.org/abs/2602.15022v1
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+aliases:
+- /posts/20260218-arxiv_ai-rethinking-diffusion-models-with-symmetries-throug-2/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 基于标准化的扩散模型对称性重思考与分子图生成
@@ -558,7 +576,7 @@ scenarios: ["AI/ML项目"]
 
 ### 相关文章
 
-- [粒子引导扩散模型用于偏微分方程求解]({{< relref "posts/20260203-arxiv_ai-particle-guided-diffusion-models-for-partial-diffe-8.md" >}})
+- [粒子引导扩散模型用于偏微分方程求解]({{< relref "posts/20260202-arxiv_ai-particle-guided-diffusion-models-for-partial-diffe-8.md" >}})
 - [基于表征编码器解锁标准扩散Transformer]({{< relref "posts/20260211-arxiv_ai-learning-on-the-manifold-unlocking-standard-diffus-3.md" >}})
 - [🧬重磅！基于SE(3)流的刚体模态3D分子生成！]({{< relref "posts/20260126-arxiv_ai-3d-molecule-generation-from-rigid-motifs-via-se3-f-8.md" >}})
 - [🚀 自回归+掩码扩散：下一代生成式AI！🔥]({{< relref "posts/20260126-arxiv_ai-auto-regressive-masked-diffusion-models-3.md" >}})

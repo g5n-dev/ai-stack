@@ -1,14 +1,32 @@
 ---
-title: "AWS与Azercell合作基于SageMaker训练阿塞拜疆语大语言模型"
-date: 2026-05-28T23:45:23+08:00
+title: AWS与Azercell合作基于SageMaker训练阿塞拜疆语大语言模型
+date: 2026-05-28 23:45:23+08:00
 draft: false
-entry_kind: "auto"
-tags: ["多语言LLM", "迁移学习", "低资源语言", "词形切分", "子词分词", "分布式训练", "SageMaker", "电信AI"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- 多语言LLM
+- 迁移学习
+- 低资源语言
+- 词形切分
+- 子词分词
+- 分布式训练
+- SageMaker
+- 电信AI
+categories:
+- 大模型
+- AI 工程
 source: blogs_podcasts
-description: "项目背景 Azercell Telecom LLC 是阿塞拜疆最大的电信运营商，计划在 Amazon SageMaker AI 上训练阿塞拜疆语大语言模型（LLM），用于电信业务场景和面向客户的聊天机器人。核心挑战在于阿塞拜疆语形态丰富、训练数据稀缺，且缺乏可直接借鉴的高效训练方案。 技术方案 在六周的协作中，Azer"
+description: 项目背景 Azercell Telecom LLC 是阿塞拜疆最大的电信运营商，计划在 Amazon SageMaker AI 上训练阿塞拜疆语大语言模型（LLM），用于电信业务场景和面向客户的聊天机器人。核心挑战在于阿塞拜疆语形态丰富、训练数据稀缺，且缺乏可直接借鉴的高效训练方案。
+  技术方案 在六周的协作中，Azer
 external_url: https://aws.amazon.com/blogs/machine-learning/training-azerbaijani-language-models-on-amazon-sagemaker-ai
-scenarios: ["大语言模型", "AI/ML项目", "Web应用开发"]
+scenarios:
+- 大语言模型
+- AI/ML项目
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AWS与Azercell合作基于SageMaker训练阿塞拜疆语大语言模型
@@ -152,9 +170,9 @@ Azercell 计划在 Amazon SageMaker 环境下，基于已有的多语言基座
 
 ### 相关文章
 
-- [Scale LLM fine-tuning with Hugging Face and Amazon Sage]({{< relref "posts/20260211-blogs_podcasts-scale-llm-fine-tuning-with-hugging-face-and-amazon-9.md" >}})
-- [NVIDIA Nemotron 3 Nano 30B 现已登陆 Amazon SageMaker JumpSt]({{< relref "posts/20260212-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-4.md" >}})
-- [NVIDIA Nemotron 3 Nano 30B 现已在 Amazon SageMaker JumpSta]({{< relref "posts/20260212-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-6.md" >}})
-- [NVIDIA Nemotron 3 Nano 30B 模型现已在 Amazon SageMaker JumpS]({{< relref "posts/20260213-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-12.md" >}})
-- [Hexagon 利用 SageMaker HyperPod 加速分割模型预训练]({{< relref "posts/20260224-blogs_podcasts-accelerating-ai-model-production-at-hexagon-with-a-13.md" >}})
+- [Scale LLM fine-tuning with Hugging Face and Amazon Sage]({{< relref "posts/20260210-blogs_podcasts-scale-llm-fine-tuning-with-hugging-face-and-amazon-9.md" >}})
+- [NVIDIA Nemotron 3 Nano 30B 现已登陆 Amazon SageMaker JumpSt]({{< relref "posts/20260211-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-0.md" >}})
+- [NVIDIA Nemotron 3 Nano 30B 现已在 Amazon SageMaker JumpSta]({{< relref "posts/20260211-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-0.md" >}})
+- [NVIDIA Nemotron 3 Nano 30B 模型现已在 Amazon SageMaker JumpS]({{< relref "posts/20260211-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-0.md" >}})
+- [Hexagon 利用 SageMaker HyperPod 加速分割模型预训练]({{< relref "posts/20260223-blogs_podcasts-accelerating-ai-model-production-at-hexagon-with-a-1.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

@@ -23,6 +23,12 @@ external_url: http://arxiv.org/abs/2603.11027v1
 scenarios:
 - 大语言模型
 - AI/ML项目
+aliases:
+- /posts/20260313-arxiv_ai-beyond-the-illusion-of-consensus-from-surface-heur-5/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # LLM评测新范式：从表面启发式到知识 grounded 评估
@@ -432,8 +438,8 @@ scenarios:
 
 ### 相关文章
 
-- [迈向偏差可控的LLM评判器：基于有界评估的无偏验证]({{< relref "posts/20260308-arxiv_ai-towards-provably-unbiased-llm-judges-via-bias-boun-6.md" >}})
-- [UEval：统一多模态生成基准评测]({{< relref "posts/20260201-arxiv_ai-ueval-a-benchmark-for-unified-multimodal-generatio-3.md" >}})
+- [迈向偏差可控的LLM评判器：基于有界评估的无偏验证]({{< relref "posts/20260306-arxiv_ai-towards-provably-unbiased-llm-judges-via-bias-boun-6.md" >}})
+- [UEval：统一多模态生成基准评测]({{< relref "posts/20260130-arxiv_ai-ueval-a-benchmark-for-unified-multimodal-generatio-3.md" >}})
 - [超越VLM奖励：扩散原生潜在奖励建模]({{< relref "posts/20260212-arxiv_ai-beyond-vlm-based-rewards-diffusion-native-latent-r-3.md" >}})
-- [通过偏差有界评估实现可证明无偏的LLM评判者]({{< relref "posts/20260309-arxiv_ai-towards-provably-unbiased-llm-judges-via-bias-boun-6.md" >}})
-- [阿联酋方言评测新突破！Alyah让阿拉伯语大模型更鲁棒🚀]({{< relref "posts/20260127-blogs_podcasts-alyah-toward-robust-evaluation-of-emirati-dialect--1.md" >}})
+- [通过偏差有界评估实现可证明无偏的LLM评判者]({{< relref "posts/20260306-arxiv_ai-towards-provably-unbiased-llm-judges-via-bias-boun-6.md" >}})
+- [阿联酋方言评测新突破！Alyah让阿拉伯语大模型更鲁棒🚀]({{< relref "posts/20260127-blogs_podcasts-alyah-toward-robust-evaluation-of-emirati-dialect--0.md" >}})

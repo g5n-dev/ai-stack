@@ -1,12 +1,31 @@
 ---
-title: "🔥炸裂！Fedora Asahi Remix成功登陆苹果M3！Linux体验再升级！"
-date: 2026-01-26T22:15:20+08:00
+title: 🔥炸裂！Fedora Asahi Remix成功登陆苹果M3！Linux体验再升级！
+date: 2026-01-26 22:15:20+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Linux", "Apple Silicon", "M3", "Fedora", "Asahi", "驱动开发", "Mac", "开源硬件"]
-categories: ["开源生态", "系统与基础设施"]
+entry_kind: auto
+tags:
+- Linux
+- Apple Silicon
+- M3
+- Fedora
+- Asahi
+- 驱动开发
+- Mac
+- 开源硬件
+categories:
+- 开源生态
+- 系统与基础设施
 source: hacker_news
 external_url: https://bsky.app/profile/did:plc:okydh7e54e2nok65kjxdklvd/post/3mdd55paffk2o
+scenarios: []
+aliases:
+- /posts/20260127-hacker_news-fedora-asahi-remix-is-now-working-on-apple-m3-17/
+- /posts/20260127-hacker_news-fedora-asahi-remix-is-now-working-on-apple-m3-18/
+- /posts/20260127-hacker_news-fedora-asahi-remix-is-now-working-on-apple-m3-8/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 📰 🔥炸裂！Fedora Asahi Remix成功登陆苹果M3！Linux体验再升级！

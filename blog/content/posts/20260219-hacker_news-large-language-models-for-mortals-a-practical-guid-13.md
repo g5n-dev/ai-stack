@@ -22,6 +22,12 @@ external_url: https://crimede-coder.com/blogposts/2026/LLMsForMortals
 scenarios:
 - 大语言模型
 - AI/ML项目
+aliases:
+- /posts/20260219-hacker_news-large-language-models-for-mortals-a-practical-guid-11/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 面向分析师的Python大语言模型实战指南

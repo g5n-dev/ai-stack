@@ -1,14 +1,30 @@
 ---
-title: "土耳其语子词策略大规模评估：数据、词表与形态交互"
-date: 2026-02-09T23:42:37+08:00
+title: 土耳其语子词策略大规模评估：数据、词表与形态交互
+date: 2026-02-09 23:42:37+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Subword", "Tokenization", "土耳其语", "形态丰富语言", "词表优化", "NLP", "Morphology", "Llama"]
-categories: ["大模型", "数据"]
+entry_kind: auto
+tags:
+- Subword
+- Tokenization
+- 土耳其语
+- 形态丰富语言
+- 词表优化
+- NLP
+- Morphology
+- Llama
+categories:
+- 大模型
+- 数据
 source: arxiv
-description: "**标题：大规模土耳其语子词策略优化：数据、词汇与形态交互的系统评估** **摘要总结：** 本文针对土耳其语这一形态丰富的语言（MRL），提出了首个全面且原则性的子词分词研究，被称为“子词宣言”。研究旨在解决形态丰富语言中因粘着特性导致的词汇效率与形态保真度之间的冲突。 **主要问题与改进：** 此前的分词研究通常存"
+description: '**标题：大规模土耳其语子词策略优化：数据、词汇与形态交互的系统评估** **摘要总结：** 本文针对土耳其语这一形态丰富的语言（MRL），提出了首个全面且原则性的子词分词研究，被称为“子词宣言”。研究旨在解决形态丰富语言中因粘着特性导致的词汇效率与形态保真度之间的冲突。
+  **主要问题与改进：** 此前的分词研究通常存'
 external_url: http://arxiv.org/abs/2602.06942v1
-scenarios: ["自然语言处理"]
+scenarios:
+- 自然语言处理
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 土耳其语子词策略大规模评估：数据、词表与形态交互
@@ -503,8 +519,8 @@ Duygu Altinok 的这项工作针对形态丰富语言（MRL）——特别是土
 ### 相关文章
 
 - [🌍 跨242种语言！用子词模型解锁比较语言学新视角！]({{< relref "posts/20260127-arxiv_ai-subword-based-comparative-linguistics-across-242-l-3.md" >}})
-- [Alyah：评估阿拉伯语大模型阿联酋方言能力]({{< relref "posts/20260129-blogs_podcasts-alyah-toward-robust-evaluation-of-emirati-dialect--8.md" >}})
-- [Alyah：评估阿拉伯语大模型阿联酋方言能力]({{< relref "posts/20260129-blogs_podcasts-alyah-toward-robust-evaluation-of-emirati-dialect--9.md" >}})
-- [Show HN：我用9M参数语音模型修正普通话声调]({{< relref "posts/20260131-hacker_news-show-hn-i-trained-a-9m-speech-model-to-fix-my-mand-2.md" >}})
-- [挖掘模型仓库中的隐藏价值]({{< relref "posts/20260201-arxiv_ai-discovering-hidden-gems-in-model-repositories-1.md" >}})
+- [Alyah：评估阿拉伯语大模型阿联酋方言能力]({{< relref "posts/20260127-blogs_podcasts-alyah-toward-robust-evaluation-of-emirati-dialect--0.md" >}})
+- [Alyah：评估阿拉伯语大模型阿联酋方言能力]({{< relref "posts/20260127-blogs_podcasts-alyah-toward-robust-evaluation-of-emirati-dialect--0.md" >}})
+- [Show HN：我用9M参数语音模型修正普通话声调]({{< relref "posts/20260131-hacker_news-show-hn-i-trained-a-9m-speech-model-to-fix-my-mand-1.md" >}})
+- [挖掘模型仓库中的隐藏价值]({{< relref "posts/20260130-arxiv_ai-discovering-hidden-gems-in-model-repositories-1.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

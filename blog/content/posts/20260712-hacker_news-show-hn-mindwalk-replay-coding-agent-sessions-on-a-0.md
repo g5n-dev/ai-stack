@@ -1,14 +1,30 @@
 ---
-title: "在3D代码地图上回放编码代理会话"
-date: 2026-07-12T10:42:23+08:00
+title: 在3D代码地图上回放编码代理会话
+date: 2026-07-12 10:42:23+08:00
 draft: false
-entry_kind: "auto"
-tags: ["编码代理", "3D可视化", "代码地图", "会话回放", "编程工具", "开源", "AI编程", "代码分析"]
-categories: ["开发工具", "产品与创业"]
+entry_kind: auto
+tags:
+- 编码代理
+- 3D可视化
+- 代码地图
+- 会话回放
+- 编程工具
+- 开源
+- AI 编程
+- 代码分析
+categories:
+- 开发工具
+- 产品与创业
 source: hacker_news
-description: "Mindwalk 提供了一种全新的方式来审视 AI 编码代理的工作过程。它将终端中抽象的指令序列转化为可交互的 3D 可视化地图，让开发者能够直观地追踪代理在代码库中的行动轨迹。在多代理协作或大规模重构的场景下，这种空间化的回放方式显著降低了理解和审查的难度。对于关注 AI 辅助开发效率的工程师而言，这是一个值得深入了"
+description: Mindwalk 提供了一种全新的方式来审视 AI 编码代理的工作过程。它将终端中抽象的指令序列转化为可交互的 3D 可视化地图，让开发者能够直观地追踪代理在代码库中的行动轨迹。在多代理协作或大规模重构的场景下，这种空间化的回放方式显著降低了理解和审查的难度。对于关注
+  AI 辅助开发效率的工程师而言，这是一个值得深入了
 external_url: https://github.com/cosmtrek/mindwalk
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 在3D代码地图上回放编码代理会话
@@ -81,8 +97,8 @@ Mindwalk提供了一种将AI编码会话时空化的创新思路，但其实际�
 ### 相关文章
 
 - [Zerostack：Unix风格纯Rust编码代理]({{< relref "posts/20260517-hacker_news-zerostack-a-unix-inspired-coding-agent-written-in--0.md" >}})
-- [Qwen3-Coder-Next：阿里新一代代码模型]({{< relref "posts/20260203-hacker_news-qwen3-coder-next-2.md" >}})
-- [Qwen3-Coder-Next：阿里下一代代码模型]({{< relref "posts/20260204-hacker_news-qwen3-coder-next-10.md" >}})
+- [Qwen3-Coder-Next：阿里新一代代码模型]({{< relref "posts/20260203-hacker_news-qwen3-coder-next-0.md" >}})
+- [Qwen3-Coder-Next：阿里下一代代码模型]({{< relref "posts/20260203-hacker_news-qwen3-coder-next-0.md" >}})
 - [Tide Commander：多AI编程代理的3D战场可视化工具]({{< relref "posts/20260217-juejin-tide-commander-一个用3d战场管理多个ai编程agent的可视化工具claude-co-3.md" >}})
-- [Rudel：针对 Claude Code 会话的分析工具]({{< relref "posts/20260312-hacker_news-show-hn-rudel-claude-code-session-analytics-19.md" >}})
+- [Rudel：针对 Claude Code 会话的分析工具]({{< relref "posts/20260312-hacker_news-show-hn-we-analyzed-1573-claude-code-sessions-to-s-3.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

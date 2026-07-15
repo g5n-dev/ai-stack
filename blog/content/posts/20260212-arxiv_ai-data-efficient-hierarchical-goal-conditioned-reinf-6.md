@@ -1,14 +1,32 @@
 ---
-title: "基于归一化流的高效分层目标条件强化学习"
-date: 2026-02-12T23:40:07+08:00
+title: 基于归一化流的高效分层目标条件强化学习
+date: 2026-02-12 23:40:07+08:00
 draft: false
-entry_kind: "auto"
-tags: ["强化学习", "归一化流", "分层强化学习", "H-GCRL", "NF-HIQL", "目标条件", "长程任务", "数据效率"]
-categories: ["论文", "AI 工程"]
+entry_kind: auto
+tags:
+- 强化学习
+- 归一化流
+- 分层强化学习
+- H-GCRL
+- NF-HIQL
+- 目标条件
+- 长程任务
+- 数据效率
+categories:
+- 论文
+- AI 工程
 source: arxiv
-description: "**总结：基于归一化流的数据高效分层目标条件强化学习** 本文提出了一种名为**NF-HIQL**（Normalizing Flow-based Hierarchical Implicit Q-learning）的新框架，旨在解决分层目标条件强化学习（H-GCRL）在数据效率和策略表达能力方面的局限性，使其能更好地应对"
+description: '**总结：基于归一化流的数据高效分层目标条件强化学习** 本文提出了一种名为**NF-HIQL**（Normalizing Flow-based
+  Hierarchical Implicit Q-learning）的新框架，旨在解决分层目标条件强化学习（H-GCRL）在数据效率和策略表达能力方面的局限性，使其能更好地应对'
 external_url: http://arxiv.org/abs/2602.11142v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+aliases:
+- /posts/20260213-arxiv_ai-data-efficient-hierarchical-goal-conditioned-reinf-6/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 基于归一化流的高效分层目标条件强化学习
@@ -506,6 +524,6 @@ HRL 解决了长时序问题，而 Normalizing Flows 是本文的核心建模工
 - [函数空间逆问题的解耦扩散采样方法]({{< relref "posts/20260202-arxiv_ai-decoupled-diffusion-sampling-for-inverse-problems--2.md" >}})
 - [共享自治系统中信念与策略学习的端到端优化]({{< relref "posts/20260202-arxiv_ai-end-to-end-optimization-of-belief-and-policy-learn-1.md" >}})
 - [RN-D：基于正则化网络的离散分类演员与同策强化学习]({{< relref "posts/20260202-arxiv_ai-rn-d-discretized-categorical-actors-with-regulariz-7.md" >}})
-- [基于流策略梯度的机器人控制方法]({{< relref "posts/20260204-arxiv_ai-flow-policy-gradients-for-robot-control-6.md" >}})
-- [基于急停干预的鲁棒干预学习]({{< relref "posts/20260205-arxiv_ai-robust-intervention-learning-from-emergency-stop-i-7.md" >}})
+- [基于流策略梯度的机器人控制方法]({{< relref "posts/20260203-arxiv_ai-flow-policy-gradients-for-robot-control-6.md" >}})
+- [基于急停干预的鲁棒干预学习]({{< relref "posts/20260204-arxiv_ai-robust-intervention-learning-from-emergency-stop-i-7.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

@@ -21,6 +21,10 @@ description: 本文介绍了**Discourse-Aware Dual-Track Streaming Response (DDT
 external_url: http://arxiv.org/abs/2602.23266v1
 scenarios:
 - Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 面向低延迟口语对话的语篇感知双流响应生成
@@ -421,8 +425,8 @@ DDTSR 试图在计算系统中复现这一机制：用小模型模拟低脑力�
 
 ### 相关文章
 
-- [Amazon Nova Sonic 实时语音助手与级联架构对比]({{< relref "posts/20260212-blogs_podcasts-building-real-time-voice-assistants-with-amazon-no-14.md" >}})
+- [Amazon Nova Sonic 实时语音助手与级联架构对比]({{< relref "posts/20260210-blogs_podcasts-building-real-time-voice-assistants-with-amazon-no-2.md" >}})
 - [TG-ASR：基于并行门控交叉注意力的翻译引导低资源语音识别]({{< relref "posts/20260226-arxiv_ai-tg-asr-translation-guided-learning-with-parallel-g-0.md" >}})
-- [训练 9M 参数语音模型修正普通话声调]({{< relref "posts/20260131-hacker_news-show-hn-i-trained-a-9m-speech-model-to-fix-my-mand-13.md" >}})
-- [训练900万参数语音模型修正普通话声调]({{< relref "posts/20260131-hacker_news-show-hn-i-trained-a-9m-speech-model-to-fix-my-mand-15.md" >}})
-- [Show HN: 训练900万参数语音模型修正普通话声调]({{< relref "posts/20260131-hacker_news-show-hn-i-trained-a-9m-speech-model-to-fix-my-mand-6.md" >}})
+- [训练 9M 参数语音模型修正普通话声调]({{< relref "posts/20260131-hacker_news-show-hn-i-trained-a-9m-speech-model-to-fix-my-mand-1.md" >}})
+- [训练900万参数语音模型修正普通话声调]({{< relref "posts/20260131-hacker_news-show-hn-i-trained-a-9m-speech-model-to-fix-my-mand-1.md" >}})
+- [Show HN: 训练900万参数语音模型修正普通话声调]({{< relref "posts/20260131-hacker_news-show-hn-i-trained-a-9m-speech-model-to-fix-my-mand-1.md" >}})

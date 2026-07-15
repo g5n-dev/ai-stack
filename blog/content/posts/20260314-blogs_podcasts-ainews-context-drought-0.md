@@ -22,6 +22,19 @@ external_url: https://www.latent.space/p/ainews-context-drought
 scenarios:
 - 大语言模型
 - AI/ML项目
+aliases:
+- /posts/20260315-blogs_podcasts-ainews-context-drought-0/
+- /posts/20260316-blogs_podcasts-ainews-context-drought-0/
+- /posts/20260316-blogs_podcasts-ainews-context-drought-2/
+- /posts/20260316-blogs_podcasts-ainews-context-drought-5/
+- /posts/20260317-blogs_podcasts-ainews-context-drought-13/
+- /posts/20260317-blogs_podcasts-ainews-context-drought-14/
+- /posts/20260317-blogs_podcasts-ainews-context-drought-8/
+- /posts/20260317-blogs_podcasts-ainews-context-drought-9/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Anthropic 正式发布 100 万 token 上下文窗口
@@ -308,7 +321,7 @@ scenarios:
 ### 相关文章
 
 - [Claude Opus 4.6 发布：性能与上下文窗口提升]({{< relref "posts/20260205-hacker_news-claude-opus-46-2.md" >}})
-- [Claude Opus 4.6 发布：上下文窗口与推理能力提升]({{< relref "posts/20260206-hacker_news-claude-opus-46-0.md" >}})
-- [Claude Sonnet 4.6发布：兼顾高性能与长文本]({{< relref "posts/20260218-hacker_news-claude-sonnet-46-2.md" >}})
-- [Claude Opus 4.6 发布]({{< relref "posts/20260206-hacker_news-claude-opus-46-3.md" >}})
+- [Claude Opus 4.6 发布：上下文窗口与推理能力提升]({{< relref "posts/20260205-hacker_news-claude-opus-46-2.md" >}})
+- [Claude Sonnet 4.6发布：兼顾高性能与长文本]({{< relref "posts/20260217-hacker_news-claude-sonnet-46-0.md" >}})
+- [Claude Opus 4.6 发布]({{< relref "posts/20260205-hacker_news-claude-opus-46-2.md" >}})
 - [OpenAI发布GPT-5.3-Codex代码生成模型]({{< relref "posts/20260206-hacker_news-gpt-53-codex-8.md" >}})

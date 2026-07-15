@@ -23,6 +23,10 @@ scenarios:
 - AI/ML项目
 - DevOps/运维
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Ralph Wiggum：AI编码代理的自治循环框架
@@ -171,8 +175,8 @@ Ralph Wiggum 自治循环是一种高度自动化的 AI 编程工作流。与传
 
 ### 相关文章
 
-- [构建极简编程代理的技术实践与经验总结]({{< relref "posts/20260202-hacker_news-what-i-learned-building-an-opinionated-and-minimal-11.md" >}})
-- [Claude Code：面向基础设施开发的AI编程工具]({{< relref "posts/20260205-hacker_news-claude-code-for-infrastructure-12.md" >}})
-- [Claude Code：面向基础设施的AI编程助手]({{< relref "posts/20260205-hacker_news-claude-code-for-infrastructure-2.md" >}})
-- [AI 编程代理已全面替代我使用的所有开发框架]({{< relref "posts/20260207-hacker_news-coding-agents-have-replaced-every-framework-i-used-10.md" >}})
-- [编程智能体取代常用开发框架的实践]({{< relref "posts/20260207-hacker_news-coding-agents-have-replaced-every-framework-i-used-14.md" >}})
+- [构建极简编程代理的技术实践与经验总结]({{< relref "posts/20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-1.md" >}})
+- [Claude Code：面向基础设施开发的AI编程工具]({{< relref "posts/20260204-hacker_news-claude-code-for-infrastructure-11.md" >}})
+- [Claude Code：面向基础设施的AI编程助手]({{< relref "posts/20260204-hacker_news-claude-code-for-infrastructure-11.md" >}})
+- [AI 编程代理已全面替代我使用的所有开发框架]({{< relref "posts/20260207-hacker_news-coding-agents-have-replaced-every-framework-i-used-8.md" >}})
+- [编程智能体取代常用开发框架的实践]({{< relref "posts/20260207-hacker_news-coding-agents-have-replaced-every-framework-i-used-8.md" >}})

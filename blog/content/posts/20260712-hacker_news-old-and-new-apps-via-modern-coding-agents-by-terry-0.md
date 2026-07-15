@@ -1,14 +1,30 @@
 ---
-title: "陶哲轩利用现代编码代理开发新旧应用"
-date: 2026-07-12T18:17:40+08:00
+title: 陶哲轩利用现代编码代理开发新旧应用
+date: 2026-07-12 18:17:40+08:00
 draft: false
-entry_kind: "auto"
-tags: ["编码代理", "AI编程", "大模型", "自动化", "开发效率", "数学家", "案例", "代码生成"]
-categories: ["开发工具", "AI 工程"]
+entry_kind: auto
+tags:
+- 编码代理
+- AI 编程
+- 大模型
+- 自动化
+- 开发效率
+- 数学家
+- 案例
+- 代码生成
+categories:
+- 开发工具
+- AI 工程
 source: hacker_news
-description: "在软件开发中，如何让已有数十年代码遗产的系统快速适配新技术栈，是工程师持续面临的挑战。Terry Tao 通过现代编程代理的实践，展示了在保持旧应用核心功能的同时，利用 AI 实现自动化重构、接口桥接和持续集成的可行路径。本文将梳理其关键思路与典型案例，帮助读者了解如何在真实项目中平衡技术迁移与业务连续性，并提供可直接"
+description: 在软件开发中，如何让已有数十年代码遗产的系统快速适配新技术栈，是工程师持续面临的挑战。Terry Tao 通过现代编程代理的实践，展示了在保持旧应用核心功能的同时，利用
+  AI 实现自动化重构、接口桥接和持续集成的可行路径。本文将梳理其关键思路与典型案例，帮助读者了解如何在真实项目中平衡技术迁移与业务连续性，并提供可直接
 external_url: https://terrytao.wordpress.com/2026/07/11/old-and-new-apps-via-modern-coding-agents
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 陶哲轩利用现代编码代理开发新旧应用
@@ -78,9 +94,9 @@ scenarios: ["AI/ML项目"]
 
 ### 相关文章
 
-- [Codex App：基于自然语言指令的代码生成工具]({{< relref "posts/20260203-hacker_news-the-codex-app-4.md" >}})
+- [Codex App：基于自然语言指令的代码生成工具]({{< relref "posts/20260202-hacker_news-the-codex-app-1.md" >}})
 - [Zerostack：Unix风格纯Rust编码代理]({{< relref "posts/20260517-hacker_news-zerostack-a-unix-inspired-coding-agent-written-in--0.md" >}})
 - [Vibe Coding体验：代码生成替代手动编写]({{< relref "posts/20260607-juejin-vibe-coding-之后我更不想打字了-0.md" >}})
-- [构建极简编程代理的技术实践与经验总结]({{< relref "posts/20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-17.md" >}})
-- [Codex 应用：基于 OpenAI 模型的代码生成工具]({{< relref "posts/20260203-hacker_news-the-codex-app-12.md" >}})
+- [构建极简编程代理的技术实践与经验总结]({{< relref "posts/20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-1.md" >}})
+- [Codex 应用：基于 OpenAI 模型的代码生成工具]({{< relref "posts/20260202-hacker_news-the-codex-app-1.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

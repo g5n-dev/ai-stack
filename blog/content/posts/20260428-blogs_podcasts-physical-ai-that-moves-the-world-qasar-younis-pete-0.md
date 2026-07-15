@@ -1,14 +1,30 @@
 ---
-title: "对话Applied Intuition高管：AI驱动采矿设备无人机卡车战舰"
-date: 2026-04-28T00:12:21+08:00
+title: 对话Applied Intuition高管：AI驱动采矿设备无人机卡车战舰
+date: 2026-04-28 00:12:21+08:00
 draft: false
-entry_kind: "auto"
-tags: ["物理AI", "自动驾驶", "无人机", "采矿设备", "实时感知", "路径规划", "软硬件协同", "极端环境"]
-categories: ["AI 工程"]
+entry_kind: auto
+tags:
+- 物理AI
+- 自动驾驶
+- 无人机
+- 采矿设备
+- 实时感知
+- 路径规划
+- 软硬件协同
+- 极端环境
+categories:
+- AI 工程
 source: blogs_podcasts
-description: "Applied Intuition 是一家专注于将人工智能嵌入实际物理系统的公司。其CEO Qasar Younis 与CTO Peter Ludwig 在访谈中指出，公司的AI 技术已被部署在矿山钻机、无人机、卡车、战舰等最严苛的环境里，旨在让这些物理机器在极端对抗条件下实现自主运行与高效控制。他们强调，物理AI 不"
+description: Applied Intuition 是一家专注于将人工智能嵌入实际物理系统的公司。其CEO Qasar Younis 与CTO Peter
+  Ludwig 在访谈中指出，公司的AI 技术已被部署在矿山钻机、无人机、卡车、战舰等最严苛的环境里，旨在让这些物理机器在极端对抗条件下实现自主运行与高效控制。他们强调，物理AI
+  不
 external_url: https://www.latent.space/p/appliedintuition
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 对话Applied Intuition高管：AI驱动采矿设备无人机卡车战舰
@@ -154,8 +170,8 @@ Physical AI 是实现全球工业自动化的关键技术路径，能够在对
 ### 相关文章
 
 - [自动驾驶与无人机易受路牌提示词注入攻击]({{< relref "posts/20260131-hacker_news-autonomous-cars-drones-cheerfully-obey-prompt-inje-17.md" >}})
-- [自动驾驶与无人机易受路牌提示词攻击]({{< relref "posts/20260201-hacker_news-autonomous-cars-drones-cheerfully-obey-prompt-inje-18.md" >}})
-- [混合系统助力机器人在动态环境中导航及多机器人装配]({{< relref "posts/20260312-blogs_podcasts-a-better-method-for-planning-complex-visual-tasks-13.md" >}})
-- [Waymo世界模型：自动驾驶仿真的新前沿]({{< relref "posts/20260206-hacker_news-the-waymo-world-model-a-new-frontier-for-autonomou-0.md" >}})
+- [自动驾驶与无人机易受路牌提示词攻击]({{< relref "posts/20260131-hacker_news-autonomous-cars-drones-cheerfully-obey-prompt-inje-17.md" >}})
+- [混合系统助力机器人在动态环境中导航及多机器人装配]({{< relref "posts/20260311-blogs_podcasts-a-better-method-for-planning-complex-visual-tasks-0.md" >}})
+- [Waymo世界模型：自动驾驶仿真的新前沿]({{< relref "posts/20260206-hacker_news-the-waymo-world-model-a-new-frontier-for-autonomou-4.md" >}})
 - [Waymo世界模型：自动驾驶仿真的新前沿]({{< relref "posts/20260206-hacker_news-the-waymo-world-model-a-new-frontier-for-autonomou-4.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

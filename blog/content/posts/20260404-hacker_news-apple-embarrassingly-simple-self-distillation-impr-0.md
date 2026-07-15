@@ -1,14 +1,31 @@
 ---
-title: "Apple自蒸馏技术简化代码生成流程"
-date: 2026-04-04T13:17:42+08:00
+title: Apple自蒸馏技术简化代码生成流程
+date: 2026-04-04 13:17:42+08:00
 draft: false
-entry_kind: "auto"
-tags: ["自蒸馏", "代码生成", "大模型", "Apple", "模型压缩", "自监督", "机器学习", "AI"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- 自蒸馏
+- 代码生成
+- 大模型
+- Apple
+- 模型压缩
+- 自监督
+- 机器学习
+- AI
+categories:
+- 大模型
+- AI 工程
 source: hacker_news
-description: "苹果发布一种极其简单的自蒸馏技术，用于提升代码生成模型的性能。代码生成在提升开发者效率、加速软件迭代方面扮演关键角色，而现有方法往往依赖大规模外部数据或复杂训练流程，成本高、门槛大。本文深入解析该方法的核心思想、实现细节以及在多项基准上的实验结果，帮助研究者和工程师快速评估其在实际项目中的可行性。"
+description: 苹果发布一种极其简单的自蒸馏技术，用于提升代码生成模型的性能。代码生成在提升开发者效率、加速软件迭代方面扮演关键角色，而现有方法往往依赖大规模外部数据或复杂训练流程，成本高、门槛大。本文深入解析该方法的核心思想、实现细节以及在多项基准上的实验结果，帮助研究者和工程师快速评估其在实际项目中的可行性。
 external_url: https://arxiv.org/abs/2604.01193
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+aliases:
+- /posts/20260404-hacker_news-simple-self-distillation-improves-code-generation-0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Apple自蒸馏技术简化代码生成流程
@@ -81,9 +98,9 @@ Apple这篇论文提出的"Embarrassingly Simple Self-Distillation"方法，本�
 
 ### 相关文章
 
-- [Claude Opus 4.6 发布]({{< relref "posts/20260206-hacker_news-claude-opus-46-3.md" >}})
-- [Qwen3.5 微调指南]({{< relref "posts/20260305-hacker_news-qwen35-fine-tuning-guide-17.md" >}})
+- [Claude Opus 4.6 发布]({{< relref "posts/20260205-hacker_news-claude-opus-46-2.md" >}})
+- [Qwen3.5 微调指南]({{< relref "posts/20260304-hacker_news-qwen35-fine-tuning-guide-unsloth-documentation-7.md" >}})
 - [神经网络原理的可视化解析]({{< relref "posts/20260206-hacker_news-understanding-neural-network-visually-16.md" >}})
-- [神经网络原理可视化解析]({{< relref "posts/20260206-hacker_news-understanding-neural-network-visually-2.md" >}})
-- [神经网络原理可视化解析]({{< relref "posts/20260206-hacker_news-understanding-neural-network-visually-3.md" >}})
+- [神经网络原理可视化解析]({{< relref "posts/20260206-hacker_news-understanding-neural-network-visually-16.md" >}})
+- [神经网络原理可视化解析]({{< relref "posts/20260206-hacker_news-understanding-neural-network-visually-16.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

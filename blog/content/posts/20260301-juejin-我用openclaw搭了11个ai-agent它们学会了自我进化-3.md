@@ -20,6 +20,10 @@ description: 我用OpenClaw构建了11个AI Agent，通过自主观察、学习�
 external_url: https://juejin.cn/post/7611814182954516480
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # OpenClow构建11个AI Agent实现自主观察与策略进化
@@ -181,8 +185,8 @@ OpenClaw 是一个用于构建多智能体系统的开源框架。虽然 LangCha
 
 ### 相关文章
 
-- [AI vs SaaS：从OpenClaw到MCP UI的演进与反思]({{< relref "posts/20260210-blogs_podcasts-ainews-ai-vs-saas-the-unreasonable-effectiveness-o-4.md" >}})
+- [AI vs SaaS：从OpenClaw到MCP UI的演进与反思]({{< relref "posts/20260207-blogs_podcasts-ainews-ai-vs-saas-the-unreasonable-effectiveness-o-0.md" >}})
 - [迈向智能体系统规模化科学：作用机制与生效条件]({{< relref "posts/20260201-hacker_news-towards-a-science-of-scaling-agent-systems-when-an-11.md" >}})
 - [AgentRx：基于执行轨迹的AI智能体故障诊断]({{< relref "posts/20260203-arxiv_ai-agentrx-diagnosing-ai-agent-failures-from-executio-8.md" >}})
-- [AgentRx：基于执行轨迹的AI智能体故障诊断]({{< relref "posts/20260204-arxiv_ai-agentrx-diagnosing-ai-agent-failures-from-executio-8.md" >}})
+- [AgentRx：基于执行轨迹的AI智能体故障诊断]({{< relref "posts/20260203-arxiv_ai-agentrx-diagnosing-ai-agent-failures-from-executio-8.md" >}})
 - [基于GLM-5与OpenClaw构建具备任务执行能力的AI伴侣]({{< relref "posts/20260212-juejin-我用-glm-5-做了个-ai-女友能发自拍发语音还能帮我干活-2.md" >}})

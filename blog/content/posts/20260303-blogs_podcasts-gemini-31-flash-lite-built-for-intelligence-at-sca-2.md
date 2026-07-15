@@ -11,7 +11,7 @@ tags:
 - 成本优化
 - 推理性能
 - Google
-- AI基础设施
+- AI 基础设施
 categories:
 - 大模型
 - AI 工程
@@ -21,6 +21,21 @@ external_url: https://deepmind.google/blog/gemini-3-1-flash-lite-built-for-intel
 scenarios:
 - 大语言模型
 - AI/ML项目
+aliases:
+- /posts/20260304-blogs_podcasts-gemini-31-flash-lite-built-for-intelligence-at-sca-11/
+- /posts/20260304-blogs_podcasts-gemini-31-flash-lite-built-for-intelligence-at-sca-2/
+- /posts/20260304-blogs_podcasts-gemini-31-flash-lite-built-for-intelligence-at-sca-3/
+- /posts/20260304-blogs_podcasts-gemini-31-flash-lite-built-for-intelligence-at-sca-4/
+- /posts/20260304-blogs_podcasts-gemini-31-flash-lite-built-for-intelligence-at-sca-6/
+- /posts/20260304-blogs_podcasts-gemini-31-flash-lite-built-for-intelligence-at-sca-8/
+- /posts/20260304-blogs_podcasts-gemini-31-flash-lite-built-for-intelligence-at-sca-9/
+- /posts/20260305-blogs_podcasts-gemini-31-flash-lite-built-for-intelligence-at-sca-11/
+- /posts/20260305-blogs_podcasts-gemini-31-flash-lite-built-for-intelligence-at-sca-12/
+- /posts/20260305-blogs_podcasts-gemini-31-flash-lite-built-for-intelligence-at-sca-13/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Gemini 3.1 Flash-Lite：速度最快且最具成本效益的模型
@@ -280,5 +295,5 @@ Gemini 3.1 Flash-Lite 专为“规模化的智能”而构建，具有极高的�
 - [谷歌发布 Gemini 3.1 模型]({{< relref "posts/20260219-hacker_news-gemini-31-1.md" >}})
 - [谷歌发布 Gemini 3.1 Pro 模型]({{< relref "posts/20260219-hacker_news-gemini-31-pro-0.md" >}})
 - [谷歌发布 Gemini 3.1 Pro 预览版]({{< relref "posts/20260219-hacker_news-gemini-31-pro-preview-10.md" >}})
-- [谷歌发布 Gemini 3.1 Pro 预览版]({{< relref "posts/20260219-hacker_news-gemini-31-pro-preview-18.md" >}})
-- [Gemini 3.1 Pro：专为复杂任务设计的智能模型]({{< relref "posts/20260220-blogs_podcasts-gemini-31-pro-a-smarter-model-for-your-most-comple-6.md" >}})
+- [谷歌发布 Gemini 3.1 Pro 预览版]({{< relref "posts/20260219-hacker_news-gemini-31-pro-preview-10.md" >}})
+- [Gemini 3.1 Pro：专为复杂任务设计的智能模型]({{< relref "posts/20260219-blogs_podcasts-gemini-31-pro-a-smarter-model-for-your-most-comple-4.md" >}})

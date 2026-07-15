@@ -1,14 +1,34 @@
 ---
-title: "RedSage：网络安全通用大模型"
-date: 2026-01-30T23:03:03+08:00
+title: RedSage：网络安全通用大模型
+date: 2026-01-30 23:03:03+08:00
 draft: false
-entry_kind: "auto"
-tags: ["RedSage", "网络安全", "LLM", "开源", "SFT", "RedSage-Bench", "本地部署", "数据隐私"]
-categories: ["安全", "大模型"]
+entry_kind: auto
+tags:
+- RedSage
+- 网络安全
+- LLM
+- 开源
+- SFT
+- RedSage-Bench
+- 本地部署
+- 数据隐私
+categories:
+- 安全
+- 大模型
 source: arxiv
-description: "以下是关于 **RedSage** 的内容总结： **概述** RedSage 是一个专注于网络安全领域的开源通用大语言模型（LLM），旨在作为本地部署的网络安全助手，辅助多样化的工作流程，同时解决敏感数据隐私保护的问题。 **构建方法** 1. **数据准备**：通过大规模网络筛选和手动收集，整理了 **118亿（1"
+description: 以下是关于 **RedSage** 的内容总结： **概述** RedSage 是一个专注于网络安全领域的开源通用大语言模型（LLM），旨在作为本地部署的网络安全助手，辅助多样化的工作流程，同时解决敏感数据隐私保护的问题。
+  **构建方法** 1. **数据准备**：通过大规模网络筛选和手动收集，整理了 **118亿（1
 external_url: http://arxiv.org/abs/2601.22159v1
-scenarios: ["大语言模型"]
+scenarios:
+- 大语言模型
+aliases:
+- /posts/20260131-arxiv_ai-redsage-a-cybersecurity-generalist-llm-0/
+- /posts/20260201-arxiv_ai-redsage-a-cybersecurity-generalist-llm-0/
+- /posts/20260202-arxiv_ai-redsage-a-cybersecurity-generalist-llm-0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # RedSage：网络安全通用大模型
@@ -473,9 +493,9 @@ RedSage 推进的是**“方法”**而非纯粹的**“理解”**。它提供�
 
 ### 相关文章
 
-- [Show HN: 可视化 LLM 工具数据传输的 MitM 代理]({{< relref "posts/20260129-hacker_news-show-hn-a-mitm-proxy-to-see-what-your-llm-tools-ar-14.md" >}})
-- [Trinity Large：开源4000亿稀疏MoE模型]({{< relref "posts/20260129-hacker_news-trinity-large-an-open-400b-sparse-moe-model-11.md" >}})
-- [Trinity Large：开源4000亿稀疏MoE模型]({{< relref "posts/20260129-hacker_news-trinity-large-an-open-400b-sparse-moe-model-13.md" >}})
-- [Trinity Large：开源4000亿稀疏MoE模型]({{< relref "posts/20260129-hacker_news-trinity-large-an-open-400b-sparse-moe-model-14.md" >}})
-- [Trinity Large：开源4000亿稀疏MoE模型]({{< relref "posts/20260129-hacker_news-trinity-large-an-open-400b-sparse-moe-model-15.md" >}})
+- [Show HN: 可视化 LLM 工具数据传输的 MitM 代理]({{< relref "posts/20260129-hacker_news-show-hn-a-mitm-proxy-to-see-what-your-llm-tools-ar-9.md" >}})
+- [Trinity Large：开源4000亿稀疏MoE模型]({{< relref "posts/20260129-hacker_news-trinity-large-an-open-400b-sparse-moe-model-4.md" >}})
+- [Trinity Large：开源4000亿稀疏MoE模型]({{< relref "posts/20260129-hacker_news-trinity-large-an-open-400b-sparse-moe-model-4.md" >}})
+- [Trinity Large：开源4000亿稀疏MoE模型]({{< relref "posts/20260129-hacker_news-trinity-large-an-open-400b-sparse-moe-model-4.md" >}})
+- [Trinity Large：开源4000亿稀疏MoE模型]({{< relref "posts/20260129-hacker_news-trinity-large-an-open-400b-sparse-moe-model-4.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

@@ -21,6 +21,12 @@ description: 本文提出了一种名为 **“Mode Seeking meets Mean Seeking”
 external_url: http://arxiv.org/abs/2602.24289v1
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260303-arxiv_ai-mode-seeking-meets-mean-seeking-for-fast-long-vide-0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 模式寻优结合均值寻优实现快速长视频生成
@@ -450,8 +456,8 @@ scenarios:
 
 ### 相关文章
 
-- [MonarchRT：面向实时视频生成的高效注意力机制]({{< relref "posts/20260216-arxiv_ai-monarchrt-efficient-attention-for-real-time-video--7.md" >}})
+- [MonarchRT：面向实时视频生成的高效注意力机制]({{< relref "posts/20260213-arxiv_ai-monarchrt-efficient-attention-for-real-time-video--7.md" >}})
 - [VideoGPA：提取几何先验实现三维一致视频生成]({{< relref "posts/20260202-arxiv_ai-videogpa-distilling-geometry-priors-for-3d-consist-0.md" >}})
-- [VideoGPA：提取几何先验实现三维一致性视频生成]({{< relref "posts/20260203-arxiv_ai-videogpa-distilling-geometry-priors-for-3d-consist-0.md" >}})
-- [Learning on the Manifold: Unlocking Standard Diffusion]({{< relref "posts/20260212-arxiv_ai-learning-on-the-manifold-unlocking-standard-diffus-3.md" >}})
-- [扩散模型无需噪声调节的几何学原理]({{< relref "posts/20260224-arxiv_ai-the-geometry-of-noise-why-diffusion-models-dont-ne-2.md" >}})
+- [VideoGPA：提取几何先验实现三维一致性视频生成]({{< relref "posts/20260202-arxiv_ai-videogpa-distilling-geometry-priors-for-3d-consist-0.md" >}})
+- [Learning on the Manifold: Unlocking Standard Diffusion]({{< relref "posts/20260211-arxiv_ai-learning-on-the-manifold-unlocking-standard-diffus-3.md" >}})
+- [扩散模型无需噪声调节的几何学原理]({{< relref "posts/20260223-arxiv_ai-the-geometry-of-noise-why-diffusion-models-dont-ne-2.md" >}})

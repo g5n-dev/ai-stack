@@ -21,6 +21,10 @@ description: Active Flow Matching (AFM) 是一种新型算法，旨在解决离�
 external_url: http://arxiv.org/abs/2603.00877v1
 scenarios:
 - Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Active Flow Matching：一种高效的生成模型训练范式
@@ -436,8 +440,8 @@ Active Flow Matching 与 Rectified Flow (RF) 在理念上有很强的相关性�
 
 ### 相关文章
 
-- [扩散模型无需噪声调节的几何学原理]({{< relref "posts/20260224-arxiv_ai-the-geometry-of-noise-why-diffusion-models-dont-ne-2.md" >}})
+- [扩散模型无需噪声调节的几何学原理]({{< relref "posts/20260223-arxiv_ai-the-geometry-of-noise-why-diffusion-models-dont-ne-2.md" >}})
 - [模式寻优结合均值寻优实现快速长视频生成]({{< relref "posts/20260302-arxiv_ai-mode-seeking-meets-mean-seeking-for-fast-long-vide-0.md" >}})
 - [粒子引导扩散模型求解偏微分方程]({{< relref "posts/20260202-arxiv_ai-particle-guided-diffusion-models-for-partial-diffe-8.md" >}})
-- [粒子引导扩散模型用于偏微分方程求解]({{< relref "posts/20260203-arxiv_ai-particle-guided-diffusion-models-for-partial-diffe-8.md" >}})
-- [基于正则化与对称性重审扩散模型及其分子图生成应用]({{< relref "posts/20260218-arxiv_ai-rethinking-diffusion-models-with-symmetries-throug-2.md" >}})
+- [粒子引导扩散模型用于偏微分方程求解]({{< relref "posts/20260202-arxiv_ai-particle-guided-diffusion-models-for-partial-diffe-8.md" >}})
+- [基于正则化与对称性重审扩散模型及其分子图生成应用]({{< relref "posts/20260217-arxiv_ai-rethinking-diffusion-models-with-symmetries-throug-2.md" >}})

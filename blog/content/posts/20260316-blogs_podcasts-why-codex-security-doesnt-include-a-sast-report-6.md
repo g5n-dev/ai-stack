@@ -21,6 +21,10 @@ description: 本文探讨了为何 Codex Security 不采用传统的静态应用
 external_url: https://openai.com/index/why-codex-security-doesnt-include-sast
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 为何 Codex Security 不采用 SAST 报告：利用 AI 约束推理与验证减少误报
@@ -266,8 +270,8 @@ scenarios:
 
 ### 相关文章
 
-- [Codex Security 预览：AI代理检测并修复复杂漏洞]({{< relref "posts/20260306-blogs_podcasts-codex-security-now-in-research-preview-2.md" >}})
-- [Codex Security 预览：AI 代理检测并修复复杂漏洞]({{< relref "posts/20260309-blogs_podcasts-codex-security-now-in-research-preview-8.md" >}})
-- [Codex Security 预览：AI 代理分析项目上下文检测修复漏洞]({{< relref "posts/20260310-blogs_podcasts-codex-security-now-in-research-preview-13.md" >}})
+- [Codex Security 预览：AI代理检测并修复复杂漏洞]({{< relref "posts/20260306-blogs_podcasts-codex-security-now-in-research-preview-1.md" >}})
+- [Codex Security 预览：AI 代理检测并修复复杂漏洞]({{< relref "posts/20260306-blogs_podcasts-codex-security-now-in-research-preview-1.md" >}})
+- [Codex Security 预览：AI 代理分析项目上下文检测修复漏洞]({{< relref "posts/20260306-blogs_podcasts-codex-security-now-in-research-preview-1.md" >}})
 - [MaliciousCorgi：恶意AI扩展将代码发送至中国]({{< relref "posts/20260202-hacker_news-maliciouscorgi-ai-extensions-send-your-code-to-chi-5.md" >}})
-- [MaliciousCorgi：AI插件将代码发送至中国]({{< relref "posts/20260202-hacker_news-maliciouscorgi-ai-extensions-send-your-code-to-chi-7.md" >}})
+- [MaliciousCorgi：AI插件将代码发送至中国]({{< relref "posts/20260202-hacker_news-maliciouscorgi-ai-extensions-send-your-code-to-chi-5.md" >}})

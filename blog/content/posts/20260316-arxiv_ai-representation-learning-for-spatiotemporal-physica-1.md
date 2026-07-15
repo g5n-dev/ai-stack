@@ -21,6 +21,12 @@ description: 这篇文章探讨了针对时空物理系统的表征学习，主�
 external_url: http://arxiv.org/abs/2603.13227v1
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260317-arxiv_ai-representation-learning-for-spatiotemporal-physica-1/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 面向时空物理系统的表征学习
@@ -409,8 +415,8 @@ $$ \min \sum || f(x_{t+k}) - g(E(x_t)) ||^2 $$
 
 ### 相关文章
 
-- [知识嵌入潜在投影提升鲁棒表征学习]({{< relref "posts/20260220-arxiv_ai-knowledge-embedded-latent-projection-for-robust-re-0.md" >}})
-- [评估学习表征可识别性的挑战与难点]({{< relref "posts/20260303-arxiv_ai-who-guards-the-guardians-the-challenges-of-evaluat-6.md" >}})
+- [知识嵌入潜在投影提升鲁棒表征学习]({{< relref "posts/20260219-arxiv_ai-knowledge-embedded-latent-projection-for-robust-re-0.md" >}})
+- [评估学习表征可识别性的挑战与难点]({{< relref "posts/20260302-arxiv_ai-who-guards-the-guardians-the-challenges-of-evaluat-6.md" >}})
 - [知识嵌入隐投影用于鲁棒表征学习]({{< relref "posts/20260219-arxiv_ai-knowledge-embedded-latent-projection-for-robust-re-0.md" >}})
 - [🚀 自回归+掩码扩散：下一代生成式AI！🔥]({{< relref "posts/20260126-arxiv_ai-auto-regressive-masked-diffusion-models-3.md" >}})
 - [基于嵌入的Top-$k$检索：理论上$\mathbb{R}^{2k}$维空间已足够]({{< relref "posts/20260129-arxiv_ai-mathbbr2k-is-theoretically-large-enough-for-embedd-8.md" >}})

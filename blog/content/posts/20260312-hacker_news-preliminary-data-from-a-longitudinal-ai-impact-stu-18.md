@@ -9,7 +9,7 @@ tags:
 - 初步数据
 - HackerNews
 - 社会影响
-- AI研究
+- AI 研究
 - 数据分析
 - 长期追踪
 categories:
@@ -19,6 +19,10 @@ source: hacker_news
 external_url: https://newsletter.getdx.com/p/ai-productivity-gains-are-10-not
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 纵向AI影响研究初步数据发布

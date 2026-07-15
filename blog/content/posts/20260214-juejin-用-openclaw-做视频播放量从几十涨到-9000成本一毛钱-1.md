@@ -1,14 +1,30 @@
 ---
-title: "OpenClaw 视频自动化：15分钟出片成本0.1元"
-date: 2026-02-14T20:42:31+08:00
+title: OpenClaw 视频自动化：15分钟出片成本0.1元
+date: 2026-02-14 20:42:31+08:00
 draft: false
-entry_kind: "auto"
-tags: ["OpenClaw", "视频自动化", "AI工作流", "内容创作", "降本增效", "短视频", "AI助理", "开源框架"]
-categories: ["效率与方法论", "开源生态"]
+entry_kind: auto
+tags:
+- OpenClaw
+- 视频自动化
+- AI工作流
+- 内容创作
+- 降本增效
+- 短视频
+- AI助理
+- 开源框架
+categories:
+- 效率与方法论
+- 开源生态
 source: juejin
-description: "这段内容主要介绍了创作者孟健如何利用 **OpenClaw（开源 AI 助理框架）** 极低成本、高效率地制作短视频，并实现播放量大幅增长的经验。核心要点如下： 1. **打破常规，不依赖传统剪辑软件**：孟健明确表示，他制作视频号完全摒弃了剪映、PR 等专业剪辑软件。 2. **极致效率与低成本**： * **速度快"
+description: 这段内容主要介绍了创作者孟健如何利用 **OpenClaw（开源 AI 助理框架）** 极低成本、高效率地制作短视频，并实现播放量大幅增长的经验。核心要点如下：
+  1. **打破常规，不依赖传统剪辑软件**：孟健明确表示，他制作视频号完全摒弃了剪映、PR 等专业剪辑软件。 2. **极致效率与低成本**： * **速度快
 external_url: https://juejin.cn/post/7606173847994023990
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # OpenClaw 视频自动化：15分钟出片成本0.1元
@@ -199,8 +215,8 @@ scenarios: ["AI/ML项目"]
 ### 相关文章
 
 - [OpenClaw：GitHub 增长最快的开源 AI 智能体框架]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-0.md" >}})
-- [Peter Steinberger 深度访谈：解析 GitHub 增长最快的开源 AI 代理框架 OpenCl]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-1.md" >}})
-- [OpenClaw 开源 AI Agent 框架解析与 GitHub 增长复盘]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-3.md" >}})
-- [OpenClaw：GitHub 增长最快的开源 AI 智能体框架]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-4.md" >}})
-- [OpenClaw：GitHub 增长最快的开源 AI 智能体框架]({{< relref "posts/20260213-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-10.md" >}})
+- [Peter Steinberger 深度访谈：解析 GitHub 增长最快的开源 AI 代理框架 OpenCl]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-0.md" >}})
+- [OpenClaw 开源 AI Agent 框架解析与 GitHub 增长复盘]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-0.md" >}})
+- [OpenClaw：GitHub 增长最快的开源 AI 智能体框架]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-0.md" >}})
+- [OpenClaw：GitHub 增长最快的开源 AI 智能体框架]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-0.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

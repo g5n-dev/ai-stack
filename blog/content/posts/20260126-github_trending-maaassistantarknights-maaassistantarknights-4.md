@@ -1,12 +1,31 @@
 ---
-title: "🔥明日方舟全自动作业神器！MaaAA让托管变简单！🚀"
-date: 2026-01-26T22:15:20+08:00
+title: 🔥明日方舟全自动作业神器！MaaAA让托管变简单！🚀
+date: 2026-01-26 22:15:20+08:00
 draft: false
-entry_kind: "auto"
-tags: ["明日方舟", "游戏自动化", "C++", "跨平台", "GitHub热榜", "自动化脚本", "开源项目", "MAA"]
-categories: ["开源生态", "开发工具"]
+entry_kind: auto
+tags:
+- 明日方舟
+- 游戏自动化
+- C++
+- 跨平台
+- GitHub热榜
+- 自动化脚本
+- 开源项目
+- MAA
+categories:
+- 开源生态
+- 开发工具
 source: github_trending
 external_url: https://github.com/MaaAssistantArknights/MaaAssistantArknights
+scenarios: []
+aliases:
+- /posts/20260127-github_trending-maaassistantarknights-maaassistantarknights-0/
+- /posts/20260127-github_trending-maaassistantarknights-maaassistantarknights-4/
+- /posts/20260128-github_trending-maaassistantarknights-maaassistantarknights-0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 🚀 🔥明日方舟全自动作业神器！MaaAA让托管变简单！🚀

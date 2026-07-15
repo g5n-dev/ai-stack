@@ -9,7 +9,7 @@ tags:
 - 本地部署
 - Markdown
 - RAG
-- Prompt注入
+- Prompt 注入
 - 上下文管理
 - 数据持久化
 categories:
@@ -22,6 +22,10 @@ external_url: https://juejin.cn/post/7616818675262603298
 scenarios:
 - AI/ML项目
 - RAG应用
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 本地AI Agent Memory系统建设：存储策略与检索注入机制
@@ -202,6 +206,6 @@ scenarios:
 
 - [Vercel AI SDK 子代理：解决复杂 Agent 系统上下文爆炸问题]({{< relref "posts/20260213-juejin-vercel-ai-sdk-使用指南-子代理-subagents-1.md" >}})
 - [OpenClaw Skills机制：三层渐进式加载与依赖管理的AI Agent框架]({{< relref "posts/20260309-juejin-拆解-openclaw-的-skills-机制一个为-ai-agent-设计的包管理器-3.md" >}})
-- [Kirara-AI：支持多平台接入的多模态聊天机器人框架]({{< relref "posts/20260130-github_trending-lss233-kirara-ai-2.md" >}})
-- [Amazon Bedrock AgentCore 浏览器更新：新增代理、配置文件及扩展支持]({{< relref "posts/20260214-blogs_podcasts-customize-ai-agent-browsing-with-proxies-profiles--1.md" >}})
-- [AI智能体自主性评估的实践方法]({{< relref "posts/20260219-hacker_news-measuring-ai-agent-autonomy-in-practice-17.md" >}})
+- [Kirara-AI：支持多平台接入的多模态聊天机器人框架]({{< relref "posts/20260127-github_trending-lss233-kirara-ai-2.md" >}})
+- [Amazon Bedrock AgentCore 浏览器更新：新增代理、配置文件及扩展支持]({{< relref "posts/20260213-blogs_podcasts-customize-ai-agent-browsing-with-proxies-profiles--0.md" >}})
+- [AI智能体自主性评估的实践方法]({{< relref "posts/20260219-hacker_news-measuring-ai-agent-autonomy-in-practice-16.md" >}})

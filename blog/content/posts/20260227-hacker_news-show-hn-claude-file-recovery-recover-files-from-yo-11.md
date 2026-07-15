@@ -21,6 +21,10 @@ description: 在本地使用 Claude 时，误删会话或文件是很多开发�
 external_url: https://github.com/hjtenklooster/claude-file-recovery
 scenarios:
 - 命令行工具
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Claude-File-Recovery：恢复 ~/.claude 会话中的文件

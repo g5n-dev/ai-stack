@@ -20,6 +20,14 @@ description: '**MARS：基于边界感知与自我精炼的奖励模型** **背�
 external_url: http://arxiv.org/abs/2602.17658v1
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260221-arxiv_ai-mars-margin-aware-reward-modeling-with-self-refine-2/
+- /posts/20260222-arxiv_ai-mars-margin-aware-reward-modeling-with-self-refine-2/
+- /posts/20260223-arxiv_ai-mars-margin-aware-reward-modeling-with-self-refine-2/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # MARS：基于边际感知与自我精炼的奖励建模
@@ -425,8 +433,8 @@ MARS 的计算资源需求主要取决于基础模型的大小和数据集的规
 
 ### 相关文章
 
-- [通过文本反馈扩展强化学习的能力边界]({{< relref "posts/20260204-arxiv_ai-expanding-the-capabilities-of-reinforcement-learni-5.md" >}})
-- [基于人类反馈的强化学习：原理与应用]({{< relref "posts/20260207-hacker_news-reinforcement-learning-from-human-feedback-19.md" >}})
+- [通过文本反馈扩展强化学习的能力边界]({{< relref "posts/20260203-arxiv_ai-expanding-the-capabilities-of-reinforcement-learni-5.md" >}})
+- [基于人类反馈的强化学习：原理与应用]({{< relref "posts/20260207-hacker_news-reinforcement-learning-from-human-feedback-4.md" >}})
 - [基于人类反馈的强化学习机制解析]({{< relref "posts/20260207-hacker_news-reinforcement-learning-from-human-feedback-3.md" >}})
 - [基于人类反馈的强化学习：原理与应用]({{< relref "posts/20260207-hacker_news-reinforcement-learning-from-human-feedback-4.md" >}})
-- [基于人类反馈的强化学习原理与应用]({{< relref "posts/20260207-hacker_news-reinforcement-learning-from-human-feedback-15.md" >}})
+- [基于人类反馈的强化学习原理与应用]({{< relref "posts/20260207-hacker_news-reinforcement-learning-from-human-feedback-4.md" >}})

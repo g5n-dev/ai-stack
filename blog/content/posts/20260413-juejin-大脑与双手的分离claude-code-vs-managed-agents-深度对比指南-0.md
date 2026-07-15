@@ -1,14 +1,31 @@
 ---
-title: "Claude Code与Managed Agents定位差异与适用场景对比"
-date: 2026-04-13T08:31:58+08:00
+title: Claude Code与Managed Agents定位差异与适用场景对比
+date: 2026-04-13 08:31:58+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Claude Code", "Managed Agents", "智能体", "CLI工具", "Anthropic", "代码开发", "自动化", "企业应用"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- Claude Code
+- Managed Agents
+- 智能体
+- CLI工具
+- Anthropic
+- 代码开发
+- 自动化
+- 企业应用
+categories:
+- 大模型
+- AI 工程
 source: juejin
-description: "概述 Anthropic 推出的两款工具分别对应 AI 的“思考”与“执行”层面。Claude Code 面向开发者，提供交互式命令行，可直接在本地环境调试、编写代码，适合需要细粒度控制、快速迭代的场景。Managed Agents 是托管式智能体，提供更高层次的抽象，自动完成完整业务流程，适合非技术用户或需要快速构建"
+description: 概述 Anthropic 推出的两款工具分别对应 AI 的“思考”与“执行”层面。Claude Code 面向开发者，提供交互式命令行，可直接在本地环境调试、编写代码，适合需要细粒度控制、快速迭代的场景。Managed
+  Agents 是托管式智能体，提供更高层次的抽象，自动完成完整业务流程，适合非技术用户或需要快速构建
 external_url: https://juejin.cn/post/7627763161885671439
-scenarios: ["命令行工具", "AI/ML项目"]
+scenarios:
+- 命令行工具
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Claude Code与Managed Agents定位差异与适用场景对比
@@ -90,9 +107,9 @@ Anthropic 推出的两款工具分别对应 AI 的“思考”与“执行”层
 
 ### 相关文章
 
-- [Claude Code：面向基础设施开发的AI编程助手]({{< relref "posts/20260205-hacker_news-claude-code-for-infrastructure-17.md" >}})
-- [Claude Code 发布：面向基础设施的编程工具]({{< relref "posts/20260205-hacker_news-claude-code-for-infrastructure-7.md" >}})
-- [Claude Code 推出远程控制功能]({{< relref "posts/20260225-hacker_news-claude-code-remote-control-6.md" >}})
-- [Claude Code 全面接入微软内部开发工作流]({{< relref "posts/20260202-hacker_news-claude-code-is-suddenly-everywhere-inside-microsof-10.md" >}})
+- [Claude Code：面向基础设施开发的AI编程助手]({{< relref "posts/20260204-hacker_news-claude-code-for-infrastructure-11.md" >}})
+- [Claude Code 发布：面向基础设施的编程工具]({{< relref "posts/20260204-hacker_news-claude-code-for-infrastructure-11.md" >}})
+- [Claude Code 推出远程控制功能]({{< relref "posts/20260225-hacker_news-claude-code-remote-control-4.md" >}})
+- [Claude Code 全面接入微软内部开发工作流]({{< relref "posts/20260202-hacker_news-claude-code-is-suddenly-everywhere-inside-microsof-2.md" >}})
 - [Claude Code 发布：面向基础设施的编程工具]({{< relref "posts/20260204-hacker_news-claude-code-for-infrastructure-11.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

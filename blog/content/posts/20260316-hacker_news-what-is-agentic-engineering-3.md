@@ -22,6 +22,10 @@ external_url: https://simonwillison.net/guides/agentic-engineering-patterns/what
 scenarios:
 - 大语言模型
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 什么是智能体工程：定义、架构与应用场景

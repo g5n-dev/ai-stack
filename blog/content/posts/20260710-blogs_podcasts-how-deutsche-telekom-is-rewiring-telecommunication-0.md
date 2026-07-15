@@ -1,14 +1,30 @@
 ---
-title: "德意志电信如何用OpenAI重塑电信业务"
-date: 2026-07-10T13:29:28+08:00
+title: 德意志电信如何用OpenAI重塑电信业务
+date: 2026-07-10 13:29:28+08:00
 draft: false
-entry_kind: "auto"
-tags: ["德意志电信", "OpenAI", "AI转型", "电信业务", "客户服务", "网络运营", "语音AI", "AI原生"]
-categories: ["大模型", "产品与创业"]
+entry_kind: auto
+tags:
+- 德意志电信
+- OpenAI
+- AI转型
+- 电信业务
+- 客户服务
+- 网络运营
+- 语音AI
+- AI原生
+categories:
+- 大模型
+- 产品与创业
 source: blogs_podcasts
-description: "客户服务中心转型 Deutsche Telekom 与 OpenAI 合作，将大模型嵌入客服平台，实现多轮对话、情感识别和即时解答。AI 自动生成FAQ、推荐解决方案，显著降低人工工单量，提升用户满意度。 员工工作流优化 内部引入AI助手，帮助员工完成文档撰写、代码生成、会议纪要等重复性任务。平台通过统一的知识库实现跨"
+description: 客户服务中心转型 Deutsche Telekom 与 OpenAI 合作，将大模型嵌入客服平台，实现多轮对话、情感识别和即时解答。AI
+  自动生成FAQ、推荐解决方案，显著降低人工工单量，提升用户满意度。 员工工作流优化 内部引入AI助手，帮助员工完成文档撰写、代码生成、会议纪要等重复性任务。平台通过统一的知识库实现跨
 external_url: https://openai.com/index/deutsche-telekom
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 德意志电信如何用OpenAI重塑电信业务
@@ -101,9 +117,9 @@ Deutsche Telekom的实践具有示范效应，将加速其他运营商的AI转�
 
 ### 相关文章
 
-- [OpenAI应构建企业级协作平台Slack]({{< relref "posts/20260215-hacker_news-openai-should-build-slack-14.md" >}})
-- [OpenAI 应该收购 Slack 的商业逻辑分析]({{< relref "posts/20260218-blogs_podcasts-ainews-why-openai-should-build-slack-5.md" >}})
-- [OpenAI语音AI低延迟规模化部署实践]({{< relref "posts/20260505-hacker_news-how-openai-delivers-low-latency-voice-ai-at-scale-0.md" >}})
+- [OpenAI应构建企业级协作平台Slack]({{< relref "posts/20260214-hacker_news-openai-should-build-slack-2.md" >}})
+- [OpenAI 应该收购 Slack 的商业逻辑分析]({{< relref "posts/20260214-hacker_news-openai-should-build-slack-2.md" >}})
+- [OpenAI语音AI低延迟规模化部署实践]({{< relref "posts/20260504-hacker_news-how-openai-delivers-low-latency-voice-ai-at-scale-0.md" >}})
 - [Parloa利用OpenAI构建可扩展语音AI客服代理]({{< relref "posts/20260507-blogs_podcasts-parloa-builds-service-agents-customers-want-to-tal-0.md" >}})
 - [Sam Altman的AI孵化器：OpenAI加速初创公司生态布局]({{< relref "posts/20260129-blogs_podcasts-ainews-sam-altmans-ai-combinator-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

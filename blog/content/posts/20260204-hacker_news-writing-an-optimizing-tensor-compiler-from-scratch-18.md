@@ -1,14 +1,29 @@
 ---
-title: "从零编写优化张量编译器的技术实践"
-date: 2026-02-04T23:12:07+08:00
+title: 从零编写优化张量编译器的技术实践
+date: 2026-02-04 23:12:07+08:00
 draft: false
-entry_kind: "auto"
-tags: ["编译器", "张量", "LLVM", "TVM", "深度学习", "性能优化", "算子", "MLIR"]
-categories: ["系统与基础设施", "AI 工程"]
+entry_kind: auto
+tags:
+- 编译器
+- 张量
+- LLVM
+- TVM
+- 深度学习
+- 性能优化
+- 算子
+- MLIR
+categories:
+- 系统与基础设施
+- AI 工程
 source: hacker_news
-description: "构建高性能张量编译器是深度学习基础设施中的核心挑战。本文将带你从零开始编写一个编译器，深入剖析从计算图定义到代码生成的完整流程，并重点讲解如何通过循环变换与平铺技术提升计算效率。通过阅读，你不仅能掌握编译器后端的关键优化技巧，还能理解如何将高层算子高效映射到底层硬件，从而构建出具备生产级性能的计算系统。"
+description: 构建高性能张量编译器是深度学习基础设施中的核心挑战。本文将带你从零开始编写一个编译器，深入剖析从计算图定义到代码生成的完整流程，并重点讲解如何通过循环变换与平铺技术提升计算效率。通过阅读，你不仅能掌握编译器后端的关键优化技巧，还能理解如何将高层算子高效映射到底层硬件，从而构建出具备生产级性能的计算系统。
 external_url: https://michaelmoroz.github.io/WritingAnOptimizingTensorCompilerFromScratch
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 从零编写优化张量编译器的技术实践
@@ -449,9 +464,9 @@ OctoML（基于开源项目 Apache TVM）构建了一个通用的深度学习编
 
 ### 相关文章
 
-- [FlashAttention-T：张量化注意力机制实现方案]({{< relref "posts/20260204-hacker_news-flashattention-t-towards-tensorized-attention-8.md" >}})
+- [FlashAttention-T：张量化注意力机制实现方案]({{< relref "posts/20260203-hacker_news-flashattention-t-towards-tensorized-attention-0.md" >}})
 - [在8位摩托罗拉6809上运行深度卷积神经网络玩棋盘游戏]({{< relref "posts/20260129-hacker_news-playing-board-games-with-deep-convolutional-neural-12.md" >}})
-- [在8位摩托罗拉6809上运行深度卷积神经网络玩桌游]({{< relref "posts/20260129-hacker_news-playing-board-games-with-deep-convolutional-neural-15.md" >}})
-- [为何现在推出全球首个科学AI播客及其对工程师的意义]({{< relref "posts/20260130-blogs_podcasts-its-time-to-science-6.md" >}})
-- [2026年AI展望：LLM、智能体、算力与AGI发展路径]({{< relref "posts/20260203-blogs_podcasts-490-state-of-ai-in-2026-llms-coding-scaling-laws-c-2.md" >}})
+- [在8位摩托罗拉6809上运行深度卷积神经网络玩桌游]({{< relref "posts/20260129-hacker_news-playing-board-games-with-deep-convolutional-neural-12.md" >}})
+- [为何现在推出全球首个科学AI播客及其对工程师的意义]({{< relref "posts/20260129-blogs_podcasts-its-time-to-science-0.md" >}})
+- [2026年AI展望：LLM、智能体、算力与AGI发展路径]({{< relref "posts/20260201-blogs_podcasts-490-state-of-ai-in-2026-llms-coding-scaling-laws-c-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

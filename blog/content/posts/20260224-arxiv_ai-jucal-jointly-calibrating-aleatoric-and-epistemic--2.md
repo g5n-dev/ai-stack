@@ -20,6 +20,12 @@ description: 以下是对该内容的中文总结： **论文标题：** JUCAL�
 external_url: http://arxiv.org/abs/2602.20153v1
 scenarios:
 - AI/ML项目
+aliases:
+- /posts/20260225-arxiv_ai-jucal-jointly-calibrating-aleatoric-and-epistemic--2/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # JUCAL：分类任务中偶然与认知不确定性的联合校准
@@ -447,6 +453,6 @@ JUCAL 被设计为一种**后处理校准**技术。这意味着它不需要改�
 
 - [Deep Researcher：序列规划反思与候选交叉]({{< relref "posts/20260129-arxiv_ai-deep-researcher-with-sequential-plan-reflection-an-9.md" >}})
 - [SokoBench：评估大模型长程规划与推理能力]({{< relref "posts/20260129-arxiv_ai-sokobench-evaluating-long-horizon-planning-and-rea-2.md" >}})
-- [Deep Researcher：结合序列规划反思与候选交叉的深度研究框架]({{< relref "posts/20260130-arxiv_ai-deep-researcher-with-sequential-plan-reflection-an-9.md" >}})
+- [Deep Researcher：结合序列规划反思与候选交叉的深度研究框架]({{< relref "posts/20260129-arxiv_ai-deep-researcher-with-sequential-plan-reflection-an-9.md" >}})
 - [探索面向智能体的推理奖励模型]({{< relref "posts/20260130-arxiv_ai-exploring-reasoning-reward-model-for-agents-4.md" >}})
 - [FineInstructions：将合成指令数据扩展至预训练规模]({{< relref "posts/20260130-arxiv_ai-fineinstructions-scaling-synthetic-instructions-to-7.md" >}})

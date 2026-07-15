@@ -21,6 +21,12 @@ description: 本文介绍了关于提升大语言模型（LLM）终端能力的�
 external_url: http://arxiv.org/abs/2602.21193v1
 scenarios:
 - 大语言模型
+aliases:
+- /posts/20260226-arxiv_ai-on-data-engineering-for-scaling-llm-terminal-capab-6/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 面向大模型终端能力扩展的数据工程研究
@@ -444,8 +450,8 @@ LLM 终端能力指的是大型语言模型（LLM）在特定终端应用（如�
 
 ### 相关文章
 
-- [FineInstructions：将合成指令扩展至预训练规模]({{< relref "posts/20260201-arxiv_ai-fineinstructions-scaling-synthetic-instructions-to-7.md" >}})
-- [FineInstructions：将合成指令数据扩展至预训练规模]({{< relref "posts/20260202-arxiv_ai-fineinstructions-scaling-synthetic-instructions-to-7.md" >}})
-- [利用合成人设突破数据瓶颈，加速日本AI开发]({{< relref "posts/20260222-blogs_podcasts-データ不足の壁を越える合成ペルソナが日本のai開発を加速-14.md" >}})
-- [推理大语言模型从被动求解转向主动询问]({{< relref "posts/20260131-arxiv_ai-reasoning-while-asking-transforming-reasoning-larg-9.md" >}})
-- [FineInstructions：将合成指令数据扩展至预训练规模]({{< relref "posts/20260131-arxiv_ai-fineinstructions-scaling-synthetic-instructions-to-7.md" >}})
+- [FineInstructions：将合成指令扩展至预训练规模]({{< relref "posts/20260130-arxiv_ai-fineinstructions-scaling-synthetic-instructions-to-7.md" >}})
+- [FineInstructions：将合成指令数据扩展至预训练规模]({{< relref "posts/20260130-arxiv_ai-fineinstructions-scaling-synthetic-instructions-to-7.md" >}})
+- [利用合成人设突破数据瓶颈，加速日本AI开发]({{< relref "posts/20260219-blogs_podcasts-データ不足の壁を越える合成ペルソナが日本のai開発を加速-5.md" >}})
+- [推理大语言模型从被动求解转向主动询问]({{< relref "posts/20260130-arxiv_ai-reasoning-while-asking-transforming-reasoning-larg-9.md" >}})
+- [FineInstructions：将合成指令数据扩展至预训练规模]({{< relref "posts/20260130-arxiv_ai-fineinstructions-scaling-synthetic-instructions-to-7.md" >}})

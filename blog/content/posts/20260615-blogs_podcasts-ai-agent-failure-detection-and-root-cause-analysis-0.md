@@ -1,14 +1,30 @@
 ---
-title: "基于描述内容，我将创建一个精准、具体的中文标题，突出AI Agent故障检测与根因分析的核心能力，并体现Str"
-date: 2026-06-15T18:45:33+08:00
+title: 基于描述内容，我将创建一个精准、具体的中文标题，突出AI Agent故障检测与根因分析的核心能力，并体现Str
+date: 2026-06-15 18:45:33+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI Agent", "故障检测", "根因分析", "评估框架", "Strands Evals", "结构化输出", "CI/CD集成", "系统提示词"]
-categories: ["AI 工程"]
+entry_kind: auto
+tags:
+- AI Agent
+- 故障检测
+- 根因分析
+- 评估框架
+- Strands Evals
+- 结构化输出
+- CI/CD集成
+- 系统提示词
+categories:
+- AI 工程
 source: blogs_podcasts
-description: "调用检测函数 直接调用 Strands Evals 提供的 detector 函数，将待测 AI Agent 的运行日志或轨迹传入，即可获得诊断结果。 结构化输出解读 - **故障分类与置信度**：输出为明确的错误类别（如意图误判、工具调用失败等），并附带 0‑1 的置信度分值，便于快速判断错误可信度。 - **因果链"
+description: 调用检测函数 直接调用 Strands Evals 提供的 detector 函数，将待测 AI Agent 的运行日志或轨迹传入，即可获得诊断结果。
+  结构化输出解读 - **故障分类与置信度**：输出为明确的错误类别（如意图误判、工具调用失败等），并附带 0‑1 的置信度分值，便于快速判断错误可信度。 - **因果链
 external_url: https://aws.amazon.com/blogs/machine-learning/ai-agent-failure-detection-and-root-cause-analysis-with-strands-evals
-scenarios: ["AI/ML项目", "命令行工具"]
+scenarios:
+- AI/ML项目
+- 命令行工具
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 基于描述内容，我将创建一个精准、具体的中文标题，突出AI Agent故障检测与根因分析的核心能力，并体现Strands Evals工具的应用价值。
@@ -148,9 +164,9 @@ scenarios: ["AI/ML项目", "命令行工具"]
 
 ### 相关文章
 
-- [Agent Skills：智能体技能评估与开源框架]({{< relref "posts/20260204-hacker_news-agent-skills-7.md" >}})
+- [Agent Skills：智能体技能评估与开源框架]({{< relref "posts/20260203-hacker_news-agent-skills-0.md" >}})
 - [构建Amazon智能体评估框架：通用工作流与Bedrock指标库]({{< relref "posts/20260218-blogs_podcasts-evaluating-ai-agents-real-world-lessons-from-build-0.md" >}})
-- [亚马逊发布代理式AI评估框架：标准化工作流与专用指标库]({{< relref "posts/20260219-blogs_podcasts-evaluating-ai-agents-real-world-lessons-from-build-1.md" >}})
-- [亚马逊构建代理式AI系统的评估框架与实战经验]({{< relref "posts/20260219-blogs_podcasts-evaluating-ai-agents-real-world-lessons-from-build-14.md" >}})
-- [亚马逊发布AI Agent评估框架：通用工作流与Bedrock评估库]({{< relref "posts/20260219-blogs_podcasts-evaluating-ai-agents-real-world-lessons-from-build-2.md" >}})
+- [亚马逊发布代理式AI评估框架：标准化工作流与专用指标库]({{< relref "posts/20260218-blogs_podcasts-evaluating-ai-agents-real-world-lessons-from-build-0.md" >}})
+- [亚马逊构建代理式AI系统的评估框架与实战经验]({{< relref "posts/20260218-blogs_podcasts-evaluating-ai-agents-real-world-lessons-from-build-0.md" >}})
+- [亚马逊发布AI Agent评估框架：通用工作流与Bedrock评估库]({{< relref "posts/20260218-blogs_podcasts-evaluating-ai-agents-real-world-lessons-from-build-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

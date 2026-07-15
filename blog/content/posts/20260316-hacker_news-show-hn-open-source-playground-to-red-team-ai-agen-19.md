@@ -5,13 +5,13 @@ draft: false
 entry_kind: auto
 tags:
 - 红队测试
-- AI智能体
+- AI 智能体
 - 漏洞利用
 - 安全评估
 - 开源平台
 - Agent安全
 - 渗透测试
-- AI安全
+- AI 安全
 categories:
 - 安全
 - 开源生态
@@ -20,6 +20,10 @@ description: 随着大模型应用落地，AI 智能体的安全性问题日益�
 external_url: https://github.com/fabraix/playground
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 开源红队测试平台：针对AI智能体的漏洞利用与评估

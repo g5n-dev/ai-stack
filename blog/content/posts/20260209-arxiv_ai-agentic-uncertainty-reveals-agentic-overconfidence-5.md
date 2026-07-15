@@ -1,14 +1,30 @@
 ---
-title: "智能体不确定性研究揭示过度自信问题"
-date: 2026-02-09T23:42:37+08:00
+title: 智能体不确定性研究揭示过度自信问题
+date: 2026-02-09 23:42:37+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI Agents", "不确定性", "过度自信", "模型评估", "幻觉", "置信度", "cs.AI", "Agent能力"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- AI Agents
+- 不确定性
+- 过度自信
+- 模型评估
+- 幻觉
+- 置信度
+- cs.AI
+- Agent能力
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "**标题：AI智能体的过度自信与不确定性评估** **核心内容总结：** 本文探讨了AI智能体是否能够准确预测其任务成功的可能性，并揭示了“智能体过度自信”的现象。研究通过在任务执行前、中、后三个阶段收集智能体的成功概率预估，得出了以下主要结论： 1. **普遍的过度自信**：所有测试结果均显示AI智能体表现出显著的过"
+description: '**标题：AI智能体的过度自信与不确定性评估** **核心内容总结：** 本文探讨了AI智能体是否能够准确预测其任务成功的可能性，并揭示了“智能体过度自信”的现象。研究通过在任务执行前、中、后三个阶段收集智能体的成功概率预估，得出了以下主要结论：
+  1. **普遍的过度自信**：所有测试结果均显示AI智能体表现出显著的过'
 external_url: http://arxiv.org/abs/2602.06948v1
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 智能体不确定性研究揭示过度自信问题
@@ -497,7 +513,7 @@ scenarios: ["AI/ML项目"]
 
 - [MortalMATH：当推理目标遇上紧急语境，冲突何解？🧠🔥]({{< relref "posts/20260127-arxiv_ai-mortalmath-evaluating-the-conflict-between-reasoni-4.md" >}})
 - [SokoBench：评估大模型长程规划与推理能力]({{< relref "posts/20260129-arxiv_ai-sokobench-evaluating-long-horizon-planning-and-rea-2.md" >}})
-- [探索面向智能体的推理奖励模型]({{< relref "posts/20260201-arxiv_ai-exploring-reasoning-reward-model-for-agents-4.md" >}})
-- [Routing the Lottery: 面向异构数据的自适应子网络路由]({{< relref "posts/20260202-arxiv_ai-routing-the-lottery-adaptive-subnetworks-for-heter-8.md" >}})
-- [模型智能与任务复杂度如何影响对齐偏差]({{< relref "posts/20260203-hacker_news-how-does-misalignment-scale-with-model-intelligenc-12.md" >}})
+- [探索面向智能体的推理奖励模型]({{< relref "posts/20260130-arxiv_ai-exploring-reasoning-reward-model-for-agents-4.md" >}})
+- [Routing the Lottery: 面向异构数据的自适应子网络路由]({{< relref "posts/20260130-arxiv_ai-routing-the-lottery-adaptive-subnetworks-for-heter-8.md" >}})
+- [模型智能与任务复杂度如何影响对齐偏差]({{< relref "posts/20260203-hacker_news-how-does-misalignment-scale-with-model-intelligenc-7.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

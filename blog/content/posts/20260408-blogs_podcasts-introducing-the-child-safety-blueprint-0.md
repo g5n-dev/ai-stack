@@ -1,14 +1,30 @@
 ---
-title: "OpenAI儿童安全蓝图：负责任AI开发路线图"
-date: 2026-04-08T13:45:09+08:00
+title: OpenAI儿童安全蓝图：负责任AI开发路线图
+date: 2026-04-08 13:45:09+08:00
 draft: false
-entry_kind: "auto"
-tags: ["儿童安全", "负责任AI", "安全防护", "年龄适配", "跨部门协作", "风险评估", "用户教育", "透明报告"]
-categories: ["安全", "AI 工程"]
+entry_kind: auto
+tags:
+- 儿童安全
+- 负责任AI
+- 安全防护
+- 年龄适配
+- 跨部门协作
+- 风险评估
+- 用户教育
+- 透明报告
+categories:
+- 安全
+- AI 工程
 source: blogs_podcasts
-description: "目标与意义 OpenAI发布《儿童安全蓝图》，为构建安全、负责任的AI系统提供路线图，旨在保护未成年人免受不良信息侵害，并通过技术和设计赋能青少年在网络空间的安全成长。 关键措施 - **安全防护**：在模型训练、内容过滤和滥用检测等环节嵌入多层防护机制； - **年龄适配**：根据不同年龄段的需求设计交互界面和内容呈"
+description: 目标与意义 OpenAI发布《儿童安全蓝图》，为构建安全、负责任的AI系统提供路线图，旨在保护未成年人免受不良信息侵害，并通过技术和设计赋能青少年在网络空间的安全成长。
+  关键措施 - **安全防护**：在模型训练、内容过滤和滥用检测等环节嵌入多层防护机制； - **年龄适配**：根据不同年龄段的需求设计交互界面和内容呈
 external_url: https://openai.com/index/introducing-child-safety-blueprint
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # OpenAI儿童安全蓝图：负责任AI开发路线图
@@ -92,9 +108,9 @@ OpenAI发布《儿童安全蓝图》，为构建安全、负责任的AI系统提
 
 ### 相关文章
 
-- [构建确定性 AI 代理安全层：利用 Amazon Bedrock AgentCore 策略]({{< relref "posts/20260313-blogs_podcasts-secure-ai-agents-with-policy-in-amazon-bedrock-age-6.md" >}})
+- [构建确定性 AI 代理安全层：利用 Amazon Bedrock AgentCore 策略]({{< relref "posts/20260312-blogs_podcasts-secure-ai-agents-with-policy-in-amazon-bedrock-age-2.md" >}})
 - [OpenAI 如何防范 AI 代理点击链接时的数据泄露与提示注入]({{< relref "posts/20260129-blogs_podcasts-keeping-your-data-safe-when-an-ai-agent-clicks-a-l-5.md" >}})
 - [评估与缓解大模型发现的零日漏洞风险]({{< relref "posts/20260207-hacker_news-evaluating-and-mitigating-the-growing-risk-of-llm--13.md" >}})
 - [2026年度负责任人工智能进展报告]({{< relref "posts/20260218-blogs_podcasts-our-2026-responsible-ai-progress-report-1.md" >}})
-- [2026年负责任人工智能进展报告]({{< relref "posts/20260218-blogs_podcasts-our-2026-responsible-ai-progress-report-10.md" >}})
+- [2026年负责任人工智能进展报告]({{< relref "posts/20260218-blogs_podcasts-our-2026-responsible-ai-progress-report-1.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

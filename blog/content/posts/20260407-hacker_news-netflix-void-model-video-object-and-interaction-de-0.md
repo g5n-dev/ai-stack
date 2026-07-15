@@ -1,14 +1,30 @@
 ---
-title: "Netflix Void模型实现交互与视频对象删除功能"
-date: 2026-04-07T02:53:23+08:00
+title: Netflix Void模型实现交互与视频对象删除功能
+date: 2026-04-07 02:53:23+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Netflix", "Void模型", "视频对象删除", "交互删除", "视频分割", "AI模型", "视频处理", "人机交互"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- Netflix
+- Void模型
+- 视频对象删除
+- 交互删除
+- 视频分割
+- AI 模型
+- 视频处理
+- 人机交互
+categories:
+- 大模型
+- AI 工程
 source: hacker_news
-description: "在流媒体平台的内容管理中，失效或不当的视频对象及其关联交互如果不能及时清除，会导致数据冗余、用户体验下降甚至合规风险。本文聚焦Netflix提出的Void Model，详细阐述其对视频对象和交互删除的建模方法与实现机制。通过阅读，读者能够掌握该模型的设计思路、关键算法以及在实际系统中部署的最佳实践。"
+description: 在流媒体平台的内容管理中，失效或不当的视频对象及其关联交互如果不能及时清除，会导致数据冗余、用户体验下降甚至合规风险。本文聚焦Netflix提出的Void
+  Model，详细阐述其对视频对象和交互删除的建模方法与实现机制。通过阅读，读者能够掌握该模型的设计思路、关键算法以及在实际系统中部署的最佳实践。
 external_url: https://github.com/Netflix/void-model
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Netflix Void模型实现交互与视频对象删除功能
@@ -80,9 +96,9 @@ Netflix的Void模型揭示了流媒体平台在内容生命周期管理中的关
 
 ### 相关文章
 
-- [OpenAI 将在 ChatGPT 中停用 GPT-4o 等四款模型]({{< relref "posts/20260130-hacker_news-retiring-gpt-4o-gpt-41-gpt-41-mini-and-openai-o4-m-15.md" >}})
-- [OpenAI将于2026年2月退役GPT-4o等四款模型]({{< relref "posts/20260131-blogs_podcasts-retiring-gpt-4o-gpt-41-gpt-41-mini-and-openai-o4-m-5.md" >}})
+- [OpenAI 将在 ChatGPT 中停用 GPT-4o 等四款模型]({{< relref "posts/20260129-hacker_news-retiring-gpt-4o-gpt-41-gpt-41-mini-and-openai-o4-m-2.md" >}})
+- [OpenAI将于2026年2月退役GPT-4o等四款模型]({{< relref "posts/20260129-hacker_news-retiring-gpt-4o-gpt-41-gpt-41-mini-and-openai-o4-m-2.md" >}})
 - [PrevizWhiz：结合粗略3D场景与2D视频引导生成视频预演]({{< relref "posts/20260204-arxiv_ai-previzwhiz-combining-rough-3d-scenes-and-2d-video--4.md" >}})
 - [基于急停干预的鲁棒干预学习]({{< relref "posts/20260204-arxiv_ai-robust-intervention-learning-from-emergency-stop-i-7.md" >}})
-- [PrevizWhiz：结合粗略3D场景与2D视频引导生成式预演]({{< relref "posts/20260205-arxiv_ai-previzwhiz-combining-rough-3d-scenes-and-2d-video--4.md" >}})
+- [PrevizWhiz：结合粗略3D场景与2D视频引导生成式预演]({{< relref "posts/20260204-arxiv_ai-previzwhiz-combining-rough-3d-scenes-and-2d-video--4.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

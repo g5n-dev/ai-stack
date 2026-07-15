@@ -21,6 +21,10 @@ external_url: https://huggingface.co/blog/nvidia/speed-bench
 scenarios:
 - 大语言模型
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # SPEED-Bench：推测解码的统一多样化基准

@@ -20,6 +20,10 @@ description: '**论文总结：《超越星级评分：使用LLM和文本分类�
 external_url: http://arxiv.org/abs/2602.21082v1
 scenarios:
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 超越星级评分：基于LLM与文本分类的细粒度情感分析框架
@@ -464,8 +468,8 @@ scenarios:
 
 ### 相关文章
 
-- [通过文本反馈扩展强化学习的能力边界]({{< relref "posts/20260204-arxiv_ai-expanding-the-capabilities-of-reinforcement-learni-5.md" >}})
-- [上下文学习难度超出原有认知]({{< relref "posts/20260206-hacker_news-learning-from-context-is-harder-than-we-thought-5.md" >}})
-- [从上下文学习的难度超出预期]({{< relref "posts/20260207-hacker_news-learning-from-context-is-harder-than-we-thought-16.md" >}})
+- [通过文本反馈扩展强化学习的能力边界]({{< relref "posts/20260203-arxiv_ai-expanding-the-capabilities-of-reinforcement-learni-5.md" >}})
+- [上下文学习难度超出原有认知]({{< relref "posts/20260206-hacker_news-learning-from-context-is-harder-than-we-thought-6.md" >}})
+- [从上下文学习的难度超出预期]({{< relref "posts/20260206-hacker_news-learning-from-context-is-harder-than-we-thought-6.md" >}})
 - [数学、计算机科学与人工智能综合资源指南]({{< relref "posts/20260216-hacker_news-show-hn-maths-cs-and-ai-compendium-13.md" >}})
 - [基于大模型的多平台聊天机器人：支持微信飞书钉钉接入]({{< relref "posts/20260131-github_trending-zhayujie-chatgpt-on-wechat-0.md" >}})

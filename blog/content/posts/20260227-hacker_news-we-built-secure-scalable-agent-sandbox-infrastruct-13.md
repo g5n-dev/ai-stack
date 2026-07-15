@@ -21,6 +21,12 @@ description: 构建一个既安全又具备高扩展性的 Agent 沙箱环境，
 external_url: https://browser-use.com/posts/two-ways-to-sandbox-agents
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260228-hacker_news-building-secure-scalable-agent-sandbox-infrastruct-18/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 我们构建了安全可扩展的 Agent 沙箱基础设施

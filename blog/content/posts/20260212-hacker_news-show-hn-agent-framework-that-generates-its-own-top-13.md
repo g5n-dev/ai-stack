@@ -1,14 +1,29 @@
 ---
-title: "Agent框架：运行时生成拓扑并动态演进"
-date: 2026-02-12T05:30:02+08:00
+title: Agent框架：运行时生成拓扑并动态演进
+date: 2026-02-12 05:30:02+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Agent", "框架", "动态拓扑", "运行时演进", "多智能体", "分布式系统", "架构设计", "自动化"]
-categories: ["AI 工程", "开发工具"]
+entry_kind: auto
+tags:
+- Agent
+- 框架
+- 动态拓扑
+- 运行时演进
+- 多智能体
+- 分布式系统
+- 架构设计
+- 自动化
+categories:
+- AI 工程
+- 开发工具
 source: hacker_news
-description: "在软件工程领域，如何让智能体系统具备动态适应环境的能力，正成为开发者的关注焦点。本文介绍了一种能够自主生成拓扑结构并在运行时持续演进的智能体框架，突破了传统静态架构的局限。通过阅读这篇文章，你将了解该框架的核心设计逻辑，以及它如何通过自我组织来提升系统的鲁棒性与扩展性。"
+description: 在软件工程领域，如何让智能体系统具备动态适应环境的能力，正成为开发者的关注焦点。本文介绍了一种能够自主生成拓扑结构并在运行时持续演进的智能体框架，突破了传统静态架构的局限。通过阅读这篇文章，你将了解该框架的核心设计逻辑，以及它如何通过自我组织来提升系统的鲁棒性与扩展性。
 external_url: https://github.com/adenhq/hive/blob/main/README.md
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Agent框架：运行时生成拓扑并动态演进
@@ -460,9 +475,9 @@ Agent 们根据实时车流数据，动态发现相邻路口的拥堵关联性�
 
 ### 相关文章
 
-- [利用 Codex 构建以 Agent 为中心的工程体系]({{< relref "posts/20260212-blogs_podcasts-harness-engineering-leveraging-codex-in-an-agent-f-5.md" >}})
-- [Agent Skills：AI 智能体技能框架]({{< relref "posts/20260203-hacker_news-agent-skills-1.md" >}})
-- [Claude Composer：AI 编排多智能体工作流]({{< relref "posts/20260207-hacker_news-claude-composer-18.md" >}})
+- [利用 Codex 构建以 Agent 为中心的工程体系]({{< relref "posts/20260211-blogs_podcasts-harness-engineering-leveraging-codex-in-an-agent-f-5.md" >}})
+- [Agent Skills：AI 智能体技能框架]({{< relref "posts/20260203-hacker_news-agent-skills-0.md" >}})
+- [Claude Composer：AI 编排多智能体工作流]({{< relref "posts/20260206-hacker_news-claude-composer-9.md" >}})
 - [🤖解密Codex智能体闭环：AI如何自主进化？]({{< relref "posts/20260125-blogs_podcasts-unrolling-the-codex-agent-loop-1.md" >}})
-- [揭秘 Codex Agent 智能循环！🤖 AI自动化新范式？]({{< relref "posts/20260127-blogs_podcasts-unrolling-the-codex-agent-loop-2.md" >}})
+- [揭秘 Codex Agent 智能循环！🤖 AI自动化新范式？]({{< relref "posts/20260125-blogs_podcasts-unrolling-the-codex-agent-loop-1.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

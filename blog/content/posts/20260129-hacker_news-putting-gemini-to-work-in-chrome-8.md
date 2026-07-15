@@ -1,14 +1,30 @@
 ---
-title: "谷歌将 Gemini 模型集成至 Chrome 浏览器"
-date: 2026-01-29T09:54:18+08:00
+title: 谷歌将 Gemini 模型集成至 Chrome 浏览器
+date: 2026-01-29 09:54:18+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Gemini", "Chrome", "Google", "浏览器集成", "AI 功能", "模型部署", "端侧 AI", "用户体验"]
-categories: ["大模型", "前端"]
+entry_kind: auto
+tags:
+- Gemini
+- Chrome
+- Google
+- 浏览器集成
+- AI 功能
+- 模型部署
+- 端侧 AI
+- 用户体验
+categories:
+- 大模型
+- 前端
 source: hacker_news
-description: "随着浏览器功能的演进，Chrome 正在通过集成 Gemini 模型重新定义用户的交互体验。这种深度整合不仅让网页信息的理解与摘要变得触手可及，也为写作辅助和标签页管理提供了更智能的解决方案。本文将详细拆解 Gemini 在 Chrome 中的具体应用场景，帮助读者掌握如何利用这项技术提升日常办公与浏览效率。"
+description: 随着浏览器功能的演进，Chrome 正在通过集成 Gemini 模型重新定义用户的交互体验。这种深度整合不仅让网页信息的理解与摘要变得触手可及，也为写作辅助和标签页管理提供了更智能的解决方案。本文将详细拆解
+  Gemini 在 Chrome 中的具体应用场景，帮助读者掌握如何利用这项技术提升日常办公与浏览效率。
 external_url: https://blog.google/products-and-platforms/products/chrome/gemini-3-auto-browse
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 谷歌将 Gemini 模型集成至 Chrome 浏览器
@@ -436,9 +452,9 @@ Gemini 可能无法读取受付费墙保护或需要特殊登录权限的私密�
 
 ### 相关文章
 
-- [Chrome Canary 重磅更新！文本缩放功能实测 🚀]({{< relref "posts/20260128-hacker_news-try-text-scaling-support-in-chrome-canary-10.md" >}})
+- [Chrome Canary 重磅更新！文本缩放功能实测 🚀]({{< relref "posts/20260128-hacker_news-try-text-scaling-support-in-chrome-canary-3.md" >}})
 - [Android 侧载要变难了！Google 确认强制启用「高阻力」模式 🚫📱]({{< relref "posts/20260125-hacker_news-google-confirms-high-friction-sideloading-flow-is--1.md" >}})
 - [Google震惊！健康查询竟引YouTube胜过医疗网站？🏥📹]({{< relref "posts/20260126-hacker_news-google-ai-overviews-cite-youtube-more-than-any-med-7.md" >}})
-- [谷歌健康搜索惊现YouTube>医疗网站？AI Overview引争议！🤖🏥]({{< relref "posts/20260126-hacker_news-google-ai-overviews-cite-youtube-more-than-any-med-9.md" >}})
-- [🔥浏览器即沙盒！安全新范式：Web应用如何筑牢第一道防线？]({{< relref "posts/20260126-hacker_news-the-browser-is-the-sandbox-9.md" >}})
+- [谷歌健康搜索惊现YouTube>医疗网站？AI Overview引争议！🤖🏥]({{< relref "posts/20260126-hacker_news-google-ai-overviews-cite-youtube-more-than-any-med-7.md" >}})
+- [🔥浏览器即沙盒！安全新范式：Web应用如何筑牢第一道防线？]({{< relref "posts/20260126-hacker_news-the-browser-is-the-sandbox-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

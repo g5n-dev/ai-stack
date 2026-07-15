@@ -20,6 +20,12 @@ description: 随着大模型应用场景从云端向边缘端延伸，如何在�
 external_url: https://huggingface.co/blog/nvidia/nemotron-3-nano-4b
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260318-blogs_podcasts-nemotron-3-nano-4b-a-compact-hybrid-model-for-effi-1/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Nemotron 3 Nano 4B：面向高效本地 AI 的紧凑混合模型
@@ -242,8 +248,8 @@ scenarios:
 
 ### 相关文章
 
-- [NVIDIA Nemotron 3 Nano 30B 现已登陆 Amazon SageMaker JumpSt]({{< relref "posts/20260212-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-10.md" >}})
-- [NVIDIA Nemotron 3 Nano 30B 模型现已在 Amazon SageMaker JumpS]({{< relref "posts/20260212-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-2.md" >}})
-- [微软BitNet：可在本地CPU运行的1000亿参数1比特模型]({{< relref "posts/20260311-hacker_news-microsoft-bitnet-100b-param-1-bit-model-for-local--4.md" >}})
-- [BitNet: 100B Param 1-Bit model for local CPUs]({{< relref "posts/20260312-hacker_news-bitnet-100b-param-1-bit-model-for-local-cpus-12.md" >}})
-- [NVIDIA Nemotron 3 Nano 30B 现已在 Amazon SageMaker JumpSta]({{< relref "posts/20260212-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-7.md" >}})
+- [NVIDIA Nemotron 3 Nano 30B 现已登陆 Amazon SageMaker JumpSt]({{< relref "posts/20260211-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-0.md" >}})
+- [NVIDIA Nemotron 3 Nano 30B 模型现已在 Amazon SageMaker JumpS]({{< relref "posts/20260211-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-0.md" >}})
+- [微软BitNet：可在本地CPU运行的1000亿参数1比特模型]({{< relref "posts/20260311-hacker_news-microsoft-bitnet-100b-param-1-bit-model-for-local--1.md" >}})
+- [BitNet: 100B Param 1-Bit model for local CPUs]({{< relref "posts/20260311-hacker_news-microsoft-bitnet-100b-param-1-bit-model-for-local--1.md" >}})
+- [NVIDIA Nemotron 3 Nano 30B 现已在 Amazon SageMaker JumpSta]({{< relref "posts/20260211-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-0.md" >}})

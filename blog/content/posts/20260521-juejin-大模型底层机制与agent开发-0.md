@@ -1,14 +1,30 @@
 ---
-title: "深入解析大模型底层机制与Agent开发"
-date: 2026-05-21T22:37:10+08:00
+title: 深入解析大模型底层机制与Agent开发
+date: 2026-05-21 22:37:10+08:00
 draft: false
-entry_kind: "auto"
-tags: ["大模型", "Agent开发", "底层机制", "LLM", "提示词工程", "智能体", "技术解析", "应用开发"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- 大模型
+- Agent开发
+- 底层机制
+- LLM
+- 提示词工程
+- 智能体
+- 技术解析
+- 应用开发
+categories:
+- 大模型
+- AI 工程
 source: juejin
-description: "要理解大模型在实际应用中的表现，不能只看表面效果，必须深入其底层机制。Transformer架构的工作原理、注意力机制的计算逻辑，以及模型如何处理和生成信息，这些构成了Agent开发的核心知识基础。只有掌握这些原理，开发者才能在设计智能体时做出合理的技术决策，规避常见的实现陷阱。本篇文章将系统梳理大模型的内部运行逻辑，"
+description: 要理解大模型在实际应用中的表现，不能只看表面效果，必须深入其底层机制。Transformer架构的工作原理、注意力机制的计算逻辑，以及模型如何处理和生成信息，这些构成了Agent开发的核心知识基础。只有掌握这些原理，开发者才能在设计智能体时做出合理的技术决策，规避常见的实现陷阱。本篇文章将系统梳理大模型的内部运行逻辑，
 external_url: https://juejin.cn/post/7642176685400735778
-scenarios: ["大语言模型", "AI/ML项目"]
+scenarios:
+- 大语言模型
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 深入解析大模型底层机制与Agent开发
@@ -87,7 +103,7 @@ Agent开发的成熟标志，是开发者能够准确预判模型在特定情境
 
 - [零基础学 Agent ：拆解一个 Agent 的「零件清单」——8 个模块逐一讲透 第 2 期]({{< relref "posts/20260317-juejin-零基础学-agent-拆解一个-agent-的零件清单8-个模块逐一讲透-第-2-期-2.md" >}})
 - [AI 编程时代：程序员应转型为需求描述工程师]({{< relref "posts/20260310-juejin-ai时代程序员都应该是需求描述工程师-2.md" >}})
-- [AGENTS.md 架构在智能体评估中超越 Skills 技能]({{< relref "posts/20260130-hacker_news-agentsmd-outperforms-skills-in-our-agent-evals-5.md" >}})
-- [Compressed Agents：Agent Skills 技术解析]({{< relref "posts/20260130-hacker_news-compressed-agentsmd-agent-skills-6.md" >}})
-- [压缩智能体：Agent Skills 技术解析]({{< relref "posts/20260130-hacker_news-compressed-agentsmd-agent-skills-8.md" >}})
+- [AGENTS.md 架构在智能体评估中超越 Skills 技能]({{< relref "posts/20260129-hacker_news-compressed-agentsmd-agent-skills-5.md" >}})
+- [Compressed Agents：Agent Skills 技术解析]({{< relref "posts/20260129-hacker_news-compressed-agentsmd-agent-skills-5.md" >}})
+- [压缩智能体：Agent Skills 技术解析]({{< relref "posts/20260129-hacker_news-compressed-agentsmd-agent-skills-5.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

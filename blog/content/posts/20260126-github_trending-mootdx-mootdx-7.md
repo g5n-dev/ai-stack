@@ -1,12 +1,29 @@
 ---
-title: "🚀Mootdx：Python金融数据神器！行情/财报/选股一站式搞定！💰"
-date: 2026-01-26T22:15:20+08:00
+title: 🚀Mootdx：Python金融数据神器！行情/财报/选股一站式搞定！💰
+date: 2026-01-26 22:15:20+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Python", "金融数据", "通达信", "量化交易", "数据采集", "股票", "API", "开源工具"]
-categories: ["数据", "开源生态"]
+entry_kind: auto
+tags:
+- Python
+- 金融数据
+- 通达信
+- 量化交易
+- 数据采集
+- 股票
+- API
+- 开源工具
+categories:
+- 数据
+- 开源生态
 source: github_trending
 external_url: https://github.com/mootdx/mootdx
+scenarios: []
+aliases:
+- /posts/20260127-github_trending-mootdx-mootdx-7/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 🚀 🚀Mootdx：Python金融数据神器！行情/财报/选股一站式搞定！💰

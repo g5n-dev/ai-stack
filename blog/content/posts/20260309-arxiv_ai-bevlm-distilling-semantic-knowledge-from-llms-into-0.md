@@ -21,6 +21,12 @@ description: '**BEVLM：将大语言模型语义知识蒸馏到鸟瞰图表示**
 external_url: http://arxiv.org/abs/2603.06576v1
 scenarios:
 - 大语言模型
+aliases:
+- /posts/20260310-arxiv_ai-bevlm-distilling-semantic-knowledge-from-llms-into-0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # BEVLM：将LLM语义知识蒸馏至鸟瞰图表征
@@ -434,7 +440,7 @@ BEVLM 采用了一种基于“蒸馏”的框架。通常，该模型包含一�
 ### 相关文章
 
 - [HERMES：基于视觉语言模型的长尾自动驾驶端到端风险感知系统]({{< relref "posts/20260203-arxiv_ai-hermes-a-holistic-end-to-end-risk-aware-multimodal-6.md" >}})
-- [Waymo 世界模型：利用生成式世界模型提升自动驾驶决策能力]({{< relref "posts/20260207-hacker_news-the-waymo-world-model-6.md" >}})
-- [Waymo 世界模型：利用生成式世界模拟提升自动驾驶决策]({{< relref "posts/20260207-hacker_news-the-waymo-world-model-7.md" >}})
-- [自适应置信度正则化用于多模态失效检测]({{< relref "posts/20260304-arxiv_ai-adaptive-confidence-regularization-for-multimodal--4.md" >}})
-- [AI如何理解视觉搜索：技术原理解析]({{< relref "posts/20260306-blogs_podcasts-ask-a-techspert-how-does-ai-understand-my-visual-s-7.md" >}})
+- [Waymo 世界模型：利用生成式世界模型提升自动驾驶决策能力]({{< relref "posts/20260206-hacker_news-the-waymo-world-model-a-new-frontier-for-autonomou-4.md" >}})
+- [Waymo 世界模型：利用生成式世界模拟提升自动驾驶决策]({{< relref "posts/20260206-hacker_news-the-waymo-world-model-a-new-frontier-for-autonomou-4.md" >}})
+- [自适应置信度正则化用于多模态失效检测]({{< relref "posts/20260303-arxiv_ai-adaptive-confidence-regularization-for-multimodal--4.md" >}})
+- [AI如何理解视觉搜索：技术原理解析]({{< relref "posts/20260305-blogs_podcasts-ask-a-techspert-how-does-ai-understand-my-visual-s-0.md" >}})

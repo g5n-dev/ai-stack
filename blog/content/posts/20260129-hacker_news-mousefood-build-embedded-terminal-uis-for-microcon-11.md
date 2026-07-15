@@ -1,13 +1,30 @@
 ---
-title: "Mousefood：为微控制器构建嵌入式终端UI"
-date: 2026-01-29T05:01:24+08:00
+title: Mousefood：为微控制器构建嵌入式终端UI
+date: 2026-01-29 05:01:24+08:00
 draft: false
-entry_kind: "auto"
-tags: ["嵌入式开发", "微控制器", "终端UI", "ESP32", "Arduino", "串口通信", "CLI", "C++"]
-categories: ["开发工具", "开源生态"]
+entry_kind: auto
+tags:
+- 嵌入式开发
+- 微控制器
+- 终端UI
+- ESP32
+- Arduino
+- 串口通信
+- CLI
+- C++
+categories:
+- 开发工具
+- 开源生态
 source: hacker_news
 external_url: https://github.com/ratatui/mousefood
-scenarios: ["命令行工具"]
+scenarios:
+- 命令行工具
+aliases:
+- /posts/20260129-hacker_news-mousefood-build-embedded-terminal-uis-for-microcon-13/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Mousefood：为微控制器构建嵌入式终端UI
@@ -418,7 +435,7 @@ def state_machine_ui():
 
 - [MatsuriDayo / Nekoray 🔥：翻墙神器！GitHub]({{< relref "posts/20260125-github_trending-matsuridayo-nekoray-1.md" >}})
 - [🔥明日方舟全自动作业神器！MaaAA让托管变简单！🚀]({{< relref "posts/20260126-github_trending-maaassistantarknights-maaassistantarknights-4.md" >}})
-- [🚀 MatsuriDayo / Nekoray：GitHub趋势第一！超强工具神器✨]({{< relref "posts/20260126-github_trending-matsuridayo-nekoray-5.md" >}})
-- [🚀Ehviewer优化版来了！性能飙升+功能革新，看图神器必装！]({{< relref "posts/20260126-github_trending-xiaojieonly-ehviewer_cn_sxj-6.md" >}})
-- [💥仅15刀打造实时HN显示器！低成本DIY硬件指南]({{< relref "posts/20260126-hacker_news-building-a-real-time-hn-display-for-15-17.md" >}})
+- [🚀 MatsuriDayo / Nekoray：GitHub趋势第一！超强工具神器✨]({{< relref "posts/20260125-github_trending-matsuridayo-nekoray-1.md" >}})
+- [🚀Ehviewer优化版来了！性能飙升+功能革新，看图神器必装！]({{< relref "posts/20260126-github_trending-xiaojieonly-ehviewer_cn_sxj-3.md" >}})
+- [💥仅15刀打造实时HN显示器！低成本DIY硬件指南]({{< relref "posts/20260126-hacker_news-building-a-real-time-hn-display-for-15-16.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

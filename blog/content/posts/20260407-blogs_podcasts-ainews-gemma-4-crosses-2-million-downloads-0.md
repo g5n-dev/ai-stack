@@ -1,14 +1,29 @@
 ---
-title: "Gemma 4下载量突破200万次"
-date: 2026-04-07T02:53:23+08:00
+title: Gemma 4下载量突破200万次
+date: 2026-04-07 02:53:23+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Gemma", "大模型", "Google", "开源模型", "LLM", "下载量", "AI新闻", "机器学习"]
-categories: ["大模型"]
+entry_kind: auto
+tags:
+- Gemma
+- 大模型
+- Google
+- 开源模型
+- LLM
+- 下载量
+- AI新闻
+- 机器学习
+categories:
+- 大模型
 source: blogs_podcasts
-description: "Gemma 4在发布后短时间内下载量突破200万，成为今年最受关注的开源AI模型之一。趁着今日市场相对平静，业界借此机会向其取得的巨大成功致敬，并认可其在性能和易用性方面的突出表现。"
+description: Gemma 4在发布后短时间内下载量突破200万，成为今年最受关注的开源AI模型之一。趁着今日市场相对平静，业界借此机会向其取得的巨大成功致敬，并认可其在性能和易用性方面的突出表现。
 external_url: https://www.latent.space/p/ainews-gemma-4-crosses-2-million
-scenarios: ["大语言模型", "AI/ML项目"]
+scenarios:
+- 大语言模型
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Gemma 4下载量突破200万次
@@ -168,9 +183,9 @@ Gemma 4 的 200 万次下载表明轻量开源模型已具备规模化落地�
 
 ### 相关文章
 
-- [中国开源AI生态架构选择：DeepSeek之外的技术路径]({{< relref "posts/20260129-blogs_podcasts-architectural-choices-in-chinas-open-source-ai-eco-9.md" >}})
-- [上下文学习难度超出原有认知]({{< relref "posts/20260206-hacker_news-learning-from-context-is-harder-than-we-thought-5.md" >}})
+- [中国开源AI生态架构选择：DeepSeek之外的技术路径]({{< relref "posts/20260127-blogs_podcasts-architectural-choices-in-chinas-open-source-ai-eco-0.md" >}})
+- [上下文学习难度超出原有认知]({{< relref "posts/20260206-hacker_news-learning-from-context-is-harder-than-we-thought-6.md" >}})
 - [谷歌发布Gemma 4开源模型]({{< relref "posts/20260403-hacker_news-google-releases-gemma-4-open-models-0.md" >}})
-- [中国开源AI生态的架构选择：超越DeepSeek的构建路径]({{< relref "posts/20260129-blogs_podcasts-architectural-choices-in-chinas-open-source-ai-eco-8.md" >}})
-- [让 Claude 编写 CUDA 内核并指导开源模型]({{< relref "posts/20260129-blogs_podcasts-we-got-claude-to-build-cuda-kernels-and-teach-open-7.md" >}})
+- [中国开源AI生态的架构选择：超越DeepSeek的构建路径]({{< relref "posts/20260127-blogs_podcasts-architectural-choices-in-chinas-open-source-ai-eco-0.md" >}})
+- [让 Claude 编写 CUDA 内核并指导开源模型]({{< relref "posts/20260129-blogs_podcasts-we-got-claude-to-build-cuda-kernels-and-teach-open-6.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

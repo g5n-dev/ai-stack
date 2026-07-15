@@ -1,14 +1,30 @@
 ---
-title: "Pensieve范式：有状态语言模型自主管理上下文"
-date: 2026-02-13T03:01:31+08:00
+title: Pensieve范式：有状态语言模型自主管理上下文
+date: 2026-02-13 03:01:31+08:00
 draft: false
-entry_kind: "auto"
-tags: ["StateLM", "有状态模型", "上下文管理", "长文档问答", "记忆工程", "智能体", "RAG", "模型架构"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- StateLM
+- 有状态模型
+- 上下文管理
+- 长文档问答
+- 记忆工程
+- 智能体
+- RAG
+- 模型架构
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "这篇论文提出了一种名为 **StateLM** 的新型基础模型，旨在解决大语言模型（LLM）无法自主管理记忆和上下文的局限性。以下是该内容的简洁总结： 1. **核心灵感与问题**： 文章将现有的AI模型比作《哈利·波特》中没有魔杖的邓布利多：虽然拥有成熟的数据库（冥想盆），但缺乏主动操作的工具。传统模型只能被动接受人"
+description: 这篇论文提出了一种名为 **StateLM** 的新型基础模型，旨在解决大语言模型（LLM）无法自主管理记忆和上下文的局限性。以下是该内容的简洁总结：
+  1. **核心灵感与问题**： 文章将现有的AI模型比作《哈利·波特》中没有魔杖的邓布利多：虽然拥有成熟的数据库（冥想盆），但缺乏主动操作的工具。传统模型只能被动接受人
 external_url: http://arxiv.org/abs/2602.12108v1
-scenarios: ["RAG应用"]
+scenarios:
+- RAG应用
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Pensieve范式：有状态语言模型自主管理上下文
@@ -507,9 +523,9 @@ Pensieve Paradigm 的核心在于“有状态”。模型不仅要处理输入�
 
 ### 相关文章
 
-- [MemSkill：面向自进化代理的记忆技能学习与演化框架]({{< relref "posts/20260204-arxiv_ai-memskill-learning-and-evolving-memory-skills-for-s-9.md" >}})
-- [Agent Skills：智能体技能框架]({{< relref "posts/20260203-hacker_news-agent-skills-4.md" >}})
-- [Context Graphs与Agent Traces技术解析]({{< relref "posts/20260204-blogs_podcasts-ainews-context-graphs-and-agent-traces-1.md" >}})
-- [Context Graphs与Agent Traces：解析AI系统的上下文与追踪技术]({{< relref "posts/20260205-blogs_podcasts-ainews-context-graphs-and-agent-traces-5.md" >}})
+- [MemSkill：面向自进化代理的记忆技能学习与演化框架]({{< relref "posts/20260203-arxiv_ai-memskill-learning-and-evolving-memory-skills-for-s-9.md" >}})
+- [Agent Skills：智能体技能框架]({{< relref "posts/20260203-hacker_news-agent-skills-0.md" >}})
+- [Context Graphs与Agent Traces技术解析]({{< relref "posts/20260204-blogs_podcasts-ainews-context-graphs-and-agent-traces-0.md" >}})
+- [Context Graphs与Agent Traces：解析AI系统的上下文与追踪技术]({{< relref "posts/20260204-blogs_podcasts-ainews-context-graphs-and-agent-traces-0.md" >}})
 - [Deep Researcher：序列规划反思与候选交叉]({{< relref "posts/20260129-arxiv_ai-deep-researcher-with-sequential-plan-reflection-an-9.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

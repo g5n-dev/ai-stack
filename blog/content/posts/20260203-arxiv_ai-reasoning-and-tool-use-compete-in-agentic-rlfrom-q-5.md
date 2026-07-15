@@ -1,14 +1,30 @@
 ---
-title: "智能体推理与工具使用的竞争：量化干扰与解调优"
-date: 2026-02-03T03:49:30+08:00
+title: 智能体推理与工具使用的竞争：量化干扰与解调优
+date: 2026-02-03 03:49:30+08:00
 draft: false
-entry_kind: "auto"
-tags: ["智能体", "强化学习", "工具使用", "推理", "LoRA", "DART", "梯度干扰", "模型微调"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- 智能体
+- 强化学习
+- 工具使用
+- 推理
+- LoRA
+- DART
+- 梯度干扰
+- 模型微调
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "本文针对智能体强化学习（ARL）中广泛采用的“联合训练”范式提出了质疑与改进方案，主要包含以下三个核心部分： 1. **发现问题（推理与工具使用的冲突）**： 目前的ARL方法通常使用单一模型同时处理“推理”和“工具使用”能力，并默认这种联合训练能提升整体性能。然而，本文通过实证研究发现，这两种能力在训练过程中往往产生"
+description: 本文针对智能体强化学习（ARL）中广泛采用的“联合训练”范式提出了质疑与改进方案，主要包含以下三个核心部分： 1. **发现问题（推理与工具使用的冲突）**：
+  目前的ARL方法通常使用单一模型同时处理“推理”和“工具使用”能力，并默认这种联合训练能提升整体性能。然而，本文通过实证研究发现，这两种能力在训练过程中往往产生
 external_url: http://arxiv.org/abs/2602.00994v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 智能体推理与工具使用的竞争：量化干扰与解调优
@@ -530,8 +546,8 @@ DART基于LoRA技术，对显存和计算资源的额外需求极低，非常适
 ### 相关文章
 
 - [Unlocking Agentic RL Training for GPT-OSS: A Practical Retrospective]({{< relref "posts/20260127-blogs_podcasts-unlocking-agentic-rl-training-for-gpt-oss-a-practi-0.md" >}})
-- [DynaWeb：基于模型的强化学习网页智能体框架]({{< relref "posts/20260131-arxiv_ai-dynaweb-model-based-reinforcement-learning-of-web--6.md" >}})
-- [DynaWeb：基于模型的强化学习网页智能体]({{< relref "posts/20260202-arxiv_ai-dynaweb-model-based-reinforcement-learning-of-web--6.md" >}})
+- [DynaWeb：基于模型的强化学习网页智能体框架]({{< relref "posts/20260130-arxiv_ai-dynaweb-model-based-reinforcement-learning-of-web--6.md" >}})
+- [DynaWeb：基于模型的强化学习网页智能体]({{< relref "posts/20260130-arxiv_ai-dynaweb-model-based-reinforcement-learning-of-web--6.md" >}})
 - [🚀沙盒机制唤醒LLM智能体通用能力！AI Agent突破性架构！]({{< relref "posts/20260125-arxiv_ai-llm-in-sandbox-elicits-general-agentic-intelligenc-2.md" >}})
-- [探索面向智能体的推理奖励模型]({{< relref "posts/20260131-arxiv_ai-exploring-reasoning-reward-model-for-agents-4.md" >}})
+- [探索面向智能体的推理奖励模型]({{< relref "posts/20260130-arxiv_ai-exploring-reasoning-reward-model-for-agents-4.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

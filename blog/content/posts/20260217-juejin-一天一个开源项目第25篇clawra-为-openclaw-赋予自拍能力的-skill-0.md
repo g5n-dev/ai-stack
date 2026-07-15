@@ -1,14 +1,32 @@
 ---
-title: "Clawra：集成 fal.ai 与 xAI Grok 实现 AI 助手固定形象自拍"
-date: 2026-02-17T03:10:02+08:00
+title: Clawra：集成 fal.ai 与 xAI Grok 实现 AI 助手固定形象自拍
+date: 2026-02-17 03:10:02+08:00
 draft: false
-entry_kind: "auto"
-tags: ["OpenClaw", "fal.ai", "xAI", "Grok", "AI 助手", "图像生成", "开源项目", "RAG"]
-categories: ["开源生态", "AI 工程"]
+entry_kind: auto
+tags:
+- OpenClaw
+- fal.ai
+- xAI
+- Grok
+- AI 助手
+- 图像生成
+- 开源项目
+- RAG
+categories:
+- 开源生态
+- AI 工程
 source: juejin
-description: "这是一份关于 Clawra 项目的简洁总结： **项目名称：** Clawra **项目简介：** Clawra 是由 SumeLabs 开发的一个开源 Skill（技能/插件），专门为 OpenClaw AI 助手设计。它的核心功能是赋予 AI 助手「自拍」能力，使其能够根据固定的形象设定，自动生成并分享该形象的 A"
+description: 这是一份关于 Clawra 项目的简洁总结： **项目名称：** Clawra **项目简介：** Clawra 是由 SumeLabs
+  开发的一个开源 Skill（技能/插件），专门为 OpenClaw AI 助手设计。它的核心功能是赋予 AI 助手「自拍」能力，使其能够根据固定的形象设定，自动生成并分享该形象的
+  A
 external_url: https://juejin.cn/post/7606589625742639154
-scenarios: ["AI/ML项目", "RAG应用"]
+scenarios:
+- AI/ML项目
+- RAG应用
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Clawra：集成 fal.ai 与 xAI Grok 实现 AI 助手固定形象自拍
@@ -237,8 +255,8 @@ Clawra 是由 SumeLabs 开发的一个开源 Skill（技能/插件），专门�
 ### 相关文章
 
 - [OpenClawInstaller：一键部署私人 AI 助手 OpenClaw]({{< relref "posts/20260216-juejin-一天一个开源项目第24篇openclawinstaller-一键部署私人-ai-助手-opencla-1.md" >}})
-- [PageLM：开源 AI 学习平台，将文档转化为测验与播客]({{< relref "posts/20260215-juejin-一天一个开源项目第23篇pagelm-开源-ai-教育平台把学习材料变成互动资源-1.md" >}})
-- [PageLM：开源AI教育平台，将文档转为测验与播客]({{< relref "posts/20260215-juejin-一天一个开源项目第23篇pagelm-开源-ai-教育平台把学习材料变成互动资源-2.md" >}})
-- [OpenClaw 开源 AI 智能体框架与 GitHub 增长记录]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-5.md" >}})
+- [PageLM：开源 AI 学习平台，将文档转化为测验与播客]({{< relref "posts/20260215-juejin-一天一个开源项目第23篇pagelm-开源-ai-教育平台把学习材料变成互动资源-0.md" >}})
+- [PageLM：开源AI教育平台，将文档转为测验与播客]({{< relref "posts/20260215-juejin-一天一个开源项目第23篇pagelm-开源-ai-教育平台把学习材料变成互动资源-0.md" >}})
+- [OpenClaw 开源 AI 智能体框架与 GitHub 增长记录]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-0.md" >}})
 - [深度解析Skill/MCP/RAG等五大AI技术的底层逻辑]({{< relref "posts/20260212-juejin-深入理解skillmcpragagentopenclaw底层逻辑-2.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

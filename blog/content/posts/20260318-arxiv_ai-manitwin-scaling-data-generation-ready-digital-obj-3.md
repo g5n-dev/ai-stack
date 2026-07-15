@@ -21,6 +21,10 @@ description: 以下是对内容的简要总结： **ManiTwin：规模达10万级
 external_url: http://arxiv.org/abs/2603.16866v1
 scenarios:
 - Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # ManiTwin：面向数据生成的10万级数字物体数据集
@@ -312,8 +316,8 @@ ManiTwin 提出了一个全自动化的流程，旨在将单张或多视角的�
 
 ### 相关文章
 
-- [LeRobot v0.5.0：全维度扩展与规模化升级]({{< relref "posts/20260310-blogs_podcasts-lerobot-v050-scaling-every-dimension-10.md" >}})
+- [LeRobot v0.5.0：全维度扩展与规模化升级]({{< relref "posts/20260309-blogs_podcasts-lerobot-v050-scaling-every-dimension-4.md" >}})
 - [仿真筛选模块化策略：从人类视频学习有效行为]({{< relref "posts/20260216-arxiv_ai-imitating-what-works-simulation-filtered-modular-p-0.md" >}})
-- [LeRobot v0.5.0 发布：扩展数据、模型与仿真维度]({{< relref "posts/20260310-blogs_podcasts-lerobot-v050-scaling-every-dimension-11.md" >}})
-- [NVIDIA Cosmos 策略模型提升机器人高级控制能力]({{< relref "posts/20260203-blogs_podcasts-introducing-nvidia-cosmos-policy-for-advanced-robo-6.md" >}})
-- [NVIDIA Cosmos策略发布：提升机器人控制精度]({{< relref "posts/20260203-blogs_podcasts-introducing-nvidia-cosmos-policy-for-advanced-robo-7.md" >}})
+- [LeRobot v0.5.0 发布：扩展数据、模型与仿真维度]({{< relref "posts/20260309-blogs_podcasts-lerobot-v050-scaling-every-dimension-4.md" >}})
+- [NVIDIA Cosmos 策略模型提升机器人高级控制能力]({{< relref "posts/20260129-blogs_podcasts-introducing-nvidia-cosmos-policy-for-advanced-robo-0.md" >}})
+- [NVIDIA Cosmos策略发布：提升机器人控制精度]({{< relref "posts/20260129-blogs_podcasts-introducing-nvidia-cosmos-policy-for-advanced-robo-0.md" >}})

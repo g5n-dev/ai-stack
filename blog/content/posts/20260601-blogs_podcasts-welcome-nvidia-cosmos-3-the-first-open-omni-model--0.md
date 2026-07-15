@@ -1,14 +1,29 @@
 ---
-title: "NVIDIA Cosmos 3发布：首个物理AI开源全模态模型"
-date: 2026-06-01T10:44:05+08:00
+title: NVIDIA Cosmos 3发布：首个物理AI开源全模态模型
+date: 2026-06-01 10:44:05+08:00
 draft: false
-entry_kind: "auto"
-tags: ["NVIDIA", "物理AI", "开源模型", "全模态", "机器人", "世界模型", "多模态", "GPU加速"]
-categories: ["大模型", "开源生态"]
+entry_kind: auto
+tags:
+- NVIDIA
+- 物理AI
+- 开源模型
+- 全模态
+- 机器人
+- 世界模型
+- 多模态
+- GPU加速
+categories:
+- 大模型
+- 开源生态
 source: blogs_podcasts
-description: "英伟达日前发布Cosmos‑3模型，首个面向物理AI推理与动作的开源全模态模型。它将视觉、语言和动作表征统一在同一框架，实现跨场景的通用决策能力，为机器人和自动驾驶等领域的研发提供统一基准。开发者可直接获取模型权重与预训练框架，在自有数据上快速微调或部署，显著降低创新门槛。本文将深入解析Cosmos‑3的核心架构、性能"
+description: 英伟达日前发布Cosmos‑3模型，首个面向物理AI推理与动作的开源全模态模型。它将视觉、语言和动作表征统一在同一框架，实现跨场景的通用决策能力，为机器人和自动驾驶等领域的研发提供统一基准。开发者可直接获取模型权重与预训练框架，在自有数据上快速微调或部署，显著降低创新门槛。本文将深入解析Cosmos‑3的核心架构、性能
 external_url: https://huggingface.co/blog/nvidia/cosmos-3-for-physical-ai
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # NVIDIA Cosmos 3发布：首个物理AI开源全模态模型
@@ -136,9 +151,9 @@ Cosmos 3 能实现跨场景、跨任务的通用物理 AI 推理与动作生�
 
 ### 相关文章
 
-- [Moonshot Kimi K25：成本减半超越Sonnet 45，原生图文视频与百并发Agent管理]({{< relref "posts/20260129-blogs_podcasts-ainews-moonshot-kimi-k25-beats-sonnet-45-at-half-t-2.md" >}})
-- [Moonshot Kimi K2.5：成本减半超越Sonnet 4.5，支持原生图文与百并发智能体]({{< relref "posts/20260129-blogs_podcasts-ainews-moonshot-kimi-k25-beats-sonnet-45-at-half-t-3.md" >}})
-- [Moonshot Kimi K2.5：半价超越Sonnet 4.5，原生图文视频与百并发Agent管理]({{< relref "posts/20260129-blogs_podcasts-ainews-moonshot-kimi-k25-beats-sonnet-45-at-half-t-4.md" >}})
-- [Moonshot Kimi K2.5：成本减半超越Sonnet 4.5，支持原生图文视频]({{< relref "posts/20260129-blogs_podcasts-ainews-moonshot-kimi-k25-beats-sonnet-45-at-half-t-5.md" >}})
-- [Moonshot Kimi K2.5：成本减半超越Sonnet 4.5，原生图文视频与百并发Agent管理]({{< relref "posts/20260130-blogs_podcasts-ainews-moonshot-kimi-k25-beats-sonnet-45-at-half-t-6.md" >}})
+- [Moonshot Kimi K25：成本减半超越Sonnet 45，原生图文视频与百并发Agent管理]({{< relref "posts/20260129-blogs_podcasts-ainews-moonshot-kimi-k25-beats-sonnet-45-at-half-t-1.md" >}})
+- [Moonshot Kimi K2.5：成本减半超越Sonnet 4.5，支持原生图文与百并发智能体]({{< relref "posts/20260129-blogs_podcasts-ainews-moonshot-kimi-k25-beats-sonnet-45-at-half-t-1.md" >}})
+- [Moonshot Kimi K2.5：半价超越Sonnet 4.5，原生图文视频与百并发Agent管理]({{< relref "posts/20260129-blogs_podcasts-ainews-moonshot-kimi-k25-beats-sonnet-45-at-half-t-1.md" >}})
+- [Moonshot Kimi K2.5：成本减半超越Sonnet 4.5，支持原生图文视频]({{< relref "posts/20260129-blogs_podcasts-ainews-moonshot-kimi-k25-beats-sonnet-45-at-half-t-1.md" >}})
+- [Moonshot Kimi K2.5：成本减半超越Sonnet 4.5，原生图文视频与百并发Agent管理]({{< relref "posts/20260129-blogs_podcasts-ainews-moonshot-kimi-k25-beats-sonnet-45-at-half-t-1.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

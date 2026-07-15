@@ -21,6 +21,10 @@ description: '**中文总结：** 本文探讨了在大语言模型（LLM）兴�
 external_url: http://arxiv.org/abs/2603.04083v1
 scenarios:
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 多候选人译后编辑中的后见质量预测实验
@@ -393,8 +397,8 @@ $$ \tau = \frac{(\text{concordant pairs}) - (\text{discordant pairs})}{\binom{n}
 
 ### 相关文章
 
-- [机器翻译评估中的跨向污染问题研究]({{< relref "posts/20260130-arxiv_ai-when-flores-bloomz-wrong-cross-direction-contamina-1.md" >}})
+- [机器翻译评估中的跨向污染问题研究]({{< relref "posts/20260129-arxiv_ai-when-flores-bloomz-wrong-cross-direction-contamina-1.md" >}})
 - [🚀低资源机器翻译的救星！结构化自反思引领新突破✨]({{< relref "posts/20260128-arxiv_ai-reflective-translation-improving-low-resource-mach-7.md" >}})
 - [进化策略导致大语言模型出现灾难性遗忘]({{< relref "posts/20260129-arxiv_ai-evolutionary-strategies-lead-to-catastrophic-forge-0.md" >}})
 - [SokoBench：评估大模型长程规划与推理能力]({{< relref "posts/20260129-arxiv_ai-sokobench-evaluating-long-horizon-planning-and-rea-2.md" >}})
-- [Alyah：评估阿拉伯语大模型阿联酋方言能力]({{< relref "posts/20260129-blogs_podcasts-alyah-toward-robust-evaluation-of-emirati-dialect--8.md" >}})
+- [Alyah：评估阿拉伯语大模型阿联酋方言能力]({{< relref "posts/20260127-blogs_podcasts-alyah-toward-robust-evaluation-of-emirati-dialect--0.md" >}})

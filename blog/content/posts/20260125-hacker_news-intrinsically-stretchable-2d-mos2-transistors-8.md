@@ -1,12 +1,18 @@
 ---
-title: "🔥重大突破！2D晶体管实现本征可拉伸，电子器件迎来革命性变革！"
-date: 2026-01-25T12:39:55+08:00
+title: 🔥重大突破！2D晶体管实现本征可拉伸，电子器件迎来革命性变革！
+date: 2026-01-25 12:39:55+08:00
 draft: false
-entry_kind: "auto"
-tags: ["hacker_news"]
-categories: ["效率与方法论"]
+entry_kind: auto
+tags:
+- hacker_news
+categories:
+- 效率与方法论
 source: hacker_news
 external_url: https://www.nature.com/articles/s41467-026-68504-2
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 📰 🔥重大突破！2D晶体管实现本征可拉伸，电子器件迎来革命性变革！

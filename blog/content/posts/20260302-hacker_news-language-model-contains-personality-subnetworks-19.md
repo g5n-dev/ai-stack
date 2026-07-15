@@ -21,6 +21,10 @@ description: 近期研究表明，大型语言模型并非单纯的概率预测�
 external_url: https://arxiv.org/abs/2602.07164
 scenarios:
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 语言模型存在可独立调控的个性子网络

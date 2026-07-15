@@ -1,14 +1,31 @@
 ---
-title: "Amazon SageMaker AI异步推理支持内联负载功能"
-date: 2026-06-17T23:45:46+08:00
+title: Amazon SageMaker AI异步推理支持内联负载功能
+date: 2026-06-17 23:45:46+08:00
 draft: false
-entry_kind: "auto"
-tags: ["SageMaker", "异步推理", "内联负载", "AWS", "InvokeEndpointAsync", "S3", "机器学习", "API"]
-categories: ["AI 工程"]
+entry_kind: auto
+tags:
+- SageMaker
+- 异步推理
+- 内联负载
+- AWS
+- InvokeEndpointAsync
+- S3
+- 机器学习
+- API
+categories:
+- AI 工程
 source: blogs_podcasts
-description: "背景 Amazon SageMaker AI 的异步推理（Async Inference）原需先把输入数据上传至 Amazon S3，再在调用 InvokeEndpointAsync 时指定 S3 对象路径，导致流程繁琐、延迟增加。 新增功能 现在，异步推理支持在请求体（request body）中直接携带_inlin"
+description: 背景 Amazon SageMaker AI 的异步推理（Async Inference）原需先把输入数据上传至 Amazon S3，再在调用
+  InvokeEndpointAsync 时指定 S3 对象路径，导致流程繁琐、延迟增加。 新增功能 现在，异步推理支持在请求体（request body）中直接携带_inlin
 external_url: https://aws.amazon.com/blogs/machine-learning/amazon-sagemaker-ai-async-inference-now-supports-inline-request-payloads
-scenarios: ["后端开发"]
+scenarios:
+- 后端开发
+aliases:
+- /posts/20260618-blogs_podcasts-amazon-sagemaker-ai-async-inference-now-supports-i-0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Amazon SageMaker AI异步推理支持内联负载功能
@@ -188,9 +205,9 @@ Inline payload 支持能够显著简化 SageMaker 异步推理流程，同时降
 
 ### 相关文章
 
-- [Sonrai 利用 SageMaker AI 构建合规 MLOps 框架加速精准医学试验]({{< relref "posts/20260224-blogs_podcasts-how-sonrai-uses-amazon-sagemaker-ai-to-accelerate--12.md" >}})
-- [Sonrai 利用 SageMaker AI 构建合规 MLOps 框架加速精准医学试验]({{< relref "posts/20260224-blogs_podcasts-how-sonrai-uses-amazon-sagemaker-ai-to-accelerate--2.md" >}})
-- [Sonrai利用SageMaker AI构建MLOps框架加速精准医学试验]({{< relref "posts/20260224-blogs_podcasts-how-sonrai-uses-amazon-sagemaker-ai-to-accelerate--4.md" >}})
-- [Sonrai 联手 AWS 构建 MLOps 框架加速精准医学试验]({{< relref "posts/20260224-blogs_podcasts-how-sonrai-uses-amazon-sagemaker-ai-to-accelerate--8.md" >}})
-- [Sonrai 联合 AWS SageMaker 构建 MLOps 框架，加速精准医学临床试验]({{< relref "posts/20260224-blogs_podcasts-how-sonrai-uses-amazon-sagemaker-ai-to-accelerate--9.md" >}})
+- [Sonrai 利用 SageMaker AI 构建合规 MLOps 框架加速精准医学试验]({{< relref "posts/20260223-blogs_podcasts-how-sonrai-uses-amazon-sagemaker-ai-to-accelerate--0.md" >}})
+- [Sonrai 利用 SageMaker AI 构建合规 MLOps 框架加速精准医学试验]({{< relref "posts/20260223-blogs_podcasts-how-sonrai-uses-amazon-sagemaker-ai-to-accelerate--0.md" >}})
+- [Sonrai利用SageMaker AI构建MLOps框架加速精准医学试验]({{< relref "posts/20260223-blogs_podcasts-how-sonrai-uses-amazon-sagemaker-ai-to-accelerate--0.md" >}})
+- [Sonrai 联手 AWS 构建 MLOps 框架加速精准医学试验]({{< relref "posts/20260223-blogs_podcasts-how-sonrai-uses-amazon-sagemaker-ai-to-accelerate--0.md" >}})
+- [Sonrai 联合 AWS SageMaker 构建 MLOps 框架，加速精准医学临床试验]({{< relref "posts/20260223-blogs_podcasts-how-sonrai-uses-amazon-sagemaker-ai-to-accelerate--0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

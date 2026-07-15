@@ -21,6 +21,10 @@ description: 以下是该内容的中文总结： **ReCoN-Ipsundrum：可检查�
 external_url: http://arxiv.org/abs/2602.23232v1
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # ReCoN-Ipsundrum：具备情感耦合控制与机制关联意识指标的可检查循环持久代理
@@ -405,7 +409,7 @@ ReCoN-Ipsundrum 通过其核心的“持久循环”来解决遗忘问题。传�
 ### 相关文章
 
 - [Aletheia模型自主攻克FirstProof数学定理证明]({{< relref "posts/20260225-arxiv_ai-aletheia-tackles-firstproof-autonomously-3.md" >}})
-- [Aletheia自主攻克FirstProof数学定理]({{< relref "posts/20260226-arxiv_ai-aletheia-tackles-firstproof-autonomously-3.md" >}})
+- [Aletheia自主攻克FirstProof数学定理]({{< relref "posts/20260225-arxiv_ai-aletheia-tackles-firstproof-autonomously-3.md" >}})
 - [Deep Researcher：序列规划反思与候选交叉]({{< relref "posts/20260129-arxiv_ai-deep-researcher-with-sequential-plan-reflection-an-9.md" >}})
 - [SokoBench：评估大模型长程规划与推理能力]({{< relref "posts/20260129-arxiv_ai-sokobench-evaluating-long-horizon-planning-and-rea-2.md" >}})
-- [Deep Researcher：结合序列规划反思与候选交叉的深度研究框架]({{< relref "posts/20260130-arxiv_ai-deep-researcher-with-sequential-plan-reflection-an-9.md" >}})
+- [Deep Researcher：结合序列规划反思与候选交叉的深度研究框架]({{< relref "posts/20260129-arxiv_ai-deep-researcher-with-sequential-plan-reflection-an-9.md" >}})

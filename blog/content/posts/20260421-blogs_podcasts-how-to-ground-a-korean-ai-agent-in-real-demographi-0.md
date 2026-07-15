@@ -1,14 +1,30 @@
 ---
-title: "用合成人物角色提升韩国AI智能体人口统计贴合度"
-date: 2026-04-21T09:38:24+08:00
+title: 用合成人物角色提升韩国AI智能体人口统计贴合度
+date: 2026-04-21 09:38:24+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI智能体", "合成人物", "人口统计", "韩国市场", "角色生成", "Demographics", "AI Agent", "贴合度"]
-categories: ["AI 工程", "数据"]
+entry_kind: auto
+tags:
+- AI 智能体
+- 合成人物
+- 人口统计
+- 韩国市场
+- 角色生成
+- Demographics
+- AI Agent
+- 贴合度
+categories:
+- AI 工程
+- 数据
 source: blogs_podcasts
-description: "在构建面向韩国用户的AI助理时，模型的响应若未贴合当地人口统计特征，往往会导致回答偏差和用户体验下降。本文介绍通过合成人物（synthetic personas）将真实人口统计信息注入语言模型，实现对年龄、地区、职业等多维度属性的精准对齐。读者将学习到合成人物的设计方法、数据来源选择以及评估指标，帮助项目在实际部署中提"
+description: 在构建面向韩国用户的AI助理时，模型的响应若未贴合当地人口统计特征，往往会导致回答偏差和用户体验下降。本文介绍通过合成人物（synthetic
+  personas）将真实人口统计信息注入语言模型，实现对年龄、地区、职业等多维度属性的精准对齐。读者将学习到合成人物的设计方法、数据来源选择以及评估指标，帮助项目在实际部署中提
 external_url: https://huggingface.co/blog/nvidia/build-korean-agents-with-nemotron-personas
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 用合成人物角色提升韩国AI智能体人口统计贴合度
@@ -86,9 +102,9 @@ scenarios: ["AI/ML项目"]
 
 ### 相关文章
 
-- [OpenAI内部数据代理：结合GPT‑5与记忆能力实现分钟级洞察]({{< relref "posts/20260203-blogs_podcasts-inside-openais-in-house-data-agent-6.md" >}})
-- [展示一款AI智能体可参与的即时战略游戏]({{< relref "posts/20260225-hacker_news-show-hn-a-real-time-strategy-game-that-ai-agents-c-1.md" >}})
-- [OpenAI内部数据代理：结合GPT‑5与记忆快速分析海量数据]({{< relref "posts/20260129-blogs_podcasts-inside-openais-in-house-data-agent-1.md" >}})
-- [Kirara-AI：支持多平台接入的多模态聊天机器人框架]({{< relref "posts/20260130-github_trending-lss233-kirara-ai-2.md" >}})
-- [Agent评估显示AGENTS.md配置优于Skills]({{< relref "posts/20260130-hacker_news-agentsmd-outperforms-skills-in-our-agent-evals-4.md" >}})
+- [OpenAI内部数据代理：结合GPT‑5与记忆能力实现分钟级洞察]({{< relref "posts/20260129-hacker_news-openais-in-house-data-agent-14.md" >}})
+- [展示一款AI智能体可参与的即时战略游戏]({{< relref "posts/20260225-hacker_news-show-hn-a-real-time-strategy-game-that-ai-agents-c-0.md" >}})
+- [OpenAI内部数据代理：结合GPT‑5与记忆快速分析海量数据]({{< relref "posts/20260129-hacker_news-openais-in-house-data-agent-14.md" >}})
+- [Kirara-AI：支持多平台接入的多模态聊天机器人框架]({{< relref "posts/20260127-github_trending-lss233-kirara-ai-2.md" >}})
+- [Agent评估显示AGENTS.md配置优于Skills]({{< relref "posts/20260129-hacker_news-compressed-agentsmd-agent-skills-5.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

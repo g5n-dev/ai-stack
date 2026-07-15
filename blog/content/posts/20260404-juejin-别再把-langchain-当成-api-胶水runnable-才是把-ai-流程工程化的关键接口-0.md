@@ -1,14 +1,30 @@
 ---
-title: "LangChain Runnable：AI 流程工程化的核心接口"
-date: 2026-04-04T15:53:08+08:00
+title: LangChain Runnable：AI 流程工程化的核心接口
+date: 2026-04-04 15:53:08+08:00
 draft: false
-entry_kind: "auto"
-tags: ["LangChain", "Runnable", "AI 工程化", "Python", "流程编排", "LLM", "接口抽象", "可组合性"]
-categories: ["AI 工程"]
+entry_kind: auto
+tags:
+- LangChain
+- Runnable
+- AI 工程化
+- Python
+- 流程编排
+- LLM
+- 接口抽象
+- 可组合性
+categories:
+- AI 工程
 source: juejin
-description: "核心概念 LangChain 常用的 PromptTemplate、ChatOpenAI、OutputParser 等组件本质上是围绕模型调用的包装，但它们各自独立、难以组合。把它们统一为 **Runnable** 接口后，所有操作（拼装 prompt、调用模型、解析输出）都实现了统一的 、 、 方法，从而形成可链式、"
+description: 核心概念 LangChain 常用的 PromptTemplate、ChatOpenAI、OutputParser 等组件本质上是围绕模型调用的包装，但它们各自独立、难以组合。把它们统一为
+  **Runnable** 接口后，所有操作（拼装 prompt、调用模型、解析输出）都实现了统一的 、 、 方法，从而形成可链式、
 external_url: https://juejin.cn/post/7624461069679738889
-scenarios: ["AI/ML项目", "大语言模型"]
+scenarios:
+- AI/ML项目
+- 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # LangChain Runnable：AI 流程工程化的核心接口
@@ -104,7 +120,7 @@ LangChain 的核心不是一堆 API 粘合剂，而是 **Runnable** 统一接口
 
 - [LangChain 框架完全指南：基于 LLM 的应用开发]({{< relref "posts/20260306-juejin-langchain-框架完全指南从入门到精通-3.md" >}})
 - [LangChain结果解析器：将大模型非结构化输出转为结构化数据]({{< relref "posts/20260311-juejin-langchain入门到精通0x01结果解析器-3.md" >}})
-- [面向分析师的Python大语言模型实战指南]({{< relref "posts/20260219-hacker_news-large-language-models-for-mortals-a-practical-guid-11.md" >}})
 - [面向分析师的Python大语言模型实战指南]({{< relref "posts/20260219-hacker_news-large-language-models-for-mortals-a-practical-guid-13.md" >}})
-- [kirara-ai：支持多平台接入的多模态AI聊天机器人框架]({{< relref "posts/20260129-github_trending-lss233-kirara-ai-0.md" >}})
+- [面向分析师的Python大语言模型实战指南]({{< relref "posts/20260219-hacker_news-large-language-models-for-mortals-a-practical-guid-13.md" >}})
+- [kirara-ai：支持多平台接入的多模态AI聊天机器人框架]({{< relref "posts/20260127-github_trending-lss233-kirara-ai-2.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

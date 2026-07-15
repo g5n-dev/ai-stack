@@ -1,14 +1,31 @@
 ---
-title: "代理覆盖层：为REST服务添加A2A与MCP能力"
-date: 2026-06-25T19:33:30+08:00
+title: 代理覆盖层：为REST服务添加A2A与MCP能力
+date: 2026-06-25 19:33:30+08:00
 draft: false
-entry_kind: "auto"
-tags: ["代理覆盖层", "A2A协议", "MCP协议", "REST改造", "AI Agent", "协议桥接", "轻量包装", "遗留系统"]
-categories: ["AI 工程", "系统与基础设施"]
+entry_kind: auto
+tags:
+- 代理覆盖层
+- A2A协议
+- MCP 协议
+- REST改造
+- AI Agent
+- 协议桥接
+- 轻量包装
+- 遗留系统
+categories:
+- AI 工程
+- 系统与基础设施
 source: blogs_podcasts
-description: "背景 传统 REST 服务在企业内大量遗留，业务逻辑已成熟，若重新构建为原生代理（A2A）成本高、风险大。 代理包装（Agentic Overlay）思路 在不改动现有代码的前提下，用轻量包装层把 REST 接口转化为具备 A2A 交互能力的代理，并将其暴露为符合 Model Context Protocol (MCP"
+description: 背景 传统 REST 服务在企业内大量遗留，业务逻辑已成熟，若重新构建为原生代理（A2A）成本高、风险大。 代理包装（Agentic Overlay）思路
+  在不改动现有代码的前提下，用轻量包装层把 REST 接口转化为具备 A2A 交互能力的代理，并将其暴露为符合 Model Context Protocol (MCP
 external_url: https://aws.amazon.com/blogs/machine-learning/retrofit-dont-rebuild-agentic-overlays-for-transforming-legacy-enterprise-services
-scenarios: ["AI/ML项目", "后端开发"]
+scenarios:
+- AI/ML项目
+- 后端开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 代理覆盖层：为REST服务添加A2A与MCP能力
@@ -153,7 +170,7 @@ scenarios: ["AI/ML项目", "后端开发"]
 
 - [2026年AI Agent开发三大范式深度解析]({{< relref "posts/20260611-juejin-cli-mcp-skill2026年ai-agent开发的三大范式-0.md" >}})
 - [Sonarly：利用AI代理分类并修复生产环境告警]({{< relref "posts/20260217-hacker_news-launch-hn-sonarly-yc-w26-ai-agent-to-triage-and-fi-12.md" >}})
-- [Sonarly：AI 智能体用于生产告警的分诊与修复]({{< relref "posts/20260217-hacker_news-launch-hn-sonarly-yc-w26-ai-agent-to-triage-and-fi-16.md" >}})
+- [Sonarly：AI 智能体用于生产告警的分诊与修复]({{< relref "posts/20260217-hacker_news-launch-hn-sonarly-yc-w26-ai-agent-to-triage-and-fi-12.md" >}})
 - [OpenClaw 集成阿里云 SLS 构建 AI Agent 可观测体系]({{< relref "posts/20260303-juejin-你的-openclaw-真的在受控运行吗-0.md" >}})
 - [OpenHands框架拆解：Runtime组件与数据流解析]({{< relref "posts/20260305-juejin-ai-agent框架探秘拆解-openhands11-runtime主要组件-3.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

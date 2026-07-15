@@ -20,6 +20,13 @@ description: 随着开源模型生态的快速迭代，Hugging Face 发布了 20
 external_url: https://huggingface.co/blog/huggingface/state-of-os-hf-spring-2026
 scenarios:
 - AI/ML项目
+aliases:
+- /posts/20260317-blogs_podcasts-state-of-open-source-on-hugging-face-spring-2026-3/
+- /posts/20260318-blogs_podcasts-state-of-open-source-on-hugging-face-spring-2026-5/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Hugging Face 2026年春季开源生态现状报告
@@ -256,8 +263,8 @@ scenarios:
 
 ### 相关文章
 
-- [GGML与llama.cpp加入HF以保障本地AI长期发展]({{< relref "posts/20260220-blogs_podcasts-ggml-and-llamacpp-join-hf-to-ensure-the-long-term--4.md" >}})
+- [GGML与llama.cpp加入HF以保障本地AI长期发展]({{< relref "posts/20260220-blogs_podcasts-ggml-and-llamacpp-join-hf-to-ensure-the-long-term--2.md" >}})
 - [Ggml.ai 加入 Hugging Face 推动本地 AI 长期发展]({{< relref "posts/20260220-hacker_news-ggmlai-joins-hugging-face-to-ensure-the-long-term--0.md" >}})
-- [Ggml.ai加入Hugging Face以推动本地AI长期发展]({{< relref "posts/20260220-hacker_news-ggmlai-joins-hugging-face-to-ensure-the-long-term--1.md" >}})
-- [Ggml.ai加入Hugging Face以推动本地AI长期发展]({{< relref "posts/20260221-hacker_news-ggmlai-joins-hugging-face-to-ensure-the-long-term--11.md" >}})
-- [Ggml.ai加入Hugging Face推动本地AI长期发展]({{< relref "posts/20260221-hacker_news-ggmlai-joins-hugging-face-to-ensure-the-long-term--17.md" >}})
+- [Ggml.ai加入Hugging Face以推动本地AI长期发展]({{< relref "posts/20260220-hacker_news-ggmlai-joins-hugging-face-to-ensure-the-long-term--0.md" >}})
+- [Ggml.ai加入Hugging Face以推动本地AI长期发展]({{< relref "posts/20260220-hacker_news-ggmlai-joins-hugging-face-to-ensure-the-long-term--0.md" >}})
+- [Ggml.ai加入Hugging Face推动本地AI长期发展]({{< relref "posts/20260220-hacker_news-ggmlai-joins-hugging-face-to-ensure-the-long-term--0.md" >}})

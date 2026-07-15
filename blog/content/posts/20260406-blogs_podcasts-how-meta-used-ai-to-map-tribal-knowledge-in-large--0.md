@@ -1,14 +1,30 @@
 ---
-title: "Meta如何用AI映射数据管道隐性知识"
-date: 2026-04-06T18:00:43+08:00
+title: Meta如何用AI映射数据管道隐性知识
+date: 2026-04-06 18:00:43+08:00
 draft: false
-entry_kind: "auto"
-tags: ["知识图谱", "隐性知识", "数据管道", "跨语言开发", "代码索引", "AI编程助手", "知识抽取", "持续学习"]
-categories: ["AI 工程", "开发工具"]
+entry_kind: auto
+tags:
+- 知识图谱
+- 隐性知识
+- 数据管道
+- 跨语言开发
+- 代码索引
+- AI编程助手
+- 知识抽取
+- 持续学习
+categories:
+- AI 工程
+- 开发工具
 source: blogs_podcasts
-description: "背景 Meta 在大型数据处理流水线中拥有四个代码库、三种编程语言、超过 4,100 个文件。传统的 AI 编程助手因缺乏对这些跨仓库、跨语言的上下文理解，往往只能产生浅层或不相关的修改，导致编辑效率低下。 解决方案 团队构建了一套内部“部落知识”映射系统，利用 AI 对代码、文档、注释、提交信息等进行语义抽取，自动生"
+description: 背景 Meta 在大型数据处理流水线中拥有四个代码库、三种编程语言、超过 4,100 个文件。传统的 AI 编程助手因缺乏对这些跨仓库、跨语言的上下文理解，往往只能产生浅层或不相关的修改，导致编辑效率低下。
+  解决方案 团队构建了一套内部“部落知识”映射系统，利用 AI 对代码、文档、注释、提交信息等进行语义抽取，自动生
 external_url: https://engineering.fb.com/2026/04/06/developer-tools/how-meta-used-ai-to-map-tribal-knowledge-in-large-scale-data-pipelines
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Meta如何用AI映射数据管道隐性知识
@@ -132,9 +148,9 @@ Meta在实践中发现，当前AI编码助手的能力存在根本性瓶颈：�
 
 ### 相关文章
 
-- [Claude Code：面向开发者的AI编程助手]({{< relref "posts/20260131-hacker_news-claude-code-is-your-customer-5.md" >}})
-- [Claude Code：面向基础设施开发的AI编程助手]({{< relref "posts/20260205-hacker_news-claude-code-for-infrastructure-17.md" >}})
-- [Claude Code：面向基础设施的AI编程助手]({{< relref "posts/20260205-hacker_news-claude-code-for-infrastructure-2.md" >}})
-- [OpenAI 收购 Astral 布局 Python 开发工具]({{< relref "posts/20260320-blogs_podcasts-openai-to-acquire-astral-10.md" >}})
-- [CRoSS：面向可扩展强化学习的持续机器人仿真套件]({{< relref "posts/20260206-arxiv_ai-cross-a-continual-robotic-simulation-suite-for-sca-6.md" >}})
+- [Claude Code：面向开发者的AI编程助手]({{< relref "posts/20260131-hacker_news-claude-code-is-your-customer-16.md" >}})
+- [Claude Code：面向基础设施开发的AI编程助手]({{< relref "posts/20260204-hacker_news-claude-code-for-infrastructure-11.md" >}})
+- [Claude Code：面向基础设施的AI编程助手]({{< relref "posts/20260204-hacker_news-claude-code-for-infrastructure-11.md" >}})
+- [OpenAI 收购 Astral 布局 Python 开发工具]({{< relref "posts/20260319-blogs_podcasts-openai-to-acquire-astral-6.md" >}})
+- [CRoSS：面向可扩展强化学习的持续机器人仿真套件]({{< relref "posts/20260205-arxiv_ai-cross-a-continual-robotic-simulation-suite-for-sca-6.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

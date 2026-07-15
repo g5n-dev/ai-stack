@@ -21,6 +21,10 @@ description: 本文介绍了一种受情感神经科学启发的新型训练范�
 external_url: http://arxiv.org/abs/2602.21064v1
 scenarios:
 - Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 动机优化：提升大语言模型任务表现的关键机制

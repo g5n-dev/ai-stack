@@ -21,6 +21,14 @@ external_url: https://unsloth.ai/docs/new/studio
 scenarios:
 - 大语言模型
 - AI/ML项目
+aliases:
+- /posts/20260318-hacker_news-unsloth-studio-11/
+- /posts/20260318-hacker_news-unsloth-studio-14/
+- /posts/20260318-hacker_news-unsloth-studio-8/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Unsloth Studio

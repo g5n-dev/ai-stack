@@ -6,7 +6,7 @@ entry_kind: auto
 tags:
 - AI Agent
 - SOUL.md
-- Prompt工程
+- Prompt 工程
 - 人设定义
 - LLM
 - Agent开发
@@ -23,6 +23,10 @@ external_url: https://juejin.cn/post/7607472072286142498
 scenarios:
 - AI/ML项目
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AI Agent SOUL.md 人格文件编写指南与核心模块解析
@@ -169,8 +173,8 @@ SOUL.md 是 AI Agent 的灵魂文件，定义了 Agent 的性格、语气、知�
 
 ### 相关文章
 
-- [Agent评估显示AGENTS.md配置优于Skills]({{< relref "posts/20260130-hacker_news-agentsmd-outperforms-skills-in-our-agent-evals-4.md" >}})
-- [Agent评估显示AGENTS.md配置优于技能配置]({{< relref "posts/20260130-hacker_news-agentsmd-outperforms-skills-in-our-agent-evals-6.md" >}})
-- [Compressed Agents：Agent Skills 技术解析]({{< relref "posts/20260130-hacker_news-compressed-agentsmd-agent-skills-6.md" >}})
+- [Agent评估显示AGENTS.md配置优于Skills]({{< relref "posts/20260129-hacker_news-compressed-agentsmd-agent-skills-5.md" >}})
+- [Agent评估显示AGENTS.md配置优于技能配置]({{< relref "posts/20260129-hacker_news-compressed-agentsmd-agent-skills-5.md" >}})
+- [Compressed Agents：Agent Skills 技术解析]({{< relref "posts/20260129-hacker_news-compressed-agentsmd-agent-skills-5.md" >}})
 - [编码代理的成功对通用AI系统的启示]({{< relref "posts/20260130-hacker_news-what-the-success-of-coding-agents-teaches-us-about-11.md" >}})
 - [迈向智能体系统规模化科学：作用机制与生效条件]({{< relref "posts/20260201-hacker_news-towards-a-science-of-scaling-agent-systems-when-an-11.md" >}})

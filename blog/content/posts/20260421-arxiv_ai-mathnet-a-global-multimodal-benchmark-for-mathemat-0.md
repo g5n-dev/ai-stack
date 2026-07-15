@@ -1,14 +1,33 @@
 ---
-title: "MathNet：全球多模态数学推理与检索基准"
-date: 2026-04-21T23:17:25+08:00
+title: MathNet：全球多模态数学推理与检索基准
+date: 2026-04-21 23:17:25+08:00
 draft: false
-entry_kind: "auto"
-tags: ["数学推理", "多模态", "检索增强", "基准测试", "大模型评测", "奥林匹克数学", "题目检索", "评测数据集"]
-categories: ["论文", "大模型"]
+entry_kind: auto
+tags:
+- 数学推理
+- 多模态
+- 检索增强
+- 基准测试
+- 大模型评测
+- 奥林匹克数学
+- 题目检索
+- 评测数据集
+categories:
+- 论文
+- 大模型
 source: arxiv
-description: "概述 MathNet 是高质量、大规模、多模态、多语言的奥林匹克数学题库与评测基准，涵盖 47 个国家、17 种语言、近 20 年赛事，共 30,676 道专家编写并提供完整解答，跨越代数、几何、组合等多个数学分支。 检索评测集 在核心数据之外，构建了人类专家挑选的等价及结构相似题目对，用于评估数学感知的检索系统。 支"
+description: 概述 MathNet 是高质量、大规模、多模态、多语言的奥林匹克数学题库与评测基准，涵盖 47 个国家、17 种语言、近 20 年赛事，共
+  30,676 道专家编写并提供完整解答，跨越代数、几何、组合等多个数学分支。 检索评测集 在核心数据之外，构建了人类专家挑选的等价及结构相似题目对，用于评估数学感知的检索系统。
+  支
 external_url: http://arxiv.org/abs/2604.18584v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+aliases:
+- /posts/20260422-arxiv_ai-mathnet-a-global-multimodal-benchmark-for-mathemat-0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # MathNet：全球多模态数学推理与检索基准
@@ -147,9 +166,9 @@ MathNet 是高质量、大规模、多模态、多语言的奥林匹克数学题
 
 ### 相关文章
 
-- [SciMDR：科学多模态文档推理基准测试与进展]({{< relref "posts/20260316-arxiv_ai-scimdr-benchmarking-and-advancing-scientific-multi-3.md" >}})
-- [AssetOpsBench：打破AI Agent评测与工业现实的壁垒！🚀]({{< relref "posts/20260126-blogs_podcasts-assetopsbench-bridging-the-gap-between-ai-agent-be-7.md" >}})
+- [SciMDR：科学多模态文档推理基准测试与进展]({{< relref "posts/20260313-arxiv_ai-scimdr-benchmarking-and-advancing-scientific-multi-3.md" >}})
+- [AssetOpsBench：打破AI Agent评测与工业现实的壁垒！🚀]({{< relref "posts/20260125-blogs_podcasts-assetopsbench-bridging-the-gap-between-ai-agent-be-6.md" >}})
 - [UEval：统一多模态生成基准]({{< relref "posts/20260130-arxiv_ai-ueval-a-benchmark-for-unified-multimodal-generatio-3.md" >}})
-- [UEval：统一多模态生成基准]({{< relref "posts/20260131-arxiv_ai-ueval-a-benchmark-for-unified-multimodal-generatio-3.md" >}})
-- [UEval：统一多模态生成基准]({{< relref "posts/20260202-arxiv_ai-ueval-a-benchmark-for-unified-multimodal-generatio-3.md" >}})
+- [UEval：统一多模态生成基准]({{< relref "posts/20260130-arxiv_ai-ueval-a-benchmark-for-unified-multimodal-generatio-3.md" >}})
+- [UEval：统一多模态生成基准]({{< relref "posts/20260130-arxiv_ai-ueval-a-benchmark-for-unified-multimodal-generatio-3.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

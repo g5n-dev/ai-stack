@@ -1,14 +1,22 @@
 ---
-title: "智谱AI发布GLM-5大模型并上线Z.ai平台"
-date: 2026-02-11T16:19:57+08:00
+title: 智谱AI发布GLM-5大模型并上线Z.ai平台
+date: 2026-02-11 16:19:57+08:00
 draft: false
-entry_kind: "auto"
-tags: ["hacker_news"]
-categories: ["效率与方法论"]
+entry_kind: auto
+tags:
+- hacker_news
+categories:
+- 效率与方法论
 source: hacker_news
-description: "随着大模型技术的快速迭代，GLM-5 现已在 Z.ai 平台正式上线，标志着该系列模型在推理能力与多模态处理上迈出了关键一步。此次更新不仅提升了复杂任务的执行效率，也为开发者提供了更灵活的模型调用方式。本文将详细解析 GLM-5 的核心特性、适用场景及接入指南，帮助你快速评估其在实际业务中的应用价值。"
+description: 随着大模型技术的快速迭代，GLM-5 现已在 Z.ai 平台正式上线，标志着该系列模型在推理能力与多模态处理上迈出了关键一步。此次更新不仅提升了复杂任务的执行效率，也为开发者提供了更灵活的模型调用方式。本文将详细解析
+  GLM-5 的核心特性、适用场景及接入指南，帮助你快速评估其在实际业务中的应用价值。
 external_url: https://chat.z.ai
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 智谱AI发布GLM-5大模型并上线Z.ai平台
@@ -272,8 +280,8 @@ print(f"生成的标题: {headline}")
 ### 相关文章
 
 - [Mecha Comet：开源模块化 Linux 掌上电脑]({{< relref "posts/20260129-hacker_news-mecha-comet-open-modular-linux-handheld-computer-3.md" >}})
-- [Mecha Comet：开源模块化 Linux 掌上电脑]({{< relref "posts/20260129-hacker_news-mecha-comet-open-modular-linux-handheld-computer-4.md" >}})
-- [AI 正在重塑 B2B SaaS 商业模式]({{< relref "posts/20260205-hacker_news-ai-is-killing-b2b-saas-17.md" >}})
-- [AI Agent 现状：大模型智能体仍需八个月成熟]({{< relref "posts/20260210-hacker_news-eight-more-months-of-agents-16.md" >}})
+- [Mecha Comet：开源模块化 Linux 掌上电脑]({{< relref "posts/20260129-hacker_news-mecha-comet-open-modular-linux-handheld-computer-3.md" >}})
+- [AI 正在重塑 B2B SaaS 商业模式]({{< relref "posts/20260204-hacker_news-ai-is-killing-b2b-saas-11.md" >}})
+- [AI Agent 现状：大模型智能体仍需八个月成熟]({{< relref "posts/20260210-hacker_news-eight-more-months-of-agents-13.md" >}})
 - [Frontier AI agents violate ethical constraints 30–50% o]({{< relref "posts/20260210-hacker_news-frontier-ai-agents-violate-ethical-constraints-305-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

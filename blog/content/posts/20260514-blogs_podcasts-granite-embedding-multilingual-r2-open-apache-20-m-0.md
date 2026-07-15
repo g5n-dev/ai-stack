@@ -1,13 +1,28 @@
 ---
-title: "Granite多语言嵌入R2：32K上下文开源模型"
-date: 2026-05-14T20:01:02+08:00
+title: Granite多语言嵌入R2：32K上下文开源模型
+date: 2026-05-14 20:01:02+08:00
 draft: false
-entry_kind: "auto"
-tags: ["多语言嵌入", "32K上下文", "开源模型", "Apache2", "Granite", "R2", "检索质量", "长上下文"]
-categories: ["大模型", "开源生态"]
+entry_kind: auto
+tags:
+- 多语言嵌入
+- 32K上下文
+- 开源模型
+- Apache2
+- Granite
+- R2
+- 检索质量
+- 长上下文
+categories:
+- 大模型
+- 开源生态
 source: blogs_podcasts
 external_url: https://huggingface.co/blog/ibm-granite/granite-embedding-multilingual-r2
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Granite多语言嵌入R2：32K上下文开源模型
@@ -112,9 +127,9 @@ R2版本在架构层面进行了系统性优化。采用改进的Transformer编�
 
 ### 相关文章
 
-- [Moonshot K2.5：成本减半超越Sonnet 4.5，原生图文视频与百并发Agent管理]({{< relref "posts/20260130-blogs_podcasts-ainews-moonshot-kimi-k25-beats-sonnet-45-at-half-t-7.md" >}})
-- [Qwen3.5-397B-A17B：最小Open-Opus级高效模型]({{< relref "posts/20260219-blogs_podcasts-ainews-qwen35-397b-a17b-the-smallest-open-opus-cla-13.md" >}})
-- [Moonshine 开源 STT 模型：精度超越 WhisperLargev3]({{< relref "posts/20260225-hacker_news-show-hn-moonshine-open-weights-stt-models-higher-a-1.md" >}})
-- [Moonshine 开源 STT 模型：精度超越 WhisperLargev3]({{< relref "posts/20260225-hacker_news-show-hn-moonshine-open-weights-stt-models-higher-a-2.md" >}})
-- [Moonshine 开源 STT 模型：精度超越 WhisperLargev3]({{< relref "posts/20260225-hacker_news-show-hn-moonshine-open-weights-stt-models-higher-a-4.md" >}})
+- [Moonshot K2.5：成本减半超越Sonnet 4.5，原生图文视频与百并发Agent管理]({{< relref "posts/20260129-blogs_podcasts-ainews-moonshot-kimi-k25-beats-sonnet-45-at-half-t-1.md" >}})
+- [Qwen3.5-397B-A17B：最小Open-Opus级高效模型]({{< relref "posts/20260217-blogs_podcasts-ainews-qwen35-397b-a17b-the-smallest-open-opus-cla-0.md" >}})
+- [Moonshine 开源 STT 模型：精度超越 WhisperLargev3]({{< relref "posts/20260224-hacker_news-show-hn-moonshine-open-weights-stt-models-higher-a-6.md" >}})
+- [Moonshine 开源 STT 模型：精度超越 WhisperLargev3]({{< relref "posts/20260224-hacker_news-show-hn-moonshine-open-weights-stt-models-higher-a-6.md" >}})
+- [Moonshine 开源 STT 模型：精度超越 WhisperLargev3]({{< relref "posts/20260224-hacker_news-show-hn-moonshine-open-weights-stt-models-higher-a-6.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

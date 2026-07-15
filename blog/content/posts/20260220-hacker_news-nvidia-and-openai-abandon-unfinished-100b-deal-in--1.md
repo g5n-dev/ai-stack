@@ -21,6 +21,12 @@ description: 英伟达与 OpenAI 近期终止了一项价值高达 1000 亿美�
 external_url: https://www.ft.com/content/dea24046-0a73-40b2-8246-5ac7b7a54323
 scenarios:
 - AI/ML项目
+aliases:
+- /posts/20260220-hacker_news-nvidia-and-openai-abandon-unfinished-100b-deal-in--15/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 英伟达与OpenAI取消百亿美元收购案 转向30亿美元投资

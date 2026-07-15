@@ -22,6 +22,12 @@ external_url: https://resobscura.substack.com/p/what-is-happening-to-writing
 scenarios:
 - AI/ML项目
 - 大语言模型
+aliases:
+- /posts/20260219-hacker_news-what-is-happening-to-writing-cognitive-debt-claude-16/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 写作、认知债与Claude Code：AI周边现状观察

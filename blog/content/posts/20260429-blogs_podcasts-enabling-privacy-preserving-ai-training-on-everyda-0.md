@@ -1,14 +1,30 @@
 ---
-title: "日常设备实现隐私保护AI训练的新方法"
-date: 2026-04-29T08:43:52+08:00
+title: 日常设备实现隐私保护AI训练的新方法
+date: 2026-04-29 08:43:52+08:00
 draft: false
-entry_kind: "auto"
-tags: ["隐私保护", "设备端训练", "本地计算", "安全聚合", "低资源环境", "高精度AI", "医疗AI", "金融AI"]
-categories: ["AI 工程", "安全"]
+entry_kind: auto
+tags:
+- 隐私保护
+- 设备端训练
+- 本地计算
+- 安全聚合
+- 低资源环境
+- 高精度AI
+- 医疗 AI
+- 金融AI
+categories:
+- AI 工程
+- 安全
 source: blogs_podcasts
-description: "该方法通过在普通设备上直接进行模型训练，实现隐私保护的同时提升准确性和效率。借助本地数据计算与安全的聚合机制，避免原始数据上传，显著降低隐私泄露风险。即使在资源匮乏的环境中，也能部署高精度的 AI 模型，推动医疗、金融等关键领域的安全智能应用。"
+description: 该方法通过在普通设备上直接进行模型训练，实现隐私保护的同时提升准确性和效率。借助本地数据计算与安全的聚合机制，避免原始数据上传，显著降低隐私泄露风险。即使在资源匮乏的环境中，也能部署高精度的
+  AI 模型，推动医疗、金融等关键领域的安全智能应用。
 external_url: https://news.mit.edu/2026/enabling-privacy-preserving-ai-training-everyday-devices-0429
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 日常设备实现隐私保护AI训练的新方法
@@ -139,9 +155,9 @@ scenarios: ["AI/ML项目"]
 
 ### 相关文章
 
-- [🏥资源受限地区医疗设备也能“永续”？AI平台赋能技师！🚀]({{< relref "posts/20260127-arxiv_ai-empowering-medical-equipment-sustainability-in-low-5.md" >}})
-- [MaliciousCorgi：AI插件将代码发送至中国]({{< relref "posts/20260202-hacker_news-maliciouscorgi-ai-extensions-send-your-code-to-chi-7.md" >}})
+- [🏥资源受限地区医疗设备也能“永续”？AI平台赋能技师！🚀]({{< relref "posts/20260126-arxiv_ai-empowering-medical-equipment-sustainability-in-low-5.md" >}})
+- [MaliciousCorgi：AI插件将代码发送至中国]({{< relref "posts/20260202-hacker_news-maliciouscorgi-ai-extensions-send-your-code-to-chi-5.md" >}})
 - [我放弃OpenClaw并构建更安全的AI代理]({{< relref "posts/20260213-hacker_news-i-ditched-openclaw-and-built-a-more-secure-ai-agen-6.md" >}})
-- [电台主播指控谷歌NotebookLM语音克隆功能窃取其声音]({{< relref "posts/20260216-hacker_news-radio-host-david-greene-says-googles-notebooklm-to-6.md" >}})
+- [电台主播指控谷歌NotebookLM语音克隆功能窃取其声音]({{< relref "posts/20260216-hacker_news-radio-host-david-greene-says-googles-notebooklm-to-4.md" >}})
 - [OpenAI 如何防范 AI 代理点击链接时的数据泄露与提示注入]({{< relref "posts/20260129-blogs_podcasts-keeping-your-data-safe-when-an-ai-agent-clicks-a-l-5.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

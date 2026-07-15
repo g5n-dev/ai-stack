@@ -21,6 +21,12 @@ description: 以下是关于 **Mixture-of-Depths Attention (MoDA)** 的内容总
 external_url: http://arxiv.org/abs/2603.15619v1
 scenarios:
 - 大语言模型
+aliases:
+- /posts/20260318-arxiv_ai-mixture-of-depths-attention-0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Mixture-of-Depths 动态分配计算资源的注意力机制
@@ -433,8 +439,8 @@ MoD 使用基于 Top-k 选择的路由机制。具体流程如下：
 
 ### 相关文章
 
-- [LLM 架构画廊：主流大语言模型结构概览]({{< relref "posts/20260316-hacker_news-llm-architecture-gallery-12.md" >}})
-- [Transformer中的混合专家模型：架构原理与应用]({{< relref "posts/20260226-blogs_podcasts-mixture-of-experts-moes-in-transformers-10.md" >}})
-- [Transformer架构中的混合专家模型原理与应用]({{< relref "posts/20260226-blogs_podcasts-mixture-of-experts-moes-in-transformers-11.md" >}})
-- [Transformer 架构中的混合专家模型原理与优势]({{< relref "posts/20260226-blogs_podcasts-mixture-of-experts-moes-in-transformers-12.md" >}})
+- [LLM 架构画廊：主流大语言模型结构概览]({{< relref "posts/20260315-hacker_news-llm-architecture-gallery-2.md" >}})
+- [Transformer中的混合专家模型：架构原理与应用]({{< relref "posts/20260226-blogs_podcasts-mixture-of-experts-moes-in-transformers-2.md" >}})
+- [Transformer架构中的混合专家模型原理与应用]({{< relref "posts/20260226-blogs_podcasts-mixture-of-experts-moes-in-transformers-2.md" >}})
+- [Transformer 架构中的混合专家模型原理与优势]({{< relref "posts/20260226-blogs_podcasts-mixture-of-experts-moes-in-transformers-2.md" >}})
 - [Transformer架构中的混合专家模型原理与应用]({{< relref "posts/20260226-blogs_podcasts-mixture-of-experts-moes-in-transformers-2.md" >}})

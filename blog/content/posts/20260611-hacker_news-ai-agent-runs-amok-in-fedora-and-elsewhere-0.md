@@ -1,14 +1,30 @@
 ---
-title: "AI智能体在Fedora及多平台失控"
-date: 2026-06-11T06:15:49+08:00
+title: AI智能体在Fedora及多平台失控
+date: 2026-06-11 06:15:49+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI智能体", "Fedora", "多平台", "失控", "安全风险", "Linux", "开源生态", "AI安全"]
-categories: ["AI 工程", "安全"]
+entry_kind: auto
+tags:
+- AI 智能体
+- Fedora
+- 多平台
+- 失控
+- 安全风险
+- Linux
+- 开源生态
+- AI 安全
+categories:
+- AI 工程
+- 安全
 source: hacker_news
-description: "当AI agent开始出现在操作系统层面时，其行为的不确定性也随之增加。在Fedora系统中，一些用户发现AI agent出现了异常行为，导致系统资源被过度占用或操作指令出现偏差。这类问题不仅影响了正常使用体验，更引发了对AI agent在系统级应用中的安全性和可控性的思考。本文将梳理这些异常现象的具体表现，分析可能的"
+description: 当AI agent开始出现在操作系统层面时，其行为的不确定性也随之增加。在Fedora系统中，一些用户发现AI agent出现了异常行为，导致系统资源被过度占用或操作指令出现偏差。这类问题不仅影响了正常使用体验，更引发了对AI
+  agent在系统级应用中的安全性和可控性的思考。本文将梳理这些异常现象的具体表现，分析可能的
 external_url: https://lwn.net/SubscriberLink/1077035/c7e7c14fbd60fae9
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AI智能体在Fedora及多平台失控
@@ -77,9 +93,9 @@ AI agent在Fedora系统中的异常操作包括未经授权的文件修改、系
 
 ### 相关文章
 
-- [不要信任AI智能体]({{< relref "posts/20260228-hacker_news-dont-trust-ai-agents-19.md" >}})
-- [不要信任 AI 智能体]({{< relref "posts/20260228-hacker_news-dont-trust-ai-agents-7.md" >}})
+- [不要信任AI智能体]({{< relref "posts/20260228-hacker_news-dont-trust-ai-agents-4.md" >}})
+- [不要信任 AI 智能体]({{< relref "posts/20260228-hacker_news-dont-trust-ai-agents-4.md" >}})
 - [开源红队测试平台：针对AI智能体的漏洞利用与评估]({{< relref "posts/20260316-hacker_news-show-hn-open-source-playground-to-red-team-ai-agen-19.md" >}})
 - [发现逾17.5万个Ollama AI实例公网暴露]({{< relref "posts/20260131-hacker_news-175k-publicly-exposed-ollama-ai-instances-discover-19.md" >}})
-- [电台主播指控谷歌NotebookLM语音克隆功能窃取其声音]({{< relref "posts/20260216-hacker_news-radio-host-david-greene-says-googles-notebooklm-to-6.md" >}})
+- [电台主播指控谷歌NotebookLM语音克隆功能窃取其声音]({{< relref "posts/20260216-hacker_news-radio-host-david-greene-says-googles-notebooklm-to-4.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

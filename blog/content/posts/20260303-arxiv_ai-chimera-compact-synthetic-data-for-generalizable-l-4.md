@@ -21,6 +21,10 @@ description: 以下是对该内容的中文总结： **CHIMERA：用于提升大
 external_url: http://arxiv.org/abs/2603.00889v1
 scenarios:
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # CHIMERA：用于提升大模型推理泛化能力的紧凑合成数据
@@ -341,8 +345,8 @@ CHIMERA 主要针对需要复杂多步推理的任务，特别是那些对逻辑
 
 ### 相关文章
 
-- [FineInstructions：将合成指令数据扩展至预训练规模]({{< relref "posts/20260131-arxiv_ai-fineinstructions-scaling-synthetic-instructions-to-7.md" >}})
-- [SWE-bench Verified 存在数据污染与缺陷，建议迁移至 SWE-bench Pro]({{< relref "posts/20260224-blogs_podcasts-why-we-no-longer-evaluate-swe-bench-verified-6.md" >}})
-- [SWE-bench Verified 数据污染与测度失准分析及替代方案]({{< relref "posts/20260224-blogs_podcasts-why-we-no-longer-evaluate-swe-bench-verified-7.md" >}})
+- [FineInstructions：将合成指令数据扩展至预训练规模]({{< relref "posts/20260130-arxiv_ai-fineinstructions-scaling-synthetic-instructions-to-7.md" >}})
+- [SWE-bench Verified 存在数据污染与缺陷，建议迁移至 SWE-bench Pro]({{< relref "posts/20260223-blogs_podcasts-why-we-no-longer-evaluate-swe-bench-verified-3.md" >}})
+- [SWE-bench Verified 数据污染与测度失准分析及替代方案]({{< relref "posts/20260223-blogs_podcasts-why-we-no-longer-evaluate-swe-bench-verified-3.md" >}})
 - [高效自动化翻译基准测试与数据集的流水线]({{< relref "posts/20260226-arxiv_ai-recovered-in-translation-efficient-pipeline-for-au-0.md" >}})
 - [SokoBench：评估大模型长程规划与推理能力]({{< relref "posts/20260129-arxiv_ai-sokobench-evaluating-long-horizon-planning-and-rea-2.md" >}})

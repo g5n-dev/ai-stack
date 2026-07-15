@@ -1,14 +1,30 @@
 ---
-title: "Claude Code 联合创始人分享：30 天提交 259 个 PR 的自动化开发流"
-date: 2026-02-18T07:39:44+08:00
+title: Claude Code 联合创始人分享：30 天提交 259 个 PR 的自动化开发流
+date: 2026-02-18 07:39:44+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Claude Code", "自动化开发", "工作流", "AI 编程", "Opus 4.5", "PR 自动化", "开发效率", "Boris Cherny"]
-categories: ["AI 工程", "效率与方法论"]
+entry_kind: auto
+tags:
+- Claude Code
+- 自动化开发
+- 工作流
+- AI 编程
+- Opus 4.5
+- PR 自动化
+- 开发效率
+- Boris Cherny
+categories:
+- AI 工程
+- 效率与方法论
 source: juejin
-description: "随着 AI 编程工具的普及，如何让模型真正代替开发者完成繁琐的代码编写与调试，已成为提升研发效率的关键。Claude Code 联合创始人鲍里斯·切尔尼通过高频提交记录，验证了“拉尔夫循环”在自动化开发中的实际效能。本文将拆解这一工作流的运作机制，帮助读者掌握让 AI 持续迭代、独立解决复杂工程问题的具体方法。"
+description: 随着 AI 编程工具的普及，如何让模型真正代替开发者完成繁琐的代码编写与调试，已成为提升研发效率的关键。Claude Code 联合创始人鲍里斯·切尔尼通过高频提交记录，验证了“拉尔夫循环”在自动化开发中的实际效能。本文将拆解这一工作流的运作机制，帮助读者掌握让
+  AI 持续迭代、独立解决复杂工程问题的具体方法。
 external_url: https://juejin.cn/post/7607261340566257683
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Claude Code 联合创始人分享：30 天提交 259 个 PR 的自动化开发流
@@ -187,9 +203,9 @@ Claude Code 联合创始人鲍里斯·切尔尼（Boris Cherny）最近晒了组
 
 ### 相关文章
 
-- [编排多会话 Claude Code 团队协作]({{< relref "posts/20260205-hacker_news-orchestrate-teams-of-claude-code-sessions-2.md" >}})
-- [编排多会话 Claude Code 团队协作]({{< relref "posts/20260205-hacker_news-orchestrate-teams-of-claude-code-sessions-5.md" >}})
-- [编排多会话 Claude Code 团队协作]({{< relref "posts/20260206-hacker_news-orchestrate-teams-of-claude-code-sessions-14.md" >}})
-- [编排多会话 Claude Code 团队协作]({{< relref "posts/20260206-hacker_news-orchestrate-teams-of-claude-code-sessions-6.md" >}})
-- [Claude Code 全面接入微软内部开发工作流]({{< relref "posts/20260202-hacker_news-claude-code-is-suddenly-everywhere-inside-microsof-10.md" >}})
+- [编排多会话 Claude Code 团队协作]({{< relref "posts/20260205-hacker_news-claude-code-agent-teams-3.md" >}})
+- [编排多会话 Claude Code 团队协作]({{< relref "posts/20260205-hacker_news-claude-code-agent-teams-3.md" >}})
+- [编排多会话 Claude Code 团队协作]({{< relref "posts/20260205-hacker_news-claude-code-agent-teams-3.md" >}})
+- [编排多会话 Claude Code 团队协作]({{< relref "posts/20260205-hacker_news-claude-code-agent-teams-3.md" >}})
+- [Claude Code 全面接入微软内部开发工作流]({{< relref "posts/20260202-hacker_news-claude-code-is-suddenly-everywhere-inside-microsof-2.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

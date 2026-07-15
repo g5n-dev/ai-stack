@@ -21,6 +21,10 @@ description: 基于您提供的内容，为您总结如下： 本文主要对 **
 external_url: https://juejin.cn/post/7610979696306995209
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Android AI Agent四层架构与安全设计实战解析
@@ -188,7 +192,7 @@ scenarios:
 ### 相关文章
 
 - [OpenAI 如何防范 AI 代理点击链接时的数据泄露与提示注入]({{< relref "posts/20260129-blogs_podcasts-keeping-your-data-safe-when-an-ai-agent-clicks-a-l-5.md" >}})
-- [OpenAI 如何防范 AI 代理点击链接时的数据外泄与提示注入]({{< relref "posts/20260129-blogs_podcasts-keeping-your-data-safe-when-an-ai-agent-clicks-a-l-8.md" >}})
-- [OpenAI 如何在 AI 代理点击链接时保护用户数据安全]({{< relref "posts/20260129-blogs_podcasts-keeping-your-data-safe-when-an-ai-agent-clicks-a-l-7.md" >}})
-- [迈向智能体系统规模化科学：工作原理与适用条件]({{< relref "posts/20260201-hacker_news-towards-a-science-of-scaling-agent-systems-when-an-13.md" >}})
+- [OpenAI 如何防范 AI 代理点击链接时的数据外泄与提示注入]({{< relref "posts/20260129-blogs_podcasts-keeping-your-data-safe-when-an-ai-agent-clicks-a-l-5.md" >}})
+- [OpenAI 如何在 AI 代理点击链接时保护用户数据安全]({{< relref "posts/20260129-blogs_podcasts-keeping-your-data-safe-when-an-ai-agent-clicks-a-l-5.md" >}})
+- [迈向智能体系统规模化科学：工作原理与适用条件]({{< relref "posts/20260201-hacker_news-towards-a-science-of-scaling-agent-systems-when-an-11.md" >}})
 - [在 Linux 环境下实现 AI Agent 沙箱隔离]({{< relref "posts/20260203-hacker_news-sandboxing-ai-agents-in-linux-15.md" >}})

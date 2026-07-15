@@ -21,6 +21,12 @@ description: 本文探讨了如何设计在神经网络宽度（width）增加�
 external_url: http://arxiv.org/abs/2603.09952v1
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260312-arxiv_ai-on-the-width-scaling-of-neural-optimizers-under-ma-8/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 神经优化器宽度缩放：行列归一化与超参迁移
@@ -476,6 +482,6 @@ scenarios:
 
 - [FISMO：基于Fisher结构的动量正交化优化器]({{< relref "posts/20260130-arxiv_ai-fismo-fisher-structured-momentum-orthogonalized-op-4.md" >}})
 - [TEON：张量化正交化技术优化大语言模型预训练]({{< relref "posts/20260202-arxiv_ai-teon-tensorized-orthonormalization-beyond-layer-wi-9.md" >}})
-- [TEON：张量化正交化方法优化大语言模型预训练]({{< relref "posts/20260203-arxiv_ai-teon-tensorized-orthonormalization-beyond-layer-wi-9.md" >}})
-- [ARO: A New Lens On Matrix Optimization For Large Models]({{< relref "posts/20260211-arxiv_ai-aro-a-new-lens-on-matrix-optimization-for-large-mo-8.md" >}})
+- [TEON：张量化正交化方法优化大语言模型预训练]({{< relref "posts/20260202-arxiv_ai-teon-tensorized-orthonormalization-beyond-layer-wi-9.md" >}})
+- [ARO: A New Lens On Matrix Optimization For Large Models]({{< relref "posts/20260210-arxiv_ai-aro-a-new-lens-on-matrix-optimization-for-large-mo-8.md" >}})
 - [通过低秩近似优化大模型动量状态以降低显存占用]({{< relref "posts/20260302-arxiv_ai-taming-momentum-rethinking-optimizer-states-throug-4.md" >}})

@@ -21,6 +21,14 @@ description: 以下是关于 **POET-X** 的内容总结： **核心背景** 大�
 external_url: http://arxiv.org/abs/2603.05500v1
 scenarios:
 - 大语言模型
+aliases:
+- /posts/20260307-arxiv_ai-poet-x-memory-efficient-llm-training-by-scaling-or-1/
+- /posts/20260308-arxiv_ai-poet-x-memory-efficient-llm-training-by-scaling-or-1/
+- /posts/20260309-arxiv_ai-poet-x-memory-efficient-llm-training-by-scaling-or-1/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # POET-X：通过正交变换扩展实现大模型高效训练
@@ -423,8 +431,8 @@ POET-X 最适合以下场景：
 
 ### 相关文章
 
-- [TEON：张量化正交化方法优化大语言模型预训练]({{< relref "posts/20260203-arxiv_ai-teon-tensorized-orthonormalization-beyond-layer-wi-9.md" >}})
-- [通过任务复杂度量化验证浅层对齐假说]({{< relref "posts/20260219-arxiv_ai-operationalising-the-superficial-alignment-hypothe-1.md" >}})
+- [TEON：张量化正交化方法优化大语言模型预训练]({{< relref "posts/20260202-arxiv_ai-teon-tensorized-orthonormalization-beyond-layer-wi-9.md" >}})
+- [通过任务复杂度量化验证浅层对齐假说]({{< relref "posts/20260218-arxiv_ai-operationalising-the-superficial-alignment-hypothe-1.md" >}})
 - [MEG-XL：基于长上下文预训练的高效脑电转文本模型]({{< relref "posts/20260203-arxiv_ai-meg-xl-data-efficient-brain-to-text-via-long-conte-1.md" >}})
-- [MEG-XL：长上下文预训练实现数据高效的脑电转文本]({{< relref "posts/20260204-arxiv_ai-meg-xl-data-efficient-brain-to-text-via-long-conte-1.md" >}})
+- [MEG-XL：长上下文预训练实现数据高效的脑电转文本]({{< relref "posts/20260203-arxiv_ai-meg-xl-data-efficient-brain-to-text-via-long-conte-1.md" >}})
 - [进化策略导致大语言模型出现灾难性遗忘]({{< relref "posts/20260129-arxiv_ai-evolutionary-strategies-lead-to-catastrophic-forge-0.md" >}})

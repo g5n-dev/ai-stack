@@ -1,14 +1,23 @@
 ---
-title: "视频扩散模型因果性与去噪过程可分离"
-date: 2026-02-11T23:34:28+08:00
+title: 视频扩散模型因果性与去噪过程可分离
+date: 2026-02-11 23:34:28+08:00
 draft: false
-entry_kind: "auto"
-tags: ["arxiv", "cs.CV"]
-categories: ["论文"]
+entry_kind: auto
+tags:
+- arxiv
+- cs.CV
+categories:
+- 论文
 source: arxiv
-description: "本文提出了**可分离因果扩散模型**，证明了视频扩散模型中的因果推理与去噪过程是可以分离的。主要发现和贡献包括： 1. **问题背景**： 现有因果扩散模型将时序因果推理与多步去噪过程耦合，在所有层和去噪步骤中应用因果注意力，导致计算冗余和效率低下。 2. **关键发现**： 通过系统性分析自回归视频扩散模型，作者发现"
+description: 本文提出了**可分离因果扩散模型**，证明了视频扩散模型中的因果推理与去噪过程是可以分离的。主要发现和贡献包括： 1. **问题背景**：
+  现有因果扩散模型将时序因果推理与多步去噪过程耦合，在所有层和去噪步骤中应用因果注意力，导致计算冗余和效率低下。 2. **关键发现**： 通过系统性分析自回归视频扩散模型，作者发现
 external_url: http://arxiv.org/abs/2602.10095v1
-scenarios: ["计算机视觉"]
+scenarios:
+- 计算机视觉
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 视频扩散模型因果性与去噪过程可分离
@@ -441,9 +450,9 @@ $$ P(\text{Temporal Context}) \times P(X_{t-1} | X_t, \text{Temporal Context}) $
 
 ### 相关文章
 
-- [ArcFlow: Unleashing 2-Step Text-to-Image Generation via]({{< relref "posts/20260211-arxiv_ai-arcflow-unleashing-2-step-text-to-image-generation-3.md" >}})
+- [ArcFlow: Unleashing 2-Step Text-to-Image Generation via]({{< relref "posts/20260210-arxiv_ai-arcflow-unleashing-2-step-text-to-image-generation-3.md" >}})
 - [Code2World: A GUI World Model via Renderable Code Gener]({{< relref "posts/20260211-arxiv_ai-code2world-a-gui-world-model-via-renderable-code-g-4.md" >}})
 - [UEval：统一多模态生成基准]({{< relref "posts/20260130-arxiv_ai-ueval-a-benchmark-for-unified-multimodal-generatio-3.md" >}})
-- [UEval：统一多模态生成基准]({{< relref "posts/20260131-arxiv_ai-ueval-a-benchmark-for-unified-multimodal-generatio-3.md" >}})
-- [UEval：统一多模态生成基准]({{< relref "posts/20260202-arxiv_ai-ueval-a-benchmark-for-unified-multimodal-generatio-3.md" >}})
+- [UEval：统一多模态生成基准]({{< relref "posts/20260130-arxiv_ai-ueval-a-benchmark-for-unified-multimodal-generatio-3.md" >}})
+- [UEval：统一多模态生成基准]({{< relref "posts/20260130-arxiv_ai-ueval-a-benchmark-for-unified-multimodal-generatio-3.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

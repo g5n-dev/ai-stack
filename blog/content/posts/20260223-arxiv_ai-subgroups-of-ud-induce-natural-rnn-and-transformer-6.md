@@ -21,6 +21,12 @@ description: 本文提出了一种基于酉群 $U(d)$ 闭子群的序列建模�
 external_url: http://arxiv.org/abs/2602.18417v1
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260224-arxiv_ai-subgroups-of-ud-induce-natural-rnn-and-transformer-6/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # U(d)子群自然导出RNN与Transformer架构
@@ -458,7 +464,7 @@ scenarios:
 ### 相关文章
 
 - [混合线性注意力新架构：高效蒸馏与极长上下文处理]({{< relref "posts/20260130-arxiv_ai-hybrid-linear-attention-done-right-efficient-disti-2.md" >}})
-- [混合线性注意力新架构：高效蒸馏与超长上下文建模]({{< relref "posts/20260131-arxiv_ai-hybrid-linear-attention-done-right-efficient-disti-2.md" >}})
-- [混合线性注意力新架构：高效蒸馏与超长上下文处理]({{< relref "posts/20260201-arxiv_ai-hybrid-linear-attention-done-right-efficient-disti-2.md" >}})
-- [混合线性注意力新架构：高效蒸馏与超长上下文处理]({{< relref "posts/20260202-arxiv_ai-hybrid-linear-attention-done-right-efficient-disti-2.md" >}})
+- [混合线性注意力新架构：高效蒸馏与超长上下文建模]({{< relref "posts/20260130-arxiv_ai-hybrid-linear-attention-done-right-efficient-disti-2.md" >}})
+- [混合线性注意力新架构：高效蒸馏与超长上下文处理]({{< relref "posts/20260130-arxiv_ai-hybrid-linear-attention-done-right-efficient-disti-2.md" >}})
+- [混合线性注意力新架构：高效蒸馏与超长上下文处理]({{< relref "posts/20260130-arxiv_ai-hybrid-linear-attention-done-right-efficient-disti-2.md" >}})
 - [🔥 视频修复难题：如何攻克时间一致性？]({{< relref "posts/20260125-hacker_news-the-temporal-consistency-challenge-in-video-restor-19.md" >}})

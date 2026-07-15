@@ -22,6 +22,10 @@ description: 本文主要探讨了在表格基础模型（如TabPFN和TabICL）�
 external_url: http://arxiv.org/abs/2603.08206v1
 scenarios:
 - Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 表格基础模型分布回归：基于适当评分规则的预测评估
@@ -439,6 +443,6 @@ scenarios:
 
 - [发现模型仓库中被忽视的高质量模型]({{< relref "posts/20260130-arxiv_ai-discovering-hidden-gems-in-model-repositories-1.md" >}})
 - [基于认知上下文学习构建大模型多智能体系统的信任机制]({{< relref "posts/20260130-arxiv_ai-epistemic-context-learning-building-trust-the-righ-7.md" >}})
-- [发现模型仓库中的隐藏价值]({{< relref "posts/20260131-arxiv_ai-discovering-hidden-gems-in-model-repositories-1.md" >}})
+- [发现模型仓库中的隐藏价值]({{< relref "posts/20260130-arxiv_ai-discovering-hidden-gems-in-model-repositories-1.md" >}})
 - [GLM-OCR：兼顾准确度、速度与通用性的多模态大模型]({{< relref "posts/20260211-hacker_news-glm-ocr-accurate-fast-comprehensive-3.md" >}})
 - [TabICLv2：更优性能与可扩展性的开源表格基础模型]({{< relref "posts/20260212-arxiv_ai-tabiclv2-a-better-faster-scalable-and-open-tabular-8.md" >}})

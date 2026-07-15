@@ -21,6 +21,12 @@ description: 以下是对该内容的中文总结： **标题：校准后行动�
 external_url: http://arxiv.org/abs/2602.16699v1
 scenarios:
 - 大语言模型
+aliases:
+- /posts/20260220-arxiv_ai-calibrate-then-act-cost-aware-exploration-in-llm-a-4/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Calibrate-Then-Act：大模型智能体的成本感知探索
@@ -553,8 +559,8 @@ CTA 实现成本感知主要通过**隐式和显式**两种方式，具体取决
 
 ### 相关文章
 
-- [推理大语言模型从被动求解转向主动询问]({{< relref "posts/20260131-arxiv_ai-reasoning-while-asking-transforming-reasoning-larg-9.md" >}})
-- [DyTopo：基于语义匹配的多智能体动态拓扑路由]({{< relref "posts/20260207-arxiv_ai-dytopo-dynamic-topology-routing-for-multi-agent-re-2.md" >}})
-- [基于策略上下文蒸馏的大语言模型优化方法]({{< relref "posts/20260214-arxiv_ai-on-policy-context-distillation-for-language-models-4.md" >}})
-- [面向语言模型的在线上下文蒸馏方法]({{< relref "posts/20260216-arxiv_ai-on-policy-context-distillation-for-language-models-4.md" >}})
+- [推理大语言模型从被动求解转向主动询问]({{< relref "posts/20260130-arxiv_ai-reasoning-while-asking-transforming-reasoning-larg-9.md" >}})
+- [DyTopo：基于语义匹配的多智能体动态拓扑路由]({{< relref "posts/20260206-arxiv_ai-dytopo-dynamic-topology-routing-for-multi-agent-re-2.md" >}})
+- [基于策略上下文蒸馏的大语言模型优化方法]({{< relref "posts/20260213-arxiv_ai-on-policy-context-distillation-for-language-models-4.md" >}})
+- [面向语言模型的在线上下文蒸馏方法]({{< relref "posts/20260213-arxiv_ai-on-policy-context-distillation-for-language-models-4.md" >}})
 - [语义分块与自然语言熵的关联研究]({{< relref "posts/20260216-arxiv_ai-semantic-chunking-and-the-entropy-of-natural-langu-1.md" >}})

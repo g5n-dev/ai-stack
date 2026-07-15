@@ -1,14 +1,32 @@
 ---
-title: "TabICLv2：更优性能与可扩展性的开源表格基础模型"
-date: 2026-02-12T23:40:07+08:00
+title: TabICLv2：更优性能与可扩展性的开源表格基础模型
+date: 2026-02-12 23:40:07+08:00
 draft: false
-entry_kind: "auto"
-tags: ["TabICLv2", "表格基础模型", "RealTabPFN", "合成数据", "Softmax注意力", "Muon优化器", "回归与分类", "开源模型"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- TabICLv2
+- 表格基础模型
+- RealTabPFN
+- 合成数据
+- Softmax注意力
+- Muon优化器
+- 回归与分类
+- 开源模型
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "以下是对 **TabICLv2** 论文内容的简洁总结： **核心成就** TabICLv2 是一种全新的表格基础模型，在回归和分类任务上确立了新的最先进水平。它无需任何调优，其性能便超过了当前的最佳模型 RealTabPFN-2.5（即便后者经过了超参数调优、集成和微调）。 **三大技术支柱** TabICLv2 的"
+description: 以下是对 **TabICLv2** 论文内容的简洁总结： **核心成就** TabICLv2 是一种全新的表格基础模型，在回归和分类任务上确立了新的最先进水平。它无需任何调优，其性能便超过了当前的最佳模型
+  RealTabPFN-2.5（即便后者经过了超参数调优、集成和微调）。 **三大技术支柱** TabICLv2 的
 external_url: http://arxiv.org/abs/2602.11139v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+aliases:
+- /posts/20260213-arxiv_ai-tabiclv2-a-better-faster-scalable-and-open-tabular-8/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # TabICLv2：更优性能与可扩展性的开源表格基础模型
@@ -424,9 +442,9 @@ TabICLv2 的设计基于**分布外泛化**的假设：
 
 ### 相关文章
 
-- [🔥模型自学革命！突破可学习性边界，推理能力暴涨！]({{< relref "posts/20260128-arxiv_ai-teaching-models-to-teach-themselves-reasoning-at-t-9.md" >}})
+- [🔥模型自学革命！突破可学习性边界，推理能力暴涨！]({{< relref "posts/20260127-arxiv_ai-teaching-models-to-teach-themselves-reasoning-at-t-9.md" >}})
 - [让 Claude 编写 CUDA 内核并指导开源模型]({{< relref "posts/20260129-blogs_podcasts-we-got-claude-to-build-cuda-kernels-and-teach-open-6.md" >}})
 - [FineInstructions：将合成指令数据扩展至预训练规模]({{< relref "posts/20260130-arxiv_ai-fineinstructions-scaling-synthetic-instructions-to-7.md" >}})
-- [Moonshot K2.5：成本减半超越Sonnet 4.5，原生图文视频与百并发Agent管理]({{< relref "posts/20260130-blogs_podcasts-ainews-moonshot-kimi-k25-beats-sonnet-45-at-half-t-7.md" >}})
-- [Kimi K2.5 技术报告发布：模型架构与性能评估]({{< relref "posts/20260131-hacker_news-kimi-k25-technical-report-pdf-10.md" >}})
+- [Moonshot K2.5：成本减半超越Sonnet 4.5，原生图文视频与百并发Agent管理]({{< relref "posts/20260129-blogs_podcasts-ainews-moonshot-kimi-k25-beats-sonnet-45-at-half-t-1.md" >}})
+- [Kimi K2.5 技术报告发布：模型架构与性能评估]({{< relref "posts/20260130-hacker_news-kimi-k25-technical-report-pdf-10.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

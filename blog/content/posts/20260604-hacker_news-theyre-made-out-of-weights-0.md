@@ -1,14 +1,29 @@
 ---
-title: "权重计算与初始化技术详解"
-date: 2026-06-04T09:05:45+08:00
+title: 权重计算与初始化技术详解
+date: 2026-06-04 09:05:45+08:00
 draft: false
-entry_kind: "auto"
-tags: ["权重初始化", "权重计算", "深度学习", "神经网络", "初始化方法", "模型训练", "梯度下降", "参数设置"]
-categories: ["AI 工程", "大模型"]
+entry_kind: auto
+tags:
+- 权重初始化
+- 权重计算
+- 深度学习
+- 神经网络
+- 初始化方法
+- 模型训练
+- 梯度下降
+- 参数设置
+categories:
+- AI 工程
+- 大模型
 source: hacker_news
-description: "在深度学习圈里常说‘它们是由权重构成的’，这并非夸张，而是对模型本质的精准描述。本文从权重的本质入手，分析其在网络结构、训练过程中的作用，并探讨如何通过合理设置和调优权重提升模型效果。阅读后，读者将对权重的形成机制有更清晰的认识，并掌握实用的调参思路。通过对权重分布的可视化，读者还能直观了解网络在学习过程中的变化，从而"
+description: 在深度学习圈里常说‘它们是由权重构成的’，这并非夸张，而是对模型本质的精准描述。本文从权重的本质入手，分析其在网络结构、训练过程中的作用，并探讨如何通过合理设置和调优权重提升模型效果。阅读后，读者将对权重的形成机制有更清晰的认识，并掌握实用的调参思路。通过对权重分布的可视化，读者还能直观了解网络在学习过程中的变化，从而
 external_url: https://maxleiter.com/blog/weights
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 权重计算与初始化技术详解
@@ -77,9 +92,9 @@ scenarios: ["Web应用开发"]
 
 ### 相关文章
 
-- [误差随时间前向传播机制解析]({{< relref "posts/20260222-hacker_news-forward-propagation-of-errors-through-time-11.md" >}})
-- [误差随时间前向传播机制解析]({{< relref "posts/20260222-hacker_news-forward-propagation-of-errors-through-time-19.md" >}})
+- [误差随时间前向传播机制解析]({{< relref "posts/20260222-hacker_news-forward-propagation-of-errors-through-time-8.md" >}})
+- [误差随时间前向传播机制解析]({{< relref "posts/20260222-hacker_news-forward-propagation-of-errors-through-time-8.md" >}})
 - [深度学习激活函数原理与非线性机制解析]({{< relref "posts/20260227-juejin-一文搞懂激活函数-1.md" >}})
 - [使用 torch.nn 构建模型并基于 PyTorch 进行训练]({{< relref "posts/20260315-juejin-使用-pytorch-进行模型训练train-0.md" >}})
-- [The Little Learner：通往深度学习的直线路径]({{< relref "posts/20260211-hacker_news-the-little-learner-a-straight-line-to-deep-learnin-7.md" >}})
+- [The Little Learner：通往深度学习的直线路径]({{< relref "posts/20260210-hacker_news-the-little-learner-a-straight-line-to-deep-learnin-5.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

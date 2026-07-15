@@ -1,14 +1,31 @@
 ---
-title: "Claude Code AI 子代理：何时用、怎么用完全指南"
-date: 2026-02-18T22:40:49+08:00
+title: Claude Code AI 子代理：何时用、怎么用完全指南
+date: 2026-02-18 22:40:49+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Claude", "AI Agent", "子代理", "LLM", "开发指南", "自动化", "代码助手", "Subagents"]
-categories: ["AI 工程", "开发工具"]
+entry_kind: auto
+tags:
+- Claude
+- AI Agent
+- 子代理
+- LLM
+- 开发指南
+- 自动化
+- 代码助手
+- Subagents
+categories:
+- AI 工程
+- 开发工具
 source: juejin
-description: "随着 AI 编程助手的普及，单一 Agent 在处理复杂任务时往往面临上下文过载或目标偏离的挑战。通过引入子代理机制，开发者可以将庞大的任务拆解为独立且专注的执行单元，从而显著提升代码生成的准确性与可维护性。本文将深入剖析 Claude Code 的子代理功能，详细拆解其适用场景与最佳实践，助你构建更高效、更可控的 A"
+description: 随着 AI 编程助手的普及，单一 Agent 在处理复杂任务时往往面临上下文过载或目标偏离的挑战。通过引入子代理机制，开发者可以将庞大的任务拆解为独立且专注的执行单元，从而显著提升代码生成的准确性与可维护性。本文将深入剖析
+  Claude Code 的子代理功能，详细拆解其适用场景与最佳实践，助你构建更高效、更可控的 A
 external_url: https://juejin.cn/post/7606523741611950099
-scenarios: ["AI/ML项目", "大语言模型"]
+scenarios:
+- AI/ML项目
+- 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Claude Code AI 子代理：何时用、怎么用完全指南
@@ -177,9 +194,9 @@ AI 子代理：何时用、怎么用完全指南 写在前面 你的 Agent 花�
 
 ### 相关文章
 
-- [Claude Code：面向开发者的AI编程代理]({{< relref "posts/20260131-hacker_news-claude-code-is-your-customer-7.md" >}})
-- [Claude Code：面向开发者的AI编程助手]({{< relref "posts/20260131-hacker_news-claude-code-is-your-customer-5.md" >}})
+- [Claude Code：面向开发者的AI编程代理]({{< relref "posts/20260131-hacker_news-claude-code-is-your-customer-16.md" >}})
+- [Claude Code：面向开发者的AI编程助手]({{< relref "posts/20260131-hacker_news-claude-code-is-your-customer-16.md" >}})
 - [Zuckerman：极简个人AI代理，具备代码自编辑能力]({{< relref "posts/20260201-hacker_news-show-hn-zuckerman-minimalist-personal-ai-agent-tha-12.md" >}})
-- [构建极简且固执的编程代理的经验总结]({{< relref "posts/20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-10.md" >}})
-- [构建极简编程代理的技术实践与经验总结]({{< relref "posts/20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-17.md" >}})
+- [构建极简且固执的编程代理的经验总结]({{< relref "posts/20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-1.md" >}})
+- [构建极简编程代理的技术实践与经验总结]({{< relref "posts/20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-1.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

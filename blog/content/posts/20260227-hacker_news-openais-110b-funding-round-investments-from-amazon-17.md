@@ -21,6 +21,10 @@ description: OpenAI 正在敲定新一轮融资，估值有望达到 1100 亿美
 external_url: https://www.reuters.com/business/retail-consumer/amazon-invest-50-billion-openai-2026-02-27
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # OpenAI融资110亿美元 亚马逊英伟达软银参投

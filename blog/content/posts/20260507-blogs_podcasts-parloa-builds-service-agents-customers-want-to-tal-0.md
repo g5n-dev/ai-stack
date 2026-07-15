@@ -1,14 +1,29 @@
 ---
-title: "Parloa利用OpenAI构建可扩展语音AI客服代理"
-date: 2026-05-07T12:04:59+08:00
+title: Parloa利用OpenAI构建可扩展语音AI客服代理
+date: 2026-05-07 12:04:59+08:00
 draft: false
-entry_kind: "auto"
-tags: ["语音AI", "客服代理", "OpenAI", "大模型", "企业应用", "可扩展性", "实时交互", "对话系统"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- 语音AI
+- 客服代理
+- OpenAI
+- 大模型
+- 企业应用
+- 可扩展性
+- 实时交互
+- 对话系统
+categories:
+- 大模型
+- AI 工程
 source: blogs_podcasts
-description: "Parloa 通过集成 OpenAI 模型，为企业提供可扩展的语音驱动 AI 客服代理，使客户能够像与真人对话一样进行交流。企业可以在平台上设计对话流程、进行仿真测试，并快速部署到生产环境，实现可靠、实时的交互。该方案帮助企业降低人工客服成本、提升响应速度并改善用户体验。"
+description: Parloa 通过集成 OpenAI 模型，为企业提供可扩展的语音驱动 AI 客服代理，使客户能够像与真人对话一样进行交流。企业可以在平台上设计对话流程、进行仿真测试，并快速部署到生产环境，实现可靠、实时的交互。该方案帮助企业降低人工客服成本、提升响应速度并改善用户体验。
 external_url: https://openai.com/index/parloa
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Parloa利用OpenAI构建可扩展语音AI客服代理
@@ -130,5 +145,5 @@ Parloa 采用 OpenAI 模型作为底层语言处理引擎，依赖其强大的�
 - [OpenAI在API中推出GPT-5.5及Pro版]({{< relref "posts/20260424-hacker_news-openai-releases-gpt-55-and-gpt-55-pro-in-the-api-0.md" >}})
 - [微软与OpenAI终止独家合作及分成协议]({{< relref "posts/20260427-hacker_news-microsoft-and-openai-end-their-exclusive-and-reven-0.md" >}})
 - [OpenAI发布GPT-5.3-Codex-Spark：首款实时代码模型，速度提升15倍]({{< relref "posts/20260213-blogs_podcasts-introducing-gpt-53-codex-spark-11.md" >}})
-- [OpenAI发布首款实时编码模型：生成速度提升15倍]({{< relref "posts/20260214-blogs_podcasts-introducing-gpt-53-codex-spark-13.md" >}})
+- [OpenAI发布首款实时编码模型：生成速度提升15倍]({{< relref "posts/20260213-blogs_podcasts-introducing-gpt-53-codex-spark-11.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

@@ -21,6 +21,12 @@ description: '**DySCO：长上下文大模型的动态注意力缩放解码法**
 external_url: http://arxiv.org/abs/2602.22175v1
 scenarios:
 - 大语言模型
+aliases:
+- /posts/20260227-arxiv_ai-dysco-dynamic-attention-scaling-decoding-for-long--8/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # DySCO：面向长上下文大模型的动态注意力缩放解码
@@ -422,8 +428,8 @@ DySCO 最适合应用于需要处理超长上下文（例如 128k token 或更�
 
 ### 相关文章
 
-- [基于对称性泰勒近似实现恒定Token成本注意力机制]({{< relref "posts/20260204-hacker_news-attention-at-constant-cost-per-token-via-symmetry--9.md" >}})
-- [基于注意力匹配机制实现快速KV压缩]({{< relref "posts/20260220-hacker_news-fast-kv-compaction-via-attention-matching-18.md" >}})
-- [基于对称感知泰勒近似实现恒定Token成本注意力机制]({{< relref "posts/20260204-hacker_news-attention-at-constant-cost-per-token-via-symmetry--4.md" >}})
-- [对称感知泰勒近似实现恒定Token成本注意力机制]({{< relref "posts/20260205-hacker_news-attention-at-constant-cost-per-token-via-symmetry--12.md" >}})
+- [基于对称性泰勒近似实现恒定Token成本注意力机制]({{< relref "posts/20260204-hacker_news-attention-at-constant-cost-per-token-via-symmetry--0.md" >}})
+- [基于注意力匹配机制实现快速KV压缩]({{< relref "posts/20260220-hacker_news-fast-kv-compaction-via-attention-matching-19.md" >}})
+- [基于对称感知泰勒近似实现恒定Token成本注意力机制]({{< relref "posts/20260204-hacker_news-attention-at-constant-cost-per-token-via-symmetry--0.md" >}})
+- [对称感知泰勒近似实现恒定Token成本注意力机制]({{< relref "posts/20260204-hacker_news-attention-at-constant-cost-per-token-via-symmetry--0.md" >}})
 - [LCM：无损上下文管理技术论文]({{< relref "posts/20260216-hacker_news-lcm-lossless-context-management-pdf-17.md" >}})

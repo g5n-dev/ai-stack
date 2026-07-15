@@ -1,14 +1,35 @@
 ---
-title: "GLM-5：从直觉编程迈向智能体工程"
-date: 2026-02-11T23:34:28+08:00
+title: GLM-5：从直觉编程迈向智能体工程
+date: 2026-02-11 23:34:28+08:00
 draft: false
-entry_kind: "auto"
-tags: ["GLM-5", "智能体", "Agent Engineering", "直觉编程", "Vibe Coding", "LLM", "AI 编程", "模型演进"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- GLM-5
+- 智能体
+- Agent Engineering
+- 直觉编程
+- Vibe Coding
+- LLM
+- AI 编程
+- 模型演进
+categories:
+- 大模型
+- AI 工程
 source: hacker_news
-description: "随着大模型从简单的对话助手进化为能够自主规划任务的智能体，软件开发范式正在经历一场从“直觉编程”到“智能体工程”的深刻转型。GLM-5 的发布标志着这一技术路径的成熟，它不再仅仅依赖提示词的技巧，而是通过系统化的工程架构来实现复杂目标的拆解与执行。本文将深入剖析这一技术演进背后的逻辑，探讨开发者如何构建具备自主决策能力"
+description: 随着大模型从简单的对话助手进化为能够自主规划任务的智能体，软件开发范式正在经历一场从“直觉编程”到“智能体工程”的深刻转型。GLM-5 的发布标志着这一技术路径的成熟，它不再仅仅依赖提示词的技巧，而是通过系统化的工程架构来实现复杂目标的拆解与执行。本文将深入剖析这一技术演进背后的逻辑，探讨开发者如何构建具备自主决策能力
 external_url: https://z.ai/blog/glm-5
-scenarios: ["大语言模型", "AI/ML项目"]
+scenarios:
+- 大语言模型
+- AI/ML项目
+aliases:
+- /posts/20260212-hacker_news-glm-5-targeting-complex-systems-engineering-and-lo-16/
+- /posts/20260212-hacker_news-glm-5-targeting-complex-systems-engineering-and-lo-5/
+- /posts/20260212-hacker_news-glm-5-targeting-complex-systems-engineering-and-lo-6/
+- /posts/20260212-hacker_news-glm-5-targeting-complex-systems-engineering-and-lo-8/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # GLM-5：从直觉编程迈向智能体工程
@@ -398,9 +419,9 @@ for _ in range(3):
 
 ### 相关文章
 
-- [2026年AI展望：LLM、智能体、缩放定律与中国发展]({{< relref "posts/20260203-blogs_podcasts-490-state-of-ai-in-2026-llms-coding-scaling-laws-c-1.md" >}})
-- [2026年AI展望：LLM、智能体、缩放定律与中国发展]({{< relref "posts/20260203-blogs_podcasts-490-state-of-ai-in-2026-llms-coding-scaling-laws-c-3.md" >}})
-- [2026年AI展望：LLM、智能体、算力与中国角色]({{< relref "posts/20260204-blogs_podcasts-490-state-of-ai-in-2026-llms-coding-scaling-laws-c-8.md" >}})
-- [软件工厂与智能体时刻：AI 编程范式的演进]({{< relref "posts/20260208-hacker_news-software-factories-and-the-agentic-moment-4.md" >}})
-- [让 Claude 编写 CUDA 内核并指导开源模型]({{< relref "posts/20260129-blogs_podcasts-we-got-claude-to-build-cuda-kernels-and-teach-open-7.md" >}})
+- [2026年AI展望：LLM、智能体、缩放定律与中国发展]({{< relref "posts/20260201-blogs_podcasts-490-state-of-ai-in-2026-llms-coding-scaling-laws-c-0.md" >}})
+- [2026年AI展望：LLM、智能体、缩放定律与中国发展]({{< relref "posts/20260201-blogs_podcasts-490-state-of-ai-in-2026-llms-coding-scaling-laws-c-0.md" >}})
+- [2026年AI展望：LLM、智能体、算力与中国角色]({{< relref "posts/20260201-blogs_podcasts-490-state-of-ai-in-2026-llms-coding-scaling-laws-c-0.md" >}})
+- [软件工厂与智能体时刻：AI 编程范式的演进]({{< relref "posts/20260207-hacker_news-software-factories-and-the-agentic-moment-4.md" >}})
+- [让 Claude 编写 CUDA 内核并指导开源模型]({{< relref "posts/20260129-blogs_podcasts-we-got-claude-to-build-cuda-kernels-and-teach-open-6.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

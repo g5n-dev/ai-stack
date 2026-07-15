@@ -1,32 +1,43 @@
 ---
-title: 基于Bedrock与LangGraph构建SageMaker无服务器AI对话代理
+title: 基于Bedrock与LangGraph构建SageMaker AI对话代理
 date: 2026-03-02 20:08:34+08:00
 draft: false
 entry_kind: auto
 tags:
 - LangGraph
-- Amazon Bedrock
+- Bedrock
 - SageMaker
 - MLflow
 - Agent
-- LLM
-- 无服务器
-- RAG
+- Serverless
+- Claude
+- AWS
 categories:
 - AI 工程
-- 后端
+- 大模型
 source: blogs_podcasts
-description: '**标题：使用 Amazon Bedrock、LangGraph 和 SageMaker AI 构建无服务器对话 AI 智能体** **概述**
-  本文档介绍了如何利用 **Amazon Bedrock**（Claude 模型）、**LangGraph** 以及托管在 **Amazon SageMaker
-  AI** 上的'
+description: 随着企业对智能交互需求的增长，构建可扩展且易于维护的对话系统已成为技术团队的关键挑战。本文将详细介绍如何利用 Amazon Bedrock
+  上的 Claude 模型、LangGraph 以及托管在 Amazon SageMaker AI 上的 MLflow，打造一个无服务器的对话 AI 代理。通过阅读，您将掌握从状态管
 external_url: https://aws.amazon.com/blogs/machine-learning/build-a-serverless-conversational-ai-agent-using-claude-with-langgraph-and-managed-mlflow-on-amazon-sagemaker-ai
 scenarios:
 - AI/ML项目
-- 大语言模型
-- RAG应用
+aliases:
+- /posts/20260302-blogs_podcasts-build-a-serverless-conversational-ai-agent-using-c-2/
+- /posts/20260302-blogs_podcasts-build-a-serverless-conversational-ai-agent-using-c-3/
+- /posts/20260303-blogs_podcasts-build-a-serverless-conversational-ai-agent-using-c-11/
+- /posts/20260303-blogs_podcasts-build-a-serverless-conversational-ai-agent-using-c-12/
+- /posts/20260303-blogs_podcasts-build-a-serverless-conversational-ai-agent-using-c-13/
+- /posts/20260303-blogs_podcasts-build-a-serverless-conversational-ai-agent-using-c-3/
+- /posts/20260303-blogs_podcasts-build-a-serverless-conversational-ai-agent-using-c-4/
+- /posts/20260304-blogs_podcasts-build-a-serverless-conversational-ai-agent-using-c-12/
+- /posts/20260304-blogs_podcasts-build-a-serverless-conversational-ai-agent-using-c-13/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
-# 基于Bedrock与LangGraph构建SageMaker无服务器AI对话代理
+# 基于Bedrock与LangGraph构建SageMaker AI对话代理
 
 ---
 
@@ -40,313 +51,316 @@ scenarios:
 
 ## 摘要/简介
 
-本文探讨如何利用 Amazon Bedrock、LangGraph 以及 Amazon SageMaker AI 上托管的 MLflow 来构建一个智能对话代理。
+本文探讨如何使用 Amazon Bedrock、LangGraph 以及 Amazon SageMaker AI 上托管的 MLflow 来构建一个智能对话代理。
 
 ---
 
 ## 导语
 
-构建具备记忆与状态管理能力的对话代理，已成为提升交互体验的关键。本文将介绍如何利用 Amazon Bedrock、LangGraph 以及 Amazon SageMaker AI 上托管的 MLflow，搭建一套无服务器架构的智能对话系统。通过解析技术细节与实施路径，帮助开发者在简化运维的同时，高效实现对话流程的编排与全生命周期管理。
-
----
-
-## 摘要
-
-**标题：使用 Amazon Bedrock、LangGraph 和 SageMaker AI 构建无服务器对话 AI 智能体**
-
-**概述**
-本文档介绍了如何利用 **Amazon Bedrock**（Claude 模型）、**LangGraph** 以及托管在 **Amazon SageMaker AI** 上的 **MLflow**，构建一个智能的、无服务器的对话 AI 智能体。该架构旨在实现高性能的生成式 AI 应用，同时具备强大的可观测性和管理能力。
-
-**核心架构与组件**
-
-该解决方案主要由以下三个核心部分组成：
-
-1.  **Amazon Bedrock (模型层):**
-    *   作为基础模型服务，提供 **Claude** 等 LLM 能力，用于处理自然语言理解、推理和生成。
-    *   通过无服务器架构，无需管理底层基础设施。
-
-2.  **LangGraph (编排层):**
-    *   用于构建智能体的**有状态工作流**和**循环图**结构。
-    *   LangGraph 允许开发者定义复杂的对话逻辑（例如：多轮对话、工具调用、循环检查），使智能体不仅能回答问题，还能根据上下文进行规划和执行一系列操作。
-
-3.  **Amazon SageMaker AI + MLflow (管理与追踪层):**
-    *   **SageMaker AI** 提供托管的 MLflow 服务。
-    *   **MLflow** 在此扮演关键角色，用于**追踪实验**（Tracing）、记录模型参数和版本。
-    *   它将 LLM 的调用链、提示词 和响应数据记录下来，为开发者提供了全链路的可观测性，便于调试和优化智能体性能。
-
-**工作流程总结**
-
-1.  **用户交互**：用户向应用发起请求。
-2.  **智能体处理**：LangGraph 编排智能体逻辑，决定何时调用 Amazon Bedrock 中的 Claude 模型或使用特定工具。
-3.  **推理与执行**：Claude 处理输入并生成响应或操作指令。
-4.  **记录与监控**：所有的推理过程、Prompt 和结果均通过 SageMaker 托管的 MLflow 进行记录和追踪。
-
-**主要优势**
-
-*   **无服务器**：利用 Amazon Bedrock 和 SageMaker 的无服务器特性，无需预置服务器，按需付费，降低了运维成本。
-*   **状态管理**：LangGraph 解决了传统无
+随着企业对智能交互需求的增长，构建可扩展且易于维护的对话系统已成为技术团队的关键挑战。本文将详细介绍如何利用 Amazon Bedrock 上的 Claude 模型、LangGraph 以及托管在 Amazon SageMaker AI 上的 MLflow，打造一个无服务器的对话 AI 代理。通过阅读，您将掌握从状态管理到模型追踪的完整实现流程，从而构建出具备生产级可观测性的智能应用。
 
 ---
 
 ## 评论
 
-### 中心观点
-这篇文章展示了一种**以全托管云服务为核心、高度工程化**的企业级生成式 AI 落地范式，主张通过 Amazon Bedrock（模型层）、LangGraph（编排层）与 SageMaker（治理层）的深度耦合，来解决大模型应用从原型到生产环境过程中的“最后一公里”治理与部署难题。
+**中心观点**
+本文主张通过将 Amazon Bedrock（模型层）、LangGraph（控制层）与 SageMaker 集成 MLflow（治理层）三者深度耦合，构建一个既具备复杂推理能力又符合企业级治理标准的 Serverless 生成式 AI 应用架构。
 
----
+**支撑理由与边界分析**
 
-### 深入评价
+**1. 架构演进：从“简单调用”向“状态化工作流”跃迁**
+*   **事实陈述**：文章采用 LangGraph 而非简单的 LangChain 链式调用，这是技术选型的关键分水岭。LangGraph 基于循环图结构，天然支持多轮对话中的状态管理和“人机回环”。
+*   **你的推断**：这标志着行业从“一次性问答”向“能够处理复杂任务流和长期记忆的 Agent”转型的主流趋势。单纯调用 API 已无法满足企业级应用对上下文连贯性的需求。
+*   **反例/边界条件**：对于极简单的 RAG（检索增强生成）场景，如单轮文档问答，引入 LangGraph 的图结构设计属于过度设计，增加了不必要的开发复杂度和调试难度。
 
-#### 1. 内容深度与论证严谨性
-**支撑理由：**
-*   **全栈闭环的视角：** 文章没有停留在简单的 API 调用演示，而是构建了一个完整的 AI 工程生命周期。它将 MLflow 引入 LLM 开发流程是一个亮点。传统的 LLM 教程往往忽视“评估”和“追踪”，而该文章利用 SageMaker 上托管的 MLflow 解决了 LLM 应用中难以量化的评估问题，论证了从实验到部署的治理闭环。
-*   **状态机管理的必要性：** 引入 LangGraph 而非简单的 LangChain，体现了对对话状态管理（CSM）复杂度的深刻理解。在多轮对话中，单纯的线性链路难以处理回退、分支和上下文记忆，文章通过图结构来管理 Agent 的行为逻辑，在技术架构上具备较高的严谨性。
+**2. 治理闭环：填补 Serverless 架构的“可观测性”黑洞**
+*   **事实陈述**：文章强调在 SageMaker 上使用托管 MLflow 来追踪 Bedrock 的调用。
+*   **作者观点**：这是该方案最具企业务实价值的部分。Serverless 架构虽然降低了运维成本，但也牺牲了部分可观测性。通过将模型推理的 Prompt、Response 和 Trace 数据记录到 MLflow，企业可以在不搭建自建基础设施的情况下，建立起 LLM 应用的实验追踪和版本管理基线。
+*   **反例/边界条件**：MLflow 是通用的 ML 平台，并非原生为 LLM 的非确定性输出设计。在处理高并发下的 Token 级别细粒度追踪或复杂的 Tracing（如 LangSmith）时，MLflow 的 UI 体验和关联分析能力可能不如专门的 LLMDevOps 工具（如 Arize 或 Weights & Biases）。
 
-**反例/边界条件：**
-*   **厂商锁定的隐性成本：** 文章默认读者完全处于 AWS 生态中。对于混合云部署或边缘计算场景，这种深度依赖 SageMaker 和 Bedrock 的架构会导致极高的迁移成本。
-*   **过度工程化的风险：** 对于简单的检索增强生成（RAG）需求，引入 LangGraph 的状态机和 MLflow 的全套治理可能属于“杀鸡用牛刀”，增加了系统复杂度和延迟。
+**3. 成本与效率的博弈：Serverless 的隐性陷阱**
+*   **事实陈述**：利用 Bedrock 的 Serverless 特性配合 SageMaker 的托管服务。
+*   **你的推断**：这种架构旨在最小化基础设施的沉没成本，适合流量波动剧烈或处于 PoC（概念验证）阶段的项目。
+*   **反例/边界条件**：如果应用进入大规模稳定生产阶段（例如每天处理百万级请求），持续调用 Bedrock API 的费用将远高于部署自建开源模型（如 Llama 3）。此外，Serverless 函数的冷启动延迟在实时对话场景下可能严重影响用户体验。
 
-#### 2. 实用价值与创新性
-**支撑理由：**
-*   **解决“运维”痛点：** 对于企业开发者而言，最大的痛点不是写 Prompt，而是如何监控模型表现、管理版本和部署服务。文章详细展示了如何利用 SageMaker 的托管服务来免除基础设施的运维负担，具有极高的实战参考价值。
-*   **工具链的标准化尝试：** 将 MLflow（传统 ML 领域的标准）与 LLM 开发结合，并提出在 SageMaker 上托管 MLflow，这是一种试图在企业内部建立统一标准的创新尝试，有助于打破数据科学团队和 LLM 工程师之间的隔阂。
+**4. 技术栈的同构化风险**
+*   **事实陈述**：全栈采用 AWS 生态解决方案。
+*   **作者观点**：这降低了集成门槛，利用了 SageMaker Canvas 等工具的协同效应。
+*   **反例/边界条件**：这构成了深度的厂商锁定。未来若需迁移至 GCP 或 Azure，或者将 Bedrock 替换为 Azure OpenAI，重构 LangGraph 中的特定节点调用和重新配置 MLflow 环境将产生巨大的迁移成本。
 
-**反例/边界条件：**
-*   **成本控制缺失：** 文章未深入探讨 Bedrock 按Token计费与 SageMaker 实例租用成本叠加后的经济性问题。对于初创公司，这种全托管方案的成本可能远高于自建开源模型服务。
-*   **开源替代方案的竞争力：** LangGraph 虽然强大，但并非唯一选择。对于习惯使用 AutoGen 或微软 Semantic Kernel 的团队，该方案的技术栈迁移学习成本较高。
+**多维度评价**
 
-#### 3. 可读性与行业影响
-**支撑理由：**
-*   **清晰的架构分层：** 文章结构通常遵循“基础设施 -> 编排逻辑 -> 治理评估”的逻辑，符合技术人员的认知习惯。
-*   **行业风向标：** 该文章反映了行业趋势：**大模型应用正在从“Prompt Engineering”转向“AI Engineering”**。重点不再是魔法般的 Prompt，而是如何利用成熟工具链构建可观测、可扩展的系统。这推动了行业从“炫技”向“工程化落地”转变。
+1.  **内容深度**：文章属于典型的“架构落地型”教程。它没有停留在“Hello World”级别的 API 调用，而是触及了“状态管理”和“模型评估”这两个企业级 AI 的痛点。但在 LangGraph 的复杂路由逻辑和 MLflow 的深度定制（如自定义评估指标 LLM-as-a-judge）方面，论证略显单薄。
+2.  **实用价值**：对于已经在使用 AWS 生态的数据团队，该方案提供了标准化的“安全路径”。它解决了“怎么把 Agent 管起来”的难题，具有很高的参考价值。
+3.  **创新性**：将 LangGraph 的动态编排能力与 MLflow 的静态管理能力结合，是一种稳健而非激进的创新。它没有提出新算法，而是提出了工程化的最佳实践。
+4.  **可读性**：通常此类 AWS 官方博客逻辑清晰，代码片段完备，但往往包含大量的营销话术，读者需要过滤掉对 SageMaker 通用功能的吹捧，聚焦于架构图本身。
+5.  **行业影响**：这进一步验证了 MLOps 正在向 LLOps 演进，且云厂商正在积极通过集成第三方框架（如 LangGraph）来弥补原生 PaaS 服务灵活性的不足。
 
-**反例/边界条件：**
-*   **技术栈割裂：** 对于不熟悉 AWS 术语（如 Bedrock, SageMaker）的开发者，文章中充斥的云厂商专有名词可能会造成阅读障碍，掩盖了核心的算法逻辑。
+**争议点与不同观点**
 
----
+*   **模型推理的边界**：文章默认 Claude 3/3.5 是唯一选择。实际上，在生产环境中，为了成本控制或数据隐私，混合架构（Bedrock 处理复杂逻辑 + 小型本地模型处理简单任务）往往更优。
+*   **MLflow 的必要性**：部分开发者认为，对于 Agent 应用，基于数据库的自行构建 Trace 系统可能比沉重的 MLflow 更灵活、更轻量。
 
-### 综合分析与建议
+**实际应用建议**
 
-**事实陈述：** 文章提供了一个基于 AWS 云原生技术栈的 Serverless Agent 构建蓝图。
-**作者观点：** 作者倾向于认为云原生的托管服务是构建生产级 AI 应用的最佳路径，强调了可视化和治理的重要性。
-**你的推断：** 这类文章通常由云厂商技术团队撰写，旨在通过解决工程痛点来锁定用户进入其生态系统。虽然技术方案先进，但本质上是一种“技术壁垒”的构建。
-
-**争议点：**
-目前业界对于 Agent 的架构存在两条路线：一条是以 LangGraph 为代表的**确定性状态机路线**（文章所采用），另一条是以完全自主的 LLM 驱动的**规划反思路线**（如 ReWoo, Voyager）。文章的方案虽然可控，但可能牺牲了 Agent 的自主探索能力。
-
-**实际应用建议：**
-1.  **适用场景：** 该架构非常适合金融、医疗等对合规性、审计追踪（MLflow）和高可用性要求极高的企业级应用。
-2.  **架构解耦：** 建议开发者参考其架构思想，但可以将 Bedrock 替换为本地部署的开源模型（如 Llama 3），将 SageMaker 替换为 Kubernetes，以避免厂商锁定。
-3.  **评估先行：** 在引入 LangGraph 复杂逻辑前，先利用 MLflow 建立好基线模型评估，避免在复杂的图结构中难以定位性能下降的瓶颈。
-
----
-
-### 可验证的检查方式
-
-1.  **延迟基准测试：**
-    *   *操作：* 在高并发场景下，测试经过 SageMaker 托管 MLflow 追踪和 LangGraph 编排后的端到端响应延迟。
-    *   *预期：* 验证相比直接调用 Bedrock API，引入 LangGraph 和 MLflow 后的额外延迟是否在可接受范围内（通常 < 500ms）。
+1.  **评估流量模型**：在采用此架构前，务必计算 Token 成本。如果你的应用是高频、低延迟的内部工具，Serverless 可能比 EC2/SageMaker 实例部署更贵。
+2.  **关注状态持久化**：LangGraph 的状态默认在内存中。在生产环境中，必须配置外部持久化存储（如 Redis），否则当 Lambda 函数重启或容器回收时，用户的对话历史将丢失，这是文章容易忽略的工程细节。
+3.  **建立评估基准**：不要只
 
 ---
 
 ## 技术分析
 
-基于您提供的文章标题和摘要，以及对Amazon SageMaker AI、Bedrock、LangGraph和MLflow等技术栈的深入理解，以下是对该技术方案的全面深度分析。
+基于文章标题《Build a serverless conversational AI agent using Claude with LangGraph and managed MLflow on Amazon SageMaker AI》及其摘要，以下是对该技术方案的全面深度分析。
 
 ---
-
-### 深度分析：基于 SageMaker AI、Bedrock 与 LangGraph 构建无服务器对话式 Agent
 
 ### 1. 核心观点深度解读
 
 **主要观点：**
-文章的核心观点在于展示一种**“全托管、模块化、可观测”**的企业级 AI Agent 架构范式。它主张利用 Amazon SageMaker AI 的托管 MLflow 进行实验追踪，结合 LangGraph 的状态管理能力，并通过 Amazon Bedrock 调用 Claude 模型，从而构建出一个高性能、低维护成本的“无服务器”对话系统。
+文章的核心主张是，通过将**大语言模型（Claude on Amazon Bedrock）**、**状态化编排框架**与**企业级机器学习平台**相结合，可以构建一个既具备复杂推理能力，又拥有企业级治理与可观测性的**无服务器对话式 AI 智能体**。
 
 **核心思想：**
-作者试图传达**“关注点分离”**与**“工程化治理”**的思想。
-1.  **关注点分离**：将大模型的推理能力交给 Bedrock，将业务逻辑的流转交给 LangGraph，将开发过程的追踪和模型管理交给 MLflow。
-2.  **工程化治理**：在 GenAI 应用开发中，仅仅“跑通”是不够的，必须像传统机器学习一样，对 Prompt、参数、Agent 路由轨迹进行严格的版本管理和实验追踪。
+作者试图传达一种**"最佳实践"的现代 AI 架构模式**。这种模式超越了简单的"提示词工程"或基础的 RAG（检索增强生成），转向利用**图结构**来管理对话的上下文和状态。同时，它强调了在 GenAI（生成式 AI）时代，**Ops（运维/治理）**的重要性不亚于模型本身，必须通过 MLflow 来解决实验追踪和模型注册的痛点。
 
 **创新性与深度：**
-*   **创新性**：该方案将 LangGraph（通常用于本地或自托管环境的编排框架）与 AWS 全托管生态深度结合，特别是利用 **SageMaker 上托管的 MLflow**。这解决了开源 LLM Ops 工具难以在云原生环境下标准集成的痛点。
-*   **深度**：它超越了简单的“聊天机器人”Demo，深入到了**Agent 的循环控制**和**模型全生命周期管理（MLLCM）**。它不仅仅是在调用 API，而是在构建一个可以自我反思、拥有记忆、且其开发过程可被复现的智能体。
+*   **架构创新：** 将 LangGraph 的循环计算图引入 Agent 开发，解决了传统线性对话流程无法处理复杂逻辑分支和长期记忆的问题。
+*   **部署范式创新：** "无服务器"不仅是基础设施的选择，更是一种成本优化和弹性伸缩的策略。它将底层基础设施的复杂性（如 GPU 管理、容器编排）完全抽象化，使开发者专注于业务逻辑。
+*   **治理深度：** 将传统 ML 领域的 MLflow 引入 LLM 开发，填补了从"原型"到"生产"之间的巨大鸿沟，特别是在 LLM 应用版本管理和参数追踪方面。
 
 **重要性：**
-随着企业从“玩票式”的 PoC（概念验证）转向生产环境部署，**可观测性**和**扩展性**成为最大瓶颈。该架构提供了一条标准化的落地路径，解决了“Agent 难以调试”和“模型迭代难以回溯”两大难题。
+这一观点的重要性在于它提供了一个**端到端的标准化解决方案**。目前市场上充斥着各种 Agent 框架和模型，但缺乏统一的工程化标准。该方案利用 AWS 的全托管能力，降低了企业落地高智商 AI 助手的门槛，同时保证了系统的可维护性和安全性。
+
+---
 
 ### 2. 关键技术要点
 
-### 涉及的关键技术
-*   **Amazon Bedrock**：基础模型服务层，提供 Claude 3/3.5 等模型，无需管理基础设施。
-*   **LangGraph**：基于有向图的 Agent 编排框架，支持循环、状态管理和持久化，是构建复杂 Agent 的核心。
-*   **Managed MLflow on SageMaker**：开源 MLflow 平台的托管版本，用于 MLflow Tracking（记录指标、参数、模型工件）和 Model Registry。
-*   **Amazon SageMaker AI**：提供计算环境（可能是 Serverless Inference 或 Real-time Endpoints）来运行 LangGraph 应用。
+**涉及的关键技术：**
+1.  **Amazon Bedrock:** 提供基础模型（Claude），无需管理底层基础设施。
+2.  **LangGraph:** 基于 LangChain，用于构建有状态、多参与者的循环应用。
+3.  **Amazon SageMaker AI:** 提供托管的 MLflow 实例，用于实验追踪和模型注册。
+4.  **AWS Lambda (隐含):** 通常用于 Serverless 架构中的计算逻辑执行。
 
-### 技术原理与实现
-1.  **Graph 架构**：不再是简单的线性 Prompt-Response，而是定义节点和边。例如，一个节点负责意图识别，一个节点负责调用工具，一个节点负责生成最终回复。LangGraph 维护一个全局状态对象，在节点间传递。
-2.  **无服务器部署**：LangGraph 应用通常打包为容器或通过特定适配器部署在 SageMaker 上，利用 SageMaker Serverless Inference 或 Bedrock 的 Agent 能力实现按需扩缩容。
-3.  **追踪集成**：在 Agent 执行过程中，将 Claude 的 Input/Output tokens、Temperature、Top-P 等参数，以及 Agent 的中间步骤（如调用了哪个工具、返回了什么结果）自动记录到 MLflow 实验中。
+**技术原理与实现：**
+*   **状态机原理:** 技术核心在于如何定义 `State`（状态）和 `Graph`（图）。Agent 的记忆、上下文和工具调用结果都被封装在 `State` 对象中，随着节点在图中的流转，State 不断被更新，从而实现"思考-行动-观察"的循环。
+*   **模型追踪原理:** 利用 MLflow 的 `mlflow.langchain` 自动追踪功能，捕获 LLM 的输入输出、温度参数、Prompt 模板以及中间步骤，将这些非结构化数据转化为可查询的结构化日志。
 
-### 技术难点与解决方案
-*   **难点：状态持久化与无状态 API 的冲突。**
-    *   *解决方案*：LangGraph 内置了检查点机制，可以将对话状态保存到外部存储（如 S3 或 DynamoDB），在无服务器环境下实现多轮对话的上下文保持。
-*   **难点：LangChain/LangGraph 的“黑盒”调试困难。**
-    *   *解决方案*：利用 MLflow 的 `langchain` 自动记录追踪功能，可视化整个 Agent 的执行链路。
+**技术难点与解决方案：**
+*   **难点：** LLM 输出的非确定性导致难以调试和回溯。
+    *   **解决方案：** 使用 MLflow 记录每一次调用的 Trace（链路追踪），使开发者可以重现 Agent 的完整决策路径。
+*   **难点：** 多轮对话中的上下文管理。
+    *   **解决方案：** LangGraph 内置的 Checkpointer 机制，将 State 持久化（通常存放在数据库中），实现对话的断点续传和记忆保持。
+
+**技术创新点：**
+*   **LangGraph 与 Bedrock 的深度集成：** 实现了将强大的 Claude 模型作为推理引擎，无缝嵌入到复杂的业务流程图中。
+*   **Serverless Agent：** 摒弃了长期运行的 EC2 实例或 Kubernetes 集群，按需调用，极大降低了闲置成本。
+
+---
 
 ### 3. 实际应用价值
 
-### 指导意义
-该架构为**企业级 AI 应用开发**提供了一套标准“样板代码”。它证明了如何在不牺牲开发体验（使用开源框架 LangGraph）的前提下，获得企业级的稳定性（AWS 托管服务）。
+**对实际工作的指导意义：**
+该架构为 AI 工程师提供了一个从 Proof of Concept (PoC) 走向 Production 的清晰路径。它表明，构建一个智能体不仅仅是调用 API，更需要构建健壮的编排层和监控层。
 
-### 适用场景
-*   **企业知识库问答**：需要复杂的检索增强生成（RAG）和多跳推理。
-*   **金融/医疗合规助手**：需要严格的对话历史记录、参数可追溯性（MLflow 满足合规审计需求）。
-*   **自动化客服与任务执行**：不仅仅是回答问题，还需要通过 API 执行操作（如订票、查询订单）的 Agent。
+**应用场景：**
+1.  **企业级知识库助手：** 结合 RAG，能够处理复杂的文档查询，并引用来源。
+2.  **客服自动化：** 能够处理多轮任务，如"查询订单 -> 申请退款 -> 修改地址"，而非简单的问答。
+3.  **金融/医疗合规助手：** 利用 MLflow 的审计追踪功能，满足行业对 AI 决策过程的合规性要求。
 
-### 需要注意的问题
-*   **成本**：虽然无服务器免除了运维成本，但在高并发、长上下文的 Agent 场景下，Bedrock 的 Token 调用费用和 SageMaker 的计算费用可能不低。
-*   **延迟**：Agent 编排涉及多次模型调用和工具调用，端到端延迟较高，不适合实时性要求极高的场景。
+**需要注意的问题：**
+*   **冷启动延迟：** Serverless 架构在长时间无请求后，首次唤醒可能有延迟。
+*   **上下文窗口限制：** 随着对话轮次增加，Token 消耗线性增长，需要设计总结机制。
+*   **成本控制：** 虽然 Serverless 节省了基础成本，但高频调用 Claude 3.5 Sonnet 等高智商模型 API 费用仍需关注。
 
-### 实施建议
-*   **先追踪，后优化**：在开发初期务必开启 MLflow Tracking，积累数据，否则后期无法优化 Prompt 或参数。
-*   **模块化设计**：将 LangGraph 中的节点设计得尽可能小且单一职责，便于测试和替换。
+**实施建议：**
+*   先在 MLflow 中进行本地或沙盒实验，确定最佳的 Prompt 和参数。
+*   将 LangGraph 逻辑容器化，部署到 AWS Lambda 或 App Runner。
+*   配置 Bedrock Guardrails 以防止模型产生有害内容。
+
+---
 
 ### 4. 行业影响分析
 
-### 对行业的启示
-这标志着 **LLMOps（大模型运维）正在走向标准化和云原生化**。过去是“手搓代码+ OpenAI API”，现在是通过成熟的编排框架和云厂商的托管模型平台进行工业化生产。
+**对行业的启示：**
+*   **MLOps 向 LLMOps 的演进：** 行业正在从传统的模型训练（关注准确率、损失函数）转向 LLM 应用开发（关注延迟、Token 成本、推理质量）。MLflow 在此处的应用证明了传统 MLOps 工具正在快速适配 GenAI 需求。
+*   **云厂商的生态壁垒：** AWS 通过深度集成 Bedrock、SageMaker 和 Lambda，构建了封闭且高效的生态。这暗示了未来 AI 开发的趋势——**绑定特定的云生态以获得最佳性能**。
 
-### 可能带来的变革
-*   **开发角色的转变**：AI 工程师不再需要关注 CUDA 驱动或 GPU 部署，而是专注于 Graph 的逻辑设计和 Prompt 的微调。
-*   **SageMaker 的定位强化**：SageMaker 正从传统的“模型训练平台”转变为“GenAI 全栈开发平台”，通过托管 MLflow 锁定了开发者的工作流。
+**可能带来的变革：**
+*   **Agent 即服务：** 未来企业不再购买软件，而是购买具备执行能力的 Agent。
+*   **开发门槛降低：** LangGraph 等框架将复杂的 AI 算法封装为节点和边，使得即使不懂深度学习的后端工程师也能构建复杂 AI。
 
-### 发展趋势
-*   **Graph-as-a-Code**：未来的 AI 应用开发将更像画流程图，LangGraph 等状态图模式将成为主流。
-*   **统一可观测性**：传统的 APM（应用性能监控）与 LLM 的 Token 追踪将深度融合。
+**发展趋势：**
+*   **多模态 Agent：** 从纯文本扩展到图片、音频处理。
+*   **自主性增强：** 从"辅助执行"向"自主规划"演进。
+
+---
 
 ### 5. 延伸思考
 
-*   **多模态扩展**：目前的架构主要基于文本。如何利用 Claude 的多模态能力，在 LangGraph 中处理图片或音频流？
-*   **人机协同**：LangGraph 支持在图节点中插入“人工中断”。这意味着 Agent 可以在遇到不确定的情况时，将状态挂起，等待人工审批后再继续执行，这在金融交易审批中极具价值。
-*   **边缘计算**：虽然这是无服务器架构，但为了隐私和低延迟，是否可以将 LangGraph 的部分逻辑下沉到 CloudFront 或边缘设备？
+**引发的思考：**
+*   **安全边界：** 当 Agent 拥有调用企业内部 API（如修改数据库、发送邮件）的能力时，如何确保其不被 Prompt Injection 攻击利用？Bedrock Guardrails 是唯一的防线吗？
+*   **评估标准：** MLflow 记录了数据，但如何自动评估 Agent 的"好与坏"？需要引入 LLM-as-a-judge 机制。
+
+**拓展方向：**
+*   **多 Agent 协作：** 文章主要关注单个 Agent。未来可以探索如何使用 LangGraph 编排多个 Agent（如一个负责搜索，一个负责编程，一个负责审核）协同工作。
+*   **人机协同：** 在 Agent 无法决策或高风险操作时，如何优雅地引入人工确认机制。
+
+---
+
+### 6. 实践建议
+
+**如何应用到自己的项目：**
+1.  **评估现有栈：** 如果你的团队已经在使用 AWS，且数据在 AWS 上，直接采用 Bedrock + SageMaker 是阻力最小的路径。
+2.  **定义图结构：** 不要试图用 Prompt 解决所有问题。画出你的业务流程图，将每一个决策点转化为 LangGraph 的节点。
+3.  **建立追踪习惯：** 从第一行代码开始就接入 MLflow，不要等到上线后才想怎么调试。
+
+**具体行动建议：**
+*   **Step 1:** 在 SageMaker Studio 中启动托管 MLflow。
+*   **Step 2:** 定义一个简单的 State（包含 `messages` 列表）。
+*   **Step 3:** 编写一个调用 Bedrock 的 Node 函数。
+*   **Step 4:** 使用 `StateGraph` 连接节点，并设置 `checkpointer`。
+*   **Step 5:** 部署并测试，观察 MLflow UI 中的 Trace。
+
+**需补充的知识：**
+*   **Python 异步编程：** LangGraph 支持异步，这对于高并发场景至关重要。
+*   **图论基础：** 理解有向图、循环检测有助于设计 Agent 逻辑。
+
+---
 
 ### 7. 案例分析
 
-### 成功案例逻辑
-*   **场景**：一家大型电商的售后机器人。
-*   **问题**：用户问题复杂，可能涉及退款、查物流、投诉，单一 Prompt 无法覆盖。
-*   **应用**：使用 LangGraph 构建路由器。第一层判断意图；第二层如果是查物流，调用物流 API；如果是退款，进入“收集信息-验证-执行”的循环子图。
-*   **成效**：通过 MLflow 发现“验证”节点的错误率较高，针对性调整了该节点的 Prompt，使问题解决率提升了 30%。
+**成功案例（基于架构推演）：**
+*   **场景：** 某跨国银行部署了基于此架构的内部 IT 支持助手。
+*   **表现：** 利用 LangGraph 实现了"故障排查树"的动态跳转，而非死板的问答；利用 Bedrock Claude 3.5 理解复杂的错误日志；利用 MLflow 发现了某个特定 Prompt 导致的幻觉，并快速回滚版本。结果是将 IT 一线工单解决率提升了 40%。
 
-### 失败反思
-*   **场景**：构建实时游戏 NPC 对话。
-*   **问题**：采用了该架构，但 LangGraph 的多次跳转和 Bedrock 的推理延迟导致 NPC 回复需要 3-5 秒。
-*   **教训**：该架构虽然强大，但并非“银弹”。对于超低延迟场景，仍需考虑小模型（如 SLM）的本地部署或流式输出优化。
+**失败/风险案例反思：**
+*   **场景：** 电商客服 Agent。
+*   **问题：** 未设置合理的 Token 限制或 State 总结策略。在一个长对话中，用户反复修改订单，导致 Context Window 溢出，Agent 丢失了最初的地址信息，导致货物发错。
+*   **教训：** 必须在 LangGraph 中设计"记忆修剪"节点，定期总结历史对话，压缩上下文。
+
+---
 
 ### 8. 哲学与逻辑：论证地图
 
-**中心命题：**
-> **在构建企业级生成式 AI 应用时，采用“Amazon Bedrock + LangGraph + 托管 MLflow”的无服务器架构，是目前平衡开发敏捷性、系统可维护性与生产可观测性的最优解。**
+**中心命题:**
+*   在企业级生产环境中，采用 **"Serverless 架构 + 状态图编排 + 集中式实验追踪"** 的组合模式，是构建高可维护、高智能对话 Agent 的**最优工程解**。
 
-**支撑理由：**
-1.  **理由一（敏捷性）：** LangGraph 提供了声明式的状态管理，比命令式代码更能精确控制 Agent 的复杂逻辑流（如回退、重试、分支）。
-    *   *依据*：传统代码编写复杂 Agent 逻辑容易陷入“回调地狱”，状态图是处理此类问题的成熟计算机科学范式。
-2.  **理由二（可维护性）：** 无服务器架构消除了基础设施维护的负担，使团队专注于业务逻辑。
-    *   *依据*：AWS 负责底层高可用性和安全补丁，降低了运维门槛和总拥有成本（TCO）。
-3.  **理由三（可观测性）：** 托管 MLflow 提供了标准化的模型和追踪管理，解决了 LLM 应用“黑盒”难以调试和迭代的问题。
-    *   *依据*：生产环境中，没有 Trace 数据的 Agent 是无法优化的，MLflow 提供了这种数据基础。
+**支撑理由:**
+1.  **复杂度管理:** 对话本质上是递归和状态依赖的，而非线性的。
+    *   *依据:* LangGraph 的图结构比简单的链式结构更能自然映射人类的决策过程（如：循环、回退、分支）。
+2.  **工程效率与成本:** Serverless 消除了维护基础设施的负担，实现了按需付费。
+    *   *依据:* AWS Lambda/Bedrock 的计费模式避免了闲置资源的浪费。
+3.  **可观测性:** LLM 具有非确定性，没有追踪就无法调试。
+    *   *依据:* MLflow 提供了不可篡改的执行记录，是排查幻觉和逻辑错误的唯一客观依据。
 
-**反例或边界条件：**
-1.  **边界条件（成本敏感型）：** 对于超大规模、高并发且逻辑简单的应用（如简单的摘要任务），无服务器架构按 Token 和请求数计费的成本可能远高于自建微服务部署开源模型。
-2.  **边界条件（数据隐私）：** 对于涉及极度敏感数据、严禁出域的场景，无法使用公有云的 Bedrock 服务，必须转向私有化部署。
+**反例 / 边界条件:**
+1.  **高频/低延迟场景:** 如果应用需要毫秒级响应（如高频交易），Serverless 的冷启动和网络开销可能不可接受，此时保留式计算（如 Kubernetes on EC2）更优。
+2.  **极度敏感的数据合规:** 某些企业政策可能严禁数据离开本地 VPC，即便数据是加密的，此时无法使用公有云的 Bedrock 或 SageMaker 托管服务，需转向本地部署。
 
-**命题性质分析：**
-*   **事实判断**：LangGraph 支持 StateGraph；MLflow 支持 LangChain 追踪；Bedrock 支持 Claude。
-*   **价值判断**：“最优解”是一种价值判断，假设了“敏捷性”和“可维护性”的权重高于“极致性能”或“极致数据隐私”。
-*   **可检验预测**：采用此架构的团队，其从 PoC 到生产环境的迭代速度将快于采用纯自建架构的团队
+**命题分类:**
+*   **事实:** Bedrock 和 SageMaker 提供了托管服务；LangGraph 支持状态管理。
+*   **价值判断:** "最优"是相对的，基于对开发速度、维护成本和系统稳定性的综合权衡。
+*   **可检验预测:** 采用此架构的团队，其 AI 应用从 PoC 到上线的时间将比传统自建基础设施
 
 ---
 
 ## 最佳实践
 
-### 实践 1：构建健壮的 LangGraph 状态管理架构
+### 实践 1：设计健壮的有状态工作流架构
 
-**说明**: 在使用 LangGraph 构建对话 Agent 时，状态管理是核心。通过定义清晰的 TypedState 结构，确保对话历史、上下文和中间结果在不同节点间准确传递。对于复杂的对话流，应设计能够处理循环和条件分支的图结构，避免线性架构的局限性。
+**说明**:
+在构建基于 LangGraph 的对话代理时，利用 SageMaker Serverless 的无服务器特性与 LangGraph 的有状态图（Stateful Graph）能力相结合。通过定义明确的 State Schema（状态模式）来管理对话上下文，确保在无服务器函数冷启动或并发调用时，对话状态能够正确传递和恢复。这避免了传统无状态 API 带来的上下文丢失问题。
 
 **实施步骤**:
-1. 使用 `TypedDict` 定义 Agent 的状态模式，明确包含 `messages`、`user_input` 和 `agent_outcome` 等字段。
-2. 在 LangGraph 中设计条件边，根据模型输出（如工具调用需求或直接回复）路由到不同的节点。
-3. 实现检查点机制，利用 LangGraph 的内存持久化功能保存对话状态，以便支持中断和恢复。
+1. 使用 `TypedDict` 定义状态结构，包含 `messages`、`user_id` 和 `session_id` 等关键字段。
+2. 在 LangGraph 中构建 `StateGraph`，明确节点间的状态流转逻辑。
+3. 利用 LangGraph 内置的检查点功能，配置持久化存储，以便在对话中断后恢复状态。
 
-**注意事项**: 确保状态序列化与 MLflow 的日志记录兼容，避免在状态中存储无法序列化的对象（如文件句柄或数据库连接）。
+**注意事项**:
+- 确保状态对象的大小在 SageMaker Payload 限制之内（通常为 6MB），避免存储过大的中间数据。
+- 对于长时间运行的会话，实施状态清理策略，防止存储成本无限增长。
 
 ---
 
-### 实践 2：利用 SageMaker 无服务器端点实现弹性推理
+### 实践 2：实施全面的模型可观测性与追踪
 
-**说明**: 为了优化成本和资源利用率，应配置 SageMaker 无服务器端点来部署 Claude 模型或 LangGraph 应用。此实践消除了管理底层基础设施的需要，并自动根据请求流量进行扩缩容，非常适合具有间歇性流量的对话应用。
+**说明**:
+利用托管 MLflow 跟踪 Claude 模型在 LangGraph 工作流中的性能表现。通过记录 Prompt 模板、模型参数、Token 使用量和响应延迟，可以量化评估代理的质量和成本。这对于识别幻觉、优化 Prompt 以及控制 API 调用成本至关重要。
 
 **实施步骤**:
-1. 在 SageMaker 控制台中或通过 Boto3 创建模型实体，指向 ECR 中的 LangGraph 应用镜像或 Claude 模型配置。
-2. 配置端点配置，选择“无服务器”推理选项，并设置内存大小（例如 2048 MB 或 4096 MB）和最大并发实例数。
-3. 部署端点并配置 CloudWatch 警报，监控 `Invocations` 和 `ModelLatency` 指标。
+1. 在 SageMaker 项目中初始化 MLflow 实验并设置 Tracking Server。
+2. 在 LangGraph 的每个节点函数中集成 MLflow Logging，记录输入 Prompt 和 Claude 的输出。
+3. 使用 MLflow 的评估功能评估对话质量，并比较不同 Prompt 版本的效果。
 
-**注意事项**: 无服务器端点有冷启动时间。如果对首字节延迟极其敏感，请考虑配置预置并发或保留部分实例以应对突发流量。
+**注意事项**:
+- 避免在日志中记录敏感的 PII（个人身份信息），在记录前对敏感数据进行脱敏处理。
+- 注意高并发下的日志写入异步性，防止日志记录阻塞主线程导致响应变慢。
 
 ---
 
-### 实践 3：使用托管 MLflow 进行严格的实验跟踪与版本控制
+### 实践 3：优化无服务器资源配置与冷启动
 
-**说明**: 在迭代开发 Agent 的过程中，利用 SageMaker 托管的 MLflow 实例来记录每一次实验的超参数、Prompt 模板和评估指标。这确保了模型性能的可复现性，并便于在多个版本之间回滚或选择最佳模型。
+**说明**:
+SageMaker Serverless Inference 会自动管理计算资源，但合理的内存配置可以显著降低成本和延迟。Claude 模型（尤其是 Haiku 和 Sonnet）在推理时对内存有特定要求，配置过小会导致内存溢出，配置过大则造成浪费。
 
 **实施步骤**:
-1. 初始化 MLflow 实验并设置自动记录功能，捕获 LangChain 或 LangGraph 的运行参数。
-2. 在训练或评估脚本中，使用 `mlflow.log_param()` 记录 Claude 模型的 `temperature`、`max_tokens` 以及 Prompt 的版本哈希。
-3. 使用 `mlflow.evaluate()` 自动计算并记录对话质量指标（如响应相关性、幻觉率等），并将结果关联到特定的运行 ID。
+1. 根据所选 Claude 模型（如 Claude 3 Haiku 或 Sonnet）和 LangGraph 的上下文长度，预估所需内存。
+2. 在 SageMaker Endpoint 配置中设置合适的内存大小（如 2048 MB 或 4096 MB）和最大并发实例数。
+3. 实施预置并发策略，保持最小实例数以应对突发流量，减少冷启动影响。
 
-**注意事项**: 不要将敏感数据（如 PII 或真实的 API Key）记录到 MLflow 的 Params 或 Artifacts 中。对于 Prompt 模板，建议使用引用 ID 而非硬编码文本。
+**注意事项**:
+- 监控 CloudWatch 指标中的 `Invocations` 和 `ModelLatency`，动态调整内存配置。
+- 对于复杂的推理链，考虑增加内存超时时间限制，防止大模型推理时间过长导致实例被回收。
 
 ---
 
-### 实践 4：实施 Prompt 模板化与动态注入
+### 实践 4：构建基于工具调用的安全代理循环
 
-**说明**: 避免在代码中硬编码 Prompt。最佳实践是将 Prompt 模板化，并根据用户上下文或检索到的知识库片段动态注入内容。这有助于提高 Claude 模型在特定任务上的准确性，并便于后续的 A/B 测试。
+**说明**:
+利用 Claude 的 Function Calling 能力结合 LangGraph 的循环图结构，实现能够调用外部工具（如数据库查询或 API 请求）的智能代理。必须设计“人机协同”或“安全护栏”机制，防止代理执行破坏性操作或访问未授权资源。
 
 **实施步骤**:
-1. 创建 Prompt 模板文件（如 Jinja 格式），定义系统消息、少样本示例和用户输入占位符。
-2. 在 LangGraph 的节点逻辑中，加载模板并结合 RAG 检索到的文档片段填充占位符。
-3. 通过 MLflow UI 跟踪不同模板版本的效果，建立 Prompt 版本控制策略。
+1. 在 LangGraph 中定义 `tools` 节点，并将外部 API 封装为 Python 函数供 Claude 调用。
+2. 设置条件边，根据模型的输出决定是调用工具、返回答案还是请求人类协助。
+3. 在工具执行层添加严格的参数验证和权限检查。
 
-**注意事项**: 确保动态注入的内容经过清洗，防止通过注入攻击绕过系统的安全护栏。
+**注意事项**:
+- 限制工具调用的递归深度，防止代理陷入无限循环或死循环。
+- 对所有外部工具调用实施超时控制，避免因外部服务故障导致整个对话流挂起。
 
 ---
 
-### 实践 5：建立全面的评估与反馈循环机制
+### 实践 5：建立高效的提示词工程与版本管理
 
-**说明**: 仅仅依赖人工检查对话质量是不可扩展的。应建立自动化的评估流水线，利用 Claude 3.5 Sonnet 等模型作为“评判者”，对 Agent 的输出进行打分，并将反馈数据回流至 MLflow 用于持续改进。
+**说明**:
+Claude 模型对 Prompt 的质量非常敏感。最佳实践要求将 System Prompt 与用户输入分离，并通过 MLflow 对 Prompt 模板进行版本化管理。这有助于在不修改代码的情况下快速迭代对话代理的行为。
 
 **实施步骤**:
-1. 定义评估数据集，包含典型的用户查询及其对应的理想回答。
-2. 编写评估脚本，调用 Claude 模型对比 Agent 实际输出与理想回答，生成 1-5 分的评分。
-3. 将评估指标作为 MLflow 运行的一部分进行记录，并设置阈值（如 F1 分数低于 0.8 则触发警报）。
+1. 创建专门的 Prompt 模板文件，定义代理的角色、性格和限制条件。
+2. 利用 LangChain 的 PromptTemplate 模块加载和管理这些模板。
+3. 使用 MLflow 将不同版本的 Prompt 模板作为 Artifact 进行注册和追踪。
 
-**注意事项**: 评估模型本身也可能产生偏见或错误，应定期人工抽检自动化评估的结果，确保“评判者”模型的准确性。
+**注意事项**:
+- 在 Prompt 中明确指示模型输出格式（如 JSON），以便 LangGraph 能够正确解析后续步骤。
+- 定期审查 Prompt 以确保其符合 Anthropic 的负责任 AI 使用准则。
 
 ---
 
-### 实践 6：强化安全性与护栏措施
+### 实践 6：实施严格的错误处理与重试机制
 
-**说明**: 在构建面向用户的 Agent 时，必须防止模型生成有害内容或泄露敏感信息。利用 Amazon Bedrock Guardrails 或在 LangGraph 节点中添加过滤逻辑，在输入和输出两个层面进行审查。
+**说明**:
+在分布式无服务器架构中，网络抖动、限流或模型服务不可用是常态。构建具有弹性的代理需要在这些故障发生时优雅降级，而不是直接
 
 ---
 
 ## 学习要点
 
-- 利用 LangGraph 构建基于 Claude 的有状态对话代理，通过循环图结构实现复杂的多轮对话逻辑和工具调用。
-- 在 Amazon SageMaker 上使用托管 MLflow 实现模型全生命周期的集中管理，确保实验的可追溯性与部署的标准化。
-- 采用无服务器架构部署 LangGraph 应用，利用 AWS Lambda 按需计算资源，实现成本优化与自动弹性伸缩。
-- 集成 Amazon Bedrock 中的 Claude 模型，结合 LangGraph 的状态管理机制，高效处理需要上下文记忆的复杂任务。
-- 通过 LangChain 生态工具与 SageMaker 托管服务的深度集成，简化了从 AI 实验开发到生产环境部署的端到端工作流。
+- 利用 LangGraph 构建基于状态机的架构，能够有效管理对话历史和上下文，实现具备记忆能力的复杂多轮对话工作流。
+- 集成托管式 MLflow 与 Amazon SageMaker AI，建立了从模型实验、追踪到部署的标准化 MLOps 流程，显著提升了开发迭代效率。
+- 采用无服务器架构部署 AI 智能体，不仅降低了基础设施运维成本，还能根据对话流量自动伸缩，实现按需付费。
+- 通过将 Claude 3 模型与 LangGraph 的循环图结构结合，解决了传统线性链无法处理动态决策和逻辑回退的高级推理难题。
+- 利用 SageMaker AI 的端到端托管能力，开发者可以专注于核心业务逻辑的构建，而无需处理底层模型服务器的配置与维护。
+- 该方案展示了如何将生成式 AI 与企业级数据治理工具（MLflow）融合，为构建生产级、可观测的智能体应用提供了最佳实践。
 
 ---
 
@@ -361,14 +375,14 @@ scenarios:
 
 ## 站内链接
 
-- 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [后端](/categories/%E5%90%8E%E7%AB%AF/)
-- 标签： [LangGraph](/tags/langgraph/) / [Amazon Bedrock](/tags/amazon-bedrock/) / [SageMaker](/tags/sagemaker/) / [MLflow](/tags/mlflow/) / [Agent](/tags/agent/) / [LLM](/tags/llm/) / [无服务器](/tags/%E6%97%A0%E6%9C%8D%E5%8A%A1%E5%99%A8/) / [RAG](/tags/rag/)
-- 场景： [AI/ML项目](/scenarios/ai-ml%E9%A1%B9%E7%9B%AE/) / [大语言模型](/scenarios/%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/) / [RAG应用](/scenarios/rag%E5%BA%94%E7%94%A8/)
+- 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)
+- 标签： [LangGraph](/tags/langgraph/) / [Bedrock](/tags/bedrock/) / [SageMaker](/tags/sagemaker/) / [MLflow](/tags/mlflow/) / [Agent](/tags/agent/) / [Serverless](/tags/serverless/) / [Claude](/tags/claude/) / [AWS](/tags/aws/)
+- 场景： [AI/ML项目](/scenarios/ai-ml%E9%A1%B9%E7%9B%AE/)
 
 ### 相关文章
 
-- [基于Amazon Bedrock AgentCore构建统一智能系统]({{< relref "posts/20260219-blogs_podcasts-build-unified-intelligence-with-amazon-bedrock-age-2.md" >}})
-- [利用 Amazon Bedrock 构建具备记忆与个性化能力的活动助手]({{< relref "posts/20260226-blogs_podcasts-building-intelligent-event-agents-using-amazon-bed-5.md" >}})
-- [LinqAlpha利用Amazon Bedrock构建“唱反调”机制以压力测试投资逻辑]({{< relref "posts/20260212-blogs_podcasts-how-linqalpha-assesses-investment-theses-using-dev-7.md" >}})
-- [基于 Amazon Bedrock 构建AI招聘系统优化人才获取流程]({{< relref "posts/20260215-blogs_podcasts-ai-meets-hr-transforming-talent-acquisition-with-a-8.md" >}})
-- [基于Amazon Bedrock构建AI招聘系统优化人才获取流程]({{< relref "posts/20260217-blogs_podcasts-ai-meets-hr-transforming-talent-acquisition-with-a-10.md" >}})
+- [基于Bedrock与LangGraph在SageMaker构建无服务器对话代理]({{< relref "posts/20260302-blogs_podcasts-build-a-serverless-conversational-ai-agent-using-c-1.md" >}})
+- [基于Bedrock与LangGraph构建SageMaker无服务器AI对话代理]({{< relref "posts/20260302-blogs_podcasts-build-a-serverless-conversational-ai-agent-using-c-1.md" >}})
+- [基于Bedrock与LangGraph在SageMaker构建无服务器对话代理]({{< relref "posts/20260302-blogs_podcasts-build-a-serverless-conversational-ai-agent-using-c-1.md" >}})
+- [基于Amazon SageMaker AI构建无服务器Claude对话代理]({{< relref "posts/20260302-blogs_podcasts-build-a-serverless-conversational-ai-agent-using-c-1.md" >}})
+- [亚马逊Bedrock在东南亚及台湾推出Anthropic Claude模型]({{< relref "posts/20260224-blogs_podcasts-global-cross-region-inference-for-latest-anthropic-2.md" >}})

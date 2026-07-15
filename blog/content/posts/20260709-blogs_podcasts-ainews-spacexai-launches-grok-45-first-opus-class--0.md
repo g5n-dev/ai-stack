@@ -1,14 +1,30 @@
 ---
-title: "SpaceXAI推出Grok 4.5 首个Opus级模型"
-date: 2026-07-09T15:48:00+08:00
+title: SpaceXAI推出Grok 4.5 首个Opus级模型
+date: 2026-07-09 15:48:00+08:00
 draft: false
-entry_kind: "auto"
-tags: ["SpaceXAI", "Grok 4.5", "Opus级模型", "AI新闻", "Cursor收购", "前沿模型", "LLM", "大模型动态"]
-categories: ["大模型"]
+entry_kind: auto
+tags:
+- SpaceXAI
+- Grok 4.5
+- Opus级模型
+- AI新闻
+- Cursor收购
+- 前沿模型
+- LLM
+- 大模型动态
+categories:
+- 大模型
 source: blogs_podcasts
-description: "发布概况 SpaceXAI 近期推出 Grok 4.5，这是收购 Cursor 后首个 Opus 级模型，标志着该公司在多模态大模型领域实现突破。 技术亮点 Grok 4.5 采用全新稀疏 Transformer 架构，参数量提升至约 1.2 万亿 tokens，训练数据覆盖公开网页、科研文献和专有代码库。与前代相比，"
+description: 发布概况 SpaceXAI 近期推出 Grok 4.5，这是收购 Cursor 后首个 Opus 级模型，标志着该公司在多模态大模型领域实现突破。
+  技术亮点 Grok 4.5 采用全新稀疏 Transformer 架构，参数量提升至约 1.2 万亿 tokens，训练数据覆盖公开网页、科研文献和专有代码库。与前代相比，
 external_url: https://www.latent.space/p/ainews-spacexai-launches-grok-45
-scenarios: ["AI/ML项目", "大语言模型"]
+scenarios:
+- AI/ML项目
+- 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # SpaceXAI推出Grok 4.5 首个Opus级模型
@@ -135,9 +151,9 @@ Grok 4.5虽具备强大的通用能力，但在特定垂直领域的专业知识
 
 ### 相关文章
 
-- [心理越狱揭示前沿模型内部冲突]({{< relref "posts/20260205-hacker_news-psychometric-jailbreaks-reveal-internal-conflict-i-11.md" >}})
+- [心理越狱揭示前沿模型内部冲突]({{< relref "posts/20260205-hacker_news-psychometric-jailbreaks-reveal-internal-conflict-i-10.md" >}})
 - [AI News：数十场发布会背后的共同主题是“闭环”]({{< relref "posts/20260225-blogs_podcasts-ainews-the-unreasonable-effectiveness-of-closing-t-1.md" >}})
-- [OpenAI发布GPT-5.4：支持百万token上下文与计算机操作的前沿模型]({{< relref "posts/20260307-blogs_podcasts-introducing-gpt-54-13.md" >}})
-- [OpenAI发布GPT-5.4：百万token上下文与代码能力前沿模型]({{< relref "posts/20260308-blogs_podcasts-introducing-gpt-54-13.md" >}})
+- [OpenAI发布GPT-5.4：支持百万token上下文与计算机操作的前沿模型]({{< relref "posts/20260305-blogs_podcasts-introducing-gpt-54-6.md" >}})
+- [OpenAI发布GPT-5.4：百万token上下文与代码能力前沿模型]({{< relref "posts/20260305-blogs_podcasts-introducing-gpt-54-6.md" >}})
 - [Gemma 4下载量突破200万次]({{< relref "posts/20260407-blogs_podcasts-ainews-gemma-4-crosses-2-million-downloads-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

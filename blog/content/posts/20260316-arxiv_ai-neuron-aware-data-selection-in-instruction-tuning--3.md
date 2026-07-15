@@ -14,6 +14,12 @@ description: 本文介绍了一种名为 **NAIT (Neuron-Aware Instruction Tuning
 external_url: http://arxiv.org/abs/2603.13201v1
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260317-arxiv_ai-neuron-aware-data-selection-in-instruction-tuning--3/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 面向神经元的大模型指令调优数据选择方法

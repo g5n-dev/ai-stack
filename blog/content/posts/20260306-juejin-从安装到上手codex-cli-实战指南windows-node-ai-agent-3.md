@@ -22,6 +22,10 @@ external_url: https://juejin.cn/post/7613658235174387727
 scenarios:
 - AI/ML项目
 - 命令行工具
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # OpenAI Codex CLI 终端实战指南：安装配置与代码修改
@@ -191,8 +195,8 @@ AI Agent 生成代码的质量高度依赖于上下文。如果指令过于模�
 
 ### 相关文章
 
-- [Aqua：面向 AI 智能体的 CLI 消息工具]({{< relref "posts/20260223-hacker_news-aqua-a-cli-message-tool-for-ai-agents-14.md" >}})
-- [Claude Code 发布：面向基础设施的编程工具]({{< relref "posts/20260205-hacker_news-claude-code-for-infrastructure-7.md" >}})
+- [Aqua：面向 AI 智能体的 CLI 消息工具]({{< relref "posts/20260223-hacker_news-aqua-a-cli-message-tool-for-ai-agents-7.md" >}})
+- [Claude Code 发布：面向基础设施的编程工具]({{< relref "posts/20260204-hacker_news-claude-code-for-infrastructure-11.md" >}})
 - [Smooth CLI：面向 AI 智能体的低 Token 浏览器]({{< relref "posts/20260206-hacker_news-show-hn-smooth-cli-token-efficient-browser-for-ai--11.md" >}})
-- [Smooth CLI：面向 AI 智能体的低 Token 开销浏览器]({{< relref "posts/20260206-hacker_news-show-hn-smooth-cli-token-efficient-browser-for-ai--14.md" >}})
-- [Smooth CLI：面向 AI 智能体的低 Token 开销浏览器]({{< relref "posts/20260206-hacker_news-show-hn-smooth-cli-token-efficient-browser-for-ai--16.md" >}})
+- [Smooth CLI：面向 AI 智能体的低 Token 开销浏览器]({{< relref "posts/20260206-hacker_news-show-hn-smooth-cli-token-efficient-browser-for-ai--11.md" >}})
+- [Smooth CLI：面向 AI 智能体的低 Token 开销浏览器]({{< relref "posts/20260206-hacker_news-show-hn-smooth-cli-token-efficient-browser-for-ai--11.md" >}})

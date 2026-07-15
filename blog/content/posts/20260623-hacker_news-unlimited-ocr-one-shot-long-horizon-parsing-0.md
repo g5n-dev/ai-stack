@@ -1,14 +1,29 @@
 ---
-title: "无限OCR：一次性长文本解析技术"
-date: 2026-06-23T12:51:35+08:00
+title: 无限OCR：一次性长文本解析技术
+date: 2026-06-23 12:51:35+08:00
 draft: false
-entry_kind: "auto"
-tags: ["无限OCR", "一次性解析", "长文本", "文档理解", "文本提取", "深度学习", "开源", "AI模型"]
-categories: ["AI 工程", "论文"]
+entry_kind: auto
+tags:
+- 无限OCR
+- 一次性解析
+- 长文本
+- 文档理解
+- 文本提取
+- 深度学习
+- 开源
+- AI 模型
+categories:
+- AI 工程
+- 论文
 source: hacker_news
-description: "本文针对传统光学字符识别在处理长文档时需分段、反复校准的痛点，提出 Unlimited OCR 框架，实现一次性长序列解析。通过单一示例完成模型适配，显著降低标注成本并提升识别鲁棒性。文章将详细阐述模型结构、训练策略以及在多语言文档、医学报告等场景下的实验结果，帮助研发团队快速评估该技术在实际产品中的可行性。"
+description: 本文针对传统光学字符识别在处理长文档时需分段、反复校准的痛点，提出 Unlimited OCR 框架，实现一次性长序列解析。通过单一示例完成模型适配，显著降低标注成本并提升识别鲁棒性。文章将详细阐述模型结构、训练策略以及在多语言文档、医学报告等场景下的实验结果，帮助研发团队快速评估该技术在实际产品中的可行性。
 external_url: https://github.com/baidu/Unlimited-OCR
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 无限OCR：一次性长文本解析技术
@@ -78,6 +93,6 @@ scenarios: ["AI/ML项目"]
 - [Mac运行TRELLIS.2图像转3D无需Nvidia GPU]({{< relref "posts/20260420-hacker_news-show-hn-trellis2-image-to-3d-running-on-mac-silico-0.md" >}})
 - [OlmoEarth v1.1：更高效的模型系列]({{< relref "posts/20260519-blogs_podcasts-olmoearth-v11-a-more-efficient-family-of-models-0.md" >}})
 - [谷歌发布 Nano Banana 2：最新 AI 图像生成模型]({{< relref "posts/20260226-hacker_news-nano-banana-2-googles-latest-ai-image-generation-m-1.md" >}})
-- [谷歌发布 Nano Banana 2 AI 图像生成模型]({{< relref "posts/20260226-hacker_news-nano-banana-2-googles-latest-ai-image-generation-m-18.md" >}})
-- [谷歌发布 Nano Banana 2 AI 图像生成模型]({{< relref "posts/20260226-hacker_news-nano-banana-2-googles-latest-ai-image-generation-m-4.md" >}})
+- [谷歌发布 Nano Banana 2 AI 图像生成模型]({{< relref "posts/20260226-hacker_news-nano-banana-2-googles-latest-ai-image-generation-m-1.md" >}})
+- [谷歌发布 Nano Banana 2 AI 图像生成模型]({{< relref "posts/20260226-hacker_news-nano-banana-2-googles-latest-ai-image-generation-m-1.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

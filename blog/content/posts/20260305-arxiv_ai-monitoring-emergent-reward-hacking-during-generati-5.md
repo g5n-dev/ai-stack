@@ -21,6 +21,10 @@ description: '**总结：基于内部激活生成的奖励黑客行为监测** *
 external_url: http://arxiv.org/abs/2603.04069v1
 scenarios:
 - Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 基于内部激活监测生成过程中的突发奖励黑客行为
@@ -363,8 +367,8 @@ scenarios:
 
 ### 相关文章
 
-- [Anthropic 模型蒸馏与 SWE-Bench 作弊机制分析]({{< relref "posts/20260227-blogs_podcasts-live-anthropic-distillation-how-models-cheat-swe-b-0.md" >}})
+- [Anthropic 模型蒸馏与 SWE-Bench 作弊机制分析]({{< relref "posts/20260226-blogs_podcasts-live-anthropic-distillation-how-models-cheat-swe-b-0.md" >}})
 - [训练万亿参数模型使其具备幽默感]({{< relref "posts/20260203-hacker_news-training-a-trillion-parameter-model-to-be-funny-15.md" >}})
 - [重新思考大模型强化学习中的信任区域]({{< relref "posts/20260205-arxiv_ai-rethinking-the-trust-region-in-llm-reinforcement-l-3.md" >}})
 - [心理越狱揭示前沿模型内部冲突]({{< relref "posts/20260205-hacker_news-psychometric-jailbreaks-reveal-internal-conflict-i-10.md" >}})
-- [重新思考大模型强化学习中的信任区域机制]({{< relref "posts/20260206-arxiv_ai-rethinking-the-trust-region-in-llm-reinforcement-l-3.md" >}})
+- [重新思考大模型强化学习中的信任区域机制]({{< relref "posts/20260205-arxiv_ai-rethinking-the-trust-region-in-llm-reinforcement-l-3.md" >}})

@@ -22,6 +22,10 @@ external_url: https://juejin.cn/post/7608382961723555890
 scenarios:
 - AI/ML项目
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Claude Code Skills 系统实战：构建领域专家级助手
@@ -206,8 +210,8 @@ Skills 实战将向“多智能体协同”和“自主智能体”方向发展�
 
 ### 相关文章
 
-- [构建极简且固执的编程代理的经验总结]({{< relref "posts/20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-10.md" >}})
-- [构建极简编程代理的技术实践与经验总结]({{< relref "posts/20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-17.md" >}})
-- [Claude Code 配额耗尽时接入本地模型的方法]({{< relref "posts/20260205-hacker_news-claude-code-connect-to-a-local-model-when-your-quo-3.md" >}})
+- [构建极简且固执的编程代理的经验总结]({{< relref "posts/20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-1.md" >}})
+- [构建极简编程代理的技术实践与经验总结]({{< relref "posts/20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-1.md" >}})
+- [Claude Code 配额耗尽时接入本地模型的方法]({{< relref "posts/20260204-hacker_news-claude-code-connect-to-a-local-model-when-your-quo-5.md" >}})
 - [构建极简且具倾向性的编程代理的经验总结]({{< relref "posts/20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-1.md" >}})
 - [利用AI高效编写高质量代码的实践方法]({{< relref "posts/20260206-hacker_news-how-to-effectively-write-quality-code-with-ai-3.md" >}})

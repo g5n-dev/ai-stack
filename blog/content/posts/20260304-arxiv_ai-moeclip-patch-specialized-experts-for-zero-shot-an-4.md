@@ -20,6 +20,10 @@ description: '**MoECLIP：基于补丁专家的零样本异常检测模型总结
 external_url: http://arxiv.org/abs/2603.03101v1
 scenarios:
 - 命令行工具
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # MoECLIP：基于补丁专家的零样本异常检测
@@ -419,6 +423,6 @@ MoECLIP 的设计考虑了计算效率。虽然引入了混合专家模型，但
 
 - [🤖抽屉打不开？揭秘零样本组合动作识别中的“物体捷径”！]({{< relref "posts/20260125-arxiv_ai-why-cant-i-open-my-drawer-mitigating-object-driven-0.md" >}})
 - [基于表征编码器解锁标准扩散Transformer]({{< relref "posts/20260211-arxiv_ai-learning-on-the-manifold-unlocking-standard-diffus-3.md" >}})
-- [在SageMaker AI与Bedrock上利用vLLM高效部署多LoRA及MoE模型]({{< relref "posts/20260226-blogs_podcasts-efficiently-serve-dozens-of-fine-tuned-models-with-3.md" >}})
-- [在 SageMaker AI 与 Bedrock 上高效部署多 LoRA 模型]({{< relref "posts/20260226-blogs_podcasts-efficiently-serve-dozens-of-fine-tuned-models-with-7.md" >}})
+- [在SageMaker AI与Bedrock上利用vLLM高效部署多LoRA及MoE模型]({{< relref "posts/20260225-blogs_podcasts-efficiently-serve-dozens-of-fine-tuned-models-with-0.md" >}})
+- [在 SageMaker AI 与 Bedrock 上高效部署多 LoRA 模型]({{< relref "posts/20260225-blogs_podcasts-efficiently-serve-dozens-of-fine-tuned-models-with-0.md" >}})
 - [🚀动态场景新视角合成！AnyView实现任意视角自由切换！🤯]({{< relref "posts/20260126-arxiv_ai-anyview-synthesizing-any-novel-view-in-dynamic-sce-0.md" >}})

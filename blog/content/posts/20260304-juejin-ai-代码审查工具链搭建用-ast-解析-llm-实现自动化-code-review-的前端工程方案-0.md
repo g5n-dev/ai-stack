@@ -22,6 +22,10 @@ description: 这是一份基于标题、副标题及开头片段的**内容概�
 external_url: https://juejin.cn/post/7613237473859256329
 scenarios:
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AST 解析结合 LLM 实现自动化 Code Review 的前端工程方案
@@ -197,8 +201,8 @@ LLM 的非确定性是工程落地的最大挑战，可以通过以下工程手�
 
 ### 相关文章
 
-- [构建极简且具倾向性的编程代理的经验总结]({{< relref "posts/20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-3.md" >}})
-- [软件工厂与智能体时刻]({{< relref "posts/20260208-hacker_news-software-factories-and-the-agentic-moment-6.md" >}})
-- [软件工厂与代理时刻：AI 编程范式的演进]({{< relref "posts/20260208-hacker_news-software-factories-and-the-agentic-moment-9.md" >}})
-- [利用 Codex 构建以 Agent 为中心的工程化实践]({{< relref "posts/20260212-blogs_podcasts-harness-engineering-leveraging-codex-in-an-agent-f-9.md" >}})
+- [构建极简且具倾向性的编程代理的经验总结]({{< relref "posts/20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-1.md" >}})
+- [软件工厂与智能体时刻]({{< relref "posts/20260207-hacker_news-software-factories-and-the-agentic-moment-4.md" >}})
+- [软件工厂与代理时刻：AI 编程范式的演进]({{< relref "posts/20260207-hacker_news-software-factories-and-the-agentic-moment-4.md" >}})
+- [利用 Codex 构建以 Agent 为中心的工程化实践]({{< relref "posts/20260211-blogs_podcasts-harness-engineering-leveraging-codex-in-an-agent-f-5.md" >}})
 - [AI 提升编程愉悦感与开发效率]({{< relref "posts/20260219-hacker_news-ai-made-coding-more-enjoyable-5.md" >}})

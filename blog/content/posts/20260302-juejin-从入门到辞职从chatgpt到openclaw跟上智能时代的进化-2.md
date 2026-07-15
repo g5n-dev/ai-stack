@@ -21,6 +21,10 @@ description: 随着大模型技术的快速迭代，从 ChatGPT 的爆火到 Ope
 external_url: https://juejin.cn/post/7612288284083027994
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 从ChatGPT到OpenClaw：梳理模型、工程与框架的AI进化脉络
@@ -167,7 +171,7 @@ scenarios:
 ### 相关文章
 
 - [OpenClaw：开源AI助手平台架构与演进]({{< relref "posts/20260228-juejin-openclaw开源ai助手平台的革命之路-0.md" >}})
-- [Agent评估显示AGENTS.md配置优于Skills]({{< relref "posts/20260130-hacker_news-agentsmd-outperforms-skills-in-our-agent-evals-8.md" >}})
-- [压缩智能体：Agent Skills 技术解析]({{< relref "posts/20260130-hacker_news-compressed-agentsmd-agent-skills-8.md" >}})
-- [构建极简编程代理的技术实践与经验总结]({{< relref "posts/20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-6.md" >}})
-- [GLM-5：面向复杂系统工程与长周期智能体任务]({{< relref "posts/20260212-hacker_news-glm-5-targeting-complex-systems-engineering-and-lo-16.md" >}})
+- [Agent评估显示AGENTS.md配置优于Skills]({{< relref "posts/20260129-hacker_news-compressed-agentsmd-agent-skills-5.md" >}})
+- [压缩智能体：Agent Skills 技术解析]({{< relref "posts/20260129-hacker_news-compressed-agentsmd-agent-skills-5.md" >}})
+- [构建极简编程代理的技术实践与经验总结]({{< relref "posts/20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-1.md" >}})
+- [GLM-5：面向复杂系统工程与长周期智能体任务]({{< relref "posts/20260211-hacker_news-glm-5-from-vibe-coding-to-agentic-engineering-1.md" >}})

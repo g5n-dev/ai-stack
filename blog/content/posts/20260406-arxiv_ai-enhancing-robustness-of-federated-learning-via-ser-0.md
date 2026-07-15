@@ -1,14 +1,29 @@
 ---
-title: "服务器学习驱动的联邦学习鲁棒性提升"
-date: 2026-04-06T23:56:35+08:00
+title: 服务器学习驱动的联邦学习鲁棒性提升
+date: 2026-04-06 23:56:35+08:00
 draft: false
-entry_kind: "auto"
-tags: ["联邦学习", "服务器学习", "鲁棒性", "隐私保护", "对抗攻击", "模型聚合", "通信效率", "分布式系统"]
-categories: ["论文", "AI 工程"]
+entry_kind: auto
+tags:
+- 联邦学习
+- 服务器学习
+- 鲁棒性
+- 隐私保护
+- 对抗攻击
+- 模型聚合
+- 通信效率
+- 分布式系统
+categories:
+- 论文
+- AI 工程
 source: arxiv
-description: "该研究聚焦联邦学习中对抗恶意客户端或噪声数据的鲁棒性问题，提出在服务器端引入学习机制以动态调整聚合策略，从而在不增加通信开销的前提下提升模型抵御攻击的能力。该方法通过在服务器侧构建轻量模型，对客户端更新进行筛选和加权，实验显示在多种攻击场景下模型精度和鲁棒性均有提升。若后续在真实分布式系统上验证并结合差分隐私等技术，可"
+description: 该研究聚焦联邦学习中对抗恶意客户端或噪声数据的鲁棒性问题，提出在服务器端引入学习机制以动态调整聚合策略，从而在不增加通信开销的前提下提升模型抵御攻击的能力。该方法通过在服务器侧构建轻量模型，对客户端更新进行筛选和加权，实验显示在多种攻击场景下模型精度和鲁棒性均有提升。若后续在真实分布式系统上验证并结合差分隐私等技术，可
 external_url: http://arxiv.org/abs/2604.03226v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 服务器学习驱动的联邦学习鲁棒性提升
@@ -101,6 +116,6 @@ scenarios: ["Web应用开发"]
 - [ProxyFL：面向联邦半监督学习的代理引导框架]({{< relref "posts/20260225-arxiv_ai-proxyfl-a-proxy-guided-framework-for-federated-sem-2.md" >}})
 - [异步联邦学习聚合中梯度陈旧度评估的距离指标研究]({{< relref "posts/20260310-arxiv_ai-revisiting-gradient-staleness-evaluating-distance--0.md" >}})
 - [FedCova：抗噪标签的鲁棒联邦协方差学习框架]({{< relref "posts/20260305-arxiv_ai-fedcova-robust-federated-covariance-learning-again-7.md" >}})
-- [基于急停干预的鲁棒干预学习]({{< relref "posts/20260205-arxiv_ai-robust-intervention-learning-from-emergency-stop-i-7.md" >}})
+- [基于急停干预的鲁棒干预学习]({{< relref "posts/20260204-arxiv_ai-robust-intervention-learning-from-emergency-stop-i-7.md" >}})
 - [基于扩散模型从面部嵌入实现真实人脸重建]({{< relref "posts/20260216-arxiv_ai-realistic-face-reconstruction-from-facial-embeddin-6.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

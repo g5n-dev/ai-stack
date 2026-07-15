@@ -21,6 +21,12 @@ description: 以下是对该内容的中文总结： 本文介绍了一种针对
 external_url: http://arxiv.org/abs/2603.06555v1
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260310-arxiv_ai-hierarchical-industrial-demand-forecasting-with-te-7/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 分层工业需求预测：时序与不确定性解释
@@ -509,7 +515,7 @@ scenarios:
 ### 相关文章
 
 - [决策树：嵌套决策规则的强大效能]({{< relref "posts/20260301-hacker_news-decision-trees-the-unreasonable-power-of-nested-de-1.md" >}})
-- [决策树：嵌套决策规则的强大效能]({{< relref "posts/20260301-hacker_news-decision-trees-the-unreasonable-power-of-nested-de-5.md" >}})
+- [决策树：嵌套决策规则的强大效能]({{< relref "posts/20260301-hacker_news-decision-trees-the-unreasonable-power-of-nested-de-1.md" >}})
 - [TaxonRL：基于中间奖励的可解释细粒度视觉推理]({{< relref "posts/20260305-arxiv_ai-taxonrl-reinforcement-learning-with-intermediate-r-7.md" >}})
 - [可扩展随机小波特征：带收敛保证的高效非平稳核近似]({{< relref "posts/20260203-arxiv_ai-scalable-random-wavelet-features-efficient-non-sta-8.md" >}})
 - [Harpoon：面向条件表格扩散模型的广义流形引导]({{< relref "posts/20260210-arxiv_ai-harpoon-generalised-manifold-guidance-for-conditio-1.md" >}})

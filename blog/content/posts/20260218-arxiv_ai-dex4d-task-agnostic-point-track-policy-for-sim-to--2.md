@@ -1,14 +1,32 @@
 ---
-title: "Dex4D：任务无关点跟踪策略实现灵巧操作跨域迁移"
-date: 2026-02-18T21:10:38+08:00
+title: Dex4D：任务无关点跟踪策略实现灵巧操作跨域迁移
+date: 2026-02-18 21:10:38+08:00
 draft: false
-entry_kind: "auto"
-tags: ["灵巧操作", "Sim-to-Real", "强化学习", "机器人", "点跟踪策略", "迁移学习", "Dex4D", "cs.RO"]
-categories: ["论文", "AI 工程"]
+entry_kind: auto
+tags:
+- 灵巧操作
+- Sim-to-Real
+- 强化学习
+- 机器人
+- 点跟踪策略
+- 迁移学习
+- Dex4D
+- cs.RO
+categories:
+- 论文
+- AI 工程
 source: arxiv
-description: "以下是关于《Dex4D: Task-Agnostic Point Track Policy for Sim-to-Real Dexterous Manipulation》的中文总结： **核心背景与挑战** 灵巧操作中，通过现实世界的遥操作收集大规模数据成本高昂且难以扩展。虽然利用仿真训练是替代方案，但针对每个任务专门"
+description: '以下是关于《Dex4D: Task-Agnostic Point Track Policy for Sim-to-Real Dexterous
+  Manipulation》的中文总结： **核心背景与挑战** 灵巧操作中，通过现实世界的遥操作收集大规模数据成本高昂且难以扩展。虽然利用仿真训练是替代方案，但针对每个任务专门'
 external_url: http://arxiv.org/abs/2602.15828v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+aliases:
+- /posts/20260219-arxiv_ai-dex4d-task-agnostic-point-track-policy-for-sim-to--2/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Dex4D：任务无关点跟踪策略实现灵巧操作跨域迁移
@@ -519,8 +537,8 @@ Dex4D 揭示了**“以运动为中心”**的学习范式可能比“以任务�
 ### 相关文章
 
 - [仿真筛选模块化策略：从人类视频学习有效行为]({{< relref "posts/20260216-arxiv_ai-imitating-what-works-simulation-filtered-modular-p-0.md" >}})
-- [基于流策略梯度的机器人控制方法]({{< relref "posts/20260204-arxiv_ai-flow-policy-gradients-for-robot-control-6.md" >}})
+- [基于流策略梯度的机器人控制方法]({{< relref "posts/20260203-arxiv_ai-flow-policy-gradients-for-robot-control-6.md" >}})
 - [NVIDIA Cosmos策略：提升机器人控制能力]({{< relref "posts/20260129-blogs_podcasts-introducing-nvidia-cosmos-policy-for-advanced-robo-0.md" >}})
-- [NVIDIA Cosmos策略：提升机器人高级控制能力]({{< relref "posts/20260130-blogs_podcasts-introducing-nvidia-cosmos-policy-for-advanced-robo-1.md" >}})
-- [NVIDIA Cosmos 策略模型提升机器人控制精度]({{< relref "posts/20260131-blogs_podcasts-introducing-nvidia-cosmos-policy-for-advanced-robo-1.md" >}})
+- [NVIDIA Cosmos策略：提升机器人高级控制能力]({{< relref "posts/20260129-blogs_podcasts-introducing-nvidia-cosmos-policy-for-advanced-robo-0.md" >}})
+- [NVIDIA Cosmos 策略模型提升机器人控制精度]({{< relref "posts/20260129-blogs_podcasts-introducing-nvidia-cosmos-policy-for-advanced-robo-0.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

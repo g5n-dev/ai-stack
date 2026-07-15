@@ -23,6 +23,10 @@ external_url: https://juejin.cn/post/7616654151095615531
 scenarios:
 - AI/ML项目
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 3分钟搭建AI开发团队：Agency-Agents实战指南
@@ -184,8 +188,8 @@ Agency-Agents（代理智能体架构）是一种将复杂任务拆解并分配�
 
 ### 相关文章
 
-- [编排多会话 Claude Code 团队协作]({{< relref "posts/20260205-hacker_news-orchestrate-teams-of-claude-code-sessions-3.md" >}})
-- [Agent-to-agent collaboration: Using Amazon Nova 2 Lite]({{< relref "posts/20260211-blogs_podcasts-agent-to-agent-collaboration-using-amazon-nova-2-l-13.md" >}})
-- [Codex与Claude赋能自定义内核生成]({{< relref "posts/20260218-blogs_podcasts-custom-kernels-for-all-from-codex-and-claude-11.md" >}})
-- [Cord：协调多层级 AI 智能体树的框架]({{< relref "posts/20260221-hacker_news-cord-coordinating-trees-of-ai-agents-10.md" >}})
-- [AI 编程代理已全面替代我使用的所有开发框架]({{< relref "posts/20260207-hacker_news-coding-agents-have-replaced-every-framework-i-used-10.md" >}})
+- [编排多会话 Claude Code 团队协作]({{< relref "posts/20260205-hacker_news-claude-code-agent-teams-3.md" >}})
+- [Agent-to-agent collaboration: Using Amazon Nova 2 Lite]({{< relref "posts/20260211-blogs_podcasts-agent-to-agent-collaboration-using-amazon-nova-2-l-12.md" >}})
+- [Codex与Claude赋能自定义内核生成]({{< relref "posts/20260213-blogs_podcasts-custom-kernels-for-all-from-codex-and-claude-1.md" >}})
+- [Cord：协调多层级 AI 智能体树的框架]({{< relref "posts/20260221-hacker_news-cord-coordinating-trees-of-ai-agents-9.md" >}})
+- [AI 编程代理已全面替代我使用的所有开发框架]({{< relref "posts/20260207-hacker_news-coding-agents-have-replaced-every-framework-i-used-8.md" >}})

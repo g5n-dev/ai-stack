@@ -1,14 +1,30 @@
 ---
-title: "可验证高并行移动GUI智能体仿真平台"
-date: 2026-05-26T18:44:28+08:00
+title: 可验证高并行移动GUI智能体仿真平台
+date: 2026-05-26 18:44:28+08:00
 draft: false
-entry_kind: "auto"
-tags: ["移动GUI智能体", "仿真平台", "可验证性", "高并行", "智能体研究", "移动端", "测试平台", "强化学习"]
-categories: ["论文", "AI 工程"]
+entry_kind: auto
+tags:
+- 移动GUI智能体
+- 仿真平台
+- 可验证性
+- 高并行
+- 智能体研究
+- 移动端
+- 测试平台
+- 强化学习
+categories:
+- 论文
+- AI 工程
 source: arxiv
-description: "随着移动端 GUI 代理在实际应用中的需求增长，如何在可控、可重复的环境中对其进行可靠评估成为关键问题。本文提出 MobileGym，一个兼具可验证性和高并行度的仿真平台，旨在为移动 GUI 代理的研究提供统一且可量化的测试框架。该平台的具体实现细节尚需进一步阅读原文方能确认，但其核心思路有望促进自动化 UI 测试、人"
+description: 随着移动端 GUI 代理在实际应用中的需求增长，如何在可控、可重复的环境中对其进行可靠评估成为关键问题。本文提出 MobileGym，一个兼具可验证性和高并行度的仿真平台，旨在为移动
+  GUI 代理的研究提供统一且可量化的测试框架。该平台的具体实现细节尚需进一步阅读原文方能确认，但其核心思路有望促进自动化 UI 测试、人
 external_url: http://arxiv.org/abs/2605.26114v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 可验证高并行移动GUI智能体仿真平台
@@ -80,6 +96,6 @@ MobileGym 在实验可重复性和规模上具备显著优势，为 GUI 代理�
 - [🚛🚦高速公路卡车决策新突破！多目标强化学习让战术决策更高效！]({{< relref "posts/20260127-arxiv_ai-multi-objective-reinforcement-learning-for-efficie-7.md" >}})
 - [共享自治系统中信念与策略学习的端到端优化]({{< relref "posts/20260202-arxiv_ai-end-to-end-optimization-of-belief-and-policy-learn-1.md" >}})
 - [RN-D：基于正则化网络的离散分类演员与同策强化学习]({{< relref "posts/20260202-arxiv_ai-rn-d-discretized-categorical-actors-with-regulariz-7.md" >}})
-- [基于流策略梯度的机器人控制方法]({{< relref "posts/20260204-arxiv_ai-flow-policy-gradients-for-robot-control-6.md" >}})
-- [基于急停干预的鲁棒干预学习]({{< relref "posts/20260205-arxiv_ai-robust-intervention-learning-from-emergency-stop-i-7.md" >}})
+- [基于流策略梯度的机器人控制方法]({{< relref "posts/20260203-arxiv_ai-flow-policy-gradients-for-robot-control-6.md" >}})
+- [基于急停干预的鲁棒干预学习]({{< relref "posts/20260204-arxiv_ai-robust-intervention-learning-from-emergency-stop-i-7.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

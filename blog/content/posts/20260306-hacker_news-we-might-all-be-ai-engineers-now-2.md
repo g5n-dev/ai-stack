@@ -22,6 +22,10 @@ external_url: https://yasint.dev/we-might-all-be-ai-engineers-now
 scenarios:
 - AI/ML项目
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AI工程化门槛降低，全员皆可参与模型开发

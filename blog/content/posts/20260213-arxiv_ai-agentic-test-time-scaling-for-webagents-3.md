@@ -1,14 +1,34 @@
 ---
-title: "Agentic WebAgents 的测试时缩放方法"
-date: 2026-02-13T23:30:43+08:00
+title: Agentic WebAgents 的测试时缩放方法
+date: 2026-02-13 23:30:43+08:00
 draft: false
-entry_kind: "auto"
-tags: ["WebAgents", "测试时缩放", "CATTS", "置信度感知", "ReAct", "推理优化", "多步推理", "智能体"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- WebAgents
+- 测试时缩放
+- CATTS
+- 置信度感知
+- ReAct
+- 推理优化
+- 多步推理
+- 智能体
+categories:
+- 大模型
+- AI 工程
 source: arxiv
-description: "本文介绍了一种名为 **CATTS（Confidence-Aware Test-Time Scaling）** 的技术，旨在解决网页智能体在执行多步骤任务时的计算效率与可靠性问题。 **背景与挑战：** 虽然“测试时扩展”已成为提升神经网络模型性能的标准方法，但在处理网页智能体这类需要多步推理的智能任务时，简单的增加计"
+description: 本文介绍了一种名为 **CATTS（Confidence-Aware Test-Time Scaling）** 的技术，旨在解决网页智能体在执行多步骤任务时的计算效率与可靠性问题。
+  **背景与挑战：** 虽然“测试时扩展”已成为提升神经网络模型性能的标准方法，但在处理网页智能体这类需要多步推理的智能任务时，简单的增加计
 external_url: http://arxiv.org/abs/2602.12276v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+aliases:
+- /posts/20260214-arxiv_ai-agentic-test-time-scaling-for-webagents-3/
+- /posts/20260215-arxiv_ai-agentic-test-time-scaling-for-webagents-3/
+- /posts/20260216-arxiv_ai-agentic-test-time-scaling-for-webagents-3/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Agentic WebAgents 的测试时缩放方法
@@ -516,7 +536,7 @@ CATTS 的数学模型可以抽象为一个**阈值判定过程**：
 
 - [RE-TRAC：面向深度搜索智能体的递归轨迹压缩方法]({{< relref "posts/20260203-arxiv_ai-re-trac-recursive-trajectory-compression-for-deep--4.md" >}})
 - [Show HN: 反向智能体模型：应用为客户端、对话为服务器与反思机制]({{< relref "posts/20260203-hacker_news-show-hn-inverting-agent-model-app-as-clients-chat--4.md" >}})
-- [Opus 4.6 智能体团队协作构建 C 语言编译器]({{< relref "posts/20260206-hacker_news-we-tasked-opus-46-using-agent-teams-to-build-a-c-c-19.md" >}})
+- [Opus 4.6 智能体团队协作构建 C 语言编译器]({{< relref "posts/20260205-hacker_news-we-tasked-opus-46-using-agent-teams-to-build-a-c-c-3.md" >}})
 - [OpenEnv实践：评估真实环境中的工具调用智能体]({{< relref "posts/20260212-blogs_podcasts-openenv-in-practice-evaluating-tool-using-agents-i-4.md" >}})
-- [OpenEnv实践：评估真实环境中的工具调用智能体]({{< relref "posts/20260212-blogs_podcasts-openenv-in-practice-evaluating-tool-using-agents-i-5.md" >}})
+- [OpenEnv实践：评估真实环境中的工具调用智能体]({{< relref "posts/20260212-blogs_podcasts-openenv-in-practice-evaluating-tool-using-agents-i-4.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

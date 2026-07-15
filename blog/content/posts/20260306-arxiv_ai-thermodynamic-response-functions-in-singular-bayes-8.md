@@ -20,6 +20,14 @@ description: '**奇异贝叶斯模型中的热力学响应函数：总结** **1.
 external_url: http://arxiv.org/abs/2603.05480v1
 scenarios:
 - AI/ML项目
+aliases:
+- /posts/20260307-arxiv_ai-thermodynamic-response-functions-in-singular-bayes-8/
+- /posts/20260308-arxiv_ai-thermodynamic-response-functions-in-singular-bayes-8/
+- /posts/20260309-arxiv_ai-thermodynamic-response-functions-in-singular-bayes-8/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 奇异贝叶斯模型中的热力学响应函数研究
@@ -414,7 +422,7 @@ $$ \frac{d}{d\beta} \mathbb{E}_\beta[f(\theta)] = -\text{Cov}_\beta(f(\theta), \
 ### 相关文章
 
 - [面向异构数据的自适应子网络路由机制]({{< relref "posts/20260130-arxiv_ai-routing-the-lottery-adaptive-subnetworks-for-heter-8.md" >}})
-- [超网络：用于处理层级数据的神经网络架构]({{< relref "posts/20260206-hacker_news-hypernetworks-neural-networks-for-hierarchical-dat-19.md" >}})
-- [神经网络原理可视化解析]({{< relref "posts/20260206-hacker_news-understanding-neural-network-visually-10.md" >}})
+- [超网络：用于处理层级数据的神经网络架构]({{< relref "posts/20260205-hacker_news-hypernetworks-neural-networks-for-hierarchical-dat-16.md" >}})
+- [神经网络原理可视化解析]({{< relref "posts/20260206-hacker_news-understanding-neural-network-visually-16.md" >}})
 - [神经网络原理的可视化解析]({{< relref "posts/20260206-hacker_news-understanding-neural-network-visually-16.md" >}})
-- [神经网络原理可视化解析]({{< relref "posts/20260206-hacker_news-understanding-neural-network-visually-2.md" >}})
+- [神经网络原理可视化解析]({{< relref "posts/20260206-hacker_news-understanding-neural-network-visually-16.md" >}})

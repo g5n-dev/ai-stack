@@ -1,14 +1,29 @@
 ---
-title: "OrLog：结合大模型与概率推理解决复杂查询"
-date: 2026-02-02T02:57:13+08:00
+title: OrLog：结合大模型与概率推理解决复杂查询
+date: 2026-02-02 02:57:13+08:00
 draft: false
-entry_kind: "auto"
-tags: ["神经符号AI", "概率推理", "复杂查询", "信息检索", "逻辑约束", "谓词估计", "Token优化", "OrLog"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- 神经符号AI
+- 概率推理
+- 复杂查询
+- 信息检索
+- 逻辑约束
+- 谓词估计
+- Token优化
+- OrLog
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "以下是对内容的中文总结： **OrLog：结合LLM与概率推理解决复杂查询** **背景与问题** 解决带有多种约束（如逻辑与、或、非）的复杂信息需求，需要在候选答案集上强制执行查询中编码的逻辑运算符。当前的检索系统存在以下缺陷：要么在神经嵌入中忽略了这些约束，要么在生成式推理过程中对其进行近似，导致结果不一致且不可靠"
+description: 以下是对内容的中文总结： **OrLog：结合LLM与概率推理解决复杂查询** **背景与问题** 解决带有多种约束（如逻辑与、或、非）的复杂信息需求，需要在候选答案集上强制执行查询中编码的逻辑运算符。当前的检索系统存在以下缺陷：要么在神经嵌入中忽略了这些约束，要么在生成式推理过程中对其进行近似，导致结果不一致且不可靠
 external_url: http://arxiv.org/abs/2601.23085v1
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # OrLog：结合大模型与概率推理解决复杂查询
@@ -536,7 +551,7 @@ OrLog 在处理复杂查询时，往往需要引用外部知识。最佳实践�
 
 - [Deep Researcher：序列规划反思与候选交叉]({{< relref "posts/20260129-arxiv_ai-deep-researcher-with-sequential-plan-reflection-an-9.md" >}})
 - [SokoBench：评估大模型长程规划与推理能力]({{< relref "posts/20260129-arxiv_ai-sokobench-evaluating-long-horizon-planning-and-rea-2.md" >}})
-- [Deep Researcher：结合序列规划反思与候选交叉的深度研究框架]({{< relref "posts/20260130-arxiv_ai-deep-researcher-with-sequential-plan-reflection-an-9.md" >}})
+- [Deep Researcher：结合序列规划反思与候选交叉的深度研究框架]({{< relref "posts/20260129-arxiv_ai-deep-researcher-with-sequential-plan-reflection-an-9.md" >}})
 - [探索面向智能体的推理奖励模型]({{< relref "posts/20260130-arxiv_ai-exploring-reasoning-reward-model-for-agents-4.md" >}})
 - [FineInstructions：将合成指令数据扩展至预训练规模]({{< relref "posts/20260130-arxiv_ai-fineinstructions-scaling-synthetic-instructions-to-7.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

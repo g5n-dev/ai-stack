@@ -20,6 +20,12 @@ description: 以下是对该内容的中文总结： **标题：Valet：传统�
 external_url: http://arxiv.org/abs/2603.03252v1
 scenarios:
 - AI/ML项目
+aliases:
+- /posts/20260305-arxiv_ai-valet-a-standardized-testbed-of-traditional-imperf-8/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Valet：传统不完美信息卡牌游戏标准化测试基准
@@ -481,6 +487,6 @@ Valet 作为一个开源项目，其代码和文档通常托管在 GitHub 上（
 
 - [部分可观测平均场博弈的循环结构策略梯度算法]({{< relref "posts/20260224-arxiv_ai-recurrent-structural-policy-gradient-for-partially-6.md" >}})
 - [用Game Arena平台推进AI基准测试]({{< relref "posts/20260202-hacker_news-advancing-ai-benchmarking-with-game-arena-2.md" >}})
-- [利用Game Arena平台推进AI基准测试]({{< relref "posts/20260203-hacker_news-advancing-ai-benchmarking-with-game-arena-10.md" >}})
+- [利用Game Arena平台推进AI基准测试]({{< relref "posts/20260202-hacker_news-advancing-ai-benchmarking-with-game-arena-2.md" >}})
 - [探索面向智能体的推理奖励模型]({{< relref "posts/20260130-arxiv_ai-exploring-reasoning-reward-model-for-agents-4.md" >}})
-- [DynaWeb：基于模型的强化学习网页智能体框架]({{< relref "posts/20260131-arxiv_ai-dynaweb-model-based-reinforcement-learning-of-web--6.md" >}})
+- [DynaWeb：基于模型的强化学习网页智能体框架]({{< relref "posts/20260130-arxiv_ai-dynaweb-model-based-reinforcement-learning-of-web--6.md" >}})

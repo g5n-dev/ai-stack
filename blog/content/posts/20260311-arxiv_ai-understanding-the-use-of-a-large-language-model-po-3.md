@@ -21,6 +21,12 @@ external_url: http://arxiv.org/abs/2603.09964v1
 scenarios:
 - 大语言模型
 - AI/ML项目
+aliases:
+- /posts/20260312-arxiv_ai-understanding-the-use-of-a-large-language-model-po-3/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # LLM驱动的VR导览系统如何帮助视障用户实现无障碍体验
@@ -404,8 +410,8 @@ scenarios:
 
 ### 相关文章
 
-- [长期对话导致大语言模型镜像用户观点形成回声室]({{< relref "posts/20260218-blogs_podcasts-personalization-features-can-make-llms-more-agreea-3.md" >}})
-- [研究显示主流AI模型向弱势用户提供信息准确度较低]({{< relref "posts/20260221-blogs_podcasts-study-ai-chatbots-provide-less-accurate-informatio-7.md" >}})
-- [🎭LLM如何颠覆互动叙事？Dramamancer案例揭秘设计黑科技！]({{< relref "posts/20260128-arxiv_ai-design-techniques-for-llm-powered-interactive-stor-6.md" >}})
-- [Claude：打造用于深度思考的交互空间]({{< relref "posts/20260204-hacker_news-claude-is-a-space-to-think-12.md" >}})
-- [Claude Is a Space to Think]({{< relref "posts/20260204-hacker_news-claude-is-a-space-to-think-17.md" >}})
+- [长期对话导致大语言模型镜像用户观点形成回声室]({{< relref "posts/20260218-blogs_podcasts-personalization-features-can-make-llms-more-agreea-0.md" >}})
+- [研究显示主流AI模型向弱势用户提供信息准确度较低]({{< relref "posts/20260220-blogs_podcasts-study-ai-chatbots-provide-less-accurate-informatio-1.md" >}})
+- [🎭LLM如何颠覆互动叙事？Dramamancer案例揭秘设计黑科技！]({{< relref "posts/20260127-arxiv_ai-design-techniques-for-llm-powered-interactive-stor-6.md" >}})
+- [Claude：打造用于深度思考的交互空间]({{< relref "posts/20260204-hacker_news-claude-is-a-space-to-think-8.md" >}})
+- [Claude Is a Space to Think]({{< relref "posts/20260204-hacker_news-claude-is-a-space-to-think-8.md" >}})

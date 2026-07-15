@@ -1,14 +1,29 @@
 ---
-title: "DAWN：面向扩散大模型的依赖感知快速推理"
-date: 2026-02-09T23:42:37+08:00
+title: DAWN：面向扩散大模型的依赖感知快速推理
+date: 2026-02-09 23:42:37+08:00
 draft: false
-entry_kind: "auto"
-tags: ["扩散模型", "DAWN", "并行解码", "推理加速", "Diffusion LLM", "依赖感知", "文本生成", "训练无关"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- 扩散模型
+- DAWN
+- 并行解码
+- 推理加速
+- Diffusion LLM
+- 依赖感知
+- 文本生成
+- 训练无关
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "**DAWN：扩散大语言模型的依赖感知快速推理方法** **背景与挑战** 扩散大语言模型利用扩散模型进行文本生成，具有并行解码的天然优势。然而，现有的推理方案受限于“质量-速度”权衡，通常采用保守的并行策略，导致效率潜力未被充分利用。核心挑战在于：并行解码通常假设每个位置可以独立填充，但实际上标记之间往往存在语义耦合"
+description: '**DAWN：扩散大语言模型的依赖感知快速推理方法** **背景与挑战** 扩散大语言模型利用扩散模型进行文本生成，具有并行解码的天然优势。然而，现有的推理方案受限于“质量-速度”权衡，通常采用保守的并行策略，导致效率潜力未被充分利用。核心挑战在于：并行解码通常假设每个位置可以独立填充，但实际上标记之间往往存在语义耦合'
 external_url: http://arxiv.org/abs/2602.06953v1
-scenarios: ["大语言模型"]
+scenarios:
+- 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # DAWN：面向扩散大模型的依赖感知快速推理
@@ -517,7 +532,7 @@ DAWN最可能在以下条件下失效：
 
 - [FOCUS：DLLMs如何突破算力瓶颈]({{< relref "posts/20260202-arxiv_ai-focus-dllms-know-how-to-tame-their-compute-bound-3.md" >}})
 - [DFlash：基于块扩散的Flash推测解码方法]({{< relref "posts/20260206-arxiv_ai-dflash-block-diffusion-for-flash-speculative-decod-4.md" >}})
-- [DFlash：基于块扩散的闪存推测解码方法]({{< relref "posts/20260209-arxiv_ai-dflash-block-diffusion-for-flash-speculative-decod-4.md" >}})
-- [🔥自回归+掩码扩散！下一代生成模型架构强势登场！]({{< relref "posts/20260127-arxiv_ai-auto-regressive-masked-diffusion-models-3.md" >}})
-- [FOCUS：DLLMs 如何突破算力瓶颈]({{< relref "posts/20260203-arxiv_ai-focus-dllms-know-how-to-tame-their-compute-bound-3.md" >}})
+- [DFlash：基于块扩散的闪存推测解码方法]({{< relref "posts/20260206-arxiv_ai-dflash-block-diffusion-for-flash-speculative-decod-4.md" >}})
+- [🔥自回归+掩码扩散！下一代生成模型架构强势登场！]({{< relref "posts/20260126-arxiv_ai-auto-regressive-masked-diffusion-models-3.md" >}})
+- [FOCUS：DLLMs 如何突破算力瓶颈]({{< relref "posts/20260202-arxiv_ai-focus-dllms-know-how-to-tame-their-compute-bound-3.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

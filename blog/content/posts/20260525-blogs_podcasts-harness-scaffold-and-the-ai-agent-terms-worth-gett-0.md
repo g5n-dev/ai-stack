@@ -1,14 +1,29 @@
 ---
-title: "AI Agent术语解析：Harness与Scaffold的正确用法"
-date: 2026-05-25T17:51:55+08:00
+title: AI Agent术语解析：Harness与Scaffold的正确用法
+date: 2026-05-25 17:51:55+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI Agent", "术语解析", "Harness", "Scaffold", "大模型", "提示工程", "AI框架", "开发者术语"]
-categories: ["AI 工程", "大模型"]
+entry_kind: auto
+tags:
+- AI Agent
+- 术语解析
+- Harness
+- Scaffold
+- 大模型
+- 提示工程
+- AI框架
+- 开发者术语
+categories:
+- AI 工程
+- 大模型
 source: blogs_podcasts
-description: "在快速演进的 AI Agent 领域，harness、scaffold 等概念频繁出现，但它们的定义和使用场景常被混淆。准确把握这些术语不仅帮助团队形成统一语言，还能减少跨部门沟通中的误解。本文将厘清关键概念的边界，并通过实际案例说明它们的适用方式，让读者在项目中能够选择恰当的框架并提升协作效率。通过阅读本文，开发者可"
+description: 在快速演进的 AI Agent 领域，harness、scaffold 等概念频繁出现，但它们的定义和使用场景常被混淆。准确把握这些术语不仅帮助团队形成统一语言，还能减少跨部门沟通中的误解。本文将厘清关键概念的边界，并通过实际案例说明它们的适用方式，让读者在项目中能够选择恰当的框架并提升协作效率。通过阅读本文，开发者可
 external_url: https://huggingface.co/blog/agent-glossary
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AI Agent术语解析：Harness与Scaffold的正确用法
@@ -138,8 +153,8 @@ scenarios: ["AI/ML项目"]
 ### 相关文章
 
 - [LangChain 模型 I/O 模块：提示构建、模型调用与输出解析]({{< relref "posts/20260215-juejin-langchain-模型io输入提示调用模型解析输出-4.md" >}})
-- [OpenClaw：一个开源AI代理框架]({{< relref "posts/20260213-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-11.md" >}})
-- [WebMCP：改变 AI 访问 Web 方式的未来派技术提案]({{< relref "posts/20260216-juejin-webmcp-时代在浏览器中释放-ai-的工作能力-2.md" >}})
-- [面向AI智能体的内容优化策略]({{< relref "posts/20260314-hacker_news-optimizing-content-for-agents-13.md" >}})
-- [AgentFactory：子代理积累复用的自演进框架]({{< relref "posts/20260320-arxiv_ai-agentfactory-a-self-evolving-framework-through-exe-2.md" >}})
+- [OpenClaw：一个开源AI代理框架]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-0.md" >}})
+- [WebMCP：改变 AI 访问 Web 方式的未来派技术提案]({{< relref "posts/20260216-juejin-webmcp-时代在浏览器中释放-ai-的工作能力-0.md" >}})
+- [面向AI智能体的内容优化策略]({{< relref "posts/20260314-hacker_news-optimizing-content-for-agents-4.md" >}})
+- [AgentFactory：子代理积累复用的自演进框架]({{< relref "posts/20260319-arxiv_ai-agentfactory-a-self-evolving-framework-through-exe-2.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

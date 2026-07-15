@@ -20,6 +20,10 @@ description: AI驱动的A/B测试引擎构建指南 概述 本文介绍如何利
 external_url: https://aws.amazon.com/blogs/machine-learning/build-an-ai-powered-a-b-testing-engine-using-amazon-bedrock
 scenarios:
 - Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 使用 Amazon Bedrock 构建 AI 驱动 A/B 测试引擎
@@ -431,8 +435,8 @@ AI驱动的A/B测试通过用户上下文感知和智能变体分配，能够在
 
 ### 相关文章
 
-- [亚马逊利用Nova模型自动化新履约中心运营就绪测试]({{< relref "posts/20260211-blogs_podcasts-how-amazon-uses-amazon-nova-models-to-automate-ope-0.md" >}})
+- [亚马逊利用Nova模型自动化新履约中心运营就绪测试]({{< relref "posts/20260210-blogs_podcasts-how-amazon-uses-amazon-nova-models-to-automate-ope-0.md" >}})
 - [基于Amazon Bedrock AgentCore构建长运行MCP服务器与异步任务管理]({{< relref "posts/20260212-blogs_podcasts-build-long-running-mcp-servers-on-amazon-bedrock-a-1.md" >}})
-- [基于Amazon Bedrock AgentCore构建长时运行MCP服务器集成方案]({{< relref "posts/20260212-blogs_podcasts-build-long-running-mcp-servers-on-amazon-bedrock-a-2.md" >}})
-- [亚马逊利用Nova模型自动化新履约中心运营就绪测试]({{< relref "posts/20260212-blogs_podcasts-how-amazon-uses-amazon-nova-models-to-automate-ope-14.md" >}})
-- [亚马逊利用 Nova 模型自动化新履约中心运营就绪测试]({{< relref "posts/20260212-blogs_podcasts-how-amazon-uses-amazon-nova-models-to-automate-ope-7.md" >}})
+- [基于Amazon Bedrock AgentCore构建长时运行MCP服务器集成方案]({{< relref "posts/20260212-blogs_podcasts-build-long-running-mcp-servers-on-amazon-bedrock-a-1.md" >}})
+- [亚马逊利用Nova模型自动化新履约中心运营就绪测试]({{< relref "posts/20260210-blogs_podcasts-how-amazon-uses-amazon-nova-models-to-automate-ope-0.md" >}})
+- [亚马逊利用 Nova 模型自动化新履约中心运营就绪测试]({{< relref "posts/20260210-blogs_podcasts-how-amazon-uses-amazon-nova-models-to-automate-ope-0.md" >}})

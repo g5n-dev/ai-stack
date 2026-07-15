@@ -1,12 +1,26 @@
 ---
-title: "✨告别遗忘！Self-Distillation解锁持续学习新范式！"
-date: 2026-01-28T07:28:04+08:00
+title: ✨告别遗忘！Self-Distillation解锁持续学习新范式！
+date: 2026-01-28 07:28:04+08:00
 draft: false
-entry_kind: "auto"
-tags: ["持续学习", "Self-Distillation", "灾难性遗忘", "SFT", "On-policy", "In-context Learning", "模型微调", "cs.LG"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- 持续学习
+- Self-Distillation
+- 灾难性遗忘
+- SFT
+- On-policy
+- In-context Learning
+- 模型微调
+- cs.LG
+categories:
+- 大模型
+- 论文
 source: arxiv
 external_url: http://arxiv.org/abs/2601.19897v1
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 📚 ✨告别遗忘！Self-Distillation解锁持续学习新范式！

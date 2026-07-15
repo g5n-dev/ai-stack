@@ -1,14 +1,32 @@
 ---
-title: "进化策略导致大语言模型出现灾难性遗忘"
-date: 2026-01-29T22:59:16+08:00
+title: 进化策略导致大语言模型出现灾难性遗忘
+date: 2026-01-29 22:59:16+08:00
 draft: false
-entry_kind: "auto"
-tags: ["进化策略", "灾难性遗忘", "持续学习", "LLM", "GRPO", "无梯度优化", "模型微调", "cs.LG"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- 进化策略
+- 灾难性遗忘
+- 持续学习
+- LLM
+- GRPO
+- 无梯度优化
+- 模型微调
+- cs.LG
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "**中文总结：** 这篇论文探讨了进化策略在大型语言模型（LLM）持续学习中的应用及其引发的灾难性遗忘问题。 **研究背景：** 当前AI系统面临的主要挑战之一是如何在部署后实现持续学习。传统的基于梯度的算法虽然先进，但内存消耗巨大。作为无需梯度的替代方案，进化策略（ES）近期在特定任务上表现出潜力。 **研究发现：*"
+description: '**中文总结：** 这篇论文探讨了进化策略在大型语言模型（LLM）持续学习中的应用及其引发的灾难性遗忘问题。 **研究背景：** 当前AI系统面临的主要挑战之一是如何在部署后实现持续学习。传统的基于梯度的算法虽然先进，但内存消耗巨大。作为无需梯度的替代方案，进化策略（ES）近期在特定任务上表现出潜力。
+  **研究发现：*'
 external_url: http://arxiv.org/abs/2601.20861v1
-scenarios: ["大语言模型"]
+scenarios:
+- 大语言模型
+aliases:
+- /posts/20260130-arxiv_ai-evolutionary-strategies-lead-to-catastrophic-forge-0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 进化策略导致大语言模型出现灾难性遗忘
@@ -509,6 +527,6 @@ scenarios: ["大语言模型"]
 - [✨告别遗忘！Self-Distillation解锁持续学习新范式！]({{< relref "posts/20260128-arxiv_ai-self-distillation-enables-continual-learning-1.md" >}})
 - [测试时也能发现新规律？🤯AI解锁动态学习能力！]({{< relref "posts/20260125-arxiv_ai-learning-to-discover-at-test-time-6.md" >}})
 - [🔥LLM训练动力学新突破！可扩展损失景观曲率度量🚀]({{< relref "posts/20260126-arxiv_ai-a-scalable-measure-of-loss-landscape-curvature-for-1.md" >}})
-- [🔥LLM训练动力学新突破！可扩展损失景观曲率度量！]({{< relref "posts/20260127-arxiv_ai-a-scalable-measure-of-loss-landscape-curvature-for-1.md" >}})
-- [🔥LLM序列标注新突破！揭秘高效策略，性能飙升！]({{< relref "posts/20260127-arxiv_ai-strategies-for-span-labeling-with-large-language-m-9.md" >}})
+- [🔥LLM训练动力学新突破！可扩展损失景观曲率度量！]({{< relref "posts/20260126-arxiv_ai-a-scalable-measure-of-loss-landscape-curvature-for-1.md" >}})
+- [🔥LLM序列标注新突破！揭秘高效策略，性能飙升！]({{< relref "posts/20260126-arxiv_ai-strategies-for-span-labeling-with-large-language-m-9.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

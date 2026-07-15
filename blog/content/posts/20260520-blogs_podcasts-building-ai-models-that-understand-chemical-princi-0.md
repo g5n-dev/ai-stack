@@ -1,14 +1,30 @@
 ---
-title: "构建理解化学原理的AI模型以加速新药发现"
-date: 2026-05-20T16:45:50+08:00
+title: 构建理解化学原理的AI模型以加速新药发现
+date: 2026-05-20 16:45:50+08:00
 draft: false
-entry_kind: "auto"
-tags: ["化学", "AI模型", "药物发现", "图神经网络", "生成模型", "大数据", "可解释性", "机器学习"]
-categories: ["AI 工程", "数据"]
+entry_kind: auto
+tags:
+- 化学
+- AI 模型
+- 药物发现
+- 图神经网络
+- 生成模型
+- 大数据
+- 可解释性
+- 机器学习
+categories:
+- AI 工程
+- 数据
 source: blogs_podcasts
-description: "研究概述 Connor Coley 专注于化学与机器学习的交叉领域，致力于构建能够理解化学原理的人工智能模型，以加速新药化合物的发现与设计。其工作利用大数据、图神经网络和生成模型等技术，从分子结构中提取化学知识，实现高效且可解释的药物研发流程。通过将数据驱动的方法与化学领域知识相结合，Coley 的研究旨在提升预测分子"
+description: 研究概述 Connor Coley 专注于化学与机器学习的交叉领域，致力于构建能够理解化学原理的人工智能模型，以加速新药化合物的发现与设计。其工作利用大数据、图神经网络和生成模型等技术，从分子结构中提取化学知识，实现高效且可解释的药物研发流程。通过将数据驱动的方法与化学领域知识相结合，Coley
+  的研究旨在提升预测分子
 external_url: https://news.mit.edu/2026/building-ai-models-with-chemical-principles-connor-coley-0520
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 构建理解化学原理的AI模型以加速新药发现
@@ -141,9 +157,9 @@ Connor Coley 专注于化学与机器学习的交叉领域，致力于构建能�
 
 ### 相关文章
 
-- [AI与模拟技术加速科学发现的拐点已至]({{< relref "posts/20260212-blogs_podcasts-accelerating-science-with-ai-and-simulations-2.md" >}})
+- [AI与模拟技术加速科学发现的拐点已至]({{< relref "posts/20260212-blogs_podcasts-accelerating-science-with-ai-and-simulations-0.md" >}})
 - [决策树：嵌套决策规则的强大效能]({{< relref "posts/20260301-hacker_news-decision-trees-the-unreasonable-power-of-nested-de-1.md" >}})
-- [决策树：嵌套决策规则的强大效能]({{< relref "posts/20260301-hacker_news-decision-trees-the-unreasonable-power-of-nested-de-5.md" >}})
+- [决策树：嵌套决策规则的强大效能]({{< relref "posts/20260301-hacker_news-decision-trees-the-unreasonable-power-of-nested-de-1.md" >}})
 - [Spark MLlib GBDT算法原理与工程实现]({{< relref "posts/20260425-juejin-大数据-277-spark-mlib-梯度提升树gbdt算法原理与工程实现指南-0.md" >}})
-- [迈向可解释联邦学习：理解差分隐私的影响]({{< relref "posts/20260212-arxiv_ai-towards-explainable-federated-learning-understandi-2.md" >}})
+- [迈向可解释联邦学习：理解差分隐私的影响]({{< relref "posts/20260211-arxiv_ai-towards-explainable-federated-learning-understandi-2.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

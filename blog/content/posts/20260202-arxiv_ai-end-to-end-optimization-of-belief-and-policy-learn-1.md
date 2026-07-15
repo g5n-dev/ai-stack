@@ -1,14 +1,32 @@
 ---
-title: "共享自治系统中信念与策略学习的端到端优化"
-date: 2026-02-02T19:22:59+08:00
+title: 共享自治系统中信念与策略学习的端到端优化
+date: 2026-02-02 19:22:59+08:00
 draft: false
-entry_kind: "auto"
-tags: ["共享自治", "BRACE", "贝叶斯推断", "端到端优化", "人机交互", "机器人控制", "意图识别", "强化学习"]
-categories: ["论文", "AI 工程"]
+entry_kind: auto
+tags:
+- 共享自治
+- BRACE
+- 贝叶斯推断
+- 端到端优化
+- 人机交互
+- 机器人控制
+- 意图识别
+- 强化学习
+categories:
+- 论文
+- AI 工程
 source: arxiv
-description: "**总结：共享自治中信念与策略学习的端到端优化** **核心问题** 共享自治系统面临着如何准确推断用户意图并确定适当辅助级别的核心挑战。以往的方法通常依赖静态的混合比例，或者将目标推断与辅助仲裁分离，导致在非结构化环境中表现欠佳。 **提出的解决方案** 本文提出了一个名为 **BRACE**（基于上下文编码的贝叶斯"
+description: '**总结：共享自治中信念与策略学习的端到端优化** **核心问题** 共享自治系统面临着如何准确推断用户意图并确定适当辅助级别的核心挑战。以往的方法通常依赖静态的混合比例，或者将目标推断与辅助仲裁分离，导致在非结构化环境中表现欠佳。
+  **提出的解决方案** 本文提出了一个名为 **BRACE**（基于上下文编码的贝叶斯'
 external_url: http://arxiv.org/abs/2601.23285v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+aliases:
+- /posts/20260203-arxiv_ai-end-to-end-optimization-of-belief-and-policy-learn-1/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 共享自治系统中信念与策略学习的端到端优化
@@ -521,8 +539,8 @@ scenarios: ["Web应用开发"]
 
 ### 相关文章
 
-- [NVIDIA Cosmos策略：提升机器人高级控制能力]({{< relref "posts/20260130-blogs_podcasts-introducing-nvidia-cosmos-policy-for-advanced-robo-1.md" >}})
-- [英伟达推出Cosmos策略以提升机器人控制能力]({{< relref "posts/20260202-blogs_podcasts-introducing-nvidia-cosmos-policy-for-advanced-robo-4.md" >}})
+- [NVIDIA Cosmos策略：提升机器人高级控制能力]({{< relref "posts/20260129-blogs_podcasts-introducing-nvidia-cosmos-policy-for-advanced-robo-0.md" >}})
+- [英伟达推出Cosmos策略以提升机器人控制能力]({{< relref "posts/20260129-blogs_podcasts-introducing-nvidia-cosmos-policy-for-advanced-robo-0.md" >}})
 - [RN-D：基于正则化网络的离散分类演员与同策强化学习]({{< relref "posts/20260202-arxiv_ai-rn-d-discretized-categorical-actors-with-regulariz-7.md" >}})
 - [NVIDIA Cosmos策略：提升机器人控制能力]({{< relref "posts/20260129-blogs_podcasts-introducing-nvidia-cosmos-policy-for-advanced-robo-0.md" >}})
 - [DynaWeb：基于模型的强化学习网页智能体]({{< relref "posts/20260130-arxiv_ai-dynaweb-model-based-reinforcement-learning-of-web--6.md" >}})

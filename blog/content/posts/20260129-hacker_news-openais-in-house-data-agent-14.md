@@ -1,14 +1,46 @@
 ---
-title: "OpenAI内部数据智能体：自动化分析SQL数据库"
-date: 2026-01-29T20:06:13+08:00
+title: OpenAI内部数据智能体：自动化分析SQL数据库
+date: 2026-01-29 20:06:13+08:00
 draft: false
-entry_kind: "auto"
-tags: ["OpenAI", "Data Agent", "SQL", "数据分析", "自动化", "LLM", "Text-to-SQL", "智能体"]
-categories: ["大模型", "数据"]
+entry_kind: auto
+tags:
+- OpenAI
+- Data Agent
+- SQL
+- 数据分析
+- 自动化
+- LLM
+- Text-to-SQL
+- 智能体
+categories:
+- 大模型
+- 数据
 source: hacker_news
-description: "随着企业数据量的持续增长，如何高效挖掘非结构化数据的价值已成为技术团队的核心挑战。OpenAI 近期披露的内部数据代理实践，展示了利用大语言模型将复杂数据转化为可执行洞察的可行路径。本文将深入解析其技术架构与实施细节，帮助读者理解如何构建智能化的数据工作流，从而在实际业务中提升信息处理效率。"
+description: 随着企业数据量的持续增长，如何高效挖掘非结构化数据的价值已成为技术团队的核心挑战。OpenAI 近期披露的内部数据代理实践，展示了利用大语言模型将复杂数据转化为可执行洞察的可行路径。本文将深入解析其技术架构与实施细节，帮助读者理解如何构建智能化的数据工作流，从而在实际业务中提升信息处理效率。
 external_url: https://openai.com/index/inside-our-in-house-data-agent
-scenarios: ["AI/ML项目", "大语言模型"]
+scenarios:
+- AI/ML项目
+- 大语言模型
+aliases:
+- /posts/20260129-blogs_podcasts-inside-openais-in-house-data-agent-1/
+- /posts/20260129-hacker_news-openais-in-house-data-agent-11/
+- /posts/20260130-blogs_podcasts-inside-openais-in-house-data-agent-1/
+- /posts/20260130-blogs_podcasts-inside-openais-in-house-data-agent-2/
+- /posts/20260131-blogs_podcasts-inside-openais-in-house-data-agent-2/
+- /posts/20260131-blogs_podcasts-inside-openais-in-house-data-agent-3/
+- /posts/20260201-blogs_podcasts-inside-openais-in-house-data-agent-3/
+- /posts/20260201-blogs_podcasts-inside-openais-in-house-data-agent-4/
+- /posts/20260202-blogs_podcasts-inside-openais-in-house-data-agent-4/
+- /posts/20260202-blogs_podcasts-inside-openais-in-house-data-agent-5/
+- /posts/20260202-blogs_podcasts-inside-openais-in-house-data-agent-6/
+- /posts/20260203-blogs_podcasts-inside-openais-in-house-data-agent-5/
+- /posts/20260203-blogs_podcasts-inside-openais-in-house-data-agent-6/
+- /posts/20260203-blogs_podcasts-inside-openais-in-house-data-agent-7/
+- /posts/20260203-blogs_podcasts-inside-openais-in-house-data-agent-8/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # OpenAI内部数据智能体：自动化分析SQL数据库
@@ -447,8 +479,8 @@ Wix 推出了 "Wix Studio" 和 "AI Website Builder"，集成了类似 OpenAI In-
 ### 相关文章
 
 - [🤖解密Codex智能体闭环：AI如何自主进化？]({{< relref "posts/20260125-blogs_podcasts-unrolling-the-codex-agent-loop-1.md" >}})
-- [揭开Codex Agent循环的神秘面纱！🚀 探索核心机制与价值]({{< relref "posts/20260127-blogs_podcasts-unrolling-the-codex-agent-loop-4.md" >}})
-- [解密Codex智能体闭环：AI如何自动迭代代码！🤖🚀]({{< relref "posts/20260128-blogs_podcasts-unrolling-the-codex-agent-loop-8.md" >}})
-- [Nemotron-Personas-Brazil：主权AI协同设计数据集]({{< relref "posts/20260129-blogs_podcasts-nemotron-personas-brazil-co-designed-data-for-sove-5.md" >}})
-- [Kirara-ai：多模态AI聊天机器人框架，支持多平台接入与工作流]({{< relref "posts/20260129-github_trending-lss233-kirara-ai-2.md" >}})
+- [揭开Codex Agent循环的神秘面纱！🚀 探索核心机制与价值]({{< relref "posts/20260125-blogs_podcasts-unrolling-the-codex-agent-loop-1.md" >}})
+- [解密Codex智能体闭环：AI如何自动迭代代码！🤖🚀]({{< relref "posts/20260125-blogs_podcasts-unrolling-the-codex-agent-loop-1.md" >}})
+- [Nemotron-Personas-Brazil：主权AI协同设计数据集]({{< relref "posts/20260128-blogs_podcasts-nemotron-personas-brazil-co-designed-data-for-sove-0.md" >}})
+- [Kirara-ai：多模态AI聊天机器人框架，支持多平台接入与工作流]({{< relref "posts/20260127-github_trending-lss233-kirara-ai-2.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

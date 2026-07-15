@@ -1,12 +1,26 @@
 ---
-title: "🚀 Halo：强大开源建站神器！GitHub 趋势榜首选 ⭐"
-date: 2026-01-26T12:12:08+08:00
+title: 🚀 Halo：强大开源建站神器！GitHub 趋势榜首选 ⭐
+date: 2026-01-26 12:12:08+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Halo", "建站工具", "Spring Boot", "Vue.js", "插件化架构", "Java", "CMS", "开源项目"]
-categories: ["开源生态", "后端"]
+entry_kind: auto
+tags:
+- Halo
+- 建站工具
+- Spring Boot
+- Vue.js
+- 插件化架构
+- Java
+- CMS
+- 开源项目
+categories:
+- 开源生态
+- 后端
 source: github_trending
 external_url: https://github.com/halo-dev/halo
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 🚀 🚀 Halo：强大开源建站神器！GitHub 趋势榜首选 ⭐

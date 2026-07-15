@@ -21,6 +21,12 @@ description: '**Reasoning Core：可扩展的符号推理数据生成套件** **
 external_url: http://arxiv.org/abs/2603.02208v1
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260304-arxiv_ai-reasoning-core-a-scalable-procedural-data-generati-0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Reasoning Core：面向符号预训练与后训练的可扩展程序化数据生成套件
@@ -429,6 +435,6 @@ GSM8K 和 MATH 等数据集主要是静态的、人工标注或收集的基准�
 
 - [SokoBench：评估大模型长程规划与推理能力]({{< relref "posts/20260129-arxiv_ai-sokobench-evaluating-long-horizon-planning-and-rea-2.md" >}})
 - [基于经验的试错算法超越语言模型]({{< relref "posts/20260130-arxiv_ai-language-based-trial-and-error-falls-behind-in-the-3.md" >}})
-- [SokoBench：评估大模型长周期规划与推理能力]({{< relref "posts/20260130-arxiv_ai-sokobench-evaluating-long-horizon-planning-and-rea-2.md" >}})
+- [SokoBench：评估大模型长周期规划与推理能力]({{< relref "posts/20260129-arxiv_ai-sokobench-evaluating-long-horizon-planning-and-rea-2.md" >}})
 - [Harpoon：面向条件表格扩散模型的广义流形引导]({{< relref "posts/20260210-arxiv_ai-harpoon-generalised-manifold-guidance-for-conditio-1.md" >}})
-- [专家依赖世界模型而LLM仅基于词模型预测]({{< relref "posts/20260210-blogs_podcasts-experts-have-world-models-llms-have-word-models-4.md" >}})
+- [专家依赖世界模型而LLM仅基于词模型预测]({{< relref "posts/20260207-blogs_podcasts-experts-have-world-models-llms-have-word-models-0.md" >}})

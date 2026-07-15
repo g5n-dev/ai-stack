@@ -21,6 +21,10 @@ description: '**摘要：A.R.I.S. —— 基于深度学习的电子废弃物自
 external_url: http://arxiv.org/abs/2602.17642v1
 scenarios:
 - Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # A.R.I.S.：基于深度学习的电子废弃物自动分类系统
@@ -463,8 +467,8 @@ A.R.I.S. 是“自动回收识别系统”的缩写，它是一个基于深度�
 
 ### 相关文章
 
-- [神经渲染技术探索与应用实践]({{< relref "posts/20260214-hacker_news-adventures-in-neural-rendering-11.md" >}})
+- [神经渲染技术探索与应用实践]({{< relref "posts/20260214-hacker_news-adventures-in-neural-rendering-6.md" >}})
 - [基于相机-IMU融合的鲁棒路面分类数据集与框架]({{< relref "posts/20260129-arxiv_ai-a-new-dataset-and-framework-for-robust-road-surfac-6.md" >}})
 - [在8位摩托罗拉6809上运行深度卷积神经网络玩棋盘游戏]({{< relref "posts/20260129-hacker_news-playing-board-games-with-deep-convolutional-neural-12.md" >}})
-- [在8位摩托罗拉6809上运行深度卷积神经网络玩桌游]({{< relref "posts/20260129-hacker_news-playing-board-games-with-deep-convolutional-neural-15.md" >}})
-- [神经渲染技术探索与应用实践]({{< relref "posts/20260214-hacker_news-adventures-in-neural-rendering-15.md" >}})
+- [在8位摩托罗拉6809上运行深度卷积神经网络玩桌游]({{< relref "posts/20260129-hacker_news-playing-board-games-with-deep-convolutional-neural-12.md" >}})
+- [神经渲染技术探索与应用实践]({{< relref "posts/20260214-hacker_news-adventures-in-neural-rendering-6.md" >}})

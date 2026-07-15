@@ -1,14 +1,30 @@
 ---
-title: "Transformer架构：注意力机制如何支撑BERT与GPT模型"
-date: 2026-05-04T09:44:42+08:00
+title: Transformer架构：注意力机制如何支撑BERT与GPT模型
+date: 2026-05-04 09:44:42+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Transformer", "注意力机制", "BERT", "GPT", "编码器-解码器", "自注意力", "语言模型", "预训练"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- Transformer
+- 注意力机制
+- BERT
+- GPT
+- 编码器-解码器
+- 自注意力
+- 语言模型
+- 预训练
+categories:
+- 大模型
+- 论文
 source: juejin
-description: "基本原理 Transformer 以自注意力（Self‑Attention）为核心，通过并行计算捕获序列内部的全局依赖，显著提升了对长距离上下文的学习能力。 编码器‑解码器的灵活使用 - **编码器（Encoder）**：将输入序列映射为双向上下文表示，仅使用编码器即可构建双向理解模型，典型代表如 BERT。 - **"
+description: 基本原理 Transformer 以自注意力（Self‑Attention）为核心，通过并行计算捕获序列内部的全局依赖，显著提升了对长距离上下文的学习能力。
+  编码器‑解码器的灵活使用 - **编码器（Encoder）**：将输入序列映射为双向上下文表示，仅使用编码器即可构建双向理解模型，典型代表如 BERT。 - **
 external_url: https://juejin.cn/post/7635853739061542954
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Transformer架构：注意力机制如何支撑BERT与GPT模型
@@ -94,9 +110,9 @@ Transformer的成功本质上是工程设计与理论突破的完美结合。自
 
 ### 相关文章
 
-- [LLM 架构画廊：主流大语言模型结构概览]({{< relref "posts/20260316-hacker_news-llm-architecture-gallery-12.md" >}})
-- [基于对称性泰勒近似实现恒定每Token成本注意力机制]({{< relref "posts/20260204-hacker_news-attention-at-constant-cost-per-token-via-symmetry--3.md" >}})
-- [基于对称性泰勒近似实现恒定Token成本注意力机制]({{< relref "posts/20260204-hacker_news-attention-at-constant-cost-per-token-via-symmetry--6.md" >}})
+- [LLM 架构画廊：主流大语言模型结构概览]({{< relref "posts/20260315-hacker_news-llm-architecture-gallery-2.md" >}})
+- [基于对称性泰勒近似实现恒定每Token成本注意力机制]({{< relref "posts/20260204-hacker_news-attention-at-constant-cost-per-token-via-symmetry--0.md" >}})
+- [基于对称性泰勒近似实现恒定Token成本注意力机制]({{< relref "posts/20260204-hacker_news-attention-at-constant-cost-per-token-via-symmetry--0.md" >}})
 - [多层交叉注意力被证明是多模态上下文学习的最优解]({{< relref "posts/20260205-arxiv_ai-multi-layer-cross-attention-is-provably-optimal-fo-4.md" >}})
-- [基于对称感知泰勒近似实现恒定Token成本注意力机制]({{< relref "posts/20260205-hacker_news-attention-at-constant-cost-per-token-via-symmetry--14.md" >}})
+- [基于对称感知泰勒近似实现恒定Token成本注意力机制]({{< relref "posts/20260204-hacker_news-attention-at-constant-cost-per-token-via-symmetry--0.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

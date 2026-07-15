@@ -1,14 +1,30 @@
 ---
-title: "Vibe Coding 提示工程技巧与直觉式开发指南"
-date: 2026-02-18T07:39:44+08:00
+title: Vibe Coding 提示工程技巧与直觉式开发指南
+date: 2026-02-18 07:39:44+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Vibe Coding", "提示工程", "直觉式开发", "Cursor", "Claude", "AI 编程", "快速原型", "开发效率"]
-categories: ["AI 工程", "效率与方法论"]
+entry_kind: auto
+tags:
+- Vibe Coding
+- 提示工程
+- 直觉式开发
+- Cursor
+- Claude
+- AI 编程
+- 快速原型
+- 开发效率
+categories:
+- AI 工程
+- 效率与方法论
 source: juejin
-description: "Vibe Coding 代表了一种“感觉驱动”的快速开发范式，开发者通过直觉式提示利用 AI 快速生成原型并迭代打磨。在这种模式下，提示质量直接决定了产出的准确性与开发效率，传统的指令式输入往往难以满足需求。本文将深入探讨针对 Vibe Coding 的提示工程技巧，帮助读者掌握如何精准引导 AI，从而在保持直觉优势的"
+description: Vibe Coding 代表了一种“感觉驱动”的快速开发范式，开发者通过直觉式提示利用 AI 快速生成原型并迭代打磨。在这种模式下，提示质量直接决定了产出的准确性与开发效率，传统的指令式输入往往难以满足需求。本文将深入探讨针对
+  Vibe Coding 的提示工程技巧，帮助读者掌握如何精准引导 AI，从而在保持直觉优势的
 external_url: https://juejin.cn/post/7606621855853002752
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Vibe Coding 提示工程技巧与直觉式开发指南
@@ -168,9 +184,9 @@ Vibe Coding 的本质是“感觉驱动”的快速开发：用 AI 工具（如 
 
 ### 相关文章
 
-- [LNAI：定义AI编码工具配置并同步至多端]({{< relref "posts/20260203-hacker_news-lnai-define-ai-coding-tool-configs-once-sync-to-cl-5.md" >}})
-- [打破“氛围编程”迷思：回归代码本质与工程严谨性]({{< relref "posts/20260214-hacker_news-breaking-the-spell-of-vibe-coding-3.md" >}})
+- [LNAI：定义AI编码工具配置并同步至多端]({{< relref "posts/20260203-hacker_news-lnai-define-ai-coding-tool-configs-once-sync-to-cl-3.md" >}})
+- [打破“氛围编程”迷思：回归代码本质与工程严谨性]({{< relref "posts/20260214-hacker_news-breaking-the-spell-of-vibe-coding-11.md" >}})
 - [构建高质量代码提示词：从五要素基础到十维度进阶技巧]({{< relref "posts/20260214-juejin-让-ai-帮你写代码先学会跟它说话-0.md" >}})
-- [让 Claude 编写 CUDA 内核并指导开源模型]({{< relref "posts/20260129-blogs_podcasts-we-got-claude-to-build-cuda-kernels-and-teach-open-7.md" >}})
-- [2026年AI展望：LLM、智能体、缩放定律与中国发展]({{< relref "posts/20260203-blogs_podcasts-490-state-of-ai-in-2026-llms-coding-scaling-laws-c-3.md" >}})
+- [让 Claude 编写 CUDA 内核并指导开源模型]({{< relref "posts/20260129-blogs_podcasts-we-got-claude-to-build-cuda-kernels-and-teach-open-6.md" >}})
+- [2026年AI展望：LLM、智能体、缩放定律与中国发展]({{< relref "posts/20260201-blogs_podcasts-490-state-of-ai-in-2026-llms-coding-scaling-laws-c-0.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

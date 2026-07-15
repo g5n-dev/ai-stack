@@ -1,14 +1,32 @@
 ---
-title: "可微分自适应稀疏分层注意力"
-date: 2026-05-19T21:00:26+08:00
+title: 可微分自适应稀疏分层注意力
+date: 2026-05-19 21:00:26+08:00
 draft: false
-entry_kind: "auto"
-tags: ["稀疏注意力", "分层注意力", "可微分", "自适应", "大模型", "高效推理", "模型优化", "LLM"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- 稀疏注意力
+- 分层注意力
+- 可微分
+- 自适应
+- 大模型
+- 高效推理
+- 模型优化
+- LLM
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "DashAttention 提出一种可微分且自适应的稀疏层级注意力机制。现有方法如 NSA、InfLLMv2 采用 top‑k 选取粗粒度块并在其上进行细粒度 softmax，限制了每条查询选取的块数相同且阻断稀疏与稠密阶段的梯度流动。DashAttention 在第一阶段使用自适应的 α‑entmax 变换，根据查询"
+description: DashAttention 提出一种可微分且自适应的稀疏层级注意力机制。现有方法如 NSA、InfLLMv2 采用 top‑k 选取粗粒度块并在其上进行细粒度
+  softmax，限制了每条查询选取的块数相同且阻断稀疏与稠密阶段的梯度流动。DashAttention 在第一阶段使用自适应的 α‑entmax 变换，根据查询
 external_url: http://arxiv.org/abs/2605.18753v1
-scenarios: ["大语言模型"]
+scenarios:
+- 大语言模型
+aliases:
+- /posts/20260520-arxiv_ai-dashattention-differentiable-and-adaptive-sparse-h-0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 可微分自适应稀疏分层注意力
@@ -173,9 +191,9 @@ DashAttention 在 **块数自适应** 与 **全程可微** 两个方面优于前
 
 ### 相关文章
 
-- [Qwen3.5 微调指南]({{< relref "posts/20260305-hacker_news-qwen35-fine-tuning-guide-17.md" >}})
+- [Qwen3.5 微调指南]({{< relref "posts/20260304-hacker_news-qwen35-fine-tuning-guide-unsloth-documentation-7.md" >}})
 - [SpecKV：压缩感知Gamma选择优化自适应推测解码]({{< relref "posts/20260505-arxiv_ai-speckv-adaptive-speculative-decoding-with-compress-0.md" >}})
-- [上下文学习难度超出原有认知]({{< relref "posts/20260206-hacker_news-learning-from-context-is-harder-than-we-thought-5.md" >}})
-- [基于策略上下文蒸馏的大语言模型优化方法]({{< relref "posts/20260214-arxiv_ai-on-policy-context-distillation-for-language-models-4.md" >}})
-- [GPT-5.2 推导出理论物理新结果]({{< relref "posts/20260214-hacker_news-gpt-52-derives-a-new-result-in-theoretical-physics-6.md" >}})
+- [上下文学习难度超出原有认知]({{< relref "posts/20260206-hacker_news-learning-from-context-is-harder-than-we-thought-6.md" >}})
+- [基于策略上下文蒸馏的大语言模型优化方法]({{< relref "posts/20260213-arxiv_ai-on-policy-context-distillation-for-language-models-4.md" >}})
+- [GPT-5.2 推导出理论物理新结果]({{< relref "posts/20260213-hacker_news-gpt-52-derives-a-new-result-in-theoretical-physics-0.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

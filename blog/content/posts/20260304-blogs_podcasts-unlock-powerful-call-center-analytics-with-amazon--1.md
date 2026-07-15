@@ -21,6 +21,17 @@ description: '**基于Amazon Nova的呼叫中心分析能力总结** 本文主�
 external_url: https://aws.amazon.com/blogs/machine-learning/unlock-powerful-call-center-analytics-with-amazon-nova-foundation-models
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260305-blogs_podcasts-unlock-powerful-call-center-analytics-with-amazon--1/
+- /posts/20260305-blogs_podcasts-unlock-powerful-call-center-analytics-with-amazon--12/
+- /posts/20260305-blogs_podcasts-unlock-powerful-call-center-analytics-with-amazon--2/
+- /posts/20260305-blogs_podcasts-unlock-powerful-call-center-analytics-with-amazon--3/
+- /posts/20260305-blogs_podcasts-unlock-powerful-call-center-analytics-with-amazon--5/
+- /posts/20260305-blogs_podcasts-unlock-powerful-call-center-analytics-with-amazon--9/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 利用 Amazon Nova 基础模型增强联络中心分析能力
@@ -239,8 +250,8 @@ AI 模型的准确性并非一成不变。建立一个人机反馈回路（RLHF�
 
 ### 相关文章
 
-- [亚马逊利用Nova模型自动化新履约中心运营就绪测试]({{< relref "posts/20260211-blogs_podcasts-how-amazon-uses-amazon-nova-models-to-automate-ope-0.md" >}})
-- [How Amazon uses Amazon Nova models to automate operatio]({{< relref "posts/20260211-blogs_podcasts-how-amazon-uses-amazon-nova-models-to-automate-ope-6.md" >}})
-- [亚马逊利用Nova模型自动化新履约中心运营准备检测]({{< relref "posts/20260211-blogs_podcasts-how-amazon-uses-amazon-nova-models-to-automate-ope-7.md" >}})
-- [亚马逊利用Nova模型自动化新履约中心运营验收测试]({{< relref "posts/20260212-blogs_podcasts-how-amazon-uses-amazon-nova-models-to-automate-ope-12.md" >}})
-- [亚马逊利用Nova模型自动化新履约中心运营就绪测试]({{< relref "posts/20260212-blogs_podcasts-how-amazon-uses-amazon-nova-models-to-automate-ope-14.md" >}})
+- [亚马逊利用Nova模型自动化新履约中心运营就绪测试]({{< relref "posts/20260210-blogs_podcasts-how-amazon-uses-amazon-nova-models-to-automate-ope-0.md" >}})
+- [How Amazon uses Amazon Nova models to automate operatio]({{< relref "posts/20260210-blogs_podcasts-how-amazon-uses-amazon-nova-models-to-automate-ope-0.md" >}})
+- [亚马逊利用Nova模型自动化新履约中心运营准备检测]({{< relref "posts/20260210-blogs_podcasts-how-amazon-uses-amazon-nova-models-to-automate-ope-0.md" >}})
+- [亚马逊利用Nova模型自动化新履约中心运营验收测试]({{< relref "posts/20260210-blogs_podcasts-how-amazon-uses-amazon-nova-models-to-automate-ope-0.md" >}})
+- [亚马逊利用Nova模型自动化新履约中心运营就绪测试]({{< relref "posts/20260210-blogs_podcasts-how-amazon-uses-amazon-nova-models-to-automate-ope-0.md" >}})

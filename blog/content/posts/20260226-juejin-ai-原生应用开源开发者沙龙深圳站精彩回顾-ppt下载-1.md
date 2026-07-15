@@ -21,6 +21,10 @@ description: 随着 AI 技术从模型层向应用层的深入，如何构建稳
 external_url: https://juejin.cn/post/7611165150897586226
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AI原生应用开源开发者沙龙深圳站回顾及PPT下载
@@ -156,7 +160,7 @@ scenarios:
 ### 相关文章
 
 - [我的AI应用实践与经验总结]({{< relref "posts/20260205-hacker_news-my-ai-adoption-journey-6.md" >}})
-- [我的AI应用实践与经验总结]({{< relref "posts/20260206-hacker_news-my-ai-adoption-journey-11.md" >}})
-- [中国开源AI生态架构选择：DeepSeek之外的技术路径]({{< relref "posts/20260129-blogs_podcasts-architectural-choices-in-chinas-open-source-ai-eco-9.md" >}})
-- [为何推出科学领域AI播客以及工程师应关注的原因]({{< relref "posts/20260129-blogs_podcasts-its-time-to-science-2.md" >}})
-- [kirara-ai：支持多平台接入的多模态AI聊天机器人框架]({{< relref "posts/20260129-github_trending-lss233-kirara-ai-0.md" >}})
+- [我的AI应用实践与经验总结]({{< relref "posts/20260205-hacker_news-my-ai-adoption-journey-6.md" >}})
+- [中国开源AI生态架构选择：DeepSeek之外的技术路径]({{< relref "posts/20260127-blogs_podcasts-architectural-choices-in-chinas-open-source-ai-eco-0.md" >}})
+- [为何推出科学领域AI播客以及工程师应关注的原因]({{< relref "posts/20260129-blogs_podcasts-its-time-to-science-0.md" >}})
+- [kirara-ai：支持多平台接入的多模态AI聊天机器人框架]({{< relref "posts/20260127-github_trending-lss233-kirara-ai-2.md" >}})

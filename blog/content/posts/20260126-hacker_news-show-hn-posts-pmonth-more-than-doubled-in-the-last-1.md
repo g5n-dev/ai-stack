@@ -1,12 +1,26 @@
 ---
-title: "Show HN发帖量同比翻倍！黑客社区为何彻底沸腾？🚀🔥"
-date: 2026-01-26T15:14:57+08:00
+title: Show HN发帖量同比翻倍！黑客社区为何彻底沸腾？🚀🔥
+date: 2026-01-26 15:14:57+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Hacker News", "Show HN", "开发者社区", "项目展示", "开源项目", "创业趋势", "社区活跃度", "技术分享"]
-categories: ["开源生态", "产品与创业"]
+entry_kind: auto
+tags:
+- Hacker News
+- Show HN
+- 开发者社区
+- 项目展示
+- 开源项目
+- 创业趋势
+- 社区活跃度
+- 技术分享
+categories:
+- 开源生态
+- 产品与创业
 source: hacker_news
 external_url: https://petegoldsmith.com/2026/01/26/2026-01-26-show-hn-trends
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 📰 Show HN发帖量同比翻倍！黑客社区为何彻底沸腾？🚀🔥

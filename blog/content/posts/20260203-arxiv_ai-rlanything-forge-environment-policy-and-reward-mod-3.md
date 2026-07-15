@@ -1,14 +1,32 @@
 ---
-title: "RLAnything：完全动态强化学习系统构建环境、策略与奖励模型"
-date: 2026-02-03T23:08:59+08:00
+title: RLAnything：完全动态强化学习系统构建环境、策略与奖励模型
+date: 2026-02-03 23:08:59+08:00
 draft: false
-entry_kind: "auto"
-tags: ["强化学习", "RL", "LLM", "RLHF", "Agent", "奖励模型", "环境自适应", "Qwen"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- 强化学习
+- RL
+- LLM
+- RLHF
+- Agent
+- 奖励模型
+- 环境自适应
+- Qwen
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "**RLAnything：全动态强化学习系统综述** **核心概念** RLAnything 是一个创新的强化学习（RL）框架，旨在通过闭环优化技术，动态地“锻造”环境、策略和奖励模型。该框架适用于任何大语言模型（LLM）或智能体场景，能够放大学习信号并增强整体 RL 系统的性能。 **主要机制** 1. **策略训练"
+description: '**RLAnything：全动态强化学习系统综述** **核心概念** RLAnything 是一个创新的强化学习（RL）框架，旨在通过闭环优化技术，动态地“锻造”环境、策略和奖励模型。该框架适用于任何大语言模型（LLM）或智能体场景，能够放大学习信号并增强整体
+  RL 系统的性能。 **主要机制** 1. **策略训练'
 external_url: http://arxiv.org/abs/2602.02488v1
-scenarios: ["大语言模型"]
+scenarios:
+- 大语言模型
+aliases:
+- /posts/20260204-arxiv_ai-rlanything-forge-environment-policy-and-reward-mod-3/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # RLAnything：完全动态强化学习系统构建环境、策略与奖励模型
@@ -538,9 +556,9 @@ RLAnything 的核心理念在于将强化学习系统中的环境、策略和奖
 
 ### 相关文章
 
-- [探索面向智能体的推理奖励模型]({{< relref "posts/20260201-arxiv_ai-exploring-reasoning-reward-model-for-agents-4.md" >}})
+- [探索面向智能体的推理奖励模型]({{< relref "posts/20260130-arxiv_ai-exploring-reasoning-reward-model-for-agents-4.md" >}})
 - [通过文本反馈扩展强化学习的能力边界]({{< relref "posts/20260203-arxiv_ai-expanding-the-capabilities-of-reinforcement-learni-5.md" >}})
 - [DynaWeb：基于模型的强化学习网页智能体]({{< relref "posts/20260130-arxiv_ai-dynaweb-model-based-reinforcement-learning-of-web--6.md" >}})
-- [DynaWeb：基于模型的强化学习网页智能体]({{< relref "posts/20260201-arxiv_ai-dynaweb-model-based-reinforcement-learning-of-web--6.md" >}})
+- [DynaWeb：基于模型的强化学习网页智能体]({{< relref "posts/20260130-arxiv_ai-dynaweb-model-based-reinforcement-learning-of-web--6.md" >}})
 - [研究揭示RLHF如何加剧大模型谄媚行为]({{< relref "posts/20260203-arxiv_ai-how-rlhf-amplifies-sycophancy-0.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

@@ -1,14 +1,29 @@
 ---
-title: "内省式耦合自我解释训练追踪固定监督行为变化"
-date: 2026-07-01T21:59:10+08:00
+title: 内省式耦合自我解释训练追踪固定监督行为变化
+date: 2026-07-01 21:59:10+08:00
 draft: false
-entry_kind: "auto"
-tags: ["内省耦合", "自我解释", "行为漂移", "语言模型", "监督信号", "反事实", "可解释性", "训练动态"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- 内省耦合
+- 自我解释
+- 行为漂移
+- 语言模型
+- 监督信号
+- 反事实
+- 可解释性
+- 训练动态
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "研究背景 训练语言模型生成解释被视为提升模型自省能力的途径，但往往难以判断解释是忠实反映内部决策还是仅仅表面模仿。 关键发现 研究使用反事实行为的监督信号，让模型解释输入特征对预测的影响。实验意外发现，即使解释来源于模型自身的早期检查点或同族模型的固定反事实解释，模型在后续训练中仍能生成比训练目标更贴近自身当前行为的解"
+description: 研究背景 训练语言模型生成解释被视为提升模型自省能力的途径，但往往难以判断解释是忠实反映内部决策还是仅仅表面模仿。 关键发现 研究使用反事实行为的监督信号，让模型解释输入特征对预测的影响。实验意外发现，即使解释来源于模型自身的早期检查点或同族模型的固定反事实解释，模型在后续训练中仍能生成比训练目标更贴近自身当前行为的解
 external_url: http://arxiv.org/abs/2606.32038v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 内省式耦合自我解释训练追踪固定监督行为变化
@@ -171,7 +186,7 @@ scenarios: ["Web应用开发"]
 
 ### 相关文章
 
-- [因果性是可解释性泛化的关键]({{< relref "posts/20260220-arxiv_ai-causality-is-key-for-interpretability-claims-to-ge-5.md" >}})
+- [因果性是可解释性泛化的关键]({{< relref "posts/20260219-arxiv_ai-causality-is-key-for-interpretability-claims-to-ge-5.md" >}})
 - [神经元群体选择性随尺度的差异化特征]({{< relref "posts/20260603-arxiv_ai-neuron-populations-exhibit-divergent-selectivity-w-0.md" >}})
 - [因果性是可解释性泛化的关键]({{< relref "posts/20260219-arxiv_ai-causality-is-key-for-interpretability-claims-to-ge-5.md" >}})
 - [语言模型价值轴：编码正确性判断能力]({{< relref "posts/20260616-arxiv_ai-the-value-axis-language-models-encode-whether-they-0.md" >}})

@@ -1,12 +1,29 @@
 ---
-title: "突破极限！AI如何教会自己推理？🤯 边缘学习性的惊天秘密！🚀"
-date: 2026-01-27T23:10:51+08:00
+title: 突破极限！AI如何教会自己推理？🤯 边缘学习性的惊天秘密！🚀
+date: 2026-01-27 23:10:51+08:00
 draft: false
-entry_kind: "auto"
-tags: ["SOAR", "强化学习", "元学习", "模型推理", "课程学习", "自我改进", "数学基准", "稀疏奖励"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- SOAR
+- 强化学习
+- 元学习
+- 模型推理
+- 课程学习
+- 自我改进
+- 数学基准
+- 稀疏奖励
+categories:
+- 大模型
+- 论文
 source: arxiv
 external_url: http://arxiv.org/abs/2601.18778v1
+scenarios: []
+aliases:
+- /posts/20260128-arxiv_ai-teaching-models-to-teach-themselves-reasoning-at-t-9/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 📚 突破极限！AI如何教会自己推理？🤯 边缘学习性的惊天秘密！🚀

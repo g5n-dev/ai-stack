@@ -1,14 +1,35 @@
 ---
-title: "Matchlock：基于 Linux 的 AI 智能体沙箱技术"
-date: 2026-02-08T11:58:53+08:00
+title: Matchlock：基于 Linux 的 AI 智能体沙箱技术
+date: 2026-02-08 11:58:53+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI 智能体", "沙箱技术", "Linux", "系统安全", "容器化", "隔离机制", "Hacker News", "Matchlock"]
-categories: ["安全", "系统与基础设施"]
+entry_kind: auto
+tags:
+- AI 智能体
+- 沙箱技术
+- Linux
+- 系统安全
+- 容器化
+- 隔离机制
+- Hacker News
+- Matchlock
+categories:
+- 安全
+- 系统与基础设施
 source: hacker_news
-description: "随着 AI 智能体在自动化任务中的应用日益广泛，其安全性与可控性成为了开发者必须面对的核心挑战。本文介绍的 Matchlock 是一款基于 Linux 的沙箱工具，旨在为智能体的执行环境提供严格的隔离与管控。通过解析其架构设计与实现原理，读者将了解如何利用 Linux 内核特性来有效限制智能体的系统访问权限，从而在保障"
+description: 随着 AI 智能体在自动化任务中的应用日益广泛，其安全性与可控性成为了开发者必须面对的核心挑战。本文介绍的 Matchlock 是一款基于
+  Linux 的沙箱工具，旨在为智能体的执行环境提供严格的隔离与管控。通过解析其架构设计与实现原理，读者将了解如何利用 Linux 内核特性来有效限制智能体的系统访问权限，从而在保障
 external_url: https://github.com/jingkaihe/matchlock
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+aliases:
+- /posts/20260208-hacker_news-matchlock-linux-based-sandboxing-for-ai-agents-3/
+- /posts/20260208-hacker_news-matchlock-secures-ai-agent-workloads-with-a-linux--10/
+- /posts/20260208-hacker_news-matchlock-secures-ai-agent-workloads-with-a-linux--4/
+- /posts/20260208-hacker_news-matchlock-secures-ai-agent-workloads-with-a-linux--8/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Matchlock：基于 Linux 的 AI 智能体沙箱技术
@@ -470,9 +491,9 @@ if __name__ == "__main__":
 
 ### 相关文章
 
-- [在 Linux 环境中为 AI 代理构建沙箱隔离机制]({{< relref "posts/20260204-hacker_news-sandboxing-ai-agents-in-linux-18.md" >}})
+- [在 Linux 环境中为 AI 代理构建沙箱隔离机制]({{< relref "posts/20260203-hacker_news-sandboxing-ai-agents-in-linux-15.md" >}})
 - [在 Linux 环境下实现 AI Agent 沙箱隔离]({{< relref "posts/20260203-hacker_news-sandboxing-ai-agents-in-linux-15.md" >}})
-- [Linux 环境下 AI Agent 沙箱隔离技术解析]({{< relref "posts/20260203-hacker_news-sandboxing-ai-agents-in-linux-8.md" >}})
-- [OpenClaw：AI代理获系统完全访问权限的安全隐忧]({{< relref "posts/20260206-hacker_news-openclaw-when-ai-agents-get-full-system-access-sec-19.md" >}})
+- [Linux 环境下 AI Agent 沙箱隔离技术解析]({{< relref "posts/20260203-hacker_news-sandboxing-ai-agents-in-linux-15.md" >}})
+- [OpenClaw：AI代理获系统完全访问权限的安全隐忧]({{< relref "posts/20260206-hacker_news-openclaw-when-ai-agents-get-full-system-access-sec-14.md" >}})
 - [微软推出 Azure Linux 发行版，用于优化云端基础设施]({{< relref "posts/20260129-hacker_news-microsofts-azure-linux-3.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

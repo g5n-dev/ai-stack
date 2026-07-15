@@ -6,7 +6,7 @@ entry_kind: auto
 tags:
 - OpenClaw
 - AI Agent
-- Prompt工程
+- Prompt 工程
 - 自动化
 - 技能开发
 - 工作流
@@ -21,6 +21,10 @@ description: 本文介绍了 **OpenClaw** 技能开发框架，旨在实现 AI A
 external_url: https://juejin.cn/post/7615972610168176686
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # OpenClow Skill 开发实战：手把手实现自动日报技能
@@ -171,6 +175,6 @@ OpenClaw Skill 的核心职责是内容生成，消息发送通常由“通知�
 
 - [零成本云端部署OpenClaw接入飞书自动抓取数据]({{< relref "posts/20260224-juejin-喂饭级教程免费部署云端-openclaw-打通飞书自动抓取-clawhub-技能并写入飞书表格-0.md" >}})
 - [接入飞书实现OpenClaw AI员工直接操作文档与表格]({{< relref "posts/20260309-juejin-将openclaw接入飞书10分钟让你的ai员工直接操作你的文档和表格-0.md" >}})
-- [编排多会话 Claude Code 团队协作]({{< relref "posts/20260205-hacker_news-orchestrate-teams-of-claude-code-sessions-5.md" >}})
+- [编排多会话 Claude Code 团队协作]({{< relref "posts/20260205-hacker_news-claude-code-agent-teams-3.md" >}})
 - [基于OpenClaw构建16个AI Agent实现多平台自动化运营]({{< relref "posts/20260219-juejin-用openclaw搭了16个ai-agent一个人运营13个自媒体平台-1.md" >}})
-- [基于OpenClaw构建16个AI Agent实现13个平台自动化运营]({{< relref "posts/20260219-juejin-用openclaw搭了16个ai-agent一个人运营13个自媒体平台-2.md" >}})
+- [基于OpenClaw构建16个AI Agent实现13个平台自动化运营]({{< relref "posts/20260219-juejin-用openclaw搭了16个ai-agent一个人运营13个自媒体平台-1.md" >}})

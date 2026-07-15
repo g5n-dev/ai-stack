@@ -1,14 +1,31 @@
 ---
-title: "Amazon Bedrock Guardrails新增安全检查API"
-date: 2026-06-17T00:37:18+08:00
+title: Amazon Bedrock Guardrails新增安全检查API
+date: 2026-06-17 00:37:18+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Bedrock", "Guardrails", "安全检查", "代理式AI", "内容审核", "敏感数据保护", "多轮对话", "API"]
-categories: ["AI 工程", "安全"]
+entry_kind: auto
+tags:
+- Bedrock
+- Guardrails
+- 安全检查
+- 代理式AI
+- 内容审核
+- 敏感数据保护
+- 多轮对话
+- API
+categories:
+- AI 工程
+- 安全
 source: blogs_podcasts
-description: "功能概述 Amazon Bedrock Guardrails 推出全新 InvokeGuardrailChecks API，允许在代理 AI 应用中随时调用单个安全检查，而无需提前创建完整防护资源。该 API 支持多轮对话的每一步插入安全过滤，包括内容审查、敏感信息脱敏、合规校验等，并返回违规结果供业务自行处理或终止对"
+description: 功能概述 Amazon Bedrock Guardrails 推出全新 InvokeGuardrailChecks API，允许在代理 AI
+  应用中随时调用单个安全检查，而无需提前创建完整防护资源。该 API 支持多轮对话的每一步插入安全过滤，包括内容审查、敏感信息脱敏、合规校验等，并返回违规结果供业务自行处理或终止对
 external_url: https://aws.amazon.com/blogs/machine-learning/safeguard-your-agentic-ai-applications-with-the-amazon-bedrock-guardrails-invokeguardrailchecks-api
-scenarios: ["AI/ML项目", "后端开发"]
+scenarios:
+- AI/ML项目
+- 后端开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Amazon Bedrock Guardrails新增安全检查API
@@ -119,9 +136,9 @@ InvokeGuardrailChecks API 的实际应用价值体现在三个层面。在开发
 
 ### 相关文章
 
-- [利用 Amazon Bedrock Guardrails 构建安全生成式 AI 应用的最佳实践]({{< relref "posts/20260302-blogs_podcasts-build-safe-generative-ai-applications-like-a-pro-b-3.md" >}})
-- [构建安全的生成式 AI 应用：利用 Amazon Bedrock Guardrails]({{< relref "posts/20260303-blogs_podcasts-build-safe-generative-ai-applications-like-a-pro-b-13.md" >}})
-- [Goodfire AI打造机制可解释性平台并推API落地企业部署]({{< relref "posts/20260207-blogs_podcasts-the-first-mechanistic-interpretability-frontier-la-1.md" >}})
-- [Goodfire AI 打造可落地机械可解释性标杆并发布 API]({{< relref "posts/20260207-blogs_podcasts-the-first-mechanistic-interpretability-frontier-la-2.md" >}})
-- [Goodfire AI：打造首个机制可解释性实验室与生产级工作流]({{< relref "posts/20260208-blogs_podcasts-the-first-mechanistic-interpretability-frontier-la-1.md" >}})
+- [利用 Amazon Bedrock Guardrails 构建安全生成式 AI 应用的最佳实践]({{< relref "posts/20260302-blogs_podcasts-build-safe-generative-ai-applications-like-a-pro-b-2.md" >}})
+- [构建安全的生成式 AI 应用：利用 Amazon Bedrock Guardrails]({{< relref "posts/20260302-blogs_podcasts-build-safe-generative-ai-applications-like-a-pro-b-2.md" >}})
+- [Goodfire AI打造机制可解释性平台并推API落地企业部署]({{< relref "posts/20260205-blogs_podcasts-the-first-mechanistic-interpretability-frontier-la-0.md" >}})
+- [Goodfire AI 打造可落地机械可解释性标杆并发布 API]({{< relref "posts/20260205-blogs_podcasts-the-first-mechanistic-interpretability-frontier-la-0.md" >}})
+- [Goodfire AI：打造首个机制可解释性实验室与生产级工作流]({{< relref "posts/20260205-blogs_podcasts-the-first-mechanistic-interpretability-frontier-la-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

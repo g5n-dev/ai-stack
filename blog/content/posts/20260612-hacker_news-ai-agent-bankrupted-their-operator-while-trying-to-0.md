@@ -1,14 +1,29 @@
 ---
-title: "AI代理扫描DN42网络致操作者破产"
-date: 2026-06-12T12:43:35+08:00
+title: AI代理扫描DN42网络致操作者破产
+date: 2026-06-12 12:43:35+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI代理", "DN42", "网络扫描", "破产", "成本失控", "自动化风险", "机器学习", "安全事件"]
-categories: ["系统与基础设施", "安全"]
+entry_kind: auto
+tags:
+- AI 代理
+- DN42
+- 网络扫描
+- 破产
+- 成本失控
+- 自动化风险
+- 机器学习
+- 安全事件
+categories:
+- 系统与基础设施
+- 安全
 source: hacker_news
-description: "在最近的实验案例中，一个本用于自动扫描DN42网络的AI代理因资源消耗失控导致其运营方资金链断裂。本文通过剖析该事故的技术细节，揭示了自主代理在持续大规模扫描时的成本风险，并提供了评估和防护的实用建议，帮助读者在实际部署中避免类似困境。通过本案例的分析，读者能够掌握评估AI代理资源消耗的关键指标，并制定相应的预算和容错"
+description: 在最近的实验案例中，一个本用于自动扫描DN42网络的AI代理因资源消耗失控导致其运营方资金链断裂。本文通过剖析该事故的技术细节，揭示了自主代理在持续大规模扫描时的成本风险，并提供了评估和防护的实用建议，帮助读者在实际部署中避免类似困境。通过本案例的分析，读者能够掌握评估AI代理资源消耗的关键指标，并制定相应的预算和容错
 external_url: https://lantian.pub/en/article/fun/ai-agent-bankrupted-their-operator-scan-dn42lantian.lantian
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AI代理扫描DN42网络致操作者破产
@@ -58,9 +73,9 @@ scenarios: ["AI/ML项目"]
 
 ### 相关文章
 
-- [OpenAI 如何通过内置安全机制防范 AI 代理点击链接时的数据泄露与提示词注入]({{< relref "posts/20260129-blogs_podcasts-keeping-your-data-safe-when-an-ai-agent-clicks-a-l-6.md" >}})
+- [OpenAI 如何通过内置安全机制防范 AI 代理点击链接时的数据泄露与提示词注入]({{< relref "posts/20260129-blogs_podcasts-keeping-your-data-safe-when-an-ai-agent-clicks-a-l-5.md" >}})
 - [OpenClaw赋予AI全系统权限引发安全担忧]({{< relref "posts/20260206-hacker_news-openclaw-when-ai-agents-get-full-system-access-sec-14.md" >}})
-- [OpenClaw：AI代理获系统完全访问权限的安全隐忧]({{< relref "posts/20260206-hacker_news-openclaw-when-ai-agents-get-full-system-access-sec-19.md" >}})
-- [迈向可解释联邦学习：理解差分隐私的影响]({{< relref "posts/20260212-arxiv_ai-towards-explainable-federated-learning-understandi-2.md" >}})
+- [OpenClaw：AI代理获系统完全访问权限的安全隐忧]({{< relref "posts/20260206-hacker_news-openclaw-when-ai-agents-get-full-system-access-sec-14.md" >}})
+- [迈向可解释联邦学习：理解差分隐私的影响]({{< relref "posts/20260211-arxiv_ai-towards-explainable-federated-learning-understandi-2.md" >}})
 - [Jeff Dean：重写谷歌搜索栈与TPU共设计之路]({{< relref "posts/20260212-blogs_podcasts-owning-the-ai-pareto-frontier-jeff-dean-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

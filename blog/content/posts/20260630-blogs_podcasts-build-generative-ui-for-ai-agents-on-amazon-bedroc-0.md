@@ -1,14 +1,29 @@
 ---
-title: "AG-UI协议集成Amazon Bedrock AgentCore构建生成式UI"
-date: 2026-06-30T18:24:54+08:00
+title: AG-UI协议集成Amazon Bedrock AgentCore构建生成式UI
+date: 2026-06-30 18:24:54+08:00
 draft: false
-entry_kind: "auto"
-tags: ["生成式UI", "AG-UI协议", "Amazon Bedrock", "CopilotKit", "AgentCore", "FAST模板", "人机协作", "状态同步"]
-categories: ["AI 工程"]
+entry_kind: auto
+tags:
+- 生成式UI
+- AG-UI协议
+- Amazon Bedrock
+- CopilotKit
+- AgentCore
+- FAST模板
+- 人机协作
+- 状态同步
+categories:
+- AI 工程
 source: blogs_podcasts
-description: "AG‑UI 与 FAST 集成 AG‑UI（Agent‑GUI Interface）是一种标准化协议，旨在把 AI Agent 的交互界面与后端模型解耦。Amazon Bedrock AgentCore 通过 AG‑UI 与前端框架对接，开发者可在 FAST（Full‑stack AgentCore Solution"
+description: AG‑UI 与 FAST 集成 AG‑UI（Agent‑GUI Interface）是一种标准化协议，旨在把 AI Agent 的交互界面与后端模型解耦。Amazon
+  Bedrock AgentCore 通过 AG‑UI 与前端框架对接，开发者可在 FAST（Full‑stack AgentCore Solution
 external_url: https://aws.amazon.com/blogs/machine-learning/build-generative-ui-for-ai-agents-on-amazon-bedrock-agentcore-with-the-ag-ui-protocol
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AG-UI协议集成Amazon Bedrock AgentCore构建生成式UI
@@ -152,7 +167,7 @@ AG‑UI 与 CopilotKit 在 Bedrock AgentCore 上的结合，使 AI agent 能够�
 
 - [利用 FAST 模板加速构建 Amazon Bedrock AgentCore 应用]({{< relref "posts/20260210-blogs_podcasts-accelerate-agentic-application-development-with-a--11.md" >}})
 - [Iberdrola enhances IT operations using Amazon Bedrock A]({{< relref "posts/20260210-blogs_podcasts-iberdrola-enhances-it-operations-using-amazon-bedr-1.md" >}})
-- [Accelerate agentic application development with a full-]({{< relref "posts/20260211-blogs_podcasts-accelerate-agentic-application-development-with-a--11.md" >}})
-- [利用全栈模板加速开发基于Amazon Bedrock AgentCore的应用]({{< relref "posts/20260211-blogs_podcasts-accelerate-agentic-application-development-with-a--12.md" >}})
-- [Iberdrola enhances IT operations using Amazon Bedrock A]({{< relref "posts/20260211-blogs_podcasts-iberdrola-enhances-it-operations-using-amazon-bedr-1.md" >}})
+- [Accelerate agentic application development with a full-]({{< relref "posts/20260210-blogs_podcasts-accelerate-agentic-application-development-with-a--11.md" >}})
+- [利用全栈模板加速开发基于Amazon Bedrock AgentCore的应用]({{< relref "posts/20260210-blogs_podcasts-accelerate-agentic-application-development-with-a--11.md" >}})
+- [Iberdrola enhances IT operations using Amazon Bedrock A]({{< relref "posts/20260210-blogs_podcasts-iberdrola-enhances-it-operations-using-amazon-bedr-1.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

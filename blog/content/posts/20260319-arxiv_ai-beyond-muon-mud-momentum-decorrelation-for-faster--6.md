@@ -21,6 +21,12 @@ description: MUD优化器技术总结 研究背景 当前大语言模型训练�
 external_url: http://arxiv.org/abs/2603.17970v1
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260320-arxiv_ai-beyond-muon-mud-momentum-decorrelation-for-faster--6/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # MUD优化器通过动量去相关加速Transformer训练
@@ -334,8 +340,8 @@ MUD（Momemtum Decorrelation）是一种专门为 Transformer 训练设计的新
 
 ### 相关文章
 
-- [通过低秩近似优化大模型动量状态以降低显存占用]({{< relref "posts/20260303-arxiv_ai-taming-momentum-rethinking-optimizer-states-throug-4.md" >}})
+- [通过低秩近似优化大模型动量状态以降低显存占用]({{< relref "posts/20260302-arxiv_ai-taming-momentum-rethinking-optimizer-states-throug-4.md" >}})
 - [FISMO：基于Fisher结构的动量正交化优化器]({{< relref "posts/20260130-arxiv_ai-fismo-fisher-structured-momentum-orthogonalized-op-4.md" >}})
-- [Claude Opus 4.6 发布]({{< relref "posts/20260206-hacker_news-claude-opus-46-3.md" >}})
+- [Claude Opus 4.6 发布]({{< relref "posts/20260205-hacker_news-claude-opus-46-2.md" >}})
 - [ARO：面向大模型矩阵优化的新视角]({{< relref "posts/20260210-arxiv_ai-aro-a-new-lens-on-matrix-optimization-for-large-mo-8.md" >}})
-- [OpenClaw：一个开源AI代理框架]({{< relref "posts/20260213-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-11.md" >}})
+- [OpenClaw：一个开源AI代理框架]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-0.md" >}})

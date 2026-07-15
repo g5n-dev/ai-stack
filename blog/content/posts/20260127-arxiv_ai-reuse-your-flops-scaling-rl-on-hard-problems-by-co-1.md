@@ -1,12 +1,29 @@
 ---
-title: "🚀RL新突破！复用FLOPs，硬难题上通过离线前缀扩展"
-date: 2026-01-27T23:10:51+08:00
+title: 🚀RL新突破！复用FLOPs，硬难题上通过离线前缀扩展
+date: 2026-01-27 23:10:51+08:00
 draft: false
-entry_kind: "auto"
-tags: ["PrefixRL", "强化学习", "LLM", "离线策略", "推理优化", "样本效率", "拒绝采样", "自举学习"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- PrefixRL
+- 强化学习
+- LLM
+- 离线策略
+- 推理优化
+- 样本效率
+- 拒绝采样
+- 自举学习
+categories:
+- 大模型
+- 论文
 source: arxiv
 external_url: http://arxiv.org/abs/2601.18795v1
+scenarios: []
+aliases:
+- /posts/20260128-arxiv_ai-reuse-your-flops-scaling-rl-on-hard-problems-by-co-1/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 📚 🚀RL新突破！复用FLOPs，硬难题上通过离线前缀扩展

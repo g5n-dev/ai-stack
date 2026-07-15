@@ -22,6 +22,12 @@ external_url: http://arxiv.org/abs/2603.13191v1
 scenarios:
 - AI/ML项目
 - 大语言模型
+aliases:
+- /posts/20260317-arxiv_ai-from-experiments-to-expertise-scientific-knowledge-4/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 从实验到专家：AI计算研究中的科学知识整合
@@ -440,8 +446,8 @@ scenarios:
 
 ### 相关文章
 
-- [加速科学研究：Gemini 案例研究与通用技术]({{< relref "posts/20260205-arxiv_ai-accelerating-scientific-research-with-gemini-case--5.md" >}})
+- [加速科学研究：Gemini 案例研究与通用技术]({{< relref "posts/20260204-arxiv_ai-accelerating-scientific-research-with-gemini-case--5.md" >}})
 - [让大语言模型互斗万智牌的实验项目]({{< relref "posts/20260217-hacker_news-show-hn-i-taught-llms-to-play-magic-the-gathering--10.md" >}})
-- [让大语言模型互斗万智牌的实验项目]({{< relref "posts/20260217-hacker_news-show-hn-i-taught-llms-to-play-magic-the-gathering--19.md" >}})
+- [让大语言模型互斗万智牌的实验项目]({{< relref "posts/20260217-hacker_news-show-hn-i-taught-llms-to-play-magic-the-gathering--10.md" >}})
 - [构建智能体文明：多智能体协作系统开源]({{< relref "posts/20260228-hacker_news-show-hn-decided-to-play-god-this-morning-so-i-buil-4.md" >}})
-- [推出全球首个AI for Science播客的契机与价值]({{< relref "posts/20260130-blogs_podcasts-its-time-to-science-7.md" >}})
+- [推出全球首个AI for Science播客的契机与价值]({{< relref "posts/20260129-blogs_podcasts-its-time-to-science-0.md" >}})

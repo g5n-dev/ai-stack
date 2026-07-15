@@ -23,6 +23,10 @@ scenarios:
 - AI/ML项目
 - 大语言模型
 - RAG应用
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # LangChain 实战：处理大型文档与跨文档摘要
@@ -199,4 +203,4 @@ LangChain 通过 `llm` 参数接收模型实例。你只需要在初始化链之
 - [LangChain 实现图片 OCR 与多模态 RAG 数据读取]({{< relref "posts/20260305-juejin-003rag-入门-langchain-读取图片数据-2.md" >}})
 - [AI Agent 开发入门技术栈选型指南]({{< relref "posts/20260309-juejin-ai-agent-技术栈选型入门只需要这些-3.md" >}})
 - [LangChain实战：结合Memory与OutputParser构建有记忆的结构化助手]({{< relref "posts/20260210-juejin-langchain-进阶实战当-memory-遇上-outputparser打造有记忆的结构化助手-3.md" >}})
-- [Agent Skills：智能体技能框架]({{< relref "posts/20260203-hacker_news-agent-skills-4.md" >}})
+- [Agent Skills：智能体技能框架]({{< relref "posts/20260203-hacker_news-agent-skills-0.md" >}})

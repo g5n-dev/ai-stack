@@ -21,6 +21,12 @@ description: '**总结：SmartSearch —— 对话记忆检索中的排序优于
 external_url: http://arxiv.org/abs/2603.15599v1
 scenarios:
 - RAG应用
+aliases:
+- /posts/20260318-arxiv_ai-smartsearch-how-ranking-beats-structure-for-conver-6/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # SmartSearch：排序机制如何优化对话记忆检索
@@ -364,7 +370,7 @@ SmartSearch 的工作流程主要分为两个阶段：
 ### 相关文章
 
 - [Nemotron ColEmbed V2：基于ViDoRe V3的多模态检索模型]({{< relref "posts/20260204-blogs_podcasts-nemotron-colembed-v2-raising-the-bar-for-multimoda-0.md" >}})
-- [Nemotron ColEmbed V2：基于ViDoRe V3的多模态检索模型]({{< relref "posts/20260205-blogs_podcasts-nemotron-colembed-v2-raising-the-bar-for-multimoda-1.md" >}})
-- [Nemotron ColEmbed V2：基于ViDoRe V3的多模态检索模型]({{< relref "posts/20260205-blogs_podcasts-nemotron-colembed-v2-raising-the-bar-for-multimoda-3.md" >}})
-- [Nemotron ColEmbed V2：基于ViDoRe V3的多模态检索模型]({{< relref "posts/20260205-blogs_podcasts-nemotron-colembed-v2-raising-the-bar-for-multimoda-4.md" >}})
-- [Nemotron ColEmbed V2：基于ViDoRe V3的多模态检索模型]({{< relref "posts/20260205-blogs_podcasts-nemotron-colembed-v2-raising-the-bar-for-multimoda-6.md" >}})
+- [Nemotron ColEmbed V2：基于ViDoRe V3的多模态检索模型]({{< relref "posts/20260204-blogs_podcasts-nemotron-colembed-v2-raising-the-bar-for-multimoda-0.md" >}})
+- [Nemotron ColEmbed V2：基于ViDoRe V3的多模态检索模型]({{< relref "posts/20260204-blogs_podcasts-nemotron-colembed-v2-raising-the-bar-for-multimoda-0.md" >}})
+- [Nemotron ColEmbed V2：基于ViDoRe V3的多模态检索模型]({{< relref "posts/20260204-blogs_podcasts-nemotron-colembed-v2-raising-the-bar-for-multimoda-0.md" >}})
+- [Nemotron ColEmbed V2：基于ViDoRe V3的多模态检索模型]({{< relref "posts/20260204-blogs_podcasts-nemotron-colembed-v2-raising-the-bar-for-multimoda-0.md" >}})

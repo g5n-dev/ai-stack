@@ -1,12 +1,26 @@
 ---
-title: "🛰️首颗VLEO卫星任务复盘！独家影像+飞行数据大揭秘！"
-date: 2026-01-25T12:39:55+08:00
+title: 🛰️首颗VLEO卫星任务复盘！独家影像+飞行数据大揭秘！
+date: 2026-01-25 12:39:55+08:00
 draft: false
-entry_kind: "auto"
-tags: ["VLEO", "卫星", "航天工程", "故障复盘", "推进系统", "热控", "遥测数据", "立方星"]
-categories: ["系统与基础设施", "开源生态"]
+entry_kind: auto
+tags:
+- VLEO
+- 卫星
+- 航天工程
+- 故障复盘
+- 推进系统
+- 热控
+- 遥测数据
+- 立方星
+categories:
+- 系统与基础设施
+- 开源生态
 source: hacker_news
 external_url: https://albedo.com/post/clarity-1-what-worked-and-where-we-go-next
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 📰 🛰️首颗VLEO卫星任务复盘！独家影像+飞行数据大揭秘！

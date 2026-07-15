@@ -1,14 +1,29 @@
 ---
-title: "AI采购中的战略盲点：专业化胜过规模化"
-date: 2026-05-22T17:25:07+08:00
+title: AI采购中的战略盲点：专业化胜过规模化
+date: 2026-05-22 17:25:07+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI采购", "专业化", "规模化", "战略盲点", "企业AI", "供应商选择", "成本效益", "采购策略"]
-categories: ["产品与创业", "效率与方法论"]
+entry_kind: auto
+tags:
+- AI采购
+- 专业化
+- 规模化
+- 战略盲点
+- 企业AI
+- 供应商选择
+- 成本效益
+- 采购策略
+categories:
+- 产品与创业
+- 效率与方法论
 source: blogs_podcasts
-description: "在AI项目的采购决策中，团队常把模型规模当作核心评估指标，却容易忽略细分场景的深度适配能力。本文通过对比案例与实际部署数据，揭示专业化模型在准确率、响应延迟和资源消耗上的优势，往往能够超越一味追求规模的做法。阅读后，采购者将掌握评估专业化程度的实用框架，以更精准地匹配业务需求与技术选型。"
+description: 在AI项目的采购决策中，团队常把模型规模当作核心评估指标，却容易忽略细分场景的深度适配能力。本文通过对比案例与实际部署数据，揭示专业化模型在准确率、响应延迟和资源消耗上的优势，往往能够超越一味追求规模的做法。阅读后，采购者将掌握评估专业化程度的实用框架，以更精准地匹配业务需求与技术选型。
 external_url: https://huggingface.co/blog/Dharma-AI/specialization-beats-scale
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AI采购中的战略盲点：专业化胜过规模化
@@ -129,9 +144,9 @@ scenarios: ["AI/ML项目"]
 
 ### 相关文章
 
-- [告别混乱扩张！🚀 精准增长策略：在保持质量的同时实现规模化！]({{< relref "posts/20260127-blogs_podcasts-scaling-without-slop-1.md" >}})
-- [大林建设部署ChatGPT Enterprise：加速人才发展与生成式AI规模化应用]({{< relref "posts/20260131-blogs_podcasts-taisei-corporation-shapes-the-next-generation-of-t-5.md" >}})
-- [Claude Sonnet 4.6 发布：兼顾性能与成本效益]({{< relref "posts/20260218-hacker_news-claude-sonnet-46-0.md" >}})
-- [OpenAI 成立前沿联盟，助力企业实现智能体规模化生产部署]({{< relref "posts/20260224-blogs_podcasts-openai-announces-frontier-alliance-partners-12.md" >}})
-- [Gemini 3.1 Flash-Lite：兼顾速度与成本效益的轻量级模型]({{< relref "posts/20260304-blogs_podcasts-gemini-31-flash-lite-built-for-intelligence-at-sca-8.md" >}})
+- [告别混乱扩张！🚀 精准增长策略：在保持质量的同时实现规模化！]({{< relref "posts/20260125-blogs_podcasts-scaling-without-slop-0.md" >}})
+- [大林建设部署ChatGPT Enterprise：加速人才发展与生成式AI规模化应用]({{< relref "posts/20260130-blogs_podcasts-taisei-corporation-shapes-the-next-generation-of-t-3.md" >}})
+- [Claude Sonnet 4.6 发布：兼顾性能与成本效益]({{< relref "posts/20260217-hacker_news-claude-sonnet-46-0.md" >}})
+- [OpenAI 成立前沿联盟，助力企业实现智能体规模化生产部署]({{< relref "posts/20260223-blogs_podcasts-openai-announces-frontier-alliance-partners-5.md" >}})
+- [Gemini 3.1 Flash-Lite：兼顾速度与成本效益的轻量级模型]({{< relref "posts/20260303-blogs_podcasts-gemini-31-flash-lite-built-for-intelligence-at-sca-2.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

@@ -21,6 +21,12 @@ description: '以下是关于《CUDA Agent: Large-Scale Agentic RL for High-Perf
 external_url: http://arxiv.org/abs/2602.24286v1
 scenarios:
 - 大语言模型
+aliases:
+- /posts/20260303-arxiv_ai-cuda-agent-large-scale-agentic-rl-for-high-perform-3/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # CUDA Agent：面向高性能内核生成的大规模智能体强化学习框架
@@ -416,8 +422,8 @@ CUDA Agent 代表了从“手动性能调优”向“AI 辅助或全自动高性
 
 ### 相关文章
 
-- [DynaWeb：基于模型的强化学习网页智能体框架]({{< relref "posts/20260131-arxiv_ai-dynaweb-model-based-reinforcement-learning-of-web--6.md" >}})
-- [DynaWeb：基于模型的强化学习网页智能体]({{< relref "posts/20260202-arxiv_ai-dynaweb-model-based-reinforcement-learning-of-web--6.md" >}})
+- [DynaWeb：基于模型的强化学习网页智能体框架]({{< relref "posts/20260130-arxiv_ai-dynaweb-model-based-reinforcement-learning-of-web--6.md" >}})
+- [DynaWeb：基于模型的强化学习网页智能体]({{< relref "posts/20260130-arxiv_ai-dynaweb-model-based-reinforcement-learning-of-web--6.md" >}})
 - [MemSkill：赋予自进化代理学习与演进记忆技能]({{< relref "posts/20260203-arxiv_ai-memskill-learning-and-evolving-memory-skills-for-s-9.md" >}})
-- [Agent Skills：AI 智能体技能框架与训练方法]({{< relref "posts/20260204-hacker_news-agent-skills-8.md" >}})
-- [面向运行时智能体记忆的查询感知预算层路由]({{< relref "posts/20260208-arxiv_ai-learning-query-aware-budget-tier-routing-for-runti-9.md" >}})
+- [Agent Skills：AI 智能体技能框架与训练方法]({{< relref "posts/20260203-hacker_news-agent-skills-0.md" >}})
+- [面向运行时智能体记忆的查询感知预算层路由]({{< relref "posts/20260206-arxiv_ai-learning-query-aware-budget-tier-routing-for-runti-9.md" >}})

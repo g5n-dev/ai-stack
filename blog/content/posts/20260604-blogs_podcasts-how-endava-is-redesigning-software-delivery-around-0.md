@@ -1,14 +1,31 @@
 ---
-title: "Endava借助AI代理重塑软件交付模式"
-date: 2026-06-04T12:05:24+08:00
+title: Endava借助AI代理重塑软件交付模式
+date: 2026-06-04 12:05:24+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI代理", "软件交付", "ChatGPT", "Codex", "自动化测试", "AI原生文化", "DevOps", "效率提升"]
-categories: ["AI 工程", "效率与方法论"]
+entry_kind: auto
+tags:
+- AI 代理
+- 软件交付
+- ChatGPT
+- Codex
+- 自动化测试
+- AI原生文化
+- DevOps
+- 效率提升
+categories:
+- AI 工程
+- 效率与方法论
 source: blogs_podcasts
-description: "背景 Endava 正将软件交付流程重新设计，以 AI 为核心，实现更快的价值交付。 核心技术 - **AI 代理**：自主完成代码生成、单元测试、部署脚本等任务。 - **ChatGPT Enterprise**：为业务分析、需求撰写、文档生成提供自然语言交互。 - **Codex**：将自然语言描述转化为可执行代码"
+description: 背景 Endava 正将软件交付流程重新设计，以 AI 为核心，实现更快的价值交付。 核心技术 - **AI 代理**：自主完成代码生成、单元测试、部署脚本等任务。
+  - **ChatGPT Enterprise**：为业务分析、需求撰写、文档生成提供自然语言交互。 - **Codex**：将自然语言描述转化为可执行代码
 external_url: https://openai.com/index/endava-frontiers
-scenarios: ["AI/ML项目", "DevOps/运维"]
+scenarios:
+- AI/ML项目
+- DevOps/运维
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Endava借助AI代理重塑软件交付模式
@@ -170,7 +187,7 @@ Endava通过AI Agent实现软件交付全链路自动化与文化转型。
 
 - [乐天集成Codex降低50%平均修复时间并自动化CI/CD审查]({{< relref "posts/20260311-blogs_podcasts-rakuten-fixes-issues-twice-as-fast-with-codex-1.md" >}})
 - [软件开发生命周期已死？AI 编码智能体如何颠覆 SDLC]({{< relref "posts/20260312-juejin-软件开发生命周期已死ai-编码智能体如何颠覆-sdlc-1.md" >}})
-- [LNAI：统一定义 AI 编码工具配置并同步至多端]({{< relref "posts/20260203-hacker_news-lnai-define-ai-coding-tool-configs-once-sync-to-cl-9.md" >}})
-- [AI 代码审查的真实世界基准测试]({{< relref "posts/20260205-hacker_news-a-real-world-benchmark-for-ai-code-review-3.md" >}})
+- [LNAI：统一定义 AI 编码工具配置并同步至多端]({{< relref "posts/20260203-hacker_news-lnai-define-ai-coding-tool-configs-once-sync-to-cl-3.md" >}})
+- [AI 代码审查的真实世界基准测试]({{< relref "posts/20260204-hacker_news-a-real-world-benchmark-for-ai-code-review-2.md" >}})
 - [The Death of Traditional Testing: Agentic Development B]({{< relref "posts/20260211-blogs_podcasts-the-death-of-traditional-testing-agentic-developme-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

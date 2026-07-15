@@ -1,12 +1,29 @@
 ---
-title: "🚛🚦高速公路卡车决策新突破！多目标强化学习让战术决策更高效！"
-date: 2026-01-27T23:10:51+08:00
+title: 🚛🚦高速公路卡车决策新突破！多目标强化学习让战术决策更高效！
+date: 2026-01-27 23:10:51+08:00
 draft: false
-entry_kind: "auto"
-tags: ["强化学习", "PPO", "多目标优化", "自动驾驶", "卡车决策", "帕累托最优", "仿真平台", "MORL"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- 强化学习
+- PPO
+- 多目标优化
+- 自动驾驶
+- 卡车决策
+- 帕累托最优
+- 仿真平台
+- MORL
+categories:
+- 大模型
+- AI 工程
 source: arxiv
 external_url: http://arxiv.org/abs/2601.18783v1
+scenarios: []
+aliases:
+- /posts/20260128-arxiv_ai-multi-objective-reinforcement-learning-for-efficie-7/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 📚 🚛🚦高速公路卡车决策新突破！多目标强化学习让战术决策更高效！

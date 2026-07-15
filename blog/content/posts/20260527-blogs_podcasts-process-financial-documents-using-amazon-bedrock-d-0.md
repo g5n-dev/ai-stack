@@ -1,14 +1,32 @@
 ---
-title: "使用Amazon Bedrock Data Automation提取四类财务文档数据"
-date: 2026-05-27T23:40:42+08:00
+title: 使用Amazon Bedrock Data Automation提取四类财务文档数据
+date: 2026-05-27 23:40:42+08:00
 draft: false
-entry_kind: "auto"
-tags: ["文档提取", "财务文档", "LLM", "OCR", "自动化", "数据处理", "规则引擎", "结构化数据"]
-categories: ["AI 工程", "数据"]
+entry_kind: auto
+tags:
+- 文档提取
+- 财务文档
+- LLM
+- OCR
+- 自动化
+- 数据处理
+- 规则引擎
+- 结构化数据
+categories:
+- AI 工程
+- 数据
 source: blogs_podcasts
-description: "文档类型与挑战 - **银行对账单**：多页、表格与自由文本交叉，格式不统一。 - **W‑2 表格**：标准结构但字段名称、位置在不同年份、不同州的表单中略有差异。 - **1099‑B 税表**：交易列信息密集，需区分买卖、盈亏字段。 - **供应商合同**：条款长度不一，跨段落引用、嵌套表格和签名块使得关键信息定"
+description: 文档类型与挑战 - **银行对账单**：多页、表格与自由文本交叉，格式不统一。 - **W‑2 表格**：标准结构但字段名称、位置在不同年份、不同州的表单中略有差异。
+  - **1099‑B 税表**：交易列信息密集，需区分买卖、盈亏字段。 - **供应商合同**：条款长度不一，跨段落引用、嵌套表格和签名块使得关键信息定
 external_url: https://aws.amazon.com/blogs/machine-learning/process-financial-documents-using-amazon-bedrock-data-automation
-scenarios: ["大语言模型"]
+scenarios:
+- 大语言模型
+aliases:
+- /posts/20260528-blogs_podcasts-process-financial-documents-using-amazon-bedrock-d-0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 使用Amazon Bedrock Data Automation提取四类财务文档数据
@@ -137,9 +155,9 @@ Amazon Bedrock Data Automation 在金融文档处理场景中展现了明确的�
 
 ### 相关文章
 
-- [利用大语言模型分析 TB 级 CI 日志数据]({{< relref "posts/20260227-hacker_news-we-gave-terabytes-of-ci-logs-to-an-llm-3.md" >}})
+- [利用大语言模型分析 TB 级 CI 日志数据]({{< relref "posts/20260227-hacker_news-we-gave-terabytes-of-ci-logs-to-an-llm-1.md" >}})
 - [LangChain 实现图片 OCR 与多模态 RAG 数据读取]({{< relref "posts/20260305-juejin-003rag-入门-langchain-读取图片数据-2.md" >}})
 - [Pulse AI与Amazon Bedrock构建金融文档提取管道]({{< relref "posts/20260513-blogs_podcasts-build-financial-document-processing-with-pulse-ai--0.md" >}})
 - [分析1573次Claude Code会话以探究AI代理工作机制]({{< relref "posts/20260312-hacker_news-show-hn-we-analyzed-1573-claude-code-sessions-to-s-3.md" >}})
-- [AI对工程类岗位的影响或与预期不同]({{< relref "posts/20260129-hacker_news-ais-impact-on-engineering-jobs-may-be-different-th-5.md" >}})
+- [AI对工程类岗位的影响或与预期不同]({{< relref "posts/20260129-hacker_news-ais-impact-on-engineering-jobs-may-be-different-th-3.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

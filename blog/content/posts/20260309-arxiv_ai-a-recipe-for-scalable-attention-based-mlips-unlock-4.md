@@ -21,6 +21,10 @@ description: 以下是该内容的中文总结： 本文提出了 **AllScAIP**�
 external_url: http://arxiv.org/abs/2603.06567v1
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 基于全节点注意力机制的可扩展机器学习势函数构建方法
@@ -428,7 +432,7 @@ AllScAIP基于等变Transformer架构。
 ### 相关文章
 
 - [强化注意力学习：基于奖励反馈的注意力机制优化方法]({{< relref "posts/20260205-arxiv_ai-reinforced-attention-learning-0.md" >}})
-- [强化注意力学习：通过奖励机制优化视觉注意力模型]({{< relref "posts/20260206-arxiv_ai-reinforced-attention-learning-0.md" >}})
+- [强化注意力学习：通过奖励机制优化视觉注意力模型]({{< relref "posts/20260205-arxiv_ai-reinforced-attention-learning-0.md" >}})
 - [大模型非线性变换解析：从MLP到MoE的架构演进]({{< relref "posts/20260226-juejin-03-大模型的非线性变化从mlp到moe大模型23的参数都在这里-4.md" >}})
-- [多头低秩注意力机制]({{< relref "posts/20260304-arxiv_ai-multi-head-low-rank-attention-9.md" >}})
+- [多头低秩注意力机制]({{< relref "posts/20260303-arxiv_ai-multi-head-low-rank-attention-9.md" >}})
 - [大模型激活与注意力下沉机制解析]({{< relref "posts/20260306-arxiv_ai-the-spike-the-sparse-and-the-sink-anatomy-of-massi-2.md" >}})

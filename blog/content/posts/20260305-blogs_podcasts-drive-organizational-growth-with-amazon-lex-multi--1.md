@@ -21,6 +21,25 @@ description: 本文介绍了一种利用 **Amazon Lex 多开发者 CI/CD 流水�
 external_url: https://aws.amazon.com/blogs/machine-learning/drive-organizational-growth-with-amazon-lex-multi-developer-ci-cd-pipeline
 scenarios:
 - DevOps/运维
+aliases:
+- /posts/20260305-blogs_podcasts-drive-organizational-growth-with-amazon-lex-multi--2/
+- /posts/20260306-blogs_podcasts-drive-organizational-growth-with-amazon-lex-multi--2/
+- /posts/20260306-blogs_podcasts-drive-organizational-growth-with-amazon-lex-multi--3/
+- /posts/20260306-blogs_podcasts-drive-organizational-growth-with-amazon-lex-multi--4/
+- /posts/20260306-blogs_podcasts-drive-organizational-growth-with-amazon-lex-multi--5/
+- /posts/20260306-blogs_podcasts-drive-organizational-growth-with-amazon-lex-multi--8/
+- /posts/20260306-blogs_podcasts-drive-organizational-growth-with-amazon-lex-multi--9/
+- /posts/20260307-blogs_podcasts-drive-organizational-growth-with-amazon-lex-multi--8/
+- /posts/20260307-blogs_podcasts-drive-organizational-growth-with-amazon-lex-multi--9/
+- /posts/20260308-blogs_podcasts-drive-organizational-growth-with-amazon-lex-multi--9/
+- /posts/20260309-blogs_podcasts-drive-organizational-growth-with-amazon-lex-multi--10/
+- /posts/20260309-blogs_podcasts-drive-organizational-growth-with-amazon-lex-multi--11/
+- /posts/20260309-blogs_podcasts-drive-organizational-growth-with-amazon-lex-multi--14/
+- /posts/20260309-blogs_podcasts-drive-organizational-growth-with-amazon-lex-multi--9/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 利用 Amazon Lex 多开发者 CI/CD 流水线推动组织增长
@@ -386,8 +405,8 @@ scenarios:
 
 ### 相关文章
 
-- [代理式开发加速代码发布，JiTTesting应对即时测试挑战]({{< relref "posts/20260212-blogs_podcasts-the-death-of-traditional-testing-agentic-developme-3.md" >}})
-- [代理式开发加速测试演进，JiTTesting 实现缺陷即时发现]({{< relref "posts/20260212-blogs_podcasts-the-death-of-traditional-testing-agentic-developme-6.md" >}})
-- [代理式开发加速测试演进，JiTTesting 重构传统流程]({{< relref "posts/20260213-blogs_podcasts-the-death-of-traditional-testing-agentic-developme-11.md" >}})
-- [Claude Code 每日基准测试用于性能退化追踪]({{< relref "posts/20260130-hacker_news-claude-code-daily-benchmarks-for-degradation-track-9.md" >}})
-- [AI 代码审查的真实世界基准测试]({{< relref "posts/20260205-hacker_news-a-real-world-benchmark-for-ai-code-review-3.md" >}})
+- [代理式开发加速代码发布，JiTTesting应对即时测试挑战]({{< relref "posts/20260211-blogs_podcasts-the-death-of-traditional-testing-agentic-developme-0.md" >}})
+- [代理式开发加速测试演进，JiTTesting 实现缺陷即时发现]({{< relref "posts/20260211-blogs_podcasts-the-death-of-traditional-testing-agentic-developme-0.md" >}})
+- [代理式开发加速测试演进，JiTTesting 重构传统流程]({{< relref "posts/20260211-blogs_podcasts-the-death-of-traditional-testing-agentic-developme-0.md" >}})
+- [Claude Code 每日基准测试用于性能退化追踪]({{< relref "posts/20260129-hacker_news-claude-code-daily-benchmarks-for-degradation-track-0.md" >}})
+- [AI 代码审查的真实世界基准测试]({{< relref "posts/20260204-hacker_news-a-real-world-benchmark-for-ai-code-review-2.md" >}})

@@ -20,6 +20,10 @@ description: 随着开源大语言模型（LLM）的普及，模型权重虽已�
 external_url: https://github.com/elder-plinius/OBLITERATUS
 scenarios:
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 移除开源大模型审查机制的工具

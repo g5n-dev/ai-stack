@@ -11,7 +11,7 @@ tags:
 - 软件开发
 - LLM
 - 自动化
-- AI编程
+- AI 编程
 categories:
 - 开发工具
 - AI 工程
@@ -22,6 +22,10 @@ external_url: https://github.com/sandgardenhq/sgai
 scenarios:
 - AI/ML项目
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Sgai：基于GOAL.md的目标驱动多代理软件开发工具

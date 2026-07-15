@@ -9,7 +9,7 @@ tags:
 - MVP
 - 工程化
 - 技术债务
-- AI辅助编程
+- AI 辅助编程
 - 产品交付
 - 开发流程
 categories:
@@ -20,6 +20,10 @@ description: 从“Vibe Coding”的原型到可交付的产品，中间往往�
 external_url: https://kanfa.macbudkowski.com/vibecoding-cryptosaurus
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 从Vibe编码原型到可用产品仅需100小时

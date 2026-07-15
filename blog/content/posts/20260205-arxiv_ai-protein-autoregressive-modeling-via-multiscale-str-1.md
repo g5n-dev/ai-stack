@@ -1,14 +1,32 @@
 ---
-title: "蛋白质多尺度结构生成的自回归建模方法"
-date: 2026-02-05T23:03:18+08:00
+title: 蛋白质多尺度结构生成的自回归建模方法
+date: 2026-02-05 23:03:18+08:00
 draft: false
-entry_kind: "auto"
-tags: ["蛋白质生成", "自回归模型", "多尺度建模", "Transformer", "零样本泛化", "流模型", "结构生物学", "AI for Science"]
-categories: ["论文", "大模型"]
+entry_kind: auto
+tags:
+- 蛋白质生成
+- 自回归模型
+- 多尺度建模
+- Transformer
+- 零样本泛化
+- 流模型
+- 结构生物学
+- AI for Science
+categories:
+- 论文
+- 大模型
 source: arxiv
-description: "本文介绍了**蛋白质自回归建模（PAR）**，这是一种首个用于蛋白质主链生成的多尺度自回归框架。PAR利用蛋白质的层级特性，采用“从粗到细”的方式生成结构，类似于雕刻雕像的过程。 其核心包含三个组件： 1. **多尺度下采样操作**：在训练中跨多个尺度表示蛋白质结构； 2. **自回归Transformer**：编码多"
+description: 本文介绍了**蛋白质自回归建模（PAR）**，这是一种首个用于蛋白质主链生成的多尺度自回归框架。PAR利用蛋白质的层级特性，采用“从粗到细”的方式生成结构，类似于雕刻雕像的过程。
+  其核心包含三个组件： 1. **多尺度下采样操作**：在训练中跨多个尺度表示蛋白质结构； 2. **自回归Transformer**：编码多
 external_url: http://arxiv.org/abs/2602.04883v1
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+aliases:
+- /posts/20260206-arxiv_ai-protein-autoregressive-modeling-via-multiscale-str-1/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 蛋白质多尺度结构生成的自回归建模方法
@@ -515,9 +533,9 @@ PAR 在蛋白质设计领域确立了一个新的技术路线。它不直接与�
 
 ### 相关文章
 
-- [推出世界首个科学领域AI播客及工程师关注理由]({{< relref "posts/20260201-blogs_podcasts-its-time-to-science-8.md" >}})
-- [加速科学研究：Gemini 案例研究与通用技术]({{< relref "posts/20260205-arxiv_ai-accelerating-scientific-research-with-gemini-case--5.md" >}})
-- [GPT-5结合自动化实验室将无细胞蛋白合成成本降低40%]({{< relref "posts/20260205-blogs_podcasts-gpt-5-lowers-the-cost-of-cell-free-protein-synthes-2.md" >}})
+- [推出世界首个科学领域AI播客及工程师关注理由]({{< relref "posts/20260129-blogs_podcasts-its-time-to-science-0.md" >}})
+- [加速科学研究：Gemini 案例研究与通用技术]({{< relref "posts/20260204-arxiv_ai-accelerating-scientific-research-with-gemini-case--5.md" >}})
+- [GPT-5结合自动化实验室将无细胞蛋白合成成本降低40%]({{< relref "posts/20260205-blogs_podcasts-gpt-5-lowers-the-cost-of-cell-free-protein-synthes-1.md" >}})
 - [🔥Post-LayerNorm强势回归！稳定、高效、深度训练的新神器！]({{< relref "posts/20260128-arxiv_ai-post-layernorm-is-back-stable-expressive-and-deep-2.md" >}})
 - [探索Transformer在表格数据变分自编码器中的位置]({{< relref "posts/20260129-arxiv_ai-exploring-transformer-placement-in-variational-aut-3.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

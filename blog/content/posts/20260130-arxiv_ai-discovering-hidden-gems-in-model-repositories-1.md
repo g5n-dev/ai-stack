@@ -1,14 +1,34 @@
 ---
-title: "发现模型仓库中被忽视的高质量模型"
-date: 2026-01-30T23:03:03+08:00
+title: 发现模型仓库中被忽视的高质量模型
+date: 2026-01-30 23:03:03+08:00
 draft: false
-entry_kind: "auto"
-tags: ["模型评估", "Llama-3.1", "微调", "多臂老虎机", "MAB", "模型筛选", "隐藏瑰宝", "推理优化"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- 模型评估
+- Llama 3.1
+- 微调
+- 多臂老虎机
+- MAB
+- 模型筛选
+- 隐藏瑰宝
+- 推理优化
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "**摘要：发现模型库中的“隐藏瑰宝”** 尽管公共模型库中托管了数百万个微调模型，但社区的使用习惯却高度集中在少数基础模型上。本文探讨了这种集中现象是否反映了市场的有效筛选，或者是否存在更优秀的模型被系统性地忽视。 通过对超过2,000个模型的广泛评估，研究揭示了“隐藏瑰宝”的普遍存在，即那些表现显著优于热门模型但鲜有"
+description: '**摘要：发现模型库中的“隐藏瑰宝”** 尽管公共模型库中托管了数百万个微调模型，但社区的使用习惯却高度集中在少数基础模型上。本文探讨了这种集中现象是否反映了市场的有效筛选，或者是否存在更优秀的模型被系统性地忽视。
+  通过对超过2,000个模型的广泛评估，研究揭示了“隐藏瑰宝”的普遍存在，即那些表现显著优于热门模型但鲜有'
 external_url: http://arxiv.org/abs/2601.22157v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+aliases:
+- /posts/20260131-arxiv_ai-discovering-hidden-gems-in-model-repositories-1/
+- /posts/20260201-arxiv_ai-discovering-hidden-gems-in-model-repositories-1/
+- /posts/20260202-arxiv_ai-discovering-hidden-gems-in-model-repositories-1/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 发现模型仓库中被忽视的高质量模型
@@ -566,6 +586,6 @@ scenarios: ["Web应用开发"]
 - [基于认知上下文学习构建大模型多智能体系统的信任机制]({{< relref "posts/20260130-arxiv_ai-epistemic-context-learning-building-trust-the-righ-7.md" >}})
 - [Cosmos重磅：微调视频模型！解锁 visuomotor 控制与规划 🚀✨]({{< relref "posts/20260125-arxiv_ai-cosmos-policy-fine-tuning-video-models-for-visuomo-9.md" >}})
 - [🚀RL新突破！复用FLOPs，硬难题上通过离线前缀扩展]({{< relref "posts/20260127-arxiv_ai-reuse-your-flops-scaling-rl-on-hard-problems-by-co-1.md" >}})
-- [⚡️俄罗斯方块爆杀Opus！Gemini Flash胜率66%震撼实测🎮]({{< relref "posts/20260127-hacker_news-show-hn-tetrisbench-gemini-flash-reaches-66-win-ra-13.md" >}})
-- [🇦🇪 Alyah ⭐️：揭秘阿拉伯LLM方言鲁棒评估！]({{< relref "posts/20260128-blogs_podcasts-alyah-toward-robust-evaluation-of-emirati-dialect--1.md" >}})
+- [⚡️俄罗斯方块爆杀Opus！Gemini Flash胜率66%震撼实测🎮]({{< relref "posts/20260127-hacker_news-show-hn-tetrisbench-gemini-flash-reaches-66-win-ra-6.md" >}})
+- [🇦🇪 Alyah ⭐️：揭秘阿拉伯LLM方言鲁棒评估！]({{< relref "posts/20260127-blogs_podcasts-alyah-toward-robust-evaluation-of-emirati-dialect--0.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

@@ -20,6 +20,14 @@ description: '**SOTAlign：基于最优传输的半监督视觉与语言模型�
 external_url: http://arxiv.org/abs/2602.23353v1
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260228-arxiv_ai-sotalign-semi-supervised-alignment-of-unimodal-vis-3/
+- /posts/20260301-arxiv_ai-sotalign-semi-supervised-alignment-of-unimodal-vis-3/
+- /posts/20260302-arxiv_ai-sotalign-semi-supervised-alignment-of-unimodal-vis-3/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # SOTAlign：基于最优传输的单模态视觉与语言模型半监督对齐
@@ -427,8 +435,8 @@ SOTAlign 具有很强的通用性和灵活性。它并不强制要求特定的�
 
 ### 相关文章
 
-- [GLM-OCR：面向复杂文档理解的多模态OCR模型]({{< relref "posts/20260212-hacker_news-glm-ocr-a-multimodal-ocr-model-for-complex-documen-8.md" >}})
-- [视觉语言模型能否通过交互学习直观物理]({{< relref "posts/20260207-arxiv_ai-can-vision-language-models-learn-intuitive-physics-5.md" >}})
-- [视觉语言模型能否通过交互学习直觉物理]({{< relref "posts/20260208-arxiv_ai-can-vision-language-models-learn-intuitive-physics-5.md" >}})
-- [视觉语言模型能否通过交互学习直观物理]({{< relref "posts/20260209-arxiv_ai-can-vision-language-models-learn-intuitive-physics-5.md" >}})
-- [ANCRe: Adaptive Neural Connection Reassignment for Effi]({{< relref "posts/20260211-arxiv_ai-ancre-adaptive-neural-connection-reassignment-for--5.md" >}})
+- [GLM-OCR：面向复杂文档理解的多模态OCR模型]({{< relref "posts/20260211-hacker_news-glm-ocr-accurate-fast-comprehensive-3.md" >}})
+- [视觉语言模型能否通过交互学习直观物理]({{< relref "posts/20260206-arxiv_ai-can-vision-language-models-learn-intuitive-physics-5.md" >}})
+- [视觉语言模型能否通过交互学习直觉物理]({{< relref "posts/20260206-arxiv_ai-can-vision-language-models-learn-intuitive-physics-5.md" >}})
+- [视觉语言模型能否通过交互学习直观物理]({{< relref "posts/20260206-arxiv_ai-can-vision-language-models-learn-intuitive-physics-5.md" >}})
+- [ANCRe: Adaptive Neural Connection Reassignment for Effi]({{< relref "posts/20260210-arxiv_ai-ancre-adaptive-neural-connection-reassignment-for--5.md" >}})

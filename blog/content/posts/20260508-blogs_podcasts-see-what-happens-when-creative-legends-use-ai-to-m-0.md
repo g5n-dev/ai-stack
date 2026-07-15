@@ -1,14 +1,28 @@
 ---
-title: "知名创意人用AI为小商家制作广告的案例"
-date: 2026-05-08T15:31:33+08:00
+title: 知名创意人用AI为小商家制作广告的案例
+date: 2026-05-08 15:31:33+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI广告", "创意设计", "小商家", "营销工具", "案例分享", "AIGC", "品牌营销", "人工智能"]
-categories: ["产品与创业"]
+entry_kind: auto
+tags:
+- AI广告
+- 创意设计
+- 小商家
+- 营销工具
+- 案例分享
+- AIGC
+- 品牌营销
+- 人工智能
+categories:
+- 产品与创业
 source: blogs_podcasts
-description: "当三位业界传奇——苏珊·克雷德尔、乔翁塔·詹金斯和蒂芙尼·罗尔芙——把人工智能融入广告创作时，会产生怎样的效果？本文通过他们为小企业打造的案例，探讨AI在视觉叙事和品牌表达中的实际价值，并为营销者提供可借鉴的思路。这些实验展示了AI在不同风格和预算下的适配能力，也让传统创意人重新思考技术与人之间的协作模式。"
+description: 当三位业界传奇——苏珊·克雷德尔、乔翁塔·詹金斯和蒂芙尼·罗尔芙——把人工智能融入广告创作时，会产生怎样的效果？本文通过他们为小企业打造的案例，探讨AI在视觉叙事和品牌表达中的实际价值，并为营销者提供可借鉴的思路。这些实验展示了AI在不同风格和预算下的适配能力，也让传统创意人重新思考技术与人之间的协作模式。
 external_url: https://blog.google/company-news/inside-google/company-announcements/the-small-brief
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 知名创意人用AI为小商家制作广告的案例
@@ -144,8 +158,8 @@ AI 辅助的创意生产能够在保持品牌核心价值的前提下，显著�
 
 ### 相关文章
 
-- [英国政府斥资410万英镑委托普华永道建设AI技能中心]({{< relref "posts/20260129-hacker_news-uk-governments-ai-skills-hub-was-delivered-by-pwc--19.md" >}})
-- [Moltbook：首个面向 AI 智能体的社交网络平台]({{< relref "posts/20260203-blogs_podcasts-ainews-moltbook-the-first-social-network-for-ai-ag-8.md" >}})
+- [英国政府斥资410万英镑委托普华永道建设AI技能中心]({{< relref "posts/20260129-hacker_news-uk-governments-ai-skills-hub-was-delivered-by-pwc--14.md" >}})
+- [Moltbook：首个面向 AI 智能体的社交网络平台]({{< relref "posts/20260131-blogs_podcasts-ainews-moltbook-the-first-social-network-for-ai-ag-0.md" >}})
 - [盘点五款免费好用的AI生成PPT工具]({{< relref "posts/20260213-juejin-偶然间发现一款逆天的-ai-ppt-工具免费生成-4.md" >}})
 - [AI时代的创意所有权界定与归属问题研究]({{< relref "posts/20260214-arxiv_ai-creative-ownership-in-the-age-of-ai-8.md" >}})
 - [Gemini应用集成Lyria 3模型，支持文图生成30秒音乐]({{< relref "posts/20260218-blogs_podcasts-a-new-way-to-express-yourself-gemini-can-now-creat-1.md" >}})

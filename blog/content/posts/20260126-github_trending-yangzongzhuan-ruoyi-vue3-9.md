@@ -1,12 +1,30 @@
 ---
-title: "🚀若依Vue3重磅发布！前后端分离+企业级神器🔥"
-date: 2026-01-26T12:12:08+08:00
+title: 🚀若依Vue3重磅发布！前后端分离+企业级神器🔥
+date: 2026-01-26 12:12:08+08:00
 draft: false
-entry_kind: "auto"
-tags: ["RuoYi", "Vue3", "SpringBoot", "前后端分离", "权限管理", "Element Plus", "Vite", "JWT"]
-categories: ["后端", "前端"]
+entry_kind: auto
+tags:
+- RuoYi
+- Vue3
+- Spring Boot
+- 前后端分离
+- 权限管理
+- Element Plus
+- Vite
+- JWT
+categories:
+- 后端
+- 前端
 source: github_trending
 external_url: https://github.com/yangzongzhuan/RuoYi-Vue3
+scenarios: []
+aliases:
+- /posts/20260127-github_trending-yangzongzhuan-ruoyi-vue3-4/
+- /posts/20260128-github_trending-yangzongzhuan-ruoyi-vue3-4/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 🚀 🚀若依Vue3重磅发布！前后端分离+企业级神器🔥

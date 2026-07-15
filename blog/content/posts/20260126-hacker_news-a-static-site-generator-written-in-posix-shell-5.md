@@ -1,12 +1,29 @@
 ---
-title: "⚡️ 震惊！纯Shell打造的静态网站生成器，极客必备！🚀"
-date: 2026-01-26T12:12:08+08:00
+title: ⚡️ 震惊！纯Shell打造的静态网站生成器，极客必备！🚀
+date: 2026-01-26 12:12:08+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Shell", "静态网站生成器", "POSIX", "极简主义", "CLI", "Unix哲学", "零依赖", "Markdown"]
-categories: ["开发工具", "前端"]
+entry_kind: auto
+tags:
+- Shell
+- 静态网站生成器
+- POSIX
+- 极简主义
+- CLI
+- Unix哲学
+- 零依赖
+- Markdown
+categories:
+- 开发工具
+- 前端
 source: hacker_news
 external_url: https://aashvik.com/posts/shell-ssg
+scenarios: []
+aliases:
+- /posts/20260126-hacker_news-a-static-site-generator-written-in-posix-shell-13/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 📰 ⚡️ 震惊！纯Shell打造的静态网站生成器，极客必备！🚀

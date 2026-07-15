@@ -20,6 +20,12 @@ description: '**PhysMoDPO：基于偏好优化的物理合理性人形运动生�
 external_url: http://arxiv.org/abs/2603.13228v1
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260317-arxiv_ai-physmodpo-physically-plausible-humanoid-motion-wit-0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # PhysMoDPO：基于偏好优化的仿人运动生成
@@ -415,7 +421,7 @@ PhysMoDPO 的应用场景主要集中在需要高度动态和自然交互的领�
 ### 相关文章
 
 - [VideoGPA：提取几何先验实现三维一致视频生成]({{< relref "posts/20260202-arxiv_ai-videogpa-distilling-geometry-priors-for-3d-consist-0.md" >}})
-- [超越VLM奖励：扩散原生潜在奖励建模]({{< relref "posts/20260213-arxiv_ai-beyond-vlm-based-rewards-diffusion-native-latent-r-3.md" >}})
+- [超越VLM奖励：扩散原生潜在奖励建模]({{< relref "posts/20260212-arxiv_ai-beyond-vlm-based-rewards-diffusion-native-latent-r-3.md" >}})
 - [超越VLM奖励：扩散原生潜在奖励建模]({{< relref "posts/20260212-arxiv_ai-beyond-vlm-based-rewards-diffusion-native-latent-r-3.md" >}})
 - [IRL-DAL：基于能量引导扩散模型的自动驾驶安全自适应轨迹规划]({{< relref "posts/20260202-arxiv_ai-irl-dal-safe-and-adaptive-trajectory-planning-for--6.md" >}})
 - [粒子引导扩散模型求解偏微分方程]({{< relref "posts/20260202-arxiv_ai-particle-guided-diffusion-models-for-partial-diffe-8.md" >}})

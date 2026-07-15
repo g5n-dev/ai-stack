@@ -1,14 +1,33 @@
 ---
-title: "Deep Researcher：序列规划反思与候选交叉"
-date: 2026-01-29T22:59:16+08:00
+title: Deep Researcher：序列规划反思与候选交叉
+date: 2026-01-29 22:59:16+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Deep Researcher", "AI Agent", "反思机制", "顺序规划", "候选交叉", "DeepResearch Bench", "Gemini 2.5 Pro", "RAG"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- Deep Researcher
+- AI Agent
+- 反思机制
+- 顺序规划
+- 候选交叉
+- DeepResearch Bench
+- Gemini 2.5 Pro
+- RAG
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "本文介绍了一种名为 **Deep Researcher Reflect Evolve** 的新型深度研究架构，旨在通过解决“并行扩展”范式的局限性，生成针对复杂博士级主题的详细研究报告。该系统主要由 Gemini 2.5 Pro 模型驱动，并在全球公认的博士级研究任务基准 DeepResearch Bench 上取得了"
+description: 本文介绍了一种名为 **Deep Researcher Reflect Evolve** 的新型深度研究架构，旨在通过解决“并行扩展”范式的局限性，生成针对复杂博士级主题的详细研究报告。该系统主要由
+  Gemini 2.5 Pro 模型驱动，并在全球公认的博士级研究任务基准 DeepResearch Bench 上取得了
 external_url: http://arxiv.org/abs/2601.20843v1
-scenarios: ["AI/ML项目", "RAG应用"]
+scenarios:
+- AI/ML项目
+- RAG应用
+aliases:
+- /posts/20260130-arxiv_ai-deep-researcher-with-sequential-plan-reflection-an-9/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Deep Researcher：序列规划反思与候选交叉
@@ -414,7 +433,7 @@ Deep Researcher Reflect Evolve 的区别在于：
 
 - [SokoBench：评估大模型长程规划与推理能力]({{< relref "posts/20260129-arxiv_ai-sokobench-evaluating-long-horizon-planning-and-rea-2.md" >}})
 - [🚀沙盒机制唤醒LLM智能体通用能力！AI Agent突破性架构！]({{< relref "posts/20260125-arxiv_ai-llm-in-sandbox-elicits-general-agentic-intelligenc-2.md" >}})
-- [AssetOpsBench：打破AI Agent评测与工业现实的壁垒！🚀]({{< relref "posts/20260126-blogs_podcasts-assetopsbench-bridging-the-gap-between-ai-agent-be-7.md" >}})
-- [AssetOpsBench：填补AI基准与工业现实的鸿沟！🤖🏭🚀]({{< relref "posts/20260127-blogs_podcasts-assetopsbench-bridging-the-gap-between-ai-agent-be-8.md" >}})
-- [⚡️俄罗斯方块爆杀Opus！Gemini Flash胜率66%震撼实测🎮]({{< relref "posts/20260127-hacker_news-show-hn-tetrisbench-gemini-flash-reaches-66-win-ra-13.md" >}})
+- [AssetOpsBench：打破AI Agent评测与工业现实的壁垒！🚀]({{< relref "posts/20260125-blogs_podcasts-assetopsbench-bridging-the-gap-between-ai-agent-be-6.md" >}})
+- [AssetOpsBench：填补AI基准与工业现实的鸿沟！🤖🏭🚀]({{< relref "posts/20260125-blogs_podcasts-assetopsbench-bridging-the-gap-between-ai-agent-be-6.md" >}})
+- [⚡️俄罗斯方块爆杀Opus！Gemini Flash胜率66%震撼实测🎮]({{< relref "posts/20260127-hacker_news-show-hn-tetrisbench-gemini-flash-reaches-66-win-ra-6.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

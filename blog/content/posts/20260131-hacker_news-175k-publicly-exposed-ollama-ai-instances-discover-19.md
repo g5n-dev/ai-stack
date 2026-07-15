@@ -1,14 +1,30 @@
 ---
-title: "发现逾17.5万个Ollama AI实例公网暴露"
-date: 2026-01-31T02:40:40+08:00
+title: 发现逾17.5万个Ollama AI实例公网暴露
+date: 2026-01-31 02:40:40+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Ollama", "数据泄露", "公网暴露", "LLM", "本地部署", "网络安全", "AI安全", "HackerNews"]
-categories: ["安全", "AI 工程"]
+entry_kind: auto
+tags:
+- Ollama
+- 数据泄露
+- 公网暴露
+- LLM
+- 本地部署
+- 网络安全
+- AI 安全
+- HackerNews
+categories:
+- 安全
+- AI 工程
 source: hacker_news
-description: "近期调研显示，全球范围内有超过 17.5 万个 Ollama AI 实例处于公网暴露状态。这一现象揭示了在本地部署大模型（LLM）时，开发者往往容易忽视基础的网络配置与访问控制。本文将分析这些暴露实例背后的安全风险，并提供切实可行的防护建议，帮助你在利用本地模型优势的同时，有效规避数据泄露与未授权访问的风险。"
+description: 近期调研显示，全球范围内有超过 17.5 万个 Ollama AI 实例处于公网暴露状态。这一现象揭示了在本地部署大模型（LLM）时，开发者往往容易忽视基础的网络配置与访问控制。本文将分析这些暴露实例背后的安全风险，并提供切实可行的防护建议，帮助你在利用本地模型优势的同时，有效规避数据泄露与未授权访问的风险。
 external_url: https://www.techradar.com/pro/security/over-175-000-publicly-exposed-ollama-ai-servers-discovered-worldwide-so-fix-now
-scenarios: ["大语言模型", "AI/ML项目"]
+scenarios:
+- 大语言模型
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 发现逾17.5万个Ollama AI实例公网暴露
@@ -392,9 +408,9 @@ AI 生态系统更新迅速，依赖库和 Ollama 本身可能存在已知漏洞
 
 ### 相关文章
 
-- [OpenAI 如何通过内置安全机制防范 AI 代理点击链接时的数据泄露与提示词注入]({{< relref "posts/20260129-blogs_podcasts-keeping-your-data-safe-when-an-ai-agent-clicks-a-l-6.md" >}})
+- [OpenAI 如何通过内置安全机制防范 AI 代理点击链接时的数据泄露与提示词注入]({{< relref "posts/20260129-blogs_podcasts-keeping-your-data-safe-when-an-ai-agent-clicks-a-l-5.md" >}})
 - [RedSage：网络安全通用大模型]({{< relref "posts/20260130-arxiv_ai-redsage-a-cybersecurity-generalist-llm-0.md" >}})
-- [RedSage：网络安全通用大模型]({{< relref "posts/20260131-arxiv_ai-redsage-a-cybersecurity-generalist-llm-0.md" >}})
-- [Kirara-ai：支持多平台接入的多模态AI聊天机器人]({{< relref "posts/20260129-github_trending-lss233-kirara-ai-2.md" >}})
-- [AI对工程类岗位的影响或与预期不同]({{< relref "posts/20260129-hacker_news-ais-impact-on-engineering-jobs-may-be-different-th-5.md" >}})
+- [RedSage：网络安全通用大模型]({{< relref "posts/20260130-arxiv_ai-redsage-a-cybersecurity-generalist-llm-0.md" >}})
+- [Kirara-ai：支持多平台接入的多模态AI聊天机器人]({{< relref "posts/20260127-github_trending-lss233-kirara-ai-2.md" >}})
+- [AI对工程类岗位的影响或与预期不同]({{< relref "posts/20260129-hacker_news-ais-impact-on-engineering-jobs-may-be-different-th-3.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

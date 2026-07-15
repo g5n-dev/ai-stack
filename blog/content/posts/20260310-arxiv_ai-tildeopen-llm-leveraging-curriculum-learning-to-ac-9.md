@@ -21,6 +21,10 @@ description: 本文介绍了 TildeOpen LLM，这是一个拥有 300 亿参数的
 external_url: http://arxiv.org/abs/2603.08182v1
 scenarios:
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # TildeOpen LLM：利用课程学习实现公平语言表示
@@ -399,8 +403,8 @@ TildeOpen LLM 的训练数据通常包含经过精心筛选的公开多语言数
 
 ### 相关文章
 
-- [Kimi K2.5 技术报告发布：模型架构与性能评估]({{< relref "posts/20260131-hacker_news-kimi-k25-technical-report-pdf-10.md" >}})
-- [Kimi K2.5 技术报告发布：模型架构与性能评估]({{< relref "posts/20260131-hacker_news-kimi-k25-technical-report-pdf-3.md" >}})
-- [Steerling-8B：可解释自身生成任一 Token 的语言模型]({{< relref "posts/20260224-hacker_news-show-hn-steerling-8b-a-language-model-that-can-exp-9.md" >}})
+- [Kimi K2.5 技术报告发布：模型架构与性能评估]({{< relref "posts/20260130-hacker_news-kimi-k25-technical-report-pdf-10.md" >}})
+- [Kimi K2.5 技术报告发布：模型架构与性能评估]({{< relref "posts/20260130-hacker_news-kimi-k25-technical-report-pdf-10.md" >}})
+- [Steerling-8B：可解释自身生成任一 Token 的语言模型]({{< relref "posts/20260224-hacker_news-show-hn-steerling-8b-a-language-model-that-can-exp-4.md" >}})
 - [Qwen 模型动态更新与能力演进分析]({{< relref "posts/20260305-hacker_news-something-is-afoot-in-the-land-of-qwen-11.md" >}})
 - [⭐️Alyah：阿联酋方言能力评估！阿拉伯语LLM新突破！]({{< relref "posts/20260127-blogs_podcasts-alyah-toward-robust-evaluation-of-emirati-dialect--0.md" >}})

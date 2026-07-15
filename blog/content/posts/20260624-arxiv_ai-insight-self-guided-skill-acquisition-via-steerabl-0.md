@@ -1,14 +1,29 @@
 ---
-title: "可转向VLAs驱动的自我引导技能获取系统InSight"
-date: 2026-06-24T22:00:08+08:00
+title: 可转向VLAs驱动的自我引导技能获取系统InSight
+date: 2026-06-24 22:00:08+08:00
 draft: false
-entry_kind: "auto"
-tags: ["可转向VLA", "自我引导学习", "机器人技能获取", "视觉语言动作模型", "技能迁移", "自主学习", "模型可操纵性", "机器人学习"]
-categories: ["论文", "AI 工程"]
+entry_kind: auto
+tags:
+- 可转向VLA
+- 自我引导学习
+- 机器人技能获取
+- 视觉语言动作模型
+- 技能迁移
+- 自主学习
+- 模型可操纵性
+- 机器人学习
+categories:
+- 论文
+- AI 工程
 source: arxiv
-description: "InSight致力于解决机器人技能获取中的关键挑战：如何使智能体能够自主学习和适应新任务。基于可操纵的视觉语言动作模型（VLAs），该框架提出了一种自引导学习方法，使系统能够在缺乏大规模人类示范的情况下，通过交互反馈实现技能精炼。该研究的潜在应用方向涵盖机器人学习、自动化任务执行等领域，但具体实验设置和性能评估结果尚无"
+description: InSight致力于解决机器人技能获取中的关键挑战：如何使智能体能够自主学习和适应新任务。基于可操纵的视觉语言动作模型（VLAs），该框架提出了一种自引导学习方法，使系统能够在缺乏大规模人类示范的情况下，通过交互反馈实现技能精炼。该研究的潜在应用方向涵盖机器人学习、自动化任务执行等领域，但具体实验设置和性能评估结果尚无
 external_url: http://arxiv.org/abs/2606.24884v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 可转向VLAs驱动的自我引导技能获取系统InSight
@@ -89,8 +104,8 @@ InSight提出一种自导式技能获取框架，核心在于可转向VLAs的设
 ### 相关文章
 
 - [Tether：基于对应关系轨迹扭曲的自主功能玩]({{< relref "posts/20260304-arxiv_ai-tether-autonomous-functional-play-with-corresponde-2.md" >}})
-- [Tether：基于对应关系轨迹扭曲的自主功能玩]({{< relref "posts/20260305-arxiv_ai-tether-autonomous-functional-play-with-corresponde-2.md" >}})
-- [LeRobot v0.5.0：扩展数据、算法与硬件支持]({{< relref "posts/20260309-blogs_podcasts-lerobot-v050-scaling-every-dimension-8.md" >}})
+- [Tether：基于对应关系轨迹扭曲的自主功能玩]({{< relref "posts/20260304-arxiv_ai-tether-autonomous-functional-play-with-corresponde-2.md" >}})
+- [LeRobot v0.5.0：扩展数据、算法与硬件支持]({{< relref "posts/20260309-blogs_podcasts-lerobot-v050-scaling-every-dimension-4.md" >}})
 - [利用不完美人体动作数据学习仿人机器人网球技能]({{< relref "posts/20260315-hacker_news-learning-athletic-humanoid-tennis-skills-from-impe-9.md" >}})
 - [FISMO：基于Fisher结构的动量正交化优化器]({{< relref "posts/20260130-arxiv_ai-fismo-fisher-structured-momentum-orthogonalized-op-4.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

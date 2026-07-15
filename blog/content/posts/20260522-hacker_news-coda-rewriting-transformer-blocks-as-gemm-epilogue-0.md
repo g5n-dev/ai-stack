@@ -1,14 +1,30 @@
 ---
-title: "CODA：将Transformer块重写为GEMM-Epilogue程序"
-date: 2026-05-22T08:51:46+08:00
+title: CODA：将Transformer块重写为GEMM-Epilogue程序
+date: 2026-05-22 08:51:46+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Transformer", "GEMM", "推理加速", "算子融合", "硬件加速", "CUDA", "性能调优", "代码生成"]
-categories: ["AI 工程", "系统与基础设施"]
+entry_kind: auto
+tags:
+- Transformer
+- GEMM
+- 推理加速
+- 算子融合
+- 硬件加速
+- CUDA
+- 性能调优
+- 代码生成
+categories:
+- AI 工程
+- 系统与基础设施
 source: hacker_news
-description: "在深度学习部署中，Transformer 的算子往往成为性能瓶颈。CODA 提出将 Transformer 块重新映射为 GEMM‑Epilogue 程序，以利用矩阵乘的高效实现和后处理融合来提升计算吞吐。通过对核心矩阵运算的重组与调度策略的改进，该方法在保持模型精度的前提下显著降低了延迟和能耗，为实际系统提供了可落地"
+description: 在深度学习部署中，Transformer 的算子往往成为性能瓶颈。CODA 提出将 Transformer 块重新映射为 GEMM‑Epilogue
+  程序，以利用矩阵乘的高效实现和后处理融合来提升计算吞吐。通过对核心矩阵运算的重组与调度策略的改进，该方法在保持模型精度的前提下显著降低了延迟和能耗，为实际系统提供了可落地
 external_url: https://arxiv.org/abs/2605.19269
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # CODA：将Transformer块重写为GEMM-Epilogue程序
@@ -82,8 +98,8 @@ CODA提出将Transformer中的矩阵乘法核心（GEMM）与其后处理步骤�
 ### 相关文章
 
 - [🔥编译模型到Megakernels！揭秘AI性能飞跃的核心黑科技！]({{< relref "posts/20260126-hacker_news-compiling-models-to-megakernels-11.md" >}})
-- [FlashAttention-T：张量化注意力机制优化方案]({{< relref "posts/20260204-hacker_news-flashattention-t-towards-tensorized-attention-2.md" >}})
-- [FlashAttention-T：张量化注意力机制实现方案]({{< relref "posts/20260204-hacker_news-flashattention-t-towards-tensorized-attention-8.md" >}})
+- [FlashAttention-T：张量化注意力机制优化方案]({{< relref "posts/20260203-hacker_news-flashattention-t-towards-tensorized-attention-0.md" >}})
+- [FlashAttention-T：张量化注意力机制实现方案]({{< relref "posts/20260203-hacker_news-flashattention-t-towards-tensorized-attention-0.md" >}})
 - [两种加速大模型推理的技术方法]({{< relref "posts/20260215-hacker_news-two-different-tricks-for-fast-llm-inference-2.md" >}})
 - [让 Claude 编写 CUDA 内核并指导开源模型]({{< relref "posts/20260129-blogs_podcasts-we-got-claude-to-build-cuda-kernels-and-teach-open-6.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

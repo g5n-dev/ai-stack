@@ -23,6 +23,10 @@ scenarios:
 - 大语言模型
 - AI/ML项目
 - 命令行工具
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 当人类知识学会自己奔跑：Skill 属性与 AI 工程化实践
@@ -203,6 +207,6 @@ scenarios:
 
 - [深度解析Skill/MCP/RAG等五大AI技术的底层逻辑]({{< relref "posts/20260212-juejin-深入理解skillmcpragagentopenclaw底层逻辑-2.md" >}})
 - [Agent 开发实战：赋予大模型工具调用能力]({{< relref "posts/20260220-juejin-agent-自学指南1-别只会hi了给大模型装上手脚5分钟变身-agent-2.md" >}})
-- [OpenEnv实践：评估真实环境中的工具调用智能体]({{< relref "posts/20260212-blogs_podcasts-openenv-in-practice-evaluating-tool-using-agents-i-6.md" >}})
-- [OpenEnv 实战：评估真实环境中的工具调用智能体]({{< relref "posts/20260213-blogs_podcasts-openenv-in-practice-evaluating-tool-using-agents-i-11.md" >}})
+- [OpenEnv实践：评估真实环境中的工具调用智能体]({{< relref "posts/20260212-blogs_podcasts-openenv-in-practice-evaluating-tool-using-agents-i-4.md" >}})
+- [OpenEnv 实战：评估真实环境中的工具调用智能体]({{< relref "posts/20260212-blogs_podcasts-openenv-in-practice-evaluating-tool-using-agents-i-4.md" >}})
 - [大模型API本质解析：Tools、MCP与Skills的区别]({{< relref "posts/20260215-juejin-从-0-诠释大模型-api-的本质-tools-mcp-skills-0.md" >}})

@@ -22,6 +22,12 @@ description: 以下是关于《Policy Compiler for Secure Agentic Systems》（P
 external_url: http://arxiv.org/abs/2602.16708v1
 scenarios:
 - 大语言模型
+aliases:
+- /posts/20260220-arxiv_ai-policy-compiler-for-secure-agentic-systems-1/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 面向安全智能体系统的策略编译器
@@ -434,8 +440,8 @@ Policy Compiler 的核心工作流程是将人类可读的声明性策略转换�
 
 ### 相关文章
 
-- [亚马逊发布代理式AI评估框架：标准化工作流与专用指标库]({{< relref "posts/20260219-blogs_podcasts-evaluating-ai-agents-real-world-lessons-from-build-1.md" >}})
-- [亚马逊构建代理式AI系统的评估框架与实战经验]({{< relref "posts/20260219-blogs_podcasts-evaluating-ai-agents-real-world-lessons-from-build-14.md" >}})
-- [OpenAI 如何通过内置安全机制防范 AI 代理点击链接时的数据泄露与提示词注入]({{< relref "posts/20260129-blogs_podcasts-keeping-your-data-safe-when-an-ai-agent-clicks-a-l-6.md" >}})
+- [亚马逊发布代理式AI评估框架：标准化工作流与专用指标库]({{< relref "posts/20260218-blogs_podcasts-evaluating-ai-agents-real-world-lessons-from-build-0.md" >}})
+- [亚马逊构建代理式AI系统的评估框架与实战经验]({{< relref "posts/20260218-blogs_podcasts-evaluating-ai-agents-real-world-lessons-from-build-0.md" >}})
+- [OpenAI 如何通过内置安全机制防范 AI 代理点击链接时的数据泄露与提示词注入]({{< relref "posts/20260129-blogs_podcasts-keeping-your-data-safe-when-an-ai-agent-clicks-a-l-5.md" >}})
 - [RedSage：网络安全通用大模型]({{< relref "posts/20260130-arxiv_ai-redsage-a-cybersecurity-generalist-llm-0.md" >}})
-- [RedSage：网络安全通用大语言模型]({{< relref "posts/20260131-arxiv_ai-redsage-a-cybersecurity-generalist-llm-0.md" >}})
+- [RedSage：网络安全通用大语言模型]({{< relref "posts/20260130-arxiv_ai-redsage-a-cybersecurity-generalist-llm-0.md" >}})

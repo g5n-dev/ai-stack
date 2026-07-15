@@ -1,14 +1,30 @@
 ---
-title: "文本代理转语音助手：Nova Sonic迁移指南"
-date: 2026-04-28T23:33:32+08:00
+title: 文本代理转语音助手：Nova Sonic迁移指南
+date: 2026-04-28 23:33:32+08:00
 draft: false
-entry_kind: "auto"
-tags: ["语音助手", "Nova Sonic", "代理迁移", "AI 工程", "架构设计", "工具复用", "子代理", "系统提示词"]
-categories: ["AI 工程", "大模型"]
+entry_kind: auto
+tags:
+- 语音助手
+- Nova Sonic
+- 代理迁移
+- AI 工程
+- 架构设计
+- 工具复用
+- 子代理
+- 系统提示词
+categories:
+- AI 工程
+- 大模型
 source: blogs_podcasts
-description: "本文探讨如何将基于文本的代理迁移为使用 Amazon Nova 2 Sonic 的语音助手，重点比较两种交互形态的需求差异并细化架构拆分与提示词适配的关键步骤。通过对工具与子代理复用的实战经验进行剖析，帮助开发者规避迁移中的常见陷阱，提升实现效率。阅读后，您将获得可直接落地的迁移方案、评估指标以及在实际项目中快速迭代的"
+description: 本文探讨如何将基于文本的代理迁移为使用 Amazon Nova 2 Sonic 的语音助手，重点比较两种交互形态的需求差异并细化架构拆分与提示词适配的关键步骤。通过对工具与子代理复用的实战经验进行剖析，帮助开发者规避迁移中的常见陷阱，提升实现效率。阅读后，您将获得可直接落地的迁移方案、评估指标以及在实际项目中快速迭代的
 external_url: https://aws.amazon.com/blogs/machine-learning/migrating-a-text-agent-to-a-voice-assistant-with-amazon-nova-2-sonic
-scenarios: ["AI/ML项目", "命令行工具"]
+scenarios:
+- AI/ML项目
+- 命令行工具
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 文本代理转语音助手：Nova Sonic迁移指南
@@ -116,9 +132,9 @@ scenarios: ["AI/ML项目", "命令行工具"]
 
 ### 相关文章
 
-- [Building real-time voice assistants with Amazon Nova So]({{< relref "posts/20260211-blogs_podcasts-building-real-time-voice-assistants-with-amazon-no-2.md" >}})
-- [大模型API开发：Tools、MCP与Skills的本质区别]({{< relref "posts/20260215-juejin-手把手从-0-诠释大模型-api-的本质-tools-mcp-skills-1.md" >}})
-- [Codex 工程化实践：解析 AGENTS.md、SKILL.md 与 MCP]({{< relref "posts/20260315-juejin-codex-工程化实践指南深入理解-agentsmdskillmd-与-mcp-2.md" >}})
-- [Context Graphs 与 Agent Traces：解析 AI 智能体的记忆与回溯机制]({{< relref "posts/20260205-blogs_podcasts-ainews-context-graphs-and-agent-traces-3.md" >}})
-- [Context Graphs与Agent Traces：技术解析与应用前景]({{< relref "posts/20260205-blogs_podcasts-ainews-context-graphs-and-agent-traces-8.md" >}})
+- [Building real-time voice assistants with Amazon Nova So]({{< relref "posts/20260210-blogs_podcasts-building-real-time-voice-assistants-with-amazon-no-2.md" >}})
+- [大模型API开发：Tools、MCP与Skills的本质区别]({{< relref "posts/20260215-juejin-从-0-诠释大模型-api-的本质-tools-mcp-skills-0.md" >}})
+- [Codex 工程化实践：解析 AGENTS.md、SKILL.md 与 MCP]({{< relref "posts/20260314-juejin-codex-工程化实践指南深入理解-agentsmdskillmd-与-mcp-0.md" >}})
+- [Context Graphs 与 Agent Traces：解析 AI 智能体的记忆与回溯机制]({{< relref "posts/20260204-blogs_podcasts-ainews-context-graphs-and-agent-traces-0.md" >}})
+- [Context Graphs与Agent Traces：技术解析与应用前景]({{< relref "posts/20260204-blogs_podcasts-ainews-context-graphs-and-agent-traces-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

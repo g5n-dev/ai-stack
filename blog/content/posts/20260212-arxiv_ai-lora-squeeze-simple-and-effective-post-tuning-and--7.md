@@ -1,14 +1,30 @@
 ---
-title: "LoRA-Squeeze：LoRA模块的调优后与调优中压缩方法"
-date: 2026-02-12T02:48:17+08:00
+title: LoRA-Squeeze：LoRA模块的调优后与调优中压缩方法
+date: 2026-02-12 02:48:17+08:00
 draft: false
-entry_kind: "auto"
-tags: ["LoRA", "PEFT", "模型压缩", "SVD", "参数高效微调", "LLM", "模型部署", "RSVD"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- LoRA
+- PEFT
+- 模型压缩
+- SVD
+- 参数高效微调
+- LLM
+- 模型部署
+- RSVD
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "**LoRA-Squeeze：简单有效的LoRA后调优与内调优压缩方法** **背景与挑战** 尽管低秩适应技术及其变体在参数高效微调（PEFT）中占据主导地位，但它仍面临诸多挑战：难以预先选择最优的秩及对应超参数、部署异构秩模块时较为复杂，以及处理更复杂的LoRA衍生品时的部署困难。 **核心思想** LoRA-Sq"
+description: '**LoRA-Squeeze：简单有效的LoRA后调优与内调优压缩方法** **背景与挑战** 尽管低秩适应技术及其变体在参数高效微调（PEFT）中占据主导地位，但它仍面临诸多挑战：难以预先选择最优的秩及对应超参数、部署异构秩模块时较为复杂，以及处理更复杂的LoRA衍生品时的部署困难。
+  **核心思想** LoRA-Sq'
 external_url: http://arxiv.org/abs/2602.10993v1
-scenarios: ["大语言模型"]
+scenarios:
+- 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # LoRA-Squeeze：LoRA模块的调优后与调优中压缩方法
@@ -388,9 +404,9 @@ LoRA-Squeeze 的区别在于：
 
 ### 相关文章
 
-- [共享 LoRA 子空间实现近乎严格的持续学习]({{< relref "posts/20260207-arxiv_ai-shared-lora-subspaces-for-almost-strict-continual--0.md" >}})
-- [共享LoRA子空间实现近乎严格的持续学习]({{< relref "posts/20260208-arxiv_ai-shared-lora-subspaces-for-almost-strict-continual--0.md" >}})
-- [共享LoRA子空间实现近乎严格的持续学习]({{< relref "posts/20260209-arxiv_ai-shared-lora-subspaces-for-almost-strict-continual--0.md" >}})
+- [共享 LoRA 子空间实现近乎严格的持续学习]({{< relref "posts/20260206-arxiv_ai-shared-lora-subspaces-for-almost-strict-continual--0.md" >}})
+- [共享LoRA子空间实现近乎严格的持续学习]({{< relref "posts/20260206-arxiv_ai-shared-lora-subspaces-for-almost-strict-continual--0.md" >}})
+- [共享LoRA子空间实现近乎严格的持续学习]({{< relref "posts/20260206-arxiv_ai-shared-lora-subspaces-for-almost-strict-continual--0.md" >}})
 - [TEON：张量化正交化技术优化大语言模型预训练]({{< relref "posts/20260202-arxiv_ai-teon-tensorized-orthonormalization-beyond-layer-wi-9.md" >}})
-- [中国开源AI生态的架构选择：超越DeepSeek的构建路径]({{< relref "posts/20260129-blogs_podcasts-architectural-choices-in-chinas-open-source-ai-eco-8.md" >}})
+- [中国开源AI生态的架构选择：超越DeepSeek的构建路径]({{< relref "posts/20260127-blogs_podcasts-architectural-choices-in-chinas-open-source-ai-eco-0.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

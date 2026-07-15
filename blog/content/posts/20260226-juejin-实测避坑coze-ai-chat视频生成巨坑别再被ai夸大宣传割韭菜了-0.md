@@ -7,7 +7,7 @@ tags:
 - Coze
 - 视频生成
 - 避坑指南
-- AI开发
+- AI 开发
 - 实测
 - 低代码
 - API
@@ -22,6 +22,10 @@ description: 这是一篇关于使用 **Coze AI Chat** 开发视频生成功能�
 external_url: https://juejin.cn/post/7610676768316309554
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Coze AI Chat视频生成实测：开发流程与生成效果解析
@@ -184,8 +188,8 @@ scenarios:
 
 ### 相关文章
 
-- [xAI巩固前沿实验室地位并计划与SpaceX合并]({{< relref "posts/20260131-blogs_podcasts-ainews-spacexai-grok-imagine-api-the-1-video-model-1.md" >}})
-- [xAI巩固前沿实验室地位并拟与SpaceX合并]({{< relref "posts/20260201-blogs_podcasts-ainews-spacexai-grok-imagine-api-the-1-video-model-2.md" >}})
-- [xAI 发布 Grok Imagine API：对标 SOTA 视频模型与 SpaceX 合并前瞻]({{< relref "posts/20260202-blogs_podcasts-ainews-spacexai-grok-imagine-api-the-1-video-model-2.md" >}})
-- [xAI Grok Imagine API 登顶视频模型榜：定价与延迟优势显著]({{< relref "posts/20260203-blogs_podcasts-ainews-spacexai-grok-imagine-api-the-1-video-model-4.md" >}})
-- [xAI 发布 Grok Imagine API：对标 SOTA 视频模型与 SpaceX 合并前瞻]({{< relref "posts/20260203-blogs_podcasts-ainews-spacexai-grok-imagine-api-the-1-video-model-5.md" >}})
+- [xAI巩固前沿实验室地位并计划与SpaceX合并]({{< relref "posts/20260130-blogs_podcasts-ainews-spacexai-grok-imagine-api-the-1-video-model-0.md" >}})
+- [xAI巩固前沿实验室地位并拟与SpaceX合并]({{< relref "posts/20260130-blogs_podcasts-ainews-spacexai-grok-imagine-api-the-1-video-model-0.md" >}})
+- [xAI 发布 Grok Imagine API：对标 SOTA 视频模型与 SpaceX 合并前瞻]({{< relref "posts/20260130-blogs_podcasts-ainews-spacexai-grok-imagine-api-the-1-video-model-0.md" >}})
+- [xAI Grok Imagine API 登顶视频模型榜：定价与延迟优势显著]({{< relref "posts/20260130-blogs_podcasts-ainews-spacexai-grok-imagine-api-the-1-video-model-0.md" >}})
+- [xAI 发布 Grok Imagine API：对标 SOTA 视频模型与 SpaceX 合并前瞻]({{< relref "posts/20260130-blogs_podcasts-ainews-spacexai-grok-imagine-api-the-1-video-model-0.md" >}})

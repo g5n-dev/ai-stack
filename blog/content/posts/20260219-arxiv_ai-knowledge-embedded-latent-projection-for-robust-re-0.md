@@ -10,7 +10,7 @@ tags:
 - RKHS
 - 核主成分分析
 - 投影梯度下降
-- 医疗AI
+- 医疗 AI
 - cs.LG
 categories:
 - 论文
@@ -21,6 +21,12 @@ description: 本文提出了一种**知识嵌入的潜投影模型**，旨在解
 external_url: http://arxiv.org/abs/2602.16709v1
 scenarios:
 - AI/ML项目
+aliases:
+- /posts/20260220-arxiv_ai-knowledge-embedded-latent-projection-for-robust-re-0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 知识嵌入隐投影用于鲁棒表征学习
@@ -456,6 +462,6 @@ KELP 的实现难点主要包括：
 
 - [基于表征编码器解锁标准扩散Transformer]({{< relref "posts/20260211-arxiv_ai-learning-on-the-manifold-unlocking-standard-diffus-3.md" >}})
 - [探索Transformer在表格数据变分自编码器中的位置]({{< relref "posts/20260129-arxiv_ai-exploring-transformer-placement-in-variational-aut-3.md" >}})
-- [探索Transformer在表格数据变分自编码器中的位置]({{< relref "posts/20260130-arxiv_ai-exploring-transformer-placement-in-variational-aut-3.md" >}})
+- [探索Transformer在表格数据变分自编码器中的位置]({{< relref "posts/20260129-arxiv_ai-exploring-transformer-placement-in-variational-aut-3.md" >}})
 - [语言统计对称性塑造模型表征的几何结构]({{< relref "posts/20260217-arxiv_ai-symmetry-in-language-statistics-shapes-the-geometr-0.md" >}})
 - [基于嵌入的Top-$k$检索：理论上$\mathbb{R}^{2k}$维空间已足够]({{< relref "posts/20260129-arxiv_ai-mathbbr2k-is-theoretically-large-enough-for-embedd-8.md" >}})

@@ -1,14 +1,30 @@
 ---
-title: "DreamDojo：基于大规模人类视频的通用机器人世界模型"
-date: 2026-02-09T23:42:37+08:00
+title: DreamDojo：基于大规模人类视频的通用机器人世界模型
+date: 2026-02-09 23:42:37+08:00
 draft: false
-entry_kind: "auto"
-tags: ["机器人", "世界模型", "DreamDojo", "视频生成", "具身智能", "强化学习", "远程操作", "模型蒸馏"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- 机器人
+- 世界模型
+- DreamDojo
+- 视频生成
+- 具身智能
+- 强化学习
+- 远程操作
+- 模型蒸馏
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "**DreamDojo：基于大规模人类视频的通用机器人世界模型** **核心摘要：** DreamDojo 是一个基础世界模型，旨在通过模拟多变环境中的行动结果，推动通用智能体（特别是机器人）的大规模发展。它解决了当前灵巧机器人任务中数据覆盖有限和动作标签稀缺的挑战。 **主要特点与方法：** 1. **大规模数据集*"
+description: '**DreamDojo：基于大规模人类视频的通用机器人世界模型** **核心摘要：** DreamDojo 是一个基础世界模型，旨在通过模拟多变环境中的行动结果，推动通用智能体（特别是机器人）的大规模发展。它解决了当前灵巧机器人任务中数据覆盖有限和动作标签稀缺的挑战。
+  **主要特点与方法：** 1. **大规模数据集*'
 external_url: http://arxiv.org/abs/2602.06949v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # DreamDojo：基于大规模人类视频的通用机器人世界模型
@@ -547,8 +563,8 @@ DreamDojo 通过以下方式克服这种差异：
 ### 相关文章
 
 - [NVIDIA Cosmos策略：提升机器人控制能力]({{< relref "posts/20260129-blogs_podcasts-introducing-nvidia-cosmos-policy-for-advanced-robo-0.md" >}})
-- [NVIDIA Cosmos策略：提升机器人高级控制能力]({{< relref "posts/20260130-blogs_podcasts-introducing-nvidia-cosmos-policy-for-advanced-robo-1.md" >}})
-- [NVIDIA Cosmos 策略模型提升机器人控制精度]({{< relref "posts/20260131-blogs_podcasts-introducing-nvidia-cosmos-policy-for-advanced-robo-1.md" >}})
-- [NVIDIA Cosmos策略：面向高级机器人控制的新方法]({{< relref "posts/20260131-blogs_podcasts-introducing-nvidia-cosmos-policy-for-advanced-robo-2.md" >}})
-- [NVIDIA Cosmos 策略模型提升机器人控制能力]({{< relref "posts/20260201-blogs_podcasts-introducing-nvidia-cosmos-policy-for-advanced-robo-2.md" >}})
+- [NVIDIA Cosmos策略：提升机器人高级控制能力]({{< relref "posts/20260129-blogs_podcasts-introducing-nvidia-cosmos-policy-for-advanced-robo-0.md" >}})
+- [NVIDIA Cosmos 策略模型提升机器人控制精度]({{< relref "posts/20260129-blogs_podcasts-introducing-nvidia-cosmos-policy-for-advanced-robo-0.md" >}})
+- [NVIDIA Cosmos策略：面向高级机器人控制的新方法]({{< relref "posts/20260129-blogs_podcasts-introducing-nvidia-cosmos-policy-for-advanced-robo-0.md" >}})
+- [NVIDIA Cosmos 策略模型提升机器人控制能力]({{< relref "posts/20260129-blogs_podcasts-introducing-nvidia-cosmos-policy-for-advanced-robo-0.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

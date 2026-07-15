@@ -1,14 +1,30 @@
 ---
-title: "潜水员与自主航行器协作技术研究"
-date: 2026-04-14T15:49:20+08:00
+title: 潜水员与自主航行器协作技术研究
+date: 2026-04-14 15:49:20+08:00
 draft: false
-entry_kind: "auto"
-tags: ["人机协同", "水下航行器", "自主航行器", "声学通信", "多智能体控制", "SLAM", "传感融合", "海底作业"]
-categories: ["AI 工程", "系统与基础设施"]
+entry_kind: auto
+tags:
+- 人机协同
+- 水下航行器
+- 自主航行器
+- 声学通信
+- 多智能体控制
+- SLAM
+- 传感融合
+- 海底作业
+categories:
+- AI 工程
+- 系统与基础设施
 source: blogs_podcasts
-description: "研究背景 水下环境对人类和机器的协同作业提出了严峻挑战：通讯受限于声波衰减和遮蔽，定位误差大，任务动态性强。传统做法是潜水员单独作业或使用遥控潜航器（ROV），但两者均难以实现实时信息共享与协同决策。 关键技术研发 - **硬件创新**：研发水下声学调制解调器、柔性传感器阵列以及可穿戴的姿态与生理监测装置，实现潜水员与"
+description: 研究背景 水下环境对人类和机器的协同作业提出了严峻挑战：通讯受限于声波衰减和遮蔽，定位误差大，任务动态性强。传统做法是潜水员单独作业或使用遥控潜航器（ROV），但两者均难以实现实时信息共享与协同决策。
+  关键技术研发 - **硬件创新**：研发水下声学调制解调器、柔性传感器阵列以及可穿戴的姿态与生理监测装置，实现潜水员与
 external_url: https://news.mit.edu/2026/human-machine-teaming-dives-underwater-0414
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 潜水员与自主航行器协作技术研究
@@ -140,8 +156,8 @@ scenarios: ["Web应用开发"]
 ### 相关文章
 
 - [LoGeR：基于混合记忆的长上下文几何重建]({{< relref "posts/20260304-arxiv_ai-loger-long-context-geometric-reconstruction-with-h-5.md" >}})
-- [🔥Show HN: 1人+1智能体=从零打造浏览器! 仅2万行代码🚀]({{< relref "posts/20260128-hacker_news-show-hn-one-human-one-agent-one-browser-from-scrat-16.md" >}})
-- [Amla Sandbox：面向 AI 智能体的 WASM Bash 沙箱]({{< relref "posts/20260130-hacker_news-show-hn-amla-sandbox-wasm-bash-shell-sandbox-for-a-1.md" >}})
-- [Amla Sandbox：面向 AI 智能体的 WASM Bash 沙箱]({{< relref "posts/20260130-hacker_news-show-hn-amla-sandbox-wasm-bash-shell-sandbox-for-a-7.md" >}})
-- [FlashAttention-T：张量化注意力机制实现方案]({{< relref "posts/20260204-hacker_news-flashattention-t-towards-tensorized-attention-8.md" >}})
+- [🔥Show HN: 1人+1智能体=从零打造浏览器! 仅2万行代码🚀]({{< relref "posts/20260127-hacker_news-show-hn-one-human-one-agent-one-browser-from-scrat-7.md" >}})
+- [Amla Sandbox：面向 AI 智能体的 WASM Bash 沙箱]({{< relref "posts/20260130-hacker_news-show-hn-amla-sandbox-wasm-bash-shell-sandbox-for-a-4.md" >}})
+- [Amla Sandbox：面向 AI 智能体的 WASM Bash 沙箱]({{< relref "posts/20260130-hacker_news-show-hn-amla-sandbox-wasm-bash-shell-sandbox-for-a-4.md" >}})
+- [FlashAttention-T：张量化注意力机制实现方案]({{< relref "posts/20260203-hacker_news-flashattention-t-towards-tensorized-attention-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

@@ -1,14 +1,30 @@
 ---
-title: "李飞飞World Labs获10亿美元融资：英伟达与A16Z领投，加速世界模型研发"
-date: 2026-02-18T19:27:35+08:00
+title: 李飞飞World Labs获10亿美元融资：英伟达与A16Z领投，加速世界模型研发
+date: 2026-02-18 19:27:35+08:00
 draft: false
-entry_kind: "auto"
-tags: ["李飞飞", "World Labs", "融资", "英伟达", "A16Z", "世界模型", "空间智能", "AI初创"]
-categories: ["产品与创业", "大模型"]
+entry_kind: auto
+tags:
+- 李飞飞
+- World Labs
+- 融资
+- 英伟达
+- A16Z
+- 世界模型
+- 空间智能
+- AI初创
+categories:
+- 产品与创业
+- 大模型
 source: hacker_news
-description: "世界模型正成为通往通用人工智能的关键路径，而李飞飞创立的 World Labs 刚刚完成的 10 亿美元融资，标志着这一前沿赛道获得了顶级资本的重注。本文将详细解读 World Labs 的技术愿景，并分析 Andreessen Horowitz 与 Nvidia 等巨头的入局将如何重塑 AI 对物理世界的理解与生成能"
+description: 世界模型正成为通往通用人工智能的关键路径，而李飞飞创立的 World Labs 刚刚完成的 10 亿美元融资，标志着这一前沿赛道获得了顶级资本的重注。本文将详细解读
+  World Labs 的技术愿景，并分析 Andreessen Horowitz 与 Nvidia 等巨头的入局将如何重塑 AI 对物理世界的理解与生成能
 external_url: https://www.bloomberg.com/news/articles/2026-02-18/ai-pioneer-fei-fei-li-s-startup-world-labs-raises-1-billion
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 李飞飞World Labs获10亿美元融资：英伟达与A16Z领投，加速世界模型研发
@@ -366,9 +382,9 @@ Waymo 开发了基于“世界模型”架构的模拟与预测系统。该系�
 
 ### 相关文章
 
-- [OpenAI 与英伟达价值千亿美元芯片交易暂停]({{< relref "posts/20260131-hacker_news-the-100b-megadeal-between-openai-and-nvidia-is-on--11.md" >}})
+- [OpenAI 与英伟达价值千亿美元芯片交易暂停]({{< relref "posts/20260131-hacker_news-the-100b-megadeal-between-openai-and-nvidia-is-on--4.md" >}})
 - [OpenAI 与英伟达价值千亿美元芯片交易搁浅]({{< relref "posts/20260131-hacker_news-the-100b-megadeal-between-openai-and-nvidia-is-on--4.md" >}})
-- [OpenAI 与英伟达百亿美元芯片采购谈判暂停]({{< relref "posts/20260131-hacker_news-the-100b-megadeal-between-openai-and-nvidia-is-on--6.md" >}})
-- [ElevenLabs融资5亿美元，Cerebras估值达230亿]({{< relref "posts/20260205-blogs_podcasts-ainews-elevenlabs-500m-series-d-at-11b-cerebras-1b-1.md" >}})
-- [ElevenLabs获5亿美元融资，Cerebras估值达230亿美元]({{< relref "posts/20260208-blogs_podcasts-ainews-elevenlabs-500m-series-d-at-11b-cerebras-1b-8.md" >}})
+- [OpenAI 与英伟达百亿美元芯片采购谈判暂停]({{< relref "posts/20260131-hacker_news-the-100b-megadeal-between-openai-and-nvidia-is-on--4.md" >}})
+- [ElevenLabs融资5亿美元，Cerebras估值达230亿]({{< relref "posts/20260205-blogs_podcasts-ainews-elevenlabs-500m-series-d-at-11b-cerebras-1b-0.md" >}})
+- [ElevenLabs获5亿美元融资，Cerebras估值达230亿美元]({{< relref "posts/20260205-blogs_podcasts-ainews-elevenlabs-500m-series-d-at-11b-cerebras-1b-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

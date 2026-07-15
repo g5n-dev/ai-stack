@@ -21,6 +21,10 @@ description: PP-Claw 是一个基于 Go 语言的全栈 AI Agent 解决方案，
 external_url: https://juejin.cn/post/7613552054946840619
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # PP-Claw：Go 语言复刻的轻量级 AI Agent 全栈方案
@@ -188,5 +192,5 @@ PP-Claw 特别适合以下场景：
 - [Go 结合 Eino 实现 Tool Calling 构建 AI Agent]({{< relref "posts/20260222-juejin-go-eino-构建-ai-agent二tool-calling-0.md" >}})
 - [Go语言作为AI智能体开发首选语言的优势分析]({{< relref "posts/20260302-hacker_news-a-case-for-go-as-the-best-language-for-ai-agents-14.md" >}})
 - [Zuckerman：极简个人AI代理，具备代码自编辑能力]({{< relref "posts/20260201-hacker_news-show-hn-zuckerman-minimalist-personal-ai-agent-tha-12.md" >}})
-- [Agent Skills：智能体技能评估与开源框架]({{< relref "posts/20260204-hacker_news-agent-skills-7.md" >}})
-- [Ghidra MCP Server：集成110款工具实现AI辅助逆向工程]({{< relref "posts/20260204-hacker_news-show-hn-ghidra-mcp-server-110-tools-for-ai-assiste-14.md" >}})
+- [Agent Skills：智能体技能评估与开源框架]({{< relref "posts/20260203-hacker_news-agent-skills-0.md" >}})
+- [Ghidra MCP Server：集成110款工具实现AI辅助逆向工程]({{< relref "posts/20260204-hacker_news-show-hn-ghidra-mcp-server-110-tools-for-ai-assiste-1.md" >}})

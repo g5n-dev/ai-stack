@@ -22,6 +22,10 @@ external_url: https://amaiya.github.io/onprem/examples_agent.html
 scenarios:
 - AI/ML项目
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Launch an autonomous AI agent with sandboxed execution
@@ -279,8 +283,8 @@ sandbox = Sandbox()
 
 ### 相关文章
 
-- [构建极简且固执的编程代理的经验总结]({{< relref "posts/20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-10.md" >}})
-- [构建极简编程代理的技术实践与经验总结]({{< relref "posts/20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-17.md" >}})
-- [Rust 编写的安全极简 Python 解释器 Monty 专为 AI 设计]({{< relref "posts/20260207-hacker_news-monty-a-minimal-secure-python-interpreter-written--6.md" >}})
-- [Monty：Rust 实现的面向 AI 的安全极简 Python 解释器]({{< relref "posts/20260207-hacker_news-monty-a-minimal-secure-python-interpreter-written--10.md" >}})
-- [Monty：Rust 实现的极简安全 Python 解释器]({{< relref "posts/20260207-hacker_news-monty-a-minimal-secure-python-interpreter-written--12.md" >}})
+- [构建极简且固执的编程代理的经验总结]({{< relref "posts/20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-1.md" >}})
+- [构建极简编程代理的技术实践与经验总结]({{< relref "posts/20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-1.md" >}})
+- [Rust 编写的安全极简 Python 解释器 Monty 专为 AI 设计]({{< relref "posts/20260207-hacker_news-monty-a-minimal-secure-python-interpreter-written--3.md" >}})
+- [Monty：Rust 实现的面向 AI 的安全极简 Python 解释器]({{< relref "posts/20260207-hacker_news-monty-a-minimal-secure-python-interpreter-written--3.md" >}})
+- [Monty：Rust 实现的极简安全 Python 解释器]({{< relref "posts/20260207-hacker_news-monty-a-minimal-secure-python-interpreter-written--3.md" >}})

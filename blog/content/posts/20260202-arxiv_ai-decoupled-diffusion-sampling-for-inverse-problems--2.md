@@ -1,14 +1,32 @@
 ---
-title: "函数空间逆问题的解耦扩散采样方法"
-date: 2026-02-02T19:22:59+08:00
+title: 函数空间逆问题的解耦扩散采样方法
+date: 2026-02-02 19:22:59+08:00
 draft: false
-entry_kind: "auto"
-tags: ["扩散模型", "逆问题", "PDE", "神经算子", "DDIS", "函数空间", "物理感知", "数据效率"]
-categories: ["论文", "AI 工程"]
+entry_kind: auto
+tags:
+- 扩散模型
+- 逆问题
+- PDE
+- 神经算子
+- DDIS
+- 函数空间
+- 物理感知
+- 数据效率
+categories:
+- 论文
+- AI 工程
 source: arxiv
-description: "本文提出了一种名为**DDIS（Decoupled Diffusion Inverse Solver，解耦扩散逆求解器）**的新框架，旨在解决函数空间上的偏微分方程（PDE）反问题。该框架具有高数据效率和物理感知能力。 **核心创新点：** 现有方法多采用“即插即用”的扩散后验采样器，通过联合建模系数与解来隐式表示物理"
+description: 本文提出了一种名为**DDIS（Decoupled Diffusion Inverse Solver，解耦扩散逆求解器）**的新框架，旨在解决函数空间上的偏微分方程（PDE）反问题。该框架具有高数据效率和物理感知能力。
+  **核心创新点：** 现有方法多采用“即插即用”的扩散后验采样器，通过联合建模系数与解来隐式表示物理
 external_url: http://arxiv.org/abs/2601.23280v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+aliases:
+- /posts/20260203-arxiv_ai-decoupled-diffusion-sampling-for-inverse-problems--2/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 函数空间逆问题的解耦扩散采样方法
@@ -530,7 +548,7 @@ DDIS 在方法论上具有显著的微创新。它并没有发明新的扩散模
 ### 相关文章
 
 - [粒子引导扩散模型求解偏微分方程]({{< relref "posts/20260202-arxiv_ai-particle-guided-diffusion-models-for-partial-diffe-8.md" >}})
-- [NVIDIA Cosmos 策略模型：提升机器人高级控制能力]({{< relref "posts/20260130-blogs_podcasts-introducing-nvidia-cosmos-policy-for-advanced-robo-0.md" >}})
+- [NVIDIA Cosmos 策略模型：提升机器人高级控制能力]({{< relref "posts/20260129-blogs_podcasts-introducing-nvidia-cosmos-policy-for-advanced-robo-0.md" >}})
 - [IRL-DAL：基于能量引导扩散模型的自动驾驶安全自适应轨迹规划]({{< relref "posts/20260202-arxiv_ai-irl-dal-safe-and-adaptive-trajectory-planning-for--6.md" >}})
 - [VideoGPA：提取几何先验实现三维一致视频生成]({{< relref "posts/20260202-arxiv_ai-videogpa-distilling-geometry-priors-for-3d-consist-0.md" >}})
 - [Cosmos重磅：微调视频模型！解锁 visuomotor 控制与规划 🚀✨]({{< relref "posts/20260125-arxiv_ai-cosmos-policy-fine-tuning-video-models-for-visuomo-9.md" >}})

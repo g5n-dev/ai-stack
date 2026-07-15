@@ -21,6 +21,10 @@ description: 以下是针对该内容的中文总结： **关于个人身份信�
 external_url: http://arxiv.org/abs/2603.08207v1
 scenarios:
 - Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 针对个人隐私移除技术的可信攻击研究困境
@@ -415,7 +419,7 @@ scenarios:
 ### 相关文章
 
 - [机器遗忘中保护未删除数据的隐私防御机制]({{< relref "posts/20260219-arxiv_ai-protecting-the-undeleted-in-machine-unlearning-6.md" >}})
-- [机器遗忘中保护未删除数据隐私的方法]({{< relref "posts/20260220-arxiv_ai-protecting-the-undeleted-in-machine-unlearning-6.md" >}})
-- [🚨SoundCloud数据泄露！你的密码是否已遭泄露？快查！🔥]({{< relref "posts/20260127-hacker_news-soundcloud-data-breach-now-on-haveibeenpwned-3.md" >}})
+- [机器遗忘中保护未删除数据隐私的方法]({{< relref "posts/20260219-arxiv_ai-protecting-the-undeleted-in-machine-unlearning-6.md" >}})
+- [🚨SoundCloud数据泄露！你的密码是否已遭泄露？快查！🔥]({{< relref "posts/20260127-hacker_news-soundcloud-data-breach-now-on-haveibeenpwned-8.md" >}})
 - [🚨SoundCloud数据泄露！HaveIBeenPwned紧急更新！]({{< relref "posts/20260127-hacker_news-soundcloud-data-breach-now-on-haveibeenpwned-8.md" >}})
-- [⚠️FBI紧急调查！Signal聊天记录竟被追踪？ICE引发隐私大地震！🔓]({{< relref "posts/20260128-hacker_news-fbi-is-investigating-minnesota-signal-chats-tracki-14.md" >}})
+- [⚠️FBI紧急调查！Signal聊天记录竟被追踪？ICE引发隐私大地震！🔓]({{< relref "posts/20260127-hacker_news-fbi-is-investigating-minnesota-signal-chats-tracki-5.md" >}})

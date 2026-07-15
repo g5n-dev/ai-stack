@@ -22,6 +22,12 @@ description: 以下是该内容的中文总结： **Aletheia 自主挑战 FirstP
 external_url: http://arxiv.org/abs/2602.21201v1
 scenarios:
 - AI/ML项目
+aliases:
+- /posts/20260226-arxiv_ai-aletheia-tackles-firstproof-autonomously-3/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Aletheia模型自主攻克FirstProof数学定理证明
@@ -529,8 +535,8 @@ Aletheia 能够“自主攻克”该测试，标志着当前 AI 在逻辑推理�
 
 ### 相关文章
 
-- [Gemini 3.1 Pro：面向复杂任务设计的智能模型]({{< relref "posts/20260221-blogs_podcasts-gemini-31-pro-a-smarter-model-for-your-most-comple-13.md" >}})
-- [Gemini 3.1 Pro：面向复杂任务的深度解答模型]({{< relref "posts/20260223-blogs_podcasts-gemini-31-pro-a-smarter-model-for-your-most-comple-13.md" >}})
+- [Gemini 3.1 Pro：面向复杂任务设计的智能模型]({{< relref "posts/20260219-blogs_podcasts-gemini-31-pro-a-smarter-model-for-your-most-comple-4.md" >}})
+- [Gemini 3.1 Pro：面向复杂任务的深度解答模型]({{< relref "posts/20260219-blogs_podcasts-gemini-31-pro-a-smarter-model-for-your-most-comple-4.md" >}})
 - [Deep Researcher：序列规划反思与候选交叉]({{< relref "posts/20260129-arxiv_ai-deep-researcher-with-sequential-plan-reflection-an-9.md" >}})
 - [SokoBench：评估大模型长程规划与推理能力]({{< relref "posts/20260129-arxiv_ai-sokobench-evaluating-long-horizon-planning-and-rea-2.md" >}})
-- [Deep Researcher：结合序列规划反思与候选交叉的深度研究框架]({{< relref "posts/20260130-arxiv_ai-deep-researcher-with-sequential-plan-reflection-an-9.md" >}})
+- [Deep Researcher：结合序列规划反思与候选交叉的深度研究框架]({{< relref "posts/20260129-arxiv_ai-deep-researcher-with-sequential-plan-reflection-an-9.md" >}})

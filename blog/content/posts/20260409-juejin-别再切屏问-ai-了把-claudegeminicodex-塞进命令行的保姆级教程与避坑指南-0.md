@@ -1,14 +1,29 @@
 ---
-title: "多AI助手命令行集成实战教程"
-date: 2026-04-09T19:37:54+08:00
+title: 多AI助手命令行集成实战教程
+date: 2026-04-09 19:37:54+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI助手集成", "命令行工具", "Claude", "Gemini", "Codex", "工具集成", "效率提升", "避坑指南"]
-categories: ["效率与方法论"]
+entry_kind: auto
+tags:
+- AI助手集成
+- 命令行工具
+- Claude
+- Gemini
+- Codex
+- 工具集成
+- 效率提升
+- 避坑指南
+categories:
+- 效率与方法论
 source: juejin
-description: "在日常开发中，频繁切换窗口去调用 AI 模型往往打断思路，影响效率。本文演示如何把 Claude、Gemini、Codex 等主流 AI 集成到本地命令行环境，让查询、代码补全和调试直接在同一终端完成。通过保姆级配置步骤与常见错误的排查，读者可以快速搭建稳定的工作流，省去切换应用的时间。"
+description: 在日常开发中，频繁切换窗口去调用 AI 模型往往打断思路，影响效率。本文演示如何把 Claude、Gemini、Codex 等主流 AI
+  集成到本地命令行环境，让查询、代码补全和调试直接在同一终端完成。通过保姆级配置步骤与常见错误的排查，读者可以快速搭建稳定的工作流，省去切换应用的时间。
 external_url: https://juejin.cn/post/7626641759687786506
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 多AI助手命令行集成实战教程
@@ -92,9 +107,9 @@ scenarios: ["AI/ML项目"]
 
 ### 相关文章
 
-- [我的AI应用实践历程]({{< relref "posts/20260206-hacker_news-my-ai-adoption-journey-4.md" >}})
-- [GemGemini for Sheets测试版发布：支持创建表格与复杂数据分析]({{< relref "posts/20260310-blogs_podcasts-gemini-in-google-sheets-just-achieved-state-of-the-4.md" >}})
-- [LNAI：一次定义 AI 编码工具配置并同步至 Claude 与 Cursor]({{< relref "posts/20260203-hacker_news-lnai-define-ai-coding-tool-configs-once-sync-to-cl-17.md" >}})
+- [我的AI应用实践历程]({{< relref "posts/20260205-hacker_news-my-ai-adoption-journey-6.md" >}})
+- [GemGemini for Sheets测试版发布：支持创建表格与复杂数据分析]({{< relref "posts/20260310-blogs_podcasts-gemini-in-google-sheets-just-achieved-state-of-the-0.md" >}})
+- [LNAI：一次定义 AI 编码工具配置并同步至 Claude 与 Cursor]({{< relref "posts/20260203-hacker_news-lnai-define-ai-coding-tool-configs-once-sync-to-cl-3.md" >}})
 - [LNAI：定义一次AI编码工具配置，同步至Claude与Cursor等]({{< relref "posts/20260203-hacker_news-lnai-define-ai-coding-tool-configs-once-sync-to-cl-3.md" >}})
-- [LNAI：定义AI编码工具配置并同步至多端]({{< relref "posts/20260203-hacker_news-lnai-define-ai-coding-tool-configs-once-sync-to-cl-5.md" >}})
+- [LNAI：定义AI编码工具配置并同步至多端]({{< relref "posts/20260203-hacker_news-lnai-define-ai-coding-tool-configs-once-sync-to-cl-3.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

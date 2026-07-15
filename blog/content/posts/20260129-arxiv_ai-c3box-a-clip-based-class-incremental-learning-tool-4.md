@@ -1,14 +1,31 @@
 ---
-title: "C3Box：基于CLIP的类增量学习工具箱"
-date: 2026-01-29T22:59:16+08:00
+title: C3Box：基于CLIP的类增量学习工具箱
+date: 2026-01-29 22:59:16+08:00
 draft: false
-entry_kind: "auto"
-tags: ["CLIP", "增量学习", "CIL", "灾难性遗忘", "PyCIL", "ViT", "预训练模型", "持续学习"]
-categories: ["开发工具", "论文"]
+entry_kind: auto
+tags:
+- CLIP
+- 增量学习
+- CIL
+- 灾难性遗忘
+- PyCIL
+- ViT
+- 预训练模型
+- 持续学习
+categories:
+- 开发工具
+- 论文
 source: arxiv
-description: "**C3Box：基于CLIP的类增量学习工具箱** **背景与挑战：** 传统机器学习系统通常针对静态数据设计，在处理不断演化的数据流时，往往会遭受“灾难性遗忘”的问题。类增量学习旨在解决这一难题，使系统能够持续学习新类别同时保留旧知识。随着CLIP等预训练模型（PTM）的兴起，利用其强大的泛化和语义对齐能力成为CIL"
+description: '**C3Box：基于CLIP的类增量学习工具箱** **背景与挑战：** 传统机器学习系统通常针对静态数据设计，在处理不断演化的数据流时，往往会遭受“灾难性遗忘”的问题。类增量学习旨在解决这一难题，使系统能够持续学习新类别同时保留旧知识。随着CLIP等预训练模型（PTM）的兴起，利用其强大的泛化和语义对齐能力成为CIL'
 external_url: http://arxiv.org/abs/2601.20852v1
-scenarios: ["命令行工具"]
+scenarios:
+- 命令行工具
+aliases:
+- /posts/20260130-arxiv_ai-c3box-a-clip-based-class-incremental-learning-tool-4/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # C3Box：基于CLIP的类增量学习工具箱

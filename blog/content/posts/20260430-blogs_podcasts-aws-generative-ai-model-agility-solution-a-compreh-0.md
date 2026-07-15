@@ -1,14 +1,31 @@
 ---
-title: "AWS LLM迁移实践：生成式AI模型切换框架指南"
-date: 2026-04-30T19:39:55+08:00
+title: AWS LLM迁移实践：生成式AI模型切换框架指南
+date: 2026-04-30 19:39:55+08:00
 draft: false
-entry_kind: "auto"
-tags: ["LLM", "AWS", "模型迁移", "生成式AI", "提示词工程", "框架指南", "最佳实践", "云端部署"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- LLM
+- AWS
+- 模型迁移
+- 生成式 AI
+- 提示词工程
+- 框架指南
+- 最佳实践
+- 云端部署
+categories:
+- 大模型
+- AI 工程
 source: blogs_podcasts
-description: "AWS生成式AI模型敏捷解决方案提供在生产环境中迁移或升级大型语言模型（LLM）的系统化指南，涵盖关键工具、方法论和最佳实践，并采用强大的提示词转换与优化协议，帮助实现不同LLM之间的平滑切换。"
+description: AWS生成式AI模型敏捷解决方案提供在生产环境中迁移或升级大型语言模型（LLM）的系统化指南，涵盖关键工具、方法论和最佳实践，并采用强大的提示词转换与优化协议，帮助实现不同LLM之间的平滑切换。
 external_url: https://aws.amazon.com/blogs/machine-learning/aws-generative-ai-model-agility-solution-a-comprehensive-guide-to-migrating-llms-for-generative-ai-production
-scenarios: ["大语言模型", "AI/ML项目", "Web应用开发"]
+scenarios:
+- 大语言模型
+- AI/ML项目
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AWS LLM迁移实践：生成式AI模型切换框架指南
@@ -85,9 +102,9 @@ AWS发布的Generative AI Model Agility Solution为企业级LLM迁移提供了�
 
 ### 相关文章
 
-- [NVIDIA Nemotron 3 Nano 30B 现已登陆 Amazon SageMaker JumpSt]({{< relref "posts/20260212-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-4.md" >}})
-- [NVIDIA Nemotron 3 Nano 30B 现已在 Amazon SageMaker JumpSta]({{< relref "posts/20260212-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-6.md" >}})
-- [NVIDIA Nemotron 3 Nano 30B 模型现已在 Amazon SageMaker JumpS]({{< relref "posts/20260213-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-12.md" >}})
-- [AWS SageMaker实战：用Dottxt Outlines实现LLM结构化输出]({{< relref "posts/20260226-blogs_podcasts-generate-structured-output-from-llms-with-dottxt-o-14.md" >}})
+- [NVIDIA Nemotron 3 Nano 30B 现已登陆 Amazon SageMaker JumpSt]({{< relref "posts/20260211-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-0.md" >}})
+- [NVIDIA Nemotron 3 Nano 30B 现已在 Amazon SageMaker JumpSta]({{< relref "posts/20260211-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-0.md" >}})
+- [NVIDIA Nemotron 3 Nano 30B 模型现已在 Amazon SageMaker JumpS]({{< relref "posts/20260211-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-0.md" >}})
+- [AWS SageMaker实战：用Dottxt Outlines实现LLM结构化输出]({{< relref "posts/20260224-blogs_podcasts-generate-structured-output-from-llms-with-dottxt-o-1.md" >}})
 - [New Relic NOVA：基于AWS构建企业级生成式AI生产力引擎]({{< relref "posts/20260210-blogs_podcasts-new-relic-transforms-productivity-with-generative--10.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

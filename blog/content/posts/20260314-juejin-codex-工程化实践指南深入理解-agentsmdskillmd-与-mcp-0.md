@@ -22,6 +22,12 @@ external_url: https://juejin.cn/post/7616666752521404416
 scenarios:
 - AI/ML项目
 - 大语言模型
+aliases:
+- /posts/20260315-juejin-codex-工程化实践指南深入理解-agentsmdskillmd-与-mcp-2/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Codex 工程化实践：解析 AGENTS.md、SKILL.md 与 MCP
@@ -167,8 +173,8 @@ MCP (Model Context Protocol) 是一种开放的标准协议，旨在连接 AI �
 
 ### 相关文章
 
-- [Ghidra MCP Server：集成110项工具的AI逆向工程辅助环境]({{< relref "posts/20260204-hacker_news-show-hn-ghidra-mcp-server-110-tools-for-ai-assiste-10.md" >}})
-- [使用MCP集成外部工具至Amazon Quick Agents的实操指南]({{< relref "posts/20260223-blogs_podcasts-integrate-external-tools-with-amazon-quick-agents--4.md" >}})
-- [使用MCP协议集成外部工具至Amazon Quick Agents的六步指南]({{< relref "posts/20260223-blogs_podcasts-integrate-external-tools-with-amazon-quick-agents--9.md" >}})
+- [Ghidra MCP Server：集成110项工具的AI逆向工程辅助环境]({{< relref "posts/20260204-hacker_news-show-hn-ghidra-mcp-server-110-tools-for-ai-assiste-1.md" >}})
+- [使用MCP集成外部工具至Amazon Quick Agents的实操指南]({{< relref "posts/20260220-blogs_podcasts-integrate-external-tools-with-amazon-quick-agents--0.md" >}})
+- [使用MCP协议集成外部工具至Amazon Quick Agents的六步指南]({{< relref "posts/20260220-blogs_podcasts-integrate-external-tools-with-amazon-quick-agents--0.md" >}})
 - [wechat-devtools-mcp：基于官方库的微信小程序自动化方案]({{< relref "posts/20260226-juejin-微信小程序自动化的-ai-新时代wechat-devtools-mcp-智能方案-2.md" >}})
 - [MCP 协议入门与实操：构建大模型的数据连接标准]({{< relref "posts/20260311-juejin-mcp-初识到实操打造-ai-的usb-c接口让大模型真正手眼通天-2.md" >}})

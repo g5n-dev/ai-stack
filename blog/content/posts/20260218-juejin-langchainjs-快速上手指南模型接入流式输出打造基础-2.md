@@ -1,14 +1,31 @@
 ---
-title: "LangChain.js 快速上手：模型接入与流式输出实现"
-date: 2026-02-18T07:39:44+08:00
+title: LangChain.js 快速上手：模型接入与流式输出实现
+date: 2026-02-18 07:39:44+08:00
 draft: false
-entry_kind: "auto"
-tags: ["LangChain.js", "LLM", "流式输出", "Agent", "大模型应用", "JavaScript", "模型接入", "AI 开发"]
-categories: ["AI 工程", "前端"]
+entry_kind: auto
+tags:
+- LangChain.js
+- LLM
+- 流式输出
+- Agent
+- 大模型应用
+- JavaScript
+- 模型接入
+- AI 开发
+categories:
+- AI 工程
+- 前端
 source: juejin
-description: "随着大模型应用从单纯的“对话式交互”向具备执行能力的“行动式 AI” 演进，如何高效构建能够自主决策的系统已成为开发者的核心议题。本文将聚焦 LangChain.js 这一关键工具，详细解析模型接入与流式输出等基础能力的实现路径。通过阅读本文，读者可以掌握构建稳健 LLM 应用的核心步骤，为后续开发复杂的智能体应用打下"
+description: 随着大模型应用从单纯的“对话式交互”向具备执行能力的“行动式 AI” 演进，如何高效构建能够自主决策的系统已成为开发者的核心议题。本文将聚焦
+  LangChain.js 这一关键工具，详细解析模型接入与流式输出等基础能力的实现路径。通过阅读本文，读者可以掌握构建稳健 LLM 应用的核心步骤，为后续开发复杂的智能体应用打下
 external_url: https://juejin.cn/post/7607112994062499867
-scenarios: ["AI/ML项目", "大语言模型"]
+scenarios:
+- AI/ML项目
+- 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # LangChain.js 快速上手：模型接入与流式输出实现
@@ -213,9 +230,9 @@ for await (const chunk of stream) {
 
 ### 相关文章
 
-- [Compressed Agents：Agent Skills 技术解析]({{< relref "posts/20260130-hacker_news-compressed-agentsmd-agent-skills-6.md" >}})
-- [Agent Skills：AI 智能体的技能框架]({{< relref "posts/20260203-hacker_news-agent-skills-3.md" >}})
-- [Tambo 1.0：支持渲染 React 组件的开源 Agent 工具包]({{< relref "posts/20260211-hacker_news-tambo-10-open-source-toolkit-for-agents-that-rende-18.md" >}})
+- [Compressed Agents：Agent Skills 技术解析]({{< relref "posts/20260129-hacker_news-compressed-agentsmd-agent-skills-5.md" >}})
+- [Agent Skills：AI 智能体的技能框架]({{< relref "posts/20260203-hacker_news-agent-skills-0.md" >}})
+- [Tambo 1.0：支持渲染 React 组件的开源 Agent 工具包]({{< relref "posts/20260211-hacker_news-tambo-10-open-source-toolkit-for-agents-that-rende-12.md" >}})
 - [Tambo 1.0：渲染 React 组件的开源 Agent 工具包]({{< relref "posts/20260211-hacker_news-tambo-10-open-source-toolkit-for-agents-that-rende-12.md" >}})
-- [Agent评估显示AGENTS.md配置优于Skills]({{< relref "posts/20260130-hacker_news-agentsmd-outperforms-skills-in-our-agent-evals-4.md" >}})
+- [Agent评估显示AGENTS.md配置优于Skills]({{< relref "posts/20260129-hacker_news-compressed-agentsmd-agent-skills-5.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

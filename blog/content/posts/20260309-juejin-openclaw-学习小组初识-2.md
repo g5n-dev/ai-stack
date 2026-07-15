@@ -21,6 +21,10 @@ description: OpenClaw 学习小组：初识 OpenClaw 是一个开源、自托管
 external_url: https://juejin.cn/post/7615060828945924131
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # OpenClaw：开源自托管AI Agent网关与自动化任务调度
@@ -162,7 +166,7 @@ OpenClaw 学习小组是一个非营利性的开源社区组织，参与学习�
 ### 相关文章
 
 - [Moltworker：自托管个人 AI 智能体]({{< relref "posts/20260130-hacker_news-moltworker-a-self-hosted-personal-ai-agent-minus-t-16.md" >}})
-- [Moltworker：自托管个人 AI 智能体]({{< relref "posts/20260130-hacker_news-moltworker-a-self-hosted-personal-ai-agent-minus-t-19.md" >}})
-- [OpenClaw：GitHub 增长最快的开源 AI 代理框架]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-7.md" >}})
+- [Moltworker：自托管个人 AI 智能体]({{< relref "posts/20260130-hacker_news-moltworker-a-self-hosted-personal-ai-agent-minus-t-16.md" >}})
+- [OpenClaw：GitHub 增长最快的开源 AI 代理框架]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-0.md" >}})
 - [OpenClaw实战指南：从零部署24小时可执行任务的AI管家]({{< relref "posts/20260219-juejin-从零部署你的24小时ai管家openclaw完整实战指南附踩坑记录-1.md" >}})
 - [Zuckerman：极简个人AI代理，具备代码自编辑能力]({{< relref "posts/20260201-hacker_news-show-hn-zuckerman-minimalist-personal-ai-agent-tha-12.md" >}})

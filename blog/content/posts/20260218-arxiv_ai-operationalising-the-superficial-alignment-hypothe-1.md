@@ -1,14 +1,31 @@
 ---
-title: "基于任务复杂度的浅层对齐假说操作化研究"
-date: 2026-02-18T21:10:38+08:00
+title: 基于任务复杂度的浅层对齐假说操作化研究
+date: 2026-02-18 21:10:38+08:00
 draft: false
-entry_kind: "auto"
-tags: ["浅层对齐", "SAH", "任务复杂度", "预训练", "微调", "LLM", "数学推理", "指令跟随"]
-categories: ["论文", "大模型"]
+entry_kind: auto
+tags:
+- 浅层对齐
+- SAH
+- 任务复杂度
+- 预训练
+- 微调
+- LLM
+- 数学推理
+- 指令跟随
+categories:
+- 论文
+- 大模型
 source: arxiv
-description: "本文介绍了关于“浅层对齐假设”（SAH）的新研究。SAH认为大型语言模型（LLM）的知识主要在预训练阶段获得，而后训练（如微调）仅是激活这些知识。由于缺乏精确定义，SAH引发了不同支持和批评。作者提出“任务复杂度”作为新指标，定义为达到目标性能所需的最短程序长度。在此框架下，SAH主张预训练显著降低了任务性能的实现复杂"
+description: 本文介绍了关于“浅层对齐假设”（SAH）的新研究。SAH认为大型语言模型（LLM）的知识主要在预训练阶段获得，而后训练（如微调）仅是激活这些知识。由于缺乏精确定义，SAH引发了不同支持和批评。作者提出“任务复杂度”作为新指标，定义为达到目标性能所需的最短程序长度。在此框架下，SAH主张预训练显著降低了任务性能的实现复杂
 external_url: http://arxiv.org/abs/2602.15829v1
-scenarios: ["大语言模型"]
+scenarios:
+- 大语言模型
+aliases:
+- /posts/20260219-arxiv_ai-operationalising-the-superficial-alignment-hypothe-1/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 基于任务复杂度的浅层对齐假说操作化研究
@@ -489,8 +506,8 @@ scenarios: ["大语言模型"]
 ### 相关文章
 
 - [权重衰减提升语言模型可塑性]({{< relref "posts/20260212-arxiv_ai-weight-decay-improves-language-model-plasticity-9.md" >}})
-- [权重衰减提升语言模型可塑性]({{< relref "posts/20260213-arxiv_ai-weight-decay-improves-language-model-plasticity-9.md" >}})
+- [权重衰减提升语言模型可塑性]({{< relref "posts/20260212-arxiv_ai-weight-decay-improves-language-model-plasticity-9.md" >}})
 - [大模型行为塑造：SFT与LoRA深度解析]({{< relref "posts/20260215-juejin-大模型行为塑造sft-与-lora-深度解析-3.md" >}})
-- [LLM 数据集构建与模型训练优化指南]({{< relref "posts/20260218-hacker_news-if-youre-an-llm-please-read-this-4.md" >}})
+- [LLM 数据集构建与模型训练优化指南]({{< relref "posts/20260218-hacker_news-if-youre-an-llm-please-read-this-2.md" >}})
 - [FineInstructions：将合成指令数据扩展至预训练规模]({{< relref "posts/20260130-arxiv_ai-fineinstructions-scaling-synthetic-instructions-to-7.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

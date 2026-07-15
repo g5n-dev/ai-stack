@@ -1,14 +1,32 @@
 ---
-title: "超越掩码扩散语言模型的扩展性研究"
-date: 2026-02-17T22:35:47+08:00
+title: 超越掩码扩散语言模型的扩展性研究
+date: 2026-02-17 22:35:47+08:00
 draft: false
-entry_kind: "auto"
-tags: ["扩散模型", "语言模型", "扩展定律", "掩码扩散", "离散扩散", "DLM", "模型评估", "FLOPs效率"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- 扩散模型
+- 语言模型
+- 扩展定律
+- 掩码扩散
+- 离散扩散
+- DLM
+- 模型评估
+- FLOPs效率
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "以下是对该论文内容的中文总结： 本文主要探讨了扩散语言模型（DLMs）的扩展性研究，重点关注了目前占据主导地位的“掩码扩散”方法与其他离散扩散方法的对比。核心发现与贡献如下： 1. **首次扩展定律研究**：文章首次对统一状态和插值离散扩散方法进行了扩展定律研究。 2. **效率提升**：通过使用简单的交叉熵目标进行训"
+description: 以下是对该论文内容的中文总结： 本文主要探讨了扩散语言模型（DLMs）的扩展性研究，重点关注了目前占据主导地位的“掩码扩散”方法与其他离散扩散方法的对比。核心发现与贡献如下：
+  1. **首次扩展定律研究**：文章首次对统一状态和插值离散扩散方法进行了扩展定律研究。 2. **效率提升**：通过使用简单的交叉熵目标进行训
 external_url: http://arxiv.org/abs/2602.15014v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+aliases:
+- /posts/20260218-arxiv_ai-scaling-beyond-masked-diffusion-language-models-5/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 超越掩码扩散语言模型的扩展性研究
@@ -388,7 +406,7 @@ MDLM 的优势在于能够统一处理图像和文本。为了实现最佳的跨
 
 - [DLM-Scope：利用稀疏自编码器解析扩散语言模型]({{< relref "posts/20260206-arxiv_ai-dlm-scope-mechanistic-interpretability-of-diffusio-4.md" >}})
 - [🚀 自回归+掩码扩散：下一代生成式AI！🔥]({{< relref "posts/20260126-arxiv_ai-auto-regressive-masked-diffusion-models-3.md" >}})
-- [🔥自回归+掩码扩散！下一代生成模型架构强势登场！]({{< relref "posts/20260127-arxiv_ai-auto-regressive-masked-diffusion-models-3.md" >}})
+- [🔥自回归+掩码扩散！下一代生成模型架构强势登场！]({{< relref "posts/20260126-arxiv_ai-auto-regressive-masked-diffusion-models-3.md" >}})
 - [发现模型仓库中被忽视的高质量模型]({{< relref "posts/20260130-arxiv_ai-discovering-hidden-gems-in-model-repositories-1.md" >}})
 - [基于认知上下文学习构建大模型多智能体系统的信任机制]({{< relref "posts/20260130-arxiv_ai-epistemic-context-learning-building-trust-the-righ-7.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

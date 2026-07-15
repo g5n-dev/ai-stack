@@ -1,14 +1,30 @@
 ---
-title: "DeepClaude集成DeepSeek V4 Pro代理循环，成本降至1/17"
-date: 2026-05-04T00:09:50+08:00
+title: DeepClaude集成DeepSeek V4 Pro代理循环，成本降至1/17
+date: 2026-05-04 00:09:50+08:00
 draft: false
-entry_kind: "auto"
-tags: ["DeepClaude", "DeepSeek", "代理循环", "成本降低", "大模型", "AI工程", "开发工具", "LLM"]
-categories: ["AI 工程", "开发工具"]
+entry_kind: auto
+tags:
+- DeepClaude
+- DeepSeek
+- 代理循环
+- 成本降低
+- 大模型
+- AI 工程
+- 开发工具
+- LLM
+categories:
+- AI 工程
+- 开发工具
 source: hacker_news
-description: "DeepClaude通过将Claude Code的agent循环与DeepSeek V4 Pro进行深度整合，实现了一种兼顾效率与成本的开发新范式。该方案利用模型间的协同能力，在保证代码质量的前提下，将使用成本控制在原来的十七分之一。对于需要频繁依赖AI辅助编程的开发者而言，这意味着可以在预算有限的情况下获得更持续、更"
+description: DeepClaude通过将Claude Code的agent循环与DeepSeek V4 Pro进行深度整合，实现了一种兼顾效率与成本的开发新范式。该方案利用模型间的协同能力，在保证代码质量的前提下，将使用成本控制在原来的十七分之一。对于需要频繁依赖AI辅助编程的开发者而言，这意味着可以在预算有限的情况下获得更持续、更
 external_url: https://github.com/aattaran/deepclaude
-scenarios: ["AI/ML项目", "大语言模型"]
+scenarios:
+- AI/ML项目
+- 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # DeepClaude集成DeepSeek V4 Pro代理循环，成本降至1/17
@@ -80,9 +96,9 @@ DeepClaude通过DeepSeek V4 Pro实现17倍成本降低，这一数字在特定�
 
 ### 相关文章
 
-- [中国开源AI生态架构选择：DeepSeek之外的技术路径]({{< relref "posts/20260129-blogs_podcasts-architectural-choices-in-chinas-open-source-ai-eco-9.md" >}})
+- [中国开源AI生态架构选择：DeepSeek之外的技术路径]({{< relref "posts/20260127-blogs_podcasts-architectural-choices-in-chinas-open-source-ai-eco-0.md" >}})
 - [Cirrus Labs 团队加入 OpenAI]({{< relref "posts/20260411-hacker_news-cirrus-labs-to-join-openai-0.md" >}})
-- [Codex 应用：基于 OpenAI 模型的代码生成工具]({{< relref "posts/20260203-hacker_news-the-codex-app-12.md" >}})
-- [Claude Code 配额耗尽时接入本地模型的方法]({{< relref "posts/20260205-hacker_news-claude-code-connect-to-a-local-model-when-your-quo-1.md" >}})
-- [Claude Code 配额耗尽后接入本地模型的方法]({{< relref "posts/20260205-hacker_news-claude-code-connect-to-a-local-model-when-your-quo-15.md" >}})
+- [Codex 应用：基于 OpenAI 模型的代码生成工具]({{< relref "posts/20260202-hacker_news-the-codex-app-1.md" >}})
+- [Claude Code 配额耗尽时接入本地模型的方法]({{< relref "posts/20260204-hacker_news-claude-code-connect-to-a-local-model-when-your-quo-5.md" >}})
+- [Claude Code 配额耗尽后接入本地模型的方法]({{< relref "posts/20260204-hacker_news-claude-code-connect-to-a-local-model-when-your-quo-5.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

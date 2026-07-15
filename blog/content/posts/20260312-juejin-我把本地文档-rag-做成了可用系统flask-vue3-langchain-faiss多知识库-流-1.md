@@ -22,6 +22,10 @@ external_url: https://juejin.cn/post/7616184939038572579
 scenarios:
 - RAG应用
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 我把本地文档 RAG 做成了可用系统：Flask + Vue3 + LangChain + FAISS（多知识

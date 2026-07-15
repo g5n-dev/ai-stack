@@ -1,12 +1,26 @@
 ---
-title: "😱谷歌欲掌控俄州小镇水源！环保主义者紧急发声！"
-date: 2026-01-26T12:12:08+08:00
+title: 😱谷歌欲掌控俄州小镇水源！环保主义者紧急发声！
+date: 2026-01-26 12:12:08+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Google", "数据中心", "基础设施", "水资源", "环保", "AI能耗", "俄勒冈", "云计算"]
-categories: ["系统与基础设施", "开源生态"]
+entry_kind: auto
+tags:
+- Google
+- 数据中心
+- 基础设施
+- 水资源
+- 环保
+- AI能耗
+- 俄勒冈
+- 云计算
+categories:
+- 系统与基础设施
+- 开源生态
 source: hacker_news
 external_url: https://www.sfgate.com/national-parks/article/mount-hood-water-google-21307223.php
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 📰 😱谷歌欲掌控俄州小镇水源！环保主义者紧急发声！

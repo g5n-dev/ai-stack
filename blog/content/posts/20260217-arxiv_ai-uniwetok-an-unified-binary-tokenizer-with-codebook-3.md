@@ -1,14 +1,30 @@
 ---
-title: "UniWeTok：统一二进制分词器支持2^128码本规模"
-date: 2026-02-17T03:10:02+08:00
+title: UniWeTok：统一二进制分词器支持2^128码本规模
+date: 2026-02-17 03:10:02+08:00
 draft: false
-entry_kind: "auto"
-tags: ["UniWeTok", "多模态", "Tokenizer", "二进制码本", "SigLu", "图像生成", "视觉重建", "SOTA"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- UniWeTok
+- 多模态
+- Tokenizer
+- 二进制码本
+- SigLu
+- 图像生成
+- 视觉重建
+- SOTA
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "UniWeTok 是一种专为统一多模态大语言模型（MLLM）设计的统一二进制 Tokenizer，旨在解决视觉表示中高保真重建、复杂语义提取和生成适用性难以兼顾的问题。以下是核心内容总结： **核心特点：** 1. **大规模二进制码本**：采用 $2^{128}$ 的二进制码本，有效统一了高保真重建与生成需求。 2."
+description: UniWeTok 是一种专为统一多模态大语言模型（MLLM）设计的统一二进制 Tokenizer，旨在解决视觉表示中高保真重建、复杂语义提取和生成适用性难以兼顾的问题。以下是核心内容总结：
+  **核心特点：** 1. **大规模二进制码本**：采用 $2^{128}$ 的二进制码本，有效统一了高保真重建与生成需求。 2.
 external_url: http://arxiv.org/abs/2602.14178v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # UniWeTok：统一二进制分词器支持2^128码本规模
@@ -493,8 +509,8 @@ UniWeTok 将分词器与 LLM 解耦，这意味着分词器可以独立于 LLM �
 ### 相关文章
 
 - [🔥PyraTok！视频生成神器：语言对齐金字塔Tokenizer震撼来袭！]({{< relref "posts/20260125-arxiv_ai-pyratok-language-aligned-pyramidal-tokenizer-for-v-1.md" >}})
-- [Moonshot K2.5：成本减半超越Sonnet 4.5，原生图文视频与百并发Agent管理]({{< relref "posts/20260130-blogs_podcasts-ainews-moonshot-kimi-k25-beats-sonnet-45-at-half-t-7.md" >}})
-- [Moonshot Kimi K2.5：成本减半超越Sonnet 4.5，支持原生图文视频与百并发Agent管理]({{< relref "posts/20260131-blogs_podcasts-ainews-moonshot-kimi-k25-beats-sonnet-45-at-half-t-8.md" >}})
-- [UEval：统一多模态生成基准评测]({{< relref "posts/20260201-arxiv_ai-ueval-a-benchmark-for-unified-multimodal-generatio-3.md" >}})
-- [Qwen Image 2与Seedance 2发布：中国生成式媒体表现强劲]({{< relref "posts/20260211-blogs_podcasts-ainews-qwen-image-2-and-seedance-2-5.md" >}})
+- [Moonshot K2.5：成本减半超越Sonnet 4.5，原生图文视频与百并发Agent管理]({{< relref "posts/20260129-blogs_podcasts-ainews-moonshot-kimi-k25-beats-sonnet-45-at-half-t-1.md" >}})
+- [Moonshot Kimi K2.5：成本减半超越Sonnet 4.5，支持原生图文视频与百并发Agent管理]({{< relref "posts/20260129-blogs_podcasts-ainews-moonshot-kimi-k25-beats-sonnet-45-at-half-t-1.md" >}})
+- [UEval：统一多模态生成基准评测]({{< relref "posts/20260130-arxiv_ai-ueval-a-benchmark-for-unified-multimodal-generatio-3.md" >}})
+- [Qwen Image 2与Seedance 2发布：中国生成式媒体表现强劲]({{< relref "posts/20260211-blogs_podcasts-ainews-qwen-image-2-and-seedance-2-0.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

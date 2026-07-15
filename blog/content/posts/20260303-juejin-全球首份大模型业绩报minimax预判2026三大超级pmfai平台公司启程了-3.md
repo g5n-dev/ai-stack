@@ -10,7 +10,7 @@ tags:
 - PMF
 - 商业化
 - 港交所
-- AI应用
+- AI 应用
 - 行业分析
 categories:
 - 产品与创业
@@ -21,6 +21,10 @@ description: 以下是针对该内容的精简总结： **标题：MiniMax发布
 external_url: https://juejin.cn/post/7612921517232357410
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # MiniMax首份财报：ARR破1.5亿美元并预判2026年三大PMF
@@ -190,8 +194,8 @@ MiniMax 的商业模式主要包含 To B 和 To C 两层：
 
 ### 相关文章
 
-- [Sam Altman全员大会反思与AI孵化器动态]({{< relref "posts/20260129-blogs_podcasts-ainews-sam-altmans-ai-combinator-1.md" >}})
+- [Sam Altman全员大会反思与AI孵化器动态]({{< relref "posts/20260129-blogs_podcasts-ainews-sam-altmans-ai-combinator-0.md" >}})
 - [OpenAI发布欧盟经济蓝图2.0 加速欧洲AI应用与增长]({{< relref "posts/20260129-blogs_podcasts-the-next-chapter-for-ai-in-the-eu-2.md" >}})
-- [OpenAI发布《欧盟经济蓝图2.0》加速欧洲AI应用与增长]({{< relref "posts/20260129-blogs_podcasts-the-next-chapter-for-ai-in-the-eu-3.md" >}})
+- [OpenAI发布《欧盟经济蓝图2.0》加速欧洲AI应用与增长]({{< relref "posts/20260129-blogs_podcasts-the-next-chapter-for-ai-in-the-eu-2.md" >}})
 - [构建AI版Wattpad以评估大模型小说创作能力]({{< relref "posts/20260203-hacker_news-show-hn-i-built-ai-wattpad-to-eval-llms-on-fiction-19.md" >}})
-- [OpenAI Frontier：具备上下文与治理能力的企业级AI智能体平台]({{< relref "posts/20260207-blogs_podcasts-introducing-openai-frontier-9.md" >}})
+- [OpenAI Frontier：具备上下文与治理能力的企业级AI智能体平台]({{< relref "posts/20260205-hacker_news-openai-frontier-5.md" >}})

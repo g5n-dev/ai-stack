@@ -1,14 +1,30 @@
 ---
-title: "同构潜在空间频率桥接优化视频统一模型"
-date: 2026-06-01T21:35:17+08:00
+title: 同构潜在空间频率桥接优化视频统一模型
+date: 2026-06-01 21:35:17+08:00
 draft: false
-entry_kind: "auto"
-tags: ["视频生成", "统一模型", "频率桥接", "同质潜在空间", "轻量对齐", "渐进细化", "开源生态", "UPFB"]
-categories: ["论文", "大模型"]
+entry_kind: auto
+tags:
+- 视频生成
+- 统一模型
+- 频率桥接
+- 同质潜在空间
+- 轻量对齐
+- 渐进细化
+- 开源生态
+- UPFB
+categories:
+- 论文
+- 大模型
 source: arxiv
-description: "背景 当前基于Connector的视频统一模型在指令引导的生成上表现良好，但将大容量高保真生成器纳入统一训练计算代价巨大，限制视觉质量提升。 方法概述 Lumos‑Nexus采用两阶段设计。训练阶段仅对轻量生成器进行对齐，使其在理解模块控制下学习推理驱动的语义控制；推理阶段引入统一渐进频率桥接（UPFB），在共享潜在空"
+description: 背景 当前基于Connector的视频统一模型在指令引导的生成上表现良好，但将大容量高保真生成器纳入统一训练计算代价巨大，限制视觉质量提升。
+  方法概述 Lumos‑Nexus采用两阶段设计。训练阶段仅对轻量生成器进行对齐，使其在理解模块控制下学习推理驱动的语义控制；推理阶段引入统一渐进频率桥接（UPFB），在共享潜在空
 external_url: http://arxiv.org/abs/2605.31603v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 同构潜在空间频率桥接优化视频统一模型
@@ -142,8 +158,8 @@ Lumos‑Nexus采用两阶段设计。训练阶段仅对轻量生成器进行对�
 ### 相关文章
 
 - [VideoGPA：提取几何先验实现三维一致视频生成]({{< relref "posts/20260202-arxiv_ai-videogpa-distilling-geometry-priors-for-3d-consist-0.md" >}})
-- [VideoGPA：提取几何先验实现三维一致性视频生成]({{< relref "posts/20260203-arxiv_ai-videogpa-distilling-geometry-priors-for-3d-consist-0.md" >}})
+- [VideoGPA：提取几何先验实现三维一致性视频生成]({{< relref "posts/20260202-arxiv_ai-videogpa-distilling-geometry-priors-for-3d-consist-0.md" >}})
 - [DreamDojo：基于大规模人类视频的通用机器人世界模型]({{< relref "posts/20260209-arxiv_ai-dreamdojo-a-generalist-robot-world-model-from-larg-4.md" >}})
 - [UniT：统一多模态思维链测试时扩展方法]({{< relref "posts/20260213-arxiv_ai-unit-unified-multimodal-chain-of-thought-test-time-1.md" >}})
-- [UniT：统一多模态思维链测试时扩展]({{< relref "posts/20260214-arxiv_ai-unit-unified-multimodal-chain-of-thought-test-time-1.md" >}})
+- [UniT：统一多模态思维链测试时扩展]({{< relref "posts/20260213-arxiv_ai-unit-unified-multimodal-chain-of-thought-test-time-1.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

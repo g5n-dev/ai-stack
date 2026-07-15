@@ -1,14 +1,30 @@
 ---
-title: "GLM-5.2：开源模型强化前端编程推理"
-date: 2026-06-17T06:34:30+08:00
+title: GLM-5.2：开源模型强化前端编程推理
+date: 2026-06-17 06:34:30+08:00
 draft: false
-entry_kind: "auto"
-tags: ["GLM-5.2", "开源模型", "前端编程", "代码生成", "推测解码", "索引共享", "推理加速", "前端框架"]
-categories: ["大模型", "前端"]
+entry_kind: auto
+tags:
+- GLM-5.2
+- 开源模型
+- 前端编程
+- 代码生成
+- 推测解码
+- 索引共享
+- 推理加速
+- 前端框架
+categories:
+- 大模型
+- 前端
 source: blogs_podcasts
-description: "GLM‑5.2 已正式发布，成为当前全球前端代码生成领域排名第一的开源模型。该模型在前端编码任务（如 React、Vue 等框架的组件生成、样式编写、交互逻辑实现）上实现了显著的性能提升，评测结果超过了此前的主流模型。团队同步推出了 IndexShare 技术，专用于推测解码（Speculative Decoding）"
+description: GLM‑5.2 已正式发布，成为当前全球前端代码生成领域排名第一的开源模型。该模型在前端编码任务（如 React、Vue 等框架的组件生成、样式编写、交互逻辑实现）上实现了显著的性能提升，评测结果超过了此前的主流模型。团队同步推出了
+  IndexShare 技术，专用于推测解码（Speculative Decoding）
 external_url: https://www.latent.space/p/ainews-glm-52-the-top-frontend-coding
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # GLM-5.2：开源模型强化前端编程推理
@@ -124,8 +140,8 @@ GLM-5.2的发布对前端AI辅助编程市场格局产生直接影响。当前�
 ### 相关文章
 
 - [跨架构蒸馏技术助力扩散大语言模型]({{< relref "posts/20260430-arxiv_ai-turning-the-tide-cross-architecture-distillation-f-0.md" >}})
-- [🚀AI2重磅开源！Open Coding Agents：AI写代码的革命来了！]({{< relref "posts/20260128-hacker_news-ai2-open-coding-agents-12.md" >}})
-- [让 Claude 编写 CUDA 内核并指导开源模型]({{< relref "posts/20260129-blogs_podcasts-we-got-claude-to-build-cuda-kernels-and-teach-open-7.md" >}})
-- [让 Claude 编写 CUDA 内核并指导开源模型]({{< relref "posts/20260129-blogs_podcasts-we-got-claude-to-build-cuda-kernels-and-teach-open-8.md" >}})
+- [🚀AI2重磅开源！Open Coding Agents：AI写代码的革命来了！]({{< relref "posts/20260127-hacker_news-ai2-open-coding-agents-11.md" >}})
+- [让 Claude 编写 CUDA 内核并指导开源模型]({{< relref "posts/20260129-blogs_podcasts-we-got-claude-to-build-cuda-kernels-and-teach-open-6.md" >}})
+- [让 Claude 编写 CUDA 内核并指导开源模型]({{< relref "posts/20260129-blogs_podcasts-we-got-claude-to-build-cuda-kernels-and-teach-open-6.md" >}})
 - [DFlash：基于块扩散的Flash推测解码方法]({{< relref "posts/20260206-arxiv_ai-dflash-block-diffusion-for-flash-speculative-decod-4.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

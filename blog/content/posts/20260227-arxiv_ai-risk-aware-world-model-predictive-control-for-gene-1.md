@@ -21,6 +21,10 @@ description: 以下是针对《Risk-Aware World Model Predictive Control for Gen
 external_url: http://arxiv.org/abs/2602.23259v1
 scenarios:
 - 计算机视觉
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 风险感知世界模型预测控制提升端到端自动驾驶泛化性
@@ -422,8 +426,8 @@ scenarios:
 
 ### 相关文章
 
-- [Waymo 世界模型：端到端自动驾驶的仿真与预测架构]({{< relref "posts/20260207-hacker_news-the-waymo-world-model-1.md" >}})
+- [Waymo 世界模型：端到端自动驾驶的仿真与预测架构]({{< relref "posts/20260206-hacker_news-the-waymo-world-model-a-new-frontier-for-autonomou-4.md" >}})
 - [HERMES：基于视觉语言模型的长尾自动驾驶端到端风险感知系统]({{< relref "posts/20260203-arxiv_ai-hermes-a-holistic-end-to-end-risk-aware-multimodal-6.md" >}})
-- [Waymo 世界模型：利用生成式视频预测驾驶场景]({{< relref "posts/20260206-hacker_news-the-waymo-world-model-0.md" >}})
-- [Waymo世界模型：自动驾驶仿真的新前沿]({{< relref "posts/20260206-hacker_news-the-waymo-world-model-a-new-frontier-for-autonomou-0.md" >}})
+- [Waymo 世界模型：利用生成式视频预测驾驶场景]({{< relref "posts/20260206-hacker_news-the-waymo-world-model-a-new-frontier-for-autonomou-4.md" >}})
+- [Waymo世界模型：自动驾驶仿真的新前沿]({{< relref "posts/20260206-hacker_news-the-waymo-world-model-a-new-frontier-for-autonomou-4.md" >}})
 - [Waymo世界模型：自动驾驶仿真的新前沿]({{< relref "posts/20260206-hacker_news-the-waymo-world-model-a-new-frontier-for-autonomou-4.md" >}})

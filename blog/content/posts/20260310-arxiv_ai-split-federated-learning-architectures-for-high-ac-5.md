@@ -21,6 +21,12 @@ description: '**主要内容总结：** 这篇文章探讨了在**拆分联邦�
 external_url: http://arxiv.org/abs/2603.08687v1
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260311-arxiv_ai-split-federated-learning-architectures-for-high-ac-5/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 面向高精度低时延训练的拆分联邦学习架构
@@ -430,8 +436,8 @@ SFL 特别适用于以下场景：
 
 ### 相关文章
 
-- [数据集压缩至1MB：小规模数据集的模型训练效果]({{< relref "posts/20260302-arxiv_ai-a-dataset-is-worth-1-mb-2.md" >}})
-- [利用权重更新稀疏性提升分布式强化学习通信效率]({{< relref "posts/20260205-arxiv_ai-understanding-and-exploiting-weight-update-sparsit-3.md" >}})
+- [数据集压缩至1MB：小规模数据集的模型训练效果]({{< relref "posts/20260227-arxiv_ai-a-dataset-is-worth-1-mb-2.md" >}})
+- [利用权重更新稀疏性提升分布式强化学习通信效率]({{< relref "posts/20260204-arxiv_ai-understanding-and-exploiting-weight-update-sparsit-3.md" >}})
 - [为何Adam在$β_1=β_2$时更优：缺失的梯度尺度不变性原理]({{< relref "posts/20260130-arxiv_ai-why-adam-works-better-with-β_1-β_2-the-missing-gra-8.md" >}})
 - [ARO：面向大模型矩阵优化的新视角]({{< relref "posts/20260210-arxiv_ai-aro-a-new-lens-on-matrix-optimization-for-large-mo-8.md" >}})
-- [Amazon SageMaker AI 2025回顾：弹性训练计划与推理性价比提升]({{< relref "posts/20260221-blogs_podcasts-amazon-sagemaker-ai-in-2025-a-year-in-review-part--1.md" >}})
+- [Amazon SageMaker AI 2025回顾：弹性训练计划与推理性价比提升]({{< relref "posts/20260220-blogs_podcasts-amazon-sagemaker-ai-in-2025-a-year-in-review-part--0.md" >}})

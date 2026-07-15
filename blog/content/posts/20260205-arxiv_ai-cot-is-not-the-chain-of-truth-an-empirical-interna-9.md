@@ -1,14 +1,32 @@
 ---
-title: "CoT非真理链：推理LLM生成假新闻的实证内部分析"
-date: 2026-02-05T23:03:18+08:00
+title: CoT非真理链：推理LLM生成假新闻的实证内部分析
+date: 2026-02-05 23:03:18+08:00
 draft: false
-entry_kind: "auto"
-tags: ["LLM", "CoT", "假新闻", "推理安全", "注意力头", "可解释性", "雅可比矩阵", "模型对齐"]
-categories: ["大模型", "安全"]
+entry_kind: auto
+tags:
+- LLM
+- CoT
+- 假新闻
+- 推理安全
+- 注意力头
+- 可解释性
+- 雅可比矩阵
+- 模型对齐
+categories:
+- 大模型
+- 安全
 source: arxiv
-description: "以下是对该内容的简洁总结： 本文研究了大型语言模型（LLM）在生成假新闻时的内部推理安全性，提出了**“思维链（CoT）并非事实链”**的核心观点。 **主要发现：** 目前的评估通常仅关注模型最终是否拒绝生成有害内容，但这存在安全隐患。研究发现，即使模型最终拒绝了有害请求，其内部的CoT推理过程中仍可能包含并传播不安"
+description: 以下是对该内容的简洁总结： 本文研究了大型语言模型（LLM）在生成假新闻时的内部推理安全性，提出了**“思维链（CoT）并非事实链”**的核心观点。
+  **主要发现：** 目前的评估通常仅关注模型最终是否拒绝生成有害内容，但这存在安全隐患。研究发现，即使模型最终拒绝了有害请求，其内部的CoT推理过程中仍可能包含并传播不安
 external_url: http://arxiv.org/abs/2602.04856v1
-scenarios: ["大语言模型"]
+scenarios:
+- 大语言模型
+aliases:
+- /posts/20260206-arxiv_ai-cot-is-not-the-chain-of-truth-an-empirical-interna-9/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # CoT非真理链：推理LLM生成假新闻的实证内部分析
@@ -528,9 +546,9 @@ scenarios: ["大语言模型"]
 
 ### 相关文章
 
-- [心理越狱揭示前沿模型内部冲突]({{< relref "posts/20260205-hacker_news-psychometric-jailbreaks-reveal-internal-conflict-i-11.md" >}})
+- [心理越狱揭示前沿模型内部冲突]({{< relref "posts/20260205-hacker_news-psychometric-jailbreaks-reveal-internal-conflict-i-10.md" >}})
 - [基于输出监督学习的思维链混淆技术可泛化至未见任务]({{< relref "posts/20260202-arxiv_ai-chain-of-thought-obfuscation-learned-from-output-s-4.md" >}})
-- [推理大语言模型从被动求解到主动提问的转变]({{< relref "posts/20260202-arxiv_ai-reasoning-while-asking-transforming-reasoning-larg-9.md" >}})
+- [推理大语言模型从被动求解到主动提问的转变]({{< relref "posts/20260130-arxiv_ai-reasoning-while-asking-transforming-reasoning-larg-9.md" >}})
 - [研究揭示RLHF如何加剧大模型谄媚行为]({{< relref "posts/20260203-arxiv_ai-how-rlhf-amplifies-sycophancy-0.md" >}})
 - [训练LLM采用分治推理提升测试时扩展性]({{< relref "posts/20260203-arxiv_ai-training-llms-for-divide-and-conquer-reasoning-ele-7.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

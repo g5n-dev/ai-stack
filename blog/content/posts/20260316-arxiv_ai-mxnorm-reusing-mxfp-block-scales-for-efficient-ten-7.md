@@ -21,6 +21,10 @@ description: '**总结：MXNorm——通过复用MXFP块尺度实现高效张量
 external_url: http://arxiv.org/abs/2603.13180v1
 scenarios:
 - Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # MXNorm：复用MXFP块缩放实现高效张量归一化
@@ -431,7 +435,7 @@ MXNorm 提升推理效率的核心原理是**减少内存访问**并**利用硬�
 ### 相关文章
 
 - [Talos：深度卷积神经网络硬件加速器]({{< relref "posts/20260304-hacker_news-talos-hardware-accelerator-for-deep-convolutional--1.md" >}})
-- [FlashAttention-T：张量化注意力机制实现方案]({{< relref "posts/20260204-hacker_news-flashattention-t-towards-tensorized-attention-8.md" >}})
-- [单张RTX 3090利用NVMe直连运行Llama 3.1 70B]({{< relref "posts/20260222-hacker_news-show-hn-llama-31-70b-on-a-single-rtx-3090-via-nvme-10.md" >}})
-- [单张RTX 3090利用NVMe直通运行Llama 3.1 70B]({{< relref "posts/20260222-hacker_news-show-hn-llama-31-70b-on-a-single-rtx-3090-via-nvme-4.md" >}})
-- [Hexagon 利用 SageMaker HyperPod 加速分割模型预训练]({{< relref "posts/20260225-blogs_podcasts-accelerating-ai-model-production-at-hexagon-with-a-14.md" >}})
+- [FlashAttention-T：张量化注意力机制实现方案]({{< relref "posts/20260203-hacker_news-flashattention-t-towards-tensorized-attention-0.md" >}})
+- [单张RTX 3090利用NVMe直连运行Llama 3.1 70B]({{< relref "posts/20260222-hacker_news-show-hn-llama-31-70b-on-a-single-rtx-3090-via-nvme-2.md" >}})
+- [单张RTX 3090利用NVMe直通运行Llama 3.1 70B]({{< relref "posts/20260222-hacker_news-show-hn-llama-31-70b-on-a-single-rtx-3090-via-nvme-2.md" >}})
+- [Hexagon 利用 SageMaker HyperPod 加速分割模型预训练]({{< relref "posts/20260223-blogs_podcasts-accelerating-ai-model-production-at-hexagon-with-a-1.md" >}})

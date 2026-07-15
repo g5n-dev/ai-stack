@@ -22,6 +22,10 @@ external_url: https://www.charlespetzold.com/blog/2026/02/The-Appalling-Stupidit
 scenarios:
 - AI/ML项目
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Spotify AI DJ 推荐机制缺陷与算法局限性分析

@@ -1,12 +1,28 @@
 ---
-title: "博尔赫斯《科学的精确性》(1946)！🔥烧脑神作！📄PDF"
-date: 2026-01-26T18:11:05+08:00
+title: 博尔赫斯《科学的精确性》(1946)！🔥烧脑神作！📄PDF
+date: 2026-01-26 18:11:05+08:00
 draft: false
-entry_kind: "auto"
-tags: ["博尔赫斯", "哲学", "隐喻", "地图", "模型", "现实主义", "知识体系", "思想实验"]
-categories: ["生活与杂谈"]
+entry_kind: auto
+tags:
+- 博尔赫斯
+- 哲学
+- 隐喻
+- 地图
+- 模型
+- 现实主义
+- 知识体系
+- 思想实验
+categories:
+- 生活与杂谈
 source: hacker_news
 external_url: https://kwarc.info/teaching/TDM/Borges.pdf
+scenarios: []
+aliases:
+- /posts/20260126-hacker_news-exactitude-in-science-borges-1946-pdf-16/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 📰 博尔赫斯《科学的精确性》(1946)！🔥烧脑神作！📄PDF

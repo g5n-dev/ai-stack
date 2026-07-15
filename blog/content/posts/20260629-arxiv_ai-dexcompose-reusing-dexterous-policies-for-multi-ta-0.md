@@ -1,14 +1,31 @@
 ---
-title: "DexCompose：复用灵巧策略实现单手多任务操作"
-date: 2026-06-29T23:10:48+08:00
+title: DexCompose：复用灵巧策略实现单手多任务操作
+date: 2026-06-29 23:10:48+08:00
 draft: false
-entry_kind: "auto"
-tags: ["灵巧手", "多任务操作", "残差组合", "手指级动作", "策略复用", "机器人", "复合操作", "机械手"]
-categories: ["论文"]
+entry_kind: auto
+tags:
+- 灵巧手
+- 多任务操作
+- 残差组合
+- 手指级动作
+- 策略复用
+- 机器人
+- 复合操作
+- 机械手
+categories:
+- 论文
 source: arxiv
-description: "研究背景 灵巧手策略能够解决单个技能，但把多个技能组合在同一只手上执行仍面临挑战。重叠的手指和接触模式会产生冲突，导致保留已有操作与执行新任务之间的破坏性干扰。 DexCompose 方法 框架采用角色感知的残差组合，通过明确的指级动作所有权来实现复用。具体步骤：①收集第一技能的成功的后任务状态；②对这些状态进行释放测"
+description: 研究背景 灵巧手策略能够解决单个技能，但把多个技能组合在同一只手上执行仍面临挑战。重叠的手指和接触模式会产生冲突，导致保留已有操作与执行新任务之间的破坏性干扰。
+  DexCompose 方法 框架采用角色感知的残差组合，通过明确的指级动作所有权来实现复用。具体步骤：①收集第一技能的成功的后任务状态；②对这些状态进行释放测
 external_url: http://arxiv.org/abs/2606.28323v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+aliases:
+- /posts/20260630-arxiv_ai-dexcompose-reusing-dexterous-policies-for-multi-ta-0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # DexCompose：复用灵巧策略实现单手多任务操作
@@ -146,6 +163,6 @@ DexCompose的差异化在于引入指级细粒度的动作所有权概念，并�
 - [AutoDex：面向真实场景的灵巧抓取数据自动采集系统]({{< relref "posts/20260623-arxiv_ai-autodex-an-automated-real-world-system-for-dextero-0.md" >}})
 - [DreamDojo：基于大规模人类视频的通用机器人世界模型]({{< relref "posts/20260209-arxiv_ai-dreamdojo-a-generalist-robot-world-model-from-larg-4.md" >}})
 - [扩展验证比扩展策略学习更能有效实现视觉-语言-动作对齐]({{< relref "posts/20260213-arxiv_ai-scaling-verification-can-be-more-effective-than-sc-0.md" >}})
-- [扩展验证比扩展策略学习更有效实现视觉-语言-动作对齐]({{< relref "posts/20260214-arxiv_ai-scaling-verification-can-be-more-effective-than-sc-0.md" >}})
-- [扩展验证比扩展策略学习更能有效实现视觉-语言-动作对齐]({{< relref "posts/20260215-arxiv_ai-scaling-verification-can-be-more-effective-than-sc-0.md" >}})
+- [扩展验证比扩展策略学习更有效实现视觉-语言-动作对齐]({{< relref "posts/20260213-arxiv_ai-scaling-verification-can-be-more-effective-than-sc-0.md" >}})
+- [扩展验证比扩展策略学习更能有效实现视觉-语言-动作对齐]({{< relref "posts/20260213-arxiv_ai-scaling-verification-can-be-more-effective-than-sc-0.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

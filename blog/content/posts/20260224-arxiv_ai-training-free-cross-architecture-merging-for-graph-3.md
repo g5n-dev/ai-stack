@@ -14,6 +14,10 @@ description: '**H-GRAMA：无需训练的跨架构图神经网络合并方法** 
 external_url: http://arxiv.org/abs/2602.19332v1
 scenarios:
 - Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 无需训练的图神经网络跨架构合并方法

@@ -22,6 +22,10 @@ external_url: https://juejin.cn/post/7611424094525620265
 scenarios:
 - AI/ML项目
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 基于SSE的AI对话流式消息架构与字段设计
@@ -174,8 +178,8 @@ SSE 传输的不仅仅是文本内容，还需要传递状态元数据。通常�
 
 ### 相关文章
 
-- [利用 Amazon Bedrock 构建AI招聘系统以优化人才获取流程]({{< relref "posts/20260213-blogs_podcasts-ai-meets-hr-transforming-talent-acquisition-with-a-3.md" >}})
+- [利用 Amazon Bedrock 构建AI招聘系统以优化人才获取流程]({{< relref "posts/20260212-blogs_podcasts-ai-meets-hr-transforming-talent-acquisition-with-a-0.md" >}})
 - [Spring AI 多模型对话实战：统一接口与 Redis 记忆]({{< relref "posts/20260217-juejin-spring-ai-多模型对话-demo-实战openaiollama-一套接口redis-会话记忆-3.md" >}})
-- [基于Amazon Bedrock AgentCore构建统一智能系统]({{< relref "posts/20260219-blogs_podcasts-build-unified-intelligence-with-amazon-bedrock-age-2.md" >}})
+- [基于Amazon Bedrock AgentCore构建统一智能系统]({{< relref "posts/20260219-blogs_podcasts-build-unified-intelligence-with-amazon-bedrock-age-0.md" >}})
 - [CountBot：基于 Provider 模式与 LiteLLM 实现多 LLM 统一接入]({{< relref "posts/20260222-juejin-03多-llm-提供商统一接入provider-模式与-litellm-实践-3.md" >}})
 - [Spring AI MCP 结合 WebFlux SSE 构建 AI 天气助手]({{< relref "posts/20260222-juejin-spring-ai-mcp-之-sse-webflux-实战从零构建-ai-天气助手-4.md" >}})

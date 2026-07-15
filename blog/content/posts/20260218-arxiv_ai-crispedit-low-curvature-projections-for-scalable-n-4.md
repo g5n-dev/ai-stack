@@ -1,14 +1,33 @@
 ---
-title: "CrispEdit：低曲率投影实现可扩展的大模型无损编辑"
-date: 2026-02-18T21:10:38+08:00
+title: CrispEdit：低曲率投影实现可扩展的大模型无损编辑
+date: 2026-02-18 21:10:38+08:00
 draft: false
-entry_kind: "auto"
-tags: ["模型编辑", "CrispEdit", "LLM", "能力保持", "二阶优化", "低曲率", "模型权重", "RAG"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- 模型编辑
+- CrispEdit
+- LLM
+- 能力保持
+- 二阶优化
+- 低曲率
+- 模型权重
+- RAG
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "以下是关于《CrispEdit: Low-Curvature Projections for Scalable Non-Destructive LLM Editing》的简洁总结： **背景与挑战** 大型语言模型（LLM）编辑面临的核心挑战是**能力保持**。现有的编辑方法虽然能改变模型的特定行为，但往往像“奖励黑客"
+description: '以下是关于《CrispEdit: Low-Curvature Projections for Scalable Non-Destructive
+  LLM Editing》的简洁总结： **背景与挑战** 大型语言模型（LLM）编辑面临的核心挑战是**能力保持**。现有的编辑方法虽然能改变模型的特定行为，但往往像“奖励黑客'
 external_url: http://arxiv.org/abs/2602.15823v1
-scenarios: ["大语言模型", "RAG应用"]
+scenarios:
+- 大语言模型
+- RAG应用
+aliases:
+- /posts/20260219-arxiv_ai-crispedit-low-curvature-projections-for-scalable-n-4/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # CrispEdit：低曲率投影实现可扩展的大模型无损编辑
@@ -431,9 +450,9 @@ CrispEdit 的理论基础主要建立在**二阶优化**和**信息几何**之�
 
 ### 相关文章
 
-- [MemSkill：面向自进化代理的记忆技能学习与演化框架]({{< relref "posts/20260204-arxiv_ai-memskill-learning-and-evolving-memory-skills-for-s-9.md" >}})
-- [面向运行时智能体记忆的查询感知预算层路由]({{< relref "posts/20260207-arxiv_ai-learning-query-aware-budget-tier-routing-for-runti-9.md" >}})
+- [MemSkill：面向自进化代理的记忆技能学习与演化框架]({{< relref "posts/20260203-arxiv_ai-memskill-learning-and-evolving-memory-skills-for-s-9.md" >}})
+- [面向运行时智能体记忆的查询感知预算层路由]({{< relref "posts/20260206-arxiv_ai-learning-query-aware-budget-tier-routing-for-runti-9.md" >}})
 - [AttentionRetriever：注意力层即长文档检索器]({{< relref "posts/20260213-arxiv_ai-attentionretriever-attention-layers-are-secretly-l-2.md" >}})
-- [AttentionRetriever：注意力层隐式实现长文档检索]({{< relref "posts/20260215-arxiv_ai-attentionretriever-attention-layers-are-secretly-l-2.md" >}})
-- [AttentionRetriever：注意力层即长文档检索器]({{< relref "posts/20260216-arxiv_ai-attentionretriever-attention-layers-are-secretly-l-2.md" >}})
+- [AttentionRetriever：注意力层隐式实现长文档检索]({{< relref "posts/20260213-arxiv_ai-attentionretriever-attention-layers-are-secretly-l-2.md" >}})
+- [AttentionRetriever：注意力层即长文档检索器]({{< relref "posts/20260213-arxiv_ai-attentionretriever-attention-layers-are-secretly-l-2.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

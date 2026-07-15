@@ -1,14 +1,30 @@
 ---
-title: "Claude Code源码泄漏：四个开源项目解析AI编程Agent架构"
-date: 2026-04-04T13:17:42+08:00
+title: Claude Code源码泄漏：四个开源项目解析AI编程Agent架构
+date: 2026-04-04 13:17:42+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Claude Code", "AI编程", "Agent架构", "开源解析", "源码泄漏", "代码生成", "安全审计", "大模型"]
-categories: ["AI 工程", "开源生态"]
+entry_kind: auto
+tags:
+- Claude Code
+- AI 编程
+- Agent架构
+- 开源解析
+- 源码泄漏
+- 代码生成
+- 安全审计
+- 大模型
+categories:
+- AI 工程
+- 开源生态
 source: juejin
-description: "事件概述 2024 年 3 月，AI 编程工具 Claude Code 的部分源码意外泄漏，迅速在开源社区引发关注。该泄漏让外界首次窥见其内部核心架构，包括 Agent 调度、代码生成与安全审计等关键模块的实现思路。 四大开源解读项目 1. **动画图解**——通过交互式动画展示了源码内部的控制流与状态转换，帮助开发者"
+description: 事件概述 2024 年 3 月，AI 编程工具 Claude Code 的部分源码意外泄漏，迅速在开源社区引发关注。该泄漏让外界首次窥见其内部核心架构，包括
+  Agent 调度、代码生成与安全审计等关键模块的实现思路。 四大开源解读项目 1. **动画图解**——通过交互式动画展示了源码内部的控制流与状态转换，帮助开发者
 external_url: https://juejin.cn/post/7624442962525929482
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Claude Code源码泄漏：四个开源项目解析AI编程Agent架构
@@ -112,7 +128,7 @@ Claude Code 源码泄漏为外部观察者提供了难得的内部视角，但�
 
 - [65行Markdown打造Claude Code热门项目]({{< relref "posts/20260212-hacker_news-65-lines-of-markdown-a-claude-code-sensation-2.md" >}})
 - [OpenAI发布GPT-5.3-Codex-Spark：首款实时代码模型，速度提升15倍]({{< relref "posts/20260213-blogs_podcasts-introducing-gpt-53-codex-spark-11.md" >}})
-- [OpenAI发布首款实时编码模型：生成速度提升15倍]({{< relref "posts/20260214-blogs_podcasts-introducing-gpt-53-codex-spark-13.md" >}})
-- [OpenAI发布GPT-5.3-Codex-Spark：首款实时编程模型，生成提速15倍]({{< relref "posts/20260217-blogs_podcasts-introducing-gpt-53-codex-spark-13.md" >}})
-- [OpenAI发布GPT-5.3-Codex-Spark：首个实时编码模型，生成速度提升15倍]({{< relref "posts/20260217-blogs_podcasts-introducing-gpt-53-codex-spark-14.md" >}})
+- [OpenAI发布首款实时编码模型：生成速度提升15倍]({{< relref "posts/20260213-blogs_podcasts-introducing-gpt-53-codex-spark-11.md" >}})
+- [OpenAI发布GPT-5.3-Codex-Spark：首款实时编程模型，生成提速15倍]({{< relref "posts/20260213-blogs_podcasts-introducing-gpt-53-codex-spark-11.md" >}})
+- [OpenAI发布GPT-5.3-Codex-Spark：首个实时编码模型，生成速度提升15倍]({{< relref "posts/20260213-blogs_podcasts-introducing-gpt-53-codex-spark-11.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

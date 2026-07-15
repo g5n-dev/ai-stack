@@ -1,14 +1,32 @@
 ---
-title: "在AMD ROCm上微调MedQA临床AI：无需CUDA"
-date: 2026-05-08T11:28:29+08:00
+title: 在AMD ROCm上微调MedQA临床AI：无需CUDA
+date: 2026-05-08 11:28:29+08:00
 draft: false
-entry_kind: "auto"
-tags: ["大模型微调", "临床AI", "AMD ROCm", "医学问答", "GPU训练", "深度学习", "LLM", "RAG"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- 大模型微调
+- 临床AI
+- AMD ROCm
+- 医学问答
+- GPU训练
+- 深度学习
+- LLM
+- RAG
+categories:
+- 大模型
+- AI 工程
 source: blogs_podcasts
-description: "MedQA 项目尝试在 AMD ROCm 平台上对医学诊断模型进行微调，以摆脱对 NVIDIA CUDA 的依赖。医学 AI 在临床辅助决策中扮演越来越重要的角色，而开源硬件生态的成熟为其提供了更灵活的部署选项。本文将详细说明在 ROCm 环境下的数据预处理、模型适配与性能评估流程，帮助开发者快速上手并验证模型在真实病"
+description: MedQA 项目尝试在 AMD ROCm 平台上对医学诊断模型进行微调，以摆脱对 NVIDIA CUDA 的依赖。医学 AI 在临床辅助决策中扮演越来越重要的角色，而开源硬件生态的成熟为其提供了更灵活的部署选项。本文将详细说明在
+  ROCm 环境下的数据预处理、模型适配与性能评估流程，帮助开发者快速上手并验证模型在真实病
 external_url: https://huggingface.co/blog/lablab-ai-amd-developer-hackathon/medqa
-scenarios: ["AI/ML项目", "大语言模型", "RAG应用"]
+scenarios:
+- AI/ML项目
+- 大语言模型
+- RAG应用
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 在AMD ROCm上微调MedQA临床AI：无需CUDA
@@ -142,9 +160,9 @@ MedQA 项目尝试在 AMD ROCm 平台上对医学诊断模型进行微调，以�
 
 ### 相关文章
 
-- [Agent Skills：智能体技能框架]({{< relref "posts/20260203-hacker_news-agent-skills-4.md" >}})
+- [Agent Skills：智能体技能框架]({{< relref "posts/20260203-hacker_news-agent-skills-0.md" >}})
 - [深度解析Skill/MCP/RAG等五大AI技术的底层逻辑]({{< relref "posts/20260212-juejin-深入理解skillmcpragagentopenclaw底层逻辑-2.md" >}})
-- [AI智能体自主性评估的实践方法]({{< relref "posts/20260219-hacker_news-measuring-ai-agent-autonomy-in-practice-17.md" >}})
+- [AI智能体自主性评估的实践方法]({{< relref "posts/20260219-hacker_news-measuring-ai-agent-autonomy-in-practice-16.md" >}})
 - [LangChain 实现图片 OCR 与多模态 RAG 数据读取]({{< relref "posts/20260305-juejin-003rag-入门-langchain-读取图片数据-2.md" >}})
 - [大模型原理与Context、RAG、Function Calling等核心概念解析]({{< relref "posts/20260306-juejin-ai-术语满天飞90-的人只懂名词不懂为什么-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

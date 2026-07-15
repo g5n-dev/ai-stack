@@ -21,6 +21,10 @@ description: '以下是针对论文《TG-ASR: Translation-Guided Learning with P
 external_url: http://arxiv.org/abs/2602.22039v1
 scenarios:
 - Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # TG-ASR：基于并行门控交叉注意力的翻译引导低资源语音识别
@@ -419,7 +423,7 @@ TG-ASR 非常适合应用于那些缺乏标准化语音数据集的方言保护�
 ### 相关文章
 
 - [多层交叉注意力被证明是多模态上下文学习的最优解]({{< relref "posts/20260205-arxiv_ai-multi-layer-cross-attention-is-provably-optimal-fo-4.md" >}})
-- [多层交叉注意力机制在多模态上下文学习中具有可证明的最优性]({{< relref "posts/20260206-arxiv_ai-multi-layer-cross-attention-is-provably-optimal-fo-4.md" >}})
+- [多层交叉注意力机制在多模态上下文学习中具有可证明的最优性]({{< relref "posts/20260205-arxiv_ai-multi-layer-cross-attention-is-provably-optimal-fo-4.md" >}})
 - [GLM-OCR：兼顾准确度、速度与通用性的多模态大模型]({{< relref "posts/20260211-hacker_news-glm-ocr-accurate-fast-comprehensive-3.md" >}})
-- [Moonshine 开源 STT 模型：精度超越 WhisperLargev3]({{< relref "posts/20260225-hacker_news-show-hn-moonshine-open-weights-stt-models-higher-a-1.md" >}})
-- [Moonshine 开源 STT 模型：精度超越 WhisperLargev3]({{< relref "posts/20260225-hacker_news-show-hn-moonshine-open-weights-stt-models-higher-a-4.md" >}})
+- [Moonshine 开源 STT 模型：精度超越 WhisperLargev3]({{< relref "posts/20260224-hacker_news-show-hn-moonshine-open-weights-stt-models-higher-a-6.md" >}})
+- [Moonshine 开源 STT 模型：精度超越 WhisperLargev3]({{< relref "posts/20260224-hacker_news-show-hn-moonshine-open-weights-stt-models-higher-a-6.md" >}})

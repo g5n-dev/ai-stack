@@ -1,14 +1,29 @@
 ---
-title: "OpenAI推合作伙伴网络 1.5亿美元助企业AI转型"
-date: 2026-06-15T13:30:36+08:00
+title: OpenAI推合作伙伴网络 1.5亿美元助企业AI转型
+date: 2026-06-15 13:30:36+08:00
 draft: false
-entry_kind: "auto"
-tags: ["OpenAI", "合作伙伴网络", "企业AI", "数字化转型", "AI落地", "投资", "赋能", "生态"]
-categories: ["产品与创业"]
+entry_kind: auto
+tags:
+- OpenAI
+- 合作伙伴网络
+- 企业AI
+- 数字化转型
+- AI落地
+- 投资
+- 赋能
+- 生态
+categories:
+- 产品与创业
 source: blogs_podcasts
-description: "项目概述 OpenAI 正式推出合作伙伴网络（Partner Network），旨在为全球企业搭建 AI 采用、部署和转型的支撑平台。 投资规模 该网络将投入 1.5 亿美元（约 150 百万美元），用于技术资源、平台建设及合作伙伴赋能。 目标与价值 帮助合作伙伴加速在企业环境中落地 AI 解决方案，提升业务创新和数字"
+description: 项目概述 OpenAI 正式推出合作伙伴网络（Partner Network），旨在为全球企业搭建 AI 采用、部署和转型的支撑平台。 投资规模
+  该网络将投入 1.5 亿美元（约 150 百万美元），用于技术资源、平台建设及合作伙伴赋能。 目标与价值 帮助合作伙伴加速在企业环境中落地 AI 解决方案，提升业务创新和数字
 external_url: https://openai.com/index/introducing-openai-partner-network
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # OpenAI推合作伙伴网络 1.5亿美元助企业AI转型
@@ -119,9 +134,9 @@ OpenAI Partner Network的1.5亿美元投资标志着企业AI应用从概念验�
 
 ### 相关文章
 
-- [OpenAI发布《欧盟经济蓝图2.0》加速欧洲AI应用与增长]({{< relref "posts/20260129-blogs_podcasts-the-next-chapter-for-ai-in-the-eu-3.md" >}})
-- [Sam Altman在市政厅会议回顾AI创业孵化模式]({{< relref "posts/20260130-blogs_podcasts-ainews-sam-altmans-ai-combinator-3.md" >}})
+- [OpenAI发布《欧盟经济蓝图2.0》加速欧洲AI应用与增长]({{< relref "posts/20260129-blogs_podcasts-the-next-chapter-for-ai-in-the-eu-2.md" >}})
+- [Sam Altman在市政厅会议回顾AI创业孵化模式]({{< relref "posts/20260129-blogs_podcasts-ainews-sam-altmans-ai-combinator-0.md" >}})
 - [大林组部署ChatGPT Enterprise推动全球建筑人才发展]({{< relref "posts/20260130-blogs_podcasts-taisei-corporation-shapes-the-next-generation-of-t-3.md" >}})
-- [Sam Altman提出AI孵化器模式以加速初创公司发展]({{< relref "posts/20260201-blogs_podcasts-ainews-sam-altmans-ai-combinator-5.md" >}})
-- [大林建设部署ChatGPT Enterprise推动全球人才发展与生成式AI落地]({{< relref "posts/20260201-blogs_podcasts-taisei-corporation-shapes-the-next-generation-of-t-6.md" >}})
+- [Sam Altman提出AI孵化器模式以加速初创公司发展]({{< relref "posts/20260129-blogs_podcasts-ainews-sam-altmans-ai-combinator-0.md" >}})
+- [大林建设部署ChatGPT Enterprise推动全球人才发展与生成式AI落地]({{< relref "posts/20260130-blogs_podcasts-taisei-corporation-shapes-the-next-generation-of-t-3.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

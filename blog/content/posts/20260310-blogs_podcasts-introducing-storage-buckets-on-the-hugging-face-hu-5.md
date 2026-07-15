@@ -21,6 +21,17 @@ description: 随着模型与数据集规模的持续增长，如何高效地管�
 external_url: https://huggingface.co/blog/storage-buckets
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260310-blogs_podcasts-introducing-storage-buckets-on-the-hugging-face-hu-6/
+- /posts/20260310-blogs_podcasts-introducing-storage-buckets-on-the-hugging-face-hu-8/
+- /posts/20260310-blogs_podcasts-introducing-storage-buckets-on-the-hugging-face-hu-9/
+- /posts/20260311-blogs_podcasts-introducing-storage-buckets-on-the-hugging-face-hu-10/
+- /posts/20260311-blogs_podcasts-introducing-storage-buckets-on-the-hugging-face-hu-11/
+- /posts/20260311-blogs_podcasts-introducing-storage-buckets-on-the-hugging-face-hu-9/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Hugging Face Hub 推出存储桶功能
@@ -414,8 +425,8 @@ Hugging Face Hub 引入 Storage Buckets 是 AI 基础设施发展的**必然演�
 
 ### 相关文章
 
-- [Hugging Face Skills：AI开发技能认证体系]({{< relref "posts/20260225-hacker_news-hugging-face-skills-8.md" >}})
-- [🔍 Prism：开源搜索神器！速度极快，开发者必备！]({{< relref "posts/20260128-hacker_news-prism-1.md" >}})
-- [训练 9M 参数语音模型修正普通话声调]({{< relref "posts/20260131-hacker_news-show-hn-i-trained-a-9m-speech-model-to-fix-my-mand-13.md" >}})
-- [OpenClaw：GitHub 增长最快的开源 AI 智能体框架]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-4.md" >}})
+- [Hugging Face Skills：AI开发技能认证体系]({{< relref "posts/20260224-hacker_news-huggingface-agent-skills-8.md" >}})
+- [🔍 Prism：开源搜索神器！速度极快，开发者必备！]({{< relref "posts/20260127-hacker_news-prism-1.md" >}})
+- [训练 9M 参数语音模型修正普通话声调]({{< relref "posts/20260131-hacker_news-show-hn-i-trained-a-9m-speech-model-to-fix-my-mand-1.md" >}})
+- [OpenClaw：GitHub 增长最快的开源 AI 智能体框架]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-0.md" >}})
 - [Anthropic 推出 Cowork 功能：macOS 无预警生成 10GB 虚拟机包]({{< relref "posts/20260302-hacker_news-anthropic-cowork-feature-creates-10gb-vm-bundle-on-1.md" >}})

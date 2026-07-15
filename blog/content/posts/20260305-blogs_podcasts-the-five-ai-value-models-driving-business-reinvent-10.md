@@ -21,6 +21,13 @@ description: '**驱动业务变革的五种AI价值模型** 本文阐述了企�
 external_url: https://openai.com/index/the-five-ai-value-models-driving-business-reinvention
 scenarios:
 - AI/ML项目
+aliases:
+- /posts/20260306-blogs_podcasts-the-five-ai-value-models-driving-business-reinvent-12/
+- /posts/20260306-blogs_podcasts-the-five-ai-value-models-driving-business-reinvent-13/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 五种AI价值模型：从员工熟练度到流程重塑的业务演进
@@ -308,8 +315,8 @@ AI 模型的价值在于持续的迭代和优化，而非一次性的部署。�
 
 ### 相关文章
 
-- [打造AI助手的企业正转型为广告公司]({{< relref "posts/20260221-hacker_news-every-company-building-your-ai-assistant-is-now-an-12.md" >}})
-- [大林组利用ChatGPT Enterprise推动全球建筑业务人才发展]({{< relref "posts/20260201-blogs_podcasts-taisei-corporation-shapes-the-next-generation-of-t-5.md" >}})
+- [打造AI助手的企业正转型为广告公司]({{< relref "posts/20260220-hacker_news-every-company-building-your-ai-assistant-is-now-an-12.md" >}})
+- [大林组利用ChatGPT Enterprise推动全球建筑业务人才发展]({{< relref "posts/20260130-blogs_podcasts-taisei-corporation-shapes-the-next-generation-of-t-3.md" >}})
 - [沃尔夫斯堡：以人为本部署ChatGPT提升俱乐部效能]({{< relref "posts/20260204-blogs_podcasts-vfl-wolfsburg-turns-chatgpt-into-a-club-wide-capab-1.md" >}})
-- [德甲沃尔夫斯堡：将ChatGPT转化为全俱乐部能力]({{< relref "posts/20260205-blogs_podcasts-vfl-wolfsburg-turns-chatgpt-into-a-club-wide-capab-3.md" >}})
-- [沃尔夫斯堡：将ChatGPT转化为俱乐部核心能力]({{< relref "posts/20260205-blogs_podcasts-vfl-wolfsburg-turns-chatgpt-into-a-club-wide-capab-5.md" >}})
+- [德甲沃尔夫斯堡：将ChatGPT转化为全俱乐部能力]({{< relref "posts/20260204-blogs_podcasts-vfl-wolfsburg-turns-chatgpt-into-a-club-wide-capab-1.md" >}})
+- [沃尔夫斯堡：将ChatGPT转化为俱乐部核心能力]({{< relref "posts/20260204-blogs_podcasts-vfl-wolfsburg-turns-chatgpt-into-a-club-wide-capab-1.md" >}})

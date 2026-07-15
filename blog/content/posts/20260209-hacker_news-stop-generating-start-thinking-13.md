@@ -1,14 +1,32 @@
 ---
-title: "停止生成，开始思考：大模型推理能力进化路径"
-date: 2026-02-09T02:45:01+08:00
+title: 停止生成，开始思考：大模型推理能力进化路径
+date: 2026-02-09 02:45:01+08:00
 draft: false
-entry_kind: "auto"
-tags: ["LLM", "推理能力", "思维链", "CoT", "o1", "System 2", "慢思考", "模型进化"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- LLM
+- 推理能力
+- 思维链
+- CoT
+- o1
+- System 2
+- 慢思考
+- 模型进化
+categories:
+- 大模型
+- 论文
 source: hacker_news
-description: "在生成式 AI 快速普及的当下，如何让模型输出真正有深度的内容，正成为技术团队面临的新挑战。本文探讨了从简单的“生成”转向“思考”的技术路径，分析了如何通过优化提示词与推理策略来提升结果质量。阅读此文，你将掌握构建更稳健 AI 应用的关键思路，从而在实际项目中有效规避常见陷阱，实现更精准的交付。"
+description: 在生成式 AI 快速普及的当下，如何让模型输出真正有深度的内容，正成为技术团队面临的新挑战。本文探讨了从简单的“生成”转向“思考”的技术路径，分析了如何通过优化提示词与推理策略来提升结果质量。阅读此文，你将掌握构建更稳健
+  AI 应用的关键思路，从而在实际项目中有效规避常见陷阱，实现更精准的交付。
 external_url: https://localghost.dev/blog/stop-generating-start-thinking
-scenarios: ["大语言模型"]
+scenarios:
+- 大语言模型
+aliases:
+- /posts/20260209-hacker_news-stop-generating-start-thinking-15/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 停止生成，开始思考：大模型推理能力进化路径
@@ -376,9 +394,9 @@ Basecamp 实施了独特的“6 周工作周期”制度。团队在 6 周内高
 
 ### 相关文章
 
-- [🚀Qwen3-Max-Thinking发布！AI推理能力炸裂升级！]({{< relref "posts/20260127-hacker_news-qwen3-max-thinking-7.md" >}})
+- [🚀Qwen3-Max-Thinking发布！AI推理能力炸裂升级！]({{< relref "posts/20260126-hacker_news-qwen3-max-thinking-1.md" >}})
 - [基于输出监督学习的思维链混淆技术可泛化至未见任务]({{< relref "posts/20260202-arxiv_ai-chain-of-thought-obfuscation-learned-from-output-s-4.md" >}})
-- [推理大语言模型从被动求解到主动提问的转变]({{< relref "posts/20260202-arxiv_ai-reasoning-while-asking-transforming-reasoning-larg-9.md" >}})
-- [阿里Qwen3-Max-Thinking深度思考模型！震撼发布🔥]({{< relref "posts/20260127-hacker_news-qwen3-max-thinking-19.md" >}})
+- [推理大语言模型从被动求解到主动提问的转变]({{< relref "posts/20260130-arxiv_ai-reasoning-while-asking-transforming-reasoning-larg-9.md" >}})
+- [阿里Qwen3-Max-Thinking深度思考模型！震撼发布🔥]({{< relref "posts/20260126-hacker_news-qwen3-max-thinking-1.md" >}})
 - [SokoBench：评估大模型长程规划与推理能力]({{< relref "posts/20260129-arxiv_ai-sokobench-evaluating-long-horizon-planning-and-rea-2.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

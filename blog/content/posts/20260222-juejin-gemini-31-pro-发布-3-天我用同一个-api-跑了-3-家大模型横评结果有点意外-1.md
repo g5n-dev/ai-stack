@@ -21,6 +21,10 @@ description: 这篇文章主要分享了在 Google 发布 **Gemini 3.1 Pro** 三
 external_url: https://juejin.cn/post/7608028493722075142
 scenarios:
 - Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Gemini 2.5 Pro实测：同API对比三款大模型找Bug能力
@@ -164,7 +168,7 @@ Gemini 3.1 Pro 实测横评：同一段含 3 个 bug 的代码，丢给 Gemini�
 ### 相关文章
 
 - [Agent Alcove：支持多模型在论坛中进行辩论]({{< relref "posts/20260211-hacker_news-show-hn-agent-alcove-claude-gpt-and-gemini-debate--17.md" >}})
-- [OpenAI 与 Anthropic 之争：Claude Opus 4.6 对决 GPT 5.3 Codex]({{< relref "posts/20260206-blogs_podcasts-ainews-openai-and-anthropic-go-to-war-claude-opus--2.md" >}})
-- [OpenAI 对决 Anthropic：Claude Opus 4.6 挑战 GPT-5.3 Codex]({{< relref "posts/20260207-blogs_podcasts-ainews-openai-and-anthropic-go-to-war-claude-opus--2.md" >}})
-- [OpenAI 对决 Anthropic：Claude Opus 4.6 挑战 GPT-5.3 Codex]({{< relref "posts/20260209-blogs_podcasts-ainews-openai-and-anthropic-go-to-war-claude-opus--5.md" >}})
-- [[AINews] OpenAI and Anthropic go to war: Claude Opus 4]({{< relref "posts/20260210-blogs_podcasts-ainews-openai-and-anthropic-go-to-war-claude-opus--9.md" >}})
+- [OpenAI 与 Anthropic 之争：Claude Opus 4.6 对决 GPT 5.3 Codex]({{< relref "posts/20260206-blogs_podcasts-ainews-openai-and-anthropic-go-to-war-claude-opus--0.md" >}})
+- [OpenAI 对决 Anthropic：Claude Opus 4.6 挑战 GPT-5.3 Codex]({{< relref "posts/20260206-blogs_podcasts-ainews-openai-and-anthropic-go-to-war-claude-opus--0.md" >}})
+- [OpenAI 对决 Anthropic：Claude Opus 4.6 挑战 GPT-5.3 Codex]({{< relref "posts/20260206-blogs_podcasts-ainews-openai-and-anthropic-go-to-war-claude-opus--0.md" >}})
+- [[AINews] OpenAI and Anthropic go to war: Claude Opus 4]({{< relref "posts/20260206-blogs_podcasts-ainews-openai-and-anthropic-go-to-war-claude-opus--0.md" >}})

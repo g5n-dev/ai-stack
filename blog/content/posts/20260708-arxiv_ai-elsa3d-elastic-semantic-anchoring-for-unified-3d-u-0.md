@@ -1,14 +1,32 @@
 ---
-title: "ELSA3D基于弹性语义锚定的3D统一理解与生成"
-date: 2026-07-08T22:24:27+08:00
+title: ELSA3D基于弹性语义锚定的3D统一理解与生成
+date: 2026-07-08 22:24:27+08:00
 draft: false
-entry_kind: "auto"
-tags: ["3D生成", "3D理解", "语义锚定", "八叉树", "多尺度", "统一模型", "高效推理", "多模态"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- 3D生成
+- 3D理解
+- 语义锚定
+- 八叉树
+- 多尺度
+- 统一模型
+- 高效推理
+- 多模态
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "背景与挑战 统一的三维基础模型旨在用同一骨干同时生成 3D 资产并进行语言推理，但现有方案将文本与 3D token 拼接为平坦序列并依赖自注意力，导致粗粒度结构线索与细粒度几何细节被混为一谈，交互过程缺乏显式的语义对应。 ELSA3D 的核心创新 ELSA3D 引入弹性语义锚定（elastic semantic an"
+description: 背景与挑战 统一的三维基础模型旨在用同一骨干同时生成 3D 资产并进行语言推理，但现有方案将文本与 3D token 拼接为平坦序列并依赖自注意力，导致粗粒度结构线索与细粒度几何细节被混为一谈，交互过程缺乏显式的语义对应。
+  ELSA3D 的核心创新 ELSA3D 引入弹性语义锚定（elastic semantic an
 external_url: http://arxiv.org/abs/2607.06565v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+aliases:
+- /posts/20260709-arxiv_ai-elsa3d-elastic-semantic-anchoring-for-unified-3d-u-0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # ELSA3D基于弹性语义锚定的3D统一理解与生成
@@ -84,8 +102,8 @@ ELSA3D 提出弹性语义锚定机制，旨在解决统一三维基础模型中�
 ### 相关文章
 
 - [UniT：统一多模态思维链测试时扩展方法]({{< relref "posts/20260213-arxiv_ai-unit-unified-multimodal-chain-of-thought-test-time-1.md" >}})
-- [UniT：统一多模态思维链测试时扩展]({{< relref "posts/20260214-arxiv_ai-unit-unified-multimodal-chain-of-thought-test-time-1.md" >}})
-- [UniT：统一多模态思维链测试时扩展方法]({{< relref "posts/20260215-arxiv_ai-unit-unified-multimodal-chain-of-thought-test-time-1.md" >}})
-- [UniT：统一多模态思维链测试时扩展方法]({{< relref "posts/20260216-arxiv_ai-unit-unified-multimodal-chain-of-thought-test-time-1.md" >}})
+- [UniT：统一多模态思维链测试时扩展]({{< relref "posts/20260213-arxiv_ai-unit-unified-multimodal-chain-of-thought-test-time-1.md" >}})
+- [UniT：统一多模态思维链测试时扩展方法]({{< relref "posts/20260213-arxiv_ai-unit-unified-multimodal-chain-of-thought-test-time-1.md" >}})
+- [UniT：统一多模态思维链测试时扩展方法]({{< relref "posts/20260213-arxiv_ai-unit-unified-multimodal-chain-of-thought-test-time-1.md" >}})
 - [UEval：统一多模态生成基准]({{< relref "posts/20260130-arxiv_ai-ueval-a-benchmark-for-unified-multimodal-generatio-3.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

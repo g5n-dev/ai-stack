@@ -1,14 +1,35 @@
 ---
-title: "AttentionRetriever：注意力层即长文档检索器"
-date: 2026-02-13T23:30:43+08:00
+title: AttentionRetriever：注意力层即长文档检索器
+date: 2026-02-13 23:30:43+08:00
 draft: false
-entry_kind: "auto"
-tags: ["RAG", "长文档检索", "AttentionRetriever", "注意力机制", "实体检索", "上下文感知", "密集检索", "LLM"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- RAG
+- 长文档检索
+- AttentionRetriever
+- 注意力机制
+- 实体检索
+- 上下文感知
+- 密集检索
+- LLM
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "**内容总结：AttentionRetriever：注意力层是隐秘的长文档检索器** 本文主要介绍了一种名为 **AttentionRetriever** 的新型长文档检索模型，旨在解决现有检索增强生成（RAG）技术在处理长文档时的局限性。 **背景与问题：** 尽管RAG技术已被广泛用于辅助大语言模型（LLM）处理长"
+description: '**内容总结：AttentionRetriever：注意力层是隐秘的长文档检索器** 本文主要介绍了一种名为 **AttentionRetriever**
+  的新型长文档检索模型，旨在解决现有检索增强生成（RAG）技术在处理长文档时的局限性。 **背景与问题：** 尽管RAG技术已被广泛用于辅助大语言模型（LLM）处理长'
 external_url: http://arxiv.org/abs/2602.12278v1
-scenarios: ["RAG应用", "大语言模型"]
+scenarios:
+- RAG应用
+- 大语言模型
+aliases:
+- /posts/20260214-arxiv_ai-attentionretriever-attention-layers-are-secretly-l-2/
+- /posts/20260215-arxiv_ai-attentionretriever-attention-layers-are-secretly-l-2/
+- /posts/20260216-arxiv_ai-attentionretriever-attention-layers-are-secretly-l-2/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AttentionRetriever：注意力层即长文档检索器
@@ -545,9 +566,9 @@ AttentionRetriever 的创新在于它没有设计新的交互函数（如ColBERT
 
 ### 相关文章
 
-- [MemSkill：面向自进化代理的记忆技能学习与演化框架]({{< relref "posts/20260204-arxiv_ai-memskill-learning-and-evolving-memory-skills-for-s-9.md" >}})
-- [面向运行时智能体记忆的查询感知预算层路由]({{< relref "posts/20260207-arxiv_ai-learning-query-aware-budget-tier-routing-for-runti-9.md" >}})
-- [Agent Skills：智能体技能框架]({{< relref "posts/20260203-hacker_news-agent-skills-4.md" >}})
-- [Context Graphs与Agent Traces技术解析]({{< relref "posts/20260204-blogs_podcasts-ainews-context-graphs-and-agent-traces-1.md" >}})
-- [基于对称感知泰勒近似实现恒定Token成本注意力机制]({{< relref "posts/20260204-hacker_news-attention-at-constant-cost-per-token-via-symmetry--4.md" >}})
+- [MemSkill：面向自进化代理的记忆技能学习与演化框架]({{< relref "posts/20260203-arxiv_ai-memskill-learning-and-evolving-memory-skills-for-s-9.md" >}})
+- [面向运行时智能体记忆的查询感知预算层路由]({{< relref "posts/20260206-arxiv_ai-learning-query-aware-budget-tier-routing-for-runti-9.md" >}})
+- [Agent Skills：智能体技能框架]({{< relref "posts/20260203-hacker_news-agent-skills-0.md" >}})
+- [Context Graphs与Agent Traces技术解析]({{< relref "posts/20260204-blogs_podcasts-ainews-context-graphs-and-agent-traces-0.md" >}})
+- [基于对称感知泰勒近似实现恒定Token成本注意力机制]({{< relref "posts/20260204-hacker_news-attention-at-constant-cost-per-token-via-symmetry--0.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

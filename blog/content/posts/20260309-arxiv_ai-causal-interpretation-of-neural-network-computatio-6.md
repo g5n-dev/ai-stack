@@ -21,6 +21,12 @@ description: 以下是对该内容的中文总结： **论文主题：** 基于�
 external_url: http://arxiv.org/abs/2603.06557v1
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260310-arxiv_ai-causal-interpretation-of-neural-network-computatio-6/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 神经网络计算的因果解释：基于贡献分解方法
@@ -444,7 +450,7 @@ $$ \min \|c - \text{Decode}(z)\|^2 + \lambda \|z\|_1 $$
 ### 相关文章
 
 - [学习大模型神经元激活的生成式元模型]({{< relref "posts/20260209-arxiv_ai-learning-a-generative-meta-model-of-llm-activation-0.md" >}})
-- [神经机制稀疏化助力高效发现近似因果抽象]({{< relref "posts/20260303-arxiv_ai-efficient-discovery-of-approximate-causal-abstract-9.md" >}})
+- [神经机制稀疏化助力高效发现近似因果抽象]({{< relref "posts/20260302-arxiv_ai-efficient-discovery-of-approximate-causal-abstract-9.md" >}})
 - [DLM-Scope：利用稀疏自编码器解析扩散语言模型]({{< relref "posts/20260206-arxiv_ai-dlm-scope-mechanistic-interpretability-of-diffusio-4.md" >}})
-- [伪可逆神经网络：通过伪可逆性提升模型可逆性]({{< relref "posts/20260207-arxiv_ai-pseudo-invertible-neural-networks-1.md" >}})
-- [ANCRe: Adaptive Neural Connection Reassignment for Effi]({{< relref "posts/20260211-arxiv_ai-ancre-adaptive-neural-connection-reassignment-for--5.md" >}})
+- [伪可逆神经网络：通过伪可逆性提升模型可逆性]({{< relref "posts/20260206-arxiv_ai-pseudo-invertible-neural-networks-1.md" >}})
+- [ANCRe: Adaptive Neural Connection Reassignment for Effi]({{< relref "posts/20260210-arxiv_ai-ancre-adaptive-neural-connection-reassignment-for--5.md" >}})

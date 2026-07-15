@@ -21,6 +21,14 @@ description: 以下是对该内容的中文总结： 这项研究探讨了将**�
 external_url: http://arxiv.org/abs/2603.12246v1
 scenarios:
 - 大语言模型
+aliases:
+- /posts/20260314-arxiv_ai-examining-reasoning-llms-as-judges-in-non-verifiab-5/
+- /posts/20260315-arxiv_ai-examining-reasoning-llms-as-judges-in-non-verifiab-5/
+- /posts/20260316-arxiv_ai-examining-reasoning-llms-as-judges-in-non-verifiab-5/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 探究推理LLM作为非可验证后训练评估器的有效性
@@ -408,8 +416,8 @@ scenarios:
 
 ### 相关文章
 
-- [探索面向智能体的推理奖励模型]({{< relref "posts/20260201-arxiv_ai-exploring-reasoning-reward-model-for-agents-4.md" >}})
+- [探索面向智能体的推理奖励模型]({{< relref "posts/20260130-arxiv_ai-exploring-reasoning-reward-model-for-agents-4.md" >}})
 - [重新思考大模型强化学习中的信任区域]({{< relref "posts/20260205-arxiv_ai-rethinking-the-trust-region-in-llm-reinforcement-l-3.md" >}})
-- [重新思考大模型强化学习中的信任区域机制]({{< relref "posts/20260206-arxiv_ai-rethinking-the-trust-region-in-llm-reinforcement-l-3.md" >}})
-- [基于人类反馈的强化学习：原理与应用]({{< relref "posts/20260207-hacker_news-reinforcement-learning-from-human-feedback-19.md" >}})
+- [重新思考大模型强化学习中的信任区域机制]({{< relref "posts/20260205-arxiv_ai-rethinking-the-trust-region-in-llm-reinforcement-l-3.md" >}})
+- [基于人类反馈的强化学习：原理与应用]({{< relref "posts/20260207-hacker_news-reinforcement-learning-from-human-feedback-4.md" >}})
 - [基于人类反馈的强化学习机制解析]({{< relref "posts/20260207-hacker_news-reinforcement-learning-from-human-feedback-3.md" >}})

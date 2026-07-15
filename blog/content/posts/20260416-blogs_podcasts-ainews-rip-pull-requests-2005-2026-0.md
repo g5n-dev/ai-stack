@@ -1,14 +1,31 @@
 ---
-title: "AINews：拉取请求的终结（2005-2026）"
-date: 2026-04-16T14:08:38+08:00
+title: AINews：拉取请求的终结（2005-2026）
+date: 2026-04-16 14:08:38+08:00
 draft: false
-entry_kind: "auto"
-tags: ["大模型", "代码生成", "自动化审查", "拉取请求", "AI驱动", "持续部署", "开源协作", "GitHub"]
-categories: ["AI 工程", "大模型"]
+entry_kind: auto
+tags:
+- 大模型
+- 代码生成
+- 自动化审查
+- 拉取请求
+- AI驱动
+- 持续部署
+- 开源协作
+- GitHub
+categories:
+- AI 工程
+- 大模型
 source: blogs_podcasts
-description: "概要 2005 年 GitHub 推出 Pull Request（PR）功能，迅速成为开源协作与代码审查的标准流程。2026 年，官方宣布 PR 正式退役，标志传统人工代码审查与合并模式被全自动化、AI 驱动的代码生成与即时部署取代。此后，开发者通过模型自动生成补丁、即时审查并直接合入主干，传统的 PR 流程成为历史。"
+description: 概要 2005 年 GitHub 推出 Pull Request（PR）功能，迅速成为开源协作与代码审查的标准流程。2026 年，官方宣布
+  PR 正式退役，标志传统人工代码审查与合并模式被全自动化、AI 驱动的代码生成与即时部署取代。此后，开发者通过模型自动生成补丁、即时审查并直接合入主干，传统的
+  PR 流程成为历史。
 external_url: https://www.latent.space/p/ainews-rip-pull-requests-2005-2026
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AINews：拉取请求的终结（2005-2026）
@@ -117,7 +134,7 @@ scenarios: ["AI/ML项目"]
 
 - [Apple自蒸馏技术简化代码生成流程]({{< relref "posts/20260404-hacker_news-apple-embarrassingly-simple-self-distillation-impr-0.md" >}})
 - [GitHub Agentic 工作流：AI 智能体自主编写代码]({{< relref "posts/20260208-hacker_news-github-agentic-workflows-3.md" >}})
-- [OpenClaw：一个开源AI代理框架]({{< relref "posts/20260213-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-11.md" >}})
+- [OpenClaw：一个开源AI代理框架]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-0.md" >}})
 - [OpenAI发布GPT-5.3-Codex-Spark：首款实时代码模型，速度提升15倍]({{< relref "posts/20260213-blogs_podcasts-introducing-gpt-53-codex-spark-11.md" >}})
-- [OpenAI发布首款实时编码模型：生成速度提升15倍]({{< relref "posts/20260214-blogs_podcasts-introducing-gpt-53-codex-spark-13.md" >}})
+- [OpenAI发布首款实时编码模型：生成速度提升15倍]({{< relref "posts/20260213-blogs_podcasts-introducing-gpt-53-codex-spark-11.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

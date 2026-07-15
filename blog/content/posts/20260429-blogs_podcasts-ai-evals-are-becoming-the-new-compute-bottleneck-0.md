@@ -1,14 +1,28 @@
 ---
-title: "AI评估正成为新的计算瓶颈"
-date: 2026-04-29T19:54:14+08:00
+title: AI评估正成为新的计算瓶颈
+date: 2026-04-29 19:54:14+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI评估", "计算瓶颈", "大模型", "资源优化", "GPU", "基准测试", "效率", "成本"]
-categories: ["AI 工程"]
+entry_kind: auto
+tags:
+- AI评估
+- 计算瓶颈
+- 大模型
+- 资源优化
+- GPU
+- 基准测试
+- 效率
+- 成本
+categories:
+- AI 工程
 source: blogs_podcasts
-description: "随着大模型训练成本的逐步下降，研发团队的关注点正从训练转向系统性的评估环节。近年来，AI 评估（AI evals）在模型迭代、发布和安全审查中的计算需求快速增长，已成为新的算力瓶颈，以及成本压力。读者将了解到评估任务的资源消耗趋势、瓶颈成因以及在有限算力下提升评估效率的实践方法。"
+description: 随着大模型训练成本的逐步下降，研发团队的关注点正从训练转向系统性的评估环节。近年来，AI 评估（AI evals）在模型迭代、发布和安全审查中的计算需求快速增长，已成为新的算力瓶颈，以及成本压力。读者将了解到评估任务的资源消耗趋势、瓶颈成因以及在有限算力下提升评估效率的实践方法。
 external_url: https://huggingface.co/blog/evaleval/eval-costs-bottleneck
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AI评估正成为新的计算瓶颈
@@ -110,5 +124,5 @@ scenarios: ["AI/ML项目"]
 - [Sonnet 4.6错误率上升]({{< relref "posts/20260408-hacker_news-sonnet-46-elevated-rate-of-errors-0.md" >}})
 - [SkillsBench论文：评估Agent技能在多任务中的实际效用]({{< relref "posts/20260217-juejin-你知道不你现在给-ai-用的-agent-skills-可能毫无作用甚至还拖后腿-2.md" >}})
 - [评估2025年中期LLM辅助对生物学初学者表现的影响]({{< relref "posts/20260219-arxiv_ai-measuring-mid-2025-llm-assistance-on-novice-perfor-3.md" >}})
-- [评估大语言模型金融智能：SuperInvesting AI基准测试]({{< relref "posts/20260311-arxiv_ai-evaluating-financial-intelligence-in-large-languag-3.md" >}})
+- [评估大语言模型金融智能：SuperInvesting AI基准测试]({{< relref "posts/20260310-arxiv_ai-evaluating-financial-intelligence-in-large-languag-3.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

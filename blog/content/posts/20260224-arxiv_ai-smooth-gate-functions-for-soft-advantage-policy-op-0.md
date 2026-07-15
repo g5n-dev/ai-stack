@@ -21,6 +21,10 @@ description: 以下是对该内容的中文总结： 本文提出了一种用于
 external_url: http://arxiv.org/abs/2602.19345v1
 scenarios:
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 用于软优势策略优化的平滑门函数
@@ -445,5 +449,5 @@ PPO 主要通过限制新旧策略之间的 KL 散度（或比率）来防止策
 - [重新思考大模型强化学习中的信任区域]({{< relref "posts/20260205-arxiv_ai-rethinking-the-trust-region-in-llm-reinforcement-l-3.md" >}})
 - [基于枢纽重采样的LLM强化学习深度密集探索]({{< relref "posts/20260217-arxiv_ai-deep-dense-exploration-for-llm-reinforcement-learn-6.md" >}})
 - [受限群组相对策略优化]({{< relref "posts/20260206-arxiv_ai-constrained-group-relative-policy-optimization-1.md" >}})
-- [🔥实战复盘：解锁GPT-OSS的智能体RL训练秘籍！]({{< relref "posts/20260128-blogs_podcasts-unlocking-agentic-rl-training-for-gpt-oss-a-practi-5.md" >}})
-- [探索面向智能体的推理奖励模型]({{< relref "posts/20260201-arxiv_ai-exploring-reasoning-reward-model-for-agents-4.md" >}})
+- [🔥实战复盘：解锁GPT-OSS的智能体RL训练秘籍！]({{< relref "posts/20260127-blogs_podcasts-unlocking-agentic-rl-training-for-gpt-oss-a-practi-0.md" >}})
+- [探索面向智能体的推理奖励模型]({{< relref "posts/20260130-arxiv_ai-exploring-reasoning-reward-model-for-agents-4.md" >}})

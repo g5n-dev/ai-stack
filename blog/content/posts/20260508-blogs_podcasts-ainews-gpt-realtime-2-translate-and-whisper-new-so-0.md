@@ -1,14 +1,30 @@
 ---
-title: "OpenAI发布GPT-Realtime-2等三项实时语音API"
-date: 2026-05-08T08:02:39+08:00
+title: OpenAI发布GPT-Realtime-2等三项实时语音API
+date: 2026-05-08 08:02:39+08:00
 draft: false
-entry_kind: "auto"
-tags: ["实时语音", "GPT-5", "OpenAI", "语音识别", "语音翻译", "API", "低延迟", "多语言"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- 实时语音
+- GPT-5
+- OpenAI
+- 语音识别
+- 语音翻译
+- API
+- 低延迟
+- 多语言
+categories:
+- 大模型
+- AI 工程
 source: blogs_podcasts
-description: "新发布的三款实时语音 API - **GPT‑Realtime‑2**：实现端到端低延迟（<300 ms）实时语音交互，支持多轮对话、情感识别等功能，适用于客服、语音助手等场景。 - **GPT‑Translate**：将语音即时翻译为目标语言，误差率和响应速度均创行业新高，可用于跨国会议、实时字幕等。 - **GPT"
+description: 新发布的三款实时语音 API - **GPT‑Realtime‑2**：实现端到端低延迟（<300 ms）实时语音交互，支持多轮对话、情感识别等功能，适用于客服、语音助手等场景。
+  - **GPT‑Translate**：将语音即时翻译为目标语言，误差率和响应速度均创行业新高，可用于跨国会议、实时字幕等。 - **GPT
 external_url: https://www.latent.space/p/ainews-gpt-realtime-2-translate-and
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # OpenAI发布GPT-Realtime-2等三项实时语音API
@@ -136,8 +152,8 @@ OpenAI定义的实时语音处理标准将成为行业参考基准。其他厂�
 ### 相关文章
 
 - [GPT‑5.3 Instant 模型发布]({{< relref "posts/20260303-hacker_news-gpt53-instant-2.md" >}})
-- [OpenAI将于2026年2月退役ChatGPT中多款GPT‑4及o4模型]({{< relref "posts/20260130-blogs_podcasts-retiring-gpt-4o-gpt-41-gpt-41-mini-and-openai-o4-m-4.md" >}})
-- [OpenAI将于2026年2月退役ChatGPT内多款GPT‑4及o4‑mini模型]({{< relref "posts/20260130-blogs_podcasts-retiring-gpt-4o-gpt-41-gpt-41-mini-and-openai-o4-m-5.md" >}})
-- [OpenAI将于2026年2月退役GPT-4o等四款模型]({{< relref "posts/20260131-blogs_podcasts-retiring-gpt-4o-gpt-41-gpt-41-mini-and-openai-o4-m-5.md" >}})
-- [OpenAI 将于 2026 年 2 月退役多款 GPT‑4 系列模型]({{< relref "posts/20260131-blogs_podcasts-retiring-gpt-4o-gpt-41-gpt-41-mini-and-openai-o4-m-6.md" >}})
+- [OpenAI将于2026年2月退役ChatGPT中多款GPT‑4及o4模型]({{< relref "posts/20260129-hacker_news-retiring-gpt-4o-gpt-41-gpt-41-mini-and-openai-o4-m-2.md" >}})
+- [OpenAI将于2026年2月退役ChatGPT内多款GPT‑4及o4‑mini模型]({{< relref "posts/20260129-hacker_news-retiring-gpt-4o-gpt-41-gpt-41-mini-and-openai-o4-m-2.md" >}})
+- [OpenAI将于2026年2月退役GPT-4o等四款模型]({{< relref "posts/20260129-hacker_news-retiring-gpt-4o-gpt-41-gpt-41-mini-and-openai-o4-m-2.md" >}})
+- [OpenAI 将于 2026 年 2 月退役多款 GPT‑4 系列模型]({{< relref "posts/20260129-hacker_news-retiring-gpt-4o-gpt-41-gpt-41-mini-and-openai-o4-m-2.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

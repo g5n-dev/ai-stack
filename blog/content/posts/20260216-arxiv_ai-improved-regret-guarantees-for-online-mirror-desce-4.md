@@ -1,14 +1,32 @@
 ---
-title: "基于镜像映射组合改进在线镜像下降的遗憾界"
-date: 2026-02-16T23:54:05+08:00
+title: 基于镜像映射组合改进在线镜像下降的遗憾界
+date: 2026-02-16 23:54:05+08:00
 draft: false
-entry_kind: "auto"
-tags: ["在线优化", "OMD", "遗憾界", "凸优化", "稀疏性", "镜像地图", "元算法", "乘性权重"]
-categories: ["论文", "AI 工程"]
+entry_kind: auto
+tags:
+- 在线优化
+- OMD
+- 遗憾界
+- 凸优化
+- 稀疏性
+- 镜像地图
+- 元算法
+- 乘性权重
+categories:
+- 论文
+- AI 工程
 source: arxiv
-description: "以下是对该内容的中文总结： **背景与动机** 在线镜像下降（OMD）及其变体为在线凸优化（OCO）提供了灵活框架，但其性能严重依赖于镜像地图的选择。尽管如何针对特定约束集和损失函数族（如稀疏损失）构造最优镜像地图仍是一个难题，但本文旨在通过探索插值于 $L_1$ 和 $L_2$ 之间的几何结构，研究是否能利用镜像地图"
+description: 以下是对该内容的中文总结： **背景与动机** 在线镜像下降（OMD）及其变体为在线凸优化（OCO）提供了灵活框架，但其性能严重依赖于镜像地图的选择。尽管如何针对特定约束集和损失函数族（如稀疏损失）构造最优镜像地图仍是一个难题，但本文旨在通过探索插值于
+  $L_1$ 和 $L_2$ 之间的几何结构，研究是否能利用镜像地图
 external_url: http://arxiv.org/abs/2602.13177v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+aliases:
+- /posts/20260217-arxiv_ai-improved-regret-guarantees-for-online-mirror-desce-4/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 基于镜像映射组合改进在线镜像下降的遗憾界
@@ -509,6 +527,6 @@ scenarios: ["Web应用开发"]
 - [🔥BONO-Bench震撼发布！首套可追溯Pareto集的双目标优化基准测试！]({{< relref "posts/20260126-arxiv_ai-bono-bench-a-comprehensive-test-suite-for-bi-objec-4.md" >}})
 - [FISMO：基于Fisher结构的动量正交化优化器]({{< relref "posts/20260130-arxiv_ai-fismo-fisher-structured-momentum-orthogonalized-op-4.md" >}})
 - [为何Adam在$β_1=β_2$时更优：缺失的梯度尺度不变性原理]({{< relref "posts/20260130-arxiv_ai-why-adam-works-better-with-β_1-β_2-the-missing-gra-8.md" >}})
-- [面向异构数据的自适应子网络路由方法]({{< relref "posts/20260131-arxiv_ai-routing-the-lottery-adaptive-subnetworks-for-heter-8.md" >}})
+- [面向异构数据的自适应子网络路由方法]({{< relref "posts/20260130-arxiv_ai-routing-the-lottery-adaptive-subnetworks-for-heter-8.md" >}})
 - [函数空间逆问题的解耦扩散采样方法]({{< relref "posts/20260202-arxiv_ai-decoupled-diffusion-sampling-for-inverse-problems--2.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

@@ -11,7 +11,7 @@ tags:
 - LLM
 - 部署指南
 - 开发工具
-- AI应用
+- AI 应用
 categories:
 - AI 工程
 - 系统与基础设施
@@ -23,6 +23,10 @@ external_url: https://juejin.cn/post/7611345744185278502
 scenarios:
 - AI/ML项目
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 阿里云 Serverless 1月动态：LangChain 与 AgentRun 部署指南
@@ -206,8 +210,8 @@ AgentRun Advanced Guide: Bro
 
 ### 相关文章
 
-- [基于Amazon Bedrock构建AI招聘系统优化人才获取流程]({{< relref "posts/20260218-blogs_podcasts-ai-meets-hr-transforming-talent-acquisition-with-a-13.md" >}})
-- [AI辅助开发的务实策略：技术滞后性与应用哲学]({{< relref "posts/20260131-hacker_news-a-step-behind-the-bleeding-edge-a-philosophy-on-ai-12.md" >}})
-- [构建极简且具倾向性的编程代理的经验总结]({{< relref "posts/20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-3.md" >}})
-- [构建极简编程代理的技术实践与经验总结]({{< relref "posts/20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-6.md" >}})
+- [基于Amazon Bedrock构建AI招聘系统优化人才获取流程]({{< relref "posts/20260212-blogs_podcasts-ai-meets-hr-transforming-talent-acquisition-with-a-0.md" >}})
+- [AI辅助开发的务实策略：技术滞后性与应用哲学]({{< relref "posts/20260131-hacker_news-a-step-behind-the-bleeding-edge-a-philosophy-on-ai-5.md" >}})
+- [构建极简且具倾向性的编程代理的经验总结]({{< relref "posts/20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-1.md" >}})
+- [构建极简编程代理的技术实践与经验总结]({{< relref "posts/20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-1.md" >}})
 - [Qwen3-Coder-Next：阿里通义千问下一代代码模型]({{< relref "posts/20260203-hacker_news-qwen3-coder-next-0.md" >}})

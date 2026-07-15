@@ -21,6 +21,12 @@ description: 以下是对该内容的中文总结： **T^3RL：通过工具验�
 external_url: http://arxiv.org/abs/2603.02203v1
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260304-arxiv_ai-tool-verification-for-test-time-reinforcement-lear-2/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 测试时强化学习的工具验证方法
@@ -416,7 +422,7 @@ T^3RL在TTRL的框架中引入了**外部工具验证**作为修正奖励估计�
 ### 相关文章
 
 - [MemSkill：赋予自进化代理学习与演进记忆技能]({{< relref "posts/20260203-arxiv_ai-memskill-learning-and-evolving-memory-skills-for-s-9.md" >}})
-- [MemSkill：面向自进化代理的记忆技能学习与演化框架]({{< relref "posts/20260204-arxiv_ai-memskill-learning-and-evolving-memory-skills-for-s-9.md" >}})
+- [MemSkill：面向自进化代理的记忆技能学习与演化框架]({{< relref "posts/20260203-arxiv_ai-memskill-learning-and-evolving-memory-skills-for-s-9.md" >}})
 - [PatchFormer：基于分层掩码重建的零样本多步预测时序基础模型]({{< relref "posts/20260129-arxiv_ai-patchformer-a-patch-based-time-series-foundation-m-7.md" >}})
 - [机器翻译评估中的跨向污染问题研究]({{< relref "posts/20260129-arxiv_ai-when-flores-bloomz-wrong-cross-direction-contamina-1.md" >}})
 - [发现模型仓库中被忽视的高质量模型]({{< relref "posts/20260130-arxiv_ai-discovering-hidden-gems-in-model-repositories-1.md" >}})

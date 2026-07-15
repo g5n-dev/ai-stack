@@ -23,6 +23,10 @@ external_url: https://juejin.cn/post/7613569620952350720
 scenarios:
 - AI/ML项目
 - 云原生/容器
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # OpenHands框架拆解：Runtime组件与数据流解析
@@ -201,7 +205,7 @@ Runtime 作为一个通用执行环境，具备处理多语言依赖的能力，
 ### 相关文章
 
 - [OpenClaw 集成阿里云 SLS 构建 AI Agent 可观测体系]({{< relref "posts/20260303-juejin-你的-openclaw-真的在受控运行吗-0.md" >}})
-- [Monty：Rust 实现的面向 AI 的安全极简 Python 解释器]({{< relref "posts/20260207-hacker_news-monty-a-minimal-secure-python-interpreter-written--10.md" >}})
+- [Monty：Rust 实现的面向 AI 的安全极简 Python 解释器]({{< relref "posts/20260207-hacker_news-monty-a-minimal-secure-python-interpreter-written--3.md" >}})
 - [Rust 编写的 40MB MicroVM 运行时：硬件级隔离与零信任 AI 沙箱]({{< relref "posts/20260219-juejin-rust-编写的-40mb-大小-microvm-运行时完美替代-docker-作为-ai-agen-0.md" >}})
-- [Rust 编写的 40MB MicroVM 运行时：硬件级隔离与 200ms 冷启]({{< relref "posts/20260219-juejin-rust-编写的-40mb-大小-microvm-运行时完美替代-docker-作为-ai-agen-1.md" >}})
+- [Rust 编写的 40MB MicroVM 运行时：硬件级隔离与 200ms 冷启]({{< relref "posts/20260219-juejin-rust-编写的-40mb-大小-microvm-运行时完美替代-docker-作为-ai-agen-0.md" >}})
 - [OpenHands 框架探秘：Agent 状态管理与系统设计]({{< relref "posts/20260223-juejin-ai-agent-框架探秘拆解-openhands7-agent-1.md" >}})

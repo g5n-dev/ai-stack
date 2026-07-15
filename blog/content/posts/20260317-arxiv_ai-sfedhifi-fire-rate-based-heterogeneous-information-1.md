@@ -20,6 +20,10 @@ description: 以下是对内容的中文总结： **SFedHIFI：基于发放率�
 external_url: http://arxiv.org/abs/2603.14956v1
 scenarios:
 - Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # SFedHIFI：基于发放率的脉冲联邦学习异构信息融合
@@ -340,7 +344,7 @@ SFedHIFI 特别适用于那些对**功耗敏感**且**数据隐私要求高**的
 ### 相关文章
 
 - [RynnBrain：基于神经形态计算的类脑加速系统]({{< relref "posts/20260215-hacker_news-rynnbrain-6.md" >}})
-- [在8位摩托罗拉6809上运行深度卷积神经网络玩桌游]({{< relref "posts/20260129-hacker_news-playing-board-games-with-deep-convolutional-neural-15.md" >}})
-- [面向异构数据的自适应子网络路由方法]({{< relref "posts/20260131-arxiv_ai-routing-the-lottery-adaptive-subnetworks-for-heter-8.md" >}})
+- [在8位摩托罗拉6809上运行深度卷积神经网络玩桌游]({{< relref "posts/20260129-hacker_news-playing-board-games-with-deep-convolutional-neural-12.md" >}})
+- [面向异构数据的自适应子网络路由方法]({{< relref "posts/20260130-arxiv_ai-routing-the-lottery-adaptive-subnetworks-for-heter-8.md" >}})
 - [ProxyFL：面向联邦半监督学习的代理引导框架]({{< relref "posts/20260225-arxiv_ai-proxyfl-a-proxy-guided-framework-for-federated-sem-2.md" >}})
-- [MicroGPT：面向微控制器的轻量级 GPT 实现]({{< relref "posts/20260301-hacker_news-microgpt-0.md" >}})
+- [MicroGPT：面向微控制器的轻量级 GPT 实现]({{< relref "posts/20260212-blogs_podcasts-microgpt-5.md" >}})

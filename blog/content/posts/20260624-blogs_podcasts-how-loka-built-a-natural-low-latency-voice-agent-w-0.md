@@ -1,14 +1,30 @@
 ---
-title: "Loka基于Amazon Nova 2 Sonic构建低延迟自然语音代理"
-date: 2026-06-24T17:41:52+08:00
+title: Loka基于Amazon Nova 2 Sonic构建低延迟自然语音代理
+date: 2026-06-24 17:41:52+08:00
 draft: false
-entry_kind: "auto"
-tags: ["低延迟", "语音代理", "Nova 2", "实时语音", "LLM", "系统架构", "语音交互", "语音AI"]
-categories: ["AI 工程", "系统与基础设施"]
+entry_kind: auto
+tags:
+- 低延迟
+- 语音代理
+- Nova 2
+- 实时语音
+- LLM
+- 系统架构
+- 语音交互
+- 语音AI
+categories:
+- AI 工程
+- 系统与基础设施
 source: blogs_podcasts
-description: "在语音交互需求快速增长的背景下，构建自然、低延迟的语音代理成为提升用户体验的关键。Loka 通过 Amazon Nova 2 Sonic，实现了对传统机械式语音助手的根本改进，有效降低了通话中断率和客服成本。本文将深入剖析其系统架构、关键实现路径以及在实际业务中的性能表现，为需要提升语音交互质量的团队提供可借鉴的方案和"
+description: 在语音交互需求快速增长的背景下，构建自然、低延迟的语音代理成为提升用户体验的关键。Loka 通过 Amazon Nova 2 Sonic，实现了对传统机械式语音助手的根本改进，有效降低了通话中断率和客服成本。本文将深入剖析其系统架构、关键实现路径以及在实际业务中的性能表现，为需要提升语音交互质量的团队提供可借鉴的方案和
 external_url: https://aws.amazon.com/blogs/machine-learning/how-loka-built-a-natural-low-latency-voice-agent-with-amazon-nova-2-sonic
-scenarios: ["大语言模型", "AI/ML项目"]
+scenarios:
+- 大语言模型
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Loka基于Amazon Nova 2 Sonic构建低延迟自然语音代理
@@ -185,7 +201,7 @@ Loka 通过基于 Amazon Nova 2 Sonic 的全链路低延迟语音交互框
 
 - [OpenAI如何实现大规模低延迟语音AI]({{< relref "posts/20260504-hacker_news-how-openai-delivers-low-latency-voice-ai-at-scale-0.md" >}})
 - [从零构建延迟低于500ms的语音智能体]({{< relref "posts/20260302-hacker_news-show-hn-i-built-a-sub-500ms-latency-voice-agent-fr-3.md" >}})
-- [从零构建延迟低于500ms的语音智能体]({{< relref "posts/20260303-hacker_news-show-hn-i-built-a-sub-500ms-latency-voice-agent-fr-15.md" >}})
-- [从零构建延迟低于500毫秒的语音智能体]({{< relref "posts/20260303-hacker_news-show-hn-i-built-a-sub-500ms-latency-voice-agent-fr-3.md" >}})
-- [从零构建延迟低于500毫秒的语音智能体]({{< relref "posts/20260303-hacker_news-show-hn-i-built-a-sub-500ms-latency-voice-agent-fr-5.md" >}})
+- [从零构建延迟低于500ms的语音智能体]({{< relref "posts/20260302-hacker_news-show-hn-i-built-a-sub-500ms-latency-voice-agent-fr-3.md" >}})
+- [从零构建延迟低于500毫秒的语音智能体]({{< relref "posts/20260302-hacker_news-show-hn-i-built-a-sub-500ms-latency-voice-agent-fr-3.md" >}})
+- [从零构建延迟低于500毫秒的语音智能体]({{< relref "posts/20260302-hacker_news-show-hn-i-built-a-sub-500ms-latency-voice-agent-fr-3.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

@@ -10,7 +10,7 @@ tags:
 - 游戏引擎
 - Unity
 - Unreal
-- 生成式AI
+- 生成式 AI
 - 开发者生态
 categories:
 - 产品与创业
@@ -21,6 +21,10 @@ description: 随着生成式 AI 技术的快速迭代，部分开发者因尝试
 external_url: https://www.tyleo.com/blog/the-excommunicated-devs-making-games-with-ai
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 被除名开发者转向AI游戏开发

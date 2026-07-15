@@ -1,14 +1,30 @@
 ---
-title: "Claude Slackbot 升级 引入多人代理功能"
-date: 2026-06-24T14:55:18+08:00
+title: Claude Slackbot 升级 引入多人代理功能
+date: 2026-06-24 14:55:18+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Claude", "Slack", "多代理", "AI助手", "企业应用", "主动Agent", "持久化", "协作工具"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- Claude
+- Slack
+- 多代理
+- AI 助手
+- 企业应用
+- 主动Agent
+- 持久化
+- 协作工具
+categories:
+- 大模型
+- AI 工程
 source: blogs_podcasts
-description: "主要功能 - 多玩家（Multiplayer）支持：多个用户可以同时在同一 Slack 频道与 Claude 交互，机器人能够区分并维护各自的上下文。 - 主动（Proactive）能力：基于用户行为或预设规则，代理能够主动推送提醒、任务或信息，而无需用户触发。 - 持久（Persistent）记忆：跨会话保留对话历史"
+description: 主要功能 - 多玩家（Multiplayer）支持：多个用户可以同时在同一 Slack 频道与 Claude 交互，机器人能够区分并维护各自的上下文。
+  - 主动（Proactive）能力：基于用户行为或预设规则，代理能够主动推送提醒、任务或信息，而无需用户触发。 - 持久（Persistent）记忆：跨会话保留对话历史
 external_url: https://www.latent.space/p/ainews-claude-tag-multiplayer-proactive
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Claude Slackbot 升级 引入多人代理功能
@@ -105,9 +121,9 @@ Anthropic为Claude在Slack平台引入了Tag功能，使其支持多人互动、
 
 ### 相关文章
 
-- [Claude Composer：AI 编排多智能体协作与任务流]({{< relref "posts/20260206-hacker_news-claude-composer-7.md" >}})
-- [Claude：打造用于深度思考的交互空间]({{< relref "posts/20260204-hacker_news-claude-is-a-space-to-think-12.md" >}})
-- [Claude Is a Space to Think]({{< relref "posts/20260204-hacker_news-claude-is-a-space-to-think-17.md" >}})
-- [Claude：一个用于深度思考的交互空间]({{< relref "posts/20260204-hacker_news-claude-is-a-space-to-think-5.md" >}})
-- [Claude：打造用于深度思考的AI交互空间]({{< relref "posts/20260205-hacker_news-claude-is-a-space-to-think-18.md" >}})
+- [Claude Composer：AI 编排多智能体协作与任务流]({{< relref "posts/20260206-hacker_news-claude-composer-9.md" >}})
+- [Claude：打造用于深度思考的交互空间]({{< relref "posts/20260204-hacker_news-claude-is-a-space-to-think-8.md" >}})
+- [Claude Is a Space to Think]({{< relref "posts/20260204-hacker_news-claude-is-a-space-to-think-8.md" >}})
+- [Claude：一个用于深度思考的交互空间]({{< relref "posts/20260204-hacker_news-claude-is-a-space-to-think-8.md" >}})
+- [Claude：打造用于深度思考的AI交互空间]({{< relref "posts/20260204-hacker_news-claude-is-a-space-to-think-8.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

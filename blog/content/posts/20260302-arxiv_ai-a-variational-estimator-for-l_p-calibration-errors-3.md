@@ -21,6 +21,10 @@ description: 本文介绍了一种用于估计 $L_p$ 校准误差的新型变分
 external_url: http://arxiv.org/abs/2602.24230v1
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # $L_p$校准误差的变分估计方法
@@ -477,8 +481,8 @@ $L_p$ 校准误差是衡量概率预测模型（如深度神经网络）置信�
 
 ### 相关文章
 
-- [53款模型“洗车”测试]({{< relref "posts/20260224-hacker_news-car-wash-test-with-53-models-15.md" >}})
+- [53款模型“洗车”测试]({{< relref "posts/20260223-hacker_news-car-wash-test-with-53-models-9.md" >}})
 - [SokoBench：评估大模型长程规划与推理能力]({{< relref "posts/20260129-arxiv_ai-sokobench-evaluating-long-horizon-planning-and-rea-2.md" >}})
-- [Agent评估显示AGENTS.md配置优于技能配置]({{< relref "posts/20260130-hacker_news-agentsmd-outperforms-skills-in-our-agent-evals-6.md" >}})
-- [挖掘模型仓库中的隐藏价值]({{< relref "posts/20260201-arxiv_ai-discovering-hidden-gems-in-model-repositories-1.md" >}})
-- [探索面向智能体的推理奖励模型]({{< relref "posts/20260201-arxiv_ai-exploring-reasoning-reward-model-for-agents-4.md" >}})
+- [Agent评估显示AGENTS.md配置优于技能配置]({{< relref "posts/20260129-hacker_news-compressed-agentsmd-agent-skills-5.md" >}})
+- [挖掘模型仓库中的隐藏价值]({{< relref "posts/20260130-arxiv_ai-discovering-hidden-gems-in-model-repositories-1.md" >}})
+- [探索面向智能体的推理奖励模型]({{< relref "posts/20260130-arxiv_ai-exploring-reasoning-reward-model-for-agents-4.md" >}})

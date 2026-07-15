@@ -1,14 +1,32 @@
 ---
-title: "Firefox将新增控制选项以关闭AI功能"
-date: 2026-02-03T03:49:30+08:00
+title: Firefox将新增控制选项以关闭AI功能
+date: 2026-02-03 03:49:30+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Firefox", "浏览器", "AI功能", "隐私保护", "用户控制", "Mozilla", "产品更新", "关闭AI"]
-categories: ["产品与创业", "开源生态"]
+entry_kind: auto
+tags:
+- Firefox
+- 浏览器
+- AI功能
+- 隐私保护
+- 用户控制
+- Mozilla
+- 产品更新
+- 关闭AI
+categories:
+- 产品与创业
+- 开源生态
 source: hacker_news
-description: "随着人工智能功能在浏览器中日益普及，用户对于数据隐私与计算资源占用的关注也随之提升。Firefox 即将推出的新控件，正是为了回应这一需求，让用户能够自主关闭集成的 AI 模块。本文将梳理这些新增控制项的具体位置与功能，并探讨它们如何帮助用户在保持浏览器轻量化的同时，更好地掌控个人的浏览体验。"
+description: 随着人工智能功能在浏览器中日益普及，用户对于数据隐私与计算资源占用的关注也随之提升。Firefox 即将推出的新控件，正是为了回应这一需求，让用户能够自主关闭集成的
+  AI 模块。本文将梳理这些新增控制项的具体位置与功能，并探讨它们如何帮助用户在保持浏览器轻量化的同时，更好地掌控个人的浏览体验。
 external_url: https://www.macrumors.com/2026/02/02/firefox-ai-toggle
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+aliases:
+- /posts/20260203-hacker_news-firefox-getting-new-controls-to-turn-off-ai-featur-17/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Firefox将新增控制选项以关闭AI功能
@@ -403,7 +421,7 @@ print(monitor_ai_feature_usage("/path/to/firefox/profile"))
 
 - [Mozilla组建AI联盟以对抗OpenAI与Anthropic]({{< relref "posts/20260129-hacker_news-mozilla-is-building-an-ai-rebel-alliance-to-take-o-10.md" >}})
 - [OpenAI 将在 ChatGPT 中停用 GPT-4o 等四款模型]({{< relref "posts/20260129-hacker_news-retiring-gpt-4o-gpt-41-gpt-41-mini-and-openai-o4-m-2.md" >}})
-- [OpenAI 将在 ChatGPT 中下架 GPT-4o 等四款模型]({{< relref "posts/20260129-hacker_news-retiring-gpt-4o-gpt-41-gpt-41-mini-and-openai-o4-m-4.md" >}})
+- [OpenAI 将在 ChatGPT 中下架 GPT-4o 等四款模型]({{< relref "posts/20260129-hacker_news-retiring-gpt-4o-gpt-41-gpt-41-mini-and-openai-o4-m-2.md" >}})
 - [Moltworker：自托管个人 AI 智能体]({{< relref "posts/20260130-hacker_news-moltworker-a-self-hosted-personal-ai-agent-minus-t-16.md" >}})
-- [Moltworker：自托管个人 AI 智能体]({{< relref "posts/20260130-hacker_news-moltworker-a-self-hosted-personal-ai-agent-minus-t-19.md" >}})
+- [Moltworker：自托管个人 AI 智能体]({{< relref "posts/20260130-hacker_news-moltworker-a-self-hosted-personal-ai-agent-minus-t-16.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

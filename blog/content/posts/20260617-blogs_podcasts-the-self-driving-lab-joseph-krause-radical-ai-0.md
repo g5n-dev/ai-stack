@@ -1,14 +1,29 @@
 ---
-title: "材料研究护城河为何在实验室而非模型"
-date: 2026-06-17T18:37:33+08:00
+title: 材料研究护城河为何在实验室而非模型
+date: 2026-06-17 18:37:33+08:00
 draft: false
-entry_kind: "auto"
-tags: ["自驱实验室", "材料科学", "高通量实验", "自动化", "机器学习闭环", "AI基础设施", "研发加速", "数据闭环"]
-categories: ["AI 工程"]
+entry_kind: auto
+tags:
+- 自驱实验室
+- 材料科学
+- 高通量实验
+- 自动化
+- 机器学习闭环
+- AI 基础设施
+- 研发加速
+- 数据闭环
+categories:
+- AI 工程
 source: blogs_podcasts
-description: "在材料科学领域，传统的竞争壁垒往往是模型或算法的优势。Radical AI 的 Joseph Krause 提出，真正的护城河不在于“模型本身”，而在于“实验室”。自驱实验室（Self‑Driving Lab）通过将高通量实验、自动化和机器学习闭环，实现实验流程的标准化、数据化与可重复性。相较于单纯依赖算法提升性能，拥"
+description: 在材料科学领域，传统的竞争壁垒往往是模型或算法的优势。Radical AI 的 Joseph Krause 提出，真正的护城河不在于“模型本身”，而在于“实验室”。自驱实验室（Self‑Driving
+  Lab）通过将高通量实验、自动化和机器学习闭环，实现实验流程的标准化、数据化与可重复性。相较于单纯依赖算法提升性能，拥
 external_url: https://www.latent.space/p/radical-ai
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 材料研究护城河为何在实验室而非模型
@@ -110,9 +125,9 @@ scenarios: ["AI/ML项目"]
 
 ### 相关文章
 
-- [AI对工程类岗位的影响或与预期不同]({{< relref "posts/20260129-hacker_news-ais-impact-on-engineering-jobs-may-be-different-th-5.md" >}})
-- [OpenAI内部数据智能体：自动化数据分析与决策]({{< relref "posts/20260129-hacker_news-openais-in-house-data-agent-11.md" >}})
+- [AI对工程类岗位的影响或与预期不同]({{< relref "posts/20260129-hacker_news-ais-impact-on-engineering-jobs-may-be-different-th-3.md" >}})
+- [OpenAI内部数据智能体：自动化数据分析与决策]({{< relref "posts/20260129-hacker_news-openais-in-house-data-agent-14.md" >}})
 - [ShapedQL：支持多阶段排序与RAG的SQL引擎]({{< relref "posts/20260129-hacker_news-show-hn-shapedql-a-sql-engine-for-multi-stage-rank-6.md" >}})
 - [Moltworker：自托管个人 AI 智能体]({{< relref "posts/20260130-hacker_news-moltworker-a-self-hosted-personal-ai-agent-minus-t-16.md" >}})
-- [Moltworker：自托管个人 AI 智能体]({{< relref "posts/20260130-hacker_news-moltworker-a-self-hosted-personal-ai-agent-minus-t-19.md" >}})
+- [Moltworker：自托管个人 AI 智能体]({{< relref "posts/20260130-hacker_news-moltworker-a-self-hosted-personal-ai-agent-minus-t-16.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

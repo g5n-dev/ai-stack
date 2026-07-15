@@ -1,12 +1,26 @@
 ---
-title: "🔥网页也能玩！超级猴子球移植上线！🐒🎮"
-date: 2026-01-28T07:28:04+08:00
+title: 🔥网页也能玩！超级猴子球移植上线！🐒🎮
+date: 2026-01-28 07:28:04+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Web游戏", "游戏移植", "浏览器", "超级猴子球", "WebGL", "跨平台", "无需下载", "经典游戏"]
-categories: ["前端", "开源生态"]
+entry_kind: auto
+tags:
+- Web游戏
+- 游戏移植
+- 浏览器
+- 超级猴子球
+- WebGL
+- 跨平台
+- 无需下载
+- 经典游戏
+categories:
+- 前端
+- 开源生态
 source: hacker_news
 external_url: https://monkeyball-online.pages.dev
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 📰 🔥网页也能玩！超级猴子球移植上线！🐒🎮

@@ -1,14 +1,32 @@
 ---
-title: "基于大语言模型Agent的上下文网络事件自主响应端到端方法"
-date: 2026-02-16T23:54:05+08:00
+title: 基于大语言模型Agent的上下文网络事件自主响应端到端方法
+date: 2026-02-16 23:54:05+08:00
 draft: false
-entry_kind: "auto"
-tags: ["LLM Agent", "网络安全", "事件响应", "端到端", "上下文学习", "自主系统", "日志分析", "威胁检测"]
-categories: ["安全", "大模型"]
+entry_kind: auto
+tags:
+- LLM Agent
+- 网络安全
+- 事件响应
+- 端到端
+- 上下文学习
+- 自主系统
+- 日志分析
+- 威胁检测
+categories:
+- 安全
+- 大模型
 source: arxiv
-description: "以下是该内容的中文总结： **题目：情境感知的自主网络事件响应：一种端到端大语言模型智能体方法** **背景与挑战：** 面对快速演变的网络攻击，现有的应急响应系统通常采用强化学习方法，通过大量的模拟来学习响应策略。然而，这种方法存在显著局限：它需要手工构建模拟器，且难以从原始系统日志和警报中提取有用的语义信息。 **"
+description: 以下是该内容的中文总结： **题目：情境感知的自主网络事件响应：一种端到端大语言模型智能体方法** **背景与挑战：** 面对快速演变的网络攻击，现有的应急响应系统通常采用强化学习方法，通过大量的模拟来学习响应策略。然而，这种方法存在显著局限：它需要手工构建模拟器，且难以从原始系统日志和警报中提取有用的语义信息。
+  **
 external_url: http://arxiv.org/abs/2602.13156v1
-scenarios: ["大语言模型"]
+scenarios:
+- 大语言模型
+aliases:
+- /posts/20260217-arxiv_ai-in-context-autonomous-network-incident-response-an-9/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 基于大语言模型Agent的上下文网络事件自主响应端到端方法
@@ -498,9 +516,9 @@ LLM 生成的网络命令可能会因为语法错误或环境差异而失败。�
 
 ### 相关文章
 
-- [RedSage：网络安全通用大语言模型]({{< relref "posts/20260201-arxiv_ai-redsage-a-cybersecurity-generalist-llm-0.md" >}})
-- [OpenAI 如何通过内置安全机制防范 AI 代理点击链接时的数据泄露与提示词注入]({{< relref "posts/20260129-blogs_podcasts-keeping-your-data-safe-when-an-ai-agent-clicks-a-l-6.md" >}})
+- [RedSage：网络安全通用大语言模型]({{< relref "posts/20260130-arxiv_ai-redsage-a-cybersecurity-generalist-llm-0.md" >}})
+- [OpenAI 如何通过内置安全机制防范 AI 代理点击链接时的数据泄露与提示词注入]({{< relref "posts/20260129-blogs_podcasts-keeping-your-data-safe-when-an-ai-agent-clicks-a-l-5.md" >}})
 - [RedSage：网络安全通用大模型]({{< relref "posts/20260130-arxiv_ai-redsage-a-cybersecurity-generalist-llm-0.md" >}})
-- [RedSage：网络安全通用大语言模型]({{< relref "posts/20260131-arxiv_ai-redsage-a-cybersecurity-generalist-llm-0.md" >}})
-- [RedSage：网络安全通用大语言模型]({{< relref "posts/20260202-arxiv_ai-redsage-a-cybersecurity-generalist-llm-0.md" >}})
+- [RedSage：网络安全通用大语言模型]({{< relref "posts/20260130-arxiv_ai-redsage-a-cybersecurity-generalist-llm-0.md" >}})
+- [RedSage：网络安全通用大语言模型]({{< relref "posts/20260130-arxiv_ai-redsage-a-cybersecurity-generalist-llm-0.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

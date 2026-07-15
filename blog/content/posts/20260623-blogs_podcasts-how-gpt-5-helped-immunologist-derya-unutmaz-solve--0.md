@@ -1,14 +1,31 @@
 ---
-title: "GPT-5 Pro破解三年免疫学谜团助力癌症研究"
-date: 2026-06-23T22:43:33+08:00
+title: GPT-5 Pro破解三年免疫学谜团助力癌症研究
+date: 2026-06-23 22:43:33+08:00
 draft: false
-entry_kind: "auto"
-tags: ["GPT-5", "免疫学", "癌症研究", "T细胞", "大模型推理", "跨学科整合", "精准医疗", "药物研发"]
-categories: ["大模型"]
+entry_kind: auto
+tags:
+- GPT-5
+- 免疫学
+- 癌症研究
+- T细胞
+- 大模型推理
+- 跨学科整合
+- 精准医疗
+- 药物研发
+categories:
+- 大模型
 source: blogs_podcasts
-description: "项目背景 免疫学家 Derya Unutmaz 多年来一直未能解释 T 细胞在特定刺激下出现的异常行为，导致相关研究进展受阻。 GPT‑5 Pro 的介入 团队将大量基因组、蛋白质组及免疫学实验数据输入 GPT‑5 Pro。该模型利用深度推理和跨学科知识整合，在数小时内生成并验证了多条可能的机制假设，最终锁定了关键调控"
+description: 项目背景 免疫学家 Derya Unutmaz 多年来一直未能解释 T 细胞在特定刺激下出现的异常行为，导致相关研究进展受阻。 GPT‑5
+  Pro 的介入 团队将大量基因组、蛋白质组及免疫学实验数据输入 GPT‑5 Pro。该模型利用深度推理和跨学科知识整合，在数小时内生成并验证了多条可能的机制假设，最终锁定了关键调控
 external_url: https://openai.com/index/gpt-5-immunology-mystery
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+aliases:
+- /posts/20260624-blogs_podcasts-how-gpt-5-helped-immunologist-derya-unutmaz-solve--0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # GPT-5 Pro破解三年免疫学谜团助力癌症研究
@@ -158,9 +175,9 @@ GPT-5 Pro在此次研究中的应用涉及三个核心技术层次。第一层�
 
 ### 相关文章
 
-- [AI驱动方法助力细胞生物学全景解析与实验规划]({{< relref "posts/20260226-blogs_podcasts-ai-to-help-researchers-see-the-bigger-picture-in-c-6.md" >}})
-- [GPT-5结合云自动化将无细胞蛋白合成成本降低40%]({{< relref "posts/20260206-blogs_podcasts-gpt-5-lowers-the-cost-of-cell-free-protein-synthes-3.md" >}})
-- [GPT-5结合云端自动化将无细胞蛋白合成成本降低40%]({{< relref "posts/20260207-blogs_podcasts-gpt-5-lowers-the-cost-of-cell-free-protein-synthes-5.md" >}})
-- [GPT-5结合云自动化将无细胞蛋白合成成本降低40%]({{< relref "posts/20260209-blogs_podcasts-gpt-5-lowers-the-cost-of-cell-free-protein-synthes-6.md" >}})
-- [GPT-5结合云自动化将无细胞蛋白合成成本降低40%]({{< relref "posts/20260210-blogs_podcasts-gpt-5-lowers-the-cost-of-cell-free-protein-synthes-9.md" >}})
+- [AI驱动方法助力细胞生物学全景解析与实验规划]({{< relref "posts/20260225-blogs_podcasts-ai-to-help-researchers-see-the-bigger-picture-in-c-3.md" >}})
+- [GPT-5结合云自动化将无细胞蛋白合成成本降低40%]({{< relref "posts/20260205-blogs_podcasts-gpt-5-lowers-the-cost-of-cell-free-protein-synthes-1.md" >}})
+- [GPT-5结合云端自动化将无细胞蛋白合成成本降低40%]({{< relref "posts/20260205-blogs_podcasts-gpt-5-lowers-the-cost-of-cell-free-protein-synthes-1.md" >}})
+- [GPT-5结合云自动化将无细胞蛋白合成成本降低40%]({{< relref "posts/20260205-blogs_podcasts-gpt-5-lowers-the-cost-of-cell-free-protein-synthes-1.md" >}})
+- [GPT-5结合云自动化将无细胞蛋白合成成本降低40%]({{< relref "posts/20260205-blogs_podcasts-gpt-5-lowers-the-cost-of-cell-free-protein-synthes-1.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

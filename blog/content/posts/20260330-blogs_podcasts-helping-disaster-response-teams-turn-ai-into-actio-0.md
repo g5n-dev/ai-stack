@@ -1,14 +1,30 @@
 ---
-title: "亚洲灾害响应AI行动转化工作坊启动"
-date: 2026-03-30T11:10:48+08:00
+title: 亚洲灾害响应AI行动转化工作坊启动
+date: 2026-03-30 11:10:48+08:00
 draft: false
-entry_kind: "auto"
-tags: ["灾害响应", "AI应用", "OpenAI", "盖茨基金会", "工作坊", "亚洲", "公益AI", "AI落地"]
-categories: ["AI 工程", "产品与创业"]
+entry_kind: auto
+tags:
+- 灾害响应
+- AI 应用
+- OpenAI
+- 盖茨基金会
+- 工作坊
+- 亚洲
+- 公益AI
+- AI落地
+categories:
+- AI 工程
+- 产品与创业
 source: blogs_podcasts
-description: "背景 OpenAI 与比尔及梅琳达·盖茨基金会合作，在亚洲举办专题工作坊，旨在把人工智能技术快速转化为灾害应对的实际行动。工作坊聚焦亚太地区的自然灾害频发现状，汇聚政府、非政府组织、科研机构与技术企业提供跨界对话平台。 目标 1. 帮助灾害响应团队了解并掌握可用的 AI 工具与模型。 2. 共同探索 AI 在预警、灾情"
+description: 背景 OpenAI 与比尔及梅琳达·盖茨基金会合作，在亚洲举办专题工作坊，旨在把人工智能技术快速转化为灾害应对的实际行动。工作坊聚焦亚太地区的自然灾害频发现状，汇聚政府、非政府组织、科研机构与技术企业提供跨界对话平台。
+  目标 1. 帮助灾害响应团队了解并掌握可用的 AI 工具与模型。 2. 共同探索 AI 在预警、灾情
 external_url: https://openai.com/index/helping-disaster-response-teams-asia
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 亚洲灾害响应AI行动转化工作坊启动
@@ -118,9 +134,9 @@ OpenAI与盖茨基金会合作举办的研讨会聚焦于如何帮助亚太地�
 
 ### 相关文章
 
-- [🚀Horizon 1000：颠覆基层医疗！AI如何重塑未来？]({{< relref "posts/20260126-blogs_podcasts-horizon-1000-advancing-ai-for-primary-healthcare-9.md" >}})
-- [Descript 集成 OpenAI 模型实现多语言视频批量配音]({{< relref "posts/20260307-blogs_podcasts-how-descript-enables-multilingual-video-dubbing-at-2.md" >}})
-- [Descript 利用 OpenAI 模型优化多语种视频配音的节奏与自然度]({{< relref "posts/20260307-blogs_podcasts-how-descript-enables-multilingual-video-dubbing-at-3.md" >}})
-- [Descript 利用 OpenAI 模型优化多语言视频配音的翻译与时间点]({{< relref "posts/20260308-blogs_podcasts-how-descript-enables-multilingual-video-dubbing-at-2.md" >}})
-- [Descript集成OpenAI模型优化多语言视频配音语义与时机]({{< relref "posts/20260309-blogs_podcasts-how-descript-enables-multilingual-video-dubbing-at-3.md" >}})
+- [🚀Horizon 1000：颠覆基层医疗！AI如何重塑未来？]({{< relref "posts/20260125-blogs_podcasts-horizon-1000-advancing-ai-for-primary-healthcare-9.md" >}})
+- [Descript 集成 OpenAI 模型实现多语言视频批量配音]({{< relref "posts/20260306-blogs_podcasts-how-descript-enables-multilingual-video-dubbing-at-2.md" >}})
+- [Descript 利用 OpenAI 模型优化多语种视频配音的节奏与自然度]({{< relref "posts/20260306-blogs_podcasts-how-descript-enables-multilingual-video-dubbing-at-2.md" >}})
+- [Descript 利用 OpenAI 模型优化多语言视频配音的翻译与时间点]({{< relref "posts/20260306-blogs_podcasts-how-descript-enables-multilingual-video-dubbing-at-2.md" >}})
+- [Descript集成OpenAI模型优化多语言视频配音语义与时机]({{< relref "posts/20260306-blogs_podcasts-how-descript-enables-multilingual-video-dubbing-at-2.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

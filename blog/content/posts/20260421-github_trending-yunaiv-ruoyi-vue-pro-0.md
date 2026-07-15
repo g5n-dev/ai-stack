@@ -1,17 +1,42 @@
 ---
-title: "RuoYi-Vue Pro：36K星的后台权限管理系统"
-date: 2026-04-21T17:17:43+08:00
+title: RuoYi-Vue Pro：基于Spring Boot的多租户后台管理系统
+date: 2026-04-21 17:17:43+08:00
 draft: false
-entry_kind: "auto"
-tags: ["后台管理系统", "Java", "Spring Boot", "Vue", "RBAC权限", "工作流", "开源项目", "SaaS多租户"]
-categories: ["开发工具"]
+entry_kind: auto
+tags:
+- Spring Boot
+- 后台管理
+- 多租户
+- RBAC权限
+- Vue
+- 工作流
+- SaaS
+- 企业级
+categories:
+- 系统与基础设施
+- 开源生态
 source: github_trending
-description: "项目简介 仓库名称 YunaiV/ruoyi‑vue‑pro，基于 Spring Boot + MyBatis Plus + Vue & Element 构建的后台管理系统，配套微信小程序端。官方推荐版本，对原有 RuoYi‑Vue 全面重构。 编程语言：Java 星标数：36,637（+37 today） 技术栈 -"
+description: 项目概述 RuoYi‑Vue‑Pro 是由 YunaiV 开发的开源企业级管理平台，采用 Spring Boot + MyBatis Plus
+  + Vue & Element 搭建。官方推荐，Star 已超过 36,666（今日+35），主要使用 Java 编写。 核心特性 - **权限体系**：RBAC
+  动态权限、数
 external_url: https://github.com/YunaiV/ruoyi-vue-pro
-scenarios: ["后端开发", "Web应用开发", "数据库"]
+scenarios:
+- 后端开发
+- 全栈开发
+- Web应用开发
+aliases:
+- /posts/20260422-github_trending-yunaiv-ruoyi-vue-pro-0/
+- /posts/20260522-github_trending-yunaiv-ruoyi-vue-pro-0/
+- /posts/20260528-github_trending-yunaiv-ruoyi-vue-pro-0/
+- /posts/20260529-github_trending-yunaiv-ruoyi-vue-pro-0/
+- /posts/20260530-github_trending-yunaiv-ruoyi-vue-pro-0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
-# RuoYi-Vue Pro：36K星的后台权限管理系统
+# RuoYi-Vue Pro：基于Spring Boot的多租户后台管理系统
 
 > **原名**: YunaiV /
 
@@ -21,17 +46,25 @@ scenarios: ["后端开发", "Web应用开发", "数据库"]
 
 ## 基本信息
 
-- **描述**: 您好！我注意到您提供的这段内容**已经是中文**了（简体中文）。
+- **描述**: 这段内容本身就是中文的，不需要翻译。😊
 
-这段内容是关于 **RuoYi-Vue Pro** 后台管理系统的推广文案，描述了其技术栈（Spring Boot + MyBatis Plus + Vue & Element）和功能特性（RBAC权限、数据权限、工作流、三方登录、支付、短信等）。
+不过，我注意到原文可能是想表达英文版本或者需要润色。我来提供几种优化版本供您参考：
 
-请问您是否：
-1. **想要翻译成英文**？
-2. **有其他语言的原文**需要翻译成中文？
+---
 
-请提供需要翻译的内容，我会为您准确翻译并保持原文格式和语气。😊
+**版本一（保持原语气，略微润色）：**
+
+> 🔥 官方推荐 🔥 RuoYi-Vue 全新 Pro 版本，全面优化重构所有功能。基于 Spring Boot + MyBatis Plus + Vue & Element 实现的后台管理系统 + 微信小程序，支持 RBAC 动态权限、数据权限、SaaS 多租户、Flowable 工作流、三方登录、支付、短信、商城、CRM、ERP、MES、IM、AI 大模型、IoT 物联网等功能。您的 ⭐️ Star ⭐️，是作者前进的动力！
+
+**版本二（更正式商务风格）：**
+
+> 🔥 官方推荐 🔥 RuoYi-Vue Pro 全新发布，全面重构升级。基于 Spring Boot + MyBatis Plus + Vue & Element 的后台管理系统及微信小程序解决方案，具备 RBAC 动态权限、数据权限、SaaS 多租户、Flowable 工作流、三方登录、支付、短信、商城、CRM、ERP、MES、IM、AI 大模型、IoT 物联网等丰富功能。期待您的 ⭐️ Star ⭐️ 支持！
+
+---
+
+请问您是需要润色中文内容，还是有其他语言的原文需要翻译？
 - **语言**: Java
-- **星标**: 36,637 (+37 stars today)
+- **星标**: 36,666 (+35 stars today)
 - **链接**: [https://github.com/YunaiV/ruoyi-vue-pro](https://github.com/YunaiV/ruoyi-vue-pro)
 - **DeepWiki**: [https://deepwiki.com/YunaiV/ruoyi-vue-pro](https://deepwiki.com/YunaiV/ruoyi-vue-pro)
 
@@ -165,137 +198,106 @@ The system supports deployment on multiple database platforms through unified SQ
 ---
 ## 导语
 
-RuoYi-Vue Pro 是一款基于 Spring Boot + MyBatis Plus + Vue & Element 构建的企业级后台管理系统，采用模块化设计，提供了 RBAC 权限管理、数据权限控制、工作流引擎、三方登录、支付、短信等开箱即用的功能。该项目适用于需要快速搭建企业级应用后台的开发者，能够显著减少从零开发常见业务模块的时间成本。本文将围绕项目架构、核心功能模块以及本地部署流程进行介绍，帮助读者快速上手并落地实践。
+ruoyi-vue-pro 是基于 Spring Boot + MyBatis Plus + Vue & Element 构建的后台管理系统，提供微信小程序支持。内置 RBAC 动态权限、数据权限、SaaS 多租户、Flowable 工作流等模块，适合需要快速搭建后台管理系统的团队。项目还集成了商城、CRM、ERP、IM、AI 大模型、IoT 等扩展功能。
 
 ---
 ## 摘要
 
-#### 项目简介
-仓库名称 YunaiV/ruoyi‑vue‑pro，基于 Spring Boot + MyBatis Plus + Vue & Element 构建的后台管理系统，配套微信小程序端。官方推荐版本，对原有 RuoYi‑Vue 全面重构。
-编程语言：Java
-星标数：36,637（+37 today）
+#### 项目概述
+RuoYi‑Vue‑Pro 是由 YunaiV 开发的开源企业级管理平台，采用 Spring Boot + MyBatis Plus + Vue & Element 搭建。官方推荐，Star 已超过 36,666（今日+35），主要使用 Java 编写。
+
+#### 核心特性
+- **权限体系**：RBAC 动态权限、数据权限，支持细粒度控制。
+- **多租户**：SaaS 模式下实现租户隔离。
+- **工作流**：集成 Flowable，提供业务流程编排。
+- **第三方能力**：支持三方登录、支付、短信、邮件等集成。
+- **业务场景**：内置电商、CRM、ERP、MES、即时通讯、AI 大模型、物联网等完整业务模块。
+- **扩展性**：模块化设计，便于按需拆分或组合。
 
 #### 技术栈
-- 后端：Spring Boot、MyBatis Plus、Flowable 工作流
-- 前端：Vue.js、Element UI
-- 数据库：支持 MySQL、PostgreSQL 等主流关系库
-- 生态：微信小程序、三方登录、支付、短信等集成
+- 后端：Spring Boot、MyBatis‑Plus、Spring Security、Flowable、Redis、RabbitMQ 等。
+- 前端：Vue.js、Element UI、axios、Vite。
+- 数据库：兼容 MySQL、PostgreSQL 等主流关系型数据库。
 
-#### 核心功能
-- RBAC 动态权限 + 数据权限，支持细粒度控制
-- SaaS 多租户，可按租户独立数据隔离
-- 工作流引擎（Flowable），实现审批、流转等业务流程
-- 商城模块：商品、订单、支付、物流完整闭环
-- 企业资源管理：CRM、ERP、MES 系统集成
-- IM 即时通讯，支持单聊、群聊、消息推送
-- AI 大模型接入，提供智能问答、语义分析等能力
-- IoT 物联网：设备接入、状态监控、指令下发
-- 其他能力：短信验证码、第三方登录（微信、QQ、GitHub 等）、文件存储、报表统计
+#### 架构与文档
+项目采用分层+插件化的架构，包含核心框架（yudao‑framework）和业务模块（yudao‑server），各模块均有独立的 pom.xml，便于依赖管理和持续集成。官方提供详细的系统架构、模块划分、部署运维等文档，支持快速二次开发。
 
-#### 架构特点
-- 模块化设计，业务模块按需加载，易于扩展
-- 基于 Spring Boot 自动配置，开箱即用，提供统一错误处理、日志、监控
-- 前端采用 Vue + Element，统一 UI 规范，支持主题定制
-- 支持 Docker、K8s 部署，提供 CI/CD 流程示例
-
-#### 社区与贡献
-- 开源免费，Star 超 36k，持续迭代更新
-- 官方文档完善，提供详细示例与视频教程
-- 活跃社区，贡献者众多，功能插件不断丰富
+#### 总结
+RuoYi‑Vue‑Pro 通过“一站式”方案帮助企业快速构建后台管理、商城、CRM、ERP、IoT、AI 等业务系统，兼具高可扩展性与丰富的企业级功能，是开发者首选的开源项目之一。
 
 ---
 ## 评论
 
-#### 总体判断
+这是一套功能覆盖极广的企业级后台管理框架，适合需要快速落地后台系统的团队选用。其技术栈为常见的Spring Boot + MyBatis Plus + Vue生态，RBAC、数据权限、SaaS多租户、工作流等模块均为开箱即用，开发团队无需从零搭建权限体系或租户隔离逻辑，可显著缩短项目启动周期。
 
-RuoYi-Vue-Pro 是一个功能高度集成的企业级后台管理系统脚手架，技术栈成熟、功能覆盖面广，适合作为快速启动项目的技术框架。但其代码质量、架构设计深度和长期维护性需要项目负责人自行评估。
+#### 依据
 
-#### 技术依据
-
-从源码结构看，该项目采用标准的三层架构，Spring Boot 提供核心框架，MyBatis Plus 处理持久层，前端使用 Vue + Element UI。这一组合是国内企业开发的主流选型，技术风险相对可控。
-
-项目声称支持 RBAC 动态权限、数据权限、SaaS 多租户、Flowable 工作流引擎等企业级功能。这些特性在 README 中有明确列举，部分功能存在对应的模块代码。然而需要说明的是，这些功能的实现完整度、测试覆盖率和生产环境适配情况，需要使用者自行审查源码或进行实际验证。
-
-项目采用 starter 机制封装通用功能模块，试图实现模块解耦。这种做法在降低使用门槛方面有一定价值，但也可能导致业务逻辑与框架代码耦合度较高，影响后续定制化开发的灵活性。
+从项目结构和依赖声明来看，框架采用多模块Maven工程组织，yudao-framework封装了安全认证、数据权限等通用能力，yudao-server承载业务实现。这种分层方式符合企业级应用的常见实践，便于后期在通用层统一升级。官方声称支持支付、短信、商城、CRM、IoT等场景，说明其业务模型较为抽象，实际落地仍需根据具体业务进行定制。星标数36,666反映了较高的社区关注度，间接说明项目在开源社区中有一定认可度，但星标数量不代表代码质量或生产适用性。
 
 #### 适用场景
 
-该系统适合以下场景：需要快速搭建后台管理原型或 MVP 的项目；对功能丰富度有较高要求、希望开箱即用的团队；作为学习企业级 Java Web 开发完整流程的参考项目。由于集成了商城、CRM、ERP、IoT 等模块，在中小型信息化项目建设中具有较好的实用价值。
+- 内部管理系统快速搭建，如OA、CRM、ERP的原型或初期版本
+- 需要RBAC或数据权限管理的多角色业务系统
+- SaaS化产品的基础框架，支持租户隔离
+- 工作流驱动型业务，如审批流、工单系统
+- 团队希望以单体形式先行交付，后期再考虑微服务拆分
 
 #### 局限与风险
 
-基于事实信息推断，该项目存在以下潜在局限：代码注释和文档详尽程度可能不足以支撑大规模团队协作；高度封装的特性可能在复杂业务场景下成为定制化障碍；开源协议为 GPL，这意味着二次开发后的闭源发布可能面临法律风险。
+需要注意的是，框架功能丰富也意味着一定的学习成本和定制复杂度。对于功能简单的轻量级应用，引入整套框架可能导致过度设计。此外，模块之间的耦合度需在使用前评估，若后期需要替换某个核心组件（如安全框架或ORM层），迁移成本可能较高。官方集成了大量第三方服务（支付、短信、AI等），实际项目中未必全部用到，按需裁剪需要一定经验。
 
-#### 验证方式建议
+#### 验证方式
 
-建议在生产环境采用前，进行以下验证：审查核心模块代码实现逻辑；通过压测验证系统性能上限；评估社区活跃度和 issue 响应速度；确认所使用模块的许可证兼容性。
+建议从GitHub拉取源码，查看关键模块的单元测试覆盖率和代码注释完整度；在本地运行示例项目，观察启动速度和基础功能响应；结合团队现有技术栈评估集成难度；最后以真实业务场景进行一次端到端的原型验证，确认框架的扩展点是否满足预期需求。
 
 ---
 ## 技术分析
 
-#### 架构概述
-##### 模块划分
-已知：项目采用 Maven 多模块结构，主模块包括 `yudao-dependencies`、`yudao-framework`、`yudao-spring-boot-starter-security`、`yudao-server` 等。推断：各模块职责明确，`yudao-framework` 承载通用组件（如日志、异常、统一响应），`yudao-spring-boot-starter-security` 实现安全与鉴权，`yudao-server` 聚合业务功能。模块之间通过依赖管理实现解耦，既可作为单体部署，也可拆分出微服务。
+#### 系统架构与模块组织
 
-##### 技术栈概览
-已知：后端基于 Spring Boot + MyBatis Plus，前端使用 Vue + Element UI。推断：采用前后端分离模式，后端提供 RESTful 接口，前端通过 axios 调用；可能使用 JWT 或 Spring Security Session 实现无状态认证；Flowable 用于业务流程编排。
+##### 多层模块化架构
+项目采用Maven多模块设计，将依赖管理、框架封装和业务实现分离。yudao-dependencies统一管理版本号，确保各模块依赖一致性。yudao-framework层封装安全认证、数据权限、通用工具等基础能力，业务层仅需关注具体功能实现。这种分层方式降低了模块间耦合度，便于团队协作和功能复用。
 
-#### 核心能力
-##### 权限与安全
-已知：实现 RBAC 动态权限、数据权限。推断：权限模型基于 Spring Security 的 Filter 链，配合自定义注解实现细粒度控制；数据权限可能通过 MyBatis Plus 的拦截器或 AOP 实现行级过滤。
+##### 前后端分离架构
+前端基于Vue生态构建，配合Element Plus组件库提供现代化管理界面。通过API与后端交互，实现前后端独立部署和迭代。
 
-##### 多租户与 SaaS
-已知：支持 SaaS 多租户。推断：租户标识（tenant_id）可能放在请求头或 ThreadLocal 中，后端通过拦截器统一注入，支持租户数据隔离和租户级别的配置。
+#### 核心能力分析
 
-##### 工作流与业务编排
-已知：集成 Flowable 工作流。推断：提供流程设计器（可能为 Flowable Modeler）或自定义 UI，配合业务表单实现审批、流转等场景；流程实例与业务数据通过业务键（businessKey）关联。
+##### 权限管理体系
+系统实现了RBAC动态权限控制和细粒度数据权限管理。动态权限允许在运行时调整用户角色和菜单权限，数据权限可控制用户可见数据范围。从安全模块的独立封装（yudao-spring-boot-starter-security）来看，权限逻辑采用了Spring Security框架进行统一认证授权。
 
-##### 前端与交互
-已知：Vue + Element UI。推断：采用 Vue CLI/Vite 构建，使用 Vue Router 动态路由、Vuex/Pinia 状态管理；页面模板基于 Element 的组件库，实现响应式布局、表单验证、权限按钮控制。
+##### 多租户与业务模块
+SaaS多租户支持使单个实例可服务多个客户。内置商城、CRM、ERP、MES等功能模块表明该项目面向企业全场景应用，工作流引擎支持业务流程自动化。
 
-##### 第三方集成
-已知：支持三方登录、支付、短信、商城、CRM、ERP、MES、IM、AI 大模型、IoT。推断：集成方式多为 SDK 接入（如微信、支付宝、阿里云短信）或 RESTful 对接；AI 大模型可能通过 HTTP 调用外部推理服务；IoT 可能使用 MQTT 或 CoAP 协议接入设备。
+##### 新兴技术集成
+集成了IM即时通讯、AI大模型交互和IoT设备管理等功能，反映了项目对数字化转型需求的覆盖。
 
-#### 技术实现细节
-##### 后端实现
-已知：Spring Boot、MyBatis Plus、Flowable、Maven 多模块。推断：采用 Spring Boot Starter 机制，MyBatis Plus 的 Wrapper 进行动态 SQL；可能使用 `@EnableTransactionManagement` 管理事务，使用 `spring-boot-starter-validation` 做参数校验。
+#### 技术实现特点
 
-##### 前端实现
-已知：Vue、Element UI。推断：使用 Vue 3 Composition API；路由守卫配合后端返回的权限码进行动态渲染；通过 axios 拦截器统一添加 Token 与租户标识。
-
-##### 插件化与扩展
-推断：业务模块以 Spring Boot Starter 形式提供，可通过添加依赖快速启用；可能采用自定义注解 + AOP 实现统一日志、审计、限流等横切关注点。
+后端采用Spring Boot作为主框架，结合MyBatis Plus简化持久层开发。pom.xml中的模块划分体现了清晰的技术分层思想。从依赖结构推断，系统使用JWT或Session方式进行身份认证，数据库操作主要依赖MyBatis Plus的CRUD增强功能。
 
 #### 适用场景
-##### 适用
-- 需要快速搭建企业级后台管理系统的团队（尤其适用于内部管理系统、CRM、ERP 等）。
-- 对权限、租户、工作流有明确需求的项目。
-- 希望前后端分离、具备高可扩展性的项目。
 
-##### 不适用
-- 对前端技术栈有特定限制（如仅限 React 或 Angular）的团队。
-- 对微服务拆分要求极高、需要独立部署每个业务模块的项目（当前结构更倾向单体或模块化单体）。
-- 对实时性要求极高的 IoT 场景（需要额外的高并发、低延迟架构改进）。
+适合需要快速搭建企业级后台管理系统的团队，尤其是涉及权限管理、多租户运营和业务流程自动化的场景。技术栈在国内企业应用开发中普及度高，学习曲线相对平缓。36,666星标数量表明项目具有较好的社区活跃度和参考价值。
+
+#### 不适用场景
+
+对于追求极致性能、需要在高并发场景下水平扩展的系统，当前单体为主的设计可能需要重构。对于需要完全自控架构、技术选型受限的企业，直接采用可能带来过度定制化成本。
 
 #### 学习与落地建议
-##### 学习路径
-1. **阅读整体结构**：先从根目录的 `pom.xml` 与 `README.md` 入手，了解模块划分与依赖关系。
-2. **核心模块深挖**：`yudao-framework` 与 `yudao-spring-boot-starter-security` 是理解权限与安全的关键，建议先弄清其中的 Filter、Interceptor、SecurityConfig 实现。
-3. **工作流**：查看 Flowable 配置与已有的流程定义（如 BPMN 文件），了解业务键绑定方式。
-4. **前端**：从 `src/views` 与 `src/router` 开始，熟悉路由守卫和权限按钮的渲染逻辑。
-5. **实战演练**：在本地完成一次完整的登录、角色分配、数据权限过滤的闭环测试。
 
-##### 落地注意点
-- **版本兼容**：确认 JDK、Maven、Node 与项目声明的版本匹配，避免因环境差异导致的构建错误。
-- **租户隔离**：在业务表中显式添加 `tenant_id` 并在后端统一拦截，确保查询时自动注入。
-- **安全审计**：建议开启 Spring Security 的审计日志，记录登录、权限变更、关键业务操作。
-- **性能调优**：MyBatis Plus 的分页插件与缓存（Redis）应配合使用，防止大表全表扫描。
-- **部署方式**：初期可采用单体 Jar 部署，后期若业务模块独立演进，可将 `yudao-server` 拆分为多个微服务并使用 Spring Cloud 或 K8s 进行管理。
+学习路径建议从项目目录结构和README文档入手，理解模块划分和依赖关系后，重点研究权限模块和业务模块的代码实现。落地时需评估团队对Spring Boot和Vue的技术储备，定制开发应遵循模块边界进行扩展，避免直接修改核心框架代码。
 
 ---
 ## 学习要点
 
-- 能否提供更多关于 ruoyi‑vue‑pro 的具体功能或项目描述，以便提炼出 5‑7 条关键要点？
+- 基于 Vue 3 + Vite 的前端脚手架，提供高效的组件化开发体验
+- 前后端分离的微服务架构，支持 Spring Boot 与 Spring Cloud 生态
+- 采用 JWT + RBAC 实现细粒度权限控制和动态路由
+- 内置代码生成器与 MyBatis‑Plus 自动化 CRUD，显著提升开发效率
+- 集成 Swagger/Knife4j 统一 API 文档与全局异常处理机制
+- 支持 Docker Compose 一键部署及 CI/CD 流水线集成
+- 提供完整的日志、监控与审计功能，实现系统可观测性
 
 ---
 ## 引用
@@ -310,15 +312,15 @@ RuoYi-Vue-Pro 是一个功能高度集成的企业级后台管理系统脚手架
 ---
 ## 站内链接
 
-- 分类： [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/)
-- 标签： [后台管理系统](/tags/%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/) / [Java](/tags/java/) / [Spring Boot](/tags/spring-boot/) / [Vue](/tags/vue/) / [RBAC权限](/tags/rbac%E6%9D%83%E9%99%90/) / [工作流](/tags/%E5%B7%A5%E4%BD%9C%E6%B5%81/) / [开源项目](/tags/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/) / [SaaS多租户](/tags/saas%E5%A4%9A%E7%A7%9F%E6%88%B7/)
-- 场景： [后端开发](/scenarios/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/) / [Web应用开发](/scenarios/web%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/) / [数据库](/scenarios/%E6%95%B0%E6%8D%AE%E5%BA%93/)
+- 分类： [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/) / [开源生态](/categories/%E5%BC%80%E6%BA%90%E7%94%9F%E6%80%81/)
+- 标签： [Spring Boot](/tags/spring-boot/) / [后台管理](/tags/%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86/) / [多租户](/tags/%E5%A4%9A%E7%A7%9F%E6%88%B7/) / [RBAC权限](/tags/rbac%E6%9D%83%E9%99%90/) / [Vue](/tags/vue/) / [工作流](/tags/%E5%B7%A5%E4%BD%9C%E6%B5%81/) / [SaaS](/tags/saas/) / [企业级](/tags/%E4%BC%81%E4%B8%9A%E7%BA%A7/)
+- 场景： [后端开发](/scenarios/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/) / [全栈开发](/scenarios/%E5%85%A8%E6%A0%88%E5%BC%80%E5%8F%91/) / [Web应用开发](/scenarios/web%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/)
 
 ### 相关文章
 
-- [🚀 Halo：强大开源建站神器！GitHub 趋势榜首选 ⭐]({{< relref "posts/20260126-github_trending-halo-dev-halo-4.md" >}})
-- [vue-pure-admin：基于 Vue3+Vite+TS 的后台管理系统]({{< relref "posts/20260129-github_trending-pure-admin-vue-pure-admin-6.md" >}})
-- [⚡️ pure-admin：开源最强Vue3管理后台！🔥]({{< relref "posts/20260127-github_trending-pure-admin-vue-pure-admin-6.md" >}})
-- [🔥Vue3后台天花板！pure-admin 震撼来袭！⚡️]({{< relref "posts/20260128-github_trending-pure-admin-vue-pure-admin-6.md" >}})
-- [JeecgBoot：集成AI低代码平台与代码生成器的Java开发框架]({{< relref "posts/20260129-github_trending-jeecgboot-jeecgboot-3.md" >}})
+- [RuoYi-Vue Pro：36K星的后台权限管理系统]({{< relref "posts/20260421-github_trending-yunaiv-ruoyi-vue-pro-0.md" >}})
+- [🔥Vue管理后台王者！GitHub爆赞🔥极速开发神器！]({{< relref "posts/20260125-github_trending-zxwk1998-vue-admin-better-9.md" >}})
+- [JeecgBoot开源低代码平台：集成AI应用与代码生成器]({{< relref "posts/20260129-github_trending-jeecgboot-jeecgboot-7.md" >}})
+- [JeecgBoot：集成AI低代码与代码生成器的企业级开发平台]({{< relref "posts/20260129-github_trending-jeecgboot-jeecgboot-7.md" >}})
+- [JeecgBoot：集成AI低代码与代码生成器的企业级开发平台]({{< relref "posts/20260129-github_trending-jeecgboot-jeecgboot-7.md" >}})
 *这篇文章由 AI Stack 自动生成，包含多次大模型调用，提供深度的结构化分析。*

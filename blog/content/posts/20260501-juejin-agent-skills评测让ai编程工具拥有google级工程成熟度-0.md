@@ -1,14 +1,30 @@
 ---
-title: "Agent Skills实测：AI编程工具的工程成熟度评测"
-date: 2026-05-01T03:43:49+08:00
+title: Agent Skills实测：AI编程工具的工程成熟度评测
+date: 2026-05-01 03:43:49+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI编程", "工程成熟度", "Agent Skills", "代码质量", "自动化测试", "开发流程", "工具评测", "效率提升"]
-categories: ["开发工具", "AI 工程"]
+entry_kind: auto
+tags:
+- AI 编程
+- 工程成熟度
+- Agent Skills
+- 代码质量
+- 自动化测试
+- 开发流程
+- 工具评测
+- 效率提升
+categories:
+- 开发工具
+- AI 工程
 source: juejin
-description: "背景与问题 AI编程工具能够生成功能正确的代码，但在工程层面几乎“野路子”。它们通常不写单元测试、缺少代码审查、不考虑向后兼容、不遵循提交规范，也不进行安全审计——并非因为不愿，而是缺乏相应的工程实践与约束。 Agent Skills 评测框架 文章提出一套衡量AI工程成熟度的评价体系，覆盖以下维度： 1. **可测试"
+description: 背景与问题 AI编程工具能够生成功能正确的代码，但在工程层面几乎“野路子”。它们通常不写单元测试、缺少代码审查、不考虑向后兼容、不遵循提交规范，也不进行安全审计——并非因为不愿，而是缺乏相应的工程实践与约束。
+  Agent Skills 评测框架 文章提出一套衡量AI工程成熟度的评价体系，覆盖以下维度： 1. **可测试
 external_url: https://juejin.cn/post/7634416264014954496
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Agent Skills实测：AI编程工具的工程成熟度评测
@@ -114,9 +130,9 @@ AI编程工具在代码生成能力上已经取得显著进步，但在工程成
 
 ### 相关文章
 
-- [AI 代码审查的真实世界基准测试]({{< relref "posts/20260205-hacker_news-a-real-world-benchmark-for-ai-code-review-3.md" >}})
-- [智能体开发加速测试迭代，JiTTesting 实时捕获缺陷]({{< relref "posts/20260212-blogs_podcasts-the-death-of-traditional-testing-agentic-developme-5.md" >}})
-- [OpenClaw实测：AI编程工具的安装体验与实战应用]({{< relref "posts/20260223-juejin-装了-openclaw-一个月每天叫醒我的不是梦想ai编程ai编程实战ai出海-1.md" >}})
+- [AI 代码审查的真实世界基准测试]({{< relref "posts/20260204-hacker_news-a-real-world-benchmark-for-ai-code-review-2.md" >}})
+- [智能体开发加速测试迭代，JiTTesting 实时捕获缺陷]({{< relref "posts/20260211-blogs_podcasts-the-death-of-traditional-testing-agentic-developme-0.md" >}})
+- [OpenClaw实测：AI编程工具的安装体验与实战应用]({{< relref "posts/20260222-juejin-装了-openclaw-一个月每天叫醒我的不是梦想ai编程ai编程实战ai出海-0.md" >}})
 - [Claude Code 每日基准测试用于性能退化追踪]({{< relref "posts/20260129-hacker_news-claude-code-daily-benchmarks-for-degradation-track-0.md" >}})
-- [Claude Code 每日基准测试用于性能退化追踪]({{< relref "posts/20260130-hacker_news-claude-code-daily-benchmarks-for-degradation-track-10.md" >}})
+- [Claude Code 每日基准测试用于性能退化追踪]({{< relref "posts/20260129-hacker_news-claude-code-daily-benchmarks-for-degradation-track-0.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

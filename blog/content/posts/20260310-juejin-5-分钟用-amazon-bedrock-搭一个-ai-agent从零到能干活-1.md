@@ -23,6 +23,10 @@ scenarios:
 - AI/ML项目
 - 大语言模型
 - 后端开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 5分钟用Amazon Bedrock搭建能调API的AI Agent
@@ -216,8 +220,8 @@ Bedrock 的费用结构主要包含两部分，且采用按量付费模式：
 
 ### 相关文章
 
-- [Amazon Bedrock AgentCore 浏览器功能更新：支持代理、配置文件与扩展]({{< relref "posts/20260217-blogs_podcasts-customize-ai-agent-browsing-with-proxies-profiles--2.md" >}})
+- [Amazon Bedrock AgentCore 浏览器功能更新：支持代理、配置文件与扩展]({{< relref "posts/20260213-blogs_podcasts-customize-ai-agent-browsing-with-proxies-profiles--0.md" >}})
 - [构建Amazon智能体评估框架：通用工作流与Bedrock指标库]({{< relref "posts/20260218-blogs_podcasts-evaluating-ai-agents-real-world-lessons-from-build-0.md" >}})
-- [亚马逊构建代理式AI系统的评估框架与实战经验]({{< relref "posts/20260219-blogs_podcasts-evaluating-ai-agents-real-world-lessons-from-build-14.md" >}})
-- [亚马逊发布AI Agent评估框架：通用工作流与Bedrock评估库]({{< relref "posts/20260219-blogs_podcasts-evaluating-ai-agents-real-world-lessons-from-build-2.md" >}})
-- [NVIDIA Nemotron 3 Nano 现已在 Amazon Bedrock 上线]({{< relref "posts/20260310-blogs_podcasts-run-nvidia-nemotron-3-nano-as-a-fully-managed-serv-3.md" >}})
+- [亚马逊构建代理式AI系统的评估框架与实战经验]({{< relref "posts/20260218-blogs_podcasts-evaluating-ai-agents-real-world-lessons-from-build-0.md" >}})
+- [亚马逊发布AI Agent评估框架：通用工作流与Bedrock评估库]({{< relref "posts/20260218-blogs_podcasts-evaluating-ai-agents-real-world-lessons-from-build-0.md" >}})
+- [NVIDIA Nemotron 3 Nano 现已在 Amazon Bedrock 上线]({{< relref "posts/20260309-blogs_podcasts-run-nvidia-nemotron-3-nano-as-a-fully-managed-serv-0.md" >}})

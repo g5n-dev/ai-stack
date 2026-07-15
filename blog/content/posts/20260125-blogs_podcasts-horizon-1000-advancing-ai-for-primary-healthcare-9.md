@@ -1,12 +1,29 @@
 ---
-title: "🚀Horizon 1000：AI如何引爆基层医疗革命？💡"
-date: 2026-01-25T12:39:55+08:00
+title: 🚀Horizon 1000：AI如何引爆基层医疗革命？💡
+date: 2026-01-25 12:39:55+08:00
 draft: false
-entry_kind: "auto"
-tags: ["OpenAI", "盖茨基金会", "Horizon 1000", "医疗AI", "非洲", "基层医疗", "社会公益", "LLM应用"]
-categories: ["大模型", "产品与创业"]
+entry_kind: auto
+tags:
+- OpenAI
+- 盖茨基金会
+- Horizon 1000
+- 医疗 AI
+- 非洲
+- 基层医疗
+- 社会公益
+- LLM 应用
+categories:
+- 大模型
+- 产品与创业
 source: blogs_podcasts
 external_url: https://openai.com/index/horizon-1000
+scenarios: []
+aliases:
+- /posts/20260126-blogs_podcasts-horizon-1000-advancing-ai-for-primary-healthcare-9/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 🎙️ 🚀Horizon 1000：AI如何引爆基层医疗革命？💡

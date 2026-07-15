@@ -1,14 +1,30 @@
 ---
-title: "OpenAI发布GPT 5.6三版本 Codex成为ChatGPT超级应用"
-date: 2026-07-10T08:05:40+08:00
+title: OpenAI发布GPT 5.6三版本 Codex成为ChatGPT超级应用
+date: 2026-07-10 08:05:40+08:00
 draft: false
-entry_kind: "auto"
-tags: ["GPT5.6", "OpenAI", "Codex", "ChatGPT", "超级应用", "多版本", "大模型发布", "AI新闻"]
-categories: ["大模型", "产品与创业"]
+entry_kind: auto
+tags:
+- GPT-5.6
+- OpenAI
+- Codex
+- ChatGPT
+- 超级应用
+- 多版本
+- 大模型发布
+- AI新闻
+categories:
+- 大模型
+- 产品与创业
 source: blogs_podcasts
-description: "OpenAI 在今天发布了 GPT‑5.6 系列的三款模型：Sol、Terra、Luna。Sol 定位于高效率轻量级，适用于快速响应场景；Terra 提供更强的推理能力，适合复杂任务；Luna 则是多模态版本，支持文本、图像、音频的统一处理。三者共享统一的 API 接口，便于开发者迁移和组合使用。 同时，OpenAI"
+description: OpenAI 在今天发布了 GPT‑5.6 系列的三款模型：Sol、Terra、Luna。Sol 定位于高效率轻量级，适用于快速响应场景；Terra
+  提供更强的推理能力，适合复杂任务；Luna 则是多模态版本，支持文本、图像、音频的统一处理。三者共享统一的 API 接口，便于开发者迁移和组合使用。 同时，OpenAI
 external_url: https://www.latent.space/p/ainews-openai-launches-gpt-56-solterraluna
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # OpenAI发布GPT 5.6三版本 Codex成为ChatGPT超级应用
@@ -122,7 +138,7 @@ GPT 5.6 系列与 ChatGPT-Codex 的整合使对话界面获得代码执行能力
 
 - [OpenAI Codex登陆ChatGPT手机端]({{< relref "posts/20260515-juejin-刚刚codex-上线手机端免费用户也能用-0.md" >}})
 - [OpenAI 将在 ChatGPT 中停用 GPT-4o 等四款模型]({{< relref "posts/20260129-hacker_news-retiring-gpt-4o-gpt-41-gpt-41-mini-and-openai-o4-m-2.md" >}})
-- [OpenAI 将在 ChatGPT 中下架 GPT-4o 等四款模型]({{< relref "posts/20260129-hacker_news-retiring-gpt-4o-gpt-41-gpt-41-mini-and-openai-o4-m-4.md" >}})
-- [OpenAI将于2026年2月退役ChatGPT中多款GPT‑4及o4模型]({{< relref "posts/20260130-blogs_podcasts-retiring-gpt-4o-gpt-41-gpt-41-mini-and-openai-o4-m-4.md" >}})
-- [OpenAI将于2026年2月退役ChatGPT内多款GPT‑4及o4‑mini模型]({{< relref "posts/20260130-blogs_podcasts-retiring-gpt-4o-gpt-41-gpt-41-mini-and-openai-o4-m-5.md" >}})
+- [OpenAI 将在 ChatGPT 中下架 GPT-4o 等四款模型]({{< relref "posts/20260129-hacker_news-retiring-gpt-4o-gpt-41-gpt-41-mini-and-openai-o4-m-2.md" >}})
+- [OpenAI将于2026年2月退役ChatGPT中多款GPT‑4及o4模型]({{< relref "posts/20260129-hacker_news-retiring-gpt-4o-gpt-41-gpt-41-mini-and-openai-o4-m-2.md" >}})
+- [OpenAI将于2026年2月退役ChatGPT内多款GPT‑4及o4‑mini模型]({{< relref "posts/20260129-hacker_news-retiring-gpt-4o-gpt-41-gpt-41-mini-and-openai-o4-m-2.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

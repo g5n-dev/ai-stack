@@ -1,14 +1,29 @@
 ---
-title: "OpenAI Codex敏感文件排除功能问题仍未解决"
-date: 2026-06-28T14:10:05+08:00
+title: OpenAI Codex敏感文件排除功能问题仍未解决
+date: 2026-06-28 14:10:05+08:00
 draft: false
-entry_kind: "auto"
-tags: ["OpenAI", "Codex", "敏感文件", "排除功能", "安全漏洞", "未解决", "大模型", "代码模型"]
-categories: ["大模型", "安全"]
+entry_kind: auto
+tags:
+- OpenAI
+- Codex
+- 敏感文件
+- 排除功能
+- 安全漏洞
+- 未解决
+- 大模型
+- 代码模型
+categories:
+- 大模型
+- 安全
 source: hacker_news
-description: "在OpenAI Codex的实际使用中，如何安全地排除敏感文件仍是开发者关注的核心问题。官方尚未提供统一的排除机制，导致自动化流程在处理项目文件时可能泄露敏感信息。本文将梳理目前已有的排除方案，分析其局限并给出实用建议，帮助团队在保证安全的前提下更高效地使用代码生成服务。"
+description: 在OpenAI Codex的实际使用中，如何安全地排除敏感文件仍是开发者关注的核心问题。官方尚未提供统一的排除机制，导致自动化流程在处理项目文件时可能泄露敏感信息。本文将梳理目前已有的排除方案，分析其局限并给出实用建议，帮助团队在保证安全的前提下更高效地使用代码生成服务。
 external_url: https://github.com/openai/codex/issues/2847
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # OpenAI Codex敏感文件排除功能问题仍未解决
@@ -83,9 +98,9 @@ scenarios: ["AI/ML项目"]
 
 ### 相关文章
 
-- [GPT-5.3-Codex系统卡：融合前沿代码性能与推理能力]({{< relref "posts/20260206-blogs_podcasts-gpt-53-codex-system-card-8.md" >}})
-- [[AINews] OpenAI and Anthropic go to war: Claude Opus 4]({{< relref "posts/20260210-blogs_podcasts-ainews-openai-and-anthropic-go-to-war-claude-opus--9.md" >}})
+- [GPT-5.3-Codex系统卡：融合前沿代码性能与推理能力]({{< relref "posts/20260205-blogs_podcasts-gpt-53-codex-system-card-4.md" >}})
+- [[AINews] OpenAI and Anthropic go to war: Claude Opus 4]({{< relref "posts/20260206-blogs_podcasts-ainews-openai-and-anthropic-go-to-war-claude-opus--0.md" >}})
 - [OpenAI发布GPT-5.3-Codex-Spark：首款实时代码模型，速度提升15倍]({{< relref "posts/20260213-blogs_podcasts-introducing-gpt-53-codex-spark-11.md" >}})
-- [OpenAI发布首款实时编码模型：生成速度提升15倍]({{< relref "posts/20260214-blogs_podcasts-introducing-gpt-53-codex-spark-13.md" >}})
-- [OpenAI发布GPT-5.3-Codex-Spark：首款实时编程模型，生成提速15倍]({{< relref "posts/20260217-blogs_podcasts-introducing-gpt-53-codex-spark-13.md" >}})
+- [OpenAI发布首款实时编码模型：生成速度提升15倍]({{< relref "posts/20260213-blogs_podcasts-introducing-gpt-53-codex-spark-11.md" >}})
+- [OpenAI发布GPT-5.3-Codex-Spark：首款实时编程模型，生成提速15倍]({{< relref "posts/20260213-blogs_podcasts-introducing-gpt-53-codex-spark-11.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

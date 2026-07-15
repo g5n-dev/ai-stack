@@ -1,14 +1,32 @@
 ---
-title: "循环Transformer的步级数据归因方法"
-date: 2026-02-11T22:09:57+08:00
+title: 循环Transformer的步级数据归因方法
+date: 2026-02-11 22:09:57+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Transformer", "数据归因", "模型可解释性", "TracIn", "TensorSketch", "循环神经网络", "梯度估算", "推理机制"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- Transformer
+- 数据归因
+- 模型可解释性
+- TracIn
+- TensorSketch
+- 循环神经网络
+- 梯度估算
+- 推理机制
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "以下是对该内容的简洁总结： 本文研究了训练样本如何影响**循环Transformer**的内部计算，这类模型通过共享模块进行τ次循环迭代以实现潜在的推理能力。 针对现有数据影响评估方法（如TracIn）仅能产生一个聚合所有循环步骤的标量分数，从而掩盖了样本在具体推理步骤中作用机制的缺陷，作者提出了一种名为**步骤分解影"
+description: 以下是对该内容的简洁总结： 本文研究了训练样本如何影响**循环Transformer**的内部计算，这类模型通过共享模块进行τ次循环迭代以实现潜在的推理能力。
+  针对现有数据影响评估方法（如TracIn）仅能产生一个聚合所有循环步骤的标量分数，从而掩盖了样本在具体推理步骤中作用机制的缺陷，作者提出了一种名为**步骤分解影
 external_url: http://arxiv.org/abs/2602.10097v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+aliases:
+- /posts/20260212-arxiv_ai-step-resolved-data-attribution-for-looped-transfor-4/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 循环Transformer的步级数据归因方法
@@ -131,8 +149,8 @@ scenarios: ["Web应用开发"]
 ### 相关文章
 
 - [混合线性注意力新架构：高效蒸馏与极长上下文处理]({{< relref "posts/20260130-arxiv_ai-hybrid-linear-attention-done-right-efficient-disti-2.md" >}})
-- [PatchFormer：基于分层掩码重建的零样本多步预测时序基础模型]({{< relref "posts/20260130-arxiv_ai-patchformer-a-patch-based-time-series-foundation-m-7.md" >}})
-- [混合线性注意力新架构：高效蒸馏与超长上下文建模]({{< relref "posts/20260131-arxiv_ai-hybrid-linear-attention-done-right-efficient-disti-2.md" >}})
-- [混合线性注意力新架构：高效蒸馏与超长上下文处理]({{< relref "posts/20260201-arxiv_ai-hybrid-linear-attention-done-right-efficient-disti-2.md" >}})
-- [混合线性注意力新架构：高效蒸馏与超长上下文处理]({{< relref "posts/20260202-arxiv_ai-hybrid-linear-attention-done-right-efficient-disti-2.md" >}})
+- [PatchFormer：基于分层掩码重建的零样本多步预测时序基础模型]({{< relref "posts/20260129-arxiv_ai-patchformer-a-patch-based-time-series-foundation-m-7.md" >}})
+- [混合线性注意力新架构：高效蒸馏与超长上下文建模]({{< relref "posts/20260130-arxiv_ai-hybrid-linear-attention-done-right-efficient-disti-2.md" >}})
+- [混合线性注意力新架构：高效蒸馏与超长上下文处理]({{< relref "posts/20260130-arxiv_ai-hybrid-linear-attention-done-right-efficient-disti-2.md" >}})
+- [混合线性注意力新架构：高效蒸馏与超长上下文处理]({{< relref "posts/20260130-arxiv_ai-hybrid-linear-attention-done-right-efficient-disti-2.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

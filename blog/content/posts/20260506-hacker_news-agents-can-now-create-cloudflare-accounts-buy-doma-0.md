@@ -1,14 +1,29 @@
 ---
-title: "代理自动化Cloudflare账户创建、域名购买与部署"
-date: 2026-05-06T08:56:11+08:00
+title: 代理自动化Cloudflare账户创建、域名购买与部署
+date: 2026-05-06 08:56:11+08:00
 draft: false
-entry_kind: "auto"
-tags: ["代理自动化", "Cloudflare", "域名购买", "账户创建", "部署", "AI代理", "自动化工具", "云基础设施"]
-categories: ["AI 工程", "系统与基础设施"]
+entry_kind: auto
+tags:
+- 代理自动化
+- Cloudflare
+- 域名购买
+- 账户创建
+- 部署
+- AI 代理
+- 自动化工具
+- 云基础设施
+categories:
+- AI 工程
+- 系统与基础设施
 source: hacker_news
-description: "最近，代理（Agents）已经可以在 Cloudflare 平台上一键完成账号创建、域名购买以及应用部署等操作。这一进展把原本分散在多个控制台的工作流统一到自动化脚本中，显著降低了人工干预的风险和配置时间。对开发者而言，掌握这些代理的集成方式即可实现从域名注册到线上服务的全链路自动化，提升交付效率并简化运维管理。"
+description: 最近，代理（Agents）已经可以在 Cloudflare 平台上一键完成账号创建、域名购买以及应用部署等操作。这一进展把原本分散在多个控制台的工作流统一到自动化脚本中，显著降低了人工干预的风险和配置时间。对开发者而言，掌握这些代理的集成方式即可实现从域名注册到线上服务的全链路自动化，提升交付效率并简化运维管理。
 external_url: https://blog.cloudflare.com/agents-stripe-projects
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 代理自动化Cloudflare账户创建、域名购买与部署
@@ -80,7 +95,7 @@ Cloudflare已正式推出Agents功能，允许AI代理自主完成账户注册�
 ### 相关文章
 
 - [NanoClaw 容器支持 Claude Agent Swarms]({{< relref "posts/20260209-hacker_news-nanoclaw-now-supports-claudes-agent-swarms-in-cont-19.md" >}})
-- [Amazon SageMaker AI 2025回顾：弹性训练计划与推理性价比优化]({{< relref "posts/20260223-blogs_podcasts-amazon-sagemaker-ai-in-2025-a-year-in-review-part--2.md" >}})
+- [Amazon SageMaker AI 2025回顾：弹性训练计划与推理性价比优化]({{< relref "posts/20260220-blogs_podcasts-amazon-sagemaker-ai-in-2025-a-year-in-review-part--0.md" >}})
 - [Cloudflare 全栈基础设施助力 AI 应用落地]({{< relref "posts/20260316-juejin-ai-cloudflare-你需要的全部-1.md" >}})
 - [基于 Cloudflare 生态的 AI Agent 实现]({{< relref "posts/20260320-juejin-基于-cloudflare-生态的-ai-agent-实现-3.md" >}})
 - [AgentCore Gateway授权码流程连接MCP服务器教程]({{< relref "posts/20260406-blogs_podcasts-connecting-mcp-servers-to-amazon-bedrock-agentcore-0.md" >}})

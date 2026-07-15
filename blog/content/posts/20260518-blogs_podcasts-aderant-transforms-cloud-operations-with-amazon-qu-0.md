@@ -1,14 +1,30 @@
 ---
-title: "Aderant借助QuickSight AI统一六系统搜索文档处理加速75%"
-date: 2026-05-18T19:16:43+08:00
+title: Aderant借助QuickSight AI统一六系统搜索文档处理加速75%
+date: 2026-05-18 19:16:43+08:00
 draft: false
-entry_kind: "auto"
-tags: ["搜索加速", "文档自动化", "QuickSight", "AI搜索", "云转型", "法律科技", "工作流编排", "效率提升"]
-categories: ["AI 工程", "系统与基础设施"]
+entry_kind: auto
+tags:
+- 搜索加速
+- 文档自动化
+- QuickSight
+- AI搜索
+- 云转型
+- 法律科技
+- 工作流编排
+- 效率提升
+categories:
+- AI 工程
+- 系统与基础设施
 source: blogs_podcasts
-description: "背景 Aderant 是一家面向法律及专业服务的技术公司，业务依赖多个供应商的云系统。以往跨系统查询和文档编写依赖手工操作，效率低下。 实现方案 - **统一搜索**：基于 Amazon QuickSight 的 AI 搜索功能，把六个供应商的数据源接入单一索引，实现自然语言查询和即时结果返回。 - **文档自动化**"
+description: 背景 Aderant 是一家面向法律及专业服务的技术公司，业务依赖多个供应商的云系统。以往跨系统查询和文档编写依赖手工操作，效率低下。 实现方案
+  - **统一搜索**：基于 Amazon QuickSight 的 AI 搜索功能，把六个供应商的数据源接入单一索引，实现自然语言查询和即时结果返回。 - **文档自动化**
 external_url: https://aws.amazon.com/blogs/machine-learning/aderant-transforms-cloud-operations-with-amazon-quick
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Aderant借助QuickSight AI统一六系统搜索文档处理加速75%
@@ -150,8 +166,8 @@ Aderant的技术方案采用集中式索引加分布式数据源的模式。Amaz
 ### 相关文章
 
 - [使用 Union.ai 和 Flyte 在 Amazon EKS 上构建 AI 工作流]({{< relref "posts/20260219-blogs_podcasts-build-ai-workflows-on-amazon-eks-with-unionai-and--2.md" >}})
-- [在 Amazon EKS 上利用 Union.ai 和 Flyte 编排 AI 工作流]({{< relref "posts/20260219-blogs_podcasts-build-ai-workflows-on-amazon-eks-with-unionai-and--3.md" >}})
-- [基于 Amazon EKS 使用 Union.ai 和 Flyte 构建 AI 工作流]({{< relref "posts/20260220-blogs_podcasts-build-ai-workflows-on-amazon-eks-with-unionai-and--4.md" >}})
-- [基于Union.ai和Flyte在Amazon EKS上构建AI工作流]({{< relref "posts/20260220-blogs_podcasts-build-ai-workflows-on-amazon-eks-with-unionai-and--5.md" >}})
-- [基于 Union.ai 和 Flyte 在 Amazon EKS 上构建 AI 工作流]({{< relref "posts/20260220-blogs_podcasts-build-ai-workflows-on-amazon-eks-with-unionai-and--6.md" >}})
+- [在 Amazon EKS 上利用 Union.ai 和 Flyte 编排 AI 工作流]({{< relref "posts/20260219-blogs_podcasts-build-ai-workflows-on-amazon-eks-with-unionai-and--2.md" >}})
+- [基于 Amazon EKS 使用 Union.ai 和 Flyte 构建 AI 工作流]({{< relref "posts/20260219-blogs_podcasts-build-ai-workflows-on-amazon-eks-with-unionai-and--2.md" >}})
+- [基于Union.ai和Flyte在Amazon EKS上构建AI工作流]({{< relref "posts/20260219-blogs_podcasts-build-ai-workflows-on-amazon-eks-with-unionai-and--2.md" >}})
+- [基于 Union.ai 和 Flyte 在 Amazon EKS 上构建 AI 工作流]({{< relref "posts/20260219-blogs_podcasts-build-ai-workflows-on-amazon-eks-with-unionai-and--2.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

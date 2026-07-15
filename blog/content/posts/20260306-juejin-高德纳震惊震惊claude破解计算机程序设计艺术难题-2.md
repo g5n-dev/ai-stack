@@ -10,7 +10,7 @@ tags:
 - 算法
 - TAOCP
 - 图灵奖
-- AI应用
+- AI 应用
 - 数学
 categories:
 - 大模型
@@ -21,6 +21,10 @@ description: 这是一篇关于著名计算机科学家高德纳（Donald Knuth�
 external_url: https://juejin.cn/post/7613639135042027570
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 高德纳称赞Claude协助解决《计算机程序设计艺术》难题
@@ -178,8 +182,8 @@ Claude 作为一个先进的大语言模型（LLM），其核心优势在于海�
 
 ### 相关文章
 
-- [Anthropic 发布 MCP Apps 开放标准，定义富生成式 UI 规范]({{< relref "posts/20260129-blogs_podcasts-ainews-anthropic-launches-the-mcp-apps-open-spec-i-9.md" >}})
-- [Codex与Claude支持定制化内核扩展]({{< relref "posts/20260217-blogs_podcasts-custom-kernels-for-all-from-codex-and-claude-7.md" >}})
+- [Anthropic 发布 MCP Apps 开放标准，定义富生成式 UI 规范]({{< relref "posts/20260127-blogs_podcasts-ainews-anthropic-launches-the-mcp-apps-open-spec-i-1.md" >}})
+- [Codex与Claude支持定制化内核扩展]({{< relref "posts/20260213-blogs_podcasts-custom-kernels-for-all-from-codex-and-claude-1.md" >}})
 - [Anthropic 发布 AI 熟练度指数以评估教育领域应用]({{< relref "posts/20260223-hacker_news-anthropic-education-the-ai-fluency-index-11.md" >}})
 - [🚀重大！Anthropic发布MCP开放标准，Claude.ai生态大爆发！]({{< relref "posts/20260127-blogs_podcasts-ainews-anthropic-launches-the-mcp-apps-open-spec-i-1.md" >}})
-- [神经网络原理可视化解析]({{< relref "posts/20260206-hacker_news-understanding-neural-network-visually-3.md" >}})
+- [神经网络原理可视化解析]({{< relref "posts/20260206-hacker_news-understanding-neural-network-visually-16.md" >}})

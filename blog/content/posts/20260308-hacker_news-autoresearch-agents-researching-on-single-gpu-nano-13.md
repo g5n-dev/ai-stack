@@ -13,6 +13,16 @@ description: 随着大语言模型训练成本的持续攀升，如何利用有�
 external_url: https://github.com/karpathy/autoresearch
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260308-hacker_news-autoresearch-agents-researching-on-single-gpu-nano-11/
+- /posts/20260308-hacker_news-autoresearch-agents-researching-on-single-gpu-nano-12/
+- /posts/20260308-hacker_news-autoresearch-agents-researching-on-single-gpu-nano-14/
+- /posts/20260308-hacker_news-autoresearch-agents-researching-on-single-gpu-nano-16/
+- /posts/20260308-hacker_news-autoresearch-agents-researching-on-single-gpu-nano-8/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 单GPU训练Nanochat：自动Agent实现全流程研究

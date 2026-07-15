@@ -20,6 +20,12 @@ description: '**标题：基于K划分集成（CAKE）的聚类分配置信度�
 external_url: http://arxiv.org/abs/2602.18435v1
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260224-arxiv_ai-assigning-confidence-k-partition-ensembles-0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 为K分区集成模型分配置信度以提升预测性能
@@ -462,6 +468,6 @@ K-partition Ensembles 的主要优势和应用场景包括：
 
 - [基于熵排序流的非监督解耦表示学习模型]({{< relref "posts/20260209-arxiv_ai-from-core-to-detail-unsupervised-disentanglement-w-9.md" >}})
 - [基于嵌入的Top-$k$检索：理论上$\mathbb{R}^{2k}$维空间已足够]({{< relref "posts/20260129-arxiv_ai-mathbbr2k-is-theoretically-large-enough-for-embedd-8.md" >}})
-- [R^{2k}维度理论上足以支持基于嵌入的Top-k检索]({{< relref "posts/20260130-arxiv_ai-mathbbr2k-is-theoretically-large-enough-for-embedd-8.md" >}})
+- [R^{2k}维度理论上足以支持基于嵌入的Top-k检索]({{< relref "posts/20260129-arxiv_ai-mathbbr2k-is-theoretically-large-enough-for-embedd-8.md" >}})
 - [数据块模型中的精确恢复方法]({{< relref "posts/20260206-arxiv_ai-exact-recovery-in-the-data-block-model-8.md" >}})
 - [Harpoon：面向条件表格扩散模型的广义流形引导]({{< relref "posts/20260210-arxiv_ai-harpoon-generalised-manifold-guidance-for-conditio-1.md" >}})

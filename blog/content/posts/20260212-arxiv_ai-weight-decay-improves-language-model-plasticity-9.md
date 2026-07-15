@@ -1,14 +1,32 @@
 ---
-title: "权重衰减提升语言模型可塑性"
-date: 2026-02-12T23:40:07+08:00
+title: 权重衰减提升语言模型可塑性
+date: 2026-02-12 23:40:07+08:00
 draft: false
-entry_kind: "auto"
-tags: ["LLM", "权重衰减", "模型可塑性", "预训练", "微调", "超参数优化", "特征表示", "注意力机制"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- LLM
+- 权重衰减
+- 模型可塑性
+- 预训练
+- 微调
+- 超参数优化
+- 特征表示
+- 注意力机制
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "本文介绍了《Weight Decay Improves Language Model Plasticity》这一研究成果，主要探讨了在大型语言模型（LLM）预训练中，权重衰减对模型可塑性的影响。核心要点总结如下： 1. **研究视角的转变**： 目前的LLM开发范式通常分为预训练和微调两个阶段。然而，以往的研究主要关注"
+description: 本文介绍了《Weight Decay Improves Language Model Plasticity》这一研究成果，主要探讨了在大型语言模型（LLM）预训练中，权重衰减对模型可塑性的影响。核心要点总结如下：
+  1. **研究视角的转变**： 目前的LLM开发范式通常分为预训练和微调两个阶段。然而，以往的研究主要关注
 external_url: http://arxiv.org/abs/2602.11137v1
-scenarios: ["大语言模型"]
+scenarios:
+- 大语言模型
+aliases:
+- /posts/20260213-arxiv_ai-weight-decay-improves-language-model-plasticity-9/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 权重衰减提升语言模型可塑性
@@ -548,7 +566,7 @@ scenarios: ["大语言模型"]
 
 - [FineInstructions：将合成指令数据扩展至预训练规模]({{< relref "posts/20260130-arxiv_ai-fineinstructions-scaling-synthetic-instructions-to-7.md" >}})
 - [TEON：张量化正交化技术优化大语言模型预训练]({{< relref "posts/20260202-arxiv_ai-teon-tensorized-orthonormalization-beyond-layer-wi-9.md" >}})
-- [TEON：张量化正交化方法优化大语言模型预训练]({{< relref "posts/20260203-arxiv_ai-teon-tensorized-orthonormalization-beyond-layer-wi-9.md" >}})
+- [TEON：张量化正交化方法优化大语言模型预训练]({{< relref "posts/20260202-arxiv_ai-teon-tensorized-orthonormalization-beyond-layer-wi-9.md" >}})
 - [训练万亿参数模型使其具备幽默感]({{< relref "posts/20260203-hacker_news-training-a-trillion-parameter-model-to-be-funny-15.md" >}})
-- [基于对称感知泰勒近似实现恒定Token成本注意力机制]({{< relref "posts/20260204-hacker_news-attention-at-constant-cost-per-token-via-symmetry--4.md" >}})
+- [基于对称感知泰勒近似实现恒定Token成本注意力机制]({{< relref "posts/20260204-hacker_news-attention-at-constant-cost-per-token-via-symmetry--0.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

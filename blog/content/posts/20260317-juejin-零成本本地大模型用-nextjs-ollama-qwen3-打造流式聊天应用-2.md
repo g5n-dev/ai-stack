@@ -23,6 +23,10 @@ external_url: https://juejin.cn/post/7617728986828816411
 scenarios:
 - 大语言模型
 - 后端开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Next.js + Ollama + Qwen3 构建本地流式聊天应用
@@ -198,6 +202,6 @@ Ollama 的 API 设计是通用的，切换模型非常简单：
 
 - [Spring AI 多模型对话实战：统一接口与 Redis 记忆]({{< relref "posts/20260217-juejin-spring-ai-多模型对话-demo-实战openaiollama-一套接口redis-会话记忆-3.md" >}})
 - [Ollama 本地部署开源大模型指南与代码实践]({{< relref "posts/20260302-juejin-ollama-入门指南本地大模型实践-0.md" >}})
-- [如何在本地部署运行 Qwen 3.5 大模型]({{< relref "posts/20260308-hacker_news-how-to-run-qwen-35-locally-10.md" >}})
+- [如何在本地部署运行 Qwen 3.5 大模型]({{< relref "posts/20260308-hacker_news-how-to-run-qwen-35-locally-16.md" >}})
 - [如何在本地运行 Qwen 3.5 大模型]({{< relref "posts/20260308-hacker_news-how-to-run-qwen-35-locally-16.md" >}})
-- [本地部署 Qwen 3.5 大模型的方法与流程]({{< relref "posts/20260308-hacker_news-how-to-run-qwen-35-locally-18.md" >}})
+- [本地部署 Qwen 3.5 大模型的方法与流程]({{< relref "posts/20260308-hacker_news-how-to-run-qwen-35-locally-16.md" >}})

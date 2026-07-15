@@ -1,14 +1,29 @@
 ---
-title: "Google推出Gemini 3.5 Flash高效AI模型"
-date: 2026-05-19T22:26:50+08:00
+title: Google推出Gemini 3.5 Flash高效AI模型
+date: 2026-05-19 22:26:50+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Gemini 3.5", "Google", "AI模型", "高效", "大模型", "生成式AI", "新模型发布", "科技新闻"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- Gemini 3.5
+- Google
+- AI 模型
+- 高效
+- 大模型
+- 生成式 AI
+- 新模型发布
+- 科技新闻
+categories:
+- 大模型
+- AI 工程
 source: hacker_news
-description: "Gemini3.5Flash是最新发布的轻量级语言模型，专为需要快速响应的场景设计。相比前代，它在保持高准确率的同时大幅缩短了推理时间，使得实时交互和大规模数据处理更加高效。本文将深入解析其核心技术升级、典型应用案例以及在实际项目中的使用技巧，帮助开发者快速上手并最大化性能收益。"
+description: Gemini3.5Flash是最新发布的轻量级语言模型，专为需要快速响应的场景设计。相比前代，它在保持高准确率的同时大幅缩短了推理时间，使得实时交互和大规模数据处理更加高效。本文将深入解析其核心技术升级、典型应用案例以及在实际项目中的使用技巧，帮助开发者快速上手并最大化性能收益。
 external_url: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Google推出Gemini 3.5 Flash高效AI模型
@@ -80,9 +95,9 @@ Gemini 3.5 Flash作为Google在轻量级大模型领域的重要布局，其核�
 
 ### 相关文章
 
-- [Gemini 3.1 Flash-Lite：Gemini 3 系列中速度最快且性价比最高的模型]({{< relref "posts/20260304-blogs_podcasts-gemini-31-flash-lite-built-for-intelligence-at-sca-4.md" >}})
+- [Gemini 3.1 Flash-Lite：Gemini 3 系列中速度最快且性价比最高的模型]({{< relref "posts/20260303-blogs_podcasts-gemini-31-flash-lite-built-for-intelligence-at-sca-2.md" >}})
 - [ChatGPT图像生成能力升级至2.0版本]({{< relref "posts/20260421-hacker_news-chatgpt-images-20-0.md" >}})
 - [OlmoEarth v1.1：更高效的模型系列]({{< relref "posts/20260519-blogs_podcasts-olmoearth-v11-a-more-efficient-family-of-models-0.md" >}})
 - [电台主播指控谷歌NotebookLM语音克隆功能未经授权使用其声音]({{< relref "posts/20260216-hacker_news-radio-host-david-greene-says-googles-notebooklm-to-4.md" >}})
-- [Gemini 3.1 Pro：面向复杂任务的高性能模型]({{< relref "posts/20260221-blogs_podcasts-gemini-31-pro-a-smarter-model-for-your-most-comple-12.md" >}})
+- [Gemini 3.1 Pro：面向复杂任务的高性能模型]({{< relref "posts/20260219-blogs_podcasts-gemini-31-pro-a-smarter-model-for-your-most-comple-4.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

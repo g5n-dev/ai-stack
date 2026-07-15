@@ -1,14 +1,29 @@
 ---
-title: "智能时代产业政策：扩大机会共享繁荣"
-date: 2026-04-06T13:34:01+08:00
+title: 智能时代产业政策：扩大机会共享繁荣
+date: 2026-04-06 13:34:01+08:00
 draft: false
-entry_kind: "auto"
-tags: ["人工智能政策", "产业政策", "数字技能", "创新平台", "共享繁荣", "制度韧性", "数据治理", "包容金融"]
-categories: ["系统与基础设施", "数据"]
+entry_kind: auto
+tags:
+- 人工智能政策
+- 产业政策
+- 数字技能
+- 创新平台
+- 共享繁荣
+- 制度韧性
+- 数据治理
+- 包容金融
+categories:
+- 系统与基础设施
+- 数据
 source: blogs_podcasts
-description: "本文概述了一种面向智能时代、以人为本的工业政策思路。该政策聚焦三大方向：①拓展机会，通过提升数字技能、建设创新平台和优化资源配置，使个人和企业能够充分利用人工智能带来的新空间；②共享繁荣，确保AI产生的高价值收益在社会各阶层广泛分配，侧重于公平税收、社会保障和普惠金融服务；③构建韧性制度，完善监管框架、数据治理和公共机"
+description: 本文概述了一种面向智能时代、以人为本的工业政策思路。该政策聚焦三大方向：①拓展机会，通过提升数字技能、建设创新平台和优化资源配置，使个人和企业能够充分利用人工智能带来的新空间；②共享繁荣，确保AI产生的高价值收益在社会各阶层广泛分配，侧重于公平税收、社会保障和普惠金融服务；③构建韧性制度，完善监管框架、数据治理和公共机
 external_url: https://openai.com/index/industrial-policy-for-the-intelligence-age
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 智能时代产业政策：扩大机会共享繁荣
@@ -84,8 +99,8 @@ scenarios: ["Web应用开发"]
 ### 相关文章
 
 - [利用 SageMaker Catalog 构建离线特征库的实践指南]({{< relref "posts/20260316-blogs_podcasts-build-an-offline-feature-store-using-amazon-sagema-1.md" >}})
-- [利用 SageMaker Catalog 构建离线特征库的分步指南]({{< relref "posts/20260316-blogs_podcasts-build-an-offline-feature-store-using-amazon-sagema-3.md" >}})
-- [使用 SageMaker Catalog 构建离线特征库的实践指南]({{< relref "posts/20260316-blogs_podcasts-build-an-offline-feature-store-using-amazon-sagema-5.md" >}})
-- [基于 SageMaker Unified Studio 构建离线特征存储]({{< relref "posts/20260317-blogs_podcasts-build-an-offline-feature-store-using-amazon-sagema-11.md" >}})
-- [基于SageMaker Unified Studio构建离线特征库指南]({{< relref "posts/20260317-blogs_podcasts-build-an-offline-feature-store-using-amazon-sagema-12.md" >}})
+- [利用 SageMaker Catalog 构建离线特征库的分步指南]({{< relref "posts/20260316-blogs_podcasts-build-an-offline-feature-store-using-amazon-sagema-1.md" >}})
+- [使用 SageMaker Catalog 构建离线特征库的实践指南]({{< relref "posts/20260316-blogs_podcasts-build-an-offline-feature-store-using-amazon-sagema-1.md" >}})
+- [基于 SageMaker Unified Studio 构建离线特征存储]({{< relref "posts/20260316-blogs_podcasts-build-an-offline-feature-store-using-amazon-sagema-1.md" >}})
+- [基于SageMaker Unified Studio构建离线特征库指南]({{< relref "posts/20260316-blogs_podcasts-build-an-offline-feature-store-using-amazon-sagema-1.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

@@ -20,6 +20,20 @@ description: 随着强化学习在复杂决策任务中的应用日益深入，�
 external_url: https://huggingface.co/blog/async-rl-training-landscape
 scenarios:
 - 大语言模型
+aliases:
+- /posts/20260310-blogs_podcasts-keep-the-tokens-flowing-lessons-from-16-open-sourc-10/
+- /posts/20260310-blogs_podcasts-keep-the-tokens-flowing-lessons-from-16-open-sourc-3/
+- /posts/20260310-blogs_podcasts-keep-the-tokens-flowing-lessons-from-16-open-sourc-6/
+- /posts/20260310-blogs_podcasts-keep-the-tokens-flowing-lessons-from-16-open-sourc-7/
+- /posts/20260310-blogs_podcasts-keep-the-tokens-flowing-lessons-from-16-open-sourc-9/
+- /posts/20260311-blogs_podcasts-keep-the-tokens-flowing-lessons-from-16-open-sourc-10/
+- /posts/20260311-blogs_podcasts-keep-the-tokens-flowing-lessons-from-16-open-sourc-11/
+- /posts/20260311-blogs_podcasts-keep-the-tokens-flowing-lessons-from-16-open-sourc-12/
+- /posts/20260311-blogs_podcasts-keep-the-tokens-flowing-lessons-from-16-open-sourc-14/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 16个开源强化学习库的实践经验与启示
@@ -285,7 +299,7 @@ RL代码通常包含复杂的动力学和逻辑，Bug难以调试。通过单元
 ### 相关文章
 
 - [RLAnything：完全动态强化学习系统构建环境、策略与奖励模型]({{< relref "posts/20260203-arxiv_ai-rlanything-forge-environment-policy-and-reward-mod-3.md" >}})
-- [RLAnything：构建完全动态强化学习系统环境与模型]({{< relref "posts/20260204-arxiv_ai-rlanything-forge-environment-policy-and-reward-mod-3.md" >}})
-- [基于人类反馈的强化学习原理与应用]({{< relref "posts/20260207-hacker_news-reinforcement-learning-from-human-feedback-15.md" >}})
-- [🚀GPT-OSS智能体RL训练解密！从0到1实战复盘🔥]({{< relref "posts/20260127-blogs_podcasts-unlocking-agentic-rl-training-for-gpt-oss-a-practi-2.md" >}})
-- [🔥实战复盘：解锁GPT-OSS的智能体RL训练秘籍！]({{< relref "posts/20260128-blogs_podcasts-unlocking-agentic-rl-training-for-gpt-oss-a-practi-5.md" >}})
+- [RLAnything：构建完全动态强化学习系统环境与模型]({{< relref "posts/20260203-arxiv_ai-rlanything-forge-environment-policy-and-reward-mod-3.md" >}})
+- [基于人类反馈的强化学习原理与应用]({{< relref "posts/20260207-hacker_news-reinforcement-learning-from-human-feedback-4.md" >}})
+- [🚀GPT-OSS智能体RL训练解密！从0到1实战复盘🔥]({{< relref "posts/20260127-blogs_podcasts-unlocking-agentic-rl-training-for-gpt-oss-a-practi-0.md" >}})
+- [🔥实战复盘：解锁GPT-OSS的智能体RL训练秘籍！]({{< relref "posts/20260127-blogs_podcasts-unlocking-agentic-rl-training-for-gpt-oss-a-practi-0.md" >}})

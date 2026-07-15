@@ -21,6 +21,12 @@ description: 本文介绍了一种名为**混合分层强化学习（H^2RL）**�
 external_url: http://arxiv.org/abs/2603.06565v1
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260310-arxiv_ai-boosting-deep-reinforcement-learning-using-pretrai-5/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 利用逻辑选项预训练提升深度强化学习
@@ -449,6 +455,6 @@ H^2RL引入了一种基于**逻辑选项的预训练策略**。这种策略在�
 
 - [RN-D：基于正则化网络的离散分类演员与同策强化学习]({{< relref "posts/20260202-arxiv_ai-rn-d-discretized-categorical-actors-with-regulariz-7.md" >}})
 - [基于归一化流的高效分层目标条件强化学习]({{< relref "posts/20260212-arxiv_ai-data-efficient-hierarchical-goal-conditioned-reinf-6.md" >}})
-- [基于归一化流的高效分层目标条件强化学习]({{< relref "posts/20260213-arxiv_ai-data-efficient-hierarchical-goal-conditioned-reinf-6.md" >}})
+- [基于归一化流的高效分层目标条件强化学习]({{< relref "posts/20260212-arxiv_ai-data-efficient-hierarchical-goal-conditioned-reinf-6.md" >}})
 - [利用强化学习解决未知可行性的参数鲁棒避障问题]({{< relref "posts/20260218-arxiv_ai-solving-parameter-robust-avoid-problems-with-unkno-6.md" >}})
 - [NVIDIA Cosmos策略：提升机器人控制能力]({{< relref "posts/20260129-blogs_podcasts-introducing-nvidia-cosmos-policy-for-advanced-robo-0.md" >}})

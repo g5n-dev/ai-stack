@@ -21,6 +21,10 @@ description: 这段内容主要介绍了将 AI 项目“OpenClaw”（文中昵�
 external_url: https://juejin.cn/post/7614702374386909210
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 接入飞书实现OpenClaw AI员工直接操作文档与表格
@@ -197,7 +201,7 @@ OpenClaw 是一个能够连接大语言模型（LLM）与实际业务系统的�
 ### 相关文章
 
 - [零成本云端部署OpenClaw接入飞书自动抓取数据]({{< relref "posts/20260224-juejin-喂饭级教程免费部署云端-openclaw-打通飞书自动抓取-clawhub-技能并写入飞书表格-0.md" >}})
-- [OpenClaw：GitHub 增长最快的开源 AI 代理框架]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-7.md" >}})
+- [OpenClaw：GitHub 增长最快的开源 AI 代理框架]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-0.md" >}})
 - [基于GLM-5与OpenClaw构建具备任务执行能力的AI伴侣]({{< relref "posts/20260212-juejin-我用-glm-5-做了个-ai-女友能发自拍发语音还能帮我干活-2.md" >}})
 - [OpenClaw实战指南：从零部署24小时可执行任务的AI管家]({{< relref "posts/20260219-juejin-从零部署你的24小时ai管家openclaw完整实战指南附踩坑记录-1.md" >}})
 - [wechat-devtools-mcp：基于官方库的微信小程序自动化方案]({{< relref "posts/20260226-juejin-微信小程序自动化的-ai-新时代wechat-devtools-mcp-智能方案-2.md" >}})

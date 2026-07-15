@@ -1,14 +1,30 @@
 ---
-title: "NVIDIA Nemotron 3 Ultra登陆SageMaker JumpStart，推理速度提升5倍成本"
-date: 2026-06-04T18:31:38+08:00
+title: NVIDIA Nemotron 3 Ultra登陆SageMaker JumpStart，推理速度提升5倍成本
+date: 2026-06-04 18:31:38+08:00
 draft: false
-entry_kind: "auto"
-tags: ["NVIDIA", "大模型", "推理加速", "成本优化", "SageMaker", "云部署", "代理AI", "性能提升"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- NVIDIA
+- 大模型
+- 推理加速
+- 成本优化
+- SageMaker
+- 云部署
+- 代理AI
+- 性能提升
+categories:
+- 大模型
+- AI 工程
 source: blogs_podcasts
-description: "NVIDIA Nemotron 3 Ultra 现已在 Amazon SageMaker JumpStart 上线。该模型在代理式 AI（agentic AI）工作负载中实现推理速度提升约 5 倍，同时将成本降低约 30%，是一款前沿的推理模型，能够帮助企业更快、更经济地部署智能代理和自动化任务。"
+description: NVIDIA Nemotron 3 Ultra 现已在 Amazon SageMaker JumpStart 上线。该模型在代理式 AI（agentic
+  AI）工作负载中实现推理速度提升约 5 倍，同时将成本降低约 30%，是一款前沿的推理模型，能够帮助企业更快、更经济地部署智能代理和自动化任务。
 external_url: https://aws.amazon.com/blogs/machine-learning/nvidia-nemotron-3-ultra-now-available-on-amazon-sagemaker-jumpstart
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # NVIDIA Nemotron 3 Ultra登陆SageMaker JumpStart，推理速度提升5倍成本降低30%
@@ -132,9 +148,9 @@ Nemotron 3 Ultra的推出强化了NVIDIA在企业AI推理市场的布局。不�
 
 ### 相关文章
 
-- [NVIDIA Nemotron 3 Nano 30B 现已登陆 Amazon SageMaker JumpSt]({{< relref "posts/20260212-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-0.md" >}})
-- [NVIDIA Nemotron 3 Nano 30B 现已登陆 Amazon SageMaker JumpSt]({{< relref "posts/20260212-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-10.md" >}})
-- [NVIDIA Nemotron 3 Nano 30B 现已登陆 Amazon SageMaker JumpSt]({{< relref "posts/20260212-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-4.md" >}})
-- [NVIDIA Nemotron 3 Nano 30B 现已登陆 Amazon SageMaker JumpSt]({{< relref "posts/20260212-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-5.md" >}})
-- [NVIDIA Nemotron 3 Nano 30B 现已在 Amazon SageMaker JumpSta]({{< relref "posts/20260212-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-6.md" >}})
+- [NVIDIA Nemotron 3 Nano 30B 现已登陆 Amazon SageMaker JumpSt]({{< relref "posts/20260211-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-0.md" >}})
+- [NVIDIA Nemotron 3 Nano 30B 现已登陆 Amazon SageMaker JumpSt]({{< relref "posts/20260211-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-0.md" >}})
+- [NVIDIA Nemotron 3 Nano 30B 现已登陆 Amazon SageMaker JumpSt]({{< relref "posts/20260211-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-0.md" >}})
+- [NVIDIA Nemotron 3 Nano 30B 现已登陆 Amazon SageMaker JumpSt]({{< relref "posts/20260211-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-0.md" >}})
+- [NVIDIA Nemotron 3 Nano 30B 现已在 Amazon SageMaker JumpSta]({{< relref "posts/20260211-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

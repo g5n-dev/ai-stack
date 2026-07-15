@@ -9,7 +9,7 @@ tags:
 - 工作流
 - 并行开发
 - 版本控制
-- AI开发
+- AI 开发
 - 开发效率
 - 实战技巧
 categories:
@@ -21,6 +21,10 @@ description: 在 AI 项目的实际开发中，频繁切换上下文或处理紧
 external_url: https://juejin.cn/post/7615074040147394570
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Git Worktree 实战：实现 AI 开发并行工作流
@@ -183,6 +187,6 @@ Worktree 确实会通过复制文件占用额外的磁盘空间，但得益于 G
 
 - [AI编写代码时是否应将会话记录纳入提交]({{< relref "posts/20260302-hacker_news-if-ai-writes-code-should-the-session-be-part-of-th-1.md" >}})
 - [GitHub 浏览器插件：在 PR 中标注 AI 代码贡献]({{< relref "posts/20260203-hacker_news-github-browser-plugin-for-ai-contribution-blame-in-2.md" >}})
-- [编排多会话 Claude Code 团队协作]({{< relref "posts/20260205-hacker_news-orchestrate-teams-of-claude-code-sessions-2.md" >}})
+- [编排多会话 Claude Code 团队协作]({{< relref "posts/20260205-hacker_news-claude-code-agent-teams-3.md" >}})
 - [StrongDM团队利用AI实现无代码预览的软件开发]({{< relref "posts/20260207-hacker_news-strongdms-ai-team-build-serious-software-without-e-14.md" >}})
-- [编排多会话 Claude Code 团队协作]({{< relref "posts/20260205-hacker_news-orchestrate-teams-of-claude-code-sessions-5.md" >}})
+- [编排多会话 Claude Code 团队协作]({{< relref "posts/20260205-hacker_news-claude-code-agent-teams-3.md" >}})

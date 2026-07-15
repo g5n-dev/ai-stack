@@ -1,14 +1,31 @@
 ---
-title: "SageMaker上用Isaac Lab训练Unitree H1人形机器人策略"
-date: 2026-06-09T22:50:31+08:00
+title: SageMaker上用Isaac Lab训练Unitree H1人形机器人策略
+date: 2026-06-09 22:50:31+08:00
 draft: false
-entry_kind: "auto"
-tags: ["人形机器人", "强化学习", "Isaac Lab", "SageMaker", "云端训练", "机器人策略", "AWS", "Unitree H1"]
-categories: ["AI 工程"]
+entry_kind: auto
+tags:
+- 人形机器人
+- 强化学习
+- Isaac Lab
+- SageMaker
+- 云端训练
+- 机器人策略
+- AWS
+- Unitree H1
+categories:
+- AI 工程
 source: blogs_podcasts
-description: "背景 机器人强化学习（RL）需要大量交互数据和计算资源，训练人形机器人策略尤为如此。采用云端高性能仿真平台可以显著提升训练效率并降低成本。 实现方案 利用 NVIDIA Isaac Lab 实现高精度物理仿真，配合 Amazon SageMaker AI 管理分布式训练任务。Isaac Lab 提供丰富的机器人模型库，"
+description: 背景 机器人强化学习（RL）需要大量交互数据和计算资源，训练人形机器人策略尤为如此。采用云端高性能仿真平台可以显著提升训练效率并降低成本。
+  实现方案 利用 NVIDIA Isaac Lab 实现高精度物理仿真，配合 Amazon SageMaker AI 管理分布式训练任务。Isaac Lab 提供丰富的机器人模型库，
 external_url: https://aws.amazon.com/blogs/machine-learning/scale-robot-reinforcement-learning-with-nvidia-isaac-lab-on-amazon-sagemaker-ai
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+aliases:
+- /posts/20260610-blogs_podcasts-scale-robot-reinforcement-learning-with-nvidia-isa-0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # SageMaker上用Isaac Lab训练Unitree H1人形机器人策略
@@ -155,8 +172,8 @@ Spot 实例可降低 60% 计算成本，配合自动伸缩策略实现只在需�
 ### 相关文章
 
 - [2025年回顾：SageMaker AI弹性训练计划与推理性价比优化]({{< relref "posts/20260220-blogs_podcasts-amazon-sagemaker-ai-in-2025-a-year-in-review-part--0.md" >}})
-- [Amazon SageMaker AI 2025回顾：弹性训练计划与推理性价比提升]({{< relref "posts/20260221-blogs_podcasts-amazon-sagemaker-ai-in-2025-a-year-in-review-part--1.md" >}})
-- [Amazon SageMaker AI 2025回顾：灵活训练计划与推理性价比优化]({{< relref "posts/20260222-blogs_podcasts-amazon-sagemaker-ai-in-2025-a-year-in-review-part--1.md" >}})
+- [Amazon SageMaker AI 2025回顾：弹性训练计划与推理性价比提升]({{< relref "posts/20260220-blogs_podcasts-amazon-sagemaker-ai-in-2025-a-year-in-review-part--0.md" >}})
+- [Amazon SageMaker AI 2025回顾：灵活训练计划与推理性价比优化]({{< relref "posts/20260220-blogs_podcasts-amazon-sagemaker-ai-in-2025-a-year-in-review-part--0.md" >}})
 - [Hexagon 利用 SageMaker HyperPod 加速分割模型预训练]({{< relref "posts/20260223-blogs_podcasts-accelerating-ai-model-production-at-hexagon-with-a-1.md" >}})
-- [Hexagon 利用 SageMaker HyperPod 加速分割模型预训练]({{< relref "posts/20260223-blogs_podcasts-accelerating-ai-model-production-at-hexagon-with-a-2.md" >}})
+- [Hexagon 利用 SageMaker HyperPod 加速分割模型预训练]({{< relref "posts/20260223-blogs_podcasts-accelerating-ai-model-production-at-hexagon-with-a-1.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

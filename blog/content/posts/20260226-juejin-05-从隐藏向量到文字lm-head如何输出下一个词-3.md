@@ -21,6 +21,10 @@ description: 这段内容主要回顾了大型语言模型（LLM）中**LM Head�
 external_url: https://juejin.cn/post/7610629556069417023
 scenarios:
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 从隐藏向量到文本：LM Head 如何预测下一个词
@@ -183,8 +187,8 @@ LM Head 的结构和权重在训练和推理阶段是完全一样的，但它的
 
 ### 相关文章
 
-- [2026年AI展望：LLM、智能体、扩展定律与中国角色]({{< relref "posts/20260202-blogs_podcasts-490-state-of-ai-in-2026-llms-coding-scaling-laws-c-0.md" >}})
-- [2026年AI展望：LLM、智能体、算力与Scaling Laws]({{< relref "posts/20260202-blogs_podcasts-490-state-of-ai-in-2026-llms-coding-scaling-laws-c-1.md" >}})
+- [2026年AI展望：LLM、智能体、扩展定律与中国角色]({{< relref "posts/20260201-blogs_podcasts-490-state-of-ai-in-2026-llms-coding-scaling-laws-c-0.md" >}})
+- [2026年AI展望：LLM、智能体、算力与Scaling Laws]({{< relref "posts/20260201-blogs_podcasts-490-state-of-ai-in-2026-llms-coding-scaling-laws-c-0.md" >}})
 - [FlashAttention-T：张量化注意力机制优化方案]({{< relref "posts/20260203-hacker_news-flashattention-t-towards-tensorized-attention-0.md" >}})
-- [FlashAttention-T：张量化注意力机制优化方案]({{< relref "posts/20260204-hacker_news-flashattention-t-towards-tensorized-attention-18.md" >}})
+- [FlashAttention-T：张量化注意力机制优化方案]({{< relref "posts/20260203-hacker_news-flashattention-t-towards-tensorized-attention-0.md" >}})
 - [两种加速大模型推理的技术方法]({{< relref "posts/20260215-hacker_news-two-different-tricks-for-fast-llm-inference-2.md" >}})

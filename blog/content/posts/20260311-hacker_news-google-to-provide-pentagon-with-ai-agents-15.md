@@ -21,6 +21,10 @@ external_url: https://www.bloomberg.com/news/articles/2026-03-10/google-to-provi
 scenarios:
 - AI/ML项目
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 谷歌将为五角大楼提供AI智能体

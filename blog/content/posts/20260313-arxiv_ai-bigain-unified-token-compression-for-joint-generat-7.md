@@ -21,6 +21,14 @@ description: '**BiGain: 面向生成与分类任务的统一令牌压缩框架**
 external_url: http://arxiv.org/abs/2603.12240v1
 scenarios:
 - AI/ML项目
+aliases:
+- /posts/20260314-arxiv_ai-bigain-unified-token-compression-for-joint-generat-7/
+- /posts/20260315-arxiv_ai-bigain-unified-token-compression-for-joint-generat-7/
+- /posts/20260316-arxiv_ai-bigain-unified-token-compression-for-joint-generat-7/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # BiGain：面向生成与分类任务的统一Token压缩

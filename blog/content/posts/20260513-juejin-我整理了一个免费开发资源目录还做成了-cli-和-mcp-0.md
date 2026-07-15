@@ -1,14 +1,31 @@
 ---
-title: "开发资源目录CLI与MCP工具"
-date: 2026-05-13T22:38:17+08:00
+title: 开发资源目录CLI与MCP工具
+date: 2026-05-13 22:38:17+08:00
 draft: false
-entry_kind: "auto"
-tags: ["CLI工具", "MCP协议", "LLM接入", "开发资源", "独立开发者", "Side Project", "开源工具", "命令行"]
-categories: ["开发工具"]
+entry_kind: auto
+tags:
+- CLI工具
+- MCP 协议
+- LLM接入
+- 开发资源
+- 独立开发者
+- Side Project
+- 开源工具
+- 命令行
+categories:
+- 开发工具
 source: juejin
-description: "项目简介 作者将免费开发资源整合为目录，并提供 CLI 与 MCP 客户端，方便在本地或 CI 中快速调用。 目标用户 独立开发者、AI 爱好者，尤其是需要快速接入大语言模型（Groq、OpenRouter、Gemini）进行 Demo 演示或 Side Project 的人群。 核心优势 - 资源免费且持续更新 -"
+description: 项目简介 作者将免费开发资源整合为目录，并提供 CLI 与 MCP 客户端，方便在本地或 CI 中快速调用。 目标用户 独立开发者、AI
+  爱好者，尤其是需要快速接入大语言模型（Groq、OpenRouter、Gemini）进行 Demo 演示或 Side Project 的人群。 核心优势 - 资源免费且持续更新
+  -
 external_url: https://juejin.cn/post/7639286906792427529
-scenarios: ["命令行工具", "大语言模型"]
+scenarios:
+- 命令行工具
+- 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 开发资源目录CLI与MCP工具
@@ -108,6 +125,6 @@ scenarios: ["命令行工具", "大语言模型"]
 - [Claude-File-Recovery：恢复 ~/.claude 会话中的文件]({{< relref "posts/20260227-hacker_news-show-hn-claude-file-recovery-recover-files-from-yo-11.md" >}})
 - [NanoClaw：Karpathy 推荐的技术工具]({{< relref "posts/20260319-juejin-被-karpathy-下场推荐的-nanoclaw-是什么来头-1.md" >}})
 - [🚀测速神器！Cloudflare优选IP，一键提速你的网络🔥]({{< relref "posts/20260126-github_trending-xiu2-cloudflarespeedtest-5.md" >}})
-- [Smooth CLI：面向 AI 智能体的低 Token 开销浏览器]({{< relref "posts/20260206-hacker_news-show-hn-smooth-cli-token-efficient-browser-for-ai--14.md" >}})
-- [通过 CLI 降低 MCP 运行成本]({{< relref "posts/20260226-hacker_news-making-mcp-cheaper-via-cli-4.md" >}})
+- [Smooth CLI：面向 AI 智能体的低 Token 开销浏览器]({{< relref "posts/20260206-hacker_news-show-hn-smooth-cli-token-efficient-browser-for-ai--11.md" >}})
+- [通过 CLI 降低 MCP 运行成本]({{< relref "posts/20260225-hacker_news-making-mcp-cheaper-via-cli-3.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

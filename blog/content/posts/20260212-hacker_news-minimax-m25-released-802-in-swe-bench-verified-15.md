@@ -1,14 +1,32 @@
 ---
-title: "MiniMax M2.5 发布：SWE-bench Verified 得分 80.2%"
-date: 2026-02-12T18:02:05+08:00
+title: MiniMax M2.5 发布：SWE-bench Verified 得分 80.2%
+date: 2026-02-12 18:02:05+08:00
 draft: false
-entry_kind: "auto"
-tags: ["MiniMax", "M2.5", "SWE-bench", "代码生成", "模型发布", "基准测试", "AI 编程", "性能评估"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- MiniMax
+- M2.5
+- SWE-bench
+- 代码生成
+- 模型发布
+- 基准测试
+- AI 编程
+- 性能评估
+categories:
+- 大模型
+- AI 工程
 source: hacker_news
-description: "MiniMax 发布的 M2.5 模型在 SWE-bench Verified 基准测试中取得了 80.2% 的成绩，这一结果超越了 GPT-4o 和 Claude 3.5 Sonnet 等闭源模型，标志着开源代码智能能力的显著突破。对于开发者而言，这意味着利用高性能的开源模型来解决复杂的编程任务已成为可能。本文将详细"
+description: MiniMax 发布的 M2.5 模型在 SWE-bench Verified 基准测试中取得了 80.2% 的成绩，这一结果超越了 GPT-4o
+  和 Claude 3.5 Sonnet 等闭源模型，标志着开源代码智能能力的显著突破。对于开发者而言，这意味着利用高性能的开源模型来解决复杂的编程任务已成为可能。本文将详细
 external_url: https://www.minimax.io/news/minimax-m25
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+aliases:
+- /posts/20260212-hacker_news-minimax-m25-released-802-in-swe-bench-verified-13/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # MiniMax M2.5 发布：SWE-bench Verified 得分 80.2%
@@ -388,8 +406,8 @@ print(generate_swe_bench_test_cases(bug_report))
 ### 相关文章
 
 - [AI代码审查的真实世界基准测试]({{< relref "posts/20260204-hacker_news-a-real-world-benchmark-for-ai-code-review-2.md" >}})
-- [AI 代码审查的真实世界基准测试]({{< relref "posts/20260205-hacker_news-a-real-world-benchmark-for-ai-code-review-3.md" >}})
-- [让 Claude 编写 CUDA 内核并指导开源模型]({{< relref "posts/20260129-blogs_podcasts-we-got-claude-to-build-cuda-kernels-and-teach-open-7.md" >}})
-- [GPT-5.3-Codex：融合推理与编程的智能体模型]({{< relref "posts/20260205-blogs_podcasts-gpt-53-codex-system-card-5.md" >}})
-- [GPT-5.3-Codex：融合推理与编码能力的代理式模型]({{< relref "posts/20260206-blogs_podcasts-gpt-53-codex-system-card-7.md" >}})
+- [AI 代码审查的真实世界基准测试]({{< relref "posts/20260204-hacker_news-a-real-world-benchmark-for-ai-code-review-2.md" >}})
+- [让 Claude 编写 CUDA 内核并指导开源模型]({{< relref "posts/20260129-blogs_podcasts-we-got-claude-to-build-cuda-kernels-and-teach-open-6.md" >}})
+- [GPT-5.3-Codex：融合推理与编程的智能体模型]({{< relref "posts/20260205-blogs_podcasts-gpt-53-codex-system-card-4.md" >}})
+- [GPT-5.3-Codex：融合推理与编码能力的代理式模型]({{< relref "posts/20260205-blogs_podcasts-gpt-53-codex-system-card-4.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

@@ -22,6 +22,10 @@ external_url: http://arxiv.org/abs/2603.11024v1
 scenarios:
 - AI/ML项目
 - 计算机视觉
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AI能否像艺术史学家一样解读视觉语言模型的艺术风格识别机制
@@ -448,7 +452,7 @@ $$ y = w \cdot f(x) + b $$
 ### 相关文章
 
 - [UEval：统一多模态生成基准]({{< relref "posts/20260130-arxiv_ai-ueval-a-benchmark-for-unified-multimodal-generatio-3.md" >}})
-- [UEval：统一多模态生成基准]({{< relref "posts/20260131-arxiv_ai-ueval-a-benchmark-for-unified-multimodal-generatio-3.md" >}})
-- [UEval：统一多模态生成基准]({{< relref "posts/20260202-arxiv_ai-ueval-a-benchmark-for-unified-multimodal-generatio-3.md" >}})
+- [UEval：统一多模态生成基准]({{< relref "posts/20260130-arxiv_ai-ueval-a-benchmark-for-unified-multimodal-generatio-3.md" >}})
+- [UEval：统一多模态生成基准]({{< relref "posts/20260130-arxiv_ai-ueval-a-benchmark-for-unified-multimodal-generatio-3.md" >}})
 - [规模难以克服语用学：报告偏差对视觉语言推理的影响]({{< relref "posts/20260227-arxiv_ai-scale-cant-overcome-pragmatics-the-impact-of-repor-4.md" >}})
-- [规模难以克服语用学：报告偏差对视觉语言推理的影响]({{< relref "posts/20260301-arxiv_ai-scale-cant-overcome-pragmatics-the-impact-of-repor-4.md" >}})
+- [规模难以克服语用学：报告偏差对视觉语言推理的影响]({{< relref "posts/20260227-arxiv_ai-scale-cant-overcome-pragmatics-the-impact-of-repor-4.md" >}})

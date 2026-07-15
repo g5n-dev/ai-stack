@@ -22,6 +22,10 @@ external_url: https://github.com/Krira-Labs/krira-chunker
 scenarios:
 - RAG应用
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Rust 驱动的 RAG 文档分块工具：速度提升 40 倍且内存恒定

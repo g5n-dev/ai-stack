@@ -22,6 +22,10 @@ scenarios:
 - AI/ML项目
 - 大语言模型
 - Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 网页指令与凭证泄露：自动化代理的安全风险

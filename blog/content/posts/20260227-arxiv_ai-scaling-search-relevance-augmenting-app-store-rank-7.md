@@ -21,6 +21,10 @@ description: 本文介绍了如何利用大语言模型（LLM）生成的数据�
 external_url: http://arxiv.org/abs/2602.23234v1
 scenarios:
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 利用大模型生成判断数据提升应用商店排序相关性
@@ -376,7 +380,7 @@ $$ Score(q, d) = w_1 \cdot f_{behavior}(q, d) + w_2 \cdot f_{text}(q, d) $$
 ### 相关文章
 
 - [进化策略导致大语言模型出现灾难性遗忘]({{< relref "posts/20260129-arxiv_ai-evolutionary-strategies-lead-to-catastrophic-forge-0.md" >}})
-- [让 Claude 编写 CUDA 内核并指导开源模型]({{< relref "posts/20260129-blogs_podcasts-we-got-claude-to-build-cuda-kernels-and-teach-open-8.md" >}})
-- [进化策略导致大语言模型出现灾难性遗忘]({{< relref "posts/20260130-arxiv_ai-evolutionary-strategies-lead-to-catastrophic-forge-0.md" >}})
-- [Qwen3-Coder-Next：下一代代码模型架构与性能解析]({{< relref "posts/20260204-hacker_news-qwen3-coder-next-13.md" >}})
-- [Qwen3-Coder-Next：下一代代码模型架构与性能升级]({{< relref "posts/20260204-hacker_news-qwen3-coder-next-17.md" >}})
+- [让 Claude 编写 CUDA 内核并指导开源模型]({{< relref "posts/20260129-blogs_podcasts-we-got-claude-to-build-cuda-kernels-and-teach-open-6.md" >}})
+- [进化策略导致大语言模型出现灾难性遗忘]({{< relref "posts/20260129-arxiv_ai-evolutionary-strategies-lead-to-catastrophic-forge-0.md" >}})
+- [Qwen3-Coder-Next：下一代代码模型架构与性能解析]({{< relref "posts/20260203-hacker_news-qwen3-coder-next-0.md" >}})
+- [Qwen3-Coder-Next：下一代代码模型架构与性能升级]({{< relref "posts/20260203-hacker_news-qwen3-coder-next-0.md" >}})

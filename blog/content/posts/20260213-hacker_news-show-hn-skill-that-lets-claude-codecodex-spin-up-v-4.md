@@ -1,14 +1,36 @@
 ---
-title: "Skill工具：让Claude Code/Codex调用VMs和GPU"
-date: 2026-02-13T20:49:03+08:00
+title: Skill工具：让Claude Code/Codex调用VMs和GPU
+date: 2026-02-13 20:49:03+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Claude", "Codex", "VM", "GPU", "DevOps", "自动化", "云资源", "编程辅助"]
-categories: ["AI 工程", "开发工具"]
+entry_kind: auto
+tags:
+- Claude
+- Codex
+- VM
+- GPU
+- DevOps
+- 自动化
+- 云资源
+- 编程辅助
+categories:
+- AI 工程
+- 开发工具
 source: hacker_news
-description: "随着 AI 辅助编程工具的普及，开发者对算力的需求已不再局限于本地资源。本文介绍了一项名为 Skill 的技术，它允许 Claude Code 或 Codex 直接调用云端 VM 和 GPU，从而将代码生成与资源部署无缝衔接。阅读本文，你将了解该工具的实现原理，以及如何利用它突破本地硬件限制，构建更流畅的云端开发工作流"
+description: 随着 AI 辅助编程工具的普及，开发者对算力的需求已不再局限于本地资源。本文介绍了一项名为 Skill 的技术，它允许 Claude Code
+  或 Codex 直接调用云端 VM 和 GPU，从而将代码生成与资源部署无缝衔接。阅读本文，你将了解该工具的实现原理，以及如何利用它突破本地硬件限制，构建更流畅的云端开发工作流
 external_url: https://cloudrouter.dev
-scenarios: ["DevOps/运维"]
+scenarios:
+- DevOps/运维
+aliases:
+- /posts/20260213-hacker_news-show-hn-skill-that-lets-claude-codecodex-spin-up-v-3/
+- /posts/20260213-hacker_news-show-hn-skill-that-lets-claude-codecodex-spin-up-v-6/
+- /posts/20260214-hacker_news-show-hn-skill-that-lets-claude-codecodex-spin-up-v-19/
+- /posts/20260214-hacker_news-show-hn-skill-that-lets-claude-codecodex-spin-up-v-6/
+- /posts/20260214-hacker_news-show-hn-skill-that-lets-claude-codecodex-spin-up-v-8/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Skill工具：让Claude Code/Codex调用VMs和GPU
@@ -470,9 +492,9 @@ create_gpu_pod("gpu-pod-example", gpu_count=2)
 
 ### 相关文章
 
-- [LNAI：统一定义 AI 编码工具配置并同步至多端]({{< relref "posts/20260203-hacker_news-lnai-define-ai-coding-tool-configs-once-sync-to-cl-9.md" >}})
-- [Claude Code：面向基础设施开发的AI编程工具]({{< relref "posts/20260205-hacker_news-claude-code-for-infrastructure-12.md" >}})
-- [Claude Code：面向基础设施的编程工具]({{< relref "posts/20260205-hacker_news-claude-code-for-infrastructure-15.md" >}})
-- [Claude Code：面向基础设施的AI编程助手]({{< relref "posts/20260205-hacker_news-claude-code-for-infrastructure-2.md" >}})
-- [Claude Code 发布：面向基础设施的编程工具]({{< relref "posts/20260205-hacker_news-claude-code-for-infrastructure-7.md" >}})
+- [LNAI：统一定义 AI 编码工具配置并同步至多端]({{< relref "posts/20260203-hacker_news-lnai-define-ai-coding-tool-configs-once-sync-to-cl-3.md" >}})
+- [Claude Code：面向基础设施开发的AI编程工具]({{< relref "posts/20260204-hacker_news-claude-code-for-infrastructure-11.md" >}})
+- [Claude Code：面向基础设施的编程工具]({{< relref "posts/20260204-hacker_news-claude-code-for-infrastructure-11.md" >}})
+- [Claude Code：面向基础设施的AI编程助手]({{< relref "posts/20260204-hacker_news-claude-code-for-infrastructure-11.md" >}})
+- [Claude Code 发布：面向基础设施的编程工具]({{< relref "posts/20260204-hacker_news-claude-code-for-infrastructure-11.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

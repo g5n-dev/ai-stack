@@ -1,14 +1,30 @@
 ---
-title: "扩散Transformer异常Token处理技术"
-date: 2026-05-07T23:28:57+08:00
+title: 扩散Transformer异常Token处理技术
+date: 2026-05-07 23:28:57+08:00
 draft: false
-entry_kind: "auto"
-tags: ["扩散模型", "Transformer", "异常Token", "寄存器", "图像生成", "ViT", "编码器", "解码器"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- 扩散模型
+- Transformer
+- 异常Token
+- 寄存器
+- 图像生成
+- ViT
+- 编码器
+- 解码器
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "背景 Vision Transformer（ViT）在图像生成模型中也容易出现少量高范数“异常 token”，这些 token 吸引过多注意力，却携带有限的局部信息。 问题 在 Representation Autoencoder–DiT（RAE‑DiT）流水线中，编码器和解噪器均会产生异常 token，尤其在中间层更"
+description: 背景 Vision Transformer（ViT）在图像生成模型中也容易出现少量高范数“异常 token”，这些 token 吸引过多注意力，却携带有限的局部信息。
+  问题 在 Representation Autoencoder–DiT（RAE‑DiT）流水线中，编码器和解噪器均会产生异常 token，尤其在中间层更
 external_url: http://arxiv.org/abs/2605.05206v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 扩散Transformer异常Token处理技术
@@ -121,8 +137,8 @@ Vision Transformer（ViT）在图像生成模型中也容易出现少量高范�
 ### 相关文章
 
 - [PixelGen：引入感知损失的像素扩散模型性能超越潜在扩散]({{< relref "posts/20260203-arxiv_ai-pixelgen-pixel-diffusion-beats-latent-diffusion-wi-2.md" >}})
-- [超越VLM奖励：扩散原生潜在奖励建模]({{< relref "posts/20260213-arxiv_ai-beyond-vlm-based-rewards-diffusion-native-latent-r-3.md" >}})
+- [超越VLM奖励：扩散原生潜在奖励建模]({{< relref "posts/20260212-arxiv_ai-beyond-vlm-based-rewards-diffusion-native-latent-r-3.md" >}})
 - [模式寻优结合均值寻优实现快速长视频生成]({{< relref "posts/20260302-arxiv_ai-mode-seeking-meets-mean-seeking-for-fast-long-vide-0.md" >}})
-- [MonarchRT：面向实时视频生成的高效注意力机制]({{< relref "posts/20260216-arxiv_ai-monarchrt-efficient-attention-for-real-time-video--7.md" >}})
-- [Mercury 2：基于扩散模型的快速推理大语言模型]({{< relref "posts/20260225-hacker_news-mercury-2-fast-reasoning-llm-powered-by-diffusion-5.md" >}})
+- [MonarchRT：面向实时视频生成的高效注意力机制]({{< relref "posts/20260213-arxiv_ai-monarchrt-efficient-attention-for-real-time-video--7.md" >}})
+- [Mercury 2：基于扩散模型的快速推理大语言模型]({{< relref "posts/20260225-hacker_news-mercury-2-the-fastest-reasoning-llm-powered-by-dif-19.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

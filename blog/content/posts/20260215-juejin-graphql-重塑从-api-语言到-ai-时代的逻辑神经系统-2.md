@@ -1,14 +1,33 @@
 ---
-title: "GraphQL：从API语言到AI时代的逻辑神经系统"
-date: 2026-02-15T12:10:18+08:00
+title: GraphQL：从API语言到AI时代的逻辑神经系统
+date: 2026-02-15 12:10:18+08:00
 draft: false
-entry_kind: "auto"
-tags: ["GraphQL", "AI 时代", "API 设计", "人机协作", "契约定义", "开发范式", "逻辑神经系统", "REST"]
-categories: ["后端", "AI 工程"]
+entry_kind: auto
+tags:
+- GraphQL
+- AI 时代
+- API 设计
+- 人机协作
+- 契约定义
+- 开发范式
+- 逻辑神经系统
+- REST
+categories:
+- 后端
+- AI 工程
 source: juejin
-description: "这段内容主要阐述了 GraphQL 在人工智能（AI）时代背景下的角色重塑与核心价值。其核心观点总结如下： **1. 角色定位的跃升：从“API 语言”到“AI 时代的母语”** GraphQL 已不再仅仅被视为一种比 REST 更高效的数据查询语言（API 工具），它正在进化为 AI 系统原生的沟通方式。就像自然语言"
+description: 这段内容主要阐述了 GraphQL 在人工智能（AI）时代背景下的角色重塑与核心价值。其核心观点总结如下： **1. 角色定位的跃升：从“API
+  语言”到“AI 时代的母语”** GraphQL 已不再仅仅被视为一种比 REST 更高效的数据查询语言（API 工具），它正在进化为 AI 系统原生的沟通方式。就像自然语言
 external_url: https://juejin.cn/post/7606266576552247323
-scenarios: ["AI/ML项目", "后端开发"]
+scenarios:
+- AI/ML项目
+- 后端开发
+aliases:
+- /posts/20260215-juejin-graphql-重塑从-api-语言到-ai-时代的逻辑神经系统-3/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # GraphQL：从API语言到AI时代的逻辑神经系统
@@ -204,9 +223,9 @@ GraphQL 正从一种单纯的数据查询语言演变为 AI 时代的“逻辑�
 
 ### 相关文章
 
-- [构建 Codex App Server：支持流式传输与工具调用的双向 JSON-RPC API]({{< relref "posts/20260205-blogs_podcasts-unlocking-the-codex-harness-how-we-built-the-app-s-3.md" >}})
-- [构建 Codex App Server：集成 JSON-RPC 实现流式响应与工具调用]({{< relref "posts/20260205-blogs_podcasts-unlocking-the-codex-harness-how-we-built-the-app-s-4.md" >}})
-- [OpenAI Codex 应用：VSCode 分支终结与多任务工作树]({{< relref "posts/20260204-blogs_podcasts-ainews-openai-codex-app-death-of-the-vscode-fork-m-7.md" >}})
+- [构建 Codex App Server：支持流式传输与工具调用的双向 JSON-RPC API]({{< relref "posts/20260204-blogs_podcasts-unlocking-the-codex-harness-how-we-built-the-app-s-1.md" >}})
+- [构建 Codex App Server：集成 JSON-RPC 实现流式响应与工具调用]({{< relref "posts/20260204-blogs_podcasts-unlocking-the-codex-harness-how-we-built-the-app-s-1.md" >}})
+- [OpenAI Codex 应用：VSCode 分支终结与多任务工作树]({{< relref "posts/20260203-blogs_podcasts-ainews-openai-codex-app-death-of-the-vscode-fork-m-0.md" >}})
 - [Codex App Server 构建解析：支持流式与工具调用的双向 JSON-RPC API]({{< relref "posts/20260204-blogs_podcasts-unlocking-the-codex-harness-how-we-built-the-app-s-1.md" >}})
-- [构建 Codex 应用服务器：实现双向 JSON-RPC 与流式进度]({{< relref "posts/20260205-blogs_podcasts-unlocking-the-codex-harness-how-we-built-the-app-s-7.md" >}})
+- [构建 Codex 应用服务器：实现双向 JSON-RPC 与流式进度]({{< relref "posts/20260204-blogs_podcasts-unlocking-the-codex-harness-how-we-built-the-app-s-1.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

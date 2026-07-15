@@ -1,14 +1,29 @@
 ---
-title: "OpenAI报告揭示欧盟AI就业变革趋势"
-date: 2026-06-29T13:31:01+08:00
+title: OpenAI报告揭示欧盟AI就业变革趋势
+date: 2026-06-29 13:31:01+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI就业影响", "自动化风险", "欧盟劳动力", "大模型分析", "职业变革", "产业转型", "人机协同", "技能培训"]
-categories: ["效率与方法论"]
+entry_kind: auto
+tags:
+- AI就业影响
+- 自动化风险
+- 欧盟劳动力
+- 大模型分析
+- 职业变革
+- 产业转型
+- 人机协同
+- 技能培训
+categories:
+- 效率与方法论
 source: blogs_podcasts
-description: "报告概述 OpenAI 发布了一份针对欧盟的 AI 就业影响报告，利用大语言模型模拟 AI 技术的渗透速度，对欧盟成员国的岗位进行分类，评估哪些职业将面临自动化、增长或工作流程重塑。 关键发现 - **自动化风险岗位**：约 30% 的欧盟职位在未来 10‑15 年内可能被 AI 替代，主要集中在制造业流水线、基础客服"
+description: 报告概述 OpenAI 发布了一份针对欧盟的 AI 就业影响报告，利用大语言模型模拟 AI 技术的渗透速度，对欧盟成员国的岗位进行分类，评估哪些职业将面临自动化、增长或工作流程重塑。
+  关键发现 - **自动化风险岗位**：约 30% 的欧盟职位在未来 10‑15 年内可能被 AI 替代，主要集中在制造业流水线、基础客服
 external_url: https://openai.com/index/mapping-ai-jobs-transition-eu
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # OpenAI报告揭示欧盟AI就业变革趋势
@@ -126,8 +141,8 @@ OpenAI发布的报告揭示了人工智能对欧盟劳动力市场的结构性�
 ### 相关文章
 
 - [OpenClaw赋予AI全系统权限引发安全担忧]({{< relref "posts/20260206-hacker_news-openclaw-when-ai-agents-get-full-system-access-sec-14.md" >}})
-- [OpenClaw：AI代理获系统完全访问权限的安全隐忧]({{< relref "posts/20260206-hacker_news-openclaw-when-ai-agents-get-full-system-access-sec-19.md" >}})
-- [设计抗提示注入的AI代理：限制高风险操作与保护敏感数据]({{< relref "posts/20260313-blogs_podcasts-designing-ai-agents-to-resist-prompt-injection-13.md" >}})
+- [OpenClaw：AI代理获系统完全访问权限的安全隐忧]({{< relref "posts/20260206-hacker_news-openclaw-when-ai-agents-get-full-system-access-sec-14.md" >}})
+- [设计抗提示注入的AI代理：限制高风险操作与保护敏感数据]({{< relref "posts/20260311-blogs_podcasts-designing-ai-agents-to-resist-prompt-injection-2.md" >}})
 - [AI代理扫描DN42网络致操作者破产]({{< relref "posts/20260612-hacker_news-ai-agent-bankrupted-their-operator-while-trying-to-0.md" >}})
-- [🔥Show HN: 1人+1智能体=从零打造浏览器! 仅2万行代码🚀]({{< relref "posts/20260128-hacker_news-show-hn-one-human-one-agent-one-browser-from-scrat-16.md" >}})
+- [🔥Show HN: 1人+1智能体=从零打造浏览器! 仅2万行代码🚀]({{< relref "posts/20260127-hacker_news-show-hn-one-human-one-agent-one-browser-from-scrat-7.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

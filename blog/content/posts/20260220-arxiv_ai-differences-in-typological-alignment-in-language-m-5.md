@@ -21,6 +21,14 @@ description: 以下是该内容的中文总结： 本文探究了语言模型（
 external_url: http://arxiv.org/abs/2602.17653v1
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260221-arxiv_ai-differences-in-typological-alignment-in-language-m-5/
+- /posts/20260222-arxiv_ai-differences-in-typological-alignment-in-language-m-5/
+- /posts/20260223-arxiv_ai-differences-in-typological-alignment-in-language-m-5/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 语言模型对差异论元标记处理的类型学对齐差异
@@ -422,7 +430,7 @@ scenarios:
 ### 相关文章
 
 - [视觉语言模型能否通过交互学习直觉物理]({{< relref "posts/20260206-arxiv_ai-can-vision-language-models-learn-intuitive-physics-5.md" >}})
-- [视觉语言模型能否通过交互学习直观物理]({{< relref "posts/20260207-arxiv_ai-can-vision-language-models-learn-intuitive-physics-5.md" >}})
-- [视觉语言模型能否通过交互学习直觉物理]({{< relref "posts/20260208-arxiv_ai-can-vision-language-models-learn-intuitive-physics-5.md" >}})
-- [视觉语言模型能否通过交互学习直观物理]({{< relref "posts/20260209-arxiv_ai-can-vision-language-models-learn-intuitive-physics-5.md" >}})
-- [AI 核心术语解析：从神经网络原理到词嵌入与潜空间]({{< relref "posts/20260211-juejin-ai-名词解释-1.md" >}})
+- [视觉语言模型能否通过交互学习直观物理]({{< relref "posts/20260206-arxiv_ai-can-vision-language-models-learn-intuitive-physics-5.md" >}})
+- [视觉语言模型能否通过交互学习直觉物理]({{< relref "posts/20260206-arxiv_ai-can-vision-language-models-learn-intuitive-physics-5.md" >}})
+- [视觉语言模型能否通过交互学习直观物理]({{< relref "posts/20260206-arxiv_ai-can-vision-language-models-learn-intuitive-physics-5.md" >}})
+- [AI 核心术语解析：从神经网络原理到词嵌入与潜空间]({{< relref "posts/20260211-juejin-ai-名词解释-0.md" >}})

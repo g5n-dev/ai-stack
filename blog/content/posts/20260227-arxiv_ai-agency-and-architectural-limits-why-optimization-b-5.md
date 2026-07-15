@@ -21,6 +21,10 @@ description: 本文针对基于优化的AI系统（特别是通过RLHF训练的�
 external_url: http://arxiv.org/abs/2602.23239v1
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 基于优化的系统为何难以实现规范响应：代理与架构限制
@@ -464,6 +468,6 @@ scenarios:
 
 - [基于文本反馈扩展强化学习的能力]({{< relref "posts/20260203-arxiv_ai-expanding-the-capabilities-of-reinforcement-learni-5.md" >}})
 - [Agent World Model: Infinity Synthetic Environments for]({{< relref "posts/20260211-arxiv_ai-agent-world-model-infinity-synthetic-environments--7.md" >}})
-- [2026年AI展望：LLM、智能体、算力与Scaling Laws]({{< relref "posts/20260202-blogs_podcasts-490-state-of-ai-in-2026-llms-coding-scaling-laws-c-2.md" >}})
-- [2026年AI展望：LLM、智能体、算力与AGI发展路径]({{< relref "posts/20260203-blogs_podcasts-490-state-of-ai-in-2026-llms-coding-scaling-laws-c-2.md" >}})
-- [2026年AI展望：LLM、智能体、缩放定律与中国发展]({{< relref "posts/20260203-blogs_podcasts-490-state-of-ai-in-2026-llms-coding-scaling-laws-c-4.md" >}})
+- [2026年AI展望：LLM、智能体、算力与Scaling Laws]({{< relref "posts/20260201-blogs_podcasts-490-state-of-ai-in-2026-llms-coding-scaling-laws-c-0.md" >}})
+- [2026年AI展望：LLM、智能体、算力与AGI发展路径]({{< relref "posts/20260201-blogs_podcasts-490-state-of-ai-in-2026-llms-coding-scaling-laws-c-0.md" >}})
+- [2026年AI展望：LLM、智能体、缩放定律与中国发展]({{< relref "posts/20260201-blogs_podcasts-490-state-of-ai-in-2026-llms-coding-scaling-laws-c-0.md" >}})

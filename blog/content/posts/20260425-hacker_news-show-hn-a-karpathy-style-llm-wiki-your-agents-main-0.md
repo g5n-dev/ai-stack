@@ -1,14 +1,29 @@
 ---
-title: "Karpathy风格LLM Wiki：代理自动维护Markdown文档"
-date: 2026-04-25T10:14:26+08:00
+title: Karpathy风格LLM Wiki：代理自动维护Markdown文档
+date: 2026-04-25 10:14:26+08:00
 draft: false
-entry_kind: "auto"
-tags: ["LLM代理", "文档自动化", "Markdown", "Git版本控制", "Karpathy风格", "知识管理", "自动维护", "开源项目"]
-categories: ["大模型", "开发工具"]
+entry_kind: auto
+tags:
+- LLM代理
+- 文档自动化
+- Markdown
+- Git版本控制
+- Karpathy风格
+- 知识管理
+- 自动维护
+- 开源项目
+categories:
+- 大模型
+- 开发工具
 source: hacker_news
-description: "本文介绍一种基于 Markdown 和 Git 的 LLM 维基系统，模仿 Karpathy 的做法，让代理（agents）在运行时自动维护文档。通过把知识沉淀在版本化的文本文件中，团队可以实现文档的持续更新、审计回滚以及跨工具的共享。阅读本文后，你可以获取完整的实现思路、关键代码片段以及部署步骤，帮助自己在项目里快速"
+description: 本文介绍一种基于 Markdown 和 Git 的 LLM 维基系统，模仿 Karpathy 的做法，让代理（agents）在运行时自动维护文档。通过把知识沉淀在版本化的文本文件中，团队可以实现文档的持续更新、审计回滚以及跨工具的共享。阅读本文后，你可以获取完整的实现思路、关键代码片段以及部署步骤，帮助自己在项目里快速
 external_url: https://github.com/nex-crm/wuphf
-scenarios: ["大语言模型"]
+scenarios:
+- 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Karpathy风格LLM Wiki：代理自动维护Markdown文档
@@ -52,9 +67,9 @@ scenarios: ["大语言模型"]
 
 ### 相关文章
 
-- [ChatGPT 中文调教指南：场景化提示词与指令优化]({{< relref "posts/20260206-github_trending-plexpt-awesome-chatgpt-prompts-zh-7.md" >}})
-- [ChatGPT 中文调教指南：多场景提示词与使用技巧]({{< relref "posts/20260207-github_trending-plexpt-awesome-chatgpt-prompts-zh-9.md" >}})
-- [ChatGPT中文调教指南：涵盖各类场景的提示词库]({{< relref "posts/20260218-github_trending-plexpt-awesome-chatgpt-prompts-zh-1.md" >}})
-- [ChatGPT 中文调教指南：场景化提示词与指令优化]({{< relref "posts/20260219-github_trending-plexpt-awesome-chatgpt-prompts-zh-1.md" >}})
-- [ChatGPT中文调教指南：多场景提示词与使用技巧]({{< relref "posts/20260219-github_trending-plexpt-awesome-chatgpt-prompts-zh-7.md" >}})
+- [ChatGPT 中文调教指南：场景化提示词与指令优化]({{< relref "posts/20260204-github_trending-plexpt-awesome-chatgpt-prompts-zh-3.md" >}})
+- [ChatGPT 中文调教指南：多场景提示词与使用技巧]({{< relref "posts/20260204-github_trending-plexpt-awesome-chatgpt-prompts-zh-3.md" >}})
+- [ChatGPT中文调教指南：涵盖各类场景的提示词库]({{< relref "posts/20260204-github_trending-plexpt-awesome-chatgpt-prompts-zh-3.md" >}})
+- [ChatGPT 中文调教指南：场景化提示词与指令优化]({{< relref "posts/20260204-github_trending-plexpt-awesome-chatgpt-prompts-zh-3.md" >}})
+- [ChatGPT中文调教指南：多场景提示词与使用技巧]({{< relref "posts/20260204-github_trending-plexpt-awesome-chatgpt-prompts-zh-3.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

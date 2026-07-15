@@ -1,14 +1,41 @@
 ---
-title: "构建Amazon智能体评估框架：通用工作流与Bedrock指标库"
-date: 2026-02-18T22:40:49+08:00
+title: 构建Amazon智能体评估框架：通用工作流与Bedrock指标库
+date: 2026-02-18 22:40:49+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI Agent", "评估框架", "Amazon Bedrock", "AgentCore", "工作流", "系统评估", "指标库", "LLM"]
-categories: ["AI 工程", "大模型"]
+entry_kind: auto
+tags:
+- AI Agent
+- 评估框架
+- Amazon Bedrock
+- AgentCore
+- 工作流
+- 系统评估
+- 指标库
+- LLM
+categories:
+- AI 工程
+- 大模型
 source: blogs_podcasts
-description: "本文介绍了亚马逊构建代理AI系统的实践经验，并提出了一套全面的评估框架，旨在应对代理AI应用的复杂性。该框架主要包含两个核心组成部分： 1. **通用评估工作流**：通过标准化的程序，对各种不同的代理实现进行统一的评估。 2. **代理评估库**：在 Amazon Bedrock AgentCore Evaluatio"
+description: 本文介绍了亚马逊构建代理AI系统的实践经验，并提出了一套全面的评估框架，旨在应对代理AI应用的复杂性。该框架主要包含两个核心组成部分： 1.
+  **通用评估工作流**：通过标准化的程序，对各种不同的代理实现进行统一的评估。 2. **代理评估库**：在 Amazon Bedrock AgentCore
+  Evaluatio
 external_url: https://aws.amazon.com/blogs/machine-learning/evaluating-ai-agents-real-world-lessons-from-building-agentic-systems-at-amazon
-scenarios: ["AI/ML项目", "大语言模型", "Web应用开发"]
+scenarios:
+- AI/ML项目
+- 大语言模型
+- Web应用开发
+aliases:
+- /posts/20260219-blogs_podcasts-evaluating-ai-agents-real-world-lessons-from-build-1/
+- /posts/20260219-blogs_podcasts-evaluating-ai-agents-real-world-lessons-from-build-13/
+- /posts/20260219-blogs_podcasts-evaluating-ai-agents-real-world-lessons-from-build-14/
+- /posts/20260219-blogs_podcasts-evaluating-ai-agents-real-world-lessons-from-build-2/
+- /posts/20260219-blogs_podcasts-evaluating-ai-agents-real-world-lessons-from-build-5/
+- /posts/20260219-blogs_podcasts-evaluating-ai-agents-real-world-lessons-from-build-6/
+- /posts/20260219-blogs_podcasts-evaluating-ai-agents-real-world-lessons-from-build-7/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 构建Amazon智能体评估框架：通用工作流与Bedrock指标库
@@ -269,9 +296,9 @@ scenarios: ["AI/ML项目", "大语言模型", "Web应用开发"]
 
 ### 相关文章
 
-- [Amazon Bedrock AgentCore 浏览器功能更新：支持代理、配置文件与扩展]({{< relref "posts/20260217-blogs_podcasts-customize-ai-agent-browsing-with-proxies-profiles--2.md" >}})
-- [Amazon Bedrock AgentCore 浏览器新增代理、配置文件及扩展支持]({{< relref "posts/20260218-blogs_podcasts-customize-ai-agent-browsing-with-proxies-profiles--14.md" >}})
-- [Kirara-AI：支持多平台接入的多模态聊天机器人框架]({{< relref "posts/20260130-github_trending-lss233-kirara-ai-2.md" >}})
-- [Agent Skills：智能体技能评估与开源框架]({{< relref "posts/20260204-hacker_news-agent-skills-7.md" >}})
+- [Amazon Bedrock AgentCore 浏览器功能更新：支持代理、配置文件与扩展]({{< relref "posts/20260213-blogs_podcasts-customize-ai-agent-browsing-with-proxies-profiles--0.md" >}})
+- [Amazon Bedrock AgentCore 浏览器新增代理、配置文件及扩展支持]({{< relref "posts/20260213-blogs_podcasts-customize-ai-agent-browsing-with-proxies-profiles--0.md" >}})
+- [Kirara-AI：支持多平台接入的多模态聊天机器人框架]({{< relref "posts/20260127-github_trending-lss233-kirara-ai-2.md" >}})
+- [Agent Skills：智能体技能评估与开源框架]({{< relref "posts/20260203-hacker_news-agent-skills-0.md" >}})
 - [软件工厂与代理体时刻]({{< relref "posts/20260207-hacker_news-software-factories-and-the-agentic-moment-4.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

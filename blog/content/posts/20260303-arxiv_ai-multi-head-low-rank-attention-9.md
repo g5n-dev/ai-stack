@@ -21,6 +21,12 @@ description: 本文介绍了一种名为 **Multi-Head Low-Rank Attention (MLRA)*
 external_url: http://arxiv.org/abs/2603.02188v1
 scenarios:
 - AI/ML项目
+aliases:
+- /posts/20260304-arxiv_ai-multi-head-low-rank-attention-9/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 多头低秩注意力机制
@@ -432,8 +438,8 @@ Multi-Head Low-Rank Attention 特别适合长序列任务，因为 $O(N \cdot d_
 
 ### 相关文章
 
-- [基于对称性泰勒近似实现恒定每Token成本注意力机制]({{< relref "posts/20260204-hacker_news-attention-at-constant-cost-per-token-via-symmetry--3.md" >}})
-- [基于对称感知泰勒近似实现恒定Token成本注意力机制]({{< relref "posts/20260204-hacker_news-attention-at-constant-cost-per-token-via-symmetry--4.md" >}})
-- [基于对称性泰勒近似实现恒定Token成本注意力机制]({{< relref "posts/20260204-hacker_news-attention-at-constant-cost-per-token-via-symmetry--6.md" >}})
-- [对称感知泰勒近似实现恒定Token成本注意力机制]({{< relref "posts/20260205-hacker_news-attention-at-constant-cost-per-token-via-symmetry--12.md" >}})
-- [基于对称感知泰勒近似实现恒定Token成本注意力机制]({{< relref "posts/20260205-hacker_news-attention-at-constant-cost-per-token-via-symmetry--14.md" >}})
+- [基于对称性泰勒近似实现恒定每Token成本注意力机制]({{< relref "posts/20260204-hacker_news-attention-at-constant-cost-per-token-via-symmetry--0.md" >}})
+- [基于对称感知泰勒近似实现恒定Token成本注意力机制]({{< relref "posts/20260204-hacker_news-attention-at-constant-cost-per-token-via-symmetry--0.md" >}})
+- [基于对称性泰勒近似实现恒定Token成本注意力机制]({{< relref "posts/20260204-hacker_news-attention-at-constant-cost-per-token-via-symmetry--0.md" >}})
+- [对称感知泰勒近似实现恒定Token成本注意力机制]({{< relref "posts/20260204-hacker_news-attention-at-constant-cost-per-token-via-symmetry--0.md" >}})
+- [基于对称感知泰勒近似实现恒定Token成本注意力机制]({{< relref "posts/20260204-hacker_news-attention-at-constant-cost-per-token-via-symmetry--0.md" >}})

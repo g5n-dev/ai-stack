@@ -1,14 +1,29 @@
 ---
-title: "训练LRM模型：自适应反思与长度协调惩罚提升推理效率"
-date: 2026-02-13T03:01:31+08:00
+title: 训练LRM模型：自适应反思与长度协调惩罚提升推理效率
+date: 2026-02-13 03:01:31+08:00
 draft: false
-entry_kind: "auto"
-tags: ["LRM", "推理效率", "自适应反思", "长度协调惩罚", "CoT", "Test-time Scaling", "模型训练", "AI优化"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- LRM
+- 推理效率
+- 自适应反思
+- 长度协调惩罚
+- CoT
+- Test-time Scaling
+- 模型训练
+- AI优化
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "**论文总结：停止不必要的反思——利用自适应反思与长度协调惩罚训练高效推理的大模型** **1. 研究背景与问题** 大型推理模型（LRMs）通常利用测试时扩展技术来处理复杂推理任务。然而，这些模型往往生成过长的思维链，包含大量不必要的反思（如重复的自我提问和循环推理）。这不仅导致高昂的Token消耗和计算延迟，而且并"
+description: '**论文总结：停止不必要的反思——利用自适应反思与长度协调惩罚训练高效推理的大模型** **1. 研究背景与问题** 大型推理模型（LRMs）通常利用测试时扩展技术来处理复杂推理任务。然而，这些模型往往生成过长的思维链，包含大量不必要的反思（如重复的自我提问和循环推理）。这不仅导致高昂的Token消耗和计算延迟，而且并'
 external_url: http://arxiv.org/abs/2602.12113v1
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 训练LRM模型：自适应反思与长度协调惩罚提升推理效率
@@ -525,9 +540,9 @@ $$ R_{total} = R_{accuracy} - \alpha \cdot R_{reflection} - \lambda(c) \cdot R_{
 
 ### 相关文章
 
-- [训练LLM采用分治推理提升测试时扩展性]({{< relref "posts/20260204-arxiv_ai-training-llms-for-divide-and-conquer-reasoning-ele-7.md" >}})
+- [训练LLM采用分治推理提升测试时扩展性]({{< relref "posts/20260203-arxiv_ai-training-llms-for-divide-and-conquer-reasoning-ele-7.md" >}})
 - [FineInstructions：将合成指令数据扩展至预训练规模]({{< relref "posts/20260130-arxiv_ai-fineinstructions-scaling-synthetic-instructions-to-7.md" >}})
 - [基于文本反馈扩展强化学习的能力]({{< relref "posts/20260203-arxiv_ai-expanding-the-capabilities-of-reinforcement-learni-5.md" >}})
-- [训练万亿参数模型以生成幽默内容]({{< relref "posts/20260203-hacker_news-training-a-trillion-parameter-model-to-be-funny-18.md" >}})
-- [The Little Learner：通往深度学习的直线路径]({{< relref "posts/20260211-hacker_news-the-little-learner-a-straight-line-to-deep-learnin-7.md" >}})
+- [训练万亿参数模型以生成幽默内容]({{< relref "posts/20260203-hacker_news-training-a-trillion-parameter-model-to-be-funny-15.md" >}})
+- [The Little Learner：通往深度学习的直线路径]({{< relref "posts/20260210-hacker_news-the-little-learner-a-straight-line-to-deep-learnin-5.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

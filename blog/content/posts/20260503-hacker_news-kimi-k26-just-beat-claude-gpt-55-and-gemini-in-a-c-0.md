@@ -1,14 +1,29 @@
 ---
-title: "Kimi K2.6编程挑战击败三大AI模型"
-date: 2026-05-03T06:21:46+08:00
+title: Kimi K2.6编程挑战击败三大AI模型
+date: 2026-05-03 06:21:46+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Kimi K2.6", "编程挑战", "大模型评测", "AI模型对比", "Claude", "GPT", "Gemini", "月之暗面"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- Kimi K2.6
+- 编程挑战
+- 大模型评测
+- AI模型对比
+- Claude
+- GPT
+- Gemini
+- 月之暗面
+categories:
+- 大模型
+- AI 工程
 source: hacker_news
-description: "Kimi K2.6近日在一项编程挑战中超越了Claude、GPT-5.5和Gemini等多个主流大语言模型。测试覆盖代码生成、调试与性能优化等实际开发常见任务，全面评估了各模型在真实场景下的表现。随着AI编程工具的快速迭代，各模型之间的性能差距正逐渐缩小，但对开发者而言，选择最合适的工具仍然需要可靠的数据支撑。通过分析"
+description: Kimi K2.6近日在一项编程挑战中超越了Claude、GPT-5.5和Gemini等多个主流大语言模型。测试覆盖代码生成、调试与性能优化等实际开发常见任务，全面评估了各模型在真实场景下的表现。随着AI编程工具的快速迭代，各模型之间的性能差距正逐渐缩小，但对开发者而言，选择最合适的工具仍然需要可靠的数据支撑。通过分析
 external_url: https://thinkpol.ca/2026/04/30/an-open-weights-chinese-model-just-beat-claude-gpt-5-5-and-gemini-in-a-programming-challenge
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Kimi K2.6编程挑战击败三大AI模型
@@ -83,7 +98,7 @@ Kimi K2.6 在编程挑战中取得领先，这既是国产大模型能力跃升�
 
 - [Agent Alcove：支持多模型在论坛中进行辩论]({{< relref "posts/20260211-hacker_news-show-hn-agent-alcove-claude-gpt-and-gemini-debate--17.md" >}})
 - [Gemini 2.5 Pro实测：同API对比三款大模型找Bug能力]({{< relref "posts/20260222-juejin-gemini-31-pro-发布-3-天我用同一个-api-跑了-3-家大模型横评结果有点意外-1.md" >}})
-- [OpenAI 与 Anthropic 之争：Claude Opus 4.6 对决 GPT 5.3 Codex]({{< relref "posts/20260206-blogs_podcasts-ainews-openai-and-anthropic-go-to-war-claude-opus--2.md" >}})
-- [OpenAI 对决 Anthropic：Claude Opus 4.6 挑战 GPT-5.3 Codex]({{< relref "posts/20260207-blogs_podcasts-ainews-openai-and-anthropic-go-to-war-claude-opus--2.md" >}})
-- [OpenAI 对决 Anthropic：Claude Opus 4.6 挑战 GPT-5.3 Codex]({{< relref "posts/20260209-blogs_podcasts-ainews-openai-and-anthropic-go-to-war-claude-opus--5.md" >}})
+- [OpenAI 与 Anthropic 之争：Claude Opus 4.6 对决 GPT 5.3 Codex]({{< relref "posts/20260206-blogs_podcasts-ainews-openai-and-anthropic-go-to-war-claude-opus--0.md" >}})
+- [OpenAI 对决 Anthropic：Claude Opus 4.6 挑战 GPT-5.3 Codex]({{< relref "posts/20260206-blogs_podcasts-ainews-openai-and-anthropic-go-to-war-claude-opus--0.md" >}})
+- [OpenAI 对决 Anthropic：Claude Opus 4.6 挑战 GPT-5.3 Codex]({{< relref "posts/20260206-blogs_podcasts-ainews-openai-and-anthropic-go-to-war-claude-opus--0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

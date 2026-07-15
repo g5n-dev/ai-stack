@@ -1,14 +1,31 @@
 ---
-title: "如何进入前沿AI实验室从事预训练工作"
-date: 2026-05-19T13:00:38+08:00
+title: 如何进入前沿AI实验室从事预训练工作
+date: 2026-05-19 13:00:38+08:00
 draft: false
-entry_kind: "auto"
-tags: ["预训练", "大模型求职", "分布式训练", "机器学习基础", "面试技巧", "开源项目", "学术论文", "社区人脉"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- 预训练
+- 大模型求职
+- 分布式训练
+- 机器学习基础
+- 面试技巧
+- 开源项目
+- 学术论文
+- 社区人脉
+categories:
+- 大模型
+- AI 工程
 source: blogs_podcasts
-description: "本文分享在顶尖前沿实验室（如大型语言模型或强化学习研究团队）求职的经验，重点在于 pretraining 阶段的准备。主要建议包括： 关键技能 - 夯实机器学习与深度学习基础，熟悉 Transformer、Diffusion 等主流架构； - 掌握大规模分布式训练技巧，包括数据并行、模型并行、混合精度、梯度累积等。 项"
+description: 本文分享在顶尖前沿实验室（如大型语言模型或强化学习研究团队）求职的经验，重点在于 pretraining 阶段的准备。主要建议包括： 关键技能
+  - 夯实机器学习与深度学习基础，熟悉 Transformer、Diffusion 等主流架构； - 掌握大规模分布式训练技巧，包括数据并行、模型并行、混合精度、梯度累积等。
+  项
 external_url: https://www.latent.space/p/ainews-how-to-land-a-job-at-a-frontier
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 如何进入前沿AI实验室从事预训练工作
@@ -127,9 +144,9 @@ scenarios: ["Web应用开发"]
 
 ### 相关文章
 
-- [Hexagon 利用 SageMaker HyperPod 加速分割模型预训练]({{< relref "posts/20260224-blogs_podcasts-accelerating-ai-model-production-at-hexagon-with-a-13.md" >}})
-- [通过低秩近似优化大模型动量状态以降低显存占用]({{< relref "posts/20260303-arxiv_ai-taming-momentum-rethinking-optimizer-states-throug-4.md" >}})
+- [Hexagon 利用 SageMaker HyperPod 加速分割模型预训练]({{< relref "posts/20260223-blogs_podcasts-accelerating-ai-model-production-at-hexagon-with-a-1.md" >}})
+- [通过低秩近似优化大模型动量状态以降低显存占用]({{< relref "posts/20260302-arxiv_ai-taming-momentum-rethinking-optimizer-states-throug-4.md" >}})
 - [利用逻辑选项预训练提升深度强化学习]({{< relref "posts/20260309-arxiv_ai-boosting-deep-reinforcement-learning-using-pretrai-5.md" >}})
 - [Nova Forge SDK 训练 Amazon Nova 模型教程]({{< relref "posts/20260319-blogs_podcasts-kick-off-nova-customization-experiments-using-nova-8.md" >}})
-- [2026年AI展望：LLM、智能体、算力与Scaling Laws]({{< relref "posts/20260202-blogs_podcasts-490-state-of-ai-in-2026-llms-coding-scaling-laws-c-2.md" >}})
+- [2026年AI展望：LLM、智能体、算力与Scaling Laws]({{< relref "posts/20260201-blogs_podcasts-490-state-of-ai-in-2026-llms-coding-scaling-laws-c-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

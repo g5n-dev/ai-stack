@@ -1,14 +1,30 @@
 ---
-title: "VLMs对描述内容的视觉感知机制研究"
-date: 2026-06-15T23:58:25+08:00
+title: VLMs对描述内容的视觉感知机制研究
+date: 2026-06-15 23:58:25+08:00
 draft: false
-entry_kind: "auto"
-tags: ["视觉语言模型", "注意力头", "可解释性", "多模态模型", "推理时控制", "模型干预", "COCO数据集", "漫画面板"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- 视觉语言模型
+- 注意力头
+- 可解释性
+- 多模态模型
+- 推理时控制
+- 模型干预
+- COCO数据集
+- 漫画面板
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "研究背景与方法 视觉‑语言模型（VLM）在生成图像描述时内部机制不透明。通过在漫画条（叙事顺序对应空间布局）中引入受控实验，利用少量前向传播的相关系数得分，研究者发现了模型语言主干中一小批专门的注意力头，将其称为**gaze heads**。这些头在生成描述时跟踪模型当前所指的图像区域。 关键发现 - **定位与追踪*"
+description: 研究背景与方法 视觉‑语言模型（VLM）在生成图像描述时内部机制不透明。通过在漫画条（叙事顺序对应空间布局）中引入受控实验，利用少量前向传播的相关系数得分，研究者发现了模型语言主干中一小批专门的注意力头，将其称为**gaze
+  heads**。这些头在生成描述时跟踪模型当前所指的图像区域。 关键发现 - **定位与追踪*
 external_url: http://arxiv.org/abs/2606.14703v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # VLMs对描述内容的视觉感知机制研究

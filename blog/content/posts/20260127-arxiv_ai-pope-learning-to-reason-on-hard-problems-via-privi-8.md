@@ -1,12 +1,29 @@
 ---
-title: "🔥POPE：用特权探索让AI学会解决复杂难题！"
-date: 2026-01-27T23:10:51+08:00
+title: 🔥POPE：用特权探索让AI学会解决复杂难题！
+date: 2026-01-27 23:10:51+08:00
 draft: false
-entry_kind: "auto"
-tags: ["强化学习", "LLM", "推理能力", "POPE", "RL", "特权探索", "探索策略", "奖励稀疏"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- 强化学习
+- LLM
+- 推理能力
+- POPE
+- RL
+- 特权探索
+- 探索策略
+- 奖励稀疏
+categories:
+- 大模型
+- 论文
 source: arxiv
 external_url: http://arxiv.org/abs/2601.18779v1
+scenarios: []
+aliases:
+- /posts/20260128-arxiv_ai-pope-learning-to-reason-on-hard-problems-via-privi-8/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 📚 🔥POPE：用特权探索让AI学会解决复杂难题！

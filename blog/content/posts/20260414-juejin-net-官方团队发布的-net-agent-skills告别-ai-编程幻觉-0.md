@@ -1,14 +1,32 @@
 ---
-title: "官方.NET Agent Skills解决AI编程幻觉"
-date: 2026-04-14T15:49:20+08:00
+title: 官方.NET Agent Skills解决AI编程幻觉
+date: 2026-04-14 15:49:20+08:00
 draft: false
-entry_kind: "auto"
-tags: ["NET Agent Skills", "AI编程幻觉", "开发工具", "提示词工程", "代码生成", "NET 10", "GitHub Copilot", "编程助手"]
-categories: ["开发工具", "AI 工程"]
+entry_kind: auto
+tags:
+- NET Agent Skills
+- AI编程幻觉
+- 开发工具
+- 提示词工程
+- 代码生成
+- NET 10
+- GitHub Copilot
+- 编程助手
+categories:
+- 开发工具
+- AI 工程
 source: juejin
-description: "背景 AI 编程助手在生成代码时经常出现“幻觉”，提供的方案往往不符合 .NET 生态，如 Java 示例或已废弃的 API，尤其在使用 .NET 10 + Minimal API 时更为明显。 .NET Agent Skills 是什么 .NET 官方团队推出的 .NET Agent Skills 是一套专门为 AI"
+description: 背景 AI 编程助手在生成代码时经常出现“幻觉”，提供的方案往往不符合 .NET 生态，如 Java 示例或已废弃的 API，尤其在使用
+  .NET 10 + Minimal API 时更为明显。 .NET Agent Skills 是什么 .NET 官方团队推出的 .NET Agent Skills
+  是一套专门为 AI
 external_url: https://juejin.cn/post/7628492748772950067
-scenarios: ["AI/ML项目", "后端开发"]
+scenarios:
+- AI/ML项目
+- 后端开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 官方.NET Agent Skills解决AI编程幻觉
@@ -113,9 +131,9 @@ AI 编程助手在生成代码时经常出现“幻觉”，提供的方案往�
 
 ### 相关文章
 
-- [Codex 应用：基于 OpenAI 模型的代码生成工具]({{< relref "posts/20260203-hacker_news-the-codex-app-12.md" >}})
-- [Codex 应用：基于 GPT-3 的编程助手]({{< relref "posts/20260203-hacker_news-the-codex-app-6.md" >}})
-- [Codex与Claude支持自定义内核]({{< relref "posts/20260218-blogs_podcasts-custom-kernels-for-all-from-codex-and-claude-12.md" >}})
-- [OpenClaw实测：AI编程工具的安装体验与实战应用]({{< relref "posts/20260223-juejin-装了-openclaw-一个月每天叫醒我的不是梦想ai编程ai编程实战ai出海-1.md" >}})
-- [2025年12月AI动态回顾：代码开发范式已发生根本性变革]({{< relref "posts/20260226-blogs_podcasts-ainews-wtf-happened-in-december-2025-11.md" >}})
+- [Codex 应用：基于 OpenAI 模型的代码生成工具]({{< relref "posts/20260202-hacker_news-the-codex-app-1.md" >}})
+- [Codex 应用：基于 GPT-3 的编程助手]({{< relref "posts/20260202-hacker_news-the-codex-app-1.md" >}})
+- [Codex与Claude支持自定义内核]({{< relref "posts/20260213-blogs_podcasts-custom-kernels-for-all-from-codex-and-claude-1.md" >}})
+- [OpenClaw实测：AI编程工具的安装体验与实战应用]({{< relref "posts/20260222-juejin-装了-openclaw-一个月每天叫醒我的不是梦想ai编程ai编程实战ai出海-0.md" >}})
+- [2025年12月AI动态回顾：代码开发范式已发生根本性变革]({{< relref "posts/20260226-blogs_podcasts-ainews-wtf-happened-in-december-2025-0.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

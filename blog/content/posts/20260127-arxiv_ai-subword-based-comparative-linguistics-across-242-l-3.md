@@ -1,12 +1,29 @@
 ---
-title: "🌍 跨242种语言！用子词模型解锁比较语言学新视角！"
-date: 2026-01-27T23:10:51+08:00
+title: 🌍 跨242种语言！用子词模型解锁比较语言学新视角！
+date: 2026-01-27 23:10:51+08:00
 draft: false
-entry_kind: "auto"
-tags: ["比较语言学", "子词模型", "BPE", "多语言", "维基百科", "形态学", "词汇相似性", "NLP"]
-categories: ["大模型", "数据"]
+entry_kind: auto
+tags:
+- 比较语言学
+- 子词模型
+- BPE
+- 多语言
+- 维基百科
+- 形态学
+- 词汇相似性
+- NLP
+categories:
+- 大模型
+- 数据
 source: arxiv
 external_url: http://arxiv.org/abs/2601.18791v1
+scenarios: []
+aliases:
+- /posts/20260128-arxiv_ai-subword-based-comparative-linguistics-across-242-l-3/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 📚 🌍 跨242种语言！用子词模型解锁比较语言学新视角！

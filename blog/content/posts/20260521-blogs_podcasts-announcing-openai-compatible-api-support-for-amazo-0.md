@@ -1,14 +1,31 @@
 ---
-title: "Amazon SageMaker AI端点支持OpenAI兼容API"
-date: 2026-05-21T04:06:47+08:00
+title: Amazon SageMaker AI端点支持OpenAI兼容API
+date: 2026-05-21 04:06:47+08:00
 draft: false
-entry_kind: "auto"
-tags: ["SageMaker", "OpenAI兼容API", "实时推理", "LangChain", "云端AI", "低延迟", "模型部署", "API封装"]
-categories: ["AI 工程", "系统与基础设施"]
+entry_kind: auto
+tags:
+- SageMaker
+- OpenAI兼容API
+- 实时推理
+- LangChain
+- 云端AI
+- 低延迟
+- 模型部署
+- API封装
+categories:
+- AI 工程
+- 系统与基础设施
 source: blogs_podcasts
-description: "功能概述 Amazon SageMaker AI 推出与 OpenAI API 兼容的实时推理端点。用户可直接使用 OpenAI SDK、LangChain 或 Strands Agents，只需更换端点 URL 即可在 SageMaker 上调用模型。 使用方法 在原有调用代码中，将 endpoint URL 改为"
+description: 功能概述 Amazon SageMaker AI 推出与 OpenAI API 兼容的实时推理端点。用户可直接使用 OpenAI SDK、LangChain
+  或 Strands Agents，只需更换端点 URL 即可在 SageMaker 上调用模型。 使用方法 在原有调用代码中，将 endpoint URL 改为
 external_url: https://aws.amazon.com/blogs/machine-learning/announcing-openai-compatible-api-support-for-amazon-sagemaker-ai-endpoints
-scenarios: ["AI/ML项目", "后端开发"]
+scenarios:
+- AI/ML项目
+- 后端开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Amazon SageMaker AI端点支持OpenAI兼容API
@@ -132,9 +149,9 @@ Amazon SageMaker AI 推出 OpenAI 兼容 API 支持，本质上是一次面向�
 
 ### 相关文章
 
-- [2025年Amazon SageMaker AI回顾：可观测性、模型定制与托管增强]({{< relref "posts/20260222-blogs_podcasts-amazon-sagemaker-ai-in-2025-a-year-in-review-part--2.md" >}})
-- [2025年回顾：SageMaker AI提升可观测性并优化模型定制与托管]({{< relref "posts/20260223-blogs_podcasts-amazon-sagemaker-ai-in-2025-a-year-in-review-part--4.md" >}})
-- [2025年Amazon SageMaker AI可观测性、模型定制与托管功能增强]({{< relref "posts/20260223-blogs_podcasts-amazon-sagemaker-ai-in-2025-a-year-in-review-part--8.md" >}})
-- [为 Strands 智能体构建 SageMaker 托管 LLM 自定义模型解析器]({{< relref "posts/20260306-blogs_podcasts-building-custom-model-provider-for-strands-agents--9.md" >}})
-- [在SageMaker上部署SGLang并集成Strands代理自定义模型]({{< relref "posts/20260309-blogs_podcasts-building-custom-model-provider-for-strands-agents--10.md" >}})
+- [2025年Amazon SageMaker AI回顾：可观测性、模型定制与托管增强]({{< relref "posts/20260220-blogs_podcasts-amazon-sagemaker-ai-in-2025-a-year-in-review-part--1.md" >}})
+- [2025年回顾：SageMaker AI提升可观测性并优化模型定制与托管]({{< relref "posts/20260220-blogs_podcasts-amazon-sagemaker-ai-in-2025-a-year-in-review-part--1.md" >}})
+- [2025年Amazon SageMaker AI可观测性、模型定制与托管功能增强]({{< relref "posts/20260220-blogs_podcasts-amazon-sagemaker-ai-in-2025-a-year-in-review-part--1.md" >}})
+- [为 Strands 智能体构建 SageMaker 托管 LLM 自定义模型解析器]({{< relref "posts/20260305-blogs_podcasts-building-custom-model-provider-for-strands-agents--2.md" >}})
+- [在SageMaker上部署SGLang并集成Strands代理自定义模型]({{< relref "posts/20260305-blogs_podcasts-building-custom-model-provider-for-strands-agents--2.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

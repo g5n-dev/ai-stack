@@ -1,14 +1,28 @@
 ---
-title: "Claude Opus 4.8 发布"
-date: 2026-05-28T23:45:22+08:00
+title: Claude Opus 4.8 发布
+date: 2026-05-28 23:45:22+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Opus", "4.8发布", "大模型", "Anthropic", "语言模型", "AI模型", "版本更新", "模型升级"]
-categories: ["大模型"]
+entry_kind: auto
+tags:
+- Opus
+- 4.8发布
+- 大模型
+- Anthropic
+- 语言模型
+- AI 模型
+- 版本更新
+- 模型升级
+categories:
+- 大模型
 source: hacker_news
-description: "Claude Opus 4.8 是 AI 研究团队推出的最新语言模型，在上下文理解、多模态交互以及推理效率方面实现了显著提升。本文将详细解析新版本的核心改进点，包括训练数据规模、对话连贯性测试结果以及在实际业务场景中的部署表现，帮助技术决策者和开发者快速判断该模型是否适合自己的需求。"
+description: Claude Opus 4.8 是 AI 研究团队推出的最新语言模型，在上下文理解、多模态交互以及推理效率方面实现了显著提升。本文将详细解析新版本的核心改进点，包括训练数据规模、对话连贯性测试结果以及在实际业务场景中的部署表现，帮助技术决策者和开发者快速判断该模型是否适合自己的需求。
 external_url: https://www.anthropic.com/news/claude-opus-4-8
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Claude Opus 4.8 发布
@@ -79,9 +93,9 @@ Claude Opus 4.8在复杂推理与长文本理解任务上实现了显著提升�
 
 ### 相关文章
 
-- [Claude Opus 4.6 发布]({{< relref "posts/20260206-hacker_news-claude-opus-46-3.md" >}})
-- [Claude Opus 4.6 发布]({{< relref "posts/20260205-hacker_news-claude-opus-46-0.md" >}})
-- [Claude Sonnet 4.6 发布：兼顾长上下文与高性价比]({{< relref "posts/20260218-hacker_news-claude-sonnet-46-5.md" >}})
+- [Claude Opus 4.6 发布]({{< relref "posts/20260205-hacker_news-claude-opus-46-2.md" >}})
+- [Claude Opus 4.6 发布]({{< relref "posts/20260205-hacker_news-claude-opus-46-2.md" >}})
+- [Claude Sonnet 4.6 发布：兼顾长上下文与高性价比]({{< relref "posts/20260217-hacker_news-claude-sonnet-46-0.md" >}})
 - [Anthropic发布Claude Opus 4.7]({{< relref "posts/20260416-hacker_news-claude-opus-47-0.md" >}})
-- [Claude Opus 4.7 发布]({{< relref "posts/20260417-hacker_news-claude-opus-47-0.md" >}})
+- [Claude Opus 4.7 发布]({{< relref "posts/20260416-hacker_news-claude-opus-47-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

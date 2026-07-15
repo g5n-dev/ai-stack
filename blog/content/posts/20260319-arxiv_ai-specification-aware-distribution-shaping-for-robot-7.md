@@ -20,6 +20,12 @@ description: 摘要总结 **标题：机器人基础模型的规格感知分布�
 external_url: http://arxiv.org/abs/2603.17969v1
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260320-arxiv_ai-specification-aware-distribution-shaping-for-robot-7/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 机器人基础模型的规范感知分布塑造
@@ -364,7 +370,7 @@ $$\tilde{\pi}_t = \arg\min_{\pi \in \Pi_{STL}} D_{KL}(\pi \| \pi_\theta)$$
 ### 相关文章
 
 - [增量神经网络验证：基于学习冲突的高效方法]({{< relref "posts/20260313-arxiv_ai-incremental-neural-network-verification-via-learne-9.md" >}})
-- [增量神经网络验证：基于学习冲突的高效方法]({{< relref "posts/20260314-arxiv_ai-incremental-neural-network-verification-via-learne-9.md" >}})
-- [基于学习冲突的增量神经网络验证方法]({{< relref "posts/20260315-arxiv_ai-incremental-neural-network-verification-via-learne-9.md" >}})
+- [增量神经网络验证：基于学习冲突的高效方法]({{< relref "posts/20260313-arxiv_ai-incremental-neural-network-verification-via-learne-9.md" >}})
+- [基于学习冲突的增量神经网络验证方法]({{< relref "posts/20260313-arxiv_ai-incremental-neural-network-verification-via-learne-9.md" >}})
 - [🤖AI竟伪造数学证明？深扒“创意数学”背后的惊人真相！]({{< relref "posts/20260126-hacker_news-case-study-creative-math-how-ai-fakes-proofs-7.md" >}})
 - [心理越狱揭示前沿模型内部冲突]({{< relref "posts/20260205-hacker_news-psychometric-jailbreaks-reveal-internal-conflict-i-10.md" >}})

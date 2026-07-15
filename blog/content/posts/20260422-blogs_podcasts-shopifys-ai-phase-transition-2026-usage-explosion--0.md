@@ -1,14 +1,30 @@
 ---
-title: "ShopifyAI2026：使用激增+无限代币三模型"
-date: 2026-04-22T21:13:13+08:00
+title: ShopifyAI2026：使用激增+无限代币三模型
+date: 2026-04-22 21:13:13+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Shopify", "AI2026", "无限代币", "Opus-4.6", "Tangle", "Tangent", "SimGym", "AI世博会"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- Shopify
+- AI2026
+- 无限代币
+- Opus 4.6
+- Tangle
+- Tangent
+- SimGym
+- AI世博会
+categories:
+- 大模型
+- AI 工程
 source: blogs_podcasts
-description: "Shopify AI 2026 发展动向 2026 年 Shopify 将迎来 AI 使用量的爆发式增长。公司计划为大规模语言模型 Opus‑4.6 提供无限 token 预算，并推出 Tangle、Tangent、SimGym 等新一代 AI 工具。CTO Mikhail Parakhin 表示，这些技术将深度嵌入平"
+description: Shopify AI 2026 发展动向 2026 年 Shopify 将迎来 AI 使用量的爆发式增长。公司计划为大规模语言模型 Opus‑4.6
+  提供无限 token 预算，并推出 Tangle、Tangent、SimGym 等新一代 AI 工具。CTO Mikhail Parakhin 表示，这些技术将深度嵌入平
 external_url: https://www.latent.space/p/shopify
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # ShopifyAI2026：使用激增+无限代币三模型
@@ -89,9 +105,9 @@ Shopify的AI战略正在从实验阶段向大规模生产部署转型，这一�
 
 ### 相关文章
 
-- [Anthropic 发布 MCP Apps 开放标准，定义富生成式 UI 规范]({{< relref "posts/20260129-blogs_podcasts-ainews-anthropic-launches-the-mcp-apps-open-spec-i-9.md" >}})
+- [Anthropic 发布 MCP Apps 开放标准，定义富生成式 UI 规范]({{< relref "posts/20260127-blogs_podcasts-ainews-anthropic-launches-the-mcp-apps-open-spec-i-1.md" >}})
 - [推出全球首个专注科学的人工智能播客及工程师关注理由]({{< relref "posts/20260129-blogs_podcasts-its-time-to-science-0.md" >}})
-- [为何推出首个科学AI播客及工程师应关注的原因]({{< relref "posts/20260129-blogs_podcasts-its-time-to-science-1.md" >}})
-- [推出全球首个科学AI播客：为何AI工程师应关注]({{< relref "posts/20260129-blogs_podcasts-its-time-to-science-4.md" >}})
-- [让 Claude 编写 CUDA 内核并指导开源模型]({{< relref "posts/20260129-blogs_podcasts-we-got-claude-to-build-cuda-kernels-and-teach-open-7.md" >}})
+- [为何推出首个科学AI播客及工程师应关注的原因]({{< relref "posts/20260129-blogs_podcasts-its-time-to-science-0.md" >}})
+- [推出全球首个科学AI播客：为何AI工程师应关注]({{< relref "posts/20260129-blogs_podcasts-its-time-to-science-0.md" >}})
+- [让 Claude 编写 CUDA 内核并指导开源模型]({{< relref "posts/20260129-blogs_podcasts-we-got-claude-to-build-cuda-kernels-and-teach-open-6.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

@@ -1,14 +1,28 @@
 ---
-title: "内核更新内容一览"
-date: 2026-07-06T05:20:32+08:00
+title: 内核更新内容一览
+date: 2026-07-06 05:20:32+08:00
 draft: false
-entry_kind: "auto"
-tags: ["内核更新", "Linux", "内核升级", "补丁", "版本发布", "性能优化", "安全修复", "内核开发"]
-categories: ["系统与基础设施"]
+entry_kind: auto
+tags:
+- 内核更新
+- Linux
+- 内核升级
+- 补丁
+- 版本发布
+- 性能优化
+- 安全修复
+- 内核开发
+categories:
+- 系统与基础设施
 source: blogs_podcasts
-description: "本次 Kernels 更新聚焦于性能优化和接口扩展，以满足大规模并行计算的需求。新增的 GPU 调度机制和自动批处理功能，能够显著缩短训练迭代时间，并降低资源占用。文档同步提供了迁移指南和示例代码，帮助开发者快速适配新特性，确保项目平稳升级，并提升整体工作流效率。"
+description: 本次 Kernels 更新聚焦于性能优化和接口扩展，以满足大规模并行计算的需求。新增的 GPU 调度机制和自动批处理功能，能够显著缩短训练迭代时间，并降低资源占用。文档同步提供了迁移指南和示例代码，帮助开发者快速适配新特性，确保项目平稳升级，并提升整体工作流效率。
 external_url: https://huggingface.co/blog/revamped-kernels
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 内核更新内容一览
@@ -157,8 +171,8 @@ Kernels 本次更新能够在大规模 Transformer 推理中实现 **可量化�
 ### 相关文章
 
 - [Linux 两位大神联手创业！Systemd 之父 Poettering 出击！🚀]({{< relref "posts/20260127-hacker_news-lennart-poettering-christian-brauner-founded-a-new-4.md" >}})
-- [🚀 Systemd核心创始人离职创业！Linux世界将迎巨变？]({{< relref "posts/20260128-hacker_news-lennart-poettering-christian-brauner-founded-a-new-5.md" >}})
+- [🚀 Systemd核心创始人离职创业！Linux世界将迎巨变？]({{< relref "posts/20260127-hacker_news-lennart-poettering-christian-brauner-founded-a-new-4.md" >}})
 - [自旋锁的常见问题与使用陷阱分析]({{< relref "posts/20260129-hacker_news-spinning-around-please-dont-common-problems-with-s-19.md" >}})
-- [FlashAttention-T：张量化注意力机制实现方案]({{< relref "posts/20260204-hacker_news-flashattention-t-towards-tensorized-attention-8.md" >}})
-- [Amazon Bedrock 限流与服务可用性管理指南]({{< relref "posts/20260212-blogs_podcasts-mastering-amazon-bedrock-throttling-and-service-av-12.md" >}})
+- [FlashAttention-T：张量化注意力机制实现方案]({{< relref "posts/20260203-hacker_news-flashattention-t-towards-tensorized-attention-0.md" >}})
+- [Amazon Bedrock 限流与服务可用性管理指南]({{< relref "posts/20260211-blogs_podcasts-mastering-amazon-bedrock-throttling-and-service-av-1.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

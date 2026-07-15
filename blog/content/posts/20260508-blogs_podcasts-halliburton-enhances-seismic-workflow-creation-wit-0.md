@@ -1,14 +1,32 @@
 ---
-title: "哈里伯顿用生成式AI将自然语言查询转为地震工作流程"
-date: 2026-05-08T13:58:16+08:00
+title: 哈里伯顿用生成式AI将自然语言查询转为地震工作流程
+date: 2026-05-08 13:58:16+08:00
 draft: false
-entry_kind: "auto"
-tags: ["生成式AI", "自然语言查询", "地震工作流", "RAG", "Bedrock", "工作流加速", "业务逻辑封装", "安全控制"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- 生成式 AI
+- 自然语言查询
+- 地震工作流
+- RAG
+- Bedrock
+- 工作流加速
+- 业务逻辑封装
+- 安全控制
+categories:
+- 大模型
+- AI 工程
 source: blogs_podcasts
-description: "利用 Amazon Bedrock 与生成式 AI，Halliburton 搭建概念验证，实现自然语言查询自动转化为可执行的地震工作流，并提供针对 Seismic Engine 工具及文档的问答功能。技术方案包括在大语言模型上封装业务逻辑、检索增强生成（RAG）以及工作流模板映射，使系统既能解析用户意图，又能即时生成对"
+description: 利用 Amazon Bedrock 与生成式 AI，Halliburton 搭建概念验证，实现自然语言查询自动转化为可执行的地震工作流，并提供针对
+  Seismic Engine 工具及文档的问答功能。技术方案包括在大语言模型上封装业务逻辑、检索增强生成（RAG）以及工作流模板映射，使系统既能解析用户意图，又能即时生成对
 external_url: https://aws.amazon.com/blogs/machine-learning/halliburton-enhances-seismic-workflow-creation-with-amazon-bedrock-and-generative-ai
-scenarios: ["AI/ML项目", "RAG应用", "命令行工具"]
+scenarios:
+- AI/ML项目
+- RAG应用
+- 命令行工具
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 哈里伯顿用生成式AI将自然语言查询转为地震工作流程
@@ -111,9 +129,9 @@ Halliburton将生成式AI引入地震工作流构建是一次有价值的工业�
 
 ### 相关文章
 
-- [基于 Amazon Bedrock 构建AI招聘系统优化人才获取流程]({{< relref "posts/20260215-blogs_podcasts-ai-meets-hr-transforming-talent-acquisition-with-a-9.md" >}})
-- [利用 Amazon Bedrock 构建AI招聘系统优化人才获取流程]({{< relref "posts/20260216-blogs_podcasts-ai-meets-hr-transforming-talent-acquisition-with-a-10.md" >}})
-- [Lendi 基于 Amazon Bedrock 16周构建房贷AI守护者]({{< relref "posts/20260304-blogs_podcasts-how-lendi-revamped-the-refinance-journey-for-its-c-6.md" >}})
-- [Agent Skills：智能体技能框架]({{< relref "posts/20260203-hacker_news-agent-skills-4.md" >}})
+- [基于 Amazon Bedrock 构建AI招聘系统优化人才获取流程]({{< relref "posts/20260212-blogs_podcasts-ai-meets-hr-transforming-talent-acquisition-with-a-0.md" >}})
+- [利用 Amazon Bedrock 构建AI招聘系统优化人才获取流程]({{< relref "posts/20260212-blogs_podcasts-ai-meets-hr-transforming-talent-acquisition-with-a-0.md" >}})
+- [Lendi 基于 Amazon Bedrock 16周构建房贷AI守护者]({{< relref "posts/20260303-blogs_podcasts-how-lendi-revamped-the-refinance-journey-for-its-c-5.md" >}})
+- [Agent Skills：智能体技能框架]({{< relref "posts/20260203-hacker_news-agent-skills-0.md" >}})
 - [深度解析Skill/MCP/RAG等五大AI技术的底层逻辑]({{< relref "posts/20260212-juejin-深入理解skillmcpragagentopenclaw底层逻辑-2.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

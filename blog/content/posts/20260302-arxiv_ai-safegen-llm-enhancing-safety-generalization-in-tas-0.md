@@ -21,6 +21,10 @@ description: 本文介绍了名为 **SafeGen-LLM** 的大语言模型，旨在�
 external_url: http://arxiv.org/abs/2602.24235v1
 scenarios:
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # SafeGen-LLM：增强机器人系统任务规划的安全泛化能力

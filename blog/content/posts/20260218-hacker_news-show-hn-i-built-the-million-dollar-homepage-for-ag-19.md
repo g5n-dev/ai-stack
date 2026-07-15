@@ -1,14 +1,30 @@
 ---
-title: "Show HN：构建面向智能体的百万美元主页"
-date: 2026-02-18T00:15:54+08:00
+title: Show HN：构建面向智能体的百万美元主页
+date: 2026-02-18 00:15:54+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI Agent", "LLM", "智能体", "Show HN", "产品构建", "百万美元主页", "Agent Store", "AI应用"]
-categories: ["产品与创业", "AI 工程"]
+entry_kind: auto
+tags:
+- AI Agent
+- LLM
+- 智能体
+- Show HN
+- 产品构建
+- 百万美元主页
+- Agent Store
+- AI 应用
+categories:
+- 产品与创业
+- AI 工程
 source: hacker_news
-description: "随着大模型应用的普及，智能体（Agent）正成为新的流量入口，但如何有效聚合并展示这些工具仍是一个难题。本文作者构建了一个面向智能体的“百万美元首页”，试图通过像素广告这一复古形式，探索智能体的分发与展示新模式。文章将详细介绍该项目的构建思路与实现细节，为开发者提供关于智能体商业化与社区运营的参考。"
+description: 随着大模型应用的普及，智能体（Agent）正成为新的流量入口，但如何有效聚合并展示这些工具仍是一个难题。本文作者构建了一个面向智能体的“百万美元首页”，试图通过像素广告这一复古形式，探索智能体的分发与展示新模式。文章将详细介绍该项目的构建思路与实现细节，为开发者提供关于智能体商业化与社区运营的参考。
 external_url: https://onemillionpixels.ai
-scenarios: ["AI/ML项目", "大语言模型"]
+scenarios:
+- AI/ML项目
+- 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Show HN：构建面向智能体的百万美元主页
@@ -472,7 +488,7 @@ DefiMind 利用“Agent Million Dollar Homepage”的概念，在一个由 AI Ag
 
 - [我的AI应用实践与经验总结]({{< relref "posts/20260205-hacker_news-my-ai-adoption-journey-6.md" >}})
 - [一键生成AI员工：自带云端桌面环境]({{< relref "posts/20260207-hacker_news-show-hn-one-click-ai-employee-with-its-own-cloud-d-9.md" >}})
-- [软件工厂与智能体时刻]({{< relref "posts/20260208-hacker_news-software-factories-and-the-agentic-moment-6.md" >}})
-- [Moltis：具备记忆、工具与技能扩展能力的AI助手]({{< relref "posts/20260213-hacker_news-show-hn-moltis-ai-assistant-with-memory-tools-and--15.md" >}})
-- [Zuckerman：具备代码自编辑能力的极简个人AI智能体]({{< relref "posts/20260201-hacker_news-show-hn-zuckerman-minimalist-personal-ai-agent-tha-13.md" >}})
+- [软件工厂与智能体时刻]({{< relref "posts/20260207-hacker_news-software-factories-and-the-agentic-moment-4.md" >}})
+- [Moltis：具备记忆、工具与技能扩展能力的AI助手]({{< relref "posts/20260213-hacker_news-show-hn-moltis-ai-assistant-with-memory-tools-and--7.md" >}})
+- [Zuckerman：具备代码自编辑能力的极简个人AI智能体]({{< relref "posts/20260201-hacker_news-show-hn-zuckerman-minimalist-personal-ai-agent-tha-12.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

@@ -21,6 +21,10 @@ description: 以下是对该内容的中文总结： **标题：** 恰到好处�
 external_url: http://arxiv.org/abs/2603.04064v1
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 轻量级后门攻击针对多编码器扩散模型研究
@@ -422,8 +426,8 @@ $$ h = Wx + \Delta W x = Wx + BAx $$
 
 ### 相关文章
 
-- [文生图模型训练设计：消融实验的经验总结]({{< relref "posts/20260204-blogs_podcasts-training-design-for-text-to-image-models-lessons-f-3.md" >}})
-- [文生图模型训练设计：消融实验的经验总结]({{< relref "posts/20260204-blogs_podcasts-training-design-for-text-to-image-models-lessons-f-4.md" >}})
+- [文生图模型训练设计：消融实验的经验总结]({{< relref "posts/20260203-blogs_podcasts-training-design-for-text-to-image-models-lessons-f-0.md" >}})
+- [文生图模型训练设计：消融实验的经验总结]({{< relref "posts/20260203-blogs_podcasts-training-design-for-text-to-image-models-lessons-f-0.md" >}})
 - [基于表征编码器解锁标准扩散Transformer]({{< relref "posts/20260211-arxiv_ai-learning-on-the-manifold-unlocking-standard-diffus-3.md" >}})
 - [基于标准化的扩散模型对称性重思考与分子图生成]({{< relref "posts/20260217-arxiv_ai-rethinking-diffusion-models-with-symmetries-throug-2.md" >}})
 - [🚀 自回归+掩码扩散：下一代生成式AI！🔥]({{< relref "posts/20260126-arxiv_ai-auto-regressive-masked-diffusion-models-3.md" >}})

@@ -1,14 +1,30 @@
 ---
-title: "Codex开始加密子代理提示词"
-date: 2026-07-14T12:42:01+08:00
+title: Codex开始加密子代理提示词
+date: 2026-07-14 12:42:01+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Codex", "加密", "子代理", "提示词", "AI安全", "隐私保护", "LLM", "提示工程"]
-categories: ["AI 工程", "安全"]
+entry_kind: auto
+tags:
+- Codex
+- 加密
+- 子代理
+- 提示词
+- AI 安全
+- 隐私保护
+- LLM
+- 提示工程
+categories:
+- AI 工程
+- 安全
 source: hacker_news
-description: "Codex 近期宣布对子代理的提示（prompt）进行加密处理，以防止敏感指令在多代理协作过程中被截取或篡改。随着 AI 系统在企业级工作流中的广泛部署，提示的保密性直接影响业务安全与模型行为可控性。本文将解析加密机制的实现原理、适用场景以及开发者如何快速集成该功能，帮助团队提升系统整体的防护水平。"
+description: Codex 近期宣布对子代理的提示（prompt）进行加密处理，以防止敏感指令在多代理协作过程中被截取或篡改。随着 AI 系统在企业级工作流中的广泛部署，提示的保密性直接影响业务安全与模型行为可控性。本文将解析加密机制的实现原理、适用场景以及开发者如何快速集成该功能，帮助团队提升系统整体的防护水平。
 external_url: https://github.com/openai/codex/issues/28058
-scenarios: ["AI/ML项目", "大语言模型"]
+scenarios:
+- AI/ML项目
+- 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Codex开始加密子代理提示词

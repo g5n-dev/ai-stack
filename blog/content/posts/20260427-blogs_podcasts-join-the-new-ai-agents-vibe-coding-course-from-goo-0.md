@@ -1,14 +1,31 @@
 ---
-title: "Google与Kaggle推出AI Agents编程课程"
-date: 2026-04-27T14:11:07+08:00
+title: Google与Kaggle推出AI Agents编程课程
+date: 2026-04-27 14:11:07+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI Agent", "Vibe Coding", "Kaggle", "Google Cloud", "编程课程", "大语言模型", "实战项目", "工具链"]
-categories: ["AI 工程", "开发工具"]
+entry_kind: auto
+tags:
+- AI Agent
+- Vibe Coding
+- Kaggle
+- Google Cloud
+- 编程课程
+- 大语言模型
+- 实战项目
+- 工具链
+categories:
+- AI 工程
+- 开发工具
 source: blogs_podcasts
-description: "课程概述 Google 与 Kaggle 联合推出“AI Agents Vibe Coding”课程，旨在帮助学习者快速掌握构建和部署 AI Agent 的实战技能。课程围绕“Vibe Coding”——即通过自然语言描述生成代码、调试和优化的全新开发模式，结合 Google Cloud 的强大算力和 Kaggle 的"
+description: 课程概述 Google 与 Kaggle 联合推出“AI Agents Vibe Coding”课程，旨在帮助学习者快速掌握构建和部署 AI
+  Agent 的实战技能。课程围绕“Vibe Coding”——即通过自然语言描述生成代码、调试和优化的全新开发模式，结合 Google Cloud 的强大算力和
+  Kaggle 的
 external_url: https://blog.google/innovation-and-ai/technology/developers-tools/kaggle-genai-intensive-course-vibe-coding-june-2026
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Google与Kaggle推出AI Agents编程课程
@@ -126,8 +143,8 @@ Vibe Coding的独特之处在于引入多个AI智能体分工协作。代码生�
 ### 相关文章
 
 - [Smooth CLI：面向 AI 智能体的低 Token 浏览器]({{< relref "posts/20260206-hacker_news-show-hn-smooth-cli-token-efficient-browser-for-ai--11.md" >}})
-- [Chrome DevTools MCP 协议发布]({{< relref "posts/20260316-hacker_news-chrome-devtools-mcp-1.md" >}})
-- [Apideck CLI：比MCP上下文消耗更低的AI代理接口]({{< relref "posts/20260317-hacker_news-apideck-cli-an-ai-agent-interface-with-much-lower--15.md" >}})
+- [Chrome DevTools MCP 协议发布]({{< relref "posts/20260315-hacker_news-let-your-coding-agent-debug-the-browser-session-wi-0.md" >}})
+- [Apideck CLI：比MCP上下文消耗更低的AI代理接口]({{< relref "posts/20260316-hacker_news-apideck-cli-an-ai-agent-interface-with-much-lower--2.md" >}})
 - [构建极简且具倾向性的编程代理的经验总结]({{< relref "posts/20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-1.md" >}})
-- [ElevenLabs 融资 5 亿美元，Cerebras 融资 10 亿美元]({{< relref "posts/20260207-blogs_podcasts-ainews-elevenlabs-500m-series-d-at-11b-cerebras-1b-9.md" >}})
+- [ElevenLabs 融资 5 亿美元，Cerebras 融资 10 亿美元]({{< relref "posts/20260205-blogs_podcasts-ainews-elevenlabs-500m-series-d-at-11b-cerebras-1b-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

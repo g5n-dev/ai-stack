@@ -1,14 +1,31 @@
 ---
-title: "Vercel首席谈代理：软件形态的演进之路"
-date: 2026-07-03T03:11:25+08:00
+title: Vercel首席谈代理：软件形态的演进之路
+date: 2026-07-03 03:11:25+08:00
 draft: false
-entry_kind: "auto"
-tags: ["代理框架", "Vercel", "AI代理", "软件形态", "演进", "沙盒", "开发者工具", "LLM"]
-categories: ["AI 工程"]
+entry_kind: auto
+tags:
+- 代理框架
+- Vercel
+- AI 代理
+- 软件形态
+- 演进
+- 沙盒
+- 开发者工具
+- LLM
+categories:
+- AI 工程
 source: blogs_podcasts
-description: "Vercel首席官Andrew Qu阐述代理为何成为一种全新的软件形态。当系统能够自行规划、调用技能并在沙盒环境中执行时，开发模式面临根本转变。文章深入剖析 eve 框架的设计思路，并提供在可被代理读取的网站上构建可扩展代理的实践要点。随着代理技术在实际业务中的逐步落地，开发者需要重新审视从前端到后端的完整技术栈，以适"
+description: Vercel首席官Andrew Qu阐述代理为何成为一种全新的软件形态。当系统能够自行规划、调用技能并在沙盒环境中执行时，开发模式面临根本转变。文章深入剖析
+  eve 框架的设计思路，并提供在可被代理读取的网站上构建可扩展代理的实践要点。随着代理技术在实际业务中的逐步落地，开发者需要重新审视从前端到后端的完整技术栈，以适
 external_url: https://www.latent.space/p/vercel-agents-new-software
-scenarios: ["AI/ML项目", "大语言模型", "Web应用开发"]
+scenarios:
+- AI/ML项目
+- 大语言模型
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Vercel首席谈代理：软件形态的演进之路
@@ -143,8 +160,8 @@ Agent-readable Website的概念尚处于早期阶段，相关标准和最佳实�
 ### 相关文章
 
 - [用Strands Evals系统评估AI代理的实践指南]({{< relref "posts/20260319-blogs_podcasts-evaluating-ai-agents-for-production-a-practical-gu-10.md" >}})
-- [OpenClaw：GitHub 增长最快的开源 AI 智能体框架]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-4.md" >}})
-- [Claude Code：面向开发者的AI编程助手]({{< relref "posts/20260131-hacker_news-claude-code-is-your-customer-5.md" >}})
-- [Claude Code：面向开发者的AI编程代理]({{< relref "posts/20260131-hacker_news-claude-code-is-your-customer-7.md" >}})
-- [Xcode 26.3 支持开发者直接在 IDE 内调用编程智能体]({{< relref "posts/20260204-hacker_news-xcode-263-developers-can-leverage-coding-agents-di-9.md" >}})
+- [OpenClaw：GitHub 增长最快的开源 AI 智能体框架]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-0.md" >}})
+- [Claude Code：面向开发者的AI编程助手]({{< relref "posts/20260131-hacker_news-claude-code-is-your-customer-16.md" >}})
+- [Claude Code：面向开发者的AI编程代理]({{< relref "posts/20260131-hacker_news-claude-code-is-your-customer-16.md" >}})
+- [Xcode 26.3 支持开发者直接在 IDE 内调用编程智能体]({{< relref "posts/20260203-hacker_news-xcode-263-unlocks-the-power-of-agentic-coding-1.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

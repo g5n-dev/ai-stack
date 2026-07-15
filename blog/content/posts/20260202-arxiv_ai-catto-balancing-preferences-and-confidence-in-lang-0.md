@@ -1,14 +1,29 @@
 ---
-title: "CATTO：平衡语言模型偏好与置信度的方法"
-date: 2026-02-02T02:57:13+08:00
+title: CATTO：平衡语言模型偏好与置信度的方法
+date: 2026-02-02 02:57:13+08:00
 draft: false
-entry_kind: "auto"
-tags: ["LLM", "CATTO", "校准", "置信度", "DPO", "Token级别", "对齐", "cs.LG"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- LLM
+- CATTO
+- 校准
+- 置信度
+- DPO
+- Token级别
+- 对齐
+- cs.LG
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "以下是对该内容的中文总结： **论文核心：CATTO（校准感知的Token级训练目标）** **1. 问题背景** 大型语言模型（LLM）虽然能准确预测下一个Token，但其**预测置信度往往存在校准偏差**。具体表现为：模型给出高置信度的预测可能是错误的，而低置信度的预测却可能是正确的。这种偏差在经过基于偏好的对齐方"
+description: 以下是对该内容的中文总结： **论文核心：CATTO（校准感知的Token级训练目标）** **1. 问题背景** 大型语言模型（LLM）虽然能准确预测下一个Token，但其**预测置信度往往存在校准偏差**。具体表现为：模型给出高置信度的预测可能是错误的，而低置信度的预测却可能是正确的。这种偏差在经过基于偏好的对齐方
 external_url: http://arxiv.org/abs/2601.23096v1
-scenarios: ["大语言模型"]
+scenarios:
+- 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # CATTO：平衡语言模型偏好与置信度的方法
@@ -523,6 +538,6 @@ CATTO 的优势主要体现在：
 - [进化策略导致大语言模型出现灾难性遗忘]({{< relref "posts/20260129-arxiv_ai-evolutionary-strategies-lead-to-catastrophic-forge-0.md" >}})
 - [测试时也能发现新规律？🤯AI解锁动态学习能力！]({{< relref "posts/20260125-arxiv_ai-learning-to-discover-at-test-time-6.md" >}})
 - [🔥LLM训练动力学新突破！可扩展损失景观曲率度量🚀]({{< relref "posts/20260126-arxiv_ai-a-scalable-measure-of-loss-landscape-curvature-for-1.md" >}})
-- [🔥LLM训练动力学新突破！可扩展损失景观曲率度量！]({{< relref "posts/20260127-arxiv_ai-a-scalable-measure-of-loss-landscape-curvature-for-1.md" >}})
-- [💥MortalMATH：当推理目标遇上紧急场景，AI会“翻车”吗？]({{< relref "posts/20260128-arxiv_ai-mortalmath-evaluating-the-conflict-between-reasoni-4.md" >}})
+- [🔥LLM训练动力学新突破！可扩展损失景观曲率度量！]({{< relref "posts/20260126-arxiv_ai-a-scalable-measure-of-loss-landscape-curvature-for-1.md" >}})
+- [💥MortalMATH：当推理目标遇上紧急场景，AI会“翻车”吗？]({{< relref "posts/20260127-arxiv_ai-mortalmath-evaluating-the-conflict-between-reasoni-4.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

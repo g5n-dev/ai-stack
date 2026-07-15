@@ -1,13 +1,30 @@
 ---
-title: "将 Mermaid 图表渲染为 SVG 或 ASCII 文本"
-date: 2026-01-29T05:01:24+08:00
+title: 将 Mermaid 图表渲染为 SVG 或 ASCII 文本
+date: 2026-01-29 05:01:24+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Mermaid", "SVG", "ASCII", "图表渲染", "可视化", "文本生成", "前端工具", "开发者工具"]
-categories: ["开发工具", "前端"]
+entry_kind: auto
+tags:
+- Mermaid
+- SVG
+- ASCII
+- 图表渲染
+- 可视化
+- 文本生成
+- 前端工具
+- 开发者工具
+categories:
+- 开发工具
+- 前端
 source: hacker_news
 external_url: https://github.com/lukilabs/beautiful-mermaid
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+aliases:
+- /posts/20260129-hacker_news-render-mermaid-diagrams-as-svgs-or-ascii-art-1/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 将 Mermaid 图表渲染为 SVG 或 ASCII 文本
@@ -417,8 +434,8 @@ Iceberg 的架构设计涉及多个组件的交互（如 Catalog、Metadata File
 ### 相关文章
 
 - [🚀滴滴开源LogicFlow！流程图神器，极速开发！]({{< relref "posts/20260126-github_trending-didi-logicflow-3.md" >}})
-- [🔥滴滴内部LogicFlow火了！业务逻辑图可视化神器！]({{< relref "posts/20260127-github_trending-didi-logicflow-3.md" >}})
-- [🔥滴滴开源！LogicFlow：流程图神器，拖拽即用！]({{< relref "posts/20260127-github_trending-didi-logicflow-5.md" >}})
-- [🚀 MapLibre Tile：现代高效的矢量瓦片格式，彻底改变地图渲染！]({{< relref "posts/20260127-hacker_news-maplibre-tile-a-modern-and-efficient-vector-tile-f-12.md" >}})
-- [🔥硬核Snow Simulation Toy！雪花模拟黑科技，极致还原，视觉震撼！]({{< relref "posts/20260127-hacker_news-snow-simulation-toy-9.md" >}})
+- [🔥滴滴内部LogicFlow火了！业务逻辑图可视化神器！]({{< relref "posts/20260126-github_trending-didi-logicflow-3.md" >}})
+- [🔥滴滴开源！LogicFlow：流程图神器，拖拽即用！]({{< relref "posts/20260126-github_trending-didi-logicflow-3.md" >}})
+- [🚀 MapLibre Tile：现代高效的矢量瓦片格式，彻底改变地图渲染！]({{< relref "posts/20260126-hacker_news-maplibre-tile-a-modern-and-efficient-vector-tile-f-0.md" >}})
+- [🔥硬核Snow Simulation Toy！雪花模拟黑科技，极致还原，视觉震撼！]({{< relref "posts/20260127-hacker_news-snow-simulation-toy-4.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

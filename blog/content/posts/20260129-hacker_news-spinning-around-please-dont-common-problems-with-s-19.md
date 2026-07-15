@@ -1,13 +1,28 @@
 ---
-title: "自旋锁的常见问题与使用陷阱分析"
-date: 2026-01-29T05:01:24+08:00
+title: 自旋锁的常见问题与使用陷阱分析
+date: 2026-01-29 05:01:24+08:00
 draft: false
-entry_kind: "auto"
-tags: ["自旋锁", "多线程", "并发控制", "死锁", "操作系统内核", "同步机制", "性能优化", "Linux内核"]
-categories: ["系统与基础设施", "后端"]
+entry_kind: auto
+tags:
+- 自旋锁
+- 多线程
+- 并发控制
+- 死锁
+- 操作系统内核
+- 同步机制
+- 性能优化
+- Linux内核
+categories:
+- 系统与基础设施
+- 后端
 source: hacker_news
 external_url: https://www.siliceum.com/en/blog/post/spinning-around
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 自旋锁的常见问题与使用陷阱分析
@@ -468,6 +483,6 @@ ClickHouse 是一个高性能的列式数据库，早期版本在处理并发数
 - [✨无需重构！直接将应用迁移至Cloudflare Workers！🚀]({{< relref "posts/20260126-hacker_news-you-can-just-port-things-to-cloudflare-workers-6.md" >}})
 - [Bf-Tree：面向大规模数据的读写优化并发范围索引]({{< relref "posts/20260129-hacker_news-bf-tree-modern-read-write-optimized-concurrent-lar-10.md" >}})
 - [🚀 Zig内存布局深度解析：公式揭秘！🧠]({{< relref "posts/20260125-hacker_news-memory-layout-in-zig-with-formulas-17.md" >}})
-- [手写Git！从零构建版本控制，硬核极客的极致浪漫 😎]({{< relref "posts/20260127-hacker_news-i-made-my-own-git-9.md" >}})
-- [🚀 1个月！Claude Code助阵10万行TS到Rust的史诗级迁移🔥]({{< relref "posts/20260127-hacker_news-porting-100k-lines-from-typescript-to-rust-using-c-16.md" >}})
+- [手写Git！从零构建版本控制，硬核极客的极致浪漫 😎]({{< relref "posts/20260127-hacker_news-i-made-my-own-git-1.md" >}})
+- [🚀 1个月！Claude Code助阵10万行TS到Rust的史诗级迁移🔥]({{< relref "posts/20260126-hacker_news-porting-100k-lines-from-typescript-to-rust-using-c-1.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

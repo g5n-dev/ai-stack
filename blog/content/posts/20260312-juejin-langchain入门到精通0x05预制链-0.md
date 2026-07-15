@@ -12,6 +12,10 @@ description: LangChain 的 LCEL 语法虽然灵活，但在实际开发中，直
 external_url: https://juejin.cn/post/7615842552903778355
 scenarios:
 - Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # LangChain 预定义链机制解析与常用 LCEL 链概览
@@ -161,4 +165,4 @@ LangChain 提供了多种预制链，但以下几个是构建应用时最常遇�
 - [讯飞星火X2发布：纯国产算力大模型对标GPT]({{< relref "posts/20260211-juejin-纯国产算力硬刚gpt聊聊刚发布的讯飞星火x2-1.md" >}})
 - [Claude Code Agent Teams多实例协作原理与主流框架对比]({{< relref "posts/20260210-juejin-claude-code-agent-teams3个ai同时写代码底层原理和主流框架对比-0.md" >}})
 - [Mecha Comet：开源模块化 Linux 掌上电脑]({{< relref "posts/20260129-hacker_news-mecha-comet-open-modular-linux-handheld-computer-3.md" >}})
-- [Mecha Comet：开源模块化 Linux 掌上电脑]({{< relref "posts/20260129-hacker_news-mecha-comet-open-modular-linux-handheld-computer-4.md" >}})
+- [Mecha Comet：开源模块化 Linux 掌上电脑]({{< relref "posts/20260129-hacker_news-mecha-comet-open-modular-linux-handheld-computer-3.md" >}})

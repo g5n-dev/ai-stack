@@ -20,6 +20,10 @@ description: 随着 GPU 硬件架构的日益复杂，手工编写高性能内�
 external_url: https://github.com/RightNow-AI/autokernel
 scenarios:
 - Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AutoKernel：面向GPU内核的自动化研究工具

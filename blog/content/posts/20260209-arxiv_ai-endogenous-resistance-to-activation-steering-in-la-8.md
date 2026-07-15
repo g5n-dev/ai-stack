@@ -1,14 +1,30 @@
 ---
-title: "语言模型对激活引导攻击的内生抗性研究"
-date: 2026-02-09T23:42:37+08:00
+title: 语言模型对激活引导攻击的内生抗性研究
+date: 2026-02-09 23:42:37+08:00
 draft: false
-entry_kind: "auto"
-tags: ["激活引导", "内生抗性", "ESR", "模型对齐", "推理安全", "SAE", "稀疏自编码器", "Llama-3"]
-categories: ["大模型", "安全"]
+entry_kind: auto
+tags:
+- 激活引导
+- 内生抗性
+- ESR
+- 模型对齐
+- 推理安全
+- SAE
+- 稀疏自编码器
+- Llama-3
+categories:
+- 大模型
+- 安全
 source: arxiv
-description: "本文介绍了大型语言模型（LLM）中的一种新发现现象：**内生性转向抵抗（ESR）**，即模型在推理过程中能够自发抵抗通过激活引导进行的任务干扰。 **主要发现：** 1. **现象表现：** 当模型在生成过程中受到与任务意图不符的激活引导（Steering）时，它有时能在生成中途进行自我纠正，恢复并输出更高质量的回复，"
+description: 本文介绍了大型语言模型（LLM）中的一种新发现现象：**内生性转向抵抗（ESR）**，即模型在推理过程中能够自发抵抗通过激活引导进行的任务干扰。
+  **主要发现：** 1. **现象表现：** 当模型在生成过程中受到与任务意图不符的激活引导（Steering）时，它有时能在生成中途进行自我纠正，恢复并输出更高质量的回复，
 external_url: http://arxiv.org/abs/2602.06941v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 语言模型对激活引导攻击的内生抗性研究
@@ -525,6 +541,6 @@ ESR 可以通过特定手段显著增强：
 - [CoT非真理链：推理LLM生成假新闻的实证内部分析]({{< relref "posts/20260205-arxiv_ai-cot-is-not-the-chain-of-truth-an-empirical-interna-9.md" >}})
 - [DLM-Scope：利用稀疏自编码器解析扩散语言模型]({{< relref "posts/20260206-arxiv_ai-dlm-scope-mechanistic-interpretability-of-diffusio-4.md" >}})
 - [让 Claude 编写 CUDA 内核并指导开源模型]({{< relref "posts/20260129-blogs_podcasts-we-got-claude-to-build-cuda-kernels-and-teach-open-6.md" >}})
-- [心理越狱揭示前沿模型内部冲突]({{< relref "posts/20260205-hacker_news-psychometric-jailbreaks-reveal-internal-conflict-i-11.md" >}})
+- [心理越狱揭示前沿模型内部冲突]({{< relref "posts/20260205-hacker_news-psychometric-jailbreaks-reveal-internal-conflict-i-10.md" >}})
 - [学习大模型神经元激活的生成式元模型]({{< relref "posts/20260209-arxiv_ai-learning-a-generative-meta-model-of-llm-activation-0.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

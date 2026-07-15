@@ -1,14 +1,31 @@
 ---
-title: "DVC与SageMaker AI MLflow构建端到端ML血缘追踪"
-date: 2026-04-21T17:17:43+08:00
+title: DVC与SageMaker AI MLflow构建端到端ML血缘追踪
+date: 2026-04-21 17:17:43+08:00
 draft: false
-entry_kind: "auto"
-tags: ["DVC", "数据版本控制", "ML血缘追踪", "SageMaker", "MLflow", "机器学习工程", "AWS云平台", "实验追踪"]
-categories: ["AI 工程", "数据"]
+entry_kind: auto
+tags:
+- DVC
+- 数据版本控制
+- ML血缘追踪
+- SageMaker
+- MLflow
+- 机器学习工程
+- AWS云平台
+- 实验追踪
+categories:
+- AI 工程
+- 数据
 source: blogs_podcasts
-description: "背景 现代机器学习项目需要在数据、特征、模型和评估之间保持完整追溯。传统方式难以统一管理数据版本与实验追踪，导致血缘断裂。 关键组件 - **DVC（Data Version Control）**：对原始数据、处理后的特征集以及模型文件进行版本化管理，并生成唯一的哈希标识。 - **Amazon SageMaker A"
+description: 背景 现代机器学习项目需要在数据、特征、模型和评估之间保持完整追溯。传统方式难以统一管理数据版本与实验追踪，导致血缘断裂。 关键组件 -
+  **DVC（Data Version Control）**：对原始数据、处理后的特征集以及模型文件进行版本化管理，并生成唯一的哈希标识。 - **Amazon
+  SageMaker A
 external_url: https://aws.amazon.com/blogs/machine-learning/end-to-end-lineage-with-dvc-and-amazon-sagemaker-ai-mlflow-apps
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # DVC与SageMaker AI MLflow构建端到端ML血缘追踪
@@ -168,8 +185,8 @@ MLflow Apps 提供模型注册、审批和工作流编排能力，其血缘模�
 ### 相关文章
 
 - [基于Bedrock与LangGraph构建SageMaker无服务器AI对话代理]({{< relref "posts/20260302-blogs_podcasts-build-a-serverless-conversational-ai-agent-using-c-1.md" >}})
-- [基于Bedrock与LangGraph在SageMaker构建无服务器对话代理]({{< relref "posts/20260302-blogs_podcasts-build-a-serverless-conversational-ai-agent-using-c-2.md" >}})
-- [基于Amazon SageMaker AI构建无服务器Claude对话代理]({{< relref "posts/20260302-blogs_podcasts-build-a-serverless-conversational-ai-agent-using-c-3.md" >}})
-- [在SageMaker AI上基于Bedrock与LangGraph构建无服务器对话代理]({{< relref "posts/20260303-blogs_podcasts-build-a-serverless-conversational-ai-agent-using-c-11.md" >}})
-- [基于Bedrock与LangGraph构建无服务器对话代理及SageMaker MLflow管理]({{< relref "posts/20260303-blogs_podcasts-build-a-serverless-conversational-ai-agent-using-c-12.md" >}})
+- [基于Bedrock与LangGraph在SageMaker构建无服务器对话代理]({{< relref "posts/20260302-blogs_podcasts-build-a-serverless-conversational-ai-agent-using-c-1.md" >}})
+- [基于Amazon SageMaker AI构建无服务器Claude对话代理]({{< relref "posts/20260302-blogs_podcasts-build-a-serverless-conversational-ai-agent-using-c-1.md" >}})
+- [在SageMaker AI上基于Bedrock与LangGraph构建无服务器对话代理]({{< relref "posts/20260302-blogs_podcasts-build-a-serverless-conversational-ai-agent-using-c-1.md" >}})
+- [基于Bedrock与LangGraph构建无服务器对话代理及SageMaker MLflow管理]({{< relref "posts/20260302-blogs_podcasts-build-a-serverless-conversational-ai-agent-using-c-1.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

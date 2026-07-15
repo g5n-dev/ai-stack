@@ -1,14 +1,30 @@
 ---
-title: "Loopcraft技术解析：循环堆叠的艺术方法"
-date: 2026-06-12T12:43:35+08:00
+title: Loopcraft技术解析：循环堆叠的艺术方法
+date: 2026-06-12 12:43:35+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Loopcraft", "循环堆叠", "层级控制", "多步推理", "长期规划", "内外循环", "LLM", "训练稳定性"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- Loopcraft
+- 循环堆叠
+- 层级控制
+- 多步推理
+- 长期规划
+- 内外循环
+- LLM
+- 训练稳定性
+categories:
+- 大模型
+- AI 工程
 source: blogs_podcasts
-description: "背景 随着大规模语言模型在多步推理和长程规划任务中的需求增长，单层循环往往难以兼顾快速局部更新和全局策略调整，导致训练不稳定或推理效率低下。 核心思想 Loopcraft 将“循环”抽象为可组合的基本模块，提出通过 **堆叠循环**（stacking loops）来实现层次化控制。具体做法是让内层循环负责细粒度的快速迭"
+description: 背景 随着大规模语言模型在多步推理和长程规划任务中的需求增长，单层循环往往难以兼顾快速局部更新和全局策略调整，导致训练不稳定或推理效率低下。
+  核心思想 Loopcraft 将“循环”抽象为可组合的基本模块，提出通过 **堆叠循环**（stacking loops）来实现层次化控制。具体做法是让内层循环负责细粒度的快速迭
 external_url: https://www.latent.space/p/ainews-loopcraft-the-art-of-stacking
-scenarios: ["大语言模型"]
+scenarios:
+- 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Loopcraft技术解析：循环堆叠的艺术方法
@@ -133,9 +149,9 @@ Loopcraft 存在明确的适用边界。对于存在复杂数据依赖的循环�
 
 ### 相关文章
 
-- [CM2：基于清单奖励强化学习的多步智能体工具调用]({{< relref "posts/20260216-arxiv_ai-cm2-reinforcement-learning-with-checklist-rewards--9.md" >}})
-- [让 Claude 编写 CUDA 内核并指导开源模型]({{< relref "posts/20260129-blogs_podcasts-we-got-claude-to-build-cuda-kernels-and-teach-open-7.md" >}})
-- [让 Claude 编写 CUDA 内核并指导开源模型]({{< relref "posts/20260129-blogs_podcasts-we-got-claude-to-build-cuda-kernels-and-teach-open-8.md" >}})
+- [CM2：基于清单奖励强化学习的多步智能体工具调用]({{< relref "posts/20260213-arxiv_ai-cm2-reinforcement-learning-with-checklist-rewards--9.md" >}})
+- [让 Claude 编写 CUDA 内核并指导开源模型]({{< relref "posts/20260129-blogs_podcasts-we-got-claude-to-build-cuda-kernels-and-teach-open-6.md" >}})
+- [让 Claude 编写 CUDA 内核并指导开源模型]({{< relref "posts/20260129-blogs_podcasts-we-got-claude-to-build-cuda-kernels-and-teach-open-6.md" >}})
 - [Agent Skills：压缩智能体技能以提升模型效率]({{< relref "posts/20260129-hacker_news-compressed-agentsmd-agent-skills-5.md" >}})
-- [Agent评估显示AGENTS.md配置优于Skills]({{< relref "posts/20260130-hacker_news-agentsmd-outperforms-skills-in-our-agent-evals-16.md" >}})
+- [Agent评估显示AGENTS.md配置优于Skills]({{< relref "posts/20260129-hacker_news-compressed-agentsmd-agent-skills-5.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

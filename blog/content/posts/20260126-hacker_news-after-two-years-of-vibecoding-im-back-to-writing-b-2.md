@@ -1,12 +1,26 @@
 ---
-title: "两年“Vibecoding”后，我为何回归手写？🖊️🚀"
-date: 2026-01-26T18:11:05+08:00
+title: 两年“Vibecoding”后，我为何回归手写？🖊️🚀
+date: 2026-01-26 18:11:05+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Vibecoding", "AI辅助编程", "GitHub Copilot", "ChatGPT", "手工编程", "技术反思", "认知外包", "代码质量"]
-categories: ["效率与方法论", "AI 工程"]
+entry_kind: auto
+tags:
+- Vibe Coding
+- AI 辅助编程
+- GitHub Copilot
+- ChatGPT
+- 手工编程
+- 技术反思
+- 认知外包
+- 代码质量
+categories:
+- 效率与方法论
+- AI 工程
 source: hacker_news
 external_url: https://atmoio.substack.com/p/after-two-years-of-vibecoding-im
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 📰 两年“Vibecoding”后，我为何回归手写？🖊️🚀

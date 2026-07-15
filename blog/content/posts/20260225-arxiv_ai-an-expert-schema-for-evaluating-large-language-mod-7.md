@@ -21,6 +21,10 @@ description: '**《学术问答系统中大语言模型错误评估专家模式�
 external_url: http://arxiv.org/abs/2602.21059v1
 scenarios:
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 学术问答系统中大模型错误评估的专家框架
@@ -453,8 +457,8 @@ scenarios:
 
 ### 相关文章
 
-- [LLM 不应作为编译器：技术局限与可靠性分析]({{< relref "posts/20260206-hacker_news-llms-could-be-but-shouldnt-be-compilers-6.md" >}})
+- [LLM 不应作为编译器：技术局限与可靠性分析]({{< relref "posts/20260206-hacker_news-llms-could-be-but-shouldnt-be-compilers-0.md" >}})
 - [Step 3.5 Flash：快到能思考，稳到可执行]({{< relref "posts/20260219-hacker_news-step-35-flash-fast-enough-to-think-reliable-enough-10.md" >}})
-- [Nemotron-Personas-Brazil：主权AI协同设计数据集]({{< relref "posts/20260129-blogs_podcasts-nemotron-personas-brazil-co-designed-data-for-sove-5.md" >}})
+- [Nemotron-Personas-Brazil：主权AI协同设计数据集]({{< relref "posts/20260128-blogs_podcasts-nemotron-personas-brazil-co-designed-data-for-sove-0.md" >}})
 - [OpenAI内部数据智能体：自动化分析SQL数据库]({{< relref "posts/20260129-hacker_news-openais-in-house-data-agent-14.md" >}})
-- [OpenAI 内部数据代理：结合 GPT-5 与记忆机制实现分钟级数据洞察]({{< relref "posts/20260130-blogs_podcasts-inside-openais-in-house-data-agent-1.md" >}})
+- [OpenAI 内部数据代理：结合 GPT-5 与记忆机制实现分钟级数据洞察]({{< relref "posts/20260129-hacker_news-openais-in-house-data-agent-14.md" >}})

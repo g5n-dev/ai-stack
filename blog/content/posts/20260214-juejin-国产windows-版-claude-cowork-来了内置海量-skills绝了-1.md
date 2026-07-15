@@ -1,14 +1,30 @@
 ---
-title: "国产 Windows 版 Claude Cowork 上线：集成海量 Skills"
-date: 2026-02-14T10:37:52+08:00
+title: 国产 Windows 版 Claude Cowork 上线：集成海量 Skills
+date: 2026-02-14 10:37:52+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Claude", "Claude Cowork", "AI 办公", "桌面端", "Windows", "AI 代理", "Anthropic", "效率工具"]
-categories: ["大模型", "产品与创业"]
+entry_kind: auto
+tags:
+- Claude
+- Claude Cowork
+- AI 办公
+- 桌面端
+- Windows
+- AI 代理
+- Anthropic
+- 效率工具
+categories:
+- 大模型
+- 产品与创业
 source: juejin
-description: "**国产Windows版Claude Cowork发布：低门槛AI办公工具上线** 近日，Anthropic推出集成于Claude桌面端的通用AI代理“Claude Cowork”国产Windows版，主打面向普通办公用户的低门槛AI辅助功能。该版本内置海量技能库，旨在简化日常办公流程，提升工作效率。 作为Claude"
+description: '**国产Windows版Claude Cowork发布：低门槛AI办公工具上线** 近日，Anthropic推出集成于Claude桌面端的通用AI代理“Claude
+  Cowork”国产Windows版，主打面向普通办公用户的低门槛AI辅助功能。该版本内置海量技能库，旨在简化日常办公流程，提升工作效率。 作为Claude'
 external_url: https://juejin.cn/post/7605888927715934246
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 国产 Windows 版 Claude Cowork 上线：集成海量 Skills
@@ -198,9 +214,9 @@ Claude Cowork 近日正式推出国产 Windows 版本，作为 Anthropic 面向�
 
 ### 相关文章
 
-- [Claude Is a Space to Think]({{< relref "posts/20260204-hacker_news-claude-is-a-space-to-think-17.md" >}})
-- [Claude：一个用于深度思考的交互空间]({{< relref "posts/20260204-hacker_news-claude-is-a-space-to-think-5.md" >}})
-- [Anthropic 发布 MCP Apps 开放标准，定义富生成式 UI 规范]({{< relref "posts/20260129-blogs_podcasts-ainews-anthropic-launches-the-mcp-apps-open-spec-i-9.md" >}})
+- [Claude Is a Space to Think]({{< relref "posts/20260204-hacker_news-claude-is-a-space-to-think-8.md" >}})
+- [Claude：一个用于深度思考的交互空间]({{< relref "posts/20260204-hacker_news-claude-is-a-space-to-think-8.md" >}})
+- [Anthropic 发布 MCP Apps 开放标准，定义富生成式 UI 规范]({{< relref "posts/20260127-blogs_podcasts-ainews-anthropic-launches-the-mcp-apps-open-spec-i-1.md" >}})
 - [Claude Code 发布：AI 代理直接面向客户]({{< relref "posts/20260131-hacker_news-claude-code-is-your-customer-16.md" >}})
-- [Claude Opus 4.6 发布]({{< relref "posts/20260205-hacker_news-claude-opus-46-0.md" >}})
+- [Claude Opus 4.6 发布]({{< relref "posts/20260205-hacker_news-claude-opus-46-2.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

@@ -22,6 +22,10 @@ external_url: http://arxiv.org/abs/2603.03095v1
 scenarios:
 - 大语言模型
 - 自然语言处理
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 指令微调LLM的紧凑提示实现论辩成分联合检测
@@ -387,7 +391,7 @@ $$ P(Y|X; \theta) $$
 ### 相关文章
 
 - [🔥LLM序列标注新策略！突破性能天花板🚀]({{< relref "posts/20260126-arxiv_ai-strategies-for-span-labeling-with-large-language-m-9.md" >}})
-- [🔥LLM序列标注新突破！揭秘高效策略，性能飙升！]({{< relref "posts/20260127-arxiv_ai-strategies-for-span-labeling-with-large-language-m-9.md" >}})
-- [Alyah：评估阿拉伯语大模型阿联酋方言能力]({{< relref "posts/20260129-blogs_podcasts-alyah-toward-robust-evaluation-of-emirati-dialect--8.md" >}})
-- [Alyah：评估阿拉伯语大模型阿联酋方言能力]({{< relref "posts/20260129-blogs_podcasts-alyah-toward-robust-evaluation-of-emirati-dialect--9.md" >}})
+- [🔥LLM序列标注新突破！揭秘高效策略，性能飙升！]({{< relref "posts/20260126-arxiv_ai-strategies-for-span-labeling-with-large-language-m-9.md" >}})
+- [Alyah：评估阿拉伯语大模型阿联酋方言能力]({{< relref "posts/20260127-blogs_podcasts-alyah-toward-robust-evaluation-of-emirati-dialect--0.md" >}})
+- [Alyah：评估阿拉伯语大模型阿联酋方言能力]({{< relref "posts/20260127-blogs_podcasts-alyah-toward-robust-evaluation-of-emirati-dialect--0.md" >}})
 - [训练万亿参数模型使其具备幽默感]({{< relref "posts/20260203-hacker_news-training-a-trillion-parameter-model-to-be-funny-15.md" >}})

@@ -21,6 +21,10 @@ description: 本文探讨了在评估前沿人工智能系统时，使用“人�
 external_url: http://arxiv.org/abs/2603.11001v1
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 前沿AI评估：RCT与人类提升研究的方法挑战与解决方案
@@ -416,7 +420,7 @@ scenarios:
 ### 相关文章
 
 - [评估2025年中期LLM辅助对生物学初学者表现的影响]({{< relref "posts/20260219-arxiv_ai-measuring-mid-2025-llm-assistance-on-novice-perfor-3.md" >}})
-- [Kimi K2.5：半价超越Sonnet 4.5，支持原生多模态与百并发Agent]({{< relref "posts/20260131-blogs_podcasts-ainews-moonshot-kimi-k25-beats-sonnet-45-at-half-t-9.md" >}})
-- [xAI巩固前沿实验室地位并计划与SpaceX合并]({{< relref "posts/20260131-blogs_podcasts-ainews-spacexai-grok-imagine-api-the-1-video-model-1.md" >}})
-- [xAi 推出 Grok Imagine API：对标 Sora 的视频模型与性价比优势]({{< relref "posts/20260202-blogs_podcasts-ainews-spacexai-grok-imagine-api-the-1-video-model-3.md" >}})
+- [Kimi K2.5：半价超越Sonnet 4.5，支持原生多模态与百并发Agent]({{< relref "posts/20260129-blogs_podcasts-ainews-moonshot-kimi-k25-beats-sonnet-45-at-half-t-1.md" >}})
+- [xAI巩固前沿实验室地位并计划与SpaceX合并]({{< relref "posts/20260130-blogs_podcasts-ainews-spacexai-grok-imagine-api-the-1-video-model-0.md" >}})
+- [xAi 推出 Grok Imagine API：对标 Sora 的视频模型与性价比优势]({{< relref "posts/20260130-blogs_podcasts-ainews-spacexai-grok-imagine-api-the-1-video-model-0.md" >}})
 - [用Game Arena平台推进AI基准测试]({{< relref "posts/20260202-hacker_news-advancing-ai-benchmarking-with-game-arena-2.md" >}})

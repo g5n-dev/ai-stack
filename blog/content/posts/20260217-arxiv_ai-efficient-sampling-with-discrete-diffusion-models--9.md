@@ -1,14 +1,33 @@
 ---
-title: "离散扩散模型高效采样：具备锐利性与自适应保证"
-date: 2026-02-17T22:35:47+08:00
+title: 离散扩散模型高效采样：具备锐利性与自适应保证
+date: 2026-02-17 22:35:47+08:00
 draft: false
-entry_kind: "auto"
-tags: ["离散扩散模型", "高效采样", "tau-leaping", "CTMC", "收敛性分析", "均匀噪声", "掩码噪声", "cs.LG"]
-categories: ["论文", "大模型"]
+entry_kind: auto
+tags:
+- 离散扩散模型
+- 高效采样
+- tau-leaping
+- CTMC
+- 收敛性分析
+- 均匀噪声
+- 掩码噪声
+- cs.LG
+categories:
+- 论文
+- 大模型
 source: arxiv
-description: "**标题：基于离散扩散模型的高效采样：精确与自适应保证** **核心内容总结：** 本文针对离散空间中基于得分的扩散模型（Score-based Discrete Diffusion Models）的理论基础进行了深入研究，重点探讨了在连续时间马尔可夫链（CTMC）框架下，基于 **$\\tau$-leaping** 的"
+description: '**标题：基于离散扩散模型的高效采样：精确与自适应保证** **核心内容总结：** 本文针对离散空间中基于得分的扩散模型（Score-based
+  Discrete Diffusion Models）的理论基础进行了深入研究，重点探讨了在连续时间马尔可夫链（CTMC）框架下，基于 **$\tau$-leaping**
+  的'
 external_url: http://arxiv.org/abs/2602.15008v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+aliases:
+- /posts/20260218-arxiv_ai-efficient-sampling-with-discrete-diffusion-models--9/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 离散扩散模型高效采样：具备锐利性与自适应保证
@@ -521,7 +540,7 @@ scenarios: ["Web应用开发"]
 
 - [SplineFlow：基于B样条插值的动力系统流匹配方法]({{< relref "posts/20260202-arxiv_ai-splineflow-flow-matching-for-dynamical-systems-wit-8.md" >}})
 - [MEG-XL：基于长上下文预训练的高效脑电转文本模型]({{< relref "posts/20260203-arxiv_ai-meg-xl-data-efficient-brain-to-text-via-long-conte-1.md" >}})
-- [粒子引导扩散模型用于偏微分方程求解]({{< relref "posts/20260203-arxiv_ai-particle-guided-diffusion-models-for-partial-diffe-8.md" >}})
-- [MEG-XL：长上下文预训练实现数据高效的脑电转文本]({{< relref "posts/20260204-arxiv_ai-meg-xl-data-efficient-brain-to-text-via-long-conte-1.md" >}})
+- [粒子引导扩散模型用于偏微分方程求解]({{< relref "posts/20260202-arxiv_ai-particle-guided-diffusion-models-for-partial-diffe-8.md" >}})
+- [MEG-XL：长上下文预训练实现数据高效的脑电转文本]({{< relref "posts/20260203-arxiv_ai-meg-xl-data-efficient-brain-to-text-via-long-conte-1.md" >}})
 - [PLATE：面向几何感知持续学习的可塑性调谐高效适配器]({{< relref "posts/20260204-arxiv_ai-plate-plasticity-tunable-efficient-adapters-for-ge-0.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

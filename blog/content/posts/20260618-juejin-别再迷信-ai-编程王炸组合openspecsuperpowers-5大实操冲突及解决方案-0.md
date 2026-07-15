@@ -1,14 +1,30 @@
 ---
-title: "OpenSpec与Superpowers组合的五大实操问题"
-date: 2026-06-18T12:41:01+08:00
+title: OpenSpec与Superpowers组合的五大实操问题
+date: 2026-06-18 12:41:01+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI编程", "OpenSpec", "Superpowers", "代码生成", "需求规格", "分层方案", "自动化开发", "工作流优化"]
-categories: ["AI 工程", "开发工具"]
+entry_kind: auto
+tags:
+- AI 编程
+- OpenSpec
+- Superpowers
+- 代码生成
+- 需求规格
+- 分层方案
+- 自动化开发
+- 工作流优化
+categories:
+- AI 工程
+- 开发工具
 source: juejin
-description: "背景与误区 - AI 编程圈把 OpenSpec 与 Superpowers 视为“全自动王炸”，认为两者可无缝配合完成需求到代码的全链路。 五大实操冲突 - **需求漂移**：OpenSpec 生成的规格在需求变更后难以及时同步到 Superpowers，导致生成代码与实际需求脱节。 - **规范冲突**：Super"
+description: 背景与误区 - AI 编程圈把 OpenSpec 与 Superpowers 视为“全自动王炸”，认为两者可无缝配合完成需求到代码的全链路。
+  五大实操冲突 - **需求漂移**：OpenSpec 生成的规格在需求变更后难以及时同步到 Superpowers，导致生成代码与实际需求脱节。 - **规范冲突**：Super
 external_url: https://juejin.cn/post/7652586257183752233
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # OpenSpec与Superpowers组合的五大实操问题
@@ -129,9 +145,9 @@ scenarios: ["AI/ML项目"]
 
 ### 相关文章
 
-- [Codex 应用：基于 AI 的代码生成与编辑工具]({{< relref "posts/20260203-hacker_news-the-codex-app-1.md" >}})
+- [Codex 应用：基于 AI 的代码生成与编辑工具]({{< relref "posts/20260202-hacker_news-the-codex-app-1.md" >}})
 - [Codex多场景编程能力解析]({{< relref "posts/20260416-hacker_news-codex-for-almost-everything-0.md" >}})
-- [Codex 应用：基于 OpenAI 模型的代码生成工具]({{< relref "posts/20260203-hacker_news-the-codex-app-12.md" >}})
-- [Codex App：基于自然语言指令的代码生成工具]({{< relref "posts/20260203-hacker_news-the-codex-app-4.md" >}})
-- [Claude Code：面向基础设施开发的AI编程工具]({{< relref "posts/20260205-hacker_news-claude-code-for-infrastructure-12.md" >}})
+- [Codex 应用：基于 OpenAI 模型的代码生成工具]({{< relref "posts/20260202-hacker_news-the-codex-app-1.md" >}})
+- [Codex App：基于自然语言指令的代码生成工具]({{< relref "posts/20260202-hacker_news-the-codex-app-1.md" >}})
+- [Claude Code：面向基础设施开发的AI编程工具]({{< relref "posts/20260204-hacker_news-claude-code-for-infrastructure-11.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

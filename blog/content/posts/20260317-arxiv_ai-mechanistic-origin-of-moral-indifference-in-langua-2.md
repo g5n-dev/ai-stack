@@ -5,7 +5,7 @@ draft: false
 entry_kind: auto
 tags:
 - 对齐
-- AI安全
+- AI 安全
 - 道德推理
 - 可解释性
 - 稀疏自编码器
@@ -21,6 +21,12 @@ description: 本文探讨了大型语言模型（LLMs）中“道德冷漠”的
 external_url: http://arxiv.org/abs/2603.15615v1
 scenarios:
 - AI/ML项目
+aliases:
+- /posts/20260318-arxiv_ai-mechanistic-origin-of-moral-indifference-in-langua-2/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 大语言模型道德冷漠现象的机制起源研究
@@ -421,7 +427,7 @@ scenarios:
 ### 相关文章
 
 - [缓解可读性代价：基于解耦证明者-验证者博弈的方法]({{< relref "posts/20260227-arxiv_ai-mitigating-legibility-tax-with-decoupled-prover-ve-3.md" >}})
-- [💥MortalMATH：当推理目标遇上紧急场景，AI会“翻车”吗？]({{< relref "posts/20260128-arxiv_ai-mortalmath-evaluating-the-conflict-between-reasoni-4.md" >}})
-- [模型智能与任务复杂度如何影响对齐偏差]({{< relref "posts/20260203-hacker_news-how-does-misalignment-scale-with-model-intelligenc-12.md" >}})
-- [基于人类反馈的强化学习：原理与应用]({{< relref "posts/20260207-hacker_news-reinforcement-learning-from-human-feedback-19.md" >}})
+- [💥MortalMATH：当推理目标遇上紧急场景，AI会“翻车”吗？]({{< relref "posts/20260127-arxiv_ai-mortalmath-evaluating-the-conflict-between-reasoni-4.md" >}})
+- [模型智能与任务复杂度如何影响对齐偏差]({{< relref "posts/20260203-hacker_news-how-does-misalignment-scale-with-model-intelligenc-7.md" >}})
+- [基于人类反馈的强化学习：原理与应用]({{< relref "posts/20260207-hacker_news-reinforcement-learning-from-human-feedback-4.md" >}})
 - [尼克·博斯特罗姆新论文探讨超级智能的启动时机]({{< relref "posts/20260213-hacker_news-new-nick-bostrom-paper-optimal-timing-for-superint-1.md" >}})

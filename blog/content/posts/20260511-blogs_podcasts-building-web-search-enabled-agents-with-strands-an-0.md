@@ -1,14 +1,32 @@
 ---
-title: "Strands Agents集成Exa实现网络搜索代理"
-date: 2026-05-11T23:12:19+08:00
+title: Strands Agents集成Exa实现网络搜索代理
+date: 2026-05-11 23:12:19+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Strands", "Exa", "AI Agent", "网络搜索", "LLM", "工具集成", "RAG", "代理框架"]
-categories: ["AI 工程", "大模型"]
+entry_kind: auto
+tags:
+- Strands
+- Exa
+- AI Agent
+- 网络搜索
+- LLM
+- 工具集成
+- RAG
+- 代理框架
+categories:
+- AI 工程
+- 大模型
 source: blogs_podcasts
-description: "概述 本文介绍如何在 Strands Agents 中集成 Exa，以实现基于网页搜索的智能代理。内容涵盖 Exa 的接入步骤、平台提供的两大核心工具（搜索 API 与检索结果处理），以及代理利用搜索完成多步骤任务的实际案例，帮助开发者快速构建能够主动查询信息的 AI 应用。"
+description: 概述 本文介绍如何在 Strands Agents 中集成 Exa，以实现基于网页搜索的智能代理。内容涵盖 Exa 的接入步骤、平台提供的两大核心工具（搜索
+  API 与检索结果处理），以及代理利用搜索完成多步骤任务的实际案例，帮助开发者快速构建能够主动查询信息的 AI 应用。
 external_url: https://aws.amazon.com/blogs/machine-learning/building-web-search-enabled-agents-with-strands-and-exa
-scenarios: ["AI/ML项目", "大语言模型", "RAG应用"]
+scenarios:
+- AI/ML项目
+- 大语言模型
+- RAG应用
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Strands Agents集成Exa实现网络搜索代理
@@ -82,9 +100,9 @@ scenarios: ["AI/ML项目", "大语言模型", "RAG应用"]
 
 ### 相关文章
 
-- [AI智能体自主性评估的实践方法]({{< relref "posts/20260219-hacker_news-measuring-ai-agent-autonomy-in-practice-17.md" >}})
+- [AI智能体自主性评估的实践方法]({{< relref "posts/20260219-hacker_news-measuring-ai-agent-autonomy-in-practice-16.md" >}})
 - [AI Agent 开发入门技术栈选型指南]({{< relref "posts/20260309-juejin-ai-agent-技术栈选型入门只需要这些-3.md" >}})
-- [Kirara-AI：支持多平台接入的多模态聊天机器人框架]({{< relref "posts/20260130-github_trending-lss233-kirara-ai-2.md" >}})
+- [Kirara-AI：支持多平台接入的多模态聊天机器人框架]({{< relref "posts/20260127-github_trending-lss233-kirara-ai-2.md" >}})
 - [Vercel AI SDK 子代理：解决复杂 Agent 系统上下文爆炸问题]({{< relref "posts/20260213-juejin-vercel-ai-sdk-使用指南-子代理-subagents-1.md" >}})
-- [SkillsBench 论文解读：跨任务基准测试如何揭示 Agent 技能的实际效用]({{< relref "posts/20260218-juejin-你知道不你现在给-ai-用的-agent-skills-可能毫无作用甚至还拖后腿-2.md" >}})
+- [SkillsBench 论文解读：跨任务基准测试如何揭示 Agent 技能的实际效用]({{< relref "posts/20260217-juejin-你知道不你现在给-ai-用的-agent-skills-可能毫无作用甚至还拖后腿-2.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

@@ -1,14 +1,33 @@
 ---
-title: "AI实验室集体转型代理实验室"
-date: 2026-05-23T23:15:40+08:00
+title: AI实验室集体转型代理实验室
+date: 2026-05-23 23:15:40+08:00
 draft: false
-entry_kind: "auto"
-tags: ["代理实验室", "模型转代理", "AI行业趋势", "多模态感知", "安全伦理", "AI基础设施", "投资生态", "大模型"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- 代理实验室
+- 模型转代理
+- AI行业趋势
+- 多模态感知
+- 安全伦理
+- AI 基础设施
+- 投资生态
+- 大模型
+categories:
+- 大模型
+- AI 工程
 source: blogs_podcasts
-description: "背景 近日，多个原本聚焦于模型研发的人工智能实验室相继宣布更名为“Agent Labs”。这一转变被业界形容为“all model labs are now agent labs”，意味着从传统的模型构建向智能体（Agent）功能的全面升级。 关键趋势 - **实验室定位转变**：研发重心从“模型”转向“代理”，强调模"
+description: 背景 近日，多个原本聚焦于模型研发的人工智能实验室相继宣布更名为“Agent Labs”。这一转变被业界形容为“all model labs
+  are now agent labs”，意味着从传统的模型构建向智能体（Agent）功能的全面升级。 关键趋势 - **实验室定位转变**：研发重心从“模型”转向“代理”，强调模
 external_url: https://www.latent.space/p/ainews-all-model-labs-are-now-agent
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+aliases:
+- /posts/20260524-blogs_podcasts-ainews-all-model-labs-are-now-agent-labs-0/
+- /posts/20260525-blogs_podcasts-ainews-all-model-labs-are-now-agent-labs-0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AI实验室集体转型代理实验室
@@ -175,9 +194,9 @@ All Model Labs 正式更名为 Agent Labs，标志着 AI 研发从“模型构�
 
 ### 相关文章
 
-- [Claude Opus 4.6 发布]({{< relref "posts/20260206-hacker_news-claude-opus-46-3.md" >}})
-- [仅替换调度框架，一下午提升15个大模型编程能力]({{< relref "posts/20260212-hacker_news-improving-15-llms-at-coding-in-one-afternoon-only--4.md" >}})
-- [仅更换框架，一下午提升15个大模型代码能力]({{< relref "posts/20260213-hacker_news-improving-15-llms-at-coding-in-one-afternoon-only--12.md" >}})
-- [Codex与Claude支持定制内核以适配各类应用]({{< relref "posts/20260214-blogs_podcasts-custom-kernels-for-all-from-codex-and-claude-6.md" >}})
-- [通往泛在AI之路：实现每秒1.7万tokens推理]({{< relref "posts/20260220-hacker_news-the-path-to-ubiquitous-ai-17k-tokenssec-4.md" >}})
+- [Claude Opus 4.6 发布]({{< relref "posts/20260205-hacker_news-claude-opus-46-2.md" >}})
+- [仅替换调度框架，一下午提升15个大模型编程能力]({{< relref "posts/20260212-hacker_news-improving-15-llms-at-coding-in-one-afternoon-only--1.md" >}})
+- [仅更换框架，一下午提升15个大模型代码能力]({{< relref "posts/20260212-hacker_news-improving-15-llms-at-coding-in-one-afternoon-only--1.md" >}})
+- [Codex与Claude支持定制内核以适配各类应用]({{< relref "posts/20260213-blogs_podcasts-custom-kernels-for-all-from-codex-and-claude-1.md" >}})
+- [通往泛在AI之路：实现每秒1.7万tokens推理]({{< relref "posts/20260220-hacker_news-the-path-to-ubiquitous-ai-17k-tokenssec-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

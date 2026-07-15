@@ -1,14 +1,30 @@
 ---
-title: "AI代理数据使用指南"
-date: 2026-07-08T18:32:15+08:00
+title: AI代理数据使用指南
+date: 2026-07-08 18:32:15+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI代理", "数据使用", "代理开发", "LLM应用", "数据处理", "提示工程", "工作流", "最佳实践"]
-categories: ["AI 工程", "数据"]
+entry_kind: auto
+tags:
+- AI 代理
+- 数据使用
+- 代理开发
+- LLM 应用
+- 数据处理
+- 提示工程
+- 工作流
+- 最佳实践
+categories:
+- AI 工程
+- 数据
 source: blogs_podcasts
-description: "在构建智能代理（Agent）系统时，数据是驱动其行为和决策的核心要素。没有高质量的训练和实时数据，即使模型再强大，也难以实现灵活的环境感知和持续学习。本文从数据采集、清洗、标注到实时供给的全链路视角，提供了系统化的方法论与实战案例，帮助开发者快速搭建可靠的数据管道。最终，读者将掌握如何通过数据提升代理的响应准确性、适应"
+description: 在构建智能代理（Agent）系统时，数据是驱动其行为和决策的核心要素。没有高质量的训练和实时数据，即使模型再强大，也难以实现灵活的环境感知和持续学习。本文从数据采集、清洗、标注到实时供给的全链路视角，提供了系统化的方法论与实战案例，帮助开发者快速搭建可靠的数据管道。最终，读者将掌握如何通过数据提升代理的响应准确性、适应
 external_url: https://huggingface.co/blog/nvidia/open-data-for-agents
-scenarios: ["AI/ML项目", "大语言模型"]
+scenarios:
+- AI/ML项目
+- 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AI代理数据使用指南
@@ -134,9 +150,9 @@ scenarios: ["AI/ML项目", "大语言模型"]
 
 ### 相关文章
 
-- [Claude Composer：AI 编排多智能体工作流]({{< relref "posts/20260207-hacker_news-claude-composer-18.md" >}})
+- [Claude Composer：AI 编排多智能体工作流]({{< relref "posts/20260206-hacker_news-claude-composer-9.md" >}})
 - [CLAUDE.md：规范 Claude Code 行为与工作流的最佳实践指南]({{< relref "posts/20260224-juejin-开工大吉这份-claudemd-文件助你工作效率提升10倍-1.md" >}})
 - [AI 写代码效果差？大多数人第一步就错了]({{< relref "posts/20260306-juejin-ai-写代码效果差大多数人第一步就错了-2.md" >}})
 - [英伟达构建AI开放数据的技术路径与实践]({{< relref "posts/20260310-blogs_podcasts-how-nvidia-builds-open-data-for-ai-1.md" >}})
-- [利用大语言模型辅助软件开发的实践方法]({{< relref "posts/20260316-hacker_news-how-i-write-software-with-llms-2.md" >}})
+- [利用大语言模型辅助软件开发的实践方法]({{< relref "posts/20260316-hacker_news-how-i-write-software-with-llms-3.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

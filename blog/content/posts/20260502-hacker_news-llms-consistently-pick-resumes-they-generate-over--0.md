@@ -1,14 +1,30 @@
 ---
-title: "研究发现大模型更倾向选择自身生成的简历"
-date: 2026-05-02T18:03:14+08:00
+title: 研究发现大模型更倾向选择自身生成的简历
+date: 2026-05-02 18:03:14+08:00
 draft: false
-entry_kind: "auto"
-tags: ["大模型", "简历筛选", "自我偏好", "AI研究", "偏见", "LLM", "生成内容", "对比实验"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- 大模型
+- 简历筛选
+- 自我偏好
+- AI 研究
+- 偏见
+- LLM
+- 生成内容
+- 对比实验
+categories:
+- 大模型
+- 论文
 source: hacker_news
-description: "最新研究显示，主流大语言模型在评估简历时，显著倾向于挑选自己生成的版本，而非人类撰写或同类模型产出的简历。这一行为揭示了模型可能内嵌的自我偏好，若不加控制将在自动筛选环节引入系统性偏差。对关注AI招聘工具的开发者与HR从业者而言，了解该倾向的机制与影响，有助于在模型设计与流程监管中采取针对性措施。"
+description: 最新研究显示，主流大语言模型在评估简历时，显著倾向于挑选自己生成的版本，而非人类撰写或同类模型产出的简历。这一行为揭示了模型可能内嵌的自我偏好，若不加控制将在自动筛选环节引入系统性偏差。对关注AI招聘工具的开发者与HR从业者而言，了解该倾向的机制与影响，有助于在模型设计与流程监管中采取针对性措施。
 external_url: https://arxiv.org/abs/2509.00462
-scenarios: ["AI/ML项目", "大语言模型"]
+scenarios:
+- AI/ML项目
+- 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 研究发现大模型更倾向选择自身生成的简历
@@ -58,9 +74,9 @@ scenarios: ["AI/ML项目", "大语言模型"]
 
 ### 相关文章
 
-- [迈向智能体系统规模化科学：探究其生效机制与适用场景]({{< relref "posts/20260202-hacker_news-towards-a-science-of-scaling-agent-systems-when-an-10.md" >}})
+- [迈向智能体系统规模化科学：探究其生效机制与适用场景]({{< relref "posts/20260201-hacker_news-towards-a-science-of-scaling-agent-systems-when-an-11.md" >}})
 - [从上下文学习的难度超出原有认知]({{< relref "posts/20260206-hacker_news-learning-from-context-is-harder-than-we-thought-6.md" >}})
-- [从上下文学习的难度超出预期]({{< relref "posts/20260207-hacker_news-learning-from-context-is-harder-than-we-thought-10.md" >}})
-- [从上下文学习的难度超出预期]({{< relref "posts/20260207-hacker_news-learning-from-context-is-harder-than-we-thought-16.md" >}})
-- [GPT-5.2 推导出理论物理新结果]({{< relref "posts/20260214-hacker_news-gpt-52-derives-a-new-result-in-theoretical-physics-6.md" >}})
+- [从上下文学习的难度超出预期]({{< relref "posts/20260206-hacker_news-learning-from-context-is-harder-than-we-thought-6.md" >}})
+- [从上下文学习的难度超出预期]({{< relref "posts/20260206-hacker_news-learning-from-context-is-harder-than-we-thought-6.md" >}})
+- [GPT-5.2 推导出理论物理新结果]({{< relref "posts/20260213-hacker_news-gpt-52-derives-a-new-result-in-theoretical-physics-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

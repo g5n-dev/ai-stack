@@ -20,6 +20,12 @@ description: TaxonRL是一种结合强化学习与分层中间奖励机制的可
 external_url: http://arxiv.org/abs/2603.04380v1
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260306-arxiv_ai-taxonrl-reinforcement-learning-with-intermediate-r-7/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # TaxonRL：基于中间奖励的可解释细粒度视觉推理
@@ -400,5 +406,5 @@ TaxonRL 主要针对**细粒度视觉分类**任务，例如：
 - [VideoGPA：提取几何先验实现三维一致视频生成]({{< relref "posts/20260202-arxiv_ai-videogpa-distilling-geometry-priors-for-3d-consist-0.md" >}})
 - [DeALOG：基于日志中介的去中心化多智能体推理框架]({{< relref "posts/20260203-arxiv_ai-dealog-decentralized-multi-agents-log-mediated-rea-4.md" >}})
 - [视觉语言模型能否通过交互学习直觉物理]({{< relref "posts/20260206-arxiv_ai-can-vision-language-models-learn-intuitive-physics-5.md" >}})
-- [视觉语言模型能否通过交互学习直观物理]({{< relref "posts/20260207-arxiv_ai-can-vision-language-models-learn-intuitive-physics-5.md" >}})
-- [视觉语言模型能否通过交互学习直观物理]({{< relref "posts/20260209-arxiv_ai-can-vision-language-models-learn-intuitive-physics-5.md" >}})
+- [视觉语言模型能否通过交互学习直观物理]({{< relref "posts/20260206-arxiv_ai-can-vision-language-models-learn-intuitive-physics-5.md" >}})
+- [视觉语言模型能否通过交互学习直观物理]({{< relref "posts/20260206-arxiv_ai-can-vision-language-models-learn-intuitive-physics-5.md" >}})

@@ -1,14 +1,33 @@
 ---
-title: "纽约市AI聊天bot因建议企业违法而被关停"
-date: 2026-01-30T20:08:16+08:00
+title: 纽约市AI聊天bot因建议企业违法而被关停
+date: 2026-01-30 20:08:16+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI 聊天机器人", "纽约市", "合规风险", "幻觉", "政府服务", "下架", "AI 安全", "LLM"]
-categories: ["AI 工程", "安全"]
+entry_kind: auto
+tags:
+- AI 聊天机器人
+- 纽约市
+- 合规风险
+- 幻觉
+- 政府服务
+- 下架
+- AI 安全
+- LLM
+categories:
+- AI 工程
+- 安全
 source: hacker_news
-description: "纽约市近期推出的 AI 聊天机器人因向企业提供误导性法律建议而引发争议，暴露出生成式 AI 在公共服务场景中的落地风险。本文将深入剖析该事件的来龙去脉，探讨技术幻觉与监管合规之间的矛盾。通过解读这一案例，读者可以了解 AI 顾问在实际应用中的局限性，以及政府部门应如何建立更有效的技术审核与纠错机制。"
+description: 纽约市近期推出的 AI 聊天机器人因向企业提供误导性法律建议而引发争议，暴露出生成式 AI 在公共服务场景中的落地风险。本文将深入剖析该事件的来龙去脉，探讨技术幻觉与监管合规之间的矛盾。通过解读这一案例，读者可以了解
+  AI 顾问在实际应用中的局限性，以及政府部门应如何建立更有效的技术审核与纠错机制。
 external_url: https://themarkup.org/artificial-intelligence/2026/01/30/mamdani-to-kill-the-nyc-ai-chatbot-we-caught-telling-businesses-to-break-the-law
-scenarios: ["AI/ML项目", "大语言模型"]
+scenarios:
+- AI/ML项目
+- 大语言模型
+aliases:
+- /posts/20260130-hacker_news-mamdani-to-kill-the-nyc-ai-chatbot-caught-telling--13/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 纽约市AI聊天bot因建议企业违法而被关停
@@ -439,8 +458,8 @@ AI 模型（尤其是 LLM）存在“幻觉”问题，可能会生成看似合�
 ### 相关文章
 
 - [MortalMATH：当推理目标遇上紧急语境，冲突何解？🧠🔥]({{< relref "posts/20260127-arxiv_ai-mortalmath-evaluating-the-conflict-between-reasoni-4.md" >}})
-- [中国开源AI生态架构选择：DeepSeek之外的技术路径]({{< relref "posts/20260129-blogs_podcasts-architectural-choices-in-chinas-open-source-ai-eco-9.md" >}})
-- [让 Claude 编写 CUDA 内核并指导开源模型]({{< relref "posts/20260129-blogs_podcasts-we-got-claude-to-build-cuda-kernels-and-teach-open-7.md" >}})
-- [kirara-ai：支持多平台接入的多模态AI聊天机器人框架]({{< relref "posts/20260129-github_trending-lss233-kirara-ai-0.md" >}})
-- [Kirara-ai：支持多平台接入的多模态AI聊天机器人]({{< relref "posts/20260129-github_trending-lss233-kirara-ai-2.md" >}})
+- [中国开源AI生态架构选择：DeepSeek之外的技术路径]({{< relref "posts/20260127-blogs_podcasts-architectural-choices-in-chinas-open-source-ai-eco-0.md" >}})
+- [让 Claude 编写 CUDA 内核并指导开源模型]({{< relref "posts/20260129-blogs_podcasts-we-got-claude-to-build-cuda-kernels-and-teach-open-6.md" >}})
+- [kirara-ai：支持多平台接入的多模态AI聊天机器人框架]({{< relref "posts/20260127-github_trending-lss233-kirara-ai-2.md" >}})
+- [Kirara-ai：支持多平台接入的多模态AI聊天机器人]({{< relref "posts/20260127-github_trending-lss233-kirara-ai-2.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

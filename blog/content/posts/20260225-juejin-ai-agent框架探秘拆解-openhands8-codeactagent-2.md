@@ -22,6 +22,12 @@ external_url: https://juejin.cn/post/7610440539818590248
 scenarios:
 - AI/ML项目
 - 大语言模型
+aliases:
+- /posts/20260225-juejin-ai-agent框架探秘拆解-openhands8-codeactagent-3/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # OpenHands 框架解析：CodeActAgent 架构与设计原则
@@ -189,8 +195,8 @@ CodeActAgent 是基于 LLM 构建的，LLM 是它的“大脑”。协作流程�
 
 ### 相关文章
 
-- [OpenHands 框架解析：Agent 状态管理与系统设计]({{< relref "posts/20260224-juejin-ai-agent-框架探秘拆解-openhands7-agent-4.md" >}})
-- [Context Graphs 与 Agent Traces：解析 AI 智能体的记忆与回溯机制]({{< relref "posts/20260205-blogs_podcasts-ainews-context-graphs-and-agent-traces-3.md" >}})
-- [大模型API开发：Tools、MCP与Skills的本质区别]({{< relref "posts/20260215-juejin-手把手从-0-诠释大模型-api-的本质-tools-mcp-skills-1.md" >}})
+- [OpenHands 框架解析：Agent 状态管理与系统设计]({{< relref "posts/20260223-juejin-ai-agent-框架探秘拆解-openhands7-agent-1.md" >}})
+- [Context Graphs 与 Agent Traces：解析 AI 智能体的记忆与回溯机制]({{< relref "posts/20260204-blogs_podcasts-ainews-context-graphs-and-agent-traces-0.md" >}})
+- [大模型API开发：Tools、MCP与Skills的本质区别]({{< relref "posts/20260215-juejin-从-0-诠释大模型-api-的本质-tools-mcp-skills-0.md" >}})
 - [AI Agent SOUL.md 人格文件编写指南与核心模块解析]({{< relref "posts/20260221-juejin-如何为-ai-agent-写出完美的-soulmd-人格文件2026指南-0.md" >}})
 - [HuggingFace Agent 技能框架：工具调用与任务编排解析]({{< relref "posts/20260224-hacker_news-huggingface-agent-skills-8.md" >}})

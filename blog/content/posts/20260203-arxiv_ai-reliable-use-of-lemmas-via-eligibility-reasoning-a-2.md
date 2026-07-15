@@ -1,14 +1,30 @@
 ---
-title: "基于资格推理与分节强化学习的引理可靠利用"
-date: 2026-02-03T03:49:30+08:00
+title: 基于资格推理与分节强化学习的引理可靠利用
+date: 2026-02-03 03:49:30+08:00
 draft: false
-entry_kind: "auto"
-tags: ["数学推理", "引理应用", "RULES", "资格推理", "分节强化学习", "逻辑验证", "结构化预测", "前提检查"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- 数学推理
+- 引理应用
+- RULES
+- 资格推理
+- 分节强化学习
+- 逻辑验证
+- 结构化预测
+- 前提检查
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "本文介绍了一种名为 **RULES** 的新方法，旨在解决大型语言模型（LLM）在数学推理中**错误引用引理（Lemma）**的问题。 **核心问题与解决方案** 尽管现有LLM在数学基准测试中表现出色，但它们常在未验证前提条件的情况下直接套用引理，导致逻辑错误。RULES 将引理判断任务形式化为结构化预测，要求模型输"
+description: 本文介绍了一种名为 **RULES** 的新方法，旨在解决大型语言模型（LLM）在数学推理中**错误引用引理（Lemma）**的问题。 **核心问题与解决方案**
+  尽管现有LLM在数学基准测试中表现出色，但它们常在未验证前提条件的情况下直接套用引理，导致逻辑错误。RULES 将引理判断任务形式化为结构化预测，要求模型输
 external_url: http://arxiv.org/abs/2602.00998v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 基于资格推理与分节强化学习的引理可靠利用

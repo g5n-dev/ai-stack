@@ -1,14 +1,28 @@
 ---
-title: "Vibe Coding体验：代码生成替代手动编写"
-date: 2026-06-07T22:23:43+08:00
+title: Vibe Coding体验：代码生成替代手动编写
+date: 2026-06-07 22:23:43+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Vibe Coding", "AI编程", "代码生成", "开发效率", "自然语言", "自动化", "编程体验", "工具使用"]
-categories: ["开发工具"]
+entry_kind: auto
+tags:
+- Vibe Coding
+- AI 编程
+- 代码生成
+- 开发效率
+- 自然语言
+- 自动化
+- 编程体验
+- 工具使用
+categories:
+- 开发工具
 source: juejin
-description: "在体验 vibe coding 工具后，我发现敲代码的频率明显下降。AI 能根据自然语言或少量提示快速生成完整的代码块，省去逐行键入的繁琐步骤。与此同时，工具提供的实时补全、错误提示和自动化重构让整个开发过程更流畅、自然。随之而来的是对传统键盘输入的依赖减弱，甚至出现“不想打字”的感觉——因为大部分需求已经由模型完成，"
+description: 在体验 vibe coding 工具后，我发现敲代码的频率明显下降。AI 能根据自然语言或少量提示快速生成完整的代码块，省去逐行键入的繁琐步骤。与此同时，工具提供的实时补全、错误提示和自动化重构让整个开发过程更流畅、自然。随之而来的是对传统键盘输入的依赖减弱，甚至出现“不想打字”的感觉——因为大部分需求已经由模型完成，
 external_url: https://juejin.cn/post/7648053214596284443
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Vibe Coding体验：代码生成替代手动编写
@@ -86,9 +100,9 @@ scenarios: ["AI/ML项目"]
 
 ### 相关文章
 
-- [Codex App：基于自然语言指令的代码生成工具]({{< relref "posts/20260203-hacker_news-the-codex-app-4.md" >}})
-- [构建极简编程代理的技术实践与经验总结]({{< relref "posts/20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-17.md" >}})
-- [Codex 应用：基于 OpenAI 模型的代码生成工具]({{< relref "posts/20260203-hacker_news-the-codex-app-12.md" >}})
-- [Codex 应用：基于 GPT-3 的代码生成工具]({{< relref "posts/20260203-hacker_news-the-codex-app-2.md" >}})
-- [OpenAI Codex 应用更新：VSCode 分支替代与多任务工作树]({{< relref "posts/20260204-blogs_podcasts-ainews-openai-codex-app-death-of-the-vscode-fork-m-6.md" >}})
+- [Codex App：基于自然语言指令的代码生成工具]({{< relref "posts/20260202-hacker_news-the-codex-app-1.md" >}})
+- [构建极简编程代理的技术实践与经验总结]({{< relref "posts/20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-1.md" >}})
+- [Codex 应用：基于 OpenAI 模型的代码生成工具]({{< relref "posts/20260202-hacker_news-the-codex-app-1.md" >}})
+- [Codex 应用：基于 GPT-3 的代码生成工具]({{< relref "posts/20260202-hacker_news-the-codex-app-1.md" >}})
+- [OpenAI Codex 应用更新：VSCode 分支替代与多任务工作树]({{< relref "posts/20260203-blogs_podcasts-ainews-openai-codex-app-death-of-the-vscode-fork-m-0.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

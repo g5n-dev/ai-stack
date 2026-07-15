@@ -1,14 +1,29 @@
 ---
-title: "滑铁卢学生AI原型：手语导师重塑教育和工作的未来"
-date: 2026-05-29T15:48:18+08:00
+title: 滑铁卢学生AI原型：手语导师重塑教育和工作的未来
+date: 2026-05-29 15:48:18+08:00
 draft: false
-entry_kind: "auto"
-tags: ["手语识别", "AI原型", "滑铁卢大学", "教育科技", "无障碍设计", "人工智能应用", "未来工作", "创新项目"]
-categories: ["效率与方法论"]
+entry_kind: auto
+tags:
+- 手语识别
+- AI原型
+- 滑铁卢大学
+- 教育科技
+- 无障碍设计
+- 人工智能应用
+- 未来工作
+- 创新项目
+categories:
+- 效率与方法论
 source: blogs_podcasts
-description: "项目背景 Futures Lab 致力于将前沿人工智能研究转化为可落地的原型，让技术走出实验室、进入真实场景。该平台汇聚了全球高校和企业的创新项目，为开发者提供实验环境与资源支持。 关键原型 滑铁卢大学的学生团队在 Futures Lab 上打造了多个 AI 原型，其中最受关注的包括： * **手语教学助手**：利用计"
+description: 项目背景 Futures Lab 致力于将前沿人工智能研究转化为可落地的原型，让技术走出实验室、进入真实场景。该平台汇聚了全球高校和企业的创新项目，为开发者提供实验环境与资源支持。
+  关键原型 滑铁卢大学的学生团队在 Futures Lab 上打造了多个 AI 原型，其中最受关注的包括： * **手语教学助手**：利用计
 external_url: https://blog.google/innovation-and-ai/technology/ai/university-waterloo-labs
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 滑铁卢学生AI原型：手语导师重塑教育和工作的未来
@@ -165,9 +180,9 @@ AI 手语导师等原型能够通过技术手段实现教育与职场的无障�
 
 ### 相关文章
 
-- [AI如何影响技能形成与构建]({{< relref "posts/20260130-hacker_news-how-ai-impacts-skill-formation-13.md" >}})
-- [AI如何影响技能形成与人才培养]({{< relref "posts/20260130-hacker_news-how-ai-impacts-skill-formation-17.md" >}})
-- [AI如何影响技能形成与人才培养]({{< relref "posts/20260130-hacker_news-how-ai-impacts-skill-formation-18.md" >}})
+- [AI如何影响技能形成与构建]({{< relref "posts/20260130-hacker_news-how-ai-impacts-skill-formation-3.md" >}})
+- [AI如何影响技能形成与人才培养]({{< relref "posts/20260130-hacker_news-how-ai-impacts-skill-formation-3.md" >}})
+- [AI如何影响技能形成与人才培养]({{< relref "posts/20260130-hacker_news-how-ai-impacts-skill-formation-3.md" >}})
 - [人工智能如何重塑技能形成机制]({{< relref "posts/20260130-hacker_news-how-ai-impacts-skill-formation-3.md" >}})
-- [AI如何影响技能形成与培养]({{< relref "posts/20260130-hacker_news-how-ai-impacts-skill-formation-5.md" >}})
+- [AI如何影响技能形成与培养]({{< relref "posts/20260130-hacker_news-how-ai-impacts-skill-formation-3.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

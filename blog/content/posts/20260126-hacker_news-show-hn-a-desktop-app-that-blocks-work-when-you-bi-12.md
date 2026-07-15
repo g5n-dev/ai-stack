@@ -1,12 +1,26 @@
 ---
-title: "⚠️一咬指甲就强制关机？这款桌面App太狠了！🖥️🚫"
-date: 2026-01-26T12:12:08+08:00
+title: ⚠️一咬指甲就强制关机？这款桌面App太狠了！🖥️🚫
+date: 2026-01-26 12:12:08+08:00
 draft: false
-entry_kind: "auto"
-tags: ["桌面应用", "习惯矫正", "生产力工具", "计算机视觉", "行为监控", "强制锁定", "反向激励", "Hacker News"]
-categories: ["效率与方法论", "AI 工程"]
+entry_kind: auto
+tags:
+- 桌面应用
+- 习惯矫正
+- 生产力工具
+- 计算机视觉
+- 行为监控
+- 强制锁定
+- 反向激励
+- Hacker News
+categories:
+- 效率与方法论
+- AI 工程
 source: hacker_news
 external_url: https://github.com/cacoos/trackhands
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 📰 ⚠️一咬指甲就强制关机？这款桌面App太狠了！🖥️🚫

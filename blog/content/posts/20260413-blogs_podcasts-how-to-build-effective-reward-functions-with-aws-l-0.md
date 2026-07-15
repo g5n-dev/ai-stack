@@ -1,17 +1,35 @@
 ---
-title: "AWS Lambda为Amazon Nova构建可扩展奖励函数的最佳实践"
-date: 2026-04-13T23:58:28+08:00
+title: 使用Lambda设计Amazon Nova模型的奖励函数指南
+date: 2026-04-13 23:58:28+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AWS Lambda", "Amazon Nova", "强化学习", "奖励函数", "RLVR", "RLAIF", "模型定制", "CloudWatch"]
-categories: ["AI 工程", "大模型"]
+entry_kind: auto
+tags:
+- RLVR
+- RLAIF
+- 奖励函数
+- 强化学习
+- Amazon Nova
+- Lambda优化
+- CloudWatch监控
+- 模型定制
+categories:
+- 大模型
+- AI 工程
 source: blogs_podcasts
-description: "关键方案 使用 AWS Lambda 实现奖励函数，既能弹性伸缩，又能按调用计费，适合 Amazon Nova 的模型定制。核心思路是把奖励计算从训练集群抽离出来，交给 Lambda 函数处理，从而实现高并发、低成本的奖励生成。 奖励方式的选择 - **RLVR（Reinforcement Learning via V"
+description: RLVR 与 RLAIF 的适用场景 - **RLVR（可验证奖励）**：任务结果可直接度量（如分类准确率、指标阈值），适用于客观评估。
+  - **RLAIF（AI 反馈）**：任务结果需主观判断或无明确标准，利用大模型或人工反馈进行奖励估计，适用于生成式或对话类任务。 多维度奖励体系设计 - **细粒度拆分**：将任务
 external_url: https://aws.amazon.com/blogs/machine-learning/how-to-build-effective-reward-functions-with-aws-lambda-for-amazon-nova-model-customization
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+aliases:
+- /posts/20260414-blogs_podcasts-how-to-build-effective-reward-functions-with-aws-l-0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
-# AWS Lambda为Amazon Nova构建可扩展奖励函数的最佳实践
+# 使用Lambda设计Amazon Nova模型的奖励函数指南
 
 ---
 
@@ -24,125 +42,134 @@ scenarios: ["AI/ML项目"]
 ---
 ## 摘要/简介
 
-这篇帖子展示了Lambda如何为Amazon Nova定制提供可扩展、成本效益高的奖励函数。您将学习如何在客观可验证任务的通过可验证奖励进行强化学习（RLVR）和用于主观评估的通过AI反馈进行强化学习（RLAIF）之间进行选择，设计多维奖励系统以帮助您防止奖励黑客攻击，针对训练规模优化Lambda函数，以及使用Amazon CloudWatch监控奖励分布。文中包含可工作的代码示例和部署指导，帮助您开始进行实验。
+这篇文章展示了 Lambda 如何为 Amazon Nova 定制提供可扩展、成本优化的奖励函数。您将学习如何在不同场景下选择合适的方法：对于可客观验证的任务选择基于可验证奖励的强化学习（RLVR），对于主观评估任务选择基于 AI 反馈的强化学习（RLAIF）；如何设计多维度奖励系统以防止奖励 hacking；如何优化 Lambda 函数以适应训练规模；以及如何借助 Amazon CloudWatch 监控奖励分布。文中包含可运行的代码示例和部署指南，帮助您快速开始实验。
 
 ---
 ## 导语
 
-在Amazon Nova模型定制过程中，奖励函数的设计直接影响训练效果和推理质量。AWS Lambda提供了灵活、可扩展的计算资源，使得构建多维奖励系统既高效又成本可控。本文通过可验证奖励和AI反馈两套方案演示了如何在不同任务场景下选择合适的强化学习方式，并给出Lambda函数性能调优与CloudWatch监控的具体实践，帮助读者快速落地自己的定制实验。
+在构建面向 Amazon Nova 模型的定制化策略时，设计有效的奖励函数是关键。Lambda 具备弹性伸缩和成本优势，可支撑基于可验证奖励的 RLVR 与基于 AI 反馈的 RLAIF 两种路径，并通过多维度奖励防止奖励 hacking。为了帮助读者快速落地，文章提供了完整的代码示例、部署步骤以及 CloudWatch 监控方案，使您能够在实际项目中直接复用并持续优化奖励分布。
 
 ---
 ## 摘要
 
-#### 关键方案
-使用 AWS Lambda 实现奖励函数，既能弹性伸缩，又能按调用计费，适合 Amazon Nova 的模型定制。核心思路是把奖励计算从训练集群抽离出来，交给 Lambda 函数处理，从而实现高并发、低成本的奖励生成。
+#### RLVR 与 RLAIF 的适用场景
+- **RLVR（可验证奖励）**：任务结果可直接度量（如分类准确率、指标阈值），适用于客观评估。
+- **RLAIF（AI 反馈）**：任务结果需主观判断或无明确标准，利用大模型或人工反馈进行奖励估计，适用于生成式或对话类任务。
 
-#### 奖励方式的选择
-- **RLVR（Reinforcement Learning via Verifiable Rewards）**：适用于结果可以客观校验的任务，如代码编译、指标达标等。通过 Lambda 快速返回布尔或数值型奖励。
-- **RLAIF（Reinforcement Learning via AI Feedback）**：用于主观评价，如对话流畅性、创意质量等。可在 Lambda 中调用大模型或人工标注服务，生成细粒度评分。
+#### 多维度奖励体系设计
+- **细粒度拆分**：将任务目标拆解为多个子目标，每个子目标对应独立奖励维度。
+- **防止奖励破解**：加入负向奖励或惩罚项，约束模型不当行为；奖励函数需具备单调性，避免“作弊”路径。
+- **奖励归一化**：对不同维度的奖励进行尺度统一，防止某维度主导训练。
 
-#### 多维度奖励设计
-为防止模型仅针对单一奖励“刷分”，建议构建多维度奖励体系：
-1. 目标指标（客观）
-2. 辅助指标（质量、长度、语言风格等）
-3. 正则化惩罚（如重复、无关信息）
+#### Lambda 函数性能优化
+- **并发与批处理**：在一次 Lambda 调用中批量计算奖励，减少冷启动开销。
+- **内存与超时设置**：根据奖励计算复杂度分配足够内存（推荐 1024 MB 以上）和适当超时（≤ 300 秒）。
+- **分层调用**：将奖励计算拆分为主函数与子函数，主函数负责调度，子函数处理具体奖励逻辑，提高可扩展性。
 
-各维度在 Lambda 中分别计算后加权合并，权重可通过实验动态调节。
+#### 使用 CloudWatch 监控奖励分布
+- **指标上报**：在 Lambda 中使用 `put_metric_data` 将奖励值、成功率等关键指标写入 CloudWatch。
+- **仪表盘**：创建自定义仪表盘实时可视化奖励分布、异常波动及模型收敛趋势。
+- **告警**：设置阈值告警（如奖励均值骤降），快速响应训练异常。
 
-#### Lambda 性能优化
-- **并发控制**：利用 Lambda 的并发预留或预留并发限制，避免突发流量压垮下游服务。
-- **内存与超时**：奖励计算通常为轻量任务，128‑256 MB 内存、3‑10 秒超时足够。
-- **依赖打包**：将常用库（如 NumPy、JSON）打成层，减少函数包体积并提升冷启动速度。
-- **批处理**：若奖励可批量计算，可在一次调用中返回多条奖励，降低调用次数。
+#### 实践步骤与代码示例
+1. **定义奖励函数**：在 Lambda 中实现 `compute_reward(event)`，返回 `{"reward": float, "metadata": {...}}`。
+2. **部署 Lambda**：使用 AWS SAM 或 Terraform 将函数部署为无状态服务，确保高并发。
+3. **集成 Nova**：在 Nova 训练脚本中调用 Lambda API 获取奖励，或通过 SQS 队列异步传递奖励数据。
+4. **迭代调优**：根据 CloudWatch 监控的奖励分布调整奖励权重和惩罚系数，防止模型过度优化单一维度。
 
-#### 监控与调优
-- **CloudWatch**：记录奖励分布（均值、方差、分位数），设置异常阈值告警。
-- **指标**：可自定义 Lambda 指标（如 reward_latency、reward_success_rate），结合 CloudWatch Dashboard 实时观察。
-- **日志**：开启结构化日志，快速定位奖励异常或模型作弊行为。
-
-#### 示例与部署
-提供 Python 示例代码，展示如何在 Lambda 中实现 RLVR 与 RLAIF 两种奖励计算，并配合 SAM（Serverless Application Model）或 CDK 完成自动化部署。代码包括：
-- 环境变量配置（API 端点、模型名称）
-- 输入解析与校验
-- 多维度奖励计算函数
-- 返回结构化 JSON 结果
-
-部署后即可在 Nova 训练脚本中调用 Lambda endpoint，实现奖励的实时获取与动态调节。
-
-通过上述方案，您可以在保证成本可控的前提下，快速迭代奖励函数，提升 Amazon Nova 模型的定制效果。
+通过上述方案，可利用 Lambda 的弹性伸缩实现成本可控、响应快速的奖励计算，为 Amazon Nova 模型的自定义训练提供可靠、可观测的强化学习闭环。
 
 ---
 ## 评论
 
-#### 核心观点
-AWS Lambda 为 Amazon Nova 定制提供了可弹性伸缩、成本可控的奖励函数实现路径，兼顾 RLVR 与 RLAIF 两种模式。
+#### 中心观点
+
+本文展示了AWS Lambda在Amazon Nova模型定制化中构建奖励函数的方案，突出其可扩展性与成本效益优势，同时提示Lambda在处理RLVR（可验证奖励强化学习）和RLAIF（AI反馈强化学习）两种范式时的适用性与局限性。
 
 #### 支撑理由
-事实：Lambda 采用请求级计费，最小粒度为 100 ms，可实现毫秒级响应；
-作者观点：文章指出使用 Lambda 可将奖励计算从训练主循环中解耦，降低延迟并提升可维护性；
-推断：基于 Lambda 的事件触发机制，可将奖励函数封装为独立服务，实现跨模型共享和动态调度。
+
+[事实陈述] Lambda提供自动扩展和按调用计费机制，理论上可应对强化学习训练中的计算波动。[作者观点] 作者认为Lambda适合实现RLVR和RLAIF两类奖励函数，因其无服务器特性降低了运维复杂度。[我的推断] 这种判断在离线批量评估场景下基本成立，但对实时交互式应用可能存在冷启动延迟风险，实际效果需结合具体业务场景验证。
 
 #### 边界条件
-事实：Lambda 单次调用最长运行时间为 15 分钟，内存上限为 10 GB；
-作者观点：当奖励计算涉及大规模张量或长时间模拟时，需关注函数超时或成本激增；
-推断：在极低延迟场景（如实时对话）中，Lambda 的冷启动延迟（通常 0.5–2 秒）可能成为瓶颈，需要配合预热或专用容器。
+
+Lambda的执行超时限制（15分钟）和冷启动延迟（通常数百毫秒至数秒）对复杂奖励计算构成物理约束。对于需要亚秒级响应的在线系统，作者未明确说明应对策略，这可能是方案的实际边界所在。
 
 #### 实践启发
-推断：建议采用分层结构，将简单可验证的奖励（RLVR）直接调用 Lambda，将需要模型反馈的奖励（RLAIF）通过异步队列（如 SQS）触发 Lambda 任务，以避免阻塞主训练循环；
-作者观点：应使用 Lambda 层统一管理依赖库（如 boto3、numpy），确保函数版本一致；
-事实：在 CI/CD 中加入 Lambda 部署步骤，可实现奖励函数的自动化测试与回滚，提高迭代效率。
+
+基于上述分析，建议在部署时采用分层策略：对客观可验证的RLVR任务优先考虑Lambda以获取成本优势；对主观评估的RLAIF任务，若延迟要求严格则需评估Lambda的可行性或考虑预置并发方案。此外，奖励函数的计算复杂度应事先在Lambda环境中进行基准测试，确保在约束范围内可正常运行。
 
 ---
 ## 技术分析
 
-#### 核心观点与技术框架
+#### 核心观点
+Lambda 为 Amazon Nova 模型的奖励函数提供了弹性的执行环境，使得 RLVR（可客观验证奖励）和 RLAIF（AI 反馈奖励）两种范式均可通过无服务器方式实现。核心论点是：基于 Lambda 的奖励函数兼具成本可控、自动伸缩和快速迭代的优势，适用于大规模定制化模型的训练。
 
-##### 中心命题
-AWS Lambda 为 Amazon Nova 模型的奖励函数构建提供了无服务器、可弹性扩展的基础设施支持，使得强化学习定制方法能够在云端高效执行，同时实现成本最优化。
+#### 关键技术点
+##### 奖励函数设计
+- **RLVR**：对任务结果进行确定性验证（如分类正确率、字符串匹配），奖励计算直接在 Lambda 中实现，返回 0/1 或连续分数。
+- **RLAIF**：利用语言模型生成奖励信号，Lambda 调用 SageMaker Endpoint 或 Bedrock API 获取 AI 反馈，需要处理异步返回和批量化。
 
-##### 技术选型双轨并行
-文章明确区分了两种强化学习路径：RLVR 适用于任务目标可客观量化的场景，如代码生成、数学推理等具有明确正确答案的领域；RLAIF 则面向主观评估场景，如对话风格、内容创意等难以用规则精确定义的任务。Lambda 的事件驱动架构天然适配这两种方法的需求模式。
+##### Lambda 架构要点
+- **触发方式**：CloudWatch Events 定时触发、Step Functions 状态机驱动或 S3 事件通知，保证奖励计算与训练循环同步。
+- **资源限制**：内存 128‑3008 MB，执行时间最长 900 秒（可配置），需避免在 Lambda 内运行大型推理；可将模型推理放在 SageMaker，Lambda 仅负责后处理。
+- **状态管理**：奖励函数应保持无状态，使用 DynamoDB 或 S3 存储中间奖励或训练元数据。
 
-#### 关键技术架构
-
-##### 无服务器计算优势
-Lambda 的核心价值在于将基础设施管理抽象化。奖励函数作为独立执行单元，仅在推理请求到达时激活，运行完毕后自动释放资源。这种按需付费模式避免了传统服务器的空转浪费，特别适合强化学习训练中请求量波动剧烈的场景。
-
-##### 可扩展性实现机制
-Lambda 的自动并发扩展能力解决了训练过程中的流量峰值问题。当模型批量生成候选响应时，多个函数实例可并行启动，同时评估不同样本并返回奖励值。这种并行处理能力直接影响训练效率，是实现大规模定制的基础保障。
+##### 与 Amazon Nova 的集成
+- Nova 训练任务通过 SageMaker 启动，Lambda 作为奖励计算层被调用，形成“训练‑奖励‑更新”闭环。
+- 可通过 SageMaker Pipeline 将 Lambda 奖励函数注册为自定义评估步骤，实现自动化工作流。
 
 #### 实际应用价值
+1. **成本优化**：Lambda 按调用计费，相比常驻 EC2 实例可降低空闲成本，尤其在奖励信号稀疏时。
+2. **弹性伸缩**：高并发训练期间，Lambda 自动扩容，避免手动资源规划。
+3. **快速迭代**：修改奖励逻辑仅需重新部署 Lambda 函数，无需重启训练集群。
 
-##### 开发效率提升
-团队无需预先规划服务器容量，奖励函数的部署周期从数天缩短至分钟级别。版本迭代可在不影响主线服务的前提下独立进行，降低了实验风险。Lambda 与 AWS 生态的深度集成简化了日志收集、监控告警等运维环节。
-
-##### 成本结构优化
-相比自建 Kubernetes 集群处理同等规模的请求，Lambda 的毫秒级计费可将成本降低 60% 至 80%。对于中小规模的模型定制项目，这种成本优势尤为显著。团队可将节省的资源投入算法优化而非基础设施维护。
-
-#### 行业影响分析
-
-无服务器架构正在重塑 AI 定制的工作流程。Lambda 等 FaaS 产品将模型定制从重资产投入转向弹性消费模式，使初创团队和研究机构也能参与大模型优化。这种民主化趋势将加速垂直领域模型的创新速度，推动 AI 应用向专业化方向发展。
+#### 行业影响
+- **降低 RL 定制门槛**：中小型企业无需搭建完整 RL 基础设施，即可利用 Lambda + Nova 实现领域特定模型微调。
+- **推动 AI‑Ops 自动化**：Lambda 与 CloudWatch、Step Functions 结合，使奖励函数的监控、告警和回滚实现全链路可观测。
+- **加速 AI 反馈循环**：RLAIF 的 AI 反馈可在 Lambda 中统一封装，方便在不同任务间复用。
 
 #### 边界条件与实践建议
+##### 边界条件
+- 高频奖励调用（如每步奖励）可能导致 Lambda 计费累计，建议在训练前期使用批量奖励或离线预计算。
+- 大模型推理（如 70 B 参数）在 Lambda 内存限制（最高 10 GB）下不可行，需将推理拆分为 SageMaker Endpoint。
+- RLVR 适用于可明确判定的任务，若任务本身模糊，则需转向 RLAIF。
 
-##### 技术边界
-Lambda 的执行时间上限为 15 分钟、内存上限为 10GB，这对复杂奖励函数的实现构成约束。涉及大规模外部 API 调用或复杂计算逻辑时，需要进行任务分解或考虑替代方案。冷启动延迟在敏感场景下需通过预置并发功能规避。
+##### 实践建议
+- 使用 **Lambda 层** 打包公共依赖库，简化部署。
+- 通过 **CloudWatch 指标** 监控调用时长、错误率和成本，设置阈值告警。
+- 在 Step Functions 中加入 **重试与死信队列**，防止奖励计算失败导致训练阻塞。
+- 对 RLAIF 奖励进行 **偏见检查**，定期采样并人工评估 AI 反馈质量。
 
-##### 方法论边界
-RLVR 的有效性依赖于任务定义的质量，对于边界模糊的评价标准难以发挥优势。RLAIF 虽适用范围更广，但引入了评估器偏差风险，需要建立质量校准机制。
+#### 论证地图
+##### 中心命题
+Lambda 提供可扩展、成本可控的奖励函数实现路径，能够同时支撑 RLVR 与 RLAIF 两种奖励范式。
 
-##### 验证方式
-建议建立离线的基准测试集，定期评估奖励函数与真实用户偏好的相关性。通过 A/B 测试对比定制前后的模型表现，量化奖励函数设计的实际效果。日志数据的持续分析有助于发现奖励信号中的系统性偏差。
+##### 支撑理由
+1. Lambda 按需计费，消除长期资源占用浪费。
+2. 自动弹性伸缩匹配训练并发需求。
+3. 与 AWS ML 服务（SageMaker、Bedrock）原生集成，奖励计算可快速迭代。
+4. 通过无服务器架构降低运维负担，团队专注业务逻辑。
+
+##### 反例与边界条件
+- 当奖励计算需要毫秒级延迟（如实时交互）时，Lambda 冷启动可能导致不可接受。
+- 超过 Lambda 内存限制的复杂模型推理不适合在函数内执行。
+- 对奖励信号极度敏感的连续控制任务（如高频交易），仍需专用 GPU 实例。
+
+##### 可验证方式
+- 对比相同模型在 Lambda 奖励函数与 EC2 常驻奖励函数的训练收敛曲线，验证收敛速度和最终性能差异。
+- 统计相同训练周期的 Lambda 调用成本与 EC2 实例成本，评估费用下降幅度。
+- 通过 CloudWatch Logs 与 Cost Explorer 分析调用频率、错误率和费用增长趋势。
 
 ---
 ## 学习要点
 
-- 首先明确业务目标并将其量化为可度量的奖励指标，这是构建有效奖励函数的核心。
-- 将奖励函数实现为 AWS Lambda，使用标准化的输入输出格式（如 JSON），以便与 Amazon Nova 训练流程无缝集成。
-- 设计 Lambda 为无状态、低延迟的执行单元，并通过合理的超时和内存配置确保在高频调用下的性能稳定。
-- 在部署前使用 AWS SAM 或本地模拟环境对奖励函数进行单元测试和回归测试，保证函数逻辑正确且可重复。
-- 通过 CloudWatch Logs 和自定义指标监控 Lambda 的执行情况，配置错误告警及时捕获异常并快速迭代。
-- 对 Lambda 代码和奖励函数版本进行版本控制（如使用 Git），并通过环境变量或 Parameter Store 管理配置，实现可审计的发布流程。
+- 为 Amazon Nova 模型自定义奖励函数时，首要确保奖励指标与业务目标直接对应，以便引导模型产生期望行为（最重要）。
+- 使用 AWS Lambda 实现奖励计算可以获得弹性扩展和低延迟响应，适合在推理时实时评估奖励。
+- 奖励函数应保持简洁确定性，避免复杂的外部依赖，以免增加执行时间并影响模型训练效率。
+- 将奖励逻辑与模型训练流程分离，并通过版本控制和单元测试保证代码质量和可回滚性。
+- 通过 CloudWatch 监控 Lambda 的执行指标和错误日志，实现对奖励函数的持续观测和快速调试。
+- 在奖励函数中考虑公平性和偏倚问题，采用分层抽样或后处理校正来降低潜在歧视风险。
+- 定期使用 A/B 测试或离线评估对比不同奖励设计的效果，以迭代优化模型行为。
 
 ---
 ## 引用
@@ -157,15 +184,15 @@ RLVR 的有效性依赖于任务定义的质量，对于边界模糊的评价标
 ---
 ## 站内链接
 
-- 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)
-- 标签： [AWS Lambda](/tags/aws-lambda/) / [Amazon Nova](/tags/amazon-nova/) / [强化学习](/tags/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/) / [奖励函数](/tags/%E5%A5%96%E5%8A%B1%E5%87%BD%E6%95%B0/) / [RLVR](/tags/rlvr/) / [RLAIF](/tags/rlaif/) / [模型定制](/tags/%E6%A8%A1%E5%9E%8B%E5%AE%9A%E5%88%B6/) / [CloudWatch](/tags/cloudwatch/)
+- 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)
+- 标签： [RLVR](/tags/rlvr/) / [RLAIF](/tags/rlaif/) / [奖励函数](/tags/%E5%A5%96%E5%8A%B1%E5%87%BD%E6%95%B0/) / [强化学习](/tags/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/) / [Amazon Nova](/tags/amazon-nova/) / [Lambda优化](/tags/lambda%E4%BC%98%E5%8C%96/) / [CloudWatch监控](/tags/cloudwatch%E7%9B%91%E6%8E%A7/) / [模型定制](/tags/%E6%A8%A1%E5%9E%8B%E5%AE%9A%E5%88%B6/)
 - 场景： [AI/ML项目](/scenarios/ai-ml%E9%A1%B9%E7%9B%AE/)
 
 ### 相关文章
 
+- [AWS Lambda为Amazon Nova构建可扩展奖励函数的最佳实践]({{< relref "posts/20260413-blogs_podcasts-how-to-build-effective-reward-functions-with-aws-l-0.md" >}})
 - [Amazon Nova 强化微调指南：原理、场景与实现路径]({{< relref "posts/20260226-blogs_podcasts-reinforcement-fine-tuning-for-amazon-nova-teaching-2.md" >}})
-- [Amazon Nova 强化微调原理、应用场景与实现路径解析]({{< relref "posts/20260226-blogs_podcasts-reinforcement-fine-tuning-for-amazon-nova-teaching-3.md" >}})
-- [Amazon Nova 强化微调解析：基于反馈的 AI 定制原理与实践]({{< relref "posts/20260228-blogs_podcasts-reinforcement-fine-tuning-for-amazon-nova-teaching-12.md" >}})
-- [Amazon Nova 强化微调原理、应用场景与实现选项解析]({{< relref "posts/20260301-blogs_podcasts-reinforcement-fine-tuning-for-amazon-nova-teaching-13.md" >}})
-- [Amazon Nova强化微调原理、应用场景与实现路径解析]({{< relref "posts/20260301-blogs_podcasts-reinforcement-fine-tuning-for-amazon-nova-teaching-14.md" >}})
+- [Amazon Nova 强化微调原理、应用场景与实现路径解析]({{< relref "posts/20260226-blogs_podcasts-reinforcement-fine-tuning-for-amazon-nova-teaching-2.md" >}})
+- [Amazon Nova 强化微调解析：基于反馈的 AI 定制原理与实践]({{< relref "posts/20260226-blogs_podcasts-reinforcement-fine-tuning-for-amazon-nova-teaching-2.md" >}})
+- [Amazon Nova 强化微调原理、应用场景与实现选项解析]({{< relref "posts/20260226-blogs_podcasts-reinforcement-fine-tuning-for-amazon-nova-teaching-2.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

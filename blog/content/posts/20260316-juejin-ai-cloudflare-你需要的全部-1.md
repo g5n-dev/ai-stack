@@ -21,6 +21,10 @@ description: '**总结：AI + Cloudflare 构建极简开发闭环** 当前 AI �
 external_url: https://juejin.cn/post/7617459773345202212
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Cloudflare 全栈基础设施助力 AI 应用落地
@@ -209,6 +213,6 @@ AI Gateway 充当了开发者应用与大模型提供商（如 OpenAI 或 Cloudf
 
 - [✨无需重构！直接将应用迁移至Cloudflare Workers！🚀]({{< relref "posts/20260126-hacker_news-you-can-just-port-things-to-cloudflare-workers-6.md" >}})
 - [利用 FAST 模板加速构建 Amazon Bedrock AgentCore 应用]({{< relref "posts/20260210-blogs_podcasts-accelerate-agentic-application-development-with-a--11.md" >}})
-- [Accelerate agentic application development with a full-]({{< relref "posts/20260211-blogs_podcasts-accelerate-agentic-application-development-with-a--11.md" >}})
-- [🤥Cloudflare谎称实现Matrix？真相让人震惊！💥]({{< relref "posts/20260127-hacker_news-cloudflare-claimed-they-implemented-matrix-on-clou-17.md" >}})
-- [OTelBench评测：Opus 4.5在简单SRE任务中得分仅29%]({{< relref "posts/20260129-hacker_news-otelbench-ai-struggles-with-simple-sre-tasks-opus--4.md" >}})
+- [Accelerate agentic application development with a full-]({{< relref "posts/20260210-blogs_podcasts-accelerate-agentic-application-development-with-a--11.md" >}})
+- [🤥Cloudflare谎称实现Matrix？真相让人震惊！💥]({{< relref "posts/20260127-hacker_news-cloudflare-claimed-they-implemented-matrix-on-clou-15.md" >}})
+- [OTelBench评测：Opus 4.5在简单SRE任务中得分仅29%]({{< relref "posts/20260129-hacker_news-otelbench-ai-struggles-with-simple-sre-tasks-opus--1.md" >}})

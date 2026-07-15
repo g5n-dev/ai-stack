@@ -1,14 +1,30 @@
 ---
-title: "AWS SMGS基于Bedrock AgentCore构建AI对话助手实现商业智能转型"
-date: 2026-05-27T19:45:30+08:00
+title: AWS SMGS基于Bedrock AgentCore构建AI对话助手实现商业智能转型
+date: 2026-05-27 19:45:30+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI代理", "Bedrock", "商业智能", "事件驱动", "云架构", "企业级部署", "智能路由", "实时数据"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- AI 代理
+- Bedrock
+- 商业智能
+- 事件驱动
+- 云架构
+- 企业级部署
+- 智能路由
+- 实时数据
+categories:
+- 大模型
+- AI 工程
 source: blogs_podcasts
-description: "架构概览 - 两层分离：批处理层负责离线数据清洗、聚合；实时交互层通过API提供即时查询与可视化。 - 采用事件驱动调度，保证批任务完成后自动刷新实时数据。 AI代理功能 - 路由代理：根据自然语言意图将请求分发至合适模型或后端服务，实现多业务场景自适应。 - 校验代理：在返回结果前进行事实核对、合规检查，提升答案可信"
+description: 架构概览 - 两层分离：批处理层负责离线数据清洗、聚合；实时交互层通过API提供即时查询与可视化。 - 采用事件驱动调度，保证批任务完成后自动刷新实时数据。
+  AI代理功能 - 路由代理：根据自然语言意图将请求分发至合适模型或后端服务，实现多业务场景自适应。 - 校验代理：在返回结果前进行事实核对、合规检查，提升答案可信
 external_url: https://aws.amazon.com/blogs/machine-learning/how-aws-smgs-uses-an-ai-powered-conversational-assistant-to-transform-business-management-with-amazon-bedrock-agentcore
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AWS SMGS基于Bedrock AgentCore构建AI对话助手实现商业智能转型
@@ -153,7 +169,7 @@ NarrateAI将传统数周的报表分析周期压缩至分钟级交互响应。�
 
 - [Amazon Bedrock公司级记忆功能：Neptune与Mem0驱动AI上下文持久化]({{< relref "posts/20260422-blogs_podcasts-company-wise-memory-in-amazon-bedrock-with-amazon--0.md" >}})
 - [亚马逊AgentCore Payments预览：AI代理即时支付内容]({{< relref "posts/20260507-blogs_podcasts-agents-that-transact-introducing-amazon-bedrock-ag-0.md" >}})
-- [Goodfire AI打造机制可解释性平台并推API落地企业部署]({{< relref "posts/20260207-blogs_podcasts-the-first-mechanistic-interpretability-frontier-la-1.md" >}})
-- [Goodfire AI 打造可落地机械可解释性标杆并发布 API]({{< relref "posts/20260207-blogs_podcasts-the-first-mechanistic-interpretability-frontier-la-2.md" >}})
-- [Goodfire AI：打造首个机制可解释性实验室与生产级工作流]({{< relref "posts/20260208-blogs_podcasts-the-first-mechanistic-interpretability-frontier-la-1.md" >}})
+- [Goodfire AI打造机制可解释性平台并推API落地企业部署]({{< relref "posts/20260205-blogs_podcasts-the-first-mechanistic-interpretability-frontier-la-0.md" >}})
+- [Goodfire AI 打造可落地机械可解释性标杆并发布 API]({{< relref "posts/20260205-blogs_podcasts-the-first-mechanistic-interpretability-frontier-la-0.md" >}})
+- [Goodfire AI：打造首个机制可解释性实验室与生产级工作流]({{< relref "posts/20260205-blogs_podcasts-the-first-mechanistic-interpretability-frontier-la-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

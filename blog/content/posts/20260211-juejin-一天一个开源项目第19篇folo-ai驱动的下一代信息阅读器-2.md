@@ -1,14 +1,30 @@
 ---
-title: "Folo：支持AI摘要与多端同步的开源信息阅读器"
-date: 2026-02-11T16:19:57+08:00
+title: Folo：支持AI摘要与多端同步的开源信息阅读器
+date: 2026-02-11 16:19:57+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Folo", "开源项目", "RSS阅读器", "AI摘要", "信息聚合", "多端同步", "效率工具", "Next.js"]
-categories: ["开源生态", "产品与创业"]
+entry_kind: auto
+tags:
+- Folo
+- 开源项目
+- RSS阅读器
+- AI摘要
+- 信息聚合
+- 多端同步
+- 效率工具
+- Next.js
+categories:
+- 开源生态
+- 产品与创业
 source: juejin
-description: "在信息过载的当下，如何高效筛选与消化内容已成为许多人的痛点。本文深入解读 GitHub 上备受关注的开源项目 Folo，探讨它如何利用 AI 技术重构 RSS 订阅与信息聚合流程。通过解析其核心功能与架构，你将了解这款工具如何帮助用户打造无噪音的统一阅读时间线，从而实现从“被动接收”到“高效掌控”的信息消费升级。"
+description: 在信息过载的当下，如何高效筛选与消化内容已成为许多人的痛点。本文深入解读 GitHub 上备受关注的开源项目 Folo，探讨它如何利用 AI
+  技术重构 RSS 订阅与信息聚合流程。通过解析其核心功能与架构，你将了解这款工具如何帮助用户打造无噪音的统一阅读时间线，从而实现从“被动接收”到“高效掌控”的信息消费升级。
 external_url: https://juejin.cn/post/7605214360085315620
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Folo：支持AI摘要与多端同步的开源信息阅读器
@@ -181,7 +197,7 @@ scenarios: ["AI/ML项目"]
 
 - [Show HN发帖量同比翻倍！黑客社区为何彻底沸腾？🚀🔥]({{< relref "posts/20260126-hacker_news-show-hn-posts-pmonth-more-than-doubled-in-the-last-1.md" >}})
 - [Moltworker：自托管个人 AI 智能体]({{< relref "posts/20260130-hacker_news-moltworker-a-self-hosted-personal-ai-agent-minus-t-16.md" >}})
-- [Moltworker：自托管个人 AI 智能体]({{< relref "posts/20260130-hacker_news-moltworker-a-self-hosted-personal-ai-agent-minus-t-19.md" >}})
+- [Moltworker：自托管个人 AI 智能体]({{< relref "posts/20260130-hacker_news-moltworker-a-self-hosted-personal-ai-agent-minus-t-16.md" >}})
 - [Voxtral Transcribe 2 发布]({{< relref "posts/20260204-hacker_news-voxtral-transcribe-2-0.md" >}})
-- [Voxtral Transcribe 2 发布]({{< relref "posts/20260205-hacker_news-voxtral-transcribe-2-0.md" >}})
+- [Voxtral Transcribe 2 发布]({{< relref "posts/20260204-hacker_news-voxtral-transcribe-2-0.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

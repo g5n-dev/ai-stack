@@ -21,6 +21,13 @@ description: 将 Flash Attention 移植至 TPU 并非简单的代码迁移，而
 external_url: https://archerzhang.me/forcing-flash-attention-onto-a-tpu
 scenarios:
 - 大语言模型
+aliases:
+- /posts/20260313-hacker_news-forcing-flash-attention-onto-a-tpu-and-learning-th-11/
+- /posts/20260313-hacker_news-forcing-flash-attention-onto-a-tpu-and-learning-th-12/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 在TPU上移植Flash Attention的工程实践与挑战

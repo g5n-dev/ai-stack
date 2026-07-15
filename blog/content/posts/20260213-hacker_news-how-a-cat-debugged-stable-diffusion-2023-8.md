@@ -1,14 +1,31 @@
 ---
-title: "一只猫如何调试Stable Diffusion"
-date: 2026-02-13T03:01:31+08:00
+title: 一只猫如何调试Stable Diffusion
+date: 2026-02-13 03:01:31+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Stable Diffusion", "调试", "LLM", "AIGC", "开源", "图像生成", "工程实践", "故障排查"]
-categories: ["AI 工程", "开源生态"]
+entry_kind: auto
+tags:
+- Stable Diffusion
+- 调试
+- LLM
+- AIGC
+- 开源
+- 图像生成
+- 工程实践
+- 故障排查
+categories:
+- AI 工程
+- 开源生态
 source: hacker_news
-description: "生成式模型在实际落地中，稳定性往往比理论性能更难把控。本文记录了一次通过“猫”的随机输入意外发现 Stable Diffusion 潜在 Bug 的过程，详细复现了从异常现象定位到代码修复的完整技术路径。对于正在研究或部署扩散模型的开发者而言，这份案例提供了一套实用的排查思路，有助于提升模型在复杂场景下的鲁棒性。"
+description: 生成式模型在实际落地中，稳定性往往比理论性能更难把控。本文记录了一次通过“猫”的随机输入意外发现 Stable Diffusion 潜在
+  Bug 的过程，详细复现了从异常现象定位到代码修复的完整技术路径。对于正在研究或部署扩散模型的开发者而言，这份案例提供了一套实用的排查思路，有助于提升模型在复杂场景下的鲁棒性。
 external_url: https://blog.dwac.dev/posts/cat-debugging
-scenarios: ["大语言模型", "AI/ML项目"]
+scenarios:
+- 大语言模型
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 一只猫如何调试Stable Diffusion
@@ -434,8 +451,8 @@ Stability AI 是一家专注于开源人工智能模型的公司，其开发的 
 ### 相关文章
 
 - [Cline 开源编码代理：规划加行动范式与非技术场景应用]({{< relref "posts/20260202-blogs_podcasts-cline-the-open-source-coding-agent-that-doesnt-cut-0.md" >}})
-- [Agent Skills：智能体技能评估与开源框架]({{< relref "posts/20260204-hacker_news-agent-skills-7.md" >}})
-- [Tambo 1.0：支持渲染 React 组件的开源 Agent 工具包]({{< relref "posts/20260211-hacker_news-tambo-10-open-source-toolkit-for-agents-that-rende-18.md" >}})
-- [Agent评估显示AGENTS.md配置优于Skills]({{< relref "posts/20260130-hacker_news-agentsmd-outperforms-skills-in-our-agent-evals-8.md" >}})
-- [压缩智能体：Agent Skills 技术解析]({{< relref "posts/20260130-hacker_news-compressed-agentsmd-agent-skills-8.md" >}})
+- [Agent Skills：智能体技能评估与开源框架]({{< relref "posts/20260203-hacker_news-agent-skills-0.md" >}})
+- [Tambo 1.0：支持渲染 React 组件的开源 Agent 工具包]({{< relref "posts/20260211-hacker_news-tambo-10-open-source-toolkit-for-agents-that-rende-12.md" >}})
+- [Agent评估显示AGENTS.md配置优于Skills]({{< relref "posts/20260129-hacker_news-compressed-agentsmd-agent-skills-5.md" >}})
+- [压缩智能体：Agent Skills 技术解析]({{< relref "posts/20260129-hacker_news-compressed-agentsmd-agent-skills-5.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

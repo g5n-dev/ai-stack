@@ -1,14 +1,30 @@
 ---
-title: "RTX 3080 本地任务分类与调度系统"
-date: 2026-02-06T03:10:07+08:00
+title: RTX 3080 本地任务分类与调度系统
+date: 2026-02-06 03:10:07+08:00
 draft: false
-entry_kind: "auto"
-tags: ["RTX 3080", "本地计算", "任务调度", "任务分类", "GPU加速", "系统架构", "HackerNews", "ShowHN"]
-categories: ["系统与基础设施", "AI 工程"]
+entry_kind: auto
+tags:
+- RTX 3080
+- 本地计算
+- 任务调度
+- 任务分类
+- GPU加速
+- 系统架构
+- HackerNews
+- ShowHN
+categories:
+- 系统与基础设施
+- AI 工程
 source: hacker_news
-description: "随着边缘计算能力的提升，在本地运行复杂的 AI 任务调度系统已成为可能。本文介绍了一种基于 RTX 3080 显卡的本地任务分类与分发方案，探讨了如何利用 GPU 算力在低延迟环境下高效处理多模态输入。通过阅读，读者将了解该系统的架构设计思路、性能瓶颈分析以及具体的部署步骤，从而为构建本地化的高性能推理服务提供参考。"
+description: 随着边缘计算能力的提升，在本地运行复杂的 AI 任务调度系统已成为可能。本文介绍了一种基于 RTX 3080 显卡的本地任务分类与分发方案，探讨了如何利用
+  GPU 算力在低延迟环境下高效处理多模态输入。通过阅读，读者将了解该系统的架构设计思路、性能瓶颈分析以及具体的部署步骤，从而为构建本地化的高性能推理服务提供参考。
 external_url: https://github.com/resilientworkflowsentinel/resilient-workflow-sentinel
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # RTX 3080 本地任务分类与调度系统
@@ -391,9 +407,9 @@ print(system.process_tasks())
 
 ### 相关文章
 
-- [FlashAttention-T：张量化注意力机制实现方案]({{< relref "posts/20260204-hacker_news-flashattention-t-towards-tensorized-attention-8.md" >}})
+- [FlashAttention-T：张量化注意力机制实现方案]({{< relref "posts/20260203-hacker_news-flashattention-t-towards-tensorized-attention-0.md" >}})
 - [🔥Show HN: AutoShorts！本地GPU加速的AI视频神器✨]({{< relref "posts/20260125-hacker_news-show-hn-autoshorts-local-gpu-accelerated-ai-video--9.md" >}})
-- [🔥支撑8亿用户！PostgreSQL如何驱动ChatGPT爆发式增长？🚀]({{< relref "posts/20260127-blogs_podcasts-scaling-postgresql-to-power-800-million-chatgpt-us-9.md" >}})
-- [揭秘Codex Agent核心循环！🔥智能编程的终极引擎！🤖✨]({{< relref "posts/20260127-blogs_podcasts-unrolling-the-codex-agent-loop-6.md" >}})
-- [🔥揭秘Codex Agent循环！AI如何实现自主进化？]({{< relref "posts/20260127-blogs_podcasts-unrolling-the-codex-agent-loop-7.md" >}})
+- [🔥支撑8亿用户！PostgreSQL如何驱动ChatGPT爆发式增长？🚀]({{< relref "posts/20260125-blogs_podcasts-scaling-postgresql-to-power-800-million-chatgpt-us-2.md" >}})
+- [揭秘Codex Agent核心循环！🔥智能编程的终极引擎！🤖✨]({{< relref "posts/20260125-blogs_podcasts-unrolling-the-codex-agent-loop-1.md" >}})
+- [🔥揭秘Codex Agent循环！AI如何实现自主进化？]({{< relref "posts/20260125-blogs_podcasts-unrolling-the-codex-agent-loop-1.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

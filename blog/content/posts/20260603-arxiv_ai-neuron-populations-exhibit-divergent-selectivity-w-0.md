@@ -1,14 +1,32 @@
 ---
-title: "神经元群体选择性随尺度的差异化特征"
-date: 2026-06-03T22:08:54+08:00
+title: 神经元群体选择性随尺度的差异化特征
+date: 2026-06-03 22:08:54+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Rosetta", "规模幂律", "极化效应", "领域专化", "特征效用", "可解释性", "语言模型", "视觉模型"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- Rosetta
+- 规模幂律
+- 极化效应
+- 领域专化
+- 特征效用
+- 可解释性
+- 语言模型
+- 视觉模型
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "研究背景与对象 本文探讨神经网络中神经元种群是否随模型规模呈可预测的演化，超越传统的宏观指标（如损失）。研究对象为Rosetta Neurons——在独立训练的模型间激活模式相似的神经元（Dravid et al., 2023），分别在最大30B参数的语言模型和5B参数的视觉模型中进行分析。 主要发现 1. **亚线性"
+description: 研究背景与对象 本文探讨神经网络中神经元种群是否随模型规模呈可预测的演化，超越传统的宏观指标（如损失）。研究对象为Rosetta Neurons——在独立训练的模型间激活模式相似的神经元（Dravid
+  et al., 2023），分别在最大30B参数的语言模型和5B参数的视觉模型中进行分析。 主要发现 1. **亚线性
 external_url: http://arxiv.org/abs/2606.03990v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+aliases:
+- /posts/20260604-arxiv_ai-neuron-populations-exhibit-divergent-selectivity-w-0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 神经元群体选择性随尺度的差异化特征
@@ -131,6 +149,6 @@ Rosetta Neurons的规模演化规律为模型设计提供新思路。通过识�
 - [DeALOG：基于日志中介的去中心化多智能体推理框架]({{< relref "posts/20260203-arxiv_ai-dealog-decentralized-multi-agents-log-mediated-rea-4.md" >}})
 - [学习大模型神经元激活的生成式元模型]({{< relref "posts/20260209-arxiv_ai-learning-a-generative-meta-model-of-llm-activation-0.md" >}})
 - [超越掩码扩散语言模型的扩展性研究]({{< relref "posts/20260217-arxiv_ai-scaling-beyond-masked-diffusion-language-models-5.md" >}})
-- [超越掩码扩散语言模型的扩展性研究]({{< relref "posts/20260218-arxiv_ai-scaling-beyond-masked-diffusion-language-models-5.md" >}})
-- [因果性是可解释性泛化的关键]({{< relref "posts/20260220-arxiv_ai-causality-is-key-for-interpretability-claims-to-ge-5.md" >}})
+- [超越掩码扩散语言模型的扩展性研究]({{< relref "posts/20260217-arxiv_ai-scaling-beyond-masked-diffusion-language-models-5.md" >}})
+- [因果性是可解释性泛化的关键]({{< relref "posts/20260219-arxiv_ai-causality-is-key-for-interpretability-claims-to-ge-5.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

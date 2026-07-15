@@ -1,14 +1,29 @@
 ---
-title: "可扩展随机小波特征：带收敛保证的高效非平稳核近似"
-date: 2026-02-03T03:49:30+08:00
+title: 可扩展随机小波特征：带收敛保证的高效非平稳核近似
+date: 2026-02-03 03:49:30+08:00
 draft: false
-entry_kind: "auto"
-tags: ["机器学习", "非平稳核", "小波变换", "随机特征", "RWF", "核方法", "高斯过程", "RFF"]
-categories: ["论文", "数据"]
+entry_kind: auto
+tags:
+- 机器学习
+- 非平稳核
+- 小波变换
+- 随机特征
+- RWF
+- 核方法
+- 高斯过程
+- RFF
+categories:
+- 论文
+- 数据
 source: arxiv
-description: "**总结：Scalable Random Wavelet Features (RWF)** **背景与问题** 在机器学习中，建模非平稳过程（即统计特性随输入域变化而变化）是一个关键挑战。目前大多数可扩展的方法都依赖于平稳性假设，导致研究者面临两难选择：要么使用表达能力强但计算昂贵的模型（如深度高斯过程），要么使用计算"
+description: '**总结：Scalable Random Wavelet Features (RWF)** **背景与问题** 在机器学习中，建模非平稳过程（即统计特性随输入域变化而变化）是一个关键挑战。目前大多数可扩展的方法都依赖于平稳性假设，导致研究者面临两难选择：要么使用表达能力强但计算昂贵的模型（如深度高斯过程），要么使用计算'
 external_url: http://arxiv.org/abs/2602.00987v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 可扩展随机小波特征：带收敛保证的高效非平稳核近似
@@ -520,7 +535,7 @@ SRWF 的目标是在保持计算效率的同时提供非平稳核的逼近。在
 
 ### 相关文章
 
-- [💥无需标注！基于核变化点检测的无监督文本分割！]({{< relref "posts/20260128-arxiv_ai-unsupervised-text-segmentation-via-kernel-change-p-5.md" >}})
+- [💥无需标注！基于核变化点检测的无监督文本分割！]({{< relref "posts/20260127-arxiv_ai-unsupervised-text-segmentation-via-kernel-change-p-5.md" >}})
 - [为何Adam在$β_1=β_2$时更优：缺失的梯度尺度不变性原理]({{< relref "posts/20260130-arxiv_ai-why-adam-works-better-with-β_1-β_2-the-missing-gra-8.md" >}})
 - [超越预测不确定性！🚀结构约束下的可靠表征学习！🔥]({{< relref "posts/20260125-arxiv_ai-beyond-predictive-uncertainty-reliable-representat-7.md" >}})
 - [🤖反事实训练！让模型学会靠谱又可落地的解释！]({{< relref "posts/20260125-arxiv_ai-counterfactual-training-teaching-models-plausible--3.md" >}})

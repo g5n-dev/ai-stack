@@ -1,14 +1,31 @@
 ---
-title: "AI编码规则的npm包化实践"
-date: 2026-05-02T11:11:10+08:00
+title: AI编码规则的npm包化实践
+date: 2026-05-02 11:11:10+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI编码规范", "npm包", "Skill封装", "模块化", "版本管理", "跨IDE", "提示词工程", "自动化测试"]
-categories: ["AI 工程", "开发工具"]
+entry_kind: auto
+tags:
+- AI编码规范
+- npm包
+- Skill封装
+- 模块化
+- 版本管理
+- 跨IDE
+- 提示词工程
+- 自动化测试
+categories:
+- AI 工程
+- 开发工具
 source: juejin
-description: "背景 传统 AI 编码规则散落在 prompt 文档、配置文件或 IDE 插件中，缺乏统一管理，导致难以维护、难以复用。 目标 将 AI 编码规则封装为可安装的 **Skill**，通过 npm 包形式发布，实现规则的模块化、版本化以及跨 IDE 复用。 实现方式 - 使用标准化的 JSON Schema 或 YAML"
+description: 背景 传统 AI 编码规则散落在 prompt 文档、配置文件或 IDE 插件中，缺乏统一管理，导致难以维护、难以复用。 目标 将 AI
+  编码规则封装为可安装的 **Skill**，通过 npm 包形式发布，实现规则的模块化、版本化以及跨 IDE 复用。 实现方式 - 使用标准化的 JSON Schema
+  或 YAML
 external_url: https://juejin.cn/post/7634860379345092617
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AI编码规则的npm包化实践
@@ -109,8 +126,8 @@ npm是当前最成熟的JavaScript包管理平台，拥有完整的版本控制�
 ### 相关文章
 
 - [Morph：在 GitHub 中嵌入 AI 代码审查视频]({{< relref "posts/20260204-hacker_news-show-hn-morph-videos-of-ai-testing-your-pr-embedde-10.md" >}})
-- [AI 代码审查的真实世界基准测试]({{< relref "posts/20260205-hacker_news-a-real-world-benchmark-for-ai-code-review-3.md" >}})
-- [Morph：在 GitHub 中嵌入 AI 测试 PR 的视频]({{< relref "posts/20260205-hacker_news-show-hn-morph-videos-of-ai-testing-your-pr-embedde-19.md" >}})
+- [AI 代码审查的真实世界基准测试]({{< relref "posts/20260204-hacker_news-a-real-world-benchmark-for-ai-code-review-2.md" >}})
+- [Morph：在 GitHub 中嵌入 AI 测试 PR 的视频]({{< relref "posts/20260204-hacker_news-show-hn-morph-videos-of-ai-testing-your-pr-embedde-10.md" >}})
 - [The Death of Traditional Testing: Agentic Development B]({{< relref "posts/20260211-blogs_podcasts-the-death-of-traditional-testing-agentic-developme-0.md" >}})
-- [代理化开发加速传统测试消亡，JiTTesting 实现即时错误检测]({{< relref "posts/20260211-blogs_podcasts-the-death-of-traditional-testing-agentic-developme-1.md" >}})
+- [代理化开发加速传统测试消亡，JiTTesting 实现即时错误检测]({{< relref "posts/20260211-blogs_podcasts-the-death-of-traditional-testing-agentic-developme-0.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

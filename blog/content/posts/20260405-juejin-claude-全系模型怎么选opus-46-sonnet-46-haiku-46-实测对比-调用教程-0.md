@@ -1,14 +1,30 @@
 ---
-title: "Claude Opus/Sonnet/Haiku 4.6文档摘要与抽取实测对比"
-date: 2026-04-05T02:51:22+08:00
+title: Claude Opus/Sonnet/Haiku 4.6文档摘要与抽取实测对比
+date: 2026-04-05 02:51:22+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Claude", "模型对比", "文档摘要", "结构化抽取", "性能测试", "定价分析", "模型选择", "调用教程"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- Claude
+- 模型对比
+- 文档摘要
+- 结构化抽取
+- 性能测试
+- 定价分析
+- 模型选择
+- 调用教程
+categories:
+- 大模型
+- AI 工程
 source: juejin
-description: "随着Claude系列模型在文本处理领域的应用越来越广，如何在实际项目中挑选最合适的版本成为关键。本文基于真实的私活需求，对Opus 4.6、Sonnet 4.6与Haiku 4.6在文档摘要和结构化抽取两大场景进行横向评测，比较它们的速度、精度以及成本差异，并提供可直接复制的调用代码，帮助开发者快速做出模型选型决策。"
+description: 随着Claude系列模型在文本处理领域的应用越来越广，如何在实际项目中挑选最合适的版本成为关键。本文基于真实的私活需求，对Opus 4.6、Sonnet
+  4.6与Haiku 4.6在文档摘要和结构化抽取两大场景进行横向评测，比较它们的速度、精度以及成本差异，并提供可直接复制的调用代码，帮助开发者快速做出模型选型决策。
 external_url: https://juejin.cn/post/7624411135886868520
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Claude Opus/Sonnet/Haiku 4.6文档摘要与抽取实测对比
@@ -82,9 +98,9 @@ Claude Opus 4.6 在高复杂度任务上展现出明显优势，但 Sonnet 4.6 �
 
 ### 相关文章
 
-- [OpenAI 与 Anthropic 之争：Claude Opus 4.6 对决 GPT 5.3 Codex]({{< relref "posts/20260206-blogs_podcasts-ainews-openai-and-anthropic-go-to-war-claude-opus--2.md" >}})
-- [OpenAI 对决 Anthropic：Claude Opus 4.6 挑战 GPT-5.3 Codex]({{< relref "posts/20260207-blogs_podcasts-ainews-openai-and-anthropic-go-to-war-claude-opus--2.md" >}})
-- [OpenAI 对决 Anthropic：Claude Opus 4.6 挑战 GPT-5.3 Codex]({{< relref "posts/20260209-blogs_podcasts-ainews-openai-and-anthropic-go-to-war-claude-opus--5.md" >}})
-- [[AINews] OpenAI and Anthropic go to war: Claude Opus 4]({{< relref "posts/20260210-blogs_podcasts-ainews-openai-and-anthropic-go-to-war-claude-opus--9.md" >}})
-- [[AINews] Context Drought]({{< relref "posts/20260317-blogs_podcasts-ainews-context-drought-9.md" >}})
+- [OpenAI 与 Anthropic 之争：Claude Opus 4.6 对决 GPT 5.3 Codex]({{< relref "posts/20260206-blogs_podcasts-ainews-openai-and-anthropic-go-to-war-claude-opus--0.md" >}})
+- [OpenAI 对决 Anthropic：Claude Opus 4.6 挑战 GPT-5.3 Codex]({{< relref "posts/20260206-blogs_podcasts-ainews-openai-and-anthropic-go-to-war-claude-opus--0.md" >}})
+- [OpenAI 对决 Anthropic：Claude Opus 4.6 挑战 GPT-5.3 Codex]({{< relref "posts/20260206-blogs_podcasts-ainews-openai-and-anthropic-go-to-war-claude-opus--0.md" >}})
+- [[AINews] OpenAI and Anthropic go to war: Claude Opus 4]({{< relref "posts/20260206-blogs_podcasts-ainews-openai-and-anthropic-go-to-war-claude-opus--0.md" >}})
+- [[AINews] Context Drought]({{< relref "posts/20260314-blogs_podcasts-ainews-context-drought-0.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

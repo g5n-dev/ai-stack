@@ -1,14 +1,28 @@
 ---
-title: "大语言模型工作原理解析"
-date: 2026-06-06T07:09:36+08:00
+title: 大语言模型工作原理解析
+date: 2026-06-06 07:09:36+08:00
 draft: false
-entry_kind: "auto"
-tags: ["大语言模型", "工作原理", "自注意力", "预训练", "微调", "推理", "神经网络", "分词"]
-categories: ["大模型"]
+entry_kind: auto
+tags:
+- 大语言模型
+- 工作原理
+- 自注意力
+- 预训练
+- 微调
+- 推理
+- 神经网络
+- 分词
+categories:
+- 大模型
 source: hacker_news
-description: "本文深入剖析大语言模型（LLM）的工作原理，从模型架构、训练过程到推理机制逐层展开。在当前AI技术迅速渗透各行业的背景下，理解其内部运作有助于开发者更好地调优模型、规避风险，并有效规划产品策略。阅读完本篇内容后，读者将掌握LLM的核心概念、关键技术细节以及实际应用中的关键考量。"
+description: 本文深入剖析大语言模型（LLM）的工作原理，从模型架构、训练过程到推理机制逐层展开。在当前AI技术迅速渗透各行业的背景下，理解其内部运作有助于开发者更好地调优模型、规避风险，并有效规划产品策略。阅读完本篇内容后，读者将掌握LLM的核心概念、关键技术细节以及实际应用中的关键考量。
 external_url: https://www.0xkato.xyz/how-llms-actually-work
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 大语言模型工作原理解析
@@ -84,6 +98,6 @@ scenarios: ["Web应用开发"]
 - [通过低秩近似优化大模型动量状态以降低显存占用]({{< relref "posts/20260302-arxiv_ai-taming-momentum-rethinking-optimizer-states-throug-4.md" >}})
 - [Transformer架构：注意力机制如何支撑BERT与GPT模型]({{< relref "posts/20260504-juejin-一文了解transformer架构大模型的核心基石与实战全攻略-0.md" >}})
 - [权重衰减提升语言模型可塑性]({{< relref "posts/20260212-arxiv_ai-weight-decay-improves-language-model-plasticity-9.md" >}})
-- [权重衰减提升语言模型可塑性]({{< relref "posts/20260213-arxiv_ai-weight-decay-improves-language-model-plasticity-9.md" >}})
+- [权重衰减提升语言模型可塑性]({{< relref "posts/20260212-arxiv_ai-weight-decay-improves-language-model-plasticity-9.md" >}})
 - [大模型行为塑造：SFT与LoRA深度解析]({{< relref "posts/20260215-juejin-大模型行为塑造sft-与-lora-深度解析-3.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

@@ -21,6 +21,10 @@ description: 本文介绍了一种名为 **ST-FS-EB** 的新型贝叶斯深度�
 external_url: http://arxiv.org/abs/2602.22015v1
 scenarios:
 - Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 函数空间经验贝叶斯正则化：基于t分布先验
@@ -414,7 +418,7 @@ Student's t分布在正则化中有几个显著优势：1) 它具有重尾特性
 ### 相关文章
 
 - [超越预测不确定性！🚀结构约束下的可靠表征学习！🔥]({{< relref "posts/20260125-arxiv_ai-beyond-predictive-uncertainty-reliable-representat-7.md" >}})
-- [阿联酋方言评测新突破！Alyah让阿拉伯语大模型更鲁棒🚀]({{< relref "posts/20260127-blogs_podcasts-alyah-toward-robust-evaluation-of-emirati-dialect--1.md" >}})
-- [Alyah：评估阿拉伯语大模型阿联酋方言能力]({{< relref "posts/20260129-blogs_podcasts-alyah-toward-robust-evaluation-of-emirati-dialect--8.md" >}})
+- [阿联酋方言评测新突破！Alyah让阿拉伯语大模型更鲁棒🚀]({{< relref "posts/20260127-blogs_podcasts-alyah-toward-robust-evaluation-of-emirati-dialect--0.md" >}})
+- [Alyah：评估阿拉伯语大模型阿联酋方言能力]({{< relref "posts/20260127-blogs_podcasts-alyah-toward-robust-evaluation-of-emirati-dialect--0.md" >}})
 - [函数空间逆问题的解耦扩散采样方法]({{< relref "posts/20260202-arxiv_ai-decoupled-diffusion-sampling-for-inverse-problems--2.md" >}})
 - [基于急停干预的鲁棒干预学习]({{< relref "posts/20260204-arxiv_ai-robust-intervention-learning-from-emergency-stop-i-7.md" >}})

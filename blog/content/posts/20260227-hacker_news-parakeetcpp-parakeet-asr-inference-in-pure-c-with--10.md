@@ -21,6 +21,12 @@ description: Parakeet.cpp 是一个基于纯 C++ 实现的自动语音识别（A
 external_url: https://github.com/Frikallo/parakeet.cpp
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260227-hacker_news-parakeetcpp-parakeet-asr-inference-in-pure-c-with--11/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Parakeet.cpp：基于Metal GPU加速的纯C++ ASR推理

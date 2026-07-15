@@ -21,6 +21,10 @@ description: 本文介绍了一款名为 **Super Dev** 的开源免费工程流�
 external_url: https://juejin.cn/post/7614205951336529930
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Super Dev：面向商业交付的AI工程流水线编排工具
@@ -185,8 +189,8 @@ AI 生成的代码往往存在逻辑漏洞、缺乏边界检查或不符合特�
 
 ### 相关文章
 
-- [AI代码审查泡沫破裂？💥 揭秘行业真相！]({{< relref "posts/20260127-hacker_news-there-is-an-ai-code-review-bubble-3.md" >}})
-- [适用于 macOS 的 Codex 应用：支持多智能体与并行工作流的 AI 编程指挥中心]({{< relref "posts/20260203-blogs_podcasts-introducing-the-codex-app-6.md" >}})
+- [AI代码审查泡沫破裂？💥 揭秘行业真相！]({{< relref "posts/20260126-hacker_news-there-is-an-ai-code-review-bubble-7.md" >}})
+- [适用于 macOS 的 Codex 应用：支持多智能体与并行工作流的 AI 编程指挥中心]({{< relref "posts/20260202-hacker_news-the-codex-app-1.md" >}})
 - [GitHub 浏览器插件：在 PR 中标注 AI 代码贡献]({{< relref "posts/20260203-hacker_news-github-browser-plugin-for-ai-contribution-blame-in-2.md" >}})
-- [Xcode 26.3 引入智能体编码能力]({{< relref "posts/20260203-hacker_news-xcode-263-unlocks-the-power-of-agentic-coding-10.md" >}})
-- [Xcode 26.3 引入 Agent 编码能力]({{< relref "posts/20260203-hacker_news-xcode-263-unlocks-the-power-of-agentic-coding-4.md" >}})
+- [Xcode 26.3 引入智能体编码能力]({{< relref "posts/20260203-hacker_news-xcode-263-unlocks-the-power-of-agentic-coding-1.md" >}})
+- [Xcode 26.3 引入 Agent 编码能力]({{< relref "posts/20260203-hacker_news-xcode-263-unlocks-the-power-of-agentic-coding-1.md" >}})

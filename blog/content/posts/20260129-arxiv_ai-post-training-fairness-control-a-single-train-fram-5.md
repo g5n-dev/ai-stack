@@ -1,14 +1,32 @@
 ---
-title: "后训练公平性控制：推荐系统动态公平性单训练框架"
-date: 2026-01-29T22:59:16+08:00
+title: 后训练公平性控制：推荐系统动态公平性单训练框架
+date: 2026-01-29 22:59:16+08:00
 draft: false
-entry_kind: "auto"
-tags: ["推荐系统", "公平性", "Cofair", "动态公平性", "后训练", "模型适配", "用户嵌入", "正则化"]
-categories: ["论文", "数据"]
+entry_kind: auto
+tags:
+- 推荐系统
+- 公平性
+- Cofair
+- 动态公平性
+- 后训练
+- 模型适配
+- 用户嵌入
+- 正则化
+categories:
+- 论文
+- 数据
 source: arxiv
-description: "本文介绍了一种名为 **Cofair** 的单次训练框架，旨在解决推荐系统中公平性要求动态变化时的灵活性挑战。 **背景与问题：** 现有的公平感知推荐方法通常在训练时固定公平性要求。然而，在现实场景中，不同利益相关者对公平性的需求会随时间改变。若针对每一次新的公平性要求都重新训练模型，成本极其高昂且不切实际。 **解"
+description: 本文介绍了一种名为 **Cofair** 的单次训练框架，旨在解决推荐系统中公平性要求动态变化时的灵活性挑战。 **背景与问题：** 现有的公平感知推荐方法通常在训练时固定公平性要求。然而，在现实场景中，不同利益相关者对公平性的需求会随时间改变。若针对每一次新的公平性要求都重新训练模型，成本极其高昂且不切实际。
+  **解
 external_url: http://arxiv.org/abs/2601.20848v1
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+aliases:
+- /posts/20260130-arxiv_ai-post-training-fairness-control-a-single-train-fram-5/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 后训练公平性控制：推荐系统动态公平性单训练框架
@@ -515,5 +533,5 @@ Cofair 的创新性在于**“条件化”**思想的迁移应用。虽然条件
 - [探索Transformer在表格数据变分自编码器中的位置]({{< relref "posts/20260129-arxiv_ai-exploring-transformer-placement-in-variational-aut-3.md" >}})
 - [探索Transformer在表格数据变分自编码器中的位置]({{< relref "posts/20260129-arxiv_ai-exploring-transformer-placement-in-variational-aut-3.md" >}})
 - [🔥BONO-Bench震撼发布！首套可追溯Pareto集的双目标优化基准测试！]({{< relref "posts/20260126-arxiv_ai-bono-bench-a-comprehensive-test-suite-for-bi-objec-4.md" >}})
-- [🚀BONO-Bench：可追溯Pareto集的双目标优化基准测试！]({{< relref "posts/20260127-arxiv_ai-bono-bench-a-comprehensive-test-suite-for-bi-objec-4.md" >}})
+- [🚀BONO-Bench：可追溯Pareto集的双目标优化基准测试！]({{< relref "posts/20260126-arxiv_ai-bono-bench-a-comprehensive-test-suite-for-bi-objec-4.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

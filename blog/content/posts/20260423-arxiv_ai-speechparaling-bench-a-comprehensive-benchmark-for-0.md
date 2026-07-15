@@ -1,14 +1,33 @@
 ---
-title: "SpeechParaling-Bench：副语言学感知语音生成基准"
-date: 2026-04-23T23:27:59+08:00
+title: SpeechParaling-Bench：副语言学感知语音生成基准
+date: 2026-04-23 23:27:59+08:00
 draft: false
-entry_kind: "auto"
-tags: ["语音生成", "副语言特征", "基准测试", "大模型", "细粒度控制", "动态调制", "上下文适应", "成对比较"]
-categories: ["论文", "大模型"]
+entry_kind: auto
+tags:
+- 语音生成
+- 副语言特征
+- 基准测试
+- 大模型
+- 细粒度控制
+- 动态调制
+- 上下文适应
+- 成对比较
+categories:
+- 论文
+- 大模型
 source: arxiv
-description: "背景与挑战 副语言特征（语气、情感、节奏等）对自然人机交互至关重要，但大音频语言模型（LALM）在这些特征的评测上仍面临覆盖粗糙、主观性强的困境。 SpeechParaling‑Bench 概述 - **目标**：提供面向副语言感知的语音生成统一基准。 - **特征扩展**：从原有不到 50 项细粒度特征提升至 100"
+description: 背景与挑战 副语言特征（语气、情感、节奏等）对自然人机交互至关重要，但大音频语言模型（LALM）在这些特征的评测上仍面临覆盖粗糙、主观性强的困境。
+  SpeechParaling‑Bench 概述 - **目标**：提供面向副语言感知的语音生成统一基准。 - **特征扩展**：从原有不到 50 项细粒度特征提升至
+  100
 external_url: http://arxiv.org/abs/2604.20842v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+aliases:
+- /posts/20260424-arxiv_ai-speechparaling-bench-a-comprehensive-benchmark-for-0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # SpeechParaling-Bench：副语言学感知语音生成基准
@@ -168,9 +187,9 @@ SpeechParaling‑Bench 将副语言特征从原来的不足 50 项细粒度特�
 
 ### 相关文章
 
-- [Gemini 3.1 Flash TTS细粒度音频标签提升语音表现力]({{< relref "posts/20260416-blogs_podcasts-gemini-31-flash-tts-the-next-generation-of-express-0.md" >}})
+- [Gemini 3.1 Flash TTS细粒度音频标签提升语音表现力]({{< relref "posts/20260415-blogs_podcasts-gemini-31-flash-tts-the-next-generation-of-express-0.md" >}})
 - [机器翻译评估中的跨向污染问题研究]({{< relref "posts/20260129-arxiv_ai-when-flores-bloomz-wrong-cross-direction-contamina-1.md" >}})
 - [ARO：面向大模型矩阵优化的新视角]({{< relref "posts/20260210-arxiv_ai-aro-a-new-lens-on-matrix-optimization-for-large-mo-8.md" >}})
 - [GEBench: Benchmarking Image Generation Models as GUI En]({{< relref "posts/20260210-arxiv_ai-gebench-benchmarking-image-generation-models-as-gu-7.md" >}})
-- [GEBench：将图像生成模型评估为GUI环境的基准]({{< relref "posts/20260211-arxiv_ai-gebench-benchmarking-image-generation-models-as-gu-7.md" >}})
+- [GEBench：将图像生成模型评估为GUI环境的基准]({{< relref "posts/20260210-arxiv_ai-gebench-benchmarking-image-generation-models-as-gu-7.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

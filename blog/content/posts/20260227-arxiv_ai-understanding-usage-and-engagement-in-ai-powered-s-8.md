@@ -23,6 +23,14 @@ scenarios:
 - AI/ML项目
 - 大语言模型
 - RAG应用
+aliases:
+- /posts/20260228-arxiv_ai-understanding-usage-and-engagement-in-ai-powered-s-8/
+- /posts/20260301-arxiv_ai-understanding-usage-and-engagement-in-ai-powered-s-8/
+- /posts/20260302-arxiv_ai-understanding-usage-and-engagement-in-ai-powered-s-8/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 基于Asta数据集的AI科研工具使用与交互行为分析
@@ -447,7 +455,7 @@ Asta 数据集的研究者利用这些行为模式构建了预测模型，试图
 ### 相关文章
 
 - [LLM 模型应关注的数据处理与优化策略]({{< relref "posts/20260218-hacker_news-if-youre-an-llm-please-read-this-2.md" >}})
-- [SkillsBench 论文解读：跨任务基准测试如何揭示 Agent 技能的实际效用]({{< relref "posts/20260218-juejin-你知道不你现在给-ai-用的-agent-skills-可能毫无作用甚至还拖后腿-2.md" >}})
-- [Kirara-AI：支持多平台接入的多模态聊天机器人框架]({{< relref "posts/20260130-github_trending-lss233-kirara-ai-2.md" >}})
+- [SkillsBench 论文解读：跨任务基准测试如何揭示 Agent 技能的实际效用]({{< relref "posts/20260217-juejin-你知道不你现在给-ai-用的-agent-skills-可能毫无作用甚至还拖后腿-2.md" >}})
+- [Kirara-AI：支持多平台接入的多模态聊天机器人框架]({{< relref "posts/20260127-github_trending-lss233-kirara-ai-2.md" >}})
 - [基于大模型的多平台聊天机器人：支持微信飞书钉钉接入]({{< relref "posts/20260131-github_trending-zhayujie-chatgpt-on-wechat-0.md" >}})
-- [LangBot：生产级多平台智能体机器人开发平台]({{< relref "posts/20260201-github_trending-langbot-app-langbot-0.md" >}})
+- [LangBot：生产级多平台智能体机器人开发平台]({{< relref "posts/20260131-github_trending-langbot-app-langbot-7.md" >}})

@@ -1,14 +1,30 @@
 ---
-title: "Claude Fable 5发布：Mythos级模型使用政策引争议"
-date: 2026-06-10T13:58:13+08:00
+title: Claude Fable 5发布：Mythos级模型使用政策引争议
+date: 2026-06-10 13:58:13+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Claude Fable", "Anthropic", "Mythos级模型", "AI安全", "使用政策", "争议条款", "内容审核", "RLHF"]
-categories: ["大模型", "安全"]
+entry_kind: auto
+tags:
+- Claude Fable
+- Anthropic
+- Mythos级模型
+- AI 安全
+- 使用政策
+- 争议条款
+- 内容审核
+- RLHF
+categories:
+- 大模型
+- 安全
 source: blogs_podcasts
-description: "背景 Anthropic 发布 Mythos 级模型 Claude Fable 5，主打安全与高语言能力。 安全特性 - 强化有害内容检测与过滤； - 多层安全微调 + RLHF，降低误导输出。 争议条款 - 禁止未授权政治宣传、涉及特定宗教的生成； - 对暴力、成人内容设置细粒度限制，要求开发者对用户进行身份验证；"
+description: 背景 Anthropic 发布 Mythos 级模型 Claude Fable 5，主打安全与高语言能力。 安全特性 - 强化有害内容检测与过滤；
+  - 多层安全微调 + RLHF，降低误导输出。 争议条款 - 禁止未授权政治宣传、涉及特定宗教的生成； - 对暴力、成人内容设置细粒度限制，要求开发者对用户进行身份验证；
 external_url: https://www.latent.space/p/ainews-anthropic-claude-fable-5-mythos
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Claude Fable 5发布：Mythos级模型使用政策引争议
@@ -172,9 +188,9 @@ Mythos‑class 模型（Claude Fable 5）在技术性能上实现了显著�
 
 ### 相关文章
 
-- [Anthropic Claude Opus 4.6 挖掘开源代码500个零日漏洞]({{< relref "posts/20260205-hacker_news-anthropics-claude-opus-46-uncovers-500-zero-day-fl-13.md" >}})
+- [Anthropic Claude Opus 4.6 挖掘开源代码500个零日漏洞]({{< relref "posts/20260205-hacker_news-anthropics-claude-opus-46-uncovers-500-zero-day-fl-8.md" >}})
 - [Moltbook 漏洞：自进化 AI 社会中 Anthropic 安全机制失效]({{< relref "posts/20260211-arxiv_ai-the-devil-behind-moltbook-anthropic-safety-is-alwa-0.md" >}})
 - [Anthropic发布Agent自主性研究及METR数据]({{< relref "posts/20260219-blogs_podcasts-ainews-anthropics-agent-autonomy-study-0.md" >}})
-- [Anthropic发布基于METR数据的Agent自主性研究]({{< relref "posts/20260220-blogs_podcasts-ainews-anthropics-agent-autonomy-study-9.md" >}})
-- [Anthropic指控DeepSeek等遭超1600万次工业级蒸馏攻击]({{< relref "posts/20260225-blogs_podcasts-ainews-anthropic-accuses-deepseek-moonshot-and-min-14.md" >}})
+- [Anthropic发布基于METR数据的Agent自主性研究]({{< relref "posts/20260219-blogs_podcasts-ainews-anthropics-agent-autonomy-study-0.md" >}})
+- [Anthropic指控DeepSeek等遭超1600万次工业级蒸馏攻击]({{< relref "posts/20260224-blogs_podcasts-ainews-anthropic-accuses-deepseek-moonshot-and-min-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

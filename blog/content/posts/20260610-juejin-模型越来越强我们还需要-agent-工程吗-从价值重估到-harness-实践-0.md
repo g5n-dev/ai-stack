@@ -1,14 +1,29 @@
 ---
-title: "基础模型越来越强，Agent工程还值得做吗"
-date: 2026-06-10T22:19:44+08:00
+title: 基础模型越来越强，Agent工程还值得做吗
+date: 2026-06-10 22:19:44+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Agent工程", "大模型", "编排框架", "Harness测试", "可靠性", "成本控制", "混合智能", "标准化"]
-categories: ["大模型"]
+entry_kind: auto
+tags:
+- Agent工程
+- 大模型
+- 编排框架
+- Harness测试
+- 可靠性
+- 成本控制
+- 混合智能
+- 标准化
+categories:
+- 大模型
 source: juejin
-description: "背景 随着大模型能力快速提升，开发者担心在模型升级面前，投入大量时间优化 Agent 工程可能不再划算。 Agent工程的核心价值 系统化编排：将模型、记忆、工具、策略分层组装，实现可维护、可扩展的流程。 可靠性与安全：在多步推理、长时交互中提供错误捕获、回滚、审计等保障。 成本与性能控制：通过缓存、批处理、模型调度等"
+description: 背景 随着大模型能力快速提升，开发者担心在模型升级面前，投入大量时间优化 Agent 工程可能不再划算。 Agent工程的核心价值 系统化编排：将模型、记忆、工具、策略分层组装，实现可维护、可扩展的流程。
+  可靠性与安全：在多步推理、长时交互中提供错误捕获、回滚、审计等保障。 成本与性能控制：通过缓存、批处理、模型调度等
 external_url: https://juejin.cn/post/7649642814956568628
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 基础模型越来越强，Agent工程还值得做吗
@@ -104,9 +119,9 @@ AI模型的参数规模与推理速度持续突破，但agent工程的价值并�
 
 ### 相关文章
 
-- [全球开源AI生态展望：从DeepSeek到AI+]({{< relref "posts/20260204-blogs_podcasts-the-future-of-the-global-open-source-ai-ecosystem--1.md" >}})
-- [全球开源AI生态展望：从DeepSeek到AI+]({{< relref "posts/20260205-blogs_podcasts-the-future-of-the-global-open-source-ai-ecosystem--6.md" >}})
-- [Claude Opus 4.6 发布]({{< relref "posts/20260206-hacker_news-claude-opus-46-3.md" >}})
+- [全球开源AI生态展望：从DeepSeek到AI+]({{< relref "posts/20260203-blogs_podcasts-the-future-of-the-global-open-source-ai-ecosystem--0.md" >}})
+- [全球开源AI生态展望：从DeepSeek到AI+]({{< relref "posts/20260203-blogs_podcasts-the-future-of-the-global-open-source-ai-ecosystem--0.md" >}})
+- [Claude Opus 4.6 发布]({{< relref "posts/20260205-hacker_news-claude-opus-46-2.md" >}})
 - [OpenAI发布GPT-5.3-Codex-Spark：首款实时代码模型，速度提升15倍]({{< relref "posts/20260213-blogs_podcasts-introducing-gpt-53-codex-spark-11.md" >}})
 - [GPT-5.2 推导出理论物理新结果]({{< relref "posts/20260213-hacker_news-gpt-52-derives-a-new-result-in-theoretical-physics-0.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

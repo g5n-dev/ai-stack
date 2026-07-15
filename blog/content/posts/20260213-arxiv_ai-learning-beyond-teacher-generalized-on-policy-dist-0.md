@@ -1,14 +1,29 @@
 ---
-title: "基于奖励外推的广义在线策略蒸馏算法"
-date: 2026-02-13T03:01:31+08:00
+title: 基于奖励外推的广义在线策略蒸馏算法
+date: 2026-02-13 03:01:31+08:00
 draft: false
-entry_kind: "auto"
-tags: ["LLM", "强化学习", "知识蒸馏", "RLHF", "在线策略", "奖励外推", "KL约束", "G-OPD"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- LLM
+- 强化学习
+- 知识蒸馏
+- RLHF
+- 在线策略
+- 奖励外推
+- KL约束
+- G-OPD
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "本文介绍了**广义在线策略蒸馏**框架，旨在通过理论扩展和奖励外推来提升大语言模型的蒸馏效果。 **主要贡献与核心内容如下：** 1. **理论视角**：作者首先从理论上证明，标准的在线策略蒸馏（OPD）实际上是一种特殊的密集KL约束强化学习（RL），即奖励项与KL正则化项的权重始终相等且固定。基于此，作者提出了**G"
+description: 本文介绍了**广义在线策略蒸馏**框架，旨在通过理论扩展和奖励外推来提升大语言模型的蒸馏效果。 **主要贡献与核心内容如下：** 1. **理论视角**：作者首先从理论上证明，标准的在线策略蒸馏（OPD）实际上是一种特殊的密集KL约束强化学习（RL），即奖励项与KL正则化项的权重始终相等且固定。基于此，作者提出了**G
 external_url: http://arxiv.org/abs/2602.12125v1
-scenarios: ["大语言模型"]
+scenarios:
+- 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 基于奖励外推的广义在线策略蒸馏算法
@@ -540,9 +555,9 @@ R2-D2 可以被视为 PPO 的一种泛化形式。它在保持基于策略更新
 
 ### 相关文章
 
-- [探索面向智能体的推理奖励模型]({{< relref "posts/20260201-arxiv_ai-exploring-reasoning-reward-model-for-agents-4.md" >}})
+- [探索面向智能体的推理奖励模型]({{< relref "posts/20260130-arxiv_ai-exploring-reasoning-reward-model-for-agents-4.md" >}})
 - [研究揭示RLHF如何加剧大模型谄媚行为]({{< relref "posts/20260203-arxiv_ai-how-rlhf-amplifies-sycophancy-0.md" >}})
 - [RLAnything：完全动态强化学习系统构建环境、策略与奖励模型]({{< relref "posts/20260203-arxiv_ai-rlanything-forge-environment-policy-and-reward-mod-3.md" >}})
-- [通过文本反馈扩展强化学习的能力边界]({{< relref "posts/20260204-arxiv_ai-expanding-the-capabilities-of-reinforcement-learni-5.md" >}})
+- [通过文本反馈扩展强化学习的能力边界]({{< relref "posts/20260203-arxiv_ai-expanding-the-capabilities-of-reinforcement-learni-5.md" >}})
 - [重新思考大模型强化学习中的信任区域]({{< relref "posts/20260205-arxiv_ai-rethinking-the-trust-region-in-llm-reinforcement-l-3.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

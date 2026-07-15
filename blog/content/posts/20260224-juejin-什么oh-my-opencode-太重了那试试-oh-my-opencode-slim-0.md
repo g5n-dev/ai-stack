@@ -4,7 +4,7 @@ date: 2026-02-24 23:13:49+08:00
 draft: false
 entry_kind: auto
 tags:
-- AI编程
+- AI 编程
 - LLM
 - Agent
 - 开源工具
@@ -23,6 +23,10 @@ external_url: https://juejin.cn/post/7610254281426468904
 scenarios:
 - AI/ML项目
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # oh-my-opencode-slim：体积缩减80%的AI编程精简版
@@ -178,8 +182,8 @@ oh-my-opencode-slim 是 AI 编程工具的精简版，体积比完整版小 80%�
 
 ### 相关文章
 
-- [Codex App：基于自然语言指令的代码生成工具]({{< relref "posts/20260203-hacker_news-the-codex-app-4.md" >}})
-- [构建极简编码代理的技术实践与经验总结]({{< relref "posts/20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-2.md" >}})
+- [Codex App：基于自然语言指令的代码生成工具]({{< relref "posts/20260202-hacker_news-the-codex-app-1.md" >}})
+- [构建极简编码代理的技术实践与经验总结]({{< relref "posts/20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-1.md" >}})
 - [AI 提升编程愉悦感与开发效率]({{< relref "posts/20260219-hacker_news-ai-made-coding-more-enjoyable-5.md" >}})
-- [Claude Code：面向开发者的AI编程代理]({{< relref "posts/20260131-hacker_news-claude-code-is-your-customer-7.md" >}})
-- [构建极简且固执的编程代理的经验总结]({{< relref "posts/20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-10.md" >}})
+- [Claude Code：面向开发者的AI编程代理]({{< relref "posts/20260131-hacker_news-claude-code-is-your-customer-16.md" >}})
+- [构建极简且固执的编程代理的经验总结]({{< relref "posts/20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-1.md" >}})

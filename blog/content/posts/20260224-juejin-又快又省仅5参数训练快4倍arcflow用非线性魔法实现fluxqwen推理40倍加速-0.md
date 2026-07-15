@@ -11,7 +11,7 @@ tags:
 - 扩散模型
 - 模型压缩
 - Stable Diffusion
-- 生成式AI
+- 生成式 AI
 categories:
 - 大模型
 - 论文
@@ -21,6 +21,10 @@ description: 由于提供的内容在“为了从纯噪声中 ‘雕刻’ 出�
 external_url: https://juejin.cn/post/7609939326843715611
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # ArcFlow实现FLUX与Qwen推理40倍加速
@@ -172,8 +176,8 @@ ArcFlow 主要是算法层面的优化，旨在提高计算效率（FLOPS 利用
 
 ### 相关文章
 
-- [一致性扩散语言模型提速14倍且无损质量]({{< relref "posts/20260220-hacker_news-consistency-diffusion-language-models-up-to-14x-fa-1.md" >}})
-- [一致性扩散语言模型提速14倍且无损质量]({{< relref "posts/20260220-hacker_news-consistency-diffusion-language-models-up-to-14x-fa-11.md" >}})
-- [一致性扩散语言模型提速14倍且无损质量]({{< relref "posts/20260220-hacker_news-consistency-diffusion-language-models-up-to-14x-fa-18.md" >}})
-- [一致性扩散语言模型提速14倍且无损质量]({{< relref "posts/20260220-hacker_news-consistency-diffusion-language-models-up-to-14x-fa-6.md" >}})
+- [一致性扩散语言模型提速14倍且无损质量]({{< relref "posts/20260220-hacker_news-consistency-diffusion-language-models-up-to-14x-fa-2.md" >}})
+- [一致性扩散语言模型提速14倍且无损质量]({{< relref "posts/20260220-hacker_news-consistency-diffusion-language-models-up-to-14x-fa-2.md" >}})
+- [一致性扩散语言模型提速14倍且无损质量]({{< relref "posts/20260220-hacker_news-consistency-diffusion-language-models-up-to-14x-fa-2.md" >}})
+- [一致性扩散语言模型提速14倍且无损质量]({{< relref "posts/20260220-hacker_news-consistency-diffusion-language-models-up-to-14x-fa-2.md" >}})
 - [ArcFlow：高精度非线性流蒸馏实现两步文生图生成]({{< relref "posts/20260210-arxiv_ai-arcflow-unleashing-2-step-text-to-image-generation-3.md" >}})

@@ -1,14 +1,30 @@
 ---
-title: "LLM冲击下的软件工程师职业困境分析"
-date: 2026-06-07T15:22:24+08:00
+title: LLM冲击下的软件工程师职业困境分析
+date: 2026-06-07 15:22:24+08:00
 draft: false
-entry_kind: "auto"
-tags: ["LLM", "软件工程师", "职业困境", "AI冲击", "技术失业", "职业发展", "技能转型", "编程未来"]
-categories: ["大模型", "效率与方法论"]
+entry_kind: auto
+tags:
+- LLM
+- 软件工程师
+- 职业困境
+- AI冲击
+- 技术失业
+- 职业发展
+- 技能转型
+- 编程未来
+categories:
+- 大模型
+- 效率与方法论
 source: hacker_news
-description: "随着大型语言模型（LLM）在代码生成、调试和需求分析等环节的渗透，软件开发的工作模式正快速转变。本文作者从自身职业经历出发，探讨LLM对工程师技能需求和岗位安全的影响，并分享在技术迭代浪潮中寻找新定位的思考路径。对正在面对类似困惑的从业者，文章提供了实用的反思框架和可行的行动建议。"
+description: 随着大型语言模型（LLM）在代码生成、调试和需求分析等环节的渗透，软件开发的工作模式正快速转变。本文作者从自身职业经历出发，探讨LLM对工程师技能需求和岗位安全的影响，并分享在技术迭代浪潮中寻找新定位的思考路径。对正在面对类似困惑的从业者，文章提供了实用的反思框架和可行的行动建议。
 external_url: https://human-in-the-loop.bearblog.dev/llms-are-eroding-my-software-engineering-career-and-i-dont-know-what-to-do
-scenarios: ["大语言模型", "AI/ML项目"]
+scenarios:
+- 大语言模型
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # LLM冲击下的软件工程师职业困境分析
@@ -76,9 +92,9 @@ LLM对编程工作的影响是真实的，但程度被高估。**事实陈述**�
 
 ### 相关文章
 
-- [AI工程师会是最后一个职业吗]({{< relref "posts/20260310-blogs_podcasts-ainews-ai-engineer-will-be-the-last-job-10.md" >}})
+- [AI工程师会是最后一个职业吗]({{< relref "posts/20260307-blogs_podcasts-ainews-ai-engineer-will-be-the-last-job-0.md" >}})
 - [AI 编程时代：程序员应转型为需求描述工程师]({{< relref "posts/20260310-juejin-ai时代程序员都应该是需求描述工程师-2.md" >}})
-- [AI对工程类岗位的影响或与预期不同]({{< relref "posts/20260129-hacker_news-ais-impact-on-engineering-jobs-may-be-different-th-5.md" >}})
+- [AI对工程类岗位的影响或与预期不同]({{< relref "posts/20260129-hacker_news-ais-impact-on-engineering-jobs-may-be-different-th-3.md" >}})
 - [打破“氛围编程”的迷思：回归代码本质]({{< relref "posts/20260214-hacker_news-breaking-the-spell-of-vibe-coding-11.md" >}})
-- [打破“氛围编程”的迷思与局限]({{< relref "posts/20260215-hacker_news-breaking-the-spell-of-vibe-coding-15.md" >}})
+- [打破“氛围编程”的迷思与局限]({{< relref "posts/20260214-hacker_news-breaking-the-spell-of-vibe-coding-11.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

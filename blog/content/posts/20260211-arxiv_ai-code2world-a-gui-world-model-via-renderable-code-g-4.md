@@ -1,14 +1,23 @@
 ---
-title: "Code2World: A GUI World Model via Renderable Code Gener"
-date: 2026-02-11T03:18:02+08:00
+title: 'Code2World: A GUI World Model via Renderable Code Gener'
+date: 2026-02-11 03:18:02+08:00
 draft: false
-entry_kind: "auto"
-tags: ["arxiv", "cs.CV"]
-categories: ["论文"]
+entry_kind: auto
+tags:
+- arxiv
+- cs.CV
+categories:
+- 论文
 source: arxiv
-description: "**Code2World：基于可渲染代码生成的GUI世界模型** **背景与问题：** 自主GUI代理（Agent）通过感知界面和执行操作与环境交互。作为虚拟沙箱，GUI世界模型通过实现“条件动作预测”，赋予Agent类似人类的预见能力。然而，现有的基于文本或像素的方法难以同时实现高视觉保真度和精细的结构可控性。 **"
+description: '**Code2World：基于可渲染代码生成的GUI世界模型** **背景与问题：** 自主GUI代理（Agent）通过感知界面和执行操作与环境交互。作为虚拟沙箱，GUI世界模型通过实现“条件动作预测”，赋予Agent类似人类的预见能力。然而，现有的基于文本或像素的方法难以同时实现高视觉保真度和精细的结构可控性。
+  **'
 external_url: http://arxiv.org/abs/2602.09856v1
-scenarios: ["计算机视觉"]
+scenarios:
+- 计算机视觉
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Code2World: A GUI World Model via Renderable Code Generation
@@ -308,9 +317,9 @@ scenarios: ["计算机视觉"]
 
 ### 相关文章
 
-- [ArcFlow: Unleashing 2-Step Text-to-Image Generation via]({{< relref "posts/20260211-arxiv_ai-arcflow-unleashing-2-step-text-to-image-generation-3.md" >}})
+- [ArcFlow: Unleashing 2-Step Text-to-Image Generation via]({{< relref "posts/20260210-arxiv_ai-arcflow-unleashing-2-step-text-to-image-generation-3.md" >}})
 - [UEval：统一多模态生成基准]({{< relref "posts/20260130-arxiv_ai-ueval-a-benchmark-for-unified-multimodal-generatio-3.md" >}})
-- [UEval：统一多模态生成基准]({{< relref "posts/20260131-arxiv_ai-ueval-a-benchmark-for-unified-multimodal-generatio-3.md" >}})
-- [UEval：统一多模态生成基准]({{< relref "posts/20260202-arxiv_ai-ueval-a-benchmark-for-unified-multimodal-generatio-3.md" >}})
+- [UEval：统一多模态生成基准]({{< relref "posts/20260130-arxiv_ai-ueval-a-benchmark-for-unified-multimodal-generatio-3.md" >}})
+- [UEval：统一多模态生成基准]({{< relref "posts/20260130-arxiv_ai-ueval-a-benchmark-for-unified-multimodal-generatio-3.md" >}})
 - [ANCRe：自适应神经连接重分配实现高效深度扩展]({{< relref "posts/20260210-arxiv_ai-ancre-adaptive-neural-connection-reassignment-for--5.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

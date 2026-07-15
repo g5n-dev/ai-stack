@@ -4,7 +4,7 @@ date: 2026-03-17 03:25:32+08:00
 draft: false
 entry_kind: auto
 tags:
-- 医疗AI
+- 医疗 AI
 - 公平性
 - XGBoost
 - 贝叶斯优化
@@ -21,6 +21,10 @@ description: '**FairMed-XGB：针对关键医疗数据人口统计公平性的�
 external_url: http://arxiv.org/abs/2603.14947v1
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # FairMed-XGB：贝叶斯优化的多指标可解释框架用于医疗数据人口公平性
@@ -324,8 +328,8 @@ XGBoost（eXtreme Gradient Boosting）被选为基础模型是因为它在处理
 
 ### 相关文章
 
-- [提升AI模型解释能力以增强医疗与自动驾驶预测可信度]({{< relref "posts/20260310-blogs_podcasts-improving-ai-models-ability-to-explain-their-predi-7.md" >}})
+- [提升AI模型解释能力以增强医疗与自动驾驶预测可信度]({{< relref "posts/20260309-blogs_podcasts-improving-ai-models-ability-to-explain-their-predi-0.md" >}})
 - [ExplainerPFN：面向表格数据的无模型零样本特征重要性估计]({{< relref "posts/20260202-arxiv_ai-explainerpfn-towards-tabular-foundation-models-for-9.md" >}})
 - [过程监督多智能体强化学习提升临床推理可靠性]({{< relref "posts/20260217-arxiv_ai-process-supervised-multi-agent-reinforcement-learn-9.md" >}})
-- [🚀ctELM：用ELM解码临床试验嵌入！精准操控💡]({{< relref "posts/20260128-arxiv_ai-ctelm-decoding-and-manipulating-embeddings-of-clin-0.md" >}})
+- [🚀ctELM：用ELM解码临床试验嵌入！精准操控💡]({{< relref "posts/20260127-arxiv_ai-ctelm-decoding-and-manipulating-embeddings-of-clin-0.md" >}})
 - [后训练公平性控制：推荐系统动态公平性单训练框架]({{< relref "posts/20260129-arxiv_ai-post-training-fairness-control-a-single-train-fram-5.md" >}})

@@ -21,6 +21,12 @@ description: '**总结：Memory Caching（内存缓存）——RNNs 长记忆能
 external_url: http://arxiv.org/abs/2602.24281v1
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260303-arxiv_ai-memory-caching-rnns-with-growing-memory-5/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # RNN引入记忆缓存机制以实现动态增长的存储能力
@@ -447,7 +453,7 @@ RNNs with Growing Memory（具有增长记忆的 RNN）是指一类旨在解决�
 ### 相关文章
 
 - [混合线性注意力新架构：高效蒸馏与极长上下文处理]({{< relref "posts/20260130-arxiv_ai-hybrid-linear-attention-done-right-efficient-disti-2.md" >}})
-- [混合线性注意力新架构：高效蒸馏与超长上下文建模]({{< relref "posts/20260131-arxiv_ai-hybrid-linear-attention-done-right-efficient-disti-2.md" >}})
-- [混合线性注意力新架构：高效蒸馏与超长上下文处理]({{< relref "posts/20260201-arxiv_ai-hybrid-linear-attention-done-right-efficient-disti-2.md" >}})
-- [混合线性注意力新架构：高效蒸馏与超长上下文处理]({{< relref "posts/20260202-arxiv_ai-hybrid-linear-attention-done-right-efficient-disti-2.md" >}})
-- [基于对称性泰勒近似实现恒定每Token成本注意力机制]({{< relref "posts/20260204-hacker_news-attention-at-constant-cost-per-token-via-symmetry--3.md" >}})
+- [混合线性注意力新架构：高效蒸馏与超长上下文建模]({{< relref "posts/20260130-arxiv_ai-hybrid-linear-attention-done-right-efficient-disti-2.md" >}})
+- [混合线性注意力新架构：高效蒸馏与超长上下文处理]({{< relref "posts/20260130-arxiv_ai-hybrid-linear-attention-done-right-efficient-disti-2.md" >}})
+- [混合线性注意力新架构：高效蒸馏与超长上下文处理]({{< relref "posts/20260130-arxiv_ai-hybrid-linear-attention-done-right-efficient-disti-2.md" >}})
+- [基于对称性泰勒近似实现恒定每Token成本注意力机制]({{< relref "posts/20260204-hacker_news-attention-at-constant-cost-per-token-via-symmetry--0.md" >}})

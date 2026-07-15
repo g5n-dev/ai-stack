@@ -21,6 +21,14 @@ description: 以下是关于论文《Towards Provably Unbiased LLM Judges via Bi
 external_url: http://arxiv.org/abs/2603.05485v1
 scenarios:
 - 大语言模型
+aliases:
+- /posts/20260307-arxiv_ai-towards-provably-unbiased-llm-judges-via-bias-boun-6/
+- /posts/20260308-arxiv_ai-towards-provably-unbiased-llm-judges-via-bias-boun-6/
+- /posts/20260309-arxiv_ai-towards-provably-unbiased-llm-judges-via-bias-boun-6/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 通过偏差界限评估实现可证无偏的LLM评判者
@@ -405,8 +413,8 @@ LLM 评测者容易表现出位置偏差（偏向第一个答案）或风格偏�
 
 ### 相关文章
 
-- [SkillsBench：评估智能体技能在多样化任务中的表现基准]({{< relref "posts/20260217-hacker_news-skillsbench-benchmarking-how-well-agent-skills-wor-19.md" >}})
-- [多轮人机协作框架支持用户自定义需求]({{< relref "posts/20260221-arxiv_ai-multi-round-human-ai-collaboration-with-user-speci-6.md" >}})
-- [最小Transformer模型实现两位数加法运算]({{< relref "posts/20260228-hacker_news-smallest-transformer-that-can-add-two-10-digit-num-12.md" >}})
-- [Agent评估显示AGENTS.md配置优于Skills]({{< relref "posts/20260130-hacker_news-agentsmd-outperforms-skills-in-our-agent-evals-16.md" >}})
-- [AGENTS.md 架构在智能体评估中超越 Skills 技能]({{< relref "posts/20260130-hacker_news-agentsmd-outperforms-skills-in-our-agent-evals-19.md" >}})
+- [SkillsBench：评估智能体技能在多样化任务中的表现基准]({{< relref "posts/20260216-hacker_news-study-self-generated-agent-skills-are-useless-3.md" >}})
+- [多轮人机协作框架支持用户自定义需求]({{< relref "posts/20260220-arxiv_ai-multi-round-human-ai-collaboration-with-user-speci-6.md" >}})
+- [最小Transformer模型实现两位数加法运算]({{< relref "posts/20260228-hacker_news-smallest-transformer-that-can-add-two-10-digit-num-18.md" >}})
+- [Agent评估显示AGENTS.md配置优于Skills]({{< relref "posts/20260129-hacker_news-compressed-agentsmd-agent-skills-5.md" >}})
+- [AGENTS.md 架构在智能体评估中超越 Skills 技能]({{< relref "posts/20260129-hacker_news-compressed-agentsmd-agent-skills-5.md" >}})

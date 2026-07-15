@@ -1,14 +1,29 @@
 ---
-title: "基于LangChain的后端AI流式对话实现"
-date: 2026-05-13T21:11:45+08:00
+title: 基于LangChain的后端AI流式对话实现
+date: 2026-05-13 21:11:45+08:00
 draft: false
-entry_kind: "auto"
-tags: ["LangChain", "流式对话", "后端开发", "AI集成", "DeepSeek", "Python", "流式输出", "API开发"]
-categories: ["后端", "AI 工程"]
+entry_kind: auto
+tags:
+- LangChain
+- 流式对话
+- 后端开发
+- AI集成
+- DeepSeek
+- Python
+- 流式输出
+- API开发
+categories:
+- 后端
+- AI 工程
 source: juejin
-description: "在前后端分离的开发中，将AI对话能力迁移到后端可以提升响应速度、降低前端依赖，并更好地管理密钥和安全策略。LangChain作为成熟的AI编排框架，提供了简洁的流式输出接口，使得在服务端实现实时对话变得轻而易举。通过本文，你将掌握从环境搭建、模型调用到流式响应的完整实现思路，并了解如何结合LangChain与现有后端框"
+description: 在前后端分离的开发中，将AI对话能力迁移到后端可以提升响应速度、降低前端依赖，并更好地管理密钥和安全策略。LangChain作为成熟的AI编排框架，提供了简洁的流式输出接口，使得在服务端实现实时对话变得轻而易举。通过本文，你将掌握从环境搭建、模型调用到流式响应的完整实现思路，并了解如何结合LangChain与现有后端框
 external_url: https://juejin.cn/post/7639265898831691817
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 基于LangChain的后端AI流式对话实现
@@ -87,7 +102,7 @@ scenarios: ["AI/ML项目"]
 
 - [我把本地文档 RAG 做成了可用系统：Flask + Vue3 + LangChain + FAISS（多知识]({{< relref "posts/20260312-juejin-我把本地文档-rag-做成了可用系统flask-vue3-langchain-faiss多知识库-流-1.md" >}})
 - [Python实现MCP服务器与客户端]({{< relref "posts/20260429-juejin-从零用-python-实现最基础的mcp协议-0.md" >}})
-- [kirara-ai：支持多平台接入的多模态AI聊天机器人框架]({{< relref "posts/20260129-github_trending-lss233-kirara-ai-0.md" >}})
-- [kirara-ai：支持多平台接入的多模态AI聊天机器人框架]({{< relref "posts/20260131-github_trending-lss233-kirara-ai-2.md" >}})
-- [Kirara-AI：多模态聊天机器人框架，支持多平台接入与工作流]({{< relref "posts/20260131-github_trending-lss233-kirara-ai-6.md" >}})
+- [kirara-ai：支持多平台接入的多模态AI聊天机器人框架]({{< relref "posts/20260127-github_trending-lss233-kirara-ai-2.md" >}})
+- [kirara-ai：支持多平台接入的多模态AI聊天机器人框架]({{< relref "posts/20260127-github_trending-lss233-kirara-ai-2.md" >}})
+- [Kirara-AI：多模态聊天机器人框架，支持多平台接入与工作流]({{< relref "posts/20260127-github_trending-lss233-kirara-ai-2.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

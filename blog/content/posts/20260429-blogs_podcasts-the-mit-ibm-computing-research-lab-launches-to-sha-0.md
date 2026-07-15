@@ -1,14 +1,29 @@
 ---
-title: "MIT-IBM联合实验室启动 聚焦AI与量子计算融合"
-date: 2026-04-29T11:24:47+08:00
+title: MIT-IBM联合实验室启动 聚焦AI与量子计算融合
+date: 2026-04-29 11:24:47+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI", "量子计算", "MIT-IBM", "联合实验室", "前沿研究", "算法", "技术创新", "合作"]
-categories: ["大模型", "系统与基础设施"]
+entry_kind: auto
+tags:
+- AI
+- 量子计算
+- MIT-IBM
+- 联合实验室
+- 前沿研究
+- 算法
+- 技术创新
+- 合作
+categories:
+- 大模型
+- 系统与基础设施
 source: blogs_podcasts
-description: "MIT‑IBM 计算研究实验室正式启动，旨在塑造人工智能与量子计算的未来。该实验室依托双方长期合作的基础，将聚焦AI、算法和量子计算的交叉融合，推动前沿技术的研究与创新。"
+description: MIT‑IBM 计算研究实验室正式启动，旨在塑造人工智能与量子计算的未来。该实验室依托双方长期合作的基础，将聚焦AI、算法和量子计算的交叉融合，推动前沿技术的研究与创新。
 external_url: https://news.mit.edu/2026/mit-ibm-computing-research-lab-launches-0429
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # MIT-IBM联合实验室启动 聚焦AI与量子计算融合
@@ -113,9 +128,9 @@ MIT-IBM计算研究实验室的设立标志着人工智能与量子计算融合�
 
 ### 相关文章
 
-- [神经网络原理可视化解析]({{< relref "posts/20260206-hacker_news-understanding-neural-network-visually-3.md" >}})
-- [神经网络原理可视化解析]({{< relref "posts/20260206-hacker_news-understanding-neural-network-visually-5.md" >}})
-- [神经网络原理可视化解析]({{< relref "posts/20260206-hacker_news-understanding-neural-network-visually-6.md" >}})
-- [神经网络原理可视化解析]({{< relref "posts/20260206-hacker_news-understanding-neural-network-visually-8.md" >}})
-- [神经网络原理的可视化解析]({{< relref "posts/20260207-hacker_news-understanding-neural-network-visually-19.md" >}})
+- [神经网络原理可视化解析]({{< relref "posts/20260206-hacker_news-understanding-neural-network-visually-16.md" >}})
+- [神经网络原理可视化解析]({{< relref "posts/20260206-hacker_news-understanding-neural-network-visually-16.md" >}})
+- [神经网络原理可视化解析]({{< relref "posts/20260206-hacker_news-understanding-neural-network-visually-16.md" >}})
+- [神经网络原理可视化解析]({{< relref "posts/20260206-hacker_news-understanding-neural-network-visually-16.md" >}})
+- [神经网络原理的可视化解析]({{< relref "posts/20260206-hacker_news-understanding-neural-network-visually-16.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

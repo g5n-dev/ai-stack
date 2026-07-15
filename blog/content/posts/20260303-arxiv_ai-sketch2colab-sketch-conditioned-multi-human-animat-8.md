@@ -21,6 +21,12 @@ description: 本文介绍了 **Sketch2Colab**，这是一种将故事板风格�
 external_url: http://arxiv.org/abs/2603.02190v1
 scenarios:
 - 计算机视觉
+aliases:
+- /posts/20260304-arxiv_ai-sketch2colab-sketch-conditioned-multi-human-animat-8/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Sketch2Colab：基于可控流蒸馏的草图多人动画生成
@@ -422,7 +428,7 @@ Sketch2Colab 是一个基于草图的多人动画生成框架。其核心功能�
 
 ### 相关文章
 
-- [模式寻优与均值寻优结合实现快速长视频生成]({{< relref "posts/20260303-arxiv_ai-mode-seeking-meets-mean-seeking-for-fast-long-vide-0.md" >}})
+- [模式寻优与均值寻优结合实现快速长视频生成]({{< relref "posts/20260302-arxiv_ai-mode-seeking-meets-mean-seeking-for-fast-long-vide-0.md" >}})
 - [ArcFlow：高精度非线性流蒸馏实现两步文生图生成]({{< relref "posts/20260210-arxiv_ai-arcflow-unleashing-2-step-text-to-image-generation-3.md" >}})
 - [基于扩散模型从面部嵌入实现真实人脸重建]({{< relref "posts/20260216-arxiv_ai-realistic-face-reconstruction-from-facial-embeddin-6.md" >}})
 - [Cosmos重磅：微调视频模型！解锁 visuomotor 控制与规划 🚀✨]({{< relref "posts/20260125-arxiv_ai-cosmos-policy-fine-tuning-video-models-for-visuomo-9.md" >}})

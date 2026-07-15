@@ -21,6 +21,12 @@ description: 随着 AI 技术深度融入软件开发，如何透明地披露代
 external_url: https://github.com/QAInsights/AIx
 scenarios:
 - AI/ML项目
+aliases:
+- /posts/20260316-hacker_news-quillx-is-an-open-standard-for-disclosing-ai-invol-18/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Quillx：披露软件项目AI参与度的开放标准

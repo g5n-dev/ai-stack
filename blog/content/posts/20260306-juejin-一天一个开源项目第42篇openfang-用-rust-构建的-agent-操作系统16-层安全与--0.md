@@ -21,6 +21,10 @@ description: 以下是对该内容的中文总结： **项目概览** **OpenFang
 external_url: https://juejin.cn/post/7613971395927834651
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # OpenFang：Rust 构建的 Agent 操作系统，16 层安全与 7 个自主 Hands
@@ -199,7 +203,7 @@ OpenFang 的核心定位是一个“Agent 操作系统”，而不仅仅是一�
 ### 相关文章
 
 - [Moltworker：自托管个人 AI 智能体]({{< relref "posts/20260130-hacker_news-moltworker-a-self-hosted-personal-ai-agent-minus-t-16.md" >}})
-- [Moltworker：自托管个人 AI 智能体]({{< relref "posts/20260130-hacker_news-moltworker-a-self-hosted-personal-ai-agent-minus-t-19.md" >}})
-- [Zuckerman：具备代码自编辑能力的极简个人AI智能体]({{< relref "posts/20260201-hacker_news-show-hn-zuckerman-minimalist-personal-ai-agent-tha-13.md" >}})
-- [Agent Skills：智能体技能评估与开源框架]({{< relref "posts/20260204-hacker_news-agent-skills-7.md" >}})
-- [基于 NixOS 的 Microvm.nix 构建编码 Agent 虚拟机]({{< relref "posts/20260204-hacker_news-coding-agent-vms-on-nixos-with-microvmnix-15.md" >}})
+- [Moltworker：自托管个人 AI 智能体]({{< relref "posts/20260130-hacker_news-moltworker-a-self-hosted-personal-ai-agent-minus-t-16.md" >}})
+- [Zuckerman：具备代码自编辑能力的极简个人AI智能体]({{< relref "posts/20260201-hacker_news-show-hn-zuckerman-minimalist-personal-ai-agent-tha-12.md" >}})
+- [Agent Skills：智能体技能评估与开源框架]({{< relref "posts/20260203-hacker_news-agent-skills-0.md" >}})
+- [基于 NixOS 的 Microvm.nix 构建编码 Agent 虚拟机]({{< relref "posts/20260204-hacker_news-coding-agent-vms-on-nixos-with-microvmnix-9.md" >}})

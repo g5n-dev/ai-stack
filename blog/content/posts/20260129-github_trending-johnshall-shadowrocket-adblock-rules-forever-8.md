@@ -1,13 +1,29 @@
 ---
-title: "Shadowrocket 广告过滤规则库每日自动更新"
-date: 2026-01-29T06:41:12+08:00
+title: Shadowrocket 广告过滤规则库每日自动更新
+date: 2026-01-29 06:41:12+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Shadowrocket", "广告过滤", "规则库", "GitHub Actions", "自动化", "iOS", "网络代理", "开源项目"]
-categories: ["开源生态"]
+entry_kind: auto
+tags:
+- Shadowrocket
+- 广告过滤
+- 规则库
+- GitHub Actions
+- 自动化
+- iOS
+- 网络代理
+- 开源项目
+categories:
+- 开源生态
 source: github_trending
 external_url: https://github.com/Johnshall/Shadowrocket-ADBlock-Rules-Forever
-scenarios: ["DevOps/运维", "自动化脚本", "安全工具"]
+scenarios:
+- DevOps/运维
+- 自动化脚本
+- 安全工具
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Shadowrocket 广告过滤规则库每日自动更新
@@ -799,9 +815,9 @@ Shadowrocket-ADBlock-Rules-Forever 是一个动态维护的广告拦截规则集
 
 ### 相关文章
 
-- [🚀 GitHub 热榜！DSP/工厂蓝图神器，高效开发必备！🔥]({{< relref "posts/20260127-github_trending-dspblueprints-factoryblueprints-2.md" >}})
-- [🔥GitHub爆火！智能工厂蓝图，自动化神器！]({{< relref "posts/20260127-github_trending-dspblueprints-factoryblueprints-7.md" >}})
-- [🔥 GitHub超火！DSP/Factory设计蓝图，工程化必备！]({{< relref "posts/20260128-github_trending-dspblueprints-factoryblueprints-7.md" >}})
-- [戴森球计划游戏工厂蓝图仓库]({{< relref "posts/20260129-github_trending-dspblueprints-factoryblueprints-4.md" >}})
+- [🚀 GitHub 热榜！DSP/工厂蓝图神器，高效开发必备！🔥]({{< relref "posts/20260125-github_trending-dspblueprints-factoryblueprints-6.md" >}})
+- [🔥GitHub爆火！智能工厂蓝图，自动化神器！]({{< relref "posts/20260125-github_trending-dspblueprints-factoryblueprints-6.md" >}})
+- [🔥 GitHub超火！DSP/Factory设计蓝图，工程化必备！]({{< relref "posts/20260125-github_trending-dspblueprints-factoryblueprints-6.md" >}})
+- [戴森球计划游戏工厂蓝图仓库]({{< relref "posts/20260125-github_trending-dspblueprints-factoryblueprints-6.md" >}})
 - [在边缘/无服务器运行时中运行 V2ray]({{< relref "posts/20260129-github_trending-zizifn-edgetunnel-2.md" >}})
 *这篇文章由 AI Stack 自动生成，包含多次大模型调用，提供深度的结构化分析。*

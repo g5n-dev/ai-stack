@@ -1,14 +1,29 @@
 ---
-title: "微软转向AWS解决GitHub AI容量紧张"
-date: 2026-06-16T04:29:52+08:00
+title: 微软转向AWS解决GitHub AI容量紧张
+date: 2026-06-16 04:29:52+08:00
 draft: false
-entry_kind: "auto"
-tags: ["微软", "AWS", "GitHub", "AI容量", "容量紧张", "跨云", "云基础设施", "算力"]
-categories: ["系统与基础设施"]
+entry_kind: auto
+tags:
+- 微软
+- AWS
+- GitHub
+- AI容量
+- 容量紧张
+- 跨云
+- 云基础设施
+- 算力
+categories:
+- 系统与基础设施
 source: hacker_news
-description: "随着 AI 代码生成和模型训练需求的激增，GitHub 自身的数据中心已难以满足算力需求。微软决定将部分 AI 工作负载迁移至亚马逊云服务（AWS），以缓解算力瓶颈并保证服务的稳定性。此举不仅显示出大企业在 AI 算力布局上的竞争合作，也让开发者关注云端资源的可得性对产品迭代的影响。"
+description: 随着 AI 代码生成和模型训练需求的激增，GitHub 自身的数据中心已难以满足算力需求。微软决定将部分 AI 工作负载迁移至亚马逊云服务（AWS），以缓解算力瓶颈并保证服务的稳定性。此举不仅显示出大企业在
+  AI 算力布局上的竞争合作，也让开发者关注云端资源的可得性对产品迭代的影响。
 external_url: https://runtimewire.com/article/microsoft-github-aws-ai-capacity-crunch
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 微软转向AWS解决GitHub AI容量紧张
@@ -80,9 +95,9 @@ GitHub Copilot等服务自发布以来用户增长显著，代码补全和生成
 
 ### 相关文章
 
-- [Amazon SageMaker AI 2025回顾：弹性训练计划与推理性价比优化]({{< relref "posts/20260223-blogs_podcasts-amazon-sagemaker-ai-in-2025-a-year-in-review-part--2.md" >}})
-- [AWS与NVIDIA深化战略合作，加速AI从试点到生产]({{< relref "posts/20260317-blogs_podcasts-aws-and-nvidia-deepen-strategic-collaboration-to-a-12.md" >}})
-- [AWS与NVIDIA深化战略合作，集成多项新技术加速AI落地生产]({{< relref "posts/20260317-blogs_podcasts-aws-and-nvidia-deepen-strategic-collaboration-to-a-2.md" >}})
-- [AWS and NVIDIA deepen strategic collaboration to accele]({{< relref "posts/20260317-blogs_podcasts-aws-and-nvidia-deepen-strategic-collaboration-to-a-8.md" >}})
-- [AWS与NVIDIA深化战略合作，加速AI从试点到生产]({{< relref "posts/20260318-blogs_podcasts-aws-and-nvidia-deepen-strategic-collaboration-to-a-12.md" >}})
+- [Amazon SageMaker AI 2025回顾：弹性训练计划与推理性价比优化]({{< relref "posts/20260220-blogs_podcasts-amazon-sagemaker-ai-in-2025-a-year-in-review-part--0.md" >}})
+- [AWS与NVIDIA深化战略合作，加速AI从试点到生产]({{< relref "posts/20260317-blogs_podcasts-aws-and-nvidia-deepen-strategic-collaboration-to-a-1.md" >}})
+- [AWS与NVIDIA深化战略合作，集成多项新技术加速AI落地生产]({{< relref "posts/20260317-blogs_podcasts-aws-and-nvidia-deepen-strategic-collaboration-to-a-1.md" >}})
+- [AWS and NVIDIA deepen strategic collaboration to accele]({{< relref "posts/20260317-blogs_podcasts-aws-and-nvidia-deepen-strategic-collaboration-to-a-1.md" >}})
+- [AWS与NVIDIA深化战略合作，加速AI从试点到生产]({{< relref "posts/20260317-blogs_podcasts-aws-and-nvidia-deepen-strategic-collaboration-to-a-1.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

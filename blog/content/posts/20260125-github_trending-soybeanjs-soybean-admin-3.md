@@ -1,12 +1,26 @@
 ---
-title: "🔥 soybean-admin！打造极美后台的神级方案 🚀"
-date: 2026-01-25T12:39:55+08:00
+title: 🔥 soybean-admin！打造极美后台的神级方案 🚀
+date: 2026-01-25 12:39:55+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Vue3", "TypeScript", "Vite", "NaiveUI", "后台管理", "Monorepo", "UnoCSS", "Pinia"]
-categories: ["前端", "开源生态"]
+entry_kind: auto
+tags:
+- Vue3
+- TypeScript
+- Vite
+- NaiveUI
+- 后台管理
+- Monorepo
+- UnoCSS
+- Pinia
+categories:
+- 前端
+- 开源生态
 source: github_trending
 external_url: https://github.com/soybeanjs/soybean-admin
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 🚀 🔥 soybean-admin！打造极美后台的神级方案 🚀

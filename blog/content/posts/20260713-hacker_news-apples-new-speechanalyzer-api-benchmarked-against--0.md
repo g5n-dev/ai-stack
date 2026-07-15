@@ -1,13 +1,28 @@
 ---
-title: "Apple语音分析API与Whisper基准测试对比"
-date: 2026-07-13T19:14:35+08:00
+title: Apple语音分析API与Whisper基准测试对比
+date: 2026-07-13 19:14:35+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Apple", "SpeechAnalyzer", "Whisper", "语音识别", "基准测试", "API对比", "开源模型", "性能评测"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- Apple
+- SpeechAnalyzer
+- Whisper
+- 语音识别
+- 基准测试
+- API对比
+- 开源模型
+- 性能评测
+categories:
+- 大模型
+- AI 工程
 source: hacker_news
 external_url: https://get-inscribe.com/blog/apple-speech-api-benchmark.html
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Apple语音分析API与Whisper基准测试对比
@@ -77,9 +92,9 @@ Apple新推出的SpeechAnalyzer在基准测试中表现出比Whisper更低的延
 
 ### 相关文章
 
-- [Moonshine 开源 STT 模型：精度超越 WhisperLargev3]({{< relref "posts/20260225-hacker_news-show-hn-moonshine-open-weights-stt-models-higher-a-1.md" >}})
-- [Moonshine 开源 STT 模型：精度超越 WhisperLargev3]({{< relref "posts/20260225-hacker_news-show-hn-moonshine-open-weights-stt-models-higher-a-2.md" >}})
-- [Moonshine 开源 STT 模型：精度超越 WhisperLargev3]({{< relref "posts/20260225-hacker_news-show-hn-moonshine-open-weights-stt-models-higher-a-4.md" >}})
-- [Moonshine 开源 STT 模型：精度超越 WhisperLargev3]({{< relref "posts/20260225-hacker_news-show-hn-moonshine-open-weights-stt-models-higher-a-6.md" >}})
-- [Moonshine 开源语音识别模型：精度超越 WhisperLargev3]({{< relref "posts/20260225-hacker_news-show-hn-moonshine-open-weights-stt-models-higher-a-16.md" >}})
+- [Moonshine 开源 STT 模型：精度超越 WhisperLargev3]({{< relref "posts/20260224-hacker_news-show-hn-moonshine-open-weights-stt-models-higher-a-6.md" >}})
+- [Moonshine 开源 STT 模型：精度超越 WhisperLargev3]({{< relref "posts/20260224-hacker_news-show-hn-moonshine-open-weights-stt-models-higher-a-6.md" >}})
+- [Moonshine 开源 STT 模型：精度超越 WhisperLargev3]({{< relref "posts/20260224-hacker_news-show-hn-moonshine-open-weights-stt-models-higher-a-6.md" >}})
+- [Moonshine 开源 STT 模型：精度超越 WhisperLargev3]({{< relref "posts/20260224-hacker_news-show-hn-moonshine-open-weights-stt-models-higher-a-6.md" >}})
+- [Moonshine 开源语音识别模型：精度超越 WhisperLargev3]({{< relref "posts/20260224-hacker_news-show-hn-moonshine-open-weights-stt-models-higher-a-6.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

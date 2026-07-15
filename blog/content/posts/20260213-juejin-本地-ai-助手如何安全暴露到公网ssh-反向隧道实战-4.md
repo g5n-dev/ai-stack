@@ -1,14 +1,30 @@
 ---
-title: "SSH反向隧道实战：安全暴露本地AI助手至公网"
-date: 2026-02-13T11:27:57+08:00
+title: SSH反向隧道实战：安全暴露本地AI助手至公网
+date: 2026-02-13 11:27:57+08:00
 draft: false
-entry_kind: "auto"
-tags: ["SSH", "反向隧道", "内网穿透", "Nginx", "反向代理", "本地部署", "数据隐私", "AI助手"]
-categories: ["系统与基础设施", "安全"]
+entry_kind: auto
+tags:
+- SSH
+- 反向隧道
+- 内网穿透
+- Nginx
+- 反向代理
+- 本地部署
+- 数据隐私
+- AI 助手
+categories:
+- 系统与基础设施
+- 安全
 source: juejin
-description: "以下是针对该内容的中文总结： **标题：本地 AI 助手安全公网暴露实战指南** **核心方案：** 本文介绍了一种通过 **SSH 反向隧道结合 Nginx 反向代理** 的技术方案，旨在将本地 AI 助手安全地暴露至公网。 **主要优势：** 与直接部署在云端或使用第三方隧道服务相比，该方案最大的特点是**数据完全"
+description: 以下是针对该内容的中文总结： **标题：本地 AI 助手安全公网暴露实战指南** **核心方案：** 本文介绍了一种通过 **SSH 反向隧道结合
+  Nginx 反向代理** 的技术方案，旨在将本地 AI 助手安全地暴露至公网。 **主要优势：** 与直接部署在云端或使用第三方隧道服务相比，该方案最大的特点是**数据完全
 external_url: https://juejin.cn/post/7605869591563092003
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # SSH反向隧道实战：安全暴露本地AI助手至公网
@@ -215,6 +231,6 @@ autossh -M 0 -o "ServerAliveInterval 30" -o "ServerAliveCountMax 3" -N -R 2222:l
 - [RedSage：网络安全通用大模型]({{< relref "posts/20260130-arxiv_ai-redsage-a-cybersecurity-generalist-llm-0.md" >}})
 - [发现逾17.5万个Ollama AI实例公网暴露]({{< relref "posts/20260131-hacker_news-175k-publicly-exposed-ollama-ai-instances-discover-19.md" >}})
 - [迈向可解释联邦学习：理解差分隐私的影响]({{< relref "posts/20260211-arxiv_ai-towards-explainable-federated-learning-understandi-2.md" >}})
-- [迈向可解释联邦学习：理解差分隐私的影响]({{< relref "posts/20260212-arxiv_ai-towards-explainable-federated-learning-understandi-2.md" >}})
+- [迈向可解释联邦学习：理解差分隐私的影响]({{< relref "posts/20260211-arxiv_ai-towards-explainable-federated-learning-understandi-2.md" >}})
 - [🇫🇷 法国向科技巨头宣战！自研视频会议App能否终结美企垄断？]({{< relref "posts/20260126-hacker_news-france-aiming-to-replace-zoom-google-meet-microsof-17.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

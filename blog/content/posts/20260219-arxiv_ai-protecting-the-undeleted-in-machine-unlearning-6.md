@@ -21,6 +21,12 @@ description: 以下是关于《Protecting the Undeleted in Machine Unlearning》
 external_url: http://arxiv.org/abs/2602.16697v1
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260220-arxiv_ai-protecting-the-undeleted-in-machine-unlearning-6/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 机器遗忘中保护未删除数据的隐私防御机制
@@ -421,7 +427,7 @@ Aloni Cohen等人撰写的《Protecting the Undeleted in Machine Unlearning》�
 ### 相关文章
 
 - [迈向可解释联邦学习：理解差分隐私的影响]({{< relref "posts/20260211-arxiv_ai-towards-explainable-federated-learning-understandi-2.md" >}})
-- [🚨SoundCloud数据泄露！你的密码是否已遭泄露？快查！🔥]({{< relref "posts/20260127-hacker_news-soundcloud-data-breach-now-on-haveibeenpwned-3.md" >}})
+- [🚨SoundCloud数据泄露！你的密码是否已遭泄露？快查！🔥]({{< relref "posts/20260127-hacker_news-soundcloud-data-breach-now-on-haveibeenpwned-8.md" >}})
 - [🚨SoundCloud数据泄露！HaveIBeenPwned紧急更新！]({{< relref "posts/20260127-hacker_news-soundcloud-data-breach-now-on-haveibeenpwned-8.md" >}})
-- [⚠️FBI紧急调查！Signal聊天记录竟被追踪？ICE引发隐私大地震！🔓]({{< relref "posts/20260128-hacker_news-fbi-is-investigating-minnesota-signal-chats-tracki-14.md" >}})
-- [🚨SoundCloud数据泄露！你的账号是否已在HaveIBeenPwned“上榜”？]({{< relref "posts/20260128-hacker_news-soundcloud-data-breach-now-on-haveibeenpwned-13.md" >}})
+- [⚠️FBI紧急调查！Signal聊天记录竟被追踪？ICE引发隐私大地震！🔓]({{< relref "posts/20260127-hacker_news-fbi-is-investigating-minnesota-signal-chats-tracki-5.md" >}})
+- [🚨SoundCloud数据泄露！你的账号是否已在HaveIBeenPwned“上榜”？]({{< relref "posts/20260127-hacker_news-soundcloud-data-breach-now-on-haveibeenpwned-8.md" >}})

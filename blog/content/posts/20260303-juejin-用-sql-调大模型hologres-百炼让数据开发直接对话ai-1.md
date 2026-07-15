@@ -11,7 +11,7 @@ tags:
 - 全模态分析
 - 数据开发
 - 阿里云
-- LLM应用
+- LLM 应用
 categories:
 - 数据
 - 大模型
@@ -21,6 +21,10 @@ external_url: https://juejin.cn/post/7612852020014661632
 scenarios:
 - AI/ML项目
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Hologres集成百炼：SQL直接调用大模型实现全模态分析
@@ -184,7 +188,7 @@ LIMIT
 ### 相关文章
 
 - [OpenAI内部数据智能体：自动化分析SQL数据库]({{< relref "posts/20260129-hacker_news-openais-in-house-data-agent-14.md" >}})
-- [OpenAI 内部数据代理：利用 GPT-5 与记忆能力快速分析大规模数据集]({{< relref "posts/20260202-blogs_podcasts-inside-openais-in-house-data-agent-5.md" >}})
+- [OpenAI 内部数据代理：利用 GPT-5 与记忆能力快速分析大规模数据集]({{< relref "posts/20260129-hacker_news-openais-in-house-data-agent-14.md" >}})
 - [Qwen3-Coder-Next：阿里通义千问下一代代码模型]({{< relref "posts/20260203-hacker_news-qwen3-coder-next-0.md" >}})
 - [Claude Composer：AI 编排多 Agent 协作完成复杂任务]({{< relref "posts/20260206-hacker_news-claude-composer-9.md" >}})
-- [Claude Composer：AI 编排多智能体工作流]({{< relref "posts/20260207-hacker_news-claude-composer-18.md" >}})
+- [Claude Composer：AI 编排多智能体工作流]({{< relref "posts/20260206-hacker_news-claude-composer-9.md" >}})

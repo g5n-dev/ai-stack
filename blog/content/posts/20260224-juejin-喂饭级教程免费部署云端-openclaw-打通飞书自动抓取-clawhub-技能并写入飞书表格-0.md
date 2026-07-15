@@ -22,6 +22,10 @@ description: 以下是对该内容的简洁总结： **教程主题：零成本�
 external_url: https://juejin.cn/post/7609570581466742794
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 零成本云端部署OpenClaw接入飞书自动抓取数据
@@ -183,8 +187,8 @@ OpenClaw 依赖 ClawHub 的数据源接口，问题可能出在网络环境或�
 
 ### 相关文章
 
-- [编排多会话 Claude Code 团队协作]({{< relref "posts/20260205-hacker_news-orchestrate-teams-of-claude-code-sessions-5.md" >}})
+- [编排多会话 Claude Code 团队协作]({{< relref "posts/20260205-hacker_news-claude-code-agent-teams-3.md" >}})
 - [基于OpenClaw构建16个AI Agent实现多平台自动化运营]({{< relref "posts/20260219-juejin-用openclaw搭了16个ai-agent一个人运营13个自媒体平台-1.md" >}})
-- [基于OpenClaw构建16个AI Agent实现13个平台自动化运营]({{< relref "posts/20260219-juejin-用openclaw搭了16个ai-agent一个人运营13个自媒体平台-2.md" >}})
-- [用OpenClaw构建16个AI Agent实现13个平台自动化运营]({{< relref "posts/20260220-juejin-用openclaw搭了16个ai-agent一个人运营13个自媒体平台-4.md" >}})
+- [基于OpenClaw构建16个AI Agent实现13个平台自动化运营]({{< relref "posts/20260219-juejin-用openclaw搭了16个ai-agent一个人运营13个自媒体平台-1.md" >}})
+- [用OpenClaw构建16个AI Agent实现13个平台自动化运营]({{< relref "posts/20260219-juejin-用openclaw搭了16个ai-agent一个人运营13个自媒体平台-1.md" >}})
 - [软件工厂与代理体时刻]({{< relref "posts/20260207-hacker_news-software-factories-and-the-agentic-moment-4.md" >}})

@@ -1,14 +1,29 @@
 ---
-title: "RNN基础：循环神经网络的核心原理与作用"
-date: 2026-04-13T16:34:45+08:00
+title: RNN基础：循环神经网络的核心原理与作用
+date: 2026-04-13 16:34:45+08:00
 draft: false
-entry_kind: "auto"
-tags: ["RNN", "循环神经网络", "序列建模", "Seq2Seq", "编码器-解码器", "LSTM", "GRU", "双向RNN"]
-categories: ["AI 工程"]
+entry_kind: auto
+tags:
+- RNN
+- 循环神经网络
+- 序列建模
+- Seq2Seq
+- 编码器-解码器
+- LSTM
+- GRU
+- 双向RNN
+categories:
+- AI 工程
 source: juejin
-description: "RNN 基础 RNN（循环神经网络）通过隐藏状态在时间步之间传递信息，实现对序列上下文的学习，能够处理任意长度的输入。 Seq2Seq 与编码‑解码 Seq2Seq 在 RNN 基础上提出编码‑解码框架：编码器将输入序列压缩为上下文向量，解码器依据该向量生成变长输出，解决了输入输出不等长的问题。 典型改进 为缓解梯度消"
+description: RNN 基础 RNN（循环神经网络）通过隐藏状态在时间步之间传递信息，实现对序列上下文的学习，能够处理任意长度的输入。 Seq2Seq 与编码‑解码
+  Seq2Seq 在 RNN 基础上提出编码‑解码框架：编码器将输入序列压缩为上下文向量，解码器依据该向量生成变长输出，解决了输入输出不等长的问题。 典型改进 为缓解梯度消
 external_url: https://juejin.cn/post/7628067175560413226
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # RNN基础：循环神经网络的核心原理与作用
@@ -90,5 +105,5 @@ Seq2Seq 在 RNN 基础上提出编码‑解码框架：编码器将输入序列�
 - [RNN引入记忆缓存机制以实现动态增长的存储能力]({{< relref "posts/20260302-arxiv_ai-memory-caching-rnns-with-growing-memory-5.md" >}})
 - [🔥 视频修复难题：如何攻克时间一致性？]({{< relref "posts/20260125-hacker_news-the-temporal-consistency-challenge-in-video-restor-19.md" >}})
 - [混合线性注意力新架构：高效蒸馏与极长上下文处理]({{< relref "posts/20260130-arxiv_ai-hybrid-linear-attention-done-right-efficient-disti-2.md" >}})
-- [混合线性注意力新架构：高效蒸馏与超长上下文建模]({{< relref "posts/20260131-arxiv_ai-hybrid-linear-attention-done-right-efficient-disti-2.md" >}})
+- [混合线性注意力新架构：高效蒸馏与超长上下文建模]({{< relref "posts/20260130-arxiv_ai-hybrid-linear-attention-done-right-efficient-disti-2.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

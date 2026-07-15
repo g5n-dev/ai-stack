@@ -23,6 +23,10 @@ scenarios:
 - AI/ML项目
 - 大语言模型
 - 后端开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AI Agent 测试核心难题：非确定性输出下的验证方法
@@ -190,8 +194,8 @@ AI Agent 的测试验证体系必须从传统软件的“确定性断言”转�
 
 ### 相关文章
 
-- [Goodfire AI打造机制可解释性平台并推API落地企业部署]({{< relref "posts/20260207-blogs_podcasts-the-first-mechanistic-interpretability-frontier-la-1.md" >}})
-- [Goodfire AI 打造机械可解释性标杆并发布 API]({{< relref "posts/20260209-blogs_podcasts-the-first-mechanistic-interpretability-frontier-la-1.md" >}})
-- [Goodfire AI：打造首个机械可解释性前沿实验室]({{< relref "posts/20260209-blogs_podcasts-the-first-mechanistic-interpretability-frontier-la-3.md" >}})
-- [Goodfire AI 打造可落地机械可解释性工作流]({{< relref "posts/20260209-blogs_podcasts-the-first-mechanistic-interpretability-frontier-la-5.md" >}})
-- [我让 Claude 控制我的笔式绘图仪]({{< relref "posts/20260216-hacker_news-i-gave-claude-access-to-my-pen-plotter-11.md" >}})
+- [Goodfire AI打造机制可解释性平台并推API落地企业部署]({{< relref "posts/20260205-blogs_podcasts-the-first-mechanistic-interpretability-frontier-la-0.md" >}})
+- [Goodfire AI 打造机械可解释性标杆并发布 API]({{< relref "posts/20260205-blogs_podcasts-the-first-mechanistic-interpretability-frontier-la-0.md" >}})
+- [Goodfire AI：打造首个机械可解释性前沿实验室]({{< relref "posts/20260205-blogs_podcasts-the-first-mechanistic-interpretability-frontier-la-0.md" >}})
+- [Goodfire AI 打造可落地机械可解释性工作流]({{< relref "posts/20260205-blogs_podcasts-the-first-mechanistic-interpretability-frontier-la-0.md" >}})
+- [我让 Claude 控制我的笔式绘图仪]({{< relref "posts/20260215-hacker_news-i-gave-claude-access-to-my-pen-plotter-16.md" >}})

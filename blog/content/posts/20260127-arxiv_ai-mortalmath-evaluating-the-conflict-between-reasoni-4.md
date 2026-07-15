@@ -1,12 +1,29 @@
 ---
-title: "MortalMATH：当推理目标遇上紧急语境，冲突何解？🧠🔥"
-date: 2026-01-27T23:10:51+08:00
+title: MortalMATH：当推理目标遇上紧急语境，冲突何解？🧠🔥
+date: 2026-01-27 23:10:51+08:00
 draft: false
-entry_kind: "auto"
-tags: ["LLM", "模型评估", "安全对齐", "推理模型", "MortalMATH", "幻觉", "基准测试", "AI安全"]
-categories: ["大模型", "安全"]
+entry_kind: auto
+tags:
+- LLM
+- 模型评估
+- 安全对齐
+- 推理模型
+- MortalMATH
+- 幻觉
+- 基准测试
+- AI 安全
+categories:
+- 大模型
+- 安全
 source: arxiv
 external_url: http://arxiv.org/abs/2601.18790v1
+scenarios: []
+aliases:
+- /posts/20260128-arxiv_ai-mortalmath-evaluating-the-conflict-between-reasoni-4/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 📚 MortalMATH：当推理目标遇上紧急语境，冲突何解？🧠🔥

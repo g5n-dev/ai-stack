@@ -10,7 +10,7 @@ tags:
 - 幻觉
 - 模型评估
 - Chain-of-Thought
-- AI安全
+- AI 安全
 - 可解释性
 categories:
 - 大模型
@@ -21,6 +21,10 @@ external_url: https://arxiv.org/abs/2602.06176
 scenarios:
 - 大语言模型
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 大语言模型推理失败机制分析

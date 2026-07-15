@@ -1,14 +1,29 @@
 ---
-title: "AI思维重构：从Prompt工程到有效指令设计"
-date: 2026-05-07T23:28:57+08:00
+title: AI思维重构：从Prompt工程到有效指令设计
+date: 2026-05-07 23:28:57+08:00
 draft: false
-entry_kind: "auto"
-tags: ["提示词工程", "AI指令设计", "上下文补充", "结构化输出", "约束条件", "角色扮演", "分步指引", "工程实践"]
-categories: ["效率与方法论"]
+entry_kind: auto
+tags:
+- 提示词工程
+- AI指令设计
+- 上下文补充
+- 结构化输出
+- 约束条件
+- 角色扮演
+- 分步指引
+- 工程实践
+categories:
+- 效率与方法论
 source: juejin
-description: "背景与动机 飞哥提到，许多人在使用 AI 铲子时发现它“不听话”：回答太虚、格式混乱，导致效率下降。这促使他推出《重构 AI 思维》系列，重点聚焦 Prompt Engineering，探讨如何下达“不可违抗的指令”。 Prompt Engineering 核心要素 1. **明确目标**：在指令开头说明期望的输出类型"
+description: 背景与动机 飞哥提到，许多人在使用 AI 铲子时发现它“不听话”：回答太虚、格式混乱，导致效率下降。这促使他推出《重构 AI 思维》系列，重点聚焦
+  Prompt Engineering，探讨如何下达“不可违抗的指令”。 Prompt Engineering 核心要素 1. **明确目标**：在指令开头说明期望的输出类型
 external_url: https://juejin.cn/post/7637027340086624290
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AI思维重构：从Prompt工程到有效指令设计
@@ -106,9 +121,9 @@ scenarios: ["AI/ML项目"]
 
 ### 相关文章
 
-- [ChatGPT中文调教指南：多场景提示词与使用技巧]({{< relref "posts/20260205-github_trending-plexpt-awesome-chatgpt-prompts-zh-7.md" >}})
-- [ChatGPT中文调教指南：多场景提示词与使用技巧]({{< relref "posts/20260221-github_trending-plexpt-awesome-chatgpt-prompts-zh-0.md" >}})
-- [XML标签为何是Claude模型能力的关键基础]({{< relref "posts/20260301-hacker_news-why-xml-tags-are-so-fundamental-to-claude-12.md" >}})
+- [ChatGPT中文调教指南：多场景提示词与使用技巧]({{< relref "posts/20260204-github_trending-plexpt-awesome-chatgpt-prompts-zh-3.md" >}})
+- [ChatGPT中文调教指南：多场景提示词与使用技巧]({{< relref "posts/20260204-github_trending-plexpt-awesome-chatgpt-prompts-zh-3.md" >}})
+- [XML标签为何是Claude模型能力的关键基础]({{< relref "posts/20260301-hacker_news-why-xml-tags-are-so-fundamental-to-claude-4.md" >}})
 - [为何XML标签对Claude模型如此关键]({{< relref "posts/20260301-hacker_news-why-xml-tags-are-so-fundamental-to-claude-4.md" >}})
-- [为何 XML 标签对 Claude 至关重要]({{< relref "posts/20260301-hacker_news-why-xml-tags-are-so-fundamental-to-claude-5.md" >}})
+- [为何 XML 标签对 Claude 至关重要]({{< relref "posts/20260301-hacker_news-why-xml-tags-are-so-fundamental-to-claude-4.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

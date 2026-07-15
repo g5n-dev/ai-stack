@@ -21,6 +21,13 @@ description: '**总结：Meta 的 Ranking Engineer Agent (REA) 加速广告排�
 external_url: https://engineering.fb.com/2026/03/17/developer-tools/ranking-engineer-agent-rea-autonomous-ai-system-accelerating-meta-ads-ranking-innovation
 scenarios:
 - AI/ML项目
+aliases:
+- /posts/20260318-blogs_podcasts-ranking-engineer-agent-rea-the-autonomous-ai-agent-3/
+- /posts/20260318-blogs_podcasts-ranking-engineer-agent-rea-the-autonomous-ai-agent-4/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Meta 排序工程师代理：自主管理广告排序模型全生命周期
@@ -262,8 +269,8 @@ REA 证明了**“模型即代码”之后的“Agent即工程师”**趋势。�
 
 ### 相关文章
 
-- [构建极简编程代理的技术实践与经验总结]({{< relref "posts/20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-6.md" >}})
+- [构建极简编程代理的技术实践与经验总结]({{< relref "posts/20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-1.md" >}})
 - [构建具备数据科学家思维的智能体：可复用工具生成机制与DABStep榜首实践]({{< relref "posts/20260313-blogs_podcasts-build-an-agent-that-thinks-like-a-data-scientist-h-0.md" >}})
-- [构建极简编程代理的技术实践与经验总结]({{< relref "posts/20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-17.md" >}})
+- [构建极简编程代理的技术实践与经验总结]({{< relref "posts/20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-1.md" >}})
 - [编码代理的成功对通用AI系统的启示]({{< relref "posts/20260130-hacker_news-what-the-success-of-coding-agents-teaches-us-about-11.md" >}})
 - [构建极简且具倾向性的编程代理的经验总结]({{< relref "posts/20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-1.md" >}})

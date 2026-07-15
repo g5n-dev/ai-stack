@@ -1,14 +1,29 @@
 ---
-title: "InftyThink+: 基于强化学习的高效无限视野推理框架"
-date: 2026-02-09T23:42:37+08:00
+title: 'InftyThink+: 基于强化学习的高效无限视野推理框架'
+date: 2026-02-09 23:42:37+08:00
 draft: false
-entry_kind: "auto"
-tags: ["强化学习", "推理框架", "思维链", "InftyThink+", "轨迹优化", "AIME24", "端到端训练", "长上下文"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- 强化学习
+- 推理框架
+- 思维链
+- InftyThink+
+- 轨迹优化
+- AIME24
+- 端到端训练
+- 长上下文
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "**InftyThink+：基于强化学习的高效无限视野推理** **背景与挑战** 大型推理模型通常通过扩展推理时的思维链来提升性能，但这种方法存在成本二次增长、上下文长度限制以及因“中间迷失”效应导致的推理能力下降等问题。迭代推理通过定期总结中间步骤缓解了部分问题，但现有方法依赖监督学习或固定启发式规则，无法优化总结"
+description: '**InftyThink+：基于强化学习的高效无限视野推理** **背景与挑战** 大型推理模型通常通过扩展推理时的思维链来提升性能，但这种方法存在成本二次增长、上下文长度限制以及因“中间迷失”效应导致的推理能力下降等问题。迭代推理通过定期总结中间步骤缓解了部分问题，但现有方法依赖监督学习或固定启发式规则，无法优化总结'
 external_url: http://arxiv.org/abs/2602.06960v1
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # InftyThink+: 基于强化学习的高效无限视野推理框架
@@ -502,8 +517,8 @@ InftyThink+ 将推理过程形式化为 POMDP：
 ### 相关文章
 
 - [探索面向智能体的推理奖励模型]({{< relref "posts/20260130-arxiv_ai-exploring-reasoning-reward-model-for-agents-4.md" >}})
-- [探索面向智能体的推理奖励模型]({{< relref "posts/20260202-arxiv_ai-exploring-reasoning-reward-model-for-agents-4.md" >}})
-- [Kimi K2.5 技术报告发布：强化学习与长上下文能力升级]({{< relref "posts/20260130-hacker_news-kimi-k25-technical-report-pdf-2.md" >}})
+- [探索面向智能体的推理奖励模型]({{< relref "posts/20260130-arxiv_ai-exploring-reasoning-reward-model-for-agents-4.md" >}})
+- [Kimi K2.5 技术报告发布：强化学习与长上下文能力升级]({{< relref "posts/20260130-hacker_news-kimi-k25-technical-report-pdf-10.md" >}})
 - [MemSkill：赋予自进化代理学习与演进记忆技能]({{< relref "posts/20260203-arxiv_ai-memskill-learning-and-evolving-memory-skills-for-s-9.md" >}})
 - [训练LLM采用分治推理提升测试时扩展性]({{< relref "posts/20260203-arxiv_ai-training-llms-for-divide-and-conquer-reasoning-ele-7.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

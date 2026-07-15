@@ -7,7 +7,7 @@ tags:
 - Rork Max
 - iOS开发
 - Swift
-- AI编程
+- AI 编程
 - 浏览器IDE
 - Xcode替代
 - 跨平台开发
@@ -21,6 +21,10 @@ description: 这也是目前市面上很有意思的一个方向，国外一个�
 external_url: https://juejin.cn/post/7607565063080083498
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Rork Max 推出 AI 平台：浏览器端构建原生 Swift 应用
@@ -191,8 +195,8 @@ Rork Max 与传统 IDE 的最大区别在于它将“AI First”作为核心理�
 
 ### 相关文章
 
-- [🚀 Velox横空出世！Miguel大神用Swift重写Tauri，性能炸裂💥]({{< relref "posts/20260127-hacker_news-velox-a-port-of-tauri-to-swift-by-miguel-de-icaza-13.md" >}})
-- [Xcode 26.3 新增内置编程代理辅助开发功能]({{< relref "posts/20260204-hacker_news-xcode-263-developers-can-leverage-coding-agents-di-16.md" >}})
-- [💀RIP低代码2014-2025？AI编程时代终结的真相！]({{< relref "posts/20260127-hacker_news-rip-low-code-2014-2025-15.md" >}})
-- [Claude Code：面向开发者的AI编程代理]({{< relref "posts/20260131-hacker_news-claude-code-is-your-customer-7.md" >}})
-- [Codex 应用：基于 AI 的代码生成与编辑工具]({{< relref "posts/20260203-hacker_news-the-codex-app-1.md" >}})
+- [🚀 Velox横空出世！Miguel大神用Swift重写Tauri，性能炸裂💥]({{< relref "posts/20260127-hacker_news-velox-a-port-of-tauri-to-swift-by-miguel-de-icaza-8.md" >}})
+- [Xcode 26.3 新增内置编程代理辅助开发功能]({{< relref "posts/20260203-hacker_news-xcode-263-unlocks-the-power-of-agentic-coding-1.md" >}})
+- [💀RIP低代码2014-2025？AI编程时代终结的真相！]({{< relref "posts/20260127-hacker_news-rip-low-code-2014-2025-4.md" >}})
+- [Claude Code：面向开发者的AI编程代理]({{< relref "posts/20260131-hacker_news-claude-code-is-your-customer-16.md" >}})
+- [Codex 应用：基于 AI 的代码生成与编辑工具]({{< relref "posts/20260202-hacker_news-the-codex-app-1.md" >}})

@@ -21,6 +21,12 @@ description: Phi-4-reasoning-vision 的发布标志着多模态推理模型训�
 external_url: https://www.microsoft.com/en-us/research/blog/phi-4-reasoning-vision-and-the-lessons-of-training-a-multimodal-reasoning-model
 scenarios:
 - 大语言模型
+aliases:
+- /posts/20260308-hacker_news-phi-4-reasoning-vision-and-the-lessons-of-training-18/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Phi-4多模态推理模型的训练经验与技术解析

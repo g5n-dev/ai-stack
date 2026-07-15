@@ -1,14 +1,30 @@
 ---
-title: "Murakkab系统提升AI工作流速度和能效"
-date: 2026-06-25T13:41:21+08:00
+title: Murakkab系统提升AI工作流速度和能效
+date: 2026-06-25 13:41:21+08:00
 draft: false
-entry_kind: "auto"
-tags: ["算子融合", "任务调度", "依赖图分析", "动态功耗管理", "AI 工作流", "资源感知", "云边协同", "能效优化"]
-categories: ["AI 工程", "系统与基础设施"]
+entry_kind: auto
+tags:
+- 算子融合
+- 任务调度
+- 依赖图分析
+- 动态功耗管理
+- AI 工作流
+- 资源感知
+- 云边协同
+- 能效优化
+categories:
+- AI 工程
+- 系统与基础设施
 source: blogs_podcasts
-description: "背景与挑战 随着 AI 应用规模快速扩大，多步骤工作流（pipeline）已成为主流。然而，传统实现往往缺乏全局协同优化，导致计算资源浪费和能耗居高不下，成为部署成本的主要瓶颈。 Murakkab 系统概述 Murakkab 是一种新型系统，专门用于多步骤 AI 工作流的自动化设计与部署优化。其核心做法包括： - **"
+description: 背景与挑战 随着 AI 应用规模快速扩大，多步骤工作流（pipeline）已成为主流。然而，传统实现往往缺乏全局协同优化，导致计算资源浪费和能耗居高不下，成为部署成本的主要瓶颈。
+  Murakkab 系统概述 Murakkab 是一种新型系统，专门用于多步骤 AI 工作流的自动化设计与部署优化。其核心做法包括： - **
 external_url: https://news.mit.edu/2026/improving-ai-agent-speed-and-energy-efficiency-0625
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Murakkab系统提升AI工作流速度和能效
@@ -131,9 +147,9 @@ Murakkab的出现对AI基础设施市场具有示范意义。该系统展示了�
 
 ### 相关文章
 
-- [Swann基于Amazon Bedrock在百万级IoT设备部署生成式AI]({{< relref "posts/20260212-blogs_podcasts-swann-provides-generative-ai-to-millions-of-iot-de-11.md" >}})
+- [Swann基于Amazon Bedrock在百万级IoT设备部署生成式AI]({{< relref "posts/20260211-blogs_podcasts-swann-provides-generative-ai-to-millions-of-iot-de-2.md" >}})
 - [🔥编译模型到Megakernels！揭秘AI性能飞跃的核心黑科技！]({{< relref "posts/20260126-hacker_news-compiling-models-to-megakernels-11.md" >}})
 - [RTX 3080 本地任务分类与调度系统]({{< relref "posts/20260206-hacker_news-show-hn-local-task-classifier-and-dispatcher-on-rt-15.md" >}})
 - [Codex与Playwright MCP协作实现前端自动化闭环]({{< relref "posts/20260305-juejin-价值1000的-ai-工作流codex-通用前端协作模式-1.md" >}})
-- [Codex与Playwright MCP构建前端自动化协作闭环]({{< relref "posts/20260306-juejin-价值1000的-ai-工作流codex-通用前端协作模式-3.md" >}})
+- [Codex与Playwright MCP构建前端自动化协作闭环]({{< relref "posts/20260305-juejin-价值1000的-ai-工作流codex-通用前端协作模式-1.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

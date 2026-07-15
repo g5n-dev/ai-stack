@@ -20,6 +20,12 @@ description: Friend Bubbles：增强Facebook Reels社交发现功能 概述 Frie
 external_url: https://engineering.fb.com/2026/03/18/ml-applications/friend-bubbles-enhancing-social-discovery-on-facebook-reels
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260320-blogs_podcasts-friend-bubbles-enhancing-social-discovery-on-faceb-11/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Facebook Reels好友气泡：提升社交内容发现效率
@@ -295,7 +301,7 @@ Friend Bubbles体现了社交媒体平台从纯内容推荐向社交增强型推
 ### 相关文章
 
 - [为何Adam在$β_1=β_2$时更优：缺失的梯度尺度不变性原理]({{< relref "posts/20260130-arxiv_ai-why-adam-works-better-with-β_1-β_2-the-missing-gra-8.md" >}})
-- [SCRAPL：基于随机路径散射变换的机器学习框架]({{< relref "posts/20260213-arxiv_ai-scrapl-scattering-transform-with-random-paths-for--4.md" >}})
+- [SCRAPL：基于随机路径散射变换的机器学习框架]({{< relref "posts/20260212-arxiv_ai-scrapl-scattering-transform-with-random-paths-for--4.md" >}})
 - [PyTorch 可视化入门教程]({{< relref "posts/20260216-hacker_news-visual-introduction-to-pytorch-4.md" >}})
-- [PyTorch 可视化入门教程]({{< relref "posts/20260217-hacker_news-visual-introduction-to-pytorch-5.md" >}})
-- [PyTorch 可视化入门教程]({{< relref "posts/20260217-hacker_news-visual-introduction-to-pytorch-7.md" >}})
+- [PyTorch 可视化入门教程]({{< relref "posts/20260216-hacker_news-visual-introduction-to-pytorch-4.md" >}})
+- [PyTorch 可视化入门教程]({{< relref "posts/20260216-hacker_news-visual-introduction-to-pytorch-4.md" >}})

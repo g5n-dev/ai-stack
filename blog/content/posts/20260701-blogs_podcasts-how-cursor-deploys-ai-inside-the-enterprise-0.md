@@ -1,14 +1,29 @@
 ---
-title: "Cursor部署工程师如何帮企业落地AI代理"
-date: 2026-07-01T23:31:06+08:00
+title: Cursor部署工程师如何帮企业落地AI代理
+date: 2026-07-01 23:31:06+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI代理", "企业部署", "软件工厂", "Cursor", "部署工程师", "业务流程自动化", "跨职能协作", "快速迭代"]
-categories: ["AI 工程"]
+entry_kind: auto
+tags:
+- AI 代理
+- 企业部署
+- 软件工厂
+- Cursor
+- 部署工程师
+- 业务流程自动化
+- 跨职能协作
+- 快速迭代
+categories:
+- AI 工程
 source: blogs_podcasts
-description: "Cursor 通过前向部署工程师（Forward Deployed Engineers）在企业内部落地 AI 代理（Agent），把这些代理视为“软件工厂”，实现业务流程的自动化和规模化。团队先深入业务场景，定制 AI 方案，随后在企业内部进行部署、监控和持续维护，确保方案符合安全、合规和可维护性要求。该模式强调跨职能"
+description: Cursor 通过前向部署工程师（Forward Deployed Engineers）在企业内部落地 AI 代理（Agent），把这些代理视为“软件工厂”，实现业务流程的自动化和规模化。团队先深入业务场景，定制
+  AI 方案，随后在企业内部进行部署、监控和持续维护，确保方案符合安全、合规和可维护性要求。该模式强调跨职能
 external_url: https://www.latent.space/p/cursor-forward-deployed-engineers
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Cursor部署工程师如何帮企业落地AI代理
@@ -160,8 +175,8 @@ FDE模式是将AI Agent在企业内实现规模化、可重复交付的关键路
 ### 相关文章
 
 - [Cloudflare Agent Cloud接入OpenAI模型助力企业AI代理部署]({{< relref "posts/20260413-blogs_podcasts-enterprises-power-agentic-workflows-in-cloudflare--0.md" >}})
-- [大林建设部署ChatGPT Enterprise推动全球建筑业务人才发展]({{< relref "posts/20260202-blogs_podcasts-taisei-corporation-shapes-the-next-generation-of-t-8.md" >}})
-- [LNAI：一次定义 AI 编码工具配置并同步至 Claude 与 Cursor]({{< relref "posts/20260203-hacker_news-lnai-define-ai-coding-tool-configs-once-sync-to-cl-17.md" >}})
+- [大林建设部署ChatGPT Enterprise推动全球建筑业务人才发展]({{< relref "posts/20260130-blogs_podcasts-taisei-corporation-shapes-the-next-generation-of-t-3.md" >}})
+- [LNAI：一次定义 AI 编码工具配置并同步至 Claude 与 Cursor]({{< relref "posts/20260203-hacker_news-lnai-define-ai-coding-tool-configs-once-sync-to-cl-3.md" >}})
 - [LNAI：定义一次AI编码工具配置，同步至Claude与Cursor等]({{< relref "posts/20260203-hacker_news-lnai-define-ai-coding-tool-configs-once-sync-to-cl-3.md" >}})
-- [LNAI：定义AI编码工具配置并同步至多端]({{< relref "posts/20260203-hacker_news-lnai-define-ai-coding-tool-configs-once-sync-to-cl-5.md" >}})
+- [LNAI：定义AI编码工具配置并同步至多端]({{< relref "posts/20260203-hacker_news-lnai-define-ai-coding-tool-configs-once-sync-to-cl-3.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

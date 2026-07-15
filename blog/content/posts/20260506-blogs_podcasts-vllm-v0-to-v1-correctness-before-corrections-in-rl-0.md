@@ -1,14 +1,30 @@
 ---
-title: "vLLM V0到V1：正确性优先于修正的RL演进"
-date: 2026-05-06T20:43:07+08:00
+title: vLLM V0到V1：正确性优先于修正的RL演进
+date: 2026-05-06 20:43:07+08:00
 draft: false
-entry_kind: "auto"
-tags: ["vLLM", "V0", "V1", "RL", "正确性", "强化学习", "推理", "性能优化"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- vLLM
+- V0
+- V1
+- RL
+- 正确性
+- 强化学习
+- 推理
+- 性能优化
+categories:
+- 大模型
+- AI 工程
 source: blogs_podcasts
-description: "vLLM 从 V0 演进到 V1，标志着在强化学习环境中对模型行为正确性的更高要求。不同于先进行错误纠正的思路，V1 采用先确保输出符合业务约束，再逐步完善纠正层的策略，从而在复杂交互中保持稳定表现。本文深入解析 V1 的设计动机、关键实现细节以及在真实任务中的实验结果，为希望在实际项目中平滑升级的开发者提供可操作的参"
+description: vLLM 从 V0 演进到 V1，标志着在强化学习环境中对模型行为正确性的更高要求。不同于先进行错误纠正的思路，V1 采用先确保输出符合业务约束，再逐步完善纠正层的策略，从而在复杂交互中保持稳定表现。本文深入解析
+  V1 的设计动机、关键实现细节以及在真实任务中的实验结果，为希望在实际项目中平滑升级的开发者提供可操作的参
 external_url: https://huggingface.co/blog/ServiceNow-AI/correctness-before-corrections
-scenarios: ["大语言模型"]
+scenarios:
+- 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # vLLM V0到V1：正确性优先于修正的RL演进
@@ -117,9 +133,9 @@ vLLM从V0到V1的演进体现了**"正确性先于修正"**的核心设计哲学
 
 ### 相关文章
 
-- [从16个开源强化学习库中总结的Token流优化经验]({{< relref "posts/20260310-blogs_podcasts-keep-the-tokens-flowing-lessons-from-16-open-sourc-3.md" >}})
-- [Nano-vLLM 技术解析：vLLM 风格推理引擎的运行机制]({{< relref "posts/20260203-hacker_news-nano-vllm-how-a-vllm-style-inference-engine-works-13.md" >}})
-- [两种提升大模型推理速度的技术方法]({{< relref "posts/20260215-hacker_news-two-different-tricks-for-fast-llm-inference-15.md" >}})
-- [两种提升大模型推理速度的技术方法]({{< relref "posts/20260215-hacker_news-two-different-tricks-for-fast-llm-inference-3.md" >}})
-- [本地运行 Qwen 3.5 大模型的完整指南]({{< relref "posts/20260308-hacker_news-how-to-run-qwen-35-locally-7.md" >}})
+- [从16个开源强化学习库中总结的Token流优化经验]({{< relref "posts/20260310-blogs_podcasts-keep-the-tokens-flowing-lessons-from-16-open-sourc-2.md" >}})
+- [Nano-vLLM 技术解析：vLLM 风格推理引擎的运行机制]({{< relref "posts/20260202-hacker_news-nano-vllm-how-a-vllm-style-inference-engine-works-0.md" >}})
+- [两种提升大模型推理速度的技术方法]({{< relref "posts/20260215-hacker_news-two-different-tricks-for-fast-llm-inference-2.md" >}})
+- [两种提升大模型推理速度的技术方法]({{< relref "posts/20260215-hacker_news-two-different-tricks-for-fast-llm-inference-2.md" >}})
+- [本地运行 Qwen 3.5 大模型的完整指南]({{< relref "posts/20260308-hacker_news-how-to-run-qwen-35-locally-16.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

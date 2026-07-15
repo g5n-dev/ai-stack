@@ -20,6 +20,13 @@ description: 误差在时间序列中的传播机制，是理解动态系统预�
 external_url: https://nicolaszucchet.github.io/Forward-propagation-errors-through-time
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260222-hacker_news-forward-propagation-of-errors-through-time-11/
+- /posts/20260222-hacker_news-forward-propagation-of-errors-through-time-19/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 误差随时间前向传播机制解析

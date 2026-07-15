@@ -21,6 +21,20 @@ description: '**Hexagon利用Amazon SageMaker HyperPod加速AI模型生产** 本
 external_url: https://aws.amazon.com/blogs/machine-learning/accelerating-ai-model-production-at-hexagon-with-amazon-sagemaker-hyperpod
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260223-blogs_podcasts-accelerating-ai-model-production-at-hexagon-with-a-2/
+- /posts/20260224-blogs_podcasts-accelerating-ai-model-production-at-hexagon-with-a-10/
+- /posts/20260224-blogs_podcasts-accelerating-ai-model-production-at-hexagon-with-a-13/
+- /posts/20260224-blogs_podcasts-accelerating-ai-model-production-at-hexagon-with-a-3/
+- /posts/20260224-blogs_podcasts-accelerating-ai-model-production-at-hexagon-with-a-4/
+- /posts/20260224-blogs_podcasts-accelerating-ai-model-production-at-hexagon-with-a-5/
+- /posts/20260224-blogs_podcasts-accelerating-ai-model-production-at-hexagon-with-a-9/
+- /posts/20260225-blogs_podcasts-accelerating-ai-model-production-at-hexagon-with-a-13/
+- /posts/20260225-blogs_podcasts-accelerating-ai-model-production-at-hexagon-with-a-14/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Hexagon 利用 SageMaker HyperPod 加速分割模型预训练
@@ -378,8 +392,8 @@ Hexagon 强调了集中式 MLOps 平台的重要性。不要让数据科学家�
 
 ### 相关文章
 
-- [Amazon SageMaker AI 2025回顾：弹性训练计划与推理性价比提升]({{< relref "posts/20260221-blogs_podcasts-amazon-sagemaker-ai-in-2025-a-year-in-review-part--1.md" >}})
-- [2025年回顾：SageMaker AI弹性训练计划与推理性价比提升]({{< relref "posts/20260223-blogs_podcasts-amazon-sagemaker-ai-in-2025-a-year-in-review-part--3.md" >}})
+- [Amazon SageMaker AI 2025回顾：弹性训练计划与推理性价比提升]({{< relref "posts/20260220-blogs_podcasts-amazon-sagemaker-ai-in-2025-a-year-in-review-part--0.md" >}})
+- [2025年回顾：SageMaker AI弹性训练计划与推理性价比提升]({{< relref "posts/20260220-blogs_podcasts-amazon-sagemaker-ai-in-2025-a-year-in-review-part--0.md" >}})
 - [2025年回顾：SageMaker AI弹性训练计划与推理性价比优化]({{< relref "posts/20260220-blogs_podcasts-amazon-sagemaker-ai-in-2025-a-year-in-review-part--0.md" >}})
-- [Amazon SageMaker AI 2025回顾：灵活训练计划与推理性价比优化]({{< relref "posts/20260222-blogs_podcasts-amazon-sagemaker-ai-in-2025-a-year-in-review-part--1.md" >}})
-- [Amazon SageMaker AI 2025回顾：弹性训练计划与推理性价比提升]({{< relref "posts/20260223-blogs_podcasts-amazon-sagemaker-ai-in-2025-a-year-in-review-part--1.md" >}})
+- [Amazon SageMaker AI 2025回顾：灵活训练计划与推理性价比优化]({{< relref "posts/20260220-blogs_podcasts-amazon-sagemaker-ai-in-2025-a-year-in-review-part--0.md" >}})
+- [Amazon SageMaker AI 2025回顾：弹性训练计划与推理性价比提升]({{< relref "posts/20260220-blogs_podcasts-amazon-sagemaker-ai-in-2025-a-year-in-review-part--0.md" >}})

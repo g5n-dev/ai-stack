@@ -21,6 +21,13 @@ description: 随着大模型应用对上下文窗口的需求日益增长，传�
 external_url: https://github.com/Compresr-ai/Context-Gateway
 scenarios:
 - 大语言模型
+aliases:
+- /posts/20260313-hacker_news-show-hn-context-gateway-compress-agent-context-bef-6/
+- /posts/20260314-hacker_news-show-hn-context-gateway-compress-agent-context-bef-19/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Context Gateway：在LLM处理前压缩Agent上下文

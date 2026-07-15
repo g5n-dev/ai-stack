@@ -21,6 +21,12 @@ description: 以下是对论文内容的简洁总结： **核心问题** 现有�
 external_url: http://arxiv.org/abs/2603.09961v1
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260312-arxiv_ai-beacon-language-conditioned-navigation-affordance--5/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # BEACON：遮挡条件下的语言导航可行性预测
@@ -420,8 +426,8 @@ BEACON的理论贡献在于提出了一种**“视点不变性”的语义映射
 
 ### 相关文章
 
-- [Tether：基于对应关系轨迹扭曲的自主功能玩]({{< relref "posts/20260305-arxiv_ai-tether-autonomous-functional-play-with-corresponde-2.md" >}})
-- [视觉语言模型能否通过交互学习直观物理]({{< relref "posts/20260207-arxiv_ai-can-vision-language-models-learn-intuitive-physics-5.md" >}})
-- [视觉语言模型能否通过交互学习直观物理]({{< relref "posts/20260209-arxiv_ai-can-vision-language-models-learn-intuitive-physics-5.md" >}})
+- [Tether：基于对应关系轨迹扭曲的自主功能玩]({{< relref "posts/20260304-arxiv_ai-tether-autonomous-functional-play-with-corresponde-2.md" >}})
+- [视觉语言模型能否通过交互学习直观物理]({{< relref "posts/20260206-arxiv_ai-can-vision-language-models-learn-intuitive-physics-5.md" >}})
+- [视觉语言模型能否通过交互学习直观物理]({{< relref "posts/20260206-arxiv_ai-can-vision-language-models-learn-intuitive-physics-5.md" >}})
 - [仿真筛选模块化策略：从人类视频学习有效行为]({{< relref "posts/20260216-arxiv_ai-imitating-what-works-simulation-filtered-modular-p-0.md" >}})
-- [视觉-语言-动作对齐：扩展验证比扩展策略学习更有效]({{< relref "posts/20260216-arxiv_ai-scaling-verification-can-be-more-effective-than-sc-0.md" >}})
+- [视觉-语言-动作对齐：扩展验证比扩展策略学习更有效]({{< relref "posts/20260213-arxiv_ai-scaling-verification-can-be-more-effective-than-sc-0.md" >}})

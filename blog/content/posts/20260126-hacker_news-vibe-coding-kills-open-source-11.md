@@ -1,12 +1,26 @@
 ---
-title: "Vibe coding杀死开源？开发者的末日还是新生？💀🔥"
-date: 2026-01-26T18:11:05+08:00
+title: Vibe coding杀死开源？开发者的末日还是新生？💀🔥
+date: 2026-01-26 18:11:05+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Vibe coding", "LLM", "开源危机", "开发者生态", "AI 编程", "Cursor", "软件工程", "商业模式"]
-categories: ["开源生态", "AI 工程"]
+entry_kind: auto
+tags:
+- Vibe Coding
+- LLM
+- 开源危机
+- 开发者生态
+- AI 编程
+- Cursor
+- 软件工程
+- 商业模式
+categories:
+- 开源生态
+- AI 工程
 source: hacker_news
 external_url: https://arxiv.org/abs/2601.15494
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 📰 Vibe coding杀死开源？开发者的末日还是新生？💀🔥

@@ -1,14 +1,31 @@
 ---
-title: "LangChain Day 13：OutputParser结构化输出与自动重试"
-date: 2026-04-09T07:52:04+08:00
+title: LangChain Day 13：OutputParser结构化输出与自动重试
+date: 2026-04-09 07:52:04+08:00
 draft: false
-entry_kind: "auto"
-tags: ["LangChain", "OutputParser", "Pydantic", "结构化输出", "自动重试", "JSON解析", "Python", "LLM应用"]
-categories: ["AI 工程"]
+entry_kind: auto
+tags:
+- LangChain
+- OutputParser
+- Pydantic
+- 结构化输出
+- 自动重试
+- JSON解析
+- Python
+- LLM 应用
+categories:
+- AI 工程
 source: juejin
-description: "需求背景 - 仅靠 Prompt 指令仍可能导致模型输出不符合预期结构，解析 JSON 时出错。 - 需要在解析失败时自动重试，提高鲁棒性。 核心实现 - 用 Pydantic 定义期望模型（如 、 ）。 - 将 PydanticOutputParser 包装在 （或自带的重试装饰器）中。 - 通过 控制重试次数，一般"
+description: 需求背景 - 仅靠 Prompt 指令仍可能导致模型输出不符合预期结构，解析 JSON 时出错。 - 需要在解析失败时自动重试，提高鲁棒性。
+  核心实现 - 用 Pydantic 定义期望模型（如 、 ）。 - 将 PydanticOutputParser 包装在 （或自带的重试装饰器）中。 - 通过
+  控制重试次数，一般
 external_url: https://juejin.cn/post/7626391049497624591
-scenarios: ["AI/ML项目", "大语言模型"]
+scenarios:
+- AI/ML项目
+- 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # LangChain Day 13：OutputParser结构化输出与自动重试
@@ -126,7 +143,7 @@ result = chain.invoke({"question": "返回姓名和年龄"})
 ### 相关文章
 
 - [LangChain实战：结合Memory与OutputParser构建有记忆的结构化助手]({{< relref "posts/20260210-juejin-langchain-进阶实战当-memory-遇上-outputparser打造有记忆的结构化助手-3.md" >}})
-- [LangChain 进阶实战：当 Memory 遇上 OutputParser，打造有记忆的结构化助手]({{< relref "posts/20260211-juejin-langchain-进阶实战当-memory-遇上-outputparser打造有记忆的结构化助手-3.md" >}})
+- [LangChain 进阶实战：当 Memory 遇上 OutputParser，打造有记忆的结构化助手]({{< relref "posts/20260210-juejin-langchain-进阶实战当-memory-遇上-outputparser打造有记忆的结构化助手-3.md" >}})
 - [Spring AI 结构化输出转换器实战：告别字符串解析，拥抱类型安全]({{< relref "posts/20260218-juejin-spring-ai-结构化输出转换器实战告别字符串解析拥抱类型安全-4.md" >}})
 - [CountBot工具系统设计：从抽象基类到JSON Schema实现]({{< relref "posts/20260222-juejin-04工具系统设计从抽象基类到-json-schema-的完整实现-2.md" >}})
 - [LangChain 框架完全指南：基于 LLM 的应用开发]({{< relref "posts/20260306-juejin-langchain-框架完全指南从入门到精通-3.md" >}})

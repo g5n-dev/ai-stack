@@ -20,6 +20,15 @@ description: 随着大模型在自动化任务中的应用日益深入，如何�
 external_url: https://huggingface.co/blog/Hcompany/holotron-12b
 scenarios:
 - 大语言模型
+aliases:
+- /posts/20260317-blogs_podcasts-holotron-12b-high-throughput-computer-use-agent-4/
+- /posts/20260317-blogs_podcasts-holotron-12b-high-throughput-computer-use-agent-7/
+- /posts/20260318-blogs_podcasts-holotron-12b-high-throughput-computer-use-agent-8/
+- /posts/20260318-blogs_podcasts-holotron-12b-high-throughput-computer-use-agent-9/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Holotron-12B：高吞吐率计算机使用智能体
@@ -242,8 +251,8 @@ Holotron-12B 的出现预示着**“垂直领域小模型（SLM）+ 专用数据
 
 ### 相关文章
 
-- [Agent Skills：AI 智能体技能框架]({{< relref "posts/20260203-hacker_news-agent-skills-1.md" >}})
-- [LLM智能体新增Claws层以优化任务执行]({{< relref "posts/20260222-hacker_news-claws-are-now-a-new-layer-on-top-of-llm-agents-14.md" >}})
-- [智能体工程化的能力层级划分]({{< relref "posts/20260310-hacker_news-levels-of-agentic-engineering-11.md" >}})
+- [Agent Skills：AI 智能体技能框架]({{< relref "posts/20260203-hacker_news-agent-skills-0.md" >}})
+- [LLM智能体新增Claws层以优化任务执行]({{< relref "posts/20260221-hacker_news-claws-are-now-a-new-layer-on-top-of-llm-agents-13.md" >}})
+- [智能体工程化的能力层级划分]({{< relref "posts/20260310-hacker_news-levels-of-agentic-engineering-18.md" >}})
 - [Replit Agent 4：面向知识工作的开发代理]({{< relref "posts/20260312-blogs_podcasts-ainews-replit-agent-4-the-knowledge-work-agent-1.md" >}})
-- [Replit Agent 4：面向知识工作的智能体]({{< relref "posts/20260314-blogs_podcasts-ainews-replit-agent-4-the-knowledge-work-agent-13.md" >}})
+- [Replit Agent 4：面向知识工作的智能体]({{< relref "posts/20260312-blogs_podcasts-ainews-replit-agent-4-the-knowledge-work-agent-1.md" >}})

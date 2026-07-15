@@ -23,6 +23,12 @@ scenarios:
 - AI/ML项目
 - DevOps/运维
 - 大语言模型
+aliases:
+- /posts/20260314-hacker_news-show-hn-gitagent-an-open-standard-that-turns-any-g-11/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # GitAgent：将任意 Git 仓库转化为 AI 智能体的开源标准

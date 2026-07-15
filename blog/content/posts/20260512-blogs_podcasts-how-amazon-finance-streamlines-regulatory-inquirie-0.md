@@ -1,14 +1,32 @@
 ---
-title: "亚马逊金融团队用Amazon Bedrock构建监管查询AI系统"
-date: 2026-05-12T23:19:57+08:00
+title: 亚马逊金融团队用Amazon Bedrock构建监管查询AI系统
+date: 2026-05-12 23:19:57+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Bedrock", "生成式AI", "监管查询", "知识库", "RAG", "AWS", "Lambda", "自动化"]
-categories: ["AI 工程", "系统与基础设施"]
+entry_kind: auto
+tags:
+- Bedrock
+- 生成式 AI
+- 监管查询
+- 知识库
+- RAG
+- AWS
+- Lambda
+- 自动化
+categories:
+- AI 工程
+- 系统与基础设施
 source: blogs_podcasts
-description: "背景 Amazon金融业务面临大量监管询问，传统人工检索与回复耗时且易出错。 实现方案 - 使用 Amazon Bedrock 等 AWS 生成式 AI 服务，搭建可扩展的 AI 应用。 - 为每个团队创建独立知识库，导入该团队专属文档和参考材料。 - 通过向量检索与检索增强生成（RAG）实现快速、精准的答案生成。 -"
+description: 背景 Amazon金融业务面临大量监管询问，传统人工检索与回复耗时且易出错。 实现方案 - 使用 Amazon Bedrock 等 AWS
+  生成式 AI 服务，搭建可扩展的 AI 应用。 - 为每个团队创建独立知识库，导入该团队专属文档和参考材料。 - 通过向量检索与检索增强生成（RAG）实现快速、精准的答案生成。
+  -
 external_url: https://aws.amazon.com/blogs/machine-learning/how-amazon-finance-streamlines-regulatory-inquiries-by-using-generative-ai-on-aws
-scenarios: ["AI/ML项目", "RAG应用"]
+scenarios:
+- AI/ML项目
+- RAG应用
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 亚马逊金融团队用Amazon Bedrock构建监管查询AI系统
@@ -198,9 +216,9 @@ Amazon金融业务面临大量监管询问，传统人工检索与回复耗时�
 
 ### 相关文章
 
-- [利用 Amazon Bedrock 构建AI招聘系统优化人才获取流程]({{< relref "posts/20260216-blogs_podcasts-ai-meets-hr-transforming-talent-acquisition-with-a-10.md" >}})
-- [基于 Amazon Bedrock 构建具备人工监管的 AI 招聘系统]({{< relref "posts/20260214-blogs_podcasts-ai-meets-hr-transforming-talent-acquisition-with-a-9.md" >}})
-- [利用 Amazon Bedrock 构建由 AI 驱动的智能招聘系统]({{< relref "posts/20260214-blogs_podcasts-ai-meets-hr-transforming-talent-acquisition-with-a-7.md" >}})
-- [基于 Amazon Bedrock 构建AI招聘系统优化人才获取流程]({{< relref "posts/20260215-blogs_podcasts-ai-meets-hr-transforming-talent-acquisition-with-a-8.md" >}})
-- [基于Amazon Bedrock构建AI招聘系统优化人才获取流程]({{< relref "posts/20260217-blogs_podcasts-ai-meets-hr-transforming-talent-acquisition-with-a-10.md" >}})
+- [利用 Amazon Bedrock 构建AI招聘系统优化人才获取流程]({{< relref "posts/20260212-blogs_podcasts-ai-meets-hr-transforming-talent-acquisition-with-a-0.md" >}})
+- [基于 Amazon Bedrock 构建具备人工监管的 AI 招聘系统]({{< relref "posts/20260212-blogs_podcasts-ai-meets-hr-transforming-talent-acquisition-with-a-0.md" >}})
+- [利用 Amazon Bedrock 构建由 AI 驱动的智能招聘系统]({{< relref "posts/20260212-blogs_podcasts-ai-meets-hr-transforming-talent-acquisition-with-a-0.md" >}})
+- [基于 Amazon Bedrock 构建AI招聘系统优化人才获取流程]({{< relref "posts/20260212-blogs_podcasts-ai-meets-hr-transforming-talent-acquisition-with-a-0.md" >}})
+- [基于Amazon Bedrock构建AI招聘系统优化人才获取流程]({{< relref "posts/20260212-blogs_podcasts-ai-meets-hr-transforming-talent-acquisition-with-a-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

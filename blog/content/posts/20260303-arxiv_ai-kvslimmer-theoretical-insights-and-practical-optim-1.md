@@ -10,7 +10,7 @@ tags:
 - KVSlimmer
 - 非对称合并
 - Hessian
-- Llama3.1
+- Llama 3.1
 - 系统性能
 categories:
 - 大模型
@@ -21,6 +21,10 @@ description: '以下是关于《KVSlimmer: Theoretical Insights and Practical Op
 external_url: http://arxiv.org/abs/2603.00907v1
 scenarios:
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # KVSlimmer：非对称KV合并的理论洞察与优化
@@ -409,6 +413,6 @@ KVSlimmer 与这些技术属于不同维度的优化，通常可以互补：
 
 - [LCM：无损上下文管理技术论文]({{< relref "posts/20260216-hacker_news-lcm-lossless-context-management-pdf-17.md" >}})
 - [面向大语言模型的时间引导机制]({{< relref "posts/20260130-arxiv_ai-temporal-guidance-for-large-language-models-6.md" >}})
-- [Kimi K2.5 技术报告发布：模型架构与训练细节]({{< relref "posts/20260131-hacker_news-kimi-k25-technical-report-pdf-16.md" >}})
+- [Kimi K2.5 技术报告发布：模型架构与训练细节]({{< relref "posts/20260130-hacker_news-kimi-k25-technical-report-pdf-10.md" >}})
 - [Parallel-Probe：通过2D探测实现高效并行思维]({{< relref "posts/20260204-arxiv_ai-parallel-probe-towards-efficient-parallel-thinking-1.md" >}})
-- [基于对称性泰勒近似实现恒定Token成本注意力机制]({{< relref "posts/20260204-hacker_news-attention-at-constant-cost-per-token-via-symmetry--9.md" >}})
+- [基于对称性泰勒近似实现恒定Token成本注意力机制]({{< relref "posts/20260204-hacker_news-attention-at-constant-cost-per-token-via-symmetry--0.md" >}})

@@ -20,6 +20,12 @@ description: 本文介绍了一种名为**尺度空间扩散**的新型扩散模
 external_url: http://arxiv.org/abs/2603.08709v1
 scenarios:
 - 计算机视觉
+aliases:
+- /posts/20260311-arxiv_ai-scale-space-diffusion-0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 尺度空间扩散模型
@@ -422,8 +428,8 @@ Scale Space Diffusion 特别适用于那些对结构严谨性和细节丰富度�
 
 ### 相关文章
 
-- [现成图像模型可攻破图像保护方案]({{< relref "posts/20260227-arxiv_ai-off-the-shelf-image-to-image-models-are-all-you-ne-2.md" >}})
+- [现成图像模型可攻破图像保护方案]({{< relref "posts/20260226-arxiv_ai-off-the-shelf-image-to-image-models-are-all-you-ne-2.md" >}})
 - [CFG-Ctrl：基于分类器无关的扩散模型控制引导方法]({{< relref "posts/20260304-arxiv_ai-cfg-ctrl-control-based-classifier-free-diffusion-g-0.md" >}})
-- [CFG-Ctrl：基于控制的分类器无关扩散引导算法]({{< relref "posts/20260305-arxiv_ai-cfg-ctrl-control-based-classifier-free-diffusion-g-0.md" >}})
+- [CFG-Ctrl：基于控制的分类器无关扩散引导算法]({{< relref "posts/20260304-arxiv_ai-cfg-ctrl-control-based-classifier-free-diffusion-g-0.md" >}})
 - [PixelGen：引入感知损失的像素扩散模型性能超越潜在扩散]({{< relref "posts/20260203-arxiv_ai-pixelgen-pixel-diffusion-beats-latent-diffusion-wi-2.md" >}})
-- [以对象为中心的表征是否更利于组合泛化]({{< relref "posts/20260220-arxiv_ai-are-object-centric-representations-better-at-compo-9.md" >}})
+- [以对象为中心的表征是否更利于组合泛化]({{< relref "posts/20260219-arxiv_ai-are-object-centric-representations-better-at-compo-9.md" >}})

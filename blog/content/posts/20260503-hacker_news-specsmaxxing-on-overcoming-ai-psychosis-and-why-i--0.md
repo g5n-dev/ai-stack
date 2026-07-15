@@ -1,14 +1,30 @@
 ---
-title: "YAML规格编写实践：应对AI幻觉问题"
-date: 2026-05-03T09:02:17+08:00
+title: YAML规格编写实践：应对AI幻觉问题
+date: 2026-05-03 09:02:17+08:00
 draft: false
-entry_kind: "auto"
-tags: ["YAML", "规格编写", "AI幻觉", "最佳实践", "配置管理", "文档化", "提示词工程", "质量保障"]
-categories: ["开发工具", "效率与方法论"]
+entry_kind: auto
+tags:
+- YAML
+- 规格编写
+- AI幻觉
+- 最佳实践
+- 配置管理
+- 文档化
+- 提示词工程
+- 质量保障
+categories:
+- 开发工具
+- 效率与方法论
 source: hacker_news
-description: "在人工智能项目开发中，规格说明往往是防止模型行为偏离预期的关键。然而，许多团队在撰写规格时倾向于使用自然语言或复杂的结构化文档，导致规范难以维护和自动化检查。本文探讨如何通过 YAML 编写结构化、可验证的规格，以缓解 AI 系统出现的“精神错乱”现象，并提供实用的工作流示例，帮助开发者提升规范的可读性与可执行性。"
+description: 在人工智能项目开发中，规格说明往往是防止模型行为偏离预期的关键。然而，许多团队在撰写规格时倾向于使用自然语言或复杂的结构化文档，导致规范难以维护和自动化检查。本文探讨如何通过
+  YAML 编写结构化、可验证的规格，以缓解 AI 系统出现的“精神错乱”现象，并提供实用的工作流示例，帮助开发者提升规范的可读性与可执行性。
 external_url: https://acai.sh/blog/specsmaxxing
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # YAML规格编写实践：应对AI幻觉问题
@@ -84,6 +100,6 @@ YAML作为人类可读的配置语言，具备类型校验和层级结构表达�
 - [Claude Code Skill 应基于项目需求构建]({{< relref "posts/20260410-juejin-连载04-最重要的skill-一起吃透-claude-code告别-ai-coding-迷茫-0.md" >}})
 - [AWS LLM迁移实践：生成式AI模型切换框架指南]({{< relref "posts/20260430-blogs_podcasts-aws-generative-ai-model-agility-solution-a-compreh-0.md" >}})
 - [利用AI高效编写高质量代码的实践方法]({{< relref "posts/20260206-hacker_news-how-to-effectively-write-quality-code-with-ai-3.md" >}})
-- [利用AI高效编写高质量代码的实践指南]({{< relref "posts/20260206-hacker_news-how-to-effectively-write-quality-code-with-ai-5.md" >}})
-- [利用AI高效编写高质量代码的实践指南]({{< relref "posts/20260206-hacker_news-how-to-effectively-write-quality-code-with-ai-6.md" >}})
+- [利用AI高效编写高质量代码的实践指南]({{< relref "posts/20260206-hacker_news-how-to-effectively-write-quality-code-with-ai-3.md" >}})
+- [利用AI高效编写高质量代码的实践指南]({{< relref "posts/20260206-hacker_news-how-to-effectively-write-quality-code-with-ai-3.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

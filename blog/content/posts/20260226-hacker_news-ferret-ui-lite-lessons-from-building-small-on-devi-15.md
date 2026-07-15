@@ -21,6 +21,10 @@ description: 随着端侧 AI 的普及，如何让大模型在有限的资源下
 external_url: https://machinelearning.apple.com/research/ferret-ui
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Ferret-UI Lite：端侧轻量级GUI Agent构建经验

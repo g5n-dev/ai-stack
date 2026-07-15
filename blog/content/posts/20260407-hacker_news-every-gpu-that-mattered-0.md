@@ -1,14 +1,28 @@
 ---
-title: "回顾历代重要GPU"
-date: 2026-04-07T09:22:41+08:00
+title: 回顾历代重要GPU
+date: 2026-04-07 09:22:41+08:00
 draft: false
-entry_kind: "auto"
-tags: ["GPU历史", "显卡", "历代GPU", "NVIDIA", "AMD", "CUDA", "并行计算", "硬件演进"]
-categories: ["系统与基础设施"]
+entry_kind: auto
+tags:
+- GPU历史
+- 显卡
+- 历代GPU
+- NVIDIA
+- AMD
+- CUDA
+- 并行计算
+- 硬件演进
+categories:
+- 系统与基础设施
 source: hacker_news
-description: "过去二十年，GPU的架构演进与算力提升相互交织，深刻影响了图形渲染、深度学习和并行计算等多个领域。本文以关键产品的时间线为线索，剖析每一代标志性显卡在硬件设计、制程工艺和生态布局上的突破，并结合实际基准测试和行业案例，展示它们在不同阶段的实际贡献。阅读本篇后，读者可以系统把握GPU发展的脉络，辨别技术趋势背后的驱动因素"
+description: 过去二十年，GPU的架构演进与算力提升相互交织，深刻影响了图形渲染、深度学习和并行计算等多个领域。本文以关键产品的时间线为线索，剖析每一代标志性显卡在硬件设计、制程工艺和生态布局上的突破，并结合实际基准测试和行业案例，展示它们在不同阶段的实际贡献。阅读本篇后，读者可以系统把握GPU发展的脉络，辨别技术趋势背后的驱动因素
 external_url: https://sheets.works/data-viz/every-gpu
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 回顾历代重要GPU
@@ -79,9 +93,9 @@ scenarios: ["Web应用开发"]
 
 ### 相关文章
 
-- [FlashAttention-T：张量化注意力机制实现方案]({{< relref "posts/20260204-hacker_news-flashattention-t-towards-tensorized-attention-8.md" >}})
+- [FlashAttention-T：张量化注意力机制实现方案]({{< relref "posts/20260203-hacker_news-flashattention-t-towards-tensorized-attention-0.md" >}})
 - [Meta 开源 RCCLX：优化 AMD GPU 通信并集成 Torchcomms]({{< relref "posts/20260224-blogs_podcasts-rcclx-innovating-gpu-communications-on-amd-platfor-0.md" >}})
-- [英伟达AI工程师探讨行星级智能体推理与光速计算]({{< relref "posts/20260310-blogs_podcasts-nvidias-ai-engineers-agent-inference-at-planetary--1.md" >}})
-- [英伟达AI工程师谈行星级Agent推理与光速计算]({{< relref "posts/20260311-blogs_podcasts-nvidias-ai-engineers-agent-inference-at-planetary--8.md" >}})
+- [英伟达AI工程师探讨行星级智能体推理与光速计算]({{< relref "posts/20260310-blogs_podcasts-nvidias-ai-engineers-agent-inference-at-planetary--0.md" >}})
+- [英伟达AI工程师谈行星级Agent推理与光速计算]({{< relref "posts/20260310-blogs_podcasts-nvidias-ai-engineers-agent-inference-at-planetary--0.md" >}})
 - [AutoKernel：面向GPU内核的自动化研究工具]({{< relref "posts/20260311-hacker_news-autokernel-autoresearch-for-gpu-kernels-8.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

@@ -10,7 +10,7 @@ tags:
 - 模型评估
 - LLM
 - 信任校准
-- AI安全
+- AI 安全
 - 指标
 categories:
 - 大模型
@@ -21,6 +21,12 @@ external_url: https://news.mit.edu/2026/better-method-identifying-overconfident-
 scenarios:
 - 大语言模型
 - AI/ML项目
+aliases:
+- /posts/20260320-blogs_podcasts-a-better-method-for-identifying-overconfident-larg-9/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 新指标识别AI模型过度自信 降低幻觉风险
@@ -382,7 +388,7 @@ scenarios:
 ### 相关文章
 
 - [大语言模型在逻辑推理与事实准确性上的局限]({{< relref "posts/20260212-hacker_news-the-problem-with-llms-9.md" >}})
-- [Anthropic 发布自主智能体 METR 基准测试数据]({{< relref "posts/20260220-blogs_podcasts-ainews-anthropics-agent-autonomy-study-10.md" >}})
-- [LLM 中的 L 代表撒谎：大语言模型的幻觉问题]({{< relref "posts/20260305-hacker_news-the-l-in-llm-stands-for-lying-2.md" >}})
-- [模型智能与任务复杂度如何影响对齐偏差]({{< relref "posts/20260203-hacker_news-how-does-misalignment-scale-with-model-intelligenc-12.md" >}})
+- [Anthropic 发布自主智能体 METR 基准测试数据]({{< relref "posts/20260219-blogs_podcasts-ainews-anthropics-agent-autonomy-study-0.md" >}})
+- [LLM 中的 L 代表撒谎：大语言模型的幻觉问题]({{< relref "posts/20260305-hacker_news-the-l-in-llm-stands-for-lying-9.md" >}})
+- [模型智能与任务复杂度如何影响对齐偏差]({{< relref "posts/20260203-hacker_news-how-does-misalignment-scale-with-model-intelligenc-7.md" >}})
 - [LLM盲区偏差检测：识别模型未提及内容]({{< relref "posts/20260211-arxiv_ai-biases-in-the-blind-spot-detecting-what-llms-fail--0.md" >}})

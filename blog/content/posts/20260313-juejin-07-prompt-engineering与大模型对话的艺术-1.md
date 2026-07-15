@@ -22,6 +22,10 @@ external_url: https://juejin.cn/post/7616201064984608778
 scenarios:
 - 大语言模型
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 提示词工程指南：掌握角色设定与任务约束
@@ -137,6 +141,6 @@ scenarios:
 
 - [AI Agent 工程师指南：深入解析 Zero-shot 与 Few-shot 核心概念]({{< relref "posts/20260307-juejin-ai-agent工程师指南-0.md" >}})
 - [构建高质量代码提示词：从五要素基础到十维度进阶技巧]({{< relref "posts/20260214-juejin-让-ai-帮你写代码先学会跟它说话-0.md" >}})
-- [用户先定义验收标准可提升大模型输出质量]({{< relref "posts/20260307-hacker_news-llms-work-best-when-the-user-defines-their-accepta-15.md" >}})
-- [XML标签为何是Claude模型能力的关键基础]({{< relref "posts/20260301-hacker_news-why-xml-tags-are-so-fundamental-to-claude-12.md" >}})
-- [提示工程悖论：为何与AI对话比想象中更难]({{< relref "posts/20260218-juejin-提示工程的悖论为什么与-ai-对话比你想象的更难-0.md" >}})
+- [用户先定义验收标准可提升大模型输出质量]({{< relref "posts/20260307-hacker_news-an-llm-doesnt-write-correct-code-it-writes-plausib-1.md" >}})
+- [XML标签为何是Claude模型能力的关键基础]({{< relref "posts/20260301-hacker_news-why-xml-tags-are-so-fundamental-to-claude-4.md" >}})
+- [提示工程悖论：为何与AI对话比想象中更难]({{< relref "posts/20260217-juejin-提示工程的悖论为什么与-ai-对话比你想象的更难-0.md" >}})

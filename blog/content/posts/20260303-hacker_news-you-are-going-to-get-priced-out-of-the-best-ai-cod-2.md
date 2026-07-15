@@ -4,7 +4,7 @@ date: 2026-03-03 18:56:48+08:00
 draft: false
 entry_kind: auto
 tags:
-- AI编程
+- AI 编程
 - SaaS
 - 订阅制
 - 开发者工具
@@ -20,6 +20,10 @@ description: 随着 AI 编码工具的快速迭代，其商业模式的调整正
 external_url: https://newsletter.danielpaleka.com/p/you-are-going-to-get-priced-out-of
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 优质AI编程工具订阅费上涨，开发者面临成本压力

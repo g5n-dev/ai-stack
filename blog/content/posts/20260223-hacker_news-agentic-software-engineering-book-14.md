@@ -9,7 +9,7 @@ tags:
 - 智能体
 - 开发范式
 - LLM
-- AI辅助编程
+- AI 辅助编程
 - 自动化
 - 系统设计
 categories:
@@ -21,6 +21,10 @@ external_url: https://agenticse-book.github.io
 scenarios:
 - 大语言模型
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Agentic 软件工程：智能体驱动的开发范式

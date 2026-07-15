@@ -1,14 +1,31 @@
 ---
-title: "实测Gemma 4在iPhone上的性能表现"
-date: 2026-04-05T20:48:22+08:00
+title: 实测Gemma 4在iPhone上的性能表现
+date: 2026-04-05 20:48:22+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Gemma", "iPhone", "性能测试", "本地部署", "端侧AI", "LLM", "延迟", "功耗"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- Gemma
+- iPhone
+- 性能测试
+- 本地部署
+- 端侧AI
+- LLM
+- 延迟
+- 功耗
+categories:
+- 大模型
+- AI 工程
 source: hacker_news
-description: "随着移动端硬件算力的提升，在 iPhone 上运行大型语言模型已不再是遥不可及的设想。Gemma 4 作为轻量级开源模型，针对移动平台进行了专门的优化，使其在设备本地实现高效推理成为可能。本文将详细介绍在 iPhone 上部署 Gemma 4 的完整步骤，并评估其在实际使用中的性能表现与功耗表现，为想在移动端尝试大模型"
+description: 随着移动端硬件算力的提升，在 iPhone 上运行大型语言模型已不再是遥不可及的设想。Gemma 4 作为轻量级开源模型，针对移动平台进行了专门的优化，使其在设备本地实现高效推理成为可能。本文将详细介绍在
+  iPhone 上部署 Gemma 4 的完整步骤，并评估其在实际使用中的性能表现与功耗表现，为想在移动端尝试大模型
 external_url: https://apps.apple.com/nl/app/google-ai-edge-gallery/id6749645337
-scenarios: ["AI/ML项目", "大语言模型"]
+scenarios:
+- AI/ML项目
+- 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 实测Gemma 4在iPhone上的性能表现
@@ -71,8 +88,8 @@ scenarios: ["AI/ML项目", "大语言模型"]
 
 ### 相关文章
 
-- [BitNet：面向本地CPU的1000亿参数1比特模型]({{< relref "posts/20260311-hacker_news-bitnet-100b-param-1-bit-model-for-local-cpus-3.md" >}})
-- [BitNet：面向本地CPU的1000亿参数1比特模型]({{< relref "posts/20260312-hacker_news-bitnet-100b-param-1-bit-model-for-local-cpus-15.md" >}})
+- [BitNet：面向本地CPU的1000亿参数1比特模型]({{< relref "posts/20260311-hacker_news-microsoft-bitnet-100b-param-1-bit-model-for-local--1.md" >}})
+- [BitNet：面向本地CPU的1000亿参数1比特模型]({{< relref "posts/20260311-hacker_news-microsoft-bitnet-100b-param-1-bit-model-for-local--1.md" >}})
 - [在 Linux 上安装 Ollama 并部署 Gemma 3B 模型]({{< relref "posts/20260207-hacker_news-installing-ollama-and-gemma-3b-on-linux-12.md" >}})
 - [端侧RAG实战：构建具备私有数据检索能力的离线AI代理]({{< relref "posts/20260306-juejin-端侧rag实战指南-0.md" >}})
 - [Moltworker：自托管个人 AI 智能体]({{< relref "posts/20260130-hacker_news-moltworker-a-self-hosted-personal-ai-agent-minus-t-16.md" >}})

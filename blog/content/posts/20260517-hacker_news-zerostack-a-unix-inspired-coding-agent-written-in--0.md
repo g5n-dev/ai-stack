@@ -1,14 +1,29 @@
 ---
-title: "Zerostack：Unix风格纯Rust编码代理"
-date: 2026-05-17T11:23:01+08:00
+title: Zerostack：Unix风格纯Rust编码代理
+date: 2026-05-17 11:23:01+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Rust", "Unix风格", "编码代理", "Zerostack", "AI编程", "开源", "代码生成", "自动化"]
-categories: ["开发工具"]
+entry_kind: auto
+tags:
+- Rust
+- Unix风格
+- 编码代理
+- Zerostack
+- AI 编程
+- 开源
+- 代码生成
+- 自动化
+categories:
+- 开发工具
 source: hacker_news
-description: "Zerostack 是一款受 Unix 哲学启发的编程助手，全部核心代码采用 Rust 实现，以实现高效的内存管理和跨平台部署。该项目通过模块化的命令行接口和可组合的插件机制，让开发者能够在编辑、构建和调试等环节中实现统一的工作流。结合 Rust 的零成本抽象特性，Zerostack 在保持轻量级的同时，提供丰富的扩展"
+description: Zerostack 是一款受 Unix 哲学启发的编程助手，全部核心代码采用 Rust 实现，以实现高效的内存管理和跨平台部署。该项目通过模块化的命令行接口和可组合的插件机制，让开发者能够在编辑、构建和调试等环节中实现统一的工作流。结合
+  Rust 的零成本抽象特性，Zerostack 在保持轻量级的同时，提供丰富的扩展
 external_url: https://crates.io/crates/zerostack/1.0.0
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Zerostack：Unix风格纯Rust编码代理
@@ -74,8 +89,8 @@ Zerostack 采用纯 Rust 实现，这一事实陈述表明开发团队对系统�
 ### 相关文章
 
 - [Zuckerman：极简个人AI代理，具备代码自编辑能力]({{< relref "posts/20260201-hacker_news-show-hn-zuckerman-minimalist-personal-ai-agent-tha-12.md" >}})
-- [Codex 应用：基于 OpenAI 模型的代码生成工具]({{< relref "posts/20260203-hacker_news-the-codex-app-12.md" >}})
-- [Codex 应用：基于 GPT-3 的代码生成工具]({{< relref "posts/20260203-hacker_news-the-codex-app-2.md" >}})
-- [Codex App：基于自然语言指令的代码生成工具]({{< relref "posts/20260203-hacker_news-the-codex-app-4.md" >}})
-- [Claude Code：面向基础设施的编程工具]({{< relref "posts/20260204-hacker_news-claude-code-for-infrastructure-12.md" >}})
+- [Codex 应用：基于 OpenAI 模型的代码生成工具]({{< relref "posts/20260202-hacker_news-the-codex-app-1.md" >}})
+- [Codex 应用：基于 GPT-3 的代码生成工具]({{< relref "posts/20260202-hacker_news-the-codex-app-1.md" >}})
+- [Codex App：基于自然语言指令的代码生成工具]({{< relref "posts/20260202-hacker_news-the-codex-app-1.md" >}})
+- [Claude Code：面向基础设施的编程工具]({{< relref "posts/20260204-hacker_news-claude-code-for-infrastructure-11.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

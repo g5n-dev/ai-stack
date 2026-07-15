@@ -1,14 +1,39 @@
 ---
-title: "训练9M参数语音模型修正普通话声调"
-date: 2026-01-31T08:45:08+08:00
+title: 训练9M参数语音模型修正普通话声调
+date: 2026-01-31 08:45:08+08:00
 draft: false
-entry_kind: "auto"
-tags: ["语音模型", "普通话", "声调修正", "小模型", "9M参数", "TTS", "语音合成", "Hacker News"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- 语音模型
+- 普通话
+- 声调修正
+- 小模型
+- 9M参数
+- TTS
+- 语音合成
+- Hacker News
+categories:
+- 大模型
+- AI 工程
 source: hacker_news
-description: "在中文学习过程中，声调发音的准确性往往是许多学习者难以攻克的难关。作者通过训练一个仅 9M 参数的小型语音模型，尝试利用 AI 技术来解决这一具体痛点。本文将详细介绍该模型的训练过程、技术细节以及实际效果，为关注语音合成与语言学习结合的开发者提供一份详实的参考案例。"
+description: 在中文学习过程中，声调发音的准确性往往是许多学习者难以攻克的难关。作者通过训练一个仅 9M 参数的小型语音模型，尝试利用 AI 技术来解决这一具体痛点。本文将详细介绍该模型的训练过程、技术细节以及实际效果，为关注语音合成与语言学习结合的开发者提供一份详实的参考案例。
 external_url: https://simedw.com/2026/01/31/ear-pronunication-via-ctc
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+aliases:
+- /posts/20260131-hacker_news-show-hn-i-trained-a-9m-speech-model-to-fix-my-mand-10/
+- /posts/20260131-hacker_news-show-hn-i-trained-a-9m-speech-model-to-fix-my-mand-13/
+- /posts/20260131-hacker_news-show-hn-i-trained-a-9m-speech-model-to-fix-my-mand-15/
+- /posts/20260131-hacker_news-show-hn-i-trained-a-9m-speech-model-to-fix-my-mand-2/
+- /posts/20260131-hacker_news-show-hn-i-trained-a-9m-speech-model-to-fix-my-mand-3/
+- /posts/20260131-hacker_news-show-hn-i-trained-a-9m-speech-model-to-fix-my-mand-4/
+- /posts/20260131-hacker_news-show-hn-i-trained-a-9m-speech-model-to-fix-my-mand-5/
+- /posts/20260131-hacker_news-show-hn-i-trained-a-9m-speech-model-to-fix-my-mand-6/
+- /posts/20260131-hacker_news-show-hn-i-trained-a-9m-speech-model-to-fix-my-mand-8/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 训练9M参数语音模型修正普通话声调
@@ -402,6 +427,6 @@ Kevin 的学习态度从被动抗拒转变为主动挑战。在六个月内，�
 - [⚠️一咬指甲就强制关机？这款桌面App太狠了！🖥️🚫]({{< relref "posts/20260126-hacker_news-show-hn-a-desktop-app-that-blocks-work-when-you-bi-12.md" >}})
 - [NVIDIA Cosmos策略：提升机器人控制能力]({{< relref "posts/20260129-blogs_podcasts-introducing-nvidia-cosmos-policy-for-advanced-robo-0.md" >}})
 - [让 Claude 编写 CUDA 内核并指导开源模型]({{< relref "posts/20260129-blogs_podcasts-we-got-claude-to-build-cuda-kernels-and-teach-open-6.md" >}})
-- [NVIDIA Cosmos 策略模型：提升机器人高级控制能力]({{< relref "posts/20260130-blogs_podcasts-introducing-nvidia-cosmos-policy-for-advanced-robo-0.md" >}})
-- [NVIDIA Cosmos策略：提升机器人高级控制能力]({{< relref "posts/20260130-blogs_podcasts-introducing-nvidia-cosmos-policy-for-advanced-robo-1.md" >}})
+- [NVIDIA Cosmos 策略模型：提升机器人高级控制能力]({{< relref "posts/20260129-blogs_podcasts-introducing-nvidia-cosmos-policy-for-advanced-robo-0.md" >}})
+- [NVIDIA Cosmos策略：提升机器人高级控制能力]({{< relref "posts/20260129-blogs_podcasts-introducing-nvidia-cosmos-policy-for-advanced-robo-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

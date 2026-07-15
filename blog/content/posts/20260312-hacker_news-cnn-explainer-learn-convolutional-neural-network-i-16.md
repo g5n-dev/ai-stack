@@ -13,6 +13,10 @@ description: 卷积神经网络（CNN）是现代计算机视觉的基石，但�
 external_url: https://poloclub.github.io/cnn-explainer
 scenarios:
 - Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # CNN Explainer：在浏览器中交互式学习卷积神经网络

@@ -21,6 +21,17 @@ description: '**总结：在企业应用中嵌入 Amazon Quick Suite 聊天代�
 external_url: https://aws.amazon.com/blogs/machine-learning/embed-amazon-quick-suite-chat-agents-in-enterprise-applications
 scenarios:
 - AI/ML项目
+aliases:
+- /posts/20260305-blogs_podcasts-embed-amazon-quick-suite-chat-agents-in-enterprise-0/
+- /posts/20260305-blogs_podcasts-embed-amazon-quick-suite-chat-agents-in-enterprise-1/
+- /posts/20260305-blogs_podcasts-embed-amazon-quick-suite-chat-agents-in-enterprise-11/
+- /posts/20260305-blogs_podcasts-embed-amazon-quick-suite-chat-agents-in-enterprise-2/
+- /posts/20260305-blogs_podcasts-embed-amazon-quick-suite-chat-agents-in-enterprise-4/
+- /posts/20260305-blogs_podcasts-embed-amazon-quick-suite-chat-agents-in-enterprise-8/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 利用 Quick Suite 嵌入式 SDK 在企业门户中一键部署聊天代理
@@ -346,8 +357,8 @@ scenarios:
 
 ### 相关文章
 
-- [Codex与Claude支持定制内核以适配各类应用]({{< relref "posts/20260214-blogs_podcasts-custom-kernels-for-all-from-codex-and-claude-6.md" >}})
+- [Codex与Claude支持定制内核以适配各类应用]({{< relref "posts/20260213-blogs_podcasts-custom-kernels-for-all-from-codex-and-claude-1.md" >}})
 - [OpenClawInstaller：一键部署私人 AI 助手 OpenClaw]({{< relref "posts/20260216-juejin-一天一个开源项目第24篇openclawinstaller-一键部署私人-ai-助手-opencla-1.md" >}})
-- [使用MCP协议集成外部工具至Amazon Quick Agents的六步指南]({{< relref "posts/20260224-blogs_podcasts-integrate-external-tools-with-amazon-quick-agents--11.md" >}})
-- [利用Amazon Bedrock构建生产级智能活动助理]({{< relref "posts/20260225-blogs_podcasts-building-intelligent-event-agents-using-amazon-bed-1.md" >}})
-- [利用 Amazon Bedrock 构建具备记忆与身份验证的智能活动助手]({{< relref "posts/20260226-blogs_podcasts-building-intelligent-event-agents-using-amazon-bed-13.md" >}})
+- [使用MCP协议集成外部工具至Amazon Quick Agents的六步指南]({{< relref "posts/20260220-blogs_podcasts-integrate-external-tools-with-amazon-quick-agents--0.md" >}})
+- [利用Amazon Bedrock构建生产级智能活动助理]({{< relref "posts/20260225-blogs_podcasts-building-intelligent-event-agents-using-amazon-bed-0.md" >}})
+- [利用 Amazon Bedrock 构建具备记忆与身份验证的智能活动助手]({{< relref "posts/20260225-blogs_podcasts-building-intelligent-event-agents-using-amazon-bed-0.md" >}})

@@ -1,14 +1,30 @@
 ---
-title: "语言模型自我改进：代理发现与测试时扩展"
-date: 2026-05-11T23:12:19+08:00
+title: 语言模型自我改进：代理发现与测试时扩展
+date: 2026-05-11 23:12:19+08:00
 draft: false
-entry_kind: "auto"
-tags: ["LLM", "Agent", "Test-time scaling", "AutoTTS", "推理优化", "策略搜索", "数学推理", "开源"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- LLM
+- Agent
+- Test-time scaling
+- AutoTTS
+- 推理优化
+- 策略搜索
+- 数学推理
+- 开源
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "背景 Test‑time scaling（TTS）在推理阶段为模型分配额外计算，以提升性能，但现有 TTS 策略多为手工设计的启发式，缺乏系统探索。 方法 AutoTTS 将设计对象从单个启发式转变为可自动搜索的“环境”。环境构建的关键是：① 将控制空间限制在可管理的维度；② 提供廉价、频繁的反馈，避免重复调用大模型。"
+description: 背景 Test‑time scaling（TTS）在推理阶段为模型分配额外计算，以提升性能，但现有 TTS 策略多为手工设计的启发式，缺乏系统探索。
+  方法 AutoTTS 将设计对象从单个启发式转变为可自动搜索的“环境”。环境构建的关键是：① 将控制空间限制在可管理的维度；② 提供廉价、频繁的反馈，避免重复调用大模型。
 external_url: http://arxiv.org/abs/2605.08083v1
-scenarios: ["大语言模型"]
+scenarios:
+- 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 语言模型自我改进：代理发现与测试时扩展
@@ -130,8 +146,8 @@ AutoTTS 的应用前景体现在多个层面。首先，它提供了一种自动
 ### 相关文章
 
 - [为何Pass@k优化会降低Pass@1：大模型后训练中的提示干扰]({{< relref "posts/20260225-arxiv_ai-why-passk-optimization-can-degrade-pass1-prompt-in-8.md" >}})
-- [面向自动定理证明的最小智能体框架]({{< relref "posts/20260303-arxiv_ai-a-minimal-agent-for-automated-theorem-proving-8.md" >}})
-- [RedSage：网络安全通用大语言模型]({{< relref "posts/20260131-arxiv_ai-redsage-a-cybersecurity-generalist-llm-0.md" >}})
-- [LLM Agent 成本呈二次方增长：算力开销分析]({{< relref "posts/20260216-hacker_news-expensively-quadratic-the-llm-agent-cost-curve-15.md" >}})
-- [HuggingFace Agent 技能机制解析]({{< relref "posts/20260224-hacker_news-huggingface-agent-skills-3.md" >}})
+- [面向自动定理证明的最小智能体框架]({{< relref "posts/20260302-arxiv_ai-a-minimal-agent-for-automated-theorem-proving-8.md" >}})
+- [RedSage：网络安全通用大语言模型]({{< relref "posts/20260130-arxiv_ai-redsage-a-cybersecurity-generalist-llm-0.md" >}})
+- [LLM Agent 成本呈二次方增长：算力开销分析]({{< relref "posts/20260216-hacker_news-expensively-quadratic-the-llm-agent-cost-curve-8.md" >}})
+- [HuggingFace Agent 技能机制解析]({{< relref "posts/20260224-hacker_news-huggingface-agent-skills-8.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

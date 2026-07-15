@@ -21,6 +21,10 @@ description: 将 Codex 视为具备协作能力的 AI Agent，而非简单的对
 external_url: https://juejin.cn/post/7616660809600516134
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 将Codex视为中级工程师的Windows工作流实践
@@ -181,5 +185,5 @@ Windows 下如果不小心关闭终端窗口或系统休眠，正在运行的后
 - [CLAUDE.md：规范 Claude Code 行为与工作流的最佳实践指南]({{< relref "posts/20260224-juejin-开工大吉这份-claudemd-文件助你工作效率提升10倍-1.md" >}})
 - [AI 写代码效果差？大多数人第一步就错了]({{< relref "posts/20260306-juejin-ai-写代码效果差大多数人第一步就错了-2.md" >}})
 - [Claude Code Skills 系统实战：构建领域专家级助手]({{< relref "posts/20260221-juejin-skills-实战让-ai-成为你的领域专家-2.md" >}})
-- [编排多会话 Claude Code 团队协作]({{< relref "posts/20260205-hacker_news-orchestrate-teams-of-claude-code-sessions-5.md" >}})
+- [编排多会话 Claude Code 团队协作]({{< relref "posts/20260205-hacker_news-claude-code-agent-teams-3.md" >}})
 - [如何使用 Claude Code：规划与执行的分离]({{< relref "posts/20260222-hacker_news-how-i-use-claude-code-separation-of-planning-and-e-0.md" >}})

@@ -21,6 +21,12 @@ description: '**总结：WiFi-DensePose 技术——无摄像头实现人体姿�
 external_url: https://juejin.cn/post/7611424094525931561
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260301-juejin-ai-可以让-wifi-实现监控室内人体位置和姿态无需摄像头-3/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # WiFi-DensePose项目利用AI分析信号实现无摄像头人体姿态感知
@@ -207,8 +213,8 @@ WiFi 感知技术仅处理无线信号的数学特征（如幅度和相位），
 
 ### 相关文章
 
-- [SCRAPL：基于随机路径散射变换的机器学习框架]({{< relref "posts/20260213-arxiv_ai-scrapl-scattering-transform-with-random-paths-for--4.md" >}})
+- [SCRAPL：基于随机路径散射变换的机器学习框架]({{< relref "posts/20260212-arxiv_ai-scrapl-scattering-transform-with-random-paths-for--4.md" >}})
 - [A.R.I.S.：基于深度学习的电子废弃物自动分类系统]({{< relref "posts/20260221-arxiv_ai-aris-automated-recycling-identification-system-for-8.md" >}})
 - [🔥Show HN: AutoShorts！本地GPU加速的AI视频神器✨]({{< relref "posts/20260125-hacker_news-show-hn-autoshorts-local-gpu-accelerated-ai-video--9.md" >}})
-- [macOS神器：含胸驼背？屏幕立刻模糊！强制你挺直腰杆！💻✨]({{< relref "posts/20260126-hacker_news-a-macos-app-that-blurs-your-screen-when-you-slouch-19.md" >}})
+- [macOS神器：含胸驼背？屏幕立刻模糊！强制你挺直腰杆！💻✨]({{< relref "posts/20260126-hacker_news-a-macos-app-that-blurs-your-screen-when-you-slouch-4.md" >}})
 - [为何Adam在$β_1=β_2$时更优：缺失的梯度尺度不变性原理]({{< relref "posts/20260130-arxiv_ai-why-adam-works-better-with-β_1-β_2-the-missing-gra-8.md" >}})

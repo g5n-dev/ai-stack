@@ -1,14 +1,31 @@
 ---
-title: "构建AI版Wattpad以评估大模型小说创作能力"
-date: 2026-02-03T19:38:58+08:00
+title: 构建AI版Wattpad以评估大模型小说创作能力
+date: 2026-02-03 19:38:58+08:00
 draft: false
-entry_kind: "auto"
-tags: ["LLM", "小说创作", "模型评估", "Wattpad", "AI应用", "Show HN", "文学生成", "Benchmark"]
-categories: ["大模型", "产品与创业"]
+entry_kind: auto
+tags:
+- LLM
+- 小说创作
+- 模型评估
+- Wattpad
+- AI 应用
+- Show HN
+- 文学生成
+- Benchmark
+categories:
+- 大模型
+- 产品与创业
 source: hacker_news
-description: "大语言模型在生成代码或解释事实方面表现尚可，但创作长篇虚构故事仍是其短板。作者构建了一个类似“AI 版 Wattpad”的评估平台，旨在通过更贴近真实阅读场景的交互来测试模型的叙事能力。本文将介绍该项目的架构设计，并探讨如何利用它来有效衡量 LLM 在虚构写作中的连贯性与表现力。"
+description: 大语言模型在生成代码或解释事实方面表现尚可，但创作长篇虚构故事仍是其短板。作者构建了一个类似“AI 版 Wattpad”的评估平台，旨在通过更贴近真实阅读场景的交互来测试模型的叙事能力。本文将介绍该项目的架构设计，并探讨如何利用它来有效衡量
+  LLM 在虚构写作中的连贯性与表现力。
 external_url: https://narrator.sh/llm-leaderboard
-scenarios: ["大语言模型", "AI/ML项目"]
+scenarios:
+- 大语言模型
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 构建AI版Wattpad以评估大模型小说创作能力
@@ -399,9 +416,9 @@ Wattpad 等平台涵盖了从同人小说到悬疑惊悚等多种流派。一个
 
 ### 相关文章
 
-- [AI 基准测试新进展：Game Arena 推进评估方法]({{< relref "posts/20260203-hacker_news-advancing-ai-benchmarking-with-game-arena-14.md" >}})
+- [AI 基准测试新进展：Game Arena 推进评估方法]({{< relref "posts/20260202-hacker_news-advancing-ai-benchmarking-with-game-arena-2.md" >}})
 - [SokoBench：评估大模型长程规划与推理能力]({{< relref "posts/20260129-arxiv_ai-sokobench-evaluating-long-horizon-planning-and-rea-2.md" >}})
-- [Agent评估显示AGENTS.md配置优于技能配置]({{< relref "posts/20260130-hacker_news-agentsmd-outperforms-skills-in-our-agent-evals-6.md" >}})
-- [探索面向智能体的推理奖励模型]({{< relref "posts/20260201-arxiv_ai-exploring-reasoning-reward-model-for-agents-4.md" >}})
-- [生成式AI与维基百科编辑：2025年经验总结]({{< relref "posts/20260201-hacker_news-generative-ai-and-wikipedia-editing-what-we-learne-11.md" >}})
+- [Agent评估显示AGENTS.md配置优于技能配置]({{< relref "posts/20260129-hacker_news-compressed-agentsmd-agent-skills-5.md" >}})
+- [探索面向智能体的推理奖励模型]({{< relref "posts/20260130-arxiv_ai-exploring-reasoning-reward-model-for-agents-4.md" >}})
+- [生成式AI与维基百科编辑：2025年经验总结]({{< relref "posts/20260201-hacker_news-generative-ai-and-wikipedia-editing-what-we-learne-3.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

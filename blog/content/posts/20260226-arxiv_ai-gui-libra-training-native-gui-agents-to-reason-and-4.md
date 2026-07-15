@@ -20,6 +20,12 @@ description: 以下是对该论文内容的中文总结： **核心问题** 现�
 external_url: http://arxiv.org/abs/2602.22190v1
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260227-arxiv_ai-gui-libra-training-native-gui-agents-to-reason-and-4/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # GUI-Libra：动作感知监督与可验证RL训练原生GUI智能体
@@ -433,6 +439,6 @@ GUI-Libra 依赖合成数据进行训练，这些数据具有以下特点和必�
 
 - [NVIDIA Cosmos策略：提升机器人控制能力]({{< relref "posts/20260129-blogs_podcasts-introducing-nvidia-cosmos-policy-for-advanced-robo-0.md" >}})
 - [基于急停干预的鲁棒干预学习]({{< relref "posts/20260204-arxiv_ai-robust-intervention-learning-from-emergency-stop-i-7.md" >}})
-- [DynaWeb：基于模型的强化学习网页智能体]({{< relref "posts/20260201-arxiv_ai-dynaweb-model-based-reinforcement-learning-of-web--6.md" >}})
-- [推理大语言模型从被动求解转向主动询问]({{< relref "posts/20260201-arxiv_ai-reasoning-while-asking-transforming-reasoning-larg-9.md" >}})
+- [DynaWeb：基于模型的强化学习网页智能体]({{< relref "posts/20260130-arxiv_ai-dynaweb-model-based-reinforcement-learning-of-web--6.md" >}})
+- [推理大语言模型从被动求解转向主动询问]({{< relref "posts/20260130-arxiv_ai-reasoning-while-asking-transforming-reasoning-larg-9.md" >}})
 - [RN-D：基于正则化网络的离散分类演员与同策强化学习]({{< relref "posts/20260202-arxiv_ai-rn-d-discretized-categorical-actors-with-regulariz-7.md" >}})

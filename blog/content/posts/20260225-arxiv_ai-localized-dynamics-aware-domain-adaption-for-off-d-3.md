@@ -21,6 +21,10 @@ description: 本文介绍了一种名为 **LoDADA（Localized Dynamics-Aware Dom
 external_url: http://arxiv.org/abs/2602.21072v1
 scenarios:
 - Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 离线强化学习：面向离动力学环境的局部动力学感知域适应
@@ -446,5 +450,5 @@ LoDADA（Localized Dynamics-Aware Domain Adaptation）的核心思想是：**动
 - [利用辅助信息实现少样本设计优化]({{< relref "posts/20260213-arxiv_ai-few-shot-design-optimization-by-exploiting-auxilia-7.md" >}})
 - [为何Adam在$β_1=β_2$时更优：缺失的梯度尺度不变性原理]({{< relref "posts/20260130-arxiv_ai-why-adam-works-better-with-β_1-β_2-the-missing-gra-8.md" >}})
 - [RN-D：基于正则化网络的离散分类演员与同策强化学习]({{< relref "posts/20260202-arxiv_ai-rn-d-discretized-categorical-actors-with-regulariz-7.md" >}})
-- [基于归一化流的高效分层目标条件强化学习]({{< relref "posts/20260213-arxiv_ai-data-efficient-hierarchical-goal-conditioned-reinf-6.md" >}})
+- [基于归一化流的高效分层目标条件强化学习]({{< relref "posts/20260212-arxiv_ai-data-efficient-hierarchical-goal-conditioned-reinf-6.md" >}})
 - [Dex4D：任务无关点跟踪策略实现灵巧操作跨域迁移]({{< relref "posts/20260218-arxiv_ai-dex4d-task-agnostic-point-track-policy-for-sim-to--2.md" >}})

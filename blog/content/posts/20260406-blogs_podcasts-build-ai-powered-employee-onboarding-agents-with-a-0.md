@@ -1,14 +1,28 @@
 ---
-title: "使用Quick构建AI入职代理：自动化新员工任务处理"
-date: 2026-04-06T23:56:35+08:00
+title: 使用Quick构建AI入职代理：自动化新员工任务处理
+date: 2026-04-06 23:56:35+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI代理", "自动化", "HR入职", "AmazonQuick", "流程自动化", "新员工培训", "智能助手", "企业应用"]
-categories: ["AI 工程"]
+entry_kind: auto
+tags:
+- AI 代理
+- 自动化
+- HR入职
+- AmazonQuick
+- 流程自动化
+- 新员工培训
+- 智能助手
+- 企业应用
+categories:
+- AI 工程
 source: blogs_podcasts
-description: "本文介绍如何利用 Amazon Quick 构建定制的 HR 入职代理。演示了如何让代理理解公司内部的入职流程、接入现有 HR 系统（如招聘、文档管理系统），并自动化常见任务，例如即时回答新员工提出的常见问题、自动跟踪入职文档的提交与完成状态。通过配置自然语言理解、知识库和工作流集成，企业可以显著提升新员工入职体验，减"
+description: 本文介绍如何利用 Amazon Quick 构建定制的 HR 入职代理。演示了如何让代理理解公司内部的入职流程、接入现有 HR 系统（如招聘、文档管理系统），并自动化常见任务，例如即时回答新员工提出的常见问题、自动跟踪入职文档的提交与完成状态。通过配置自然语言理解、知识库和工作流集成，企业可以显著提升新员工入职体验，减
 external_url: https://aws.amazon.com/blogs/machine-learning/build-ai-powered-employee-onboarding-agents-with-amazon-quick
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 使用Quick构建AI入职代理：自动化新员工任务处理
@@ -143,9 +157,9 @@ scenarios: ["AI/ML项目"]
 
 ### 相关文章
 
-- [TeamOut：利用AI代理规划公司团建活动]({{< relref "posts/20260225-hacker_news-launch-hn-teamout-yc-w22-ai-agent-for-planning-com-14.md" >}})
+- [TeamOut：利用AI代理规划公司团建活动]({{< relref "posts/20260225-hacker_news-launch-hn-teamout-yc-w22-ai-agent-for-planning-com-7.md" >}})
 - [AI 代理开PR遭拒后撰文指责维护者关闭行为]({{< relref "posts/20260212-hacker_news-ai-agent-opens-a-pr-write-a-blogpost-to-shames-the-10.md" >}})
-- [授予Claude控制权：用笔式绘图仪生成实体艺术]({{< relref "posts/20260216-hacker_news-i-gave-claude-access-to-my-pen-plotter-6.md" >}})
-- [AI Agent Hacks McKinsey]({{< relref "posts/20260311-hacker_news-ai-agent-hacks-mckinsey-11.md" >}})
+- [授予Claude控制权：用笔式绘图仪生成实体艺术]({{< relref "posts/20260215-hacker_news-i-gave-claude-access-to-my-pen-plotter-16.md" >}})
+- [AI Agent Hacks McKinsey]({{< relref "posts/20260311-hacker_news-ai-agent-hacks-mckinsey-8.md" >}})
 - [AI Agent 模拟麦肯锡顾问完成复杂咨询任务]({{< relref "posts/20260311-hacker_news-ai-agent-hacks-mckinsey-8.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

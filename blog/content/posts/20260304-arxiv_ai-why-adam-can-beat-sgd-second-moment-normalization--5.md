@@ -21,6 +21,10 @@ description: 本文简要总结如下： 针对“为何 Adam 在实际应用中
 external_url: http://arxiv.org/abs/2603.03099v1
 scenarios:
 - Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Adam为何优于SGD：二阶矩归一化产生更尖锐的尾部
@@ -423,5 +427,5 @@ Adam 虽然能找到更平坦的极小值，但在某些极端的视觉任务中
 - [为何Adam在$β_1=β_2$时更优：缺失的梯度尺度不变性原理]({{< relref "posts/20260130-arxiv_ai-why-adam-works-better-with-β_1-β_2-the-missing-gra-8.md" >}})
 - [通过锚定机制提升模型一致性]({{< relref "posts/20260227-arxiv_ai-model-agreement-via-anchoring-0.md" >}})
 - [🤖反事实训练！让模型学会靠谱又可落地的解释！]({{< relref "posts/20260125-arxiv_ai-counterfactual-training-teaching-models-plausible--3.md" >}})
-- [通过文本反馈扩展强化学习的能力边界]({{< relref "posts/20260204-arxiv_ai-expanding-the-capabilities-of-reinforcement-learni-5.md" >}})
+- [通过文本反馈扩展强化学习的能力边界]({{< relref "posts/20260203-arxiv_ai-expanding-the-capabilities-of-reinforcement-learni-5.md" >}})
 - [Harpoon：面向条件表格扩散模型的广义流形引导]({{< relref "posts/20260210-arxiv_ai-harpoon-generalised-manifold-guidance-for-conditio-1.md" >}})

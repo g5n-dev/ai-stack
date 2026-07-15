@@ -1,14 +1,33 @@
 ---
-title: "Zuckerman：极简个人AI代理，具备代码自编辑能力"
-date: 2026-02-01T17:05:41+08:00
+title: Zuckerman：极简个人AI代理，具备代码自编辑能力
+date: 2026-02-01 17:05:41+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI Agent", "自编辑", "代码生成", "极简主义", "自动化", "LLM", "个人助理", "开源"]
-categories: ["AI 工程", "开发工具"]
+entry_kind: auto
+tags:
+- AI Agent
+- 自编辑
+- 代码生成
+- 极简主义
+- 自动化
+- LLM
+- 个人助理
+- 开源
+categories:
+- AI 工程
+- 开发工具
 source: hacker_news
-description: "在 AI 智能体领域，如何平衡系统的功能性与代码的可维护性始终是开发者关注的焦点。本文介绍的 Zuckerman 作为一个极简风格的个人智能体，其核心亮点在于具备“自我编辑代码”的能力，试图通过自动化重构来降低长期维护的复杂度。通过阅读本文，你将了解它的设计初衷、底层实现逻辑，以及它如何为构建可持续迭代的个人 AI 工"
+description: 在 AI 智能体领域，如何平衡系统的功能性与代码的可维护性始终是开发者关注的焦点。本文介绍的 Zuckerman 作为一个极简风格的个人智能体，其核心亮点在于具备“自我编辑代码”的能力，试图通过自动化重构来降低长期维护的复杂度。通过阅读本文，你将了解它的设计初衷、底层实现逻辑，以及它如何为构建可持续迭代的个人
+  AI 工
 external_url: https://github.com/zuckermanai/zuckerman
-scenarios: ["AI/ML项目", "大语言模型"]
+scenarios:
+- AI/ML项目
+- 大语言模型
+aliases:
+- /posts/20260201-hacker_news-show-hn-zuckerman-minimalist-personal-ai-agent-tha-13/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Zuckerman：极简个人AI代理，具备代码自编辑能力
@@ -364,9 +383,9 @@ Zuckerman 上线后，针对非标准数据格式的处理实现了“零人工�
 
 ### 相关文章
 
-- [构建极简编程代理的实践经验与思考]({{< relref "posts/20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-3.md" >}})
+- [构建极简编程代理的实践经验与思考]({{< relref "posts/20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-1.md" >}})
 - [Moltworker：自托管个人 AI 智能体]({{< relref "posts/20260130-hacker_news-moltworker-a-self-hosted-personal-ai-agent-minus-t-16.md" >}})
-- [Moltworker：自托管个人 AI 智能体]({{< relref "posts/20260130-hacker_news-moltworker-a-self-hosted-personal-ai-agent-minus-t-19.md" >}})
+- [Moltworker：自托管个人 AI 智能体]({{< relref "posts/20260130-hacker_news-moltworker-a-self-hosted-personal-ai-agent-minus-t-16.md" >}})
 - [构建极简且具倾向性的编程代理的经验总结]({{< relref "posts/20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-1.md" >}})
-- [Claude Code：面向开发者的AI编程助手]({{< relref "posts/20260131-hacker_news-claude-code-is-your-customer-5.md" >}})
+- [Claude Code：面向开发者的AI编程助手]({{< relref "posts/20260131-hacker_news-claude-code-is-your-customer-16.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

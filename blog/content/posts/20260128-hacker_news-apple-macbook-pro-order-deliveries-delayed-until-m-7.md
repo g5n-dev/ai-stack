@@ -1,12 +1,25 @@
 ---
-title: "⚠️MacBook Pro新机告急！发货推迟至3月中旬，果粉还要等多久？"
-date: 2026-01-28T07:28:04+08:00
+title: ⚠️MacBook Pro新机告急！发货推迟至3月中旬，果粉还要等多久？
+date: 2026-01-28 07:28:04+08:00
 draft: false
-entry_kind: "auto"
-tags: ["MacBook Pro", "苹果", "发货延迟", "供应链", "硬件", "消费电子", "产能", "市场动态"]
-categories: ["产品与创业"]
+entry_kind: auto
+tags:
+- MacBook Pro
+- 苹果
+- 发货延迟
+- 供应链
+- 硬件
+- 消费电子
+- 产能
+- 市场动态
+categories:
+- 产品与创业
 source: hacker_news
 external_url: https://www.apple.com/shop/buy-mac/macbook-pro/16-inch-space-black-standard-display-apple-m4-max-with-16-core-cpu-and-40-core-gpu-48gb-memory-1tb
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 📰 ⚠️MacBook Pro新机告急！发货推迟至3月中旬，果粉还要等多久？

@@ -1,12 +1,26 @@
 ---
-title: "⚠️OpenSSL曝出12个漏洞！AI黑客如何颠覆安全？🔥"
-date: 2026-01-28T07:28:04+08:00
+title: ⚠️OpenSSL曝出12个漏洞！AI黑客如何颠覆安全？🔥
+date: 2026-01-28 07:28:04+08:00
 draft: false
-entry_kind: "auto"
-tags: ["OpenSSL", "LLM Fuzzing", "漏洞挖掘", "0-day", "模糊测试", "软件安全", "谷歌", "生成式 AI"]
-categories: ["安全", "AI 工程"]
+entry_kind: auto
+tags:
+- OpenSSL
+- LLM Fuzzing
+- 漏洞挖掘
+- 0-day
+- 模糊测试
+- 软件安全
+- 谷歌
+- 生成式 AI
+categories:
+- 安全
+- AI 工程
 source: hacker_news
 external_url: https://aisle.com/blog/aisle-discovered-12-out-of-12-openssl-vulnerabilities
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 📰 ⚠️OpenSSL曝出12个漏洞！AI黑客如何颠覆安全？🔥

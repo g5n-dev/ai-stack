@@ -1,14 +1,33 @@
 ---
-title: "创业半年复盘：如何用5个AI Agent替代团队"
-date: 2026-02-17T08:54:54+08:00
+title: 创业半年复盘：如何用5个AI Agent替代团队
+date: 2026-02-17 08:54:54+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI Agent", "创业复盘", "团队管理", "降本增效", "工作流", "LLM", "自动化", "独立开发"]
-categories: ["产品与创业", "AI 工程"]
+entry_kind: auto
+tags:
+- AI Agent
+- 创业复盘
+- 团队管理
+- 降本增效
+- 工作流
+- LLM
+- 自动化
+- 独立开发
+categories:
+- 产品与创业
+- AI 工程
 source: juejin
-description: "这是一篇关于创业者孟健利用AI Agent（人工智能体）重构团队管理的复盘总结。以下是对原文内容的简洁总结： **核心主题：一人顶一队——AI Agent在创业中的应用** **1. 背景与契机** 孟健在创业半年之际，经历了一月份的深刻焦虑。这种“再不动就要被淘汰”的危机感，促使他决定不再依赖传统的招人模式，而是转向"
+description: 这是一篇关于创业者孟健利用AI Agent（人工智能体）重构团队管理的复盘总结。以下是对原文内容的简洁总结： **核心主题：一人顶一队——AI
+  Agent在创业中的应用** **1. 背景与契机** 孟健在创业半年之际，经历了一月份的深刻焦虑。这种“再不动就要被淘汰”的危机感，促使他决定不再依赖传统的招人模式，而是转向
 external_url: https://juejin.cn/post/7606728595557400611
-scenarios: ["AI/ML项目", "大语言模型"]
+scenarios:
+- AI/ML项目
+- 大语言模型
+aliases:
+- /posts/20260217-juejin-创业半年我用5个ai-agent替代了一个团队-4/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 创业半年复盘：如何用5个AI Agent替代团队
@@ -206,8 +225,8 @@ scenarios: ["AI/ML项目", "大语言模型"]
 ### 相关文章
 
 - [软件工厂与代理体时刻]({{< relref "posts/20260207-hacker_news-software-factories-and-the-agentic-moment-4.md" >}})
-- [软件工厂与智能体时刻]({{< relref "posts/20260208-hacker_news-software-factories-and-the-agentic-moment-3.md" >}})
-- [软件工厂与智能体时刻]({{< relref "posts/20260208-hacker_news-software-factories-and-the-agentic-moment-6.md" >}})
+- [软件工厂与智能体时刻]({{< relref "posts/20260207-hacker_news-software-factories-and-the-agentic-moment-4.md" >}})
+- [软件工厂与智能体时刻]({{< relref "posts/20260207-hacker_news-software-factories-and-the-agentic-moment-4.md" >}})
 - [GitHub Agentic 工作流：AI 智能体自主编写代码]({{< relref "posts/20260208-hacker_news-github-agentic-workflows-3.md" >}})
 - [一键生成AI员工：自带云端桌面环境]({{< relref "posts/20260207-hacker_news-show-hn-one-click-ai-employee-with-its-own-cloud-d-9.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

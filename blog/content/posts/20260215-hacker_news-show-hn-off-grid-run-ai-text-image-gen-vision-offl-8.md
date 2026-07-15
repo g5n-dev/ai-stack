@@ -1,14 +1,33 @@
 ---
-title: "Off Grid：手机端离线运行AI文本、图像及视觉模型"
-date: 2026-02-15T02:54:54+08:00
+title: Off Grid：手机端离线运行AI文本、图像及视觉模型
+date: 2026-02-15 02:54:54+08:00
 draft: false
-entry_kind: "auto"
-tags: ["离线AI", "边缘计算", "移动端推理", "隐私保护", "LLM", "图像生成", "视觉模型", "本地部署"]
-categories: ["AI 工程"]
+entry_kind: auto
+tags:
+- 离线AI
+- 边缘计算
+- 移动端推理
+- 隐私保护
+- LLM
+- 图像生成
+- 视觉模型
+- 本地部署
+categories:
+- AI 工程
 source: hacker_news
-description: "随着生成式 AI 的普及，数据隐私与网络依赖成为开发者与用户关注的焦点。Off Grid 是一款运行在手机端的离线 AI 工具，支持本地文本生成、图像创作及视觉识别，无需联网即可处理敏感数据。本文将介绍其核心功能与技术实现，帮助读者探索在移动端构建隐私优先 AI 应用的可行方案。"
+description: 随着生成式 AI 的普及，数据隐私与网络依赖成为开发者与用户关注的焦点。Off Grid 是一款运行在手机端的离线 AI 工具，支持本地文本生成、图像创作及视觉识别，无需联网即可处理敏感数据。本文将介绍其核心功能与技术实现，帮助读者探索在移动端构建隐私优先
+  AI 应用的可行方案。
 external_url: https://github.com/alichherawalla/off-grid-mobile
-scenarios: ["AI/ML项目", "大语言模型"]
+scenarios:
+- AI/ML项目
+- 大语言模型
+aliases:
+- /posts/20260215-hacker_news-show-hn-off-grid-run-ai-text-image-gen-vision-offl-11/
+- /posts/20260215-hacker_news-show-hn-off-grid-run-ai-text-image-gen-vision-offl-19/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Off Grid：手机端离线运行AI文本、图像及视觉模型
@@ -425,8 +444,8 @@ def offline_image_recognition():
 ### 相关文章
 
 - [Moltworker：自托管个人 AI 智能体]({{< relref "posts/20260130-hacker_news-moltworker-a-self-hosted-personal-ai-agent-minus-t-16.md" >}})
-- [Moltworker：自托管个人 AI 智能体]({{< relref "posts/20260130-hacker_news-moltworker-a-self-hosted-personal-ai-agent-minus-t-19.md" >}})
+- [Moltworker：自托管个人 AI 智能体]({{< relref "posts/20260130-hacker_news-moltworker-a-self-hosted-personal-ai-agent-minus-t-16.md" >}})
 - [LocalGPT：基于Rust构建的本地优先AI助手，支持持久化记忆]({{< relref "posts/20260208-hacker_news-show-hn-localgpt-a-local-first-ai-assistant-in-rus-0.md" >}})
-- [LocalGPT：基于Rust构建的本地优先AI助手，支持持久化记忆]({{< relref "posts/20260208-hacker_news-show-hn-localgpt-a-local-first-ai-assistant-in-rus-1.md" >}})
-- [iPhone 16 Pro Max 运行 MLX 大模型输出质量异常]({{< relref "posts/20260202-hacker_news-my-iphone-16-pro-max-produces-garbage-output-when--17.md" >}})
+- [LocalGPT：基于Rust构建的本地优先AI助手，支持持久化记忆]({{< relref "posts/20260208-hacker_news-show-hn-localgpt-a-local-first-ai-assistant-in-rus-0.md" >}})
+- [iPhone 16 Pro Max 运行 MLX 大模型输出质量异常]({{< relref "posts/20260202-hacker_news-my-iphone-16-pro-max-produces-garbage-output-when--2.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

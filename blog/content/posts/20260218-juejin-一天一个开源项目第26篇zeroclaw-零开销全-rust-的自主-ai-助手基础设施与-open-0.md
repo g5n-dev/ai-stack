@@ -1,14 +1,30 @@
 ---
-title: "ZeroClaw：零开销全Rust自主AI助手与OpenClaw对比"
-date: 2026-02-18T22:40:49+08:00
+title: ZeroClaw：零开销全Rust自主AI助手与OpenClaw对比
+date: 2026-02-18 22:40:49+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Rust", "AI助手", "ZeroClaw", "OpenClaw", "基础设施", "性能优化", "单二进制", "低开销"]
-categories: ["AI 工程", "开源生态"]
+entry_kind: auto
+tags:
+- Rust
+- AI 助手
+- ZeroClaw
+- OpenClaw
+- 基础设施
+- 性能优化
+- 单二进制
+- 低开销
+categories:
+- AI 工程
+- 开源生态
 source: juejin
-description: "以下是关于 ZeroClaw 项目的中文总结： **项目概述：ZeroClaw** ZeroClaw 是一款**零开销、全 Rust 编写的自主 AI 助手基础设施**。它被定位为同赛道项目 OpenClaw 的**轻量级替代方案**，旨在通过极致的性能优化和极简的资源占用，解决传统 AI 框架在部署与运行时的臃肿问题"
+description: 以下是关于 ZeroClaw 项目的中文总结： **项目概述：ZeroClaw** ZeroClaw 是一款**零开销、全 Rust 编写的自主
+  AI 助手基础设施**。它被定位为同赛道项目 OpenClaw 的**轻量级替代方案**，旨在通过极致的性能优化和极简的资源占用，解决传统 AI 框架在部署与运行时的臃肿问题
 external_url: https://juejin.cn/post/7606988289873068083
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # ZeroClaw：零开销全Rust自主AI助手与OpenClaw对比
@@ -205,9 +221,9 @@ ZeroClaw 是 AI 基础设施领域的“瑞士军刀”，它非常适合追求�
 
 ### 相关文章
 
-- [LocalGPT：基于Rust构建的本地优先AI助手，支持持久化记忆]({{< relref "posts/20260208-hacker_news-show-hn-localgpt-a-local-first-ai-assistant-in-rus-1.md" >}})
-- [LocalGPT：基于Rust构建的本地优先AI助手]({{< relref "posts/20260208-hacker_news-show-hn-localgpt-a-local-first-ai-assistant-in-rus-15.md" >}})
 - [LocalGPT：基于Rust构建的本地优先AI助手，支持持久化记忆]({{< relref "posts/20260208-hacker_news-show-hn-localgpt-a-local-first-ai-assistant-in-rus-0.md" >}})
-- [LocalGPT：基于Rust构建的本地优先AI助手，支持持久化记忆]({{< relref "posts/20260208-hacker_news-show-hn-localgpt-a-local-first-ai-assistant-in-rus-5.md" >}})
-- [AI vs SaaS：OpenClow、Cursor 与 MCP UI 的核心主线]({{< relref "posts/20260209-blogs_podcasts-ainews-ai-vs-saas-the-unreasonable-effectiveness-o-1.md" >}})
+- [LocalGPT：基于Rust构建的本地优先AI助手]({{< relref "posts/20260208-hacker_news-show-hn-localgpt-a-local-first-ai-assistant-in-rus-0.md" >}})
+- [LocalGPT：基于Rust构建的本地优先AI助手，支持持久化记忆]({{< relref "posts/20260208-hacker_news-show-hn-localgpt-a-local-first-ai-assistant-in-rus-0.md" >}})
+- [LocalGPT：基于Rust构建的本地优先AI助手，支持持久化记忆]({{< relref "posts/20260208-hacker_news-show-hn-localgpt-a-local-first-ai-assistant-in-rus-0.md" >}})
+- [AI vs SaaS：OpenClow、Cursor 与 MCP UI 的核心主线]({{< relref "posts/20260207-blogs_podcasts-ainews-ai-vs-saas-the-unreasonable-effectiveness-o-0.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

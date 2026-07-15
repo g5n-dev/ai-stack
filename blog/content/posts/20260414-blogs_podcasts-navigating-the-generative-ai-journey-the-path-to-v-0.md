@@ -1,14 +1,32 @@
 ---
-title: "AWS生成式AI价值路径P2V框架助力项目落地"
-date: 2026-04-14T23:40:01+08:00
+title: AWS生成式AI价值路径P2V框架助力项目落地
+date: 2026-04-14 23:40:01+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AWS", "生成式AI", "P2V框架", "项目落地", "价值路径", "AI方法论", "最佳实践", "技术框架"]
-categories: ["AI 工程"]
+entry_kind: auto
+tags:
+- AWS
+- 生成式 AI
+- P2V框架
+- 项目落地
+- 价值路径
+- AI方法论
+- 最佳实践
+- 技术框架
+categories:
+- AI 工程
 source: blogs_podcasts
-description: "框架概述 AWS 提出的生成式 AI Path‑to‑Value（P2V）框架旨在为组织提供一条从概念验证到实际业务价值的清晰路径。该框架强调技术实现与业务目标的对齐，帮助团队在快速迭代的同时保持价值可控。 关键阶段 1. **探索（Explore）** - 明确业务痛点与机会。 - 评估数据资产、技术成熟度以及合规风"
+description: 框架概述 AWS 提出的生成式 AI Path‑to‑Value（P2V）框架旨在为组织提供一条从概念验证到实际业务价值的清晰路径。该框架强调技术实现与业务目标的对齐，帮助团队在快速迭代的同时保持价值可控。
+  关键阶段 1. **探索（Explore）** - 明确业务痛点与机会。 - 评估数据资产、技术成熟度以及合规风
 external_url: https://aws.amazon.com/blogs/machine-learning/navigating-the-generative-ai-journey-the-path-to-value-framework-from-aws
-scenarios: ["AI/ML项目", "Web应用开发"]
+scenarios:
+- AI/ML项目
+- Web应用开发
+aliases:
+- /posts/20260415-blogs_podcasts-navigating-the-generative-ai-journey-the-path-to-v-0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AWS生成式AI价值路径P2V框架助力项目落地
@@ -195,9 +213,9 @@ AWS 提出的生成式 AI Path‑to‑Value（P2V）框架旨在为组织提供�
 
 ### 相关文章
 
-- [AWS SageMaker实战：用Dottxt Outlines实现LLM结构化输出]({{< relref "posts/20260226-blogs_podcasts-generate-structured-output-from-llms-with-dottxt-o-14.md" >}})
+- [AWS SageMaker实战：用Dottxt Outlines实现LLM结构化输出]({{< relref "posts/20260224-blogs_podcasts-generate-structured-output-from-llms-with-dottxt-o-1.md" >}})
 - [New Relic NOVA：基于AWS构建企业级生成式AI生产力引擎]({{< relref "posts/20260210-blogs_podcasts-new-relic-transforms-productivity-with-generative--10.md" >}})
-- [New Relic NOVA：基于AWS的生成式AI效能引擎架构与实践]({{< relref "posts/20260211-blogs_podcasts-new-relic-transforms-productivity-with-generative--11.md" >}})
-- [NVIDIA Nemotron 3 Nano 30B 现已登陆 Amazon SageMaker JumpSt]({{< relref "posts/20260212-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-0.md" >}})
-- [NVIDIA Nemotron 3 Nano 30B 现已登陆 Amazon SageMaker JumpSt]({{< relref "posts/20260212-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-10.md" >}})
+- [New Relic NOVA：基于AWS的生成式AI效能引擎架构与实践]({{< relref "posts/20260210-blogs_podcasts-new-relic-transforms-productivity-with-generative--10.md" >}})
+- [NVIDIA Nemotron 3 Nano 30B 现已登陆 Amazon SageMaker JumpSt]({{< relref "posts/20260211-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-0.md" >}})
+- [NVIDIA Nemotron 3 Nano 30B 现已登陆 Amazon SageMaker JumpSt]({{< relref "posts/20260211-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

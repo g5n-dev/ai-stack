@@ -1,14 +1,28 @@
 ---
-title: "NeuroBait：针对ADHD大脑的多巴胺激发模型微调"
-date: 2026-06-09T10:04:33+08:00
+title: NeuroBait：针对ADHD大脑的多巴胺激发模型微调
+date: 2026-06-09 10:04:33+08:00
 draft: false
-entry_kind: "auto"
-tags: ["模型微调", "ADHD", "多巴胺", "AI应用", "神经网络", "个人项目", "开源模型", "提示工程"]
-categories: ["大模型"]
+entry_kind: auto
+tags:
+- 模型微调
+- ADHD
+- 多巴胺
+- AI 应用
+- 神经网络
+- 个人项目
+- 开源模型
+- 提示工程
+categories:
+- 大模型
 source: blogs_podcasts
-description: "注意力缺陷多动障碍（ADHD）的核心问题之一是多巴胺系统失衡，导致注意力调节困难。NeuroBait 项目通过在大语言模型上微调，使其在特定情境下输出能够诱导多巴胺释放的刺激，实现了对注意力的闭环干预。本文将完整呈现模型微调的实现细节与在真实用户身上的实验效果，帮助读者快速把握从概念到落地的全过程。"
+description: 注意力缺陷多动障碍（ADHD）的核心问题之一是多巴胺系统失衡，导致注意力调节困难。NeuroBait 项目通过在大语言模型上微调，使其在特定情境下输出能够诱导多巴胺释放的刺激，实现了对注意力的闭环干预。本文将完整呈现模型微调的实现细节与在真实用户身上的实验效果，帮助读者快速把握从概念到落地的全过程。
 external_url: https://huggingface.co/blog/build-small-hackathon/neurobait-adhd
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # NeuroBait：针对ADHD大脑的多巴胺激发模型微调
@@ -135,8 +149,8 @@ scenarios: ["AI/ML项目"]
 ### 相关文章
 
 - [音频领域成为小型实验室实现技术突破的主战场]({{< relref "posts/20260215-hacker_news-audio-is-the-one-area-small-labs-are-winning-8.md" >}})
-- [RynnBrain：基于神经网络的脑机接口解码系统]({{< relref "posts/20260215-hacker_news-rynnbrain-17.md" >}})
-- [Codex与Claude支持定制化内核扩展]({{< relref "posts/20260217-blogs_podcasts-custom-kernels-for-all-from-codex-and-claude-7.md" >}})
-- [Mistral AI 发布 Forge：用于微调和测试的轻量级模型]({{< relref "posts/20260318-hacker_news-mistral-ai-releases-forge-4.md" >}})
-- [🔥LLM序列标注新突破！揭秘高效策略，性能飙升！]({{< relref "posts/20260127-arxiv_ai-strategies-for-span-labeling-with-large-language-m-9.md" >}})
+- [RynnBrain：基于神经网络的脑机接口解码系统]({{< relref "posts/20260215-hacker_news-rynnbrain-6.md" >}})
+- [Codex与Claude支持定制化内核扩展]({{< relref "posts/20260213-blogs_podcasts-custom-kernels-for-all-from-codex-and-claude-1.md" >}})
+- [Mistral AI 发布 Forge：用于微调和测试的轻量级模型]({{< relref "posts/20260318-hacker_news-mistral-ai-releases-forge-6.md" >}})
+- [🔥LLM序列标注新突破！揭秘高效策略，性能飙升！]({{< relref "posts/20260126-arxiv_ai-strategies-for-span-labeling-with-large-language-m-9.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

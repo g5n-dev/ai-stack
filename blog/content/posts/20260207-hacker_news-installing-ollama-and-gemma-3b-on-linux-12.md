@@ -1,14 +1,30 @@
 ---
-title: "在 Linux 上安装 Ollama 并部署 Gemma 3B 模型"
-date: 2026-02-07T02:29:46+08:00
+title: 在 Linux 上安装 Ollama 并部署 Gemma 3B 模型
+date: 2026-02-07 02:29:46+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Ollama", "Gemma", "LLM", "Linux", "本地部署", "模型推理", "开源模型", "安装教程"]
-categories: ["AI 工程", "系统与基础设施"]
+entry_kind: auto
+tags:
+- Ollama
+- Gemma
+- LLM
+- Linux
+- 本地部署
+- 模型推理
+- 开源模型
+- 安装教程
+categories:
+- AI 工程
+- 系统与基础设施
 source: hacker_news
-description: "随着本地化大模型需求的增加，在 Linux 环境下部署轻量级模型已成为开发者的热门选择。本文将详细介绍如何在 Linux 系统中安装 Ollama 并运行 Gemma 3B 模型，帮助您快速搭建本地推理环境。通过清晰的步骤指引，您将掌握从环境配置到模型验证的完整流程，从而在保证数据隐私的前提下，高效利用本地算力进行模型"
+description: 随着本地化大模型需求的增加，在 Linux 环境下部署轻量级模型已成为开发者的热门选择。本文将详细介绍如何在 Linux 系统中安装 Ollama
+  并运行 Gemma 3B 模型，帮助您快速搭建本地推理环境。通过清晰的步骤指引，您将掌握从环境配置到模型验证的完整流程，从而在保证数据隐私的前提下，高效利用本地算力进行模型
 external_url: https://byandrev.dev/en/blog/ollama-in-linux
-scenarios: ["大语言模型"]
+scenarios:
+- 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 在 Linux 上安装 Ollama 并部署 Gemma 3B 模型
@@ -398,8 +414,8 @@ process_texts("questions.txt", "answers.txt")
 ### 相关文章
 
 - [发现逾17.5万个Ollama AI实例公网暴露]({{< relref "posts/20260131-hacker_news-175k-publicly-exposed-ollama-ai-instances-discover-19.md" >}})
-- [中国开源AI生态架构选择：DeepSeek之外的技术路径]({{< relref "posts/20260129-blogs_podcasts-architectural-choices-in-chinas-open-source-ai-eco-9.md" >}})
-- [让 Claude 编写 CUDA 内核并指导开源模型]({{< relref "posts/20260129-blogs_podcasts-we-got-claude-to-build-cuda-kernels-and-teach-open-7.md" >}})
-- [让 Claude 编写 CUDA 内核并指导开源模型]({{< relref "posts/20260129-blogs_podcasts-we-got-claude-to-build-cuda-kernels-and-teach-open-8.md" >}})
-- [Kirara-ai：支持多平台接入的多模态AI聊天机器人]({{< relref "posts/20260129-github_trending-lss233-kirara-ai-2.md" >}})
+- [中国开源AI生态架构选择：DeepSeek之外的技术路径]({{< relref "posts/20260127-blogs_podcasts-architectural-choices-in-chinas-open-source-ai-eco-0.md" >}})
+- [让 Claude 编写 CUDA 内核并指导开源模型]({{< relref "posts/20260129-blogs_podcasts-we-got-claude-to-build-cuda-kernels-and-teach-open-6.md" >}})
+- [让 Claude 编写 CUDA 内核并指导开源模型]({{< relref "posts/20260129-blogs_podcasts-we-got-claude-to-build-cuda-kernels-and-teach-open-6.md" >}})
+- [Kirara-ai：支持多平台接入的多模态AI聊天机器人]({{< relref "posts/20260127-github_trending-lss233-kirara-ai-2.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

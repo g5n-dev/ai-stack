@@ -8,7 +8,7 @@ tags:
 - 代码生成
 - 幻觉
 - 代码审查
-- AI编程
+- AI 编程
 - Debug
 - 软件工程
 - 准确性
@@ -22,6 +22,10 @@ external_url: https://twitter.com/KatanaLarp/status/2029928471632224486
 scenarios:
 - 大语言模型
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 大模型生成的代码看似合理实则存在错误

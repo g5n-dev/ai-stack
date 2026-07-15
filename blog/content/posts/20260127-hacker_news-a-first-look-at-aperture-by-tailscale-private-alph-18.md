@@ -1,12 +1,26 @@
 ---
-title: "Tailscale Aperture 首曝！🚀 私有网络革命来了？🔥"
-date: 2026-01-27T23:10:51+08:00
+title: Tailscale Aperture 首曝！🚀 私有网络革命来了？🔥
+date: 2026-01-27 23:10:51+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Tailscale", "Aperture", "云端IDE", "开发环境", "私有网络", "Tailnet", "DevOps", "远程开发"]
-categories: ["开发工具", "系统与基础设施"]
+entry_kind: auto
+tags:
+- Tailscale
+- Aperture
+- 云端IDE
+- 开发环境
+- 私有网络
+- Tailnet
+- DevOps
+- 远程开发
+categories:
+- 开发工具
+- 系统与基础设施
 source: hacker_news
 external_url: https://tailscale.com/blog/aperture-private-alpha
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 📰 Tailscale Aperture 首曝！🚀 私有网络革命来了？🔥

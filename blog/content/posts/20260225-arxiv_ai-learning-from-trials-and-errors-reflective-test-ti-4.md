@@ -21,6 +21,12 @@ description: '**论文总结：《从试错中学习：具身大模型的反思�
 external_url: http://arxiv.org/abs/2602.21198v1
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260226-arxiv_ai-learning-from-trials-and-errors-reflective-test-ti-4/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 基于试错反思的具身大模型测试时规划
@@ -506,4 +512,4 @@ RTP 方法包含三个核心步骤：**尝试、反思、规划**。
 - [仿真筛选模块化策略：从人类视频学习有效行为]({{< relref "posts/20260216-arxiv_ai-imitating-what-works-simulation-filtered-modular-p-0.md" >}})
 - [Squint：面向机器人具身迁移的快速视觉强化学习]({{< relref "posts/20260225-arxiv_ai-squint-fast-visual-reinforcement-learning-for-sim--1.md" >}})
 - [NVIDIA Cosmos策略：提升机器人控制能力]({{< relref "posts/20260129-blogs_podcasts-introducing-nvidia-cosmos-policy-for-advanced-robo-0.md" >}})
-- [NVIDIA Cosmos策略：提升机器人高级控制能力]({{< relref "posts/20260130-blogs_podcasts-introducing-nvidia-cosmos-policy-for-advanced-robo-1.md" >}})
+- [NVIDIA Cosmos策略：提升机器人高级控制能力]({{< relref "posts/20260129-blogs_podcasts-introducing-nvidia-cosmos-policy-for-advanced-robo-0.md" >}})

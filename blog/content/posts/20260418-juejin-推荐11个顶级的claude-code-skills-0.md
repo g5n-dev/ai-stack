@@ -1,14 +1,30 @@
 ---
-title: "11个Claude Code编程技巧"
-date: 2026-04-18T02:58:13+08:00
+title: 11个Claude Code编程技巧
+date: 2026-04-18 02:58:13+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Claude Code", "AI 编程", "编程技巧", "代码生成", "自动化测试", "Git 自动化", "调试技巧", "开发效率"]
-categories: ["开发工具", "AI 工程"]
+entry_kind: auto
+tags:
+- Claude Code
+- AI 编程
+- 编程技巧
+- 代码生成
+- 自动化测试
+- Git 自动化
+- 调试技巧
+- 开发效率
+categories:
+- 开发工具
+- AI 工程
 source: juejin
-description: "前言 Claude Code 是一款终端内的 AI 编程 Agent，能够自主规划、调用工具、执行命令、修复错误，帮助程序员实现从代码编写到项目交付的全链路自动化。 推荐核心技能 1. 智能代码补全与生成 2. 自动化调试与错误定位 3. 单元测试与集成测试生成 4. 代码重构与性能优化 5. Git 自动化提交、合并"
+description: 前言 Claude Code 是一款终端内的 AI 编程 Agent，能够自主规划、调用工具、执行命令、修复错误，帮助程序员实现从代码编写到项目交付的全链路自动化。
+  推荐核心技能 1. 智能代码补全与生成 2. 自动化调试与错误定位 3. 单元测试与集成测试生成 4. 代码重构与性能优化 5. Git 自动化提交、合并
 external_url: https://juejin.cn/post/7629603625099116590
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 11个Claude Code编程技巧
@@ -106,9 +122,9 @@ Claude Code 是一款终端内的 AI 编程 Agent，能够自主规划、调用�
 
 ### 相关文章
 
-- [Claude Code 的代码选择策略与工程实践]({{< relref "posts/20260227-hacker_news-what-claude-code-chooses-3.md" >}})
-- [Claude Code 的代码选择逻辑与工程实践]({{< relref "posts/20260227-hacker_news-what-claude-code-chooses-8.md" >}})
+- [Claude Code 的代码选择策略与工程实践]({{< relref "posts/20260226-hacker_news-what-claude-code-chooses-12.md" >}})
+- [Claude Code 的代码选择逻辑与工程实践]({{< relref "posts/20260226-hacker_news-what-claude-code-chooses-12.md" >}})
 - [如何使用 Claude Code：规划与执行的分离]({{< relref "posts/20260222-hacker_news-how-i-use-claude-code-separation-of-planning-and-e-0.md" >}})
-- [我如何使用 Claude Code：规划与执行的分离]({{< relref "posts/20260222-hacker_news-how-i-use-claude-code-separation-of-planning-and-e-17.md" >}})
-- [Claude Code 配额耗尽时接入本地模型的方法]({{< relref "posts/20260205-hacker_news-claude-code-connect-to-a-local-model-when-your-quo-3.md" >}})
+- [我如何使用 Claude Code：规划与执行的分离]({{< relref "posts/20260222-hacker_news-how-i-use-claude-code-separation-of-planning-and-e-0.md" >}})
+- [Claude Code 配额耗尽时接入本地模型的方法]({{< relref "posts/20260204-hacker_news-claude-code-connect-to-a-local-model-when-your-quo-5.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

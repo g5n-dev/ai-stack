@@ -1,14 +1,32 @@
 ---
-title: "预算高效缩放定律拟合：基于主动实验选择策略"
-date: 2026-04-27T23:08:13+08:00
+title: 预算高效缩放定律拟合：基于主动实验选择策略
+date: 2026-04-27 23:08:13+08:00
 draft: false
-entry_kind: "auto"
-tags: ["缩放定律", "预算分配", "主动学习", "实验设计", "大模型训练", "不确定性量化", "外推预测", "资源优化"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- 缩放定律
+- 预算分配
+- 主动学习
+- 实验设计
+- 大模型训练
+- 不确定性量化
+- 外推预测
+- 资源优化
+categories:
+- 大模型
+- AI 工程
 source: arxiv
-description: "背景 扩展律用于规划数百万美元的训练运行，但其本身拟合往往已耗费数百万。在大规模工作流中，快速构建信息充分的试点实验集合本身就是预算分配的关键难题。 目标 将扩展律拟合重新定义为预算感知的顺序实验设计：在给定的异构成本实验池中，挑选最有助于在高价目标区域进行外推的实验，以最大化目标区域的外推精度。 方法 提出不确定性驱"
+description: 背景 扩展律用于规划数百万美元的训练运行，但其本身拟合往往已耗费数百万。在大规模工作流中，快速构建信息充分的试点实验集合本身就是预算分配的关键难题。
+  目标 将扩展律拟合重新定义为预算感知的顺序实验设计：在给定的异构成本实验池中，挑选最有助于在高价目标区域进行外推的实验，以最大化目标区域的外推精度。 方法 提出不确定性驱
 external_url: http://arxiv.org/abs/2604.22753v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+aliases:
+- /posts/20260428-arxiv_ai-spend-less-fit-better-budget-efficient-scaling-law-0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 预算高效缩放定律拟合：基于主动实验选择策略
@@ -154,7 +172,7 @@ scenarios: ["Web应用开发"]
 
 - [自适应组合实验设计：决策与推断的帕累托最优]({{< relref "posts/20260302-arxiv_ai-adaptive-combinatorial-experimental-design-pareto--2.md" >}})
 - [2026年AI展望：LLM、智能体、缩放定律与中国发展]({{< relref "posts/20260201-blogs_podcasts-490-state-of-ai-in-2026-llms-coding-scaling-laws-c-0.md" >}})
-- [2026年AI展望：LLM、智能体、缩放定律与中国发展]({{< relref "posts/20260203-blogs_podcasts-490-state-of-ai-in-2026-llms-coding-scaling-laws-c-1.md" >}})
-- [2026年AI展望：LLM、智能体、缩放定律与中国发展]({{< relref "posts/20260203-blogs_podcasts-490-state-of-ai-in-2026-llms-coding-scaling-laws-c-3.md" >}})
-- [2026年AI展望：LLM、智能体、缩放定律与中国发展]({{< relref "posts/20260203-blogs_podcasts-490-state-of-ai-in-2026-llms-coding-scaling-laws-c-4.md" >}})
+- [2026年AI展望：LLM、智能体、缩放定律与中国发展]({{< relref "posts/20260201-blogs_podcasts-490-state-of-ai-in-2026-llms-coding-scaling-laws-c-0.md" >}})
+- [2026年AI展望：LLM、智能体、缩放定律与中国发展]({{< relref "posts/20260201-blogs_podcasts-490-state-of-ai-in-2026-llms-coding-scaling-laws-c-0.md" >}})
+- [2026年AI展望：LLM、智能体、缩放定律与中国发展]({{< relref "posts/20260201-blogs_podcasts-490-state-of-ai-in-2026-llms-coding-scaling-laws-c-0.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

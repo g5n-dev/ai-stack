@@ -1,13 +1,28 @@
 ---
-title: "微软推出 Azure Linux 发行版，用于优化云端基础设施"
-date: 2026-01-29T06:41:12+08:00
+title: 微软推出 Azure Linux 发行版，用于优化云端基础设施
+date: 2026-01-29 06:41:12+08:00
 draft: false
-entry_kind: "auto"
-tags: ["微软", "Azure", "Linux", "CBL-Mariner", "云原生", "容器化", "DevOps", "操作系统"]
-categories: ["系统与基础设施", "开源生态"]
+entry_kind: auto
+tags:
+- 微软
+- Azure
+- Linux
+- CBL-Mariner
+- 云原生
+- 容器化
+- DevOps
+- 操作系统
+categories:
+- 系统与基础设施
+- 开源生态
 source: hacker_news
 external_url: https://github.com/microsoft/azurelinux
-scenarios: ["DevOps/运维"]
+scenarios:
+- DevOps/运维
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 微软推出 Azure Linux 发行版，用于优化云端基础设施
@@ -438,8 +453,8 @@ Azure Linux 缺乏许多桌面环境所需的硬件驱动支持和图形界面�
 
 ### 相关文章
 
-- [🔥重磅！Fedora Asahi Remix 成功适配 Apple M3！]({{< relref "posts/20260127-hacker_news-fedora-asahi-remix-is-now-working-on-apple-m3-17.md" >}})
-- [🔥Fedora Asahi Remix成功适配M3！苹果芯片生态再突破！🚀]({{< relref "posts/20260127-hacker_news-fedora-asahi-remix-is-now-working-on-apple-m3-18.md" >}})
+- [🔥重磅！Fedora Asahi Remix 成功适配 Apple M3！]({{< relref "posts/20260126-hacker_news-fedora-asahi-remix-is-now-working-on-apple-m3-3.md" >}})
+- [🔥Fedora Asahi Remix成功适配M3！苹果芯片生态再突破！🚀]({{< relref "posts/20260126-hacker_news-fedora-asahi-remix-is-now-working-on-apple-m3-3.md" >}})
 - [Linux 两位大神联手创业！Systemd 之父 Poettering 出击！🚀]({{< relref "posts/20260127-hacker_news-lennart-poettering-christian-brauner-founded-a-new-4.md" >}})
 - [🔥Lede固件巅峰！OpenWrt大神力作，性能炸裂！🚀]({{< relref "posts/20260126-github_trending-coolsnowwolf-lede-2.md" >}})
 - [🔥炸裂！Fedora Asahi Remix成功登陆苹果M3！Linux体验再升级！]({{< relref "posts/20260126-hacker_news-fedora-asahi-remix-is-now-working-on-apple-m3-3.md" >}})

@@ -1,14 +1,30 @@
 ---
-title: "Gemini 3.5为Google应用带来流式语音翻译"
-date: 2026-06-09T16:12:44+08:00
+title: Gemini 3.5为Google应用带来流式语音翻译
+date: 2026-06-09 16:12:44+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Gemini 3.5", "语音翻译", "Live Translate", "实时翻译", "自然语音", "跨语言沟通", "Google AI Studio", "大模型应用"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- Gemini 3.5
+- 语音翻译
+- Live Translate
+- 实时翻译
+- 自然语音
+- 跨语言沟通
+- Google AI Studio
+- 大模型应用
+categories:
+- 大模型
+- AI 工程
 source: blogs_podcasts
-description: "Gemini 3.5 Live Translate 是一款流畅、自然的语音翻译系统，能够在几乎实时的速度下完成说话内容的口译。它依托大语言模型技术，实现更贴近人类语调的停顿、情感和重音，让对话听起来更自然。 该翻译能力已深度嵌入 Google 的三大产品： - **Google AI Studio**：为开发者提供 A"
+description: Gemini 3.5 Live Translate 是一款流畅、自然的语音翻译系统，能够在几乎实时的速度下完成说话内容的口译。它依托大语言模型技术，实现更贴近人类语调的停顿、情感和重音，让对话听起来更自然。
+  该翻译能力已深度嵌入 Google 的三大产品： - **Google AI Studio**：为开发者提供 A
 external_url: https://deepmind.google/blog/fluid-natural-voice-translation-with-gemini-35-live-translate
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Gemini 3.5为Google应用带来流式语音翻译
@@ -184,8 +200,8 @@ Gemini 3.5 Live Translate 能够实现 **自然、流畅、低延迟** 的
 ### 相关文章
 
 - [探索JEPA架构在实时语音翻译中的应用]({{< relref "posts/20260313-hacker_news-exploring-jepa-for-real-time-speech-translation-14.md" >}})
-- [探索JEPA架构在实时语音翻译中的应用]({{< relref "posts/20260314-hacker_news-exploring-jepa-for-real-time-speech-translation-17.md" >}})
-- [Compressed Agents：Agent Skills 技术解析]({{< relref "posts/20260130-hacker_news-compressed-agentsmd-agent-skills-6.md" >}})
+- [探索JEPA架构在实时语音翻译中的应用]({{< relref "posts/20260313-hacker_news-exploring-jepa-for-real-time-speech-translation-14.md" >}})
+- [Compressed Agents：Agent Skills 技术解析]({{< relref "posts/20260129-hacker_news-compressed-agentsmd-agent-skills-5.md" >}})
 - [大模型API本质解析：Tools、MCP与Skills的区别]({{< relref "posts/20260215-juejin-从-0-诠释大模型-api-的本质-tools-mcp-skills-0.md" >}})
 - [AI Agent 工程师指南：深入解析 Zero-shot 与 Few-shot 核心概念]({{< relref "posts/20260307-juejin-ai-agent工程师指南-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

@@ -1,14 +1,40 @@
 ---
-title: "Agent Skills：压缩智能体技能以提升模型效率"
-date: 2026-01-29T22:59:16+08:00
+title: Agent Skills：压缩智能体技能以提升模型效率
+date: 2026-01-29 22:59:16+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Agent", "模型压缩", "效率优化", "技能抽象", "LLM", "智能体", "参数压缩", "推理加速"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- Agent
+- 模型压缩
+- 效率优化
+- 技能抽象
+- LLM
+- 智能体
+- 参数压缩
+- 推理加速
+categories:
+- 大模型
+- AI 工程
 source: hacker_news
-description: "随着大模型应用从单次对话转向复杂任务执行，Agent 的技能体系设计正成为系统稳定性的关键环节。本文聚焦于 Compressed Agents 框架下的技能定义与调用机制，探讨如何通过结构化压缩提升 Agent 的执行效率与鲁棒性。读者将了解到技能模块化的核心逻辑，以及在实际工程中平衡能力与开销的具体实践方法。"
+description: 随着大模型应用从单次对话转向复杂任务执行，Agent 的技能体系设计正成为系统稳定性的关键环节。本文聚焦于 Compressed Agents
+  框架下的技能定义与调用机制，探讨如何通过结构化压缩提升 Agent 的执行效率与鲁棒性。读者将了解到技能模块化的核心逻辑，以及在实际工程中平衡能力与开销的具体实践方法。
 external_url: https://vercel.com/blog/agents-md-outperforms-skills-in-our-agent-evals
-scenarios: ["大语言模型"]
+scenarios:
+- 大语言模型
+aliases:
+- /posts/20260130-hacker_news-agentsmd-outperforms-skills-in-our-agent-evals-16/
+- /posts/20260130-hacker_news-agentsmd-outperforms-skills-in-our-agent-evals-19/
+- /posts/20260130-hacker_news-agentsmd-outperforms-skills-in-our-agent-evals-4/
+- /posts/20260130-hacker_news-agentsmd-outperforms-skills-in-our-agent-evals-5/
+- /posts/20260130-hacker_news-agentsmd-outperforms-skills-in-our-agent-evals-6/
+- /posts/20260130-hacker_news-agentsmd-outperforms-skills-in-our-agent-evals-8/
+- /posts/20260130-hacker_news-agentsmd-outperforms-skills-in-our-agent-evals-9/
+- /posts/20260130-hacker_news-compressed-agentsmd-agent-skills-6/
+- /posts/20260130-hacker_news-compressed-agentsmd-agent-skills-8/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Agent Skills：压缩智能体技能以提升模型效率

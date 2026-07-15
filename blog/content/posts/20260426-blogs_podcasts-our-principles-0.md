@@ -1,14 +1,29 @@
 ---
-title: "Sam Altman阐述AGI造福人类的五项原则"
-date: 2026-04-26T23:29:41+08:00
+title: Sam Altman阐述AGI造福人类的五项原则
+date: 2026-04-26 23:29:41+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AGI", "阿尔特曼", "使命", "五项原则", "人工智能", "安全", "公平", "可持续发展"]
-categories: ["产品与创业", "安全"]
+entry_kind: auto
+tags:
+- AGI
+- 阿尔特曼
+- 使命
+- 五项原则
+- 人工智能
+- 安全
+- 公平
+- 可持续发展
+categories:
+- 产品与创业
+- 安全
 source: blogs_podcasts
-description: "使命 我们的使命是确保通用人工智能（AGI）惠及全人类。 指导原则 萨姆·阿尔特曼提出的五项原则为我们的工作提供指引，旨在实现安全、公平、可持续的AGI发展。"
+description: 使命 我们的使命是确保通用人工智能（AGI）惠及全人类。 指导原则 萨姆·阿尔特曼提出的五项原则为我们的工作提供指引，旨在实现安全、公平、可持续的AGI发展。
 external_url: https://openai.com/index/our-principles
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Sam Altman阐述AGI造福人类的五项原则
@@ -113,7 +128,7 @@ OpenAI 的五项原则通过建立系统性的技术伦理框架，为 AGI 的�
 
 - [研究称小丑妆容可干扰面部识别技术]({{< relref "posts/20260320-hacker_news-juggalo-makeup-blocks-facial-recognition-technolog-19.md" >}})
 - [Yann LeCun 融资10亿美元研发具身世界模型]({{< relref "posts/20260310-hacker_news-yann-lecun-raises-1b-to-build-ai-that-understands--2.md" >}})
-- [Yann LeCun 融资 10 亿美元研发具身世界模型]({{< relref "posts/20260310-hacker_news-yann-lecun-raises-1b-to-build-ai-that-understands--3.md" >}})
-- [杨立昆AMI Labs融资4.5亿美元：基于JEPA架构构建世界模型]({{< relref "posts/20260311-blogs_podcasts-ainews-yann-lecuns-ami-labs-launches-with-a-1b-see-1.md" >}})
-- [Yann LeCun新公司AMI融资10亿美元开发世界模型]({{< relref "posts/20260311-blogs_podcasts-ainews-yann-lecuns-ami-labs-launches-with-a-1b-see-7.md" >}})
+- [Yann LeCun 融资 10 亿美元研发具身世界模型]({{< relref "posts/20260310-hacker_news-yann-lecun-raises-1b-to-build-ai-that-understands--2.md" >}})
+- [杨立昆AMI Labs融资4.5亿美元：基于JEPA架构构建世界模型]({{< relref "posts/20260311-blogs_podcasts-ainews-yann-lecuns-ami-labs-launches-with-a-1b-see-0.md" >}})
+- [Yann LeCun新公司AMI融资10亿美元开发世界模型]({{< relref "posts/20260311-blogs_podcasts-ainews-yann-lecuns-ami-labs-launches-with-a-1b-see-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

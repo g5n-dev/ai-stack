@@ -1,14 +1,32 @@
 ---
-title: "超越VLM奖励：扩散原生潜在奖励建模"
-date: 2026-02-12T23:40:07+08:00
+title: 超越VLM奖励：扩散原生潜在奖励建模
+date: 2026-02-12 23:40:07+08:00
 draft: false
-entry_kind: "auto"
-tags: ["扩散模型", "DiNa-LRM", "奖励建模", "偏好优化", "VLM", "计算机视觉", "生成式AI", "潜在空间"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- 扩散模型
+- DiNa-LRM
+- 奖励建模
+- 偏好优化
+- VLM
+- 计算机视觉
+- 生成式 AI
+- 潜在空间
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "本文介绍了一种名为 **DiNa-LRM** 的扩散原生潜在奖励模型，旨在解决扩散模型在偏好优化中面临的计算成本高昂和领域不匹配问题。 **核心内容总结如下：** 1. **背景与挑战**： 目前的扩散模型偏好优化主要依赖视觉语言模型（VLM）作为奖励提供者。虽然VLM具备丰富的多模态先验知识，但其计算和内存消耗巨大。"
+description: 本文介绍了一种名为 **DiNa-LRM** 的扩散原生潜在奖励模型，旨在解决扩散模型在偏好优化中面临的计算成本高昂和领域不匹配问题。 **核心内容总结如下：**
+  1. **背景与挑战**： 目前的扩散模型偏好优化主要依赖视觉语言模型（VLM）作为奖励提供者。虽然VLM具备丰富的多模态先验知识，但其计算和内存消耗巨大。
 external_url: http://arxiv.org/abs/2602.11146v1
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+aliases:
+- /posts/20260213-arxiv_ai-beyond-vlm-based-rewards-diffusion-native-latent-r-3/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 超越VLM奖励：扩散原生潜在奖励建模
@@ -511,9 +529,9 @@ DiNa-LRM在图像质量和生成多样性上均优于基于VLM的奖励模型，
 
 ### 相关文章
 
-- [Waymo世界模型：自动驾驶仿真的新前沿]({{< relref "posts/20260206-hacker_news-the-waymo-world-model-a-new-frontier-for-autonomou-0.md" >}})
 - [Waymo世界模型：自动驾驶仿真的新前沿]({{< relref "posts/20260206-hacker_news-the-waymo-world-model-a-new-frontier-for-autonomou-4.md" >}})
-- [函数空间逆问题的解耦扩散采样方法]({{< relref "posts/20260203-arxiv_ai-decoupled-diffusion-sampling-for-inverse-problems--2.md" >}})
-- [Waymo 世界模型：利用生成式世界模拟提升自动驾驶决策]({{< relref "posts/20260207-hacker_news-the-waymo-world-model-7.md" >}})
+- [Waymo世界模型：自动驾驶仿真的新前沿]({{< relref "posts/20260206-hacker_news-the-waymo-world-model-a-new-frontier-for-autonomou-4.md" >}})
+- [函数空间逆问题的解耦扩散采样方法]({{< relref "posts/20260202-arxiv_ai-decoupled-diffusion-sampling-for-inverse-problems--2.md" >}})
+- [Waymo 世界模型：利用生成式世界模拟提升自动驾驶决策]({{< relref "posts/20260206-hacker_news-the-waymo-world-model-a-new-frontier-for-autonomou-4.md" >}})
 - [基于表征编码器解锁标准扩散Transformer]({{< relref "posts/20260211-arxiv_ai-learning-on-the-manifold-unlocking-standard-diffus-3.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

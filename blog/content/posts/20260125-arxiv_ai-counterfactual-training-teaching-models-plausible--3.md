@@ -1,12 +1,26 @@
 ---
-title: "🤖反事实训练！让模型学会靠谱又可落地的解释！"
-date: 2026-01-25T12:39:55+08:00
+title: 🤖反事实训练！让模型学会靠谱又可落地的解释！
+date: 2026-01-25 12:39:55+08:00
 draft: false
-entry_kind: "auto"
-tags: ["反事实训练", "模型解释性", "可解释AI", "机器学习", "黑盒模型", "特征可变性", "模型训练", "cs.LG"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- 反事实训练
+- 模型解释性
+- 可解释AI
+- 机器学习
+- 黑盒模型
+- 特征可变性
+- 模型训练
+- cs.LG
+categories:
+- 大模型
+- 论文
 source: arxiv
 external_url: http://arxiv.org/abs/2601.16205v1
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 📚 🤖反事实训练！让模型学会靠谱又可落地的解释！

@@ -21,6 +21,12 @@ description: '**SimpliHuMoN：简化人体运动预测** **核心问题与动机
 external_url: http://arxiv.org/abs/2603.04399v1
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260306-arxiv_ai-simplihumon-simplifying-human-motion-prediction-0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # SimpliHuMoN：简化人体运动预测的框架
@@ -431,4 +437,4 @@ SimpliHuMoN 的研究结论对该领域是一个重要的提醒：**不要忽视
 - [🔥 视频修复难题：如何攻克时间一致性？]({{< relref "posts/20260125-hacker_news-the-temporal-consistency-challenge-in-video-restor-19.md" >}})
 - [基于相机-IMU融合的鲁棒路面分类数据集与框架]({{< relref "posts/20260129-arxiv_ai-a-new-dataset-and-framework-for-robust-road-surfac-6.md" >}})
 - [探索Transformer在表格数据变分自编码器中的位置]({{< relref "posts/20260129-arxiv_ai-exploring-transformer-placement-in-variational-aut-3.md" >}})
-- [探索Transformer在表格数据变分自编码器中的位置]({{< relref "posts/20260130-arxiv_ai-exploring-transformer-placement-in-variational-aut-3.md" >}})
+- [探索Transformer在表格数据变分自编码器中的位置]({{< relref "posts/20260129-arxiv_ai-exploring-transformer-placement-in-variational-aut-3.md" >}})

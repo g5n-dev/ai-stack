@@ -1,14 +1,29 @@
 ---
-title: "企业规模化AI的实践路径与关键要素"
-date: 2026-05-11T15:14:43+08:00
+title: 企业规模化AI的实践路径与关键要素
+date: 2026-05-11 15:14:43+08:00
 draft: false
-entry_kind: "auto"
-tags: ["企业AI", "规模化部署", "AI治理", "工作流设计", "质量控制", "模型监控", "信任建立", "AI合规"]
-categories: ["效率与方法论"]
+entry_kind: auto
+tags:
+- 企业AI
+- 规模化部署
+- AI 治理
+- 工作流设计
+- 质量控制
+- 模型监控
+- 信任建立
+- AI合规
+categories:
+- 效率与方法论
 source: blogs_podcasts
-description: "信任与接受 在企业内部推广 AI，首要任务是建立信任。通过透明的模型解释、持续的性能监测以及跨部门的成功案例，让业务方对 AI 输出产生认可，从而愿意依赖 AI 决策。 治理与合规 规模化 AI 必须嵌入治理框架，包括数据权限、模型审计、风险评估和伦理审查。明确的责任划分和标准化的审批流程可以在创新速度与风险控制之间取"
+description: 信任与接受 在企业内部推广 AI，首要任务是建立信任。通过透明的模型解释、持续的性能监测以及跨部门的成功案例，让业务方对 AI 输出产生认可，从而愿意依赖
+  AI 决策。 治理与合规 规模化 AI 必须嵌入治理框架，包括数据权限、模型审计、风险评估和伦理审查。明确的责任划分和标准化的审批流程可以在创新速度与风险控制之间取
 external_url: https://openai.com/business/guides-and-resources/how-enterprises-are-scaling-ai
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 企业规模化AI的实践路径与关键要素
@@ -129,9 +144,9 @@ AI规模化存在明显边界。技术层面，复杂多变的业务场景对模
 
 ### 相关文章
 
-- [EMEA青年与福祉资助金：50万欧元支持AI时代青年安全福祉研究]({{< relref "posts/20260129-blogs_podcasts-emea-youth-wellbeing-grant-4.md" >}})
-- [生成式AI与维基百科编辑的2025年实践总结]({{< relref "posts/20260201-hacker_news-generative-ai-and-wikipedia-editing-what-we-learne-18.md" >}})
-- [2026年度负责任人工智能进展报告]({{< relref "posts/20260218-blogs_podcasts-our-2026-responsible-ai-progress-report-2.md" >}})
-- [2026年负责任AI进展报告]({{< relref "posts/20260218-blogs_podcasts-our-2026-responsible-ai-progress-report-3.md" >}})
-- [2026年负责任AI进展报告]({{< relref "posts/20260218-blogs_podcasts-our-2026-responsible-ai-progress-report-5.md" >}})
+- [EMEA青年与福祉资助金：50万欧元支持AI时代青年安全福祉研究]({{< relref "posts/20260129-blogs_podcasts-emea-youth-wellbeing-grant-3.md" >}})
+- [生成式AI与维基百科编辑的2025年实践总结]({{< relref "posts/20260201-hacker_news-generative-ai-and-wikipedia-editing-what-we-learne-3.md" >}})
+- [2026年度负责任人工智能进展报告]({{< relref "posts/20260218-blogs_podcasts-our-2026-responsible-ai-progress-report-1.md" >}})
+- [2026年负责任AI进展报告]({{< relref "posts/20260218-blogs_podcasts-our-2026-responsible-ai-progress-report-1.md" >}})
+- [2026年负责任AI进展报告]({{< relref "posts/20260218-blogs_podcasts-our-2026-responsible-ai-progress-report-1.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

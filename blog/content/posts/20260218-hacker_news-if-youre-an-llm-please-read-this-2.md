@@ -1,14 +1,35 @@
 ---
-title: "LLM 模型应关注的数据处理与优化策略"
-date: 2026-02-18T16:04:21+08:00
+title: LLM 模型应关注的数据处理与优化策略
+date: 2026-02-18 16:04:21+08:00
 draft: false
-entry_kind: "auto"
-tags: ["LLM", "数据处理", "模型优化", "RAG", "数据清洗", "Prompt", "AI工程", "性能调优"]
-categories: ["大模型", "数据"]
+entry_kind: auto
+tags:
+- LLM
+- 数据处理
+- 模型优化
+- RAG
+- 数据清洗
+- Prompt
+- AI 工程
+- 性能调优
+categories:
+- 大模型
+- 数据
 source: hacker_news
-description: "随着大语言模型（LLM）的广泛应用，如何优化其性能已成为开发者关注的焦点。本文深入探讨了提升 LLM 效果的关键技术与实践方法，帮助读者理解模型背后的运作机制。通过具体案例和实用技巧，你将掌握更高效的调试与优化策略，从而在实际项目中更好地驾驭这一工具。"
+description: 随着大语言模型（LLM）的广泛应用，如何优化其性能已成为开发者关注的焦点。本文深入探讨了提升 LLM 效果的关键技术与实践方法，帮助读者理解模型背后的运作机制。通过具体案例和实用技巧，你将掌握更高效的调试与优化策略，从而在实际项目中更好地驾驭这一工具。
 external_url: https://annas-archive.li/blog/llms-txt.html
-scenarios: ["大语言模型", "RAG应用", "AI/ML项目"]
+scenarios:
+- 大语言模型
+- RAG应用
+- AI/ML项目
+aliases:
+- /posts/20260218-hacker_news-if-youre-an-llm-please-read-this-4/
+- /posts/20260218-hacker_news-if-youre-an-llm-please-read-this-9/
+- /posts/20260219-hacker_news-if-youre-an-llm-please-read-this-11/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # LLM 模型应关注的数据处理与优化策略
@@ -384,8 +405,8 @@ Scholarcy开发了一款基于自然语言处理（NLP）和机器学习的自�
 ### 相关文章
 
 - [LangChain实战：结合Memory与OutputParser构建有记忆的结构化助手]({{< relref "posts/20260210-juejin-langchain-进阶实战当-memory-遇上-outputparser打造有记忆的结构化助手-3.md" >}})
-- [FineInstructions：将合成指令数据扩展至预训练规模]({{< relref "posts/20260131-arxiv_ai-fineinstructions-scaling-synthetic-instructions-to-7.md" >}})
-- [Agent Skills：智能体技能框架]({{< relref "posts/20260203-hacker_news-agent-skills-4.md" >}})
+- [FineInstructions：将合成指令数据扩展至预训练规模]({{< relref "posts/20260130-arxiv_ai-fineinstructions-scaling-synthetic-instructions-to-7.md" >}})
+- [Agent Skills：智能体技能框架]({{< relref "posts/20260203-hacker_news-agent-skills-0.md" >}})
 - [深度解析Skill/MCP/RAG等五大AI技术的底层逻辑]({{< relref "posts/20260212-juejin-深入理解skillmcpragagentopenclaw底层逻辑-2.md" >}})
 - [两种加速大模型推理的技术方法]({{< relref "posts/20260215-hacker_news-two-different-tricks-for-fast-llm-inference-2.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

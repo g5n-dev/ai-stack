@@ -1,12 +1,26 @@
 ---
-title: "🔥疑点重重！我们X光透视了这根可疑FTDI线缆，结果震惊了！"
-date: 2026-01-25T12:39:55+08:00
+title: 🔥疑点重重！我们X光透视了这根可疑FTDI线缆，结果震惊了！
+date: 2026-01-25 12:39:55+08:00
 draft: false
-entry_kind: "auto"
-tags: ["硬件安全", "BadUSB", "供应链安全", "逆向工程", "FTDI", "USB协议", "恶意硬件", "X光扫描"]
-categories: ["安全", "系统与基础设施"]
+entry_kind: auto
+tags:
+- 硬件安全
+- BadUSB
+- 供应链安全
+- 逆向工程
+- FTDI
+- USB协议
+- 恶意硬件
+- X光扫描
+categories:
+- 安全
+- 系统与基础设施
 source: hacker_news
 external_url: https://eclypsium.com/blog/xray-counterfeit-usb-cable
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 📰 🔥疑点重重！我们X光透视了这根可疑FTDI线缆，结果震惊了！

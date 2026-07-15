@@ -1,14 +1,34 @@
 ---
-title: "伪可逆神经网络：兼具可逆性与灵活性的新架构"
-date: 2026-02-06T23:01:34+08:00
+title: 伪可逆神经网络：兼具可逆性与灵活性的新架构
+date: 2026-02-06 23:01:34+08:00
 draft: false
-entry_kind: "auto"
-tags: ["神经网络", "可逆性", "伪逆", "SPNN", "非线性", "零样本", "逆问题", "扩散模型"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- 神经网络
+- 可逆性
+- 伪逆
+- SPNN
+- 非线性
+- 零样本
+- 逆问题
+- 扩散模型
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "**标题：伪可逆神经网络** 本文提出了将摩尔-彭若斯伪逆从线性系统推广至非线性领域及神经网络的方法，主要介绍了一种名为**满射伪可逆神经网络（SPNN）**的新型架构。该架构旨在提供一种易于处理的非线性伪逆，并满足基础几何性质，特别是“零空间投影”或称“反向投影”。 基于此，研究者形式化了**非线性反向投影（NLBP"
+description: '**标题：伪可逆神经网络** 本文提出了将摩尔-彭若斯伪逆从线性系统推广至非线性领域及神经网络的方法，主要介绍了一种名为**满射伪可逆神经网络（SPNN）**的新型架构。该架构旨在提供一种易于处理的非线性伪逆，并满足基础几何性质，特别是“零空间投影”或称“反向投影”。
+  基于此，研究者形式化了**非线性反向投影（NLBP'
 external_url: http://arxiv.org/abs/2602.06042v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+aliases:
+- /posts/20260207-arxiv_ai-pseudo-invertible-neural-networks-1/
+- /posts/20260208-arxiv_ai-pseudo-invertible-neural-networks-1/
+- /posts/20260209-arxiv_ai-pseudo-invertible-neural-networks-1/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 伪可逆神经网络：兼具可逆性与灵活性的新架构
@@ -499,8 +519,8 @@ scenarios: ["Web应用开发"]
 ### 相关文章
 
 - [🚀动态场景新视角合成！AnyView实现任意视角自由切换！🤯]({{< relref "posts/20260126-arxiv_ai-anyview-synthesizing-any-novel-view-in-dynamic-sce-0.md" >}})
-- [🚀AnyView：动态场景任意新视角合成！开创性技术突破🔥]({{< relref "posts/20260127-arxiv_ai-anyview-synthesizing-any-novel-view-in-dynamic-sce-0.md" >}})
+- [🚀AnyView：动态场景任意新视角合成！开创性技术突破🔥]({{< relref "posts/20260126-arxiv_ai-anyview-synthesizing-any-novel-view-in-dynamic-sce-0.md" >}})
 - [函数空间逆问题的解耦扩散采样方法]({{< relref "posts/20260202-arxiv_ai-decoupled-diffusion-sampling-for-inverse-problems--2.md" >}})
-- [函数空间逆问题的解耦扩散采样方法]({{< relref "posts/20260203-arxiv_ai-decoupled-diffusion-sampling-for-inverse-problems--2.md" >}})
+- [函数空间逆问题的解耦扩散采样方法]({{< relref "posts/20260202-arxiv_ai-decoupled-diffusion-sampling-for-inverse-problems--2.md" >}})
 - [IRL-DAL：基于能量引导扩散模型的自动驾驶安全自适应轨迹规划]({{< relref "posts/20260202-arxiv_ai-irl-dal-safe-and-adaptive-trajectory-planning-for--6.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

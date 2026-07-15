@@ -21,6 +21,10 @@ description: 以下是该内容的简要总结： **核心主题：** 介绍 Cla
 external_url: https://juejin.cn/post/7615868122215546943
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Claude Code上线自动记忆功能，无需手动输入上下文
@@ -168,8 +172,8 @@ scenarios:
 
 ### 相关文章
 
-- [Claude Code 的代码选择策略与工程实践]({{< relref "posts/20260227-hacker_news-what-claude-code-chooses-3.md" >}})
-- [Claude Code 的代码选择逻辑与工程实践]({{< relref "posts/20260227-hacker_news-what-claude-code-chooses-8.md" >}})
-- [Claude Code 全面接入微软内部开发工作流]({{< relref "posts/20260202-hacker_news-claude-code-is-suddenly-everywhere-inside-microsof-10.md" >}})
-- [Claude Code 广泛集成至微软内部开发环境]({{< relref "posts/20260202-hacker_news-claude-code-is-suddenly-everywhere-inside-microsof-15.md" >}})
+- [Claude Code 的代码选择策略与工程实践]({{< relref "posts/20260226-hacker_news-what-claude-code-chooses-12.md" >}})
+- [Claude Code 的代码选择逻辑与工程实践]({{< relref "posts/20260226-hacker_news-what-claude-code-chooses-12.md" >}})
+- [Claude Code 全面接入微软内部开发工作流]({{< relref "posts/20260202-hacker_news-claude-code-is-suddenly-everywhere-inside-microsof-2.md" >}})
+- [Claude Code 广泛集成至微软内部开发环境]({{< relref "posts/20260202-hacker_news-claude-code-is-suddenly-everywhere-inside-microsof-2.md" >}})
 - [Claude Code 全面集成至微软内部开发工作流]({{< relref "posts/20260202-hacker_news-claude-code-is-suddenly-everywhere-inside-microsof-2.md" >}})

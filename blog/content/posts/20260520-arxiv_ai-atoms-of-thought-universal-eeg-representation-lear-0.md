@@ -1,14 +1,30 @@
 ---
-title: "通用EEG表征学习：基于微状态的方法"
-date: 2026-05-20T23:31:06+08:00
+title: 通用EEG表征学习：基于微状态的方法
+date: 2026-05-20 23:31:06+08:00
 draft: false
-entry_kind: "auto"
-tags: ["EEG", "表征学习", "微状态", "通用表征", "自监督", "跨被试", "迁移学习", "神经科学"]
-categories: ["论文", "AI 工程"]
+entry_kind: auto
+tags:
+- EEG
+- 表征学习
+- 微状态
+- 通用表征
+- 自监督
+- 跨被试
+- 迁移学习
+- 神经科学
+categories:
+- 论文
+- AI 工程
 source: arxiv
-description: "方法 使用大规模医学EEG数据，通过聚类将连续信号划分为离散微状态序列，构建统一的微状态分词器。该分词器可直接在不同下游任务中使用。 实验结果 在睡眠分期、情绪识别和运动想象三类任务上，微状态表示在多种模型中均优于传统时域、频域特征，性能提升显著，表现出更强的鲁棒性。 意义 微状态提供更高的可解释性和可扩展性，适用于认"
+description: 方法 使用大规模医学EEG数据，通过聚类将连续信号划分为离散微状态序列，构建统一的微状态分词器。该分词器可直接在不同下游任务中使用。 实验结果
+  在睡眠分期、情绪识别和运动想象三类任务上，微状态表示在多种模型中均优于传统时域、频域特征，性能提升显著，表现出更强的鲁棒性。 意义 微状态提供更高的可解释性和可扩展性，适用于认
 external_url: http://arxiv.org/abs/2605.20182v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 通用EEG表征学习：基于微状态的方法
@@ -152,7 +168,7 @@ EEG 信号高维、噪声多、跨被试差异大，传统手工特征（功率�
 
 ### 相关文章
 
-- [结构因果瓶颈模型：利用因果推断优化表征学习]({{< relref "posts/20260311-arxiv_ai-structural-causal-bottleneck-models-7.md" >}})
+- [结构因果瓶颈模型：利用因果推断优化表征学习]({{< relref "posts/20260310-arxiv_ai-structural-causal-bottleneck-models-7.md" >}})
 - [🧠揭秘“你”的边界！科学家发现定义“自我”的关键脑波🚀]({{< relref "posts/20260126-hacker_news-scientists-identify-brain-waves-that-define-the-li-2.md" >}})
 - [利用辅助信息实现少样本设计优化]({{< relref "posts/20260213-arxiv_ai-few-shot-design-optimization-by-exploiting-auxilia-7.md" >}})
 - [Dex4D：任务无关点跟踪策略实现灵巧操作跨域迁移]({{< relref "posts/20260218-arxiv_ai-dex4d-task-agnostic-point-track-policy-for-sim-to--2.md" >}})

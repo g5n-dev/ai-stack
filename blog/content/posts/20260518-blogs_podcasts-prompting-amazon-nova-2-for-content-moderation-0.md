@@ -1,14 +1,32 @@
 ---
-title: "Amazon Nova 2 Lite内容审核提示设计方法"
-date: 2026-05-18T22:19:23+08:00
+title: Amazon Nova 2 Lite内容审核提示设计方法
+date: 2026-05-18 22:19:23+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Amazon Nova 2", "内容审核", "提示工程", "AILuminate", "基准测试", "大模型应用", "安全审核", "模型评估"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- Amazon Nova 2
+- 内容审核
+- 提示工程
+- AILuminate
+- 基准测试
+- 大模型应用
+- 安全审核
+- 模型评估
+categories:
+- 大模型
+- AI 工程
 source: blogs_podcasts
-description: "结构化提示 Amazon Nova 2 Lite 采用结构化方式提供内容审核提示，基于 MLCommons AILuminate 评估标准，将审核类别、严重程度等字段预定义后传入模型，保证结果一致且易于解释。AILuminate 分类体系可自行替换为自定义政策，提示模板保持不变，便于快速适配不同业务需求。 自由形式提示"
+description: 结构化提示 Amazon Nova 2 Lite 采用结构化方式提供内容审核提示，基于 MLCommons AILuminate 评估标准，将审核类别、严重程度等字段预定义后传入模型，保证结果一致且易于解释。AILuminate
+  分类体系可自行替换为自定义政策，提示模板保持不变，便于快速适配不同业务需求。 自由形式提示
 external_url: https://aws.amazon.com/blogs/machine-learning/prompting-amazon-nova-2-for-content-moderation
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+aliases:
+- /posts/20260519-blogs_podcasts-prompting-amazon-nova-2-for-content-moderation-0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Amazon Nova 2 Lite内容审核提示设计方法
@@ -164,9 +182,9 @@ Amazon Nova 2在内容审核领域的提示工程实践表明，AI审核正在�
 
 ### 相关文章
 
-- [仅调整框架，一下午提升15个大模型编程能力]({{< relref "posts/20260213-hacker_news-improving-15-llms-at-coding-in-one-afternoon-only--10.md" >}})
-- [Anthropic 发布自主智能体 METR 基准测试数据]({{< relref "posts/20260220-blogs_podcasts-ainews-anthropics-agent-autonomy-study-10.md" >}})
+- [仅调整框架，一下午提升15个大模型编程能力]({{< relref "posts/20260212-hacker_news-improving-15-llms-at-coding-in-one-afternoon-only--1.md" >}})
+- [Anthropic 发布自主智能体 METR 基准测试数据]({{< relref "posts/20260219-blogs_podcasts-ainews-anthropics-agent-autonomy-study-0.md" >}})
 - [OpenAI提出SWE-Bench-Dead：智能体前沿评估的下一步]({{< relref "posts/20260223-blogs_podcasts-swe-bench-dead-the-end-of-swe-bench-verified-mia-g-0.md" >}})
-- [OpenAI 推进智能体评估：SWE-Bench Verified 后续方向]({{< relref "posts/20260224-blogs_podcasts-the-end-of-swe-bench-verified-mia-glaese-olivia-wa-1.md" >}})
-- [OpenAI 前沿评估团队探讨迈向智能体评估的下一阶段]({{< relref "posts/20260224-blogs_podcasts-the-end-of-swe-bench-verified-mia-glaese-olivia-wa-11.md" >}})
+- [OpenAI 推进智能体评估：SWE-Bench Verified 后续方向]({{< relref "posts/20260223-blogs_podcasts-swe-bench-dead-the-end-of-swe-bench-verified-mia-g-0.md" >}})
+- [OpenAI 前沿评估团队探讨迈向智能体评估的下一阶段]({{< relref "posts/20260223-blogs_podcasts-swe-bench-dead-the-end-of-swe-bench-verified-mia-g-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

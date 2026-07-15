@@ -20,6 +20,10 @@ description: '**MM-TS：面向长尾数据多模态对比学习的温度与边�
 external_url: http://arxiv.org/abs/2603.08202v1
 scenarios:
 - Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # MM-TS：面向长尾数据对比学习的多模态温控与边界调度
@@ -480,6 +484,6 @@ MM-TS 的计算复杂度主要取决于其调度的实现方式。如果调度�
 
 - [VideoGPA：提取几何先验实现三维一致视频生成]({{< relref "posts/20260202-arxiv_ai-videogpa-distilling-geometry-priors-for-3d-consist-0.md" >}})
 - [HERMES：基于视觉语言模型的长尾自动驾驶端到端风险感知系统]({{< relref "posts/20260203-arxiv_ai-hermes-a-holistic-end-to-end-risk-aware-multimodal-6.md" >}})
-- [VideoGPA：提取几何先验实现三维一致性视频生成]({{< relref "posts/20260203-arxiv_ai-videogpa-distilling-geometry-priors-for-3d-consist-0.md" >}})
+- [VideoGPA：提取几何先验实现三维一致性视频生成]({{< relref "posts/20260202-arxiv_ai-videogpa-distilling-geometry-priors-for-3d-consist-0.md" >}})
 - [面向物联网模型适应性的对比持续学习]({{< relref "posts/20260205-arxiv_ai-contrastive-continual-learning-for-model-adaptabil-2.md" >}})
-- [面向物联网模型适应性的对比持续学习方法]({{< relref "posts/20260206-arxiv_ai-contrastive-continual-learning-for-model-adaptabil-2.md" >}})
+- [面向物联网模型适应性的对比持续学习方法]({{< relref "posts/20260205-arxiv_ai-contrastive-continual-learning-for-model-adaptabil-2.md" >}})

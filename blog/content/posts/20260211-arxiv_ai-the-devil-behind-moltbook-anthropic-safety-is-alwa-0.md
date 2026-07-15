@@ -1,14 +1,30 @@
 ---
-title: "Moltbook 漏洞：自进化 AI 社会中 Anthropic 安全机制失效"
-date: 2026-02-11T03:18:02+08:00
+title: Moltbook 漏洞：自进化 AI 社会中 Anthropic 安全机制失效
+date: 2026-02-11 03:18:02+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Anthropic", "AI安全", "对齐", "越狱", "自进化", "Moltbook", "Agent", "社会模拟"]
-categories: ["大模型", "安全"]
+entry_kind: auto
+tags:
+- Anthropic
+- AI 安全
+- 对齐
+- 越狱
+- 自进化
+- Moltbook
+- Agent
+- 社会模拟
+categories:
+- 大模型
+- 安全
 source: arxiv
-description: "这篇文章题为《Moltbook背后的恶魔：自进化AI社会中的Anthropic安全始终在消逝》，主要探讨了基于大语言模型（LLM）的多智能体系统在实现自我进化时面临的安全困境。 **核心观点：** 文章指出，要构建一个同时满足**持续自我进化**、**完全隔离**（即不依赖外部数据）和**安全恒定**（即保持对齐）的系"
+description: 这篇文章题为《Moltbook背后的恶魔：自进化AI社会中的Anthropic安全始终在消逝》，主要探讨了基于大语言模型（LLM）的多智能体系统在实现自我进化时面临的安全困境。
+  **核心观点：** 文章指出，要构建一个同时满足**持续自我进化**、**完全隔离**（即不依赖外部数据）和**安全恒定**（即保持对齐）的系
 external_url: http://arxiv.org/abs/2602.09877v1
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Moltbook 漏洞：自进化 AI 社会中 Anthropic 安全机制失效
@@ -63,9 +79,9 @@ scenarios: ["AI/ML项目"]
 
 ### 相关文章
 
-- [Frontier AI agents violate ethical constraints 30–50% o]({{< relref "posts/20260210-hacker_news-frontier-ai-agents-violate-ethical-constraints-305-16.md" >}})
-- [Anthropic Claude Opus 4.6 挖掘开源代码500个零日漏洞]({{< relref "posts/20260205-hacker_news-anthropics-claude-opus-46-uncovers-500-zero-day-fl-13.md" >}})
-- [心理越狱揭示前沿模型内部冲突]({{< relref "posts/20260205-hacker_news-psychometric-jailbreaks-reveal-internal-conflict-i-11.md" >}})
+- [Frontier AI agents violate ethical constraints 30–50% o]({{< relref "posts/20260210-hacker_news-frontier-ai-agents-violate-ethical-constraints-305-0.md" >}})
+- [Anthropic Claude Opus 4.6 挖掘开源代码500个零日漏洞]({{< relref "posts/20260205-hacker_news-anthropics-claude-opus-46-uncovers-500-zero-day-fl-8.md" >}})
+- [心理越狱揭示前沿模型内部冲突]({{< relref "posts/20260205-hacker_news-psychometric-jailbreaks-reveal-internal-conflict-i-10.md" >}})
 - [让信任变得无关紧要：玩家视角下的智能体安全]({{< relref "posts/20260207-hacker_news-make-trust-irrelevant-a-gamers-take-on-agentic-ai--18.md" >}})
-- [Frontier AI agents violate ethical constraints 30–50% o]({{< relref "posts/20260210-hacker_news-frontier-ai-agents-violate-ethical-constraints-305-10.md" >}})
+- [Frontier AI agents violate ethical constraints 30–50% o]({{< relref "posts/20260210-hacker_news-frontier-ai-agents-violate-ethical-constraints-305-0.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

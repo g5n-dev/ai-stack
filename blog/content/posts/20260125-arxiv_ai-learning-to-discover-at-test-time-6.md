@@ -1,12 +1,26 @@
 ---
-title: "测试时也能发现新规律？🤯AI解锁动态学习能力！"
-date: 2026-01-25T12:39:55+08:00
+title: 测试时也能发现新规律？🤯AI解锁动态学习能力！
+date: 2026-01-25 12:39:55+08:00
 draft: false
-entry_kind: "auto"
-tags: ["TTT-Discover", "测试时训练", "强化学习", "科学发现", "LLM", "动态学习", "AlphaEvolve", "cs.LG"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- TTT-Discover
+- 测试时训练
+- 强化学习
+- 科学发现
+- LLM
+- 动态学习
+- AlphaEvolve
+- cs.LG
+categories:
+- 大模型
+- 论文
 source: arxiv
 external_url: http://arxiv.org/abs/2601.16175v1
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 📚 测试时也能发现新规律？🤯AI解锁动态学习能力！

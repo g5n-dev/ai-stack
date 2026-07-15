@@ -1,14 +1,32 @@
 ---
-title: "粒子引导扩散模型求解偏微分方程"
-date: 2026-02-02T19:22:59+08:00
+title: 粒子引导扩散模型求解偏微分方程
+date: 2026-02-02 19:22:59+08:00
 draft: false
-entry_kind: "auto"
-tags: ["扩散模型", "偏微分方程", "PDE", "SMC", "物理引导", "生成式模型", "数值计算", "科学计算"]
-categories: ["论文", "大模型"]
+entry_kind: auto
+tags:
+- 扩散模型
+- 偏微分方程
+- PDE
+- SMC
+- 物理引导
+- 生成式模型
+- 数值计算
+- 科学计算
+categories:
+- 论文
+- 大模型
 source: arxiv
-description: "本文介绍了一种基于**粒子引导扩散模型**的偏微分方程（PDE）求解新方法。 **核心内容总结如下：** 1. **创新方法**： 提出了一种**引导随机采样方法**，该方法将扩散模型的采样过程与**物理引导**相结合。这种引导源于PDE的残差（方程误差）和观测约束，从而确保生成的样本符合物理规律。 2. **计算框架"
+description: 本文介绍了一种基于**粒子引导扩散模型**的偏微分方程（PDE）求解新方法。 **核心内容总结如下：** 1. **创新方法**： 提出了一种**引导随机采样方法**，该方法将扩散模型的采样过程与**物理引导**相结合。这种引导源于PDE的残差（方程误差）和观测约束，从而确保生成的样本符合物理规律。
+  2. **计算框架
 external_url: http://arxiv.org/abs/2601.23262v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+aliases:
+- /posts/20260203-arxiv_ai-particle-guided-diffusion-models-for-partial-diffe-8/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 粒子引导扩散模型求解偏微分方程

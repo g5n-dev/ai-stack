@@ -20,6 +20,10 @@ description: 以下是对该内容的中文总结： **ZipMap：线性时间的�
 external_url: http://arxiv.org/abs/2603.04385v1
 scenarios:
 - 计算机视觉
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # ZipMap：基于测试时训练的线性时间有状态3D重建
@@ -450,8 +454,8 @@ ZipMap 旨在提高效率，使其比传统的 NeRF 方法更轻量，但具体�
 
 ### 相关文章
 
-- [神经渲染技术探索与应用实践]({{< relref "posts/20260214-hacker_news-adventures-in-neural-rendering-15.md" >}})
-- [以对象为中心的表征是否更利于组合泛化]({{< relref "posts/20260220-arxiv_ai-are-object-centric-representations-better-at-compo-9.md" >}})
+- [神经渲染技术探索与应用实践]({{< relref "posts/20260214-hacker_news-adventures-in-neural-rendering-6.md" >}})
+- [以对象为中心的表征是否更利于组合泛化]({{< relref "posts/20260219-arxiv_ai-are-object-centric-representations-better-at-compo-9.md" >}})
 - [LoGeR：基于混合记忆的长上下文几何重建]({{< relref "posts/20260304-arxiv_ai-loger-long-context-geometric-reconstruction-with-h-5.md" >}})
-- [LoGeR：基于混合记忆的长上下文几何重建]({{< relref "posts/20260305-arxiv_ai-loger-long-context-geometric-reconstruction-with-h-5.md" >}})
+- [LoGeR：基于混合记忆的长上下文几何重建]({{< relref "posts/20260304-arxiv_ai-loger-long-context-geometric-reconstruction-with-h-5.md" >}})
 - [🔥 视频修复难题：如何攻克时间一致性？]({{< relref "posts/20260125-hacker_news-the-temporal-consistency-challenge-in-video-restor-19.md" >}})

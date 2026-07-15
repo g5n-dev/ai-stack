@@ -1,13 +1,27 @@
 ---
-title: "黑客伪造ADS-B信号在雷达上绘制JD Vance表情包"
-date: 2026-01-29T05:01:24+08:00
+title: 黑客伪造ADS-B信号在雷达上绘制JD Vance表情包
+date: 2026-01-29 05:01:24+08:00
 draft: false
-entry_kind: "auto"
-tags: ["ADS-B", "信号欺骗", "航空安全", "无线电", "Flightradar24", "黑客", "恶搞", "系统漏洞"]
-categories: ["安全"]
+entry_kind: auto
+tags:
+- ADS-B
+- 信号欺骗
+- 航空安全
+- 无线电
+- Flightradar24
+- 黑客
+- 恶搞
+- 系统漏洞
+categories:
+- 安全
 source: hacker_news
 external_url: https://alecmuffett.com/article/143548
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 黑客伪造ADS-B信号在雷达上绘制JD Vance表情包
@@ -366,8 +380,8 @@ ADS-B 是一种被动监视技术（依赖飞机广播），而二次监视雷�
 
 ### 相关文章
 
-- [希思罗机场取消液体限制！安检大提速✈️✨]({{< relref "posts/20260127-hacker_news-heathrow-scraps-liquid-container-limit-15.md" >}})
-- [✈️揭秘跑道的隐形工程！为何它是最硬核的基建？]({{< relref "posts/20260127-hacker_news-the-hidden-engineering-of-runways-1.md" >}})
+- [希思罗机场取消液体限制！安检大提速✈️✨]({{< relref "posts/20260127-hacker_news-heathrow-scraps-liquid-container-limit-0.md" >}})
+- [✈️揭秘跑道的隐形工程！为何它是最硬核的基建？]({{< relref "posts/20260127-hacker_news-the-hidden-engineering-of-runways-3.md" >}})
 - [🛡️多模态大模型鲁棒性突破！特征空间平滑实现可证防御！]({{< relref "posts/20260125-arxiv_ai-provable-robustness-in-multimodal-large-language-m-4.md" >}})
 - [🔥fscan：内网扫描神器！shadow1ng出品，安全必备⚡️]({{< relref "posts/20260125-github_trending-shadow1ng-fscan-7.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

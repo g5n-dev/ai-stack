@@ -5,7 +5,7 @@ draft: false
 entry_kind: auto
 tags:
 - 多智能体
-- AI教育
+- AI 教育
 - 个性化学习
 - 清华大学
 - 智能体课堂
@@ -21,6 +21,10 @@ description: 以下是对该内容的总结： **核心事件：** 清华大学�
 external_url: https://juejin.cn/post/7618044561076158470
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 清华团队开源！1 键生成多 Agent 智能体 AI 课堂
@@ -119,8 +123,8 @@ scenarios:
 
 ### 相关文章
 
-- [DeepMind 在印度启动 AI 伙伴关系以加速科学与教育发展]({{< relref "posts/20260218-blogs_podcasts-accelerating-discovery-in-india-through-ai-powered-9.md" >}})
+- [DeepMind 在印度启动 AI 伙伴关系以加速科学与教育发展]({{< relref "posts/20260218-blogs_podcasts-accelerating-discovery-in-india-through-ai-powered-6.md" >}})
 - [55个AI角色组成虚拟公司The Agency开源]({{< relref "posts/20260309-juejin-55-个-ai-agent-组成虚拟公司开源2-天就-1-万星-4.md" >}})
-- [PageLM：开源AI教育平台，将文档转为测验与播客]({{< relref "posts/20260215-juejin-一天一个开源项目第23篇pagelm-开源-ai-教育平台把学习材料变成互动资源-2.md" >}})
-- [Cord：协调多层级 AI 智能体树的框架]({{< relref "posts/20260221-hacker_news-cord-coordinating-trees-of-ai-agents-10.md" >}})
+- [PageLM：开源AI教育平台，将文档转为测验与播客]({{< relref "posts/20260215-juejin-一天一个开源项目第23篇pagelm-开源-ai-教育平台把学习材料变成互动资源-0.md" >}})
+- [Cord：协调多层级 AI 智能体树的框架]({{< relref "posts/20260221-hacker_news-cord-coordinating-trees-of-ai-agents-9.md" >}})
 - [Anthropic 发布 AI 熟练度指数以评估教育领域应用]({{< relref "posts/20260223-hacker_news-anthropic-education-the-ai-fluency-index-11.md" >}})

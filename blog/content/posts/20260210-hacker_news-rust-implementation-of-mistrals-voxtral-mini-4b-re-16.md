@@ -1,14 +1,33 @@
 ---
-title: "Mistral Voxtral Mini 4B 浏览器端实时语音 Rust 实现"
-date: 2026-02-10T03:34:40+08:00
+title: Mistral Voxtral Mini 4B 浏览器端实时语音 Rust 实现
+date: 2026-02-10 03:34:40+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Mistral", "Voxtral", "Rust", "WebAssembly", "浏览器端", "实时语音", "端侧推理", "开源"]
-categories: ["大模型", "前端"]
+entry_kind: auto
+tags:
+- Mistral
+- Voxtral
+- Rust
+- WebAssembly
+- 浏览器端
+- 实时语音
+- 端侧推理
+- 开源
+categories:
+- 大模型
+- 前端
 source: hacker_news
-description: "随着 Web 技术的演进，在浏览器端直接运行高性能大模型正逐渐成为现实。本文介绍了 Mistral Voxtral Mini 4B 模型的 Rust 实现，展示了如何利用 WebAssembly 在本地环境实时处理语音交互。对于关注前端性能优化与隐私安全的开发者而言，这篇文章将为你提供一套可行的技术思路，帮助你构建无需"
+description: 随着 Web 技术的演进，在浏览器端直接运行高性能大模型正逐渐成为现实。本文介绍了 Mistral Voxtral Mini 4B 模型的
+  Rust 实现，展示了如何利用 WebAssembly 在本地环境实时处理语音交互。对于关注前端性能优化与隐私安全的开发者而言，这篇文章将为你提供一套可行的技术思路，帮助你构建无需
 external_url: https://github.com/TrevorS/voxtral-mini-realtime-rs
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+aliases:
+- /posts/20260210-hacker_news-rust-implementation-of-mistrals-voxtral-mini-4b-re-2/
+- /posts/20260210-hacker_news-rust-implementation-of-mistrals-voxtral-mini-4b-re-3/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Mistral Voxtral Mini 4B 浏览器端实时语音 Rust 实现
@@ -394,8 +413,8 @@ Rust 编译为 WebAssembly (Wasm) 后，能够提供接近原生的性能。对�
 ### 相关文章
 
 - [Velox: Tauri移植Swift版！Miguel打造跨平台新选择🚀]({{< relref "posts/20260127-hacker_news-velox-a-port-of-tauri-to-swift-by-miguel-de-icaza-8.md" >}})
-- [🤥Cloudflare谎称实现Matrix？真相让人震惊！💥]({{< relref "posts/20260127-hacker_news-cloudflare-claimed-they-implemented-matrix-on-clou-17.md" >}})
-- [NVIDIA Cosmos策略：面向高级机器人控制的新方法]({{< relref "posts/20260131-blogs_podcasts-introducing-nvidia-cosmos-policy-for-advanced-robo-2.md" >}})
-- [LocalGPT：基于Rust构建的本地优先AI助手，支持持久化记忆]({{< relref "posts/20260208-hacker_news-show-hn-localgpt-a-local-first-ai-assistant-in-rus-5.md" >}})
+- [🤥Cloudflare谎称实现Matrix？真相让人震惊！💥]({{< relref "posts/20260127-hacker_news-cloudflare-claimed-they-implemented-matrix-on-clou-15.md" >}})
+- [NVIDIA Cosmos策略：面向高级机器人控制的新方法]({{< relref "posts/20260129-blogs_podcasts-introducing-nvidia-cosmos-policy-for-advanced-robo-0.md" >}})
+- [LocalGPT：基于Rust构建的本地优先AI助手，支持持久化记忆]({{< relref "posts/20260208-hacker_news-show-hn-localgpt-a-local-first-ai-assistant-in-rus-0.md" >}})
 - [🎨 Web版Deluxe Paint复刻！经典绘图神器复活！]({{< relref "posts/20260126-hacker_news-web-based-image-editor-modeled-after-deluxe-paint-18.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

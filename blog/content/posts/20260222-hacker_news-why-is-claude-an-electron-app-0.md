@@ -21,6 +21,10 @@ description: 为什么 Anthropic 选择 Electron 作为 Claude 桌面应用的�
 external_url: https://www.dbreunig.com/2026/02/21/why-is-claude-an-electron-app.html
 scenarios:
 - Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 为何 Claude 选择基于 Electron 框架开发

@@ -20,6 +20,12 @@ external_url: https://deepmind.google/models/model-cards/gemini-3-1-pro
 scenarios:
 - 大语言模型
 - AI/ML项目
+aliases:
+- /posts/20260219-hacker_news-gemini-31-pro-6/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 谷歌发布 Gemini 3.1 模型

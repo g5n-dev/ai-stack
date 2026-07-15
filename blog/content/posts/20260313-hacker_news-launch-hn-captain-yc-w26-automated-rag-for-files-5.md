@@ -21,6 +21,10 @@ external_url: https://www.runcaptain.com
 scenarios:
 - RAG应用
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Captain：面向文件的自动化检索增强生成系统

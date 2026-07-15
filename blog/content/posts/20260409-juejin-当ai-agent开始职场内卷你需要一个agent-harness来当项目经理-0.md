@@ -1,14 +1,29 @@
 ---
-title: "AI Agent调度失控：Agent Harness统一协调方案"
-date: 2026-04-09T11:24:33+08:00
+title: AI Agent调度失控：Agent Harness统一协调方案
+date: 2026-04-09 11:24:33+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI Agent", "多Agent", "调度系统", "任务分发", "质量审查", "可观测性", "权限管理", "框架设计"]
-categories: ["AI 工程"]
+entry_kind: auto
+tags:
+- AI Agent
+- 多Agent
+- 调度系统
+- 任务分发
+- 质量审查
+- 可观测性
+- 权限管理
+- 框架设计
+categories:
+- AI 工程
 source: juejin
-description: "背景 AI Agent 如 ChatGPT 等在个人工作中表现出色，能够快速完成代码、调试、文档等任务。然而，随着多个 Agent 被引入团队，协作难度急剧上升，出现“团队混乱”现象，导致工作流程失控、产出质量参差不齐。 问题表现 - **单点效率提升，整体协同下降**：单个 Agent 效率高，但缺乏统一调度，导致任"
+description: 背景 AI Agent 如 ChatGPT 等在个人工作中表现出色，能够快速完成代码、调试、文档等任务。然而，随着多个 Agent 被引入团队，协作难度急剧上升，出现“团队混乱”现象，导致工作流程失控、产出质量参差不齐。
+  问题表现 - **单点效率提升，整体协同下降**：单个 Agent 效率高，但缺乏统一调度，导致任
 external_url: https://juejin.cn/post/7626400485877252106
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AI Agent调度失控：Agent Harness统一协调方案
@@ -124,6 +139,6 @@ AI Agent 的“多兵作战”虽能带来单点效率，但缺乏统一管理�
 - [OpenHands 拆解（九）：AgentController 的设计思路]({{< relref "posts/20260227-juejin-ai-agent框架探秘拆解-openhands9-agentcontroller-2.md" >}})
 - [OpenClaw 集成阿里云 SLS 构建 AI Agent 可观测体系]({{< relref "posts/20260303-juejin-你的-openclaw-真的在受控运行吗-0.md" >}})
 - [OpenHands框架拆解：Runtime组件与数据流解析]({{< relref "posts/20260305-juejin-ai-agent框架探秘拆解-openhands11-runtime主要组件-3.md" >}})
-- [Sentrial：在用户之前捕获 AI Agent 运行故障]({{< relref "posts/20260311-hacker_news-launch-hn-sentrial-yc-w26-catch-ai-agent-failures--15.md" >}})
-- [Sentrial：在用户受影响前捕获AI代理运行故障]({{< relref "posts/20260311-hacker_news-launch-hn-sentrial-yc-w26-catch-ai-agent-failures--19.md" >}})
+- [Sentrial：在用户之前捕获 AI Agent 运行故障]({{< relref "posts/20260311-hacker_news-launch-hn-sentrial-yc-w26-catch-ai-agent-failures--9.md" >}})
+- [Sentrial：在用户受影响前捕获AI代理运行故障]({{< relref "posts/20260311-hacker_news-launch-hn-sentrial-yc-w26-catch-ai-agent-failures--9.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

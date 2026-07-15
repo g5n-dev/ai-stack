@@ -1,14 +1,31 @@
 ---
-title: "我为何选择加入 OpenAI"
-date: 2026-02-07T08:05:03+08:00
+title: 我为何选择加入 OpenAI
+date: 2026-02-07 08:05:03+08:00
 draft: false
-entry_kind: "auto"
-tags: ["OpenAI", "职业选择", "AI", "创业", "技术愿景", "团队文化", "行业趋势", "个人成长"]
-categories: ["产品与创业", "生活与杂谈"]
+entry_kind: auto
+tags:
+- OpenAI
+- 职业选择
+- AI
+- 创业
+- 技术愿景
+- 团队文化
+- 行业趋势
+- 个人成长
+categories:
+- 产品与创业
+- 生活与杂谈
 source: hacker_news
-description: "加入 OpenAI 是一个深思熟虑的决定，源于我对通用人工智能（AGI）潜力的坚定信念。在当前技术加速迭代的背景下，如何确保这一变革性力量能够安全地造福全人类，是我们这一代研究者面临的核心挑战。在这篇文章中，我将分享个人职业选择的思考逻辑，并探讨我对技术安全与行业未来的理解，希望能为关注这一领域的同行提供一些参考。"
+description: 加入 OpenAI 是一个深思熟虑的决定，源于我对通用人工智能（AGI）潜力的坚定信念。在当前技术加速迭代的背景下，如何确保这一变革性力量能够安全地造福全人类，是我们这一代研究者面临的核心挑战。在这篇文章中，我将分享个人职业选择的思考逻辑，并探讨我对技术安全与行业未来的理解，希望能为关注这一领域的同行提供一些参考。
 external_url: https://www.brendangregg.com/blog/2026-02-07/why-i-joined-openai.html
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+aliases:
+- /posts/20260207-hacker_news-why-i-joined-openai-18/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 我为何选择加入 OpenAI
@@ -411,8 +428,8 @@ Stripe 使用 OpenAI 的模型优化欺诈检测系统，通过分析交易上�
 ### 相关文章
 
 - [AI对工程类岗位的影响或与预期不同]({{< relref "posts/20260129-hacker_news-ais-impact-on-engineering-jobs-may-be-different-th-3.md" >}})
-- [Sam Altman在市政厅会议发言回顾]({{< relref "posts/20260131-blogs_podcasts-ainews-sam-altmans-ai-combinator-4.md" >}})
-- [OpenAI 将于 2026 年 2 月退役多款 GPT‑4 系列模型]({{< relref "posts/20260131-blogs_podcasts-retiring-gpt-4o-gpt-41-gpt-41-mini-and-openai-o4-m-6.md" >}})
-- [OpenAI将于2026年2月退役多款GPT‑4及o4‑mini模型]({{< relref "posts/20260201-blogs_podcasts-retiring-gpt-4o-gpt-41-gpt-41-mini-and-openai-o4-m-7.md" >}})
-- [Sam Altman内部会复盘：OpenAI战略与AI孵化器走向]({{< relref "posts/20260202-blogs_podcasts-ainews-sam-altmans-ai-combinator-5.md" >}})
+- [Sam Altman在市政厅会议发言回顾]({{< relref "posts/20260129-blogs_podcasts-ainews-sam-altmans-ai-combinator-0.md" >}})
+- [OpenAI 将于 2026 年 2 月退役多款 GPT‑4 系列模型]({{< relref "posts/20260129-hacker_news-retiring-gpt-4o-gpt-41-gpt-41-mini-and-openai-o4-m-2.md" >}})
+- [OpenAI将于2026年2月退役多款GPT‑4及o4‑mini模型]({{< relref "posts/20260129-hacker_news-retiring-gpt-4o-gpt-41-gpt-41-mini-and-openai-o4-m-2.md" >}})
+- [Sam Altman内部会复盘：OpenAI战略与AI孵化器走向]({{< relref "posts/20260129-blogs_podcasts-ainews-sam-altmans-ai-combinator-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

@@ -1,14 +1,33 @@
 ---
-title: "SkillsBench论文：评估Agent技能在多任务中的实际效用"
-date: 2026-02-17T15:40:46+08:00
+title: SkillsBench论文：评估Agent技能在多任务中的实际效用
+date: 2026-02-17 15:40:46+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Agent", "LLM", "SkillsBench", "AI评估", "基准测试", "负优化", "多任务", "模型能力"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- Agent
+- LLM
+- SkillsBench
+- AI评估
+- 基准测试
+- 负优化
+- 多任务
+- 模型能力
+categories:
+- 大模型
+- 论文
 source: juejin
-description: "这篇基于《SkillsBench》论文的内容主要传达了一个警示性观点：**当前赋予 AI Agent 的“技能”不仅可能无效，甚至可能起反作用。** 以下是该内容的核心总结： **1. 核心发现：Agent 技能的“负优化”** * **现状质疑：** 研究指出，我们现在集成到 AI Agent 中的各种“Skills"
+description: 这篇基于《SkillsBench》论文的内容主要传达了一个警示性观点：**当前赋予 AI Agent 的“技能”不仅可能无效，甚至可能起反作用。**
+  以下是该内容的核心总结： **1. 核心发现：Agent 技能的“负优化”** * **现状质疑：** 研究指出，我们现在集成到 AI Agent 中的各种“Skills
 external_url: https://juejin.cn/post/7606702049910439982
-scenarios: ["大语言模型", "AI/ML项目"]
+scenarios:
+- 大语言模型
+- AI/ML项目
+aliases:
+- /posts/20260218-juejin-你知道不你现在给-ai-用的-agent-skills-可能毫无作用甚至还拖后腿-2/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # SkillsBench论文：评估Agent技能在多任务中的实际效用
@@ -214,9 +233,9 @@ scenarios: ["大语言模型", "AI/ML项目"]
 
 ### 相关文章
 
-- [SkillsBench：评估智能体技能在多样化任务中的表现基准]({{< relref "posts/20260217-hacker_news-skillsbench-benchmarking-how-well-agent-skills-wor-19.md" >}})
+- [SkillsBench：评估智能体技能在多样化任务中的表现基准]({{< relref "posts/20260216-hacker_news-study-self-generated-agent-skills-are-useless-3.md" >}})
 - [研究：自生成的Agent技能通常无效]({{< relref "posts/20260216-hacker_news-study-self-generated-agent-skills-are-useless-3.md" >}})
-- [AGENTS.md 架构在智能体评估中超越 Skills 技能]({{< relref "posts/20260130-hacker_news-agentsmd-outperforms-skills-in-our-agent-evals-5.md" >}})
-- [Agent Skills：大模型智能体技能框架]({{< relref "posts/20260204-hacker_news-agent-skills-17.md" >}})
+- [AGENTS.md 架构在智能体评估中超越 Skills 技能]({{< relref "posts/20260129-hacker_news-compressed-agentsmd-agent-skills-5.md" >}})
+- [Agent Skills：大模型智能体技能框架]({{< relref "posts/20260203-hacker_news-agent-skills-0.md" >}})
 - [SokoBench：评估大模型长程规划与推理能力]({{< relref "posts/20260129-arxiv_ai-sokobench-evaluating-long-horizon-planning-and-rea-2.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

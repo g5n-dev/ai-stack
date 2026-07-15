@@ -1,14 +1,32 @@
 ---
-title: "异步验证语义缓存技术优化分层大模型架构"
-date: 2026-02-16T23:54:05+08:00
+title: 异步验证语义缓存技术优化分层大模型架构
+date: 2026-02-16 23:54:05+08:00
 draft: false
-entry_kind: "auto"
-tags: ["语义缓存", "Krites", "LLM", "分层架构", "异步验证", "延迟优化", "成本优化", "RAG"]
-categories: ["大模型", "系统与基础设施"]
+entry_kind: auto
+tags:
+- 语义缓存
+- Krites
+- LLM
+- 分层架构
+- 异步验证
+- 延迟优化
+- 成本优化
+- RAG
+categories:
+- 大模型
+- 系统与基础设施
 source: arxiv
-description: "本文介绍了 **Krites**，一种用于分层大语言模型（LLM）架构的异步验证语义缓存策略。 **背景与问题：** LLM 在搜索和辅助工作流中至关重要，语义缓存能显著降低成本和延迟。目前的生产环境通常采用“静态+动态”分层缓存设计，并依赖单一的嵌入相似度阈值来决定是否复用缓存。这导致两难局面：保守的阈值会错失安全的"
+description: 本文介绍了 **Krites**，一种用于分层大语言模型（LLM）架构的异步验证语义缓存策略。 **背景与问题：** LLM 在搜索和辅助工作流中至关重要，语义缓存能显著降低成本和延迟。目前的生产环境通常采用“静态+动态”分层缓存设计，并依赖单一的嵌入相似度阈值来决定是否复用缓存。这导致两难局面：保守的阈值会错失安全的
 external_url: http://arxiv.org/abs/2602.13165v1
-scenarios: ["大语言模型", "RAG应用"]
+scenarios:
+- 大语言模型
+- RAG应用
+aliases:
+- /posts/20260217-arxiv_ai-asynchronous-verified-semantic-caching-for-tiered--8/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 异步验证语义缓存技术优化分层大模型架构
@@ -538,9 +556,9 @@ Krites 的核心创新不在于算法的数学深度，而在于**工程架构�
 
 ### 相关文章
 
-- [面向运行时智能体记忆的查询感知预算分层路由]({{< relref "posts/20260209-arxiv_ai-learning-query-aware-budget-tier-routing-for-runti-9.md" >}})
-- [Agent Skills：智能体技能框架]({{< relref "posts/20260203-hacker_news-agent-skills-4.md" >}})
-- [MemSkill：面向自进化代理的记忆技能学习与演化框架]({{< relref "posts/20260204-arxiv_ai-memskill-learning-and-evolving-memory-skills-for-s-9.md" >}})
-- [Context Graphs与Agent Traces技术解析]({{< relref "posts/20260204-blogs_podcasts-ainews-context-graphs-and-agent-traces-1.md" >}})
-- [Context Graphs与Agent Traces：解析AI系统的上下文与追踪技术]({{< relref "posts/20260205-blogs_podcasts-ainews-context-graphs-and-agent-traces-5.md" >}})
+- [面向运行时智能体记忆的查询感知预算分层路由]({{< relref "posts/20260206-arxiv_ai-learning-query-aware-budget-tier-routing-for-runti-9.md" >}})
+- [Agent Skills：智能体技能框架]({{< relref "posts/20260203-hacker_news-agent-skills-0.md" >}})
+- [MemSkill：面向自进化代理的记忆技能学习与演化框架]({{< relref "posts/20260203-arxiv_ai-memskill-learning-and-evolving-memory-skills-for-s-9.md" >}})
+- [Context Graphs与Agent Traces技术解析]({{< relref "posts/20260204-blogs_podcasts-ainews-context-graphs-and-agent-traces-0.md" >}})
+- [Context Graphs与Agent Traces：解析AI系统的上下文与追踪技术]({{< relref "posts/20260204-blogs_podcasts-ainews-context-graphs-and-agent-traces-0.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

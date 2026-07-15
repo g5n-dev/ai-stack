@@ -1,14 +1,38 @@
 ---
-title: "[AINews] Qwen Image 2 and Seedance 2"
-date: 2026-02-11T16:19:57+08:00
+title: '[AINews] Qwen Image 2 and Seedance 2'
+date: 2026-02-11 16:19:57+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Qwen Image 2", "Seedance 2", "通义千问", "文生图", "视频生成", "多模态", "生成式媒体", "阿里巴巴"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- Qwen Image 2
+- Seedance 2
+- 通义千问
+- 文生图
+- 视频生成
+- 多模态
+- 生成式媒体
+- 阿里巴巴
+categories:
+- 大模型
+- AI 工程
 source: blogs_podcasts
-description: "**摘要：中国生成式媒体模型的新突破** 近日，中国 AI 领域传来重要进展，两款强大的生成式媒体模型——**Qwen Image 2**（通义千问视觉生成模型 2）与 **Seedance 2**（舞蹈生成模型 2）相继发布，展现了中国在生成式媒体领域的显著实力。 **1. Qwen Image 2** * **定位"
+description: '**摘要：中国生成式媒体模型的新突破** 近日，中国 AI 领域传来重要进展，两款强大的生成式媒体模型——**Qwen Image 2**（通义千问视觉生成模型
+  2）与 **Seedance 2**（舞蹈生成模型 2）相继发布，展现了中国在生成式媒体领域的显著实力。 **1. Qwen Image 2** * **定位'
 external_url: https://www.latent.space/p/ainews-qwen-image-2-and-seedance
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+aliases:
+- /posts/20260211-blogs_podcasts-ainews-qwen-image-2-and-seedance-2-5/
+- /posts/20260211-blogs_podcasts-ainews-qwen-image-2-and-seedance-2-6/
+- /posts/20260212-blogs_podcasts-ainews-qwen-image-2-and-seedance-2-10/
+- /posts/20260212-blogs_podcasts-ainews-qwen-image-2-and-seedance-2-11/
+- /posts/20260212-blogs_podcasts-ainews-qwen-image-2-and-seedance-2-6/
+- /posts/20260212-blogs_podcasts-ainews-qwen-image-2-and-seedance-2-8/
+- /posts/20260212-blogs_podcasts-ainews-qwen-image-2-and-seedance-2-9/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # [AINews] Qwen Image 2 and Seedance 2
@@ -75,9 +99,9 @@ scenarios: ["Web应用开发"]
 
 ### 相关文章
 
-- [Qwen-Image-2.0：生成专业信息图表与逼真照片]({{< relref "posts/20260210-hacker_news-qwen-image-20-professional-infographics-exquisite--9.md" >}})
-- [Qwen-Image-2.0: Professional infographics, exquisite ph]({{< relref "posts/20260210-hacker_news-qwen-image-20-professional-infographics-exquisite--13.md" >}})
+- [Qwen-Image-2.0：生成专业信息图表与逼真照片]({{< relref "posts/20260210-hacker_news-qwen-image-20-professional-infographics-exquisite--1.md" >}})
+- [Qwen-Image-2.0: Professional infographics, exquisite ph]({{< relref "posts/20260210-hacker_news-qwen-image-20-professional-infographics-exquisite--1.md" >}})
 - [VideoGPA：提取几何先验实现三维一致视频生成]({{< relref "posts/20260202-arxiv_ai-videogpa-distilling-geometry-priors-for-3d-consist-0.md" >}})
 - [Qwen-Image-2.0：专业信息图表与逼真照片生成]({{< relref "posts/20260210-hacker_news-qwen-image-20-professional-infographics-exquisite--1.md" >}})
-- [Qwen-Image-2.0：生成专业信息图与逼真照片]({{< relref "posts/20260210-hacker_news-qwen-image-20-professional-infographics-exquisite--18.md" >}})
+- [Qwen-Image-2.0：生成专业信息图与逼真照片]({{< relref "posts/20260210-hacker_news-qwen-image-20-professional-infographics-exquisite--1.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

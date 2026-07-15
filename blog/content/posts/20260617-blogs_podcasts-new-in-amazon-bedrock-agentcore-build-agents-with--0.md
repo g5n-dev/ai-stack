@@ -1,14 +1,30 @@
 ---
-title: "Bedrock AgentCore新功能：知识连接与智能体治理优化"
-date: 2026-06-17T15:52:08+08:00
+title: Bedrock AgentCore新功能：知识连接与智能体治理优化
+date: 2026-06-17 15:52:08+08:00
 draft: false
-entry_kind: "auto"
-tags: ["智能体", "知识连接", "生产监控", "治理", "安全合规", "持续学习", "实时追踪", "Bedrock"]
-categories: ["AI 工程", "系统与基础设施"]
+entry_kind: auto
+tags:
+- 智能体
+- 知识连接
+- 生产监控
+- 治理
+- 安全合规
+- 持续学习
+- 实时追踪
+- Bedrock
+categories:
+- AI 工程
+- 系统与基础设施
 source: blogs_podcasts
-description: "连接更广泛知识 AgentCore 现在能够直接接入组织内部文档、Web 检索以及付费数据源，使 agent 在运行时拥有更丰富的背景信息，提升回答的准确性和覆盖面。 生产环境问题定位与修复 平台提供实时的执行链路追踪与异常检测，帮助团队快速定位 agent 在生产中出现的错误或性能瓶颈，并提供自动化的修复建议，降低运"
+description: 连接更广泛知识 AgentCore 现在能够直接接入组织内部文档、Web 检索以及付费数据源，使 agent 在运行时拥有更丰富的背景信息，提升回答的准确性和覆盖面。
+  生产环境问题定位与修复 平台提供实时的执行链路追踪与异常检测，帮助团队快速定位 agent 在生产中出现的错误或性能瓶颈，并提供自动化的修复建议，降低运
 external_url: https://aws.amazon.com/blogs/machine-learning/new-in-amazon-bedrock-agentcore-build-agents-with-broader-knowledge-and-continuous-learning
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Bedrock AgentCore新功能：知识连接与智能体治理优化
@@ -130,9 +146,9 @@ Amazon Bedrock AgentCore本次更新聚焦于两个核心命题：扩展Agent知
 
 ### 相关文章
 
-- [OpenAI Frontier：企业级AI智能体构建与治理平台]({{< relref "posts/20260205-blogs_podcasts-introducing-openai-frontier-1.md" >}})
-- [OpenAI Frontier：具备共享上下文与治理功能的企业级AI代理平台]({{< relref "posts/20260205-blogs_podcasts-introducing-openai-frontier-7.md" >}})
-- [ElevenLabs融资11亿美元估值，Cerebras获23亿美元估值及音频与芯片代理进展]({{< relref "posts/20260206-blogs_podcasts-ainews-elevenlabs-500m-series-d-at-11b-cerebras-1b-4.md" >}})
-- [Iberdrola enhances IT operations using Amazon Bedrock A]({{< relref "posts/20260211-blogs_podcasts-iberdrola-enhances-it-operations-using-amazon-bedr-1.md" >}})
-- [Iberdrola 利用 Amazon Bedrock AgentCore 革新 ServiceNow IT]({{< relref "posts/20260212-blogs_podcasts-iberdrola-enhances-it-operations-using-amazon-bedr-8.md" >}})
+- [OpenAI Frontier：企业级AI智能体构建与治理平台]({{< relref "posts/20260205-hacker_news-openai-frontier-5.md" >}})
+- [OpenAI Frontier：具备共享上下文与治理功能的企业级AI代理平台]({{< relref "posts/20260205-hacker_news-openai-frontier-5.md" >}})
+- [ElevenLabs融资11亿美元估值，Cerebras获23亿美元估值及音频与芯片代理进展]({{< relref "posts/20260205-blogs_podcasts-ainews-elevenlabs-500m-series-d-at-11b-cerebras-1b-0.md" >}})
+- [Iberdrola enhances IT operations using Amazon Bedrock A]({{< relref "posts/20260210-blogs_podcasts-iberdrola-enhances-it-operations-using-amazon-bedr-1.md" >}})
+- [Iberdrola 利用 Amazon Bedrock AgentCore 革新 ServiceNow IT]({{< relref "posts/20260210-blogs_podcasts-iberdrola-enhances-it-operations-using-amazon-bedr-1.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

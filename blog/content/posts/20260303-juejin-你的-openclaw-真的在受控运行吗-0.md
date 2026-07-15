@@ -21,6 +21,12 @@ description: '**内容总结：** 该方案旨在解决 OpenClaw（AI Agent）�
 external_url: https://juejin.cn/post/7612868336570286118
 scenarios:
 - AI/ML项目
+aliases:
+- /posts/20260304-juejin-你的-openclaw-真的在受控运行吗-1/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # OpenClaw 集成阿里云 SLS 构建 AI Agent 可观测体系
@@ -204,7 +210,7 @@ OpenClaw 提供了灵活的数据管理机制来实现参数化和关联：
 ### 相关文章
 
 - [Opus 4.5 在 OTelBench 基准测试中得分仅 29%]({{< relref "posts/20260129-hacker_news-otelbench-ai-struggles-with-simple-sre-tasks-opus--1.md" >}})
-- [AI vs SaaS：从OpenClaw到MCP UI的演进与反思]({{< relref "posts/20260210-blogs_podcasts-ainews-ai-vs-saas-the-unreasonable-effectiveness-o-4.md" >}})
+- [AI vs SaaS：从OpenClaw到MCP UI的演进与反思]({{< relref "posts/20260207-blogs_podcasts-ainews-ai-vs-saas-the-unreasonable-effectiveness-o-0.md" >}})
 - [OpenClaw：GitHub 增长最快的开源 AI 智能体框架]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-0.md" >}})
-- [Peter Steinberger 深度访谈：解析 GitHub 增长最快的开源 AI 代理框架 OpenCl]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-1.md" >}})
-- [OpenClaw 开源 AI 智能体框架与 GitHub 增长纪录]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-2.md" >}})
+- [Peter Steinberger 深度访谈：解析 GitHub 增长最快的开源 AI 代理框架 OpenCl]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-0.md" >}})
+- [OpenClaw 开源 AI 智能体框架与 GitHub 增长纪录]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-0.md" >}})

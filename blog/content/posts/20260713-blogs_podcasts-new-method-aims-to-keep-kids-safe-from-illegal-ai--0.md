@@ -1,14 +1,29 @@
 ---
-title: "新审计技术可检测生成式AI恶意能力"
-date: 2026-07-13T13:40:20+08:00
+title: 新审计技术可检测生成式AI恶意能力
+date: 2026-07-13 13:40:20+08:00
 draft: false
-entry_kind: "auto"
-tags: ["生成式AI安全", "恶意能力检测", "审计技术", "非法内容识别", "儿童保护", "模型评估", "AI安全", "内容审核"]
-categories: ["安全"]
+entry_kind: auto
+tags:
+- 生成式AI安全
+- 恶意能力检测
+- 审计技术
+- 非法内容识别
+- 儿童保护
+- 模型评估
+- AI 安全
+- 内容审核
+categories:
+- 安全
 source: blogs_podcasts
-description: "背景 生成式人工智能在儿童内容、教育、娱乐等场景的渗透迅速增长，随之而来的是非法或不适宜内容的潜在风险。为了在模型发布前识别并抑制这些风险，需要有效的安全评估手段。 研究目标 在不直接向模型提供非法指令的前提下，快速检测生成式 AI 是否具备产生违规内容的能力，从而在部署前进行干预，保障儿童免受有害信息侵扰。 方法概述"
+description: 背景 生成式人工智能在儿童内容、教育、娱乐等场景的渗透迅速增长，随之而来的是非法或不适宜内容的潜在风险。为了在模型发布前识别并抑制这些风险，需要有效的安全评估手段。
+  研究目标 在不直接向模型提供非法指令的前提下，快速检测生成式 AI 是否具备产生违规内容的能力，从而在部署前进行干预，保障儿童免受有害信息侵扰。 方法概述
 external_url: https://news.mit.edu/2026/new-method-keeps-kids-safe-from-illegal-ai-generated-content-0713
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 新审计技术可检测生成式AI恶意能力
@@ -149,9 +164,9 @@ scenarios: ["AI/ML项目"]
 
 ### 相关文章
 
-- [Sora Feed理念：个性化推荐与安全护栏构建]({{< relref "posts/20260204-blogs_podcasts-the-sora-feed-philosophy-7.md" >}})
+- [Sora Feed理念：个性化推荐与安全护栏构建]({{< relref "posts/20260203-blogs_podcasts-the-sora-feed-philosophy-4.md" >}})
 - [LLM盲区偏差检测：识别模型未提及内容]({{< relref "posts/20260211-arxiv_ai-biases-in-the-blind-spot-detecting-what-llms-fail--0.md" >}})
-- [评估多语言上下文护栏：人道主义大模型应用]({{< relref "posts/20260213-hacker_news-evaluating-multilingual-context-aware-guardrails-a-16.md" >}})
+- [评估多语言上下文护栏：人道主义大模型应用]({{< relref "posts/20260213-hacker_news-evaluating-multilingual-context-aware-guardrails-a-18.md" >}})
 - [Anthropic发布Agent自主性研究及METR数据]({{< relref "posts/20260219-blogs_podcasts-ainews-anthropics-agent-autonomy-study-0.md" >}})
-- [Anthropic发布基于METR数据的Agent自主性研究]({{< relref "posts/20260220-blogs_podcasts-ainews-anthropics-agent-autonomy-study-9.md" >}})
+- [Anthropic发布基于METR数据的Agent自主性研究]({{< relref "posts/20260219-blogs_podcasts-ainews-anthropics-agent-autonomy-study-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

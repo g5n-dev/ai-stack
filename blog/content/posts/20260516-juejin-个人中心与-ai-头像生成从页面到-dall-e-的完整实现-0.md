@@ -1,14 +1,30 @@
 ---
-title: "个人中心AI头像生成：前端实现与DALL-E接入"
-date: 2026-05-16T00:10:04+08:00
+title: 个人中心AI头像生成：前端实现与DALL-E接入
+date: 2026-05-16 00:10:04+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI头像", "DALL-E", "个人中心", "前端实现", "图像生成", "API调用", "缓存机制", "用户体验"]
-categories: ["前端", "AI 工程"]
+entry_kind: auto
+tags:
+- AI头像
+- DALL-E
+- 个人中心
+- 前端实现
+- 图像生成
+- API调用
+- 缓存机制
+- 用户体验
+categories:
+- 前端
+- AI 工程
 source: juejin
-description: "个人中心是用户在产品中的身份锚点，集中展示头像、个人信息并进行设置。文章以本项目为例，先介绍个人中心页面的 UI 布局——顶部大头像卡片、个人信息栏、功能入口及底部导航；随后重点阐述在页面中嵌入 AI 头像生成入口的实现思路：用户点击生成按钮后，前端把文字描述（如“复古像素风头像”）通过 HTTPS 请求发送至后端，后"
+description: 个人中心是用户在产品中的身份锚点，集中展示头像、个人信息并进行设置。文章以本项目为例，先介绍个人中心页面的 UI 布局——顶部大头像卡片、个人信息栏、功能入口及底部导航；随后重点阐述在页面中嵌入
+  AI 头像生成入口的实现思路：用户点击生成按钮后，前端把文字描述（如“复古像素风头像”）通过 HTTPS 请求发送至后端，后
 external_url: https://juejin.cn/post/7640026964774518794
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 个人中心AI头像生成：前端实现与DALL-E接入

@@ -1,14 +1,29 @@
 ---
-title: "Amazon Bedrock AgentCore多租户架构：共享资源与租户隔离实践"
-date: 2026-06-23T16:11:52+08:00
+title: Amazon Bedrock AgentCore多租户架构：共享资源与租户隔离实践
+date: 2026-06-23 16:11:52+08:00
 draft: false
-entry_kind: "auto"
-tags: ["多租户架构", "Amazon Bedrock", "池模型", "租户隔离", "共享资源", "AI Agent", "AWS", "医疗AI"]
-categories: ["系统与基础设施"]
+entry_kind: auto
+tags:
+- 多租户架构
+- Amazon Bedrock
+- 池模型
+- 租户隔离
+- 共享资源
+- AI Agent
+- AWS
+- 医疗 AI
+categories:
+- 系统与基础设施
 source: blogs_podcasts
-description: "多租户池模型概述 共享底层模型和算力，按租户标识在请求层面划分资源，实现高效利用与隔离。 架构要点 利用 Amazon Bedrock AgentCore 的多租户 API，在请求入口统一注入租户 ID；后端共享模型实例，租户之间"
+description: 多租户池模型概述 共享底层模型和算力，按租户标识在请求层面划分资源，实现高效利用与隔离。 架构要点 利用 Amazon Bedrock AgentCore
+  的多租户 API，在请求入口统一注入租户 ID；后端共享模型实例，租户之间
 external_url: https://aws.amazon.com/blogs/machine-learning/shared-infrastructure-isolated-tenants-pool-model-multi-tenancy-with-amazon-bedrock-agentcore
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Amazon Bedrock AgentCore多租户架构：共享资源与租户隔离实践
@@ -114,8 +129,8 @@ scenarios: ["AI/ML项目"]
 ### 相关文章
 
 - [Amazon Bedrock AgentCore 浏览器新增代理、配置文件及扩展支持]({{< relref "posts/20260213-blogs_podcasts-customize-ai-agent-browsing-with-proxies-profiles--0.md" >}})
-- [Amazon Bedrock AgentCore 浏览器支持代理、配置文件及扩展]({{< relref "posts/20260214-blogs_podcasts-customize-ai-agent-browsing-with-proxies-profiles--0.md" >}})
-- [Amazon Bedrock AgentCore 浏览器更新：新增代理、配置文件及扩展支持]({{< relref "posts/20260214-blogs_podcasts-customize-ai-agent-browsing-with-proxies-profiles--1.md" >}})
-- [Amazon Bedrock AgentCore 浏览器新增代理、配置文件及扩展支持]({{< relref "posts/20260215-blogs_podcasts-customize-ai-agent-browsing-with-proxies-profiles--1.md" >}})
-- [Amazon Bedrock AgentCore 浏览器新增代理配置、配置文件及扩展支持]({{< relref "posts/20260216-blogs_podcasts-customize-ai-agent-browsing-with-proxies-profiles--2.md" >}})
+- [Amazon Bedrock AgentCore 浏览器支持代理、配置文件及扩展]({{< relref "posts/20260213-blogs_podcasts-customize-ai-agent-browsing-with-proxies-profiles--0.md" >}})
+- [Amazon Bedrock AgentCore 浏览器更新：新增代理、配置文件及扩展支持]({{< relref "posts/20260213-blogs_podcasts-customize-ai-agent-browsing-with-proxies-profiles--0.md" >}})
+- [Amazon Bedrock AgentCore 浏览器新增代理、配置文件及扩展支持]({{< relref "posts/20260213-blogs_podcasts-customize-ai-agent-browsing-with-proxies-profiles--0.md" >}})
+- [Amazon Bedrock AgentCore 浏览器新增代理配置、配置文件及扩展支持]({{< relref "posts/20260213-blogs_podcasts-customize-ai-agent-browsing-with-proxies-profiles--0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

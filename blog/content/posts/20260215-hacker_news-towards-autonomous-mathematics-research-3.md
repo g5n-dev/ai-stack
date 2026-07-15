@@ -1,14 +1,33 @@
 ---
-title: "迈向自主数学研究：AI 探索自动化定理证明"
-date: 2026-02-15T19:54:11+08:00
+title: 迈向自主数学研究：AI 探索自动化定理证明
+date: 2026-02-15 19:54:11+08:00
 draft: false
-entry_kind: "auto"
-tags: ["自动化定理证明", "AI for Math", "形式化验证", "自主研究", "Lean", "Isabelle", "机器推理", "Coq"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- 自动化定理证明
+- AI for Math
+- 形式化验证
+- 自主研究
+- Lean
+- Isabelle
+- 机器推理
+- Coq
+categories:
+- 大模型
+- 论文
 source: hacker_news
-description: "随着大语言模型在代码生成与逻辑推理上的突破，数学研究正逐步迈向人机协作的新阶段。本文探讨了如何利用 AI 辅助形式化证明与定理发现，旨在解决传统研究中验证耗时与搜索空间受限的瓶颈。通过分析现有工具的进展与局限，文章为读者展示了自动化技术在数学领域的实际潜力，以及未来构建“自主数学研究”系统的可能路径。"
+description: 随着大语言模型在代码生成与逻辑推理上的突破，数学研究正逐步迈向人机协作的新阶段。本文探讨了如何利用 AI 辅助形式化证明与定理发现，旨在解决传统研究中验证耗时与搜索空间受限的瓶颈。通过分析现有工具的进展与局限，文章为读者展示了自动化技术在数学领域的实际潜力，以及未来构建“自主数学研究”系统的可能路径。
 external_url: https://arxiv.org/abs/2602.10177
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+aliases:
+- /posts/20260215-hacker_news-towards-autonomous-mathematics-research-10/
+- /posts/20260215-hacker_news-towards-autonomous-mathematics-research-4/
+- /posts/20260216-hacker_news-towards-autonomous-mathematics-research-14/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 迈向自主数学研究：AI 探索自动化定理证明
@@ -415,5 +434,5 @@ Meta AI 研究人员开发了一种“让 AI 充当数学家协作伙伴”的�
 - [高效定理证明新突破！结构化提示实现少样本学习 🚀]({{< relref "posts/20260125-arxiv_ai-structured-hints-for-sample-efficient-lean-theorem-8.md" >}})
 - [Deep Researcher：序列规划反思与候选交叉]({{< relref "posts/20260129-arxiv_ai-deep-researcher-with-sequential-plan-reflection-an-9.md" >}})
 - [SokoBench：评估大模型长程规划与推理能力]({{< relref "posts/20260129-arxiv_ai-sokobench-evaluating-long-horizon-planning-and-rea-2.md" >}})
-- [Deep Researcher：结合序列规划反思与候选交叉的深度研究框架]({{< relref "posts/20260130-arxiv_ai-deep-researcher-with-sequential-plan-reflection-an-9.md" >}})
+- [Deep Researcher：结合序列规划反思与候选交叉的深度研究框架]({{< relref "posts/20260129-arxiv_ai-deep-researcher-with-sequential-plan-reflection-an-9.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

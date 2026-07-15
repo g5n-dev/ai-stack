@@ -1,14 +1,30 @@
 ---
-title: "从缓存到寄存器：混合键合3D NPU实现细粒度FlashAttention"
-date: 2026-02-12T02:48:17+08:00
+title: 从缓存到寄存器：混合键合3D NPU实现细粒度FlashAttention
+date: 2026-02-12 02:48:17+08:00
 draft: false
-entry_kind: "auto"
-tags: ["3D-Flow", "FlashAttention", "NPU", "混合键合", "存算一体", "SRAM", "Transformer", "芯片架构"]
-categories: ["系统与基础设施", "AI 工程"]
+entry_kind: auto
+tags:
+- 3D-Flow
+- FlashAttention
+- NPU
+- 混合键合
+- 存算一体
+- SRAM
+- Transformer
+- 芯片架构
+categories:
+- 系统与基础设施
+- AI 工程
 source: arxiv
-description: "这段内容介绍了一项名为 **3D-Flow** 的研究工作，旨在解决Transformer模型在现代AI加速器中面临的内存瓶颈问题。以下是简洁的总结： **背景与问题** 尽管现有的算法（如FlashAttention）和硬件（如大缓存加速器）有效减少了片外数据传输，但研究表明，随着模型规模扩大，**片上SRAM（缓存"
+description: 这段内容介绍了一项名为 **3D-Flow** 的研究工作，旨在解决Transformer模型在现代AI加速器中面临的内存瓶颈问题。以下是简洁的总结：
+  **背景与问题** 尽管现有的算法（如FlashAttention）和硬件（如大缓存加速器）有效减少了片外数据传输，但研究表明，随着模型规模扩大，**片上SRAM（缓存
 external_url: http://arxiv.org/abs/2602.11016v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 从缓存到寄存器：混合键合3D NPU实现细粒度FlashAttention
@@ -373,9 +389,9 @@ scenarios: ["Web应用开发"]
 
 ### 相关文章
 
-- [FlashAttention-T：张量化注意力机制实现方案]({{< relref "posts/20260204-hacker_news-flashattention-t-towards-tensorized-attention-8.md" >}})
-- [FlashAttention-T：张量化注意力机制优化方案]({{< relref "posts/20260204-hacker_news-flashattention-t-towards-tensorized-attention-11.md" >}})
-- [FlashAttention-T：张量化注意力机制优化方案]({{< relref "posts/20260204-hacker_news-flashattention-t-towards-tensorized-attention-2.md" >}})
+- [FlashAttention-T：张量化注意力机制实现方案]({{< relref "posts/20260203-hacker_news-flashattention-t-towards-tensorized-attention-0.md" >}})
 - [FlashAttention-T：张量化注意力机制优化方案]({{< relref "posts/20260203-hacker_news-flashattention-t-towards-tensorized-attention-0.md" >}})
-- [FlashAttention-T：张量化注意力机制优化方案]({{< relref "posts/20260204-hacker_news-flashattention-t-towards-tensorized-attention-18.md" >}})
+- [FlashAttention-T：张量化注意力机制优化方案]({{< relref "posts/20260203-hacker_news-flashattention-t-towards-tensorized-attention-0.md" >}})
+- [FlashAttention-T：张量化注意力机制优化方案]({{< relref "posts/20260203-hacker_news-flashattention-t-towards-tensorized-attention-0.md" >}})
+- [FlashAttention-T：张量化注意力机制优化方案]({{< relref "posts/20260203-hacker_news-flashattention-t-towards-tensorized-attention-0.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

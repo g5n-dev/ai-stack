@@ -21,6 +21,10 @@ description: 本文介绍了一种名为**多尺度邻域感知变换器**的模
 external_url: http://arxiv.org/abs/2603.03106v1
 scenarios:
 - Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 多尺度自适应邻域感知Transformer用于图欺诈检测
@@ -455,8 +459,8 @@ MANA Transformer 是一种应用于图欺诈检测领域的深度学习模型。
 
 ### 相关文章
 
-- [混合线性注意力新架构：高效蒸馏与超长上下文处理]({{< relref "posts/20260201-arxiv_ai-hybrid-linear-attention-done-right-efficient-disti-2.md" >}})
-- [基于正则化与对称性重审扩散模型及其分子图生成应用]({{< relref "posts/20260218-arxiv_ai-rethinking-diffusion-models-with-symmetries-throug-2.md" >}})
+- [混合线性注意力新架构：高效蒸馏与超长上下文处理]({{< relref "posts/20260130-arxiv_ai-hybrid-linear-attention-done-right-efficient-disti-2.md" >}})
+- [基于正则化与对称性重审扩散模型及其分子图生成应用]({{< relref "posts/20260217-arxiv_ai-rethinking-diffusion-models-with-symmetries-throug-2.md" >}})
 - [统一图神经网络均匀表达能力的通用方法]({{< relref "posts/20260223-arxiv_ai-unifying-approach-to-uniform-expressivity-of-graph-7.md" >}})
-- [U(d)子群导出自然RNN与Transformer架构]({{< relref "posts/20260224-arxiv_ai-subgroups-of-ud-induce-natural-rnn-and-transformer-6.md" >}})
+- [U(d)子群导出自然RNN与Transformer架构]({{< relref "posts/20260223-arxiv_ai-subgroups-of-ud-induce-natural-rnn-and-transformer-6.md" >}})
 - [深度序列模型中的概率学习与生成机制]({{< relref "posts/20260303-arxiv_ai-probabilistic-learning-and-generation-in-deep-sequ-5.md" >}})

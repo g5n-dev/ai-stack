@@ -1,13 +1,30 @@
 ---
-title: "Eric S. Raymond 撰文：如何正确提问以获得技术答案"
-date: 2026-01-29T06:41:12+08:00
+title: Eric S. Raymond 撰文：如何正确提问以获得技术答案
+date: 2026-01-29 06:41:12+08:00
 draft: false
-entry_kind: "auto"
-tags: ["提问的智慧", "ESR", "技术交流", "社区规范", "沟通技巧", "黑客文化", "开源指南", "GitHub"]
-categories: ["效率与方法论", "开源生态"]
+entry_kind: auto
+tags:
+- 提问的智慧
+- ESR
+- 技术交流
+- 社区规范
+- 沟通技巧
+- 黑客文化
+- 开源指南
+- GitHub
+categories:
+- 效率与方法论
+- 开源生态
 source: github_trending
 external_url: https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way
-scenarios: ["文档工具", "效率工具", "开源生态"]
+scenarios:
+- 文档工具
+- 效率工具
+- 开源生态
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Eric S. Raymond 撰文：如何正确提问以获得技术答案
@@ -868,8 +885,8 @@ ryanhanwu 的版本适合需要中文参考的开发者，而 Stack Overflow 帮
 ### 相关文章
 
 - [技术大佬都在看！ruanyf/weekly 🔥 程序员必读周报]({{< relref "posts/20260125-github_trending-ruanyf-weekly-4.md" >}})
-- [🔥阮一峰周刊：开发者必读！技术前沿与精华一网打尽！]({{< relref "posts/20260127-github_trending-ruanyf-weekly-3.md" >}})
-- [💥ruanyf/weekly：技术趋势+深度解读，助你高效掌握前沿！]({{< relref "posts/20260128-github_trending-ruanyf-weekly-3.md" >}})
-- [戴森球计划工厂蓝图仓库 DSPBluePrints]({{< relref "posts/20260129-github_trending-dspblueprints-factoryblueprints-4.md" >}})
-- [戴森球计划游戏工厂蓝图仓库]({{< relref "posts/20260129-github_trending-dspblueprints-factoryblueprints-4.md" >}})
+- [🔥阮一峰周刊：开发者必读！技术前沿与精华一网打尽！]({{< relref "posts/20260125-github_trending-ruanyf-weekly-4.md" >}})
+- [💥ruanyf/weekly：技术趋势+深度解读，助你高效掌握前沿！]({{< relref "posts/20260125-github_trending-ruanyf-weekly-4.md" >}})
+- [戴森球计划工厂蓝图仓库 DSPBluePrints]({{< relref "posts/20260125-github_trending-dspblueprints-factoryblueprints-6.md" >}})
+- [戴森球计划游戏工厂蓝图仓库]({{< relref "posts/20260125-github_trending-dspblueprints-factoryblueprints-6.md" >}})
 *这篇文章由 AI Stack 自动生成，包含多次大模型调用，提供深度的结构化分析。*

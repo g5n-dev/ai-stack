@@ -1,14 +1,29 @@
 ---
-title: "AI返回JSON的处理技巧与常见错误"
-date: 2026-04-12T11:13:50+08:00
+title: AI返回JSON的处理技巧与常见错误
+date: 2026-04-12 11:13:50+08:00
 draft: false
-entry_kind: "auto"
-tags: ["JSON处理", "AI返回", "常见错误", "解析技巧", "大模型", "提示工程", "错误排查", "代码示例"]
-categories: ["AI 工程", "开发工具"]
+entry_kind: auto
+tags:
+- JSON处理
+- AI返回
+- 常见错误
+- 解析技巧
+- 大模型
+- 提示工程
+- 错误排查
+- 代码示例
+categories:
+- AI 工程
+- 开发工具
 source: juejin
-description: "在使用AI模型返回的JSON时，直接调用json.loads常常会遇到意外的格式问题，例如多余的逗号、非法字符或编码差异。这些坑位会导致解析错误或数据失真，影响业务逻辑的可靠性。本指南系统梳理常见错误类型、产生原因并提供防御策略，帮助开发者快速定位并安全处理AI生成的JSON。"
+description: 在使用AI模型返回的JSON时，直接调用json.loads常常会遇到意外的格式问题，例如多余的逗号、非法字符或编码差异。这些坑位会导致解析错误或数据失真，影响业务逻辑的可靠性。本指南系统梳理常见错误类型、产生原因并提供防御策略，帮助开发者快速定位并安全处理AI生成的JSON。
 external_url: https://juejin.cn/post/7627283724289294371
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AI返回JSON的处理技巧与常见错误
@@ -86,7 +101,7 @@ scenarios: ["AI/ML项目"]
 
 - [MCP 协议入门与实操：构建大模型的数据连接标准]({{< relref "posts/20260311-juejin-mcp-初识到实操打造-ai-的usb-c接口让大模型真正手眼通天-2.md" >}})
 - [2026年Java AI开发实战：Spring AI完全指南]({{< relref "posts/20260411-juejin-2026年java-ai开发实战spring-ai完全指南-0.md" >}})
-- [中国开源AI生态架构选择：DeepSeek之外的技术路径]({{< relref "posts/20260129-blogs_podcasts-architectural-choices-in-chinas-open-source-ai-eco-9.md" >}})
-- [Claude Opus 4.6 发布]({{< relref "posts/20260206-hacker_news-claude-opus-46-3.md" >}})
-- [OpenClaw：一个开源AI代理框架]({{< relref "posts/20260213-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-11.md" >}})
+- [中国开源AI生态架构选择：DeepSeek之外的技术路径]({{< relref "posts/20260127-blogs_podcasts-architectural-choices-in-chinas-open-source-ai-eco-0.md" >}})
+- [Claude Opus 4.6 发布]({{< relref "posts/20260205-hacker_news-claude-opus-46-2.md" >}})
+- [OpenClaw：一个开源AI代理框架]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-0.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

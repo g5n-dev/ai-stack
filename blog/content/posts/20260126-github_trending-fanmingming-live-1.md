@@ -1,12 +1,26 @@
 ---
-title: "冯明明 GitHub 热榜第一！🔥 实时项目火爆全网！⚡️"
-date: 2026-01-26T12:12:08+08:00
+title: 冯明明 GitHub 热榜第一！🔥 实时项目火爆全网！⚡️
+date: 2026-01-26 12:12:08+08:00
 draft: false
-entry_kind: "auto"
-tags: ["GitHub热榜", "图标库", "电视直播", "IPv6", "开源项目", "JavaScript", "资源聚合", "工具推荐"]
-categories: ["开源生态", "开发工具"]
+entry_kind: auto
+tags:
+- GitHub热榜
+- 图标库
+- 电视直播
+- IPv6
+- 开源项目
+- JavaScript
+- 资源聚合
+- 工具推荐
+categories:
+- 开源生态
+- 开发工具
 source: github_trending
 external_url: https://github.com/fanmingming/live
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 🚀 冯明明 GitHub 热榜第一！🔥 实时项目火爆全网！⚡️

@@ -21,6 +21,10 @@ description: PgAdmin 4 9.13 版本正式发布，最显著的变化是引入了�
 external_url: https://www.pgadmin.org/docs/pgadmin4/9.13/query_tool.html
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # PgAdmin 4 9.13 发布：集成 AI 助手面板

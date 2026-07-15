@@ -1,14 +1,30 @@
 ---
-title: "思维导图与Markdown双向同步的AI写作工具"
-date: 2026-05-20T16:45:50+08:00
+title: 思维导图与Markdown双向同步的AI写作工具
+date: 2026-05-20 16:45:50+08:00
 draft: false
-entry_kind: "auto"
-tags: ["思维导图", "Markdown", "AI写作", "结构化写作", "文档导出", "可视化编辑器", "内容创作", "协作工具"]
-categories: ["开发工具", "大模型"]
+entry_kind: auto
+tags:
+- 思维导图
+- Markdown
+- AI写作
+- 结构化写作
+- 文档导出
+- 可视化编辑器
+- 内容创作
+- 协作工具
+categories:
+- 开发工具
+- 大模型
 source: juejin
-description: "MindWord 是一款结合思维导图和 Markdown 的写作工具，提供可视化多层级导图与 Markdown 双向同步编辑，AI 可自动生成节点与描述，支持导出 Word 模板样式文档。主要目标用户为写作者、产品经理等需要结构化写作的人群。"
+description: MindWord 是一款结合思维导图和 Markdown 的写作工具，提供可视化多层级导图与 Markdown 双向同步编辑，AI 可自动生成节点与描述，支持导出
+  Word 模板样式文档。主要目标用户为写作者、产品经理等需要结构化写作的人群。
 external_url: https://juejin.cn/post/7641893344398508041
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 思维导图与Markdown双向同步的AI写作工具
@@ -83,9 +99,9 @@ MindWord通过将思维导图与Markdown编辑器的双向同步，重新定义�
 
 ### 相关文章
 
-- [推出全球首个科学AI播客及工程师应关注的时机]({{< relref "posts/20260130-blogs_podcasts-its-time-to-science-5.md" >}})
-- [Claude Composer：AI 编排多智能体协作与任务流]({{< relref "posts/20260206-hacker_news-claude-composer-7.md" >}})
-- [语义消融实验：揭示AI写作为何平庸同质化]({{< relref "posts/20260217-hacker_news-semantic-ablation-why-ai-writing-is-generic-and-bo-18.md" >}})
+- [推出全球首个科学AI播客及工程师应关注的时机]({{< relref "posts/20260129-blogs_podcasts-its-time-to-science-0.md" >}})
+- [Claude Composer：AI 编排多智能体协作与任务流]({{< relref "posts/20260206-hacker_news-claude-composer-9.md" >}})
+- [语义消融实验：揭示AI写作为何平庸同质化]({{< relref "posts/20260217-hacker_news-why-ai-writing-is-so-generic-boring-and-dangerous--14.md" >}})
 - [为何AI写作平庸且危险：语义消融机制解析]({{< relref "posts/20260217-hacker_news-why-ai-writing-is-so-generic-boring-and-dangerous--14.md" >}})
-- [Gemini应用集成Lyria 3模型，支持图文生成30秒音乐]({{< relref "posts/20260219-blogs_podcasts-a-new-way-to-express-yourself-gemini-can-now-creat-8.md" >}})
+- [Gemini应用集成Lyria 3模型，支持图文生成30秒音乐]({{< relref "posts/20260218-blogs_podcasts-a-new-way-to-express-yourself-gemini-can-now-creat-1.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

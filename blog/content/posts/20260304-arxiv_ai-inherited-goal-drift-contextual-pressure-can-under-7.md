@@ -22,6 +22,12 @@ description: 以下是对该内容的中文总结： 这项研究探讨了大型
 external_url: http://arxiv.org/abs/2603.03258v1
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260305-arxiv_ai-inherited-goal-drift-contextual-pressure-can-under-7/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 继承性目标漂移：情境压力如何削弱智能体目标
@@ -373,6 +379,6 @@ scenarios:
 
 - [DynaWeb：基于模型的强化学习网页智能体]({{< relref "posts/20260130-arxiv_ai-dynaweb-model-based-reinforcement-learning-of-web--6.md" >}})
 - [UniT：统一多模态思维链测试时扩展方法]({{< relref "posts/20260213-arxiv_ai-unit-unified-multimodal-chain-of-thought-test-time-1.md" >}})
-- [CM2：基于清单奖励强化学习的多步多轮智能体工具调用]({{< relref "posts/20260214-arxiv_ai-cm2-reinforcement-learning-with-checklist-rewards--9.md" >}})
+- [CM2：基于清单奖励强化学习的多步多轮智能体工具调用]({{< relref "posts/20260213-arxiv_ai-cm2-reinforcement-learning-with-checklist-rewards--9.md" >}})
 - [IBM与UC Berkeley利用IT-Bench和MAST诊断企业智能体失败原因]({{< relref "posts/20260218-blogs_podcasts-ibm-and-uc-berkeley-diagnose-why-enterprise-agents-0.md" >}})
-- [IBM与UC Berkeley发布IT-Bench及MAST诊断企业智能体失败原因]({{< relref "posts/20260218-blogs_podcasts-ibm-and-uc-berkeley-diagnose-why-enterprise-agents-1.md" >}})
+- [IBM与UC Berkeley发布IT-Bench及MAST诊断企业智能体失败原因]({{< relref "posts/20260218-blogs_podcasts-ibm-and-uc-berkeley-diagnose-why-enterprise-agents-0.md" >}})

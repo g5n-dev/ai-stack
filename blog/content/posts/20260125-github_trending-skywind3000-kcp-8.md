@@ -1,12 +1,26 @@
 ---
-title: "🚀 KCP：极速可靠传输！🔥 GitHub之星Skywind3000力作！⚡️"
-date: 2026-01-25T12:39:55+08:00
+title: 🚀 KCP：极速可靠传输！🔥 GitHub之星Skywind3000力作！⚡️
+date: 2026-01-25 12:39:55+08:00
 draft: false
-entry_kind: "auto"
-tags: ["KCP", "网络协议", "UDP", "ARQ", "低延迟", "传输层", "C语言", "开源项目"]
-categories: ["系统与基础设施", "后端"]
+entry_kind: auto
+tags:
+- KCP
+- 网络协议
+- UDP
+- ARQ
+- 低延迟
+- 传输层
+- C语言
+- 开源项目
+categories:
+- 系统与基础设施
+- 后端
 source: github_trending
 external_url: https://github.com/skywind3000/kcp
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 🚀 🚀 KCP：极速可靠传输！🔥 GitHub之星Skywind3000力作！⚡️

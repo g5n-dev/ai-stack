@@ -20,6 +20,12 @@ description: 以下是内容的中文总结： **Code-A1：基于强化学习的
 external_url: http://arxiv.org/abs/2603.15611v1
 scenarios:
 - 大语言模型
+aliases:
+- /posts/20260318-arxiv_ai-code-a1-adversarial-evolving-of-code-llm-and-test--3/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Code-A1：基于强化学习的代码与测试大模型对抗进化
@@ -285,8 +291,8 @@ Code-A1 的核心在于同时训练两个模型：Code LLM（负责生成代码�
 
 ### 相关文章
 
-- [基于能量函数的语言模型特征级微调方法]({{< relref "posts/20260314-arxiv_ai-matching-features-not-tokens-energy-based-fine-tun-4.md" >}})
-- [让 Claude 编写 CUDA 内核并指导开源模型]({{< relref "posts/20260129-blogs_podcasts-we-got-claude-to-build-cuda-kernels-and-teach-open-7.md" >}})
-- [让 Claude 编写 CUDA 内核并指导开源模型]({{< relref "posts/20260129-blogs_podcasts-we-got-claude-to-build-cuda-kernels-and-teach-open-8.md" >}})
+- [基于能量函数的语言模型特征级微调方法]({{< relref "posts/20260313-arxiv_ai-matching-features-not-tokens-energy-based-fine-tun-4.md" >}})
+- [让 Claude 编写 CUDA 内核并指导开源模型]({{< relref "posts/20260129-blogs_podcasts-we-got-claude-to-build-cuda-kernels-and-teach-open-6.md" >}})
+- [让 Claude 编写 CUDA 内核并指导开源模型]({{< relref "posts/20260129-blogs_podcasts-we-got-claude-to-build-cuda-kernels-and-teach-open-6.md" >}})
 - [2026年AI展望：LLM、智能体、缩放定律与中国发展]({{< relref "posts/20260201-blogs_podcasts-490-state-of-ai-in-2026-llms-coding-scaling-laws-c-0.md" >}})
-- [AI 基准测试新进展：Game Arena 推进评估方法]({{< relref "posts/20260203-hacker_news-advancing-ai-benchmarking-with-game-arena-14.md" >}})
+- [AI 基准测试新进展：Game Arena 推进评估方法]({{< relref "posts/20260202-hacker_news-advancing-ai-benchmarking-with-game-arena-2.md" >}})

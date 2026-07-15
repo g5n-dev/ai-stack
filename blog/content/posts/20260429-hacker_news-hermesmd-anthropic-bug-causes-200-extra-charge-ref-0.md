@@ -1,14 +1,30 @@
 ---
-title: "HERMES.md漏洞致200美元额外扣费 Anthropic拒绝退款"
-date: 2026-04-29T21:35:30+08:00
+title: HERMES.md漏洞致200美元额外扣费 Anthropic拒绝退款
+date: 2026-04-29 21:35:30+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Anthropic", "费用争议", "服务bug", "退款政策", "消费者权益", "AI公司", "技术漏洞", "收费问题"]
-categories: ["大模型", "产品与创业"]
+entry_kind: auto
+tags:
+- Anthropic
+- 费用争议
+- 服务bug
+- 退款政策
+- 消费者权益
+- AI公司
+- 技术漏洞
+- 收费问题
+categories:
+- 大模型
+- 产品与创业
 source: hacker_news
-description: "在最近的 HERMES.md 使用案例中，一次计费错误导致用户被多扣除约 200 美元，随后平台拒绝退款，引发了对系统可靠性的担忧。本文通过剖析该 bug 的触发路径和计费流程，解释为何会产生额外费用，并指出用户在遇到类似异常时应如何快速收集证据、联系支持，以争取合理的赔偿或退款。阅读本文后，您将掌握识别和防范此类计费"
+description: 在最近的 HERMES.md 使用案例中，一次计费错误导致用户被多扣除约 200 美元，随后平台拒绝退款，引发了对系统可靠性的担忧。本文通过剖析该
+  bug 的触发路径和计费流程，解释为何会产生额外费用，并指出用户在遇到类似异常时应如何快速收集证据、联系支持，以争取合理的赔偿或退款。阅读本文后，您将掌握识别和防范此类计费
 external_url: https://github.com/anthropics/claude-code/issues/53262
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # HERMES.md漏洞致200美元额外扣费 Anthropic拒绝退款
@@ -79,9 +95,9 @@ scenarios: ["AI/ML项目"]
 
 ### 相关文章
 
-- [Claude Is a Space to Think]({{< relref "posts/20260204-hacker_news-claude-is-a-space-to-think-17.md" >}})
-- [Claude：一个用于深度思考的交互空间]({{< relref "posts/20260204-hacker_news-claude-is-a-space-to-think-5.md" >}})
+- [Claude Is a Space to Think]({{< relref "posts/20260204-hacker_news-claude-is-a-space-to-think-8.md" >}})
+- [Claude：一个用于深度思考的交互空间]({{< relref "posts/20260204-hacker_news-claude-is-a-space-to-think-8.md" >}})
 - [利用 Claude Opus 4.6 推进金融业务发展]({{< relref "posts/20260205-hacker_news-advancing-finance-with-claude-opus-46-14.md" >}})
 - [Dario Amodei：AI指数增长阶段即将终结]({{< relref "posts/20260213-hacker_news-dario-amodei-we-are-near-the-end-of-the-exponentia-18.md" >}})
-- [Gemini 3 Deep Think发布；Anthropic估值达380B；GPT-5.3-Codex与Mi]({{< relref "posts/20260214-blogs_podcasts-ainews-new-gemini-3-deep-think-anthropic-30b-380b--5.md" >}})
+- [Gemini 3 Deep Think发布；Anthropic估值达380B；GPT-5.3-Codex与Mi]({{< relref "posts/20260213-blogs_podcasts-ainews-new-gemini-3-deep-think-anthropic-30b-380b--0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

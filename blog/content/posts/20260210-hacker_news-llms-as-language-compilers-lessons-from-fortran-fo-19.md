@@ -1,14 +1,31 @@
 ---
-title: "LLM 作为语言编译器：Fortran 对编程未来的启示"
-date: 2026-02-10T09:46:51+08:00
+title: LLM 作为语言编译器：Fortran 对编程未来的启示
+date: 2026-02-10 09:46:51+08:00
 draft: false
-entry_kind: "auto"
-tags: ["LLM", "编译器", "Fortran", "编程语言", "代码生成", "AI 编程", "软件工程", "技术演进"]
-categories: ["大模型", "开发工具"]
+entry_kind: auto
+tags:
+- LLM
+- 编译器
+- Fortran
+- 编程语言
+- 代码生成
+- AI 编程
+- 软件工程
+- 技术演进
+categories:
+- 大模型
+- 开发工具
 source: hacker_news
-description: "将大语言模型视为“语言编译器”而非单纯的聊天机器人，为我们重新审视软件开发提供了独特的视角。回顾 Fortran 的历史，我们可以看到抽象层如何重塑编程效率，而 LLMs 正在将自然语言转化为机器可执行的代码，进一步降低了技术门槛。本文将探讨这一范式转变，分析其对未来编码工作流的深远影响，以及开发者应如何适应这一趋势。"
+description: 将大语言模型视为“语言编译器”而非单纯的聊天机器人，为我们重新审视软件开发提供了独特的视角。回顾 Fortran 的历史，我们可以看到抽象层如何重塑编程效率，而
+  LLMs 正在将自然语言转化为机器可执行的代码，进一步降低了技术门槛。本文将探讨这一范式转变，分析其对未来编码工作流的深远影响，以及开发者应如何适应这一趋势。
 external_url: https://cyber-omelette.com/posts/the-abstraction-rises.html
-scenarios: ["大语言模型", "AI/ML项目"]
+scenarios:
+- 大语言模型
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # LLM 作为语言编译器：Fortran 对编程未来的启示
@@ -385,9 +402,9 @@ MosaicML 推出的 Mosaic Composer 平台引入了基于 LLM 的配置生成能�
 
 ### 相关文章
 
-- [大语言模型成为新型高级编程语言]({{< relref "posts/20260208-hacker_news-llms-as-the-new-high-level-language-11.md" >}})
-- [LLM成为新型高级编程语言]({{< relref "posts/20260208-hacker_news-llms-as-the-new-high-level-language-16.md" >}})
+- [大语言模型成为新型高级编程语言]({{< relref "posts/20260208-hacker_news-llms-as-the-new-high-level-language-8.md" >}})
+- [LLM成为新型高级编程语言]({{< relref "posts/20260208-hacker_news-llms-as-the-new-high-level-language-8.md" >}})
 - [大语言模型成为新一代高级编程语言]({{< relref "posts/20260208-hacker_news-llms-as-the-new-high-level-language-8.md" >}})
 - [LLM 不应取代编译器：语言模型与符号编译的差异分析]({{< relref "posts/20260206-hacker_news-llms-could-be-but-shouldnt-be-compilers-0.md" >}})
-- [AI 编程代理已全面替代我使用的所有开发框架]({{< relref "posts/20260207-hacker_news-coding-agents-have-replaced-every-framework-i-used-10.md" >}})
+- [AI 编程代理已全面替代我使用的所有开发框架]({{< relref "posts/20260207-hacker_news-coding-agents-have-replaced-every-framework-i-used-8.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

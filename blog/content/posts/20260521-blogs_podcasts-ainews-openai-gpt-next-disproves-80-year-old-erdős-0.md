@@ -1,14 +1,29 @@
 ---
-title: "OpenAI GPT-next千美元内否证80年Erdős平面问题"
-date: 2026-05-21T15:49:52+08:00
+title: OpenAI GPT-next千美元内否证80年Erdős平面问题
+date: 2026-05-21 15:49:52+08:00
 draft: false
-entry_kind: "auto"
-tags: ["OpenAI", "GPT-next", "Erdos平面", "数学证明", "AI数学", "低费用", "大模型", "千美元"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- OpenAI
+- GPT-next
+- Erdos平面
+- 数学证明
+- AI数学
+- 低费用
+- 大模型
+- 千美元
+categories:
+- 大模型
+- 论文
 source: blogs_podcasts
-description: "OpenAI最新模型GPT‑next在平面单位距离问题上取得突破，成功证伪了已逾八十年的埃尔德什猜想。不同于传统证明需耗费大量算力，这项工作仅花费不到一千美元的计算资源，展示了语言模型在组合几何等高难度数学中的实用价值。本文将梳理其求解思路、关键数据结构及实验设置，帮助读者了解在有限预算下利用AI推动前沿数学研究的可行"
+description: OpenAI最新模型GPT‑next在平面单位距离问题上取得突破，成功证伪了已逾八十年的埃尔德什猜想。不同于传统证明需耗费大量算力，这项工作仅花费不到一千美元的计算资源，展示了语言模型在组合几何等高难度数学中的实用价值。本文将梳理其求解思路、关键数据结构及实验设置，帮助读者了解在有限预算下利用AI推动前沿数学研究的可行
 external_url: https://www.latent.space/p/ainews-openai-gpt-next-disproves
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # OpenAI GPT-next千美元内否证80年Erdős平面问题
@@ -115,9 +130,9 @@ AI在数学证明领域的成功应用，预示着科学研究方法论的潜在
 
 ### 相关文章
 
-- [GPT-5.2推导新胶子振幅公式获正式验证]({{< relref "posts/20260214-blogs_podcasts-gpt-52-derives-a-new-result-in-theoretical-physics-1.md" >}})
-- [GPT-5.2 提出胶子振幅新公式并获合作者验证]({{< relref "posts/20260216-blogs_podcasts-gpt-52-derives-a-new-result-in-theoretical-physics-2.md" >}})
-- [GPT-5.2提出新胶子振幅公式获学术验证]({{< relref "posts/20260217-blogs_podcasts-gpt-52-derives-a-new-result-in-theoretical-physics-2.md" >}})
-- [GPT-5.2提出胶子振幅新公式并获验证]({{< relref "posts/20260217-blogs_podcasts-gpt-52-derives-a-new-result-in-theoretical-physics-3.md" >}})
-- [GPT-5.2推导胶子振幅新公式并获验证]({{< relref "posts/20260218-blogs_podcasts-gpt-52-derives-a-new-result-in-theoretical-physics-10.md" >}})
+- [GPT-5.2推导新胶子振幅公式获正式验证]({{< relref "posts/20260213-hacker_news-gpt-52-derives-a-new-result-in-theoretical-physics-0.md" >}})
+- [GPT-5.2 提出胶子振幅新公式并获合作者验证]({{< relref "posts/20260213-hacker_news-gpt-52-derives-a-new-result-in-theoretical-physics-0.md" >}})
+- [GPT-5.2提出新胶子振幅公式获学术验证]({{< relref "posts/20260213-hacker_news-gpt-52-derives-a-new-result-in-theoretical-physics-0.md" >}})
+- [GPT-5.2提出胶子振幅新公式并获验证]({{< relref "posts/20260213-hacker_news-gpt-52-derives-a-new-result-in-theoretical-physics-0.md" >}})
+- [GPT-5.2推导胶子振幅新公式并获验证]({{< relref "posts/20260213-hacker_news-gpt-52-derives-a-new-result-in-theoretical-physics-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

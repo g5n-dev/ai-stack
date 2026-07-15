@@ -1,14 +1,30 @@
 ---
-title: "AI建议疲劳：开发者对LLM的审慎态度"
-date: 2026-07-11T23:38:48+08:00
+title: AI建议疲劳：开发者对LLM的审慎态度
+date: 2026-07-11 23:38:48+08:00
 draft: false
-entry_kind: "auto"
-tags: ["LLM", "开发者", "建议疲劳", "AI焦虑", "过度依赖", "代码质量", "效率下降", "心理负担"]
-categories: ["大模型", "效率与方法论"]
+entry_kind: auto
+tags:
+- LLM
+- 开发者
+- 建议疲劳
+- AI焦虑
+- 过度依赖
+- 代码质量
+- 效率下降
+- 心理负担
+categories:
+- 大模型
+- 效率与方法论
 source: hacker_news
-description: "在AI模型日新月异的今天，很多人习惯性地把问题抛给大型语言模型，却忽略了自身思考的价值。本文探讨了“一有问题就问 LLM”背后的认知陷阱，分析了对信息质量和创新能力的潜在影响，并提供实用的评估框架，帮助读者在利用模型便利的同时，保持独立判断和深度学习的习惯。"
+description: 在AI模型日新月异的今天，很多人习惯性地把问题抛给大型语言模型，却忽略了自身思考的价值。本文探讨了“一有问题就问 LLM”背后的认知陷阱，分析了对信息质量和创新能力的潜在影响，并提供实用的评估框架，帮助读者在利用模型便利的同时，保持独立判断和深度学习的习惯。
 external_url: https://blog.yaelwrites.com/stop-telling-me-to-ask-an-llm
-scenarios: ["大语言模型", "AI/ML项目"]
+scenarios:
+- 大语言模型
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AI建议疲劳：开发者对LLM的审慎态度
@@ -82,7 +98,7 @@ scenarios: ["大语言模型", "AI/ML项目"]
 
 - [为何我不使用大语言模型辅助编程]({{< relref "posts/20260312-hacker_news-i-dont-use-llms-for-programming-0.md" >}})
 - [利用AI高效编写高质量代码的实践方法]({{< relref "posts/20260206-hacker_news-how-to-effectively-write-quality-code-with-ai-3.md" >}})
-- [利用AI高效编写高质量代码的实践指南]({{< relref "posts/20260206-hacker_news-how-to-effectively-write-quality-code-with-ai-5.md" >}})
-- [利用AI高效编写高质量代码的实践指南]({{< relref "posts/20260206-hacker_news-how-to-effectively-write-quality-code-with-ai-6.md" >}})
-- [利用AI高效编写高质量代码的实践方法]({{< relref "posts/20260207-hacker_news-how-to-effectively-write-quality-code-with-ai-15.md" >}})
+- [利用AI高效编写高质量代码的实践指南]({{< relref "posts/20260206-hacker_news-how-to-effectively-write-quality-code-with-ai-3.md" >}})
+- [利用AI高效编写高质量代码的实践指南]({{< relref "posts/20260206-hacker_news-how-to-effectively-write-quality-code-with-ai-3.md" >}})
+- [利用AI高效编写高质量代码的实践方法]({{< relref "posts/20260206-hacker_news-how-to-effectively-write-quality-code-with-ai-3.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

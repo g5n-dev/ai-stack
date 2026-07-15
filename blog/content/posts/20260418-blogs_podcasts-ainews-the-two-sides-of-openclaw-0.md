@@ -1,14 +1,29 @@
 ---
-title: "AINews：OpenClaw的两面性"
-date: 2026-04-18T17:49:42+08:00
+title: AINews：OpenClaw的两面性
+date: 2026-04-18 17:49:42+08:00
 draft: false
-entry_kind: "auto"
-tags: ["OpenClaw", "AINews", "开源项目", "AI新闻", "播客", "双面性", "行业观察", "工具评测"]
-categories: ["开源生态"]
+entry_kind: auto
+tags:
+- OpenClaw
+- AINews
+- 开源项目
+- AI新闻
+- 播客
+- 双面性
+- 行业观察
+- 工具评测
+categories:
+- 开源生态
 source: blogs_podcasts
-description: "背景 OpenClaw 本周进入了一个相对平静的阶段，使我们有机会回顾它的最新动向。 两大侧面 1. **开源生态**：社区继续贡献代码、完善文档，保持较高的活跃度。 2. **商业化探索**：推出企业级支持、付费插件等服务，试图实现盈利。 现状与挑战 - 开源部分功能迭代趋于稳定，但新特性发布速度放缓。 - 商业化带"
+description: 背景 OpenClaw 本周进入了一个相对平静的阶段，使我们有机会回顾它的最新动向。 两大侧面 1. **开源生态**：社区继续贡献代码、完善文档，保持较高的活跃度。
+  2. **商业化探索**：推出企业级支持、付费插件等服务，试图实现盈利。 现状与挑战 - 开源部分功能迭代趋于稳定，但新特性发布速度放缓。 - 商业化带
 external_url: https://www.latent.space/p/ainews-the-two-sides-of-openclaw
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AINews：OpenClaw的两面性
@@ -181,7 +196,7 @@ OpenClaw 作为一款开放式机器人 AI 框架，其核心价值在于“开�
 
 ### 相关文章
 
-- [OpenClaw 开源 AI 智能体框架与 GitHub 增长记录]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-5.md" >}})
+- [OpenClaw 开源 AI 智能体框架与 GitHub 增长记录]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-0.md" >}})
 - [OpenClawInstaller：一键部署私人 AI 助手 OpenClaw]({{< relref "posts/20260216-juejin-一天一个开源项目第24篇openclawinstaller-一键部署私人-ai-助手-opencla-1.md" >}})
 - [Clawra：集成 fal.ai 与 xAI Grok 实现 AI 助手固定形象自拍]({{< relref "posts/20260217-juejin-一天一个开源项目第25篇clawra-为-openclaw-赋予自拍能力的-skill-0.md" >}})
 - [OpenClaw实战指南：从零部署24小时可执行任务的AI管家]({{< relref "posts/20260219-juejin-从零部署你的24小时ai管家openclaw完整实战指南附踩坑记录-1.md" >}})

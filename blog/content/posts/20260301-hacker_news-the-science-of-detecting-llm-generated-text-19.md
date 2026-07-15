@@ -6,7 +6,7 @@ entry_kind: auto
 tags:
 - LLM
 - 文本检测
-- AI安全
+- AI 安全
 - 机器学习
 - 深度学习
 - 自然语言处理
@@ -21,6 +21,10 @@ external_url: https://dl.acm.org/doi/10.1145/3624725
 scenarios:
 - 大语言模型
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # LLM生成文本检测：原理、方法与技术挑战

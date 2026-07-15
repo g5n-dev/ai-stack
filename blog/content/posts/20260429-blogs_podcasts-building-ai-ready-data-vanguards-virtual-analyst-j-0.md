@@ -1,14 +1,31 @@
 ---
-title: "Vanguard虚拟分析师：AI就绪数据的构建方法与业务成果"
-date: 2026-04-29T12:32:42+08:00
+title: Vanguard虚拟分析师：AI就绪数据的构建方法与业务成果
+date: 2026-04-29 12:32:42+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI就绪数据", "数据治理", "数据湖", "AWS", "虚拟分析师", "业务成果", "数据质量", "数据目录"]
-categories: ["数据", "AI 工程"]
+entry_kind: auto
+tags:
+- AI就绪数据
+- 数据治理
+- 数据湖
+- AWS
+- 虚拟分析师
+- 业务成果
+- 数据质量
+- 数据目录
+categories:
+- 数据
+- AI 工程
 source: blogs_podcasts
-description: "八项AI数据准备原则 - 数据完整性与一致性 - 及时更新与时效性 - 统一的数据治理与合规 - 元数据登记与数据目录 - 数据血缘追踪 - 访问安全与权限控制 - 开放可访问与自助服务 - 可观测性与监控 关键AWS服务 - Amazon S3（数据湖存储） - AWS Glue（数据目录与ETL） - Amazon"
+description: 八项AI数据准备原则 - 数据完整性与一致性 - 及时更新与时效性 - 统一的数据治理与合规 - 元数据登记与数据目录 - 数据血缘追踪
+  - 访问安全与权限控制 - 开放可访问与自助服务 - 可观测性与监控 关键AWS服务 - Amazon S3（数据湖存储） - AWS Glue（数据目录与ETL）
+  - Amazon
 external_url: https://aws.amazon.com/blogs/machine-learning/building-ai-ready-data-vanguards-virtual-analyst-journey
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Vanguard虚拟分析师：AI就绪数据的构建方法与业务成果
@@ -167,8 +184,8 @@ Vanguard的实践展示了在受监管金融环境中，如何通过云原生技
 ### 相关文章
 
 - [利用 SageMaker Catalog 构建离线特征库的实践指南]({{< relref "posts/20260316-blogs_podcasts-build-an-offline-feature-store-using-amazon-sagema-1.md" >}})
-- [利用 SageMaker Catalog 构建离线特征库的分步指南]({{< relref "posts/20260316-blogs_podcasts-build-an-offline-feature-store-using-amazon-sagema-3.md" >}})
-- [使用 SageMaker Catalog 构建离线特征库的实践指南]({{< relref "posts/20260316-blogs_podcasts-build-an-offline-feature-store-using-amazon-sagema-5.md" >}})
-- [基于 SageMaker Unified Studio 构建离线特征存储]({{< relref "posts/20260317-blogs_podcasts-build-an-offline-feature-store-using-amazon-sagema-11.md" >}})
-- [基于SageMaker Unified Studio构建离线特征库指南]({{< relref "posts/20260317-blogs_podcasts-build-an-offline-feature-store-using-amazon-sagema-12.md" >}})
+- [利用 SageMaker Catalog 构建离线特征库的分步指南]({{< relref "posts/20260316-blogs_podcasts-build-an-offline-feature-store-using-amazon-sagema-1.md" >}})
+- [使用 SageMaker Catalog 构建离线特征库的实践指南]({{< relref "posts/20260316-blogs_podcasts-build-an-offline-feature-store-using-amazon-sagema-1.md" >}})
+- [基于 SageMaker Unified Studio 构建离线特征存储]({{< relref "posts/20260316-blogs_podcasts-build-an-offline-feature-store-using-amazon-sagema-1.md" >}})
+- [基于SageMaker Unified Studio构建离线特征库指南]({{< relref "posts/20260316-blogs_podcasts-build-an-offline-feature-store-using-amazon-sagema-1.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

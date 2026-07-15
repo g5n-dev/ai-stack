@@ -20,6 +20,12 @@ description: 以下是关于该论文内容的中文总结： **论文题目：T
 external_url: http://arxiv.org/abs/2603.03278v1
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260305-arxiv_ai-tether-autonomous-functional-play-with-corresponde-2/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Tether：基于对应关系轨迹扭曲的自主功能玩
@@ -440,8 +446,8 @@ Tether 的核心在于利用演示视频和实时几何计算来生成轨迹，�
 
 ### 相关文章
 
-- [视觉语言模型能否通过交互学习直观物理]({{< relref "posts/20260207-arxiv_ai-can-vision-language-models-learn-intuitive-physics-5.md" >}})
-- [视觉语言模型能否通过交互学习直观物理]({{< relref "posts/20260209-arxiv_ai-can-vision-language-models-learn-intuitive-physics-5.md" >}})
+- [视觉语言模型能否通过交互学习直观物理]({{< relref "posts/20260206-arxiv_ai-can-vision-language-models-learn-intuitive-physics-5.md" >}})
+- [视觉语言模型能否通过交互学习直观物理]({{< relref "posts/20260206-arxiv_ai-can-vision-language-models-learn-intuitive-physics-5.md" >}})
 - [仿真筛选模块化策略：从人类视频学习有效行为]({{< relref "posts/20260216-arxiv_ai-imitating-what-works-simulation-filtered-modular-p-0.md" >}})
-- [PaperBanana：面向AI科研人员的学术绘图自动化工具]({{< relref "posts/20260203-arxiv_ai-paperbanana-automating-academic-illustration-for-a-7.md" >}})
+- [PaperBanana：面向AI科研人员的学术绘图自动化工具]({{< relref "posts/20260202-arxiv_ai-paperbanana-automating-academic-illustration-for-a-7.md" >}})
 - [利用辅助信息实现少样本设计优化]({{< relref "posts/20260213-arxiv_ai-few-shot-design-optimization-by-exploiting-auxilia-7.md" >}})

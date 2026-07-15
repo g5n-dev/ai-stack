@@ -1,14 +1,30 @@
 ---
-title: "CODE-SHARP：基于分层奖励程序的技能持续演化框架"
-date: 2026-02-11T23:34:28+08:00
+title: CODE-SHARP：基于分层奖励程序的技能持续演化框架
+date: 2026-02-11 23:34:28+08:00
 draft: false
-entry_kind: "auto"
-tags: ["CODE-SHARP", "强化学习", "RL", "开放式发现", "技能演化", "分层奖励", "基础模型", "Craftax"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- CODE-SHARP
+- 强化学习
+- RL
+- 开放式发现
+- 技能演化
+- 分层奖励
+- 基础模型
+- Craftax
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "这段内容介绍了**CODE-SHARP**，这是一个旨在解决人工智能在**开放式技能发现**（Open-ended Skill Discovery）方面挑战的新框架。以下是核心要点总结： 1. **背景与挑战**： 虽然强化学习（RL）非常强大，但它通常依赖人工设计的奖励函数。在开放式发现中，由于潜在的有意义技能是未知"
+description: 这段内容介绍了**CODE-SHARP**，这是一个旨在解决人工智能在**开放式技能发现**（Open-ended Skill Discovery）方面挑战的新框架。以下是核心要点总结：
+  1. **背景与挑战**： 虽然强化学习（RL）非常强大，但它通常依赖人工设计的奖励函数。在开放式发现中，由于潜在的有意义技能是未知
 external_url: http://arxiv.org/abs/2602.10085v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # CODE-SHARP：基于分层奖励程序的技能持续演化框架
@@ -507,9 +523,9 @@ CODE-SHARP 强调技能的可重用性。在编写奖励程序时，应尽量使
 
 ### 相关文章
 
-- [DynaWeb：基于模型的强化学习网页智能体]({{< relref "posts/20260201-arxiv_ai-dynaweb-model-based-reinforcement-learning-of-web--6.md" >}})
+- [DynaWeb：基于模型的强化学习网页智能体]({{< relref "posts/20260130-arxiv_ai-dynaweb-model-based-reinforcement-learning-of-web--6.md" >}})
 - [🔥POPE：用特权探索让AI学会解决复杂难题！]({{< relref "posts/20260127-arxiv_ai-pope-learning-to-reason-on-hard-problems-via-privi-8.md" >}})
-- [🚀复用FLOPs！RL突破性扩展：超离策略前缀如何解决硬难题？]({{< relref "posts/20260128-arxiv_ai-reuse-your-flops-scaling-rl-on-hard-problems-by-co-1.md" >}})
+- [🚀复用FLOPs！RL突破性扩展：超离策略前缀如何解决硬难题？]({{< relref "posts/20260127-arxiv_ai-reuse-your-flops-scaling-rl-on-hard-problems-by-co-1.md" >}})
 - [NVIDIA Cosmos策略：提升机器人控制能力]({{< relref "posts/20260129-blogs_podcasts-introducing-nvidia-cosmos-policy-for-advanced-robo-0.md" >}})
 - [RN-D：基于正则化网络的离散分类演员与同策强化学习]({{< relref "posts/20260202-arxiv_ai-rn-d-discretized-categorical-actors-with-regulariz-7.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

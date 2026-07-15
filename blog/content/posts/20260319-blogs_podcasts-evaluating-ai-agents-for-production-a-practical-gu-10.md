@@ -4,7 +4,7 @@ date: 2026-03-19 18:55:56+08:00
 draft: false
 entry_kind: auto
 tags:
-- AI代理
+- AI 代理
 - 评估系统
 - Strands Evals
 - 多轮模拟
@@ -21,6 +21,12 @@ external_url: https://aws.amazon.com/blogs/machine-learning/evaluating-ai-agents
 scenarios:
 - AI/ML项目
 - 大语言模型
+aliases:
+- /posts/20260320-blogs_podcasts-evaluating-ai-agents-for-production-a-practical-gu-14/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 用Strands Evals系统评估AI代理的实践指南
@@ -365,7 +371,7 @@ Strands Evals的技术实现可能包含：
 ### 相关文章
 
 - [波音747工程史对现代AI编程代理的启示]({{< relref "posts/20260228-hacker_news-747s-and-coding-agents-8.md" >}})
-- [面向AI代理的内容优化策略]({{< relref "posts/20260314-hacker_news-optimizing-content-for-agents-11.md" >}})
-- [授予Claude控制权：用笔式绘图仪生成实体艺术]({{< relref "posts/20260216-hacker_news-i-gave-claude-access-to-my-pen-plotter-6.md" >}})
-- [中国开源AI生态架构选择：DeepSeek之外的技术路径]({{< relref "posts/20260129-blogs_podcasts-architectural-choices-in-chinas-open-source-ai-eco-9.md" >}})
-- [让 Claude 编写 CUDA 内核并指导开源模型]({{< relref "posts/20260129-blogs_podcasts-we-got-claude-to-build-cuda-kernels-and-teach-open-7.md" >}})
+- [面向AI代理的内容优化策略]({{< relref "posts/20260314-hacker_news-optimizing-content-for-agents-4.md" >}})
+- [授予Claude控制权：用笔式绘图仪生成实体艺术]({{< relref "posts/20260215-hacker_news-i-gave-claude-access-to-my-pen-plotter-16.md" >}})
+- [中国开源AI生态架构选择：DeepSeek之外的技术路径]({{< relref "posts/20260127-blogs_podcasts-architectural-choices-in-chinas-open-source-ai-eco-0.md" >}})
+- [让 Claude 编写 CUDA 内核并指导开源模型]({{< relref "posts/20260129-blogs_podcasts-we-got-claude-to-build-cuda-kernels-and-teach-open-6.md" >}})

@@ -1,14 +1,29 @@
 ---
-title: "Databricks双高管畅谈构建Agent Cloud的核心要素"
-date: 2026-06-24T23:25:47+08:00
+title: Databricks双高管畅谈构建Agent Cloud的核心要素
+date: 2026-06-24 23:25:47+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Agent Cloud", "开放生态", "统一API", "开源模型", "数据治理", "隐私计算", "成本控制", "开发者体验"]
-categories: ["AI 工程", "开源生态"]
+entry_kind: auto
+tags:
+- Agent Cloud
+- 开放生态
+- 统一API
+- 开源模型
+- 数据治理
+- 隐私计算
+- 成本控制
+- 开发者体验
+categories:
+- AI 工程
+- 开源生态
 source: blogs_podcasts
-description: "开放生态的必要性 在 AI 前沿（frontier）领域，技术迭代极快。Matei Zaharia 与 Reynold Xin 指出，若核心模型、工具链和数据只能由少数厂商封闭提供，企业将面临供应商锁定、成本高企以及创新受限的风险。开放的标准和开源实现可以让不同组织的系统互相兼容，形成可组合、可扩展的生态，从而让所有公"
+description: 开放生态的必要性 在 AI 前沿（frontier）领域，技术迭代极快。Matei Zaharia 与 Reynold Xin 指出，若核心模型、工具链和数据只能由少数厂商封闭提供，企业将面临供应商锁定、成本高企以及创新受限的风险。开放的标准和开源实现可以让不同组织的系统互相兼容，形成可组合、可扩展的生态，从而让所有公
 external_url: https://www.latent.space/p/databricks
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Databricks双高管畅谈构建Agent Cloud的核心要素
@@ -158,9 +173,9 @@ Zaharia和Xin的核心观点包括：首先，封闭生态会导致创新垄断�
 
 ### 相关文章
 
-- [中国开源AI生态架构选择：DeepSeek之外的技术路径]({{< relref "posts/20260129-blogs_podcasts-architectural-choices-in-chinas-open-source-ai-eco-9.md" >}})
+- [中国开源AI生态架构选择：DeepSeek之外的技术路径]({{< relref "posts/20260127-blogs_podcasts-architectural-choices-in-chinas-open-source-ai-eco-0.md" >}})
 - [2026年AI Agent开发三大范式深度解析]({{< relref "posts/20260611-juejin-cli-mcp-skill2026年ai-agent开发的三大范式-0.md" >}})
-- [Moonshot Kimi K25：成本减半超越Sonnet 45，原生图文视频与百并发Agent管理]({{< relref "posts/20260129-blogs_podcasts-ainews-moonshot-kimi-k25-beats-sonnet-45-at-half-t-2.md" >}})
-- [Moonshot Kimi K2.5：成本减半超越Sonnet 4.5，支持原生图文与百并发智能体]({{< relref "posts/20260129-blogs_podcasts-ainews-moonshot-kimi-k25-beats-sonnet-45-at-half-t-3.md" >}})
-- [Moonshot Kimi K2.5：半价超越Sonnet 4.5，原生图文视频与百并发Agent管理]({{< relref "posts/20260129-blogs_podcasts-ainews-moonshot-kimi-k25-beats-sonnet-45-at-half-t-4.md" >}})
+- [Moonshot Kimi K25：成本减半超越Sonnet 45，原生图文视频与百并发Agent管理]({{< relref "posts/20260129-blogs_podcasts-ainews-moonshot-kimi-k25-beats-sonnet-45-at-half-t-1.md" >}})
+- [Moonshot Kimi K2.5：成本减半超越Sonnet 4.5，支持原生图文与百并发智能体]({{< relref "posts/20260129-blogs_podcasts-ainews-moonshot-kimi-k25-beats-sonnet-45-at-half-t-1.md" >}})
+- [Moonshot Kimi K2.5：半价超越Sonnet 4.5，原生图文视频与百并发Agent管理]({{< relref "posts/20260129-blogs_podcasts-ainews-moonshot-kimi-k25-beats-sonnet-45-at-half-t-1.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

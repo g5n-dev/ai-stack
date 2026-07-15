@@ -11,7 +11,7 @@ tags:
 - Python
 - JavaScript
 - 开源
-- AI应用
+- AI 应用
 categories:
 - AI 工程
 - 大模型
@@ -22,6 +22,10 @@ external_url: https://juejin.cn/post/7613977422997323822
 scenarios:
 - AI/ML项目
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # LangChain 框架完全指南：基于 LLM 的应用开发
@@ -171,7 +175,7 @@ LCEL (LangChain Expression Language) 是 LangChain 推出的一种声明式语�
 
 ### 相关文章
 
-- [面向分析师的Python大语言模型实战指南]({{< relref "posts/20260219-hacker_news-large-language-models-for-mortals-a-practical-guid-11.md" >}})
+- [面向分析师的Python大语言模型实战指南]({{< relref "posts/20260219-hacker_news-large-language-models-for-mortals-a-practical-guid-13.md" >}})
 - [面向分析师的Python大语言模型实战指南]({{< relref "posts/20260219-hacker_news-large-language-models-for-mortals-a-practical-guid-13.md" >}})
 - [crawl4ai：面向AI时代的LLM友好型数据采集工具]({{< relref "posts/20260226-juejin-crawl4aiai时代的数据采集利器从入门到实战-0.md" >}})
 - [阿里云 Serverless 1月动态：LangChain 与 AgentRun 部署指南]({{< relref "posts/20260227-juejin-阿里云-serverless-计算-1-月产品动态-0.md" >}})

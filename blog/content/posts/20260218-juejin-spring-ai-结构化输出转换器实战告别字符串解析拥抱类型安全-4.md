@@ -1,14 +1,31 @@
 ---
-title: "Spring AI 结构化输出转换器实战：告别字符串解析，拥抱类型安全"
-date: 2026-02-18T07:39:44+08:00
+title: Spring AI 结构化输出转换器实战：告别字符串解析，拥抱类型安全
+date: 2026-02-18 07:39:44+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Spring AI", "LLM", "结构化输出", "类型安全", "Java", "JSON解析", "AI应用开发", "Spring生态"]
-categories: ["后端", "AI 工程"]
+entry_kind: auto
+tags:
+- Spring AI
+- LLM
+- 结构化输出
+- 类型安全
+- Java
+- JSON解析
+- AI应用开发
+- Spring生态
+categories:
+- 后端
+- AI 工程
 source: juejin
-description: "以下是关于该文章的简洁总结： **核心主题：** 本文主要介绍了 **Spring AI 的结构化输出转换器**功能，旨在解决大语言模型（LLM）应用开发中的一大痛点——如何将 AI 返回的非结构化纯文本字符串，自动转换为强类型的 Java 对象，从而实现类型安全，减少繁琐的手动解析代码。 **主要内容与背景：** 1"
+description: 以下是关于该文章的简洁总结： **核心主题：** 本文主要介绍了 **Spring AI 的结构化输出转换器**功能，旨在解决大语言模型（LLM）应用开发中的一大痛点——如何将
+  AI 返回的非结构化纯文本字符串，自动转换为强类型的 Java 对象，从而实现类型安全，减少繁琐的手动解析代码。 **主要内容与背景：** 1
 external_url: https://juejin.cn/post/7606988289872478259
-scenarios: ["AI/ML项目", "大语言模型"]
+scenarios:
+- AI/ML项目
+- 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Spring AI 结构化输出转换器实战：告别字符串解析，拥抱类型安全
@@ -206,7 +223,7 @@ Spring AI 底层通常依赖 Jackson 或类似的 JSON 库进行映射：
 
 - [LangChain实战：结合Memory与OutputParser构建有记忆的结构化助手]({{< relref "posts/20260210-juejin-langchain-进阶实战当-memory-遇上-outputparser打造有记忆的结构化助手-3.md" >}})
 - [Spring AI 多模型对话实战：统一接口与 Redis 记忆]({{< relref "posts/20260217-juejin-spring-ai-多模型对话-demo-实战openaiollama-一套接口redis-会话记忆-3.md" >}})
-- [LangChain 进阶实战：当 Memory 遇上 OutputParser，打造有记忆的结构化助手]({{< relref "posts/20260211-juejin-langchain-进阶实战当-memory-遇上-outputparser打造有记忆的结构化助手-3.md" >}})
+- [LangChain 进阶实战：当 Memory 遇上 OutputParser，打造有记忆的结构化助手]({{< relref "posts/20260210-juejin-langchain-进阶实战当-memory-遇上-outputparser打造有记忆的结构化助手-3.md" >}})
 - [New Relic NOVA：基于AWS构建企业级生成式AI生产力引擎]({{< relref "posts/20260210-blogs_podcasts-new-relic-transforms-productivity-with-generative--10.md" >}})
-- [利用 Amazon Bedrock 构建由 AI 驱动的招聘系统]({{< relref "posts/20260212-blogs_podcasts-ai-meets-hr-transforming-talent-acquisition-with-a-1.md" >}})
+- [利用 Amazon Bedrock 构建由 AI 驱动的招聘系统]({{< relref "posts/20260212-blogs_podcasts-ai-meets-hr-transforming-talent-acquisition-with-a-0.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

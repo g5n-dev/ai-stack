@@ -20,6 +20,12 @@ description: 人工智能虽已具备强大的模式识别能力，但在实现�
 external_url: https://arxiv.org/abs/2603.15381
 scenarios:
 - AI/ML项目
+aliases:
+- /posts/20260318-hacker_news-why-ai-systems-dont-learn-on-autonomous-learning-f-13/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 为何AI系统难以自主学习：认知科学视角的解析

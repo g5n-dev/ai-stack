@@ -1,14 +1,40 @@
 ---
-title: "Nemotron ColEmbed V2：基于ViDoRe V3的多模态检索模型"
-date: 2026-02-04T23:12:07+08:00
+title: Nemotron ColEmbed V2：基于ViDoRe V3的多模态检索模型
+date: 2026-02-04 23:12:07+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Nemotron", "ColEmbed", "ViDoRe", "多模态", "检索模型", "RAG", "NVIDIA", "ColBERT"]
-categories: ["大模型", "数据"]
+entry_kind: auto
+tags:
+- Nemotron
+- ColEmbed
+- ViDoRe
+- 多模态
+- 检索模型
+- RAG
+- NVIDIA
+- ColBERT
+categories:
+- 大模型
+- 数据
 source: blogs_podcasts
-description: "随着多模态信息检索需求的日益复杂，如何精准匹配跨模态内容已成为技术落地的关键瓶颈。本文介绍的 Nemotron ColEmbed V2 模型，凭借在 ViDoRe V3 排行榜上的优异表现，为解决这一难题提供了新思路。通过深入解析其架构设计与性能表现，读者将了解该模型如何提升检索系统的鲁棒性，以及如何将其应用于实际业务"
+description: 随着多模态信息检索需求的日益复杂，如何精准匹配跨模态内容已成为技术落地的关键瓶颈。本文介绍的 Nemotron ColEmbed V2 模型，凭借在
+  ViDoRe V3 排行榜上的优异表现，为解决这一难题提供了新思路。通过深入解析其架构设计与性能表现，读者将了解该模型如何提升检索系统的鲁棒性，以及如何将其应用于实际业务
 external_url: https://huggingface.co/blog/nvidia/nemotron-colembed-v2
-scenarios: ["RAG应用"]
+scenarios:
+- RAG应用
+aliases:
+- /posts/20260205-blogs_podcasts-nemotron-colembed-v2-raising-the-bar-for-multimoda-0/
+- /posts/20260205-blogs_podcasts-nemotron-colembed-v2-raising-the-bar-for-multimoda-1/
+- /posts/20260205-blogs_podcasts-nemotron-colembed-v2-raising-the-bar-for-multimoda-2/
+- /posts/20260205-blogs_podcasts-nemotron-colembed-v2-raising-the-bar-for-multimoda-3/
+- /posts/20260205-blogs_podcasts-nemotron-colembed-v2-raising-the-bar-for-multimoda-4/
+- /posts/20260205-blogs_podcasts-nemotron-colembed-v2-raising-the-bar-for-multimoda-6/
+- /posts/20260205-blogs_podcasts-nemotron-colembed-v2-raising-the-bar-for-multimoda-7/
+- /posts/20260205-blogs_podcasts-nemotron-colembed-v2-raising-the-bar-for-multimoda-8/
+- /posts/20260206-blogs_podcasts-nemotron-colembed-v2-raising-the-bar-for-multimoda-8/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Nemotron ColEmbed V2：基于ViDoRe V3的多模态检索模型
@@ -224,8 +250,8 @@ Nemotron ColEmbed V2 的最大创新在于**在保持迟交互机制带来的高
 ### 相关文章
 
 - [🇧🇷主权AI新突破！Nemotron-Personas-Brazil：共创数据引领未来]({{< relref "posts/20260128-blogs_podcasts-nemotron-personas-brazil-co-designed-data-for-sove-0.md" >}})
-- [Nemotron-Personas-Brazil：主权AI协同设计数据集]({{< relref "posts/20260129-blogs_podcasts-nemotron-personas-brazil-co-designed-data-for-sove-5.md" >}})
+- [Nemotron-Personas-Brazil：主权AI协同设计数据集]({{< relref "posts/20260128-blogs_podcasts-nemotron-personas-brazil-co-designed-data-for-sove-0.md" >}})
 - [💥文本为王！揭秘AI时代最被低估的核心价值！]({{< relref "posts/20260126-hacker_news-text-is-king-11.md" >}})
-- [Kirara-AI：支持多平台接入的多模态聊天机器人框架]({{< relref "posts/20260130-github_trending-lss233-kirara-ai-2.md" >}})
-- [基于大模型的主动思考AI助理：接入多平台与支持多模型]({{< relref "posts/20260204-github_trending-zhayujie-chatgpt-on-wechat-0.md" >}})
+- [Kirara-AI：支持多平台接入的多模态聊天机器人框架]({{< relref "posts/20260127-github_trending-lss233-kirara-ai-2.md" >}})
+- [基于大模型的主动思考AI助理：接入多平台与支持多模型]({{< relref "posts/20260131-github_trending-zhayujie-chatgpt-on-wechat-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

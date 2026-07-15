@@ -20,6 +20,10 @@ description: '**标题：从被动观察到主动批评：PRIMO R1利用强化�
 external_url: http://arxiv.org/abs/2603.15600v1
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 强化学习激发过程推理能力提升机器人操控性能
@@ -440,6 +444,6 @@ scenarios:
 
 - [强化注意力学习：基于奖励反馈的注意力机制优化方法]({{< relref "posts/20260205-arxiv_ai-reinforced-attention-learning-0.md" >}})
 - [受限群组相对策略优化]({{< relref "posts/20260206-arxiv_ai-constrained-group-relative-policy-optimization-1.md" >}})
-- [强化注意力学习：通过奖励机制优化视觉注意力模型]({{< relref "posts/20260206-arxiv_ai-reinforced-attention-learning-0.md" >}})
+- [强化注意力学习：通过奖励机制优化视觉注意力模型]({{< relref "posts/20260205-arxiv_ai-reinforced-attention-learning-0.md" >}})
 - [Kimi K2.5震撼开源！视觉SOTA Agent模型，性能炸裂🔥]({{< relref "posts/20260127-hacker_news-kimi-released-kimi-k25-open-source-visual-sota-age-2.md" >}})
 - [2026年AI展望：LLM、智能体、缩放定律与中国发展]({{< relref "posts/20260201-blogs_podcasts-490-state-of-ai-in-2026-llms-coding-scaling-laws-c-0.md" >}})

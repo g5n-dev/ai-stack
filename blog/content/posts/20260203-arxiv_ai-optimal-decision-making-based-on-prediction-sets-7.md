@@ -1,14 +1,30 @@
 ---
-title: "基于预测集的最优决策方法"
-date: 2026-02-03T03:49:30+08:00
+title: 基于预测集的最优决策方法
+date: 2026-02-03 03:49:30+08:00
 draft: false
-entry_kind: "auto"
-tags: ["预测集", "最优决策", "决策理论", "统计机器学习", "stat.ML", "不确定性量化", "序列决策", "风险控制"]
-categories: ["论文", "数据"]
+entry_kind: auto
+tags:
+- 预测集
+- 最优决策
+- 决策理论
+- 统计机器学习
+- stat.ML
+- 不确定性量化
+- 序列决策
+- 风险控制
+categories:
+- 论文
+- 数据
 source: arxiv
-description: "以下是对该内容的中文总结： 本文针对**如何利用预测集进行最优决策**这一核心问题，提出了一种基于决策理论的新框架，旨在解决传统预测集虽能保证覆盖率，但在实际应用中可能导致次优决策的问题。 主要贡献与创新点如下： 1. **理论框架与策略优化**： 作者建立了一个决策论框架，通过最小化符合预测集覆盖率保证的“最坏情况分"
+description: 以下是对该内容的中文总结： 本文针对**如何利用预测集进行最优决策**这一核心问题，提出了一种基于决策理论的新框架，旨在解决传统预测集虽能保证覆盖率，但在实际应用中可能导致次优决策的问题。
+  主要贡献与创新点如下： 1. **理论框架与策略优化**： 作者建立了一个决策论框架，通过最小化符合预测集覆盖率保证的“最坏情况分
 external_url: http://arxiv.org/abs/2602.00989v1
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 基于预测集的最优决策方法
@@ -524,7 +540,7 @@ $$ \min_{C \in \mathcal{C}} \sup_{P \in \mathcal{P}_{\text{amb}}} \mathbb{E}_{(X
 
 - [探索Transformer在表格数据变分自编码器中的位置]({{< relref "posts/20260129-arxiv_ai-exploring-transformer-placement-in-variational-aut-3.md" >}})
 - [后训练公平性控制：推荐系统动态公平性单训练框架]({{< relref "posts/20260129-arxiv_ai-post-training-fairness-control-a-single-train-fram-5.md" >}})
-- [探索Transformer在表格数据变分自编码器中的位置]({{< relref "posts/20260130-arxiv_ai-exploring-transformer-placement-in-variational-aut-3.md" >}})
+- [探索Transformer在表格数据变分自编码器中的位置]({{< relref "posts/20260129-arxiv_ai-exploring-transformer-placement-in-variational-aut-3.md" >}})
 - [🔥BONO-Bench震撼发布！首套可追溯Pareto集的双目标优化基准测试！]({{< relref "posts/20260126-arxiv_ai-bono-bench-a-comprehensive-test-suite-for-bi-objec-4.md" >}})
-- [🚀BONO-Bench：可追溯Pareto集的双目标优化基准测试！]({{< relref "posts/20260127-arxiv_ai-bono-bench-a-comprehensive-test-suite-for-bi-objec-4.md" >}})
+- [🚀BONO-Bench：可追溯Pareto集的双目标优化基准测试！]({{< relref "posts/20260126-arxiv_ai-bono-bench-a-comprehensive-test-suite-for-bi-objec-4.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

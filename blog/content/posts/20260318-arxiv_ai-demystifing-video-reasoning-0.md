@@ -21,6 +21,10 @@ description: '**总结：揭秘视频推理机制** 这篇研究揭示了基于�
 external_url: http://arxiv.org/abs/2603.16870v1
 scenarios:
 - Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Demystifing Video Reasoning
@@ -197,8 +201,8 @@ scenarios:
 
 ### 相关文章
 
-- [Learning on the Manifold: Unlocking Standard Diffusion]({{< relref "posts/20260212-arxiv_ai-learning-on-the-manifold-unlocking-standard-diffus-3.md" >}})
+- [Learning on the Manifold: Unlocking Standard Diffusion]({{< relref "posts/20260211-arxiv_ai-learning-on-the-manifold-unlocking-standard-diffus-3.md" >}})
 - [模式寻优结合均值寻优实现快速长视频生成]({{< relref "posts/20260302-arxiv_ai-mode-seeking-meets-mean-seeking-for-fast-long-vide-0.md" >}})
-- [BiGain：面向生成与分类任务的统一令牌压缩]({{< relref "posts/20260316-arxiv_ai-bigain-unified-token-compression-for-joint-generat-7.md" >}})
+- [BiGain：面向生成与分类任务的统一令牌压缩]({{< relref "posts/20260313-arxiv_ai-bigain-unified-token-compression-for-joint-generat-7.md" >}})
 - [基于表征编码器解锁标准扩散Transformer]({{< relref "posts/20260211-arxiv_ai-learning-on-the-manifold-unlocking-standard-diffus-3.md" >}})
 - [MonarchRT：面向实时视频生成的高效注意力机制]({{< relref "posts/20260213-arxiv_ai-monarchrt-efficient-attention-for-real-time-video--7.md" >}})

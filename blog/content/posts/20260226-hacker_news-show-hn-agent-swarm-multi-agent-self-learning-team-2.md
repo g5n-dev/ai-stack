@@ -5,7 +5,7 @@ draft: false
 entry_kind: auto
 tags:
 - Agent Swarm
-- Multi-agent
+- Multi-Agent
 - 自学习
 - 智能体框架
 - 开源
@@ -21,6 +21,12 @@ external_url: https://github.com/desplega-ai/agent-swarm
 scenarios:
 - 大语言模型
 - AI/ML项目
+aliases:
+- /posts/20260226-hacker_news-show-hn-agent-swarm-multi-agent-self-learning-team-6/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Agent Swarm：开源多智能体自学习团队框架

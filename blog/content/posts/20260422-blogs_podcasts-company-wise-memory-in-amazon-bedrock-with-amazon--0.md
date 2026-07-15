@@ -1,14 +1,30 @@
 ---
-title: "Amazon Bedrock公司级记忆功能：Neptune与Mem0驱动AI上下文持久化"
-date: 2026-04-22T17:15:09+08:00
+title: Amazon Bedrock公司级记忆功能：Neptune与Mem0驱动AI上下文持久化
+date: 2026-04-22 17:15:09+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Bedrock", "Neptune", "Mem0", "企业记忆", "AI代理", "图数据库", "聊天机器人", "无服务器"]
-categories: ["AI 工程", "系统与基础设施"]
+entry_kind: auto
+tags:
+- Bedrock
+- Neptune
+- Mem0
+- 企业记忆
+- AI 代理
+- 图数据库
+- 聊天机器人
+- 无服务器
+categories:
+- AI 工程
+- 系统与基础设施
 source: blogs_podcasts
-description: "功能概述 Amazon Bedrock 通过 Amazon Neptune 与 Mem0 实现 **公司级记忆**，为每个企业提供独立的持久上下文。AI 代理可以在多轮对话中持续学习、更新并调用该上下文，实现跨会话的智能响应。 关键技术点 - **持久化存储**：Neptune 提供图数据库能力，将公司特有信息以图结构"
+description: 功能概述 Amazon Bedrock 通过 Amazon Neptune 与 Mem0 实现 **公司级记忆**，为每个企业提供独立的持久上下文。AI
+  代理可以在多轮对话中持续学习、更新并调用该上下文，实现跨会话的智能响应。 关键技术点 - **持久化存储**：Neptune 提供图数据库能力，将公司特有信息以图结构
 external_url: https://aws.amazon.com/blogs/machine-learning/company-wise-memory-in-amazon-bedrock-with-amazon-neptune-and-mem0
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Amazon Bedrock公司级记忆功能：Neptune与Mem0驱动AI上下文持久化
@@ -171,8 +187,8 @@ Trend Micro 采用公司级记忆打造 **Trend Companion 聊天机器人**，
 ### 相关文章
 
 - [基于AWS CDK集成Rekognition、Neptune与Bedrock的智能照片搜索系统]({{< relref "posts/20260224-blogs_podcasts-build-an-intelligent-photo-search-using-amazon-rek-0.md" >}})
-- [基于 AWS CDK 集成 Rekognition 与 Neptune 构建智能图片搜索系统]({{< relref "posts/20260224-blogs_podcasts-build-an-intelligent-photo-search-using-amazon-rek-2.md" >}})
-- [基于 AWS CDK 集成 Rekognition、Neptune 与 Bedrock 构建智能图片搜索系统]({{< relref "posts/20260225-blogs_podcasts-build-an-intelligent-photo-search-using-amazon-rek-10.md" >}})
-- [基于 AWS CDK 集成 Rekognition 与 Neptune 构建智能图片搜索系统]({{< relref "posts/20260225-blogs_podcasts-build-an-intelligent-photo-search-using-amazon-rek-2.md" >}})
-- [基于 AWS CDK 集成 Rekognition、Neptune 与 Bedrock 构建智能照片搜索系统]({{< relref "posts/20260225-blogs_podcasts-build-an-intelligent-photo-search-using-amazon-rek-3.md" >}})
+- [基于 AWS CDK 集成 Rekognition 与 Neptune 构建智能图片搜索系统]({{< relref "posts/20260224-blogs_podcasts-build-an-intelligent-photo-search-using-amazon-rek-0.md" >}})
+- [基于 AWS CDK 集成 Rekognition、Neptune 与 Bedrock 构建智能图片搜索系统]({{< relref "posts/20260224-blogs_podcasts-build-an-intelligent-photo-search-using-amazon-rek-0.md" >}})
+- [基于 AWS CDK 集成 Rekognition 与 Neptune 构建智能图片搜索系统]({{< relref "posts/20260224-blogs_podcasts-build-an-intelligent-photo-search-using-amazon-rek-0.md" >}})
+- [基于 AWS CDK 集成 Rekognition、Neptune 与 Bedrock 构建智能照片搜索系统]({{< relref "posts/20260224-blogs_podcasts-build-an-intelligent-photo-search-using-amazon-rek-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

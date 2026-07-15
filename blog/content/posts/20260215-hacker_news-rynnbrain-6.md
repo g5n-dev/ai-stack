@@ -1,14 +1,31 @@
 ---
-title: "RynnBrain：基于神经形态计算的类脑加速系统"
-date: 2026-02-15T16:46:37+08:00
+title: RynnBrain：基于神经形态计算的类脑加速系统
+date: 2026-02-15 16:46:37+08:00
 draft: false
-entry_kind: "auto"
-tags: ["神经形态计算", "类脑计算", "硬件加速", "RynnBrain", "SNN", "脉冲神经网络", "FPGA", "异构计算"]
-categories: ["系统与基础设施", "AI 工程"]
+entry_kind: auto
+tags:
+- 神经形态计算
+- 类脑计算
+- 硬件加速
+- RynnBrain
+- SNN
+- 脉冲神经网络
+- FPGA
+- 异构计算
+categories:
+- 系统与基础设施
+- AI 工程
 source: hacker_news
-description: "RynnBrain 是一个面向复杂系统建模与仿真的技术框架，旨在解决传统方案在扩展性与实时性方面的瓶颈。随着数据密集型场景的增多，如何高效构建可维护的模型已成为开发者面临的核心挑战。本文将剖析其架构设计与关键特性，帮助读者掌握该工具的适用场景及落地路径。"
+description: RynnBrain 是一个面向复杂系统建模与仿真的技术框架，旨在解决传统方案在扩展性与实时性方面的瓶颈。随着数据密集型场景的增多，如何高效构建可维护的模型已成为开发者面临的核心挑战。本文将剖析其架构设计与关键特性，帮助读者掌握该工具的适用场景及落地路径。
 external_url: https://github.com/alibaba-damo-academy/RynnBrain
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+aliases:
+- /posts/20260215-hacker_news-rynnbrain-17/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # RynnBrain：基于神经形态计算的类脑加速系统
@@ -449,8 +466,8 @@ filter_news_by_keyword(news_data)
 ### 相关文章
 
 - [Opus 4.5 在 OTelBench 基准测试中得分仅 29%]({{< relref "posts/20260129-hacker_news-otelbench-ai-struggles-with-simple-sre-tasks-opus--1.md" >}})
-- [OTelBench评测：Opus 4.5在简单SRE任务中得分仅29%]({{< relref "posts/20260129-hacker_news-otelbench-ai-struggles-with-simple-sre-tasks-opus--4.md" >}})
-- [OTelBench评测：Opus 4.5在简单SRE任务中得分仅29%]({{< relref "posts/20260129-hacker_news-otelbench-ai-struggles-with-simple-sre-tasks-opus--5.md" >}})
-- [OTelBench基准测试：Opus 4.5在简单SRE任务中得分仅29%]({{< relref "posts/20260129-hacker_news-otelbench-ai-struggles-with-simple-sre-tasks-opus--7.md" >}})
+- [OTelBench评测：Opus 4.5在简单SRE任务中得分仅29%]({{< relref "posts/20260129-hacker_news-otelbench-ai-struggles-with-simple-sre-tasks-opus--1.md" >}})
+- [OTelBench评测：Opus 4.5在简单SRE任务中得分仅29%]({{< relref "posts/20260129-hacker_news-otelbench-ai-struggles-with-simple-sre-tasks-opus--1.md" >}})
+- [OTelBench基准测试：Opus 4.5在简单SRE任务中得分仅29%]({{< relref "posts/20260129-hacker_news-otelbench-ai-struggles-with-simple-sre-tasks-opus--1.md" >}})
 - [在8位摩托罗拉6809上运行深度卷积神经网络玩棋盘游戏]({{< relref "posts/20260129-hacker_news-playing-board-games-with-deep-convolutional-neural-12.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

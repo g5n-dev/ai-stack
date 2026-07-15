@@ -1,12 +1,25 @@
 ---
-title: "🔥实锤！研究证实：普及电动汽车真的能显著降低空气污染！🌍"
-date: 2026-01-25T12:39:55+08:00
+title: 🔥实锤！研究证实：普及电动汽车真的能显著降低空气污染！🌍
+date: 2026-01-25 12:39:55+08:00
 draft: false
-entry_kind: "auto"
-tags: ["电动汽车", "空气污染", "环境研究", "NO2", "PM2.5", "环境正义", "公共卫生", "气候变化"]
-categories: ["生活与杂谈"]
+entry_kind: auto
+tags:
+- 电动汽车
+- 空气污染
+- 环境研究
+- NO2
+- PM2.5
+- 环境正义
+- 公共卫生
+- 气候变化
+categories:
+- 生活与杂谈
 source: hacker_news
 external_url: https://keck.usc.edu/news/adoption-of-electric-vehicles-tied-to-real-world-reductions-in-air-pollution-study-finds
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 📰 🔥实锤！研究证实：普及电动汽车真的能显著降低空气污染！🌍

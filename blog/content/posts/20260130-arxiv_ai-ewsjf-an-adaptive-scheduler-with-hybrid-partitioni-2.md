@@ -1,14 +1,29 @@
 ---
-title: "EWSJF：面向混合负载LLM推理的自适应调度器"
-date: 2026-01-30T03:54:32+08:00
+title: EWSJF：面向混合负载LLM推理的自适应调度器
+date: 2026-01-30 03:54:32+08:00
 draft: false
-entry_kind: "auto"
-tags: ["LLM推理", "调度器", "vLLM", "混合负载", "EWSJF", "自适应调度", "性能优化", "队头阻塞"]
-categories: ["系统与基础设施", "大模型"]
+entry_kind: auto
+tags:
+- LLM 推理
+- 调度器
+- vLLM
+- 混合负载
+- EWSJF
+- 自适应调度
+- 性能优化
+- 队头阻塞
+categories:
+- 系统与基础设施
+- 大模型
 source: arxiv
-description: "**EWSJF：混合工作负载下的大模型推理自适应调度器** **1. 背景与挑战** 在大型语言模型（LLM）的服务推理中，系统通常需要处理“混合工作负载”，即对延迟敏感的短交互式查询（如对话）与追求吞吐量的长批处理请求（如批量生成）并存。传统的标准先入先出（FCFS）调度策略存在严重的“队头阻塞”问题，导致短请求的尾"
+description: '**EWSJF：混合工作负载下的大模型推理自适应调度器** **1. 背景与挑战** 在大型语言模型（LLM）的服务推理中，系统通常需要处理“混合工作负载”，即对延迟敏感的短交互式查询（如对话）与追求吞吐量的长批处理请求（如批量生成）并存。传统的标准先入先出（FCFS）调度策略存在严重的“队头阻塞”问题，导致短请求的尾'
 external_url: http://arxiv.org/abs/2601.21758v1
-scenarios: ["大语言模型"]
+scenarios:
+- 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # EWSJF：面向混合负载LLM推理的自适应调度器
@@ -332,8 +347,8 @@ EWSJF 将 GPU 的显存和计算资源动态划分为两部分，分别服务于
 ### 相关文章
 
 - [David Patterson重磅：LLM推理硬件的挑战与研究🚀！]({{< relref "posts/20260125-hacker_news-david-patterson-challenges-and-research-directions-5.md" >}})
-- [中国开源AI生态架构选择：DeepSeek之外的路径]({{< relref "posts/20260129-blogs_podcasts-architectural-choices-in-chinas-open-source-ai-eco-7.md" >}})
+- [中国开源AI生态架构选择：DeepSeek之外的路径]({{< relref "posts/20260127-blogs_podcasts-architectural-choices-in-chinas-open-source-ai-eco-0.md" >}})
 - [🚀 Zig内存布局深度解析：公式揭秘！🧠]({{< relref "posts/20260125-hacker_news-memory-layout-in-zig-with-formulas-17.md" >}})
 - [✨无需重构！直接将应用迁移至Cloudflare Workers！🚀]({{< relref "posts/20260126-hacker_news-you-can-just-port-things-to-cloudflare-workers-6.md" >}})
-- [🔥LLM序列标注新突破！揭秘高效策略，性能飙升！]({{< relref "posts/20260127-arxiv_ai-strategies-for-span-labeling-with-large-language-m-9.md" >}})
+- [🔥LLM序列标注新突破！揭秘高效策略，性能飙升！]({{< relref "posts/20260126-arxiv_ai-strategies-for-span-labeling-with-large-language-m-9.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

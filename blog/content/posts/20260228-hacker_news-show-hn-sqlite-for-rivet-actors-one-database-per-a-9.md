@@ -21,6 +21,10 @@ description: 在基于 Rivet 构建的多 Agent 系统中，如何高效且安�
 external_url: https://github.com/rivet-dev/rivet
 scenarios:
 - Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Rivet Actors 集成 SQLite：实现每 Agent 单独数据库

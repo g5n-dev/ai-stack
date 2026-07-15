@@ -1,14 +1,30 @@
 ---
-title: "Git Worktree 与 Claude Code 实现多终端并发开发"
-date: 2026-02-11T16:19:57+08:00
+title: Git Worktree 与 Claude Code 实现多终端并发开发
+date: 2026-02-11 16:19:57+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Git Worktree", "Claude Code", "AI 辅助编程", "并发开发", "Android 开发", "工作流优化", "多终端", "Git 技巧"]
-categories: ["开发工具", "效率与方法论"]
+entry_kind: auto
+tags:
+- Git Worktree
+- Claude Code
+- AI 辅助编程
+- 并发开发
+- Android 开发
+- 工作流优化
+- 多终端
+- Git 技巧
+categories:
+- 开发工具
+- 效率与方法论
 source: juejin
-description: "基于提供的标题和简短描述，以下是对该主题内容的总结： **核心主题：利用 Git Worktree 与 Claude Code 实现多终端并发开发** 本文主要介绍了一套结合 **Git Worktree** 与 **Claude Code AI** 的高效开发工作流，旨在解决传统开发流程中因 AI 生成代码而产生的等"
+description: 基于提供的标题和简短描述，以下是对该主题内容的总结： **核心主题：利用 Git Worktree 与 Claude Code 实现多终端并发开发**
+  本文主要介绍了一套结合 **Git Worktree** 与 **Claude Code AI** 的高效开发工作流，旨在解决传统开发流程中因 AI 生成代码而产生的等
 external_url: https://juejin.cn/post/7605214360085299236
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Git Worktree 与 Claude Code 实现多终端并发开发
@@ -245,9 +261,9 @@ git worktree prune
 
 ### 相关文章
 
-- [Claude Code 全面接入微软内部开发工作流]({{< relref "posts/20260202-hacker_news-claude-code-is-suddenly-everywhere-inside-microsof-10.md" >}})
-- [Claude Code 广泛集成至微软内部开发环境]({{< relref "posts/20260202-hacker_news-claude-code-is-suddenly-everywhere-inside-microsof-15.md" >}})
+- [Claude Code 全面接入微软内部开发工作流]({{< relref "posts/20260202-hacker_news-claude-code-is-suddenly-everywhere-inside-microsof-2.md" >}})
+- [Claude Code 广泛集成至微软内部开发环境]({{< relref "posts/20260202-hacker_news-claude-code-is-suddenly-everywhere-inside-microsof-2.md" >}})
 - [Claude Code 全面集成至微软内部开发工作流]({{< relref "posts/20260202-hacker_news-claude-code-is-suddenly-everywhere-inside-microsof-2.md" >}})
-- [Claude Code 全面集成至微软内部开发工作流]({{< relref "posts/20260202-hacker_news-claude-code-is-suddenly-everywhere-inside-microsof-6.md" >}})
-- [Claude Code 全面接入微软开发环境]({{< relref "posts/20260202-hacker_news-claude-code-is-suddenly-everywhere-inside-microsof-7.md" >}})
+- [Claude Code 全面集成至微软内部开发工作流]({{< relref "posts/20260202-hacker_news-claude-code-is-suddenly-everywhere-inside-microsof-2.md" >}})
+- [Claude Code 全面接入微软开发环境]({{< relref "posts/20260202-hacker_news-claude-code-is-suddenly-everywhere-inside-microsof-2.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

@@ -1,14 +1,21 @@
 ---
-title: "macOS本地语音转文字工具 Ghost Pepper"
-date: 2026-04-06T23:04:44+08:00
+title: macOS本地语音转文字工具 Ghost Pepper
+date: 2026-04-06 23:04:44+08:00
 draft: false
-entry_kind: "auto"
-tags: ["hacker_news"]
-categories: ["效率与方法论"]
+entry_kind: auto
+tags:
+- hacker_news
+categories:
+- 效率与方法论
 source: hacker_news
-description: "Ghost Pepper 是一款专为 macOS 设计的本地语音转文字工具，采用按住说话的方式实现即时转录，摆脱云端依赖，保障隐私和离线可用性。对于需要在会议、写作或代码注释时快速录入文字的用户，它提供了极低的延迟和高度本地化的模型，带来更流畅的输入体验。读者可以了解其技术实现、使用场景以及如何在自己的项目中集成或扩展"
+description: Ghost Pepper 是一款专为 macOS 设计的本地语音转文字工具，采用按住说话的方式实现即时转录，摆脱云端依赖，保障隐私和离线可用性。对于需要在会议、写作或代码注释时快速录入文字的用户，它提供了极低的延迟和高度本地化的模型，带来更流畅的输入体验。读者可以了解其技术实现、使用场景以及如何在自己的项目中集成或扩展
 external_url: https://github.com/matthartman/ghost-pepper
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # macOS本地语音转文字工具 Ghost Pepper
@@ -76,8 +83,8 @@ Ghost Pepper 作为本地语音转文字工具，在隐私保护方面提供了�
 ### 相关文章
 
 - [Mecha Comet：开源模块化 Linux 掌上电脑]({{< relref "posts/20260129-hacker_news-mecha-comet-open-modular-linux-handheld-computer-3.md" >}})
-- [Mecha Comet：开源模块化 Linux 掌上电脑]({{< relref "posts/20260129-hacker_news-mecha-comet-open-modular-linux-handheld-computer-4.md" >}})
-- [AI 正在重塑 B2B SaaS 商业模式]({{< relref "posts/20260205-hacker_news-ai-is-killing-b2b-saas-17.md" >}})
-- [AI Agent 现状：大模型智能体仍需八个月成熟]({{< relref "posts/20260210-hacker_news-eight-more-months-of-agents-16.md" >}})
+- [Mecha Comet：开源模块化 Linux 掌上电脑]({{< relref "posts/20260129-hacker_news-mecha-comet-open-modular-linux-handheld-computer-3.md" >}})
+- [AI 正在重塑 B2B SaaS 商业模式]({{< relref "posts/20260204-hacker_news-ai-is-killing-b2b-saas-11.md" >}})
+- [AI Agent 现状：大模型智能体仍需八个月成熟]({{< relref "posts/20260210-hacker_news-eight-more-months-of-agents-13.md" >}})
 - [Frontier AI agents violate ethical constraints 30–50% o]({{< relref "posts/20260210-hacker_news-frontier-ai-agents-violate-ethical-constraints-305-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

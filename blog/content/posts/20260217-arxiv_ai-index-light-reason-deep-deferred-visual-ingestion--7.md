@@ -1,14 +1,30 @@
 ---
-title: "延迟视觉摄入优化图文密集文档问答"
-date: 2026-02-17T03:10:02+08:00
+title: 延迟视觉摄入优化图文密集文档问答
+date: 2026-02-17 03:10:02+08:00
 draft: false
-entry_kind: "auto"
-tags: ["多模态", "文档问答", "VLM", "RAG", "视觉密集", "延迟摄入", "索引优化", "Token优化"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- 多模态
+- 文档问答
+- VLM
+- RAG
+- 视觉密集
+- 延迟摄入
+- 索引优化
+- Token优化
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "**论文总结：《Index Light, Reason Deep: Deferred Visual Ingestion for Visual-Dense Document Question Answering》** **1. 背景与问题** 现有的多模态文档问答方法普遍采用**“供给侧”**策略：在索引阶段对文档的每一"
+description: '**论文总结：《Index Light, Reason Deep: Deferred Visual Ingestion for Visual-Dense
+  Document Question Answering》** **1. 背景与问题** 现有的多模态文档问答方法普遍采用**“供给侧”**策略：在索引阶段对文档的每一'
 external_url: http://arxiv.org/abs/2602.14162v1
-scenarios: ["RAG应用"]
+scenarios:
+- RAG应用
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 延迟视觉摄入优化图文密集文档问答
@@ -546,8 +562,8 @@ DVI的设计基于以下核心假设：
 ### 相关文章
 
 - [Nemotron ColEmbed V2：基于ViDoRe V3的多模态检索模型]({{< relref "posts/20260204-blogs_podcasts-nemotron-colembed-v2-raising-the-bar-for-multimoda-0.md" >}})
-- [Nemotron ColEmbed V2：基于ViDoRe V3的多模态检索模型]({{< relref "posts/20260205-blogs_podcasts-nemotron-colembed-v2-raising-the-bar-for-multimoda-1.md" >}})
-- [Nemotron ColEmbed V2：基于ViDoRe V3的多模态检索模型]({{< relref "posts/20260205-blogs_podcasts-nemotron-colembed-v2-raising-the-bar-for-multimoda-3.md" >}})
-- [Nemotron ColEmbed V2：基于ViDoRe V3的多模态检索模型]({{< relref "posts/20260205-blogs_podcasts-nemotron-colembed-v2-raising-the-bar-for-multimoda-4.md" >}})
-- [Nemotron ColEmbed V2：基于ViDoRe V3的多模态检索模型]({{< relref "posts/20260205-blogs_podcasts-nemotron-colembed-v2-raising-the-bar-for-multimoda-6.md" >}})
+- [Nemotron ColEmbed V2：基于ViDoRe V3的多模态检索模型]({{< relref "posts/20260204-blogs_podcasts-nemotron-colembed-v2-raising-the-bar-for-multimoda-0.md" >}})
+- [Nemotron ColEmbed V2：基于ViDoRe V3的多模态检索模型]({{< relref "posts/20260204-blogs_podcasts-nemotron-colembed-v2-raising-the-bar-for-multimoda-0.md" >}})
+- [Nemotron ColEmbed V2：基于ViDoRe V3的多模态检索模型]({{< relref "posts/20260204-blogs_podcasts-nemotron-colembed-v2-raising-the-bar-for-multimoda-0.md" >}})
+- [Nemotron ColEmbed V2：基于ViDoRe V3的多模态检索模型]({{< relref "posts/20260204-blogs_podcasts-nemotron-colembed-v2-raising-the-bar-for-multimoda-0.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

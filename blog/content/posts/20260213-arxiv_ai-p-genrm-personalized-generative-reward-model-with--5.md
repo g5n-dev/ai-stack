@@ -1,14 +1,30 @@
 ---
-title: "P-GenRM：个性化生成式奖励模型与基于用户的测试时缩放"
-date: 2026-02-13T03:01:31+08:00
+title: P-GenRM：个性化生成式奖励模型与基于用户的测试时缩放
+date: 2026-02-13 03:01:31+08:00
 draft: false
-entry_kind: "auto"
-tags: ["P-GenRM", "个性化对齐", "奖励模型", "LLM", "测试时缩放", "RLHF", "用户偏好", "生成式评估"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- P-GenRM
+- 个性化对齐
+- 奖励模型
+- LLM
+- 测试时缩放
+- RLHF
+- 用户偏好
+- 生成式评估
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "以下是关于《P-GenRM: Personalized Generative Reward Model with Test-time User-based Scaling》的简洁总结： **核心目标** 该论文提出了 **P-GenRM**（个性化生成式奖励模型），旨在解决大语言模型（LLM）个性化对齐中的关键挑战：如"
+description: '以下是关于《P-GenRM: Personalized Generative Reward Model with Test-time User-based
+  Scaling》的简洁总结： **核心目标** 该论文提出了 **P-GenRM**（个性化生成式奖励模型），旨在解决大语言模型（LLM）个性化对齐中的关键挑战：如'
 external_url: http://arxiv.org/abs/2602.12116v1
-scenarios: ["大语言模型"]
+scenarios:
+- 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # P-GenRM：个性化生成式奖励模型与基于用户的测试时缩放
@@ -535,9 +551,9 @@ P-GenRM 通过引入个性化机制和测试时用户缩放，使得模型能够
 
 ### 相关文章
 
-- [探索面向智能体的推理奖励模型]({{< relref "posts/20260201-arxiv_ai-exploring-reasoning-reward-model-for-agents-4.md" >}})
+- [探索面向智能体的推理奖励模型]({{< relref "posts/20260130-arxiv_ai-exploring-reasoning-reward-model-for-agents-4.md" >}})
 - [RLAnything：完全动态强化学习系统构建环境、策略与奖励模型]({{< relref "posts/20260203-arxiv_ai-rlanything-forge-environment-policy-and-reward-mod-3.md" >}})
-- [通过文本反馈扩展强化学习的能力边界]({{< relref "posts/20260204-arxiv_ai-expanding-the-capabilities-of-reinforcement-learni-5.md" >}})
-- [基于人类反馈的强化学习：原理与应用]({{< relref "posts/20260207-hacker_news-reinforcement-learning-from-human-feedback-19.md" >}})
+- [通过文本反馈扩展强化学习的能力边界]({{< relref "posts/20260203-arxiv_ai-expanding-the-capabilities-of-reinforcement-learni-5.md" >}})
+- [基于人类反馈的强化学习：原理与应用]({{< relref "posts/20260207-hacker_news-reinforcement-learning-from-human-feedback-4.md" >}})
 - [基于人类反馈的强化学习机制解析]({{< relref "posts/20260207-hacker_news-reinforcement-learning-from-human-feedback-3.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

@@ -1,14 +1,30 @@
 ---
-title: "扩散模型降低期望估计方差的方法"
-date: 2026-05-21T20:21:46+08:00
+title: 扩散模型降低期望估计方差的方法
+date: 2026-05-21 20:21:46+08:00
 draft: false
-entry_kind: "auto"
-tags: ["扩散模型", "方差降低", "蒙特卡洛", "重要性采样", "分层抽样", "文本到3D", "单步蒸馏", "计算感知方差"]
-categories: ["论文", "大模型"]
+entry_kind: auto
+tags:
+- 扩散模型
+- 方差降低
+- 蒙特卡洛
+- 重要性采样
+- 分层抽样
+- 文本到3D
+- 单步蒸馏
+- 计算感知方差
+categories:
+- 论文
+- 大模型
 source: arxiv
-description: "背景 预训练扩散模型被冻结为教师，为文本到3D、单步蒸馏、数据归因等下游任务提供梯度。这些梯度本质上是噪声层和高斯采样的蒙特卡洛（MC）期望，估计方差大，导致每次采样都需昂贵的上游计算（渲染、仿真、编码），成为计算瓶颈。 方法 CARV（Compute‑Aware Variance‑accounting）框架提出层次化"
+description: 背景 预训练扩散模型被冻结为教师，为文本到3D、单步蒸馏、数据归因等下游任务提供梯度。这些梯度本质上是噪声层和高斯采样的蒙特卡洛（MC）期望，估计方差大，导致每次采样都需昂贵的上游计算（渲染、仿真、编码），成为计算瓶颈。
+  方法 CARV（Compute‑Aware Variance‑accounting）框架提出层次化
 external_url: http://arxiv.org/abs/2605.21489v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 扩散模型降低期望估计方差的方法
@@ -155,6 +171,6 @@ CARV的有效性依赖以下关键假设：第一，扩散噪声时间步的梯�
 - [IRL-DAL：基于能量引导扩散模型的自动驾驶安全自适应轨迹规划]({{< relref "posts/20260202-arxiv_ai-irl-dal-safe-and-adaptive-trajectory-planning-for--6.md" >}})
 - [粒子引导扩散模型求解偏微分方程]({{< relref "posts/20260202-arxiv_ai-particle-guided-diffusion-models-for-partial-diffe-8.md" >}})
 - [VideoGPA：提取几何先验实现三维一致视频生成]({{< relref "posts/20260202-arxiv_ai-videogpa-distilling-geometry-priors-for-3d-consist-0.md" >}})
-- [粒子引导扩散模型用于偏微分方程求解]({{< relref "posts/20260203-arxiv_ai-particle-guided-diffusion-models-for-partial-diffe-8.md" >}})
+- [粒子引导扩散模型用于偏微分方程求解]({{< relref "posts/20260202-arxiv_ai-particle-guided-diffusion-models-for-partial-diffe-8.md" >}})
 - [PixelGen：引入感知损失的像素扩散模型性能超越潜在扩散]({{< relref "posts/20260203-arxiv_ai-pixelgen-pixel-diffusion-beats-latent-diffusion-wi-2.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

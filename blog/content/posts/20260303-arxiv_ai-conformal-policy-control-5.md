@@ -21,6 +21,12 @@ description: '**共形策略控制** 本文介绍了一种名为“共形策略�
 external_url: http://arxiv.org/abs/2603.02196v1
 scenarios:
 - AI/ML项目
+aliases:
+- /posts/20260304-arxiv_ai-conformal-policy-control-5/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Conformal Policy Control：一种基于保形预测的策略控制方法
@@ -429,6 +435,6 @@ Conformal Policy Control 是将共形预测应用于 RL 策略以进行安全性
 
 - [非单调损失函数的保形风险控制方法]({{< relref "posts/20260224-arxiv_ai-conformal-risk-control-for-non-monotonic-losses-4.md" >}})
 - [基于预测集的最优决策方法]({{< relref "posts/20260203-arxiv_ai-optimal-decision-making-based-on-prediction-sets-7.md" >}})
-- [AI 基准测试新进展：Game Arena 推进评估方法]({{< relref "posts/20260203-hacker_news-advancing-ai-benchmarking-with-game-arena-14.md" >}})
+- [AI 基准测试新进展：Game Arena 推进评估方法]({{< relref "posts/20260202-hacker_news-advancing-ai-benchmarking-with-game-arena-2.md" >}})
 - [Agent World Model: Infinity Synthetic Environments for]({{< relref "posts/20260211-arxiv_ai-agent-world-model-infinity-synthetic-environments--7.md" >}})
 - [部分可观测平均场博弈的循环结构策略梯度算法]({{< relref "posts/20260224-arxiv_ai-recurrent-structural-policy-gradient-for-partially-6.md" >}})

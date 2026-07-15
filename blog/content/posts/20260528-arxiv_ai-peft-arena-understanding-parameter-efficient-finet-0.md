@@ -1,14 +1,30 @@
 ---
-title: "从稳定性与可塑性视角评估参数高效微调：PEFT-Arena平台"
-date: 2026-05-28T23:45:22+08:00
+title: 从稳定性与可塑性视角评估参数高效微调：PEFT-Arena平台
+date: 2026-05-28 23:45:22+08:00
 draft: false
-entry_kind: "auto"
-tags: ["参数高效微调", "大模型微调", "LoRA", "稳定性可塑性", "模型评估", "Adapter", "Prompt调优", "基准测试"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- 参数高效微调
+- 大模型微调
+- LoRA
+- 稳定性可塑性
+- 模型评估
+- Adapter
+- Prompt调优
+- 基准测试
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "背景与动机 Parameter‑efficient fine‑tuning (PEFT) 已成为大模型适配的标准手段，但现有评测主要关注下游精度，忽视预训练通用能力的保留。作者提出评估 PEFT 应从**稳定性‑可塑性**的权衡视角出发：既要适配目标任务，又要防止遗忘。 PEFT‑Arena 基准 构建 PEFT‑Ar"
+description: 背景与动机 Parameter‑efficient fine‑tuning (PEFT) 已成为大模型适配的标准手段，但现有评测主要关注下游精度，忽视预训练通用能力的保留。作者提出评估
+  PEFT 应从**稳定性‑可塑性**的权衡视角出发：既要适配目标任务，又要防止遗忘。 PEFT‑Arena 基准 构建 PEFT‑Ar
 external_url: http://arxiv.org/abs/2605.28819v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 从稳定性与可塑性视角评估参数高效微调：PEFT-Arena平台
@@ -134,9 +150,9 @@ PEFT-Arena为PEFT方法的标准化评测提供了可复用的基准框架，有
 
 ### 相关文章
 
-- [PLATE：用于几何感知持续学习的可塑性调谐高效适配器]({{< relref "posts/20260205-arxiv_ai-plate-plasticity-tunable-efficient-adapters-for-ge-0.md" >}})
-- [共享 LoRA 子空间实现近乎严格的持续学习]({{< relref "posts/20260207-arxiv_ai-shared-lora-subspaces-for-almost-strict-continual--0.md" >}})
-- [共享LoRA子空间实现近乎严格的持续学习]({{< relref "posts/20260208-arxiv_ai-shared-lora-subspaces-for-almost-strict-continual--0.md" >}})
-- [共享LoRA子空间实现近乎严格的持续学习]({{< relref "posts/20260209-arxiv_ai-shared-lora-subspaces-for-almost-strict-continual--0.md" >}})
+- [PLATE：用于几何感知持续学习的可塑性调谐高效适配器]({{< relref "posts/20260204-arxiv_ai-plate-plasticity-tunable-efficient-adapters-for-ge-0.md" >}})
+- [共享 LoRA 子空间实现近乎严格的持续学习]({{< relref "posts/20260206-arxiv_ai-shared-lora-subspaces-for-almost-strict-continual--0.md" >}})
+- [共享LoRA子空间实现近乎严格的持续学习]({{< relref "posts/20260206-arxiv_ai-shared-lora-subspaces-for-almost-strict-continual--0.md" >}})
+- [共享LoRA子空间实现近乎严格的持续学习]({{< relref "posts/20260206-arxiv_ai-shared-lora-subspaces-for-almost-strict-continual--0.md" >}})
 - [PA Bench：评估前沿模型多标签页任务能力]({{< relref "posts/20260225-hacker_news-pa-bench-evaluating-frontier-models-on-multi-tab-p-14.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

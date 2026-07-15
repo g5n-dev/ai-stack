@@ -20,6 +20,12 @@ description: 随着多智能体系统的普及，如何实现异构代理间的�
 external_url: https://github.com/olserra/symplex
 scenarios:
 - 大语言模型
+aliases:
+- /posts/20260222-hacker_news-symplex-an-open-source-protocol-semantic-negotiati-17/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Symplex：分布式代理间语义协商的开源协议

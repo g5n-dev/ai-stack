@@ -1,14 +1,33 @@
 ---
-title: "AI工程师大会征集演讲者"
-date: 2026-05-02T21:05:53+08:00
+title: AI工程师大会征集演讲者
+date: 2026-05-02 21:05:53+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI工程师大会", "演讲者征集", "社区活动", "技术会议", "Autoresearch", "WorldModels", "AI代理", "垂直AI"]
-categories: ["AI 工程", "产品与创业"]
+entry_kind: auto
+tags:
+- AI工程师大会
+- 演讲者征集
+- 社区活动
+- 技术会议
+- Autoresearch
+- WorldModels
+- AI 代理
+- 垂直AI
+categories:
+- AI 工程
+- 产品与创业
 source: blogs_podcasts
-description: "AINews AI Engineer World's Fair 现已开启演讲者征集。大会围绕六大主题展开： Autoresearch（自动研究） 聚焦 AI 自动化实验、假设生成与验证的最新进展。 Memory（记忆） 探讨大模型的长期记忆、上下文保持与检索技术。 World Models（世界模型） 展示构建可交互、"
+description: AINews AI Engineer World's Fair 现已开启演讲者征集。大会围绕六大主题展开： Autoresearch（自动研究）
+  聚焦 AI 自动化实验、假设生成与验证的最新进展。 Memory（记忆） 探讨大模型的长期记忆、上下文保持与检索技术。 World Models（世界模型） 展示构建可交互、
 external_url: https://www.latent.space/p/ainews-ai-engineer-worlds-fair-autoresearch
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+aliases:
+- /posts/20260503-blogs_podcasts-ainews-ai-engineer-worlds-fair-autoresearch-memory-0/
+- /posts/20260504-blogs_podcasts-ainews-ai-engineer-worlds-fair-autoresearch-memory-0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AI工程师大会征集演讲者
@@ -195,9 +214,9 @@ AI Engineer World's Fair聚焦的前沿技术（Autoresearch、Memory、World Mo
 
 ### 相关文章
 
-- [TeamOut：利用AI代理规划公司团建活动]({{< relref "posts/20260225-hacker_news-launch-hn-teamout-yc-w22-ai-agent-for-planning-com-14.md" >}})
-- [面向AI代理的内容优化策略]({{< relref "posts/20260314-hacker_news-optimizing-content-for-agents-11.md" >}})
-- [OpenAI Frontier：具备上下文与治理功能的企业级AI代理平台]({{< relref "posts/20260205-blogs_podcasts-introducing-openai-frontier-2.md" >}})
-- [OpenAI Frontier：具备上下文与治理机制的企业级AI代理平台]({{< relref "posts/20260205-blogs_podcasts-introducing-openai-frontier-5.md" >}})
-- [OpenAI Frontier：具备共享上下文与治理功能的企业级AI代理平台]({{< relref "posts/20260205-blogs_podcasts-introducing-openai-frontier-7.md" >}})
+- [TeamOut：利用AI代理规划公司团建活动]({{< relref "posts/20260225-hacker_news-launch-hn-teamout-yc-w22-ai-agent-for-planning-com-7.md" >}})
+- [面向AI代理的内容优化策略]({{< relref "posts/20260314-hacker_news-optimizing-content-for-agents-4.md" >}})
+- [OpenAI Frontier：具备上下文与治理功能的企业级AI代理平台]({{< relref "posts/20260205-hacker_news-openai-frontier-5.md" >}})
+- [OpenAI Frontier：具备上下文与治理机制的企业级AI代理平台]({{< relref "posts/20260205-hacker_news-openai-frontier-5.md" >}})
+- [OpenAI Frontier：具备共享上下文与治理功能的企业级AI代理平台]({{< relref "posts/20260205-hacker_news-openai-frontier-5.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

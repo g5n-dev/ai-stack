@@ -1,14 +1,29 @@
 ---
-title: "中度使用仍耗尽：Pro Max 5倍配额1.5小时用完"
-date: 2026-04-12T15:09:02+08:00
+title: 中度使用仍耗尽：Pro Max 5倍配额1.5小时用完
+date: 2026-04-12 15:09:02+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI配额", "用量超限", "API限制", "订阅", "费用", "Pro Max", "限流", "定价"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- AI配额
+- 用量超限
+- API限制
+- 订阅
+- 费用
+- Pro Max
+- 限流
+- 定价
+categories:
+- 大模型
+- AI 工程
 source: hacker_news
-description: "在使用 Pro Max 5x 服务的过程中，用户普遍反映配额在仅 1.5 小时内耗尽，而实际使用强度并不高。配额快速耗尽不仅影响业务连续性，还可能导致不必要的成本上升。本文将深入剖析配额消耗的具体因素，并提供实用的监控与优化方法，帮助用户更高效地管理资源。阅读后，读者可以快速定位瓶颈并制定相应的配额调整策略。"
+description: 在使用 Pro Max 5x 服务的过程中，用户普遍反映配额在仅 1.5 小时内耗尽，而实际使用强度并不高。配额快速耗尽不仅影响业务连续性，还可能导致不必要的成本上升。本文将深入剖析配额消耗的具体因素，并提供实用的监控与优化方法，帮助用户更高效地管理资源。阅读后，读者可以快速定位瓶颈并制定相应的配额调整策略。
 external_url: https://github.com/anthropics/claude-code/issues/45756
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 中度使用仍耗尽：Pro Max 5倍配额1.5小时用完
@@ -77,9 +92,9 @@ scenarios: ["AI/ML项目"]
 
 ### 相关文章
 
-- [xAI推出Grok Imagine视频模型API：定价与延迟优势显著]({{< relref "posts/20260201-blogs_podcasts-ainews-spacexai-grok-imagine-api-the-1-video-model-1.md" >}})
-- [Anthropic 发布 MCP Apps 开放标准，定义富生成式 UI 规范]({{< relref "posts/20260129-blogs_podcasts-ainews-anthropic-launches-the-mcp-apps-open-spec-i-9.md" >}})
+- [xAI推出Grok Imagine视频模型API：定价与延迟优势显著]({{< relref "posts/20260130-blogs_podcasts-ainews-spacexai-grok-imagine-api-the-1-video-model-0.md" >}})
+- [Anthropic 发布 MCP Apps 开放标准，定义富生成式 UI 规范]({{< relref "posts/20260127-blogs_podcasts-ainews-anthropic-launches-the-mcp-apps-open-spec-i-1.md" >}})
 - [推出全球首个专注科学的人工智能播客及工程师关注理由]({{< relref "posts/20260129-blogs_podcasts-its-time-to-science-0.md" >}})
-- [为何推出首个科学AI播客及工程师应关注的原因]({{< relref "posts/20260129-blogs_podcasts-its-time-to-science-1.md" >}})
-- [推出全球首个科学AI播客：为何AI工程师应关注]({{< relref "posts/20260129-blogs_podcasts-its-time-to-science-4.md" >}})
+- [为何推出首个科学AI播客及工程师应关注的原因]({{< relref "posts/20260129-blogs_podcasts-its-time-to-science-0.md" >}})
+- [推出全球首个科学AI播客：为何AI工程师应关注]({{< relref "posts/20260129-blogs_podcasts-its-time-to-science-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

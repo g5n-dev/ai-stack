@@ -1,14 +1,29 @@
 ---
-title: "DiffusionGemma文本生成速度提升4倍"
-date: 2026-06-10T19:57:29+08:00
+title: DiffusionGemma文本生成速度提升4倍
+date: 2026-06-10 19:57:29+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Gemma", "文本生成", "速度提升", "4倍", "推理加速", "大模型", "开源生态", "AI"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- Gemma
+- 文本生成
+- 速度提升
+- 4倍
+- 推理加速
+- 大模型
+- 开源生态
+- AI
+categories:
+- 大模型
+- AI 工程
 source: blogs_podcasts
-description: "DiffusionGemma是一种基于扩散技术的文本生成模型，其核心优势在于将生成速度提升至传统Transformer的四倍。该模型通过改进扩散过程和优化采样策略，在保持生成质量的前提下显著降低了推理延迟。对于需要大规模文本生成的应用场景，如对话系统、内容创作辅助或实时交互应用，这一突破意味着更低的计算成本和更流畅的用"
+description: DiffusionGemma是一种基于扩散技术的文本生成模型，其核心优势在于将生成速度提升至传统Transformer的四倍。该模型通过改进扩散过程和优化采样策略，在保持生成质量的前提下显著降低了推理延迟。对于需要大规模文本生成的应用场景，如对话系统、内容创作辅助或实时交互应用，这一突破意味着更低的计算成本和更流畅的用
 external_url: https://deepmind.google/blog/diffusiongemma-4x-faster-text-generation
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # DiffusionGemma文本生成速度提升4倍
@@ -151,8 +166,8 @@ DiffusionGemma 可在保持质量的前提下实现 4x 加速。
 ### 相关文章
 
 - [谷歌发布Gemma 4开源模型]({{< relref "posts/20260403-hacker_news-google-releases-gemma-4-open-models-0.md" >}})
-- [Claude Opus 4.6 发布]({{< relref "posts/20260206-hacker_news-claude-opus-46-3.md" >}})
-- [Qwen3.5 微调指南]({{< relref "posts/20260305-hacker_news-qwen35-fine-tuning-guide-17.md" >}})
-- [在Transformer内部执行程序以实现指数级推理加速]({{< relref "posts/20260313-hacker_news-executing-programs-inside-transformers-with-expone-14.md" >}})
+- [Claude Opus 4.6 发布]({{< relref "posts/20260205-hacker_news-claude-opus-46-2.md" >}})
+- [Qwen3.5 微调指南]({{< relref "posts/20260304-hacker_news-qwen35-fine-tuning-guide-unsloth-documentation-7.md" >}})
+- [在Transformer内部执行程序以实现指数级推理加速]({{< relref "posts/20260313-hacker_news-executing-programs-inside-transformers-with-expone-3.md" >}})
 - [Apple自蒸馏技术简化代码生成流程]({{< relref "posts/20260404-hacker_news-apple-embarrassingly-simple-self-distillation-impr-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

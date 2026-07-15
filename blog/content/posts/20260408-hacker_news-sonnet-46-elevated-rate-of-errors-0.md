@@ -1,14 +1,30 @@
 ---
-title: "Sonnet 4.6错误率上升"
-date: 2026-04-08T07:50:43+08:00
+title: Sonnet 4.6错误率上升
+date: 2026-04-08 07:50:43+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Sonnet", "错误率上升", "大模型", "AI评估", "性能下降", "LLM", "模型质量", "技术"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- Sonnet
+- 错误率上升
+- 大模型
+- AI评估
+- 性能下降
+- LLM
+- 模型质量
+- 技术
+categories:
+- 大模型
+- AI 工程
 source: hacker_news
-description: "近期发布的Sonnet 4.6在部分工作负载中出现错误率上升的现象，引起了社区的广泛关注。错误率的波动不仅会影响模型的可靠性，还可能导致下游任务的表现下降。本文通过对比实验数据和真实使用案例，系统剖析导致错误率升高的关键因素，并提供针对性的调优建议与最佳实践，帮助开发者在升级后保持系统稳定。"
+description: 近期发布的Sonnet 4.6在部分工作负载中出现错误率上升的现象，引起了社区的广泛关注。错误率的波动不仅会影响模型的可靠性，还可能导致下游任务的表现下降。本文通过对比实验数据和真实使用案例，系统剖析导致错误率升高的关键因素，并提供针对性的调优建议与最佳实践，帮助开发者在升级后保持系统稳定。
 external_url: https://status.claude.com/incidents/lhws0phdvzz3
-scenarios: ["AI/ML项目", "大语言模型"]
+scenarios:
+- AI/ML项目
+- 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Sonnet 4.6错误率上升
@@ -75,9 +91,9 @@ scenarios: ["AI/ML项目", "大语言模型"]
 
 ### 相关文章
 
-- [Claude Opus 4.6 发布]({{< relref "posts/20260206-hacker_news-claude-opus-46-3.md" >}})
-- [Qwen3.5 微调指南]({{< relref "posts/20260305-hacker_news-qwen35-fine-tuning-guide-17.md" >}})
+- [Claude Opus 4.6 发布]({{< relref "posts/20260205-hacker_news-claude-opus-46-2.md" >}})
+- [Qwen3.5 微调指南]({{< relref "posts/20260304-hacker_news-qwen35-fine-tuning-guide-unsloth-documentation-7.md" >}})
 - [利用RAG技术有效解决大模型幻觉问题]({{< relref "posts/20260314-juejin-别再信它一本正经地胡说了用-rag终结大模型幻觉-0.md" >}})
 - [ICML审稿使用LLM导致2%论文被直接拒稿]({{< relref "posts/20260319-hacker_news-2-of-icml-papers-desk-rejected-because-the-authors-17.md" >}})
-- [中国开源AI生态架构选择：DeepSeek之外的技术路径]({{< relref "posts/20260129-blogs_podcasts-architectural-choices-in-chinas-open-source-ai-eco-9.md" >}})
+- [中国开源AI生态架构选择：DeepSeek之外的技术路径]({{< relref "posts/20260127-blogs_podcasts-architectural-choices-in-chinas-open-source-ai-eco-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

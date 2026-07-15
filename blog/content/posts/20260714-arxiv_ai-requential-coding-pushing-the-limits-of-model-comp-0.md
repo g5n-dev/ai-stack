@@ -1,14 +1,30 @@
 ---
-title: "Requential Coding：自生成训练数据提升模型压缩效率"
-date: 2026-07-14T23:29:48+08:00
+title: Requential Coding：自生成训练数据提升模型压缩效率
+date: 2026-07-14 23:29:48+08:00
 draft: false
-entry_kind: "auto"
-tags: ["模型压缩", "自生成训练数据", "大模型", "PAC-Bayes", "泛化上界", "过拟合预测", "信息熵", "压缩效率"]
-categories: ["论文", "大模型"]
+entry_kind: auto
+tags:
+- 模型压缩
+- 自生成训练数据
+- 大模型
+- PAC-Bayes
+- 泛化上界
+- 过拟合预测
+- 信息熵
+- 压缩效率
+categories:
+- 论文
+- 大模型
 source: arxiv
-description: "基本思路 压缩是智能的核心，能用短码表示训练数据的模型已发现可推广的规律。传统基于参数的方法（如量化）产生的码长随参数量增长，与参数实际承载的信息无关。已有的先验编码（prequential coding）通过压缩训练轨迹来实现压缩，但仍需对原始数据序列编码，若数据熵高则码长仍然很大。requential coding"
+description: 基本思路 压缩是智能的核心，能用短码表示训练数据的模型已发现可推广的规律。传统基于参数的方法（如量化）产生的码长随参数量增长，与参数实际承载的信息无关。已有的先验编码（prequential
+  coding）通过压缩训练轨迹来实现压缩，但仍需对原始数据序列编码，若数据熵高则码长仍然很大。requential coding
 external_url: http://arxiv.org/abs/2607.11883v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Requential Coding：自生成训练数据提升模型压缩效率

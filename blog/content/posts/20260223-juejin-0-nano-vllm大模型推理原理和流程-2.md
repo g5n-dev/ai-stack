@@ -22,6 +22,10 @@ description: 以下是对所提供内容的简洁总结： **简介：大模型�
 external_url: https://juejin.cn/post/7609925885416767497
 scenarios:
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # nano-vllm：vLLM 极简实现与大模型推理流程解析
@@ -179,8 +183,8 @@ PagedAttention 是 vLLM 加速推理的核心算法创新。
 
 ### 相关文章
 
-- [Nano-vLLM 原理剖析：vLLM 风格推理引擎的实现机制]({{< relref "posts/20260202-hacker_news-nano-vllm-how-a-vllm-style-inference-engine-works-3.md" >}})
-- [Nano-vLLM 技术解析：vLLM 风格推理引擎的运行机制]({{< relref "posts/20260203-hacker_news-nano-vllm-how-a-vllm-style-inference-engine-works-13.md" >}})
+- [Nano-vLLM 原理剖析：vLLM 风格推理引擎的实现机制]({{< relref "posts/20260202-hacker_news-nano-vllm-how-a-vllm-style-inference-engine-works-0.md" >}})
+- [Nano-vLLM 技术解析：vLLM 风格推理引擎的运行机制]({{< relref "posts/20260202-hacker_news-nano-vllm-how-a-vllm-style-inference-engine-works-0.md" >}})
 - [Nano-vLLM 原理：解析 vLLM 风格推理引擎机制]({{< relref "posts/20260202-hacker_news-nano-vllm-how-a-vllm-style-inference-engine-works-0.md" >}})
-- [Nano-vLLM 原理：vLLM 风格推理引擎的实现机制]({{< relref "posts/20260203-hacker_news-nano-vllm-how-a-vllm-style-inference-engine-works-9.md" >}})
-- [两种提升大模型推理速度的技术方法]({{< relref "posts/20260215-hacker_news-two-different-tricks-for-fast-llm-inference-15.md" >}})
+- [Nano-vLLM 原理：vLLM 风格推理引擎的实现机制]({{< relref "posts/20260202-hacker_news-nano-vllm-how-a-vllm-style-inference-engine-works-0.md" >}})
+- [两种提升大模型推理速度的技术方法]({{< relref "posts/20260215-hacker_news-two-different-tricks-for-fast-llm-inference-2.md" >}})

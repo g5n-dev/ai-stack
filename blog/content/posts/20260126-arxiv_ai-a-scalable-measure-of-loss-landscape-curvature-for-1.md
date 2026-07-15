@@ -1,12 +1,29 @@
 ---
-title: "🔥LLM训练动力学新突破！可扩展损失景观曲率度量🚀"
-date: 2026-01-26T22:15:20+08:00
+title: 🔥LLM训练动力学新突破！可扩展损失景观曲率度量🚀
+date: 2026-01-26 22:15:20+08:00
 draft: false
-entry_kind: "auto"
-tags: ["LLM", "训练动力学", "损失景观", "曲率度量", "Hessian", "Critical Sharpness", "cs.LG", "深度学习"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- LLM
+- 训练动力学
+- 损失景观
+- 曲率度量
+- Hessian
+- Critical Sharpness
+- cs.LG
+- 深度学习
+categories:
+- 大模型
+- 论文
 source: arxiv
 external_url: http://arxiv.org/abs/2601.16979v1
+scenarios: []
+aliases:
+- /posts/20260127-arxiv_ai-a-scalable-measure-of-loss-landscape-curvature-for-1/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 📚 🔥LLM训练动力学新突破！可扩展损失景观曲率度量🚀

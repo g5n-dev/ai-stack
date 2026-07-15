@@ -1,14 +1,32 @@
 ---
-title: "ToolSimulator：AI代理大规模安全测试工具"
-date: 2026-04-20T19:33:52+08:00
+title: ToolSimulator：AI代理大规模安全测试工具
+date: 2026-04-20 19:33:52+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI代理", "安全测试", "大模型", "仿真框架", "隐私保护", "SDK", "工具调用", "LLM驱动"]
-categories: ["安全", "开发工具"]
+entry_kind: auto
+tags:
+- AI 代理
+- 安全测试
+- 大模型
+- 仿真框架
+- 隐私保护
+- SDK
+- 工具调用
+- LLM驱动
+categories:
+- 安全
+- 开发工具
 source: blogs_podcasts
-description: "ToolSimulator 是 Strands Evals SDK 中的 LLM 驱动的工具仿真框架，旨在大规模、安全地测试依赖外部工具的 AI 代理。 核心功能 - **仿真驱动**：通过大语言模型生成工具调用的模拟响应，无需真实 API 调用。 - **隐私保护**：避免在测试过程中暴露用户个人信息（PII），降低"
+description: ToolSimulator 是 Strands Evals SDK 中的 LLM 驱动的工具仿真框架，旨在大规模、安全地测试依赖外部工具的
+  AI 代理。 核心功能 - **仿真驱动**：通过大语言模型生成工具调用的模拟响应，无需真实 API 调用。 - **隐私保护**：避免在测试过程中暴露用户个人信息（PII），降低
 external_url: https://aws.amazon.com/blogs/machine-learning/toolsimulator-scalable-tool-testing-for-ai-agents
-scenarios: ["AI/ML项目", "大语言模型", "后端开发"]
+scenarios:
+- AI/ML项目
+- 大语言模型
+- 后端开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # ToolSimulator：AI代理大规模安全测试工具
@@ -132,9 +150,9 @@ ToolSimulator的出现填补了AI代理评测工具链的关键空白。此前�
 
 ### 相关文章
 
-- [不要信任 AI 智能体]({{< relref "posts/20260228-hacker_news-dont-trust-ai-agents-7.md" >}})
-- [OpenAI 如何通过内置安全机制防范 AI 代理点击链接时的数据泄露与提示词注入]({{< relref "posts/20260129-blogs_podcasts-keeping-your-data-safe-when-an-ai-agent-clicks-a-l-6.md" >}})
-- [展示 LLM 工具数据传输的中间人代理]({{< relref "posts/20260129-hacker_news-show-hn-a-mitm-proxy-to-see-what-your-llm-tools-ar-10.md" >}})
-- [RS-SDK：使用 Claude Code 实现 RuneScape 自动化操控]({{< relref "posts/20260204-hacker_news-rs-sdk-drive-runescape-with-claude-code-8.md" >}})
+- [不要信任 AI 智能体]({{< relref "posts/20260228-hacker_news-dont-trust-ai-agents-4.md" >}})
+- [OpenAI 如何通过内置安全机制防范 AI 代理点击链接时的数据泄露与提示词注入]({{< relref "posts/20260129-blogs_podcasts-keeping-your-data-safe-when-an-ai-agent-clicks-a-l-5.md" >}})
+- [展示 LLM 工具数据传输的中间人代理]({{< relref "posts/20260129-hacker_news-show-hn-a-mitm-proxy-to-see-what-your-llm-tools-ar-9.md" >}})
+- [RS-SDK：使用 Claude Code 实现 RuneScape 自动化操控]({{< relref "posts/20260204-hacker_news-rs-sdk-drive-runescape-with-claude-code-6.md" >}})
 - [LocalGPT：基于Rust构建的本地优先AI助手，支持持久化记忆]({{< relref "posts/20260208-hacker_news-show-hn-localgpt-a-local-first-ai-assistant-in-rus-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

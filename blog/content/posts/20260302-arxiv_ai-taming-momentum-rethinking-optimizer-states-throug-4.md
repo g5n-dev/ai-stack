@@ -21,6 +21,12 @@ description: '**LoRA-Pre：通过低秩近似优化动量以提升大模型训�
 external_url: http://arxiv.org/abs/2602.24283v1
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260303-arxiv_ai-taming-momentum-rethinking-optimizer-states-throug-4/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 通过低秩近似优化大模型动量状态以降低显存占用
@@ -440,8 +446,8 @@ Transformer 模型中，注意力机制的 Query, Key, Value (QKV) 投影以及 
 
 ### 相关文章
 
-- [挖掘模型仓库中的隐藏价值]({{< relref "posts/20260201-arxiv_ai-discovering-hidden-gems-in-model-repositories-1.md" >}})
+- [挖掘模型仓库中的隐藏价值]({{< relref "posts/20260130-arxiv_ai-discovering-hidden-gems-in-model-repositories-1.md" >}})
 - [TEON：张量化正交化技术优化大语言模型预训练]({{< relref "posts/20260202-arxiv_ai-teon-tensorized-orthonormalization-beyond-layer-wi-9.md" >}})
-- [TEON：张量化正交化方法优化大语言模型预训练]({{< relref "posts/20260203-arxiv_ai-teon-tensorized-orthonormalization-beyond-layer-wi-9.md" >}})
+- [TEON：张量化正交化方法优化大语言模型预训练]({{< relref "posts/20260202-arxiv_ai-teon-tensorized-orthonormalization-beyond-layer-wi-9.md" >}})
 - [权重衰减提升语言模型可塑性]({{< relref "posts/20260212-arxiv_ai-weight-decay-improves-language-model-plasticity-9.md" >}})
-- [权重衰减提升语言模型可塑性]({{< relref "posts/20260213-arxiv_ai-weight-decay-improves-language-model-plasticity-9.md" >}})
+- [权重衰减提升语言模型可塑性]({{< relref "posts/20260212-arxiv_ai-weight-decay-improves-language-model-plasticity-9.md" >}})

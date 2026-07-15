@@ -21,6 +21,10 @@ description: '**内容总结：** 本文介绍了 **SocialOmni**，这是一个�
 external_url: http://arxiv.org/abs/2603.16859v1
 scenarios:
 - Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # SocialOmni：全模态模型视听社交交互基准测试
@@ -370,7 +374,7 @@ SocialOmni 推动了 AI 向更自然、更人性化的交互方向发展。其�
 ### 相关文章
 
 - [GEBench: Benchmarking Image Generation Models as GUI En]({{< relref "posts/20260210-arxiv_ai-gebench-benchmarking-image-generation-models-as-gu-7.md" >}})
-- [GEBench：将图像生成模型评估为GUI环境的基准]({{< relref "posts/20260211-arxiv_ai-gebench-benchmarking-image-generation-models-as-gu-7.md" >}})
-- [GENIUS：生成式流体智能评估套件]({{< relref "posts/20260213-arxiv_ai-genius-generative-fluid-intelligence-evaluation-su-5.md" >}})
+- [GEBench：将图像生成模型评估为GUI环境的基准]({{< relref "posts/20260210-arxiv_ai-gebench-benchmarking-image-generation-models-as-gu-7.md" >}})
+- [GENIUS：生成式流体智能评估套件]({{< relref "posts/20260212-arxiv_ai-genius-generative-fluid-intelligence-evaluation-su-5.md" >}})
 - [机器翻译评估中的跨向污染问题研究]({{< relref "posts/20260129-arxiv_ai-when-flores-bloomz-wrong-cross-direction-contamina-1.md" >}})
 - [GENIUS：生成式流体智能评估套件]({{< relref "posts/20260212-arxiv_ai-genius-generative-fluid-intelligence-evaluation-su-5.md" >}})

@@ -1,12 +1,30 @@
 ---
-title: "🔥Anduin2017+HowToCook：GitHub超火！编程与烹饪完美结合！"
-date: 2026-01-25T12:39:55+08:00
+title: 🔥Anduin2017+HowToCook：GitHub超火！编程与烹饪完美结合！
+date: 2026-01-25 12:39:55+08:00
 draft: false
-entry_kind: "auto"
-tags: ["GitHub", "烹饪指南", "程序员", "Docker", "CI/CD", "自动化构建", "社区驱动", "中文文档"]
-categories: ["开源生态", "生活与杂谈"]
+entry_kind: auto
+tags:
+- GitHub
+- 烹饪指南
+- 程序员
+- Docker
+- CI/CD
+- 自动化构建
+- 社区驱动
+- 中文文档
+categories:
+- 开源生态
+- 生活与杂谈
 source: github_trending
 external_url: https://github.com/Anduin2017/HowToCook
+scenarios: []
+aliases:
+- /posts/20260126-github_trending-anduin2017-howtocook-9/
+- /posts/20260127-github_trending-anduin2017-howtocook-9/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 🚀 🔥Anduin2017+HowToCook：GitHub超火！编程与烹饪完美结合！

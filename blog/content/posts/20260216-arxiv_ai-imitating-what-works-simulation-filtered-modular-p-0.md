@@ -1,14 +1,33 @@
 ---
-title: "仿真筛选模块化策略：从人类视频学习有效行为"
-date: 2026-02-16T23:54:05+08:00
+title: 仿真筛选模块化策略：从人类视频学习有效行为
+date: 2026-02-16 23:54:05+08:00
 draft: false
-entry_kind: "auto"
-tags: ["机器人", "强化学习", "模仿学习", "具身智能", "仿真", "模块化策略", "抓取", "cs.RO"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- 机器人
+- 强化学习
+- 模仿学习
+- 具身智能
+- 仿真
+- 模块化策略
+- 抓取
+- cs.RO
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "以下是内容的中文总结： **论文题目：** 模仿行之有效的方法：基于人类视频的仿真过滤模块化策略学习（Imitating What Works: Simulation-Filtered Modular Policy Learning from Human Videos） **核心内容总结：** **1. 研究背景与挑战"
+description: '以下是内容的中文总结： **论文题目：** 模仿行之有效的方法：基于人类视频的仿真过滤模块化策略学习（Imitating What Works:
+  Simulation-Filtered Modular Policy Learning from Human Videos） **核心内容总结：** **1.
+  研究背景与挑战'
 external_url: http://arxiv.org/abs/2602.13197v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+aliases:
+- /posts/20260217-arxiv_ai-imitating-what-works-simulation-filtered-modular-p-0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 仿真筛选模块化策略：从人类视频学习有效行为
@@ -585,9 +604,9 @@ $$ G^* = \arg\max_{G \in \mathcal{G}_{candidates}} P(Success(O, G, \tau_{video})
 
 ### 相关文章
 
-- [NVIDIA Cosmos 策略模型提升机器人高级控制能力]({{< relref "posts/20260203-blogs_podcasts-introducing-nvidia-cosmos-policy-for-advanced-robo-6.md" >}})
+- [NVIDIA Cosmos 策略模型提升机器人高级控制能力]({{< relref "posts/20260129-blogs_podcasts-introducing-nvidia-cosmos-policy-for-advanced-robo-0.md" >}})
 - [DreamDojo：基于大规模人类视频的通用机器人世界模型]({{< relref "posts/20260209-arxiv_ai-dreamdojo-a-generalist-robot-world-model-from-larg-4.md" >}})
 - [NVIDIA Cosmos策略：提升机器人控制能力]({{< relref "posts/20260129-blogs_podcasts-introducing-nvidia-cosmos-policy-for-advanced-robo-0.md" >}})
-- [NVIDIA Cosmos策略：提升机器人高级控制能力]({{< relref "posts/20260130-blogs_podcasts-introducing-nvidia-cosmos-policy-for-advanced-robo-1.md" >}})
-- [NVIDIA Cosmos 策略模型提升机器人控制精度]({{< relref "posts/20260131-blogs_podcasts-introducing-nvidia-cosmos-policy-for-advanced-robo-1.md" >}})
+- [NVIDIA Cosmos策略：提升机器人高级控制能力]({{< relref "posts/20260129-blogs_podcasts-introducing-nvidia-cosmos-policy-for-advanced-robo-0.md" >}})
+- [NVIDIA Cosmos 策略模型提升机器人控制精度]({{< relref "posts/20260129-blogs_podcasts-introducing-nvidia-cosmos-policy-for-advanced-robo-0.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

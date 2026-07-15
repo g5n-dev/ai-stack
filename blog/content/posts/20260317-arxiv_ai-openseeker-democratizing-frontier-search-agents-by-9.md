@@ -21,6 +21,12 @@ description: '以下是关于《OpenSeeker: Democratizing Frontier Search Agents
 external_url: http://arxiv.org/abs/2603.15594v1
 scenarios:
 - 大语言模型
+aliases:
+- /posts/20260318-arxiv_ai-openseeker-democratizing-frontier-search-agents-by-9/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # OpenSeeker：通过完全开源训练数据降低前沿搜索代理门槛
@@ -450,8 +456,8 @@ OpenSeeker 致力于完全开源，其模型权重、训练数据以及推理代
 
 ### 相关文章
 
-- [TabICLv2：开源表格基础模型在性能与效率上的改进]({{< relref "posts/20260213-arxiv_ai-tabiclv2-a-better-faster-scalable-and-open-tabular-8.md" >}})
+- [TabICLv2：开源表格基础模型在性能与效率上的改进]({{< relref "posts/20260212-arxiv_ai-tabiclv2-a-better-faster-scalable-and-open-tabular-8.md" >}})
 - [Z.ai GLM-5开源：性能超越Opus 4.5]({{< relref "posts/20260212-blogs_podcasts-ainews-zai-glm-5-new-sota-open-weights-llm-0.md" >}})
-- [Z.ai发布GLM-5开源模型：性能超越Opus 4.5]({{< relref "posts/20260212-blogs_podcasts-ainews-zai-glm-5-new-sota-open-weights-llm-1.md" >}})
-- [Z.ai发布GLM-5开源权重模型，性能超越Opus 4.5]({{< relref "posts/20260212-blogs_podcasts-ainews-zai-glm-5-new-sota-open-weights-llm-2.md" >}})
-- [Z.ai发布GLM-5开源模型：性能超越Opus 4.5]({{< relref "posts/20260212-blogs_podcasts-ainews-zai-glm-5-new-sota-open-weights-llm-3.md" >}})
+- [Z.ai发布GLM-5开源模型：性能超越Opus 4.5]({{< relref "posts/20260212-blogs_podcasts-ainews-zai-glm-5-new-sota-open-weights-llm-0.md" >}})
+- [Z.ai发布GLM-5开源权重模型，性能超越Opus 4.5]({{< relref "posts/20260212-blogs_podcasts-ainews-zai-glm-5-new-sota-open-weights-llm-0.md" >}})
+- [Z.ai发布GLM-5开源模型：性能超越Opus 4.5]({{< relref "posts/20260212-blogs_podcasts-ainews-zai-glm-5-new-sota-open-weights-llm-0.md" >}})

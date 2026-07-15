@@ -1,12 +1,29 @@
 ---
-title: "🔥IoT攻击数据生成神器！Latent Diffusion让入侵检测更准！"
-date: 2026-01-26T22:15:20+08:00
+title: 🔥IoT攻击数据生成神器！Latent Diffusion让入侵检测更准！
+date: 2026-01-26 22:15:20+08:00
 draft: false
-entry_kind: "auto"
-tags: ["LDM", "潜在扩散模型", "物联网", "IoT", "入侵检测", "IDS", "数据生成", "数据增强"]
-categories: ["安全", "论文"]
+entry_kind: auto
+tags:
+- LDM
+- 潜在扩散模型
+- 物联网
+- IoT
+- 入侵检测
+- IDS
+- 数据生成
+- 数据增强
+categories:
+- 安全
+- 论文
 source: arxiv
 external_url: http://arxiv.org/abs/2601.16976v1
+scenarios: []
+aliases:
+- /posts/20260127-arxiv_ai-latent-diffusion-for-internet-of-things-attack-dat-2/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 📚 🔥IoT攻击数据生成神器！Latent Diffusion让入侵检测更准！

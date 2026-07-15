@@ -1,14 +1,30 @@
 ---
-title: "OpenClaw如何引发开源AI智能体生态热潮"
-date: 2026-04-07T07:50:27+08:00
+title: OpenClaw如何引发开源AI智能体生态热潮
+date: 2026-04-07 07:50:27+08:00
 draft: false
-entry_kind: "auto"
-tags: ["开源AI", "智能体", "OpenClaw", "分叉", "生态系统", "AI开发者", "奥地利", "PSPDFKit"]
-categories: ["开源生态", "大模型"]
+entry_kind: auto
+tags:
+- 开源AI
+- 智能体
+- OpenClaw
+- 分叉
+- 生态系统
+- AI开发者
+- 奥地利
+- PSPDFKit
+categories:
+- 开源生态
+- 大模型
 source: juejin
-description: "起源 2025年11月，以PSPDFKit闻名的奥地利iOS开发者Peter在原有聊天机器人ClawdBot的基础上，推出开源项目OpenClaw，旨在为AI智能体提供统一、模块化的开发框架。 爆发 不到六周，OpenClaw迅速获得全球开发者的关注，github上出现了上百个分支，覆盖多语言、跨平台、自动化工作流等方"
+description: 起源 2025年11月，以PSPDFKit闻名的奥地利iOS开发者Peter在原有聊天机器人ClawdBot的基础上，推出开源项目OpenClaw，旨在为AI智能体提供统一、模块化的开发框架。
+  爆发 不到六周，OpenClaw迅速获得全球开发者的关注，github上出现了上百个分支，覆盖多语言、跨平台、自动化工作流等方
 external_url: https://juejin.cn/post/7625553232089759787
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # OpenClaw如何引发开源AI智能体生态热潮
@@ -88,8 +104,8 @@ OpenClaw的快速崛起得益于多个因素。首先，以PSPDFKit闻名的开�
 ### 相关文章
 
 - [OpenClaw 开源智能体科普：电脑操作与文件自动化]({{< relref "posts/20260310-juejin-openclaw-是什么超通俗科普养龙虾-0.md" >}})
-- [Moltbook：首个面向 AI 智能体的社交网络平台]({{< relref "posts/20260201-blogs_podcasts-ainews-moltbook-the-first-social-network-for-ai-ag-1.md" >}})
-- [Moltbook：首个面向AI智能体的社交网络平台]({{< relref "posts/20260202-blogs_podcasts-ainews-moltbook-the-first-social-network-for-ai-ag-3.md" >}})
-- [Moltbook：首个面向 AI 智能体的社交网络平台]({{< relref "posts/20260203-blogs_podcasts-ainews-moltbook-the-first-social-network-for-ai-ag-2.md" >}})
-- [Moltbook：首个面向 AI 智能体的社交网络平台]({{< relref "posts/20260203-blogs_podcasts-ainews-moltbook-the-first-social-network-for-ai-ag-7.md" >}})
+- [Moltbook：首个面向 AI 智能体的社交网络平台]({{< relref "posts/20260131-blogs_podcasts-ainews-moltbook-the-first-social-network-for-ai-ag-0.md" >}})
+- [Moltbook：首个面向AI智能体的社交网络平台]({{< relref "posts/20260131-blogs_podcasts-ainews-moltbook-the-first-social-network-for-ai-ag-0.md" >}})
+- [Moltbook：首个面向 AI 智能体的社交网络平台]({{< relref "posts/20260131-blogs_podcasts-ainews-moltbook-the-first-social-network-for-ai-ag-0.md" >}})
+- [Moltbook：首个面向 AI 智能体的社交网络平台]({{< relref "posts/20260131-blogs_podcasts-ainews-moltbook-the-first-social-network-for-ai-ag-0.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

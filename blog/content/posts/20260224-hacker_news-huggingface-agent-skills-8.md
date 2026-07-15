@@ -4,7 +4,7 @@ date: 2026-02-24 20:13:02+08:00
 draft: false
 entry_kind: auto
 tags:
-- HuggingFace
+- Hugging Face
 - Agent
 - 工具调用
 - 任务编排
@@ -22,6 +22,15 @@ external_url: https://github.com/huggingface/skills
 scenarios:
 - 大语言模型
 - AI/ML项目
+aliases:
+- /posts/20260224-hacker_news-hugging-face-skills-10/
+- /posts/20260224-hacker_news-huggingface-agent-skills-3/
+- /posts/20260225-hacker_news-hugging-face-skills-13/
+- /posts/20260225-hacker_news-hugging-face-skills-8/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # HuggingFace Agent 技能框架：工具调用与任务编排解析

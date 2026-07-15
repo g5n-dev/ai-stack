@@ -1,14 +1,29 @@
 ---
-title: "Thinking Machines发布276B-A12B实时语音交互模型"
-date: 2026-05-12T12:14:27+08:00
+title: Thinking Machines发布276B-A12B实时语音交互模型
+date: 2026-05-12 12:14:27+08:00
 draft: false
-entry_kind: "auto"
-tags: ["实时语音", "大模型", "语音交互", "SOTA", "VAD", "模型发布", "AI交互", "思维机器"]
-categories: ["大模型"]
+entry_kind: auto
+tags:
+- 实时语音
+- 大模型
+- 语音交互
+- SOTA
+- VAD
+- 模型发布
+- AI交互
+- 思维机器
+categories:
+- 大模型
 source: blogs_podcasts
-description: "AINews报道，Thinking Machines发布了其原生交互模型——TML‑Interaction‑Small（276B‑A12B），在实时语音交互上实现了当前最佳（SOTA）性能，彻底超越了传统语音活动检测（VAD）方案。Team Thinky团队的工作值得称赞。"
+description: AINews报道，Thinking Machines发布了其原生交互模型——TML‑Interaction‑Small（276B‑A12B），在实时语音交互上实现了当前最佳（SOTA）性能，彻底超越了传统语音活动检测（VAD）方案。Team
+  Thinky团队的工作值得称赞。
 external_url: https://www.latent.space/p/ainews-thinking-machines-native-interaction
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Thinking Machines发布276B-A12B实时语音交互模型
@@ -88,9 +103,9 @@ AINews报道，Thinking Machines发布了其原生交互模型——TML‑Intera
 
 ### 相关文章
 
-- [xAI 发布 Grok Imagine API：对标 SOTA 视频模型与 SpaceX 合并前瞻]({{< relref "posts/20260202-blogs_podcasts-ainews-spacexai-grok-imagine-api-the-1-video-model-2.md" >}})
-- [Claude Opus 4.6 发布]({{< relref "posts/20260206-hacker_news-claude-opus-46-3.md" >}})
-- [Z.ai发布GLM-5开源权重模型，性能超越Opus 4.5]({{< relref "posts/20260212-blogs_podcasts-ainews-zai-glm-5-new-sota-open-weights-llm-2.md" >}})
-- [Z.ai发布GLM-5开源模型：性能超越Opus 4.5]({{< relref "posts/20260212-blogs_podcasts-ainews-zai-glm-5-new-sota-open-weights-llm-3.md" >}})
-- [Z.ai发布GLM-5开源模型：性能超越Opus 4.5]({{< relref "posts/20260213-blogs_podcasts-ainews-zai-glm-5-new-sota-open-weights-llm-10.md" >}})
+- [xAI 发布 Grok Imagine API：对标 SOTA 视频模型与 SpaceX 合并前瞻]({{< relref "posts/20260130-blogs_podcasts-ainews-spacexai-grok-imagine-api-the-1-video-model-0.md" >}})
+- [Claude Opus 4.6 发布]({{< relref "posts/20260205-hacker_news-claude-opus-46-2.md" >}})
+- [Z.ai发布GLM-5开源权重模型，性能超越Opus 4.5]({{< relref "posts/20260212-blogs_podcasts-ainews-zai-glm-5-new-sota-open-weights-llm-0.md" >}})
+- [Z.ai发布GLM-5开源模型：性能超越Opus 4.5]({{< relref "posts/20260212-blogs_podcasts-ainews-zai-glm-5-new-sota-open-weights-llm-0.md" >}})
+- [Z.ai发布GLM-5开源模型：性能超越Opus 4.5]({{< relref "posts/20260212-blogs_podcasts-ainews-zai-glm-5-new-sota-open-weights-llm-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

@@ -1,14 +1,30 @@
 ---
-title: "Wedge Sampling：实现近线性样本复杂度的张量补全算法"
-date: 2026-02-06T03:10:07+08:00
+title: Wedge Sampling：实现近线性样本复杂度的张量补全算法
+date: 2026-02-06 03:10:07+08:00
 draft: false
-entry_kind: "auto"
-tags: ["张量补全", "楔形采样", "低秩张量", "样本复杂度", "谱初始化", "非自适应采样", "统计计算鸿沟", "张量分解"]
-categories: ["论文", "数据"]
+entry_kind: auto
+tags:
+- 张量补全
+- 楔形采样
+- 低秩张量
+- 样本复杂度
+- 谱初始化
+- 非自适应采样
+- 统计计算鸿沟
+- 张量分解
+categories:
+- 论文
+- 数据
 source: arxiv
-description: "本文介绍了**楔形采样**，这是一种针对低秩张量完成问题的新型非自适应采样方案。其主要内容总结如下： **1. 背景与动机** 现有研究通常假设从张量中**均匀随机采样**（Uniform Entry Sampling）。然而，在这种模式下，多项式时间算法要实现高效恢复，往往需要 $\\tilde{O}(n^{k/2})"
+description: 本文介绍了**楔形采样**，这是一种针对低秩张量完成问题的新型非自适应采样方案。其主要内容总结如下： **1. 背景与动机** 现有研究通常假设从张量中**均匀随机采样**（Uniform
+  Entry Sampling）。然而，在这种模式下，多项式时间算法要实现高效恢复，往往需要 $\tilde{O}(n^{k/2})
 external_url: http://arxiv.org/abs/2602.05869v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Wedge Sampling：实现近线性样本复杂度的张量补全算法
@@ -525,7 +541,7 @@ Wedge Sampling 的主要优势在于：
 
 - [基于嵌入的Top-$k$检索：理论上$\mathbb{R}^{2k}$维空间已足够]({{< relref "posts/20260129-arxiv_ai-mathbbr2k-is-theoretically-large-enough-for-embedd-8.md" >}})
 - [面向文本检索器域适应的影响引导采样方法]({{< relref "posts/20260130-arxiv_ai-influence-guided-sampling-for-domain-adaptation-of-1.md" >}})
-- [R^{2k}维度理论上足以支持基于嵌入的Top-k检索]({{< relref "posts/20260130-arxiv_ai-mathbbr2k-is-theoretically-large-enough-for-embedd-8.md" >}})
+- [R^{2k}维度理论上足以支持基于嵌入的Top-k检索]({{< relref "posts/20260129-arxiv_ai-mathbbr2k-is-theoretically-large-enough-for-embedd-8.md" >}})
 - [可扩展随机小波特征：带收敛保证的高效非平稳核近似]({{< relref "posts/20260203-arxiv_ai-scalable-random-wavelet-features-efficient-non-sta-8.md" >}})
 - [🔥BONO-Bench震撼发布！首套可追溯Pareto集的双目标优化基准测试！]({{< relref "posts/20260126-arxiv_ai-bono-bench-a-comprehensive-test-suite-for-bi-objec-4.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

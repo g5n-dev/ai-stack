@@ -1,14 +1,31 @@
 ---
-title: "Vercel AI SDK 实战：利用 Call Options 动态配置 Agent"
-date: 2026-02-13T11:27:57+08:00
+title: Vercel AI SDK 实战：利用 Call Options 动态配置 Agent
+date: 2026-02-13 11:27:57+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Vercel AI SDK", "Agent", "LLM", "动态配置", "AI 应用开发", "Call Options", "TypeScript", "工程化"]
-categories: ["AI 工程", "后端"]
+entry_kind: auto
+tags:
+- Vercel AI SDK
+- Agent
+- LLM
+- 动态配置
+- AI 应用开发
+- Call Options
+- TypeScript
+- 工程化
+categories:
+- AI 工程
+- 后端
 source: juejin
-description: "在构建基于 Vercel AI SDK 的复杂应用时，静态的 Agent 配置往往难以应对多变的业务逻辑。本文将深入探讨如何利用 Call Options 实现配置的动态注入，从而根据用户属性或任务难度灵活调整模型行为。通过阅读本文，你将掌握一种更具扩展性的架构模式，让 AI 应用能够精准响应不同场景下的个性化需求。"
+description: 在构建基于 Vercel AI SDK 的复杂应用时，静态的 Agent 配置往往难以应对多变的业务逻辑。本文将深入探讨如何利用 Call
+  Options 实现配置的动态注入，从而根据用户属性或任务难度灵活调整模型行为。通过阅读本文，你将掌握一种更具扩展性的架构模式，让 AI 应用能够精准响应不同场景下的个性化需求。
 external_url: https://juejin.cn/post/7605888927715475494
-scenarios: ["AI/ML项目", "大语言模型"]
+scenarios:
+- AI/ML项目
+- 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Vercel AI SDK 实战：利用 Call Options 动态配置 Agent
@@ -193,9 +210,9 @@ const result = await generateText({
 
 ### 相关文章
 
-- [软件工厂与代理时刻：AI 编程范式的演进]({{< relref "posts/20260208-hacker_news-software-factories-and-the-agentic-moment-9.md" >}})
-- [利用 Codex 构建以 Agent 为中心的工程化实践]({{< relref "posts/20260212-blogs_podcasts-harness-engineering-leveraging-codex-in-an-agent-f-9.md" >}})
-- [Agent评估显示AGENTS.md配置优于Skills]({{< relref "posts/20260130-hacker_news-agentsmd-outperforms-skills-in-our-agent-evals-4.md" >}})
-- [AGENTS.md 架构在智能体评估中超越 Skills 技能]({{< relref "posts/20260130-hacker_news-agentsmd-outperforms-skills-in-our-agent-evals-5.md" >}})
-- [Agent评估显示AGENTS.md配置优于技能配置]({{< relref "posts/20260130-hacker_news-agentsmd-outperforms-skills-in-our-agent-evals-6.md" >}})
+- [软件工厂与代理时刻：AI 编程范式的演进]({{< relref "posts/20260207-hacker_news-software-factories-and-the-agentic-moment-4.md" >}})
+- [利用 Codex 构建以 Agent 为中心的工程化实践]({{< relref "posts/20260211-blogs_podcasts-harness-engineering-leveraging-codex-in-an-agent-f-5.md" >}})
+- [Agent评估显示AGENTS.md配置优于Skills]({{< relref "posts/20260129-hacker_news-compressed-agentsmd-agent-skills-5.md" >}})
+- [AGENTS.md 架构在智能体评估中超越 Skills 技能]({{< relref "posts/20260129-hacker_news-compressed-agentsmd-agent-skills-5.md" >}})
+- [Agent评估显示AGENTS.md配置优于技能配置]({{< relref "posts/20260129-hacker_news-compressed-agentsmd-agent-skills-5.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

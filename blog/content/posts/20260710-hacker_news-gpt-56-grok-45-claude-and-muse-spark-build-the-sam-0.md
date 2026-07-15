@@ -1,14 +1,28 @@
 ---
-title: "四大AI同建4款应用能力对比"
-date: 2026-07-10T22:22:15+08:00
+title: 四大AI同建4款应用能力对比
+date: 2026-07-10 22:22:15+08:00
 draft: false
-entry_kind: "auto"
-tags: ["大模型对比", "GPT-5.6", "Grok-4.5", "Claude", "Muse-Spark", "应用构建", "能力评测", "HackerNews"]
-categories: ["大模型"]
+entry_kind: auto
+tags:
+- 大模型对比
+- GPT-5.6
+- Grok-4.5
+- Claude
+- Muse-Spark
+- 应用构建
+- 能力评测
+- HackerNews
+categories:
+- 大模型
 source: hacker_news
-description: "当前主流大模型在构建同类应用时的表现差异，正成为开发者评估平台选择的重要依据。本文围绕GPT‑5.6、Grok4.5、Claude和MuseSpark四款模型，对同一组四个示例项目进行实现对比，从代码质量、开发效率以及可维护性三个维度给出客观评测。阅读后，读者可以快速了解各模型的优势与局限，为后续技术选型提供实用参考。"
+description: 当前主流大模型在构建同类应用时的表现差异，正成为开发者评估平台选择的重要依据。本文围绕GPT‑5.6、Grok4.5、Claude和MuseSpark四款模型，对同一组四个示例项目进行实现对比，从代码质量、开发效率以及可维护性三个维度给出客观评测。阅读后，读者可以快速了解各模型的优势与局限，为后续技术选型提供实用参考。
 external_url: https://www.tryai.dev/blog/gpt-5.6-build-off-12-models
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 四大AI同建4款应用能力对比
@@ -74,9 +88,9 @@ scenarios: ["Web应用开发"]
 
 ### 相关文章
 
-- [Anthropic 撤销旗舰产品安全承诺]({{< relref "posts/20260225-hacker_news-anthropic-drops-flagship-safety-pledge-18.md" >}})
-- [Anthropic 放弃其核心安全承诺]({{< relref "posts/20260226-hacker_news-anthropic-ditches-its-core-safety-promise-11.md" >}})
-- [Anthropic 否认 Claude Code 用户成本高达五千美元]({{< relref "posts/20260310-hacker_news-no-it-doesnt-cost-anthropic-5k-per-claude-code-use-14.md" >}})
+- [Anthropic 撤销旗舰产品安全承诺]({{< relref "posts/20260225-hacker_news-anthropic-drops-flagship-safety-pledge-15.md" >}})
+- [Anthropic 放弃其核心安全承诺]({{< relref "posts/20260226-hacker_news-anthropic-ditches-its-core-safety-promise-5.md" >}})
+- [Anthropic 否认 Claude Code 用户成本高达五千美元]({{< relref "posts/20260310-hacker_news-no-it-doesnt-cost-anthropic-5k-per-claude-code-use-8.md" >}})
 - [Claude 是一个用于思考的独立空间]({{< relref "posts/20260204-hacker_news-claude-is-a-space-to-think-8.md" >}})
 - [Agent Alcove：支持多模型在论坛中进行辩论]({{< relref "posts/20260211-hacker_news-show-hn-agent-alcove-claude-gpt-and-gemini-debate--17.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

@@ -21,6 +21,10 @@ description: 随着大模型应用对推理吞吐量要求的不断提高，传�
 external_url: https://infinity.inc/case-studies/qwen3-optimization
 scenarios:
 - 大语言模型
+content_mode: legacy_source_brief
+publication_tier: C
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 超越vLLM性能的自研推理栈技术解析

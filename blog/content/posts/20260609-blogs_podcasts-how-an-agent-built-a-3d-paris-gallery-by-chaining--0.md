@@ -1,14 +1,29 @@
 ---
-title: "用Agent链接两个Hugging Face Spaces搭建3D巴黎画廊"
-date: 2026-06-09T12:56:32+08:00
+title: 用Agent链接两个Hugging Face Spaces搭建3D巴黎画廊
+date: 2026-06-09 12:56:32+08:00
 draft: false
-entry_kind: "auto"
-tags: ["智能体", "链接", "3D", "巴黎", "画廊", "HF", "LLM", "Spaces"]
-categories: ["AI 工程", "开源生态"]
+entry_kind: auto
+tags:
+- 智能体
+- 链接
+- 3D
+- 巴黎
+- 画廊
+- HF
+- LLM
+- Spaces
+categories:
+- AI 工程
+- 开源生态
 source: blogs_podcasts
-description: "当AI agent开始调用多种工具完成任务时，往往需要将不同的AI服务有机组合。本文通过一个具体案例，展示了如何利用Hugging Face平台上的多个Spaces，链式调用视觉模型和3D渲染能力，构建一座可交互的巴黎画廊。这个过程不仅演示了工具链式调用的实现思路，也为开发者提供了将多种AI能力整合到实际项目中的参考路"
+description: 当AI agent开始调用多种工具完成任务时，往往需要将不同的AI服务有机组合。本文通过一个具体案例，展示了如何利用Hugging Face平台上的多个Spaces，链式调用视觉模型和3D渲染能力，构建一座可交互的巴黎画廊。这个过程不仅演示了工具链式调用的实现思路，也为开发者提供了将多种AI能力整合到实际项目中的参考路
 external_url: https://huggingface.co/blog/mishig/spaces-agents-md
-scenarios: ["大语言模型"]
+scenarios:
+- 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 用Agent链接两个Hugging Face Spaces搭建3D巴黎画廊
@@ -79,9 +94,9 @@ scenarios: ["大语言模型"]
 
 ### 相关文章
 
-- [LangBot：生产级多平台智能体机器人开发平台]({{< relref "posts/20260201-github_trending-langbot-app-langbot-0.md" >}})
-- [Agent Skills：智能体技能评估与开源框架]({{< relref "posts/20260204-hacker_news-agent-skills-7.md" >}})
+- [LangBot：生产级多平台智能体机器人开发平台]({{< relref "posts/20260131-github_trending-langbot-app-langbot-7.md" >}})
+- [Agent Skills：智能体技能评估与开源框架]({{< relref "posts/20260203-hacker_news-agent-skills-0.md" >}})
 - [OpenClaw：GitHub 增长最快的开源 AI 智能体框架]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-0.md" >}})
-- [OpenClaw：GitHub 增长最快的开源 AI 代理框架]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-7.md" >}})
-- [LangBot：生产级多平台智能体开发平台]({{< relref "posts/20260226-github_trending-langbot-app-langbot-8.md" >}})
+- [OpenClaw：GitHub 增长最快的开源 AI 代理框架]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-0.md" >}})
+- [LangBot：生产级多平台智能体开发平台]({{< relref "posts/20260131-github_trending-langbot-app-langbot-7.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

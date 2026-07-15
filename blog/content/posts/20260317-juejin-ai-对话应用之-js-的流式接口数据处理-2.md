@@ -21,6 +21,10 @@ description: 这是一份关于“AI 对话应用中 JS 流式接口数据处理
 external_url: https://juejin.cn/post/7618115042275606543
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # JS 实现流式接口处理与 AI 对话内容渲染
@@ -239,7 +243,7 @@ data: [DONE]
 ### 相关文章
 
 - [Transformers.js v4 预览版发布，现已登陆 NPM]({{< relref "posts/20260209-blogs_podcasts-transformersjs-v4-preview-now-available-on-npm-0.md" >}})
-- [Transformers.js v4 预览版发布，现已上线 NPM]({{< relref "posts/20260209-blogs_podcasts-transformersjs-v4-preview-now-available-on-npm-2.md" >}})
+- [Transformers.js v4 预览版发布，现已上线 NPM]({{< relref "posts/20260209-blogs_podcasts-transformersjs-v4-preview-now-available-on-npm-0.md" >}})
 - [Tambo 1.0：渲染 React 组件的开源 Agent 工具包]({{< relref "posts/20260211-hacker_news-tambo-10-open-source-toolkit-for-agents-that-rende-12.md" >}})
 - [Vercel AI SDK 流式传输原理与阻塞模式对比]({{< relref "posts/20260211-juejin-vercel-ai-sdk-使用指南流式传输-streaming-1.md" >}})
 - [基于 ASCII 草图与 AI 快速生成前端代码]({{< relref "posts/20260217-juejin-用-ascii-草图-ai-快速生成前端代码-1.md" >}})

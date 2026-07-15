@@ -1,14 +1,34 @@
 ---
-title: "MonarchRT：面向实时视频生成的高效注意力机制"
-date: 2026-02-13T23:30:43+08:00
+title: MonarchRT：面向实时视频生成的高效注意力机制
+date: 2026-02-13 23:30:43+08:00
 draft: false
-entry_kind: "auto"
-tags: ["MonarchRT", "实时视频生成", "DiT", "注意力机制", "Monarch矩阵", "FlashAttention", "Triton内核", "扩散模型"]
-categories: ["大模型", "系统与基础设施"]
+entry_kind: auto
+tags:
+- MonarchRT
+- 实时视频生成
+- DiT
+- 注意力机制
+- Monarch矩阵
+- FlashAttention
+- Triton内核
+- 扩散模型
+categories:
+- 大模型
+- 系统与基础设施
 source: arxiv
-description: "本文介绍了 **MonarchRT**，一种旨在解决实时视频生成中计算瓶颈的新型高效注意力机制。以下是核心内容的总结： **1. 问题背景与挑战** 基于扩散Transformer（DiT）的实时视频生成受限于3D自注意力的二次计算成本。特别是在少步自回归的实时场景中，误差会随时间累积，这要求每个去噪步骤必须承载更多信"
+description: 本文介绍了 **MonarchRT**，一种旨在解决实时视频生成中计算瓶颈的新型高效注意力机制。以下是核心内容的总结： **1. 问题背景与挑战**
+  基于扩散Transformer（DiT）的实时视频生成受限于3D自注意力的二次计算成本。特别是在少步自回归的实时场景中，误差会随时间累积，这要求每个去噪步骤必须承载更多信
 external_url: http://arxiv.org/abs/2602.12271v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+aliases:
+- /posts/20260214-arxiv_ai-monarchrt-efficient-attention-for-real-time-video--7/
+- /posts/20260215-arxiv_ai-monarchrt-efficient-attention-for-real-time-video--7/
+- /posts/20260216-arxiv_ai-monarchrt-efficient-attention-for-real-time-video--7/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # MonarchRT：面向实时视频生成的高效注意力机制
@@ -540,9 +560,9 @@ Monarch 层在某些特定的硬件加速器上可能需要自定义算子支持
 
 ### 相关文章
 
-- [FlashAttention-T：张量化注意力机制优化方案]({{< relref "posts/20260204-hacker_news-flashattention-t-towards-tensorized-attention-11.md" >}})
-- [FlashAttention-T：张量化注意力机制优化方案]({{< relref "posts/20260204-hacker_news-flashattention-t-towards-tensorized-attention-2.md" >}})
-- [FlashAttention-T：张量化注意力机制实现方案]({{< relref "posts/20260204-hacker_news-flashattention-t-towards-tensorized-attention-8.md" >}})
-- [Learning on the Manifold: Unlocking Standard Diffusion]({{< relref "posts/20260212-arxiv_ai-learning-on-the-manifold-unlocking-standard-diffus-3.md" >}})
+- [FlashAttention-T：张量化注意力机制优化方案]({{< relref "posts/20260203-hacker_news-flashattention-t-towards-tensorized-attention-0.md" >}})
+- [FlashAttention-T：张量化注意力机制优化方案]({{< relref "posts/20260203-hacker_news-flashattention-t-towards-tensorized-attention-0.md" >}})
+- [FlashAttention-T：张量化注意力机制实现方案]({{< relref "posts/20260203-hacker_news-flashattention-t-towards-tensorized-attention-0.md" >}})
+- [Learning on the Manifold: Unlocking Standard Diffusion]({{< relref "posts/20260211-arxiv_ai-learning-on-the-manifold-unlocking-standard-diffus-3.md" >}})
 - [FOCUS：DLLMs如何突破算力瓶颈]({{< relref "posts/20260202-arxiv_ai-focus-dllms-know-how-to-tame-their-compute-bound-3.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

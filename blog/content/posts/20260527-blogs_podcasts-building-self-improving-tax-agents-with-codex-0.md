@@ -1,14 +1,29 @@
 ---
-title: "用Codex构建自我改进税务代理实现报税自动化"
-date: 2026-05-27T16:53:37+08:00
+title: 用Codex构建自我改进税务代理实现报税自动化
+date: 2026-05-27 16:53:37+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Codex", "税务代理", "自动化", "自改进", "工作流加速", "合规", "反馈循环", "OpenAI"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- Codex
+- 税务代理
+- 自动化
+- 自改进
+- 工作流加速
+- 合规
+- 反馈循环
+- OpenAI
+categories:
+- 大模型
+- AI 工程
 source: blogs_podcasts
-description: "OpenAI 与 Thrive、Crete 合作，基于 Codex 构建了能够自我改进的税务代理。该代理利用 Codex 的代码生成与自然语言理解能力，自动完成税务申报、核对和文件处理；通过持续学习历史错误和最新法规，提升准确性；并实现工作流加速，减少人工干预。系统采用反馈循环，将每次申报结果反馈给模型，实现模型在真实"
+description: OpenAI 与 Thrive、Crete 合作，基于 Codex 构建了能够自我改进的税务代理。该代理利用 Codex 的代码生成与自然语言理解能力，自动完成税务申报、核对和文件处理；通过持续学习历史错误和最新法规，提升准确性；并实现工作流加速，减少人工干预。系统采用反馈循环，将每次申报结果反馈给模型，实现模型在真实
 external_url: https://openai.com/index/building-self-improving-tax-agents-with-codex
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 用Codex构建自我改进税务代理实现报税自动化
@@ -113,9 +128,9 @@ OpenAI 与 Thrive、Crete 合作，基于 Codex 构建了能够自我改进的�
 
 ### 相关文章
 
-- [OpenAI 内部数据代理：结合 GPT-5 与记忆机制实现分钟级数据洞察]({{< relref "posts/20260130-blogs_podcasts-inside-openais-in-house-data-agent-1.md" >}})
-- [OpenAI 内部数据代理：利用 GPT-5 与记忆能力快速分析大规模数据集]({{< relref "posts/20260202-blogs_podcasts-inside-openais-in-house-data-agent-5.md" >}})
-- [OpenAI 内部数据智能体：结合 GPT-5 与记忆快速分析海量数据]({{< relref "posts/20260202-blogs_podcasts-inside-openais-in-house-data-agent-6.md" >}})
+- [OpenAI 内部数据代理：结合 GPT-5 与记忆机制实现分钟级数据洞察]({{< relref "posts/20260129-hacker_news-openais-in-house-data-agent-14.md" >}})
+- [OpenAI 内部数据代理：利用 GPT-5 与记忆能力快速分析大规模数据集]({{< relref "posts/20260129-hacker_news-openais-in-house-data-agent-14.md" >}})
+- [OpenAI 内部数据智能体：结合 GPT-5 与记忆快速分析海量数据]({{< relref "posts/20260129-hacker_news-openais-in-house-data-agent-14.md" >}})
 - [Codex 应用：基于 GPT-3 的代码生成工具]({{< relref "posts/20260202-hacker_news-the-codex-app-1.md" >}})
-- [Codex 应用：基于 OpenAI 模型的代码生成工具]({{< relref "posts/20260203-hacker_news-the-codex-app-12.md" >}})
+- [Codex 应用：基于 OpenAI 模型的代码生成工具]({{< relref "posts/20260202-hacker_news-the-codex-app-1.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

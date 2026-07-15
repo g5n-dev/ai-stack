@@ -1,14 +1,31 @@
 ---
-title: "Amazon Quick Flows AI工作流程搭建指南"
-date: 2026-04-27T23:08:13+08:00
+title: Amazon Quick Flows AI工作流程搭建指南
+date: 2026-04-27 23:08:13+08:00
 draft: false
-entry_kind: "auto"
-tags: ["工作流自动化", "Amazon Quick Flows", "AI 工程", "AWS", "流程编排", "低代码", "效率提升", "智能化场景"]
-categories: ["AI 工程", "系统与基础设施"]
+entry_kind: auto
+tags:
+- 工作流自动化
+- Amazon Quick Flows
+- AI 工程
+- AWS
+- 流程编排
+- 低代码
+- 效率提升
+- 智能化场景
+categories:
+- AI 工程
+- 系统与基础设施
 source: blogs_podcasts
-description: "概述 Amazon Quick Flows 是一种低代码、拖拽式的自动化服务，旨在帮助企业快速消除重复性任务。它内置 AI 引擎，支持在流程中直接调用机器学习模型，实现从数据采集、分析到决策的全链路智能化。用户只需在可视化编辑器中定义触发条件、业务规则和通知动作，即可将人力密集的操作转为自动化工作流。 示例：从财务分析"
+description: 概述 Amazon Quick Flows 是一种低代码、拖拽式的自动化服务，旨在帮助企业快速消除重复性任务。它内置 AI 引擎，支持在流程中直接调用机器学习模型，实现从数据采集、分析到决策的全链路智能化。用户只需在可视化编辑器中定义触发条件、业务规则和通知动作，即可将人力密集的操作转为自动化工作流。
+  示例：从财务分析
 external_url: https://aws.amazon.com/blogs/machine-learning/automate-repetitive-tasks-with-amazon-quick-flows
-scenarios: ["AI/ML项目", "命令行工具"]
+scenarios:
+- AI/ML项目
+- 命令行工具
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Amazon Quick Flows AI工作流程搭建指南
@@ -144,9 +161,9 @@ Quick Flows的出现重新定义了企业自动化工具的能力边界。传统
 
 ### 相关文章
 
-- [Sonrai 联手 AWS 构建符合监管要求的 MLOps 框架加速精准医学试验]({{< relref "posts/20260225-blogs_podcasts-how-sonrai-uses-amazon-sagemaker-ai-to-accelerate--14.md" >}})
+- [Sonrai 联手 AWS 构建符合监管要求的 MLOps 框架加速精准医学试验]({{< relref "posts/20260223-blogs_podcasts-how-sonrai-uses-amazon-sagemaker-ai-to-accelerate--0.md" >}})
 - [Iberdrola enhances IT operations using Amazon Bedrock A]({{< relref "posts/20260210-blogs_podcasts-iberdrola-enhances-it-operations-using-amazon-bedr-1.md" >}})
-- [利用全栈模板加速开发基于Amazon Bedrock AgentCore的应用]({{< relref "posts/20260211-blogs_podcasts-accelerate-agentic-application-development-with-a--12.md" >}})
-- [Iberdrola enhances IT operations using Amazon Bedrock A]({{< relref "posts/20260211-blogs_podcasts-iberdrola-enhances-it-operations-using-amazon-bedr-1.md" >}})
-- [Iberdrola enhances IT operations using Amazon Bedrock A]({{< relref "posts/20260211-blogs_podcasts-iberdrola-enhances-it-operations-using-amazon-bedr-2.md" >}})
+- [利用全栈模板加速开发基于Amazon Bedrock AgentCore的应用]({{< relref "posts/20260210-blogs_podcasts-accelerate-agentic-application-development-with-a--11.md" >}})
+- [Iberdrola enhances IT operations using Amazon Bedrock A]({{< relref "posts/20260210-blogs_podcasts-iberdrola-enhances-it-operations-using-amazon-bedr-1.md" >}})
+- [Iberdrola enhances IT operations using Amazon Bedrock A]({{< relref "posts/20260210-blogs_podcasts-iberdrola-enhances-it-operations-using-amazon-bedr-1.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

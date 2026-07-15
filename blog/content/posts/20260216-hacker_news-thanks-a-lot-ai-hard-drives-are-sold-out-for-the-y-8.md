@@ -1,14 +1,30 @@
 ---
-title: "AI致需求激增，西部数据称本年度机械硬盘已售罄"
-date: 2026-02-16T15:22:30+08:00
+title: AI致需求激增，西部数据称本年度机械硬盘已售罄
+date: 2026-02-16 15:22:30+08:00
 draft: false
-entry_kind: "auto"
-tags: ["西部数据", "机械硬盘", "HDD", "AI", "存储", "供应链", "数据中心", "硬件"]
-categories: ["数据", "系统与基础设施"]
+entry_kind: auto
+tags:
+- 西部数据
+- 机械硬盘
+- HDD
+- AI
+- 存储
+- 供应链
+- 数据中心
+- 硬件
+categories:
+- 数据
+- 系统与基础设施
 source: hacker_news
-description: "随着生成式 AI 应用的爆发，数据中心对存储硬件的需求急剧攀升，导致机械硬盘产能被长期预订。西部数据近期透露，其 2024 财年的硬盘产能已全部售罄，这一现象标志着存储行业正面临结构性供应短缺。本文将分析此次缺货的具体成因及其对市场价格的影响，并探讨在 AI 算力竞赛背景下，企业应如何调整存储采购策略以应对未来的不确定"
+description: 随着生成式 AI 应用的爆发，数据中心对存储硬件的需求急剧攀升，导致机械硬盘产能被长期预订。西部数据近期透露，其 2024 财年的硬盘产能已全部售罄，这一现象标志着存储行业正面临结构性供应短缺。本文将分析此次缺货的具体成因及其对市场价格的影响，并探讨在
+  AI 算力竞赛背景下，企业应如何调整存储采购策略以应对未来的不确定
 external_url: https://mashable.com/article/ai-hard-drive-hdd-shortages-western-digital-sold-out
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AI致需求激增，西部数据称本年度机械硬盘已售罄
@@ -333,9 +349,9 @@ predict_demand(monthly_demand)
 
 ### 相关文章
 
-- [OpenAI 与英伟达百亿美元芯片采购交易暂停]({{< relref "posts/20260131-hacker_news-the-100b-megadeal-between-openai-and-nvidia-is-on--19.md" >}})
+- [OpenAI 与英伟达百亿美元芯片采购交易暂停]({{< relref "posts/20260131-hacker_news-the-100b-megadeal-between-openai-and-nvidia-is-on--4.md" >}})
 - [⚠️MacBook Pro新机告急！发货推迟至3月中旬，果粉还要等多久？]({{< relref "posts/20260128-hacker_news-apple-macbook-pro-order-deliveries-delayed-until-m-7.md" >}})
-- [神经网络原理可视化解析]({{< relref "posts/20260206-hacker_news-understanding-neural-network-visually-5.md" >}})
+- [神经网络原理可视化解析]({{< relref "posts/20260206-hacker_news-understanding-neural-network-visually-16.md" >}})
 - [台积电将在日本生产先进AI半导体]({{< relref "posts/20260209-hacker_news-tsmc-to-make-advanced-ai-semiconductors-in-japan-8.md" >}})
 - [😱谷歌欲掌控俄州小镇水源！环保主义者紧急发声！]({{< relref "posts/20260126-hacker_news-environmentalists-worry-google-behind-bid-to-contr-15.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

@@ -1,14 +1,34 @@
 ---
-title: "FineInstructions：将合成指令数据扩展至预训练规模"
-date: 2026-01-30T23:03:03+08:00
+title: FineInstructions：将合成指令数据扩展至预训练规模
+date: 2026-01-30 23:03:03+08:00
 draft: false
-entry_kind: "auto"
-tags: ["LLM", "预训练", "指令微调", "合成数据", "FineInstructions", "数据集", "模型训练", "AI工程"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- LLM
+- 预训练
+- 指令微调
+- 合成数据
+- FineInstructions
+- 数据集
+- 模型训练
+- AI 工程
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "**FineInstructions：利用合成指令数据扩展预训练规模** **背景与问题** 当前大型语言模型（LLMs）的训练通常分为两个阶段：首先在海量无结构文本上进行“预测下一个词”的自监督预训练，随后在相对少量的“指令微调”数据上进行监督训练。这种两步法存在局限性，即预训练目标与模型最终的使用场景（回答用户指令"
+description: '**FineInstructions：利用合成指令数据扩展预训练规模** **背景与问题** 当前大型语言模型（LLMs）的训练通常分为两个阶段：首先在海量无结构文本上进行“预测下一个词”的自监督预训练，随后在相对少量的“指令微调”数据上进行监督训练。这种两步法存在局限性，即预训练目标与模型最终的使用场景（回答用户指令'
 external_url: http://arxiv.org/abs/2601.22146v1
-scenarios: ["大语言模型", "AI/ML项目"]
+scenarios:
+- 大语言模型
+- AI/ML项目
+aliases:
+- /posts/20260131-arxiv_ai-fineinstructions-scaling-synthetic-instructions-to-7/
+- /posts/20260201-arxiv_ai-fineinstructions-scaling-synthetic-instructions-to-7/
+- /posts/20260202-arxiv_ai-fineinstructions-scaling-synthetic-instructions-to-7/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # FineInstructions：将合成指令数据扩展至预训练规模
@@ -546,9 +566,9 @@ FineInstructions的重要性在于它打破了数据规模的瓶颈。如果能�
 
 ### 相关文章
 
-- [Nemotron-Personas-Brazil：主权AI协同设计数据集]({{< relref "posts/20260129-blogs_podcasts-nemotron-personas-brazil-co-designed-data-for-sove-5.md" >}})
-- [🔥模型自学革命！突破可学习性边界，推理能力暴涨！]({{< relref "posts/20260128-arxiv_ai-teaching-models-to-teach-themselves-reasoning-at-t-9.md" >}})
-- [Alyah ⭐️：阿拉伯语LLM方言鲁棒性评估！🔥]({{< relref "posts/20260128-blogs_podcasts-alyah-toward-robust-evaluation-of-emirati-dialect--2.md" >}})
+- [Nemotron-Personas-Brazil：主权AI协同设计数据集]({{< relref "posts/20260128-blogs_podcasts-nemotron-personas-brazil-co-designed-data-for-sove-0.md" >}})
+- [🔥模型自学革命！突破可学习性边界，推理能力暴涨！]({{< relref "posts/20260127-arxiv_ai-teaching-models-to-teach-themselves-reasoning-at-t-9.md" >}})
+- [Alyah ⭐️：阿拉伯语LLM方言鲁棒性评估！🔥]({{< relref "posts/20260127-blogs_podcasts-alyah-toward-robust-evaluation-of-emirati-dialect--0.md" >}})
 - [SokoBench：评估大模型长程规划与推理能力]({{< relref "posts/20260129-arxiv_ai-sokobench-evaluating-long-horizon-planning-and-rea-2.md" >}})
 - [Kimi K2.5 技术报告发布：长上下文与推理能力升级]({{< relref "posts/20260130-hacker_news-kimi-k25-technical-report-pdf-10.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

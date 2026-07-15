@@ -21,6 +21,12 @@ description: 本文介绍了 **AgentOptics**，一个基于**模型上下文协�
 external_url: http://arxiv.org/abs/2602.20144v1
 scenarios:
 - AI/ML项目
+aliases:
+- /posts/20260225-arxiv_ai-agentic-ai-for-scalable-and-robust-optical-systems-5/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 代理式AI实现光学系统可扩展鲁棒控制
@@ -507,8 +513,8 @@ Agentic AI（代理式人工智能）指的是一类具备自主性、反应性�
 
 ### 相关文章
 
-- [阿里开源 Higress：AI 原生 API 网关]({{< relref "posts/20260131-github_trending-alibaba-higress-9.md" >}})
-- [阿里开源 Higress：AI 原生 API 网关]({{< relref "posts/20260204-github_trending-alibaba-higress-2.md" >}})
-- [阿里开源 Higress：AI 原生 API 网关]({{< relref "posts/20260205-github_trending-alibaba-higress-5.md" >}})
+- [阿里开源 Higress：AI 原生 API 网关]({{< relref "posts/20260129-github_trending-alibaba-higress-9.md" >}})
+- [阿里开源 Higress：AI 原生 API 网关]({{< relref "posts/20260129-github_trending-alibaba-higress-9.md" >}})
+- [阿里开源 Higress：AI 原生 API 网关]({{< relref "posts/20260129-github_trending-alibaba-higress-9.md" >}})
 - [NanoClaw 容器支持 Claude Agent Swarms]({{< relref "posts/20260209-hacker_news-nanoclaw-now-supports-claudes-agent-swarms-in-cont-19.md" >}})
-- [利用全栈模板加速开发基于Amazon Bedrock AgentCore的应用]({{< relref "posts/20260211-blogs_podcasts-accelerate-agentic-application-development-with-a--12.md" >}})
+- [利用全栈模板加速开发基于Amazon Bedrock AgentCore的应用]({{< relref "posts/20260210-blogs_podcasts-accelerate-agentic-application-development-with-a--11.md" >}})

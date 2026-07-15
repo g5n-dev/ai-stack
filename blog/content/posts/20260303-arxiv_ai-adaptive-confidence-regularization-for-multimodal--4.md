@@ -21,6 +21,12 @@ description: '**标题：用于多模态故障检测的自适应置信度正则�
 external_url: http://arxiv.org/abs/2603.02200v1
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260304-arxiv_ai-adaptive-confidence-regularization-for-multimodal--4/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 自适应置信度正则化用于多模态失效检测
@@ -426,8 +432,8 @@ ACR 主要是在训练阶段引入了一个额外的正则化损失项。这个�
 
 ### 相关文章
 
-- [自动驾驶与无人机易受路牌提示词攻击]({{< relref "posts/20260201-hacker_news-autonomous-cars-drones-cheerfully-obey-prompt-inje-18.md" >}})
-- [Waymo 世界模型：利用生成式视频预测驾驶场景]({{< relref "posts/20260206-hacker_news-the-waymo-world-model-0.md" >}})
-- [Waymo 世界模型：自动驾驶场景生成与预测架构]({{< relref "posts/20260207-hacker_news-the-waymo-world-model-2.md" >}})
+- [自动驾驶与无人机易受路牌提示词攻击]({{< relref "posts/20260131-hacker_news-autonomous-cars-drones-cheerfully-obey-prompt-inje-17.md" >}})
+- [Waymo 世界模型：利用生成式视频预测驾驶场景]({{< relref "posts/20260206-hacker_news-the-waymo-world-model-a-new-frontier-for-autonomou-4.md" >}})
+- [Waymo 世界模型：自动驾驶场景生成与预测架构]({{< relref "posts/20260206-hacker_news-the-waymo-world-model-a-new-frontier-for-autonomou-4.md" >}})
 - [🤖抽屉打不开？揭秘零样本组合动作识别中的“物体捷径”！]({{< relref "posts/20260125-arxiv_ai-why-cant-i-open-my-drawer-mitigating-object-driven-0.md" >}})
 - [HERMES：基于视觉语言模型的长尾自动驾驶端到端风险感知系统]({{< relref "posts/20260203-arxiv_ai-hermes-a-holistic-end-to-end-risk-aware-multimodal-6.md" >}})

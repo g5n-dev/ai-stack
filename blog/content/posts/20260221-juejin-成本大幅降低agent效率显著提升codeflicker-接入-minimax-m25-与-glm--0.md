@@ -23,6 +23,10 @@ external_url: https://juejin.cn/post/7607989878777643060
 scenarios:
 - AI/ML项目
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # CodeFlicker 接入 MiniMax M2.5 与 GLM-5：降本增效，提升 Agent 效率
@@ -157,8 +161,8 @@ CodeFlicker 是一款面向开发者的 AI 辅助编程工具或平台。它利�
 
 ### 相关文章
 
-- [Claude Code：面向开发者的AI编程助手]({{< relref "posts/20260131-hacker_news-claude-code-is-your-customer-5.md" >}})
-- [Claude Code：面向开发者的AI编程代理]({{< relref "posts/20260131-hacker_news-claude-code-is-your-customer-7.md" >}})
-- [Xcode 26.3 支持开发者直接在 IDE 内调用编程智能体]({{< relref "posts/20260204-hacker_news-xcode-263-developers-can-leverage-coding-agents-di-9.md" >}})
-- [Claude Code 智能化能力遭削减]({{< relref "posts/20260211-hacker_news-claude-code-is-being-dumbed-down-2.md" >}})
-- [工程效能实践：在 Agent 优先架构中集成 Codex]({{< relref "posts/20260212-blogs_podcasts-harness-engineering-leveraging-codex-in-an-agent-f-10.md" >}})
+- [Claude Code：面向开发者的AI编程助手]({{< relref "posts/20260131-hacker_news-claude-code-is-your-customer-16.md" >}})
+- [Claude Code：面向开发者的AI编程代理]({{< relref "posts/20260131-hacker_news-claude-code-is-your-customer-16.md" >}})
+- [Xcode 26.3 支持开发者直接在 IDE 内调用编程智能体]({{< relref "posts/20260203-hacker_news-xcode-263-unlocks-the-power-of-agentic-coding-1.md" >}})
+- [Claude Code 智能化能力遭削减]({{< relref "posts/20260211-hacker_news-claude-code-is-being-dumbed-down-1.md" >}})
+- [工程效能实践：在 Agent 优先架构中集成 Codex]({{< relref "posts/20260211-blogs_podcasts-harness-engineering-leveraging-codex-in-an-agent-f-5.md" >}})

@@ -22,6 +22,10 @@ external_url: https://juejin.cn/post/7612288284083486746
 scenarios:
 - 大语言模型
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 大模型连载2：初步认识 tokenizer 的过程
@@ -171,8 +175,8 @@ Tokenizer 的训练通常是一个无监督的过程，主要包含以下步骤�
 
 ### 相关文章
 
-- [大模型连载1：理解 Token 这一基础概念]({{< relref "posts/20260302-juejin-大模型连载1了解-token-3.md" >}})
+- [大模型连载1：理解 Token 这一基础概念]({{< relref "posts/20260301-juejin-大模型连载1了解-token-1.md" >}})
 - [大模型连载1：理解自然语言处理与大模型中的 Token 概念]({{< relref "posts/20260301-juejin-大模型连载1了解-token-1.md" >}})
-- [训练万亿参数模型以生成幽默内容]({{< relref "posts/20260203-hacker_news-training-a-trillion-parameter-model-to-be-funny-18.md" >}})
+- [训练万亿参数模型以生成幽默内容]({{< relref "posts/20260203-hacker_news-training-a-trillion-parameter-model-to-be-funny-15.md" >}})
 - [为何AI写作平庸且危险：语义消融机制解析]({{< relref "posts/20260217-hacker_news-why-ai-writing-is-so-generic-boring-and-dangerous--14.md" >}})
 - [提示工程悖论：为何与AI对话比预期更难]({{< relref "posts/20260217-juejin-提示工程的悖论为什么与-ai-对话比你想象的更难-0.md" >}})

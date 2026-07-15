@@ -21,6 +21,12 @@ description: '**SCOPE：场景上下文化的增量少样本3D分割方法总结
 external_url: http://arxiv.org/abs/2603.06572v1
 scenarios:
 - 计算机视觉
+aliases:
+- /posts/20260310-arxiv_ai-scope-scene-contextualized-incremental-few-shot-3d-2/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # SCOPE：场景上下文增量式少样本3D分割
@@ -458,7 +464,7 @@ SCOPE 通过一种**上下文先验提取机制**来利用场景信息。其核�
 ### 相关文章
 
 - [ZipMap：基于测试时训练的线性时间有状态3D重建]({{< relref "posts/20260305-arxiv_ai-zipmap-linear-time-stateful-3d-reconstruction-with-4.md" >}})
-- [以对象为中心的表征是否更利于组合泛化]({{< relref "posts/20260220-arxiv_ai-are-object-centric-representations-better-at-compo-9.md" >}})
+- [以对象为中心的表征是否更利于组合泛化]({{< relref "posts/20260219-arxiv_ai-are-object-centric-representations-better-at-compo-9.md" >}})
 - [C3Box：基于CLIP的类增量学习工具箱]({{< relref "posts/20260129-arxiv_ai-c3box-a-clip-based-class-incremental-learning-tool-4.md" >}})
-- [现成图像模型可攻破图像保护方案]({{< relref "posts/20260227-arxiv_ai-off-the-shelf-image-to-image-models-are-all-you-ne-2.md" >}})
+- [现成图像模型可攻破图像保护方案]({{< relref "posts/20260226-arxiv_ai-off-the-shelf-image-to-image-models-are-all-you-ne-2.md" >}})
 - [UEval：统一多模态生成基准]({{< relref "posts/20260130-arxiv_ai-ueval-a-benchmark-for-unified-multimodal-generatio-3.md" >}})

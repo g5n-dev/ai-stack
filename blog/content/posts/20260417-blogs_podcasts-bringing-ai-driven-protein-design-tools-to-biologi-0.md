@@ -1,14 +1,31 @@
 ---
-title: "生物学家可用的开源AI蛋白质设计工具"
-date: 2026-04-17T13:39:29+08:00
+title: 生物学家可用的开源AI蛋白质设计工具
+date: 2026-04-17 13:39:29+08:00
 draft: false
-entry_kind: "auto"
-tags: ["蛋白质设计", "开源AI", "生物信息学", "AI模型", "深度学习", "蛋白质工程", "创业公司", "AI工具"]
-categories: ["开源生态", "AI 工程"]
+entry_kind: auto
+tags:
+- 蛋白质设计
+- 开源AI
+- 生物信息学
+- AI 模型
+- 深度学习
+- 蛋白质工程
+- 创业公司
+- AI 工具
+categories:
+- 开源生态
+- AI 工程
 source: blogs_podcasts
-description: "OpenProtein.AI 由 Tristan Bepler（2020 博士）与前 MIT 教授 Tim Lu（2007 博士）共同创办，目标是让 AI 驱动的蛋白质设计工具面向所有生物学家。公司提供开源的 AI 模型及相关软件，帮助研究人员进行蛋白质工程，实现序列到功能的高效预测与设计。"
+description: OpenProtein.AI 由 Tristan Bepler（2020 博士）与前 MIT 教授 Tim Lu（2007 博士）共同创办，目标是让
+  AI 驱动的蛋白质设计工具面向所有生物学家。公司提供开源的 AI 模型及相关软件，帮助研究人员进行蛋白质工程，实现序列到功能的高效预测与设计。
 external_url: https://news.mit.edu/2026/bringing-ai-driven-protein-design-tools-everywhere-0417
-scenarios: ["AI/ML项目", "命令行工具"]
+scenarios:
+- AI/ML项目
+- 命令行工具
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 生物学家可用的开源AI蛋白质设计工具
@@ -87,9 +104,9 @@ OpenProtein.AI通过开源策略降低AI蛋白质设计的技术门槛，有望�
 
 ### 相关文章
 
-- [动手学深度学习：面向中文读者的可运行教材，全球500余所高校采用]({{< relref "posts/20260303-github_trending-d2l-ai-d2l-zh-8.md" >}})
-- [动手学深度学习：面向中文读者的可运行教材，获全球500余所高校采用]({{< relref "posts/20260306-github_trending-d2l-ai-d2l-zh-1.md" >}})
-- [OpenAI发布GPT-5.4：百万token上下文与代码能力提升]({{< relref "posts/20260307-blogs_podcasts-introducing-gpt-54-14.md" >}})
-- [OpenAI发布GPT-5.4：百万token上下文与代码能力前沿模型]({{< relref "posts/20260308-blogs_podcasts-introducing-gpt-54-13.md" >}})
-- [d2l-zh：70多国500所高校选用的深度学习教材]({{< relref "posts/20260319-github_trending-d2l-ai-d2l-zh-3.md" >}})
+- [动手学深度学习：面向中文读者的可运行教材，全球500余所高校采用]({{< relref "posts/20260205-github_trending-d2l-ai-d2l-zh-2.md" >}})
+- [动手学深度学习：面向中文读者的可运行教材，获全球500余所高校采用]({{< relref "posts/20260205-github_trending-d2l-ai-d2l-zh-2.md" >}})
+- [OpenAI发布GPT-5.4：百万token上下文与代码能力提升]({{< relref "posts/20260305-blogs_podcasts-introducing-gpt-54-6.md" >}})
+- [OpenAI发布GPT-5.4：百万token上下文与代码能力前沿模型]({{< relref "posts/20260305-blogs_podcasts-introducing-gpt-54-6.md" >}})
+- [d2l-zh：70多国500所高校选用的深度学习教材]({{< relref "posts/20260205-github_trending-d2l-ai-d2l-zh-2.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

@@ -21,6 +21,14 @@ description: '以下是关于《Spatial-TTT: Streaming Visual-based Spatial Inte
 external_url: http://arxiv.org/abs/2603.12255v1
 scenarios:
 - 大语言模型
+aliases:
+- /posts/20260314-arxiv_ai-spatial-ttt-streaming-visual-based-spatial-intelli-1/
+- /posts/20260315-arxiv_ai-spatial-ttt-streaming-visual-based-spatial-intelli-1/
+- /posts/20260316-arxiv_ai-spatial-ttt-streaming-visual-based-spatial-intelli-1/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Spatial-TTT：基于测试时训练的流式视觉空间智能
@@ -419,7 +427,7 @@ Spatial-TTT 特别适用于那些环境动态变化大、需要长期稳定运�
 ### 相关文章
 
 - [进化策略导致大语言模型出现灾难性遗忘]({{< relref "posts/20260129-arxiv_ai-evolutionary-strategies-lead-to-catastrophic-forge-0.md" >}})
-- [进化策略导致大语言模型出现灾难性遗忘]({{< relref "posts/20260130-arxiv_ai-evolutionary-strategies-lead-to-catastrophic-forge-0.md" >}})
+- [进化策略导致大语言模型出现灾难性遗忘]({{< relref "posts/20260129-arxiv_ai-evolutionary-strategies-lead-to-catastrophic-forge-0.md" >}})
 - [BEVLM：将LLM语义知识蒸馏至鸟瞰图表征]({{< relref "posts/20260309-arxiv_ai-bevlm-distilling-semantic-knowledge-from-llms-into-0.md" >}})
-- [BEVLM：将LLM语义知识蒸馏至鸟瞰图表示]({{< relref "posts/20260310-arxiv_ai-bevlm-distilling-semantic-knowledge-from-llms-into-0.md" >}})
+- [BEVLM：将LLM语义知识蒸馏至鸟瞰图表示]({{< relref "posts/20260309-arxiv_ai-bevlm-distilling-semantic-knowledge-from-llms-into-0.md" >}})
 - [测试时也能发现新规律？🤯AI解锁动态学习能力！]({{< relref "posts/20260125-arxiv_ai-learning-to-discover-at-test-time-6.md" >}})

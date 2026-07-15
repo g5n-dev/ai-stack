@@ -21,6 +21,10 @@ description: 以下是针对 **VAUQ (Vision-Aware Uncertainty Quantification)** 
 external_url: http://arxiv.org/abs/2602.21054v1
 scenarios:
 - Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # VAUQ：面向LVLM自评估的视觉感知不确定性量化
@@ -459,7 +463,7 @@ VAUQ 的技术可以应用于以下场景：
 ### 相关文章
 
 - [VideoGPA：提取几何先验实现三维一致视频生成]({{< relref "posts/20260202-arxiv_ai-videogpa-distilling-geometry-priors-for-3d-consist-0.md" >}})
-- [UniT：统一多模态思维链测试时扩展]({{< relref "posts/20260214-arxiv_ai-unit-unified-multimodal-chain-of-thought-test-time-1.md" >}})
-- [UniT：统一多模态思维链测试时扩展方法]({{< relref "posts/20260216-arxiv_ai-unit-unified-multimodal-chain-of-thought-test-time-1.md" >}})
+- [UniT：统一多模态思维链测试时扩展]({{< relref "posts/20260213-arxiv_ai-unit-unified-multimodal-chain-of-thought-test-time-1.md" >}})
+- [UniT：统一多模态思维链测试时扩展方法]({{< relref "posts/20260213-arxiv_ai-unit-unified-multimodal-chain-of-thought-test-time-1.md" >}})
 - [🤖抽屉打不开？揭秘零样本组合动作识别中的“物体捷径”！]({{< relref "posts/20260125-arxiv_ai-why-cant-i-open-my-drawer-mitigating-object-driven-0.md" >}})
 - [HERMES：基于视觉语言模型的长尾自动驾驶端到端风险感知系统]({{< relref "posts/20260203-arxiv_ai-hermes-a-holistic-end-to-end-risk-aware-multimodal-6.md" >}})

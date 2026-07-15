@@ -1,14 +1,31 @@
 ---
-title: "Claude Code多Agent协作：避免大项目上下文污染"
-date: 2026-05-15T10:42:29+08:00
+title: Claude Code多Agent协作：避免大项目上下文污染
+date: 2026-05-15 10:42:29+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Claude Code", "多Agent协作", "上下文污染", "AI团队协作", "Subagent", "Agent Teams", "代码库管理", "并行开发"]
-categories: ["开发工具", "AI 工程"]
+entry_kind: auto
+tags:
+- Claude Code
+- 多Agent协作
+- 上下文污染
+- AI团队协作
+- Subagent
+- Agent Teams
+- 代码库管理
+- 并行开发
+categories:
+- 开发工具
+- AI 工程
 source: juejin
-description: "核心功能 Claude Code 推出的 **Subagent** 与 **Agent Teams** 让多个 AI 实例可以协同工作，形成“AI 团队”。每个子代理（Subagent）负责特定模块或任务，而团队（Agent Teams）负责统筹、分配以及汇总结果，实现任务的分解‑执行‑合并。 解决上下文污染 在大项目"
+description: 核心功能 Claude Code 推出的 **Subagent** 与 **Agent Teams** 让多个 AI 实例可以协同工作，形成“AI
+  团队”。每个子代理（Subagent）负责特定模块或任务，而团队（Agent Teams）负责统筹、分配以及汇总结果，实现任务的分解‑执行‑合并。 解决上下文污染
+  在大项目
 external_url: https://juejin.cn/post/7639733278732894258
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Claude Code多Agent协作：避免大项目上下文污染
@@ -102,8 +119,8 @@ Claude Code 推出的 **Subagent** 与 **Agent Teams** 让多个 AI 实例可以
 ### 相关文章
 
 - [Claude Code 核心机制解析：AI 编程工程化实践]({{< relref "posts/20260311-juejin-ai-编程工程化ai-时代程序员的基本功-3.md" >}})
-- [Claude Code 全面接入微软内部开发工作流]({{< relref "posts/20260202-hacker_news-claude-code-is-suddenly-everywhere-inside-microsof-10.md" >}})
-- [Claude Code 广泛集成至微软内部开发环境]({{< relref "posts/20260202-hacker_news-claude-code-is-suddenly-everywhere-inside-microsof-15.md" >}})
+- [Claude Code 全面接入微软内部开发工作流]({{< relref "posts/20260202-hacker_news-claude-code-is-suddenly-everywhere-inside-microsof-2.md" >}})
+- [Claude Code 广泛集成至微软内部开发环境]({{< relref "posts/20260202-hacker_news-claude-code-is-suddenly-everywhere-inside-microsof-2.md" >}})
 - [Claude Code 全面集成至微软内部开发工作流]({{< relref "posts/20260202-hacker_news-claude-code-is-suddenly-everywhere-inside-microsof-2.md" >}})
-- [Claude Code 全面集成至微软内部开发工作流]({{< relref "posts/20260202-hacker_news-claude-code-is-suddenly-everywhere-inside-microsof-6.md" >}})
+- [Claude Code 全面集成至微软内部开发工作流]({{< relref "posts/20260202-hacker_news-claude-code-is-suddenly-everywhere-inside-microsof-2.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

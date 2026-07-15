@@ -1,14 +1,31 @@
 ---
-title: "基于扩散模型从面部嵌入实现真实人脸重建"
-date: 2026-02-16T23:54:05+08:00
+title: 基于扩散模型从面部嵌入实现真实人脸重建
+date: 2026-02-16 23:54:05+08:00
 draft: false
-entry_kind: "auto"
-tags: ["扩散模型", "人脸重建", "隐私保护", "KAN", "CS.CV", "身份验证", "特征向量", "对抗攻击"]
-categories: ["安全", "论文"]
+entry_kind: auto
+tags:
+- 扩散模型
+- 人脸重建
+- 隐私保护
+- KAN
+- CS.CV
+- 身份验证
+- 特征向量
+- 对抗攻击
+categories:
+- 安全
+- 论文
 source: arxiv
-description: "**总结** **题目：** 基于扩散模型从面部嵌入进行真实人脸重建 这项研究关注隐私保护人脸识别（PPFR）系统的安全性问题。随着人脸识别技术的发展，PPFR系统虽然旨在保护隐私，但潜在的数据泄露风险仍需验证。本文提出了一种名为**面部嵌入映射（FEM）**的通用攻击框架，旨在从FR或PPFR系统的特征向量中重建出高"
+description: '**总结** **题目：** 基于扩散模型从面部嵌入进行真实人脸重建 这项研究关注隐私保护人脸识别（PPFR）系统的安全性问题。随着人脸识别技术的发展，PPFR系统虽然旨在保护隐私，但潜在的数据泄露风险仍需验证。本文提出了一种名为**面部嵌入映射（FEM）**的通用攻击框架，旨在从FR或PPFR系统的特征向量中重建出高'
 external_url: http://arxiv.org/abs/2602.13168v1
-scenarios: ["计算机视觉"]
+scenarios:
+- 计算机视觉
+aliases:
+- /posts/20260217-arxiv_ai-realistic-face-reconstruction-from-facial-embeddin-6/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 基于扩散模型从面部嵌入实现真实人脸重建
@@ -412,5 +429,5 @@ FEM框架结合了**Kolmogorov-Arnold网络（KAN）**与预训练的**身份保
 - [🛡️多模态大模型鲁棒性突破！特征空间平滑实现可证防御！]({{< relref "posts/20260125-arxiv_ai-provable-robustness-in-multimodal-large-language-m-4.md" >}})
 - [🚀动态场景新视角合成！AnyView实现任意视角自由切换！🤯]({{< relref "posts/20260126-arxiv_ai-anyview-synthesizing-any-novel-view-in-dynamic-sce-0.md" >}})
 - [🚀 自回归+掩码扩散：下一代生成式AI！🔥]({{< relref "posts/20260126-arxiv_ai-auto-regressive-masked-diffusion-models-3.md" >}})
-- [🚀AnyView：动态场景任意新视角合成！开创性技术突破🔥]({{< relref "posts/20260127-arxiv_ai-anyview-synthesizing-any-novel-view-in-dynamic-sce-0.md" >}})
+- [🚀AnyView：动态场景任意新视角合成！开创性技术突破🔥]({{< relref "posts/20260126-arxiv_ai-anyview-synthesizing-any-novel-view-in-dynamic-sce-0.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

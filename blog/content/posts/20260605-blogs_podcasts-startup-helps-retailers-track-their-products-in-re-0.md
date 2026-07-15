@@ -1,14 +1,28 @@
 ---
-title: "Cartesian物体定位系统实现零售产品实时追踪"
-date: 2026-06-05T05:28:12+08:00
+title: Cartesian物体定位系统实现零售产品实时追踪
+date: 2026-06-05 05:28:12+08:00
 draft: false
-entry_kind: "auto"
-tags: ["物体定位", "零售科技", "MIT技术", "实时追踪", "物联网", "物流", "机器人", "制造业"]
-categories: ["产品与创业"]
+entry_kind: auto
+tags:
+- 物体定位
+- 零售科技
+- MIT技术
+- 实时追踪
+- 物联网
+- 物流
+- 机器人
+- 制造业
+categories:
+- 产品与创业
 source: blogs_podcasts
-description: "一家初创公司采用麻省理工学院研发的定位技术，为零售商提供实时商品追踪方案。该系统的高精度定位能力同样可以应用于制造业、物流和机器人等领域。"
+description: 一家初创公司采用麻省理工学院研发的定位技术，为零售商提供实时商品追踪方案。该系统的高精度定位能力同样可以应用于制造业、物流和机器人等领域。
 external_url: https://news.mit.edu/2026/cartesian-helps-retailers-track-their-products-in-real-time-0605
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Cartesian物体定位系统实现零售产品实时追踪
@@ -91,9 +105,9 @@ Cartesian基于MIT技术实现亚米级实时定位，为零售业库存可视�
 
 ### 相关文章
 
-- [🍎苹果 AirTag 升级！更远距离 + 精准寻物！告别丢物焦虑！]({{< relref "posts/20260127-hacker_news-apple-introduces-new-airtag-with-longer-range-and--3.md" >}})
+- [🍎苹果 AirTag 升级！更远距离 + 精准寻物！告别丢物焦虑！]({{< relref "posts/20260126-hacker_news-apple-introduces-new-airtag-with-longer-range-and--4.md" >}})
 - [NVIDIA Cosmos策略：提升机器人控制能力]({{< relref "posts/20260129-blogs_podcasts-introducing-nvidia-cosmos-policy-for-advanced-robo-0.md" >}})
-- [NVIDIA Cosmos 策略模型：提升机器人高级控制能力]({{< relref "posts/20260130-blogs_podcasts-introducing-nvidia-cosmos-policy-for-advanced-robo-0.md" >}})
-- [NVIDIA Cosmos策略：提升机器人高级控制能力]({{< relref "posts/20260130-blogs_podcasts-introducing-nvidia-cosmos-policy-for-advanced-robo-1.md" >}})
-- [NVIDIA Cosmos 策略模型提升机器人控制精度]({{< relref "posts/20260131-blogs_podcasts-introducing-nvidia-cosmos-policy-for-advanced-robo-1.md" >}})
+- [NVIDIA Cosmos 策略模型：提升机器人高级控制能力]({{< relref "posts/20260129-blogs_podcasts-introducing-nvidia-cosmos-policy-for-advanced-robo-0.md" >}})
+- [NVIDIA Cosmos策略：提升机器人高级控制能力]({{< relref "posts/20260129-blogs_podcasts-introducing-nvidia-cosmos-policy-for-advanced-robo-0.md" >}})
+- [NVIDIA Cosmos 策略模型提升机器人控制精度]({{< relref "posts/20260129-blogs_podcasts-introducing-nvidia-cosmos-policy-for-advanced-robo-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

@@ -1,14 +1,30 @@
 ---
-title: "Hybrid Responsible AI-Stochastic Approach for SLA Compl"
-date: 2026-02-11T03:18:02+08:00
+title: Hybrid Responsible AI-Stochastic Approach for SLA Compl
+date: 2026-02-11 03:18:02+08:00
 draft: false
-entry_kind: "auto"
-tags: ["6G网络", "SLA合规", "责任AI", "多供应商", "随机优化", "审计机制", "网络编排", "问责制"]
-categories: ["系统与基础设施", "安全"]
+entry_kind: auto
+tags:
+- 6G网络
+- SLA合规
+- 责任AI
+- 多供应商
+- 随机优化
+- 审计机制
+- 网络编排
+- 问责制
+categories:
+- 系统与基础设施
+- 安全
 source: arxiv
-description: "**总结：面向多供应商6G网络SLA合规的混合责任AI随机方法** **背景与挑战：** 在6G网络自动化中，AI与闭环编排的结合虽然提升了适应性，但在多供应商环境下引发了“责任归属”难题。当违反服务水平协议（SLA）时，往往难以将原因归结到具体的代理或供应商，导致透明度和问责制的缺失。 **提出的方案：** 本文提出"
+description: '**总结：面向多供应商6G网络SLA合规的混合责任AI随机方法** **背景与挑战：** 在6G网络自动化中，AI与闭环编排的结合虽然提升了适应性，但在多供应商环境下引发了“责任归属”难题。当违反服务水平协议（SLA）时，往往难以将原因归结到具体的代理或供应商，导致透明度和问责制的缺失。
+  **提出的方案：** 本文提出'
 external_url: http://arxiv.org/abs/2602.09841v1
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Hybrid Responsible AI-Stochastic Approach for SLA Compliance in Multivendor 6G Networks
@@ -501,9 +517,9 @@ scenarios: ["AI/ML项目"]
 
 ### 相关文章
 
-- [Linux 环境下 AI 代理的安全沙箱机制与实践]({{< relref "posts/20260203-hacker_news-sandboxing-ai-agents-in-linux-11.md" >}})
+- [Linux 环境下 AI 代理的安全沙箱机制与实践]({{< relref "posts/20260203-hacker_news-sandboxing-ai-agents-in-linux-15.md" >}})
 - [在 Linux 环境下实现 AI Agent 沙箱隔离]({{< relref "posts/20260203-hacker_news-sandboxing-ai-agents-in-linux-15.md" >}})
-- [Linux 环境下 AI Agent 沙箱隔离技术解析]({{< relref "posts/20260203-hacker_news-sandboxing-ai-agents-in-linux-8.md" >}})
-- [在 Linux 环境中为 AI 代理构建沙箱隔离机制]({{< relref "posts/20260204-hacker_news-sandboxing-ai-agents-in-linux-18.md" >}})
+- [Linux 环境下 AI Agent 沙箱隔离技术解析]({{< relref "posts/20260203-hacker_news-sandboxing-ai-agents-in-linux-15.md" >}})
+- [在 Linux 环境中为 AI 代理构建沙箱隔离机制]({{< relref "posts/20260203-hacker_news-sandboxing-ai-agents-in-linux-15.md" >}})
 - [Matchlock：基于 Linux 的 AI 智能体沙箱技术]({{< relref "posts/20260208-hacker_news-matchlock-linux-based-sandboxing-for-ai-agents-2.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

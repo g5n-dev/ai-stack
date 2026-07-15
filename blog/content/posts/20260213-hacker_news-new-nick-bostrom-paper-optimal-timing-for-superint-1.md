@@ -1,14 +1,30 @@
 ---
-title: "尼克·博斯特罗姆新论文探讨超级智能的启动时机"
-date: 2026-02-13T08:27:46+08:00
+title: 尼克·博斯特罗姆新论文探讨超级智能的启动时机
+date: 2026-02-13 08:27:46+08:00
 draft: false
-entry_kind: "auto"
-tags: ["超级智能", "尼克·博斯特罗姆", "AI安全", "时机选择", "技术奇点", "控制问题", "对齐", "策略"]
-categories: ["论文", "大模型"]
+entry_kind: auto
+tags:
+- 超级智能
+- 尼克·博斯特罗姆
+- AI 安全
+- 时机选择
+- 技术奇点
+- 控制问题
+- 对齐
+- 策略
+categories:
+- 论文
+- 大模型
 source: hacker_news
-description: "尼克·波斯特洛姆在其最新论文中探讨了超级智能的最佳发展时机。该议题涉及技术演进速度与人类在过渡阶段的风险管理。本文将梳理论文核心观点，分析为何“过早”或“过晚”实现超级智能均非最优解，并探讨其对当前 AI 安全研究与政策制定的参考价值。"
+description: 尼克·波斯特洛姆在其最新论文中探讨了超级智能的最佳发展时机。该议题涉及技术演进速度与人类在过渡阶段的风险管理。本文将梳理论文核心观点，分析为何“过早”或“过晚”实现超级智能均非最优解，并探讨其对当前
+  AI 安全研究与政策制定的参考价值。
 external_url: https://nickbostrom.com/optimal.pdf
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 尼克·博斯特罗姆新论文探讨超级智能的启动时机
@@ -417,9 +433,9 @@ IAEA与洛斯阿拉莫斯国家实验室合作开发联邦学习框架：
 
 ### 相关文章
 
-- [模型智能与任务复杂度如何影响对齐偏差]({{< relref "posts/20260203-hacker_news-how-does-misalignment-scale-with-model-intelligenc-12.md" >}})
-- [基于人类反馈的强化学习：原理与应用]({{< relref "posts/20260207-hacker_news-reinforcement-learning-from-human-feedback-19.md" >}})
+- [模型智能与任务复杂度如何影响对齐偏差]({{< relref "posts/20260203-hacker_news-how-does-misalignment-scale-with-model-intelligenc-7.md" >}})
+- [基于人类反馈的强化学习：原理与应用]({{< relref "posts/20260207-hacker_news-reinforcement-learning-from-human-feedback-4.md" >}})
 - [让信任变得无关紧要：玩家视角下的智能体安全]({{< relref "posts/20260207-hacker_news-make-trust-irrelevant-a-gamers-take-on-agentic-ai--18.md" >}})
 - [Moltbook 漏洞：自进化 AI 社会中 Anthropic 安全机制失效]({{< relref "posts/20260211-arxiv_ai-the-devil-behind-moltbook-anthropic-safety-is-alwa-0.md" >}})
-- [💥MortalMATH：当推理目标遇上紧急场景，AI会“翻车”吗？]({{< relref "posts/20260128-arxiv_ai-mortalmath-evaluating-the-conflict-between-reasoni-4.md" >}})
+- [💥MortalMATH：当推理目标遇上紧急场景，AI会“翻车”吗？]({{< relref "posts/20260127-arxiv_ai-mortalmath-evaluating-the-conflict-between-reasoni-4.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

@@ -1,14 +1,29 @@
 ---
-title: "Lilian Weng 综述 RSI 线束工程 35 篇论文"
-date: 2026-07-08T14:29:35+08:00
+title: Lilian Weng 综述 RSI 线束工程 35 篇论文
+date: 2026-07-08 14:29:35+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Lilian", "论文综述", "RSI", "线束工程", "AI研究", "机器学习", "强化学习", "AI新闻"]
-categories: ["论文"]
+entry_kind: auto
+tags:
+- Lilian
+- 论文综述
+- RSI
+- 线束工程
+- AI 研究
+- 机器学习
+- 强化学习
+- AI新闻
+categories:
+- 论文
 source: blogs_podcasts
-description: "Lilian Weng（翁丽莲）近期在AINews平台上对过去一年发表的35篇关于“Harness Engineering for RSI”的论文进行系统归纳。Harness Engineering在此指用于防止或减轻重复性 Strain Injury（RSI）的人机约束与辅助技术，涵盖可穿戴传感、姿态实时检测、自适应"
+description: Lilian Weng（翁丽莲）近期在AINews平台上对过去一年发表的35篇关于“Harness Engineering for RSI”的论文进行系统归纳。Harness
+  Engineering在此指用于防止或减轻重复性 Strain Injury（RSI）的人机约束与辅助技术，涵盖可穿戴传感、姿态实时检测、自适应
 external_url: https://www.latent.space/p/ainews-lilian-weng-summarizes-35
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Lilian Weng 综述 RSI 线束工程 35 篇论文
@@ -133,9 +148,9 @@ Lilian Weng（翁丽莲）近期在AINews平台上对过去一年发表的35�
 
 ### 相关文章
 
-- [从上下文学习的难度超出预期]({{< relref "posts/20260207-hacker_news-learning-from-context-is-harder-than-we-thought-16.md" >}})
+- [从上下文学习的难度超出预期]({{< relref "posts/20260206-hacker_news-learning-from-context-is-harder-than-we-thought-6.md" >}})
 - [研究：自生成的Agent技能通常无效]({{< relref "posts/20260216-hacker_news-study-self-generated-agent-skills-are-useless-3.md" >}})
-- [通过文本反馈扩展强化学习的能力边界]({{< relref "posts/20260204-arxiv_ai-expanding-the-capabilities-of-reinforcement-learni-5.md" >}})
+- [通过文本反馈扩展强化学习的能力边界]({{< relref "posts/20260203-arxiv_ai-expanding-the-capabilities-of-reinforcement-learni-5.md" >}})
 - [Gemma 4下载量突破200万次]({{< relref "posts/20260407-blogs_podcasts-ainews-gemma-4-crosses-2-million-downloads-0.md" >}})
 - [机器人强化学习泛化能力：SHAP视角下的算法与超参数分析]({{< relref "posts/20260505-arxiv_ai-enhancing-rl-generalizability-in-robotics-through--0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

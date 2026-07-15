@@ -1,14 +1,31 @@
 ---
-title: "手作Claude Code硬件副屏：3D打印加本地状态机实现AI可视化"
-date: 2026-06-06T21:23:29+08:00
+title: 手作Claude Code硬件副屏：3D打印加本地状态机实现AI可视化
+date: 2026-06-06 21:23:29+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Claude Code", "3D打印", "状态机", "AI可视化", "硬件DIY", "嵌入式开发", "开源项目", "交互设计"]
-categories: ["开发工具", "系统与基础设施"]
+entry_kind: auto
+tags:
+- Claude Code
+- 3D打印
+- 状态机
+- AI可视化
+- 硬件DIY
+- 嵌入式开发
+- 开源项目
+- 交互设计
+categories:
+- 开发工具
+- 系统与基础设施
 source: juejin
-description: "在使用 Claude Code 执行长时间任务时，AI 有时会表现出拖延或不干活的情况。为解决这一问题，作者自行制作了一个硬件副屏。该副屏采用 3D 打印的外壳，内部搭载小型显示屏和红绿 LED 灯，通过本地状态机实时监测 Claude Code 的运行状态，并将状态以红绿灯光的形式直观呈现，从而让 AI 保持在“工作"
+description: 在使用 Claude Code 执行长时间任务时，AI 有时会表现出拖延或不干活的情况。为解决这一问题，作者自行制作了一个硬件副屏。该副屏采用
+  3D 打印的外壳，内部搭载小型显示屏和红绿 LED 灯，通过本地状态机实时监测 Claude Code 的运行状态，并将状态以红绿灯光的形式直观呈现，从而让 AI
+  保持在“工作
 external_url: https://juejin.cn/post/7648054502554779698
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 手作Claude Code硬件副屏：3D打印加本地状态机实现AI可视化
@@ -90,8 +107,8 @@ scenarios: ["AI/ML项目"]
 ### 相关文章
 
 - [Claude Code 发布：面向基础设施的编程工具]({{< relref "posts/20260204-hacker_news-claude-code-for-infrastructure-11.md" >}})
-- [Claude Code：面向基础设施的编程工具]({{< relref "posts/20260205-hacker_news-claude-code-for-infrastructure-11.md" >}})
-- [🔥GitHub爆款：MatsuriDayo/nekoray！网络神器震撼来袭！]({{< relref "posts/20260126-github_trending-matsuridayo-nekoray-0.md" >}})
+- [Claude Code：面向基础设施的编程工具]({{< relref "posts/20260204-hacker_news-claude-code-for-infrastructure-11.md" >}})
+- [🔥GitHub爆款：MatsuriDayo/nekoray！网络神器震撼来袭！]({{< relref "posts/20260125-github_trending-matsuridayo-nekoray-1.md" >}})
 - [❄️看呆了！这款极致逼真的雪景模拟器，你不想把冬天带回家吗？]({{< relref "posts/20260127-hacker_news-snow-simulation-toy-4.md" >}})
-- [Mousefood：为微控制器构建嵌入式终端界面]({{< relref "posts/20260129-hacker_news-mousefood-build-embedded-terminal-uis-for-microcon-13.md" >}})
+- [Mousefood：为微控制器构建嵌入式终端界面]({{< relref "posts/20260129-hacker_news-mousefood-build-embedded-terminal-uis-for-microcon-11.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

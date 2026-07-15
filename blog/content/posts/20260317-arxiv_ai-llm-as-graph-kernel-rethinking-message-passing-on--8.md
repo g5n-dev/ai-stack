@@ -20,6 +20,10 @@ description: '**论文总结：LLM作为图核** **核心观点** 本文探讨�
 external_url: http://arxiv.org/abs/2603.14937v1
 scenarios:
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # LLM作为图核：文本丰富图的消息传递重思考
@@ -528,8 +532,8 @@ RAMP 属于 **Conceptual Innovation（概念创新）**。它并没有发明新�
 
 ### 相关文章
 
-- [POET-X：通过正交变换扩展实现LLM高效训练]({{< relref "posts/20260308-arxiv_ai-poet-x-memory-efficient-llm-training-by-scaling-or-1.md" >}})
+- [POET-X：通过正交变换扩展实现LLM高效训练]({{< relref "posts/20260306-arxiv_ai-poet-x-memory-efficient-llm-training-by-scaling-or-1.md" >}})
 - [🔥LLM训练动力学新突破！可扩展损失景观曲率度量🚀]({{< relref "posts/20260126-arxiv_ai-a-scalable-measure-of-loss-landscape-curvature-for-1.md" >}})
-- [🔥LLM训练动力学新突破！可扩展损失景观曲率度量！]({{< relref "posts/20260127-arxiv_ai-a-scalable-measure-of-loss-landscape-curvature-for-1.md" >}})
+- [🔥LLM训练动力学新突破！可扩展损失景观曲率度量！]({{< relref "posts/20260126-arxiv_ai-a-scalable-measure-of-loss-landscape-curvature-for-1.md" >}})
 - [进化策略导致大语言模型出现灾难性遗忘]({{< relref "posts/20260129-arxiv_ai-evolutionary-strategies-lead-to-catastrophic-forge-0.md" >}})
 - [CATTO：平衡语言模型偏好与置信度的方法]({{< relref "posts/20260202-arxiv_ai-catto-balancing-preferences-and-confidence-in-lang-0.md" >}})

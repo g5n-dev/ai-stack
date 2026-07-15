@@ -1,12 +1,26 @@
 ---
-title: "AI造浏览器？别急着吹！先看代码仓库！🔍"
-date: 2026-01-27T01:25:59+08:00
+title: AI造浏览器？别急着吹！先看代码仓库！🔍
+date: 2026-01-27 01:25:59+08:00
 draft: false
-entry_kind: "auto"
-tags: ["大模型", "Electron", "代码审查", "技术祛魅", "Chromium", "AI 编程", "前端架构", "开源项目"]
-categories: ["AI 工程", "前端"]
+entry_kind: auto
+tags:
+- 大模型
+- Electron
+- 代码审查
+- 技术祛魅
+- Chromium
+- AI 编程
+- 前端架构
+- 开源项目
+categories:
+- AI 工程
+- 前端
 source: hacker_news
 external_url: https://www.theregister.com/2026/01/26/cursor_opinion
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 📰 AI造浏览器？别急着吹！先看代码仓库！🔍

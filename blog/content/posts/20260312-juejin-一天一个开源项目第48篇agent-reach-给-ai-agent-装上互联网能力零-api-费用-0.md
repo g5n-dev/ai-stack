@@ -22,6 +22,10 @@ external_url: https://juejin.cn/post/7616234147671048242
 scenarios:
 - AI/ML项目
 - 后端开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Agent-Reach：零API费用为AI Agent接入多平台互联网能力
@@ -202,7 +206,7 @@ Agent-Reach 通常是作为一个开源项目托管在 GitHub 上的（根据文
 ### 相关文章
 
 - [Moltworker：自托管个人 AI 智能体]({{< relref "posts/20260130-hacker_news-moltworker-a-self-hosted-personal-ai-agent-minus-t-16.md" >}})
-- [Moltworker：自托管个人 AI 智能体]({{< relref "posts/20260130-hacker_news-moltworker-a-self-hosted-personal-ai-agent-minus-t-19.md" >}})
-- [OpenClaw 开源 AI 智能体框架与 GitHub 增长记录]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-5.md" >}})
+- [Moltworker：自托管个人 AI 智能体]({{< relref "posts/20260130-hacker_news-moltworker-a-self-hosted-personal-ai-agent-minus-t-16.md" >}})
+- [OpenClaw 开源 AI 智能体框架与 GitHub 增长记录]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-0.md" >}})
 - [OpenClaw实战指南：从零部署24小时可执行任务的AI管家]({{< relref "posts/20260219-juejin-从零部署你的24小时ai管家openclaw完整实战指南附踩坑记录-1.md" >}})
 - [OpenCode 完全指南：从 0 到 10 万 Star 的开源 AI 编码 Agent]({{< relref "posts/20260301-juejin-opencode-完全指南从-0-到-100k-star-的开源-ai-编码-agent-0.md" >}})

@@ -1,14 +1,31 @@
 ---
-title: "从RAG到Wiki：AI个人知识库的持续积累演进"
-date: 2026-05-17T03:38:57+08:00
+title: 从RAG到Wiki：AI个人知识库的持续积累演进
+date: 2026-05-17 03:38:57+08:00
 draft: false
-entry_kind: "auto"
-tags: ["RAG", "知识库", "知识图谱", "LLM", "AI应用", "文档处理", "信息检索", "持续进化"]
-categories: ["大模型"]
+entry_kind: auto
+tags:
+- RAG
+- 知识库
+- 知识图谱
+- LLM
+- AI 应用
+- 文档处理
+- 信息检索
+- 持续进化
+categories:
+- 大模型
 source: juejin
-description: "当前局限 当前的个人知识库主要基于RAG范式：上传文档后，在提问时检索相关片段，交由大语言模型生成答案。这种方式在每次查询时都重新检索、重新生成，缺乏对已有知识的积累和跨文档的融合，难以形成系统化的知识网络。 进化路径 为实现持续进化的个人知识库，需要从检索‑生成的单一链路转向构建“LLM Wiki”。在AI的帮助下，"
+description: 当前局限 当前的个人知识库主要基于RAG范式：上传文档后，在提问时检索相关片段，交由大语言模型生成答案。这种方式在每次查询时都重新检索、重新生成，缺乏对已有知识的积累和跨文档的融合，难以形成系统化的知识网络。
+  进化路径 为实现持续进化的个人知识库，需要从检索‑生成的单一链路转向构建“LLM Wiki”。在AI的帮助下，
 external_url: https://juejin.cn/post/7640091786766598207
-scenarios: ["RAG应用", "大语言模型", "AI/ML项目"]
+scenarios:
+- RAG应用
+- 大语言模型
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 从RAG到Wiki：AI个人知识库的持续积累演进
@@ -69,8 +86,8 @@ scenarios: ["RAG应用", "大语言模型", "AI/ML项目"]
 ### 相关文章
 
 - [利用RAG技术有效解决大模型幻觉问题]({{< relref "posts/20260314-juejin-别再信它一本正经地胡说了用-rag终结大模型幻觉-0.md" >}})
-- [利用 Amazon Bedrock 构建AI驱动的招聘系统优化人才获取]({{< relref "posts/20260213-blogs_podcasts-ai-meets-hr-transforming-talent-acquisition-with-a-1.md" >}})
-- [基于Amazon Bedrock构建AI招聘系统优化人才获取流程]({{< relref "posts/20260218-blogs_podcasts-ai-meets-hr-transforming-talent-acquisition-with-a-13.md" >}})
+- [利用 Amazon Bedrock 构建AI驱动的招聘系统优化人才获取]({{< relref "posts/20260212-blogs_podcasts-ai-meets-hr-transforming-talent-acquisition-with-a-0.md" >}})
+- [基于Amazon Bedrock构建AI招聘系统优化人才获取流程]({{< relref "posts/20260212-blogs_podcasts-ai-meets-hr-transforming-talent-acquisition-with-a-0.md" >}})
 - [Captain：面向文件的自动化检索增强生成系统]({{< relref "posts/20260313-hacker_news-launch-hn-captain-yc-w26-automated-rag-for-files-5.md" >}})
 - [从聊天机器人到数字员工：解析AI世界的运转逻辑]({{< relref "posts/20260313-juejin-从聊天机器人到超级数字员工一篇文章看懂-ai-世界的运转逻辑-1.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

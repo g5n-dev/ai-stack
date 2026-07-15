@@ -1,14 +1,32 @@
 ---
-title: "混合组合算子实现偏微分方程可解释学习"
-date: 2026-05-04T18:26:23+08:00
+title: 混合组合算子实现偏微分方程可解释学习
+date: 2026-05-04 18:26:23+08:00
 draft: false
-entry_kind: "auto"
-tags: ["混合算子", "偏微分方程", "可解释学习", "模块化框架", "条件化策略", "神经算子", "数值求解器", "组合学习"]
-categories: ["AI 工程", "论文"]
+entry_kind: auto
+tags:
+- 混合算子
+- 偏微分方程
+- 可解释学习
+- 模块化框架
+- 条件化策略
+- 神经算子
+- 数值求解器
+- 组合学习
+categories:
+- AI 工程
+- 论文
 source: arxiv
-description: "HyCOP是一种模块化框架，用于学习参数化偏微分方程（PDE）解算子。它把求解过程分解为若干基本模块——如平流、扩散、学习闭合项以及边界处理——并通过查询条件化的策略决定在何时调用哪个模块以及持续多长时间。策略本身通过对 regime 特征和状态统计进行条件化学习，而非一次性映射整个输入输出。与传统的单体神经网络算子不"
+description: HyCOP是一种模块化框架，用于学习参数化偏微分方程（PDE）解算子。它把求解过程分解为若干基本模块——如平流、扩散、学习闭合项以及边界处理——并通过查询条件化的策略决定在何时调用哪个模块以及持续多长时间。策略本身通过对
+  regime 特征和状态统计进行条件化学习，而非一次性映射整个输入输出。与传统的单体神经网络算子不
 external_url: http://arxiv.org/abs/2605.00820v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+aliases:
+- /posts/20260505-arxiv_ai-hycop-hybrid-composition-operators-for-interpretab-0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 混合组合算子实现偏微分方程可解释学习

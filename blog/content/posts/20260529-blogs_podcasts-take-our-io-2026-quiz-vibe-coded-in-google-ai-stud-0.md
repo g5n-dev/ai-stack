@@ -1,14 +1,29 @@
 ---
-title: "Google AI Studio 实测 I/O 2026 新特性测验"
-date: 2026-05-29T23:27:48+08:00
+title: Google AI Studio 实测 I/O 2026 新特性测验
+date: 2026-05-29 23:27:48+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Google AI Studio", "AI 开发平台", "vibe coding", "编程方法论", "AI 辅助开发", "自然语言编程", "Google I/O", "开发者工具"]
-categories: ["开发工具", "效率与方法论"]
+entry_kind: auto
+tags:
+- Google AI Studio
+- AI 开发平台
+- Vibe Coding
+- 编程方法论
+- AI 辅助开发
+- 自然语言编程
+- Google I/O
+- 开发者工具
+categories:
+- 开发工具
+- 效率与方法论
 source: blogs_podcasts
-description: "我们利用 Google AI Studio，以 vibe coding 的方式快速构建了一个关于 I/O 2026 主要公告的测验，让用户通过互动答题了解最新发布的重点内容。"
+description: 我们利用 Google AI Studio，以 vibe coding 的方式快速构建了一个关于 I/O 2026 主要公告的测验，让用户通过互动答题了解最新发布的重点内容。
 external_url: https://blog.google/innovation-and-ai/technology/ai/io-2026-vibe-coded-quiz
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Google AI Studio 实测 I/O 2026 新特性测验
@@ -131,9 +146,9 @@ scenarios: ["AI/ML项目"]
 
 ### 相关文章
 
-- [LLM成为新一代高级编程语言]({{< relref "posts/20260208-hacker_news-llms-as-the-new-high-level-language-4.md" >}})
+- [LLM成为新一代高级编程语言]({{< relref "posts/20260208-hacker_news-llms-as-the-new-high-level-language-8.md" >}})
 - [VS Code Agent Kanban：面向 AI 辅助开发者的任务管理工具]({{< relref "posts/20260309-hacker_news-show-hn-vs-code-agent-kanban-task-management-for-t-4.md" >}})
-- [VS Code Agent Kanban：面向 AI 辅助开发者的任务管理]({{< relref "posts/20260309-hacker_news-show-hn-vs-code-agent-kanban-task-management-for-t-5.md" >}})
+- [VS Code Agent Kanban：面向 AI 辅助开发者的任务管理]({{< relref "posts/20260309-hacker_news-show-hn-vs-code-agent-kanban-task-management-for-t-4.md" >}})
 - [将 Mermaid 图表渲染为 SVG 或 ASCII 文本]({{< relref "posts/20260129-hacker_news-render-mermaid-diagrams-as-svgs-or-ascii-art-0.md" >}})
-- [AI 辅助开发的滞后策略：在技术前沿之后保持理性]({{< relref "posts/20260131-hacker_news-a-step-behind-the-bleeding-edge-a-philosophy-on-ai-10.md" >}})
+- [AI 辅助开发的滞后策略：在技术前沿之后保持理性]({{< relref "posts/20260131-hacker_news-a-step-behind-the-bleeding-edge-a-philosophy-on-ai-5.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

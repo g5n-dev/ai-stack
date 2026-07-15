@@ -1,12 +1,25 @@
 ---
-title: "🚨 Win11紧急更新二连发！灾难性补丁修复指南🔥"
-date: 2026-01-25T12:39:55+08:00
+title: 🚨 Win11紧急更新二连发！灾难性补丁修复指南🔥
+date: 2026-01-25 12:39:55+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Windows 11", "系统更新", "补丁管理", "故障修复", "VPN", "蓝屏", "系统安全", "IT运维"]
-categories: ["系统与基础设施"]
+entry_kind: auto
+tags:
+- Windows 11
+- 系统更新
+- 补丁管理
+- 故障修复
+- VPN
+- 蓝屏
+- 系统安全
+- IT运维
+categories:
+- 系统与基础设施
 source: hacker_news
 external_url: https://www.windowscentral.com/microsoft/windows-11/windows-11-second-emergency-out-of-band-update-kb5078127-released-address-outlook-bugs
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 📰 🚨 Win11紧急更新二连发！灾难性补丁修复指南🔥

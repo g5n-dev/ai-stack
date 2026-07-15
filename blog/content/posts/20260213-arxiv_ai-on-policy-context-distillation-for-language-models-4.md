@@ -1,14 +1,34 @@
 ---
-title: "面向语言模型的在线上下文蒸馏方法"
-date: 2026-02-13T23:30:43+08:00
+title: 面向语言模型的在线上下文蒸馏方法
+date: 2026-02-13 23:30:43+08:00
 draft: false
-entry_kind: "auto"
-tags: ["LLM", "模型蒸馏", "上下文学习", "KL散度", "数学推理", "提示词工程", "模型微调", "知识内化"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- LLM
+- 模型蒸馏
+- 上下文学习
+- KL散度
+- 数学推理
+- 提示词工程
+- 模型微调
+- 知识内化
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "本文介绍了一种名为**On-Policy Context Distillation (OPCD)** 的新框架，旨在让语言模型更有效地将上下文中的知识内化到其参数中。 **核心方法：** OPCD 结合了“在策略蒸馏”与“上下文蒸馏”技术。其核心机制是让学生模型基于自身生成的轨迹进行训练，同时最小化其与基于上下文条件的"
+description: 本文介绍了一种名为**On-Policy Context Distillation (OPCD)** 的新框架，旨在让语言模型更有效地将上下文中的知识内化到其参数中。
+  **核心方法：** OPCD 结合了“在策略蒸馏”与“上下文蒸馏”技术。其核心机制是让学生模型基于自身生成的轨迹进行训练，同时最小化其与基于上下文条件的
 external_url: http://arxiv.org/abs/2602.12275v1
-scenarios: ["大语言模型"]
+scenarios:
+- 大语言模型
+aliases:
+- /posts/20260214-arxiv_ai-on-policy-context-distillation-for-language-models-4/
+- /posts/20260215-arxiv_ai-on-policy-context-distillation-for-language-models-4/
+- /posts/20260216-arxiv_ai-on-policy-context-distillation-for-language-models-4/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 面向语言模型的在线上下文蒸馏方法
@@ -551,8 +571,8 @@ OCD 则可以被视为一种更接近监督学习的方法。它通过采样和�
 ### 相关文章
 
 - [进化策略导致大语言模型出现灾难性遗忘]({{< relref "posts/20260129-arxiv_ai-evolutionary-strategies-lead-to-catastrophic-forge-0.md" >}})
-- [进化策略导致大语言模型出现灾难性遗忘]({{< relref "posts/20260130-arxiv_ai-evolutionary-strategies-lead-to-catastrophic-forge-0.md" >}})
+- [进化策略导致大语言模型出现灾难性遗忘]({{< relref "posts/20260129-arxiv_ai-evolutionary-strategies-lead-to-catastrophic-forge-0.md" >}})
 - [误差分类引导的提示词优化方法]({{< relref "posts/20260203-arxiv_ai-error-taxonomy-guided-prompt-optimization-3.md" >}})
 - [研究揭示RLHF如何加剧大模型谄媚行为]({{< relref "posts/20260203-arxiv_ai-how-rlhf-amplifies-sycophancy-0.md" >}})
-- [从上下文学习比预期更难]({{< relref "posts/20260206-hacker_news-learning-from-context-is-harder-than-we-thought-4.md" >}})
+- [从上下文学习比预期更难]({{< relref "posts/20260206-hacker_news-learning-from-context-is-harder-than-we-thought-6.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

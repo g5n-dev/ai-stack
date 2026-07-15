@@ -20,6 +20,10 @@ description: 随着 Claude 推出交互式图表生成能力，数据可视化�
 external_url: https://claude.com/blog/claude-builds-visuals
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Claude 新增交互式图表生成与可视化绘图能力

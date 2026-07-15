@@ -21,6 +21,10 @@ description: Mermaid+AI：告别手动画图，AI助你高效生成流程图 在
 external_url: https://juejin.cn/post/7615069320984657974
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Mermaid结合AI辅助生成流程图与工程图表
@@ -199,7 +203,7 @@ AI 同样可以辅助生成这些类型的代码。
 ### 相关文章
 
 - [🚀滴滴开源LogicFlow！流程图神器，极速开发！]({{< relref "posts/20260126-github_trending-didi-logicflow-3.md" >}})
-- [🔥滴滴力荐！LogicFlow：让你的流程图开发效率提升10倍！🚀]({{< relref "posts/20260128-github_trending-didi-logicflow-5.md" >}})
+- [🔥滴滴力荐！LogicFlow：让你的流程图开发效率提升10倍！🚀]({{< relref "posts/20260126-github_trending-didi-logicflow-3.md" >}})
 - [将 Mermaid 图表渲染为 SVG 或 ASCII 文本]({{< relref "posts/20260129-hacker_news-render-mermaid-diagrams-as-svgs-or-ascii-art-0.md" >}})
-- [将 Mermaid 图表渲染为 SVG 或 ASCII 艺术]({{< relref "posts/20260129-hacker_news-render-mermaid-diagrams-as-svgs-or-ascii-art-1.md" >}})
-- [Ghidra MCP Server：集成110款工具的AI逆向工程辅助环境]({{< relref "posts/20260204-hacker_news-show-hn-ghidra-mcp-server-110-tools-for-ai-assiste-15.md" >}})
+- [将 Mermaid 图表渲染为 SVG 或 ASCII 艺术]({{< relref "posts/20260129-hacker_news-render-mermaid-diagrams-as-svgs-or-ascii-art-0.md" >}})
+- [Ghidra MCP Server：集成110款工具的AI逆向工程辅助环境]({{< relref "posts/20260204-hacker_news-show-hn-ghidra-mcp-server-110-tools-for-ai-assiste-1.md" >}})

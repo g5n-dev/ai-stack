@@ -1,14 +1,29 @@
 ---
-title: "AI临床协作：探索医疗新模式"
-date: 2026-04-30T16:05:23+08:00
+title: AI临床协作：探索医疗新模式
+date: 2026-04-30 16:05:23+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI临床协作", "医疗AI", "多模态融合", "可解释AI", "人机交互", "精准医疗", "数据安全", "临床试点"]
-categories: ["AI 工程"]
+entry_kind: auto
+tags:
+- AI临床协作
+- 医疗 AI
+- 多模态融合
+- 可解释AI
+- 人机交互
+- 精准医疗
+- 数据安全
+- 临床试点
+categories:
+- AI 工程
 source: blogs_podcasts
-description: "研究背景 随着医疗数据规模激增和临床需求的复杂化，传统单一医生决策模式面临效率与准确性的双重挑战。人工智能技术的成熟为构建“AI共诊”新模式提供了可能。 研究目标 本研究旨在探索以AI为协同临床伙伴（AI co‑clinician）的诊疗路径，研发可实时辅助诊断、治疗方案推荐及患者管理的智能系统，实现医疗质量的提升。"
+description: 研究背景 随着医疗数据规模激增和临床需求的复杂化，传统单一医生决策模式面临效率与准确性的双重挑战。人工智能技术的成熟为构建“AI共诊”新模式提供了可能。
+  研究目标 本研究旨在探索以AI为协同临床伙伴（AI co‑clinician）的诊疗路径，研发可实时辅助诊断、治疗方案推荐及患者管理的智能系统，实现医疗质量的提升。
 external_url: https://deepmind.google/blog/ai-co-clinician
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AI临床协作：探索医疗新模式
@@ -130,8 +145,8 @@ AI协同临床的有效性受限于若干前提：高质量标注训练数据的
 ### 相关文章
 
 - [WebMCP：变革 AI 访问 Web 的自动化与交互模式]({{< relref "posts/20260216-juejin-webmcp-时代在浏览器中释放-ai-的工作能力-0.md" >}})
-- [WebMCP：改变 AI 访问 Web 方式的未来派技术提案]({{< relref "posts/20260216-juejin-webmcp-时代在浏览器中释放-ai-的工作能力-2.md" >}})
+- [WebMCP：改变 AI 访问 Web 方式的未来派技术提案]({{< relref "posts/20260216-juejin-webmcp-时代在浏览器中释放-ai-的工作能力-0.md" >}})
 - [WebMCP 协议实战：通过原生接口实现 AI 对网页的低延迟精准操作]({{< relref "posts/20260220-juejin-webmcp-实战指南让你的网站瞬间变成-ai-的大脑外挂-3.md" >}})
 - [基于AWS与Hugging Face smolagents构建医疗AI智能体]({{< relref "posts/20260223-blogs_podcasts-agentic-ai-with-multi-model-framework-using-huggin-0.md" >}})
-- [基于AWS与Hugging Face smolagents构建医疗AI Agent及多模型检索方案]({{< relref "posts/20260223-blogs_podcasts-agentic-ai-with-multi-model-framework-using-huggin-2.md" >}})
+- [基于AWS与Hugging Face smolagents构建医疗AI Agent及多模型检索方案]({{< relref "posts/20260223-blogs_podcasts-agentic-ai-with-multi-model-framework-using-huggin-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

@@ -1,14 +1,30 @@
 ---
-title: "AWS前沿模型安全发布实践"
-date: 2026-07-01T04:20:27+08:00
+title: AWS前沿模型安全发布实践
+date: 2026-07-01 04:20:27+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AWS", "Bedrock", "前沿模型", "模型发布", "AI安全", "云安全", "安全实践", "机器学习"]
-categories: ["安全", "大模型"]
+entry_kind: auto
+tags:
+- AWS
+- Bedrock
+- 前沿模型
+- 模型发布
+- AI 安全
+- 云安全
+- 安全实践
+- 机器学习
+categories:
+- 安全
+- 大模型
 source: blogs_podcasts
-description: "亚马逊云服务（AWS）致力于打造最安全的运行任何工作负载的环境。二十多年来，AWS 持续在安全方面投入巨资，构建覆盖全部服务的安全体系。基于这一安全基础，AWS 推出的人工智能服务（如 Amazon Bedrock）同样遵循严格的安全标准，确保客户在部署前沿模型时获得可靠的保护。"
+description: 亚马逊云服务（AWS）致力于打造最安全的运行任何工作负载的环境。二十多年来，AWS 持续在安全方面投入巨资，构建覆盖全部服务的安全体系。基于这一安全基础，AWS
+  推出的人工智能服务（如 Amazon Bedrock）同样遵循严格的安全标准，确保客户在部署前沿模型时获得可靠的保护。
 external_url: https://aws.amazon.com/blogs/machine-learning/safely-releasing-frontier-models-to-customers
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AWS前沿模型安全发布实践
@@ -100,9 +116,9 @@ AWS的“安全发布”范式对行业具有示范效应，可能推动形成AI
 
 ### 相关文章
 
-- [心理越狱揭示前沿模型内部冲突]({{< relref "posts/20260205-hacker_news-psychometric-jailbreaks-reveal-internal-conflict-i-11.md" >}})
+- [心理越狱揭示前沿模型内部冲突]({{< relref "posts/20260205-hacker_news-psychometric-jailbreaks-reveal-internal-conflict-i-10.md" >}})
 - [LLM生成文本检测：原理、方法与技术挑战]({{< relref "posts/20260301-hacker_news-the-science-of-detecting-llm-generated-text-19.md" >}})
-- [前沿模型低概率行动能力研究]({{< relref "posts/20260304-arxiv_ai-frontier-models-can-take-actions-at-low-probabilit-3.md" >}})
+- [前沿模型低概率行动能力研究]({{< relref "posts/20260303-arxiv_ai-frontier-models-can-take-actions-at-low-probabilit-3.md" >}})
 - [Bedrock与AWS合作：利用视觉-语言模型规模化生成物理AI训练数据]({{< relref "posts/20260224-blogs_podcasts-scaling-data-annotation-using-vision-language-mode-0.md" >}})
-- [Bedrock Robotics利用视觉语言模型规模化标注施工数据]({{< relref "posts/20260224-blogs_podcasts-scaling-data-annotation-using-vision-language-mode-2.md" >}})
+- [Bedrock Robotics利用视觉语言模型规模化标注施工数据]({{< relref "posts/20260224-blogs_podcasts-scaling-data-annotation-using-vision-language-mode-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

@@ -1,14 +1,30 @@
 ---
-title: "香港大学开源Nanobot：4000行代码实现生产级AI Agent框架"
-date: 2026-04-13T12:21:00+08:00
+title: 香港大学开源Nanobot：4000行代码实现生产级AI Agent框架
+date: 2026-04-13 12:21:00+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI Agent", "轻量框架", "开源项目", "香港大学", "大模型应用", "生产级", "智能体", "代码简洁"]
-categories: ["大模型", "开源生态"]
+entry_kind: auto
+tags:
+- AI Agent
+- 轻量框架
+- 开源项目
+- 香港大学
+- 大模型应用
+- 生产级
+- 智能体
+- 代码简洁
+categories:
+- 大模型
+- 开源生态
 source: juejin
-description: "背景 Nanobot 由香港大学数据科学实验室（HKUDS）开源，旨在为个人用户提供轻量级的 AI 智能体解决方案。 核心理念 框架秉持“少即是多”的原则，以极简代码实现完整功能，突出简洁、高效和可维护性。 技术实现 - **代码规模**：约 4,000 行核心代码，降低学习与二次开发门槛。 - **功能完整**：集成"
+description: 背景 Nanobot 由香港大学数据科学实验室（HKUDS）开源，旨在为个人用户提供轻量级的 AI 智能体解决方案。 核心理念 框架秉持“少即是多”的原则，以极简代码实现完整功能，突出简洁、高效和可维护性。
+  技术实现 - **代码规模**：约 4,000 行核心代码，降低学习与二次开发门槛。 - **功能完整**：集成
 external_url: https://juejin.cn/post/7627818680535842868
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 香港大学开源Nanobot：4000行代码实现生产级AI Agent框架
@@ -104,7 +120,7 @@ HKUDS开源的Nanobot框架定位为超轻量级个人AI智能体，代码规模
 
 - [OpenClaw 开源智能体科普：电脑操作与文件自动化]({{< relref "posts/20260310-juejin-openclaw-是什么超通俗科普养龙虾-0.md" >}})
 - [AI 智能体可参与的即时战略游戏演示]({{< relref "posts/20260225-hacker_news-show-hn-a-real-time-strategy-game-that-ai-agents-c-0.md" >}})
-- [AI 智能体可玩的即时战略游戏]({{< relref "posts/20260225-hacker_news-show-hn-a-real-time-strategy-game-that-ai-agents-c-4.md" >}})
+- [AI 智能体可玩的即时战略游戏]({{< relref "posts/20260225-hacker_news-show-hn-a-real-time-strategy-game-that-ai-agents-c-0.md" >}})
 - [构建智能体文明：多智能体协作系统开源]({{< relref "posts/20260228-hacker_news-show-hn-decided-to-play-god-this-morning-so-i-buil-4.md" >}})
 - [55个AI角色组成虚拟公司The Agency开源]({{< relref "posts/20260309-juejin-55-个-ai-agent-组成虚拟公司开源2-天就-1-万星-4.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

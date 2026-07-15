@@ -21,6 +21,10 @@ description: 本文介绍了名为 **DynFormer** 的新型神经算子，旨在�
 external_url: http://arxiv.org/abs/2603.03112v1
 scenarios:
 - Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 从复杂动力学到DynFormer：重新思考PDE的Transformer架构
@@ -440,8 +444,8 @@ DynFormer 相比 FNO 的优势主要体现在：
 
 ### 相关文章
 
-- [粒子引导扩散模型用于偏微分方程求解]({{< relref "posts/20260203-arxiv_ai-particle-guided-diffusion-models-for-partial-diffe-8.md" >}})
+- [粒子引导扩散模型用于偏微分方程求解]({{< relref "posts/20260202-arxiv_ai-particle-guided-diffusion-models-for-partial-diffe-8.md" >}})
 - [函数空间逆问题的解耦扩散采样方法]({{< relref "posts/20260202-arxiv_ai-decoupled-diffusion-sampling-for-inverse-problems--2.md" >}})
 - [蛋白质多尺度结构生成的自回归建模方法]({{< relref "posts/20260205-arxiv_ai-protein-autoregressive-modeling-via-multiscale-str-1.md" >}})
-- [蛋白质自回归建模：基于多尺度结构生成的方案]({{< relref "posts/20260206-arxiv_ai-protein-autoregressive-modeling-via-multiscale-str-1.md" >}})
+- [蛋白质自回归建模：基于多尺度结构生成的方案]({{< relref "posts/20260205-arxiv_ai-protein-autoregressive-modeling-via-multiscale-str-1.md" >}})
 - [混合线性注意力新架构：高效蒸馏与极长上下文处理]({{< relref "posts/20260130-arxiv_ai-hybrid-linear-attention-done-right-efficient-disti-2.md" >}})

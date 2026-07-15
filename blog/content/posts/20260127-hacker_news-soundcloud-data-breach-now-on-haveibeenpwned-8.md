@@ -1,12 +1,30 @@
 ---
-title: "🚨SoundCloud数据泄露！HaveIBeenPwned紧急更新！"
-date: 2026-01-27T20:26:59+08:00
+title: 🚨SoundCloud数据泄露！HaveIBeenPwned紧急更新！
+date: 2026-01-27 20:26:59+08:00
 draft: false
-entry_kind: "auto"
-tags: ["数据泄露", "SoundCloud", "HaveIBeenPwned", "HIBP", "凭证填充", "bcrypt", "黑客攻击", "隐私保护"]
-categories: ["安全"]
+entry_kind: auto
+tags:
+- 数据泄露
+- SoundCloud
+- HaveIBeenPwned
+- HIBP
+- 凭证填充
+- bcrypt
+- 黑客攻击
+- 隐私保护
+categories:
+- 安全
 source: hacker_news
 external_url: https://haveibeenpwned.com/Breach/SoundCloud
+scenarios: []
+aliases:
+- /posts/20260127-hacker_news-soundcloud-data-breach-now-on-haveibeenpwned-3/
+- /posts/20260128-hacker_news-soundcloud-data-breach-now-on-haveibeenpwned-13/
+- /posts/20260128-hacker_news-soundcloud-data-breach-now-on-haveibeenpwned-7/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 📰 🚨SoundCloud数据泄露！HaveIBeenPwned紧急更新！

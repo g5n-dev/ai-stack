@@ -21,6 +21,12 @@ description: '**中文总结：从数据统计到特征几何：相关性如何�
 external_url: http://arxiv.org/abs/2603.09972v1
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260312-arxiv_ai-from-data-statistics-to-feature-geometry-how-corre-1/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 从数据统计到特征几何：相关性如何塑造叠加态
@@ -415,7 +421,7 @@ scenarios:
 ### 相关文章
 
 - [深度学习激活函数原理与非线性机制解析]({{< relref "posts/20260227-juejin-一文搞懂激活函数-1.md" >}})
-- [深度学习激活函数原理：非线性能力与模型性能解析]({{< relref "posts/20260228-juejin-一文搞懂激活函数-3.md" >}})
+- [深度学习激活函数原理：非线性能力与模型性能解析]({{< relref "posts/20260227-juejin-一文搞懂激活函数-1.md" >}})
 - [伪可逆神经网络：兼具可逆性与灵活性的新架构]({{< relref "posts/20260206-arxiv_ai-pseudo-invertible-neural-networks-1.md" >}})
-- [伪可逆神经网络：通过伪可逆性提升模型可逆性]({{< relref "posts/20260207-arxiv_ai-pseudo-invertible-neural-networks-1.md" >}})
-- [伪可逆神经网络：基于伪逆变换的高效架构设计]({{< relref "posts/20260208-arxiv_ai-pseudo-invertible-neural-networks-1.md" >}})
+- [伪可逆神经网络：通过伪可逆性提升模型可逆性]({{< relref "posts/20260206-arxiv_ai-pseudo-invertible-neural-networks-1.md" >}})
+- [伪可逆神经网络：基于伪逆变换的高效架构设计]({{< relref "posts/20260206-arxiv_ai-pseudo-invertible-neural-networks-1.md" >}})

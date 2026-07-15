@@ -21,6 +21,12 @@ description: '**SPQ：一种面向大语言模型压缩的集成技术** 本研�
 external_url: http://arxiv.org/abs/2602.18420v1
 scenarios:
 - 大语言模型
+aliases:
+- /posts/20260224-arxiv_ai-spq-an-ensemble-technique-for-large-language-model-4/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # SPQ：大语言模型压缩的集成技术
@@ -403,6 +409,6 @@ SPQ 是一种通用的模型压缩框架，理论上支持基于 Transformer 架
 
 - [LoRA-Squeeze：LoRA模块的调优后与调优中压缩方法]({{< relref "posts/20260212-arxiv_ai-lora-squeeze-simple-and-effective-post-tuning-and--7.md" >}})
 - [Agent Skills：压缩智能体技能以提升模型效率]({{< relref "posts/20260129-hacker_news-compressed-agentsmd-agent-skills-5.md" >}})
-- [Compressed Agents：Agent Skills 技术解析]({{< relref "posts/20260130-hacker_news-compressed-agentsmd-agent-skills-6.md" >}})
-- [NVIDIA Nemotron 3 Nano 30B 模型现已在 Amazon SageMaker JumpS]({{< relref "posts/20260212-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-2.md" >}})
-- [两种提升大模型推理速度的技术方法]({{< relref "posts/20260215-hacker_news-two-different-tricks-for-fast-llm-inference-15.md" >}})
+- [Compressed Agents：Agent Skills 技术解析]({{< relref "posts/20260129-hacker_news-compressed-agentsmd-agent-skills-5.md" >}})
+- [NVIDIA Nemotron 3 Nano 30B 模型现已在 Amazon SageMaker JumpS]({{< relref "posts/20260211-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-0.md" >}})
+- [两种提升大模型推理速度的技术方法]({{< relref "posts/20260215-hacker_news-two-different-tricks-for-fast-llm-inference-2.md" >}})

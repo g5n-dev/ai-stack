@@ -1,14 +1,32 @@
 ---
-title: "SceneCritic：3D室内场景合成的符号化评估器"
-date: 2026-04-15T23:20:33+08:00
+title: SceneCritic：3D室内场景合成的符号化评估器
+date: 2026-04-15 23:20:33+08:00
 draft: false
-entry_kind: "auto"
-tags: ["3D场景合成", "符号化评估", "空间约束", "场景本体", "多模态批评", "室内场景", "布局评估", "LLM批评"]
-categories: ["论文", "大模型"]
+entry_kind: auto
+tags:
+- 3D场景合成
+- 符号化评估
+- 空间约束
+- 场景本体
+- 多模态批评
+- 室内场景
+- 布局评估
+- LLM批评
+categories:
+- 论文
+- 大模型
 source: arxiv
-description: "背景与问题 大模型（LLM）和视觉‑语言模型（VLM）在生成室内三维场景时常通过布局或场景图等中间结构来表达。然而现有的评估手段大多依赖模型对渲染视图的打分，容易受视角、提示词表述以及幻觉等因素影响，导致评价不稳定，难以判断生成结果的真实空间合理性。 SceneCritic 与 SceneOnto 我们提出 Scene"
+description: 背景与问题 大模型（LLM）和视觉‑语言模型（VLM）在生成室内三维场景时常通过布局或场景图等中间结构来表达。然而现有的评估手段大多依赖模型对渲染视图的打分，容易受视角、提示词表述以及幻觉等因素影响，导致评价不稳定，难以判断生成结果的真实空间合理性。
+  SceneCritic 与 SceneOnto 我们提出 Scene
 external_url: http://arxiv.org/abs/2604.13035v1
-scenarios: ["大语言模型"]
+scenarios:
+- 大语言模型
+aliases:
+- /posts/20260416-arxiv_ai-scenecritic-a-symbolic-evaluator-for-3d-indoor-sce-0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # SceneCritic：3D室内场景合成的符号化评估器
@@ -171,7 +189,7 @@ SceneCritic 是一种符号化的平面布局评估器，基于手动构建的�
 
 - [进化策略导致大语言模型出现灾难性遗忘]({{< relref "posts/20260129-arxiv_ai-evolutionary-strategies-lead-to-catastrophic-forge-0.md" >}})
 - [SokoBench：评估大模型长程规划与推理能力]({{< relref "posts/20260129-arxiv_ai-sokobench-evaluating-long-horizon-planning-and-rea-2.md" >}})
-- [Alyah：评估阿拉伯语大模型阿联酋方言能力]({{< relref "posts/20260129-blogs_podcasts-alyah-toward-robust-evaluation-of-emirati-dialect--8.md" >}})
-- [Alyah：评估阿拉伯语大模型阿联酋方言能力]({{< relref "posts/20260129-blogs_podcasts-alyah-toward-robust-evaluation-of-emirati-dialect--9.md" >}})
+- [Alyah：评估阿拉伯语大模型阿联酋方言能力]({{< relref "posts/20260127-blogs_podcasts-alyah-toward-robust-evaluation-of-emirati-dialect--0.md" >}})
+- [Alyah：评估阿拉伯语大模型阿联酋方言能力]({{< relref "posts/20260127-blogs_podcasts-alyah-toward-robust-evaluation-of-emirati-dialect--0.md" >}})
 - [DynaWeb：基于模型的强化学习网页智能体]({{< relref "posts/20260130-arxiv_ai-dynaweb-model-based-reinforcement-learning-of-web--6.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

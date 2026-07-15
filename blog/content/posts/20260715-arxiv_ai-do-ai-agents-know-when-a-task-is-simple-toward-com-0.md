@@ -1,14 +1,31 @@
 ---
-title: "AI智能体能否识别简单任务：复杂度感知推理与执行"
-date: 2026-07-15T11:26:59+08:00
+title: AI智能体能否识别简单任务：复杂度感知推理与执行
+date: 2026-07-15 11:26:59+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI智能体", "任务感知", "复杂度感知", "E3框架", "资源优化", "LLM", "最小充分执行", "基准测试"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- AI 智能体
+- 任务感知
+- 复杂度感知
+- E3框架
+- 资源优化
+- LLM
+- 最小充分执行
+- 基准测试
+categories:
+- 大模型
+- AI 工程
 source: arxiv
-description: "研究背景 LLM智能体在自动化多步骤工程和信息处理工作流方面取得进展，却往往不评估任务实际所需的工作量。它们倾向于“最大上下文优先”，即使只需改一行代码，也会重新读取全部文件和依赖，导致资源浪费。 任务感知执行的核心概念 本文提出“任务感知执行范围估计”，即判断任务难度、真正需要的信息以及在提交资源前最可靠的短路径。定"
+description: 研究背景 LLM智能体在自动化多步骤工程和信息处理工作流方面取得进展，却往往不评估任务实际所需的工作量。它们倾向于“最大上下文优先”，即使只需改一行代码，也会重新读取全部文件和依赖，导致资源浪费。
+  任务感知执行的核心概念 本文提出“任务感知执行范围估计”，即判断任务难度、真正需要的信息以及在提交资源前最可靠的短路径。定
 external_url: http://arxiv.org/abs/2607.13034v1
-scenarios: ["AI/ML项目", "大语言模型"]
+scenarios:
+- AI/ML项目
+- 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AI智能体能否识别简单任务：复杂度感知推理与执行

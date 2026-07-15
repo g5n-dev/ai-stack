@@ -1,13 +1,28 @@
 ---
-title: "基于相机-IMU融合的鲁棒路面分类数据集与框架"
-date: 2026-01-29T06:41:12+08:00
+title: 基于相机-IMU融合的鲁棒路面分类数据集与框架
+date: 2026-01-29 06:41:12+08:00
 draft: false
-entry_kind: "auto"
-tags: ["计算机视觉", "多模态融合", "IMU", "数据集", "自动驾驶", "深度学习", "注意力机制", "鲁棒性"]
-categories: ["数据", "系统与基础设施"]
+entry_kind: auto
+tags:
+- 计算机视觉
+- 多模态融合
+- IMU
+- 数据集
+- 自动驾驶
+- 深度学习
+- 注意力机制
+- 鲁棒性
+categories:
+- 数据
+- 系统与基础设施
 source: arxiv
 external_url: http://arxiv.org/abs/2601.20847v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 基于相机-IMU融合的鲁棒路面分类数据集与框架
@@ -532,7 +547,7 @@ scenarios: ["Web应用开发"]
 ### 相关文章
 
 - [AgentDrive：首个开放基准！🚗 LLM生成场景驱动Agent智能推理]({{< relref "posts/20260126-arxiv_ai-agentdrive-an-open-benchmark-dataset-for-agentic-a-7.md" >}})
-- [🚗AgentDrive重磅发布！首个Agent推理开源自驾数据集🔥]({{< relref "posts/20260127-arxiv_ai-agentdrive-an-open-benchmark-dataset-for-agentic-a-7.md" >}})
+- [🚗AgentDrive重磅发布！首个Agent推理开源自驾数据集🔥]({{< relref "posts/20260126-arxiv_ai-agentdrive-an-open-benchmark-dataset-for-agentic-a-7.md" >}})
 - [🔍脑电+情感=超强分析！MEG数据解锁情绪新维度]({{< relref "posts/20260127-arxiv_ai-megnifying-emotion-sentiment-analysis-from-annotat-2.md" >}})
 - [🧠RHSIA！非理想颅内动脉瘤实时血流替代技术，精准高效！]({{< relref "posts/20260128-arxiv_ai-rhsia-real-time-hemodynamics-surrogation-for-non-i-6.md" >}})
 - [探索Transformer在表格数据变分自编码器中的位置]({{< relref "posts/20260129-arxiv_ai-exploring-transformer-placement-in-variational-aut-3.md" >}})

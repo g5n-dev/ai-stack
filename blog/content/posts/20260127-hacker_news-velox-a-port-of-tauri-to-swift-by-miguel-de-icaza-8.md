@@ -1,12 +1,30 @@
 ---
-title: "Velox: Tauri移植Swift版！Miguel打造跨平台新选择🚀"
-date: 2026-01-27T14:08:22+08:00
+title: 'Velox: Tauri移植Swift版！Miguel打造跨平台新选择🚀'
+date: 2026-01-27 14:08:22+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Tauri", "Swift", "跨平台", "桌面应用", "Rust", "WebView", "Miguel de Icaza", "开源"]
-categories: ["前端", "开发工具"]
+entry_kind: auto
+tags:
+- Tauri
+- Swift
+- 跨平台
+- 桌面应用
+- Rust
+- WebView
+- Miguel de Icaza
+- 开源
+categories:
+- 前端
+- 开发工具
 source: hacker_news
 external_url: https://github.com/velox-apps/velox
+scenarios: []
+aliases:
+- /posts/20260127-hacker_news-velox-a-port-of-tauri-to-swift-by-miguel-de-icaza-13/
+- /posts/20260127-hacker_news-velox-a-port-of-tauri-to-swift-by-miguel-de-icaza-5/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 📰 Velox: Tauri移植Swift版！Miguel打造跨平台新选择🚀

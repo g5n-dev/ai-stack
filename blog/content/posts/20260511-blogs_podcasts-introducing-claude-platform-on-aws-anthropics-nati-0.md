@@ -1,14 +1,31 @@
 ---
-title: "Claude Platform on AWS正式发布"
-date: 2026-05-11T21:26:11+08:00
+title: Claude Platform on AWS正式发布
+date: 2026-05-11 21:26:11+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Claude平台", "AWS集成", "Anthropic", "大模型", "API密钥", "计费统一", "IAM权限", "快速入门"]
-categories: ["大模型", "系统与基础设施"]
+entry_kind: auto
+tags:
+- Claude平台
+- AWS集成
+- Anthropic
+- 大模型
+- API密钥
+- 计费统一
+- IAM权限
+- 快速入门
+categories:
+- 大模型
+- 系统与基础设施
 source: blogs_podcasts
-description: "概述 Anthropic 宣布 Claude Platform on AWS 正式发布。该服务通过 AWS 账户直接提供 Anthropic 原生的 Claude Platform 功能，无需单独凭证、合同或计费关系。 关键特性 - 直接在 AWS 账户内访问 Claude 模型，使用已有的 IAM 权限管理。 - 计"
+description: 概述 Anthropic 宣布 Claude Platform on AWS 正式发布。该服务通过 AWS 账户直接提供 Anthropic
+  原生的 Claude Platform 功能，无需单独凭证、合同或计费关系。 关键特性 - 直接在 AWS 账户内访问 Claude 模型，使用已有的 IAM
+  权限管理。 - 计
 external_url: https://aws.amazon.com/blogs/machine-learning/introducing-claude-platform-on-aws-anthropics-native-platform-through-your-aws-account
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Claude Platform on AWS正式发布
@@ -158,9 +175,9 @@ Claude Platform on AWS 通过统一身份、统一计费和原生集成，显著
 
 ### 相关文章
 
-- [Claude Opus 4.6 发布]({{< relref "posts/20260206-hacker_news-claude-opus-46-3.md" >}})
-- [Amazon Bedrock在东南亚及台湾推出Anthropic模型全球跨区域推理]({{< relref "posts/20260224-blogs_podcasts-global-cross-region-inference-for-latest-anthropic-3.md" >}})
-- [Amazon Bedrock在亚太六地推Claude模型全球跨区域推理]({{< relref "posts/20260225-blogs_podcasts-global-cross-region-inference-for-latest-anthropic-11.md" >}})
-- [Amazon Bedrock 推出 Anthropic Claude 全球跨区域推理，覆盖东南亚及台湾]({{< relref "posts/20260225-blogs_podcasts-global-cross-region-inference-for-latest-anthropic-8.md" >}})
-- [亚马逊Bedrock在亚太五区上线Anthropic模型全球跨区域推理]({{< relref "posts/20260226-blogs_podcasts-global-cross-region-inference-for-latest-anthropic-14.md" >}})
+- [Claude Opus 4.6 发布]({{< relref "posts/20260205-hacker_news-claude-opus-46-2.md" >}})
+- [Amazon Bedrock在东南亚及台湾推出Anthropic模型全球跨区域推理]({{< relref "posts/20260224-blogs_podcasts-global-cross-region-inference-for-latest-anthropic-2.md" >}})
+- [Amazon Bedrock在亚太六地推Claude模型全球跨区域推理]({{< relref "posts/20260224-blogs_podcasts-global-cross-region-inference-for-latest-anthropic-2.md" >}})
+- [Amazon Bedrock 推出 Anthropic Claude 全球跨区域推理，覆盖东南亚及台湾]({{< relref "posts/20260224-blogs_podcasts-global-cross-region-inference-for-latest-anthropic-2.md" >}})
+- [亚马逊Bedrock在亚太五区上线Anthropic模型全球跨区域推理]({{< relref "posts/20260224-blogs_podcasts-global-cross-region-inference-for-latest-anthropic-2.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

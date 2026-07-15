@@ -1,14 +1,31 @@
 ---
-title: "Railway创始人谈代理原生云：300万用户与自建数据中心"
-date: 2026-05-20T23:31:06+08:00
+title: Railway创始人谈代理原生云：300万用户与自建数据中心
+date: 2026-05-20 23:31:06+08:00
 draft: false
-entry_kind: "auto"
-tags: ["代理原生云", "自建数据中心", "代码代理", "PR消亡", "低延迟", "高可用", "AI编程", "云平台"]
-categories: ["产品与创业", "AI 工程"]
+entry_kind: auto
+tags:
+- 代理原生云
+- 自建数据中心
+- 代码代理
+- PR消亡
+- 低延迟
+- 高可用
+- AI 编程
+- 云平台
+categories:
+- 产品与创业
+- AI 工程
 source: blogs_podcasts
-description: "Railway 是一个面向 AI 代理（Agent）原生的云平台，专注于让开发者直接在平台上部署和管理由大模型驱动的自动化任务。它已经拥有 3 百万用户，每周新增约 10 万注册，并自建了金属数据中心的硬件基础设施，以保证低延迟和高可用性。Railway 在 AI 代码生成和自动化测试方面投入超过 20 万美元，使用自"
+description: Railway 是一个面向 AI 代理（Agent）原生的云平台，专注于让开发者直接在平台上部署和管理由大模型驱动的自动化任务。它已经拥有
+  3 百万用户，每周新增约 10 万注册，并自建了金属数据中心的硬件基础设施，以保证低延迟和高可用性。Railway 在 AI 代码生成和自动化测试方面投入超过
+  20 万美元，使用自
 external_url: https://www.latent.space/p/railway
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Railway创始人谈代理原生云：300万用户与自建数据中心
@@ -153,9 +170,9 @@ Railway 将云平台定位为 **Agent‑Native**（代理原生），让 AI 编�
 
 ### 相关文章
 
-- [2025年12月AI回顾：代码编写已被永久改变]({{< relref "posts/20260226-blogs_podcasts-ainews-wtf-happened-in-december-2025-9.md" >}})
+- [2025年12月AI回顾：代码编写已被永久改变]({{< relref "posts/20260226-blogs_podcasts-ainews-wtf-happened-in-december-2025-0.md" >}})
 - [优质AI编程工具订阅费上涨，开发者面临成本压力]({{< relref "posts/20260303-hacker_news-you-are-going-to-get-priced-out-of-the-best-ai-cod-2.md" >}})
-- [马斯克辞退更多xAI联合创始人，AI编程项目进展受阻]({{< relref "posts/20260313-hacker_news-elon-musk-pushes-out-more-xai-founders-as-ai-codin-8.md" >}})
-- [Replit Agent 4：面向知识工作的智能体]({{< relref "posts/20260316-blogs_podcasts-ainews-replit-agent-4-the-knowledge-work-agent-13.md" >}})
-- [💀RIP低代码2014-2025？AI编程时代终结的真相！]({{< relref "posts/20260127-hacker_news-rip-low-code-2014-2025-15.md" >}})
+- [马斯克辞退更多xAI联合创始人，AI编程项目进展受阻]({{< relref "posts/20260313-hacker_news-elon-musk-pushes-out-more-xai-founders-as-ai-codin-7.md" >}})
+- [Replit Agent 4：面向知识工作的智能体]({{< relref "posts/20260312-blogs_podcasts-ainews-replit-agent-4-the-knowledge-work-agent-1.md" >}})
+- [💀RIP低代码2014-2025？AI编程时代终结的真相！]({{< relref "posts/20260127-hacker_news-rip-low-code-2014-2025-4.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

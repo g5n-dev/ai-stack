@@ -22,6 +22,10 @@ description: 本文介绍了针对视频问答任务提出的一种**问题感�
 external_url: http://arxiv.org/abs/2603.14953v1
 scenarios:
 - Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 合成监督学习优化视频问答关键帧选择
@@ -218,7 +222,7 @@ scenarios:
 ### 相关文章
 
 - [发现模型仓库中被忽视的高质量模型]({{< relref "posts/20260130-arxiv_ai-discovering-hidden-gems-in-model-repositories-1.md" >}})
-- [混合线性注意力新架构：高效蒸馏与超长上下文建模]({{< relref "posts/20260131-arxiv_ai-hybrid-linear-attention-done-right-efficient-disti-2.md" >}})
-- [Kimi K2.5 技术报告发布：架构与性能细节]({{< relref "posts/20260131-hacker_news-kimi-k25-technical-report-pdf-13.md" >}})
-- [基于对称感知泰勒近似实现恒定Token成本注意力机制]({{< relref "posts/20260205-hacker_news-attention-at-constant-cost-per-token-via-symmetry--14.md" >}})
-- [扩展验证比扩展策略学习更有效实现视觉-语言-动作对齐]({{< relref "posts/20260214-arxiv_ai-scaling-verification-can-be-more-effective-than-sc-0.md" >}})
+- [混合线性注意力新架构：高效蒸馏与超长上下文建模]({{< relref "posts/20260130-arxiv_ai-hybrid-linear-attention-done-right-efficient-disti-2.md" >}})
+- [Kimi K2.5 技术报告发布：架构与性能细节]({{< relref "posts/20260130-hacker_news-kimi-k25-technical-report-pdf-10.md" >}})
+- [基于对称感知泰勒近似实现恒定Token成本注意力机制]({{< relref "posts/20260204-hacker_news-attention-at-constant-cost-per-token-via-symmetry--0.md" >}})
+- [扩展验证比扩展策略学习更有效实现视觉-语言-动作对齐]({{< relref "posts/20260213-arxiv_ai-scaling-verification-can-be-more-effective-than-sc-0.md" >}})

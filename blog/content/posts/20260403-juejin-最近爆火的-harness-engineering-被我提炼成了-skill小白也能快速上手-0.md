@@ -1,14 +1,29 @@
 ---
-title: "Harness Engineering 提炼为可复用 Agent Skill 实践"
-date: 2026-04-03T13:26:08+08:00
+title: Harness Engineering 提炼为可复用 Agent Skill 实践
+date: 2026-04-03 13:26:08+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Agent Skill", "Harness Engineering", "可复用组件", "SDK封装", "YAML配置", "CI自动化", "最佳实践", "代码复用"]
-categories: ["AI 工程"]
+entry_kind: auto
+tags:
+- Agent Skill
+- Harness Engineering
+- 可复用组件
+- SDK封装
+- YAML配置
+- CI自动化
+- 最佳实践
+- 代码复用
+categories:
+- AI 工程
 source: juejin
-description: "最近，Harness Engineering 突然走红，作者把它抽象为一套可复用的 Agent Skill，帮助没有基础的人快速上手。实现过程大致分为三步： 研读与提炼 系统阅读了 Anthropic、OpenAI、Martin Fowler、LangChain 等官方文档和技术博客，提炼出 Harness 的核心概念"
+description: 最近，Harness Engineering 突然走红，作者把它抽象为一套可复用的 Agent Skill，帮助没有基础的人快速上手。实现过程大致分为三步：
+  研读与提炼 系统阅读了 Anthropic、OpenAI、Martin Fowler、LangChain 等官方文档和技术博客，提炼出 Harness 的核心概念
 external_url: https://juejin.cn/post/7624344925603070006
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Harness Engineering 提炼为可复用 Agent Skill 实践
@@ -109,7 +124,7 @@ Harness Engineering 作为工程领域的新兴实践，正受到越来越多的
 
 - [我的AI应用实践与经验总结]({{< relref "posts/20260205-hacker_news-my-ai-adoption-journey-6.md" >}})
 - [利用AI高效编写高质量代码的实践方法]({{< relref "posts/20260206-hacker_news-how-to-effectively-write-quality-code-with-ai-3.md" >}})
-- [利用AI高效编写高质量代码的实践指南]({{< relref "posts/20260206-hacker_news-how-to-effectively-write-quality-code-with-ai-5.md" >}})
-- [利用AI高效编写高质量代码的实践指南]({{< relref "posts/20260206-hacker_news-how-to-effectively-write-quality-code-with-ai-6.md" >}})
-- [利用AI高效编写高质量代码的实践方法]({{< relref "posts/20260207-hacker_news-how-to-effectively-write-quality-code-with-ai-15.md" >}})
+- [利用AI高效编写高质量代码的实践指南]({{< relref "posts/20260206-hacker_news-how-to-effectively-write-quality-code-with-ai-3.md" >}})
+- [利用AI高效编写高质量代码的实践指南]({{< relref "posts/20260206-hacker_news-how-to-effectively-write-quality-code-with-ai-3.md" >}})
+- [利用AI高效编写高质量代码的实践方法]({{< relref "posts/20260206-hacker_news-how-to-effectively-write-quality-code-with-ai-3.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

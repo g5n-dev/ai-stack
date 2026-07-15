@@ -22,6 +22,12 @@ external_url: https://peterlavigne.com/writing/verifying-ai-generated-code
 scenarios:
 - AI/ML项目
 - 大语言模型
+aliases:
+- /posts/20260317-hacker_news-toward-automated-verification-of-unreviewed-ai-gen-7/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 面向未审查AI生成代码的自动化验证研究

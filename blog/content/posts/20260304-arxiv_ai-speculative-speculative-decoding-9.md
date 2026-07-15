@@ -21,6 +21,12 @@ description: '**Speculative Speculative Decoding (SSD) 简要总结** **背景�
 external_url: http://arxiv.org/abs/2603.03251v1
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260305-arxiv_ai-speculative-speculative-decoding-9/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Speculative Decoding：推测解码加速大模型推理
@@ -446,8 +452,8 @@ Speculative Decoding 保证输出质量的关键在于其验证机制。虽然�
 
 ### 相关文章
 
-- [Speculative Decoding：大模型推理加速的投机解码技术]({{< relref "posts/20260304-hacker_news-speculative-speculative-decoding-ssd-17.md" >}})
-- [Speculative Decoding：SSD加速大模型推理]({{< relref "posts/20260304-hacker_news-speculative-speculative-decoding-ssd-13.md" >}})
+- [Speculative Decoding：大模型推理加速的投机解码技术]({{< relref "posts/20260304-hacker_news-speculative-speculative-decoding-ssd-4.md" >}})
+- [Speculative Decoding：SSD加速大模型推理]({{< relref "posts/20260304-hacker_news-speculative-speculative-decoding-ssd-4.md" >}})
 - [推测性推测解码：一种加速大模型推理的方法]({{< relref "posts/20260304-hacker_news-speculative-speculative-decoding-ssd-4.md" >}})
-- [推测性推测解码：SSD加速大模型推理]({{< relref "posts/20260304-hacker_news-speculative-speculative-decoding-ssd-6.md" >}})
-- [基于对称性泰勒近似实现恒定Token成本注意力机制]({{< relref "posts/20260204-hacker_news-attention-at-constant-cost-per-token-via-symmetry--6.md" >}})
+- [推测性推测解码：SSD加速大模型推理]({{< relref "posts/20260304-hacker_news-speculative-speculative-decoding-ssd-4.md" >}})
+- [基于对称性泰勒近似实现恒定Token成本注意力机制]({{< relref "posts/20260204-hacker_news-attention-at-constant-cost-per-token-via-symmetry--0.md" >}})

@@ -1,14 +1,30 @@
 ---
-title: "Mistral AI巴黎峰会参会笔记"
-date: 2026-05-29T18:53:41+08:00
+title: Mistral AI巴黎峰会参会笔记
+date: 2026-05-29 18:53:41+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Mistral", "巴黎峰会", "参会笔记", "大模型", "开源模型", "模型发布", "技术趋势", "AI 研发"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- Mistral
+- 巴黎峰会
+- 参会笔记
+- 大模型
+- 开源模型
+- 模型发布
+- 技术趋势
+- AI 研发
+categories:
+- 大模型
+- AI 工程
 source: hacker_news
-description: "2024 年 3 月在巴黎举行的 Mistral AI Now Summit 聚焦于生成式模型与行业落地的最新进展，吸引了来自学术界和产业界的众多专家。会议上围绕大语言模型的性能优化、跨语言部署以及数据治理展开了深入讨论，为 AI 开发者提供了可操作的实践路径。通过本次峰会的现场观察与技术解读，读者可以快速把握当前 A"
+description: 2024 年 3 月在巴黎举行的 Mistral AI Now Summit 聚焦于生成式模型与行业落地的最新进展，吸引了来自学术界和产业界的众多专家。会议上围绕大语言模型的性能优化、跨语言部署以及数据治理展开了深入讨论，为
+  AI 开发者提供了可操作的实践路径。通过本次峰会的现场观察与技术解读，读者可以快速把握当前 A
 external_url: https://koenvangilst.nl/lab/mistral-ai-now-summit
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Mistral AI巴黎峰会参会笔记
@@ -68,7 +84,7 @@ Mistral AI成立于2023年，总部位于巴黎，是欧洲最具代表性的开
 
 - [谷歌发布Gemma 4开源模型]({{< relref "posts/20260403-hacker_news-google-releases-gemma-4-open-models-0.md" >}})
 - [DeepSeek V4 Pro与Flash发布 支持华为Ascend芯片运行]({{< relref "posts/20260425-blogs_podcasts-ainews-deepseek-v4-pro-16t-a49b-and-flash-284b-a13-0.md" >}})
-- [Claude Opus 4.6 发布]({{< relref "posts/20260206-hacker_news-claude-opus-46-3.md" >}})
-- [AI 资讯：中型模型发布凸显闭环效应]({{< relref "posts/20260226-blogs_podcasts-ainews-the-unreasonable-effectiveness-of-closing-t-8.md" >}})
-- [Gemini 3.1 Flash-Lite：Gemini 3 系列中速度最快且性价比最高的模型]({{< relref "posts/20260304-blogs_podcasts-gemini-31-flash-lite-built-for-intelligence-at-sca-4.md" >}})
+- [Claude Opus 4.6 发布]({{< relref "posts/20260205-hacker_news-claude-opus-46-2.md" >}})
+- [AI 资讯：中型模型发布凸显闭环效应]({{< relref "posts/20260225-blogs_podcasts-ainews-the-unreasonable-effectiveness-of-closing-t-1.md" >}})
+- [Gemini 3.1 Flash-Lite：Gemini 3 系列中速度最快且性价比最高的模型]({{< relref "posts/20260303-blogs_podcasts-gemini-31-flash-lite-built-for-intelligence-at-sca-2.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

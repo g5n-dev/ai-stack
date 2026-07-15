@@ -1,14 +1,30 @@
 ---
-title: "GPT-5.5+Codex全自动开发macOS游戏：创作链路首次连续"
-date: 2026-04-23T23:27:59+08:00
+title: GPT-5.5+Codex全自动开发macOS游戏：创作链路首次连续
+date: 2026-04-23 23:27:59+08:00
 draft: false
-entry_kind: "auto"
-tags: ["GPT-5.5", "Codex", "macOS游戏", "AI编程", "创作链路", "自动化开发", "端到端", "AI工程"]
-categories: ["大模型", "开发工具"]
+entry_kind: auto
+tags:
+- GPT-5.5
+- Codex
+- macOS游戏
+- AI 编程
+- 创作链路
+- 自动化开发
+- 端到端
+- AI 工程
+categories:
+- 大模型
+- 开发工具
 source: juejin
-description: "本文介绍利用 GPT‑5.5 与 Codex 实现全自动生成 macOS 游戏，标志着从创意构思到可运行产品的完整创作链路首次实现端到端连续。作者指出，最令人震撼的不是 AI 能够编写代码，而是整个创作流程第一次能够无缝衔接——从想法到实现、再到可运行的游戏，整个过程不再被人为断点分割。AI 充当杠杆，放大个人创作能力"
+description: 本文介绍利用 GPT‑5.5 与 Codex 实现全自动生成 macOS 游戏，标志着从创意构思到可运行产品的完整创作链路首次实现端到端连续。作者指出，最令人震撼的不是
+  AI 能够编写代码，而是整个创作流程第一次能够无缝衔接——从想法到实现、再到可运行的游戏，整个过程不再被人为断点分割。AI 充当杠杆，放大个人创作能力
 external_url: https://juejin.cn/post/7631796352448626707
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # GPT-5.5+Codex全自动开发macOS游戏：创作链路首次连续
@@ -87,8 +103,8 @@ AI 生成代码这件事本身并不新鲜，但当 GPT-5.5 与 Codex 将“构�
 ### 相关文章
 
 - [Codex多场景编程能力解析]({{< relref "posts/20260416-hacker_news-codex-for-almost-everything-0.md" >}})
-- [Codex 应用：基于 AI 的代码生成与编辑工具]({{< relref "posts/20260203-hacker_news-the-codex-app-1.md" >}})
-- [Codex 应用：基于 GPT-3 的代码生成工具]({{< relref "posts/20260203-hacker_news-the-codex-app-2.md" >}})
-- [Codex App：基于 GPT-3 的代码生成工具]({{< relref "posts/20260203-hacker_news-the-codex-app-3.md" >}})
-- [GPT-5.3-Codex：融合推理与编码能力的智能体模型]({{< relref "posts/20260205-blogs_podcasts-gpt-53-codex-system-card-7.md" >}})
+- [Codex 应用：基于 AI 的代码生成与编辑工具]({{< relref "posts/20260202-hacker_news-the-codex-app-1.md" >}})
+- [Codex 应用：基于 GPT-3 的代码生成工具]({{< relref "posts/20260202-hacker_news-the-codex-app-1.md" >}})
+- [Codex App：基于 GPT-3 的代码生成工具]({{< relref "posts/20260202-hacker_news-the-codex-app-1.md" >}})
+- [GPT-5.3-Codex：融合推理与编码能力的智能体模型]({{< relref "posts/20260205-blogs_podcasts-gpt-53-codex-system-card-4.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

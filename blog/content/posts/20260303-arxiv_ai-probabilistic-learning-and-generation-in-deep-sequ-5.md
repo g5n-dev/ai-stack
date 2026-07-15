@@ -20,6 +20,10 @@ description: 以下是对该内容的中文总结： **深度序列模型中的�
 external_url: http://arxiv.org/abs/2603.00888v1
 scenarios:
 - Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 深度序列模型中的概率学习与生成机制
@@ -459,8 +463,8 @@ scenarios:
 
 ### 相关文章
 
-- [U(d)子群导出自然RNN与Transformer架构]({{< relref "posts/20260224-arxiv_ai-subgroups-of-ud-induce-natural-rnn-and-transformer-6.md" >}})
+- [U(d)子群导出自然RNN与Transformer架构]({{< relref "posts/20260223-arxiv_ai-subgroups-of-ud-induce-natural-rnn-and-transformer-6.md" >}})
 - [Steerling-8B：可解释自身生成任一 Token 的语言模型]({{< relref "posts/20260224-hacker_news-show-hn-steerling-8b-a-language-model-that-can-exp-4.md" >}})
 - [探索Transformer在表格数据变分自编码器中的位置]({{< relref "posts/20260129-arxiv_ai-exploring-transformer-placement-in-variational-aut-3.md" >}})
-- [探索Transformer在表格数据变分自编码器中的位置]({{< relref "posts/20260130-arxiv_ai-exploring-transformer-placement-in-variational-aut-3.md" >}})
+- [探索Transformer在表格数据变分自编码器中的位置]({{< relref "posts/20260129-arxiv_ai-exploring-transformer-placement-in-variational-aut-3.md" >}})
 - [混合线性注意力新架构：高效蒸馏与极长上下文处理]({{< relref "posts/20260130-arxiv_ai-hybrid-linear-attention-done-right-efficient-disti-2.md" >}})

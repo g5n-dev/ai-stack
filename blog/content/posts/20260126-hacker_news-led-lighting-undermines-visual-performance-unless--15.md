@@ -1,12 +1,25 @@
 ---
-title: "💡LED照明正在悄悄毁掉你的视力？除非补全宽光谱！"
-date: 2026-01-26T15:14:57+08:00
+title: 💡LED照明正在悄悄毁掉你的视力？除非补全宽光谱！
+date: 2026-01-26 15:14:57+08:00
 draft: false
-entry_kind: "auto"
-tags: ["LED照明", "视力健康", "光谱", "视觉表现", "蓝光", "视网膜", "杆细胞", "生活健康"]
-categories: ["生活与杂谈"]
+entry_kind: auto
+tags:
+- LED照明
+- 视力健康
+- 光谱
+- 视觉表现
+- 蓝光
+- 视网膜
+- 杆细胞
+- 生活健康
+categories:
+- 生活与杂谈
 source: hacker_news
 external_url: https://www.nature.com/articles/s41598-026-35389-6
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 📰 💡LED照明正在悄悄毁掉你的视力？除非补全宽光谱！

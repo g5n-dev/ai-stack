@@ -21,6 +21,12 @@ description: 本文介绍了名为 **$\tau$-Knowledge** 的全新测试基准，
 external_url: http://arxiv.org/abs/2603.04370v1
 scenarios:
 - RAG应用
+aliases:
+- /posts/20260306-arxiv_ai-τ-knowledge-evaluating-conversational-agents-over--9/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # τ-Knowledge：评估非结构化知识中的对话智能体
@@ -434,8 +440,8 @@ $\tau$-Knowledge 的数据集构建通常包含以下几个关键步骤：首先
 
 ### 相关文章
 
-- [MemSkill：面向自进化代理的记忆技能学习与演化框架]({{< relref "posts/20260204-arxiv_ai-memskill-learning-and-evolving-memory-skills-for-s-9.md" >}})
-- [面向运行时智能体记忆的查询感知预算分层路由]({{< relref "posts/20260209-arxiv_ai-learning-query-aware-budget-tier-routing-for-runti-9.md" >}})
+- [MemSkill：面向自进化代理的记忆技能学习与演化框架]({{< relref "posts/20260203-arxiv_ai-memskill-learning-and-evolving-memory-skills-for-s-9.md" >}})
 - [面向运行时智能体记忆的查询感知预算分层路由]({{< relref "posts/20260206-arxiv_ai-learning-query-aware-budget-tier-routing-for-runti-9.md" >}})
-- [面向运行时智能体记忆的查询感知预算层路由]({{< relref "posts/20260207-arxiv_ai-learning-query-aware-budget-tier-routing-for-runti-9.md" >}})
-- [SkillsBench 论文解读：跨任务基准测试如何揭示 Agent 技能的实际效用]({{< relref "posts/20260218-juejin-你知道不你现在给-ai-用的-agent-skills-可能毫无作用甚至还拖后腿-2.md" >}})
+- [面向运行时智能体记忆的查询感知预算分层路由]({{< relref "posts/20260206-arxiv_ai-learning-query-aware-budget-tier-routing-for-runti-9.md" >}})
+- [面向运行时智能体记忆的查询感知预算层路由]({{< relref "posts/20260206-arxiv_ai-learning-query-aware-budget-tier-routing-for-runti-9.md" >}})
+- [SkillsBench 论文解读：跨任务基准测试如何揭示 Agent 技能的实际效用]({{< relref "posts/20260217-juejin-你知道不你现在给-ai-用的-agent-skills-可能毫无作用甚至还拖后腿-2.md" >}})

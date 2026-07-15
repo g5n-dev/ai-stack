@@ -1,14 +1,29 @@
 ---
-title: "Amazon Bedrock识别AI生成钓鱼攻击"
-date: 2026-07-02T21:28:58+08:00
+title: Amazon Bedrock识别AI生成钓鱼攻击
+date: 2026-07-02 21:28:58+08:00
 draft: false
-entry_kind: "auto"
-tags: ["钓鱼攻击", "AI生成", "社会工程学", "威胁检测", "邮件安全", "Amazon Bedrock", "生成式AI", "开源情报"]
-categories: ["安全"]
+entry_kind: auto
+tags:
+- 钓鱼攻击
+- AI生成
+- 社会工程学
+- 威胁检测
+- 邮件安全
+- Amazon Bedrock
+- 生成式 AI
+- 开源情报
+categories:
+- 安全
 source: blogs_podcasts
-description: "背景 社交工程攻击仍是网络犯罪的主要手段，AI 生成的钓鱼邮件因其语言自然、个性化程度高，给邮件安全团队带来前所未有的挑战。攻击者利用生成式 AI 与开源情报（OSINT）批量制造成千上万条独特的钓鱼信息，显著提升攻击成功率。 Amazon Bedrock 检测思路 - **多模态特征分析**：结合文本语义、写作风格、"
+description: 背景 社交工程攻击仍是网络犯罪的主要手段，AI 生成的钓鱼邮件因其语言自然、个性化程度高，给邮件安全团队带来前所未有的挑战。攻击者利用生成式
+  AI 与开源情报（OSINT）批量制造成千上万条独特的钓鱼信息，显著提升攻击成功率。 Amazon Bedrock 检测思路 - **多模态特征分析**：结合文本语义、写作风格、
 external_url: https://aws.amazon.com/blogs/machine-learning/how-amazon-bedrock-catches-ai-generated-phishing
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Amazon Bedrock识别AI生成钓鱼攻击
@@ -128,9 +143,9 @@ Amazon Bedrock能够在生产环境中有效捕获AI生成的钓鱼邮件。
 
 ### 相关文章
 
-- [Swann基于Amazon Bedrock在百万级IoT设备部署生成式AI]({{< relref "posts/20260212-blogs_podcasts-swann-provides-generative-ai-to-millions-of-iot-de-10.md" >}})
-- [基于 Amazon Bedrock 构建AI招聘系统优化人才获取流程]({{< relref "posts/20260215-blogs_podcasts-ai-meets-hr-transforming-talent-acquisition-with-a-9.md" >}})
-- [利用 Amazon Bedrock 构建AI招聘系统优化人才获取流程]({{< relref "posts/20260216-blogs_podcasts-ai-meets-hr-transforming-talent-acquisition-with-a-10.md" >}})
+- [Swann基于Amazon Bedrock在百万级IoT设备部署生成式AI]({{< relref "posts/20260211-blogs_podcasts-swann-provides-generative-ai-to-millions-of-iot-de-2.md" >}})
+- [基于 Amazon Bedrock 构建AI招聘系统优化人才获取流程]({{< relref "posts/20260212-blogs_podcasts-ai-meets-hr-transforming-talent-acquisition-with-a-0.md" >}})
+- [利用 Amazon Bedrock 构建AI招聘系统优化人才获取流程]({{< relref "posts/20260212-blogs_podcasts-ai-meets-hr-transforming-talent-acquisition-with-a-0.md" >}})
 - [Amazon Bedrock 新增中东区域支持 Anthropic Claude 模型推理]({{< relref "posts/20260224-blogs_podcasts-introducing-amazon-bedrock-global-cross-region-inf-3.md" >}})
-- [Amazon Bedrock 推出中东全球跨区域推理支持 Claude 模型]({{< relref "posts/20260224-blogs_podcasts-introducing-amazon-bedrock-global-cross-region-inf-4.md" >}})
+- [Amazon Bedrock 推出中东全球跨区域推理支持 Claude 模型]({{< relref "posts/20260224-blogs_podcasts-introducing-amazon-bedrock-global-cross-region-inf-3.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

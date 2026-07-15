@@ -1,14 +1,30 @@
 ---
-title: "视觉语言动作模型的免标定自由视角方法"
-date: 2026-07-07T23:27:17+08:00
+title: 视觉语言动作模型的免标定自由视角方法
+date: 2026-07-07 23:27:17+08:00
 draft: false
-entry_kind: "auto"
-tags: ["VLA", "无标定", "机器人", "单目RGB", "视点鲁棒", "相机外参", "动作预测", "视觉语言模型"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- VLA
+- 无标定
+- 机器人
+- 单目RGB
+- 视点鲁棒
+- 相机外参
+- 动作预测
+- 视觉语言模型
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "背景与动机 现实机器人部署时相机常被重新定位或更换，已有的视点鲁棒视觉-语言-动作（VLA）策略大多依赖外部提供相机外参，使用不便且脆弱。作者认为策略应自行推断相机位置，而非依赖标定。 方法概述 CamVLA 将操作控制与相机几何解耦，输出两项预测： 1. **相机中心动作**——在局部相机坐标系下的末端执行器动作（姿"
+description: 背景与动机 现实机器人部署时相机常被重新定位或更换，已有的视点鲁棒视觉-语言-动作（VLA）策略大多依赖外部提供相机外参，使用不便且脆弱。作者认为策略应自行推断相机位置，而非依赖标定。
+  方法概述 CamVLA 将操作控制与相机几何解耦，输出两项预测： 1. **相机中心动作**——在局部相机坐标系下的末端执行器动作（姿
 external_url: http://arxiv.org/abs/2607.05396v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 视觉语言动作模型的免标定自由视角方法
@@ -151,8 +167,8 @@ CamVLA 将末端执行器的动作预测在**局部相机坐标系**下进行，
 ### 相关文章
 
 - [扩展验证比扩展策略学习更能有效实现视觉-语言-动作对齐]({{< relref "posts/20260213-arxiv_ai-scaling-verification-can-be-more-effective-than-sc-0.md" >}})
-- [扩展验证比扩展策略学习更有效实现视觉-语言-动作对齐]({{< relref "posts/20260214-arxiv_ai-scaling-verification-can-be-more-effective-than-sc-0.md" >}})
-- [扩展验证比扩展策略学习更能有效实现视觉-语言-动作对齐]({{< relref "posts/20260215-arxiv_ai-scaling-verification-can-be-more-effective-than-sc-0.md" >}})
-- [视觉-语言-动作对齐：扩展验证比扩展策略学习更有效]({{< relref "posts/20260216-arxiv_ai-scaling-verification-can-be-more-effective-than-sc-0.md" >}})
+- [扩展验证比扩展策略学习更有效实现视觉-语言-动作对齐]({{< relref "posts/20260213-arxiv_ai-scaling-verification-can-be-more-effective-than-sc-0.md" >}})
+- [扩展验证比扩展策略学习更能有效实现视觉-语言-动作对齐]({{< relref "posts/20260213-arxiv_ai-scaling-verification-can-be-more-effective-than-sc-0.md" >}})
+- [视觉-语言-动作对齐：扩展验证比扩展策略学习更有效]({{< relref "posts/20260213-arxiv_ai-scaling-verification-can-be-more-effective-than-sc-0.md" >}})
 - [Cosmos重磅：微调视频模型！解锁 visuomotor 控制与规划 🚀✨]({{< relref "posts/20260125-arxiv_ai-cosmos-policy-fine-tuning-video-models-for-visuomo-9.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

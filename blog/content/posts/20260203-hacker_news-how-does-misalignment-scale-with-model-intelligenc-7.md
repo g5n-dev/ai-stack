@@ -1,14 +1,33 @@
 ---
-title: "模型对齐问题如何随智能水平与任务复杂度演变"
-date: 2026-02-03T13:41:06+08:00
+title: 模型对齐问题如何随智能水平与任务复杂度演变
+date: 2026-02-03 13:41:06+08:00
 draft: false
-entry_kind: "auto"
-tags: ["模型对齐", "智能水平", "任务复杂度", "AI安全", "ScalingLaws", "对齐税", "模型评估", "AGI"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- 模型对齐
+- 智能水平
+- 任务复杂度
+- AI 安全
+- ScalingLaws
+- 对齐税
+- 模型评估
+- AGI
+categories:
+- 大模型
+- 论文
 source: hacker_news
-description: "随着模型智能水平的提升，其对齐难度往往呈现非线性变化，特别是在处理高复杂度任务时，潜在的风险与偏差更加难以预测。深入理解模型智力与任务复杂性如何共同影响这种“错位”现象，对于构建更安全、可控的 AI 系统至关重要。本文将剖析二者之间的动态关系，并探讨在模型能力持续增强的背景下，如何更有效地评估与缓解由此带来的技术挑战。"
+description: 随着模型智能水平的提升，其对齐难度往往呈现非线性变化，特别是在处理高复杂度任务时，潜在的风险与偏差更加难以预测。深入理解模型智力与任务复杂性如何共同影响这种“错位”现象，对于构建更安全、可控的
+  AI 系统至关重要。本文将剖析二者之间的动态关系，并探讨在模型能力持续增强的背景下，如何更有效地评估与缓解由此带来的技术挑战。
 external_url: https://alignment.anthropic.com/2026/hot-mess-of-ai
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+aliases:
+- /posts/20260203-hacker_news-how-does-misalignment-scale-with-model-intelligenc-12/
+- /posts/20260203-hacker_news-how-does-misalignment-scale-with-model-intelligenc-16/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 模型对齐问题如何随智能水平与任务复杂度演变
@@ -427,6 +446,6 @@ AlphaGo 最终以 4:1 击败李世石。第 37 手不仅被证明是极具创意
 - [无奖励对齐：解决多目标冲突的新方法]({{< relref "posts/20260203-arxiv_ai-reward-free-alignment-for-conflicting-objectives-0.md" >}})
 - [MortalMATH：当推理目标遇上紧急语境，冲突何解？🧠🔥]({{< relref "posts/20260127-arxiv_ai-mortalmath-evaluating-the-conflict-between-reasoni-4.md" >}})
 - [SokoBench：评估大模型长程规划与推理能力]({{< relref "posts/20260129-arxiv_ai-sokobench-evaluating-long-horizon-planning-and-rea-2.md" >}})
-- [探索面向智能体的推理奖励模型]({{< relref "posts/20260201-arxiv_ai-exploring-reasoning-reward-model-for-agents-4.md" >}})
-- [🔍 深度拆解：AI伪造数学证明的惊人真相！🚀]({{< relref "posts/20260126-hacker_news-case-study-creative-math-how-ai-fakes-proofs-12.md" >}})
+- [探索面向智能体的推理奖励模型]({{< relref "posts/20260130-arxiv_ai-exploring-reasoning-reward-model-for-agents-4.md" >}})
+- [🔍 深度拆解：AI伪造数学证明的惊人真相！🚀]({{< relref "posts/20260126-hacker_news-case-study-creative-math-how-ai-fakes-proofs-7.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

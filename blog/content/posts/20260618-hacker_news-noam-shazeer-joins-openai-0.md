@@ -1,14 +1,30 @@
 ---
-title: "前Google研究员Noam Shazeer加入OpenAI"
-date: 2026-06-18T22:25:14+08:00
+title: 前Google研究员Noam Shazeer加入OpenAI
+date: 2026-06-18 22:25:14+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI人才", "研究员", "大模型", "OpenAI", "Google", "LLM", "AI行业", "深度学习"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- AI人才
+- 研究员
+- 大模型
+- OpenAI
+- Google
+- LLM
+- AI行业
+- 深度学习
+categories:
+- 大模型
+- AI 工程
 source: hacker_news
-description: "NoamShazeer，这位在Google深度参与Transformer和语言模型研发的顶级科学家，现已加入OpenAI。他的加入被视为OpenAI在核心算法突破方面的重大投入，意在提升模型的推理效率与安全性。对关注AI前沿进展的读者而言，这意味着未来可能出现的更强大、更可控的语言模型，以及行业竞争格局的潜在变化。"
+description: NoamShazeer，这位在Google深度参与Transformer和语言模型研发的顶级科学家，现已加入OpenAI。他的加入被视为OpenAI在核心算法突破方面的重大投入，意在提升模型的推理效率与安全性。对关注AI前沿进展的读者而言，这意味着未来可能出现的更强大、更可控的语言模型，以及行业竞争格局的潜在变化。
 external_url: https://twitter.com/NoamShazeer/status/2067400851438932297
-scenarios: ["AI/ML项目", "大语言模型"]
+scenarios:
+- AI/ML项目
+- 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 前Google研究员Noam Shazeer加入OpenAI

@@ -1,14 +1,30 @@
 ---
-title: "Strands Agents与Bedrock实现免手动智能理赔录入"
-date: 2026-06-09T18:23:03+08:00
+title: Strands Agents与Bedrock实现免手动智能理赔录入
+date: 2026-06-09 18:23:03+08:00
 draft: false
-entry_kind: "auto"
-tags: ["智能体", "保险理赔", "浏览器自动化", "Amazon Bedrock", "AI Agent", "FNOL", "流程自动化", "免手动操作"]
-categories: ["AI 工程"]
+entry_kind: auto
+tags:
+- 智能体
+- 保险理赔
+- 浏览器自动化
+- Amazon Bedrock
+- AI Agent
+- FNOL
+- 流程自动化
+- 免手动操作
+categories:
+- AI 工程
 source: blogs_podcasts
-description: "概述 Hands‑free First Notice of Loss (FNOL) 系统通过结合 Strands Agents SDK 的领域推理能力与 Amazon Bedrock AgentCore Browser Tool 的实时门户交互，实现全自动化的报案受理。系统在不替代人工专家的前提下，自动完成重复性的屏幕"
+description: 概述 Hands‑free First Notice of Loss (FNOL) 系统通过结合 Strands Agents SDK 的领域推理能力与
+  Amazon Bedrock AgentCore Browser Tool 的实时门户交互，实现全自动化的报案受理。系统在不替代人工专家的前提下，自动完成重复性的屏幕
 external_url: https://aws.amazon.com/blogs/machine-learning/hands-free-first-notice-of-loss-using-strands-agents-and-amazon-bedrock-agentcore-browser-tool-for-intelligent-claims-intake
-scenarios: ["AI/ML项目", "命令行工具"]
+scenarios:
+- AI/ML项目
+- 命令行工具
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Strands Agents与Bedrock实现免手动智能理赔录入
@@ -148,8 +164,8 @@ AgentCore Browser Tool提供了浏览器自动化能力，使Agent能够在保�
 ### 相关文章
 
 - [Amazon Bedrock AgentCore 浏览器新增代理、配置文件及扩展支持]({{< relref "posts/20260213-blogs_podcasts-customize-ai-agent-browsing-with-proxies-profiles--0.md" >}})
-- [Amazon Bedrock AgentCore 浏览器支持代理、配置文件及扩展]({{< relref "posts/20260214-blogs_podcasts-customize-ai-agent-browsing-with-proxies-profiles--0.md" >}})
-- [Amazon Bedrock AgentCore 浏览器更新：新增代理、配置文件及扩展支持]({{< relref "posts/20260214-blogs_podcasts-customize-ai-agent-browsing-with-proxies-profiles--1.md" >}})
-- [Amazon Bedrock AgentCore 浏览器新增代理、配置文件及扩展支持]({{< relref "posts/20260215-blogs_podcasts-customize-ai-agent-browsing-with-proxies-profiles--1.md" >}})
-- [Amazon Bedrock AgentCore 浏览器新增代理配置、配置文件及扩展支持]({{< relref "posts/20260216-blogs_podcasts-customize-ai-agent-browsing-with-proxies-profiles--2.md" >}})
+- [Amazon Bedrock AgentCore 浏览器支持代理、配置文件及扩展]({{< relref "posts/20260213-blogs_podcasts-customize-ai-agent-browsing-with-proxies-profiles--0.md" >}})
+- [Amazon Bedrock AgentCore 浏览器更新：新增代理、配置文件及扩展支持]({{< relref "posts/20260213-blogs_podcasts-customize-ai-agent-browsing-with-proxies-profiles--0.md" >}})
+- [Amazon Bedrock AgentCore 浏览器新增代理、配置文件及扩展支持]({{< relref "posts/20260213-blogs_podcasts-customize-ai-agent-browsing-with-proxies-profiles--0.md" >}})
+- [Amazon Bedrock AgentCore 浏览器新增代理配置、配置文件及扩展支持]({{< relref "posts/20260213-blogs_podcasts-customize-ai-agent-browsing-with-proxies-profiles--0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

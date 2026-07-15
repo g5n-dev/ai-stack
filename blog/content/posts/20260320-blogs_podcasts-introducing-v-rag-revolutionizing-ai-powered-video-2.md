@@ -21,6 +21,10 @@ external_url: https://aws.amazon.com/blogs/machine-learning/introducing-v-rag-re
 scenarios:
 - RAG应用
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # V-RAG：检索增强技术驱动AI视频生成
@@ -390,8 +394,8 @@ V-RAG可能重塑视频AI行业的竞争格局，具备以下能力的企业将�
 
 ### 相关文章
 
-- [NVIDIA AI-Q登顶DeepResearch Bench I与II榜单]({{< relref "posts/20260312-blogs_podcasts-how-nvidia-ai-q-reached-1-on-deepresearch-bench-i--7.md" >}})
+- [NVIDIA AI-Q登顶DeepResearch Bench I与II榜单]({{< relref "posts/20260312-blogs_podcasts-how-nvidia-ai-q-reached-1-on-deepresearch-bench-i--1.md" >}})
 - [COMIC：智能体驱动的素描喜剧生成框架]({{< relref "posts/20260312-arxiv_ai-comic-agentic-sketch-comedy-generation-0.md" >}})
 - [NVIDIA NeMo Retriever 推出可泛化的智能体检索流水线]({{< relref "posts/20260313-blogs_podcasts-beyond-semantic-similarity-introducing-nvidia-nemo-0.md" >}})
-- [NVIDIA NeMo Retriever 推出通用化智能体检索流水道]({{< relref "posts/20260314-blogs_podcasts-beyond-semantic-similarity-introducing-nvidia-nemo-0.md" >}})
-- [NVIDIA NeMo Retriever 推出可泛化智能体检索流水道]({{< relref "posts/20260314-blogs_podcasts-beyond-semantic-similarity-introducing-nvidia-nemo-1.md" >}})
+- [NVIDIA NeMo Retriever 推出通用化智能体检索流水道]({{< relref "posts/20260313-blogs_podcasts-beyond-semantic-similarity-introducing-nvidia-nemo-0.md" >}})
+- [NVIDIA NeMo Retriever 推出可泛化智能体检索流水道]({{< relref "posts/20260313-blogs_podcasts-beyond-semantic-similarity-introducing-nvidia-nemo-0.md" >}})

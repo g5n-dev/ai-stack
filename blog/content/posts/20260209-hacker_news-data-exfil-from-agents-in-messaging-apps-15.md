@@ -1,14 +1,29 @@
 ---
-title: "从通讯软件智能体中提取数据的方法"
-date: 2026-02-09T23:42:37+08:00
+title: 从通讯软件智能体中提取数据的方法
+date: 2026-02-09 23:42:37+08:00
 draft: false
-entry_kind: "auto"
-tags: ["智能体", "数据泄露", "通讯软件", "提示词注入", "LLM", "安全研究", "Agent", "越狱"]
-categories: ["安全", "AI 工程"]
+entry_kind: auto
+tags:
+- 智能体
+- 数据泄露
+- 通讯软件
+- 提示词注入
+- LLM
+- 安全研究
+- Agent
+- 越狱
+categories:
+- 安全
+- AI 工程
 source: hacker_news
-description: "随着即时通讯软件在企业协作中的普及，各类自动化 Agent 的应用日益深入，但其数据交互的安全性往往被忽视。本文聚焦于这类 Agent 可能成为数据泄露隐患的风险点，解析攻击者如何利用消息通道窃取敏感信息。通过剖析相关技术原理与实际场景，读者将能够识别潜在的安全盲区，并获取针对性的防御策略，以保障业务数据的安全流转。"
+description: 随着即时通讯软件在企业协作中的普及，各类自动化 Agent 的应用日益深入，但其数据交互的安全性往往被忽视。本文聚焦于这类 Agent 可能成为数据泄露隐患的风险点，解析攻击者如何利用消息通道窃取敏感信息。通过剖析相关技术原理与实际场景，读者将能够识别潜在的安全盲区，并获取针对性的防御策略，以保障业务数据的安全流转。
 external_url: https://www.promptarmor.com/resources/llm-data-exfiltration-via-url-previews-(with-openclaw-example-and-test)
-scenarios: ["大语言模型"]
+scenarios:
+- 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 从通讯软件智能体中提取数据的方法
@@ -388,8 +403,8 @@ DLP 系统能够识别、监控和保护传输中的静态及动态数据。它�
 ### 相关文章
 
 - [Agent Skills：压缩智能体技能以提升模型效率]({{< relref "posts/20260129-hacker_news-compressed-agentsmd-agent-skills-5.md" >}})
-- [AGENTS.md 架构在智能体评估中超越 Skills 技能]({{< relref "posts/20260130-hacker_news-agentsmd-outperforms-skills-in-our-agent-evals-19.md" >}})
-- [AGENTS.md 架构在智能体评估中超越 Skills 技能]({{< relref "posts/20260130-hacker_news-agentsmd-outperforms-skills-in-our-agent-evals-5.md" >}})
-- [AGENTS.md 架构在智能体评估中优于 Skills 架构]({{< relref "posts/20260130-hacker_news-agentsmd-outperforms-skills-in-our-agent-evals-9.md" >}})
-- [LangBot：生产级多平台智能体机器人开发平台]({{< relref "posts/20260201-github_trending-langbot-app-langbot-0.md" >}})
+- [AGENTS.md 架构在智能体评估中超越 Skills 技能]({{< relref "posts/20260129-hacker_news-compressed-agentsmd-agent-skills-5.md" >}})
+- [AGENTS.md 架构在智能体评估中超越 Skills 技能]({{< relref "posts/20260129-hacker_news-compressed-agentsmd-agent-skills-5.md" >}})
+- [AGENTS.md 架构在智能体评估中优于 Skills 架构]({{< relref "posts/20260129-hacker_news-compressed-agentsmd-agent-skills-5.md" >}})
+- [LangBot：生产级多平台智能体机器人开发平台]({{< relref "posts/20260131-github_trending-langbot-app-langbot-7.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

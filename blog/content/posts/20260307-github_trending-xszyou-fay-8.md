@@ -24,6 +24,16 @@ scenarios:
 - AI/ML项目
 - 大语言模型
 - RAG应用
+aliases:
+- /posts/20260308-github_trending-xszyou-fay-8/
+- /posts/20260319-github_trending-xszyou-fay-0/
+- /posts/20260320-github_trending-xszyou-fay-0/
+- /posts/20260714-github_trending-xszyou-fay-0/
+- /posts/20260715-github_trending-xszyou-fay-0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Fay：数字人与大语言模型连通业务系统的Agent框架

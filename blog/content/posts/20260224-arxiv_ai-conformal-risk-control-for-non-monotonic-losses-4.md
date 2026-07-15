@@ -21,6 +21,12 @@ description: 本文主要介绍了针对非单调损失函数的保形风险控�
 external_url: http://arxiv.org/abs/2602.20151v1
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260225-arxiv_ai-conformal-risk-control-for-non-monotonic-losses-4/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 非单调损失函数的保形风险控制方法
@@ -462,4 +468,4 @@ $$ R(\lambda) \leq \hat{R}_{n}(\lambda) + \text{StabilityPenalty}(\lambda, n) $$
 - [可扩展随机小波特征：带收敛保证的高效非平稳核近似]({{< relref "posts/20260203-arxiv_ai-scalable-random-wavelet-features-efficient-non-sta-8.md" >}})
 - [Harpoon：面向条件表格扩散模型的广义流形引导]({{< relref "posts/20260210-arxiv_ai-harpoon-generalised-manifold-guidance-for-conditio-1.md" >}})
 - [为何Adam在$β_1=β_2$时更优：缺失的梯度尺度不变性原理]({{< relref "posts/20260130-arxiv_ai-why-adam-works-better-with-β_1-β_2-the-missing-gra-8.md" >}})
-- [SCRAPL：基于随机路径散射变换的机器学习框架]({{< relref "posts/20260213-arxiv_ai-scrapl-scattering-transform-with-random-paths-for--4.md" >}})
+- [SCRAPL：基于随机路径散射变换的机器学习框架]({{< relref "posts/20260212-arxiv_ai-scrapl-scattering-transform-with-random-paths-for--4.md" >}})

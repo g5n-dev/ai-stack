@@ -1,14 +1,31 @@
 ---
-title: "2026年5月AI新闻回顾"
-date: 2026-06-05T18:10:36+08:00
+title: 2026年5月AI新闻回顾
+date: 2026-06-05 18:10:36+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI新闻", "大模型", "月度回顾", "2026年", "生成式AI", "LLM", "技术进展", "行业动态"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- AI新闻
+- 大模型
+- 月度回顾
+- 2026年
+- 生成式 AI
+- LLM
+- 技术进展
+- 行业动态
+categories:
+- 大模型
+- AI 工程
 source: blogs_podcasts
-description: "技术突破 - 推出新一代大规模语言模型，性能提升约30%，在多项基准测试中刷新纪录。 - 跨模态研究取得进展，文本‑图像‑语音统一表示模型首次实现实时转换。 - 发布开源工具包，支持快速微调和部署，显著降低开发门槛。 安全与治理 - 引入AI安全评估框架，覆盖可解释性、对抗鲁棒性与隐私保护三大维度。 - 公布模型行为审"
+description: 技术突破 - 推出新一代大规模语言模型，性能提升约30%，在多项基准测试中刷新纪录。 - 跨模态研究取得进展，文本‑图像‑语音统一表示模型首次实现实时转换。
+  - 发布开源工具包，支持快速微调和部署，显著降低开发门槛。 安全与治理 - 引入AI安全评估框架，覆盖可解释性、对抗鲁棒性与隐私保护三大维度。 - 公布模型行为审
 external_url: https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-may-2026
-scenarios: ["AI/ML项目", "大语言模型"]
+scenarios:
+- AI/ML项目
+- 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 2026年5月AI新闻回顾
@@ -181,7 +198,7 @@ scenarios: ["AI/ML项目", "大语言模型"]
 
 - [Cirrus Labs 团队加入 OpenAI]({{< relref "posts/20260411-hacker_news-cirrus-labs-to-join-openai-0.md" >}})
 - [Gemma 4下载量突破200万次]({{< relref "posts/20260407-blogs_podcasts-ainews-gemma-4-crosses-2-million-downloads-0.md" >}})
-- [模型实验室纷纷转型代理实验室]({{< relref "posts/20260524-blogs_podcasts-ainews-all-model-labs-are-now-agent-labs-0.md" >}})
+- [模型实验室纷纷转型代理实验室]({{< relref "posts/20260523-blogs_podcasts-ainews-all-model-labs-are-now-agent-labs-0.md" >}})
 - [OpenAI前沿技术进展与模型能力解析]({{< relref "posts/20260205-hacker_news-openai-frontier-5.md" >}})
-- [Claude Opus 4.6 发布]({{< relref "posts/20260206-hacker_news-claude-opus-46-3.md" >}})
+- [Claude Opus 4.6 发布]({{< relref "posts/20260205-hacker_news-claude-opus-46-2.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

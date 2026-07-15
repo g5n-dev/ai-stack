@@ -1,14 +1,31 @@
 ---
-title: "Amazon Bedrock AgentCore Runtime的WAF安全防护架构"
-date: 2026-07-08T16:56:13+08:00
+title: Amazon Bedrock AgentCore Runtime的WAF安全防护架构
+date: 2026-07-08 16:56:13+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AWS WAF", "VPC安全", "负载均衡", "Lambda代理", "安全架构", "SigV4认证", "OAuth认证", "Bedrock"]
-categories: ["安全", "系统与基础设施"]
+entry_kind: auto
+tags:
+- AWS WAF
+- VPC安全
+- 负载均衡
+- Lambda代理
+- 安全架构
+- SigV4认证
+- OAuth认证
+- Bedrock
+categories:
+- 安全
+- 系统与基础设施
 source: blogs_podcasts
-description: "架构概览 通过在公网入口放置面向 Internet 的 ALB（Application Load Balancer），在其上绑定 AWS WAF Web ACL，将流量统一先经过 WAF 过滤后，再通过 VPC Interface Endpoint 转发至 Amazon Bedrock AgentCore Runtim"
+description: 架构概览 通过在公网入口放置面向 Internet 的 ALB（Application Load Balancer），在其上绑定 AWS
+  WAF Web ACL，将流量统一先经过 WAF 过滤后，再通过 VPC Interface Endpoint 转发至 Amazon Bedrock AgentCore
+  Runtim
 external_url: https://aws.amazon.com/blogs/machine-learning/securing-amazon-bedrock-agentcore-runtime-with-aws-waf
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Amazon Bedrock AgentCore Runtime的WAF安全防护架构
@@ -174,9 +191,9 @@ scenarios: ["AI/ML项目"]
 
 ### 相关文章
 
-- [OpenAI 实时访问系统：结合速率限制与额度管理支持 Sora 和 Codex]({{< relref "posts/20260214-blogs_podcasts-beyond-rate-limits-scaling-access-to-codex-and-sor-3.md" >}})
-- [OpenAI 实时访问系统：融合速率限制与额度管理保障 Sora 和 Codex 稳定运行]({{< relref "posts/20260215-blogs_podcasts-beyond-rate-limits-scaling-access-to-codex-and-sor-3.md" >}})
-- [OpenAI 实时接入系统：结合速率限制与额度管理支撑 Sora 与 Codex]({{< relref "posts/20260218-blogs_podcasts-beyond-rate-limits-scaling-access-to-codex-and-sor-12.md" >}})
+- [OpenAI 实时访问系统：结合速率限制与额度管理支持 Sora 和 Codex]({{< relref "posts/20260213-blogs_podcasts-beyond-rate-limits-scaling-access-to-codex-and-sor-0.md" >}})
+- [OpenAI 实时访问系统：融合速率限制与额度管理保障 Sora 和 Codex 稳定运行]({{< relref "posts/20260213-blogs_podcasts-beyond-rate-limits-scaling-access-to-codex-and-sor-0.md" >}})
+- [OpenAI 实时接入系统：结合速率限制与额度管理支撑 Sora 与 Codex]({{< relref "posts/20260213-blogs_podcasts-beyond-rate-limits-scaling-access-to-codex-and-sor-0.md" >}})
 - [传统 Nginx 流量层难以适配 AI 服务，需重新设计]({{< relref "posts/20260223-juejin-你的-nginx-在扼杀-ai-服务为什么需要重新设计流量层-0.md" >}})
-- [基于Amazon SageMaker AI构建无服务器对话AI代理]({{< relref "posts/20260303-blogs_podcasts-build-a-serverless-conversational-ai-agent-using-c-13.md" >}})
+- [基于Amazon SageMaker AI构建无服务器对话AI代理]({{< relref "posts/20260302-blogs_podcasts-build-a-serverless-conversational-ai-agent-using-c-1.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

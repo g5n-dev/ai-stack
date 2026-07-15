@@ -1,14 +1,33 @@
 ---
-title: "语义分块与自然语言熵的关联研究"
-date: 2026-02-16T23:54:05+08:00
+title: 语义分块与自然语言熵的关联研究
+date: 2026-02-16 23:54:05+08:00
 draft: false
-entry_kind: "auto"
-tags: ["语义分块", "自然语言熵", "LLM", "统计模型", "信息论", "文本结构", "cs.CL", "第一性原理"]
-categories: ["论文", "大模型"]
+entry_kind: auto
+tags:
+- 语义分块
+- 自然语言熵
+- LLM
+- 统计模型
+- 信息论
+- 文本结构
+- cs.CL
+- 第一性原理
+categories:
+- 论文
+- 大模型
 source: arxiv
-description: "**内容总结：语义分块与自然语言的熵** 这项研究提出了一种统计模型，旨在从第一性原理出发解释自然语言中约80%的冗余性及其熵率特征。主要发现如下： 1. **理论模型与语义结构**：该模型描述了一种将文本自相似地分割成语义连贯块的过程，直至单词级别。通过这种层级分解，文本的语义结构可以被解析和处理。 2. **实验验"
+description: '**内容总结：语义分块与自然语言的熵** 这项研究提出了一种统计模型，旨在从第一性原理出发解释自然语言中约80%的冗余性及其熵率特征。主要发现如下：
+  1. **理论模型与语义结构**：该模型描述了一种将文本自相似地分割成语义连贯块的过程，直至单词级别。通过这种层级分解，文本的语义结构可以被解析和处理。 2.
+  **实验验'
 external_url: http://arxiv.org/abs/2602.13194v1
-scenarios: ["大语言模型"]
+scenarios:
+- 大语言模型
+aliases:
+- /posts/20260217-arxiv_ai-semantic-chunking-and-the-entropy-of-natural-langu-1/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 语义分块与自然语言熵的关联研究
@@ -508,9 +527,9 @@ scenarios: ["大语言模型"]
 
 ### 相关文章
 
-- [推理大语言模型从被动求解转向主动询问]({{< relref "posts/20260131-arxiv_ai-reasoning-while-asking-transforming-reasoning-larg-9.md" >}})
-- [基于策略上下文蒸馏的大语言模型优化方法]({{< relref "posts/20260214-arxiv_ai-on-policy-context-distillation-for-language-models-4.md" >}})
-- [面向语言模型的在线上下文蒸馏方法]({{< relref "posts/20260216-arxiv_ai-on-policy-context-distillation-for-language-models-4.md" >}})
-- [FineInstructions：将合成指令扩展至预训练规模]({{< relref "posts/20260201-arxiv_ai-fineinstructions-scaling-synthetic-instructions-to-7.md" >}})
-- [FineInstructions：将合成指令数据扩展至预训练规模]({{< relref "posts/20260202-arxiv_ai-fineinstructions-scaling-synthetic-instructions-to-7.md" >}})
+- [推理大语言模型从被动求解转向主动询问]({{< relref "posts/20260130-arxiv_ai-reasoning-while-asking-transforming-reasoning-larg-9.md" >}})
+- [基于策略上下文蒸馏的大语言模型优化方法]({{< relref "posts/20260213-arxiv_ai-on-policy-context-distillation-for-language-models-4.md" >}})
+- [面向语言模型的在线上下文蒸馏方法]({{< relref "posts/20260213-arxiv_ai-on-policy-context-distillation-for-language-models-4.md" >}})
+- [FineInstructions：将合成指令扩展至预训练规模]({{< relref "posts/20260130-arxiv_ai-fineinstructions-scaling-synthetic-instructions-to-7.md" >}})
+- [FineInstructions：将合成指令数据扩展至预训练规模]({{< relref "posts/20260130-arxiv_ai-fineinstructions-scaling-synthetic-instructions-to-7.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

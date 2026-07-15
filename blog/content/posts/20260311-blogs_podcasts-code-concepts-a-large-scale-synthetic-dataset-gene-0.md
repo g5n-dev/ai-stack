@@ -21,6 +21,13 @@ external_url: https://huggingface.co/blog/nvidia/synthetic-code-concepts
 scenarios:
 - 大语言模型
 - AI/ML项目
+aliases:
+- /posts/20260311-blogs_podcasts-code-concepts-a-large-scale-synthetic-dataset-gene-2/
+- /posts/20260312-blogs_podcasts-code-concepts-a-large-scale-synthetic-dataset-gene-4/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Code Concepts：基于编程概念种子的大规模合成数据集
@@ -277,8 +284,8 @@ scenarios:
 
 ### 相关文章
 
-- [FineInstructions：将合成指令数据扩展至预训练规模]({{< relref "posts/20260131-arxiv_ai-fineinstructions-scaling-synthetic-instructions-to-7.md" >}})
 - [FineInstructions：将合成指令数据扩展至预训练规模]({{< relref "posts/20260130-arxiv_ai-fineinstructions-scaling-synthetic-instructions-to-7.md" >}})
-- [Data Science and Technology Towards AGI Part I: Tiered]({{< relref "posts/20260211-arxiv_ai-data-science-and-technology-towards-agi-part-i-tie-9.md" >}})
-- [SWE-bench Verified 数据污染与测度失准分析及替代方案]({{< relref "posts/20260224-blogs_podcasts-why-we-no-longer-evaluate-swe-bench-verified-7.md" >}})
+- [FineInstructions：将合成指令数据扩展至预训练规模]({{< relref "posts/20260130-arxiv_ai-fineinstructions-scaling-synthetic-instructions-to-7.md" >}})
+- [Data Science and Technology Towards AGI Part I: Tiered]({{< relref "posts/20260210-arxiv_ai-data-science-and-technology-towards-agi-part-i-tie-9.md" >}})
+- [SWE-bench Verified 数据污染与测度失准分析及替代方案]({{< relref "posts/20260223-blogs_podcasts-why-we-no-longer-evaluate-swe-bench-verified-3.md" >}})
 - [CHIMERA：用于提升大模型推理泛化能力的紧凑合成数据]({{< relref "posts/20260303-arxiv_ai-chimera-compact-synthetic-data-for-generalizable-l-4.md" >}})

@@ -1,14 +1,29 @@
 ---
-title: "NanoClaw 容器支持 Claude Agent Swarms"
-date: 2026-02-09T05:40:16+08:00
+title: NanoClaw 容器支持 Claude Agent Swarms
+date: 2026-02-09 05:40:16+08:00
 draft: false
-entry_kind: "auto"
-tags: ["NanoClaw", "Claude", "Agent Swarms", "容器化", "多智能体", "编排", "部署", "AI 基础设施"]
-categories: ["AI 工程", "系统与基础设施"]
+entry_kind: auto
+tags:
+- NanoClaw
+- Claude
+- Agent Swarms
+- 容器化
+- 多智能体
+- 编排
+- 部署
+- AI 基础设施
+categories:
+- AI 工程
+- 系统与基础设施
 source: hacker_news
-description: "NanoClaw 近期更新了其容器化部署方案，正式引入对 Claude Agent Swarms 的支持。这一功能扩展解决了多智能体协作在隔离环境中的调度难题，提升了复杂自动化任务的稳定性与可维护性。本文将介绍具体的实现路径，帮助开发者利用容器编排能力，构建更健壮的智能体集群系统。"
+description: NanoClaw 近期更新了其容器化部署方案，正式引入对 Claude Agent Swarms 的支持。这一功能扩展解决了多智能体协作在隔离环境中的调度难题，提升了复杂自动化任务的稳定性与可维护性。本文将介绍具体的实现路径，帮助开发者利用容器编排能力，构建更健壮的智能体集群系统。
 external_url: https://twitter.com/Gavriel_Cohen/status/2020701159175155874
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # NanoClaw 容器支持 Claude Agent Swarms
@@ -404,8 +419,8 @@ if __name__ == "__main__":
 ### 相关文章
 
 - [Claude 推出代码智能体团队协作模式]({{< relref "posts/20260205-hacker_news-claude-code-agent-teams-3.md" >}})
-- [编排多会话 Claude Code 团队协作]({{< relref "posts/20260205-hacker_news-orchestrate-teams-of-claude-code-sessions-3.md" >}})
-- [Claude Composer：AI 编排多智能体协作与任务流]({{< relref "posts/20260206-hacker_news-claude-composer-7.md" >}})
-- [Claude Composer：AI 编排多智能体工作流]({{< relref "posts/20260207-hacker_news-claude-composer-18.md" >}})
-- [Claude Code：面向基础设施的自动化编程工具]({{< relref "posts/20260205-hacker_news-claude-code-for-infrastructure-8.md" >}})
+- [编排多会话 Claude Code 团队协作]({{< relref "posts/20260205-hacker_news-claude-code-agent-teams-3.md" >}})
+- [Claude Composer：AI 编排多智能体协作与任务流]({{< relref "posts/20260206-hacker_news-claude-composer-9.md" >}})
+- [Claude Composer：AI 编排多智能体工作流]({{< relref "posts/20260206-hacker_news-claude-composer-9.md" >}})
+- [Claude Code：面向基础设施的自动化编程工具]({{< relref "posts/20260204-hacker_news-claude-code-for-infrastructure-11.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

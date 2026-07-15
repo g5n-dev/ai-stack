@@ -1,12 +1,30 @@
 ---
-title: "Linux 两位大神联手创业！Systemd 之父 Poettering 出击！🚀"
-date: 2026-01-27T23:10:51+08:00
+title: Linux 两位大神联手创业！Systemd 之父 Poettering 出击！🚀
+date: 2026-01-27 23:10:51+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Linux", "systemd", "Lennart Poettering", "Christian Brauner", "内核开发", "云原生", "容器技术", "Ubuntu"]
-categories: ["系统与基础设施", "开源生态"]
+entry_kind: auto
+tags:
+- Linux
+- systemd
+- Lennart Poettering
+- Christian Brauner
+- 内核开发
+- 云原生
+- 容器技术
+- Ubuntu
+categories:
+- 系统与基础设施
+- 开源生态
 source: hacker_news
 external_url: https://amutable.com/about
+scenarios: []
+aliases:
+- /posts/20260128-hacker_news-lennart-poettering-christian-brauner-founded-a-new-5/
+- /posts/20260128-hacker_news-lennart-poettering-christian-brauner-founded-a-new-8/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 📰 Linux 两位大神联手创业！Systemd 之父 Poettering 出击！🚀

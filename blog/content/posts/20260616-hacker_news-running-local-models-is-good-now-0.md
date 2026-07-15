@@ -1,14 +1,30 @@
 ---
-title: "本地运行AI模型体验显著改善"
-date: 2026-06-16T22:35:39+08:00
+title: 本地运行AI模型体验显著改善
+date: 2026-06-16 22:35:39+08:00
 draft: false
-entry_kind: "auto"
-tags: ["本地部署", "模型推理", "性能优化", "开源模型", "隐私保护", "硬件加速", "资源调度", "开发体验"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- 本地部署
+- 模型推理
+- 性能优化
+- 开源模型
+- 隐私保护
+- 硬件加速
+- 资源调度
+- 开发体验
+categories:
+- 大模型
+- AI 工程
 source: hacker_news
-description: "近年来，本地部署的大语言模型在性能与易用性上取得了显著提升，已经能够在普通硬件上实现流畅的推理与交互。相比云端服务，本地运行不仅降低了数据泄露的风险，还能在网络受限或成本敏感的场景中保持稳定响应。本文将结合实测案例，解析模型选型、资源配置以及常见问题的解决方案，帮助读者快速搭建并优化自己的本地 AI 环境。"
+description: 近年来，本地部署的大语言模型在性能与易用性上取得了显著提升，已经能够在普通硬件上实现流畅的推理与交互。相比云端服务，本地运行不仅降低了数据泄露的风险，还能在网络受限或成本敏感的场景中保持稳定响应。本文将结合实测案例，解析模型选型、资源配置以及常见问题的解决方案，帮助读者快速搭建并优化自己的本地
+  AI 环境。
 external_url: https://vickiboykis.com/2026/06/15/running-local-models-is-good-now
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 本地运行AI模型体验显著改善
@@ -77,9 +93,9 @@ scenarios: ["Web应用开发"]
 
 ### 相关文章
 
-- [Qwen3.5-397B-A17B：最小Open-Opus级高效模型]({{< relref "posts/20260219-blogs_podcasts-ainews-qwen35-397b-a17b-the-smallest-open-opus-cla-13.md" >}})
-- [Moonshine 开源 STT 模型：精度超越 WhisperLargev3]({{< relref "posts/20260225-hacker_news-show-hn-moonshine-open-weights-stt-models-higher-a-2.md" >}})
-- [Moonshine 开源 STT 模型：精度超越 WhisperLargev3]({{< relref "posts/20260225-hacker_news-show-hn-moonshine-open-weights-stt-models-higher-a-4.md" >}})
-- [Moonshine 开源 STT 模型：精度超越 WhisperLargev3]({{< relref "posts/20260225-hacker_news-show-hn-moonshine-open-weights-stt-models-higher-a-6.md" >}})
-- [如何在本地部署运行 Qwen 3.5 大模型]({{< relref "posts/20260308-hacker_news-how-to-run-qwen-35-locally-10.md" >}})
+- [Qwen3.5-397B-A17B：最小Open-Opus级高效模型]({{< relref "posts/20260217-blogs_podcasts-ainews-qwen35-397b-a17b-the-smallest-open-opus-cla-0.md" >}})
+- [Moonshine 开源 STT 模型：精度超越 WhisperLargev3]({{< relref "posts/20260224-hacker_news-show-hn-moonshine-open-weights-stt-models-higher-a-6.md" >}})
+- [Moonshine 开源 STT 模型：精度超越 WhisperLargev3]({{< relref "posts/20260224-hacker_news-show-hn-moonshine-open-weights-stt-models-higher-a-6.md" >}})
+- [Moonshine 开源 STT 模型：精度超越 WhisperLargev3]({{< relref "posts/20260224-hacker_news-show-hn-moonshine-open-weights-stt-models-higher-a-6.md" >}})
+- [如何在本地部署运行 Qwen 3.5 大模型]({{< relref "posts/20260308-hacker_news-how-to-run-qwen-35-locally-16.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

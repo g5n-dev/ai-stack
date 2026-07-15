@@ -21,6 +21,12 @@ description: 本文研究了**平滑无知学习**的计算复杂性，特别是
 external_url: http://arxiv.org/abs/2602.21191v1
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260226-arxiv_ai-statistical-query-lower-bounds-for-smoothed-agnost-7/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 针对平滑对抗学习的统计查询下界研究
@@ -413,7 +419,7 @@ scenarios:
 ### 相关文章
 
 - [基于嵌入的Top-$k$检索：理论上$\mathbb{R}^{2k}$维空间已足够]({{< relref "posts/20260129-arxiv_ai-mathbbr2k-is-theoretically-large-enough-for-embedd-8.md" >}})
-- [R^{2k}维度理论上足以支持基于嵌入的Top-k检索]({{< relref "posts/20260130-arxiv_ai-mathbbr2k-is-theoretically-large-enough-for-embedd-8.md" >}})
+- [R^{2k}维度理论上足以支持基于嵌入的Top-k检索]({{< relref "posts/20260129-arxiv_ai-mathbbr2k-is-theoretically-large-enough-for-embedd-8.md" >}})
 - [数据块模型中的精确恢复方法]({{< relref "posts/20260206-arxiv_ai-exact-recovery-in-the-data-block-model-8.md" >}})
 - [基于熵排序流的非监督解耦表示学习模型]({{< relref "posts/20260209-arxiv_ai-from-core-to-detail-unsupervised-disentanglement-w-9.md" >}})
 - [Harpoon：面向条件表格扩散模型的广义流形引导]({{< relref "posts/20260210-arxiv_ai-harpoon-generalised-manifold-guidance-for-conditio-1.md" >}})

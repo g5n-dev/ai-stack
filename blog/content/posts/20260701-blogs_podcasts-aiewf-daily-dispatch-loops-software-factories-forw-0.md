@@ -1,14 +1,30 @@
 ---
-title: "AIEWF Daily Dispatch: Loops, Software Factories & Forwa"
-date: 2026-07-01T12:25:18+08:00
+title: 'AIEWF Daily Dispatch: Loops, Software Factories & Forwa'
+date: 2026-07-01 12:25:18+08:00
 draft: false
-entry_kind: "auto"
-tags: ["循环", "代理工程", "软件工厂", "前向部署工程师", "开源模型", "AI工程师", "技术大会", "行业动态"]
-categories: ["AI 工程", "开源生态"]
+entry_kind: auto
+tags:
+- 循环
+- 代理工程
+- 软件工厂
+- 前向部署工程师
+- 开源模型
+- AI工程师
+- 技术大会
+- 行业动态
+categories:
+- AI 工程
+- 开源生态
 source: blogs_podcasts
-description: "在周二的AI工程师全球大会上，循环、代理工程和软件工厂成为热议话题。与会者围绕如何通过循环结构提升模型迭代效率展开深入讨论，探索了代理工程师在系统设计中的角色定位，并展示了软件工厂模式在规模化AI系统开发中的优势。与此同时，开放模型（open models）也备受关注，聚焦社区驱动的模型共享、透明度提升以及在实际部署中"
+description: 在周二的AI工程师全球大会上，循环、代理工程和软件工厂成为热议话题。与会者围绕如何通过循环结构提升模型迭代效率展开深入讨论，探索了代理工程师在系统设计中的角色定位，并展示了软件工厂模式在规模化AI系统开发中的优势。与此同时，开放模型（open
+  models）也备受关注，聚焦社区驱动的模型共享、透明度提升以及在实际部署中
 external_url: https://www.latent.space/p/aiewf-daily-dispatch-loops
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AIEWF Daily Dispatch: Loops, Software Factories & Forward Deployed Engineers
@@ -103,8 +119,8 @@ scenarios: ["AI/ML项目"]
 ### 相关文章
 
 - [AINews：开源模型热潮与模型实验室发展动态]({{< relref "posts/20260611-blogs_podcasts-ainews-open-models-model-labs-vs-agent-labs-and-wh-0.md" >}})
-- [中国开源AI生态架构选择：DeepSeek之外的技术路径]({{< relref "posts/20260129-blogs_podcasts-architectural-choices-in-chinas-open-source-ai-eco-9.md" >}})
-- [为何推出科学领域AI播客以及工程师应关注的原因]({{< relref "posts/20260129-blogs_podcasts-its-time-to-science-2.md" >}})
-- [伦敦首届AI工程师大会回顾]({{< relref "posts/20260413-blogs_podcasts-ainews-ai-engineer-europe-2026-0.md" >}})
+- [中国开源AI生态架构选择：DeepSeek之外的技术路径]({{< relref "posts/20260127-blogs_podcasts-architectural-choices-in-chinas-open-source-ai-eco-0.md" >}})
+- [为何推出科学领域AI播客以及工程师应关注的原因]({{< relref "posts/20260129-blogs_podcasts-its-time-to-science-0.md" >}})
+- [伦敦首届AI工程师大会回顾]({{< relref "posts/20260411-blogs_podcasts-ainews-ai-engineer-europe-2026-0.md" >}})
 - [Databricks双高管畅谈构建Agent Cloud的核心要素]({{< relref "posts/20260624-blogs_podcasts-why-the-frontier-ecosystem-must-be-open-matei-zaha-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

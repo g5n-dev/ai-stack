@@ -1,12 +1,26 @@
 ---
-title: "🔥PyraTok！视频生成神器：语言对齐金字塔Tokenizer震撼来袭！"
-date: 2026-01-25T12:39:55+08:00
+title: 🔥PyraTok！视频生成神器：语言对齐金字塔Tokenizer震撼来袭！
+date: 2026-01-25 12:39:55+08:00
 draft: false
-entry_kind: "auto"
-tags: ["PyraTok", "视频生成", "视频理解", "Tokenizer", "多模态", "VAE", "文生视频", "零样本"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- PyraTok
+- 视频生成
+- 视频理解
+- Tokenizer
+- 多模态
+- VAE
+- 文生视频
+- 零样本
+categories:
+- 大模型
+- 论文
 source: arxiv
 external_url: http://arxiv.org/abs/2601.16210v1
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 📚 🔥PyraTok！视频生成神器：语言对齐金字塔Tokenizer震撼来袭！

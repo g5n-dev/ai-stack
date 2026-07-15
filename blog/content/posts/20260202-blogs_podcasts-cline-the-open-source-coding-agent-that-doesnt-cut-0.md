@@ -1,14 +1,33 @@
 ---
-title: "Cline 开源编码代理：规划加行动范式与非技术场景应用"
-date: 2026-02-02T17:15:36+08:00
+title: Cline 开源编码代理：规划加行动范式与非技术场景应用
+date: 2026-02-02 17:15:36+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Cline", "编码代理", "AI 编程", "规划加行动", "IDE", "非技术场景", "开源", "LLM"]
-categories: ["AI 工程", "开源生态"]
+entry_kind: auto
+tags:
+- Cline
+- 编码代理
+- AI 编程
+- 规划加行动
+- IDE
+- 非技术场景
+- 开源
+- LLM
+categories:
+- AI 工程
+- 开源生态
 source: blogs_podcasts
-description: "以下是关于 Cline 及其访谈内容的中文总结： **标题：Cline：不减配的开源编程代理** 近日，Cline 项目的创始人 Saoud Rizwan 和 Pash 接受了采访，深入探讨了这款开源编码代理背后的技术理念、开发历程以及它对非技术用户的独特价值。以下是本次访谈的核心观点总结： **1. 核心理念：质量优"
+description: 以下是关于 Cline 及其访谈内容的中文总结： **标题：Cline：不减配的开源编程代理** 近日，Cline 项目的创始人 Saoud
+  Rizwan 和 Pash 接受了采访，深入探讨了这款开源编码代理背后的技术理念、开发历程以及它对非技术用户的独特价值。以下是本次访谈的核心观点总结： **1.
+  核心理念：质量优
 external_url: https://www.latent.space/p/cline-the-open-source-coding-agent
-scenarios: ["命令行工具", "AI/ML项目", "大语言模型"]
+scenarios:
+- 命令行工具
+- AI/ML项目
+- 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Cline 开源编码代理：规划加行动范式与非技术场景应用
@@ -251,8 +270,8 @@ Cline 的设计初衷并非单纯为了降低 API 调用成本或替代初级程
 
 ### 相关文章
 
-- [Claude Code 全面接入微软内部开发工作流]({{< relref "posts/20260202-hacker_news-claude-code-is-suddenly-everywhere-inside-microsof-10.md" >}})
-- [让 Claude 编写 CUDA 内核并指导开源模型]({{< relref "posts/20260129-blogs_podcasts-we-got-claude-to-build-cuda-kernels-and-teach-open-7.md" >}})
+- [Claude Code 全面接入微软内部开发工作流]({{< relref "posts/20260202-hacker_news-claude-code-is-suddenly-everywhere-inside-microsof-2.md" >}})
+- [让 Claude 编写 CUDA 内核并指导开源模型]({{< relref "posts/20260129-blogs_podcasts-we-got-claude-to-build-cuda-kernels-and-teach-open-6.md" >}})
 - [编码代理的成功对通用AI系统的启示]({{< relref "posts/20260130-hacker_news-what-the-success-of-coding-agents-teaches-us-about-11.md" >}})
 - [Zuckerman：极简个人AI代理，具备代码自编辑能力]({{< relref "posts/20260201-hacker_news-show-hn-zuckerman-minimalist-personal-ai-agent-tha-12.md" >}})
 - [Vibe coding杀死开源？开发者的末日还是新生？💀🔥]({{< relref "posts/20260126-hacker_news-vibe-coding-kills-open-source-11.md" >}})

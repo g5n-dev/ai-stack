@@ -1,14 +1,29 @@
 ---
-title: "QIMMA质量优先阿拉伯语LLM排行榜"
-date: 2026-04-21T13:44:16+08:00
+title: QIMMA质量优先阿拉伯语LLM排行榜
+date: 2026-04-21 13:44:16+08:00
 draft: false
-entry_kind: "auto"
-tags: ["阿拉伯语LLM", "质量优先", "排行榜", "基准测试", "开源模型", "多语言", "NLP", "大模型"]
-categories: ["大模型"]
+entry_kind: auto
+tags:
+- 阿拉伯语LLM
+- 质量优先
+- 排行榜
+- 基准测试
+- 开源模型
+- 多语言
+- NLP
+- 大模型
+categories:
+- 大模型
 source: blogs_podcasts
-description: "QIMMA（قِمّة）是首个以质量为核心的阿拉伯语大语言模型评测榜单，旨在系统化地衡量模型在语言理解、生成与文化适配等维度的表现。随着阿拉伯语AI应用的快速增长，评估标准的一致性和透明度成为推动技术迭代的关键因素。本文将详细解读榜单的评估方法、数据来源以及当前排名情况，为开发者和研究者提供实用的参考依据。"
+description: QIMMA（قِمّة）是首个以质量为核心的阿拉伯语大语言模型评测榜单，旨在系统化地衡量模型在语言理解、生成与文化适配等维度的表现。随着阿拉伯语AI应用的快速增长，评估标准的一致性和透明度成为推动技术迭代的关键因素。本文将详细解读榜单的评估方法、数据来源以及当前排名情况，为开发者和研究者提供实用的参考依据。
 external_url: https://huggingface.co/blog/tiiuae/qimma-arabic-leaderboard
-scenarios: ["大语言模型", "自然语言处理"]
+scenarios:
+- 大语言模型
+- 自然语言处理
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # QIMMA质量优先阿拉伯语LLM排行榜
@@ -109,8 +124,8 @@ QIMMA的出现在阿拉伯语AI领域具有标准化意义。它有望成为该�
 ### 相关文章
 
 - [谷歌发布Gemma 4开源模型]({{< relref "posts/20260403-hacker_news-google-releases-gemma-4-open-models-0.md" >}})
-- [Alyah：评估阿拉伯语大模型阿联酋方言能力]({{< relref "posts/20260129-blogs_podcasts-alyah-toward-robust-evaluation-of-emirati-dialect--8.md" >}})
-- [Alyah：评估阿拉伯语大模型阿联酋方言能力]({{< relref "posts/20260129-blogs_podcasts-alyah-toward-robust-evaluation-of-emirati-dialect--9.md" >}})
-- [Hugging Face Skills 功能上线与模型评估体系更新]({{< relref "posts/20260224-hacker_news-hugging-face-skills-10.md" >}})
-- [机器翻译评估中的跨向污染问题研究]({{< relref "posts/20260130-arxiv_ai-when-flores-bloomz-wrong-cross-direction-contamina-1.md" >}})
+- [Alyah：评估阿拉伯语大模型阿联酋方言能力]({{< relref "posts/20260127-blogs_podcasts-alyah-toward-robust-evaluation-of-emirati-dialect--0.md" >}})
+- [Alyah：评估阿拉伯语大模型阿联酋方言能力]({{< relref "posts/20260127-blogs_podcasts-alyah-toward-robust-evaluation-of-emirati-dialect--0.md" >}})
+- [Hugging Face Skills 功能上线与模型评估体系更新]({{< relref "posts/20260224-hacker_news-huggingface-agent-skills-8.md" >}})
+- [机器翻译评估中的跨向污染问题研究]({{< relref "posts/20260129-arxiv_ai-when-flores-bloomz-wrong-cross-direction-contamina-1.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

@@ -1,14 +1,31 @@
 ---
-title: "OpenClawInstaller：一键部署私人 AI 助手 OpenClaw"
-date: 2026-02-16T07:50:12+08:00
+title: OpenClawInstaller：一键部署私人 AI 助手 OpenClaw
+date: 2026-02-16 07:50:12+08:00
 draft: false
-entry_kind: "auto"
-tags: ["OpenClaw", "AI 助手", "一键部署", "开源项目", "私有化部署", "LLM", "自动化", "工具推荐"]
-categories: ["开源生态", "AI 工程"]
+entry_kind: auto
+tags:
+- OpenClaw
+- AI 助手
+- 一键部署
+- 开源项目
+- 私有化部署
+- LLM
+- 自动化
+- 工具推荐
+categories:
+- 开源生态
+- AI 工程
 source: juejin
-description: "随着本地化大模型应用的普及，如何快速搭建一个安全、可控的私人 AI 助手成为许多技术爱好者的关注点。OpenClawInstaller 作为一款自动化部署工具，有效解决了 OpenClaw 项目在配置过程中的环境依赖难题，降低了私有化部署的门槛。本文将详细介绍该工具的功能特性与安装流程，帮助你在本地环境中高效构建专属的"
+description: 随着本地化大模型应用的普及，如何快速搭建一个安全、可控的私人 AI 助手成为许多技术爱好者的关注点。OpenClawInstaller 作为一款自动化部署工具，有效解决了
+  OpenClaw 项目在配置过程中的环境依赖难题，降低了私有化部署的门槛。本文将详细介绍该工具的功能特性与安装流程，帮助你在本地环境中高效构建专属的
 external_url: https://juejin.cn/post/7606594349582123034
-scenarios: ["AI/ML项目", "大语言模型"]
+scenarios:
+- AI/ML项目
+- 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # OpenClawInstaller：一键部署私人 AI 助手 OpenClaw
@@ -171,8 +188,8 @@ OpenClawInstaller 作为一款垂直领域的部署工具，实质上反映了�
 ### 相关文章
 
 - [Moltworker：自托管个人 AI 智能体]({{< relref "posts/20260130-hacker_news-moltworker-a-self-hosted-personal-ai-agent-minus-t-16.md" >}})
-- [Moltworker：自托管个人 AI 智能体]({{< relref "posts/20260130-hacker_news-moltworker-a-self-hosted-personal-ai-agent-minus-t-19.md" >}})
-- [OpenClaw：GitHub 增长最快的开源 AI 代理框架]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-7.md" >}})
-- [Zuckerman：具备代码自编辑能力的极简个人AI智能体]({{< relref "posts/20260201-hacker_news-show-hn-zuckerman-minimalist-personal-ai-agent-tha-13.md" >}})
+- [Moltworker：自托管个人 AI 智能体]({{< relref "posts/20260130-hacker_news-moltworker-a-self-hosted-personal-ai-agent-minus-t-16.md" >}})
+- [OpenClaw：GitHub 增长最快的开源 AI 代理框架]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-0.md" >}})
+- [Zuckerman：具备代码自编辑能力的极简个人AI智能体]({{< relref "posts/20260201-hacker_news-show-hn-zuckerman-minimalist-personal-ai-agent-tha-12.md" >}})
 - [OpenClaw：GitHub 增长最快的开源 AI 智能体框架]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-0.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

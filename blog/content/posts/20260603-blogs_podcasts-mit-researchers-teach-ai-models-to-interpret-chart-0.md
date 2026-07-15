@@ -1,14 +1,30 @@
 ---
-title: "ChartNet数据集提升视觉语言模型图表解读能力"
-date: 2026-06-03T04:23:39+08:00
+title: ChartNet数据集提升视觉语言模型图表解读能力
+date: 2026-06-03 04:23:39+08:00
 draft: false
-entry_kind: "auto"
-tags: ["ChartNet", "视觉语言模型", "图表解读", "数据集", "多模态对齐", "数据增强", "评估基准", "商业智能"]
-categories: ["大模型", "数据"]
+entry_kind: auto
+tags:
+- ChartNet
+- 视觉语言模型
+- 图表解读
+- 数据集
+- 多模态对齐
+- 数据增强
+- 评估基准
+- 商业智能
+categories:
+- 大模型
+- 数据
 source: blogs_podcasts
-description: "研究背景与目标 近年来，视觉-语言模型在图像描述、问答等任务上取得显著进展，但在解读图表方面仍存在准确率不足的问题。MIT 研究团队希望提升模型对图表的理解能力，以便更好地辅助商业趋势分析和科学数据解读。 ChartNet 数据集 - **规模与来源**：收集并标注了上千张来源于学术论文、商业报告和网络公开资源的图表。"
+description: 研究背景与目标 近年来，视觉-语言模型在图像描述、问答等任务上取得显著进展，但在解读图表方面仍存在准确率不足的问题。MIT 研究团队希望提升模型对图表的理解能力，以便更好地辅助商业趋势分析和科学数据解读。
+  ChartNet 数据集 - **规模与来源**：收集并标注了上千张来源于学术论文、商业报告和网络公开资源的图表。
 external_url: https://news.mit.edu/2026/mit-researchers-teach-ai-models-to-interpret-charts-0603
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # ChartNet数据集提升视觉语言模型图表解读能力
@@ -161,9 +177,9 @@ ChartNet 通过大规模、结构化的图表‑语言对齐数据，显著提�
 
 ### 相关文章
 
-- [SciMDR：科学多模态文档推理基准与进展]({{< relref "posts/20260315-arxiv_ai-scimdr-benchmarking-and-advancing-scientific-multi-3.md" >}})
+- [SciMDR：科学多模态文档推理基准与进展]({{< relref "posts/20260313-arxiv_ai-scimdr-benchmarking-and-advancing-scientific-multi-3.md" >}})
 - [AgentDrive：首个开放基准！🚗 LLM生成场景驱动Agent智能推理]({{< relref "posts/20260126-arxiv_ai-agentdrive-an-open-benchmark-dataset-for-agentic-a-7.md" >}})
-- [🚗AgentDrive重磅发布！首个Agent推理开源自驾数据集🔥]({{< relref "posts/20260127-arxiv_ai-agentdrive-an-open-benchmark-dataset-for-agentic-a-7.md" >}})
+- [🚗AgentDrive重磅发布！首个Agent推理开源自驾数据集🔥]({{< relref "posts/20260126-arxiv_ai-agentdrive-an-open-benchmark-dataset-for-agentic-a-7.md" >}})
 - [基于相机-IMU融合的鲁棒路面分类数据集与框架]({{< relref "posts/20260129-arxiv_ai-a-new-dataset-and-framework-for-robust-road-surfac-6.md" >}})
-- [Nemotron-Personas-Brazil：主权AI协同设计数据集]({{< relref "posts/20260129-blogs_podcasts-nemotron-personas-brazil-co-designed-data-for-sove-5.md" >}})
+- [Nemotron-Personas-Brazil：主权AI协同设计数据集]({{< relref "posts/20260128-blogs_podcasts-nemotron-personas-brazil-co-designed-data-for-sove-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

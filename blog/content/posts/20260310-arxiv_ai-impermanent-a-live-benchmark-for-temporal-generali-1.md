@@ -21,6 +21,12 @@ description: 本文介绍了 **Impermanent**，一个专为评估时间序列预
 external_url: http://arxiv.org/abs/2603.08707v1
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260311-arxiv_ai-impermanent-a-live-benchmark-for-temporal-generali-1/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Impermanent：时间序列预测时序泛化实时基准
@@ -544,7 +550,7 @@ Impermanent 基准的提出对社区的一个重要启示是：我们需要重�
 ### 相关文章
 
 - [数据集压缩至1MB：小规模数据集的模型训练效果评估]({{< relref "posts/20260227-arxiv_ai-a-dataset-is-worth-1-mb-2.md" >}})
-- [挖掘模型仓库中的隐藏价值]({{< relref "posts/20260201-arxiv_ai-discovering-hidden-gems-in-model-repositories-1.md" >}})
-- [SWE-bench Verified 数据泄漏与测试缺陷分析：为何推荐改用 SWE-bench Pro]({{< relref "posts/20260223-blogs_podcasts-why-we-no-longer-evaluate-swe-bench-verified-4.md" >}})
+- [挖掘模型仓库中的隐藏价值]({{< relref "posts/20260130-arxiv_ai-discovering-hidden-gems-in-model-repositories-1.md" >}})
+- [SWE-bench Verified 数据泄漏与测试缺陷分析：为何推荐改用 SWE-bench Pro]({{< relref "posts/20260223-blogs_podcasts-why-we-no-longer-evaluate-swe-bench-verified-3.md" >}})
 - [基于嵌入的Top-$k$检索：理论上$\mathbb{R}^{2k}$维空间已足够]({{< relref "posts/20260129-arxiv_ai-mathbbr2k-is-theoretically-large-enough-for-embedd-8.md" >}})
-- [R^{2k}维度理论上足以支持基于嵌入的Top-k检索]({{< relref "posts/20260130-arxiv_ai-mathbbr2k-is-theoretically-large-enough-for-embedd-8.md" >}})
+- [R^{2k}维度理论上足以支持基于嵌入的Top-k检索]({{< relref "posts/20260129-arxiv_ai-mathbbr2k-is-theoretically-large-enough-for-embedd-8.md" >}})

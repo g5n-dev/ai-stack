@@ -21,6 +21,13 @@ description: 将大语言模型（LLM）团队视为分布式系统，为解决�
 external_url: https://arxiv.org/abs/2603.12229
 scenarios:
 - 大语言模型
+aliases:
+- /posts/20260316-hacker_news-language-model-teams-as-distrbuted-systems-3/
+- /posts/20260317-hacker_news-language-model-teams-as-distrbuted-systems-10/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 语言模型团队：分布式系统视角下的协作机制

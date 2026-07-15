@@ -1,14 +1,31 @@
 ---
-title: "LangChainGo框架解析：Go语言大模型应用开发实战"
-date: 2026-04-14T19:46:28+08:00
+title: LangChainGo框架解析：Go语言大模型应用开发实战
+date: 2026-04-14 19:46:28+08:00
 draft: false
-entry_kind: "auto"
-tags: ["LangChainGo", "Go语言", "大模型应用", "RAG", "智能体", "AI开发", "框架解析", "高性能"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- LangChainGo
+- Go语言
+- 大模型应用
+- RAG
+- 智能体
+- AI 开发
+- 框架解析
+- 高性能
+categories:
+- 大模型
+- AI 工程
 source: juejin
-description: "框架概述 LangChainGo 是专为 Go 语言设计的 LLM 开发框架，旨在摆脱 Python 依赖，提供高性能、易用的接口。通过简洁的 API，开发者可以直接在 Go 项目中调用大模型、构建检索增强生成（RAG）和智能体（Agent）等功能。 核心特性 - 高性能：利用 Go 语言的并发模型，显著提升响应速度。"
+description: 框架概述 LangChainGo 是专为 Go 语言设计的 LLM 开发框架，旨在摆脱 Python 依赖，提供高性能、易用的接口。通过简洁的
+  API，开发者可以直接在 Go 项目中调用大模型、构建检索增强生成（RAG）和智能体（Agent）等功能。 核心特性 - 高性能：利用 Go 语言的并发模型，显著提升响应速度。
 external_url: https://juejin.cn/post/7628520551066124339
-scenarios: ["AI/ML项目", "RAG应用"]
+scenarios:
+- AI/ML项目
+- RAG应用
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # LangChainGo框架解析：Go语言大模型应用开发实战
@@ -100,9 +117,9 @@ LangChainGo 确实为 Go 生态填补了大模型应用开发的空白。Go 语�
 
 ### 相关文章
 
-- [Agent Skills：智能体技能框架]({{< relref "posts/20260203-hacker_news-agent-skills-4.md" >}})
+- [Agent Skills：智能体技能框架]({{< relref "posts/20260203-hacker_news-agent-skills-0.md" >}})
 - [基于AWS与Hugging Face smolagents构建医疗AI智能体]({{< relref "posts/20260223-blogs_podcasts-agentic-ai-with-multi-model-framework-using-huggin-0.md" >}})
-- [基于AWS与Hugging Face smolagents构建多模型医疗智能体]({{< relref "posts/20260224-blogs_podcasts-agentic-ai-with-multi-model-framework-using-huggin-10.md" >}})
-- [基于AWS与Hugging Face smolagents构建多模型医疗AI智能体]({{< relref "posts/20260225-blogs_podcasts-agentic-ai-with-multi-model-framework-using-huggin-14.md" >}})
-- [利用Amazon Bedrock构建生产级智能活动助理]({{< relref "posts/20260225-blogs_podcasts-building-intelligent-event-agents-using-amazon-bed-1.md" >}})
+- [基于AWS与Hugging Face smolagents构建多模型医疗智能体]({{< relref "posts/20260223-blogs_podcasts-agentic-ai-with-multi-model-framework-using-huggin-0.md" >}})
+- [基于AWS与Hugging Face smolagents构建多模型医疗AI智能体]({{< relref "posts/20260223-blogs_podcasts-agentic-ai-with-multi-model-framework-using-huggin-0.md" >}})
+- [利用Amazon Bedrock构建生产级智能活动助理]({{< relref "posts/20260225-blogs_podcasts-building-intelligent-event-agents-using-amazon-bed-0.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

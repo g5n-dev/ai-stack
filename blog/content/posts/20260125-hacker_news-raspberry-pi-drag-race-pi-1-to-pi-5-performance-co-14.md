@@ -1,12 +1,26 @@
 ---
-title: "🔥树莓派极速大乱斗！Pi 1到Pi 5性能巅峰对决，谁才是最强王者？"
-date: 2026-01-25T12:39:55+08:00
+title: 🔥树莓派极速大乱斗！Pi 1到Pi 5性能巅峰对决，谁才是最强王者？
+date: 2026-01-25 12:39:55+08:00
 draft: false
-entry_kind: "auto"
-tags: ["树莓派", "Raspberry Pi", "性能测试", "SunSpider", "硬件对比", "嵌入式", "单板计算机", "Pi 5"]
-categories: ["开发工具", "系统与基础设施"]
+entry_kind: auto
+tags:
+- 树莓派
+- Raspberry Pi
+- 性能测试
+- SunSpider
+- 硬件对比
+- 嵌入式
+- 单板计算机
+- Pi 5
+categories:
+- 开发工具
+- 系统与基础设施
 source: hacker_news
 external_url: https://the-diy-life.com/raspberry-pi-drag-race-pi-1-to-pi-5-performance-comparison
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 📰 🔥树莓派极速大乱斗！Pi 1到Pi 5性能巅峰对决，谁才是最强王者？

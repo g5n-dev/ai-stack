@@ -1,14 +1,33 @@
 ---
-title: "BioTradingArena：用于评估LLM预测生物科技股票走势的基准"
-date: 2026-02-06T22:08:51+08:00
+title: BioTradingArena：用于评估LLM预测生物科技股票走势的基准
+date: 2026-02-06 22:08:51+08:00
 draft: false
-entry_kind: "auto"
-tags: ["LLM", "基准测试", "金融预测", "生物科技", "股票走势", "BioTradingArena", "评估", "量化交易"]
-categories: ["大模型", "数据"]
+entry_kind: auto
+tags:
+- LLM
+- 基准测试
+- 金融预测
+- 生物科技
+- 股票走势
+- BioTradingArena
+- 评估
+- 量化交易
+categories:
+- 大模型
+- 数据
 source: hacker_news
-description: "随着大语言模型在金融领域的应用探索日益深入，如何量化其在垂直行业的实际预测能力成为关键课题。BioTradingArena 作为一个专注于生物科技股票走势的基准测试平台，为评估 LLM 的金融推理能力提供了标准化的数据环境与测试框架。本文将介绍该项目的核心机制与数据构成，帮助开发者与研究人员深入理解模型在处理高波动性行"
+description: 随着大语言模型在金融领域的应用探索日益深入，如何量化其在垂直行业的实际预测能力成为关键课题。BioTradingArena 作为一个专注于生物科技股票走势的基准测试平台，为评估
+  LLM 的金融推理能力提供了标准化的数据环境与测试框架。本文将介绍该项目的核心机制与数据构成，帮助开发者与研究人员深入理解模型在处理高波动性行
 external_url: https://www.biotradingarena.com/hn
-scenarios: ["大语言模型", "物联网"]
+scenarios:
+- 大语言模型
+- 物联网
+aliases:
+- /posts/20260206-hacker_news-show-hn-biotradingarena-benchmark-for-llms-to-pred-16/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # BioTradingArena：用于评估LLM预测生物科技股票走势的基准
@@ -423,9 +442,9 @@ BioTradingArena 被引入作为一个标准化的验证工具。社区开发者�
 
 ### 相关文章
 
-- [AGENTS.md 架构在智能体评估中超越 Skills 技能]({{< relref "posts/20260130-hacker_news-agentsmd-outperforms-skills-in-our-agent-evals-19.md" >}})
-- [AGENTS.md 架构在智能体评估中超越 Skills 技能]({{< relref "posts/20260130-hacker_news-agentsmd-outperforms-skills-in-our-agent-evals-5.md" >}})
+- [AGENTS.md 架构在智能体评估中超越 Skills 技能]({{< relref "posts/20260129-hacker_news-compressed-agentsmd-agent-skills-5.md" >}})
+- [AGENTS.md 架构在智能体评估中超越 Skills 技能]({{< relref "posts/20260129-hacker_news-compressed-agentsmd-agent-skills-5.md" >}})
 - [AgentDrive：首个开放基准！🚗 LLM生成场景驱动Agent智能推理]({{< relref "posts/20260126-arxiv_ai-agentdrive-an-open-benchmark-dataset-for-agentic-a-7.md" >}})
 - [SokoBench：评估大模型长程规划与推理能力]({{< relref "posts/20260129-arxiv_ai-sokobench-evaluating-long-horizon-planning-and-rea-2.md" >}})
-- [Alyah：评估阿拉伯语大模型阿联酋方言能力]({{< relref "posts/20260129-blogs_podcasts-alyah-toward-robust-evaluation-of-emirati-dialect--8.md" >}})
+- [Alyah：评估阿拉伯语大模型阿联酋方言能力]({{< relref "posts/20260127-blogs_podcasts-alyah-toward-robust-evaluation-of-emirati-dialect--0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

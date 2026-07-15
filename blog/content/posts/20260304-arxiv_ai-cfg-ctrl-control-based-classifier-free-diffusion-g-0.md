@@ -21,6 +21,12 @@ description: 本文介绍了**CFG-Ctrl**，一个基于控制论的新型框架�
 external_url: http://arxiv.org/abs/2603.03281v1
 scenarios:
 - 计算机视觉
+aliases:
+- /posts/20260305-arxiv_ai-cfg-ctrl-control-based-classifier-free-diffusion-g-0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # CFG-Ctrl：基于分类器无关的扩散模型控制引导方法
@@ -427,8 +433,8 @@ CFG-Ctrl 的设计初衷通常是作为一种即插即用的推理技术或微�
 
 ### 相关文章
 
-- [现成图像模型可攻破图像保护方案]({{< relref "posts/20260227-arxiv_ai-off-the-shelf-image-to-image-models-are-all-you-ne-2.md" >}})
-- [从噪声到图像：扩散模型交互指南]({{< relref "posts/20260228-hacker_news-from-noise-to-image-interactive-guide-to-diffusion-13.md" >}})
+- [现成图像模型可攻破图像保护方案]({{< relref "posts/20260226-arxiv_ai-off-the-shelf-image-to-image-models-are-all-you-ne-2.md" >}})
+- [从噪声到图像：扩散模型交互指南]({{< relref "posts/20260228-hacker_news-from-noise-to-image-interactive-guide-to-diffusion-15.md" >}})
 - [从噪声到图像：扩散模型交互式指南]({{< relref "posts/20260228-hacker_news-from-noise-to-image-interactive-guide-to-diffusion-15.md" >}})
 - [PixelGen：引入感知损失的像素扩散模型性能超越潜在扩散]({{< relref "posts/20260203-arxiv_ai-pixelgen-pixel-diffusion-beats-latent-diffusion-wi-2.md" >}})
-- [PixelGen：像素扩散结合感知损失超越潜在扩散]({{< relref "posts/20260204-arxiv_ai-pixelgen-pixel-diffusion-beats-latent-diffusion-wi-2.md" >}})
+- [PixelGen：像素扩散结合感知损失超越潜在扩散]({{< relref "posts/20260203-arxiv_ai-pixelgen-pixel-diffusion-beats-latent-diffusion-wi-2.md" >}})

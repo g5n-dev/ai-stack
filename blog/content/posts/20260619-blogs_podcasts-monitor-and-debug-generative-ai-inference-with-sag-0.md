@@ -1,14 +1,29 @@
 ---
-title: "使用CloudWatch监控SageMaker生成式AI推理端点指南"
-date: 2026-06-19T00:59:17+08:00
+title: 使用CloudWatch监控SageMaker生成式AI推理端点指南
+date: 2026-06-19 00:59:17+08:00
 draft: false
-entry_kind: "auto"
-tags: ["SageMaker", "CloudWatch", "生成式AI", "推理端点", "机器学习监控", "模型部署", "可观测性", "AWS"]
-categories: ["系统与基础设施"]
+entry_kind: auto
+tags:
+- SageMaker
+- CloudWatch
+- 生成式 AI
+- 推理端点
+- 机器学习监控
+- 模型部署
+- 可观测性
+- AWS
+categories:
+- 系统与基础设施
 source: blogs_podcasts
-description: "概述 Amazon SageMaker AI 提供全托管的实时推理托管服务，可将机器学习模型部署到由一个或多个计算实例支持的 SageMaker 端点，平台负责资源调配和自动扩缩。 关键端点架构 - **单模型端点 (SME)**：适用于单一模型的推理，性能和监控相对集中。 - **推理组件端点 (IC)**：支持在同"
+description: 概述 Amazon SageMaker AI 提供全托管的实时推理托管服务，可将机器学习模型部署到由一个或多个计算实例支持的 SageMaker
+  端点，平台负责资源调配和自动扩缩。 关键端点架构 - **单模型端点 (SME)**：适用于单一模型的推理，性能和监控相对集中。 - **推理组件端点 (IC)**：支持在同
 external_url: https://aws.amazon.com/blogs/machine-learning/monitor-and-debug-generative-ai-inference-with-sagemaker-detailed-metrics-and-insights-dashboard-on-cloudwatch
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 使用CloudWatch监控SageMaker生成式AI推理端点指南
@@ -100,9 +115,9 @@ SageMaker与CloudWatch的深度集成，为生成式AI推理提供了细粒度�
 
 ### 相关文章
 
-- [2025年Amazon SageMaker AI回顾：可观测性、模型定制与托管增强]({{< relref "posts/20260222-blogs_podcasts-amazon-sagemaker-ai-in-2025-a-year-in-review-part--2.md" >}})
-- [2025年回顾：SageMaker AI提升可观测性并优化模型定制与托管]({{< relref "posts/20260223-blogs_podcasts-amazon-sagemaker-ai-in-2025-a-year-in-review-part--4.md" >}})
-- [2025年亚马逊SageMaker AI：增强可观测性与模型定制托管功能]({{< relref "posts/20260224-blogs_podcasts-amazon-sagemaker-ai-in-2025-a-year-in-review-part--11.md" >}})
-- [NVIDIA Nemotron 3 Nano 30B 现已在 Amazon SageMaker JumpSta]({{< relref "posts/20260212-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-7.md" >}})
-- [NVIDIA Nemotron 3 Nano 30B 现已登陆 Amazon SageMaker JumpSt]({{< relref "posts/20260213-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-10.md" >}})
+- [2025年Amazon SageMaker AI回顾：可观测性、模型定制与托管增强]({{< relref "posts/20260220-blogs_podcasts-amazon-sagemaker-ai-in-2025-a-year-in-review-part--1.md" >}})
+- [2025年回顾：SageMaker AI提升可观测性并优化模型定制与托管]({{< relref "posts/20260220-blogs_podcasts-amazon-sagemaker-ai-in-2025-a-year-in-review-part--1.md" >}})
+- [2025年亚马逊SageMaker AI：增强可观测性与模型定制托管功能]({{< relref "posts/20260220-blogs_podcasts-amazon-sagemaker-ai-in-2025-a-year-in-review-part--1.md" >}})
+- [NVIDIA Nemotron 3 Nano 30B 现已在 Amazon SageMaker JumpSta]({{< relref "posts/20260211-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-0.md" >}})
+- [NVIDIA Nemotron 3 Nano 30B 现已登陆 Amazon SageMaker JumpSt]({{< relref "posts/20260211-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

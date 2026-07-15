@@ -1,14 +1,32 @@
 ---
-title: "Amazon Bedrock AgentCore通过MCP Server实现自然语言转AWS CLI命令"
-date: 2026-05-21T18:09:16+08:00
+title: Amazon Bedrock AgentCore通过MCP Server实现自然语言转AWS CLI命令
+date: 2026-05-21 18:09:16+08:00
 draft: false
-entry_kind: "auto"
-tags: ["大模型", "AWSCLI", "MCP", "Bedrock", "AgentCore", "自然语言转命令", "云服务集成", "自动化运维"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- 大模型
+- AWSCLI
+- MCP
+- Bedrock
+- AgentCore
+- 自然语言转命令
+- 云服务集成
+- 自动化运维
+categories:
+- 大模型
+- AI 工程
 source: blogs_podcasts
-description: "概述 Amazon Bedrock AgentCore Runtime 通过 Model Context Protocol (MCP) 与 AWS API MCP Server 打通，把 Amazon Quick 与各种 AWS 服务连接起来。用户在 Quick 中以自然语言提出需求，系统即可即时生成对应的 AWS C"
+description: 概述 Amazon Bedrock AgentCore Runtime 通过 Model Context Protocol (MCP) 与
+  AWS API MCP Server 打通，把 Amazon Quick 与各种 AWS 服务连接起来。用户在 Quick 中以自然语言提出需求，系统即可即时生成对应的
+  AWS C
 external_url: https://aws.amazon.com/blogs/machine-learning/integrating-aws-api-mcp-server-with-amazon-quick-suite-using-amazon-bedrock-agentcore-runtime
-scenarios: ["命令行工具", "后端开发"]
+scenarios:
+- 命令行工具
+- 后端开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Amazon Bedrock AgentCore通过MCP Server实现自然语言转AWS CLI命令
@@ -140,9 +158,9 @@ Amazon Bedrock AgentCore Runtime 通过 Model Context Protocol (MCP) �
 
 ### 相关文章
 
-- [基于Bedrock AgentCore构建长时运行MCP服务器与异步任务管理]({{< relref "posts/20260215-blogs_podcasts-build-long-running-mcp-servers-on-amazon-bedrock-a-9.md" >}})
-- [通过 CLI 优化 MCP 成本]({{< relref "posts/20260226-hacker_news-making-mcp-cheaper-via-cli-7.md" >}})
+- [基于Bedrock AgentCore构建长时运行MCP服务器与异步任务管理]({{< relref "posts/20260212-blogs_podcasts-build-long-running-mcp-servers-on-amazon-bedrock-a-1.md" >}})
+- [通过 CLI 优化 MCP 成本]({{< relref "posts/20260225-hacker_news-making-mcp-cheaper-via-cli-3.md" >}})
 - [基于Amazon Bedrock AgentCore构建长运行MCP服务器与异步任务管理]({{< relref "posts/20260212-blogs_podcasts-build-long-running-mcp-servers-on-amazon-bedrock-a-1.md" >}})
-- [基于Amazon Bedrock AgentCore构建长时运行MCP服务器集成方案]({{< relref "posts/20260212-blogs_podcasts-build-long-running-mcp-servers-on-amazon-bedrock-a-2.md" >}})
-- [基于Amazon Bedrock AgentCore构建支持长时运行任务的MCP服务器]({{< relref "posts/20260213-blogs_podcasts-build-long-running-mcp-servers-on-amazon-bedrock-a-2.md" >}})
+- [基于Amazon Bedrock AgentCore构建长时运行MCP服务器集成方案]({{< relref "posts/20260212-blogs_podcasts-build-long-running-mcp-servers-on-amazon-bedrock-a-1.md" >}})
+- [基于Amazon Bedrock AgentCore构建支持长时运行任务的MCP服务器]({{< relref "posts/20260212-blogs_podcasts-build-long-running-mcp-servers-on-amazon-bedrock-a-1.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

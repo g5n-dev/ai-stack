@@ -4,12 +4,12 @@ date: 2026-03-11 00:55:38+08:00
 draft: false
 entry_kind: auto
 tags:
-- 生成式AI
+- 生成式 AI
 - LLM
 - ROI评估
 - 落地场景
 - 成本效益
-- AI应用
+- AI 应用
 - 模型选型
 - 技术决策
 categories:
@@ -22,6 +22,13 @@ external_url: https://www.williamjbowman.com/blog/2026/03/05/against-vibes-when-
 scenarios:
 - AI/ML项目
 - 大语言模型
+aliases:
+- /posts/20260312-hacker_news-against-vibes-when-is-a-generative-model-useful-17/
+- /posts/20260312-hacker_news-against-vibes-when-is-a-generative-model-useful-19/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 生成式模型的实用价值评估与适用场景分析

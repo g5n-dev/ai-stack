@@ -21,6 +21,14 @@ description: 随着本地算力的提升与开源模型的成熟，构建一个�
 external_url: https://community.home-assistant.io/t/my-journey-to-a-reliable-and-enjoyable-locally-hosted-voice-assistant/944860
 scenarios:
 - 大语言模型
+aliases:
+- /posts/20260317-hacker_news-my-journey-to-a-reliable-and-enjoyable-locally-hos-10/
+- /posts/20260317-hacker_news-my-journey-to-a-reliable-and-enjoyable-locally-hos-18/
+- /posts/20260317-hacker_news-my-journey-to-a-reliable-and-enjoyable-locally-hos-6/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 打造可靠且好用的本地语音助手实践指南

@@ -21,6 +21,10 @@ description: 在竞争激烈的模型赛道中，MiniMax M2.5 的快速迭代引
 external_url: https://juejin.cn/post/7617803531312234515
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # MiniMax M2.5：108天极速迭代，MoE与Agent原生架构重塑全球AI格局
@@ -164,7 +168,7 @@ MiniMax M2.5 采用了 **MoE（Mixture of Experts，混合专家系统）** 架�
 ### 相关文章
 
 - [Qwen3.5-397B-A17B：极致稀疏MoE架构与多模态能力详解]({{< relref "posts/20260217-juejin-最强开源多模态大模型它来啦一文详解qwen35核心特性-2.md" >}})
-- [Kimi K2.5 技术报告发布：模型架构与性能评估]({{< relref "posts/20260131-hacker_news-kimi-k25-technical-report-pdf-19.md" >}})
+- [Kimi K2.5 技术报告发布：模型架构与性能评估]({{< relref "posts/20260130-hacker_news-kimi-k25-technical-report-pdf-10.md" >}})
 - [大模型非线性变换解析：从MLP到MoE的架构演进]({{< relref "posts/20260226-juejin-03-大模型的非线性变化从mlp到moe大模型23的参数都在这里-4.md" >}})
-- [MiniMax M2.5 发布：SWE-bench Verified 得分 80.2%]({{< relref "posts/20260212-hacker_news-minimax-m25-released-802-in-swe-bench-verified-13.md" >}})
+- [MiniMax M2.5 发布：SWE-bench Verified 得分 80.2%]({{< relref "posts/20260212-hacker_news-minimax-m25-released-802-in-swe-bench-verified-15.md" >}})
 - [MiniMax M2.5 发布：SWE-bench Verified 得分 80.2%]({{< relref "posts/20260212-hacker_news-minimax-m25-released-802-in-swe-bench-verified-15.md" >}})

@@ -21,6 +21,12 @@ description: 本文提出了一种用于自动定理证明的**最小智能体�
 external_url: http://arxiv.org/abs/2602.24273v1
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260303-arxiv_ai-a-minimal-agent-for-automated-theorem-proving-8/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 面向自动定理证明的最小智能体框架
@@ -528,7 +534,7 @@ DeepMind 等机构开发的系统（如 AlphaProof 或 AlphaGeometry）通常结
 ### 相关文章
 
 - [DynaWeb：基于模型的强化学习网页智能体]({{< relref "posts/20260130-arxiv_ai-dynaweb-model-based-reinforcement-learning-of-web--6.md" >}})
-- [RedSage：网络安全通用大语言模型]({{< relref "posts/20260131-arxiv_ai-redsage-a-cybersecurity-generalist-llm-0.md" >}})
-- [Context Graphs与Agent Traces技术解析]({{< relref "posts/20260204-blogs_podcasts-ainews-context-graphs-and-agent-traces-2.md" >}})
-- [Context Graphs与Agent Traces：解析AI系统的上下文与追踪技术]({{< relref "posts/20260205-blogs_podcasts-ainews-context-graphs-and-agent-traces-5.md" >}})
-- [Context Graphs与Agent Traces：技术解析与应用前景]({{< relref "posts/20260205-blogs_podcasts-ainews-context-graphs-and-agent-traces-8.md" >}})
+- [RedSage：网络安全通用大语言模型]({{< relref "posts/20260130-arxiv_ai-redsage-a-cybersecurity-generalist-llm-0.md" >}})
+- [Context Graphs与Agent Traces技术解析]({{< relref "posts/20260204-blogs_podcasts-ainews-context-graphs-and-agent-traces-0.md" >}})
+- [Context Graphs与Agent Traces：解析AI系统的上下文与追踪技术]({{< relref "posts/20260204-blogs_podcasts-ainews-context-graphs-and-agent-traces-0.md" >}})
+- [Context Graphs与Agent Traces：技术解析与应用前景]({{< relref "posts/20260204-blogs_podcasts-ainews-context-graphs-and-agent-traces-0.md" >}})

@@ -20,6 +20,10 @@ description: 随着甲骨文计划裁员至多 3 万人以筹集资金建设 AI 
 external_url: https://www.cio.com/article/4125103/oracle-may-slash-up-to-30000-jobs-to-fund-ai-data-center-expansion-as-us-banks-retreat.html
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 甲骨龙拟裁员3万人以资助AI数据中心建设

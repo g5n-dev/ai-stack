@@ -1,14 +1,35 @@
 ---
-title: "OpenAI 与英伟达价值千亿美元芯片交易搁浅"
-date: 2026-01-31T04:49:18+08:00
+title: OpenAI 与英伟达价值千亿美元芯片交易搁浅
+date: 2026-01-31 04:49:18+08:00
 draft: false
-entry_kind: "auto"
-tags: ["OpenAI", "英伟达", "Nvidia", "芯片", "硬件", "算力", "AI基础设施", "商业合作"]
-categories: ["大模型", "产品与创业"]
+entry_kind: auto
+tags:
+- OpenAI
+- 英伟达
+- NVIDIA
+- 芯片
+- 硬件
+- 算力
+- AI 基础设施
+- 商业合作
+categories:
+- 大模型
+- 产品与创业
 source: hacker_news
-description: "OpenAI 与英伟达之间高达 1000 亿美元的潜在算力合作计划目前已陷入停滞。这一动态不仅反映了科技巨头在硬件采购上的战略调整，也揭示了当前 AI 基础设施建设面临的现实瓶颈。本文将梳理这笔交易搁置的深层原因，并分析其对未来算力供需格局及行业发展的具体影响。"
+description: OpenAI 与英伟达之间高达 1000 亿美元的潜在算力合作计划目前已陷入停滞。这一动态不仅反映了科技巨头在硬件采购上的战略调整，也揭示了当前
+  AI 基础设施建设面临的现实瓶颈。本文将梳理这笔交易搁置的深层原因，并分析其对未来算力供需格局及行业发展的具体影响。
 external_url: https://www.wsj.com/tech/ai/the-100-billion-megadeal-between-openai-and-nvidia-is-on-ice-aa3025e3
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+aliases:
+- /posts/20260131-hacker_news-the-100b-megadeal-between-openai-and-nvidia-is-on--11/
+- /posts/20260131-hacker_news-the-100b-megadeal-between-openai-and-nvidia-is-on--13/
+- /posts/20260131-hacker_news-the-100b-megadeal-between-openai-and-nvidia-is-on--19/
+- /posts/20260131-hacker_news-the-100b-megadeal-between-openai-and-nvidia-is-on--6/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # OpenAI 与英伟达价值千亿美元芯片交易搁浅
@@ -397,9 +418,9 @@ OpenAI与英伟达价值100亿美元的交易受阻，反映了过度依赖单�
 
 ### 相关文章
 
-- [Sam Altman 全员大会复盘与 AI Combinator 解析]({{< relref "posts/20260129-blogs_podcasts-ainews-sam-altmans-ai-combinator-2.md" >}})
+- [Sam Altman 全员大会复盘与 AI Combinator 解析]({{< relref "posts/20260129-blogs_podcasts-ainews-sam-altmans-ai-combinator-0.md" >}})
 - [Sam Altman的AI孵化器：OpenAI加速初创公司生态布局]({{< relref "posts/20260129-blogs_podcasts-ainews-sam-altmans-ai-combinator-0.md" >}})
-- [Sam Altman全员大会反思与AI孵化器动态]({{< relref "posts/20260129-blogs_podcasts-ainews-sam-altmans-ai-combinator-1.md" >}})
+- [Sam Altman全员大会反思与AI孵化器动态]({{< relref "posts/20260129-blogs_podcasts-ainews-sam-altmans-ai-combinator-0.md" >}})
 - [OpenAI发布欧盟经济蓝图2.0 加速欧洲AI应用与增长]({{< relref "posts/20260129-blogs_podcasts-the-next-chapter-for-ai-in-the-eu-2.md" >}})
-- [OpenAI发布《欧盟经济蓝图2.0》加速欧洲AI应用与增长]({{< relref "posts/20260129-blogs_podcasts-the-next-chapter-for-ai-in-the-eu-3.md" >}})
+- [OpenAI发布《欧盟经济蓝图2.0》加速欧洲AI应用与增长]({{< relref "posts/20260129-blogs_podcasts-the-next-chapter-for-ai-in-the-eu-2.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

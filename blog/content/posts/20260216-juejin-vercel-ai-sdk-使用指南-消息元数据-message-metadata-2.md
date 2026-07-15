@@ -1,14 +1,31 @@
 ---
-title: "Vercel AI SDK 指南：利用消息元数据传递时间戳与 Token 用量"
-date: 2026-02-16T07:50:12+08:00
+title: Vercel AI SDK 指南：利用消息元数据传递时间戳与 Token 用量
+date: 2026-02-16 07:50:12+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Vercel AI SDK", "消息元数据", "Token 用量", "时间戳", "模型信息", "聊天应用", "LLM", "开发指南"]
-categories: ["AI 工程", "前端"]
+entry_kind: auto
+tags:
+- Vercel AI SDK
+- 消息元数据
+- Token 用量
+- 时间戳
+- 模型信息
+- 聊天应用
+- LLM
+- 开发指南
+categories:
+- AI 工程
+- 前端
 source: juejin
-description: "这是一份关于 **Vercel AI SDK 中消息元数据** 的简洁总结： 核心概念 在构建 AI 聊天应用时，除了消息文本本身，通常需要传递与消息生成相关的辅助信息。Vercel AI SDK 通过 **消息元数据** 功能，允许开发者在消息对象中附加这些结构化数据。 常见应用场景 元数据通常用于记录以下信息，以便"
+description: 这是一份关于 **Vercel AI SDK 中消息元数据** 的简洁总结： 核心概念 在构建 AI 聊天应用时，除了消息文本本身，通常需要传递与消息生成相关的辅助信息。Vercel
+  AI SDK 通过 **消息元数据** 功能，允许开发者在消息对象中附加这些结构化数据。 常见应用场景 元数据通常用于记录以下信息，以便
 external_url: https://juejin.cn/post/7606354588692217882
-scenarios: ["AI/ML项目", "大语言模型"]
+scenarios:
+- AI/ML项目
+- 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Vercel AI SDK 指南：利用消息元数据传递时间戳与 Token 用量
@@ -261,7 +278,7 @@ export async function POST(req: Request) {
 ### 相关文章
 
 - [Vercel AI SDK 流式传输原理与阻塞模式对比]({{< relref "posts/20260211-juejin-vercel-ai-sdk-使用指南流式传输-streaming-1.md" >}})
-- [Agent Skills：智能体技能框架与开发指南]({{< relref "posts/20260203-hacker_news-agent-skills-5.md" >}})
+- [Agent Skills：智能体技能框架与开发指南]({{< relref "posts/20260203-hacker_news-agent-skills-0.md" >}})
 - [Vercel AI SDK 子代理：解决复杂 Agent 系统上下文爆炸问题]({{< relref "posts/20260213-juejin-vercel-ai-sdk-使用指南-子代理-subagents-1.md" >}})
 - [Vercel AI SDK 实战：利用 Call Options 动态配置 Agent]({{< relref "posts/20260213-juejin-vercel-ai-sdk-使用指南call-options-动态配置-agent-2.md" >}})
 - [Tambo 1.0：渲染 React 组件的开源 Agent 工具包]({{< relref "posts/20260211-hacker_news-tambo-10-open-source-toolkit-for-agents-that-rende-12.md" >}})

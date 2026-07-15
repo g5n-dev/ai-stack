@@ -1,14 +1,29 @@
 ---
-title: "IBM Granite 4.1大模型构建技术揭秘"
-date: 2026-04-29T15:34:27+08:00
+title: IBM Granite 4.1大模型构建技术揭秘
+date: 2026-04-29 15:34:27+08:00
 draft: false
-entry_kind: "auto"
-tags: ["IBM Granite", "大模型构建", "LLM", "模型训练", "模型架构", "训练技术", "企业AI", "开源模型"]
-categories: ["大模型"]
+entry_kind: auto
+tags:
+- IBM Granite
+- 大模型构建
+- LLM
+- 模型训练
+- 模型架构
+- 训练技术
+- 企业AI
+- 开源模型
+categories:
+- 大模型
 source: blogs_podcasts
-description: "Granite 4.1 是近期发布的大语言模型，其内部构建细节受到业界关注。本文深入剖析该模型在架构设计、预训练数据处理、分布式训练策略以及推理优化等关键环节的实现思路，并分享团队在资源调度和模型评估过程中的经验教训，帮助研究人员和工程师在实际项目中更高效地复用相关技术。"
+description: Granite 4.1 是近期发布的大语言模型，其内部构建细节受到业界关注。本文深入剖析该模型在架构设计、预训练数据处理、分布式训练策略以及推理优化等关键环节的实现思路，并分享团队在资源调度和模型评估过程中的经验教训，帮助研究人员和工程师在实际项目中更高效地复用相关技术。
 external_url: https://huggingface.co/blog/ibm-granite/granite-4-1
-scenarios: ["大语言模型", "AI/ML项目"]
+scenarios:
+- 大语言模型
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # IBM Granite 4.1大模型构建技术揭秘
@@ -136,9 +151,9 @@ Granite 4.1 通过 **模块化架构 + 细粒度数据治理 + 可验证的对
 
 ### 相关文章
 
-- [Kimi K2.5 技术报告发布：模型架构与性能评估]({{< relref "posts/20260131-hacker_news-kimi-k25-technical-report-pdf-10.md" >}})
-- [Kimi K2.5 技术报告发布：模型架构与性能评估]({{< relref "posts/20260131-hacker_news-kimi-k25-technical-report-pdf-3.md" >}})
+- [Kimi K2.5 技术报告发布：模型架构与性能评估]({{< relref "posts/20260130-hacker_news-kimi-k25-technical-report-pdf-10.md" >}})
+- [Kimi K2.5 技术报告发布：模型架构与性能评估]({{< relref "posts/20260130-hacker_news-kimi-k25-technical-report-pdf-10.md" >}})
 - [为何XML标签对Claude模型如此关键]({{< relref "posts/20260301-hacker_news-why-xml-tags-are-so-fundamental-to-claude-4.md" >}})
-- [中国开源AI生态的架构选择：超越DeepSeek的构建路径]({{< relref "posts/20260129-blogs_podcasts-architectural-choices-in-chinas-open-source-ai-eco-8.md" >}})
-- [让 Claude 编写 CUDA 内核并指导开源模型]({{< relref "posts/20260129-blogs_podcasts-we-got-claude-to-build-cuda-kernels-and-teach-open-7.md" >}})
+- [中国开源AI生态的架构选择：超越DeepSeek的构建路径]({{< relref "posts/20260127-blogs_podcasts-architectural-choices-in-chinas-open-source-ai-eco-0.md" >}})
+- [让 Claude 编写 CUDA 内核并指导开源模型]({{< relref "posts/20260129-blogs_podcasts-we-got-claude-to-build-cuda-kernels-and-teach-open-6.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

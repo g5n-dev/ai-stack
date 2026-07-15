@@ -1,14 +1,29 @@
 ---
-title: "ReAct让大模型掌握边想边做的循环机制"
-date: 2026-04-12T12:09:13+08:00
+title: ReAct让大模型掌握边想边做的循环机制
+date: 2026-04-12 12:09:13+08:00
 draft: false
-entry_kind: "auto"
-tags: ["ReAct", "LLM", "推理链", "工具调用", "Prompt工程", "思维模式", "自我纠错", "Agent"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- ReAct
+- LLM
+- 推理链
+- 工具调用
+- Prompt 工程
+- 思维模式
+- 自我纠错
+- Agent
+categories:
+- 大模型
+- AI 工程
 source: juejin
-description: "ReAct是一种让大型语言模型实现“边想边做”的框架。它把模型的推理过程拆解为思考（Thought）、行动（Action）和观察（Observation）三个环节，并在每一步根据上一步的观察结果生成下一步的思考和行动，形成循环。模型不再仅仅输出文字，而是能够主动调用外部工具（如搜索、计算、API），把工具的返回结果纳入"
+description: ReAct是一种让大型语言模型实现“边想边做”的框架。它把模型的推理过程拆解为思考（Thought）、行动（Action）和观察（Observation）三个环节，并在每一步根据上一步的观察结果生成下一步的思考和行动，形成循环。模型不再仅仅输出文字，而是能够主动调用外部工具（如搜索、计算、API），把工具的返回结果纳入
 external_url: https://juejin.cn/post/7627365452814598154
-scenarios: ["大语言模型"]
+scenarios:
+- 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # ReAct让大模型掌握边想边做的循环机制
@@ -95,9 +110,9 @@ ReAct并非万能。首先，工具的质量直接决定系统上限——如果
 
 ### 相关文章
 
-- [Agent Skills：AI 智能体技能框架]({{< relref "posts/20260203-hacker_news-agent-skills-1.md" >}})
-- [Agent Skills：智能体技能框架]({{< relref "posts/20260203-hacker_news-agent-skills-4.md" >}})
-- [OpenEnv实践：评估真实环境中的工具调用智能体]({{< relref "posts/20260212-blogs_podcasts-openenv-in-practice-evaluating-tool-using-agents-i-6.md" >}})
-- [OpenEnv实践：评估真实环境中的工具调用智能体]({{< relref "posts/20260212-blogs_podcasts-openenv-in-practice-evaluating-tool-using-agents-i-7.md" >}})
-- [OpenEnv 实战：评估真实环境中的工具调用智能体]({{< relref "posts/20260213-blogs_podcasts-openenv-in-practice-evaluating-tool-using-agents-i-10.md" >}})
+- [Agent Skills：AI 智能体技能框架]({{< relref "posts/20260203-hacker_news-agent-skills-0.md" >}})
+- [Agent Skills：智能体技能框架]({{< relref "posts/20260203-hacker_news-agent-skills-0.md" >}})
+- [OpenEnv实践：评估真实环境中的工具调用智能体]({{< relref "posts/20260212-blogs_podcasts-openenv-in-practice-evaluating-tool-using-agents-i-4.md" >}})
+- [OpenEnv实践：评估真实环境中的工具调用智能体]({{< relref "posts/20260212-blogs_podcasts-openenv-in-practice-evaluating-tool-using-agents-i-4.md" >}})
+- [OpenEnv 实战：评估真实环境中的工具调用智能体]({{< relref "posts/20260212-blogs_podcasts-openenv-in-practice-evaluating-tool-using-agents-i-4.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

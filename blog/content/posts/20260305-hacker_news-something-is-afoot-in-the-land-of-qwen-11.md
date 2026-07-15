@@ -20,6 +20,10 @@ description: 通义千问模型生态近期出现了值得关注的动态，显�
 external_url: https://simonwillison.net/2026/Mar/4/qwen
 scenarios:
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Qwen 模型动态更新与能力演进分析

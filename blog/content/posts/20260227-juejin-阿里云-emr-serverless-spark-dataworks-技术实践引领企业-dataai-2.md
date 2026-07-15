@@ -22,6 +22,10 @@ description: 以下是对该段内容的简洁总结： **核心主题**：阿�
 external_url: https://juejin.cn/post/7611114569566896143
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 阿里云 DataWorks 开源湖仓智能平台技术实践
@@ -184,6 +188,6 @@ DataWorks 作为大数据开发治理平台，与 EMR Serverless Spark 结合主
 
 - [💥文本为王！揭秘AI时代最被低估的核心价值！]({{< relref "posts/20260126-hacker_news-text-is-king-11.md" >}})
 - [ShapedQL：支持多阶段排序与RAG的SQL引擎]({{< relref "posts/20260129-hacker_news-show-hn-shapedql-a-sql-engine-for-multi-stage-rank-6.md" >}})
-- [OpenAI内部数据代理：结合GPT-5与记忆快速分析数据]({{< relref "posts/20260131-blogs_podcasts-inside-openais-in-house-data-agent-3.md" >}})
-- [OpenAI 内部数据代理：结合 GPT-5 与记忆实现海量数据推理]({{< relref "posts/20260201-blogs_podcasts-inside-openais-in-house-data-agent-4.md" >}})
-- [OpenAI内部数据代理：结合GPT‑5与记忆能力实现分钟级洞察]({{< relref "posts/20260203-blogs_podcasts-inside-openais-in-house-data-agent-6.md" >}})
+- [OpenAI内部数据代理：结合GPT-5与记忆快速分析数据]({{< relref "posts/20260129-hacker_news-openais-in-house-data-agent-14.md" >}})
+- [OpenAI 内部数据代理：结合 GPT-5 与记忆实现海量数据推理]({{< relref "posts/20260129-hacker_news-openais-in-house-data-agent-14.md" >}})
+- [OpenAI内部数据代理：结合GPT‑5与记忆能力实现分钟级洞察]({{< relref "posts/20260129-hacker_news-openais-in-house-data-agent-14.md" >}})

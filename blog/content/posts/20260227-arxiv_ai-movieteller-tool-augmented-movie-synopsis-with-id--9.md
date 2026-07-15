@@ -20,6 +20,10 @@ description: 以下是针对该内容的中文总结： **MovieTeller：基于�
 external_url: http://arxiv.org/abs/2602.23228v1
 scenarios:
 - RAG应用
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # MovieTeller：工具增强且ID一致的渐进式摘要生成
@@ -383,6 +387,6 @@ MovieTeller 引入了一个名为 **ID Consistent Progressive Abstraction (IDCPA
 
 - [延迟视觉摄入优化图文密集文档问答]({{< relref "posts/20260217-arxiv_ai-index-light-reason-deep-deferred-visual-ingestion--7.md" >}})
 - [Nemotron ColEmbed V2：基于ViDoRe V3的多模态检索模型]({{< relref "posts/20260204-blogs_podcasts-nemotron-colembed-v2-raising-the-bar-for-multimoda-0.md" >}})
-- [Nemotron ColEmbed V2：基于ViDoRe V3的多模态检索模型]({{< relref "posts/20260205-blogs_podcasts-nemotron-colembed-v2-raising-the-bar-for-multimoda-1.md" >}})
-- [Nemotron ColEmbed V2：基于ViDoRe V3的多模态检索模型]({{< relref "posts/20260205-blogs_podcasts-nemotron-colembed-v2-raising-the-bar-for-multimoda-3.md" >}})
-- [Nemotron ColEmbed V2：基于ViDoRe V3的多模态检索模型]({{< relref "posts/20260205-blogs_podcasts-nemotron-colembed-v2-raising-the-bar-for-multimoda-4.md" >}})
+- [Nemotron ColEmbed V2：基于ViDoRe V3的多模态检索模型]({{< relref "posts/20260204-blogs_podcasts-nemotron-colembed-v2-raising-the-bar-for-multimoda-0.md" >}})
+- [Nemotron ColEmbed V2：基于ViDoRe V3的多模态检索模型]({{< relref "posts/20260204-blogs_podcasts-nemotron-colembed-v2-raising-the-bar-for-multimoda-0.md" >}})
+- [Nemotron ColEmbed V2：基于ViDoRe V3的多模态检索模型]({{< relref "posts/20260204-blogs_podcasts-nemotron-colembed-v2-raising-the-bar-for-multimoda-0.md" >}})

@@ -1,14 +1,28 @@
 ---
-title: "Jamesob本地部署大模型实战指南"
-date: 2026-07-03T19:47:32+08:00
+title: Jamesob本地部署大模型实战指南
+date: 2026-07-03 19:47:32+08:00
 draft: false
-entry_kind: "auto"
-tags: ["本地部署", "大模型", "开源模型", "Ollama", "模型量化", "隐私保护", "命令行工具", "向量数据库"]
-categories: ["大模型"]
+entry_kind: auto
+tags:
+- 本地部署
+- 大模型
+- 开源模型
+- Ollama
+- 模型量化
+- 隐私保护
+- 命令行工具
+- 向量数据库
+categories:
+- 大模型
 source: hacker_news
-description: "在本地部署最新的大语言模型（LLM）可以显著降低推理成本并提升数据隐私保护。本指南系统梳理了从硬件准备、模型下载到环境配置的完整流程，并提供了常见的性能调优技巧。无论你是科研人员还是企业开发者，都能快速搭建可靠的本机运行环境，专注于模型调优和业务创新。"
+description: 在本地部署最新的大语言模型（LLM）可以显著降低推理成本并提升数据隐私保护。本指南系统梳理了从硬件准备、模型下载到环境配置的完整流程，并提供了常见的性能调优技巧。无论你是科研人员还是企业开发者，都能快速搭建可靠的本机运行环境，专注于模型调优和业务创新。
 external_url: https://github.com/jamesob/local-llm
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Jamesob本地部署大模型实战指南
@@ -89,6 +103,6 @@ scenarios: ["Web应用开发"]
 - [Unsloth推出Dynamic 2.0 GGUF模型]({{< relref "posts/20260228-hacker_news-unsloth-dynamic-20-ggufs-1.md" >}})
 - [本地运行AI模型体验显著改善]({{< relref "posts/20260616-hacker_news-running-local-models-is-good-now-0.md" >}})
 - [Ollama 本地部署开源大模型指南与代码实践]({{< relref "posts/20260302-juejin-ollama-入门指南本地大模型实践-0.md" >}})
-- [如何在本地部署运行 Qwen 3.5 大模型]({{< relref "posts/20260308-hacker_news-how-to-run-qwen-35-locally-10.md" >}})
+- [如何在本地部署运行 Qwen 3.5 大模型]({{< relref "posts/20260308-hacker_news-how-to-run-qwen-35-locally-16.md" >}})
 - [如何在本地运行 Qwen 3.5 大模型]({{< relref "posts/20260308-hacker_news-how-to-run-qwen-35-locally-16.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

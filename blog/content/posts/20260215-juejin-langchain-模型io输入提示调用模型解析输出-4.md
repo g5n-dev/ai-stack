@@ -1,14 +1,31 @@
 ---
-title: "LangChain 模型 I/O 模块：提示构建、模型调用与输出解析"
-date: 2026-02-15T12:10:18+08:00
+title: LangChain 模型 I/O 模块：提示构建、模型调用与输出解析
+date: 2026-02-15 12:10:18+08:00
 draft: false
-entry_kind: "auto"
-tags: ["LangChain", "LLM", "提示工程", "模型调用", "输出解析", "AI框架", "开发教程", "模块化设计"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- LangChain
+- LLM
+- 提示工程
+- 模型调用
+- 输出解析
+- AI框架
+- 开发教程
+- 模块化设计
+categories:
+- 大模型
+- AI 工程
 source: juejin
-description: "模型作为 LangChain 框架的底层基石，直接决定了基于语言模型构建的应用性能。本文将聚焦于 LangChain 的 Model I/O 模块，详细拆解从构建输入提示、调用模型到解析输出的完整工作流。通过阅读本文，你不仅能掌握模型交互的标准流程，还能学会如何通过结构化的方式优化提示词并处理复杂的返回结果，从而为构建"
+description: 模型作为 LangChain 框架的底层基石，直接决定了基于语言模型构建的应用性能。本文将聚焦于 LangChain 的 Model I/O
+  模块，详细拆解从构建输入提示、调用模型到解析输出的完整工作流。通过阅读本文，你不仅能掌握模型交互的标准流程，还能学会如何通过结构化的方式优化提示词并处理复杂的返回结果，从而为构建
 external_url: https://juejin.cn/post/7606183276774096959
-scenarios: ["AI/ML项目", "大语言模型"]
+scenarios:
+- AI/ML项目
+- 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # LangChain 模型 I/O 模块：提示构建、模型调用与输出解析
@@ -191,9 +208,9 @@ LangChain 提供了专门的功能来简化 Few-shot Prompting 的构建，主�
 
 ### 相关文章
 
-- [LangChain 进阶实战：当 Memory 遇上 OutputParser，打造有记忆的结构化助手]({{< relref "posts/20260211-juejin-langchain-进阶实战当-memory-遇上-outputparser打造有记忆的结构化助手-3.md" >}})
+- [LangChain 进阶实战：当 Memory 遇上 OutputParser，打造有记忆的结构化助手]({{< relref "posts/20260210-juejin-langchain-进阶实战当-memory-遇上-outputparser打造有记忆的结构化助手-3.md" >}})
 - [LangChain实战：结合Memory与OutputParser构建有记忆的结构化助手]({{< relref "posts/20260210-juejin-langchain-进阶实战当-memory-遇上-outputparser打造有记忆的结构化助手-3.md" >}})
-- [让 Claude 编写 CUDA 内核并指导开源模型]({{< relref "posts/20260129-blogs_podcasts-we-got-claude-to-build-cuda-kernels-and-teach-open-7.md" >}})
-- [Agent评估显示AGENTS.md配置优于Skills]({{< relref "posts/20260130-hacker_news-agentsmd-outperforms-skills-in-our-agent-evals-4.md" >}})
-- [AGENTS.md 架构在智能体评估中超越 Skills 技能]({{< relref "posts/20260130-hacker_news-agentsmd-outperforms-skills-in-our-agent-evals-5.md" >}})
+- [让 Claude 编写 CUDA 内核并指导开源模型]({{< relref "posts/20260129-blogs_podcasts-we-got-claude-to-build-cuda-kernels-and-teach-open-6.md" >}})
+- [Agent评估显示AGENTS.md配置优于Skills]({{< relref "posts/20260129-hacker_news-compressed-agentsmd-agent-skills-5.md" >}})
+- [AGENTS.md 架构在智能体评估中超越 Skills 技能]({{< relref "posts/20260129-hacker_news-compressed-agentsmd-agent-skills-5.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

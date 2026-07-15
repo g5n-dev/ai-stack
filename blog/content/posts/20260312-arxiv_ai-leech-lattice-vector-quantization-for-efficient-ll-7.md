@@ -21,6 +21,12 @@ description: 本文介绍了**Leech格点向量量化（LLVQ）**，这是一种
 external_url: http://arxiv.org/abs/2603.11021v1
 scenarios:
 - 大语言模型
+aliases:
+- /posts/20260313-arxiv_ai-leech-lattice-vector-quantization-for-efficient-ll-7/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Leech 格点向量量化实现高效大模型压缩
@@ -439,7 +445,7 @@ LLVQ 的主要设计目标是**减少显存占用**以支持在有限硬件上�
 ### 相关文章
 
 - [SPQ：大语言模型压缩的集成技术]({{< relref "posts/20260223-arxiv_ai-spq-an-ensemble-technique-for-large-language-model-4.md" >}})
-- [SPQ：面向大语言模型压缩的集成技术]({{< relref "posts/20260224-arxiv_ai-spq-an-ensemble-technique-for-large-language-model-4.md" >}})
-- [BitNet：支持本地CPU运行的1000亿参数1比特模型]({{< relref "posts/20260311-hacker_news-bitnet-100b-param-1-bit-model-for-local-cpus-11.md" >}})
-- [BitNet：面向本地CPU的1000亿参数1比特模型]({{< relref "posts/20260311-hacker_news-bitnet-100b-param-1-bit-model-for-local-cpus-3.md" >}})
+- [SPQ：面向大语言模型压缩的集成技术]({{< relref "posts/20260223-arxiv_ai-spq-an-ensemble-technique-for-large-language-model-4.md" >}})
+- [BitNet：支持本地CPU运行的1000亿参数1比特模型]({{< relref "posts/20260311-hacker_news-microsoft-bitnet-100b-param-1-bit-model-for-local--1.md" >}})
+- [BitNet：面向本地CPU的1000亿参数1比特模型]({{< relref "posts/20260311-hacker_news-microsoft-bitnet-100b-param-1-bit-model-for-local--1.md" >}})
 - [微软BitNet：可在本地CPU运行的1000亿参数1比特模型]({{< relref "posts/20260311-hacker_news-microsoft-bitnet-100b-param-1-bit-model-for-local--1.md" >}})

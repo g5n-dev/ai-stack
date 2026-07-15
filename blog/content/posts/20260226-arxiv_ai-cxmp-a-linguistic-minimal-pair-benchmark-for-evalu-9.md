@@ -21,6 +21,10 @@ description: '**CxMP：评估语言模型构式理解能力的语言学最小对
 external_url: http://arxiv.org/abs/2602.21978v1
 scenarios:
 - 自然语言处理
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # CxMP：评估语言模型构式理解的语言学最小对子基准
@@ -420,8 +424,8 @@ CxMP 的研究揭示了当前大语言模型在深层句法语义理解上的不
 
 ### 相关文章
 
-- [Alyah：评估阿拉伯语大模型阿联酋方言能力]({{< relref "posts/20260129-blogs_podcasts-alyah-toward-robust-evaluation-of-emirati-dialect--8.md" >}})
+- [Alyah：评估阿拉伯语大模型阿联酋方言能力]({{< relref "posts/20260127-blogs_podcasts-alyah-toward-robust-evaluation-of-emirati-dialect--0.md" >}})
 - [⭐️Alyah：阿联酋方言能力评估！阿拉伯语LLM新突破！]({{< relref "posts/20260127-blogs_podcasts-alyah-toward-robust-evaluation-of-emirati-dialect--0.md" >}})
-- [🇦🇪 Alyah ⭐️：揭秘阿拉伯LLM方言鲁棒评估！]({{< relref "posts/20260128-blogs_podcasts-alyah-toward-robust-evaluation-of-emirati-dialect--1.md" >}})
-- [Hugging Face Skills 功能上线与模型评估体系更新]({{< relref "posts/20260224-hacker_news-hugging-face-skills-10.md" >}})
-- [Alyah：评估阿拉伯语大模型阿联酋方言能力]({{< relref "posts/20260129-blogs_podcasts-alyah-toward-robust-evaluation-of-emirati-dialect--9.md" >}})
+- [🇦🇪 Alyah ⭐️：揭秘阿拉伯LLM方言鲁棒评估！]({{< relref "posts/20260127-blogs_podcasts-alyah-toward-robust-evaluation-of-emirati-dialect--0.md" >}})
+- [Hugging Face Skills 功能上线与模型评估体系更新]({{< relref "posts/20260224-hacker_news-huggingface-agent-skills-8.md" >}})
+- [Alyah：评估阿拉伯语大模型阿联酋方言能力]({{< relref "posts/20260127-blogs_podcasts-alyah-toward-robust-evaluation-of-emirati-dialect--0.md" >}})

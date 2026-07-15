@@ -1,14 +1,29 @@
 ---
-title: "Codex每日新增百万用户"
-date: 2026-07-15T02:42:06+08:00
+title: Codex每日新增百万用户
+date: 2026-07-15 02:42:06+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Codex", "OpenAI", "用户增长", "AI编程", "大模型", "日活", "产品动态", "编程工具"]
-categories: ["大模型"]
+entry_kind: auto
+tags:
+- Codex
+- OpenAI
+- 用户增长
+- AI 编程
+- 大模型
+- 日活
+- 产品动态
+- 编程工具
+categories:
+- 大模型
 source: blogs_podcasts
-description: "今日 AI 领域整体动态较少，未出现重大新闻。值得注意的是，OpenAI 的 Codex 项目仍在快速扩展，现阶段每日新增用户约 100 万，保持了此前的增长势头。"
+description: 今日 AI 领域整体动态较少，未出现重大新闻。值得注意的是，OpenAI 的 Codex 项目仍在快速扩展，现阶段每日新增用户约 100
+  万，保持了此前的增长势头。
 external_url: https://www.latent.space/p/ainews-not-much-happened-today-c72
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Codex每日新增百万用户

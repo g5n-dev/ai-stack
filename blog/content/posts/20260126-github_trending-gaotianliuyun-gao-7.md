@@ -1,12 +1,26 @@
 ---
-title: "🔥GitHub爆款！gaotianliuyun高能来袭，引爆开发圈！💥"
-date: 2026-01-26T12:12:08+08:00
+title: 🔥GitHub爆款！gaotianliuyun高能来袭，引爆开发圈！💥
+date: 2026-01-26 12:12:08+08:00
 draft: false
-entry_kind: "auto"
-tags: ["TVBox", "FongMi", "配置文件", "影视聚合", "JavaScript", "GitHub", "IPTV", "开源软件"]
-categories: ["开源生态", "生活与杂谈"]
+entry_kind: auto
+tags:
+- TVBox
+- FongMi
+- 配置文件
+- 影视聚合
+- JavaScript
+- GitHub
+- IPTV
+- 开源软件
+categories:
+- 开源生态
+- 生活与杂谈
 source: github_trending
 external_url: https://github.com/gaotianliuyun/gao
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 🚀 🔥GitHub爆款！gaotianliuyun高能来袭，引爆开发圈！💥
