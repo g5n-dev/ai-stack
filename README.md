@@ -183,6 +183,7 @@ ai-stack/
 | [详细使用文档](./docs/README.md) | 安装、配置、日常命令与故障排查。 |
 | [部署指南](./DEPLOYMENT.md) | GitHub Pages、自定义域名、Secrets 与部署验证。 |
 | [分支架构](./docs/BRANCH_ARCHITECTURE.md) | 分支职责、同步机制与部署边界。 |
+| [历史文章质量报告](./docs/HISTORICAL_CONTENT_QUALITY.md) | 异常识别、去重、透明归档、标签修复与验收统计。 |
 | [CI 信任模型](./docs/architecture/ci-trust-model.md) | 工作流权限、发布边界与安全假设。 |
 | [系统设计](./docs/系统设计文档.md) | 数据流、AI 处理、展示层和扩展设计。 |
 

@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import importlib.util
+import hashlib
 import sys
 import tempfile
 import types
@@ -81,6 +82,13 @@ class GenerateContentGuardsTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.module = _load_module()
+
+    def _contract(self, item):
+        prepared = dict(item)
+        prepared.setdefault("crawled_at", "2026-07-15T12:00:00Z")
+        if prepared.get("source") == "hacker_news":
+            prepared.setdefault("hn_id", 1)
+        return self.module.apply_source_contract(prepared)
 
     def test_detects_auth_failure_reason(self):
         self.assertTrue(self.module.looks_like_llm_auth_failure("Error code: 401 - 身份验证失败"))
@@ -216,6 +224,18 @@ class GenerateContentGuardsTest(unittest.TestCase):
                 quality_failed_items=1,
             )
 
+    def test_raise_for_fatal_post_generation_state_on_contract_failure(self):
+        generator = self.module.SuperEnhancedContentGenerator.__new__(
+            self.module.SuperEnhancedContentGenerator
+        )
+
+        with self.assertRaisesRegex(RuntimeError, "source contract"):
+            generator._raise_for_fatal_post_generation_state(
+                posts_created=0,
+                postability={"total_items": 1},
+                contract_failed_items=1,
+            )
+
     def test_should_not_skip_post_when_guard_failed_sections_are_dropped(self):
         generator = self.module.SuperEnhancedContentGenerator.__new__(self.module.SuperEnhancedContentGenerator)
         item = {
@@ -275,6 +295,19 @@ class GenerateContentGuardsTest(unittest.TestCase):
 
         with self.assertRaisesRegex(ValueError, "unsafe-url"):
             self.module.sanitize_public_markdown_text(text=document)
+
+    def test_prompt_sanitizer_preserves_matching_text_inside_code_fences(self):
+        document = (
+            "---\ntitle: Fence\n---\n\n"
+            "```text\n输出要求：这是测试字符串\n```\n"
+        )
+
+        sanitized, removed = self.module.sanitize_prompt_leaks_in_markdown_text(
+            text=document
+        )
+
+        self.assertEqual(sanitized, document)
+        self.assertEqual(removed, 0)
 
     def test_related_post_links_do_not_emit_hugo_shortcodes(self):
         generator = self.module.SuperEnhancedContentGenerator.__new__(
@@ -411,14 +444,14 @@ class GenerateContentGuardsTest(unittest.TestCase):
             created = generator._generate_posts(
                 {
                     "hacker_news": [
-                        {
+                        self._contract({
                             "title": "Midnight AI",
                             "source": "hacker_news",
                             "url": "https://example.com/midnight-ai",
                             "summary": "A safe AI summary.",
                             "tags": ["AI"],
                             "categories": ["News"],
-                        }
+                        })
                     ]
                 },
                 generated_at=generated_at,
@@ -426,9 +459,12 @@ class GenerateContentGuardsTest(unittest.TestCase):
 
             files = list(generator.posts_dir.glob("*.md"))
             self.assertEqual(created, 1)
+            identity = hashlib.sha256(
+                b"https://example.com/midnight-ai"
+            ).hexdigest()[:10]
             self.assertEqual(
                 [path.name for path in files],
-                ["20260715-hacker_news-midnight-ai-0.md"],
+                [f"20260715-hacker_news-midnight-ai-0-{identity}.md"],
             )
             self.assertIn(
                 "date: 2026-07-15T00:30:00+08:00",
@@ -443,19 +479,24 @@ class GenerateContentGuardsTest(unittest.TestCase):
             )
             generator.posts_dir = Path(temp_dir)
             generator._post_index = []
-            target = generator.posts_dir / "20260715-hacker_news-existing-target-0.md"
+            identity = hashlib.sha256(
+                b"https://example.com/existing-target"
+            ).hexdigest()[:10]
+            target = generator.posts_dir / (
+                f"20260715-hacker_news-existing-target-0-{identity}.md"
+            )
             original = b"existing immutable article\n"
             target.write_bytes(original)
 
             created = generator._generate_posts(
                 {
                     "hacker_news": [
-                        {
+                        self._contract({
                             "title": "Existing target",
                             "source": "hacker_news",
                             "url": "https://example.com/existing-target",
                             "summary": "Replacement content must not be written.",
-                        }
+                        })
                     ]
                 },
                 generated_at=generated_at,
@@ -463,8 +504,179 @@ class GenerateContentGuardsTest(unittest.TestCase):
 
             self.assertEqual(created, 0)
             self.assertEqual(target.read_bytes(), original)
+            self.assertEqual(generator.last_generation_stats["generation_failed"], 1)
+            self.assertEqual(generator.last_generation_stats["skipped_existing"], 0)
 
-    def test_final_markdown_quality_gate_blocks_prompt_context_leaks(self):
+    def test_same_day_same_title_uses_url_identity_instead_of_silently_colliding(self):
+        generated_at = datetime(2026, 7, 15, 2, 0, tzinfo=timezone.utc)
+        with tempfile.TemporaryDirectory() as temp_dir:
+            generator = self.module.SuperEnhancedContentGenerator.__new__(
+                self.module.SuperEnhancedContentGenerator
+            )
+            generator.posts_dir = Path(temp_dir)
+            generator._post_index = []
+
+            first = self._contract({
+                "title": "Same AI title",
+                "source": "hacker_news",
+                "url": "https://example.com/story-a",
+                "summary": "First source-backed item.",
+            })
+            second = self._contract({
+                "title": "Same AI title",
+                "source": "hacker_news",
+                "url": "https://example.com/story-b",
+                "summary": "Second source-backed item.",
+            })
+
+            self.assertEqual(
+                generator._generate_posts(
+                    {"hacker_news": [first]}, generated_at=generated_at
+                ),
+                1,
+            )
+            self.assertEqual(
+                generator._generate_posts(
+                    {"hacker_news": [second]}, generated_at=generated_at
+                ),
+                1,
+            )
+
+            files = sorted(generator.posts_dir.glob("*.md"))
+            self.assertEqual(len(files), 2)
+            self.assertNotEqual(files[0].name, files[1].name)
+            self.assertEqual(
+                {
+                    generator._post_entry_from_file(path)["external_url"]
+                    for path in files
+                },
+                {
+                    "https://example.com/story-a",
+                    "https://example.com/story-b",
+                },
+            )
+
+    def test_source_brief_drops_prompt_context_leaks_in_generated_fields(self):
+        generated_at = datetime(2026, 7, 15, 2, 0, tzinfo=timezone.utc)
+        with tempfile.TemporaryDirectory() as temp_dir:
+            generator = self.module.SuperEnhancedContentGenerator.__new__(
+                self.module.SuperEnhancedContentGenerator
+            )
+            generator.posts_dir = Path(temp_dir)
+            generator._post_index = []
+
+            created = generator._generate_posts(
+                {
+                    "hacker_news": [
+                        self._contract({
+                            "title": "Unverifiable analysis",
+                            "source": "hacker_news",
+                            "url": "https://example.com/unverifiable",
+                            "summary": (
+                                "你在提示词中没有提供完整正文，因此以下内容只能根据标题推演。"
+                            ),
+                            "tags": ["AI"],
+                            "categories": ["News"],
+                        })
+                    ]
+                },
+                generated_at=generated_at,
+            )
+
+            self.assertEqual(created, 1)
+            document = next(generator.posts_dir.glob("*.md")).read_text(encoding="utf-8")
+            self.assertNotIn("你在提示词中没有提供", document)
+            self.assertIn("## 来源说明", document)
+            self.assertEqual(generator.last_generation_stats["skipped_quality"], 0)
+
+    def test_source_brief_drops_truncated_generated_code_sections(self):
+        generated_at = datetime(2026, 7, 15, 2, 0, tzinfo=timezone.utc)
+        with tempfile.TemporaryDirectory() as temp_dir:
+            generator = self.module.SuperEnhancedContentGenerator.__new__(
+                self.module.SuperEnhancedContentGenerator
+            )
+            generator.posts_dir = Path(temp_dir)
+            generator._post_index = []
+
+            created = generator._generate_posts(
+                {
+                    "hacker_news": [
+                        self._contract({
+                            "title": "Truncated code",
+                            "source": "hacker_news",
+                            "url": "https://example.com/truncated-code",
+                            "summary": "A safe summary backed by the source.",
+                            "code_examples": [
+                                {
+                                    "description": "Incomplete example",
+                                    "code": "```python\nprint('cut')",
+                                }
+                            ],
+                            "tags": ["AI"],
+                            "categories": ["News"],
+                        })
+                    ]
+                },
+                generated_at=generated_at,
+            )
+
+            self.assertEqual(created, 1)
+            document = next(generator.posts_dir.glob("*.md")).read_text(encoding="utf-8")
+            self.assertNotIn("print('cut')", document)
+            self.assertNotIn("## 代码示例", document)
+            self.assertEqual(generator.last_generation_stats["skipped_quality"], 0)
+
+    def test_metadata_only_hn_writes_only_a_tier_c_source_card(self):
+        generated_at = datetime(2026, 7, 15, 2, 0, tzinfo=timezone.utc)
+        with tempfile.TemporaryDirectory() as temp_dir:
+            generator = self.module.SuperEnhancedContentGenerator.__new__(
+                self.module.SuperEnhancedContentGenerator
+            )
+            generator.posts_dir = Path(temp_dir)
+            generator._post_index = []
+            item = self._contract({
+                "title": "Evidence-first AI agents",
+                "source": "hacker_news",
+                "url": "https://example.com/evidence-first",
+                "author": "ada",
+                "score": 42,
+                "descendants": 7,
+                "hn_id": 123,
+                "crawled_at": "2026-07-15T12:00:00Z",
+                "source_note": "Untrusted generated analysis must not be published.",
+                "deep_comment": "This generated section must never be rendered.",
+                "code_examples": [{"description": "bad", "code": "print('bad')"}],
+            })
+            item["catchy_title"] = "Untrusted rewritten title"
+            item["author"] = "untrusted-author"
+            item["score"] = 9999
+
+            created = generator._generate_posts(
+                {"hacker_news": [item]}, generated_at=generated_at
+            )
+
+            self.assertEqual(created, 1)
+            document = next(generator.posts_dir.glob("*.md")).read_text(encoding="utf-8")
+            frontmatter = real_yaml.safe_load(document.split("---", 2)[1])
+            self.assertEqual(frontmatter["content_mode"], "source_brief")
+            self.assertEqual(frontmatter["publication_tier"], "C")
+            self.assertTrue(frontmatter["source_snapshot_sha256"].startswith("sha256:"))
+            self.assertIn("## 基本信息", document)
+            self.assertIn("## 来源说明", document)
+            self.assertNotIn("## 评论", document)
+            self.assertNotIn("## 代码示例", document)
+            self.assertNotIn("This generated section", document)
+            self.assertNotIn("Untrusted rewritten title", document)
+            self.assertNotIn("untrusted-author", document)
+            self.assertNotIn("9999", document)
+            self.assertNotIn("Untrusted generated analysis", document)
+            self.assertEqual(item["_publication_gate"], "passed")
+            self.assertNotIn(
+                "Untrusted generated analysis",
+                item["_publication_payload"]["summary"],
+            )
+
+    def test_generate_posts_rejects_items_without_a_crawler_contract(self):
         generated_at = datetime(2026, 7, 15, 2, 0, tzinfo=timezone.utc)
         with tempfile.TemporaryDirectory() as temp_dir:
             generator = self.module.SuperEnhancedContentGenerator.__new__(
@@ -477,14 +689,9 @@ class GenerateContentGuardsTest(unittest.TestCase):
                 {
                     "hacker_news": [
                         {
-                            "title": "Unverifiable analysis",
+                            "title": "LLM source without evidence",
                             "source": "hacker_news",
-                            "url": "https://example.com/unverifiable",
-                            "summary": (
-                                "你在提示词中没有提供完整正文，因此以下内容只能根据标题推演。"
-                            ),
-                            "tags": ["AI"],
-                            "categories": ["News"],
+                            "url": "https://example.com/no-contract",
                         }
                     ]
                 },
@@ -493,7 +700,45 @@ class GenerateContentGuardsTest(unittest.TestCase):
 
             self.assertEqual(created, 0)
             self.assertEqual(list(generator.posts_dir.glob("*.md")), [])
-            self.assertEqual(generator.last_generation_stats["skipped_quality"], 1)
+
+    def test_social_publish_only_receives_items_that_passed_markdown_gate(self):
+        generator = self.module.SuperEnhancedContentGenerator.__new__(
+            self.module.SuperEnhancedContentGenerator
+        )
+
+        class Publisher:
+            def __init__(self):
+                self.items = []
+
+            def get_enabled_platforms(self):
+                return ["telegram"]
+
+            def publish_all(self, item):
+                self.items.append(item)
+                return {"telegram": True}
+
+        generator.publisher = Publisher()
+        passed = {
+            "title": "passed",
+            "summary": "untrusted generated summary",
+            "_publication_gate": "passed",
+            "_publication_payload": {
+                "title": "passed",
+                "summary": "来源证据快报",
+                "url": "https://example.com/passed",
+                "source": "hacker_news",
+                "tags": ["AI"],
+                "content_mode": "source_brief",
+                "publication_tier": "C",
+                "source_snapshot_sha256": "sha256:" + "a" * 64,
+            },
+        }
+        generator._publish_content(
+            {"hacker_news": [{"title": "blocked"}, passed]}
+        )
+
+        self.assertEqual(generator.publisher.items, [passed["_publication_payload"]])
+        self.assertNotIn("untrusted generated summary", generator.publisher.items[0].values())
 
 
 if __name__ == "__main__":

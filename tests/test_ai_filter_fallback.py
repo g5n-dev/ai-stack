@@ -74,6 +74,31 @@ class AIThemeFilterFallbackTest(unittest.TestCase):
         self.assertEqual(result["ai_filter_mode"], "llm")
         self.assertEqual(result["ai_error_category"], "auth")
 
+    def test_evidence_only_filter_uses_token_boundaries_without_calling_model(self):
+        client = _FakeClient([])
+        flt = AIThemeFilter(client, {"enabled": True})
+
+        false_positive = flt.filter_evidence_only(
+            {"title": "A chair design with stainless steel rails"}
+        )
+        ai_story = flt.filter_evidence_only(
+            {"title": "OpenAI releases an LLM agent runtime"}
+        )
+
+        self.assertFalse(false_positive["ai_related"])
+        self.assertTrue(ai_story["ai_related"])
+        self.assertEqual(client.calls, [])
+
+    def test_evidence_only_moderation_rejects_non_ai_source_cards(self):
+        flt = AIThemeFilter(_FakeClient([]), {"enabled": True})
+
+        result = flt.moderate_evidence_only(
+            {"title": "PostgreSQL vacuum internals"}
+        )
+
+        self.assertFalse(result["should_publish"])
+        self.assertEqual(result["moderation_mode"], "evidence_only")
+
 
 if __name__ == "__main__":
     unittest.main()

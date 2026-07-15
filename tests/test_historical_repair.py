@@ -181,6 +181,97 @@ def test_all_polluted_group_plans_a_transparent_archive_stub(tmp_path: Path) -> 
     assert metadata["_build"] == {"list": "never", "render": "always"}
 
 
+def test_complete_candidate_beats_a_longer_truncated_duplicate(tmp_path: Path) -> None:
+    root = tmp_path / "content/posts"
+    route = _write_post(
+        root,
+        "20260101-route.md",
+        external_url="https://example.com/completeness-winner",
+        body="## 完整摘要\n\n这是结构闭合且可核验的正文。",
+        date="2026-01-01T00:00:00+08:00",
+    )
+    _write_post(
+        root,
+        "20260102-longer.md",
+        external_url="https://example.com/completeness-winner",
+        body="## 大段代码\n\n```python\n" + "print('cut')\n" * 200,
+        date="2026-01-02T00:00:00+08:00",
+    )
+
+    plan = _build(root)
+    rendered = _write_by_path(plan, route.name)
+
+    assert "这是结构闭合且可核验的正文。" in rendered
+    truncated = next(
+        candidate
+        for candidate in plan.manifest["groups"][0]["candidates"]
+        if candidate["path"] == "20260102-longer.md"
+    )
+    assert truncated["polluted"] is True
+    assert truncated["contamination_reasons"] == ["unclosed_code_fence"]
+
+
+def test_active_historical_winner_is_labeled_as_unverified_legacy_analysis(
+    tmp_path: Path,
+) -> None:
+    root = tmp_path / "content/posts"
+    route = _write_post(
+        root,
+        "20260101-legacy.md",
+        external_url="https://example.com/legacy",
+        body="## 完整摘要\n\n这是结构闭合的历史分析正文。" + "事实。" * 30,
+        date="2026-01-01T00:00:00+08:00",
+    )
+
+    rendered = _write_by_path(_build(root), route.name)
+    metadata = yaml.safe_load(rendered.split("---", 2)[1])
+
+    assert metadata["content_mode"] == "legacy_analysis"
+    assert metadata["publication_tier"] == "LEGACY"
+    assert metadata["source_provenance"] == "legacy_no_snapshot"
+    assert metadata["source_support"] == 0.0
+
+
+def test_historical_source_card_is_labeled_tier_c(tmp_path: Path) -> None:
+    root = tmp_path / "content/posts"
+    route = _write_post(
+        root,
+        "20260101-brief.md",
+        external_url="https://example.com/brief",
+        body=(
+            "## 基本信息\n\n- **作者**: Ada\n\n"
+            "这是一段结构完整且简洁的来源叙述。"
+        ),
+        date="2026-01-01T00:00:00+08:00",
+    )
+    original = route.read_text(encoding="utf-8")
+    original = original.replace("scenarios: []\n", "scenarios: []\nentry_kind: auto\nsource: hacker_news\n")
+    route.write_text(original, encoding="utf-8")
+
+    rendered = _write_by_path(_build(root), route.name)
+    metadata = yaml.safe_load(rendered.split("---", 2)[1])
+
+    assert metadata["content_mode"] == "legacy_source_brief"
+    assert metadata["publication_tier"] == "C"
+
+
+def test_incomplete_singleton_becomes_a_transparent_archive(tmp_path: Path) -> None:
+    root = tmp_path / "content/posts"
+    route = _write_post(
+        root,
+        "20260101-truncated.md",
+        external_url="https://example.com/truncated-singleton",
+        body="## 尚未完成\n",
+        date="2026-01-01T00:00:00+08:00",
+    )
+
+    plan = _build(root)
+    rendered = _write_by_path(plan, route.name)
+
+    assert plan.manifest["groups"][0]["disposition"] == "archive_stub"
+    assert "archived: true" in rendered
+
+
 def test_polluted_singleton_is_also_replaced_by_a_transparent_archive_stub(
     tmp_path: Path,
 ) -> None:
@@ -685,6 +776,34 @@ def test_repository_reviewed_apply_rejects_plan_digest_mismatch(
             backup_root=tmp_path / "backups",
             repository_reviewed=True,
         )
+
+
+def test_apply_rejects_any_unresolved_plan_issue_before_mutation(tmp_path: Path) -> None:
+    from ai_stack.historical_repair import apply_historical_repair_plan
+
+    root = tmp_path / "content/posts"
+    root.mkdir(parents=True)
+    (root / "invalid.md").write_text(
+        "---\ntitle: Missing URL\n---\n\n正文。\n",
+        encoding="utf-8",
+    )
+    plan = _build(root)
+    assert plan.manifest["issues"]
+
+    with pytest.raises(MigrationSafetyError, match="unresolved issue"):
+        apply_historical_repair_plan(
+            plan,
+            expected_source_sha=SOURCE_SHA,
+            expected_code_sha=None,
+            expected_plan_digest=plan.manifest["plan_digest"],
+            backup_id="issue-repair",
+            max_changes=10,
+            shadow_evidence_root=None,
+            backup_root=tmp_path / "backups",
+            repository_reviewed=True,
+        )
+
+    assert not (tmp_path / "backups").exists()
 
 
 def test_stale_plan_is_rejected_before_any_mutation(tmp_path: Path, monkeypatch) -> None:

@@ -22,6 +22,8 @@ from processor.scenario_analyzer import ScenarioAnalyzer
 from processor.ai_filter import AIThemeFilter
 from processor.tech_stack import export_to_json
 from runtime_profile import apply_anthropic_runtime_profile, get_runtime_profile
+from ai_stack.source_contract import verify_source_contract
+from ai_stack.tag_taxonomy import normalize_tags
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -224,6 +226,68 @@ class ProcessorOrchestrator:
             logger.error(f"Failed to load config: {e}")
             return {}
 
+    @staticmethod
+    def _metadata_source_brief(content: Dict) -> Dict:
+        """Return an honest Tier-C card without invoking any model."""
+
+        result = dict(content)
+        title = str(result.get("title") or "来源快报").strip()
+        source = str(result.get("source") or "来源").strip()
+        capture_mode = str(result.get("source_capture_mode") or "metadata_only")
+        notes = {
+            "metadata_only": "当前只捕获了标题与来源元数据，未抓取外链全文",
+            "abstract": "当前捕获的是来源摘要，不代表论文全文",
+            "excerpt": "当前捕获的是 RSS 或来源节选，不代表原文全文",
+            "repository_excerpt": "当前捕获的是仓库元数据或节选，不代表完整仓库文档",
+            "social_post": "当前捕获的是单条社交内容，不代表完整讨论串",
+        }
+        source_labels = {
+            "arxiv": "arXiv",
+            "blogs_podcasts": "博客与播客",
+            "github_trending": "GitHub",
+            "hacker_news": "Hacker News",
+            "juejin": "掘金",
+            "reddit": "Reddit",
+            "twitter": "Twitter",
+        }
+        raw_evidence = result.get("evidence")
+        evidence: Dict = raw_evidence if isinstance(raw_evidence, dict) else {}
+        evidence_fields: Dict = (
+            evidence.get("fields")
+            if isinstance(evidence.get("fields"), dict)
+            else {}
+        )
+        raw_evidence_tags = evidence_fields.get("tags")
+        evidence_tags = (
+            list(raw_evidence_tags)
+            if isinstance(raw_evidence_tags, list)
+            else []
+        )
+        if source == "arxiv" and evidence_fields.get("category"):
+            evidence_tags.append(str(evidence_fields["category"]))
+        if source == "github_trending" and evidence_fields.get("language"):
+            evidence_tags.append(str(evidence_fields["language"]))
+        evidence_tags.extend([source_labels.get(source, source), "来源快报"])
+        source_note = (
+            f"AI Stack {notes.get(capture_mode, notes['metadata_only'])}，"
+            "因此不生成扩展判断；请以原文和 Hacker News 讨论为准。"
+            if source == "hacker_news"
+            else (
+                f"AI Stack {notes.get(capture_mode, notes['metadata_only'])}，"
+                "因此不生成扩展判断；请以原始来源为准。"
+            )
+        )
+        result.update(
+            {
+                "catchy_title": title,
+                "tags": normalize_tags(evidence_tags, limit=8),
+                "categories": [],
+                "scenarios": [],
+                "source_note": source_note,
+            }
+        )
+        return result
+
     def process_single(self, content: Dict) -> Dict:
         """
         处理单个内容
@@ -235,9 +299,50 @@ class ProcessorOrchestrator:
             Dict: 处理后的内容
         """
         try:
+            verify_source_contract(content)
             source = content.get('source', '')
 
             logger.info(f"Processing content from {source}: {content.get('title', 'N/A')}")
+
+            if content.get("content_mode") == "source_brief":
+                raw_evidence = content.get("evidence")
+                evidence: Dict = raw_evidence if isinstance(raw_evidence, dict) else {}
+                fields: Dict = (
+                    evidence.get("fields")
+                    if isinstance(evidence.get("fields"), dict)
+                    else {}
+                )
+                review = {
+                    "source": str(evidence.get("source") or source),
+                    "title": str(fields.get("title") or ""),
+                    "url": str(evidence.get("external_url") or ""),
+                    "source_display_excerpt": str(fields.get("source_text") or ""),
+                    "category": str(fields.get("category") or ""),
+                    "language": str(fields.get("language") or ""),
+                    "tags": list(fields.get("tags") or []),
+                    "categories": [],
+                }
+                review = self.ai_filter.filter_evidence_only(review)
+                review = self.ai_filter.moderate_evidence_only(review)
+                for key in (
+                    "ai_related",
+                    "ai_reason",
+                    "ai_confidence",
+                    "ai_filter_mode",
+                    "should_publish",
+                    "moderation_reason",
+                    "moderation_confidence",
+                    "moderation_flags",
+                    "moderation_mode",
+                ):
+                    if key in review:
+                        content[key] = review[key]
+                if (not content.get("ai_related")) or (not content.get("should_publish")):
+                    content["skip_post"] = True
+                    return content
+                result = self._metadata_source_brief(content)
+                verify_source_contract(result)
+                return result
 
             content = self.ai_filter.filter(content)
             content = self.ai_filter.moderate(content)
@@ -270,12 +375,18 @@ class ProcessorOrchestrator:
             # 场景分析
             content = self.scenario_analyzer.analyze(content)
 
+            verify_source_contract(content)
+
             logger.info(f"Successfully processed content from {source}")
             return content
 
         except Exception as e:
             logger.error(f"Failed to process content: {e}")
-            return content
+            failed = dict(content)
+            failed["skip_post"] = True
+            failed["should_publish"] = False
+            failed["processing_error"] = str(e)
+            return failed
 
     def process_batch(self, contents: List[Dict]) -> List[Dict]:
         """
@@ -343,10 +454,7 @@ class ProcessorOrchestrator:
 
         for source, contents in results.items():
             logger.info(f"Processing {len(contents)} contents from {source}")
-            if source == "twitter":
-                processed_results[source] = self._process_twitter_source(contents)
-            else:
-                processed_results[source] = self.process_batch(contents)
+            processed_results[source] = self.process_batch(contents)
 
         return processed_results
 

@@ -48,6 +48,8 @@ class AIThemeFilter:
 
     AI_RELATED_KEYWORDS = [
         "ai", "llm", "gpt", "claude", "gemini", "llama",
+        "openai", "anthropic", "mistral", "copilot", "diffusion",
+        "machine learning", "generative ai", "agents",
         "机器学习", "深度学习", "神经网络", "transformer",
         "nlp", "自然语言处理", "计算机视觉", "cv",
         "rag", "agent", "prompt", "chatbot",
@@ -114,7 +116,6 @@ class AIThemeFilter:
             }
             content["moderation_mode"] = "disabled"
             return content
-
         try:
             result, mode = self._check_moderation(content)
             self._apply_moderation_result(content, result, mode=mode)
@@ -158,6 +159,40 @@ class AIThemeFilter:
             self._apply_moderation_result(content, fallback, mode="fallback")
             content["moderation_error_category"] = "unknown"
             return content
+
+    def filter_evidence_only(self, content: Dict[str, Any]) -> Dict[str, Any]:
+        """Run the deterministic AI-topic gate without invoking a model."""
+
+        if not self.enabled:
+            content["ai_related"] = True
+            content["ai_reason"] = "Filter disabled"
+            content["ai_confidence"] = 1.0
+            content["ai_filter_mode"] = "disabled"
+            return content
+        self._apply_filter_result(content, self._fallback(content), mode="evidence_only")
+        return content
+
+    def moderate_evidence_only(self, content: Dict[str, Any]) -> Dict[str, Any]:
+        """Apply fail-closed deterministic moderation to a source card."""
+
+        if not self.enabled:
+            content["should_publish"] = True
+            content["moderation_reason"] = "Filter disabled"
+            content["moderation_confidence"] = 1.0
+            content["moderation_flags"] = {
+                "non_tech": False,
+                "religion": False,
+                "violence": False,
+                "low_quality": False,
+            }
+            content["moderation_mode"] = "disabled"
+            return content
+        self._apply_moderation_result(
+            content,
+            self._fallback_moderation(content),
+            mode="evidence_only",
+        )
+        return content
 
     def _apply_filter_result(self, content: Dict[str, Any], result: FilterResult, *, mode: str) -> None:
         content["ai_related"] = result.is_ai_related
@@ -401,9 +436,29 @@ AI相关主题包括但不限于：
         tags = [str(t).lower() for t in content.get("tags", [])]
         categories = [str(c).lower() for c in content.get("categories", [])]
 
-        text = " ".join([title, description, summary] + tags + categories)
+        source_text = str(
+            content.get("source_display_excerpt")
+            or content.get("source_text_original")
+            or ""
+        ).lower()
+        category = str(content.get("category") or "").lower()
+        language = str(content.get("language") or "").lower()
+        text = " ".join(
+            [title, description, summary, source_text, category, language]
+            + tags
+            + categories
+        )
 
-        keyword_matches = [kw for kw in self.AI_RELATED_KEYWORDS if kw in text]
+        def matches(keyword: str) -> bool:
+            token = keyword.lower()
+            if not token.isascii():
+                return token in text
+            return re.search(
+                rf"(?<![a-z0-9]){re.escape(token)}(?![a-z0-9])",
+                text,
+            ) is not None
+
+        keyword_matches = [kw for kw in self.AI_RELATED_KEYWORDS if matches(kw)]
         category_matches = [cat for cat in self.AI_RELATED_CATEGORIES if any(cat.lower() in c for c in categories)]
 
         if keyword_matches or category_matches:

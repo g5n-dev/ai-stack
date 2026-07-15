@@ -27,7 +27,7 @@ from typing import Any
 import yaml
 
 from ._json import sha256_digest
-from .content_quality import synthetic_body_reasons
+from .content_quality import analyze_post, is_source_brief
 from .identity import canonicalize_url
 from .migrations import (
     MigrationSafetyError,
@@ -135,6 +135,7 @@ class _Document:
     body: str
     canonical_url: str
     contamination_reasons: tuple[str, ...]
+    warning_reasons: tuple[str, ...]
     quality_score: int
 
 
@@ -212,20 +213,22 @@ def _normalized_list(value: object, *, limit: int | None = None) -> list[str]:
     return result
 
 
-def _contamination_reasons(body: str) -> tuple[str, ...]:
-    return synthetic_body_reasons(body)
-
-
-def _quality_score(body: str) -> int:
+def _quality_score(body: str, warning_reasons: tuple[str, ...] = ()) -> int:
     compact_length = len(re.sub(r"\s+", "", body))
     headings = len(re.findall(r"(?m)^#{1,4}\s+\S", body))
     links = len(re.findall(r"https?://", body))
     fenced_blocks = body.count("```") // 2
+    penalty = 0
+    if "empty_section" in warning_reasons:
+        penalty += 600
+    if "source_excerpt_truncated" in warning_reasons:
+        penalty += 300
     return (
         min(compact_length, 12_000)
         + min(headings, 20) * 120
         + min(links, 20) * 40
         + min(fenced_blocks, 10) * 100
+        - penalty
     )
 
 
@@ -250,6 +253,7 @@ def _parse_document(path: Path, root: Path) -> _Document:
         raise ValueError(f"Markdown has no external_url: {path}")
     canonical_url = canonicalize_url(external_url)
     body = match.group(2)
+    analysis = analyze_post(text)
     return _Document(
         path=path,
         relative_path=path.relative_to(root).as_posix(),
@@ -257,8 +261,9 @@ def _parse_document(path: Path, root: Path) -> _Document:
         metadata=metadata,
         body=body,
         canonical_url=canonical_url,
-        contamination_reasons=_contamination_reasons(body),
-        quality_score=_quality_score(body),
+        contamination_reasons=analysis.fatal_reasons,
+        warning_reasons=analysis.warning_reasons,
+        quality_score=_quality_score(body, analysis.warning_reasons),
     )
 
 
@@ -357,7 +362,24 @@ def _filtered_metadata(
             metadata.pop(route_key, None)
     existing_aliases = _safe_aliases(route.metadata.get("aliases"))
     metadata["aliases"] = sorted(set(existing_aliases + aliases))
-    return metadata
+    return _active_provenance_metadata(metadata, source.body)
+
+
+def _active_provenance_metadata(
+    metadata: Mapping[str, Any], body: str
+) -> dict[str, Any]:
+    """Label legacy output honestly without claiming a missing source snapshot."""
+
+    result = copy.deepcopy(dict(metadata))
+    if is_source_brief(result, body):
+        result["content_mode"] = "legacy_source_brief"
+        result["publication_tier"] = "C"
+    else:
+        result["content_mode"] = "legacy_analysis"
+        result["publication_tier"] = "LEGACY"
+    result["source_provenance"] = "legacy_no_snapshot"
+    result["source_support"] = 0.0
+    return result
 
 
 def _normalized_active_singleton_metadata(
@@ -375,14 +397,12 @@ def _normalized_active_singleton_metadata(
     if document.metadata.get("archived") is True:
         return None
     normalized_tags = normalize_tags(document.metadata.get("tags"), limit=8)
-    if (
-        document.metadata.get("external_url") == canonical_url
-        and document.metadata.get("tags") == normalized_tags
-    ):
-        return None
     metadata = copy.deepcopy(document.metadata)
     metadata["external_url"] = canonical_url
     metadata["tags"] = normalized_tags
+    metadata = _active_provenance_metadata(metadata, document.body)
+    if metadata == document.metadata:
+        return None
     return metadata
 
 
@@ -414,6 +434,10 @@ def _archive_stub(
         scenario_whitelist=scenario_whitelist,
     )
     metadata["archived"] = True
+    metadata["content_mode"] = "archived"
+    metadata["publication_tier"] = "ARCHIVED"
+    metadata["source_provenance"] = "legacy_no_snapshot"
+    metadata["source_support"] = 0.0
     metadata["archive_reason"] = "historical_content_quality_gate"
     metadata["description"] = "历史条目已归档：现有正文未通过内容质量门，请查阅原始来源。"
     metadata["tags"] = []
@@ -607,6 +631,7 @@ def build_historical_repair_plan(
                     "path": document.relative_path,
                     "polluted": bool(document.contamination_reasons),
                     "contamination_reasons": list(document.contamination_reasons),
+                    "warning_reasons": list(document.warning_reasons),
                     "quality_score": document.quality_score,
                 }
                 for document in ordered
@@ -722,6 +747,9 @@ def build_historical_repair_plan(
                 "unrelated_metadata_preserved"
             ),
             "all_polluted": "transparent_archive_stub",
+            "active_provenance": (
+                "legacy_analysis_without_source_snapshot_or_strict_source_brief_tier_c"
+            ),
         },
         "execution_blocked": "requires_one_validated_execution_profile",
     }
@@ -982,6 +1010,13 @@ def apply_historical_repair_plan(
     repository_reviewed: bool = False,
 ) -> dict[str, Any]:
     """Apply a reviewed plan after one explicit safety profile validates it."""
+
+    issues = plan.manifest.get("issues")
+    if not isinstance(issues, list) or issues:
+        issue_count = len(issues) if isinstance(issues, list) else "unknown"
+        raise MigrationSafetyError(
+            f"historical repair plan has unresolved issues: {issue_count}"
+        )
 
     safety_profile = "shadow_soak_dedupe"
     if repository_reviewed:

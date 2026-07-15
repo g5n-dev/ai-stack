@@ -74,8 +74,23 @@ jobs:
             tests/test_historical_repair.py \
             tests/test_historical_repair_integration.py \
             tests/test_content_quality_manifest.py \
+            tests/test_crawler_dedupe_quality.py \
+            tests/test_source_contract.py \
+            tests/test_evidence_pipeline.py \
+            tests/test_pipeline_cli.py \
+            tests/test_pipeline_safety.py \
             tests/test_static_search_configuration.py \
             tests/test_pagefind_catalog.py
+
+      - name: Verify committed Post quality manifest
+        env:
+          PYTHONPATH: ${{ github.workspace }}
+        run: |
+          python3 scripts/build_content_quality_manifest.py \
+            --content-root blog/content \
+            --output blog/data/content_quality.json \
+            --fail-on-quarantine
+          git diff --exit-code -- blog/data/content_quality.json
 
       - name: Run browser-runtime unit tests
         run: node --test tests/js/*.mjs tests/js/graph-runtime.test.js

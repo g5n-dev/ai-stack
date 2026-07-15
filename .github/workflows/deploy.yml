@@ -5,6 +5,12 @@ on:
     # Avoid GitHub Actions' top-of-hour congestion window.
     - cron: "17 * * * *"
   workflow_dispatch:
+    inputs:
+      refresh_data:
+        description: "Crawl and regenerate Post-derived data before deploy"
+        required: false
+        default: true
+        type: boolean
   push:
     branches:
       - main
@@ -30,6 +36,7 @@ env:
   BING_INDEXNOW_MAX_URLS: "80"
   GOOGLE_INDEXING_API_KEY: ${{ secrets.GOOGLE_INDEXING_API_KEY }}
   GOOGLE_INDEXING_API_URL: ${{ secrets.GOOGLE_INDEXING_API_URL }}
+  AI_STACK_REFRESH_DATA: ${{ github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.refresh_data) }}
 
 jobs:
   build-and-deploy:
@@ -77,7 +84,7 @@ jobs:
           python3 -m unittest tests/test_search_fallback.py
 
       - name: Install Playwright browsers
-        if: ${{ github.event_name != 'push' }}
+        if: ${{ env.AI_STACK_REFRESH_DATA == 'true' }}
         run: |
           if pip show playwright > /dev/null 2>&1; then
             playwright install chromium
@@ -93,7 +100,7 @@ jobs:
           extended: true
 
       - name: Run crawler
-        if: ${{ github.event_name != 'push' }}
+        if: ${{ env.AI_STACK_REFRESH_DATA == 'true' }}
         env:
           PYTHONPATH: /home/runner/work/ai-stack/ai-stack
           ANTHROPIC_AUTH_TOKEN: ${{ secrets.ANTHROPIC_AUTH_TOKEN }}
@@ -108,7 +115,7 @@ jobs:
           fi
 
       - name: Moderation cleanup (LLM)
-        if: ${{ github.event_name != 'push' && env.AI_STACK_RUNTIME_PROFILE != 'ci' }}
+        if: ${{ env.AI_STACK_REFRESH_DATA == 'true' && env.AI_STACK_RUNTIME_PROFILE != 'ci' }}
         env:
           PYTHONPATH: /home/runner/work/ai-stack/ai-stack
           ANTHROPIC_AUTH_TOKEN: ${{ secrets.ANTHROPIC_AUTH_TOKEN }}
@@ -239,7 +246,7 @@ jobs:
           PY
 
       - name: Sanitize broken relref links
-        if: ${{ github.event_name != 'push' }}
+        if: ${{ env.AI_STACK_REFRESH_DATA == 'true' }}
         env:
           PYTHONPATH: /home/runner/work/ai-stack/ai-stack
         run: |
@@ -251,16 +258,28 @@ jobs:
           fi
 
       - name: Build historical content quality manifest
-        if: ${{ github.event_name != 'push' }}
+        if: ${{ env.AI_STACK_REFRESH_DATA == 'true' }}
         env:
           PYTHONPATH: /home/runner/work/ai-stack/ai-stack
         run: |
           python3 scripts/build_content_quality_manifest.py \
             --content-root blog/content \
-            --output blog/data/content_quality.json
+            --output blog/data/content_quality.json \
+            --fail-on-quarantine
+
+      - name: Verify committed Post quality gate
+        if: ${{ env.AI_STACK_REFRESH_DATA != 'true' }}
+        env:
+          PYTHONPATH: /home/runner/work/ai-stack/ai-stack
+        run: |
+          python3 scripts/build_content_quality_manifest.py \
+            --content-root blog/content \
+            --output /tmp/content_quality.json \
+            --fail-on-quarantine
+          cmp --silent blog/data/content_quality.json /tmp/content_quality.json
 
       - name: Build tag graph
-        if: ${{ github.event_name != 'push' }}
+        if: ${{ env.AI_STACK_REFRESH_DATA == 'true' }}
         env:
           PYTHONPATH: /home/runner/work/ai-stack/ai-stack
           ANTHROPIC_AUTH_TOKEN: ${{ secrets.ANTHROPIC_AUTH_TOKEN }}
@@ -279,9 +298,9 @@ jobs:
 
       - name: Verify generated graph
         run: |
-          if [ "${GITHUB_EVENT_NAME}" = "push" ]; then
-            # Push deploys reuse already-reviewed graph assets and do not install
-            # Chromium. Validate the complete manifest without launching a browser.
+          if [ "${AI_STACK_REFRESH_DATA}" != "true" ]; then
+            # Pushes and delete-triggered deploys reuse already-reviewed graph
+            # assets and do not install Chromium. Validate every referenced file.
             python3 scripts/verify_graph.py --assets-only --public-dir blog/static
           else
             python3 scripts/verify_graph.py
@@ -308,7 +327,7 @@ jobs:
           test -s blog/public/pagefind/catalog.manifest.json
 
       - name: Commit generated data
-        if: ${{ github.event_name != 'push' }}
+        if: ${{ env.AI_STACK_REFRESH_DATA == 'true' }}
         run: |
           git add -A -- \
             blog/content/posts \

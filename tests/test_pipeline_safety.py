@@ -23,7 +23,7 @@ CODE_SHA = "a" * 40
 
 def _source() -> dict[str, list[dict[str, object]]]:
     return {
-        "source": [
+        "github_trending": [
             {
                 "id": 42,
                 "title": "Safe title",
@@ -447,6 +447,40 @@ def test_generated_validator_quarantines_evidence_and_markdown_failures(
     assert result["quarantined"] == 1
 
 
+@pytest.mark.parametrize("field", ["body", "claims", "inferences", "evidence"])
+def test_generated_validator_rejects_gate_payload_not_bound_to_candidate(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, field: str
+) -> None:
+    generated, _content, _ops = _generated_fixture(
+        tmp_path,
+        monkeypatch,
+        run_id=f"run-gate-binding-{field}",
+    )
+    candidate_path = next((generated / "content/candidates").glob("*.json"))
+    candidate = json.loads(candidate_path.read_text(encoding="utf-8"))
+    gate_payload = candidate["gate_payload"]
+    replacements: dict[str, object] = {
+        "body": "## 已通过门禁的替代正文\n\n这不是最终落盘正文。",
+        "claims": [],
+        "inferences": [{"id": "inf_unbound", "text": "未绑定推断"}],
+        "evidence": [],
+    }
+    gate_payload[field] = replacements[field]
+    candidate_path.write_text(json.dumps(candidate), encoding="utf-8")
+
+    monkeypatch.setattr(
+        pipeline,
+        "_evidence_gate",
+        lambda: _Gate(_Decision(publishable=True)),
+    )
+    with pytest.raises(PipelineError, match=f"gate payload {field} mismatch"):
+        pipeline.validate_generated(
+            input_root=generated,
+            output=tmp_path / "validated-result",
+            publisher_config=Path("config/publisher.yaml"),
+        )
+
+
 def test_generated_loader_and_candidate_locator_fail_closed_on_tampering(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch
 ) -> None:
@@ -519,10 +553,15 @@ def _validated_fixture(
 ) -> tuple[Path, Path, Path]:
     generated, content, ops = _generated_fixture(tmp_path, monkeypatch, run_id=run_id)
     validated = tmp_path / "validated-result"
+    publisher_config = tmp_path / "validated-publisher.yaml"
+    publisher_config.write_text(
+        "publishers:\n  telegram:\n    enabled: true\n",
+        encoding="utf-8",
+    )
     pipeline.validate_generated(
         input_root=generated,
         output=validated,
-        publisher_config=Path("config/publisher.yaml"),
+        publisher_config=publisher_config,
     )
     return validated, content, ops
 
@@ -559,6 +598,30 @@ def test_validated_loader_and_persistence_reject_tampered_contracts(
     _rewrite_json(wrong_count / "state/run.json", {"publishable": 99})
     with pytest.raises(PipelineError, match="count"):
         pipeline._load_validated(wrong_count)
+
+    tampered_markdown = tmp_path / "validated-markdown-digest"
+    shutil.copytree(validated, tampered_markdown)
+    markdown_path = next((tampered_markdown / "content/posts").glob("*.md"))
+    markdown_path.write_text(
+        markdown_path.read_text(encoding="utf-8").replace(
+            "这是自动生成的来源简讯",
+            "这是被验证后替换的来源简讯",
+        ),
+        encoding="utf-8",
+    )
+    with pytest.raises(PipelineError, match="digest"):
+        pipeline._load_validated(tampered_markdown)
+
+    tampered_outbox = tmp_path / "validated-outbox-payload"
+    shutil.copytree(validated, tampered_outbox)
+    outbox_path = next(
+        path
+        for path in (tampered_outbox / "content/outbox").glob("*.json")
+        if path.name != "index.json"
+    )
+    _rewrite_json(outbox_path, {"payload": {"title": "tampered"}})
+    with pytest.raises(PipelineError, match="outbox"):
+        pipeline._load_validated(tampered_outbox)
 
     with pytest.raises(PipelineError, match="run_id"):
         pipeline.persist_result(run_id="other-run", input_root=validated, state_root=content)

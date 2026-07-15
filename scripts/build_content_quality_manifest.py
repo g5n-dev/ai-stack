@@ -26,16 +26,27 @@ def main(argv: Sequence[str] | None = None) -> int:
         type=Path,
         default=Path("blog/data/content_quality.json"),
     )
+    parser.add_argument(
+        "--fail-on-quarantine",
+        action="store_true",
+        help="return non-zero when any active Post fails the publication gate",
+    )
     args = parser.parse_args(argv)
 
     manifest = write_content_quality_manifest(args.content_root, args.output)
     print(
         "content quality manifest: "
         f"sources={manifest['source_file_count']} "
+        f"complete={manifest['complete_count']} "
+        f"legacy_analysis={manifest['legacy_analysis_count']} "
+        f"source_briefs={manifest['source_brief_count']} "
         f"quarantined={manifest['quarantined_count']} "
         f"archived={manifest['archived_count']} "
         f"output={args.output}"
     )
+    if args.fail_on_quarantine and manifest["quarantined_count"]:
+        print("content quality manifest rejected active quarantined Posts", file=sys.stderr)
+        return 1
     return 0
 
 

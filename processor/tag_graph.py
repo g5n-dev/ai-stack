@@ -17,7 +17,11 @@ from typing import Any, Dict, List, Optional, Tuple
 
 import yaml
 
-from ai_stack.content_quality import is_synthetic_body
+from ai_stack.content_quality import (
+    analyze_post,
+    body_completeness_reasons,
+    synthetic_body_reasons,
+)
 from ai_stack.identity import canonicalize_url
 from ai_stack.tag_taxonomy import normalize_tags
 
@@ -189,6 +193,10 @@ class TagGraphBuilder:
         self.source_dates: List[str] = []
         self.enable_content_mining = enable_content_mining
         self.canonical_duplicate_files_skipped = 0
+        self.archived_article_groups_skipped = 0
+        self.archived_article_files_skipped = 0
+        self.incomplete_article_groups_skipped = 0
+        self.incomplete_article_files_skipped = 0
         self.synthetic_article_groups_skipped = 0
         self.synthetic_article_files_skipped = 0
 
@@ -224,24 +232,51 @@ class TagGraphBuilder:
         selected_articles: List[Tuple[Path, str, Dict[str, Any]]] = []
         for identity in sorted(grouped_articles, key=_stable_text_key):
             candidates = grouped_articles[identity]
+            exclusions = [
+                (candidate, self._candidate_exclusion_reason(candidate))
+                for candidate in candidates
+            ]
             clean_candidates = [
                 candidate
-                for candidate in candidates
-                if not self._candidate_is_synthetic(candidate)
+                for candidate, exclusion_reason in exclusions
+                if exclusion_reason is None
             ]
-            self.synthetic_article_files_skipped += len(candidates) - len(clean_candidates)
+            archived_files = sum(
+                exclusion_reason == "archived"
+                for _, exclusion_reason in exclusions
+            )
+            synthetic_files = sum(
+                exclusion_reason == "synthetic"
+                for _, exclusion_reason in exclusions
+            )
+            incomplete_files = sum(
+                exclusion_reason == "incomplete"
+                for _, exclusion_reason in exclusions
+            )
+            self.archived_article_files_skipped += archived_files
+            self.incomplete_article_files_skipped += incomplete_files
+            self.synthetic_article_files_skipped += synthetic_files
             if clean_candidates:
                 selected_articles.append(
                     min(clean_candidates, key=self._article_candidate_sort_key)
                 )
             else:
-                self.synthetic_article_groups_skipped += 1
+                if archived_files:
+                    self.archived_article_groups_skipped += 1
+                if incomplete_files:
+                    self.incomplete_article_groups_skipped += 1
+                if synthetic_files:
+                    self.synthetic_article_groups_skipped += 1
             self.canonical_duplicate_files_skipped += max(0, len(candidates) - 1)
 
         selected_articles.sort(key=lambda item: _stable_text_key(item[0].as_posix()))
         for md_file, content, frontmatter in selected_articles:
             self._parse_article_tags(md_file, content=content, frontmatter=frontmatter)
-            if self.enable_content_mining:
+            if (
+                self.enable_content_mining
+                and str(frontmatter.get("content_mode") or "").casefold()
+                != "source_brief"
+            ):
                 self._mine_article_concepts(
                     md_file,
                     content=content,
@@ -303,13 +338,13 @@ class TagGraphBuilder:
             *_stable_text_key(self._article_key(md_file)),
         )
 
-    def _candidate_is_synthetic(
+    def _candidate_exclusion_reason(
         self,
         candidate: Tuple[Path, str, Dict[str, Any]],
-    ) -> bool:
+    ) -> str | None:
         _, content, frontmatter = candidate
         if frontmatter.get("archived") is True:
-            return True
+            return "archived"
         body = re.sub(
             r"\A(?:\ufeff)?---[ \t]*\r?\n.*?\r?\n---[ \t]*(?:\r?\n|\Z)",
             "",
@@ -317,7 +352,18 @@ class TagGraphBuilder:
             count=1,
             flags=re.DOTALL,
         )
-        return is_synthetic_body(body)
+        if synthetic_body_reasons(body):
+            return "synthetic"
+        if body_completeness_reasons(body) or analyze_post(content).fatal_reasons:
+            return "incomplete"
+        return None
+
+    def _candidate_is_synthetic(
+        self,
+        candidate: Tuple[Path, str, Dict[str, Any]],
+    ) -> bool:
+        """Backward-compatible predicate for callers that only need exclusion."""
+        return self._candidate_exclusion_reason(candidate) is not None
 
     def _parse_article_tags(
         self,
@@ -640,6 +686,10 @@ class TagGraphBuilder:
             "total_concepts": len(self.concepts),
             "total_articles": len(self.article_tags),
             "canonical_duplicate_files_skipped": self.canonical_duplicate_files_skipped,
+            "archived_article_groups_skipped": self.archived_article_groups_skipped,
+            "archived_article_files_skipped": self.archived_article_files_skipped,
+            "incomplete_article_groups_skipped": self.incomplete_article_groups_skipped,
+            "incomplete_article_files_skipped": self.incomplete_article_files_skipped,
             "synthetic_article_groups_skipped": self.synthetic_article_groups_skipped,
             "synthetic_article_files_skipped": self.synthetic_article_files_skipped,
             "total_tag_links": len(self.tag_cooccurrence),
