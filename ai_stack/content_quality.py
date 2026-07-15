@@ -288,10 +288,11 @@ def body_completeness_reasons(body: str) -> tuple[str, ...]:
     return tuple(sorted(reasons))
 
 
-def _has_empty_section(body: str) -> bool:
-    """Detect empty sibling sections without flagging heading containers."""
+def _empty_section_heading_indexes(body: str) -> tuple[int, ...]:
+    """Return empty sibling-heading line indexes, ignoring nested containers."""
 
     lines = _prose_without_code(body).splitlines()
+    indexes: list[int] = []
     for index, line in enumerate(lines):
         heading = _HEADING_LINE_RE.match(line)
         if heading is None:
@@ -300,13 +301,32 @@ def _has_empty_section(body: str) -> bool:
         while following_index < len(lines) and not lines[following_index].strip():
             following_index += 1
         if following_index >= len(lines):
-            return True
+            indexes.append(index)
+            continue
         following_heading = _HEADING_LINE_RE.match(lines[following_index])
         if following_heading is None:
             continue
         if len(following_heading.group("marks")) <= len(heading.group("marks")):
-            return True
-    return False
+            indexes.append(index)
+    return tuple(indexes)
+
+
+def _has_empty_section(body: str) -> bool:
+    """Detect empty sibling sections without flagging heading containers."""
+
+    return bool(_empty_section_heading_indexes(body))
+
+
+def remove_empty_section_headings(body: str) -> tuple[str, int]:
+    """Remove empty shell headings without generating replacement prose."""
+
+    text = str(body or "")
+    indexes = set(_empty_section_heading_indexes(text))
+    if not indexes:
+        return text, 0
+    lines = text.splitlines(keepends=True)
+    cleaned = "".join(line for index, line in enumerate(lines) if index not in indexes)
+    return cleaned, len(indexes)
 
 
 def content_quality_reasons(body: str) -> tuple[str, ...]:

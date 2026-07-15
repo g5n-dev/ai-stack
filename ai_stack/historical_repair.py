@@ -27,7 +27,11 @@ from typing import Any
 import yaml
 
 from ._json import sha256_digest
-from .content_quality import analyze_post, is_source_brief
+from .content_quality import (
+    analyze_post,
+    is_source_brief,
+    remove_empty_section_headings,
+)
 from .identity import canonicalize_url
 from .migrations import (
     MigrationSafetyError,
@@ -382,17 +386,16 @@ def _active_provenance_metadata(
     return result
 
 
-def _normalized_active_singleton_metadata(
+def _normalized_active_singleton(
     document: _Document,
     *,
     canonical_url: str,
-) -> dict[str, Any] | None:
-    """Return a minimal metadata-only rewrite for one active clean article.
+) -> tuple[dict[str, Any], str] | None:
+    """Return a minimal rewrite for one active clean article.
 
-    Singleton normalization deliberately leaves categories, scenarios, routes,
-    and all unrelated frontmatter untouched.  That keeps the all-article tag/URL
-    invariant inside the same compare-and-swap repair/backup mechanism without
-    expanding a taxonomy migration into a broader editorial rewrite.
+    Singleton normalization leaves categories, scenarios, routes, and all
+    unrelated frontmatter untouched. Empty shell headings are removed without
+    inventing prose so structural cleanup shares the same backup mechanism.
     """
     if document.metadata.get("archived") is True:
         return None
@@ -401,9 +404,10 @@ def _normalized_active_singleton_metadata(
     metadata["external_url"] = canonical_url
     metadata["tags"] = normalized_tags
     metadata = _active_provenance_metadata(metadata, document.body)
-    if metadata == document.metadata:
+    body, _ = remove_empty_section_headings(document.body)
+    if metadata == document.metadata and body == document.body:
         return None
-    return metadata
+    return metadata, body
 
 
 def _render_document(metadata: Mapping[str, Any], body: str) -> bytes:
@@ -554,14 +558,14 @@ def build_historical_repair_plan(
         route = min(ordered, key=_date_key)
         is_clean_singleton = len(ordered) == 1 and not route.contamination_reasons
         if is_clean_singleton:
-            metadata = _normalized_active_singleton_metadata(
+            normalized = _normalized_active_singleton(
                 route,
                 canonical_url=canonical_url,
             )
-            if metadata is None:
+            if normalized is None:
                 continue
+            metadata, body = normalized
             winner: _Document | None = route
-            body = route.body
             disposition = "normalize_metadata"
             archive_reason: str | None = None
         else:
@@ -596,7 +600,7 @@ def build_historical_repair_plan(
                     category_whitelist=categories,
                     scenario_whitelist=scenarios,
                 )
-                body = winner.body
+                body, _ = remove_empty_section_headings(winner.body)
                 disposition = "merge"
                 archive_reason = None
         delete_paths = sorted(

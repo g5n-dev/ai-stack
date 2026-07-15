@@ -231,6 +231,29 @@ def test_complete_candidate_beats_a_longer_truncated_duplicate(tmp_path: Path) -
     assert truncated["contamination_reasons"] == ["unclosed_code_fence"]
 
 
+def test_clean_singleton_removes_empty_shell_headings_without_inventing_text(
+    tmp_path: Path,
+) -> None:
+    root = tmp_path / "content/posts"
+    route = _write_post(
+        root,
+        "20260101-empty-shell.md",
+        external_url="https://example.com/empty-shell",
+        body=(
+            "## 常见问题\n\n### 如何部署\n\n这里有完整答案。\n\n"
+            "## 最佳实践\n\n## 最佳实践指南\n\n这里也有完整内容。"
+        ),
+        date="2026-01-01T00:00:00+08:00",
+    )
+
+    rendered = _write_by_path(_build(root), route.name)
+
+    assert "## 常见问题" in rendered
+    assert "## 最佳实践\n" not in rendered
+    assert "## 最佳实践指南" in rendered
+    assert "这里也有完整内容。" in rendered
+
+
 def test_active_historical_winner_is_labeled_as_unverified_legacy_analysis(
     tmp_path: Path,
 ) -> None:

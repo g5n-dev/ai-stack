@@ -9,6 +9,7 @@ from ai_stack.content_quality import (
     build_content_quality_manifest,
     content_quality_reasons,
     markdown_body,
+    remove_empty_section_headings,
     write_content_quality_manifest,
 )
 
@@ -256,6 +257,22 @@ def test_empty_section_warning_distinguishes_container_from_empty_sibling() -> N
 
     assert "empty_section" not in analyze_post(container).warning_reasons
     assert "empty_section" in analyze_post(empty_sibling).warning_reasons
+
+
+def test_empty_section_cleanup_removes_only_empty_sibling_headings() -> None:
+    body = (
+        "## 常见问题\n\n### 如何部署\n\n这里有完整答案。\n\n"
+        "## 最佳实践\n\n## 最佳实践指南\n\n这里也有完整内容。\n\n"
+        "```markdown\n## 代码块标题\n\n## 代码块中的相邻标题\n```\n"
+    )
+
+    cleaned, removed = remove_empty_section_headings(body)
+
+    assert removed == 1
+    assert "## 常见问题" in cleaned
+    assert "## 最佳实践\n" not in cleaned
+    assert "## 最佳实践指南" in cleaned
+    assert "## 代码块标题" in cleaned
 
 
 def test_legacy_hn_gate_detects_unterminated_prose_without_flagging_other_sources() -> None:
