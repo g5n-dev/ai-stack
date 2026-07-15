@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:Flux",
-  "generated_at": "2026-07-15T12:45:47Z",
+  "generated_at": "2026-07-15T15:05:07Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -25,6 +25,14 @@
       "source": "tag:Stable Diffusion",
       "strength": 1,
       "target": "tag:图像生成",
+      "type": "cooccurrence",
+      "weight": 4
+    },
+    {
+      "id": "edge:cooccurrence:tag:arxiv->tag:cs.CV",
+      "source": "tag:arxiv",
+      "strength": 1,
+      "target": "tag:cs.CV",
       "type": "cooccurrence",
       "weight": 4
     },
@@ -251,14 +259,6 @@
       "target": "tag:控制论",
       "type": "cooccurrence",
       "weight": 1
-    },
-    {
-      "id": "edge:cooccurrence:tag:Stable Diffusion->tag:交互指南",
-      "source": "tag:Stable Diffusion",
-      "strength": 0.5,
-      "target": "tag:交互指南",
-      "type": "cooccurrence",
-      "weight": 1
     }
   ],
   "nodes": [
@@ -268,14 +268,14 @@
       "color": "#f59e0b",
       "community_id": "community:tag:Flux",
       "degree": 230,
-      "description": "扩散模型是一类通过逆转噪声过程来生成高质量数据的深度生成模型，广泛应用于图像、视频及3D内容合成，并正拓展至科学计算与机器人控制等领域。",
+      "description": "文章标签: 扩散模型",
       "id": "tag:扩散模型",
       "layer": "tag",
       "layer_name": "标签层",
       "legacy_id": "扩散模型",
       "level": 6,
       "name": "扩散模型",
-      "rank": 29,
+      "rank": 30,
       "related_count": 229,
       "weighted_degree": 308.6
     },
@@ -285,7 +285,7 @@
       "color": "#f59e0b",
       "community_id": "community:tag:Flux",
       "degree": 148,
-      "description": "图像图像生成是指利用人工智能算法自动创建视觉内容的技术，通常与多模态模型和生成式对抗网络相关，在学术插图和基准评测等领域有广泛应用。",
+      "description": "文章标签: 图像生成",
       "id": "tag:图像生成",
       "layer": "tag",
       "layer_name": "标签层",
@@ -302,7 +302,7 @@
       "color": "#f59e0b",
       "community_id": "community:tag:Flux",
       "degree": 59,
-      "description": "cs.CV 指计算机视觉领域，主要研究图像和视频的理解、生成与分析。它与多模态学习、基准测试及评估方法密切相关，涵盖图文生成与统一模型等方向。",
+      "description": "文章标签: cs.CV",
       "id": "tag:cs.CV",
       "layer": "tag",
       "layer_name": "标签层",
@@ -319,7 +319,7 @@
       "color": "#f59e0b",
       "community_id": "community:tag:Flux",
       "degree": 51,
-      "description": "Stable Diffusion是一种基于潜在扩散模型的文本生成图像技术，与多模态AI、WebUI部署及LLM生态紧密相关，常用于图像生成与AI应用开发。",
+      "description": "文章标签: Stable Diffusion",
       "id": "tag:Stable Diffusion",
       "layer": "tag",
       "layer_name": "标签层",
@@ -336,7 +336,7 @@
       "color": "#f59e0b",
       "community_id": "community:tag:Flux",
       "degree": 22,
-      "description": "去噪通常指从数据中移除无关信息或干扰以恢复真实信号的过程，常与特征提取、无监督学习及流模型等技术相关，旨在提升数据质量与表示的纯净度。",
+      "description": "文章标签: 去噪",
       "id": "tag:去噪",
       "layer": "tag",
       "layer_name": "标签层",
@@ -346,6 +346,23 @@
       "rank": 561,
       "related_count": 22,
       "weighted_degree": 28
+    },
+    {
+      "article_count": 14,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Flux",
+      "degree": 5,
+      "description": "文章标签: arxiv",
+      "id": "tag:arxiv",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "arxiv",
+      "level": 6,
+      "name": "arxiv",
+      "rank": 915,
+      "related_count": 5,
+      "weighted_degree": 14
     },
     {
       "article_count": 1,
@@ -360,7 +377,7 @@
       "legacy_id": "Diffusion",
       "level": 6,
       "name": "Diffusion",
-      "rank": 1837,
+      "rank": 1838,
       "related_count": 7,
       "weighted_degree": 7.6
     },
@@ -377,7 +394,7 @@
       "legacy_id": "CFG",
       "level": 6,
       "name": "CFG",
-      "rank": 2094,
+      "rank": 2098,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -394,7 +411,7 @@
       "legacy_id": "Flux",
       "level": 6,
       "name": "Flux",
-      "rank": 2326,
+      "rank": 2330,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -411,7 +428,7 @@
       "legacy_id": "SMC-CFG",
       "level": 6,
       "name": "SMC-CFG",
-      "rank": 3025,
+      "rank": 3029,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -428,7 +445,7 @@
       "legacy_id": "交互指南",
       "level": 6,
       "name": "交互指南",
-      "rank": 3412,
+      "rank": 3417,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -445,7 +462,7 @@
       "legacy_id": "图像保护",
       "level": 6,
       "name": "图像保护",
-      "rank": 4077,
+      "rank": 4082,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -462,14 +479,31 @@
       "legacy_id": "控制论",
       "level": 6,
       "name": "控制论",
-      "rank": 4801,
+      "rank": 4806,
       "related_count": 7,
       "weighted_degree": 7
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Flux",
+      "degree": 1,
+      "description": "文章标签: cs.SE",
+      "id": "tag:cs.SE",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "cs.SE",
+      "level": 6,
+      "name": "cs.SE",
+      "rank": 6813,
+      "related_count": 1,
+      "weighted_degree": 1
     }
   ],
   "stats": {
     "total_links": 32,
-    "total_nodes": 12
+    "total_nodes": 14
   },
   "version": 2
 }

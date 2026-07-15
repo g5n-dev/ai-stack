@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:Autotab",
-  "generated_at": "2026-07-15T12:45:47Z",
+  "generated_at": "2026-07-15T15:05:07Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -268,7 +268,7 @@
       "color": "#f59e0b",
       "community_id": "community:tag:Autotab",
       "degree": 70,
-      "description": "Cursor 是一款集成了大语言模型的 AI 原生代码编辑器，通过自然语言交互辅助编程。它重塑了软件工程工作流，引发了关于 Vibe coding、开发者生态演变及开源未来的广泛讨论。",
+      "description": "文章标签: Cursor",
       "id": "tag:Cursor",
       "layer": "tag",
       "layer_name": "标签层",
@@ -285,7 +285,7 @@
       "color": "#f59e0b",
       "community_id": "community:tag:Autotab",
       "degree": 62,
-      "description": "IDE 是集成开发环境，为开发者提供编写、调试和运行代码的一体化工作台。随着 AI 编程工具如 Claude Code 和 Copilot 的深度集成，现代 IDE 正演变为智能协作平台，显著优化开发工作流。",
+      "description": "文章标签: IDE",
       "id": "tag:IDE",
       "layer": "tag",
       "layer_name": "标签层",
@@ -302,7 +302,7 @@
       "color": "#f59e0b",
       "community_id": "community:tag:Autotab",
       "degree": 63,
-      "description": "软件开发涵盖从系统设计到编码实现的全过程，当前正因AI Agent、代码生成及Rust等技术革新，向人机协作与低代码等新范式加速演进。",
+      "description": "文章标签: 软件开发",
       "id": "tag:软件开发",
       "layer": "tag",
       "layer_name": "标签层",
@@ -319,7 +319,7 @@
       "color": "#f59e0b",
       "community_id": "community:tag:Autotab",
       "degree": 26,
-      "description": "收购通常指一家企业通过购买股权或资产来获得另一家公司的控制权，常用于企业扩张、技术获取或市场整合。",
+      "description": "文章标签: 收购",
       "id": "tag:收购",
       "layer": "tag",
       "layer_name": "标签层",
@@ -343,7 +343,7 @@
       "legacy_id": "Agent Lab",
       "level": 6,
       "name": "Agent Lab",
-      "rank": 1605,
+      "rank": 1606,
       "related_count": 7,
       "weighted_degree": 7.6
     },
@@ -360,7 +360,7 @@
       "legacy_id": "Cloud Agents",
       "level": 6,
       "name": "Cloud Agents",
-      "rank": 1831,
+      "rank": 1832,
       "related_count": 7,
       "weighted_degree": 7.6
     },
@@ -377,7 +377,7 @@
       "legacy_id": "Astral",
       "level": 6,
       "name": "Astral",
-      "rank": 2011,
+      "rank": 2016,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -394,7 +394,7 @@
       "legacy_id": "Autotab",
       "level": 6,
       "name": "Autotab",
-      "rank": 2026,
+      "rank": 2031,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -404,14 +404,14 @@
       "color": "#f59e0b",
       "community_id": "community:tag:Autotab",
       "degree": 7,
-      "description": "GPT-3是OpenAI开发的大规模语言模型，具备强大的自然语言理解和生成能力，广泛应用于代码生成、自动化工具及生产力提升场景。",
+      "description": "文章标签: GPT-3",
       "id": "tag:GPT-3",
       "layer": "tag",
       "layer_name": "标签层",
       "legacy_id": "GPT-3",
       "level": 6,
       "name": "GPT-3",
-      "rank": 2390,
+      "rank": 2394,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -428,7 +428,7 @@
       "legacy_id": "Graphite",
       "level": 6,
       "name": "Graphite",
-      "rank": 2410,
+      "rank": 2414,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -445,7 +445,7 @@
       "legacy_id": "商业动态",
       "level": 6,
       "name": "商业动态",
-      "rank": 4050,
+      "rank": 4055,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -462,7 +462,7 @@
       "legacy_id": "规划与执行",
       "level": 6,
       "name": "规划与执行",
-      "rank": 6133,
+      "rank": 6138,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -479,7 +479,7 @@
       "legacy_id": "远程控制",
       "level": 6,
       "name": "远程控制",
-      "rank": 6439,
+      "rank": 6444,
       "related_count": 7,
       "weighted_degree": 7
     }

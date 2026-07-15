@@ -1,29 +1,34 @@
 ---
-title: Amazon Nova Act实现大规模UX用户流程自动化测试
-date: 2026-07-15 16:55:26+08:00
+title: "Scaling UX testing with Amazon Nova Act: A new approach"
+date: 2026-07-15T23:05:07+08:00
 draft: false
-entry_kind: auto
-tags: []
+entry_kind: "auto"
+tags: ["Advanced (300)", "Amazon Bedrock", "Amazon DynamoDB", "Amazon Nova", "Amazon Quick Sight", "Amazon Simple Storage Service (S3)", "AWS Lambda", "Technical How-to"]
 categories: []
-source: blogs_podcasts
-description: 历史条目已归档：现有正文未通过内容质量门，请查阅原始来源。
+source: "blogs_podcasts"
+content_mode: "source_brief"
+publication_tier: "C"
+source_capture_mode: "excerpt"
+source_snapshot_sha256: "sha256:d238e19244d1b8d36ded48dbd0a2ec40dff5aefc48d27236aeff56bedb07cf1e"
+extractor_version: "source-contract-v1"
+discovery_method: "rss_excerpt"
+source_is_truncated: false
+source_support: 1.0
+description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://aws.amazon.com/blogs/machine-learning/scaling-ux-testing-with-amazon-nova-act-a-new-approach-to-user-flow-analysis
-scenarios: []
-aliases: []
-content_mode: archived
-publication_tier: ARCHIVED
-source_provenance: legacy_no_snapshot
-source_support: 0.0
-archived: true
-archive_reason: historical_content_quality_gate
-build:
-  list: never
-  render: always
 ---
 
-## 历史条目归档说明
+## 基本信息
 
-该条目的历史正文未通过内容质量门，可能包含基于标题推测的内容。为避免继续传播不可核验文本，本站仅保留透明归档记录。
+- **来源**: blogs_podcasts
+- **原始来源**: [https://aws.amazon.com/blogs/machine-learning/scaling-ux-testing-with-amazon-nova-act-a-new-approach-to-user-flow-analysis](https://aws.amazon.com/blogs/machine-learning/scaling-ux-testing-with-amazon-nova-act-a-new-approach-to-user-flow-analysis)
 
-- 历史内容质量门未通过
-- 原始来源：<https://aws.amazon.com/blogs/machine-learning/scaling-ux-testing-with-amazon-nova-act-a-new-approach-to-user-flow-analysis>
+## 来源摘要/节选
+
+> Using generative AI enables parallel execution of comprehensive user flow testing at scale. This solution demonstrates how to build a cloud-deployed UX testing platform that automatically generates test scenarios from documentation, executes user flows at scale using the intelligent navigation capabilities of Nova Act, and provides actionable insights through automated analysis.
+
+## 来源说明
+
+当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。
+
+> 本页只呈现已保存的来源证据，不包含基于缺失正文的扩展推断。

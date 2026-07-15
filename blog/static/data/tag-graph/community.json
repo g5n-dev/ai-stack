@@ -4,7 +4,7 @@
     {
       "article_count": 797,
       "hotspot_count": 21,
-      "hotspot_file": "community-hotspots/01-010a35f6c43d.json",
+      "hotspot_file": "community-hotspots/01-543ddbf48550.json",
       "id": "community:tag:面试考点",
       "leader_id": "tag:LLM",
       "name": "LLM",
@@ -16,7 +16,7 @@
     {
       "article_count": 65,
       "hotspot_count": 17,
-      "hotspot_file": "community-hotspots/02-694128e260d3.json",
+      "hotspot_file": "community-hotspots/02-2b7c042b81ca.json",
       "id": "community:tag:SpeechAnalyzer",
       "leader_id": "tag:开源模型",
       "name": "开源模型",
@@ -28,7 +28,7 @@
     {
       "article_count": 77,
       "hotspot_count": 15,
-      "hotspot_file": "community-hotspots/03-54ebfa101042.json",
+      "hotspot_file": "community-hotspots/03-e957a07e7e96.json",
       "id": "community:tag:P-EAGLE",
       "leader_id": "tag:性能优化",
       "name": "性能优化",
@@ -38,57 +38,57 @@
       "weighted_degree": 785.8
     },
     {
+      "article_count": 86,
+      "hotspot_count": 14,
+      "hotspot_file": "community-hotspots/04-9071e8bbad61.json",
+      "id": "community:tag:Flux",
+      "leader_id": "tag:扩散模型",
+      "name": "扩散模型",
+      "node_count": 14,
+      "rank": 4,
+      "tag_occurrences": 120,
+      "weighted_degree": 727.8
+    },
+    {
       "article_count": 7,
       "hotspot_count": 14,
-      "hotspot_file": "community-hotspots/04-ec5ebb4b5b8a.json",
+      "hotspot_file": "community-hotspots/05-94164db985a0.json",
       "id": "community:tag:移动开发",
       "leader_id": "tag:Android",
       "name": "Android",
       "node_count": 14,
-      "rank": 4,
+      "rank": 5,
       "tag_occurrences": 23,
       "weighted_degree": 161
     },
     {
       "article_count": 107,
       "hotspot_count": 13,
-      "hotspot_file": "community-hotspots/05-e62df24ae779.json",
+      "hotspot_file": "community-hotspots/06-6f80b371778f.json",
       "id": "community:tag:行业格局",
       "leader_id": "tag:OpenAI",
       "name": "OpenAI",
       "node_count": 13,
-      "rank": 5,
+      "rank": 6,
       "tag_occurrences": 134,
       "weighted_degree": 937.6
     },
     {
       "article_count": 34,
       "hotspot_count": 13,
-      "hotspot_file": "community-hotspots/06-e9d7895381f2.json",
+      "hotspot_file": "community-hotspots/07-c18dd54284d5.json",
       "id": "community:tag:Autotab",
       "leader_id": "tag:Cursor",
       "name": "Cursor",
       "node_count": 13,
-      "rank": 6,
+      "rank": 7,
       "tag_occurrences": 48,
       "weighted_degree": 337.2
     },
     {
-      "article_count": 76,
-      "hotspot_count": 12,
-      "hotspot_file": "community-hotspots/07-c9b18da8f39c.json",
-      "id": "community:tag:Flux",
-      "leader_id": "tag:扩散模型",
-      "name": "扩散模型",
-      "node_count": 12,
-      "rank": 7,
-      "tag_occurrences": 105,
-      "weighted_degree": 712.8
-    },
-    {
       "article_count": 67,
       "hotspot_count": 12,
-      "hotspot_file": "community-hotspots/08-025c8f689121.json",
+      "hotspot_file": "community-hotspots/08-3385e1b1c16f.json",
       "id": "community:tag:Gemini 3",
       "leader_id": "tag:模型发布",
       "name": "模型发布",
@@ -100,7 +100,7 @@
     {
       "article_count": 59,
       "hotspot_count": 12,
-      "hotspot_file": "community-hotspots/09-ef98b9167cd7.json",
+      "hotspot_file": "community-hotspots/09-5748c60e8d63.json",
       "id": "community:tag:Folo",
       "leader_id": "tag:开源项目",
       "name": "开源项目",
@@ -112,7 +112,7 @@
     {
       "article_count": 53,
       "hotspot_count": 12,
-      "hotspot_file": "community-hotspots/10-c814cce87788.json",
+      "hotspot_file": "community-hotspots/10-d7c3fc56ed49.json",
       "id": "community:tag:Clippy",
       "leader_id": "tag:AI 助手",
       "name": "AI 助手",
@@ -124,7 +124,7 @@
     {
       "article_count": 47,
       "hotspot_count": 12,
-      "hotspot_file": "community-hotspots/11-e5d857b17fbd.json",
+      "hotspot_file": "community-hotspots/11-a860f99f36fc.json",
       "id": "community:tag:SF6",
       "leader_id": "tag:计算机视觉",
       "name": "计算机视觉",
@@ -134,18 +134,18 @@
       "weighted_degree": 449.2
     },
     {
-      "article_count": 1909,
+      "article_count": 1907,
       "hotspot_count": 0,
       "id": "community:other",
       "leader_id": null,
       "name": "其他",
-      "node_count": 6606,
+      "node_count": 6610,
       "rank": 12,
-      "tag_occurrences": 13140,
-      "weighted_degree": 91945.4
+      "tag_occurrences": 13138,
+      "weighted_degree": 91994.4
     }
   ],
-  "generated_at": "2026-07-15T12:45:47Z",
+  "generated_at": "2026-07-15T15:05:07Z",
   "iterations": 6,
   "limit": 11,
   "links": [
@@ -171,7 +171,7 @@
       "strength": 1,
       "target": "community:tag:Flux",
       "type": "community",
-      "weight": 516
+      "weight": 521
     },
     {
       "id": "edge:community:community:other->community:tag:Folo",
@@ -519,7 +519,7 @@
     }
   ],
   "stats": {
-    "assigned_nodes": 6759,
+    "assigned_nodes": 6765,
     "detected_communities": 1417,
     "emitted_communities": 12,
     "total_communities": 12,
