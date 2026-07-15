@@ -16,9 +16,8 @@ categories:
 - 大模型
 - 论文
 source: arxiv
-description: 以下是该内容的中文总结： **Aletheia 自主挑战 FirstProof 成果报告** 我们报告了数学研究智能体 **Aletheia**（由
-  Gemini 3 Deep Think 驱动）在首届 **FirstProof 挑战赛**中的表现。 **主要成果：** 在挑战赛规定的时间期限内，Aletheia
-  实现
+description: 本文报告了数学研究智能体 Aletheia 在首届 FirstProof 挑战赛中的表现，展示了其基于大语言模型进行自主定理证明的可行性。在规定时间内，该系统全自主完成了
+  10 道题目中的 6 道，体现了自动化推理在处理复杂数学问题上的潜力。鉴于摘要未提供具体技术架构细节，其核心算法的创新性与泛化能力尚无法从摘要确认。这一成果为未来人机协作的数学研究范式提供了新的实证参考。
 external_url: http://arxiv.org/abs/2602.21201v1
 scenarios:
 - AI/ML项目

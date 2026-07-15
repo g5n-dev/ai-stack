@@ -158,7 +158,7 @@ class BfTreeRangeQuery:
         """返回[start_key, end_key]范围内的所有键值对"""
         results = []
         node = self._find_leaf_node(start_key)
-        
+
         while node and node.keys and node.keys[0] <= end_key:
             with node.lock:  # 细粒度锁
                 for i in range(len(node.keys)):
@@ -189,11 +189,11 @@ class BfTreeMemoryManager:
     def insert_with_eviction(self, node, key, value):
         """插入时自动处理内存溢出"""
         size = sys.getsizeof(key) + sys.getsizeof(value)
-        
+
         if self.current_memory + size > self.max_memory:
             # 触发淘汰策略（LRU等）
             self._evict_lru_node()
-        
+
         node.insert(key, value)
         self.current_memory += size
 
@@ -212,8 +212,6 @@ class BfTreeMemoryManager:
 
 ### 1：某大型金融科技公司风控系统
 
- 1：某大型金融科技公司风控系统
-
 **背景**:
 该公司运营着一个高并发的实时反欺诈与信用评估系统。为了精准判断交易风险，系统需要将每一笔新发生的交易流数据，与过去长达数年的历史交易记录（冷数据）进行实时关联分析。
 
@@ -229,8 +227,6 @@ class BfTreeMemoryManager:
 ---
 
 ### 2：某云服务商 Serverless 数据分析平台
-
- 2：某云服务商 Serverless 数据分析平台
 
 **背景**:
 该平台提供 Serverless 数据仓库服务，允许用户直接查询存储在对象存储（如 S3）上的海量日志和 CSV 文件。用户查询模式多样且不可预测，经常涉及大范围的时间序列扫描。
@@ -337,8 +333,6 @@ Bf-Tree 设计为现代存储介质（尤其是 NVMe SSD）优化。它通常采
 
 ### 1: Bf-Tree 主要解决什么技术问题，它与传统的 B-Tree 或 B+-Tree 有何本质区别？
 
-1: Bf-Tree 主要解决什么技术问题，它与传统的 B-Tree 或 B+-Tree 有何本质区别？
-
 **A**: Bf-Tree 旨在解决传统数据库索引（如 B+-Tree）在现代硬件环境下遇到的并发瓶颈和内存扩展性问题。
 
 1.  **读写并发优化**：传统的 B+-Tree 使用粗粒度锁或 latch（如 latch-coupling），在高并发写入时容易产生线程争用。Bf-Tree 采用了一种乐观的并发控制（OCC）方法结合无锁或细粒度锁技术，允许读操作与写操作更高效地并行执行，减少了阻塞。
@@ -347,8 +341,6 @@ Bf-Tree 设计为现代存储介质（尤其是 NVMe SSD）优化。它通常采
 ---
 
 ### 2: Bf-Tree 是如何实现 "Modern Read-Write-Optimized"（现代读写优化）的？
-
-2: Bf-Tree 是如何实现 "Modern Read-Write-Optimized"（现代读写优化）的？
 
 **A**: Bf-Tree 的优化主要基于现代硬件的特性（如多核 CPU 和大容量内存）以及新的算法设计：
 
@@ -360,8 +352,6 @@ Bf-Tree 设计为现代存储介质（尤其是 NVMe SSD）优化。它通常采
 
 ### 3: "Larger-than-Memory"（大于内存）具体意味着什么？Bf-Tree 如何处理无法装入内存的数据？
 
-3: "Larger-than-Memory"（大于内存）具体意味着什么？Bf-Tree 如何处理无法装入内存的数据？
-
 **A**: 这意味着索引所管理的数据量超过了系统分配给该索引的可用 RAM 大小。
 
 1.  **分层存储管理**：Bf-Tree 不仅仅是一个内存数据结构，它明确集成了磁盘存储层。它维护了一颗常驻内存的“缓冲树”结构。
@@ -371,8 +361,6 @@ Bf-Tree 设计为现代存储介质（尤其是 NVMe SSD）优化。它通常采
 ---
 
 ### 4: Bf-Tree 适用于哪些具体的应用场景？
-
-4: Bf-Tree 适用于哪些具体的应用场景？
 
 **A**: Bf-Tree 特别适合以下几类场景：
 
@@ -385,8 +373,6 @@ Bf-Tree 设计为现代存储介质（尤其是 NVMe SSD）优化。它通常采
 
 ### 5: Bf-Tree 与 LSM-Tree（Log-Structured Merge-Tree）相比有什么优缺点？
 
-5: Bf-Tree 与 LSM-Tree（Log-Structured Merge-Tree）相比有什么优缺点？
-
 **A**: 两者都是为了优化写入性能，但机制不同：
 
 *   **LSM-Tree**：将数据分层，写入先进入内存表，然后合并到磁盘的 SSTable 中。
@@ -398,8 +384,6 @@ Bf-Tree 设计为现代存储介质（尤其是 NVMe SSD）优化。它通常采
 ---
 
 ### 6: 使用 Bf-Tree 会面临哪些挑战或缺点？
-
-6: 使用 Bf-Tree 会面临哪些挑战或缺点？
 
 **A**: 尽管性能强大，Bf-Tree 并不是万能药，存在以下挑战：
 

@@ -16,9 +16,8 @@ categories:
 - AI 工程
 - 大模型
 source: blogs_podcasts
-description: 背景与目标 航空航天的制造文档兼具文字、图像、表格等多模态信息，传统的全文检索难以充分利用这些内容。本文旨在利用 Amazon Nova
-  Multimodal Embeddings，在 Amazon Bedrock 上构建多模态检索系统，并在 26 条实际制造查询上比较仅文本管道与多模态管道的生成质量。
-  系统架构 1.
+description: 在这篇文章中，我们使用 Amazon Nova 多模态嵌入模型、Amazon Bedrock 和 Amazon S3 向量存储构建了一个面向航天制造文档的多模态检索系统。我们使用
+  26 个制造查询对该系统进行了评估，并比较了纯文本管道与多模态管道之间的生成质量。 在航天制造领域，文档往往包含文字、图表和工程图纸等多模态信息，传统的纯文本检索难以完整捕捉其语义。
 external_url: https://aws.amazon.com/blogs/machine-learning/manufacturing-intelligence-with-amazon-nova-multimodal-embeddings
 scenarios:
 - RAG应用

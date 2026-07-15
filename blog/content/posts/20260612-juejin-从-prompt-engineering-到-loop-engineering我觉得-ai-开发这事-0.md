@@ -16,8 +16,9 @@ categories:
 - AI 工程
 - 效率与方法论
 source: juejin
-description: 从 Prompt Engineering 到 Loop Engineering，AI 开发的核心正在从“会提问”转向“会运转”。过去大家关注如何写好提示词，以一次性的交互完成任务；如今强调构建持续反馈、自动优化的闭环系统，即
-  Loop Engineering。该闭环包括推理、评估、反馈、修正四个环节：通过模型输出结果，
+description: 在 AI 开发领域，Prompt Engineering 已成为基本功，而 Loop Engineering 正悄然崛起，成为系统化构建
+  AI 工作流的新思路。本文将解析 Loop Engineering 的核心概念、实际应用场景以及与传统提示工程的区别，帮助开发者在实际项目中更好地设计、评估和迭代
+  AI 循环。
 external_url: https://juejin.cn/post/7650133122810003465
 scenarios:
 - AI/ML项目

@@ -17,7 +17,7 @@ categories:
 - 安全
 source: blogs_podcasts
 description: 随着大模型从单一问答向复杂推理演进，OpenAI 发布的 GPT-5.4 Thinking System Card 详细阐述了其思维链机制的实现路径与安全边界。这份技术文档不仅揭示了模型在处理高难度逻辑问题时的内部决策过程，更重点讨论了在透明度与可控性之间所做的权衡。对于关注
-  AI 安全与模型架构的开发者而言，本文提供
+  AI 安全与模型架构的开发者而言，本文提供了关于下一代推理模型设计理念与潜在风险的一手参考。
 external_url: https://openai.com/index/gpt-5-4-thinking-system-card
 scenarios:
 - AI/ML项目

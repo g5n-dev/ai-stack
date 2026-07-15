@@ -16,8 +16,9 @@ categories:
 - 大模型
 - 开源生态
 source: blogs_podcasts
-description: 以下是关于 Moonshot Kimi k2.5 的总结： **核心概况** 中国 AI 模型再获重大突破，Moonshot AI（月之暗面）发布了全新一代开源模型
-  **Kimi k2.5**。该模型不仅确立了开源领域的最新技术标杆（SOTA），还以极具竞争力的成本和独特的原生多模态能力，在性能上超越了强劲对手 Cla
+description: 中国在开源模型领域又实现了一次巨大跨越 Moonshot AI 发布的 Kimi k2.5 标志着开源大模型在推理能力与多模态交互上的新突破。其以更具竞争力的成本实现了对
+  Claude Sonnet 4.5 的性能超越，并原生支持图像与视频处理。本文将详细解析该模型的技术架构与 Agent 群控功能，帮助开发者深入理解这一 SOTA
+  级成果及其对行业格局的影响。
 external_url: https://www.latent.space/p/ainews-moonshot-kimi-k25-beats-sonnet
 scenarios:
 - AI/ML项目

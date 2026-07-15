@@ -127,19 +127,19 @@ def play_peon_voice(notification_type):
     """
     # 初始化pygame音频模块
     pygame.mixer.init()
-    
+
     # 定义语音文件路径（需准备对应的.wav文件）
     voice_files = {
         'ready': 'sounds/peon_ready.wav',    # "Ready to work!"
         'work': 'sounds/peon_work.wav',      # "Work work!"
         'complete': 'sounds/peon_complete.wav'  # "Job done!"
     }
-    
+
     # 播放对应语音
     if notification_type in voice_files:
         pygame.mixer.music.load(voice_files[notification_type])
         pygame.mixer.music.play()
-        
+
         # 等待音频播放完成
         while pygame.mixer.music.get_busy():
             time.sleep(0.1)
@@ -161,10 +161,10 @@ import platform
 
 class PeonNotifier:
     """苦工语音通知系统"""
-    
+
     def __init__(self):
         self.os_type = platform.system()
-    
+
     def notify(self, message, sound_type='complete'):
         """
         发送系统通知并播放语音
@@ -173,7 +173,7 @@ class PeonNotifier:
         """
         # 播放语音
         self._play_sound(sound_type)
-        
+
         # 发送系统通知
         if self.os_type == 'Darwin':  # macOS
             subprocess.run(['osascript', '-e', f'display notification "{message}" with title "任务完成"'])
@@ -181,7 +181,7 @@ class PeonNotifier:
             subprocess.run(['notify-send', '任务完成', message])
         elif self.os_type == 'Windows':
             subprocess.run(['powershell', '-Command', f'Add-Type -AssemblyName System.Windows.Forms; [System.Windows.Forms.MessageBox]::Show("{message}", "任务完成")'])
-    
+
     def _play_sound(self, sound_type):
         """播放语音文件"""
         # 这里可以集成示例1的语音播放逻辑
@@ -208,11 +208,11 @@ def peon_notify(sound_type='complete'):
         def wrapper(*args, **kwargs):
             # 执行原函数
             result = func(*args, **kwargs)
-            
+
             # 播放语音通知
             print(f"任务完成，播放语音: {sound_type}")
             # 这里可以集成实际的语音播放逻辑
-            
+
             return result
         return wrapper
     return decorator
@@ -236,21 +236,19 @@ if __name__ == "__main__":
 
 ### 1：独立游戏开发工作室 "PixelForge" 的代码审查流程优化
 
- 1：独立游戏开发工作室 "PixelForge" 的代码审查流程优化
-
-**背景**:  
+**背景**:
 PixelForge 是一家专注于怀旧风格游戏的独立工作室，团队由资深《魔兽争霸III》玩家组成。他们在开发一款类RPG游戏时，使用 Claude Code 作为 AI 编程助手进行代码生成和优化。
 
-**问题**:  
+**问题**:
 开发团队反映，在长时间编码过程中，AI 的代码建议和错误提示往往被忽略，因为视觉反馈容易被疲劳的开发者错过。特别是在紧张的冲刺开发阶段，开发者经常错过重要的代码警告或编译错误，导致后期返工。
 
-**解决方案**:  
+**解决方案**:
 团队开发了 "Warcraft III Peon Voice Notifications for Claude Code" 插件，将 Claude Code 的所有通知（如代码建议、错误警告、任务完成等）替换为《魔兽争霸III》中经典的角色语音。例如：
 - 代码错误触发兽人苦工的 "Job done!"（嘲讽式提醒）
 - 代码建议触发 "Work work!"（鼓励接受建议）
 - 编译成功触发 "Ready to work!"
 
-**效果**:  
+**效果**:
 - 开发者对代码通知的响应速度提升 40%，因为语音反馈比视觉提示更能引起注意
 - 团队士气显著提高，怀旧语音让枯燥的调试过程更有趣
 - 代码错误遗漏率降低 25%，减少了后期返工时间
@@ -259,21 +257,19 @@ PixelForge 是一家专注于怀旧风格游戏的独立工作室，团队由资
 
 ### 2：开源项目 "OpenLegacy" 的社区参与度提升
 
- 2：开源项目 "OpenLegacy" 的社区参与度提升
-
-**背景**:  
+**背景**:
 OpenLegacy 是一个致力于保存和复刻经典游戏引擎的开源项目，核心维护者团队分散在全球各地。项目使用 Claude Code 辅助文档生成和代码重构。
 
-**问题**:  
+**问题**:
 项目面临贡献者流失问题，许多新加入的开发者反馈项目氛围过于严肃，缺乏互动乐趣。同时，项目维护者发现传统的 GitHub 通知经常被淹没在信息流中。
 
-**解决方案**:  
+**解决方案**:
 项目集成 Peon Voice Notifications 系统，为以下场景添加语音反馈：
 - Pull Request 合并时播放 "More work?"（鼓励继续贡献）
 - Issue 被标记时播放 "Swamp full!"（幽默提醒任务堆积）
 - 新贡献者首次提交代码时播放 "You left me alone!"（欢迎语）
 
-**效果**:  
+**效果**:
 - 三个月内新贡献者留存率提高 35%
 - 项目在 Reddit 和 HN 上获得自发传播，Star 数增长 2000+
 - 社区互动量提升 50%，许多开发者专门提交代码只为触发所有语音彩蛋
@@ -282,21 +278,19 @@ OpenLegacy 是一个致力于保存和复刻经典游戏引擎的开源项目，
 
 ### 3：企业级 DevOps 团队 "TechFlow" 的监控告警系统
 
- 3：企业级 DevOps 团队 "TechFlow" 的监控告警系统
-
-**背景**:  
+**背景**:
 TechFlow 为金融客户提供高频交易系统，其 DevOps 团队需要 24/7 监控数百个服务的部署状态。团队使用 Claude Code 进行自动化部署脚本生成。
 
-**问题**:  
+**问题**:
 传统监控系统的声音告警（如蜂鸣声）导致员工听觉疲劳，且无法区分告警级别。夜班工程师经常因漏报关键告警而受到客户投诉。
 
-**解决方案**:  
+**解决方案**:
 团队定制了分级语音告警系统：
 - 关键错误（如交易中断）使用死亡骑士的 "My life for Ner'zhul!"（立即唤醒）
 - 警告级别使用农民的 "Shovel ready!"（温和提醒）
 - 部署成功使用 "New orders, commander?"（确认完成）
 
-**效果**:  
+**效果**:
 - 关键告警响应时间从平均 8 分钟缩短至 90 秒
 - 员工满意度调查显示 92% 的工程师认为语音系统比传统蜂鸣更易接受
 - 客户投诉率下降 60%，SLA 达标率提升至 99.95%
@@ -424,15 +418,11 @@ TechFlow 为金融客户提供高频交易系统，其 DevOps 团队需要 24/7 
 
 ### 1: 这个项目的主要功能是什么？
 
-1: 这个项目的主要功能是什么？
-
 **A**: 这是一个针对 Claude Code（Anthropic 的 AI 编程助手）的语音通知插件。它的主要功能是将《魔兽争霸 III》（Warcraft III）中“苦工”的经典语音台词集成到开发环境中。当 Claude Code 完成任务、遇到错误或需要用户输入时，系统会播放相应的游戏音效（如“工作完成”或“等待命令”），为枯燥的编程过程增加趣味性和游戏化的反馈体验。
 
 ---
 
 ### 2: 如何安装和配置这个工具？
-
-2: 如何安装和配置这个工具？
 
 **A**: 安装通常需要 Node.js 环境。具体步骤如下：
 1. 克隆或下载该项目源代码。
@@ -444,15 +434,11 @@ TechFlow 为金融客户提供高频交易系统，其 DevOps 团队需要 24/7 
 
 ### 3: 是否需要拥有《魔兽争霸 III》的游戏文件才能使用？
 
-3: 是否需要拥有《魔兽争霸 III》的游戏文件才能使用？
-
 **A**: 这取决于项目的实现方式。大多数此类语音包为了遵守版权，不会直接包含受版权保护的音频文件。通常情况下，用户需要自己提供游戏内的音频文件（如 Sound.mpq 或提取出的 .wav 文件），或者项目使用的是模仿该风格的开源音效。如果项目依赖原版游戏资源，你需要拥有合法的游戏副本并将音频文件放置在指定的目录下。
 
 ---
 
 ### 4: 这个插件支持哪些操作系统？
-
-4: 这个插件支持哪些操作系统？
 
 **A**: 由于它是基于 Node.js 和常见的音频播放库开发的，理论上支持 Windows、macOS 和 Linux。然而，音频播放在不同系统上的底层实现可能不同。Windows 系统通常兼容性最好；在 macOS 和 Linux 上，可能需要安装额外的系统音频依赖（如 paplay 或 afplay）才能正常发声。如果遇到没有声音的情况，请检查系统日志或项目的 Issues 板块寻找针对特定 OS 的解决方案。
 
@@ -460,23 +446,17 @@ TechFlow 为金融客户提供高频交易系统，其 DevOps 团队需要 24/7 
 
 ### 5: 可以自定义语音台词或触发事件吗？
 
-5: 可以自定义语音台词或触发事件吗？
-
 **A**: 可以。大多数此类插件都允许用户修改配置文件。你可以指定不同的音频文件对应不同的 Claude Code 事件（例如：代码生成成功、报错、或开始思考）。只要将你喜欢的音频文件替换掉默认文件，并在配置映射中更新文件名即可。部分高级版本甚至支持配置文本转语音（TTS）来模仿苦工的语调。
 
 ---
 
 ### 6: 使用这个工具会影响 Claude Code 的性能吗？
 
-6: 使用这个工具会影响 Claude Code 的性能吗？
-
 **A**: 几乎不会。该工具仅在特定事件触发时异步调用本地音频播放命令，不占用网络带宽，且音频文件通常很小（几秒的 WAV 文件）。音频播放是在独立进程中处理的，不会阻塞 Claude Code 的主线程或 AI 的响应速度。你可以在享受语音反馈的同时，保持正常的编程效率。
 
 ---
 
 ### 7: 如果遇到没有声音的问题，应该如何排查？
-
-7: 如果遇到没有声音的问题，应该如何排查？
 
 **A**: 建议按以下步骤排查：
 1. **检查音量**：确认系统音量和应用音量未静音。

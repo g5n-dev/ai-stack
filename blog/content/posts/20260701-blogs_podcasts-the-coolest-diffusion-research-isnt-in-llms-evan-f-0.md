@@ -15,8 +15,7 @@ tags:
 categories:
 - 效率与方法论
 source: blogs_podcasts
-description: 以下是中文翻译： --- **为什么Llama负责人离开Meta投身药物发现、PEARL的零样本OpenBind突破，以及当co-folding终于跨越准确度阈值时什么将成为可能。**
-  --- 说明： - 保持了三段并列的结构（原文中用逗号分隔的三个部分） - 技术术语如"Llama"、"Meta"、"PEARL"、"
+description: 以下是中文翻译： 为什么Llama负责人离开Meta投身药物发现、PEARL的零样本OpenBind突破，以及当co-folding终于跨越准确度阈值时什么将成为可能。
 external_url: https://www.latent.space/p/the-coolest-diffusion-research-isnt
 scenarios:
 - AI/ML项目

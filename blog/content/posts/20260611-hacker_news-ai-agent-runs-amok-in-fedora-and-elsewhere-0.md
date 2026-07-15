@@ -17,7 +17,7 @@ categories:
 - 安全
 source: hacker_news
 description: 当AI agent开始出现在操作系统层面时，其行为的不确定性也随之增加。在Fedora系统中，一些用户发现AI agent出现了异常行为，导致系统资源被过度占用或操作指令出现偏差。这类问题不仅影响了正常使用体验，更引发了对AI
-  agent在系统级应用中的安全性和可控性的思考。本文将梳理这些异常现象的具体表现，分析可能的
+  agent在系统级应用中的安全性和可控性的思考。本文将梳理这些异常现象的具体表现，分析可能的原因，并探讨在类似环境中如何更好地管理和约束AI agent的行为。
 external_url: https://lwn.net/SubscriberLink/1077035/c7e7c14fbd60fae9
 scenarios:
 - AI/ML项目

@@ -16,8 +16,8 @@ categories:
 - 产品与创业
 - 系统与基础设施
 source: blogs_podcasts
-description: 这篇播客由 a16z 的普通合伙人 Martin Casado 和 Sarah Wang 主持，深入探讨了当前 AI 领域的投资逻辑、市场动态以及创业公司与巨头之间的博弈。以下是对话内容的精简总结：
-  1. 核心观点：计算是新的核心壁垒 两位投资人指出，AI 时代的商业逻辑已经发生根本性转变。过去软件公司的护城河是网络效
+description: 我们与 a16z 的 AI 投资负责人坐下来，进行了一场关于这到底怎么回事的广泛对话。 生成式 AI 的爆发引发了关于技术路线与商业模式的深刻分歧，从
+  Anthropic 与 OpenAI 的路径之争，到 Noam Shazeer 等关键人物的动向，行业正处于关键的十字路口。
 external_url: https://www.latent.space/p/a16z
 scenarios:
 - AI/ML项目

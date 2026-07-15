@@ -9,7 +9,7 @@ categories:
 - 效率与方法论
 source: hacker_news
 description: 随着大语言模型训练成本的持续攀升，如何利用有限算力实现高效实验已成为开发者关注的焦点。本文介绍的 Autoresearch 框架，通过引入智能
-  Agent 实现了单 GPU 环境下 NanoChat 训练流程的全自动化探索。阅读本文，你将了解该系统如何自动完成从超参数搜索到结果分析的全过程，从而在资源受限的场景下显著提
+  Agent 实现了单 GPU 环境下 NanoChat 训练流程的全自动化探索。阅读本文，你将了解该系统如何自动完成从超参数搜索到结果分析的全过程，从而在资源受限的场景下显著提升模型迭代效率。
 external_url: https://github.com/karpathy/autoresearch
 scenarios:
 - Web应用开发

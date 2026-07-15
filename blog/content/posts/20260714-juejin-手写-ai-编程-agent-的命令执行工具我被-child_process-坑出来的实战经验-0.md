@@ -16,8 +16,8 @@ categories:
 - AI 工程
 - 后端
 source: juejin
-description: 背景 - AI 编程 Agent 在运行时经常需要执行外部命令（编译、脚本、系统工具等）。 - Node.js 主进程是单线程，直接在主线程调用阻塞或耗时任务会卡住事件循环。
-  为什么选 child_process - 子进程独立运行，保持主进程响应。 - 进程间资源隔离，单个子进程崩溃不影响 Agent。 - 方便捕获
+description: 在 AI 编程 Agent 中，命令执行通过 Node.js 的 childprocess 实现子进程调度，连接模型与系统。 然而，细节常被忽视，引发输出截断、资源泄漏或安全风险等问题。
+  本文通过实战案例分析 spawn、exec、fork 的适用场景与常见坑点，提供调试技巧与防护建议，助你规避潜在风险。
 external_url: https://juejin.cn/post/7662273240988057615
 scenarios:
 - AI/ML项目
@@ -43,9 +43,9 @@ source_support: 0.0
 
 以下是保持原文风格和语气的中文润色版本：
 
-> 先说说为什么 Agent 非得用 child_process。  
-> 我最开始其实也疑惑过：直接在 Node 里调命令不行吗？为什么非要整个子进程出来？  
-> 后来想明白了，Node 本身是单线程跑 JS 的，主进程要处理 **…**  
+> 先说说为什么 Agent 非得用 child_process。
+> 我最开始其实也疑惑过：直接在 Node 里调命令不行吗？为什么非要整个子进程出来？
+> 后来想明白了，Node 本身是单线程跑 JS 的，主进程要处理 **…**
 
 （若原文后续还有内容，请提供，我可以继续润色。）
 

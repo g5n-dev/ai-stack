@@ -15,8 +15,8 @@ tags:
 categories:
 - 效率与方法论
 source: juejin
-description: 背景 前四篇围绕 token 管理、memory、learning、安全等单个工具内部的优化展开。 问题 实际项目往往需要多个 AI 编码工具并行使用，各自独立配置导致重复工作、策略不一致、资源难以统一调度。
-  方案概述 Cross‑Harness 采用“一套配置、一次部署、多个实例”思路，抽象出统一的配置层，兼容七种主
+description: 随着 AI 编程工具的种类和功能快速扩展，分别维护每套工具的配置已成为开发团队的沉重负担。Cross‑Harness 架构通过统一描述语言，将
+  token 管理、记忆、学习和安全等核心能力抽象为一套可复用的配置，支持一次性部署至七种主流 AI 编码工具。读者可以了解该架构的设计思路、实现要点，以及在实际项目中实现配置统一后带来的效率提升与维护成本下降。
 external_url: https://juejin.cn/post/7654919203225550867
 scenarios:
 - AI/ML项目

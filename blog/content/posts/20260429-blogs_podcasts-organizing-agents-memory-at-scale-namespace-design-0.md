@@ -16,8 +16,8 @@ categories:
 - 系统与基础设施
 - 安全
 source: blogs_podcasts
-description: Namespace 层级设计 - **按业务域划分**：顶层命名空间对应业务线或子系统，便于权限隔离和资源计量。 - **按功能细分**：在业务域下按功能模块（如用户、会话、日志）创建二级或三级命名空间，提升检索粒度。
-  - **层级深度控制**：保持三至四层结构，避免层级过深导致管理成本上升；每个层级需明确命名规范（如
+description: 在这篇文章中，您将学习如何设计命名空间层级、选择合适的检索模式，并为 AgentCore Memory 实现基于 AWS Identity
+  and Access Management (IAM) 的访问控制。 在规模化部署AI Agent时，记忆的命名空间结构决定了信息的组织效率和检索准确性。合理的命名空间层级能够显著降低查询延迟，并提升系统的可维护性。
 external_url: https://aws.amazon.com/blogs/machine-learning/organizing-agents-memory-at-scale-namespace-design-patterns-in-agentcore-memory
 scenarios:
 - AI/ML项目

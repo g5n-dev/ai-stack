@@ -16,8 +16,8 @@ categories:
 - 大模型
 - AI 工程
 source: blogs_podcasts
-description: 架构特点 - 采用层级式 Transformer 与自适应注意力机制，提高长序列建模效率。 - 融合 NVIDIA 第四代 Tensor
-  Core 与混合精度训练支持，显著降低显存占用。 - 预训练阶段引入大规模多语言语料库，实现跨语言零样本迁移。 微调技术 - **参数高效微调 (PEFT)**：LoRA、Adapt
+description: 在本文中，我们将探讨 Nemotron 3 架构的独特之处，介绍可用的微调技术，并逐步向您展示如何使用 SageMaker Studio
+  开始无服务器定制。 本文聚焦NVIDIA Nemotron 3的架构特点，并演示如何通过Amazon SageMaker Studio实现无服务器模型微调。无服务器方式能够免除底层资源管理，让开发者专注于模型适配与性能调优。
 external_url: https://aws.amazon.com/blogs/machine-learning/fine-tune-nvidia-nemotron-3-models-with-amazon-sagemaker-ai-serverless-model-customization
 scenarios:
 - Web应用开发

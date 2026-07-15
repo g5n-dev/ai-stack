@@ -8,8 +8,9 @@ tags:
 categories:
 - 效率与方法论
 source: blogs_podcasts
-description: '**简明总结：** 知名 AI 专家、图灵奖得主 Yann LeCun 创立的**AMI Labs** 正式成立，并获得巨额启动资金。该公司完成了一笔**10亿美元**的种子轮融资，投后估值达到**45亿美元**。
-  AMI Labs 的核心使命是构建**“世界模型”**（World Models），并围绕 LeCun'
+description: World Models are what next generation AI needs. Yann LeCun 刚刚宣布成立 AMI
+  Labs，并获得 10 亿美元种子融资，估值达 45 亿美元，旨在构建基于 JEPA 架构的世界模型。这一动向标志着业界正加速从单纯的生成式语言模型向具备物理常识的下一代
+  AI 演进。
 external_url: https://www.latent.space/p/ainews-yann-lecuns-ami-labs-launches
 scenarios:
 - Web应用开发

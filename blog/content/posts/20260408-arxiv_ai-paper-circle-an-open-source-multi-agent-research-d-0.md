@@ -16,8 +16,7 @@ categories:
 - AI 工程
 - 开源生态
 source: arxiv
-description: 系统概述 Paper Circle 是面向科研文献的多智能体 LLM 系统，旨在降低发现、评估、组织和理解学术文献的成本。系统围绕两大互补流程构建：检索（Discovery）和分析（Analysis）。
-  检索流程 - 融合离线与在线多源检索，采用多准则评分和多样性感知排序，产生结构化输出（JSON、CSV、BibTeX
+description: 科研文献的快速发现与深度理解一直是学术研究中的关键挑战，传统方法往往在效率与系统性之间难以兼顾。Paper Circle提出一种基于多智能体编排的文献检索与分析框架，融合离线与在线多源检索策略，并通过知识图谱方式实现单篇论文的结构化解构。实验表明，该方法在论文检索与综述生成任务上表现出良好性能，且模型规模与系统效果呈正向关联。
 external_url: http://arxiv.org/abs/2604.06170v1
 scenarios:
 - 大语言模型

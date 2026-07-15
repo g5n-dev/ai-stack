@@ -16,8 +16,9 @@ categories:
 - 后端
 - AI 工程
 source: juejin
-description: 这是一份关于 **Spring AI 多模型对话实战 Demo** 的简洁总结： **1. 核心功能：多模型统一适配** 该 Demo 实现了一套
-  API 接口同时兼容 **OpenAI** 和 **Ollama** 两种大模型服务。系统通过 参数进行智能路由，支持在运行时动态覆盖模型名称，开发者无需为不同模型编写重复
+description: Spring AI 为 Java 生态接入大模型提供了标准化的解决方案，但在实际业务中，往往需要同时兼容云端与本地模型，并处理会话记忆与流式响应等细节。本文通过一套可复用的实战
+  Demo，演示了如何用统一接口适配 OpenAI 与 Ollama，并利用 Redis 实现上下文管理。阅读后，你将掌握多模型路由、SSE 流式输出及 AOP
+  日志打点的具体实现，从而快速构建稳定的企业级 AI 应用。
 external_url: https://juejin.cn/post/7606793134375534655
 scenarios:
 - AI/ML项目
@@ -118,8 +119,6 @@ Spring AI 为 Java 生态接入大模型提供了标准化的解决方案，但�
 
 ### 1: Spring AI 如何实现 OpenAI 和 Ollama 等不同模型的统一调用？
 
-1: Spring AI 如何实现 OpenAI 和 Ollama 等不同模型的统一调用？
-
 **A**: Spring AI 提供了统一的 API 抽象层，通过 `ChatClient` 或 `ChatModel` 接口屏蔽了不同厂商（如 OpenAI、Ollama、Azure OpenAI）的差异。开发者只需在配置文件（如 `application.yml`）中定义不同的 `ChatModel` Bean（例如 `openAiChatModel` 和 `ollamaChatModel`），然后在代码中通过构造器注入或 `@Qualifier` 注解指定使用哪个模型实现。这样，业务代码不需要修改，只需切换注入的 Bean 即可在云端大模型和本地模型之间灵活切换。
 
 ---
@@ -127,8 +126,6 @@ Spring AI 为 Java 生态接入大模型提供了标准化的解决方案，但�
 
 
 ### 2: 在 SSE 流式输出场景下，如何确保 Redis 会话记忆的准确性？
-
-2: 在 SSE 流式输出场景下，如何确保 Redis 会话记忆的准确性？
 
 **A**: 在流式输出（SSE）场景下，AI 的回复是分片返回的。为了确保 Redis 存储完整的对话历史，不能在接收到每一个 Token 时就更新 Redis，这样会造成巨大的网络开销和存储浪费。最佳实践是利用响应式编程（如 Reactor 的 `Flux`），在流式传输结束后（使用 `.collectList()` 或 `doOnComplete()`），将完整的回复内容拼接后，再通过 `ChatMemory` 接口写入 Redis。这样可以保证 Redis 中存储的是完整的上下文，便于下一次对话时准确提取。
 
@@ -138,8 +135,6 @@ Spring AI 为 Java 生态接入大模型提供了标准化的解决方案，但�
 
 ### 3: 如何利用 Spring AOP 实现 AI 对话的全链路日志打点？
 
-3: 如何利用 Spring AOP 实现 AI 对话的全链路日志打点？
-
 **A**: 可以定义一个切面（Aspect），切入点（Pointcut）设置为 Controller 层的处理对话方法。在 `@Around` 环绕通知中，可以记录方法入参（Prompt、模型配置）、开始时间。在方法执行过程中或结束后，记录返回结果、Token 消耗情况以及结束时间。通过计算时间差统计耗时，并将请求 ID、用户 ID、模型名称等关键信息记录到日志文件或数据库中，从而实现非侵入式的全链路监控和后续的问题排查。
 
 ---
@@ -147,8 +142,6 @@ Spring AI 为 Java 生态接入大模型提供了标准化的解决方案，但�
 
 
 ### 4: 使用 Ollama 作为本地模型时，Spring AI 连接超时或响应慢怎么解决？
-
-4: 使用 Ollama 作为本地模型时，Spring AI 连接超时或响应慢怎么解决？
 
 **A**: Ollama 默认运行在本地 11434 端口。如果遇到连接超时，首先检查 Ollama 服务是否正常启动。其次，由于本地模型推理依赖 CPU/GPU 性能，首字生成时间（TTFT）可能较长，建议在 Spring AI 的配置中适当调大连接超时时间（`connect-timeout`）和读取超时时间（`read-timeout`）。此外，如果使用的是较新的模型版本或量化模型，确保 Ollama 版本已更新，并检查本地资源（内存/显存）是否被占满。
 
@@ -158,8 +151,6 @@ Spring AI 为 Java 生态接入大模型提供了标准化的解决方案，但�
 
 ### 5: 如何处理多用户场景下的 Redis 会话隔离问题？
 
-5: 如何处理多用户场景下的 Redis 会话隔离问题？
-
 **A**: 为了防止不同用户的对话历史混淆，必须在存取 Redis 时使用唯一的会话 ID。通常的做法是在前端请求时携带一个 `sessionId`（或 `conversationId`），后端在构建 `ChatMemory` 配置时，将该 ID 作为 Redis Key 的一部分（例如 Key 格式设计为 `chat:memory:{userId}:{sessionId}`）。Spring AI 的 `RedisChatMemory` 配置类通常支持自定义 Key 生成策略，通过动态传入会话 ID，确保每个用户的对话上下文独立存储和检索。
 
 ---
@@ -167,8 +158,6 @@ Spring AI 为 Java 生态接入大模型提供了标准化的解决方案，但�
 
 
 ### 6: SSE 流式输出在前端断开连接后，后端服务是否会继续执行？
-
-6: SSE 流式输出在前端断开连接后，后端服务是否会继续执行？
 
 **A**: 在标准的 Spring WebFlux 或 MVC + SSE 实现中，如果客户端（浏览器）断开连接，底层的 HTTP 连接会关闭。Spring 的响应式流（Reactor）会检测到连接终止信号，通常会触发 `onCancel` 或 `onError` 事件，从而中断数据流的发射。这意味着后端的 AI 推理请求可能会被中断（取决于具体的流式处理实现），从而节省服务器资源。但在日志打点时，建议监听这一事件，将“客户端断开”的状态记录下来，以便区分是正常结束还是异常中断。
 

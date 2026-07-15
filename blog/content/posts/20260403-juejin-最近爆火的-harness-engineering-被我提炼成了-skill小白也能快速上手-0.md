@@ -15,8 +15,8 @@ tags:
 categories:
 - AI 工程
 source: juejin
-description: 最近，Harness Engineering 突然走红，作者把它抽象为一套可复用的 Agent Skill，帮助没有基础的人快速上手。实现过程大致分为三步：
-  研读与提炼 系统阅读了 Anthropic、OpenAI、Martin Fowler、LangChain 等官方文档和技术博客，提炼出 Harness 的核心概念
+description: Harness Engineering 作为工程领域的新兴实践，正受到越来越多的关注。然而，相关资料分散且学习曲线陡峭。本文作者在研读 Anthropic、OpenAI、Martin
+  Fowler、LangChain 等权威来源后，将核心知识提炼为可复用的 Agent Skill，帮助初学者快速建立系统认知。
 external_url: https://juejin.cn/post/7624344925603070006
 scenarios:
 - AI/ML项目

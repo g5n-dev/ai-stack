@@ -16,8 +16,7 @@ categories:
 - 大模型
 - AI 工程
 source: blogs_podcasts
-description: 概述 OpenAI 于近期同步推出了 GPT‑5.6 系列的三个变体：Sol、Terra 与 Luna。此次发布并未面向全体开发者，而是采用了分层的访问策略，仅向受信任的合作伙伴开放。
-  版本与定位 - **Sol**：基础版，针对通用对话与轻量级任务优化，开放给已签署合作协议的合作伙伴。 - **Terra**：中等规
+description: 莫名其妙地，同一天向 OAI 和 ANT 发布了分层版本。 OpenAI于近日同步推出GPT‑5.6的三个层级——Sol、Terra与Luna，且本次发布仅面向OAI与ANT两家合作伙伴。此举标志着大模型在商业化部署上开始采用分层授权策略，意味着不同规模的用户将获得差异化的算力与功能支持。对AI开发者与企业而言，了解这层体系的划分原则与访问门槛，将有助于规划后续的技术选型和合作路径。
 external_url: https://www.latent.space/p/ainews-openai-gpt-56-sol-terra-luna
 scenarios:
 - AI/ML项目

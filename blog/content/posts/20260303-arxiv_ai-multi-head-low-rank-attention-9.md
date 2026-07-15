@@ -16,8 +16,9 @@ categories:
 - 大模型
 - AI 工程
 source: arxiv
-description: 本文介绍了一种名为 **Multi-Head Low-Rank Attention (MLRA)** 的新方法，旨在解决大语言模型（LLM）长上下文推理中的内存瓶颈问题。
-  **背景与挑战：** 在 LLM 的解码阶段，系统需要频繁将 Key-Value (KV) 缓存从高带宽内存（HBM）传输到片上静态随机存取内存（S
+description: 针对大语言模型长上下文推理中的内存瓶颈，本文提出了一种名为 Multi-Head Low-Rank Attention (MLRA) 的新方法。该方法通过优化
+  Key-Value 缓存从高带宽内存（HBM）到片上静态随机存取存储器（SRAM）的传输过程，旨在突破现有 Multi-Head Latent Attention
+  (MLA) 在张量并行（TP）分布式场景下的局限。
 external_url: http://arxiv.org/abs/2603.02188v1
 scenarios:
 - AI/ML项目

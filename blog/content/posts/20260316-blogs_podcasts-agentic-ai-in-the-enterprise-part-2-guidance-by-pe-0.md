@@ -16,8 +16,8 @@ categories:
 - 大模型
 - 产品与创业
 source: blogs_podcasts
-description: 本文是 AWS 生成式 AI 创新中心关于“企业中的智能体 AI”系列文章的第二部分。 本部分的核心目标是**指导企业领导者将 AI 愿景转化为实际行动**。文章指出，不同角色的管理者（如负责损益、企业架构、安全、数据治理或合规的主管）在推动
-  Agentic AI（智能体 AI）落地的过程中，面临着截然不同的责任、风险
+description: 这是来自 AWS 生成式 AI 创新中心两篇系列文章的第二篇。在第二篇中，我们直接与那些必须将共同基础转化为行动的领导者对话。每个角色都承担着独特的职责、风险和杠杆点。无论你负责损益（P&L）、主管企业架构、领导安全工作、治理数据，还是管理合规事务，本部分都使用你所在领域的语言撰写——因为代理型
+  AI（agentic AI）正是在这些领域取得成功，或者悄然消亡。
 external_url: https://aws.amazon.com/blogs/machine-learning/agentic-ai-in-the-enterprise-part-2-guidance-by-persona
 scenarios:
 - AI/ML项目

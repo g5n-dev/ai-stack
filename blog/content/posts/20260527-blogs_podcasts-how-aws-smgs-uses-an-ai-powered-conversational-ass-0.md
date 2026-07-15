@@ -16,8 +16,7 @@ categories:
 - 大模型
 - AI 工程
 source: blogs_podcasts
-description: 架构概览 - 两层分离：批处理层负责离线数据清洗、聚合；实时交互层通过API提供即时查询与可视化。 - 采用事件驱动调度，保证批任务完成后自动刷新实时数据。
-  AI代理功能 - 路由代理：根据自然语言意图将请求分发至合适模型或后端服务，实现多业务场景自适应。 - 校验代理：在返回结果前进行事实核对、合规检查，提升答案可信
+description: 在这篇文章中，我们将分享如何使用 Amazon Bedrock AgentCore 构建 NarrateAI，从而为 AWS SMGS（销售、营销和全球服务）组织提供大规模的商业智能服务。
 external_url: https://aws.amazon.com/blogs/machine-learning/how-aws-smgs-uses-an-ai-powered-conversational-assistant-to-transform-business-management-with-amazon-bedrock-agentcore
 scenarios:
 - AI/ML项目

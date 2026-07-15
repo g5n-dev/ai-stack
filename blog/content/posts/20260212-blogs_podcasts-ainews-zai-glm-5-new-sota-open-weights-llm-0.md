@@ -16,9 +16,8 @@ categories:
 - 大模型
 - 开源生态
 source: blogs_podcasts
-description: 本文是对所提供内容的简要总结。 **核心内容：** 这篇文章主要报道了Z.ai发布的最新大语言模型**GLM-5**，并将其标记为Open
-  Weights（开放权重）领域的全新SOTA（State-of-the-Art，最先进）模型。 **关键信息：** 1. **模型发布**：Z.ai推出了GLM-5。
-  2. **行
+description: 我们在家里有 Opus 4.5 Z.ai 近日发布了开源权重模型 GLM-5，其性能表现已达到新的行业顶尖水平（SOTA），为本地部署提供了强有力的新选择。这一进展不仅打破了高性能模型主要依赖闭源服务的现状，也标志着开源社区在模型能力上取得了关键突破。本文将深入解析
+  GLM-5 的技术细节与实测表现，帮助开发者评估其应用潜力，并探讨这对本地大模型部署的实际意义。 本文是对所提供内容的简要总结。
 external_url: https://www.latent.space/p/ainews-zai-glm-5-new-sota-open-weights
 scenarios:
 - AI/ML项目

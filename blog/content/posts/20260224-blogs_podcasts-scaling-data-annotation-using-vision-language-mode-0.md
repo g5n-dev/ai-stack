@@ -16,8 +16,8 @@ categories:
 - AI 工程
 - 数据
 source: blogs_podcasts
-description: '**总结：利用视觉-语言模型扩展数据标注，赋能物理AI系统** Bedrock Robotics通过与AWS合作，利用视觉-语言模型（VLM）分析施工现场视频，自动提取操作细节并生成大规模标注数据集，从而优化了自动驾驶建筑设备的数据准备流程。
-  这一方案的核心在于： 1. **自动化标注**：VLM直接处理视频数据，减少'
+description: 在这篇文章中，我们将探讨 Bedrock Robotics 如何应对这一挑战。通过加入 AWS Physical AI Fellowship，这家初创公司与
+  AWS Generative AI Innovation Center 展开合作，运用视觉-语言模型分析施工现场的视频片段，提取作业细节，并规模化生成带标签的训练数据集，从而改进自动驾驶施工设备的数据准备工作。
 external_url: https://aws.amazon.com/blogs/machine-learning/scaling-data-annotation-using-vision-language-models-to-power-physical-ai-systems
 scenarios:
 - AI/ML项目

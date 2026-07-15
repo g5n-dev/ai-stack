@@ -16,7 +16,7 @@ categories:
 - 大模型
 - AI 工程
 source: hacker_news
-description: Google宣布将在未来多年内向AI安全公司Anthropic投资高达400亿美元，这笔投资将以现金和云计算资源的形式提供。作为Claude大模型的开发方，Anthropic已成为人工智能领域的重要参与者，此次合作将为其提供更多计算资源来训练和优化模型。对于关注AI行业发展的读者而言，这笔巨额投资不仅反映了科技巨头对A
+description: Google宣布将在未来多年内向AI安全公司Anthropic投资高达400亿美元，这笔投资将以现金和云计算资源的形式提供。作为Claude大模型的开发方，Anthropic已成为人工智能领域的重要参与者，此次合作将为其提供更多计算资源来训练和优化模型。对于关注AI行业发展的读者而言，这笔巨额投资不仅反映了科技巨头对AI安全赛道的重视，也将影响未来生成式AI产品的竞争格局。
 external_url: https://techcrunch.com/2026/04/24/google-to-invest-up-to-40b-in-anthropic-in-cash-and-compute
 scenarios:
 - AI/ML项目

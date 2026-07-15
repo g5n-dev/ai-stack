@@ -17,7 +17,7 @@ categories:
 - AI 工程
 source: hacker_news
 description: 随着大语言模型能力的演进，如何让 AI 不仅“对话”更能“行动”成为开发者关注的焦点。HuggingFace 推出的 Agent Skills
-  机制，通过模块化的技能设计，让智能体能够精准调用外部工具与 API，从而完成复杂的业务逻辑。本文将深入解析其技术原理与实现路径，帮助你掌握构建具身智能应用的核心方法，有效弥合模
+  机制，通过模块化的技能设计，让智能体能够精准调用外部工具与 API，从而完成复杂的业务逻辑。本文将深入解析其技术原理与实现路径，帮助你掌握构建具身智能应用的核心方法，有效弥合模型能力与现实场景之间的鸿沟。
 external_url: https://github.com/huggingface/skills
 scenarios:
 - 大语言模型

@@ -113,7 +113,7 @@ def real_time_transcription():
     """
     # 加载Whisper基础模型（首次运行会自动下载）
     model = whisper.load_model("base")
-    
+
     # 初始化音频流
     audio = pyaudio.PyAudio()
     stream = audio.open(format=pyaudio.paInt16,
@@ -121,7 +121,7 @@ def real_time_transcription():
                        rate=16000,
                        input=True,
                        frames_per_buffer=1024)
-    
+
     print("开始录音...（按Ctrl+C停止）")
     try:
         while True:
@@ -158,7 +158,7 @@ def voice_command_system():
     """
     # 初始化识别器
     recognizer = sr.Recognizer()
-    
+
     # 命令-操作映射
     commands = {
         "打开记事本": "notepad",
@@ -166,7 +166,7 @@ def voice_command_system():
         "打开浏览器": "start chrome",
         "关机": "shutdown /s /t 0"
     }
-    
+
     with sr.Microphone() as source:
         print("请说出命令...")
         while True:
@@ -176,7 +176,7 @@ def voice_command_system():
                 # 使用Google语音识别（需联网）
                 text = recognizer.recognize_google(audio, language="zh-CN")
                 print(f"识别到命令: {text}")
-                
+
                 # 执行匹配的命令
                 for cmd, action in commands.items():
                     if cmd in text:
@@ -212,11 +212,11 @@ def voice_translator():
     # 初始化组件
     recognizer = sr.Recognizer()
     translator = Translator()
-    
+
     # 设置源语言和目标语言
     source_lang = "zh-CN"  # 中文
     target_lang = "en"     # 英文
-    
+
     with sr.Microphone() as source:
         print(f"请说话（将从{source_lang}翻译到{target_lang}）...")
         while True:
@@ -225,11 +225,11 @@ def voice_translator():
                 audio = recognizer.listen(source, timeout=5)
                 text = recognizer.recognize_google(audio, language=source_lang)
                 print(f"原始文本: {text}")
-                
+
                 # 翻译文本
                 translation = translator.translate(text, src=source_lang, dest=target_lang)
                 print(f"翻译结果: {translation.text}")
-                
+
             except sr.UnknownValueError:
                 print("无法识别，请重试")
             except sr.RequestError:
@@ -247,8 +247,6 @@ voice_translator()
 
 ### 1：独立开发者 Alex 的代码审查效率提升
 
- 1：独立开发者 Alex 的代码审查效率提升
-
 **背景**:
 Alex 是一名全职独立开发者，同时维护着两个开源项目。他每天需要花费大量时间在 GitHub 和 Discord 上回复 Issue、进行 Code Review 以及撰写项目文档。由于长期打字，他患有轻微的腕管综合征，医生建议他减少键盘输入量。
 
@@ -265,8 +263,6 @@ Alex 尝试了这款开源的语音输入工具。该工具基于 OpenAI 的 Whi
 
 ### 2：医学研究员 Dr. Chen 的临床笔记数字化
 
- 2：医学研究员 Dr. Chen 的临床笔记数字化
-
 **背景**:
 Dr. Chen 是一家公立医院的呼吸科主治医师。每天查房结束后，他需要花费 2-3 小时将手写的病程记录和口述的病人情况录入电子病历系统（EMR）。由于医院网络环境封闭，且对数据隐私有极高要求，云端语音处理服务被严格禁止使用。
 
@@ -282,8 +278,6 @@ Dr. Chen 在 Hacker News 上发现了这款工具，并利用其“离线运行�
 ---
 
 ### 3：内容创作者 Sarah 的多语言视频字幕制作
-
- 3：内容创作者 Sarah 的多语言视频字幕制作
 
 **背景**:
 Sarah 是一位在 YouTube 上拥有 20 万粉丝的旅游博主。她的视频素材包含大量的环境噪音（如海浪声、街道喧闹声），且她经常制作中英双语内容。为了扩大受众范围，她必须为每个视频生成准确的双语字幕。
@@ -393,15 +387,11 @@ Sarah 开始使用这款开源工具作为她的字幕工作流核心。她利�
 
 ### 1: 这个工具具体是什么？它是如何工作的？
 
-1: 这个工具具体是什么？它是如何工作的？
-
 **A**: 这是一个开源的语音转文字工具，旨在作为 Wispr Flow、Superwhisper 和 Monologue 等付费软件的免费替代品。它通常运行在本地环境（如您的电脑）中，利用现有的开源语音识别模型（如 OpenAI 的 Whisper 模型）将您的语音实时转换为文本。它的核心功能是监听麦克风输入，将语音转录后直接插入到您的光标所在位置，从而实现“听写”来替代键盘输入，特别适合用于撰写文档、编写代码或快速记录笔记。
 
 ---
 
 ### 2: 它是完全免费的吗？是否需要付费订阅？
-
-2: 它是完全免费的吗？是否需要付费订阅？
 
 **A**: 是的，该项目被明确标记为上述商业软件的“免费替代品”。作为开源项目，它本身通常不需要任何订阅费或许可费。但是，您需要注意的是，虽然软件免费，但运行它可能需要消耗您本地计算机的硬件资源（CPU/GPU）。此外，如果您选择使用云端 API 版本而非纯本地运行模式，可能会产生第三方 API（如 OpenAI API）的费用，但大多数此类工具都主打“本地运行”，以确保完全免费和隐私安全。
 
@@ -409,15 +399,11 @@ Sarah 开始使用这款开源工具作为她的字幕工作流核心。她利�
 
 ### 3: 它支持哪些操作系统？Windows 和 Mac 都能用吗？
 
-3: 它支持哪些操作系统？Windows 和 Mac 都能用吗？
-
 **A**: 这取决于具体的项目实现，但大多数此类开源工具都力求跨平台支持。通常情况下，它们支持 macOS、Windows 和 Linux。由于 Wispr Flow 等竞品在 macOS 上非常流行，这类开源替代品往往优先优化 macOS 的体验，但也会提供 Windows 版本。您可以在项目的 GitHub 页面查看 "Releases" 或 "README" 部分以获取具体的安装包（.dmg, .exe 或 AppImage）。
 
 ---
 
 ### 4: 它的转录准确率如何？能比得上 Wispr Flow 或 Superwhisper 吗？
-
-4: 它的转录准确率如何？能比得上 Wispr Flow 或 Superwhisper 吗？
 
 **A**: 转录准确率主要取决于其底层的引擎。如果该项目基于 OpenAI 的 Whisper 模型（这是目前最流行的方案），那么在清晰度良好的环境下，其准确率是非常高的，甚至在某些语言处理上能与商业巨头媲美。商业软件（如 Wispr）的优势通常在于“上下文感知”和“后期处理”能力（例如自动修正标点、根据语境修改词汇），而开源免费版本可能在纯粹的“听写”功能上表现出色，但在智能润色等高级功能上可能相对简单。
 
@@ -425,23 +411,17 @@ Sarah 开始使用这款开源工具作为她的字幕工作流核心。她利�
 
 ### 5: 使用这个工具需要联网吗？我的语音数据会被上传到服务器吗？
 
-5: 使用这个工具需要联网吗？我的语音数据会被上传到服务器吗？
-
 **A**: 大多数此类开源工具主打“隐私优先”，支持完全离线运行。这意味着您可以在下载模型后，断开互联网进行语音转录，所有数据都在您的本地设备上处理，没有任何语音数据会被上传到开发者或第三方服务器。这是相比许多依赖云端处理的商业软件的一大优势。当然，部分工具也提供“云端模式”供用户选择，以换取更快的处理速度，但这通常是可选的。
 
 ---
 
 ### 6: 我对编程不熟悉，安装和使用这个工具会不会很困难？
 
-6: 我对编程不熟悉，安装和使用这个工具会不会很困难？
-
 **A**: 开发者通常会考虑到易用性。虽然许多开源工具最初是通过命令行（CLI）运行的，但针对“Show HN”的这类项目，开发者往往已经提供了图形用户界面（GUI）。对于普通用户，您通常只需要下载对应的安装包，像安装普通软件一样进行安装，并授予麦克风权限即可开始使用。不过，相比成熟的商业产品，开源软件可能在界面美观度（UI）和用户体验（UX）上略显粗糙，或者在初次设置模型时需要一些简单的引导操作。
 
 ---
 
 ### 7: 它支持中文输入吗？
-
-7: 它支持中文输入吗？
 
 **A**: 支持。由于该项目基于 Whisper 模型，而 Whisper 对多语言的支持非常出色，包括中文（普通话）。只要您下载了相应的语言包或通用模型，您就可以直接用中文进行语音输入，且准确率通常很高。
 ## 引用

@@ -17,7 +17,7 @@ categories:
 - 开发工具
 source: hacker_news
 description: 在 Stripe 推出 Coding Agents 的首篇文章中，我们初步探讨了这些智能体如何接管重复性编码任务。本文作为系列第二部分，将深入剖析
-  Minions 在实际生产环境中的工作流与决策逻辑，并展示其与工程师协作的细节。通过阅读本文，你将了解到 Stripe 如何利用 AI Agent 提升开发效率，以及这对未
+  Minions 在实际生产环境中的工作流与决策逻辑，并展示其与工程师协作的细节。通过阅读本文，你将了解到 Stripe 如何利用 AI Agent 提升开发效率，以及这对未来软件工程模式可能产生的具体影响。
 external_url: https://stripe.dev/blog/minions-stripes-one-shot-end-to-end-coding-agents-part-2
 scenarios:
 - 大语言模型

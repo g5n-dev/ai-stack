@@ -1,5 +1,5 @@
 ---
-title: "Cursor's Third Era: Cloud Agents"
+title: 'Cursor''s Third Era: Cloud Agents'
 date: 2026-03-06 07:31:16+08:00
 draft: false
 entry_kind: auto
@@ -16,8 +16,8 @@ categories:
 - AI 工程
 - 产品与创业
 source: blogs_podcasts
-description: 以下是该内容的中文总结： **Cursor 迈入“云代理”时代：软件开发迎来第三纪元** 由“500亿美元代理实验室”孵化的 **Cursor**
-  正在经历一场核心变革。通过收购 **Graphite** 和 **Autotab**，该团队宣布 **Cloud Agents（云代理）** 的应用场景已超越其作为“VSC
+description: 这家规模达 500 亿美元的 Agent Lab 已经收购了 Graphite 和 Autotab，并宣布 Cloud Agents 已经超越其历史上“VSCode
+  分支”IDE 的用例，开启了“软件开发第三时代”。 随着 Agent Lab 宣布 Cloud Agents 正式超越传统 IDE 的用例，软件开发似乎正在步入一个全新的“第三时代”。
 external_url: https://www.latent.space/p/cursor-third-era
 scenarios:
 - AI/ML项目

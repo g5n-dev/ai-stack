@@ -16,7 +16,7 @@ categories:
 - 大模型
 - AI 工程
 source: hacker_news
-description: 在人工智能算力需求持续攀升的背景下，OpenAI正式推出了其首款定制芯片。该芯片由半导体巨头Broadcom协助设计与制造，标志着这家AI研究公司在硬件自主化道路上迈出关键一步。此举不仅有望缓解对传统芯片供应商的依赖，也将为大语言模型及其他AI应用的推理与训练效率带来新的提升空间。对于关注AI技术发展的读者而言，理解这
+description: 在人工智能算力需求持续攀升的背景下，OpenAI正式推出了其首款定制芯片。该芯片由半导体巨头Broadcom协助设计与制造，标志着这家AI研究公司在硬件自主化道路上迈出关键一步。此举不仅有望缓解对传统芯片供应商的依赖，也将为大语言模型及其他AI应用的推理与训练效率带来新的提升空间。对于关注AI技术发展的读者而言，理解这一动向背后的战略考量和潜在影响，具有重要的参考价值。
 external_url: https://techcrunch.com/2026/06/24/openai-unveils-its-first-custom-chip-built-by-broadcom
 scenarios:
 - AI/ML项目

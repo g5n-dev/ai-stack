@@ -16,9 +16,9 @@ categories:
 - 前端
 - AI 工程
 source: blogs_podcasts
-description: 架构概览 - **前端**：React 单页应用（SPA），负责页面渲染和用户交互。 - **后端代理**：Flask 实现的反向代理，在请求到达
-  SageMaker MLflow UI 前加入 AWS Signature Version 4（SigV4）签名，确保与 AWS 服务的身份验证兼容。 关键技术要点
-  - *
+description: 在这篇文章中，您将学习如何构建一个包含嵌入式 SageMaker AI MLflow Apps UI 的自定义门户。您将了解 React
+  前端与 Flask 反向代理配合使用的架构模式，该代理负责处理 AWS Signature Version 4 (SigV4) 身份验证，通过 AWS Cloud
+  Development Kit (AWS CDK) 部署整个技术栈，验证部署结果，并审查安全注意…
 external_url: https://aws.amazon.com/blogs/machine-learning/build-a-custom-portal-with-embedded-amazon-sagemaker-ai-mlflow-apps
 scenarios:
 - AI/ML项目

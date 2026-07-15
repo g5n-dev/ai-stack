@@ -128,7 +128,7 @@ def check_archive_access(url):
         # 获取Internet Archive的快照URL
         parsed = urlparse(url)
         archive_url = f"https://web.archive.org/web/20230101000000/{url}"
-        
+
         # 发送请求并检查状态码
         response = requests.get(archive_url, timeout=10)
         if response.status_code == 403:
@@ -160,14 +160,14 @@ def fetch_with_rotating_ua(url):
         "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
         "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
     ]
-    
+
     headers = {
         "User-Agent": random.choice(user_agents),
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
         "Accept-Language": "en-US,en;q=0.5",
         "Referer": "https://www.google.com/"
     }
-    
+
     try:
         response = requests.get(url, headers=headers, timeout=10)
         if response.status_code == 200:
@@ -196,11 +196,11 @@ def check_robots_txt(url):
     try:
         parsed = urlparse(url)
         robots_url = f"{parsed.scheme}://{parsed.netloc}/robots.txt"
-        
+
         response = requests.get(robots_url, timeout=10)
         if response.status_code != 200:
             return False
-            
+
         # 检查常见的AI爬虫禁用规则
         ai_bots = ['GPTBot', 'ChatGPT', 'Google-Extended', 'CCBot']
         for bot in ai_bots:
@@ -221,8 +221,6 @@ check_robots_txt("https://example.com")
 
 ### 1：纽约时报
 
- 1：纽约时报
-
 **背景**: 纽约时报作为全球知名媒体，拥有大量高质量新闻内容。随着生成式AI技术发展，其内容被AI公司大规模抓取用于训练模型。
 
 **问题**: 2023年，纽约时报发现其内容被OpenAI、微软等公司未经授权抓取，用于训练ChatGPT等AI模型。这导致其原创内容被无偿使用，影响其商业价值和版权保护。
@@ -235,8 +233,6 @@ check_robots_txt("https://example.com")
 
 ### 2：路透社
 
- 2：路透社
-
 **背景**: 路透社作为国际新闻通讯社，向全球媒体提供新闻内容。其内容被广泛用于AI模型训练，但未获得相应补偿。
 
 **问题**: 2023年，路透社发现其新闻内容被多家AI公司抓取，用于训练大语言模型。这不仅影响其直接收入，还可能导致AI生成内容与其原创内容竞争。
@@ -248,8 +244,6 @@ check_robots_txt("https://example.com")
 ---
 
 ### 3：Conde Nast
-
- 3：Conde Nast
 
 **背景**: Conde Nast是知名媒体集团，拥有《纽约客》、《Vogue》等杂志。其内容质量高，常被AI公司用于训练模型。
 
@@ -353,15 +347,11 @@ check_robots_txt("https://example.com")
 
 ### 1: 为什么新闻出版机构要限制 Internet Archive 的访问权限？
 
-1: 为什么新闻出版机构要限制 Internet Archive 的访问权限？
-
 **A**: 此次限制访问的主要原因是新闻出版机构对人工智能（AI）公司抓取其内容用于模型训练的担忧。虽然 Internet Archive 长期以来通过其“Wayback Machine”提供网页存档服务，但 AI 抓取工具开始滥用该平台，大规模下载存档的新闻内容。出版商认为，这种未经授权的抓取和用于商业 AI 训练的行为侵犯了其版权，因此他们通过设置 robots.txt 文件或直接阻止来自 Internet Archive IP 地址的请求，以切断 AI 公司获取其数据的途径。
 
 ---
 
 ### 2: Internet Archive 在这个事件中扮演了什么角色？
-
-2: Internet Archive 在这个事件中扮演了什么角色？
 
 **A**: Internet Archive 是一个非营利性的数字图书馆，致力于提供“通用获取知识”的服务。在这个事件中，它处于一种尴尬的中间位置。一方面，它旨在保存互联网的历史记录，包括新闻网站；另一方面，它成为了 AI 抓取者的目标。出版商指出，由于 Internet Archive 的存档页面容易被爬虫访问，它实际上成为了 AI 公司获取受版权保护内容的“中转站”。Internet Archive 曾表示反对大规模抓取，并试图通过技术手段（如禁用 AI 爬虫的访问）来缓解出版商的担忧，但部分出版商仍然选择直接封锁其访问。
 
@@ -369,15 +359,11 @@ check_robots_txt("https://example.com")
 
 ### 3: 这种限制访问对普通用户有什么影响？
 
-3: 这种限制访问对普通用户有什么影响？
-
 **A**: 对普通用户最直接的影响是，他们将无法通过 Internet Archive 的 Wayback Machine 访问被限制出版商的历史新闻页面。当用户尝试查看某篇过期的新闻报道或已被删除的文章时，可能会遇到“Blocked”或“Unavailable”的提示。这意味着互联网的一部分历史记录可能会因此永久缺失，用户失去了查阅过去新闻的重要渠道，这对于依赖网络存档进行研究、验证事实或回顾历史的个人和机构来说是一个重大损失。
 
 ---
 
 ### 4: 什么是 robots.txt 协议，它在此事件中起什么作用？
-
-4: 什么是 robots.txt 协议，它在此事件中起什么作用？
 
 **A**: Robots.txt 是一种网站用来与网络爬虫（包括搜索引擎和 AI 抓取工具）进行通信的标准协议文件。网站所有者通过该文件声明哪些部分允许被抓取，哪些部分禁止被抓取。在此事件中，新闻出版商利用 robots.txt 协议（或通过服务器配置直接屏蔽 IP）明确禁止 Internet Archive 对其网站内容进行进一步的存档或展示。由于 Internet Archive 通常尊重网站的 robots.txt 指令，一旦收到该指令，它就会停止显示相关的存档页面，从而导致用户无法访问。
 
@@ -385,15 +371,11 @@ check_robots_txt("https://example.com")
 
 ### 5: AI 抓取与搜索引擎抓取有什么区别，为何出版商对此反应如此强烈？
 
-5: AI 抓取与搜索引擎抓取有什么区别，为何出版商对此反应如此强烈？
-
 **A**: 传统的搜索引擎抓取（如 Google 或 Bing）通常是为了建立索引，帮助用户找到原始内容并引导流量回出版商的网站，这是一种互利的生态。然而，生成式 AI 的抓取（如 ChatGPT 或其他大语言模型）是为了复制并学习数据，用于生成新的回答。出版商担心，AI 模型会直接利用其高质量的新闻内容生成答案，而不再向原始来源提供流量或引用，从而破坏了传统的商业模式，导致其核心资产（内容）被无偿占用。
 
 ---
 
 ### 6: 新闻出版商与 AI 公司之间的法律争议核心是什么？
-
-6: 新闻出版商与 AI 公司之间的法律争议核心是什么？
 
 **A**: 核心争议在于“合理使用”原则与版权侵权之间的界限。AI 公司通常认为，为了训练模型而公开抓取互联网数据属于合理使用，类似于人类阅读书籍学习知识。然而，新闻出版商则主张，AI 公司大规模、商业性地使用其受版权保护的内容用于训练竞争性产品，并不属于合理使用，而是直接的版权侵权。此次限制 Internet Archive 是出版商在法律诉讼之外，采取的一种通过技术手段保护自身数据资产的防御性措施。
 ## 引用

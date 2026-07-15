@@ -16,8 +16,8 @@ categories:
 - AI 工程
 - 系统与基础设施
 source: blogs_podcasts
-description: 项目概述 Amazon Bedrock Projects 让用户把 Bedrock 模型的推理费用映射到具体业务项目或工作负载。通过 Projects，可以在
-  AWS 资源层面统一标记，从而在计费报告中看到每个项目的实际消耗。 标记策略设计 1. **业务维度划分**：按业务线、产品、环境（开发/测试/生产）等设定项目
+description: 使用 Amazon Bedrock Projects，您可以将推理成本归因于特定工作负载，并在 AWS Cost Explorer 和 AWS
+  Data Exports 中进行分析。在这篇文章中，您将学习如何端到端设置 Projects，从设计标签策略到分析成本。 在云上运行生成式AI模型时，费用往往难以直接归属到具体业务场景。
 external_url: https://aws.amazon.com/blogs/machine-learning/manage-ai-costs-with-amazon-bedrock-projects
 scenarios:
 - Web应用开发

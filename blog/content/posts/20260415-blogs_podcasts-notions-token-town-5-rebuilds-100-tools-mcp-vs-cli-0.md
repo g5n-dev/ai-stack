@@ -15,9 +15,8 @@ tags:
 categories:
 - 产品与创业
 source: blogs_podcasts
-description: 背景 Notion 联合创始人 Simon Last 与 AI 负责人 Sarah Sachs 在公开活动中透露，公司内部代号为 “Token
-  Town” 的项目已经进入第 5 次完整重建，累计推出 100 多款工具和插件，旨在把 AI 代理真正落地到知识工作场景，让用户能够“即装即用”。 关键要点 -
-  **5 次重建
+description: Notion的联合创始人兼AI负责人首次揭开神秘面纱，畅谈这款世界一直在等待的知识工作AI智能体终于即将面世。 Notion的两位核心人物——联合创始人Simon
+  Last与AI负责人Sarah Sachs——首次公开讨论其最新的Token Town项目。
 external_url: https://www.latent.space/p/notion
 scenarios:
 - AI/ML项目

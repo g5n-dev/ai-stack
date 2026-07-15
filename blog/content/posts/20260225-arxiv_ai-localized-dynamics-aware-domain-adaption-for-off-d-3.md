@@ -16,8 +16,7 @@ categories:
 - 论文
 - AI 工程
 source: arxiv
-description: 本文介绍了一种名为 **LoDADA（Localized Dynamics-Aware Domain Adaptation，局部动态感知域适应）**
-  的新方法，旨在解决 **Off-Dynamics 离线强化学习** 问题。 **背景与问题：** Off-Dynamics 离线强化学习的目标是利用源域（Source，数
+description: 针对离线强化学习中源域与目标域动力学不匹配的难题，本文提出了 LoDADA 方法，旨在利用源域丰富数据提升目标域策略表现。该方法通过引入局部动力学感知机制进行域适应，以缓解现有方法在处理异构动力学分布时的局限性。虽然摘要未详述具体技术细节，无法从摘要确认其计算复杂度，但该工作为解决跨动力学场景下的数据稀缺问题提供了新思路。
 external_url: http://arxiv.org/abs/2602.21072v1
 scenarios:
 - Web应用开发

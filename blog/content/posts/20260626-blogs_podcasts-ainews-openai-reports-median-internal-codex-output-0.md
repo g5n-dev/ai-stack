@@ -8,7 +8,8 @@ tags:
 categories:
 - 效率与方法论
 source: blogs_podcasts
-description: 自2025年11月起，OpenAI内部Codex在各部门的输出token中位数大幅增长：研发提升约56倍，客服约32倍，工程约27倍，法务约13倍。增长最高的是研发，说明研究团队对代码生成、文献检索等任务高度依赖；客服和工程增幅显著，表明AI已渗透到日常工作和项目开发；法务虽增幅相对较小，但仍有两位数增长，显示出在合同
+description: 正在发生。 OpenAI 近期披露的内部数据显示，Codex 在研发、客服、工程和法律等部门的生成 token 中位数已从去年11月起实现十倍以上的增长，尤其在研发部门高达56倍。这一趋势反映出
+  AI 编程助手正从实验阶段向实际业务场景快速渗透，成为提升工作效率的关键工具。对企业决策者和技术团队而言，了解这些部门的使用规模和增长路径，有助于评估 AI 在自身组织中的落地潜力与风险。
 external_url: https://www.latent.space/p/ainews-openai-reports-median-internal
 scenarios:
 - Web应用开发

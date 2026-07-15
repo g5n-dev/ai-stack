@@ -16,8 +16,8 @@ categories:
 - 大模型
 - 系统与基础设施
 source: blogs_podcasts
-description: '**P-EAGLE：vLLM 中实现更快 LLM 推理的并行推测解码** 本文介绍了 **P-EAGLE**（Parallel EAGLE），这是一种旨在加速大语言模型（LLM）推理速度的新技术。目前，P-EAGLE
-  已成功集成到 vLLM 框架中（从 v0.16.0 版本开始，通过 PR 32887 合入），用户可以'
+description: 在本文中，我们解释了 P-EAGLE 的工作原理、我们如何从 v0.16.0（PR#32887）起将其集成到 vLLM，以及如何使用我们提供的预训练检查点进行服务化部署。
+  大语言模型的推理速度与成本始终是工程落地的核心挑战。本文介绍 P-EAGLE，这是一种通过并行推测解码技术加速推理的方法，并已从 vLLM v0.16.0 版本起正式集成。
 external_url: https://aws.amazon.com/blogs/machine-learning/p-eagle-faster-llm-inference-with-parallel-speculative-decoding-in-vllm
 scenarios:
 - 大语言模型

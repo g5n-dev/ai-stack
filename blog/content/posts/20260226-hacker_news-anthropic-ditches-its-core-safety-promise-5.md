@@ -17,7 +17,8 @@ categories:
 - 安全
 source: hacker_news
 description: Anthropic 近期决定不再坚持其“不训练客户数据”的核心承诺，这一转变标志着该公司在商业化与隐私保护之间做出了新的权衡。对于依赖 Claude
-  进行敏感内容创作的企业而言，这不仅是服务条款的更新，更意味着数据资产的风险敞口正在发生变化。本文将详细剖析 Anthropic 政策调整的具体内容及其背后的商业逻辑，并据
+  进行敏感内容创作的企业而言，这不仅是服务条款的更新，更意味着数据资产的风险敞口正在发生变化。本文将详细剖析 Anthropic 政策调整的具体内容及其背后的商业逻辑，并据此为读者提供在生成式
+  AI 选型中规避隐私风险的实用建议。
 external_url: https://www.cnn.com/2026/02/25/tech/anthropic-safety-policy-change
 scenarios:
 - AI/ML项目

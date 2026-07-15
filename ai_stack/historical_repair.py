@@ -1270,6 +1270,13 @@ def _active_provenance_metadata(metadata: Mapping[str, Any], body: str) -> dict[
     """Label legacy output honestly without claiming a missing source snapshot."""
 
     result = copy.deepcopy(dict(metadata))
+    declared_mode = str(result.get("content_mode") or "").strip().casefold()
+    if declared_mode == "source_brief" and is_source_brief(result, body):
+        # Current source briefs already carry an immutable source snapshot and
+        # support score.  Historical normalization must never downgrade that
+        # evidence-backed provenance to ``legacy_no_snapshot``.
+        result.pop("source_provenance", None)
+        return result
     if is_source_brief(result, body):
         result["content_mode"] = "legacy_source_brief"
         result["publication_tier"] = "C"

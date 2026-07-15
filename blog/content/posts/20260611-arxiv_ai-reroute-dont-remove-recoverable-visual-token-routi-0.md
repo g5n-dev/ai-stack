@@ -17,7 +17,7 @@ categories:
 - 论文
 source: arxiv
 description: 视觉语言模型将图像投影为数百至上千个视觉 token，使解码阶段的注意力计算和 KV‑cache 存储成本显著上升。现有 token 精简方法大多遵循“评分‑删除”范式：先对
-  token 打分，保留得分最高的子集，永久丢弃其余 token。然而，这种不可逆操作容易导致误删——在浅层被低估的 token 可能在深层重新变
+  token 打分，保留得分最高的子集，永久丢弃其余 token。然而，这种不可逆操作容易导致误删——在浅层被低估的 token 可能在深层重新变得重要，尤其是涉及定位（grounding）的查询。
 external_url: http://arxiv.org/abs/2606.12412v1
 scenarios:
 - Web应用开发

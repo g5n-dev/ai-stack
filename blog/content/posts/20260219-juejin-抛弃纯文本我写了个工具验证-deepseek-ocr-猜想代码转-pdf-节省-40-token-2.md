@@ -16,8 +16,8 @@ categories:
 - AI 工程
 - 开发工具
 source: juejin
-description: 这篇文章总结如下： **核心观点：** 对于复杂代码模块的 AI 辅助重构，直接复制纯文本代码会消耗大量 Token 并容易超出上下文限制。作者通过开发一个工具验证了“**DeepSeek-OCR
-  猜想**”：将代码转换为 **PDF 图片**后，利用 OCR 能力让 AI 读取，可比直接传输文本节省 **40% 的
+description: 面对复杂代码重构时，上下文窗口的限制常让 AI 辅助编程陷入困境。作者通过实测发现，将代码转换为 PDF 并利用 DeepSeek-OCR
+  进行识别，竟能在保留结构信息的同时节省约 40% 的 Token 消耗。本文将详细拆解这一非传统的优化思路，并分享自研工具的验证过程，为你提供突破 AI 上下文瓶颈的另一种可行解法。
 external_url: https://juejin.cn/post/7606732842490331151
 scenarios:
 - AI/ML项目

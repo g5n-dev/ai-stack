@@ -16,8 +16,9 @@ categories:
 - AI 工程
 - 系统与基础设施
 source: blogs_podcasts
-description: 随着企业数字化转型的深入，如何打破数据孤岛并实现业务流程的自动化与智能化，已成为技术团队面临的核心挑战。本文将基于客户代理与知识引擎（CAKE）的真实实现，详细解析如何利用
-  Amazon Bedrock AgentCore 构建统一智能系统。通过阅读本文，您将掌握从架构设计到落地的关键路径，了解如何高效整合分散的数据与
+description: 在本文中，我们通过客户代理与知识引擎（CAKE）的真实实现，展示了如何利用 Amazon Bedrock AgentCore 构建统一智能系统。
+  随着企业数字化转型的深入，如何打破数据孤岛并实现业务流程的自动化与智能化，已成为技术团队面临的核心挑战。本文将基于客户代理与知识引擎（CAKE）的真实实现，详细解析如何利用
+  Amazon Bedrock AgentCore 构建统一智能系统。
 external_url: https://aws.amazon.com/blogs/machine-learning/build-unified-intelligence-with-amazon-bedrock-agentcore
 scenarios:
 - 大语言模型

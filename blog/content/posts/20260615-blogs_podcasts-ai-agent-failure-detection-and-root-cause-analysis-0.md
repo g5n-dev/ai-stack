@@ -15,8 +15,8 @@ tags:
 categories:
 - AI 工程
 source: blogs_podcasts
-description: 调用检测函数 直接调用 Strands Evals 提供的 detector 函数，将待测 AI Agent 的运行日志或轨迹传入，即可获得诊断结果。
-  结构化输出解读 - **故障分类与置信度**：输出为明确的错误类别（如意图误判、工具调用失败等），并附带 0‑1 的置信度分值，便于快速判断错误可信度。 - **因果链
+description: 在这篇文章中，我们将引导你调用检测函数来诊断真实场景中的 agent 故障。你将学习如何解读其结构化输出：带有置信度分数的分类故障、将根本原因与下游症状相关联的因果链，以及明确指出修复属于系统提示词还是工具定义的修复建议。你还将学习如何将检测集成到评估流程中，实现每次测试运行时的自动化诊断。
+  在实际应用场景中，AI Agent 常常会遇到各类故障，而缺乏系统化的诊断手段往往会让问题定位变得困难。
 external_url: https://aws.amazon.com/blogs/machine-learning/ai-agent-failure-detection-and-root-cause-analysis-with-strands-evals
 scenarios:
 - AI/ML项目

@@ -17,7 +17,7 @@ categories:
 - AI 工程
 source: hacker_news
 description: Phi-4-reasoning-vision 的发布标志着多模态推理模型训练的一次重要尝试，其核心在于如何将视觉感知与深度逻辑推理能力有机结合。本文深入探讨了该模型在训练数据筛选与架构设计上的关键决策，揭示了构建具备高阶认知能力
-  AI 的技术路径。通过解析其背后的经验与挑战，读者可以更清晰地理解当前多模态大模型的局限性
+  AI 的技术路径。通过解析其背后的经验与挑战，读者可以更清晰地理解当前多模态大模型的局限性与未来优化的方向。
 external_url: https://www.microsoft.com/en-us/research/blog/phi-4-reasoning-vision-and-the-lessons-of-training-a-multimodal-reasoning-model
 scenarios:
 - 大语言模型

@@ -16,9 +16,8 @@ categories:
 - AI 工程
 - 大模型
 source: blogs_podcasts
-description: 亚马逊如何利用 Amazon Nova 模型自动化新运营中心的运营准备测试 摘要 本文介绍了亚马逊如何通过 Amazon Bedrock
-  中的 Amazon Nova 模型，构建基于 AI 的图像识别解决方案，用于自动化检测和验证新运营中心内的模块组件。该方法显著减少了人工验证的工作量，并提高了准确性。
-  背景与挑战 每
+description: 在本篇文章中，我们将探讨如何利用 Amazon Bedrock 中的 Amazon Nova 来实现一套 AI 驱动的图像识别方案，以自动化检测和验证模块组件，从而大幅减少人工验证工作量并提升准确度。
+  随着亚马逊物流网络的持续扩张，新运营中心的投产准备面临着巨大的组件验证挑战。
 external_url: https://aws.amazon.com/blogs/machine-learning/how-amazon-uses-amazon-nova-models-to-automate-operational-readiness-testing-for-new-fulfillment-centers
 scenarios:
 - AI/ML项目

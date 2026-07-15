@@ -16,8 +16,8 @@ categories:
 - 大模型
 - 安全
 source: blogs_podcasts
-description: '**研究总结：AI聊天机器人向弱势用户提供的信息准确性较低** **核心发现** 麻省理工学院建设性交流中心的研究表明，主流人工智能模型在服务于特定弱势群体时表现较差。这些群体包括英语水平较低、受教育程度较低以及非美国本土的用户。
-  **主要结论** 该研究揭示了AI技术在使用中存在显著的不平等现象，与优势用户相比，弱势'
+description: 来自MIT建设性传播中心的研究发现，领先的AI模型对英语水平较低、受教育程度较低以及非美国背景的用户表现较差。 研究表明，主流 AI 聊天机器人在面对英语水平较低、受教育程度较低或非美国背景的用户时，往往会提供准确度较低的信息。这一发现揭示了当前
+  AI 技术在公平性方面存在的显著缺陷，即算法偏见可能无意中加剧弱势群体面临的信息鸿沟。
 external_url: https://news.mit.edu/2026/study-ai-chatbots-provide-less-accurate-information-vulnerable-users-0219
 scenarios:
 - AI/ML项目

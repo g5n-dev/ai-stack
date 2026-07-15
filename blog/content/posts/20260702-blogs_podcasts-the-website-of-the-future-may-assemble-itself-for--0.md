@@ -16,9 +16,8 @@ categories:
 - 大模型
 - 前端
 source: blogs_podcasts
-description: 背景 用户对个性化体验的需求日益增长，传统预先生成的静态页面已难以精准匹配意图。 技术原理 Adobe 在 AIEWF 上展示的“agentic
-  sites”利用大语言模型和意图推断引擎，在访问时实时分析用户的搜索意图、行为上下文和个人偏好，动态组合页面结构、文字、图片和交互元素。页面不再是预先编辑好的文档，而是由
-  A
+description: Adobe正在试验"代理站点"——能够根据每位用户的意图生成页面的技术。在AIEWF，我们与Carlos Sanchez探讨了网络的未来。
+  Adobe正尝试一种能够根据每位访问者的意图自动生成页面的技术，这种被称为“代理站点”的概念正从实验室走向行业视野。本文在AIEWF大会上与Carlos Sanchez对话，探讨该技术的实现原理、当前挑战以及对未来网络体验的潜在影响。
 external_url: https://www.latent.space/p/the-website-of-the-future
 scenarios:
 - 大语言模型

@@ -123,11 +123,11 @@ def move_card(board, card_id, from_list_id, to_list_id):
     # 查找源列表和目标列表
     from_list = next((lst for lst in board["lists"] if lst["id"] == from_list_id), None)
     to_list = next((lst for lst in board["lists"] if lst["id"] == to_list_id), None)
-    
+
     if not from_list or not to_list:
         print("错误：找不到指定的列表")
         return False
-    
+
     # 查找并移动卡片
     card = next((c for c in from_list["cards"] if c["id"] == card_id), None)
     if card:
@@ -159,7 +159,7 @@ def assign_task(board, card_id, agent_id):
             card["assignee"] = agent_id
             print(f"已将任务 '{card['title']}' 分配给 {agent_id}")
             return True
-    
+
     print("错误：找不到指定的任务卡片")
     return False
 
@@ -173,8 +173,6 @@ print(f"任务2当前负责人：{board['lists'][0]['cards'][1]['assignee']}")
 ## 案例研究
 
 ### 1：某跨境电商运营团队
-
- 1：某跨境电商运营团队
 
 **背景**:
 该团队主要负责三个海外市场的社交媒体运营和客服工作。随着业务增长，每天需要处理大量的用户评论、私信以及订单异常查询。团队原本使用 Trello 进行人工任务分配，但由于信息过载，客服人员经常遗漏重要用户反馈，导致响应时间过长，影响店铺评分。
@@ -191,8 +189,6 @@ print(f"任务2当前负责人：{board['lists'][0]['cards'][1]['assignee']}")
 ---
 
 ### 2：中型软件研发团队的自动化测试流程
-
- 2：中型软件研发团队的自动化测试流程
 
 **背景**:
 一家拥有 30 名开发人员的 SaaS 公司，采用敏捷开发模式。每次代码提交后，都需要进行一系列的自动化测试、代码审计以及部署准备。此前，这些流程分散在 Jenkins、GitLab 和邮件通知中，缺乏统一的可视化视图，导致测试失败后的责任界定不清，修复流程混乱。

@@ -16,8 +16,8 @@ categories:
 - AI 工程
 - 产品与创业
 source: blogs_podcasts
-description: LinqAlpha 是一个总部位于波士顿的多代理人工智能系统，专为机构投资者设计。该系统通过支持公司筛选、报告生成、股票价格催化剂映射等工作流程，帮助机构投资者提高效率。最近，LinqAlpha
-  推出了一款名为“Devil’s Advocate”（魔鬼代言人）的新 AI 代理，用于对投资想法进行压力测试。本文分享了 L
+description: LinqAlpha 是一个总部位于波士顿的多代理 AI 系统，专为机构投资者打造。该系统支持并简化了从公司筛选、研报生成、股价催化剂映射到如今通过名为“魔鬼代言人”的新
+  AI 代理对投资思路进行压力测试等一系列代理式工作流。在本文中，我们将分享 LinqAlpha 如何利用 Amazon Bedrock 构建并扩展魔鬼代言人。
 external_url: https://aws.amazon.com/blogs/machine-learning/how-linqalpha-assesses-investment-theses-using-devils-advocate-on-amazon-bedrock
 scenarios:
 - AI/ML项目

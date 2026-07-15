@@ -17,7 +17,7 @@ categories:
 - AI 工程
 source: juejin
 description: 在 AI 项目的实际开发中，频繁切换上下文或处理紧急 Bug 往往会打断现有的编码思路，导致效率降低。Git Worktree 提供了一种无需频繁分支切换即可并行处理多任务的机制，能够有效隔离不同阶段的代码状态。本文将结合
-  AI 开发场景，详细介绍如何利用 Git Worktree 搭建高效的并行工作流，帮助你在保持主
+  AI 开发场景，详细介绍如何利用 Git Worktree 搭建高效的并行工作流，帮助你在保持主分支稳定的同时，从容应对多线并行的开发需求。
 external_url: https://juejin.cn/post/7615074040147394570
 scenarios:
 - AI/ML项目

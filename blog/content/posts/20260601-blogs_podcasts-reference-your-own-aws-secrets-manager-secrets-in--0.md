@@ -16,8 +16,9 @@ categories:
 - AI 工程
 - 安全
 source: blogs_podcasts
-description: 功能概述 亚马逊云服务在AgentCore Identity中新增了引用AWS Secrets Manager密钥的能力。用户可以在AgentCore直接使用已在Secrets
-  Manager中预先配置好的密钥，无需在AgentCore中重新创建，从而复用已有的密钥管理流程。 关键优势 - 完全掌控密钥的加密配置、轮换
+description: 今天，我们很高兴地宣布在AWS Secrets Manager中为AgentCore Identity提供了引用密钥的功能，这样您就可以从Secrets
+  Manager引用自己预先配置的密钥，并保留对其管理方式的完全控制权。利用此功能，您可以将组织现有的密钥治理流程扩展到AgentCore。您可以提供现有的、预先配置的AWS
+  Secrets Manager密钥，以用于您的凭证提供者资源。
 external_url: https://aws.amazon.com/blogs/machine-learning/reference-your-own-aws-secrets-manager-secrets-in-amazon-bedrock-agentcore-identity
 scenarios:
 - AI/ML项目

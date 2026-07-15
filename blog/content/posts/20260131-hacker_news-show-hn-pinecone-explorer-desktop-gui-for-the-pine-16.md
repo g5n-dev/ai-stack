@@ -96,7 +96,7 @@ import numpy as np
 def setup_pinecone_index():
     # 初始化Pinecone连接（需要先设置环境变量PINECONE_API_KEY）
     pinecone.init(api_key="your-api-key", environment="us-west1-gcp")
-    
+
     # 创建索引（维度=128，使用余弦相似度）
     index_name = "example-index"
     if index_name not in pinecone.list_indexes():
@@ -105,23 +105,23 @@ def setup_pinecone_index():
             dimension=128,
             metric="cosine"
         )
-    
+
     # 连接到索引
     index = pinecone.Index(index_name)
-    
+
     # 生成128维随机向量数据
     vectors = [
         ("vec1", np.random.rand(128).tolist()),
         ("vec2", np.random.rand(128).tolist()),
         ("vec3", np.random.rand(128).tolist())
     ]
-    
+
     # 批量插入向量（可添加元数据）
     index.upsert(
         vectors=vectors,
         namespace="example-namespace"
     )
-    
+
     print(f"成功创建索引 {index_name} 并插入了 {len(vectors)} 条向量数据")
 
 # 说明：这个示例展示了如何使用Pinecone Python SDK创建索引并插入向量数据，适合需要快速搭建向量数据库的场景。
@@ -148,7 +148,7 @@ return results
 # 示例3：更新向量元数据和删除操作
 def manage_vectors():
     index = pinecone.Index("example-index")
-    
+
     # 更新向量的元数据
     index.update(
         id="vec1",
@@ -158,14 +158,14 @@ def manage_vectors():
             "last_updated": "2023-11-15"
         }
     )
-    
+
     # 根据ID删除特定向量
     index.delete(ids=["vec2"], namespace="example-namespace")
-    
+
     # 获取索引统计信息
     stats = index.describe_index_stats()
     print(f"当前索引包含 {stats['total_vector_count']} 个向量")
-    
+
     return stats
 
 # 说明：这个示例展示了如何更新向量元数据和执行删除操作，这些是维护向量数据库时常用的管理功能。
@@ -175,8 +175,6 @@ def manage_vectors():
 ## 案例研究
 
 ### 1：AIGC 知识库初创团队
-
- 1：AIGC 知识库初创团队
 
 **背景**:
 一家专注于构建垂直领域（如法律或医疗）大语言模型（LLM）应用的初创团队。他们的核心产品是基于 RAG（检索增强生成）架构的智能问答系统，后端使用 Pinecone 作为向量数据库存储数百万条切片后的文档向量。
@@ -194,8 +192,6 @@ def manage_vectors():
 ---
 
 ### 2：企业级 SaaS 平台的运维团队
-
- 2：企业级 SaaS 平台的运维团队
 
 **背景**:
 某中大型 SaaS 公司，其客户支持系统集成了基于语义搜索的历史工单检索功能。随着业务扩展，Pinecone 数据库中积累了多个索引，分别对应不同客户群或不同语言的数据。
@@ -318,15 +314,11 @@ def manage_vectors():
 
 ### 1: Pinecone Explorer 是什么？它解决了什么问题？
 
-1: Pinecone Explorer 是什么？它解决了什么问题？
-
 **A**: Pinecone Explorer 是一个专为 Pinecone 向量数据库设计的桌面图形用户界面（GUI）工具。Pinecone 原本主要通过 API 和命令行进行交互，这在调试、数据预览或元数据管理时往往比较繁琐且不直观。Pinecone Explorer 解决了这个问题，它提供了一个可视化的界面，让开发者能够直接在桌面上浏览索引、查看向量数据、执行相似性搜索以及管理元数据，从而极大地提高了开发和调试向量数据库应用的效率。
 
 ---
 
 ### 2: 该工具支持哪些操作系统？如何安装？
-
-2: 该工具支持哪些操作系统？如何安装？
 
 **A**: 作为一款桌面应用，Pinecone Explorer 通常会打包为跨平台的应用程序。根据此类开源项目的常见发布方式，它一般支持 Windows、macOS 和 Linux 系统。安装通常是通过从项目的 GitHub Release 页面下载对应操作系统的安装包（如 .exe, .dmg 或 .AppImage）来完成的。具体的安装步骤和依赖要求请参考项目主页的 README 文档。
 
@@ -334,15 +326,11 @@ def manage_vectors():
 
 ### 3: 连接到 Pinecone 需要什么信息？是否安全？
 
-3: 连接到 Pinecone 需要什么信息？是否安全？
-
 **A**: 要使用 Pinecone Explorer，你需要提供你的 Pinecone API Key 和环境名称。这些信息通常可以在你的 Pinecone 控制台中找到。关于安全性，Pinecone Explorer 作为一个桌面客户端，你的 API 凭据通常会被存储在本地配置中。建议仅授予该工具必要的权限，并在公共代码库中谨慎处理包含 API Key 的配置文件。作为一个开源工具，你也可以通过审计源代码来确认其数据处理方式是否符合你的安全标准。
 
 ---
 
 ### 4: 我可以直接在 GUI 中编辑或删除向量吗？
-
-4: 我可以直接在 GUI 中编辑或删除向量吗？
 
 **A**: Pinecone Explorer 的核心功能在于“浏览”和“查询”。你可以使用它来可视化索引内容、过滤数据以及执行语义搜索来验证向量质量。虽然部分高级 GUI 可能支持简单的元数据修改或单条数据删除，但主要用途还是作为查看和调试的辅助工具。大规模的数据写入、更新或删除操作，通常建议还是通过官方 SDK 或 API 脚本来执行，以确保事务的一致性和性能。
 
@@ -350,15 +338,11 @@ def manage_vectors():
 
 ### 5: 它是否支持 Pinecone 的所有功能（如 Pod-based 和 Serverless 索引）？
 
-5: 它是否支持 Pinecone 的所有功能（如 Pod-based 和 Serverless 索引）？
-
 **A**: Pinecone Explorer 旨在与 Pinecone 的 API 保持同步。它通常支持连接到不同类型的索引（包括基于 Pod 的索引和较新的 Serverless 索引）。你可以通过它查看索引的统计信息、向量维度以及命名空间等。然而，对于一些非常新的 API 特性或特定的企业级功能，可能需要等待工具的后续更新才能完全支持。
 
 ---
 
 ### 6: 如果我在使用过程中遇到 Bug 或有新功能建议，该如何反馈？
-
-6: 如果我在使用过程中遇到 Bug 或有新功能建议，该如何反馈？
 
 **A**: 由于这是一个发布在 Hacker News 上的 "Show HN" 项目，它通常托管在 GitHub 上。如果你遇到 Bug 或有功能建议，最直接有效的方式是去该项目的 GitHub 仓库提交 Issue。在提交时，请详细描述你的操作环境、复现步骤以及预期的行为，这将帮助开发者更快地定位和解决问题。
 ## 引用

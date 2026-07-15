@@ -16,8 +16,8 @@ categories:
 - 大模型
 - 产品与创业
 source: blogs_podcasts
-description: 过去一周，AI 行业发展节奏显著加快，头部大模型厂商在技术迭代与资本估值层面均有大动作。本文梳理了 Gemini 3 Deep Think、Anthropic
-  最新估值传闻、GPT-5.3-Codex Spark 以及 MiniMax M2.5 等核心动态。通过阅读，您可以快速掌握这些技术演进背后的商业逻辑，并建立对前
+description: 事情太多了！ 过去一周，AI 行业发展节奏显著加快，头部大模型厂商在技术迭代与资本估值层面均有大动作。本文梳理了 Gemini 3 Deep
+  Think、Anthropic 最新估值传闻、GPT-5.3-Codex Spark 以及 MiniMax M2.5 等核心动态。通过阅读，您可以快速掌握这些技术演进背后的商业逻辑，并建立对前沿模型能力的清晰认知。
 external_url: https://www.latent.space/p/ainews-new-gemini-3-deep-think-anthropic
 scenarios:
 - Web应用开发

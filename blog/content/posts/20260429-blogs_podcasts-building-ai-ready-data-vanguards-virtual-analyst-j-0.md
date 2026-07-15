@@ -16,9 +16,8 @@ categories:
 - 数据
 - AI 工程
 source: blogs_podcasts
-description: 八项AI数据准备原则 - 数据完整性与一致性 - 及时更新与时效性 - 统一的数据治理与合规 - 元数据登记与数据目录 - 数据血缘追踪
-  - 访问安全与权限控制 - 开放可访问与自助服务 - 可观测性与监控 关键AWS服务 - Amazon S3（数据湖存储） - AWS Glue（数据目录与ETL）
-  - Amazon
+description: 在这篇文章中，您将了解 Vanguard 如何通过关注 AI 就绪数据的八个指导原则、为其实施提供支持的 AWS 服务，以及他们取得的可衡量业务成果来构建其虚拟分析师解决方案。
+  随着企业在各业务线加速AI落地，数据质量与治理已成为决定项目成败的核心因素。
 external_url: https://aws.amazon.com/blogs/machine-learning/building-ai-ready-data-vanguards-virtual-analyst-journey
 scenarios:
 - AI/ML项目

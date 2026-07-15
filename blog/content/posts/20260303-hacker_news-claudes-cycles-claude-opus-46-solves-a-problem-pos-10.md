@@ -17,7 +17,7 @@ categories:
 - 论文
 source: hacker_news
 description: 大型语言模型的迭代并非总是线性的性能堆叠，有时回归基础算法反而能突破瓶颈。本文探讨了 Claude Opus 4.6 如何通过独特的架构设计，攻克了计算机科学先驱
-  Donald Knuth 提出的经典难题。通过阅读这篇文章，读者可以了解该模型在数学推理与逻辑验证层面的具体改进，以及这种技术路径对提升模型确定性的实际意义
+  Donald Knuth 提出的经典难题。通过阅读这篇文章，读者可以了解该模型在数学推理与逻辑验证层面的具体改进，以及这种技术路径对提升模型确定性的实际意义。
 external_url: https://www-cs-faculty.stanford.edu/~knuth/papers/claude-cycles.pdf
 scenarios:
 - 大语言模型

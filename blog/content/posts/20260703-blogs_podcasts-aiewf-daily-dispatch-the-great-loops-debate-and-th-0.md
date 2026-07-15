@@ -15,8 +15,7 @@ tags:
 categories:
 - 大模型
 source: blogs_podcasts
-description: 议程概览 AIEWF（AI Engineer World’s Fair）在闭幕阶段安排了三大环节：围绕“loops”的辩论、工程现状报告以及聚焦“接下来要构建什么”的闭幕主题演讲。
-  “Loops”辩论核心 - 辩论围绕 AI 系统中**循环结构**的设计意义展开，主要争议点包括：循环是增强模型递归能力的必要手段，还是导
+description: AI工程师世界博览会以一场关于循环的辩论、一份关于AI工程现状的报告，以及聚焦于下一步构建方向的闭幕主题演讲落下帷幕。 在刚刚闭幕的AI工程师世界博览会上，关于循环（loops）在系统设计中的角色引发了一场激烈的辩论。与此同时发布的AI工程现状报告揭示了行业在工具链、协作模式以及人才储备等方面的关键趋势，为技术决策提供了数据支撑。
 external_url: https://www.latent.space/p/aiewf-daily-dispatch-locomotives
 scenarios:
 - Web应用开发

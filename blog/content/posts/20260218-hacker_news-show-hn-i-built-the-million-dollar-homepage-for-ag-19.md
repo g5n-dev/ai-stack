@@ -144,10 +144,10 @@ def purchase_ad(grid, x, y, owner, image_url, link_url):
     """
     if (x, y) not in grid:
         return False, "坐标无效"
-    
+
     if grid[(x, y)]['owner'] is not None:
         return False, "该位置已被购买"
-    
+
     # 更新网格信息
     grid[(x, y)].update({
         'owner': owner,
@@ -158,11 +158,11 @@ def purchase_ad(grid, x, y, owner, image_url, link_url):
 
 # 使用示例
 success, message = purchase_ad(
-    grid, 
-    x=0, 
-    y=0, 
-    owner="Example Corp", 
-    image_url="https://example.com/ad.jpg", 
+    grid,
+    x=0,
+    y=0,
+    owner="Example Corp",
+    image_url="https://example.com/ad.jpg",
     link_url="https://example.com"
 )
 print(message)  # 输出: 购买成功
@@ -200,19 +200,19 @@ def generate_html(grid, output_file="index.html"):
         <h1>Million Dollar Homepage</h1>
         <div class="pixel-grid">
     """
-    
+
     for (x, y), data in grid.items():
         if data['owner'] is not None:
             html += f'<a href="{data["link_url"]}" class="pixel" style="background-image: url(\'{data["image_url"]}\');"></a>'
         else:
             html += '<div class="pixel"></div>'
-    
+
     html += """
         </div>
     </body>
     </html>
     """
-    
+
     with open(output_file, 'w') as f:
         f.write(html)
 
@@ -225,8 +225,6 @@ print("HTML文件已生成")
 ## 案例研究
 
 ### 1：DevOps 自动化工具供应商 OpsFlow
-
- 1：DevOps 自动化工具供应商 OpsFlow
 
 **背景**:
 OpsFlow 是一家为企业 Kubernetes 环境提供自动化运维解决方案的初创公司。随着大语言模型（LLM）的兴起，他们开发了一款能够自动诊断集群故障的 AI Agent，但面临获客成本高、开发者信任度低的问题。
@@ -246,8 +244,6 @@ OpsFlow 在 "Agent Grid"（类似于百万美元主页的 Agent 版本）平台�
 
 ### 2：Web3 智能投顾助手 DefiMind
 
- 2：Web3 智能投顾助手 DefiMind
-
 **背景**:
 DefiMind 是一个基于 AI 的去中心化金融投资助手，旨在帮助用户分析链上数据并推荐投资策略。由于 Web3 领域充斥着大量诈骗项目，用户对新项目的信任度极低，且 DefiMind 缺乏预算去在 CoinGecko 等大平台进行昂贵的广告位投放。
 
@@ -265,8 +261,6 @@ DefiMind 利用“Agent Million Dollar Homepage”的概念，在一个由 AI Ag
 ---
 
 ### 3：独立开发者资源库 IndieHackers AI
-
- 3：独立开发者资源库 IndieHackers AI
 
 **背景**:
 一位全栈独立开发者开发了一个名为 "GPT-Pilot" 的 Agent，专门用于根据简短的描述自动生成全栈应用的脚手架代码。他希望将这个 Agent 推广给其他独立开发者，但个人没有营销预算，也缺乏维护复杂官网的时间。
@@ -286,7 +280,7 @@ DefiMind 利用“Agent Million Dollar Homepage”的概念，在一个由 AI Ag
 
 ### 实践 1：极简主义的像素化网格布局设计
 
-**说明**: 
+**说明**:
 该项目复刻了经典的 "Million Dollar Homepage" 概念，采用基于像素网格的布局。这种设计在视觉上具有极高的辨识度，且能容纳大量内容单元。对于展示 Agent（智能体）而言，这种布局允许在有限的屏幕空间内展示成百上千个 Agent 的缩略图或图标，形成强烈的视觉冲击力。
 
 **实施步骤**:
@@ -295,14 +289,14 @@ DefiMind 利用“Agent Million Dollar Homepage”的概念，在一个由 AI Ag
 3. 确保网格在不同屏幕尺寸下具有响应式表现，允许容器横向滚动或自适应缩放。
 4. 为每个网格单元配置独立的 Hover 效果，以显示 Agent 的名称或简介。
 
-**注意事项**: 
+**注意事项**:
 避免在单个网格块内加载过重的资源，确保页面加载速度不受网格数量增加的影响。
 
 ---
 
 ### 实践 2：动态元数据与即时预览机制
 
-**说明**: 
+**说明**:
 由于网格空间有限，无法直接展示 Agent 的全部功能。因此，必须建立一套元数据系统，当用户鼠标悬停或点击某个像素块时，能够立即弹出一个信息卡片，展示 Agent 的名称、作者、描述、调用次数以及“运行”按钮。
 
 **实施步骤**:
@@ -311,14 +305,14 @@ DefiMind 利用“Agent Million Dollar Homepage”的概念，在一个由 AI Ag
 3. 在浮层中集成“一键试用”或“复制 Prompt”的功能，降低用户使用门槛。
 4. 添加防抖动处理，避免鼠标快速滑过时频繁触发请求。
 
-**注意事项**: 
+**注意事项**:
 浮层设计应避免遮挡相邻的网格单元，确保用户浏览体验的流畅性。
 
 ---
 
 ### 实践 3：基于智能体的分类与搜索索引
 
-**说明**: 
+**说明**:
 随着 Agent 数量的增长，单纯的网格浏览将变得混乱。最佳实践要求在视觉展示之外，提供强大的后台检索能力。用户应能根据 Agent 的功能类别（如写作、编程、绘图）、热度或更新时间进行筛选。
 
 **实施步骤**:
@@ -327,14 +321,14 @@ DefiMind 利用“Agent Million Dollar Homepage”的概念，在一个由 AI Ag
 3. 实现前端路由逻辑，支持 URL 参数变化以直接分享筛选后的结果。
 4. 对搜索结果进行高亮显示，并在网格中定位到对应的 Agent。
 
-**注意事项**: 
+**注意事项**:
 确保搜索响应速度极快，对于静态页面可考虑使用客户端索引库（如 Lunr.js）。
 
 ---
 
 ### 实践 4：社区驱动的验证与评分系统
 
-**说明**: 
+**说明**:
 为了保证展示 Agent 的质量和安全性，需要引入社区反馈机制。通过“点赞”或“投票”机制，可以让高质量的 Agent 自动获得更显眼的位置或颜色标识，从而形成良性的内容生态。
 
 **实施步骤**:
@@ -343,14 +337,14 @@ DefiMind 利用“Agent Million Dollar Homepage”的概念，在一个由 AI Ag
 3. 设置简单的验证机制，确认提交的 Agent 确实可用（如通过 API 探针）。
 4. 提供“举报”功能，防止恶意或无效内容的泛滥。
 
-**注意事项**: 
+**注意事项**:
 需防止刷票行为，建议对投票操作进行简单的频率限制或身份验证。
 
 ---
 
 ### 实践 5：可扩展的微服务架构与状态管理
 
-**说明**: 
+**说明**:
 此类应用本质上是一个高并发的目录服务。随着流量增加，单体架构可能难以支撑。最佳实践建议采用前后端分离的架构，前端负责渲染网格，后端 API 负责提供 Agent 列表和配置数据。
 
 **实施步骤**:
@@ -359,14 +353,14 @@ DefiMind 利用“Agent Million Dollar Homepage”的概念，在一个由 AI Ag
 3. 使用 CDN 缓存静态资源和常用的 Agent 列表数据，以减少服务器负载。
 4. 实现虚拟滚动技术，仅渲染可视区域内的网格节点，优化 DOM 性能。
 
-**注意事项**: 
+**注意事项**:
 如果 Agent 列表更新不频繁，应考虑采用静态站点生成（SSG）技术，将页面预渲染为静态 HTML 以获得最佳性能。
 
 ---
 
 ### 实践 6：清晰的价值主张与商业化路径
 
-**说明**: 
+**说明**:
 原始的“百万美元首页”是付费广告位。对于 Agent 展示页，需要明确其价值主张：是免费的公益目录，还是付费推广平台？如果是付费模式，需要设计清晰的购买流程和定价策略。
 
 **实施步骤**:
@@ -390,8 +384,6 @@ DefiMind 利用“Agent Million Dollar Homepage”的概念，在一个由 AI Ag
 
 ### 1: 这个项目本质上是什么？它是如何运作的？
 
-1: 这个项目本质上是什么？它是如何运作的？
-
 **A**: 这是一个受 2005 年著名的 "Million Dollar Homepage"（百万美元首页）启发的现代版实验项目。原版网站出售像素广告位，而这个版本专门为 AI 智能体和自动化工具服务。
 
 运作方式通常是：开发者或用户可以购买页面上的网格空间。在这个空间里，他们不是放置静态的图片链接，而是部署或指向一个 AI Agent。当访问者点击该像素区域时，可能会触发与该 Agent 的交互、查看其介绍页面，或者直接调用该 Agent 提供的服务（例如执行一个任务、回答问题或运行一个脚本）。它既是一个广告位，也是一个活跃的 Agent 展示层。
@@ -400,8 +392,6 @@ DefiMind 利用“Agent Million Dollar Homepage”的概念，在一个由 AI Ag
 
 ### 2: 为什么要专门为 "Agents"（智能体）建立这样一个页面？
 
-2: 为什么要专门为 "Agents"（智能体）建立这样一个页面？
-
 **A**: 随着 LLM（大语言模型）和自动化技术的发展，AI Agents 正在成为互联网的新兴活跃主体。然而，目前缺乏一个集中的、可视化的平台来发现和展示这些 Agents。
 
 传统的软件目录通常是基于列表的，不够直观。这个项目旨在创建一个“数字地图”或“市场”，让开发者可以展示他们的 Agent 能力，让用户可以直观地浏览和测试不同的 Agent。它将原本静态的广告位概念转化为了动态的功能入口，象征着 Agent 经济的兴起。
@@ -409,8 +399,6 @@ DefiMind 利用“Agent Million Dollar Homepage”的概念，在一个由 AI Ag
 ---
 
 ### 3: 如何在这个页面上购买或部署我的 Agent？
-
-3: 如何在这个页面上购买或部署我的 Agent？
 
 **A**: 虽然具体的实现细节取决于开发者的设定，但通常流程如下：
 
@@ -424,8 +412,6 @@ DefiMind 利用“Agent Million Dollar Homepage”的概念，在一个由 AI Ag
 
 ### 4: 这个项目与 2005 年的原版相比有什么技术上的不同？
 
-4: 这个项目与 2005 年的原版相比有什么技术上的不同？
-
 **A**: 虽然视觉概念相似，但底层技术栈完全不同：
 
 *   **交互性**：原版是静态 HTML 图片映射，点击只是跳转链接。这个版本通常是动态的 Web 应用（可能基于 React/Vue），点击像素会触发 API 调用或 WebSocket 连接，直接与后端的 Agent 模型进行实时通信。
@@ -436,8 +422,6 @@ DefiMind 利用“Agent Million Dollar Homepage”的概念，在一个由 AI Ag
 
 ### 5: 购买像素空间后，我可以随时更新我的 Agent 吗？
 
-5: 购买像素空间后，我可以随时更新我的 Agent 吗？
-
 **A**: 在大多数此类现代实现中，是可以的。与原版一旦上传图片就很难更改不同，基于 Agent 的平台通常允许所有者随时修改其像素区域指向的 Agent 逻辑、提示词或 API 端点。
 
 这意味着你可以根据用户反馈不断迭代你的 Agent，或者将其从一个简单的“闲聊机器人”升级为复杂的“任务执行机器人”，而无需重新购买像素位置。
@@ -445,8 +429,6 @@ DefiMind 利用“Agent Million Dollar Homepage”的概念，在一个由 AI Ag
 ---
 
 ### 6: 这个项目面临的主要挑战或风险是什么？
-
-6: 这个项目面临的主要挑战或风险是什么？
 
 **A**: 主要挑战包括：
 
@@ -457,8 +439,6 @@ DefiMind 利用“Agent Million Dollar Homepage”的概念，在一个由 AI Ag
 ---
 
 ### 7: 这个项目是开源的吗？我可以自己搭建一个吗？
-
-7: 这个项目是开源的吗？我可以自己搭建一个吗？
 
 **A**: 这类在 Hacker News 上展示的项目通常旨在推广概念或技术。开发者可能会选择开源其代码库（发布在 GitHub 上），允许社区 fork 并创建他们自己的 Agent 网格；或者将其作为 SaaS（软件即服务）产品运营。
 

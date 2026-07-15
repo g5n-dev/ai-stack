@@ -16,8 +16,8 @@ categories:
 - AI 工程
 - 数据
 source: blogs_podcasts
-description: 文档类型与挑战 - **银行对账单**：多页、表格与自由文本交叉，格式不统一。 - **W‑2 表格**：标准结构但字段名称、位置在不同年份、不同州的表单中略有差异。
-  - **1099‑B 税表**：交易列信息密集，需区分买卖、盈亏字段。 - **供应商合同**：条款长度不一，跨段落引用、嵌套表格和签名块使得关键信息定
+description: 在这篇文章中，我们探讨了 Amazon Bedrock Data Automation 如何能够准确地从四种常见的金融文档中提取信息：银行对账单、W-2
+  表格、1099-B 税表和供应商合同。我们重点介绍了这些文档的复杂性，详细说明了在 Amazon Bedrock Data Automation 中创建的自定义提取功能，并描述了提取过程所取得的效果。
 external_url: https://aws.amazon.com/blogs/machine-learning/process-financial-documents-using-amazon-bedrock-data-automation
 scenarios:
 - 大语言模型

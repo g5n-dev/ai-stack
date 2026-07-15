@@ -15,7 +15,7 @@ categories:
 - 安全
 source: hacker_news
 description: 随着AI辅助编程工具的快速迭代，Vibe Coding作为一种通过自然语言实时生成代码的模式，正被越来越多的团队尝试。然而，这种高度依赖模型输出的工作流往往隐藏着代码逻辑不完整、依赖冲突等风险，一旦忽视便会导致难以追踪的
-  bug。本文通过一个真实项目中的失败案例，详细剖析问题产生的根源，并提供在实际开发中避免类似陷阱的
+  bug。本文通过一个真实项目中的失败案例，详细剖析问题产生的根源，并提供在实际开发中避免类似陷阱的实践建议，帮助开发者更安全地利用AI提升生产力。
 external_url: https://www.tobru.ch/an-ai-vibe-coding-horror-story
 scenarios:
 - AI/ML项目

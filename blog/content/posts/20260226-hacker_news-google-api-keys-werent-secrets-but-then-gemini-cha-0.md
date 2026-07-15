@@ -17,7 +17,7 @@ categories:
 - AI 工程
 source: hacker_news
 description: 长期以来，开发者习惯于将 Google API Keys 视为非敏感信息，因为其计费机制主要依赖云端账户验证。然而，随着 Gemini 模型的引入，Google
-  调整了鉴权策略与访问控制规则，这一传统认知已被打破。本文将深入剖析这一变化背后的技术细节，阐述其对现有应用安全性的具体影响，并为开发者提供排查漏洞及加固密钥管
+  调整了鉴权策略与访问控制规则，这一传统认知已被打破。本文将深入剖析这一变化背后的技术细节，阐述其对现有应用安全性的具体影响，并为开发者提供排查漏洞及加固密钥管理的实操建议。
 external_url: https://trufflesecurity.com/blog/google-api-keys-werent-secrets-but-then-gemini-changed-the-rules
 scenarios:
 - Web应用开发

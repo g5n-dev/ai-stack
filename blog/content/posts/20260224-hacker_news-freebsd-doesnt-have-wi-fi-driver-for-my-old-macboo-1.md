@@ -17,7 +17,7 @@ categories:
 - 系统与基础设施
 source: hacker_news
 description: 当老旧硬件的官方驱动支持逐渐停止，许多性能尚可的设备往往面临被淘汰的命运。本文记录了一位开发者利用 AI 模型，成功为缺少 Wi-Fi 驱动的旧版
-  MacBook 编写 FreeBSD 内核模块的实践过程。通过这一案例，读者不仅能看到 AI 在底层系统开发中的潜力，也能了解到如何利用自然语言处理技术解决具体的硬件兼容性
+  MacBook 编写 FreeBSD 内核模块的实践过程。通过这一案例，读者不仅能看到 AI 在底层系统开发中的潜力，也能了解到如何利用自然语言处理技术解决具体的硬件兼容性问题。
 external_url: https://vladimir.varank.in/notes/2026/02/freebsd-brcmfmac
 scenarios:
 - 大语言模型

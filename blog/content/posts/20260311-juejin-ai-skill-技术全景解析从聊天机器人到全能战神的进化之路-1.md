@@ -18,7 +18,7 @@ categories:
 source: juejin
 description: 大语言模型若缺乏实际操作能力，往往只能停留在对话层面。AI Skill 技术正是打破这一僵局的关键，它通过赋予模型调用工具与执行任务的能力，推动
   AI 从单纯的“聊天机器人”向具备实战价值的智能体进化。本文将深入解析 AI Skill 的技术架构与演进路径，帮助读者厘清其背后的核心逻辑，掌握构建高可用 AI
-  应用的关键
+  应用的关键方法。
 external_url: https://juejin.cn/post/7615489354840080420
 scenarios:
 - 大语言模型

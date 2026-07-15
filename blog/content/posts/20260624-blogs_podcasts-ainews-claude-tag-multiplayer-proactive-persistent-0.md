@@ -16,8 +16,8 @@ categories:
 - 大模型
 - AI 工程
 source: blogs_podcasts
-description: 主要功能 - 多玩家（Multiplayer）支持：多个用户可以同时在同一 Slack 频道与 Claude 交互，机器人能够区分并维护各自的上下文。
-  - 主动（Proactive）能力：基于用户行为或预设规则，代理能够主动推送提醒、任务或信息，而无需用户触发。 - 持久（Persistent）记忆：跨会话保留对话历史
+description: Claude 终于迎来 Slackbot 升级 Anthropic 在 Slack 平台推出了升级版 Claude Tag。该升级加入了多用户协同、主动式任务执行和持久化状态，使
+  AI 助手能够跨团队、跨会话持续跟踪并推进工作流。对希望提升自动化效率、降低人工干预成本的团队，这提供了更灵活的集成方案，并展示了在大型即时通讯环境中部署持久代理的可行路径。
 external_url: https://www.latent.space/p/ainews-claude-tag-multiplayer-proactive
 scenarios:
 - AI/ML项目

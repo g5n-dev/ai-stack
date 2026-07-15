@@ -105,11 +105,11 @@ def detect_semantic_ablation(text: str) -> float:
     tokens = text.lower().split()
     if not tokens:
         return 0.0
-    
+
     # 计算唯一词汇数与总词汇数的比率
     unique_words = set(tokens)
     ttr = len(unique_words) / len(tokens)
-    
+
     return round(ttr, 3)
 
 # 测试用例
@@ -133,15 +133,15 @@ def detect_safety_templates(text: str) -> dict:
         "hedging": ["it could be argued", "some might say", "potentially"],
         "generic": ["in conclusion", "in summary", "overall"]
     }
-    
+
     results = {category: 0 for category in templates}
     text_lower = text.lower()
-    
+
     # 统计各类模板出现次数
     for category, phrases in templates.items():
         for phrase in phrases:
             results[category] += text_lower.count(phrase)
-    
+
     return results
 
 # 测试用例
@@ -159,17 +159,17 @@ def semantic_ablation_generator(original_text: str, ablation_rate: float = 0.3) 
     """
     # 常见高频词（模拟AI倾向使用的词汇）
     common_words = ["the", "a", "is", "very", "good", "important", "many", "people"]
-    
+
     words = original_text.split()
     ablated_words = []
-    
+
     for word in words:
         # 根据消融率决定是否替换
         if random.random() < ablation_rate:
             ablated_words.append(random.choice(common_words))
         else:
             ablated_words.append(word)
-    
+
     return " ".join(ablated_words)
 
 import random
@@ -187,8 +187,6 @@ print(f"消融后: {ablated}")
 
 ### 1：CNET 财经新闻自动生成项目
 
- 1：CNET 财经新闻自动生成项目
-
 **背景**:
 知名科技媒体 CNET 为了提高内容产出效率，于 2022 年底开始尝试使用内部 AI 工具自动撰写财经新闻和解释性文章，旨在覆盖大量基础金融概念，如“什么是 CD 利率”等。
 
@@ -205,8 +203,6 @@ CNET 暂停了 AI 写作实验，并实施了严格的人工介入流程。他�
 
 ### 2：Stack Overflow AI 生成答案清理行动
 
- 2：Stack Overflow AI 生成答案清理行动
-
 **背景**:
 全球最大的程序员问答社区 Stack Overflow 在 ChatGPT 发布后，遭遇了海量由 AI 生成的回答灌水。用户试图利用 AI 快速生成代码答案来获取积分。
 
@@ -222,8 +218,6 @@ Stack Overflow 采取了临时禁令，明确禁止直接粘贴 AI 生成的答�
 ---
 
 ### 3：某电商品牌 SEO 内容反噬
-
- 3：某电商品牌 SEO 内容反噬
 
 **背景**:
 一家中型跨境电商公司为了提升搜索引擎排名（SEO），曾尝试使用低成本的大语言模型批量生成产品描述和博客文章，试图通过海量长尾关键词覆盖流量。
@@ -333,8 +327,6 @@ Stack Overflow 采取了临时禁令，明确禁止直接粘贴 AI 生成的答�
 
 ### 1: 什么是“语义消融”？为什么它会导致AI写作变得平庸？
 
-1: 什么是“语义消融”？为什么它会导致AI写作变得平庸？
-
 **A**: “语义消融”是一个概念，用来描述大型语言模型（LLM）在生成文本时的一种核心机制。为了最大化预测下一个词的准确性，模型倾向于收敛到统计学上最“安全”、出现概率最高的词汇组合。
 
 这种机制导致文本中的尖锐棱角、独特观点和细微差异被“消融”掉了。就像把一道风味复杂的菜煮成了毫无特色的糊状物，AI生成的文本往往在语法上完美无缺，但在语义上却平淡乏味，因为它总是选择所有可能性的平均值，从而避开了任何具有争议性或高度个性化的表达。
@@ -343,8 +335,6 @@ Stack Overflow 采取了临时禁令，明确禁止直接粘贴 AI 生成的答�
 
 ### 2: 既然AI模型拥有海量数据，为什么写出的内容反而显得“空洞”？
 
-2: 既然AI模型拥有海量数据，为什么写出的内容反而显得“空洞”？
-
 **A**: 这是一个看似矛盾实则必然的现象。AI模型训练的目标是“最小化惊奇度”，即它试图生成最符合大众预期的文本，而不是最“正确”或最“深刻”的文本。
 
 当模型面对一个话题时，它会综合训练数据中成千上万篇关于该话题的文章。结果是，它输出的不是某位专家的深刻洞见，而是所有这些观点的“平均值”。这种平均化的内容剔除了极端的、个性化的、或是需要深厚背景知识才能理解的信息，留下的只有所有人都能接受的“陈词滥调”和“正确的废话”。
@@ -352,8 +342,6 @@ Stack Overflow 采取了临时禁令，明确禁止直接粘贴 AI 生成的答�
 ---
 
 ### 3: 文章提到AI写作是“危险”的，具体指哪些方面的风险？
-
-3: 文章提到AI写作是“危险”的，具体指哪些方面的风险？
 
 **A**: 这里的“危险”主要指信息质量和认知层面的风险，而非物理威胁：
 
@@ -365,8 +353,6 @@ Stack Overflow 采取了临时禁令，明确禁止直接粘贴 AI 生成的答�
 
 ### 4: 为什么人类写作通常比AI更有吸引力，即使存在语法错误？
 
-4: 为什么人类写作通常比AI更有吸引力，即使存在语法错误？
-
 **A**: 人类写作的魅力往往源于其“非理性”和“高方差”的特点。人类作者在写作时通常带有明确的意图、情感色彩、独特的经历背景，甚至是某种偏见。
 
 这些因素赋予了文本“语义密度”。读者在阅读人类文章时，不仅能获取信息，还能感受到作者的人格特质和思维跳跃。相比之下，AI生成的文本是概率的产物，它没有真实的意图或体验，因此无法模仿人类写作中那种微妙的语境联系和情感共鸣，读起来就像没有灵魂的说明书。
@@ -374,8 +360,6 @@ Stack Overflow 采取了临时禁令，明确禁止直接粘贴 AI 生成的答�
 ---
 
 ### 5: 如何判断一篇文章是否由AI生成，或者是否受到了“语义消融”的影响？
-
-5: 如何判断一篇文章是否由AI生成，或者是否受到了“语义消融”的影响？
 
 **A**: 受到“语义消融”影响的文本通常具有以下特征：
 
@@ -386,8 +370,6 @@ Stack Overflow 采取了临时禁令，明确禁止直接粘贴 AI 生成的答�
 ---
 
 ### 6: 作为用户，如何在使用AI工具时避免生成这种平庸、危险的内容？
-
-6: 作为用户，如何在使用AI工具时避免生成这种平庸、危险的内容？
 
 **A**: 要对抗AI的“语义消融”倾向，用户需要扮演更加主动的角色：
 

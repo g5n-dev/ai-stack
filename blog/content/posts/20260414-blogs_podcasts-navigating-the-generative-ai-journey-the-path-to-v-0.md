@@ -15,8 +15,8 @@ tags:
 categories:
 - AI 工程
 source: blogs_podcasts
-description: 框架概述 AWS 提出的生成式 AI Path‑to‑Value（P2V）框架旨在为组织提供一条从概念验证到实际业务价值的清晰路径。该框架强调技术实现与业务目标的对齐，帮助团队在快速迭代的同时保持价值可控。
-  关键阶段 1. **探索（Explore）** - 明确业务痛点与机会。 - 评估数据资产、技术成熟度以及合规风
+description: 在这篇文章中，我们将介绍生成式AI价值路径（P2V）框架——一种结构化方法，旨在帮助您推动生成式AI项目从概念阶段迈向实际落地，并实现持续的价值创造。
+  生成式AI正在重塑企业的创新方式，但如何把技术潜力转化为实际业务价值仍是许多组织面临的核心挑战。AWS提出的生成式AI价值路径（P2V）框架提供了一套从概念验证到规模化落地的系统化流程，帮助团队聚焦关键里程碑并持续追踪价值实现。
 external_url: https://aws.amazon.com/blogs/machine-learning/navigating-the-generative-ai-journey-the-path-to-value-framework-from-aws
 scenarios:
 - AI/ML项目

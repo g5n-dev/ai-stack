@@ -16,7 +16,7 @@ categories:
 - AI 工程
 - 开源生态
 source: blogs_podcasts
-description: PP-OCRv6已在Hugging Face平台正式发布，标志着多语言文字识别技术的重要进展。该模型从早期的轻量化版本扩展至完整版本（参数规模从1.5M增长至34.5M），识别能力得到显著提升。通过支持50种语言的文字识别，开发者能够在全球范围内更便捷地应用OCR技术。本文将解析新版本的核心改进点、技术实现细节以及实际
+description: PP-OCRv6已在Hugging Face平台正式发布，标志着多语言文字识别技术的重要进展。该模型从早期的轻量化版本扩展至完整版本（参数规模从1.5M增长至34.5M），识别能力得到显著提升。通过支持50种语言的文字识别，开发者能够在全球范围内更便捷地应用OCR技术。本文将解析新版本的核心改进点、技术实现细节以及实际应用场景，为技术团队评估和采用该模型提供参考。
 external_url: https://huggingface.co/blog/PaddlePaddle/pp-ocrv6
 scenarios:
 - Web应用开发

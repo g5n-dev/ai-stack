@@ -16,8 +16,8 @@ categories:
 - AI 工程
 - 系统与基础设施
 source: juejin
-description: Agent Readiness 是一种评估工具，帮助已经使用或计划使用 AI Coding Agent 的团队发现工程基础设施的不足之处。它不负责判断是否应采用
-  Agent，而是专注于现有系统的准备情况。通过检查代码库结构、CI/CD 流程、测试覆盖率、依赖管理、文档化等维度，Agent Readiness 能指出需要
+description: 随着 AI 编程助手在团队中的普及，如何判断现有的工程基础设施是否能够充分发挥其效能变得尤为关键。本文聚焦 Agent Readiness，探讨在引入
+  AI Coding Agent 前需要审视的关键环节，帮助开发团队识别潜在的短板并有针对性地进行改进，从而提升研发效率与代码质量。
 external_url: https://juejin.cn/post/7641043284966146048
 scenarios:
 - AI/ML项目

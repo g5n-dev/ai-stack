@@ -16,8 +16,8 @@ categories:
 - AI 工程
 - 大模型
 source: blogs_podcasts
-description: '**利用 Amazon Nova Canvas 构建可扩展的虚拟试穿解决方案：第一部分** 本文介绍了如何利用 **Amazon Nova
-  Canvas**（属于 Amazon Nova 系列模型）在 AWS 上构建可扩展的**虚拟试穿**解决方案。文章主要探讨了该模型新推出的虚拟试穿功能，提供了快速上手的示例代码，并'
+description: 在本文中，我们将探讨现已登陆 Amazon Nova Canvas 的虚拟试穿功能，包括助您快速上手的示例代码以及帮助您获得最佳效果的技巧。
+  随着虚拟试穿技术在电商与零售领域的应用日益广泛，如何构建一套既高效又可扩展的解决方案成为开发者关注的重点。
 external_url: https://aws.amazon.com/blogs/machine-learning/building-a-scalable-virtual-try-on-solution-using-amazon-nova-on-aws-part-1
 scenarios:
 - AI/ML项目

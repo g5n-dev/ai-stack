@@ -16,8 +16,8 @@ categories:
 - 安全
 - 大模型
 source: blogs_podcasts
-description: 以下是关于ChatGPT新增“锁定模式”与“高风险提示”功能的简洁总结： **核心目标** 为了帮助组织机构更有效地防御**提示注入**攻击以及**AI驱动**的数据泄露风险，ChatGPT
-  推出了两项新安全功能。 **主要功能** 1. **锁定模式** * **用途**：这是一个高强度的安全设置，旨在为处理敏感数据
+description: 现于 ChatGPT 推出锁定模式和高危标签，以帮助机构防范提示词注入和由 AI 驱动的数据外泄。 随着企业对 AI 工具依赖的加深，提示词注入与数据泄露已成为不可忽视的安全隐患。为此，ChatGPT
+  正式推出锁定模式及高危标签功能，旨在为机构提供更主动的防御机制。本文将详细解读这两项新特性的运作逻辑，并说明如何通过配置策略，有效提升组织内部的数据安全水位。
 external_url: https://openai.com/index/introducing-lockdown-mode-and-elevated-risk-labels-in-chatgpt
 scenarios:
 - AI/ML项目

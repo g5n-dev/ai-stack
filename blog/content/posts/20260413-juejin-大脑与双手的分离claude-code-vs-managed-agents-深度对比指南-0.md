@@ -16,8 +16,8 @@ categories:
 - 大模型
 - AI 工程
 source: juejin
-description: 概述 Anthropic 推出的两款工具分别对应 AI 的“思考”与“执行”层面。Claude Code 面向开发者，提供交互式命令行，可直接在本地环境调试、编写代码，适合需要细粒度控制、快速迭代的场景。Managed
-  Agents 是托管式智能体，提供更高层次的抽象，自动完成完整业务流程，适合非技术用户或需要快速构建
+description: Anthropic 推出的两款工具分别对应 AI 的“思考”与“执行”层面。Claude Code 面向开发者，提供交互式命令行，可直接在本地环境调试、编写代码，适合需要细粒度控制、快速迭代的场景。Managed
+  Agents 是托管式智能体，提供更高层次的抽象，自动完成完整业务流程，适合非技术用户或需要快速构建端到端解决方案的企业。
 external_url: https://juejin.cn/post/7627763161885671439
 scenarios:
 - 命令行工具

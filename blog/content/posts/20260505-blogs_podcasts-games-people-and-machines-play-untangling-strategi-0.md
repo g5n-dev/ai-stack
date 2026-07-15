@@ -16,7 +16,7 @@ categories:
 - 论文
 - AI 工程
 source: blogs_podcasts
-description: 本文聚焦于“博弈”这一跨越人类与机器的通用框架，旨在通过厘清策略推理的基本原理来推动人工智能的发展。主角是助理教授Gabriele Farina，他致力于挖掘多智能体、复杂情境下决策的根本理论。Farina的研究围绕博弈论、均衡概念、算法设计以及学习机制展开，试图在多玩家交互、竞争与合作的环境中建立更可靠的决策模型。其
+description: 助理教授加布里埃尔·法里纳深入探索复杂多智能体场景中决策制定的根基。 在涉及人类与机器的多智能体系统里，各方如何通过协同与竞争实现有效决策，是人工智能领域的核心挑战之一。加布里埃尔·法里纳助理教授通过梳理博弈论与强化学习的交叉点，揭示了复杂环境中战略推理的底层机制。阅读本文，读者将获得对多智能体决策模型的系统性理解，并了解最新方法在实际场景中的可行性与局限。
 external_url: https://news.mit.edu/2026/untangling-strategic-reasoning-to-advance-ai-gabriele-farina-0505
 scenarios:
 - AI/ML项目

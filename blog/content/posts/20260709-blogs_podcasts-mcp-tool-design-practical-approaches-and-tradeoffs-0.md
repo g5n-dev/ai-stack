@@ -15,8 +15,7 @@ tags:
 categories:
 - AI 工程
 source: blogs_podcasts
-description: 常见错误 - 过度抽象导致上下文缺失，模型缺乏足够信息。 - 忽略用户意图的多样性，工具只做单一路径。 - 默认参数设计不合理，导致在不同场景下表现不稳定。
-  - 错误处理过于简陋，返回信息不友好。 实践方案 - **上下文工程**：在提示中嵌入关键背景信息，使用分层结构让模型逐步获取细节。 - **多轮管理**：通过状
+description: 在这篇文章中，我们展示了 MCP 工具设计中的问题所在，以及如何通过实用的上下文工程技术来修复这些问题。 在现代 AI 系统中，MCP 工具承担着关键的上下文交互功能，但设计不当往往导致信息噪声和性能瓶颈。本文剖析了当前实现中常见的设计缺陷，并结合实际案例展示如何通过上下文工程技术有针对性地进行优化。通过阅读，你将掌握评估工具效果的关键指标，以及在资源受限环境下的可行权衡方案。
 external_url: https://aws.amazon.com/blogs/machine-learning/mcp-tool-design-practical-approaches-and-tradeoffs
 scenarios:
 - AI/ML项目

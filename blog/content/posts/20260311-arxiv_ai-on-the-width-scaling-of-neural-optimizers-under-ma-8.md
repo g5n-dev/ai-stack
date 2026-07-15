@@ -16,8 +16,7 @@ categories:
 - 论文
 - 大模型
 source: arxiv
-description: 本文探讨了如何设计在神经网络宽度（width）增加时行为保持稳定的优化器。通过将AdamW和Muon等优化器解释为矩阵算子范数下的最速下降，作者将其与网络前向映射的Lipschitz结构联系起来，从而实现了对Lipschitz常数和平滑常数的宽度无关控制。
-  针对标准算子范数缺乏层级可组合性、无法在深度架构中提供宽度无关
+description: 针对神经网络宽度扩展时优化器行为不稳定的问题，本文通过将AdamW和Muon等算法解释为矩阵算子范数下的最速下降，揭示了其与网络Lipschitz结构的内在联系。为此，作者提出了均值归一化算子范数及相应的行/列归一化策略，以克服标准范数在深度架构中缺乏层级可组合性的缺陷。
 external_url: http://arxiv.org/abs/2603.09952v1
 scenarios:
 - Web应用开发

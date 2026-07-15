@@ -16,9 +16,9 @@ categories:
 - 开源生态
 - AI 工程
 source: github_trending
-description: '**项目总结：Kirara AI** **1. 项目概述** Kirara AI（仓库名： ）是一个基于 Python 开发的、高度可
-  DIY 的多模态 AI 聊天机器人框架。该项目旨在通过灵活的工作流自动化系统，将大语言模型（LLM）与各类即时通讯平台无缝集成。目前该项目在 GitHub 上拥有超过
-  1.8 万颗星，'
+description: Kirara AI 是一个基于 Python 的多模态聊天机器人框架，旨在通过灵活的工作流系统，将各类大语言模型接入微信、QQ、Telegram
+  等即时通讯平台。它适合希望统一管理多平台 AI 代理、并需要高度定制化能力的开发者或用户。本文将简要介绍其系统架构、核心组件、插件机制以及部署流程，帮助你快速构建个性化的
+  AI 应用。
 external_url: https://github.com/lss233/kirara-ai
 scenarios:
 - 大语言模型

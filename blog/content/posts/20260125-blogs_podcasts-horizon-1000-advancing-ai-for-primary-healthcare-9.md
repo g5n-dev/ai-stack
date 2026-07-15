@@ -28,10 +28,6 @@ description: OpenAI 和盖茨基金会联合推出 Horizon 1000，这是一个 5
   2028 年覆盖 1,000 家诊所。
 ---
 
-## 🎙️ 🚀Horizon 1000：AI如何引爆基层医疗革命？💡
-
----
-
 ## 📋 基本信息
 
 - **来源**: OpenAI Blog (blog)

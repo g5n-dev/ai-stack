@@ -16,8 +16,8 @@ categories:
 - AI 工程
 - 大模型
 source: blogs_podcasts
-description: 背景与挑战 构建代理型 AI 系统时面临独特运维难题：代理的行为不可预测、成本易失控、非确定性故障难以调试。传统 DevOps 难以覆盖此类自主决策和动态适应的工作负载。
-  AgentOps 的定位 AgentOps 是一套针对生产环境中 AI 代理的运维规范，旨在实现代理的部署、管理、监控与持续改进。它把代理的生命周期
+description: 在部署基于大型语言模型的智能体系统时，决策不可预测、成本波动和故障定位等新难题常让传统DevOps难以为继。AgentOps提供系统化的运维框架，帮助团队在生产环境中安全部署、持续监控并高效优化智能体。结合Amazon
+  Bedrock AgentCore，本文深入剖析实施路径、关键指标与成本控制策略，为企业规模化落地提供实用参考。
 external_url: https://aws.amazon.com/blogs/machine-learning/agentops-operationalize-agentic-ai-at-scale-with-amazon-bedrock-agentcore
 scenarios:
 - AI/ML项目

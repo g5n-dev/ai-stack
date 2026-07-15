@@ -17,7 +17,7 @@ categories:
 - 系统与基础设施
 source: hacker_news
 description: 将 Flash Attention 移植至 TPU 并非简单的代码迁移，而是对底层硬件架构的深度适配。本文详细记录了这一过程中的技术挑战与解决方案，揭示了
-  TPU 内存层级与注意力机制算法之间的冲突与调和。对于从事高性能 AI 计算或异构硬件适配的开发者而言，这篇文章提供了从理论分析到工程实践的完整参考，有助于理解如何
+  TPU 内存层级与注意力机制算法之间的冲突与调和。对于从事高性能 AI 计算或异构硬件适配的开发者而言，这篇文章提供了从理论分析到工程实践的完整参考，有助于理解如何在特定硬件约束下优化大模型训练。
 external_url: https://archerzhang.me/forcing-flash-attention-onto-a-tpu
 scenarios:
 - 大语言模型

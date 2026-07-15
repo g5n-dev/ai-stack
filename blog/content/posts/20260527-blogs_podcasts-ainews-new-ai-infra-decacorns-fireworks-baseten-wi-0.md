@@ -15,8 +15,7 @@ tags:
 categories:
 - 系统与基础设施
 source: blogs_podcasts
-description: 融资概况 Fireworks 与 Baseten 近期相继完成大额融资，估值均突破十亿美元，成为 AI 基础设施领域的新晋“Decacorn”。这表明资本市场对能够提供大规模、可靠
-  AI 计算平台的公司仍保持高度热情。 OpenRouter 前景 Baseten 透露将在近期推出 OpenRouter，旨在实现跨云、跨
+description: 这是关于资金的消息，不过是好消息。 AI基础设施领域正在吸引大规模资本注入。Fireworks和Baseten两家公司近期完成新一轮融资，估值均已突破十亿美元大关，OpenRouter的相关消息也在酝酿之中。这些融资案例反映出资本市场对AI底层技术栈的持续看好。对于关注AI行业的读者而言，这些动态不仅标志着细分赛道的成熟度提升，也提供了观察AI技术商业化进程的重要窗口。
 external_url: https://www.latent.space/p/ainews-new-ai-infra-decacorns-fireworks
 scenarios:
 - AI/ML项目

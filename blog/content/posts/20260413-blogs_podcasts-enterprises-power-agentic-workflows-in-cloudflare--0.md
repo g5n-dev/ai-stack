@@ -16,8 +16,9 @@ categories:
 - AI 工程
 - 系统与基础设施
 source: blogs_podcasts
-description: 平台概览 Cloudflare 将 OpenAI 最新的大语言模型 GPT‑5.4 与代码生成模型 Codex 集成到其 Agent Cloud
-  平台，为企业提供统一的 AI 代理开发、部署和扩展环境。借助 Cloudflare 全球边缘网络的高可用性与安全防护，企业可以快速将 AI 代理嵌入业务流程，实现实时智能服务
+description: Cloudflare将OpenAI的GPT-5.4和Codex引入Agent Cloud，使企业能够快速、安全地构建、部署和扩展用于实际任务的AI代理。
+  Cloudflare 将 OpenAI 最新的大语言模型 GPT‑5.4 与代码生成模型 Codex 集成到其 Agent Cloud 平台，为企业提供统一的
+  AI 代理开发、部署和扩展环境。
 external_url: https://openai.com/index/cloudflare-openai-agent-cloud
 scenarios:
 - AI/ML项目

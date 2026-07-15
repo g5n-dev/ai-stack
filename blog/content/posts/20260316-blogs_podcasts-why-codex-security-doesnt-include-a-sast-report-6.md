@@ -16,8 +16,8 @@ categories:
 - 安全
 - AI 工程
 source: blogs_podcasts
-description: 本文探讨了为何 Codex Security 不采用传统的静态应用程序安全测试（SAST）报告，转而采用基于人工智能的约束推理与验证技术，旨在发现真实漏洞并减少误报。以下是主要观点总结：
-  --- 1. **传统 SAST 的局限性** - **高误报率**：传统 SAST 基于模式匹配和规则引擎，容易将非漏洞代码标记为
+description: 深度解析为何 Codex Security 不依赖传统 SAST，而是借助 AI 驱动的约束推理与验证，发现真正的漏洞，同时减少误报。 静态应用程序安全测试（SAST）长期以来一直是代码安全的主流手段，但其高误报率往往导致开发团队陷入“警报疲劳”，难以甄别真正的风险。本文深入解析
+  Codex Security 为何选择摒弃传统 SAST 报告，转而采用 AI 驱动的约束推理与验证技术。
 external_url: https://openai.com/index/why-codex-security-doesnt-include-sast
 scenarios:
 - AI/ML项目

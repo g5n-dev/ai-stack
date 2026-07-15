@@ -16,7 +16,7 @@ categories:
 - 开发工具
 - 安全
 source: hacker_news
-description: 随着 Cursor Cloud Agents 的应用场景日益复杂，如何妥善管理 API 密钥与敏感凭证成为保障系统安全的关键环节。若缺乏有效的隔离与轮转机制，凭证泄露将直接威胁生产环境的数据安全。本文将深入探讨针对云端代理的安全凭证管理策略，帮助开发者构建从存储到使用的全链路防护体系，从而在提升开发效率的同时确保资产安
+description: 随着 Cursor Cloud Agents 的应用场景日益复杂，如何妥善管理 API 密钥与敏感凭证成为保障系统安全的关键环节。若缺乏有效的隔离与轮转机制，凭证泄露将直接威胁生产环境的数据安全。本文将深入探讨针对云端代理的安全凭证管理策略，帮助开发者构建从存储到使用的全链路防护体系，从而在提升开发效率的同时确保资产安全。
 external_url: https://infisical.com/blog/secure-secrets-management-for-cursor-cloud-agents
 scenarios:
 - Web应用开发

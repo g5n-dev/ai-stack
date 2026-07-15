@@ -17,7 +17,7 @@ categories:
 - 产品与创业
 source: hacker_news
 description: 随着生成式 AI 技术的快速发展，围绕其版权归属与训练数据的争议日益激烈。作为技术领域的资深从业者，John Carmack 近期公开表达了对激进反
-  AI 倾向的反对，并重申了对开源模式的坚定支持。本文将梳理 Carmack 的核心观点，分析他对技术共享与行业壁垒的看法，帮助读者在复杂的舆论环境中，理清技术演进与知识产
+  AI 倾向的反对，并重申了对开源模式的坚定支持。本文将梳理 Carmack 的核心观点，分析他对技术共享与行业壁垒的看法，帮助读者在复杂的舆论环境中，理清技术演进与知识产权之间的现实逻辑。
 external_url: https://twitter.com/id_aa_carmack/status/2032460578669691171
 scenarios:
 - AI/ML项目

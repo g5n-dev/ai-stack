@@ -16,9 +16,8 @@ categories:
 - 开发工具
 - AI 工程
 source: blogs_podcasts
-description: 背景 AI 提示词已在日常工作中广泛使用，Chrome 通过 “Skills” 功能提供了把常用提示词快速转为一键工具的能力。 功能 把常用的
-  AI 指令保存为快捷方式，点击即可在同一浏览器内触发 AI 响应，实现跨站点的统一调用。 实现步骤 1. 在 Chrome 打开对应的 AI 插件或实验性页面。
-  2. 选中想要
+description: Chrome 中 Skills 演示视频 在日常工作中，频繁调用相同的 AI 指令既费时又容易出错。通过 Chrome 扩展的 Skills
+  功能，用户可以将常用的提示词封装成可一键执行的工具，直接在浏览器中调用，大幅提升效率。本文演示如何把最佳提示快速转化为可重复使用的快捷方式，帮助你在多任务处理中保持流畅。
 external_url: https://blog.google/products-and-platforms/products/chrome/skills-in-chrome
 scenarios:
 - AI/ML项目

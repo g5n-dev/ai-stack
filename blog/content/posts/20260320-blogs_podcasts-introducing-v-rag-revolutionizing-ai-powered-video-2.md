@@ -15,8 +15,8 @@ tags:
 categories:
 - AI 工程
 source: blogs_podcasts
-description: V-RAG：视频检索增强生成技术介绍 V-RAG，全称为Video Retrieval-Augmented Generation（视频检索增强生成），是一种创新的AI视频制作方法，旨在提升视频内容创作的效率和质量。
-  核心概念 V-RAG将检索增强生成（RAG）技术与先进的视频AI模型相结合，形成一套完整的视频生成解决方
+description: 本文介绍了视频检索增强生成（V-RAG），这是一种有助于改进视频内容创作的方法。通过将检索增强生成与先进的视频AI模型相结合，V-RAG为AI视频生成提供了一个高效且可靠的解决方案。
+  在视频内容需求快速增长的背景下，传统的生成式模型往往难以保证信息的准确性和上下文关联。V‑RAG 将检索增强生成与前沿视频 AI 框架相结合，能够在大量视觉素材中快速定位相关信息并生成连贯画面。
 external_url: https://aws.amazon.com/blogs/machine-learning/introducing-v-rag-revolutionizing-ai-powered-video-production-with-retrieval-augmented-generation
 scenarios:
 - RAG应用

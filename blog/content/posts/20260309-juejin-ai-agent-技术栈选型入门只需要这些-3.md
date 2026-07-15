@@ -16,9 +16,7 @@ categories:
 - AI 工程
 - 大模型
 source: juejin
-description: AI Agent 技术栈选型：入门只需这些 刚接触 Agent 开发时，容易被众多工具（如 LangChain、LlamaIndex、Dify
-  等）和技术概念（向量数据库、知识图谱等）困扰，产生“技术栈焦虑”。实际上，入门只需聚焦核心工具，逐步构建能力。 **一、核心工具选型** 1. **LLM（大语言模型）**
-  基
+description: 面对 Agent 开发中层出不穷的框架与工具，初学者往往容易陷入技术选型的焦虑。事实上，构建一个可用的 AI Agent 并不需要掌握所有名词，核心在于理清技术边界与业务需求。本文将剥离复杂的概念，为你梳理一套清晰、实用的技术栈选型逻辑，助你避开干扰，快速找到适合当前阶段的开发路径。
 external_url: https://juejin.cn/post/7614769648597745714
 scenarios:
 - AI/ML项目

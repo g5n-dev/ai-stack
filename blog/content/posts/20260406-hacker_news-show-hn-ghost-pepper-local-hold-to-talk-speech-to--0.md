@@ -8,7 +8,7 @@ tags:
 categories:
 - 效率与方法论
 source: hacker_news
-description: Ghost Pepper 是一款专为 macOS 设计的本地语音转文字工具，采用按住说话的方式实现即时转录，摆脱云端依赖，保障隐私和离线可用性。对于需要在会议、写作或代码注释时快速录入文字的用户，它提供了极低的延迟和高度本地化的模型，带来更流畅的输入体验。读者可以了解其技术实现、使用场景以及如何在自己的项目中集成或扩展
+description: Ghost Pepper 是一款专为 macOS 设计的本地语音转文字工具，采用按住说话的方式实现即时转录，摆脱云端依赖，保障隐私和离线可用性。对于需要在会议、写作或代码注释时快速录入文字的用户，它提供了极低的延迟和高度本地化的模型，带来更流畅的输入体验。读者可以了解其技术实现、使用场景以及如何在自己的项目中集成或扩展该功能。
 external_url: https://github.com/matthartman/ghost-pepper
 scenarios:
 - Web应用开发

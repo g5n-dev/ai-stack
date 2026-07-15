@@ -16,8 +16,8 @@ categories:
 - 开发工具
 - AI 工程
 source: juejin
-description: 这段内容主要介绍了在 **OpenClaw** 环境中安装和使用 **peekaboo** 的方法，旨在通过 AI 实现对 Mac 系统的自动化控制。
-  以下是核心功能与步骤总结： **1. 核心功能：Mac 交互与“读屏”** peekaboo 是一个连接 OpenClaw 与 Mac 操作系统的桥梁工具，主要实现三大
+description: OpenClaw 结合 peekaboo 为 Mac 用户提供了一种通过脚本控制界面的新方式，支持应用切换、点击、打字及截屏等操作。这种自动化能力不仅能提升日常效率，还能结合
+  AI 实现屏幕内容的读取与交互。本文将详细介绍安装与配置步骤，帮助你快速上手这一工具，进一步释放 Mac 的自动化潜力。
 external_url: https://juejin.cn/post/7605882792145649727
 scenarios:
 - AI/ML项目
@@ -130,8 +130,6 @@ peekaboo 是一个连接 OpenClaw 与 Mac 操作系统的桥梁工具，主要�
 
 ### 1: 执行安装命令后提示 "command not found: brew" 是什么原因？
 
-1: 执行安装命令后提示 "command not found: brew" 是什么原因？
-
 **A**: 这是因为您的 Mac 系统中尚未安装 Homebrew（macOS 缺失的软件包管理器）。OpenClaw 和 Peekaboo 的安装脚本通常依赖 Homebrew 来下载依赖库。解决方法很简单，请打开终端，复制并运行 Homebrew 官方提供的安装命令（通常为 `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`）。安装完成后，根据终端提示配置环境变量，再重新运行 OpenClaw 的安装脚本即可。
 
 ---
@@ -140,8 +138,6 @@ peekaboo 是一个连接 OpenClaw 与 Mac 操作系统的桥梁工具，主要�
 
 ### 2: 安装过程中出现 "xcode-select error" 或提示需要安装 Command Line Tools 怎么办？
 
-2: 安装过程中出现 "xcode-select error" 或提示需要安装 Command Line Tools 怎么办？
-
 **A**: 这是 macOS 系统在进行开发相关操作时的常见提示。系统需要安装“命令行工具”才能编译和运行 Peekaboo 等软件。请直接在终端运行以下命令：`xcode-select --install`。系统会自动弹出一个安装窗口，点击“安装”并等待完成即可。安装完成后，重启终端并继续执行 OpenClaw 的安装步骤。
 
 ---
@@ -149,8 +145,6 @@ peekaboo 是一个连接 OpenClaw 与 Mac 操作系统的桥梁工具，主要�
 
 
 ### 3: 安装成功后，为什么无法打开 Peekaboo，或者提示“应用已损坏”？
-
-3: 安装成功后，为什么无法打开 Peekaboo，或者提示“应用已损坏”？
 
 **A**: 这是 macOS 安全机制（Gatekeeper）的典型报错，通常发生在下载来源未受苹果官方信任的开发者工具时。解决方法有两种：
 1. **右键点击**：在 Finder 中找到 Peekaboo 应用，按住 `Option` 键并点击鼠标右键，选择“打开”，然后在弹出的安全提示中点击“打开”即可。
@@ -162,8 +156,6 @@ peekaboo 是一个连接 OpenClaw 与 Mac 操作系统的桥梁工具，主要�
 
 ### 4: OpenClaw 安装脚本运行卡住或下载速度极慢怎么办？
 
-4: OpenClaw 安装脚本运行卡住或下载速度极慢怎么办？
-
 **A**: OpenClaw 的安装脚本通常从 GitHub 或其他海外服务器拉取 Peekaboo 的资源文件。由于网络原因，可能会导致下载失败或速度极慢。建议您在运行安装脚本前，先在终端开启代理（如果您有），或者尝试切换网络环境。如果依然卡住，可以尝试手动下载 Peekaboo 的安装包，然后将其移动到 OpenClaw 指定的目录中。
 
 ---
@@ -172,8 +164,6 @@ peekaboo 是一个连接 OpenClaw 与 Mac 操作系统的桥梁工具，主要�
 
 ### 5: OpenClaw 安装完成后，Peekaboo 无法显示文件预览窗口？
 
-5: OpenClaw 安装完成后，Peekaboo 无法显示文件预览窗口？
-
 **A**: 这通常是因为 Peekaboo 缺少访问“文件和文件夹”或“屏幕录制”的权限。请前往 Mac 的“系统设置” > “隐私与安全性”，检查“文件和文件夹”以及“屏幕录制”权限列表，确保 Peekaboo 左侧的开关已打开。修改权限后，需要重启 Peekaboo 才能生效。
 
 ---
@@ -181,8 +171,6 @@ peekaboo 是一个连接 OpenClaw 与 Mac 操作系统的桥梁工具，主要�
 
 
 ### 6: 如何彻底卸载通过 OpenClaw 安装的 Peekaboo？
-
-6: 如何彻底卸载通过 OpenClaw 安装的 Peekaboo？
 
 **A**: 仅仅将应用移至废桶是不够的，因为配置文件可能残留。要彻底卸载，请按以下步骤操作：
 1. 关闭 Peekabob 应用。

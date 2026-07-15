@@ -16,7 +16,7 @@ categories:
 - 大模型
 - 开发工具
 source: blogs_podcasts
-description: 本次挑战由多家赞助商提供 OpenAI Codex 兑换券，帮助参赛者在项目中快速集成 AI 代码生成能力。OpenAI Codex 具备强大的自然语言到代码转换功能，掌握其使用方法可以显著提升开发效率并降低成本。本文将详细讲解兑换券的领取流程、在实际代码库中的集成步骤，以及常见问题的解决方案，助您充分利用赞助资源，提
+description: 本次挑战由多家赞助商提供 OpenAI Codex 兑换券，帮助参赛者在项目中快速集成 AI 代码生成能力。OpenAI Codex 具备强大的自然语言到代码转换功能，掌握其使用方法可以显著提升开发效率并降低成本。本文将详细讲解兑换券的领取流程、在实际代码库中的集成步骤，以及常见问题的解决方案，助您充分利用赞助资源，提升项目质量。
 external_url: https://huggingface.co/blog/build-small-hackathon/sponsors-vouchers
 scenarios:
 - AI/ML项目

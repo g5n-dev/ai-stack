@@ -16,7 +16,7 @@ categories:
 - 大模型
 - AI 工程
 source: blogs_podcasts
-description: 随着生成式 AI 的快速发展，如何高效构建与定制复杂的扩散模型管线已成为开发者关注的焦点。Modular Diffusers 通过引入模块化与可组合的设计理念，将原本僵化的流程解耦为灵活的积木组件。本文将深入解析这一框架的架构优势，并展示如何利用这些独立模块快速复现前沿研究或优化现有工作流，从而显著提升模型开发的效率与
+description: 随着生成式 AI 的快速发展，如何高效构建与定制复杂的扩散模型管线已成为开发者关注的焦点。Modular Diffusers 通过引入模块化与可组合的设计理念，将原本僵化的流程解耦为灵活的积木组件。本文将深入解析这一框架的架构优势，并展示如何利用这些独立模块快速复现前沿研究或优化现有工作流，从而显著提升模型开发的效率与灵活性。
 external_url: https://huggingface.co/blog/modular-diffusers
 scenarios:
 - AI/ML项目

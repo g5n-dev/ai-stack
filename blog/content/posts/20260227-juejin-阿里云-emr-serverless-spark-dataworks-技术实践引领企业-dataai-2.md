@@ -16,9 +16,8 @@ categories:
 - 数据
 - AI 工程
 source: juejin
-description: 以下是对该段内容的简洁总结： **核心主题**：阿里云 DataWorks 推出“开源湖仓智能平台”，旨在引领企业实现 Data+AI 一体化转型。
-  **主要举措与能力**： 1. **多模态数据统一治理**：打破数据孤岛，对各类数据进行标准化管理。 2. **AI 全链路血缘追踪**：提供从数据源头到 AI
-  模型的完
+description: 企业 Data+AI 一体化转型的核心痛点，在于如何打通数据治理与模型开发之间的壁垒。阿里云 DataWorks 结合 EMR Serverless
+  Spark，通过构建开源湖仓智能平台，实现了从多模态数据统一入湖到 AI 全链路血缘追踪的闭环。本文将详细拆解这一技术架构的落地实践，展示如何利用一体化开发能力提升端到端效率，为企业构建高性能的智能底座提供参考。
 external_url: https://juejin.cn/post/7611114569566896143
 scenarios:
 - AI/ML项目

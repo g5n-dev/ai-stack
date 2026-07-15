@@ -16,8 +16,7 @@ categories:
 - 大模型
 - AI 工程
 source: arxiv
-description: 以下是针对《Risk-Aware World Model Predictive Control for Generalizable End-to-End
-  Autonomous Driving》内容的中文总结： **研究背景与问题** 尽管基于模仿学习（IL）的端到端自动驾驶（E2E-AD）利用大规模专家数据取得了进展，
+description: 针对端到端自动驾驶在复杂动态环境中泛化能力不足的问题，本文提出了一种风险感知的世界模型预测控制框架。该方法通过显式建模环境动态与不确定性，在保证安全性的同时提升了决策的鲁棒性，但具体的模型架构细节无法从摘要确认。该研究为解决端到端自动驾驶在未见场景下的安全泛化提供了新的控制理论视角，有望推动更可靠的通用自动驾驶系统发展。
 external_url: http://arxiv.org/abs/2602.23259v1
 scenarios:
 - 计算机视觉

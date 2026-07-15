@@ -16,8 +16,8 @@ categories:
 - 大模型
 - 产品与创业
 source: blogs_podcasts
-description: OpenAI 在今天发布了 GPT‑5.6 系列的三款模型：Sol、Terra、Luna。Sol 定位于高效率轻量级，适用于快速响应场景；Terra
-  提供更强的推理能力，适合复杂任务；Luna 则是多模态版本，支持文本、图像、音频的统一处理。三者共享统一的 API 接口，便于开发者迁移和组合使用。 同时，OpenAI
+description: OpenAI 的重要一天。 OpenAI 今日发布 GPT 5.6 系列，包含 Sol、Terra 与 Luna 三款变体。与此同时，Codex
+  全面整合进 ChatGPT，使这款对话工具具备了代码生成与执行能力。三款模型各有侧重，覆盖从日常对话到专业编程的多种场景。对于关注 AI 发展的开发者和普通用户而言，这意味着可以在一个平台内完成对话、编程和工作流设计等多项任务。
 external_url: https://www.latent.space/p/ainews-openai-launches-gpt-56-solterraluna
 scenarios:
 - AI/ML项目

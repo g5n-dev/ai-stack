@@ -15,8 +15,8 @@ tags:
 categories:
 - AI 工程
 source: blogs_podcasts
-description: 在材料科学领域，传统的竞争壁垒往往是模型或算法的优势。Radical AI 的 Joseph Krause 提出，真正的护城河不在于“模型本身”，而在于“实验室”。自驱实验室（Self‑Driving
-  Lab）通过将高通量实验、自动化和机器学习闭环，实现实验流程的标准化、数据化与可重复性。相较于单纯依赖算法提升性能，拥
+description: Radical AI的Joseph Krause：为何材料领域的护城河是实验室，而非模型 在材料科学研究中，实验能力正成为决定性因素。传统依赖经验和试错的研发模式面临效率瓶颈，而自驱动实验室通过自动化与机器学习的结合，为材料发现提供了新的可能。Radical
+  AI的Joseph Krause指出，材料领域的真正护城河不在于模型算法本身，而在于能否构建高效、可控的实验系统。
 external_url: https://www.latent.space/p/radical-ai
 scenarios:
 - AI/ML项目

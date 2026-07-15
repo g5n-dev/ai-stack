@@ -15,8 +15,8 @@ tags:
 categories:
 - AI 工程
 source: blogs_podcasts
-description: Friend Bubbles：增强Facebook Reels社交发现功能 概述 Friend Bubbles是Facebook Reels中的一个功能模块，旨在突出展示用户好友点赞或互动过的短视频内容。该功能的核心价值在于帮助用户发现新内容，同时促进基于共同兴趣的社交互动。
-  主要功能 **社交内容推荐**：通过分析用
+description: 'Facebook Reels 中的"好友气泡"会突出显示你好友点赞或互动过的 Reels 内容，帮助你发现新内容，并让你更容易基于共同兴趣建立联系。本文深入解析了好友气泡背后的技术架构，包括机器学习如何评估关系强度，以及如何对你好友互动过的内容进行排名，从而创造更
+  ... 阅读更多... 这篇文章《Friend Bubbles: Enhancing Social Discovery on…'
 external_url: https://engineering.fb.com/2026/03/18/ml-applications/friend-bubbles-enhancing-social-discovery-on-facebook-reels
 scenarios:
 - Web应用开发

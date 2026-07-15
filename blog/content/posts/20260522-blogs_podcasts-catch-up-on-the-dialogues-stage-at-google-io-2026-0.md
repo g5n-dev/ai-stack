@@ -16,9 +16,9 @@ categories:
 - 大模型
 - 系统与基础设施
 source: blogs_podcasts
-description: 活动概述 Google I/O 2026 的 Dialogues 舞台聚焦于高层对话，邀请 Alphabet 首席执行官桑达尔·皮查伊（Sundar
-  Pichai）分享公司在 AI、量子计算、可持续发展等领域的最新进展。 主要议题 - **AI 发展方向**：强调生成式模型的安全与可解释性，提出多模态 AI
-  的商业化路
+description: Alphabet CEO桑达尔·皮查伊在I/O 2026 Dialogues舞台上的对话 在 Google I/O 2026 的 Dialogues
+  舞台，Alphabet CEO 桑达尔·皮查伊与行业领袖展开深度对话，探讨 AI 与搜索未来的融合方向。此次对话覆盖了从大模型安全到多模态交互的关键议题，揭示了
+  Google 在技术创新上的最新思路。
 external_url: https://blog.google/innovation-and-ai/technology/ai/io-2026-dialogues-recap
 scenarios:
 - AI/ML项目

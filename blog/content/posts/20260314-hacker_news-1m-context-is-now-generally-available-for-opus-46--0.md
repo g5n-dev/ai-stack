@@ -16,7 +16,7 @@ categories:
 - 大模型
 source: hacker_news
 description: 随着模型参数量的提升，长上下文处理能力已成为衡量大模型应用潜力的关键指标。Opus 4.6 与 Sonnet 4.6 此次正式将上下文窗口扩展至
-  1M tokens，标志着系统在处理大规模文档与复杂多轮对话时的稳定性与效率迈上了新台阶。对于开发者而言，这意味着在构建 RAG 系统或进行长文本分析时，将获得更连贯的推理支
+  1M tokens，标志着系统在处理大规模文档与复杂多轮对话时的稳定性与效率迈上了新台阶。对于开发者而言，这意味着在构建 RAG 系统或进行长文本分析时，将获得更连贯的推理支持与更低的检索成本。
 external_url: https://claude.com/blog/1m-context-ga
 scenarios:
 - AI/ML项目

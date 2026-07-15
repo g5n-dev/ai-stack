@@ -16,8 +16,8 @@ categories:
 - 大模型
 - AI 工程
 source: blogs_podcasts
-description: '**摘要：中国生成式媒体模型的新突破** 近日，中国 AI 领域传来重要进展，两款强大的生成式媒体模型——**Qwen Image 2**（通义千问视觉生成模型
-  2）与 **Seedance 2**（舞蹈生成模型 2）相继发布，展现了中国在生成式媒体领域的显著实力。 **1. Qwen Image 2** * **定位'
+description: 中国生成式媒体表现强劲 摘要：中国生成式媒体模型的新突破 近日，中国 AI 领域传来重要进展，两款强大的生成式媒体模型——Qwen Image
+  2（通义千问视觉生成模型 2）与 Seedance 2（舞蹈生成模型 2）相继发布，展现了中国在生成式媒体领域的显著实力。 1. Qwen Image 2 定位：这是由阿里巴巴推出的高性能文本生成图像模型。
 external_url: https://www.latent.space/p/ainews-qwen-image-2-and-seedance
 scenarios:
 - Web应用开发

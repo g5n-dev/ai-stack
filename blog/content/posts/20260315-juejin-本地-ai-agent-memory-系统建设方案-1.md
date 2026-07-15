@@ -16,8 +16,8 @@ categories:
 - AI 工程
 - 系统与基础设施
 source: juejin
-description: 这份方案主要阐述了构建本地 AI Agent Memory 系统的必要性、核心设计理念以及基于 Markdown 的具体实施策略。以下是总结：
-  **一、 建设动因：为何需要本地 Memory** 本地 Memory 是 Agent 实现“长期记忆”与“个性化”的关键。 1. **突破上下文限制**：弥补大模型上下文窗口
+description: 随着大模型应用从简单对话向复杂任务演进，本地 Memory 系统已成为提升 Agent 智能化水平的关键基础设施。它不仅解决了上下文窗口受限和长期记忆遗忘的痛点，更是实现个性化与连贯交互的核心。本文将基于“Markdown
+  First”策略，深入剖析从存储、提取到检索注入的完整建设方案，助你构建一套高效、可控的本地记忆体系。
 external_url: https://juejin.cn/post/7616818675262603298
 scenarios:
 - AI/ML项目

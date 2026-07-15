@@ -16,8 +16,8 @@ categories:
 - 前端
 - AI 工程
 source: juejin
-description: 好的，以下是对提供内容的简洁总结： **OpenTiny NEXT-SDK 重磅发布：四步将前端应用智能化** 在AI Agent时代，用户需求已从简单的问答交互升级为希望AI能直接执行任务，如写代码、制作视频/PPT以及操作网页。为此，OpenTiny
-  NEXT-SDK 正式发布，旨在通过简单的四步流程，赋能开发者快
+description: 随着 AI Agent 技术的演进，用户对交互的期待已从简单的问答转向了能够自主执行任务的智能体。OpenTiny NEXT-SDK 的发布，正是为了填补前端应用与
+  AI 智能体之间的技术鸿沟，让 AI 具备直接操作网页的能力。本文将介绍如何通过四个步骤将该 SDK 接入现有项目，帮助开发者快速构建能够自动执行复杂操作的智能应用，从而提升产品的自动化水平与用户体验。
 external_url: https://juejin.cn/post/7612288284083437594
 scenarios:
 - AI/ML项目

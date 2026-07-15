@@ -119,14 +119,14 @@ def clean_data(raw_data):
     功能：处理缺失值、异常值、重复数据
     """
     df = pd.DataFrame(raw_data)
-    
+
     # 处理缺失值：数值列用中位数填充，类别列用众数填充
     for col in df.columns:
         if df[col].dtype in [np.float64, np.int64]:
             df[col].fillna(df[col].median(), inplace=True)
         else:
             df[col].fillna(df[col].mode()[0], inplace=True)
-    
+
     # 处理异常值：使用IQR方法检测并修正
     for col in df.select_dtypes(include=[np.number]).columns:
         Q1 = df[col].quantile(0.25)
@@ -138,10 +138,10 @@ def clean_data(raw_data):
             df[col]
         )
         df[col].fillna(df[col].median(), inplace=True)  # 再用中位数填充
-    
+
     # 去除完全重复的行
     df.drop_duplicates(inplace=True)
-    
+
     return df
 
 # 测试数据
@@ -172,23 +172,23 @@ def classify_text(text_samples):
         ("球队赢得冠军", "体育"),
         ("电影票房破纪录", "娱乐")
     ]
-    
+
     # 分离特征和标签
     X_train = [t[0] for t in train_data]
     y_train = [t[1] for t in train_data]
-    
+
     # 特征提取
     vectorizer = TfidfVectorizer()
     X_train_vec = vectorizer.fit_transform(X_train)
-    
+
     # 训练分类器
     clf = MultinomialNB()
     clf.fit(X_train_vec, y_train)
-    
+
     # 预测新文本
     X_test = vectorizer.transform(text_samples)
     predictions = clf.predict(X_test)
-    
+
     return list(zip(text_samples, predictions))
 
 # 测试数据
@@ -215,17 +215,17 @@ def detect_anomalies(data, contamination=0.1):
     """
     # 转换数据为numpy数组
     X = np.array(data).reshape(-1, 1)
-    
+
     # 训练异常检测模型
     clf = IsolationForest(contamination=contamination)
     clf.fit(X)
-    
+
     # 预测异常
     predictions = clf.predict(X)
-    
+
     # 返回异常值及其索引
     anomalies = [(i, val) for i, (val, pred) in enumerate(zip(X, predictions)) if pred == -1]
-    
+
     return anomalies
 
 # 测试数据 - 包含一些异常值
@@ -241,8 +241,6 @@ for idx, val in anomalies:
 ## 案例研究
 
 ### 1：Klarna（全球支付与金融科技巨头）
-
- 1：Klarna（全球支付与金融科技巨头）
 
 **背景**:
 Klarna 是欧洲最大的金融科技公司之一，拥有庞大的全球客户基础。随着业务规模的扩大，其客服中心面临着巨大的压力，需要处理海量的重复性咨询，包括退款状态、发货查询、账户管理等。
@@ -263,8 +261,6 @@ Klarna 利用 OpenAI 的技术（基于 GPT-4 等模型）构建并部署了一�
 
 ### 2：PwC（普华永道 - 全球专业咨询服务）
 
- 2：PwC（普华永道 - 全球专业咨询服务）
-
 **背景**:
 普华永道作为全球四大会计师事务所之一，拥有数十万员工和海量的法律、税务及审计文档。员工在日常工作中需要花费大量时间在内部知识库中检索信息、查找合规条款或总结过往案例。
 
@@ -282,8 +278,6 @@ PwC 与 OpenAI 建立了企业级合作关系，构建了专属的内部 AI Agen
 ---
 
 ### 3：Wix（网站建设平台）
-
- 3：Wix（网站建设平台）
 
 **背景**:
 Wix 是一家全球知名的网站建设平台，致力于让非技术用户也能轻松创建网站。尽管提供了拖拽式编辑器，但用户在面对空白页面时，往往不知道如何开始，或者需要花费大量时间设计布局和撰写文案。
@@ -404,15 +398,11 @@ Wix 推出了 "Wix Studio" 和 "AI Website Builder"，集成了类似 OpenAI In-
 
 ### 1: OpenAI 内部数据代理 的主要功能是什么？
 
-1: OpenAI 内部数据代理 的主要功能是什么？
-
 **A**: OpenAI 内部数据代理 是一个专门设计的工具，旨在帮助开发者和企业更高效地检索、处理和管理数据。它能够自动化数据清洗、格式转换和查询优化等任务，特别适用于需要快速整合多源数据的场景。通过该工具，用户可以减少手动操作，提升数据处理效率，同时确保数据的准确性和一致性。
 
 ---
 
 ### 2: 该数据代理与 OpenAI 的其他工具有何区别？
-
-2: 该数据代理与 OpenAI 的其他工具有何区别？
 
 **A**: 与 OpenAI 的其他工具（如 GPT 模型或 Codex）相比，数据代理更专注于数据操作而非自然语言生成或代码编写。它提供了更细粒度的数据处理功能，例如数据过滤、聚合和转换，而其他工具可能更侧重于生成文本或代码。此外，数据代理通常与 OpenAI 的 API 深度集成，能够无缝调用其他服务，形成更完整的工作流。
 
@@ -420,15 +410,11 @@ Wix 推出了 "Wix Studio" 和 "AI Website Builder"，集成了类似 OpenAI In-
 
 ### 3: 如何使用 OpenAI 内部数据代理？
 
-3: 如何使用 OpenAI 内部数据代理？
-
 **A**: 使用该数据代理通常需要通过 OpenAI 的 API 或 SDK 进行集成。用户需要提供数据源（如数据库、文件或 API 端点），然后通过调用数据代理的接口来执行操作。具体步骤包括：1. 配置数据源连接；2. 定义数据处理任务（如查询或转换）；3. 调用 API 并获取结果。OpenAI 还提供了详细的文档和示例代码，帮助开发者快速上手。
 
 ---
 
 ### 4: 数据代理是否支持实时数据处理？
-
-4: 数据代理是否支持实时数据处理？
 
 **A**: 是的，OpenAI 内部数据代理 支持实时数据处理。它可以通过流式处理或批处理模式操作数据，具体取决于用户的需求。对于需要低延迟的场景（如实时分析或监控），数据代理能够快速响应并返回结果。不过，实时处理的性能可能受数据量和复杂度的影响，建议根据具体场景优化配置。
 
@@ -436,23 +422,17 @@ Wix 推出了 "Wix Studio" 和 "AI Website Builder"，集成了类似 OpenAI In-
 
 ### 5: 使用该数据代理是否需要额外的费用？
 
-5: 使用该数据代理是否需要额外的费用？
-
 **A**: 费用取决于具体的使用场景和调用方式。如果通过 OpenAI 的 API 使用数据代理，可能会按照调用次数或数据处理量收费。具体定价需参考 OpenAI 的官方价格表。此外，某些高级功能（如大规模数据处理或定制化集成）可能需要额外的企业级许可。建议在正式使用前咨询 OpenAI 的销售团队以获取准确的报价。
 
 ---
 
 ### 6: 数据代理的安全性如何保障？
 
-6: 数据代理的安全性如何保障？
-
 **A**: OpenAI 非常重视数据安全，其数据代理采用了多层加密和访问控制机制。所有数据传输均通过 HTTPS 加密，且数据在存储和处理过程中也会受到严格的权限管理。此外，OpenAI 符合 GDPR 等数据保护法规，用户可以放心处理敏感数据。对于企业用户，还可以配置额外的安全策略，如 IP 白名单或私有化部署选项。
 
 ---
 
 ### 7: 是否支持自定义数据处理逻辑？
-
-7: 是否支持自定义数据处理逻辑？
 
 **A**: 是的，OpenAI 内部数据代理 允许用户通过脚本或插件扩展其功能。用户可以编写自定义的数据处理逻辑（如 Python 或 SQL 脚本），并通过 API 将其集成到数据代理的工作流中。此外，OpenAI 还提供了一些预定义的模板和函数库，帮助用户快速实现常见的处理需求。
 ## 引用

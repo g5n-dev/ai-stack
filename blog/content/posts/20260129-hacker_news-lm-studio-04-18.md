@@ -121,19 +121,19 @@ def call_lm_studio_api(prompt, model_path="http://localhost:1234/v1"):
     :return: 模型生成的回复文本
     """
     import requests
-    
+
     headers = {
         "Content-Type": "application/json"
     }
-    
+
     data = {
         "model": "local-model",  # LM Studio默认模型标识
         "messages": [{"role": "user", "content": prompt}],
         "temperature": 0.7
     }
-    
+
     try:
-        response = requests.post(f"{model_path}/chat/completions", 
+        response = requests.post(f"{model_path}/chat/completions",
                                json=data, headers=headers)
         response.raise_for_status()
         return response.json()["choices"][0]["message"]["content"]
@@ -182,7 +182,7 @@ def interactive_chat():
         user_input = input("\n您: ")
         if user_input.lower() == "quit":
             break
-            
+
         response = call_lm_studio_api(user_input)
         print(f"\n助手: {response}")
 
@@ -194,8 +194,6 @@ interactive_chat()
 ## 案例研究
 
 ### 1：某金融科技初创公司的本地化智能客服开发
-
- 1：某金融科技初创公司的本地化智能客服开发
 
 **背景**:
 该公司致力于为海外中小银行提供移动端银行应用。由于金融行业的严格合规性（如 GDPR 和当地数据隐私法），他们不能将客户数据传输到云端或使用 OpenAI 等公共 API 进行处理。同时，他们的开发团队规模较小，无法承担昂贵的 GPU 服务器集群租赁费用。
@@ -213,8 +211,6 @@ interactive_chat()
 
 ### 2：某独立软件开发者的隐私优先写作辅助工具
 
- 2：某独立软件开发者的隐私优先写作辅助工具
-
 **背景**:
 一位独立开发者正在构建一款面向小说家和编剧的创意写作软件。目标用户群体对隐私极度敏感，担心使用云端 AI（如 ChatGPT）会导致其未发布的创意构思被模型训练或被服务商窃取。
 
@@ -230,8 +226,6 @@ interactive_chat()
 ---
 
 ### 3：医疗设备公司的嵌入式离线诊断辅助
-
- 3：医疗设备公司的嵌入式离线诊断辅助
 
 **背景**:
 一家为偏远地区诊所提供便携式医疗诊断设备的公司，计划为其设备添加“智能病历分析”功能。这些诊所通常网络连接极其不稳定，甚至完全没有互联网接入。
@@ -344,23 +338,17 @@ interactive_chat()
 
 ### 1: LM Studio 0.4 版本的主要更新和核心功能是什么？
 
-1: LM Studio 0.4 版本的主要更新和核心功能是什么？
-
 **A**: LM Studio 0.4 是该应用的一个重要更新版本，主要引入了对 OpenAI 兼容 API 服务器的本地支持。这意味着用户现在可以在本地运行大语言模型（LLM），并通过兼容 OpenAI 的接口在应用程序或开发环境中调用这些模型。此外，该版本通常还优化了模型下载管理、推理性能以及用户界面的交互体验，旨在让用户在没有互联网连接的情况下，也能在本地私密且高效地运行各类开源大模型（如 Llama 3, Mistral, Gemma 等）。
 
 ---
 
 ### 2: 如何使用 LM Studio 0.4 启动本地 API 服务器？
 
-2: 如何使用 LM Studio 0.4 启动本地 API 服务器？
-
 **A**: 在 LM Studio 0.4 中启动本地服务器非常直观。首先，你需要在应用界面左侧的模型列表中下载并加载一个你想要使用的模型。加载完成后，找到界面上的“服务器”或“Local Server”选项卡（通常在顶部或侧边栏），点击“启动服务器”按钮。启动后，LM Studio 会在本地（通常是 `http://localhost:1234`）创建一个 API 端点。你可以直接在代码中（例如使用 Python 的 `openai` 库）将 `base_url` 指向该本地地址，将 `api_key` 设置为任意字符串（例如 `lm-studio`），即可像调用 OpenAI 官方接口一样调用本地模型。
 
 ---
 
 ### 3: 运行 LM Studio 需要什么样的电脑硬件配置？
-
-3: 运行 LM Studio 需要什么样的电脑硬件配置？
 
 **A**: LM Studio 利用了本地硬件进行推理，因此硬件配置直接影响运行速度和可用的模型大小。
 *   **内存 (RAM)**：建议至少 16GB，如果运行参数量较大的模型（如 70B+），32GB 或更多内存会更稳妥。
@@ -372,15 +360,11 @@ interactive_chat()
 
 ### 4: LM Studio 是完全免费和开源的吗？
 
-4: LM Studio 是完全免费和开源的吗？
-
 **A**: LM Studio 的核心软件目前可以免费下载和使用，但其源代码并未完全开源（属于闭源免费软件）。不过，它构建于开源社区的基础之上，支持加载 Hugging Face 上广泛存在的开源模型文件（如 GGUF 格式）。用户可以自由地下载、运行和测试这些开源模型，但 LM Studio 应用程序本身的源代码并不像 Llama.cpp 等底层库那样公开。
 
 ---
 
 ### 5: 在 LM Studio 中加载模型时出现“Out of Memory”（内存不足）错误怎么办？
-
-5: 在 LM Studio 中加载模型时出现“Out of Memory”（内存不足）错误怎么办？
 
 **A**: 这是一个常见问题，通常是因为模型的大小超过了你的显存或系统内存的承载能力。解决方法包括：
 1.  **使用量化版本**：在下载模型时，选择量化程度更高的版本（例如 Q4_K_M 或 Q5_K_S），这些版本体积更小，对内存的需求更低。
@@ -392,15 +376,11 @@ interactive_chat()
 
 ### 6: LM Studio 支持哪些类型的模型文件？如何下载新模型？
 
-6: LM Studio 支持哪些类型的模型文件？如何下载新模型？
-
 **A**: LM Studio 主要支持 GGUF 格式的模型文件，这是一种专为 CPU 和 Apple Silicon 推理优化的格式，同时也支持通过 GPU 加速。在应用内部，用户可以直接使用内置的搜索功能浏览 Hugging Face 上的模型库。你只需在搜索栏输入模型名称（例如 "llama 3" 或 "mistral"），应用会列出可用的 GGUF 版本。点击下载按钮后，模型会自动保存到本地库中，随后即可在聊天界面或服务器模式中加载使用。
 
 ---
 
 ### 7: LM Studio 0.4 生成的 API 服务器可以在局域网内其他设备上访问吗？
-
-7: LM Studio 0.4 生成的 API 服务器可以在局域网内其他设备上访问吗？
 
 **A**: 是的，默认情况下，LM Studio 的 API 服务器可能仅绑定在 `localhost` (127.0.0.1) 上。如果希望局域网内的其他设备（如手机、平板或另一台电脑）访问该 API，你需要在设置中找到“服务器绑定地址”或“Host”选项，将其从 `localhost`
 ## 引用

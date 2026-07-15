@@ -16,8 +16,8 @@ categories:
 - 大模型
 - 论文
 source: blogs_podcasts
-description: 研究人员利用AI成功预测了心力衰竭患者一年内病情恶化的风险，为提前干预提供了新工具。 这项由麻省理工学院（MIT）、布莱根妇女医院（Mass
-  General Brigham）和哈佛医学院团队合作开发的技术，通过深度学习模型分析患者医疗数据，可提前一年预测心力衰竭患者的预后情况。模型整合了电子健康记录中的多种信息（如人口
+description: 来自麻省理工学院、Mass General Brigham和哈佛医学院的研究人员开发了一种深度学习模型，可以提前一年预测患者的心力衰竭预后。
+  准确预测心力衰竭患者的病情走向，对于临床医生及时调整治疗方案、改善患者预后至关重要。近期，来自麻省理工学院、Mass General Brigham 及哈佛医学院的研究团队开发了一种深度学习模型，试图突破这一医学难题。
 external_url: https://news.mit.edu/2026/can-ai-help-predict-which-heart-failure-patients-will-worsen-0312
 scenarios:
 - AI/ML项目

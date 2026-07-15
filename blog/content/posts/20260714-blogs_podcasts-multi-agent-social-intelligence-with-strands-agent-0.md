@@ -16,8 +16,7 @@ categories:
 - AI 工程
 - 系统与基础设施
 source: blogs_podcasts
-description: 系统概述 Thrad.ai 采用 Strands Agents 与 Amazon Bedrock AgentCore 构建多智能体系统，实现从潜在客户发现到个性化邮件生成的完整自动化流程。
-  编排模式对比 系统提供 **Swarm（蜂群）** 与 **Graph（图）** 两种编排方式。 - **Swarm**：去中心化
+description: 本文展示了Thrad.ai如何部署了一个多智能体系统，结合Strands Agents和Amazon Bedrock AgentCore，实现了从潜在客户发现到个性化邮件生成的自动化流程。本文对比了两种编排模式（Swarm和Graph），并通过延迟、成本和邮件质量等指标进行了头对头基准测试。您还将了解系统如何使用加权标准、意图分类和时间衰减来对潜在客户进行评分，以及生产环境部署的治理控制机制。
 external_url: https://aws.amazon.com/blogs/machine-learning/multi-agent-social-intelligence-with-strands-agents-and-amazon-bedrock
 scenarios:
 - 大语言模型

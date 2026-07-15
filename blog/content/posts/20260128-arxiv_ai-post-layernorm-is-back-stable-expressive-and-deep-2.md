@@ -25,10 +25,6 @@ description: 本文介绍了一种名为 Keel 的新型 Transformer 架构，旨
   当前 LLM 的发展遭遇瓶颈，单纯增加宽度收益递减，而增加深度虽然理论上能提升表达能力，但现有的 Transformer 架构（广泛使用的 Pre-LayerNorm）在极深层数下难以训练。
 ---
 
-## 📚 🔥Post-LayerNorm强势回归！稳定、高效、深度训练的新神器！
-
----
-
 ## 📋 基本信息
 
 - **ArXiv ID**: 2601.19895v1
@@ -375,7 +371,7 @@ Keel 并没有发明全新的组件（Highway 和 Post-LN 都很古老），但�
 - **文章**：《Understanding LN in Transformers》
 - **博客**：Harvard 的 The Annotated Transformer
 
-**学习建议**: 
+**学习建议**:
 不要只记公式，要动手用 PyTorch 实现一个简单的 Block，对比 Pre-Norm 和 Post-Norm 在反向传播时的梯度差异。理解为什么 Pre-Norm 成为过去几年的主流是因为它更稳，但可能牺牲了某些表达能力。
 
 ---
@@ -393,7 +389,7 @@ Keel 并没有发明全新的组件（Highway 和 Post-LN 都很古老），但�
 - **论文原文**：《Post-LayerNorm Is Back: Stable, ExpressivE, and Deep》
 - **代码仓库**：论文作者提供的官方代码库
 
-**学习建议**: 
+**学习建议**:
 重点阅读论文的 **Theorem 1** 和 **Section 3 (SLED Method)**。尝试推导一下为什么 $\epsilon$ 的衰减有助于保持梯度的稳定性。这是理解“为什么 Post-Norm 能回来”的关键。
 
 ---
@@ -411,7 +407,7 @@ Keel 并没有发明全新的组件（Highway 和 Post-LN 都很古老），但�
 - **相关论文**：《DeepNorm: Stable Transformers for Normalization》
 - **视频教程**：寻找关于深度学习优化稳定性的进阶课程
 
-**学习建议**: 
+**学习建议**:
 在这个阶段，你需要在实验中复现论文的结果。尝试构建一个 30层甚至更深的 Transformer，使用 Pre-Norm 会发现很难收敛，而应用 SLED 后观察 Loss 曲线的变化。
 
 ---
@@ -429,15 +425,13 @@ Keel 并没有发明全新的组件（Highway 和 Post-LN 都很古老），但�
 - **开源框架**：Hugging Face Transformers 源码
 - **竞赛/项目**：Kaggle NLP 项目或个人 LLM 训练项目
 
-**学习建议**: 
+**学习建议**:
 这是“精通”阶段。不要满足于跑通代码，要尝试修改 SLED 的衰减策略，看看是否有更优解。思考：为什么 Post-LN “回归”了？它解决了 Pre-LN 的哪些痛点（如训练动态的退化）？最后，尝试写一篇技术博客总结你的发现。
 
 ---
 ## ❓ 常见问题
 
 ### 1: 为什么这篇论文提出 Post-LN 又“回来了”？它不是早就被 Pre-LN 取代了吗？
-
-1: 为什么这篇论文提出 Post-LN 又“回来了”？它不是早就被 Pre-LN 取代了吗？
 
 **A**: 这是一个非常好的切入点。在 Transformer 发展的早期（如 BERT、GPT-2），**Post-LN**（后层归一化，即 Norm 在残差连接之后）是主流。但由于 Post-LN 在训练初期极不稳定，容易出现梯度爆炸或消失，导致深层网络无法收敛，后来的研究（如 GPT-3、ViT）普遍转向了 **Pre-LN**（前层归一化，Norm 在残差连接之前）。
 
@@ -446,8 +440,6 @@ Keel 并没有发明全新的组件（Highway 和 Post-LN 都很古老），但�
 ---
 
 ### 2: Post-LN 和 Pre-LN 的核心区别到底是什么？为什么表达能力很重要？
-
-2: Post-LN 和 Pre-LN 的核心区别到底是什么？为什么表达能力很重要？
 
 **A**: 两者的核心区别在于 **LayerNorm（层归一化）** 在残差块中的位置：
 
@@ -465,8 +457,6 @@ Keel 并没有发明全新的组件（Highway 和 Post-LN 都很古老），但�
 
 ### 3: 论文中提到的 Scale-Norm 初始化具体是指什么？
 
-3: 论文中提到的 Scale-Norm 初始化具体是指什么？
-
 **A**: 为了让 Post-LN 能够稳定训练，作者提出了一种特殊的权重初始化方法，称为 **Scale-Norm 初始化**。
 
 在传统的 Post-LN 中，如果使用标准的 Kaiming 或 Xavier 初始化，残差分支的输出方差往往很大，导致 LayerNorm 的输入分布极端，进而引发梯度不稳定。
@@ -476,8 +466,6 @@ Keel 并没有发明全新的组件（Highway 和 Post-LN 都很古老），但�
 ---
 
 ### 4: 使用 Post-LN 训练的模型在性能上真的比 Pre-LN 好吗？
-
-4: 使用 Post-LN 训练的模型在性能上真的比 Pre-LN 好吗？
 
 **A**: 根据论文的实验结果，是的。
 
@@ -489,8 +477,6 @@ Keel 并没有发明全新的组件（Highway 和 Post-LN 都很古老），但�
 ---
 
 ### 5: 这种新方法是否需要改变现有的 Transformer 架构？迁移成本高吗？
-
-5: 这种新方法是否需要改变现有的 Transformer 架构？迁移成本高吗？
 
 **A**: **架构上不需要改变，但初始化策略需要改变。**
 

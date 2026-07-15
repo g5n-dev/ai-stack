@@ -16,8 +16,8 @@ categories:
 - 大模型
 - AI 工程
 source: blogs_podcasts
-description: 概要 本期节目在 AIE Europe 大会结束不久后录制，赶在 Cursor‑xAI 交易宣布之前，对大会亮点进行回顾，并围绕 Agent
-  Labs 提出的“无监督学习 × 跨潜伏空间”论点展开深入讨论。节目首先梳理了 AIE Europe 的主要议题，包括大规模语言模型的最新进展、开源生态的扩张以及多模态推理的实验
+description: 注意：本期节目录制于 AIE Europe 之后，但在 Cursor-xAI 交易之前。 本集在 AIE Europe 会议结束后、Cursor‑xAI
+  交易前录制，围绕欧洲人工智能生态的最新动态进行回顾。随后，Agent Labs 提出了关于无监督学习与潜在空间交叉的研究论点，阐述了该方向在模型压缩与跨模态迁移中的实际价值。读者可以通过本次报告快速把握行业趋势，并获得可落地的技术洞见。
 external_url: https://www.latent.space/p/unsupervised-learning-2026
 scenarios:
 - AI/ML项目

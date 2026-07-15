@@ -17,7 +17,7 @@ categories:
 - AI 工程
 source: hacker_news
 description: 随着大语言模型（LLM）在代码生成领域的应用日益深入，如何将模型固有的概率性转化为工程所需的确定性，已成为技术落地的关键挑战。本文探讨了将
-  LLM 纳入确定性编程范式的可行路径，分析了从提示工程到结构化输出控制的技术手段。通过阅读本文，开发者可以了解如何构建可靠的 LLM 应用逻辑，从而在保持模型灵活性的同时，显著提升
+  LLM 纳入确定性编程范式的可行路径，分析了从提示工程到结构化输出控制的技术手段。通过阅读本文，开发者可以了解如何构建可靠的 LLM 应用逻辑，从而在保持模型灵活性的同时，显著提升系统的可控性与稳定性。
 external_url: https://www.mcherm.com/deterministic-programming-with-llms.html
 scenarios:
 - 大语言模型

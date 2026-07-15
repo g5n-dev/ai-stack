@@ -17,7 +17,7 @@ categories:
 - 论文
 source: hacker_news
 description: 构建一个仅处理十位数加法的极简 Transformer，看似简单，却能清晰展示大模型如何通过注意力机制捕捉数值逻辑与进位规律。本文将剥离复杂场景，带你从零搭建并训练这一模型，直观观察神经网络如何“学会”数学运算。通过这一过程，你可以深入理解
-  Transformer 的核心组件运作机制，为构建更复杂的逻辑推理模型打下基础
+  Transformer 的核心组件运作机制，为构建更复杂的逻辑推理模型打下基础。
 external_url: https://alexlitzenberger.com/blog/post.html?post=%2Fbuilding_a_minimal_transformer_for_10_digit_addition
 scenarios:
 - AI/ML项目

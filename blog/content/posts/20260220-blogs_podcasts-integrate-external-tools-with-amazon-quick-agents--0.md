@@ -16,8 +16,9 @@ categories:
 - AI 工程
 - 开发工具
 source: blogs_podcasts
-description: 本文介绍如何利用**模型上下文协议（MCP）**将外部工具集成到 **Amazon Quick Agents** 中。这是一份面向第三方（3P）合作伙伴的详细实施指南，旨在帮助开发者构建新的
-  MCP 服务器，或验证并调整现有的服务器以实现与 Amazon Quick 的无缝集成。 核心内容总结如下： 1. **目标受众
+description: 在这篇文章中，您将使用一个六步清单来构建新的 MCP 服务器，或对现有的 MCP 服务器进行验证和调整，以便集成到 Amazon Quick
+  中。《Amazon Quick 用户指南》介绍了 MCP 客户端的行为和约束。这是一份“操作指南”，详细说明了 3P 合作伙伴需要实现哪些内容，才能通过 MCP
+  与 Amazon Quick 集成。
 external_url: https://aws.amazon.com/blogs/machine-learning/integrate-external-tools-with-amazon-quick-agents-using-model-context-protocol-mcp
 scenarios:
 - Web应用开发

@@ -16,8 +16,9 @@ categories:
 - AI 工程
 - 系统与基础设施
 source: blogs_podcasts
-description: 基于AWS构建智能照片搜索系统 本文介绍了如何利用 **AWS Cloud Development Kit (AWS CDK)**，集成
-  Amazon Rekognition、Amazon Neptune 和 Amazon Bedrock 三项核心服务，构建一个全方位的智能照片搜索系统。 该系统旨在解决传统照片搜索仅依
+description: 在本文中，我们将向您展示如何使用 AWS Cloud Development Kit (AWS CDK) 构建一套综合性的图片搜索系统，该系统集成
+  Amazon Rekognition 用于人脸与物体检测、Amazon Neptune 用于关系映射，以及 Amazon Bedrock 用于 AI 驱动的图片说明。
+  在海量非结构化图片数据中快速定位特定内容，是许多企业面临的技术挑战。
 external_url: https://aws.amazon.com/blogs/machine-learning/build-an-intelligent-photo-search-using-amazon-rekognition-amazon-neptune-and-amazon-bedrock
 scenarios:
 - Web应用开发

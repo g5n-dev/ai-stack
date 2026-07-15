@@ -16,8 +16,8 @@ categories:
 - AI 工程
 - 系统与基础设施
 source: blogs_podcasts
-description: 本文介绍了一种利用 **Amazon Lex 多开发者 CI/CD 流水线** 来推动组织业务增长的解决方案。 **核心内容：** 该方案旨在为使用
-  Amazon Lex 的团队提供一套支持多开发者协作的持续集成与持续部署（CI/CD）流程。文章详细展示了如何构建这一系统，重点实现了以下关键能力： 1. **隔离的开发
+description: 在这篇文章中，我们将介绍一个适用于 Amazon Lex 的多开发者 CI/CD 流水线，该流水线支持隔离的开发环境、自动化测试以及简化的部署流程。我们将演示如何设置该解决方案，并分享使用此方法的团队所获得的实际效果。
+  构建高效的协作模式是技术团队扩展规模时的关键挑战，尤其是在开发 Amazon Lex 这类交互式 AI 机器人时。
 external_url: https://aws.amazon.com/blogs/machine-learning/drive-organizational-growth-with-amazon-lex-multi-developer-ci-cd-pipeline
 scenarios:
 - DevOps/运维

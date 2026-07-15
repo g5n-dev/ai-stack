@@ -15,8 +15,7 @@ tags:
 categories:
 - 效率与方法论
 source: blogs_podcasts
-description: 项目背景 Futures Lab 致力于将前沿人工智能研究转化为可落地的原型，让技术走出实验室、进入真实场景。该平台汇聚了全球高校和企业的创新项目，为开发者提供实验环境与资源支持。
-  关键原型 滑铁卢大学的学生团队在 Futures Lab 上打造了多个 AI 原型，其中最受关注的包括： * **手语教学助手**：利用计
+description: 滑铁卢大学的学生开发人工智能原型（如手语导师），以重塑教育和工作的未来。 滑铁卢大学的Futures Lab聚集了学生们的真实人工智能原型，涵盖手语导师等交互式应用。这些原型不只是概念展示，而是通过具体技术实现，探索AI在教学辅助和职场培训中的创新路径。阅读本文，你可以了解每个原型的设计思路、实现细节以及对未来教育与工作方式的潜在影响。
 external_url: https://blog.google/innovation-and-ai/technology/ai/university-waterloo-labs
 scenarios:
 - AI/ML项目

@@ -16,9 +16,9 @@ categories:
 - 大模型
 - 系统与基础设施
 source: blogs_podcasts
-description: 概述 Anthropic 宣布 Claude Platform on AWS 正式发布。该服务通过 AWS 账户直接提供 Anthropic
-  原生的 Claude Platform 功能，无需单独凭证、合同或计费关系。 关键特性 - 直接在 AWS 账户内访问 Claude 模型，使用已有的 IAM
-  权限管理。 - 计
+description: 今天，我们很高兴地宣布 Claude Platform on AWS 正式发布。Claude Platform on AWS 是一项全新服务，让客户可以直接通过其
+  AWS 账户访问 Anthropic 原生的 Claude Platform 体验，无需额外的凭证、合同或计费关系。AWS 是首个提供原生 Claude Platform
+  体验的云服务提供商。
 external_url: https://aws.amazon.com/blogs/machine-learning/introducing-claude-platform-on-aws-anthropics-native-platform-through-your-aws-account
 scenarios:
 - Web应用开发

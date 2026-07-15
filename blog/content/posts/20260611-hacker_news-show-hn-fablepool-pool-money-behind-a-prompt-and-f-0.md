@@ -16,7 +16,7 @@ categories:
 - 产品与创业
 source: hacker_news
 description: FablePool 提出一种将资金与需求直接挂钩的创作模式：用户只需提出需求并共同出资，平台随后将公开透明地展示完整的开发过程。相比传统的先融资后开发模式，这种“先行众筹、实时公开”能够显著降低项目风险，让资金投入方实时了解进度并进行迭代。对于想要探索新协作方式的开发者或创业者而言，FablePool
-  不仅提供了技术实
+  不仅提供了技术实现的可能性，更是一套可复制的社区驱动开发框架。
 external_url: https://fablepool.com
 scenarios:
 - AI/ML项目

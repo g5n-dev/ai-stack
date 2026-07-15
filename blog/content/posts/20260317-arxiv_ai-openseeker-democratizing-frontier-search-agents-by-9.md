@@ -16,8 +16,8 @@ categories:
 - 大模型
 - 开源生态
 source: arxiv
-description: '以下是关于《OpenSeeker: Democratizing Frontier Search Agents by Fully Open-Sourcing
-  Training Data》的简洁总结： **背景与问题** 尽管深度搜索能力对于前沿大语言模型（LLM）智能体至关重要，但由于缺乏透明、高质量的训练数据，该领域的'
+description: 针对高质量训练数据匮乏限制搜索智能体发展的现状，本文提出了首个在模型与数据层面完全开源的 OpenSeeker。该研究通过基于事实的可扩展可控
+  QA 合成与去噪轨迹合成技术，仅利用少量合成样本即实现了前沿性能。这一工作有效降低了该领域的研究门槛，虽然摘要未详述其在长尾场景下的具体表现，但无疑为社区构建透明、高效的搜索智能体提供了重要的数据基座与技术参考。
 external_url: http://arxiv.org/abs/2603.15594v1
 scenarios:
 - 大语言模型

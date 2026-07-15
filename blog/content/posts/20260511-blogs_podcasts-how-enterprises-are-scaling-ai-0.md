@@ -15,8 +15,7 @@ tags:
 categories:
 - 效率与方法论
 source: blogs_podcasts
-description: 信任与接受 在企业内部推广 AI，首要任务是建立信任。通过透明的模型解释、持续的性能监测以及跨部门的成功案例，让业务方对 AI 输出产生认可，从而愿意依赖
-  AI 决策。 治理与合规 规模化 AI 必须嵌入治理框架，包括数据权限、模型审计、风险评估和伦理审查。明确的责任划分和标准化的审批流程可以在创新速度与风险控制之间取
+description: 企业如何规模化 AI：从早期实验到通过信任、治理、工作流设计和规模化质量实现的复合影响。 企业在完成单点AI实验后，普遍面临如何将人工智能真正落地的挑战。实现规模化AI需要同步构建信任机制、完善治理结构、重塑工作流，并严格控制模型质量，才能转化为可持续的业务价值。本文梳理了领先企业在组织、技术和流程层面的关键实践，帮助决策者和从业者快速找到适合自身的规模化路径。
 external_url: https://openai.com/business/guides-and-resources/how-enterprises-are-scaling-ai
 scenarios:
 - AI/ML项目

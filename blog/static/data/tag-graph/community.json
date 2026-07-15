@@ -2,151 +2,151 @@
   "algorithm": "deterministic-weighted-label-propagation",
   "communities": [
     {
-      "article_count": 83,
-      "hotspot_count": 23,
-      "hotspot_file": "community-hotspots/01-729ef485fe84.json",
-      "id": "community:tag:P-EAGLE",
-      "leader_id": "tag:性能优化",
-      "name": "性能优化",
-      "node_count": 23,
-      "rank": 1,
-      "tag_occurrences": 135,
-      "weighted_degree": 946.8
-    },
-    {
-      "article_count": 822,
-      "hotspot_count": 20,
-      "hotspot_file": "community-hotspots/02-86ad1ee2bae1.json",
+      "article_count": 797,
+      "hotspot_count": 21,
+      "hotspot_file": "community-hotspots/01-010a35f6c43d.json",
       "id": "community:tag:面试考点",
       "leader_id": "tag:LLM",
       "name": "LLM",
-      "node_count": 20,
+      "node_count": 21,
+      "rank": 1,
+      "tag_occurrences": 1164,
+      "weighted_degree": 8153.6
+    },
+    {
+      "article_count": 65,
+      "hotspot_count": 17,
+      "hotspot_file": "community-hotspots/02-694128e260d3.json",
+      "id": "community:tag:SpeechAnalyzer",
+      "leader_id": "tag:开源模型",
+      "name": "开源模型",
+      "node_count": 17,
       "rank": 2,
-      "tag_occurrences": 1190,
-      "weighted_degree": 8335.6
+      "tag_occurrences": 88,
+      "weighted_degree": 616.6
+    },
+    {
+      "article_count": 77,
+      "hotspot_count": 15,
+      "hotspot_file": "community-hotspots/03-54ebfa101042.json",
+      "id": "community:tag:P-EAGLE",
+      "leader_id": "tag:性能优化",
+      "name": "性能优化",
+      "node_count": 15,
+      "rank": 3,
+      "tag_occurrences": 112,
+      "weighted_degree": 785.8
+    },
+    {
+      "article_count": 7,
+      "hotspot_count": 14,
+      "hotspot_file": "community-hotspots/04-ec5ebb4b5b8a.json",
+      "id": "community:tag:移动开发",
+      "leader_id": "tag:Android",
+      "name": "Android",
+      "node_count": 14,
+      "rank": 4,
+      "tag_occurrences": 23,
+      "weighted_degree": 161
     },
     {
       "article_count": 107,
       "hotspot_count": 13,
-      "hotspot_file": "community-hotspots/03-4bd29b9bf80d.json",
+      "hotspot_file": "community-hotspots/05-e62df24ae779.json",
       "id": "community:tag:行业格局",
       "leader_id": "tag:OpenAI",
       "name": "OpenAI",
       "node_count": 13,
-      "rank": 3,
+      "rank": 5,
       "tag_occurrences": 134,
       "weighted_degree": 937.6
     },
     {
-      "article_count": 64,
+      "article_count": 34,
       "hotspot_count": 13,
-      "hotspot_file": "community-hotspots/04-5a9eb425acbb.json",
-      "id": "community:tag:Folo",
-      "leader_id": "tag:开源项目",
-      "name": "开源项目",
-      "node_count": 13,
-      "rank": 4,
-      "tag_occurrences": 80,
-      "weighted_degree": 561.8
-    },
-    {
-      "article_count": 36,
-      "hotspot_count": 13,
-      "hotspot_file": "community-hotspots/05-e06be459aebf.json",
+      "hotspot_file": "community-hotspots/06-e9d7895381f2.json",
       "id": "community:tag:Autotab",
       "leader_id": "tag:Cursor",
       "name": "Cursor",
       "node_count": 13,
-      "rank": 5,
-      "tag_occurrences": 50,
-      "weighted_degree": 351.2
+      "rank": 6,
+      "tag_occurrences": 48,
+      "weighted_degree": 337.2
     },
     {
       "article_count": 76,
       "hotspot_count": 12,
-      "hotspot_file": "community-hotspots/06-4f0cdb8ce306.json",
+      "hotspot_file": "community-hotspots/07-c9b18da8f39c.json",
       "id": "community:tag:Flux",
       "leader_id": "tag:扩散模型",
       "name": "扩散模型",
       "node_count": 12,
-      "rank": 6,
+      "rank": 7,
       "tag_occurrences": 105,
       "weighted_degree": 712.8
     },
     {
       "article_count": 67,
       "hotspot_count": 12,
-      "hotspot_file": "community-hotspots/07-6913e0b53d48.json",
+      "hotspot_file": "community-hotspots/08-025c8f689121.json",
       "id": "community:tag:Gemini 3",
       "leader_id": "tag:模型发布",
       "name": "模型发布",
       "node_count": 12,
-      "rank": 7,
+      "rank": 8,
       "tag_occurrences": 92,
       "weighted_degree": 640.2
     },
     {
-      "article_count": 63,
+      "article_count": 59,
       "hotspot_count": 12,
-      "hotspot_file": "community-hotspots/08-08072c010f00.json",
-      "id": "community:tag:SpeechAnalyzer",
-      "leader_id": "tag:开源模型",
-      "name": "开源模型",
+      "hotspot_file": "community-hotspots/09-ef98b9167cd7.json",
+      "id": "community:tag:Folo",
+      "leader_id": "tag:开源项目",
+      "name": "开源项目",
       "node_count": 12,
-      "rank": 8,
-      "tag_occurrences": 79,
-      "weighted_degree": 553.6
+      "rank": 9,
+      "tag_occurrences": 74,
+      "weighted_degree": 519.8
     },
     {
-      "article_count": 55,
+      "article_count": 53,
       "hotspot_count": 12,
-      "hotspot_file": "community-hotspots/09-05a0532eeed9.json",
+      "hotspot_file": "community-hotspots/10-c814cce87788.json",
       "id": "community:tag:Clippy",
       "leader_id": "tag:AI 助手",
       "name": "AI 助手",
       "node_count": 12,
-      "rank": 9,
-      "tag_occurrences": 72,
-      "weighted_degree": 505.8
+      "rank": 10,
+      "tag_occurrences": 70,
+      "weighted_degree": 491.8
     },
     {
-      "article_count": 49,
+      "article_count": 47,
       "hotspot_count": 12,
-      "hotspot_file": "community-hotspots/10-45b4c0183e18.json",
+      "hotspot_file": "community-hotspots/11-e5d857b17fbd.json",
       "id": "community:tag:SF6",
       "leader_id": "tag:计算机视觉",
       "name": "计算机视觉",
       "node_count": 12,
-      "rank": 10,
-      "tag_occurrences": 66,
-      "weighted_degree": 463.2
-    },
-    {
-      "article_count": 41,
-      "hotspot_count": 12,
-      "hotspot_file": "community-hotspots/11-b180da43349e.json",
-      "id": "community:tag:LSTM",
-      "leader_id": "tag:Transformer",
-      "name": "Transformer",
-      "node_count": 12,
       "rank": 11,
-      "tag_occurrences": 59,
-      "weighted_degree": 413
+      "tag_occurrences": 64,
+      "weighted_degree": 449.2
     },
     {
-      "article_count": 1978,
+      "article_count": 1909,
       "hotspot_count": 0,
       "id": "community:other",
       "leader_id": null,
       "name": "其他",
-      "node_count": 6817,
+      "node_count": 6606,
       "rank": 12,
-      "tag_occurrences": 13601,
-      "weighted_degree": 95152.4
+      "tag_occurrences": 13140,
+      "weighted_degree": 91945.4
     }
   ],
   "generated_at": "2026-07-15T12:45:47Z",
-  "iterations": 7,
+  "iterations": 6,
   "limit": 11,
   "links": [
     {
@@ -155,7 +155,7 @@
       "strength": 1,
       "target": "community:tag:Autotab",
       "type": "community",
-      "weight": 231
+      "weight": 217
     },
     {
       "id": "edge:community:community:other->community:tag:Clippy",
@@ -163,7 +163,7 @@
       "strength": 1,
       "target": "community:tag:Clippy",
       "type": "community",
-      "weight": 358
+      "weight": 337
     },
     {
       "id": "edge:community:community:other->community:tag:Flux",
@@ -171,7 +171,7 @@
       "strength": 1,
       "target": "community:tag:Flux",
       "type": "community",
-      "weight": 512
+      "weight": 516
     },
     {
       "id": "edge:community:community:other->community:tag:Folo",
@@ -179,7 +179,7 @@
       "strength": 1,
       "target": "community:tag:Folo",
       "type": "community",
-      "weight": 401
+      "weight": 364
     },
     {
       "id": "edge:community:community:other->community:tag:Gemini 3",
@@ -187,15 +187,7 @@
       "strength": 1,
       "target": "community:tag:Gemini 3",
       "type": "community",
-      "weight": 440
-    },
-    {
-      "id": "edge:community:community:other->community:tag:LSTM",
-      "source": "community:other",
-      "strength": 1,
-      "target": "community:tag:LSTM",
-      "type": "community",
-      "weight": 281
+      "weight": 436
     },
     {
       "id": "edge:community:community:other->community:tag:P-EAGLE",
@@ -203,7 +195,7 @@
       "strength": 1,
       "target": "community:tag:P-EAGLE",
       "type": "community",
-      "weight": 573
+      "weight": 533
     },
     {
       "id": "edge:community:community:other->community:tag:SF6",
@@ -211,7 +203,7 @@
       "strength": 1,
       "target": "community:tag:SF6",
       "type": "community",
-      "weight": 329
+      "weight": 320
     },
     {
       "id": "edge:community:community:other->community:tag:SpeechAnalyzer",
@@ -219,7 +211,15 @@
       "strength": 1,
       "target": "community:tag:SpeechAnalyzer",
       "type": "community",
-      "weight": 424
+      "weight": 442
+    },
+    {
+      "id": "edge:community:community:other->community:tag:移动开发",
+      "source": "community:other",
+      "strength": 1,
+      "target": "community:tag:移动开发",
+      "type": "community",
+      "weight": 43
     },
     {
       "id": "edge:community:community:other->community:tag:行业格局",
@@ -227,7 +227,7 @@
       "strength": 1,
       "target": "community:tag:行业格局",
       "type": "community",
-      "weight": 736
+      "weight": 735
     },
     {
       "id": "edge:community:community:other->community:tag:面试考点",
@@ -235,7 +235,7 @@
       "strength": 1,
       "target": "community:tag:面试考点",
       "type": "community",
-      "weight": 6932
+      "weight": 6756
     },
     {
       "id": "edge:community:community:tag:Autotab->community:tag:Folo",
@@ -251,7 +251,7 @@
       "strength": 1,
       "target": "community:tag:SpeechAnalyzer",
       "type": "community",
-      "weight": 2
+      "weight": 3
     },
     {
       "id": "edge:community:community:tag:Autotab->community:tag:行业格局",
@@ -267,7 +267,7 @@
       "strength": 1,
       "target": "community:tag:面试考点",
       "type": "community",
-      "weight": 32
+      "weight": 31
     },
     {
       "id": "edge:community:community:tag:Clippy->community:tag:Flux",
@@ -302,6 +302,14 @@
       "weight": 1
     },
     {
+      "id": "edge:community:community:tag:Clippy->community:tag:移动开发",
+      "source": "community:tag:Clippy",
+      "strength": 1,
+      "target": "community:tag:移动开发",
+      "type": "community",
+      "weight": 7
+    },
+    {
       "id": "edge:community:community:tag:Clippy->community:tag:行业格局",
       "source": "community:tag:Clippy",
       "strength": 1,
@@ -332,14 +340,6 @@
       "target": "community:tag:Gemini 3",
       "type": "community",
       "weight": 8
-    },
-    {
-      "id": "edge:community:community:tag:Flux->community:tag:LSTM",
-      "source": "community:tag:Flux",
-      "strength": 1,
-      "target": "community:tag:LSTM",
-      "type": "community",
-      "weight": 4
     },
     {
       "id": "edge:community:community:tag:Flux->community:tag:P-EAGLE",
@@ -374,10 +374,10 @@
       "weight": 11
     },
     {
-      "id": "edge:community:community:tag:Folo->community:tag:LSTM",
+      "id": "edge:community:community:tag:Folo->community:tag:SpeechAnalyzer",
       "source": "community:tag:Folo",
       "strength": 1,
-      "target": "community:tag:LSTM",
+      "target": "community:tag:SpeechAnalyzer",
       "type": "community",
       "weight": 1
     },
@@ -387,7 +387,7 @@
       "strength": 1,
       "target": "community:tag:面试考点",
       "type": "community",
-      "weight": 62
+      "weight": 59
     },
     {
       "id": "edge:community:community:tag:Gemini 3->community:tag:P-EAGLE",
@@ -411,7 +411,15 @@
       "strength": 1,
       "target": "community:tag:SpeechAnalyzer",
       "type": "community",
-      "weight": 7
+      "weight": 8
+    },
+    {
+      "id": "edge:community:community:tag:Gemini 3->community:tag:移动开发",
+      "source": "community:tag:Gemini 3",
+      "strength": 1,
+      "target": "community:tag:移动开发",
+      "type": "community",
+      "weight": 2
     },
     {
       "id": "edge:community:community:tag:Gemini 3->community:tag:行业格局",
@@ -427,31 +435,7 @@
       "strength": 1,
       "target": "community:tag:面试考点",
       "type": "community",
-      "weight": 48
-    },
-    {
-      "id": "edge:community:community:tag:LSTM->community:tag:P-EAGLE",
-      "source": "community:tag:LSTM",
-      "strength": 1,
-      "target": "community:tag:P-EAGLE",
-      "type": "community",
-      "weight": 15
-    },
-    {
-      "id": "edge:community:community:tag:LSTM->community:tag:SF6",
-      "source": "community:tag:LSTM",
-      "strength": 1,
-      "target": "community:tag:SF6",
-      "type": "community",
-      "weight": 5
-    },
-    {
-      "id": "edge:community:community:tag:LSTM->community:tag:面试考点",
-      "source": "community:tag:LSTM",
-      "strength": 1,
-      "target": "community:tag:面试考点",
-      "type": "community",
-      "weight": 13
+      "weight": 49
     },
     {
       "id": "edge:community:community:tag:P-EAGLE->community:tag:SpeechAnalyzer",
@@ -462,12 +446,20 @@
       "weight": 12
     },
     {
+      "id": "edge:community:community:tag:P-EAGLE->community:tag:移动开发",
+      "source": "community:tag:P-EAGLE",
+      "strength": 1,
+      "target": "community:tag:移动开发",
+      "type": "community",
+      "weight": 4
+    },
+    {
       "id": "edge:community:community:tag:P-EAGLE->community:tag:行业格局",
       "source": "community:tag:P-EAGLE",
       "strength": 1,
       "target": "community:tag:行业格局",
       "type": "community",
-      "weight": 4
+      "weight": 3
     },
     {
       "id": "edge:community:community:tag:P-EAGLE->community:tag:面试考点",
@@ -475,7 +467,7 @@
       "strength": 1,
       "target": "community:tag:面试考点",
       "type": "community",
-      "weight": 70
+      "weight": 59
     },
     {
       "id": "edge:community:community:tag:SF6->community:tag:面试考点",
@@ -499,7 +491,23 @@
       "strength": 1,
       "target": "community:tag:面试考点",
       "type": "community",
-      "weight": 31
+      "weight": 29
+    },
+    {
+      "id": "edge:community:community:tag:移动开发->community:tag:行业格局",
+      "source": "community:tag:移动开发",
+      "strength": 1,
+      "target": "community:tag:行业格局",
+      "type": "community",
+      "weight": 1
+    },
+    {
+      "id": "edge:community:community:tag:移动开发->community:tag:面试考点",
+      "source": "community:tag:移动开发",
+      "strength": 1,
+      "target": "community:tag:面试考点",
+      "type": "community",
+      "weight": 4
     },
     {
       "id": "edge:community:community:tag:行业格局->community:tag:面试考点",
@@ -507,15 +515,15 @@
       "strength": 1,
       "target": "community:tag:面试考点",
       "type": "community",
-      "weight": 39
+      "weight": 40
     }
   ],
   "stats": {
-    "assigned_nodes": 6971,
-    "detected_communities": 1462,
+    "assigned_nodes": 6759,
+    "detected_communities": 1417,
     "emitted_communities": 12,
     "total_communities": 12,
-    "total_links": 45,
+    "total_links": 46,
     "weighting": "cosine-association"
   },
   "version": 2

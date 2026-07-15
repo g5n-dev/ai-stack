@@ -16,9 +16,9 @@ categories:
 - AI 工程
 - 系统与基础设施
 source: blogs_podcasts
-description: 关键特性 - Amazon SageMaker AI 上线 G7e 实例，搭载 NVIDIA RTX PRO 6000 Blackwell
-  Server Edition GPU，单 GPU 96 GB GDDR7 显存。 - 支持 1、2、4、8 GPU 灵活组合，可按需伸缩。 - 单节点 G7e.2xlarge
-  即可
+description: 今天，我们很高兴地宣布，基于 NVIDIA RTX PRO 6000 Blackwell Server Edition GPU 的 G7e
+  实例已在 Amazon SageMaker AI 上可用。您可以配置包含 1、2、4 和 8 个 RTX PRO 6000 GPU 的节点，每个 GPU 提供
+  96 GB GDDR7 显存。
 external_url: https://aws.amazon.com/blogs/machine-learning/accelerate-generative-ai-inference-on-amazon-sagemaker-ai-with-g7e-instances
 scenarios:
 - AI/ML项目

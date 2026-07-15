@@ -17,7 +17,7 @@ categories:
 - 开发工具
 source: hacker_news
 description: Stripe 官方博客近期披露了其内部代号为“Minions”的 AI 编码系统。该项目通过单次指令即可完成从需求分析到代码部署的全流程，展示了
-  AI Agent 在复杂工程场景中的实际落地潜力。本文将详细拆解其技术架构与工作流，帮助开发者理解 Stripe 如何利用智能体提升研发效率，并探讨这一模式对未来软件交付流程
+  AI Agent 在复杂工程场景中的实际落地潜力。本文将详细拆解其技术架构与工作流，帮助开发者理解 Stripe 如何利用智能体提升研发效率，并探讨这一模式对未来软件交付流程的启发。
 external_url: https://stripe.dev/blog/minions-stripes-one-shot-end-to-end-coding-agents
 scenarios:
 - AI/ML项目

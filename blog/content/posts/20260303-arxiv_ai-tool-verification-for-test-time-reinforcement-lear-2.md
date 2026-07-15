@@ -16,8 +16,7 @@ categories:
 - 大模型
 - 论文
 source: arxiv
-description: 以下是对该内容的中文总结： **T^3RL：通过工具验证增强测试时强化学习** 本文提出了一种名为 **T^3RL**（Tool-Verification
-  for Test-Time Reinforcement Learning，基于工具验证的测试时强化学习）的新方法，旨在解决测试时强化学习（TTRL）中的模式崩溃问题
+description: 测试时强化学习（TTRL）常因投票中的虚假高频共识而陷入模式崩溃，限制了大型推理模型的自进化能力。为此，本文提出了 T^3RL 框架，通过引入代码执行等外部工具来验证生成路径，从而修正奖励信号并优化加权投票过程。实验显示该方法在复杂数学推理任务中有效缓解了模式崩溃，但其泛化至非数学领域的潜力尚无法从摘要确认。
 external_url: http://arxiv.org/abs/2603.02203v1
 scenarios:
 - Web应用开发

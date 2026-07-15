@@ -17,7 +17,7 @@ categories:
 - 安全
 source: hacker_news
 description: Debian 社区近期针对“是否接受 AI 生成贡献”的讨论引发了广泛关注，其最终选择“不做决定”的立场，折射出开源社区在技术变革面前的审慎态度。这一案例不仅关乎代码贡献的合规性，更触及了开源协作模式在人工智能时代的边界与伦理。本文将梳理
-  Debian 的决策逻辑与社区争议，帮助读者理解开源项目如何在拥抱新技术与维护社
+  Debian 的决策逻辑与社区争议，帮助读者理解开源项目如何在拥抱新技术与维护社区价值观之间寻找平衡。
 external_url: https://lwn.net/SubscriberLink/1061544/125f911834966dd0
 scenarios:
 - AI/ML项目

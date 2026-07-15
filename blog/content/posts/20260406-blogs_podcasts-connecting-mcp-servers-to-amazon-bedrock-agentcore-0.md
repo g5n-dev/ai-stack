@@ -16,9 +16,8 @@ categories:
 - AI 工程
 - 系统与基础设施
 source: blogs_podcasts
-description: 概述 Amazon Bedrock AgentCore Gateway 是亚马逊提供的集中管理平台，用于统一配置 AI Agent 对外部工具和
-  MCP 服务器的访问。通过在 Gateway 中定义 OAuth 2.0 授权方式，Agent 可以在不暴露凭证的前提下，安全地调用受保护的 MCP 接口。 配置流程
-  1.
+description: Amazon Bedrock AgentCore Gateway为AI代理提供了统一的管理层，用于协调与组织内各类工具和MCP服务器的连接。对于需要OAuth保护的MCP服务器，正确配置授权码流程是确保安全访问的关键步骤。本文将通过具体步骤指导读者完成AgentCore
+  Gateway的配置，使读者能够掌握从环境准备到连接验证的完整配置流程。
 external_url: https://aws.amazon.com/blogs/machine-learning/connecting-mcp-servers-to-amazon-bedrock-agentcore-gateway-using-authorization-code-flow
 scenarios:
 - AI/ML项目

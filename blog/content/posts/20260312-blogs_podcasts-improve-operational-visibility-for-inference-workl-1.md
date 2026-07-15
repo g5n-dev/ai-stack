@@ -8,8 +8,8 @@ tags:
 categories:
 - 效率与方法论
 source: blogs_podcasts
-description: 以下是对该内容的中文总结： **标题：利用 Amazon CloudWatch 新指标提升 Amazon Bedrock 推理工作负载的可见性**
-  亚马逊云科技（AWS）近日宣布推出两项针对 Amazon Bedrock 的新 Amazon CloudWatch 指标：**TimeToFirstToken**（首个令牌
+description: 今天，我们宣布为 Amazon Bedrock 推出两项新的 Amazon CloudWatch 指标：TimeToFirstToken
+  和 EstimatedTPMQuotaUsage。在这篇文章中，我们将介绍这两项指标的工作原理，以及如何利用它们设置告警、建立基线并主动管理容量。 在管理大语言模型推理任务时，对性能的实时监控和资源配额的精准把控是保障服务稳定的关键。
 external_url: https://aws.amazon.com/blogs/machine-learning/improve-operational-visibility-for-inference-workloads-on-amazon-bedrock-with-new-cloudwatch-metrics-for-ttft-and-estimated-quota-consumption
 scenarios:
 - Web应用开发

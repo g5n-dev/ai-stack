@@ -17,7 +17,7 @@ categories:
 - 产品与创业
 source: hacker_news
 description: Claude Fable 5 是最新一代大规模语言模型，在保持对话自然流畅的同时，大幅提升了多模态理解与推理效率。针对企业级应用的安全性与可解释性需求，研发团队在架构层面做了系统性优化，使得模型在复杂任务中的表现更为稳健。读者可通过本文了解新模型的训练数据规模、核心改进点以及在实际业务场景中的
-  benchmark 结果
+  benchmark 结果，帮助技术团队快速评估并落地。
 external_url: https://www.anthropic.com/news/claude-fable-5-mythos-5
 scenarios:
 - AI/ML项目

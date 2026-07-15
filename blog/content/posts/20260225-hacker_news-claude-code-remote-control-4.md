@@ -17,7 +17,7 @@ categories:
 - AI 工程
 source: hacker_news
 description: 随着开发工具日益智能化，如何将 AI 能力无缝融入现有工作流成为关键课题。本文介绍的 Claude Code Remote Control，通过远程控制协议打破了本地开发环境的限制，让开发者能在任意终端调用
-  Claude 的代码生成与调试能力。文章将详细解析其技术架构与配置步骤，帮助你构建更灵活、高效的 AI 辅助开发
+  Claude 的代码生成与调试能力。文章将详细解析其技术架构与配置步骤，帮助你构建更灵活、高效的 AI 辅助开发环境。
 external_url: https://code.claude.com/docs/en/remote-control
 scenarios:
 - AI/ML项目

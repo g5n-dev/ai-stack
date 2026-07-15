@@ -108,21 +108,21 @@ def clean_data(raw_data):
     :return: 清洗后的DataFrame
     """
     df = pd.DataFrame(raw_data)
-    
+
     # 处理缺失值：数值列用中位数填充，分类列用众数填充
     for col in df.columns:
         if df[col].dtype in [np.float64, np.int64]:
             df[col].fillna(df[col].median(), inplace=True)
         else:
             df[col].fillna(df[col].mode()[0], inplace=True)
-    
+
     # 去除重复行
     df.drop_duplicates(inplace=True)
-    
+
     # 标准化日期格式
     if 'date' in df.columns:
         df['date'] = pd.to_datetime(df['date'], errors='coerce')
-    
+
     return df
 
 # 测试数据
@@ -150,17 +150,17 @@ def generate_report(data, output_path='report.png'):
     """
     # 创建图表
     plt.figure(figsize=(10, 6))
-    
+
     # 绘制柱状图（示例：按类别统计）
     category_counts = data['category'].value_counts()
     category_counts.plot(kind='bar', color='skyblue')
-    
+
     # 添加标题和标签
     plt.title('Category Distribution', fontsize=16)
     plt.xlabel('Category', fontsize=12)
     plt.ylabel('Count', fontsize=12)
     plt.xticks(rotation=45)
-    
+
     # 保存图表
     plt.tight_layout()
     plt.savefig(output_path)
@@ -193,7 +193,7 @@ def interactive_filter(data):
         value='All',
         description='Category:'
     )
-    
+
     # 创建滑块
     value_slider = widgets.IntRangeSlider(
         value=[data['value'].min(), data['value'].max()],
@@ -202,18 +202,18 @@ def interactive_filter(data):
         step=1,
         description='Value Range:'
     )
-    
+
     # 定义过滤函数
     def filter_data(category, value_range):
         filtered = data.copy()
         if category != 'All':
             filtered = filtered[filtered['category'] == category]
-        filtered = filtered[(filtered['value'] >= value_range[0]) & 
+        filtered = filtered[(filtered['value'] >= value_range[0]) &
                            (filtered['value'] <= value_range[1])]
         display(filtered)
-    
+
     # 创建交互控件
-    widgets.interactive(filter_data, 
+    widgets.interactive(filter_data,
                        category=category_dropdown,
                        value_range=value_slider)
 
@@ -232,8 +232,6 @@ interactive_filter(data)
 
 ### 1：某DTC电商品牌的用户留存分析
 
- 1：某DTC电商品牌的用户留存分析
-
 **背景**:
 该品牌拥有数百万注册用户，市场团队需要定期分析用户行为数据以优化留存策略。团队中的数据分析师习惯使用 Excel 进行数据处理，但面对海量且非结构化的用户日志时，传统工具显得力不从心。
 
@@ -249,8 +247,6 @@ interactive_filter(data)
 ---
 
 ### 2：金融科技初创公司的风控模型迭代
-
- 2：金融科技初创公司的风控模型迭代
 
 **背景**:
 一家处于成长期的金融科技公司的风控团队需要不断监控交易数据，以识别潜在的欺诈模式。团队由具备统计学背景但缺乏深厚软件工程技能的数据科学家组成。
@@ -269,15 +265,11 @@ interactive_filter(data)
 
 ### 1: Livedocs 与 Jupyter Notebook 有什么本质区别？
 
-1: Livedocs 与 Jupyter Notebook 有什么本质区别？
-
 **A**: Livedocs 被定义为 "AI-native"（AI 原生）工具，这意味着它不仅仅是在现有编辑器上添加 AI 插件，而是从底层架构上就为 AI 交互进行了重新设计。与 Jupyter Notebook 相比，Livedocs 的主要区别在于：首先，它极大地降低了编写代码的门槛，用户可以通过自然语言与 AI 对话来生成数据分析代码，而非手动编写；其次，它解决了传统 Notebook 难以版本控制和协作的问题，提供了更流畅的多人协作体验；最后，Livedocs 旨在连接非技术背景的业务人员与数据，让不懂 SQL 或 Python 的用户也能进行复杂的数据探索，而 Jupyter 主要面向专业开发者和数据科学家。
 
 ---
 
 ### 2: Livedocs 的数据安全性如何保障？企业数据会被用于训练模型吗？
-
-2: Livedocs 的数据安全性如何保障？企业数据会被用于训练模型吗？
 
 **A**: 数据安全是数据分析工具的核心考量。虽然具体的隐私政策细节需参考其官方条款，但作为面向企业和专业开发者的 SaaS 产品（尤其是 YC 孵化的公司），Livedocs 通常会遵循行业标准的安全实践。这通常包括数据加密传输和存储、严格的访问控制以及 SOC 2 合规性认证。关于 AI 模型训练，大多数企业级 AI 工具（如 GitHub Copilot 等）通常承诺不会将用户的私有代码或敏感数据用于训练公共模型，或者提供私有化部署/虚拟私有云（VPC）的选项，以确保企业数据资产的绝对安全。
 
@@ -285,15 +277,11 @@ interactive_filter(data)
 
 ### 3: 它支持连接哪些数据源？是否需要上传数据文件？
 
-3: 它支持连接哪些数据源？是否需要上传数据文件？
-
 **A**: 作为现代化的数据分析平台，Livedocs 设计为能够连接企业常用的数据基础设施。通常支持直接连接主流的 SQL 数据库（如 PostgreSQL, MySQL, Snowflake, BigQuery 等）以及数据仓库。这意味着用户无需下载 CSV 文件再上传，可以直接在 Livedocs 界面中通过查询或 AI 指令来访问实时数据。此外，它通常也支持上传本地文件（如 CSV, Excel）进行快速分析，旨在打破数据孤岛，让分析工作流更加顺畅。
 
 ---
 
 ### 4: Livedocs 中的 AI 生成代码准确吗？如果出错如何修正？
-
-4: Livedocs 中的 AI 生成代码准确吗？如果出错如何修正？
 
 **A**: Livedocs 内置的 AI 模型（通常基于 GPT-4 或类似的大语言模型）在生成数据查询和分析代码方面准确率较高，特别是在处理常见的数据清洗、转换和可视化逻辑时。然而，AI 仍可能产生“幻觉”或逻辑错误。Livedocs 的优势在于其“Notebook”形态，用户可以直接在界面中看到 AI 生成的代码。如果结果有误，用户可以直接修改代码，或者通过自然语言告诉 AI 进行修正（例如：“不对，请排除上个月的异常值”），这种交互式的调试过程比传统手写代码要快得多。
 
@@ -301,15 +289,11 @@ interactive_filter(data)
 
 ### 5: 该产品目前的定价模式是怎样的？
 
-5: 该产品目前的定价模式是怎样的？
-
 **A**: Livedocs 于 2022 年冬季参与了 Y Combinator 孵化，目前的定价策略可能会随时间调整。通常此类 B2B 工具会提供以下模式：针对个人用户或小团队的免费层（Free Tier），功能可能受限；针对专业用户或团队的付费订阅，按席位或按使用量计费；以及针对大型企业的企业版，包含高级安全功能、SSO（单点登录）和专属支持。具体价格需参考其官网的最新 Pricing 页面，通常新用户会有试用额度。
 
 ---
 
 ### 6: 非技术人员（如产品经理或市场分析师）能否上手使用 Livedocs？
-
-6: 非技术人员（如产品经理或市场分析师）能否上手使用 Livedocs？
 
 **A**: 是的，这正是 Livedocs 的核心目标受众之一。虽然它生成的底层逻辑是代码（如 Python 或 SQL），但用户界面被设计为低代码或无代码体验。用户只需用中文或英文提问（例如：“帮我画出上个季度销售额的增长趋势图”），AI 就会自动生成相应的查询和图表。这使得不懂编程的业务人员能够独立进行数据探索，而无需过度依赖数据工程团队，从而极大地提高了数据分析的效率。
 ## 引用

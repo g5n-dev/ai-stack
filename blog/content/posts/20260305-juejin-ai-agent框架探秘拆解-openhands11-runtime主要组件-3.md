@@ -16,9 +16,8 @@ categories:
 - AI 工程
 - 系统与基础设施
 source: juejin
-description: 这是一份关于 OpenHands（原 OpenDevin）AI Agent 框架中 **Runtime（运行时）** 组件的总结： **0x00
-  概要** Runtime 是 OpenHands 的核心执行层，负责在一个安全、隔离的环境中运行 Agent 生成的代码。它充当 Agent 与操作系统之间的桥梁，确保
-  Ag
+description: OpenHands 作为当下备受关注的开源 AI Agent 框架，其核心优势在于能够自动化处理复杂的软件工程任务。Runtime（运行时）作为连接大模型与实际执行环境的桥梁，直接决定了
+  Agent 的行动能力与系统稳定性。本文将深入剖析 Runtime 的三大核心组件、数据流转机制及插件系统，帮助开发者掌握其底层架构逻辑，从而更高效地进行二次开发与系统调优。
 external_url: https://juejin.cn/post/7613569620952350720
 scenarios:
 - AI/ML项目

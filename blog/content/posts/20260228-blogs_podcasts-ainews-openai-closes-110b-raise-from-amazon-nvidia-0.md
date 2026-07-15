@@ -16,8 +16,8 @@ categories:
 - 产品与创业
 - 开源生态
 source: blogs_podcasts
-description: 以下是该新闻的中文简洁总结： **【融资快讯】OpenAI完成史上最大规模融资，估值达8400亿美元** OpenAI已成功完成一轮巨额融资，筹集资金达110亿美元。本轮融资由亚马逊（Amazon）、英伟达（NVIDIA）和软银（SoftBank）等科技巨头领投。
-  此次融资后，OpenAI的投后估值飙升至**8400亿
+description: 恭喜你，你抢到了最大的数字。 OpenAI 近日完成总额 66 亿美元的新一轮融资，投后估值达到 1570 亿美元，创下初创企业融资的历史纪录。此次融资由
+  Thrive Capital 领投，并吸引了英伟达、微软、软银等科技巨头的跟投，显示出顶级资方对通用人工智能（AGI）未来的持续加注。
 external_url: https://www.latent.space/p/ainews-openai-closes-110b-raise-from
 scenarios:
 - AI/ML项目

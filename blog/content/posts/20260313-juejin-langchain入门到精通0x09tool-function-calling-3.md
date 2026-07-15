@@ -17,7 +17,8 @@ categories:
 - AI 工程
 source: juejin
 description: 尽管大语言模型在自然语言理解方面表现优异，但其固有的知识截止日期和缺乏对外部系统的直接访问能力，往往限制了其在实际业务场景中的落地。LangChain
-  的 Tool 与 Function Calling 机制正是为了打破这一边界，让模型能够动态调用外部 API 或执行特定逻辑。本文将深入解析这一核心模块，通过代码示例演
+  的 Tool 与 Function Calling 机制正是为了打破这一边界，让模型能够动态调用外部 API 或执行特定逻辑。本文将深入解析这一核心模块，通过代码示例演示如何赋予模型实时交互能力，助你构建更智能、更实用的
+  AI 应用。
 external_url: https://juejin.cn/post/7616201064984428554
 scenarios:
 - AI/ML项目

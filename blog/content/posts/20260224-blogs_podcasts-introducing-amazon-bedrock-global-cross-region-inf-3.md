@@ -16,9 +16,8 @@ categories:
 - 大模型
 - 系统与基础设施
 source: blogs_podcasts
-description: 以下是对该内容的中文总结： 亚马逊云科技宣布，通过 Amazon Bedrock 的**全球跨区域推理**功能，正式为中东地区（阿联酋和巴林）的客户引入
-  Anthropic 的 Claude 系列模型。 **此次上线的模型包括：** * Claude Opus 4.6 * Claude Sonnet 4.6 *
-  Cla
+description: 我们很高兴地宣布，面向在中东地区运营的客户，通过 Amazon Bedrock 全球跨区域推理，现已提供 Anthropic 的 Claude
+  Opus 4.6、Claude Sonnet 4.6、Claude Opus 4.5、Claude Sonnet 4.5 和 Claude Haiku 4.5。
 external_url: https://aws.amazon.com/blogs/machine-learning/introducing-amazon-bedrock-global-cross-region-inference-for-anthropics-claude-models-in-the-middle-east-regions
 scenarios:
 - AI/ML项目

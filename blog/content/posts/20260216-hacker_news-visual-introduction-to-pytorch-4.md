@@ -111,33 +111,33 @@ import matplotlib.pyplot as plt
 def linear_regression_example():
     # 设置随机种子保证结果可复现
     torch.manual_seed(42)
-    
+
     # 生成模拟数据：y = 2x + 1 + 噪声
     x_train = torch.tensor([[1.0], [2.0], [3.0], [4.0]], dtype=torch.float32)
     y_train = torch.tensor([[3.0], [5.0], [7.0], [9.0]], dtype=torch.float32)
-    
+
     # 定义线性模型：y = wx + b
     model = nn.Linear(in_features=1, out_features=1)
-    
+
     # 定义损失函数和优化器
     criterion = nn.MSELoss()
     optimizer = optim.SGD(model.parameters(), lr=0.01)
-    
+
     # 训练模型
     for epoch in range(1000):
         # 前向传播
         y_pred = model(x_train)
         loss = criterion(y_pred, y_train)
-        
+
         # 反向传播和优化
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
-    
+
     # 打印训练结果
     print(f"训练后的权重: {model.weight.item():.2f}")
     print(f"训练后的偏置: {model.bias.item():.2f}")
-    
+
     # 可视化结果
     plt.scatter(x_train.numpy(), y_train.numpy(), label='原始数据')
     plt.plot(x_train.numpy(), model(x_train).detach().numpy(), 'r', label='拟合直线')
@@ -161,12 +161,12 @@ def cnn_classification_example():
         transforms.ToTensor(),
         transforms.Normalize((0.5,), (0.5,))  # 归一化到[-1,1]
     ])
-    
+
     # 加载MNIST数据集
-    train_dataset = datasets.MNIST(root='./data', train=True, 
+    train_dataset = datasets.MNIST(root='./data', train=True,
                                   download=True, transform=transform)
     train_loader = DataLoader(train_dataset, batch_size=64, shuffle=True)
-    
+
     # 定义简单的CNN模型
     class SimpleCNN(nn.Module):
         def __init__(self):
@@ -175,7 +175,7 @@ def cnn_classification_example():
             self.conv2 = nn.Conv2d(32, 64, 3, 1)
             self.fc1 = nn.Linear(64*5*5, 128)
             self.fc2 = nn.Linear(128, 10)
-            
+
         def forward(self, x):
             x = torch.relu(self.conv1(x))
             x = torch.max_pool2d(x, 2)
@@ -185,12 +185,12 @@ def cnn_classification_example():
             x = torch.relu(self.fc1(x))
             x = self.fc2(x)
             return x
-    
+
     # 初始化模型、损失函数和优化器
     model = SimpleCNN()
     criterion = nn.CrossEntropyLoss()
     optimizer = optim.Adam(model.parameters(), lr=0.001)
-    
+
     # 训练模型
     for epoch in range(5):
         for batch_idx, (data, target) in enumerate(train_loader):
@@ -199,10 +199,10 @@ def cnn_classification_example():
             loss = criterion(output, target)
             loss.backward()
             optimizer.step()
-            
+
             if batch_idx % 100 == 0:
                 print(f'训练轮次: {epoch+1} [{batch_idx*len(data)}/{len(train_loader.dataset)}] 损失: {loss.item():.6f}')
-    
+
     # 保存模型
     torch.save(model.state_dict(), 'mnist_cnn.pth')
     print("模型训练完成并已保存")
@@ -217,18 +217,18 @@ import torch
 def autograd_example():
     # 创建需要梯度的张量
     x = torch.tensor([2.0, 3.0], requires_grad=True)
-    
+
     # 定义计算图：y = x^2 + 2x + 1
     y = x**2 + 2*x + 1
-    
+
     # 计算梯度
     y.sum().backward()  # 对y求和后再反向传播
-    
+
     # 打印梯度
     print(f"输入x: {x}")
     print(f"输出y: {y}")
     print(f"梯度dy/dx: {x.grad}")
-    
+
     # 验证梯度计算是否正确
     # dy/dx = 2x + 2
     expected_grad = 2*x + 2
@@ -242,18 +242,16 @@ autograd_example()
 
 ### 1：Tesla 自动驾驶系统
 
- 1：Tesla 自动驾驶系统
-
-**背景**:  
+**背景**:
 Tesla 是全球领先的电动汽车制造商，其自动驾驶系统依赖于深度学习技术来处理实时视觉数据。
 
-**问题**:  
+**问题**:
 自动驾驶系统需要高效处理来自摄像头的实时视频流，并进行快速决策。传统的深度学习框架在计算效率和模型部署灵活性上存在瓶颈。
 
-**解决方案**:  
+**解决方案**:
 Tesla 使用 PyTorch 作为其自动驾驶系统的主要深度学习框架。PyTorch 的动态计算图和高效 GPU 加速能力，使得模型训练和推理更加灵活和高效。Tesla 还开发了自定义的 CUDA 内核以进一步优化性能。
 
-**效果**:  
+**效果**:
 - 模型训练速度提升 30%，显著缩短了开发周期。
 - 实时推理延迟降低，提高了自动驾驶系统的响应速度。
 - 支持快速迭代和实验，加速了新功能的开发和部署。
@@ -262,18 +260,16 @@ Tesla 使用 PyTorch 作为其自动驾驶系统的主要深度学习框架。Py
 
 ### 2：OpenAI GPT-3 语言模型
 
- 2：OpenAI GPT-3 语言模型
-
-**背景**:  
+**背景**:
 OpenAI 是一家专注于人工智能研究的非营利组织，其目标是开发通用人工智能。GPT-3 是目前最大的语言模型之一，具有 1750 亿个参数。
 
-**问题**:  
+**问题**:
 训练如此大规模的模型需要极高的计算资源和高效的框架支持。现有的深度学习框架在分布式训练和内存管理上面临挑战。
 
-**解决方案**:  
+**解决方案**:
 OpenAI 使用 PyTorch 作为 GPT-3 的核心框架，结合其分布式训练工具（如 PyTorch Distributed）和自定义的优化器。PyTorch 的灵活性和可扩展性使得 OpenAI 能够高效地进行大规模模型训练。
 
-**效果**:  
+**效果**:
 - 成功训练了 1750 亿参数的模型，展示了 PyTorch 在超大规模模型训练中的能力。
 - 训练效率提升，减少了计算资源的使用成本。
 - 模型在多项自然语言处理任务中表现出色，推动了 AI 领域的进展。
@@ -282,18 +278,16 @@ OpenAI 使用 PyTorch 作为 GPT-3 的核心框架，结合其分布式训练工
 
 ### 3：Facebook AI Research (FAIR) 图像识别系统
 
- 3：Facebook AI Research (FAIR) 图像识别系统
-
-**背景**:  
+**背景**:
 Facebook AI Research (FAIR) 是 Facebook 的人工智能研究部门，致力于开发先进的 AI 技术以改善用户体验。
 
-**问题**:  
+**问题**:
 Facebook 每天需要处理数十亿张图片，传统的图像识别系统在准确性和速度上难以满足需求。
 
-**解决方案**:  
+**解决方案**:
 FAIR 使用 PyTorch 开发了一套高效的图像识别系统。PyTorch 的动态计算图和丰富的预训练模型库（如 torchvision）使得模型开发和部署更加便捷。FAIR 还结合了硬件加速技术（如 GPU 和 TPU）以提升性能。
 
-**效果**:  
+**效果**:
 - 图像识别准确率提升 15%，显著改善了内容审核和推荐系统的效果。
 - 推理速度提高 50%，支持实时处理大规模图片数据。
 - 模型部署更加灵活，能够快速适应不同的应用场景。
@@ -405,8 +399,6 @@ FAIR 使用 PyTorch 开发了一套高效的图像识别系统。PyTorch 的动�
 
 ### 1: 什么是 PyTorch，它与其他深度学习框架（如 TensorFlow）相比有什么主要优势？
 
-1: 什么是 PyTorch，它与其他深度学习框架（如 TensorFlow）相比有什么主要优势？
-
 **A**: PyTorch 是一个基于 Python 的开源机器学习库，主要由 Facebook 的 AI 研究团队（FAIR）开发和维护。它提供了两个核心功能：1) 强大的 GPU 加速张量计算；2) 构建在基于自动微分系统上的深度神经网络。
 
 相比于 TensorFlow（尤其是 1.x 版本），PyTorch 的主要优势在于其**动态计算图**。这意味着代码是按命令式执行的，你可以像写普通的 Python 代码一样编写模型，方便使用 Python 的调试工具（如 pdb）进行断点调试。相比之下，早期的 TensorFlow 使用静态图，需要先定义图再运行，调试较为困难。虽然 TensorFlow 2.x 引入了 Eager Execution 模式，但 PyTorch 凭借其简洁的 API 设计和“Python 风格”的直觉性，在学术研究和快速原型开发中依然非常受欢迎。
@@ -414,8 +406,6 @@ FAIR 使用 PyTorch 开发了一套高效的图像识别系统。PyTorch 的动�
 ---
 
 ### 2: 学习 PyTorch 之前需要具备哪些基础知识？
-
-2: 学习 PyTorch 之前需要具备哪些基础知识？
 
 **A**: 虽然 PyTorch 旨在简化深度学习的开发，但为了高效地使用它，建议具备以下基础：
 
@@ -426,8 +416,6 @@ FAIR 使用 PyTorch 开发了一套高效的图像识别系统。PyTorch 的动�
 ---
 
 ### 3: PyTorch 中的 "Tensor"（张量）到底是什么？它和 NumPy 数组有什么区别？
-
-3: PyTorch 中的 "Tensor"（张量）到底是什么？它和 NumPy 数组有什么区别？
 
 **A**: 在 PyTorch 中，**Tensor** 是最基本的数据结构，它是一个多维数组，类似于 NumPy 的 ndarray。
 
@@ -441,8 +429,6 @@ FAIR 使用 PyTorch 开发了一套高效的图像识别系统。PyTorch 的动�
 
 ### 4: 什么是 `autograd`（自动微分），为什么它对训练神经网络很重要？
 
-4: 什么是 `autograd`（自动微分），为什么它对训练神经网络很重要？
-
 **A**: `autograd` 是 PyTorch 的自动微分引擎，它是训练神经网络的核心组件。
 
 在神经网络训练中，我们需要通过**反向传播算法**来计算损失函数相对于每个参数（权重和偏置）的梯度，然后利用这些梯度来更新参数以最小化损失。手动编写这些导数公式对于复杂网络来说极其繁琐且容易出错。
@@ -452,8 +438,6 @@ PyTorch 的 `autograd` 自动完成了这项工作。当你对设置了 `require
 ---
 
 ### 5: 在 PyTorch 中，`Dataset` 和 `DataLoader` 的作用是什么？
-
-5: 在 PyTorch 中，`Dataset` 和 `DataLoader` 的作用是什么？
 
 **A**: 这是 PyTorch 用于数据加载和处理的两个核心模块，旨在将数据加载逻辑与模型训练逻辑解耦。
 
@@ -465,8 +449,6 @@ PyTorch 的 `autograd` 自动完成了这项工作。当你对设置了 `require
 ---
 
 ### 6: PyTorch 适合用于生产环境部署吗？
-
-6: PyTorch 适合用于生产环境部署吗？
 
 **A**: 是的，PyTorch 非常适合用于生产环境，尤其是近年来有了显著的提升。
 

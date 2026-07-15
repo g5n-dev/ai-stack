@@ -17,7 +17,7 @@ categories:
 - 数据
 source: blogs_podcasts
 description: 随着医疗机器人技术从实验室走向临床应用，高质量数据的匮乏与通用物理智能模型的缺失，正逐渐成为制约行业发展的关键瓶颈。本文详细介绍了首个专注于医疗场景的机器人数据集及其配套的基础物理
-  AI 模型，旨在解决机器人在复杂医疗环境中的感知与交互难题。通过阅读本文，读者将深入了解该数据集的构建细节，并掌握这些基础模型如何为未来的
+  AI 模型，旨在解决机器人在复杂医疗环境中的感知与交互难题。通过阅读本文，读者将深入了解该数据集的构建细节，并掌握这些基础模型如何为未来的医疗机器人开发提供通用的底层支持与性能基准。
 external_url: https://huggingface.co/blog/nvidia/physical-ai-for-healthcare-robotics
 scenarios:
 - AI/ML项目

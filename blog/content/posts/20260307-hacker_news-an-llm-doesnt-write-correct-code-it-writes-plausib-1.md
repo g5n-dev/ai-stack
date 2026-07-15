@@ -17,7 +17,7 @@ categories:
 - AI 工程
 source: hacker_news
 description: 大型语言模型在编程领域的表现令人印象深刻，但开发者常误以为其生成的代码可以直接用于生产环境。本文指出，模型本质上是基于概率预测下一个 token，因此它生成的是“看似合理”而非逻辑正确的代码。理解这一局限性对于构建稳健的工作流至关重要，阅读本文将帮助你重新审视
-  AI 辅助编程的边界，并学会如何更安全地评估与使用模型生成
+  AI 辅助编程的边界，并学会如何更安全地评估与使用模型生成的代码。
 external_url: https://blog.katanaquant.com/p/your-llm-doesnt-write-correct-code
 scenarios:
 - 大语言模型

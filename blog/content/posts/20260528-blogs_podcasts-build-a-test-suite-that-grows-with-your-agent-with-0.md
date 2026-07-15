@@ -15,8 +15,9 @@ tags:
 categories:
 - AI 工程
 source: blogs_podcasts
-description: 关键要点 - **测评双轨并行**：快速线上信号 + 稳定离线基准，能更客观地判断代理是否真正提升。 - **固定基准必要性**：随真实流量变化，需要保留一套不变的评价基准，以作时间维度的对比。
-  - **数据集化管理**：将测试用例作为数据集统一管理，可在 AgentCore 中实现版本化、复用与审计。 - **版本化
+description: 代理评估在结合快速变化的在线信号与稳定的离线基准时最为强大。为了了解您的代理是否真正随时间改进，您需要一个固定的基准来配合您不断变化的真实世界流量。在
+  Amazon Bedrock AgentCore 中将评估基准的测试用例作为数据集进行管理，为版本化测试固件带来了规范化的方法 ... 测评双轨并行：快速线上信号
+  + 稳定离线基准，能更客观地判断代理是否真正提升。
 external_url: https://aws.amazon.com/blogs/machine-learning/build-a-test-suite-that-grows-with-your-agent-with-dataset-management-in-amazon-bedrock-agentcore
 scenarios:
 - AI/ML项目

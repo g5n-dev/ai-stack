@@ -16,9 +16,9 @@ categories:
 - 大模型
 - AI 工程
 source: blogs_podcasts
-description: 模型概述 NVIDIA Nemotron 3 Nano Omni 是一款轻量级大语言模型，专为资源受限环境设计，采用 Transformer
-  架构并结合量化、稀疏化技术，在保持语言理解能力的同时显著降低显存和计算需求。 关键能力 - 高吞吐量：在 SageMaker JumpStart 上实现每秒千级
-  token 推理
+description: 今天，我们很高兴宣布 NVIDIA Nemotron 3 Nano Omni 在 Amazon SageMaker JumpStart 上实现发布当天即可使用。在这篇文章中，我们将深入探讨
+  Nemotron 3 Nano Omni 的模型架构和关键功能，剖析它所解锁的企业应用场景，并向您展示如何利用 Amazon SageMaker JumpStart
+  进行部署和运行推理。
 external_url: https://aws.amazon.com/blogs/machine-learning/nvidia-nemotron-3-nano-omni-model-now-available-on-amazon-sagemaker-jumpstart
 scenarios:
 - Web应用开发

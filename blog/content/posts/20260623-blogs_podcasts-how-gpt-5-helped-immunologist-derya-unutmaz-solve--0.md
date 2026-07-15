@@ -15,8 +15,7 @@ tags:
 categories:
 - 大模型
 source: blogs_podcasts
-description: 项目背景 免疫学家 Derya Unutmaz 多年来一直未能解释 T 细胞在特定刺激下出现的异常行为，导致相关研究进展受阻。 GPT‑5
-  Pro 的介入 团队将大量基因组、蛋白质组及免疫学实验数据输入 GPT‑5 Pro。该模型利用深度推理和跨学科知识整合，在数小时内生成并验证了多条可能的机制假设，最终锁定了关键调控
+description: GPT-5 Pro帮助破解了一个存在3年的免疫学谜团，为T细胞行为提供了新的见解。这一突破可能支持癌症和自身免疫研究。 在免疫学领域，破解T细胞行为的长期谜题一直是研究难点。借助GPT-5Pro强大的数据解析与模式识别能力，DeryaUnutmaz团队在三年未解的免疫学难题上取得突破，首次揭示了特定T细胞亚群的功能调控机制。
 external_url: https://openai.com/index/gpt-5-immunology-mystery
 scenarios:
 - Web应用开发

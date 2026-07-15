@@ -16,7 +16,8 @@ categories:
 - 产品与创业
 - 大模型
 source: blogs_podcasts
-description: 在一个相对平静的日子里，行业讨论聚焦于AI“人格”这一概念，围绕经典的Clippy与新兴的Anton之间的辩论展开。Clippy代表了早期具有显著拟人化特征的助手，强调交互的趣味性与情感陪伴；而Anton则更倾向于提供高效、精准的工具性服务。两者之争突显了AI设计中“角色”与“功能”之间的张力，促使人们思考AI是应更像
+description: 一个安静的日子让我们反思AI的“character”在Clippy vs Anton辩论中的本质。 在AI产品不断渗透日常生活的当下，关于AI应该具备何种人格特征的争论愈发激烈。Clippy
+  与 Anton 的对比凸显了“角色化”与“工具化”两种设计思路的本质差异，也让我们重新审视用户对AI可信度与亲和力的期待。
 external_url: https://www.latent.space/p/ainews-the-other-vs-the-utility
 scenarios:
 - AI/ML项目

@@ -16,8 +16,8 @@ categories:
 - 大模型
 - 开源生态
 source: blogs_podcasts
-description: 概述 Google 发布了 Gemma 4，这是一套小体量的多模态开放模型，专为资源受限的环境设计，提供强大的跨模态理解与生成能力。 性能提升
-  相比上一代 Gemma 3，Gemma 4 在视觉、语言、音频等任务上的准确率、推理速度和能效均实现显著提升。所有基准测试的得分均呈现两位数百分比的增长，且模型响应延迟下降约
+description: 来自Google的欢迎更新！ Google 近日推出了最新一代的轻量级多模态开源模型 Gemma 4。相比上一代 Gemma 3，它在视觉理解、语言生成以及跨模态推理等关键指标上均有显著提升。对想在资源受限环境下部署强大
+  AI 能力的开发者而言，Gemma 4 提供了更小体积与更高性能的理想平衡。本文将深入解析其架构改进、基准测试表现以及在实际项目中的使用建议。
 external_url: https://www.latent.space/p/ainews-gemma-4-the-best-small-multimodal
 scenarios:
 - AI/ML项目

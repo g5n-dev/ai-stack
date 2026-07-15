@@ -16,8 +16,7 @@ categories:
 - 大模型
 - 论文
 source: arxiv
-description: '**HorizonMath：利用自动验证衡量AI在数学发现领域的进展** 本文介绍了HorizonMath，这是一个旨在评估人工智能（AI）在解决重要且未解数学问题上能力的基准测试平台。其核心内容总结如下：
-  **1. 背景与挑战** 尽管大型语言模型（LLM）在数学和科学推理方面表现出了 sophisticated 的'
+description: 针对大型语言模型能否真正具备数学研究能力的争议，本文提出了HorizonMath基准测试，旨在通过自动验证机制评估AI解决未解数学难题的水平。该基准利用“发现难、验证易”的问题特性，在涵盖计算与应用数学多个领域的同时，有效规避了形式化验证的高成本和人工审查的主观性，并天然免疫数据污染。
 external_url: http://arxiv.org/abs/2603.15617v1
 scenarios:
 - 大语言模型

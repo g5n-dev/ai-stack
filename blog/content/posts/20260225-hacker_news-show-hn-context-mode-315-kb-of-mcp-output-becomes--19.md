@@ -18,7 +18,7 @@ categories:
 source: hacker_news
 description: 在 AI 编程工作流中，上下文窗口的容量往往决定了任务的可行性。本文介绍了一款名为 Context Mode 的工具，它通过 MCP 协议将原本
   315 KB 的输出压缩至 5.4 KB，显著降低了 Token 消耗。通过阅读本文，你将了解其压缩原理，并掌握如何利用这一优化手段，在 Claude Code
-  中更高效地处
+  中更高效地处理大规模代码库。
 external_url: https://github.com/mksglu/claude-context-mode
 scenarios:
 - AI/ML项目

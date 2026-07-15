@@ -16,7 +16,8 @@ categories:
 - 大模型
 - AI 工程
 source: blogs_podcasts
-description: OpenAI 与 Thrive、Crete 合作，基于 Codex 构建了能够自我改进的税务代理。该代理利用 Codex 的代码生成与自然语言理解能力，自动完成税务申报、核对和文件处理；通过持续学习历史错误和最新法规，提升准确性；并实现工作流加速，减少人工干预。系统采用反馈循环，将每次申报结果反馈给模型，实现模型在真实
+description: 了解 OpenAI、Thrive 和 Crete 如何借助 Codex 构建了一个自我改进的税务代理，实现报税自动化、提高准确性并加快工作流程。
+  在企业税务管理中，手工操作往往导致效率低下和错误累积。OpenAI 与 Thrive、Crete 合作，利用 Codex 开发了一套能够自行学习、持续优化的税务代理，实现自动报税、精准计算和流程加速。
 external_url: https://openai.com/index/building-self-improving-tax-agents-with-codex
 scenarios:
 - AI/ML项目

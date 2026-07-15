@@ -16,8 +16,8 @@ categories:
 - 大模型
 - 论文
 source: arxiv
-description: 背景 Vision Transformer（ViT）在图像生成模型中也容易出现少量高范数“异常 token”，这些 token 吸引过多注意力，却携带有限的局部信息。
-  问题 在 Representation Autoencoder–DiT（RAE‑DiT）流水线中，编码器和解噪器均会产生异常 token，尤其在中间层更
+description: Vision Transformer（ViT）在图像生成模型中也容易出现少量高范数“异常 token”，这些 token 吸引过多注意力，却携带有限的局部信息。
+  在 Representation Autoencoder–DiT（RAE‑DiT）流水线中，编码器和解噪器均会产生异常 token，尤其在中间层更为突出。
 external_url: http://arxiv.org/abs/2605.05206v1
 scenarios:
 - Web应用开发

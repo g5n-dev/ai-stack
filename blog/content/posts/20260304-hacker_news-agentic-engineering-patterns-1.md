@@ -17,7 +17,7 @@ categories:
 - 系统与基础设施
 source: hacker_news
 description: 随着大模型能力的演进，软件开发的范式正从传统的函数调用转向基于智能体的自主协作。这一转变要求工程师重新思考系统架构，以应对非确定性流程带来的复杂挑战。本文将深入探讨
-  Agentic 模式下的核心工程实践，解析如何设计具备规划与工具调用能力的稳健系统。通过梳理关键的设计模式，我们旨在为构建下一代高容错性 AI 应用提供清
+  Agentic 模式下的核心工程实践，解析如何设计具备规划与工具调用能力的稳健系统。通过梳理关键的设计模式，我们旨在为构建下一代高容错性 AI 应用提供清晰的架构参考与实施路径。
 external_url: https://simonwillison.net/guides/agentic-engineering-patterns
 scenarios:
 - 大语言模型

@@ -17,7 +17,7 @@ categories:
 - 开源生态
 source: hacker_news
 description: TRELLIS.2 将二维图像直接转化为高质量三维模型，且已在苹果自研芯片上实现本地运行。这意味着在没有 Nvidia GPU 的情况下，开发者和小团队也能利用最新的图像到
-  3D 生成技术进行原型设计或内容创作。本文档将简要说明其部署步骤、关键性能指标以及在 macOS 环境下的实际使用体验，帮助读者快速上手并评估该方
+  3D 生成技术进行原型设计或内容创作。本文档将简要说明其部署步骤、关键性能指标以及在 macOS 环境下的实际使用体验，帮助读者快速上手并评估该方案的实际价值。
 external_url: https://github.com/shivampkumar/trellis-mac
 scenarios:
 - AI/ML项目

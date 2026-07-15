@@ -17,7 +17,7 @@ categories:
 - 后端
 source: hacker_news
 description: 在基于 Rivet 构建的多 Agent 系统中，如何高效且安全地管理数据状态往往是一大挑战。本文介绍的 SQLite for Rivet
-  Actors 方案，通过为每个 Agent、租户或文档分配独立的嵌入式数据库，实现了极佳的数据隔离与并发性能。阅读本文，你将了解该工具的集成方式，以及它如何简化状态管理逻辑，从而提
+  Actors 方案，通过为每个 Agent、租户或文档分配独立的嵌入式数据库，实现了极佳的数据隔离与并发性能。阅读本文，你将了解该工具的集成方式，以及它如何简化状态管理逻辑，从而提升系统的可维护性。
 external_url: https://github.com/rivet-dev/rivet
 scenarios:
 - Web应用开发

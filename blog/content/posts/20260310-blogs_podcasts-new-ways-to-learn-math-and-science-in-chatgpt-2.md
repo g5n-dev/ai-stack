@@ -16,8 +16,8 @@ categories:
 - 大模型
 - 产品与创业
 source: blogs_podcasts
-description: 以下是对该内容的简洁总结： **标题：ChatGPT在数学与科学学习中的创新应用** **核心内容：** ChatGPT推出了一项新功能，旨在通过**交互式视觉解释**（interactive
-  visual explanations）来革新数学与科学的学习方式。 **主要特点与功能：** 1. **实时探索：** 学生
+description: ChatGPT 推出了数学和科学的交互式可视化讲解，帮助学生实时探索公式、变量和概念。 随着 ChatGPT 推出针对数学与科学的交互式可视化功能，AI
+  辅助学习正从简单的文本问答转向更深层的认知互动。这一更新通过实时呈现公式演变与变量关系，有效降低了抽象概念的认知门槛。对于教育工作者与学习者而言，这意味着一种更直观的探索工具，有助于在动态演示中建立对复杂逻辑的直观理解。
 external_url: https://openai.com/index/new-ways-to-learn-math-and-science-in-chatgpt
 scenarios:
 - AI/ML项目

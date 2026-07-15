@@ -16,7 +16,8 @@ categories:
 - 大模型
 - AI 工程
 source: blogs_podcasts
-description: Gemini 3.1 Flash TTS 是下一代表达性 AI 语音模型。它引入了细粒度的音频标签（granular audio tags），让用户能够在生成语音时对语调、情感、停顿、节奏等多个维度进行精准控制，从而实现更自然、更具表现力的音频输出。这些标签可独立调节，开发者可以根据不同场景（如客服、有声读物、虚拟主播
+description: 我们最新的音频模型引入了细粒度音频标签，让您能够精确控制AI语音，以实现富有表现力的音频生成。 Gemini 3.1 Flash TTS
+  通过细粒度音频标签，为语音合成带来了更精细的控制能力。这一改进让开发者和内容创作者能够在音色、节奏和情感表达上进行细致的调节，从而生成更贴合需求的自然语音。阅读本文后，你将了解新标签的工作原理、实际应用场景以及如何在项目中快速集成，实现高质量的语音输出。
 external_url: https://deepmind.google/blog/gemini-3-1-flash-tts-the-next-generation-of-expressive-ai-speech
 scenarios:
 - Web应用开发

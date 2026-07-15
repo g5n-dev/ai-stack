@@ -16,9 +16,8 @@ categories:
 - AI 工程
 - 系统与基础设施
 source: blogs_podcasts
-description: '**总结：AWS 基于 llm-d 的解耦推理技术** 本文介绍了由 llm-d 驱动的下一代 AWS 推理能力，重点阐述了以下核心概念及其在
-  Amazon SageMaker HyperPod EKS 上的实现： 1. **核心技术概念**： * **解耦服务**：将推理服务的各个组件分离，以提高灵活性。
-  * **智'
+description: 在这篇博文中，我们将介绍下一代推理能力背后的概念，包括分离式服务、智能请求调度和专家并行。我们将探讨它们的优势，并演示如何在 Amazon
+  SageMaker HyperPod EKS 上实施这些概念，从而显著提升推理性能、资源利用率和运营效率。 随着大模型参数规模的持续增长，传统的单体推理架构在资源利用与成本控制上正面临严峻挑战。
 external_url: https://aws.amazon.com/blogs/machine-learning/introducing-disaggregated-inference-on-aws-powered-by-llm-d
 scenarios:
 - 大语言模型

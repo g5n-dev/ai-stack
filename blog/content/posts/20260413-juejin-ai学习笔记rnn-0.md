@@ -15,8 +15,8 @@ tags:
 categories:
 - AI 工程
 source: juejin
-description: RNN 基础 RNN（循环神经网络）通过隐藏状态在时间步之间传递信息，实现对序列上下文的学习，能够处理任意长度的输入。 Seq2Seq 与编码‑解码
-  Seq2Seq 在 RNN 基础上提出编码‑解码框架：编码器将输入序列压缩为上下文向量，解码器依据该向量生成变长输出，解决了输入输出不等长的问题。 典型改进 为缓解梯度消
+description: 在自然语言处理和时间序列分析等领域，循环神经网络（RNN）长期是处理序列数据的核心技术。虽然近年来 Transformer 逐渐占据主流，但
+  RNN 的基本思想仍是理解序列建模演进的基石。通过本文，你将快速掌握 RNN 的结构、训练机制以及它与 Seq2Seq 模型的关系，为后续学习更复杂模型奠定坚实基础。
 external_url: https://juejin.cn/post/7628067175560413226
 scenarios:
 - Web应用开发
@@ -39,9 +39,9 @@ source_support: 0.0
 ---
 ## 描述
 
-从 RNN 简单介绍  
+从 RNN 简单介绍
 
-在 Transformer 出现之前，序列建模领域的主角长期是 RNN 及其变体。  
+在 Transformer 出现之前，序列建模领域的主角长期是 RNN 及其变体。
 如果把这段历史简化成一句话：RNN 先解决“能处理序列”，Seq2Seq 解决“输入输出不等长”。
 
 ---

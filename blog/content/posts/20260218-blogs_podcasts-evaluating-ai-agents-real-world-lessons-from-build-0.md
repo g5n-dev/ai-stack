@@ -16,9 +16,8 @@ categories:
 - AI 工程
 - 大模型
 source: blogs_podcasts
-description: 本文介绍了亚马逊构建代理AI系统的实践经验，并提出了一套全面的评估框架，旨在应对代理AI应用的复杂性。该框架主要包含两个核心组成部分： 1.
-  **通用评估工作流**：通过标准化的程序，对各种不同的代理实现进行统一的评估。 2. **代理评估库**：在 Amazon Bedrock AgentCore
-  Evaluatio
+description: 在本文中，我们提出了一个针对 Amazon 智能 AI 系统的综合评估框架。该框架通过两个核心组件，应对 Amazon 智能 AI 应用的复杂性：一个通用评估工作流，用于在各类代理实现中标准化评估流程；以及一个代理评估库，在
+  Amazon Bedrock AgentCore Evaluations 中提供系统化的测量与指标，并辅以 Amazon 特定于用例的评估方法与指标。
 external_url: https://aws.amazon.com/blogs/machine-learning/evaluating-ai-agents-real-world-lessons-from-building-agentic-systems-at-amazon
 scenarios:
 - AI/ML项目

@@ -16,8 +16,8 @@ categories:
 - 后端
 - AI 工程
 source: juejin
-description: 本文是对 **Go + Eino 构建 AI Agent（二）：Tool Calling** 的简洁总结。 核心主题 本文介绍了如何在 Go
-  语言中使用 **Eino** 框架实现 **Tool Calling（工具调用）** 功能。通过结合 Eino 提供的工具组件与大模型，使 AI Agent 具备调用外部函数（如
+description: 在构建 AI Agent 的过程中，让大模型准确调用外部工具是连接推理与执行的关键环节。本文将深入介绍 Eino 框架中的 Tool Calling
+  机制，详细解析如何利用 utils.InferTool 自动推断工具定义，并通过 BindTools() 将工具绑定至模型。
 external_url: https://juejin.cn/post/7608759940799266866
 scenarios:
 - AI/ML项目

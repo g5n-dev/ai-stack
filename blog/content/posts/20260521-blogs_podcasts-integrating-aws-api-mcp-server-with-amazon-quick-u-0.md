@@ -16,9 +16,9 @@ categories:
 - 大模型
 - AI 工程
 source: blogs_podcasts
-description: 概述 Amazon Bedrock AgentCore Runtime 通过 Model Context Protocol (MCP) 与
-  AWS API MCP Server 打通，把 Amazon Quick 与各种 AWS 服务连接起来。用户在 Quick 中以自然语言提出需求，系统即可即时生成对应的
-  AWS C
+description: 本帖子向您展示如何将 Amazon Bedrock AgentCore Runtime 与模型上下文协议 (MCP) 支持结合使用，通过
+  AWS API MCP Server 将 Amazon Quick 与 AWS 服务连接起来，从而创建一个会话式 AI 助手，该助手能够将自然语言转换为 AWS
+  命令行界面 (AWS CLI) 命令，让您无需在关键时刻来回切换工具。
 external_url: https://aws.amazon.com/blogs/machine-learning/integrating-aws-api-mcp-server-with-amazon-quick-suite-using-amazon-bedrock-agentcore-runtime
 scenarios:
 - 命令行工具

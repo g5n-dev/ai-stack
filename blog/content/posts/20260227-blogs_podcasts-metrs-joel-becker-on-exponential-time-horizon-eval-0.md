@@ -16,8 +16,8 @@ categories:
 - 大模型
 - 安全
 source: blogs_podcasts
-description: 这是一份关于 METR 研究员 Joel Becker 观点的简洁总结，涵盖了指数级时间跨度评估、威胁模型以及 AI 生产力极限等核心话题：
-  **1. 指数级时间跨度评估** Joel Becker 强调，评估 AI 能力时必须采用指数级的时间跨度。传统的线性评估往往低估了 AI 的长期潜力。随着模型能力的提升，其在更
+description: AIE Europe CFP 和 AIE World’s Fair 投交 CAIS 同行评审的论文截止日期就在今天——切勿拖延！ 随着大模型能力的快速迭代，如何准确评估其潜在风险已成为安全领域的核心议题。METR
+  研究员 Joel Becker 在本期访谈中深入探讨了指数级时间视界评估与威胁模型，并分析了 AI 在提升生产力方面的实际局限。
 external_url: https://www.latent.space/p/metr
 scenarios:
 - AI/ML项目

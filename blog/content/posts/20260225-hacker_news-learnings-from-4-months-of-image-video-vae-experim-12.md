@@ -17,7 +17,7 @@ categories:
 - AI 工程
 source: hacker_news
 description: 在多模态生成领域，图像与视频的联合建模一直是技术难点，而 VAE（变分自编码器）在其中扮演着至关重要的角色。本文作者基于过去四个月的密集实验，系统性地梳理了在
-  Image-Video VAE 架构设计与训练中的实践经验与避坑指南。通过阅读本文，你将了解到从模型选型到优化策略的完整技术细节，以及如何在实际项目中平衡生成质
+  Image-Video VAE 架构设计与训练中的实践经验与避坑指南。通过阅读本文，你将了解到从模型选型到优化策略的完整技术细节，以及如何在实际项目中平衡生成质量与计算效率。
 external_url: https://www.linum.ai/field-notes/vae-reconstruction-vs-generation
 scenarios:
 - Web应用开发

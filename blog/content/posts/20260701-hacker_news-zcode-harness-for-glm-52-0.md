@@ -17,7 +17,7 @@ categories:
 - 开发工具
 source: hacker_news
 description: ZCode 是专为 GLM-5.2 设计的高效测试框架，旨在帮助开发者在复杂模型部署场景下快速构建、运行并分析大规模回归测试。通过提供模块化的脚本编排、自动化数据注入以及细粒度的性能监控，它能够在保持测试覆盖的同时显著缩短调试周期。阅读本文后，你将掌握
-  ZCode 的核心组件使用方法，并能够将其集成到现有 CI 流程，
+  ZCode 的核心组件使用方法，并能够将其集成到现有 CI 流程，实现模型质量的持续验证。
 external_url: https://zcode.z.ai/en
 scenarios:
 - AI/ML项目

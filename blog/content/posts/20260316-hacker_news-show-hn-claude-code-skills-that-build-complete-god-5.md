@@ -17,7 +17,7 @@ categories:
 - AI 工程
 source: hacker_news
 description: 生成式 AI 正在重塑开发者的工作流，尤其是在游戏开发领域，从辅助编码到直接生成完整项目已成为可能。本文介绍了作者利用 Claude Code
-  构建完整 Godot 游戏的实践，展示了大模型如何理解复杂的游戏逻辑并生成可运行的代码。通过阅读这篇文章，开发者可以了解当前 AI 在游戏制作中的实际能力边界，以及如何将其整合
+  构建完整 Godot 游戏的实践，展示了大模型如何理解复杂的游戏逻辑并生成可运行的代码。通过阅读这篇文章，开发者可以了解当前 AI 在游戏制作中的实际能力边界，以及如何将其整合进自己的创作流程中。
 external_url: https://github.com/htdt/godogen
 scenarios:
 - AI/ML项目

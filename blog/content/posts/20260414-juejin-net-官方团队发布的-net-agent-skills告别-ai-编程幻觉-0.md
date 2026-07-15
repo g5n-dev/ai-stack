@@ -16,9 +16,8 @@ categories:
 - 开发工具
 - AI 工程
 source: juejin
-description: 背景 AI 编程助手在生成代码时经常出现“幻觉”，提供的方案往往不符合 .NET 生态，如 Java 示例或已废弃的 API，尤其在使用
-  .NET 10 + Minimal API 时更为明显。 .NET Agent Skills 是什么 .NET 官方团队推出的 .NET Agent Skills
-  是一套专门为 AI
+description: 以下是对原文的修订与翻译： 前言 你是否也曾被 AI 编程助手的“幻觉”搞得头疼？明明写的是 .NET 代码，它却给你甩来 Java 的解决方案；明明你在用
+  .NET 10 + Minimal API，它却在教你用 ASP.NET Core 传统的 MVC 模式？
 external_url: https://juejin.cn/post/7628492748772950067
 scenarios:
 - AI/ML项目

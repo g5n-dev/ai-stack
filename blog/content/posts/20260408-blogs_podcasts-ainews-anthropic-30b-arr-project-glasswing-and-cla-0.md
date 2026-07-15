@@ -16,8 +16,8 @@ categories:
 - 大模型
 - 产品与创业
 source: blogs_podcasts
-description: 业务规模 Anthropic 已突破 300 亿美元年度经常性收入（ARR），标志着公司在 AI 商业化上进入高速增长阶段。强大的收入基础为其持续的技术研发提供了充足的资金保障。
-  技术创新：GlassWing 与 Claude Mythos 预览 - **Project GlassWing**：定位为下一代企业级 AI
+description: Anthropic加大攻势，直面OpenAI IPO困境 Anthropic实现约300亿美元年经常性收入的同时，发布Project GlassWing与Claude
+  Mythos预览版，透露其新模型安全风险已逼近GPT‑2以来最高警戒。此举让Anthropic在商业上直接挑战OpenAI的上市计划，加速AI行业竞争格局。阅读本文可获悉两项新产品的技术定位、模型安全评估细节以及竞争背后的商业考量。
 external_url: https://www.latent.space/p/ainews-anthropic-30b-arr-project
 scenarios:
 - AI/ML项目

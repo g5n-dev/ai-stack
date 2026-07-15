@@ -16,8 +16,8 @@ categories:
 - 大模型
 - 开发工具
 source: blogs_podcasts
-description: 以下是对该内容的简洁总结： **推出 GPT-5.3-Codex-Spark** GPT-5.3-Codex-Spark 现已正式发布。作为首个**实时代码模型**，它具备以下核心特点：
-  * **极速生成**：速度提升 15 倍。 * **超长上下文**：支持 128k 上下文窗口。 * **可用性**：目前处于研究预
+description: 隆重推出 GPT-5.3-Codex-Spark——我们的首个实时编码模型。生成速度提升 15 倍，上下文窗口 128k，现面向 ChatGPT
+  Pro 用户开放研究预览。 GPT-5.3-Codex-Spark 作为首个实时编码模型正式发布，标志着代码生成技术在响应速度与上下文理解能力上的显著突破。
 external_url: https://openai.com/index/introducing-gpt-5-3-codex-spark
 scenarios:
 - AI/ML项目

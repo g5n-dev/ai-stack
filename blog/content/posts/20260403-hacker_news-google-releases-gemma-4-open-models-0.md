@@ -17,7 +17,7 @@ categories:
 - 开源生态
 source: hacker_news
 description: Google近日正式发布了Gemma 4开源模型系列。该系列在前代基础上进一步提升了推理效率和多模态能力，并在模型规模与部署灵活性之间实现了更好的平衡。开发者可以直接在多种硬件平台上使用这些预训练权重，快速构建和迭代AI应用。本文将概述Gemma
-  4的核心改进、基准测试结果以及获取方式，帮助技术团队快速评估其在实际项目
+  4的核心改进、基准测试结果以及获取方式，帮助技术团队快速评估其在实际项目中的适用性。
 external_url: https://deepmind.google/models/gemma/gemma-4
 scenarios:
 - 自然语言处理

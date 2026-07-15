@@ -16,8 +16,7 @@ categories:
 - 大模型
 - 论文
 source: blogs_podcasts
-description: '**从AlphaGo到AGI：十年跨越与科学变革** **核心主题：** 本文回顾了AlphaGo问世十周年的深远影响，探讨了其如何不仅限于游戏领域，更成为推动科学发现和技术进步的催化剂，并为通往通用人工智能（AGI）奠定了基础。
-  **主要观点总结：** **1. 技术范式的突破：从直觉到机器** AlphaGo之所以'
+description: AlphaGo问世已逾十年，我们探讨它如何加速科学发现，并铺就通往通用人工智能（AGI）之路。 AlphaGo 问世已逾十年，其影响早已超越了围棋棋盘，深入至生物学等基础科学领域。回顾这一历程，不仅有助于理解深度学习如何加速科学发现，更能厘清当前通往通用人工智能（AGI）的关键技术路径。本文将梳理这一里程碑事件带来的范式转变，探讨算法突破如何重塑科研边界。
 external_url: https://deepmind.google/blog/10-years-of-alphago
 scenarios:
 - Web应用开发

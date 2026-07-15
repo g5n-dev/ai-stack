@@ -16,8 +16,8 @@ categories:
 - 大模型
 - AI 工程
 source: blogs_podcasts
-description: 研究背景 天体物理学家 Chi‑kwan Chan 致力于模拟黑洞，以探索极端物理环境并检验爱因斯坦的广义相对论。传统的数值模拟需要大量手工编写、调试计算代码，过程繁琐且易出错。
-  Codex 的优势 Chan 利用 OpenAI 的 Codex——一种基于大规模语言模型的代码生成工具——快速生成高精度数值模拟代码。Co
+description: 探索天体物理学家 Chi-kwan Chan 如何利用 Codex 构建黑洞模拟，帮助科学家研究极端物理学并验证爱因斯坦广义相对论。 天体物理学家Chi‑kwan
+  Chan正利用OpenAI的Codex平台构建高分辨率黑洞模拟，以探索极端引力环境下的物理行为。这类模拟能够在接近事件视界的尺度上验证爱因斯坦广义相对论的预测，并为研究吸积盘、喷流等复杂现象提供数据支撑。
 external_url: https://openai.com/index/using-codex-to-simulate-black-holes
 scenarios:
 - AI/ML项目

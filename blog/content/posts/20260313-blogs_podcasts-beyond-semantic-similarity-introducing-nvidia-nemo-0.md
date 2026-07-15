@@ -18,7 +18,7 @@ categories:
 source: blogs_podcasts
 description: 在传统的 RAG 系统中，仅依赖语义相似度往往难以应对复杂查询，导致检索结果缺乏深度或上下文不匹配。本文介绍了 NVIDIA NeMo Retriever
   推出的“可泛化智能体检索管道”，旨在通过更精细的检索策略突破这一瓶颈。通过阅读本文，您将了解该技术如何提升检索的准确性与泛化能力，以及如何将其集成到您的 AI
-  工作
+  工作流中以优化模型输出。
 external_url: https://huggingface.co/blog/nvidia/nemo-retriever-agentic-retrieval
 scenarios:
 - RAG应用

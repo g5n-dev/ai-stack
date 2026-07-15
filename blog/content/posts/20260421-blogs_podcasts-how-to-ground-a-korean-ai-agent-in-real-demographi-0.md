@@ -17,7 +17,7 @@ categories:
 - 数据
 source: blogs_podcasts
 description: 在构建面向韩国用户的AI助理时，模型的响应若未贴合当地人口统计特征，往往会导致回答偏差和用户体验下降。本文介绍通过合成人物（synthetic
-  personas）将真实人口统计信息注入语言模型，实现对年龄、地区、职业等多维度属性的精准对齐。读者将学习到合成人物的设计方法、数据来源选择以及评估指标，帮助项目在实际部署中提
+  personas）将真实人口统计信息注入语言模型，实现对年龄、地区、职业等多维度属性的精准对齐。读者将学习到合成人物的设计方法、数据来源选择以及评估指标，帮助项目在实际部署中提升语义一致性和用户满意度。
 external_url: https://huggingface.co/blog/nvidia/build-korean-agents-with-nemotron-personas
 scenarios:
 - AI/ML项目

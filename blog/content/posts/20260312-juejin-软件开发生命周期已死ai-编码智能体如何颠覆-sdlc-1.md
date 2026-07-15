@@ -16,9 +16,7 @@ categories:
 - AI 工程
 - 效率与方法论
 source: juejin
-description: 以下是对该内容的简洁总结： **核心观点：传统 SDLC 已死，AI 引发开发范式革命** Cloudflare 工程负责人 Boris
-  Tane 指出，传统的软件开发生命周期（SDLC）在 AI 编码智能体的冲击下已走向终结。这一变革并非简单的工具升级，而是软件开发底层逻辑的彻底重构。 **1.
-  流程的颠覆：从“线性
+description: Cloudflare 工程负责人 Boris Tane 近期提出，传统的软件开发生命周期（SDLC）正在走向终结。随着 AI 编码智能体的成熟，需求、设计、编码与测试被压缩至同一闭环，上下文工程正逐渐取代流程管控成为开发者的核心能力。本文将深入探讨这一趋势背后的逻辑，分析开发者应如何调整技能栈，以适应从“流程管理”向“上下文管理”的范式转变。
 external_url: https://juejin.cn/post/7615868122214760511
 scenarios:
 - AI/ML项目

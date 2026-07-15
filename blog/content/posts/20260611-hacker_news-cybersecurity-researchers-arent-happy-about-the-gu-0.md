@@ -17,7 +17,7 @@ categories:
 - 大模型
 source: hacker_news
 description: Anthropic 为其对话模型 Fable 设置的安全护栏近期成为安全研究者的焦点。该护栏限制了模型在敏感场景下的行为，虽然意在防止滥用，却削弱了对模型内部机制和潜在漏洞的独立审查能力。研究者担忧，这种不透明的约束可能导致真实风险被掩盖，从而影响整个
-  AI 安全生态的稳健性。本文将梳理争议的技术细节、行业反响以及可能
+  AI 安全生态的稳健性。本文将梳理争议的技术细节、行业反响以及可能的平衡方案，为读者提供全景式的解读。
 external_url: https://techcrunch.com/2026/06/10/cybersecurity-researchers-arent-happy-about-the-guardrails-on-anthropics-fable
 scenarios:
 - AI/ML项目

@@ -16,7 +16,8 @@ categories:
 - 大模型
 - 论文
 source: arxiv
-description: '**Agentic Critical Training (ACT) 方法总结** **背景与问题** 当前将大语言模型训练为智能体主要采用模仿学习，但这存在根本性缺陷：模型只学习“做什么”，却不理解“为什么”。尽管近期研究引入了自我反思的监督信号，对比专家行为与次优行为，但这本质上仍是让模型模仿预先构建的反思文本，而非'
+description: 针对大语言模型智能体训练中普遍存在的“只知其然，不知其所以然”的模仿局限，本文提出了 Agentic Critical Training
+  (ACT) 这一强化学习范式。该方法摒弃了对预设反思文本的机械模仿，转而通过奖励模型驱动智能体自主识别行动优劣并发展内在的批判性推理能力。
 external_url: http://arxiv.org/abs/2603.08706v1
 scenarios:
 - AI/ML项目

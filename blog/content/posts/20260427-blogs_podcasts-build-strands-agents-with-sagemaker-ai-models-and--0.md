@@ -15,8 +15,9 @@ tags:
 categories:
 - AI 工程
 source: blogs_podcasts
-description: 模型部署 使用 SageMaker JumpStart 直接启动预训练的基础模型，快速创建可托管的推理端点。端点支持自动伸缩，保证在高并发场景下仍能保持低延迟。
-  集成 Strands Agents 在 Strands Agents SDK 中把上述端点配置为模型后端，只需几行代码即可完成模型加载、对话管理与任务分发。S
+description: 在这篇文章中，我们演示了如何使用 Strands Agents SDK 构建 AI 代理，并将模型部署在 SageMaker AI 端点上。您将学习如何从
+  SageMaker JumpStart 部署基础模型、如何将它们与 Strands Agents 集成，以及如何使用 SageMaker Serverless
+  MLflow 建立生产级可观测性来进行代理追踪。
 external_url: https://aws.amazon.com/blogs/machine-learning/build-strands-agents-with-sagemaker-ai-models-and-mlflow
 scenarios:
 - AI/ML项目

@@ -99,15 +99,15 @@ def summarize_webpage(url: str, api_key: str) -> str:
     # 获取网页内容（实际应用中应使用更健壮的爬虫方案）
     response = requests.get(url)
     content = response.text[:5000]  # 限制输入长度
-    
+
     # 初始化Gemini模型
     model = GenerativeModel("gemini-pro")
     model._client.api_key = api_key
-    
+
     # 生成摘要
     prompt = f"请用中文总结以下网页内容的核心观点：\n{content}"
     summary = model.generate_content(prompt)
-    
+
     return summary.text
 
 # 使用示例
@@ -129,7 +129,7 @@ def smart_form_filler(form_data: dict, api_key: str) -> dict:
     # 初始化Gemini模型
     model = GenerativeModel("gemini-pro")
     model._client.api_key = api_key
-    
+
     filled_data = {}
     for field, prompt in form_data.items():
         # 为每个字段生成合适的填充内容
@@ -137,7 +137,7 @@ def smart_form_filler(form_data: dict, api_key: str) -> dict:
             f"为表单字段'{field}'生成合适的{prompt}内容，要求简洁专业"
         )
         filled_data[field] = response.text.strip()
-    
+
     return filled_data
 
 # 使用示例
@@ -163,18 +163,18 @@ def translate_webpage(content: str, target_lang: str, api_key: str) -> str:
     # 初始化Gemini模型
     model = GenerativeModel("gemini-pro")
     model._client.api_key = api_key
-    
+
     # 翻译提示
     prompt = f"""
     请将以下HTML内容翻译为{target_lang}，要求：
     1. 保持HTML标签不变
     2. 只翻译文本内容
     3. 保持专业术语的准确性
-    
+
     内容：
     {content}
     """
-    
+
     response = model.generate_content(prompt)
     return response.text
 
@@ -187,8 +187,6 @@ def translate_webpage(content: str, target_lang: str, api_key: str) -> str:
 ## 案例研究
 
 ### 1：某跨国电商客户支持团队
-
- 1：某跨国电商客户支持团队
 
 **背景**:
 该团队负责处理全球用户的售前咨询与售后纠纷，每天需处理数千条包含多语言、图片截图和复杂订单信息的用户工单。客服人员需要同时在多个标签页之间切换（CRM系统、邮箱、物流查询、内部Wiki），工作流繁琐，导致响应时间长。
@@ -211,8 +209,6 @@ def translate_webpage(content: str, target_lang: str, api_key: str) -> str:
 
 ### 2：金融科技公司的合规审查专员
 
- 2：金融科技公司的合规审查专员
-
 **背景**:
 该公司需要定期审查合作伙伴网站和公开新闻源，以确保其营销内容和商业行为符合最新的金融监管要求（如GDPR或SEC新规）。审查工作涉及大量的阅读和比对。
 
@@ -233,8 +229,6 @@ def translate_webpage(content: str, target_lang: str, api_key: str) -> str:
 ---
 
 ### 3：独立软件开发者的代码与文档调研
-
- 3：独立软件开发者的代码与文档调研
 
 **背景**:
 一名开发者在开发一个新的Web应用功能时，需要参考多个开源项目的GitHub代码库、技术论坛的讨论帖以及最新的API官方文档。这通常涉及到打开几十个标签页。
@@ -361,8 +355,6 @@ Gemini 可能无法读取受付费墙保护或需要特殊登录权限的私密�
 
 ### 1: 如何在 Chrome 浏览器中启用并开始使用 Gemini 集成功能？
 
-1: 如何在 Chrome 浏览器中启用并开始使用 Gemini 集成功能？
-
 **A**: 要使用 Chrome 中的 Gemini 功能（通常称为“Help me write”或“Help me read”），首先确保你的 Chrome 浏览器已更新到最新版本（M122 或更高）。
 
 1.  **登录账户**：你需要在 Chrome 中登录你的 Google 账户。
@@ -376,8 +368,6 @@ Gemini 可能无法读取受付费墙保护或需要特殊登录权限的私密�
 
 ### 2: Chrome 中的 Gemini 功能是否需要付费，或者订阅 Google One 才能使用？
 
-2: Chrome 中的 Gemini 功能是否需要付费，或者订阅 Google One 才能使用？
-
 **A**: 目前，在 Chrome 浏览器中直接集成的“Help me write”和“Help me read”功能是免费提供的，用户无需订阅 Google One 或购买 Gemini Advanced 计划即可使用基础功能。
 
 然而，Google 可能会根据使用情况或账户状态设定一定的使用限额（例如每日请求次数限制）。如果你订阅了 Gemini Advanced（属于 Google One AI Premium），你可能会体验到更长的上下文理解能力或更高级的模型支持，但基础的浏览器集成功能对普通用户是开放的。
@@ -385,8 +375,6 @@ Gemini 可能无法读取受付费墙保护或需要特殊登录权限的私密�
 ---
 
 ### 3: 使用 Chrome 版 Gemini 时，我的隐私数据是如何处理的？Google 会查看我的浏览内容吗？
-
-3: 使用 Chrome 版 Gemini 时，我的隐私数据是如何处理的？Google 会查看我的浏览内容吗？
 
 **A**: 数据隐私是用户最关心的问题。Google 对此的处理方式如下：
 
@@ -399,8 +387,6 @@ Gemini 可能无法读取受付费墙保护或需要特殊登录权限的私密�
 
 ### 4: Chrome 中的 Gemini 与直接访问 Gemini 网页版或使用 Gemini App 有什么区别？
 
-4: Chrome 中的 Gemini 与直接访问 Gemini 网页版或使用 Gemini App 有什么区别？
-
 **A**: 虽然底层模型可能相似，但使用场景和功能侧重点不同：
 
 *   **Chrome 集成**：侧重于**情境辅助**。它嵌入在你当前的浏览流中，不需要切换标签页。例如，它可以根据你正在浏览的网页内容生成回复，或者直接在当前的文本框中重写句子。它的界面通常较小，旨在快速完成任务。
@@ -409,8 +395,6 @@ Gemini 可能无法读取受付费墙保护或需要特殊登录权限的私密�
 ---
 
 ### 5: 为什么我在 Chrome 中右键点击或文本框中没有看到“Help me write”的图标？
-
-5: 为什么我在 Chrome 中右键点击或文本框中没有看到“Help me write”的图标？
 
 **A**: 如果该功能没有出现，可能是由于以下几个原因：
 
@@ -423,8 +407,6 @@ Gemini 可能无法读取受付费墙保护或需要特殊登录权限的私密�
 ---
 
 ### 6: 使用“Help me read”功能时，它能处理多长的文章，支持哪些语言？
-
-6: 使用“Help me read”功能时，它能处理多长的文章，支持哪些语言？
 
 **A**:
 

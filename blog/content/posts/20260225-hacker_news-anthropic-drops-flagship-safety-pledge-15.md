@@ -17,7 +17,8 @@ categories:
 - 安全
 source: hacker_news
 description: Anthropic 近期宣布不再坚持“不发布未通过安全评估模型”的承诺，这一转变标志着行业在技术迭代与风险管控之间重新寻找平衡点。对于关注
-  AI 治理与前沿模型发展的从业者而言，这一决策不仅反映了商业竞争的压力，也揭示了当前安全评估体系的局限性。本文将梳理 Anthropic 调整策略的具体细节，分析其背后的深层逻辑，
+  AI 治理与前沿模型发展的从业者而言，这一决策不仅反映了商业竞争的压力，也揭示了当前安全评估体系的局限性。本文将梳理 Anthropic 调整策略的具体细节，分析其背后的深层逻辑，并探讨这对未来
+  AI 监管与行业自律可能产生的影响。
 external_url: https://time.com/7380854/exclusive-anthropic-drops-flagship-safety-pledge
 scenarios:
 - AI/ML项目

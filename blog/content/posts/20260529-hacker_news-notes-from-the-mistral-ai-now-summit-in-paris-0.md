@@ -17,7 +17,7 @@ categories:
 - AI 工程
 source: hacker_news
 description: 2024 年 3 月在巴黎举行的 Mistral AI Now Summit 聚焦于生成式模型与行业落地的最新进展，吸引了来自学术界和产业界的众多专家。会议上围绕大语言模型的性能优化、跨语言部署以及数据治理展开了深入讨论，为
-  AI 开发者提供了可操作的实践路径。通过本次峰会的现场观察与技术解读，读者可以快速把握当前 A
+  AI 开发者提供了可操作的实践路径。通过本次峰会的现场观察与技术解读，读者可以快速把握当前 AI 技术的主流趋势，并在实际项目中借鉴成功案例。
 external_url: https://koenvangilst.nl/lab/mistral-ai-now-summit
 scenarios:
 - AI/ML项目

@@ -16,8 +16,9 @@ categories:
 - 大模型
 - AI 工程
 source: blogs_podcasts
-description: 根据提供的文本，这是对 Lex Fridman 播客第 490 期节目的总结，主题是探讨 2026 年人工智能（AI）的发展状态。以下是核心内容的中文总结：
-  **1. 嘉宾背景** 本期节目邀请了两位资深机器学习研究者： * **Nathan Lambert**：艾伦人工智能研究所 的后训练负责人，也是《RLHF Bo
+description: Nathan Lambert 和 Sebastian Raschka 是机器学习研究员、工程师和教育家。Nathan 是艾伦人工智能研究所的后训练负责人，也是《The
+  RLHF Book》的作者。Sebastian Raschka 是《从零构建大语言模型》和《从零构建推理模型》的作者。感谢收听 ❤ 查看我们的赞助商： 查看下方以获取时间戳、文字稿，以及提供反馈、提交问题、联系
+  Lex 等。
 external_url: https://lexfridman.com/ai-sota-2026
 scenarios:
 - 大语言模型

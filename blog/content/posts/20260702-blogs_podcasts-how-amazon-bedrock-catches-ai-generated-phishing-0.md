@@ -15,8 +15,8 @@ tags:
 categories:
 - 安全
 source: blogs_podcasts
-description: 背景 社交工程攻击仍是网络犯罪的主要手段，AI 生成的钓鱼邮件因其语言自然、个性化程度高，给邮件安全团队带来前所未有的挑战。攻击者利用生成式
-  AI 与开源情报（OSINT）批量制造成千上万条独特的钓鱼信息，显著提升攻击成功率。 Amazon Bedrock 检测思路 - **多模态特征分析**：结合文本语义、写作风格、
+description: 社会工程学通过网络钓鱼发起网络攻击仍然是最常见的策略之一。AI生成的钓鱼邮件信息现在给管理邮件系统的安全团队带来了新的挑战，由于其高度的复杂性，显著增加了风险。现代社会工程师利用生成式AI和开源情报（OSINT）来制作数千条独特的信息…
+  随着生成式AI的快速普及，攻击者能够自动化生成高度逼真的钓鱼邮件，使得传统的基于规则或签名的检测方法面临前所未有的挑战。
 external_url: https://aws.amazon.com/blogs/machine-learning/how-amazon-bedrock-catches-ai-generated-phishing
 scenarios:
 - AI/ML项目

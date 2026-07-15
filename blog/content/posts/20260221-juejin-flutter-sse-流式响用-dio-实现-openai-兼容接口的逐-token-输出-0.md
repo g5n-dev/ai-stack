@@ -16,8 +16,9 @@ categories:
 - 前端
 - AI 工程
 source: juejin
-description: 本文介绍了在 Flutter 开发中，如何利用 Dio 网络库实现兼容 OpenAI 接口的 SSE（Server-Sent Events）流式响应，从而达成类似打字机的逐
-  Token 输出效果，提升 AI 应用的用户体验。 以下是实现步骤的简要总结： 1. **背景与目的**： 为了避免 AI 生成大段文本时让用户长
+description: 在构建 AI 应用时，流式输出能显著改善用户等待体验，避免长时间白屏。本文将基于 Dio 网络库，详细讲解如何在 Flutter 中通过
+  SSE（Server-Sent Events）实现 OpenAI 兼容接口的逐 Token 输出。你将掌握从网络请求监听到 UI 逐字渲染的完整逻辑，从而在项目中复现类似
+  ChatGPT 的打字机效果。
 external_url: https://juejin.cn/post/7607332124487958591
 scenarios:
 - AI/ML项目

@@ -16,8 +16,8 @@ categories:
 - 大模型
 - 论文
 source: arxiv
-description: 背景与挑战 统一的三维基础模型旨在用同一骨干同时生成 3D 资产并进行语言推理，但现有方案将文本与 3D token 拼接为平坦序列并依赖自注意力，导致粗粒度结构线索与细粒度几何细节被混为一谈，交互过程缺乏显式的语义对应。
-  ELSA3D 的核心创新 ELSA3D 引入弹性语义锚定（elastic semantic an
+description: 统一的三维基础模型旨在用同一骨干同时生成 3D 资产并进行语言推理，但现有方案将文本与 3D token 拼接为平坦序列并依赖自注意力，导致粗粒度结构线索与细粒度几何细节被混为一谈，交互过程缺乏显式的语义对应。
+  ELSA3D 引入弹性语义锚定（elastic semantic anchoring），在语言与几何推理之间按匹配的抽象尺度对齐。
 external_url: http://arxiv.org/abs/2607.06565v1
 scenarios:
 - Web应用开发

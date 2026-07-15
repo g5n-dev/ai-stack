@@ -16,9 +16,8 @@ categories:
 - 开源生态
 - AI 工程
 source: blogs_podcasts
-description: 以下是关于 Lex Fridman 播客 491 期对 Peter Steinberger 访谈的简洁总结： 本期访谈的主角是 Peter
-  Steinberger，他是 **OpenClaw** 的创造者。OpenClaw 是一个开源的 AI 智能体框架，也是 GitHub 历史上增长最快的项目之一。
-  **主要内容概览
+description: Peter Steinberger 是 OpenClaw 的创造者，OpenClaw 是一个开源 AI 智能体框架，也是 GitHub 历史上增长最快的项目。感谢您的收听
+  ❤ 查看我们的赞助商： 请查看下方的时间戳、文字记录，并提供反馈、提交问题、联系 Lex 等。
 external_url: https://lexfridman.com/peter-steinberger
 scenarios:
 - AI/ML项目

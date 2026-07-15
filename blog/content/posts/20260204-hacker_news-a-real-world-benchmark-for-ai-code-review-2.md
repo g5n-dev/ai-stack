@@ -108,18 +108,18 @@ def calculate_complexity(code: str) -> int:
     """
     complexity = 1  # 基础复杂度
     keywords = ['if', 'elif', 'for', 'while', 'try', 'except', 'with']
-    
+
     for line in code.split('\n'):
         # 跳过注释和空行
         stripped = line.strip()
         if not stripped or stripped.startswith('#'):
             continue
-            
+
         # 检查是否包含决策关键字
         for keyword in keywords:
             if stripped.startswith(keyword + ' ') or stripped.startswith(keyword + '('):
                 complexity += 1
-                
+
     return complexity
 
 # 测试用例
@@ -147,19 +147,19 @@ def detect_security_issues(code: str) -> list:
     包括SQL注入、硬编码密钥、不安全的随机数等
     """
     issues = []
-    
+
     # 检测SQL注入风险
     if re.search(r'execute\(".*%s.*"', code) or re.search(r'execute\(.*\+.*', code):
         issues.append("可能的SQL注入漏洞 - 使用参数化查询")
-    
+
     # 检测硬编码密钥
     if re.search(r'(api_key|password|secret)\s*=\s*["\'][^"\']{10,}["\']', code):
         issues.append("硬编码的敏感信息 - 应使用环境变量")
-    
+
     # 检测不安全的随机数
     if re.search(r'random\.random\(\)', code):
         issues.append("不安全的随机数生成 - 对安全敏感场景使用secrets模块")
-    
+
     return issues
 
 # 测试用例
@@ -185,27 +185,27 @@ def check_style_consistency(code: str) -> dict:
         'imports': [],
         'line_length': []
     }
-    
+
     lines = code.split('\n')
     import_lines = []
-    
+
     for i, line in enumerate(lines, 1):
         stripped = line.strip()
-        
+
         # 检查命名规范
         if re.match(r'^def [A-Z]', stripped):
             issues['naming'].append(f"第{i}行: 函数名应使用小写和下划线")
         if re.match(r'^class [a-z]', stripped):
             issues['naming'].append(f"第{i}行: 类名应使用驼峰命名")
-            
+
         # 收集导入语句
         if stripped.startswith('import ') or stripped.startswith('from '):
             import_lines.append((i, stripped))
-            
+
         # 检查行长度
         if len(line) > 88:  # Black formatter默认88字符
             issues['line_length'].append(f"第{i}行: 超过88字符限制 (当前{len(line)}字符)")
-    
+
     # 检查导入顺序
     if import_lines:
         stdlib, third_party, local = [], [], []
@@ -216,10 +216,10 @@ def check_style_consistency(code: str) -> dict:
                 stdlib.append(num)
             else:
                 third_party.append(num)
-                
+
         if stdlib and third_party and stdlib[-1] > third_party[0]:
             issues['imports'].append("导入顺序混乱: 标准库应在第三方库之前")
-    
+
     return issues
 
 # 测试用例
@@ -240,8 +240,6 @@ print(check_style_consistency(messy_code))
 
 ### 1：Google 内部工具 (基于 "Critique" 论文)
 
- 1：Google 内部工具 (基于 "Critique" 论文)
-
 **背景**:
 Google 拥有庞大的代码库和数万名开发者，代码审查是保证软件质量的关键环节。然而，随着业务规模扩大，传统的代码审查流程面临巨大压力，资深工程师需要花费大量时间处理常规的代码检查。
 
@@ -258,8 +256,6 @@ Google 开发并部署了基于机器学习的代码审查辅助工具（相关�
 
 ### 2：CodiumAI 的 "Codium" 与 "TestG" 平台
 
- 2：CodiumAI 的 "Codium" 与 "TestG" 平台
-
 **背景**:
 现代软件开发中，编写单元测试是保证代码质量的重要手段，但往往也是最耗时、开发者最不愿意承担的工作之一。许多初创企业和快速迭代的团队在赶进度时容易忽略测试覆盖率。
 
@@ -275,8 +271,6 @@ CodiumAI 推出了名为 "Codium" 或 "TestG" 的 AI 驱动的 IDE 插件和平�
 ---
 
 ### 3：Mercari (日本) 引入 AI 代码审查代理
-
- 3：Mercari (日本) 引入 AI 代码审查代理
 
 **背景**:
 Mercari 是日本最大的二手交易平台，拥有微服务架构和频繁的发布周期。为了保持快速迭代，团队需要高效的 CI/CD 流程。
@@ -398,15 +392,11 @@ AI 模型不是一次性配置完成的。随着代码库的演进和业务逻�
 
 ### 1: 为什么我们需要一个专门针对 AI 代码审查的现实世界基准？
 
-1: 为什么我们需要一个专门针对 AI 代码审查的现实世界基准？
-
 **A**: 过去对 AI 代码审查工具的评估通常依赖于合成数据集（如包含简单语法错误的代码片段）或学术数据集（如 BigFix）。这些数据集往往无法反映现代软件开发的复杂性，例如缺乏上下文、依赖关系混乱或不符合真实开发规范。建立一个“现实世界”基准旨在通过使用真实、大规模的代码库和经过验证的漏洞修复案例，来更准确地衡量 AI 工具在真实生产环境中的有效性、误报率和漏报率。
 
 ---
 
 ### 2: 这个基准主要使用了哪些数据来源？
-
-2: 这个基准主要使用了哪些数据来源？
 
 **A**: 该基准主要基于高质量的、真实世界的开源项目数据。通常包括：
 1.  **历史漏洞与修复记录**：从 GitHub 等平台收集的 Pull Request（PR）数据，特别是那些涉及安全漏洞修复、逻辑错误修正或性能优化的 PR。
@@ -417,8 +407,6 @@ AI 模型不是一次性配置完成的。随着代码库的演进和业务逻�
 
 ### 3: AI 代码审查工具在测试中表现出的主要局限性是什么？
 
-3: AI 代码审查工具在测试中表现出的主要局限性是什么？
-
 **A**: 根据基准测试结果，AI 工具的主要局限性通常包括：
 1.  **上下文理解不足**：AI 往往只关注单个文件或片段，难以理解跨文件的模块依赖关系和系统级架构，导致无法发现涉及多个模块的复杂逻辑错误。
 2.  **误报率较高**：AI 经常会指出一些风格问题或非关键问题，并将其标记为严重错误，这会增加开发者的审查负担。
@@ -427,8 +415,6 @@ AI 模型不是一次性配置完成的。随着代码库的演进和业务逻�
 ---
 
 ### 4: 这个基准如何定义“正确”的代码审查结果？
-
-4: 这个基准如何定义“正确”的代码审查结果？
 
 **A**: 基准通常通过对比 AI 的输出与人类专家的“最终共识”来定义正确性。
 1.  **真阳性**：AI 正确识别出了人类审查员在 PR 中指出的关键问题。
@@ -440,8 +426,6 @@ AI 模型不是一次性配置完成的。随着代码库的演进和业务逻�
 
 ### 5: 该基准对开发者和企业选择 AI 代码工具有何实际指导意义？
 
-5: 该基准对开发者和企业选择 AI 代码工具有何实际指导意义？
-
 **A**: 该基准提供了一个标准化的对比视角，帮助企业和开发者：
 1.  **超越营销 hype**：不再仅仅依赖供应商提供的演示案例，而是基于客观的、复杂的数据集来评估工具性能。
 2.  **成本效益分析**：了解工具在特定语言或特定类型漏洞（如 SQL 注入 vs 空指针异常）上的检出率，从而决定是否值得引入该工具。
@@ -451,8 +435,6 @@ AI 模型不是一次性配置完成的。随着代码库的演进和业务逻�
 
 ### 6: 该基准是否考虑了不同大语言模型（如 GPT-4, Claude 3, 开源模型）之间的差异？
 
-6: 该基准是否考虑了不同大语言模型（如 GPT-4, Claude 3, 开源模型）之间的差异？
-
 **A**: 是的，建立此类基准的一个核心目的就是为了横向对比不同模型的性能。测试通常会涵盖：
 1.  **专有模型**：如 OpenAI 的 GPT 系列、Anthropic 的 Claude 系列。
 2.  **开源模型**：如 CodeLlama、DeepSeek Coder 等。
@@ -461,8 +443,6 @@ AI 模型不是一次性配置完成的。随着代码库的演进和业务逻�
 ---
 
 ### 7: 未来的基准测试计划包含哪些改进方向？
-
-7: 未来的基准测试计划包含哪些改进方向？
 
 **A**: 为了保持基准的挑战性和现实性，未来的改进方向包括：
 1.  **引入更长的上下文窗口**：测试 AI 处理整个代码库或超大 PR 的能力，而不仅仅是单文件。

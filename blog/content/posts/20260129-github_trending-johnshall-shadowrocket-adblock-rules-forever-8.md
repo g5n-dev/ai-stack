@@ -74,11 +74,11 @@ Sources: [.github/workflows/release.yml10-30](https://github.com/Johnshall/Shado
 
 The repository provides two primary categories of rule configurations:
 
-Rule Type| Description| Source  
----|---|---  
-Standard Rules| Core rule configurations generated from the repository's source files| Generated internally via build scripts  
-Lazy Rules| Lightweight rule configurations designed for simplicity| Imported from LOWERTOP/Shadowrocket repository  
-  
+Rule Type| Description| Source
+---|---|---
+Standard Rules| Core rule configurations generated from the repository's source files| Generated internally via build scripts
+Lazy Rules| Lightweight rule configurations designed for simplicity| Imported from LOWERTOP/Shadowrocket repository
+
 These rule files are made available as `.conf` files in the release branch, ready to be imported directly into the Shadowrocket application.
 
 Sources: [.github/workflows/release.yml41-52](https://github.com/Johnshall/Shadowrocket-ADBlock-Rules-Forever/blob/27205b89/.github/workflows/release.yml#L41-L52) [.github/workflows/release.yml54-59](https://github.com/Johnshall/Shadowrocket-ADBlock-Rules-Forever/blob/27205b89/.github/workflows/release.yml#L54-L59)
@@ -254,7 +254,7 @@ def deduplicate_rules(rule_files):
     """
     seen = set()
     unique_rules = []
-    
+
     for file_path in rule_files:
         try:
             with open(file_path, 'r', encoding='utf-8') as f:
@@ -263,14 +263,14 @@ def deduplicate_rules(rule_files):
                     line = line.strip()
                     if not line or line.startswith('#'):
                         continue
-                    
+
                     # 去重处理
                     if line not in seen:
                         seen.add(line)
                         unique_rules.append(line)
         except FileNotFoundError:
             print(f"警告：文件 {file_path} 未找到")
-    
+
     return unique_rules
 
 # 使用示例
@@ -289,15 +289,15 @@ def validate_rule(rule):
     """
     if not rule:
         return False, "规则为空"
-    
+
     # 检查基本格式
     if not any(c in rule for c in ['/', '*', '?', '^']):
         return False, "缺少通配符或分隔符"
-    
+
     # 检查特殊字符
     if any(c in rule for c in ['\\', '"', '|']):
         return False, "包含非法字符"
-    
+
     return True, ""
 
 def validate_rules(rule_file):
@@ -308,19 +308,19 @@ def validate_rules(rule_file):
     """
     valid_rules = []
     invalid_rules = []
-    
+
     with open(rule_file, 'r', encoding='utf-8') as f:
         for line in f:
             line = line.strip()
             if not line or line.startswith('#'):
                 continue
-                
+
             is_valid, msg = validate_rule(line)
             if is_valid:
                 valid_rules.append(line)
             else:
                 invalid_rules.append((line, msg))
-    
+
     return valid_rules, invalid_rules
 
 # 使用示例
@@ -346,13 +346,13 @@ def categorize_rules(rule_file):
         'wildcard': 0,    # 通配符规则
         'other': 0        # 其他规则
     }
-    
+
     with open(rule_file, 'r', encoding='utf-8') as f:
         for line in f:
             line = line.strip()
             if not line or line.startswith('#'):
                 continue
-                
+
             if line.startswith('||'):
                 categories['domain'] += 1
             elif line.startswith('/') and line.endswith('/'):
@@ -363,7 +363,7 @@ def categorize_rules(rule_file):
                 categories['url'] += 1
             else:
                 categories['other'] += 1
-    
+
     return categories
 
 # 使用示例
@@ -378,66 +378,60 @@ for category, count in stats.items():
 
 ### 1：跨国贸易公司的网络环境优化
 
- 1：跨国贸易公司的网络环境优化
-
-**背景**:  
+**背景**:
 一家专注于欧美市场的跨境电商公司，员工需要频繁访问海外供应商网站、物流平台及社交媒体进行业务沟通。公司网络环境复杂，部分海外网站加载缓慢，且常伴随大量广告弹窗，影响工作效率。
 
-**问题**:  
-1. 海外网站访问延迟高，甚至无法连接；  
-2. 网页广告和追踪脚本过多，占用带宽并干扰业务操作；  
+**问题**:
+1. 海外网站访问延迟高，甚至无法连接；
+2. 网页广告和追踪脚本过多，占用带宽并干扰业务操作；
 3. 员工手动配置代理规则繁琐，且容易出错。
 
-**解决方案**:  
+**解决方案**:
 部署 Shadowrocket 作为代理工具，并集成 `Shadowrocket-ADBlock-Rules-Forever` 规则集。通过该规则集自动过滤广告域名和追踪器，同时针对业务相关网站优化分流规则（如直连常用物流平台、代理访问受限资源）。
 
-**效果**:  
-1. 网页加载速度提升约 40%，广告完全屏蔽；  
-2. 员工无需手动调整规则，业务操作效率显著提高；  
+**效果**:
+1. 网页加载速度提升约 40%，广告完全屏蔽；
+2. 员工无需手动调整规则，业务操作效率显著提高；
 3. 网络带宽占用减少 25%，降低了企业专线成本。
 
 ---
 
 ### 2：远程开发团队的资源访问加速
 
- 2：远程开发团队的资源访问加速
-
-**背景**:  
+**背景**:
 一个分布式开发团队，成员位于国内和东南亚，需协作访问 GitHub、Docker Hub 等开发资源平台。部分地区的网络环境对这类服务存在限速或间歇性阻断。
 
-**问题**:  
-1. GitHub 仓库克隆和拉取经常超时；  
-2. Docker 镜像下载失败率高，影响 CI/CD 流程；  
+**问题**:
+1. GitHub 仓库克隆和拉取经常超时；
+2. Docker 镜像下载失败率高，影响 CI/CD 流程；
 3. 公共 Wi-Fi 环境下存在数据泄露风险。
 
-**解决方案**:  
+**解决方案**:
 在团队成员的设备上统一配置 Shadowrocket，启用 `Shadowrocket-ADBlock-Rules-Forever` 规则集，并添加针对开发工具的定制规则（如强制代理 GitHub 相关域名、屏蔽非必要的遥测请求）。结合加密代理协议保障数据传输安全。
 
-**效果**:  
-1. GitHub 操作成功率从 60% 提升至 98%，平均耗时减少 50%；  
-2. Docker 镜像下载稳定性提升，CI/CD 构建时间缩短 30%；  
+**效果**:
+1. GitHub 操作成功率从 60% 提升至 98%，平均耗时减少 50%；
+2. Docker 镜像下载稳定性提升，CI/CD 构建时间缩短 30%；
 3. 团队成员在公共网络下的数据安全性得到加强，未再发生信息泄露事件。
 
 ---
 
 ### 3：教育机构的在线教学平台保障
 
- 3：教育机构的在线教学平台保障
-
-**背景**:  
+**背景**:
 一所国际学校采用混合教学模式，师生需访问海外学术数据库（如 JSTOR、ScienceDirect）和在线课堂平台（如 Zoom、Canvas）。校园网络高峰期拥堵严重，且部分学术网站嵌有第三方广告干扰教学。
 
-**问题**:  
-1. 高峰时段学术资源加载缓慢，视频会议卡顿；  
-2. 教学课件页面广告分散学生注意力；  
+**问题**:
+1. 高峰时段学术资源加载缓慢，视频会议卡顿；
+2. 教学课件页面广告分散学生注意力；
 3. IT 部门缺乏精细化流量管理工具。
 
-**解决方案**:  
+**解决方案**:
 在校园网出口部署 Shadowrocket 服务器端，应用 `Shadowrocket-ADBlock-Rules-Forever` 规则集，对学术和教学相关流量优先直连或代理，同时屏蔽广告和低优先级内容域名。
 
-**效果**:  
-1. 核心教学平台可用性提升至 99.8%，视频会议卡顿率下降 70%；  
-2. 教学页面广告完全消失，师生反馈体验显著改善；  
+**效果**:
+1. 核心教学平台可用性提升至 99.8%，视频会议卡顿率下降 70%；
+2. 教学页面广告完全消失，师生反馈体验显著改善；
 3. 校园网出口带宽利用率优化，IT 部门运维压力减轻。
 
 ---
@@ -471,7 +465,7 @@ for category, count in stats.items():
 
 ### 实践 1：规则集的定期更新与维护
 
-**说明**:  
+**说明**:
 Shadowrocket-ADBlock-Rules-Forever 是一个动态维护的广告拦截规则集，为了保持最佳的拦截效果和避免误拦截，必须确保规则集保持最新状态。长期不更新可能导致新广告无法被拦截或正常网站访问异常。
 
 **实施步骤**:
@@ -480,7 +474,7 @@ Shadowrocket-ADBlock-Rules-Forever 是一个动态维护的广告拦截规则集
 3. 定期检查项目 GitHub 页面的 Release/Commit 记录
 4. 重大更新时手动强制刷新规则集
 
-**注意事项**:  
+**注意事项**:
 - 更新前建议备份当前可用配置
 - 若更新后出现访问问题，可暂时回滚到旧版本
 - 关注项目 Issues 页面了解已知问题
@@ -489,7 +483,7 @@ Shadowrocket-ADBlock-Rules-Forever 是一个动态维护的广告拦截规则集
 
 ### 实践 2：合理配置规则优先级
 
-**说明**:  
+**说明**:
 该规则集包含多种类型的规则（DOMAIN、URL-REGEX、IP-CIDR 等），不同规则类型在 Shadowrocket 中有默认的优先级。正确配置规则顺序可以确保拦截效果并减少性能消耗。
 
 **实施步骤**:
@@ -498,7 +492,7 @@ Shadowrocket-ADBlock-Rules-Forever 是一个动态维护的广告拦截规则集
 3. 如需自定义规则，确保它们不会与规则集产生冲突
 4. 使用 Shadowrocket 的规则测试功能验证特定域名的匹配情况
 
-**注意事项**:  
+**注意事项**:
 - 避免在规则集中间插入过多自定义规则
 - 正则表达式规则会消耗更多性能，应谨慎使用
 - 定期检查规则日志，分析是否有规则冲突
@@ -507,7 +501,7 @@ Shadowrocket-ADBlock-Rules-Forever 是一个动态维护的广告拦截规则集
 
 ### 实践 3：白名单管理
 
-**说明**:  
+**说明**:
 即使是最完善的广告拦截规则也可能产生误拦截，导致某些网站功能异常。建立并维护白名单是保证正常上网体验的必要措施。
 
 **实施步骤**:
@@ -516,7 +510,7 @@ Shadowrocket-ADBlock-Rules-Forever 是一个动态维护的广告拦截规则集
 3. 记录被误拦截的域名，添加到白名单
 4. 定期审查白名单，移除不再需要的条目
 
-**注意事项**:  
+**注意事项**:
 - 白名单规则应尽可能精确（使用 DOMAIN 而非 DOMAIN-SUFFIX）
 - 添加白名单前确认问题确实由拦截规则导致
 - 考虑使用条件白名单（仅对特定路径禁用拦截）
@@ -525,7 +519,7 @@ Shadowrocket-ADBlock-Rules-Forever 是一个动态维护的广告拦截规则集
 
 ### 实践 4：性能优化配置
 
-**说明**:  
+**说明**:
 庞大的规则集可能会对 Shadowrocket 的运行性能产生影响，特别是在低端设备上。通过合理配置可以平衡拦截效果和系统性能。
 
 **实施步骤**:
@@ -534,7 +528,7 @@ Shadowrocket-ADBlock-Rules-Forever 是一个动态维护的广告拦截规则集
 3. 使用 HOSTS 文件替代部分 DOMAIN 规则（如果设备支持）
 4. 定期清理规则集中的重复或过时规则
 
-**注意事项**:  
+**注意事项**:
 - 性能优化不应以牺牲拦截效果为代价
 - 修改规则集前应充分测试
 - 关注设备内存和 CPU 使用情况
@@ -543,7 +537,7 @@ Shadowrocket-ADBlock-Rules-Forever 是一个动态维护的广告拦截规则集
 
 ### 实践 5：规则效果监控与反馈
 
-**说明**:  
+**说明**:
 主动监控规则集的拦截效果，不仅可以帮助评估规则质量，还能为项目维护者提供宝贵的反馈，促进规则集的改进。
 
 **实施步骤**:
@@ -552,7 +546,7 @@ Shadowrocket-ADBlock-Rules-Forever 是一个动态维护的广告拦截规则集
 3. 记录漏拦截和误拦截的具体案例
 4. 通过 GitHub Issues 向项目维护者反馈问题
 
-**注意事项**:  
+**注意事项**:
 - 反馈时应提供详细的复现步骤和日志
 - 遵守项目的 Issue 报告规范
 - 区分规则问题和 Shadowrocket 客户端问题
@@ -561,7 +555,7 @@ Shadowrocket-ADBlock-Rules-Forever 是一个动态维护的广告拦截规则集
 
 ### 实践 6：多场景规则配置
 
-**说明**:  
+**说明**:
 不同网络环境（如移动数据、Wi-Fi、代理）下可能需要不同的广告拦截策略。通过场景化配置可以优化各环境下的使用体验。
 
 **实施步骤**:
@@ -681,7 +675,7 @@ Shadowrocket-ADBlock-Rules-Forever 是一个动态维护的广告拦截规则集
 - Shadowrocket官方文档
 - GitHub - Adblock Plus规则语法说明
 
-**学习建议**: 
+**学习建议**:
 先理解网络请求的基本流程，再学习广告拦截如何在不同层级工作。建议用Wireshark抓包观察实际请求。
 
 ---
@@ -696,15 +690,11 @@ Shadowrocket-ADBlock-Rules-Forever 是一个动态维护的广告拦截规则集
 
 ### 1: 什么是 Shadowrocket-ADBlock-Rules-Forever，它的主要用途是什么？
 
-1: 什么是 Shadowrocket-ADBlock-Rules-Forever，它的主要用途是什么？
-
 **A**: Shadowrocket-ADBlock-Rules-Forever 是一个针对 Shadowrocket（一款 iOS 平台的网络代理工具）的规则集项目。它的主要用途是提供一套持续维护、长久有效的广告拦截规则。通过订阅这些规则，用户可以屏蔽移动设备上的大部分广告、跟踪器以及恶意网站，从而提升浏览速度并保护隐私。该项目通常包含针对常见广告服务商的过滤列表，并致力于解决规则失效的问题。
 
 ---
 
 ### 2: 如何在 Shadowrocket 中配置并使用这些规则？
-
-2: 如何在 Shadowrocket 中配置并使用这些规则？
 
 **A**: 配置步骤通常如下：
 1.  打开 Shadowrocket 应用。
@@ -719,8 +709,6 @@ Shadowrocket-ADBlock-Rules-Forever 是一个动态维护的广告拦截规则集
 
 ### 3: 规则更新后如何同步到本地？
 
-3: 规则更新后如何同步到本地？
-
 **A**: 由于该规则集托管在 GitHub 上，Shadowrocket 支持自动或手动更新远程规则。
 1.  **手动更新**：在配置文件的规则列表中，找到该远程规则，向左滑动或点击编辑按钮，选择“更新”或“Refresh”。
 2.  **自动更新**：在添加远程规则时，可以设置更新间隔（例如每 24 小时或每 7 天），Shadowrocket 会在后台自动拉取最新的规则文件，无需用户手动干预。
@@ -728,8 +716,6 @@ Shadowrocket-ADBlock-Rules-Forever 是一个动态维护的广告拦截规则集
 ---
 
 ### 4: 使用这些规则会导致某些网页或 App 无法正常工作吗？
-
-4: 使用这些规则会导致某些网页或 App 无法正常工作吗？
 
 **A**: 是的，这是所有广告拦截工具可能面临的副作用。由于规则是基于域名或 URL 关键词进行拦截，某些 App 的广告组件可能与其核心功能共用域名，或者某些网页的布局依赖于被屏蔽的脚本。
 如果遇到网页打不开或功能异常，建议：
@@ -741,15 +727,11 @@ Shadowrocket-ADBlock-Rules-Forever 是一个动态维护的广告拦截规则集
 
 ### 5: 该项目与 Adblock Plus 或 AdGuard 的规则有什么区别？
 
-5: 该项目与 Adblock Plus 或 AdGuard 的规则有什么区别？
-
 **A**: Shadowrocket-ADBlock-Rules-Forever 主要是为了优化 Shadowrocket 的解析效率而定制。虽然它可能借鉴或包含了 EasyList（ABP 使用的列表）或 AdGuard 过滤列表的内容，但它通常会将规则转换为 Shadowrocket 原生支持的格式（如 DOMAIN、DOMAIN-SUFFIX、URL-REGEX 等）。相比于直接在浏览器中使用插件，这类系统级规则可以拦截非浏览器 App（如视频软件、游戏）内的广告。
 
 ---
 
 ### 6: 规则文件中的 "User-Agent" 和 "METHOD" 字段是什么意思？
-
-6: 规则文件中的 "User-Agent" 和 "METHOD" 字段是什么意思？
 
 **A**: 在高级规则配置中，除了基于域名的拦截，还可以基于 HTTP 请求头或请求方法进行过滤。
 *   **USER-AGENT**：用于匹配特定的应用程序标识。例如，某些广告只在特定的 App 版本中出现，可以通过此字段精准拦截。
@@ -759,8 +741,6 @@ Shadowrocket-ADBlock-Rules-Forever 是一个动态维护的广告拦截规则集
 ---
 
 ### 7: 如果我发现规则没有生效，应该如何排查？
-
-7: 如果我发现规则没有生效，应该如何排查？
 
 **A**: 请按照以下步骤进行排查：
 1.  **检查模式**：确认 Shadowrocket 的运行模式是“自动配置”或使用了包含该规则的配置节点，而不是单纯的“全局直连”。

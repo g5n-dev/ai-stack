@@ -16,8 +16,8 @@ categories:
 - AI 工程
 - 安全
 source: blogs_podcasts
-description: 背景 在生产环境部署 Model Context Protocol (MCP) 服务器时，企业往往面临跨服务器细粒度权限控制、团队工具使用可观测性、数据泄露防护以及统一凭证管理等挑战。
-  需求 - **细粒度访问控制**：基于角色或项目划分服务器和工具权限。 - **可观测性**：实时追踪哪个团队使用了哪些工具，提供审计
+description: 在生产环境中部署模型上下文协议（MCP）服务器时，企业需要实现跨服务器细粒度的访问控制、洞察各团队使用工具的情况、防范数据泄露的安全保障，以及集中化的凭证管理——所有这些都需具备规模化能力。Amazon
+  Bedrock AgentCore Gateway 位于 MCP 服务器与消费它们的客户端之间，实现凭证管理、可观测性和安全性的集中化。
 external_url: https://aws.amazon.com/blogs/machine-learning/extending-mcp-support-for-amazon-bedrock-agentcore-gateway-2
 scenarios:
 - 命令行工具

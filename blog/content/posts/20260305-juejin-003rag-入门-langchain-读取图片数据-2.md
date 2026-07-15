@@ -18,6 +18,7 @@ categories:
 source: juejin
 description: 在构建 RAG（检索增强生成）应用时，非结构化的图片与文档数据往往蕴含着关键信息，但其处理难度也相对较高。本文将深入探讨如何利用 LangChain
   实现图片文字提取及 PPT 文档解析，从而突破单一文本数据的限制。通过阅读，读者不仅能掌握多模态数据读取的具体方法，还能了解其在实际业务场景中的应用逻辑，为构建更智能的
+  RAG 系统打下基础。
 external_url: https://juejin.cn/post/7613258078369595398
 scenarios:
 - AI/ML项目

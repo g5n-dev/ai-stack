@@ -56,6 +56,47 @@ def _metadata(document: str) -> dict[str, object]:
     return parsed
 
 
+def test_current_source_brief_provenance_is_preserved_idempotently(
+    tmp_path: Path,
+) -> None:
+    root = tmp_path / "content/posts"
+    root.mkdir(parents=True)
+    metadata = {
+        "title": "Complete current source brief",
+        "date": "2026-07-15T20:45:47+08:00",
+        "draft": False,
+        "entry_kind": "auto",
+        "tags": ["AI"],
+        "categories": [],
+        "source": "blogs_podcasts",
+        "content_mode": "source_brief",
+        "publication_tier": "C",
+        "source_capture_mode": "excerpt",
+        "source_snapshot_sha256": "sha256:" + "a" * 64,
+        "extractor_version": "source-contract-v1",
+        "discovery_method": "rss_excerpt",
+        "source_is_truncated": False,
+        "source_support": 1.0,
+        "description": "完整呈现已经保存的 RSS 来源证据，并明确说明证据边界。",
+        "external_url": "https://example.com/current-source-brief",
+    }
+    frontmatter = yaml.safe_dump(metadata, allow_unicode=True, sort_keys=False).rstrip()
+    body = (
+        "## 基本信息\n\n- **来源**: RSS\n\n"
+        "## 来源摘要/节选\n\n> 这是完整保存的来源内容。\n\n"
+        "## 来源说明\n\n本页只呈现已保存的来源证据，不包含扩展推断。\n"
+    )
+    (root / "current-source-brief.md").write_text(
+        f"---\n{frontmatter}\n---\n\n{body}",
+        encoding="utf-8",
+    )
+
+    plan = build_historical_repair_plan(content_root=root)
+
+    assert plan.writes == ()
+    assert plan.deletes == ()
+
+
 def test_atx_h1_and_missing_description_are_repaired_without_touching_fences(
     tmp_path: Path,
 ) -> None:

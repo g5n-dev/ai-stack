@@ -17,7 +17,7 @@ categories:
 - AI 工程
 source: hacker_news
 description: 尽管 SWE-bench 已成为评估 AI 代码生成能力的主流基准，但一项最新研究揭示了其与现实工程流程之间的显著脱节：许多在测试中通过的技术性
-  PR，在真实项目维护者眼中往往因缺乏上下文或违反规范而被拒绝。这一发现不仅挑战了单纯依赖“测试通过率”的评价体系，也凸显了代码可维护性与代码逻辑正确性同等重要。本文将深入剖析
+  PR，在真实项目维护者眼中往往因缺乏上下文或违反规范而被拒绝。这一发现不仅挑战了单纯依赖“测试通过率”的评价体系，也凸显了代码可维护性与代码逻辑正确性同等重要。
 external_url: https://metr.org/notes/2026-03-10-many-swe-bench-passing-prs-would-not-be-merged-into-main
 scenarios:
 - AI/ML项目

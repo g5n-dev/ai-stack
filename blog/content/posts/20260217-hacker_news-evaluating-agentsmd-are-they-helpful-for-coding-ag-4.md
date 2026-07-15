@@ -116,30 +116,30 @@ def evaluate_agents_md(file_path):
     required_sections = ["概述", "使用说明", "API参考", "示例代码"]
     score = 0
     feedback = []
-    
+
     try:
         with open(file_path, 'r', encoding='utf-8') as f:
             content = f.read()
-            
+
         # 检查必需章节
         for section in required_sections:
             if section in content:
                 score += 20
             else:
                 feedback.append(f"缺少章节: {section}")
-                
+
         # 检查代码示例
         if "```" in content:
             score += 20
         else:
             feedback.append("缺少代码示例")
-            
+
         # 检查文档长度
         if len(content) > 500:
             score += 20
         else:
             feedback.append("文档内容过短")
-            
+
         return {
             "总分": score,
             "反馈": feedback,
@@ -167,11 +167,11 @@ def extract_api_info(file_path):
     """
     api_pattern = re.compile(r'###\s+(.+?)\n\n(.*?)(?=###|\Z)', re.DOTALL)
     apis = []
-    
+
     try:
         with open(file_path, 'r', encoding='utf-8') as f:
             content = f.read()
-            
+
         matches = api_pattern.findall(content)
         for match in matches:
             api_name, api_desc = match
@@ -180,7 +180,7 @@ def extract_api_info(file_path):
                 "描述": api_desc.strip(),
                 "参数": extract_parameters(api_desc)
             })
-            
+
         return apis
     except Exception as e:
         return {"错误": str(e)}
@@ -211,10 +211,10 @@ def generate_code_template(file_path, api_name):
     """
     apis = extract_api_info(file_path)
     target_api = next((api for api in apis if api["名称"] == api_name), None)
-    
+
     if not target_api:
         return "错误: 未找到指定API"
-    
+
     template = f"""
 # {target_api['名称']} 使用示例
 def {api_name.lower().replace(' ', '_')}({', '.join(target_api['参数'].keys())}):
@@ -226,7 +226,7 @@ def {api_name.lower().replace(' ', '_')}({', '.join(target_api['参数'].keys())
 
 # 调用示例
 result = {api_name.lower().replace(' ', '_')}(
-    {', '.join([f'{k}="{v}"' if isinstance(v, str) else f'{k}={v}' 
+    {', '.join([f'{k}="{v}"' if isinstance(v, str) else f'{k}={v}'
                 for k, v in target_api['参数'].items()])}
 )
 print(result)
@@ -243,8 +243,6 @@ print(template)
 
 ### 1：Cursor 编辑器团队的内部效能优化
 
- 1：Cursor 编辑器团队的内部效能优化
-
 **背景**: Cursor 是一款目前非常流行的基于 AI 的代码编辑器。随着产品的快速迭代，开发团队面临着维护庞大代码库和频繁更新 AI 编排逻辑的挑战。
 
 **问题**: 在开发过程中，Cursor 的工程师发现，如果让 AI Agent（特别是基于 GPT-4 等大模型的 Agent）直接阅读整个代码库或随意的文档片段，Agent 经常会“产生幻觉”或遗漏关键的架构细节。这导致生成的代码在上下文连接上存在缺陷，需要人工大量返工。团队需要一种方式，让 AI 能够像资深工程师一样理解项目的深层逻辑，而不仅仅是语法。
@@ -254,8 +252,6 @@ print(template)
 **效果**: 通过引入结构化的 `AGENTS.md`，Cursor 的内部 AI Agent 在处理复杂重构任务时的准确率显著提升。它减少了 Agent 在尝试调用不存在的函数或忽略特定错误处理模式时的错误。这使得开发团队能够更放心地将部分维护工作交给 AI，加快了迭代速度。
 
 ### 2：开源项目 AutoGPT 的自主任务执行
-
- 2：开源项目 AutoGPT 的自主任务执行
 
 **背景**: AutoGPT 是一个著名的开源项目，旨在展示 GPT-4 如何作为自主 Agent 运行。该项目的目标是将一个大目标分解为子任务并自动执行。
 
@@ -360,15 +356,11 @@ print(template)
 
 ### 1: 什么是 AGENTS.md 文件，它与 README.md 有什么区别？
 
-1: 什么是 AGENTS.md 文件，它与 README.md 有什么区别？
-
 **A**: AGENTS.md 是一种专门为 AI 智能体（AI Agents）或编码助手设计的文档文件。虽然 README.md 主要面向人类开发者，介绍项目的安装、使用和贡献指南，但 AGENTS.md 的目标读者是“机器”。它通常包含项目结构的深度解析、模块间的依赖关系、代码风格指南、设计模式以及具体的上下文信息，旨在帮助 AI 编码代理（如 GitHub Copilot Workspace 或 Devin）更快地理解代码库，从而更准确地完成代码生成、重构或调试任务。
 
 ---
 
 ### 2: AGENTS.md 文件通常包含哪些具体内容？
-
-2: AGENTS.md 文件通常包含哪些具体内容？
 
 **A**: 一个高质量的 AGENTS.md 文件通常包含以下核心要素：
 1.  **项目架构概览**：高层面的系统设计图或描述，解释各个组件如何交互。
@@ -381,15 +373,11 @@ print(template)
 
 ### 3: 编写 AGENTS.md 真的能提高 AI 编码代理的工作效率吗？
 
-3: 编写 AGENTS.md 真的能提高 AI 编码代理的工作效率吗？
-
 **A**: 是的，根据社区反馈和实际测试，编写良好的 AGENTS.md 可以显著提高效率。AI 编码代理在处理大型代码库时，往往会因为上下文窗口限制或缺乏领域知识而产生“幻觉”或错误的代码修改。AGENTS.md 就像一份浓缩的“地图”，它通过提供高优先级的上下文信息，减少了代理在理解代码结构时的试错次数，使其生成的代码更符合项目的原有逻辑和风格。
 
 ---
 
 ### 4: 我应该手动编写 AGENTS.md，还是使用自动化工具生成？
-
-4: 我应该手动编写 AGENTS.md，还是使用自动化工具生成？
 
 **A**: 目前建议采用“混合模式”。虽然可以使用 LLM（大语言模型）扫描代码库来生成初稿，但完全自动生成的文档往往缺乏深度的设计意图和隐性的业务逻辑。最佳实践是先由 AI 生成草稿，然后由资深开发者进行审核和补充，特别是关于“为什么这样设计”以及“未来的重构方向”等 AI 无法仅通过代码推断出的内容。
 
@@ -397,23 +385,17 @@ print(template)
 
 ### 5: 如果我的项目很小，还有必要维护 AGENTS.md 吗？
 
-5: 如果我的项目很小，还有必要维护 AGENTS.md 吗？
-
 **A**: 对于非常小型的项目（如简单的脚本或单文件应用），通常不需要 AGENTS.md，因为 AI 代理可以直接在上下文窗口中处理全部代码。但是，一旦项目规模扩大到包含多个模块、复杂的业务逻辑或特定的架构模式时，引入 AGENTS.md 就变得非常有价值。它有助于保持 AI 输出的一致性，特别是在多人协作或长期维护的项目中。
 
 ---
 
 ### 6: AGENTS.md 会取代传统的代码文档（如 JSDoc 或函数注释）吗？
 
-6: AGENTS.md 会取代传统的代码文档（如 JSDoc 或函数注释）吗？
-
 **A**: 不会。AGENTS.md 是对传统文档的补充，而不是替代。传统的代码文档（内联注释、API 文档）提供了函数级别的微观视角，而 AGENTS.md 提供的是系统级别的宏观视角。AI 代理在编写具体函数时仍然需要依赖详细的类型定义和函数注释，但在进行跨文件重构或功能添加时，AGENTS.md 提供的宏观指导更为关键。
 
 ---
 
 ### 7: 如何验证 AGENTS.md 对 AI 代理是否真的有效？
-
-7: 如何验证 AGENTS.md 对 AI 代理是否真的有效？
 
 **A**: 验证的最直接方法是进行 A/B 测试或对比实验。你可以尝试在同一个任务下，观察 AI 代理在“有 AGENTS.md”和“无 AGENTS.md”两种情况下的表现。关注指标包括：首次尝试的成功率、生成代码所需的迭代次数、以及最终代码是否符合项目规范（如是否通过 Linter 检查）。如果代理在引入文档后减少了反复修正的次数，说明文档是有效的。
 ## 引用

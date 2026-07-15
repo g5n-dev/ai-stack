@@ -16,8 +16,8 @@ categories:
 - 大模型
 - 前端
 source: blogs_podcasts
-description: '**OpenAI 与 Figma 联手推出无缝代码转设计体验** OpenAI 和 Figma 宣布推出全新的 Codex 集成功能，实现了代码与设计的深度连接。这一创新旨在帮助团队在代码实现与
-  Figma 设计画布之间流畅切换，从而加速迭代流程并提升交付效率。 --- **核心亮点：** 1. **跨界整合**：打破'
+description: OpenAI 和 Figma 推出了全新的 Codex 集成，将代码与设计连接起来，让团队可以在实现与 Figma 画布之间灵活切换，从而更快地迭代和交付。
+  OpenAI 与 Figma 近日宣布达成深度集成，通过 Codex 将代码编写与设计画布直接连接，打破了传统工作流中设计与开发之间的壁垒。这一更新意味着团队可以在实现与设计之间无缝切换，显著减少从原型到交付的沟通成本与时间损耗。
 external_url: https://openai.com/index/figma-partnership
 scenarios:
 - AI/ML项目

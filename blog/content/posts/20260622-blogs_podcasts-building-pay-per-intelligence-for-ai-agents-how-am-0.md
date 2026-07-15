@@ -16,8 +16,8 @@ categories:
 - AI 工程
 - 大模型
 source: blogs_podcasts
-description: 背景与需求 AI 代理在运行时需要根据任务特性动态选择最合适的模型，同时要控制成本并实现按需付费。传统方案往往一次性锁定模型或采用固定计费，难以满足弹性扩展和费用透明的需求。
-  架构概览 Ampersend 在 Amazon Bedrock AgentCore Payments 之上构建了“按智能付费”(pay‑per‑
+description: 在这篇文章中，您将了解 Ampersand 如何在 Amazon Bedrock AgentCore Payments 之上构建了一个按智能付费的路由层。AI
+  智能体能够自主将任务路由到最有效的模型，按请求付费，并在预算范围内运行。您还将看到两跳支付模式如何端到端工作，以及如何开始您自己的实现。
 external_url: https://aws.amazon.com/blogs/machine-learning/building-pay-per-intelligence-for-ai-agents-how-ampersend-uses-amazon-bedrock-agentcore-payments
 scenarios:
 - AI/ML项目

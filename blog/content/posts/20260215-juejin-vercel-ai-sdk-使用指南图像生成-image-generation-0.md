@@ -17,7 +17,7 @@ categories:
 - 前端
 source: juejin
 description: 在构建现代 AI 应用时，图像生成功能已成为提升用户体验的关键一环。Vercel AI SDK Core 在 v6 版本中推出了标准化的
-  函数，旨在解决不同模型间接口差异带来的开发难题。本文将详细介绍如何通过统一的 API 调用 OpenAI DALL·E 等主流模型，并涵盖从环境配置到代码实现的完整流程，帮助开发者高
+  generateImage 函数，旨在解决不同模型间接口差异带来的开发难题。本文将详细介绍如何通过统一的 API 调用 OpenAI DALL·E 等主流模型，并涵盖从环境配置到代码实现的完整流程，帮助开发者高效地将图像生成能力集成至项目中。
 external_url: https://juejin.cn/post/7606224197803261971
 scenarios:
 - AI/ML项目
@@ -175,8 +175,6 @@ export async function POST(req: Request) {
 
 ### 1: Vercel AI SDK 目前支持哪些图像生成模型提供商？
 
-1: Vercel AI SDK 目前支持哪些图像生成模型提供商？
-
 **A**: Vercel AI SDK 本身并不直接生成图像，而是作为中间层，通过统一的接口调用各大模型提供商的 API。目前，它主要支持 OpenAI（DALL-E 系列）、Stability AI（Stable Diffusion 系列）以及 Replicate 等平台。这意味着你可以在代码中轻松切换底层的图像生成模型，而无需大幅重写应用逻辑。
 
 ---
@@ -184,8 +182,6 @@ export async function POST(req: Request) {
 
 
 ### 2: 如何在项目中安装和配置图像生成功能？
-
-2: 如何在项目中安装和配置图像生成功能？
 
 **A**: 配置过程主要分为两步。首先，你需要安装核心 SDK 包，通常命令为 `npm install ai`。其次，你需要配置环境变量。在 `.env.local` 文件中添加对应提供商的 API Key（例如 `OPENAI_API_KEY` 或 `STABILITY_API_KEY`）。在代码中，你可以使用 `generateImage` 函数，并传入 `provider` 选项来指定使用哪个服务商（如 `openai` 或 `stability`），SDK 会自动读取环境变量中的密钥进行鉴权。
 
@@ -195,8 +191,6 @@ export async function POST(req: Request) {
 
 ### 3: 生成的图片默认是存储在哪里的？如何保存到本地或云存储？
 
-3: 生成的图片默认是存储在哪里的？如何保存到本地或云存储？
-
 **A**: 默认情况下，`generateImage` 函数返回的图片对象通常包含一个 Base64 编码的字符串或临时的 URL。如果你直接在浏览器端渲染，可以直接使用 Base64 数据。但为了性能和持久化，建议将图片上传至云存储（如 Vercel Blob、AWS S3 或阿里云 OSS）。你可以获取返回的图片二进制数据，将其转换为 Stream 或 Buffer，然后上传至你的存储服务，最终将获得的永久 URL 存入数据库。
 
 ---
@@ -204,8 +198,6 @@ export async function POST(req: Request) {
 
 
 ### 4: 使用该 SDK 进行图像生成时，如何处理流式响应？
-
-4: 使用该 SDK 进行图像生成时，如何处理流式响应？
 
 **A**: 虽然 DALL-E 等模型的生成过程主要是等待最终结果，但 Vercel AI SDK 提供了 `streamText` 等流式处理思维模式。对于图像生成，SDK 支持异步等待结果。如果你使用的是支持逐步生成的模型（如某些通过 Replicate 托管的模型），你可以利用 `experimental_stream` 选项（如果 SDK 版本支持）来监听生成进度的回调，或者通过标准的 `await` 机制等待最终图像生成完毕后再进行渲染。
 
@@ -215,8 +207,6 @@ export async function POST(req: Request) {
 
 ### 5: 如果遇到 API 调用失败或 429 错误，应该如何排查和处理？
 
-5: 如果遇到 API 调用失败或 429 错误，应该如何排查和处理？
-
 **A**: 429 错误通常代表请求过于频繁或超出了速率限制。首先，请检查你的 API Key 是否有效且账户有足够的额度。其次，确认你的应用逻辑是否在短时间内发起了大量并发请求。在 Vercel AI SDK 中，你可以通过配置 `maxRetries` 和 `timeout` 参数来增强请求的健壮性。此外，建议在服务端实现请求队列或重试机制，以应对临时的网络波动或服务商限制。
 
 ---
@@ -225,8 +215,6 @@ export async function POST(req: Request) {
 
 ### 6: Vercel AI SDK 生成的图片是否有版权限制？
 
-6: Vercel AI SDK 生成的图片是否有版权限制？
-
 **A**: 版权问题主要取决于你调用的底层模型提供商。例如，OpenAI 的 DALL-E 3 生成的图像通常允许用户商业使用，但具体条款需参考 OpenAI 的最新服务协议。而 Stability AI 的模型也有相应的许可协议。Vercel AI SDK 只是工具链，不改变生成内容的版权属性。建议在生产环境使用前，仔细阅读所选模型提供商的 Terms of Service。
 
 ---
@@ -234,8 +222,6 @@ export async function POST(req: Request) {
 
 
 ### 7: 如何在 Next.js 项目的 Server Action 中使用图像生成功能？
-
-7: 如何在 Next.js 项目的 Server Action 中使用图像生成功能？
 
 **A**: 这是 Vercel AI SDK 的典型使用场景。你可以在 Next.js 的 `actions.ts` 或服务端组件中直接导入 `generateImage`。由于是在服务端运行，你可以安全地使用环境变量中的 API Key。定义一个 `async` 函数调用 SDK 生成图片，然后返回图片的 URL 或 Base64 数据给客户端。这种方式避免了将 API Key 暴露给浏览器，非常适合生产环境部署。
 

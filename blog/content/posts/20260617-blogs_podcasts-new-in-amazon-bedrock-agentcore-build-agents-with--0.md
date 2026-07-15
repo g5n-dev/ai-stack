@@ -16,8 +16,7 @@ categories:
 - AI 工程
 - 系统与基础设施
 source: blogs_podcasts
-description: 连接更广泛知识 AgentCore 现在能够直接接入组织内部文档、Web 检索以及付费数据源，使 agent 在运行时拥有更丰富的背景信息，提升回答的准确性和覆盖面。
-  生产环境问题定位与修复 平台提供实时的执行链路追踪与异常检测，帮助团队快速定位 agent 在生产中出现的错误或性能瓶颈，并提供自动化的修复建议，降低运
+description: 今天，我们将在 Amazon Bedrock AgentCore 上推出新的功能——这是一个用于构建、连接和优化智能体的平台。在这篇博客中，我们将介绍这些功能如何逐一弥合这些差距：将智能体与组织知识、网络知识和付费知识相连接；帮助团队发现并修复生产环境中的问题；以及实施能够随着智能体能力增长而扩展的管控措施。
 external_url: https://aws.amazon.com/blogs/machine-learning/new-in-amazon-bedrock-agentcore-build-agents-with-broader-knowledge-and-continuous-learning
 scenarios:
 - AI/ML项目

@@ -16,8 +16,8 @@ categories:
 - 大模型
 - AI 工程
 source: blogs_podcasts
-description: '**基于Amazon Nova的呼叫中心分析能力总结** 本文主要探讨了如何利用 **Amazon Nova 基础模型** 来增强呼叫中心的分析能力，重点展示了其在对话分析、呼叫分类及其他相关场景中的应用。文章具体分析了这些能力在
-  **单次呼叫分析** 和 **多次呼叫分析** 两种不同用例下的表现。 核心内容总结如下'
+description: 在本文中，我们探讨 Amazon Nova 如何在会话分析、通话分类以及其他与联络中心解决方案高度相关的用例中展现其能力。我们将针对单次通话和多次通话分析这两种使用场景，对这些能力进行剖析。
+  随着客户互动数据的持续增长，联络中心亟需更高效的手段从海量对话中提取价值。本文将探讨 Amazon Nova 基础模型如何通过强大的自然语言处理能力，优化会话分析与通话分类流程。
 external_url: https://aws.amazon.com/blogs/machine-learning/unlock-powerful-call-center-analytics-with-amazon-nova-foundation-models
 scenarios:
 - Web应用开发

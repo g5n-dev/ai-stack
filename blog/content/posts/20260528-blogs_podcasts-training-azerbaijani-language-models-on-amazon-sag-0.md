@@ -16,8 +16,7 @@ categories:
 - 大模型
 - AI 工程
 source: blogs_podcasts
-description: 项目背景 Azercell Telecom LLC 是阿塞拜疆最大的电信运营商，计划在 Amazon SageMaker AI 上训练阿塞拜疆语大语言模型（LLM），用于电信业务场景和面向客户的聊天机器人。核心挑战在于阿塞拜疆语形态丰富、训练数据稀缺，且缺乏可直接借鉴的高效训练方案。
-  技术方案 在六周的协作中，Azer
+description: 阿塞拜疆领先的电信提供商Azercell Telecom LLC希望在Amazon SageMaker AI上构建一个阿塞拜疆语大语言模型（LLM），用于电信应用场景和面向客户的聊天机器人。挑战在于：将基础模型（FM）适配到一种形态丰富但训练数据有限且没有现成的阿塞拜疆语高效LLM训练方案的语言。
 external_url: https://aws.amazon.com/blogs/machine-learning/training-azerbaijani-language-models-on-amazon-sagemaker-ai
 scenarios:
 - 大语言模型

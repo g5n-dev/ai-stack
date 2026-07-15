@@ -16,9 +16,8 @@ categories:
 - 大模型
 - 产品与创业
 source: blogs_podcasts
-description: 融资概况 Anthropic 在最新 H 轮融资中筹集约 965 亿美元（约 965B），估值再创新高，吸引多家顶级基金和科技巨头参与。
-  产品发布 - **Opus 4.8**：全新大模型版本，在多模态理解、长上下文推理和指令跟随上实现显著提升，训练效率提升约 30%。 - **Dynamic Workflows
-  /
+description: 完全 Anthropic 胜利！ 或者更口语化的翻译： Anthropic 完胜！ Anthropic在AI领域再次迈出重要一步。公司近日完成965亿美元H轮融资，同时推出Opus
+  4.8模型以及Dynamic Workflows和ultracode两项新技术。这些动作预示着AI应用正在向更高效、更智能的方向演进。
 external_url: https://www.latent.space/p/ainews-anthropic-raises-965b-series
 scenarios:
 - AI/ML项目

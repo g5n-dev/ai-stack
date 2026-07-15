@@ -17,7 +17,7 @@ categories:
 - AI 工程
 source: blogs_podcasts
 description: 随着边缘计算场景的普及，如何在算力受限的设备上部署高性能语音模型成为关键挑战。IBM 最新发布的 Granite 4.0 1B Speech
-  模型，以 10 亿参数的轻量级架构实现了多语言语音识别与合成，在精度与效率之间取得了新的平衡。本文将深入解析该模型的技术特性与实测表现，帮助开发者了解如何利用这一紧凑型方案，在本
+  模型，以 10 亿参数的轻量级架构实现了多语言语音识别与合成，在精度与效率之间取得了新的平衡。本文将深入解析该模型的技术特性与实测表现，帮助开发者了解如何利用这一紧凑型方案，在本地化场景中构建低延迟、高隐私的智能语音应用。
 external_url: https://huggingface.co/blog/ibm-granite/granite-4-speech
 scenarios:
 - Web应用开发

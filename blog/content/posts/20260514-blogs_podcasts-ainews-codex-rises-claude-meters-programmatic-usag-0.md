@@ -16,8 +16,9 @@ categories:
 - 大模型
 - AI 工程
 source: blogs_podcasts
-description: 概述 本篇AINews报道聚焦于当前AI编程助手的关键动态。OpenAI的Codex正快速崛起，成为企业和开发者首选的代码生成模型；而Anthropic的Claude则通过“Programmatic
-  Usage”计量功能，实时监控并报告大规模代码生成任务的调用频次与分布。报道利用一个相对平静的交易日，对比了过去一年主要
+description: 一个安静的日子让我们能够报道主要编程代理的长期趋势 在代码生成模型竞争加剧的背景下，OpenAI 的 Codex 与 Anthropic
+  的 Claude 在实际项目中的使用趋势出现显著分化。AINews 通过监测发现，Claude 正以更细粒度的计量方式和更高的任务频率吸引开发者，而 Codex
+  则在生态兼容性和部署成本上保持优势。
 external_url: https://www.latent.space/p/ainews-codex-rises-claude-meters
 scenarios:
 - AI/ML项目

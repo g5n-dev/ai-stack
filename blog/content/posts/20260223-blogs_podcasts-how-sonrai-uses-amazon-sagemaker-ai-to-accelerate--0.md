@@ -16,8 +16,8 @@ categories:
 - AI 工程
 - 数据
 source: blogs_podcasts
-description: 以下是针对所提供内容的中文总结： **Sonrai 利用 Amazon SageMaker AI 加速精准医疗试验** **背景与挑战**
-  Sonrai 是一家人工智能生命科学公司，旨在加速精准医疗临床试验。然而，该领域面临两大主要挑战： 1. **数据异构性与复杂性**：医疗数据通常分散在多个孤岛中，且格式复杂，导致
+description: 在本文中，我们将探讨生命科学人工智能公司 Sonrai 如何与 AWS 合作，利用 Amazon SageMaker AI 构建强大的 MLOps
+  框架，在解决这些挑战的同时，满足受监管环境对可追溯性和可复现性的要求。 在生命科学领域，如何利用人工智能加速药物研发并满足严格的监管要求，是行业面临的关键挑战。
 external_url: https://aws.amazon.com/blogs/machine-learning/how-sonrai-uses-amazon-sagemaker-ai-to-accelerate-precision-medicine-trials
 scenarios:
 - AI/ML项目

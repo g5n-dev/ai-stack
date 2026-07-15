@@ -16,9 +16,9 @@ categories:
 - 大模型
 - AI 工程
 source: blogs_podcasts
-description: 这是一份关于 Anthropic 发布 **Claude Sonnet 4.6** 的简洁总结： 1. 核心事件 Anthropic 正式发布了
-  **Claude Sonnet 4.6**（代号 ）。这被视为一次“继任者升级”，旨在以零成本（API价格不变）的方式全面替代 Claude 3.5 Sonnet。
-  2. 综
+description: Anthropic 再下一城。 Anthropic 发布了 Claude Sonnet 4.6，这并非一次激进的代际跨越，而是对 4.5
+  版本的深度优化与清理。本次更新在提升模型综合能力的同时，也引入了一些需要开发者注意的细微限制。本文将详细解析其性能差异与适用场景，帮助你在实际业务中判断是否值得升级。
+  这是一份关于 Anthropic 发布 Claude Sonnet 4.6 的简洁总结…
 external_url: https://www.latent.space/p/ainews-claude-sonnet-46-clean-upgrade
 scenarios:
 - 大语言模型

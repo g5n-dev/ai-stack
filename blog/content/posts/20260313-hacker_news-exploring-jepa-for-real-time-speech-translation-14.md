@@ -17,7 +17,7 @@ categories:
 - 论文
 source: hacker_news
 description: 随着全球化交流的日益频繁，实时语音翻译技术正成为打破语言壁垒的关键工具。本文深入探讨了基于联合嵌入预测架构（JEPA）的实时语音翻译方案，分析了其在处理长序列数据时如何有效平衡翻译准确性与系统响应速度。通过解读其技术原理与实现细节，读者将了解
-  JEPA 如何优化语音特征提取，从而为构建低延迟、高质量的翻译系统提供新的解
+  JEPA 如何优化语音特征提取，从而为构建低延迟、高质量的翻译系统提供新的解决思路。
 external_url: https://www.startpinch.com/research/en/jepa-encoder-translation
 scenarios:
 - AI/ML项目

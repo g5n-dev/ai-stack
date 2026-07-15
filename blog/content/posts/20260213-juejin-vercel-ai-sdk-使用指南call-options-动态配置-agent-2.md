@@ -108,8 +108,6 @@ source_support: 0.0
 
 ### 1: 在 Vercel AI SDK 中，`maxTokens` 和 `maxSteps` 这两个 Call Options 有什么本质区别？
 
-1: 在 Vercel AI SDK 中，`maxTokens` 和 `maxSteps` 这两个 Call Options 有什么本质区别？
-
 **A**: 这是一个非常容易混淆的概念，两者的控制维度完全不同：
 
 1.  **`maxTokens` (Token 级别)**: 它控制的是**单次**模型调用（Single Turn）返回的最大内容长度。如果模型生成的 token 数量达到这个阈值，它会立即停止生成，就像截断了一句话。它只影响当前这一轮对话的输出长度。
@@ -118,8 +116,6 @@ source_support: 0.0
 
 
 ### 2: 如何在运行时动态修改 Agent 的 `temperature`（温度）参数，而不是在代码中写死？
-
-2: 如何在运行时动态修改 Agent 的 `temperature`（温度）参数，而不是在代码中写死？
 
 **A**: Vercel AI SDK 允许你在调用 `generateText` 或 `streamText` 时直接传入配置对象。为了实现动态配置，最佳实践是将这些参数作为函数参数传入，或者从用户输入/配置文件中读取。
 
@@ -143,8 +139,6 @@ const result = await generateText({
 
 ### 3: 当使用 `tools`（工具）配置时，如果 Agent 没有调用任何工具直接返回了文本，该如何强制或引导它使用工具？
 
-3: 当使用 `tools`（工具）配置时，如果 Agent 没有调用任何工具直接返回了文本，该如何强制或引导它使用工具？
-
 **A**: Agent 跳过工具调用通常是因为 Prompt（提示词）不够明确，或者工具的描述不够清晰。你可以通过以下 Call Options 和策略来解决：
 
 1.  **优化 `toolChoice`**: 在 Call Options 中设置 `toolChoice`。默认情况下是 `auto`，你可以将其设置为 `{ type: 'tool', name: 'your_tool_name' }` 来强制模型在特定步骤必须使用该工具。
@@ -155,8 +149,6 @@ const result = await generateText({
 
 ### 4: `stopSequences`（停止序列）在实际开发中有什么具体的使用场景？
 
-4: `stopSequences`（停止序列）在实际开发中有什么具体的使用场景？
-
 **A**: `stopSequences` 允许你定义一个字符串数组，一旦模型生成的文本包含其中任何一个字符串，生成就会立即停止。这在格式化输出时非常有用：
 
 1.  **控制输出格式**: 如果你让 AI 生成一个 JSON 对象，但担心它会在 JSON 后面添加解释性文字。你可以将 `"\n\n"` 或 `"\n---"` 作为停止序列。这样一旦 JSON 结束并换行，模型就会停止，避免产生额外的“废话”。
@@ -165,8 +157,6 @@ const result = await generateText({
 
 
 ### 5: 如果我想让 Agent 在调用工具失败后自动重试，应该如何配置？
-
-5: 如果我想让 Agent 在调用工具失败后自动重试，应该如何配置？
 
 **A**: Vercel AI SDK 的核心 Call Options 中没有直接的“重试次数”参数来处理工具执行层面的错误（这与网络请求的重试不同）。你需要通过“执行逻辑”来实现这一点。
 
@@ -178,8 +168,6 @@ const result = await generateText({
 
 
 ### 6: 在使用 `streamText` 进行流式传输时，` onFinish` 回调函数中可以获取哪些关键信息？
-
-6: 在使用 `streamText` 进行流式传输时，` onFinish` 回调函数中可以获取哪些关键信息？
 
 **A**: `onFinish` 是流式传输结束时的钩子函数，它非常有用，因为它不仅包含最终的文本，还包含完整的元数据。你可以获取以下信息：
 

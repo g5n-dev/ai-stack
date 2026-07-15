@@ -16,9 +16,9 @@ categories:
 - AI 工程
 - 开源生态
 source: blogs_podcasts
-description: Agent-EvalKit 是一个 Apache 2.0 开源工具包，提供系统化评估 AI Agent 的基础设施。它支持与 Claude
-  Code、Kiro CLI、Kilo Code 等 AI 编程助手集成。工具包将评估流程划分为六个阶段：①需求抽取与任务建模，②环境准备与资源分配，③ Agent
-  行为采集，④结果
+description: Agent-EvalKit 是一个开源工具包（Apache 2.0），通过集成 AI 编码助手（包括 Claude Code、Kiro CLI
+  和 Kilo Code），使这套评估基础设施得以广泛使用。本文将以此工具包在六个评估阶段中的工作方式为主线，以一个基于 Strands Agents SDK 和
+  Amazon Bedrock 构建的旅行研究代理为具体示例，逐步展开说明。
 external_url: https://aws.amazon.com/blogs/machine-learning/evaluate-ai-agents-systematically-with-agent-evalkit
 scenarios:
 - AI/ML项目

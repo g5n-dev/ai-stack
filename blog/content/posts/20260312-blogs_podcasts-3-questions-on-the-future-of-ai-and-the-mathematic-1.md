@@ -16,8 +16,8 @@ categories:
 - 大模型
 - 论文
 source: blogs_podcasts
-description: 随着人工智能技术的快速演进，其与数理科学的深度融合正成为推动科研范式变革的关键力量。本文通过对话理论物理学家 Jesse Thaler，探讨了在两者之间架设双向桥梁的愿景，即利用
-  AI 加速科学发现，同时借助数理原理为 AI 系统注入鲁棒性与可解释性。阅读本文，你将了解这种跨学科协作如何打破单一领域的局限，并洞悉未来科
+description: Jesse Thaler 教授描绘了一个在人工智能与数理科学之间架设双向桥梁的愿景——这一桥梁有望同时推动这两个领域的发展。 随着人工智能技术的快速演进，其与数理科学的深度融合正成为推动科研范式变革的关键力量。本文通过对话理论物理学家
+  Jesse Thaler，探讨了在两者之间架设双向桥梁的愿景，即利用 AI 加速科学发现，同时借助数理原理为 AI 系统注入鲁棒性与可解释性。
 external_url: https://news.mit.edu/2026/3-questions-future-of-ai-and-mathematical-physical-sciences-0311
 scenarios:
 - AI/ML项目

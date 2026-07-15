@@ -104,10 +104,10 @@ def clean_and_format_data(raw_data):
             # 提取并转换日期格式 (如 "2023-01-01" -> "01/01/2023")
             date_parts = item['date'].split('-')
             formatted_date = f"{date_parts[1]}/{date_parts[2]}/{date_parts[0]}"
-            
+
             # 四舍五入数值到2位小数
             rounded_value = round(float(item['value']), 2)
-            
+
             cleaned_data.append({
                 'id': item['id'],
                 'formatted_date': formatted_date,
@@ -115,7 +115,7 @@ def clean_and_format_data(raw_data):
             })
         except (KeyError, ValueError, IndexError) as e:
             print(f"跳过无效数据: {item}, 错误: {e}")
-    
+
     return cleaned_data
 
 # 测试数据
@@ -147,11 +147,11 @@ def batch_rename_files(directory, pattern, replacement):
         if os.path.isfile(os.path.join(directory, filename)):
             # 使用正则表达式替换文件名
             new_name = re.sub(pattern, replacement, filename)
-            
+
             if new_name != filename:
                 old_path = os.path.join(directory, filename)
                 new_path = os.path.join(directory, new_name)
-                
+
                 # 避免覆盖已有文件
                 if not os.path.exists(new_path):
                     os.rename(old_path, new_path)
@@ -180,7 +180,7 @@ class TaskScheduler:
     """
     def __init__(self):
         self.tasks = []
-    
+
     def add_task(self, func, interval_seconds):
         """添加定时任务"""
         self.tasks.append({
@@ -188,7 +188,7 @@ class TaskScheduler:
             'interval': timedelta(seconds=interval_seconds),
             'last_run': datetime.min
         })
-    
+
     def run(self):
         """运行调度器"""
         print("任务调度器启动...")
@@ -214,8 +214,6 @@ scheduler.add_task(print_hello, 5)  # 每5秒执行一次
 
 ### 1：某 SaaS 初创公司的内部工具开发
 
- 1：某 SaaS 初创公司的内部工具开发
-
 **背景**:
 一家处于快速扩张期的 B2B SaaS 初创公司，产品团队需要构建一个内部客户数据管理面板，用于同步和分析来自 CRM 的数据。团队没有专职的前端开发人员，主要由产品经理（PM）和后端工程师组成。
 
@@ -231,8 +229,6 @@ PM 使用 Cursor 等 AI 编程工具快速生成了一个基于 React 的管理�
 ---
 
 ### 2：独立开发者的 API 聚合服务
-
- 2：独立开发者的 API 聚合服务
 
 **背景**:
 一位独立开发者计划开发一个聚合各类 AI 模型接口的 API 服务，旨在为开发者提供更低成本的模型调用渠道。该开发者具备一定的 Python 编程基础，但缺乏 Go 语言（目标部署语言）的深入经验。
@@ -354,8 +350,6 @@ PM 使用 Cursor 等 AI 编程工具快速生成了一个基于 React 的管理�
 
 ### 1: 什么是 "Vibe Coding"（氛围编程）？
 
-1: 什么是 "Vibe Coding"（氛围编程）？
-
 **A**: "Vibe Coding" 是一个在开发者社区（特别是 Hacker News）中产生的俚语，用来描述一种主要依赖直觉、感觉和“氛围”来编写代码的方式，而不是严格遵循严谨的工程原则或底层逻辑。
 
 在 AI 辅助编程（如使用 ChatGPT、Claude 或 Copilot）普及的背景下，这个词通常带有贬义或讽刺意味。它特指开发者不完全理解代码的实际运行机制，而是通过不断向 AI 提示词进行尝试和调整，直到代码“看起来能用”或“跑通了”为止。这种方式强调的是表面的功能实现，而忽视了代码的可维护性、安全性和底层原理。
@@ -363,8 +357,6 @@ PM 使用 Cursor 等 AI 编程工具快速生成了一个基于 React 的管理�
 ---
 
 ### 2: 为什么需要打破 Vibe Coding 的“魔咒”？
-
-2: 为什么需要打破 Vibe Coding 的“魔咒”？
 
 **A**: 文章标题提到的“打破魔咒”，实际上是在呼吁开发者警惕过度依赖 AI 生成代码而丧失核心技能的风险。
 
@@ -379,8 +371,6 @@ PM 使用 Cursor 等 AI 编程工具快速生成了一个基于 React 的管理�
 
 ### 3: Vibe Coding 与传统的原型设计有什么区别？
 
-3: Vibe Coding 与传统的原型设计有什么区别？
-
 **A**: 两者虽然都追求快速验证想法，但有本质区别。
 
 **传统的原型设计**通常基于开发者对现有组件、库和逻辑的深刻理解。开发者清楚地知道原型中的哪些部分是临时的，哪些逻辑是严谨的，并且知道如何将其转化为生产级代码。
@@ -391,8 +381,6 @@ PM 使用 Cursor 等 AI 编程工具快速生成了一个基于 React 的管理�
 
 ### 4: 这种现象主要出现在哪些人群中？
 
-4: 这种现象主要出现在哪些人群中？
-
 **A**: 这种现象主要出现在以下几类人群中：
 1.  **初级开发者或初学者**：他们利用 AI 工具快速跨越学习曲线，试图在没有掌握基础语法和算法的情况下构建复杂应用。
 2.  **寻求快速交付的非技术背景创业者**：他们利用 AI 工具构建 MVP（最小可行性产品），完全依赖 AI 的输出能力。
@@ -401,8 +389,6 @@ PM 使用 Cursor 等 AI 编程工具快速生成了一个基于 React 的管理�
 ---
 
 ### 5: 在 AI 时代，如何避免陷入 Vibe Coding 的陷阱？
-
-5: 在 AI 时代，如何避免陷入 Vibe Coding 的陷阱？
 
 **A**: 要避免陷入 Vibe Coding，可以采取以下策略：
 1.  **Code Review（代码审查）**：即使是 AI 生成的代码，也要像审查人类同事的代码一样，逐行阅读并确保自己理解每一行的作用。
@@ -413,8 +399,6 @@ PM 使用 Cursor 等 AI 编程工具快速生成了一个基于 React 的管理�
 ---
 
 ### 6: Hacker News 社区对这种编程趋势的主流态度是什么？
-
-6: Hacker News 社区对这种编程趋势的主流态度是什么？
 
 **A**: Hacker News (HN) 作为一个汇聚了众多资深工程师和极客的社区，对 Vibe Coding 的态度通常是批判和反思的。
 

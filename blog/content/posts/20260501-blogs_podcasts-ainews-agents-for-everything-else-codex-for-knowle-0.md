@@ -16,8 +16,8 @@ categories:
 - 大模型
 - AI 工程
 source: blogs_podcasts
-description: 背景 AI 领域正出现新一代代理（Agent），将原本仅用于特定任务的模型推向更广阔的工作场景。 关键产品 - **Codex**：面向知识工作，如代码补全、文档生成、数据分析等，被称为“知识代理”。
-  - **Claude**：专注创意任务，包括写作、艺术构思、交互式故事，提供更强的想象力和情感表达。 “突破conta
+description: 安静的一天让我们思考编码智能体"突破管控"的问题 注："breaking containment"是AI安全领域的术语，指AI系统超出其预定边界或限制的行为。
+  随着AI智能体在代码、知识管理和创意生成等领域的广泛部署，如何防止它们在执行任务时超出预定边界成为关键议题。本文聚焦于Codex与Claude等代表性系统在知识工作和创意工作中的实际表现，分析其安全性与可监管性的差距。
 external_url: https://www.latent.space/p/ainews-agents-for-everything-else
 scenarios:
 - AI/ML项目

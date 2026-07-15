@@ -17,7 +17,7 @@ categories:
 - 大模型
 source: hacker_news
 description: 随着 AI Agent 从单体任务向复杂协作演进，如何高效调度与可视化多智能体系统成为开发者关注的焦点。Spine Swarm 提供了一个基于视觉画布的协作平台，让多个
-  AI Agent 能够直观地交互与配合。本文将深入剖析其技术架构与核心功能，帮助你理解这种可视化协作模式如何提升团队效率，以及它为多智能体应用开发带来
+  AI Agent 能够直观地交互与配合。本文将深入剖析其技术架构与核心功能，帮助你理解这种可视化协作模式如何提升团队效率，以及它为多智能体应用开发带来的新可能。
 external_url: https://www.getspine.ai
 scenarios:
 - AI/ML项目

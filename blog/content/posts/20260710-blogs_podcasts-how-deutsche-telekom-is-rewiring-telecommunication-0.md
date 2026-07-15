@@ -16,8 +16,7 @@ categories:
 - 大模型
 - 产品与创业
 source: blogs_podcasts
-description: 客户服务中心转型 Deutsche Telekom 与 OpenAI 合作，将大模型嵌入客服平台，实现多轮对话、情感识别和即时解答。AI
-  自动生成FAQ、推荐解决方案，显著降低人工工单量，提升用户满意度。 员工工作流优化 内部引入AI助手，帮助员工完成文档撰写、代码生成、会议纪要等重复性任务。平台通过统一的知识库实现跨
+description: 德意志电信如何借助OpenAI转型为AI原生电信运营商——从客户服务、员工工作流程、网络运营到语音的未来。 在全球通信行业加速向智能化转型的背景下，德意志电信正通过与OpenAI合作，构建从客户服务、员工工作流到网络运营的全链路AI能力。该公司不仅在提升客服响应速度和精准度方面取得显著成效，还在探索语音交互在下一代网络中的潜在形态。
 external_url: https://openai.com/index/deutsche-telekom
 scenarios:
 - AI/ML项目

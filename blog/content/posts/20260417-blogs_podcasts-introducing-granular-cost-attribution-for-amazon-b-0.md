@@ -15,8 +15,8 @@ tags:
 categories:
 - 系统与基础设施
 source: blogs_podcasts
-description: 背景 Amazon Bedrock 推出了细粒度成本归因功能，帮助用户精准追踪和分配各模型、API 调用及资源的费用。 核心能力 - 支持在请求、模型调用和资源上添加自定义标签；
-  - 自动生成按标签聚合的成本报告，可与 AWS Cost Explorer、Cost Usage Report 集成； - 提供实时使用日志
+description: 在这篇文章中，我们将分享 Amazon Bedrock 的精细成本归属功能是如何工作的，并带您了解成本跟踪示例场景。 在云上构建和部署机器学习服务时，成本管理往往被忽视。Amazon
+  Bedrock 最新推出的精细成本归属功能，让用户能够按模型、API 调用或业务单元精确拆分费用，从而实现更透明的资源监控和优化。本篇将深入解析该功能的工作原理，并通过实际案例展示如何在日常运营中快速定位成本热点。
 external_url: https://aws.amazon.com/blogs/machine-learning/introducing-granular-cost-attribution-for-amazon-bedrock
 scenarios:
 - Web应用开发

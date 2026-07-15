@@ -15,8 +15,8 @@ tags:
 categories:
 - AI 工程
 source: blogs_podcasts
-description: 概述 Amazon Lex Assisted NLU 通过在传统 NLU 基础上加入机器学习辅助，帮助机器人更准确地识别意图和抽取槽位。本文介绍如何从意图/槽位描述、测试验证和迁移计划三方面提升
-  bot 准确率。 关键实践 1. **意图描述**：使用简短动词+宾语的句子，列出同义表达，避免歧义。 2. **槽位描述*
+description: 在这篇文章中，您将学习如何有效地实施辅助式自然语言理解。您将学习如何使用有效的意图和槽位描述来改进对话机器人设计，使用测试工作台验证您的实现，并为新旧对话机器人规划从传统自然语言理解到辅助式自然语言理解的过渡。
+  在构建对话式 AI 时，提升机器人的语义理解准确性是关键挑战。
 external_url: https://aws.amazon.com/blogs/machine-learning/improve-bot-accuracy-with-amazon-lex-assisted-nlu
 scenarios:
 - Web应用开发

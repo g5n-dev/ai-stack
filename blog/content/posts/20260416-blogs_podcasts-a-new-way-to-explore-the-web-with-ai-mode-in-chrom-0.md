@@ -16,7 +16,7 @@ categories:
 - 产品与创业
 - 前端
 source: blogs_podcasts
-description: Chrome 在最新版本中加入了 AI Mode，为浏览器提供智能化的搜索与内容解析能力。通过自然语言处理和上下文理解，用户可以在浏览网页时即时获取摘要、关联信息以及个性化推荐。了解这一功能的实现原理和使用技巧，可以帮助提升日常工作和信息获取的效率。该模式还能在后台持续学习用户的兴趣，动态调整搜索结果和建议，使得信息过
+description: Chrome 中的 AI 模式 Chrome 在最新版本中加入了 AI Mode，为浏览器提供智能化的搜索与内容解析能力。通过自然语言处理和上下文理解，用户可以在浏览网页时即时获取摘要、关联信息以及个性化推荐。了解这一功能的实现原理和使用技巧，可以帮助提升日常工作和信息获取的效率。该模式还能在后台持续学习用户的兴趣，动态调整搜索结果和建议，使得信息过滤更加精准。
 external_url: https://blog.google/products-and-platforms/products/search/ai-mode-chrome
 scenarios:
 - AI/ML项目

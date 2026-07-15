@@ -16,7 +16,8 @@ categories:
 - AI 工程
 - 开源生态
 source: blogs_podcasts
-description: 开放生态的必要性 在 AI 前沿（frontier）领域，技术迭代极快。Matei Zaharia 与 Reynold Xin 指出，若核心模型、工具链和数据只能由少数厂商封闭提供，企业将面临供应商锁定、成本高企以及创新受限的风险。开放的标准和开源实现可以让不同组织的系统互相兼容，形成可组合、可扩展的生态，从而让所有公
+description: 在一场难得的双人访谈中，Databricks技术领袖们畅谈每家公司构建Agent Cloud所需具备的条件 在AI应用快速发展的今天，开放生态的重要性愈发凸显。Databricks联合创始人Matei
+  Zaharia与Reynold Xin在一次深度对话中，分享了他们对前沿生态发展的思考。两位技术领袖认为，构建真正有效的Agent Cloud，需要以开放为核心前提。
 external_url: https://www.latent.space/p/databricks
 scenarios:
 - AI/ML项目

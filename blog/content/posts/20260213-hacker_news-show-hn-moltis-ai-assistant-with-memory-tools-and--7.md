@@ -109,7 +109,7 @@ class MemoryAssistant:
         """初始化记忆系统，创建对话历史表"""
         self.conn = sqlite3.connect(db_path)
         self._create_tables()
-    
+
     def _create_tables(self):
         """创建存储对话历史的表结构"""
         self.conn.execute("""
@@ -120,7 +120,7 @@ class MemoryAssistant:
             timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
         )
         """)
-    
+
     def remember(self, role, content):
         """存储对话内容到记忆系统"""
         self.conn.execute(
@@ -128,7 +128,7 @@ class MemoryAssistant:
             (role, content)
         )
         self.conn.commit()
-    
+
     def recall(self, limit=5):
         """检索最近的对话历史"""
         cursor = self.conn.execute(
@@ -136,7 +136,7 @@ class MemoryAssistant:
             (limit,)
         )
         return [(row[0], row[1]) for row in cursor.fetchall()]
-    
+
     def close(self):
         """关闭数据库连接"""
         self.conn.close()
@@ -158,20 +158,20 @@ class ToolRegistry:
     def __init__(self):
         """初始化工具注册表"""
         self.tools = {}
-    
+
     def register(self, name: str, func: callable, description: str):
         """注册新工具到系统"""
         self.tools[name] = {
             "function": func,
             "description": description
         }
-    
+
     def execute(self, tool_name: str, **kwargs) -> Any:
         """执行指定工具"""
         if tool_name not in self.tools:
             raise ValueError(f"工具 {tool_name} 未注册")
         return self.tools[tool_name]["function"](**kwargs)
-    
+
     def list_tools(self) -> Dict[str, str]:
         """列出所有可用工具"""
         return {name: tool["description"] for name, tool in self.tools.items()}
@@ -206,16 +206,16 @@ class SkillManager:
         self.skills_dir = Path(skills_dir)
         self.skills = {}
         self._load_skills()
-    
+
     def _load_skills(self):
         """动态加载技能模块"""
         if not self.skills_dir.exists():
             return
-        
+
         for skill_file in self.skills_dir.glob("*.py"):
             if skill_file.name.startswith("_"):
                 continue
-                
+
             module_name = skill_file.stem
             try:
                 module = importlib.import_module(f"{self.skills_dir.name}.{module_name}")
@@ -225,13 +225,13 @@ class SkillManager:
                         self.skills[skill.skill_name] = skill
             except Exception as e:
                 print(f"加载技能 {module_name} 失败: {str(e)}")
-    
+
     def execute_skill(self, skill_name: str, *args, **kwargs):
         """执行指定技能"""
         if skill_name not in self.skills:
             raise ValueError(f"技能 {skill_name} 未找到")
         return self.skills[skill_name].execute(*args, **kwargs)
-    
+
     def list_skills(self):
         """列出所有可用技能"""
         return list(self.skills.keys())
@@ -239,7 +239,7 @@ class SkillManager:
 # 示例技能模块 (skills/translator.py)
 class TranslatorSkill:
     skill_name = "translator"
-    
+
     def execute(self, text: str, target_lang: str) -> str:
         """模拟翻译技能"""
         return f"[翻译到{target_lang}] {text}"
@@ -254,8 +254,6 @@ print(manager.execute_skill("translator", "Hello", "中文"))  # 执行翻译技
 ## 案例研究
 
 ### 1：跨境电商独立站运营团队
-
- 1：跨境电商独立站运营团队
 
 **背景**:
 某专注于欧美市场的跨境电商公司，运营团队需要同时管理 3 个独立站和多个社交媒体账号。团队每天需要处理大量的重复性工作，包括撰写 SEO 文章、回复客户邮件以及监控竞品动态。
@@ -277,8 +275,6 @@ print(manager.execute_skill("translator", "Hello", "中文"))  # 执行翻译技
 
 ### 2：个人开发者与开源项目维护者
 
- 2：个人开发者与开源项目维护者
-
 **背景**:
 Alex 是一名拥有 5 年经验的全栈开发者，利用业余时间维护一个拥有 5000+ Stars 的 GitHub 开源项目。随着项目流行，处理 Issues 和 PR 变得越来越耗时，挤压了他的核心开发时间。
 
@@ -298,8 +294,6 @@ Alex 部署了 Moltis 并将其连接到项目的 GitHub 仓库。利用 Moltis 
 ---
 
 ### 3：中小型法律咨询事务所
-
- 3：中小型法律咨询事务所
 
 **背景**:
 一家拥有 10 名律师的精品律所，专门处理企业合规和知识产权案件。律所拥有庞大的内部案例库和法规文档，但检索和复用这些知识非常困难。
@@ -398,15 +392,11 @@ Alex 部署了 Moltis 并将其连接到项目的 GitHub 仓库。利用 Moltis 
 
 ### 1: Moltis 与 ChatGPT 或 Claude 等传统 AI 聊天机器人有何核心区别？
 
-1: Moltis 与 ChatGPT 或 Claude 等传统 AI 聊天机器人有何核心区别？
-
 **A**: Moltis 的主要差异化优势在于其具备**持久化记忆**、**工具集成能力**以及**自我扩展技能**。传统的聊天机器人通常是无状态的，每次新对话都是一张白纸，且受限于训练数据截止日期，无法直接访问实时信息。Moltis 旨在记住用户之前的交互细节和偏好，能够调用外部工具（如 API、搜索引擎、数据库）来执行具体任务，并且能够动态加载或学习新的技能包，从而随着时间的推移变得更加智能和个性化。
 
 ---
 
 ### 2: Moltis 的“记忆”功能是如何工作的？我的数据隐私如何保障？
-
-2: Moltis 的“记忆”功能是如何工作的？我的数据隐私如何保障？
 
 **A**: Moltis 的记忆系统通过向量数据库和上下文注入技术来实现。当您与它交互时，系统会提取关键信息（如您的偏好、过去的任务结果、个人习惯）并将其存储在用户专属的配置空间中。在后续对话中，这些信息会被检索并作为上下文输入给模型，使其看起来“记得”您。关于隐私，数据通常存储在本地或加密的云端隔离环境中。具体的隐私政策取决于其部署方式，如果是开源自托管版本，数据完全由您控制；如果是 SaaS 版本，应查看其数据处理协议，通常数据不会用于训练第三方的基础模型。
 
@@ -414,15 +404,11 @@ Alex 部署了 Moltis 并将其连接到项目的 GitHub 仓库。利用 Moltis 
 
 ### 3: 什么是“自我扩展技能”？这意味着 AI 可以自己写代码并运行吗？
 
-3: 什么是“自我扩展技能”？这意味着 AI 可以自己写代码并运行吗？
-
 **A**: “自我扩展技能”指的是 Moltis 具备动态加载和适应新功能的能力，而不仅仅是静态的模型权重。这意味着它可以根据任务需求，自动寻找并加载特定的插件或脚本。在某些高级配置下，它确实具备生成代码片段并在沙箱环境中执行的能力（例如编写 Python 脚本来分析数据），从而解决那些仅靠语言模型无法完成的复杂逻辑或数学问题。这种机制使其能力边界不再固定，而是随着插件生态的丰富而无限延伸。
 
 ---
 
 ### 4: Moltis 目前支持哪些模型？它是基于 OpenAI API 还是本地运行？
-
-4: Moltis 目前支持哪些模型？它是基于 OpenAI API 还是本地运行？
 
 **A**: 根据此类 AI 助手的常见架构，Moltis 通常设计为**模型无关**或支持多种后端。它很可能支持通过 API 接入 OpenAI (GPT-4/GPT-3.5)、Anthropic (Claude) 等主流商业模型，同时也可能支持通过 Ollama 或 LM Studio 等工具连接本地开源大模型（如 Llama 3、Mistral 等）。这种灵活性允许用户在成本、隐私和响应速度之间做出选择。具体支持的模型列表需参考其官方文档的配置说明。
 
@@ -430,15 +416,11 @@ Alex 部署了 Moltis 并将其连接到项目的 GitHub 仓库。利用 Moltis 
 
 ### 5: 如何为 Moltis 添加自定义工具？
 
-5: 如何为 Moltis 添加自定义工具？
-
 **A**: Moltis 预计会提供一套标准化的插件接口或函数调用定义。用户或开发者通常需要编写一个简单的配置文件（如 JSON 或 YAML），定义工具的名称、描述和输入参数，并提供一个 API 端点供 Moltis 调用。一旦注册，Moltis 的语言模型就能根据用户的自然语言指令，自动判断何时以及如何调用该工具来辅助完成任务。这使得它可以轻松集成企业内部系统、个人知识库或特定的互联网服务。
 
 ---
 
 ### 6: Moltis 是开源项目吗？适合个人开发者使用吗？
-
-6: Moltis 是开源项目吗？适合个人开发者使用吗？
 
 **A**: "Show HN" 通常意味着这是一个正在展示的项目，很多此类项目倾向于开源或提供免费试用层级。Moltis 的设计理念（特别是技能扩展和工具集成）非常受技术社区欢迎。如果是开源项目，个人开发者可以将其作为基础框架，构建自己的专属 AI 助手，或者在其现有代码库上开发新的技能插件。即使它提供商业托管服务，其架构也旨在降低构建智能应用的门槛，适合对 AI Agent 感兴趣的开发者进行研究和二次开发。
 ## 引用

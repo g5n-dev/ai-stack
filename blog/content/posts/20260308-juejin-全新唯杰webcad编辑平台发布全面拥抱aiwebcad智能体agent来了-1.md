@@ -16,7 +16,9 @@ categories:
 - 前端
 - AI 工程
 source: juejin
-description: 全新唯杰WebCAD编辑平台发布：全面拥抱AI，WebCAD智能体来了 唯杰地图旗下专注于CAD图纸与GIS地图结合的高性能平台——vjmap与vjmap3d，正式推出全新WebCAD编辑平台。此次核心升级为全面拥抱AI技术，并引入WebCAD智能体，旨在通过AI赋能提升CAD图纸与GIS地图的编辑、展示及交互体验，进
+description: 唯杰地图近日正式发布全新 WebCAD 编辑平台，标志着 CAD 图纸与 GIS 地图的高性能展示迈入智能化新阶段。此次更新核心在于全面拥抱
+  AI 技术，引入 WebCAD 智能体（Agent），旨在解决传统图形编辑中的交互瓶颈。本文将深入解析新平台的技术架构与智能体应用场景，帮助开发者掌握如何利用
+  AI 能力提升图形处理的自动化水平与用户体验。
 external_url: https://juejin.cn/post/7614084911991767078
 scenarios:
 - Web应用开发

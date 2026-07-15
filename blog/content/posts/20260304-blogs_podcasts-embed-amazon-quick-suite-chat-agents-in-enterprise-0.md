@@ -16,8 +16,8 @@ categories:
 - AI 工程
 - 开发工具
 source: blogs_podcasts
-description: '**总结：在企业应用中嵌入 Amazon Quick Suite 聊天代理** 企业在构建应用程序时，若要实现安全的嵌入式聊天功能，往往面临诸多挑战。开发团队通常需要花费数周时间来构建基础设施，包括实现身份验证、令牌校验、域安全性以及全球分发网络。
-  为了解决这一难题，本文介绍了一种基于一键部署的解决方案。通过利用 **'
+description: 组织发现，在其应用中实现安全的嵌入式聊天颇具挑战，往往需要数周的开发时间来构建身份验证、令牌校验、域安全和全球分发基础设施。本文将向您展示如何通过一键部署方案解决此问题，借助
+  Quick Suite 嵌入式 SDK 在企业门户中嵌入聊天代理。 在企业应用中实现安全且可嵌入的聊天功能，往往涉及复杂的身份验证与基础设施搭建，导致开发周期漫长。
 external_url: https://aws.amazon.com/blogs/machine-learning/embed-amazon-quick-suite-chat-agents-in-enterprise-applications
 scenarios:
 - AI/ML项目

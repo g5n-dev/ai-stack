@@ -17,7 +17,7 @@ categories:
 - 大模型
 source: hacker_news
 description: 随着大语言模型能力的提升，如何用自然语言精确控制其行为正成为新的技术瓶颈。Kotlin 之父 Andrey Breslav 推出的新语言，试图通过引入形式化语法来解决这一痛点，让开发者摆脱对“提示词工程”的依赖。本文将解析该语言的设计理念与核心机制，探讨它如何为人机交互确立更严谨的规范，以及这对未来
-  AI 应用开发可能
+  AI 应用开发可能产生的影响。
 external_url: https://codespeak.dev
 scenarios:
 - 大语言模型

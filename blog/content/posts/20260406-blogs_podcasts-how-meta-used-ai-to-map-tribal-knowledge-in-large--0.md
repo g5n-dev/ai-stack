@@ -16,8 +16,9 @@ categories:
 - AI 工程
 - 开发工具
 source: blogs_podcasts
-description: 背景 Meta 在大型数据处理流水线中拥有四个代码库、三种编程语言、超过 4,100 个文件。传统的 AI 编程助手因缺乏对这些跨仓库、跨语言的上下文理解，往往只能产生浅层或不相关的修改，导致编辑效率低下。
-  解决方案 团队构建了一套内部“部落知识”映射系统，利用 AI 对代码、文档、注释、提交信息等进行语义抽取，自动生
+description: AI 编程助手功能强大，但其能力取决于对代码库的理解程度。当我们将 AI 代理指向 Meta 的一个大规模数据处理管道——跨越四个代码库、三种编程语言和超过
+  4,100 个文件——时，我们很快发现它们无法足够快速地做出有用的编辑。我们通过构建 ... 阅读更多... 这篇文章《Meta 如何使用 AI 映射大规模数据管道中的隐性知识》首次发布于
+  Meta 工程博客。
 external_url: https://engineering.fb.com/2026/04/06/developer-tools/how-meta-used-ai-to-map-tribal-knowledge-in-large-scale-data-pipelines
 scenarios:
 - AI/ML项目

@@ -16,8 +16,8 @@ categories:
 - AI 工程
 - 系统与基础设施
 source: juejin
-description: '**内容总结：** 该方案旨在解决 OpenClaw（AI Agent）的运行受控性与可观测性问题。通过整合 **OpenClaw**、**阿里云日志服务
-  (SLS)** 以及 **OpenTelemetry** 标准，构建了一套全方位的 AI Agent 可观测体系。 **核心实现路径：** 利用 OpenTelem'
+description: 在 AI Agent 落地过程中，确保 OpenClaw 严格受控运行是保障系统稳定与安全的关键。本文介绍如何依托 OpenClaw 与阿里云日志服务（SLS），将日志与
+  OpenTelemetry 遥测数据统一采集，构建完整的可观测体系。你将掌握实现行为审计、运维观测、实时告警与安全审计闭环的具体方法，从而有效提升系统的可控性与透明度。
 external_url: https://juejin.cn/post/7612868336570286118
 scenarios:
 - AI/ML项目

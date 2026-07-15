@@ -16,8 +16,8 @@ categories:
 - 大模型
 - 数据
 source: blogs_podcasts
-description: '**摘要：利用AI和模拟加速科学发现** 麻省理工学院（MIT）副教授 Rafael Gómez-Bombarelli 一直致力于将人工智能应用于科学发现领域。目前，他认为我们正处于这一领域的转折点，AI与模拟技术的结合正在极大地加速科研进程。
-  以下是对其核心观点与工作内容的详细总结： 1. 核心观点：处于变革的“拐点'
+description: 拉斐尔·戈麦斯-巴雷利副教授整个职业生涯都在致力于将人工智能应用于改进科学发现。如今，他相信我们正处于一个转折点。 拉斐尔·戈麦斯-巴雷利副教授长期致力于将人工智能融入科学发现，他认为当前领域已迎来关键转折点。随着模拟技术与
+  AI 的深度融合，传统科研的效率与精度正被重新定义。本文将探讨这一趋势如何加速科学突破，并解析其对未来研究范式产生的深远影响。
 external_url: https://news.mit.edu/2026/accelerating-science-ai-and-simulations-rafael-gomez-bombarelli-0212
 scenarios:
 - AI/ML项目

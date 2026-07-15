@@ -15,8 +15,8 @@ tags:
 categories:
 - 系统与基础设施
 source: blogs_podcasts
-description: 本周 AI 基础设施领域出现三家新晋独角兽：Exa、Modal 与 TurboPuffer。三家公司均在近期完成新一轮融资，估值突破 10
-  亿美元。Exa 专注于高性能 AI 计算平台，提供大规模并行训练与推理能力；Modal 打造无服务器 GPU 计算服务，帮助开发者快速弹性部署 AI 工作负载；TurboPuffe
+description: 安静的一天，让我们来推荐募款活动吧！ AI 基础设施领域近期出现了一批估值突破十亿美元的初创公司，Exa、Modal 与 TurboPuffer
+  先后完成了新一轮融资。这些公司凭借高效的大模型部署平台和弹性计算方案，吸引了资本市场的高度关注。对关注 AI 技术落地的开发者和投资者而言，了解它们的融资路径与产品差异化，有助于把握行业前沿趋势并做出更精准的布局。
 external_url: https://www.latent.space/p/ainews-new-ai-infra-unicorns-exa
 scenarios:
 - AI/ML项目

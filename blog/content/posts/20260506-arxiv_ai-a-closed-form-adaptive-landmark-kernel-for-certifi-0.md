@@ -15,9 +15,7 @@ tags:
 categories:
 - 论文
 source: arxiv
-description: 研究背景与动机 点云与图分类中，持久性图提供拓扑特征，但传统均匀网格采样在数据分布不均时效率低下。本文提出 **PALACE**（Persistence
-  Adaptive‑Landmark Analytic Classification Engine），在训练标签上自适应选取地标，构建闭合形式的核函数。 关键技术
-  1.
+description: 持久性图在点云与图分类任务中能提供有效的拓扑特征，但传统均匀网格采样在数据分布不均时往往效率不高。针对这一问题，本文提出PALACE，通过在训练标签上自适应选取地标构建闭合形式核函数。基于覆盖理论的地标覆盖保证了低失真，并结合等权重最远点采样策略优化计算效率。该方法在化学图数据集上取得较高的Spearman相关性，展现了在拓扑数据分析领域的应用潜力。
 external_url: http://arxiv.org/abs/2605.04046v1
 scenarios:
 - Web应用开发

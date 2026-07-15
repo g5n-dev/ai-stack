@@ -16,9 +16,8 @@ categories:
 - AI 工程
 - 产品与创业
 source: blogs_podcasts
-description: 以下是对该内容的中文总结： **标题：Lendi Group 基于亚马逊 Bedrock 在 16 周内利用代理式 AI 重塑贷款再融资体验**
-  **概述：** 本文详细介绍了 Lendi Group 如何利用 Amazon Bedrock 构建其 AI 驱动的“住房贷款守护者”。文章重点阐述了该项目在短短
-  16 周内
+description: 这篇文章详细介绍了 Lendi Group 如何利用 Amazon Bedrock 构建其由 AI 驱动的 Home Loan Guardian，讲述了他们面临的挑战、采用的架构以及取得的显著业务成果。他们的历程为希望利用生成式
+  AI 转变客户体验，同时又能保持建立信任与忠诚度所需人情味的组织，提供了宝贵的见解。
 external_url: https://aws.amazon.com/blogs/machine-learning/how-lendi-revamped-the-refinance-journey-for-its-customers-using-agentic-ai-in-12-weeks-using-amazon-bedrock
 scenarios:
 - AI/ML项目

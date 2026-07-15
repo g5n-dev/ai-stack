@@ -184,11 +184,11 @@ Sources: [src/worker-with-socks5-experimental.js1-806](https://github.com/zizifn
 
 EdgeTunnel supports two primary deployment models:
 
-Deployment Type| Description| Key Files| Deployment Method  
----|---|---|---  
-Cloudflare Workers| Runs in Cloudflare's edge network| `worker-vless.js`, `worker-with-socks5-experimental.js`| Wrangler CLI tool  
-Node.js (Docker)| Runs in any environment supporting Docker| Docker image| Docker container  
-  
+Deployment Type| Description| Key Files| Deployment Method
+---|---|---|---
+Cloudflare Workers| Runs in Cloudflare's edge network| `worker-vless.js`, `worker-with-socks5-experimental.js`| Wrangler CLI tool
+Node.js (Docker)| Runs in any environment supporting Docker| Docker image| Docker container
+
 The Cloudflare Workers deployment leverages Cloudflare's global edge network, while the Node.js implementation allows for self-hosting in any environment that supports Docker.
 
 Sources: [package.json6-8](https://github.com/zizifn/edgetunnel/blob/44b93779/package.jso
@@ -319,7 +319,7 @@ def check_edge_tunnel_status():
     try:
         # 这里使用假设的API端点，实际使用时需要替换为真实API
         response = requests.get('https://api.example.com/edge-tunnel/status', timeout=5)
-        
+
         if response.status_code == 200:
             data = response.json()
             print(f"服务状态: {data['status']}")
@@ -328,7 +328,7 @@ def check_edge_tunnel_status():
         else:
             print(f"请求失败，状态码: {response.status_code}")
             return None
-            
+
     except requests.exceptions.RequestException as e:
         print(f"请求出错: {str(e)}")
         return None
@@ -350,14 +350,14 @@ def configure_tunnel_rules():
         "protocol": "tcp",
         "action": "allow"
     }
-    
+
     # 这里使用模拟配置，实际使用时需要替换为真实配置方法
     print("正在配置隧道规则...")
     print(f"源地址: {rules['source']}")
     print(f"目标地址: {rules['destination']}")
     print(f"协议: {rules['protocol']}")
     print(f"动作: {rules['action']}")
-    
+
     # 模拟配置成功
     return True
 
@@ -377,16 +377,16 @@ class TrafficMonitor:
     """
     def __init__(self):
         self.stats = defaultdict(lambda: {'bytes_in': 0, 'bytes_out': 0})
-    
+
     def record_traffic(self, tunnel_id, bytes_in, bytes_out):
         """记录流量数据"""
         self.stats[tunnel_id]['bytes_in'] += bytes_in
         self.stats[tunnel_id]['bytes_out'] += bytes_out
-    
+
     def get_stats(self, tunnel_id):
         """获取指定隧道的统计信息"""
         return self.stats.get(tunnel_id, {'bytes_in': 0, 'bytes_out': 0})
-    
+
     def print_summary(self):
         """打印流量统计摘要"""
         print("\n=== 流量统计摘要 ===")
@@ -408,60 +408,54 @@ monitor.print_summary()
 
 ### 1：跨国团队远程协作加速项目
 
- 1：跨国团队远程协作加速项目
-
-**背景**:  
+**背景**:
 一家位于中国的软件开发公司，团队分布在北美、欧洲和亚洲多个地区，需要频繁访问位于AWS美国东部节点的内部开发环境（如Jenkins、GitLab、私有Maven仓库）。
 
-**问题**:  
+**问题**:
 团队成员直接访问美国节点时，延迟普遍超过300ms，且丢包率高达5%-10%，导致代码拉取失败、CI/CD构建超时，严重影响开发效率。传统VPN方案不仅成本高，且在高峰时段带宽不稳定。
 
-**解决方案**:  
+**解决方案**:
 部署edgetunnel工具，利用Cloudflare Workers的全球边缘网络构建分布式代理隧道。通过配置多个边缘节点（如法兰克福、东京、圣何塞），将团队流量动态路由至最近的边缘节点，再通过加密隧道转发至目标服务器。
 
-**效果**:  
-- 访问延迟降低至50ms以下，丢包率降至0.1%以内  
-- 代码拉取速度提升3倍，CI/CD构建时间缩短40%  
-- 无需额外采购硬件，月均成本控制在5美元以内  
+**效果**:
+- 访问延迟降低至50ms以下，丢包率降至0.1%以内
+- 代码拉取速度提升3倍，CI/CD构建时间缩短40%
+- 无需额外采购硬件，月均成本控制在5美元以内
 
 ---
 
 ### 2：高可用性API网关优化
 
- 2：高可用性API网关优化
-
-**背景**:  
+**背景**:
 某SaaS服务商的核心API服务部署在阿里云新加坡节点，但用户主要集中在中东和南美地区，导致跨区域请求延迟成为用户投诉的主要问题。
 
-**问题**:  
+**问题**:
 直接请求新加坡节点时，中东用户延迟超过400ms，南美用户超过500ms，且部分国家网络存在运营商干扰，导致请求失败率高达8%。传统CDN缓存无法解决动态API的实时性问题。
 
-**解决方案**:  
+**解决方案**:
 基于edgetunnel实现边缘动态路由，在Cloudflare Workers上部署轻量级逻辑层，将用户请求转发至地理上更近的边缘节点（如迪拜、圣保罗），再通过加密隧道快速回源至新加坡服务器。同时集成本地缓存策略，减少重复计算。
 
-**效果**:  
-- 中东和南美用户延迟分别降至120ms和150ms  
-- 请求失败率降至0.5%以下，用户投诉减少70%  
-- 边缘节点处理了60%的重复请求，减轻源服务器压力  
+**效果**:
+- 中东和南美用户延迟分别降至120ms和150ms
+- 请求失败率降至0.5%以下，用户投诉减少70%
+- 边缘节点处理了60%的重复请求，减轻源服务器压力
 
 ---
 
 ### 3：学术资源访问加速项目
 
- 3：学术资源访问加速项目
-
-**背景**:  
+**背景**:
 某高校研究团队需要频繁访问国际学术数据库（如arXiv、IEEE Xplore）和开源代码仓库（GitHub），但校园网出口带宽有限，且部分资源被地区限制访问。
 
-**问题**:  
+**问题**:
 高峰时段校园网国际带宽占用率接近100%，访问速度降至50KB/s，部分资源完全无法加载。传统代理方案存在单点故障风险，且无法应对突发流量。
 
-**解决方案**:  
+**解决方案**:
 部署edgetunnel作为备用访问通道，通过Cloudflare Workers的200+全球节点动态选择最优路径，并启用分片传输技术规避带宽限制。同时配置本地缓存，对高频访问的PDF和代码仓库进行短期存储。
 
-**效果**:  
-- 学术资源下载速度稳定在5MB/s以上，峰值可达20MB/s  
-- 突发流量下系统可用性保持99.9%  
+**效果**:
+- 学术资源下载速度稳定在5MB/s以上，峰值可达20MB/s
+- 突发流量下系统可用性保持99.9%
 - 校园网国际带宽负载降低40%，节省约30%的带宽扩容成本
 
 ---
@@ -574,7 +568,7 @@ monitor.print_summary()
 
 ### 优化 1：启用多路复用与连接池
 
-**说明**:  
+**说明**:
 EdgeTunnel 在高并发场景下，频繁建立和销毁 TCP 连接会导致性能瓶颈。启用 HTTP/2 多路复用或连接池可以减少握手延迟，提高资源利用率。
 
 **实施方法**:
@@ -582,14 +576,14 @@ EdgeTunnel 在高并发场景下，频繁建立和销毁 TCP 连接会导致性�
 2. 调整 `max-connections` 参数（如设置为 100-500，根据服务器负载测试）。
 3. 使用 `reuseport` 选项优化端口监听（如 `reuseport: true`）。
 
-**预期效果**:  
+**预期效果**:
 降低 30%-50% 的连接建立延迟，提升 20% 的并发处理能力。
 
 ---
 
 ### 优化 2：优化加密算法与协议
 
-**说明**:  
+**说明**:
 默认的加密算法（如 AES-256-GCM）可能在高性能场景下成为瓶颈。切换至更高效的算法（如 ChaCha20-Poly1305）或调整协议参数可提升吞吐量。
 
 **实施方法**:
@@ -597,14 +591,14 @@ EdgeTunnel 在高并发场景下，频繁建立和销毁 TCP 连接会导致性�
 2. 禁用不必要的 TLS 版本（如仅保留 TLSv1.3）。
 3. 启用 `fast-open` 以减少握手延迟（如 `fast-open: true`）。
 
-**预期效果**:  
+**预期效果**:
 加密/解密速度提升 15%-25%，延迟降低 10%-20%。
 
 ---
 
 ### 优化 3：调整缓冲区与内存分配
 
-**说明**:  
+**说明**:
 默认的缓冲区大小可能不适合高吞吐场景。合理调整读写缓冲区可减少内存拷贝次数，提升数据传输效率。
 
 **实施方法**:
@@ -612,14 +606,14 @@ EdgeTunnel 在高并发场景下，频繁建立和销毁 TCP 连接会导致性�
 2. 启用 `zero-copy` 选项（如 `zero-copy: true`）以减少内核态与用户态的数据拷贝。
 3. 使用 `mmap` 替代传统文件 I/O（如 `mmap: true`）。
 
-**预期效果**:  
+**预期效果**:
 内存占用减少 20%-30%，吞吐量提升 10%-15%。
 
 ---
 
 ### 优化 4：启用 CPU 亲和性与 NUMA 优化
 
-**说明**:  
+**说明**:
 在多核服务器上，默认的 CPU 调度可能导致缓存失效。绑定进程到特定 CPU 核心或 NUMA 节点可提升缓存命中率。
 
 **实施方法**:
@@ -627,14 +621,14 @@ EdgeTunnel 在高并发场景下，频繁建立和销毁 TCP 连接会导致性�
 2. 启用 `cpu-affinity` 选项（如 `cpu-affinity: true`）。
 3. 调整 `worker-threads` 数量（如设置为 CPU 核心数的 50%-80%）。
 
-**预期效果**:  
+**预期效果**:
 CPU 缓存命中率提升 10%-20%，延迟降低 5%-10%。
 
 ---
 
 ### 优化 5：启用 BBR 拥塞控制算法
 
-**说明**:  
+**说明**:
 BBR 算法在高延迟或丢包网络中表现优于传统 Cubic 算法，可显著提升传输效率。
 
 **实施方法**:
@@ -642,14 +636,14 @@ BBR 算法在高延迟或丢包网络中表现优于传统 Cubic 算法，可显
 2. 在 EdgeTunnel 配置中启用 `tcp-bbr` 选项（如 `tcp-bbr: true`）。
 3. 调整 `tcp-window-size` 参数（如设置为 1MB-4MB）。
 
-**预期效果**:  
+**预期效果**:
 高延迟网络下吞吐量提升 30%-50%，丢包场景下延迟降低 20%-40%。
 
 ---
 
 ### 优化 6：启用日志与监控优化
 
-**说明**:  
+**说明**:
 频繁的日志写入和监控采样可能成为性能瓶颈。优化日志级别和采样频率可减少 I/O 开销。
 
 **实施方法**:
@@ -685,7 +679,7 @@ BBR 算法在高延迟或丢包网络中表现优于传统 Cubic 算法，可显
 - GitHub 官方入门指南
 - 阮一峰的网络日志（HTTP 协议相关章节）
 
-**学习建议**: 
+**学习建议**:
 不要急于部署服务，先花时间理解 Cloudflare Workers 是如何运行在边缘网络上的。尝试部署一个最简单的 "Hello World" Worker，确保环境配置无误。
 
 ---
@@ -705,7 +699,7 @@ BBR 算法在高延迟或丢包网络中表现优于传统 Cubic 算法，可显
 - edgetunnel 项目 README 文件
 - Cloudflare Workers 文档（关于 WebSocket 处理的部分）
 
-**学习建议**: 
+**学习建议**:
 严格按照项目文档进行首次部署。建议先使用默认配置跑通流程，然后再尝试修改自定义参数。注意区分 Worker 脚本和 wrangler.toml 配置文件的作用。
 
 ---
@@ -725,7 +719,7 @@ BBR 算法在高延迟或丢包网络中表现优于传统 Cubic 算法，可显
 - Cloudflare Analytics 仪表盘使用指南
 - 网络抓包工具基础教程
 
-**学习建议**: 
+**学习建议**:
 尝试更换不同的 Cloudflare IP 地址以寻找最佳延迟。在配置客户端时，注意区分 "传输协议" 和 "底层传输安全" 的设置，这是最容易出错的地方。
 
 ---
@@ -745,7 +739,7 @@ BBR 算法在高延迟或丢包网络中表现优于传统 Cubic 算法，可显
 - JavaScript 高级程序设计（针对 Worker 脚本修改）
 - Cloudflare Workers API 详细文档
 
-**学习建议**: 
+**学习建议**:
 学习本阶段需要具备一定的 JavaScript 编程能力。建议从修改简单的响应头开始，逐步深入到修改数据转发逻辑。务必关注 Cloudflare 的免费额度限制，避免产生意外费用。
 
 ---
@@ -765,7 +759,7 @@ BBR 算法在高延迟或丢包网络中表现优于传统 Cubic 算法，可显
 - GitHub Actions 自动化部署教程
 - Prometheus 或 Grafana 监控基础
 
-**学习建议**: 
+**学习建议**:
 在这个阶段，你应该已经对边缘计算和网络隧道有了深刻理解。可以尝试参与开源项目的贡献，或者根据个人需求开发一套属于自己的多平台代理管理系统。
 
 ---
@@ -773,15 +767,11 @@ BBR 算法在高延迟或丢包网络中表现优于传统 Cubic 算法，可显
 
 ### 1: 什么是 zizifn/edgetunnel，它主要用于什么场景？
 
-1: 什么是 zizifn/edgetunnel，它主要用于什么场景？
-
 **A**: zizifn/edgetunnel 是一个基于 GitHub 的开源项目，其核心功能是利用 Cloudflare Workers（边缘计算网络）来搭建 VLESS 协议的代理节点。它允许用户通过 Cloudflare 的全球边缘网络转发流量，主要用于科学上网（网络加速）、隐藏真实 IP 地址或加密网络数据传输。由于运行在 Workers 环境中，它通常具有免费、无需购买 VPS 服务器、部署简单等特点，常被用于突破网络限制。
 
 ---
 
 ### 2: 部署该项目需要哪些准备工作？
-
-2: 部署该项目需要哪些准备工作？
 
 **A
 ## 实践建议

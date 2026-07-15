@@ -16,8 +16,8 @@ categories:
 - 数据
 - 产品与创业
 source: blogs_podcasts
-description: 在企业数据驱动的场景下，传统仪表盘只能回答预设问题，导致临时性的业务探索常常受阻。Amazon QuickSight 最新推出的 Dataset
-  Q&A 功能，通过自然语言直接在数据集层面提问，实现多维度的即时查询，帮助业务人员快速获得所需洞察。本文将详细阐述该功能的技术原理、典型使用流程以及在实际业务中的价值，帮助团
+description: 各行业的企业领导者依赖运营仪表板作为团队日常执行的共同真相来源。但仪表板是为回答已知问题而构建的。当团队需要进一步探索临时性、多维度或不可预见的问题时，他们会遇到瓶颈。他们需要等待数小时甚至数天，让BI团队构建新的视图…
+  在企业数据驱动的场景下，传统仪表盘只能回答预设问题，导致临时性的业务探索常常受阻。
 external_url: https://aws.amazon.com/blogs/machine-learning/beyond-bi-how-the-dataset-qa-feature-of-amazon-quick-powers-the-next-generation-of-data-decisions
 scenarios:
 - Web应用开发

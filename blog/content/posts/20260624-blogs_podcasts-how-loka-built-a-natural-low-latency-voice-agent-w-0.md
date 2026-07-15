@@ -16,7 +16,8 @@ categories:
 - AI 工程
 - 系统与基础设施
 source: blogs_podcasts
-description: 在语音交互需求快速增长的背景下，构建自然、低延迟的语音代理成为提升用户体验的关键。Loka 通过 Amazon Nova 2 Sonic，实现了对传统机械式语音助手的根本改进，有效降低了通话中断率和客服成本。本文将深入剖析其系统架构、关键实现路径以及在实际业务中的性能表现，为需要提升语音交互质量的团队提供可借鉴的方案和
+description: 在这篇文章中，我们展示了 Loka 用来解决一个常见痛点的架构和方法：那些机械、反应迟缓的语音助手导致客户挂断电话，损害品牌声誉并推高支持成本。
+  在语音交互需求快速增长的背景下，构建自然、低延迟的语音代理成为提升用户体验的关键。Loka 通过 Amazon Nova 2 Sonic，实现了对传统机械式语音助手的根本改进，有效降低了通话中断率和客服成本。
 external_url: https://aws.amazon.com/blogs/machine-learning/how-loka-built-a-natural-low-latency-voice-agent-with-amazon-nova-2-sonic
 scenarios:
 - 大语言模型

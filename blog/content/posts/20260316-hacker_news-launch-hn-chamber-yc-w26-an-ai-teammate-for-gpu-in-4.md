@@ -17,7 +17,7 @@ categories:
 - AI 工程
 source: hacker_news
 description: 随着大模型训练对算力需求的爆发，GPU 基础设施的运维复杂度已成为制约研发效率的关键瓶颈。Chamber 作为一个 AI 团队协作工具，旨在通过智能化的方式接管底层资源管理，帮助开发者从繁琐的硬件配置中解脱出来。本文将介绍
-  Chamber 的技术原理与应用场景，展示它如何优化 GPU 资源调度，从而提升工程团队的整体生
+  Chamber 的技术原理与应用场景，展示它如何优化 GPU 资源调度，从而提升工程团队的整体生产力。
 external_url: https://www.usechamber.io
 scenarios:
 - AI/ML项目

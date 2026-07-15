@@ -16,7 +16,7 @@ categories:
 - 大模型
 - AI 工程
 source: blogs_podcasts
-description: 今天的平静让我们有机会回顾并思考全球 AI 领袖们在各地围绕 “Tasteful Tokenmaxxing”（品味代币最大化）展开的核心议题。该概念强调在保证内容质量和用户感受的同时，通过精细化策略最大化代币的价值与使用效率。领袖们关注的重点包括如何在生成式模型中平衡创意表达与成本控制、如何在多模态场景下实现高质量输出
+description: 一个安静的日子让我们反思AI领导者们正在各处进行的热门对话。 在AI模型的运行成本日益受到关注的背景下，'Tokenmaxxing'作为一种精细化利用生成令牌的技术，正被业内领军者积极探讨。本文梳理了近期主要的讨论要点，并提供了实用策略，以帮助开发者在保持模型质量的同时提升效率。通过阅读，读者可以快速把握该技术的核心思路及其在实际项目中的应用前景。
 external_url: https://www.latent.space/p/ainews-tasteful-tokenmaxxing
 scenarios:
 - AI/ML项目

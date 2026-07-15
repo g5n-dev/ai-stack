@@ -16,9 +16,8 @@ categories:
 - 数据
 - AI 工程
 source: blogs_podcasts
-description: 本文介绍了如何利用 **Amazon SageMaker Unified Studio** 和 **SageMaker Catalog**
-  构建线下特征存储（Offline Feature Store）。 **核心方案：** 该方案通过采用“发布-订阅”模式，实现了数据生产者与消费者之间的解耦与协作：
-  1. **数据生
+description: This blog post provides step-by-step guidance on implementing an offline
+  feature store using SageMaker Catalog within a SageMaker Unified Studio domain.
 external_url: https://aws.amazon.com/blogs/machine-learning/build-an-offline-feature-store-using-amazon-sagemaker-unified-studio-and-sagemaker-catalog
 scenarios:
 - Web应用开发

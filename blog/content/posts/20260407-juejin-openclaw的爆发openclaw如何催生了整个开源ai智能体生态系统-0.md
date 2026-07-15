@@ -16,8 +16,7 @@ categories:
 - 开源生态
 - 大模型
 source: juejin
-description: 起源 2025年11月，以PSPDFKit闻名的奥地利iOS开发者Peter在原有聊天机器人ClawdBot的基础上，推出开源项目OpenClaw，旨在为AI智能体提供统一、模块化的开发框架。
-  爆发 不到六周，OpenClaw迅速获得全球开发者的关注，github上出现了上百个分支，覆盖多语言、跨平台、自动化工作流等方
+description: 2025年11月，一个原本为ClawdBot的iOS开发项目意外成为AI智能体生态的分叉起点。OpenClaw的快速迭代和开放模型接口让数十个社区在此基础上迅速构建了新功能，形成了围绕智能体的协作网络。本文将梳理OpenClaw从诞生到广泛落地的技术路径，并分析其对开源AI生态的深远影响，为关注AI发展的技术人员提供实用的参考。
 external_url: https://juejin.cn/post/7625553232089759787
 scenarios:
 - AI/ML项目

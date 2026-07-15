@@ -16,8 +16,8 @@ categories:
 - AI 工程
 - 系统与基础设施
 source: blogs_podcasts
-description: '**总结：理光如何在 AWS 上构建可扩展的智能文档处理方案** 本文介绍了理光如何利用 **AWS GenAI IDP Accelerator**（生成式
-  AI 智能文档处理加速器）作为基础，成功将其文档处理业务从“定制化工程瓶颈”转型为“标准化、可复用的服务”。 以下是该方案的核心要点： **1. 面临的挑战**'
+description: 本文探讨了 Ricoh 如何以 AWS GenAI IDP Accelerator 为基础，构建一个标准化、多租户的自动化文档分类与提取解决方案，从而将其文档处理从定制工程瓶颈转变为可扩展、可重复的服务。
+  面对日益增长的非结构化数据，企业常在文档处理的定制化开发与效率之间陷入两难。
 external_url: https://aws.amazon.com/blogs/machine-learning/how-ricoh-built-a-scalable-intelligent-document-processing-solution-on-aws
 scenarios:
 - AI/ML项目

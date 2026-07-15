@@ -16,8 +16,8 @@ categories:
 - AI 工程
 - 效率与方法论
 source: blogs_podcasts
-description: 研究背景 MIT团队选择经典的海战棋（Battleship）作为AI代理提问能力的测试平台。该游戏规则简单、状态空间可控，能够在受限信息下评估代理通过提问获取关键数据的效果。
-  研究发现 实验对比了不同规模的语言模型在海战棋中的表现。结果显示，经过针对性微调的小型模型（仅数十亿参数）在提问效率和定位准确率上可媲美甚至超越
+description: MIT的研究人员使用这款经典游戏作为AI智能体的测试平台，发现一个小型AI模型可以以1%的成本超越最大的模型。 在训练 AI 智能体时，让其学会主动提问是提升交互效率的关键。MIT
+  研究团队借助童年游戏《海战棋》构建评测环境，发现规模仅为其百分之一的模型在问题生成质量上可与最大模型相媲美。
 external_url: https://news.mit.edu/2026/teaching-ai-agents-ask-better-questions-playing-battleship-0603
 scenarios:
 - AI/ML项目

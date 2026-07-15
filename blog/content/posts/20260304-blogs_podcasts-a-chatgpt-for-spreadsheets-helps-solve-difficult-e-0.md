@@ -16,8 +16,7 @@ categories:
 - AI 工程
 - 效率与方法论
 source: blogs_podcasts
-description: 这段内容主要介绍了一种被称为“电子表格版ChatGPT”的新型技术工具，其核心价值与应用前景如下： 1. **核心功能**：该工具将先进的生成式AI技术应用于电子表格环境。它不仅能处理常规数据，还能理解复杂的工程逻辑，帮助用户快速解决极具挑战性的工程技术难题，显著提升了解决问题的效率。
-  2. **应用领域**：该技术有
+description: 这种方法可以帮助工程师解决极其复杂的设计问题，从电网优化到车辆设计。 将类似 ChatGPT 的对话式 AI 应用于电子表格，正在为解决复杂的工程设计难题提供新思路。这种方法不仅能处理电网优化或车辆设计等高度非线性的问题，还能显著降低技术门槛。本文将解析其工作原理，并探讨它如何帮助工程师在保持精度的同时，大幅提升研发与决策效率。
 external_url: https://news.mit.edu/2026/chatgpt-spreadsheets-helps-solve-difficult-engineering-challenges-faster-0304
 scenarios:
 - AI/ML项目

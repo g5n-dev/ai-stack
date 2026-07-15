@@ -123,7 +123,7 @@ def test_generated_code():
     """测试生成的代码是否正确"""
     # 动态执行生成的代码
     exec(generate_sorting_algorithm())
-    
+
     # 准备测试数据
     test_cases = [
         [3, 6, 8, 10, 1, 2, 1],
@@ -131,12 +131,12 @@ def test_generated_code():
         [1, 2, 3, 4, 5],
         [random.randint(0, 100) for _ in range(10)]
     ]
-    
+
     for case in test_cases:
         original = case.copy()
         sorted_case = quick_sort(case)
         assert sorted_case == sorted(original), f"排序失败: {original}"
-    
+
     print("所有测试通过！")
 
 test_generated_code()
@@ -156,7 +156,7 @@ def analyze_code_complexity(code: str) -> dict:
         'conditions': 0,
         'max_nesting': 0
     }
-    
+
     for node in ast.walk(tree):
         if isinstance(node, ast.FunctionDef):
             complexity['functions'] += 1
@@ -164,13 +164,13 @@ def analyze_code_complexity(code: str) -> dict:
             complexity['loops'] += 1
         elif isinstance(node, ast.If):
             complexity['conditions'] += 1
-    
+
     # 计算最大嵌套深度
     def max_nesting(node, depth=0):
         if not hasattr(node, 'body'):
             return depth
         return max(max_nesting(child, depth+1) for child in ast.walk(node))
-    
+
     complexity['max_nesting'] = max_nesting(tree)
     return complexity
 
@@ -199,17 +199,17 @@ def generate_docstring(func: Any) -> str:
     """为函数自动生成文档字符串"""
     sig = inspect.signature(func)
     params = sig.parameters
-    
+
     doc = f"函数: {func.__name__}\n"
     doc += f"描述: 自动生成的文档\n"
     doc += "参数:\n"
-    
+
     for name, param in params.items():
         doc += f"  {name}: {param.annotation if param.annotation != inspect.Parameter.empty else 'Any'}\n"
-    
+
     if sig.return_annotation != inspect.Signature.empty:
         doc += f"返回: {sig.return_annotation}\n"
-    
+
     return doc
 
 # 示例函数
@@ -223,8 +223,6 @@ print(generate_docstring(calculate_discount))
 ## 案例研究
 
 ### 1：StrongDM 内部 AI 团队
-
- 1：StrongDM 内部 AI 团队
 
 **背景**:
 StrongDM 是一家专注于数据库和服务器访问控制的安全公司。随着业务扩展，其内部工程团队面临维护旧有代码库和快速开发新功能的压力。为了提高开发效率，公司组建了一个专门的 AI 团队，探索利用人工智能辅助软件开发的新模式。
@@ -242,8 +240,6 @@ StrongDM 的 AI 团队采用了一种“高层抽象优先”的开发策略。�
 
 ### 2：GitHub Copilot 在企业级开发中的应用
 
- 2：GitHub Copilot 在企业级开发中的应用
-
 **背景**:
 GitHub Copilot 是由 GitHub 和 OpenAI 共同开发的人工智能编程助手。它基于公开的代码库进行训练，能够根据上下文自动补全代码或生成函数。许多企业级开发团队开始将其集成到日常工作流中，以应对日益增长的软件需求。
 
@@ -259,8 +255,6 @@ GitHub Copilot 是由 GitHub 和 OpenAI 共同开发的人工智能编程助手�
 ---
 
 ### 3：Klarna 的 AI 客服助手
-
- 3：Klarna 的 AI 客服助手
 
 **背景**:
 Klarna 是一家瑞典的金融科技公司，提供“先买后付”等服务。随着全球用户量的激增，其客服团队面临巨大的压力，需要处理海量的重复性咨询，如退款查询、账户管理等问题。
@@ -370,43 +364,29 @@ Klarna 与 OpenAI 合作，基于 GPT-4 模型构建了一个高度自动化的 
 
 ### 1: StrongDM 的 AI 团队是如何在“不看代码”的情况下构建软件的？
 
-1: StrongDM 的 AI 团队是如何在“不看代码”的情况下构建软件的？
-
 **A**: 这里的“不看代码”并非指完全脱离编程，而是指开发模式的根本性转变。该团队采取了“自然语言优先”的开发策略。工程师不再直接编写语法逻辑，而是通过编写高度精确的提示词，利用大语言模型（LLM）来生成代码。团队主要关注的是系统架构、逻辑设计以及对 AI 生成结果的审查与验证，而不是传统的逐行编码。他们使用 AI 作为“初级开发者”来处理具体的实现细节，从而将自己从繁琐的语法编写中解放出来。
 
 ### 2: 这种开发模式是否意味着程序员不再需要掌握编程语言了？
-
-2: 这种开发模式是否意味着程序员不再需要掌握编程语言了？
 
 **A**: 并非如此。相反，这种模式可能对程序员的要求更高了。虽然不再需要手写每一行代码，但程序员必须具备深厚的代码审查能力和系统设计能力。他们需要能够迅速判断 AI 生成的代码是否正确、是否存在安全漏洞、以及性能是否达标。此外，为了编写有效的提示词，程序员必须非常清楚底层逻辑和编程原理。因此，这更像是从“代码撰写者”向“代码架构师和审查者”的角色进化。
 
 ### 3: 使用 AI 生成代码，如何保证软件的安全性和质量？
 
-3: 使用 AI 生成代码，如何保证软件的安全性和质量？
-
 **A**: StrongDM 的做法是建立严格的“信任但验证”流程。AI 生成的所有代码都不会直接合并到主分支，而是必须经过人工的详细审查。团队成员会关注代码的逻辑严密性、潜在的边界条件错误以及安全风险。此外，他们通过编写高覆盖率的测试用例来验证 AI 产出的功能是否符合预期。在这种模式下，代码审查成为了保障质量和安全的核心防线。
 
 ### 4: 这种开发方式相比传统编程有什么具体的优势？
-
-4: 这种开发方式相比传统编程有什么具体的优势？
 
 **A**: 主要优势在于开发速度和思维连贯性。通过自然语言与 AI 交互，开发者可以更快地将抽象的概念转化为可运行的软件原型，大大缩短了从想法到实现的时间。同时，这种方式减少了因语法错误或环境配置带来的打断，让开发者能够更专注于解决业务问题和构建复杂的系统逻辑。对于 StrongDM 而言，这也使得构建复杂工具的门槛降低，小团队也能快速产出高质量的软件。
 
 ### 5: 如果 AI 生成的代码有误，调试过程会不会变得更困难？
 
-5: 如果 AI 生成的代码有误，调试过程会不会变得更困难？
-
 **A**: 这是一个真实的挑战。当 AI 生成复杂的逻辑块时，如果其中包含错误，人类开发者可能需要花费时间去理解 AI 的“意图”才能修复问题。为了应对这一点，StrongDM 的团队倾向于让 AI 生成小规模、模块化的代码片段，而不是一次性生成整个庞大的系统。这种“分而治之”的策略使得定位错误和调试变得更加容易，同时也便于人类理解和维护。
 
 ### 6: 这种模式目前是否适用于所有类型的软件开发项目？
 
-6: 这种模式目前是否适用于所有类型的软件开发项目？
-
 **A**: 目前来看，这种模式最适合用于构建内部工具、自动化脚本以及逻辑相对清晰的应用程序。对于需要极致性能优化、或者涉及极度底层的系统编程（如操作系统内核、驱动程序），完全依赖 AI 生成代码可能还不够成熟。此外，对于业务逻辑极度模糊、需求不断变动的项目，人类的直接干预和编码可能依然比通过 AI 迭代更有效率。StrongDM 的案例展示了这种模式的潜力，但它目前更多是作为一种针对特定场景的高效工作流，而非通用的行业标准。
 
 ### 7: StrongDM 团队具体使用了哪些工具或技术来实现这一流程？
-
-7: StrongDM 团队具体使用了哪些工具或技术来实现这一流程？
 
 **A**: 虽然具体的工具栈可能随时间变化，但核心通常是基于先进的大语言模型（如 GPT-4 或 Claude 等）构建的定制化工作流。团队通常会编写脚本或使用 IDE 插件，将自然语言提示直接发送给 LLM，并将返回的代码自动填充到编辑器中。关键在于他们如何调整开发环境，使得“提示、生成、审查、测试”这一循环能够无缝且高速地运转，从而替代传统的“编写、编译、调试”循环。
 ## 引用

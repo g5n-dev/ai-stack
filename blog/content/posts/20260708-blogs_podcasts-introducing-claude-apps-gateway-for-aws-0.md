@@ -16,8 +16,9 @@ categories:
 - 大模型
 - AI 工程
 source: blogs_podcasts
-description: 功能概览 Claude apps gateway for AWS 是一款自托管控制面，为企业提供统一的访问、成本和策略管理能力，覆盖 Claude
-  Code 与 Claude Desktop。 关键优势 - **集中鉴权**：统一身份验证和授权策略； - **成本可视**：实时监控 API 调用费用，支持配额与预算控制
+description: 今天，我们宣布推出 Claude apps gateway for AWS，这是一款自托管控制平面，帮助组织对 Claude Code 和
+  Claude Desktop 的访问、成本和策略进行单一控制。在本文中，我们将展示如何结合 Amazon Bedrock 和 Claude Platform on
+  AWS 来设置和运行 Claude apps gateway for AWS。
 external_url: https://aws.amazon.com/blogs/machine-learning/introducing-claude-apps-gateway-for-aws
 scenarios:
 - Web应用开发

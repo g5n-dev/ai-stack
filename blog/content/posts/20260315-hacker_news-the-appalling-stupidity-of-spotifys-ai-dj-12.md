@@ -17,7 +17,7 @@ categories:
 - AI 工程
 source: hacker_news
 description: Spotify 推出的 AI DJ 功能试图通过生成式语音为用户播放音乐，但在实际体验中却暴露出明显的逻辑缺陷。这一案例不仅揭示了算法在理解用户意图与语境时的局限性，也为当前生成式
-  AI 在消费级产品中的落地提供了反思。通过剖析该功能在交互与推荐层面的具体问题，本文旨在探讨技术理想与用户体验之间的现实落差，以及 AI
+  AI 在消费级产品中的落地提供了反思。通过剖析该功能在交互与推荐层面的具体问题，本文旨在探讨技术理想与用户体验之间的现实落差，以及 AI 产品设计中应当警惕的陷阱。
 external_url: https://www.charlespetzold.com/blog/2026/02/The-Appalling-Stupidity-of-Spotifys-AI-DJ.html
 scenarios:
 - AI/ML项目

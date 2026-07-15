@@ -16,8 +16,7 @@ categories:
 - 大模型
 - 数据
 source: blogs_podcasts
-description: 这项研究提出了一种**人工智能驱动的方法**，旨在通过提供**细胞的全息信息**（holistic information），帮助科学家：
-  1. **洞察疾病机制**：更全面地理解疾病发生的原理。 2. **优化实验规划**：辅助科学家更好地设计实验。 简而言之，该技术利用AI让研究人员在细胞生物学中能够**“看到更宏
+description: 通过提供关于一个细胞的全局信息，一种由人工智能驱动的方法可以帮助科学家更好地理解疾病机制并规划实验。 人工智能正在改变细胞生物学的研究范式，通过提供全局性的细胞信息，帮助科学家突破传统视野的局限。这种方法不仅有助于更深入地理解疾病机制，还能优化实验设计。本文将解析这一技术如何提升研究效率，为相关领域的科研人员提供新的思路与工具。
 external_url: https://news.mit.edu/2026/ai-help-researchers-see-bigger-picture-cell-biology-0225
 scenarios:
 - AI/ML项目

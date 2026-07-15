@@ -17,7 +17,7 @@ categories:
 - AI 工程
 source: blogs_podcasts
 description: 随着大语言模型应用场景的拓展，基于工具调用的智能体正成为解决复杂任务的关键技术。然而，仅靠静态基准测试已难以全面评估其在真实环境中的表现，OpenEnv
-  框架的提出为此提供了新的解决方案。本文将深入解析 OpenEnv 的设计理念与实际应用，展示它如何通过构建真实交互环境来衡量智能体的工具使用能力，并探讨其对未来技术评
+  框架的提出为此提供了新的解决方案。本文将深入解析 OpenEnv 的设计理念与实际应用，展示它如何通过构建真实交互环境来衡量智能体的工具使用能力，并探讨其对未来技术评估体系的重要参考价值。
 external_url: https://huggingface.co/blog/openenv-turing
 scenarios:
 - Web应用开发

@@ -16,8 +16,9 @@ categories:
 - AI 工程
 - 开源生态
 source: juejin
-description: Agent-Reach：零成本赋予 AI Agent 互联网能力的开源工具 Agent-Reach 是一个为 AI Agent 提供互联网能力的脚手架工具，通过零
-  API 费用的一站式解决方案，使其能直接与主流平台交互，简化开发流程并降低成本。 核心功能 1. **多平台支持** 覆盖 Twitter、Reddit、Y
+description: AI Agent 的自主性往往受限于数据获取的边界，Agent-Reach 试图通过零 API 费用的方式打破这一僵局。该脚手架工具支持
+  Twitter、Reddit、YouTube 及国内主流平台，为模型装上了真实的互联网触角。本文将深入剖析其技术原理与集成方式，展示如何在不增加额外成本的前提下，让
+  AI Agent 具备从公开网络获取实时信息的能力。
 external_url: https://juejin.cn/post/7616234147671048242
 scenarios:
 - AI/ML项目

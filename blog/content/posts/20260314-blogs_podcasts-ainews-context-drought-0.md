@@ -16,8 +16,9 @@ categories:
 - 大模型
 - AI 工程
 source: blogs_podcasts
-description: 以下是该内容的中文总结： **【AI新闻】上下文窗口的“干旱”** **核心事件：** 在一个相对平静的资讯日，业界得以回顾并反思 Anthropic
-  公司在“100万 token 上下文窗口”技术上的**滞后发布**（GA，即正式全面上市）。 **背景与对比：** * **竞争对手：** 此前，Google（Gemi
+description: 这一天风平浪静，让我们得以反思：Anthropic 在 Gemini 和 OpenAI 之后，才姗姗来迟地正式发布 100 万 token
+  上下文窗口。 在 AI 领域激烈的军备竞赛中，上下文窗口的容量已成为衡量大模型能力的关键指标。继 OpenAI 和 Google 之后，Anthropic 终于正式开放了百万级
+  token 的支持，这一技术突破将如何重塑信息处理的边界？
 external_url: https://www.latent.space/p/ainews-context-drought
 scenarios:
 - 大语言模型

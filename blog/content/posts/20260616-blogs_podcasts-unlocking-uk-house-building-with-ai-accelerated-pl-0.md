@@ -15,8 +15,8 @@ tags:
 categories:
 - AI 工程
 source: blogs_podcasts
-description: 英国政府与谷歌旗下的人工智能研究团队 DeepMind 合作，正在研发一款基于 AI 的规划审批原型系统。该系统通过机器学习和自然语言处理技术，自动分析大量规划文件、地理信息和政策条款，从而快速识别潜在冲突并生成审批建议。目标是压缩住房项目的审批周期，加快住宅供应，以缓解英国的住房短缺问题。此举体现了政府利用前沿
-  AI
+description: 英国政府与 Google DeepMind 合作，开发一个新的人工智能驱动原型，旨在加快住房决策。 英国政府与 Google DeepMind
+  合作，推出人工智能驱动的规划原型，旨在加速住房审批流程。随着城市住房需求持续增长，传统的审批模式往往导致项目延期，影响供给。该原型通过机器学习分析土地、政策与社区数据，为决策者提供更快速、透明的评估方案。
 external_url: https://deepmind.google/blog/unlocking-uk-house-building-with-ai-accelerated-planning
 scenarios:
 - AI/ML项目

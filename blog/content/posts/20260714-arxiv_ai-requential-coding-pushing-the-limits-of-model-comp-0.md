@@ -16,8 +16,8 @@ categories:
 - 论文
 - 大模型
 source: arxiv
-description: 基本思路 压缩是智能的核心，能用短码表示训练数据的模型已发现可推广的规律。传统基于参数的方法（如量化）产生的码长随参数量增长，与参数实际承载的信息无关。已有的先验编码（prequential
-  coding）通过压缩训练轨迹来实现压缩，但仍需对原始数据序列编码，若数据熵高则码长仍然很大。requential coding
+description: 压缩是智能的核心，能用短码表示训练数据的模型已发现可推广的规律。传统基于参数的方法（如量化）产生的码长随参数量增长，与参数实际承载的信息无关。已有的先验编码（prequential
+  coding）通过压缩训练轨迹来实现压缩，但仍需对原始数据序列编码，若数据熵高则码长仍然很大。requential coding 的关键在于使用教师模型从学生自身的分布中挑选训练样本，学生仅记录这些挑选决策。
 external_url: http://arxiv.org/abs/2607.11883v1
 scenarios:
 - Web应用开发

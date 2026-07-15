@@ -15,8 +15,8 @@ tags:
 categories:
 - 效率与方法论
 source: blogs_podcasts
-description: 背景 神经多样性（如 ADHD、自闭症谱系等）常伴随执行功能缺陷，影响工作记忆、任务组织和时间管理。 AI作为无障碍工具 AI可以实时补足这些缺口：自动安排日程、提醒关键步骤、整理信息流、生成结构化任务列表，从而降低认知负荷。
-  Amazon Quick桌面助理 基于Amazon Quick的桌面AI助手在本地运行，提供
+description: 在这篇文章中，我将分享AI如何作为无障碍工具服务于神经多样性专业人士。该系统基于Amazon Quick——一款运行在您桌面上的AI驱动桌面和网络助手，每天帮助弥补执行功能方面的缺陷。
+  在神经多样性职场中，执行功能的差异常常影响工作效率和职业发展。本文探讨AI助手如何通过Amazon Quick等本地化工具，为需要弥补执行缺陷的专业人士提供即时、可定制的支持。
 external_url: https://aws.amazon.com/blogs/machine-learning/when-your-brain-works-differently-ai-isnt-a-luxury-its-accessibility
 scenarios:
 - AI/ML项目

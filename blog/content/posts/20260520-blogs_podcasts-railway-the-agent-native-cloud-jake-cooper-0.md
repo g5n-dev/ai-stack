@@ -16,9 +16,8 @@ categories:
 - 产品与创业
 - AI 工程
 source: blogs_podcasts
-description: Railway 是一个面向 AI 代理（Agent）原生的云平台，专注于让开发者直接在平台上部署和管理由大模型驱动的自动化任务。它已经拥有
-  3 百万用户，每周新增约 10 万注册，并自建了金属数据中心的硬件基础设施，以保证低延迟和高可用性。Railway 在 AI 代码生成和自动化测试方面投入超过
-  20 万美元，使用自
+description: 300万用户、每周10万注册、自建物理数据中心、超20万美元的编码代理支出，以及PR的消亡 Railway 近期推出了“Agent-Native
+  Cloud”平台，已积累了 300 万用户基础，每周新增注册超过 10 万。为支撑这一规模，团队选择自建物理数据中心，并在编码代理上投入超过 20 万美元。这些数字背后，是一家技术团队对基础设施和开发工作流的重新思考。
 external_url: https://www.latent.space/p/railway
 scenarios:
 - AI/ML项目

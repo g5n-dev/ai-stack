@@ -97,12 +97,12 @@ def monitor_city_status(api_base_url="http://localhost:8000"):
     解决问题：AI决策前需要先了解当前城市状态
     """
     import requests
-    
+
     try:
         # 获取城市状态
         response = requests.get(f"{api_base_url}/city/status")
         data = response.json()
-        
+
         # 格式化输出关键指标
         print(f"""
         === 城市监控报告 ===
@@ -111,13 +111,13 @@ def monitor_city_status(api_base_url="http://localhost:8000"):
         幸福度: {data['happiness']*100:.1f}%
         电力覆盖: {data['power_coverage']*100:.1f}%
         """)
-        
+
         # 简单决策逻辑
         if data['happiness'] < 0.5:
             print("[警告] 幸福度过低！建议建设公园")
         elif data['power_coverage'] < 0.8:
             print("[警告] 电力不足！需要建设发电厂")
-            
+
     except Exception as e:
         print(f"监控失败: {str(e)}")
 
@@ -134,21 +134,21 @@ def auto_zone_development(api_base_url="http://localhost:8000", zone_type="resid
     """
     import requests
     import time
-    
+
     # 区域类型配置
     zone_config = {
         "residential": {"cost": 100, "color": "green"},
         "commercial": {"cost": 150, "color": "blue"},
         "industrial": {"cost": 200, "color": "orange"}
     }
-    
+
     try:
         # 检查资金
         status = requests.get(f"{api_base_url}/city/status").json()
         if status['money'] < zone_config[zone_type]["cost"]:
             print(f"资金不足，无法开发{zone_type}区域")
             return False
-            
+
         # 寻找可用位置（简化版）
         grid = requests.get(f"{api_base_url}/map/grid").json()
         for x in range(10):
@@ -163,13 +163,13 @@ def auto_zone_development(api_base_url="http://localhost:8000", zone_type="resid
                             "type": zone_type
                         }
                     )
-                    
+
                     if response.status_code == 200:
                         print(f"成功在坐标 ({x}, {y}) 开发 {zone_type} 区域")
                         return True
         print("未找到可用的空地")
         return False
-        
+
     except Exception as e:
         print(f"区域开发失败: {str(e)}")
         return False
@@ -183,8 +183,6 @@ def auto_zone_development(api_base_url="http://localhost:8000", zone_type="resid
 
 ### 1：某智慧城市交通管理优化项目
 
- 1：某智慧城市交通管理优化项目
-
 **背景**: 某沿海发达城市的交通管理部门面临日益严峻的交通拥堵问题，尤其是在早晚高峰时段，传统的信号灯配时方案难以适应动态变化的交通流。
 
 **问题**: 人工调整交通信号灯配时效率低下，且缺乏预测性。传统的交通仿真软件（如VISSIM）虽然精确，但计算极其耗时，无法做到实时响应。决策者急需一种能够快速模拟不同策略后果，并能实时干预的自动化决策辅助系统。
@@ -196,8 +194,6 @@ def auto_zone_development(api_base_url="http://localhost:8000", zone_type="resid
 ---
 
 ### 2：大型供应链网络韧性测试平台
-
- 2：大型供应链网络韧性测试平台
 
 **背景**: 一家跨国制造企业拥有覆盖全球的复杂供应链网络。近年来，由于地缘政治和自然灾害频发，供应链中断的风险显著增加。
 
@@ -305,15 +301,11 @@ def auto_zone_development(api_base_url="http://localhost:8000", zone_type="resid
 
 ### 1: 什么是 "Show HN"，这个项目具体是做什么的？
 
-1: 什么是 "Show HN"，这个项目具体是做什么的？
-
 **A**: "Show HN" 是 Hacker News 社区的一个传统标签，用于展示开发者自己独立开发的业余项目或新产品。在这个特定的案例中，开发者创建了一个系统，让 AI 智能体通过 REST API（一种软件接口）来控制经典游戏《模拟城市》。这意味着 AI 不是通过图像识别来“看”屏幕，而是通过代码层面的数据交换来获取城市状态（如人口、资金、电力）并下达指令（如建设道路、规划区域）。
 
 ---
 
 ### 2: AI 智能体是如何通过 REST API 玩游戏的，这与人类玩游戏有何不同？
-
-2: AI 智能体是如何通过 REST API 玩游戏的，这与人类玩游戏有何不同？
 
 **A**: 在这个项目中，游戏模拟器（很可能是《模拟城市》的原版或复刻版）被封装在一个服务器后端，并暴露出一系列 HTTP 接口。AI 智能体作为客户端，不处理图形渲染，而是发送 HTTP 请求来查询游戏状态（例如 GET /city/status）或执行操作（例如 POST /build/residential）。这与人类玩家通过鼠标点击图形界面、观察视觉效果进行操作有本质区别。AI 是基于纯数据、逻辑和数值反馈来进行决策的。
 
@@ -321,15 +313,11 @@ def auto_zone_development(api_base_url="http://localhost:8000", zone_type="resid
 
 ### 3: 使用 REST API 而不是屏幕截图进行控制有什么优势？
 
-3: 使用 REST API 而不是屏幕截图进行控制有什么优势？
-
 **A**: 这种方法通常被称为“工具使用”或“上帝模式”接口，具有显著优势。首先是**效率**，AI 无需运行昂贵的计算机视觉模型来解析屏幕上的像素，可以直接获取精确的结构化数据（如具体的资金数值）。其次是**速度**，绕过图形渲染大大加快了游戏循环的迭代速度，使 AI 能在短时间内模拟更多的游戏年份。最后是**确定性**，消除了视觉噪音或 UI 动画可能带来的误判。
 
 ---
 
 ### 4: 目前这个 AI 智能体的表现如何？它能玩好《模拟城市》吗？
-
-4: 目前这个 AI 智能体的表现如何？它能玩好《模拟城市》吗？
 
 **A**: 根据项目描述，AI 智能体目前主要处于实验阶段。它能够执行基本的游戏循环，比如划分区域、建设道路和发电厂，维持城市的初步运转。然而，《模拟城市》是一个极其复杂的平衡系统，涉及税务、交通流量、犯罪率和环境污染等深层逻辑。目前的 AI 往往难以像熟练的人类玩家那样进行长远的战略规划，通常在游戏中期会因为财政破产或交通瘫痪而失败，但这正是研究 AI 规划能力的有趣案例。
 
@@ -337,23 +325,17 @@ def auto_zone_development(api_base_url="http://localhost:8000", zone_type="resid
 
 ### 5: 这个项目使用了什么技术栈或大模型？
 
-5: 这个项目使用了什么技术栈或大模型？
-
 **A**: 虽然具体的代码实现细节取决于开发者的选择，但此类项目通常使用 Python 编写 AI 控制逻辑。后端可能使用 Node.js、Python (Flask/FastAPI) 或其他语言来封装游戏引擎。在 AI 模型方面，可能会使用具备强大推理能力的闭源模型（如 OpenAI 的 GPT-4 或 Anthropic 的 Claude），或者是开源的微调模型，通过编写特定的 Prompt 或 Function Calling 机制来让模型理解 API 的调用规范。
 
 ---
 
 ### 6: 这个项目的意义是什么，除了玩游戏还有什么应用前景？
 
-6: 这个项目的意义是什么，除了玩游戏还有什么应用前景？
-
 **A**: 除了娱乐和怀旧，这个项目是研究“AI 智能体”在复杂、半封闭系统中决策能力的绝佳沙盒。它模拟了现实世界中的资源管理和城市规划问题。通过观察 AI 如何处理预算削减、人口增长和基础设施维护，研究人员可以改进 AI 的逻辑推理和长期规划能力。这种技术未来可以应用于真实的智慧城市管理、复杂的物流调度系统，或作为自动化系统管理的测试平台。
 
 ---
 
 ### 7: 我可以在自己的电脑上运行这个项目吗？
-
-7: 我可以在自己的电脑上运行这个项目吗？
 
 **A**: 这取决于开发者是否开源了完整的代码。通常这类 Show HN 项目会在 GitHub 上提供仓库链接。如果你想运行它，你需要克隆代码库，按照说明配置游戏服务器环境，并拥有访问所用 AI 模型的 API Key（例如 OpenAI API Key）。需要注意的是，运行 AI 模型调用可能会产生一定的 API 费用，且需要具备基本的编程环境配置能力。
 ## 引用

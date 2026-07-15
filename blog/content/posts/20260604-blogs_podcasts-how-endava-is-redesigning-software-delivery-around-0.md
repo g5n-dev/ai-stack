@@ -16,8 +16,9 @@ categories:
 - AI 工程
 - 效率与方法论
 source: blogs_podcasts
-description: 背景 Endava 正将软件交付流程重新设计，以 AI 为核心，实现更快的价值交付。 核心技术 - **AI 代理**：自主完成代码生成、单元测试、部署脚本等任务。
-  - **ChatGPT Enterprise**：为业务分析、需求撰写、文档生成提供自然语言交互。 - **Codex**：将自然语言描述转化为可执行代码
+description: 了解 Endava 如何运用 AI 代理、ChatGPT Enterprise 和 Codex 加速软件交付、自动化工作流程，并在整个企业中构建
+  AI 原生文化。 在软件开发日益追求快速迭代的背景下，Endava 正在将 AI 代理深度融入交付流程，以 ChatGPT Enterprise 与 Codex
+  为核心，实现工作流的自动化和代码生成的智能化。
 external_url: https://openai.com/index/endava-frontiers
 scenarios:
 - AI/ML项目

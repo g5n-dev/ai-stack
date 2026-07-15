@@ -16,8 +16,8 @@ categories:
 - AI 工程
 - 安全
 source: juejin
-description: 以下是对该内容的简要总结： 本文介绍了LlamaIndex官方提供的一套构建安全、可控AI编码智能体的解决方案，旨在解决开发者对于AI误删代码或执行危险操作的担忧。其核心策略是通过技术手段为智能体构建一个受限且可观测的执行环境。
-  主要技术亮点包括： 1. **AgentFS（虚拟沙盒）**： 这是保障安全的核心组件。通
+description: AI 编码智能体在提升效率的同时，如何确保其对代码库的操作安全可控，是开发者落地时面临的核心挑战。本文深入解析 LlamaIndex 官方方案，展示如何利用
+  AgentFS 虚拟沙盒与 LlamaParse 构建隔离环境。通过解读 Workflow 设计逻辑与 GitHub 实战代码，读者将掌握一套既能发挥智能体威力，又能严守系统安全边界的具体实施路径。
 external_url: https://juejin.cn/post/7606973101920157723
 scenarios:
 - AI/ML项目

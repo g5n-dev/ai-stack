@@ -16,8 +16,8 @@ categories:
 - 大模型
 - 系统与基础设施
 source: blogs_podcasts
-description: NVIDIA 宣布其 **Nemotron 3 Nano 30B** 模型现已正式登陆 **Amazon SageMaker JumpStart**。
-  该模型采用 **混合专家（MoE）** 架构，拥有 **30B** 总参数量，但在实际推理过程中仅激活 **3B** 参数。通过 SageMaker JumpStart
+description: 今天，我们很高兴地宣布，配备 30 亿个活跃参数的 NVIDIA Nemotron 3 Nano 30B 模型现已在 Amazon SageMaker
+  JumpStart 模型目录中全面推出。您可以在 Amazon Web Services (AWS) 上借助 Nemotron 3 Nano 加速创新并创造切实的业务价值，无需管理模型部署的复杂性。
 external_url: https://aws.amazon.com/blogs/machine-learning/nvidia-nemotron-3-nano-30b-is-now-available-in-amazon-sagemaker-jumpstart
 scenarios:
 - AI/ML项目

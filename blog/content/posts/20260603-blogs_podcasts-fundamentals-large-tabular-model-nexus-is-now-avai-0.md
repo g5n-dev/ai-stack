@@ -16,8 +16,8 @@ categories:
 - 大模型
 - AI 工程
 source: blogs_podcasts
-description: Fundamental 的大表格模型 NEXUS 现已在 Amazon SageMaker JumpStart 上线。本文简要介绍在 SageMaker
-  JumpStart 上使用 NEXUS 的流程，包括模型启动、部署和推理步骤。首先在 SageMaker 控制台或 SDK 中找到 NEXUS，选择合适的实例类型并完
+description: 在本文中，我们将向您展示如何在 Amazon SageMaker JumpStart 上开始使用 NEXUS，逐步介绍部署过程，并演示如何针对您的企业数据集运行预测。
+  Fundamental 推出的大型表格模型 NEXUS 现已在 Amazon SageMaker JumpStart 上线，为企业提供了直接在该托管环境中部署和运行高性能预测的能力。
 external_url: https://aws.amazon.com/blogs/machine-learning/fundamentals-large-tabular-model-nexus-is-now-available-on-amazon-sagemaker-jumpstart
 scenarios:
 - Web应用开发

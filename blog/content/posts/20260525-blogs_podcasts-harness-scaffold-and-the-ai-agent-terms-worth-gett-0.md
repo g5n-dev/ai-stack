@@ -16,7 +16,8 @@ categories:
 - AI 工程
 - 大模型
 source: blogs_podcasts
-description: 在快速演进的 AI Agent 领域，harness、scaffold 等概念频繁出现，但它们的定义和使用场景常被混淆。准确把握这些术语不仅帮助团队形成统一语言，还能减少跨部门沟通中的误解。本文将厘清关键概念的边界，并通过实际案例说明它们的适用方式，让读者在项目中能够选择恰当的框架并提升协作效率。通过阅读本文，开发者可
+description: 在快速演进的 AI Agent 领域，harness、scaffold 等概念频繁出现，但它们的定义和使用场景常被混淆。准确把握这些术语不仅帮助团队形成统一语言，还能减少跨部门沟通中的误解。本文将厘清关键概念的边界，并通过实际案例说明它们的适用方式，让读者在项目中能够选择恰当的框架并提升协作效率。通过阅读本文，开发者可以在设计
+  AI 工作流时更具信心，减少因术语歧义导致的重构成本。
 external_url: https://huggingface.co/blog/agent-glossary
 scenarios:
 - AI/ML项目

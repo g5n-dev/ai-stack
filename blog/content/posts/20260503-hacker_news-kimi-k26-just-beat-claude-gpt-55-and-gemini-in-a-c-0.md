@@ -16,7 +16,7 @@ categories:
 - 大模型
 - AI 工程
 source: hacker_news
-description: Kimi K2.6近日在一项编程挑战中超越了Claude、GPT-5.5和Gemini等多个主流大语言模型。测试覆盖代码生成、调试与性能优化等实际开发常见任务，全面评估了各模型在真实场景下的表现。随着AI编程工具的快速迭代，各模型之间的性能差距正逐渐缩小，但对开发者而言，选择最合适的工具仍然需要可靠的数据支撑。通过分析
+description: Kimi K2.6近日在一项编程挑战中超越了Claude、GPT-5.5和Gemini等多个主流大语言模型。测试覆盖代码生成、调试与性能优化等实际开发常见任务，全面评估了各模型在真实场景下的表现。随着AI编程工具的快速迭代，各模型之间的性能差距正逐渐缩小，但对开发者而言，选择最合适的工具仍然需要可靠的数据支撑。
 external_url: https://thinkpol.ca/2026/04/30/an-open-weights-chinese-model-just-beat-claude-gpt-5-5-and-gemini-in-a-programming-challenge
 scenarios:
 - AI/ML项目

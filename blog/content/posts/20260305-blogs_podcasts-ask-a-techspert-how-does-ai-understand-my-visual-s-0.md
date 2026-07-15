@@ -16,8 +16,8 @@ categories:
 - 大模型
 - AI 工程
 source: blogs_podcasts
-description: 这篇文章主要介绍了人工智能（AI）如何理解和处理视觉搜索。作为“科技专家”解释系列的一部分，内容通过通俗易懂的方式，揭示了AI“看”图并理解背后含义的原理。
-  以下是核心内容的总结： **1. AI“看见”图像的原理：从像素到数值** 与人类通过眼睛和大脑神经网络处理视觉信息不同，AI（特别是计算机视觉模型）将图像视为数
+description: 带有搜索栏的手机，显示“Ask anything” 当你在搜索引擎中上传一张图片并提问时，AI 需要完成从像素识别到语义理解的复杂跨越。这不仅是计算机视觉技术的应用，更是多模态大模型将视觉特征转化为逻辑语言的体现。本文将深入解析这一过程的技术原理，帮助你更清晰地理解机器如何“看”懂世界并做出精准回应。
+  这篇文章主要介绍了人工智能（AI）如何理解和处理视觉搜索。
 external_url: https://blog.google/company-news/inside-google/googlers/how-google-ai-visual-search-works
 scenarios:
 - Web应用开发

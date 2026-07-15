@@ -17,7 +17,7 @@ categories:
 - 开发工具
 source: hacker_news
 description: 随着 LLM 应用从单点工具向复杂系统演进，如何协调多个 Agent 在不同工作空间中高效协作，已成为开发者面临的关键挑战。Beehive
-  作为一个多工作空间 Agent 编排工具，旨在解决这一痛点，提供统一的调度与管理能力。本文将介绍其核心架构与功能特性，帮助开发者理解如何利用 Beehive 构建可扩展的智能体工作
+  作为一个多工作空间 Agent 编排工具，旨在解决这一痛点，提供统一的调度与管理能力。本文将介绍其核心架构与功能特性，帮助开发者理解如何利用 Beehive 构建可扩展的智能体工作流。
 external_url: https://storozhenko98.github.io/beehive
 scenarios:
 - Web应用开发

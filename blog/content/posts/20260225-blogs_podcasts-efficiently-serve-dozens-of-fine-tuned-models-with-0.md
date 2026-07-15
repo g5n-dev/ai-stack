@@ -16,8 +16,8 @@ categories:
 - AI 工程
 - 系统与基础设施
 source: blogs_podcasts
-description: 本文介绍了如何在 Amazon SageMaker AI 和 Amazon Bedrock 上利用 vLLM 高效服务多个微调模型。核心内容包括实现针对
-  Mixture of Experts (MoE) 模型的 multi-LoRA 推理，并进行了内核级优化。文中以 GPT-OSS 20B 为主要示例，展示了这些优化带
+description: 在本文中，我们将解释如何在 vLLM 中为混合专家（MoE）模型实现多 LoRA 推理，描述我们所做的内核级优化，并展示您如何从这项工作中受益。全文我们将以
+  GPT-OSS 20B 为主要示例。 随着大模型应用场景的细分，企业往往需要同时维护多个经过微调的模型，但这通常意味着高昂的推理成本与复杂的运维负担。
 external_url: https://aws.amazon.com/blogs/machine-learning/efficiently-serve-dozens-of-fine-tuned-models-with-vllm-on-amazon-sagemaker-ai-and-amazon-bedrock
 scenarios:
 - 大语言模型

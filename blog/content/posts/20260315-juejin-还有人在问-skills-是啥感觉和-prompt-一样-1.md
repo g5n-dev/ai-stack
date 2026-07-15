@@ -16,8 +16,9 @@ categories:
 - 大模型
 - AI 工程
 source: juejin
-description: '**Claude Skills 核心总结：区别于 Prompt 的复用工作流包** 针对“Claude Skills 是否等同于 Prompt”的疑问，核心结论是：**二者本质不同**。
-  **1. 本质区别** * **Prompt（提示词）**：是一次性的指令文本。 * **Skills（技能包）**：是 Claud'
+description: Skills 与 prompt 虽然都用于指令输入，但本质截然不同：Skills 是 Claude 中可复用的工作流包，通过封装流程、资料与模板，让
+  AI 能够稳定执行代码审查等复杂任务。本文将详细解读 Skills 的包结构及其与 MCP、Agent 的区别，并提供五步学习法。阅读后，你将掌握如何通过封装工作流来显著提升
+  AI 的执行效率与稳定性。
 external_url: https://juejin.cn/post/7617156058722009124
 scenarios:
 - AI/ML项目

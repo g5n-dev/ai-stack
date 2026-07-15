@@ -17,7 +17,8 @@ categories:
 - AI 工程
 source: hacker_news
 description: '最近有用户发现，VS Code 在提交代码时会自动在 commit 信息中加入 Co-Authored-By: Copilot，即使项目并未使用
-  Copilot。这类自动插入的元数据会干扰代码审查、版本控制审计以及贡献归属的准确性，影响团队协作。本文将剖析该行为产生的根本原因，提供关闭该选项的具体步骤，并说明如何在保持'
+  Copilot。这类自动插入的元数据会干扰代码审查、版本控制审计以及贡献归属的准确性，影响团队协作。本文将剖析该行为产生的根本原因，提供关闭该选项的具体步骤，并说明如何在保持代码质量的同时安全使用
+  Copilot。'
 external_url: https://github.com/microsoft/vscode/pull/310226
 scenarios:
 - AI/ML项目

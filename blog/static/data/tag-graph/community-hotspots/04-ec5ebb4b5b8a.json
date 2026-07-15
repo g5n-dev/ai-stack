@@ -1,0 +1,509 @@
+{
+  "community_id": "community:tag:移动开发",
+  "generated_at": "2026-07-15T12:45:47Z",
+  "hotspot_limit": 24,
+  "link_limit": 32,
+  "links": [
+    {
+      "id": "edge:cooccurrence:tag:Android->tag:移动开发",
+      "source": "tag:Android",
+      "strength": 1,
+      "target": "tag:移动开发",
+      "type": "cooccurrence",
+      "weight": 3
+    },
+    {
+      "id": "edge:cooccurrence:tag:Android->tag:Kotlin",
+      "source": "tag:Android",
+      "strength": 1,
+      "target": "tag:Kotlin",
+      "type": "cooccurrence",
+      "weight": 2
+    },
+    {
+      "id": "edge:cooccurrence:tag:Kotlin->tag:移动开发",
+      "source": "tag:Kotlin",
+      "strength": 1,
+      "target": "tag:移动开发",
+      "type": "cooccurrence",
+      "weight": 2
+    },
+    {
+      "id": "edge:cooccurrence:tag:Android->tag:Android Bench",
+      "source": "tag:Android",
+      "strength": 0.5,
+      "target": "tag:Android Bench",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Android->tag:Bilibili",
+      "source": "tag:Android",
+      "strength": 0.5,
+      "target": "tag:Bilibili",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Android->tag:JNI",
+      "source": "tag:Android",
+      "strength": 0.5,
+      "target": "tag:JNI",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Android->tag:Jetpack Compose",
+      "source": "tag:Android",
+      "strength": 0.5,
+      "target": "tag:Jetpack Compose",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Android->tag:JuiceSSH",
+      "source": "tag:Android",
+      "strength": 0.5,
+      "target": "tag:JuiceSSH",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Android->tag:MVVM",
+      "source": "tag:Android",
+      "strength": 0.5,
+      "target": "tag:MVVM",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Android->tag:SSH客户端",
+      "source": "tag:Android",
+      "strength": 0.5,
+      "target": "tag:SSH客户端",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Android->tag:付费订阅",
+      "source": "tag:Android",
+      "strength": 0.5,
+      "target": "tag:付费订阅",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Android->tag:模块化架构",
+      "source": "tag:Android",
+      "strength": 0.5,
+      "target": "tag:模块化架构",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Android->tag:第三方客户端",
+      "source": "tag:Android",
+      "strength": 0.5,
+      "target": "tag:第三方客户端",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Android->tag:软件更新",
+      "source": "tag:Android",
+      "strength": 0.5,
+      "target": "tag:软件更新",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Bilibili->tag:Jetpack Compose",
+      "source": "tag:Bilibili",
+      "strength": 0.5,
+      "target": "tag:Jetpack Compose",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Bilibili->tag:Kotlin",
+      "source": "tag:Bilibili",
+      "strength": 0.5,
+      "target": "tag:Kotlin",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Bilibili->tag:MVVM",
+      "source": "tag:Bilibili",
+      "strength": 0.5,
+      "target": "tag:MVVM",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Bilibili->tag:模块化架构",
+      "source": "tag:Bilibili",
+      "strength": 0.5,
+      "target": "tag:模块化架构",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Bilibili->tag:移动开发",
+      "source": "tag:Bilibili",
+      "strength": 0.5,
+      "target": "tag:移动开发",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Bilibili->tag:第三方客户端",
+      "source": "tag:Bilibili",
+      "strength": 0.5,
+      "target": "tag:第三方客户端",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:JNI->tag:Kotlin",
+      "source": "tag:JNI",
+      "strength": 0.5,
+      "target": "tag:Kotlin",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:JNI->tag:移动开发",
+      "source": "tag:JNI",
+      "strength": 0.5,
+      "target": "tag:移动开发",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Jetpack Compose->tag:Kotlin",
+      "source": "tag:Jetpack Compose",
+      "strength": 0.5,
+      "target": "tag:Kotlin",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Jetpack Compose->tag:MVVM",
+      "source": "tag:Jetpack Compose",
+      "strength": 0.5,
+      "target": "tag:MVVM",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Jetpack Compose->tag:模块化架构",
+      "source": "tag:Jetpack Compose",
+      "strength": 0.5,
+      "target": "tag:模块化架构",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Jetpack Compose->tag:移动开发",
+      "source": "tag:Jetpack Compose",
+      "strength": 0.5,
+      "target": "tag:移动开发",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Jetpack Compose->tag:第三方客户端",
+      "source": "tag:Jetpack Compose",
+      "strength": 0.5,
+      "target": "tag:第三方客户端",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:JuiceSSH->tag:SSH客户端",
+      "source": "tag:JuiceSSH",
+      "strength": 0.5,
+      "target": "tag:SSH客户端",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:JuiceSSH->tag:付费订阅",
+      "source": "tag:JuiceSSH",
+      "strength": 0.5,
+      "target": "tag:付费订阅",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:JuiceSSH->tag:移动开发",
+      "source": "tag:JuiceSSH",
+      "strength": 0.5,
+      "target": "tag:移动开发",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:JuiceSSH->tag:软件更新",
+      "source": "tag:JuiceSSH",
+      "strength": 0.5,
+      "target": "tag:软件更新",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Kotlin->tag:MVVM",
+      "source": "tag:Kotlin",
+      "strength": 0.5,
+      "target": "tag:MVVM",
+      "type": "cooccurrence",
+      "weight": 1
+    }
+  ],
+  "nodes": [
+    {
+      "article_count": 5,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:移动开发",
+      "degree": 31,
+      "description": "Android是一种基于Linux内核的开源移动操作系统，广泛应用于智能手机、平板电脑及智能电视等设备，涵盖了应用开发、系统优化及第三方工具生态。",
+      "id": "tag:Android",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Android",
+      "level": 6,
+      "name": "Android",
+      "rank": 389,
+      "related_count": 31,
+      "weighted_degree": 35
+    },
+    {
+      "article_count": 4,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:移动开发",
+      "degree": 25,
+      "description": "Kotlin 是一种运行在 Java 虚拟机上的静态类型编程语言，主要被 Google 官方推荐用于 Android 应用开发，常与 Jetpack Compose、JNI 及 Java 生态紧密相关。",
+      "id": "tag:Kotlin",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Kotlin",
+      "level": 6,
+      "name": "Kotlin",
+      "rank": 515,
+      "related_count": 25,
+      "weighted_degree": 28
+    },
+    {
+      "article_count": 3,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:移动开发",
+      "degree": 18,
+      "description": "移动开发是指针对智能手机、平板电脑等便携式设备进行应用程序构建的技术领域，主要涵盖Android、iOS等平台的UI设计、功能实现及性能优化。",
+      "id": "tag:移动开发",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "移动开发",
+      "level": 6,
+      "name": "移动开发",
+      "rank": 844,
+      "related_count": 18,
+      "weighted_degree": 21
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:移动开发",
+      "degree": 7,
+      "description": "文章标签: Android Bench",
+      "id": "tag:Android Bench",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Android Bench",
+      "level": 6,
+      "name": "Android Bench",
+      "rank": 1978,
+      "related_count": 7,
+      "weighted_degree": 7
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:移动开发",
+      "degree": 7,
+      "description": "Bilibili是国内主流的视频弹幕网站，常涉及Android、Kotlin等开发技术，以及API文档、WebSocket、gRPC等通信协议。",
+      "id": "tag:Bilibili",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Bilibili",
+      "level": 6,
+      "name": "Bilibili",
+      "rank": 2060,
+      "related_count": 7,
+      "weighted_degree": 7
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:移动开发",
+      "degree": 7,
+      "description": "Jetpack Compose是Google推出的Android原生现代UI工具包，采用声明式编程范式简化界面开发，与Kotlin语言深度集成，常用于构建高性能的跨平台移动应用。",
+      "id": "tag:Jetpack Compose",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Jetpack Compose",
+      "level": 6,
+      "name": "Jetpack Compose",
+      "rank": 2506,
+      "related_count": 7,
+      "weighted_degree": 7
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:移动开发",
+      "degree": 7,
+      "description": "JNI 是 Java 本地接口，允许 Java 代码与 C/C++ 等本地代码交互，常用于 Android 客户端开发中实现高性能图像处理或图片加载等底层功能。",
+      "id": "tag:JNI",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "JNI",
+      "level": 6,
+      "name": "JNI",
+      "rank": 2510,
+      "related_count": 7,
+      "weighted_degree": 7
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:移动开发",
+      "degree": 7,
+      "description": "JuiceSSH是一款Android平台上的SSH客户端，支持SFTP等功能。近期因强制下架已付费的Pro功能并转向订阅制，引发了大量用户关于买断制与付费模式的争议。",
+      "id": "tag:JuiceSSH",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "JuiceSSH",
+      "level": 6,
+      "name": "JuiceSSH",
+      "rank": 2516,
+      "related_count": 7,
+      "weighted_degree": 7
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:移动开发",
+      "degree": 7,
+      "description": "MVVM 是一种软件架构模式，旨在通过数据绑定将视图与逻辑解耦，常用于 Android 或跨平台移动应用开发，以提升代码的可维护性与可测试性。",
+      "id": "tag:MVVM",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "MVVM",
+      "level": 6,
+      "name": "MVVM",
+      "rank": 2685,
+      "related_count": 7,
+      "weighted_degree": 7
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:移动开发",
+      "degree": 7,
+      "description": "SSH客户端是用于远程连接和管理服务器的工具，常涉及AWS认证、SFTP文件传输等技术场景，在移动开发中需兼顾功能完整性与用户体验。",
+      "id": "tag:SSH客户端",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "SSH客户端",
+      "level": 6,
+      "name": "SSH客户端",
+      "rank": 3063,
+      "related_count": 7,
+      "weighted_degree": 7
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:移动开发",
+      "degree": 7,
+      "description": "付费订阅是软件通过定期收费提供服务的商业模式，常涉及功能权限划分，与产品争议、用户体验及软件更新策略密切相关。",
+      "id": "tag:付费订阅",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "付费订阅",
+      "level": 6,
+      "name": "付费订阅",
+      "rank": 3466,
+      "related_count": 7,
+      "weighted_degree": 7
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:移动开发",
+      "degree": 7,
+      "description": "模块化架构是一种将复杂系统拆分为高内聚、低耦合独立模块的设计思想，常用于提升Android等移动应用的可维护性与团队协作效率。",
+      "id": "tag:模块化架构",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "模块化架构",
+      "level": 6,
+      "name": "模块化架构",
+      "rank": 5220,
+      "related_count": 7,
+      "weighted_degree": 7
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:移动开发",
+      "degree": 7,
+      "description": "第三方客户端是指非官方开发的软件应用，通常基于逆向工程或开放API构建，旨在提供更优的用户体验或额外功能。这类项目在Android生态中尤为常见，常涉及Kotlin、Jetpack Compose等技术栈，并采用MVVM与模块化架构设计。",
+      "id": "tag:第三方客户端",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "第三方客户端",
+      "level": 6,
+      "name": "第三方客户端",
+      "rank": 5771,
+      "related_count": 7,
+      "weighted_degree": 7
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:移动开发",
+      "degree": 7,
+      "description": "软件更新指应用程序发布的新版本或补丁，常涉及功能优化、漏洞修复或订阅策略调整。相关文章常讨论更新引发的争议、功能变更或技术改进。",
+      "id": "tag:软件更新",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "软件更新",
+      "level": 6,
+      "name": "软件更新",
+      "rank": 6388,
+      "related_count": 7,
+      "weighted_degree": 7
+    }
+  ],
+  "stats": {
+    "total_links": 32,
+    "total_nodes": 14
+  },
+  "version": 2
+}

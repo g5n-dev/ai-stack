@@ -16,7 +16,7 @@ categories:
 - AI 工程
 - 效率与方法论
 source: juejin
-description: OpenSpec 与 Everything-Claude-Code (ECC) 分别解决了 AI 辅助开发中“做什么”与“怎么做”的难题，厘清两者的本质差异是构建高效工作流的前提。本文将深入剖析它们在定位上的互补性，并展示如何将其整合进实际团队协作中。通过阅读，您将掌握一套从规格定义到代码实现的完整落地策略，从而提升研
+description: OpenSpec 与 Everything-Claude-Code (ECC) 分别解决了 AI 辅助开发中“做什么”与“怎么做”的难题，厘清两者的本质差异是构建高效工作流的前提。本文将深入剖析它们在定位上的互补性，并展示如何将其整合进实际团队协作中。通过阅读，您将掌握一套从规格定义到代码实现的完整落地策略，从而提升研发流程的确定性与交付质量。
 external_url: https://juejin.cn/post/7611549704816623642
 scenarios:
 - AI/ML项目

@@ -9,8 +9,8 @@ tags:
 categories:
 - 开源生态
 source: github_trending
-description: '**项目总结：AstrBot** **1. 项目概述** AstrBot 是一个基于 Python 开发的开源智能体（Agentic）聊天机器人基础设施。它旨在作为
-  OpenClaw 的替代方案，提供高度可定制和功能强大的机器人框架。 **2. 核心功能与特性** * **多平台集成**：整合了多种即时通讯（IM）平台'
+description: AstrBot 是一个基于 Python 开发的 Agent 型聊天机器人基础设施，旨在为开发者提供构建智能 IM 应用的底层支持。它集成了多平台适配、大模型调用及插件系统，能够有效解决多端消息管理与功能扩展的复杂性，适合作为
+  OpenClaw 等方案的替代或升级工具。本文将梳理其核心架构特性，并介绍如何通过插件与 AI 能力实现业务逻辑的快速落地。
 external_url: https://github.com/AstrBotDevs/AstrBot
 scenarios:
 - Web应用开发

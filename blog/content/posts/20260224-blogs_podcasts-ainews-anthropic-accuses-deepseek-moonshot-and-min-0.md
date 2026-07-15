@@ -16,8 +16,8 @@ categories:
 - 大模型
 - 安全
 source: blogs_podcasts
-description: Anthropic近日指控DeepSeek、Moonshot和MiniMax三家中国人工智能公司对其模型进行了超过1600万次“工业级蒸馏攻击”。这一事件标志着美中人工智能竞争进一步升级。
-  **核心要点：** 1. **“蒸馏”指控**：Anthropic声称这些中国公司通过大规模自动化查询其模型（如Claude）来提
+description: 美中冷战大幅升级 近期，Anthropic 指控 DeepSeek、Moonshot 及 MiniMax 发起了超过 1600 万次“工业级蒸馏攻击”，这一指控标志着美中
+  AI 领域的竞争已从单纯的技术比拼升级为激烈的安全攻防战。随着模型蒸馏手段被指用于大规模获取核心能力，数据资产的保护与合规正成为行业生存的底线。
 external_url: https://www.latent.space/p/ainews-anthropic-accuses-deepseek
 scenarios:
 - Web应用开发

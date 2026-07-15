@@ -16,7 +16,8 @@ categories:
 - 大模型
 - AI 工程
 source: blogs_podcasts
-description: 在本次访谈中，Andon Labs的Lukas Petersson和Axel Backlund介绍了他们主持的VendingBench项目，围绕从轻量级的Haiku模型到规模最大的Mythos模型的Claude评估展开讨论。他们分享了如何从零搭建前沿、可长期运行的评估体系，包括明确的评估指标、可靠的数据集构建、跨模型对
+description: 我们与VendingBench的作者们聊了聊，讨论如何评估从Haiku到Mythos的各类Claude模型，以及他们是如何从零开始打造领先且持久的前沿评估体系。
+  在模型快速迭代的背景下，如何科学地衡量不同规模的Claude模型性能成为行业关注的焦点。
 external_url: https://www.latent.space/p/andon
 scenarios:
 - AI/ML项目

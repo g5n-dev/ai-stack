@@ -16,8 +16,8 @@ categories:
 - AI 工程
 - 开发工具
 source: juejin
-description: 以下是对文中关于 Claude Code Skills 系统的简洁总结： 核心概念：从通用助手到领域专家 Claude Code 的 **Skills
-  系统**本质上是一种将 AI 从“通用助手”转变为“垂直领域专家”的机制。传统的 AI 使用提示词进行即时交互，而 Skills 则允许用户封装特定的领域知识、工作流和
+description: Claude Code 推出的 Skills 系统为解决 AI 缺乏领域深度的问题提供了新思路。通过渐进式披露架构，用户可以将通用助手训练为具备特定业务逻辑的专家，从而在复杂任务中获得更精准的执行结果。本文将深入解析其核心概念与创建方法，并分享构建高质量
+  Skills 的最佳实践，帮助你真正实现 AI 的定制化落地。 以下是对文中关于 Claude Code Skills 系统的简洁总结…
 external_url: https://juejin.cn/post/7608382961723555890
 scenarios:
 - AI/ML项目

@@ -25,10 +25,6 @@ description: 本文介绍了一种名为TTT-Discover（Test-Time Training to Dis
   核心方法： 与以往（如AlphaEvolve）仅提示冻结大语言模型（LLM）进行搜索不同，TTT-Discover在测试阶段对模型进行强化学习。这使得LLM能够针对当前的具体测试问题继续训练和积累经验。
 ---
 
-## 📚 测试时也能发现新规律？🤯AI解锁动态学习能力！
-
----
-
 ## 📋 基本信息
 
 - **ArXiv ID**: 2601.16175v1
@@ -384,7 +380,7 @@ $$ \theta^* = \theta_0 + \alpha \nabla_\theta \mathbb{E}_{y \sim p_\theta(\cdot|
 - **论文**: MAE (Masked Autoencoders), SimCLR
 - **博客**: Distill.pub 上关于特征可视化和注意力的文章
 
-**学习建议**: 
+**学习建议**:
 在这个阶段，不要急于深入复杂的数学推导，重点理解“预训练-微调”范式的局限性，以及为什么我们需要在测试时让模型去“发现”新知识。
 
 ---
@@ -400,13 +396,13 @@ $$ \theta^* = \theta_0 + \alpha \nabla_\theta \mathbb{E}_{y \sim p_\theta(\cdot|
 **学习时间**: 3-4周
 
 **学习资源**:
-- **核心论文**: 
+- **核心论文**:
   - *Learning to Discover at Test Time* (本文)
   - *Neural Neighbor Search*
   - *Simple Reptile*
 - **代码库**: PyTorch 官方文档，GitHub上的自监督学习实现（如 torchvision.models）
 
-**学习建议**: 
+**学习建议**:
 重点精读 *Learning to Discover at Test Time* 这篇论文。复现其中的核心图示，尝试理解它是如何将测试时的样本作为一个“发现”过程，而不是简单的“分类”过程。
 
 ---
@@ -425,7 +421,7 @@ $$ \theta^* = \theta_0 + \alpha \nabla_\theta \mathbb{E}_{y \sim p_\theta(\cdot|
 - **GitHub**: 搜索相关论文的官方实现（如果有的话）或类似的自监督学习代码库（如 FacebookResearch/dino）。
 - **工具**: Weights & Biases (WandB) 用于实验跟踪，Matplotlib/Seaborn 用于绘图。
 
-**学习建议**: 
+**学习建议**:
 不要一开始就跑全量数据。先用小模型（如ResNet-18）在小数据集（如CIFAR-10）上跑通流程。确保你理解测试时的计算图与前向传播的区别。
 
 ---
@@ -445,7 +441,7 @@ $$ \theta^* = \theta_0 + \alpha \nabla_\theta \mathbb{E}_{y \sim p_\theta(\cdot|
 - **社区**: ArXiv Sanity, Papers with Code
 - **前沿方向**: Test-Time Training (TTT), In-Context Learning in Vision
 
-**学习建议**: 
+**学习建议**:
 尝试提出自己的改进点。例如，目前的Test-time Discovery通常比较耗时，是否能引入缓存机制？或者是否能结合Prompt Learning来引导发现过程？尝试撰写自己的技术博客或开源项目。
 
 ---
@@ -453,15 +449,11 @@ $$ \theta^* = \theta_0 + \alpha \nabla_\theta \mathbb{E}_{y \sim p_\theta(\cdot|
 
 ### 1: 什么是“测试时发现”？
 
-1: 什么是“测试时发现”？
-
 **A**: “测试时发现”是一种机器学习的新范式，旨在解决模型在面对**分布外（OOD）数据**时的适应性问题。传统的模型通常假设训练数据和测试数据是独立同分布的，但在实际应用中，测试数据往往包含训练时未见过的类别或概念。Test-Time Discovery 的目标是在不依赖人工标注的情况下，让模型在推理阶段自动识别、聚类并命名这些未见过的类别或概念。
 
 ---
 
 ### 2: 这篇文章提出的方法与传统的“测试时训练（TTT）”或“测试时适应（TTA）”有什么区别？
-
-2: 这篇文章提出的方法与传统的“测试时训练（TTT）”或“测试时适应（TTA）”有什么区别？
 
 **A**: 这是一个很好的问题。它们的侧重点不同：
 *   **测试时适应**：主要侧重于让模型适应新的数据分布，以保持对**已知类别**的分类性能，防止性能下降。
@@ -473,8 +465,6 @@ $$ \theta^* = \theta_0 + \alpha \nabla_\theta \mathbb{E}_{y \sim p_\theta(\cdot|
 
 ### 3: 该方法如何对未见过的类别进行“命名”？
 
-3: 该方法如何对未见过的类别进行“命名”？
-
 **A**: 这是一个非常有趣的机制。由于模型从未见过新类别，它无法直接输出具体的标签（如“猫”或“狗”）。论文中提出的方法通常利用**大语言模型（LLM）**的先验知识或**视觉-语言模型（如 CLIP）**的文本空间。
 具体来说，模型可能会：
 1.  提取新类别样本的特征。
@@ -485,8 +475,6 @@ $$ \theta^* = \theta_0 + \alpha \nabla_\theta \mathbb{E}_{y \sim p_\theta(\cdot|
 
 ### 4: 该方法对模型架构有什么特殊要求？
 
-4: 该方法对模型架构有什么特殊要求？
-
 **A**: 该方法通常依赖于**视觉-语言模型**或**大语言模型**作为骨干网络。原因在于：
 *   单纯的视觉网络缺乏语义理解能力，难以给新类别赋予有意义的“名称”。
 *   基于 CLIP 或类似的 VLM 模型拥有强大的零样本迁移能力，可以将视觉特征与文本描述对齐，这是实现“发现”并“描述”新事物的关键。因此，该方法通常构建在如 CLIP 等强大的预训练模型之上。
@@ -494,8 +482,6 @@ $$ \theta^* = \theta_0 + \alpha \nabla_\theta \mathbb{E}_{y \sim p_\theta(\cdot|
 ---
 
 ### 5: 这种方法在实际应用中有哪些潜在的风险？
-
-5: 这种方法在实际应用中有哪些潜在的风险？
 
 **A**: 主要风险在于**不可控性和幻觉**。
 *   由于是在测试时进行无监督发现，模型可能会将背景噪声、异常值误判为一个新的“类别”。
@@ -505,8 +491,6 @@ $$ \theta^* = \theta_0 + \alpha \nabla_\theta \mathbb{E}_{y \sim p_\theta(\cdot|
 ---
 
 ### 6: 该方法适用于哪些具体场景？
-
-6: 该方法适用于哪些具体场景？
 
 **A**: 它特别适用于**开放世界**场景，例如：
 *   **自动驾驶**：路上可能会出现训练集中从未见过的新型车辆或障碍物，系统需要实时识别并避让。

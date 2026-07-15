@@ -16,8 +16,8 @@ categories:
 - AI 工程
 - 系统与基础设施
 source: blogs_podcasts
-description: 语音智能体在客户服务场景中的需求快速增长，但实现大规模、低延迟且易于维护的方案仍具挑战。本文深入探讨基于 Amazon Nova Sonic、Bedrock
-  AgentCore 与 Strands BidiAgent 的三种主流架构，剖析各自的优势与取舍，并提供降低响应延迟的实战技巧。阅读后，你将掌握构建可扩展、响应迅
+description: 在这篇文章中，您将学习如何使用 Amazon Nova Sonic、Amazon Bedrock AgentCore 和 Strands
+  BidiAgent 构建可扩展且可维护的语音智能体，从而高效地应对这些挑战，实现更具响应性和智能化的客户互动。我们将探讨语音智能体的三种流行架构模式，重点分析它们的权衡取舍以及降低延迟的最佳实践。
 external_url: https://aws.amazon.com/blogs/machine-learning/scalable-voice-agent-design-with-amazon-nova-sonic-multi-agent-tools-and-session-segmentation
 scenarios:
 - AI/ML项目

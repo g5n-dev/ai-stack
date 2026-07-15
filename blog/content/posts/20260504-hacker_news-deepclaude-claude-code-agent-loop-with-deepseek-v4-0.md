@@ -16,7 +16,7 @@ categories:
 - AI 工程
 - 开发工具
 source: hacker_news
-description: DeepClaude通过将Claude Code的agent循环与DeepSeek V4 Pro进行深度整合，实现了一种兼顾效率与成本的开发新范式。该方案利用模型间的协同能力，在保证代码质量的前提下，将使用成本控制在原来的十七分之一。对于需要频繁依赖AI辅助编程的开发者而言，这意味着可以在预算有限的情况下获得更持续、更
+description: DeepClaude通过将Claude Code的agent循环与DeepSeek V4 Pro进行深度整合，实现了一种兼顾效率与成本的开发新范式。该方案利用模型间的协同能力，在保证代码质量的前提下，将使用成本控制在原来的十七分之一。对于需要频繁依赖AI辅助编程的开发者而言，这意味着可以在预算有限的情况下获得更持续、更稳定的技术支持。
 external_url: https://github.com/aattaran/deepclaude
 scenarios:
 - AI/ML项目

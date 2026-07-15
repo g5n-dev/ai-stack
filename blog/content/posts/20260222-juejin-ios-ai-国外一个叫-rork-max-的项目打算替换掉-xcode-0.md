@@ -16,8 +16,8 @@ categories:
 - AI 工程
 - 开发工具
 source: juejin
-description: 这也是目前市面上很有意思的一个方向，国外一个叫 **Rork Max** 的项目正在尝试通过 AI 技术重新定义 iOS 应用的开发流程，目标直指取代苹果官方的集成开发环境
-  Xcode。 以下是该项目核心内容的总结： **1. 核心理念：浏览器化与 AI 驱动** Rork Max 被宣称为“全球首个在浏览器中构建原生
+description: 随着 AI 不断重塑开发工作流，移动端构建工具的革新成为开发者关注的焦点。国外 Rork 团队推出的 Rork Max 平台，试图通过在浏览器中直接构建原生
+  Swift 应用，打破长期以来 Mac 与 Xcode 的硬件束缚。本文将解析该平台的技术原理与实际表现，探讨它是否真能成为 iOS 开发者的可行替代方案，以及这对现有开发生态可能产生的影响。
 external_url: https://juejin.cn/post/7607565063080083498
 scenarios:
 - AI/ML项目

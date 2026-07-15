@@ -17,7 +17,7 @@ categories:
 - AI 工程
 source: hacker_news
 description: 随着移动端硬件算力的提升，在 iPhone 上运行大型语言模型已不再是遥不可及的设想。Gemma 4 作为轻量级开源模型，针对移动平台进行了专门的优化，使其在设备本地实现高效推理成为可能。本文将详细介绍在
-  iPhone 上部署 Gemma 4 的完整步骤，并评估其在实际使用中的性能表现与功耗表现，为想在移动端尝试大模型
+  iPhone 上部署 Gemma 4 的完整步骤，并评估其在实际使用中的性能表现与功耗表现，为想在移动端尝试大模型的用户提供实用参考。
 external_url: https://apps.apple.com/nl/app/google-ai-edge-gallery/id6749645337
 scenarios:
 - AI/ML项目

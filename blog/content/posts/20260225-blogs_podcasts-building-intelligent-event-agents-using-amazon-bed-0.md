@@ -16,8 +16,9 @@ categories:
 - AI 工程
 - 后端
 source: blogs_podcasts
-description: 本文介绍了如何利用 Amazon Bedrock AgentCore 和 Amazon Bedrock Knowledge Bases 快速构建一个**生产级智能活动助手**。
-  主要内容包括以下三点： 1. **核心功能**：构建一个能够**记住参会者偏好**的智能助手，随着时间推移为用户打造个性化体验。 2. **A
+description: 本文介绍如何利用 Amazon Bedrock AgentCore 的组件，快速部署一款可用于生产环境的活动助理。我们将构建一款能够记住参会者偏好并随时间累积个性化体验的智能助手，同时让
+  Amazon Bedrock AgentCore 承担生产部署的重任：用于维护对话上下文和长期偏好而无需自定义存储方案的 Amazon Bedrock AgentCore
+  Memory，用于安全的多 IDP 身…
 external_url: https://aws.amazon.com/blogs/machine-learning/building-intelligent-event-agents-using-amazon-bedrock-agentcore-and-amazon-bedrock-knowledge-bases
 scenarios:
 - RAG应用

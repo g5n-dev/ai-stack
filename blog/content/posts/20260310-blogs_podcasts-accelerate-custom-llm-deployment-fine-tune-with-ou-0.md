@@ -16,8 +16,8 @@ categories:
 - AI 工程
 - 系统与基础设施
 source: blogs_podcasts
-description: 本文介绍了如何利用 Oumi 在 Amazon EC2 上微调 Llama 模型，并通过 Amazon Bedrock 的自定义模型导入功能进行托管推理部署。
-  主要流程如下： 1. **模型微调**：在 Amazon EC2 实例上使用 Oumi 对 Llama 模型进行微调，并可选择使用 Oumi 生成合成数据以辅助
+description: 在这篇文章中，我们将展示如何在 Amazon EC2 上使用 Oumi 对 Llama 模型进行微调（并可选择使用 Oumi 创建合成数据），将工件存储在
+  Amazon S3 中，并通过自定义模型导入将其部署到 Amazon Bedrock，以实现托管推理。 在构建生成式 AI 应用时，将经过微调的定制模型快速部署至生产环境是许多团队面临的关键挑战。
 external_url: https://aws.amazon.com/blogs/machine-learning/accelerate-custom-llm-deployment-fine-tune-with-oumi-and-deploy-to-amazon-bedrock
 scenarios:
 - 大语言模型

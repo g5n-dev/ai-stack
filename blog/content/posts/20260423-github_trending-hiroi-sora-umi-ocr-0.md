@@ -16,8 +16,7 @@ categories:
 - 开发工具
 - 开源生态
 source: github_trending
-description: 项目概述 Umi‑OCR（仓库 hiroi‑sora/Umi‑OCR）是一款开源、免费、离线的 OCR 工具，使用 Python 编写，GitHub
-  约 45,700 星。项目旨在提供无需网络的文字识别能力，支持截屏、批量图片、PDF 文档以及二维码处理。 核心功能 - **截屏 OCR**：快速捕获屏幕文本，适合即时
+description: Umi-OCR是一款开源、离线的OCR工具，基于Python开发，提供截屏、批量图片导入以及PDF文档的文字识别功能。它在本地完成识别，不依赖云服务，适合对数据隐私有要求或需要在无网络环境下工作的用户。项目内置多语言库，支持排除水印、页眉页脚以及二维码的扫描与生成。本文将依次介绍安装部署、核心功能使用以及进阶配置，帮助读者快速上手并充分利用该工具。
 external_url: https://github.com/hiroi-sora/Umi-OCR
 scenarios:
 - 计算机视觉

@@ -17,7 +17,7 @@ categories:
 - 大模型
 source: hacker_news
 description: 随着企业对 AI 应用的需求日益复杂，单一的技术交付已难以满足业务落地的全部挑战。Anthropic 正式推出 Claude 合作伙伴网络，旨在通过连接全球顶尖的咨询与技术伙伴，将
-  Claude 的能力深度整合至企业工作流中。本文将详细解读该网络的运作模式与核心成员，并说明企业如何借助这一生态加速实现 AI 的规模化部
+  Claude 的能力深度整合至企业工作流中。本文将详细解读该网络的运作模式与核心成员，并说明企业如何借助这一生态加速实现 AI 的规模化部署与价值落地。
 external_url: https://www.anthropic.com/news/claude-partner-network
 scenarios:
 - AI/ML项目

@@ -124,10 +124,10 @@ def parse_pr_diff(diff_text):
         包含AI贡献标注的字典列表
     """
     import re
-    
+
     ai_keywords = ['AI Generated', 'Auto-generated', 'Copilot', 'ChatGPT']
     ai_contributions = []
-    
+
     for line in diff_text.split('\n'):
         if line.startswith('+') and any(keyword in line for keyword in ai_keywords):
             contribution = {
@@ -136,7 +136,7 @@ def parse_pr_diff(diff_text):
                 'confidence': 'high' if 'ChatGPT' in line else 'medium'
             }
             ai_contributions.append(contribution)
-    
+
     return ai_contributions
 
 # 测试用例
@@ -167,15 +167,15 @@ def calculate_ai_contribution_ratio(diff_text):
     total_lines = 0
     ai_lines = 0
     ai_keywords = ['AI Generated', 'Auto-generated', 'Copilot', 'ChatGPT']
-    
+
     for line in diff_text.split('\n'):
         if line.startswith('+'):
             total_lines += 1
             if any(keyword in line for keyword in ai_keywords):
                 ai_lines += 1
-    
+
     ratio = ai_lines / total_lines if total_lines > 0 else 0
-    
+
     return {
         'total_lines': total_lines,
         'ai_lines': ai_lines,
@@ -210,23 +210,23 @@ def generate_ai_contribution_report(pr_data):
     === AI Contribution Report for PR #{pr_data['number']} ===
     Title: {pr_data['title']}
     Author: {pr_data['author']}
-    
+
     AI Contributions:
     """
-    
+
     for contribution in pr_data['ai_contributions']:
         report += f"""
     - Line: {contribution['line']}
       Type: {contribution['type']}
       Confidence: {contribution['confidence']}
     """
-    
+
     report += f"""
     Summary:
     Total AI Contributions: {len(pr_data['ai_contributions'])}
     AI Ratio: {pr_data['ai_ratio']}%
     """
-    
+
     return report
 
 # 测试用例
@@ -249,8 +249,6 @@ print(generate_ai_contribution_report(pr_data))
 
 ### 1：某大型金融科技公司内部平台研发团队
 
- 1：某大型金融科技公司内部平台研发团队
-
 **背景**:
 该团队负责维护核心交易系统的后端服务，团队规模约 50 人。随着 Copilot 等 AI 编程助手的普及，代码库中 AI 生成代码的比例逐渐上升。虽然开发效率提升了，但 Code Review（代码审查）的压力也随之增大。
 
@@ -269,8 +267,6 @@ print(generate_ai_contribution_report(pr_data))
 
 ### 2：一家中型 SaaS 创业公司的工程部门
 
- 2：一家中型 SaaS 创业公司的工程部门
-
 **背景**:
 该公司采用全员远程办公模式，技术栈包含大量 Python 自动化脚本和 Web API。为了加速迭代，管理层鼓励开发者全面使用 AI 编程工具。然而，代码库中开始出现风格不一致、注释缺失甚至包含过时 API 调用的情况。
 
@@ -288,8 +284,6 @@ CTO 在审查代码时发现，不同初级开发者对 AI 输出结果的依赖
 ---
 
 ### 3：某开源基础架构库维护团队
-
- 3：某开源基础架构库维护团队
 
 **背景**:
 这是一个活跃的开源项目，拥有数百名外部贡献者。项目维护者非常看重代码的安全性和许可证合规性。随着 AI 工具的普及，外部提交的 PR 中开始混入由 AI 生成的、可能包含潜在侵权代码或存在安全漏洞的片段。
@@ -414,15 +408,11 @@ CTO 在审查代码时发现，不同初级开发者对 AI 输出结果的依赖
 
 ### 1: 这个 GitHub 浏览器插件的主要功能是什么？
 
-1: 这个 GitHub 浏览器插件的主要功能是什么？
-
 **A**: 该插件的主要功能是在 GitHub 的 Pull Request（PR）页面中，利用人工智能技术对代码变更进行“归因”分析。它能够识别并高亮显示某段特定代码变更的原始作者或贡献者，帮助审查者快速了解代码的历史背景，判断是由人类编写的还是由 AI 生成的，从而提高代码审查的效率和透明度。
 
 ---
 
 ### 2: 这个插件支持哪些浏览器？
-
-2: 这个插件支持哪些浏览器？
 
 **A**: 目前该插件主要支持基于 Chromium 内核的现代浏览器，包括 Google Chrome、Microsoft Edge、Brave 以及 Opera 等。用户通常可以在 Chrome Web Store 或其他相应的浏览器扩展商店中搜索并安装。关于 Firefox 或 Safari 的支持情况，建议查阅该项目的官方 GitHub 仓库说明文档，以获取最新的兼容性信息。
 
@@ -430,15 +420,11 @@ CTO 在审查代码时发现，不同初级开发者对 AI 输出结果的依赖
 
 ### 3: 插件是如何判断代码是由 AI 生成的还是人工编写的？
 
-3: 插件是如何判断代码是由 AI 生成的还是人工编写的？
-
 **A**: 插件通常结合了静态代码分析和本地或云端的大语言模型（LLM）来判断。它会分析代码的语法结构、命名习惯、逻辑复杂度以及与已知 AI 生成模式的相似度。此外，它还会检查提交信息、作者身份等元数据。如果检测到代码风格高度一致、缺乏特定上下文适应性或符合常见的 AI 输出模式，插件可能会提示该代码片段极有可能由 AI 辅助生成。
 
 ---
 
 ### 4: 使用该插件会泄露我的私有代码库数据吗？
-
-4: 使用该插件会泄露我的私有代码库数据吗？
 
 **A**: 这取决于插件的实现方式。如果该插件是完全“本地化”运行的，即所有分析都在浏览器本地完成，不将代码片段发送到外部服务器，那么风险较低。然而，如果插件依赖云端 API 进行 AI 分析，则存在代码数据被上传的风险。在安装和使用任何此类工具前，强烈建议阅读其隐私政策，确认其数据处理方式，并检查是否具备“仅本地运行”或“企业私有化部署”的选项。
 
@@ -446,23 +432,17 @@ CTO 在审查代码时发现，不同初级开发者对 AI 输出结果的依赖
 
 ### 5: 我可以在企业内部的 GitHub Enterprise Server 上使用这个插件吗？
 
-5: 我可以在企业内部的 GitHub Enterprise Server 上使用这个插件吗？
-
 **A**: 大多数浏览器插件通过检测当前页面的 URL 结构来激活。如果该插件允许用户配置目标域名，或者能够识别 `github.com` 的自托管变体（如 `github.your-company.com`），那么理论上是可以使用的。但需要注意网络连接限制，如果插件需要连接外部 AI 服务，企业防火墙可能会阻止请求；如果是纯本地分析模型，则通常不受影响。
 
 ---
 
 ### 6: 这个插件对 PR 审查流程具体有什么帮助？
 
-6: 这个插件对 PR 审查流程具体有什么帮助？
-
 **A**: 它解决了现代开源开发中“幽灵贡献”的问题。随着 Copilot 等工具的普及，审查者往往难以确定 PR 中的代码是否由申请者本人编写。该插件通过揭示代码的真实来源（例如：直接复制自其他仓库、由 AI 生成或确实是原创），帮助维护者更公平地评估贡献者的实际技术水平，防止通过 AI 自动化生成代码来“刷”贡献值的行为。
 
 ---
 
 ### 7: 如果插件误判了代码来源，我该怎么办？
-
-7: 如果插件误判了代码来源，我该怎么办？
 
 **A**: AI 分析工具并非 100% 准确，可能会产生误报。如果插件错误地将人工编写的复杂逻辑标记为 AI 生成，或者未能识别出明显的 AI 复制粘贴，审查者不应完全依赖插件的判定。建议将其作为辅助参考工具，而非最终的仲裁者。大多数此类插件也提供了反馈机制，允许用户在界面上纠正错误，从而帮助改进模型的准确度。
 ## 引用

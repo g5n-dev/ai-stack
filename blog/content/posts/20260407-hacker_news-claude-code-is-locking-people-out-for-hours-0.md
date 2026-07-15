@@ -16,7 +16,7 @@ categories:
 - 开发工具
 - 产品与创业
 source: hacker_news
-description: Claude Code 是 Anthropic 推出的 AI 编程助手，近日大量用户反馈在执行关键任务时账户被强制登出，导致数小时的工作被迫中断。该问题主要出现在批量代码生成和长时间会话场景，官方已确认是后端令牌刷新机制的缺陷。为帮助受影响用户快速恢复工作，本文梳理了故障触发条件、临时规避措施以及官方后续修复时间线，并
+description: Claude Code 是 Anthropic 推出的 AI 编程助手，近日大量用户反馈在执行关键任务时账户被强制登出，导致数小时的工作被迫中断。该问题主要出现在批量代码生成和长时间会话场景，官方已确认是后端令牌刷新机制的缺陷。为帮助受影响用户快速恢复工作，本文梳理了故障触发条件、临时规避措施以及官方后续修复时间线，并提供了可操作的排查步骤和替代方案。
 external_url: https://github.com/anthropics/claude-code/issues/44257
 scenarios:
 - AI/ML项目

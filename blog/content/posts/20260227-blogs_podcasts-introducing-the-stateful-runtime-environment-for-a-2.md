@@ -16,9 +16,8 @@ categories:
 - AI 工程
 - 系统与基础设施
 source: blogs_podcasts
-description: 以下是对该内容的中文简洁总结： **标题：Amazon Bedrock 推出基于 OpenAI 的 Agent 有状态运行时环境** **核心内容：**
-  Amazon Bedrock 发布了针对 Agent 的有状态运行时环境。该功能将持久化编排、记忆能力以及安全执行机制引入了由 OpenAI 驱动的多步骤 AI
-  工作
+description: Amazon Bedrock 中适用于 Agent 的有状态运行时为由 OpenLab 驱动的多步骤 AI 工作流带来持久编排、记忆和安全执行。
+  随着 AI 应用从简单的单次交互转向复杂的多步骤工作流，如何维护上下文状态与执行一致性成为关键挑战。
 external_url: https://openai.com/index/introducing-the-stateful-runtime-environment-for-agents-in-amazon-bedrock
 scenarios:
 - AI/ML项目

@@ -16,8 +16,8 @@ categories:
 - 大模型
 - 开源生态
 source: blogs_podcasts
-description: GLM-5.2 通过 vibe check GLM‑5.2 在业界 vibe check 中获得普遍认可，被认为性能已与 GPT 相当甚至更优，标志着开源模型从概念验证正式迈入前沿竞争阶段。
-  Z.ai 的 Open Fable 预测 Z.ai 预计将在 12 月推出 Open Fable，可能进一步提升开源模型的生态竞
+description: 随着 GLM-5.2 通过了大家的"氛围检验"，开源模型的故事终于真正成为了一个前沿故事。 随着GLM-5.2在社区“氛围检验”中脱颖而出，开源模型与大模型GPT的竞争格局正式进入新阶段。Z.ai同时预告将于年底推出Open
+  Fable，意图进一步丰富开放生态的技术栈。读者可以通过本文了解GLM-5.2的核心改进、实测表现以及Open Fable的可能走向，为后续技术选型提供参考。
 external_url: https://www.latent.space/p/ainews-glm-gpt-glm-52-passes-vibe
 scenarios:
 - AI/ML项目

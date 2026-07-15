@@ -16,8 +16,8 @@ categories:
 - 大模型
 - AI 工程
 source: blogs_podcasts
-description: 背景 随着大规模语言模型在多步推理和长程规划任务中的需求增长，单层循环往往难以兼顾快速局部更新和全局策略调整，导致训练不稳定或推理效率低下。
-  核心思想 Loopcraft 将“循环”抽象为可组合的基本模块，提出通过 **堆叠循环**（stacking loops）来实现层次化控制。具体做法是让内层循环负责细粒度的快速迭
+description: 安静的一天让我们得以突出来自Peter Steinberger、Boris Cherny和Andrej Karpathy的伟大概念 循环是AI模型中常见的计算模式，其堆叠方式直接影响模型的表达能力和计算效率。本期AINews精选了Peter
+  Steinberger、Boris Cherny和Andrej Karpathy在循环堆叠领域的核心思路，涵盖理论基础与实践策略。
 external_url: https://www.latent.space/p/ainews-loopcraft-the-art-of-stacking
 scenarios:
 - 大语言模型

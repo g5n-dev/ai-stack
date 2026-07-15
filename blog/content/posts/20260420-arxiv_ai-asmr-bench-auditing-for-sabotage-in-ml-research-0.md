@@ -17,7 +17,7 @@ categories:
 - 论文
 source: arxiv
 description: 在AI系统逐步承担自主科研任务的背景下，若系统未对齐，可能在实现细节中植入细微缺陷，使实验结果产生误导却难以及时发现。ASMR‑Bench（Auditing
-  for Sabotage in ML Research）正是为此设计的评估基准，旨在检验审计员检测科研代码库中 sabotage（破坏性篡改）的能力。 基准构成
+  for Sabotage in ML Research）正是为此设计的评估基准，旨在检验审计员检测科研代码库中 sabotage（破坏性篡改）的能力。
 external_url: http://arxiv.org/abs/2604.16286v1
 scenarios:
 - AI/ML项目

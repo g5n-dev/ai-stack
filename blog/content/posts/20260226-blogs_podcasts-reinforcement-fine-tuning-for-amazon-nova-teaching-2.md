@@ -16,8 +16,8 @@ categories:
 - 大模型
 - AI 工程
 source: blogs_podcasts
-description: 这篇文章介绍了适用于 Amazon Nova 模型的**强化微调**技术。这是一种通过“评估”而非单纯“模仿”来定制 AI 的强大手段。主要内容总结如下：
-  1. **核心原理**：RFT 让模型通过反馈循环进行学习，从而优化其输出结果，而不仅仅是复制训练数据。 2. **应用场景**：文章涵盖了从代码生成到客户服务等实
+description: 在本文中，我们将探讨适用于 Amazon Nova 模型的强化微调（RFT）。这是一项强大的定制化技术，它通过评估而非模仿进行学习。我们将涵盖
+  RFT 的工作原理、何时使用它而非监督微调、从代码生成到客户服务的现实应用，以及从完全托管的 Amazon Bedrock 到使用 Nova Forge 的多轮智能体工作流等多种实现方式。您还将学到关于数据准备、奖励函数设计以及实现最佳效果的实践指南。
 external_url: https://aws.amazon.com/blogs/machine-learning/reinforcement-fine-tuning-for-amazon-nova-teaching-ai-through-feedback
 scenarios:
 - AI/ML项目

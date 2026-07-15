@@ -16,8 +16,8 @@ categories:
 - AI 工程
 - 系统与基础设施
 source: blogs_podcasts
-description: 背景 传统 REST 服务在企业内大量遗留，业务逻辑已成熟，若重新构建为原生代理（A2A）成本高、风险大。 代理包装（Agentic Overlay）思路
-  在不改动现有代码的前提下，用轻量包装层把 REST 接口转化为具备 A2A 交互能力的代理，并将其暴露为符合 Model Context Protocol (MCP
+description: 在这份AWS与技术作者之间的技术合作中，我们提出了一个务实的解决方案：代理覆盖层（agentic overlays）。代理覆盖层是轻量级包装层，可将传统的基于REST的服务转换为能够参与A2A（智能体间）交互的代理。同时，它们还将REST
+  API暴露为与模型上下文协议（MCP）兼容的工具。
 external_url: https://aws.amazon.com/blogs/machine-learning/retrofit-dont-rebuild-agentic-overlays-for-transforming-legacy-enterprise-services
 scenarios:
 - AI/ML项目

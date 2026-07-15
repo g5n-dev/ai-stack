@@ -16,9 +16,8 @@ categories:
 - 大模型
 - AI 工程
 source: blogs_podcasts
-description: 这段内容主要传达了 OpenAI 在前沿智能体评估领域的一个重要进展和转折： 1. **核心事件**：OpenAI 宣布 **SWE-Bench
-  Verified 的终结**。这标志着该特定基准测试（用于验证软件工程代码修复能力）已不再被视为衡量 AI 智能体能力的最前沿标准。 2. **背景与意义**：由
-  Mia G
+description: 是时候在智能体前沿评估上迈出下一步了。 随着 SWE-Bench Verified 逐渐成为衡量代码智能体能力的标准基准，单纯依赖该数据集已难以全面反映模型在复杂环境中的真实表现。OpenAI
+  的 Mia Glaese 与 Olivia Watkins 在本文中探讨了现有评估方法的局限性，并提出了在智能体前沿评估上迈出下一步的必要性。
 external_url: https://www.latent.space/p/swe-bench-dead
 scenarios:
 - AI/ML项目

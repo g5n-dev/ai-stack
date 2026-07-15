@@ -16,8 +16,8 @@ categories:
 - 大模型
 - 论文
 source: juejin
-description: 由于提供的内容在“为了从纯噪声中 ‘雕刻’ 出清晰的”处中断，基于现有部分，以下是关于 ArcFlow 技术的简要总结： **ArcFlow：用“非线性”魔法实现生成式AI推理40倍加速**
-  在生成式 AI 领域，虽然 Stable Diffusion、FLUX 和 Qwen-Image 等大规模扩散模型带来了画质飞跃
+description: 随着 FLUX、Qwen 等大规模扩散模型的涌现，生成式 AI 在画质与能力上实现了显著飞跃，但随之而来的算力开销也成为了落地的主要瓶颈。ArcFlow
+  提出了一种基于非线性流匹配的解决方案，仅需保留 5% 的参数即可完成训练，并将推理速度提升 40 倍。本文将深入解析其技术原理，探讨它是如何在大幅降低计算成本的同时，维持模型原有的生成质量。
 external_url: https://juejin.cn/post/7609939326843715611
 scenarios:
 - AI/ML项目

@@ -15,9 +15,9 @@ tags:
 categories:
 - AI 工程
 source: juejin
-description: 概述 单一远程 MCP Server 只能提供一类工具，限制了 Agent 的交互深度。通过 LangChain 的 MultiServer
-  机制，可将高德地图、Chrome DevTools、文件系统等多个远程服务统一包装成一个工具集合，让 Agent 在一次请求中并行调用它们，完成跨平台、跨模态的复杂任务。
-  关键技
+description: 在构建复杂 Agent 应用时，单一工具的能力往往难以满足实际需求。本文探讨如何通过 MCP（Model Context Protocol）将高德地图、Chrome
+  DevTools 和文件系统等远程服务组合起来，让 Agent 能够协同调用多种能力完成跨平台任务。读者将了解 MultiServer 模式的实现思路，掌握在
+  LangChain 中配置和管理多个 MCP Server 的具体方法。
 external_url: https://juejin.cn/post/7661821409981153315
 scenarios:
 - AI/ML项目

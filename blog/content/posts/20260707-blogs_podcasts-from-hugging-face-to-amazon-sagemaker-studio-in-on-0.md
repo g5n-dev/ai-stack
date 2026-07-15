@@ -15,7 +15,7 @@ tags:
 categories:
 - AI 工程
 source: blogs_podcasts
-description: 本文介绍如何通过一键操作将 Hugging Face 模型导入 Amazon SageMaker Studio，涵盖环境配置、脚本自动生成以及模型部署的关键步骤。随着云端机器学习平台对预训练模型需求的增长，快速实现从模型库到实际服务的无缝衔接变得尤为重要。阅读后，读者可以掌握完整的实操流程，省去手动配置的时间成本，并了
+description: 本文介绍如何通过一键操作将 Hugging Face 模型导入 Amazon SageMaker Studio，涵盖环境配置、脚本自动生成以及模型部署的关键步骤。随着云端机器学习平台对预训练模型需求的增长，快速实现从模型库到实际服务的无缝衔接变得尤为重要。阅读后，读者可以掌握完整的实操流程，省去手动配置的时间成本，并了解常见的性能调优技巧。
 external_url: https://huggingface.co/blog/amazon/one-click-to-sagemaker-studio
 scenarios:
 - Web应用开发

@@ -16,8 +16,8 @@ categories:
 - AI 工程
 - 后端
 source: juejin
-description: 这是一篇关于 LangChain 进阶实战的简洁总结： 核心主题：结合 Memory（记忆）与 OutputParser（输出解析），打造既有记忆又能输出结构化数据的
-  AI 助手。 1. 背景与痛点 当前的 LLM 应用开发常面临两个极端的困境： * **“记性好的话痨”**：类似 ChatBot，拥有良好的上下文记忆
+description: 在构建 LLM 应用时，开发者往往需要在“上下文连贯性”与“输出结构化”之间做出取舍。LangChain 的 Memory 组件擅长维持对话状态，而
+  OutputParser 则能确保数据格式规范。本文将探讨如何将两者结合，通过实战案例展示如何构建既具备长期记忆能力，又能输出精准结构化数据的智能助手，帮助读者突破单一功能的限制，提升应用落地的可控性与实用性。
 external_url: https://juejin.cn/post/7605051978872078355
 scenarios:
 - AI/ML项目
@@ -82,8 +82,6 @@ source_support: 0.0
 
 ### 1: 为什么 LangChain 的 Memory 组件与 OutputParser 结合使用时会报错？
 
-1: 为什么 LangChain 的 Memory 组件与 OutputParser 结合使用时会报错？
-
 **A**: 这是最常见的问题之一。原因在于标准 Memory 组件（如 `ConversationBufferMemory`）默认将历史记录作为字符串注入到 Prompt 中。然而，`OutputParser` 通常需要 LLM 返回特定格式的字符串（如 JSON），并且会在 Prompt 中添加格式指令。
 
 当 LLM 试图同时满足“输出 JSON 格式”和“像人类一样自然对话”这两个冲突的指令时，往往会失败，或者输出的 JSON 被包裹在对话文本中，导致解析器无法识别。
@@ -95,8 +93,6 @@ source_support: 0.0
 
 
 ### 2: 如何在保留对话历史的同时，强制 LLM 输出符合 Pydantic 模型的结构化数据？
-
-2: 如何在保留对话历史的同时，强制 LLM 输出符合 Pydantic 模型的结构化数据？
 
 **A**: 要实现这一点，你需要构建一个支持历史消息记录的 Prompt Template。具体步骤如下：
 
@@ -112,8 +108,6 @@ source_support: 0.0
 
 ### 3: 当 LLM 输出的格式不符合 OutputParser 的要求时（例如多说了几句废话），如何处理？
 
-3: 当 LLM 输出的格式不符合 OutputParser 的要求时（例如多说了几句废话），如何处理？
-
 **A**: 这是实战中非常头疼的问题。如果 LLM 在 JSON 代码块前后添加了解释性文字，标准的 Parser 会直接抛出错误。
 
 有几种解决方案：
@@ -125,8 +119,6 @@ source_support: 0.0
 
 
 ### 4: 在长对话中，Memory 占用的 Token 越来越多，导致超过上下文限制或成本过高，怎么优化？
-
-4: 在长对话中，Memory 占用的 Token 越来越多，导致超过上下文限制或成本过高，怎么优化？
 
 **A**: 简单的 `ConversationBufferMemory` 会无限制地存储历史。对于结构化输出场景，建议使用以下更高级的 Memory 类型：
 
@@ -140,8 +132,6 @@ source_support: 0.0
 
 ### 5: 如何验证 OutputParser 提取出的结构化数据是否符合业务逻辑？
 
-5: 如何验证 OutputParser 提取出的结构化数据是否符合业务逻辑？
-
 **A**: Pydantic 模型本身提供了数据验证功能（如类型检查、必填字段）。但针对业务逻辑验证，你可以利用 Pydantic 的 **Validators**。
 
 例如，如果你要求用户输入年龄，模型提取了数字，但你想确保年龄是合理的（如 0-120 之间），你可以在 Pydantic 模型中添加 `@field_validator` 或 `@root_validator`。如果 LLM 输出的数据不符合验证逻辑，Pydantic 会抛出 `ValidationError`，你可以在代码中捕获该错误并提示用户重新输入，或者让 LLM 重试。
@@ -151,8 +141,6 @@ source_support: 0.0
 
 
 ### 6: LangChain 的 LCEL (LangChain Expression Language) 语法中，如何优雅地将 Memory 传入链中？
-
-6: LangChain 的 LCEL (LangChain Expression Language) 语法中，如何优雅地将 Memory 传入链中？
 
 **A**: 在 LCEL 语法中，不再像旧版 Chain 那样直接在初始化时传入 `memory` 参数。你需要显式地处理历史记录。
 

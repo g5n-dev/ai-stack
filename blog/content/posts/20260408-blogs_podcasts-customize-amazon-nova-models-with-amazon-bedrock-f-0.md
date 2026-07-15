@@ -16,8 +16,7 @@ categories:
 - 大模型
 - AI 工程
 source: blogs_podcasts
-description: 在 Amazon Bedrock 上使用 Amazon Nova 模型进行微调，通过意图分类器示例展示完整流程。首先准备高质量、特定领域的训练数据，确保标注准确且覆盖关键场景，以驱动模型显著提升。随后配置学习率、批量大小、正则化等超参数，平衡学习速度与过拟合风险。完成训练后，将微调模型部署至
-  Bedrock，实现更高准
+description: 在这篇文章中，我们将带您完整体验使用Amazon Nova模型在Amazon Bedrock中进行模型微调的全流程，通过一个意图分类器示例演示每个步骤，该示例在特定领域的任务中实现了卓越的性能。在本指南中，您将学习如何准备高质量的训练数据以推动模型实现实质性改进，如何配置超参数以优化学习同时避免过拟合，以及如何部署微调后的模型以提高准确性并降低延迟。
 external_url: https://aws.amazon.com/blogs/machine-learning/customize-amazon-nova-models-with-amazon-bedrock-fine-tuning
 scenarios:
 - Web应用开发

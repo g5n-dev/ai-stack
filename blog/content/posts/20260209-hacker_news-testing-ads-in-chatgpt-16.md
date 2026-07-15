@@ -113,7 +113,7 @@ def simulate_ad_ctr(ad_name, impressions, clicks):
     if impressions == 0:
         print(f"{ad_name} 没有展示数据")
         return 0
-    
+
     ctr = (clicks / impressions) * 100
     print(f"{ad_name} 广告展示 {impressions} 次，获得 {clicks} 次点击")
     print(f"点击率(CTR): {ctr:.2f}%")
@@ -136,7 +136,7 @@ def compare_ad_performance(ad_a, ad_b):
     print(f"\nA/B测试结果比较:")
     print(f"广告A点击率: {ad_a:.2f}%")
     print(f"广告B点击率: {ad_b:.2f}%")
-    
+
     if ad_a > ad_b:
         winner = "广告A"
         improvement = ((ad_a - ad_b) / ad_b) * 100
@@ -146,7 +146,7 @@ def compare_ad_performance(ad_a, ad_b):
     else:
         winner = "平局"
         improvement = 0
-    
+
     print(f"获胜者: {winner}")
     if winner != "平局":
         print(f"提升幅度: {improvement:.2f}%")
@@ -169,14 +169,14 @@ def visualize_ad_performance(ad_data):
     """
     plt.figure(figsize=(10, 6))
     bars = plt.bar(ad_data.keys(), ad_data.values(), color=['skyblue', 'lightgreen', 'salmon'])
-    
+
     # 添加数值标签
     for bar in bars:
         height = bar.get_height()
         plt.text(bar.get_x() + bar.get_width()/2., height,
                  f'{height:.2f}%',
                  ha='center', va='bottom')
-    
+
     plt.title('广告点击率(CTR)比较', fontsize=14)
     plt.xlabel('广告名称', fontsize=12)
     plt.ylabel('点击率(%)', fontsize=12)
@@ -198,8 +198,6 @@ visualize_ad_performance(ad_performance)
 
 ### 1：全球知名旅游预订平台
 
- 1：全球知名旅游预订平台
-
 **背景**:
 该平台拥有数百万活跃用户，其核心业务依赖于搜索引擎营销（SEM）和展示广告。由于旅游行业竞争激烈，且关键词点击成本（CPC）极高，传统的广告文案创作流程（由文案团队撰写、A/B测试、迭代）往往需要数周时间，无法及时响应季节性趋势或突发热点（如节假日、天气变化）。
 
@@ -220,8 +218,6 @@ visualize_ad_performance(ad_performance)
 ---
 
 ### 2：DTC（直接面向消费者）时尚电商品牌
-
- 2：DTC（直接面向消费者）时尚电商品牌
 
 **背景**:
 这是一个主要针对千禧一代和 Z 世代的快时尚品牌，高度依赖社交媒体广告（Instagram, TikTok）和原生广告。该群体的口味变化极快，且对“硬广”有天然的抵触情绪，要求广告内容必须具备高度的个性化、娱乐性和真实感。
@@ -348,15 +344,11 @@ visualize_ad_performance(ad_performance)
 
 ### 1: ChatGPT 开始测试广告了吗？
 
-1: ChatGPT 开始测试广告了吗？
-
 **A**: 是的，根据近期在社交媒体（如 Hacker News）上的用户反馈和截图，OpenAI 已开始在 ChatGPT 中测试广告。部分用户在使用 ChatGPT 搜索某些特定话题（如旅游、生活服务等）时，会在回复结果中看到带有“Sponsored”（赞助）或“Ad”（广告）标签的内容。这标志着 OpenAI 正在探索通过广告变现的可行性。
 
 ---
 
 ### 2: 这些广告具体会出现在哪里？
-
-2: 这些广告具体会出现在哪里？
 
 **A**: 根据目前的测试情况，广告主要出现在 ChatGPT 的回复内容中，特别是当用户询问有关特定产品或服务的问题时。例如，有用户在询问关于圣诞节礼物建议或瑜伽课程推荐时，ChatGPT 在回复列表中包含了一个带有“Sponsored”标签的推荐选项。此外，也有报告指出在网页侧边栏或推荐阅读区域出现了相关推广链接。
 
@@ -364,15 +356,11 @@ visualize_ad_performance(ad_performance)
 
 ### 3: ChatGPT 中的广告与 Google 搜索广告有什么区别？
 
-3: ChatGPT 中的广告与 Google 搜索广告有什么区别？
-
 **A**: 虽然两者都是基于用户意图进行推广，但形式有所不同。Google 搜索广告通常直接显示在搜索结果列表的顶部或底部，形式较为传统。而 ChatGPT 的广告测试似乎更倾向于“原生广告”或“推荐”的形式，即 AI 将广告主的内容作为解决方案之一自然地融入对话流中，通常会有明确的标签提示用户这是赞助内容。
 
 ---
 
 ### 4: OpenAI 官方对此有何回应？
-
-4: OpenAI 官方对此有何回应？
 
 **A**: OpenAI 发言人已向媒体证实，他们正在 ChatGPT 上开展广告功能的“原型测试”。官方表示，他们正在探索如何以相关且有用的方式将广告引入平台，并且会根据测试结果和用户反馈来决定未来的方向。目前 OpenAI 的主要收入来源仍是 ChatGPT 的订阅服务，广告被视为一种潜在的多元化收入补充。
 
@@ -380,15 +368,11 @@ visualize_ad_performance(ad_performance)
 
 ### 5: 免费用户和付费用户都会看到广告吗？
 
-5: 免费用户和付费用户都会看到广告吗？
-
 **A**: 根据目前的观察和行业惯例，广告测试主要针对免费用户群体。OpenAI 极有可能保持 ChatGPT Plus 付费用户的“无广告体验”，以此作为订阅服务的核心价值之一，从而鼓励更多用户升级到付费版本。不过，具体的最终政策尚未正式确定。
 
 ---
 
 ### 6: 用户如何区分正常回答和广告内容？
-
-6: 用户如何区分正常回答和广告内容？
 
 **A**: OpenAI 在测试中遵循了互联网广告的透明度原则。被标记为广告的内容通常会带有显眼的“Sponsored”（赞助）或“Ad”（广告）标签。这意味着用户在阅读 AI 生成的推荐列表时，可以清楚地识别出哪些是算法自然生成的结果，哪些是付费推广的链接或内容。
 ## 引用

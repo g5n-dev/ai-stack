@@ -16,8 +16,7 @@ categories:
 - AI 工程
 - 系统与基础设施
 source: blogs_podcasts
-description: 背景 JARVIS Challenge 是麻省理工学院（MIT）发起的竞赛，旨在评估人工智能在大难度技术（tough‑tech）研发中的实际价值。赛事要求团队在限定时间内设计、制造并测试一台喷气发动机，AI
-  copilot 被赋予辅助决策、数据分析和实时优化等任务。 方法 学生团队在概念设计阶段使用生成式模型快速产生结
+description: 麻省理工学院的学生设计、制造并测试了一款配备AI副驾驶的喷气发动机，以评估人工智能在开发高性能航空航天系统中的实用性。 麻省理工学院启动JARVIS挑战，让AI副驾驶参与喷气发动机的完整研发流程，检验人工智能在高性能航空航天系统中的实际效用。该项目聚焦AI在复杂系统工程中的协作能力，旨在为评估AI在尖端制造领域的可行性提供实证案例。
 external_url: https://news.mit.edu/2026/can-ai-build-jet-engine-jarvis-challenge-tests-ai-copilots-in-tough-tech-engineering-0714
 scenarios:
 - AI/ML项目

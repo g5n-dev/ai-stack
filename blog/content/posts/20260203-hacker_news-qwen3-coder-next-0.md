@@ -93,18 +93,18 @@ def fetch_hacker_news_top_stories(limit=5):
     """
     url = "https://news.ycombinator.com/"
     headers = {'User-Agent': 'Mozilla/5.0'}  # 模拟浏览器访问
-    
+
     try:
         response = requests.get(url, headers=headers)
         response.raise_for_status()
         soup = BeautifulSoup(response.text, 'html.parser')
-        
+
         stories = []
         for item in soup.select('.athing')[:limit]:
             title = item.select_one('.titleline > a').text
             link = item.select_one('.titleline > a')['href']
             stories.append({'title': title, 'link': link})
-        
+
         return stories
     except Exception as e:
         print(f"爬取失败: {e}")
@@ -140,17 +140,17 @@ def fetch_hacker_news_comments(story_id):
     url = f"https://hacker-news.firebaseio.com/v0/item/{story_id}.json"
     response = requests.get(url)
     story_data = response.json()
-    
+
     if 'kids' not in story_data:
         return []
-    
+
     comments = []
     for comment_id in story_data['kids'][:3]:  # 限制获取前3条评论
         comment_url = f"https://hacker-news.firebaseio.com/v0/item/{comment_id}.json"
         comment_data = requests.get(comment_url).json()
         if 'text' in comment_data:
             comments.append(comment_data['text'])
-    
+
     return comments
 
 # 使用示例
@@ -159,7 +159,7 @@ if __name__ == "__main__":
     top_stories = requests.get("https://hacker-news.firebaseio.com/v0/topstories.json").json()
     first_story_id = top_stories[0]
     comments = fetch_hacker_news_comments(first_story_id)
-    
+
     print("评论情感分析结果：")
     for i, comment in enumerate(comments, 1):
         sentiment = analyze_sentiment(comment)
@@ -181,12 +181,12 @@ def generate_wordcloud(text_list):
     # 合并所有文本并清理
     combined_text = ' '.join(text_list)
     cleaned_text = re.sub(r'[^\w\s]', '', combined_text.lower())
-    
+
     # 生成词云
-    wordcloud = WordCloud(width=800, height=400, 
+    wordcloud = WordCloud(width=800, height=400,
                          background_color='white',
                          colormap='viridis').generate(cleaned_text)
-    
+
     # 显示词云
     plt.figure(figsize=(10, 5))
     plt.imshow(wordcloud, interpolation='bilinear')
@@ -200,12 +200,12 @@ def get_hacker_news_titles():
     """
     import requests
     from bs4 import BeautifulSoup
-    
+
     url = "https://news.ycombinator.com/"
     response = requests.get(url)
     soup = BeautifulSoup(response.text, 'html.parser')
-    
-    titles = [item.select_one('.titleline > a').text 
+
+    titles = [item.select_one('.titleline > a').text
              for item in soup.select('.athing')]
     return titles
 
@@ -219,8 +219,6 @@ if __name__ == "__main__":
 ## 案例研究
 
 ### 1：某大型金融科技公司核心交易系统重构
-
- 1：某大型金融科技公司核心交易系统重构
 
 **背景**:
 该公司拥有一套运行超过十年的核心交易系统，底层逻辑由数百万行混合了C++和旧版Java的代码构成。随着业务扩展，原有架构变得难以维护，且由于原始开发团队的离职，大量业务逻辑缺乏文档，成为“黑盒”状态。
@@ -238,8 +236,6 @@ if __name__ == "__main__":
 
 ### 2：智慧物流企业的算法工程化落地
 
- 2：智慧物流企业的算法工程化落地
-
 **背景**:
 该企业主要提供跨境物流供应链优化服务。公司的算法研究团队使用Python开发了一套复杂的路径规划与装箱算法模型，但工程化团队需要将这些算法快速集成到基于Go语言构建的后端服务中，以供前端调用。
 
@@ -255,8 +251,6 @@ if __name__ == "__main__":
 ---
 
 ### 3：医疗SaaS平台的合规化数据清洗
-
- 3：医疗SaaS平台的合规化数据清洗
 
 **背景**:
 一家服务于三甲医院的医疗SaaS服务商，需要处理海量的电子病历（EMR）数据以辅助临床决策。由于历史原因，数据库中积累了大量非结构化的医生手写备注文本，其中夹杂着患者敏感信息（PII）和非标准医学术语。
@@ -377,15 +371,11 @@ Qwen3-Coder-Next 支持多种编程语言，但在混合语言环境或跨语言
 
 ### 1: Qwen3-Coder-Next 是什么？它与之前的 Qwen2.5-Coder 有什么区别？
 
-1: Qwen3-Coder-Next 是什么？它与之前的 Qwen2.5-Coder 有什么区别？
-
 **A**: Qwen3-Coder-Next 是阿里云通义千问团队最新发布的代码生成模型。根据社区讨论和泄露信息，它被视为 Qwen2.5-Coder 的继任者或下一代预览版本。与 Qwen2.5-Coder 相比，Qwen3-Coder-Next 在代码生成的准确性、长上下文处理能力以及对复杂架构的理解上都有显著提升。它通常被设计用于更高级的编程辅助、代码重构以及系统级设计任务。
 
 ---
 
 ### 2: Qwen3-Coder-Next 目前是开源的吗？如何获取使用？
-
-2: Qwen3-Coder-Next 目前是开源的吗？如何获取使用？
 
 **A**: 截至目前，Qwen3-Coder-Next 主要是通过 API 或受限的测试平台提供访问，尚未像 Qwen2.5 那样完全开放权重下载（具体情况需参考官方最新公告）。开发者通常可以通过 Hugging Face 或阿里云的 ModelScope 平台申请试用权限，或者在官方提供的 Playground 中进行测试。对于企业级用户，可能需要通过阿里云的百炼平台接入。
 
@@ -393,15 +383,11 @@ Qwen3-Coder-Next 支持多种编程语言，但在混合语言环境或跨语言
 
 ### 3: Qwen3-Coder-Next 支持哪些编程语言？在哪种语言上表现最好？
 
-3: Qwen3-Coder-Next 支持哪些编程语言？在哪种语言上表现最好？
-
 **A**: Qwen3-Coder-Next 继承了前代模型的多语言支持能力，精通 Python、Java、C++、JavaScript、TypeScript、Go、Rust 等主流编程语言。此外，它在 Python 数据科学栈（如 Pandas, NumPy）和 Web 开发框架（如 React, Vue）上进行了专项优化。根据社区反馈，该模型在 Python 和 TypeScript 的代码补全与生成任务上表现尤为出色。
 
 ---
 
 ### 4: 该模型的上下文窗口有多大？能否处理大型代码库？
-
-4: 该模型的上下文窗口有多大？能否处理大型代码库？
 
 **A**: Qwen3-Coder-Next 支持超长上下文窗口，最高可达 128k token 甚至更高（取决于具体部署版本）。这使得它能够处理整个中型项目的代码库，或者分析非常长的单个文件。它特别擅长“跨文件引用”，即能够根据项目中的其他文件内容来修改或生成当前代码，这对于理解复杂的依赖关系非常有帮助。
 
@@ -409,23 +395,17 @@ Qwen3-Coder-Next 支持多种编程语言，但在混合语言环境或跨语言
 
 ### 5: Qwen3-Coder-Next 在代码安全性和漏洞检测方面有哪些改进？
 
-5: Qwen3-Coder-Next 在代码安全性和漏洞检测方面有哪些改进？
-
 **A**: 新一代模型在训练数据中加入了更多关于代码安全性和最佳实践的样本。因此，Qwen3-Coder-Next 在生成代码时，会更自觉地避免常见的安全漏洞（如 SQL 注入、XSS 攻击等）。同时，它具备更强的代码审查能力，能够识别出用户提供的代码中潜在的安全风险，并给出修复建议，而不仅仅是生成功能性的代码。
 
 ---
 
 ### 6: 相比于 GPT-4 或 Claude 3.5 Sonnet，Qwen3-Coder-Next 的优势在哪里？
 
-6: 相比于 GPT-4 或 Claude 3.5 Sonnet，Qwen3-Coder-Next 的优势在哪里？
-
 **A**: 相比于闭源的 GPT-4 或 Claude 3.5 Sonnet，Qwen3-Coder-Next 的主要优势在于其对中文开发者的友好度以及本地化部署的潜力。它在中文技术文档和注释的理解上往往优于国外模型。此外，作为开源系列的延续，它通常提供更灵活的参数配置和更低的推理成本，适合需要私有化部署或对数据隐私有严格要求的企业场景。
 
 ---
 
 ### 7: 如何在 VS Code 或 JetBrains 等 IDE 中集成 Qwen3-Coder-Next？
-
-7: 如何在 VS Code 或 JetBrains 等 IDE 中集成 Qwen3-Coder-Next？
 
 **A**: 开发者可以通过多种方式在 IDE 中集成该模型。最直接的方式是使用支持 OpenAI 兼容 API 的插件（如 Continue 或 CodeGeeX），将 Qwen3-Coder-Next 的 API Endpoint 和 API Key 配置到插件设置中。另外，如果官方或社区发布了专门的 VS Code 插件（例如 Tongyi Lingma 插件的更新版），直接安装插件即可获得智能补全、注释生成和错误修复等功能。
 ## 引用

@@ -16,8 +16,9 @@ categories:
 - 大模型
 - AI 工程
 source: blogs_podcasts
-description: 项目背景 OpenAI Frontier & Symphony 团队首次公开披露其内部称为 **Dark Factory** 的全自动化流水线。该项目在“Extreme
-  Harness Engineering for Token Billionaires”主题下展示，旨在支撑极大规模的语言模型推理。 关键特点 - **
+description: 我们首次揭秘 OpenAI 的首家 Dark Factory。 OpenAI 近日发布首个全自动化 Dark Factory，旨在实现每日十亿
+  token 的处理能力并全程无人工编写或审查代码。该平台基于自研的大规模代码生成框架，代码库已突破百万行，展现了在高并发场景下零人工干预的可行性。本文深入解析其核心架构、关键技术实现以及对
+  AI 开发流程的潜在影响，为读者提供实战参考。
 external_url: https://www.latent.space/p/harness-eng
 scenarios:
 - 大语言模型

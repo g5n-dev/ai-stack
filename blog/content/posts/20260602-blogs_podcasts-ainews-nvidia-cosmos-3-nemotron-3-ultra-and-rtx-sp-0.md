@@ -16,8 +16,7 @@ categories:
 - 大模型
 - 系统与基础设施
 source: blogs_podcasts
-description: 关键产品 - **Cosmos 3**：新一代生成式AI平台，支持超大规模数字孪生与仿真，集成最新光线追踪与实时交互技术。 - **Nemotron
-  3 Ultra**：面向企业的大语言模型，参数规模约130B，训练效率提升约40%，推理时延显著降低，可部署在数据中心和边缘。 - **RTX Spark**：基于Ada
+description: Jensen取得了大获全胜。 NVIDIA在年度GTC大会上发布了Cosmos 3、Nemotron 3 Ultra和RTX Spark三款重要产品，分别涉及物理世界模拟、超大规模语言模型和本地AI渲染。这些技术进展标志着AI基础设施正从云端向边缘延伸，并为开发者提供了更高效的模型训练与部署方案。对于关注AI技术落地的读者而言，理解这些新品的定位与能力有助于把握行业下一步发展方向。
 external_url: https://www.latent.space/p/ainews-nvidia-cosmos-3-nemotron-3
 scenarios:
 - AI/ML项目

@@ -16,8 +16,8 @@ categories:
 - 安全
 - AI 工程
 source: blogs_podcasts
-description: 以下是对文中关于防御AI代理提示注入内容的中文总结： **设计能够抵御提示注入的AI代理** 本文主要探讨了如何通过设计安全的AI代理来防御**提示注入**和**社会工程学**攻击，重点介绍了ChatGPT在代理工作流中采取的安全策略。
-  **核心概念：提示注入与代理风险** 随着AI代理功能的增强，它们被赋予了执行操作
+description: ChatGPT 如何通过限制高风险操作并保护代理工作流中的敏感数据，来抵御提示注入和社会工程攻击。 随着大语言模型在自动化任务中的应用日益广泛，AI
+  代理的安全性成为开发者必须直面的挑战。本文深入探讨了提示注入及社会工程学攻击的运作机制，并解析了如何通过限制高风险操作与保护敏感数据流来构建防御体系。
 external_url: https://openai.com/index/designing-agents-to-resist-prompt-injection
 scenarios:
 - AI/ML项目

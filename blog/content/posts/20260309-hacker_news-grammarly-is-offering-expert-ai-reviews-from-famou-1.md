@@ -16,7 +16,7 @@ categories:
 - 产品与创业
 - AI 工程
 source: hacker_news
-description: 随着生成式 AI 工具的普及，文本润色已不再局限于基础的语法纠错。Grammarly 近期推出的新功能，尝试引入著名作家的风格与“专家”视角，为用户提供更具深度的写作反馈。这一举措不仅拓展了辅助写作的边界，也引发了关于技术如何模仿人类创造力与个性的讨论。本文将解析该功能的运作机制及其背后的技术逻辑，探讨它为写作工作流带
+description: 随着生成式 AI 工具的普及，文本润色已不再局限于基础的语法纠错。Grammarly 近期推出的新功能，尝试引入著名作家的风格与“专家”视角，为用户提供更具深度的写作反馈。这一举措不仅拓展了辅助写作的边界，也引发了关于技术如何模仿人类创造力与个性的讨论。本文将解析该功能的运作机制及其背后的技术逻辑，探讨它为写作工作流带来的实际影响。
 external_url: https://www.wired.com/story/grammarly-is-offering-expert-ai-reviews-from-your-favorite-authors-dead-or-alive
 scenarios:
 - AI/ML项目

@@ -36,20 +36,7 @@ source_support: 0.0
 
 本文介绍Spring AI Lab，它是一套专为Spring Boot项目设计的AI对话接入工具，能够在几分钟内完成从配置到上线的完整流程。通过简洁的API和开箱即用的组件，开发者无需深入了解模型细节，就能快速实现自然语言交互功能。阅读后，你将掌握集成步骤、常见配置以及最佳实践，帮助项目快速落地AI能力。
 
----
-## 描述
 
-这段文字本身就是中文，不需要翻译。
-
-如果您是想把这段中文翻译成英文，以下是翻译版本：
-
-**Spring AI Lab: A Spring Boot Toolkit for Integrating AI Chat Capabilities in 3 Minutes**
-
----
-
-如果您需要其他语言的翻译，或者对中文表达有其他优化需求，请告诉我！
-
----
 ## 学习要点
 
 - Spring AI Lab 提供开箱即用的 AI 对话组件，通过极少的配置即可在 3 分钟内完成接入。

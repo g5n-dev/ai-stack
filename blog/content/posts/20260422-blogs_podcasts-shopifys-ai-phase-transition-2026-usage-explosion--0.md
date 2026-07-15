@@ -16,8 +16,8 @@ categories:
 - 大模型
 - AI 工程
 source: blogs_podcasts
-description: Shopify AI 2026 发展动向 2026 年 Shopify 将迎来 AI 使用量的爆发式增长。公司计划为大规模语言模型 Opus‑4.6
-  提供无限 token 预算，并推出 Tangle、Tangent、SimGym 等新一代 AI 工具。CTO Mikhail Parakhin 表示，这些技术将深度嵌入平
+description: 旧金山世博会早鸟优惠即将截止——这场年度最大AIE盛会今日过后价格将上涨约500美元，请尽快锁定优惠！ 简要说明Shopify正进入AI阶段转型，2026年将出现使用量激增并推出无限制Opus‑4.6Token预算。文章将解读Tangle、Tangent与SimGym等新工具的架构思路，以及CTO
+  Mikhail Parakhin对未来AI集成的战略视角。
 external_url: https://www.latent.space/p/shopify
 scenarios:
 - AI/ML项目

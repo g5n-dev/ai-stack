@@ -16,9 +16,7 @@ categories:
 - 开发工具
 - 系统与基础设施
 source: juejin
-description: 准备工作 - 确保已安装 Docker（Docker Desktop 或 docker‑ce）。 - 可选：配置轩辕镜像加速，将拉取源替换为
-  的加速地址，以提升下载速度。 一键拉取与启动 浏览器访问 AI 写代码界面 - 打开任意浏览器，输入 。 - 页面加载完成后，左侧为代码编辑区，右侧为 AI 交互面板。
-  使用 A
+description: 本文介绍如何在10分钟内通过Docker快速部署OpenCode，配合轩辕镜像加速拉取，使本地浏览器即可启动AI编程环境。对于想在本地体验AI代码生成却不想手动配置复杂依赖的开发者，这种方式既省时又安全。阅读后，你将掌握完整的安装命令、常见错误的排查思路，以及如何利用AI生成hello-world示例页面的实战技巧。
 external_url: https://juejin.cn/post/7653694379728158783
 scenarios:
 - 云原生/容器

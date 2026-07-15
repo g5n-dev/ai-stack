@@ -16,8 +16,9 @@ categories:
 - 大模型
 - 论文
 source: juejin
-description: 基本原理 Transformer 以自注意力（Self‑Attention）为核心，通过并行计算捕获序列内部的全局依赖，显著提升了对长距离上下文的学习能力。
-  编码器‑解码器的灵活使用 - **编码器（Encoder）**：将输入序列映射为双向上下文表示，仅使用编码器即可构建双向理解模型，典型代表如 BERT。 - **
+description: Transformer 已经成为大模型时代的基础架构，其核心注意力机制以及编码器‑解码器的灵活组合，决定了模型的理解与生成能力。掌握这些原理是阅读
+  BERT、GPT 等主流模型源码的前提，也是实现自定义模型的第一步。本文从理论要点出发，梳理关键实现细节，并配以完整代码示例，帮助读者快速搭建、调试并优化自己的
+  Transformer 模型。
 external_url: https://juejin.cn/post/7635853739061542954
 scenarios:
 - Web应用开发

@@ -16,8 +16,7 @@ categories:
 - AI 工程
 - 开发工具
 source: github_trending
-description: CowAgent（chatgpt‑on‑wechat）是一款基于大模型的超级 AI 助理，旨在为个人和企业提供轻量化、可扩展的智能服务。项目使用
-  Python 编写，开源在 GitHub，已获得约 4.3 万星标，并保持每日数十颗新星的增长。 核心能力 - **主动思考与任务规划**：模型能够进行多步推理，分解复杂需求
+description: CowAgent（chatgpt-on-wechat）是一款基于大模型的智能助理，能够主动进行任务规划、调用系统资源和外部工具。适用于希望在微信、飞书、企业微信等多个平台搭建个人AI助手或企业数字员工的开发者。本文将从部署方式、插件开发、模型接入以及常见问题四个方面展开说明，帮助快速上手并实现定制化需求。
 external_url: https://github.com/zhayujie/CowAgent
 scenarios:
 - AI/ML项目

@@ -100,12 +100,12 @@ class AutonomousVehicle:
         self.speed = 0  # 当前速度(km/h)
         self.position = (0, 0)  # GPS坐标
         self.status = "待命"  # 车辆状态
-    
+
     def start_autonomous_mode(self):
         """启动自动驾驶模式"""
         self.status = "自动驾驶中"
         print(f"车辆{self.vehicle_id}已启动完全自动驾驶模式")
-    
+
     def update_status(self, new_speed, new_position):
         """实时更新车辆状态"""
         self.speed = new_speed
@@ -125,7 +125,7 @@ import random
 class ObstacleDetector:
     def __init__(self):
         self.detected_objects = []
-    
+
     def scan_environment(self):
         """模拟环境扫描，随机生成障碍物"""
         self.detected_objects = []
@@ -134,12 +134,12 @@ class ObstacleDetector:
             distance = random.uniform(5, 50)  # 距离(米)
             self.detected_objects.append({"类型": obj_type, "距离": distance})
         return self.detected_objects
-    
+
     def make_decision(self):
         """基于检测结果做出驾驶决策"""
         if not self.detected_objects:
             return "继续行驶"
-        
+
         closest = min(self.detected_objects, key=lambda x: x["距离"])
         if closest["距离"] < 10:
             return f"紧急制动! 检测到{closest['类型']}在{closest['距离']:.1f}米处"
@@ -162,7 +162,7 @@ from datetime import datetime
 class RemoteMonitoringSystem:
     def __init__(self):
         self.fleet_data = []
-    
+
     def log_vehicle_event(self, vehicle_id, event_type, details):
         """记录车辆事件"""
         event = {
@@ -173,7 +173,7 @@ class RemoteMonitoringSystem:
         }
         self.fleet_data.append(event)
         print(f"[已记录] {event['时间']} - {vehicle_id}: {event_type}")
-    
+
     def generate_report(self):
         """生成车队运营报告"""
         report = {
@@ -181,11 +181,11 @@ class RemoteMonitoringSystem:
             "总事件数": len(self.fleet_data),
             "事件分布": {}
         }
-        
+
         for event in self.fleet_data:
             event_type = event["事件类型"]
             report["事件分布"][event_type] = report["事件分布"].get(event_type, 0) + 1
-        
+
         return json.dumps(report, ensure_ascii=False, indent=2)
 
 # 测试代码
@@ -202,8 +202,6 @@ print(monitor.generate_report())
 
 ### 1：凤凰城全域无人驾驶网约车服务
 
- 1：凤凰城全域无人驾驶网约车服务
-
 **背景**: Waymo 在亚利桑那州凤凰城运营多年，积累了大量路测数据。随着第六代 Waymo Driver 系统的发布，其传感器套件成本降低且性能提升，使得商业扩张成为可能。
 
 **问题**: 传统网约车服务面临高峰期运力不足、司机疲劳驾驶以及人类驾驶行为不可预测等问题。同时，早期的自动驾驶技术受限于传感器性能，在恶劣天气或复杂城市路况下表现不佳。
@@ -215,8 +213,6 @@ print(monitor.generate_report())
 ---
 
 ### 2：旧金山密集城区复杂路况应对
-
- 2：旧金山密集城区复杂路况应对
 
 **背景**: 旧金山以其地形陡峭、天气多变（雾气、雨天）以及交通状况极为复杂（频繁的双黄线掉头、行人横穿马路）而闻名，是自动驾驶技术的“地狱级”测试场。
 
@@ -330,15 +326,11 @@ print(monitor.generate_report())
 
 ### 1: Waymo 第六代驾驶员的核心技术升级有哪些？
 
-1: Waymo 第六代驾驶员的核心技术升级有哪些？
-
 **A**: Waymo 第六代驾驶员系统在硬件架构和传感器集成方面进行了重大革新。最显著的变化是采用了高度集成的传感器设计，将所有关键的传感组件（如激光雷达、摄像头和雷达）无缝嵌入车身之中，不再使用车顶上那个显眼的巨大的“帽子”式传感器塔。这种设计不仅降低了风阻、提高了能效，还使得车辆外观更加接近普通量产汽车。此外，新一代系统配备了更强大的车载计算系统和热管理系统，使其能够在更广泛的气候条件和地理环境中运行，包括极端的高温和寒冷天气。
 
 ---
 
 ### 2: 第六代系统的成本控制是如何实现的，这对商业化意味着什么？
-
-2: 第六代系统的成本控制是如何实现的，这对商业化意味着什么？
 
 **A**: 成本降低是第六代系统的核心目标之一。通过将传感器与车辆制造深度集成，Waymo 摆脱了昂贵的定制改装流程。特别是新一代激光雷达的生产成本大幅降低，且无需复杂的机械安装结构。这种高性价比的设计使得 Waymo 能够更快速地扩充车队规模，从原本昂贵的豪华车型（如捷豹 I-Pace）转向大规模量产的乘用车（如极氪 Zeekr）。这意味着 Waymo 的自动驾驶服务可以更快地实现盈利，并有能力向更多城市和地区扩张。
 
@@ -346,15 +338,11 @@ print(monitor.generate_report())
 
 ### 3: 该系统在处理复杂路况和恶劣天气方面的能力如何？
 
-3: 该系统在处理复杂路况和恶劣天气方面的能力如何？
-
 **A**: 第六代驾驶员系统专门针对“边缘情况”和恶劣天气进行了优化。得益于全新的 360 度感知系统和高分辨率的成像技术，车辆可以在暴雨、大雪或浓雾等低能见度环境下更准确地探测周围物体。同时，系统的计算能力得到了提升，能够更快地处理来自多个传感器的数据流，从而在复杂的城市交通路口、突发道路施工或行人密集区域做出更安全、更流畅的驾驶决策。
 
 ---
 
 ### 4: Waymo 为什么选择与极氪 合作，这对车辆部署有何影响？
-
-4: Waymo 为什么选择与极氪 合作，这对车辆部署有何影响？
 
 **A**: Waymo 选择与吉利旗下的极氪合作，主要是为了获得专为自动驾驶设计的量产车型平台。极氪为 Waymo 提供了具备冗余制动、冗余转向和冗余电源的车辆架构，这对于完全自动驾驶的安全性至关重要。这种合作模式允许 Waymo 在车辆设计阶段就介入，将传感器完美融入车身，而不是后期改装。这不仅提升了车辆的美观度和耐用性，还大大加快了车辆交付和上路的速度，为大规模商业化运营奠定了基础。
 
@@ -362,23 +350,17 @@ print(monitor.generate_report())
 
 ### 5: 完全无人驾驶操作在法律和安全监管层面是否已准备就绪？
 
-5: 完全无人驾驶操作在法律和安全监管层面是否已准备就绪？
-
 **A**: Waymo 在凤凰城、旧金山和洛杉矶等地的运营数据表明，其完全无人驾驶模式在安全监管层面已逐步成熟。第六代系统在发布前经过了数百万英里的模拟测试和封闭场地测试，并严格遵循美国国家公路交通安全管理局（NHTSA）及各州的相关法规。Waymo 采用了多层安全策略，包括远程协助团队，当车辆遇到无法处理的罕见情况时，可以获取远程专家的指引。这种“完全自主”并非与世隔绝，而是在高度自动化网络支持下的安全运营。
 
 ---
 
 ### 6: Waymo 第六代驾驶员与特斯拉 FSD 等竞争对手的主要区别是什么？
 
-6: Waymo 第六代驾驶员与特斯拉 FSD 等竞争对手的主要区别是什么？
-
 **A**: 两者的技术路径有本质区别。Waymo 采用的是“多传感器融合”路线，依赖激光雷达、高清雷达和摄像头的组合来构建高精度的 3D 环境，不依赖高精地图的绝对最新版，但拥有极强的感知冗余。而特斯拉 FSD 主要依赖纯视觉方案和神经网络，试图模仿人类驾驶员的视觉处理方式。Waymo 的模式旨在打造一个无需人类介入的 Robotaxi（无人驾驶出租车）服务网络，而特斯拉目前的 FSD 主要是辅助驾驶员的增强版系统，仍需人类监管。
 
 ---
 
 ### 7: 何时可以在更多城市体验到这项服务？
-
-7: 何时可以在更多城市体验到这项服务？
 
 **A**: 随着第六代系统的推出和极氪车队的引入，Waymo 的扩张速度将显著加快。虽然具体的城市名单取决于当地政府的监管审批进度，但 Waymo 已明确表示计划在未来几年内将其服务扩展到更多新的市场。目前的重点是先在现有运营城市（如凤凰城、洛杉矶、旧金山）优化新系统的性能，随后逐步向奥斯汀、亚特兰大等已宣布的新城市以及更多国际市场推进。
 ## 引用

@@ -113,20 +113,20 @@ def build_kg_from_docs(documents):
     """
     G = nx.Graph()
     entity_relations = defaultdict(list)
-    
+
     # 简单实体提取（实际项目中应使用NER模型）
     for doc_id, content in documents.items():
         words = content.split()
         for i in range(len(words)-1):
             # 提取相邻词作为实体关系
             entity_relations[words[i]].append(words[i+1])
-    
+
     # 构建图结构
     for entity, relations in entity_relations.items():
         G.add_node(entity)
         for related_entity in relations:
             G.add_edge(entity, related_entity)
-    
+
     return G
 
 # 测试数据
@@ -147,7 +147,7 @@ plt.show()
 class KGQuerySystem:
     def __init__(self, graph):
         self.graph = graph
-    
+
     def find_related_entities(self, entity, depth=1):
         """
         查找与指定实体相关的其他实体
@@ -157,19 +157,19 @@ class KGQuerySystem:
         """
         if entity not in self.graph:
             return []
-        
+
         related = set()
         current_level = {entity}
-        
+
         for _ in range(depth):
             next_level = set()
             for node in current_level:
                 next_level.update(self.graph.neighbors(node))
             related.update(next_level)
             current_level = next_level
-        
+
         return list(related - {entity})
-    
+
     def find_shortest_path(self, entity1, entity2):
         """
         查找两个实体间的最短路径
@@ -203,7 +203,7 @@ def update_kg(graph, new_documents):
         words = content.split()
         for i in range(len(words)-1):
             new_relations[words[i]].append(words[i+1])
-    
+
     # 更新图结构
     for entity, relations in new_relations.items():
         if not graph.has_node(entity):
@@ -212,7 +212,7 @@ def update_kg(graph, new_documents):
             if not graph.has_node(related_entity):
                 graph.add_node(related_entity)
             graph.add_edge(entity, related_entity)
-    
+
     return graph
 
 # 测试动态更新
@@ -232,8 +232,6 @@ print("更新后边数:", updated_kg.number_of_edges())
 
 ### 1：某中型 SaaS 技术支持团队
 
- 1：某中型 SaaS 技术支持团队
-
 **背景**:
 该团队使用 Slack 进行日常沟通和问题排查。随着产品功能增加，关于 Bug 修复、API 变更和客户工单的解决方案散落在数千条聊天记录和个人笔记中。新员工入职时，资深工程师需要花费大量时间重复回答过去已经解决过的问题。
 
@@ -251,8 +249,6 @@ print("更新后边数:", updated_kg.number_of_edges())
 ---
 
 ### 2：某风险投资机构 (VC) 的研究团队
-
- 2：某风险投资机构 (VC) 的研究团队
 
 **背景**:
 该投资团队每天需要处理大量的信息流，包括新闻快讯、被投企业的周报、行业研报以及内部会议记录。这些信息通常以 PDF、邮件和文档链接的形式分散在各个工具中。
@@ -367,15 +363,11 @@ Rowboat 的核心价值在于将碎片化的工作内容转化为结构化的知
 
 ### 1: Rowboat 是什么？它的主要功能是什么？
 
-1: Rowboat 是什么？它的主要功能是什么？
-
 **A**: Rowboat 是一款开源的 AI 同事工具，旨在将用户的工作内容和数据转化为知识图谱。它的核心功能是自动连接各种工作流（如文档、任务管理工具等），利用大语言模型（LLM）提取信息，并将这些信息结构化地存储在知识图谱中。这使得用户不仅可以存储数据，还能通过图谱直观地看到实体之间的关系，从而更高效地管理和检索工作中的知识。
 
 ---
 
 ### 2: Rowboat 是开源的吗？我可以自己部署吗？
-
-2: Rowboat 是开源的吗？我可以自己部署吗？
 
 **A**: 是的，Rowboat 是一个开源项目（OSS）。这意味着它的源代码是公开的，任何人都可以查看、修改和使用。你可以选择自行托管，将其部署在自己的服务器或本地环境中。这对于注重数据隐私、希望完全掌控自己数据的团队或个人来说是一个非常实用的特性。
 
@@ -383,15 +375,11 @@ Rowboat 的核心价值在于将碎片化的工作内容转化为结构化的知
 
 ### 3: Rowboat 如何处理数据隐私和安全性？
 
-3: Rowboat 如何处理数据隐私和安全性？
-
 **A**: 由于 Rowboat 是开源的，用户可以选择将其部署在本地或私有云环境中，这意味着所有敏感数据都不需要经过第三方服务器，从而最大限度地保证了数据的安全性和隐私性。此外，作为 AI 工具，它通常会配置本地的 LLM 或允许用户连接自己的 API Key（如 OpenAI），用户可以根据自己的安全需求配置数据处理的方式。
 
 ---
 
 ### 4: 它支持哪些集成？可以连接我现有的工具吗？
-
-4: 它支持哪些集成？可以连接我现有的工具吗？
 
 **A**: Rowboat 的设计初衷就是为了适应现有的工作环境。虽然具体的集成列表可能会随版本更新而变化，但它通常支持与常见的生产力工具进行连接，例如 Notion、Google Drive、GitHub 或 Slack 等。通过这些集成，Rowboat 可以自动抓取和同步你在这些平台上的工作内容，并将其转化为知识图谱的一部分。
 
@@ -399,15 +387,11 @@ Rowboat 的核心价值在于将碎片化的工作内容转化为结构化的知
 
 ### 5: 与传统的笔记软件或数据库相比，Rowboat 有什么优势？
 
-5: 与传统的笔记软件或数据库相比，Rowboat 有什么优势？
-
 **A**: 传统的笔记软件通常基于文件夹或标签进行线性组织，检索时容易遗漏上下文；传统数据库则需要严格的结构化输入。Rowboat 的优势在于利用知识图谱技术，能够自动识别数据点之间复杂的非线性关系。它不仅能记录“是什么”，还能通过 AI 理解“谁关联了谁”，从而提供更具上下文意识的搜索结果和洞察，帮助用户发现隐藏在碎片化工作背后的关联。
 
 ---
 
 ### 6: 我需要具备技术背景才能使用 Rowboat 吗？
-
-6: 我需要具备技术背景才能使用 Rowboat 吗？
 
 **A**: 虽然部署开源版本的 Rowboat 可能需要一定的技术知识（如使用 Docker、命令行操作等），但项目团队通常会致力于优化用户界面，使其在日常使用中对非技术人员友好。对于普通用户，主要的价值在于与其交互（查询知识、管理图谱），而不需要深入了解底层的图数据库技术。不过，如果需要进行深度定制或自行维护，技术背景会非常有帮助。
 ## 引用

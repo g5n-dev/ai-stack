@@ -16,7 +16,9 @@ categories:
 - 大模型
 - AI 工程
 source: arxiv
-description: 背景与问题 多模态代理模型能够主动与外部环境交互，但在“元认知”上存在明显缺陷：难以判断应依赖内部知识还是调用外部工具，导致盲目工具执行。即使仅凭视觉上下文即可解答，仍会触发不必要的工具调用，引发严重延迟并引入噪声。现有的强化学习通过标量化奖励惩罚工具使用，却产生两难：重罚抑制必要使用，轻罚在优势标准化时被准确率奖励的
+description: 提出 HDPO（Heterogeneous Decoupled Policy Optimization） 框架，将工具效率从竞争的标量目标解耦为
+  两条正交优化通道： 准确率通道：最大化任务正确性。 效率通道：仅在准确轨迹内部使用 条件优势估计（conditional advantage），强制执行经济性。
+  条件优势估计：在已确认成功的轨迹上，仅对该轨迹的工具使用量计算优势，忽略失败轨迹的工具调用。
 external_url: http://arxiv.org/abs/2604.08545v1
 scenarios:
 - AI/ML项目

@@ -17,7 +17,8 @@ categories:
 - 系统与基础设施
 source: hacker_news
 description: 随着本地 AI Agent 的普及，如何在赋予其自主操作权限的同时确保系统安全，已成为开发者必须面对的挑战。Agent Safehouse
-  是一款专为 macOS 设计的原生沙箱工具，通过精细化的权限控制，让 Agent 在受限环境中安全执行 Shell 命令或文件操作。本文将深入解析其核心机制与配置方法，助你在保障系
+  是一款专为 macOS 设计的原生沙箱工具，通过精细化的权限控制，让 Agent 在受限环境中安全执行 Shell 命令或文件操作。本文将深入解析其核心机制与配置方法，助你在保障系统安全的前提下，高效构建可靠的本地
+  Agent 应用。
 external_url: https://agent-safehouse.dev
 scenarios:
 - 大语言模型

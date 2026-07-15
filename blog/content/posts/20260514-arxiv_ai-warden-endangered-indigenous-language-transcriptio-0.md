@@ -16,8 +16,8 @@ categories:
 - 论文
 - 大模型
 source: arxiv
-description: 背景与挑战 WARDEN 是针对澳大利亚濒危语言 Wardaman 的语音转写与英译系统。当前缺乏大规模训练语料，仅有约 6 小时的标注音频。传统端到端统一模型在数据充足时表现优异，但在极低资源情况下难以收敛。
-  两阶段模型架构 - **转写阶段**：将 Wardaman 语音转为音标序列。采用独立模型，并利用与 War
+description: WARDEN 是针对澳大利亚濒危语言 Wardaman 的语音转写与英译系统。当前缺乏大规模训练语料，仅有约 6 小时的标注音频。传统端到端统一模型在数据充足时表现优异，但在极低资源情况下难以收敛。
+  转写阶段：将 Wardaman 语音转为音标序列。采用独立模型，并利用与 Wardaman 音系相近的 Sundanese 预训练权重进行跨语言初始化，以加速微调并提升准确率。
 external_url: http://arxiv.org/abs/2605.13846v1
 scenarios:
 - AI/ML项目

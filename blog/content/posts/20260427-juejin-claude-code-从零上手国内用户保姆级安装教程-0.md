@@ -16,7 +16,7 @@ categories:
 - 开发工具
 source: juejin
 description: Claude Code 是 Anthropic 推出的命令行工具，帮助开发者直接在终端中使用 Claude 进行代码编写、调试和项目协作。对于国内用户而言，安装过程涉及环境配置、网络访问等环节，存在一定门槛。本文面向零基础读者，梳理从准备到完成配置的完整步骤，让读者能够在本地环境顺利运行
-  Claude Code，并将其
+  Claude Code，并将其融入日常工作流程。
 external_url: https://juejin.cn/post/7633257924123475968
 scenarios:
 - AI/ML项目

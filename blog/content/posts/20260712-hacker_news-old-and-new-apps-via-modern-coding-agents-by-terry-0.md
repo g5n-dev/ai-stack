@@ -17,7 +17,7 @@ categories:
 - AI 工程
 source: hacker_news
 description: 在软件开发中，如何让已有数十年代码遗产的系统快速适配新技术栈，是工程师持续面临的挑战。Terry Tao 通过现代编程代理的实践，展示了在保持旧应用核心功能的同时，利用
-  AI 实现自动化重构、接口桥接和持续集成的可行路径。本文将梳理其关键思路与典型案例，帮助读者了解如何在真实项目中平衡技术迁移与业务连续性，并提供可直接
+  AI 实现自动化重构、接口桥接和持续集成的可行路径。本文将梳理其关键思路与典型案例，帮助读者了解如何在真实项目中平衡技术迁移与业务连续性，并提供可直接落地的实现建议。
 external_url: https://terrytao.wordpress.com/2026/07/11/old-and-new-apps-via-modern-coding-agents
 scenarios:
 - AI/ML项目

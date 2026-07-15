@@ -17,7 +17,7 @@ categories:
 - 后端
 source: hacker_news
 description: 随着 AI Agent 从实验走向落地，其工程实现的复杂度日益凸显，开发者需要在高性能并发与快速迭代之间找到平衡。本文探讨了 Go 语言在这一领域的独特优势，分析其相比
-  Python 在资源控制和部署效率上的差异。通过具体案例，你将了解 Go 如何构建稳定、可扩展的 Agent 系统，以及它是否适合作为你下一个项目的技
+  Python 在资源控制和部署效率上的差异。通过具体案例，你将了解 Go 如何构建稳定、可扩展的 Agent 系统，以及它是否适合作为你下一个项目的技术选型。
 external_url: https://getbruin.com/blog/go-is-the-best-language-for-agents
 scenarios:
 - AI/ML项目

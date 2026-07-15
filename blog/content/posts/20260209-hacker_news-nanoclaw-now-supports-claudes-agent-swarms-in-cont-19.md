@@ -111,7 +111,7 @@ def deploy_agent_swarm(agent_configs: List[dict]) -> None:
     :param agent_configs: 代理配置列表，每个配置包含镜像、环境变量等
     """
     client = docker.from_env()
-    
+
     for config in agent_configs:
         # 创建并启动容器
         container = client.containers.run(
@@ -155,7 +155,7 @@ async def distribute_task(task: dict):
     """
     # 根据任务类型选择合适的Agent
     agent_url = get_agent_by_task_type(task['type'])
-    
+
     async with httpx.AsyncClient() as client:
         response = await client.post(
             f"{agent_url}/process",
@@ -184,7 +184,7 @@ def monitor_swarm(agent_names: List[str], check_interval: int = 30):
     :param check_interval: 健康检查间隔(秒)
     """
     client = docker.from_env()
-    
+
     while True:
         for name in agent_names:
             try:
@@ -195,7 +195,7 @@ def monitor_swarm(agent_names: List[str], check_interval: int = 30):
                     print(f"Agent {name} 已重启")
             except Exception as e:
                 print(f"监控Agent {name} 时出错: {str(e)}")
-        
+
         time.sleep(check_interval)
 
 # 使用示例
@@ -208,9 +208,7 @@ if __name__ == "__main__":
 
 ### 1：某中型跨境电商平台智能客服系统
 
- 1：某中型跨境电商平台智能客服系统
-
-**背景**: 
+**背景**:
 该平台拥有数百万活跃用户，客服团队每天需要处理数以万计的咨询，内容涵盖物流追踪、退换货政策及多语言沟通。随着业务全球化，传统的人力客服模式面临巨大压力，且响应时间难以保证。
 
 **问题**:
@@ -223,8 +221,6 @@ if __name__ == "__main__":
 客服系统的自动拦截率提升了45%，复杂问题的解决时间从平均20分钟缩短至3分钟。由于采用了容器化部署，系统在流量峰值期间保持了99.9%的可用性，且通过精细化的资源隔离，单个Agent的错误不再导致整个系统瘫痪。
 
 ### 2：金融科技公司的实时合规审计引擎
-
- 2：金融科技公司的实时合规审计引擎
 
 **背景**:
 一家金融科技公司需要实时监控其交易平台上的数千笔交易，以识别潜在的欺诈行为并确保符合不同国家的反洗钱（AML）法规。
@@ -351,19 +347,13 @@ if __name__ == "__main__":
 
 ### 1: NanoClaw 是什么，它主要解决什么问题？
 
-1: NanoClaw 是什么，它主要解决什么问题？
-
 **A**: NanoClaw 是一个专注于容器化部署的工具或平台，旨在帮助开发者和运维人员更高效地在容器环境（如 Docker 或 Kubernetes）中运行和管理复杂的 AI 应用程序。它的核心目标是简化 AI 模型（特别是像 Claude 这样的大语言模型）及其相关架构（如 Agent Swarms）在分布式系统中的部署、扩展和维护流程。通过 NanoClaw，用户可以更轻松地处理资源调度、负载均衡以及服务间的通信问题。
 
 ### 2: 什么是 Claude 的 Agent Swarms（智能体集群）？
 
-2: 什么是 Claude 的 Agent Swarms（智能体集群）？
-
 **A**: Agent Swarms 是一种基于多智能体系统的架构模式。在这种模式下，不是由一个单一的 AI 模型完成所有任务，而是由多个专门的“智能体”协同工作。每个智能体可能被分配不同的角色、工具或子任务（例如一个负责搜索，一个负责代码编写，一个负责审核）。它们之间相互协作，以解决比单一模型更复杂、更庞大的问题。这种架构模拟了自然界中的群体智慧，能够显著提高任务处理的并行度和复杂问题的解决能力。
 
 ### 3: 在容器中运行 Agent Swarms 有什么具体优势？
-
-3: 在容器中运行 Agent Swarms 有什么具体优势？
 
 **A**: 将 Agent Swarms 部署在容器中主要有以下几个关键优势：
 
@@ -374,25 +364,17 @@ if __name__ == "__main__":
 
 ### 4: NanoClaw 支持这一功能对开发者意味着什么？
 
-4: NanoClaw 支持这一功能对开发者意味着什么？
-
 **A**: 这意味着开发者现在可以使用 NanoClaw 提供的标准化接口和工具，快速构建基于 Claude 的多智能体应用，而无需从零开始搭建复杂的底层通信和容器管理架构。它降低了构建高级 AI 应用的技术门槛，让开发者能够专注于智能体的逻辑设计和业务实现，而不是基础设施的运维细节。
 
 ### 5: 使用 NanoClaw 部署 Claude Agent Swarms 是否需要深厚的 Kubernetes 知识？
-
-5: 使用 NanoClaw 部署 Claude Agent Swarms 是否需要深厚的 Kubernetes 知识？
 
 **A**: 虽然具备一定的容器和编排知识会有所帮助，但 NanoClaw 的设计初衷通常是为了简化这一过程。它可能提供了更高级的抽象层或预配置的模板，使得开发者不需要编写复杂的 YAML 配置文件或手动管理微服务交互。不过，对于生产环境的高级调优（如网络策略、持久化存储配置），基础的容器知识仍然是必要的。
 
 ### 6: 这一更新是否支持本地运行，还是仅限于云端？
 
-6: 这一更新是否支持本地运行，还是仅限于云端？
-
 **A**: 由于是基于容器的技术，NanoClaw 对 Claude Agent Swarms 的支持通常具有很高的灵活性。理论上，它既可以在本地机器（如使用 Docker Desktop 或 Kind）上运行，适合开发和测试；也可以无缝部署到任何支持容器的云端平台（如 AWS EKS、Google GKE 或 Azure AKS）上进行生产环境的高性能运行。具体取决于用户的基础设施配置。
 
 ### 7: 如何开始使用 NanoClaw 的这一新功能？
-
-7: 如何开始使用 NanoClaw 的这一新功能？
 
 **A**: 通常，用户需要先安装 NanoClaw 的核心组件，然后从其官方仓库或文档中获取针对 Claude Agent Swarms 的特定配置文件或 Helm Chart。随后，通过配置相应的 API 密钥（用于访问 Claude 模型）和定义智能体角色的配置文件，即可使用 CLI 命令或 API 将集群部署到容器环境中。建议查阅官方文档获取最新的快速入门指南。
 ## 引用

@@ -16,8 +16,8 @@ categories:
 - AI 工程
 - 系统与基础设施
 source: blogs_podcasts
-description: 功能概述 Amazon SageMaker AI 推出与 OpenAI API 兼容的实时推理端点。用户可直接使用 OpenAI SDK、LangChain
-  或 Strands Agents，只需更换端点 URL 即可在 SageMaker 上调用模型。 使用方法 在原有调用代码中，将 endpoint URL 改为
+description: 今天，Amazon SageMaker AI 为实时推理端点引入了 OpenAI 兼容的 API 支持。如果您使用 OpenAI SDK、LangChain
+  或 Strands Agents，现在只需更改端点 URL 即可在 SageMaker AI 上调用模型。您无需自定义客户端、SigV4 包装器或代码重写。
 external_url: https://aws.amazon.com/blogs/machine-learning/announcing-openai-compatible-api-support-for-amazon-sagemaker-ai-endpoints
 scenarios:
 - AI/ML项目

@@ -18,7 +18,7 @@ categories:
 source: hacker_news
 description: 随着多智能体系统的应用场景日益复杂，如何实现不同 Agent 之间高效、标准化的通信成为开发者面临的关键挑战。AgentBus 提供了一个基于
   REST API 的集中式消息传递解决方案，旨在简化 Agent 间的交互逻辑并降低集成成本。本文将介绍其核心架构与工作原理，帮助你理解如何利用该工具构建更具协作能力的
-  AI
+  AI 应用。
 external_url: https://agentbus.org
 scenarios:
 - AI/ML项目

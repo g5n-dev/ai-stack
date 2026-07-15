@@ -18,7 +18,7 @@ categories:
 source: juejin
 description: 随着 AI 编码工具逐渐普及，开发者关注的焦点已从基础功能的可用性，转向了长任务处理中的稳定性与综合成本控制。本文以 CodeFlicker
   接入 MiniMax M2.5 与 GLM-5 为例，详细解析新模型配置如何有效解决跨文件重构中断等实际痛点。通过阅读，你将了解到模型升级后的具体性能数据，以及如何在大幅降低
-  T
+  Token 消耗的同时，显著提升 Agent 的任务完成效率。
 external_url: https://juejin.cn/post/7607989878777643060
 scenarios:
 - AI/ML项目

@@ -16,7 +16,7 @@ categories:
 - 开源生态
 - 开发工具
 source: blogs_podcasts
-description: LeRobot v0.6.0版本正式发布，本次更新围绕Imagine、Evaluate、Improve三大核心功能展开。这三个功能形成了完整的训练闭环，使开发者能够系统地探索策略方案、验证实际效果并持续优化性能。新版本显著降低了实验迭代的门槛，开发者可以更快地验证想法、减少调试时间，更高效地将机器人应用从概念推向实际部
+description: LeRobot v0.6.0版本正式发布，本次更新围绕Imagine、Evaluate、Improve三大核心功能展开。这三个功能形成了完整的训练闭环，使开发者能够系统地探索策略方案、验证实际效果并持续优化性能。新版本显著降低了实验迭代的门槛，开发者可以更快地验证想法、减少调试时间，更高效地将机器人应用从概念推向实际部署。
 external_url: https://huggingface.co/blog/lerobot-release-v060
 scenarios:
 - AI/ML项目

@@ -15,8 +15,8 @@ tags:
 categories:
 - AI 工程
 source: blogs_podcasts
-description: 这是一篇关于AI工程核心辩论的总结，主要针对“提示词工程（Prompt Engineering）”是否真实存在或已死这一热门话题进行了梳理。
-  **核心主题：提示词工程是否“真实”？** 在AI行业相对平静的一天，业界引发了关于“提示词工程”本质的深度探讨。随着大模型能力的提升，一种观点认为提示词工程已死或从未存在过，而
+description: 宁静的一天让我们得以反思人工智能工程中的一个核心争议 在人工智能工程领域，"Harness Engineering" 的概念引发了广泛讨论，其真实性与实用性成为开发者关注的焦点。这一争议不仅涉及技术实现的可行性，更关乎团队如何高效构建和部署
+  AI 系统。本文将深入剖析该概念的核心争议点，通过实际案例与行业视角，帮助读者厘清其本质，并评估是否值得将其纳入当前的技术实践。
 external_url: https://www.latent.space/p/ainews-is-harness-engineering-real
 scenarios:
 - 大语言模型

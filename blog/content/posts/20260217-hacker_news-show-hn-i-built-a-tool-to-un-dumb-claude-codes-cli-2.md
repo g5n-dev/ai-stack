@@ -114,16 +114,16 @@ def parse_and_highlight_log(log_path):
     """
     with open(log_path, 'r', encoding='utf-8') as f:
         logs = f.readlines()
-    
+
     for line in logs:
         # 高亮时间戳
-        line = re.sub(r'\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}', 
+        line = re.sub(r'\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}',
                      lambda m: f'\033[36m{m.group()}\033[0m', line)
         # 高亮错误信息
-        line = re.sub(r'(ERROR|WARN)', 
+        line = re.sub(r'(ERROR|WARN)',
                      lambda m: f'\033[31m{m.group()}\033[0m', line)
         # 高亮成功信息
-        line = re.sub(r'(SUCCESS|DONE)', 
+        line = re.sub(r'(SUCCESS|DONE)',
                      lambda m: f'\033[32m{m.group()}\033[0m', line)
         print(line, end='')
 
@@ -143,7 +143,7 @@ def analyze_log_statistics(log_path):
     """
     with open(log_path, 'r', encoding='utf-8') as f:
         logs = f.readlines()
-    
+
     # 统计日志级别
     log_levels = Counter()
     for line in logs:
@@ -153,7 +153,7 @@ def analyze_log_statistics(log_path):
             log_levels['WARN'] += 1
         elif 'INFO' in line:
             log_levels['INFO'] += 1
-    
+
     # 绘制饼图
     plt.figure(figsize=(8, 6))
     plt.pie(log_levels.values(), labels=log_levels.keys(), autopct='%1.1f%%')
@@ -172,18 +172,18 @@ from watchdog.events import FileSystemEventHandler
 
 class LogMonitorHandler(FileSystemEventHandler):
     """监控日志文件变化并实时显示重要信息"""
-    
+
     def __init__(self, log_path):
         self.log_path = log_path
         self.last_size = 0
-    
+
     def on_modified(self, event):
         if event.src_path == self.log_path:
             with open(self.log_path, 'r', encoding='utf-8') as f:
                 f.seek(self.last_size)
                 new_lines = f.readlines()
                 self.last_size = f.tell()
-                
+
                 for line in new_lines:
                     # 只显示包含关键信息的行
                     if any(keyword in line for keyword in ['ERROR', 'WARN', 'CRITICAL']):
@@ -198,7 +198,7 @@ def monitor_logs_realtime(log_path):
     observer = Observer()
     observer.schedule(event_handler, path='.', recursive=False)
     observer.start()
-    
+
     try:
         while True:
             time.sleep(1)
@@ -215,8 +215,6 @@ monitor_logs_realtime('claude_code.log')
 
 ### 1：某金融科技初创公司的后端重构项目
 
- 1：某金融科技初创公司的后端重构项目
-
 **背景**:
 该公司正在使用 Claude Code 作为结对编程助手，对其核心交易系统的微服务架构进行重构。由于金融系统对逻辑严密性要求极高，开发团队依赖 Claude Code 生成大量的数据库迁移脚本和复杂的业务逻辑代码。
 
@@ -232,8 +230,6 @@ Claude Code 的默认 CLI 输出流式极快且缺乏格式化，导致在生成
 ---
 
 ### 2：某开源工具库维护者的文档与代码同步工作
-
- 2：某开源工具库维护者的文档与代码同步工作
 
 **背景**:
 一位独立开发者维护着一个流行的 Python 开源库，主要利用 Claude Code 来辅助处理繁琐的文档更新和类型注解添加工作。他习惯通过 CLI 批量运行指令，让 AI 处理数十个文件的批量修改。
@@ -343,15 +339,11 @@ Claude Code 的默认 CLI 输出流式极快且缺乏格式化，导致在生成
 
 ### 1: 这个工具的主要功能是什么？为什么要叫“un-dumb”？
 
-1: 这个工具的主要功能是什么？为什么要叫“un-dumb”？
-
 **A**: 这个工具是一个本地日志查看器，专门用于解析和可视化 Claude Code CLI（命令行界面）的原始输出。Claude Code 在执行任务时会在终端打印大量的代码块、文件路径和思考过程，这些信息在终端中往往难以阅读和追溯。该工具将这些原始日志转换为结构化、易读的 Web 界面，让用户能更清晰地查看 AI 的操作历史、修改的文件内容以及执行的命令。称之为“un-dumb”是因为它将原本“笨重”、难以在终端中直接消费的纯文本输出，变成了智能、可交互的视图。
 
 ---
 
 ### 2: 如何安装和运行这个本地日志查看器？
-
-2: 如何安装和运行这个本地日志查看器？
 
 **A**: 通常这类工具会以 Node.js 项目、Python 脚本或独立的二进制文件形式发布。根据 Hacker News 上的常规发布形式，您可能需要先克隆项目的代码仓库。安装步骤通常包括：
 1. 确保您的电脑上安装了必要的运行环境（如 Node.js 或 Python）。
@@ -363,23 +355,17 @@ Claude Code 的默认 CLI 输出流式极快且缺乏格式化，导致在生成
 
 ### 3: 它是否支持其他 AI 编程工具（如 Cursor 或 GitHub Copilot）的日志？
 
-3: 它是否支持其他 AI 编程工具（如 Cursor 或 GitHub Copilot）的日志？
-
 **A**: 根据标题描述，该工具目前主要针对 Claude Code 的 CLI 输出进行了优化。虽然 Claude Code、Cursor 和 Copilot 底层可能都使用类似的模型，但它们的日志格式、数据结构和存储位置各不相同。不过，如果其他工具能够输出类似格式的 JSON 或纯文本日志，或者开发者提供了适配器/插件系统，理论上是可以扩展支持的。目前建议将其视为 Claude Code 的专用伴侣工具。
 
 ---
 
 ### 4: 使用这个工具安全吗？它会上传我的代码到云端吗？
 
-4: 使用这个工具安全吗？它会上传我的代码到云端吗？
-
 **A**: 这是一个“本地”查看器，这意味着它通常只在您的计算机上运行，并读取您本地磁盘上的日志文件。它不会主动将您的代码或日志发送到远程服务器。所有的数据处理和渲染都发生在您的浏览器或本地进程中。但是，作为最佳实践，您在运行任何开源工具时，都应检查其源代码或网络请求，以确认其确实没有外发数据的行为，特别是在处理敏感私有代码库时。
 
 ---
 
 ### 5: 我可以直接在终端里看，为什么还需要这个工具？
-
-5: 我可以直接在终端里看，为什么还需要这个工具？
 
 **A**: 在终端中查看 AI 输出的长代码块和复杂操作存在以下痛点，而这个工具解决了这些问题：
 1. **可读性差**：终端通常不支持语法高亮、代码折叠或复杂的表格展示，长代码会滚屏消失，难以回溯。
@@ -390,8 +376,6 @@ Claude Code 的默认 CLI 输出流式极快且缺乏格式化，导致在生成
 ---
 
 ### 6: 它能实时监控日志变化吗？
-
-6: 它能实时监控日志变化吗？
 
 **A**: 这取决于具体的实现细节。许多现代的本地日志查看器都支持“热重载”或文件监听功能。如果该工具实现了这一功能，那么当 Claude Code 在后台继续运行并写入新日志时，您的浏览器界面应该会自动刷新或追加显示新的内容，无需手动刷新页面。这对于长时间运行的 AI 编程任务非常有用，您可以实时观察 AI 的进度。
 ## 引用

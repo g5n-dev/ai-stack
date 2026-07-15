@@ -16,9 +16,9 @@ categories:
 - 大模型
 - AI 工程
 source: blogs_podcasts
-description: 背景与目标 Amazon Nova Micro 是面向成本敏感场景的轻量语言模型。本文展示在 Amazon Bedrock 按需推理平台上，对
-  Nova Micro 进行微调，以生成自定义 SQL 方言，实现成本效益与生产级性能的双重目标。 方法一：数据驱动的微调 1. **数据准备**：收集目标业务的自定义
-  SQL
+description: 在本文中，我们演示了两种微调 Amazon Nova Micro 以生成自定义 SQL 方言的方法，以同时实现成本效率和即开即用的生产级性能。
+  在构建数据分析平台时，将自然语言转换为自定义 SQL 方言是一项关键需求。本文演示两种基于 Amazon Nova Micro 的微调方案，结合 Amazon
+  Bedrock 的按需推理，可在保证生产级性能的同时显著降低使用成本。
 external_url: https://aws.amazon.com/blogs/machine-learning/cost-efficient-custom-text-to-sql-using-amazon-nova-micro-and-amazon-bedrock-on-demand-inference
 scenarios:
 - RAG应用

@@ -15,8 +15,9 @@ tags:
 categories:
 - AI 工程
 source: blogs_podcasts
-description: 背景 Amazon SageMaker AI 的异步推理（Async Inference）原需先把输入数据上传至 Amazon S3，再在调用
-  InvokeEndpointAsync 时指定 S3 对象路径，导致流程繁琐、延迟增加。 新增功能 现在，异步推理支持在请求体（request body）中直接携带_inlin
+description: 今天，我们宣布 Amazon SageMaker AI 异步推理支持内联负载（payload）功能。客户现在可以直接在 InvokeEndpointAsync
+  API 的请求正文中发送推理负载，无需在每次调用前将输入数据上传到 Amazon Simple Storage Service (Amazon S3)。 Amazon
+  SageMaker AI 近日为异步推理引入了内联请求负载功能。
 external_url: https://aws.amazon.com/blogs/machine-learning/amazon-sagemaker-ai-async-inference-now-supports-inline-request-payloads
 scenarios:
 - 后端开发

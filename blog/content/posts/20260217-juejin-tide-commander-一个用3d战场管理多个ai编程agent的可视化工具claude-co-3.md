@@ -16,8 +16,9 @@ categories:
 - 开发工具
 - 效率与方法论
 source: juejin
-description: Tide Commander 是一个创新的可视化工具，旨在解决同时运行多个AI编程Agent（如Claude Code或Codex）时的管理难题。该工具通过3D战场的概念，将多个AI终端整合在一个直观的界面中，让用户能够高效监控和控制各个Agent的工作状态。其核心功能包括：
-  1. **多Agent集中管理**：将分散
+description: 管理多个 AI 编程代理往往意味着在繁杂的终端窗口间频繁切换，缺乏全局视角容易导致协作效率低下。Tide Commander 通过引入 3D
+  战场可视化概念，将 Claude Code 和 Codex 等代理的运行状态转化为直观的空间布局。本文将介绍这一工具的设计思路与核心功能，展示它如何帮助开发者更从容地监控与调度多
+  Agent 协作流，从而提升复杂编程任务的可控性。
 external_url: https://juejin.cn/post/7606793134374666303
 scenarios:
 - AI/ML项目
@@ -47,10 +48,10 @@ Tide Commander — 一个用于管理多个 AI 编程代理（Claude Code + Code
 
 Tide Commander 是一个创新的可视化工具，旨在解决同时运行多个AI编程Agent（如Claude Code或Codex）时的管理难题。该工具通过3D战场的概念，将多个AI终端整合在一个直观的界面中，让用户能够高效监控和控制各个Agent的工作状态。其核心功能包括：
 
-1. **多Agent集中管理**：将分散的AI编程终端统一到一个3D可视化平台，避免窗口混乱。  
-2. **实时状态监控**：通过动态3D界面，清晰展示每个Agent的任务进度、资源占用及运行状态。  
-3. **交互式操作**：支持直接在3D场景中分配任务、调整优先级或终止Agent进程。  
-4. **兼容性强**：适配主流AI编程工具（Claude Code、Codex等），适合复杂项目协作。  
+1. **多Agent集中管理**：将分散的AI编程终端统一到一个3D可视化平台，避免窗口混乱。
+2. **实时状态监控**：通过动态3D界面，清晰展示每个Agent的任务进度、资源占用及运行状态。
+3. **交互式操作**：支持直接在3D场景中分配任务、调整优先级或终止Agent进程。
+4. **兼容性强**：适配主流AI编程工具（Claude Code、Codex等），适合复杂项目协作。
 
 这一工具尤其适合需要并行处理多个AI任务的场景（如批量代码生成、自动化测试），显著提升工作流效率。
 
@@ -83,8 +84,6 @@ Tide Commander 是一个创新的可视化工具，旨在解决同时运行多�
 
 ### 1: Tide Commander 是什么？它与传统的代码编辑器（如 VS Code）有什么区别？
 
-1: Tide Commander 是什么？它与传统的代码编辑器（如 VS Code）有什么区别？
-
 **A**: Tide Commander 是一个创新的可视化工具，旨在通过 3D 战场界面来管理和协调多个 AI 编程 Agent（如 Claude Code 和 OpenAI 的 Codex）。与传统的代码编辑器不同，Tide Commander 不仅仅是一个编写代码的场所，更是一个指挥中心。
 
 主要区别包括：
@@ -97,8 +96,6 @@ Tide Commander 是一个创新的可视化工具，旨在解决同时运行多�
 
 
 ### 2: 使用 Tide Commander 需要什么样的本地硬件配置？对显卡有特殊要求吗？
-
-2: 使用 Tide Commander 需要什么样的本地硬件配置？对显卡有特殊要求吗？
 
 **A**: 由于 Tide Commander 包含 3D 渲染界面并需要同时与多个云端或本地 AI 模型进行通信，因此对硬件有一定要求。
 
@@ -113,8 +110,6 @@ Tide Commander 是一个创新的可视化工具，旨在解决同时运行多�
 
 ### 3: Tide Commander 支持哪些 AI 模型？我能否混用不同厂商的 Agent？
 
-3: Tide Commander 支持哪些 AI 模型？我能否混用不同厂商的 Agent？
-
 **A**: 根据目前的描述，Tide Commander 主要设计为与 **Claude Code** 和 **Codex**（OpenAI 的技术）配合使用。这意味着它主要支持 Anthropic 和 OpenAI 的 API 接口。
 
 关于混用：
@@ -125,8 +120,6 @@ Tide Commander 是一个创新的可视化工具，旨在解决同时运行多�
 
 
 ### 4: 如何在 3D 战场中解决代码冲突？如果两个 AI Agent 修改了同一个文件会怎样？
-
-4: 如何在 3D 战场中解决代码冲突？如果两个 AI Agent 修改了同一个文件会怎样？
 
 **A**: 这是 Tide Commander 核心功能之一。在传统的多线程编程或多人协作中，冲突处理往往很枯燥，但在 Tide Commander 的 3D 视图中，冲突会被具象化。
 
@@ -144,8 +137,6 @@ Tide Commander 是一个创新的可视化工具，旨在解决同时运行多�
 
 ### 5: Tide Commander 是否适合非程序员或初级开发者使用？
 
-5: Tide Commander 是否适合非程序员或初级开发者使用？
-
 **A**: Tide Commander 是一个双刃剑。对于**资深开发者或架构师**来说，它是一个强大的生产力工具，可以用来规划复杂的软件架构，将繁琐的编码任务“外包”给 AI 军团。
 
 对于**非程序员或初级开发者**：
@@ -157,8 +148,6 @@ Tide Commander 是一个创新的可视化工具，旨在解决同时运行多�
 
 
 ### 6: 数据隐私如何保障？我的代码会被发送到哪里？
-
-6: 数据隐私如何保障？我的代码会被发送到哪里？
 
 **A**: 使用 Tide Commander 时，数据隐私主要取决于你所配置的 AI Agent 的后端。
 

@@ -16,8 +16,7 @@ categories:
 - 大模型
 - 论文
 source: arxiv
-description: 背景与动机 Parameter‑efficient fine‑tuning (PEFT) 已成为大模型适配的标准手段，但现有评测主要关注下游精度，忽视预训练通用能力的保留。作者提出评估
-  PEFT 应从**稳定性‑可塑性**的权衡视角出发：既要适配目标任务，又要防止遗忘。 PEFT‑Arena 基准 构建 PEFT‑Ar
+description: 参数高效微调（PEFT）已成为适配大模型的主流方案，但现有评估体系主要关注下游任务的准确率，对预训练通用能力是否在微调后得到保留缺乏系统考量。本文提出从稳定性-可塑性权衡视角审视PEFT评估：模型需在适应目标任务的同时保持对预训练知识的稳定继承。PEFT-Arena平台可能为研究社区提供统一的基准测试框架，帮助研究者更全面地理解不同微调方法的特性。
 external_url: http://arxiv.org/abs/2605.28819v1
 scenarios:
 - Web应用开发

@@ -16,8 +16,8 @@ categories:
 - AI 工程
 - 大模型
 source: blogs_podcasts
-description: 项目背景 Hapag‑Lloyd 数字化客户体验与工程团队分布在汉堡和格但斯克，负责开发和维护面向客户的网页和移动产品。为快速把大量客户反馈转化为可操作的洞见，团队构建了一套基于生成式
-  AI 的反馈分析系统。 技术选型 - **Amazon Bedrock**：提供托管的基础模型（如大语言模型），负责自然语言理解、情感
+description: 赫伯罗特（Hapag-Lloyd）的数字客户体验与工程团队分布在汉堡和格但斯克，通过开发和维护面向客户的网页和移动产品来推动数字化创新。在这篇文章中，我们将为您介绍我们的生成式AI驱动的反馈分析解决方案，该方案基于Amazon
+  Bedrock、Elasticsearch以及LangChain和LangGraph等开源框架构建。
 external_url: https://aws.amazon.com/blogs/machine-learning/how-hapag-lloyd-uses-amazon-bedrock-to-transform-customer-feedback-into-actionable-insights
 scenarios:
 - AI/ML项目
