@@ -2,528 +2,328 @@
   "algorithm": "deterministic-weighted-label-propagation",
   "communities": [
     {
-      "article_count": 3555,
+      "article_count": 1963,
       "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/01-97cf78573fad.json",
-      "id": "community:tag:插件系统",
+      "hotspot_file": "community-hotspots/01-f074cab08136.json",
+      "id": "community:tag:Claude Code",
       "leader_id": "tag:LLM",
       "name": "LLM",
-      "node_count": 80,
+      "node_count": 1772,
       "rank": 1,
-      "tag_occurrences": 6188,
-      "weighted_degree": 43294
+      "tag_occurrences": 9534,
+      "weighted_degree": 66633
     },
     {
-      "article_count": 600,
-      "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/02-e3ab7de91959.json",
-      "id": "community:tag:战略转型",
-      "leader_id": "tag:OpenAI",
-      "name": "OpenAI",
-      "node_count": 35,
+      "article_count": 7,
+      "hotspot_count": 13,
+      "hotspot_file": "community-hotspots/02-9cd0aa669e12.json",
+      "id": "community:tag:SF6",
+      "leader_id": "tag:3D重建",
+      "name": "3D重建",
+      "node_count": 13,
       "rank": 2,
-      "tag_occurrences": 743,
-      "weighted_degree": 5203
+      "tag_occurrences": 22,
+      "weighted_degree": 154
     },
     {
-      "article_count": 468,
-      "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/03-908bdae270cd.json",
-      "id": "community:tag:PaddlePaddle",
-      "leader_id": "tag:深度学习",
-      "name": "深度学习",
-      "node_count": 31,
+      "article_count": 13,
+      "hotspot_count": 12,
+      "hotspot_file": "community-hotspots/03-4021b74d1423.json",
+      "id": "community:tag:实验设计",
+      "leader_id": "tag:贝叶斯优化",
+      "name": "贝叶斯优化",
+      "node_count": 12,
       "rank": 3,
-      "tag_occurrences": 765,
-      "weighted_degree": 5358.6
+      "tag_occurrences": 25,
+      "weighted_degree": 175
     },
     {
-      "article_count": 66,
-      "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/04-87007ff57262.json",
-      "id": "community:tag:Scaling without Slop",
-      "leader_id": "tag:AI资讯",
-      "name": "AI资讯",
-      "node_count": 30,
+      "article_count": 8,
+      "hotspot_count": 11,
+      "hotspot_file": "community-hotspots/04-dc8168cc69dd.json",
+      "id": "community:tag:RGB",
+      "leader_id": "tag:图像处理",
+      "name": "图像处理",
+      "node_count": 11,
       "rank": 4,
-      "tag_occurrences": 123,
-      "weighted_degree": 860.2
+      "tag_occurrences": 23,
+      "weighted_degree": 161.6
     },
     {
-      "article_count": 62,
-      "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/05-19356848d7c3.json",
-      "id": "community:tag:低秩更新",
-      "leader_id": "tag:持续学习",
-      "name": "持续学习",
-      "node_count": 27,
+      "article_count": 7,
+      "hotspot_count": 11,
+      "hotspot_file": "community-hotspots/05-fff733d40237.json",
+      "id": "community:tag:Imagine API",
+      "leader_id": "tag:xAI",
+      "name": "xAI",
+      "node_count": 11,
       "rank": 5,
-      "tag_occurrences": 138,
-      "weighted_degree": 966
+      "tag_occurrences": 19,
+      "weighted_degree": 134.2
     },
     {
-      "article_count": 256,
-      "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/06-bb5c32476fd4.json",
-      "id": "community:tag:外部工具",
-      "leader_id": "tag:MCP",
-      "name": "MCP",
-      "node_count": 26,
+      "article_count": 7,
+      "hotspot_count": 11,
+      "hotspot_file": "community-hotspots/06-a1c1e55f1681.json",
+      "id": "community:tag:Zoom",
+      "leader_id": "tag:数据隐私",
+      "name": "数据隐私",
+      "node_count": 11,
       "rank": 6,
-      "tag_occurrences": 395,
-      "weighted_degree": 2765.2
+      "tag_occurrences": 18,
+      "weighted_degree": 126
     },
     {
-      "article_count": 143,
-      "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/07-0219a6d7392a.json",
-      "id": "community:tag:开源贡献",
-      "leader_id": "tag:HackerNews",
-      "name": "HackerNews",
-      "node_count": 25,
+      "article_count": 9,
+      "hotspot_count": 10,
+      "hotspot_file": "community-hotspots/07-be3517cd53b2.json",
+      "id": "community:tag:RyzenAI",
+      "leader_id": "tag:NPU",
+      "name": "NPU",
+      "node_count": 10,
       "rank": 7,
-      "tag_occurrences": 207,
-      "weighted_degree": 1450.8
+      "tag_occurrences": 19,
+      "weighted_degree": 134.2
     },
     {
-      "article_count": 34,
-      "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/08-ee952e6a54a1.json",
-      "id": "community:tag:威胁模型",
-      "leader_id": "tag:METR",
-      "name": "METR",
-      "node_count": 25,
+      "article_count": 6,
+      "hotspot_count": 10,
+      "hotspot_file": "community-hotspots/08-260424e214a0.json",
+      "id": "community:tag:GenUI",
+      "leader_id": "tag:Flutter",
+      "name": "Flutter",
+      "node_count": 10,
       "rank": 8,
-      "tag_occurrences": 105,
-      "weighted_degree": 736.2
+      "tag_occurrences": 16,
+      "weighted_degree": 112.6
     },
     {
-      "article_count": 70,
-      "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/09-d07711bff167.json",
-      "id": "community:tag:弱势群体",
-      "leader_id": "tag:幻觉",
-      "name": "幻觉",
-      "node_count": 24,
+      "article_count": 6,
+      "hotspot_count": 10,
+      "hotspot_file": "community-hotspots/09-6219bc02833e.json",
+      "id": "community:tag:自然语音",
+      "leader_id": "tag:语音翻译",
+      "name": "语音翻译",
+      "node_count": 10,
       "rank": 9,
-      "tag_occurrences": 143,
-      "weighted_degree": 1002.8
+      "tag_occurrences": 16,
+      "weighted_degree": 112.6
     },
     {
-      "article_count": 138,
-      "hotspot_count": 23,
-      "hotspot_file": "community-hotspots/10-7cfa59892cc5.json",
-      "id": "community:tag:Gemini 3",
-      "leader_id": "tag:推理模型",
-      "name": "推理模型",
-      "node_count": 23,
+      "article_count": 8,
+      "hotspot_count": 9,
+      "hotspot_file": "community-hotspots/10-14f0983fe42e.json",
+      "id": "community:tag:云成本",
+      "leader_id": "tag:Scaling Laws",
+      "name": "Scaling Laws",
+      "node_count": 9,
       "rank": 10,
-      "tag_occurrences": 278,
-      "weighted_degree": 1948
+      "tag_occurrences": 17,
+      "weighted_degree": 119
     },
     {
-      "article_count": 135,
-      "hotspot_count": 23,
-      "hotspot_file": "community-hotspots/11-81386b95b1ba.json",
-      "id": "community:tag:LIME",
-      "leader_id": "tag:可解释性",
-      "name": "可解释性",
-      "node_count": 23,
+      "article_count": 7,
+      "hotspot_count": 9,
+      "hotspot_file": "community-hotspots/11-0a61736fcf93.json",
+      "id": "community:tag:自动化脚本",
+      "leader_id": "tag:GitHub热榜",
+      "name": "GitHub热榜",
+      "node_count": 9,
       "rank": 11,
-      "tag_occurrences": 206,
-      "weighted_degree": 1442
+      "tag_occurrences": 16,
+      "weighted_degree": 112.6
     },
     {
-      "article_count": 6585,
+      "article_count": 1499,
       "hotspot_count": 0,
       "id": "community:other",
       "leader_id": null,
       "name": "其他",
-      "node_count": 10957,
+      "node_count": 5282,
       "rank": 12,
-      "tag_occurrences": 43561,
-      "weighted_degree": 304466.2
+      "tag_occurrences": 6530,
+      "weighted_degree": 45708.8
     }
   ],
   "generated_at": "2026-07-15T06:00:41Z",
-  "iterations": 11,
+  "iterations": 20,
   "limit": 11,
   "links": [
     {
-      "id": "edge:community:community:other->community:tag:Gemini 3",
+      "id": "edge:community:community:other->community:tag:Claude Code",
       "source": "community:other",
       "strength": 1,
-      "target": "community:tag:Gemini 3",
+      "target": "community:tag:Claude Code",
       "type": "community",
-      "weight": 998
+      "weight": 17321
     },
     {
-      "id": "edge:community:community:other->community:tag:LIME",
+      "id": "edge:community:community:other->community:tag:GenUI",
       "source": "community:other",
       "strength": 1,
-      "target": "community:tag:LIME",
+      "target": "community:tag:GenUI",
       "type": "community",
-      "weight": 926
+      "weight": 13
     },
     {
-      "id": "edge:community:community:other->community:tag:PaddlePaddle",
+      "id": "edge:community:community:other->community:tag:Imagine API",
       "source": "community:other",
       "strength": 1,
-      "target": "community:tag:PaddlePaddle",
-      "type": "community",
-      "weight": 3396
-    },
-    {
-      "id": "edge:community:community:other->community:tag:Scaling without Slop",
-      "source": "community:other",
-      "strength": 1,
-      "target": "community:tag:Scaling without Slop",
-      "type": "community",
-      "weight": 408
-    },
-    {
-      "id": "edge:community:community:other->community:tag:低秩更新",
-      "source": "community:other",
-      "strength": 1,
-      "target": "community:tag:低秩更新",
-      "type": "community",
-      "weight": 482
-    },
-    {
-      "id": "edge:community:community:other->community:tag:外部工具",
-      "source": "community:other",
-      "strength": 1,
-      "target": "community:tag:外部工具",
-      "type": "community",
-      "weight": 1623
-    },
-    {
-      "id": "edge:community:community:other->community:tag:威胁模型",
-      "source": "community:other",
-      "strength": 1,
-      "target": "community:tag:威胁模型",
-      "type": "community",
-      "weight": 171
-    },
-    {
-      "id": "edge:community:community:other->community:tag:开源贡献",
-      "source": "community:other",
-      "strength": 1,
-      "target": "community:tag:开源贡献",
-      "type": "community",
-      "weight": 862
-    },
-    {
-      "id": "edge:community:community:other->community:tag:弱势群体",
-      "source": "community:other",
-      "strength": 1,
-      "target": "community:tag:弱势群体",
-      "type": "community",
-      "weight": 460
-    },
-    {
-      "id": "edge:community:community:other->community:tag:战略转型",
-      "source": "community:other",
-      "strength": 1,
-      "target": "community:tag:战略转型",
-      "type": "community",
-      "weight": 4078
-    },
-    {
-      "id": "edge:community:community:other->community:tag:插件系统",
-      "source": "community:other",
-      "strength": 1,
-      "target": "community:tag:插件系统",
-      "type": "community",
-      "weight": 29848
-    },
-    {
-      "id": "edge:community:community:tag:Gemini 3->community:tag:LIME",
-      "source": "community:tag:Gemini 3",
-      "strength": 1,
-      "target": "community:tag:LIME",
-      "type": "community",
-      "weight": 2
-    },
-    {
-      "id": "edge:community:community:tag:Gemini 3->community:tag:PaddlePaddle",
-      "source": "community:tag:Gemini 3",
-      "strength": 1,
-      "target": "community:tag:PaddlePaddle",
-      "type": "community",
-      "weight": 4
-    },
-    {
-      "id": "edge:community:community:tag:Gemini 3->community:tag:Scaling without Slop",
-      "source": "community:tag:Gemini 3",
-      "strength": 1,
-      "target": "community:tag:Scaling without Slop",
-      "type": "community",
-      "weight": 18
-    },
-    {
-      "id": "edge:community:community:tag:Gemini 3->community:tag:弱势群体",
-      "source": "community:tag:Gemini 3",
-      "strength": 1,
-      "target": "community:tag:弱势群体",
-      "type": "community",
-      "weight": 2
-    },
-    {
-      "id": "edge:community:community:tag:Gemini 3->community:tag:战略转型",
-      "source": "community:tag:Gemini 3",
-      "strength": 1,
-      "target": "community:tag:战略转型",
-      "type": "community",
-      "weight": 54
-    },
-    {
-      "id": "edge:community:community:tag:Gemini 3->community:tag:插件系统",
-      "source": "community:tag:Gemini 3",
-      "strength": 1,
-      "target": "community:tag:插件系统",
-      "type": "community",
-      "weight": 143
-    },
-    {
-      "id": "edge:community:community:tag:LIME->community:tag:PaddlePaddle",
-      "source": "community:tag:LIME",
-      "strength": 1,
-      "target": "community:tag:PaddlePaddle",
-      "type": "community",
-      "weight": 47
-    },
-    {
-      "id": "edge:community:community:tag:LIME->community:tag:外部工具",
-      "source": "community:tag:LIME",
-      "strength": 1,
-      "target": "community:tag:外部工具",
-      "type": "community",
-      "weight": 4
-    },
-    {
-      "id": "edge:community:community:tag:LIME->community:tag:威胁模型",
-      "source": "community:tag:LIME",
-      "strength": 1,
-      "target": "community:tag:威胁模型",
-      "type": "community",
-      "weight": 3
-    },
-    {
-      "id": "edge:community:community:tag:LIME->community:tag:开源贡献",
-      "source": "community:tag:LIME",
-      "strength": 1,
-      "target": "community:tag:开源贡献",
-      "type": "community",
-      "weight": 1
-    },
-    {
-      "id": "edge:community:community:tag:LIME->community:tag:弱势群体",
-      "source": "community:tag:LIME",
-      "strength": 1,
-      "target": "community:tag:弱势群体",
-      "type": "community",
-      "weight": 4
-    },
-    {
-      "id": "edge:community:community:tag:LIME->community:tag:战略转型",
-      "source": "community:tag:LIME",
-      "strength": 1,
-      "target": "community:tag:战略转型",
-      "type": "community",
-      "weight": 1
-    },
-    {
-      "id": "edge:community:community:tag:LIME->community:tag:插件系统",
-      "source": "community:tag:LIME",
-      "strength": 1,
-      "target": "community:tag:插件系统",
-      "type": "community",
-      "weight": 66
-    },
-    {
-      "id": "edge:community:community:tag:PaddlePaddle->community:tag:Scaling without Slop",
-      "source": "community:tag:PaddlePaddle",
-      "strength": 1,
-      "target": "community:tag:Scaling without Slop",
-      "type": "community",
-      "weight": 3
-    },
-    {
-      "id": "edge:community:community:tag:PaddlePaddle->community:tag:低秩更新",
-      "source": "community:tag:PaddlePaddle",
-      "strength": 1,
-      "target": "community:tag:低秩更新",
-      "type": "community",
-      "weight": 9
-    },
-    {
-      "id": "edge:community:community:tag:PaddlePaddle->community:tag:外部工具",
-      "source": "community:tag:PaddlePaddle",
-      "strength": 1,
-      "target": "community:tag:外部工具",
-      "type": "community",
-      "weight": 1
-    },
-    {
-      "id": "edge:community:community:tag:PaddlePaddle->community:tag:威胁模型",
-      "source": "community:tag:PaddlePaddle",
-      "strength": 1,
-      "target": "community:tag:威胁模型",
-      "type": "community",
-      "weight": 2
-    },
-    {
-      "id": "edge:community:community:tag:PaddlePaddle->community:tag:开源贡献",
-      "source": "community:tag:PaddlePaddle",
-      "strength": 1,
-      "target": "community:tag:开源贡献",
-      "type": "community",
-      "weight": 36
-    },
-    {
-      "id": "edge:community:community:tag:PaddlePaddle->community:tag:弱势群体",
-      "source": "community:tag:PaddlePaddle",
-      "strength": 1,
-      "target": "community:tag:弱势群体",
-      "type": "community",
-      "weight": 9
-    },
-    {
-      "id": "edge:community:community:tag:PaddlePaddle->community:tag:战略转型",
-      "source": "community:tag:PaddlePaddle",
-      "strength": 1,
-      "target": "community:tag:战略转型",
-      "type": "community",
-      "weight": 5
-    },
-    {
-      "id": "edge:community:community:tag:PaddlePaddle->community:tag:插件系统",
-      "source": "community:tag:PaddlePaddle",
-      "strength": 1,
-      "target": "community:tag:插件系统",
-      "type": "community",
-      "weight": 349
-    },
-    {
-      "id": "edge:community:community:tag:Scaling without Slop->community:tag:开源贡献",
-      "source": "community:tag:Scaling without Slop",
-      "strength": 1,
-      "target": "community:tag:开源贡献",
-      "type": "community",
-      "weight": 1
-    },
-    {
-      "id": "edge:community:community:tag:Scaling without Slop->community:tag:战略转型",
-      "source": "community:tag:Scaling without Slop",
-      "strength": 1,
-      "target": "community:tag:战略转型",
-      "type": "community",
-      "weight": 24
-    },
-    {
-      "id": "edge:community:community:tag:Scaling without Slop->community:tag:插件系统",
-      "source": "community:tag:Scaling without Slop",
-      "strength": 1,
-      "target": "community:tag:插件系统",
-      "type": "community",
-      "weight": 35
-    },
-    {
-      "id": "edge:community:community:tag:低秩更新->community:tag:战略转型",
-      "source": "community:tag:低秩更新",
-      "strength": 1,
-      "target": "community:tag:战略转型",
-      "type": "community",
-      "weight": 1
-    },
-    {
-      "id": "edge:community:community:tag:低秩更新->community:tag:插件系统",
-      "source": "community:tag:低秩更新",
-      "strength": 1,
-      "target": "community:tag:插件系统",
-      "type": "community",
-      "weight": 46
-    },
-    {
-      "id": "edge:community:community:tag:外部工具->community:tag:开源贡献",
-      "source": "community:tag:外部工具",
-      "strength": 1,
-      "target": "community:tag:开源贡献",
-      "type": "community",
-      "weight": 14
-    },
-    {
-      "id": "edge:community:community:tag:外部工具->community:tag:战略转型",
-      "source": "community:tag:外部工具",
-      "strength": 1,
-      "target": "community:tag:战略转型",
-      "type": "community",
-      "weight": 3
-    },
-    {
-      "id": "edge:community:community:tag:外部工具->community:tag:插件系统",
-      "source": "community:tag:外部工具",
-      "strength": 1,
-      "target": "community:tag:插件系统",
-      "type": "community",
-      "weight": 497
-    },
-    {
-      "id": "edge:community:community:tag:威胁模型->community:tag:插件系统",
-      "source": "community:tag:威胁模型",
-      "strength": 1,
-      "target": "community:tag:插件系统",
-      "type": "community",
-      "weight": 31
-    },
-    {
-      "id": "edge:community:community:tag:开源贡献->community:tag:弱势群体",
-      "source": "community:tag:开源贡献",
-      "strength": 1,
-      "target": "community:tag:弱势群体",
-      "type": "community",
-      "weight": 5
-    },
-    {
-      "id": "edge:community:community:tag:开源贡献->community:tag:战略转型",
-      "source": "community:tag:开源贡献",
-      "strength": 1,
-      "target": "community:tag:战略转型",
+      "target": "community:tag:Imagine API",
       "type": "community",
       "weight": 15
     },
     {
-      "id": "edge:community:community:tag:开源贡献->community:tag:插件系统",
-      "source": "community:tag:开源贡献",
+      "id": "edge:community:community:other->community:tag:RGB",
+      "source": "community:other",
       "strength": 1,
-      "target": "community:tag:插件系统",
+      "target": "community:tag:RGB",
       "type": "community",
-      "weight": 115
+      "weight": 34
     },
     {
-      "id": "edge:community:community:tag:弱势群体->community:tag:插件系统",
-      "source": "community:tag:弱势群体",
+      "id": "edge:community:community:other->community:tag:RyzenAI",
+      "source": "community:other",
       "strength": 1,
-      "target": "community:tag:插件系统",
+      "target": "community:tag:RyzenAI",
       "type": "community",
-      "weight": 89
+      "weight": 28
     },
     {
-      "id": "edge:community:community:tag:战略转型->community:tag:插件系统",
-      "source": "community:tag:战略转型",
+      "id": "edge:community:community:other->community:tag:SF6",
+      "source": "community:other",
       "strength": 1,
-      "target": "community:tag:插件系统",
+      "target": "community:tag:SF6",
       "type": "community",
-      "weight": 293
+      "weight": 26
+    },
+    {
+      "id": "edge:community:community:other->community:tag:Zoom",
+      "source": "community:other",
+      "strength": 1,
+      "target": "community:tag:Zoom",
+      "type": "community",
+      "weight": 15
+    },
+    {
+      "id": "edge:community:community:other->community:tag:云成本",
+      "source": "community:other",
+      "strength": 1,
+      "target": "community:tag:云成本",
+      "type": "community",
+      "weight": 13
+    },
+    {
+      "id": "edge:community:community:other->community:tag:实验设计",
+      "source": "community:other",
+      "strength": 1,
+      "target": "community:tag:实验设计",
+      "type": "community",
+      "weight": 47
+    },
+    {
+      "id": "edge:community:community:other->community:tag:自动化脚本",
+      "source": "community:other",
+      "strength": 1,
+      "target": "community:tag:自动化脚本",
+      "type": "community",
+      "weight": 21
+    },
+    {
+      "id": "edge:community:community:other->community:tag:自然语音",
+      "source": "community:other",
+      "strength": 1,
+      "target": "community:tag:自然语音",
+      "type": "community",
+      "weight": 10
+    },
+    {
+      "id": "edge:community:community:tag:Claude Code->community:tag:GenUI",
+      "source": "community:tag:Claude Code",
+      "strength": 1,
+      "target": "community:tag:GenUI",
+      "type": "community",
+      "weight": 37
+    },
+    {
+      "id": "edge:community:community:tag:Claude Code->community:tag:Imagine API",
+      "source": "community:tag:Claude Code",
+      "strength": 1,
+      "target": "community:tag:Imagine API",
+      "type": "community",
+      "weight": 52
+    },
+    {
+      "id": "edge:community:community:tag:Claude Code->community:tag:RGB",
+      "source": "community:tag:Claude Code",
+      "strength": 1,
+      "target": "community:tag:RGB",
+      "type": "community",
+      "weight": 25
+    },
+    {
+      "id": "edge:community:community:tag:Claude Code->community:tag:RyzenAI",
+      "source": "community:tag:Claude Code",
+      "strength": 1,
+      "target": "community:tag:RyzenAI",
+      "type": "community",
+      "weight": 37
+    },
+    {
+      "id": "edge:community:community:tag:Claude Code->community:tag:SF6",
+      "source": "community:tag:Claude Code",
+      "strength": 1,
+      "target": "community:tag:SF6",
+      "type": "community",
+      "weight": 50
+    },
+    {
+      "id": "edge:community:community:tag:Claude Code->community:tag:Zoom",
+      "source": "community:tag:Claude Code",
+      "strength": 1,
+      "target": "community:tag:Zoom",
+      "type": "community",
+      "weight": 39
+    },
+    {
+      "id": "edge:community:community:tag:Claude Code->community:tag:云成本",
+      "source": "community:tag:Claude Code",
+      "strength": 1,
+      "target": "community:tag:云成本",
+      "type": "community",
+      "weight": 56
+    },
+    {
+      "id": "edge:community:community:tag:Claude Code->community:tag:实验设计",
+      "source": "community:tag:Claude Code",
+      "strength": 1,
+      "target": "community:tag:实验设计",
+      "type": "community",
+      "weight": 44
+    },
+    {
+      "id": "edge:community:community:tag:Claude Code->community:tag:自动化脚本",
+      "source": "community:tag:Claude Code",
+      "strength": 1,
+      "target": "community:tag:自动化脚本",
+      "type": "community",
+      "weight": 41
+    },
+    {
+      "id": "edge:community:community:tag:Claude Code->community:tag:自然语音",
+      "source": "community:tag:Claude Code",
+      "strength": 1,
+      "target": "community:tag:自然语音",
+      "type": "community",
+      "weight": 40
     }
   ],
   "stats": {
-    "assigned_nodes": 11306,
-    "detected_communities": 2022,
+    "assigned_nodes": 7160,
+    "detected_communities": 1183,
     "emitted_communities": 12,
     "total_communities": 12,
-    "total_links": 46,
+    "total_links": 21,
     "weighting": "cosine-association"
   },
   "version": 2

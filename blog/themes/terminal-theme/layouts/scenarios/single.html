@@ -2,7 +2,7 @@
 <html class="dark" lang="{{ .Site.LanguageCode }}">
 
 <head>
-    {{ partial "site-head.html" (dict "Page" . "Description" (printf "%s 相关项目" .Title) "Scripts" (slice "/js/terminal.js")) }}
+    {{ partial "site-head.html" (dict "Page" . "Description" (printf "%s 相关项目" .Title) "Scripts" (slice ("js/terminal.js" | relURL))) }}
 </head>
 
 <body class="bg-deep-navy selection:bg-muted-teal selection:text-deep-navy font-display">
@@ -35,37 +35,7 @@
     </div>
 
     <div class="relative flex h-screen w-full flex-col overflow-hidden z-10">
-        <header class="w-full max-w-6xl mx-auto px-6 py-6 flex items-center justify-between">
-            <div class="flex items-center gap-4">
-                <a href="/"
-                    class="size-10 bg-primary/10 flex items-center justify-center rounded-lg border border-primary/20 backdrop-blur-md shadow-[0_0_15px_rgba(77,182,172,0.12)]">
-                    <span class="material-symbols-outlined text-primary text-xl">terminal</span>
-                </a>
-                <div>
-                    <h2 class="text-off-white/90 text-lg font-medium tracking-wide teal-glow-text">{{ .Site.Title }}
-                    </h2>
-                    <p class="text-[11px] font-mono text-muted-teal/50 -mt-0.5 tracking-wide">场景详情</p>
-                </div>
-            </div>
-
-            <nav class="hidden md:flex items-center gap-8 text-[11px] font-mono tracking-wide text-off-white/70">
-                {{ range .Site.Menus.main }}
-                <a href="{{ .URL }}" class="hover:text-primary transition-all">{{ .Name }}</a>
-                {{ end }}
-            </nav>
-
-            <div class="flex items-center gap-3">
-                <a href="/scenarios/"
-                    class="px-4 py-1.5 bg-primary/5 border border-primary/20 text-primary/70 text-[10px] font-mono uppercase tracking-widest rounded-full hover:bg-primary/10 hover:text-primary hover:border-primary/40 transition-all">
-                    全部场景
-                </a>
-                <a href="/index.xml"
-                    class="size-9 flex items-center justify-center text-off-white/40 hover:text-primary transition-colors border border-muted-teal/20 rounded-lg bg-muted-teal/5"
-                    aria-label="RSS">
-                    <span class="material-symbols-outlined text-xl">rss_feed</span>
-                </a>
-            </div>
-        </header>
+        {{ partial "site-header.html" . }}
 
         <main class="flex-1 w-full overflow-y-auto custom-scrollbar px-4 md:px-8 py-8">
             <div class="w-full max-w-6xl mx-auto">

@@ -17,6 +17,10 @@ from typing import Any, Dict, List, Optional, Tuple
 
 import yaml
 
+from ai_stack.content_quality import is_synthetic_body
+from ai_stack.identity import canonicalize_url
+from processor.taxonomy_normalizer import normalize_tags
+
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
@@ -44,7 +48,6 @@ GRAPH_NODE_V2_FIELDS = [
     "community_id",
     "rank",
 ]
-
 
 def _stable_text_key(value: Any) -> Tuple[str, str]:
     text = str(value or "")
@@ -185,6 +188,9 @@ class TagGraphBuilder:
         self.concepts: Dict[str, Dict] = {}
         self.source_dates: List[str] = []
         self.enable_content_mining = enable_content_mining
+        self.canonical_duplicate_files_skipped = 0
+        self.synthetic_article_groups_skipped = 0
+        self.synthetic_article_files_skipped = 0
 
     @property
     def generated_at(self) -> str:
@@ -208,35 +214,128 @@ class TagGraphBuilder:
         )
         print(f"Found {len(md_files)} markdown files")
 
+        grouped_articles: Dict[str, List[Tuple[Path, str, Dict[str, Any]]]] = defaultdict(list)
         for md_file in md_files:
-            self._parse_article_tags(md_file)
+            content = md_file.read_text(encoding="utf-8")
+            frontmatter = self._extract_frontmatter(content)
+            identity = self._canonical_article_identity(md_file, frontmatter)
+            grouped_articles[identity].append((md_file, content, frontmatter))
+
+        selected_articles: List[Tuple[Path, str, Dict[str, Any]]] = []
+        for identity in sorted(grouped_articles, key=_stable_text_key):
+            candidates = grouped_articles[identity]
+            clean_candidates = [
+                candidate
+                for candidate in candidates
+                if not self._candidate_is_synthetic(candidate)
+            ]
+            self.synthetic_article_files_skipped += len(candidates) - len(clean_candidates)
+            if clean_candidates:
+                selected_articles.append(
+                    min(clean_candidates, key=self._article_candidate_sort_key)
+                )
+            else:
+                self.synthetic_article_groups_skipped += 1
+            self.canonical_duplicate_files_skipped += max(0, len(candidates) - 1)
+
+        selected_articles.sort(key=lambda item: _stable_text_key(item[0].as_posix()))
+        for md_file, content, frontmatter in selected_articles:
+            self._parse_article_tags(md_file, content=content, frontmatter=frontmatter)
             if self.enable_content_mining:
-                self._mine_article_concepts(md_file)
+                self._mine_article_concepts(
+                    md_file,
+                    content=content,
+                    frontmatter=frontmatter,
+                )
 
         print(f"Extracted {len(self.tags)} unique tags from {len(self.article_tags)} articles")
         if self.enable_content_mining:
             print(f"Mined {len(self.concepts)} unique concepts from {len(self.article_concepts)} articles")
 
-    def _parse_article_tags(self, md_file: Path) -> None:
-        """解析单篇文章的标签"""
-        with open(md_file, "r", encoding="utf-8") as f:
-            content = f.read()
+    def _canonical_article_identity(
+        self,
+        md_file: Path,
+        frontmatter: Dict[str, Any],
+    ) -> str:
+        raw_url = next(
+            (
+                frontmatter.get(key)
+                for key in ("external_url", "externalUrl", "external-url")
+                if frontmatter.get(key)
+            ),
+            None,
+        )
+        if raw_url:
+            try:
+                return f"url:{canonicalize_url(str(raw_url))}"
+            except ValueError:
+                logger.warning("Ignoring invalid external URL in %s", md_file)
+        return f"path:{self._article_key(md_file)}"
 
-        frontmatter = self._extract_frontmatter(content)
+    def _article_candidate_sort_key(
+        self,
+        candidate: Tuple[Path, str, Dict[str, Any]],
+    ) -> Tuple[Any, ...]:
+        """Rank duplicate article candidates without letting synthetic length win."""
+        md_file, content, frontmatter = candidate
+        body = re.sub(
+            r"\A(?:\ufeff)?---[ \t]*\r?\n.*?\r?\n---[ \t]*(?:\r?\n|\Z)",
+            "",
+            content,
+            count=1,
+            flags=re.DOTALL,
+        )
+        visible = re.sub(r"[`*_>#\[\](){}|~-]+", " ", body)
+        visible_length = len(re.sub(r"\s+", "", visible))
+        empty_headings = len(
+            re.findall(r"(?m)^#{1,6}\s+[^\n]+\n\s*(?=^#{1,6}\s+|\Z)", body)
+        )
+        has_source = bool(
+            frontmatter.get("external_url")
+            or frontmatter.get("externalUrl")
+            or frontmatter.get("external-url")
+        )
+        return (
+            visible_length < 300,
+            not has_source,
+            empty_headings,
+            -min(visible_length, 12_000),
+            *_stable_text_key(self._article_key(md_file)),
+        )
+
+    def _candidate_is_synthetic(
+        self,
+        candidate: Tuple[Path, str, Dict[str, Any]],
+    ) -> bool:
+        _, content, _ = candidate
+        body = re.sub(
+            r"\A(?:\ufeff)?---[ \t]*\r?\n.*?\r?\n---[ \t]*(?:\r?\n|\Z)",
+            "",
+            content,
+            count=1,
+            flags=re.DOTALL,
+        )
+        return is_synthetic_body(body)
+
+    def _parse_article_tags(
+        self,
+        md_file: Path,
+        *,
+        content: Optional[str] = None,
+        frontmatter: Optional[Dict[str, Any]] = None,
+    ) -> None:
+        """解析单篇文章的标签"""
+        if content is None:
+            content = md_file.read_text(encoding="utf-8")
+        if frontmatter is None:
+            frontmatter = self._extract_frontmatter(content)
         raw_tags = frontmatter.get("tags")
         if isinstance(raw_tags, str):
             raw_tags = raw_tags.split(",")
         if not isinstance(raw_tags, (list, tuple, set)):
             return
 
-        tags = sorted(
-            {
-                str(tag).strip().strip('"\'')
-                for tag in raw_tags
-                if str(tag).strip().strip('"\'')
-            },
-            key=_stable_text_key,
-        )
+        tags = sorted(set(normalize_tags(raw_tags, limit=8)), key=_stable_text_key)
         if not tags:
             return
 
@@ -298,13 +397,21 @@ class TagGraphBuilder:
             return None
         return _normalize_generated_at(match.group(1))
 
-    def _mine_article_concepts(self, md_file: Path) -> None:
+    def _mine_article_concepts(
+        self,
+        md_file: Path,
+        *,
+        content: Optional[str] = None,
+        frontmatter: Optional[Dict[str, Any]] = None,
+    ) -> None:
         """从文章内容中挖掘概念和关键词"""
-        with open(md_file, "r", encoding="utf-8") as f:
-            content = f.read()
+        if content is None:
+            content = md_file.read_text(encoding="utf-8")
 
         article_key = self._article_key(md_file)
-        article_title = self._extract_title(content)
+        if frontmatter is None:
+            frontmatter = self._extract_frontmatter(content)
+        article_title = str(frontmatter.get("title") or self._extract_title(content))
         
         title_concepts = self._extract_concepts_from_text(article_title)
         body_concepts = self._extract_concepts_from_text(content)
@@ -530,6 +637,9 @@ class TagGraphBuilder:
             "total_tags": len(self.tags),
             "total_concepts": len(self.concepts),
             "total_articles": len(self.article_tags),
+            "canonical_duplicate_files_skipped": self.canonical_duplicate_files_skipped,
+            "synthetic_article_groups_skipped": self.synthetic_article_groups_skipped,
+            "synthetic_article_files_skipped": self.synthetic_article_files_skipped,
             "total_tag_links": len(self.tag_cooccurrence),
             "total_concept_links": len(self.concept_cooccurrence),
             "avg_tags_per_article": sum(len(tags) for tags in self.article_tags.values()) / len(self.article_tags) if self.article_tags else 0,

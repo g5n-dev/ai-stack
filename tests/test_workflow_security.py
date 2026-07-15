@@ -99,7 +99,25 @@ def test_deploy_keeps_a_single_fail_closed_job_flow() -> None:
     steps = jobs["build-and-deploy"]["steps"]
     assert isinstance(steps, list)
     step_names = [step.get("name") for step in steps if isinstance(step, dict)]
+    steps_by_name = {
+        step.get("name"): step for step in steps if isinstance(step, dict)
+    }
     assert step_names.index("Commit generated data") < step_names.index("Build Hugo site")
+    for data_refresh_step in (
+        "Install Playwright browsers",
+        "Run crawler",
+        "Sanitize broken relref links",
+        "Build historical content quality manifest",
+        "Build tag graph",
+        "Commit generated data",
+    ):
+        assert steps_by_name[data_refresh_step]["if"] == (
+            "${{ github.event_name != 'push' }}"
+        )
+    assert steps_by_name["Moderation cleanup (LLM)"]["if"] == (
+        "${{ github.event_name != 'push' "
+        "&& env.AI_STACK_RUNTIME_PROFILE != 'ci' }}"
+    )
     assert "python3 scripts/verify_graph.py" in text
     assert "reset --hard" not in text
     assert "git pull --rebase" not in text

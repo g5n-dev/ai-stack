@@ -24,6 +24,7 @@ from runtime_env import load_project_env
 load_project_env(project_root)
 from runtime_profile import get_runtime_profile
 
+from ai_stack.content_quality import synthetic_body_reasons
 from crawler.main import CrawlerOrchestrator
 from processor.main import ProcessorOrchestrator
 from processor.markdown_normalizer import remove_markdown_sections_by_heading
@@ -607,13 +608,15 @@ class SuperEnhancedContentGenerator:
             )
             generation_stats = getattr(self, "last_generation_stats", {})
             logger.info(
-                "✓ Markdown write summary: created=%s skipped_existing=%s",
+                "✓ Markdown write summary: created=%s skipped_existing=%s skipped_quality=%s",
                 posts_created,
                 int(generation_stats.get("skipped_existing", 0) or 0),
+                int(generation_stats.get("skipped_quality", 0) or 0),
             )
             self._raise_for_fatal_post_generation_state(
                 posts_created=posts_created,
                 postability=postability,
+                quality_failed_items=int(generation_stats.get("skipped_quality", 0) or 0),
             )
 
             if sanitize_relrefs:
@@ -716,7 +719,13 @@ class SuperEnhancedContentGenerator:
         )
         return selected
 
-    def _raise_for_fatal_post_generation_state(self, *, posts_created: int, postability: dict) -> None:
+    def _raise_for_fatal_post_generation_state(
+        self,
+        *,
+        posts_created: int,
+        postability: dict,
+        quality_failed_items: int = 0,
+    ) -> None:
         total_items = int(postability.get("total_items", 0) or 0)
         auth_error_items = int(postability.get("auth_error_items", 0) or 0)
         compat_error_items = int(postability.get("compat_error_items", 0) or 0)
@@ -740,6 +749,11 @@ class SuperEnhancedContentGenerator:
                     "Some content failed output guards after regeneration: items=%s examples=%s",
                     guard_failed_items,
                     ", ".join(postability.get("guard_failed_examples", [])) or "n/a",
+                )
+            if quality_failed_items > 0:
+                logger.warning(
+                    "Some generated Markdown failed the provenance gate: items=%s",
+                    quality_failed_items,
                 )
             return
 
@@ -765,6 +779,11 @@ class SuperEnhancedContentGenerator:
                 "Generated content failed output guards and no Markdown posts were created. "
                 f"Examples: {examples}"
             )
+        if quality_failed_items > 0:
+            raise RuntimeError(
+                "Generated Markdown failed the provenance gate and no posts were created. "
+                f"Rejected items: {quality_failed_items}"
+            )
 
     def _generate_posts(
         self,
@@ -783,6 +802,7 @@ class SuperEnhancedContentGenerator:
         """
         created_count = 0
         skipped_existing = 0
+        skipped_quality = 0
         local_generated_at = content_now(generated_at)
         timestamp = local_generated_at.strftime('%Y%m%d')
 
@@ -810,6 +830,16 @@ class SuperEnhancedContentGenerator:
                     )
                     markdown_content, _ = sanitize_public_markdown_text(text=markdown_content)
 
+                    quality_reasons = synthetic_body_reasons(markdown_content)
+                    if quality_reasons:
+                        skipped_quality += 1
+                        logger.warning(
+                            "Skipped unverifiable generated post %s: %s",
+                            filename,
+                            ", ".join(quality_reasons),
+                        )
+                        continue
+
                     # 写入文件
                     with open(filepath, 'w', encoding='utf-8') as f:
                         f.write(markdown_content)
@@ -825,6 +855,7 @@ class SuperEnhancedContentGenerator:
         self.last_generation_stats = {
             "created": created_count,
             "skipped_existing": skipped_existing,
+            "skipped_quality": skipped_quality,
         }
         return created_count
 

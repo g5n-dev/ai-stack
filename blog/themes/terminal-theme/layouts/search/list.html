@@ -1,15 +1,11 @@
 <!DOCTYPE html>
 <html class="dark" lang="{{ .Site.LanguageCode }}">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; base-uri 'none'; object-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-src 'none'; form-action 'self'; upgrade-insecure-requests" />
-    <title>{{ .Title }} - {{ .Site.Title }}</title>
-    <meta name="description" content="{{ .Description | default .Site.Params.description }}" />
-    <link rel="canonical" href="{{ .Permalink }}" />
-    <link rel="stylesheet" href="/css/tailwind.css" />
-    <link rel="stylesheet" href="/css/style.css" />
+    {{ partial "site-head.html" (dict
+        "Page" .
+        "Title" (printf "%s - %s" .Title .Site.Title)
+        "Description" (.Description | default .Site.Params.description)
+    ) }}
 </head>
 <body class="min-h-screen bg-deep-navy font-display text-off-white selection:bg-muted-teal selection:text-deep-navy">
     <a href="#search-query"
@@ -17,16 +13,7 @@
         跳到搜索
     </a>
 
-    <header class="border-b border-muted-teal/10 bg-deep-navy/95">
-        <div class="mx-auto flex w-full max-w-6xl items-center justify-between gap-6 px-6 py-5">
-            <a href="/" class="font-mono text-sm font-bold tracking-wide text-primary">AI_STACK://SEARCH</a>
-            <nav aria-label="主导航" class="flex flex-wrap items-center justify-end gap-4 text-sm text-off-white/70">
-                {{ range .Site.Menus.main }}
-                <a href="{{ .URL }}" class="hover:text-primary focus:text-primary">{{ .Name }}</a>
-                {{ end }}
-            </nav>
-        </div>
-    </header>
+    {{ partial "site-header.html" . }}
 
     <main id="main-content" class="mx-auto w-full max-w-6xl px-6 py-10">
         <div class="mb-8 border-l-2 border-primary/60 pl-5">
@@ -113,6 +100,6 @@
         </section>
     </main>
 
-    <script src="/js/search.js" defer></script>
+    <script src="{{ "js/search.js" | relURL }}" defer></script>
 </body>
 </html>

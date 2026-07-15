@@ -8,6 +8,7 @@ venv/
 env/
 ENV/
 .venv
+*.egg-info/
 .coverage
 coverage.xml
 htmlcov/
@@ -40,6 +41,7 @@ Thumbs.db
 
 # Logs
 *.log
+tmp/
 
 # Playwright
 .playwright-mcp/

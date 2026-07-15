@@ -1,0 +1,458 @@
+{
+  "community_id": "community:tag:RGB",
+  "generated_at": "2026-07-15T06:00:41Z",
+  "hotspot_limit": 24,
+  "link_limit": 32,
+  "links": [
+    {
+      "id": "edge:cooccurrence:tag:传统CV->tag:图像处理",
+      "source": "tag:传统CV",
+      "strength": 1,
+      "target": "tag:图像处理",
+      "type": "cooccurrence",
+      "weight": 3
+    },
+    {
+      "id": "edge:cooccurrence:tag:AI视觉->tag:RGB",
+      "source": "tag:AI视觉",
+      "strength": 1,
+      "target": "tag:RGB",
+      "type": "cooccurrence",
+      "weight": 2
+    },
+    {
+      "id": "edge:cooccurrence:tag:AI视觉->tag:图像处理",
+      "source": "tag:AI视觉",
+      "strength": 1,
+      "target": "tag:图像处理",
+      "type": "cooccurrence",
+      "weight": 2
+    },
+    {
+      "id": "edge:cooccurrence:tag:AI视觉->tag:通道",
+      "source": "tag:AI视觉",
+      "strength": 1,
+      "target": "tag:通道",
+      "type": "cooccurrence",
+      "weight": 2
+    },
+    {
+      "id": "edge:cooccurrence:tag:RGB->tag:图像处理",
+      "source": "tag:RGB",
+      "strength": 1,
+      "target": "tag:图像处理",
+      "type": "cooccurrence",
+      "weight": 2
+    },
+    {
+      "id": "edge:cooccurrence:tag:RGB->tag:通道",
+      "source": "tag:RGB",
+      "strength": 1,
+      "target": "tag:通道",
+      "type": "cooccurrence",
+      "weight": 2
+    },
+    {
+      "id": "edge:cooccurrence:tag:图像处理->tag:通道",
+      "source": "tag:图像处理",
+      "strength": 1,
+      "target": "tag:通道",
+      "type": "cooccurrence",
+      "weight": 2
+    },
+    {
+      "id": "edge:cooccurrence:tag:AI视觉->tag:RGBA",
+      "source": "tag:AI视觉",
+      "strength": 0.5,
+      "target": "tag:RGBA",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:AI视觉->tag:YUV",
+      "source": "tag:AI视觉",
+      "strength": 0.5,
+      "target": "tag:YUV",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:AI视觉->tag:传统CV",
+      "source": "tag:AI视觉",
+      "strength": 0.5,
+      "target": "tag:传统CV",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:AI视觉->tag:像素操作",
+      "source": "tag:AI视觉",
+      "strength": 0.5,
+      "target": "tag:像素操作",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:AI视觉->tag:均值滤波",
+      "source": "tag:AI视觉",
+      "strength": 0.5,
+      "target": "tag:均值滤波",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:AI视觉->tag:灰度图",
+      "source": "tag:AI视觉",
+      "strength": 0.5,
+      "target": "tag:灰度图",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:AI视觉->tag:色彩空间",
+      "source": "tag:AI视觉",
+      "strength": 0.5,
+      "target": "tag:色彩空间",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:RGB->tag:RGBA",
+      "source": "tag:RGB",
+      "strength": 0.5,
+      "target": "tag:RGBA",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:RGB->tag:YUV",
+      "source": "tag:RGB",
+      "strength": 0.5,
+      "target": "tag:YUV",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:RGB->tag:传统CV",
+      "source": "tag:RGB",
+      "strength": 0.5,
+      "target": "tag:传统CV",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:RGB->tag:像素操作",
+      "source": "tag:RGB",
+      "strength": 0.5,
+      "target": "tag:像素操作",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:RGB->tag:均值滤波",
+      "source": "tag:RGB",
+      "strength": 0.5,
+      "target": "tag:均值滤波",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:RGB->tag:灰度图",
+      "source": "tag:RGB",
+      "strength": 0.5,
+      "target": "tag:灰度图",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:RGB->tag:色彩空间",
+      "source": "tag:RGB",
+      "strength": 0.5,
+      "target": "tag:色彩空间",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:RGBA->tag:图像处理",
+      "source": "tag:RGBA",
+      "strength": 0.5,
+      "target": "tag:图像处理",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:RGBA->tag:灰度图",
+      "source": "tag:RGBA",
+      "strength": 0.5,
+      "target": "tag:灰度图",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:RGBA->tag:色彩空间",
+      "source": "tag:RGBA",
+      "strength": 0.5,
+      "target": "tag:色彩空间",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:RGBA->tag:通道",
+      "source": "tag:RGBA",
+      "strength": 0.5,
+      "target": "tag:通道",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:YUV->tag:传统CV",
+      "source": "tag:YUV",
+      "strength": 0.5,
+      "target": "tag:传统CV",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:YUV->tag:像素操作",
+      "source": "tag:YUV",
+      "strength": 0.5,
+      "target": "tag:像素操作",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:YUV->tag:图像处理",
+      "source": "tag:YUV",
+      "strength": 0.5,
+      "target": "tag:图像处理",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:YUV->tag:均值滤波",
+      "source": "tag:YUV",
+      "strength": 0.5,
+      "target": "tag:均值滤波",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:YUV->tag:通道",
+      "source": "tag:YUV",
+      "strength": 0.5,
+      "target": "tag:通道",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:传统CV->tag:像素操作",
+      "source": "tag:传统CV",
+      "strength": 0.5,
+      "target": "tag:像素操作",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:传统CV->tag:均值滤波",
+      "source": "tag:传统CV",
+      "strength": 0.5,
+      "target": "tag:均值滤波",
+      "type": "cooccurrence",
+      "weight": 1
+    }
+  ],
+  "nodes": [
+    {
+      "article_count": 8,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:RGB",
+      "degree": 45,
+      "description": "图像处理指利用算法对图像信号进行分析、变换及优化的技术，常涉及像素操作、色彩转换及噪点消除，广泛应用于移动端看图软件及底层图形渲染开发中。",
+      "id": "tag:图像处理",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "图像处理",
+      "level": 6,
+      "name": "图像处理",
+      "rank": 243,
+      "related_count": 45,
+      "weighted_degree": 56
+    },
+    {
+      "article_count": 3,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:RGB",
+      "degree": 18,
+      "description": "文章标签: 传统CV",
+      "id": "tag:传统CV",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "传统CV",
+      "level": 6,
+      "name": "传统CV",
+      "rank": 892,
+      "related_count": 18,
+      "weighted_degree": 21
+    },
+    {
+      "article_count": 2,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:RGB",
+      "degree": 12,
+      "description": "AI视觉通常指利用计算机模拟人类视觉系统，让机器能够理解并分析图像或视频内容。它涉及图像处理、色彩模型及计算机视觉技术，是实现机器感知的核心领域。",
+      "id": "tag:AI视觉",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "AI视觉",
+      "level": 6,
+      "name": "AI视觉",
+      "rank": 973,
+      "related_count": 11,
+      "weighted_degree": 14.6
+    },
+    {
+      "article_count": 2,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:RGB",
+      "degree": 11,
+      "description": "RGB是一种基于红绿蓝三原色的加法色彩模型，广泛用于电子屏幕显示和数字图像处理，通过三个颜色通道的组合来呈现丰富的色彩信息。",
+      "id": "tag:RGB",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "RGB",
+      "level": 6,
+      "name": "RGB",
+      "rank": 1670,
+      "related_count": 11,
+      "weighted_degree": 14
+    },
+    {
+      "article_count": 2,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:RGB",
+      "degree": 11,
+      "description": "通道通常指数字图像中用于存储特定色彩信息（如红、绿、蓝或透明度）的数据层，是构成RGB等色彩模型及进行图像处理的基础单元。",
+      "id": "tag:通道",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "通道",
+      "level": 6,
+      "name": "通道",
+      "rank": 1680,
+      "related_count": 11,
+      "weighted_degree": 14
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:RGB",
+      "degree": 7,
+      "description": "RGBA是一种在RGB色彩模型基础上增加Alpha通道的色彩表示法，用于描述图像中红绿蓝三原色及其透明度信息，是计算机视觉和图像处理领域常用的色彩模型。",
+      "id": "tag:RGBA",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "RGBA",
+      "level": 6,
+      "name": "RGBA",
+      "rank": 3079,
+      "related_count": 7,
+      "weighted_degree": 7
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:RGB",
+      "degree": 7,
+      "description": "文章标签: YUV",
+      "id": "tag:YUV",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "YUV",
+      "level": 6,
+      "name": "YUV",
+      "rank": 3463,
+      "related_count": 7,
+      "weighted_degree": 7
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:RGB",
+      "degree": 7,
+      "description": "文章标签: 像素操作",
+      "id": "tag:像素操作",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "像素操作",
+      "level": 6,
+      "name": "像素操作",
+      "rank": 3842,
+      "related_count": 7,
+      "weighted_degree": 7
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:RGB",
+      "degree": 7,
+      "description": "文章标签: 均值滤波",
+      "id": "tag:均值滤波",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "均值滤波",
+      "level": 6,
+      "name": "均值滤波",
+      "rank": 4364,
+      "related_count": 7,
+      "weighted_degree": 7
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:RGB",
+      "degree": 7,
+      "description": "灰度图是一种只包含亮度信息而不包含色彩信息的图像表示形式，通常指每个像素点仅用一个采样通道来存储亮度值。它是图像处理和计算机视觉中的基础概念，常用于简化数据量或提取图像的几何特征。",
+      "id": "tag:灰度图",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "灰度图",
+      "level": 6,
+      "name": "灰度图",
+      "rank": 5773,
+      "related_count": 7,
+      "weighted_degree": 7
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:RGB",
+      "degree": 7,
+      "description": "色彩空间是一种通过数学模型组织和表示颜色的方法，常用于图像处理和计算机视觉领域。它定义了如何通过不同通道（如RGB）的组合来描述和呈现色彩，是AI视觉技术的基础概念。",
+      "id": "tag:色彩空间",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "色彩空间",
+      "level": 6,
+      "name": "色彩空间",
+      "rank": 6426,
+      "related_count": 7,
+      "weighted_degree": 7
+    }
+  ],
+  "stats": {
+    "total_links": 32,
+    "total_nodes": 11
+  },
+  "version": 2
+}

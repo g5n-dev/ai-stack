@@ -1,0 +1,65 @@
+{{- $currentPath := .RelPermalink -}}
+{{- $siteStats := partialCached "site-stats.html" .Site .Site.Language.Lang -}}
+<header class="site-header" data-site-header data-site-menu-open="false">
+    <a class="site-header__brand" data-site-brand href="{{ .Site.Home.RelPermalink }}"
+        aria-label="返回 AI Stack 首页">
+        <img class="site-header__brand-icon" data-site-brand-icon
+            src="{{ "vendor/material-symbols/terminal.svg" | relURL }}" width="30" height="30" alt=""
+            decoding="async">
+        <span class="site-header__brand-copy">
+            <strong class="site-header__title">{{ .Site.Title }}</strong>
+            <span class="site-header__description">{{ .Site.Params.description }}</span>
+        </span>
+    </a>
+
+    <div class="site-header__right">
+        <dl class="site-header__telemetry" aria-label="站点实时信息">
+            <div>
+                <dt>条目</dt>
+                <dd>{{ index $siteStats "articleCount" }}</dd>
+            </div>
+            <div>
+                <dt>延迟</dt>
+                <dd data-site-latency>—</dd>
+            </div>
+            <div class="site-header__telemetry-latest">
+                <dt>最新内容</dt>
+                <dd>{{ index $siteStats "latestArticle" }}</dd>
+                <dd class="site-header__telemetry-note">非站点部署时间</dd>
+            </div>
+            <div class="site-header__telemetry-clock">
+                <dt>当前时间</dt>
+                <dd><time id="current-time" data-site-clock datetime="">--:--:--</time></dd>
+            </div>
+        </dl>
+
+        <nav class="site-header__nav" id="site-header-navigation" aria-label="主导航">
+            {{- range .Site.Menus.main }}
+            {{- $targetPath := .URL | relURL }}
+            {{- $isHomeTarget := eq $targetPath $.Site.Home.RelPermalink -}}
+            {{- $isActive := or (eq $currentPath $targetPath) (and (not $isHomeTarget) (hasPrefix $currentPath $targetPath)) -}}
+            <a href="{{ $targetPath }}"{{ if $isActive }} aria-current="page"{{ end }}>{{ .Name }}</a>
+            {{- end }}
+        </nav>
+
+        <button class="site-header__menu-button" type="button" data-site-menu-button
+            aria-controls="site-header-navigation" aria-expanded="false" aria-label="打开主导航">
+            <img class="site-header__menu-icon site-header__menu-icon--open"
+                src="{{ "vendor/material-symbols/menu.svg" | relURL }}" width="20" height="20" alt="">
+            <img class="site-header__menu-icon site-header__menu-icon--close"
+                src="{{ "vendor/material-symbols/close.svg" | relURL }}" width="20" height="20" alt="">
+        </button>
+
+        <div class="site-header__actions">
+            {{- with .Site.Params.github }}
+            <a class="site-header__secure" href="{{ . }}" aria-label="打开 AI Stack GitHub">
+                安全连接
+            </a>
+            {{- end }}
+            <a class="site-header__rss" href="{{ "index.xml" | relURL }}" aria-label="订阅 RSS">
+                <img src="{{ "vendor/material-symbols/rss-feed.svg" | relURL }}" width="18" height="18" alt="">
+            </a>
+        </div>
+    </div>
+</header>
+<script defer src="{{ "js/site-header.js" | relURL }}"></script>

@@ -33,7 +33,7 @@ GC/prune 和历史重写。
 | 场景 | 工作流名 | 精确触发器 | 稳定检查/行为 |
 | --- | --- | --- | --- |
 | 功能分支更新、PR 新提交 | `PR CI` | `pull_request` → `main`；`workflow_dispatch` | 单 job `unit-tests`，显示名 `Unit Tests`；同一 PR 的旧运行可取消 |
-| PR 合并或直接推送到 main | `Build and Deploy` | `push` → `main` | 单 job `build-and-deploy`、bot-push 过滤；生成数据只暂存文章和图谱白名单 |
+| PR 合并或直接推送到 main | `Build and Deploy` | `push` → `main` | 单 job `build-and-deploy`、bot-push 过滤；直接验证并部署已评审快照，不运行抓取或改写生成数据 |
 | 周期性采集唤醒 | `Build and Deploy` | `17 * * * *`；`workflow_dispatch` | `cancel-in-progress: false`；候选池历史去重后生成、校验、提交并部署 |
 | 生产巡检 | `System Monitoring & Content Quality Tracking` | `23 */6 * * *`；`workflow_dispatch` | 只读校验 main 与线上 v2 图谱时间、文章数和 JSON 契约，异常非零退出 |
 

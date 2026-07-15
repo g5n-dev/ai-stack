@@ -1,10 +1,11 @@
 # Unified pipeline CLI contract
 
-The CLI is implemented as a dormant migration target. The current upgrade PR does
-not wire it into `.github/workflows/*.yml`; those files remain byte-identical to
-`origin/main`. A later, separately reviewed Actions migration can preserve the
-existing trigger contract while making each
-trust boundary explicit. Every cross-job directory contains only `content/`,
+The CLI is implemented as a dormant migration target. The current upgrade does
+not wire this coordination DAG into `.github/workflows/*.yml`; it only completes
+the existing Pages build with the locked Pagefind artifacts and extends the
+existing PR test job without changing trigger, job-name, or permission boundaries.
+A later, separately reviewed Actions migration can preserve the existing trigger
+contract while making each trust boundary explicit. Every cross-job directory contains only `content/`,
 `ops/`, and/or `state/` paths and must be repackaged by `artifact_guard`.
 
 ## Trusted DAG commands

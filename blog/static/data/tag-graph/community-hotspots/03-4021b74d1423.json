@@ -1,0 +1,475 @@
+{
+  "community_id": "community:tag:实验设计",
+  "generated_at": "2026-07-15T06:00:41Z",
+  "hotspot_limit": 24,
+  "link_limit": 32,
+  "links": [
+    {
+      "id": "edge:cooccurrence:tag:主动学习->tag:实验设计",
+      "source": "tag:主动学习",
+      "strength": 1,
+      "target": "tag:实验设计",
+      "type": "cooccurrence",
+      "weight": 2
+    },
+    {
+      "id": "edge:cooccurrence:tag:主动学习->tag:决策推断",
+      "source": "tag:主动学习",
+      "strength": 0.5,
+      "target": "tag:决策推断",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:主动学习->tag:外推预测",
+      "source": "tag:主动学习",
+      "strength": 0.5,
+      "target": "tag:外推预测",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:主动学习->tag:大模型训练",
+      "source": "tag:主动学习",
+      "strength": 0.5,
+      "target": "tag:大模型训练",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:主动学习->tag:帕累托最优",
+      "source": "tag:主动学习",
+      "strength": 0.5,
+      "target": "tag:帕累托最优",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:主动学习->tag:组合优化",
+      "source": "tag:主动学习",
+      "strength": 0.5,
+      "target": "tag:组合优化",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:主动学习->tag:缩放定律",
+      "source": "tag:主动学习",
+      "strength": 0.5,
+      "target": "tag:缩放定律",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:主动学习->tag:自适应设计",
+      "source": "tag:主动学习",
+      "strength": 0.5,
+      "target": "tag:自适应设计",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:主动学习->tag:贝叶斯优化",
+      "source": "tag:主动学习",
+      "strength": 0.5,
+      "target": "tag:贝叶斯优化",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:主动学习->tag:资源优化",
+      "source": "tag:主动学习",
+      "strength": 0.5,
+      "target": "tag:资源优化",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:主动学习->tag:预算分配",
+      "source": "tag:主动学习",
+      "strength": 0.5,
+      "target": "tag:预算分配",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:决策推断->tag:实验设计",
+      "source": "tag:决策推断",
+      "strength": 0.5,
+      "target": "tag:实验设计",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:决策推断->tag:帕累托最优",
+      "source": "tag:决策推断",
+      "strength": 0.5,
+      "target": "tag:帕累托最优",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:决策推断->tag:组合优化",
+      "source": "tag:决策推断",
+      "strength": 0.5,
+      "target": "tag:组合优化",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:决策推断->tag:自适应设计",
+      "source": "tag:决策推断",
+      "strength": 0.5,
+      "target": "tag:自适应设计",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:决策推断->tag:贝叶斯优化",
+      "source": "tag:决策推断",
+      "strength": 0.5,
+      "target": "tag:贝叶斯优化",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:外推预测->tag:大模型训练",
+      "source": "tag:外推预测",
+      "strength": 0.5,
+      "target": "tag:大模型训练",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:外推预测->tag:实验设计",
+      "source": "tag:外推预测",
+      "strength": 0.5,
+      "target": "tag:实验设计",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:外推预测->tag:缩放定律",
+      "source": "tag:外推预测",
+      "strength": 0.5,
+      "target": "tag:缩放定律",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:外推预测->tag:资源优化",
+      "source": "tag:外推预测",
+      "strength": 0.5,
+      "target": "tag:资源优化",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:外推预测->tag:预算分配",
+      "source": "tag:外推预测",
+      "strength": 0.5,
+      "target": "tag:预算分配",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:大模型训练->tag:实验设计",
+      "source": "tag:大模型训练",
+      "strength": 0.5,
+      "target": "tag:实验设计",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:大模型训练->tag:缩放定律",
+      "source": "tag:大模型训练",
+      "strength": 0.5,
+      "target": "tag:缩放定律",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:大模型训练->tag:资源优化",
+      "source": "tag:大模型训练",
+      "strength": 0.5,
+      "target": "tag:资源优化",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:大模型训练->tag:预算分配",
+      "source": "tag:大模型训练",
+      "strength": 0.5,
+      "target": "tag:预算分配",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:实验设计->tag:帕累托最优",
+      "source": "tag:实验设计",
+      "strength": 0.5,
+      "target": "tag:帕累托最优",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:实验设计->tag:组合优化",
+      "source": "tag:实验设计",
+      "strength": 0.5,
+      "target": "tag:组合优化",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:实验设计->tag:缩放定律",
+      "source": "tag:实验设计",
+      "strength": 0.5,
+      "target": "tag:缩放定律",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:实验设计->tag:自适应设计",
+      "source": "tag:实验设计",
+      "strength": 0.5,
+      "target": "tag:自适应设计",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:实验设计->tag:贝叶斯优化",
+      "source": "tag:实验设计",
+      "strength": 0.5,
+      "target": "tag:贝叶斯优化",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:实验设计->tag:资源优化",
+      "source": "tag:实验设计",
+      "strength": 0.5,
+      "target": "tag:资源优化",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:实验设计->tag:预算分配",
+      "source": "tag:实验设计",
+      "strength": 0.5,
+      "target": "tag:预算分配",
+      "type": "cooccurrence",
+      "weight": 1
+    }
+  ],
+  "nodes": [
+    {
+      "article_count": 4,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:实验设计",
+      "degree": 26,
+      "description": "贝叶斯优化是一种基于贝叶斯推断的全局优化方法，通过代理模型和采集函数高效寻找黑盒函数的最优解，常用于超参数调优、实验设计等场景。",
+      "id": "tag:贝叶斯优化",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "贝叶斯优化",
+      "level": 6,
+      "name": "贝叶斯优化",
+      "rank": 568,
+      "related_count": 26,
+      "weighted_degree": 28
+    },
+    {
+      "article_count": 4,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:实验设计",
+      "degree": 26,
+      "description": "文章标签: 资源优化",
+      "id": "tag:资源优化",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "资源优化",
+      "level": 6,
+      "name": "资源优化",
+      "rank": 569,
+      "related_count": 26,
+      "weighted_degree": 28
+    },
+    {
+      "article_count": 3,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:实验设计",
+      "degree": 20,
+      "description": "实验设计是一种系统规划实验流程的方法，旨在通过优化变量控制与数据采集来提升科学研究的效率与准确性，常与AI模拟、预测模型等技术结合应用于化学、材料科学等领域以加速科研发现。",
+      "id": "tag:实验设计",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "实验设计",
+      "level": 6,
+      "name": "实验设计",
+      "rank": 795,
+      "related_count": 20,
+      "weighted_degree": 21
+    },
+    {
+      "article_count": 3,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:实验设计",
+      "degree": 20,
+      "description": "帕累托最优指资源分配的一种理想状态，即在不使任何一方境况变坏的情况下，无法再使另一方变得更好。它常用于多目标优化和强化学习领域，帮助在自动驾驶卡车调度等复杂决策问题中平衡能效、安全与效率等相互冲突的目标。",
+      "id": "tag:帕累托最优",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "帕累托最优",
+      "level": 6,
+      "name": "帕累托最优",
+      "rank": 797,
+      "related_count": 20,
+      "weighted_degree": 21
+    },
+    {
+      "article_count": 2,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:实验设计",
+      "degree": 14,
+      "description": "文章标签: 组合优化",
+      "id": "tag:组合优化",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "组合优化",
+      "level": 6,
+      "name": "组合优化",
+      "rank": 1354,
+      "related_count": 14,
+      "weighted_degree": 14
+    },
+    {
+      "article_count": 2,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:实验设计",
+      "degree": 14,
+      "description": "缩放定律是人工智能领域的核心经验法则，指模型性能随着算力、数据集规模和参数量的增加而呈现可预测的提升。它深刻影响了大模型训练策略、AGI路径探索以及中美在算力与生态层面的竞争格局。",
+      "id": "tag:缩放定律",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "缩放定律",
+      "level": 6,
+      "name": "缩放定律",
+      "rank": 1361,
+      "related_count": 14,
+      "weighted_degree": 14
+    },
+    {
+      "article_count": 2,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:实验设计",
+      "degree": 13,
+      "description": "主动学习是一种通过迭代选择最有价值的数据进行标注来优化模型性能的机器学习策略，常与数据生成、模拟技术结合，在材料科学等AI for Science领域用于加速科学发现。",
+      "id": "tag:主动学习",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "主动学习",
+      "level": 6,
+      "name": "主动学习",
+      "rank": 1508,
+      "related_count": 13,
+      "weighted_degree": 14
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:实验设计",
+      "degree": 7,
+      "description": "文章标签: 决策推断",
+      "id": "tag:决策推断",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "决策推断",
+      "level": 6,
+      "name": "决策推断",
+      "rank": 3936,
+      "related_count": 7,
+      "weighted_degree": 7
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:实验设计",
+      "degree": 7,
+      "description": "文章标签: 外推预测",
+      "id": "tag:外推预测",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "外推预测",
+      "level": 6,
+      "name": "外推预测",
+      "rank": 4397,
+      "related_count": 7,
+      "weighted_degree": 7
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:实验设计",
+      "degree": 7,
+      "description": "文章标签: 大模型训练",
+      "id": "tag:大模型训练",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "大模型训练",
+      "level": 6,
+      "name": "大模型训练",
+      "rank": 4472,
+      "related_count": 7,
+      "weighted_degree": 7
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:实验设计",
+      "degree": 7,
+      "description": "文章标签: 自适应设计",
+      "id": "tag:自适应设计",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "自适应设计",
+      "level": 6,
+      "name": "自适应设计",
+      "rank": 6420,
+      "related_count": 7,
+      "weighted_degree": 7
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:实验设计",
+      "degree": 7,
+      "description": "文章标签: 预算分配",
+      "id": "tag:预算分配",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "预算分配",
+      "level": 6,
+      "name": "预算分配",
+      "rank": 7092,
+      "related_count": 7,
+      "weighted_degree": 7
+    }
+  ],
+  "stats": {
+    "total_links": 32,
+    "total_nodes": 12
+  },
+  "version": 2
+}

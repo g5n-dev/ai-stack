@@ -204,6 +204,18 @@ class GenerateContentGuardsTest(unittest.TestCase):
                 },
             )
 
+    def test_raise_for_fatal_post_generation_state_on_provenance_failure(self):
+        generator = self.module.SuperEnhancedContentGenerator.__new__(
+            self.module.SuperEnhancedContentGenerator
+        )
+
+        with self.assertRaisesRegex(RuntimeError, "failed the provenance gate"):
+            generator._raise_for_fatal_post_generation_state(
+                posts_created=0,
+                postability={"total_items": 1},
+                quality_failed_items=1,
+            )
+
     def test_should_not_skip_post_when_guard_failed_sections_are_dropped(self):
         generator = self.module.SuperEnhancedContentGenerator.__new__(self.module.SuperEnhancedContentGenerator)
         item = {
@@ -396,6 +408,37 @@ class GenerateContentGuardsTest(unittest.TestCase):
 
             self.assertEqual(created, 0)
             self.assertEqual(target.read_bytes(), original)
+
+    def test_final_markdown_quality_gate_blocks_prompt_context_leaks(self):
+        generated_at = datetime(2026, 7, 15, 2, 0, tzinfo=timezone.utc)
+        with tempfile.TemporaryDirectory() as temp_dir:
+            generator = self.module.SuperEnhancedContentGenerator.__new__(
+                self.module.SuperEnhancedContentGenerator
+            )
+            generator.posts_dir = Path(temp_dir)
+            generator._post_index = []
+
+            created = generator._generate_posts(
+                {
+                    "hacker_news": [
+                        {
+                            "title": "Unverifiable analysis",
+                            "source": "hacker_news",
+                            "url": "https://example.com/unverifiable",
+                            "summary": (
+                                "你在提示词中没有提供完整正文，因此以下内容只能根据标题推演。"
+                            ),
+                            "tags": ["AI"],
+                            "categories": ["News"],
+                        }
+                    ]
+                },
+                generated_at=generated_at,
+            )
+
+            self.assertEqual(created, 0)
+            self.assertEqual(list(generator.posts_dir.glob("*.md")), [])
+            self.assertEqual(generator.last_generation_stats["skipped_quality"], 1)
 
 
 if __name__ == "__main__":

@@ -13,8 +13,8 @@
   --graph-muted: #8c9aa8;
   --graph-danger: #f87171;
   --graph-shadow: 0 24px 80px rgba(0, 0, 0, 0.42);
-  --graph-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
-  --graph-sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", sans-serif;
+  --graph-mono: var(--site-font-mono);
+  --graph-sans: var(--site-font-sans);
 }
 
 * {

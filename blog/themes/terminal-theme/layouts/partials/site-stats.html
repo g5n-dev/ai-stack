@@ -1,0 +1,9 @@
+{{- $posts := where .RegularPages "Type" "posts" -}}
+{{- $posts = sort $posts "Date" "desc" -}}
+{{- $latest := "N/A" -}}
+{{- with first 1 $posts -}}
+    {{- range . -}}
+        {{- $latest = .Date.Format "2006-01-02 15:04" -}}
+    {{- end -}}
+{{- end -}}
+{{- return (dict "articleCount" (len $posts) "latestArticle" $latest) -}}

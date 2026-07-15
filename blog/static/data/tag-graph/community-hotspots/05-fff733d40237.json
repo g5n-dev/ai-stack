@@ -1,0 +1,450 @@
+{
+  "community_id": "community:tag:Imagine API",
+  "generated_at": "2026-07-15T06:00:41Z",
+  "hotspot_limit": 24,
+  "link_limit": 32,
+  "links": [
+    {
+      "id": "edge:cooccurrence:tag:Grok->tag:xAI",
+      "source": "tag:Grok",
+      "strength": 1,
+      "target": "tag:xAI",
+      "type": "cooccurrence",
+      "weight": 3
+    },
+    {
+      "id": "edge:cooccurrence:tag:API 定价->tag:Grok",
+      "source": "tag:API 定价",
+      "strength": 0.5,
+      "target": "tag:Grok",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:API 定价->tag:Imagine API",
+      "source": "tag:API 定价",
+      "strength": 0.5,
+      "target": "tag:Imagine API",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:API 定价->tag:Sora",
+      "source": "tag:API 定价",
+      "strength": 0.5,
+      "target": "tag:Sora",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:API 定价->tag:SpaceX",
+      "source": "tag:API 定价",
+      "strength": 0.5,
+      "target": "tag:SpaceX",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:API 定价->tag:xAI",
+      "source": "tag:API 定价",
+      "strength": 0.5,
+      "target": "tag:xAI",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Grok->tag:Imagine API",
+      "source": "tag:Grok",
+      "strength": 0.5,
+      "target": "tag:Imagine API",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Grok->tag:Sora",
+      "source": "tag:Grok",
+      "strength": 0.5,
+      "target": "tag:Sora",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Grok->tag:SpaceX",
+      "source": "tag:Grok",
+      "strength": 0.5,
+      "target": "tag:SpaceX",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Grok->tag:团队重组",
+      "source": "tag:Grok",
+      "strength": 0.5,
+      "target": "tag:团队重组",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Grok->tag:技术瓶颈",
+      "source": "tag:Grok",
+      "strength": 0.5,
+      "target": "tag:技术瓶颈",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Grok->tag:马斯克",
+      "source": "tag:Grok",
+      "strength": 0.5,
+      "target": "tag:马斯克",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Grok->tag:高管变动",
+      "source": "tag:Grok",
+      "strength": 0.5,
+      "target": "tag:高管变动",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Imagine API->tag:Sora",
+      "source": "tag:Imagine API",
+      "strength": 0.5,
+      "target": "tag:Sora",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Imagine API->tag:SpaceX",
+      "source": "tag:Imagine API",
+      "strength": 0.5,
+      "target": "tag:SpaceX",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Imagine API->tag:xAI",
+      "source": "tag:Imagine API",
+      "strength": 0.5,
+      "target": "tag:xAI",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Sora->tag:SpaceX",
+      "source": "tag:Sora",
+      "strength": 0.5,
+      "target": "tag:SpaceX",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Sora->tag:xAI",
+      "source": "tag:Sora",
+      "strength": 0.5,
+      "target": "tag:xAI",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:SpaceX->tag:xAI",
+      "source": "tag:SpaceX",
+      "strength": 0.5,
+      "target": "tag:xAI",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:fal.ai->tag:Grok",
+      "source": "tag:fal.ai",
+      "strength": 0.5,
+      "target": "tag:Grok",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:fal.ai->tag:xAI",
+      "source": "tag:fal.ai",
+      "strength": 0.5,
+      "target": "tag:xAI",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:xAI->tag:团队重组",
+      "source": "tag:xAI",
+      "strength": 0.5,
+      "target": "tag:团队重组",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:xAI->tag:技术瓶颈",
+      "source": "tag:xAI",
+      "strength": 0.5,
+      "target": "tag:技术瓶颈",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:xAI->tag:马斯克",
+      "source": "tag:xAI",
+      "strength": 0.5,
+      "target": "tag:马斯克",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:xAI->tag:高管变动",
+      "source": "tag:xAI",
+      "strength": 0.5,
+      "target": "tag:高管变动",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:团队重组->tag:技术瓶颈",
+      "source": "tag:团队重组",
+      "strength": 0.5,
+      "target": "tag:技术瓶颈",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:团队重组->tag:马斯克",
+      "source": "tag:团队重组",
+      "strength": 0.5,
+      "target": "tag:马斯克",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:团队重组->tag:高管变动",
+      "source": "tag:团队重组",
+      "strength": 0.5,
+      "target": "tag:高管变动",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:技术瓶颈->tag:马斯克",
+      "source": "tag:技术瓶颈",
+      "strength": 0.5,
+      "target": "tag:马斯克",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:技术瓶颈->tag:高管变动",
+      "source": "tag:技术瓶颈",
+      "strength": 0.5,
+      "target": "tag:高管变动",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:马斯克->tag:高管变动",
+      "source": "tag:马斯克",
+      "strength": 0.5,
+      "target": "tag:高管变动",
+      "type": "cooccurrence",
+      "weight": 1
+    }
+  ],
+  "nodes": [
+    {
+      "article_count": 4,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Imagine API",
+      "degree": 26,
+      "description": "xAI 是由马斯克创立的人工智能公司，致力于开发具有实时信息获取能力的 Grok 模型。其业务涵盖大语言模型、视频生成 API 及与 SpaceX 的深度整合，以低延迟和极具竞争力的定价策略在 AI 领域占据前沿地位。",
+      "id": "tag:xAI",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "xAI",
+      "level": 6,
+      "name": "xAI",
+      "rank": 542,
+      "related_count": 26,
+      "weighted_degree": 28
+    },
+    {
+      "article_count": 3,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Imagine API",
+      "degree": 20,
+      "description": "Sora是OpenAI开发的文生视频大模型，通过文本描述生成高质量视频内容，与AIGC、Diffusion模型等技术相关，推动视频创作领域的AI应用发展。",
+      "id": "tag:Sora",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Sora",
+      "level": 6,
+      "name": "Sora",
+      "rank": 775,
+      "related_count": 20,
+      "weighted_degree": 21
+    },
+    {
+      "article_count": 3,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Imagine API",
+      "degree": 19,
+      "description": "Grok 是由 xAI 开发的大语言模型系列，以低延迟、实时信息获取能力著称，近期推出了对标 Sora 的视频生成 API，并计划与 SpaceX 深度整合以巩固其前沿技术地位。",
+      "id": "tag:Grok",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Grok",
+      "level": 6,
+      "name": "Grok",
+      "rank": 836,
+      "related_count": 19,
+      "weighted_degree": 21
+    },
+    {
+      "article_count": 2,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Imagine API",
+      "degree": 14,
+      "description": "文章标签: 技术瓶颈",
+      "id": "tag:技术瓶颈",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "技术瓶颈",
+      "level": 6,
+      "name": "技术瓶颈",
+      "rank": 1221,
+      "related_count": 14,
+      "weighted_degree": 14
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Imagine API",
+      "degree": 8,
+      "description": "API定价是指API接口服务的收费标准与策略，通常与模型评测、视频生成等技术服务的商业价值相关。",
+      "id": "tag:API 定价",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "API 定价",
+      "level": 6,
+      "name": "API 定价",
+      "rank": 1938,
+      "related_count": 7,
+      "weighted_degree": 7.6
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Imagine API",
+      "degree": 8,
+      "description": "Imagine API 是 xAI 推出的应用程序接口，专注于提供高性能的图像与视频生成能力。它通常与 Grok 模型及前沿实验室技术相关，以低延迟和极具竞争力的定价为开发者服务。",
+      "id": "tag:Imagine API",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Imagine API",
+      "level": 6,
+      "name": "Imagine API",
+      "rank": 1968,
+      "related_count": 7,
+      "weighted_degree": 7.6
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Imagine API",
+      "degree": 7,
+      "description": "fal.ai 是一个专注于高性能推理的开源机器学习平台，常用于加速图像生成等 AI 模型的部署。它与 xAI Grok 等技术结合，能够帮助开发者快速构建具备固定形象或多媒体处理能力的 AI 助手。",
+      "id": "tag:fal.ai",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "fal.ai",
+      "level": 6,
+      "name": "fal.ai",
+      "rank": 2433,
+      "related_count": 7,
+      "weighted_degree": 7
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Imagine API",
+      "degree": 7,
+      "description": "SpaceX 是埃隆·马斯克创立的航天制造与太空运输公司，致力于通过可回收火箭技术降低太空探索成本。在当前语境下，它常与 xAI 的前沿技术布局及潜在合并计划相关联。",
+      "id": "tag:SpaceX",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "SpaceX",
+      "level": 6,
+      "name": "SpaceX",
+      "rank": 3218,
+      "related_count": 7,
+      "weighted_degree": 7
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Imagine API",
+      "degree": 7,
+      "description": "文章标签: 团队重组",
+      "id": "tag:团队重组",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "团队重组",
+      "level": 6,
+      "name": "团队重组",
+      "rank": 4316,
+      "related_count": 7,
+      "weighted_degree": 7
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Imagine API",
+      "degree": 7,
+      "description": "马斯克是科技领域的标志性人物，主要关联xAI、SpaceX等前沿技术公司，涉及Grok多模态模型、API服务、模型定价与评测等方向。",
+      "id": "tag:马斯克",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "马斯克",
+      "level": 6,
+      "name": "马斯克",
+      "rank": 7110,
+      "related_count": 7,
+      "weighted_degree": 7
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Imagine API",
+      "degree": 7,
+      "description": "文章标签: 高管变动",
+      "id": "tag:高管变动",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "高管变动",
+      "level": 6,
+      "name": "高管变动",
+      "rank": 7134,
+      "related_count": 7,
+      "weighted_degree": 7
+    }
+  ],
+  "stats": {
+    "total_links": 31,
+    "total_nodes": 11
+  },
+  "version": 2
+}
