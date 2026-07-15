@@ -108,7 +108,7 @@ sources:
         url: "https://aws.amazon.com/blogs/machine-learning/feed/"
         type: "blog"
       - name: "Microsoft AI Blog"
-        url: "https://blogs.microsoft.com/ai/feed/"
+        url: "https://news.microsoft.com/source/topics/ai/feed/"
         type: "blog"
       - name: "NVIDIA Deep Learning"
         url: "https://blogs.nvidia.com/blog/category/deep-learning/feed/"

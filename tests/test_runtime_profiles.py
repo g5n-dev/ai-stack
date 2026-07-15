@@ -6,7 +6,7 @@ from runtime_profile import apply_anthropic_runtime_profile, apply_sources_runti
 
 
 class RuntimeProfileTest(unittest.TestCase):
-    def test_apply_sources_runtime_profile_ci_reduces_workload(self):
+    def test_apply_sources_runtime_profile_ci_keeps_a_candidate_pool(self):
         config = {
             "search_fallback": {
                 "enabled": True,
@@ -27,11 +27,19 @@ class RuntimeProfileTest(unittest.TestCase):
 
         self.assertFalse(profiled["search_fallback"]["enabled"])
         self.assertEqual(profiled["search_fallback"]["timeout"], 5)
-        self.assertEqual(profiled["sources"]["github_trending"]["limit"], 1)
-        self.assertEqual(profiled["sources"]["hacker_news"]["limit"], 1)
-        self.assertEqual(profiled["sources"]["arxiv_ai"]["limit"], 1)
-        self.assertEqual(profiled["sources"]["juejin"]["limit"], 1)
-        self.assertEqual(profiled["sources"]["blogs_podcasts"]["limit"], 1)
+        for source_name in (
+            "github_trending",
+            "hacker_news",
+            "arxiv_ai",
+            "juejin",
+            "blogs_podcasts",
+        ):
+            with self.subTest(source=source_name):
+                self.assertGreaterEqual(
+                    profiled["sources"][source_name]["limit"],
+                    8,
+                    "CI must fetch enough candidates to skip URLs already in the archive",
+                )
         self.assertEqual(profiled["sources"]["blogs_podcasts"]["timeout"], 10)
         self.assertFalse(profiled["sources"]["reddit"]["enabled"])
         self.assertFalse(profiled["sources"]["twitter"]["enabled"])
