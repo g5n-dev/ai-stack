@@ -33,6 +33,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         "content quality manifest: "
         f"sources={manifest['source_file_count']} "
         f"quarantined={manifest['quarantined_count']} "
+        f"archived={manifest['archived_count']} "
         f"output={args.output}"
     )
     return 0

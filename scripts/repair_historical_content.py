@@ -36,7 +36,13 @@ def build_parser() -> argparse.ArgumentParser:
         type=Path,
         help="Optional audit manifest path; omitted by default so dry-run performs zero writes",
     )
-    parser.add_argument("--apply", action="store_true", help="Apply the reviewed plan")
+    apply_mode = parser.add_mutually_exclusive_group()
+    apply_mode.add_argument("--apply", action="store_true", help="Apply via shadow/soak gate")
+    apply_mode.add_argument(
+        "--repository-apply",
+        action="store_true",
+        help="Apply an explicitly reviewed plan in a clean codex/ Git branch",
+    )
     parser.add_argument(
         "--batch",
         action="store_true",
@@ -47,6 +53,7 @@ def build_parser() -> argparse.ArgumentParser:
     )
     parser.add_argument("--expected-source-sha")
     parser.add_argument("--expected-code-sha")
+    parser.add_argument("--expected-plan-digest")
     parser.add_argument("--backup-id")
     parser.add_argument("--max-changes", type=int)
     parser.add_argument("--shadow-evidence-root", type=Path)
@@ -72,7 +79,7 @@ def main(argv: Sequence[str] | None = None) -> int:
             plan = build_historical_repair_plan(content_root=args.content_root)
         if args.manifest_output is not None:
             write_repair_manifest(args.manifest_output, plan.manifest)
-        if args.apply:
+        if args.apply or args.repository_apply:
             result = apply_historical_repair_plan(
                 plan,
                 expected_source_sha=args.expected_source_sha,
@@ -81,6 +88,8 @@ def main(argv: Sequence[str] | None = None) -> int:
                 max_changes=args.max_changes,
                 shadow_evidence_root=args.shadow_evidence_root,
                 backup_root=args.backup_root,
+                expected_plan_digest=args.expected_plan_digest,
+                repository_reviewed=args.repository_apply,
             )
             output = {"plan": plan.manifest, "result": result}
         else:

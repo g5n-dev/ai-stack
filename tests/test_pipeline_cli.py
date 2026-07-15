@@ -6,6 +6,7 @@ import subprocess
 from pathlib import Path
 
 import pytest
+import yaml
 
 from ai_stack.cli import main
 from scripts.release_guard import load_release_descriptor
@@ -30,7 +31,7 @@ def _mock_sources() -> dict[str, list[dict[str, object]]]:
                 "title": "AI Stack",
                 "description": "Evidence-oriented static AI intelligence.",
                 "url": "https://github.com/g5n-dev/ai-stack?utm_source=test",
-                "tags": ["AI", "static-site"],
+                "tags": ["AI编程", " AI 编程 ", "VibeCoding", "Vibe Coding"],
             }
         ]
     }
@@ -161,7 +162,11 @@ def test_pipeline_cli_runs_a_fail_closed_static_source_brief_round_trip(
     validation = json.loads(capsys.readouterr().out)
     assert validation["publishable"] == 1
     assert validation["quarantined"] == 0
-    assert list((validated_result / "content" / "posts").glob("*.md"))
+    validated_post = next((validated_result / "content" / "posts").glob("*.md"))
+    validated_frontmatter = yaml.safe_load(
+        validated_post.read_text(encoding="utf-8").split("---", 2)[1]
+    )
+    assert validated_frontmatter["tags"] == ["AI 编程", "Vibe Coding"]
 
     assert (
         main(

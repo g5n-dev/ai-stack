@@ -7,11 +7,18 @@ import json
 import re
 import unicodedata
 from collections import Counter
+from collections.abc import Mapping
 from pathlib import Path
 from typing import Any
 
+import yaml
+
 _FRONTMATTER_RE = re.compile(
     r"\A(?:\ufeff)?---[ \t]*\r?\n.*?\r?\n---[ \t]*(?:\r?\n|\Z)",
+    re.DOTALL,
+)
+_FRONTMATTER_METADATA_RE = re.compile(
+    r"\A(?:\ufeff)?---[ \t]*\r?\n(?P<metadata>.*?)\r?\n---[ \t]*(?:\r?\n|\Z)",
     re.DOTALL,
 )
 
@@ -103,6 +110,20 @@ def markdown_body(document: str) -> str:
     return text[match.end() :].lstrip("\r\n") if match else text
 
 
+def markdown_frontmatter(document: str) -> dict[str, Any]:
+    """Return a conservative frontmatter mapping without interpreting the body."""
+    match = _FRONTMATTER_METADATA_RE.match(str(document or ""))
+    if match is None:
+        return {}
+    try:
+        parsed = yaml.safe_load(match.group("metadata")) or {}
+    except yaml.YAMLError:
+        return {}
+    if not isinstance(parsed, Mapping):
+        return {}
+    return {str(key): value for key, value in parsed.items()}
+
+
 def build_content_quality_manifest(content_root: Path | str) -> dict[str, Any]:
     """Build a deterministic Hugo data manifest for quarantined archive pages."""
     root = Path(content_root).resolve()
@@ -110,6 +131,8 @@ def build_content_quality_manifest(content_root: Path | str) -> dict[str, Any]:
     reason_counts: Counter[str] = Counter()
     source_hash = hashlib.sha256()
     source_file_count = 0
+    quarantined_count = 0
+    archived_count = 0
 
     for path in sorted(root.rglob("*.md"), key=lambda item: item.as_posix()):
         if not path.is_file():
@@ -124,14 +147,22 @@ def build_content_quality_manifest(content_root: Path | str) -> dict[str, Any]:
         source_hash.update(b"\0")
         source_hash.update(hashlib.sha256(payload).digest())
 
-        reasons = synthetic_body_reasons(
-            markdown_body(payload.decode("utf-8", errors="replace"))
-        )
+        document = payload.decode("utf-8", errors="replace")
+        metadata = markdown_frontmatter(document)
+        if metadata.get("archived") is True:
+            status = "archived"
+            reasons = ("archived_content",)
+            archived_count += 1
+        else:
+            status = "quarantined"
+            reasons = synthetic_body_reasons(markdown_body(document))
+            if reasons:
+                quarantined_count += 1
         if not reasons:
             continue
         reason_counts.update(reasons)
         pages[relative] = {
-            "status": "quarantined",
+            "status": status,
             "reasons": list(reasons),
         }
 
@@ -139,7 +170,8 @@ def build_content_quality_manifest(content_root: Path | str) -> dict[str, Any]:
         "schema_version": "content_quality_manifest_v1",
         "source_tree_sha256": source_hash.hexdigest(),
         "source_file_count": source_file_count,
-        "quarantined_count": len(pages),
+        "quarantined_count": quarantined_count,
+        "archived_count": archived_count,
         "reason_counts": dict(sorted(reason_counts.items())),
         "pages": pages,
     }

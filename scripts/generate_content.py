@@ -25,6 +25,8 @@ load_project_env(project_root)
 from runtime_profile import get_runtime_profile
 
 from ai_stack.content_quality import synthetic_body_reasons
+from ai_stack.identity import canonicalize_url
+from ai_stack.tag_taxonomy import normalize_tags
 from crawler.main import CrawlerOrchestrator
 from processor.main import ProcessorOrchestrator
 from processor.markdown_normalizer import remove_markdown_sections_by_heading
@@ -38,22 +40,6 @@ logger = logging.getLogger(__name__)
 
 SHANGHAI_TZ = ZoneInfo("Asia/Shanghai")
 CONTENT_TIMEZONE = SHANGHAI_TZ
-_TRACKING_QUERY_PARAMS = {
-    "utm_source",
-    "utm_medium",
-    "utm_campaign",
-    "utm_term",
-    "utm_content",
-    "utm_id",
-    "gclid",
-    "fbclid",
-    "mc_cid",
-    "mc_eid",
-    "ref",
-    "ref_src",
-}
-
-
 def content_now(value: datetime | None = None) -> datetime:
     """Return one timezone-aware clock value for filenames and frontmatter."""
     if value is None:
@@ -64,27 +50,14 @@ def content_now(value: datetime | None = None) -> datetime:
 
 
 def canonicalize_content_url(value: object) -> str:
-    """Normalize archive identities without importing the complete crawler tree."""
+    """Use the shared URL identity policy and fail closed for invalid sources."""
     raw = str(value or "").strip()
     if not raw:
         return ""
     try:
-        parts = urllib.parse.urlsplit(raw)
-        scheme = (parts.scheme or "https").lower()
-        netloc = parts.netloc.lower()
-        path = parts.path.rstrip("/")
-        query = [
-            (key, item)
-            for key, item in urllib.parse.parse_qsl(
-                parts.query, keep_blank_values=True
-            )
-            if key not in _TRACKING_QUERY_PARAMS
-        ]
-        return urllib.parse.urlunsplit(
-            (scheme, netloc, path, urllib.parse.urlencode(query, doseq=True), "")
-        )
-    except Exception:
-        return raw
+        return canonicalize_url(raw)
+    except ValueError:
+        return ""
 
 _RELREF_RE = re.compile(r"""\{\{[<%]\s*relref\s+(['"])(.+?)\1\s*[>%]\}\}""")
 _TAXONOMY_MD_LINK_RE = re.compile(r"""\[([^\]]+)\]\(/(tags|categories|scenarios)/([^)]+?)\)""")
@@ -995,7 +968,7 @@ class SuperEnhancedContentGenerator:
         date = content_now(generated_at).isoformat(timespec="seconds")
 
         # 构建标签
-        tags = self._normalize_taxonomy_list(item.get('tags', []))
+        tags = self._normalize_tags(item.get('tags', []))
         tags_str = ', '.join([f'"{self._yaml_escape(tag)}"' for tag in tags])
 
         # 构建分类
@@ -1009,6 +982,9 @@ class SuperEnhancedContentGenerator:
         url = item.get('url', '')
         if not url and source == 'github_trending':
             url = item.get('repo_url', '')
+        url = canonicalize_content_url(url)
+        if not url:
+            raise ValueError("generated posts require a valid canonical source URL")
 
         # 开始构建 Markdown
         lines = [
@@ -1026,8 +1002,7 @@ class SuperEnhancedContentGenerator:
         if seo_description:
             lines.append(f'description: "{self._yaml_escape(seo_description)}"')
 
-        if url:
-            lines.append(f'external_url: {url}')
+        lines.append(f'external_url: {url}')
         if scenarios:
             lines.append(f'scenarios: [{scenarios_str}]')
 
@@ -1120,6 +1095,9 @@ class SuperEnhancedContentGenerator:
                 out.append(s)
         return out
 
+    def _normalize_tags(self, value) -> list[str]:
+        return normalize_tags(value, limit=8)
+
     def _normalize_scenarios(self, value) -> list[str]:
         if value is None:
             return []
@@ -1166,7 +1144,7 @@ class SuperEnhancedContentGenerator:
             "external_url": canonicalize_content_url(
                 item.get("url") or item.get("repo_url") or item.get("link")
             ),
-            "tags": self._normalize_taxonomy_list(item.get("tags", [])),
+            "tags": self._normalize_tags(item.get("tags", [])),
             "categories": self._normalize_taxonomy_list(item.get("categories", [])),
             "scenarios": self._normalize_scenarios(item.get("scenarios")),
         }
@@ -1207,7 +1185,7 @@ class SuperEnhancedContentGenerator:
             "external_url": canonicalize_content_url(
                 fm.get("external_url") or fm.get("url")
             ),
-            "tags": self._normalize_taxonomy_list(fm.get("tags", [])),
+            "tags": self._normalize_tags(fm.get("tags", [])),
             "categories": self._normalize_taxonomy_list(fm.get("categories", [])),
             "scenarios": self._normalize_taxonomy_list(fm.get("scenarios", [])),
         }
@@ -1224,7 +1202,7 @@ class SuperEnhancedContentGenerator:
         return posts
 
     def _find_related_posts(self, item: dict, *, current_filename: str | None = None) -> list[dict]:
-        tags = set(self._normalize_taxonomy_list(item.get("tags", [])))
+        tags = set(self._normalize_tags(item.get("tags", [])))
         categories = set(self._normalize_taxonomy_list(item.get("categories", [])))
         scenarios = set(self._normalize_scenarios(item.get("scenarios")))
 
@@ -1247,7 +1225,7 @@ class SuperEnhancedContentGenerator:
         return [p for _, p in scored[:5]]
 
     def _inject_internal_links(self, lines: list[str], item: dict, related_posts: list[dict]) -> None:
-        tags = self._normalize_taxonomy_list(item.get("tags", []))
+        tags = self._normalize_tags(item.get("tags", []))
         categories = self._normalize_taxonomy_list(item.get("categories", []))
         scenarios = self._normalize_scenarios(item.get("scenarios"))
 
@@ -1420,9 +1398,9 @@ class SuperEnhancedContentGenerator:
 
         refs: list[tuple[str, str]] = []
 
-        url = item.get("url") or item.get("repo_url") or item.get("external_url") or ""
-        if isinstance(url, str):
-            url = url.strip()
+        url = canonicalize_content_url(
+            item.get("url") or item.get("repo_url") or item.get("external_url")
+        )
 
         if source == "github_trending":
             if url:

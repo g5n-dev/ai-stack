@@ -302,6 +302,37 @@ class TagGraphV2Test(unittest.TestCase):
         self.assertNotIn("tag:Hallucinated", nodes)
         self.assertNotIn("tag:Graph Pollution", nodes)
 
+    def test_transparent_archived_article_is_excluded_from_graph_metrics(self):
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            posts_dir = Path(tmp_dir) / "posts"
+            posts_dir.mkdir()
+            (posts_dir / "archived.md").write_text(
+                "---\n"
+                "title: Archived\n"
+                "date: 2026-01-01\n"
+                "external_url: https://example.com/archived\n"
+                "archived: true\n"
+                "tags: [Hallucinated, Archive Pollution]\n"
+                "---\n\n"
+                "该条目仅保留原始来源入口。\n",
+                encoding="utf-8",
+            )
+
+            with mock.patch.dict("os.environ", {"TAG_INTRO_ENABLED": "0"}, clear=False):
+                result = build_tag_graph_data(
+                    enable_content_mining=False,
+                    existing_output_path=None,
+                    content_dir=str(posts_dir),
+                )
+
+        nodes = {node["id"]: node for node in result["graph"]["nodes"]}
+        stats = result["stats"]["tag_stats"]
+        self.assertEqual(stats["total_articles"], 0)
+        self.assertEqual(stats["synthetic_article_groups_skipped"], 1)
+        self.assertEqual(stats["synthetic_article_files_skipped"], 1)
+        self.assertNotIn("tag:Hallucinated", nodes)
+        self.assertNotIn("tag:Archive Pollution", nodes)
+
     def test_semantic_matching_uses_tokens_not_arbitrary_substrings_or_category(self):
         builder = TagGraphBuilder(enable_content_mining=False)
         gin = {"id": "gin", "name": "Gin", "layer": "framework", "category": "backend"}

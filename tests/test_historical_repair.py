@@ -26,6 +26,7 @@ def _write_post(
     tags: list[str] | None = None,
     categories: list[str] | None = None,
     scenarios: list[str] | None = None,
+    archived: bool = False,
 ) -> Path:
     import yaml
 
@@ -39,6 +40,8 @@ def _write_post(
         "categories": categories or [],
         "scenarios": scenarios or [],
     }
+    if archived:
+        frontmatter["archived"] = True
     payload = yaml.safe_dump(frontmatter, allow_unicode=True, sort_keys=False)
     path.write_text(f"---\n{payload}---\n\n{body.strip()}\n", encoding="utf-8")
     return path
@@ -171,6 +174,11 @@ def test_all_polluted_group_plans_a_transparent_archive_stub(tmp_path: Path) -> 
     assert "archived: true" in replacement
     assert "历史内容质量门未通过" in replacement
     assert "https://example.com/archive" in replacement
+    metadata = yaml.safe_load(replacement.split("---", 2)[1])
+    assert metadata["tags"] == []
+    assert metadata["categories"] == []
+    assert metadata["scenarios"] == []
+    assert metadata["_build"] == {"list": "never", "render": "always"}
 
 
 def test_polluted_singleton_is_also_replaced_by_a_transparent_archive_stub(
@@ -271,6 +279,85 @@ def test_winner_frontmatter_uses_conservative_taxonomy_normalization(
         "SWE-Bench",
     ]
     assert plan.manifest["groups"][0]["metadata"]["tags"] == frontmatter["tags"]
+
+
+def test_clean_active_singleton_is_canonically_normalized_and_then_idempotent(
+    tmp_path: Path,
+) -> None:
+    root = tmp_path / "content/posts"
+    singleton = _write_post(
+        root,
+        "20260101-singleton.md",
+        external_url="https://Example.com:443/story/?b=2&utm_source=feed&a=1#fragment",
+        body="# 原文摘要\n\n这是可核验的干净正文。",
+        date="2026-01-01T00:00:00+08:00",
+        tags=[" AI编程 ", "AI 编程", "VibeCoding", "Vibe Coding"],
+        categories=["不应在标签修复中改写的分类"],
+        scenarios=["不应在标签修复中改写的场景"],
+    )
+
+    plan = _build(root)
+    rendered = _write_by_path(plan, singleton.name)
+    frontmatter = yaml.safe_load(rendered.split("---", 2)[1])
+    group = plan.manifest["groups"][0]
+
+    assert plan.manifest["planned_changes"] == 1
+    assert plan.manifest["duplicate_group_count"] == 0
+    assert plan.manifest["normalization_group_count"] == 1
+    assert group["disposition"] == "normalize_metadata"
+    assert group["canonical_path"] == singleton.name
+    assert group["body_source"] == singleton.name
+    assert frontmatter["external_url"] == "https://example.com/story?a=1&b=2"
+    assert frontmatter["tags"] == ["AI 编程", "Vibe Coding"]
+    assert frontmatter["categories"] == ["不应在标签修复中改写的分类"]
+    assert frontmatter["scenarios"] == ["不应在标签修复中改写的场景"]
+    assert rendered.endswith("# 原文摘要\n\n这是可核验的干净正文。\n")
+
+    singleton.write_text(rendered, encoding="utf-8")
+    repeated = _build(root)
+
+    assert repeated.manifest["planned_changes"] == 0
+    assert repeated.manifest["groups"] == []
+
+
+def test_plan_documents_both_safe_execution_profiles(tmp_path: Path) -> None:
+    root = tmp_path / "content/posts"
+    _write_post(
+        root,
+        "20260101-repair.md",
+        external_url="https://example.com/repair-policy",
+        body="您没有提供完整正文，因此以下内容只能根据标题推演。",
+        date="2026-01-01T00:00:00+08:00",
+    )
+
+    policy = _build(root).manifest["execution_policy"]
+
+    assert policy["shadow_soak_profile"] == "24_runs_3_full_builds_7_day_soak"
+    assert policy["reviewed_repository_profile"] == (
+        "clean_codex_branch_exact_head_exact_plan_digest_with_backup"
+    )
+    assert policy["repository_reviewed_batch_limit"] == 10_000
+
+
+def test_archived_singleton_is_not_treated_as_active_taxonomy(
+    tmp_path: Path,
+) -> None:
+    root = tmp_path / "content/posts"
+    _write_post(
+        root,
+        "20260101-archived.md",
+        external_url="https://Example.com/archive/?utm_source=old",
+        body="这是透明归档记录。",
+        date="2026-01-01T00:00:00+08:00",
+        tags=["AI编程"],
+        archived=True,
+    )
+
+    plan = _build(root)
+
+    assert plan.manifest["planned_changes"] == 0
+    assert plan.manifest["normalization_group_count"] == 0
+    assert plan.manifest["groups"] == []
 
 
 def test_alias_and_relref_rewrite_plan_preserves_old_routes(tmp_path: Path) -> None:
@@ -458,6 +545,146 @@ def test_apply_uses_shadow_gate_and_is_idempotent(tmp_path: Path, monkeypatch) -
     assert not duplicate.exists()
     receipt = json.loads((backup_root / "repair-001/receipt.json").read_text(encoding="utf-8"))
     assert receipt["plan_digest"] == plan.manifest["plan_digest"]
+
+
+def test_repository_reviewed_apply_uses_git_guard_instead_of_shadow_gate(
+    tmp_path: Path, monkeypatch
+) -> None:
+    import ai_stack.historical_repair as repair
+
+    root = tmp_path / "content/posts"
+    canonical = _write_post(
+        root,
+        "a.md",
+        external_url="https://example.com/repository-apply",
+        body="正文 A。",
+        date="2026-01-01T00:00:00+08:00",
+    )
+    duplicate = _write_post(
+        root,
+        "b.md",
+        external_url="https://example.com/repository-apply",
+        body="# 完整正文\n\n" + "事实。" * 60,
+        date="2026-02-01T00:00:00+08:00",
+    )
+    plan = _build(root)
+    execution_calls: list[dict[str, object]] = []
+
+    def reject_shadow_gate(**_kwargs):
+        raise AssertionError("repository migration must not use the shadow gate")
+
+    def allow_execution_gate(**kwargs):
+        execution_calls.append(kwargs)
+
+    monkeypatch.setattr(repair, "validate_dedupe_execution_gate", reject_shadow_gate)
+    monkeypatch.setattr(repair, "validate_execution_gate", allow_execution_gate)
+    monkeypatch.setattr(
+        repair,
+        "_repository_review_state",
+        lambda _root: ("codex/history-repair", ""),
+        raising=False,
+    )
+
+    result = repair.apply_historical_repair_plan(
+        plan,
+        expected_source_sha=SOURCE_SHA,
+        expected_code_sha=None,
+        expected_plan_digest=plan.manifest["plan_digest"],
+        backup_id="repository-repair-001",
+        max_changes=10,
+        shadow_evidence_root=None,
+        backup_root=tmp_path / "backups",
+        repository_reviewed=True,
+    )
+
+    assert len(execution_calls) == 1
+    assert execution_calls[0]["execute"] is True
+    assert result["safety_profile"] == "reviewed_git_repository"
+    assert canonical.exists()
+    assert not duplicate.exists()
+
+
+@pytest.mark.parametrize(
+    ("branch", "status", "message"),
+    [
+        ("main", "", "codex/ branch"),
+        ("codex/history-repair", " M content/posts/a.md", "clean Git worktree"),
+    ],
+)
+def test_repository_reviewed_apply_rejects_main_or_dirty_worktree(
+    tmp_path: Path,
+    monkeypatch,
+    branch: str,
+    status: str,
+    message: str,
+) -> None:
+    import ai_stack.historical_repair as repair
+
+    root = tmp_path / "content/posts"
+    _write_post(
+        root,
+        "a.md",
+        external_url="https://example.com/repository-guard",
+        body="您没有提供原文，我将根据标题推测。",
+        date="2026-01-01T00:00:00+08:00",
+    )
+    plan = _build(root)
+    monkeypatch.setattr(repair, "validate_execution_gate", lambda **_kwargs: None)
+    monkeypatch.setattr(
+        repair,
+        "_repository_review_state",
+        lambda _root: (branch, status),
+        raising=False,
+    )
+
+    with pytest.raises(MigrationSafetyError, match=message):
+        repair.apply_historical_repair_plan(
+            plan,
+            expected_source_sha=SOURCE_SHA,
+            expected_code_sha=None,
+            expected_plan_digest=plan.manifest["plan_digest"],
+            backup_id="repository-guard",
+            max_changes=10,
+            shadow_evidence_root=None,
+            backup_root=tmp_path / "backups",
+            repository_reviewed=True,
+        )
+
+
+def test_repository_reviewed_apply_rejects_plan_digest_mismatch(
+    tmp_path: Path, monkeypatch
+) -> None:
+    import ai_stack.historical_repair as repair
+
+    root = tmp_path / "content/posts"
+    _write_post(
+        root,
+        "a.md",
+        external_url="https://example.com/repository-digest",
+        body="您没有提供原文，我将根据标题推测。",
+        date="2026-01-01T00:00:00+08:00",
+    )
+    plan = _build(root)
+    monkeypatch.setattr(repair, "validate_execution_gate", lambda **_kwargs: None)
+    monkeypatch.setattr(
+        repair,
+        "_repository_review_state",
+        lambda _root: ("codex/history-repair", ""),
+        raising=False,
+    )
+
+    with pytest.raises(MigrationSafetyError, match="plan digest mismatch"):
+        repair.apply_historical_repair_plan(
+            plan,
+            expected_source_sha=SOURCE_SHA,
+            expected_code_sha=None,
+            expected_plan_digest="sha256:" + "0" * 64,
+            backup_id="repository-digest",
+            max_changes=10,
+            shadow_evidence_root=None,
+            backup_root=tmp_path / "backups",
+            repository_reviewed=True,
+        )
 
 
 def test_stale_plan_is_rejected_before_any_mutation(tmp_path: Path, monkeypatch) -> None:

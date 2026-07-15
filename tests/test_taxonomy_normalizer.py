@@ -2,15 +2,21 @@ from pathlib import Path
 
 import pytest
 
-from processor.taxonomy_normalizer import (
+from ai_stack.tag_taxonomy import (
     TaxonomyAliasError,
     compile_tag_aliases,
     load_tag_aliases,
     normalize_tag,
     normalize_tags,
 )
+from processor import taxonomy_normalizer as processor_compatibility
 
 ROOT = Path(__file__).resolve().parent.parent
+
+
+def test_processor_namespace_is_a_compatibility_forwarder():
+    assert processor_compatibility.normalize_tag is normalize_tag
+    assert processor_compatibility.normalize_tags is normalize_tags
 
 
 def test_default_alias_config_is_versioned_and_applies_exact_aliases():

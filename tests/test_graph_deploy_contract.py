@@ -7,6 +7,8 @@ import json
 import tempfile
 import unittest
 from pathlib import Path
+from types import SimpleNamespace
+from unittest import mock
 
 ROOT = Path(__file__).resolve().parents[1]
 SCENARIO_TEMPLATE = (
@@ -108,6 +110,29 @@ class GraphDeployContractTest(unittest.TestCase):
 
         self.assertIn("search nodes missing focus entries: 1", failures)
 
+    def test_assets_only_mode_never_starts_the_browser_smoke_test(self) -> None:
+        module = self._load_verify_module()
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            public = Path(tmp_dir)
+            self._build_graph_fixture(public)
+            args = SimpleNamespace(
+                assets_only=True,
+                public_dir=public,
+                screenshot=None,
+            )
+
+            with (
+                mock.patch.object(module, "parse_args", return_value=args),
+                mock.patch.object(
+                    module,
+                    "verify",
+                    side_effect=AssertionError("browser verification must not run"),
+                ),
+            ):
+                status = module.main()
+
+        self.assertEqual(0, status)
+
     def test_production_template_uses_the_live_progressive_workbench(self) -> None:
         source = SCENARIO_TEMPLATE.read_text(encoding="utf-8")
 
@@ -153,6 +178,7 @@ class GraphDeployContractTest(unittest.TestCase):
             source.index("./node_modules/.bin/pagefind --site blog/public"),
             source.index("actions/upload-pages-artifact@v3"),
         )
+        self.assertIn("--assets-only --public-dir blog/static", source)
 
 
 if __name__ == "__main__":

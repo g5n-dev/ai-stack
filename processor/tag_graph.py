@@ -19,7 +19,7 @@ import yaml
 
 from ai_stack.content_quality import is_synthetic_body
 from ai_stack.identity import canonicalize_url
-from processor.taxonomy_normalizer import normalize_tags
+from ai_stack.tag_taxonomy import normalize_tags
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -307,7 +307,9 @@ class TagGraphBuilder:
         self,
         candidate: Tuple[Path, str, Dict[str, Any]],
     ) -> bool:
-        _, content, _ = candidate
+        _, content, frontmatter = candidate
+        if frontmatter.get("archived") is True:
+            return True
         body = re.sub(
             r"\A(?:\ufeff)?---[ \t]*\r?\n.*?\r?\n---[ \t]*(?:\r?\n|\Z)",
             "",

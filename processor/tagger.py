@@ -12,7 +12,7 @@ import logging
 import re
 
 from .anthropic_client import AnthropicClient
-from .taxonomy_normalizer import normalize_tag, normalize_tags
+from ai_stack.tag_taxonomy import normalize_tag, normalize_tags
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)

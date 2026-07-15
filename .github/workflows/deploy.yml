@@ -279,25 +279,12 @@ jobs:
 
       - name: Verify generated graph
         run: |
-          python3 scripts/verify_graph.py
-
-      - name: Commit generated data
-        if: ${{ github.event_name != 'push' }}
-        run: |
-          git add -A -- \
-            blog/content/posts \
-            blog/data/content_quality.json \
-            blog/static/data/tag-graph
-          if git diff --cached --quiet; then
-            echo "No archive-new content or graph changes to commit"
-            echo "- Generated data: no changes" >> "$GITHUB_STEP_SUMMARY"
+          if [ "${GITHUB_EVENT_NAME}" = "push" ]; then
+            # Push deploys reuse already-reviewed graph assets and do not install
+            # Chromium. Validate the complete manifest without launching a browser.
+            python3 scripts/verify_graph.py --assets-only --public-dir blog/static
           else
-            changed_posts=$(git diff --cached --name-only --diff-filter=A -- blog/content/posts | wc -l | tr -d ' ')
-            echo "- New posts: ${changed_posts}" >> "$GITHUB_STEP_SUMMARY"
-            git commit -m "Update content and graph $(date -u +'%Y-%m-%dT%H:%M:%SZ') [skip ci]"
-            # A concurrent human update must fail closed. The next push/schedule
-            # will regenerate from the new main instead of deploying a stale tree.
-            git push origin HEAD:main
+            python3 scripts/verify_graph.py
           fi
 
       - name: Build Hugo site
@@ -319,6 +306,25 @@ jobs:
           test -s blog/public/pagefind/pagefind.js
           test -s blog/public/pagefind/catalog.json
           test -s blog/public/pagefind/catalog.manifest.json
+
+      - name: Commit generated data
+        if: ${{ github.event_name != 'push' }}
+        run: |
+          git add -A -- \
+            blog/content/posts \
+            blog/data/content_quality.json \
+            blog/static/data/tag-graph
+          if git diff --cached --quiet; then
+            echo "No archive-new content or graph changes to commit"
+            echo "- Generated data: no changes" >> "$GITHUB_STEP_SUMMARY"
+          else
+            changed_posts=$(git diff --cached --name-only --diff-filter=A -- blog/content/posts | wc -l | tr -d ' ')
+            echo "- New posts: ${changed_posts}" >> "$GITHUB_STEP_SUMMARY"
+            git commit -m "Update content and graph $(date -u +'%Y-%m-%dT%H:%M:%SZ') [skip ci]"
+            # The publish artifact has already passed Hugo, Pagefind, catalog, and
+            # graph validation. A concurrent human update must still fail closed.
+            git push origin HEAD:main
+          fi
 
       - name: Prepare IndexNow key file
         run: |

@@ -14,6 +14,7 @@ import os
 import re
 import shutil
 import stat
+import subprocess
 import tempfile
 import unicodedata
 from collections import defaultdict
@@ -25,13 +26,17 @@ from typing import Any
 
 import yaml
 
-from processor.taxonomy_normalizer import normalize_tags
-
 from ._json import sha256_digest
 from .content_quality import synthetic_body_reasons
 from .identity import canonicalize_url
-from .migrations import MigrationSafetyError, validate_dedupe_execution_gate
+from .migrations import (
+    MigrationSafetyError,
+    source_revision,
+    validate_dedupe_execution_gate,
+    validate_execution_gate,
+)
 from .stores import UnsafeStorePathError
+from .tag_taxonomy import normalize_tags
 
 DEFAULT_CATEGORY_WHITELIST = frozenset(
     {
@@ -355,6 +360,32 @@ def _filtered_metadata(
     return metadata
 
 
+def _normalized_active_singleton_metadata(
+    document: _Document,
+    *,
+    canonical_url: str,
+) -> dict[str, Any] | None:
+    """Return a minimal metadata-only rewrite for one active clean article.
+
+    Singleton normalization deliberately leaves categories, scenarios, routes,
+    and all unrelated frontmatter untouched.  That keeps the all-article tag/URL
+    invariant inside the same compare-and-swap repair/backup mechanism without
+    expanding a taxonomy migration into a broader editorial rewrite.
+    """
+    if document.metadata.get("archived") is True:
+        return None
+    normalized_tags = normalize_tags(document.metadata.get("tags"), limit=8)
+    if (
+        document.metadata.get("external_url") == canonical_url
+        and document.metadata.get("tags") == normalized_tags
+    ):
+        return None
+    metadata = copy.deepcopy(document.metadata)
+    metadata["external_url"] = canonical_url
+    metadata["tags"] = normalized_tags
+    return metadata
+
+
 def _render_document(metadata: Mapping[str, Any], body: str) -> bytes:
     frontmatter = yaml.safe_dump(
         dict(metadata),
@@ -385,6 +416,10 @@ def _archive_stub(
     metadata["archived"] = True
     metadata["archive_reason"] = "historical_content_quality_gate"
     metadata["description"] = "历史条目已归档：现有正文未通过内容质量门，请查阅原始来源。"
+    metadata["tags"] = []
+    metadata["categories"] = []
+    metadata["scenarios"] = []
+    metadata["_build"] = {"list": "never", "render": "always"}
     body = (
         "## 历史条目归档说明\n\n"
         "该条目的历史正文未通过内容质量门，可能包含基于标题推测的内容。"
@@ -462,7 +497,7 @@ def build_historical_repair_plan(
     scenario_whitelist: Iterable[str] = DEFAULT_SCENARIO_WHITELIST,
     input_paths: Iterable[Path] | None = None,
 ) -> HistoricalRepairPlan:
-    """Build a deterministic, read-only repair plan for duplicate source URLs."""
+    """Build a deterministic plan for content repair and active metadata normalization."""
 
     root = Path(content_root).absolute()
     reference_root = root.parent
@@ -488,44 +523,59 @@ def build_historical_repair_plan(
     public_group_by_route: dict[Path, dict[str, Any]] = {}
 
     for canonical_url, candidates in sorted(grouped.items()):
-        if len(candidates) < 2 and not any(
-            document.contamination_reasons for document in candidates
-        ):
-            continue
         ordered = sorted(candidates, key=lambda document: document.relative_path)
         route = min(ordered, key=_date_key)
-        clean = [document for document in ordered if not document.contamination_reasons]
-        winner = (
-            sorted(clean, key=lambda document: (-document.quality_score, document.relative_path))[0]
-            if clean
-            else None
-        )
+        is_clean_singleton = len(ordered) == 1 and not route.contamination_reasons
+        if is_clean_singleton:
+            metadata = _normalized_active_singleton_metadata(
+                route,
+                canonical_url=canonical_url,
+            )
+            if metadata is None:
+                continue
+            winner: _Document | None = route
+            body = route.body
+            disposition = "normalize_metadata"
+            archive_reason: str | None = None
+        else:
+            clean = [document for document in ordered if not document.contamination_reasons]
+            winner = (
+                sorted(
+                    clean,
+                    key=lambda document: (
+                        -document.quality_score,
+                        document.relative_path,
+                    ),
+                )[0]
+                if clean
+                else None
+            )
+            if winner is None:
+                metadata, body = _archive_stub(
+                    route,
+                    canonical_url=canonical_url,
+                    aliases=_group_aliases(ordered, route),
+                    category_whitelist=categories,
+                    scenario_whitelist=scenarios,
+                )
+                disposition = "archive_stub"
+                archive_reason = "all_candidates_failed_content_quality_gate"
+            else:
+                metadata = _filtered_metadata(
+                    winner,
+                    route,
+                    canonical_url=canonical_url,
+                    aliases=_group_aliases(ordered, route),
+                    category_whitelist=categories,
+                    scenario_whitelist=scenarios,
+                )
+                body = winner.body
+                disposition = "merge"
+                archive_reason = None
         delete_paths = sorted(
             document.relative_path for document in ordered if document.path != route.path
         )
         aliases = _group_aliases(ordered, route)
-        if winner is None:
-            metadata, body = _archive_stub(
-                route,
-                canonical_url=canonical_url,
-                aliases=aliases,
-                category_whitelist=categories,
-                scenario_whitelist=scenarios,
-            )
-            disposition = "archive_stub"
-            archive_reason: str | None = "all_candidates_failed_content_quality_gate"
-        else:
-            metadata = _filtered_metadata(
-                winner,
-                route,
-                canonical_url=canonical_url,
-                aliases=aliases,
-                category_whitelist=categories,
-                scenario_whitelist=scenarios,
-            )
-            body = winner.body
-            disposition = "merge"
-            archive_reason = None
         rendered = _render_document(metadata, body)
         replacement_bytes[route.path] = rendered
         for document in ordered:
@@ -624,6 +674,9 @@ def build_historical_repair_plan(
         "mutation_performed": False,
         "files_scanned": len(paths),
         "repair_group_count": len(public_groups),
+        "normalization_group_count": sum(
+            group["disposition"] == "normalize_metadata" for group in public_groups
+        ),
         "duplicate_group_count": sum(
             int(group["source_file_count"]) > 1 for group in public_groups
         ),
@@ -648,18 +701,29 @@ def build_historical_repair_plan(
             "requires_expected_source_sha": True,
             "requires_backup_id": True,
             "requires_max_changes": True,
-            "requires_shadow_evidence": True,
-            "shadow_gate": "24_runs_3_full_builds_7_day_soak",
-            "reviewed_batch_limit": 100,
+            "execution_profiles": [
+                "shadow_soak_dedupe",
+                "reviewed_git_repository",
+            ],
+            "shadow_soak_profile": "24_runs_3_full_builds_7_day_soak",
+            "shadow_soak_batch_limit": 100,
+            "reviewed_repository_profile": (
+                "clean_codex_branch_exact_head_exact_plan_digest_with_backup"
+            ),
+            "repository_reviewed_batch_limit": 10_000,
             "atomic_strategy": "compare_and_swap_atomic_replace_with_rollback_backup",
         },
         "selection_policy": {
             "canonical_route": "oldest_frontmatter_date_then_lexical_path",
             "body_source": "clean_candidates_only_then_capped_structural_quality_score",
             "metadata": "body_source_only_with_whitelists_and_eight_tag_cap",
+            "active_singletons": (
+                "canonical_external_url_and_shared_tag_taxonomy_only; "
+                "unrelated_metadata_preserved"
+            ),
             "all_polluted": "transparent_archive_stub",
         },
-        "execution_blocked": "requires_shadow_gate_and_reviewed_batches_of_at_most_100",
+        "execution_blocked": "requires_one_validated_execution_profile",
     }
     manifest = dict(base_manifest)
     manifest["plan_digest"] = sha256_digest(base_manifest)
@@ -863,6 +927,33 @@ def _verify_applied(plan: HistoricalRepairPlan) -> None:
             raise MigrationSafetyError(f"applied repair receipt does not match: {deletion.path}")
 
 
+def _repository_review_state(reference_root: Path) -> tuple[str, str]:
+    branch_result = subprocess.run(
+        ["git", "-C", str(reference_root), "symbolic-ref", "--quiet", "--short", "HEAD"],
+        check=False,
+        capture_output=True,
+        text=True,
+    )
+    if branch_result.returncode != 0:
+        raise MigrationSafetyError("reviewed repository repair requires an attached branch")
+    status_result = subprocess.run(
+        [
+            "git",
+            "-C",
+            str(reference_root),
+            "status",
+            "--porcelain=v1",
+            "--untracked-files=all",
+        ],
+        check=False,
+        capture_output=True,
+        text=True,
+    )
+    if status_result.returncode != 0:
+        raise MigrationSafetyError("reviewed repository repair cannot read Git worktree state")
+    return branch_result.stdout.strip(), status_result.stdout.strip()
+
+
 def _restore_from_backup(
     plan: HistoricalRepairPlan,
     *,
@@ -887,17 +978,41 @@ def apply_historical_repair_plan(
     max_changes: int | None,
     shadow_evidence_root: Path | None,
     backup_root: Path,
+    expected_plan_digest: str | None = None,
+    repository_reviewed: bool = False,
 ) -> dict[str, Any]:
-    """Apply a reviewed plan only after the existing destructive dedupe gate passes."""
+    """Apply a reviewed plan after one explicit safety profile validates it."""
 
-    validate_dedupe_execution_gate(
-        content_root=plan.content_root,
-        expected_source_sha=expected_source_sha,
-        expected_code_sha=expected_code_sha,
-        backup_id=backup_id,
-        max_changes=max_changes,
-        shadow_evidence_root=shadow_evidence_root,
-    )
+    safety_profile = "shadow_soak_dedupe"
+    if repository_reviewed:
+        validate_execution_gate(
+            execute=True,
+            expected_source_sha=expected_source_sha,
+            backup_id=backup_id,
+            max_changes=max_changes,
+            actual_source_sha=source_revision(plan.content_root),
+        )
+        if expected_plan_digest != plan.manifest["plan_digest"]:
+            raise MigrationSafetyError("reviewed repository repair plan digest mismatch")
+        branch, worktree_status = _repository_review_state(plan.reference_root)
+        if not branch.startswith("codex/"):
+            raise MigrationSafetyError(
+                "reviewed repository repair requires a codex/ branch"
+            )
+        if worktree_status:
+            raise MigrationSafetyError(
+                "reviewed repository repair requires a clean Git worktree"
+            )
+        safety_profile = "reviewed_git_repository"
+    else:
+        validate_dedupe_execution_gate(
+            content_root=plan.content_root,
+            expected_source_sha=expected_source_sha,
+            expected_code_sha=expected_code_sha,
+            backup_id=backup_id,
+            max_changes=max_changes,
+            shadow_evidence_root=shadow_evidence_root,
+        )
     if backup_id is None or not _BACKUP_ID.fullmatch(backup_id):
         raise MigrationSafetyError("--backup-id must be a safe identifier")
     if not isinstance(max_changes, int) or isinstance(max_changes, bool):
@@ -928,6 +1043,7 @@ def apply_historical_repair_plan(
             "already_applied": True,
             "mutation_performed": False,
             "changed_files": 0,
+            "safety_profile": receipt.get("safety_profile", safety_profile),
         }
     if backup_directory.exists() or backup_directory.is_symlink():
         raise MigrationSafetyError(
@@ -961,6 +1077,7 @@ def apply_historical_repair_plan(
         "expected_source_sha": expected_source_sha,
         "expected_code_sha": expected_code_sha,
         "planned_changes": planned_changes,
+        "safety_profile": safety_profile,
         "state": "applied",
     }
     try:
@@ -988,6 +1105,7 @@ def apply_historical_repair_plan(
         "already_applied": False,
         "mutation_performed": bool(planned_changes),
         "changed_files": planned_changes,
+        "safety_profile": safety_profile,
     }
 
 

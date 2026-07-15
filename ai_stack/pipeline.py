@@ -33,6 +33,7 @@ from .models import (
     model_to_dict,
 )
 from .stores import FileContentStore, FileOpsStore
+from .tag_taxonomy import normalize_tags
 
 DISCOVERY_SCHEMA = "discovery_event_v1"
 GENERATED_SCHEMA = "generated_candidate_v1"
@@ -771,11 +772,7 @@ def _candidate_from_envelope(
         f"[查看原始来源]({item.canonical_url})"
     )
     raw_tags = item.payload.get("tags", ())
-    tags = (
-        tuple(str(tag).strip()[:80] for tag in raw_tags if str(tag).strip())
-        if isinstance(raw_tags, (list, tuple))
-        else ()
-    )
+    tags = tuple(normalize_tags(raw_tags, limit=8))
     article = ArticleRevision(
         event_id=event.event_id,
         generation_key=generation_key,
@@ -1180,11 +1177,7 @@ def _intelligence_events(envelopes: Sequence[Mapping[str, Any]]) -> list[dict[st
         item = SourceItem.from_dict(envelope["source_item"])
         title = _safe_title(item.payload, item.canonical_url)
         tags_raw = item.payload.get("tags", [])
-        tags = (
-            [str(tag).strip() for tag in tags_raw if str(tag).strip()]
-            if isinstance(tags_raw, (list, tuple))
-            else []
-        )
+        tags = normalize_tags(tags_raw, limit=8)
         result.append(
             {
                 "event_id": event.event_id,

@@ -293,9 +293,20 @@ def verify(public_dir: Path, screenshot: Path | None = None) -> list[str]:
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
+        "--assets-only",
+        action="store_true",
+        help=(
+            "Validate progressive graph JSON assets without starting Hugo, "
+            "Playwright, or Chromium."
+        ),
+    )
+    parser.add_argument(
         "--public-dir",
         type=Path,
-        help="Use an existing Hugo public directory instead of building the minimal fixture.",
+        help=(
+            "Use an existing Hugo public directory instead of building the minimal "
+            "fixture. With --assets-only, defaults to blog/static."
+        ),
     )
     parser.add_argument("--screenshot", type=Path, help="Optional screenshot output path.")
     return parser.parse_args()
@@ -304,7 +315,10 @@ def parse_args() -> argparse.Namespace:
 def main() -> int:
     args = parse_args()
     try:
-        if args.public_dir:
+        if args.assets_only:
+            public_dir = (args.public_dir or BLOG / "static").resolve()
+            failures = verify_graph_assets(public_dir)
+        elif args.public_dir:
             failures = verify(args.public_dir.resolve(), args.screenshot)
         else:
             with tempfile.TemporaryDirectory(prefix="ai-stack-graph-verify-") as tmp_dir:

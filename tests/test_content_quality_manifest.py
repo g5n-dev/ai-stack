@@ -64,6 +64,29 @@ def test_manifest_writer_is_stable_and_frontmatter_is_not_scanned(
     assert not output.with_suffix(".json.tmp").exists()
 
 
+def test_manifest_tracks_transparent_archives_without_counting_them_as_quarantine(
+    tmp_path: Path,
+) -> None:
+    content = tmp_path / "content"
+    posts = content / "posts"
+    posts.mkdir(parents=True)
+    (posts / "archived.md").write_text(
+        "---\ntitle: Archived\narchived: true\n---\n\n"
+        "该条目仅保留原始来源入口。\n",
+        encoding="utf-8",
+    )
+
+    manifest = build_content_quality_manifest(content)
+
+    assert manifest["source_file_count"] == 1
+    assert manifest["quarantined_count"] == 0
+    assert manifest["archived_count"] == 1
+    assert manifest["pages"]["posts/archived.md"] == {
+        "status": "archived",
+        "reasons": ["archived_content"],
+    }
+
+
 def test_article_template_quarantines_manifest_entries_from_body_and_search() -> None:
     template = (
         ROOT
@@ -73,5 +96,23 @@ def test_article_template_quarantines_manifest_entries_from_body_and_search() ->
     assert ".Site.Data.content_quality" in template
     assert 'data-pagefind-ignore="all"' in template
     assert 'data-content-quality-status="quarantined"' in template
+    assert ".Params.archived" in template
+    assert "$isQualityBlocked" in template
+    assert 'content="noindex, nofollow"' in template
     assert "历史正文已隔离" in template
+    assert "{{ .Content }}" in template
+
+
+def test_article_template_labels_short_source_cards_without_hiding_the_body() -> None:
+    template = (
+        ROOT
+        / "blog/themes/terminal-theme/layouts/_default/single.html"
+    ).read_text(encoding="utf-8")
+
+    assert "$isSourceBrief" in template
+    assert "len .RawContent" in template
+    assert ".WordCount" not in template
+    assert 'data-content-mode="source-brief"' in template
+    assert "来源快报" in template
+    assert "以原始来源为准" in template
     assert "{{ .Content }}" in template

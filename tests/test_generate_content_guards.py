@@ -339,6 +339,61 @@ class GenerateContentGuardsTest(unittest.TestCase):
                 ],
             )
 
+    def test_generated_frontmatter_uses_shared_tag_and_url_canonicalization(self):
+        generator = self.module.SuperEnhancedContentGenerator.__new__(
+            self.module.SuperEnhancedContentGenerator
+        )
+        generator._post_index = []
+
+        document = generator._format_super_enhanced_markdown(
+            {
+                "title": "Canonical metadata",
+                "source": "hacker_news",
+                "url": (
+                    "https://Example.com:443/story/?b=2&utm_source=feed&a=1#fragment"
+                ),
+                "summary": "A safe source summary.",
+                "tags": [" AI编程 ", "AI 编程", "VibeCoding", "Vibe Coding"],
+                "categories": ["News"],
+            },
+            generated_at=datetime(2026, 7, 15, tzinfo=timezone.utc),
+        )
+        frontmatter = real_yaml.safe_load(document.split("---", 2)[1])
+
+        self.assertEqual(
+            frontmatter["external_url"],
+            "https://example.com/story?a=1&b=2",
+        )
+        self.assertEqual(frontmatter["tags"], ["AI 编程", "Vibe Coding"])
+        self.assertEqual(
+            self.module.canonicalize_content_url(
+                "https://Example.com:443/story/?b=2&utm_source=feed&a=1#fragment"
+            ),
+            "https://example.com/story?a=1&b=2",
+        )
+
+    def test_invalid_content_url_fails_closed_before_frontmatter_is_built(self):
+        generator = self.module.SuperEnhancedContentGenerator.__new__(
+            self.module.SuperEnhancedContentGenerator
+        )
+        generator._post_index = []
+
+        with self.assertRaisesRegex(ValueError, "valid canonical source URL"):
+            generator._format_super_enhanced_markdown(
+                {
+                    "title": "Invalid source",
+                    "source": "unknown",
+                    "url": "javascript:alert(1)",
+                    "summary": "A safe summary without a usable source URL.",
+                    "tags": ["AI编程"],
+                },
+                generated_at=datetime(2026, 7, 15, tzinfo=timezone.utc),
+            )
+        self.assertEqual(
+            self.module.canonicalize_content_url("javascript:alert(1)"),
+            "",
+        )
+
     def test_explicit_utc_generation_time_crosses_into_shanghai_next_day(self):
         generated_at = datetime(2026, 7, 14, 16, 30, tzinfo=timezone.utc)
         local_now = self.module.content_now(generated_at)

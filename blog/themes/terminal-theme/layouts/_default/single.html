@@ -4,18 +4,26 @@
 {{- end -}}
 {{- $qualityRecord := index $qualityPages .File.Path | default dict -}}
 {{- $isQuarantined := eq (index $qualityRecord "status") "quarantined" -}}
+{{- $isArchived := or (eq (index $qualityRecord "status") "archived") (.Params.archived | default false) -}}
+{{- $isQualityBlocked := or $isQuarantined $isArchived -}}
+{{- $sourceKey := lower (printf "%v" (.Params.source | default "")) -}}
+{{- $isSourceBrief := and (not $isQualityBlocked) (eq $sourceKey "hacker_news") (lt (len .RawContent) 1200) (.Params.external_url | default false) -}}
 <!DOCTYPE html>
 <html class="dark" lang="{{ .Site.LanguageCode }}">
 
 <head>
-    {{- $metaDescription := cond $isQuarantined "该历史条目的旧生成正文未通过来源完整性检查，正文已隔离并保留原始来源入口。" .Description -}}
+    {{- $blockedDescription := cond $isArchived "该历史条目仅保留透明归档记录与原始来源入口。" "该历史条目的旧生成正文未通过来源完整性检查，正文已隔离并保留原始来源入口。" -}}
+    {{- $metaDescription := cond $isQualityBlocked $blockedDescription .Description -}}
     {{- if not $metaDescription -}}
     {{- $metaDescription = (.Plain | plainify | truncate 200) -}}
     {{- end -}}
     {{ partial "site-head.html" (dict "Page" . "Description" $metaDescription "Type" "article" "Scripts" (slice ("js/terminal.js" | relURL))) }}
-    {{- if not $isQuarantined -}}
+    {{- if not $isQualityBlocked -}}
     {{ partial "pagefind-metadata.html" . }}
     {{- end -}}
+    {{- if $isQualityBlocked }}
+    <meta name="robots" content="noindex, nofollow">
+    {{- end }}
 
     {{- $ldImage := (.Params.og_image | default .Params.image | default .Site.Params.default_og_image | default
     .Site.Params.profile_image | default `/img/profile-holo.png`) | absURL -}}
@@ -49,7 +57,7 @@
 
 </head>
 
-<body{{ if $isQuarantined }} data-pagefind-ignore="all"{{ end }} class="bg-deep-navy selection:bg-muted-teal selection:text-deep-navy font-display">
+<body{{ if $isQualityBlocked }} data-pagefind-ignore="all"{{ end }} class="bg-deep-navy selection:bg-muted-teal selection:text-deep-navy font-display">
     <div class="rain-container">
         <div class="rain-streak r1"></div>
         <div class="rain-streak r2"></div>
@@ -114,7 +122,20 @@
                         </div>
                     </div>
 
-                    {{- if $isQuarantined }}
+                    {{- if $isArchived }}
+                    <div data-content-quality-status="archived"
+                        class="rounded-2xl border border-primary/25 bg-primary/5 p-6 md:p-8">
+                        <p class="font-mono text-[10px] tracking-widest text-primary">TRANSPARENT ARCHIVE</p>
+                        <h2 class="mt-3 text-xl font-semibold text-off-white">历史条目已归档</h2>
+                        <p class="mt-4 max-w-3xl text-sm leading-7 text-off-white/75">
+                            现有历史副本均未通过来源完整性检查，无法在不编造内容的前提下恢复正文。本站已移除不可核验文本，仅保留标题、时间与原始来源入口。
+                        </p>
+                        {{- with .Params.external_url }}
+                        <a class="mt-6 inline-flex min-h-11 items-center rounded-lg border border-primary/35 px-4 text-sm text-primary hover:bg-primary/10"
+                            href="{{ . }}" rel="noopener noreferrer nofollow">查看原始来源</a>
+                        {{- end }}
+                    </div>
+                    {{- else if $isQuarantined }}
                     <div data-content-quality-status="quarantined"
                         class="rounded-2xl border border-amber-400/25 bg-amber-400/5 p-6 md:p-8">
                         <p class="font-mono text-[10px] tracking-widest text-amber-300">ARCHIVE QUALITY GATE</p>
@@ -128,6 +149,19 @@
                         {{- end }}
                     </div>
                     {{- else }}
+                    {{- if $isSourceBrief }}
+                    <aside data-content-mode="source-brief"
+                        class="mb-8 rounded-2xl border border-primary/20 bg-primary/[0.04] p-5 md:flex md:items-center md:justify-between md:gap-6">
+                        <div>
+                            <p class="font-mono text-[10px] tracking-widest text-primary">SOURCE BRIEF / 来源快报</p>
+                            <p class="mt-2 text-sm leading-6 text-off-white/65">
+                                该条目是外部情报源的简报卡片，本站保留已有摘要，不补写无法核验的细节；事实与完整上下文请以原始来源为准。
+                            </p>
+                        </div>
+                        <a class="mt-4 inline-flex min-h-11 shrink-0 items-center rounded-lg border border-primary/30 px-4 text-sm text-primary hover:bg-primary/10 md:mt-0"
+                            href="{{ .Params.external_url }}" rel="noopener noreferrer nofollow">打开原始来源</a>
+                    </aside>
+                    {{- end }}
                     <div data-pagefind-body
                         class="post-content prose prose-invert max-w-none font-display text-base md:text-lg text-slate-300 leading-relaxed">
                         {{ .Content }}

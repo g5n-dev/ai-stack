@@ -40,6 +40,12 @@ jobs:
           node-version: "22"
           cache: "npm"
 
+      - name: Set up Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: "0.153.4"
+          extended: true
+
       - name: Install locked frontend dependencies
         run: npm ci --ignore-scripts
 
@@ -66,6 +72,7 @@ jobs:
             tests/test_tagger_taxonomy_normalization.py \
             tests/test_scenario_analyzer_taxonomy.py \
             tests/test_historical_repair.py \
+            tests/test_historical_repair_integration.py \
             tests/test_content_quality_manifest.py \
             tests/test_static_search_configuration.py \
             tests/test_pagefind_catalog.py

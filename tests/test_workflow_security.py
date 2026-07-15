@@ -102,7 +102,15 @@ def test_deploy_keeps_a_single_fail_closed_job_flow() -> None:
     steps_by_name = {
         step.get("name"): step for step in steps if isinstance(step, dict)
     }
-    assert step_names.index("Commit generated data") < step_names.index("Build Hugo site")
+    assert step_names.index("Build Hugo site") < step_names.index(
+        "Commit generated data"
+    )
+    assert step_names.index(
+        "Build Pagefind search index and result catalog"
+    ) < step_names.index("Commit generated data")
+    assert step_names.index("Commit generated data") < step_names.index(
+        "Upload artifact"
+    )
     for data_refresh_step in (
         "Install Playwright browsers",
         "Run crawler",
@@ -118,7 +126,14 @@ def test_deploy_keeps_a_single_fail_closed_job_flow() -> None:
         "${{ github.event_name != 'push' "
         "&& env.AI_STACK_RUNTIME_PROFILE != 'ci' }}"
     )
-    assert "python3 scripts/verify_graph.py" in text
+    verify_run = steps_by_name["Verify generated graph"]["run"]
+    assert isinstance(verify_run, str)
+    assert 'if [ "${GITHUB_EVENT_NAME}" = "push" ]; then' in verify_run
+    assert (
+        "python3 scripts/verify_graph.py --assets-only --public-dir blog/static"
+        in verify_run
+    )
+    assert "python3 scripts/verify_graph.py" in verify_run
     assert "reset --hard" not in text
     assert "git pull --rebase" not in text
     assert "reusing existing graph artifacts" not in text
