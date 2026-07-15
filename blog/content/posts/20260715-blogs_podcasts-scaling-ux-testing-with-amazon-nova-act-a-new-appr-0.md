@@ -1,5 +1,5 @@
 ---
-title: "Scaling UX testing with Amazon Nova Act: A new approach"
+title: "Scaling UX testing with Amazon Nova Act: A new approach to user flow analysis"
 date: 2026-07-15T23:05:07+08:00
 draft: false
 entry_kind: "auto"
@@ -14,6 +14,7 @@ extractor_version: "source-contract-v1"
 discovery_method: "rss_excerpt"
 source_is_truncated: false
 source_support: 1.0
+source_title_chars_original: 77
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://aws.amazon.com/blogs/machine-learning/scaling-ux-testing-with-amazon-nova-act-a-new-approach-to-user-flow-analysis
 ---
