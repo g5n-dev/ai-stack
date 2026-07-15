@@ -5,7 +5,7 @@ draft: false
 entry_kind: auto
 tags:
 - Claude Code
-- AI编程
+- AI 编程
 - 结对编程
 - 开发效率
 - 智能助手
@@ -21,6 +21,10 @@ external_url: https://juejin.cn/post/7617454306796699689
 scenarios:
 - AI/ML项目
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Claude Code 实战指南：从智能助手到结对编程搭档
@@ -173,8 +177,8 @@ Claude Code 的上下文窗口虽然很大，但直接把整个项目丢给它�
 
 ### 相关文章
 
-- [Codex App：基于自然语言指令的代码生成工具]({{< relref "posts/20260203-hacker_news-the-codex-app-4.md" >}})
-- [Claude Code 配额耗尽时接入本地模型的方法]({{< relref "posts/20260205-hacker_news-claude-code-connect-to-a-local-model-when-your-quo-3.md" >}})
+- [Codex App：基于自然语言指令的代码生成工具]({{< relref "posts/20260202-hacker_news-the-codex-app-1.md" >}})
+- [Claude Code 配额耗尽时接入本地模型的方法]({{< relref "posts/20260204-hacker_news-claude-code-connect-to-a-local-model-when-your-quo-5.md" >}})
 - [利用AI高效编写高质量代码的实践方法]({{< relref "posts/20260206-hacker_news-how-to-effectively-write-quality-code-with-ai-3.md" >}})
-- [利用AI高效编写高质量代码的实践指南]({{< relref "posts/20260206-hacker_news-how-to-effectively-write-quality-code-with-ai-5.md" >}})
-- [利用AI高效编写高质量代码的实践指南]({{< relref "posts/20260206-hacker_news-how-to-effectively-write-quality-code-with-ai-6.md" >}})
+- [利用AI高效编写高质量代码的实践指南]({{< relref "posts/20260206-hacker_news-how-to-effectively-write-quality-code-with-ai-3.md" >}})
+- [利用AI高效编写高质量代码的实践指南]({{< relref "posts/20260206-hacker_news-how-to-effectively-write-quality-code-with-ai-3.md" >}})

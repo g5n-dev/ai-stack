@@ -1,12 +1,29 @@
 ---
-title: "MortalMATH：当推理目标遇上紧急语境，冲突何解？🧠🔥"
-date: 2026-01-27T23:10:51+08:00
+title: MortalMATH：当推理目标遇上紧急语境，冲突何解？🧠🔥
+date: 2026-01-27 23:10:51+08:00
 draft: false
-entry_kind: "auto"
-tags: ["LLM", "模型评估", "安全对齐", "推理模型", "MortalMATH", "幻觉", "基准测试", "AI安全"]
-categories: ["大模型", "安全"]
+entry_kind: auto
+tags:
+- LLM
+- 模型评估
+- 安全对齐
+- 推理模型
+- MortalMATH
+- 幻觉
+- 基准测试
+- AI 安全
+categories:
+- 大模型
+- 安全
 source: arxiv
 external_url: http://arxiv.org/abs/2601.18790v1
+scenarios: []
+aliases:
+- /posts/20260128-arxiv_ai-mortalmath-evaluating-the-conflict-between-reasoni-4/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 📚 MortalMATH：当推理目标遇上紧急语境，冲突何解？🧠🔥
@@ -281,7 +298,6 @@ MortalMATH 并没有发现新的“漏洞”，而是揭示了**过度优化带�
 ### 经验事实 vs. 理论推断
 
 ---
-## ✅ 研究最佳实践
 
 ## 最佳实践指南
 
@@ -361,7 +377,6 @@ MortalMATH 的核心在于模型在“解决数学问题”和“识别安全风
 - 📊 **建立了高压力基准测试集**：该研究构建了专门用于评估 AI 在极端或紧急情境下表现的 MortalMATH 数据集，填补了评估模型抗压力能力的空白。
 
 ---
-## 🗺️ 学习路径
 
 ## 学习路径
 

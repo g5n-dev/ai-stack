@@ -1,14 +1,30 @@
 ---
-title: "拆解LangChain执行引擎：非常规Pending Write的持久化"
-date: 2026-02-17T03:10:02+08:00
+title: 拆解LangChain执行引擎：非常规Pending Write的持久化
+date: 2026-02-17 03:10:02+08:00
 draft: false
-entry_kind: "auto"
-tags: ["LangChain", "执行引擎", "Pending Write", "持久化", "状态管理", "错误处理", "中断恢复", "Channel"]
-categories: ["AI 工程", "后端"]
+entry_kind: auto
+tags:
+- LangChain
+- 执行引擎
+- Pending Write
+- 持久化
+- 状态管理
+- 错误处理
+- 中断恢复
+- Channel
+categories:
+- AI 工程
+- 后端
 source: juejin
-description: "这段内容主要对 **LangChain 执行引擎**中 **Pending Write（待写入）**机制在**非常规场景**下的特殊持久化策略进行了拆解，具体总结如下： **1. 核心机制：Pending Write 三元组** 在 LangChain 的执行过程中，Pending Write 通常以“三元组”的形式存"
+description: 这段内容主要对 **LangChain 执行引擎**中 **Pending Write（待写入）**机制在**非常规场景**下的特殊持久化策略进行了拆解，具体总结如下：
+  **1. 核心机制：Pending Write 三元组** 在 LangChain 的执行过程中，Pending Write 通常以“三元组”的形式存
 external_url: https://juejin.cn/post/7606793134374731839
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 拆解LangChain执行引擎：非常规Pending Write的持久化
@@ -204,8 +220,8 @@ PendingWrite三元组的第二部分表示写入的Channel，但对于一些特�
 ### 相关文章
 
 - [LangChain实战：结合Memory与OutputParser构建有记忆的结构化助手]({{< relref "posts/20260210-juejin-langchain-进阶实战当-memory-遇上-outputparser打造有记忆的结构化助手-3.md" >}})
-- [LangChain 进阶实战：当 Memory 遇上 OutputParser，打造有记忆的结构化助手]({{< relref "posts/20260211-juejin-langchain-进阶实战当-memory-遇上-outputparser打造有记忆的结构化助手-3.md" >}})
+- [LangChain 进阶实战：当 Memory 遇上 OutputParser，打造有记忆的结构化助手]({{< relref "posts/20260210-juejin-langchain-进阶实战当-memory-遇上-outputparser打造有记忆的结构化助手-3.md" >}})
 - [LangChain 模型 I/O 模块：提示构建、模型调用与输出解析]({{< relref "posts/20260215-juejin-langchain-模型io输入提示调用模型解析输出-4.md" >}})
 - [New Relic NOVA：基于AWS构建企业级生成式AI生产力引擎]({{< relref "posts/20260210-blogs_podcasts-new-relic-transforms-productivity-with-generative--10.md" >}})
-- [Accelerate agentic application development with a full-]({{< relref "posts/20260211-blogs_podcasts-accelerate-agentic-application-development-with-a--11.md" >}})
+- [Accelerate agentic application development with a full-]({{< relref "posts/20260210-blogs_podcasts-accelerate-agentic-application-development-with-a--11.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

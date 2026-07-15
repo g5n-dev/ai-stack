@@ -1,14 +1,31 @@
 ---
-title: "PixelGen：引入感知损失的像素扩散模型性能超越潜在扩散"
-date: 2026-02-03T23:08:59+08:00
+title: PixelGen：引入感知损失的像素扩散模型性能超越潜在扩散
+date: 2026-02-03 23:08:59+08:00
 draft: false
-entry_kind: "auto"
-tags: ["PixelGen", "扩散模型", "计算机视觉", "感知损失", "LPIPS", "DINO", "图像生成", "FID"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- PixelGen
+- 扩散模型
+- 计算机视觉
+- 感知损失
+- LPIPS
+- DINO
+- 图像生成
+- FID
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "**PixelGen：利用感知损失超越潜在扩散模型的像素扩散框架** **一、 背景与挑战** 现有的主流生成模型通常采用“潜在扩散”技术，即在压缩的潜在空间进行操作。虽然这种方法降低了计算负担，但依赖变分自编码器（VAE）往往会引入伪影并成为性能瓶颈。相比之下，“像素扩散”直接在像素空间进行端到端生成，虽然避免了上述"
+description: '**PixelGen：利用感知损失超越潜在扩散模型的像素扩散框架** **一、 背景与挑战** 现有的主流生成模型通常采用“潜在扩散”技术，即在压缩的潜在空间进行操作。虽然这种方法降低了计算负担，但依赖变分自编码器（VAE）往往会引入伪影并成为性能瓶颈。相比之下，“像素扩散”直接在像素空间进行端到端生成，虽然避免了上述'
 external_url: http://arxiv.org/abs/2602.02493v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+aliases:
+- /posts/20260204-arxiv_ai-pixelgen-pixel-diffusion-beats-latent-diffusion-wi-2/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # PixelGen：引入感知损失的像素扩散模型性能超越潜在扩散
@@ -133,7 +150,6 @@ PixelGen 提出了一种端到端的像素级扩散框架，其核心创新在�
 通过这种方式，PixelGen 在保持像素空间操作（无 VAE 伪影）的同时，利用感知损失加速了收敛并提升了生成质量。
 
 ---
-## 研究最佳实践
 
 ## 最佳实践指南
 
@@ -236,7 +252,6 @@ PixelGen 提出了一种端到端的像素级扩散框架，其核心创新在�
 - 这一发现挑战了当前“潜在扩散优于像素扩散”的行业定式，促使研究者重新评估像素空间在生成式模型中的潜力。
 
 ---
-## 学习路径
 
 ## 学习路径
 
@@ -398,7 +413,7 @@ PixelGen 提出了一种端到端的像素级扩散框架，其核心创新在�
 
 - [IRL-DAL：基于能量引导扩散模型的自动驾驶安全自适应轨迹规划]({{< relref "posts/20260202-arxiv_ai-irl-dal-safe-and-adaptive-trajectory-planning-for--6.md" >}})
 - [VideoGPA：提取几何先验实现三维一致视频生成]({{< relref "posts/20260202-arxiv_ai-videogpa-distilling-geometry-priors-for-3d-consist-0.md" >}})
-- [VideoGPA：提取几何先验实现三维一致性视频生成]({{< relref "posts/20260203-arxiv_ai-videogpa-distilling-geometry-priors-for-3d-consist-0.md" >}})
+- [VideoGPA：提取几何先验实现三维一致性视频生成]({{< relref "posts/20260202-arxiv_ai-videogpa-distilling-geometry-priors-for-3d-consist-0.md" >}})
 - [🚀动态场景新视角合成！AnyView实现任意视角自由切换！🤯]({{< relref "posts/20260126-arxiv_ai-anyview-synthesizing-any-novel-view-in-dynamic-sce-0.md" >}})
-- [🚀AnyView：动态场景任意新视角合成！开创性技术突破🔥]({{< relref "posts/20260127-arxiv_ai-anyview-synthesizing-any-novel-view-in-dynamic-sce-0.md" >}})
+- [🚀AnyView：动态场景任意新视角合成！开创性技术突破🔥]({{< relref "posts/20260126-arxiv_ai-anyview-synthesizing-any-novel-view-in-dynamic-sce-0.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

@@ -1,12 +1,30 @@
 ---
-title: "🔥Anduin2017+HowToCook：GitHub超火！编程与烹饪完美结合！"
-date: 2026-01-25T12:39:55+08:00
+title: 🔥Anduin2017+HowToCook：GitHub超火！编程与烹饪完美结合！
+date: 2026-01-25 12:39:55+08:00
 draft: false
-entry_kind: "auto"
-tags: ["GitHub", "烹饪指南", "程序员", "Docker", "CI/CD", "自动化构建", "社区驱动", "中文文档"]
-categories: ["开源生态", "生活与杂谈"]
+entry_kind: auto
+tags:
+- GitHub
+- 烹饪指南
+- 程序员
+- Docker
+- CI/CD
+- 自动化构建
+- 社区驱动
+- 中文文档
+categories:
+- 开源生态
+- 生活与杂谈
 source: github_trending
 external_url: https://github.com/Anduin2017/HowToCook
+scenarios: []
+aliases:
+- /posts/20260126-github_trending-anduin2017-howtocook-9/
+- /posts/20260127-github_trending-anduin2017-howtocook-9/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 🚀 🔥Anduin2017+HowToCook：GitHub超火！编程与烹饪完美结合！
@@ -459,7 +477,6 @@ HowToCook 并没有消除做菜本身的复杂性（化学反应与物理操作�
 - ⏱️ 推荐响应降至80ms
 
 ---
-## ⚖️ 与同类方案对比
 
 ## 与同类方案对比
 
@@ -482,7 +499,6 @@ HowToCook 并没有消除做菜本身的复杂性（化学反应与物理操作�
 - ⚠️ 不足3：部分功能需要额外开发
 
 ---
-## ✅ 最佳实践指南
 
 ## 最佳实践指南
 
@@ -591,7 +607,6 @@ HowToCook 并没有消除做菜本身的复杂性（化学反应与物理操作�
 **注意事项**: 优先处理高赞Issue，透明化进度（如“计划中”标签）。
 
 ---
-## 🚀 性能优化建议
 
 ## 性能优化建议
 
@@ -701,7 +716,6 @@ GitHub Pages的国内访问速度较慢，通过CDN分发静态资源可显著�
 - 极简主义排版 📱：以 Markdown 格式呈现，内容直观简洁，非常适合在手机或电脑上随时查阅，就像阅读代码文档一样高效。
 
 ---
-## 🗺️ 循序渐进的学习路径
 
 ## 学习路径
 

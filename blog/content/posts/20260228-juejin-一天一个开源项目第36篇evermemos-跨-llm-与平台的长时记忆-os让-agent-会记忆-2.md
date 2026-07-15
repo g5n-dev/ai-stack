@@ -22,6 +22,10 @@ external_url: https://juejin.cn/post/7611479802548092955
 scenarios:
 - RAG应用
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # EverMemOS：开源Agent长时记忆系统，LoCoMo推理准确率93%
@@ -201,8 +205,8 @@ LLM 受限于上下文窗口，无法将所有历史记录都塞进 Prompt 中�
 
 ### 相关文章
 
-- [CowAgent：具备主动思考与长期记忆的大模型 AI 助理]({{< relref "posts/20260204-github_trending-zhayujie-chatgpt-on-wechat-0.md" >}})
-- [CowAgent：基于大模型的自主任务规划与多平台接入助手]({{< relref "posts/20260205-github_trending-zhayujie-chatgpt-on-wechat-0.md" >}})
-- [基于大模型的主动思考型 AI 助理 CowAgent 支持多平台接入]({{< relref "posts/20260206-github_trending-zhayujie-chatgpt-on-wechat-1.md" >}})
-- [CowAgent：基于大模型的自主任务规划与多平台接入 AI 助理]({{< relref "posts/20260207-github_trending-zhayujie-chatgpt-on-wechat-0.md" >}})
-- [ChatGPT-on-WeChat：支持多模型与多平台接入的AI助理框架]({{< relref "posts/20260207-github_trending-zhayujie-chatgpt-on-wechat-1.md" >}})
+- [CowAgent：具备主动思考与长期记忆的大模型 AI 助理]({{< relref "posts/20260131-github_trending-zhayujie-chatgpt-on-wechat-0.md" >}})
+- [CowAgent：基于大模型的自主任务规划与多平台接入助手]({{< relref "posts/20260131-github_trending-zhayujie-chatgpt-on-wechat-0.md" >}})
+- [基于大模型的主动思考型 AI 助理 CowAgent 支持多平台接入]({{< relref "posts/20260131-github_trending-zhayujie-chatgpt-on-wechat-0.md" >}})
+- [CowAgent：基于大模型的自主任务规划与多平台接入 AI 助理]({{< relref "posts/20260131-github_trending-zhayujie-chatgpt-on-wechat-0.md" >}})
+- [ChatGPT-on-WeChat：支持多模型与多平台接入的AI助理框架]({{< relref "posts/20260131-github_trending-zhayujie-chatgpt-on-wechat-0.md" >}})

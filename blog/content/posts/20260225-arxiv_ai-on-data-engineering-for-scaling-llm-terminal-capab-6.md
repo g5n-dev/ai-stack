@@ -21,6 +21,12 @@ description: 本文介绍了关于提升大语言模型（LLM）终端能力的�
 external_url: http://arxiv.org/abs/2602.21193v1
 scenarios:
 - 大语言模型
+aliases:
+- /posts/20260226-arxiv_ai-on-data-engineering-for-scaling-llm-terminal-capab-6/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 面向大模型终端能力扩展的数据工程研究
@@ -64,7 +70,6 @@ scenarios:
 **4. 开源共享**
 为了加速该领域的研究，研究团队已在 Hugging Face 上开源了模型检查点以及大部分合成数据集。
 
-### 1. 研究背景与核心问题
 
 ### 问题定义
 本研究旨在解决大语言模型（LLM）在**终端环境**中执行复杂任务时表现不佳的问题。现有的开源模型在处理需要多步推理、环境交互和精确命令生成的任务时，与闭源顶尖模型（如GPT-4）存在显著差距。论文探讨的核心问题是：**如何通过系统化的数据工程策略，构建高质量的合成数据，以提升中小规模LLM的终端操作能力，使其在特定任务上达到或超越更大规模的通用模型？**
@@ -152,7 +157,6 @@ scenarios:
 
 ## 技术分析
 
-### 3. 理论基础
 
 ### 数据分布假设
 本研究的理论基础建立在**“合成数据可模拟真实分布”**的假设之上。即通过精心设计的生成器，可以覆盖真实终端任务的数据分布，并通过增加困难样本扩展分布边界。
@@ -444,8 +448,8 @@ LLM 终端能力指的是大型语言模型（LLM）在特定终端应用（如�
 
 ### 相关文章
 
-- [FineInstructions：将合成指令扩展至预训练规模]({{< relref "posts/20260201-arxiv_ai-fineinstructions-scaling-synthetic-instructions-to-7.md" >}})
-- [FineInstructions：将合成指令数据扩展至预训练规模]({{< relref "posts/20260202-arxiv_ai-fineinstructions-scaling-synthetic-instructions-to-7.md" >}})
-- [利用合成人设突破数据瓶颈，加速日本AI开发]({{< relref "posts/20260222-blogs_podcasts-データ不足の壁を越える合成ペルソナが日本のai開発を加速-14.md" >}})
-- [推理大语言模型从被动求解转向主动询问]({{< relref "posts/20260131-arxiv_ai-reasoning-while-asking-transforming-reasoning-larg-9.md" >}})
-- [FineInstructions：将合成指令数据扩展至预训练规模]({{< relref "posts/20260131-arxiv_ai-fineinstructions-scaling-synthetic-instructions-to-7.md" >}})
+- [FineInstructions：将合成指令扩展至预训练规模]({{< relref "posts/20260130-arxiv_ai-fineinstructions-scaling-synthetic-instructions-to-7.md" >}})
+- [FineInstructions：将合成指令数据扩展至预训练规模]({{< relref "posts/20260130-arxiv_ai-fineinstructions-scaling-synthetic-instructions-to-7.md" >}})
+- [利用合成人设突破数据瓶颈，加速日本AI开发]({{< relref "posts/20260219-blogs_podcasts-データ不足の壁を越える合成ペルソナが日本のai開発を加速-5.md" >}})
+- [推理大语言模型从被动求解转向主动询问]({{< relref "posts/20260130-arxiv_ai-reasoning-while-asking-transforming-reasoning-larg-9.md" >}})
+- [FineInstructions：将合成指令数据扩展至预训练规模]({{< relref "posts/20260130-arxiv_ai-fineinstructions-scaling-synthetic-instructions-to-7.md" >}})

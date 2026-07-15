@@ -1,12 +1,26 @@
 ---
-title: "AI造浏览器？别急着吹！先看代码仓库！🔍"
-date: 2026-01-27T01:25:59+08:00
+title: AI造浏览器？别急着吹！先看代码仓库！🔍
+date: 2026-01-27 01:25:59+08:00
 draft: false
-entry_kind: "auto"
-tags: ["大模型", "Electron", "代码审查", "技术祛魅", "Chromium", "AI 编程", "前端架构", "开源项目"]
-categories: ["AI 工程", "前端"]
+entry_kind: auto
+tags:
+- 大模型
+- Electron
+- 代码审查
+- 技术祛魅
+- Chromium
+- AI 编程
+- 前端架构
+- 开源项目
+categories:
+- AI 工程
+- 前端
 source: hacker_news
 external_url: https://www.theregister.com/2026/01/26/cursor_opinion
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 📰 AI造浏览器？别急着吹！先看代码仓库！🔍
@@ -186,7 +200,6 @@ Stack Overflow 没有简单地调用 API 生成答案，而是启动了 **Overfl
 这种机制极大地提高了 AI 生成代码的可信度。开发者不再需要像以前那样逐行检查 AI 的“幻觉”，而是专注于审查 AI 对现有代码库的逻辑修改。它证明了“AI 构建”必须建立在对真实 Repo 的深度理解之上，才能真正提升开发效率。
 
 ---
-## ✅ 最佳实践
 
 ## 最佳实践指南：理性评估 AI 构建的项目
 

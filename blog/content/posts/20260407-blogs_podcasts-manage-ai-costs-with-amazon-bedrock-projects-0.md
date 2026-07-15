@@ -1,14 +1,30 @@
 ---
-title: "Amazon Bedrock Projects管理AI推理成本指南"
-date: 2026-04-07T23:54:00+08:00
+title: Amazon Bedrock Projects管理AI推理成本指南
+date: 2026-04-07 23:54:00+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Amazon Bedrock", "成本优化", "推理成本", "AWS", "成本分析", "标签策略", "Cost Explorer", "云成本"]
-categories: ["AI 工程", "系统与基础设施"]
+entry_kind: auto
+tags:
+- Amazon Bedrock
+- 成本优化
+- 推理成本
+- AWS
+- 成本分析
+- 标签策略
+- Cost Explorer
+- 云成本
+categories:
+- AI 工程
+- 系统与基础设施
 source: blogs_podcasts
-description: "项目概述 Amazon Bedrock Projects 让用户把 Bedrock 模型的推理费用映射到具体业务项目或工作负载。通过 Projects，可以在 AWS 资源层面统一标记，从而在计费报告中看到每个项目的实际消耗。 标记策略设计 1. **业务维度划分**：按业务线、产品、环境（开发/测试/生产）等设定项目"
+description: 项目概述 Amazon Bedrock Projects 让用户把 Bedrock 模型的推理费用映射到具体业务项目或工作负载。通过 Projects，可以在
+  AWS 资源层面统一标记，从而在计费报告中看到每个项目的实际消耗。 标记策略设计 1. **业务维度划分**：按业务线、产品、环境（开发/测试/生产）等设定项目
 external_url: https://aws.amazon.com/blogs/machine-learning/manage-ai-costs-with-amazon-bedrock-projects
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Amazon Bedrock Projects管理AI推理成本指南
@@ -187,9 +203,9 @@ Amazon Bedrock Projects 能在不影响推理性能的前提下，实现对 
 
 ### 相关文章
 
-- [利用 Amazon Bedrock 在数百万 IoT 设备上部署生成式 AI]({{< relref "posts/20260212-blogs_podcasts-swann-provides-generative-ai-to-millions-of-iot-de-3.md" >}})
-- [Amazon Bedrock 限流与服务可用性管理指南]({{< relref "posts/20260212-blogs_podcasts-mastering-amazon-bedrock-throttling-and-service-av-12.md" >}})
-- [2025年回顾：SageMaker AI弹性训练计划与推理性价比提升]({{< relref "posts/20260223-blogs_podcasts-amazon-sagemaker-ai-in-2025-a-year-in-review-part--3.md" >}})
+- [利用 Amazon Bedrock 在数百万 IoT 设备上部署生成式 AI]({{< relref "posts/20260211-blogs_podcasts-swann-provides-generative-ai-to-millions-of-iot-de-2.md" >}})
+- [Amazon Bedrock 限流与服务可用性管理指南]({{< relref "posts/20260211-blogs_podcasts-mastering-amazon-bedrock-throttling-and-service-av-1.md" >}})
+- [2025年回顾：SageMaker AI弹性训练计划与推理性价比提升]({{< relref "posts/20260220-blogs_podcasts-amazon-sagemaker-ai-in-2025-a-year-in-review-part--0.md" >}})
 - [Iberdrola enhances IT operations using Amazon Bedrock A]({{< relref "posts/20260210-blogs_podcasts-iberdrola-enhances-it-operations-using-amazon-bedr-1.md" >}})
-- [利用全栈模板加速开发基于Amazon Bedrock AgentCore的应用]({{< relref "posts/20260211-blogs_podcasts-accelerate-agentic-application-development-with-a--12.md" >}})
+- [利用全栈模板加速开发基于Amazon Bedrock AgentCore的应用]({{< relref "posts/20260210-blogs_podcasts-accelerate-agentic-application-development-with-a--11.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

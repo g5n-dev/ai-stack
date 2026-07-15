@@ -21,6 +21,13 @@ description: '**banana-slides 项目总结** **1. 项目概述** **banana-slides
 external_url: https://juejin.cn/post/7608759940799381554
 scenarios:
 - AI/ML项目
+aliases:
+- /posts/20260222-juejin-一天一个开源项目第30篇banana-slides-基于-nano-banana-pro-的原生-a-2/
+- /posts/20260223-juejin-一天一个开源项目第30篇banana-slides-基于-nano-banana-pro-的原生-a-2/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Banana-slides：基于 Banana Pro 的原生 AI PPT 生成应用
@@ -186,8 +193,8 @@ Banana-slides 是一个基于 nano banana pro（一种迷你 Linux 开发板）�
 
 ### 相关文章
 
-- [OpenAI应构建Slack：企业级AI协作平台演进方向]({{< relref "posts/20260215-hacker_news-openai-should-build-slack-12.md" >}})
-- [Pi for Excel：Excel 的 AI 侧边栏插件]({{< relref "posts/20260220-hacker_news-pi-for-excel-ai-sidebar-add-in-for-excel-10.md" >}})
-- [Pi for Excel：Excel 侧边栏 AI 辅助插件]({{< relref "posts/20260220-hacker_news-pi-for-excel-ai-sidebar-add-in-for-excel-4.md" >}})
-- [Pi for Excel：基于 Pi 的 Excel 侧边栏 AI 助手]({{< relref "posts/20260220-hacker_news-pi-for-excel-ai-sidebar-add-in-for-excel-powered-b-8.md" >}})
+- [OpenAI应构建Slack：企业级AI协作平台演进方向]({{< relref "posts/20260214-hacker_news-openai-should-build-slack-2.md" >}})
+- [Pi for Excel：Excel 的 AI 侧边栏插件]({{< relref "posts/20260220-hacker_news-pi-for-excel-ai-sidebar-add-in-for-excel-powered-b-5.md" >}})
+- [Pi for Excel：Excel 侧边栏 AI 辅助插件]({{< relref "posts/20260220-hacker_news-pi-for-excel-ai-sidebar-add-in-for-excel-powered-b-5.md" >}})
+- [Pi for Excel：基于 Pi 的 Excel 侧边栏 AI 助手]({{< relref "posts/20260220-hacker_news-pi-for-excel-ai-sidebar-add-in-for-excel-powered-b-5.md" >}})
 - [Mozilla组建AI联盟以对抗OpenAI与Anthropic]({{< relref "posts/20260129-hacker_news-mozilla-is-building-an-ai-rebel-alliance-to-take-o-10.md" >}})

@@ -10,7 +10,7 @@ tags:
 - 医疗建议
 - 工程建议
 - 纽约立法
-- AI安全
+- AI 安全
 - 行业规范
 categories:
 - 安全
@@ -21,6 +21,10 @@ description: 随着生成式 AI 的普及，非专业人士越来越多地依赖
 external_url: https://folding-sky.com/blog/ny-senate-bill-s7263-chatbot-liability
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 纽约拟立法禁止聊天机器人提供医疗法律工程建议

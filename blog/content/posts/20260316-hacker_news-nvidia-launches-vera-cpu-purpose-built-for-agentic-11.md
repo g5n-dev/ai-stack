@@ -21,6 +21,13 @@ description: 随着人工智能从内容生成向自主智能体演进，硬件�
 external_url: https://nvidianews.nvidia.com/news/nvidia-launches-vera-cpu-purpose-built-for-agentic-ai
 scenarios:
 - AI/ML项目
+aliases:
+- /posts/20260316-hacker_news-nvidia-launches-vera-cpu-purpose-built-for-agentic-8/
+- /posts/20260317-hacker_news-nvidia-launches-vera-cpu-purpose-built-for-agentic-18/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 英伟达发布Vera CPU：专用于代理式AI

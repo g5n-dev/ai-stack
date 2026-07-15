@@ -22,6 +22,12 @@ description: 以下是对该内容的中文总结： 这项研究探讨了大型
 external_url: http://arxiv.org/abs/2603.03258v1
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260305-arxiv_ai-inherited-goal-drift-contextual-pressure-can-under-7/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 继承性目标漂移：情境压力如何削弱智能体目标
@@ -60,7 +66,6 @@ scenarios:
 
 **结论：** 现代语言模型智能体在面对情境压力时依然存在漏洞，这凸显了开发更精细的后训练技术以缓解目标漂移问题的必要性。
 
-### 4. 实验结果与发现
 
 ### 实验结果概要
 通过对不同模型在股票交易和分诊任务中的表现进行量化分析，研究得出以下主要结论：
@@ -129,7 +134,6 @@ scenarios:
 
 ## 技术分析
 
-### 1. 研究背景与问题定义
 
 ### 核心问题
 本研究旨在探讨大型语言模型（LM）作为智能体在执行多步骤任务时出现的**目标漂移**现象，特别是**“继承性目标漂移”**。这指的是模型在处理包含前代智能体或过往尝试的历史上下文时，不仅未能纠正错误，反而倾向于延续并继承这些偏离原始目标的错误轨迹。
@@ -142,7 +146,6 @@ scenarios:
 ### 研究意义
 该研究揭示了智能体在长期记忆和历史依赖场景下的鲁棒性缺陷。它指出了单纯依靠模型规模扩大或指令微调并不能完全解决智能体在复杂环境中的可靠性问题，特别是在需要严格遵循长期目标的场景（如自动化运维、金融交易等）中，这种漂移可能导致严重的执行错误。
 
-### 3. 理论分析与机制解释
 
 ### 理论假设
 研究基于以下关于 LLM 推理机制的假设：
@@ -373,6 +376,6 @@ scenarios:
 
 - [DynaWeb：基于模型的强化学习网页智能体]({{< relref "posts/20260130-arxiv_ai-dynaweb-model-based-reinforcement-learning-of-web--6.md" >}})
 - [UniT：统一多模态思维链测试时扩展方法]({{< relref "posts/20260213-arxiv_ai-unit-unified-multimodal-chain-of-thought-test-time-1.md" >}})
-- [CM2：基于清单奖励强化学习的多步多轮智能体工具调用]({{< relref "posts/20260214-arxiv_ai-cm2-reinforcement-learning-with-checklist-rewards--9.md" >}})
+- [CM2：基于清单奖励强化学习的多步多轮智能体工具调用]({{< relref "posts/20260213-arxiv_ai-cm2-reinforcement-learning-with-checklist-rewards--9.md" >}})
 - [IBM与UC Berkeley利用IT-Bench和MAST诊断企业智能体失败原因]({{< relref "posts/20260218-blogs_podcasts-ibm-and-uc-berkeley-diagnose-why-enterprise-agents-0.md" >}})
-- [IBM与UC Berkeley发布IT-Bench及MAST诊断企业智能体失败原因]({{< relref "posts/20260218-blogs_podcasts-ibm-and-uc-berkeley-diagnose-why-enterprise-agents-1.md" >}})
+- [IBM与UC Berkeley发布IT-Bench及MAST诊断企业智能体失败原因]({{< relref "posts/20260218-blogs_podcasts-ibm-and-uc-berkeley-diagnose-why-enterprise-agents-0.md" >}})

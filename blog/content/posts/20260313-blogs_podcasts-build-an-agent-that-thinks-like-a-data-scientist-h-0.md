@@ -22,6 +22,13 @@ external_url: https://huggingface.co/blog/nvidia/nemo-agent-toolkit-data-explore
 scenarios:
 - AI/ML项目
 - 大语言模型
+aliases:
+- /posts/20260313-blogs_podcasts-build-an-agent-that-thinks-like-a-data-scientist-h-1/
+- /posts/20260313-blogs_podcasts-build-an-agent-that-thinks-like-a-data-scientist-h-2/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 构建具备数据科学家思维的智能体：可复用工具生成机制与DABStep榜首实践
@@ -44,7 +51,6 @@ scenarios:
 
 ## 评论
 
-### 核心评价：以“工具生成”为核心的智能体架构，通过将领域知识转化为可复用的代码组件，有效解决了当前 LLM Agent 在复杂任务中面临的泛化与幻觉难题，但在动态环境适应性与系统复杂度上存在显著边界。
 
 ### 深入分析
 
@@ -263,8 +269,8 @@ scenarios:
 
 ### 相关文章
 
-- [构建极简编程代理的技术实践与经验总结]({{< relref "posts/20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-6.md" >}})
-- [构建极简编程代理的技术实践与经验总结]({{< relref "posts/20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-17.md" >}})
+- [构建极简编程代理的技术实践与经验总结]({{< relref "posts/20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-1.md" >}})
+- [构建极简编程代理的技术实践与经验总结]({{< relref "posts/20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-1.md" >}})
 - [GitHub Agentic 工作流：AI 智能体自主编写代码]({{< relref "posts/20260208-hacker_news-github-agentic-workflows-3.md" >}})
-- [软件工厂与智能体时刻]({{< relref "posts/20260208-hacker_news-software-factories-and-the-agentic-moment-6.md" >}})
-- [OpenClaw：GitHub 增长最快的开源 AI 代理框架]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-7.md" >}})
+- [软件工厂与智能体时刻]({{< relref "posts/20260207-hacker_news-software-factories-and-the-agentic-moment-4.md" >}})
+- [OpenClaw：GitHub 增长最快的开源 AI 代理框架]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-0.md" >}})

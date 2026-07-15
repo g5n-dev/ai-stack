@@ -1,14 +1,22 @@
 ---
-title: "Clawe：面向智能体团队的开源Trello替代方案"
-date: 2026-02-10T21:20:19+08:00
+title: Clawe：面向智能体团队的开源Trello替代方案
+date: 2026-02-10 21:20:19+08:00
 draft: false
-entry_kind: "auto"
-tags: ["hacker_news"]
-categories: ["效率与方法论"]
+entry_kind: auto
+tags:
+- hacker_news
+categories:
+- 效率与方法论
 source: hacker_news
-description: "随着大模型应用的落地，如何高效管理多智能体团队的工作流成为开发者关注的焦点。开源工具 Clawe 应运而生，它借鉴了 Trello 的看板模式，为 Agent 协作提供了可视化的任务调度方案。本文将介绍 Clawe 的核心功能与架构，帮助你理解如何通过开源工具构建透明、可控的智能体协作体系。"
+description: 随着大模型应用的落地，如何高效管理多智能体团队的工作流成为开发者关注的焦点。开源工具 Clawe 应运而生，它借鉴了 Trello 的看板模式，为
+  Agent 协作提供了可视化的任务调度方案。本文将介绍 Clawe 的核心功能与架构，帮助你理解如何通过开源工具构建透明、可控的智能体协作体系。
 external_url: https://github.com/getclawe/clawe
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Clawe：面向智能体团队的开源Trello替代方案
@@ -230,8 +238,8 @@ print(f"任务2当前负责人：{board['lists'][0]['cards'][1]['assignee']}")
 ### 相关文章
 
 - [Mecha Comet：开源模块化 Linux 掌上电脑]({{< relref "posts/20260129-hacker_news-mecha-comet-open-modular-linux-handheld-computer-3.md" >}})
-- [Mecha Comet：开源模块化 Linux 掌上电脑]({{< relref "posts/20260129-hacker_news-mecha-comet-open-modular-linux-handheld-computer-4.md" >}})
-- [AI 正在重塑 B2B SaaS 商业模式]({{< relref "posts/20260205-hacker_news-ai-is-killing-b2b-saas-17.md" >}})
-- [AI Agent 现状：大模型智能体仍需八个月成熟]({{< relref "posts/20260210-hacker_news-eight-more-months-of-agents-16.md" >}})
+- [Mecha Comet：开源模块化 Linux 掌上电脑]({{< relref "posts/20260129-hacker_news-mecha-comet-open-modular-linux-handheld-computer-3.md" >}})
+- [AI 正在重塑 B2B SaaS 商业模式]({{< relref "posts/20260204-hacker_news-ai-is-killing-b2b-saas-11.md" >}})
+- [AI Agent 现状：大模型智能体仍需八个月成熟]({{< relref "posts/20260210-hacker_news-eight-more-months-of-agents-13.md" >}})
 - [Frontier AI agents violate ethical constraints 30–50% o]({{< relref "posts/20260210-hacker_news-frontier-ai-agents-violate-ethical-constraints-305-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

@@ -1,14 +1,32 @@
 ---
-title: "Avey-B：基于注意力机制的高效视觉Transformer模型"
-date: 2026-02-18T19:27:35+08:00
+title: Avey-B：基于注意力机制的高效视觉Transformer模型
+date: 2026-02-18 19:27:35+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Avey-B", "Transformer", "NLP", "双向编码器", "注意力机制", "参数解耦", "神经压缩", "长上下文"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- Avey-B
+- Transformer
+- NLP
+- 双向编码器
+- 注意力机制
+- 参数解耦
+- 神经压缩
+- 长上下文
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "本文提出了一种名为 **Avey-B** 的新型紧凑型预训练双向编码器，旨在满足工业级自然语言处理（NLP）对计算和内存资源的严格限制。 **背景与动机：** 尽管基于 Transformer 的模型（如 BERT）利用自注意力机制实现了高质量的双向上下文理解和序列级并行，成为了业界的标准骨干网络，但其计算开销通常较大"
+description: 本文提出了一种名为 **Avey-B** 的新型紧凑型预训练双向编码器，旨在满足工业级自然语言处理（NLP）对计算和内存资源的严格限制。
+  **背景与动机：** 尽管基于 Transformer 的模型（如 BERT）利用自注意力机制实现了高质量的双向上下文理解和序列级并行，成为了业界的标准骨干网络，但其计算开销通常较大
 external_url: http://arxiv.org/abs/2602.15814v1
-scenarios: ["自然语言处理"]
+scenarios:
+- 自然语言处理
+aliases:
+- /posts/20260219-arxiv_ai-avey-b-8/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Avey-B：基于注意力机制的高效视觉Transformer模型
@@ -276,7 +294,6 @@ Avey-B 的理论基础建立在**状态空间模型**和**递归神经网络**�
 Avey-B 推进的是**“方法”**层面的创新。它提供了一套构建高效模型的新范式（解耦+归一化+无注意力
 
 ---
-## 研究最佳实践
 
 ## 最佳实践指南
 
@@ -401,7 +418,6 @@ Avey-B 可能是一个新兴方法，持续跟踪其改进版本和社区反馈�
 - 该方法适用于资源受限场景，为实际应用中的模型设计提供了实用解决方案。
 
 ---
-## 学习路径
 
 ## 学习路径
 
@@ -620,9 +636,9 @@ Avey-B 可能是一个新兴方法，持续跟踪其改进版本和社区反馈�
 
 ### 相关文章
 
-- [基于对称性泰勒近似实现恒定每Token成本注意力机制]({{< relref "posts/20260204-hacker_news-attention-at-constant-cost-per-token-via-symmetry--3.md" >}})
-- [基于对称感知泰勒近似实现恒定Token成本注意力机制]({{< relref "posts/20260204-hacker_news-attention-at-constant-cost-per-token-via-symmetry--4.md" >}})
-- [基于对称性泰勒近似实现恒定Token成本注意力机制]({{< relref "posts/20260204-hacker_news-attention-at-constant-cost-per-token-via-symmetry--6.md" >}})
-- [基于对称性泰勒近似实现恒定Token成本注意力机制]({{< relref "posts/20260204-hacker_news-attention-at-constant-cost-per-token-via-symmetry--9.md" >}})
-- [对称感知泰勒近似实现恒定Token成本注意力机制]({{< relref "posts/20260205-hacker_news-attention-at-constant-cost-per-token-via-symmetry--12.md" >}})
+- [基于对称性泰勒近似实现恒定每Token成本注意力机制]({{< relref "posts/20260204-hacker_news-attention-at-constant-cost-per-token-via-symmetry--0.md" >}})
+- [基于对称感知泰勒近似实现恒定Token成本注意力机制]({{< relref "posts/20260204-hacker_news-attention-at-constant-cost-per-token-via-symmetry--0.md" >}})
+- [基于对称性泰勒近似实现恒定Token成本注意力机制]({{< relref "posts/20260204-hacker_news-attention-at-constant-cost-per-token-via-symmetry--0.md" >}})
+- [基于对称性泰勒近似实现恒定Token成本注意力机制]({{< relref "posts/20260204-hacker_news-attention-at-constant-cost-per-token-via-symmetry--0.md" >}})
+- [对称感知泰勒近似实现恒定Token成本注意力机制]({{< relref "posts/20260204-hacker_news-attention-at-constant-cost-per-token-via-symmetry--0.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

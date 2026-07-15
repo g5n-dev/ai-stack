@@ -1,14 +1,32 @@
 ---
-title: "Agent-EvalKit 开源工具包实现 AI 代理六阶段系统评估"
-date: 2026-06-11T18:29:08+08:00
+title: Agent-EvalKit 开源工具包实现 AI 代理六阶段系统评估
+date: 2026-06-11 18:29:08+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI代理评估", "开源工具包", "六阶段评估", "Claude Code", "Amazon Bedrock", "Strands Agents", "自动化测试", "性能指标"]
-categories: ["AI 工程", "开源生态"]
+entry_kind: auto
+tags:
+- AI代理评估
+- 开源工具包
+- 六阶段评估
+- Claude Code
+- Amazon Bedrock
+- Strands Agents
+- 自动化测试
+- 性能指标
+categories:
+- AI 工程
+- 开源生态
 source: blogs_podcasts
-description: "Agent-EvalKit 是一个 Apache 2.0 开源工具包，提供系统化评估 AI Agent 的基础设施。它支持与 Claude Code、Kiro CLI、Kilo Code 等 AI 编程助手集成。工具包将评估流程划分为六个阶段：①需求抽取与任务建模，②环境准备与资源分配，③ Agent 行为采集，④结果"
+description: Agent-EvalKit 是一个 Apache 2.0 开源工具包，提供系统化评估 AI Agent 的基础设施。它支持与 Claude
+  Code、Kiro CLI、Kilo Code 等 AI 编程助手集成。工具包将评估流程划分为六个阶段：①需求抽取与任务建模，②环境准备与资源分配，③ Agent
+  行为采集，④结果
 external_url: https://aws.amazon.com/blogs/machine-learning/evaluate-ai-agents-systematically-with-agent-evalkit
-scenarios: ["AI/ML项目", "命令行工具"]
+scenarios:
+- AI/ML项目
+- 命令行工具
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Agent-EvalKit 开源工具包实现 AI 代理六阶段系统评估
@@ -108,8 +126,8 @@ Agent-EvalKit的出现标志着AI Agent评估从“经验判断”向“数据�
 ### 相关文章
 
 - [基于Amazon Bedrock AgentCore构建长运行MCP服务器与异步任务管理]({{< relref "posts/20260212-blogs_podcasts-build-long-running-mcp-servers-on-amazon-bedrock-a-1.md" >}})
-- [基于Amazon Bedrock AgentCore构建长时运行MCP服务器集成方案]({{< relref "posts/20260212-blogs_podcasts-build-long-running-mcp-servers-on-amazon-bedrock-a-2.md" >}})
-- [亚马逊利用Nova模型自动化检测新履约中心组件]({{< relref "posts/20260212-blogs_podcasts-how-amazon-uses-amazon-nova-models-to-automate-ope-10.md" >}})
-- [亚马逊利用 Nova 模型自动化新履约中心运营就绪测试]({{< relref "posts/20260212-blogs_podcasts-how-amazon-uses-amazon-nova-models-to-automate-ope-11.md" >}})
-- [基于Amazon Bedrock AgentCore构建支持长时运行任务的MCP服务器]({{< relref "posts/20260213-blogs_podcasts-build-long-running-mcp-servers-on-amazon-bedrock-a-2.md" >}})
+- [基于Amazon Bedrock AgentCore构建长时运行MCP服务器集成方案]({{< relref "posts/20260212-blogs_podcasts-build-long-running-mcp-servers-on-amazon-bedrock-a-1.md" >}})
+- [亚马逊利用Nova模型自动化检测新履约中心组件]({{< relref "posts/20260210-blogs_podcasts-how-amazon-uses-amazon-nova-models-to-automate-ope-0.md" >}})
+- [亚马逊利用 Nova 模型自动化新履约中心运营就绪测试]({{< relref "posts/20260210-blogs_podcasts-how-amazon-uses-amazon-nova-models-to-automate-ope-0.md" >}})
+- [基于Amazon Bedrock AgentCore构建支持长时运行任务的MCP服务器]({{< relref "posts/20260212-blogs_podcasts-build-long-running-mcp-servers-on-amazon-bedrock-a-1.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

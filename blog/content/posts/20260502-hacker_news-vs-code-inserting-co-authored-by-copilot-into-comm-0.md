@@ -1,14 +1,32 @@
 ---
-title: "VS Code提交自动附Copilot标识 用户质疑合理性"
-date: 2026-05-02T23:55:48+08:00
+title: VS Code提交自动附Copilot标识 用户质疑合理性
+date: 2026-05-02 23:55:48+08:00
 draft: false
-entry_kind: "auto"
-tags: ["VS Code", "Copilot", "自动标识", "提交", "共作者", "Git", "AI 代码", "代码归属"]
-categories: ["开发工具", "AI 工程"]
+entry_kind: auto
+tags:
+- VS Code
+- Copilot
+- 自动标识
+- 提交
+- 共作者
+- Git
+- AI 代码
+- 代码归属
+categories:
+- 开发工具
+- AI 工程
 source: hacker_news
-description: "最近有用户发现，VS Code 在提交代码时会自动在 commit 信息中加入 Co-Authored-By: Copilot，即使项目并未使用 Copilot。这类自动插入的元数据会干扰代码审查、版本控制审计以及贡献归属的准确性，影响团队协作。本文将剖析该行为产生的根本原因，提供关闭该选项的具体步骤，并说明如何在保持"
+description: '最近有用户发现，VS Code 在提交代码时会自动在 commit 信息中加入 Co-Authored-By: Copilot，即使项目并未使用
+  Copilot。这类自动插入的元数据会干扰代码审查、版本控制审计以及贡献归属的准确性，影响团队协作。本文将剖析该行为产生的根本原因，提供关闭该选项的具体步骤，并说明如何在保持'
 external_url: https://github.com/microsoft/vscode/pull/310226
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+aliases:
+- /posts/20260503-hacker_news-vs-code-inserting-co-authored-by-copilot-into-comm-0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # VS Code提交自动附Copilot标识 用户质疑合理性
@@ -84,9 +102,9 @@ VS Code 的 Git 集成依赖操作系统层面的 git 客户端，当 Copilot �
 
 ### 相关文章
 
-- [Claude Code 广泛集成至微软内部开发环境]({{< relref "posts/20260202-hacker_news-claude-code-is-suddenly-everywhere-inside-microsof-15.md" >}})
+- [Claude Code 广泛集成至微软内部开发环境]({{< relref "posts/20260202-hacker_news-claude-code-is-suddenly-everywhere-inside-microsof-2.md" >}})
 - [Claude Code 全面集成至微软内部开发工作流]({{< relref "posts/20260202-hacker_news-claude-code-is-suddenly-everywhere-inside-microsof-2.md" >}})
-- [Claude Code 全面集成至微软内部开发工作流]({{< relref "posts/20260202-hacker_news-claude-code-is-suddenly-everywhere-inside-microsof-6.md" >}})
-- [Claude Code 全面接入微软开发环境]({{< relref "posts/20260202-hacker_news-claude-code-is-suddenly-everywhere-inside-microsof-7.md" >}})
-- [Claude Code 全面接入微软开发环境]({{< relref "posts/20260202-hacker_news-claude-code-is-suddenly-everywhere-inside-microsof-8.md" >}})
+- [Claude Code 全面集成至微软内部开发工作流]({{< relref "posts/20260202-hacker_news-claude-code-is-suddenly-everywhere-inside-microsof-2.md" >}})
+- [Claude Code 全面接入微软开发环境]({{< relref "posts/20260202-hacker_news-claude-code-is-suddenly-everywhere-inside-microsof-2.md" >}})
+- [Claude Code 全面接入微软开发环境]({{< relref "posts/20260202-hacker_news-claude-code-is-suddenly-everywhere-inside-microsof-2.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

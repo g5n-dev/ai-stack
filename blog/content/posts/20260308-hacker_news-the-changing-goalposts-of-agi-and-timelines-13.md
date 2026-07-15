@@ -21,6 +21,10 @@ description: 通用人工智能（AGI）的定义并非一成不变，随着技�
 external_url: https://mlumiste.com/general/openai-charter
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AGI 定义变迁与时间线演进分析

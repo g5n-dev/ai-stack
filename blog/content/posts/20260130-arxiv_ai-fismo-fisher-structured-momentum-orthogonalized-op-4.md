@@ -1,14 +1,29 @@
 ---
-title: "FISMO：基于Fisher结构的动量正交化优化器"
-date: 2026-01-30T03:54:32+08:00
+title: FISMO：基于Fisher结构的动量正交化优化器
+date: 2026-01-30 03:54:32+08:00
 draft: false
-entry_kind: "auto"
-tags: ["FISMO", "优化器", "深度学习", "非凸优化", "Fisher 信息", "动量正交化", "Muon", "自适应方法"]
-categories: ["论文", "AI 工程"]
+entry_kind: auto
+tags:
+- FISMO
+- 优化器
+- 深度学习
+- 非凸优化
+- Fisher 信息
+- 动量正交化
+- Muon
+- 自适应方法
+categories:
+- 论文
+- AI 工程
 source: arxiv
-description: "以下是对该内容的中文总结： **FISMO：基于Fisher结构化的动量正交优化器** **背景与动机** 在大规模神经网络训练的非凸优化问题中，优化器的选择至关重要。尽管自适应方法（如Adam）长期占据主导地位，但近期提出的Muon优化器通过正交化动量更新（强制各向同性几何）实现了更优的性能。然而，这种严格的各向同性"
+description: 以下是对该内容的中文总结： **FISMO：基于Fisher结构化的动量正交优化器** **背景与动机** 在大规模神经网络训练的非凸优化问题中，优化器的选择至关重要。尽管自适应方法（如Adam）长期占据主导地位，但近期提出的Muon优化器通过正交化动量更新（强制各向同性几何）实现了更优的性能。然而，这种严格的各向同性
 external_url: http://arxiv.org/abs/2601.21750v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # FISMO：基于Fisher结构的动量正交化优化器
@@ -261,7 +276,6 @@ FISMO的主要贡献在于**整合**。它并没有发明Kronecker分解，也�
 - **数据分布极度稀疏或异构**：在极端非平稳数据流中，Fisher矩阵的
 
 ---
-## 研究最佳实践
 
 ## 最佳实践指南
 
@@ -338,7 +352,6 @@ FISMO的主要贡献在于**整合**。它并没有发明Kronecker分解，也�
 - 该研究为优化器设计提供了新思路：通过结构化正交化而非单纯调整学习率或动量系数来平衡收敛速度与稳定性，尤其适用于分布式训练场景。
 
 ---
-## 学习路径
 
 ## 学习路径
 
@@ -514,7 +527,7 @@ FISMO 采用了**结构化近似**的方法。它通常假设 Fisher 矩阵具�
 
 - [超越预测不确定性！🚀结构约束下的可靠表征学习！🔥]({{< relref "posts/20260125-arxiv_ai-beyond-predictive-uncertainty-reliable-representat-7.md" >}})
 - [🔥LLM训练动力学新突破！可扩展损失景观曲率度量🚀]({{< relref "posts/20260126-arxiv_ai-a-scalable-measure-of-loss-landscape-curvature-for-1.md" >}})
-- [⚛️ 基于SE(3)流的刚性 motifs 3D 分子生成！🔥]({{< relref "posts/20260127-arxiv_ai-3d-molecule-generation-from-rigid-motifs-via-se3-f-8.md" >}})
-- [🔥LLM训练动力学新突破！可扩展损失景观曲率度量！]({{< relref "posts/20260127-arxiv_ai-a-scalable-measure-of-loss-landscape-curvature-for-1.md" >}})
+- [⚛️ 基于SE(3)流的刚性 motifs 3D 分子生成！🔥]({{< relref "posts/20260126-arxiv_ai-3d-molecule-generation-from-rigid-motifs-via-se3-f-8.md" >}})
+- [🔥LLM训练动力学新突破！可扩展损失景观曲率度量！]({{< relref "posts/20260126-arxiv_ai-a-scalable-measure-of-loss-landscape-curvature-for-1.md" >}})
 - [🔥Post-LayerNorm强势回归！稳定、高效、深度训练的新神器！]({{< relref "posts/20260128-arxiv_ai-post-layernorm-is-back-stable-expressive-and-deep-2.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

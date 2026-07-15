@@ -20,6 +20,10 @@ description: 在面部识别技术广泛渗透日常生活的当下，Juggalo族
 external_url: https://consequence.net/2019/07/juggalo-makeup-facial-recognition
 scenarios:
 - Web应用开发
+content_mode: legacy_source_brief
+publication_tier: C
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 研究称小丑妆容可干扰面部识别技术

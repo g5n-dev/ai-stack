@@ -1,14 +1,29 @@
 ---
-title: "使用Amazon Nova Sonic构建AI对话播客自动生成方案"
-date: 2026-04-07T17:10:28+08:00
+title: 使用Amazon Nova Sonic构建AI对话播客自动生成方案
+date: 2026-04-07 17:10:28+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI播客", "实时语音对话", "流式传输", "AI主持人", "自动生成", "内容过滤", "音频生成", "智能对话"]
-categories: ["AI 工程"]
+entry_kind: auto
+tags:
+- AI播客
+- 实时语音对话
+- 流式传输
+- AI主持人
+- 自动生成
+- 内容过滤
+- 音频生成
+- 智能对话
+categories:
+- AI 工程
 source: blogs_podcasts
-description: "在语音交互场景日益丰富的背景下，利用 Amazon Nova 2 Sonic 构建实时对话播客成为可能。本文将演示如何通过流式传输和阶段感知的过滤机制，让两个 AI 主播围绕任意主题生成自然衔接的音频内容。阅读后，开发者可以快速上手实现自定义播客流水线，并掌握关键技术与最佳实践。"
+description: 在语音交互场景日益丰富的背景下，利用 Amazon Nova 2 Sonic 构建实时对话播客成为可能。本文将演示如何通过流式传输和阶段感知的过滤机制，让两个
+  AI 主播围绕任意主题生成自然衔接的音频内容。阅读后，开发者可以快速上手实现自定义播客流水线，并掌握关键技术与最佳实践。
 external_url: https://aws.amazon.com/blogs/machine-learning/building-real-time-conversational-podcasts-with-amazon-nova-2-sonic
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 使用Amazon Nova Sonic构建AI对话播客自动生成方案
@@ -111,9 +126,9 @@ Nova Sonic采用持续流式输出机制，音频片段在生成过程中即刻�
 
 ### 相关文章
 
-- [为何推出科学领域AI播客以及工程师应关注的原因]({{< relref "posts/20260129-blogs_podcasts-its-time-to-science-2.md" >}})
+- [为何推出科学领域AI播客以及工程师应关注的原因]({{< relref "posts/20260129-blogs_podcasts-its-time-to-science-0.md" >}})
 - [Vercel AI SDK 流式传输原理与阻塞模式对比]({{< relref "posts/20260211-juejin-vercel-ai-sdk-使用指南流式传输-streaming-1.md" >}})
-- [Amazon Nova Sonic 实时语音助手与级联架构对比]({{< relref "posts/20260212-blogs_podcasts-building-real-time-voice-assistants-with-amazon-no-14.md" >}})
+- [Amazon Nova Sonic 实时语音助手与级联架构对比]({{< relref "posts/20260210-blogs_podcasts-building-real-time-voice-assistants-with-amazon-no-2.md" >}})
 - [基于SSE的AI对话流式消息架构与字段设计]({{< relref "posts/20260301-juejin-基于sse的ai对话流式结构-2.md" >}})
-- [利用Amazon Bedrock Guardrails构建安全生成式AI应用的最佳实践]({{< relref "posts/20260302-blogs_podcasts-build-safe-generative-ai-applications-like-a-pro-b-4.md" >}})
+- [利用Amazon Bedrock Guardrails构建安全生成式AI应用的最佳实践]({{< relref "posts/20260302-blogs_podcasts-build-safe-generative-ai-applications-like-a-pro-b-2.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

@@ -1,14 +1,30 @@
 ---
-title: "感知扰动与奖励建模缓解多模态LLM判断偏差"
-date: 2026-06-02T21:10:39+08:00
+title: 感知扰动与奖励建模缓解多模态LLM判断偏差
+date: 2026-06-02 21:10:39+08:00
 draft: false
-entry_kind: "auto"
-tags: ["多模态LLM", "奖励建模", "感知偏差", "视觉扰动", "LLM评判", "排序一致性", "人类对齐", "感知保真度"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- 多模态LLM
+- 奖励建模
+- 感知偏差
+- 视觉扰动
+- LLM评判
+- 排序一致性
+- 人类对齐
+- 感知保真度
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "研究背景 多模态大模型在推理任务上表现突出，但作为自动评估器时会出现“感知判断偏差”。当文本提示与视觉信息冲突时，模型倾向于奖励看似合理的叙事而非视觉感知正确的答案。 问题定位 通过受控的视觉扰动实验，发现现有模型在面对视觉冲突时仍然锚定于文本响应，导致评估结果不一致且难以验证。 数据集与训练框架 - 构建了感知扰动判"
+description: 研究背景 多模态大模型在推理任务上表现突出，但作为自动评估器时会出现“感知判断偏差”。当文本提示与视觉信息冲突时，模型倾向于奖励看似合理的叙事而非视觉感知正确的答案。
+  问题定位 通过受控的视觉扰动实验，发现现有模型在面对视觉冲突时仍然锚定于文本响应，导致评估结果不一致且难以验证。 数据集与训练框架 - 构建了感知扰动判
 external_url: http://arxiv.org/abs/2606.02578v1
-scenarios: ["大语言模型"]
+scenarios:
+- 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 感知扰动与奖励建模缓解多模态LLM判断偏差
@@ -122,7 +138,7 @@ scenarios: ["大语言模型"]
 
 - [LLM评测新范式：从表面启发式到知识 grounded 评估]({{< relref "posts/20260312-arxiv_ai-beyond-the-illusion-of-consensus-from-surface-heur-5.md" >}})
 - [超越VLM奖励：扩散原生潜在奖励建模]({{< relref "posts/20260212-arxiv_ai-beyond-vlm-based-rewards-diffusion-native-latent-r-3.md" >}})
-- [超越VLM奖励：扩散原生潜在奖励建模]({{< relref "posts/20260213-arxiv_ai-beyond-vlm-based-rewards-diffusion-native-latent-r-3.md" >}})
-- [MMARS：基于边际感知与自我精炼的奖励建模]({{< relref "posts/20260221-arxiv_ai-mars-margin-aware-reward-modeling-with-self-refine-2.md" >}})
-- [RLAIF强化微调技术解析：LLM担任评判者的实现方法]({{< relref "posts/20260501-blogs_podcasts-reinforcement-fine-tuning-with-llm-as-a-judge-0.md" >}})
+- [超越VLM奖励：扩散原生潜在奖励建模]({{< relref "posts/20260212-arxiv_ai-beyond-vlm-based-rewards-diffusion-native-latent-r-3.md" >}})
+- [MMARS：基于边际感知与自我精炼的奖励建模]({{< relref "posts/20260220-arxiv_ai-mars-margin-aware-reward-modeling-with-self-refine-2.md" >}})
+- [RLAIF强化微调技术解析：LLM担任评判者的实现方法]({{< relref "posts/20260430-blogs_podcasts-reinforcement-fine-tuning-with-llm-as-a-judge-0.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

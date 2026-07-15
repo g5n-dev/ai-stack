@@ -1,14 +1,30 @@
 ---
-title: "Amazon Nova Forge超参数优化：平衡领域性能与通用能力"
-date: 2026-06-02T23:18:58+08:00
+title: Amazon Nova Forge超参数优化：平衡领域性能与通用能力
+date: 2026-06-02 23:18:58+08:00
 draft: false
-entry_kind: "auto"
-tags: ["超参数优化", "模型微调", "Amazon Nova", "学习率", "批次大小", "领域性能", "通用能力", "训练参数"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- 超参数优化
+- 模型微调
+- Amazon Nova
+- 学习率
+- 批次大小
+- 领域性能
+- 通用能力
+- 训练参数
+categories:
+- 大模型
+- AI 工程
 source: blogs_podcasts
-description: "定制策略选择 依据数据规模、领域相似度以及可用算力，选择合适的微调方式：全参数微调、适配器微调或提示学习。全参数微调适用于数据充足且领域差异大的情况；适配器或提示学习则在算力受限、保持通用能力时更安全。 关键训练参数 - **学习率**：一般比预训练时小1~2个数量级，建议使用学习率预热+余弦衰减。 - **批次大小*"
+description: 定制策略选择 依据数据规模、领域相似度以及可用算力，选择合适的微调方式：全参数微调、适配器微调或提示学习。全参数微调适用于数据充足且领域差异大的情况；适配器或提示学习则在算力受限、保持通用能力时更安全。
+  关键训练参数 - **学习率**：一般比预训练时小1~2个数量级，建议使用学习率预热+余弦衰减。 - **批次大小*
 external_url: https://aws.amazon.com/blogs/machine-learning/the-art-and-science-of-hyperparameter-optimization-on-amazon-nova-forge
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Amazon Nova Forge超参数优化：平衡领域性能与通用能力
@@ -181,8 +197,8 @@ Fine‑tuning 必须在提升领域性能的同时保持模型的通用能力，
 ### 相关文章
 
 - [使用Nova Forge SDK通过数据混合微调模型]({{< relref "posts/20260417-blogs_podcasts-nova-forge-sdk-series-part-2-practical-guide-to-fi-0.md" >}})
-- [Amazon Nova 强化微调解析：原理、应用场景与实现指南]({{< relref "posts/20260226-blogs_podcasts-reinforcement-fine-tuning-for-amazon-nova-teaching-4.md" >}})
-- [Amazon Nova 强化微调原理：从评估学习到多轮智能体构建]({{< relref "posts/20260227-blogs_podcasts-reinforcement-fine-tuning-for-amazon-nova-teaching-10.md" >}})
-- [Amazon Nova 强化微调：原理、应用场景与实现指南]({{< relref "posts/20260227-blogs_podcasts-reinforcement-fine-tuning-for-amazon-nova-teaching-4.md" >}})
-- [Amazon Nova 强化微调：原理、场景与实现指南]({{< relref "posts/20260227-blogs_podcasts-reinforcement-fine-tuning-for-amazon-nova-teaching-5.md" >}})
+- [Amazon Nova 强化微调解析：原理、应用场景与实现指南]({{< relref "posts/20260226-blogs_podcasts-reinforcement-fine-tuning-for-amazon-nova-teaching-2.md" >}})
+- [Amazon Nova 强化微调原理：从评估学习到多轮智能体构建]({{< relref "posts/20260226-blogs_podcasts-reinforcement-fine-tuning-for-amazon-nova-teaching-2.md" >}})
+- [Amazon Nova 强化微调：原理、应用场景与实现指南]({{< relref "posts/20260226-blogs_podcasts-reinforcement-fine-tuning-for-amazon-nova-teaching-2.md" >}})
+- [Amazon Nova 强化微调：原理、场景与实现指南]({{< relref "posts/20260226-blogs_podcasts-reinforcement-fine-tuning-for-amazon-nova-teaching-2.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

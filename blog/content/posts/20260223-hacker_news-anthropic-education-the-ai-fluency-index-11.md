@@ -5,12 +5,12 @@ draft: false
 entry_kind: auto
 tags:
 - Anthropic
-- AI教育
+- AI 教育
 - 熟练度指数
 - 评估体系
 - Claude
 - 教育科技
-- AI应用
+- AI 应用
 - 行业报告
 categories:
 - 大模型
@@ -21,6 +21,10 @@ description: 随着人工智能技术的快速迭代，如何准确评估团队�
 external_url: https://www.anthropic.com/research/AI-fluency-index
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Anthropic 发布 AI 熟练度指数以评估教育领域应用

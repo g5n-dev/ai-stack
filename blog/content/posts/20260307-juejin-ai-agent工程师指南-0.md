@@ -22,6 +22,10 @@ external_url: https://juejin.cn/post/7614065532690268206
 scenarios:
 - AI/ML项目
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AI Agent 工程师指南：深入解析 Zero-shot 与 Few-shot 核心概念
@@ -208,7 +212,7 @@ AI Agent（人工智能代理）是指一种以大语言模型为核心控制器
 
 ### 相关文章
 
-- [Compressed Agents：Agent Skills 技术解析]({{< relref "posts/20260130-hacker_news-compressed-agentsmd-agent-skills-6.md" >}})
+- [Compressed Agents：Agent Skills 技术解析]({{< relref "posts/20260129-hacker_news-compressed-agentsmd-agent-skills-5.md" >}})
 - [构建极简且具倾向性的编程代理的经验总结]({{< relref "posts/20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-1.md" >}})
 - [大模型API本质解析：Tools、MCP与Skills的区别]({{< relref "posts/20260215-juejin-从-0-诠释大模型-api-的本质-tools-mcp-skills-0.md" >}})
 - [构建高质量代码提示词：从五要素基础到十维度进阶技巧]({{< relref "posts/20260214-juejin-让-ai-帮你写代码先学会跟它说话-0.md" >}})

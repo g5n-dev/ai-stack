@@ -21,6 +21,10 @@ description: 随着模型架构从 Transformer 演进至 Mamba，AI 领域正经
 external_url: https://lucumr.pocoo.org/2026/3/5/theseus
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AI与特修斯之船：技术迭代的同一性悖论

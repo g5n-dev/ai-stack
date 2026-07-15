@@ -1,14 +1,29 @@
 ---
-title: "AI模型训练中复杂性削减技术"
-date: 2026-04-09T14:32:24+08:00
+title: AI模型训练中复杂性削减技术
+date: 2026-04-09 14:32:24+08:00
 draft: false
-entry_kind: "auto"
-tags: ["模型压缩", "在线剪枝", "控制理论", "训练优化", "计算效率", "GPU能耗", "大模型部署", "参数削减"]
-categories: ["大模型"]
+entry_kind: auto
+tags:
+- 模型压缩
+- 在线剪枝
+- 控制理论
+- 训练优化
+- 计算效率
+- GPU能耗
+- 大模型部署
+- 参数削减
+categories:
+- 大模型
 source: blogs_podcasts
-description: "核心思路 利用控制理论的反馈机制，在模型训练过程中实时监测权重与激活的贡献度，动态削减冗余结构。与传统训练后剪枝不同，训练中即进行“在线修剪”，让网络自行学习保持关键路径。 效果与优势 实验表明，该方法在保持原有精度的前提下，可将参数量和计算量分别降低约30%~40%，显著减少 GPU 训练时间和能耗。由于剪枝在训练阶"
+description: 核心思路 利用控制理论的反馈机制，在模型训练过程中实时监测权重与激活的贡献度，动态削减冗余结构。与传统训练后剪枝不同，训练中即进行“在线修剪”，让网络自行学习保持关键路径。
+  效果与优势 实验表明，该方法在保持原有精度的前提下，可将参数量和计算量分别降低约30%~40%，显著减少 GPU 训练时间和能耗。由于剪枝在训练阶
 external_url: https://news.mit.edu/2026/new-technique-makes-ai-models-leaner-faster-while-still-learning-0409
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AI模型训练中复杂性削减技术
@@ -138,7 +153,7 @@ scenarios: ["Web应用开发"]
 
 - [统一时空Token评分提升视频VLM效率]({{< relref "posts/20260319-arxiv_ai-unified-spatio-temporal-token-scoring-for-efficien-0.md" >}})
 - [超网络：面向层级数据的神经网络架构]({{< relref "posts/20260205-hacker_news-hypernetworks-neural-networks-for-hierarchical-dat-16.md" >}})
-- [共享LoRA子空间实现近乎严格的持续学习]({{< relref "posts/20260209-arxiv_ai-shared-lora-subspaces-for-almost-strict-continual--0.md" >}})
+- [共享LoRA子空间实现近乎严格的持续学习]({{< relref "posts/20260206-arxiv_ai-shared-lora-subspaces-for-almost-strict-continual--0.md" >}})
 - [ROCKET：校准导向背包增强截断的高效模型压缩]({{< relref "posts/20260212-arxiv_ai-rocket-rapid-optimization-via-calibration-guided-k-2.md" >}})
-- [CoPE-VideoLM：基于编解码基元的高效视频语言模型]({{< relref "posts/20260217-arxiv_ai-cope-videolm-codec-primitives-for-efficient-video--2.md" >}})
+- [CoPE-VideoLM：基于编解码基元的高效视频语言模型]({{< relref "posts/20260216-arxiv_ai-cope-videolm-codec-primitives-for-efficient-video--2.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

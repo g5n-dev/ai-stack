@@ -22,6 +22,10 @@ external_url: https://juejin.cn/post/7616660062761943074
 scenarios:
 - AI/ML项目
 - 命令行工具
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Chrome DevTools MCP 支持编码助手直接接管浏览器调试会话
@@ -173,8 +177,8 @@ Chrome DevTools MCP 是一个基于 MCP (Model Context Protocol) 协议的工具
 
 ### 相关文章
 
-- [通过 CLI 优化降低 MCP 成本]({{< relref "posts/20260226-hacker_news-making-mcp-cheaper-via-cli-2.md" >}})
+- [通过 CLI 优化降低 MCP 成本]({{< relref "posts/20260225-hacker_news-making-mcp-cheaper-via-cli-3.md" >}})
 - [wechat-devtools-mcp：基于官方库的微信小程序自动化方案]({{< relref "posts/20260226-juejin-微信小程序自动化的-ai-新时代wechat-devtools-mcp-智能方案-2.md" >}})
-- [AI编写软件后的代码验证责任归属问题]({{< relref "posts/20260304-hacker_news-when-ai-writes-the-software-who-verifies-it-14.md" >}})
+- [AI编写软件后的代码验证责任归属问题]({{< relref "posts/20260303-hacker_news-when-ai-writes-the-software-who-verifies-it-8.md" >}})
 - [Codex与Playwright MCP协作实现前端自动化闭环]({{< relref "posts/20260305-juejin-价值1000的-ai-工作流codex-通用前端协作模式-1.md" >}})
-- [Claude-replay：Claude Code 会话的视频化回放工具]({{< relref "posts/20260306-hacker_news-show-hn-claude-replay-a-video-like-player-for-clau-16.md" >}})
+- [Claude-replay：Claude Code 会话的视频化回放工具]({{< relref "posts/20260306-hacker_news-show-hn-claude-replay-a-video-like-player-for-clau-17.md" >}})

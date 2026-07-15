@@ -22,6 +22,13 @@ external_url: https://mistral.ai/news/forge
 scenarios:
 - AI/ML项目
 - 大语言模型
+aliases:
+- /posts/20260318-hacker_news-mistral-ai-releases-forge-4/
+- /posts/20260318-hacker_news-mistral-ai-releases-forge-5/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Mistral AI 发布 Forge 模型微调工具

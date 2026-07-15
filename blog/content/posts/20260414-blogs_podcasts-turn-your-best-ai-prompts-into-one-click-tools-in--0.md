@@ -1,14 +1,31 @@
 ---
-title: "Chrome Skills：将AI提示词转化为一键工具"
-date: 2026-04-14T17:33:53+08:00
+title: Chrome Skills：将AI提示词转化为一键工具
+date: 2026-04-14 17:33:53+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Chrome", "浏览器扩展", "AI提示词", "无代码工具", "效率提升", "Chrome Skills", "一键工具", "提示词工程"]
-categories: ["开发工具", "AI 工程"]
+entry_kind: auto
+tags:
+- Chrome
+- 浏览器扩展
+- AI提示词
+- 无代码工具
+- 效率提升
+- Chrome Skills
+- 一键工具
+- 提示词工程
+categories:
+- 开发工具
+- AI 工程
 source: blogs_podcasts
-description: "背景 AI 提示词已在日常工作中广泛使用，Chrome 通过 “Skills” 功能提供了把常用提示词快速转为一键工具的能力。 功能 把常用的 AI 指令保存为快捷方式，点击即可在同一浏览器内触发 AI 响应，实现跨站点的统一调用。 实现步骤 1. 在 Chrome 打开对应的 AI 插件或实验性页面。 2. 选中想要"
+description: 背景 AI 提示词已在日常工作中广泛使用，Chrome 通过 “Skills” 功能提供了把常用提示词快速转为一键工具的能力。 功能 把常用的
+  AI 指令保存为快捷方式，点击即可在同一浏览器内触发 AI 响应，实现跨站点的统一调用。 实现步骤 1. 在 Chrome 打开对应的 AI 插件或实验性页面。
+  2. 选中想要
 external_url: https://blog.google/products-and-platforms/products/chrome/skills-in-chrome
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Chrome Skills：将AI提示词转化为一键工具
@@ -171,8 +188,8 @@ Chrome 将用户自定义的 AI 提示（prompt）封装为浏览器工具条/�
 ### 相关文章
 
 - [用ChatGPT项目组织聊天文件和指令]({{< relref "posts/20260410-blogs_podcasts-using-projects-in-chatgpt-0.md" >}})
-- [OpenAI Codex 应用与 VSCode 分支终结及多任务工作树]({{< relref "posts/20260204-blogs_podcasts-ainews-openai-codex-app-death-of-the-vscode-fork-m-5.md" >}})
-- [Amazon Bedrock AgentCore 浏览器新增代理配置、配置文件及扩展支持]({{< relref "posts/20260215-blogs_podcasts-customize-ai-agent-browsing-with-proxies-profiles--0.md" >}})
-- [Amazon Bedrock AgentCore 浏览器新增代理、配置文件及扩展支持]({{< relref "posts/20260215-blogs_podcasts-customize-ai-agent-browsing-with-proxies-profiles--1.md" >}})
-- [Amazon Bedrock AgentCore Browser 更新：支持代理配置、浏览器配置文件及扩展]({{< relref "posts/20260216-blogs_podcasts-customize-ai-agent-browsing-with-proxies-profiles--1.md" >}})
+- [OpenAI Codex 应用与 VSCode 分支终结及多任务工作树]({{< relref "posts/20260203-blogs_podcasts-ainews-openai-codex-app-death-of-the-vscode-fork-m-0.md" >}})
+- [Amazon Bedrock AgentCore 浏览器新增代理配置、配置文件及扩展支持]({{< relref "posts/20260213-blogs_podcasts-customize-ai-agent-browsing-with-proxies-profiles--0.md" >}})
+- [Amazon Bedrock AgentCore 浏览器新增代理、配置文件及扩展支持]({{< relref "posts/20260213-blogs_podcasts-customize-ai-agent-browsing-with-proxies-profiles--0.md" >}})
+- [Amazon Bedrock AgentCore Browser 更新：支持代理配置、浏览器配置文件及扩展]({{< relref "posts/20260213-blogs_podcasts-customize-ai-agent-browsing-with-proxies-profiles--0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

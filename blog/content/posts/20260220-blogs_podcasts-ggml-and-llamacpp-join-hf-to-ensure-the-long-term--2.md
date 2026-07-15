@@ -20,6 +20,21 @@ description: 随着大语言模型向端侧部署演进，GGML 与 llama.cpp 正
 external_url: https://huggingface.co/blog/ggml-joins-hf
 scenarios:
 - AI/ML项目
+aliases:
+- /posts/20260220-blogs_podcasts-ggml-and-llamacpp-join-hf-to-ensure-the-long-term--4/
+- /posts/20260221-blogs_podcasts-ggml-and-llamacpp-join-hf-to-ensure-the-long-term--5/
+- /posts/20260221-blogs_podcasts-ggml-and-llamacpp-join-hf-to-ensure-the-long-term--6/
+- /posts/20260222-blogs_podcasts-ggml-and-llamacpp-join-hf-to-ensure-the-long-term--6/
+- /posts/20260223-blogs_podcasts-ggml-and-llamacpp-join-hf-to-ensure-the-long-term--11/
+- /posts/20260223-blogs_podcasts-ggml-and-llamacpp-join-hf-to-ensure-the-long-term--12/
+- /posts/20260223-blogs_podcasts-ggml-and-llamacpp-join-hf-to-ensure-the-long-term--6/
+- /posts/20260223-blogs_podcasts-ggml-and-llamacpp-join-hf-to-ensure-the-long-term--7/
+- /posts/20260223-blogs_podcasts-ggml-and-llamacpp-join-hf-to-ensure-the-long-term--8/
+- /posts/20260224-blogs_podcasts-ggml-and-llamacpp-join-hf-to-ensure-the-long-term--14/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # GGML与llama.cpp加入HF推动本地AI长期发展
@@ -245,8 +260,8 @@ GGML 与 llama.cpp 加入 Hugging Face 标志着边缘计算与开源云端生�
 
 ### 相关文章
 
-- [Ggml.ai加入Hugging Face以推动本地AI长期发展]({{< relref "posts/20260220-hacker_news-ggmlai-joins-hugging-face-to-ensure-the-long-term--1.md" >}})
+- [Ggml.ai加入Hugging Face以推动本地AI长期发展]({{< relref "posts/20260220-hacker_news-ggmlai-joins-hugging-face-to-ensure-the-long-term--0.md" >}})
 - [Ggml.ai 加入 Hugging Face 推动本地 AI 长期发展]({{< relref "posts/20260220-hacker_news-ggmlai-joins-hugging-face-to-ensure-the-long-term--0.md" >}})
-- [Ggml.ai加入Hugging Face以推动本地AI长期发展]({{< relref "posts/20260220-hacker_news-ggmlai-joins-hugging-face-to-ensure-the-long-term--1.md" >}})
-- [NVIDIA Nemotron 3 Nano 30B 现已登陆 Amazon SageMaker JumpSt]({{< relref "posts/20260212-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-10.md" >}})
-- [Step 3.5 Flash 开源基础模型：支持高速深度推理]({{< relref "posts/20260219-hacker_news-step-35-flash-open-source-foundation-model-support-17.md" >}})
+- [Ggml.ai加入Hugging Face以推动本地AI长期发展]({{< relref "posts/20260220-hacker_news-ggmlai-joins-hugging-face-to-ensure-the-long-term--0.md" >}})
+- [NVIDIA Nemotron 3 Nano 30B 现已登陆 Amazon SageMaker JumpSt]({{< relref "posts/20260211-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-0.md" >}})
+- [Step 3.5 Flash 开源基础模型：支持高速深度推理]({{< relref "posts/20260219-hacker_news-step-35-flash-fast-enough-to-think-reliable-enough-10.md" >}})

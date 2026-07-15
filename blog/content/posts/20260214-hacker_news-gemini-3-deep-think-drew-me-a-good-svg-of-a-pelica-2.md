@@ -1,14 +1,30 @@
 ---
-title: "Gemini 3 Deep Think 生成鹈鹕骑自行车 SVG 图像"
-date: 2026-02-14T20:42:31+08:00
+title: Gemini 3 Deep Think 生成鹈鹕骑自行车 SVG 图像
+date: 2026-02-14 20:42:31+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Gemini 3", "Deep Think", "SVG", "多模态", "图像生成", "代码生成", "AI 绘图", "Google"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- Gemini 3
+- Deep Think
+- SVG
+- 多模态
+- 图像生成
+- 代码生成
+- AI 绘图
+- Google
+categories:
+- 大模型
+- AI 工程
 source: hacker_news
-description: "随着多模态大模型能力的迭代，AI 在生成复杂矢量图形（SVG）时的逻辑性与精准度正成为新的技术焦点。本文以 Gemini 3 Deep Think 绘制“鹈鹕骑自行车”为例，探讨了模型如何通过深度推理处理细节约束与代码结构。通过这一案例，读者可以直观了解当前 AI 在代码生成与视觉呈现方面的实际进展，以及其对前端工作流"
+description: 随着多模态大模型能力的迭代，AI 在生成复杂矢量图形（SVG）时的逻辑性与精准度正成为新的技术焦点。本文以 Gemini 3 Deep Think
+  绘制“鹈鹕骑自行车”为例，探讨了模型如何通过深度推理处理细节约束与代码结构。通过这一案例，读者可以直观了解当前 AI 在代码生成与视觉呈现方面的实际进展，以及其对前端工作流
 external_url: https://simonwillison.net/2026/Feb/12/gemini-3-deep-think
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Gemini 3 Deep Think 生成鹈鹕骑自行车 SVG 图像
@@ -219,7 +235,6 @@ create_pelican_on_bicycle()
 该流程极大地缩短了创意验证周期。在比稿阶段，团队展示了数十个由 AI 辅助生成的创意草案，最终中标率提升了 30%。AI 生成的矢量底图保证了图像在放大到广告牌尺寸时依然清晰锐利，完美解决了印刷精度问题。
 
 ---
-## 最佳实践
 
 ## 最佳实践指南
 
@@ -241,7 +256,7 @@ create_pelican_on_bicycle()
 **说明**: 一个高质量的 SVG 图像应当具有清晰的代码结构。将鹈鹕的身体部位（头部、翅膀、身体）和自行车部件（车轮、车架、脚踏）分别进行 `<g>` 分组，不仅便于代码阅读，也方便后期进行局部动画处理（如让车轮单独旋转）。
 
 **实施步骤**:
-1. 在提示词中要求：“请使用 SVG 格式，并将不同的物体或身体部位放入独立的 Group (<g>) 标签中”。
+1. 在提示词中要求：“请使用 SVG 格式，并将不同的物体或身体部位放入独立的 Group（`<g>`）标签中”。
 2. 要求模型添加注释代码，标明哪一部分是自行车，哪一部分是鹈鹕。
 3. 生成后检查代码，确保没有重叠混乱的路径。
 
@@ -388,9 +403,9 @@ create_pelican_on_bicycle()
 
 ### 相关文章
 
-- [Gemini 3 Deep Think：专用于解决科研与工程挑战的推理模式更新]({{< relref "posts/20260212-blogs_podcasts-gemini-3-deep-think-advancing-science-research-and-3.md" >}})
-- [Gemini 3 Deep Think 推出长思维链推理模式]({{< relref "posts/20260212-hacker_news-gemini-3-deep-think-1.md" >}})
+- [Gemini 3 Deep Think：专用于解决科研与工程挑战的推理模式更新]({{< relref "posts/20260212-blogs_podcasts-gemini-3-deep-think-advancing-science-research-and-0.md" >}})
+- [Gemini 3 Deep Think 推出长思维链推理模式]({{< relref "posts/20260212-blogs_podcasts-gemini-3-deep-think-advancing-science-research-and-1.md" >}})
 - [Gemini 3 Deep Think 推出：强化长链思考能力]({{< relref "posts/20260212-hacker_news-gemini-3-deep-think-16.md" >}})
-- [Gemini 3 Deep Think：长链推理与深度思考模式解析]({{< relref "posts/20260212-hacker_news-gemini-3-deep-think-2.md" >}})
-- [Gemini 3 Deep Think：升级推理模式以应对科研与工程挑战]({{< relref "posts/20260213-blogs_podcasts-gemini-3-deep-think-advancing-science-research-and-9.md" >}})
+- [Gemini 3 Deep Think：长链推理与深度思考模式解析]({{< relref "posts/20260212-blogs_podcasts-gemini-3-deep-think-advancing-science-research-and-1.md" >}})
+- [Gemini 3 Deep Think：升级推理模式以应对科研与工程挑战]({{< relref "posts/20260212-blogs_podcasts-gemini-3-deep-think-advancing-science-research-and-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

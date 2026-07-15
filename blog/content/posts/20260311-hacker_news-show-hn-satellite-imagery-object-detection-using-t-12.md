@@ -20,6 +20,12 @@ description: 随着遥感数据的积累，如何从海量卫星图像中快速�
 external_url: https://www.useful-ai-tools.com/tools/satellite-analysis-demo
 scenarios:
 - 命令行工具
+aliases:
+- /posts/20260312-hacker_news-show-hn-detect-any-object-in-satellite-imagery-usi-15/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 基于文本提示的卫星影像目标检测
@@ -157,8 +163,8 @@ scenarios:
 
 ### 相关文章
 
-- [Ask a Techspert：AI如何理解视觉搜索]({{< relref "posts/20260306-blogs_podcasts-ask-a-techspert-how-does-ai-understand-my-visual-s-0.md" >}})
-- [AI如何理解视觉搜索：Ask a Techspert解析]({{< relref "posts/20260306-blogs_podcasts-ask-a-techspert-how-does-ai-understand-my-visual-s-2.md" >}})
-- [AI视觉搜索技术解析：如何理解图像内容]({{< relref "posts/20260307-blogs_podcasts-ask-a-techspert-how-does-ai-understand-my-visual-s-6.md" >}})
-- [AI技术解析：视觉搜索如何理解图像内容]({{< relref "posts/20260309-blogs_podcasts-ask-a-techspert-how-does-ai-understand-my-visual-s-12.md" >}})
-- [谷歌技术专家解析：AI如何理解视觉搜索]({{< relref "posts/20260309-blogs_podcasts-ask-a-techspert-how-does-ai-understand-my-visual-s-14.md" >}})
+- [Ask a Techspert：AI如何理解视觉搜索]({{< relref "posts/20260305-blogs_podcasts-ask-a-techspert-how-does-ai-understand-my-visual-s-0.md" >}})
+- [AI如何理解视觉搜索：Ask a Techspert解析]({{< relref "posts/20260305-blogs_podcasts-ask-a-techspert-how-does-ai-understand-my-visual-s-0.md" >}})
+- [AI视觉搜索技术解析：如何理解图像内容]({{< relref "posts/20260305-blogs_podcasts-ask-a-techspert-how-does-ai-understand-my-visual-s-0.md" >}})
+- [AI技术解析：视觉搜索如何理解图像内容]({{< relref "posts/20260305-blogs_podcasts-ask-a-techspert-how-does-ai-understand-my-visual-s-0.md" >}})
+- [谷歌技术专家解析：AI如何理解视觉搜索]({{< relref "posts/20260305-blogs_podcasts-ask-a-techspert-how-does-ai-understand-my-visual-s-0.md" >}})

@@ -1,14 +1,30 @@
 ---
-title: "Codex插件集成进JetBrains IDE实现AI编程辅助"
-date: 2026-05-16T23:16:15+08:00
+title: Codex插件集成进JetBrains IDE实现AI编程辅助
+date: 2026-05-16 23:16:15+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI编程", "Codex", "JetBrains", "IDE集成", "AI Agent", "插件开发", "代码生成", "开发效率"]
-categories: ["开发工具", "AI 工程"]
+entry_kind: auto
+tags:
+- AI 编程
+- Codex
+- JetBrains
+- IDE集成
+- AI Agent
+- 插件开发
+- 代码生成
+- 开发效率
+categories:
+- 开发工具
+- AI 工程
 source: juejin
-description: "过去两年，AI 编程工具的能力快速提升，但使用入口却越来越分散，开发者常要在 VS Code、JetBrains、浏览器等多个环境之间切换。最近的趋势是把 AI Agent 直接嵌入主流 IDE，让其成为“住在”开发环境内部的助理。OpenAI 的 Codex 已经实现了在 JetBrains 系列 IDE（如 Int"
+description: 过去两年，AI 编程工具的能力快速提升，但使用入口却越来越分散，开发者常要在 VS Code、JetBrains、浏览器等多个环境之间切换。最近的趋势是把
+  AI Agent 直接嵌入主流 IDE，让其成为“住在”开发环境内部的助理。OpenAI 的 Codex 已经实现了在 JetBrains 系列 IDE（如 Int
 external_url: https://juejin.cn/post/7640054823803174927
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Codex插件集成进JetBrains IDE实现AI编程辅助
@@ -91,9 +107,9 @@ Codex进入JetBrains IDE是AI编程工具从“分散入口”向“统一工作
 
 ### 相关文章
 
-- [Codex App：基于自然语言指令的代码生成工具]({{< relref "posts/20260203-hacker_news-the-codex-app-4.md" >}})
+- [Codex App：基于自然语言指令的代码生成工具]({{< relref "posts/20260202-hacker_news-the-codex-app-1.md" >}})
 - [MaxFrame Coding Skill：AI掌握大数据开发知识]({{< relref "posts/20260420-juejin-让-ai-帮你写大数据ai开发代码maxframe-coding-skill-正式发布-0.md" >}})
 - [AI 写代码效果差？大多数人第一步就错了]({{< relref "posts/20260306-juejin-ai-写代码效果差大多数人第一步就错了-2.md" >}})
-- [构建极简编程代理的技术实践与经验总结]({{< relref "posts/20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-17.md" >}})
-- [Codex 应用：基于 AI 的代码生成与编辑工具]({{< relref "posts/20260203-hacker_news-the-codex-app-1.md" >}})
+- [构建极简编程代理的技术实践与经验总结]({{< relref "posts/20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-1.md" >}})
+- [Codex 应用：基于 AI 的代码生成与编辑工具]({{< relref "posts/20260202-hacker_news-the-codex-app-1.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

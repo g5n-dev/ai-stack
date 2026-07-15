@@ -21,6 +21,10 @@ description: 在 OpenHands 架构中，AgentController 扮演着核心调度与�
 external_url: https://juejin.cn/post/7611354028866142223
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # OpenHands 拆解（九）：AgentController 的设计思路
@@ -193,7 +197,7 @@ Controller 的作用是确保这个过程是闭环的，即工具的执行结果
 ### 相关文章
 
 - [OpenHands 框架探秘：Agent 状态管理与系统设计]({{< relref "posts/20260223-juejin-ai-agent-框架探秘拆解-openhands7-agent-1.md" >}})
-- [OpenHands 框架解析：Agent 状态管理与系统设计]({{< relref "posts/20260224-juejin-ai-agent-框架探秘拆解-openhands7-agent-4.md" >}})
-- [迈向智能体系统规模化科学：工作原理与适用条件]({{< relref "posts/20260201-hacker_news-towards-a-science-of-scaling-agent-systems-when-an-13.md" >}})
-- [OpenHands框架拆解：CodeActAgent的设计与核心能力]({{< relref "posts/20260225-juejin-ai-agent框架探秘拆解-openhands8-codeactagent-3.md" >}})
-- [Agent Skills：智能体技能评估与开源框架]({{< relref "posts/20260204-hacker_news-agent-skills-7.md" >}})
+- [OpenHands 框架解析：Agent 状态管理与系统设计]({{< relref "posts/20260223-juejin-ai-agent-框架探秘拆解-openhands7-agent-1.md" >}})
+- [迈向智能体系统规模化科学：工作原理与适用条件]({{< relref "posts/20260201-hacker_news-towards-a-science-of-scaling-agent-systems-when-an-11.md" >}})
+- [OpenHands框架拆解：CodeActAgent的设计与核心能力]({{< relref "posts/20260225-juejin-ai-agent框架探秘拆解-openhands8-codeactagent-2.md" >}})
+- [Agent Skills：智能体技能评估与开源框架]({{< relref "posts/20260203-hacker_news-agent-skills-0.md" >}})

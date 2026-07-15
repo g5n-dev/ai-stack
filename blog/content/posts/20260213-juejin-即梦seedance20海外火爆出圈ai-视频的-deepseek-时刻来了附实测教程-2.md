@@ -1,14 +1,30 @@
 ---
-title: "即梦Seedance 2.0海外爆火，AI视频生成迎来DeepSeek时刻"
-date: 2026-02-13T22:09:32+08:00
+title: 即梦Seedance 2.0海外爆火，AI视频生成迎来DeepSeek时刻
+date: 2026-02-13 22:09:32+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI视频", "Seedance", "即梦", "DeepSeek时刻", "视频生成", "大模型", "实测教程", "黑神话悟空"]
-categories: ["大模型", "产品与创业"]
+entry_kind: auto
+tags:
+- AI视频
+- Seedance
+- 即梦
+- DeepSeek时刻
+- 视频生成
+- 大模型
+- 实测教程
+- 黑神话悟空
+categories:
+- 大模型
+- 产品与创业
 source: juejin
-description: "即梦 Seedance 2.0 近期在海外技术圈引发广泛关注，其生成的视频质量已达到行业顶尖水平，标志着 AI 视频生成领域迎来了重大突破。本文将深入剖析该模型的核心特性与实测表现，并复刻《黑神话：悟空》等高难度场景，直观展示其技术上限。通过阅读本文，读者不仅能掌握 Seedance 2.0 的关键操作流程，更能清晰感"
+description: 即梦 Seedance 2.0 近期在海外技术圈引发广泛关注，其生成的视频质量已达到行业顶尖水平，标志着 AI 视频生成领域迎来了重大突破。本文将深入剖析该模型的核心特性与实测表现，并复刻《黑神话：悟空》等高难度场景，直观展示其技术上限。通过阅读本文，读者不仅能掌握
+  Seedance 2.0 的关键操作流程，更能清晰感
 external_url: https://juejin.cn/post/7605965881412878382
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 即梦Seedance 2.0海外爆火，AI视频生成迎来DeepSeek时刻
@@ -197,9 +213,9 @@ scenarios: ["AI/ML项目"]
 
 ### 相关文章
 
-- [xAI 推出 Grok Imagine API：顶级视频模型与低延迟定价]({{< relref "posts/20260131-blogs_podcasts-ainews-spacexai-grok-imagine-api-the-1-video-model-0.md" >}})
-- [xAI巩固前沿实验室地位并计划与SpaceX合并]({{< relref "posts/20260131-blogs_podcasts-ainews-spacexai-grok-imagine-api-the-1-video-model-1.md" >}})
-- [xAI巩固前沿实验室地位并拟与SpaceX合并]({{< relref "posts/20260201-blogs_podcasts-ainews-spacexai-grok-imagine-api-the-1-video-model-2.md" >}})
-- [xAI 发布 Grok Imagine API：对标 SOTA 视频模型与 SpaceX 合并前瞻]({{< relref "posts/20260202-blogs_podcasts-ainews-spacexai-grok-imagine-api-the-1-video-model-2.md" >}})
-- [xAI 推出 Grok Imagine API：顶级视频模型与低延迟定价]({{< relref "posts/20260202-blogs_podcasts-ainews-spacexai-grok-imagine-api-the-1-video-model-4.md" >}})
+- [xAI 推出 Grok Imagine API：顶级视频模型与低延迟定价]({{< relref "posts/20260130-blogs_podcasts-ainews-spacexai-grok-imagine-api-the-1-video-model-0.md" >}})
+- [xAI巩固前沿实验室地位并计划与SpaceX合并]({{< relref "posts/20260130-blogs_podcasts-ainews-spacexai-grok-imagine-api-the-1-video-model-0.md" >}})
+- [xAI巩固前沿实验室地位并拟与SpaceX合并]({{< relref "posts/20260130-blogs_podcasts-ainews-spacexai-grok-imagine-api-the-1-video-model-0.md" >}})
+- [xAI 发布 Grok Imagine API：对标 SOTA 视频模型与 SpaceX 合并前瞻]({{< relref "posts/20260130-blogs_podcasts-ainews-spacexai-grok-imagine-api-the-1-video-model-0.md" >}})
+- [xAI 推出 Grok Imagine API：顶级视频模型与低延迟定价]({{< relref "posts/20260130-blogs_podcasts-ainews-spacexai-grok-imagine-api-the-1-video-model-0.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

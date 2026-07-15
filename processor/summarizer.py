@@ -119,7 +119,7 @@ class ContentSummarizer:
 
             summary = self.summarize(content, style='concise')
 
-            repo_data['summary'] = summary
+            repo_data['generated_summary'] = summary
             return repo_data
 
         except Exception as e:
@@ -141,6 +141,8 @@ class ContentSummarizer:
             title = article_data.get('title', '')
             description = article_data.get('description', '')
             summary = article_data.get('summary', '')
+            if "source_summary_original" not in article_data:
+                article_data["source_summary_original"] = summary or description or ""
 
             # 优先使用已有的摘要，否则总结标题和描述
             if summary:
@@ -148,17 +150,17 @@ class ContentSummarizer:
             elif description:
                 content = f"{title}\n{description}"
             else:
-                article_data['summary'] = ""
+                article_data['generated_summary'] = ""
                 return article_data
 
             summary_text = self.summarize(content, style='concise')
 
-            article_data['summary'] = summary_text
+            article_data['generated_summary'] = summary_text
             return article_data
 
         except Exception as e:
             logger.error(f"Failed to summarize article: {e}")
-            article_data['summary'] = ""
+            article_data['generated_summary'] = ""
             return article_data
 
 

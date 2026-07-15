@@ -1,14 +1,29 @@
 ---
-title: "Cross-Harness 架构：一套配置适配七种 AI 编码工具"
-date: 2026-06-25T08:12:06+08:00
+title: Cross-Harness 架构：一套配置适配七种 AI 编码工具
+date: 2026-06-25 08:12:06+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Cross-Harness", "AI编码工具", "统一配置", "Token管理", "多工具协作", "系统架构", "资源调度", "安全策略"]
-categories: ["效率与方法论"]
+entry_kind: auto
+tags:
+- Cross-Harness
+- AI编码工具
+- 统一配置
+- Token管理
+- 多工具协作
+- 系统架构
+- 资源调度
+- 安全策略
+categories:
+- 效率与方法论
 source: juejin
-description: "背景 前四篇围绕 token 管理、memory、learning、安全等单个工具内部的优化展开。 问题 实际项目往往需要多个 AI 编码工具并行使用，各自独立配置导致重复工作、策略不一致、资源难以统一调度。 方案概述 Cross‑Harness 采用“一套配置、一次部署、多个实例”思路，抽象出统一的配置层，兼容七种主"
+description: 背景 前四篇围绕 token 管理、memory、learning、安全等单个工具内部的优化展开。 问题 实际项目往往需要多个 AI 编码工具并行使用，各自独立配置导致重复工作、策略不一致、资源难以统一调度。
+  方案概述 Cross‑Harness 采用“一套配置、一次部署、多个实例”思路，抽象出统一的配置层，兼容七种主
 external_url: https://juejin.cn/post/7654919203225550867
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Cross-Harness 架构：一套配置适配七种 AI 编码工具
@@ -122,9 +137,9 @@ Cross-Harness 架构的核心理念在于通过抽象层实现配置复用，这
 
 ### 相关文章
 
-- [OpenAI 实时访问系统：结合速率限制与额度管理支撑 Sora 和 Codex]({{< relref "posts/20260214-blogs_podcasts-beyond-rate-limits-scaling-access-to-codex-and-sor-2.md" >}})
-- [OpenAI 实时访问系统：结合速率限制与用量追踪支持 Sora 和 Codex]({{< relref "posts/20260217-blogs_podcasts-beyond-rate-limits-scaling-access-to-codex-and-sor-4.md" >}})
+- [OpenAI 实时访问系统：结合速率限制与额度管理支撑 Sora 和 Codex]({{< relref "posts/20260213-blogs_podcasts-beyond-rate-limits-scaling-access-to-codex-and-sor-0.md" >}})
+- [OpenAI 实时访问系统：结合速率限制与用量追踪支持 Sora 和 Codex]({{< relref "posts/20260213-blogs_podcasts-beyond-rate-limits-scaling-access-to-codex-and-sor-0.md" >}})
 - [AI 时代下的软件行业变革与程序员职业思考]({{< relref "posts/20260227-juejin-程序员的明天ai-时代下的行业观察与个人思考-2.md" >}})
 - [Agent First Engineering：零人工代码与百万行规模的开发实践]({{< relref "posts/20260305-juejin-agent-first-engineering-0.md" >}})
-- [告别技术债！🚀 高效扩展系统架构，实现无Slop增长！✨]({{< relref "posts/20260127-blogs_podcasts-scaling-without-slop-7.md" >}})
+- [告别技术债！🚀 高效扩展系统架构，实现无Slop增长！✨]({{< relref "posts/20260125-blogs_podcasts-scaling-without-slop-0.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

@@ -21,6 +21,12 @@ description: 本文提出了一种名为 **“Mode Seeking meets Mean Seeking”
 external_url: http://arxiv.org/abs/2602.24289v1
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260303-arxiv_ai-mode-seeking-meets-mean-seeking-for-fast-long-vide-0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 模式寻优结合均值寻优实现快速长视频生成
@@ -120,9 +126,7 @@ scenarios:
 
 ---
 
-### Mode Seeking meets Mean Seeking for Fast Long Video Generation 论文深度分析
 
-### 1. 研究背景与问题
 
 ### 核心问题
 该论文致力于解决视频生成领域中长期存在的**“时长-保真度悖论”**：即如何在生成长视频（分钟级）时，同时保证高画质（局部保真度）和强连贯性（全局一致性）。现有的视频生成模型通常只能在几秒钟内保持高质量，一旦生成长视频，画面会出现明显的伪影、闪烁或剧情崩坏。
@@ -138,7 +142,6 @@ scenarios:
 ### 重要性
 该研究不仅是一个工程优化，更是对视频生成训练范式的重构。它提出了一种利用现有丰富短视频数据来辅助稀缺长视频生成的路径，对于降低长视频训练成本、提升生成质量具有重要的实用价值。
 
-### 2. 核心方法与创新
 
 ### 核心方法：解耦扩散Transformer
 论文提出了一种全新的双头架构设计，将生成过程解耦为两个互补的目标：
@@ -161,7 +164,6 @@ scenarios:
 *   **解耦控制：** 可以分别调整视频的连贯性（通过全局头）和清晰度（通过局部头）。
 *   **即插即用：** 局部头可以利用现有的任何高质量短视频生成模型（如SVD、AnimateDiff等）作为教师。
 
-### 3. 理论基础
 
 ### 理论依据
 该方法建立在两个核心统计学习理论的冲突与融合之上：
@@ -178,7 +180,6 @@ scenarios:
 
 通过这种设计，全局头负责“骨架”，局部头负责“皮肤”。
 
-### 7. 学习建议
 
 ### 适合读者
 *   具有一定深度学习基础的研究生或工程师。
@@ -450,8 +451,8 @@ scenarios:
 
 ### 相关文章
 
-- [MonarchRT：面向实时视频生成的高效注意力机制]({{< relref "posts/20260216-arxiv_ai-monarchrt-efficient-attention-for-real-time-video--7.md" >}})
+- [MonarchRT：面向实时视频生成的高效注意力机制]({{< relref "posts/20260213-arxiv_ai-monarchrt-efficient-attention-for-real-time-video--7.md" >}})
 - [VideoGPA：提取几何先验实现三维一致视频生成]({{< relref "posts/20260202-arxiv_ai-videogpa-distilling-geometry-priors-for-3d-consist-0.md" >}})
-- [VideoGPA：提取几何先验实现三维一致性视频生成]({{< relref "posts/20260203-arxiv_ai-videogpa-distilling-geometry-priors-for-3d-consist-0.md" >}})
-- [Learning on the Manifold: Unlocking Standard Diffusion]({{< relref "posts/20260212-arxiv_ai-learning-on-the-manifold-unlocking-standard-diffus-3.md" >}})
-- [扩散模型无需噪声调节的几何学原理]({{< relref "posts/20260224-arxiv_ai-the-geometry-of-noise-why-diffusion-models-dont-ne-2.md" >}})
+- [VideoGPA：提取几何先验实现三维一致性视频生成]({{< relref "posts/20260202-arxiv_ai-videogpa-distilling-geometry-priors-for-3d-consist-0.md" >}})
+- [Learning on the Manifold: Unlocking Standard Diffusion]({{< relref "posts/20260211-arxiv_ai-learning-on-the-manifold-unlocking-standard-diffus-3.md" >}})
+- [扩散模型无需噪声调节的几何学原理]({{< relref "posts/20260223-arxiv_ai-the-geometry-of-noise-why-diffusion-models-dont-ne-2.md" >}})

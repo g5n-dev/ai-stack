@@ -1,14 +1,28 @@
 ---
-title: "多语言领域口音适配：Nemotron 3.5 ASR微调教程"
-date: 2026-06-04T15:31:27+08:00
+title: 多语言领域口音适配：Nemotron 3.5 ASR微调教程
+date: 2026-06-04 15:31:27+08:00
 draft: false
-entry_kind: "auto"
-tags: ["ASR", "语音识别", "模型微调", "Nemotron", "多语言", "口音适配", "LLM微调", "NVIDIA"]
-categories: ["大模型"]
+entry_kind: auto
+tags:
+- ASR
+- 语音识别
+- 模型微调
+- Nemotron
+- 多语言
+- 口音适配
+- LLM微调
+- NVIDIA
+categories:
+- 大模型
 source: blogs_podcasts
-description: "自动语音识别（ASR）模型在实际部署中常面临语言、领域或口音适配的挑战。Nemotron 3.5 作为最新的开源 ASR 框架，提供了灵活的可微调机制，使开发者能够在已有基线之上快速适配特定需求。本文将逐步讲解数据准备、模型微调流程及评估技巧，帮助你在短时间内获得更高准确率的定制化语音识别系统。"
+description: 自动语音识别（ASR）模型在实际部署中常面临语言、领域或口音适配的挑战。Nemotron 3.5 作为最新的开源 ASR 框架，提供了灵活的可微调机制，使开发者能够在已有基线之上快速适配特定需求。本文将逐步讲解数据准备、模型微调流程及评估技巧，帮助你在短时间内获得更高准确率的定制化语音识别系统。
 external_url: https://huggingface.co/blog/nvidia/fine-tuning-nemotron-35-asr
-scenarios: ["大语言模型"]
+scenarios:
+- 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 多语言领域口音适配：Nemotron 3.5 ASR微调教程
@@ -112,9 +126,9 @@ Nemotron 3.5 ASR的微调技术为语音识别系统的定制化提供了可行�
 
 ### 相关文章
 
-- [基于Amazon EC2微调NVIDIA Nemotron Parakeet ASR模型实现领域适配]({{< relref "posts/20260316-blogs_podcasts-fine-tuning-nvidia-nemotron-speech-asr-on-amazon-e-11.md" >}})
-- [在 EC2 上微调 NVIDIA Nemotron ASR 模型实现领域适配]({{< relref "posts/20260312-blogs_podcasts-fine-tuning-nvidia-nemotron-speech-asr-on-amazon-e-4.md" >}})
-- [在 EC2 上微调 NVIDIA Nemotron ASR 模型实现领域适配]({{< relref "posts/20260313-blogs_podcasts-fine-tuning-nvidia-nemotron-speech-asr-on-amazon-e-6.md" >}})
-- [在 EC2 上微调 NVIDIA Nemotron ASR 模型实现领域适配]({{< relref "posts/20260313-blogs_podcasts-fine-tuning-nvidia-nemotron-speech-asr-on-amazon-e-8.md" >}})
-- [微调NVIDIA Nemotron ASR模型：基于AWS EC2的领域适配实践]({{< relref "posts/20260313-blogs_podcasts-fine-tuning-nvidia-nemotron-speech-asr-on-amazon-e-9.md" >}})
+- [基于Amazon EC2微调NVIDIA Nemotron Parakeet ASR模型实现领域适配]({{< relref "posts/20260312-blogs_podcasts-fine-tuning-nvidia-nemotron-speech-asr-on-amazon-e-1.md" >}})
+- [在 EC2 上微调 NVIDIA Nemotron ASR 模型实现领域适配]({{< relref "posts/20260312-blogs_podcasts-fine-tuning-nvidia-nemotron-speech-asr-on-amazon-e-1.md" >}})
+- [在 EC2 上微调 NVIDIA Nemotron ASR 模型实现领域适配]({{< relref "posts/20260312-blogs_podcasts-fine-tuning-nvidia-nemotron-speech-asr-on-amazon-e-1.md" >}})
+- [在 EC2 上微调 NVIDIA Nemotron ASR 模型实现领域适配]({{< relref "posts/20260312-blogs_podcasts-fine-tuning-nvidia-nemotron-speech-asr-on-amazon-e-1.md" >}})
+- [微调NVIDIA Nemotron ASR模型：基于AWS EC2的领域适配实践]({{< relref "posts/20260312-blogs_podcasts-fine-tuning-nvidia-nemotron-speech-asr-on-amazon-e-1.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

@@ -8,7 +8,7 @@ tags:
 - 问责制
 - 信任根
 - 公共领域
-- AI安全
+- AI 安全
 - Agent
 - 框架
 - 治理
@@ -20,6 +20,10 @@ description: 随着 AI 自主性日益增强，如何确保其行为符合人类
 external_url: https://humanrootoftrust.org
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 人类信任根：面向智能体问责的公共领域框架
@@ -392,7 +396,7 @@ GitHub 推出了企业级隐私保护机制，并强化了“人类信任根”�
 ### 相关文章
 
 - [Anthropic发布Agent自主性研究及METR数据]({{< relref "posts/20260219-blogs_podcasts-ainews-anthropics-agent-autonomy-study-0.md" >}})
-- [Anthropic发布基于METR数据的Agent自主性研究]({{< relref "posts/20260220-blogs_podcasts-ainews-anthropics-agent-autonomy-study-9.md" >}})
-- [Agent Skills：AI 智能体技能框架]({{< relref "posts/20260203-hacker_news-agent-skills-1.md" >}})
-- [Agent Skills：智能体技能框架]({{< relref "posts/20260203-hacker_news-agent-skills-4.md" >}})
-- [Agent Skills：智能体技能框架与开发指南]({{< relref "posts/20260203-hacker_news-agent-skills-5.md" >}})
+- [Anthropic发布基于METR数据的Agent自主性研究]({{< relref "posts/20260219-blogs_podcasts-ainews-anthropics-agent-autonomy-study-0.md" >}})
+- [Agent Skills：AI 智能体技能框架]({{< relref "posts/20260203-hacker_news-agent-skills-0.md" >}})
+- [Agent Skills：智能体技能框架]({{< relref "posts/20260203-hacker_news-agent-skills-0.md" >}})
+- [Agent Skills：智能体技能框架与开发指南]({{< relref "posts/20260203-hacker_news-agent-skills-0.md" >}})

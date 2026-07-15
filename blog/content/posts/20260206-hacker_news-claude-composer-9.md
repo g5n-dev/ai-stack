@@ -1,14 +1,34 @@
 ---
-title: "Claude Composer：AI 编排多 Agent 协作完成复杂任务"
-date: 2026-02-06T22:08:51+08:00
+title: Claude Composer：AI 编排多 Agent 协作完成复杂任务
+date: 2026-02-06 22:08:51+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Claude", "Multi-Agent", "Agent编排", "AI协作", "工作流自动化", "Anthropic", "LLM应用", "智能体"]
-categories: ["AI 工程", "大模型"]
+entry_kind: auto
+tags:
+- Claude
+- Multi-Agent
+- Agent编排
+- AI协作
+- 工作流自动化
+- Anthropic
+- LLM 应用
+- 智能体
+categories:
+- AI 工程
+- 大模型
 source: hacker_news
-description: "随着大模型应用深入实际业务，如何高效编排多步骤工作流并保证输出质量，已成为开发者关注的重点。本文介绍的 Claude Composer，通过结构化的方式将复杂任务拆解为可管理的模块，旨在解决传统 Prompt 工程在处理长上下文和逻辑链路时的局限性。阅读本文，你将了解其核心设计理念，并掌握利用该工具优化 AI 工作流的"
+description: 随着大模型应用深入实际业务，如何高效编排多步骤工作流并保证输出质量，已成为开发者关注的重点。本文介绍的 Claude Composer，通过结构化的方式将复杂任务拆解为可管理的模块，旨在解决传统
+  Prompt 工程在处理长上下文和逻辑链路时的局限性。阅读本文，你将了解其核心设计理念，并掌握利用该工具优化 AI 工作流的
 external_url: https://www.josh.ing/blog/claude-composer
-scenarios: ["AI/ML项目", "大语言模型"]
+scenarios:
+- AI/ML项目
+- 大语言模型
+aliases:
+- /posts/20260206-hacker_news-claude-composer-7/
+- /posts/20260207-hacker_news-claude-composer-18/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Claude Composer：AI 编排多 Agent 协作完成复杂任务
@@ -291,7 +311,6 @@ if __name__ == "__main__":
 - 测试覆盖率从72%提升至89%，回归问题减少50%
 
 ---
-## 最佳实践
 
 ## Claude Composer 最佳实践指南
 
@@ -476,9 +495,9 @@ if __name__ == "__main__":
 
 ### 相关文章
 
-- [2026年AI展望：LLM、智能体、缩放定律与中国发展]({{< relref "posts/20260203-blogs_podcasts-490-state-of-ai-in-2026-llms-coding-scaling-laws-c-3.md" >}})
+- [2026年AI展望：LLM、智能体、缩放定律与中国发展]({{< relref "posts/20260201-blogs_podcasts-490-state-of-ai-in-2026-llms-coding-scaling-laws-c-0.md" >}})
 - [Claude Opus 4.6 发布：性能与上下文窗口提升]({{< relref "posts/20260205-hacker_news-claude-opus-46-2.md" >}})
-- [Claude Opus 4.6 发布：上下文窗口与推理能力提升]({{< relref "posts/20260206-hacker_news-claude-opus-46-0.md" >}})
-- [Claude Opus 4.6 发布]({{< relref "posts/20260206-hacker_news-claude-opus-46-3.md" >}})
-- [Anthropic 发布 MCP Apps 开放标准，定义富生成式 UI 规范]({{< relref "posts/20260129-blogs_podcasts-ainews-anthropic-launches-the-mcp-apps-open-spec-i-9.md" >}})
+- [Claude Opus 4.6 发布：上下文窗口与推理能力提升]({{< relref "posts/20260205-hacker_news-claude-opus-46-2.md" >}})
+- [Claude Opus 4.6 发布]({{< relref "posts/20260205-hacker_news-claude-opus-46-2.md" >}})
+- [Anthropic 发布 MCP Apps 开放标准，定义富生成式 UI 规范]({{< relref "posts/20260127-blogs_podcasts-ainews-anthropic-launches-the-mcp-apps-open-spec-i-1.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

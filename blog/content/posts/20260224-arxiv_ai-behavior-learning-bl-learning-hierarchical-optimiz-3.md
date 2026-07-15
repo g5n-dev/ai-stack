@@ -21,6 +21,12 @@ description: 受行为科学启发，本文提出了一种名为**行为学习**
 external_url: http://arxiv.org/abs/2602.20152v1
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260225-arxiv_ai-behavior-learning-bl-learning-hierarchical-optimiz-3/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 行为学习：从数据中学习分层优化结构
@@ -541,4 +547,4 @@ BL 面临的主要挑战包括如何自动确定最优的分层深度以及如�
 - [SplineFlow：基于B样条插值的动力系统流匹配方法]({{< relref "posts/20260202-arxiv_ai-splineflow-flow-matching-for-dynamical-systems-wit-8.md" >}})
 - [DeALOG：基于日志中介的去中心化多智能体推理框架]({{< relref "posts/20260203-arxiv_ai-dealog-decentralized-multi-agents-log-mediated-rea-4.md" >}})
 - [MEG-XL：基于长上下文预训练的高效脑电转文本模型]({{< relref "posts/20260203-arxiv_ai-meg-xl-data-efficient-brain-to-text-via-long-conte-1.md" >}})
-- [粒子引导扩散模型用于偏微分方程求解]({{< relref "posts/20260203-arxiv_ai-particle-guided-diffusion-models-for-partial-diffe-8.md" >}})
+- [粒子引导扩散模型用于偏微分方程求解]({{< relref "posts/20260202-arxiv_ai-particle-guided-diffusion-models-for-partial-diffe-8.md" >}})

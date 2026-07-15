@@ -21,6 +21,10 @@ external_url: https://andychen32.substack.com/p/the-enterprise-context-layer
 scenarios:
 - 大语言模型
 - RAG应用
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 企业级上下文层：构建 LLM 应用数据连接架构

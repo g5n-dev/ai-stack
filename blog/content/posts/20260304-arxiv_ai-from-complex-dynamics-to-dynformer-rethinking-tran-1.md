@@ -21,6 +21,10 @@ description: 本文介绍了名为 **DynFormer** 的新型神经算子，旨在�
 external_url: http://arxiv.org/abs/2603.03112v1
 scenarios:
 - Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 从复杂动力学到DynFormer：重新思考PDE的Transformer架构
@@ -110,9 +114,7 @@ DynFormer通过将物理先验融入Transformer架构，为解决多尺度PDE问
 
 ---
 
-### 从复杂动力学到 DynFormer：重新思考 PDE 求解中的 Transformer 架构
 
-### 1. 研究背景与问题
 
 ### 核心问题
 该研究旨在解决基于 Transformer 的神经算子在求解偏微分方程时面临的**计算复杂度与物理建模精度之间的矛盾**。具体而言，如何在保持对复杂物理场（如湍流）高精度建模的同时，将计算复杂度从传统的二次方（$O(N^2)$）降低至可接受的线性或近线性量级。
@@ -130,7 +132,6 @@ DynFormer通过将物理先验融入Transformer架构，为解决多尺度PDE问
 ### 为什么这个问题重要
 解决这一问题不仅意味着更快的 PDE 求解器，更代表了一种**“物理驱动的 AI 架构设计”**范式的确立。通过将流体力学中的“多尺度动力学”先验知识嵌入网络结构，可以突破通用深度学习模型在处理科学计算问题时的性能天花板。
 
-### 2. 核心方法与创新
 
 ### 核心方法：DynFormer
 DynFormer 是一个专门为复杂动力学系统设计的 Transformer 架构。其核心思想是**“分而治之”**，即根据物理频率成分将场变量分解，分别通过不同的模块进行处理。
@@ -157,7 +158,6 @@ DynFormer 是一个专门为复杂动力学系统设计的 Transformer 架构。
 *   **物理一致性：** 显式地建模了能量从大尺度向小尺度的传递过程，符合湍流理论。
 *   **可扩展性：** 能够适应不同的分辨率和物理维度。
 
-### 3. 理论基础
 
 ### 理论依据
 该论文的理论基石主要来源于**流体动力学中的多尺度理论**和**湍流统计理论**。
@@ -172,7 +172,6 @@ DynFormer 是一个专门为复杂动力学系统设计的 Transformer 架构。
 *   **谱分解：** 输入 $u$ 被分解为 $u_{low}$ 和 $u_{high}$。
 *   **注意力重构：** 标准注意力 $Softmax(QK^T)V$ 被重构。对于低频部分，利用特征分解构造低秩近似；对于高频部分，使用逐元素乘积或局部卷积来模拟非线性相互作用。
 
-### 7. 学习建议
 
 ### 适合读者
 *   从事科学计算、计算流体力学（CFD）的研究人员。
@@ -440,8 +439,8 @@ DynFormer 相比 FNO 的优势主要体现在：
 
 ### 相关文章
 
-- [粒子引导扩散模型用于偏微分方程求解]({{< relref "posts/20260203-arxiv_ai-particle-guided-diffusion-models-for-partial-diffe-8.md" >}})
+- [粒子引导扩散模型用于偏微分方程求解]({{< relref "posts/20260202-arxiv_ai-particle-guided-diffusion-models-for-partial-diffe-8.md" >}})
 - [函数空间逆问题的解耦扩散采样方法]({{< relref "posts/20260202-arxiv_ai-decoupled-diffusion-sampling-for-inverse-problems--2.md" >}})
 - [蛋白质多尺度结构生成的自回归建模方法]({{< relref "posts/20260205-arxiv_ai-protein-autoregressive-modeling-via-multiscale-str-1.md" >}})
-- [蛋白质自回归建模：基于多尺度结构生成的方案]({{< relref "posts/20260206-arxiv_ai-protein-autoregressive-modeling-via-multiscale-str-1.md" >}})
+- [蛋白质自回归建模：基于多尺度结构生成的方案]({{< relref "posts/20260205-arxiv_ai-protein-autoregressive-modeling-via-multiscale-str-1.md" >}})
 - [混合线性注意力新架构：高效蒸馏与极长上下文处理]({{< relref "posts/20260130-arxiv_ai-hybrid-linear-attention-done-right-efficient-disti-2.md" >}})

@@ -1,14 +1,29 @@
 ---
-title: "Claude Opus 4.7发布 相比4.6全面提升"
-date: 2026-04-17T03:26:42+08:00
+title: Claude Opus 4.7发布 相比4.6全面提升
+date: 2026-04-17 03:26:42+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Claude Opus", "SOTA模型", "Anthropic", "性能提升", "Benchmark", "安全对齐", "推理优化", "大模型发布"]
-categories: ["大模型"]
+entry_kind: auto
+tags:
+- Claude Opus
+- SOTA模型
+- Anthropic
+- 性能提升
+- Benchmark
+- 安全对齐
+- 推理优化
+- 大模型发布
+categories:
+- 大模型
 source: blogs_podcasts
-description: "发布概况 Anthropic 于近期推出最新大型语言模型 Claude Opus 4.7，定位于对前代 4.6 的全维度升级，标志着公司再次刷新行业基准。 关键提升 - **全维度提升**：在语言理解、逻辑推理、代码生成、多轮对话一致性等核心能力上均实现显著进步。 - **benchmark 突破**：在多项权威评测（"
+description: 发布概况 Anthropic 于近期推出最新大型语言模型 Claude Opus 4.7，定位于对前代 4.6 的全维度升级，标志着公司再次刷新行业基准。
+  关键提升 - **全维度提升**：在语言理解、逻辑推理、代码生成、多轮对话一致性等核心能力上均实现显著进步。 - **benchmark 突破**：在多项权威评测（
 external_url: https://www.latent.space/p/ainews-anthropic-claude-opus-47-literally
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Claude Opus 4.7发布 相比4.6全面提升
@@ -147,8 +162,8 @@ Claude Opus 4.7代表当前语言模型技术的最前沿，能够在各类任�
 ### 相关文章
 
 - [利用 Claude Opus 4.6 推进金融业务发展]({{< relref "posts/20260205-hacker_news-advancing-finance-with-claude-opus-46-14.md" >}})
-- [Anthropic Claude Opus 4.6 挖掘开源代码500个零日漏洞]({{< relref "posts/20260205-hacker_news-anthropics-claude-opus-46-uncovers-500-zero-day-fl-13.md" >}})
-- [Claude Opus 4.6 发布]({{< relref "posts/20260205-hacker_news-claude-opus-46-0.md" >}})
-- [OpenAI 与 Anthropic 的巅峰对决：Claude Opus 4.6 挑战 GPT 5.3 Cod]({{< relref "posts/20260208-blogs_podcasts-ainews-openai-and-anthropic-go-to-war-claude-opus--4.md" >}})
-- [OpenAI对决Anthropic：Claude Opus 4.6与GPT 5.3 Codex编码能力实测]({{< relref "posts/20260210-blogs_podcasts-ainews-openai-and-anthropic-go-to-war-claude-opus--7.md" >}})
+- [Anthropic Claude Opus 4.6 挖掘开源代码500个零日漏洞]({{< relref "posts/20260205-hacker_news-anthropics-claude-opus-46-uncovers-500-zero-day-fl-8.md" >}})
+- [Claude Opus 4.6 发布]({{< relref "posts/20260205-hacker_news-claude-opus-46-2.md" >}})
+- [OpenAI 与 Anthropic 的巅峰对决：Claude Opus 4.6 挑战 GPT 5.3 Cod]({{< relref "posts/20260206-blogs_podcasts-ainews-openai-and-anthropic-go-to-war-claude-opus--0.md" >}})
+- [OpenAI对决Anthropic：Claude Opus 4.6与GPT 5.3 Codex编码能力实测]({{< relref "posts/20260206-blogs_podcasts-ainews-openai-and-anthropic-go-to-war-claude-opus--0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

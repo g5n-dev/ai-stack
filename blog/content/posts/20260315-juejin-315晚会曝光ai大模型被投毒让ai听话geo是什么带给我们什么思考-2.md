@@ -5,7 +5,7 @@ draft: false
 entry_kind: auto
 tags:
 - 数据投毒
-- AI安全
+- AI 安全
 - 315晚会
 - 虚假信息
 - 数据质量
@@ -22,6 +22,10 @@ external_url: https://juejin.cn/post/7617108607432212490
 scenarios:
 - AI/ML项目
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 315晚会曝光大模型投毒：操纵AI推荐虚假信息
@@ -201,7 +205,7 @@ AI大模型被投毒的危害远不止于“胡说八道”，它可能直接威
 ### 相关文章
 
 - [RAG系统文档投毒攻击：攻击者如何污染AI数据源]({{< relref "posts/20260312-hacker_news-document-poisoning-in-rag-systems-how-attackers-co-7.md" >}})
-- [RAG系统文档投毒攻击：如何污染AI数据源]({{< relref "posts/20260313-hacker_news-document-poisoning-in-rag-systems-how-attackers-co-15.md" >}})
-- [RedSage：网络安全通用大语言模型]({{< relref "posts/20260201-arxiv_ai-redsage-a-cybersecurity-generalist-llm-0.md" >}})
-- [心理越狱揭示前沿模型内部冲突]({{< relref "posts/20260205-hacker_news-psychometric-jailbreaks-reveal-internal-conflict-i-11.md" >}})
-- [研究揭示推理大模型生成虚假新闻的内在机制]({{< relref "posts/20260206-arxiv_ai-cot-is-not-the-chain-of-truth-an-empirical-interna-9.md" >}})
+- [RAG系统文档投毒攻击：如何污染AI数据源]({{< relref "posts/20260312-hacker_news-document-poisoning-in-rag-systems-how-attackers-co-7.md" >}})
+- [RedSage：网络安全通用大语言模型]({{< relref "posts/20260130-arxiv_ai-redsage-a-cybersecurity-generalist-llm-0.md" >}})
+- [心理越狱揭示前沿模型内部冲突]({{< relref "posts/20260205-hacker_news-psychometric-jailbreaks-reveal-internal-conflict-i-10.md" >}})
+- [研究揭示推理大模型生成虚假新闻的内在机制]({{< relref "posts/20260205-arxiv_ai-cot-is-not-the-chain-of-truth-an-empirical-interna-9.md" >}})

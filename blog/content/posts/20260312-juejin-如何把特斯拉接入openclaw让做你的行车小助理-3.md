@@ -22,6 +22,10 @@ external_url: https://juejin.cn/post/7615828983318167602
 scenarios:
 - AI/ML项目
 - 后端开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 基于TeslaMate数据库的OpenClaw行车数据接入方案
@@ -153,7 +157,7 @@ scenarios:
 ### 相关文章
 
 - [OpenClaw：GitHub 增长最快的开源 AI 智能体框架]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-0.md" >}})
-- [Peter Steinberger 深度访谈：解析 GitHub 增长最快的开源 AI 代理框架 OpenCl]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-1.md" >}})
-- [OpenClaw 开源 AI 智能体框架与 GitHub 增长纪录]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-2.md" >}})
-- [OpenClaw 开源 AI Agent 框架解析与 GitHub 增长复盘]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-3.md" >}})
-- [OpenClaw：GitHub 增长最快的开源 AI 智能体框架]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-4.md" >}})
+- [Peter Steinberger 深度访谈：解析 GitHub 增长最快的开源 AI 代理框架 OpenCl]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-0.md" >}})
+- [OpenClaw 开源 AI 智能体框架与 GitHub 增长纪录]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-0.md" >}})
+- [OpenClaw 开源 AI Agent 框架解析与 GitHub 增长复盘]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-0.md" >}})
+- [OpenClaw：GitHub 增长最快的开源 AI 智能体框架]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-0.md" >}})

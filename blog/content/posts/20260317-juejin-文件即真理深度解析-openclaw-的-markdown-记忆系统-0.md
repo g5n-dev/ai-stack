@@ -22,6 +22,10 @@ external_url: https://juejin.cn/post/7617728986829733915
 scenarios:
 - AI/ML项目
 - RAG应用
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 深度解析 OpenClaw：基于 Markdown 的 AI 记忆系统
@@ -153,6 +157,6 @@ OpenClaw 特别适合以下几类用户：
 
 - [OpenClaw Skills机制：三层渐进式加载与依赖管理的AI Agent框架]({{< relref "posts/20260309-juejin-拆解-openclaw-的-skills-机制一个为-ai-agent-设计的包管理器-3.md" >}})
 - [本地AI Agent Memory系统建设：存储策略与检索注入机制]({{< relref "posts/20260315-juejin-本地-ai-agent-memory-系统建设方案-1.md" >}})
-- [Kirara-AI：支持多平台接入的多模态聊天机器人框架]({{< relref "posts/20260130-github_trending-lss233-kirara-ai-2.md" >}})
-- [LangBot：生产级多平台Agent智能机器人开发平台]({{< relref "posts/20260205-github_trending-langbot-app-langbot-7.md" >}})
+- [Kirara-AI：支持多平台接入的多模态聊天机器人框架]({{< relref "posts/20260127-github_trending-lss233-kirara-ai-2.md" >}})
+- [LangBot：生产级多平台Agent智能机器人开发平台]({{< relref "posts/20260131-github_trending-langbot-app-langbot-7.md" >}})
 - [Clawra：集成 fal.ai 与 xAI Grok 实现 AI 助手固定形象自拍]({{< relref "posts/20260217-juejin-一天一个开源项目第25篇clawra-为-openclaw-赋予自拍能力的-skill-0.md" >}})

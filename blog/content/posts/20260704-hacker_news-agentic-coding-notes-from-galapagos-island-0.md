@@ -1,14 +1,30 @@
 ---
-title: "AI代理编程：加拉帕戈斯岛开发实践笔记"
-date: 2026-07-04T06:44:03+08:00
+title: AI代理编程：加拉帕戈斯岛开发实践笔记
+date: 2026-07-04 06:44:03+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI代理", "编程实践", "开发笔记", "LLM", "代码生成", "人工智能", "开发效率", "实践记录"]
-categories: ["AI 工程", "开发工具"]
+entry_kind: auto
+tags:
+- AI 代理
+- 编程实践
+- 开发笔记
+- LLM
+- 代码生成
+- 人工智能
+- 开发效率
+- 实践记录
+categories:
+- AI 工程
+- 开发工具
 source: hacker_news
-description: "本文记录了在加拉帕戈斯群岛进行智能体编程的实战经验，探讨了在网络受限且自然环境多变的条件下，如何保证自主编码代理的可靠性。作者通过对比传统开发流程，提炼出调度策略、容错机制和资源管理的关键设计，帮助团队在远端或边缘场景中保持高效迭代。阅读后，开发者可以借鉴分布式协作模式与自适应调试方案，提升在受限环境下的代码质量和交付"
+description: 本文记录了在加拉帕戈斯群岛进行智能体编程的实战经验，探讨了在网络受限且自然环境多变的条件下，如何保证自主编码代理的可靠性。作者通过对比传统开发流程，提炼出调度策略、容错机制和资源管理的关键设计，帮助团队在远端或边缘场景中保持高效迭代。阅读后，开发者可以借鉴分布式协作模式与自适应调试方案，提升在受限环境下的代码质量和交付
 external_url: https://danluu.com/ai-coding
-scenarios: ["AI/ML项目", "大语言模型"]
+scenarios:
+- AI/ML项目
+- 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AI代理编程：加拉帕戈斯岛开发实践笔记
@@ -80,9 +96,9 @@ scenarios: ["AI/ML项目", "大语言模型"]
 
 ### 相关文章
 
-- [构建极简编程代理的技术实践与经验总结]({{< relref "posts/20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-17.md" >}})
-- [Codex App：基于自然语言指令的代码生成工具]({{< relref "posts/20260203-hacker_news-the-codex-app-4.md" >}})
-- [Claude Code 的代码选择策略与工程实践]({{< relref "posts/20260227-hacker_news-what-claude-code-chooses-3.md" >}})
-- [Claude Code 的代码选择策略与工程实践]({{< relref "posts/20260227-hacker_news-what-claude-code-chooses-5.md" >}})
-- [Claude Code 的代码选择逻辑与工程实践]({{< relref "posts/20260227-hacker_news-what-claude-code-chooses-8.md" >}})
+- [构建极简编程代理的技术实践与经验总结]({{< relref "posts/20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-1.md" >}})
+- [Codex App：基于自然语言指令的代码生成工具]({{< relref "posts/20260202-hacker_news-the-codex-app-1.md" >}})
+- [Claude Code 的代码选择策略与工程实践]({{< relref "posts/20260226-hacker_news-what-claude-code-chooses-12.md" >}})
+- [Claude Code 的代码选择策略与工程实践]({{< relref "posts/20260226-hacker_news-what-claude-code-chooses-12.md" >}})
+- [Claude Code 的代码选择逻辑与工程实践]({{< relref "posts/20260226-hacker_news-what-claude-code-chooses-12.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

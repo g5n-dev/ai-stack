@@ -20,6 +20,10 @@ description: '**论文总结：LLM作为图核** **核心观点** 本文探讨�
 external_url: http://arxiv.org/abs/2603.14937v1
 scenarios:
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # LLM作为图核：文本丰富图的消息传递重思考
@@ -115,7 +119,6 @@ scenarios:
 
 ---
 
-### 1. 研究背景与问题
 
 ### 核心问题
 本文旨在解决**富文本图**上的深度学习与推理问题。核心痛点在于：现有的图神经网络（GNN）和图-大语言模型混合方法在处理包含丰富文本信息的图结构数据时，难以同时兼顾**复杂的图结构信息**与**深度的文本语义理解**。
@@ -136,7 +139,6 @@ scenarios:
 
 ---
 
-### 2. 核心方法与创新
 
 ### 核心方法：RAMP
 作者提出了 **RAMP**（Retrieval-Augmented Message Passing，基于原始文本锚定的消息传递）。其核心思想是将LLM不仅仅视为特征提取器，而是视为**图核**，即直接参与图结构中的消息传递和节点更新的计算单元。
@@ -156,7 +158,6 @@ scenarios:
 
 ---
 
-### 3. 理论基础
 
 ### 理论依据
 1.  **消息传递理论**：基于标准的GNN消息传递框架，但将聚合函数 $f_{agg}$ 和更新函数 $f_{update}$ 替换为LLM的生成过程。
@@ -171,7 +172,6 @@ scenarios:
 
 ---
 
-### 4. 实验与结果
 
 ### 实验设计
 论文通常在三个主流的富文本图数据集上进行评测：
@@ -191,7 +191,6 @@ scenarios:
 
 ---
 
-### 5. 应用前景
 
 ### 实际应用场景
 1.  **学术搜索与推荐**：理解论文之间的引用关系不仅基于关键词，还基于深层语义（如方法论的继承）。
@@ -203,7 +202,6 @@ scenarios:
 
 ---
 
-### 6. 研究启示
 
 ### 对领域的启示
 这篇论文标志着图学习从“特征工程”向“提示工程”和“生成式建模”的范式转移。它证明了图结构不仅用于聚合向量，更可以用于组织大模型的推理上下文。
@@ -215,7 +213,6 @@ scenarios:
 
 ---
 
-### 7. 学习建议
 
 ### 适合读者
 - 具有一定图神经网络（GNN）基础的研究者。
@@ -244,7 +241,6 @@ RAMP 属于 **Conceptual Innovation（概念创新）**。它并没有发明新�
 
 ---
 
-### 9. 研究哲学：可证伪性与边界
 
 ### 关键假设与归纳偏置
 - **假设1**：文本中的语义信息足以推断节点间的结构关系（语义即结构）。
@@ -528,8 +524,8 @@ RAMP 属于 **Conceptual Innovation（概念创新）**。它并没有发明新�
 
 ### 相关文章
 
-- [POET-X：通过正交变换扩展实现LLM高效训练]({{< relref "posts/20260308-arxiv_ai-poet-x-memory-efficient-llm-training-by-scaling-or-1.md" >}})
+- [POET-X：通过正交变换扩展实现LLM高效训练]({{< relref "posts/20260306-arxiv_ai-poet-x-memory-efficient-llm-training-by-scaling-or-1.md" >}})
 - [🔥LLM训练动力学新突破！可扩展损失景观曲率度量🚀]({{< relref "posts/20260126-arxiv_ai-a-scalable-measure-of-loss-landscape-curvature-for-1.md" >}})
-- [🔥LLM训练动力学新突破！可扩展损失景观曲率度量！]({{< relref "posts/20260127-arxiv_ai-a-scalable-measure-of-loss-landscape-curvature-for-1.md" >}})
+- [🔥LLM训练动力学新突破！可扩展损失景观曲率度量！]({{< relref "posts/20260126-arxiv_ai-a-scalable-measure-of-loss-landscape-curvature-for-1.md" >}})
 - [进化策略导致大语言模型出现灾难性遗忘]({{< relref "posts/20260129-arxiv_ai-evolutionary-strategies-lead-to-catastrophic-forge-0.md" >}})
 - [CATTO：平衡语言模型偏好与置信度的方法]({{< relref "posts/20260202-arxiv_ai-catto-balancing-preferences-and-confidence-in-lang-0.md" >}})

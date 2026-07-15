@@ -1,14 +1,30 @@
 ---
-title: "ChatGPT搜索与深度研究功能教程"
-date: 2026-04-10T22:49:19+08:00
+title: ChatGPT搜索与深度研究功能教程
+date: 2026-04-10 22:49:19+08:00
 draft: false
-entry_kind: "auto"
-tags: ["ChatGPT", "搜索功能", "深度研究", "AI助手", "使用教程", "信息获取", "提示词技巧", "大模型应用"]
-categories: ["大模型", "效率与方法论"]
+entry_kind: auto
+tags:
+- ChatGPT
+- 搜索功能
+- 深度研究
+- AI 助手
+- 使用教程
+- 信息获取
+- 提示词技巧
+- 大模型应用
+categories:
+- 大模型
+- 效率与方法论
 source: blogs_podcasts
-description: "搜索与深度研究 - 使用 ChatGPT 的搜索功能快速获取最新网络信息，支持多语言查询。 - 深度研究模式能够追踪来源、检索学术文献，并提供引用信息。 信息分析与结构化 - 自动评估可信度，过滤噪音，生成摘要或要点列表。 - 支持将结果整理为表格、流程图或思维导图，便于后续撰写报告。 实践建议 - 明确研究目标，细化"
+description: 搜索与深度研究 - 使用 ChatGPT 的搜索功能快速获取最新网络信息，支持多语言查询。 - 深度研究模式能够追踪来源、检索学术文献，并提供引用信息。
+  信息分析与结构化 - 自动评估可信度，过滤噪音，生成摘要或要点列表。 - 支持将结果整理为表格、流程图或思维导图，便于后续撰写报告。 实践建议 - 明确研究目标，细化
 external_url: https://openai.com/academy/search-and-deep-research
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # ChatGPT搜索与深度研究功能教程
@@ -123,8 +139,8 @@ ChatGPT研究功能的成熟正在重塑知识工作的生产方式。传统研�
 ### 相关文章
 
 - [用ChatGPT项目组织聊天文件和指令]({{< relref "posts/20260410-blogs_podcasts-using-projects-in-chatgpt-0.md" >}})
-- [微软 Copilot 聊天机器人遭遇运行问题]({{< relref "posts/20260205-hacker_news-microsofts-copilot-chatbot-is-running-into-problem-13.md" >}})
+- [微软 Copilot 聊天机器人遭遇运行问题]({{< relref "posts/20260205-hacker_news-microsofts-copilot-chatbot-is-running-into-problem-9.md" >}})
 - [OpenClaw：开源AI助手平台架构与演进]({{< relref "posts/20260228-juejin-openclaw开源ai助手平台的革命之路-0.md" >}})
 - [OpenAI 将在 ChatGPT 中停用 GPT-4o 等四款模型]({{< relref "posts/20260129-hacker_news-retiring-gpt-4o-gpt-41-gpt-41-mini-and-openai-o4-m-2.md" >}})
-- [OpenAI 将在 ChatGPT 中下架 GPT-4o 等四款模型]({{< relref "posts/20260129-hacker_news-retiring-gpt-4o-gpt-41-gpt-41-mini-and-openai-o4-m-4.md" >}})
+- [OpenAI 将在 ChatGPT 中下架 GPT-4o 等四款模型]({{< relref "posts/20260129-hacker_news-retiring-gpt-4o-gpt-41-gpt-41-mini-and-openai-o4-m-2.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

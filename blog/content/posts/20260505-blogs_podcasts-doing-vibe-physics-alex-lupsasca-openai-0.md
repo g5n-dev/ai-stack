@@ -1,14 +1,30 @@
 ---
-title: "OpenAI GPT-5.x在理论物理领域获新成果"
-date: 2026-05-05T21:14:18+08:00
+title: OpenAI GPT-5.x在理论物理领域获新成果
+date: 2026-05-05 21:14:18+08:00
 draft: false
-entry_kind: "auto"
-tags: ["GPT-5", "理论物理", "量子引力", "链式思维", "检索增强", "自验证", "物理学突破", "AI物理应用"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- GPT-5
+- 理论物理
+- 量子引力
+- 链式思维
+- 检索增强
+- 自验证
+- 物理学突破
+- AI物理应用
+categories:
+- 大模型
+- AI 工程
 source: blogs_podcasts
-description: "背景 OpenAI的Alex Lupsasca团队在“Doing Vibe Physics”项目中，探索GPT‑5.x在理论物理和量子引力领域的推导能力。 方法 模型通过大规模预训练获得广泛的物理知识，结合链式思维提示、检索增强和自检验机制，实现对复杂数学推导的自我纠错。团队设计了多轮对话，让模型模拟物理学家的思考过程"
+description: 背景 OpenAI的Alex Lupsasca团队在“Doing Vibe Physics”项目中，探索GPT‑5.x在理论物理和量子引力领域的推导能力。
+  方法 模型通过大规模预训练获得广泛的物理知识，结合链式思维提示、检索增强和自检验机制，实现对复杂数学推导的自我纠错。团队设计了多轮对话，让模型模拟物理学家的思考过程
 external_url: https://www.latent.space/p/lupsasca
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # OpenAI GPT-5.x在理论物理领域获新成果
@@ -144,9 +160,9 @@ GPT-5.x突破了传统语言模型的局限，实现了符号级别的数学操�
 
 ### 相关文章
 
-- [OpenAI 内部数据代理：结合 GPT-5 与记忆机制实现数据集快速推理]({{< relref "posts/20260131-blogs_podcasts-inside-openais-in-house-data-agent-2.md" >}})
+- [OpenAI 内部数据代理：结合 GPT-5 与记忆机制实现数据集快速推理]({{< relref "posts/20260129-hacker_news-openais-in-house-data-agent-14.md" >}})
 - [GPT-5结合云自动化将无细胞蛋白合成成本降低40%]({{< relref "posts/20260205-blogs_podcasts-gpt-5-lowers-the-cost-of-cell-free-protein-synthes-1.md" >}})
-- [NVIDIA AI-Q登顶DeepResearch Bench I与II榜单]({{< relref "posts/20260312-blogs_podcasts-how-nvidia-ai-q-reached-1-on-deepresearch-bench-i--7.md" >}})
-- [Sam Altman 全员大会复盘与 AI Combinator 解析]({{< relref "posts/20260129-blogs_podcasts-ainews-sam-altmans-ai-combinator-2.md" >}})
-- [OpenAI内部数据代理：结合GPT‑5与记忆快速分析海量数据]({{< relref "posts/20260129-blogs_podcasts-inside-openais-in-house-data-agent-1.md" >}})
+- [NVIDIA AI-Q登顶DeepResearch Bench I与II榜单]({{< relref "posts/20260312-blogs_podcasts-how-nvidia-ai-q-reached-1-on-deepresearch-bench-i--1.md" >}})
+- [Sam Altman 全员大会复盘与 AI Combinator 解析]({{< relref "posts/20260129-blogs_podcasts-ainews-sam-altmans-ai-combinator-0.md" >}})
+- [OpenAI内部数据代理：结合GPT‑5与记忆快速分析海量数据]({{< relref "posts/20260129-hacker_news-openais-in-house-data-agent-14.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

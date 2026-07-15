@@ -22,6 +22,10 @@ external_url: https://juejin.cn/post/7608236965554274347
 scenarios:
 - 大语言模型
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Agent 开发实战：赋予大模型工具调用能力
@@ -217,8 +221,8 @@ ReAct 是 **Reasoning（推理）** 和 **Acting（行动）** 的缩写，是�
 
 ### 相关文章
 
-- [OpenEnv实践：评估真实环境中的工具调用智能体]({{< relref "posts/20260212-blogs_podcasts-openenv-in-practice-evaluating-tool-using-agents-i-6.md" >}})
-- [OpenEnv 实战：评估真实环境中的工具调用智能体]({{< relref "posts/20260213-blogs_podcasts-openenv-in-practice-evaluating-tool-using-agents-i-11.md" >}})
-- [Anthropic发布基于METR数据的Agent自主性研究]({{< relref "posts/20260220-blogs_podcasts-ainews-anthropics-agent-autonomy-study-9.md" >}})
-- [AGENTS.md 架构在智能体评估中超越 Skills 技能]({{< relref "posts/20260130-hacker_news-agentsmd-outperforms-skills-in-our-agent-evals-5.md" >}})
+- [OpenEnv实践：评估真实环境中的工具调用智能体]({{< relref "posts/20260212-blogs_podcasts-openenv-in-practice-evaluating-tool-using-agents-i-4.md" >}})
+- [OpenEnv 实战：评估真实环境中的工具调用智能体]({{< relref "posts/20260212-blogs_podcasts-openenv-in-practice-evaluating-tool-using-agents-i-4.md" >}})
+- [Anthropic发布基于METR数据的Agent自主性研究]({{< relref "posts/20260219-blogs_podcasts-ainews-anthropics-agent-autonomy-study-0.md" >}})
+- [AGENTS.md 架构在智能体评估中超越 Skills 技能]({{< relref "posts/20260129-hacker_news-compressed-agentsmd-agent-skills-5.md" >}})
 - [Agent Skills：大模型智能体的技能评估框架]({{< relref "posts/20260203-hacker_news-agent-skills-0.md" >}})

@@ -1,14 +1,30 @@
 ---
-title: "学习动作先验实现跨具身机器人操作"
-date: 2026-06-25T23:42:10+08:00
+title: 学习动作先验实现跨具身机器人操作
+date: 2026-06-25 23:42:10+08:00
 draft: false
-entry_kind: "auto"
-tags: ["动作先验", "跨实体", "VLA模型", "流匹配", "机器人操作", "两阶段训练", "预训练", "视觉语言对齐"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- 动作先验
+- 跨实体
+- VLA模型
+- 流匹配
+- 机器人操作
+- 两阶段训练
+- 预训练
+- 视觉语言对齐
+categories:
+- 大模型
+- AI 工程
 source: arxiv
-description: "在视觉‑语言‑动作（VLA）模型中，动作模块通常只从零开始学习运动，缺乏显式的动作先验，导致早期必须同时捕捉时序动作动态和跨模态对齐，在跨实体场景下尤为困难。本文提出在跨模态对齐之前先对动作模块进行动作先验预训练，形成两阶段训练框架。 阶段一：动作先验学习 使用轻量级的流匹配（flow‑matching）编码器‑解码器"
+description: 在视觉‑语言‑动作（VLA）模型中，动作模块通常只从零开始学习运动，缺乏显式的动作先验，导致早期必须同时捕捉时序动作动态和跨模态对齐，在跨实体场景下尤为困难。本文提出在跨模态对齐之前先对动作模块进行动作先验预训练，形成两阶段训练框架。
+  阶段一：动作先验学习 使用轻量级的流匹配（flow‑matching）编码器‑解码器
 external_url: http://arxiv.org/abs/2606.26095v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 学习动作先验实现跨具身机器人操作
@@ -69,9 +85,9 @@ scenarios: ["Web应用开发"]
 
 ### 相关文章
 
-- [通过低秩近似优化大模型动量状态以降低显存占用]({{< relref "posts/20260303-arxiv_ai-taming-momentum-rethinking-optimizer-states-throug-4.md" >}})
+- [通过低秩近似优化大模型动量状态以降低显存占用]({{< relref "posts/20260302-arxiv_ai-taming-momentum-rethinking-optimizer-states-throug-4.md" >}})
 - [利用逻辑选项预训练提升深度强化学习]({{< relref "posts/20260309-arxiv_ai-boosting-deep-reinforcement-learning-using-pretrai-5.md" >}})
 - [如何进入前沿AI实验室从事预训练工作]({{< relref "posts/20260519-blogs_podcasts-ainews-how-to-land-a-job-at-a-frontier-lab-on-pret-0.md" >}})
 - [SplineFlow：基于B样条插值的动力系统流匹配方法]({{< relref "posts/20260202-arxiv_ai-splineflow-flow-matching-for-dynamical-systems-wit-8.md" >}})
-- [2026年AI展望：LLM、智能体、算力与Scaling Laws]({{< relref "posts/20260202-blogs_podcasts-490-state-of-ai-in-2026-llms-coding-scaling-laws-c-2.md" >}})
+- [2026年AI展望：LLM、智能体、算力与Scaling Laws]({{< relref "posts/20260201-blogs_podcasts-490-state-of-ai-in-2026-llms-coding-scaling-laws-c-0.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

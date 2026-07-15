@@ -1,14 +1,30 @@
 ---
-title: "OpenAI发布GPT-5.5"
-date: 2026-04-23T22:22:42+08:00
+title: OpenAI发布GPT-5.5
+date: 2026-04-23 22:22:42+08:00
 draft: false
-entry_kind: "auto"
-tags: ["GPT-5.5", "OpenAI", "大模型", "LLM", "语言模型", "人工智能", "模型发布", "深度学习"]
-categories: ["大模型"]
+entry_kind: auto
+tags:
+- GPT-5.5
+- OpenAI
+- 大模型
+- LLM
+- 语言模型
+- 人工智能
+- 模型发布
+- 深度学习
+categories:
+- 大模型
 source: hacker_news
-description: "GPT-5.5 是最新一代大规模语言模型，在多模态理解和长期记忆方面实现了显著突破。随着企业和开发者对其能力的关注度提升，了解其核心架构与实际表现变得尤为必要。本文将系统解析 GPT-5.5 的技术细节、性能基准以及在不同场景下的应用案例，帮助读者快速把握该模型的创新点与使用策略。"
+description: GPT-5.5 是最新一代大规模语言模型，在多模态理解和长期记忆方面实现了显著突破。随着企业和开发者对其能力的关注度提升，了解其核心架构与实际表现变得尤为必要。本文将系统解析
+  GPT-5.5 的技术细节、性能基准以及在不同场景下的应用案例，帮助读者快速把握该模型的创新点与使用策略。
 external_url: https://openai.com/index/introducing-gpt-5-5
-scenarios: ["AI/ML项目", "大语言模型"]
+scenarios:
+- AI/ML项目
+- 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # OpenAI发布GPT-5.5
@@ -69,9 +85,9 @@ GPT-5.5 是最新一代大规模语言模型，在多模态理解和长期记忆
 
 ### 相关文章
 
-- [Claude Opus 4.6 发布]({{< relref "posts/20260206-hacker_news-claude-opus-46-3.md" >}})
+- [Claude Opus 4.6 发布]({{< relref "posts/20260205-hacker_news-claude-opus-46-2.md" >}})
 - [OpenAI发布GPT-5.3-Codex代码生成模型]({{< relref "posts/20260206-hacker_news-gpt-53-codex-8.md" >}})
 - [GPT‑5.3 Instant 模型发布]({{< relref "posts/20260303-hacker_news-gpt53-instant-2.md" >}})
 - [OpenAI发布GPT-5.4：百万token上下文与计算机使用能力]({{< relref "posts/20260305-blogs_podcasts-introducing-gpt-54-6.md" >}})
-- [LLM中的L代表撒谎：大语言模型幻觉现象分析]({{< relref "posts/20260305-hacker_news-the-l-in-llm-stands-for-lying-4.md" >}})
+- [LLM中的L代表撒谎：大语言模型幻觉现象分析]({{< relref "posts/20260305-hacker_news-the-l-in-llm-stands-for-lying-9.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

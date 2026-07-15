@@ -1,14 +1,30 @@
 ---
-title: "AI智能体智能路由：Amazon Bedrock按付费方案实践"
-date: 2026-06-22T19:43:56+08:00
+title: AI智能体智能路由：Amazon Bedrock按付费方案实践
+date: 2026-06-22 19:43:56+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI智能体", "智能路由", "AmazonBedrock", "按需付费", "AgentCore", "成本优化", "模型选择", "AWS"]
-categories: ["AI 工程", "大模型"]
+entry_kind: auto
+tags:
+- AI 智能体
+- 智能路由
+- Amazon Bedrock
+- 按需付费
+- AgentCore
+- 成本优化
+- 模型选择
+- AWS
+categories:
+- AI 工程
+- 大模型
 source: blogs_podcasts
-description: "背景与需求 AI 代理在运行时需要根据任务特性动态选择最合适的模型，同时要控制成本并实现按需付费。传统方案往往一次性锁定模型或采用固定计费，难以满足弹性扩展和费用透明的需求。 架构概览 Ampersend 在 Amazon Bedrock AgentCore Payments 之上构建了“按智能付费”(pay‑per‑"
+description: 背景与需求 AI 代理在运行时需要根据任务特性动态选择最合适的模型，同时要控制成本并实现按需付费。传统方案往往一次性锁定模型或采用固定计费，难以满足弹性扩展和费用透明的需求。
+  架构概览 Ampersend 在 Amazon Bedrock AgentCore Payments 之上构建了“按智能付费”(pay‑per‑
 external_url: https://aws.amazon.com/blogs/machine-learning/building-pay-per-intelligence-for-ai-agents-how-ampersend-uses-amazon-bedrock-agentcore-payments
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AI智能体智能路由：Amazon Bedrock按付费方案实践
@@ -169,9 +185,9 @@ Amazon Bedrock AgentCore Payments提供了两层核心能力：一是标准化�
 
 ### 相关文章
 
-- [利用 Amazon Bedrock 在数百万 IoT 设备上部署生成式 AI]({{< relref "posts/20260212-blogs_podcasts-swann-provides-generative-ai-to-millions-of-iot-de-3.md" >}})
-- [Iberdrola 如何利用 Amazon Bedrock AgentCore 优化 ServiceNow I]({{< relref "posts/20260212-blogs_podcasts-iberdrola-enhances-it-operations-using-amazon-bedr-11.md" >}})
+- [利用 Amazon Bedrock 在数百万 IoT 设备上部署生成式 AI]({{< relref "posts/20260211-blogs_podcasts-swann-provides-generative-ai-to-millions-of-iot-de-2.md" >}})
+- [Iberdrola 如何利用 Amazon Bedrock AgentCore 优化 ServiceNow I]({{< relref "posts/20260210-blogs_podcasts-iberdrola-enhances-it-operations-using-amazon-bedr-1.md" >}})
 - [Amazon Bedrock AgentCore 浏览器新增代理、配置文件及扩展支持]({{< relref "posts/20260213-blogs_podcasts-customize-ai-agent-browsing-with-proxies-profiles--0.md" >}})
-- [Amazon Bedrock AgentCore 浏览器更新：新增代理、配置文件及扩展支持]({{< relref "posts/20260214-blogs_podcasts-customize-ai-agent-browsing-with-proxies-profiles--1.md" >}})
-- [Amazon Bedrock AgentCore 浏览器新增代理配置、配置文件及扩展支持]({{< relref "posts/20260216-blogs_podcasts-customize-ai-agent-browsing-with-proxies-profiles--2.md" >}})
+- [Amazon Bedrock AgentCore 浏览器更新：新增代理、配置文件及扩展支持]({{< relref "posts/20260213-blogs_podcasts-customize-ai-agent-browsing-with-proxies-profiles--0.md" >}})
+- [Amazon Bedrock AgentCore 浏览器新增代理配置、配置文件及扩展支持]({{< relref "posts/20260213-blogs_podcasts-customize-ai-agent-browsing-with-proxies-profiles--0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

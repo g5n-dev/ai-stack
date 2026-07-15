@@ -1,14 +1,32 @@
 ---
-title: "Spring AI 多模型对话实战：统一接口与 Redis 记忆"
-date: 2026-02-17T15:40:46+08:00
+title: Spring AI 多模型对话实战：统一接口与 Redis 记忆
+date: 2026-02-17 15:40:46+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Spring AI", "LLM", "OpenAI", "Ollama", "Redis", "SSE", "AOP", "流式输出"]
-categories: ["后端", "AI 工程"]
+entry_kind: auto
+tags:
+- Spring AI
+- LLM
+- OpenAI
+- Ollama
+- Redis
+- SSE
+- AOP
+- 流式输出
+categories:
+- 后端
+- AI 工程
 source: juejin
-description: "这是一份关于 **Spring AI 多模型对话实战 Demo** 的简洁总结： **1. 核心功能：多模型统一适配** 该 Demo 实现了一套 API 接口同时兼容 **OpenAI** 和 **Ollama** 两种大模型服务。系统通过 参数进行智能路由，支持在运行时动态覆盖模型名称，开发者无需为不同模型编写重复"
+description: 这是一份关于 **Spring AI 多模型对话实战 Demo** 的简洁总结： **1. 核心功能：多模型统一适配** 该 Demo 实现了一套
+  API 接口同时兼容 **OpenAI** 和 **Ollama** 两种大模型服务。系统通过 参数进行智能路由，支持在运行时动态覆盖模型名称，开发者无需为不同模型编写重复
 external_url: https://juejin.cn/post/7606793134375534655
-scenarios: ["AI/ML项目", "大语言模型", "后端开发"]
+scenarios:
+- AI/ML项目
+- 大语言模型
+- 后端开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Spring AI 多模型对话实战：统一接口与 Redis 记忆
@@ -177,9 +195,9 @@ Spring AI 为 Java 生态接入大模型提供了标准化的解决方案，但�
 
 ### 相关文章
 
-- [Kirara-ai：支持多平台接入的多模态AI聊天机器人]({{< relref "posts/20260129-github_trending-lss233-kirara-ai-2.md" >}})
-- [kirara-ai：支持多平台接入的多模态AI聊天机器人框架]({{< relref "posts/20260131-github_trending-lss233-kirara-ai-2.md" >}})
+- [Kirara-ai：支持多平台接入的多模态AI聊天机器人]({{< relref "posts/20260127-github_trending-lss233-kirara-ai-2.md" >}})
+- [kirara-ai：支持多平台接入的多模态AI聊天机器人框架]({{< relref "posts/20260127-github_trending-lss233-kirara-ai-2.md" >}})
 - [发现逾17.5万个Ollama AI实例公网暴露]({{< relref "posts/20260131-hacker_news-175k-publicly-exposed-ollama-ai-instances-discover-19.md" >}})
-- [多模态 AI 聊天机器人 Kirara AI：支持多平台接入与主流模型]({{< relref "posts/20260201-github_trending-lss233-kirara-ai-6.md" >}})
+- [多模态 AI 聊天机器人 Kirara AI：支持多平台接入与主流模型]({{< relref "posts/20260127-github_trending-lss233-kirara-ai-2.md" >}})
 - [Codex 应用：基于 GPT-3 的代码生成工具]({{< relref "posts/20260202-hacker_news-the-codex-app-1.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

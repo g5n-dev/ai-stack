@@ -10,7 +10,7 @@ tags:
 - 雅可比正则化
 - 多智能体
 - 系统稳定性
-- LLM安全
+- LLM 安全
 - 极小化极大
 categories:
 - 大模型
@@ -22,6 +22,12 @@ external_url: http://arxiv.org/abs/2603.04378v1
 scenarios:
 - AI/ML项目
 - 大语言模型
+aliases:
+- /posts/20260306-arxiv_ai-robustness-of-agentic-ai-systems-via-adversarially-8/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 基于对抗雅可比正则化的智能体系统鲁棒性增强方法
@@ -513,7 +519,7 @@ Agentic AI 系统的核心在于调用外部工具（API、数据库等）。攻
 ### 相关文章
 
 - [🛡️多模态大模型鲁棒性突破！特征空间平滑实现可证防御！]({{< relref "posts/20260125-arxiv_ai-provable-robustness-in-multimodal-large-language-m-4.md" >}})
-- [OpenAI 如何通过内置安全机制防范 AI 代理点击链接时的数据泄露与提示词注入]({{< relref "posts/20260129-blogs_podcasts-keeping-your-data-safe-when-an-ai-agent-clicks-a-l-6.md" >}})
+- [OpenAI 如何通过内置安全机制防范 AI 代理点击链接时的数据泄露与提示词注入]({{< relref "posts/20260129-blogs_podcasts-keeping-your-data-safe-when-an-ai-agent-clicks-a-l-5.md" >}})
 - [恶意提示词分类器在真实分布偏移下的评估方法]({{< relref "posts/20260217-arxiv_ai-when-benchmarks-lie-evaluating-malicious-prompt-cl-8.md" >}})
-- [不要轻信盐值：AI摘要、多语言安全与大模型防护]({{< relref "posts/20260220-hacker_news-dont-trust-the-salt-ai-summarization-multilingual--13.md" >}})
+- [不要轻信盐值：AI摘要、多语言安全与大模型防护]({{< relref "posts/20260219-hacker_news-dont-trust-the-salt-ai-summarization-multilingual--1.md" >}})
 - [迈向智能体系统规模化科学：作用机制与生效条件]({{< relref "posts/20260201-hacker_news-towards-a-science-of-scaling-agent-systems-when-an-11.md" >}})

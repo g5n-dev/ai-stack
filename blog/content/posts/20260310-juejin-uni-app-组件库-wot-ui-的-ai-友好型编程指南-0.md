@@ -7,7 +7,7 @@ tags:
 - Wot UI
 - uni-app
 - AI 辅助开发
-- VSCode
+- VS Code
 - Cursor
 - 组件库
 - AI 友好
@@ -22,6 +22,10 @@ description: 由于提供的内容在最后一句被截断（“TR”），以�
 external_url: https://juejin.cn/post/7615161431982686218
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Wot UI 组件库 AI 友好型编程指南
@@ -186,8 +190,8 @@ AI 模型有时会基于旧版训练数据生成过时的代码。如果遇到�
 
 ### 相关文章
 
-- [OpenAI Codex 应用：VSCode 分支终结与多任务工作树]({{< relref "posts/20260204-blogs_podcasts-ainews-openai-codex-app-death-of-the-vscode-fork-m-3.md" >}})
-- [Agent Lab收购Graphite与Autotab并开启软件开发第三时代]({{< relref "posts/20260306-blogs_podcasts-cursors-third-era-cloud-agents-6.md" >}})
-- [Agent Lab 收购 Graphite 与 Autotab，推出 Cloud Agents 开启软件开发新]({{< relref "posts/20260307-blogs_podcasts-cursors-third-era-cloud-agents-5.md" >}})
-- [AgentLab收购Graphite与Autotab并发布Cloud Agents开启软件开发第三时代]({{< relref "posts/20260307-blogs_podcasts-cursors-third-era-cloud-agents-6.md" >}})
-- [Cursor收购Graphite与Autotab，开启软件开发第三纪元]({{< relref "posts/20260309-blogs_podcasts-cursors-third-era-cloud-agents-13.md" >}})
+- [OpenAI Codex 应用：VSCode 分支终结与多任务工作树]({{< relref "posts/20260203-blogs_podcasts-ainews-openai-codex-app-death-of-the-vscode-fork-m-0.md" >}})
+- [Agent Lab收购Graphite与Autotab并开启软件开发第三时代]({{< relref "posts/20260306-blogs_podcasts-cursors-third-era-cloud-agents-0.md" >}})
+- [Agent Lab 收购 Graphite 与 Autotab，推出 Cloud Agents 开启软件开发新]({{< relref "posts/20260306-blogs_podcasts-cursors-third-era-cloud-agents-0.md" >}})
+- [AgentLab收购Graphite与Autotab并发布Cloud Agents开启软件开发第三时代]({{< relref "posts/20260306-blogs_podcasts-cursors-third-era-cloud-agents-0.md" >}})
+- [Cursor收购Graphite与Autotab，开启软件开发第三纪元]({{< relref "posts/20260306-blogs_podcasts-cursors-third-era-cloud-agents-0.md" >}})

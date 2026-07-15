@@ -1,14 +1,30 @@
 ---
-title: "Amazon Nova Sonic语音智能体架构设计与工具集成实践"
-date: 2026-05-19T16:35:42+08:00
+title: Amazon Nova Sonic语音智能体架构设计与工具集成实践
+date: 2026-05-19 16:35:42+08:00
 draft: false
-entry_kind: "auto"
-tags: ["语音智能体", "NovaSonic", "多智能体", "工具集成", "延迟优化", "会话分割", "Bedrock", "可扩展性"]
-categories: ["AI 工程", "系统与基础设施"]
+entry_kind: auto
+tags:
+- 语音智能体
+- NovaSonic
+- 多智能体
+- 工具集成
+- 延迟优化
+- 会话分割
+- Bedrock
+- 可扩展性
+categories:
+- AI 工程
+- 系统与基础设施
 source: blogs_podcasts
-description: "语音智能体在客户服务场景中的需求快速增长，但实现大规模、低延迟且易于维护的方案仍具挑战。本文深入探讨基于 Amazon Nova Sonic、Bedrock AgentCore 与 Strands BidiAgent 的三种主流架构，剖析各自的优势与取舍，并提供降低响应延迟的实战技巧。阅读后，你将掌握构建可扩展、响应迅"
+description: 语音智能体在客户服务场景中的需求快速增长，但实现大规模、低延迟且易于维护的方案仍具挑战。本文深入探讨基于 Amazon Nova Sonic、Bedrock
+  AgentCore 与 Strands BidiAgent 的三种主流架构，剖析各自的优势与取舍，并提供降低响应延迟的实战技巧。阅读后，你将掌握构建可扩展、响应迅
 external_url: https://aws.amazon.com/blogs/machine-learning/scalable-voice-agent-design-with-amazon-nova-sonic-multi-agent-tools-and-session-segmentation
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Amazon Nova Sonic语音智能体架构设计与工具集成实践
@@ -153,7 +169,7 @@ Amazon Nova Sonic 与 Bedrock AgentCore、Strands BidiAgent 组合，可
 
 - [NanoClaw 容器支持 Claude Agent Swarms]({{< relref "posts/20260209-hacker_news-nanoclaw-now-supports-claudes-agent-swarms-in-cont-19.md" >}})
 - [代理式AI实现光学系统可扩展鲁棒控制]({{< relref "posts/20260224-arxiv_ai-agentic-ai-for-scalable-and-robust-optical-systems-5.md" >}})
-- [基于Amazon SageMaker AI构建无服务器对话AI代理]({{< relref "posts/20260303-blogs_podcasts-build-a-serverless-conversational-ai-agent-using-c-13.md" >}})
+- [基于Amazon SageMaker AI构建无服务器对话AI代理]({{< relref "posts/20260302-blogs_podcasts-build-a-serverless-conversational-ai-agent-using-c-1.md" >}})
 - [理光基于AWS构建可扩展智能文档处理方案]({{< relref "posts/20260304-blogs_podcasts-how-ricoh-built-a-scalable-intelligent-document-pr-0.md" >}})
-- [基于AWS构建Ricoh可扩展智能文档处理解决方案]({{< relref "posts/20260305-blogs_podcasts-how-ricoh-built-a-scalable-intelligent-document-pr-13.md" >}})
+- [基于AWS构建Ricoh可扩展智能文档处理解决方案]({{< relref "posts/20260304-blogs_podcasts-how-ricoh-built-a-scalable-intelligent-document-pr-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

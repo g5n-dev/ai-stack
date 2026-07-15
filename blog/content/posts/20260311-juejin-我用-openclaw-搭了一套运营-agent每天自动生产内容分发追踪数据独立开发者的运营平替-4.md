@@ -10,7 +10,7 @@ tags:
 - 独立开发
 - 内容分发
 - 工作流自动化
-- LLM应用
+- LLM 应用
 - 效率工具
 categories:
 - AI 工程
@@ -22,6 +22,10 @@ external_url: https://juejin.cn/post/7615162276907352116
 scenarios:
 - 大语言模型
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 我用 OpenClaw 搭建运营 Agent 实现内容自动化
@@ -204,8 +208,8 @@ OpenClaw 是一个开源的、基于大语言模型（LLM）的自动化运营�
 
 ### 相关文章
 
-- [基于OpenClaw构建16个AI Agent实现多平台自动化运营]({{< relref "posts/20260220-juejin-用openclaw搭了16个ai-agent一个人运营13个自媒体平台-3.md" >}})
-- [LinqAlpha利用Amazon Bedrock构建投资思路压力测试智能体]({{< relref "posts/20260212-blogs_podcasts-how-linqalpha-assesses-investment-theses-using-dev-6.md" >}})
+- [基于OpenClaw构建16个AI Agent实现多平台自动化运营]({{< relref "posts/20260219-juejin-用openclaw搭了16个ai-agent一个人运营13个自媒体平台-1.md" >}})
+- [LinqAlpha利用Amazon Bedrock构建投资思路压力测试智能体]({{< relref "posts/20260211-blogs_podcasts-how-linqalpha-assesses-investment-theses-using-dev-3.md" >}})
 - [OpenClaw：比Apple Intelligence更实用的本地AI工具]({{< relref "posts/20260205-hacker_news-openclaw-is-what-apple-intelligence-should-have-be-0.md" >}})
 - [Claude Composer：AI 编排多 Agent 协作完成复杂任务]({{< relref "posts/20260206-hacker_news-claude-composer-9.md" >}})
 - [OpenClaw赋予AI全系统权限引发安全担忧]({{< relref "posts/20260206-hacker_news-openclaw-when-ai-agents-get-full-system-access-sec-14.md" >}})

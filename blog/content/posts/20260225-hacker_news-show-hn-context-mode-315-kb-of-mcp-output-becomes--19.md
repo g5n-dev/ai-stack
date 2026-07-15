@@ -22,6 +22,10 @@ description: 在 AI 编程工作流中，上下文窗口的容量往往决定了
 external_url: https://github.com/mksglu/claude-context-mode
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Context Mode 将 315 KB MCP 输出压缩至 5.4 KB

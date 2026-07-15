@@ -24,6 +24,10 @@ scenarios:
 - Web应用开发
 - AI/ML项目
 - 命令行工具
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # WebMCP 协议实战：通过原生接口实现 AI 对网页的低延迟精准操作
@@ -168,7 +172,7 @@ WebMCP 是一种基于 Model Context Protocol (MCP) 的实现方式，旨在将�
 ### 相关文章
 
 - [WebMCP：变革 AI 访问 Web 的自动化与交互模式]({{< relref "posts/20260216-juejin-webmcp-时代在浏览器中释放-ai-的工作能力-0.md" >}})
-- [WebMCP：改变 AI 访问 Web 方式的未来派技术提案]({{< relref "posts/20260216-juejin-webmcp-时代在浏览器中释放-ai-的工作能力-2.md" >}})
-- [WebMCP：改变 AI 访问 Web 方式的前端交互提案]({{< relref "posts/20260217-juejin-webmcp-时代在浏览器中释放-ai-的工作能力-2.md" >}})
-- [Tambo 1.0：开源 AI Agent 工具包支持渲染 React 组件]({{< relref "posts/20260211-hacker_news-tambo-10-open-source-toolkit-for-agents-that-rende-17.md" >}})
+- [WebMCP：改变 AI 访问 Web 方式的未来派技术提案]({{< relref "posts/20260216-juejin-webmcp-时代在浏览器中释放-ai-的工作能力-0.md" >}})
+- [WebMCP：改变 AI 访问 Web 方式的前端交互提案]({{< relref "posts/20260216-juejin-webmcp-时代在浏览器中释放-ai-的工作能力-0.md" >}})
+- [Tambo 1.0：开源 AI Agent 工具包支持渲染 React 组件]({{< relref "posts/20260211-hacker_news-tambo-10-open-source-toolkit-for-agents-that-rende-12.md" >}})
 - [利用 Amazon Nova Sonic 构建实时语音助手及架构选型指南]({{< relref "posts/20260210-blogs_podcasts-building-real-time-voice-assistants-with-amazon-no-2.md" >}})

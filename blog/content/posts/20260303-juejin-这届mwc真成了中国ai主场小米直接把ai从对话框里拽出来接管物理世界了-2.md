@@ -6,7 +6,7 @@ entry_kind: auto
 tags:
 - 小米
 - MWC
-- AI应用
+- AI 应用
 - 物理世界
 - 智能家居
 - 人机交互
@@ -21,6 +21,10 @@ description: MWC（世界移动通信大会）已成为中国AI的主场，小�
 external_url: https://juejin.cn/post/7612919237413650447
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 小米MWC展示AI技术：从对话框走向物理世界控制
@@ -179,8 +183,8 @@ MWC（世界移动通信大会）已成为中国AI的主场，小米等企业正
 
 ### 相关文章
 
-- [我的AI应用实践历程]({{< relref "posts/20260206-hacker_news-my-ai-adoption-journey-12.md" >}})
+- [我的AI应用实践历程]({{< relref "posts/20260205-hacker_news-my-ai-adoption-journey-6.md" >}})
 - [OpenAI发布欧盟经济蓝图2.0 加速欧洲AI应用与增长]({{< relref "posts/20260129-blogs_podcasts-the-next-chapter-for-ai-in-the-eu-2.md" >}})
-- [OpenAI发布《欧盟经济蓝图2.0》加速欧洲AI应用与增长]({{< relref "posts/20260129-blogs_podcasts-the-next-chapter-for-ai-in-the-eu-3.md" >}})
+- [OpenAI发布《欧盟经济蓝图2.0》加速欧洲AI应用与增长]({{< relref "posts/20260129-blogs_podcasts-the-next-chapter-for-ai-in-the-eu-2.md" >}})
 - [构建AI版Wattpad以评估大模型小说创作能力]({{< relref "posts/20260203-hacker_news-show-hn-i-built-ai-wattpad-to-eval-llms-on-fiction-19.md" >}})
-- [我的 AI 技术应用实践与经验总结]({{< relref "posts/20260205-hacker_news-my-ai-adoption-journey-3.md" >}})
+- [我的 AI 技术应用实践与经验总结]({{< relref "posts/20260205-hacker_news-my-ai-adoption-journey-6.md" >}})

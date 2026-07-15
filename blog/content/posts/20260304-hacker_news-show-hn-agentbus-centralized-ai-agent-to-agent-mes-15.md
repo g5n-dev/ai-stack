@@ -22,6 +22,10 @@ description: 随着多智能体系统的应用场景日益复杂，如何实现�
 external_url: https://agentbus.org
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AgentBus：基于REST API的AI智能体集中式消息传递服务

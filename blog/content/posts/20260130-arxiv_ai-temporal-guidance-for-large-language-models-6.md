@@ -1,14 +1,30 @@
 ---
-title: "面向大语言模型的时间引导机制"
-date: 2026-01-30T03:54:32+08:00
+title: 面向大语言模型的时间引导机制
+date: 2026-01-30 03:54:32+08:00
 draft: false
-entry_kind: "auto"
-tags: ["LLM", "对比解码", "时间引导", "TeGu", "多令牌预测", "MTP", "cMTPP", "推理优化"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- LLM
+- 对比解码
+- 时间引导
+- TeGu
+- 多令牌预测
+- MTP
+- cMTPP
+- 推理优化
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "**Temporal Guidance for Large Language Models（大语言模型的时间引导）** **核心背景与问题：** 对比解码（CD）能提升大语言模型（LLM）的生成质量，但传统方法通常依赖辅助模型，导致计算开销巨大。现有的内部自对比方法（如DoLa）虽然无需辅助模型，但主要关注层与层之间的"
+description: '**Temporal Guidance for Large Language Models（大语言模型的时间引导）** **核心背景与问题：**
+  对比解码（CD）能提升大语言模型（LLM）的生成质量，但传统方法通常依赖辅助模型，导致计算开销巨大。现有的内部自对比方法（如DoLa）虽然无需辅助模型，但主要关注层与层之间的'
 external_url: http://arxiv.org/abs/2601.21744v1
-scenarios: ["大语言模型"]
+scenarios:
+- 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 面向大语言模型的时间引导机制
@@ -232,7 +248,6 @@ TeGu的主要创新在于**视角的转换**。它将MTP这一训练加速技术
 - **理论推断**：作者声称
 
 ---
-## 研究最佳实践
 
 ## 最佳实践指南
 
@@ -333,7 +348,6 @@ TeGu的主要创新在于**视角的转换**。它将MTP这一训练加速技术
 - 这种时间条件控制机制为构建下一代“可控”大语言模型提供了通用且高效的范式，平衡了性能与计算成本。
 
 ---
-## 学习路径
 
 ## 学习路径
 
@@ -524,8 +538,8 @@ TeGu的主要创新在于**视角的转换**。它将MTP这一训练加速技术
 ### 相关文章
 
 - [🚀RL新突破！复用FLOPs，硬难题上通过离线前缀扩展]({{< relref "posts/20260127-arxiv_ai-reuse-your-flops-scaling-rl-on-hard-problems-by-co-1.md" >}})
-- [Trinity Large：开源4000亿参数稀疏MoE模型]({{< relref "posts/20260129-hacker_news-trinity-large-an-open-400b-sparse-moe-model-6.md" >}})
+- [Trinity Large：开源4000亿参数稀疏MoE模型]({{< relref "posts/20260129-hacker_news-trinity-large-an-open-400b-sparse-moe-model-4.md" >}})
 - [进化策略导致大语言模型出现灾难性遗忘]({{< relref "posts/20260129-arxiv_ai-evolutionary-strategies-lead-to-catastrophic-forge-0.md" >}})
 - [SokoBench：评估大模型长程规划与推理能力]({{< relref "posts/20260129-arxiv_ai-sokobench-evaluating-long-horizon-planning-and-rea-2.md" >}})
-- [Alyah：评估阿拉伯语大模型阿联酋方言能力]({{< relref "posts/20260129-blogs_podcasts-alyah-toward-robust-evaluation-of-emirati-dialect--8.md" >}})
+- [Alyah：评估阿拉伯语大模型阿联酋方言能力]({{< relref "posts/20260127-blogs_podcasts-alyah-toward-robust-evaluation-of-emirati-dialect--0.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

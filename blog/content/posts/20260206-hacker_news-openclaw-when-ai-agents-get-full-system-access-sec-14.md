@@ -1,14 +1,33 @@
 ---
-title: "OpenClaw赋予AI全系统权限引发安全担忧"
-date: 2026-02-06T00:00:46+08:00
+title: OpenClaw赋予AI全系统权限引发安全担忧
+date: 2026-02-06 00:00:46+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI Agents", "系统安全", "OpenClaw", "权限管理", "LLM", "自动化风险", "网络安全", "Agent"]
-categories: ["安全", "AI 工程"]
+entry_kind: auto
+tags:
+- AI Agents
+- 系统安全
+- OpenClaw
+- 权限管理
+- LLM
+- 自动化风险
+- 网络安全
+- Agent
+categories:
+- 安全
+- AI 工程
 source: hacker_news
-description: "赋予 AI 智能体完整的系统访问权限，在提升自动化效率的同时，也带来了前所未有的安全挑战。本文以 OpenClaw 为例，深入探讨了当 AI 拥有高度控制权时可能引发的边界问题与潜在风险。通过分析技术原理与实际影响，文章旨在帮助开发者与安全研究人员在构建智能系统时，能够更全面地评估权限边界，从而在功能拓展与安全防御之间"
-external_url: https://innfactory.ai:443/en/blog/openclaw-ai-agent-security
-scenarios: ["AI/ML项目", "大语言模型"]
+description: 赋予 AI 智能体完整的系统访问权限，在提升自动化效率的同时，也带来了前所未有的安全挑战。本文以 OpenClaw 为例，深入探讨了当 AI
+  拥有高度控制权时可能引发的边界问题与潜在风险。通过分析技术原理与实际影响，文章旨在帮助开发者与安全研究人员在构建智能系统时，能够更全面地评估权限边界，从而在功能拓展与安全防御之间
+external_url: https://innfactory.ai/en/blog/openclaw-ai-agent-security
+scenarios:
+- AI/ML项目
+- 大语言模型
+aliases:
+- /posts/20260206-hacker_news-openclaw-when-ai-agents-get-full-system-access-sec-19/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # OpenClaw赋予AI全系统权限引发安全担忧
@@ -280,7 +299,6 @@ AI Agent 在一次针对 Linux 文件系统的探索中，发现了一个配置�
 这种“非破坏性预览”模式成为了该工具的核心卖点。用户敢于让 AI 尝试大规模重构（如升级所有依赖包、统一代码风格），因为所有的修改都是可视化的、可撤销的。该机制消除了开发者对于 AI 获得文件系统写权限的恐惧，工具的周活跃用户增长了 40%。
 
 ---
-## 最佳实践
 
 ## 最佳实践指南
 
@@ -432,9 +450,9 @@ AI Agent 在一次针对 Linux 文件系统的探索中，发现了一个配置�
 
 ### 相关文章
 
-- [RedSage：网络安全通用大语言模型]({{< relref "posts/20260131-arxiv_ai-redsage-a-cybersecurity-generalist-llm-0.md" >}})
+- [RedSage：网络安全通用大语言模型]({{< relref "posts/20260130-arxiv_ai-redsage-a-cybersecurity-generalist-llm-0.md" >}})
 - [发现逾17.5万个Ollama AI实例公网暴露]({{< relref "posts/20260131-hacker_news-175k-publicly-exposed-ollama-ai-instances-discover-19.md" >}})
 - [MaliciousCorgi：恶意AI扩展将代码发送至中国]({{< relref "posts/20260202-hacker_news-maliciouscorgi-ai-extensions-send-your-code-to-chi-5.md" >}})
 - [Ghidra MCP Server发布：集成110款工具实现AI辅助逆向工程]({{< relref "posts/20260204-hacker_news-show-hn-ghidra-mcp-server-110-tools-for-ai-assiste-1.md" >}})
-- [Ghidra MCP Server：集成110款工具实现AI辅助逆向工程]({{< relref "posts/20260204-hacker_news-show-hn-ghidra-mcp-server-110-tools-for-ai-assiste-14.md" >}})
+- [Ghidra MCP Server：集成110款工具实现AI辅助逆向工程]({{< relref "posts/20260204-hacker_news-show-hn-ghidra-mcp-server-110-tools-for-ai-assiste-1.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

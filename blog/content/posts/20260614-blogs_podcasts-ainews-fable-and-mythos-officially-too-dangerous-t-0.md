@@ -1,14 +1,29 @@
 ---
-title: "AI项目Fable和Mythos被指危险无法发布"
-date: 2026-06-14T20:37:05+08:00
+title: AI项目Fable和Mythos被指危险无法发布
+date: 2026-06-14 20:37:05+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI安全", "AI监管", "大模型发布", "AI风险", "危险项目", "技术伦理", "AI治理", "模型限制"]
-categories: ["大模型", "安全"]
+entry_kind: auto
+tags:
+- AI 安全
+- AI监管
+- 大模型发布
+- AI风险
+- 危险项目
+- 技术伦理
+- AI 治理
+- 模型限制
+categories:
+- 大模型
+- 安全
 source: blogs_podcasts
-description: "据AINews报道，Fable和Mythos两款AI模型因潜在危险被官方判定为“太危险而无法发布”，引发业界对AI安全监管的热议。评论者用“我们正处于最离奇的时间线”形容当前形势，暗示AI技术的快速发展已超出公众预期。"
+description: 据AINews报道，Fable和Mythos两款AI模型因潜在危险被官方判定为“太危险而无法发布”，引发业界对AI安全监管的热议。评论者用“我们正处于最离奇的时间线”形容当前形势，暗示AI技术的快速发展已超出公众预期。
 external_url: https://www.latent.space/p/ainews-fable-and-mythos-officially
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AI项目Fable和Mythos被指危险无法发布
@@ -140,9 +155,9 @@ AI 生成叙事系统（Fable 与 Mythos）在缺乏完善安全防护的情况�
 
 ### 相关文章
 
-- [2026年度负责任人工智能进展报告]({{< relref "posts/20260218-blogs_podcasts-our-2026-responsible-ai-progress-report-2.md" >}})
-- [2026年负责任AI进展报告]({{< relref "posts/20260218-blogs_podcasts-our-2026-responsible-ai-progress-report-3.md" >}})
-- [Anthropic 放弃核心安全承诺]({{< relref "posts/20260226-hacker_news-anthropic-ditches-its-core-safety-promise-3.md" >}})
+- [2026年度负责任人工智能进展报告]({{< relref "posts/20260218-blogs_podcasts-our-2026-responsible-ai-progress-report-1.md" >}})
+- [2026年负责任AI进展报告]({{< relref "posts/20260218-blogs_podcasts-our-2026-responsible-ai-progress-report-1.md" >}})
+- [Anthropic 放弃核心安全承诺]({{< relref "posts/20260226-hacker_news-anthropic-ditches-its-core-safety-promise-5.md" >}})
 - [Anthropic指控三家中国公司大规模蒸馏模型]({{< relref "posts/20260306-juejin-anthropic突然开火中国大模型被指大规模蒸馏攻击-1.md" >}})
-- [EMEA青年与福祉资助金：50万欧元支持AI时代青年安全福祉研究]({{< relref "posts/20260129-blogs_podcasts-emea-youth-wellbeing-grant-4.md" >}})
+- [EMEA青年与福祉资助金：50万欧元支持AI时代青年安全福祉研究]({{< relref "posts/20260129-blogs_podcasts-emea-youth-wellbeing-grant-3.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

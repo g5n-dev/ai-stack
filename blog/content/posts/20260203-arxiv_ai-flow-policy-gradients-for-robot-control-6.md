@@ -1,14 +1,32 @@
 ---
-title: "基于流策略梯度的机器人控制方法"
-date: 2026-02-03T23:08:59+08:00
+title: 基于流策略梯度的机器人控制方法
+date: 2026-02-03 23:08:59+08:00
 draft: false
-entry_kind: "auto"
-tags: ["机器人控制", "流匹配", "策略梯度", "强化学习", "Sim2Real", "人形机器人", "机械臂", "腿足运动"]
-categories: ["论文", "大模型"]
+entry_kind: auto
+tags:
+- 机器人控制
+- 流匹配
+- 策略梯度
+- 强化学习
+- Sim2Real
+- 人形机器人
+- 机械臂
+- 腿足运动
+categories:
+- 论文
+- 大模型
 source: arxiv
-description: "以下是对该内容的中文总结： **标题：用于机器人控制的流策略梯度** 本文提出了一种基于**流匹配策略梯度**的新方法，旨在解决机器人控制中传统策略梯度方法的局限性。 **核心问题与解决方案：** 传统的基于似然的策略梯度方法（主流方法）依赖于可微分的动作似然，这迫使策略输出仅限于简单分布（如高斯分布），限制了表达能力"
+description: 以下是对该内容的中文总结： **标题：用于机器人控制的流策略梯度** 本文提出了一种基于**流匹配策略梯度**的新方法，旨在解决机器人控制中传统策略梯度方法的局限性。
+  **核心问题与解决方案：** 传统的基于似然的策略梯度方法（主流方法）依赖于可微分的动作似然，这迫使策略输出仅限于简单分布（如高斯分布），限制了表达能力
 external_url: http://arxiv.org/abs/2602.02481v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+aliases:
+- /posts/20260204-arxiv_ai-flow-policy-gradients-for-robot-control-6/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 基于流策略梯度的机器人控制方法
@@ -245,7 +263,6 @@ $$ L(\theta) = \mathbb{E}_{t, p_t(x_t|s), x_1 \sim p_{data}(\cdot|s)} \| v_t(x_t
 Flow Policy 在保留 Diffusion Policy 强大表达能力的同时，显著降低了推理成本。它填补了“轻量级RL算法”与“重型生成式RL算法”之间的空白。在该领域，它代表了一种向**高效生成
 
 ---
-## 研究最佳实践
 
 ## 最佳实践指南
 
@@ -335,7 +352,6 @@ Critic 网络的训练
 - 该框架具有通用性，可无缝集成到现有的策略梯度算法中，为解决高维机器人控制问题提供了一种新思路。
 
 ---
-## 学习路径
 
 ## 学习路径
 
@@ -497,7 +513,7 @@ Critic 网络的训练
 
 ### 相关文章
 
-- [NVIDIA Cosmos策略：提升机器人高级控制能力]({{< relref "posts/20260130-blogs_podcasts-introducing-nvidia-cosmos-policy-for-advanced-robo-1.md" >}})
+- [NVIDIA Cosmos策略：提升机器人高级控制能力]({{< relref "posts/20260129-blogs_podcasts-introducing-nvidia-cosmos-policy-for-advanced-robo-0.md" >}})
 - [共享自治系统中信念与策略学习的端到端优化]({{< relref "posts/20260202-arxiv_ai-end-to-end-optimization-of-belief-and-policy-learn-1.md" >}})
 - [RN-D：基于正则化网络的离散分类演员与同策强化学习]({{< relref "posts/20260202-arxiv_ai-rn-d-discretized-categorical-actors-with-regulariz-7.md" >}})
 - [DynaWeb：基于模型的强化学习网页智能体]({{< relref "posts/20260130-arxiv_ai-dynaweb-model-based-reinforcement-learning-of-web--6.md" >}})

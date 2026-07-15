@@ -1,14 +1,31 @@
 ---
-title: "基于Amazon Nova多模态嵌入的航天制造文档检索系统"
-date: 2026-05-11T17:46:13+08:00
+title: 基于Amazon Nova多模态嵌入的航天制造文档检索系统
+date: 2026-05-11 17:46:13+08:00
 draft: false
-entry_kind: "auto"
-tags: ["多模态检索", "RAG", "向量数据库", "Amazon Bedrock", "文档智能", "航空制造", "Nova", "S3"]
-categories: ["AI 工程", "大模型"]
+entry_kind: auto
+tags:
+- 多模态检索
+- RAG
+- 向量数据库
+- Amazon Bedrock
+- 文档智能
+- 航空制造
+- Nova
+- S3
+categories:
+- AI 工程
+- 大模型
 source: blogs_podcasts
-description: "背景与目标 航空航天的制造文档兼具文字、图像、表格等多模态信息，传统的全文检索难以充分利用这些内容。本文旨在利用 Amazon Nova Multimodal Embeddings，在 Amazon Bedrock 上构建多模态检索系统，并在 26 条实际制造查询上比较仅文本管道与多模态管道的生成质量。 系统架构 1."
+description: 背景与目标 航空航天的制造文档兼具文字、图像、表格等多模态信息，传统的全文检索难以充分利用这些内容。本文旨在利用 Amazon Nova
+  Multimodal Embeddings，在 Amazon Bedrock 上构建多模态检索系统，并在 26 条实际制造查询上比较仅文本管道与多模态管道的生成质量。
+  系统架构 1.
 external_url: https://aws.amazon.com/blogs/machine-learning/manufacturing-intelligence-with-amazon-nova-multimodal-embeddings
-scenarios: ["RAG应用"]
+scenarios:
+- RAG应用
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 基于Amazon Nova多模态嵌入的航天制造文档检索系统
@@ -138,8 +155,8 @@ scenarios: ["RAG应用"]
 
 ### 相关文章
 
-- [Amazon Bedrock AgentCore 浏览器更新：新增代理、配置文件及扩展支持]({{< relref "posts/20260214-blogs_podcasts-customize-ai-agent-browsing-with-proxies-profiles--1.md" >}})
-- [利用Amazon Bedrock构建生产级智能活动助理]({{< relref "posts/20260225-blogs_podcasts-building-intelligent-event-agents-using-amazon-bed-1.md" >}})
+- [Amazon Bedrock AgentCore 浏览器更新：新增代理、配置文件及扩展支持]({{< relref "posts/20260213-blogs_podcasts-customize-ai-agent-browsing-with-proxies-profiles--0.md" >}})
+- [利用Amazon Bedrock构建生产级智能活动助理]({{< relref "posts/20260225-blogs_podcasts-building-intelligent-event-agents-using-amazon-bed-0.md" >}})
 - [AI Agent 开发入门技术栈选型指南]({{< relref "posts/20260309-juejin-ai-agent-技术栈选型入门只需要这些-3.md" >}})
 - [AI大模型应用指南：RAG技术原理与企业知识库搭建]({{< relref "posts/20260312-juejin-ai大模型小白手册-rag技术与应用-1.md" >}})
 - [💥文本为王！揭秘AI时代最被低估的核心价值！]({{< relref "posts/20260126-hacker_news-text-is-king-11.md" >}})

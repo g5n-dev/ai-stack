@@ -21,6 +21,10 @@ description: 随着生成式 AI 的快速发展，Anthropic 和 OpenAI 已成为
 external_url: https://anthropic-timeline.vercel.app
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Anthropic、OpenAI与美国政府关系时间线

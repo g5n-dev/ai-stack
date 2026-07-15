@@ -10,7 +10,7 @@ tags:
 - 模拟仿真
 - 开源项目
 - LLM
-- AI应用
+- AI 应用
 - 社会模拟
 categories:
 - 开源生态
@@ -22,6 +22,10 @@ external_url: https://github.com/nocodemf/werld
 scenarios:
 - 大语言模型
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 构建智能体文明：多智能体协作系统开源

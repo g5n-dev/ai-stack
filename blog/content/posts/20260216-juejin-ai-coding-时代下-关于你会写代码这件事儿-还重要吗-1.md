@@ -1,14 +1,31 @@
 ---
-title: "AI Coding 时代下，开发者写代码能力的价值与思考"
-date: 2026-02-16T23:54:05+08:00
+title: AI Coding 时代下，开发者写代码能力的价值与思考
+date: 2026-02-16 23:54:05+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI Coding", "大模型", "职业发展", "前端面试", "开发者", "工程化", "思考", "Copilot"]
-categories: ["前端", "效率与方法论"]
+entry_kind: auto
+tags:
+- AI Coding
+- 大模型
+- 职业发展
+- 前端面试
+- 开发者
+- 工程化
+- 思考
+- Copilot
+categories:
+- 前端
+- 效率与方法论
 source: juejin
-description: "这段内容主要讲述了作者在 AI Coding（AI 编程）时代背景下，对“写代码”这一核心技能价值的重新审视，并因此暂停了前端面试系列内容的更新。 以下是详细总结： **1. 背景与现状** 作者从 2023 年 3 月 15 日起持续更新前端面试系列，从未间断，但在半年前决定停止更新。 **2. 根本原因** 导致这"
+description: 这段内容主要讲述了作者在 AI Coding（AI 编程）时代背景下，对“写代码”这一核心技能价值的重新审视，并因此暂停了前端面试系列内容的更新。
+  以下是详细总结： **1. 背景与现状** 作者从 2023 年 3 月 15 日起持续更新前端面试系列，从未间断，但在半年前决定停止更新。 **2. 根本原因**
+  导致这
 external_url: https://juejin.cn/post/7606245109203992628
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AI Coding 时代下，开发者写代码能力的价值与思考
@@ -199,9 +216,9 @@ scenarios: ["AI/ML项目"]
 
 ### 相关文章
 
-- [AI如何影响技能形成与构建]({{< relref "posts/20260130-hacker_news-how-ai-impacts-skill-formation-13.md" >}})
+- [AI如何影响技能形成与构建]({{< relref "posts/20260130-hacker_news-how-ai-impacts-skill-formation-3.md" >}})
 - [AI对工程类岗位的影响或与预期不同]({{< relref "posts/20260129-hacker_news-ais-impact-on-engineering-jobs-may-be-different-th-3.md" >}})
-- [AI辅助编程如何影响代码技能的形成]({{< relref "posts/20260130-hacker_news-how-ai-assistance-impacts-the-formation-of-coding--10.md" >}})
-- [AI 辅助编程对代码技能形成的影响研究]({{< relref "posts/20260130-hacker_news-how-ai-assistance-impacts-the-formation-of-coding--11.md" >}})
-- [AI辅助编程对代码技能形成的影响研究]({{< relref "posts/20260130-hacker_news-how-ai-assistance-impacts-the-formation-of-coding--12.md" >}})
+- [AI辅助编程如何影响代码技能的形成]({{< relref "posts/20260130-hacker_news-way-ai-assistance-impacts-the-formation-of-coding--17.md" >}})
+- [AI 辅助编程对代码技能形成的影响研究]({{< relref "posts/20260130-hacker_news-way-ai-assistance-impacts-the-formation-of-coding--17.md" >}})
+- [AI辅助编程对代码技能形成的影响研究]({{< relref "posts/20260130-hacker_news-way-ai-assistance-impacts-the-formation-of-coding--17.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

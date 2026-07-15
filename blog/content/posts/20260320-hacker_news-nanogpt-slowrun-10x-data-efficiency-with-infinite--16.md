@@ -20,6 +20,10 @@ description: 在大规模语言模型训练中，数据成本往往是制约效�
 external_url: https://qlabs.sh/10x
 scenarios:
 - Web应用开发
+content_mode: legacy_source_brief
+publication_tier: C
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # NanoGPT慢速运行实现10倍数据效率方案

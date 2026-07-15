@@ -942,3 +942,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     )
     print(json.dumps(report.to_dict(), sort_keys=True, separators=(",", ":")))
     return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

@@ -21,6 +21,10 @@ description: 易车 × Apache Doris：构建湖仓一体新架构，加速 AI �
 external_url: https://juejin.cn/post/7613680097549762575
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 易车基于Apache Doris构建湖仓一体架构加速AI业务落地
@@ -199,7 +203,7 @@ Apache Doris 通过引入**倒排索引**和**向量索引**功能，原生支�
 ### 相关文章
 
 - [NanoClaw 容器支持 Claude Agent Swarms]({{< relref "posts/20260209-hacker_news-nanoclaw-now-supports-claudes-agent-swarms-in-cont-19.md" >}})
-- [Jeff Dean：重塑谷歌搜索栈与TPU架构的AI系统设计之路]({{< relref "posts/20260213-blogs_podcasts-owning-the-ai-pareto-frontier-jeff-dean-1.md" >}})
-- [Jeff Dean：重写搜索栈、复兴稀疏万亿参数模型与TPU共设计]({{< relref "posts/20260213-blogs_podcasts-owning-the-ai-pareto-frontier-jeff-dean-4.md" >}})
-- [Jeff Dean：重写搜索栈、TPU 与稀疏万亿参数模型]({{< relref "posts/20260213-blogs_podcasts-owning-the-ai-pareto-frontier-jeff-dean-5.md" >}})
-- [Jeff Dean：重塑搜索栈、复兴稀疏模型与TPU设计]({{< relref "posts/20260214-blogs_podcasts-owning-the-ai-pareto-frontier-jeff-dean-7.md" >}})
+- [Jeff Dean：重塑谷歌搜索栈与TPU架构的AI系统设计之路]({{< relref "posts/20260212-blogs_podcasts-owning-the-ai-pareto-frontier-jeff-dean-0.md" >}})
+- [Jeff Dean：重写搜索栈、复兴稀疏万亿参数模型与TPU共设计]({{< relref "posts/20260212-blogs_podcasts-owning-the-ai-pareto-frontier-jeff-dean-0.md" >}})
+- [Jeff Dean：重写搜索栈、TPU 与稀疏万亿参数模型]({{< relref "posts/20260212-blogs_podcasts-owning-the-ai-pareto-frontier-jeff-dean-0.md" >}})
+- [Jeff Dean：重塑搜索栈、复兴稀疏模型与TPU设计]({{< relref "posts/20260212-blogs_podcasts-owning-the-ai-pareto-frontier-jeff-dean-0.md" >}})

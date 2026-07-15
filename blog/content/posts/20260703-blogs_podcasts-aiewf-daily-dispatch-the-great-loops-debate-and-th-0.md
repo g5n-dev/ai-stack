@@ -1,14 +1,29 @@
 ---
-title: "AIEWF闭幕：循环辩论与AI工程现状报告"
-date: 2026-07-03T12:33:08+08:00
+title: AIEWF闭幕：循环辩论与AI工程现状报告
+date: 2026-07-03 12:33:08+08:00
 draft: false
-entry_kind: "auto"
-tags: ["循环结构", "工具链", "模型部署", "人才需求", "多模态模型", "可解释性", "开源社区", "低碳计算"]
-categories: ["大模型"]
+entry_kind: auto
+tags:
+- 循环结构
+- 工具链
+- 模型部署
+- 人才需求
+- 多模态模型
+- 可解释性
+- 开源社区
+- 低碳计算
+categories:
+- 大模型
 source: blogs_podcasts
-description: "议程概览 AIEWF（AI Engineer World’s Fair）在闭幕阶段安排了三大环节：围绕“loops”的辩论、工程现状报告以及聚焦“接下来要构建什么”的闭幕主题演讲。 “Loops”辩论核心 - 辩论围绕 AI 系统中**循环结构**的设计意义展开，主要争议点包括：循环是增强模型递归能力的必要手段，还是导"
+description: 议程概览 AIEWF（AI Engineer World’s Fair）在闭幕阶段安排了三大环节：围绕“loops”的辩论、工程现状报告以及聚焦“接下来要构建什么”的闭幕主题演讲。
+  “Loops”辩论核心 - 辩论围绕 AI 系统中**循环结构**的设计意义展开，主要争议点包括：循环是增强模型递归能力的必要手段，还是导
 external_url: https://www.latent.space/p/aiewf-daily-dispatch-locomotives
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AIEWF闭幕：循环辩论与AI工程现状报告
@@ -83,6 +98,6 @@ AIEWF（AI Engineer World’s Fair）在闭幕阶段安排了三大环节：围�
 - [VLMs对描述内容的视觉感知机制研究]({{< relref "posts/20260615-arxiv_ai-gaze-heads-how-vlms-look-at-what-they-describe-0.md" >}})
 - [DeALOG：基于日志中介的去中心化多智能体推理框架]({{< relref "posts/20260203-arxiv_ai-dealog-decentralized-multi-agents-log-mediated-rea-4.md" >}})
 - [学习大模型神经元激活的生成式元模型]({{< relref "posts/20260209-arxiv_ai-learning-a-generative-meta-model-of-llm-activation-0.md" >}})
-- [因果性是可解释性泛化的关键]({{< relref "posts/20260220-arxiv_ai-causality-is-key-for-interpretability-claims-to-ge-5.md" >}})
+- [因果性是可解释性泛化的关键]({{< relref "posts/20260219-arxiv_ai-causality-is-key-for-interpretability-claims-to-ge-5.md" >}})
 - [行为学习：从数据中学习分层优化结构]({{< relref "posts/20260224-arxiv_ai-behavior-learning-bl-learning-hierarchical-optimiz-3.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

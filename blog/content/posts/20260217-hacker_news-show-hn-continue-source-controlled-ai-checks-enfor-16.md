@@ -1,14 +1,31 @@
 ---
-title: "Continue：源码控制的AI检查与CI强制执行"
-date: 2026-02-17T19:23:24+08:00
+title: Continue：源码控制的AI检查与CI强制执行
+date: 2026-02-17 19:23:24+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Continue", "CI/CD", "源码控制", "AI 检查", "代码审查", "DevOps", "自动化", "Hacker News"]
-categories: ["开发工具", "AI 工程"]
+entry_kind: auto
+tags:
+- Continue
+- CI/CD
+- 源码控制
+- AI 检查
+- 代码审查
+- DevOps
+- 自动化
+- Hacker News
+categories:
+- 开发工具
+- AI 工程
 source: hacker_news
-description: "在 AI 编程助手日益普及的今天，如何将生成的代码纳入现有的版本控制与质量保障体系，已成为工程团队面临的新挑战。Continue 试图通过“源代码控制的 AI 检查”来解决这个问题，它允许开发者将 AI 审查逻辑作为代码提交，并在 CI 流水线中强制执行。本文将介绍该工具的设计思路与集成方式，帮助你平衡开发效率与代码合"
+description: 在 AI 编程助手日益普及的今天，如何将生成的代码纳入现有的版本控制与质量保障体系，已成为工程团队面临的新挑战。Continue 试图通过“源代码控制的
+  AI 检查”来解决这个问题，它允许开发者将 AI 审查逻辑作为代码提交，并在 CI 流水线中强制执行。本文将介绍该工具的设计思路与集成方式，帮助你平衡开发效率与代码合
 external_url: https://docs.continue.dev
-scenarios: ["AI/ML项目", "DevOps/运维"]
+scenarios:
+- AI/ML项目
+- DevOps/运维
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Continue：源码控制的AI检查与CI强制执行
@@ -240,7 +257,6 @@ CI 流程自动拦截了 15% 包含潜在安全风险的合并请求。开发者
 测试覆盖率从原来的 78% 提升至 92%。AI 检查成功捕捉到了多起“逻辑已修改但测试未更新”的情况，有效防止了回归 Bug 进入生产环境。开发人员反馈，AI 能在 CI 阶段直接指出测试用例中的逻辑漏洞，比事后运行 CI 失败后的排查要高效得多。
 
 ---
-## 最佳实践
 
 ## 最佳实践指南
 
@@ -405,9 +421,9 @@ CI 流程自动拦截了 15% 包含潜在安全风险的合并请求。开发者
 
 ### 相关文章
 
-- [Claude Code：面向基础设施的编程工具]({{< relref "posts/20260205-hacker_news-claude-code-for-infrastructure-15.md" >}})
-- [代理式开发加速测试演进，JiTTesting 实现缺陷即时发现]({{< relref "posts/20260212-blogs_podcasts-the-death-of-traditional-testing-agentic-developme-6.md" >}})
-- [Show HN：让 Claude Code/Codex 自动调配虚拟机和 GPU 的工具]({{< relref "posts/20260213-hacker_news-show-hn-skill-that-lets-claude-codecodex-spin-up-v-6.md" >}})
-- [Skill让Claude Code/Codex直接调用VM与GPU]({{< relref "posts/20260214-hacker_news-show-hn-skill-that-lets-claude-codecodex-spin-up-v-6.md" >}})
-- [AI 代码审查的真实世界基准测试]({{< relref "posts/20260205-hacker_news-a-real-world-benchmark-for-ai-code-review-3.md" >}})
+- [Claude Code：面向基础设施的编程工具]({{< relref "posts/20260204-hacker_news-claude-code-for-infrastructure-11.md" >}})
+- [代理式开发加速测试演进，JiTTesting 实现缺陷即时发现]({{< relref "posts/20260211-blogs_podcasts-the-death-of-traditional-testing-agentic-developme-0.md" >}})
+- [Show HN：让 Claude Code/Codex 自动调配虚拟机和 GPU 的工具]({{< relref "posts/20260213-hacker_news-show-hn-skill-that-lets-claude-codecodex-spin-up-v-4.md" >}})
+- [Skill让Claude Code/Codex直接调用VM与GPU]({{< relref "posts/20260213-hacker_news-show-hn-skill-that-lets-claude-codecodex-spin-up-v-4.md" >}})
+- [AI 代码审查的真实世界基准测试]({{< relref "posts/20260204-hacker_news-a-real-world-benchmark-for-ai-code-review-2.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

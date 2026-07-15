@@ -1,14 +1,32 @@
 ---
-title: "恶意提示词分类器在真实分布偏移下的评估方法"
-date: 2026-02-17T03:10:02+08:00
+title: 恶意提示词分类器在真实分布偏移下的评估方法
+date: 2026-02-17 03:10:02+08:00
 draft: false
-entry_kind: "auto"
-tags: ["LLM安全", "提示词注入", "越狱攻击", "分布偏移", "评估基准", "LODO", "对抗样本", "AI安全"]
-categories: ["大模型", "安全"]
+entry_kind: auto
+tags:
+- LLM 安全
+- 提示词注入
+- 越狱攻击
+- 分布偏移
+- 评估基准
+- LODO
+- 对抗样本
+- AI 安全
+categories:
+- 大模型
+- 安全
 source: arxiv
-description: "本文探讨了在评估大语言模型（LLM）恶意提示词分类器时现有基准测试的局限性，并提出了一种更严谨的评估方法。以下是主要内容的总结： **1. 现状与问题** 随着LLM智能体处理来自邮件、文档和API等不受信任数据的增加，检测提示词注入和越狱攻击变得至关重要。然而，目前的评估实践和生产级安全防护系统存在根本缺陷。 **2"
+description: 本文探讨了在评估大语言模型（LLM）恶意提示词分类器时现有基准测试的局限性，并提出了一种更严谨的评估方法。以下是主要内容的总结： **1.
+  现状与问题** 随着LLM智能体处理来自邮件、文档和API等不受信任数据的增加，检测提示词注入和越狱攻击变得至关重要。然而，目前的评估实践和生产级安全防护系统存在根本缺陷。
+  **2
 external_url: http://arxiv.org/abs/2602.14161v1
-scenarios: ["大语言模型", "AI/ML项目"]
+scenarios:
+- 大语言模型
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 恶意提示词分类器在真实分布偏移下的评估方法
@@ -177,7 +195,6 @@ LODO方法逻辑清晰，易于实现。其最大的贡献在于将复杂的分�
 通过数学模型与特征归因分析，研究证实了当训练集和测试集来源不同时，分类器的性能会显著低于传统基准测试的结果。这表明当前许多分类器的“高安全性”主要源于对已知数据集的过拟合，而非具备了对未知威胁的泛化防御能力。
 
 ---
-## 研究最佳实践
 
 ## 最佳实践指南
 
@@ -268,7 +285,6 @@ LODO方法逻辑清晰，易于实现。其最大的贡献在于将复杂的分�
 - 研究发现模型在越狱检测上的表现与其参数规模或基础模型的能力并不完全成正比，专门优化的轻量级模型有时比超大模型更具实战防御价值。
 
 ---
-## 学习路径
 
 ## 学习路径
 
@@ -445,9 +461,9 @@ LODO方法逻辑清晰，易于实现。其最大的贡献在于将复杂的分�
 
 ### 相关文章
 
-- [OpenAI 如何通过内置安全机制防范 AI 代理点击链接时的数据泄露与提示词注入]({{< relref "posts/20260129-blogs_podcasts-keeping-your-data-safe-when-an-ai-agent-clicks-a-l-6.md" >}})
-- [心理越狱揭示前沿模型内部冲突]({{< relref "posts/20260205-hacker_news-psychometric-jailbreaks-reveal-internal-conflict-i-11.md" >}})
+- [OpenAI 如何通过内置安全机制防范 AI 代理点击链接时的数据泄露与提示词注入]({{< relref "posts/20260129-blogs_podcasts-keeping-your-data-safe-when-an-ai-agent-clicks-a-l-5.md" >}})
+- [心理越狱揭示前沿模型内部冲突]({{< relref "posts/20260205-hacker_news-psychometric-jailbreaks-reveal-internal-conflict-i-10.md" >}})
 - [ChatGPT推出锁定模式与高风险标记以防御提示词注入]({{< relref "posts/20260213-blogs_podcasts-introducing-lockdown-mode-and-elevated-risk-labels-0.md" >}})
-- [ChatGPT推出锁定模式与高风险标签防御提示词注入]({{< relref "posts/20260213-blogs_podcasts-introducing-lockdown-mode-and-elevated-risk-labels-1.md" >}})
-- [ChatGPT推出锁定模式与高危标签以防范提示词注入及数据外泄]({{< relref "posts/20260214-blogs_podcasts-introducing-lockdown-mode-and-elevated-risk-labels-2.md" >}})
+- [ChatGPT推出锁定模式与高风险标签防御提示词注入]({{< relref "posts/20260213-blogs_podcasts-introducing-lockdown-mode-and-elevated-risk-labels-0.md" >}})
+- [ChatGPT推出锁定模式与高危标签以防范提示词注入及数据外泄]({{< relref "posts/20260213-blogs_podcasts-introducing-lockdown-mode-and-elevated-risk-labels-0.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

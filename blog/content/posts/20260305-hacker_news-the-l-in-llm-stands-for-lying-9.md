@@ -6,7 +6,7 @@ entry_kind: auto
 tags:
 - LLM
 - 幻觉
-- AI安全
+- AI 安全
 - 模型评估
 - 自然语言处理
 - 深度学习
@@ -22,6 +22,14 @@ external_url: https://acko.net/blog/the-l-in-llm-stands-for-lying
 scenarios:
 - 大语言模型
 - AI/ML项目
+aliases:
+- /posts/20260305-hacker_news-the-l-in-llm-stands-for-lying-2/
+- /posts/20260305-hacker_news-the-l-in-llm-stands-for-lying-3/
+- /posts/20260305-hacker_news-the-l-in-llm-stands-for-lying-4/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # LLM中的L代表谎言：大语言模型的幻觉问题分析

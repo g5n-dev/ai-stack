@@ -21,6 +21,10 @@ description: 以下是对该内容的简要总结： 本文介绍了LlamaIndex�
 external_url: https://juejin.cn/post/7606973101920157723
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # LlamaIndex官方方案：用AgentFS沙盒构建安全AI编码智能体
@@ -186,8 +190,8 @@ LlamaIndex 提供了多个组件来辅助构建：
 
 ### 相关文章
 
-- [AGENTS.md 架构在智能体评估中超越 Skills 技能]({{< relref "posts/20260130-hacker_news-agentsmd-outperforms-skills-in-our-agent-evals-5.md" >}})
-- [LangBot：生产级多平台智能体机器人开发平台]({{< relref "posts/20260201-github_trending-langbot-app-langbot-0.md" >}})
+- [AGENTS.md 架构在智能体评估中超越 Skills 技能]({{< relref "posts/20260129-hacker_news-compressed-agentsmd-agent-skills-5.md" >}})
+- [LangBot：生产级多平台智能体机器人开发平台]({{< relref "posts/20260131-github_trending-langbot-app-langbot-7.md" >}})
 - [Agent Skills：大模型智能体的技能评估框架]({{< relref "posts/20260203-hacker_news-agent-skills-0.md" >}})
-- [Agent Skills：AI 智能体技能框架]({{< relref "posts/20260203-hacker_news-agent-skills-1.md" >}})
-- [Agent Skills：AI 智能体的技能框架]({{< relref "posts/20260203-hacker_news-agent-skills-3.md" >}})
+- [Agent Skills：AI 智能体技能框架]({{< relref "posts/20260203-hacker_news-agent-skills-0.md" >}})
+- [Agent Skills：AI 智能体的技能框架]({{< relref "posts/20260203-hacker_news-agent-skills-0.md" >}})

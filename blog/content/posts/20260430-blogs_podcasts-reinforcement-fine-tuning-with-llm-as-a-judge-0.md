@@ -1,14 +1,32 @@
 ---
-title: "Amazon Nova模型的RLAIF强化学习微调实践"
-date: 2026-04-30T23:11:36+08:00
+title: Amazon Nova模型的RLAIF强化学习微调实践
+date: 2026-04-30 23:11:36+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Amazon Nova", "RLAIF", "强化学习", "模型微调", "LLM-as-a-judge", "大模型", "AI训练", "强化学习微调"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- Amazon Nova
+- RLAIF
+- 强化学习
+- 模型微调
+- LLM-as-a-judge
+- 大模型
+- AI训练
+- 强化学习微调
+categories:
+- 大模型
+- AI 工程
 source: blogs_podcasts
-description: "本文聚焦于利用LLM-as-a-judge实现的强化学习（又称RLAIF），并展示其在AmazonNova模型微调中的具体流程与效果。通过自动化的评判信号，模型可以在无需大量人工标注的前提下持续优化策略，显著提升生成质量与一致性。文章将剖析关键技术环节，包括评判模型选择、奖励设计及训练稳定性，并给出实验数据与实战经验，"
+description: 本文聚焦于利用LLM-as-a-judge实现的强化学习（又称RLAIF），并展示其在AmazonNova模型微调中的具体流程与效果。通过自动化的评判信号，模型可以在无需大量人工标注的前提下持续优化策略，显著提升生成质量与一致性。文章将剖析关键技术环节，包括评判模型选择、奖励设计及训练稳定性，并给出实验数据与实战经验，
 external_url: https://aws.amazon.com/blogs/machine-learning/reinforcement-fine-tuning-with-llm-as-a-judge
-scenarios: ["AI/ML项目", "大语言模型"]
+scenarios:
+- AI/ML项目
+- 大语言模型
+aliases:
+- /posts/20260501-blogs_podcasts-reinforcement-fine-tuning-with-llm-as-a-judge-0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Amazon Nova模型的RLAIF强化学习微调实践
@@ -136,8 +154,8 @@ scenarios: ["AI/ML项目", "大语言模型"]
 ### 相关文章
 
 - [AWS Lambda为Amazon Nova构建可扩展奖励函数的最佳实践]({{< relref "posts/20260413-blogs_podcasts-how-to-build-effective-reward-functions-with-aws-l-0.md" >}})
-- [使用Lambda设计Amazon Nova模型的奖励函数指南]({{< relref "posts/20260414-blogs_podcasts-how-to-build-effective-reward-functions-with-aws-l-0.md" >}})
-- [16个开源RL库经验总结：维持Token流的关键]({{< relref "posts/20260310-blogs_podcasts-keep-the-tokens-flowing-lessons-from-16-open-sourc-9.md" >}})
+- [使用Lambda设计Amazon Nova模型的奖励函数指南]({{< relref "posts/20260413-blogs_podcasts-how-to-build-effective-reward-functions-with-aws-l-0.md" >}})
+- [16个开源RL库经验总结：维持Token流的关键]({{< relref "posts/20260310-blogs_podcasts-keep-the-tokens-flowing-lessons-from-16-open-sourc-2.md" >}})
 - [基于人类反馈的强化学习机制解析]({{< relref "posts/20260207-hacker_news-reinforcement-learning-from-human-feedback-3.md" >}})
 - [基于人类反馈的强化学习：原理与应用]({{< relref "posts/20260207-hacker_news-reinforcement-learning-from-human-feedback-4.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

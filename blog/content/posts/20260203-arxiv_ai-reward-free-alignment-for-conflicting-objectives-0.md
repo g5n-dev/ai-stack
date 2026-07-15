@@ -1,14 +1,32 @@
 ---
-title: "无奖励对齐技术处理多目标冲突"
-date: 2026-02-03T23:08:59+08:00
+title: 无奖励对齐技术处理多目标冲突
+date: 2026-02-03 23:08:59+08:00
 draft: false
-entry_kind: "auto"
-tags: ["RACO", "对齐技术", "多目标优化", "RLHF", "模型微调", "帕累托最优", "梯度裁剪", "Qwen"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- RACO
+- 对齐技术
+- 多目标优化
+- RLHF
+- 模型微调
+- 帕累托最优
+- 梯度裁剪
+- Qwen
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "本文针对大语言模型（LLM）在面临多个相互冲突的目标（如摘要质量与安全性）时的对齐问题，提出了一种名为 **RACO（Reward-free Alignment for Conflicted Objectives）** 的无奖励对齐框架。 **主要背景与挑战：** 现有的直接对齐方法在处理多目标优化时面临困难。传统的加"
+description: 本文针对大语言模型（LLM）在面临多个相互冲突的目标（如摘要质量与安全性）时的对齐问题，提出了一种名为 **RACO（Reward-free
+  Alignment for Conflicted Objectives）** 的无奖励对齐框架。 **主要背景与挑战：** 现有的直接对齐方法在处理多目标优化时面临困难。传统的加
 external_url: http://arxiv.org/abs/2602.02495v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+aliases:
+- /posts/20260204-arxiv_ai-reward-free-alignment-for-conflicting-objectives-0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 无奖励对齐技术处理多目标冲突
@@ -229,7 +247,6 @@ RACO的创新性在于将**多目标优化的几何视角**引入到了**LLM的�
 *   **理论推断**：裁剪操作能加速收敛。这依赖于特定的凸性假设和梯度噪声假设，在实际的非凸LLM景观中，虽然实验
 
 ---
-## 研究最佳实践
 
 ## 最佳实践指南
 
@@ -325,7 +342,6 @@ Reward-free Alignment 通常建议将训练过程分为两个阶段。第一阶�
 - 该方法为解决现实世界中常见的多目标优化问题提供了一种新的思路，例如在自动驾驶中平衡速度与安全，或在推荐系统中平衡用户满意度与内容多样性。
 
 ---
-## 学习路径
 
 ## 学习路径
 
@@ -491,6 +507,6 @@ Reward-free Alignment 通常建议将训练过程分为两个阶段。第一阶�
 - [推理大模型从被动求解转向主动提问]({{< relref "posts/20260130-arxiv_ai-reasoning-while-asking-transforming-reasoning-larg-9.md" >}})
 - [RLAnything：完全动态强化学习系统的环境、策略与奖励模型构建]({{< relref "posts/20260203-arxiv_ai-rlanything-forge-environment-policy-and-reward-mod-3.md" >}})
 - [🚛🚦高速公路卡车决策新突破！多目标强化学习让战术决策更高效！]({{< relref "posts/20260127-arxiv_ai-multi-objective-reinforcement-learning-for-efficie-7.md" >}})
-- [🚚🚀多目标强化学习！让卡车在高速车流中决策更高效、更智能！]({{< relref "posts/20260128-arxiv_ai-multi-objective-reinforcement-learning-for-efficie-7.md" >}})
+- [🚚🚀多目标强化学习！让卡车在高速车流中决策更高效、更智能！]({{< relref "posts/20260127-arxiv_ai-multi-objective-reinforcement-learning-for-efficie-7.md" >}})
 - [基于认知上下文学习构建大模型多智能体系统的信任机制]({{< relref "posts/20260130-arxiv_ai-epistemic-context-learning-building-trust-the-righ-7.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

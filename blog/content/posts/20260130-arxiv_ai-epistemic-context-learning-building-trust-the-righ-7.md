@@ -1,14 +1,30 @@
 ---
-title: "基于认知上下文学习构建大模型多智能体系统的信任机制"
-date: 2026-01-30T03:54:32+08:00
+title: 基于认知上下文学习构建大模型多智能体系统的信任机制
+date: 2026-01-30 03:54:32+08:00
 draft: false
-entry_kind: "auto"
-tags: ["多智能体", "信任机制", "ECL", "上下文学习", "强化学习", "Qwen", "模型评估", "系统鲁棒性"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- 多智能体
+- 信任机制
+- ECL
+- 上下文学习
+- 强化学习
+- Qwen
+- 模型评估
+- 系统鲁棒性
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "**摘要：Epistemic Context Learning (ECL)** **背景与问题** 基于大语言模型（LLM）的多智能体系统中的单个智能体通常缺乏鲁棒性，容易盲目听从误导性的同伴。研究指出，这一缺陷源于“谄媚”倾向以及缺乏评估同伴可靠性的能力。 **方法：ECL框架** 为解决上述问题，作者提出了一种名为"
+description: '**摘要：Epistemic Context Learning (ECL)** **背景与问题** 基于大语言模型（LLM）的多智能体系统中的单个智能体通常缺乏鲁棒性，容易盲目听从误导性的同伴。研究指出，这一缺陷源于“谄媚”倾向以及缺乏评估同伴可靠性的能力。
+  **方法：ECL框架** 为解决上述问题，作者提出了一种名为'
 external_url: http://arxiv.org/abs/2601.21742v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 基于认知上下文学习构建大模型多智能体系统的信任机制
@@ -165,7 +181,6 @@ ECL可以形式化为一个条件概率优化问题。给定查询 $x$，同伴�
 在实际实现中，LLM通过Prompt设计模拟贝叶斯推断过程：从历史记录 $H$ 中估计 $\theta$，并基于 $\theta$ 对同伴建议进行加权处理，从而生成最终答案。
 
 ---
-## 研究最佳实践
 
 ## 最佳实践指南
 
@@ -264,7 +279,6 @@ ECL 的核心在于处理“已知”与“未知”。代理应具备评估自�
 - 该研究揭示了在构建基于 LLM 的自主智能体系统时，显式建模信息来源和置信度是实现可靠协作的关键，这为未来设计更可信的 AI 智能体提供了新的理论框架。
 
 ---
-## 学习路径
 
 ## 学习路径
 

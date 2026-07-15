@@ -1,14 +1,30 @@
 ---
-title: "英伟达发布Cosmos 3与RTX Spark"
-date: 2026-06-02T12:59:28+08:00
+title: 英伟达发布Cosmos 3与RTX Spark
+date: 2026-06-02 12:59:28+08:00
 draft: false
-entry_kind: "auto"
-tags: ["英伟达", "Cosmos3", "RTXSpark", "Nemotron", "生成式AI", "AI推理", "边缘计算", "GPU"]
-categories: ["大模型", "系统与基础设施"]
+entry_kind: auto
+tags:
+- 英伟达
+- Cosmos3
+- RTXSpark
+- Nemotron
+- 生成式 AI
+- AI推理
+- 边缘计算
+- GPU
+categories:
+- 大模型
+- 系统与基础设施
 source: blogs_podcasts
-description: "关键产品 - **Cosmos 3**：新一代生成式AI平台，支持超大规模数字孪生与仿真，集成最新光线追踪与实时交互技术。 - **Nemotron 3 Ultra**：面向企业的大语言模型，参数规模约130B，训练效率提升约40%，推理时延显著降低，可部署在数据中心和边缘。 - **RTX Spark**：基于Ada"
+description: 关键产品 - **Cosmos 3**：新一代生成式AI平台，支持超大规模数字孪生与仿真，集成最新光线追踪与实时交互技术。 - **Nemotron
+  3 Ultra**：面向企业的大语言模型，参数规模约130B，训练效率提升约40%，推理时延显著降低，可部署在数据中心和边缘。 - **RTX Spark**：基于Ada
 external_url: https://www.latent.space/p/ainews-nvidia-cosmos-3-nemotron-3
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 英伟达发布Cosmos 3与RTX Spark
@@ -169,9 +185,9 @@ NVIDIA 三款新品形成完整闭环，使 AI 训练、推理、仿真、渲染
 
 ### 相关文章
 
-- [NVIDIA Nemotron 3 Nano 30B 现已在 Amazon SageMaker JumpSta]({{< relref "posts/20260212-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-7.md" >}})
-- [NVIDIA Nemotron 3 Nano 30B 现已登陆 Amazon SageMaker JumpSt]({{< relref "posts/20260213-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-10.md" >}})
-- [NVIDIA Nemotron 3 Nano 现已在 Amazon Bedrock 上提供无服务器托管]({{< relref "posts/20260310-blogs_podcasts-run-nvidia-nemotron-3-nano-as-a-fully-managed-serv-0.md" >}})
-- [NVIDIA Nemotron 3 Nano现已在Amazon Bedrock无服务器服务上推出]({{< relref "posts/20260310-blogs_podcasts-run-nvidia-nemotron-3-nano-as-a-fully-managed-serv-1.md" >}})
-- [NVIDIA Nemotron 3 Nano 现已在 Amazon Bedrock 上线全托管无服务器模型]({{< relref "posts/20260310-blogs_podcasts-run-nvidia-nemotron-3-nano-as-a-fully-managed-serv-2.md" >}})
+- [NVIDIA Nemotron 3 Nano 30B 现已在 Amazon SageMaker JumpSta]({{< relref "posts/20260211-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-0.md" >}})
+- [NVIDIA Nemotron 3 Nano 30B 现已登陆 Amazon SageMaker JumpSt]({{< relref "posts/20260211-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-0.md" >}})
+- [NVIDIA Nemotron 3 Nano 现已在 Amazon Bedrock 上提供无服务器托管]({{< relref "posts/20260309-blogs_podcasts-run-nvidia-nemotron-3-nano-as-a-fully-managed-serv-0.md" >}})
+- [NVIDIA Nemotron 3 Nano现已在Amazon Bedrock无服务器服务上推出]({{< relref "posts/20260309-blogs_podcasts-run-nvidia-nemotron-3-nano-as-a-fully-managed-serv-0.md" >}})
+- [NVIDIA Nemotron 3 Nano 现已在 Amazon Bedrock 上线全托管无服务器模型]({{< relref "posts/20260309-blogs_podcasts-run-nvidia-nemotron-3-nano-as-a-fully-managed-serv-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

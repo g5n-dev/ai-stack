@@ -20,6 +20,10 @@ description: '**MM-TS：面向长尾数据多模态对比学习的温度与边�
 external_url: http://arxiv.org/abs/2603.08202v1
 scenarios:
 - Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # MM-TS：面向长尾数据对比学习的多模态温控与边界调度
@@ -118,9 +122,7 @@ scenarios:
 
 ---
 
-### MM-TS: 面向长尾数据多模态对比学习的温度与边际调度 —— 深度分析报告
 
-### 1. 研究背景与问题
 
 ### 核心问题
 本研究致力于解决**多模态对比学习在长尾分布数据下的训练不稳定与特征空间次优分布**的问题。具体而言，核心在于如何通过动态调整损失函数中的超参数——温度和边际，来缓解数据不平衡对模型学习语义对齐的负面影响。
@@ -138,7 +140,6 @@ scenarios:
 ### 为什么重要
 解决这一问题不仅能提升学术界在基准数据集上的排名，更重要的是，它直接关系到多模态模型在**真实世界场景**中的表现。现实数据天然是不平衡的，如果模型只能处理平衡分布，其在工业应用（如视频监控、内容审核、个性化推荐）中的泛化能力将大打折扣。
 
-### 2. 核心方法与创新
 
 ### 核心方法：MM-TS (Multi-Modal Temperature and Margin Schedules)
 MM-TS 提出了一种动态调整对比学习损失函数超参数的策略。它不再将温度（$\tau$）和边际（$m$）视为固定常数，而是将其变为训练过程中的动态变量。
@@ -160,7 +161,6 @@ MM-TS 提出了一种动态调整对比学习损失函数超参数的策略。�
 *   **即插即用**：MM-TS 可以轻松集成到现有的多模态框架（如CLIP, ALPRO, X-Pool）中，无需改变网络架构。
 *   **鲁棒性**：通过自适应调节，模型对数据噪声和分布偏移更加鲁棒。
 
-### 3. 理论基础
 
 ### 理论假设
 1.  **特征流形假设**：假设视觉和文本特征在联合嵌入空间中构成了流形结构。同一类别的样本聚集在流形的高密度区域。
@@ -179,7 +179,6 @@ MM-TS 提出了一种动态调整对比学习损失函数超参数的策略。�
 ### 理论贡献
 该研究最重要的理论贡献在于**揭示了温度参数的几何意义**。它指出温度不仅仅是Softmax的一个缩放因子，它本质上定义了特征空间中类内紧凑度和类间分离度的权衡。通过动态调整温度，实际上是在动态优化特征空间的拓扑结构。
 
-### 7. 学习建议
 
 ### 适合背景
 *   具备深度学习基础，了解对比学习基本原理。
@@ -480,6 +479,6 @@ MM-TS 的计算复杂度主要取决于其调度的实现方式。如果调度�
 
 - [VideoGPA：提取几何先验实现三维一致视频生成]({{< relref "posts/20260202-arxiv_ai-videogpa-distilling-geometry-priors-for-3d-consist-0.md" >}})
 - [HERMES：基于视觉语言模型的长尾自动驾驶端到端风险感知系统]({{< relref "posts/20260203-arxiv_ai-hermes-a-holistic-end-to-end-risk-aware-multimodal-6.md" >}})
-- [VideoGPA：提取几何先验实现三维一致性视频生成]({{< relref "posts/20260203-arxiv_ai-videogpa-distilling-geometry-priors-for-3d-consist-0.md" >}})
+- [VideoGPA：提取几何先验实现三维一致性视频生成]({{< relref "posts/20260202-arxiv_ai-videogpa-distilling-geometry-priors-for-3d-consist-0.md" >}})
 - [面向物联网模型适应性的对比持续学习]({{< relref "posts/20260205-arxiv_ai-contrastive-continual-learning-for-model-adaptabil-2.md" >}})
-- [面向物联网模型适应性的对比持续学习方法]({{< relref "posts/20260206-arxiv_ai-contrastive-continual-learning-for-model-adaptabil-2.md" >}})
+- [面向物联网模型适应性的对比持续学习方法]({{< relref "posts/20260205-arxiv_ai-contrastive-continual-learning-for-model-adaptabil-2.md" >}})

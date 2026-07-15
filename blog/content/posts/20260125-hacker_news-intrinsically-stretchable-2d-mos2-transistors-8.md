@@ -1,12 +1,18 @@
 ---
-title: "🔥重大突破！2D晶体管实现本征可拉伸，电子器件迎来革命性变革！"
-date: 2026-01-25T12:39:55+08:00
+title: 🔥重大突破！2D晶体管实现本征可拉伸，电子器件迎来革命性变革！
+date: 2026-01-25 12:39:55+08:00
 draft: false
-entry_kind: "auto"
-tags: ["hacker_news"]
-categories: ["效率与方法论"]
+entry_kind: auto
+tags:
+- hacker_news
+categories:
+- 效率与方法论
 source: hacker_news
 external_url: https://www.nature.com/articles/s41467-026-68504-2
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 📰 🔥重大突破！2D晶体管实现本征可拉伸，电子器件迎来革命性变革！
@@ -163,7 +169,6 @@ external_url: https://www.nature.com/articles/s41467-026-68504-2
 即使软体机器人发生剧烈的挤压或扭转变形，嵌入的晶体管阵列依然能正常工作，实时向控制算法反馈机器人的形态数据。这大大提高了软体机器人在复杂环境中的运动精度和自主导航能力，使其能够完成更精细的操作任务。
 
 ---
-## ✅ 最佳实践
 
 ## 最佳实践指南
 

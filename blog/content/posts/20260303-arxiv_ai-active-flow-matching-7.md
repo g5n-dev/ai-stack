@@ -21,6 +21,10 @@ description: Active Flow Matching (AFM) 是一种新型算法，旨在解决离�
 external_url: http://arxiv.org/abs/2603.00877v1
 scenarios:
 - Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Active Flow Matching：一种高效的生成模型训练范式
@@ -127,9 +131,7 @@ AFM 通过重新构建变分目标函数，使其能够基于流路径上的**�
 
 ---
 
-### Active Flow Matching (AFM) 深度分析报告
 
-### 1. 研究背景与问题
 
 ### 核心问题
 本论文致力于解决**生成模型在在线黑盒优化场景下的训练不稳定性与样本效率低下**的问题。具体而言，是如何将基于流的生成模型有效地整合到主动学习或优化循环中，以便在有限的评估预算内，发现具有高属性得分（如高药物亲和力、高蛋白质稳定性）的样本。
@@ -146,7 +148,6 @@ AFM 通过重新构建变分目标函数，使其能够基于流路径上的**�
 ### 为什么重要
 该研究打通了**流匹配**与**在线黑盒优化**之间的壁垒。流匹配相比扩散模型具有更简洁的架构和更快的推理速度，AFM证明了流匹配不仅能生成高质量样本，更能作为一个高效的优化引擎，这对于加速药物发现和材料设计具有重要的科学和工业价值。
 
-### 2. 核心方法与创新
 
 ### 核心方法：Active Flow Matching (AFM)
 AFM 是一种新型的训练算法，它通过重新构建流匹配的变分目标函数，使其能够直接基于流路径上的**条件端点分布**进行操作。
@@ -164,7 +165,6 @@ AFM 是一种新型的训练算法，它通过重新构建流匹配的变分目�
 *   **样本效率高**：在有限的评估预算下，比 CbAS 和 VSD 等基准方法能更快地找到高得分样本。
 *   **稳定性**：相比直接优化期望得分，AFM 的变分框架提供了更稳定的训练动态。
 
-### 3. 理论基础
 
 ### 理论依据
 AFM 的理论基础主要建立在**最优传输**和**变分推断**之上。
@@ -180,7 +180,6 @@ $$ \mathcal{L} \approx \mathbb{E}_{q} \left[ w(x) \cdot \text{FlowMatchingLoss}(
 ### 理论贡献
 论文从理论上证明了 AFM 目标函数的梯度是目标属性期望梯度的无偏估计（或偏差可控的近似）。这保证了在优化过程中，模型确实是在向高适应度方向移动，而不是在拟合噪声。
 
-### 7. 学习建议
 
 ### 适合读者
 *   从事生成式模型研究的研究生或工程师。
@@ -436,8 +435,8 @@ Active Flow Matching 与 Rectified Flow (RF) 在理念上有很强的相关性�
 
 ### 相关文章
 
-- [扩散模型无需噪声调节的几何学原理]({{< relref "posts/20260224-arxiv_ai-the-geometry-of-noise-why-diffusion-models-dont-ne-2.md" >}})
+- [扩散模型无需噪声调节的几何学原理]({{< relref "posts/20260223-arxiv_ai-the-geometry-of-noise-why-diffusion-models-dont-ne-2.md" >}})
 - [模式寻优结合均值寻优实现快速长视频生成]({{< relref "posts/20260302-arxiv_ai-mode-seeking-meets-mean-seeking-for-fast-long-vide-0.md" >}})
 - [粒子引导扩散模型求解偏微分方程]({{< relref "posts/20260202-arxiv_ai-particle-guided-diffusion-models-for-partial-diffe-8.md" >}})
-- [粒子引导扩散模型用于偏微分方程求解]({{< relref "posts/20260203-arxiv_ai-particle-guided-diffusion-models-for-partial-diffe-8.md" >}})
-- [基于正则化与对称性重审扩散模型及其分子图生成应用]({{< relref "posts/20260218-arxiv_ai-rethinking-diffusion-models-with-symmetries-throug-2.md" >}})
+- [粒子引导扩散模型用于偏微分方程求解]({{< relref "posts/20260202-arxiv_ai-particle-guided-diffusion-models-for-partial-diffe-8.md" >}})
+- [基于正则化与对称性重审扩散模型及其分子图生成应用]({{< relref "posts/20260217-arxiv_ai-rethinking-diffusion-models-with-symmetries-throug-2.md" >}})

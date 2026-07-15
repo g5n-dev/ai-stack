@@ -1,12 +1,26 @@
 ---
-title: "🔥Show HN: AutoShorts！本地GPU加速的AI视频神器✨"
-date: 2026-01-25T12:39:55+08:00
+title: '🔥Show HN: AutoShorts！本地GPU加速的AI视频神器✨'
+date: 2026-01-25 12:39:55+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AutoShorts", "AI视频", "GPU加速", "本地部署", "自动化", "内容创作", "隐私保护", "TikTok"]
-categories: ["AI 工程", "开源生态"]
+entry_kind: auto
+tags:
+- AutoShorts
+- AI视频
+- GPU加速
+- 本地部署
+- 自动化
+- 内容创作
+- 隐私保护
+- TikTok
+categories:
+- AI 工程
+- 开源生态
 source: hacker_news
 external_url: https://github.com/divyaprakash0426/autoshorts
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 📰 🔥Show HN: AutoShorts！本地GPU加速的AI视频神器✨
@@ -182,7 +196,6 @@ Alex 使用 **AutoShorts** 搭建了一套本地化的 GPU 加工流水线。
 *   **转化率提高**：带有动态光影效果的视频比静态图片广告的点击
 
 ---
-## ✅ 最佳实践
 
 ## 最佳实践指南
 

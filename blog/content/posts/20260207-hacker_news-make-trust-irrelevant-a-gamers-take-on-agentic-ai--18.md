@@ -1,14 +1,31 @@
 ---
-title: "让信任变得无关紧要：玩家视角下的智能体安全"
-date: 2026-02-07T05:06:02+08:00
+title: 让信任变得无关紧要：玩家视角下的智能体安全
+date: 2026-02-07 05:06:02+08:00
 draft: false
-entry_kind: "auto"
-tags: ["智能体", "Agent安全", "游戏理论", "信任机制", "对齐", "LLM", "AI安全", "系统设计"]
-categories: ["大模型", "安全"]
+entry_kind: auto
+tags:
+- 智能体
+- Agent安全
+- 游戏理论
+- 信任机制
+- 对齐
+- LLM
+- AI 安全
+- 系统设计
+categories:
+- 大模型
+- 安全
 source: hacker_news
-description: "随着智能体（Agentic AI）在复杂任务中的自主性不断增强，传统的基于“信任”的安全机制正面临严峻考验。本文从游戏设计的独特视角出发，探讨了如何通过系统架构设计来规避对 AI 主观意愿的依赖，从而实现更本质的安全控制。读者将了解到一种将安全约束内置于底层逻辑的思路，这有助于我们在构建高可用 AI 系统时，从源头上降"
+description: 随着智能体（Agentic AI）在复杂任务中的自主性不断增强，传统的基于“信任”的安全机制正面临严峻考验。本文从游戏设计的独特视角出发，探讨了如何通过系统架构设计来规避对
+  AI 主观意愿的依赖，从而实现更本质的安全控制。读者将了解到一种将安全约束内置于底层逻辑的思路，这有助于我们在构建高可用 AI 系统时，从源头上降
 external_url: https://github.com/Deso-PK/make-trust-irrelevant
-scenarios: ["大语言模型", "AI/ML项目"]
+scenarios:
+- 大语言模型
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 让信任变得无关紧要：玩家视角下的智能体安全
@@ -253,7 +270,6 @@ Devin 作为一个自主的 AI 软件工程师，被设计为可以在沙箱环�
 在 SWE-bench 基准测试中，SWE-agent 解决了真实 GitHub 项目中 12.47% 的问题，这一成绩显著优于之前的模型（如 Claude 2 直接使用的 1.96%）。这个案例表明，当 AI 被赋予代理能力（能够使用工具、读取反馈并迭代）时，它不再需要人类盲目信任它能一次写对。相反，它通过不断的试错和反馈循环，在不需要人类持续干预的情况下解决了实际问题，将“信任”问题转化为“工程验证”问题。
 
 ---
-## 最佳实践
 
 ## 最佳实践指南
 
@@ -428,9 +444,9 @@ Devin 作为一个自主的 AI 软件工程师，被设计为可以在沙箱环�
 
 ### 相关文章
 
-- [迈向智能体系统规模化科学：工作原理与适用条件]({{< relref "posts/20260201-hacker_news-towards-a-science-of-scaling-agent-systems-when-an-13.md" >}})
-- [模型智能与任务复杂度如何影响对齐偏差]({{< relref "posts/20260203-hacker_news-how-does-misalignment-scale-with-model-intelligenc-12.md" >}})
-- [💥MortalMATH：当推理目标遇上紧急场景，AI会“翻车”吗？]({{< relref "posts/20260128-arxiv_ai-mortalmath-evaluating-the-conflict-between-reasoni-4.md" >}})
-- [RedSage：网络安全通用大语言模型]({{< relref "posts/20260201-arxiv_ai-redsage-a-cybersecurity-generalist-llm-0.md" >}})
+- [迈向智能体系统规模化科学：工作原理与适用条件]({{< relref "posts/20260201-hacker_news-towards-a-science-of-scaling-agent-systems-when-an-11.md" >}})
+- [模型智能与任务复杂度如何影响对齐偏差]({{< relref "posts/20260203-hacker_news-how-does-misalignment-scale-with-model-intelligenc-7.md" >}})
+- [💥MortalMATH：当推理目标遇上紧急场景，AI会“翻车”吗？]({{< relref "posts/20260127-arxiv_ai-mortalmath-evaluating-the-conflict-between-reasoni-4.md" >}})
+- [RedSage：网络安全通用大语言模型]({{< relref "posts/20260130-arxiv_ai-redsage-a-cybersecurity-generalist-llm-0.md" >}})
 - [MemSkill：赋予自进化代理学习与演进记忆技能]({{< relref "posts/20260203-arxiv_ai-memskill-learning-and-evolving-memory-skills-for-s-9.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

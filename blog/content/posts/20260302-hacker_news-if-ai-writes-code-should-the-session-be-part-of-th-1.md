@@ -4,7 +4,7 @@ date: 2026-03-02 07:17:35+08:00
 draft: false
 entry_kind: auto
 tags:
-- AI编程
+- AI 编程
 - 代码提交
 - 版本控制
 - 会话记录
@@ -20,6 +20,16 @@ description: 随着 AI 辅助编程的普及，代码提交记录中是否应包
 external_url: https://github.com/mandel-macaque/memento
 scenarios:
 - AI/ML项目
+aliases:
+- /posts/20260302-hacker_news-if-ai-writes-code-should-the-session-be-part-of-th-10/
+- /posts/20260302-hacker_news-if-ai-writes-code-should-the-session-be-part-of-th-13/
+- /posts/20260302-hacker_news-if-ai-writes-code-should-the-session-be-part-of-th-16/
+- /posts/20260302-hacker_news-if-ai-writes-code-should-the-session-be-part-of-th-5/
+- /posts/20260302-hacker_news-if-ai-writes-code-should-the-session-be-part-of-th-7/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AI编写代码时是否应将会话记录纳入提交

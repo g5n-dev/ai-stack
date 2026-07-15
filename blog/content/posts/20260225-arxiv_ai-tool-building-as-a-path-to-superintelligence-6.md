@@ -21,6 +21,10 @@ description: 本文提出了一种通过工具构建实现大型语言模型（L
 external_url: http://arxiv.org/abs/2602.21061v1
 scenarios:
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 工具构建：通往高级智能的路径
@@ -99,7 +103,6 @@ scenarios:
 
 ## 技术分析
 
-### 3. 关键发现与理论分析
 
 ### 模型推理能力的非线性衰减
 实验数据显示，随着推理深度的增加，小型LLM的单步正确率 $\gamma$ 呈现**超线性下降**趋势。
@@ -368,7 +371,7 @@ scenarios:
 ### 相关文章
 
 - [误差分类引导的提示词优化方法]({{< relref "posts/20260203-arxiv_ai-error-taxonomy-guided-prompt-optimization-3.md" >}})
-- [模型智能与任务复杂度如何影响对齐偏差]({{< relref "posts/20260203-hacker_news-how-does-misalignment-scale-with-model-intelligenc-12.md" >}})
-- [大语言模型面临的幻觉与逻辑推理局限]({{< relref "posts/20260212-hacker_news-the-problem-with-llms-13.md" >}})
-- [分享AI模型在First Proof数学挑战中的证明尝试]({{< relref "posts/20260224-blogs_podcasts-our-first-proof-submissions-13.md" >}})
-- [🔍 深度拆解：AI伪造数学证明的惊人真相！🚀]({{< relref "posts/20260126-hacker_news-case-study-creative-math-how-ai-fakes-proofs-12.md" >}})
+- [模型智能与任务复杂度如何影响对齐偏差]({{< relref "posts/20260203-hacker_news-how-does-misalignment-scale-with-model-intelligenc-7.md" >}})
+- [大语言模型面临的幻觉与逻辑推理局限]({{< relref "posts/20260212-hacker_news-the-problem-with-llms-9.md" >}})
+- [分享AI模型在First Proof数学挑战中的证明尝试]({{< relref "posts/20260221-blogs_podcasts-our-first-proof-submissions-3.md" >}})
+- [🔍 深度拆解：AI伪造数学证明的惊人真相！🚀]({{< relref "posts/20260126-hacker_news-case-study-creative-math-how-ai-fakes-proofs-7.md" >}})

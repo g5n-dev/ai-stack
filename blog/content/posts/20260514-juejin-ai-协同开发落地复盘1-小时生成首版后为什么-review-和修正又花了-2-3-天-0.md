@@ -1,14 +1,29 @@
 ---
-title: "AI生成首版快但review修正耗时：一次协同开发复盘"
-date: 2026-05-14T04:30:22+08:00
+title: AI生成首版快但review修正耗时：一次协同开发复盘
+date: 2026-05-14 04:30:22+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI协同开发", "代码评审", "开发效率", "质量控制", "开发流程", "经验复盘", "原型开发", "团队协作"]
-categories: ["效率与方法论"]
+entry_kind: auto
+tags:
+- AI协同开发
+- 代码评审
+- 开发效率
+- 质量控制
+- 开发流程
+- 经验复盘
+- 原型开发
+- 团队协作
+categories:
+- 效率与方法论
 source: juejin
-description: "背景 在 PC 端聊天室需求中，AI 用约 1 小时生成了可运行的首版；团队若全人工实现，预估需 2 天。但首版无法直接提测，后续的 Review 与修正耗时 2‑3 天。 主要问题 - 代码结构松散、命名不规范，导致可读性差。 - 边界情况和异常处理缺失，如离线、消息重试、字符截断等未覆盖。 - 与现有后端接口、鉴权"
+description: 背景 在 PC 端聊天室需求中，AI 用约 1 小时生成了可运行的首版；团队若全人工实现，预估需 2 天。但首版无法直接提测，后续的 Review
+  与修正耗时 2‑3 天。 主要问题 - 代码结构松散、命名不规范，导致可读性差。 - 边界情况和异常处理缺失，如离线、消息重试、字符截断等未覆盖。 - 与现有后端接口、鉴权
 external_url: https://juejin.cn/post/7639351796814217267
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AI生成首版快但review修正耗时：一次协同开发复盘
@@ -128,9 +143,9 @@ AI 在协同开发中能够快速生成可运行代码，但“生成效率”�
 
 ### 相关文章
 
-- [编排多会话 Claude Code 团队协作]({{< relref "posts/20260205-hacker_news-orchestrate-teams-of-claude-code-sessions-5.md" >}})
+- [编排多会话 Claude Code 团队协作]({{< relref "posts/20260205-hacker_news-claude-code-agent-teams-3.md" >}})
 - [从Vibe编码原型到可用产品仅需100小时]({{< relref "posts/20260315-hacker_news-100-hour-gap-between-a-vibecoded-prototype-and-a-w-1.md" >}})
-- [编排多会话 Claude Code 团队协作]({{< relref "posts/20260205-hacker_news-orchestrate-teams-of-claude-code-sessions-2.md" >}})
+- [编排多会话 Claude Code 团队协作]({{< relref "posts/20260205-hacker_news-claude-code-agent-teams-3.md" >}})
 - [AI 辅助开发的务实策略：在技术前沿后一步]({{< relref "posts/20260131-hacker_news-a-step-behind-the-bleeding-edge-a-philosophy-on-ai-5.md" >}})
-- [AI 辅助开发的务实策略：在技术前沿后一步]({{< relref "posts/20260131-hacker_news-a-step-behind-the-bleeding-edge-a-philosophy-on-ai-8.md" >}})
+- [AI 辅助开发的务实策略：在技术前沿后一步]({{< relref "posts/20260131-hacker_news-a-step-behind-the-bleeding-edge-a-philosophy-on-ai-5.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

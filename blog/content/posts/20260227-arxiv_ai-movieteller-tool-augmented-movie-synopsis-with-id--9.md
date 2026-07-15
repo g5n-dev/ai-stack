@@ -20,6 +20,10 @@ description: 以下是针对该内容的中文总结： **MovieTeller：基于�
 external_url: http://arxiv.org/abs/2602.23228v1
 scenarios:
 - RAG应用
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # MovieTeller：工具增强且ID一致的渐进式摘要生成
@@ -124,7 +128,6 @@ scenarios:
 
 ## 技术分析
 
-### 1. 研究背景与问题定义
 
 ### 核心挑战
 本研究致力于解决长视频（特别是电影）自动化叙事生成中的三个关键技术瓶颈：
@@ -140,7 +143,6 @@ scenarios:
 ### 研究意义
 该研究探索了从“感知”到“认知”的跨越，旨在建立连接计算机视觉与自然语言处理的自动化流水线，解决长视频理解中的语义对齐问题。
 
-### 3. 理论基础与算法逻辑
 
 ### 理论假设
 该框架基于以下逻辑假设：
@@ -383,6 +385,6 @@ MovieTeller 引入了一个名为 **ID Consistent Progressive Abstraction (IDCPA
 
 - [延迟视觉摄入优化图文密集文档问答]({{< relref "posts/20260217-arxiv_ai-index-light-reason-deep-deferred-visual-ingestion--7.md" >}})
 - [Nemotron ColEmbed V2：基于ViDoRe V3的多模态检索模型]({{< relref "posts/20260204-blogs_podcasts-nemotron-colembed-v2-raising-the-bar-for-multimoda-0.md" >}})
-- [Nemotron ColEmbed V2：基于ViDoRe V3的多模态检索模型]({{< relref "posts/20260205-blogs_podcasts-nemotron-colembed-v2-raising-the-bar-for-multimoda-1.md" >}})
-- [Nemotron ColEmbed V2：基于ViDoRe V3的多模态检索模型]({{< relref "posts/20260205-blogs_podcasts-nemotron-colembed-v2-raising-the-bar-for-multimoda-3.md" >}})
-- [Nemotron ColEmbed V2：基于ViDoRe V3的多模态检索模型]({{< relref "posts/20260205-blogs_podcasts-nemotron-colembed-v2-raising-the-bar-for-multimoda-4.md" >}})
+- [Nemotron ColEmbed V2：基于ViDoRe V3的多模态检索模型]({{< relref "posts/20260204-blogs_podcasts-nemotron-colembed-v2-raising-the-bar-for-multimoda-0.md" >}})
+- [Nemotron ColEmbed V2：基于ViDoRe V3的多模态检索模型]({{< relref "posts/20260204-blogs_podcasts-nemotron-colembed-v2-raising-the-bar-for-multimoda-0.md" >}})
+- [Nemotron ColEmbed V2：基于ViDoRe V3的多模态检索模型]({{< relref "posts/20260204-blogs_podcasts-nemotron-colembed-v2-raising-the-bar-for-multimoda-0.md" >}})

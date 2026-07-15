@@ -1,12 +1,26 @@
 ---
-title: "测试时也能发现新规律？🤯AI解锁动态学习能力！"
-date: 2026-01-25T12:39:55+08:00
+title: 测试时也能发现新规律？🤯AI解锁动态学习能力！
+date: 2026-01-25 12:39:55+08:00
 draft: false
-entry_kind: "auto"
-tags: ["TTT-Discover", "测试时训练", "强化学习", "科学发现", "LLM", "动态学习", "AlphaEvolve", "cs.LG"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- TTT-Discover
+- 测试时训练
+- 强化学习
+- 科学发现
+- LLM
+- 动态学习
+- AlphaEvolve
+- cs.LG
+categories:
+- 大模型
+- 论文
 source: arxiv
 external_url: http://arxiv.org/abs/2601.16175v1
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 📚 测试时也能发现新规律？🤯AI解锁动态学习能力！
@@ -281,7 +295,6 @@ $$ \theta^* = \theta_0 + \alpha \nabla_\theta \mathbb{E}_{y \sim p_\theta(\cdot|
 - **假设2**：奖励函数是可微分的或至少是可引导的。如果奖励信号过于稀疏（例如只有完全正确才有1分，否则0分），
 
 ---
-## ✅ 研究最佳实践
 
 ## 最佳实践指南
 
@@ -352,7 +365,6 @@ $$ \theta^* = \theta_0 + \alpha \nabla_\theta \mathbb{E}_{y \sim p_\theta(\cdot|
 - 📈 **显著提升推理性能**：在多个基准数据集上验证，该方法能以较小的计算开销换取模型在特定测试样本上准确率的显著提升。
 
 ---
-## 🗺️ 学习路径
 
 ## 学习路径
 

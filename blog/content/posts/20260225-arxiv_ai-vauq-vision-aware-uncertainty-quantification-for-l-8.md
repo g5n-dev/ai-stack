@@ -21,6 +21,10 @@ description: 以下是针对 **VAUQ (Vision-Aware Uncertainty Quantification)** 
 external_url: http://arxiv.org/abs/2602.21054v1
 scenarios:
 - Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # VAUQ：面向LVLM自评估的视觉感知不确定性量化
@@ -126,9 +130,7 @@ VAUQ 将预测熵与上述经过核心掩码处理的图像信息得分相结合
 
 ---
 
-### VAUQ: 视觉感知的不确定性量化——深入分析报告
 
-### 1. 研究背景与问题
 
 ### 核心问题
 该论文致力于解决大型视觉语言模型在实际部署中面临的**幻觉问题**，即模型生成的文本内容与图像的实际视觉内容不符。更具体地说，论文关注的是**如何让LVLM准确地自我评估**其输出的可靠性，从而识别出何时产生了幻觉。
@@ -144,7 +146,6 @@ VAUQ 将预测熵与上述经过核心掩码处理的图像信息得分相结合
 ### 重要性
 解决这一问题不仅是为了提高模型准确率，更是为了建立**人机信任**。如果模型能准确知道自己“没看懂”或“在瞎编”，系统就可以选择拒答或寻求人类介入，从而构建更安全可靠的AI系统。
 
-### 2. 核心方法与创新
 
 ### 核心方法：VAUQ
 VAUQ是一个**无需训练**的推理阶段框架。它提出了一种新的评分函数，用于衡量LVLM生成答案的可信度。该分数由两部分组成：
@@ -168,7 +169,6 @@ $$ S_{VAUQ} = H(Y) - I_{Image} $$
 - **零训练成本**：不需要额外的GTS（Ground Truth）标签进行微调，也不需要训练辅助的头，直接利用现有的LVLM和轻量级视觉特征提取器即可。
 - **模型无关**：理论上适用于任何基于Transformer架构的LVLM。
 
-### 3. 理论基础
 
 ### 理论假设
 论文基于以下核心假设：
@@ -190,7 +190,6 @@ VAUQ的数学构建主要围绕**熵**和**互信息**的变体展开：
 ### 理论贡献
 论文将**因果推断**的思想引入了不确定性量化。它试图回答“反事实”问题：如果没有这个图像，模型的回答会变吗？这种基于反事实的逻辑比单纯看概率分布更具解释性。
 
-### 7. 学习建议
 
 ### 适合人群
 - 从事多模态大模型研究、评估与对齐的研究员和工程师。
@@ -459,7 +458,7 @@ VAUQ 的技术可以应用于以下场景：
 ### 相关文章
 
 - [VideoGPA：提取几何先验实现三维一致视频生成]({{< relref "posts/20260202-arxiv_ai-videogpa-distilling-geometry-priors-for-3d-consist-0.md" >}})
-- [UniT：统一多模态思维链测试时扩展]({{< relref "posts/20260214-arxiv_ai-unit-unified-multimodal-chain-of-thought-test-time-1.md" >}})
-- [UniT：统一多模态思维链测试时扩展方法]({{< relref "posts/20260216-arxiv_ai-unit-unified-multimodal-chain-of-thought-test-time-1.md" >}})
+- [UniT：统一多模态思维链测试时扩展]({{< relref "posts/20260213-arxiv_ai-unit-unified-multimodal-chain-of-thought-test-time-1.md" >}})
+- [UniT：统一多模态思维链测试时扩展方法]({{< relref "posts/20260213-arxiv_ai-unit-unified-multimodal-chain-of-thought-test-time-1.md" >}})
 - [🤖抽屉打不开？揭秘零样本组合动作识别中的“物体捷径”！]({{< relref "posts/20260125-arxiv_ai-why-cant-i-open-my-drawer-mitigating-object-driven-0.md" >}})
 - [HERMES：基于视觉语言模型的长尾自动驾驶端到端风险感知系统]({{< relref "posts/20260203-arxiv_ai-hermes-a-holistic-end-to-end-risk-aware-multimodal-6.md" >}})

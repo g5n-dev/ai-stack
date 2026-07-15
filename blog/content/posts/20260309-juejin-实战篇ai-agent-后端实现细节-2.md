@@ -22,6 +22,10 @@ external_url: https://juejin.cn/post/7615014502552502310
 scenarios:
 - AI/ML项目
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AI Agent后端实战：统一接入多模型提供商的架构设计

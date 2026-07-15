@@ -1,14 +1,30 @@
 ---
-title: "为何Adam在$β_1=β_2$时更优：缺失的梯度尺度不变性原理"
-date: 2026-01-30T03:54:32+08:00
+title: 为何Adam在$β_1=β_2$时更优：缺失的梯度尺度不变性原理
+date: 2026-01-30 03:54:32+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Adam优化器", "梯度尺度不变性", "深度学习", "模型训练", "超参数调优", "优化算法", "cs.LG", "机器学习"]
-categories: ["论文", "AI 工程"]
+entry_kind: auto
+tags:
+- Adam优化器
+- 梯度尺度不变性
+- 深度学习
+- 模型训练
+- 超参数调优
+- 优化算法
+- cs.LG
+- 机器学习
+categories:
+- 论文
+- AI 工程
 source: arxiv
-description: "以下是该内容的中文总结： **标题：为何 Adam 在 $\\beta_1 = \\beta_2$ 时表现更优：梯度尺度不变性原理** **核心问题：** Adam 优化器在大规模模型训练中已应用近十年，但一个经验现象长期缺乏理论解释：当动量参数满足 $\\beta_1 = \\beta_2$ 时，模型的验证分数和训练行为均有"
+description: 以下是该内容的中文总结： **标题：为何 Adam 在 $\beta_1 = \beta_2$ 时表现更优：梯度尺度不变性原理** **核心问题：**
+  Adam 优化器在大规模模型训练中已应用近十年，但一个经验现象长期缺乏理论解释：当动量参数满足 $\beta_1 = \beta_2$ 时，模型的验证分数和训练行为均有
 external_url: http://arxiv.org/abs/2601.21739v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 为何Adam在$β_1=β_2$时更优：缺失的梯度尺度不变性原理
@@ -249,7 +265,6 @@ $$ v_t = \beta_2 v_{t-1} + (1 - \beta_2) g_t^2 $$
 - **验证方式：** 可以通过设计一个“梯度幅值随时间剧烈波动”的合成损失函数，观察平衡参数的 Adam 是否比标准 Adam 更稳健。如果理论正确，前者应表现出更小的参数更新
 
 ---
-## 研究最佳实践
 
 ## 最佳实践指南
 
@@ -345,7 +360,6 @@ $$ v_t = \beta_2 v_{t-1} + (1 - \beta_2) g_t^2 $$
 - 该研究还通过理论分析和实验验证，证明了 $β_1 = β_2$ 的 Adam 在梯度噪声较大的情况下仍能保持稳定收敛。
 
 ---
-## 学习路径
 
 ## 学习路径
 
@@ -495,6 +509,6 @@ $$ v_t = \beta_2 v_{t-1} + (1 - \beta_2) g_t^2 $$
 - [🤖反事实训练！让模型学会靠谱又可落地的解释！]({{< relref "posts/20260125-arxiv_ai-counterfactual-training-teaching-models-plausible--3.md" >}})
 - [超越预测不确定性！🚀结构约束下的可靠表征学习！🔥]({{< relref "posts/20260125-arxiv_ai-beyond-predictive-uncertainty-reliable-representat-7.md" >}})
 - [🔥LLM训练动力学新突破！可扩展损失景观曲率度量🚀]({{< relref "posts/20260126-arxiv_ai-a-scalable-measure-of-loss-landscape-curvature-for-1.md" >}})
-- [🔥LLM训练动力学新突破！可扩展损失景观曲率度量！]({{< relref "posts/20260127-arxiv_ai-a-scalable-measure-of-loss-landscape-curvature-for-1.md" >}})
+- [🔥LLM训练动力学新突破！可扩展损失景观曲率度量！]({{< relref "posts/20260126-arxiv_ai-a-scalable-measure-of-loss-landscape-curvature-for-1.md" >}})
 - [FISMO：基于Fisher结构的动量正交化优化器]({{< relref "posts/20260130-arxiv_ai-fismo-fisher-structured-momentum-orthogonalized-op-4.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

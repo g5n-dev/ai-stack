@@ -1,14 +1,29 @@
 ---
-title: "OpenAI Codex登陆ChatGPT手机端"
-date: 2026-05-15T04:21:18+08:00
+title: OpenAI Codex登陆ChatGPT手机端
+date: 2026-05-15 04:21:18+08:00
 draft: false
-entry_kind: "auto"
-tags: ["OpenAI", "Codex", "ChatGPT", "移动端", "代码生成", "AI应用", "iOS", "Android"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- OpenAI
+- Codex
+- ChatGPT
+- 移动端
+- 代码生成
+- AI 应用
+- iOS
+- Android
+categories:
+- 大模型
+- AI 工程
 source: juejin
-description: "OpenAI 今日宣布，Codex 已正式登陆 ChatGPT 手机端，iOS 与 Android 用户只需更新 ChatGPT 应用即可使用，且所有套餐（包括免费用户）均可访问。"
+description: OpenAI 今日宣布，Codex 已正式登陆 ChatGPT 手机端，iOS 与 Android 用户只需更新 ChatGPT 应用即可使用，且所有套餐（包括免费用户）均可访问。
 external_url: https://juejin.cn/post/7639648333372981283
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # OpenAI Codex登陆ChatGPT手机端
@@ -100,8 +115,8 @@ Codex 登陆移动端并向免费用户开放，标志着 AI 编程工具正式�
 ### 相关文章
 
 - [GPT-5.3-Codex：结合前沿编码性能与推理能力的代理式模型]({{< relref "posts/20260205-blogs_podcasts-gpt-53-codex-system-card-4.md" >}})
-- [GPT-5.3-Codex：结合前沿编码与推理能力的具身智能体编程模型]({{< relref "posts/20260206-blogs_podcasts-gpt-53-codex-system-card-6.md" >}})
+- [GPT-5.3-Codex：结合前沿编码与推理能力的具身智能体编程模型]({{< relref "posts/20260205-blogs_podcasts-gpt-53-codex-system-card-4.md" >}})
 - [OpenAI发布GPT-5.3-Codex代码生成模型]({{< relref "posts/20260206-hacker_news-gpt-53-codex-8.md" >}})
-- [OpenAI 对决 Anthropic：Claude Opus 4.6 挑战 GPT-5.3 Codex]({{< relref "posts/20260209-blogs_podcasts-ainews-openai-and-anthropic-go-to-war-claude-opus--5.md" >}})
-- [Codex与Claude支持定制化内核扩展]({{< relref "posts/20260217-blogs_podcasts-custom-kernels-for-all-from-codex-and-claude-7.md" >}})
+- [OpenAI 对决 Anthropic：Claude Opus 4.6 挑战 GPT-5.3 Codex]({{< relref "posts/20260206-blogs_podcasts-ainews-openai-and-anthropic-go-to-war-claude-opus--0.md" >}})
+- [Codex与Claude支持定制化内核扩展]({{< relref "posts/20260213-blogs_podcasts-custom-kernels-for-all-from-codex-and-claude-1.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

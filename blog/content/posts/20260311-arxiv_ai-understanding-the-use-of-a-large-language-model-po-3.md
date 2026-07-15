@@ -21,6 +21,12 @@ external_url: http://arxiv.org/abs/2603.09964v1
 scenarios:
 - 大语言模型
 - AI/ML项目
+aliases:
+- /posts/20260312-arxiv_ai-understanding-the-use-of-a-large-language-model-po-3/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # LLM驱动的VR导览系统如何帮助视障用户实现无障碍体验
@@ -131,9 +137,7 @@ scenarios:
 
 ---
 
-### 深入分析：利用大语言模型导览使盲人和低视力用户能够使用虚拟现实
 
-### 1. 研究背景与问题
 
 ### 核心问题
 本研究致力于解决**盲人和低视力（BLV）人群在社交虚拟现实（VR）环境中的访问性障碍**。具体而言，研究探讨了如何利用大语言模型（LLM）驱动的AI导览，帮助视障用户在无法完全依赖视觉的情况下，理解虚拟空间、进行导航并参与社交互动。
@@ -150,7 +154,6 @@ scenarios:
 ### 重要性
 本研究的独特之处在于它不仅关注“导航”这一功能性任务，更关注**社交VR**这一特定情境。在社交场合中，辅助工具不仅要解决“我在哪里”的问题，还要帮助用户处理“我和谁在一起”以及“如何得体地互动”的问题。理解LLM导览在社交互动中的动态角色，对于构建真正包容的虚拟社区至关重要。
 
-### 2. 核心方法与创新
 
 ### 核心方法
 研究团队开发并部署了一个基于大语言模型（LLM）的AI导览系统。该系统被集成到VR环境中，具备以下核心功能：
@@ -170,7 +173,6 @@ scenarios:
 ### 理论依据
 该方法依据**计算机支持的协同工作（CSCW）**和**社会临场感理论**。它假设技术中介不仅是信息传递的通道，也会重塑人与人之间的社会关系。
 
-### 3. 理论基础
 
 ### 使用的理论基础或假设
 1.  **社会临场感理论：** 研究假设当其他人在场时，用户的心理状态和行为模式会发生改变。AI导览的存在不仅仅是功能性的，还会影响用户的社会感知。
@@ -180,7 +182,6 @@ scenarios:
 ### 理论分析与贡献
 本研究在理论上揭示了**“作为工具的AI”**与**“作为社交伙伴的AI”**之间的界限是流动的。在视障辅助领域，以往的研究多关注“可用性”，而本研究引入了“社交可接受性”维度，证明了AI在社交VR中的双重属性：既是**认知义肢**（弥补视觉缺失），又是**社交义肢**（弥补互动隔阂）。
 
-### 7. 学习建议
 
 ### 适合什么背景的读者
 *   **人机交互（HCI）研究者：** 关注无障碍设计、社交计算和VR交互的研究者。
@@ -404,8 +405,8 @@ scenarios:
 
 ### 相关文章
 
-- [长期对话导致大语言模型镜像用户观点形成回声室]({{< relref "posts/20260218-blogs_podcasts-personalization-features-can-make-llms-more-agreea-3.md" >}})
-- [研究显示主流AI模型向弱势用户提供信息准确度较低]({{< relref "posts/20260221-blogs_podcasts-study-ai-chatbots-provide-less-accurate-informatio-7.md" >}})
-- [🎭LLM如何颠覆互动叙事？Dramamancer案例揭秘设计黑科技！]({{< relref "posts/20260128-arxiv_ai-design-techniques-for-llm-powered-interactive-stor-6.md" >}})
-- [Claude：打造用于深度思考的交互空间]({{< relref "posts/20260204-hacker_news-claude-is-a-space-to-think-12.md" >}})
-- [Claude Is a Space to Think]({{< relref "posts/20260204-hacker_news-claude-is-a-space-to-think-17.md" >}})
+- [长期对话导致大语言模型镜像用户观点形成回声室]({{< relref "posts/20260218-blogs_podcasts-personalization-features-can-make-llms-more-agreea-0.md" >}})
+- [研究显示主流AI模型向弱势用户提供信息准确度较低]({{< relref "posts/20260220-blogs_podcasts-study-ai-chatbots-provide-less-accurate-informatio-1.md" >}})
+- [🎭LLM如何颠覆互动叙事？Dramamancer案例揭秘设计黑科技！]({{< relref "posts/20260127-arxiv_ai-design-techniques-for-llm-powered-interactive-stor-6.md" >}})
+- [Claude：打造用于深度思考的交互空间]({{< relref "posts/20260204-hacker_news-claude-is-a-space-to-think-8.md" >}})
+- [Claude Is a Space to Think]({{< relref "posts/20260204-hacker_news-claude-is-a-space-to-think-8.md" >}})

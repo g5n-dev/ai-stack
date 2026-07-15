@@ -21,6 +21,21 @@ description: '**Balyasny Asset Management (BAM) 构建 AI 投研引擎的案例�
 external_url: https://openai.com/index/balyasny-asset-management
 scenarios:
 - AI/ML项目
+aliases:
+- /posts/20260306-blogs_podcasts-how-balyasny-asset-management-built-an-ai-research-5/
+- /posts/20260307-blogs_podcasts-how-balyasny-asset-management-built-an-ai-research-4/
+- /posts/20260307-blogs_podcasts-how-balyasny-asset-management-built-an-ai-research-5/
+- /posts/20260308-blogs_podcasts-how-balyasny-asset-management-built-an-ai-research-5/
+- /posts/20260309-blogs_podcasts-how-balyasny-asset-management-built-an-ai-research-10/
+- /posts/20260309-blogs_podcasts-how-balyasny-asset-management-built-an-ai-research-14/
+- /posts/20260309-blogs_podcasts-how-balyasny-asset-management-built-an-ai-research-5/
+- /posts/20260309-blogs_podcasts-how-balyasny-asset-management-built-an-ai-research-6/
+- /posts/20260309-blogs_podcasts-how-balyasny-asset-management-built-an-ai-research-7/
+- /posts/20260310-blogs_podcasts-how-balyasny-asset-management-built-an-ai-research-14/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Balyasny 融合 GPT-5.4 与 Agent 工作流构建 AI 投研引擎
@@ -377,7 +392,7 @@ AI 技术迭代极快，锁定单一供应商或架构风险很高。BAM 采用�
 ### 相关文章
 
 - [OpenAI提出SWE-Bench-Dead：智能体前沿评估的下一步]({{< relref "posts/20260223-blogs_podcasts-swe-bench-dead-the-end-of-swe-bench-verified-mia-g-0.md" >}})
-- [OpenAI前沿评估团队：从SWE-Bench Verified看智能体评估演进]({{< relref "posts/20260224-blogs_podcasts-the-end-of-swe-bench-verified-mia-glaese-olivia-wa-8.md" >}})
-- [OpenAI前沿评估团队：SWE-Bench Verified后的智能体评估新方向]({{< relref "posts/20260225-blogs_podcasts-the-end-of-swe-bench-verified-mia-glaese-olivia-wa-11.md" >}})
-- [OpenAI前沿评估负责人：SWE-Bench Verified后的智能体评测新方向]({{< relref "posts/20260225-blogs_podcasts-the-end-of-swe-bench-verified-mia-glaese-olivia-wa-12.md" >}})
-- [LinqAlpha利用Amazon Bedrock构建投资思路压力测试智能体]({{< relref "posts/20260212-blogs_podcasts-how-linqalpha-assesses-investment-theses-using-dev-6.md" >}})
+- [OpenAI前沿评估团队：从SWE-Bench Verified看智能体评估演进]({{< relref "posts/20260223-blogs_podcasts-swe-bench-dead-the-end-of-swe-bench-verified-mia-g-0.md" >}})
+- [OpenAI前沿评估团队：SWE-Bench Verified后的智能体评估新方向]({{< relref "posts/20260223-blogs_podcasts-swe-bench-dead-the-end-of-swe-bench-verified-mia-g-0.md" >}})
+- [OpenAI前沿评估负责人：SWE-Bench Verified后的智能体评测新方向]({{< relref "posts/20260223-blogs_podcasts-swe-bench-dead-the-end-of-swe-bench-verified-mia-g-0.md" >}})
+- [LinqAlpha利用Amazon Bedrock构建投资思路压力测试智能体]({{< relref "posts/20260211-blogs_podcasts-how-linqalpha-assesses-investment-theses-using-dev-3.md" >}})

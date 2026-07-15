@@ -1,14 +1,29 @@
 ---
-title: "AlphaGRPO：分解式可验证奖励赋能多模态生成自我反思"
-date: 2026-05-13T22:38:17+08:00
+title: AlphaGRPO：分解式可验证奖励赋能多模态生成自我反思
+date: 2026-05-13 22:38:17+08:00
 draft: false
-entry_kind: "auto"
-tags: ["多模态生成", "自反思", "可验证奖励", "强化学习", "大模型", "视觉语言模型", "奖励建模", "AlphaGRPO"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- 多模态生成
+- 自反思
+- 可验证奖励
+- 强化学习
+- 大模型
+- 视觉语言模型
+- 奖励建模
+- AlphaGRPO
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "在统一多模态模型（UMM）中实现自省式生成仍是开放难题，本文提出AlphaGRPO框架，引入分解可验证奖励以驱动模型自我校正，从而解锁自我反思的多模态生成能力。该方法在奖励分解与自省过程的结合方式无法从摘要确认，具体实现细节仍需进一步阅读全文。研究成果有望提升生成内容的可信度，并为自监督学习与人机交互等方向提供新思路。"
+description: 在统一多模态模型（UMM）中实现自省式生成仍是开放难题，本文提出AlphaGRPO框架，引入分解可验证奖励以驱动模型自我校正，从而解锁自我反思的多模态生成能力。该方法在奖励分解与自省过程的结合方式无法从摘要确认，具体实现细节仍需进一步阅读全文。研究成果有望提升生成内容的可信度，并为自监督学习与人机交互等方向提供新思路。
 external_url: http://arxiv.org/abs/2605.12495v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AlphaGRPO：分解式可验证奖励赋能多模态生成自我反思
@@ -165,7 +180,7 @@ AlphaGRPO 在奖励可验证性和自我反思能力上优于传统 GRPO 与 DPO
 
 - [DynaWeb：基于模型的强化学习网页智能体]({{< relref "posts/20260130-arxiv_ai-dynaweb-model-based-reinforcement-learning-of-web--6.md" >}})
 - [基于认知上下文学习构建大模型多智能体系统的信任机制]({{< relref "posts/20260130-arxiv_ai-epistemic-context-learning-building-trust-the-righ-7.md" >}})
-- [DynaWeb：基于模型的强化学习网页智能体框架]({{< relref "posts/20260131-arxiv_ai-dynaweb-model-based-reinforcement-learning-of-web--6.md" >}})
-- [DynaWeb：基于模型的强化学习网页智能体]({{< relref "posts/20260201-arxiv_ai-dynaweb-model-based-reinforcement-learning-of-web--6.md" >}})
-- [DynaWeb：基于模型的强化学习网页智能体]({{< relref "posts/20260202-arxiv_ai-dynaweb-model-based-reinforcement-learning-of-web--6.md" >}})
+- [DynaWeb：基于模型的强化学习网页智能体框架]({{< relref "posts/20260130-arxiv_ai-dynaweb-model-based-reinforcement-learning-of-web--6.md" >}})
+- [DynaWeb：基于模型的强化学习网页智能体]({{< relref "posts/20260130-arxiv_ai-dynaweb-model-based-reinforcement-learning-of-web--6.md" >}})
+- [DynaWeb：基于模型的强化学习网页智能体]({{< relref "posts/20260130-arxiv_ai-dynaweb-model-based-reinforcement-learning-of-web--6.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

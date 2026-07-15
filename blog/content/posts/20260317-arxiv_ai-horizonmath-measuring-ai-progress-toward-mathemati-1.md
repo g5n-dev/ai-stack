@@ -22,6 +22,12 @@ external_url: http://arxiv.org/abs/2603.15617v1
 scenarios:
 - 大语言模型
 - AI/ML项目
+aliases:
+- /posts/20260318-arxiv_ai-horizonmath-measuring-ai-progress-toward-mathemati-1/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # HorizonMath：自动验证技术评估AI数学发现能力
@@ -378,8 +384,8 @@ HorizonMath 是一个专门用于评估人工智能模型在数学发现领域�
 
 ### 相关文章
 
-- [加速科学研究：Gemini 案例研究与通用技术]({{< relref "posts/20260205-arxiv_ai-accelerating-scientific-research-with-gemini-case--5.md" >}})
-- [机器翻译评估中的跨向污染问题研究]({{< relref "posts/20260130-arxiv_ai-when-flores-bloomz-wrong-cross-direction-contamina-1.md" >}})
-- [Anthropic 模型蒸馏与 SWE-Bench 失效机制分析]({{< relref "posts/20260227-blogs_podcasts-live-anthropic-distillation-how-models-cheat-swe-b-1.md" >}})
+- [加速科学研究：Gemini 案例研究与通用技术]({{< relref "posts/20260204-arxiv_ai-accelerating-scientific-research-with-gemini-case--5.md" >}})
+- [机器翻译评估中的跨向污染问题研究]({{< relref "posts/20260129-arxiv_ai-when-flores-bloomz-wrong-cross-direction-contamina-1.md" >}})
+- [Anthropic 模型蒸馏与 SWE-Bench 失效机制分析]({{< relref "posts/20260226-blogs_podcasts-live-anthropic-distillation-how-models-cheat-swe-b-0.md" >}})
 - [OpenAI发布GPT-5.4：百万token上下文与计算机使用能力]({{< relref "posts/20260305-blogs_podcasts-introducing-gpt-54-6.md" >}})
-- [OpenAI发布GPT-5.4：百万token上下文与代码操控能力]({{< relref "posts/20260306-blogs_podcasts-introducing-gpt-54-12.md" >}})
+- [OpenAI发布GPT-5.4：百万token上下文与代码操控能力]({{< relref "posts/20260305-blogs_podcasts-introducing-gpt-54-6.md" >}})

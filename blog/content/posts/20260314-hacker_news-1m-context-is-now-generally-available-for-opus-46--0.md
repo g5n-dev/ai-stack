@@ -11,7 +11,7 @@ tags:
 - 100万token
 - Anthropic
 - 模型更新
-- AI助手
+- AI 助手
 categories:
 - 大模型
 source: hacker_news
@@ -20,6 +20,13 @@ description: 随着模型参数量的提升，长上下文处理能力已成为�
 external_url: https://claude.com/blog/1m-context-ga
 scenarios:
 - AI/ML项目
+aliases:
+- /posts/20260314-hacker_news-1m-context-is-now-generally-available-for-opus-46--1/
+- /posts/20260314-hacker_news-1m-context-is-now-generally-available-for-opus-46--12/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Opus 4.6 与 Sonnet 4.6 现已开放 100 万上下文窗口

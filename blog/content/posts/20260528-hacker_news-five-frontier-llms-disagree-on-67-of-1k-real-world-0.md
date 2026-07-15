@@ -1,14 +1,29 @@
 ---
-title: "五大LLM千条事实核查67%结果不一致"
-date: 2026-05-28T16:11:48+08:00
+title: 五大LLM千条事实核查67%结果不一致
+date: 2026-05-28 16:11:48+08:00
 draft: false
-entry_kind: "auto"
-tags: ["大模型评测", "事实核查", "模型对比", "幻觉问题", "准确性", "一致性", "可靠性", "基准测试"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- 大模型评测
+- 事实核查
+- 模型对比
+- 幻觉问题
+- 准确性
+- 一致性
+- 可靠性
+- 基准测试
+categories:
+- 大模型
+- AI 工程
 source: hacker_news
-description: "五种前沿大型语言模型在1000条真实事实核查题目上产生了显著分歧，近七成答案不一致。这种不一致性揭示了当前模型在事实准确性上的短板，提醒在实际部署中需要额外的校验机制。文章通过对比分析提供模型表现的量化视图，帮助开发者与研究者评估模型可靠性并指导后续改进方向。"
+description: 五种前沿大型语言模型在1000条真实事实核查题目上产生了显著分歧，近七成答案不一致。这种不一致性揭示了当前模型在事实准确性上的短板，提醒在实际部署中需要额外的校验机制。文章通过对比分析提供模型表现的量化视图，帮助开发者与研究者评估模型可靠性并指导后续改进方向。
 external_url: https://lenz.io/research/llm-disagreement
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 五大LLM千条事实核查67%结果不一致
@@ -82,8 +97,8 @@ scenarios: ["Web应用开发"]
 ### 相关文章
 
 - [MathNet：全球多模态数学推理与检索基准]({{< relref "posts/20260421-arxiv_ai-mathnet-a-global-multimodal-benchmark-for-mathemat-0.md" >}})
-- [Amazon Nova 2内容审核提示词工程实战指南]({{< relref "posts/20260519-blogs_podcasts-prompting-amazon-nova-2-for-content-moderation-0.md" >}})
-- [IBM与UC Berkeley发布IT-Bench及MAST诊断企业智能体失败原因]({{< relref "posts/20260219-blogs_podcasts-ibm-and-uc-berkeley-diagnose-why-enterprise-agents-2.md" >}})
-- [IBM联合UC Berkeley发布IT-Bench与MAST：诊断企业智能体失败原因]({{< relref "posts/20260219-blogs_podcasts-ibm-and-uc-berkeley-diagnose-why-enterprise-agents-3.md" >}})
-- [IBM与加州大学伯克利分校发布IT-Bench与MAST诊断企业智能体失败原因]({{< relref "posts/20260219-blogs_podcasts-ibm-and-uc-berkeley-diagnose-why-enterprise-agents-7.md" >}})
+- [Amazon Nova 2内容审核提示词工程实战指南]({{< relref "posts/20260518-blogs_podcasts-prompting-amazon-nova-2-for-content-moderation-0.md" >}})
+- [IBM与UC Berkeley发布IT-Bench及MAST诊断企业智能体失败原因]({{< relref "posts/20260218-blogs_podcasts-ibm-and-uc-berkeley-diagnose-why-enterprise-agents-0.md" >}})
+- [IBM联合UC Berkeley发布IT-Bench与MAST：诊断企业智能体失败原因]({{< relref "posts/20260218-blogs_podcasts-ibm-and-uc-berkeley-diagnose-why-enterprise-agents-0.md" >}})
+- [IBM与加州大学伯克利分校发布IT-Bench与MAST诊断企业智能体失败原因]({{< relref "posts/20260218-blogs_podcasts-ibm-and-uc-berkeley-diagnose-why-enterprise-agents-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

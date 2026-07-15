@@ -21,6 +21,10 @@ external_url: https://www.qodo.ai/blog/qodo-outperforms-claude-in-code-review-be
 scenarios:
 - 大语言模型
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Qodo在代码审查基准测试中超越Claude

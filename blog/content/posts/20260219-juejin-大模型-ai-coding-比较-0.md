@@ -4,7 +4,7 @@ date: 2026-02-19 09:39:31+08:00
 draft: false
 entry_kind: auto
 tags:
-- AI编程
+- AI 编程
 - 模型测评
 - Claude
 - DeepSeek
@@ -22,6 +22,10 @@ description: 这是一份关于大模型AI编程能力的实战对比总结，�
 external_url: https://juejin.cn/post/7607105207069065242
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 大模型AI编程实测：Opus 4.6与K2.5等模型排序对比
@@ -170,7 +174,7 @@ Cursor 目前被许多开发者认为优于 GitHub Copilot，主要体现在以�
 ### 相关文章
 
 - [OpenAI与Anthropic编码模型之争：Claude Opus 4.6对决GPT 5.3 Codex]({{< relref "posts/20260206-blogs_podcasts-ainews-openai-and-anthropic-go-to-war-claude-opus--0.md" >}})
-- [OpenAI 与 Anthropic 之争：Claude Opus 4.6 对抗 GPT 5.3 Codex]({{< relref "posts/20260207-blogs_podcasts-ainews-openai-and-anthropic-go-to-war-claude-opus--4.md" >}})
-- [OpenAI对决Anthropic：Claude Opus 4.6与GPT 5.3 Codex深度对比]({{< relref "posts/20260209-blogs_podcasts-ainews-openai-and-anthropic-go-to-war-claude-opus--7.md" >}})
-- [Claude Code：面向基础设施的编程工具]({{< relref "posts/20260204-hacker_news-claude-code-for-infrastructure-12.md" >}})
-- [Claude Code：面向基础设施开发的AI编程工具]({{< relref "posts/20260205-hacker_news-claude-code-for-infrastructure-12.md" >}})
+- [OpenAI 与 Anthropic 之争：Claude Opus 4.6 对抗 GPT 5.3 Codex]({{< relref "posts/20260206-blogs_podcasts-ainews-openai-and-anthropic-go-to-war-claude-opus--0.md" >}})
+- [OpenAI对决Anthropic：Claude Opus 4.6与GPT 5.3 Codex深度对比]({{< relref "posts/20260206-blogs_podcasts-ainews-openai-and-anthropic-go-to-war-claude-opus--0.md" >}})
+- [Claude Code：面向基础设施的编程工具]({{< relref "posts/20260204-hacker_news-claude-code-for-infrastructure-11.md" >}})
+- [Claude Code：面向基础设施开发的AI编程工具]({{< relref "posts/20260204-hacker_news-claude-code-for-infrastructure-11.md" >}})

@@ -12,7 +12,12 @@ from dataclasses import dataclass
 from typing import Any, Dict, List, Optional
 
 from .anthropic_client import AnthropicClient
-from .scenarios import format_scenarios_for_prompt, get_scenario_icon, get_scenario_description
+from .scenarios import (
+    format_scenarios_for_prompt,
+    get_all_scenario_names,
+    get_scenario_description,
+    get_scenario_icon,
+)
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -45,6 +50,7 @@ class ScenarioAnalyzer:
         self.enabled = bool(self.config.get("enabled", True))
         self.max_scenarios = int(self.config.get("max_scenarios", 3))
         self.temperature = float(self.config.get("temperature", 0.2))
+        self.allowed_scenarios = frozenset(get_all_scenario_names())
 
     def analyze(self, content: Dict[str, Any]) -> Dict[str, Any]:
         """
@@ -62,7 +68,15 @@ class ScenarioAnalyzer:
         # 如果已有场景数据，跳过
         existing_scenarios = content.get("scenarios")
         if isinstance(existing_scenarios, list) and len(existing_scenarios) > 0:
-            return content
+            normalized_existing = self._normalize(
+                [
+                    item if isinstance(item, dict) else {"name": str(item), "confidence": 1.0}
+                    for item in existing_scenarios
+                ]
+            )
+            if normalized_existing:
+                content["scenarios"] = normalized_existing
+                return content
 
         # 只分析 GitHub 项目
         source = content.get("source", "")
@@ -87,7 +101,7 @@ class ScenarioAnalyzer:
 
             # 规范化结果并添加图标和描述
             scenarios = self._normalize(result.scenarios)
-            content["scenarios"] = scenarios
+            content["scenarios"] = scenarios or self._fallback(content)
             return content
 
         except Exception as e:
@@ -202,7 +216,7 @@ class ScenarioAnalyzer:
 
         for s in scenarios:
             name = s.get("name", "").strip()
-            if not name or name in seen:
+            if not name or name not in self.allowed_scenarios or name in seen:
                 continue
 
             # 获取置信度
@@ -229,7 +243,6 @@ class ScenarioAnalyzer:
     def _fallback(self, content: Optional[Dict[str, Any]]) -> List[Dict[str, Any]]:
         """回退策略 - 基于简单规则推断场景"""
         content = content or {}
-        source = content.get("source", "")
         language = (content.get("language") or "").lower()
         tags = content.get("tags", [])
         description = (content.get("description") or "").lower()
@@ -238,7 +251,7 @@ class ScenarioAnalyzer:
         seen = set()
 
         def add_scenario(name: str, confidence: float = 0.7):
-            if name in seen:
+            if name not in self.allowed_scenarios or name in seen:
                 return
             scenarios.append({
                 "name": name,
@@ -247,10 +260,6 @@ class ScenarioAnalyzer:
                 "description": get_scenario_description(name),
             })
             seen.add(name)
-
-        # 基于 source 的规则
-        if source == "github_trending":
-            add_scenario("Web应用开发", 0.75)
 
         # 基于编程语言的规则
         lang_scenarios = {
@@ -263,12 +272,13 @@ class ScenarioAnalyzer:
             "cpp": ["游戏开发", "嵌入式系统", "桌面应用"],
             "c#": ["游戏开发", "桌面应用"],
             "swift": ["移动应用"],
-            "kotlin": ["移动应用", "Android"],
+            "kotlin": ["移动应用"],
             "dart": ["移动应用"],
+            "golang": ["云原生/容器", "后端开发", "命令行工具"],
         }
 
         for lang, scenario_names in lang_scenarios.items():
-            if lang in language or lang in language.replace("#", "").replace(" ", ""):
+            if self._contains_latin_keyword(language, lang):
                 for name in scenario_names[:2]:
                     add_scenario(name, 0.8)
                 break
@@ -301,7 +311,7 @@ class ScenarioAnalyzer:
         for tag in tags:
             tag_lower = str(tag).lower()
             for keyword, scenario_names in tag_keywords.items():
-                if keyword in tag_lower:
+                if self._contains_latin_keyword(tag_lower, keyword):
                     for name in scenario_names[:1]:
                         add_scenario(name, 0.85)
                     break
@@ -310,7 +320,7 @@ class ScenarioAnalyzer:
         desc_keywords = {
             "api": ["后端开发", "Web应用开发"],
             "framework": ["Web应用开发", "前端开发"],
-            "library": ["工具"],
+            "library": ["效率工具"],
             "tool": ["命令行工具", "效率工具"],
             "database": ["数据库"],
             "agent": ["AI/ML项目", "大语言模型"],
@@ -318,16 +328,24 @@ class ScenarioAnalyzer:
         }
 
         for keyword, scenario_names in desc_keywords.items():
-            if keyword in description:
+            if self._contains_latin_keyword(description, keyword):
                 for name in scenario_names[:1]:
                     add_scenario(name, 0.75)
                 break
 
-        # 如果没有匹配到任何场景，添加默认场景
-        if not scenarios:
-            add_scenario("Web应用开发", 0.6)
-
         return scenarios[: self.max_scenarios]
+
+    @staticmethod
+    def _contains_latin_keyword(text: Any, keyword: str) -> bool:
+        """Match Latin keywords as tokens while allowing adjacency to CJK text."""
+        value = str(text or "").casefold()
+        token = str(keyword or "").casefold().strip()
+        if not token:
+            return False
+        return re.search(
+            rf"(?<![a-z0-9]){re.escape(token)}(?![a-z0-9])",
+            value,
+        ) is not None
 
 
 if __name__ == "__main__":

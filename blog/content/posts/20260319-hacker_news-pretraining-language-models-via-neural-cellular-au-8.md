@@ -11,7 +11,7 @@ tags:
 - 模型训练
 - LLM
 - 生成模型
-- AI研究
+- AI 研究
 categories:
 - 论文
 - 大模型
@@ -21,6 +21,10 @@ external_url: https://hanseungwook.github.io/blog/nca-pre-pre-training
 scenarios:
 - 大语言模型
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 神经细胞自动机预训练语言模型研究

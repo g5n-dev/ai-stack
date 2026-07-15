@@ -1,14 +1,23 @@
 ---
-title: "提升自动驾驶感知多租户DNN推理的可预测性"
-date: 2026-02-12T02:48:17+08:00
+title: 提升自动驾驶感知多租户DNN推理的可预测性
+date: 2026-02-12 02:48:17+08:00
 draft: false
-entry_kind: "auto"
-tags: ["arxiv", "cs.CV"]
-categories: ["论文"]
+entry_kind: auto
+tags:
+- arxiv
+- cs.CV
+categories:
+- 论文
 source: arxiv
-description: "本文介绍了一种名为 **PP-DNN（Predictable Perception with DNNs）** 的系统，旨在解决自动驾驶车辆在资源受限情况下，实现实时、可预测的深度神经网络（DNN）感知推理的难题。 **背景与问题：** 自动驾驶依赖传感器和DNN进行环境感知，但巨大的计算需求与车载资源有限之间存在矛盾。"
+description: 本文介绍了一种名为 **PP-DNN（Predictable Perception with DNNs）** 的系统，旨在解决自动驾驶车辆在资源受限情况下，实现实时、可预测的深度神经网络（DNN）感知推理的难题。
+  **背景与问题：** 自动驾驶依赖传感器和DNN进行环境感知，但巨大的计算需求与车载资源有限之间存在矛盾。
 external_url: http://arxiv.org/abs/2602.11004v1
-scenarios: ["计算机视觉"]
+scenarios:
+- 计算机视觉
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 提升自动驾驶感知多租户DNN推理的可预测性
@@ -50,7 +59,6 @@ PP-DNN通过以下组件协同工作：
 基于ROS的AV流水线和BDD100K、nuScenes数据集的评估表明，PP-DNN显著增强了感知的可预测性。与基线相比，它将融合帧数量提高了**7.3倍**，融合延迟降低了**2.6倍**以上，延迟波动降低了**2.3倍**以上，检测完整性提升了**75.4%**，成本效益提高了**98%**。
 
 ---
-## 学习路径
 
 ## 学习路径
 
@@ -222,9 +230,9 @@ PP-DNN通过以下组件协同工作：
 
 ### 相关文章
 
-- [ArcFlow: Unleashing 2-Step Text-to-Image Generation via]({{< relref "posts/20260211-arxiv_ai-arcflow-unleashing-2-step-text-to-image-generation-3.md" >}})
+- [ArcFlow: Unleashing 2-Step Text-to-Image Generation via]({{< relref "posts/20260210-arxiv_ai-arcflow-unleashing-2-step-text-to-image-generation-3.md" >}})
 - [视频扩散模型因果性与去噪过程可分离]({{< relref "posts/20260211-arxiv_ai-causality-in-video-diffusers-is-separable-from-den-5.md" >}})
 - [Code2World: A GUI World Model via Renderable Code Gener]({{< relref "posts/20260211-arxiv_ai-code2world-a-gui-world-model-via-renderable-code-g-4.md" >}})
-- [Olaf-World：面向视频世界模型的潜在动作定向方法]({{< relref "posts/20260212-arxiv_ai-olaf-world-orienting-latent-actions-for-video-worl-1.md" >}})
+- [Olaf-World：面向视频世界模型的潜在动作定向方法]({{< relref "posts/20260211-arxiv_ai-olaf-world-orienting-latent-actions-for-video-worl-1.md" >}})
 - [UEval：统一多模态生成基准]({{< relref "posts/20260130-arxiv_ai-ueval-a-benchmark-for-unified-multimodal-generatio-3.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

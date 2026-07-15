@@ -1,14 +1,29 @@
 ---
-title: "SplineFlow：基于B样条插值的动力系统流匹配方法"
-date: 2026-02-02T02:57:13+08:00
+title: SplineFlow：基于B样条插值的动力系统流匹配方法
+date: 2026-02-02 02:57:13+08:00
 draft: false
-entry_kind: "auto"
-tags: ["流匹配", "SplineFlow", "B样条", "生成模型", "动力系统", "轨迹推断", "插值算法", "cs.LG"]
-categories: ["论文", "大模型"]
+entry_kind: auto
+tags:
+- 流匹配
+- SplineFlow
+- B样条
+- 生成模型
+- 动力系统
+- 轨迹推断
+- 插值算法
+- cs.LG
+categories:
+- 论文
+- 大模型
 source: arxiv
-description: "**SplineFlow：基于B样条插值的流匹配算法总结** **背景与问题：** 流匹配是一种具有广泛应用的可扩展生成框架，但在处理动态系统时面临挑战。现有的最先进方法通常使用线性插值来构建条件路径，这无法很好地捕捉底层的状态演化，特别是在从不规则采样的观测数据中学习高阶动力学时。此外，构建满足观测数据多边际约束的统"
+description: '**SplineFlow：基于B样条插值的流匹配算法总结** **背景与问题：** 流匹配是一种具有广泛应用的可扩展生成框架，但在处理动态系统时面临挑战。现有的最先进方法通常使用线性插值来构建条件路径，这无法很好地捕捉底层的状态演化，特别是在从不规则采样的观测数据中学习高阶动力学时。此外，构建满足观测数据多边际约束的统'
 external_url: http://arxiv.org/abs/2601.23072v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # SplineFlow：基于B样条插值的动力系统流匹配方法
@@ -258,7 +273,6 @@ SplineFlow 的理论基础建立在**连续正则化**和**流匹配**之上。
 -
 
 ---
-## 研究最佳实践
 
 ## 最佳实践指南
 
@@ -349,7 +363,6 @@ SplineFlow 的理论基础建立在**连续正则化**和**流匹配**之上。
 - 该方法为流匹配模型提供了一种可解释的参数化方式，B 样条基函数的局部特性使得模型能够更清晰地捕捉数据分布的局部结构，便于分析和调试。
 
 ---
-## 学习路径
 
 ## 学习路径
 

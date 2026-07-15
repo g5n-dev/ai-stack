@@ -1,12 +1,29 @@
 ---
-title: "突破极限！AI如何教会自己推理？🤯 边缘学习性的惊天秘密！🚀"
-date: 2026-01-27T23:10:51+08:00
+title: 突破极限！AI如何教会自己推理？🤯 边缘学习性的惊天秘密！🚀
+date: 2026-01-27 23:10:51+08:00
 draft: false
-entry_kind: "auto"
-tags: ["SOAR", "强化学习", "元学习", "模型推理", "课程学习", "自我改进", "数学基准", "稀疏奖励"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- SOAR
+- 强化学习
+- 元学习
+- 模型推理
+- 课程学习
+- 自我改进
+- 数学基准
+- 稀疏奖励
+categories:
+- 大模型
+- 论文
 source: arxiv
 external_url: http://arxiv.org/abs/2601.18778v1
+scenarios: []
+aliases:
+- /posts/20260128-arxiv_ai-teaching-models-to-teach-themselves-reasoning-at-t-9/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 📚 突破极限！AI如何教会自己推理？🤯 边缘学习性的惊天秘密！🚀
@@ -260,7 +277,6 @@ external_url: http://arxiv.org/abs/2601.18778v1
 *   **欺骗性景观：** 如果学生模型通过“作弊”（例如过拟合到某种特定的题目格式）来获得高奖励，教师可能会误判
 
 ---
-## ✅ 研究最佳实践
 
 ## 最佳实践指南：让模型学会自我推理
 
@@ -355,7 +371,6 @@ external_url: http://arxiv.org/abs/2601.18778v1
 - 研究强调“课程学习”的重要性，即从简单到复杂的渐进式训练；与其在所有数据上进行微调，不如精心筛选出位于模型能力边界的高质量数据进行训练，效率更高。
 
 ---
-## 🗺️ 学习路径
 
 ## 学习路径
 

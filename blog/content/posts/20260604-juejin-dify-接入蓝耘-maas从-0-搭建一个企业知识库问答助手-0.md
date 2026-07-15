@@ -1,14 +1,30 @@
 ---
-title: "基于 Dify 与蓝耘 MaaS 构建企业知识库问答助手"
-date: 2026-06-04T22:46:26+08:00
+title: 基于 Dify 与蓝耘 MaaS 构建企业知识库问答助手
+date: 2026-06-04 22:46:26+08:00
 draft: false
-entry_kind: "auto"
-tags: ["知识库", "问答助手", "Dify", "RAG", "向量检索", "意图识别", "模型服务", "应用开发"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- 知识库
+- 问答助手
+- Dify
+- RAG
+- 向量检索
+- 意图识别
+- 模型服务
+- 应用开发
+categories:
+- 大模型
+- AI 工程
 source: juejin
-description: "本文介绍如何通过 Dify 接入蓝耘 MaaS，从零构建企业知识库问答助手。当前很多团队尝试把大模型直接嵌入业务，却发现单纯聊天并不能满足实际需求。要实现可用的业务助手，需要先构建企业内部知识库、配置检索模块、设定对话流程并与业务流程深度结合。通过 Dify 的可视化编排与蓝耘 MaaS 的模型服务，团队可以快速完成知"
+description: 本文介绍如何通过 Dify 接入蓝耘 MaaS，从零构建企业知识库问答助手。当前很多团队尝试把大模型直接嵌入业务，却发现单纯聊天并不能满足实际需求。要实现可用的业务助手，需要先构建企业内部知识库、配置检索模块、设定对话流程并与业务流程深度结合。通过
+  Dify 的可视化编排与蓝耘 MaaS 的模型服务，团队可以快速完成知
 external_url: https://juejin.cn/post/7647356541462626356
-scenarios: ["RAG应用"]
+scenarios:
+- RAG应用
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 基于 Dify 与蓝耘 MaaS 构建企业知识库问答助手
@@ -83,9 +99,9 @@ scenarios: ["RAG应用"]
 
 ### 相关文章
 
-- [利用 Amazon Bedrock 构建由 AI 驱动的智能招聘系统]({{< relref "posts/20260214-blogs_podcasts-ai-meets-hr-transforming-talent-acquisition-with-a-7.md" >}})
+- [利用 Amazon Bedrock 构建由 AI 驱动的智能招聘系统]({{< relref "posts/20260212-blogs_podcasts-ai-meets-hr-transforming-talent-acquisition-with-a-0.md" >}})
 - [基于AWS与Hugging Face smolagents构建医疗AI智能体]({{< relref "posts/20260223-blogs_podcasts-agentic-ai-with-multi-model-framework-using-huggin-0.md" >}})
-- [基于AWS与Hugging Face smolagents的多模型医疗AI智能体构建]({{< relref "posts/20260224-blogs_podcasts-agentic-ai-with-multi-model-framework-using-huggin-14.md" >}})
-- [基于AWS与Hugging Face smolagents构建多模型医疗AI Agent]({{< relref "posts/20260224-blogs_podcasts-agentic-ai-with-multi-model-framework-using-huggin-4.md" >}})
-- [基于AWS与Hugging Face smolagents构建多模型医疗AI智能体]({{< relref "posts/20260224-blogs_podcasts-agentic-ai-with-multi-model-framework-using-huggin-5.md" >}})
+- [基于AWS与Hugging Face smolagents的多模型医疗AI智能体构建]({{< relref "posts/20260223-blogs_podcasts-agentic-ai-with-multi-model-framework-using-huggin-0.md" >}})
+- [基于AWS与Hugging Face smolagents构建多模型医疗AI Agent]({{< relref "posts/20260223-blogs_podcasts-agentic-ai-with-multi-model-framework-using-huggin-0.md" >}})
+- [基于AWS与Hugging Face smolagents构建多模型医疗AI智能体]({{< relref "posts/20260223-blogs_podcasts-agentic-ai-with-multi-model-framework-using-huggin-0.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

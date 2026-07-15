@@ -1,14 +1,32 @@
 ---
-title: "Parallel-Probe：通过2D探测实现高效并行思维"
-date: 2026-02-04T23:12:07+08:00
+title: Parallel-Probe：通过2D探测实现高效并行思维
+date: 2026-02-04 23:12:07+08:00
 draft: false
-entry_kind: "auto"
-tags: ["LLM", "并行推理", "思维链", "2D Probing", "推理优化", "测试时扩展", "分支剪枝", "提前停止"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- LLM
+- 并行推理
+- 思维链
+- 2D Probing
+- 推理优化
+- 测试时扩展
+- 分支剪枝
+- 提前停止
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "本文介绍了 **Parallel-Probe**，一种通过 **2D 探测（2D Probing）** 技术实现高效并行推理的新方法。针对并行推理虽然效果显著但计算成本高昂的问题，该研究提出了一套无需训练的控制机制，显著降低了推理开销。 主要内容包括： 1. **核心挑战与方案**：现有的并行推理优化方法缺乏全局视角。"
+description: 本文介绍了 **Parallel-Probe**，一种通过 **2D 探测（2D Probing）** 技术实现高效并行推理的新方法。针对并行推理虽然效果显著但计算成本高昂的问题，该研究提出了一套无需训练的控制机制，显著降低了推理开销。
+  主要内容包括： 1. **核心挑战与方案**：现有的并行推理优化方法缺乏全局视角。
 external_url: http://arxiv.org/abs/2602.03845v1
-scenarios: ["大语言模型"]
+scenarios:
+- 大语言模型
+aliases:
+- /posts/20260205-arxiv_ai-parallel-probe-towards-efficient-parallel-thinking-1/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Parallel-Probe：通过2D探测实现高效并行思维
@@ -151,7 +169,6 @@ scenarios: ["大语言模型"]
     如果多个独立的推理分支在早期步骤（如前 30% 的步骤）就达成了高度一致的答案，那么继续推理大概率会保持该答案，且该答案正确的概率较高。这是实现“早停”策略的理论依据。
 
 ---
-## 研究最佳实践
 
 ## 最佳实践指南
 
@@ -242,7 +259,6 @@ scenarios: ["大语言模型"]
 - 该方法为未来高效大模型推理提供了新思路，证明了并行化思维链是提升 LLM 推理性能的重要方向，尤其适用于实时或资源受限场景。
 
 ---
-## 学习路径
 
 ## 学习路径
 
@@ -423,8 +439,8 @@ scenarios: ["大语言模型"]
 ### 相关文章
 
 - [面向大语言模型的时间引导机制]({{< relref "posts/20260130-arxiv_ai-temporal-guidance-for-large-language-models-6.md" >}})
-- [Kimi K2.5 技术报告发布：模型架构与训练细节]({{< relref "posts/20260131-hacker_news-kimi-k25-technical-report-pdf-16.md" >}})
+- [Kimi K2.5 技术报告发布：模型架构与训练细节]({{< relref "posts/20260130-hacker_news-kimi-k25-technical-report-pdf-10.md" >}})
 - [基于输出监督学习的思维链混淆技术可泛化至未见任务]({{< relref "posts/20260202-arxiv_ai-chain-of-thought-obfuscation-learned-from-output-s-4.md" >}})
-- [推理大语言模型从被动求解到主动提问的转变]({{< relref "posts/20260202-arxiv_ai-reasoning-while-asking-transforming-reasoning-larg-9.md" >}})
+- [推理大语言模型从被动求解到主动提问的转变]({{< relref "posts/20260130-arxiv_ai-reasoning-while-asking-transforming-reasoning-larg-9.md" >}})
 - [训练LLM采用分治推理提升测试时扩展性]({{< relref "posts/20260203-arxiv_ai-training-llms-for-divide-and-conquer-reasoning-ele-7.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

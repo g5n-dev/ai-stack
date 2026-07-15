@@ -1,14 +1,31 @@
 ---
-title: "DeepSeek V4 Pro与Flash发布 支持华为Ascend芯片运行"
-date: 2026-04-25T23:52:01+08:00
+title: DeepSeek V4 Pro与Flash发布 支持华为Ascend芯片运行
+date: 2026-04-25 23:52:01+08:00
 draft: false
-entry_kind: "auto"
-tags: ["DeepSeek", "V4 Pro", "Flash", "华为Ascend", "大模型", "开源模型", "国产AI", "模型发布"]
-categories: ["大模型"]
+entry_kind: auto
+tags:
+- DeepSeek
+- V4 Pro
+- Flash
+- 华为Ascend
+- 大模型
+- 开源模型
+- 国产AI
+- 模型发布
+categories:
+- 大模型
 source: blogs_podcasts
-description: "DeepSeek 发布了 V4 Pro（1.6 T‑A49B）和 Flash（284 B‑A13B）两款模型，分别提供 Base 与 Instruct 两个版本，均可在华为 Ascend 芯片上运行。该系列被称为“归来的猛虎”，但在最新基准测试中已失去领先位置。"
+description: DeepSeek 发布了 V4 Pro（1.6 T‑A49B）和 Flash（284 B‑A13B）两款模型，分别提供 Base 与 Instruct
+  两个版本，均可在华为 Ascend 芯片上运行。该系列被称为“归来的猛虎”，但在最新基准测试中已失去领先位置。
 external_url: https://www.latent.space/p/ainews-deepseek-v4-pro-16t-a49b-and
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+aliases:
+- /posts/20260426-blogs_podcasts-ainews-deepseek-v4-pro-16t-a49b-and-flash-284b-a13-0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # DeepSeek V4 Pro与Flash发布 支持华为Ascend芯片运行
@@ -151,9 +168,9 @@ DeepSeek V4 Pro（1.6 T 参数）与 Flash（284 B 参数）在支持华
 
 ### 相关文章
 
-- [中国开源AI生态架构选择：DeepSeek之外的技术路径]({{< relref "posts/20260129-blogs_podcasts-architectural-choices-in-chinas-open-source-ai-eco-9.md" >}})
+- [中国开源AI生态架构选择：DeepSeek之外的技术路径]({{< relref "posts/20260127-blogs_podcasts-architectural-choices-in-chinas-open-source-ai-eco-0.md" >}})
 - [谷歌发布Gemma 4开源模型]({{< relref "posts/20260403-hacker_news-google-releases-gemma-4-open-models-0.md" >}})
-- [中国开源AI生态的架构选择：超越DeepSeek的构建路径]({{< relref "posts/20260129-blogs_podcasts-architectural-choices-in-chinas-open-source-ai-eco-8.md" >}})
+- [中国开源AI生态的架构选择：超越DeepSeek的构建路径]({{< relref "posts/20260127-blogs_podcasts-architectural-choices-in-chinas-open-source-ai-eco-0.md" >}})
 - [全球开源AI生态展望：从DeepSeek到AI+]({{< relref "posts/20260203-blogs_podcasts-the-future-of-the-global-open-source-ai-ecosystem--0.md" >}})
-- [全球开源AI生态展望：从DeepSeek到AI+]({{< relref "posts/20260203-blogs_podcasts-the-future-of-the-global-open-source-ai-ecosystem--1.md" >}})
+- [全球开源AI生态展望：从DeepSeek到AI+]({{< relref "posts/20260203-blogs_podcasts-the-future-of-the-global-open-source-ai-ecosystem--0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

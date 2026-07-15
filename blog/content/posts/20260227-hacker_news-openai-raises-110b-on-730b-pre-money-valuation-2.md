@@ -21,6 +21,10 @@ description: OpenAI 完成 66 亿美元融资，投前估值达到 1570 亿美�
 external_url: https://techcrunch.com/2026/02/27/openai-raises-110b-in-one-of-the-largest-private-funding-rounds-in-history
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # OpenAI融资66亿美元投后估值达1570亿美元

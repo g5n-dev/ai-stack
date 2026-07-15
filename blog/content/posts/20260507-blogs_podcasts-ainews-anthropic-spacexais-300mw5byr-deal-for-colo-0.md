@@ -1,14 +1,30 @@
 ---
-title: "Anthropic携手Colossus I：300MW算力协议年费50亿"
-date: 2026-05-07T09:52:06+08:00
+title: Anthropic携手Colossus I：300MW算力协议年费50亿
+date: 2026-05-07 09:52:06+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Anthropic", "SpaceXai", "数据中心", "算力合作", "Colossus I", "AI基础设施", "战略合作", "ARR增长"]
-categories: ["系统与基础设施", "大模型"]
+entry_kind: auto
+tags:
+- Anthropic
+- SpaceXai
+- 数据中心
+- 算力合作
+- Colossus I
+- AI 基础设施
+- 战略合作
+- ARR增长
+categories:
+- 系统与基础设施
+- 大模型
 source: blogs_podcasts
-description: "合同概况 Anthropic 与 SpaceX 的人工智能部门 SpaceXai 达成 300 MW、每年约 5 亿美元的协议，用于建设代号为 Colossus I 的超大规模数据中心，合同涵盖电力、冷却及高速互联网络的整体交付。 财务增长 受益于该合作，Anthropic 的年度经常性收入（ARR）在过去一年实现约"
+description: 合同概况 Anthropic 与 SpaceX 的人工智能部门 SpaceXai 达成 300 MW、每年约 5 亿美元的协议，用于建设代号为
+  Colossus I 的超大规模数据中心，合同涵盖电力、冷却及高速互联网络的整体交付。 财务增长 受益于该合作，Anthropic 的年度经常性收入（ARR）在过去一年实现约
 external_url: https://www.latent.space/p/ainews-anthropic-spacexais-300mw5byr
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Anthropic携手Colossus I：300MW算力协议年费50亿
@@ -109,9 +125,9 @@ Anthropic 与 SpaceX 的人工智能部门 SpaceXai 达成 300 MW、每年约 
 
 ### 相关文章
 
-- [亚马逊Bedrock新推亚太六区：Anthropic Claude模型支持全球跨区域推理]({{< relref "posts/20260224-blogs_podcasts-global-cross-region-inference-for-latest-anthropic-5.md" >}})
+- [亚马逊Bedrock新推亚太六区：Anthropic Claude模型支持全球跨区域推理]({{< relref "posts/20260224-blogs_podcasts-global-cross-region-inference-for-latest-anthropic-2.md" >}})
 - [OpenAI与亚马逊达成战略合作，将Frontier模型引入AWS]({{< relref "posts/20260227-blogs_podcasts-openai-and-amazon-announce-strategic-partnership-0.md" >}})
-- [OpenAI与亚马逊达成战略合作，将Frontier模型引入AWS]({{< relref "posts/20260227-blogs_podcasts-openai-and-amazon-announce-strategic-partnership-3.md" >}})
-- [OpenAI与亚马逊达成战略合作：Frontier平台接入AWS]({{< relref "posts/20260227-blogs_podcasts-openai-and-amazon-announce-strategic-partnership-4.md" >}})
-- [OpenAI与亚马逊达成战略合作：在AWS上引入Frontier平台扩展AI基础设施]({{< relref "posts/20260228-blogs_podcasts-openai-and-amazon-announce-strategic-partnership-4.md" >}})
+- [OpenAI与亚马逊达成战略合作，将Frontier模型引入AWS]({{< relref "posts/20260227-blogs_podcasts-openai-and-amazon-announce-strategic-partnership-0.md" >}})
+- [OpenAI与亚马逊达成战略合作：Frontier平台接入AWS]({{< relref "posts/20260227-blogs_podcasts-openai-and-amazon-announce-strategic-partnership-0.md" >}})
+- [OpenAI与亚马逊达成战略合作：在AWS上引入Frontier平台扩展AI基础设施]({{< relref "posts/20260227-blogs_podcasts-openai-and-amazon-announce-strategic-partnership-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

@@ -31,6 +31,7 @@ concurrency:
   cancel-in-progress: false
 
 permissions:
+  actions: write
   contents: write
 
 env:
@@ -40,6 +41,7 @@ env:
 jobs:
   delete-post:
     runs-on: ubuntu-latest
+    timeout-minutes: 180
     steps:
       - name: Checkout main branch
         uses: actions/checkout@v4
@@ -63,7 +65,8 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Validate inputs and execute
+      - name: Validate inputs and prepare deletion
+        id: prepare
         env:
           MODE: ${{ inputs.mode }}
           POST_PATH: ${{ inputs.post_path }}
@@ -112,8 +115,7 @@ jobs:
               exit 1
             fi
 
-            git rm -f "${POST_PATH}"
-            git status --porcelain
+            echo "Planned deletion: ${POST_PATH}"
           fi
 
           if [ "${MODE}" = "scan" ]; then
@@ -240,24 +242,118 @@ jobs:
             echo "Planned deletions:"
             cat to-delete.txt
 
-            if [ "${DRY_RUN}" = "true" ]; then
-              echo "Dry run: skipping delete/commit/push"
-              exit 0
-            fi
-
-            git pull --rebase --autostash origin main || (git rebase --abort && git reset --hard origin/main)
-            xargs -I {} git rm -f {} < to-delete.txt
-            git status --porcelain
-            git commit -m "Moderation delete posts [skip ci]"
-            git push origin HEAD:main
-            exit 0
           fi
 
           if [ "${DRY_RUN}" = "true" ]; then
-            echo "Dry run: skipping commit/push"
+            echo "Dry run: skipping delete, derived-data rebuild, commit and deploy"
             exit 0
           fi
 
-          git pull --rebase --autostash origin main || (git rebase --abort && git reset --hard origin/main)
-          git commit -m "Delete post: $(basename "${POST_PATH}") [skip ci]"
+          # Rebase before mutating tracked content. Any concurrent conflict stops
+          # the workflow instead of discarding either side.
+          git pull --rebase origin main
+
+          if [ "${MODE}" = "single" ]; then
+            if [ ! -f "${POST_PATH}" ]; then
+              echo "File disappeared after synchronizing main: ${POST_PATH}"
+              exit 1
+            fi
+            git rm -f "${POST_PATH}"
+          else
+            while IFS= read -r path; do
+              [ -n "${path}" ] || continue
+              if [ ! -f "${path}" ]; then
+                echo "Scanned file disappeared after synchronizing main: ${path}"
+                exit 1
+              fi
+              git rm -f -- "${path}"
+            done < to-delete.txt
+          fi
+
+          git status --porcelain
+          echo "changed=true" >> "${GITHUB_OUTPUT}"
+
+      - name: Rebuild Post-derived data
+        if: ${{ steps.prepare.outputs.changed == 'true' }}
+        env:
+          PYTHONPATH: /home/runner/work/ai-stack/ai-stack
+          TAG_GRAPH_ENABLE_CONTENT_MINING: "0"
+          TAG_INTRO_ENABLED: "0"
+          TAG_INTRO_MAX_NEW: "0"
+        run: |
+          set -euo pipefail
+          python3 scripts/build_content_quality_manifest.py \
+            --content-root blog/content \
+            --output blog/data/content_quality.json \
+            --fail-on-quarantine \
+            --fail-on-structural-warning
+          python3 -m processor.tag_graph
+          python3 scripts/verify_graph.py --assets-only --public-dir blog/static
+
+      - name: Commit deletion and generated data
+        id: commit
+        if: ${{ steps.prepare.outputs.changed == 'true' }}
+        env:
+          MODE: ${{ inputs.mode }}
+          POST_PATH: ${{ inputs.post_path }}
+        run: |
+          set -euo pipefail
+          git add -A -- \
+            blog/content/posts \
+            blog/data/content_quality.json \
+            blog/static/data/tag-graph
+
+          if git diff --cached --quiet; then
+            echo "Deletion was prepared but no tracked Post-derived change remains"
+            exit 1
+          fi
+
+          if [ "${MODE:-scan}" = "single" ]; then
+            commit_subject="Delete post: $(basename "${POST_PATH}")"
+          else
+            commit_subject="Moderation delete posts"
+          fi
+          git commit -m "${commit_subject}"
           git push origin HEAD:main
+          echo "head_sha=$(git rev-parse HEAD)" >> "${GITHUB_OUTPUT}"
+
+      - name: Deploy committed deletion and wait
+        if: ${{ steps.commit.outputs.head_sha != '' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          HEAD_SHA: ${{ steps.commit.outputs.head_sha }}
+        run: |
+          set -euo pipefail
+          case "${HEAD_SHA}" in
+            ''|*[!0-9a-f]*)
+              echo "Invalid committed SHA: ${HEAD_SHA}"
+              exit 1
+              ;;
+          esac
+
+          gh workflow run deploy.yml --ref main -f refresh_data=false
+
+          run_id=""
+          for _ in $(seq 1 30); do
+            run_id="$(
+              gh run list \
+                --workflow deploy.yml \
+                --event workflow_dispatch \
+                --commit "${HEAD_SHA}" \
+                --limit 1 \
+                --json databaseId \
+                --jq '.[0].databaseId // empty'
+            )"
+            if [ -n "${run_id}" ]; then
+              break
+            fi
+            sleep 2
+          done
+
+          if [ -z "${run_id}" ]; then
+            echo "Timed out waiting for deploy run for ${HEAD_SHA}"
+            exit 1
+          fi
+
+          echo "Watching deploy run ${run_id} for ${HEAD_SHA}"
+          gh run watch "${run_id}" --exit-status --interval 10

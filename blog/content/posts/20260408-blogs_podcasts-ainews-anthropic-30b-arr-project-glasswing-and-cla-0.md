@@ -1,14 +1,30 @@
 ---
-title: "Anthropic估值达$30B 新模型因太危险无法发布"
-date: 2026-04-08T12:13:57+08:00
+title: Anthropic估值达$30B 新模型因太危险无法发布
+date: 2026-04-08 12:13:57+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Anthropic", "Claude", "GlassWing", "AI安全", "模型风险", "ARR", "企业AI", "OpenAI"]
-categories: ["大模型", "产品与创业"]
+entry_kind: auto
+tags:
+- Anthropic
+- Claude
+- GlassWing
+- AI 安全
+- 模型风险
+- ARR
+- 企业AI
+- OpenAI
+categories:
+- 大模型
+- 产品与创业
 source: blogs_podcasts
-description: "业务规模 Anthropic 已突破 300 亿美元年度经常性收入（ARR），标志着公司在 AI 商业化上进入高速增长阶段。强大的收入基础为其持续的技术研发提供了充足的资金保障。 技术创新：GlassWing 与 Claude Mythos 预览 - **Project GlassWing**：定位为下一代企业级 AI"
+description: 业务规模 Anthropic 已突破 300 亿美元年度经常性收入（ARR），标志着公司在 AI 商业化上进入高速增长阶段。强大的收入基础为其持续的技术研发提供了充足的资金保障。
+  技术创新：GlassWing 与 Claude Mythos 预览 - **Project GlassWing**：定位为下一代企业级 AI
 external_url: https://www.latent.space/p/ainews-anthropic-30b-arr-project
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Anthropic估值达$30B 新模型因太危险无法发布
@@ -139,8 +155,8 @@ Mythos Preview 被描述为“GPT‑2 以后首款因安全风险被限制发布
 ### 相关文章
 
 - [OpenAI与Anthropic编码模型之争：Claude Opus 4.6对决GPT 5.3 Codex]({{< relref "posts/20260206-blogs_podcasts-ainews-openai-and-anthropic-go-to-war-claude-opus--0.md" >}})
-- [OpenAI 与 Anthropic 之争：Claude Opus 4.6 对决 GPT 5.3 Codex]({{< relref "posts/20260206-blogs_podcasts-ainews-openai-and-anthropic-go-to-war-claude-opus--2.md" >}})
-- [OpenAI 对决 Anthropic：Claude Opus 4.6 挑战 GPT-5.3 Codex]({{< relref "posts/20260207-blogs_podcasts-ainews-openai-and-anthropic-go-to-war-claude-opus--2.md" >}})
-- [OpenAI 与 Anthropic 之争：Claude Opus 4.6 对抗 GPT 5.3 Codex]({{< relref "posts/20260207-blogs_podcasts-ainews-openai-and-anthropic-go-to-war-claude-opus--4.md" >}})
-- [OpenAI与Anthropic编码模型之争：Claude Opus 4.6对决GPT 5.3 Codex]({{< relref "posts/20260207-blogs_podcasts-ainews-openai-and-anthropic-go-to-war-claude-opus--5.md" >}})
+- [OpenAI 与 Anthropic 之争：Claude Opus 4.6 对决 GPT 5.3 Codex]({{< relref "posts/20260206-blogs_podcasts-ainews-openai-and-anthropic-go-to-war-claude-opus--0.md" >}})
+- [OpenAI 对决 Anthropic：Claude Opus 4.6 挑战 GPT-5.3 Codex]({{< relref "posts/20260206-blogs_podcasts-ainews-openai-and-anthropic-go-to-war-claude-opus--0.md" >}})
+- [OpenAI 与 Anthropic 之争：Claude Opus 4.6 对抗 GPT 5.3 Codex]({{< relref "posts/20260206-blogs_podcasts-ainews-openai-and-anthropic-go-to-war-claude-opus--0.md" >}})
+- [OpenAI与Anthropic编码模型之争：Claude Opus 4.6对决GPT 5.3 Codex]({{< relref "posts/20260206-blogs_podcasts-ainews-openai-and-anthropic-go-to-war-claude-opus--0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

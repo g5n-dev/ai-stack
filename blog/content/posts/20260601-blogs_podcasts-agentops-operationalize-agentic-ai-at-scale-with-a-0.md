@@ -1,14 +1,30 @@
 ---
-title: "AgentOps规模化运营Amazon Bedrock AgentCore智能体"
-date: 2026-06-01T16:52:40+08:00
+title: AgentOps规模化运营Amazon Bedrock AgentCore智能体
+date: 2026-06-01 16:52:40+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AgentOps", "Amazon Bedrock", "AgentCore", "智能体运营", "AI Agent", "生产部署", "成本优化", "运维规范"]
-categories: ["AI 工程", "大模型"]
+entry_kind: auto
+tags:
+- AgentOps
+- Amazon Bedrock
+- AgentCore
+- 智能体运营
+- AI Agent
+- 生产部署
+- 成本优化
+- 运维规范
+categories:
+- AI 工程
+- 大模型
 source: blogs_podcasts
-description: "背景与挑战 构建代理型 AI 系统时面临独特运维难题：代理的行为不可预测、成本易失控、非确定性故障难以调试。传统 DevOps 难以覆盖此类自主决策和动态适应的工作负载。 AgentOps 的定位 AgentOps 是一套针对生产环境中 AI 代理的运维规范，旨在实现代理的部署、管理、监控与持续改进。它把代理的生命周期"
+description: 背景与挑战 构建代理型 AI 系统时面临独特运维难题：代理的行为不可预测、成本易失控、非确定性故障难以调试。传统 DevOps 难以覆盖此类自主决策和动态适应的工作负载。
+  AgentOps 的定位 AgentOps 是一套针对生产环境中 AI 代理的运维规范，旨在实现代理的部署、管理、监控与持续改进。它把代理的生命周期
 external_url: https://aws.amazon.com/blogs/machine-learning/agentops-operationalize-agentic-ai-at-scale-with-amazon-bedrock-agentcore
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AgentOps规模化运营Amazon Bedrock AgentCore智能体
@@ -158,8 +174,8 @@ AgentOps是实现Agentic AI规模化的必要条件，而非可选项。
 ### 相关文章
 
 - [Amazon Bedrock AgentCore 浏览器新增代理、配置文件及扩展支持]({{< relref "posts/20260213-blogs_podcasts-customize-ai-agent-browsing-with-proxies-profiles--0.md" >}})
-- [Amazon Bedrock AgentCore 浏览器更新：新增代理、配置文件及扩展支持]({{< relref "posts/20260214-blogs_podcasts-customize-ai-agent-browsing-with-proxies-profiles--1.md" >}})
-- [Amazon Bedrock AgentCore 浏览器新增代理配置、配置文件及扩展支持]({{< relref "posts/20260216-blogs_podcasts-customize-ai-agent-browsing-with-proxies-profiles--2.md" >}})
-- [Amazon Bedrock AgentCore 浏览器新增代理、配置文件及扩展支持]({{< relref "posts/20260218-blogs_podcasts-customize-ai-agent-browsing-with-proxies-profiles--6.md" >}})
+- [Amazon Bedrock AgentCore 浏览器更新：新增代理、配置文件及扩展支持]({{< relref "posts/20260213-blogs_podcasts-customize-ai-agent-browsing-with-proxies-profiles--0.md" >}})
+- [Amazon Bedrock AgentCore 浏览器新增代理配置、配置文件及扩展支持]({{< relref "posts/20260213-blogs_podcasts-customize-ai-agent-browsing-with-proxies-profiles--0.md" >}})
+- [Amazon Bedrock AgentCore 浏览器新增代理、配置文件及扩展支持]({{< relref "posts/20260213-blogs_podcasts-customize-ai-agent-browsing-with-proxies-profiles--0.md" >}})
 - [构建Amazon智能体评估框架：通用工作流与Bedrock指标库]({{< relref "posts/20260218-blogs_podcasts-evaluating-ai-agents-real-world-lessons-from-build-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

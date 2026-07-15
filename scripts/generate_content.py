@@ -11,10 +11,12 @@ from datetime import datetime
 from zoneinfo import ZoneInfo
 import logging
 import argparse
+import hashlib
+import html
 import re
 import urllib.parse
 import yaml
-from typing import Optional
+from typing import Any, Optional
 
 # 添加项目根目录到路径
 project_root = Path(__file__).parent.parent
@@ -24,6 +26,14 @@ from runtime_env import load_project_env
 load_project_env(project_root)
 from runtime_profile import get_runtime_profile
 
+from ai_stack.content_quality import analyze_post, build_content_quality_manifest
+from ai_stack.identity import canonicalize_url
+from ai_stack.source_contract import (
+    SourceContractError,
+    apply_source_contract,
+    verify_source_contract,
+)
+from ai_stack.tag_taxonomy import normalize_tags
 from crawler.main import CrawlerOrchestrator
 from processor.main import ProcessorOrchestrator
 from processor.markdown_normalizer import remove_markdown_sections_by_heading
@@ -37,22 +47,6 @@ logger = logging.getLogger(__name__)
 
 SHANGHAI_TZ = ZoneInfo("Asia/Shanghai")
 CONTENT_TIMEZONE = SHANGHAI_TZ
-_TRACKING_QUERY_PARAMS = {
-    "utm_source",
-    "utm_medium",
-    "utm_campaign",
-    "utm_term",
-    "utm_content",
-    "utm_id",
-    "gclid",
-    "fbclid",
-    "mc_cid",
-    "mc_eid",
-    "ref",
-    "ref_src",
-}
-
-
 def content_now(value: datetime | None = None) -> datetime:
     """Return one timezone-aware clock value for filenames and frontmatter."""
     if value is None:
@@ -63,27 +57,14 @@ def content_now(value: datetime | None = None) -> datetime:
 
 
 def canonicalize_content_url(value: object) -> str:
-    """Normalize archive identities without importing the complete crawler tree."""
+    """Use the shared URL identity policy and fail closed for invalid sources."""
     raw = str(value or "").strip()
     if not raw:
         return ""
     try:
-        parts = urllib.parse.urlsplit(raw)
-        scheme = (parts.scheme or "https").lower()
-        netloc = parts.netloc.lower()
-        path = parts.path.rstrip("/")
-        query = [
-            (key, item)
-            for key, item in urllib.parse.parse_qsl(
-                parts.query, keep_blank_values=True
-            )
-            if key not in _TRACKING_QUERY_PARAMS
-        ]
-        return urllib.parse.urlunsplit(
-            (scheme, netloc, path, urllib.parse.urlencode(query, doseq=True), "")
-        )
-    except Exception:
-        return raw
+        return canonicalize_url(raw)
+    except ValueError:
+        return ""
 
 _RELREF_RE = re.compile(r"""\{\{[<%]\s*relref\s+(['"])(.+?)\1\s*[>%]\}\}""")
 _TAXONOMY_MD_LINK_RE = re.compile(r"""\[([^\]]+)\]\(/(tags|categories|scenarios)/([^)]+?)\)""")
@@ -195,6 +176,10 @@ def sanitize_prompt_leaks_in_markdown_text(*, text: str) -> tuple[str, int]:
 
         if stripped.startswith("```"):
             in_code_fence = not in_code_fence
+            out_lines.append(line)
+            continue
+
+        if in_code_fence:
             out_lines.append(line)
             continue
 
@@ -561,7 +546,7 @@ class SuperEnhancedContentGenerator:
         try:
             logger.info("=" * 80)
             logger.info("Starting content generation process")
-            logger.info("Mode: 15+ LLM calls per article")
+            logger.info("Mode: source-contract first; Tier-C briefs for partial evidence")
             logger.info(f"Runtime profile: {self.runtime_profile}")
             logger.info("=" * 80)
 
@@ -589,8 +574,7 @@ class SuperEnhancedContentGenerator:
             )
 
             # 2. 超级增强处理（15次大模型调用）
-            logger.info("\n[2/4] Processing content with AI (15+ LLM calls)...")
-            logger.info("    This may take a while.")
+            logger.info("\n[2/4] Applying evidence-aware content policy...")
             if unseen_items > 0:
                 processed_data = self.processor.process_by_source(crawled_data)
             else:
@@ -607,13 +591,20 @@ class SuperEnhancedContentGenerator:
             )
             generation_stats = getattr(self, "last_generation_stats", {})
             logger.info(
-                "✓ Markdown write summary: created=%s skipped_existing=%s",
+                "✓ Markdown write summary: created=%s skipped_existing=%s "
+                "skipped_quality=%s contract_failed=%s generation_failed=%s",
                 posts_created,
                 int(generation_stats.get("skipped_existing", 0) or 0),
+                int(generation_stats.get("skipped_quality", 0) or 0),
+                int(generation_stats.get("contract_failed", 0) or 0),
+                int(generation_stats.get("generation_failed", 0) or 0),
             )
             self._raise_for_fatal_post_generation_state(
                 posts_created=posts_created,
                 postability=postability,
+                quality_failed_items=int(generation_stats.get("skipped_quality", 0) or 0),
+                contract_failed_items=int(generation_stats.get("contract_failed", 0) or 0),
+                generation_failed_items=int(generation_stats.get("generation_failed", 0) or 0),
             )
 
             if sanitize_relrefs:
@@ -634,13 +625,20 @@ class SuperEnhancedContentGenerator:
                 if changed_files > 0:
                     logger.info(f"✓ Sanitized public-only sections: files={changed_files} sections_removed={removed_sections}")
 
+            final_quality = build_content_quality_manifest(project_root / "blog/content")
+            if final_quality["quarantined_count"]:
+                raise RuntimeError(
+                    "Post tree failed the final completeness gate after sanitization: "
+                    f"quarantined={final_quality['quarantined_count']}"
+                )
+
             # 4. 推送内容
             logger.info("\n[4/4] Publishing to social platforms...")
             self._publish_content(processed_data)
 
             logger.info("\n" + "=" * 80)
             logger.info("Content generation completed successfully")
-            logger.info("Each article contains 15+ AI-generated sections")
+            logger.info("Every published Post passed source and completeness gates")
             logger.info("=" * 80)
 
             return True
@@ -716,7 +714,15 @@ class SuperEnhancedContentGenerator:
         )
         return selected
 
-    def _raise_for_fatal_post_generation_state(self, *, posts_created: int, postability: dict) -> None:
+    def _raise_for_fatal_post_generation_state(
+        self,
+        *,
+        posts_created: int,
+        postability: dict,
+        quality_failed_items: int = 0,
+        contract_failed_items: int = 0,
+        generation_failed_items: int = 0,
+    ) -> None:
         total_items = int(postability.get("total_items", 0) or 0)
         auth_error_items = int(postability.get("auth_error_items", 0) or 0)
         compat_error_items = int(postability.get("compat_error_items", 0) or 0)
@@ -740,6 +746,17 @@ class SuperEnhancedContentGenerator:
                     "Some content failed output guards after regeneration: items=%s examples=%s",
                     guard_failed_items,
                     ", ".join(postability.get("guard_failed_examples", [])) or "n/a",
+                )
+            if quality_failed_items > 0:
+                logger.warning(
+                    "Some generated Markdown failed the provenance gate: items=%s",
+                    quality_failed_items,
+                )
+            if contract_failed_items > 0 or generation_failed_items > 0:
+                logger.warning(
+                    "Some candidates failed contract/render/write gates: contract=%s generation=%s",
+                    contract_failed_items,
+                    generation_failed_items,
                 )
             return
 
@@ -765,6 +782,21 @@ class SuperEnhancedContentGenerator:
                 "Generated content failed output guards and no Markdown posts were created. "
                 f"Examples: {examples}"
             )
+        if quality_failed_items > 0:
+            raise RuntimeError(
+                "Generated Markdown failed the provenance gate and no posts were created. "
+                f"Rejected items: {quality_failed_items}"
+            )
+        if contract_failed_items > 0:
+            raise RuntimeError(
+                "Crawler source contract failed and no posts were created. "
+                f"Rejected items: {contract_failed_items}"
+            )
+        if generation_failed_items > 0:
+            raise RuntimeError(
+                "Post rendering or persistence failed and no posts were created. "
+                f"Rejected items: {generation_failed_items}"
+            )
 
     def _generate_posts(
         self,
@@ -783,21 +815,42 @@ class SuperEnhancedContentGenerator:
         """
         created_count = 0
         skipped_existing = 0
+        skipped_quality = 0
+        contract_failed = 0
+        generation_failed = 0
         local_generated_at = content_now(generated_at)
         timestamp = local_generated_at.strftime('%Y%m%d')
 
         for source, items in processed_data.items():
             for idx, item in enumerate(items):
                 try:
+                    verify_source_contract(item)
                     if self._should_skip_post(item):
                         continue
 
                     # 生成文件名
                     slug = self._generate_slug(item.get('title', ''), idx)
-                    filename = f"{timestamp}-{source}-{slug}.md"
+                    external_url = canonicalize_content_url(
+                        item["evidence"].get("external_url")
+                    )
+                    identity = hashlib.sha256(
+                        external_url.encode("utf-8")
+                    ).hexdigest()[:10]
+                    filename = f"{timestamp}-{source}-{slug}-{identity}.md"
                     filepath = self.posts_dir / filename
 
                     if filepath.exists():
+                        existing = self._post_entry_from_file(filepath)
+                        if (
+                            existing is None
+                            or existing.get("external_url") != external_url
+                        ):
+                            generation_failed += 1
+                            logger.error(
+                                "Refusing immutable Post filename collision: %s",
+                                filename,
+                            )
+                            continue
                         skipped_existing += 1
                         logger.info("↷ Skipped existing immutable post: %s", filename)
                         continue
@@ -810,23 +863,69 @@ class SuperEnhancedContentGenerator:
                     )
                     markdown_content, _ = sanitize_public_markdown_text(text=markdown_content)
 
+                    quality_reasons = analyze_post(markdown_content).fatal_reasons
+                    if quality_reasons:
+                        skipped_quality += 1
+                        logger.warning(
+                            "Skipped unverifiable generated post %s: %s",
+                            filename,
+                            ", ".join(quality_reasons),
+                        )
+                        continue
+
+                    publication_payload = self._source_brief_publication_payload(item)
+
                     # 写入文件
                     with open(filepath, 'w', encoding='utf-8') as f:
                         f.write(markdown_content)
 
                     logger.info(f"✓ Created post: {filename}")
                     created_count += 1
+                    item["_publication_gate"] = "passed"
+                    item["_publication_payload"] = publication_payload
                     self._post_index.append(self._post_entry_from_data(filename, item))
 
+                except SourceContractError as e:
+                    contract_failed += 1
+                    logger.error(
+                        "Failed source contract for %s: %s",
+                        item.get("title", "Unknown"),
+                        e,
+                    )
+                    continue
                 except Exception as e:
+                    generation_failed += 1
                     logger.error(f"Failed to generate post for {item.get('title', 'Unknown')}: {e}")
                     continue
 
         self.last_generation_stats = {
             "created": created_count,
             "skipped_existing": skipped_existing,
+            "skipped_quality": skipped_quality,
+            "contract_failed": contract_failed,
+            "generation_failed": generation_failed,
         }
         return created_count
+
+    def _source_brief_publication_payload(self, item: dict) -> dict:
+        """Build the only payload social publishers may receive after Post validation."""
+
+        verify_source_contract(item)
+        evidence = item["evidence"]
+        fields = evidence["fields"]
+        return {
+            "title": str(fields.get("title") or "来源快报").strip(),
+            "summary": (
+                "来源证据快报，仅呈现抓取时保存的来源字段；"
+                "请以原始来源为准。"
+            ),
+            "url": str(evidence.get("external_url") or "").strip(),
+            "source": str(evidence.get("source") or "").strip(),
+            "tags": self._normalize_tags(item.get("tags", [])),
+            "content_mode": "source_brief",
+            "publication_tier": "C",
+            "source_snapshot_sha256": str(evidence.get("digest") or "").strip(),
+        }
 
     def _looks_like_meta_disclaimer(self, text: str) -> bool:
         t = str(text or "").strip()
@@ -958,13 +1057,26 @@ class SuperEnhancedContentGenerator:
         Returns:
             str: Markdown 内容
         """
-        source = item.get('source', 'unknown')
-        raw_title = item.get('catchy_title') or item.get('title_translated') or item.get('title', 'Untitled')
+        content_mode = str(item.get("content_mode") or "").strip()
+        evidence: dict[str, Any] = (
+            item.get("evidence") if isinstance(item.get("evidence"), dict) else {}
+        )
+        evidence_fields: dict[str, Any] = (
+            evidence.get("fields")
+            if isinstance(evidence.get("fields"), dict)
+            else {}
+        )
+        if content_mode == "source_brief":
+            source = str(evidence.get("source") or "unknown")
+            raw_title = evidence_fields.get("title") or "来源快报"
+        else:
+            source = item.get('source', 'unknown')
+            raw_title = item.get('catchy_title') or item.get('title_translated') or item.get('title', 'Untitled')
         title = self._sanitize_title_for_seo(raw_title)
         date = content_now(generated_at).isoformat(timespec="seconds")
 
         # 构建标签
-        tags = self._normalize_taxonomy_list(item.get('tags', []))
+        tags = self._normalize_tags(item.get('tags', []))
         tags_str = ', '.join([f'"{self._yaml_escape(tag)}"' for tag in tags])
 
         # 构建分类
@@ -975,9 +1087,12 @@ class SuperEnhancedContentGenerator:
         scenarios_str = ', '.join([f'"{self._yaml_escape(s)}"' for s in scenarios])
 
         # 获取 URL
-        url = item.get('url', '')
+        url = evidence.get("external_url", "") if content_mode == "source_brief" else item.get('url', '')
         if not url and source == 'github_trending':
             url = item.get('repo_url', '')
+        url = canonicalize_content_url(url)
+        if not url:
+            raise ValueError("generated posts require a valid canonical source URL")
 
         # 开始构建 Markdown
         lines = [
@@ -988,15 +1103,46 @@ class SuperEnhancedContentGenerator:
             'entry_kind: "auto"',
             f'tags: [{tags_str}]',
             f'categories: [{categories_str}]',
-            f'source: {source}',
+            f'source: "{self._yaml_escape(source)}"',
         ]
 
-        seo_description = self._seo_description(item)
+        if content_mode:
+            lines.append(f'content_mode: "{self._yaml_escape(content_mode)}"')
+        publication_tier = str(item.get("publication_tier") or "").strip()
+        if publication_tier:
+            lines.append(f'publication_tier: "{self._yaml_escape(publication_tier)}"')
+        source_capture_mode = str(item.get("source_capture_mode") or "").strip()
+        if source_capture_mode:
+            lines.append(f'source_capture_mode: "{self._yaml_escape(source_capture_mode)}"')
+        snapshot_digest = str(item.get("source_snapshot_sha256") or "").strip()
+        if snapshot_digest:
+            lines.append(f'source_snapshot_sha256: "{self._yaml_escape(snapshot_digest)}"')
+        extractor_version = str(item.get("extractor_version") or "").strip()
+        if extractor_version:
+            lines.append(f'extractor_version: "{self._yaml_escape(extractor_version)}"')
+        discovery_method = str(item.get("discovery_method") or "").strip()
+        if discovery_method:
+            lines.append(f'discovery_method: "{self._yaml_escape(discovery_method)}"')
+        lines.append(
+            f'source_is_truncated: {"true" if item.get("source_is_truncated") is True else "false"}'
+        )
+        truncation_reason = str(item.get("source_truncation_reason") or "").strip()
+        if truncation_reason:
+            lines.append(f'source_truncation_reason: "{self._yaml_escape(truncation_reason)}"')
+        if content_mode == "source_brief":
+            lines.append('source_support: 1.0')
+
+        if content_mode == "source_brief":
+            seo_description = self._source_brief_note(
+                str(evidence.get("capture_mode") or "metadata_only"),
+                source,
+            )
+        else:
+            seo_description = self._seo_description(item)
         if seo_description:
             lines.append(f'description: "{self._yaml_escape(seo_description)}"')
 
-        if url:
-            lines.append(f'external_url: {url}')
+        lines.append(f'external_url: {url}')
         if scenarios:
             lines.append(f'scenarios: [{scenarios_str}]')
 
@@ -1004,7 +1150,9 @@ class SuperEnhancedContentGenerator:
         lines.append('')
 
         # 根据来源生成不同格式
-        if source == 'github_trending':
+        if content_mode == "source_brief":
+            lines.extend(self._format_source_brief(item))
+        elif source == 'github_trending':
             lines.extend(self._format_github_repo_super_enhanced(item))
         elif source == 'hacker_news':
             lines.extend(self._format_hacker_news_super_enhanced(item))
@@ -1019,9 +1167,84 @@ class SuperEnhancedContentGenerator:
         else:
             lines.extend(self._format_generic_super_enhanced(item))
 
-        related = self._find_related_posts(item, current_filename=current_filename)
-        self._inject_internal_links(lines, item, related)
+        if content_mode != "source_brief":
+            related = self._find_related_posts(item, current_filename=current_filename)
+            self._inject_internal_links(lines, item, related)
         return '\n'.join(lines)
+
+    def _format_source_brief(self, item: dict) -> list[str]:
+        """Render only crawler evidence; generated enrichment is never included."""
+
+        evidence: dict[str, Any] = (
+            item.get("evidence") if isinstance(item.get("evidence"), dict) else {}
+        )
+        fields: dict[str, Any] = (
+            evidence.get("fields")
+            if isinstance(evidence.get("fields"), dict)
+            else {}
+        )
+        title = self._sanitize_title_for_seo(
+            fields.get("title") or "来源快报"
+        )
+        source = str(evidence.get("source") or "unknown").strip()
+        url = canonicalize_content_url(evidence.get("external_url"))
+        capture_mode = str(evidence.get("capture_mode") or "metadata_only")
+        note = self._source_brief_note(capture_mode, source)
+
+        def safe(value: object) -> str:
+            text = html.escape(str(value or "").strip(), quote=False)
+            return text.replace("{{", "&#123;&#123;").replace("}}", "&#125;&#125;")
+
+        lines = [
+            f"# {safe(title)}",
+            "",
+            "## 基本信息",
+            "",
+            f"- **来源**: {safe(source)}",
+            f"- **原始来源**: [{safe(url)}]({url})",
+        ]
+        if source == "hacker_news":
+            lines.extend(
+                [
+                    f"- **作者**: {safe(fields.get('author'))}",
+                    f"- **评分**: {safe(fields.get('score', 0))}",
+                    f"- **评论数**: {safe(fields.get('descendants', 0))}",
+                ]
+            )
+            if fields.get("hn_id"):
+                hn_url = f"https://news.ycombinator.com/item?id={fields.get('hn_id')}"
+                lines.append(f"- **HN 讨论**: [{hn_url}]({hn_url})")
+
+        source_text = str(item.get("source_display_excerpt") or "").strip()
+        if capture_mode != "metadata_only" and source_text:
+            lines.extend(["", "## 来源摘要/节选", ""])
+            lines.extend(f"> {safe(line)}" if line.strip() else ">" for line in source_text.splitlines())
+
+        lines.extend(
+            [
+                "",
+                "## 来源说明",
+                "",
+                safe(note),
+                "",
+                "> 本页只呈现已保存的来源证据，不包含基于缺失正文的扩展推断。",
+            ]
+        )
+        return lines
+
+    @staticmethod
+    def _source_brief_note(capture_mode: str, source: str) -> str:
+        labels = {
+            "metadata_only": "当前只保存了标题与来源元数据，未抓取外链全文。",
+            "abstract": "当前保存的是来源摘要，不代表论文全文。",
+            "excerpt": "当前保存的是 RSS 或来源节选，不代表原文全文。",
+            "repository_excerpt": "当前保存的是仓库元数据或来源节选。",
+            "social_post": "当前保存的是单条社交内容，不代表完整讨论串。",
+        }
+        note = labels.get(str(capture_mode), labels["metadata_only"])
+        if str(source) == "hacker_news":
+            return f"{note}请以原始来源和 Hacker News 讨论为准。"
+        return f"{note}请以原始来源为准。"
 
     def _sanitize_title_for_seo(self, title: str) -> str:
         t = str(title or "").strip()
@@ -1089,6 +1312,9 @@ class SuperEnhancedContentGenerator:
                 out.append(s)
         return out
 
+    def _normalize_tags(self, value) -> list[str]:
+        return normalize_tags(value, limit=8)
+
     def _normalize_scenarios(self, value) -> list[str]:
         if value is None:
             return []
@@ -1135,7 +1361,7 @@ class SuperEnhancedContentGenerator:
             "external_url": canonicalize_content_url(
                 item.get("url") or item.get("repo_url") or item.get("link")
             ),
-            "tags": self._normalize_taxonomy_list(item.get("tags", [])),
+            "tags": self._normalize_tags(item.get("tags", [])),
             "categories": self._normalize_taxonomy_list(item.get("categories", [])),
             "scenarios": self._normalize_scenarios(item.get("scenarios")),
         }
@@ -1166,6 +1392,8 @@ class SuperEnhancedContentGenerator:
             fm = yaml.safe_load(fm_text) or {}
         except Exception:
             return None
+        if fm.get("archived") is True:
+            return None
 
         filename = path.name
         title = str(fm.get("title") or "").strip()
@@ -1176,7 +1404,7 @@ class SuperEnhancedContentGenerator:
             "external_url": canonicalize_content_url(
                 fm.get("external_url") or fm.get("url")
             ),
-            "tags": self._normalize_taxonomy_list(fm.get("tags", [])),
+            "tags": self._normalize_tags(fm.get("tags", [])),
             "categories": self._normalize_taxonomy_list(fm.get("categories", [])),
             "scenarios": self._normalize_taxonomy_list(fm.get("scenarios", [])),
         }
@@ -1193,7 +1421,7 @@ class SuperEnhancedContentGenerator:
         return posts
 
     def _find_related_posts(self, item: dict, *, current_filename: str | None = None) -> list[dict]:
-        tags = set(self._normalize_taxonomy_list(item.get("tags", [])))
+        tags = set(self._normalize_tags(item.get("tags", [])))
         categories = set(self._normalize_taxonomy_list(item.get("categories", [])))
         scenarios = set(self._normalize_scenarios(item.get("scenarios")))
 
@@ -1216,7 +1444,7 @@ class SuperEnhancedContentGenerator:
         return [p for _, p in scored[:5]]
 
     def _inject_internal_links(self, lines: list[str], item: dict, related_posts: list[dict]) -> None:
-        tags = self._normalize_taxonomy_list(item.get("tags", []))
+        tags = self._normalize_tags(item.get("tags", []))
         categories = self._normalize_taxonomy_list(item.get("categories", []))
         scenarios = self._normalize_scenarios(item.get("scenarios"))
 
@@ -1389,9 +1617,9 @@ class SuperEnhancedContentGenerator:
 
         refs: list[tuple[str, str]] = []
 
-        url = item.get("url") or item.get("repo_url") or item.get("external_url") or ""
-        if isinstance(url, str):
-            url = url.strip()
+        url = canonicalize_content_url(
+            item.get("url") or item.get("repo_url") or item.get("external_url")
+        )
 
         if source == "github_trending":
             if url:
@@ -2267,10 +2495,16 @@ class SuperEnhancedContentGenerator:
 
         # 只推送每个来源的前几篇内容
         for source, items in processed_data.items():
-            for item in items[:2]:  # 每个来源最多推送2篇
+            eligible_payloads = [
+                item.get("_publication_payload")
+                for item in items
+                if item.get("_publication_gate") == "passed"
+                and isinstance(item.get("_publication_payload"), dict)
+            ]
+            for payload in eligible_payloads[:2]:  # 每个来源最多推送2篇
                 try:
                     logger.info(f"Publishing {source} item to {enabled_platforms}...")
-                    results = self.publisher.publish_all(item)
+                    results = self.publisher.publish_all(dict(payload))
 
                     for platform, success in results.items():
                         if success:

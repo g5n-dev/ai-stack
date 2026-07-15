@@ -21,6 +21,10 @@ description: 本文首次探讨了**自适应组合实验设计**，重点解决
 external_url: http://arxiv.org/abs/2602.24231v1
 scenarios:
 - Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 自适应组合实验设计：决策与推断的帕累托最优
@@ -146,7 +150,6 @@ scenarios:
 
 ---
 
-### 2. 核心方法与创新
 
 ### 提出的核心方法
 为了解决上述权衡问题，作者提出了基于**帕累托最优**的自适应实验设计框架，并针对两种反馈机制设计了具体算法：
@@ -167,7 +170,6 @@ scenarios:
 
 ---
 
-### 3. 理论基础
 
 ### 理论假设与模型
 *   **组合结构**：假设基础臂的奖励服从独立分布（如伯努利分布或亚高斯分布），组合臂的奖励是基础臂奖励的线性函数（满足半范数约束，如 $L_1$ 或 $L_\infty$ 范数）。
@@ -461,6 +463,6 @@ scenarios:
 
 - [利用辅助信息实现少样本设计优化]({{< relref "posts/20260213-arxiv_ai-few-shot-design-optimization-by-exploiting-auxilia-7.md" >}})
 - [基于嵌入的Top-$k$检索：理论上$\mathbb{R}^{2k}$维空间已足够]({{< relref "posts/20260129-arxiv_ai-mathbbr2k-is-theoretically-large-enough-for-embedd-8.md" >}})
-- [R^{2k}维度理论上足以支持基于嵌入的Top-k检索]({{< relref "posts/20260130-arxiv_ai-mathbbr2k-is-theoretically-large-enough-for-embedd-8.md" >}})
+- [R^{2k}维度理论上足以支持基于嵌入的Top-k检索]({{< relref "posts/20260129-arxiv_ai-mathbbr2k-is-theoretically-large-enough-for-embedd-8.md" >}})
 - [好奇心即知识：基于主动推理的自一致学习与无遗憾优化]({{< relref "posts/20260206-arxiv_ai-curiosity-is-knowledge-self-consistent-learning-an-8.md" >}})
 - [数据块模型中的精确恢复方法]({{< relref "posts/20260206-arxiv_ai-exact-recovery-in-the-data-block-model-8.md" >}})

@@ -11,7 +11,7 @@ tags:
 - 数字员工
 - GitHub
 - 开源项目
-- AI应用
+- AI 应用
 categories:
 - AI 工程
 - 开源生态
@@ -21,6 +21,10 @@ description: OpenClaw 作为近期备受关注的开源 AI Agent 项目，标志
 external_url: https://juejin.cn/post/7616184939038900259
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # OpenClaw架构原理与实战部署：打造专属AI数字员工
@@ -159,8 +163,8 @@ OpenClaw 的部署要求取决于您选择的运行模式，主要分为本地�
 
 ### 相关文章
 
-- [OpenClaw 开源 AI 智能体框架与 GitHub 增长记录]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-5.md" >}})
+- [OpenClaw 开源 AI 智能体框架与 GitHub 增长记录]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-0.md" >}})
 - [OpenClaw实战指南：从零部署24小时可执行任务的AI管家]({{< relref "posts/20260219-juejin-从零部署你的24小时ai管家openclaw完整实战指南附踩坑记录-1.md" >}})
 - [OpenClaw：GitHub 增长最快的开源 AI 智能体框架]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-0.md" >}})
-- [Peter Steinberger 深度访谈：解析 GitHub 增长最快的开源 AI 代理框架 OpenCl]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-1.md" >}})
-- [OpenClaw 开源 AI 智能体框架与 GitHub 增长纪录]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-2.md" >}})
+- [Peter Steinberger 深度访谈：解析 GitHub 增长最快的开源 AI 代理框架 OpenCl]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-0.md" >}})
+- [OpenClaw 开源 AI 智能体框架与 GitHub 增长纪录]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-0.md" >}})

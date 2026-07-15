@@ -1,14 +1,29 @@
 ---
-title: "MCP协议现状分析：是否已被抛弃"
-date: 2026-05-29T23:27:48+08:00
+title: MCP协议现状分析：是否已被抛弃
+date: 2026-05-29 23:27:48+08:00
 draft: false
-entry_kind: "auto"
-tags: ["MCP协议", "协议状态", "是否被抛弃", "现状分析", "AI工程", "开源生态", "社区", "技术趋势"]
-categories: ["AI 工程", "开源生态"]
+entry_kind: auto
+tags:
+- MCP 协议
+- 协议状态
+- 是否被抛弃
+- 现状分析
+- AI 工程
+- 开源生态
+- 社区
+- 技术趋势
+categories:
+- AI 工程
+- 开源生态
 source: hacker_news
-description: "MCP作为早期面向服务架构的重要协议，曾在跨系统集成中发挥关键作用。但随着云原生和微服务的快速发展，其设计局限逐渐暴露，导致社区和厂商逐步转向更灵活、具备更强可观测性的方案。本文深入剖析MCP衰落的根本原因，并对比当前主流技术的优势，为正在评估系统迁移路径的开发者提供实用的参考。"
+description: MCP作为早期面向服务架构的重要协议，曾在跨系统集成中发挥关键作用。但随着云原生和微服务的快速发展，其设计局限逐渐暴露，导致社区和厂商逐步转向更灵活、具备更强可观测性的方案。本文深入剖析MCP衰落的根本原因，并对比当前主流技术的优势，为正在评估系统迁移路径的开发者提供实用的参考。
 external_url: https://www.quandri.io/engineering-blog/mcp-is-dead
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # MCP协议现状分析：是否已被抛弃
@@ -71,8 +86,8 @@ MCP作为模型上下文协议，其核心价值在于标准化AI模型与外部
 ### 相关文章
 
 - [伦敦首届AI工程师大会回顾]({{< relref "posts/20260411-blogs_podcasts-ainews-ai-engineer-europe-2026-0.md" >}})
-- [创办首个AI for Science播客的时机与工程师关注价值]({{< relref "posts/20260131-blogs_podcasts-its-time-to-science-7.md" >}})
-- [⚠️低代码已死？2025年开发范式彻底颠覆！🔥]({{< relref "posts/20260127-hacker_news-rip-low-code-2014-2025-6.md" >}})
-- [推出全球首个科学领域AI播客及工程师关注理由]({{< relref "posts/20260129-blogs_podcasts-its-time-to-science-3.md" >}})
-- [2026年AI展望：LLM、智能体、扩展定律与中国角色]({{< relref "posts/20260202-blogs_podcasts-490-state-of-ai-in-2026-llms-coding-scaling-laws-c-0.md" >}})
+- [创办首个AI for Science播客的时机与工程师关注价值]({{< relref "posts/20260129-blogs_podcasts-its-time-to-science-0.md" >}})
+- [⚠️低代码已死？2025年开发范式彻底颠覆！🔥]({{< relref "posts/20260127-hacker_news-rip-low-code-2014-2025-4.md" >}})
+- [推出全球首个科学领域AI播客及工程师关注理由]({{< relref "posts/20260129-blogs_podcasts-its-time-to-science-0.md" >}})
+- [2026年AI展望：LLM、智能体、扩展定律与中国角色]({{< relref "posts/20260201-blogs_podcasts-490-state-of-ai-in-2026-llms-coding-scaling-laws-c-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

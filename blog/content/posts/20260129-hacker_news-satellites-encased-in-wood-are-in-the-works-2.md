@@ -1,13 +1,30 @@
 ---
-title: "木质外壳卫星正在研发中"
-date: 2026-01-29T05:01:24+08:00
+title: 木质外壳卫星正在研发中
+date: 2026-01-29 05:01:24+08:00
 draft: false
-entry_kind: "auto"
-tags: ["木质卫星", "太空垃圾", "环保材料", "木兰木", "京都大学", "住友林业", "NASA", "航天技术"]
-categories: ["开源生态", "生活与杂谈"]
+entry_kind: auto
+tags:
+- 木质卫星
+- 太空垃圾
+- 环保材料
+- 木兰木
+- 京都大学
+- 住友林业
+- NASA
+- 航天技术
+categories:
+- 开源生态
+- 生活与杂谈
 source: hacker_news
 external_url: https://www.economist.com/science-and-technology/2026/01/21/satellites-encased-in-wood-are-in-the-works
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+aliases:
+- /posts/20260129-hacker_news-satellites-encased-in-wood-are-in-the-works-5/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 木质外壳卫星正在研发中
@@ -198,7 +215,6 @@ Arctic Astronautics 与芬兰的 UPM 胶合板制造商合作，建造了一颗�
 Woodsat 于 2021 年成功发射入轨。作为世界上第一颗木质卫星（在 LignoSat 之前），它成功地在轨道上运行并传回了遥测数据。该项目证明了经过适当处理的商用胶合板可以在恶劣的太空环境中生存，极大地降低了卫星结构材料的成本，并展示了生物基复合材料在航天器制造中的巨大潜力。
 
 ---
-## 最佳实践
 
 ## 最佳实践指南
 
@@ -378,6 +394,6 @@ Woodsat 于 2021 年成功发射入轨。作为世界上第一颗木质卫星（
 - [🔥Anduin2017+HowToCook：GitHub超火！编程与烹饪完美结合！]({{< relref "posts/20260125-github_trending-anduin2017-howtocook-0.md" >}})
 - [🔥GitHub热榜推荐！DSP与工厂蓝图神器，硬核开发者必看！🚀]({{< relref "posts/20260125-github_trending-dspblueprints-factoryblueprints-6.md" >}})
 - [🔥521万星霸榜！HelloGitHub：让开源入门如此简单！✨]({{< relref "posts/20260126-github_trending-521xueweihan-hellogithub-6.md" >}})
-- [⚡️Anduin2017+HowToCook：GitHub年度爆款！🔥]({{< relref "posts/20260126-github_trending-anduin2017-howtocook-9.md" >}})
-- [🚀GitHub热门：DSP/Factory蓝图！硬核开发者的效率神器！🔥]({{< relref "posts/20260126-github_trending-dspblueprints-factoryblueprints-0.md" >}})
+- [⚡️Anduin2017+HowToCook：GitHub年度爆款！🔥]({{< relref "posts/20260125-github_trending-anduin2017-howtocook-0.md" >}})
+- [🚀GitHub热门：DSP/Factory蓝图！硬核开发者的效率神器！🔥]({{< relref "posts/20260125-github_trending-dspblueprints-factoryblueprints-6.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

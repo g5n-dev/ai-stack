@@ -1,14 +1,30 @@
 ---
-title: "Amazon Nova模型Bedrock微调完整指南"
-date: 2026-04-08T22:56:43+08:00
+title: Amazon Nova模型Bedrock微调完整指南
+date: 2026-04-08 22:56:43+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Nova", "Bedrock", "微调", "意图分类", "模型训练", "超参数", "数据准备", "模型部署"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- Nova
+- Bedrock
+- 微调
+- 意图分类
+- 模型训练
+- 超参数
+- 数据准备
+- 模型部署
+categories:
+- 大模型
+- AI 工程
 source: blogs_podcasts
-description: "在 Amazon Bedrock 上使用 Amazon Nova 模型进行微调，通过意图分类器示例展示完整流程。首先准备高质量、特定领域的训练数据，确保标注准确且覆盖关键场景，以驱动模型显著提升。随后配置学习率、批量大小、正则化等超参数，平衡学习速度与过拟合风险。完成训练后，将微调模型部署至 Bedrock，实现更高准"
+description: 在 Amazon Bedrock 上使用 Amazon Nova 模型进行微调，通过意图分类器示例展示完整流程。首先准备高质量、特定领域的训练数据，确保标注准确且覆盖关键场景，以驱动模型显著提升。随后配置学习率、批量大小、正则化等超参数，平衡学习速度与过拟合风险。完成训练后，将微调模型部署至
+  Bedrock，实现更高准
 external_url: https://aws.amazon.com/blogs/machine-learning/customize-amazon-nova-models-with-amazon-bedrock-fine-tuning
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Amazon Nova模型Bedrock微调完整指南
@@ -151,7 +167,7 @@ Bedrock的微调能力进一步模糊了通用AI与垂直AI的边界，使得中
 
 - [Nova Forge SDK 训练 Amazon Nova 模型教程]({{< relref "posts/20260319-blogs_podcasts-kick-off-nova-customization-experiments-using-nova-8.md" >}})
 - [利用 Hugging Face 与 SageMaker 扩展企业级 LLM 微调]({{< relref "posts/20260210-blogs_podcasts-scale-llm-fine-tuning-with-hugging-face-and-amazon-9.md" >}})
-- [Scale LLM fine-tuning with Hugging Face and Amazon Sage]({{< relref "posts/20260211-blogs_podcasts-scale-llm-fine-tuning-with-hugging-face-and-amazon-9.md" >}})
+- [Scale LLM fine-tuning with Hugging Face and Amazon Sage]({{< relref "posts/20260210-blogs_podcasts-scale-llm-fine-tuning-with-hugging-face-and-amazon-9.md" >}})
 - [大模型行为塑造：SFT与LoRA深度解析]({{< relref "posts/20260215-juejin-大模型行为塑造sft-与-lora-深度解析-3.md" >}})
-- [使用 Unsloth 与 Hugging Face Jobs 免费训练大模型]({{< relref "posts/20260220-blogs_podcasts-train-ai-models-with-unsloth-and-hugging-face-jobs-0.md" >}})
+- [使用 Unsloth 与 Hugging Face Jobs 免费训练大模型]({{< relref "posts/20260219-blogs_podcasts-train-ai-models-with-unsloth-and-hugging-face-jobs-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

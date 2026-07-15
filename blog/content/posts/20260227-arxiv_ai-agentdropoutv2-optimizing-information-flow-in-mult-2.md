@@ -20,6 +20,10 @@ description: '**AgentDropoutV2：通过测试时修正或拒绝修剪优化多�
 external_url: http://arxiv.org/abs/2602.23258v1
 scenarios:
 - RAG应用
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AgentDropoutV2：测试时剪枝优化多智能体系统信息流
@@ -126,9 +130,7 @@ scenarios:
 
 ---
 
-### AgentDropoutV2 深度分析报告
 
-### 1. 研究背景与问题
 
 ### 核心问题
 该论文旨在解决多智能体系统中的**错误级联传播**问题。在由多个大语言模型（LLM）智能体协作完成的复杂任务中，如果处于上游的智能体生成了错误信息，该信息会作为下游智能体的输入，导致错误被放大、累积，最终导致整个系统的推理失败。
@@ -144,7 +146,6 @@ scenarios:
 ### 为什么这个问题重要
 解决这一问题直接决定了多智能体系统在现实高精度场景（如金融分析、医疗诊断、科研辅助）中的可用性。如果无法有效控制错误传播，MAS 只能停留在玩具级演示，无法进入实际生产流程。
 
-### 2. 核心方法与创新
 
 ### 核心方法：AgentDropoutV2
 AgentDropoutV2 是一个**测试时**的推理框架，无需训练模型参数。它作为一个“主动防火墙”插入在智能体之间。其核心流程包含两个阶段：
@@ -160,7 +161,6 @@ AgentDropoutV2 是一个**测试时**的推理框架，无需训练模型参数�
 *   **低成本高收益**：无需微调，仅需推理时的计算开销，即可获得显著的性能提升。
 *   **动态适应性**：能够根据当前任务的难度和智能体的表现，动态决定是“修正”还是“拒绝”，实现了信息流的精细化管理。
 
-### 3. 理论基础
 
 ### 理论依据
 该方法的理论基础主要建立在**信息论**和**集成学习**的视角上：
@@ -176,7 +176,6 @@ $$ O'_{t} = \text{Fallback}(S_{t-1}) \quad \text{if} \quad \text{Confidence}(O_{
 ### 理论贡献
 该研究提出了一种新的范式：**推理阶段的模型无关纠错**。它证明了即使不改变模型参数，仅通过优化信息流的拓扑结构（动态剪枝），也能显著提升系统的逻辑推理能力。
 
-### 7. 学习建议
 
 ### 适合读者
 *   从事大模型应用开发、RAG 系统架构、Agent 框架研发的工程师和研究人员。
@@ -437,8 +436,8 @@ AgentDropoutV2 特别适用于那些智能体之间需要频繁通信、协作�
 
 ### 相关文章
 
-- [Agent Skills：智能体技能框架]({{< relref "posts/20260203-hacker_news-agent-skills-4.md" >}})
-- [Context Graphs与Agent Traces技术解析]({{< relref "posts/20260204-blogs_podcasts-ainews-context-graphs-and-agent-traces-1.md" >}})
-- [Context Graphs与Agent Traces：解析AI系统的上下文与追踪技术]({{< relref "posts/20260205-blogs_podcasts-ainews-context-graphs-and-agent-traces-5.md" >}})
+- [Agent Skills：智能体技能框架]({{< relref "posts/20260203-hacker_news-agent-skills-0.md" >}})
+- [Context Graphs与Agent Traces技术解析]({{< relref "posts/20260204-blogs_podcasts-ainews-context-graphs-and-agent-traces-0.md" >}})
+- [Context Graphs与Agent Traces：解析AI系统的上下文与追踪技术]({{< relref "posts/20260204-blogs_podcasts-ainews-context-graphs-and-agent-traces-0.md" >}})
 - [深度解析Skill/MCP/RAG等五大AI技术的底层逻辑]({{< relref "posts/20260212-juejin-深入理解skillmcpragagentopenclaw底层逻辑-2.md" >}})
-- [Amazon Bedrock AgentCore 浏览器更新：新增代理、配置文件及扩展支持]({{< relref "posts/20260214-blogs_podcasts-customize-ai-agent-browsing-with-proxies-profiles--1.md" >}})
+- [Amazon Bedrock AgentCore 浏览器更新：新增代理、配置文件及扩展支持]({{< relref "posts/20260213-blogs_podcasts-customize-ai-agent-browsing-with-proxies-profiles--0.md" >}})

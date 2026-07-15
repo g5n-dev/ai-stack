@@ -1,14 +1,30 @@
 ---
-title: "RAG 分块进阶：Parent-Child 与 Contextual Retrieval 实现"
-date: 2026-05-10T03:23:34+08:00
+title: RAG 分块进阶：Parent-Child 与 Contextual Retrieval 实现
+date: 2026-05-10 03:23:34+08:00
 draft: false
-entry_kind: "auto"
-tags: ["RAG", "检索增强生成", "分块策略", "Parent-Child", "Contextual Retrieval", "文本切分", "知识库", "AI应用"]
-categories: ["AI 工程", "数据"]
+entry_kind: auto
+tags:
+- RAG
+- 检索增强生成
+- 分块策略
+- Parent-Child
+- Contextual Retrieval
+- 文本切分
+- 知识库
+- AI 应用
+categories:
+- AI 工程
+- 数据
 source: juejin
-description: "Naive 分块有什么根本缺陷？Parent-Child 如何用小块检索、大块返回？Contextual Retrieval 策略是什么，本篇带你用实际代码学会高级分块策略"
+description: Naive 分块有什么根本缺陷？Parent-Child 如何用小块检索、大块返回？Contextual Retrieval 策略是什么，本篇带你用实际代码学会高级分块策略
 external_url: https://juejin.cn/post/7637839076003659827
-scenarios: ["RAG应用", "AI/ML项目"]
+scenarios:
+- RAG应用
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # RAG 分块进阶：Parent-Child 与 Contextual Retrieval 实现
@@ -72,8 +88,8 @@ Naive 分块有什么根本缺陷？Parent-Child 如何用小块检索、大块�
 ### 相关文章
 
 - [利用RAG技术有效解决大模型幻觉问题]({{< relref "posts/20260314-juejin-别再信它一本正经地胡说了用-rag终结大模型幻觉-0.md" >}})
-- [利用 Amazon Bedrock 构建AI驱动的招聘系统优化人才获取]({{< relref "posts/20260213-blogs_podcasts-ai-meets-hr-transforming-talent-acquisition-with-a-1.md" >}})
-- [基于Amazon Bedrock构建AI招聘系统优化人才获取流程]({{< relref "posts/20260218-blogs_podcasts-ai-meets-hr-transforming-talent-acquisition-with-a-13.md" >}})
-- [LangBot：生产级多平台Agent智能机器人开发平台]({{< relref "posts/20260205-github_trending-langbot-app-langbot-7.md" >}})
+- [利用 Amazon Bedrock 构建AI驱动的招聘系统优化人才获取]({{< relref "posts/20260212-blogs_podcasts-ai-meets-hr-transforming-talent-acquisition-with-a-0.md" >}})
+- [基于Amazon Bedrock构建AI招聘系统优化人才获取流程]({{< relref "posts/20260212-blogs_podcasts-ai-meets-hr-transforming-talent-acquisition-with-a-0.md" >}})
+- [LangBot：生产级多平台Agent智能机器人开发平台]({{< relref "posts/20260131-github_trending-langbot-app-langbot-7.md" >}})
 - [基于 Amazon Bedrock 构建AI驱动的招聘系统优化人才获取流程]({{< relref "posts/20260212-blogs_podcasts-ai-meets-hr-transforming-talent-acquisition-with-a-0.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

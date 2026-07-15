@@ -4,12 +4,12 @@ date: 2026-03-04 22:47:33+08:00
 draft: false
 entry_kind: auto
 tags:
-- Prompt工程
+- Prompt 工程
 - Markdown
 - 结构化思维
 - LLM
 - 提示词优化
-- AI应用
+- AI 应用
 - 写作技巧
 - 逻辑拆解
 categories:
@@ -21,6 +21,10 @@ external_url: https://juejin.cn/post/7613234803010928674
 scenarios:
 - 大语言模型
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 重新认识Markdown：用结构化思维编写高质量Prompt
@@ -156,8 +160,8 @@ Markdown 之所以被视为编写 Prompt 的最佳结构，主要基于其清晰
 
 ### 相关文章
 
-- [我的 AI 技术应用实践与思考]({{< relref "posts/20260206-hacker_news-my-ai-adoption-journey-6.md" >}})
+- [我的 AI 技术应用实践与思考]({{< relref "posts/20260205-hacker_news-my-ai-adoption-journey-6.md" >}})
 - [AI Agent SOUL.md 人格文件编写指南与核心模块解析]({{< relref "posts/20260221-juejin-如何为-ai-agent-写出完美的-soulmd-人格文件2026指南-0.md" >}})
 - [65行Markdown打造Claude Code热门项目]({{< relref "posts/20260212-hacker_news-65-lines-of-markdown-a-claude-code-sensation-2.md" >}})
 - [提示工程悖论：为何与AI对话比预期更难]({{< relref "posts/20260217-juejin-提示工程的悖论为什么与-ai-对话比你想象的更难-0.md" >}})
-- [生成式AI与维基百科编辑：2025年经验总结]({{< relref "posts/20260201-hacker_news-generative-ai-and-wikipedia-editing-what-we-learne-11.md" >}})
+- [生成式AI与维基百科编辑：2025年经验总结]({{< relref "posts/20260201-hacker_news-generative-ai-and-wikipedia-editing-what-we-learne-3.md" >}})

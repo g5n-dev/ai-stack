@@ -20,6 +20,10 @@ description: '**SERQ：基于显著性感知的低秩误差重建LLM量化方法
 external_url: http://arxiv.org/abs/2603.08185v1
 scenarios:
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # SERQ：基于显著性感知的低秩误差重构LLM量化方法
@@ -127,7 +131,6 @@ SERQ通过以下三个阶段，在保持高效4位矩阵乘法的同时，联合
 
 ---
 
-### 深入分析报告：SERQ
 
 ### 1. 研究背景与问题
 
@@ -465,7 +468,7 @@ SERQ 对部署环境的要求主要在于算子支持。由于 SERQ 引入了低
 ### 相关文章
 
 - [SPQ：大语言模型压缩的集成技术]({{< relref "posts/20260223-arxiv_ai-spq-an-ensemble-technique-for-large-language-model-4.md" >}})
-- [SPQ：面向大语言模型压缩的集成技术]({{< relref "posts/20260224-arxiv_ai-spq-an-ensemble-technique-for-large-language-model-4.md" >}})
+- [SPQ：面向大语言模型压缩的集成技术]({{< relref "posts/20260223-arxiv_ai-spq-an-ensemble-technique-for-large-language-model-4.md" >}})
 - [面向大语言模型的时间引导机制]({{< relref "posts/20260130-arxiv_ai-temporal-guidance-for-large-language-models-6.md" >}})
-- [Kimi K2.5 技术报告发布：模型架构与训练细节]({{< relref "posts/20260131-hacker_news-kimi-k25-technical-report-pdf-16.md" >}})
+- [Kimi K2.5 技术报告发布：模型架构与训练细节]({{< relref "posts/20260130-hacker_news-kimi-k25-technical-report-pdf-10.md" >}})
 - [Parallel-Probe：通过2D探测实现高效并行思维]({{< relref "posts/20260204-arxiv_ai-parallel-probe-towards-efficient-parallel-thinking-1.md" >}})

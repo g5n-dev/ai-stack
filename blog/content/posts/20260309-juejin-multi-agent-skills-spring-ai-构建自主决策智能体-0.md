@@ -23,6 +23,10 @@ scenarios:
 - AI/ML项目
 - 大语言模型
 - RAG应用
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Multi-Agent 与 Skills 结合 Spring AI 构建自主决策智能体
@@ -218,8 +222,8 @@ Spring AI 主要面向 Java 生态，其优势主要体现在企业级应用开�
 
 ### 相关文章
 
-- [基于Amazon Bedrock AgentCore构建统一智能系统实践]({{< relref "posts/20260219-blogs_podcasts-build-unified-intelligence-with-amazon-bedrock-age-12.md" >}})
-- [利用 Amazon Bedrock AgentCore 构建统一智能系统]({{< relref "posts/20260220-blogs_podcasts-build-unified-intelligence-with-amazon-bedrock-age-13.md" >}})
-- [利用 Amazon Bedrock 构建具备记忆与个性化能力的活动助手]({{< relref "posts/20260226-blogs_podcasts-building-intelligent-event-agents-using-amazon-bed-5.md" >}})
+- [基于Amazon Bedrock AgentCore构建统一智能系统实践]({{< relref "posts/20260219-blogs_podcasts-build-unified-intelligence-with-amazon-bedrock-age-0.md" >}})
+- [利用 Amazon Bedrock AgentCore 构建统一智能系统]({{< relref "posts/20260219-blogs_podcasts-build-unified-intelligence-with-amazon-bedrock-age-0.md" >}})
+- [利用 Amazon Bedrock 构建具备记忆与个性化能力的活动助手]({{< relref "posts/20260225-blogs_podcasts-building-intelligent-event-agents-using-amazon-bed-0.md" >}})
 - [基于Spring AI构建类OpenClaw自主Agent的实现方案]({{< relref "posts/20260302-juejin-spring-ai-实战从零构建类-openclaw-的自主-agent-2.md" >}})
-- [LangBot：生产级多平台智能体机器人开发平台]({{< relref "posts/20260201-github_trending-langbot-app-langbot-0.md" >}})
+- [LangBot：生产级多平台智能体机器人开发平台]({{< relref "posts/20260131-github_trending-langbot-app-langbot-7.md" >}})

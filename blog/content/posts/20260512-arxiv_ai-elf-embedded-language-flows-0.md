@@ -1,14 +1,30 @@
 ---
-title: "ELF：嵌入式语言流方法"
-date: 2026-05-12T23:19:57+08:00
+title: ELF：嵌入式语言流方法
+date: 2026-05-12 23:19:57+08:00
 draft: false
-entry_kind: "auto"
-tags: ["ELF", "嵌入式语言流", "语言模型", "流模型", "深度学习", "NLP", "ArXiv", "模型压缩"]
-categories: ["论文", "大模型"]
+entry_kind: auto
+tags:
+- ELF
+- 嵌入式语言流
+- 语言模型
+- 流模型
+- 深度学习
+- NLP
+- ArXiv
+- 模型压缩
+categories:
+- 论文
+- 大模型
 source: arxiv
-description: "背景 扩散与流模型在图像、视频等连续数据生成中表现突出，近年来被尝试用于语言建模。当前领先的扩散语言模型（DLM）大多在离散词符上操作，生成质量与采样步数仍受限。 核心设计 - **连续嵌入空间**：ELF 在整个前向过程保持连续嵌入，仅在最后时间步通过共享权重的网络映射到离散词符。 - **连续时间 Flow Mat"
+description: 背景 扩散与流模型在图像、视频等连续数据生成中表现突出，近年来被尝试用于语言建模。当前领先的扩散语言模型（DLM）大多在离散词符上操作，生成质量与采样步数仍受限。
+  核心设计 - **连续嵌入空间**：ELF 在整个前向过程保持连续嵌入，仅在最后时间步通过共享权重的网络映射到离散词符。 - **连续时间 Flow Mat
 external_url: http://arxiv.org/abs/2605.10938v1
-scenarios: ["自然语言处理"]
+scenarios:
+- 自然语言处理
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # ELF：嵌入式语言流方法
@@ -96,9 +112,9 @@ ELF的核心假设是连续嵌入空间能够保留足够的语言信息且可�
 
 ### 相关文章
 
-- [TIDE：扩散大语言模型的跨架构蒸馏方法]({{< relref "posts/20260501-arxiv_ai-turning-the-tide-cross-architecture-distillation-f-0.md" >}})
-- [从上下文学习比预期更难]({{< relref "posts/20260206-hacker_news-learning-from-context-is-harder-than-we-thought-4.md" >}})
-- [从上下文学习比预期更具挑战性]({{< relref "posts/20260206-hacker_news-learning-from-context-is-harder-than-we-thought-8.md" >}})
-- [从上下文学习的难度超出预期]({{< relref "posts/20260207-hacker_news-learning-from-context-is-harder-than-we-thought-10.md" >}})
-- [从上下文学习比预期更难]({{< relref "posts/20260207-hacker_news-learning-from-context-is-harder-than-we-thought-17.md" >}})
+- [TIDE：扩散大语言模型的跨架构蒸馏方法]({{< relref "posts/20260430-arxiv_ai-turning-the-tide-cross-architecture-distillation-f-0.md" >}})
+- [从上下文学习比预期更难]({{< relref "posts/20260206-hacker_news-learning-from-context-is-harder-than-we-thought-6.md" >}})
+- [从上下文学习比预期更具挑战性]({{< relref "posts/20260206-hacker_news-learning-from-context-is-harder-than-we-thought-6.md" >}})
+- [从上下文学习的难度超出预期]({{< relref "posts/20260206-hacker_news-learning-from-context-is-harder-than-we-thought-6.md" >}})
+- [从上下文学习比预期更难]({{< relref "posts/20260206-hacker_news-learning-from-context-is-harder-than-we-thought-6.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

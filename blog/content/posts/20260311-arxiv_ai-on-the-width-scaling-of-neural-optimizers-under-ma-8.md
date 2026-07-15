@@ -21,6 +21,12 @@ description: 本文探讨了如何设计在神经网络宽度（width）增加�
 external_url: http://arxiv.org/abs/2603.09952v1
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260312-arxiv_ai-on-the-width-scaling-of-neural-optimizers-under-ma-8/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 神经优化器宽度缩放：行列归一化与超参迁移
@@ -112,7 +118,6 @@ scenarios:
 
 ---
 
-### 1. 研究背景与问题
 
 ### 核心问题
 随着大模型时代的到来，神经网络的参数量呈指数级增长。本研究致力于解决一个核心的工程与理论难题：**如何设计一种优化器，使得当改变神经网络的宽度（Width，即隐藏层维度）时，最优的超参数（特别是学习率）能够保持不变或遵循简单的缩放规则，从而实现“零样本”超参数迁移。**
@@ -129,7 +134,6 @@ scenarios:
 
 ---
 
-### 2. 核心方法与创新
 
 ### 核心方法：均值归一化算子范数与MOGA
 作者的核心创新在于重新定义了衡量优化器几何性质的“尺子”。为了消除宽度对范数计算的影响，作者引入了**均值归一化算子范数**。
@@ -149,7 +153,6 @@ scenarios:
 
 ---
 
-### 3. 理论基础
 
 ### 理论依据
 论文的理论基石是非线性优化中的**最速下降法**和**Lipschitz平滑性**。优化器的步长（学习率）通常受限于目标函数的Lipschitz常数 $L$。如果 $L$ 随宽度 $w$ 增大，最优学习率就必须减小。
@@ -164,7 +167,6 @@ scenarios:
 
 ---
 
-### 4. 实验与结果
 
 ### 实验设计
 - **模型**：GPT-2 (Small至XL尺寸) 和 LLaMA架构。
@@ -186,7 +188,6 @@ scenarios:
 
 ---
 
-### 5. 应用前景
 
 ### 实际应用场景
 1.  **超大模型训练**：对于训练千亿参数级别的模型，MOGA提供了一种不需要反复试错即可确定学习率的方法，显著降低了试错成本。
@@ -201,7 +202,6 @@ scenarios:
 
 ---
 
-### 6. 研究启示
 
 ### 对领域的启示
 该论文挑战了“优化器必须针对特定模型架构调优”的固有观念，指出了**线性代数中的范数定义**对深度学习优化行为的决定性影响。这提示研究者应更多关注优化算法与网络几何结构（如权重矩阵的形状和分布）之间的交互。
@@ -212,7 +212,6 @@ scenarios:
 
 ---
 
-### 7. 学习建议
 
 ### 适合读者
 - 从事大模型训练与优化的工程师。
@@ -247,7 +246,6 @@ scenarios:
 
 ---
 
-### 9. 研究哲学：可证伪性与边界
 
 ### 关键假设与归纳偏置
 - **假设1**：神经网络的有效训练动态主要由其权重矩阵的线性几何性质（如范数、平滑性）决定，而非高度非线性的激活
@@ -476,6 +474,6 @@ scenarios:
 
 - [FISMO：基于Fisher结构的动量正交化优化器]({{< relref "posts/20260130-arxiv_ai-fismo-fisher-structured-momentum-orthogonalized-op-4.md" >}})
 - [TEON：张量化正交化技术优化大语言模型预训练]({{< relref "posts/20260202-arxiv_ai-teon-tensorized-orthonormalization-beyond-layer-wi-9.md" >}})
-- [TEON：张量化正交化方法优化大语言模型预训练]({{< relref "posts/20260203-arxiv_ai-teon-tensorized-orthonormalization-beyond-layer-wi-9.md" >}})
-- [ARO: A New Lens On Matrix Optimization For Large Models]({{< relref "posts/20260211-arxiv_ai-aro-a-new-lens-on-matrix-optimization-for-large-mo-8.md" >}})
+- [TEON：张量化正交化方法优化大语言模型预训练]({{< relref "posts/20260202-arxiv_ai-teon-tensorized-orthonormalization-beyond-layer-wi-9.md" >}})
+- [ARO: A New Lens On Matrix Optimization For Large Models]({{< relref "posts/20260210-arxiv_ai-aro-a-new-lens-on-matrix-optimization-for-large-mo-8.md" >}})
 - [通过低秩近似优化大模型动量状态以降低显存占用]({{< relref "posts/20260302-arxiv_ai-taming-momentum-rethinking-optimizer-states-throug-4.md" >}})

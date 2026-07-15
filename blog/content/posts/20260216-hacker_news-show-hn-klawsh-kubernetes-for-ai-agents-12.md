@@ -1,14 +1,33 @@
 ---
-title: "Klaw.sh：面向 AI 智能体的 Kubernetes 编排工具"
-date: 2026-02-16T02:57:45+08:00
+title: Klaw.sh：面向 AI 智能体的 Kubernetes 编排工具
+date: 2026-02-16 02:57:45+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Kubernetes", "AI Agents", "Klaw", "编排工具", "DevOps", "基础设施", "容器化", "自动化"]
-categories: ["AI 工程", "系统与基础设施"]
+entry_kind: auto
+tags:
+- Kubernetes
+- AI Agents
+- Klaw
+- 编排工具
+- DevOps
+- 基础设施
+- 容器化
+- 自动化
+categories:
+- AI 工程
+- 系统与基础设施
 source: hacker_news
-description: "随着 AI Agent 从实验走向生产环境，如何确保其在复杂的基础设施中可靠运行成为关键挑战。Klaw.sh 通过将 Kubernetes 的编排能力引入 AI 系统，为智能体的部署、扩展和管理提供了标准化的底层支持。本文将剖析 Klaw.sh 的核心机制，探讨它如何利用 K8s 生态解决 Agent 治理难题，并帮助"
+description: 随着 AI Agent 从实验走向生产环境，如何确保其在复杂的基础设施中可靠运行成为关键挑战。Klaw.sh 通过将 Kubernetes
+  的编排能力引入 AI 系统，为智能体的部署、扩展和管理提供了标准化的底层支持。本文将剖析 Klaw.sh 的核心机制，探讨它如何利用 K8s 生态解决 Agent
+  治理难题，并帮助
 external_url: https://github.com/klawsh/klaw.sh
-scenarios: ["Kubernetes", "AI/ML项目", "DevOps/运维"]
+scenarios:
+- Kubernetes
+- AI/ML项目
+- DevOps/运维
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Klaw.sh：面向 AI 智能体的 Kubernetes 编排工具
@@ -210,7 +229,6 @@ for rec in recommendations:
 数据处理的端到端延迟减少了 60%，实现了准实时的风控预警。通过严格的权限管控，系统顺利通过了 ISO 27001 安全审计。Klaw.sh 的可视化编排功能使得数据科学家能够自行调整 Agent 的执行顺序，而无需深入编写底层的 Kubernetes 清单文件，开发效率显著提升。
 
 ---
-## 最佳实践
 
 ## 最佳实践指南
 
@@ -396,8 +414,8 @@ AI Agent 编写的代码可能包含逻辑错误。绝对不应允许 Agent 直�
 ### 相关文章
 
 - [Sealos：AI 原生云操作系统]({{< relref "posts/20260206-hacker_news-sealos-ai-native-cloud-cloud-operating-system-16.md" >}})
-- [Claude Code：面向基础设施的编程工具]({{< relref "posts/20260204-hacker_news-claude-code-for-infrastructure-12.md" >}})
-- [基于 NixOS 的 Microvm.nix 构建编码 Agent 虚拟机]({{< relref "posts/20260204-hacker_news-coding-agent-vms-on-nixos-with-microvmnix-10.md" >}})
-- [NixOS 上基于 Microvm.nix 的编码代理虚拟机]({{< relref "posts/20260204-hacker_news-coding-agent-vms-on-nixos-with-microvmnix-12.md" >}})
-- [基于 NixOS 的 Microvm.nix 构建编码 Agent 虚拟机]({{< relref "posts/20260204-hacker_news-coding-agent-vms-on-nixos-with-microvmnix-15.md" >}})
+- [Claude Code：面向基础设施的编程工具]({{< relref "posts/20260204-hacker_news-claude-code-for-infrastructure-11.md" >}})
+- [基于 NixOS 的 Microvm.nix 构建编码 Agent 虚拟机]({{< relref "posts/20260204-hacker_news-coding-agent-vms-on-nixos-with-microvmnix-9.md" >}})
+- [NixOS 上基于 Microvm.nix 的编码代理虚拟机]({{< relref "posts/20260204-hacker_news-coding-agent-vms-on-nixos-with-microvmnix-9.md" >}})
+- [基于 NixOS 的 Microvm.nix 构建编码 Agent 虚拟机]({{< relref "posts/20260204-hacker_news-coding-agent-vms-on-nixos-with-microvmnix-9.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

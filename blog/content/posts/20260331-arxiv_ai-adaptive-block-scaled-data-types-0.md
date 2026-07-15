@@ -1,14 +1,23 @@
 ---
-title: "自适应块缩放数据类型"
-date: 2026-03-31T11:59:35+08:00
+title: 自适应块缩放数据类型
+date: 2026-03-31 11:59:35+08:00
 draft: false
-entry_kind: "auto"
-tags: ["arxiv", "cs.CL"]
-categories: ["论文"]
+entry_kind: auto
+tags:
+- arxiv
+- cs.CL
+categories:
+- 论文
 source: arxiv
-description: "背景与动机 NVFP4 是一种 4 位块量化格式，在大型语言模型中因硬件支持与少量位即可保留关键信息而广泛应用。然而，NVFP4 在每 16 值块中靠近最大值的数值上会产生较大量化误差，导致误差分布不均，影响模型精度。 方案设计 本文利用该误差特性，提出 **自适应块缩放数据类型**，可依据输入值分布动态选择最优表示。"
+description: 背景与动机 NVFP4 是一种 4 位块量化格式，在大型语言模型中因硬件支持与少量位即可保留关键信息而广泛应用。然而，NVFP4 在每 16
+  值块中靠近最大值的数值上会产生较大量化误差，导致误差分布不均，影响模型精度。 方案设计 本文利用该误差特性，提出 **自适应块缩放数据类型**，可依据输入值分布动态选择最优表示。
 external_url: http://arxiv.org/abs/2603.28765v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 自适应块缩放数据类型
@@ -166,7 +175,7 @@ IF4 的低开销特性使其适合作为 **边缘端/移动端 LLM 加速器** �
 
 - [Quantum-Audit：评估大语言模型量子计算推理能力极限]({{< relref "posts/20260211-arxiv_ai-quantum-audit-evaluating-the-reasoning-limits-of-l-6.md" >}})
 - [面向神经元的大模型指令调优数据选择方法]({{< relref "posts/20260316-arxiv_ai-neuron-aware-data-selection-in-instruction-tuning--3.md" >}})
-- [语言模型道德冷漠的机制起源]({{< relref "posts/20260318-arxiv_ai-mechanistic-origin-of-moral-indifference-in-langua-2.md" >}})
+- [语言模型道德冷漠的机制起源]({{< relref "posts/20260317-arxiv_ai-mechanistic-origin-of-moral-indifference-in-langua-2.md" >}})
 - [ANCRe：自适应神经连接重分配实现高效深度扩展]({{< relref "posts/20260210-arxiv_ai-ancre-adaptive-neural-connection-reassignment-for--5.md" >}})
 - [基于朗之万动力学的直接软策略采样]({{< relref "posts/20260210-arxiv_ai-direct-soft-policy-sampling-via-langevin-dynamics-2.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

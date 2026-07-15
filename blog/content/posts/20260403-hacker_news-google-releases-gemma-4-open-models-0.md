@@ -1,14 +1,31 @@
 ---
-title: "谷歌发布Gemma 4开源模型"
-date: 2026-04-03T08:55:35+08:00
+title: 谷歌发布Gemma 4开源模型
+date: 2026-04-03 08:55:35+08:00
 draft: false
-entry_kind: "auto"
-tags: ["谷歌", "Gemma", "开源模型", "大模型", "深度学习", "NLP", "AI", "模型发布"]
-categories: ["大模型", "开源生态"]
+entry_kind: auto
+tags:
+- 谷歌
+- Gemma
+- 开源模型
+- 大模型
+- 深度学习
+- NLP
+- AI
+- 模型发布
+categories:
+- 大模型
+- 开源生态
 source: hacker_news
-description: "Google近日正式发布了Gemma 4开源模型系列。该系列在前代基础上进一步提升了推理效率和多模态能力，并在模型规模与部署灵活性之间实现了更好的平衡。开发者可以直接在多种硬件平台上使用这些预训练权重，快速构建和迭代AI应用。本文将概述Gemma 4的核心改进、基准测试结果以及获取方式，帮助技术团队快速评估其在实际项目"
+description: Google近日正式发布了Gemma 4开源模型系列。该系列在前代基础上进一步提升了推理效率和多模态能力，并在模型规模与部署灵活性之间实现了更好的平衡。开发者可以直接在多种硬件平台上使用这些预训练权重，快速构建和迭代AI应用。本文将概述Gemma
+  4的核心改进、基准测试结果以及获取方式，帮助技术团队快速评估其在实际项目
 external_url: https://deepmind.google/models/gemma/gemma-4
-scenarios: ["自然语言处理", "AI/ML项目"]
+scenarios:
+- 自然语言处理
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 谷歌发布Gemma 4开源模型
@@ -81,9 +98,9 @@ Gemma 4在企业内部部署、隐私敏感场景及定制化应用开发中展�
 
 ### 相关文章
 
-- [Claude Opus 4.6 发布]({{< relref "posts/20260206-hacker_news-claude-opus-46-3.md" >}})
-- [从上下文学习的难度超出预期]({{< relref "posts/20260207-hacker_news-learning-from-context-is-harder-than-we-thought-10.md" >}})
-- [Z.ai发布GLM-5开源模型：性能超越Opus 4.5]({{< relref "posts/20260212-blogs_podcasts-ainews-zai-glm-5-new-sota-open-weights-llm-3.md" >}})
-- [大语言模型面临的幻觉与逻辑推理局限]({{< relref "posts/20260212-hacker_news-the-problem-with-llms-13.md" >}})
-- [Z.ai发布GLM-5开源模型：性能超越Opus 4.5]({{< relref "posts/20260213-blogs_podcasts-ainews-zai-glm-5-new-sota-open-weights-llm-10.md" >}})
+- [Claude Opus 4.6 发布]({{< relref "posts/20260205-hacker_news-claude-opus-46-2.md" >}})
+- [从上下文学习的难度超出预期]({{< relref "posts/20260206-hacker_news-learning-from-context-is-harder-than-we-thought-6.md" >}})
+- [Z.ai发布GLM-5开源模型：性能超越Opus 4.5]({{< relref "posts/20260212-blogs_podcasts-ainews-zai-glm-5-new-sota-open-weights-llm-0.md" >}})
+- [大语言模型面临的幻觉与逻辑推理局限]({{< relref "posts/20260212-hacker_news-the-problem-with-llms-9.md" >}})
+- [Z.ai发布GLM-5开源模型：性能超越Opus 4.5]({{< relref "posts/20260212-blogs_podcasts-ainews-zai-glm-5-new-sota-open-weights-llm-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

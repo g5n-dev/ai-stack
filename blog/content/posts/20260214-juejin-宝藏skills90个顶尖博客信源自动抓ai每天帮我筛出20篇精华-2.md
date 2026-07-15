@@ -1,14 +1,30 @@
 ---
-title: "AI Daily Digest：自动抓取90个技术博客并筛选每日精华"
-date: 2026-02-14T20:42:31+08:00
+title: AI Daily Digest：自动抓取90个技术博客并筛选每日精华
+date: 2026-02-14 20:42:31+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI工作流", "RSS聚合", "信息筛选", "自动化", "内容抓取", "信息降噪", "AI Agent", "效率工具"]
-categories: ["效率与方法论", "AI 工程"]
+entry_kind: auto
+tags:
+- AI工作流
+- RSS聚合
+- 信息筛选
+- 自动化
+- 内容抓取
+- 信息降噪
+- AI Agent
+- 效率工具
+categories:
+- 效率与方法论
+- AI 工程
 source: juejin
-description: "这也是我正在寻找的高效工作流！以下是该内容的中文总结： **核心亮点：告别无效刷屏，AI 助力信息降噪** 阿星分享了一个极具价值的 **AI Daily Digest skill（技能）**，旨在解决“海量信息中优质内容稀缺”的痛点。 **功能机制：** 该技能具备强大的**自动抓取与筛选能力**。它能够自动扫描并抓"
+description: 这也是我正在寻找的高效工作流！以下是该内容的中文总结： **核心亮点：告别无效刷屏，AI 助力信息降噪** 阿星分享了一个极具价值的 **AI
+  Daily Digest skill（技能）**，旨在解决“海量信息中优质内容稀缺”的痛点。 **功能机制：** 该技能具备强大的**自动抓取与筛选能力**。它能够自动扫描并抓
 external_url: https://juejin.cn/post/7606187608822693940
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AI Daily Digest：自动抓取90个技术博客并筛选每日精华
@@ -213,9 +229,9 @@ scenarios: ["AI/ML项目"]
 
 ### 相关文章
 
-- [编排多会话 Claude Code 团队协作]({{< relref "posts/20260205-hacker_news-orchestrate-teams-of-claude-code-sessions-5.md" >}})
+- [编排多会话 Claude Code 团队协作]({{< relref "posts/20260205-hacker_news-claude-code-agent-teams-3.md" >}})
 - [Moltworker：自托管个人 AI 智能体]({{< relref "posts/20260130-hacker_news-moltworker-a-self-hosted-personal-ai-agent-minus-t-16.md" >}})
-- [Moltworker：自托管个人 AI 智能体]({{< relref "posts/20260130-hacker_news-moltworker-a-self-hosted-personal-ai-agent-minus-t-19.md" >}})
+- [Moltworker：自托管个人 AI 智能体]({{< relref "posts/20260130-hacker_news-moltworker-a-self-hosted-personal-ai-agent-minus-t-16.md" >}})
 - [编码代理的成功对通用AI系统的启示]({{< relref "posts/20260130-hacker_news-what-the-success-of-coding-agents-teaches-us-about-11.md" >}})
 - [Claude Code 发布：AI 代理直接面向客户]({{< relref "posts/20260131-hacker_news-claude-code-is-your-customer-16.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

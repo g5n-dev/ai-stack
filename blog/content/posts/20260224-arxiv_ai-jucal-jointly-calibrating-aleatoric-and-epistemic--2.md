@@ -20,6 +20,12 @@ description: 以下是对该内容的中文总结： **论文标题：** JUCAL�
 external_url: http://arxiv.org/abs/2602.20153v1
 scenarios:
 - AI/ML项目
+aliases:
+- /posts/20260225-arxiv_ai-jucal-jointly-calibrating-aleatoric-and-epistemic--2/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # JUCAL：分类任务中偶然与认知不确定性的联合校准
@@ -130,9 +136,7 @@ scenarios:
 
 ---
 
-### JUCAL：分类任务中偶然不确定性与认知不确定性的联合校准 —— 深度分析报告
 
-### 1. 研究背景与问题
 
 ### 核心问题
 该论文致力于解决深度学习分类模型中**不确定性校准**的失衡问题。具体而言，现有的校准技术往往将模型输出的置信度视为一个整体进行修正，而忽略了不确定性的两个本质来源——**偶然不确定性**（Aleatoric Uncertainty，数据固有的噪声）和**认知不确定性**（Epistemic Uncertainty，模型知识的匮乏）——在校准过程中的不同特性。核心问题在于：**如何在不重新训练模型的前提下，联合校准这两种不确定性，以获得更可靠的概率预测和更紧凑的预测集？**
@@ -149,7 +153,6 @@ scenarios:
 ### 重要性
 解决这一问题对于构建可信 AI 系统具有里程碑意义。通过将偶然不确定性（不可约误差）与认知不确定性（可通过增加数据减少的误差）分离开来并分别校准，我们可以更准确地判断“模型不知道什么”，从而在主动学习、异常检测和风险决策中提供更精准的指导。
 
-### 2. 核心方法与创新
 
 ### 核心方法：JUCAL (Joint Uncertainty Calibration)
 JUCAL 是一种**模型无关**的后处理校准算法，专门应用于**深度集成**等能够输出概率分布集合的模型。
@@ -173,7 +176,6 @@ JUCAL 是一种**模型无关**的后处理校准算法，专门应用于**深�
 *   **性能卓越：** 实验证明，仅用 5 个模型的 JUCAL 集成，其性能（NLL 和预测集大小）优于使用 50 个模型的温度缩放集成。这意味着高达 **10 倍的推理成本节约**。
 *   **即插即用：** 可以直接作为现有深度学习推理管线的一层插入。
 
-### 3. 理论基础
 
 ### 理论假设与模型
 JUCAL 的理论基础建立在**贝叶斯概率论**和**集成学习**的视角之上。
@@ -193,7 +195,6 @@ $$ \min_{\lambda, \tau} \sum_{(x,y) \in \mathcal{D}_{val}} \mathcal{L}(y, \text{
 ### 理论贡献分析
 作者从理论上证明了，相比于仅校准偶然不确定性的温度缩放，联合校准能够提供更紧致的**CRP（Conformal Risk Prediction）界**。这意味着在保证相同覆盖率（如 90%）的前提下，JUCAL 生成的预测集（Set Prediction）平均尺寸更小，信息量更丰富。
 
-### 7. 学习建议
 
 ### 适合读者
 *   从事机器学习应用落地的工程师（特别是关注模型安全性的）。
@@ -447,6 +448,6 @@ JUCAL 被设计为一种**后处理校准**技术。这意味着它不需要改�
 
 - [Deep Researcher：序列规划反思与候选交叉]({{< relref "posts/20260129-arxiv_ai-deep-researcher-with-sequential-plan-reflection-an-9.md" >}})
 - [SokoBench：评估大模型长程规划与推理能力]({{< relref "posts/20260129-arxiv_ai-sokobench-evaluating-long-horizon-planning-and-rea-2.md" >}})
-- [Deep Researcher：结合序列规划反思与候选交叉的深度研究框架]({{< relref "posts/20260130-arxiv_ai-deep-researcher-with-sequential-plan-reflection-an-9.md" >}})
+- [Deep Researcher：结合序列规划反思与候选交叉的深度研究框架]({{< relref "posts/20260129-arxiv_ai-deep-researcher-with-sequential-plan-reflection-an-9.md" >}})
 - [探索面向智能体的推理奖励模型]({{< relref "posts/20260130-arxiv_ai-exploring-reasoning-reward-model-for-agents-4.md" >}})
 - [FineInstructions：将合成指令数据扩展至预训练规模]({{< relref "posts/20260130-arxiv_ai-fineinstructions-scaling-synthetic-instructions-to-7.md" >}})

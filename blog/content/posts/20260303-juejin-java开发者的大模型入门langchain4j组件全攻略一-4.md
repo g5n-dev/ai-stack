@@ -22,6 +22,10 @@ external_url: https://juejin.cn/post/7612196008589590547
 scenarios:
 - AI/ML项目
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Java开发者大模型应用指南：LangChain4j组件解析
@@ -197,6 +201,6 @@ OpenAiChatModel model = OpenAiChatModel.builder()
 
 - [Spring AI 结构化输出转换器实战：告别字符串解析，拥抱类型安全]({{< relref "posts/20260218-juejin-spring-ai-结构化输出转换器实战告别字符串解析拥抱类型安全-4.md" >}})
 - [Spring AI 多模态实战：构建图像理解应用]({{< relref "posts/20260219-juejin-spring-ai-多模态实战手把手教你构建图像理解应用-0.md" >}})
-- [Spring AI 多模态实战：构建图像理解应用]({{< relref "posts/20260219-juejin-spring-ai-多模态实战手把手教你构建图像理解应用-3.md" >}})
+- [Spring AI 多模态实战：构建图像理解应用]({{< relref "posts/20260219-juejin-spring-ai-多模态实战手把手教你构建图像理解应用-0.md" >}})
 - [Agent 开发实战：赋予大模型工具调用能力]({{< relref "posts/20260220-juejin-agent-自学指南1-别只会hi了给大模型装上手脚5分钟变身-agent-2.md" >}})
 - [CountBot：基于 Provider 模式与 LiteLLM 实现多 LLM 统一接入]({{< relref "posts/20260222-juejin-03多-llm-提供商统一接入provider-模式与-litellm-实践-3.md" >}})

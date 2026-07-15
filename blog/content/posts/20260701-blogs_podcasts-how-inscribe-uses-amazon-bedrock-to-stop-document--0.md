@@ -1,14 +1,30 @@
 ---
-title: "Inscribe基于Amazon Bedrock的代理型AI系统实现90秒文档欺诈检测"
-date: 2026-07-01T18:15:33+08:00
+title: Inscribe基于Amazon Bedrock的代理型AI系统实现90秒文档欺诈检测
+date: 2026-07-01 18:15:33+08:00
 draft: false
-entry_kind: "auto"
-tags: ["文档欺诈检测", "Bedrock", "代理式AI", "金融合规", "自动化审查", "欺诈分析", "AI检测", "秒级检测"]
-categories: ["AI 工程", "安全"]
+entry_kind: auto
+tags:
+- 文档欺诈检测
+- Bedrock
+- 代理式AI
+- 金融合规
+- 自动化审查
+- 欺诈分析
+- AI检测
+- 秒级检测
+categories:
+- AI 工程
+- 安全
 source: blogs_podcasts
-description: "Inscribe 利用 Amazon Bedrock 构建了一个代理式 AI 系统，该系统能够像资深欺诈分析师一样跨文档进行推理。通过对文档内容、结构、来源等多维度信息进行综合分析，系统可在 90 秒内识别出被篡改、伪造以及 AI 生成的文件，检测速度比传统人工审查提升约 20 倍。该系统在高检出率的同时保持了对检测结"
+description: Inscribe 利用 Amazon Bedrock 构建了一个代理式 AI 系统，该系统能够像资深欺诈分析师一样跨文档进行推理。通过对文档内容、结构、来源等多维度信息进行综合分析，系统可在
+  90 秒内识别出被篡改、伪造以及 AI 生成的文件，检测速度比传统人工审查提升约 20 倍。该系统在高检出率的同时保持了对检测结
 external_url: https://aws.amazon.com/blogs/machine-learning/how-inscribe-uses-amazon-bedrock-to-stop-document-fraud-in-seconds
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Inscribe基于Amazon Bedrock的代理型AI系统实现90秒文档欺诈检测
@@ -142,8 +158,8 @@ Inscribe成功构建了一套基于Amazon Bedrock的代理AI系统，该系统�
 ### 相关文章
 
 - [Amazon Bedrock Guardrails新增安全检查API]({{< relref "posts/20260617-blogs_podcasts-safeguard-your-agentic-ai-applications-with-the-am-0.md" >}})
-- [YouTube将自动标记AI生成视频]({{< relref "posts/20260528-hacker_news-youtube-to-automatically-label-ai-generated-videos-0.md" >}})
+- [YouTube将自动标记AI生成视频]({{< relref "posts/20260527-hacker_news-youtube-to-automatically-label-ai-generated-videos-0.md" >}})
 - [AWS Secrets Manager为AgentCore Identity新增密钥引用功能，支持直接使用预先]({{< relref "posts/20260601-blogs_podcasts-reference-your-own-aws-secrets-manager-secrets-in--0.md" >}})
-- [基于Bedrock AgentCore构建长时运行MCP服务器与异步任务管理]({{< relref "posts/20260215-blogs_podcasts-build-long-running-mcp-servers-on-amazon-bedrock-a-9.md" >}})
-- [Bedrock Robotics应用视觉语言模型规模化标注物理AI数据]({{< relref "posts/20260225-blogs_podcasts-scaling-data-annotation-using-vision-language-mode-10.md" >}})
+- [基于Bedrock AgentCore构建长时运行MCP服务器与异步任务管理]({{< relref "posts/20260212-blogs_podcasts-build-long-running-mcp-servers-on-amazon-bedrock-a-1.md" >}})
+- [Bedrock Robotics应用视觉语言模型规模化标注物理AI数据]({{< relref "posts/20260224-blogs_podcasts-scaling-data-annotation-using-vision-language-mode-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

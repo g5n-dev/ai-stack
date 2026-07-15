@@ -10,7 +10,7 @@ tags:
 - PR合并
 - 模型评估
 - 软件工程
-- AI编程
+- AI 编程
 - 偏差分析
 categories:
 - 大模型
@@ -21,6 +21,14 @@ description: 尽管 SWE-bench 已成为评估 AI 代码生成能力的主流基�
 external_url: https://metr.org/notes/2026-03-10-many-swe-bench-passing-prs-would-not-be-merged-into-main
 scenarios:
 - AI/ML项目
+aliases:
+- /posts/20260312-hacker_news-many-swe-bench-passing-prs-would-not-be-merged-1/
+- /posts/20260312-hacker_news-many-swe-bench-passing-prs-would-not-be-merged-4/
+- /posts/20260312-hacker_news-many-swe-bench-passing-prs-would-not-be-merged-6/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # SWE-bench基准测试通过率与实际PR合并率存在偏差

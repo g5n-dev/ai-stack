@@ -22,6 +22,12 @@ external_url: https://github.com/obsessiondb/rudel
 scenarios:
 - AI/ML项目
 - 大语言模型
+aliases:
+- /posts/20260312-hacker_news-show-hn-rudel-claude-code-session-analytics-19/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 分析1573次Claude Code会话以探究AI代理工作机制

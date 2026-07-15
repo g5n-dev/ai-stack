@@ -23,6 +23,10 @@ external_url: https://juejin.cn/post/7613709178717962275
 scenarios:
 - AI/ML项目
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # TRAE省钱指南：基于AI Coding心法的10个Token节省技巧
@@ -210,7 +214,7 @@ TRAE（以及大多数基于大模型的应用）的计费核心在于 Token 的
 ### 相关文章
 
 - [利用AI高效编写高质量代码的实践方法]({{< relref "posts/20260206-hacker_news-how-to-effectively-write-quality-code-with-ai-3.md" >}})
-- [利用AI高效编写高质量代码的实践指南]({{< relref "posts/20260206-hacker_news-how-to-effectively-write-quality-code-with-ai-5.md" >}})
-- [利用AI高效编写高质量代码的实践指南]({{< relref "posts/20260206-hacker_news-how-to-effectively-write-quality-code-with-ai-6.md" >}})
-- [利用AI高效编写高质量代码的实践方法]({{< relref "posts/20260207-hacker_news-how-to-effectively-write-quality-code-with-ai-15.md" >}})
-- [利用AI高效编写高质量代码的实践指南]({{< relref "posts/20260207-hacker_news-how-to-effectively-write-quality-code-with-ai-16.md" >}})
+- [利用AI高效编写高质量代码的实践指南]({{< relref "posts/20260206-hacker_news-how-to-effectively-write-quality-code-with-ai-3.md" >}})
+- [利用AI高效编写高质量代码的实践指南]({{< relref "posts/20260206-hacker_news-how-to-effectively-write-quality-code-with-ai-3.md" >}})
+- [利用AI高效编写高质量代码的实践方法]({{< relref "posts/20260206-hacker_news-how-to-effectively-write-quality-code-with-ai-3.md" >}})
+- [利用AI高效编写高质量代码的实践指南]({{< relref "posts/20260206-hacker_news-how-to-effectively-write-quality-code-with-ai-3.md" >}})

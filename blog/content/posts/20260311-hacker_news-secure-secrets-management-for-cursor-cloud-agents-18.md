@@ -20,6 +20,10 @@ description: 随着 Cursor Cloud Agents 的应用场景日益复杂，如何妥�
 external_url: https://infisical.com/blog/secure-secrets-management-for-cursor-cloud-agents
 scenarios:
 - Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Cursor Cloud Agent 的安全密钥管理方案

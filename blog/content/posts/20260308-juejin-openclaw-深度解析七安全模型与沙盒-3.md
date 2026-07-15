@@ -21,6 +21,10 @@ description: 本文是对 **OpenClaw 深度解析（七）：安全模型与沙�
 external_url: https://juejin.cn/post/7614388350333861897
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # OpenClaw深度解析七：共享服务器部署的安全模型与沙盒
@@ -196,7 +200,7 @@ OpenClaw 引入了“资源配额”和“看门狗”机制来应对资源滥�
 ### 相关文章
 
 - [OpenClash 架构解析：节点、Canvas 与子 Agent 设计逻辑]({{< relref "posts/20260307-juejin-openclaw-深度解析六节点canvas-与子-agent-1.md" >}})
-- [基于 SLS 与 OpenTelemetry 构建 OpenClaw 可观测性体系]({{< relref "posts/20260304-juejin-你的-openclaw-真的在受控运行吗-1.md" >}})
+- [基于 SLS 与 OpenTelemetry 构建 OpenClaw 可观测性体系]({{< relref "posts/20260303-juejin-你的-openclaw-真的在受控运行吗-0.md" >}})
 - [OpenClaw赋予AI全系统权限引发安全担忧]({{< relref "posts/20260206-hacker_news-openclaw-when-ai-agents-get-full-system-access-sec-14.md" >}})
-- [OpenClaw：AI代理获系统完全访问权限的安全隐忧]({{< relref "posts/20260206-hacker_news-openclaw-when-ai-agents-get-full-system-access-sec-19.md" >}})
+- [OpenClaw：AI代理获系统完全访问权限的安全隐忧]({{< relref "posts/20260206-hacker_news-openclaw-when-ai-agents-get-full-system-access-sec-14.md" >}})
 - [我放弃OpenClaw并构建更安全的AI代理]({{< relref "posts/20260213-hacker_news-i-ditched-openclaw-and-built-a-more-secure-ai-agen-6.md" >}})

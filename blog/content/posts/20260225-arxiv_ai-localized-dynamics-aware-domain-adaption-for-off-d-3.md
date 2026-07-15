@@ -21,6 +21,10 @@ description: 本文介绍了一种名为 **LoDADA（Localized Dynamics-Aware Dom
 external_url: http://arxiv.org/abs/2602.21072v1
 scenarios:
 - Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 离线强化学习：面向离动力学环境的局部动力学感知域适应
@@ -119,9 +123,7 @@ LoDADA 通过利用 **局部化的动态不匹配** 来更有效地复用源数�
 
 ---
 
-### 深入分析：Localized Dynamics-Aware Domain Adaptation for Off-Dynamics Offline RL
 
-### 1. 研究背景与问题
 
 ### 核心问题
 本研究旨在解决 **Off-Dynamics 离线强化学习** 问题。具体而言，即如何利用一个**数据丰富但环境动态不同**的源域数据集，来训练一个适用于**数据稀缺的目标域**的策略。
@@ -136,7 +138,6 @@ LoDADA 通过利用 **局部化的动态不匹配** 来更有效地复用源数�
 ### 为什么重要
 该问题直接关系到离线强化学习技术的落地能力。如果无法有效利用源域数据，目标域策略的训练将受限于极少量真实数据，难以收敛。LoDADA通过引入“局部化”视角，提供了一种计算效率与利用效率之间的平衡方案。
 
-### 2. 核心方法与创新
 
 ### 核心方法：LoDADA
 LoDADA（Localized Dynamics-Aware Domain Adaptation）的核心思想是：**动态差异在状态空间中是非均匀分布的，应通过聚类在局部簇的层面上进行域适应**。
@@ -155,7 +156,6 @@ LoDADA（Localized Dynamics-Aware Domain Adaptation）的核心思想是：**动
 - **计算高效**：相比于对所有数据点进行逐一评估，聚类后的评估计算量显著降低。
 - **鲁棒性**：通过过滤掉高差异区域的源数据，避免了错误分布数据对策略的误导。
 
-### 3. 理论基础
 
 ### 理论依据
 论文的理论分析主要基于**重要性采样**和**分布漂移界**。
@@ -174,7 +174,6 @@ LoDADA（Localized Dynamics-Aware Domain Adaptation）的核心思想是：**动
 3.  **理论贡献**：
     证明了在满足一定覆盖假设的条件下，LoDADA筛选后的数据集能够提供一个更紧的性能界，解释了为什么简单的过滤比强行拟合所有数据更有效。
 
-### 7. 学习建议
 
 ### 适合人群
 - 从事离线强化学习、迁移学习、Sim-to-Real研究的研究生和工程师。
@@ -446,5 +445,5 @@ LoDADA（Localized Dynamics-Aware Domain Adaptation）的核心思想是：**动
 - [利用辅助信息实现少样本设计优化]({{< relref "posts/20260213-arxiv_ai-few-shot-design-optimization-by-exploiting-auxilia-7.md" >}})
 - [为何Adam在$β_1=β_2$时更优：缺失的梯度尺度不变性原理]({{< relref "posts/20260130-arxiv_ai-why-adam-works-better-with-β_1-β_2-the-missing-gra-8.md" >}})
 - [RN-D：基于正则化网络的离散分类演员与同策强化学习]({{< relref "posts/20260202-arxiv_ai-rn-d-discretized-categorical-actors-with-regulariz-7.md" >}})
-- [基于归一化流的高效分层目标条件强化学习]({{< relref "posts/20260213-arxiv_ai-data-efficient-hierarchical-goal-conditioned-reinf-6.md" >}})
+- [基于归一化流的高效分层目标条件强化学习]({{< relref "posts/20260212-arxiv_ai-data-efficient-hierarchical-goal-conditioned-reinf-6.md" >}})
 - [Dex4D：任务无关点跟踪策略实现灵巧操作跨域迁移]({{< relref "posts/20260218-arxiv_ai-dex4d-task-agnostic-point-track-policy-for-sim-to--2.md" >}})

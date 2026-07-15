@@ -21,6 +21,12 @@ description: '**中文总结：从数据统计到特征几何：相关性如何�
 external_url: http://arxiv.org/abs/2603.09972v1
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260312-arxiv_ai-from-data-statistics-to-feature-geometry-how-corre-1/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 从数据统计到特征几何：相关性如何塑造叠加态
@@ -107,9 +113,7 @@ scenarios:
 
 ---
 
-### 从数据统计到特征几何：相关性如何塑造叠加态——深度分析报告
 
-### 1. 研究背景与问题
 
 ### 核心问题
 本研究旨在解决机械可解释性领域中一个基础性的理论缺口：**当数据特征之间存在现实世界普遍存在的相关性时，神经网络中的“叠加态”几何结构会发生什么变化？**
@@ -125,7 +129,6 @@ scenarios:
 ### 重要性
 理解相关性如何塑造叠加态，是连接“玩具模型”与“真实大模型”的关键一步。它揭示了模型并非仅仅被动地存储特征，而是主动利用数据统计特性（相关性）来优化存储效率。这为理解大语言模型中的知识表示和语义空间结构提供了新的理论基础。
 
-### 2. 核心方法与创新
 
 ### 核心方法：词袋叠加态
 作者提出了一个名为“词袋叠加态”的受控实验框架。不同于以往使用随机生成的独立稀疏向量，该方法：
@@ -142,7 +145,6 @@ scenarios:
 - **可解释性**：通过可视化隐藏层的权重向量，可以直接观察到语义聚类的形成。
 - **理论桥梁**：成功复现了真实大模型中观察到的“环形结构”，为理解LLM内部结构提供了实验依据。
 
-### 3. 理论基础
 
 ### 理论假设
 论文基于两个主要理论支柱：
@@ -157,7 +159,6 @@ scenarios:
 ### 理论贡献
 作者从理论上证明了，当引入相关性后，特征向量的最优排列不再是均匀分布在超球面上，而是会根据协方差矩阵的特征结构进行聚类。这修正了此前“干扰总是有害”的片面观点。
 
-### 7. 学习建议
 
 ### 适合人群
 - 机械可解释性研究人员。
@@ -174,7 +175,6 @@ scenarios:
 2.  阅读本文的Introduction和Results部分，直观理解“聚类”现象。
 3.  深入研读Discussion部分，理解建设性干扰的物理意义。
 
-### 特征几何分析实践指南
 
 ### 实践 1：基于几何视角分析模型内部状态
 
@@ -415,7 +415,7 @@ scenarios:
 ### 相关文章
 
 - [深度学习激活函数原理与非线性机制解析]({{< relref "posts/20260227-juejin-一文搞懂激活函数-1.md" >}})
-- [深度学习激活函数原理：非线性能力与模型性能解析]({{< relref "posts/20260228-juejin-一文搞懂激活函数-3.md" >}})
+- [深度学习激活函数原理：非线性能力与模型性能解析]({{< relref "posts/20260227-juejin-一文搞懂激活函数-1.md" >}})
 - [伪可逆神经网络：兼具可逆性与灵活性的新架构]({{< relref "posts/20260206-arxiv_ai-pseudo-invertible-neural-networks-1.md" >}})
-- [伪可逆神经网络：通过伪可逆性提升模型可逆性]({{< relref "posts/20260207-arxiv_ai-pseudo-invertible-neural-networks-1.md" >}})
-- [伪可逆神经网络：基于伪逆变换的高效架构设计]({{< relref "posts/20260208-arxiv_ai-pseudo-invertible-neural-networks-1.md" >}})
+- [伪可逆神经网络：通过伪可逆性提升模型可逆性]({{< relref "posts/20260206-arxiv_ai-pseudo-invertible-neural-networks-1.md" >}})
+- [伪可逆神经网络：基于伪逆变换的高效架构设计]({{< relref "posts/20260206-arxiv_ai-pseudo-invertible-neural-networks-1.md" >}})

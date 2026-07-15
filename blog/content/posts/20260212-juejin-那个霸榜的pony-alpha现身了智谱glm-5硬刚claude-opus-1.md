@@ -1,14 +1,30 @@
 ---
-title: "智谱GLM-5即Pony Alpha：对标Claude Opus"
-date: 2026-02-12T15:02:46+08:00
+title: 智谱GLM-5即Pony Alpha：对标Claude Opus
+date: 2026-02-12 15:02:46+08:00
 draft: false
-entry_kind: "auto"
-tags: ["智谱AI", "GLM-5", "Pony Alpha", "Claude Opus", "OpenRouter", "模型评测", "国产大模型", "LLM"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- 智谱AI
+- GLM-5
+- Pony Alpha
+- Claude Opus
+- OpenRouter
+- 模型评测
+- 国产大模型
+- LLM
+categories:
+- 大模型
+- 论文
 source: juejin
-description: "以下是该段内容的简洁总结： 近期，在OpenRouter热度榜上引发广泛关注的神秘模型“Pony Alpha”终于揭晓了身份——它实际上是智谱AI推出的GLM-5。此前，该模型因未公开来源且表现强劲，一度被业界猜测是OpenAI或Anthropic等巨头的秘密测试项目。如今，随着其身份的确认，智谱GLM-5正式亮相，其"
+description: 以下是该段内容的简洁总结： 近期，在OpenRouter热度榜上引发广泛关注的神秘模型“Pony Alpha”终于揭晓了身份——它实际上是智谱AI推出的GLM-5。此前，该模型因未公开来源且表现强劲，一度被业界猜测是OpenAI或Anthropic等巨头的秘密测试项目。如今，随着其身份的确认，智谱GLM-5正式亮相，其
 external_url: https://juejin.cn/post/7605711582429970483
-scenarios: ["AI/ML项目", "大语言模型"]
+scenarios:
+- AI/ML项目
+- 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 智谱GLM-5即Pony Alpha：对标Claude Opus
@@ -186,9 +202,9 @@ scenarios: ["AI/ML项目", "大语言模型"]
 
 ### 相关文章
 
-- [🧠炸裂！Gemini Flash在俄罗斯大战Opus胜率66%！🚀]({{< relref "posts/20260127-hacker_news-show-hn-tetrisbench-gemini-flash-reaches-66-win-ra-12.md" >}})
-- [Alyah：评估阿拉伯语大模型阿联酋方言能力]({{< relref "posts/20260129-blogs_podcasts-alyah-toward-robust-evaluation-of-emirati-dialect--9.md" >}})
-- [Agent Skills：AI 智能体技能评估框架]({{< relref "posts/20260204-hacker_news-agent-skills-11.md" >}})
+- [🧠炸裂！Gemini Flash在俄罗斯大战Opus胜率66%！🚀]({{< relref "posts/20260127-hacker_news-show-hn-tetrisbench-gemini-flash-reaches-66-win-ra-6.md" >}})
+- [Alyah：评估阿拉伯语大模型阿联酋方言能力]({{< relref "posts/20260127-blogs_podcasts-alyah-toward-robust-evaluation-of-emirati-dialect--0.md" >}})
+- [Agent Skills：AI 智能体技能评估框架]({{< relref "posts/20260203-hacker_news-agent-skills-0.md" >}})
 - [利用 Claude Opus 4.6 推进金融业务发展]({{< relref "posts/20260205-hacker_news-advancing-finance-with-claude-opus-46-14.md" >}})
 - [OpenAI前沿技术进展与模型能力解析]({{< relref "posts/20260205-hacker_news-openai-frontier-5.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

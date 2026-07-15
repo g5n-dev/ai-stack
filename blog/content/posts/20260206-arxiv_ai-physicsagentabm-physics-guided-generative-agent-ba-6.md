@@ -1,14 +1,34 @@
 ---
-title: "PhysicsAgentABM：物理引导的生成式智能体建模"
-date: 2026-02-06T23:01:34+08:00
+title: PhysicsAgentABM：物理引导的生成式智能体建模
+date: 2026-02-06 23:01:34+08:00
 draft: false
-entry_kind: "auto"
-tags: ["PhysicsAgentABM", "多智能体系统", "ABM", "LLM", "生成式模型", "物理引导", "不确定性融合", "符号智能体"]
-categories: ["论文", "大模型"]
+entry_kind: auto
+tags:
+- PhysicsAgentABM
+- 多智能体系统
+- ABM
+- LLM
+- 生成式模型
+- 物理引导
+- 不确定性融合
+- 符号智能体
+categories:
+- 论文
+- 大模型
 source: arxiv
-description: "**内容总结：PhysicsAgentABM** **1. 背景与挑战** 现有的基于大语言模型（LLM）的多智能体系统虽然具备强大的推理能力，但面临扩展成本高且在时间步对齐的状态转换模拟中校准性差的问题；而传统的基于智能体的模型（ABM）虽具有可解释性，却难以整合丰富的个体信号和非平稳行为。 **2. 核心方案：Ph"
+description: '**内容总结：PhysicsAgentABM** **1. 背景与挑战** 现有的基于大语言模型（LLM）的多智能体系统虽然具备强大的推理能力，但面临扩展成本高且在时间步对齐的状态转换模拟中校准性差的问题；而传统的基于智能体的模型（ABM）虽具有可解释性，却难以整合丰富的个体信号和非平稳行为。
+  **2. 核心方案：Ph'
 external_url: http://arxiv.org/abs/2602.06030v1
-scenarios: ["大语言模型"]
+scenarios:
+- 大语言模型
+aliases:
+- /posts/20260207-arxiv_ai-physicsagentabm-physics-guided-generative-agent-ba-6/
+- /posts/20260208-arxiv_ai-physicsagentabm-physics-guided-generative-agent-ba-6/
+- /posts/20260209-arxiv_ai-physicsagentabm-physics-guided-generative-agent-ba-6/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # PhysicsAgentABM：物理引导的生成式智能体建模
@@ -156,7 +176,6 @@ PhysicsAgentABM 试图解决当前基于大语言模型（LLM）的多智能体�
 智能体 $i$ 在时间 $t$ 的状态转换概率 $P(s_{i,t+1} | s_{i,t}, \text{context})$ 由符号先验与神经修正项共同决定，通过概率分布融合公式计算得出，以确保输出的统计特性与观测数据对齐。
 
 ---
-## 研究最佳实践
 
 ## 最佳实践指南
 
@@ -239,7 +258,6 @@ PhysicsAgentABM 试图解决当前基于大语言模型（LLM）的多智能体�
 - PhysicsAgentABM 提供了一个可扩展的架构，能够将领域知识无缝集成到数据驱动的智能体模型中，为科学计算提供了新的范式。
 
 ---
-## 学习路径
 
 ## 学习路径
 
@@ -415,8 +433,8 @@ PhysicsAgentABM 试图解决当前基于大语言模型（LLM）的多智能体�
 ### 相关文章
 
 - [粒子引导扩散模型求解偏微分方程]({{< relref "posts/20260202-arxiv_ai-particle-guided-diffusion-models-for-partial-diffe-8.md" >}})
-- [粒子引导扩散模型用于偏微分方程求解]({{< relref "posts/20260203-arxiv_ai-particle-guided-diffusion-models-for-partial-diffe-8.md" >}})
+- [粒子引导扩散模型用于偏微分方程求解]({{< relref "posts/20260202-arxiv_ai-particle-guided-diffusion-models-for-partial-diffe-8.md" >}})
 - [进化策略导致大语言模型出现灾难性遗忘]({{< relref "posts/20260129-arxiv_ai-evolutionary-strategies-lead-to-catastrophic-forge-0.md" >}})
 - [SokoBench：评估大模型长程规划与推理能力]({{< relref "posts/20260129-arxiv_ai-sokobench-evaluating-long-horizon-planning-and-rea-2.md" >}})
-- [Alyah：评估阿拉伯语大模型阿联酋方言能力]({{< relref "posts/20260129-blogs_podcasts-alyah-toward-robust-evaluation-of-emirati-dialect--8.md" >}})
+- [Alyah：评估阿拉伯语大模型阿联酋方言能力]({{< relref "posts/20260127-blogs_podcasts-alyah-toward-robust-evaluation-of-emirati-dialect--0.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

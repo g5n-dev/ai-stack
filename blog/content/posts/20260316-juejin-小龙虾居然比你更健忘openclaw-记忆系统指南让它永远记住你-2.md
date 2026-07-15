@@ -10,7 +10,7 @@ tags:
 - 用户偏好
 - LLM
 - 上下文管理
-- AI应用
+- AI 应用
 - 状态保存
 categories:
 - AI 工程
@@ -22,6 +22,10 @@ external_url: https://juejin.cn/post/7617697070365032494
 scenarios:
 - 大语言模型
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # OpenClaw 记忆系统指南：让 AI 持久化记住用户偏好
@@ -167,8 +171,8 @@ OpenClaw 特别适合那些需要长期跟踪用户状态或建立情感连接�
 
 ### 相关文章
 
-- [LangChain 进阶实战：当 Memory 遇上 OutputParser，打造有记忆的结构化助手]({{< relref "posts/20260211-juejin-langchain-进阶实战当-memory-遇上-outputparser打造有记忆的结构化助手-3.md" >}})
+- [LangChain 进阶实战：当 Memory 遇上 OutputParser，打造有记忆的结构化助手]({{< relref "posts/20260210-juejin-langchain-进阶实战当-memory-遇上-outputparser打造有记忆的结构化助手-3.md" >}})
 - [深度解析Skill/MCP/RAG等五大AI技术的底层逻辑]({{< relref "posts/20260212-juejin-深入理解skillmcpragagentopenclaw底层逻辑-2.md" >}})
-- [Codex与Claude支持定制化内核扩展]({{< relref "posts/20260217-blogs_podcasts-custom-kernels-for-all-from-codex-and-claude-7.md" >}})
-- [从 Prompt 到 Agent Skill：AI 交互模式的架构设计与实现]({{< relref "posts/20260303-juejin-agent-skill-是什么一文讲透-agent-skill-的设计与实现-4.md" >}})
-- [AI如何理解视觉搜索：技术原理解析]({{< relref "posts/20260306-blogs_podcasts-ask-a-techspert-how-does-ai-understand-my-visual-s-7.md" >}})
+- [Codex与Claude支持定制化内核扩展]({{< relref "posts/20260213-blogs_podcasts-custom-kernels-for-all-from-codex-and-claude-1.md" >}})
+- [从 Prompt 到 Agent Skill：AI 交互模式的架构设计与实现]({{< relref "posts/20260303-juejin-agent-skill-是什么一文讲透-agent-skill-的设计与实现-3.md" >}})
+- [AI如何理解视觉搜索：技术原理解析]({{< relref "posts/20260305-blogs_podcasts-ask-a-techspert-how-does-ai-understand-my-visual-s-0.md" >}})

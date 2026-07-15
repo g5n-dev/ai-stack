@@ -1,14 +1,31 @@
 ---
-title: "Slack 推出面向 AI 智能体的 CLI 工具"
-date: 2026-02-09T05:40:16+08:00
+title: Slack 推出面向 AI 智能体的 CLI 工具
+date: 2026-02-09 05:40:16+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Slack", "CLI", "AI Agent", "DevTools", "Workflow", "Integration", "Productivity", "Bot"]
-categories: ["开发工具", "AI 工程"]
+entry_kind: auto
+tags:
+- Slack
+- CLI
+- AI Agent
+- DevTools
+- Workflow
+- Integration
+- Productivity
+- Bot
+categories:
+- 开发工具
+- AI 工程
 source: hacker_news
-description: "随着 LLM 应用从简单的对话机器人向能够处理复杂任务的 Agent 演进，如何将 AI 能力无缝集成到现有的工作流中成为开发者关注的焦点。本文介绍了一个基于 Slack 的 CLI 工具，它允许开发者通过命令行快速构建、调试和部署 AI Agent。阅读本文，你将了解该工具的核心架构与工作原理，并掌握如何利用 Sla"
+description: 随着 LLM 应用从简单的对话机器人向能够处理复杂任务的 Agent 演进，如何将 AI 能力无缝集成到现有的工作流中成为开发者关注的焦点。本文介绍了一个基于
+  Slack 的 CLI 工具，它允许开发者通过命令行快速构建、调试和部署 AI Agent。阅读本文，你将了解该工具的核心架构与工作原理，并掌握如何利用 Sla
 external_url: https://github.com/stablyai/agent-slack
-scenarios: ["命令行工具", "AI/ML项目"]
+scenarios:
+- 命令行工具
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Slack 推出面向 AI 智能体的 CLI 工具
@@ -239,7 +256,6 @@ def create_slack_shortcut(token, callback_id, title, description):
 团队的工作流更加连贯，创意人员的工具使用 adoption 率达到了 90% 以上。文案生成和翻译任务的耗时平均减少了 70%，使得团队能更专注于策略制定而非重复性的文字处理工作。
 
 ---
-## 最佳实践
 
 ## 最佳实践指南
 
@@ -430,8 +446,8 @@ Agent 无法避免出错。当 Agent 遇到无法解析的指令或后端报错�
 ### 相关文章
 
 - [Smooth CLI：面向 AI 智能体的低 Token 浏览器]({{< relref "posts/20260206-hacker_news-show-hn-smooth-cli-token-efficient-browser-for-ai--11.md" >}})
-- [Smooth CLI：面向 AI 智能体的低 Token 开销浏览器]({{< relref "posts/20260206-hacker_news-show-hn-smooth-cli-token-efficient-browser-for-ai--14.md" >}})
-- [Smooth CLI：面向 AI 智能体的低 Token 开销浏览器]({{< relref "posts/20260206-hacker_news-show-hn-smooth-cli-token-efficient-browser-for-ai--16.md" >}})
-- [Smooth CLI：面向 AI 智能体的低 Token 浏览器]({{< relref "posts/20260206-hacker_news-show-hn-smooth-cli-token-efficient-browser-for-ai--18.md" >}})
-- [Smooth CLI：面向 AI 智能体的低 Token 开销浏览器]({{< relref "posts/20260207-hacker_news-show-hn-smooth-cli-token-efficient-browser-for-ai--17.md" >}})
+- [Smooth CLI：面向 AI 智能体的低 Token 开销浏览器]({{< relref "posts/20260206-hacker_news-show-hn-smooth-cli-token-efficient-browser-for-ai--11.md" >}})
+- [Smooth CLI：面向 AI 智能体的低 Token 开销浏览器]({{< relref "posts/20260206-hacker_news-show-hn-smooth-cli-token-efficient-browser-for-ai--11.md" >}})
+- [Smooth CLI：面向 AI 智能体的低 Token 浏览器]({{< relref "posts/20260206-hacker_news-show-hn-smooth-cli-token-efficient-browser-for-ai--11.md" >}})
+- [Smooth CLI：面向 AI 智能体的低 Token 开销浏览器]({{< relref "posts/20260206-hacker_news-show-hn-smooth-cli-token-efficient-browser-for-ai--11.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

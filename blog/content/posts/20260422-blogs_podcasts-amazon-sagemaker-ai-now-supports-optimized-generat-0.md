@@ -1,14 +1,29 @@
 ---
-title: "Amazon SageMaker AI生成式AI推理推荐功能优化"
-date: 2026-04-22T19:30:49+08:00
+title: Amazon SageMaker AI生成式AI推理推荐功能优化
+date: 2026-04-22 19:30:49+08:00
 draft: false
-entry_kind: "auto"
-tags: ["SageMaker", "生成式AI", "推理优化", "模型部署", "AWS", "性能优化", "MLOps", "云服务"]
-categories: ["AI 工程", "大模型"]
+entry_kind: auto
+tags:
+- SageMaker
+- 生成式 AI
+- 推理优化
+- 模型部署
+- AWS
+- 性能优化
+- MLOps
+- 云服务
+categories:
+- AI 工程
+- 大模型
 source: blogs_podcasts
-description: "Amazon SageMaker AI 现已支持生成式 AI 推理的优化推荐。该服务提供经过验证的最佳部署配置以及对应的性能指标，帮助模型开发者快速获得最优推理方案，省去手动调优和基础设施管理的繁琐工作，使团队能够将更多精力聚焦在模型准确性和业务创新上。"
+description: Amazon SageMaker AI 现已支持生成式 AI 推理的优化推荐。该服务提供经过验证的最佳部署配置以及对应的性能指标，帮助模型开发者快速获得最优推理方案，省去手动调优和基础设施管理的繁琐工作，使团队能够将更多精力聚焦在模型准确性和业务创新上。
 external_url: https://aws.amazon.com/blogs/machine-learning/amazon-sagemaker-ai-now-supports-optimized-generative-ai-inference-recommendations
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Amazon SageMaker AI生成式AI推理推荐功能优化
@@ -126,9 +141,9 @@ Amazon SageMaker AI 通过提供经过验证的最优部署配置和性能指标
 
 ### 相关文章
 
-- [NVIDIA Nemotron 3 Nano 30B 现已登陆 Amazon SageMaker JumpSt]({{< relref "posts/20260212-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-10.md" >}})
-- [NVIDIA Nemotron 3 Nano 30B 现已在 Amazon SageMaker JumpSta]({{< relref "posts/20260212-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-7.md" >}})
-- [2025年Amazon SageMaker AI回顾：可观测性、模型定制与托管增强]({{< relref "posts/20260222-blogs_podcasts-amazon-sagemaker-ai-in-2025-a-year-in-review-part--2.md" >}})
-- [2025年回顾：SageMaker AI提升可观测性并优化模型定制与托管]({{< relref "posts/20260223-blogs_podcasts-amazon-sagemaker-ai-in-2025-a-year-in-review-part--4.md" >}})
-- [NVIDIA Nemotron 3 Nano 30B 现已登陆 Amazon SageMaker JumpSt]({{< relref "posts/20260212-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-0.md" >}})
+- [NVIDIA Nemotron 3 Nano 30B 现已登陆 Amazon SageMaker JumpSt]({{< relref "posts/20260211-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-0.md" >}})
+- [NVIDIA Nemotron 3 Nano 30B 现已在 Amazon SageMaker JumpSta]({{< relref "posts/20260211-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-0.md" >}})
+- [2025年Amazon SageMaker AI回顾：可观测性、模型定制与托管增强]({{< relref "posts/20260220-blogs_podcasts-amazon-sagemaker-ai-in-2025-a-year-in-review-part--1.md" >}})
+- [2025年回顾：SageMaker AI提升可观测性并优化模型定制与托管]({{< relref "posts/20260220-blogs_podcasts-amazon-sagemaker-ai-in-2025-a-year-in-review-part--1.md" >}})
+- [NVIDIA Nemotron 3 Nano 30B 现已登陆 Amazon SageMaker JumpSt]({{< relref "posts/20260211-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

@@ -1,14 +1,30 @@
 ---
-title: "ImageGen的AGI之路：反思GPT-Image-2热潮"
-date: 2026-04-28T12:06:10+08:00
+title: ImageGen的AGI之路：反思GPT-Image-2热潮
+date: 2026-04-28 12:06:10+08:00
 draft: false
-entry_kind: "auto"
-tags: ["多模态", "图像生成", "跨模态", "自监督学习", "内容创作", "安全伦理", "产业应用", "AGI"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- 多模态
+- 图像生成
+- 跨模态
+- 自监督学习
+- 内容创作
+- 安全伦理
+- 产业应用
+- AGI
+categories:
+- 大模型
+- AI 工程
 source: blogs_podcasts
-description: "背景 ImageGen 正朝向通用人工智能（AGI）快速演进，近期其与 GPT‑Image‑2 的深度融合在业界掀起了新一轮关注。 关键进展 - **GPT‑Image‑2 的突破**：在细节、风格一致性和跨模态理解方面实现显著提升，生成的图像质量和创意表现接近人类水平。 - **ImageGen 的升级**：通过与"
+description: 背景 ImageGen 正朝向通用人工智能（AGI）快速演进，近期其与 GPT‑Image‑2 的深度融合在业界掀起了新一轮关注。 关键进展
+  - **GPT‑Image‑2 的突破**：在细节、风格一致性和跨模态理解方面实现显著提升，生成的图像质量和创意表现接近人类水平。 - **ImageGen 的升级**：通过与
 external_url: https://www.latent.space/p/ainews-imagegen-is-on-the-path-to
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # ImageGen的AGI之路：反思GPT-Image-2热潮
@@ -126,9 +142,9 @@ GPT-Image-2的技术突破值得肯定，但它距离真正的AGI仍有根本性
 
 ### 相关文章
 
-- [Qwen Image 2与Seedance 2发布：中国生成式媒体表现强劲]({{< relref "posts/20260211-blogs_podcasts-ainews-qwen-image-2-and-seedance-2-5.md" >}})
-- [Qwen Image 2 与 Seedance 2：中国生成式媒体进展]({{< relref "posts/20260212-blogs_podcasts-ainews-qwen-image-2-and-seedance-2-11.md" >}})
-- [Gemini 3.1 Flash Image Preview 登场：全新 SOTA 图像生成模型]({{< relref "posts/20260228-blogs_podcasts-ainews-nano-banana-2-aka-gemini-31-flash-image-pre-6.md" >}})
+- [Qwen Image 2与Seedance 2发布：中国生成式媒体表现强劲]({{< relref "posts/20260211-blogs_podcasts-ainews-qwen-image-2-and-seedance-2-0.md" >}})
+- [Qwen Image 2 与 Seedance 2：中国生成式媒体进展]({{< relref "posts/20260211-blogs_podcasts-ainews-qwen-image-2-and-seedance-2-0.md" >}})
+- [Gemini 3.1 Flash Image Preview 登场：全新 SOTA 图像生成模型]({{< relref "posts/20260227-blogs_podcasts-ainews-nano-banana-2-aka-gemini-31-flash-image-pre-0.md" >}})
 - [2026年AI展望：LLM、智能体、缩放定律与中国发展]({{< relref "posts/20260201-blogs_podcasts-490-state-of-ai-in-2026-llms-coding-scaling-laws-c-0.md" >}})
-- [Qwen Image 2与Seedance 2：中国生成式媒体模型进展]({{< relref "posts/20260212-blogs_podcasts-ainews-qwen-image-2-and-seedance-2-6.md" >}})
+- [Qwen Image 2与Seedance 2：中国生成式媒体模型进展]({{< relref "posts/20260211-blogs_podcasts-ainews-qwen-image-2-and-seedance-2-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

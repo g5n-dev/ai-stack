@@ -1,14 +1,30 @@
 ---
-title: "Google Gemma 4小型多模态开源模型性能大幅提升"
-date: 2026-04-03T16:55:56+08:00
+title: Google Gemma 4小型多模态开源模型性能大幅提升
+date: 2026-04-03 16:55:56+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Gemma 4", "多模态", "Google", "开源模型", "小型模型", "性能提升", "AI模型", "更新发布"]
-categories: ["大模型", "开源生态"]
+entry_kind: auto
+tags:
+- Gemma 4
+- 多模态
+- Google
+- 开源模型
+- 小型模型
+- 性能提升
+- AI 模型
+- 更新发布
+categories:
+- 大模型
+- 开源生态
 source: blogs_podcasts
-description: "概述 Google 发布了 Gemma 4，这是一套小体量的多模态开放模型，专为资源受限的环境设计，提供强大的跨模态理解与生成能力。 性能提升 相比上一代 Gemma 3，Gemma 4 在视觉、语言、音频等任务上的准确率、推理速度和能效均实现显著提升。所有基准测试的得分均呈现两位数百分比的增长，且模型响应延迟下降约"
+description: 概述 Google 发布了 Gemma 4，这是一套小体量的多模态开放模型，专为资源受限的环境设计，提供强大的跨模态理解与生成能力。 性能提升
+  相比上一代 Gemma 3，Gemma 4 在视觉、语言、音频等任务上的准确率、推理速度和能效均实现显著提升。所有基准测试的得分均呈现两位数百分比的增长，且模型响应延迟下降约
 external_url: https://www.latent.space/p/ainews-gemma-4-the-best-small-multimodal
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Google Gemma 4小型多模态开源模型性能大幅提升
@@ -150,9 +166,9 @@ Gemma 4的发布强化了Google在开源模型领域的竞争力，对Meta的LLa
 
 ### 相关文章
 
-- [Moonshot Kimi K25：成本减半超越Sonnet 45，原生图文视频与百并发Agent管理]({{< relref "posts/20260129-blogs_podcasts-ainews-moonshot-kimi-k25-beats-sonnet-45-at-half-t-2.md" >}})
-- [Moonshot Kimi K2.5：成本减半超越Sonnet 4.5，支持原生图文与百并发智能体]({{< relref "posts/20260129-blogs_podcasts-ainews-moonshot-kimi-k25-beats-sonnet-45-at-half-t-3.md" >}})
-- [Moonshot Kimi K2.5：半价超越Sonnet 4.5，原生图文视频与百并发Agent管理]({{< relref "posts/20260129-blogs_podcasts-ainews-moonshot-kimi-k25-beats-sonnet-45-at-half-t-4.md" >}})
-- [Moonshot Kimi K2.5：成本减半超越Sonnet 4.5，支持原生图文视频]({{< relref "posts/20260129-blogs_podcasts-ainews-moonshot-kimi-k25-beats-sonnet-45-at-half-t-5.md" >}})
-- [Moonshot Kimi K2.5：成本减半超越Sonnet 4.5，原生图文视频与百并发Agent管理]({{< relref "posts/20260130-blogs_podcasts-ainews-moonshot-kimi-k25-beats-sonnet-45-at-half-t-6.md" >}})
+- [Moonshot Kimi K25：成本减半超越Sonnet 45，原生图文视频与百并发Agent管理]({{< relref "posts/20260129-blogs_podcasts-ainews-moonshot-kimi-k25-beats-sonnet-45-at-half-t-1.md" >}})
+- [Moonshot Kimi K2.5：成本减半超越Sonnet 4.5，支持原生图文与百并发智能体]({{< relref "posts/20260129-blogs_podcasts-ainews-moonshot-kimi-k25-beats-sonnet-45-at-half-t-1.md" >}})
+- [Moonshot Kimi K2.5：半价超越Sonnet 4.5，原生图文视频与百并发Agent管理]({{< relref "posts/20260129-blogs_podcasts-ainews-moonshot-kimi-k25-beats-sonnet-45-at-half-t-1.md" >}})
+- [Moonshot Kimi K2.5：成本减半超越Sonnet 4.5，支持原生图文视频]({{< relref "posts/20260129-blogs_podcasts-ainews-moonshot-kimi-k25-beats-sonnet-45-at-half-t-1.md" >}})
+- [Moonshot Kimi K2.5：成本减半超越Sonnet 4.5，原生图文视频与百并发Agent管理]({{< relref "posts/20260129-blogs_podcasts-ainews-moonshot-kimi-k25-beats-sonnet-45-at-half-t-1.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

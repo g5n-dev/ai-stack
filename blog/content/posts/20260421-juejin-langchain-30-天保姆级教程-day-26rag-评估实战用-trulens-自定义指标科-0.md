@@ -1,14 +1,31 @@
 ---
-title: "RAG评估实战：TruLens自定义指标衡量AI回答质量"
-date: 2026-04-21T15:35:52+08:00
+title: RAG评估实战：TruLens自定义指标衡量AI回答质量
+date: 2026-04-21 15:35:52+08:00
 draft: false
-entry_kind: "auto"
-tags: ["RAG", "检索增强生成", "评估框架", "TruLens", "幻觉检测", "召回率", "指标体系", "CI/CD集成"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- RAG
+- 检索增强生成
+- 评估框架
+- TruLens
+- 幻觉检测
+- 召回率
+- 指标体系
+- CI/CD集成
+categories:
+- 大模型
+- AI 工程
 source: juejin
-description: "背景 RAG（检索‑生成）系统在实际部署后，团队往往只做抽样人工检查，无法及时发现模型产生的错误。缺乏系统化评估会导致关键风险被隐藏。 常见风险 - **幻觉**：模型自行编造政策、条款等不实信息。 - **漏检**：关键文档未被召回，导致答案不完整。 - **噪声**：检索到的无关或低质量上下文干扰生成。 评估框架"
+description: 背景 RAG（检索‑生成）系统在实际部署后，团队往往只做抽样人工检查，无法及时发现模型产生的错误。缺乏系统化评估会导致关键风险被隐藏。 常见风险
+  - **幻觉**：模型自行编造政策、条款等不实信息。 - **漏检**：关键文档未被召回，导致答案不完整。 - **噪声**：检索到的无关或低质量上下文干扰生成。
+  评估框架
 external_url: https://juejin.cn/post/7631022614798975030
-scenarios: ["RAG应用"]
+scenarios:
+- RAG应用
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # RAG评估实战：TruLens自定义指标衡量AI回答质量
@@ -114,6 +131,6 @@ RAG（检索‑生成）系统在实际部署后，团队往往只做抽样人�
 - [深度解析Skill/MCP/RAG等五大AI技术的底层逻辑]({{< relref "posts/20260212-juejin-深入理解skillmcpragagentopenclaw底层逻辑-2.md" >}})
 - [AI大模型应用指南：RAG技术原理与企业知识库搭建]({{< relref "posts/20260312-juejin-ai大模型小白手册-rag技术与应用-1.md" >}})
 - [利用RAG技术有效解决大模型幻觉问题]({{< relref "posts/20260314-juejin-别再信它一本正经地胡说了用-rag终结大模型幻觉-0.md" >}})
-- [NVIDIA NeMo Retriever 推出通用智能体检索流水线]({{< relref "posts/20260316-blogs_podcasts-beyond-semantic-similarity-introducing-nvidia-nemo-3.md" >}})
-- [亚马逊发布AI Agent评估框架：通用工作流与Bedrock评估库]({{< relref "posts/20260219-blogs_podcasts-evaluating-ai-agents-real-world-lessons-from-build-2.md" >}})
+- [NVIDIA NeMo Retriever 推出通用智能体检索流水线]({{< relref "posts/20260313-blogs_podcasts-beyond-semantic-similarity-introducing-nvidia-nemo-0.md" >}})
+- [亚马逊发布AI Agent评估框架：通用工作流与Bedrock评估库]({{< relref "posts/20260218-blogs_podcasts-evaluating-ai-agents-real-world-lessons-from-build-0.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

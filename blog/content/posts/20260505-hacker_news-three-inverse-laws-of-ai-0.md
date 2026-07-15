@@ -1,14 +1,29 @@
 ---
-title: "人工智能的三条反向定律"
-date: 2026-05-05T17:48:37+08:00
+title: 人工智能的三条反向定律
+date: 2026-05-05 17:48:37+08:00
 draft: false
-entry_kind: "auto"
-tags: ["人工智能", "反向定律", "模型行为", "大模型", "AI理论", "技术创新", "案例分析", "前沿"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- 人工智能
+- 反向定律
+- 模型行为
+- 大模型
+- AI理论
+- 技术创新
+- 案例分析
+- 前沿
+categories:
+- 大模型
+- AI 工程
 source: hacker_news
-description: "在人工智能项目推进过程中，常见的设计与实现思路往往导致效果不如预期。本文提出三条逆向法则，帮助识别模型训练、数据处理以及系统部署中的反向陷阱。通过对这些反向规律的深入剖析，读者能够更有针对性地规避常见错误，从而提升AI方案的可靠性与可维护性。"
+description: 在人工智能项目推进过程中，常见的设计与实现思路往往导致效果不如预期。本文提出三条逆向法则，帮助识别模型训练、数据处理以及系统部署中的反向陷阱。通过对这些反向规律的深入剖析，读者能够更有针对性地规避常见错误，从而提升AI方案的可靠性与可维护性。
 external_url: https://susam.net/inverse-laws-of-robotics.html
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 人工智能的三条反向定律
@@ -84,5 +99,5 @@ scenarios: ["AI/ML项目"]
 - [Function Calling 原理与实战指南]({{< relref "posts/20260412-juejin-人工智能四-function-calling-核心原理与实战-0.md" >}})
 - [MiniMax 2.7发布：GLM-5开源模型成本降至三分之一]({{< relref "posts/20260320-blogs_podcasts-ainews-minimax-27-glm-5-at-13-cost-sota-open-model-7.md" >}})
 - [OpenAI发布GPT-5.5]({{< relref "posts/20260423-hacker_news-gpt-55-0.md" >}})
-- [Claude Opus 4.6 发布]({{< relref "posts/20260206-hacker_news-claude-opus-46-3.md" >}})
+- [Claude Opus 4.6 发布]({{< relref "posts/20260205-hacker_news-claude-opus-46-2.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

@@ -21,6 +21,19 @@ description: 以下是该新闻的中文简洁总结： **【融资快讯】Open
 external_url: https://www.latent.space/p/ainews-openai-closes-110b-raise-from
 scenarios:
 - AI/ML项目
+aliases:
+- /posts/20260301-blogs_podcasts-ainews-openai-closes-110b-raise-from-amazon-nvidia-0/
+- /posts/20260301-blogs_podcasts-ainews-openai-closes-110b-raise-from-amazon-nvidia-1/
+- /posts/20260301-blogs_podcasts-ainews-openai-closes-110b-raise-from-amazon-nvidia-2/
+- /posts/20260302-blogs_podcasts-ainews-openai-closes-110b-raise-from-amazon-nvidia-2/
+- /posts/20260302-blogs_podcasts-ainews-openai-closes-110b-raise-from-amazon-nvidia-3/
+- /posts/20260302-blogs_podcasts-ainews-openai-closes-110b-raise-from-amazon-nvidia-8/
+- /posts/20260303-blogs_podcasts-ainews-openai-closes-110b-raise-from-amazon-nvidia-8/
+- /posts/20260303-blogs_podcasts-ainews-openai-closes-110b-raise-from-amazon-nvidia-9/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # OpenAI完成66亿美元融资，投后估值达1570亿美元
@@ -265,5 +278,5 @@ OpenAI依赖NVIDIA的H100/B200等高性能GPU构建超大规模集群。通过�
 - [OpenAI融资110亿美元 亚马逊英伟达软银参投]({{< relref "posts/20260227-hacker_news-openais-110b-funding-round-investments-from-amazon-17.md" >}})
 - [2026年2月19日AI热点：OpenAI加码医疗大模型，OpenEvidence估值120亿美元]({{< relref "posts/20260219-juejin-打破信息差2026年2月19日ai热点新闻速览-0.md" >}})
 - [OpenAI融资66亿美元投后估值达1570亿美元]({{< relref "posts/20260227-hacker_news-openai-raises-110b-on-730b-pre-money-valuation-2.md" >}})
-- [Anthropic 获 30 亿美元 G 轮融资，投后估值达 380 亿美元]({{< relref "posts/20260212-hacker_news-anthropic-raises-30b-in-series-g-funding-at-380b-p-11.md" >}})
+- [Anthropic 获 30 亿美元 G 轮融资，投后估值达 380 亿美元]({{< relref "posts/20260212-hacker_news-anthropic-raises-30b-in-series-g-funding-at-380b-p-7.md" >}})
 - [Anthropic 获 30 亿美元 G 轮融资，投后估值达 380 亿美元]({{< relref "posts/20260212-hacker_news-anthropic-raises-30b-in-series-g-funding-at-380b-p-7.md" >}})

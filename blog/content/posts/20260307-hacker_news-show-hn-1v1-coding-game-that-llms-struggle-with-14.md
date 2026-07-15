@@ -22,6 +22,13 @@ external_url: https://yare.io
 scenarios:
 - 大语言模型
 - AI/ML项目
+aliases:
+- /posts/20260307-hacker_news-show-hn-1v1-coding-game-that-llms-struggle-with-11/
+- /posts/20260307-hacker_news-show-hn-1v1-coding-game-that-llms-struggle-with-16/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 展示 LLM 表现不佳的 1v1 编程游戏

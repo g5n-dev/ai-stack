@@ -1,14 +1,30 @@
 ---
-title: "OpenAI校园网络学生社团兴趣表单"
-date: 2026-05-11T11:38:47+08:00
+title: OpenAI校园网络学生社团兴趣表单
+date: 2026-05-11 11:38:47+08:00
 draft: false
-entry_kind: "auto"
-tags: ["OpenAI", "校园网络", "学生社团", "兴趣表单", "AI工具", "社区活动", "全球连接", "校园社区"]
-categories: ["产品与创业"]
+entry_kind: auto
+tags:
+- OpenAI
+- 校园网络
+- 学生社团
+- 兴趣表单
+- AI 工具
+- 社区活动
+- 全球连接
+- 校园社区
+categories:
+- 产品与创业
 source: blogs_podcasts
-description: "OpenAI Campus Network 是面向学生社团的兴趣表单，旨在汇聚全球校园社团，提供 AI 工具和资源，帮助社团组织活动、共享经验，共同打造 AI 驱动的校园社区。通过加入该网络，学生社团可实现跨校合作、学习最新 AI 技术，并在校园内外开展创新项目。"
+description: OpenAI Campus Network 是面向学生社团的兴趣表单，旨在汇聚全球校园社团，提供 AI 工具和资源，帮助社团组织活动、共享经验，共同打造
+  AI 驱动的校园社区。通过加入该网络，学生社团可实现跨校合作、学习最新 AI 技术，并在校园内外开展创新项目。
 external_url: https://openai.com/index/openai-campus-network-student-club-interest-form
-scenarios: ["AI/ML项目", "命令行工具"]
+scenarios:
+- AI/ML项目
+- 命令行工具
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # OpenAI校园网络学生社团兴趣表单
@@ -126,9 +142,9 @@ OpenAI Campus Network的成功取决于能否在去中心化社团结构与中�
 
 ### 相关文章
 
-- [OpenAI发布GPT-5.4：百万token上下文与代码能力提升]({{< relref "posts/20260307-blogs_podcasts-introducing-gpt-54-14.md" >}})
-- [OpenAI发布GPT-5.4：百万token上下文与代码能力前沿模型]({{< relref "posts/20260308-blogs_podcasts-introducing-gpt-54-13.md" >}})
-- [OpenAI发布GPT-5.4：面向专业工作，支持百万token上下文]({{< relref "posts/20260309-blogs_podcasts-introducing-gpt-54-14.md" >}})
+- [OpenAI发布GPT-5.4：百万token上下文与代码能力提升]({{< relref "posts/20260305-blogs_podcasts-introducing-gpt-54-6.md" >}})
+- [OpenAI发布GPT-5.4：百万token上下文与代码能力前沿模型]({{< relref "posts/20260305-blogs_podcasts-introducing-gpt-54-6.md" >}})
+- [OpenAI发布GPT-5.4：面向专业工作，支持百万token上下文]({{< relref "posts/20260305-blogs_podcasts-introducing-gpt-54-6.md" >}})
 - [Sam Altman的AI孵化器：OpenAI加速初创公司生态布局]({{< relref "posts/20260129-blogs_podcasts-ainews-sam-altmans-ai-combinator-0.md" >}})
-- [Sam Altman全员大会反思与AI孵化器动态]({{< relref "posts/20260129-blogs_podcasts-ainews-sam-altmans-ai-combinator-1.md" >}})
+- [Sam Altman全员大会反思与AI孵化器动态]({{< relref "posts/20260129-blogs_podcasts-ainews-sam-altmans-ai-combinator-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

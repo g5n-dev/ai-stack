@@ -1,14 +1,30 @@
 ---
-title: "STRIDE训练数据归因：稀疏恢复与子集扰动方法"
-date: 2026-06-04T18:31:38+08:00
+title: STRIDE训练数据归因：稀疏恢复与子集扰动方法
+date: 2026-06-04 18:31:38+08:00
 draft: false
-entry_kind: "auto"
-tags: ["训练数据归因", "稀疏恢复", "激活空间", "Steering", "大模型", "影响分数", "数据筛选", "污染检测"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- 训练数据归因
+- 稀疏恢复
+- 激活空间
+- Steering
+- 大模型
+- 影响分数
+- 数据筛选
+- 污染检测
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "背景 Training Data Attribution（TDA）旨在把模型的预测追溯到具体的训练样本。传统 gold‑standard 采用因果干预——即在加入或删除数据后重新训练模型——但对拥有数十亿参数的大语言模型（LLM）代价极高。现有方法多在参数空间用梯度近似，却仍需计算、存储海量梯度，且依赖局部线性假设。"
+description: 背景 Training Data Attribution（TDA）旨在把模型的预测追溯到具体的训练样本。传统 gold‑standard
+  采用因果干预——即在加入或删除数据后重新训练模型——但对拥有数十亿参数的大语言模型（LLM）代价极高。现有方法多在参数空间用梯度近似，却仍需计算、存储海量梯度，且依赖局部线性假设。
 external_url: http://arxiv.org/abs/2606.05165v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # STRIDE训练数据归因：稀疏恢复与子集扰动方法
@@ -149,8 +165,8 @@ STRIDE 成功将归因任务从参数空间的梯度追踪转向激活空间的�
 ### 相关文章
 
 - [ARO：面向大模型矩阵优化的新视角]({{< relref "posts/20260210-arxiv_ai-aro-a-new-lens-on-matrix-optimization-for-large-mo-8.md" >}})
-- [BitNet: 100B Param 1-Bit model for local CPUs]({{< relref "posts/20260312-hacker_news-bitnet-100b-param-1-bit-model-for-local-cpus-12.md" >}})
+- [BitNet: 100B Param 1-Bit model for local CPUs]({{< relref "posts/20260311-hacker_news-microsoft-bitnet-100b-param-1-bit-model-for-local--1.md" >}})
 - [SpeechParaling-Bench：副语言学感知语音生成基准]({{< relref "posts/20260423-arxiv_ai-speechparaling-bench-a-comprehensive-benchmark-for-0.md" >}})
-- [副语言感知语音生成基准评测]({{< relref "posts/20260424-arxiv_ai-speechparaling-bench-a-comprehensive-benchmark-for-0.md" >}})
-- [递归多智能体系统研究]({{< relref "posts/20260430-arxiv_ai-recursive-multi-agent-systems-0.md" >}})
+- [副语言感知语音生成基准评测]({{< relref "posts/20260423-arxiv_ai-speechparaling-bench-a-comprehensive-benchmark-for-0.md" >}})
+- [递归多智能体系统研究]({{< relref "posts/20260429-arxiv_ai-recursive-multi-agent-systems-0.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

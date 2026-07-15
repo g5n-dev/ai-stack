@@ -1,14 +1,35 @@
 ---
-title: "DynaWeb：基于模型的强化学习网页智能体"
-date: 2026-01-30T23:03:03+08:00
+title: DynaWeb：基于模型的强化学习网页智能体
+date: 2026-01-30 23:03:03+08:00
 draft: false
-entry_kind: "auto"
-tags: ["DynaWeb", "Web Agent", "强化学习", "MBRL", "世界模型", "LLM", "WebArena", "Agent"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- DynaWeb
+- Web Agent
+- 强化学习
+- MBRL
+- 世界模型
+- LLM
+- WebArena
+- Agent
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "**DynaWeb：基于模型的强化学习网络智能体总结** **背景与挑战** 随着大型语言模型（LLM）和强化学习（RL）的发展，构建自主网络智能体向通用AI助手迈进了一大步。然而，直接在真实的互联网环境中训练这些智能体面临着效率低下、成本高昂以及潜在风险大（如误操作）等严峻挑战。 **解决方案：DynaWeb框架**"
+description: '**DynaWeb：基于模型的强化学习网络智能体总结** **背景与挑战** 随着大型语言模型（LLM）和强化学习（RL）的发展，构建自主网络智能体向通用AI助手迈进了一大步。然而，直接在真实的互联网环境中训练这些智能体面临着效率低下、成本高昂以及潜在风险大（如误操作）等严峻挑战。
+  **解决方案：DynaWeb框架**'
 external_url: http://arxiv.org/abs/2601.22149v1
-scenarios: ["Web应用开发", "大语言模型"]
+scenarios:
+- Web应用开发
+- 大语言模型
+aliases:
+- /posts/20260131-arxiv_ai-dynaweb-model-based-reinforcement-learning-of-web--6/
+- /posts/20260201-arxiv_ai-dynaweb-model-based-reinforcement-learning-of-web--6/
+- /posts/20260202-arxiv_ai-dynaweb-model-based-reinforcement-learning-of-web--6/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # DynaWeb：基于模型的强化学习网页智能体
@@ -254,7 +275,6 @@ DynaWeb 的理论基础主要建立在 **基于模型的强化学习** 和 **规
 | 维度 | 传统Prompting Agent (e.g., ReAct, CoT) | 离线微调 Agent (e
 
 ---
-## 研究最佳实践
 
 ## 最佳实践指南
 
@@ -351,7 +371,6 @@ DynaWeb 的理论基础主要建立在 **基于模型的强化学习** 和 **规
 - 该方法成功将 Dyna 风格的规划算法扩展到高维度的部分可观测环境中，为构建能够理解和导航复杂网页结构的自主智能体提供了新的技术范式。
 
 ---
-## 学习路径
 
 ## 学习路径
 
@@ -510,7 +529,7 @@ DynaWeb 的理论基础主要建立在 **基于模型的强化学习** 和 **规
 ### 相关文章
 
 - [基于经验的试错算法超越语言模型]({{< relref "posts/20260130-arxiv_ai-language-based-trial-and-error-falls-behind-in-the-3.md" >}})
-- [Kimi K2.5 技术报告发布：强化学习与长上下文能力升级]({{< relref "posts/20260130-hacker_news-kimi-k25-technical-report-pdf-2.md" >}})
+- [Kimi K2.5 技术报告发布：强化学习与长上下文能力升级]({{< relref "posts/20260130-hacker_news-kimi-k25-technical-report-pdf-10.md" >}})
 - [测试时也能发现新规律？🤯AI解锁动态学习能力！]({{< relref "posts/20260125-arxiv_ai-learning-to-discover-at-test-time-6.md" >}})
 - [🚀沙盒机制唤醒LLM智能体通用能力！AI Agent突破性架构！]({{< relref "posts/20260125-arxiv_ai-llm-in-sandbox-elicits-general-agentic-intelligenc-2.md" >}})
 - [🌍 Spatial-Agent：具科学核心的智能体地理空间推理！]({{< relref "posts/20260126-arxiv_ai-spatial-agent-agentic-geo-spatial-reasoning-with-s-6.md" >}})

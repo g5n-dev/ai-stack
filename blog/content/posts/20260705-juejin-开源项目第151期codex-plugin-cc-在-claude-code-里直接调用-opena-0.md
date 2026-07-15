@@ -1,14 +1,30 @@
 ---
-title: "codex-plugin-cc：Claude Code中调用OpenAI Codex的插件"
-date: 2026-07-05T05:14:40+08:00
+title: codex-plugin-cc：Claude Code中调用OpenAI Codex的插件
+date: 2026-07-05 05:14:40+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Claude Code", "OpenAI Codex", "代码审查", "插件", "AI编程", "任务委托", "对抗性测试", "Review Gate"]
-categories: ["开发工具", "开源生态"]
+entry_kind: auto
+tags:
+- Claude Code
+- OpenAI Codex
+- 代码审查
+- 插件
+- AI 编程
+- 任务委托
+- 对抗性测试
+- Review Gate
+categories:
+- 开发工具
+- 开源生态
 source: juejin
-description: "项目简介 codex-plugin-cc 是 OpenAI 官方为 Claude Code 开发的插件，可在 Claude Code 环境中直接调用 OpenAI Codex，实现代码审查、任务委托等功能。 核心功能 - 7 条指令：常规代码审查、对抗性审查、任务委托、会话转移、后台状态管理等。 - 支持 Review"
+description: 项目简介 codex-plugin-cc 是 OpenAI 官方为 Claude Code 开发的插件，可在 Claude Code 环境中直接调用
+  OpenAI Codex，实现代码审查、任务委托等功能。 核心功能 - 7 条指令：常规代码审查、对抗性审查、任务委托、会话转移、后台状态管理等。 - 支持 Review
 external_url: https://juejin.cn/post/7658565939235700771
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # codex-plugin-cc：Claude Code中调用OpenAI Codex的插件
@@ -94,8 +110,8 @@ codex-plugin-cc 是 OpenAI 官方为 Claude Code 开发的插件，可在 Claude
 ### 相关文章
 
 - [Her：Claude Code会话分析工具]({{< relref "posts/20260607-blogs_podcasts-her-हर-a-detective-for-your-claude-code-sessions-0.md" >}})
-- [OpenAI Codex 应用：VSCode 分支终结与多任务工作树]({{< relref "posts/20260204-blogs_podcasts-ainews-openai-codex-app-death-of-the-vscode-fork-m-3.md" >}})
-- [OpenAI Codex 应用更新：VSCode 分支替代与多任务工作树]({{< relref "posts/20260204-blogs_podcasts-ainews-openai-codex-app-death-of-the-vscode-fork-m-6.md" >}})
+- [OpenAI Codex 应用：VSCode 分支终结与多任务工作树]({{< relref "posts/20260203-blogs_podcasts-ainews-openai-codex-app-death-of-the-vscode-fork-m-0.md" >}})
+- [OpenAI Codex 应用更新：VSCode 分支替代与多任务工作树]({{< relref "posts/20260203-blogs_podcasts-ainews-openai-codex-app-death-of-the-vscode-fork-m-0.md" >}})
 - [Claude Code 发布：面向基础设施的编程工具]({{< relref "posts/20260204-hacker_news-claude-code-for-infrastructure-11.md" >}})
-- [Claude Code：面向基础设施的编程工具]({{< relref "posts/20260205-hacker_news-claude-code-for-infrastructure-11.md" >}})
+- [Claude Code：面向基础设施的编程工具]({{< relref "posts/20260204-hacker_news-claude-code-for-infrastructure-11.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

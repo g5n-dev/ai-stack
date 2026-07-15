@@ -21,6 +21,10 @@ description: 好的，以下是对提供内容的简洁总结： **OpenTiny NEXT
 external_url: https://juejin.cn/post/7612288284083437594
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # OpenTiny NEXT-SDK 发布：四步将前端应用升级为智能体
@@ -164,6 +168,6 @@ OpenTiny NEXT-SDK 本身是完全开源的，可以免费使用和集成。但�
 
 - [基于 ASCII 草图与 AI 快速生成前端代码]({{< relref "posts/20260217-juejin-用-ascii-草图-ai-快速生成前端代码-1.md" >}})
 - [GitHub Agentic 工作流：AI 智能体自主编写代码]({{< relref "posts/20260208-hacker_news-github-agentic-workflows-3.md" >}})
-- [软件工厂与智能体时刻]({{< relref "posts/20260208-hacker_news-software-factories-and-the-agentic-moment-6.md" >}})
-- [GitHub 推出 Agentic Workflows 赋能 AI 智能体开发]({{< relref "posts/20260209-hacker_news-github-agentic-workflows-19.md" >}})
-- [OpenClaw：GitHub 增长最快的开源 AI 代理框架]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-7.md" >}})
+- [软件工厂与智能体时刻]({{< relref "posts/20260207-hacker_news-software-factories-and-the-agentic-moment-4.md" >}})
+- [GitHub 推出 Agentic Workflows 赋能 AI 智能体开发]({{< relref "posts/20260208-hacker_news-github-agentic-workflows-3.md" >}})
+- [OpenClaw：GitHub 增长最快的开源 AI 代理框架]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-0.md" >}})

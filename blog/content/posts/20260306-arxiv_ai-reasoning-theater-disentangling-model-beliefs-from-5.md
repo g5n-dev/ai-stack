@@ -21,6 +21,14 @@ description: 以下是该内容的中文总结： 本文针对推理模型中的
 external_url: http://arxiv.org/abs/2603.05488v1
 scenarios:
 - AI/ML项目
+aliases:
+- /posts/20260307-arxiv_ai-reasoning-theater-disentangling-model-beliefs-from-5/
+- /posts/20260308-arxiv_ai-reasoning-theater-disentangling-model-beliefs-from-5/
+- /posts/20260309-arxiv_ai-reasoning-theater-disentangling-model-beliefs-from-5/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Reasoning Theater：解耦模型信念与思维链
@@ -123,7 +131,6 @@ scenarios:
 
 ---
 
-### 论文深入分析：Reasoning Theater: Disentangling Model Beliefs from Chain-of-Thought
 
 ### 1. 研究背景与问题
 
@@ -431,6 +438,6 @@ scenarios:
 
 - [提升推理语言模型的参数化知识访问能力]({{< relref "posts/20260226-arxiv_ai-improving-parametric-knowledge-access-in-reasoning-3.md" >}})
 - [OpenAI 推出 CoT-Control 并强调思维链监控的重要性]({{< relref "posts/20260305-blogs_podcasts-reasoning-models-struggle-to-control-their-chains--5.md" >}})
-- [OpenAI推CoT-Control：验证思维链可监控性对AI安全的重要性]({{< relref "posts/20260306-blogs_podcasts-reasoning-models-struggle-to-control-their-chains--11.md" >}})
-- [OpenAI推出CoT-Control：强化推理模型思维链监控]({{< relref "posts/20260306-blogs_podcasts-reasoning-models-struggle-to-control-their-chains--13.md" >}})
-- [OpenAI研究：推理模型难以掌控思维链强化AI安全]({{< relref "posts/20260306-blogs_podcasts-reasoning-models-struggle-to-control-their-chains--5.md" >}})
+- [OpenAI推CoT-Control：验证思维链可监控性对AI安全的重要性]({{< relref "posts/20260305-blogs_podcasts-reasoning-models-struggle-to-control-their-chains--5.md" >}})
+- [OpenAI推出CoT-Control：强化推理模型思维链监控]({{< relref "posts/20260305-blogs_podcasts-reasoning-models-struggle-to-control-their-chains--5.md" >}})
+- [OpenAI研究：推理模型难以掌控思维链强化AI安全]({{< relref "posts/20260305-blogs_podcasts-reasoning-models-struggle-to-control-their-chains--5.md" >}})

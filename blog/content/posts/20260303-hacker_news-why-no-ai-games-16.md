@@ -8,7 +8,7 @@ tags:
 - AIGC
 - LLM
 - 游戏开发
-- 生成式AI
+- 生成式 AI
 - NPC交互
 - 游戏设计
 - 技术瓶颈
@@ -22,6 +22,10 @@ external_url: https://franklantz.substack.com/p/why-no-ai-games
 scenarios:
 - AI/ML项目
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 为何尚未出现真正的AI游戏

@@ -1,14 +1,30 @@
 ---
-title: "LQA：面向边缘端视觉语言模型的轻量级量化自适应框架"
-date: 2026-02-10T03:34:40+08:00
+title: LQA：面向边缘端视觉语言模型的轻量级量化自适应框架
+date: 2026-02-10 03:34:40+08:00
 draft: false
-entry_kind: "auto"
-tags: ["VLM", "边缘计算", "模型量化", "LQA", "测试时自适应", "轻量化", "无梯度", "模态感知"]
-categories: ["大模型", "系统与基础设施"]
+entry_kind: auto
+tags:
+- VLM
+- 边缘计算
+- 模型量化
+- LQA
+- 测试时自适应
+- 轻量化
+- 无梯度
+- 模态感知
+categories:
+- 大模型
+- 系统与基础设施
 source: arxiv
-description: "**总结：LQA —— 面向边缘设备的轻量化视觉-语言模型量化自适应框架** **背景与挑战** 在边缘设备（如手机、物联网终端）上部署视觉-语言模型（VLM）面临两大主要挑战：一是硬件资源（如内存、算力）受限；二是在数据分布发生变化（Distribution Shifts，如环境光照、场景改变）时，模型性能容易下降。"
+description: '**总结：LQA —— 面向边缘设备的轻量化视觉-语言模型量化自适应框架** **背景与挑战** 在边缘设备（如手机、物联网终端）上部署视觉-语言模型（VLM）面临两大主要挑战：一是硬件资源（如内存、算力）受限；二是在数据分布发生变化（Distribution
+  Shifts，如环境光照、场景改变）时，模型性能容易下降。'
 external_url: http://arxiv.org/abs/2602.07849v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # LQA：面向边缘端视觉语言模型的轻量级量化自适应框架
@@ -236,7 +252,6 @@ LQA框架主要由两个核心模块组成：**选择性混合量化（SHQ）**�
 LQA的创新性在于**“缝合”**的艺术。它并非发明了全新的量化算法或全新的优化器，而是创造性地将**模态感知量化**与**无梯度TTA**结合，解决了一个具体的、高难度的交叉领域问题。其地位在于
 
 ---
-## 研究最佳实践
 
 ## 最佳实践指南
 
@@ -327,7 +342,6 @@ LQA的创新性在于**“缝合”**的艺术。它并非发明了全新的量�
 - LQA 的设计思路可以扩展到其他多模态模型，为未来在边缘设备上部署更复杂的 AI 模型提供了参考。
 
 ---
-## 学习路径
 
 ## 学习路径
 
@@ -473,7 +487,7 @@ LQA的创新性在于**“缝合”**的艺术。它并非发明了全新的量�
 
 - [在8位摩托罗拉6809上运行深度卷积神经网络玩棋盘游戏]({{< relref "posts/20260129-hacker_news-playing-board-games-with-deep-convolutional-neural-12.md" >}})
 - [神经网络转逻辑流以优化边缘计算]({{< relref "posts/20260130-arxiv_ai-late-breaking-results-conversion-of-neural-network-5.md" >}})
-- [神经网络转逻辑流以优化边缘计算性能]({{< relref "posts/20260131-arxiv_ai-late-breaking-results-conversion-of-neural-network-5.md" >}})
-- [神经网络转逻辑流以优化边缘计算性能]({{< relref "posts/20260201-arxiv_ai-late-breaking-results-conversion-of-neural-network-5.md" >}})
-- [神经网络转逻辑流以优化边缘计算性能]({{< relref "posts/20260202-arxiv_ai-late-breaking-results-conversion-of-neural-network-5.md" >}})
+- [神经网络转逻辑流以优化边缘计算性能]({{< relref "posts/20260130-arxiv_ai-late-breaking-results-conversion-of-neural-network-5.md" >}})
+- [神经网络转逻辑流以优化边缘计算性能]({{< relref "posts/20260130-arxiv_ai-late-breaking-results-conversion-of-neural-network-5.md" >}})
+- [神经网络转逻辑流以优化边缘计算性能]({{< relref "posts/20260130-arxiv_ai-late-breaking-results-conversion-of-neural-network-5.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

@@ -21,6 +21,14 @@ description: 以下是该内容的中文总结： **可分离神经架构：统�
 external_url: http://arxiv.org/abs/2603.12244v1
 scenarios:
 - AI/ML项目
+aliases:
+- /posts/20260314-arxiv_ai-separable-neural-architectures-as-a-primitive-for--6/
+- /posts/20260315-arxiv_ai-separable-neural-architectures-as-a-primitive-for--6/
+- /posts/20260316-arxiv_ai-separable-neural-architectures-as-a-primitive-for--6/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 可分离神经网络架构：统一预测与生成智能的基元
@@ -525,7 +533,7 @@ SNA 的创新性在于它不是提出了一种单一的“新模型”，而是�
 ### 相关文章
 
 - [面向异构数据的自适应子网络路由机制]({{< relref "posts/20260130-arxiv_ai-routing-the-lottery-adaptive-subnetworks-for-heter-8.md" >}})
-- [超网络：用于处理层级数据的神经网络架构]({{< relref "posts/20260206-hacker_news-hypernetworks-neural-networks-for-hierarchical-dat-19.md" >}})
+- [超网络：用于处理层级数据的神经网络架构]({{< relref "posts/20260205-hacker_news-hypernetworks-neural-networks-for-hierarchical-dat-16.md" >}})
 - [神经网络原理的可视化解析]({{< relref "posts/20260206-hacker_news-understanding-neural-network-visually-16.md" >}})
-- [神经网络原理可视化解析]({{< relref "posts/20260206-hacker_news-understanding-neural-network-visually-2.md" >}})
-- [神经网络原理可视化解析]({{< relref "posts/20260206-hacker_news-understanding-neural-network-visually-3.md" >}})
+- [神经网络原理可视化解析]({{< relref "posts/20260206-hacker_news-understanding-neural-network-visually-16.md" >}})
+- [神经网络原理可视化解析]({{< relref "posts/20260206-hacker_news-understanding-neural-network-visually-16.md" >}})

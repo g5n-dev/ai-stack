@@ -21,6 +21,12 @@ description: '以下是关于《RVR: Retrieve-Verify-Retrieve for Comprehensive 
 external_url: http://arxiv.org/abs/2602.18425v1
 scenarios:
 - RAG应用
+aliases:
+- /posts/20260224-arxiv_ai-rvr-retrieve-verify-retrieve-for-comprehensive-que-3/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # RVR：检索-验证-检索框架提升综合问答能力
@@ -124,7 +130,6 @@ RVR 提出了一种利用验证器和迭代推理场景的适应性方法，为�
 
 ---
 
-### RVR: Retrieve-Verify-Retrieve 全面问答系统深度分析
 
 ### 1. 研究背景与问题
 
@@ -413,7 +418,7 @@ RVR 主要针对以下痛点进行了优化：
 ### 相关文章
 
 - [扩散预训练模型生成稠密上下文嵌入]({{< relref "posts/20260212-arxiv_ai-diffusion-pretrained-dense-and-contextual-embeddin-0.md" >}})
-- [基于扩散预训练的稠密上下文嵌入模型]({{< relref "posts/20260213-arxiv_ai-diffusion-pretrained-dense-and-contextual-embeddin-0.md" >}})
-- [AttentionRetriever：注意力层可作为长文档检索器]({{< relref "posts/20260214-arxiv_ai-attentionretriever-attention-layers-are-secretly-l-2.md" >}})
-- [AttentionRetriever：注意力层即长文档检索器]({{< relref "posts/20260216-arxiv_ai-attentionretriever-attention-layers-are-secretly-l-2.md" >}})
-- [深度研究AI代理用于医药资产全球筛选与评估]({{< relref "posts/20260218-arxiv_ai-hunt-globally-deep-research-ai-agents-for-drug-ass-4.md" >}})
+- [基于扩散预训练的稠密上下文嵌入模型]({{< relref "posts/20260212-arxiv_ai-diffusion-pretrained-dense-and-contextual-embeddin-0.md" >}})
+- [AttentionRetriever：注意力层可作为长文档检索器]({{< relref "posts/20260213-arxiv_ai-attentionretriever-attention-layers-are-secretly-l-2.md" >}})
+- [AttentionRetriever：注意力层即长文档检索器]({{< relref "posts/20260213-arxiv_ai-attentionretriever-attention-layers-are-secretly-l-2.md" >}})
+- [深度研究AI代理用于医药资产全球筛选与评估]({{< relref "posts/20260217-arxiv_ai-hunt-globally-deep-research-ai-agents-for-drug-ass-4.md" >}})

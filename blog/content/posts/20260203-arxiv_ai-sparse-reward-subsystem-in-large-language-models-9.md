@@ -1,14 +1,30 @@
 ---
-title: "大语言模型稀疏奖励子系统"
-date: 2026-02-03T03:49:30+08:00
+title: 大语言模型稀疏奖励子系统
+date: 2026-02-03 03:49:30+08:00
 draft: false
-entry_kind: "auto"
-tags: ["LLM", "稀疏奖励", "价值神经元", "多巴胺神经元", "RPE", "模型可解释性", "强化学习", "对齐"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- LLM
+- 稀疏奖励
+- 价值神经元
+- 多巴胺神经元
+- RPE
+- 模型可解释性
+- 强化学习
+- 对齐
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "**摘要：大型语言模型中的稀疏奖励子系统** 本文揭示了大型语言模型（LLM）内部隐藏层中存在一个类似于人脑生物机制的“稀疏奖励子系统”，并阐述了其构成、功能及特性。主要发现如下： 1. **价值神经元：** 该子系统包含特定的“价值神经元”，它们代表了模型对当前状态价值的内在预期。通过干预实验证实，这些神经元对于模型"
+description: '**摘要：大型语言模型中的稀疏奖励子系统** 本文揭示了大型语言模型（LLM）内部隐藏层中存在一个类似于人脑生物机制的“稀疏奖励子系统”，并阐述了其构成、功能及特性。主要发现如下：
+  1. **价值神经元：** 该子系统包含特定的“价值神经元”，它们代表了模型对当前状态价值的内在预期。通过干预实验证实，这些神经元对于模型'
 external_url: http://arxiv.org/abs/2602.00986v1
-scenarios: ["大语言模型"]
+scenarios:
+- 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 大语言模型稀疏奖励子系统
@@ -100,7 +116,6 @@ scenarios: ["大语言模型"]
     *   **Vs. Transformer Interpretability (Circuit Analysis):** 传统的电路分析关注层与层的连接，本研究深入
 
 ---
-## 研究最佳实践
 
 ## 最佳实践指南
 
@@ -201,7 +216,6 @@ scenarios: ["大语言模型"]
 - 该方法为多模态大模型训练提供了新范式，在视觉-语言联合任务中展现出跨模态迁移能力。
 
 ---
-## 学习路径
 
 ## 学习路径
 
@@ -367,7 +381,7 @@ scenarios: ["大语言模型"]
 
 - [DynaWeb：基于模型的强化学习网页智能体]({{< relref "posts/20260130-arxiv_ai-dynaweb-model-based-reinforcement-learning-of-web--6.md" >}})
 - [基于经验的试错算法超越语言模型]({{< relref "posts/20260130-arxiv_ai-language-based-trial-and-error-falls-behind-in-the-3.md" >}})
-- [Kimi K2.5 技术报告发布：强化学习与长上下文能力升级]({{< relref "posts/20260130-hacker_news-kimi-k25-technical-report-pdf-2.md" >}})
-- [DynaWeb：基于模型的强化学习网页智能体框架]({{< relref "posts/20260131-arxiv_ai-dynaweb-model-based-reinforcement-learning-of-web--6.md" >}})
-- [DynaWeb：基于模型的强化学习网页智能体]({{< relref "posts/20260201-arxiv_ai-dynaweb-model-based-reinforcement-learning-of-web--6.md" >}})
+- [Kimi K2.5 技术报告发布：强化学习与长上下文能力升级]({{< relref "posts/20260130-hacker_news-kimi-k25-technical-report-pdf-10.md" >}})
+- [DynaWeb：基于模型的强化学习网页智能体框架]({{< relref "posts/20260130-arxiv_ai-dynaweb-model-based-reinforcement-learning-of-web--6.md" >}})
+- [DynaWeb：基于模型的强化学习网页智能体]({{< relref "posts/20260130-arxiv_ai-dynaweb-model-based-reinforcement-learning-of-web--6.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

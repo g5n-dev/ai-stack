@@ -11,7 +11,7 @@ tags:
 - GPU监控
 - 模型训练
 - DSW
-- AI助手
+- AI 助手
 categories:
 - AI 工程
 - 开发工具
@@ -20,6 +20,10 @@ description: 阿里云人工智能平台 PAI 现已在 PAI-DSW 中支持一键�
 external_url: https://juejin.cn/post/7617697070364229678
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 阿里云PAI集成OpenClaw：支持文件读写与GPU监控的云端开发助手

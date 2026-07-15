@@ -1,12 +1,26 @@
 ---
-title: "两年“Vibecoding”后，我为何回归手写？🖊️🚀"
-date: 2026-01-26T18:11:05+08:00
+title: 两年“Vibecoding”后，我为何回归手写？🖊️🚀
+date: 2026-01-26 18:11:05+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Vibecoding", "AI辅助编程", "GitHub Copilot", "ChatGPT", "手工编程", "技术反思", "认知外包", "代码质量"]
-categories: ["效率与方法论", "AI 工程"]
+entry_kind: auto
+tags:
+- Vibe Coding
+- AI 辅助编程
+- GitHub Copilot
+- ChatGPT
+- 手工编程
+- 技术反思
+- 认知外包
+- 代码质量
+categories:
+- 效率与方法论
+- AI 工程
 source: hacker_news
 external_url: https://atmoio.substack.com/p/after-two-years-of-vibecoding-im
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 📰 两年“Vibecoding”后，我为何回归手写？🖊️🚀
@@ -205,7 +219,6 @@ CTO 强制叫停了 "粘贴-生成-运行" 的模式，回归 "手写代码" (Wr
 项目按时交付，且插件通过了长达 72 小时的压力测试，无一例内存泄漏。开发者总结道："对于强类型、高性能要求的底层代码，'手写' 是通往完美的唯一路径。"
 
 ---
-## ✅ 最佳实践
 
 ## 最佳实践指南
 

@@ -20,6 +20,10 @@ description: OpenSpec 与 Everything-Claude-Code (ECC) 分别解决了 AI 辅助
 external_url: https://juejin.cn/post/7611549704816623642
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # OpenSpec 与 ECC：定位差异与构建团队工作流程
@@ -170,8 +174,8 @@ ECC 擅长处理基于规范的样板代码生成，但在处理复杂业务逻�
 
 ### 相关文章
 
-- [编排多会话 Claude Code 团队协作]({{< relref "posts/20260205-hacker_news-orchestrate-teams-of-claude-code-sessions-5.md" >}})
-- [编排多会话 Claude Code 团队协作]({{< relref "posts/20260206-hacker_news-orchestrate-teams-of-claude-code-sessions-14.md" >}})
-- [编排多会话 Claude Code 团队协作]({{< relref "posts/20260206-hacker_news-orchestrate-teams-of-claude-code-sessions-6.md" >}})
-- [编排多会话 Claude Code 团队协作]({{< relref "posts/20260205-hacker_news-orchestrate-teams-of-claude-code-sessions-2.md" >}})
+- [编排多会话 Claude Code 团队协作]({{< relref "posts/20260205-hacker_news-claude-code-agent-teams-3.md" >}})
+- [编排多会话 Claude Code 团队协作]({{< relref "posts/20260205-hacker_news-claude-code-agent-teams-3.md" >}})
+- [编排多会话 Claude Code 团队协作]({{< relref "posts/20260205-hacker_news-claude-code-agent-teams-3.md" >}})
+- [编排多会话 Claude Code 团队协作]({{< relref "posts/20260205-hacker_news-claude-code-agent-teams-3.md" >}})
 - [Claude Code 联合创始人分享：30 天提交 259 个 PR 的自动化开发流]({{< relref "posts/20260218-juejin-claude-code-之父的技巧分享用拉尔夫循环让-ai-替你死磕-3.md" >}})

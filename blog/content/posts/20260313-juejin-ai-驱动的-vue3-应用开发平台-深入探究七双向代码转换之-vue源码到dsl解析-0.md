@@ -20,6 +20,10 @@ description: 将现有的 Vue 组件接入低代码平台，核心挑战在于�
 external_url: https://juejin.cn/post/7616193982247780371
 scenarios:
 - Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # VTJ解析器：Vue SFC转低代码DSL的原理与实现
@@ -173,8 +177,8 @@ Vue 3 的 `<script setup>` 是基于编译时的语法糖，虽然对开发者�
 
 ### 相关文章
 
-- [🔥滴滴内部LogicFlow火了！业务逻辑图可视化神器！]({{< relref "posts/20260127-github_trending-didi-logicflow-3.md" >}})
-- [🔥滴滴开源！LogicFlow：流程图神器，拖拽即用！]({{< relref "posts/20260127-github_trending-didi-logicflow-5.md" >}})
-- [JeecgBoot：AI低代码平台集成代码生成器与知识库]({{< relref "posts/20260130-github_trending-jeecgboot-jeecgboot-3.md" >}})
-- [JeecgBoot开源低代码平台：集成AI应用与代码生成器]({{< relref "posts/20260131-github_trending-jeecgboot-jeecgboot-3.md" >}})
-- [JeecgBoot：集成AI低代码平台与代码生成器的Java开发框架]({{< relref "posts/20260129-github_trending-jeecgboot-jeecgboot-3.md" >}})
+- [🔥滴滴内部LogicFlow火了！业务逻辑图可视化神器！]({{< relref "posts/20260126-github_trending-didi-logicflow-3.md" >}})
+- [🔥滴滴开源！LogicFlow：流程图神器，拖拽即用！]({{< relref "posts/20260126-github_trending-didi-logicflow-3.md" >}})
+- [JeecgBoot：AI低代码平台集成代码生成器与知识库]({{< relref "posts/20260129-github_trending-jeecgboot-jeecgboot-7.md" >}})
+- [JeecgBoot开源低代码平台：集成AI应用与代码生成器]({{< relref "posts/20260129-github_trending-jeecgboot-jeecgboot-7.md" >}})
+- [JeecgBoot：集成AI低代码平台与代码生成器的Java开发框架]({{< relref "posts/20260129-github_trending-jeecgboot-jeecgboot-7.md" >}})

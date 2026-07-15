@@ -23,6 +23,19 @@ external_url: https://openai.com/index/equip-responses-api-computer-environment
 scenarios:
 - AI/ML项目
 - 后端开发
+aliases:
+- /posts/20260311-blogs_podcasts-from-model-to-agent-equipping-the-responses-api-wi-3/
+- /posts/20260311-blogs_podcasts-from-model-to-agent-equipping-the-responses-api-wi-5/
+- /posts/20260312-blogs_podcasts-from-model-to-agent-equipping-the-responses-api-wi-11/
+- /posts/20260312-blogs_podcasts-from-model-to-agent-equipping-the-responses-api-wi-14/
+- /posts/20260312-blogs_podcasts-from-model-to-agent-equipping-the-responses-api-wi-7/
+- /posts/20260312-blogs_podcasts-from-model-to-agent-equipping-the-responses-api-wi-8/
+- /posts/20260312-blogs_podcasts-from-model-to-agent-equipping-the-responses-api-wi-9/
+- /posts/20260313-blogs_podcasts-from-model-to-agent-equipping-the-responses-api-wi-14/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # OpenAI 利用 Responses API 构建具备文件与状态管理的代理运行时
@@ -348,6 +361,6 @@ OpenAI 如何利用 Responses API、Shell 工具和托管容器构建了一个�
 
 - [GPT-5.3-Codex：结合前沿编码性能与推理能力的代理式模型]({{< relref "posts/20260205-blogs_podcasts-gpt-53-codex-system-card-4.md" >}})
 - [OpenAI提出SWE-Bench-Dead：智能体前沿评估的下一步]({{< relref "posts/20260223-blogs_podcasts-swe-bench-dead-the-end-of-swe-bench-verified-mia-g-0.md" >}})
-- [OpenAI前沿评估团队：超越SWE-Bench Verified的智能体评估新阶段]({{< relref "posts/20260223-blogs_podcasts-the-end-of-swe-bench-verified-mia-glaese-olivia-wa-0.md" >}})
-- [OpenAI 推进智能体评估：SWE-Bench Verified 后续方向]({{< relref "posts/20260224-blogs_podcasts-the-end-of-swe-bench-verified-mia-glaese-olivia-wa-1.md" >}})
-- [OpenAI 前沿评估团队探讨迈向智能体评估的下一阶段]({{< relref "posts/20260224-blogs_podcasts-the-end-of-swe-bench-verified-mia-glaese-olivia-wa-11.md" >}})
+- [OpenAI前沿评估团队：超越SWE-Bench Verified的智能体评估新阶段]({{< relref "posts/20260223-blogs_podcasts-swe-bench-dead-the-end-of-swe-bench-verified-mia-g-0.md" >}})
+- [OpenAI 推进智能体评估：SWE-Bench Verified 后续方向]({{< relref "posts/20260223-blogs_podcasts-swe-bench-dead-the-end-of-swe-bench-verified-mia-g-0.md" >}})
+- [OpenAI 前沿评估团队探讨迈向智能体评估的下一阶段]({{< relref "posts/20260223-blogs_podcasts-swe-bench-dead-the-end-of-swe-bench-verified-mia-g-0.md" >}})

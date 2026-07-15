@@ -11,7 +11,7 @@ tags:
 - 对齐
 - 可核查性
 - 模型架构
-- AI安全
+- AI 安全
 categories:
 - 大模型
 - 论文
@@ -22,6 +22,10 @@ external_url: http://arxiv.org/abs/2602.23248v1
 scenarios:
 - 大语言模型
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 缓解可读性代价：基于解耦证明者-验证者博弈的方法
@@ -52,7 +56,6 @@ scenarios:
 
 为了解决这一问题，本文提出了一种**解耦方案**：将“正确性”与“可核查性”的训练目标分离。具体做法是固定一个旨在最大化正确性的“求解器”模型，然后训练一个独立的“翻译器”模型，将求解器的答案转化为可核查的形式。为此，作者构建了**解耦的证明者-验证者博弈**，其均衡状态对应于既忠实又可核查的翻译器。这种方法允许模型在保持高准确率的同时，显著提升输出的可核查性。
 
-### 4. 实验结果
 
 ### 准确率与可读性权衡
 实验数据显示，Decoupled PVG在保持高准确率方面显著优于标准PVG。
@@ -121,7 +124,6 @@ scenarios:
 
 ## 技术分析
 
-### 3. 理论基础
 
 ### 博弈均衡
 论文基于博弈论中的**纳什均衡**概念来分析系统的稳定性。
@@ -344,8 +346,8 @@ scenarios:
 
 ### 相关文章
 
-- [模型智能与任务复杂度如何影响对齐偏差]({{< relref "posts/20260203-hacker_news-how-does-misalignment-scale-with-model-intelligenc-12.md" >}})
+- [模型智能与任务复杂度如何影响对齐偏差]({{< relref "posts/20260203-hacker_news-how-does-misalignment-scale-with-model-intelligenc-7.md" >}})
 - [大语言模型推理失败机制分析]({{< relref "posts/20260221-hacker_news-large-language-model-reasoning-failures-19.md" >}})
-- [MIT新方法揭示大模型隐藏偏差并提升安全性]({{< relref "posts/20260223-blogs_podcasts-exposing-biases-moods-personalities-and-abstract-c-9.md" >}})
-- [基于人类反馈的强化学习：原理与应用]({{< relref "posts/20260207-hacker_news-reinforcement-learning-from-human-feedback-19.md" >}})
-- [大语言模型面临的幻觉与逻辑推理局限]({{< relref "posts/20260212-hacker_news-the-problem-with-llms-13.md" >}})
+- [MIT新方法揭示大模型隐藏偏差并提升安全性]({{< relref "posts/20260219-blogs_podcasts-exposing-biases-moods-personalities-and-abstract-c-1.md" >}})
+- [基于人类反馈的强化学习：原理与应用]({{< relref "posts/20260207-hacker_news-reinforcement-learning-from-human-feedback-4.md" >}})
+- [大语言模型面临的幻觉与逻辑推理局限]({{< relref "posts/20260212-hacker_news-the-problem-with-llms-9.md" >}})

@@ -1,14 +1,30 @@
 ---
-title: "2026世博会AI工程五大趋势：围绕智能体构建系统"
-date: 2026-07-15T11:26:59+08:00
+title: 2026世博会AI工程五大趋势：围绕智能体构建系统
+date: 2026-07-15 11:26:59+08:00
 draft: false
-entry_kind: "auto"
-tags: ["智能体", "Agent平台", "系统构建", "协同化", "可组合性", "持续学习", "安全防护", "AI趋势"]
-categories: ["AI 工程", "系统与基础设施"]
+entry_kind: auto
+tags:
+- 智能体
+- Agent平台
+- 系统构建
+- 协同化
+- 可组合性
+- 持续学习
+- 安全防护
+- AI趋势
+categories:
+- AI 工程
+- 系统与基础设施
 source: blogs_podcasts
-description: "核心转变 2026 年 AIE 世界博览会上，AI 工程正式进入以“代理”为中心的新阶段——从单纯“使用代理”转向“围绕代理构建系统”。这意味着技术栈、架构设计、部署方式乃至开发流程都围绕自主代理（Agent）进行组织，而非把代理当作单一工具来嵌入。 主要意义 1. **系统化**：代理不再是离散的插件，而是构成完整业"
+description: 核心转变 2026 年 AIE 世界博览会上，AI 工程正式进入以“代理”为中心的新阶段——从单纯“使用代理”转向“围绕代理构建系统”。这意味着技术栈、架构设计、部署方式乃至开发流程都围绕自主代理（Agent）进行组织，而非把代理当作单一工具来嵌入。
+  主要意义 1. **系统化**：代理不再是离散的插件，而是构成完整业
 external_url: https://www.latent.space/p/aiewf26trends
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 2026世博会AI工程五大趋势：围绕智能体构建系统

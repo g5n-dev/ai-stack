@@ -21,6 +21,12 @@ description: 以下是对该内容的中文总结： **论文主题：** 基于�
 external_url: http://arxiv.org/abs/2603.06557v1
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260310-arxiv_ai-causal-interpretation-of-neural-network-computatio-6/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 神经网络计算的因果解释：基于贡献分解方法
@@ -124,9 +130,7 @@ CODEC 为理解非线性计算在层级结构中的演变提供了一个丰富�
 
 ---
 
-### 深度分析报告：基于贡献分解（CODEC）的神经网络计算因果解释
 
-### 1. 研究背景与问题
 
 ### 核心问题
 当前深度学习领域面临的一个根本性挑战是**“可解释性危机”**。尽管人工神经网络（ANN）在性能上屡破纪录，但其内部决策过程往往被视为一个“黑盒”。具体来说，研究者难以回答：**网络中的单个神经元或神经元群体是如何通过其非线性交互作用，共同决定最终的输出结果的？**
@@ -143,7 +147,6 @@ CODEC 为理解非线性计算在层级结构中的演变提供了一个丰富�
 ### 为什么重要
 该研究不仅有助于提升AI系统的安全性和可信度（例如发现虚假关联），更重要的是，它为连接人工智能与神经科学提供了桥梁。通过理解人工网络中的计算原理，我们可以反过来解码生物神经网络（如视网膜）如何处理信息。
 
-### 2. 核心方法与创新
 
 ### 核心方法：CODEC (Contribution Decomposition)
 CODEC 是一种基于**扰动**和**稀疏编码**的归因方法。其核心流程如下：
@@ -161,7 +164,6 @@ CODEC 是一种基于**扰动**和**稀疏编码**的归因方法。其核心流
 - **可操纵性**：由于模体是稀疏且独立的，研究人员可以直接人为“开启”或“关闭”某个模体，从而精确控制网络输出，实现真正的因果干预。
 - **跨领域适用性**：该方法不仅适用于标准的 CNN（如 ResNet），也适用于生物神经网络模型，证明了其作为通用工具的潜力。
 
-### 3. 理论基础
 
 ### 理论依据
 - **因果干预**：基于 Pearl 的因果层级理论，CODEC 试图从“关联层”（第1层）上升到“干预层”（第2层）。通过测量 $P(Y | do(X))$ 而非仅仅是 $P(Y | X)$，CODEC 提供了更稳健的解释。
@@ -177,7 +179,6 @@ $$ \min \|c - \text{Decode}(z)\|^2 + \lambda \|z\|_1 $$
 ### 理论贡献
 该论文在理论上证明了**“计算的分阶段线性化”**：虽然神经网络整体是高度非线性的，但在局部贡献空间中，可以通过稀疏线性组合来近似复杂的非线性逻辑。这为理解深度学习的“黑盒”提供了一个新的几何视角。
 
-### 7. 学习建议
 
 ### 适合读者
 - 可解释性（XAI）研究方向的学生。
@@ -444,7 +445,7 @@ $$ \min \|c - \text{Decode}(z)\|^2 + \lambda \|z\|_1 $$
 ### 相关文章
 
 - [学习大模型神经元激活的生成式元模型]({{< relref "posts/20260209-arxiv_ai-learning-a-generative-meta-model-of-llm-activation-0.md" >}})
-- [神经机制稀疏化助力高效发现近似因果抽象]({{< relref "posts/20260303-arxiv_ai-efficient-discovery-of-approximate-causal-abstract-9.md" >}})
+- [神经机制稀疏化助力高效发现近似因果抽象]({{< relref "posts/20260302-arxiv_ai-efficient-discovery-of-approximate-causal-abstract-9.md" >}})
 - [DLM-Scope：利用稀疏自编码器解析扩散语言模型]({{< relref "posts/20260206-arxiv_ai-dlm-scope-mechanistic-interpretability-of-diffusio-4.md" >}})
-- [伪可逆神经网络：通过伪可逆性提升模型可逆性]({{< relref "posts/20260207-arxiv_ai-pseudo-invertible-neural-networks-1.md" >}})
-- [ANCRe: Adaptive Neural Connection Reassignment for Effi]({{< relref "posts/20260211-arxiv_ai-ancre-adaptive-neural-connection-reassignment-for--5.md" >}})
+- [伪可逆神经网络：通过伪可逆性提升模型可逆性]({{< relref "posts/20260206-arxiv_ai-pseudo-invertible-neural-networks-1.md" >}})
+- [ANCRe: Adaptive Neural Connection Reassignment for Effi]({{< relref "posts/20260210-arxiv_ai-ancre-adaptive-neural-connection-reassignment-for--5.md" >}})

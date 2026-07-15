@@ -1,14 +1,29 @@
 ---
-title: "Spring AI Lab：3分钟为Spring Boot项目集成AI对话功能"
-date: 2026-05-27T10:13:39+08:00
+title: Spring AI Lab：3分钟为Spring Boot项目集成AI对话功能
+date: 2026-05-27 10:13:39+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Spring AI Lab", "Spring Boot", "AI对话", "大模型", "集成", "工具箱", "后端开发", "快速接入"]
-categories: ["开发工具", "后端"]
+entry_kind: auto
+tags:
+- Spring AI Lab
+- Spring Boot
+- AI对话
+- 大模型
+- 集成
+- 工具箱
+- 后端开发
+- 快速接入
+categories:
+- 开发工具
+- 后端
 source: juejin
-description: "本文介绍Spring AI Lab，它是一套专为Spring Boot项目设计的AI对话接入工具，能够在几分钟内完成从配置到上线的完整流程。通过简洁的API和开箱即用的组件，开发者无需深入了解模型细节，就能快速实现自然语言交互功能。阅读后，你将掌握集成步骤、常见配置以及最佳实践，帮助项目快速落地AI能力。"
+description: 本文介绍Spring AI Lab，它是一套专为Spring Boot项目设计的AI对话接入工具，能够在几分钟内完成从配置到上线的完整流程。通过简洁的API和开箱即用的组件，开发者无需深入了解模型细节，就能快速实现自然语言交互功能。阅读后，你将掌握集成步骤、常见配置以及最佳实践，帮助项目快速落地AI能力。
 external_url: https://juejin.cn/post/7644367780076896308
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Spring AI Lab：3分钟为Spring Boot项目集成AI对话功能
@@ -67,9 +82,9 @@ scenarios: ["AI/ML项目"]
 
 ### 相关文章
 
-- [Show HN: Jido 2.0, Elixir Agent Framework]({{< relref "posts/20260306-hacker_news-show-hn-jido-20-elixir-agent-framework-12.md" >}})
-- [JeecgBoot：集成AI低代码平台与代码生成器的Java开发框架]({{< relref "posts/20260129-github_trending-jeecgboot-jeecgboot-3.md" >}})
+- [Show HN: Jido 2.0, Elixir Agent Framework]({{< relref "posts/20260305-hacker_news-show-hn-jido-20-elixir-agent-framework-1.md" >}})
+- [JeecgBoot：集成AI低代码平台与代码生成器的Java开发框架]({{< relref "posts/20260129-github_trending-jeecgboot-jeecgboot-7.md" >}})
 - [JeecgBoot：集成AI低代码与代码生成器的企业级开发平台]({{< relref "posts/20260129-github_trending-jeecgboot-jeecgboot-7.md" >}})
 - [OpenAI发布GPT-5.3-Codex-Spark：首款实时代码模型，速度提升15倍]({{< relref "posts/20260213-blogs_podcasts-introducing-gpt-53-codex-spark-11.md" >}})
-- [OpenAI发布首款实时编码模型：生成速度提升15倍]({{< relref "posts/20260214-blogs_podcasts-introducing-gpt-53-codex-spark-13.md" >}})
+- [OpenAI发布首款实时编码模型：生成速度提升15倍]({{< relref "posts/20260213-blogs_podcasts-introducing-gpt-53-codex-spark-11.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

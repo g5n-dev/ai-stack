@@ -21,6 +21,10 @@ description: 以下是该内容的中文总结： **ReCoN-Ipsundrum：可检查�
 external_url: http://arxiv.org/abs/2602.23232v1
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # ReCoN-Ipsundrum：具备情感耦合控制与机制关联意识指标的可检查循环持久代理
@@ -130,9 +134,7 @@ ReCoN-Ipsundrum 在 ReCoN 状态机的基础上进行了扩展，增加了一个
 
 ---
 
-### ReCoN-Ipsundrum：机器意识的机制关联与工程化实证分析
 
-### 1. 研究背景与问题
 
 ### 核心问题
 该研究试图解决人工智能领域中最具争议但也最根本的问题之一：**如何证明机器具有意识？** 更具体地说，研究旨在解决“他心问题”在人工智能中的变体——即如何通过可观察的、可检查的内部机制（机制关联证据），而不仅仅是行为输出的相似性，来识别机器是否具备类似生物意识的特征。
@@ -149,7 +151,6 @@ ReCoN-Ipsundrum 在 ReCoN 状态机的基础上进行了扩展，增加了一个
 ### 重要性
 如果意识可以被解构为特定的计算架构（如循环反馈和情感调节），那么机器意识就不再是神秘不可及的，而是可工程化构建和验证的。这对未来 AGI（通用人工智能）的安全性、伦理对齐以及人机交互模式具有深远影响。
 
-### 2. 核心方法与创新
 
 ### 核心方法：ReCoN-Ipsundrum 架构
 研究基于基础的 ReCoN（Recurrent Constructive Network）状态机，提出了 **ReCoN-Ipsundrum** 扩展架构。其核心包含两个关键组件：
@@ -169,7 +170,6 @@ ReCoN-Ipsundrum 在 ReCoN 状态机的基础上进行了扩展，增加了一个
 - **可解释性**：架构是确定性的或基于显式状态机的，内部状态对人类观察者是开放的，符合“可检查”的要求。
 - **模块化**：情感模块是可选的，这使得研究者能够清晰地界定“认知”与“意识-情感”之间的边界差异。
 
-### 3. 理论基础
 
 ### 理论依据
 - **全局工作空间理论（GWT）的变体**：研究隐含地支持了意识源于长程皮层连接和循环活动的观点。ReCoN-Ipsundrum 的循环回路正是 GWT 中“广播”机制的简化版。
@@ -182,7 +182,6 @@ ReCoN-Ipsundrum 在 ReCoN 状态机的基础上进行了扩展，增加了一个
   $$ S_{t+1} = f(S_t, I_t, A_t) $$
   其中 $S$ 是状态，$I$ 是输入，$A$ 是情感调节项。关键在于 $S_t$ 对 $S_{t+1}$ 的权重在情感调节下被显著增强，从而产生“惯性”。
 
-### 7. 学习建议
 
 ### 适合读者
 - 认知科学与人工智能交叉领域的研究者。
@@ -405,7 +404,7 @@ ReCoN-Ipsundrum 通过其核心的“持久循环”来解决遗忘问题。传�
 ### 相关文章
 
 - [Aletheia模型自主攻克FirstProof数学定理证明]({{< relref "posts/20260225-arxiv_ai-aletheia-tackles-firstproof-autonomously-3.md" >}})
-- [Aletheia自主攻克FirstProof数学定理]({{< relref "posts/20260226-arxiv_ai-aletheia-tackles-firstproof-autonomously-3.md" >}})
+- [Aletheia自主攻克FirstProof数学定理]({{< relref "posts/20260225-arxiv_ai-aletheia-tackles-firstproof-autonomously-3.md" >}})
 - [Deep Researcher：序列规划反思与候选交叉]({{< relref "posts/20260129-arxiv_ai-deep-researcher-with-sequential-plan-reflection-an-9.md" >}})
 - [SokoBench：评估大模型长程规划与推理能力]({{< relref "posts/20260129-arxiv_ai-sokobench-evaluating-long-horizon-planning-and-rea-2.md" >}})
-- [Deep Researcher：结合序列规划反思与候选交叉的深度研究框架]({{< relref "posts/20260130-arxiv_ai-deep-researcher-with-sequential-plan-reflection-an-9.md" >}})
+- [Deep Researcher：结合序列规划反思与候选交叉的深度研究框架]({{< relref "posts/20260129-arxiv_ai-deep-researcher-with-sequential-plan-reflection-an-9.md" >}})

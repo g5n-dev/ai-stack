@@ -21,6 +21,15 @@ description: 随着大模型能力的提升，让 AI 智能体参与复杂游戏
 external_url: https://llmskirmish.com
 scenarios:
 - AI/ML项目
+aliases:
+- /posts/20260225-hacker_news-show-hn-a-real-time-strategy-game-that-ai-agents-c-1/
+- /posts/20260225-hacker_news-show-hn-a-real-time-strategy-game-that-ai-agents-c-19/
+- /posts/20260225-hacker_news-show-hn-a-real-time-strategy-game-that-ai-agents-c-4/
+- /posts/20260225-hacker_news-show-hn-a-real-time-strategy-game-that-ai-agents-c-8/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AI 智能体可参与的即时战略游戏演示
@@ -325,7 +334,7 @@ OpenAI Five 在 2019 年的 Dendi 赏金赛及随后的国际邀请赛（TI）�
 ### 相关文章
 
 - [Show HN：构建面向智能体的百万美元主页]({{< relref "posts/20260218-hacker_news-show-hn-i-built-the-million-dollar-homepage-for-ag-19.md" >}})
-- [🔥Show HN: 1人+1智能体=从零打造浏览器! 仅2万行代码🚀]({{< relref "posts/20260128-hacker_news-show-hn-one-human-one-agent-one-browser-from-scrat-16.md" >}})
-- [Compressed Agents：Agent Skills 技术解析]({{< relref "posts/20260130-hacker_news-compressed-agentsmd-agent-skills-6.md" >}})
-- [DynaWeb：基于模型的强化学习网页智能体框架]({{< relref "posts/20260131-arxiv_ai-dynaweb-model-based-reinforcement-learning-of-web--6.md" >}})
-- [迈向智能体系统规模化科学：工作原理与适用条件]({{< relref "posts/20260201-hacker_news-towards-a-science-of-scaling-agent-systems-when-an-13.md" >}})
+- [🔥Show HN: 1人+1智能体=从零打造浏览器! 仅2万行代码🚀]({{< relref "posts/20260127-hacker_news-show-hn-one-human-one-agent-one-browser-from-scrat-7.md" >}})
+- [Compressed Agents：Agent Skills 技术解析]({{< relref "posts/20260129-hacker_news-compressed-agentsmd-agent-skills-5.md" >}})
+- [DynaWeb：基于模型的强化学习网页智能体框架]({{< relref "posts/20260130-arxiv_ai-dynaweb-model-based-reinforcement-learning-of-web--6.md" >}})
+- [迈向智能体系统规模化科学：工作原理与适用条件]({{< relref "posts/20260201-hacker_news-towards-a-science-of-scaling-agent-systems-when-an-11.md" >}})

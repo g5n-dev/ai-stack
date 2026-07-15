@@ -1,14 +1,29 @@
 ---
-title: "FablePool：提示词众筹与公开构建模式"
-date: 2026-06-11T23:39:46+08:00
+title: FablePool：提示词众筹与公开构建模式
+date: 2026-06-11 23:39:46+08:00
 draft: false
-entry_kind: "auto"
-tags: ["提示词众筹", "公开构建", "AI创业", "开源社区", "产品发布", "社区驱动", "创新", "平台"]
-categories: ["产品与创业"]
+entry_kind: auto
+tags:
+- 提示词众筹
+- 公开构建
+- AI创业
+- 开源社区
+- 产品发布
+- 社区驱动
+- 创新
+- 平台
+categories:
+- 产品与创业
 source: hacker_news
-description: "FablePool 提出一种将资金与需求直接挂钩的创作模式：用户只需提出需求并共同出资，平台随后将公开透明地展示完整的开发过程。相比传统的先融资后开发模式，这种“先行众筹、实时公开”能够显著降低项目风险，让资金投入方实时了解进度并进行迭代。对于想要探索新协作方式的开发者或创业者而言，FablePool 不仅提供了技术实"
+description: FablePool 提出一种将资金与需求直接挂钩的创作模式：用户只需提出需求并共同出资，平台随后将公开透明地展示完整的开发过程。相比传统的先融资后开发模式，这种“先行众筹、实时公开”能够显著降低项目风险，让资金投入方实时了解进度并进行迭代。对于想要探索新协作方式的开发者或创业者而言，FablePool
+  不仅提供了技术实
 external_url: https://fablepool.com
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # FablePool：提示词众筹与公开构建模式
@@ -81,9 +96,9 @@ FablePool尝试将众筹机制引入AI开发领域，是一种将prompt商品化
 
 ### 相关文章
 
-- [Sam Altman在市政厅会议回顾AI创业孵化模式]({{< relref "posts/20260130-blogs_podcasts-ainews-sam-altmans-ai-combinator-3.md" >}})
-- [Project Genie：无限交互世界的实验性探索]({{< relref "posts/20260130-hacker_news-project-genie-experimenting-with-infinite-interact-19.md" >}})
+- [Sam Altman在市政厅会议回顾AI创业孵化模式]({{< relref "posts/20260129-blogs_podcasts-ainews-sam-altmans-ai-combinator-0.md" >}})
+- [Project Genie：无限交互世界的实验性探索]({{< relref "posts/20260129-hacker_news-project-genie-experimenting-with-infinite-interact-0.md" >}})
 - [Claude Code 发布：AI 代理直接面向客户]({{< relref "posts/20260131-hacker_news-claude-code-is-your-customer-16.md" >}})
-- [Sam Altman提出AI孵化器模式以加速初创公司发展]({{< relref "posts/20260201-blogs_podcasts-ainews-sam-altmans-ai-combinator-5.md" >}})
-- [Moltbook：首个面向AI智能体的社交网络平台]({{< relref "posts/20260202-blogs_podcasts-ainews-moltbook-the-first-social-network-for-ai-ag-1.md" >}})
+- [Sam Altman提出AI孵化器模式以加速初创公司发展]({{< relref "posts/20260129-blogs_podcasts-ainews-sam-altmans-ai-combinator-0.md" >}})
+- [Moltbook：首个面向AI智能体的社交网络平台]({{< relref "posts/20260131-blogs_podcasts-ainews-moltbook-the-first-social-network-for-ai-ag-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

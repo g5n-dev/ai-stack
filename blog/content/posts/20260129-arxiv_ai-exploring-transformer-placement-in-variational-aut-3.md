@@ -1,14 +1,31 @@
 ---
-title: "探索Transformer在表格数据变分自编码器中的位置"
-date: 2026-01-29T22:59:16+08:00
+title: 探索Transformer在表格数据变分自编码器中的位置
+date: 2026-01-29 22:59:16+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Transformer", "VAE", "表格数据", "生成模型", "cs.LG", "OpenML", "混合数据类型", "特征交互"]
-categories: ["论文", "数据"]
+entry_kind: auto
+tags:
+- Transformer
+- VAE
+- 表格数据
+- 生成模型
+- cs.LG
+- OpenML
+- 混合数据类型
+- 特征交互
+categories:
+- 论文
+- 数据
 source: arxiv
-description: "**摘要：Transformer在表格数据变分自编码器中的位置探索研究** **背景与问题：** 表格数据的生成对生成模型而言仍具挑战性。传统的变分自编码器（VAE）通常由多层感知机（MLP）组成，在处理混合数据类型时，难以有效建模特征间的关系。相比之下，Transformer凭借其注意力机制，在捕捉复杂的特征交互方面"
+description: '**摘要：Transformer在表格数据变分自编码器中的位置探索研究** **背景与问题：** 表格数据的生成对生成模型而言仍具挑战性。传统的变分自编码器（VAE）通常由多层感知机（MLP）组成，在处理混合数据类型时，难以有效建模特征间的关系。相比之下，Transformer凭借其注意力机制，在捕捉复杂的特征交互方面'
 external_url: http://arxiv.org/abs/2601.20854v1
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+aliases:
+- /posts/20260130-arxiv_ai-exploring-transformer-placement-in-variational-aut-3/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 探索Transformer在表格数据变分自编码器中的位置
@@ -253,7 +270,6 @@ $$ \log p(x) \geq \mathbb{E}_{q(z|x)}[\log p(x|z)] - D_{KL}(q(z|x) || p(z)) $$
 这篇论文推进的是**“理解”**。它没有提出一个名为“TransVAE”的特定模型来刷榜，而是揭示了架构组件与模型性能之间的因果联系。其代价是短期内可能不会产生一个极具冲击力的SOTA数字，但长期来看，它帮助社区避免盲目堆砌算力，指出了更高效、更针对性的模型设计方向。
 
 ---
-## 研究最佳实践
 
 ## 最佳实践指南
 
@@ -333,7 +349,6 @@ $$ \log p(x) \geq \mathbb{E}_{q(z|x)}[\log p(x|z)] - D_{KL}(q(z|x) || p(z)) $$
 - 该方法在多个标准表格数据集上取得了最先进的性能，证明了深度生成模型在结构化数据领域的应用潜力。
 
 ---
-## 学习路径
 
 ## 学习路径
 

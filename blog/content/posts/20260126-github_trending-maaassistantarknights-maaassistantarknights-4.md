@@ -1,12 +1,31 @@
 ---
-title: "🔥明日方舟全自动作业神器！MaaAA让托管变简单！🚀"
-date: 2026-01-26T22:15:20+08:00
+title: 🔥明日方舟全自动作业神器！MaaAA让托管变简单！🚀
+date: 2026-01-26 22:15:20+08:00
 draft: false
-entry_kind: "auto"
-tags: ["明日方舟", "游戏自动化", "C++", "跨平台", "GitHub热榜", "自动化脚本", "开源项目", "MAA"]
-categories: ["开源生态", "开发工具"]
+entry_kind: auto
+tags:
+- 明日方舟
+- 游戏自动化
+- C++
+- 跨平台
+- GitHub热榜
+- 自动化脚本
+- 开源项目
+- MAA
+categories:
+- 开源生态
+- 开发工具
 source: github_trending
 external_url: https://github.com/MaaAssistantArknights/MaaAssistantArknights
+scenarios: []
+aliases:
+- /posts/20260127-github_trending-maaassistantarknights-maaassistantarknights-0/
+- /posts/20260127-github_trending-maaassistantarknights-maaassistantarknights-4/
+- /posts/20260128-github_trending-maaassistantarknights-maaassistantarknights-0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 🚀 🔥明日方舟全自动作业神器！MaaAA让托管变简单！🚀
@@ -483,7 +502,6 @@ MAA 是 **“配置即代码”** 和 **“模型驱动工程” (MDE)** 的完�
 - **社区贡献**：在 Reddit 论坛分享 MAA 配置教程，帖文获 2000+ 点赞，帮助 500+ 海外玩家解决类似问题。
 
 ---
-## ⚖️ 与同类方案对比
 
 ## 与同类方案对比
 
@@ -513,7 +531,6 @@ MAA 是 **“配置即代码”** 和 **“模型驱动工程” (MDE)** 的完�
 - ⚠️ **依赖环境**：需确保ADB或模拟器环境稳定，否则可能影响运行。
 
 ---
-## ✅ 最佳实践指南
 
 ## 最佳实践指南
 
@@ -633,7 +650,6 @@ MAA 是 **“配置即代码”** 和 **“模型驱动工程” (MDE)** 的完�
 - 提
 
 ---
-## 🚀 性能优化建议
 
 ## 性能优化建议
 
@@ -703,7 +719,6 @@ MAA 是 **“配置即代码”** 和 **“模型驱动工程” (MDE)** 的完�
 - 项目内置了一套轻量级的 OCR（光学字符识别）系统，专门针对游戏 UI 文字识别进行了优化，展示了如何在资源受限的环境下实现高效的文字提取。
 
 ---
-## 🗺️ 循序渐进的学习路径
 
 ## 学习路径
 

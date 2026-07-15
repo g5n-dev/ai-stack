@@ -1,14 +1,30 @@
 ---
-title: "Claude Code 国内用户安装教程"
-date: 2026-04-27T17:50:52+08:00
+title: Claude Code 国内用户安装教程
+date: 2026-04-27 17:50:52+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Claude Code", "安装教程", "国内用户", "命令行工具", "AI编程", "LLM", "快速上手", "开发环境"]
-categories: ["开发工具"]
+entry_kind: auto
+tags:
+- Claude Code
+- 安装教程
+- 国内用户
+- 命令行工具
+- AI 编程
+- LLM
+- 快速上手
+- 开发环境
+categories:
+- 开发工具
 source: juejin
-description: "Claude Code 是 Anthropic 推出的命令行工具，帮助开发者直接在终端中使用 Claude 进行代码编写、调试和项目协作。对于国内用户而言，安装过程涉及环境配置、网络访问等环节，存在一定门槛。本文面向零基础读者，梳理从准备到完成配置的完整步骤，让读者能够在本地环境顺利运行 Claude Code，并将其"
+description: Claude Code 是 Anthropic 推出的命令行工具，帮助开发者直接在终端中使用 Claude 进行代码编写、调试和项目协作。对于国内用户而言，安装过程涉及环境配置、网络访问等环节，存在一定门槛。本文面向零基础读者，梳理从准备到完成配置的完整步骤，让读者能够在本地环境顺利运行
+  Claude Code，并将其
 external_url: https://juejin.cn/post/7633257924123475968
-scenarios: ["AI/ML项目", "大语言模型"]
+scenarios:
+- AI/ML项目
+- 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Claude Code 国内用户安装教程
@@ -61,7 +77,7 @@ Claude Code 是 Anthropic 推出的命令行工具，帮助开发者直接在终
 
 - [Claude Code 令牌消耗过高问题分析]({{< relref "posts/20260221-hacker_news-excessive-token-usage-in-claude-code-7.md" >}})
 - [Claude Code 实战指南：从智能助手到结对编程搭档]({{< relref "posts/20260316-juejin-claude-code-使用技巧把聪明实习生变成你的王牌搭档-0.md" >}})
-- [Claude Code 配额耗尽后接入本地模型]({{< relref "posts/20260204-hacker_news-claude-code-connect-to-a-local-model-when-your-quo-1.md" >}})
+- [Claude Code 配额耗尽后接入本地模型]({{< relref "posts/20260204-hacker_news-claude-code-connect-to-a-local-model-when-your-quo-5.md" >}})
 - [Claude Code 发布：面向基础设施的编程工具]({{< relref "posts/20260204-hacker_news-claude-code-for-infrastructure-11.md" >}})
-- [Claude Code 配额耗尽时接入本地模型的方法]({{< relref "posts/20260205-hacker_news-claude-code-connect-to-a-local-model-when-your-quo-19.md" >}})
+- [Claude Code 配额耗尽时接入本地模型的方法]({{< relref "posts/20260204-hacker_news-claude-code-connect-to-a-local-model-when-your-quo-5.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

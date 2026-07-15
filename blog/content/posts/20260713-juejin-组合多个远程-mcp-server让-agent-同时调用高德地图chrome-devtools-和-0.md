@@ -1,14 +1,31 @@
 ---
-title: "Agent 并行调用多 MCP Server 实战"
-date: 2026-07-13T10:49:59+08:00
+title: Agent 并行调用多 MCP Server 实战
+date: 2026-07-13 10:49:59+08:00
 draft: false
-entry_kind: "auto"
-tags: ["MCP Server", "Agent", "LangChain", "并行调用", "异步编程", "API集成", "Chrome DevTools", "文件操作"]
-categories: ["AI 工程"]
+entry_kind: auto
+tags:
+- MCP Server
+- Agent
+- LangChain
+- 并行调用
+- 异步编程
+- API集成
+- Chrome DevTools
+- 文件操作
+categories:
+- AI 工程
 source: juejin
-description: "概述 单一远程 MCP Server 只能提供一类工具，限制了 Agent 的交互深度。通过 LangChain 的 MultiServer 机制，可将高德地图、Chrome DevTools、文件系统等多个远程服务统一包装成一个工具集合，让 Agent 在一次请求中并行调用它们，完成跨平台、跨模态的复杂任务。 关键技"
+description: 概述 单一远程 MCP Server 只能提供一类工具，限制了 Agent 的交互深度。通过 LangChain 的 MultiServer
+  机制，可将高德地图、Chrome DevTools、文件系统等多个远程服务统一包装成一个工具集合，让 Agent 在一次请求中并行调用它们，完成跨平台、跨模态的复杂任务。
+  关键技
 external_url: https://juejin.cn/post/7661821409981153315
-scenarios: ["AI/ML项目", "命令行工具"]
+scenarios:
+- AI/ML项目
+- 命令行工具
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Agent 并行调用多 MCP Server 实战
@@ -111,5 +128,5 @@ scenarios: ["AI/ML项目", "命令行工具"]
 - [AI编程工具普及：从传统职能转向Agent工程师]({{< relref "posts/20260314-juejin-ai时代人人都是agent工程师-1.md" >}})
 - [LangChain Agent 进阶：Function Calling 与 Tool 注册]({{< relref "posts/20260419-juejin-langchain-30-天保姆级教程-day-23agent-进阶实战function-calli-0.md" >}})
 - [CLI-Gym：基于智能体环境逆向的可扩展命令行任务生成]({{< relref "posts/20260212-arxiv_ai-cli-gym-scalable-cli-task-generation-via-agentic-e-5.md" >}})
-- [Aqua：面向 AI 智能体的 CLI 消息工具]({{< relref "posts/20260223-hacker_news-aqua-a-cli-message-tool-for-ai-agents-12.md" >}})
+- [Aqua：面向 AI 智能体的 CLI 消息工具]({{< relref "posts/20260223-hacker_news-aqua-a-cli-message-tool-for-ai-agents-7.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

@@ -1,14 +1,29 @@
 ---
-title: "SkillOpt：自进化智能体技能的优化策略"
-date: 2026-05-25T16:03:16+08:00
+title: SkillOpt：自进化智能体技能的优化策略
+date: 2026-05-25 16:03:16+08:00
 draft: false
-entry_kind: "auto"
-tags: ["自进化", "智能体", "技能优化", "大模型", "AI工程", "策略优化", "元学习", "强化学习"]
-categories: ["AI 工程", "大模型"]
+entry_kind: auto
+tags:
+- 自进化
+- 智能体
+- 技能优化
+- 大模型
+- AI 工程
+- 策略优化
+- 元学习
+- 强化学习
+categories:
+- AI 工程
+- 大模型
 source: arxiv
-description: "本文围绕自进化智能体的技能管理难题，提出名为SkillOpt的执行策略框架，旨在通过动态评估与优化机制提升代理在长期任务中的适应性。鉴于摘要未提供具体实验细节，无法从摘要确认其在真实环境中的表现。该研究若取得预期效果，或为强化学习与自主系统的技能持续改进提供新的方法论参考。"
+description: 本文围绕自进化智能体的技能管理难题，提出名为SkillOpt的执行策略框架，旨在通过动态评估与优化机制提升代理在长期任务中的适应性。鉴于摘要未提供具体实验细节，无法从摘要确认其在真实环境中的表现。该研究若取得预期效果，或为强化学习与自主系统的技能持续改进提供新的方法论参考。
 external_url: http://arxiv.org/abs/2605.23904v1
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # SkillOpt：自进化智能体技能的优化策略
@@ -127,9 +142,9 @@ scenarios: ["AI/ML项目"]
 
 ### 相关文章
 
-- [代理多模态模型的元认知工具使用策略]({{< relref "posts/20260412-arxiv_ai-act-wisely-cultivating-meta-cognitive-tool-use-in--0.md" >}})
+- [代理多模态模型的元认知工具使用策略]({{< relref "posts/20260410-arxiv_ai-act-wisely-cultivating-meta-cognitive-tool-use-in--0.md" >}})
 - [MemSkill：赋予自进化代理学习与演进记忆技能]({{< relref "posts/20260203-arxiv_ai-memskill-learning-and-evolving-memory-skills-for-s-9.md" >}})
-- [Agent Skills：AI 智能体技能框架与训练方法]({{< relref "posts/20260204-hacker_news-agent-skills-8.md" >}})
-- [基于16个开源RL库的Token流生成经验总结]({{< relref "posts/20260310-blogs_podcasts-keep-the-tokens-flowing-lessons-from-16-open-sourc-7.md" >}})
+- [Agent Skills：AI 智能体技能框架与训练方法]({{< relref "posts/20260203-hacker_news-agent-skills-0.md" >}})
+- [基于16个开源RL库的Token流生成经验总结]({{< relref "posts/20260310-blogs_podcasts-keep-the-tokens-flowing-lessons-from-16-open-sourc-2.md" >}})
 - [Cirrus Labs 团队加入 OpenAI]({{< relref "posts/20260411-hacker_news-cirrus-labs-to-join-openai-0.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

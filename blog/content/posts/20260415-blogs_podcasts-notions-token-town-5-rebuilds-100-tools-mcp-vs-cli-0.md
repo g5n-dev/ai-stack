@@ -1,14 +1,30 @@
 ---
-title: "Notion联合创始人谈Token Town：知识工作AI智能体即将面世"
-date: 2026-04-15T03:25:27+08:00
+title: Notion联合创始人谈Token Town：知识工作AI智能体即将面世
+date: 2026-04-15 03:25:27+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI智能体", "Notion", "MCP协议", "知识工作", "插件生态", "软件工厂", "大模型", "效率工具"]
-categories: ["产品与创业"]
+entry_kind: auto
+tags:
+- AI 智能体
+- Notion
+- MCP 协议
+- 知识工作
+- 插件生态
+- 软件工厂
+- 大模型
+- 效率工具
+categories:
+- 产品与创业
 source: blogs_podcasts
-description: "背景 Notion 联合创始人 Simon Last 与 AI 负责人 Sarah Sachs 在公开活动中透露，公司内部代号为 “Token Town” 的项目已经进入第 5 次完整重建，累计推出 100 多款工具和插件，旨在把 AI 代理真正落地到知识工作场景，让用户能够“即装即用”。 关键要点 - **5 次重建"
+description: 背景 Notion 联合创始人 Simon Last 与 AI 负责人 Sarah Sachs 在公开活动中透露，公司内部代号为 “Token
+  Town” 的项目已经进入第 5 次完整重建，累计推出 100 多款工具和插件，旨在把 AI 代理真正落地到知识工作场景，让用户能够“即装即用”。 关键要点 -
+  **5 次重建
 external_url: https://www.latent.space/p/notion
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Notion联合创始人谈Token Town：知识工作AI智能体即将面世
@@ -142,9 +158,9 @@ Notion的实践验证了"AI代理作为软件工厂"这一命题的可行性。S
 
 ### 相关文章
 
-- [不要信任AI智能体]({{< relref "posts/20260228-hacker_news-dont-trust-ai-agents-19.md" >}})
-- [不要信任 AI 智能体]({{< relref "posts/20260228-hacker_news-dont-trust-ai-agents-7.md" >}})
-- [Replit Agent 4：面向知识工作的智能体]({{< relref "posts/20260316-blogs_podcasts-ainews-replit-agent-4-the-knowledge-work-agent-13.md" >}})
+- [不要信任AI智能体]({{< relref "posts/20260228-hacker_news-dont-trust-ai-agents-4.md" >}})
+- [不要信任 AI 智能体]({{< relref "posts/20260228-hacker_news-dont-trust-ai-agents-4.md" >}})
+- [Replit Agent 4：面向知识工作的智能体]({{< relref "posts/20260312-blogs_podcasts-ainews-replit-agent-4-the-knowledge-work-agent-1.md" >}})
 - [Mozilla组建AI联盟以对抗OpenAI与Anthropic]({{< relref "posts/20260129-hacker_news-mozilla-is-building-an-ai-rebel-alliance-to-take-o-10.md" >}})
-- [Moltbook：首个面向AI智能体的社交网络平台]({{< relref "posts/20260202-blogs_podcasts-ainews-moltbook-the-first-social-network-for-ai-ag-1.md" >}})
+- [Moltbook：首个面向AI智能体的社交网络平台]({{< relref "posts/20260131-blogs_podcasts-ainews-moltbook-the-first-social-network-for-ai-ag-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

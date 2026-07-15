@@ -21,6 +21,12 @@ description: 以下是内容的中文总结： 本文介绍了一种名为**结�
 external_url: http://arxiv.org/abs/2603.08682v1
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260311-arxiv_ai-structural-causal-bottleneck-models-7/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 结构因果瓶颈模型：通过因果约束优化表征学习
@@ -111,7 +117,6 @@ scenarios:
 
 ---
 
-### 深度解析：结构因果瓶颈模型
 
 ### 1. 研究背景与问题
 
@@ -452,8 +457,8 @@ SCBM特别适用于那些需要高可靠性、强可解释性以及面临数据�
 
 ### 相关文章
 
-- [评估学习表征可识别性的挑战与难点]({{< relref "posts/20260303-arxiv_ai-who-guards-the-guardians-the-challenges-of-evaluat-6.md" >}})
 - [评估学习表征可识别性的挑战与难点]({{< relref "posts/20260302-arxiv_ai-who-guards-the-guardians-the-challenges-of-evaluat-6.md" >}})
-- [干预下基于部分因果学习的有效选择性共形推断]({{< relref "posts/20260304-arxiv_ai-partial-causal-structure-learning-for-valid-select-1.md" >}})
+- [评估学习表征可识别性的挑战与难点]({{< relref "posts/20260302-arxiv_ai-who-guards-the-guardians-the-challenges-of-evaluat-6.md" >}})
+- [干预下基于部分因果学习的有效选择性共形推断]({{< relref "posts/20260303-arxiv_ai-partial-causal-structure-learning-for-valid-select-1.md" >}})
 - [超越预测不确定性！🚀结构约束下的可靠表征学习！🔥]({{< relref "posts/20260125-arxiv_ai-beyond-predictive-uncertainty-reliable-representat-7.md" >}})
 - [可扩展随机小波特征：带收敛保证的高效非平稳核近似]({{< relref "posts/20260203-arxiv_ai-scalable-random-wavelet-features-efficient-non-sta-8.md" >}})

@@ -22,6 +22,12 @@ external_url: https://www.bracketmadness.ai
 scenarios:
 - AI/ML项目
 - 大语言模型
+aliases:
+- /posts/20260317-hacker_news-show-hn-march-madness-bracket-challenge-for-ai-age-18/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AI 智能体三月挑战赛
@@ -186,8 +192,8 @@ NCAA 锦标赛采用单场淘汰制，具有较高的不可预测性。目前的
 
 ### 相关文章
 
-- [AI 基准测试新进展：Game Arena 推进评估方法]({{< relref "posts/20260203-hacker_news-advancing-ai-benchmarking-with-game-arena-14.md" >}})
+- [AI 基准测试新进展：Game Arena 推进评估方法]({{< relref "posts/20260202-hacker_news-advancing-ai-benchmarking-with-game-arena-2.md" >}})
 - [Agent Skills：大模型智能体的技能评估框架]({{< relref "posts/20260203-hacker_news-agent-skills-0.md" >}})
-- [Agent Skills：AI 智能体技能评估框架]({{< relref "posts/20260204-hacker_news-agent-skills-11.md" >}})
-- [Cord：AI 智能体树状协作框架]({{< relref "posts/20260221-hacker_news-cord-coordinating-trees-of-ai-agents-17.md" >}})
+- [Agent Skills：AI 智能体技能评估框架]({{< relref "posts/20260203-hacker_news-agent-skills-0.md" >}})
+- [Cord：AI 智能体树状协作框架]({{< relref "posts/20260221-hacker_news-cord-coordinating-trees-of-ai-agents-9.md" >}})
 - [LangGraph核心解析：基于有向环图的状态机思维与灵活性突破]({{< relref "posts/20260304-juejin-agent教程16认识langchain中状态机思维-0.md" >}})

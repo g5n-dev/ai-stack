@@ -1,14 +1,34 @@
 ---
-title: "好奇心即知识：基于主动推理的自一致学习与无遗憾优化"
-date: 2026-02-06T23:01:34+08:00
+title: 好奇心即知识：基于主动推理的自一致学习与无遗憾优化
+date: 2026-02-06 23:01:34+08:00
 draft: false
-entry_kind: "auto"
-tags: ["主动推理", "探索与利用", "自由能", "贝叶斯优化", "无遗憾优化", "强化学习", "AI理论", "cs.LG"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- 主动推理
+- 探索与利用
+- 自由能
+- 贝叶斯优化
+- 无遗憾优化
+- 强化学习
+- AI理论
+- cs.LG
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "本文针对主动推理中如何平衡探索与利用的问题进行了理论研究。 主动推理通过最小化期望自由能来统一探索和利用，其中好奇心系数用于调节信息获取与任务绩效之间的权衡。然而，以往并不清楚这种平衡在何时能同时保证连贯的学习和高效的决策：好奇心不足会导致短视的利用，阻碍不确定性的消除；而好奇心过剩则会引发不必要的探索和后悔。 本研究"
+description: 本文针对主动推理中如何平衡探索与利用的问题进行了理论研究。 主动推理通过最小化期望自由能来统一探索和利用，其中好奇心系数用于调节信息获取与任务绩效之间的权衡。然而，以往并不清楚这种平衡在何时能同时保证连贯的学习和高效的决策：好奇心不足会导致短视的利用，阻碍不确定性的消除；而好奇心过剩则会引发不必要的探索和后悔。
+  本研究
 external_url: http://arxiv.org/abs/2602.06029v1
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+aliases:
+- /posts/20260207-arxiv_ai-curiosity-is-knowledge-self-consistent-learning-an-8/
+- /posts/20260208-arxiv_ai-curiosity-is-knowledge-self-consistent-learning-an-8/
+- /posts/20260209-arxiv_ai-curiosity-is-knowledge-self-consistent-learning-an-8/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 好奇心即知识：基于主动推理的自一致学习与无遗憾优化
@@ -251,7 +271,6 @@ $$ G(\pi) = \underbrace{\mathbb{E}_q [\ln p(o|\pi)]}_{\text{Pragmatic (Reward)}}
 这篇论文推进
 
 ---
-## 研究最佳实践
 
 ## 最佳实践指南
 
@@ -339,7 +358,6 @@ $$ G(\pi) = \underbrace{\mathbb{E}_q [\ln p(o|\pi)]}_{\text{Pragmatic (Reward)}}
 - 研究将认知科学中的主动推理理论与机器学习算法深度融合，为开发具备类人认知能力的通用人工智能提供了一条新的、可解释的路径。
 
 ---
-## 学习路径
 
 ## 学习路径
 
@@ -517,7 +535,7 @@ $$ G(\pi) = \underbrace{\mathbb{E}_q [\ln p(o|\pi)]}_{\text{Pragmatic (Reward)}}
 
 - [测试时也能发现新规律？🤯AI解锁动态学习能力！]({{< relref "posts/20260125-arxiv_ai-learning-to-discover-at-test-time-6.md" >}})
 - [基于经验的试错算法超越语言模型]({{< relref "posts/20260130-arxiv_ai-language-based-trial-and-error-falls-behind-in-the-3.md" >}})
-- [通过文本反馈扩展强化学习的能力边界]({{< relref "posts/20260204-arxiv_ai-expanding-the-capabilities-of-reinforcement-learni-5.md" >}})
+- [通过文本反馈扩展强化学习的能力边界]({{< relref "posts/20260203-arxiv_ai-expanding-the-capabilities-of-reinforcement-learni-5.md" >}})
 - [视觉语言模型能否通过交互学习直觉物理]({{< relref "posts/20260206-arxiv_ai-can-vision-language-models-learn-intuitive-physics-5.md" >}})
 - [探索面向智能体的推理奖励模型]({{< relref "posts/20260130-arxiv_ai-exploring-reasoning-reward-model-for-agents-4.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

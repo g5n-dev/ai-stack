@@ -1,451 +1,211 @@
-# AI Stack - 终端风格自动博客系统
-
 <div align="center">
 
-![Python](https://img.shields.io/badge/Python-3.11+-blue.svg)
-![Hugo](https://img.shields.io/badge/Hugo-0.121+-ff4081.svg)
-![License](https://img.shields.io/badge/License-MIT-green.svg)
-![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-automated-blueviolet.svg)
+<img src="./docs/assets/readme/hero.webp" alt="AI Stack：从 AI 信息流到动态知识图谱" width="100%" />
 
-**一个基于 GitHub Pages 的终端风格自动博客系统，每日自动从多个来源爬取内容，使用 Anthropic API 进行总结、翻译和生成，并推送到社交媒体平台。**
+<h1>AI Stack · AI 史塔克</h1>
 
-[功能特性](#功能特性) • [快速开始](#快速开始) • [文档](docs/README.md) • [演示](#演示) • [贡献](#贡献)
+<p><strong>AI 情报长期档案 + 动态场景知识图谱</strong></p>
+<p>把每日汹涌的 AI 信息流，变成可回溯、可检验、可探索的技术脉络。</p>
+<p><em>From AI firehose to a living knowledge graph.</em></p>
+
+<a href="https://github.com/g5n-dev/ai-stack/actions/workflows/deploy.yml"><img alt="Build and Deploy" src="https://img.shields.io/github/actions/workflow/status/g5n-dev/ai-stack/deploy.yml?branch=main&label=Build%20%26%20Deploy&style=flat-square&logo=githubactions&logoColor=white" /></a>
+<img alt="Python 3.11+" src="https://img.shields.io/badge/Python-3.11%2B-3776AB?style=flat-square&logo=python&logoColor=white" />
+<img alt="Hugo 0.153.4" src="https://img.shields.io/badge/Hugo-0.153.4-FF4088?style=flat-square&logo=hugo&logoColor=white" />
+<a href="https://ai-stack.site/"><img alt="ai-stack.site status" src="https://img.shields.io/website?url=https%3A%2F%2Fai-stack.site%2F&label=ai-stack.site&style=flat-square" /></a>
+
+<p>
+  <a href="https://ai-stack.site/"><strong>在线站点</strong></a>
+  ·
+  <a href="https://ai-stack.site/scenarios/"><strong>探索图谱</strong></a>
+  ·
+  <a href="#快速开始"><strong>快速开始</strong></a>
+  ·
+  <a href="./docs/README.md"><strong>详细文档</strong></a>
+</p>
 
 </div>
 
----
+AI Stack 不是另一份稍纵即逝的新闻列表。它持续采集 AI 技术信息，经过历史去重、相关性筛选与结构化处理，将文章、标签、技术栈和应用场景沉淀为可搜索的长期档案，并用分层知识图谱呈现它们之间的关系。
 
-## 功能特性
+## 动态演示
 
-- 🔍 **多源爬取**：支持 GitHub Trending、Hacker News、ArXiv AI 论文、掘金、博客/播客 RSS 等多个数据源
-- 🤖 **AI 处理**：使用 Anthropic API 自动总结、翻译和生成内容
-- 💻 **终端风格**：独特的终端界面设计，黑底绿字，等宽字体
-- 🔄 **自动化**：GitHub Actions 定时任务，每日自动更新
-- 📱 **多平台推送**：支持微信公众号、Twitter/X、Telegram 推送
-- ⚙️ **高度可配置**：通过 YAML 配置文件灵活定制
-- 🌍 **国际化**：支持多语言内容翻译
-- 📊 **智能分析**：AI 生成深度评论和技术分析
+<a href="https://ai-stack.site/scenarios/">
+  <img src="./docs/assets/readme/graph-demo.gif" alt="AI Stack 动态场景知识图谱演示" width="100%" />
+</a>
 
-## 技术栈
+<p align="center">切换技术总览与标签社区，搜索节点，展开邻域，沿关联路径追踪文章。</p>
 
-- **爬虫**：Python + requests + BeautifulSoup + feedparser
-- **AI 处理**：Anthropic API (Claude)
-- **静态站点**：Hugo
-- **自动化**：GitHub Actions
-- **推送**：各平台官方 API
+<details>
+<summary>查看完整静态界面</summary>
 
----
+<img src="./docs/assets/readme/graph-overview.webp" alt="AI Stack 知识图谱完整界面" width="100%" />
+
+</details>
+
+## 三项核心价值
+
+| 01 · 多源情报雷达 | 02 · 可追溯内容档案 | 03 · 活的场景图谱 |
+| --- | --- | --- |
+| 聚合 GitHub Trending、Hacker News、arXiv、掘金与技术 RSS；本地还可按需启用 Reddit、X/Twitter 和 SearXNG 兜底。 | 在模型处理前执行历史 URL 去重，再进行筛选、摘要、翻译、结构化生成和来源回链，让每条情报有出处、可复查。 | 以“技术总览 → 标签社区 → 节点邻域”渐进探索，只按需加载当前子图，避免把全量密图一次性塞进浏览器。 |
 
 ## 快速开始
 
-### 前置要求
+### 路径 A：只看站点与图谱
 
-- Python 3.11 或更高版本
-- Git
-- GitHub 账户
-- Anthropic API 密钥
-
-### 1. 克隆仓库
+适合体验终端主题、文章归档和知识图谱。无需 Python 或模型密钥，只需 Git 与 Hugo Extended；建议与线上保持一致，使用 Hugo `0.153.4`。
 
 ```bash
-git clone https://github.com/yourusername/ai-stack.git
-cd ai-stack
-```
-
-### 2. 运行设置脚本
-
-```bash
-chmod +x scripts/setup.sh
-./scripts/setup.sh
-```
-
-这将自动：
-
-- 创建 Python 虚拟环境
-- 安装所有依赖
-- 生成配置文件模板
-
-### 3. 配置环境变量
-
-编辑 `.env` 文件，填入你的 API 密钥：
-
-```bash
-nano .env
-```
-
-必需配置：
-
-```env
-ANTHROPIC_AUTH_TOKEN=your_anthropic_token
-ANTHROPIC_BASE_URL=https://api.minimaxi.com/anthropic
-ANTHROPIC_MODEL=MiniMax-M2.7-highspeed
-```
-
-可选配置：
-
-```env
-# 优先填你自己的 SearXNG 实例；为空时会尝试公共实例做搜索兜底
-SEARXNG_BASE_URL=https://your-searxng-instance/search
-```
-
-### 4. 本地测试运行
-
-```bash
-# 激活虚拟环境
-source venv/bin/activate
-
-# 预检本地环境
-python3 scripts/preflight.py
-
-# 只跑抓取 + AI 处理 + Markdown 生成
-./scripts/run_local.sh --skip-build
-
-# 跑完整本地链路（包含 Hugo 构建）
-./scripts/run_local.sh
-
-# 本地预览 Hugo 站点
-./scripts/run_local.sh --serve
-```
-
-访问 `http://localhost:1313` 查看效果。
-
-### 5. 部署到 GitHub Pages
-
-```bash
-# 提交代码
-git add .
-git commit -m "Initial setup"
-git push origin main
-```
-
-GitHub Actions 会自动构建和部署！
-
----
-
-## 项目结构
-
-```
-ai-stack/
-├── crawler/                    # 爬虫模块
-│   ├── __init__.py
-│   ├── github_trending.py     # GitHub Trending 爬虫
-│   ├── hacker_news.py         # Hacker News 爬虫
-│   ├── arxiv_papers.py        # ArXiv 论文爬虫
-│   ├── juejin_rss.py          # 掘金 RSS 爬虫
-│   ├── blogs_podcasts.py      # 大佬博客/播客 RSS 聚合
-│   ├── dedupe.py              # 去重工具
-│   └── main.py                # 爬虫调度器
-├── processor/                 # 内容处理模块
-│   ├── __init__.py
-│   ├── anthropic_client.py    # Anthropic API 客户端
-│   ├── summarizer.py          # 内容总结
-│   ├── translator.py          # 翻译功能
-│   ├── generator.py           # 内容生成
-│   ├── enricher.py            # DeepWiki 等内容增强
-│   └── main.py                # 处理流程编排
-├── publisher/                 # 推送模块
-│   ├── __init__.py
-│   ├── twitter_publisher.py    # Twitter 推送
-│   ├── telegram_publisher.py  # Telegram 推送
-│   ├── wechat_publisher.py    # 微信公众号推送
-│   └── main.py                # 推送调度器
-├── blog/                      # Hugo 博客站点
-│   ├── content/
-│   │   └── posts/             # 生成的 Markdown 文章
-│   ├── themes/
-│   │   └── terminal-theme/    # 终端风格主题
-│   ├── static/css/
-│   │   └── terminal.css       # 终端样式
-│   └── config.toml            # Hugo 配置
-├── scripts/                   # 辅助脚本
-│   ├── generate_content.py    # 内容生成主脚本
-│   ├── deploy.sh              # 部署脚本
-│   └── setup.sh               # 环境设置脚本
-├── config/                    # 配置文件
-│   ├── sources.yaml           # 爬虫源配置
-│   ├── anthropic.yaml         # Anthropic API 配置
-│   └── publisher.yaml         # 推送平台配置
-├── docs/                      # 详细文档
-│   └── README.md
-├── requirements.txt           # Python 依赖
-├── .github/workflows/
-│   └── daily-update.yml       # GitHub Actions 定时任务
-├── .gitignore               # Git 忽略文件
-└── README.md               # 项目说明
-```
-
----
-
-## 配置说明
-
-### 爬虫源配置 (config/sources.yaml)
-
-```yaml
-sources:
-  github_trending:
-    enabled: true
-    period: daily             # daily 或 weekly
-    language: all             # all, python, javascript 等
-    limit: 10
-    spoken_language_code: 'zh'
-
-  hacker_news:
-    enabled: true
-    limit: 20
-
-  arxiv_ai:
-    enabled: true
-    categories:
-      - 'cs.AI'
-      - 'cs.LG'
-      - 'cs.CL'
-    limit: 10
-    sort_by: 'submittedDate'
-
-  juejin:
-    enabled: true
-    tags:
-      - '人工智能'
-      - '机器学习'
-    limit: 5
-
-  blogs_podcasts:
-    enabled: true
-    limit: 10
-    feeds:
-      - name: "Andrej Karpathy Blog"
-        url: "https://karpathy.github.io/feed.xml"
-        type: "blog"
-      - name: "Lex Fridman Podcast"
-        url: "https://lexfridman.com/feed/podcast/"
-        type: "podcast"
-```
-
-### Anthropic API 配置 (config/anthropic.yaml)
-
-```yaml
-anthropic:
-  api_key: "${ANTHROPIC_AUTH_TOKEN}"
-  base_url: "${ANTHROPIC_BASE_URL}"
-  model: "${ANTHROPIC_MODEL}"
-  max_tokens: 4096
-  temperature: 0.7
-  disable_thinking: true
-  min_fallback_max_tokens: 2048
-
-  summary:
-    max_length: 200
-    style: "concise"      # concise, detailed, bullet
-
-  translation:
-    default_target_lang: "zh"
-    preserve_formatting: true
-
-  generation:
-    intro_length: 100
-    comment_length: 300
-    style: "professional"
-```
-
-### 推送平台配置 (config/publisher.yaml)
-
-```yaml
-publishers:
-  twitter:
-    enabled: false          # 改为 true 启用
-    auto_tweet: true
-    max_length: 280
-
-  telegram:
-    enabled: false
-    chat_id: "${TELEGRAM_CHAT_ID}"
-    bot_token: "${TELEGRAM_BOT_TOKEN}"
-
-  wechat:
-    enabled: false
-    app_id: "${WECHAT_APPID}"
-    app_secret: "${WECHAT_SECRET}"
-```
-
----
-
-## 使用指南
-
-### 日常使用
-
-**手动生成内容：**
-
-```bash
-python scripts/generate_content.py
-```
-
-**长时间抓取（例如 8 小时）+ 去重：**
-
-```bash
-python scripts/generate_content.py --crawl-duration-hours 8 --crawl-interval-minutes 30
-```
-
-**预览本地站点：**
-
-```bash
-cd blog
+git clone https://github.com/g5n-dev/ai-stack.git
+cd ai-stack/blog
 hugo server -D
 ```
 
-**构建生产版本：**
+打开 [http://localhost:1313](http://localhost:1313)。仓库已经包含站点内容和生成后的图谱数据。
+
+### 路径 B：运行完整情报流水线
+
+需要 Python `3.11+`、Hugo Extended，以及一个兼容 Anthropic Messages API 的模型端点。
 
 ```bash
-cd blog
-hugo --minify
+git clone https://github.com/g5n-dev/ai-stack.git
+cd ai-stack
+
+# 创建 venv、安装依赖，并从 .env.example 生成 .env
+bash scripts/setup.sh
+
+# 填入模型端点、模型名与密钥
+nano .env
+
+# 预检、采集、处理、构建并启动 Hugo
+bash scripts/run_local.sh --serve
 ```
 
-### GitHub Actions
+完整流水线会调用外部数据源和模型 API，可能产生费用。也可以缩短路径：
 
-- **定时任务**：每天 UTC 时间 02:00（北京时间 10:00）自动运行
-- **手动触发**：访问 Actions 页面，点击 "Run workflow"
+```bash
+# 只生成 Markdown，不构建 Hugo
+bash scripts/run_local.sh --skip-build
 
-### 自定义
+# 生成内容并构建静态站点
+bash scripts/run_local.sh
+```
 
-**添加新的爬虫源：**
+## 工作原理
 
-1. 在 `crawler/` 目录创建新文件
-2. 在 `config/sources.yaml` 添加配置
-3. 在 `crawler/main.py` 注册爬虫
+```mermaid
+flowchart LR
+  GH["GitHub Trending"] --> C["采集与规范化"]
+  HN["Hacker News"] --> C
+  AX["arXiv"] --> C
+  JR["掘金 / 技术 RSS"] --> C
+  OP["可选：Reddit / X / SearXNG"] --> C
 
-**自定义终端主题：**
-编辑 `blog/themes/terminal-theme/assets/css/style.css`
+  C --> D["历史 URL 去重"]
+  D --> F["AI 相关性筛选"]
+  F --> M["Anthropic Messages 兼容层"]
+  M --> P["摘要 · 翻译 · 内容增强"]
+  P --> T["分类 · 标签 · 场景"]
+  T --> O["Markdown + Graph JSON v2"]
+  O --> B["Hugo 构建"]
 
----
+  B --> A["文章长期归档"]
+  B --> G["动态场景知识图谱"]
+  B --> W["GitHub Pages / RSS"]
+  W --> S["IndexNow / 搜索引擎通知"]
+```
 
-## API 密钥配置
+采集、处理、发布和展示彼此解耦。新增来源主要落在 `crawler/`，内容理解与图谱生成位于 `processor/`，Hugo 主题消费 Markdown 与拆分后的图谱 JSON。
 
-在 GitHub 仓库的 **Settings > Secrets and variables > Actions** 中添加：
+## 核心能力
 
-### 必需的 Secrets
+| 能力 | 说明 |
+| --- | --- |
+| 多源采集 | 五类核心来源由生产任务持续采集；Reddit 与 X/Twitter 可在本地配置启用，CI 运行档位默认关闭。 |
+| 历史去重 | 使用规范化外链识别已归档内容，先去重、再限制每来源处理量，避免重复消耗模型和覆盖旧文章。 |
+| AI 内容管线 | 自动完成相关性筛选、摘要、翻译、评论、标签与场景分析，并保留原始来源链接。 |
+| 模型兼容层 | 基于 Anthropic SDK 与 Messages 请求结构，模型和 `base_url` 可配置；包含 MiniMax thinking-only/截断响应的兼容处理。 |
+| GitHub 项目增强 | 为仓库内容补充 DeepWiki 上下文与结构化技术信息，形成更适合长期阅读的项目档案。 |
+| 分层知识图谱 | 首屏核心图、社区摘要、热点节点和焦点分片按层加载；搜索覆盖完整索引，画布只渲染当前子图。 |
+| 自动发布与监测 | Actions 生成文章与图谱、校验数据、构建 Pages、通知搜索引擎，并独立检查线上数据新鲜度。 |
 
-- `ANTHROPIC_AUTH_TOKEN` - 你的 Anthropic API 密钥
-- `ANTHROPIC_BASE_URL` - Anthropic API 基础 URL
-- `ANTHROPIC_MODEL` - 模型名称，例如 `MiniMax-M2.7-highspeed`
+## 配置与部署
 
-### 可选的 Secrets
+### 环境变量
 
-**Twitter 推送：**
+`scripts/setup.sh` 会从 [`.env.example`](./.env.example) 创建本地 `.env`。密钥只应放在本地环境或 GitHub Actions Secrets 中。
 
-- `TWITTER_API_KEY`
-- `TWITTER_BEARER_TOKEN`
+| 变量 | 必需 | 用途 |
+| --- | --- | --- |
+| `ANTHROPIC_AUTH_TOKEN` | 是 | Anthropic Messages 兼容端点的认证令牌。 |
+| `ANTHROPIC_BASE_URL` | 是 | 模型 API 基础地址；示例配置使用 MiniMax Anthropic 兼容端点。 |
+| `ANTHROPIC_MODEL` | 建议 | 显式指定模型；兼容层也提供后端相关默认值。 |
+| `SEARXNG_BASE_URL` | 否 | 自建 SearXNG 搜索地址；未配置时可尝试公共实例。 |
 
-**Telegram 推送：**
+进一步配置集中在：
 
-- `TELEGRAM_BOT_TOKEN`
-- `TELEGRAM_CHAT_ID`
+- [`config/sources.yaml`](./config/sources.yaml)：来源、抓取数量、超时与搜索兜底。
+- [`config/anthropic.yaml`](./config/anthropic.yaml)：模型参数、筛选、摘要、生成、标签和场景分析。
+- [`config/publisher.yaml`](./config/publisher.yaml)：微信、X/Twitter、Telegram 推送，默认关闭。
+- [`runtime_profile.py`](./runtime_profile.py)：本地与 CI 的来源预算、并发和生成档位。
 
-**微信推送：**
+### GitHub Pages
 
-- `WECHAT_APPID`
-- `WECHAT_SECRET`
+[`Build and Deploy`](./.github/workflows/deploy.yml) 有三种触发方式：
 
-详细的 API 密钥获取方法请查看 [详细文档](docs/README.md)。
+- 每小时第 `17` 分钟自动运行，避开整点拥堵；
+- 推送到 `main` 时运行；
+- 在 Actions 页面手动触发。
 
----
+生产工作流固定 Python `3.11`、Node.js `22` 与 Hugo Extended `0.153.4`。推送到 `main` 时直接验证并部署已评审的内容快照，避免代码与样式更新被长时间抓取阻塞；小时任务和手动任务才执行抓取、历史质量清单、图谱重建与生成数据提交。两条路径都会构建 Hugo 与 Pagefind、部署 GitHub Pages并通知搜索引擎。独立的 [`monitoring.yml`](./.github/workflows/monitoring.yml) 每 6 小时检查仓库与线上图谱的新鲜度。
 
-## 演示
+生产地址为 [https://ai-stack.site/](https://ai-stack.site/)，图谱入口为 [https://ai-stack.site/scenarios/](https://ai-stack.site/scenarios/)。域名、Secrets 与 Pages 设置见 [部署指南](./DEPLOYMENT.md)。
 
-### 博客页面
+## 项目结构
 
-[访问演示站点](https://yourusername.github.io/ai-stack/) 查看终端风格博客效果。
-
-### 文章示例
-
-生成的文章包含：
-
-- 原始内容链接和信息
-- AI 生成的中文总结
-- 翻译内容
-- AI 评论和深度分析
-
-### 社交媒体推送
-
-内容会自动推送到启用的平台：
-
-- Twitter/X（短推文）
-- Telegram（富文本消息）
-- 微信公众号（图文消息）
-
----
-
-## 贡献
-
-欢迎贡献！请遵循以下步骤：
-
-1. Fork 本仓库
-2. 创建特性分支 (`git checkout -b feature/AmazingFeature`)
-3. 提交更改 (`git commit -m 'Add some AmazingFeature'`)
-4. 推送到分支 (`git push origin feature/AmazingFeature`)
-5. 开启 Pull Request
-
-### 贡献方向
-
-- 新增数据源爬虫
-- 改进终端主题样式
-- 优化 AI 提示词
-- 添加新的推送平台
-- 文档改进
-
----
+```text
+ai-stack/
+├── crawler/             # 数据源、搜索兜底与抓取编排
+├── processor/           # 模型兼容层、内容处理、标签与图谱
+├── publisher/           # 微信、X/Twitter、Telegram 发布器
+├── ai_stack/            # 领域模型、清单、迁移与流水线 CLI
+├── blog/                # Hugo 内容、主题、静态资源与 Graph JSON
+├── config/              # 来源、模型、发布与标签配置
+├── scripts/             # 本地运行、校验、构建和运维脚本
+├── tests/               # Python、JavaScript 与 Playwright 测试
+├── docs/                # 架构、部署和操作文档
+└── .github/workflows/   # PR CI、生产部署、监控与内容维护
+```
 
 ## 文档
 
-查看 [详细文档](docs/README.md) 了解：
+| 文档 | 内容 |
+| --- | --- |
+| [详细使用文档](./docs/README.md) | 安装、配置、日常命令与故障排查。 |
+| [部署指南](./DEPLOYMENT.md) | GitHub Pages、自定义域名、Secrets 与部署验证。 |
+| [分支架构](./docs/BRANCH_ARCHITECTURE.md) | 分支职责、同步机制与部署边界。 |
+| [历史文章质量报告](./docs/HISTORICAL_CONTENT_QUALITY.md) | 异常识别、去重、透明归档、标签修复与验收统计。 |
+| [CI 信任模型](./docs/architecture/ci-trust-model.md) | 工作流权限、发布边界与安全假设。 |
+| [系统设计](./docs/系统设计文档.md) | 数据流、AI 处理、展示层和扩展设计。 |
 
-- 完整的配置说明
-- 故障排查指南
-- 开发指南
-- API 密钥获取方法
+## 贡献
 
----
+欢迎围绕新数据源、内容质量、图谱交互、性能与可靠性提交改进。请让一次改动保持单一职责，并先运行与改动范围对应的测试。
 
-## 常见问题
+```bash
+git checkout -b feature/your-change
+python3 -m pip install pytest==9.0.3
+python3 -m unittest tests.test_tag_graph_runtime tests.test_generate_content_guards
+python3 -m pytest -q tests/test_graph_deploy_contract.py tests/test_site_header_contract.py
+```
 
-**Q: 如何修改爬取频率？**
-
-A: 编辑 `.github/workflows/daily-update.yml`，修改 `cron` 表达式。
-
-**Q: 如何调整 AI 生成内容长度？**
-
-A: 编辑 `config/anthropic.yaml` 中的 `intro_length` 和 `comment_length`。
-
-**Q: 如何自定义终端颜色？**
-
-A: 编辑 `blog/themes/terminal-theme/assets/css/style.css` 中的 CSS 变量。
-
-**Q: 爬虫失败了怎么办？**
-
-A: 查看日志，可能是网络问题或网站结构变更。可以尝试更换代理或联系开发者。
-
-更多问题请查看 [详细文档](docs/README.md) 或提交 Issue。
-
----
-
-## 许可证
-
-本项目采用 [MIT 许可证](LICENSE)。
-
----
-
-## 致谢
-
-- [Hugo](https://gohugo.io/) - 强大的静态站点生成器
-- [Anthropic](https://www.anthropic.com/) - AI API 提供商
-- [GitHub Actions](https://github.com/features/actions) - CI/CD 平台
-
----
-
----
+- Bug 与功能建议：[GitHub Issues](https://github.com/g5n-dev/ai-stack/issues)
+- 方案讨论与经验分享：[GitHub Discussions](https://github.com/g5n-dev/ai-stack/discussions)
+- PR 检查规则：[`.github/workflows/ci.yml`](./.github/workflows/ci.yml)
 
 <div align="center">
 
-**如果这个项目对你有帮助，请给个 ⭐ Star！**
+如果 AI Stack 帮你从信息噪声中找到长期线索，欢迎点亮一个 Star。
 
-Made with ❤️ by AI Stack
+<strong>Built for traceable intelligence, not disposable feeds.</strong>
 
 </div>

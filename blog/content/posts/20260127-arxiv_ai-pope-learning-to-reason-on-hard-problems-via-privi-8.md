@@ -1,12 +1,29 @@
 ---
-title: "🔥POPE：用特权探索让AI学会解决复杂难题！"
-date: 2026-01-27T23:10:51+08:00
+title: 🔥POPE：用特权探索让AI学会解决复杂难题！
+date: 2026-01-27 23:10:51+08:00
 draft: false
-entry_kind: "auto"
-tags: ["强化学习", "LLM", "推理能力", "POPE", "RL", "特权探索", "探索策略", "奖励稀疏"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- 强化学习
+- LLM
+- 推理能力
+- POPE
+- RL
+- 特权探索
+- 探索策略
+- 奖励稀疏
+categories:
+- 大模型
+- 论文
 source: arxiv
 external_url: http://arxiv.org/abs/2601.18779v1
+scenarios: []
+aliases:
+- /posts/20260128-arxiv_ai-pope-learning-to-reason-on-hard-problems-via-privi-8/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 📚 🔥POPE：用特权探索让AI学会解决复杂难题！
@@ -267,7 +284,6 @@ POPE的创新在于它没有重新发明RL算法，而是重新定义了**“输
 *   **假设**：**推理能力的可组合性**。即“在提示A下完成推理B的能力”可以迁移到“在无提示下
 
 ---
-## ✅ 研究最佳实践
 
 ## 最佳实践指南
 
@@ -344,7 +360,6 @@ POPE的创新在于它没有重新发明RL算法，而是重新定义了**“输
 - 潜力：通用性强且易扩展** 🔧：框架可兼容不同强化学习算法（如策略梯度、Q-learning）和特权信息类型（如图神经网络先验、物理模型），
 
 ---
-## 🗺️ 学习路径
 
 ## 学习路径：POPE (Privileged On-Policy Exploration)
 

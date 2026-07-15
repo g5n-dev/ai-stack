@@ -1,14 +1,29 @@
 ---
-title: "SpecKV：压缩感知Gamma选择优化自适应推测解码"
-date: 2026-05-05T23:13:55+08:00
+title: SpecKV：压缩感知Gamma选择优化自适应推测解码
+date: 2026-05-05 23:13:55+08:00
 draft: false
-entry_kind: "auto"
-tags: ["大模型推理", "推测解码", "压缩感知", "Gamma选择", "自适应", "加速", "模型优化", "LLM"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- 大模型推理
+- 推测解码
+- 压缩感知
+- Gamma选择
+- 自适应
+- 加速
+- 模型优化
+- LLM
+categories:
+- 大模型
+- AI 工程
 source: arxiv
-description: "SpecKV研究的是大模型推理中的speculative decoding加速问题。当前方法在选择推测token数量（gamma）时缺乏灵活性，且未考虑键值缓存压缩的影响。该研究提出自适应压缩感知gamma选择机制。应用前景包括长文本生成、实时对话系统等场景。但具体实验效果和技术细节因摘要信息有限，无法从摘要确认。"
+description: SpecKV研究的是大模型推理中的speculative decoding加速问题。当前方法在选择推测token数量（gamma）时缺乏灵活性，且未考虑键值缓存压缩的影响。该研究提出自适应压缩感知gamma选择机制。应用前景包括长文本生成、实时对话系统等场景。但具体实验效果和技术细节因摘要信息有限，无法从摘要确认。
 external_url: http://arxiv.org/abs/2605.02888v1
-scenarios: ["大语言模型"]
+scenarios:
+- 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # SpecKV：压缩感知Gamma选择优化自适应推测解码
@@ -149,8 +164,8 @@ SpecKV 可视为在每一步求解如下优化问题：
 ### 相关文章
 
 - [推测性推测解码：一种加速大模型推理的方法]({{< relref "posts/20260304-hacker_news-speculative-speculative-decoding-ssd-4.md" >}})
-- [P-EAGLE：vLLM 集成并行推测解码加速 LLM 推理]({{< relref "posts/20260317-blogs_podcasts-p-eagle-faster-llm-inference-with-parallel-specula-8.md" >}})
-- [压缩智能体：Agent Skills 技术解析]({{< relref "posts/20260130-hacker_news-compressed-agentsmd-agent-skills-8.md" >}})
-- [文生图模型训练设计：消融实验的经验总结]({{< relref "posts/20260204-blogs_podcasts-training-design-for-text-to-image-models-lessons-f-4.md" >}})
-- [FlashAttention-T：张量化注意力机制优化方案]({{< relref "posts/20260204-hacker_news-flashattention-t-towards-tensorized-attention-18.md" >}})
+- [P-EAGLE：vLLM 集成并行推测解码加速 LLM 推理]({{< relref "posts/20260313-blogs_podcasts-p-eagle-faster-llm-inference-with-parallel-specula-1.md" >}})
+- [压缩智能体：Agent Skills 技术解析]({{< relref "posts/20260129-hacker_news-compressed-agentsmd-agent-skills-5.md" >}})
+- [文生图模型训练设计：消融实验的经验总结]({{< relref "posts/20260203-blogs_podcasts-training-design-for-text-to-image-models-lessons-f-0.md" >}})
+- [FlashAttention-T：张量化注意力机制优化方案]({{< relref "posts/20260203-hacker_news-flashattention-t-towards-tensorized-attention-0.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

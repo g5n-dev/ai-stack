@@ -1,14 +1,30 @@
 ---
-title: "GLM-5.2通过氛围检验 开源模型跃升前沿赛道"
-date: 2026-06-19T11:38:45+08:00
+title: GLM-5.2通过氛围检验 开源模型跃升前沿赛道
+date: 2026-06-19 11:38:45+08:00
 draft: false
-entry_kind: "auto"
-tags: ["GLM-5.2", "开源模型", "GPT", "vibe check", "前沿竞争", "Z.ai", "Open Fable", "技术突破"]
-categories: ["大模型", "开源生态"]
+entry_kind: auto
+tags:
+- GLM-5.2
+- 开源模型
+- GPT
+- vibe check
+- 前沿竞争
+- Z.ai
+- Open Fable
+- 技术突破
+categories:
+- 大模型
+- 开源生态
 source: blogs_podcasts
-description: "GLM-5.2 通过 vibe check GLM‑5.2 在业界 vibe check 中获得普遍认可，被认为性能已与 GPT 相当甚至更优，标志着开源模型从概念验证正式迈入前沿竞争阶段。 Z.ai 的 Open Fable 预测 Z.ai 预计将在 12 月推出 Open Fable，可能进一步提升开源模型的生态竞"
+description: GLM-5.2 通过 vibe check GLM‑5.2 在业界 vibe check 中获得普遍认可，被认为性能已与 GPT 相当甚至更优，标志着开源模型从概念验证正式迈入前沿竞争阶段。
+  Z.ai 的 Open Fable 预测 Z.ai 预计将在 12 月推出 Open Fable，可能进一步提升开源模型的生态竞
 external_url: https://www.latent.space/p/ainews-glm-gpt-glm-52-passes-vibe
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # GLM-5.2通过氛围检验 开源模型跃升前沿赛道
@@ -168,9 +184,9 @@ GLM‑5.2 通过“氛围检查”（vibe check）表明，开源大模型已经
 
 ### 相关文章
 
-- [Z.ai发布GLM-5开源模型：性能超越Opus 4.5]({{< relref "posts/20260212-blogs_podcasts-ainews-zai-glm-5-new-sota-open-weights-llm-1.md" >}})
-- [Z.ai发布GLM-5开源权重模型，性能超越Opus 4.5]({{< relref "posts/20260212-blogs_podcasts-ainews-zai-glm-5-new-sota-open-weights-llm-2.md" >}})
-- [Z.ai发布GLM-5开源模型：性能超越Opus 4.5]({{< relref "posts/20260212-blogs_podcasts-ainews-zai-glm-5-new-sota-open-weights-llm-3.md" >}})
-- [Z.ai发布GLM-5开源模型：性能超越Opus 4.5]({{< relref "posts/20260213-blogs_podcasts-ainews-zai-glm-5-new-sota-open-weights-llm-10.md" >}})
-- [Z.ai发布GLM-5开源模型：性能超越Opus 4.5]({{< relref "posts/20260213-blogs_podcasts-ainews-zai-glm-5-new-sota-open-weights-llm-4.md" >}})
+- [Z.ai发布GLM-5开源模型：性能超越Opus 4.5]({{< relref "posts/20260212-blogs_podcasts-ainews-zai-glm-5-new-sota-open-weights-llm-0.md" >}})
+- [Z.ai发布GLM-5开源权重模型，性能超越Opus 4.5]({{< relref "posts/20260212-blogs_podcasts-ainews-zai-glm-5-new-sota-open-weights-llm-0.md" >}})
+- [Z.ai发布GLM-5开源模型：性能超越Opus 4.5]({{< relref "posts/20260212-blogs_podcasts-ainews-zai-glm-5-new-sota-open-weights-llm-0.md" >}})
+- [Z.ai发布GLM-5开源模型：性能超越Opus 4.5]({{< relref "posts/20260212-blogs_podcasts-ainews-zai-glm-5-new-sota-open-weights-llm-0.md" >}})
+- [Z.ai发布GLM-5开源模型：性能超越Opus 4.5]({{< relref "posts/20260212-blogs_podcasts-ainews-zai-glm-5-new-sota-open-weights-llm-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

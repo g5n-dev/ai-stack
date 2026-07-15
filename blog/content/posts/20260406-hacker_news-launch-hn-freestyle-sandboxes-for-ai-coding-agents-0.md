@@ -1,14 +1,30 @@
 ---
-title: "Freestyle沙箱：专为AI编程代理设计"
-date: 2026-04-06T18:00:43+08:00
+title: Freestyle沙箱：专为AI编程代理设计
+date: 2026-04-06 18:00:43+08:00
 draft: false
-entry_kind: "auto"
-tags: ["编程代理", "开发沙箱", "安全隔离", "云端开发", "自动化编码", "AI编程工具", "产品发布", "效率提升"]
-categories: ["开发工具", "AI 工程"]
+entry_kind: auto
+tags:
+- 编程代理
+- 开发沙箱
+- 安全隔离
+- 云端开发
+- 自动化编码
+- AI编程工具
+- 产品发布
+- 效率提升
+categories:
+- 开发工具
+- AI 工程
 source: hacker_news
-description: "Freestyle 是一款专为 AI 编程代理设计的沙箱环境，提供隔离、可控的代码执行平台。传统的开发流程往往让代理受限于资源分配和安全策略，Freestyle 通过轻量化容器和即时反馈机制，使代理能够在真实代码空间中快速迭代而无需承担生产风险。本文将概述其核心架构、使用场景以及与传统 CI/CD 流程的对比，帮助开发"
+description: Freestyle 是一款专为 AI 编程代理设计的沙箱环境，提供隔离、可控的代码执行平台。传统的开发流程往往让代理受限于资源分配和安全策略，Freestyle
+  通过轻量化容器和即时反馈机制，使代理能够在真实代码空间中快速迭代而无需承担生产风险。本文将概述其核心架构、使用场景以及与传统 CI/CD 流程的对比，帮助开发
 external_url: https://www.freestyle.sh
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Freestyle沙箱：专为AI编程代理设计
@@ -84,9 +100,9 @@ Freestyle的差异化竞争力不在底层技术，而在产品化程度。当�
 
 ### 相关文章
 
-- [构建极简且固执的编程代理的经验总结]({{< relref "posts/20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-10.md" >}})
-- [构建极简编程代理的技术实践与经验总结]({{< relref "posts/20260202-hacker_news-what-i-learned-building-an-opinionated-and-minimal-11.md" >}})
-- [OpenAI Codex 应用与 VSCode 分支终结及多任务工作树]({{< relref "posts/20260204-blogs_podcasts-ainews-openai-codex-app-death-of-the-vscode-fork-m-5.md" >}})
-- [Xcode 26.3 支持开发者直接调用编程代理]({{< relref "posts/20260204-hacker_news-xcode-263-developers-can-leverage-coding-agents-di-5.md" >}})
-- [Voxtral Transcribe 2：AI 音频转写工具]({{< relref "posts/20260205-hacker_news-voxtral-transcribe-2-19.md" >}})
+- [构建极简且固执的编程代理的经验总结]({{< relref "posts/20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-1.md" >}})
+- [构建极简编程代理的技术实践与经验总结]({{< relref "posts/20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-1.md" >}})
+- [OpenAI Codex 应用与 VSCode 分支终结及多任务工作树]({{< relref "posts/20260203-blogs_podcasts-ainews-openai-codex-app-death-of-the-vscode-fork-m-0.md" >}})
+- [Xcode 26.3 支持开发者直接调用编程代理]({{< relref "posts/20260203-hacker_news-xcode-263-unlocks-the-power-of-agentic-coding-1.md" >}})
+- [Voxtral Transcribe 2：AI 音频转写工具]({{< relref "posts/20260204-hacker_news-voxtral-transcribe-2-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

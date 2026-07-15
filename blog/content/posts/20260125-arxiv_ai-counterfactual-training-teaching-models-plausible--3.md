@@ -1,12 +1,26 @@
 ---
-title: "🤖反事实训练！让模型学会靠谱又可落地的解释！"
-date: 2026-01-25T12:39:55+08:00
+title: 🤖反事实训练！让模型学会靠谱又可落地的解释！
+date: 2026-01-25 12:39:55+08:00
 draft: false
-entry_kind: "auto"
-tags: ["反事实训练", "模型解释性", "可解释AI", "机器学习", "黑盒模型", "特征可变性", "模型训练", "cs.LG"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- 反事实训练
+- 模型解释性
+- 可解释AI
+- 机器学习
+- 黑盒模型
+- 特征可变性
+- 模型训练
+- cs.LG
+categories:
+- 大模型
+- 论文
 source: arxiv
 external_url: http://arxiv.org/abs/2601.16205v1
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 📚 🤖反事实训练！让模型学会靠谱又可落地的解释！
@@ -291,7 +305,6 @@ $$L_{total} = L_{task} + \lambda_1 L_{plausibility} + \lambda_2 L_{actionability
 - **不可变特征包含强预测信息**：如果“种族”对结果有极强的影响，而我们强制要求模型不能修改它，模型可能会被迫产生极其扭曲、不合理的其他特征修改来补偿
 
 ---
-## ✅ 研究最佳实践
 
 ## 最佳实践指南
 
@@ -376,7 +389,6 @@ $$L_{total} = L_{task} + \lambda_1 L_{plausibility} + \lambda_2 L_{actionability
 - 提升用户信任 🤝**：通过提供透明且具操作性的建议，这种训练方式显著增强了用户对AI系统决策的信任度和采纳意愿，特别是在高风险应用场景中。
 
 ---
-## 🗺️ 学习路径
 
 ## 学习路径
 

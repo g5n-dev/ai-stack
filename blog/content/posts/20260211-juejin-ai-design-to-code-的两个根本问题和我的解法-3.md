@@ -1,14 +1,30 @@
 ---
-title: "AI Design-to-Code 的两个根本问题与解法"
-date: 2026-02-11T09:27:49+08:00
+title: AI Design-to-Code 的两个根本问题与解法
+date: 2026-02-11 09:27:49+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Design-to-Code", "D2C", "空间认知", "UI生成", "代码还原", "AI工程", "前端开发", "布局解析"]
-categories: ["大模型", "前端"]
+entry_kind: auto
+tags:
+- Design-to-Code
+- D2C
+- 空间认知
+- UI生成
+- 代码还原
+- AI 工程
+- 前端开发
+- 布局解析
+categories:
+- 大模型
+- 前端
 source: juejin
-description: "尽管 AI 在生成业务逻辑方面已相当成熟，但在“设计稿转代码”环节，样式丢失与布局错乱依然是阻碍工程落地的顽疾。这并非模型能力不足，而是源于输入端信息与 AI 空间认知能力的缺失。本文将剖析制约 AI D2C 效果的两个根本问题，并分享针对性的解法，帮助你突破现有技术瓶颈，实现更精准、可维护的代码还原。"
+description: 尽管 AI 在生成业务逻辑方面已相当成熟，但在“设计稿转代码”环节，样式丢失与布局错乱依然是阻碍工程落地的顽疾。这并非模型能力不足，而是源于输入端信息与
+  AI 空间认知能力的缺失。本文将剖析制约 AI D2C 效果的两个根本问题，并分享针对性的解法，帮助你突破现有技术瓶颈，实现更精准、可维护的代码还原。
 external_url: https://juejin.cn/post/7605157203591299099
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AI Design-to-Code 的两个根本问题与解法
@@ -164,8 +180,8 @@ AI 不仅仅生成 UI 代码，还会尝试解析设计稿中的交互意图（�
 ### 相关文章
 
 - [FineInstructions：将合成指令数据扩展至预训练规模]({{< relref "posts/20260130-arxiv_ai-fineinstructions-scaling-synthetic-instructions-to-7.md" >}})
-- [OpenAI 内部数据代理：结合 GPT‑5 与记忆机制实现分钟级数据洞察]({{< relref "posts/20260130-blogs_podcasts-inside-openais-in-house-data-agent-2.md" >}})
-- [FineInstructions：将合成指令数据扩展至预训练规模]({{< relref "posts/20260131-arxiv_ai-fineinstructions-scaling-synthetic-instructions-to-7.md" >}})
-- [OpenAI内部数据代理：结合GPT-5与记忆机制快速分析大规模数据集]({{< relref "posts/20260201-blogs_podcasts-inside-openais-in-house-data-agent-3.md" >}})
-- [OpenAI 内部数据代理：利用 GPT-5 与记忆快速分析海量数据]({{< relref "posts/20260203-blogs_podcasts-inside-openais-in-house-data-agent-5.md" >}})
+- [OpenAI 内部数据代理：结合 GPT‑5 与记忆机制实现分钟级数据洞察]({{< relref "posts/20260129-hacker_news-openais-in-house-data-agent-14.md" >}})
+- [FineInstructions：将合成指令数据扩展至预训练规模]({{< relref "posts/20260130-arxiv_ai-fineinstructions-scaling-synthetic-instructions-to-7.md" >}})
+- [OpenAI内部数据代理：结合GPT-5与记忆机制快速分析大规模数据集]({{< relref "posts/20260129-hacker_news-openais-in-house-data-agent-14.md" >}})
+- [OpenAI 内部数据代理：利用 GPT-5 与记忆快速分析海量数据]({{< relref "posts/20260129-hacker_news-openais-in-house-data-agent-14.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

@@ -1,14 +1,31 @@
 ---
-title: "Agent全栈架构：记忆系统与技能扩展的桌面端AI投研实现"
-date: 2026-05-05T11:04:22+08:00
+title: Agent全栈架构：记忆系统与技能扩展的桌面端AI投研实现
+date: 2026-05-05 11:04:22+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Agent架构", "记忆系统", "技能扩展", "桌面端开发", "Electron", "投研助手", "插件化设计", "智能体"]
-categories: ["AI 工程", "后端"]
+entry_kind: auto
+tags:
+- Agent架构
+- 记忆系统
+- 技能扩展
+- 桌面端开发
+- Electron
+- 投研助手
+- 插件化设计
+- 智能体
+categories:
+- AI 工程
+- 后端
 source: juejin
-description: "系统定位 「潇楠WEB3哨兵」是一个多链监控与交易平台，EVM/SOL 双链监控负责“眼睛”，电报 Bot 负责“嘴巴”，而 Agent 则是整个系统的“大脑”。它把感知层、执行层与用户的投研需求统一在同一个决策引擎中。 核心职责 - **信息整合**：聚合链上事件、社交信号、行情数据，形成统一的事实库。 - **记忆"
+description: 系统定位 「潇楠WEB3哨兵」是一个多链监控与交易平台，EVM/SOL 双链监控负责“眼睛”，电报 Bot 负责“嘴巴”，而 Agent
+  则是整个系统的“大脑”。它把感知层、执行层与用户的投研需求统一在同一个决策引擎中。 核心职责 - **信息整合**：聚合链上事件、社交信号、行情数据，形成统一的事实库。
+  - **记忆
 external_url: https://juejin.cn/post/7635866179564584994
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Agent全栈架构：记忆系统与技能扩展的桌面端AI投研实现
@@ -111,9 +128,9 @@ Agent 充当系统的大脑，整合记忆、技能与跨链数据，实现桌�
 
 ### 相关文章
 
-- [Moltis：具备记忆、工具与技能扩展能力的AI助手]({{< relref "posts/20260213-hacker_news-show-hn-moltis-ai-assistant-with-memory-tools-and--15.md" >}})
-- [Accelerate agentic application development with a full-]({{< relref "posts/20260211-blogs_podcasts-accelerate-agentic-application-development-with-a--11.md" >}})
+- [Moltis：具备记忆、工具与技能扩展能力的AI助手]({{< relref "posts/20260213-hacker_news-show-hn-moltis-ai-assistant-with-memory-tools-and--7.md" >}})
+- [Accelerate agentic application development with a full-]({{< relref "posts/20260210-blogs_podcasts-accelerate-agentic-application-development-with-a--11.md" >}})
 - [基于 Amazon Bedrock AgentCore 构建统一智能系统实践]({{< relref "posts/20260219-blogs_podcasts-build-unified-intelligence-with-amazon-bedrock-age-0.md" >}})
-- [使用 Amazon Bedrock AgentCore 构建统一智能系统]({{< relref "posts/20260219-blogs_podcasts-build-unified-intelligence-with-amazon-bedrock-age-11.md" >}})
-- [基于Amazon Bedrock AgentCore构建统一智能系统实践]({{< relref "posts/20260219-blogs_podcasts-build-unified-intelligence-with-amazon-bedrock-age-12.md" >}})
+- [使用 Amazon Bedrock AgentCore 构建统一智能系统]({{< relref "posts/20260219-blogs_podcasts-build-unified-intelligence-with-amazon-bedrock-age-0.md" >}})
+- [基于Amazon Bedrock AgentCore构建统一智能系统实践]({{< relref "posts/20260219-blogs_podcasts-build-unified-intelligence-with-amazon-bedrock-age-0.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

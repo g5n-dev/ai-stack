@@ -1,14 +1,30 @@
 ---
-title: "ExplainerPFN：面向表格数据的无模型零样本特征重要性估计"
-date: 2026-02-02T02:57:13+08:00
+title: ExplainerPFN：面向表格数据的无模型零样本特征重要性估计
+date: 2026-02-02 02:57:13+08:00
 draft: false
-entry_kind: "auto"
-tags: ["ExplainerPFN", "TabPFN", "表格数据", "零样本", "特征重要性", "可解释性", "SHAP", "无模型估计"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- ExplainerPFN
+- TabPFN
+- 表格数据
+- 零样本
+- 特征重要性
+- 可解释性
+- SHAP
+- 无模型估计
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "以下是对该内容的中文总结： **ExplainerPFN：面向表格基础模型的无模型零样本特征重要性估计** **背景与挑战** 在监督分类任务中，计算特征重要性对于模型的可解释性至关重要。Shapley值（SHAP值）是解释模型预测的主流方法，但在实际应用中存在显著局限： 1. **依赖模型访问**：传统方法通常需要直"
+description: 以下是对该内容的中文总结： **ExplainerPFN：面向表格基础模型的无模型零样本特征重要性估计** **背景与挑战** 在监督分类任务中，计算特征重要性对于模型的可解释性至关重要。Shapley值（SHAP值）是解释模型预测的主流方法，但在实际应用中存在显著局限：
+  1. **依赖模型访问**：传统方法通常需要直
 external_url: http://arxiv.org/abs/2601.23068v1
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # ExplainerPFN：面向表格数据的无模型零样本特征重要性估计
@@ -268,7 +284,6 @@ ExplainerPFN 在表格数据的零样本解释领域具有开创性地位。它�
 - **理论推断**：作者推断这种相关性源于模型学习到了潜在的因果图。然而，这仍是一种推测，模型内部可能只是学到了统计相关性，而非真正的因果结构
 
 ---
-## 研究最佳实践
 
 ## 最佳实践指南
 
@@ -362,7 +377,6 @@ ExplainerPFN 在表格数据的零样本解释领域具有开创性地位。它�
 - ExplainerPFN为表格数据解释提供了新的范式，突破了传统方法依赖目标模型训练的局限性。
 
 ---
-## 学习路径
 
 ## 学习路径
 
@@ -548,7 +562,7 @@ ExplainerPFN 在表格数据的零样本解释领域具有开创性地位。它�
 
 - [🔥PyraTok！视频生成神器：语言对齐金字塔Tokenizer震撼来袭！]({{< relref "posts/20260125-arxiv_ai-pyratok-language-aligned-pyramidal-tokenizer-for-v-1.md" >}})
 - [🚀动态场景新视角合成！AnyView实现任意视角自由切换！🤯]({{< relref "posts/20260126-arxiv_ai-anyview-synthesizing-any-novel-view-in-dynamic-sce-0.md" >}})
-- [🚀AnyView：动态场景任意新视角合成！开创性技术突破🔥]({{< relref "posts/20260127-arxiv_ai-anyview-synthesizing-any-novel-view-in-dynamic-sce-0.md" >}})
+- [🚀AnyView：动态场景任意新视角合成！开创性技术突破🔥]({{< relref "posts/20260126-arxiv_ai-anyview-synthesizing-any-novel-view-in-dynamic-sce-0.md" >}})
 - [探索Transformer在表格数据变分自编码器中的位置]({{< relref "posts/20260129-arxiv_ai-exploring-transformer-placement-in-variational-aut-3.md" >}})
-- [探索Transformer在表格数据变分自编码器中的位置]({{< relref "posts/20260130-arxiv_ai-exploring-transformer-placement-in-variational-aut-3.md" >}})
+- [探索Transformer在表格数据变分自编码器中的位置]({{< relref "posts/20260129-arxiv_ai-exploring-transformer-placement-in-variational-aut-3.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

@@ -31,20 +31,22 @@ class TagGraphV2Test(unittest.TestCase):
         date: str,
         tags: list[str],
         body: str,
+        external_url: str | None = None,
     ) -> None:
         quoted_tags = ", ".join(json.dumps(tag, ensure_ascii=False) for tag in tags)
+        frontmatter_lines = [
+            "---",
+            f"title: {json.dumps(title, ensure_ascii=False)}",
+            f"date: {date}",
+            f"tags: [{quoted_tags}]",
+        ]
+        if external_url:
+            frontmatter_lines.append(
+                f"external_url: {json.dumps(external_url, ensure_ascii=False)}"
+            )
+        frontmatter_lines.extend(["---", "", body, ""])
         (directory / filename).write_text(
-            textwrap.dedent(
-                f"""\
-                ---
-                title: {json.dumps(title, ensure_ascii=False)}
-                date: {date}
-                tags: [{quoted_tags}]
-                ---
-
-                {body}
-                """
-            ),
+            "\n".join(frontmatter_lines),
             encoding="utf-8",
         )
 
@@ -188,6 +190,180 @@ class TagGraphV2Test(unittest.TestCase):
         self.assertEqual(result["stats"]["tag_stats"]["total_articles"], 2)
         self.assertEqual(nodes["tag:Python"]["article_count"], 2)
         self.assertEqual(nodes["tag:LLM"]["article_count"], 1)
+
+    def test_canonical_external_url_is_counted_once_and_clean_copy_wins(self):
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            posts_dir = Path(tmp_dir) / "posts"
+            posts_dir.mkdir()
+            self._write_post(
+                posts_dir,
+                "01-polluted.md",
+                title="Duplicate placeholder",
+                date="2026-01-02",
+                tags=["Polluted", "Duplicate"],
+                external_url="https://example.com/news?id=42&utm_source=feed#fragment",
+                body="由于您没有提供原始正文，我将基于标题推演这篇文章。",
+            )
+            self._write_post(
+                posts_dir,
+                "02-clean.md",
+                title="Canonical article",
+                date="2026-01-01",
+                tags=["Python", "LLM"],
+                external_url="https://example.com/news?id=42",
+                body=(
+                    "这是一篇包含真实技术上下文的文章。Python 与 LLM 共同构成服务层，"
+                    "并通过可观测性、测试和明确的数据边界保证可靠运行。" * 8
+                ),
+            )
+
+            with mock.patch.dict("os.environ", {"TAG_INTRO_ENABLED": "0"}, clear=False):
+                result = build_tag_graph_data(
+                    enable_content_mining=False,
+                    existing_output_path=None,
+                    content_dir=str(posts_dir),
+                )
+
+        nodes = {node["id"]: node for node in result["graph"]["nodes"]}
+        self.assertEqual(result["stats"]["tag_stats"]["total_articles"], 1)
+        self.assertEqual(nodes["tag:Python"]["article_count"], 1)
+        self.assertEqual(nodes["tag:LLM"]["article_count"], 1)
+        self.assertNotIn("tag:Polluted", nodes)
+        self.assertNotIn("tag:Duplicate", nodes)
+        self.assertEqual(
+            result["stats"]["tag_stats"]["canonical_duplicate_files_skipped"], 1
+        )
+
+    def test_graph_applies_reviewed_tag_aliases_without_casefolding(self):
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            posts_dir = Path(tmp_dir) / "posts"
+            posts_dir.mkdir()
+            self._write_post(
+                posts_dir,
+                "01-first.md",
+                title="First",
+                date="2026-01-01",
+                tags=["AI编程", "XAI", "SWE-bench"],
+                body="First article.",
+            )
+            self._write_post(
+                posts_dir,
+                "02-second.md",
+                title="Second",
+                date="2026-01-02",
+                tags=["AI 编程", "xAI", "SWE-Bench"],
+                body="Second article.",
+            )
+
+            with mock.patch.dict("os.environ", {"TAG_INTRO_ENABLED": "0"}, clear=False):
+                result = build_tag_graph_data(
+                    enable_content_mining=False,
+                    existing_output_path=None,
+                    content_dir=str(posts_dir),
+                )
+
+        nodes = {node["id"]: node for node in result["graph"]["nodes"]}
+        self.assertEqual(nodes["tag:AI 编程"]["article_count"], 2)
+        self.assertNotIn("tag:AI编程", nodes)
+        self.assertIn("tag:XAI", nodes)
+        self.assertIn("tag:xAI", nodes)
+        self.assertIn("tag:SWE-bench", nodes)
+        self.assertIn("tag:SWE-Bench", nodes)
+
+    def test_unverifiable_synthetic_article_is_excluded_from_graph_metrics(self):
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            posts_dir = Path(tmp_dir) / "posts"
+            posts_dir.mkdir()
+            self._write_post(
+                posts_dir,
+                "synthetic.md",
+                title="Synthetic",
+                date="2026-01-01",
+                tags=["Hallucinated", "Graph Pollution"],
+                external_url="https://example.com/synthetic",
+                body=(
+                    "您没有提供需要总结的具体文章正文，仅提供了标题。"
+                    "我将基于标题推测完整技术细节。"
+                ),
+            )
+
+            with mock.patch.dict("os.environ", {"TAG_INTRO_ENABLED": "0"}, clear=False):
+                result = build_tag_graph_data(
+                    enable_content_mining=False,
+                    existing_output_path=None,
+                    content_dir=str(posts_dir),
+                )
+
+        nodes = {node["id"]: node for node in result["graph"]["nodes"]}
+        stats = result["stats"]["tag_stats"]
+        self.assertEqual(stats["total_articles"], 0)
+        self.assertEqual(stats["archived_article_groups_skipped"], 0)
+        self.assertEqual(stats["archived_article_files_skipped"], 0)
+        self.assertEqual(stats["synthetic_article_groups_skipped"], 1)
+        self.assertEqual(stats["synthetic_article_files_skipped"], 1)
+        self.assertNotIn("tag:Hallucinated", nodes)
+        self.assertNotIn("tag:Graph Pollution", nodes)
+
+    def test_transparent_archived_article_is_excluded_from_graph_metrics(self):
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            posts_dir = Path(tmp_dir) / "posts"
+            posts_dir.mkdir()
+            (posts_dir / "archived.md").write_text(
+                "---\n"
+                "title: Archived\n"
+                "date: 2026-01-01\n"
+                "external_url: https://example.com/archived\n"
+                "archived: true\n"
+                "tags: [Hallucinated, Archive Pollution]\n"
+                "---\n\n"
+                "该条目仅保留原始来源入口。\n",
+                encoding="utf-8",
+            )
+
+            with mock.patch.dict("os.environ", {"TAG_INTRO_ENABLED": "0"}, clear=False):
+                result = build_tag_graph_data(
+                    enable_content_mining=False,
+                    existing_output_path=None,
+                    content_dir=str(posts_dir),
+                )
+
+        nodes = {node["id"]: node for node in result["graph"]["nodes"]}
+        stats = result["stats"]["tag_stats"]
+        self.assertEqual(stats["total_articles"], 0)
+        self.assertEqual(stats["archived_article_groups_skipped"], 1)
+        self.assertEqual(stats["archived_article_files_skipped"], 1)
+        self.assertEqual(stats["synthetic_article_groups_skipped"], 0)
+        self.assertEqual(stats["synthetic_article_files_skipped"], 0)
+        self.assertNotIn("tag:Hallucinated", nodes)
+        self.assertNotIn("tag:Archive Pollution", nodes)
+
+    def test_structurally_incomplete_article_has_separate_graph_metrics(self):
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            posts_dir = Path(tmp_dir) / "posts"
+            posts_dir.mkdir()
+            self._write_post(
+                posts_dir,
+                "incomplete.md",
+                title="Incomplete",
+                date="2026-01-01",
+                tags=["Broken Fence"],
+                external_url="https://example.com/incomplete",
+                body="## 示例\n\n```python\nprint('cut')\n",
+            )
+
+            with mock.patch.dict("os.environ", {"TAG_INTRO_ENABLED": "0"}, clear=False):
+                result = build_tag_graph_data(
+                    enable_content_mining=False,
+                    existing_output_path=None,
+                    content_dir=str(posts_dir),
+                )
+
+        stats = result["stats"]["tag_stats"]
+        nodes = {node["id"] for node in result["graph"]["nodes"]}
+        self.assertEqual(stats["incomplete_article_groups_skipped"], 1)
+        self.assertEqual(stats["incomplete_article_files_skipped"], 1)
+        self.assertEqual(stats["synthetic_article_groups_skipped"], 0)
+        self.assertNotIn("tag:Broken Fence", nodes)
 
     def test_semantic_matching_uses_tokens_not_arbitrary_substrings_or_category(self):
         builder = TagGraphBuilder(enable_content_mining=False)

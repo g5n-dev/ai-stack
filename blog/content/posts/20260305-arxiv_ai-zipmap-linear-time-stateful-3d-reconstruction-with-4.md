@@ -20,6 +20,10 @@ description: 以下是对该内容的中文总结： **ZipMap：线性时间的�
 external_url: http://arxiv.org/abs/2603.04385v1
 scenarios:
 - 计算机视觉
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # ZipMap：基于测试时训练的线性时间有状态3D重建
@@ -121,9 +125,7 @@ ZipMap 是一种**有状态的前馈模型**，旨在实现**线性时间**的�
 
 ---
 
-### ZipMap: 线性时间的有状态3D重建与测试时训练 —— 深度分析
 
-### 1. 研究背景与问题
 
 ### 核心问题
 该论文致力于解决**基于Transformer的前馈3D重建方法在处理大规模图像集时的计算效率瓶颈**。具体而言，现有最先进（SOTA）方法（如VGGT, $\pi^3$）依赖全局注意力机制，导致计算复杂度随输入图像数量呈**二次方增长**（$O(N^2)$），这使得在处理成百上千张图像时，计算时间和显存消耗变得不可接受。
@@ -136,7 +138,6 @@ ZipMap 是一种**有状态的前馈模型**，旨在实现**线性时间**的�
 2.  **顺序方法的质量妥协**：虽然存在一些顺序处理方法（如流式处理），它们通常难以维持全局一致性，或者为了保持状态而牺牲了重建的精细度。
 3.  **缺乏状态记忆**：传统的前馈模型是无状态的，每次推理都必须重新处理所有图像，无法利用已计算的中间结果，导致计算资源的浪费。
 
-### 2. 核心方法与创新
 
 ### 核心方法：ZipMap
 ZipMap 是一种**有状态的前馈模型**，其核心思想是将整个图像集合压缩成一个紧凑的“隐藏场景状态”。它主要由以下两个机制组成：
@@ -157,7 +158,6 @@ ZipMap 是一种**有状态的前馈模型**，其核心思想是将整个图像
 *   **可扩展性**：由于是线性复杂度，理论上可以处理无限数量的图像，只要内存足够容纳场景状态。
 *   **质量不妥协**：尽管速度极快，但在PSNR和LPIPS等指标上，ZipMap 依然达到了与二次方复杂度方法相当甚至更好的效果。
 
-### 3. 理论基础
 
 ### 理论依据
 ZipMap 的理论基础建立在**元学习**和**隐式模型表示**的结合上。
@@ -173,7 +173,6 @@ ZipMap 的理论基础建立在**元学习**和**隐式模型表示**的结合�
 ### 理论贡献
 论文从理论上证明了TTT层在处理序列数据时，比标准的Self-Attention层更有效地利用了上下文信息，特别是在信息需要高度聚合的任务中（如3D重建）。
 
-### 7. 学习建议
 
 ### 适合读者
 *   从事3D视觉、NeRF、3DGS研究的硕博研究生。
@@ -450,8 +449,8 @@ ZipMap 旨在提高效率，使其比传统的 NeRF 方法更轻量，但具体�
 
 ### 相关文章
 
-- [神经渲染技术探索与应用实践]({{< relref "posts/20260214-hacker_news-adventures-in-neural-rendering-15.md" >}})
-- [以对象为中心的表征是否更利于组合泛化]({{< relref "posts/20260220-arxiv_ai-are-object-centric-representations-better-at-compo-9.md" >}})
+- [神经渲染技术探索与应用实践]({{< relref "posts/20260214-hacker_news-adventures-in-neural-rendering-6.md" >}})
+- [以对象为中心的表征是否更利于组合泛化]({{< relref "posts/20260219-arxiv_ai-are-object-centric-representations-better-at-compo-9.md" >}})
 - [LoGeR：基于混合记忆的长上下文几何重建]({{< relref "posts/20260304-arxiv_ai-loger-long-context-geometric-reconstruction-with-h-5.md" >}})
-- [LoGeR：基于混合记忆的长上下文几何重建]({{< relref "posts/20260305-arxiv_ai-loger-long-context-geometric-reconstruction-with-h-5.md" >}})
+- [LoGeR：基于混合记忆的长上下文几何重建]({{< relref "posts/20260304-arxiv_ai-loger-long-context-geometric-reconstruction-with-h-5.md" >}})
 - [🔥 视频修复难题：如何攻克时间一致性？]({{< relref "posts/20260125-hacker_news-the-temporal-consistency-challenge-in-video-restor-19.md" >}})

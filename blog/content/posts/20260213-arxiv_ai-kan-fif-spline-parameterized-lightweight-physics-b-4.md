@@ -1,14 +1,30 @@
 ---
-title: "KAN-FIF：基于样条参数化的轻量级气象卫星热带气旋估算模型"
-date: 2026-02-13T03:01:31+08:00
+title: KAN-FIF：基于样条参数化的轻量级气象卫星热带气旋估算模型
+date: 2026-02-13 03:01:31+08:00
 draft: false
-entry_kind: "auto"
-tags: ["KAN", "气象预测", "热带气旋", "轻量级模型", "样条参数化", "物理信息神经网络", "多模态", "cs.LG"]
-categories: ["大模型", "数据"]
+entry_kind: auto
+tags:
+- KAN
+- 气象预测
+- 热带气旋
+- 轻量级模型
+- 样条参数化
+- 物理信息神经网络
+- 多模态
+- cs.LG
+categories:
+- 大模型
+- 数据
 source: arxiv
-description: "以下是对该内容的中文总结： **KAN-FIF：基于气象卫星的轻量级物理台风估计算法** 针对热带气旋（TC）监测中现有模型计算效率低、参数量大的问题，本研究提出了一种名为**KAN-FIF**（基于Kolmogorov-Arnold网络的特征交互框架）的轻量级多模态架构。 **核心优势与机制：** 传统物理引导模型难"
+description: 以下是对该内容的中文总结： **KAN-FIF：基于气象卫星的轻量级物理台风估计算法** 针对热带气旋（TC）监测中现有模型计算效率低、参数量大的问题，本研究提出了一种名为**KAN-FIF**（基于Kolmogorov-Arnold网络的特征交互框架）的轻量级多模态架构。
+  **核心优势与机制：** 传统物理引导模型难
 external_url: http://arxiv.org/abs/2602.12117v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # KAN-FIF：基于样条参数化的轻量级气象卫星热带气旋估算模型
@@ -241,7 +257,6 @@ $$ y = \sum_{i} \phi_i(x_i) $$
 该论文在应用层面的创新性**
 
 ---
-## 研究最佳实践
 
 ## 最佳实践指南
 
@@ -325,7 +340,6 @@ $$ y = \sum_{i} \phi_i(x_i) $$
 - 这种基于 KAN 的物理驱动范式为解决其他地球科学领域的复杂动态系统建模问题提供了一种通用的、可扩展的解决方案。
 
 ---
-## 学习路径
 
 ## 学习路径
 
@@ -511,9 +525,9 @@ $$ y = \sum_{i} \phi_i(x_i) $$
 
 ### 相关文章
 
-- [视觉语言模型能否通过交互学习直观物理]({{< relref "posts/20260207-arxiv_ai-can-vision-language-models-learn-intuitive-physics-5.md" >}})
-- [视觉语言模型能否通过交互学习直觉物理]({{< relref "posts/20260208-arxiv_ai-can-vision-language-models-learn-intuitive-physics-5.md" >}})
-- [视觉语言模型能否通过交互学习直观物理]({{< relref "posts/20260209-arxiv_ai-can-vision-language-models-learn-intuitive-physics-5.md" >}})
-- [挖掘模型仓库中的隐藏价值]({{< relref "posts/20260201-arxiv_ai-discovering-hidden-gems-in-model-repositories-1.md" >}})
+- [视觉语言模型能否通过交互学习直观物理]({{< relref "posts/20260206-arxiv_ai-can-vision-language-models-learn-intuitive-physics-5.md" >}})
+- [视觉语言模型能否通过交互学习直觉物理]({{< relref "posts/20260206-arxiv_ai-can-vision-language-models-learn-intuitive-physics-5.md" >}})
+- [视觉语言模型能否通过交互学习直观物理]({{< relref "posts/20260206-arxiv_ai-can-vision-language-models-learn-intuitive-physics-5.md" >}})
+- [挖掘模型仓库中的隐藏价值]({{< relref "posts/20260130-arxiv_ai-discovering-hidden-gems-in-model-repositories-1.md" >}})
 - [AgentDrive：首个开放基准！🚗 LLM生成场景驱动Agent智能推理]({{< relref "posts/20260126-arxiv_ai-agentdrive-an-open-benchmark-dataset-for-agentic-a-7.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

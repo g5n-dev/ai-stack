@@ -20,6 +20,10 @@ description: 在生产环境中构建一个高质量的最近邻搜索系统，�
 external_url: https://github.com/thatipamula-jashwanth/smart-knn
 scenarios:
 - Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 构建生产级最近邻系统的工程实践与经验总结

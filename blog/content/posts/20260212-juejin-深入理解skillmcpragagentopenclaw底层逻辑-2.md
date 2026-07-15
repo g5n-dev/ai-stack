@@ -1,14 +1,32 @@
 ---
-title: "深度解析Skill/MCP/RAG等五大AI技术的底层逻辑"
-date: 2026-02-12T10:28:19+08:00
+title: 深度解析Skill/MCP/RAG等五大AI技术的底层逻辑
+date: 2026-02-12 10:28:19+08:00
 draft: false
-entry_kind: "auto"
-tags: ["LLM", "RAG", "Agent", "MCP", "Skill", "OpenClaw", "模型上下文协议", "检索增强生成"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- LLM
+- RAG
+- Agent
+- MCP
+- Skill
+- OpenClaw
+- 模型上下文协议
+- 检索增强生成
+categories:
+- 大模型
+- AI 工程
 source: juejin
-description: "以下是对文中提到的五大AI技术名词的简洁总结，旨在用通俗的语言揭示其底层逻辑： 深入理解 AI 五大核心技术逻辑 本文旨在剥去 AI 领域热门技术名词的复杂包装，从底层逻辑出发，解析 **Skill（技能）**、**MCP（模型上下文协议）**、**RAG（检索增强生成）**、**Agent（智能代理）** 以及 **"
+description: 以下是对文中提到的五大AI技术名词的简洁总结，旨在用通俗的语言揭示其底层逻辑： 深入理解 AI 五大核心技术逻辑 本文旨在剥去 AI 领域热门技术名词的复杂包装，从底层逻辑出发，解析
+  **Skill（技能）**、**MCP（模型上下文协议）**、**RAG（检索增强生成）**、**Agent（智能代理）** 以及 **
 external_url: https://juejin.cn/post/7605494530016821288
-scenarios: ["大语言模型", "RAG应用", "AI/ML项目"]
+scenarios:
+- 大语言模型
+- RAG应用
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 深度解析Skill/MCP/RAG等五大AI技术的底层逻辑
@@ -225,9 +243,9 @@ Skill、MCP、RAG、Agent 和 OpenClaw 等概念频繁出现，但它们背后�
 
 ### 相关文章
 
-- [Agent Skills：智能体技能框架]({{< relref "posts/20260203-hacker_news-agent-skills-4.md" >}})
-- [LangBot：生产级多平台智能体机器人开发平台]({{< relref "posts/20260201-github_trending-langbot-app-langbot-0.md" >}})
-- [LangBot：生产级多平台智能 IM 机器人开发平台]({{< relref "posts/20260202-github_trending-langbot-app-langbot-0.md" >}})
-- [LangBot：支持多平台接入的生产级智能机器人开发框架]({{< relref "posts/20260204-github_trending-langbot-app-langbot-1.md" >}})
-- [CowAgent：具备主动思考与长期记忆的大模型 AI 助理]({{< relref "posts/20260204-github_trending-zhayujie-chatgpt-on-wechat-0.md" >}})
+- [Agent Skills：智能体技能框架]({{< relref "posts/20260203-hacker_news-agent-skills-0.md" >}})
+- [LangBot：生产级多平台智能体机器人开发平台]({{< relref "posts/20260131-github_trending-langbot-app-langbot-7.md" >}})
+- [LangBot：生产级多平台智能 IM 机器人开发平台]({{< relref "posts/20260131-github_trending-langbot-app-langbot-7.md" >}})
+- [LangBot：支持多平台接入的生产级智能机器人开发框架]({{< relref "posts/20260131-github_trending-langbot-app-langbot-7.md" >}})
+- [CowAgent：具备主动思考与长期记忆的大模型 AI 助理]({{< relref "posts/20260131-github_trending-zhayujie-chatgpt-on-wechat-0.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

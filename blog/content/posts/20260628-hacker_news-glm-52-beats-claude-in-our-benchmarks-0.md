@@ -1,14 +1,29 @@
 ---
-title: "GLM 5.2基准测试超越Claude"
-date: 2026-06-28T23:26:06+08:00
+title: GLM 5.2基准测试超越Claude
+date: 2026-06-28 23:26:06+08:00
 draft: false
-entry_kind: "auto"
-tags: ["GLM5.2", "基准测试", "Claude", "大模型", "性能对比", "语言模型", "AI评测", "模型比较"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- GLM-5.2
+- 基准测试
+- Claude
+- 大模型
+- 性能对比
+- 语言模型
+- AI评测
+- 模型比较
+categories:
+- 大模型
+- AI 工程
 source: hacker_news
-description: "GLM 5.2 在我们最新一轮的基准测试中实现了对 Claude 的全面超越。测试覆盖自然语言理解、代码生成和多模态推理等关键场景，这些指标直接决定模型在实际产品中的适用性。本文提供完整的得分数据、任务对比以及模型差异的深层分析，帮助开发者和企业快速判断两款模型的优势与局限，从而作出更精准的选型决策。"
+description: GLM 5.2 在我们最新一轮的基准测试中实现了对 Claude 的全面超越。测试覆盖自然语言理解、代码生成和多模态推理等关键场景，这些指标直接决定模型在实际产品中的适用性。本文提供完整的得分数据、任务对比以及模型差异的深层分析，帮助开发者和企业快速判断两款模型的优势与局限，从而作出更精准的选型决策。
 external_url: https://semgrep.dev/blog/2026/we-have-mythos-at-home-glm-52-beats-claude-in-our-cyber-benchmarks
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # GLM 5.2基准测试超越Claude
@@ -80,9 +95,9 @@ GLM 5.2在基准测试中超越Claude，展示了国产大模型在特定任务�
 
 ### 相关文章
 
-- [Claude Opus 4.7 发布]({{< relref "posts/20260417-hacker_news-claude-opus-47-0.md" >}})
+- [Claude Opus 4.7 发布]({{< relref "posts/20260416-hacker_news-claude-opus-47-0.md" >}})
 - [VendingBench作者谈Claude模型评估体系构建]({{< relref "posts/20260604-blogs_podcasts-reality-the-final-eval-lukas-petersson-and-axel-ba-0.md" >}})
 - [Anthropic发布Claude Opus 4.7]({{< relref "posts/20260416-hacker_news-claude-opus-47-0.md" >}})
-- [Claude Opus 4.6 发布]({{< relref "posts/20260206-hacker_news-claude-opus-46-3.md" >}})
+- [Claude Opus 4.6 发布]({{< relref "posts/20260205-hacker_news-claude-opus-46-2.md" >}})
 - [Claude Design使用感受与思考]({{< relref "posts/20260418-hacker_news-thoughts-and-feelings-around-claude-design-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

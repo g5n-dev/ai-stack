@@ -21,6 +21,12 @@ description: 本文总结了论文《鲁棒且计算高效的线性情境赌博�
 external_url: http://arxiv.org/abs/2603.15596v1
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260318-arxiv_ai-robust-and-computationally-efficient-linear-contex-8/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 对抗性腐蚀与重尾噪声下的鲁棒高效线性情境赌博机
@@ -487,7 +493,7 @@ $$ \tilde{O}\left( \sqrt{T} + C \right) $$
 ### 相关文章
 
 - [基于急停干预的鲁棒干预学习]({{< relref "posts/20260204-arxiv_ai-robust-intervention-learning-from-emergency-stop-i-7.md" >}})
-- [知识嵌入潜在投影提升鲁棒表征学习]({{< relref "posts/20260220-arxiv_ai-knowledge-embedded-latent-projection-for-robust-re-0.md" >}})
+- [知识嵌入潜在投影提升鲁棒表征学习]({{< relref "posts/20260219-arxiv_ai-knowledge-embedded-latent-projection-for-robust-re-0.md" >}})
 - [RN-D：基于正则化网络的离散分类演员与同策强化学习]({{< relref "posts/20260202-arxiv_ai-rn-d-discretized-categorical-actors-with-regulariz-7.md" >}})
-- [基于急停干预的鲁棒干预学习]({{< relref "posts/20260205-arxiv_ai-robust-intervention-learning-from-emergency-stop-i-7.md" >}})
-- [视觉语言模型能否通过交互学习直观物理]({{< relref "posts/20260207-arxiv_ai-can-vision-language-models-learn-intuitive-physics-5.md" >}})
+- [基于急停干预的鲁棒干预学习]({{< relref "posts/20260204-arxiv_ai-robust-intervention-learning-from-emergency-stop-i-7.md" >}})
+- [视觉语言模型能否通过交互学习直观物理]({{< relref "posts/20260206-arxiv_ai-can-vision-language-models-learn-intuitive-physics-5.md" >}})

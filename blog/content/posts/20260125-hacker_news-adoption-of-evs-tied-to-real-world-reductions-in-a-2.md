@@ -1,12 +1,25 @@
 ---
-title: "🔥实锤！研究证实：普及电动汽车真的能显著降低空气污染！🌍"
-date: 2026-01-25T12:39:55+08:00
+title: 🔥实锤！研究证实：普及电动汽车真的能显著降低空气污染！🌍
+date: 2026-01-25 12:39:55+08:00
 draft: false
-entry_kind: "auto"
-tags: ["电动汽车", "空气污染", "环境研究", "NO2", "PM2.5", "环境正义", "公共卫生", "气候变化"]
-categories: ["生活与杂谈"]
+entry_kind: auto
+tags:
+- 电动汽车
+- 空气污染
+- 环境研究
+- NO2
+- PM2.5
+- 环境正义
+- 公共卫生
+- 气候变化
+categories:
+- 生活与杂谈
 source: hacker_news
 external_url: https://keck.usc.edu/news/adoption-of-electric-vehicles-tied-to-real-world-reductions-in-air-pollution-study-finds
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 📰 🔥实锤！研究证实：普及电动汽车真的能显著降低空气污染！🌍
@@ -166,7 +179,6 @@ external_url: https://keck.usc.edu/news/adoption-of-electric-vehicles-tied-to-re
 📊 根据伦敦交通局（TfL）的数据，随着Uber平台在伦敦实现全面电动化转型（成为首个在主要城市实现100%电动化的网约车平台），该市每年减少了数万吨的碳排放。伦敦市中心的监测数据显示，自ULEZ实施和电动车普及率上升以来，二氧化氮（NO2）的浓度在道路边下降了约44%。这表明，通过政策引导配合基础设施建设，电动汽车的普及确实能够有效逆转繁忙都市的空气污染趋势。
 
 ---
-## ✅ 最佳实践
 
 ## 最佳实践指南
 

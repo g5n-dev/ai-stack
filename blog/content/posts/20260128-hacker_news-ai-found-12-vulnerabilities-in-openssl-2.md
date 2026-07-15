@@ -1,12 +1,26 @@
 ---
-title: "⚠️OpenSSL曝出12个漏洞！AI黑客如何颠覆安全？🔥"
-date: 2026-01-28T07:28:04+08:00
+title: ⚠️OpenSSL曝出12个漏洞！AI黑客如何颠覆安全？🔥
+date: 2026-01-28 07:28:04+08:00
 draft: false
-entry_kind: "auto"
-tags: ["OpenSSL", "LLM Fuzzing", "漏洞挖掘", "0-day", "模糊测试", "软件安全", "谷歌", "生成式 AI"]
-categories: ["安全", "AI 工程"]
+entry_kind: auto
+tags:
+- OpenSSL
+- LLM Fuzzing
+- 漏洞挖掘
+- 0-day
+- 模糊测试
+- 软件安全
+- 谷歌
+- 生成式 AI
+categories:
+- 安全
+- AI 工程
 source: hacker_news
 external_url: https://aisle.com/blog/aisle-discovered-12-out-of-12-openssl-vulnerabilities
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 📰 ⚠️OpenSSL曝出12个漏洞！AI黑客如何颠覆安全？🔥
@@ -168,7 +182,6 @@ Google 的安全团队利用 AI 辅助的模糊测试引擎（OSS-Fuzz 集成在
 在实验和应用中，BigBig Fuzz 展现出了远超传统工具的效率。它在测试 OpenSSL 等目标时，成功挖掘出了多个传统工具难以发现的内存破坏漏洞和逻辑缺陷。数据显示，其代码覆盖率相比传统工具提升了 20% 以上，并成功复现及发现了包括 CVE 级别在内的多个高危漏洞，证明了 AI 在辅助大规模代码审计中的实战价值。
 
 ---
-## ✅ 最佳实践
 
 ## 最佳实践指南
 

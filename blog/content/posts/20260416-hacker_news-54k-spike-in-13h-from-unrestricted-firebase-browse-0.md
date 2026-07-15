@@ -1,14 +1,28 @@
 ---
-title: "Firebase浏览器密钥未限制致13小时损失5.4万欧元"
-date: 2026-04-16T14:08:38+08:00
+title: Firebase浏览器密钥未限制致13小时损失5.4万欧元
+date: 2026-04-16 14:08:38+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Firebase", "未限制访问", "浏览器密钥", "Gemini", "费用飙升", "安全漏洞", "API滥用", "密钥管理"]
-categories: ["安全"]
+entry_kind: auto
+tags:
+- Firebase
+- 未限制访问
+- 浏览器密钥
+- Gemini
+- 费用飙升
+- 安全漏洞
+- API滥用
+- 密钥管理
+categories:
+- 安全
 source: hacker_news
-description: "在一次持续仅13小时的请求风暴中，一个未受限制的Firebase浏览器密钥直接调用了Gemini API，导致费用飙升至约5.4万欧元。该事件暴露了在客户端暴露API密钥的潜在风险，并提醒开发者及时审计访问控制策略。通过对日志和计费数据的分析，可以快速定位异常流量并采取降权或撤销密钥的措施，从而防止类似损失再次发生。"
+description: 在一次持续仅13小时的请求风暴中，一个未受限制的Firebase浏览器密钥直接调用了Gemini API，导致费用飙升至约5.4万欧元。该事件暴露了在客户端暴露API密钥的潜在风险，并提醒开发者及时审计访问控制策略。通过对日志和计费数据的分析，可以快速定位异常流量并采取降权或撤销密钥的措施，从而防止类似损失再次发生。
 external_url: https://discuss.ai.google.dev/t/unexpected-54k-billing-spike-in-13-hours-firebase-browser-key-without-api-restrictions-used-for-gemini-requests/140262
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Firebase浏览器密钥未限制致13小时损失5.4万欧元
@@ -81,9 +95,9 @@ scenarios: ["Web应用开发"]
 
 ### 相关文章
 
-- [谷歌API密钥曾非机密 但Gemini改变了规则]({{< relref "posts/20260226-hacker_news-google-api-keys-werent-secrets-but-then-gemini-cha-2.md" >}})
-- [谷歌API密钥曾非机密，Gemini规则变更引发安全隐忧]({{< relref "posts/20260226-hacker_news-google-api-keys-werent-secrets-but-then-gemini-cha-1.md" >}})
+- [谷歌API密钥曾非机密 但Gemini改变了规则]({{< relref "posts/20260226-hacker_news-google-api-keys-werent-secrets-but-then-gemini-cha-0.md" >}})
+- [谷歌API密钥曾非机密，Gemini规则变更引发安全隐忧]({{< relref "posts/20260226-hacker_news-google-api-keys-werent-secrets-but-then-gemini-cha-0.md" >}})
 - [谷歌API密钥非机密但Gemini改变规则]({{< relref "posts/20260226-hacker_news-google-api-keys-werent-secrets-but-then-gemini-cha-0.md" >}})
-- [Google API密钥曾非机密，但Gemini改变了规则]({{< relref "posts/20260226-hacker_news-google-api-keys-werent-secrets-but-then-gemini-cha-4.md" >}})
-- [谷歌限制使用OpenClaw的AI Pro/Ultra订阅用户]({{< relref "posts/20260223-hacker_news-google-restricting-google-ai-proultra-subscribers--14.md" >}})
+- [Google API密钥曾非机密，但Gemini改变了规则]({{< relref "posts/20260226-hacker_news-google-api-keys-werent-secrets-but-then-gemini-cha-0.md" >}})
+- [谷歌限制使用OpenClaw的AI Pro/Ultra订阅用户]({{< relref "posts/20260223-hacker_news-google-restricting-google-ai-proultra-subscribers--9.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

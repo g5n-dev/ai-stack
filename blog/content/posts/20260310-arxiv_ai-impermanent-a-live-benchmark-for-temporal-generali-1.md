@@ -21,6 +21,12 @@ description: 本文介绍了 **Impermanent**，一个专为评估时间序列预
 external_url: http://arxiv.org/abs/2603.08707v1
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260311-arxiv_ai-impermanent-a-live-benchmark-for-temporal-generali-1/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Impermanent：时间序列预测时序泛化实时基准
@@ -123,7 +129,6 @@ Impermanent 采用**实时基准测试**机制，在连续更新的数据流上�
 
 ---
 
-### 1. 研究背景与问题
 
 ### 核心问题
 该论文旨在解决时间序列预测领域中**模型评估方法与实际应用场景错位**的核心问题。具体而言，现有的评估协议无法有效衡量预训练基础模型在真实、动态环境中的**时间泛化能力**。
@@ -142,7 +147,6 @@ Impermanent 采用**实时基准测试**机制，在连续更新的数据流上�
 
 ---
 
-### 2. 核心方法与创新
 
 ### 核心方法
 Impermanent 提出了一个**实时基准测试平台**。其核心机制不再是提交代码在固定数据集上运行，而是要求模型在连续的、按时间顺序流动的数据流上生成预测，并由系统每日自动评分。
@@ -159,7 +163,6 @@ Impermanent 提出了一个**实时基准测试平台**。其核心机制不再�
 
 ---
 
-### 3. 理论基础
 
 ### 理论假设
 该基准测试基于以下核心假设：
@@ -177,7 +180,6 @@ $$ L(T) = \frac{1}{T} \sum_{t=1}^{T} \ell(\hat{x}_{t+h}, x_{t+h}) $$
 
 ---
 
-### 4. 实验与结果
 
 ### 实验设计
 - **数据集**：GitHub Activity Data。包含数千条时间序列，特征包括每日新增 Stars, Issues, PRs 等。
@@ -195,7 +197,6 @@ $$ L(T) = \frac{1}{T} \sum_{t=1}^{T} \ell(\hat{x}_{t+h}, x_{t+h}) $$
 
 ---
 
-### 5. 应用前景
 
 ### 实际应用场景
 1.  **DevOps 与资源调度**：直接应用于预测 GitHub 仓库的活跃度，帮助开源项目维护者预估工作量、服务器负载或社区关注度。
@@ -210,7 +211,6 @@ $$ L(T) = \frac{1}{T} \sum_{t=1}^{T} \ell(\hat{x}_{t+h}, x_{t+h}) $$
 
 ---
 
-### 6. 研究启示
 
 ### 对领域的启示
 1.  **重新审视“泛化”**：论文警示社区，在静态数据集上的 SOTA（State of the Art）并不等同于实际应用的最优。我们需要区分“静态泛化”和“时间泛化”。
@@ -223,7 +223,6 @@ $$ L(T) = \frac{1}{T} \sum_{t=1}^{T} \ell(\hat{x}_{t+h}, x_{t+h}) $$
 
 ---
 
-### 7. 学习建议
 
 ### 适合读者
 - 时间序列预测领域的研究员和研究生。
@@ -242,7 +241,6 @@ $$ L(T) = \frac{1}{T} \sum_{t=1}^{T} \ell(\hat{x}_{t+h}, x_{t+h}) $$
 
 ---
 
-### 8. 相关工作对比
 
 ### 与传统基准（M4, Monash）的对比
 - **M4/Monash**：静态数据集，关注最终聚合准确率，容易过拟合。
@@ -259,7 +257,6 @@ $$ L(T) = \frac{1}{T} \sum_{t=1}^{T} \ell(\hat{x}_{t+h}, x_{t+h}) $$
 
 ---
 
-### 9. 研究哲学：可证伪性与边界
 
 ### 关键假设与归纳偏置
 - **假设**：GitHub 的活动数据具有足够的“不可预测性”和“非平稳性”，能够代表现实世界的复杂性。
@@ -544,7 +541,7 @@ Impermanent 基准的提出对社区的一个重要启示是：我们需要重�
 ### 相关文章
 
 - [数据集压缩至1MB：小规模数据集的模型训练效果评估]({{< relref "posts/20260227-arxiv_ai-a-dataset-is-worth-1-mb-2.md" >}})
-- [挖掘模型仓库中的隐藏价值]({{< relref "posts/20260201-arxiv_ai-discovering-hidden-gems-in-model-repositories-1.md" >}})
-- [SWE-bench Verified 数据泄漏与测试缺陷分析：为何推荐改用 SWE-bench Pro]({{< relref "posts/20260223-blogs_podcasts-why-we-no-longer-evaluate-swe-bench-verified-4.md" >}})
+- [挖掘模型仓库中的隐藏价值]({{< relref "posts/20260130-arxiv_ai-discovering-hidden-gems-in-model-repositories-1.md" >}})
+- [SWE-bench Verified 数据泄漏与测试缺陷分析：为何推荐改用 SWE-bench Pro]({{< relref "posts/20260223-blogs_podcasts-why-we-no-longer-evaluate-swe-bench-verified-3.md" >}})
 - [基于嵌入的Top-$k$检索：理论上$\mathbb{R}^{2k}$维空间已足够]({{< relref "posts/20260129-arxiv_ai-mathbbr2k-is-theoretically-large-enough-for-embedd-8.md" >}})
-- [R^{2k}维度理论上足以支持基于嵌入的Top-k检索]({{< relref "posts/20260130-arxiv_ai-mathbbr2k-is-theoretically-large-enough-for-embedd-8.md" >}})
+- [R^{2k}维度理论上足以支持基于嵌入的Top-k检索]({{< relref "posts/20260129-arxiv_ai-mathbbr2k-is-theoretically-large-enough-for-embedd-8.md" >}})

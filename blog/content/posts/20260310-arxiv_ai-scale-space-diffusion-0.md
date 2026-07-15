@@ -20,6 +20,12 @@ description: 本文介绍了一种名为**尺度空间扩散**的新型扩散模
 external_url: http://arxiv.org/abs/2603.08709v1
 scenarios:
 - 计算机视觉
+aliases:
+- /posts/20260311-arxiv_ai-scale-space-diffusion-0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 尺度空间扩散模型
@@ -113,7 +119,6 @@ scenarios:
 
 以下是对论文《Scale Space Diffusion》的深入分析报告。
 
-### 1. 研究背景与问题
 
 ### 核心问题
 本研究致力于解决扩散模型在生成高分辨率图像时面临的**计算效率与显存消耗的指数级增长**问题。具体而言，作者质疑了传统扩散模型在去噪过程中必须始终在全分辨率下处理高噪声图像的必要性。
@@ -130,7 +135,6 @@ scenarios:
 ### 重要性
 本研究的重要性在于它打破了“去噪必须在全分辨率进行”的思维定势。如果证明高噪声状态下的高频信息是冗余的，那么在扩散过程的大部分阶段使用低分辨率计算，将带来数量级的效率提升，这对于推动高质量实时图像生成和移动端部署具有重要意义。
 
-### 2. 核心方法与创新
 
 ### 核心方法：尺度空间扩散
 作者提出了一种新的框架，将**尺度空间理论**引入扩散模型。
@@ -147,7 +151,6 @@ scenarios:
 - **灵活性**：同一个模型可以支持多种输出分辨率，且在训练和推理中可以动态调整计算预算。
 - **即插即用潜力**：该思想可应用于现有的基于U-Net的扩散模型（如DDPM、DDIM）。
 
-### 3. 理论基础
 
 ### 理论依据：尺度空间理论
 论文的核心假设建立在经典的尺度空间理论之上：
@@ -161,7 +164,6 @@ scenarios:
 ### 理论贡献
 该研究从理论上论证了扩散过程中的**“信噪比（SNR）与分辨率需求”的正相关性**。即低SNR阶段对应低分辨率需求，高SNR阶段对应高分辨率需求。这为理解扩散模型的生成机理提供了新的视角：生成过程不仅是“去噪”，也是一个从“粗略轮廓”到“精细纹理”的尺度空间重建过程。
 
-### 7. 学习建议
 
 ### 适合读者
 - 从事计算机视觉、生成式模型研究的研究生和工程师。
@@ -422,8 +424,8 @@ Scale Space Diffusion 特别适用于那些对结构严谨性和细节丰富度�
 
 ### 相关文章
 
-- [现成图像模型可攻破图像保护方案]({{< relref "posts/20260227-arxiv_ai-off-the-shelf-image-to-image-models-are-all-you-ne-2.md" >}})
+- [现成图像模型可攻破图像保护方案]({{< relref "posts/20260226-arxiv_ai-off-the-shelf-image-to-image-models-are-all-you-ne-2.md" >}})
 - [CFG-Ctrl：基于分类器无关的扩散模型控制引导方法]({{< relref "posts/20260304-arxiv_ai-cfg-ctrl-control-based-classifier-free-diffusion-g-0.md" >}})
-- [CFG-Ctrl：基于控制的分类器无关扩散引导算法]({{< relref "posts/20260305-arxiv_ai-cfg-ctrl-control-based-classifier-free-diffusion-g-0.md" >}})
+- [CFG-Ctrl：基于控制的分类器无关扩散引导算法]({{< relref "posts/20260304-arxiv_ai-cfg-ctrl-control-based-classifier-free-diffusion-g-0.md" >}})
 - [PixelGen：引入感知损失的像素扩散模型性能超越潜在扩散]({{< relref "posts/20260203-arxiv_ai-pixelgen-pixel-diffusion-beats-latent-diffusion-wi-2.md" >}})
-- [以对象为中心的表征是否更利于组合泛化]({{< relref "posts/20260220-arxiv_ai-are-object-centric-representations-better-at-compo-9.md" >}})
+- [以对象为中心的表征是否更利于组合泛化]({{< relref "posts/20260219-arxiv_ai-are-object-centric-representations-better-at-compo-9.md" >}})

@@ -21,6 +21,10 @@ description: '**Rule 机制：为 AI 编程立规矩** 在 AI 编程工程化进
 external_url: https://juejin.cn/post/7616193982246862867
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Claude Code Rule 机制：三层规则约束 AI 编程行为
@@ -208,8 +212,8 @@ Rule 的应用贯穿软件开发生命周期（SDLC）：
 
 ### 相关文章
 
-- [Claude Code 的代码库选择策略与决策逻辑]({{< relref "posts/20260226-hacker_news-what-claude-code-chooses-4.md" >}})
+- [Claude Code 的代码库选择策略与决策逻辑]({{< relref "posts/20260226-hacker_news-what-claude-code-chooses-12.md" >}})
 - [Claude Code 核心机制解析：AI 编程工程化实践]({{< relref "posts/20260311-juejin-ai-编程工程化ai-时代程序员的基本功-3.md" >}})
-- [Claude Code 全面接入微软内部开发工作流]({{< relref "posts/20260202-hacker_news-claude-code-is-suddenly-everywhere-inside-microsof-10.md" >}})
-- [Claude Code 广泛集成至微软内部开发环境]({{< relref "posts/20260202-hacker_news-claude-code-is-suddenly-everywhere-inside-microsof-15.md" >}})
+- [Claude Code 全面接入微软内部开发工作流]({{< relref "posts/20260202-hacker_news-claude-code-is-suddenly-everywhere-inside-microsof-2.md" >}})
+- [Claude Code 广泛集成至微软内部开发环境]({{< relref "posts/20260202-hacker_news-claude-code-is-suddenly-everywhere-inside-microsof-2.md" >}})
 - [Claude Code 全面集成至微软内部开发工作流]({{< relref "posts/20260202-hacker_news-claude-code-is-suddenly-everywhere-inside-microsof-2.md" >}})

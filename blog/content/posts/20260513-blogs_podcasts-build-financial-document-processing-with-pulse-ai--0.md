@@ -1,14 +1,32 @@
 ---
-title: "Pulse AI与Amazon Bedrock构建金融文档提取管道"
-date: 2026-05-13T22:38:17+08:00
+title: Pulse AI与Amazon Bedrock构建金融文档提取管道
+date: 2026-05-13 22:38:17+08:00
 draft: false
-entry_kind: "auto"
-tags: ["金融文档", "Amazon Bedrock", "文档提取", "模型微调", "数据管道", "LLM", "OCR", "AI集成"]
-categories: ["AI 工程"]
+entry_kind: auto
+tags:
+- 金融文档
+- Amazon Bedrock
+- 文档提取
+- 模型微调
+- 数据管道
+- LLM
+- OCR
+- AI集成
+categories:
+- AI 工程
 source: blogs_podcasts
-description: "背景与挑战 金融文档结构复杂、格式多样，常规提取易出错且难以规模化。 技术方案 - Pulse AI：提供强大的文档结构化和语义理解能力，能够识别表格、图表、手写体等。 - Amazon Bedrock：提供可定制的生成式 AI 模型，支持大规模推理与微调。 - 组合后形成提取 → 预处理 → 微调 → 推理的全链路。"
+description: 背景与挑战 金融文档结构复杂、格式多样，常规提取易出错且难以规模化。 技术方案 - Pulse AI：提供强大的文档结构化和语义理解能力，能够识别表格、图表、手写体等。
+  - Amazon Bedrock：提供可定制的生成式 AI 模型，支持大规模推理与微调。 - 组合后形成提取 → 预处理 → 微调 → 推理的全链路。
 external_url: https://aws.amazon.com/blogs/machine-learning/build-financial-document-processing-with-pulse-ai-and-amazon-bedrock
-scenarios: ["大语言模型", "AI/ML项目"]
+scenarios:
+- 大语言模型
+- AI/ML项目
+aliases:
+- /posts/20260514-blogs_podcasts-build-financial-document-processing-with-pulse-ai--0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Pulse AI与Amazon Bedrock构建金融文档提取管道
@@ -159,9 +177,9 @@ Pulse AI提供的高级文档理解能力包括结构化信息提取、布局识
 
 ### 相关文章
 
-- [Untitled]({{< relref "posts/20260312-blogs_podcasts-accelerate-custom-llm-deployment-fine-tune-with-ou-13.md" >}})
-- [Qwen3-Coder-Next：下一代代码模型架构与性能解析]({{< relref "posts/20260204-hacker_news-qwen3-coder-next-13.md" >}})
-- [Qwen3-Coder-Next：下一代代码模型架构与性能升级]({{< relref "posts/20260204-hacker_news-qwen3-coder-next-17.md" >}})
-- [Agent-to-agent collaboration: Using Amazon Nova 2 Lite]({{< relref "posts/20260211-blogs_podcasts-agent-to-agent-collaboration-using-amazon-nova-2-l-13.md" >}})
-- [利用 Amazon Bedrock 构建由 AI 驱动的招聘系统]({{< relref "posts/20260212-blogs_podcasts-ai-meets-hr-transforming-talent-acquisition-with-a-1.md" >}})
+- [Untitled]({{< relref "posts/20260310-blogs_podcasts-accelerate-custom-llm-deployment-fine-tune-with-ou-0.md" >}})
+- [Qwen3-Coder-Next：下一代代码模型架构与性能解析]({{< relref "posts/20260203-hacker_news-qwen3-coder-next-0.md" >}})
+- [Qwen3-Coder-Next：下一代代码模型架构与性能升级]({{< relref "posts/20260203-hacker_news-qwen3-coder-next-0.md" >}})
+- [Agent-to-agent collaboration: Using Amazon Nova 2 Lite]({{< relref "posts/20260211-blogs_podcasts-agent-to-agent-collaboration-using-amazon-nova-2-l-12.md" >}})
+- [利用 Amazon Bedrock 构建由 AI 驱动的招聘系统]({{< relref "posts/20260212-blogs_podcasts-ai-meets-hr-transforming-talent-acquisition-with-a-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

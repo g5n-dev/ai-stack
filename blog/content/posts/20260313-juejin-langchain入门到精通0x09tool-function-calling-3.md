@@ -10,7 +10,7 @@ tags:
 - LLM
 - 能力边界
 - 实战
-- AI应用
+- AI 应用
 - 大模型开发
 categories:
 - 大模型
@@ -23,6 +23,10 @@ scenarios:
 - AI/ML项目
 - 大语言模型
 - 命令行工具
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # LangChain实战：利用Tool与Function Calling突破大模型能力边界
@@ -235,5 +239,5 @@ weather_tool.handle_tool_error = lambda e: f"工具调用出错: {e}"
 - [LangChain 框架完全指南：基于 LLM 的应用开发]({{< relref "posts/20260306-juejin-langchain-框架完全指南从入门到精通-3.md" >}})
 - [阿里云 Serverless 1月动态：LangChain 与 AgentRun 部署指南]({{< relref "posts/20260227-juejin-阿里云-serverless-计算-1-月产品动态-0.md" >}})
 - [大模型调用工具的原理与Agent开发基础]({{< relref "posts/20260311-juejin-面试官大模型是怎么调用工具的呢-2.md" >}})
-- [LangChain 进阶实战：当 Memory 遇上 OutputParser，打造有记忆的结构化助手]({{< relref "posts/20260211-juejin-langchain-进阶实战当-memory-遇上-outputparser打造有记忆的结构化助手-3.md" >}})
+- [LangChain 进阶实战：当 Memory 遇上 OutputParser，打造有记忆的结构化助手]({{< relref "posts/20260210-juejin-langchain-进阶实战当-memory-遇上-outputparser打造有记忆的结构化助手-3.md" >}})
 - [LangChain 模型 I/O 模块：提示构建、模型调用与输出解析]({{< relref "posts/20260215-juejin-langchain-模型io输入提示调用模型解析输出-4.md" >}})

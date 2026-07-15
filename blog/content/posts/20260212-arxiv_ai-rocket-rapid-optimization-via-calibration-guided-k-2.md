@@ -1,14 +1,30 @@
 ---
-title: "ROCKET：校准导向背包增强截断的高效模型压缩"
-date: 2026-02-12T02:48:17+08:00
+title: ROCKET：校准导向背包增强截断的高效模型压缩
+date: 2026-02-12 02:48:17+08:00
 draft: false
-entry_kind: "auto"
-tags: ["模型压缩", "ROCKET", "免训练", "剪枝", "结构化剪枝", "背包问题", "Qwen", "模型量化"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- 模型压缩
+- ROCKET
+- 免训练
+- 剪枝
+- 结构化剪枝
+- 背包问题
+- Qwen
+- 模型量化
+categories:
+- 大模型
+- AI 工程
 source: arxiv
-description: "ROCKET 是一种**免训练**的模型压缩方法，在性能上超越了因子分解、结构化剪枝和动态压缩等现有基线方法。其核心是在满足全局压缩预算的前提下，通过两个关键创新实现高效压缩： 1. **基于校准引导的背包问题优化**：ROCKET 将逐层压缩分配问题建模为“多选择背包问题”。该方法旨在为目标模型大小选择每层的最优压缩"
+description: ROCKET 是一种**免训练**的模型压缩方法，在性能上超越了因子分解、结构化剪枝和动态压缩等现有基线方法。其核心是在满足全局压缩预算的前提下，通过两个关键创新实现高效压缩：
+  1. **基于校准引导的背包问题优化**：ROCKET 将逐层压缩分配问题建模为“多选择背包问题”。该方法旨在为目标模型大小选择每层的最优压缩
 external_url: http://arxiv.org/abs/2602.11008v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # ROCKET：校准导向背包增强截断的高效模型压缩
@@ -39,7 +55,6 @@ ROCKET 是一种**免训练**的模型压缩方法，在性能上超越了因子
 实验结果显示，ROCKET 在不同架构和 20-50% 的压缩率下均表现优异。在 30% 压缩率下，无需微调即可保留超过 90% 的原始模型性能。若辅以轻量微调（例如用 300 万 token 将 Qwen3-14B 压缩并恢复至 8B 模型），其性能可接近原生 Qwen3-8B。
 
 ---
-## 研究最佳实践
 
 ## 最佳实践指南
 
@@ -127,7 +142,6 @@ ROCKET 强调“结构化”和“截断”。在移除通道后，模型的结�
 
 
 ---
-## 学习路径
 
 ## 学习路径
 
@@ -302,9 +316,9 @@ ROCKET 强调“结构化”和“截断”。在移除通道后，模型的结�
 
 ### 相关文章
 
-- [Qwen-Image-2.0: Professional infographics, exquisite ph]({{< relref "posts/20260210-hacker_news-qwen-image-20-professional-infographics-exquisite--13.md" >}})
+- [Qwen-Image-2.0: Professional infographics, exquisite ph]({{< relref "posts/20260210-hacker_news-qwen-image-20-professional-infographics-exquisite--1.md" >}})
 - [Agent Skills：压缩智能体技能以提升模型效率]({{< relref "posts/20260129-hacker_news-compressed-agentsmd-agent-skills-5.md" >}})
 - [基于认知上下文学习构建大模型多智能体系统的信任机制]({{< relref "posts/20260130-arxiv_ai-epistemic-context-learning-building-trust-the-righ-7.md" >}})
-- [Compressed Agents：Agent Skills 技术解析]({{< relref "posts/20260130-hacker_news-compressed-agentsmd-agent-skills-6.md" >}})
-- [混合线性注意力新架构：高效蒸馏与超长上下文建模]({{< relref "posts/20260131-arxiv_ai-hybrid-linear-attention-done-right-efficient-disti-2.md" >}})
+- [Compressed Agents：Agent Skills 技术解析]({{< relref "posts/20260129-hacker_news-compressed-agentsmd-agent-skills-5.md" >}})
+- [混合线性注意力新架构：高效蒸馏与超长上下文建模]({{< relref "posts/20260130-arxiv_ai-hybrid-linear-attention-done-right-efficient-disti-2.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

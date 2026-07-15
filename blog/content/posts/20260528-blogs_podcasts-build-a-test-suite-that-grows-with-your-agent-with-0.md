@@ -1,14 +1,29 @@
 ---
-title: "Amazon Bedrock AgentCore数据集管理实现随代理扩展的测试套件"
-date: 2026-05-28T18:57:50+08:00
+title: Amazon Bedrock AgentCore数据集管理实现随代理扩展的测试套件
+date: 2026-05-28 18:57:50+08:00
 draft: false
-entry_kind: "auto"
-tags: ["代理评估", "数据集管理", "离线测试", "版本化", "基准测试", "CI/CD集成", "回归测试", "可观测性"]
-categories: ["AI 工程"]
+entry_kind: auto
+tags:
+- 代理评估
+- 数据集管理
+- 离线测试
+- 版本化
+- 基准测试
+- CI/CD集成
+- 回归测试
+- 可观测性
+categories:
+- AI 工程
 source: blogs_podcasts
-description: "关键要点 - **测评双轨并行**：快速线上信号 + 稳定离线基准，能更客观地判断代理是否真正提升。 - **固定基准必要性**：随真实流量变化，需要保留一套不变的评价基准，以作时间维度的对比。 - **数据集化管理**：将测试用例作为数据集统一管理，可在 AgentCore 中实现版本化、复用与审计。 - **版本化"
+description: 关键要点 - **测评双轨并行**：快速线上信号 + 稳定离线基准，能更客观地判断代理是否真正提升。 - **固定基准必要性**：随真实流量变化，需要保留一套不变的评价基准，以作时间维度的对比。
+  - **数据集化管理**：将测试用例作为数据集统一管理，可在 AgentCore 中实现版本化、复用与审计。 - **版本化
 external_url: https://aws.amazon.com/blogs/machine-learning/build-a-test-suite-that-grows-with-your-agent-with-dataset-management-in-amazon-bedrock-agentcore
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Amazon Bedrock AgentCore数据集管理实现随代理扩展的测试套件
@@ -152,8 +167,8 @@ Agent评估体系需要平衡动态变化与稳定基准，这反映了当前AI�
 ### 相关文章
 
 - [Opus 4.5 在 OTelBench 基准测试中得分仅 29%]({{< relref "posts/20260129-hacker_news-otelbench-ai-struggles-with-simple-sre-tasks-opus--1.md" >}})
-- [Claude Code 每日基准测试用于性能退化追踪]({{< relref "posts/20260130-hacker_news-claude-code-daily-benchmarks-for-degradation-track-10.md" >}})
-- [Claude Code 每日基准测试：追踪模型性能退化]({{< relref "posts/20260129-hacker_news-claude-code-daily-benchmarks-for-degradation-track-3.md" >}})
-- [OTelBench评测：Opus 4.5在简单SRE任务中得分仅29%]({{< relref "posts/20260129-hacker_news-otelbench-ai-struggles-with-simple-sre-tasks-opus--4.md" >}})
-- [OTelBench评测：Opus 4.5在简单SRE任务中得分仅29%]({{< relref "posts/20260129-hacker_news-otelbench-ai-struggles-with-simple-sre-tasks-opus--5.md" >}})
+- [Claude Code 每日基准测试用于性能退化追踪]({{< relref "posts/20260129-hacker_news-claude-code-daily-benchmarks-for-degradation-track-0.md" >}})
+- [Claude Code 每日基准测试：追踪模型性能退化]({{< relref "posts/20260129-hacker_news-claude-code-daily-benchmarks-for-degradation-track-0.md" >}})
+- [OTelBench评测：Opus 4.5在简单SRE任务中得分仅29%]({{< relref "posts/20260129-hacker_news-otelbench-ai-struggles-with-simple-sre-tasks-opus--1.md" >}})
+- [OTelBench评测：Opus 4.5在简单SRE任务中得分仅29%]({{< relref "posts/20260129-hacker_news-otelbench-ai-struggles-with-simple-sre-tasks-opus--1.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

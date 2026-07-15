@@ -1,12 +1,29 @@
 ---
-title: "🔥LLM训练动力学新突破！可扩展损失景观曲率度量🚀"
-date: 2026-01-26T22:15:20+08:00
+title: 🔥LLM训练动力学新突破！可扩展损失景观曲率度量🚀
+date: 2026-01-26 22:15:20+08:00
 draft: false
-entry_kind: "auto"
-tags: ["LLM", "训练动力学", "损失景观", "曲率度量", "Hessian", "Critical Sharpness", "cs.LG", "深度学习"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- LLM
+- 训练动力学
+- 损失景观
+- 曲率度量
+- Hessian
+- Critical Sharpness
+- cs.LG
+- 深度学习
+categories:
+- 大模型
+- 论文
 source: arxiv
 external_url: http://arxiv.org/abs/2601.16979v1
+scenarios: []
+aliases:
+- /posts/20260127-arxiv_ai-a-scalable-measure-of-loss-landscape-curvature-for-1/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 📚 🔥LLM训练动力学新突破！可扩展损失景观曲率度量🚀
@@ -268,7 +285,6 @@ external_url: http://arxiv.org/abs/2601.16979v1
 本文并未发明 Hessian 特征值计算，但其**工程化落地**能力极强。它将一个原本只在理论界存在的工具，
 
 ---
-## ✅ 研究最佳实践
 
 ## 最佳实践指南
 
@@ -344,7 +360,6 @@ external_url: http://arxiv.org/abs/2601.16979v1
 - 📈 **泛化能力的曲率指标**：相比于单纯的训练Loss，**最小化Hessian谱范数或轨迹曲率**与模型的泛化能力呈现更强的正相关性，这意味着通过平滑损失地形，有望帮助模型在保持训练性能的同时
 
 ---
-## 🗺️ 学习路径
 
 ## 学习路径
 

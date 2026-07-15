@@ -22,6 +22,10 @@ external_url: https://juejin.cn/post/7606844350984699940
 scenarios:
 - AI/ML项目
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # OpenClaw实战指南：从零部署24小时可执行任务的AI管家
@@ -163,8 +167,8 @@ OpenClaw 通常通过适配
 
 ### 相关文章
 
-- [OpenClaw：GitHub 增长最快的开源 AI 代理框架]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-7.md" >}})
+- [OpenClaw：GitHub 增长最快的开源 AI 代理框架]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-0.md" >}})
 - [Moltworker：自托管个人 AI 智能体]({{< relref "posts/20260130-hacker_news-moltworker-a-self-hosted-personal-ai-agent-minus-t-16.md" >}})
-- [Moltworker：自托管个人 AI 智能体]({{< relref "posts/20260130-hacker_news-moltworker-a-self-hosted-personal-ai-agent-minus-t-19.md" >}})
+- [Moltworker：自托管个人 AI 智能体]({{< relref "posts/20260130-hacker_news-moltworker-a-self-hosted-personal-ai-agent-minus-t-16.md" >}})
 - [OpenClaw：GitHub 增长最快的开源 AI 智能体框架]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-0.md" >}})
-- [Peter Steinberger 深度访谈：解析 GitHub 增长最快的开源 AI 代理框架 OpenCl]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-1.md" >}})
+- [Peter Steinberger 深度访谈：解析 GitHub 增长最快的开源 AI 代理框架 OpenCl]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-0.md" >}})

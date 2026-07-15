@@ -1,14 +1,29 @@
 ---
-title: "自动研究智能体的反馈循环与人类核心作用"
-date: 2026-07-02T03:51:53+08:00
+title: 自动研究智能体的反馈循环与人类核心作用
+date: 2026-07-02 03:51:53+08:00
 draft: false
-entry_kind: "auto"
-tags: ["智能体", "反馈循环", "自动研究", "自我改进", "人类协作", "软件工厂", "AI工程", "配方"]
-categories: ["AI 工程"]
+entry_kind: auto
+tags:
+- 智能体
+- 反馈循环
+- 自动研究
+- 自我改进
+- 人类协作
+- 软件工厂
+- AI 工程
+- 配方
+categories:
+- AI 工程
 source: blogs_podcasts
-description: "Autoresearch 与反馈环 Autoresearch 是一套让 AI 智能体在执行任务后自动收集结果、评估效果并生成改进方案的系统。它通过把每一次运行的输出反馈给模型，使模型在下一轮迭代中能够针对具体错误或不足进行优化。 Agent “配方” 在 Introspection 平台，开发者把常用的任务流程、工具调"
+description: Autoresearch 与反馈环 Autoresearch 是一套让 AI 智能体在执行任务后自动收集结果、评估效果并生成改进方案的系统。它通过把每一次运行的输出反馈给模型，使模型在下一轮迭代中能够针对具体错误或不足进行优化。
+  Agent “配方” 在 Introspection 平台，开发者把常用的任务流程、工具调
 external_url: https://www.latent.space/p/autoresearch-introspection
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 自动研究智能体的反馈循环与人类核心作用
@@ -146,9 +161,9 @@ autoresearch代表了一种从“人工调优”到“自动进化”的范式�
 
 ### 相关文章
 
-- [软件工厂与智能体时刻：AI 编程范式的演进]({{< relref "posts/20260208-hacker_news-software-factories-and-the-agentic-moment-4.md" >}})
-- [软件工厂与智能体时刻]({{< relref "posts/20260208-hacker_news-software-factories-and-the-agentic-moment-6.md" >}})
+- [软件工厂与智能体时刻：AI 编程范式的演进]({{< relref "posts/20260207-hacker_news-software-factories-and-the-agentic-moment-4.md" >}})
+- [软件工厂与智能体时刻]({{< relref "posts/20260207-hacker_news-software-factories-and-the-agentic-moment-4.md" >}})
 - [SkillOpt：自进化智能体技能的优化策略]({{< relref "posts/20260525-arxiv_ai-skillopt-executive-strategy-for-self-evolving-agen-0.md" >}})
-- [Show HN: Emdash – 开源智能体开发环境]({{< relref "posts/20260224-hacker_news-show-hn-emdash-open-source-agentic-development-env-10.md" >}})
-- [AGENTS.md 架构在智能体评估中超越 Skills 技能]({{< relref "posts/20260130-hacker_news-agentsmd-outperforms-skills-in-our-agent-evals-5.md" >}})
+- [Show HN: Emdash – 开源智能体开发环境]({{< relref "posts/20260224-hacker_news-show-hn-emdash-open-source-agentic-development-env-15.md" >}})
+- [AGENTS.md 架构在智能体评估中超越 Skills 技能]({{< relref "posts/20260129-hacker_news-compressed-agentsmd-agent-skills-5.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

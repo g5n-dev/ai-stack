@@ -1,14 +1,32 @@
 ---
-title: "Sealos：AI 原生云操作系统"
-date: 2026-02-06T12:15:25+08:00
+title: Sealos：AI 原生云操作系统
+date: 2026-02-06 12:15:25+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Sealos", "云操作系统", "AI 原生", "Kubernetes", "容器化", "基础设施", "云原生", "DevOps"]
-categories: ["系统与基础设施", "开源生态"]
+entry_kind: auto
+tags:
+- Sealos
+- 云操作系统
+- AI 原生
+- Kubernetes
+- 容器化
+- 基础设施
+- 云原生
+- DevOps
+categories:
+- 系统与基础设施
+- 开源生态
 source: hacker_news
-description: "随着云原生架构的普及，基础设施的复杂度往往成为制约研发效率的瓶颈。Sealos 旨在通过内核级重构，将云资源回归为类似操作系统的标准化服务，从而大幅降低使用门槛。本文将深入解析其技术架构与核心特性，帮助开发者理解如何利用这一 AI 原生平台，实现更高效的资源管理与应用交付。"
+description: 随着云原生架构的普及，基础设施的复杂度往往成为制约研发效率的瓶颈。Sealos 旨在通过内核级重构，将云资源回归为类似操作系统的标准化服务，从而大幅降低使用门槛。本文将深入解析其技术架构与核心特性，帮助开发者理解如何利用这一
+  AI 原生平台，实现更高效的资源管理与应用交付。
 external_url: https://github.com/labring/sealos
-scenarios: ["AI/ML项目", "Kubernetes", "DevOps/运维"]
+scenarios:
+- AI/ML项目
+- Kubernetes
+- DevOps/运维
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Sealos：AI 原生云操作系统
@@ -204,7 +222,6 @@ print(deploy_container("nginx:latest", 3, 8080))
 - **成本与敏捷性平衡**：利用 Sealos 的按用量计费模式，避免了预留实例的资金浪费，同时实现了跨区域业务的高可用性。
 
 ---
-## 最佳实践
 
 ## 最佳实践指南
 
@@ -387,8 +404,8 @@ print(deploy_container("nginx:latest", 3, 8080))
 ### 相关文章
 
 - [微软推出 Azure Linux 发行版，用于优化云端基础设施]({{< relref "posts/20260129-hacker_news-microsofts-azure-linux-3.md" >}})
-- [OTelBench评测：Opus 4.5在简单SRE任务中得分仅29%]({{< relref "posts/20260129-hacker_news-otelbench-ai-struggles-with-simple-sre-tasks-opus--4.md" >}})
-- [OTelBench评测：Opus 4.5在简单SRE任务中得分仅29%]({{< relref "posts/20260129-hacker_news-otelbench-ai-struggles-with-simple-sre-tasks-opus--5.md" >}})
-- [Claude Code：面向基础设施的编程工具]({{< relref "posts/20260204-hacker_news-claude-code-for-infrastructure-12.md" >}})
-- [基于 NixOS 的 Microvm.nix 构建编码 Agent 虚拟机]({{< relref "posts/20260204-hacker_news-coding-agent-vms-on-nixos-with-microvmnix-15.md" >}})
+- [OTelBench评测：Opus 4.5在简单SRE任务中得分仅29%]({{< relref "posts/20260129-hacker_news-otelbench-ai-struggles-with-simple-sre-tasks-opus--1.md" >}})
+- [OTelBench评测：Opus 4.5在简单SRE任务中得分仅29%]({{< relref "posts/20260129-hacker_news-otelbench-ai-struggles-with-simple-sre-tasks-opus--1.md" >}})
+- [Claude Code：面向基础设施的编程工具]({{< relref "posts/20260204-hacker_news-claude-code-for-infrastructure-11.md" >}})
+- [基于 NixOS 的 Microvm.nix 构建编码 Agent 虚拟机]({{< relref "posts/20260204-hacker_news-coding-agent-vms-on-nixos-with-microvmnix-9.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

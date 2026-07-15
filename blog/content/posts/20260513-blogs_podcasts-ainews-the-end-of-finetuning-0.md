@@ -1,14 +1,30 @@
 ---
-title: "AI微调：从繁荣到反思"
-date: 2026-05-13T12:26:22+08:00
+title: AI微调：从繁荣到反思
+date: 2026-05-13 12:26:22+08:00
 draft: false
-entry_kind: "auto"
-tags: ["微调", "大模型", "LLM", "AI工程", "技术反思", "模型训练", "深度学习", "行业趋势"]
-categories: ["大模型"]
+entry_kind: auto
+tags:
+- 微调
+- 大模型
+- LLM
+- AI 工程
+- 技术反思
+- 模型训练
+- 深度学习
+- 行业趋势
+categories:
+- 大模型
 source: blogs_podcasts
-description: "背景 随着 GPT‑4、PaLM 等巨型基础模型的出现，模型本身已经具备极强的大规模知识与推理能力，过去通过大量标注数据对特定任务进行微调的模式正受到挑战。 趋势与原因 1. **Prompt‑Engineering 与 RLHF 取代微调**：通过少量示例或强化学习对齐即可让模型完成新任务，成本与周期显著低于传统微调"
+description: 背景 随着 GPT‑4、PaLM 等巨型基础模型的出现，模型本身已经具备极强的大规模知识与推理能力，过去通过大量标注数据对特定任务进行微调的模式正受到挑战。
+  趋势与原因 1. **Prompt‑Engineering 与 RLHF 取代微调**：通过少量示例或强化学习对齐即可让模型完成新任务，成本与周期显著低于传统微调
 external_url: https://www.latent.space/p/ainews-the-end-of-finetuning
-scenarios: ["大语言模型", "AI/ML项目"]
+scenarios:
+- 大语言模型
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AI微调：从繁荣到反思
@@ -136,9 +152,9 @@ scenarios: ["大语言模型", "AI/ML项目"]
 
 ### 相关文章
 
-- [LLM 数据集构建与模型训练优化指南]({{< relref "posts/20260218-hacker_news-if-youre-an-llm-please-read-this-4.md" >}})
+- [LLM 数据集构建与模型训练优化指南]({{< relref "posts/20260218-hacker_news-if-youre-an-llm-please-read-this-2.md" >}})
 - [FineInstructions：将合成指令数据扩展至预训练规模]({{< relref "posts/20260130-arxiv_ai-fineinstructions-scaling-synthetic-instructions-to-7.md" >}})
-- [Scale LLM fine-tuning with Hugging Face and Amazon Sage]({{< relref "posts/20260211-blogs_podcasts-scale-llm-fine-tuning-with-hugging-face-and-amazon-9.md" >}})
-- [Qwen3.5 微调指南：基于 Unsloth 文档]({{< relref "posts/20260304-hacker_news-qwen35-fine-tuning-guide-unsloth-documentation-15.md" >}})
-- [PRX Part 3：24小时训练文本生成图像模型]({{< relref "posts/20260305-blogs_podcasts-prx-part-3-training-a-text-to-image-model-in-24h-11.md" >}})
+- [Scale LLM fine-tuning with Hugging Face and Amazon Sage]({{< relref "posts/20260210-blogs_podcasts-scale-llm-fine-tuning-with-hugging-face-and-amazon-9.md" >}})
+- [Qwen3.5 微调指南：基于 Unsloth 文档]({{< relref "posts/20260304-hacker_news-qwen35-fine-tuning-guide-unsloth-documentation-7.md" >}})
+- [PRX Part 3：24小时训练文本生成图像模型]({{< relref "posts/20260303-blogs_podcasts-prx-part-3-training-a-text-to-image-model-in-24h-1.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

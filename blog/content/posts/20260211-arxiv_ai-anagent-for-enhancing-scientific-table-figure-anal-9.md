@@ -1,14 +1,33 @@
 ---
-title: "Anagent For Enhancing Scientific Table & Figure Analysi"
-date: 2026-02-11T16:19:57+08:00
+title: Anagent For Enhancing Scientific Table & Figure Analysi
+date: 2026-02-11 16:19:57+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Anagent", "多智能体", "科学图表分析", "AnaBench", "强化学习", "SFT", "长上下文", "多模态"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- Anagent
+- 多智能体
+- 科学图表分析
+- AnaBench
+- 强化学习
+- SFT
+- 长上下文
+- 多模态
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "以下是对该内容的简洁总结： 本文介绍了一种名为 **Anagent** 的多智能体框架，旨在提升对科学图表的分析能力。 **背景与挑战：** 科学研究中的分析工作要求准确解读复杂的多模态知识并整合证据，但目前的 AI 系统在面对结构复杂且多变的科学图表，以及长上下文需求时，往往面临巨大挑战。 **核心贡献：** 1."
+description: 以下是对该内容的简洁总结： 本文介绍了一种名为 **Anagent** 的多智能体框架，旨在提升对科学图表的分析能力。 **背景与挑战：**
+  科学研究中的分析工作要求准确解读复杂的多模态知识并整合证据，但目前的 AI 系统在面对结构复杂且多变的科学图表，以及长上下文需求时，往往面临巨大挑战。 **核心贡献：**
+  1.
 external_url: http://arxiv.org/abs/2602.10081v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+aliases:
+- /posts/20260212-arxiv_ai-anagent-for-enhancing-scientific-table-figure-anal-9/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Anagent For Enhancing Scientific Table & Figure Analysis
@@ -46,7 +65,6 @@ scenarios: ["Web应用开发"]
 在 170 个子领域的综合评估中，Anagent 表现优异。与基线相比，它在无训练设置下性能提升了高达 13.43%，在微调后提升了 42.12%。这证明了面向任务的推理和上下文感知的问题解决对于高质量的科学图表分析至关重要。
 
 ---
-## 研究最佳实践
 
 ## 最佳实践指南
 
@@ -134,7 +152,6 @@ scenarios: ["Web应用开发"]
 - 该框架具备强大的数据重构能力，能够从静态图像中逆向推导并生成可编辑的代码或表格数据，从而辅助研究人员进行数据复现和二次分析。
 
 ---
-## 学习路径
 
 ## 学习路径
 
@@ -287,5 +304,5 @@ scenarios: ["Web应用开发"]
 - [基于认知上下文学习构建大模型多智能体系统的信任机制]({{< relref "posts/20260130-arxiv_ai-epistemic-context-learning-building-trust-the-righ-7.md" >}})
 - [RE-TRAC：面向深度搜索智能体的递归轨迹压缩方法]({{< relref "posts/20260203-arxiv_ai-re-trac-recursive-trajectory-compression-for-deep--4.md" >}})
 - [视觉语言模型能否通过交互学习直觉物理]({{< relref "posts/20260206-arxiv_ai-can-vision-language-models-learn-intuitive-physics-5.md" >}})
-- [视觉语言模型能否通过交互学习直观物理]({{< relref "posts/20260207-arxiv_ai-can-vision-language-models-learn-intuitive-physics-5.md" >}})
+- [视觉语言模型能否通过交互学习直观物理]({{< relref "posts/20260206-arxiv_ai-can-vision-language-models-learn-intuitive-physics-5.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

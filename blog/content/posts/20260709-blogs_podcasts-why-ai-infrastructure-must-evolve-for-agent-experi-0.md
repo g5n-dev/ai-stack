@@ -1,14 +1,31 @@
 ---
-title: "Modal CTO：AI基础设施的Agent Experience演进"
-date: 2026-07-09T05:02:24+08:00
+title: Modal CTO：AI基础设施的Agent Experience演进
+date: 2026-07-09 05:02:24+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI基础设施", "Agent体验", "Modal", "云平台", "Agent云", "开发者体验", "LLM应用", "技术创业"]
-categories: ["系统与基础设施", "AI 工程"]
+entry_kind: auto
+tags:
+- AI 基础设施
+- Agent体验
+- Modal
+- 云平台
+- Agent云
+- 开发者体验
+- LLM 应用
+- 技术创业
+categories:
+- 系统与基础设施
+- AI 工程
 source: blogs_podcasts
-description: "随着Agent应用逐步走向生产环境，AI基础设施的升级成为关键。本文回顾Modal在过去两年中如何突破技术瓶颈，实现真正的Agent Experience，并分享在构建全新agent cloud过程中的实战经验与教训。对想要在AI原生平台落地的团队而言，这些经验提供了可直接参考的设计思路和避坑指南。"
+description: 随着Agent应用逐步走向生产环境，AI基础设施的升级成为关键。本文回顾Modal在过去两年中如何突破技术瓶颈，实现真正的Agent Experience，并分享在构建全新agent
+  cloud过程中的实战经验与教训。对想要在AI原生平台落地的团队而言，这些经验提供了可直接参考的设计思路和避坑指南。
 external_url: https://www.latent.space/p/modal2026
-scenarios: ["AI/ML项目", "大语言模型"]
+scenarios:
+- AI/ML项目
+- 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Modal CTO：AI基础设施的Agent Experience演进
@@ -128,9 +145,9 @@ Agent Experience（代理体验）正成为 AI 应用的核心竞争力，而支
 
 ### 相关文章
 
-- [通往无处不在的AI：实现每秒1.7万tokens推理]({{< relref "posts/20260220-hacker_news-the-path-to-ubiquitous-ai-17k-tokenssec-5.md" >}})
+- [通往无处不在的AI：实现每秒1.7万tokens推理]({{< relref "posts/20260220-hacker_news-the-path-to-ubiquitous-ai-17k-tokenssec-0.md" >}})
 - [AI Infra新融资：Exa、Modal与TurboPuffer]({{< relref "posts/20260522-blogs_podcasts-ainews-new-ai-infra-unicorns-exa-modal-turbopuffer-0.md" >}})
-- [为何推出科学领域AI播客以及工程师应关注的原因]({{< relref "posts/20260129-blogs_podcasts-its-time-to-science-2.md" >}})
+- [为何推出科学领域AI播客以及工程师应关注的原因]({{< relref "posts/20260129-blogs_podcasts-its-time-to-science-0.md" >}})
 - [Claude Composer：AI 编排多 Agent 协作完成复杂任务]({{< relref "posts/20260206-hacker_news-claude-composer-9.md" >}})
-- [Claude Composer：AI 编排多智能体工作流]({{< relref "posts/20260207-hacker_news-claude-composer-18.md" >}})
+- [Claude Composer：AI 编排多智能体工作流]({{< relref "posts/20260206-hacker_news-claude-composer-9.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

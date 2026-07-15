@@ -12,6 +12,7 @@ import logging
 import re
 
 from .anthropic_client import AnthropicClient
+from ai_stack.tag_taxonomy import normalize_tag, normalize_tags
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -57,6 +58,9 @@ class ContentTagger:
 
         # If already tagged, skip unless forced.
         existing_tags = content.get("tags")
+        if isinstance(existing_tags, list):
+            content["tags"] = normalize_tags(existing_tags)
+            existing_tags = content["tags"]
         existing_categories = content.get("categories")
         if isinstance(existing_tags, list) and len(existing_tags) > 0 and isinstance(existing_categories, list) and len(existing_categories) > 0:
             return content
@@ -72,7 +76,7 @@ class ContentTagger:
             result = self._parse_result(raw)
             if not result:
                 fallback = self._fallback(content)
-                content["tags"] = fallback.tags
+                content["tags"] = normalize_tags(fallback.tags, limit=self.max_tags)
                 content["categories"] = fallback.categories
                 return content
 
@@ -83,7 +87,7 @@ class ContentTagger:
         except Exception as e:
             logger.error(f"Failed to tag content: {e}")
             fallback = self._fallback(content)
-            content["tags"] = fallback.tags
+            content["tags"] = normalize_tags(fallback.tags, limit=self.max_tags)
             content["categories"] = fallback.categories
             return content
 
@@ -208,11 +212,7 @@ class ContentTagger:
         return categories_clean, tags_clean
 
     def _clean_token(self, s: str) -> str:
-        s = str(s or "").strip()
-        s = s.replace("#", "")
-        s = re.sub(r"[\u3002。]+$", "", s)
-        s = re.sub(r"\s+", " ", s).strip()
-        return s
+        return normalize_tag(s)
 
     def _fallback(self, content: Optional[Dict[str, Any]]) -> TaggingResult:
         # Lightweight heuristic fallback to avoid empty taxonomies.

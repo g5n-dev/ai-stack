@@ -1,14 +1,29 @@
 ---
-title: "AIOps自治运维平台的闭环进化实践"
-date: 2026-05-24T00:27:44+08:00
+title: AIOps自治运维平台的闭环进化实践
+date: 2026-05-24 00:27:44+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AIOps", "自治运维", "闭环机制", "Agent推理", "安全治理", "监控", "自动化", "可靠性"]
-categories: ["系统与基础设施", "AI 工程"]
+entry_kind: auto
+tags:
+- AIOps
+- 自治运维
+- 闭环机制
+- Agent推理
+- 安全治理
+- 监控
+- 自动化
+- 可靠性
+categories:
+- 系统与基础设施
+- AI 工程
 source: juejin
-description: "AIOPS 通过构建自治运维平台，把监控事实、Agent 推理、运维经验、执行编排、安全治理和回归验证六要素闭环，实现系统日常巡检、告警快速响应、知识沉淀与策略自愈，持续提升可靠性。"
+description: AIOPS 通过构建自治运维平台，把监控事实、Agent 推理、运维经验、执行编排、安全治理和回归验证六要素闭环，实现系统日常巡检、告警快速响应、知识沉淀与策略自愈，持续提升可靠性。
 external_url: https://juejin.cn/post/7642611621652168740
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AIOps自治运维平台的闭环进化实践
@@ -99,8 +114,8 @@ AIOPS 通过构建自治运维平台，把监控事实、Agent 推理、运维�
 ### 相关文章
 
 - [不要盲目信任 AI 智能体]({{< relref "posts/20260228-hacker_news-dont-trust-ai-agents-4.md" >}})
-- [Claude Code：面向基础设施的自动化编程工具]({{< relref "posts/20260205-hacker_news-claude-code-for-infrastructure-8.md" >}})
+- [Claude Code：面向基础设施的自动化编程工具]({{< relref "posts/20260204-hacker_news-claude-code-for-infrastructure-11.md" >}})
 - [Klaw.sh：面向 AI 智能体的 Kubernetes 编排工具]({{< relref "posts/20260216-hacker_news-show-hn-klawsh-kubernetes-for-ai-agents-12.md" >}})
 - [理光基于AWS构建可扩展智能文档处理方案]({{< relref "posts/20260304-blogs_podcasts-how-ricoh-built-a-scalable-intelligent-document-pr-0.md" >}})
-- [基于AWS构建Ricoh可扩展智能文档处理解决方案]({{< relref "posts/20260305-blogs_podcasts-how-ricoh-built-a-scalable-intelligent-document-pr-13.md" >}})
+- [基于AWS构建Ricoh可扩展智能文档处理解决方案]({{< relref "posts/20260304-blogs_podcasts-how-ricoh-built-a-scalable-intelligent-document-pr-0.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

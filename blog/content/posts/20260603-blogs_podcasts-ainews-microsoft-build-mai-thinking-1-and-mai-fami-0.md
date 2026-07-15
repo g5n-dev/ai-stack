@@ -1,14 +1,30 @@
 ---
-title: "微软Build MAI模型技术解析"
-date: 2026-06-03T09:37:09+08:00
+title: 微软Build MAI模型技术解析
+date: 2026-06-03 09:37:09+08:00
 draft: false
-entry_kind: "auto"
-tags: ["大模型", "微软", "MAI", "技术解析", "开源生态", "模型家族", "AI工程", "LLM"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- 大模型
+- 微软
+- MAI
+- 技术解析
+- 开源生态
+- 模型家族
+- AI 工程
+- LLM
+categories:
+- 大模型
+- AI 工程
 source: blogs_podcasts
-description: "在本次 Microsoft Build 大会上，推出了 MAI-Thinking-1 及 MAI 家族模型，展示了在推理能力与多模态任务上的技术突破。通过改进注意力机制和大规模预训练，这些模型实现了更高的计算效率和更精准的输出，成为企业构建智能应用的关键组件。对开发者而言，掌握新模型的特性和调用方式，有助于快速在项目中"
+description: 在本次 Microsoft Build 大会上，推出了 MAI-Thinking-1 及 MAI 家族模型，展示了在推理能力与多模态任务上的技术突破。通过改进注意力机制和大规模预训练，这些模型实现了更高的计算效率和更精准的输出，成为企业构建智能应用的关键组件。对开发者而言，掌握新模型的特性和调用方式，有助于快速在项目中
 external_url: https://www.latent.space/p/ainews-microsoft-build-mai-thinking
-scenarios: ["AI/ML项目", "大语言模型"]
+scenarios:
+- AI/ML项目
+- 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 微软Build MAI模型技术解析
@@ -169,7 +185,7 @@ MAI‑Thinking‑1 提供可插拔的“思考节点”，业务人员通过拖�
 
 - [Cirrus Labs 团队加入 OpenAI]({{< relref "posts/20260411-hacker_news-cirrus-labs-to-join-openai-0.md" >}})
 - [深入解析大模型底层机制与Agent开发]({{< relref "posts/20260521-juejin-大模型底层机制与agent开发-0.md" >}})
-- [Phi-4多模态推理模型训练经验与技术解析]({{< relref "posts/20260308-hacker_news-phi-4-reasoning-vision-and-the-lessons-of-training-18.md" >}})
+- [Phi-4多模态推理模型训练经验与技术解析]({{< relref "posts/20260308-hacker_news-phi-4-reasoning-vision-and-the-lessons-of-training-14.md" >}})
 - [2026年Java AI开发实战：Spring AI完全指南]({{< relref "posts/20260411-juejin-2026年java-ai开发实战spring-ai完全指南-0.md" >}})
 - [DeepClaude集成DeepSeek V4 Pro代理循环，成本降至1/17]({{< relref "posts/20260504-hacker_news-deepclaude-claude-code-agent-loop-with-deepseek-v4-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

@@ -1,14 +1,31 @@
 ---
-title: "OpenClaw集成peekaboo实现Mac界面自动化控制"
-date: 2026-02-13T11:27:57+08:00
+title: OpenClaw集成peekaboo实现Mac界面自动化控制
+date: 2026-02-13 11:27:57+08:00
 draft: false
-entry_kind: "auto"
-tags: ["OpenClaw", "peekaboo", "Mac自动化", "AI Agent", "RPA", "读屏", "UI控制", "LLM"]
-categories: ["开发工具", "AI 工程"]
+entry_kind: auto
+tags:
+- OpenClaw
+- peekaboo
+- Mac自动化
+- AI Agent
+- RPA
+- 读屏
+- UI控制
+- LLM
+categories:
+- 开发工具
+- AI 工程
 source: juejin
-description: "这段内容主要介绍了在 **OpenClaw** 环境中安装和使用 **peekaboo** 的方法，旨在通过 AI 实现对 Mac 系统的自动化控制。 以下是核心功能与步骤总结： **1. 核心功能：Mac 交互与“读屏”** peekaboo 是一个连接 OpenClaw 与 Mac 操作系统的桥梁工具，主要实现三大"
+description: 这段内容主要介绍了在 **OpenClaw** 环境中安装和使用 **peekaboo** 的方法，旨在通过 AI 实现对 Mac 系统的自动化控制。
+  以下是核心功能与步骤总结： **1. 核心功能：Mac 交互与“读屏”** peekaboo 是一个连接 OpenClaw 与 Mac 操作系统的桥梁工具，主要实现三大
 external_url: https://juejin.cn/post/7605882792145649727
-scenarios: ["AI/ML项目", "大语言模型"]
+scenarios:
+- AI/ML项目
+- 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # OpenClaw集成peekaboo实现Mac界面自动化控制
@@ -197,8 +214,8 @@ peekaboo 是一个连接 OpenClaw 与 Mac 操作系统的桥梁工具，主要�
 ### 相关文章
 
 - [OpenClaw：GitHub 增长最快的开源 AI 智能体框架]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-0.md" >}})
-- [Peter Steinberger 深度访谈：解析 GitHub 增长最快的开源 AI 代理框架 OpenCl]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-1.md" >}})
-- [OpenClaw 开源 AI 智能体框架与 GitHub 增长纪录]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-2.md" >}})
-- [OpenClaw 开源 AI Agent 框架解析与 GitHub 增长复盘]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-3.md" >}})
-- [OpenClaw：GitHub 增长最快的开源 AI 智能体框架]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-4.md" >}})
+- [Peter Steinberger 深度访谈：解析 GitHub 增长最快的开源 AI 代理框架 OpenCl]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-0.md" >}})
+- [OpenClaw 开源 AI 智能体框架与 GitHub 增长纪录]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-0.md" >}})
+- [OpenClaw 开源 AI Agent 框架解析与 GitHub 增长复盘]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-0.md" >}})
+- [OpenClaw：GitHub 增长最快的开源 AI 智能体框架]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-0.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

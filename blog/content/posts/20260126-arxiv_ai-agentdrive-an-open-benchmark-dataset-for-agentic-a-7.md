@@ -1,12 +1,29 @@
 ---
-title: "AgentDrive：首个开放基准！🚗 LLM生成场景驱动Agent智能推理"
-date: 2026-01-26T22:15:20+08:00
+title: AgentDrive：首个开放基准！🚗 LLM生成场景驱动Agent智能推理
+date: 2026-01-26 22:15:20+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AgentDrive", "自动驾驶", "基准测试", "LLM", "具身智能", "数据集", "多模态", "AI Agent"]
-categories: ["大模型", "数据"]
+entry_kind: auto
+tags:
+- AgentDrive
+- 自动驾驶
+- 基准测试
+- LLM
+- 具身智能
+- 数据集
+- 多模态
+- AI Agent
+categories:
+- 大模型
+- 数据
 source: arxiv
 external_url: http://arxiv.org/abs/2601.16964v1
+scenarios: []
+aliases:
+- /posts/20260127-arxiv_ai-agentdrive-an-open-benchmark-dataset-for-agentic-a-7/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 📚 AgentDrive：首个开放基准！🚗 LLM生成场景驱动Agent智能推理
@@ -281,7 +298,6 @@ AgentDrive 在数据生成的**自动化程度**和**语义深度**上具有显�
 *   **依赖：** 依赖 LLM 的逻辑推理能力来生成场景，如果 LLM 本身不懂“摩擦力”，生成的 JSON 场景在物理上可能就是荒谬的（虽然有验证器，但验证器
 
 ---
-## ✅ 研究最佳实践
 
 ## 最佳实践指南：基于 AgentDrive 的智能体推理与自动驾驶
 
@@ -365,7 +381,6 @@ AgentDrive 强调“智能体”之间的交互。静态的障碍物无法测试
 - 数据集开源且设计可扩展，鼓励社区共同构建更难度的测试场景，推动自动驾驶从L2向L4/L5级智能演进 🔓。
 
 ---
-## 🗺️ 学习路径
 
 ## 学习路径：AgentDrive 与 Agentic AI 在自动驾驶中的应用
 

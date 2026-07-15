@@ -21,6 +21,12 @@ description: '**总结：SmartSearch —— 对话记忆检索中的排序优于
 external_url: http://arxiv.org/abs/2603.15599v1
 scenarios:
 - RAG应用
+aliases:
+- /posts/20260318-arxiv_ai-smartsearch-how-ranking-beats-structure-for-conver-6/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # SmartSearch：排序机制如何优化对话记忆检索
@@ -125,7 +131,6 @@ SmartSearch 采用完全确定性的检索管道，主要包含以下步骤：
 
 ## 技术分析
 
-### 1. 研究背景与问题定义
 
 ### 核心问题
 随着基于大语言模型（LLM）的对话Agent（如Character.ai, In-world AI）的应用普及，如何在长期、多轮对话中实现高效的**记忆检索**成为了一个技术瓶颈。本研究旨在探讨在构建对话记忆系统时，**排序策略**与**数据结构化**之间的权衡，具体分析是否必须依赖昂贵的LLM进行数据预处理，或者复杂的端到端神经网络模型是否为唯一解。
@@ -364,7 +369,7 @@ SmartSearch 的工作流程主要分为两个阶段：
 ### 相关文章
 
 - [Nemotron ColEmbed V2：基于ViDoRe V3的多模态检索模型]({{< relref "posts/20260204-blogs_podcasts-nemotron-colembed-v2-raising-the-bar-for-multimoda-0.md" >}})
-- [Nemotron ColEmbed V2：基于ViDoRe V3的多模态检索模型]({{< relref "posts/20260205-blogs_podcasts-nemotron-colembed-v2-raising-the-bar-for-multimoda-1.md" >}})
-- [Nemotron ColEmbed V2：基于ViDoRe V3的多模态检索模型]({{< relref "posts/20260205-blogs_podcasts-nemotron-colembed-v2-raising-the-bar-for-multimoda-3.md" >}})
-- [Nemotron ColEmbed V2：基于ViDoRe V3的多模态检索模型]({{< relref "posts/20260205-blogs_podcasts-nemotron-colembed-v2-raising-the-bar-for-multimoda-4.md" >}})
-- [Nemotron ColEmbed V2：基于ViDoRe V3的多模态检索模型]({{< relref "posts/20260205-blogs_podcasts-nemotron-colembed-v2-raising-the-bar-for-multimoda-6.md" >}})
+- [Nemotron ColEmbed V2：基于ViDoRe V3的多模态检索模型]({{< relref "posts/20260204-blogs_podcasts-nemotron-colembed-v2-raising-the-bar-for-multimoda-0.md" >}})
+- [Nemotron ColEmbed V2：基于ViDoRe V3的多模态检索模型]({{< relref "posts/20260204-blogs_podcasts-nemotron-colembed-v2-raising-the-bar-for-multimoda-0.md" >}})
+- [Nemotron ColEmbed V2：基于ViDoRe V3的多模态检索模型]({{< relref "posts/20260204-blogs_podcasts-nemotron-colembed-v2-raising-the-bar-for-multimoda-0.md" >}})
+- [Nemotron ColEmbed V2：基于ViDoRe V3的多模态检索模型]({{< relref "posts/20260204-blogs_podcasts-nemotron-colembed-v2-raising-the-bar-for-multimoda-0.md" >}})

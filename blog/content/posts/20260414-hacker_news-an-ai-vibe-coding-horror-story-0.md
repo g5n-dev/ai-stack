@@ -1,14 +1,28 @@
 ---
-title: "AI编程工具的隐藏风险"
-date: 2026-04-14T09:36:47+08:00
+title: AI编程工具的隐藏风险
+date: 2026-04-14 09:36:47+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI编程风险", "安全问题", "代码质量", "开发工具", "生产力陷阱", "实战案例", "经验总结"]
-categories: ["安全"]
+entry_kind: auto
+tags:
+- AI编程风险
+- 安全问题
+- 代码质量
+- 开发工具
+- 生产力陷阱
+- 实战案例
+- 经验总结
+categories:
+- 安全
 source: hacker_news
-description: "随着AI辅助编程工具的快速迭代，Vibe Coding作为一种通过自然语言实时生成代码的模式，正被越来越多的团队尝试。然而，这种高度依赖模型输出的工作流往往隐藏着代码逻辑不完整、依赖冲突等风险，一旦忽视便会导致难以追踪的 bug。本文通过一个真实项目中的失败案例，详细剖析问题产生的根源，并提供在实际开发中避免类似陷阱的"
+description: 随着AI辅助编程工具的快速迭代，Vibe Coding作为一种通过自然语言实时生成代码的模式，正被越来越多的团队尝试。然而，这种高度依赖模型输出的工作流往往隐藏着代码逻辑不完整、依赖冲突等风险，一旦忽视便会导致难以追踪的
+  bug。本文通过一个真实项目中的失败案例，详细剖析问题产生的根源，并提供在实际开发中避免类似陷阱的
 external_url: https://www.tobru.ch/an-ai-vibe-coding-horror-story
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AI编程工具的隐藏风险
@@ -80,9 +94,9 @@ scenarios: ["AI/ML项目"]
 
 ### 相关文章
 
-- [构建极简且具倾向性的编程代理的经验总结]({{< relref "posts/20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-3.md" >}})
+- [构建极简且具倾向性的编程代理的经验总结]({{< relref "posts/20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-1.md" >}})
 - [Android AI Agent四层架构与安全设计实战解析]({{< relref "posts/20260226-juejin-android-平台-ai-agent-技术架构深度解析-3.md" >}})
 - [OpenAI收购AI安全平台Promptfoo以修复系统漏洞]({{< relref "posts/20260309-blogs_podcasts-openai-to-acquire-promptfoo-2.md" >}})
-- [OpenAI 收购 AI 安全平台 Promptfoo 以强化漏洞修复]({{< relref "posts/20260310-blogs_podcasts-openai-to-acquire-promptfoo-5.md" >}})
-- [面向未审查AI生成代码的自动化验证技术]({{< relref "posts/20260317-hacker_news-toward-automated-verification-of-unreviewed-ai-gen-7.md" >}})
+- [OpenAI 收购 AI 安全平台 Promptfoo 以强化漏洞修复]({{< relref "posts/20260309-blogs_podcasts-openai-to-acquire-promptfoo-2.md" >}})
+- [面向未审查AI生成代码的自动化验证技术]({{< relref "posts/20260317-hacker_news-toward-automated-verification-of-unreviewed-ai-gen-6.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

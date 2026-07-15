@@ -21,6 +21,12 @@ description: 以下是对该内容的中文总结： **标题：校准后行动�
 external_url: http://arxiv.org/abs/2602.16699v1
 scenarios:
 - 大语言模型
+aliases:
+- /posts/20260220-arxiv_ai-calibrate-then-act-cost-aware-exploration-in-llm-a-4/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Calibrate-Then-Act：大模型智能体的成本感知探索
@@ -120,7 +126,6 @@ scenarios:
 
 ---
 
-### 1. 研究背景与问题
 
 ### 核心问题
 本研究旨在解决大语言模型（LLM）代理在交互式任务中的**成本感知决策**问题。具体而言，当一个 LLM 代理面临一个复杂任务（如编写代码、检索信息）时，它需要决定是“直接给出最终答案”还是“继续执行探索性操作（如运行测试、搜索网页）以获取更多信息”。核心难点在于如何在**探索带来的信息增益**与**探索产生的计算/经济成本**之间进行最优权衡。
@@ -143,7 +148,6 @@ scenarios:
 
 ---
 
-### 2. 核心方法与创新
 
 ### 核心方法：Calibrate-Then-Act (CTA)
 研究者提出了一种名为 **“校准后行动”** 的框架。其核心思想是将 LLM 的决策过程分解为两个阶段：
@@ -162,7 +166,6 @@ scenarios:
 
 ---
 
-### 3. 理论基础
 
 ### 理论依据
 CTA 的理论基石是**贝叶斯决策理论**和**序列决策过程**。
@@ -181,7 +184,6 @@ Agent 选择效用更高的选项。这里的 $P(h|context)$ 就是由 LLM 在�
 
 ---
 
-### 4. 实验与结果
 
 ### 实验设计
 研究者在两个主要场景中进行了评估：
@@ -199,7 +201,6 @@ Agent 选择效用更高的选项。这里的 $P(h|context)$ 就是由 LLM 在�
 
 ---
 
-### 5. 应用前景
 
 ### 实际应用场景
 - **自动化测试与调试**：在 CI/CD 流程中，Agent 可以根据代码变更的复杂度决定运行多少测试用例，既保证质量又节省计算资源。
@@ -214,7 +215,6 @@ Agent 选择效用更高的选项。这里的 $P(h|context)$ 就是由 LLM 在�
 
 ---
 
-### 6. 研究启示
 
 ### 对领域的启示
 该研究挑战了“越大越好”或“思考越久越好”的惯性思维，指出了**元认知**——即“知道自己知道什么”的重要性。它表明，未来的 Agent 研究应从单纯的“提升能力”转向“提升对自身局限性的认知”。
@@ -226,7 +226,6 @@ Agent 选择效用更高的选项。这里的 $P(h|context)$ 就是由 LLM 在�
 
 ---
 
-### 7. 学习建议
 
 ### 适合读者
 - 从事 LLM Agent 系统研发的工程师。
@@ -246,7 +245,6 @@ Agent 选择效用更高的选项。这里的 $P(h|context)$ 就是由 LLM 在�
 
 ---
 
-### 8. 相关工作对比
 
 ### 对比分析
 - **vs. ReAct / Reflexion**：
@@ -263,7 +261,6 @@ CTA 的创新性不在于提出了全新的网络结构，而在于**将经典�
 
 ---
 
-### 9. 研究哲学：可证伪性与边界
 
 ### 关键假设与归纳偏置
 - **假设**：环境的状态空间是可知的，且奖励函数是可以被明确定义的。
@@ -553,8 +550,8 @@ CTA 实现成本感知主要通过**隐式和显式**两种方式，具体取决
 
 ### 相关文章
 
-- [推理大语言模型从被动求解转向主动询问]({{< relref "posts/20260131-arxiv_ai-reasoning-while-asking-transforming-reasoning-larg-9.md" >}})
-- [DyTopo：基于语义匹配的多智能体动态拓扑路由]({{< relref "posts/20260207-arxiv_ai-dytopo-dynamic-topology-routing-for-multi-agent-re-2.md" >}})
-- [基于策略上下文蒸馏的大语言模型优化方法]({{< relref "posts/20260214-arxiv_ai-on-policy-context-distillation-for-language-models-4.md" >}})
-- [面向语言模型的在线上下文蒸馏方法]({{< relref "posts/20260216-arxiv_ai-on-policy-context-distillation-for-language-models-4.md" >}})
+- [推理大语言模型从被动求解转向主动询问]({{< relref "posts/20260130-arxiv_ai-reasoning-while-asking-transforming-reasoning-larg-9.md" >}})
+- [DyTopo：基于语义匹配的多智能体动态拓扑路由]({{< relref "posts/20260206-arxiv_ai-dytopo-dynamic-topology-routing-for-multi-agent-re-2.md" >}})
+- [基于策略上下文蒸馏的大语言模型优化方法]({{< relref "posts/20260213-arxiv_ai-on-policy-context-distillation-for-language-models-4.md" >}})
+- [面向语言模型的在线上下文蒸馏方法]({{< relref "posts/20260213-arxiv_ai-on-policy-context-distillation-for-language-models-4.md" >}})
 - [语义分块与自然语言熵的关联研究]({{< relref "posts/20260216-arxiv_ai-semantic-chunking-and-the-entropy-of-natural-langu-1.md" >}})

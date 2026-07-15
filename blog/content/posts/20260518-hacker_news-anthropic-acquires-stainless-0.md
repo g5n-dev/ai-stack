@@ -1,14 +1,29 @@
 ---
-title: "Anthropic收购API开发平台Stainless"
-date: 2026-05-18T22:19:23+08:00
+title: Anthropic收购API开发平台Stainless
+date: 2026-05-18 22:19:23+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Anthropic", "Stainless", "API平台", "企业收购", "大模型", "AI工程", "创业", "开发工具"]
-categories: ["大模型", "产品与创业"]
+entry_kind: auto
+tags:
+- Anthropic
+- Stainless
+- API平台
+- 企业收购
+- 大模型
+- AI 工程
+- 创业
+- 开发工具
+categories:
+- 大模型
+- 产品与创业
 source: hacker_news
-description: "Anthropic已完成对代码质量平台Stainless的收购，旨在将其自动化审查和持续集成能力整合进大模型开发流程。随着AI系统对代码可靠性的要求提升，收购将帮助Anthropic在内部工具链上实现更高的安全与可维护性。读者可通过本文了解收购细节、两家公司的技术互补点以及对Anthropic未来产品路线图的潜在影响。"
+description: Anthropic已完成对代码质量平台Stainless的收购，旨在将其自动化审查和持续集成能力整合进大模型开发流程。随着AI系统对代码可靠性的要求提升，收购将帮助Anthropic在内部工具链上实现更高的安全与可维护性。读者可通过本文了解收购细节、两家公司的技术互补点以及对Anthropic未来产品路线图的潜在影响。
 external_url: https://www.anthropic.com/news/anthropic-acquires-stainless
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Anthropic收购API开发平台Stainless
@@ -81,7 +96,7 @@ Stainless是一家专注于API设计和自动化文档生成的公司，其产�
 
 ### 相关文章
 
-- [Anthropic 否认 Claude Code 用户成本高达五千美元]({{< relref "posts/20260310-hacker_news-no-it-doesnt-cost-anthropic-5k-per-claude-code-use-14.md" >}})
+- [Anthropic 否认 Claude Code 用户成本高达五千美元]({{< relref "posts/20260310-hacker_news-no-it-doesnt-cost-anthropic-5k-per-claude-code-use-8.md" >}})
 - [Claude设计功能深度解析]({{< relref "posts/20260417-hacker_news-claude-design-0.md" >}})
 - [Google将向Anthropic投资至多400亿美元]({{< relref "posts/20260424-hacker_news-google-plans-to-invest-up-to-40b-in-anthropic-0.md" >}})
 - [DeepClaude集成DeepSeek V4 Pro代理循环，成本降至1/17]({{< relref "posts/20260504-hacker_news-deepclaude-claude-code-agent-loop-with-deepseek-v4-0.md" >}})

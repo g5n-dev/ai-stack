@@ -1,14 +1,30 @@
 ---
-title: "仓库 Agent 就绪度评估：发现基础设施短板"
-date: 2026-05-18T09:00:19+08:00
+title: 仓库 Agent 就绪度评估：发现基础设施短板
+date: 2026-05-18 09:00:19+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI Agent", "Agent就绪度", "CI/CD评估", "测试覆盖率", "依赖管理", "文档完善度", "代码库结构", "基础设施短板"]
-categories: ["AI 工程", "系统与基础设施"]
+entry_kind: auto
+tags:
+- AI Agent
+- Agent就绪度
+- CI/CD评估
+- 测试覆盖率
+- 依赖管理
+- 文档完善度
+- 代码库结构
+- 基础设施短板
+categories:
+- AI 工程
+- 系统与基础设施
 source: juejin
-description: "Agent Readiness 是一种评估工具，帮助已经使用或计划使用 AI Coding Agent 的团队发现工程基础设施的不足之处。它不负责判断是否应采用 Agent，而是专注于现有系统的准备情况。通过检查代码库结构、CI/CD 流程、测试覆盖率、依赖管理、文档化等维度，Agent Readiness 能指出需要"
+description: Agent Readiness 是一种评估工具，帮助已经使用或计划使用 AI Coding Agent 的团队发现工程基础设施的不足之处。它不负责判断是否应采用
+  Agent，而是专注于现有系统的准备情况。通过检查代码库结构、CI/CD 流程、测试覆盖率、依赖管理、文档化等维度，Agent Readiness 能指出需要
 external_url: https://juejin.cn/post/7641043284966146048
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 仓库 Agent 就绪度评估：发现基础设施短板
@@ -86,7 +102,7 @@ Agent Readiness的价值不在于告诉你该不该用AI Coding Agent，而在�
 
 - [OpenClaw Skills机制：三层渐进式加载与依赖管理的AI Agent框架]({{< relref "posts/20260309-juejin-拆解-openclaw-的-skills-机制一个为-ai-agent-设计的包管理器-3.md" >}})
 - [Sonarly：利用AI代理分类并修复生产环境告警]({{< relref "posts/20260217-hacker_news-launch-hn-sonarly-yc-w26-ai-agent-to-triage-and-fi-12.md" >}})
-- [Sonarly：AI 智能体用于生产告警的分诊与修复]({{< relref "posts/20260217-hacker_news-launch-hn-sonarly-yc-w26-ai-agent-to-triage-and-fi-16.md" >}})
+- [Sonarly：AI 智能体用于生产告警的分诊与修复]({{< relref "posts/20260217-hacker_news-launch-hn-sonarly-yc-w26-ai-agent-to-triage-and-fi-12.md" >}})
 - [OpenClaw 集成阿里云 SLS 构建 AI Agent 可观测体系]({{< relref "posts/20260303-juejin-你的-openclaw-真的在受控运行吗-0.md" >}})
 - [OpenHands框架拆解：Runtime组件与数据流解析]({{< relref "posts/20260305-juejin-ai-agent框架探秘拆解-openhands11-runtime主要组件-3.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

@@ -1,14 +1,31 @@
 ---
-title: "LLM盲区偏差检测：识别模型未提及内容"
-date: 2026-02-11T23:34:28+08:00
+title: LLM盲区偏差检测：识别模型未提及内容
+date: 2026-02-11 23:34:28+08:00
 draft: false
-entry_kind: "auto"
-tags: ["LLM", "偏见检测", "模型评估", "黑盒测试", "自动化流程", "公平性", "思维链", "AI安全"]
-categories: ["大模型", "安全"]
+entry_kind: auto
+tags:
+- LLM
+- 偏见检测
+- 模型评估
+- 黑盒测试
+- 自动化流程
+- 公平性
+- 思维链
+- AI 安全
+categories:
+- 大模型
+- 安全
 source: arxiv
-description: "本文介绍了一种用于检测大型语言模型（LLM）中**“未言明偏见”**的全自动化流程。现有的模型评估往往依赖人工定义的类别，而LLM在生成推理链时虽然看似合理，却可能隐藏内部未表达的偏见，使得仅通过监控推理内容变得不可靠。 为此，研究者提出了一种黑盒检测管道： 1. **自动生成偏见概念**：利用LLM自动评审器为特定任"
+description: 本文介绍了一种用于检测大型语言模型（LLM）中**“未言明偏见”**的全自动化流程。现有的模型评估往往依赖人工定义的类别，而LLM在生成推理链时虽然看似合理，却可能隐藏内部未表达的偏见，使得仅通过监控推理内容变得不可靠。
+  为此，研究者提出了一种黑盒检测管道： 1. **自动生成偏见概念**：利用LLM自动评审器为特定任
 external_url: http://arxiv.org/abs/2602.10117v1
-scenarios: ["大语言模型", "AI/ML项目"]
+scenarios:
+- 大语言模型
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # LLM盲区偏差检测：识别模型未提及内容
@@ -265,7 +282,6 @@ Iván Arcuschin 等人的这篇论文针对大型语言模型（LLM）安全性�
 - 解决这一问题需要结合数据去偏、提示工程和外部知识校验，而非仅依赖模型自身优化。
 
 ---
-## 学习路径
 
 ## 学习路径
 
@@ -389,9 +405,9 @@ Iván Arcuschin 等人的这篇论文针对大型语言模型（LLM）安全性�
 
 ### 相关文章
 
-- [模型智能与任务复杂度如何影响对齐偏差]({{< relref "posts/20260203-hacker_news-how-does-misalignment-scale-with-model-intelligenc-12.md" >}})
+- [模型智能与任务复杂度如何影响对齐偏差]({{< relref "posts/20260203-hacker_news-how-does-misalignment-scale-with-model-intelligenc-7.md" >}})
 - [MortalMATH：当推理目标遇上紧急语境，冲突何解？🧠🔥]({{< relref "posts/20260127-arxiv_ai-mortalmath-evaluating-the-conflict-between-reasoni-4.md" >}})
-- [RedSage：网络安全通用大语言模型]({{< relref "posts/20260201-arxiv_ai-redsage-a-cybersecurity-generalist-llm-0.md" >}})
-- [心理越狱揭示前沿模型内部冲突]({{< relref "posts/20260205-hacker_news-psychometric-jailbreaks-reveal-internal-conflict-i-11.md" >}})
-- [研究揭示推理大模型生成虚假新闻的内在机制]({{< relref "posts/20260206-arxiv_ai-cot-is-not-the-chain-of-truth-an-empirical-interna-9.md" >}})
+- [RedSage：网络安全通用大语言模型]({{< relref "posts/20260130-arxiv_ai-redsage-a-cybersecurity-generalist-llm-0.md" >}})
+- [心理越狱揭示前沿模型内部冲突]({{< relref "posts/20260205-hacker_news-psychometric-jailbreaks-reveal-internal-conflict-i-10.md" >}})
+- [研究揭示推理大模型生成虚假新闻的内在机制]({{< relref "posts/20260205-arxiv_ai-cot-is-not-the-chain-of-truth-an-empirical-interna-9.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

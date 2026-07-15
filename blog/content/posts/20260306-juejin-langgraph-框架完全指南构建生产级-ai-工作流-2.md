@@ -22,6 +22,10 @@ external_url: https://juejin.cn/post/7613943310969405486
 scenarios:
 - AI/ML项目
 - RAG应用
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # LangGraph 框架指南：构建基于有向图与状态管理的生产级 AI 工作流
@@ -206,8 +210,8 @@ Checkpointer（检查点）是 LangGraph 实现持久化和容错的关键组件
 
 ### 相关文章
 
-- [Kirara-AI：支持多平台接入的多模态聊天机器人框架]({{< relref "posts/20260130-github_trending-lss233-kirara-ai-2.md" >}})
+- [Kirara-AI：支持多平台接入的多模态聊天机器人框架]({{< relref "posts/20260127-github_trending-lss233-kirara-ai-2.md" >}})
 - [LangGraph核心解析：基于有向环图的状态机思维与灵活性突破]({{< relref "posts/20260304-juejin-agent教程16认识langchain中状态机思维-0.md" >}})
-- [Amazon Bedrock AgentCore 浏览器更新：新增代理、配置文件及扩展支持]({{< relref "posts/20260214-blogs_podcasts-customize-ai-agent-browsing-with-proxies-profiles--1.md" >}})
-- [AI智能体自主性评估的实践方法]({{< relref "posts/20260219-hacker_news-measuring-ai-agent-autonomy-in-practice-17.md" >}})
+- [Amazon Bedrock AgentCore 浏览器更新：新增代理、配置文件及扩展支持]({{< relref "posts/20260213-blogs_podcasts-customize-ai-agent-browsing-with-proxies-profiles--0.md" >}})
+- [AI智能体自主性评估的实践方法]({{< relref "posts/20260219-hacker_news-measuring-ai-agent-autonomy-in-practice-16.md" >}})
 - [LangChain 实现图片 OCR 与多模态 RAG 数据读取]({{< relref "posts/20260305-juejin-003rag-入门-langchain-读取图片数据-2.md" >}})

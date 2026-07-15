@@ -23,6 +23,10 @@ external_url: https://juejin.cn/post/7613772968724643875
 scenarios:
 - AI/ML项目
 - 后端开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # HAPI 结合设备指纹认证提升远程编程安全性
@@ -201,7 +205,7 @@ HAPI（通常指代 HAP 或基于 HTTP 的 API 隧道协议）是一种旨在解
 ### 相关文章
 
 - [🇫🇷 法国向科技巨头宣战！自研视频会议App能否终结美企垄断？]({{< relref "posts/20260126-hacker_news-france-aiming-to-replace-zoom-google-meet-microsof-17.md" >}})
-- [Show HN: 一款用于监控 LLM 工具数据传输的 MitM 代理]({{< relref "posts/20260129-hacker_news-show-hn-a-mitm-proxy-to-see-what-your-llm-tools-ar-11.md" >}})
-- [展示一款可监控LLM工具数据传输的MitM代理]({{< relref "posts/20260129-hacker_news-show-hn-a-mitm-proxy-to-see-what-your-llm-tools-ar-13.md" >}})
+- [Show HN: 一款用于监控 LLM 工具数据传输的 MitM 代理]({{< relref "posts/20260129-hacker_news-show-hn-a-mitm-proxy-to-see-what-your-llm-tools-ar-9.md" >}})
+- [展示一款可监控LLM工具数据传输的MitM代理]({{< relref "posts/20260129-hacker_news-show-hn-a-mitm-proxy-to-see-what-your-llm-tools-ar-9.md" >}})
 - [Show HN：一款用于监控 LLM 工具数据传输的中间人代理]({{< relref "posts/20260129-hacker_news-show-hn-a-mitm-proxy-to-see-what-your-llm-tools-ar-9.md" >}})
-- [Amla Sandbox：面向 AI 智能体的 WASM Bash 沙箱]({{< relref "posts/20260130-hacker_news-show-hn-amla-sandbox-wasm-bash-shell-sandbox-for-a-0.md" >}})
+- [Amla Sandbox：面向 AI 智能体的 WASM Bash 沙箱]({{< relref "posts/20260130-hacker_news-show-hn-amla-sandbox-wasm-bash-shell-sandbox-for-a-4.md" >}})

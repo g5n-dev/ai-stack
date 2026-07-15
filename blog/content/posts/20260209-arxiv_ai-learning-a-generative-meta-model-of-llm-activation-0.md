@@ -1,14 +1,30 @@
 ---
-title: "学习大模型神经元激活的生成式元模型"
-date: 2026-02-09T23:42:37+08:00
+title: 学习大模型神经元激活的生成式元模型
+date: 2026-02-09 23:42:37+08:00
 draft: false
-entry_kind: "auto"
-tags: ["神经元激活", "生成式模型", "元模型", "可解释性", "cs.LG", "MechInterp", "稀疏自编码器", "黑盒解释"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- 神经元激活
+- 生成式模型
+- 元模型
+- 可解释性
+- cs.LG
+- MechInterp
+- 稀疏自编码器
+- 黑盒解释
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "本文提出了一种利用生成式模型（特别是扩散模型）来分析大语言模型（LLM）内部激活状态的新方法。 **核心观点：** 传统的神经网络分析方法（如PCA和稀疏自编码器）通常依赖于较强的结构性假设。相比之下，生成式模型无需这些假设即可揭示数据结构，并能作为先验知识来提高干预的保真度。 **方法与发现：** 作者在十亿个残差流"
+description: 本文提出了一种利用生成式模型（特别是扩散模型）来分析大语言模型（LLM）内部激活状态的新方法。 **核心观点：** 传统的神经网络分析方法（如PCA和稀疏自编码器）通常依赖于较强的结构性假设。相比之下，生成式模型无需这些假设即可揭示数据结构，并能作为先验知识来提高干预的保真度。
+  **方法与发现：** 作者在十亿个残差流
 external_url: http://arxiv.org/abs/2602.06964v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 学习大模型神经元激活的生成式元模型
@@ -253,7 +269,6 @@ scenarios: ["Web应用开发"]
 这项研究目前主要推进的是**“方法”**。它提供了一个强大的工具集来操作模型，但并未直接告诉我们“某个神经元具体代表什么概念”。代价是引入了一个第二层黑盒（元模型）。未来的挑战在于如何打开这个元模型，将其转化为人类可理解的符号知识。
 
 ---
-## 研究最佳实践
 
 ## 最佳实践指南
 
@@ -351,7 +366,6 @@ LLM 的激活具有分层结构，不同层级的激活对应不同的抽象级�
 - 这一工作首次将生成式建模技术引入LLM激活分析，为理解黑盒模型的内部机制开辟了新方向。
 
 ---
-## 学习路径
 
 ## 学习路径
 
@@ -517,7 +531,7 @@ LLM 的激活具有分层结构，不同层级的激活对应不同的抽象级�
 
 ### 相关文章
 
-- [粒子引导扩散模型用于偏微分方程求解]({{< relref "posts/20260203-arxiv_ai-particle-guided-diffusion-models-for-partial-diffe-8.md" >}})
+- [粒子引导扩散模型用于偏微分方程求解]({{< relref "posts/20260202-arxiv_ai-particle-guided-diffusion-models-for-partial-diffe-8.md" >}})
 - [DLM-Scope：利用稀疏自编码器解析扩散语言模型]({{< relref "posts/20260206-arxiv_ai-dlm-scope-mechanistic-interpretability-of-diffusio-4.md" >}})
 - [粒子引导扩散模型求解偏微分方程]({{< relref "posts/20260202-arxiv_ai-particle-guided-diffusion-models-for-partial-diffe-8.md" >}})
 - [SplineFlow：基于B样条插值的动力系统流匹配方法]({{< relref "posts/20260202-arxiv_ai-splineflow-flow-matching-for-dynamical-systems-wit-8.md" >}})

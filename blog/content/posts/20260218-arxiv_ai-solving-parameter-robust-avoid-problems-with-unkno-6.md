@@ -1,14 +1,30 @@
 ---
-title: "利用强化学习解决未知可行性的参数鲁棒避障问题"
-date: 2026-02-18T21:10:38+08:00
+title: 利用强化学习解决未知可行性的参数鲁棒避障问题
+date: 2026-02-18 21:10:38+08:00
 draft: false
-entry_kind: "auto"
-tags: ["强化学习", "鲁棒性", "避障", "可达性", "可行性引导探索", "FGE", "MuJoCo", "深度学习"]
-categories: ["论文", "AI 工程"]
+entry_kind: auto
+tags:
+- 强化学习
+- 鲁棒性
+- 避障
+- 可达性
+- 可行性引导探索
+- FGE
+- MuJoCo
+- 深度学习
+categories:
+- 论文
+- AI 工程
 source: arxiv
-description: "**总结** 本文提出了一种利用强化学习（RL）解决未知可行性参数鲁棒可达性问题的方法。尽管深度RL在控制任务中表现优异，但将其应用于可达性问题时存在根本性目标不匹配：RL旨在优化特定分布下的期望回报，而可达性要求最大化系统保持安全的状态集合，这导致策略在低概率但属于安全集合的状态上表现不佳。 为此，作者提出了一种**"
+description: '**总结** 本文提出了一种利用强化学习（RL）解决未知可行性参数鲁棒可达性问题的方法。尽管深度RL在控制任务中表现优异，但将其应用于可达性问题时存在根本性目标不匹配：RL旨在优化特定分布下的期望回报，而可达性要求最大化系统保持安全的状态集合，这导致策略在低概率但属于安全集合的状态上表现不佳。
+  为此，作者提出了一种**'
 external_url: http://arxiv.org/abs/2602.15817v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 利用强化学习解决未知可行性的参数鲁棒避障问题
@@ -234,7 +250,6 @@ FGE的形式化基于以下逻辑：
 这篇论文推进的是**“方法”**。它提供了一个解决实际工程难题的工具，代价是引入了分类器这一额外的黑盒模型，使得整个系统的理论分析变得更加复杂。它并没有完全解释“为什么神经网络能学好可达集”，而是展示了“只要能学好，就能极大地提升性能”。从长远看，这推动了RL在非凸安全控制中的实用化进程。
 
 ---
-## 研究最佳实践
 
 ## 最佳实践指南
 
@@ -323,7 +338,6 @@ FGE的形式化基于以下逻辑：
 - 该方法可扩展至其他需要高鲁棒性的机器人任务，如路径规划和多机器人协同，为未来研究提供了基础。
 
 ---
-## 学习路径
 
 ## 学习路径
 
@@ -504,7 +518,7 @@ FGE的形式化基于以下逻辑：
 ### 相关文章
 
 - [RN-D：基于正则化网络的离散分类演员与同策强化学习]({{< relref "posts/20260202-arxiv_ai-rn-d-discretized-categorical-actors-with-regulariz-7.md" >}})
-- [基于急停干预的鲁棒干预学习]({{< relref "posts/20260205-arxiv_ai-robust-intervention-learning-from-emergency-stop-i-7.md" >}})
+- [基于急停干预的鲁棒干预学习]({{< relref "posts/20260204-arxiv_ai-robust-intervention-learning-from-emergency-stop-i-7.md" >}})
 - [基于急停干预的鲁棒干预学习]({{< relref "posts/20260204-arxiv_ai-robust-intervention-learning-from-emergency-stop-i-7.md" >}})
 - [基于相机-IMU融合的鲁棒路面分类数据集与框架]({{< relref "posts/20260129-arxiv_ai-a-new-dataset-and-framework-for-robust-road-surfac-6.md" >}})
 - [FISMO：基于Fisher结构的动量正交化优化器]({{< relref "posts/20260130-arxiv_ai-fismo-fisher-structured-momentum-orthogonalized-op-4.md" >}})

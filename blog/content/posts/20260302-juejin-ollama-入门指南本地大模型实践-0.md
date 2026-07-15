@@ -9,7 +9,7 @@ tags:
 - 本地部署
 - 开源模型
 - 大模型工具
-- AI工程
+- AI 工程
 - 模型推理
 - 代码实践
 categories:
@@ -21,6 +21,10 @@ external_url: https://juejin.cn/post/7611832090888208424
 scenarios:
 - 大语言模型
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Ollama 本地部署开源大模型指南与代码实践
@@ -201,6 +205,6 @@ Ollama 目前原生支持 macOS（Apple Silicon 和 Intel 芯片）、Linux（�
 
 - [在 Linux 上安装 Ollama 并部署 Gemma 3B 模型]({{< relref "posts/20260207-hacker_news-installing-ollama-and-gemma-3b-on-linux-12.md" >}})
 - [发现逾17.5万个Ollama AI实例公网暴露]({{< relref "posts/20260131-hacker_news-175k-publicly-exposed-ollama-ai-instances-discover-19.md" >}})
-- [iPhone 16 Pro Max 运行 MLX 大模型输出质量异常]({{< relref "posts/20260202-hacker_news-my-iphone-16-pro-max-produces-garbage-output-when--11.md" >}})
-- [iPhone 16 Pro Max 运行 MLX 大模型输出质量异常]({{< relref "posts/20260202-hacker_news-my-iphone-16-pro-max-produces-garbage-output-when--17.md" >}})
+- [iPhone 16 Pro Max 运行 MLX 大模型输出质量异常]({{< relref "posts/20260202-hacker_news-my-iphone-16-pro-max-produces-garbage-output-when--2.md" >}})
+- [iPhone 16 Pro Max 运行 MLX 大模型输出质量异常]({{< relref "posts/20260202-hacker_news-my-iphone-16-pro-max-produces-garbage-output-when--2.md" >}})
 - [Qwen3.5 122B与35B本地部署性能对标Sonnet 4.5]({{< relref "posts/20260228-hacker_news-qwen35-122b-and-35b-models-offer-sonnet-45-perform-12.md" >}})

@@ -1,14 +1,22 @@
 ---
-title: "针对LLM服务框架而非模型的延迟型拒绝服务攻击研究"
-date: 2026-02-10T03:34:40+08:00
+title: 针对LLM服务框架而非模型的延迟型拒绝服务攻击研究
+date: 2026-02-10 03:34:40+08:00
 draft: false
-entry_kind: "auto"
-tags: ["arxiv", "cs.CR"]
-categories: ["论文"]
+entry_kind: auto
+tags:
+- arxiv
+- cs.CR
+categories:
+- 论文
 source: arxiv
-description: "**《重新思考延迟拒绝服务：攻击LLM服务框架而非模型》内容总结** **1. 背景与问题** 大语言模型（LLM）面临一种新兴的关键威胁——延迟攻击。由于LLM推理成本高昂，即使是微小的延迟也会导致运营成本激增和服务可用性风险。现有研究多关注“算法级攻击”，即通过精心设计输入来触发最坏情况的输出长度。然而，本文指出一"
+description: '**《重新思考延迟拒绝服务：攻击LLM服务框架而非模型》内容总结** **1. 背景与问题** 大语言模型（LLM）面临一种新兴的关键威胁——延迟攻击。由于LLM推理成本高昂，即使是微小的延迟也会导致运营成本激增和服务可用性风险。现有研究多关注“算法级攻击”，即通过精心设计输入来触发最坏情况的输出长度。然而，本文指出一'
 external_url: http://arxiv.org/abs/2602.07878v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 针对LLM服务框架而非模型的延迟型拒绝服务攻击研究
@@ -51,7 +59,6 @@ scenarios: ["Web应用开发"]
 该研究揭示了LLM服务框架在系统调度层面的脆弱性，证明了针对基础设施的攻击比针对模型算法的攻击更为致命。
 
 ---
-## 研究最佳实践
 
 ## 最佳实践指南
 
@@ -143,7 +150,6 @@ scenarios: ["Web应用开发"]
 
 
 ---
-## 学习路径
 
 ## 学习路径
 

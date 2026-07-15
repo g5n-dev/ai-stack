@@ -24,6 +24,10 @@ scenarios:
 - AI/ML项目
 - 大语言模型
 - RAG应用
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AI Agent 开发入门技术栈选型指南
@@ -224,8 +228,8 @@ Agent 的记忆通常分为两类，需要不同的技术栈支持：
 
 ### 相关文章
 
-- [AI智能体自主性评估的实践方法]({{< relref "posts/20260219-hacker_news-measuring-ai-agent-autonomy-in-practice-17.md" >}})
+- [AI智能体自主性评估的实践方法]({{< relref "posts/20260219-hacker_news-measuring-ai-agent-autonomy-in-practice-16.md" >}})
 - [LangChain 实现图片 OCR 与多模态 RAG 数据读取]({{< relref "posts/20260305-juejin-003rag-入门-langchain-读取图片数据-2.md" >}})
 - [LangChain文本分割器原理、参数配置与RAG实践]({{< relref "posts/20260306-juejin-splitter学习笔记含rag相关流程与代码实践-1.md" >}})
-- [Kirara-AI：支持多平台接入的多模态聊天机器人框架]({{< relref "posts/20260130-github_trending-lss233-kirara-ai-2.md" >}})
-- [Agent Skills：智能体技能框架与开发指南]({{< relref "posts/20260203-hacker_news-agent-skills-5.md" >}})
+- [Kirara-AI：支持多平台接入的多模态聊天机器人框架]({{< relref "posts/20260127-github_trending-lss233-kirara-ai-2.md" >}})
+- [Agent Skills：智能体技能框架与开发指南]({{< relref "posts/20260203-hacker_news-agent-skills-0.md" >}})

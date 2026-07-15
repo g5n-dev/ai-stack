@@ -1,13 +1,28 @@
 ---
-title: "LM Studio 0.4 发布：支持本地运行 Llama 3 与多模型并行"
-date: 2026-01-29T05:01:24+08:00
+title: LM Studio 0.4 发布：支持本地运行 Llama 3 与多模型并行
+date: 2026-01-29 05:01:24+08:00
 draft: false
-entry_kind: "auto"
-tags: ["LM Studio", "Llama 3", "本地部署", "OpenAI API", "Local Server", "Agent", "多模型并行", "开发工具"]
-categories: ["开发工具", "大模型"]
+entry_kind: auto
+tags:
+- LM Studio
+- Llama 3
+- 本地部署
+- OpenAI API
+- Local Server
+- Agent
+- 多模型并行
+- 开发工具
+categories:
+- 开发工具
+- 大模型
 source: hacker_news
 external_url: https://lmstudio.ai/blog/0.4.0
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # LM Studio 0.4 发布：支持本地运行 Llama 3 与多模型并行
@@ -233,7 +248,6 @@ interactive_chat()
 成功在无网络环境下实现了智能辅助诊断功能。系统启动迅速，占用内存极低，未影响原有医疗设备的运行性能。这使得该公司的产品在基础设施落后的地区具有了极强的竞争优势。
 
 ---
-## 最佳实践
 
 ## 最佳实践指南
 
@@ -409,9 +423,9 @@ interactive_chat()
 
 ### 相关文章
 
-- [揭秘 Codex Agent 智能循环！🤖 AI自动化新范式？]({{< relref "posts/20260127-blogs_podcasts-unrolling-the-codex-agent-loop-2.md" >}})
-- [🔥揭秘Codex Agent循环！AI如何实现自主进化？]({{< relref "posts/20260127-blogs_podcasts-unrolling-the-codex-agent-loop-7.md" >}})
-- [ChatGPT容器爆发！🔥能跑bash/装包/下载，代码能力狂飙！🚀]({{< relref "posts/20260127-hacker_news-chatgpt-containers-can-now-run-bash-pipnpm-install-2.md" >}})
+- [揭秘 Codex Agent 智能循环！🤖 AI自动化新范式？]({{< relref "posts/20260125-blogs_podcasts-unrolling-the-codex-agent-loop-1.md" >}})
+- [🔥揭秘Codex Agent循环！AI如何实现自主进化？]({{< relref "posts/20260125-blogs_podcasts-unrolling-the-codex-agent-loop-1.md" >}})
+- [ChatGPT容器爆发！🔥能跑bash/装包/下载，代码能力狂飙！🚀]({{< relref "posts/20260127-hacker_news-chatgpt-containers-can-now-run-bash-pipnpm-install-19.md" >}})
 - [🤖解密Codex智能体闭环：AI如何自主进化？]({{< relref "posts/20260125-blogs_podcasts-unrolling-the-codex-agent-loop-1.md" >}})
 - [🌍 Spatial-Agent：具科学核心的智能体地理空间推理！]({{< relref "posts/20260126-arxiv_ai-spatial-agent-agentic-geo-spatial-reasoning-with-s-6.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

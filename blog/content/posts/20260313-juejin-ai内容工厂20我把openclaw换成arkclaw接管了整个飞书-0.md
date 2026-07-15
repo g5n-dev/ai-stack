@@ -20,6 +20,10 @@ description: 从 OpenClaw 到 ArkClaw，这不仅是工具的更迭，更是对�
 external_url: https://juejin.cn/post/7616265766074220554
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 从OpenClaw到ArkClaw：重构飞书AI内容工厂工作流
@@ -174,6 +178,6 @@ OpenClaw 和 ArkClaw 虽然都属于自动化工具生态，但定位和底层�
 
 - [零成本云端部署OpenClaw接入飞书自动抓取数据]({{< relref "posts/20260224-juejin-喂饭级教程免费部署云端-openclaw-打通飞书自动抓取-clawhub-技能并写入飞书表格-0.md" >}})
 - [接入飞书实现OpenClaw AI员工直接操作文档与表格]({{< relref "posts/20260309-juejin-将openclaw接入飞书10分钟让你的ai员工直接操作你的文档和表格-0.md" >}})
-- [OpenClaw+Opocode构建24小时云端自动化助理]({{< relref "posts/20260306-juejin-agentopenclaw-opencode-打造助手-安装篇-4.md" >}})
+- [OpenClaw+Opocode构建24小时云端自动化助理]({{< relref "posts/20260305-juejin-agentopenclaw-opencode-打造助手-安装篇-2.md" >}})
 - [OpenClow Skill 开发实战：手把手实现自动日报技能]({{< relref "posts/20260312-juejin-人人都能写-openclaw-skill手把手带你做一个自动日报技能-4.md" >}})
-- [OpenClaw：GitHub 增长最快的开源 AI 代理框架]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-7.md" >}})
+- [OpenClaw：GitHub 增长最快的开源 AI 代理框架]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-0.md" >}})

@@ -1,14 +1,23 @@
 ---
-title: "Transformer模型在低信噪比时间序列预测中的统计基准测试"
-date: 2026-02-11T03:18:02+08:00
+title: Transformer模型在低信噪比时间序列预测中的统计基准测试
+date: 2026-02-11 03:18:02+08:00
 draft: false
-entry_kind: "auto"
-tags: ["arxiv", "cs.LG"]
-categories: ["论文"]
+entry_kind: auto
+tags:
+- arxiv
+- cs.LG
+categories:
+- 论文
 source: arxiv
-description: "**标题：Transformer在低信噪比时间序列预测中的统计基准测试** **核心研究内容：** 本文研究了Transformer架构在**低数据量**（仅有几年的每日观测数据）的**多变量时间序列预测**任务中的表现。 **主要方法与发现：** 1. **实验设计**：研究人员利用具有已知时间及横截面依赖结构的**"
+description: '**标题：Transformer在低信噪比时间序列预测中的统计基准测试** **核心研究内容：** 本文研究了Transformer架构在**低数据量**（仅有几年的每日观测数据）的**多变量时间序列预测**任务中的表现。
+  **主要方法与发现：** 1. **实验设计**：研究人员利用具有已知时间及横截面依赖结构的**'
 external_url: http://arxiv.org/abs/2602.09869v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Transformer模型在低信噪比时间序列预测中的统计基准测试
@@ -44,7 +53,6 @@ scenarios: ["Web应用开发"]
 4.  **机制解释**：对学习到的注意力模式进行分析显示，这些模式具有可解释的结构，并表明其机制与经典回归中的**稀疏正则化**存在联系。这一发现揭示了该模型为何能在噪声条件下保持有效的泛化能力。
 
 ---
-## 研究最佳实践
 
 ## 最佳实践指南
 

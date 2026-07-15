@@ -22,6 +22,10 @@ external_url: https://juejin.cn/post/7607332124487958591
 scenarios:
 - AI/ML项目
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Flutter SSE 流式响应：基于 Dio 实现 OpenAI 逐 Token 输出
@@ -263,7 +267,7 @@ OpenAI 兼容接口在流式模式下，返回的 JSON 对象结构略有不同�
 ### 相关文章
 
 - [Spring AI 多模型对话实战：统一接口与 Redis 记忆]({{< relref "posts/20260217-juejin-spring-ai-多模型对话-demo-实战openaiollama-一套接口redis-会话记忆-3.md" >}})
-- [Flutter计划支持Packaged AI Assets以提升AI理解能力]({{< relref "posts/20260215-juejin-flutter-正在计划提供-packaged-ai-assets-的支持让你的包插件可以更好被-a-3.md" >}})
-- [kirara-ai：支持多平台接入的多模态AI聊天机器人框架]({{< relref "posts/20260131-github_trending-lss233-kirara-ai-2.md" >}})
+- [Flutter计划支持Packaged AI Assets以提升AI理解能力]({{< relref "posts/20260214-juejin-flutter-正在计划提供-packaged-ai-assets-的支持让你的包插件可以更好被-a-0.md" >}})
+- [kirara-ai：支持多平台接入的多模态AI聊天机器人框架]({{< relref "posts/20260127-github_trending-lss233-kirara-ai-2.md" >}})
 - [Codex 应用：基于 GPT-3 的代码生成工具]({{< relref "posts/20260202-hacker_news-the-codex-app-1.md" >}})
-- [Codex 应用：基于 OpenAI 模型的代码生成工具]({{< relref "posts/20260203-hacker_news-the-codex-app-12.md" >}})
+- [Codex 应用：基于 OpenAI 模型的代码生成工具]({{< relref "posts/20260202-hacker_news-the-codex-app-1.md" >}})

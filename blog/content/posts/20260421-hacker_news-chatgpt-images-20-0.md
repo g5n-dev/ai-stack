@@ -1,14 +1,31 @@
 ---
-title: "ChatGPT图像生成能力升级至2.0版本"
-date: 2026-04-21T23:17:25+08:00
+title: ChatGPT图像生成能力升级至2.0版本
+date: 2026-04-21 23:17:25+08:00
 draft: false
-entry_kind: "auto"
-tags: ["ChatGPT", "图像生成", "v2", "大模型", "多模态", "生成式AI", "升级", "AI"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- ChatGPT
+- 图像生成
+- v2
+- 大模型
+- 多模态
+- 生成式 AI
+- 升级
+- AI
+categories:
+- 大模型
+- AI 工程
 source: hacker_news
-description: "ChatGPT Images 2.0是OpenAI在图像生成领域的最新升级，它在细节控制、生成速度和多模态交互上实现了显著提升。对需要在内容创作、产品原型或视觉实验中快速获取高质量图像的开发者而言，这套模型提供了更灵活的API接口和更低的调用成本。本文将深入解析其核心改进、实际使用技巧以及在不同场景中的表现，帮助读者快"
+description: ChatGPT Images 2.0是OpenAI在图像生成领域的最新升级，它在细节控制、生成速度和多模态交互上实现了显著提升。对需要在内容创作、产品原型或视觉实验中快速获取高质量图像的开发者而言，这套模型提供了更灵活的API接口和更低的调用成本。本文将深入解析其核心改进、实际使用技巧以及在不同场景中的表现，帮助读者快
 external_url: https://openai.com/index/introducing-chatgpt-images-2-0
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+aliases:
+- /posts/20260422-hacker_news-chatgpt-images-20-0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # ChatGPT图像生成能力升级至2.0版本
@@ -58,9 +75,9 @@ ChatGPT Images 2.0是OpenAI在图像生成领域的最新升级，它在细节�
 
 ### 相关文章
 
-- [Claude Opus 4.6 发布]({{< relref "posts/20260206-hacker_news-claude-opus-46-3.md" >}})
-- [Waymo世界模型：自动驾驶仿真的新前沿]({{< relref "posts/20260206-hacker_news-the-waymo-world-model-a-new-frontier-for-autonomou-0.md" >}})
+- [Claude Opus 4.6 发布]({{< relref "posts/20260205-hacker_news-claude-opus-46-2.md" >}})
 - [Waymo世界模型：自动驾驶仿真的新前沿]({{< relref "posts/20260206-hacker_news-the-waymo-world-model-a-new-frontier-for-autonomou-4.md" >}})
-- [Waymo 世界模型：端到端自动驾驶的仿真与预测架构]({{< relref "posts/20260207-hacker_news-the-waymo-world-model-1.md" >}})
-- [Qwen Image 2与Seedance 2：中国生成式媒体模型进展]({{< relref "posts/20260212-blogs_podcasts-ainews-qwen-image-2-and-seedance-2-6.md" >}})
+- [Waymo世界模型：自动驾驶仿真的新前沿]({{< relref "posts/20260206-hacker_news-the-waymo-world-model-a-new-frontier-for-autonomou-4.md" >}})
+- [Waymo 世界模型：端到端自动驾驶的仿真与预测架构]({{< relref "posts/20260206-hacker_news-the-waymo-world-model-a-new-frontier-for-autonomou-4.md" >}})
+- [Qwen Image 2与Seedance 2：中国生成式媒体模型进展]({{< relref "posts/20260211-blogs_podcasts-ainews-qwen-image-2-and-seedance-2-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

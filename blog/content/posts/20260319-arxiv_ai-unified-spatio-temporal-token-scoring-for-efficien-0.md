@@ -21,6 +21,12 @@ description: Spatio-Temporal Token Scoring（STTS）技术总结 研究背景与
 external_url: http://arxiv.org/abs/2603.18004v1
 scenarios:
 - 大语言模型
+aliases:
+- /posts/20260320-arxiv_ai-unified-spatio-temporal-token-scoring-for-efficien-0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 统一时空Token评分提升视频VLM效率
@@ -412,7 +418,7 @@ scenarios:
 ### 相关文章
 
 - [LoRA-Squeeze：LoRA模块的调优后与调优中压缩方法]({{< relref "posts/20260212-arxiv_ai-lora-squeeze-simple-and-effective-post-tuning-and--7.md" >}})
-- [规模难以克服语用学：报告偏差对视觉语言推理的影响]({{< relref "posts/20260228-arxiv_ai-scale-cant-overcome-pragmatics-the-impact-of-repor-4.md" >}})
-- [POET-X：通过正交变换扩展实现LLM高效训练]({{< relref "posts/20260308-arxiv_ai-poet-x-memory-efficient-llm-training-by-scaling-or-1.md" >}})
+- [规模难以克服语用学：报告偏差对视觉语言推理的影响]({{< relref "posts/20260227-arxiv_ai-scale-cant-overcome-pragmatics-the-impact-of-repor-4.md" >}})
+- [POET-X：通过正交变换扩展实现LLM高效训练]({{< relref "posts/20260306-arxiv_ai-poet-x-memory-efficient-llm-training-by-scaling-or-1.md" >}})
 - [Leech 格点向量量化实现高效大模型压缩]({{< relref "posts/20260312-arxiv_ai-leech-lattice-vector-quantization-for-efficient-ll-7.md" >}})
 - [Agent Skills：压缩智能体技能以提升模型效率]({{< relref "posts/20260129-hacker_news-compressed-agentsmd-agent-skills-5.md" >}})

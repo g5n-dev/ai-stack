@@ -21,6 +21,10 @@ description: 随着生成式 AI 技术的普及，自动化面试工具正逐渐
 external_url: https://schwarztech.net/snippets/i-was-interviewed-by-an-ai-bot-for-a-job
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # I Was Interviewed by an AI Bot for a Job

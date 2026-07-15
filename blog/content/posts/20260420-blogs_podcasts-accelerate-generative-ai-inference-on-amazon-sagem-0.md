@@ -1,14 +1,33 @@
 ---
-title: "SageMaker G7e 实例加速生成式 AI 推理"
-date: 2026-04-20T23:05:01+08:00
+title: SageMaker G7e 实例加速生成式 AI 推理
+date: 2026-04-20 23:05:01+08:00
 draft: false
-entry_kind: "auto"
-tags: ["SageMaker", "G7e实例", "生成式AI", "推理加速", "大显存", "开源模型", "弹性伸缩", "GPU"]
-categories: ["AI 工程", "系统与基础设施"]
+entry_kind: auto
+tags:
+- SageMaker
+- G7e实例
+- 生成式 AI
+- 推理加速
+- 大显存
+- 开源模型
+- 弹性伸缩
+- GPU
+categories:
+- AI 工程
+- 系统与基础设施
 source: blogs_podcasts
-description: "关键特性 - Amazon SageMaker AI 上线 G7e 实例，搭载 NVIDIA RTX PRO 6000 Blackwell Server Edition GPU，单 GPU 96 GB GDDR7 显存。 - 支持 1、2、4、8 GPU 灵活组合，可按需伸缩。 - 单节点 G7e.2xlarge 即可"
+description: 关键特性 - Amazon SageMaker AI 上线 G7e 实例，搭载 NVIDIA RTX PRO 6000 Blackwell
+  Server Edition GPU，单 GPU 96 GB GDDR7 显存。 - 支持 1、2、4、8 GPU 灵活组合，可按需伸缩。 - 单节点 G7e.2xlarge
+  即可
 external_url: https://aws.amazon.com/blogs/machine-learning/accelerate-generative-ai-inference-on-amazon-sagemaker-ai-with-g7e-instances
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+aliases:
+- /posts/20260421-blogs_podcasts-accelerate-generative-ai-inference-on-amazon-sagem-0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # SageMaker G7e 实例加速生成式 AI 推理
@@ -146,8 +165,8 @@ G7e实例更适合理显存依赖型任务。对于计算密集但显存需求�
 ### 相关文章
 
 - [2025年Amazon SageMaker AI增强可观测性与模型定制托管功能]({{< relref "posts/20260220-blogs_podcasts-amazon-sagemaker-ai-in-2025-a-year-in-review-part--1.md" >}})
-- [2025年回顾：SageMaker AI弹性训练计划与推理性价比提升]({{< relref "posts/20260221-blogs_podcasts-amazon-sagemaker-ai-in-2025-a-year-in-review-part--0.md" >}})
-- [Amazon SageMaker AI 2025回顾：可观测性与模型定制托管增强]({{< relref "posts/20260221-blogs_podcasts-amazon-sagemaker-ai-in-2025-a-year-in-review-part--2.md" >}})
-- [2025年Amazon SageMaker AI回顾：可观测性、模型定制与托管增强]({{< relref "posts/20260222-blogs_podcasts-amazon-sagemaker-ai-in-2025-a-year-in-review-part--2.md" >}})
-- [2025年回顾：SageMaker AI提升可观测性并优化模型定制与托管]({{< relref "posts/20260223-blogs_podcasts-amazon-sagemaker-ai-in-2025-a-year-in-review-part--4.md" >}})
+- [2025年回顾：SageMaker AI弹性训练计划与推理性价比提升]({{< relref "posts/20260220-blogs_podcasts-amazon-sagemaker-ai-in-2025-a-year-in-review-part--0.md" >}})
+- [Amazon SageMaker AI 2025回顾：可观测性与模型定制托管增强]({{< relref "posts/20260220-blogs_podcasts-amazon-sagemaker-ai-in-2025-a-year-in-review-part--1.md" >}})
+- [2025年Amazon SageMaker AI回顾：可观测性、模型定制与托管增强]({{< relref "posts/20260220-blogs_podcasts-amazon-sagemaker-ai-in-2025-a-year-in-review-part--1.md" >}})
+- [2025年回顾：SageMaker AI提升可观测性并优化模型定制与托管]({{< relref "posts/20260220-blogs_podcasts-amazon-sagemaker-ai-in-2025-a-year-in-review-part--1.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

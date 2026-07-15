@@ -1,14 +1,29 @@
 ---
-title: "AI Agent 工程学：换模型为何仅提升 0.7%"
-date: 2026-04-13T11:03:17+08:00
+title: AI Agent 工程学：换模型为何仅提升 0.7%
+date: 2026-04-13 11:03:17+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI Agent", "Harness", "模型评测", "LangChain", "终端交互", "Prompt优化", "工具链", "系统集成"]
-categories: ["AI 工程"]
+entry_kind: auto
+tags:
+- AI Agent
+- Harness
+- 模型评测
+- LangChain
+- 终端交互
+- Prompt优化
+- 工具链
+- 系统集成
+categories:
+- AI 工程
 source: juejin
-description: "背景与概念 Harness Engineering（驾驭工程）是一套系统化构建、测试、评估 AI Agent 的方法论，强调在实际使用场景（如终端交互）中持续迭代模型与工具的配合，而非单纯追求更大模型。 实验结果 LangChain 通过一次端到端实验验证：在同一模型上，仅更换更强大的模型后，终端任务的准确率仅提升 0"
+description: 背景与概念 Harness Engineering（驾驭工程）是一套系统化构建、测试、评估 AI Agent 的方法论，强调在实际使用场景（如终端交互）中持续迭代模型与工具的配合，而非单纯追求更大模型。
+  实验结果 LangChain 通过一次端到端实验验证：在同一模型上，仅更换更强大的模型后，终端任务的准确率仅提升 0
 external_url: https://juejin.cn/post/7628067175559381034
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AI Agent 工程学：换模型为何仅提升 0.7%
@@ -92,7 +107,7 @@ LangChain 通过一次端到端实验验证：在同一模型上，仅更换更�
 
 - [构建极简且具倾向性的编程代理的经验总结]({{< relref "posts/20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-1.md" >}})
 - [Smooth CLI：面向 AI 智能体的低 Token 浏览器]({{< relref "posts/20260206-hacker_news-show-hn-smooth-cli-token-efficient-browser-for-ai--11.md" >}})
-- [评测 AGENTS.md：对编程 AI 智能体的实际效用分析]({{< relref "posts/20260217-hacker_news-evaluating-agentsmd-are-they-helpful-for-coding-ag-10.md" >}})
-- [AI智能体自主性的实践测量方法]({{< relref "posts/20260219-hacker_news-measuring-ai-agent-autonomy-in-practice-12.md" >}})
-- [使用MCP协议集成外部工具至Amazon Quick Agents的六步指南]({{< relref "posts/20260223-blogs_podcasts-integrate-external-tools-with-amazon-quick-agents--9.md" >}})
+- [评测 AGENTS.md：对编程 AI 智能体的实际效用分析]({{< relref "posts/20260217-hacker_news-evaluating-agentsmd-are-they-helpful-for-coding-ag-4.md" >}})
+- [AI智能体自主性的实践测量方法]({{< relref "posts/20260219-hacker_news-measuring-ai-agent-autonomy-in-practice-16.md" >}})
+- [使用MCP协议集成外部工具至Amazon Quick Agents的六步指南]({{< relref "posts/20260220-blogs_podcasts-integrate-external-tools-with-amazon-quick-agents--0.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

@@ -9,7 +9,7 @@ tags:
 - Agent
 - 协作瓶颈
 - 能力天花板
-- AI研究
+- AI 研究
 - 系统设计
 - 模型评估
 categories:
@@ -20,6 +20,10 @@ description: 随着大模型能力的演进，智能体正逐渐成为连接 AI 
 external_url: https://juejin.cn/post/7610078853952733230
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # DeepMind研究：多智能体协作瓶颈与Agent能力天花板分析
@@ -157,8 +161,8 @@ DeepMind 的这项研究主要探讨了在多智能体强化学习环境中，�
 
 ### 相关文章
 
-- [研究：自生成的Agent技能通常无效]({{< relref "posts/20260216-hacker_news-study-self-generated-agent-skills-are-useless-0.md" >}})
 - [研究：自生成的Agent技能通常无效]({{< relref "posts/20260216-hacker_news-study-self-generated-agent-skills-are-useless-3.md" >}})
-- [Anthropic 公布 Agent 自主性研究及 METR 基准数据]({{< relref "posts/20260220-blogs_podcasts-ainews-anthropics-agent-autonomy-study-12.md" >}})
+- [研究：自生成的Agent技能通常无效]({{< relref "posts/20260216-hacker_news-study-self-generated-agent-skills-are-useless-3.md" >}})
+- [Anthropic 公布 Agent 自主性研究及 METR 基准数据]({{< relref "posts/20260219-blogs_podcasts-ainews-anthropics-agent-autonomy-study-0.md" >}})
 - [迈向智能体系统规模化科学：作用机制与生效条件]({{< relref "posts/20260201-hacker_news-towards-a-science-of-scaling-agent-systems-when-an-11.md" >}})
-- [Anthropic发布自主Agent研究：基于METR数据评估模型自主能力]({{< relref "posts/20260220-blogs_podcasts-ainews-anthropics-agent-autonomy-study-11.md" >}})
+- [Anthropic发布自主Agent研究：基于METR数据评估模型自主能力]({{< relref "posts/20260219-blogs_podcasts-ainews-anthropics-agent-autonomy-study-0.md" >}})

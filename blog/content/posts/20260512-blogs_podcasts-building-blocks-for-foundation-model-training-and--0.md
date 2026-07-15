@@ -1,14 +1,29 @@
 ---
-title: "AWS基础模型训练与推理的构建块"
-date: 2026-05-12T04:06:43+08:00
+title: AWS基础模型训练与推理的构建块
+date: 2026-05-12 04:06:43+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AWS", "基础模型", "模型训练", "推理", "云基础设施", "机器学习", "深度学习", "云计算"]
-categories: ["大模型", "系统与基础设施"]
+entry_kind: auto
+tags:
+- AWS
+- 基础模型
+- 模型训练
+- 推理
+- 云基础设施
+- 机器学习
+- 深度学习
+- 云计算
+categories:
+- 大模型
+- 系统与基础设施
 source: blogs_podcasts
-description: "在云上构建大规模基础模型的训练与推理环境，已成为企业 AI 能力提升的关键路径。本文聚焦 AWS 提供的计算实例、分布式存储与高速网络组合方案，系统梳理从数据预处理、模型训练、资源调度到线上推理的全链路技术要点，并提供常见架构的选型建议与成本优化实践，帮助开发团队快速搭建高效、可靠的模型服务体系。"
+description: 在云上构建大规模基础模型的训练与推理环境，已成为企业 AI 能力提升的关键路径。本文聚焦 AWS 提供的计算实例、分布式存储与高速网络组合方案，系统梳理从数据预处理、模型训练、资源调度到线上推理的全链路技术要点，并提供常见架构的选型建议与成本优化实践，帮助开发团队快速搭建高效、可靠的模型服务体系。
 external_url: https://huggingface.co/blog/amazon/foundation-model-building-blocks
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AWS基础模型训练与推理的构建块
@@ -163,9 +178,9 @@ AWS 提供了一套完整、可组合的技术“砖块”，能够在云端实�
 
 ### 相关文章
 
-- [Nova Forge SDK + SageMaker 训练 Nova 模型实战]({{< relref "posts/20260320-blogs_podcasts-kick-off-nova-customization-experiments-using-nova-12.md" >}})
-- [Amazon SageMaker AI 2025回顾：灵活训练计划与推理性价比优化]({{< relref "posts/20260222-blogs_podcasts-amazon-sagemaker-ai-in-2025-a-year-in-review-part--1.md" >}})
+- [Nova Forge SDK + SageMaker 训练 Nova 模型实战]({{< relref "posts/20260319-blogs_podcasts-kick-off-nova-customization-experiments-using-nova-8.md" >}})
+- [Amazon SageMaker AI 2025回顾：灵活训练计划与推理性价比优化]({{< relref "posts/20260220-blogs_podcasts-amazon-sagemaker-ai-in-2025-a-year-in-review-part--0.md" >}})
 - [为何Adam在$β_1=β_2$时更优：缺失的梯度尺度不变性原理]({{< relref "posts/20260130-arxiv_ai-why-adam-works-better-with-β_1-β_2-the-missing-gra-8.md" >}})
-- [The Little Learner：通往深度学习的直线路径]({{< relref "posts/20260211-hacker_news-the-little-learner-a-straight-line-to-deep-learnin-7.md" >}})
-- [Amazon SageMaker AI 2025回顾：弹性训练计划与推理性价比优化]({{< relref "posts/20260223-blogs_podcasts-amazon-sagemaker-ai-in-2025-a-year-in-review-part--2.md" >}})
+- [The Little Learner：通往深度学习的直线路径]({{< relref "posts/20260210-hacker_news-the-little-learner-a-straight-line-to-deep-learnin-5.md" >}})
+- [Amazon SageMaker AI 2025回顾：弹性训练计划与推理性价比优化]({{< relref "posts/20260220-blogs_podcasts-amazon-sagemaker-ai-in-2025-a-year-in-review-part--0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

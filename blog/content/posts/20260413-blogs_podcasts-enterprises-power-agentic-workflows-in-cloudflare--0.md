@@ -1,14 +1,30 @@
 ---
-title: "Cloudflare Agent Cloud接入OpenAI模型助力企业AI代理部署"
-date: 2026-04-13T15:06:59+08:00
+title: Cloudflare Agent Cloud接入OpenAI模型助力企业AI代理部署
+date: 2026-04-13 15:06:59+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI代理", "大模型", "OpenAI", "边缘计算", "工作流编排", "企业部署", "安全合规", "弹性伸缩"]
-categories: ["AI 工程", "系统与基础设施"]
+entry_kind: auto
+tags:
+- AI 代理
+- 大模型
+- OpenAI
+- 边缘计算
+- 工作流编排
+- 企业部署
+- 安全合规
+- 弹性伸缩
+categories:
+- AI 工程
+- 系统与基础设施
 source: blogs_podcasts
-description: "平台概览 Cloudflare 将 OpenAI 最新的大语言模型 GPT‑5.4 与代码生成模型 Codex 集成到其 Agent Cloud 平台，为企业提供统一的 AI 代理开发、部署和扩展环境。借助 Cloudflare 全球边缘网络的高可用性与安全防护，企业可以快速将 AI 代理嵌入业务流程，实现实时智能服务"
+description: 平台概览 Cloudflare 将 OpenAI 最新的大语言模型 GPT‑5.4 与代码生成模型 Codex 集成到其 Agent Cloud
+  平台，为企业提供统一的 AI 代理开发、部署和扩展环境。借助 Cloudflare 全球边缘网络的高可用性与安全防护，企业可以快速将 AI 代理嵌入业务流程，实现实时智能服务
 external_url: https://openai.com/index/cloudflare-openai-agent-cloud
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Cloudflare Agent Cloud接入OpenAI模型助力企业AI代理部署
@@ -160,9 +176,9 @@ Agent Cloud 把模型、網路和安全統一在邊緣平台，鼓勵更多企�
 
 ### 相关文章
 
-- [大林建设部署ChatGPT Enterprise推动全球建筑业务人才发展]({{< relref "posts/20260202-blogs_podcasts-taisei-corporation-shapes-the-next-generation-of-t-8.md" >}})
-- [Amazon Bedrock 推出 Agent 有状态运行时环境]({{< relref "posts/20260228-blogs_podcasts-introducing-the-stateful-runtime-environment-for-a-3.md" >}})
-- [OpenAI与亚马逊达成战略合作，将Frontier模型引入AWS]({{< relref "posts/20260303-blogs_podcasts-openai-and-amazon-announce-strategic-partnership-12.md" >}})
-- [OpenAI发布GPT 5.4：集成CUA模型，实现知识工作与编程SOTA]({{< relref "posts/20260309-blogs_podcasts-ainews-gpt-54-sota-knowledge-work-and-coding-and-c-4.md" >}})
+- [大林建设部署ChatGPT Enterprise推动全球建筑业务人才发展]({{< relref "posts/20260130-blogs_podcasts-taisei-corporation-shapes-the-next-generation-of-t-3.md" >}})
+- [Amazon Bedrock 推出 Agent 有状态运行时环境]({{< relref "posts/20260227-blogs_podcasts-introducing-the-stateful-runtime-environment-for-a-2.md" >}})
+- [OpenAI与亚马逊达成战略合作，将Frontier模型引入AWS]({{< relref "posts/20260227-blogs_podcasts-openai-and-amazon-announce-strategic-partnership-0.md" >}})
+- [OpenAI发布GPT 5.4：集成CUA模型，实现知识工作与编程SOTA]({{< relref "posts/20260306-blogs_podcasts-ainews-gpt-54-sota-knowledge-work-and-coding-and-c-0.md" >}})
 - [OpenAI发布GPT‑5.4 Mini与Nano模型]({{< relref "posts/20260317-hacker_news-gpt54-mini-and-nano-17.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

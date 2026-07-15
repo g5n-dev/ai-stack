@@ -21,6 +21,10 @@ description: 随着 AI 辅助编程从简单的代码补全向更复杂的工程
 external_url: https://backnotprop.com/blog/do-not-ab-test-my-workflow
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Claude Code 针对核心功能开展 A/B 测试

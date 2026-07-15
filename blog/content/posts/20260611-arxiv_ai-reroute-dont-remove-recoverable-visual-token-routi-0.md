@@ -1,14 +1,30 @@
 ---
-title: "可恢复视觉令牌路由：重新路由而非删除"
-date: 2026-06-11T23:39:46+08:00
+title: 可恢复视觉令牌路由：重新路由而非删除
+date: 2026-06-11 23:39:46+08:00
 draft: false
-entry_kind: "auto"
-tags: ["视觉令牌路由", "视觉语言模型", "可恢复路由", "令牌压缩", "大模型推理", "开源代码", "LLaVA", "Qwen"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- 视觉令牌路由
+- 视觉语言模型
+- 可恢复路由
+- 令牌压缩
+- 大模型推理
+- 开源代码
+- LLaVA
+- Qwen
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "视觉语言模型将图像投影为数百至上千个视觉 token，使解码阶段的注意力计算和 KV‑cache 存储成本显著上升。现有 token 精简方法大多遵循“评分‑删除”范式：先对 token 打分，保留得分最高的子集，永久丢弃其余 token。然而，这种不可逆操作容易导致误删——在浅层被低估的 token 可能在深层重新变"
+description: 视觉语言模型将图像投影为数百至上千个视觉 token，使解码阶段的注意力计算和 KV‑cache 存储成本显著上升。现有 token 精简方法大多遵循“评分‑删除”范式：先对
+  token 打分，保留得分最高的子集，永久丢弃其余 token。然而，这种不可逆操作容易导致误删——在浅层被低估的 token 可能在深层重新变
 external_url: http://arxiv.org/abs/2606.12412v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 可恢复视觉令牌路由：重新路由而非删除
@@ -139,7 +155,7 @@ Reroute 可在资源受限的移动或嵌入式设备上实现更高效的视觉
 
 - [规模难以克服语用学：报告偏差对视觉语言推理的影响]({{< relref "posts/20260227-arxiv_ai-scale-cant-overcome-pragmatics-the-impact-of-repor-4.md" >}})
 - [基于认知上下文学习构建大模型多智能体系统的信任机制]({{< relref "posts/20260130-arxiv_ai-epistemic-context-learning-building-trust-the-righ-7.md" >}})
-- [混合线性注意力新架构：高效蒸馏与超长上下文建模]({{< relref "posts/20260131-arxiv_ai-hybrid-linear-attention-done-right-efficient-disti-2.md" >}})
-- [混合线性注意力新架构：高效蒸馏与超长上下文处理]({{< relref "posts/20260201-arxiv_ai-hybrid-linear-attention-done-right-efficient-disti-2.md" >}})
+- [混合线性注意力新架构：高效蒸馏与超长上下文建模]({{< relref "posts/20260130-arxiv_ai-hybrid-linear-attention-done-right-efficient-disti-2.md" >}})
+- [混合线性注意力新架构：高效蒸馏与超长上下文处理]({{< relref "posts/20260130-arxiv_ai-hybrid-linear-attention-done-right-efficient-disti-2.md" >}})
 - [无奖励对齐技术处理多目标冲突]({{< relref "posts/20260203-arxiv_ai-reward-free-alignment-for-conflicting-objectives-0.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

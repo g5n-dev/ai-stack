@@ -1,14 +1,30 @@
 ---
-title: "RAG+KAG双引擎AI知识库项目实战"
-date: 2026-07-04T09:49:58+08:00
+title: RAG+KAG双引擎AI知识库项目实战
+date: 2026-07-04 09:49:58+08:00
 draft: false
-entry_kind: "auto"
-tags: ["RAG", "KAG", "知识库", "AI", "微服务", "Python", "React", "全栈"]
-categories: ["AI 工程"]
+entry_kind: auto
+tags:
+- RAG
+- KAG
+- 知识库
+- AI
+- 微服务
+- Python
+- React
+- 全栈
+categories:
+- AI 工程
 source: juejin
-description: "项目概述 推荐一个结合检索增强生成（RAG）与知识增强生成（KAG）的双引擎 AI 项目。该项目能够在大规模知识库中进行精准检索，并通过双引擎协同提升答案的准确性和上下文连贯性，适用于企业智能客服、知识库问答等场景。 系统升级 - **新增 Python 后端微服务**：在原有 React 前端、Java 后端的基础上"
+description: 项目概述 推荐一个结合检索增强生成（RAG）与知识增强生成（KAG）的双引擎 AI 项目。该项目能够在大规模知识库中进行精准检索，并通过双引擎协同提升答案的准确性和上下文连贯性，适用于企业智能客服、知识库问答等场景。
+  系统升级 - **新增 Python 后端微服务**：在原有 React 前端、Java 后端的基础上
 external_url: https://juejin.cn/post/7658310488635588654
-scenarios: ["RAG应用", "AI/ML项目"]
+scenarios:
+- RAG应用
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # RAG+KAG双引擎AI知识库项目实战
@@ -96,9 +112,9 @@ scenarios: ["RAG应用", "AI/ML项目"]
 
 ### 相关文章
 
-- [LangBot：生产级多平台Agent智能机器人开发平台]({{< relref "posts/20260205-github_trending-langbot-app-langbot-7.md" >}})
-- [LangBot：生产级多平台 Agent IM 机器人开发平台]({{< relref "posts/20260227-github_trending-langbot-app-langbot-9.md" >}})
-- [Kirara-AI：支持多平台接入的多模态聊天机器人框架]({{< relref "posts/20260130-github_trending-lss233-kirara-ai-2.md" >}})
+- [LangBot：生产级多平台Agent智能机器人开发平台]({{< relref "posts/20260131-github_trending-langbot-app-langbot-7.md" >}})
+- [LangBot：生产级多平台 Agent IM 机器人开发平台]({{< relref "posts/20260131-github_trending-langbot-app-langbot-7.md" >}})
+- [Kirara-AI：支持多平台接入的多模态聊天机器人框架]({{< relref "posts/20260127-github_trending-lss233-kirara-ai-2.md" >}})
 - [LangBot：支持多平台集成的生产级 Agent 机器人开发框架]({{< relref "posts/20260131-github_trending-langbot-app-langbot-7.md" >}})
 - [基于大模型的多平台聊天机器人：支持微信飞书钉钉接入]({{< relref "posts/20260131-github_trending-zhayujie-chatgpt-on-wechat-0.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

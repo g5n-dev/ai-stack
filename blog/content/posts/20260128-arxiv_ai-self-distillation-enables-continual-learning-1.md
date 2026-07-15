@@ -1,12 +1,26 @@
 ---
-title: "✨告别遗忘！Self-Distillation解锁持续学习新范式！"
-date: 2026-01-28T07:28:04+08:00
+title: ✨告别遗忘！Self-Distillation解锁持续学习新范式！
+date: 2026-01-28 07:28:04+08:00
 draft: false
-entry_kind: "auto"
-tags: ["持续学习", "Self-Distillation", "灾难性遗忘", "SFT", "On-policy", "In-context Learning", "模型微调", "cs.LG"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- 持续学习
+- Self-Distillation
+- 灾难性遗忘
+- SFT
+- On-policy
+- In-context Learning
+- 模型微调
+- cs.LG
+categories:
+- 大模型
+- 论文
 source: arxiv
 external_url: http://arxiv.org/abs/2601.19897v1
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 📚 ✨告别遗忘！Self-Distillation解锁持续学习新范式！
@@ -272,7 +286,6 @@ SDFT 证明了基于策略的蒸馏是一条切实可行的路径，能够实现
 |
 
 ---
-## ✅ 研究最佳实践
 
 ## 最佳实践指南
 
@@ -391,7 +404,6 @@ SDFT 证明了基于策略的蒸馏是一条切实可行的路径，能够实现
 - 在学习新任务时，通过引入蒸馏损失与分类损失的动态加权，确保模型在掌握新技能的同时不丢失旧的能力，解决了稳定性与可塑性的两难困境。
 
 ---
-## 🗺️ 学习路径
 
 ## 学习路径
 

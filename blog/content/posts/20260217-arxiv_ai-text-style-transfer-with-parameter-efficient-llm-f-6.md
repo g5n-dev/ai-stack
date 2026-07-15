@@ -1,14 +1,33 @@
 ---
-title: "基于参数高效微调与往返翻译的文本风格迁移"
-date: 2026-02-17T22:35:47+08:00
+title: 基于参数高效微调与往返翻译的文本风格迁移
+date: 2026-02-17 22:35:47+08:00
 draft: false
-entry_kind: "auto"
-tags: ["文本风格迁移", "PEFT", "LLM", "往返翻译", "数据合成", "RAG", "微调", "零样本"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- 文本风格迁移
+- PEFT
+- LLM
+- 往返翻译
+- 数据合成
+- RAG
+- 微调
+- 零样本
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "本文提出了一种基于参数高效微调（PEFT）大语言模型（LLM）的新型文本风格迁移（TST）方法，旨在解决训练数据中平行语料匮乏的难题。 主要核心内容如下： 1. **数据合成**：利用“往返翻译”技术，从单语语料库中合成出包含风格映射关系的平行数据集。 2. **中性化策略**：该方法创建了去除风格属性的“中性化”文本"
+description: 本文提出了一种基于参数高效微调（PEFT）大语言模型（LLM）的新型文本风格迁移（TST）方法，旨在解决训练数据中平行语料匮乏的难题。 主要核心内容如下：
+  1. **数据合成**：利用“往返翻译”技术，从单语语料库中合成出包含风格映射关系的平行数据集。 2. **中性化策略**：该方法创建了去除风格属性的“中性化”文本
 external_url: http://arxiv.org/abs/2602.15013v1
-scenarios: ["大语言模型", "RAG应用"]
+scenarios:
+- 大语言模型
+- RAG应用
+aliases:
+- /posts/20260218-arxiv_ai-text-style-transfer-with-parameter-efficient-llm-f-6/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 基于参数高效微调与往返翻译的文本风格迁移
@@ -241,7 +260,6 @@ scenarios: ["大语言模型", "RAG应用"]
 *   **对比Prompt Engineering（In-Context Learning）**：纯提示方法虽然无需训练，但往往无法完全覆盖特定领域的风格分布，且
 
 ---
-## 研究最佳实践
 
 ## 最佳实践指南
 
@@ -343,7 +361,6 @@ scenarios: ["大语言模型", "RAG应用"]
 - 提出的评估框架结合了自动指标和人工评估，为风格迁移任务提供了更全面的性能衡量标准。
 
 ---
-## 学习路径
 
 ## 学习路径
 
@@ -518,9 +535,9 @@ scenarios: ["大语言模型", "RAG应用"]
 
 ### 相关文章
 
-- [MemSkill：面向自进化代理的记忆技能学习与演化框架]({{< relref "posts/20260204-arxiv_ai-memskill-learning-and-evolving-memory-skills-for-s-9.md" >}})
-- [面向运行时智能体记忆的查询感知预算层路由]({{< relref "posts/20260207-arxiv_ai-learning-query-aware-budget-tier-routing-for-runti-9.md" >}})
+- [MemSkill：面向自进化代理的记忆技能学习与演化框架]({{< relref "posts/20260203-arxiv_ai-memskill-learning-and-evolving-memory-skills-for-s-9.md" >}})
+- [面向运行时智能体记忆的查询感知预算层路由]({{< relref "posts/20260206-arxiv_ai-learning-query-aware-budget-tier-routing-for-runti-9.md" >}})
 - [AttentionRetriever：注意力层即长文档检索器]({{< relref "posts/20260213-arxiv_ai-attentionretriever-attention-layers-are-secretly-l-2.md" >}})
-- [AttentionRetriever：注意力层隐式实现长文档检索]({{< relref "posts/20260215-arxiv_ai-attentionretriever-attention-layers-are-secretly-l-2.md" >}})
-- [AttentionRetriever：注意力层即长文档检索器]({{< relref "posts/20260216-arxiv_ai-attentionretriever-attention-layers-are-secretly-l-2.md" >}})
+- [AttentionRetriever：注意力层隐式实现长文档检索]({{< relref "posts/20260213-arxiv_ai-attentionretriever-attention-layers-are-secretly-l-2.md" >}})
+- [AttentionRetriever：注意力层即长文档检索器]({{< relref "posts/20260213-arxiv_ai-attentionretriever-attention-layers-are-secretly-l-2.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

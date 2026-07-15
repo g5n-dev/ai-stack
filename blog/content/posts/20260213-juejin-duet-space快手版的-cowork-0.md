@@ -1,14 +1,30 @@
 ---
-title: "Duet Space：面向非开发者的多任务AI工作台"
-date: 2026-02-13T11:27:57+08:00
+title: Duet Space：面向非开发者的多任务AI工作台
+date: 2026-02-13 11:27:57+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI 工作台", "非开发者", "多任务", "上下文记忆", "Duet Space", "AI 产品", "交互设计", "工作流"]
-categories: ["产品与创业"]
+entry_kind: auto
+tags:
+- AI 工作台
+- 非开发者
+- 多任务
+- 上下文记忆
+- Duet Space
+- AI 产品
+- 交互设计
+- 工作流
+categories:
+- 产品与创业
 source: juejin
-description: "以下是对 Duet Space 的简洁总结： **产品定位与目标用户** Duet Space 是一款**面向非开发者（普通用户）的 AI 工作台**。它类似于 AI 版的协同办公工具（文中类比为“快手版的 cowork”），旨在降低 AI 使用门槛，帮助没有编程背景的用户更好地利用 AI 完成任务。 **解决的核心痛"
+description: 以下是对 Duet Space 的简洁总结： **产品定位与目标用户** Duet Space 是一款**面向非开发者（普通用户）的 AI
+  工作台**。它类似于 AI 版的协同办公工具（文中类比为“快手版的 cowork”），旨在降低 AI 使用门槛，帮助没有编程背景的用户更好地利用 AI 完成任务。
+  **解决的核心痛
 external_url: https://juejin.cn/post/7605888927715590182
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Duet Space：面向非开发者的多任务AI工作台
@@ -181,9 +197,9 @@ Duet Space 试图通过重构交互界面（从单对话框转向多工作台）
 
 ### 相关文章
 
-- [Project Genie：无限交互世界的实验性探索]({{< relref "posts/20260130-hacker_news-project-genie-experimenting-with-infinite-interact-19.md" >}})
-- [OpenAI Codex 应用与 VSCode 分支终结及多任务工作树]({{< relref "posts/20260204-blogs_podcasts-ainews-openai-codex-app-death-of-the-vscode-fork-m-5.md" >}})
-- [OpenAI Codex 应用：VSCode 分支终结与多任务工作树]({{< relref "posts/20260204-blogs_podcasts-ainews-openai-codex-app-death-of-the-vscode-fork-m-7.md" >}})
-- [OpenAI Codex 应用：VSCode 分支终结与多任务工作树]({{< relref "posts/20260205-blogs_podcasts-ainews-openai-codex-app-death-of-the-vscode-fork-m-9.md" >}})
+- [Project Genie：无限交互世界的实验性探索]({{< relref "posts/20260129-hacker_news-project-genie-experimenting-with-infinite-interact-0.md" >}})
+- [OpenAI Codex 应用与 VSCode 分支终结及多任务工作树]({{< relref "posts/20260203-blogs_podcasts-ainews-openai-codex-app-death-of-the-vscode-fork-m-0.md" >}})
+- [OpenAI Codex 应用：VSCode 分支终结与多任务工作树]({{< relref "posts/20260203-blogs_podcasts-ainews-openai-codex-app-death-of-the-vscode-fork-m-0.md" >}})
+- [OpenAI Codex 应用：VSCode 分支终结与多任务工作树]({{< relref "posts/20260203-blogs_podcasts-ainews-openai-codex-app-death-of-the-vscode-fork-m-0.md" >}})
 - [Project Genie：无限交互世界的实验性探索]({{< relref "posts/20260129-hacker_news-project-genie-experimenting-with-infinite-interact-0.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

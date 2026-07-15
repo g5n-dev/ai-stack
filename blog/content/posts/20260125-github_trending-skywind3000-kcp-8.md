@@ -1,12 +1,26 @@
 ---
-title: "🚀 KCP：极速可靠传输！🔥 GitHub之星Skywind3000力作！⚡️"
-date: 2026-01-25T12:39:55+08:00
+title: 🚀 KCP：极速可靠传输！🔥 GitHub之星Skywind3000力作！⚡️
+date: 2026-01-25 12:39:55+08:00
 draft: false
-entry_kind: "auto"
-tags: ["KCP", "网络协议", "UDP", "ARQ", "低延迟", "传输层", "C语言", "开源项目"]
-categories: ["系统与基础设施", "后端"]
+entry_kind: auto
+tags:
+- KCP
+- 网络协议
+- UDP
+- ARQ
+- 低延迟
+- 传输层
+- C语言
+- 开源项目
+categories:
+- 系统与基础设施
+- 后端
 source: github_trending
 external_url: https://github.com/skywind3000/kcp
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 🚀 🚀 KCP：极速可靠传输！🔥 GitHub之星Skywind3000力作！⚡️
@@ -413,7 +427,6 @@ KCP 协议头部包含 24 字节，比 TCP 的 20 字节略大，但携带了更
 ## 💻 实用代码示例
 
 ---
-## ⚖️ 与同类方案对比
 
 ## 与同类方案对比
 
@@ -444,7 +457,6 @@ KCP 协议头部包含 24 字节，比 TCP 的 20 字节略大，但携带了更
 - ⚠️ **流量特征易被识别**：部分网络环境可能对非标准 UDP 流量进行限制。
 
 ---
-## ✅ 最佳实践指南
 
 ## 最佳实践指南
 
@@ -509,7 +521,6 @@ KCP 协议头部包含 24 字节，比 TCP 的 20 字节略大，但携带了更
 1. 调用 `ikcp_nodelay(kcp, 1, interval, resend, 1)`，最后一个参数 `nc` 设为 `1`（关闭拥
 
 ---
-## 🚀 性能优化建议
 
 ## 性能优化建议
 
@@ -596,7 +607,6 @@ KCP默认每收到一个数据包都会立即回复ACK，但在高丢包网络�
 - 🌐 **跨平台与语言无关**：核心协议简洁，已被移植至 C, Go, Python, Java, JavaScript 等多种语言，具备极高的通用性。
 
 ---
-## 🗺️ 循序渐进的学习路径
 
 ## 学习路径
 

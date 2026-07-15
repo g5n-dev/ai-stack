@@ -1,14 +1,32 @@
 ---
-title: "MaliciousCorgi：恶意AI扩展将代码发送至中国"
-date: 2026-02-02T15:16:01+08:00
+title: MaliciousCorgi：恶意AI扩展将代码发送至中国
+date: 2026-02-02 15:16:01+08:00
 draft: false
-entry_kind: "auto"
-tags: ["LLM", "VSCode", "恶意软件", "数据泄露", "供应链攻击", "AI扩展", "网络安全", "代码安全"]
-categories: ["安全", "AI 工程"]
+entry_kind: auto
+tags:
+- LLM
+- VS Code
+- 恶意软件
+- 数据泄露
+- 供应链攻击
+- AI扩展
+- 网络安全
+- 代码安全
+categories:
+- 安全
+- AI 工程
 source: hacker_news
-description: "随着 AI 编程助手的普及，开发者对其安全性往往缺乏警惕。近期曝光的 MaliciousCorgi 事件表明，部分恶意扩展正利用 AI 功能将用户代码回传至境外服务器。本文将剖析该攻击的技术原理与潜在风险，并提供实用的排查与防护建议，帮助开发者在享受便利的同时守住代码安全底线。"
+description: 随着 AI 编程助手的普及，开发者对其安全性往往缺乏警惕。近期曝光的 MaliciousCorgi 事件表明，部分恶意扩展正利用 AI 功能将用户代码回传至境外服务器。本文将剖析该攻击的技术原理与潜在风险，并提供实用的排查与防护建议，帮助开发者在享受便利的同时守住代码安全底线。
 external_url: https://www.koi.ai/blog/maliciouscorgi-the-cute-looking-ai-extensions-leaking-code-from-1-5-million-developers
-scenarios: ["大语言模型", "AI/ML项目"]
+scenarios:
+- 大语言模型
+- AI/ML项目
+aliases:
+- /posts/20260202-hacker_news-maliciouscorgi-ai-extensions-send-your-code-to-chi-7/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # MaliciousCorgi：恶意AI扩展将代码发送至中国
@@ -301,7 +319,6 @@ print(result)
 - 公司的AI工具安全审查流程得到强化，后续未再发生类似事件。
 
 ---
-## 最佳实践
 
 ## 最佳实践指南
 
@@ -470,8 +487,8 @@ print(result)
 ### 相关文章
 
 - [发现逾17.5万个Ollama AI实例公网暴露]({{< relref "posts/20260131-hacker_news-175k-publicly-exposed-ollama-ai-instances-discover-19.md" >}})
-- [OpenAI 如何通过内置安全机制防范 AI 代理点击链接时的数据泄露与提示词注入]({{< relref "posts/20260129-blogs_podcasts-keeping-your-data-safe-when-an-ai-agent-clicks-a-l-6.md" >}})
-- [RedSage：网络安全通用大语言模型]({{< relref "posts/20260201-arxiv_ai-redsage-a-cybersecurity-generalist-llm-0.md" >}})
-- [Show HN: 可视化 LLM 工具数据传输的 MitM 代理]({{< relref "posts/20260129-hacker_news-show-hn-a-mitm-proxy-to-see-what-your-llm-tools-ar-14.md" >}})
+- [OpenAI 如何通过内置安全机制防范 AI 代理点击链接时的数据泄露与提示词注入]({{< relref "posts/20260129-blogs_podcasts-keeping-your-data-safe-when-an-ai-agent-clicks-a-l-5.md" >}})
+- [RedSage：网络安全通用大语言模型]({{< relref "posts/20260130-arxiv_ai-redsage-a-cybersecurity-generalist-llm-0.md" >}})
+- [Show HN: 可视化 LLM 工具数据传输的 MitM 代理]({{< relref "posts/20260129-hacker_news-show-hn-a-mitm-proxy-to-see-what-your-llm-tools-ar-9.md" >}})
 - [RedSage：网络安全通用大模型]({{< relref "posts/20260130-arxiv_ai-redsage-a-cybersecurity-generalist-llm-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

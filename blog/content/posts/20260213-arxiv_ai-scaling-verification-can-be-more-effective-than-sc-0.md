@@ -1,14 +1,34 @@
 ---
-title: "扩展验证比扩展策略学习更能有效实现视觉-语言-动作对齐"
-date: 2026-02-13T23:30:43+08:00
+title: 扩展验证比扩展策略学习更能有效实现视觉-语言-动作对齐
+date: 2026-02-13 23:30:43+08:00
 draft: false
-entry_kind: "auto"
-tags: ["VLA", "具身智能", "机器人", "CoVer", "测试时验证", "多模态", "策略学习", "SIMPLER"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- VLA
+- 具身智能
+- 机器人
+- CoVer
+- 测试时验证
+- 多模态
+- 策略学习
+- SIMPLER
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "本文提出了一种名为 **CoVer** 的方法，旨在解决通用机器人中视觉-语言-动作（VLA）模型的指令与行动不一致问题。与传统的通过扩大策略学习规模不同，作者探索了通过**测试时验证**来缩小“意图-行动”差距。 主要内容包括： 1. **扩展定律验证**：研究表明，在测试时联合扩展改写指令的数量和生成动作的数量，能"
+description: 本文提出了一种名为 **CoVer** 的方法，旨在解决通用机器人中视觉-语言-动作（VLA）模型的指令与行动不一致问题。与传统的通过扩大策略学习规模不同，作者探索了通过**测试时验证**来缩小“意图-行动”差距。
+  主要内容包括： 1. **扩展定律验证**：研究表明，在测试时联合扩展改写指令的数量和生成动作的数量，能
 external_url: http://arxiv.org/abs/2602.12281v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+aliases:
+- /posts/20260214-arxiv_ai-scaling-verification-can-be-more-effective-than-sc-0/
+- /posts/20260215-arxiv_ai-scaling-verification-can-be-more-effective-than-sc-0/
+- /posts/20260216-arxiv_ai-scaling-verification-can-be-more-effective-than-sc-0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 扩展验证比扩展策略学习更能有效实现视觉-语言-动作对齐
@@ -265,7 +285,6 @@ CoVer 的创新性在于将**搜索**引入了VLA的推理阶段，并提出了�
 这篇论文推进的是**“理解智能系统中计算分配的效率”**。它揭示了一个重要的工程哲学：**在模型能力达到瓶颈时，通过增加测试时算力来换取性能是一条可行的路径。** 其代价是系统
 
 ---
-## 研究最佳实践
 
 ## 最佳实践指南
 
@@ -357,7 +376,6 @@ CoVer 的创新性在于将**搜索**引入了VLA的推理阶段，并提出了�
 - 研究结果揭示了在多模态机器人学习领域，验证阶段可能比学习阶段对最终表现更具决定性作用
 
 ---
-## 学习路径
 
 ## 学习路径
 
@@ -540,8 +558,8 @@ CoVer 的创新性在于将**搜索**引入了VLA的推理阶段，并提出了�
 
 ### 相关文章
 
-- [视觉语言模型能否通过交互学习直观物理]({{< relref "posts/20260207-arxiv_ai-can-vision-language-models-learn-intuitive-physics-5.md" >}})
-- [视觉语言模型能否通过交互学习直观物理]({{< relref "posts/20260209-arxiv_ai-can-vision-language-models-learn-intuitive-physics-5.md" >}})
+- [视觉语言模型能否通过交互学习直观物理]({{< relref "posts/20260206-arxiv_ai-can-vision-language-models-learn-intuitive-physics-5.md" >}})
+- [视觉语言模型能否通过交互学习直观物理]({{< relref "posts/20260206-arxiv_ai-can-vision-language-models-learn-intuitive-physics-5.md" >}})
 - [DreamDojo：基于大规模人类视频的通用机器人世界模型]({{< relref "posts/20260209-arxiv_ai-dreamdojo-a-generalist-robot-world-model-from-larg-4.md" >}})
 - [Cosmos重磅：微调视频模型！解锁 visuomotor 控制与规划 🚀✨]({{< relref "posts/20260125-arxiv_ai-cosmos-policy-fine-tuning-video-models-for-visuomo-9.md" >}})
 - [NVIDIA Cosmos策略：提升机器人控制能力]({{< relref "posts/20260129-blogs_podcasts-introducing-nvidia-cosmos-policy-for-advanced-robo-0.md" >}})

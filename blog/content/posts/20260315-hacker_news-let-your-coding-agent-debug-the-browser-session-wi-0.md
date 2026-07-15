@@ -22,6 +22,17 @@ external_url: https://developer.chrome.com/blog/chrome-devtools-mcp-debug-your-b
 scenarios:
 - DevOps/运维
 - AI/ML项目
+aliases:
+- /posts/20260316-hacker_news-chrome-devtools-mcp-1/
+- /posts/20260316-hacker_news-chrome-devtools-mcp-2025-1/
+- /posts/20260316-hacker_news-chrome-devtools-mcp-2025-2/
+- /posts/20260316-hacker_news-chrome-devtools-mcp-2025-3/
+- /posts/20260316-hacker_news-chrome-devtools-mcp-2025-4/
+- /posts/20260316-hacker_news-chrome-devtools-mcp-2025-6/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 让编程代理通过 Chrome DevTools MCP 调试浏览器会话

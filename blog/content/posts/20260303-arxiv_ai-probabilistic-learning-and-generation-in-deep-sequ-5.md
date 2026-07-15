@@ -20,6 +20,10 @@ description: 以下是对该内容的中文总结： **深度序列模型中的�
 external_url: http://arxiv.org/abs/2603.00888v1
 scenarios:
 - Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 深度序列模型中的概率学习与生成机制
@@ -134,9 +138,7 @@ scenarios:
 
 ---
 
-### 深度序列模型中的概率学习与生成：深入分析
 
-### 1. 研究背景与问题
 
 ### 核心问题
 该论文致力于解决**深度序列模型（DSMs）在实际部署中缺乏不确定性量化能力**的问题，同时试图克服**概率贝叶斯方法在大规模深度学习中计算不可行**的瓶颈。
@@ -172,7 +174,6 @@ scenarios:
 - **互补性**：结合了DSMs的归纳偏置（如平移不变性、长程依赖）和概率模型的理论 guarantees。
 - **高效性**：避免了通用的、昂贵的推断算法，转而使用与模型前向传播兼容的推断方法。
 
-### 3. 理论基础
 
 ### 理论基础
 论文主要建立在**贝叶斯非参数统计**和**深度学习理论**的交叉点上，具体涉及：
@@ -188,7 +189,6 @@ scenarios:
 - 提供了一种新的视角来理解Transformer的泛化能力，即将其视为一种基于核方法的概率推断。
 - 证明了HiPPO-SSM与特定GP先验的等价性，为长程依赖建模提供了新的概率解释。
 
-### 7. 学习建议
 
 ### 适合读者
 - 具有深度学习基础，特别是熟悉Transformer和RNN原理的研究生或工程师。
@@ -459,8 +459,8 @@ scenarios:
 
 ### 相关文章
 
-- [U(d)子群导出自然RNN与Transformer架构]({{< relref "posts/20260224-arxiv_ai-subgroups-of-ud-induce-natural-rnn-and-transformer-6.md" >}})
+- [U(d)子群导出自然RNN与Transformer架构]({{< relref "posts/20260223-arxiv_ai-subgroups-of-ud-induce-natural-rnn-and-transformer-6.md" >}})
 - [Steerling-8B：可解释自身生成任一 Token 的语言模型]({{< relref "posts/20260224-hacker_news-show-hn-steerling-8b-a-language-model-that-can-exp-4.md" >}})
 - [探索Transformer在表格数据变分自编码器中的位置]({{< relref "posts/20260129-arxiv_ai-exploring-transformer-placement-in-variational-aut-3.md" >}})
-- [探索Transformer在表格数据变分自编码器中的位置]({{< relref "posts/20260130-arxiv_ai-exploring-transformer-placement-in-variational-aut-3.md" >}})
+- [探索Transformer在表格数据变分自编码器中的位置]({{< relref "posts/20260129-arxiv_ai-exploring-transformer-placement-in-variational-aut-3.md" >}})
 - [混合线性注意力新架构：高效蒸馏与极长上下文处理]({{< relref "posts/20260130-arxiv_ai-hybrid-linear-attention-done-right-efficient-disti-2.md" >}})

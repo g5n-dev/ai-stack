@@ -1,0 +1,56 @@
+version: 1
+
+# Only exact, reviewed aliases belong here. Do not infer aliases by case-folding,
+# punctuation removal, or broad Unicode compatibility normalization: labels such
+# as ReAct/React, C/C++, CI/CD, HTTP/2, SE(3), and H²RL are intentionally distinct.
+aliases:
+  exact:
+    AI编程: AI 编程
+    生成式AI: 生成式 AI
+    AI安全: AI 安全
+    AI应用: AI 应用
+    AI基础设施: AI 基础设施
+    AI代理: AI 代理
+    AI智能体: AI 智能体
+    AI助手: AI 助手
+    医疗AI: 医疗 AI
+    AI辅助编程: AI 辅助编程
+    AI工程: AI 工程
+    AI模型: AI 模型
+    AI工具: AI 工具
+    AI研究: AI 研究
+    AI教育: AI 教育
+    AI开发: AI 开发
+    AI治理: AI 治理
+    LLM应用: LLM 应用
+    LLM安全: LLM 安全
+    LLM推理: LLM 推理
+    MCP协议: MCP 协议
+    Prompt工程: Prompt 工程
+    Prompt注入: Prompt 注入
+    Nvidia: NVIDIA
+    Multi-agent: Multi-Agent
+    Vibe coding: Vibe Coding
+    vibe coding: Vibe Coding
+    VibeCoding: Vibe Coding
+    Vibecoding: Vibe Coding
+    Llama.cpp: llama.cpp
+    Microgpt: MicroGPT
+    microgpt: MicroGPT
+    ChatGPT-on-Wechat: ChatGPT-on-WeChat
+    ChatGPT-on-wechat: ChatGPT-on-WeChat
+    Computer use: Computer Use
+    ClaudeCode: Claude Code
+    AmazonBedrock: Amazon Bedrock
+    HuggingFace: Hugging Face
+    SpringBoot: Spring Boot
+    VSCode: VS Code
+    GPT 5.4: GPT-5.4
+    GPT5.6: GPT-5.6
+    Llama-3.1: Llama 3.1
+    Llama3.1: Llama 3.1
+    Kimi k2.5: Kimi K2.5
+    Opus-4.6: Opus 4.6
+    GLM5.2: GLM-5.2
+    DeepSeek R1: DeepSeek-R1
+    Qwen 3.5: Qwen3.5

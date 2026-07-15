@@ -1,14 +1,31 @@
 ---
-title: "FOCUS：DLLMs如何突破算力瓶颈"
-date: 2026-02-02T19:22:59+08:00
+title: FOCUS：DLLMs如何突破算力瓶颈
+date: 2026-02-02 19:22:59+08:00
 draft: false
-entry_kind: "auto"
-tags: ["DLLMs", "扩散模型", "算力优化", "FOCUS", "解码效率", "注意力机制", "cs.LG", "推理加速"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- DLLMs
+- 扩散模型
+- 算力优化
+- FOCUS
+- 解码效率
+- 注意力机制
+- cs.LG
+- 推理加速
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "以下是对该内容的中文总结： **标题：FOCUS系统——解决扩散大语言模型（DLLM）计算瓶颈的新方案** **背景与问题：** 扩散大语言模型（DLLMs）作为自回归模型的有力替代方案，其应用目前主要受到高解码成本的限制。本研究发现，DLLM在解码过程中存在一个关键的低效问题：尽管计算是在token块上并行进行的，但"
+description: 以下是对该内容的中文总结： **标题：FOCUS系统——解决扩散大语言模型（DLLM）计算瓶颈的新方案** **背景与问题：** 扩散大语言模型（DLLMs）作为自回归模型的有力替代方案，其应用目前主要受到高解码成本的限制。本研究发现，DLLM在解码过程中存在一个关键的低效问题：尽管计算是在token块上并行进行的，但
 external_url: http://arxiv.org/abs/2601.23278v1
-scenarios: ["大语言模型"]
+scenarios:
+- 大语言模型
+aliases:
+- /posts/20260203-arxiv_ai-focus-dllms-know-how-to-tame-their-compute-bound-3/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # FOCUS：DLLMs如何突破算力瓶颈
@@ -265,7 +282,6 @@ FOCUS在DLLM领域属于开创性工作。虽然“稀疏计算”在NLP中不�
 FOCUS推进的是**“理解”**。它不仅仅是一个加速技巧，更揭示了扩散模型内部的一种**“计算分配不均”**的自然属性。其代价是增加了系统的复杂性（需要维护动态掩码和稀疏索引），但换来了对算力更极致的利用。它代表了从“暴力计算”向“智能计算”转变的重要一步。
 
 ---
-## 研究最佳实践
 
 ## 最佳实践指南
 
@@ -357,7 +373,6 @@ FOCUS推进的是**“理解”**。它不仅仅是一个加速技巧，更揭�
 - 模型压缩技术（如剪枝和知识蒸馏）能减少参数量和计算量，同时维持较高的模型性能。
 
 ---
-## 学习路径
 
 ## 学习路径
 
@@ -511,8 +526,8 @@ FOCUS推进的是**“理解”**。它不仅仅是一个加速技巧，更揭�
 ### 相关文章
 
 - [🚀 自回归+掩码扩散：下一代生成式AI！🔥]({{< relref "posts/20260126-arxiv_ai-auto-regressive-masked-diffusion-models-3.md" >}})
-- [🔥自回归+掩码扩散！下一代生成模型架构强势登场！]({{< relref "posts/20260127-arxiv_ai-auto-regressive-masked-diffusion-models-3.md" >}})
+- [🔥自回归+掩码扩散！下一代生成模型架构强势登场！]({{< relref "posts/20260126-arxiv_ai-auto-regressive-masked-diffusion-models-3.md" >}})
 - [进化策略导致大语言模型出现灾难性遗忘]({{< relref "posts/20260129-arxiv_ai-evolutionary-strategies-lead-to-catastrophic-forge-0.md" >}})
-- [探索Transformer在表格数据变分自编码器中的位置]({{< relref "posts/20260130-arxiv_ai-exploring-transformer-placement-in-variational-aut-3.md" >}})
+- [探索Transformer在表格数据变分自编码器中的位置]({{< relref "posts/20260129-arxiv_ai-exploring-transformer-placement-in-variational-aut-3.md" >}})
 - [CATTO：平衡语言模型偏好与置信度的方法]({{< relref "posts/20260202-arxiv_ai-catto-balancing-preferences-and-confidence-in-lang-0.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

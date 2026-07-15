@@ -21,6 +21,10 @@ external_url: https://justinjackson.ca/claude-code-ruin
 scenarios:
 - AI/ML项目
 - DevOps/运维
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Claude Code 会如何影响开发团队工作流

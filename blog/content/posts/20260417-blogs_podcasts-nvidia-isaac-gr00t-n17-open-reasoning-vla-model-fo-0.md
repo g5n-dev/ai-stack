@@ -1,14 +1,29 @@
 ---
-title: "NVIDIA GR00T N1.7开源推理模型赋能人形机器人"
-date: 2026-04-17T16:23:43+08:00
+title: NVIDIA GR00T N1.7开源推理模型赋能人形机器人
+date: 2026-04-17 16:23:43+08:00
 draft: false
-entry_kind: "auto"
-tags: ["NVIDIA", "GR00T", "人形机器人", "开源模型", "推理VLA", "Isaac平台", "机器人技术", "深度学习"]
-categories: ["AI 工程", "开源生态"]
+entry_kind: auto
+tags:
+- NVIDIA
+- GR00T
+- 人形机器人
+- 开源模型
+- 推理VLA
+- Isaac平台
+- 机器人技术
+- 深度学习
+categories:
+- AI 工程
+- 开源生态
 source: blogs_podcasts
-description: "NVIDIA 发布了 Isaac GR00T N1.7，这是一款面向人形机器人的开源推理视觉‑语言‑动作（VLA）模型。通过在感知、推理和运动控制之间建立统一的学习框架，它显著提升了机器人在动态环境中的任务完成率。本文将详细解析模型的核心架构、基准测试结果以及在真实场景中的部署要点，帮助研究者和工程师快速上手并评估其在"
+description: NVIDIA 发布了 Isaac GR00T N1.7，这是一款面向人形机器人的开源推理视觉‑语言‑动作（VLA）模型。通过在感知、推理和运动控制之间建立统一的学习框架，它显著提升了机器人在动态环境中的任务完成率。本文将详细解析模型的核心架构、基准测试结果以及在真实场景中的部署要点，帮助研究者和工程师快速上手并评估其在
 external_url: https://huggingface.co/blog/nvidia/gr00t-n1-7
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # NVIDIA GR00T N1.7开源推理模型赋能人形机器人
@@ -123,9 +138,9 @@ NVIDIA开放了完整的模型权重、预训练数据和微调工具链。开�
 
 ### 相关文章
 
-- [NVIDIA Cosmos 策略模型提升机器人控制精度]({{< relref "posts/20260202-blogs_podcasts-introducing-nvidia-cosmos-policy-for-advanced-robo-3.md" >}})
-- [🌍NVIDIA Earth-2开放模型横扫气象全栈！精准预测未来！🚀]({{< relref "posts/20260127-blogs_podcasts-nvidia-earth-2-open-models-span-the-whole-weather--1.md" >}})
-- [🌍NVIDIA Earth-2开放模型震撼发布！全栈天气预测新纪元！🚀]({{< relref "posts/20260127-blogs_podcasts-nvidia-earth-2-open-models-span-the-whole-weather--3.md" >}})
-- [NVIDIA Nemotron 2 Nano 9B 日语模型：支持日本主权AI的小规模语言模型]({{< relref "posts/20260218-blogs_podcasts-nvidia-nemotron-2-nano-9b-japanese-日本のソブリンaiを支える最先-9.md" >}})
+- [NVIDIA Cosmos 策略模型提升机器人控制精度]({{< relref "posts/20260129-blogs_podcasts-introducing-nvidia-cosmos-policy-for-advanced-robo-0.md" >}})
+- [🌍NVIDIA Earth-2开放模型横扫气象全栈！精准预测未来！🚀]({{< relref "posts/20260126-blogs_podcasts-nvidia-earth-2-open-models-span-the-whole-weather--0.md" >}})
+- [🌍NVIDIA Earth-2开放模型震撼发布！全栈天气预测新纪元！🚀]({{< relref "posts/20260126-blogs_podcasts-nvidia-earth-2-open-models-span-the-whole-weather--0.md" >}})
+- [NVIDIA Nemotron 2 Nano 9B 日语模型：支持日本主权AI的小规模语言模型]({{< relref "posts/20260218-blogs_podcasts-nvidia-nemotron-2-nano-9b-japanese-日本のソブリンaiを支える最先-0.md" >}})
 - [A.R.I.S.：基于深度学习的电子废弃物自动分类系统]({{< relref "posts/20260221-arxiv_ai-aris-automated-recycling-identification-system-for-8.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

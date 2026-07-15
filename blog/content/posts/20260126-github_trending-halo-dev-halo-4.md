@@ -1,12 +1,26 @@
 ---
-title: "🚀 Halo：强大开源建站神器！GitHub 趋势榜首选 ⭐"
-date: 2026-01-26T12:12:08+08:00
+title: 🚀 Halo：强大开源建站神器！GitHub 趋势榜首选 ⭐
+date: 2026-01-26 12:12:08+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Halo", "建站工具", "Spring Boot", "Vue.js", "插件化架构", "Java", "CMS", "开源项目"]
-categories: ["开源生态", "后端"]
+entry_kind: auto
+tags:
+- Halo
+- 建站工具
+- Spring Boot
+- Vue.js
+- 插件化架构
+- Java
+- CMS
+- 开源项目
+categories:
+- 开源生态
+- 后端
 source: github_trending
 external_url: https://github.com/halo-dev/halo
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 🚀 🚀 Halo：强大开源建站神器！GitHub 趋势榜首选 ⭐
@@ -492,7 +506,6 @@ Halo 的核心哲学是 **“约定优于配置”** 与 **“组合优于继承
 - 全程自托管，年成本仅 ¥200（服务器+域名）
 
 ---
-## ⚖️ 与同类方案对比
 
 ## 与同类方案对比
 
@@ -518,7 +531,6 @@ Halo 的核心哲学是 **“约定优于配置”** 与 **“组合优于继承
 - ⚠️ **静态化弱**：不支持像 Hexo 那样的纯静态生成，依赖服务器运行。
 
 ---
-## ✅ 最佳实践指南
 
 ## 最佳实践指南
 
@@ -595,7 +607,6 @@ Halo 的核心哲学是 **“约定优于配置”** 与 **“组合优于继承
 2.  **应用卷备份**: 定
 
 ---
-## 🚀 性能优化建议
 
 ## 性能优化建议
 
@@ -669,7 +680,6 @@ Halo 默认主题和插件包含大量 CSS/JS 资源。如果直接从服务器�
 - ☁️ 轻松实现容器化与云原生部署**：完美支持 Docker 容器化部署，提供一键启动脚本和标准的 Docker 镜像，能够快速在云服务器或 Kubernetes 环境中上线。
 
 ---
-## 🗺️ 循序渐进的学习路径
 
 ## 学习路径
 

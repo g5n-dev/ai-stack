@@ -1,14 +1,28 @@
 ---
-title: "OpenRouter完成1.13亿美元B轮融资"
-date: 2026-05-30T22:21:26+08:00
+title: OpenRouter完成1.13亿美元B轮融资
+date: 2026-05-30 22:21:26+08:00
 draft: false
-entry_kind: "auto"
-tags: ["OpenRouter", "B轮融资", "1.13亿美元", "AI创业", "科技投资", "初创公司", "融资", "创业生态"]
-categories: ["产品与创业"]
+entry_kind: auto
+tags:
+- OpenRouter
+- B轮融资
+- 1.13亿美元
+- AI创业
+- 科技投资
+- 初创公司
+- 融资
+- 创业生态
+categories:
+- 产品与创业
 source: hacker_news
-description: "OpenRouter 宣布完成 1.13 亿美元 B 轮融资，由多家顶级风投领投。此轮资金将主要用于扩展其多云路由平台的功能和全球节点布局，以满足企业对跨云网络日益增长的需求，并提升平台的可靠性。对于正在评估或已经在使用多云架构的开发者和企业而言，这笔融资意味着更稳定的服务、更丰富的集成选项以及更快的迭代速度。"
+description: OpenRouter 宣布完成 1.13 亿美元 B 轮融资，由多家顶级风投领投。此轮资金将主要用于扩展其多云路由平台的功能和全球节点布局，以满足企业对跨云网络日益增长的需求，并提升平台的可靠性。对于正在评估或已经在使用多云架构的开发者和企业而言，这笔融资意味着更稳定的服务、更丰富的集成选项以及更快的迭代速度。
 external_url: https://openrouter.ai/announcements/series-b
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # OpenRouter完成1.13亿美元B轮融资
@@ -81,9 +95,9 @@ OpenRouter获得1.13亿美元B轮融资，不仅验证了AI模型聚合层的市
 
 ### 相关文章
 
-- [OpenAI融资66亿美元：获亚马逊英伟达软银注资，估值达1570亿]({{< relref "posts/20260303-blogs_podcasts-ainews-openai-closes-110b-raise-from-amazon-nvidia-8.md" >}})
-- [Sam Altman提出AI孵化器模式以加速初创公司发展]({{< relref "posts/20260201-blogs_podcasts-ainews-sam-altmans-ai-combinator-5.md" >}})
-- [ElevenLabs 融资 5 亿美元，Cerebras 获 10 亿美元]({{< relref "posts/20260207-blogs_podcasts-ainews-elevenlabs-500m-series-d-at-11b-cerebras-1b-8.md" >}})
-- [Anthropic 获 30 亿美元 G 轮融资，投后估值达 380 亿美元]({{< relref "posts/20260212-hacker_news-anthropic-raises-30b-in-series-g-funding-at-380b-p-11.md" >}})
+- [OpenAI融资66亿美元：获亚马逊英伟达软银注资，估值达1570亿]({{< relref "posts/20260228-blogs_podcasts-ainews-openai-closes-110b-raise-from-amazon-nvidia-0.md" >}})
+- [Sam Altman提出AI孵化器模式以加速初创公司发展]({{< relref "posts/20260129-blogs_podcasts-ainews-sam-altmans-ai-combinator-0.md" >}})
+- [ElevenLabs 融资 5 亿美元，Cerebras 获 10 亿美元]({{< relref "posts/20260205-blogs_podcasts-ainews-elevenlabs-500m-series-d-at-11b-cerebras-1b-0.md" >}})
+- [Anthropic 获 30 亿美元 G 轮融资，投后估值达 380 亿美元]({{< relref "posts/20260212-hacker_news-anthropic-raises-30b-in-series-g-funding-at-380b-p-7.md" >}})
 - [OpenAI融资66亿美元投后估值达1570亿美元]({{< relref "posts/20260227-hacker_news-openai-raises-110b-on-730b-pre-money-valuation-2.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

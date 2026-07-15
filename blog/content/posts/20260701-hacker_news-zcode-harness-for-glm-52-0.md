@@ -1,14 +1,33 @@
 ---
-title: "ZCode：GLM-5.2模型利用框架"
-date: 2026-07-01T23:31:06+08:00
+title: ZCode：GLM-5.2模型利用框架
+date: 2026-07-01 23:31:06+08:00
 draft: false
-entry_kind: "auto"
-tags: ["ZCode", "GLM-5.2", "大模型", "模型框架", "AI开发", "开源", "Python", "LLM"]
-categories: ["大模型", "开发工具"]
+entry_kind: auto
+tags:
+- ZCode
+- GLM-5.2
+- 大模型
+- 模型框架
+- AI 开发
+- 开源
+- Python
+- LLM
+categories:
+- 大模型
+- 开发工具
 source: hacker_news
-description: "ZCode 是专为 GLM-5.2 设计的高效测试框架，旨在帮助开发者在复杂模型部署场景下快速构建、运行并分析大规模回归测试。通过提供模块化的脚本编排、自动化数据注入以及细粒度的性能监控，它能够在保持测试覆盖的同时显著缩短调试周期。阅读本文后，你将掌握 ZCode 的核心组件使用方法，并能够将其集成到现有 CI 流程，"
+description: ZCode 是专为 GLM-5.2 设计的高效测试框架，旨在帮助开发者在复杂模型部署场景下快速构建、运行并分析大规模回归测试。通过提供模块化的脚本编排、自动化数据注入以及细粒度的性能监控，它能够在保持测试覆盖的同时显著缩短调试周期。阅读本文后，你将掌握
+  ZCode 的核心组件使用方法，并能够将其集成到现有 CI 流程，
 external_url: https://zcode.z.ai/en
-scenarios: ["AI/ML项目", "大语言模型"]
+scenarios:
+- AI/ML项目
+- 大语言模型
+aliases:
+- /posts/20260702-hacker_news-zcode-harness-for-glm-52-0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # ZCode：GLM-5.2模型利用框架
@@ -77,9 +96,9 @@ ZCode作为GLM-5.2的专用测试框架，其核心价值在于提供了标准�
 
 ### 相关文章
 
-- [Show HN: Emdash – 开源智能体开发环境]({{< relref "posts/20260225-hacker_news-show-hn-emdash-open-source-agentic-development-env-12.md" >}})
+- [Show HN: Emdash – 开源智能体开发环境]({{< relref "posts/20260224-hacker_news-show-hn-emdash-open-source-agentic-development-env-15.md" >}})
 - [crawl4ai：面向AI时代的LLM友好型数据采集工具]({{< relref "posts/20260226-juejin-crawl4aiai时代的数据采集利器从入门到实战-0.md" >}})
 - [LangChain 框架完全指南：基于 LLM 的应用开发]({{< relref "posts/20260306-juejin-langchain-框架完全指南从入门到精通-3.md" >}})
-- [Qwen3-Coder-Next：阿里新一代代码模型]({{< relref "posts/20260203-hacker_news-qwen3-coder-next-2.md" >}})
-- [Qwen3-Coder-Next：阿里下一代代码模型]({{< relref "posts/20260204-hacker_news-qwen3-coder-next-10.md" >}})
+- [Qwen3-Coder-Next：阿里新一代代码模型]({{< relref "posts/20260203-hacker_news-qwen3-coder-next-0.md" >}})
+- [Qwen3-Coder-Next：阿里下一代代码模型]({{< relref "posts/20260203-hacker_news-qwen3-coder-next-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

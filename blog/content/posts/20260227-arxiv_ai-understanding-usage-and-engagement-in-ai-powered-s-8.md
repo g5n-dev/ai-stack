@@ -23,6 +23,14 @@ scenarios:
 - AI/ML项目
 - 大语言模型
 - RAG应用
+aliases:
+- /posts/20260228-arxiv_ai-understanding-usage-and-engagement-in-ai-powered-s-8/
+- /posts/20260301-arxiv_ai-understanding-usage-and-engagement-in-ai-powered-s-8/
+- /posts/20260302-arxiv_ai-understanding-usage-and-engagement-in-ai-powered-s-8/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 基于Asta数据集的AI科研工具使用与交互行为分析
@@ -123,7 +131,6 @@ scenarios:
 
 以下是对论文《Understanding Usage and Engagement in AI-Powered Scientific Research Tools: The Asta Interaction Dataset》的深入分析。
 
-### 1. 研究背景与问题
 
 ### 核心问题
 该研究致力于解决一个在人工智能迅速发展背景下被忽视的基础问题：**在真实、复杂的科研工作流中，研究人员究竟如何与大语言模型（LLM）驱动的科研工具进行交互？**
@@ -140,7 +147,6 @@ scenarios:
 ### 重要性
 理解真实用户行为是构建下一代AI科研助手的前提。如果不知道用户如何提问、如何验证答案、如何随着使用改变策略，开发者就无法优化模型以适应人类的认知负荷和科研需求。
 
-### 2. 核心方法与创新
 
 ### 核心方法
 本文的核心贡献是构建并发布了 **Asta Interaction Dataset**。这是一个包含20万+条匿名化用户交互日志的大规模数据集。
@@ -161,7 +167,6 @@ scenarios:
 ### 理论依据
 依据 **人机交互（HCI）中的意义构建理论** 和 **信息觅食理论**。研究假设用户在使用AI工具时，是在不断调整自己的信息需求，并根据系统反馈（生成的文本和引用）来决定下一步的探索路径。
 
-### 3. 理论基础
 
 ### 使用的理论基础
 1.  **协作式信息搜寻：** 理论认为用户在复杂任务中会与系统形成共同进化的认知系统。Asta数据集证实了这一点，用户通过不断修正查询来“教”AI理解其意图。
@@ -171,7 +176,6 @@ scenarios:
 - **查询意图分类法的扩展：** 提出了包括“搜索”、“综合”、“起草”和“探索”在内的多维度分类体系。
 - **信任校准模型：** 虽然文中未明确命名模型，但数据揭示了用户如何通过“引用回溯”来校准对AI生成内容的信任度。这为未来的“可解释性AI（XAI）”提供了实证基础。
 
-### 7. 学习建议
 
 ### 适合读者背景
 - 人机交互（HCI）研究者
@@ -447,7 +451,7 @@ Asta 数据集的研究者利用这些行为模式构建了预测模型，试图
 ### 相关文章
 
 - [LLM 模型应关注的数据处理与优化策略]({{< relref "posts/20260218-hacker_news-if-youre-an-llm-please-read-this-2.md" >}})
-- [SkillsBench 论文解读：跨任务基准测试如何揭示 Agent 技能的实际效用]({{< relref "posts/20260218-juejin-你知道不你现在给-ai-用的-agent-skills-可能毫无作用甚至还拖后腿-2.md" >}})
-- [Kirara-AI：支持多平台接入的多模态聊天机器人框架]({{< relref "posts/20260130-github_trending-lss233-kirara-ai-2.md" >}})
+- [SkillsBench 论文解读：跨任务基准测试如何揭示 Agent 技能的实际效用]({{< relref "posts/20260217-juejin-你知道不你现在给-ai-用的-agent-skills-可能毫无作用甚至还拖后腿-2.md" >}})
+- [Kirara-AI：支持多平台接入的多模态聊天机器人框架]({{< relref "posts/20260127-github_trending-lss233-kirara-ai-2.md" >}})
 - [基于大模型的多平台聊天机器人：支持微信飞书钉钉接入]({{< relref "posts/20260131-github_trending-zhayujie-chatgpt-on-wechat-0.md" >}})
-- [LangBot：生产级多平台智能体机器人开发平台]({{< relref "posts/20260201-github_trending-langbot-app-langbot-0.md" >}})
+- [LangBot：生产级多平台智能体机器人开发平台]({{< relref "posts/20260131-github_trending-langbot-app-langbot-7.md" >}})

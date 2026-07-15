@@ -21,6 +21,10 @@ description: '**内容总结：** 本文介绍了 **SocialOmni**，这是一个�
 external_url: http://arxiv.org/abs/2603.16859v1
 scenarios:
 - Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # SocialOmni：全模态模型视听社交交互基准测试
@@ -68,7 +72,6 @@ scenarios:
 5.  **研究意义**：
     SocialOmni 提供的诊断信号为未来缩小模型在感知与交互之间的差距指明了方向。
 
-### 5. 批判性分析与总结
 
 ### 优势
 *   **填补空白**：首次针对全模态模型的动态社交互动能力提供了量化基准。
@@ -147,9 +150,7 @@ SocialOmni 为全模态模型的社交能力评估提供了新的视角和工具
 
 ---
 
-### SocialOmni: 全模态模型社交互动力度的基准测试技术分析
 
-### 1. 研究背景与问题定义
 
 ### 核心问题
 该论文旨在解决全模态大语言模型在**动态社交互动**场景下的评估缺失问题。现有的评估体系多集中于静态感知（如物体识别、场景描述）或单轮问答，而未能有效评估真实社交场景中的关键能力——**在多轮对话中根据视听信号进行适时互动（如打断、插话）的能力**。
@@ -166,7 +167,6 @@ SocialOmni 为全模态模型的社交能力评估提供了新的视角和工具
 ### 问题的重要性
 这是实现**人机自然交互**的基础环节。即使模型能准确识别视频中的物体，如果无法在对话中感知“插话意图”对应的微表情或语调变化，其交互能力仍将受限。
 
-### 2. 核心方法与创新
 
 ### SocialOmni 基准框架
 SocialOmni 是一个专门设计的基准数据集和评估框架，用于量化 OLMs 的社交互动表现。它将社交互动解构为三个子任务：
@@ -183,7 +183,6 @@ SocialOmni 是一个专门设计的基准数据集和评估框架，用于量化
 *   **诊断性**：能够明确区分模型是在感知环节出现错误，还是在生成环节出现问题。
 *   **真实性**：数据源基于真实的影视剧或社交场景，保留了自然的噪音和复杂的社交信号。
 
-### 3. 理论基础
 
 ### 理论假设
 该研究基于**社交互动可分解性**假设。即，一个成功的社交互动 $I$ 可以建模为感知模块 $P$、时机决策模块 $T$ 和内容生成模块 $G$ 的联合概率分布：
@@ -370,7 +369,7 @@ SocialOmni 推动了 AI 向更自然、更人性化的交互方向发展。其�
 ### 相关文章
 
 - [GEBench: Benchmarking Image Generation Models as GUI En]({{< relref "posts/20260210-arxiv_ai-gebench-benchmarking-image-generation-models-as-gu-7.md" >}})
-- [GEBench：将图像生成模型评估为GUI环境的基准]({{< relref "posts/20260211-arxiv_ai-gebench-benchmarking-image-generation-models-as-gu-7.md" >}})
-- [GENIUS：生成式流体智能评估套件]({{< relref "posts/20260213-arxiv_ai-genius-generative-fluid-intelligence-evaluation-su-5.md" >}})
+- [GEBench：将图像生成模型评估为GUI环境的基准]({{< relref "posts/20260210-arxiv_ai-gebench-benchmarking-image-generation-models-as-gu-7.md" >}})
+- [GENIUS：生成式流体智能评估套件]({{< relref "posts/20260212-arxiv_ai-genius-generative-fluid-intelligence-evaluation-su-5.md" >}})
 - [机器翻译评估中的跨向污染问题研究]({{< relref "posts/20260129-arxiv_ai-when-flores-bloomz-wrong-cross-direction-contamina-1.md" >}})
 - [GENIUS：生成式流体智能评估套件]({{< relref "posts/20260212-arxiv_ai-genius-generative-fluid-intelligence-evaluation-su-5.md" >}})

@@ -20,6 +20,15 @@ description: 在向量检索领域，当数据规模达到 30 亿级别时，传
 external_url: https://vickiboykis.com/2026/02/21/querying-3-billion-vectors
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260307-hacker_news-querying-3b-vectors-11/
+- /posts/20260307-hacker_news-querying-3b-vectors-13/
+- /posts/20260307-hacker_news-querying-3b-vectors-17/
+- /posts/20260307-hacker_news-querying-3b-vectors-9/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 查询30亿级向量数据库的技术实现

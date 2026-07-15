@@ -21,6 +21,10 @@ description: 以下是对所提供内容的简洁总结： **主题：AI 驱动�
 external_url: https://juejin.cn/post/7616225743043985449
 scenarios:
 - Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Vue3低代码平台DSL转Vue3组件代码生成机制解析
@@ -192,6 +196,6 @@ DSL（Domain Specific Language，领域特定语言）是针对特定问题领�
 
 - [LikeC4 结合 AI 实现架构图自动维护与实时更新]({{< relref "posts/20260214-juejin-架构图不再手画用-likec4-ai让架构活起来-1.md" >}})
 - [VTJ解析器：Vue SFC转低代码DSL的原理与实现]({{< relref "posts/20260313-juejin-ai-驱动的-vue3-应用开发平台-深入探究七双向代码转换之-vue源码到dsl解析-0.md" >}})
-- [JeecgBoot：AI低代码平台集成代码生成器与知识库]({{< relref "posts/20260130-github_trending-jeecgboot-jeecgboot-3.md" >}})
-- [JeecgBoot开源低代码平台：集成AI应用与代码生成器]({{< relref "posts/20260131-github_trending-jeecgboot-jeecgboot-3.md" >}})
-- [利用 Codex 构建以 Agent 为中心的工程化实践]({{< relref "posts/20260212-blogs_podcasts-harness-engineering-leveraging-codex-in-an-agent-f-9.md" >}})
+- [JeecgBoot：AI低代码平台集成代码生成器与知识库]({{< relref "posts/20260129-github_trending-jeecgboot-jeecgboot-7.md" >}})
+- [JeecgBoot开源低代码平台：集成AI应用与代码生成器]({{< relref "posts/20260129-github_trending-jeecgboot-jeecgboot-7.md" >}})
+- [利用 Codex 构建以 Agent 为中心的工程化实践]({{< relref "posts/20260211-blogs_podcasts-harness-engineering-leveraging-codex-in-an-agent-f-5.md" >}})

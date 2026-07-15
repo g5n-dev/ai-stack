@@ -1,14 +1,30 @@
 ---
-title: "GitHub Copilot之后的战略布局"
-date: 2026-06-02T17:48:43+08:00
+title: GitHub Copilot之后的战略布局
+date: 2026-06-02 17:48:43+08:00
 draft: false
-entry_kind: "auto"
-tags: ["GitHub Copilot", "AI Agent", "开发者平台", "API接口", "安全合规", "成本控制", "可观测性", "资源调度"]
-categories: ["开发工具", "AI 工程"]
+entry_kind: auto
+tags:
+- GitHub Copilot
+- AI Agent
+- 开发者平台
+- API接口
+- 安全合规
+- 成本控制
+- 可观测性
+- 资源调度
+categories:
+- 开发工具
+- AI 工程
 source: blogs_podcasts
-description: "GitHub 在 Copilot 引领 AI 编程潮流后，Agent 型的代码生成需求激增，对平台造成了显著压力。为保持全球最大开发者平台的高可用性，GitHub 正在推出一套完整的 Agent 解决方案：1）扩大底层资源池，提升并行处理和调度能力；2）强化安全与合规机制，对 Agent 行为进行细粒度审计和权限控制；"
+description: GitHub 在 Copilot 引领 AI 编程潮流后，Agent 型的代码生成需求激增，对平台造成了显著压力。为保持全球最大开发者平台的高可用性，GitHub
+  正在推出一套完整的 Agent 解决方案：1）扩大底层资源池，提升并行处理和调度能力；2）强化安全与合规机制，对 Agent 行为进行细粒度审计和权限控制；
 external_url: https://www.latent.space/p/github
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # GitHub Copilot之后的战略布局
@@ -160,7 +176,7 @@ GitHub 的多层次技术升级能够有效缓解代理并发带来的平台压�
 ### 相关文章
 
 - [Bull CLI 替代多轮推理降低 Token 消耗提升数据聚合精度]({{< relref "posts/20260306-juejin-1万美金的账单烧麻了bull这个skills让数据推理质量更好更省-1.md" >}})
-- [Sentrial：在用户之前捕获 AI Agent 运行故障]({{< relref "posts/20260311-hacker_news-launch-hn-sentrial-yc-w26-catch-ai-agent-failures--15.md" >}})
+- [Sentrial：在用户之前捕获 AI Agent 运行故障]({{< relref "posts/20260311-hacker_news-launch-hn-sentrial-yc-w26-catch-ai-agent-failures--9.md" >}})
 - [Sentrial：在用户受影响前捕获 AI Agent 运行故障]({{< relref "posts/20260311-hacker_news-launch-hn-sentrial-yc-w26-catch-ai-agent-failures--9.md" >}})
 - [OpenClaw 集成阿里云 SLS 构建 AI Agent 可观测体系]({{< relref "posts/20260303-juejin-你的-openclaw-真的在受控运行吗-0.md" >}})
 - [OpenHands框架拆解：Runtime组件与数据流解析]({{< relref "posts/20260305-juejin-ai-agent框架探秘拆解-openhands11-runtime主要组件-3.md" >}})

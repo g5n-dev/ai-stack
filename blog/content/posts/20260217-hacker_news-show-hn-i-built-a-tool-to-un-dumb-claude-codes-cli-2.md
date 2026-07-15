@@ -1,14 +1,30 @@
 ---
-title: "Show HN: 本地日志查看器优化 Claude Code CLI 输出"
-date: 2026-02-17T10:56:02+08:00
+title: 'Show HN: 本地日志查看器优化 Claude Code CLI 输出'
+date: 2026-02-17 10:56:02+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Claude", "CLI", "日志查看", "本地工具", "开发体验", "终端工具", "日志优化", "Show HN"]
-categories: ["开发工具", "效率与方法论"]
+entry_kind: auto
+tags:
+- Claude
+- CLI
+- 日志查看
+- 本地工具
+- 开发体验
+- 终端工具
+- 日志优化
+- Show HN
+categories:
+- 开发工具
+- 效率与方法论
 source: hacker_news
-description: "Claude Code 的 CLI 输出常因缺乏结构化展示而影响调试效率，本文介绍了一个本地日志查看器工具，旨在解决这一问题。通过解析和格式化原始日志，该工具帮助开发者更直观地定位错误与追踪执行流程。对于频繁使用 Claude Code 的用户而言，这能显著提升问题排查的体验与速度。"
+description: Claude Code 的 CLI 输出常因缺乏结构化展示而影响调试效率，本文介绍了一个本地日志查看器工具，旨在解决这一问题。通过解析和格式化原始日志，该工具帮助开发者更直观地定位错误与追踪执行流程。对于频繁使用
+  Claude Code 的用户而言，这能显著提升问题排查的体验与速度。
 external_url: https://github.com/matt1398/claude-devtools
-scenarios: ["命令行工具"]
+scenarios:
+- 命令行工具
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Show HN: 本地日志查看器优化 Claude Code CLI 输出
@@ -236,7 +252,6 @@ Claude Code 的默认 CLI 输出流式极快且缺乏格式化，导致在生成
 开发者得以在分钟级内完成过去需要半小时的人工核对工作。工具清晰的结构化视图让他能一眼识别出处理失败的文件，确保了版本发布的准确性，极大提升了维护开源项目的积极性。
 
 ---
-## 最佳实践
 
 ## 最佳实践指南
 
@@ -401,9 +416,9 @@ Claude Code 的默认 CLI 输出流式极快且缺乏格式化，导致在生成
 
 ### 相关文章
 
-- [Warcraft III 农民语音提示功能移植至 Claude Code]({{< relref "posts/20260212-hacker_news-warcraft-iii-peon-voice-notifications-for-claude-c-1.md" >}})
-- [Claude Code 新增《魔兽争霸》小工语音提示]({{< relref "posts/20260212-hacker_news-warcraft-iii-peon-voice-notifications-for-claude-c-8.md" >}})
-- [Claude Code：面向基础设施的编程工具]({{< relref "posts/20260205-hacker_news-claude-code-for-infrastructure-11.md" >}})
-- [Claude Code 发布：面向基础设施的编程工具]({{< relref "posts/20260205-hacker_news-claude-code-for-infrastructure-7.md" >}})
+- [Warcraft III 农民语音提示功能移植至 Claude Code]({{< relref "posts/20260212-hacker_news-warcraft-iii-peon-voice-notifications-for-claude-c-0.md" >}})
+- [Claude Code 新增《魔兽争霸》小工语音提示]({{< relref "posts/20260212-hacker_news-warcraft-iii-peon-voice-notifications-for-claude-c-0.md" >}})
+- [Claude Code：面向基础设施的编程工具]({{< relref "posts/20260204-hacker_news-claude-code-for-infrastructure-11.md" >}})
+- [Claude Code 发布：面向基础设施的编程工具]({{< relref "posts/20260204-hacker_news-claude-code-for-infrastructure-11.md" >}})
 - [Smooth CLI：面向 AI 智能体的低 Token 浏览器]({{< relref "posts/20260206-hacker_news-show-hn-smooth-cli-token-efficient-browser-for-ai--11.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

@@ -1,14 +1,30 @@
 ---
-title: "IVGT隐式视觉几何Transformer神经场景表示"
-date: 2026-05-18T20:40:40+08:00
+title: IVGT隐式视觉几何Transformer神经场景表示
+date: 2026-05-18 20:40:40+08:00
 draft: false
-entry_kind: "auto"
-tags: ["3D重建", "神经渲染", "Transformer", "隐式表示", "多视角几何", "计算机视觉", "深度估计", "场景表示"]
-categories: ["论文", "大模型"]
+entry_kind: auto
+tags:
+- 3D重建
+- 神经渲染
+- Transformer
+- 隐式表示
+- 多视角几何
+- 计算机视觉
+- 深度估计
+- 场景表示
+categories:
+- 论文
+- 大模型
 source: arxiv
-description: "背景 从无姿态多视角图像重建一致的三维几何与外观是计算机视觉的基本难题。现有视觉几何基础模型通过回归像素对齐点图显式预测几何，存在冗余和几何连续性不足的问题。 方法 提出IVGT（隐式视觉几何Transformer），在无姿态多视角图像上隐式建模连续一致的几何。模型在标准坐标系中学习连续神经场景表示，支持任意三维位置的"
+description: 背景 从无姿态多视角图像重建一致的三维几何与外观是计算机视觉的基本难题。现有视觉几何基础模型通过回归像素对齐点图显式预测几何，存在冗余和几何连续性不足的问题。
+  方法 提出IVGT（隐式视觉几何Transformer），在无姿态多视角图像上隐式建模连续一致的几何。模型在标准坐标系中学习连续神经场景表示，支持任意三维位置的
 external_url: http://arxiv.org/abs/2605.16258v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # IVGT隐式视觉几何Transformer神经场景表示
@@ -125,9 +141,9 @@ IVGT证明了Transformer架构与隐式表示结合的潜力，为无姿态多�
 
 ### 相关文章
 
-- [神经渲染技术探索与应用实践]({{< relref "posts/20260214-hacker_news-adventures-in-neural-rendering-11.md" >}})
-- [神经渲染技术探索与应用实践]({{< relref "posts/20260214-hacker_news-adventures-in-neural-rendering-15.md" >}})
+- [神经渲染技术探索与应用实践]({{< relref "posts/20260214-hacker_news-adventures-in-neural-rendering-6.md" >}})
+- [神经渲染技术探索与应用实践]({{< relref "posts/20260214-hacker_news-adventures-in-neural-rendering-6.md" >}})
 - [神经渲染技术探索：从原理到应用实践]({{< relref "posts/20260214-hacker_news-adventures-in-neural-rendering-6.md" >}})
-- [神经渲染技术探索与应用实践]({{< relref "posts/20260214-hacker_news-adventures-in-neural-rendering-7.md" >}})
+- [神经渲染技术探索与应用实践]({{< relref "posts/20260214-hacker_news-adventures-in-neural-rendering-6.md" >}})
 - [ZipMap：基于测试时训练的线性时间有状态3D重建]({{< relref "posts/20260305-arxiv_ai-zipmap-linear-time-stateful-3d-reconstruction-with-4.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

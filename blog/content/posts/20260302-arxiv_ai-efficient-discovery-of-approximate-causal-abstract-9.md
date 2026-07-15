@@ -21,6 +21,12 @@ description: '**总结** 该论文题为《通过神经机制稀疏化高效发�
 external_url: http://arxiv.org/abs/2602.24266v1
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260303-arxiv_ai-efficient-discovery-of-approximate-causal-abstract-9/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 通过神经机制稀疏化高效发现近似因果抽象
@@ -136,7 +142,6 @@ scenarios:
 
 ---
 
-### 深入分析论文：通过神经机制稀疏化高效发现近似因果抽象
 
 ### 1. 研究背景与问题
 

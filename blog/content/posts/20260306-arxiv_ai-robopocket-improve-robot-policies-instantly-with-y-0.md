@@ -21,6 +21,14 @@ description: 以下是关于 **RoboPocket** 的中文总结： **RoboPocket** �
 external_url: http://arxiv.org/abs/2603.05504v1
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260307-arxiv_ai-robopocket-improve-robot-policies-instantly-with-y-0/
+- /posts/20260308-arxiv_ai-robopocket-improve-robot-policies-instantly-with-y-0/
+- /posts/20260309-arxiv_ai-robopocket-improve-robot-policies-instantly-with-y-0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # RoboPocket：利用手机即时优化机器人策略
@@ -128,9 +136,7 @@ scenarios:
 
 ---
 
-### RoboPocket: 深入分析与研究报告
 
-### 1. 研究背景与问题
 
 ### 核心问题
 该论文致力于解决**具身智能中模仿学习的数据收集效率瓶颈**。具体而言，是如何在无需昂贵物理机器人和实验室环境的情况下，以极低的成本快速收集高质量、针对性强的训练数据，从而实现机器人策略的即时迭代。
@@ -148,7 +154,6 @@ RoboPocket 的意义在于提出了一种**“去中心化、即时反馈”**�
 - **交互式机器学习（如 DAgger）：** 虽然理论上能通过在线纠错解决分布偏移，但传统 DAgger 需要机器人在运行中出错，然后由人类介入接管。这不仅损耗机器人，且在物理世界难以高频执行，导致交互成本过高。
 - **遥操作系统：** 通常需要专业的 VR 设备或力反馈手柄，无法普及到大众用户，限制了大规模分布式数据收集的可能性。
 
-### 2. 核心方法与创新
 
 ### 核心方法概述
 RoboPocket 是一个基于智能手机的便携式系统，包含两个核心组件：
@@ -168,7 +173,6 @@ RoboPocket 是一个基于智能手机的便携式系统，包含两个核心组
 - **极高的数据质量：** 用户针对 AR 中显示的策略错误进行专门收集，每一条数据都是针对当前策略弱点的“硬负样本”或“修正样本”，数据价值极高。
 - **分布式潜力：** 普通大众可以在家中参与机器人的训练过程。
 
-### 3. 理论基础
 
 ### 理论依据
 RoboPocket 的核心理论支撑主要来自**交互式模仿学习**和**数据分布偏移**的修正。
@@ -190,7 +194,6 @@ RoboPocket 的核心理论支撑主要来自**交互式模仿学习**和**数据
 - **Update:** 将新数据加入缓冲区，微调 $\pi$。
 这一过程不断重复，使得数据分布逐渐收敛于策略失败的高频区域。
 
-### 7. 学习建议
 
 ### 适合读者
 - 从事机器人学习、模仿学习、计算机视觉研究的硕博研究生。
@@ -440,6 +443,6 @@ RoboPocket 特别适合那些可以通过第一人称视觉远程操作完成的
 
 - [仿真筛选模块化策略：从人类视频学习有效行为]({{< relref "posts/20260216-arxiv_ai-imitating-what-works-simulation-filtered-modular-p-0.md" >}})
 - [BPP：聚焦关键历史帧的长上下文机器人模仿学习]({{< relref "posts/20260217-arxiv_ai-bpp-long-context-robot-imitation-learning-by-focus-8.md" >}})
-- [基于仿真过滤的模块化策略从人类视频学习有效行为]({{< relref "posts/20260217-arxiv_ai-imitating-what-works-simulation-filtered-modular-p-0.md" >}})
-- [BPP：聚焦关键历史帧的长上下文机器人模仿学习]({{< relref "posts/20260218-arxiv_ai-bpp-long-context-robot-imitation-learning-by-focus-8.md" >}})
+- [基于仿真过滤的模块化策略从人类视频学习有效行为]({{< relref "posts/20260216-arxiv_ai-imitating-what-works-simulation-filtered-modular-p-0.md" >}})
+- [BPP：聚焦关键历史帧的长上下文机器人模仿学习]({{< relref "posts/20260217-arxiv_ai-bpp-long-context-robot-imitation-learning-by-focus-8.md" >}})
 - [Squint：面向机器人具身迁移的快速视觉强化学习]({{< relref "posts/20260225-arxiv_ai-squint-fast-visual-reinforcement-learning-for-sim--1.md" >}})

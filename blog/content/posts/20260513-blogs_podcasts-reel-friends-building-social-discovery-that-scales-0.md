@@ -1,14 +1,30 @@
 ---
-title: "Meta Reels Friend Bubbles：十亿级社交发现功能构建"
-date: 2026-05-13T16:01:55+08:00
+title: Meta Reels Friend Bubbles：十亿级社交发现功能构建
+date: 2026-05-13 16:01:55+08:00
 draft: false
-entry_kind: "auto"
-tags: ["社交发现", "推荐系统", "系统架构", "实时计算", "特征工程", "A/B测试", "数据管道", "高并发"]
-categories: ["系统与基础设施", "AI 工程"]
+entry_kind: auto
+tags:
+- 社交发现
+- 推荐系统
+- 系统架构
+- 实时计算
+- 特征工程
+- A/B测试
+- 数据管道
+- 高并发
+categories:
+- 系统与基础设施
+- AI 工程
 source: blogs_podcasts
-description: "Friend Bubbles 是 Meta 在 Reels 中推出的新功能，它把用户好友观看并作出反应的短视频聚合展示，帮助用户在海量内容中快速发现感兴趣的视频。表面上功能看似简单，但背后需要处理 billions 级别的用户行为数据、实时计算好友互动信号、实现高效推荐模型以及在高并发环境下的系统可靠性。Meta Te"
+description: Friend Bubbles 是 Meta 在 Reels 中推出的新功能，它把用户好友观看并作出反应的短视频聚合展示，帮助用户在海量内容中快速发现感兴趣的视频。表面上功能看似简单，但背后需要处理
+  billions 级别的用户行为数据、实时计算好友互动信号、实现高效推荐模型以及在高并发环境下的系统可靠性。Meta Te
 external_url: https://engineering.fb.com/2026/05/13/ml-applications/reel-friends-building-social-discovery-that-scales-to-billions
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Meta Reels Friend Bubbles：十亿级社交发现功能构建
@@ -103,9 +119,9 @@ Friend Bubbles代表了大厂在社交推荐领域的技术方向：即在保护
 
 ### 相关文章
 
-- [🔥支撑8亿用户！PostgreSQL如何驱动ChatGPT爆发式增长？🚀]({{< relref "posts/20260127-blogs_podcasts-scaling-postgresql-to-power-800-million-chatgpt-us-9.md" >}})
+- [🔥支撑8亿用户！PostgreSQL如何驱动ChatGPT爆发式增长？🚀]({{< relref "posts/20260125-blogs_podcasts-scaling-postgresql-to-power-800-million-chatgpt-us-2.md" >}})
 - [RTX 3080 本地任务分类与调度系统]({{< relref "posts/20260206-hacker_news-show-hn-local-task-classifier-and-dispatcher-on-rt-15.md" >}})
 - [使用 Amazon Bedrock AgentCore 构建全渠道 AI 订购系统]({{< relref "posts/20260420-blogs_podcasts-omnichannel-ordering-with-amazon-bedrock-agentcore-0.md" >}})
 - [OpenAI 实时访问系统：速率限制与额度管理支撑 Sora 和 Codex]({{< relref "posts/20260213-blogs_podcasts-beyond-rate-limits-scaling-access-to-codex-and-sor-0.md" >}})
-- [OpenAI 实时接入系统：速率限制与额度管理保障 Sora 和 Codex 访问]({{< relref "posts/20260213-blogs_podcasts-beyond-rate-limits-scaling-access-to-codex-and-sor-2.md" >}})
+- [OpenAI 实时接入系统：速率限制与额度管理保障 Sora 和 Codex 访问]({{< relref "posts/20260213-blogs_podcasts-beyond-rate-limits-scaling-access-to-codex-and-sor-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

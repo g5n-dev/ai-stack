@@ -1,14 +1,31 @@
 ---
-title: "2026年本地大模型迷你PC"
-date: 2026-05-02T15:02:59+08:00
+title: 2026年本地大模型迷你PC
+date: 2026-05-02 15:02:59+08:00
 draft: false
-entry_kind: "auto"
-tags: ["本地大模型", "迷你PC", "2026", "AI硬件", "端侧部署", "LLM", "边缘计算", "高效推理"]
-categories: ["大模型", "系统与基础设施"]
+entry_kind: auto
+tags:
+- 本地大模型
+- 迷你PC
+- '2026'
+- AI硬件
+- 端侧部署
+- LLM
+- 边缘计算
+- 高效推理
+categories:
+- 大模型
+- 系统与基础设施
 source: hacker_news
-description: "随着大语言模型在各行业的渗透，越来越多开发者希望在本地设备上完成推理，以兼顾隐私与响应速度。2026 年新一代 Mini PC 在功耗、体积与算力之间实现了更优平衡，成为部署本地 LLM 的可行选择。本文梳理主流迷你主机的硬件配置，评估在典型模型规模下的实际性能，并针对不同需求提供选型建议，帮助读者快速搭建高效、低成本"
+description: 随着大语言模型在各行业的渗透，越来越多开发者希望在本地设备上完成推理，以兼顾隐私与响应速度。2026 年新一代 Mini PC 在功耗、体积与算力之间实现了更优平衡，成为部署本地
+  LLM 的可行选择。本文梳理主流迷你主机的硬件配置，评估在典型模型规模下的实际性能，并针对不同需求提供选型建议，帮助读者快速搭建高效、低成本
 external_url: https://terminalbytes.com/best-mini-pc-for-local-llm-2026
-scenarios: ["AI/ML项目", "大语言模型"]
+scenarios:
+- AI/ML项目
+- 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 2026年本地大模型迷你PC
@@ -80,8 +97,8 @@ scenarios: ["AI/ML项目", "大语言模型"]
 ### 相关文章
 
 - [Ggml.ai 加入 Hugging Face 推动本地 AI 长期发展]({{< relref "posts/20260220-hacker_news-ggmlai-joins-hugging-face-to-ensure-the-long-term--0.md" >}})
-- [Ggml.ai加入Hugging Face以推动本地AI长期发展]({{< relref "posts/20260220-hacker_news-ggmlai-joins-hugging-face-to-ensure-the-long-term--1.md" >}})
-- [通往无处不在的AI：实现每秒1.7万tokens推理]({{< relref "posts/20260220-hacker_news-the-path-to-ubiquitous-ai-17k-tokenssec-5.md" >}})
-- [Ggml.ai加入Hugging Face推动本地AI长期发展]({{< relref "posts/20260221-hacker_news-ggmlai-joins-hugging-face-to-ensure-the-long-term--4.md" >}})
-- [Ggml.ai 加入 Hugging Face 推动本地 AI 长期发展]({{< relref "posts/20260221-hacker_news-ggmlai-joins-hugging-face-to-ensure-the-long-term--6.md" >}})
+- [Ggml.ai加入Hugging Face以推动本地AI长期发展]({{< relref "posts/20260220-hacker_news-ggmlai-joins-hugging-face-to-ensure-the-long-term--0.md" >}})
+- [通往无处不在的AI：实现每秒1.7万tokens推理]({{< relref "posts/20260220-hacker_news-the-path-to-ubiquitous-ai-17k-tokenssec-0.md" >}})
+- [Ggml.ai加入Hugging Face推动本地AI长期发展]({{< relref "posts/20260220-hacker_news-ggmlai-joins-hugging-face-to-ensure-the-long-term--0.md" >}})
+- [Ggml.ai 加入 Hugging Face 推动本地 AI 长期发展]({{< relref "posts/20260220-hacker_news-ggmlai-joins-hugging-face-to-ensure-the-long-term--0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

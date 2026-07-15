@@ -1,14 +1,30 @@
 ---
-title: "AI基础设施新独角兽：Fireworks与Baseten"
-date: 2026-05-27T13:13:11+08:00
+title: AI基础设施新独角兽：Fireworks与Baseten
+date: 2026-05-27 13:13:11+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI基础设施", "独角兽", "融资", "LLM", "推理服务", "模型部署", "Fireworks", "Baseten"]
-categories: ["系统与基础设施"]
+entry_kind: auto
+tags:
+- AI 基础设施
+- 独角兽
+- 融资
+- LLM
+- 推理服务
+- 模型部署
+- Fireworks
+- Baseten
+categories:
+- 系统与基础设施
 source: blogs_podcasts
-description: "融资概况 Fireworks 与 Baseten 近期相继完成大额融资，估值均突破十亿美元，成为 AI 基础设施领域的新晋“Decacorn”。这表明资本市场对能够提供大规模、可靠 AI 计算平台的公司仍保持高度热情。 OpenRouter 前景 Baseten 透露将在近期推出 OpenRouter，旨在实现跨云、跨"
+description: 融资概况 Fireworks 与 Baseten 近期相继完成大额融资，估值均突破十亿美元，成为 AI 基础设施领域的新晋“Decacorn”。这表明资本市场对能够提供大规模、可靠
+  AI 计算平台的公司仍保持高度热情。 OpenRouter 前景 Baseten 透露将在近期推出 OpenRouter，旨在实现跨云、跨
 external_url: https://www.latent.space/p/ainews-new-ai-infra-decacorns-fireworks
-scenarios: ["AI/ML项目", "大语言模型"]
+scenarios:
+- AI/ML项目
+- 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AI基础设施新独角兽：Fireworks与Baseten
@@ -121,9 +137,9 @@ OpenRouter的核心价值在于标准化了模型调用接口，通过统一的A
 
 ### 相关文章
 
-- [通往无处不在的AI：实现每秒1.7万tokens推理]({{< relref "posts/20260220-hacker_news-the-path-to-ubiquitous-ai-17k-tokenssec-5.md" >}})
-- [仅更换框架，一下午提升15个大模型代码能力]({{< relref "posts/20260213-hacker_news-improving-15-llms-at-coding-in-one-afternoon-only--12.md" >}})
-- [Ggml.ai加入Hugging Face以推动本地AI长期发展]({{< relref "posts/20260220-hacker_news-ggmlai-joins-hugging-face-to-ensure-the-long-term--1.md" >}})
-- [Ggml.ai加入Hugging Face以推动本地AI长期发展]({{< relref "posts/20260220-hacker_news-ggmlai-joins-hugging-face-to-ensure-the-long-term--2.md" >}})
-- [Ggml.ai加入Hugging Face以推动本地AI长期发展]({{< relref "posts/20260221-hacker_news-ggmlai-joins-hugging-face-to-ensure-the-long-term--11.md" >}})
+- [通往无处不在的AI：实现每秒1.7万tokens推理]({{< relref "posts/20260220-hacker_news-the-path-to-ubiquitous-ai-17k-tokenssec-0.md" >}})
+- [仅更换框架，一下午提升15个大模型代码能力]({{< relref "posts/20260212-hacker_news-improving-15-llms-at-coding-in-one-afternoon-only--1.md" >}})
+- [Ggml.ai加入Hugging Face以推动本地AI长期发展]({{< relref "posts/20260220-hacker_news-ggmlai-joins-hugging-face-to-ensure-the-long-term--0.md" >}})
+- [Ggml.ai加入Hugging Face以推动本地AI长期发展]({{< relref "posts/20260220-hacker_news-ggmlai-joins-hugging-face-to-ensure-the-long-term--0.md" >}})
+- [Ggml.ai加入Hugging Face以推动本地AI长期发展]({{< relref "posts/20260220-hacker_news-ggmlai-joins-hugging-face-to-ensure-the-long-term--0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

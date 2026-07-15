@@ -1,12 +1,30 @@
 ---
-title: "🔥Prism：颠覆性工具！让你的数据可视化效率飙升！✨"
-date: 2026-01-27T23:10:51+08:00
+title: 🔥Prism：颠覆性工具！让你的数据可视化效率飙升！✨
+date: 2026-01-27 23:10:51+08:00
 draft: false
-entry_kind: "auto"
-tags: ["数据可视化", "Prism", "效率工具", "前端", "图表库", "开源", "数据分析", "UI组件"]
-categories: ["开发工具", "数据"]
+entry_kind: auto
+tags:
+- 数据可视化
+- Prism
+- 效率工具
+- 前端
+- 图表库
+- 开源
+- 数据分析
+- UI组件
+categories:
+- 开发工具
+- 数据
 source: hacker_news
 external_url: https://openai.com/index/introducing-prism
+scenarios: []
+aliases:
+- /posts/20260128-hacker_news-prism-0/
+- /posts/20260128-hacker_news-prism-1/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 📰 🔥Prism：颠覆性工具！让你的数据可视化效率飙升！✨
@@ -187,7 +205,6 @@ Notion 构建了一个基于 **Prism** 架构的动态内容分发系统。
 *   **开发资源释放**：开发和测试团队不再被频繁的文案变更打断，专注于核心业务功能的开发。
 
 ---
-## ✅ 最佳实践
 
 ## 最佳实践指南
 

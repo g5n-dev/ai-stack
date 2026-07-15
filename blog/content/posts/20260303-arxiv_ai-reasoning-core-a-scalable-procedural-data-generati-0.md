@@ -21,6 +21,12 @@ description: '**Reasoning Core：可扩展的符号推理数据生成套件** **
 external_url: http://arxiv.org/abs/2603.02208v1
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260304-arxiv_ai-reasoning-core-a-scalable-procedural-data-generati-0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Reasoning Core：面向符号预训练与后训练的可扩展程序化数据生成套件
@@ -132,9 +138,7 @@ scenarios:
 
 ---
 
-### Reasoning Core：可扩展的符号推理数据生成套件——深度分析
 
-### 1. 研究背景与问题
 
 ### 核心问题
 该研究旨在解决大语言模型（LLM）在**符号推理**能力上的根本性缺陷。尽管 LLM 在模式匹配和自然语言生成上表现出色，但在处理逻辑、数学、规划和因果推断等需要严格符号操作的“硬推理”任务时，往往会出现幻觉或逻辑断裂。核心问题在于：**如何构建一个高质量、大规模、可验证且分布广泛的符号推理数据集，以突破现有预训练语料库的局限？**
@@ -152,7 +156,6 @@ scenarios:
 ### 为什么重要
 这项研究不仅提供了一个工具，更提出了一种范式：**从“基于文本的统计学习”转向“基于符号规则的验证学习”**。它为解决 LLM 的不可解释性和逻辑错误提供了一条可扩展的技术路径。
 
-### 2. 核心方法与创新
 
 ### 核心方法：Reasoning Core 套件
 作者构建了一个模块化的 Python 套件，包含五个核心生成器，每个生成器都对应一个经典的人工智能符号领域：
@@ -173,7 +176,6 @@ scenarios:
 - **无限性**：只要随机种子不同，理论上可以生成无限不重复的数据。
 - **多样性**：涵盖了逻辑、规划、数学、因果四个维度的核心智能要素。
 
-### 3. 理论基础
 
 ### 理论依据
 该工作基于 **System 2（慢思考）** 的理论假设，即人类的高级推理涉及序列化的、符号化的、规则遵守的操作过程。
@@ -186,7 +188,6 @@ scenarios:
 - **因果推理**：基于 Pearl 的结构因果模型（SCM）和 do-calculus。
 - **难度控制**：通常通过控制问题空间的组合爆炸程度来实现。例如，增加规划问题的步骤长度会呈指数级增加搜索空间难度。
 
-### 7. 学习建议
 
 ### 适合读者
 - 从事大模型预训练数据处理的工程师。
@@ -429,6 +430,6 @@ GSM8K 和 MATH 等数据集主要是静态的、人工标注或收集的基准�
 
 - [SokoBench：评估大模型长程规划与推理能力]({{< relref "posts/20260129-arxiv_ai-sokobench-evaluating-long-horizon-planning-and-rea-2.md" >}})
 - [基于经验的试错算法超越语言模型]({{< relref "posts/20260130-arxiv_ai-language-based-trial-and-error-falls-behind-in-the-3.md" >}})
-- [SokoBench：评估大模型长周期规划与推理能力]({{< relref "posts/20260130-arxiv_ai-sokobench-evaluating-long-horizon-planning-and-rea-2.md" >}})
+- [SokoBench：评估大模型长周期规划与推理能力]({{< relref "posts/20260129-arxiv_ai-sokobench-evaluating-long-horizon-planning-and-rea-2.md" >}})
 - [Harpoon：面向条件表格扩散模型的广义流形引导]({{< relref "posts/20260210-arxiv_ai-harpoon-generalised-manifold-guidance-for-conditio-1.md" >}})
-- [专家依赖世界模型而LLM仅基于词模型预测]({{< relref "posts/20260210-blogs_podcasts-experts-have-world-models-llms-have-word-models-4.md" >}})
+- [专家依赖世界模型而LLM仅基于词模型预测]({{< relref "posts/20260207-blogs_podcasts-experts-have-world-models-llms-have-word-models-0.md" >}})

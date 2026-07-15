@@ -1,14 +1,29 @@
 ---
-title: "Harpoon：面向条件表格扩散模型的广义流形引导"
-date: 2026-02-10T03:34:40+08:00
+title: Harpoon：面向条件表格扩散模型的广义流形引导
+date: 2026-02-10 03:34:40+08:00
 draft: false
-entry_kind: "auto"
-tags: ["扩散模型", "表格数据", "流形引导", "条件生成", "数据生成", "cs.LG", "HARPOON", "机器学习"]
-categories: ["论文", "数据"]
+entry_kind: auto
+tags:
+- 扩散模型
+- 表格数据
+- 流形引导
+- 条件生成
+- 数据生成
+- cs.LG
+- HARPOON
+- 机器学习
+categories:
+- 论文
+- 数据
 source: arxiv
-description: "本文介绍了 **HARPOON**，一种用于条件表格数据生成的扩散模型方法。 **背景与问题：** 在需要精确控制生成过程的应用中，按条件生成表格数据至关重要。然而，现有的方法主要依赖训练时的策略，无法泛化至推理阶段未见过的约束条件，且难以处理表格填充以外的条件任务。尽管流形理论为引导生成提供了原则性方法，但目前的公式"
+description: 本文介绍了 **HARPOON**，一种用于条件表格数据生成的扩散模型方法。 **背景与问题：** 在需要精确控制生成过程的应用中，按条件生成表格数据至关重要。然而，现有的方法主要依赖训练时的策略，无法泛化至推理阶段未见过的约束条件，且难以处理表格填充以外的条件任务。尽管流形理论为引导生成提供了原则性方法，但目前的公式
 external_url: http://arxiv.org/abs/2602.07875v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Harpoon：面向条件表格扩散模型的广义流形引导
@@ -183,7 +198,6 @@ HARPOON 是一种基于**流形引导**的推理阶段算法。它不改变模�
 -   **经验事实**：实验显示在 Adult 等数据集上，H
 
 ---
-## 学习路径
 
 ## 学习路径
 
@@ -355,9 +369,9 @@ HARPOON 是一种基于**流形引导**的推理阶段算法。它不改变模�
 
 ### 相关文章
 
-- [探索Transformer在表格数据变分自编码器中的位置]({{< relref "posts/20260130-arxiv_ai-exploring-transformer-placement-in-variational-aut-3.md" >}})
+- [探索Transformer在表格数据变分自编码器中的位置]({{< relref "posts/20260129-arxiv_ai-exploring-transformer-placement-in-variational-aut-3.md" >}})
 - [探索Transformer在表格数据变分自编码器中的位置]({{< relref "posts/20260129-arxiv_ai-exploring-transformer-placement-in-variational-aut-3.md" >}})
 - [为何Adam在$β_1=β_2$时更优：缺失的梯度尺度不变性原理]({{< relref "posts/20260130-arxiv_ai-why-adam-works-better-with-β_1-β_2-the-missing-gra-8.md" >}})
-- [粒子引导扩散模型用于偏微分方程求解]({{< relref "posts/20260203-arxiv_ai-particle-guided-diffusion-models-for-partial-diffe-8.md" >}})
+- [粒子引导扩散模型用于偏微分方程求解]({{< relref "posts/20260202-arxiv_ai-particle-guided-diffusion-models-for-partial-diffe-8.md" >}})
 - [DLM-Scope：利用稀疏自编码器解析扩散语言模型]({{< relref "posts/20260206-arxiv_ai-dlm-scope-mechanistic-interpretability-of-diffusio-4.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

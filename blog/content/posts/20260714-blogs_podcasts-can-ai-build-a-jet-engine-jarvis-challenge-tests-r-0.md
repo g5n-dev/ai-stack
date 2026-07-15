@@ -1,14 +1,30 @@
 ---
-title: "MIT测试AI副驾驶开发喷气发动机"
-date: 2026-07-14T18:28:27+08:00
+title: MIT测试AI副驾驶开发喷气发动机
+date: 2026-07-14 18:28:27+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI副驾驶", "人机协同", "航空航天", "工程设计", "机器视觉", "智能制造", "性能优化", "喷气发动机"]
-categories: ["AI 工程", "系统与基础设施"]
+entry_kind: auto
+tags:
+- AI副驾驶
+- 人机协同
+- 航空航天
+- 工程设计
+- 机器视觉
+- 智能制造
+- 性能优化
+- 喷气发动机
+categories:
+- AI 工程
+- 系统与基础设施
 source: blogs_podcasts
-description: "背景 JARVIS Challenge 是麻省理工学院（MIT）发起的竞赛，旨在评估人工智能在大难度技术（tough‑tech）研发中的实际价值。赛事要求团队在限定时间内设计、制造并测试一台喷气发动机，AI copilot 被赋予辅助决策、数据分析和实时优化等任务。 方法 学生团队在概念设计阶段使用生成式模型快速产生结"
+description: 背景 JARVIS Challenge 是麻省理工学院（MIT）发起的竞赛，旨在评估人工智能在大难度技术（tough‑tech）研发中的实际价值。赛事要求团队在限定时间内设计、制造并测试一台喷气发动机，AI
+  copilot 被赋予辅助决策、数据分析和实时优化等任务。 方法 学生团队在概念设计阶段使用生成式模型快速产生结
 external_url: https://news.mit.edu/2026/can-ai-build-jet-engine-jarvis-challenge-tests-ai-copilots-in-tough-tech-engineering-0714
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # MIT测试AI副驾驶开发喷气发动机

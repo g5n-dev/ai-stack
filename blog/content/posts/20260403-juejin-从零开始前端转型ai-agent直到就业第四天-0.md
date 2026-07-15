@@ -1,14 +1,30 @@
 ---
-title: "前端转行AI Agent：从学习到入职的真实记录"
-date: 2026-04-03T16:00:03+08:00
+title: 前端转行AI Agent：从学习到入职的真实记录
+date: 2026-04-03 16:00:03+08:00
 draft: false
-entry_kind: "auto"
-tags: ["前端转型", "AI Agent", "职业转型", "大龄求职", "提示工程", "裁员", "AI初创", "入职体验"]
-categories: ["前端", "AI 工程"]
+entry_kind: auto
+tags:
+- 前端转型
+- AI Agent
+- 职业转型
+- 大龄求职
+- 提示工程
+- 裁员
+- AI初创
+- 入职体验
+categories:
+- 前端
+- AI 工程
 source: juejin
-description: "背景 8.9 年前端经验，34 岁，双非普本，广州，2025 年底被裁。 求职困境 近三个月投递简历，多轮面试，部分进入二面后无下文。感叹大环境不佳，且前端岗位受 AI 冲击加剧。 转型动机与目标 为摆脱前端竞争，决定从零学习 AI agent，期望在新兴领域重新定位。 学习路径 - 在线课程学习模型原理、提示工程、自"
+description: 背景 8.9 年前端经验，34 岁，双非普本，广州，2025 年底被裁。 求职困境 近三个月投递简历，多轮面试，部分进入二面后无下文。感叹大环境不佳，且前端岗位受
+  AI 冲击加剧。 转型动机与目标 为摆脱前端竞争，决定从零学习 AI agent，期望在新兴领域重新定位。 学习路径 - 在线课程学习模型原理、提示工程、自
 external_url: https://juejin.cn/post/7624402097153392675
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 前端转行AI Agent：从学习到入职的真实记录
@@ -103,9 +119,9 @@ scenarios: ["AI/ML项目"]
 
 ### 相关文章
 
-- [Tambo 1.0：开源 AI Agent 工具包支持渲染 React 组件]({{< relref "posts/20260211-hacker_news-tambo-10-open-source-toolkit-for-agents-that-rende-17.md" >}})
+- [Tambo 1.0：开源 AI Agent 工具包支持渲染 React 组件]({{< relref "posts/20260211-hacker_news-tambo-10-open-source-toolkit-for-agents-that-rende-12.md" >}})
 - [WebMCP：变革 AI 访问 Web 的自动化与交互模式]({{< relref "posts/20260216-juejin-webmcp-时代在浏览器中释放-ai-的工作能力-0.md" >}})
-- [WebMCP：改变 AI 访问 Web 方式的未来派技术提案]({{< relref "posts/20260216-juejin-webmcp-时代在浏览器中释放-ai-的工作能力-2.md" >}})
-- [WebMCP：改变 AI 访问 Web 方式的前端交互提案]({{< relref "posts/20260217-juejin-webmcp-时代在浏览器中释放-ai-的工作能力-2.md" >}})
+- [WebMCP：改变 AI 访问 Web 方式的未来派技术提案]({{< relref "posts/20260216-juejin-webmcp-时代在浏览器中释放-ai-的工作能力-0.md" >}})
+- [WebMCP：改变 AI 访问 Web 方式的前端交互提案]({{< relref "posts/20260216-juejin-webmcp-时代在浏览器中释放-ai-的工作能力-0.md" >}})
 - [WebMCP 协议实战：通过原生接口实现 AI 对网页的低延迟精准操作]({{< relref "posts/20260220-juejin-webmcp-实战指南让你的网站瞬间变成-ai-的大脑外挂-3.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

@@ -1,7 +1,18 @@
 <!doctype html>
 <html lang="{{ .Site.LanguageCode }}" class="dark graph-page">
 <head>
-{{- $graphAssetVersion := "20260714-production-v11" -}}
+{{- /* Keep graph code and generated data on one cache generation. The data pipeline
+      updates index.json without touching this template, so a hard-coded query value
+      can leave the Worker reading an older manifest and mismatched focus shards. */ -}}
+{{- $graphAssetVersionSeed := printf "%s|%s|%s|%s|%s|%s"
+  (readFile "static/css/graph.css")
+  (readFile "static/js/data-parser-worker.js")
+  (readFile "static/js/cytoscape-graph-engine.js")
+  (readFile "static/js/cytoscape-graph-renderer.js")
+  (readFile "static/js/graph-workbench.js")
+  (readFile "static/data/tag-graph/index.json")
+-}}
+{{- $graphAssetVersion := $graphAssetVersionSeed | md5 -}}
 {{- $graphStyles := slice
   ("vendor/animate.css/animate-4.1.1.min.css" | relURL)
   (printf "%s?v=%s" ("css/graph.css" | relURL) $graphAssetVersion)
@@ -32,38 +43,7 @@
   </div>
 
   <div class="graph-shell">
-    <header class="w-full border-b border-muted-teal/20 bg-deep-navy sticky top-0 z-40">
-      <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        <div class="flex items-center gap-3 text-primary">
-          <span class="material-symbols-outlined text-2xl">terminal</span>
-          <h2 class="text-xl font-bold tracking-widest">{{ .Site.Title }}</h2>
-        </div>
-        <nav class="hidden md:flex gap-8 text-xs font-medium tracking-widest text-off-white/60" aria-label="主导航">
-          {{ range .Site.Menus.main }}
-          <a class="hover:text-primary transition-colors" href="{{ .URL | relURL }}">{{ .Name }}</a>
-          {{ end }}
-        </nav>
-        <div class="flex items-center gap-3">
-          <div class="hidden lg:flex flex-col border-l border-muted-teal/10 pl-3">
-            <span class="text-muted-teal/50 text-[10px] tracking-normal">更新</span>
-            <span class="font-medium text-off-white text-[11px] font-mono">1h</span>
-          </div>
-          <a href="{{ .Site.Params.github }}"
-            class="hidden sm:flex items-center px-3 py-1.5 border border-muted-teal/30 rounded text-[11px] text-primary font-bold tracking-wide bg-muted-teal/5 hover:bg-muted-teal/10 transition-colors">
-            安全连接
-          </a>
-          <a href="{{ "index.xml" | relURL }}"
-            class="bg-muted-teal/10 hover:bg-muted-teal/20 text-off-white p-2 rounded border border-muted-teal/20 transition-all"
-            aria-label="订阅 RSS">
-            <span class="material-symbols-outlined text-sm block">rss_feed</span>
-          </a>
-          <div class="flex items-center gap-2 pl-2 border-l border-muted-teal/10">
-            <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-            <span class="text-[10px] tracking-wider text-green-500 font-mono">SYS_STABLE</span>
-          </div>
-        </div>
-      </div>
-    </header>
+    {{ partial "site-header.html" . }}
 
     <main
       id="graph-workbench"

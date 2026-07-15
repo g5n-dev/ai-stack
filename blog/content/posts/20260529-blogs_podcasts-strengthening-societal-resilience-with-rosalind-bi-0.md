@@ -1,14 +1,30 @@
 ---
-title: "OpenAI扩大Rosalind生物防御AI可信访问范围"
-date: 2026-05-29T11:42:35+08:00
+title: OpenAI扩大Rosalind生物防御AI可信访问范围
+date: 2026-05-29 11:42:35+08:00
 draft: false
-entry_kind: "auto"
-tags: ["OpenAI", "GPT-Rosalind", "生物防御", "AI安全", "可信AI", "公共卫生", "疫情防范", "大模型应用"]
-categories: ["大模型", "安全"]
+entry_kind: auto
+tags:
+- OpenAI
+- GPT-Rosalind
+- 生物防御
+- AI 安全
+- 可信AI
+- 公共卫生
+- 疫情防范
+- 大模型应用
+categories:
+- 大模型
+- 安全
 source: blogs_podcasts
-description: "OpenAI 推出 Rosalind Biodefense，旨在加强社会韧性，向经审查的开发者与美国政府合作伙伴提供 GPT‑Rosalind 的可信访问，利用前沿 AI 推进生物防御、公共卫生和大流行防范工作。"
+description: OpenAI 推出 Rosalind Biodefense，旨在加强社会韧性，向经审查的开发者与美国政府合作伙伴提供 GPT‑Rosalind
+  的可信访问，利用前沿 AI 推进生物防御、公共卫生和大流行防范工作。
 external_url: https://openai.com/index/strengthening-societal-resilience-with-rosalind-biodefense
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # OpenAI扩大Rosalind生物防御AI可信访问范围
@@ -118,9 +134,9 @@ GPT-Rosalind基于大规模语言模型架构，具备处理复杂生物医学�
 
 ### 相关文章
 
-- [OpenAI 如何通过内置安全机制防范 AI 代理点击链接时的数据泄露与提示词注入]({{< relref "posts/20260129-blogs_podcasts-keeping-your-data-safe-when-an-ai-agent-clicks-a-l-6.md" >}})
-- [OpenAI在GenAI.mil部署定制ChatGPT服务美国国防团队]({{< relref "posts/20260210-blogs_podcasts-bringing-chatgpt-to-genaimil-0.md" >}})
-- [OpenAI在GenAI.mil部署定制版ChatGPT以服务美国防务团队]({{< relref "posts/20260210-blogs_podcasts-bringing-chatgpt-to-genaimil-2.md" >}})
+- [OpenAI 如何通过内置安全机制防范 AI 代理点击链接时的数据泄露与提示词注入]({{< relref "posts/20260129-blogs_podcasts-keeping-your-data-safe-when-an-ai-agent-clicks-a-l-5.md" >}})
+- [OpenAI在GenAI.mil部署定制ChatGPT服务美国国防团队]({{< relref "posts/20260209-blogs_podcasts-bringing-chatgpt-to-genaimil-1.md" >}})
+- [OpenAI在GenAI.mil部署定制版ChatGPT以服务美国防务团队]({{< relref "posts/20260209-blogs_podcasts-bringing-chatgpt-to-genaimil-1.md" >}})
 - [ChatGPT推出锁定模式与高风险标记以防御提示词注入]({{< relref "posts/20260213-blogs_podcasts-introducing-lockdown-mode-and-elevated-risk-labels-0.md" >}})
-- [ChatGPT推出锁定模式与高风险标签防御提示词注入]({{< relref "posts/20260213-blogs_podcasts-introducing-lockdown-mode-and-elevated-risk-labels-1.md" >}})
+- [ChatGPT推出锁定模式与高风险标签防御提示词注入]({{< relref "posts/20260213-blogs_podcasts-introducing-lockdown-mode-and-elevated-risk-labels-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

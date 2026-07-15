@@ -1,14 +1,28 @@
 ---
-title: "GitLost利用指令注入诱导GitHub AI代理泄露私有仓库"
-date: 2026-07-08T08:54:13+08:00
+title: GitLost利用指令注入诱导GitHub AI代理泄露私有仓库
+date: 2026-07-08 08:54:13+08:00
 draft: false
-entry_kind: "auto"
-tags: ["指令注入", "GitHub AI", "私有仓库泄露", "安全漏洞", "大模型", "红队", "AI安全", "隐私泄露"]
-categories: ["安全"]
+entry_kind: auto
+tags:
+- 指令注入
+- GitHub AI
+- 私有仓库泄露
+- 安全漏洞
+- 大模型
+- 红队
+- AI 安全
+- 隐私泄露
+categories:
+- 安全
 source: hacker_news
-description: "本文披露了一次针对 GitHub AI 助手的模拟攻击，攻击者通过精心构造的查询诱导模型返回私有仓库内容。实验结果显示，当前 AI 代理在处理代码托管请求时可能存在信息泄露的盲点，提醒平台和使用者关注模型行为的安全边界。阅读本文后，读者可以了解攻击的技术细节、风险范围以及可行的防御措施。"
+description: 本文披露了一次针对 GitHub AI 助手的模拟攻击，攻击者通过精心构造的查询诱导模型返回私有仓库内容。实验结果显示，当前 AI 代理在处理代码托管请求时可能存在信息泄露的盲点，提醒平台和使用者关注模型行为的安全边界。阅读本文后，读者可以了解攻击的技术细节、风险范围以及可行的防御措施。
 external_url: https://noma.security/blog/gitlost-how-we-tricked-githubs-ai-agent-into-leaking-private-repos
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # GitLost利用指令注入诱导GitHub AI代理泄露私有仓库
@@ -77,9 +91,9 @@ scenarios: ["AI/ML项目"]
 
 ### 相关文章
 
-- [Anthropic 放弃其核心安全承诺]({{< relref "posts/20260226-hacker_news-anthropic-ditches-its-core-safety-promise-11.md" >}})
-- [Anthropic 放弃核心安全承诺]({{< relref "posts/20260226-hacker_news-anthropic-ditches-its-core-safety-promise-3.md" >}})
-- [不要信任AI智能体]({{< relref "posts/20260228-hacker_news-dont-trust-ai-agents-19.md" >}})
-- [不要信任 AI 智能体]({{< relref "posts/20260228-hacker_news-dont-trust-ai-agents-7.md" >}})
+- [Anthropic 放弃其核心安全承诺]({{< relref "posts/20260226-hacker_news-anthropic-ditches-its-core-safety-promise-5.md" >}})
+- [Anthropic 放弃核心安全承诺]({{< relref "posts/20260226-hacker_news-anthropic-ditches-its-core-safety-promise-5.md" >}})
+- [不要信任AI智能体]({{< relref "posts/20260228-hacker_news-dont-trust-ai-agents-4.md" >}})
+- [不要信任 AI 智能体]({{< relref "posts/20260228-hacker_news-dont-trust-ai-agents-4.md" >}})
 - [CyberSecQwen-4B：小型专业本地模型满足防御性网络安全需求]({{< relref "posts/20260508-blogs_podcasts-cybersecqwen-4b-why-defensive-cyber-needs-small-sp-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

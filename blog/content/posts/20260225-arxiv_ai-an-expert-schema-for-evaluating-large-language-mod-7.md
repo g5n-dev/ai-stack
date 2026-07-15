@@ -21,6 +21,10 @@ description: '**《学术问答系统中大语言模型错误评估专家模式�
 external_url: http://arxiv.org/abs/2602.21059v1
 scenarios:
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 学术问答系统中大模型错误评估的专家框架
@@ -139,9 +143,7 @@ scenarios:
 
 ---
 
-### 论文深入分析：学术问答系统中大语言模型错误评估专家模式
 
-### 1. 研究背景与问题
 
 ### 核心问题
 该研究旨在解决大型语言模型（LLM）在学术问答（Scholarly QA）场景中的**可靠性评估鸿沟**。具体而言，现有的自动化评估指标（如BLEU、ROUGE或基于精确匹配的准确率）无法捕捉科学领域专家在实际工作中所关注的复杂错误类型和科学严谨性。
@@ -158,7 +160,6 @@ scenarios:
 ### 重要性
 该问题的重要性在于**信任机制的构建**。只有理解了专家如何“找茬”，我们才能训练出更符合科学标准的LLM，或者开发出能够辅助专家进行高效验证的工具，从而真正将AI融入科学研究的核心流程。
 
-### 2. 核心方法与创新
 
 ### 核心方法
 研究采用**定性研究**与**参与式设计**相结合的方法，构建并验证了一个“专家评估模式”。
@@ -177,7 +178,6 @@ scenarios:
 ### 理论依据
 依据**分布式认知**和**专家系统**的理论，认为专家的知识不仅包含领域知识，还包含一套结构化的“评估策略”。通过外化这些隐性知识，可以构建更智能的辅助系统。
 
-### 3. 理论基础
 
 ### 基础理论与假设
 *   **隐性知识显性化**：假设专家在评估LLM输出时，遵循一套系统性的、可被提取和结构化的潜意识规则。
@@ -192,7 +192,6 @@ scenarios:
 ### 理论贡献
 该研究丰富了**人机交互（HCI）**和**科学学**领域的理论，特别是关于“人类如何与生成式AI建立信任”的理论。它表明信任建立不仅基于模型性能，还基于人类对模型输出进行验证的认知负担和能力。
 
-### 7. 学习建议
 
 ### 适合读者
 *   对**科学学**、**人机交互（HCI）**感兴趣的研究者。
@@ -453,8 +452,8 @@ scenarios:
 
 ### 相关文章
 
-- [LLM 不应作为编译器：技术局限与可靠性分析]({{< relref "posts/20260206-hacker_news-llms-could-be-but-shouldnt-be-compilers-6.md" >}})
+- [LLM 不应作为编译器：技术局限与可靠性分析]({{< relref "posts/20260206-hacker_news-llms-could-be-but-shouldnt-be-compilers-0.md" >}})
 - [Step 3.5 Flash：快到能思考，稳到可执行]({{< relref "posts/20260219-hacker_news-step-35-flash-fast-enough-to-think-reliable-enough-10.md" >}})
-- [Nemotron-Personas-Brazil：主权AI协同设计数据集]({{< relref "posts/20260129-blogs_podcasts-nemotron-personas-brazil-co-designed-data-for-sove-5.md" >}})
+- [Nemotron-Personas-Brazil：主权AI协同设计数据集]({{< relref "posts/20260128-blogs_podcasts-nemotron-personas-brazil-co-designed-data-for-sove-0.md" >}})
 - [OpenAI内部数据智能体：自动化分析SQL数据库]({{< relref "posts/20260129-hacker_news-openais-in-house-data-agent-14.md" >}})
-- [OpenAI 内部数据代理：结合 GPT-5 与记忆机制实现分钟级数据洞察]({{< relref "posts/20260130-blogs_podcasts-inside-openais-in-house-data-agent-1.md" >}})
+- [OpenAI 内部数据代理：结合 GPT-5 与记忆机制实现分钟级数据洞察]({{< relref "posts/20260129-hacker_news-openais-in-house-data-agent-14.md" >}})

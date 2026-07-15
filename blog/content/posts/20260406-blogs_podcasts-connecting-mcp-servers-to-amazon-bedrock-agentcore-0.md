@@ -1,14 +1,32 @@
 ---
-title: "AgentCore Gateway授权码流程连接MCP服务器教程"
-date: 2026-04-06T16:10:46+08:00
+title: AgentCore Gateway授权码流程连接MCP服务器教程
+date: 2026-04-06 16:10:46+08:00
 draft: false
-entry_kind: "auto"
-tags: ["MCP服务器", "Amazon Bedrock", "OAuth2.0", "授权码流程", "AI代理", "Gateway", "安全认证", "JWT"]
-categories: ["AI 工程", "系统与基础设施"]
+entry_kind: auto
+tags:
+- MCP服务器
+- Amazon Bedrock
+- OAuth2.0
+- 授权码流程
+- AI 代理
+- Gateway
+- 安全认证
+- JWT
+categories:
+- AI 工程
+- 系统与基础设施
 source: blogs_podcasts
-description: "概述 Amazon Bedrock AgentCore Gateway 是亚马逊提供的集中管理平台，用于统一配置 AI Agent 对外部工具和 MCP 服务器的访问。通过在 Gateway 中定义 OAuth 2.0 授权方式，Agent 可以在不暴露凭证的前提下，安全地调用受保护的 MCP 接口。 配置流程 1."
+description: 概述 Amazon Bedrock AgentCore Gateway 是亚马逊提供的集中管理平台，用于统一配置 AI Agent 对外部工具和
+  MCP 服务器的访问。通过在 Gateway 中定义 OAuth 2.0 授权方式，Agent 可以在不暴露凭证的前提下，安全地调用受保护的 MCP 接口。 配置流程
+  1.
 external_url: https://aws.amazon.com/blogs/machine-learning/connecting-mcp-servers-to-amazon-bedrock-agentcore-gateway-using-authorization-code-flow
-scenarios: ["AI/ML项目", "命令行工具"]
+scenarios:
+- AI/ML项目
+- 命令行工具
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AgentCore Gateway授权码流程连接MCP服务器教程
@@ -209,8 +227,8 @@ AgentCore Gateway 通过标准化的 Authorization Code 流程，实现对受保
 ### 相关文章
 
 - [Iberdrola enhances IT operations using Amazon Bedrock A]({{< relref "posts/20260210-blogs_podcasts-iberdrola-enhances-it-operations-using-amazon-bedr-1.md" >}})
-- [利用全栈模板加速开发基于Amazon Bedrock AgentCore的应用]({{< relref "posts/20260211-blogs_podcasts-accelerate-agentic-application-development-with-a--12.md" >}})
-- [Iberdrola enhances IT operations using Amazon Bedrock A]({{< relref "posts/20260211-blogs_podcasts-iberdrola-enhances-it-operations-using-amazon-bedr-1.md" >}})
-- [Iberdrola enhances IT operations using Amazon Bedrock A]({{< relref "posts/20260211-blogs_podcasts-iberdrola-enhances-it-operations-using-amazon-bedr-2.md" >}})
-- [Iberdrola 利用 Amazon Bedrock 和 AgentCore 优化 ServiceNow 运]({{< relref "posts/20260212-blogs_podcasts-iberdrola-enhances-it-operations-using-amazon-bedr-10.md" >}})
+- [利用全栈模板加速开发基于Amazon Bedrock AgentCore的应用]({{< relref "posts/20260210-blogs_podcasts-accelerate-agentic-application-development-with-a--11.md" >}})
+- [Iberdrola enhances IT operations using Amazon Bedrock A]({{< relref "posts/20260210-blogs_podcasts-iberdrola-enhances-it-operations-using-amazon-bedr-1.md" >}})
+- [Iberdrola enhances IT operations using Amazon Bedrock A]({{< relref "posts/20260210-blogs_podcasts-iberdrola-enhances-it-operations-using-amazon-bedr-1.md" >}})
+- [Iberdrola 利用 Amazon Bedrock 和 AgentCore 优化 ServiceNow 运]({{< relref "posts/20260210-blogs_podcasts-iberdrola-enhances-it-operations-using-amazon-bedr-1.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

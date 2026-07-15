@@ -22,6 +22,10 @@ external_url: https://github.com/Inokinoki/attesor
 scenarios:
 - 大语言模型
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AI逆向工程实现Rosetta 2在Linux上的移植
@@ -317,8 +321,8 @@ QEMU 是一个通用的全系统模拟器，它通过软件模拟整个 CPU 和�
 
 ### 相关文章
 
-- [🔥重磅！Fedora Asahi Remix 成功适配 Apple M3！]({{< relref "posts/20260127-hacker_news-fedora-asahi-remix-is-now-working-on-apple-m3-17.md" >}})
-- [🔥Fedora Asahi Remix成功适配M3！苹果芯片生态再突破！🚀]({{< relref "posts/20260127-hacker_news-fedora-asahi-remix-is-now-working-on-apple-m3-18.md" >}})
+- [🔥重磅！Fedora Asahi Remix 成功适配 Apple M3！]({{< relref "posts/20260126-hacker_news-fedora-asahi-remix-is-now-working-on-apple-m3-3.md" >}})
+- [🔥Fedora Asahi Remix成功适配M3！苹果芯片生态再突破！🚀]({{< relref "posts/20260126-hacker_news-fedora-asahi-remix-is-now-working-on-apple-m3-3.md" >}})
 - [Ghidra MCP Server发布：集成110款工具实现AI辅助逆向工程]({{< relref "posts/20260204-hacker_news-show-hn-ghidra-mcp-server-110-tools-for-ai-assiste-1.md" >}})
-- [Ghidra MCP Server：集成110项工具的AI逆向工程辅助环境]({{< relref "posts/20260204-hacker_news-show-hn-ghidra-mcp-server-110-tools-for-ai-assiste-10.md" >}})
-- [Ghidra MCP Server：集成110款工具实现AI辅助逆向工程]({{< relref "posts/20260204-hacker_news-show-hn-ghidra-mcp-server-110-tools-for-ai-assiste-14.md" >}})
+- [Ghidra MCP Server：集成110项工具的AI逆向工程辅助环境]({{< relref "posts/20260204-hacker_news-show-hn-ghidra-mcp-server-110-tools-for-ai-assiste-1.md" >}})
+- [Ghidra MCP Server：集成110款工具实现AI辅助逆向工程]({{< relref "posts/20260204-hacker_news-show-hn-ghidra-mcp-server-110-tools-for-ai-assiste-1.md" >}})

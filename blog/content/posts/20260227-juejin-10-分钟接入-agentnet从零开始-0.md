@@ -22,6 +22,10 @@ external_url: https://juejin.cn/post/7611001786119700526
 scenarios:
 - AI/ML项目
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 10分钟接入AgentNet：从零开始的实践指南
@@ -175,6 +179,6 @@ AgentNet 通常设计为模型无关或支持多模型适配：
 
 - [迈向智能体系统规模化科学：作用机制与生效条件]({{< relref "posts/20260201-hacker_news-towards-a-science-of-scaling-agent-systems-when-an-11.md" >}})
 - [AgentRx：基于执行轨迹的AI智能体故障诊断]({{< relref "posts/20260203-arxiv_ai-agentrx-diagnosing-ai-agent-failures-from-executio-8.md" >}})
-- [Agent Skills：智能体技能框架与开发指南]({{< relref "posts/20260203-hacker_news-agent-skills-5.md" >}})
+- [Agent Skills：智能体技能框架与开发指南]({{< relref "posts/20260203-hacker_news-agent-skills-0.md" >}})
 - [Cord：协调多层级 AI 智能体树状结构]({{< relref "posts/20260221-hacker_news-cord-coordinating-trees-of-ai-agents-9.md" >}})
-- [LinqAlpha利用Amazon Bedrock构建“魔鬼代言人”代理评估投资论点]({{< relref "posts/20260212-blogs_podcasts-how-linqalpha-assesses-investment-theses-using-dev-11.md" >}})
+- [LinqAlpha利用Amazon Bedrock构建“魔鬼代言人”代理评估投资论点]({{< relref "posts/20260211-blogs_podcasts-how-linqalpha-assesses-investment-theses-using-dev-3.md" >}})

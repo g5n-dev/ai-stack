@@ -1,14 +1,29 @@
 ---
-title: "Transformer QKV投影变体对比研究"
-date: 2026-06-05T00:26:10+08:00
+title: Transformer QKV投影变体对比研究
+date: 2026-06-05 00:26:10+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Transformer", "QKV投影", "注意力机制", "模型架构", "深度学习", "架构优化", "神经网络", "投影变体"]
-categories: ["论文", "大模型"]
+entry_kind: auto
+tags:
+- Transformer
+- QKV投影
+- 注意力机制
+- 模型架构
+- 深度学习
+- 架构优化
+- 神经网络
+- 投影变体
+categories:
+- 论文
+- 大模型
 source: hacker_news
-description: "研究Transformer中Q、K、V投影的必要性，系统性地比较了多种变体。这些投影的数量直接影响参数量、计算复杂度和信息交互方式，对实际部署和性能调优至关重要。本文通过大量实验揭示了不同投影配置对模型精度与速度的权衡，为研究者和工程师在设计Transformer时提供实用的参考。"
+description: 研究Transformer中Q、K、V投影的必要性，系统性地比较了多种变体。这些投影的数量直接影响参数量、计算复杂度和信息交互方式，对实际部署和性能调优至关重要。本文通过大量实验揭示了不同投影配置对模型精度与速度的权衡，为研究者和工程师在设计Transformer时提供实用的参考。
 external_url: https://arxiv.org/abs/2606.04032
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Transformer QKV投影变体对比研究
@@ -75,8 +90,8 @@ scenarios: ["Web应用开发"]
 ### 相关文章
 
 - [构建极简Transformer模型实现十位数加法运算]({{< relref "posts/20260228-hacker_news-building-a-minimal-transformer-for-10-digit-additi-3.md" >}})
-- [构建极简Transformer模型实现十位数加法运算]({{< relref "posts/20260301-hacker_news-building-a-minimal-transformer-for-10-digit-additi-17.md" >}})
+- [构建极简Transformer模型实现十位数加法运算]({{< relref "posts/20260228-hacker_news-building-a-minimal-transformer-for-10-digit-additi-3.md" >}})
 - [Mixture-of-Depths 动态分配计算资源的注意力机制]({{< relref "posts/20260317-arxiv_ai-mixture-of-depths-attention-0.md" >}})
-- [在Transformer内部执行程序以实现指数级推理加速]({{< relref "posts/20260313-hacker_news-executing-programs-inside-transformers-with-expone-14.md" >}})
-- [LLM 架构画廊：主流大语言模型结构概览]({{< relref "posts/20260316-hacker_news-llm-architecture-gallery-12.md" >}})
+- [在Transformer内部执行程序以实现指数级推理加速]({{< relref "posts/20260313-hacker_news-executing-programs-inside-transformers-with-expone-3.md" >}})
+- [LLM 架构画廊：主流大语言模型结构概览]({{< relref "posts/20260315-hacker_news-llm-architecture-gallery-2.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

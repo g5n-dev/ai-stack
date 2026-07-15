@@ -1,12 +1,26 @@
 ---
-title: "🚀 Zig内存布局深度解析：公式揭秘！🧠"
-date: 2026-01-25T12:39:55+08:00
+title: 🚀 Zig内存布局深度解析：公式揭秘！🧠
+date: 2026-01-25 12:39:55+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Zig", "内存布局", "内存对齐", "系统编程", "底层原理", "数据结构", "性能优化", "编程语言"]
-categories: ["系统与基础设施", "开发工具"]
+entry_kind: auto
+tags:
+- Zig
+- 内存布局
+- 内存对齐
+- 系统编程
+- 底层原理
+- 数据结构
+- 性能优化
+- 编程语言
+categories:
+- 系统与基础设施
+- 开发工具
 source: hacker_news
 external_url: https://raymondtana.github.io/math/programming/2026/01/23/zig-alignment-and-sizing.html
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 📰 🚀 Zig内存布局深度解析：公式揭秘！🧠
@@ -238,7 +252,6 @@ const UART_Register = extern struct {
 （注：以上案例基于真实项目改编，TigerBeetle 为实际使用 Zig 的知名项目，其他案例为 Zig 在相关领域的
 
 ---
-## ✅ 最佳实践
 
 ## 最佳实践指南
 

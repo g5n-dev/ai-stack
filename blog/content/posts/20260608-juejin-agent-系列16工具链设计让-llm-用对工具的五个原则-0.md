@@ -1,14 +1,30 @@
 ---
-title: "LLM工具选择：三个实验揭示描述质量与异常处理的影响"
-date: 2026-06-08T23:04:00+08:00
+title: LLM工具选择：三个实验揭示描述质量与异常处理的影响
+date: 2026-06-08 23:04:00+08:00
 draft: false
-entry_kind: "auto"
-tags: ["LLM", "Agent", "工具设计", "工具选择", "异常处理", "描述质量", "提示词工程", "对比实验"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- LLM
+- Agent
+- 工具设计
+- 工具选择
+- 异常处理
+- 描述质量
+- 提示词工程
+- 对比实验
+categories:
+- 大模型
+- AI 工程
 source: juejin
-description: "描述质量与工具选择 工具的描述是 LLM 判断“该不该调用”的关键信号。实验表明，描述越准确、关键词越贴合任务，工具被选中的概率越高。但存在反直觉的前提：**只有在 LLM 已具备足够上下文且描述不产生歧义时，高质量描述才能提升选择**；若描述中混入相似词或缺少前置条件，反而会导致误选。 错误处理：异常 vs 错误字符"
+description: 描述质量与工具选择 工具的描述是 LLM 判断“该不该调用”的关键信号。实验表明，描述越准确、关键词越贴合任务，工具被选中的概率越高。但存在反直觉的前提：**只有在
+  LLM 已具备足够上下文且描述不产生歧义时，高质量描述才能提升选择**；若描述中混入相似词或缺少前置条件，反而会导致误选。 错误处理：异常 vs 错误字符
 external_url: https://juejin.cn/post/7649040940744605759
-scenarios: ["大语言模型"]
+scenarios:
+- 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # LLM工具选择：三个实验揭示描述质量与异常处理的影响
@@ -104,8 +120,8 @@ scenarios: ["大语言模型"]
 ### 相关文章
 
 - [零基础学 Agent ：拆解一个 Agent 的「零件清单」——8 个模块逐一讲透 第 2 期]({{< relref "posts/20260317-juejin-零基础学-agent-拆解一个-agent-的零件清单8-个模块逐一讲透-第-2-期-2.md" >}})
-- [AI工程争议：Harness Engineering是否成立]({{< relref "posts/20260305-blogs_podcasts-ainews-is-harness-engineering-real-8.md" >}})
-- [揭秘Codex Agent循环！🚀 智能体核心逻辑全解析！]({{< relref "posts/20260126-blogs_podcasts-unrolling-the-codex-agent-loop-2.md" >}})
-- [揭秘 Codex Agent 智能循环！🤖 AI自动化新范式？]({{< relref "posts/20260127-blogs_podcasts-unrolling-the-codex-agent-loop-2.md" >}})
-- [揭秘Codex Agent核心循环！🔥智能编程的终极引擎！🤖✨]({{< relref "posts/20260127-blogs_podcasts-unrolling-the-codex-agent-loop-6.md" >}})
+- [AI工程争议：Harness Engineering是否成立]({{< relref "posts/20260305-blogs_podcasts-ainews-is-harness-engineering-real-0.md" >}})
+- [揭秘Codex Agent循环！🚀 智能体核心逻辑全解析！]({{< relref "posts/20260125-blogs_podcasts-unrolling-the-codex-agent-loop-1.md" >}})
+- [揭秘 Codex Agent 智能循环！🤖 AI自动化新范式？]({{< relref "posts/20260125-blogs_podcasts-unrolling-the-codex-agent-loop-1.md" >}})
+- [揭秘Codex Agent核心循环！🔥智能编程的终极引擎！🤖✨]({{< relref "posts/20260125-blogs_podcasts-unrolling-the-codex-agent-loop-1.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

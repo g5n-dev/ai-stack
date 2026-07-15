@@ -1,14 +1,28 @@
 ---
-title: "AI降低知识门槛，资金门槛却在悄然上升"
-date: 2026-04-26T06:05:51+08:00
+title: AI降低知识门槛，资金门槛却在悄然上升
+date: 2026-04-26 06:05:51+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI创业", "知识门槛", "资金门槛", "创业经验", "AI破局", "创新思维", "资源整合", "AI应用"]
-categories: ["产品与创业"]
+entry_kind: auto
+tags:
+- AI创业
+- 知识门槛
+- 资金门槛
+- 创业经验
+- AI破局
+- 创新思维
+- 资源整合
+- AI 应用
+categories:
+- 产品与创业
 source: juejin
-description: "2026年4月25日，我在杭州参加了AI破局嘉年华，800人参会，历时两天。会上讨论了AI降低知识获取门槛的显著趋势，但同步出现了一道新的门槛——创新与独立创业的挑战。有人分享了34岁卖掉北京房产、全身心投入AI项目的经历，也有50岁独自创业、凭借AI技术重新定义职业路径的案例。这些案例表明，虽然AI让学习更便捷，但在"
+description: 2026年4月25日，我在杭州参加了AI破局嘉年华，800人参会，历时两天。会上讨论了AI降低知识获取门槛的显著趋势，但同步出现了一道新的门槛——创新与独立创业的挑战。有人分享了34岁卖掉北京房产、全身心投入AI项目的经历，也有50岁独自创业、凭借AI技术重新定义职业路径的案例。这些案例表明，虽然AI让学习更便捷，但在
 external_url: https://juejin.cn/post/7632479254718316595
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AI降低知识门槛，资金门槛却在悄然上升
@@ -91,8 +105,8 @@ AI确实在降低技术知识获取的门槛，使更多人能够快速进入AI�
 ### 相关文章
 
 - [OpenAI发布欧盟经济蓝图2.0 加速欧洲AI应用与增长]({{< relref "posts/20260129-blogs_podcasts-the-next-chapter-for-ai-in-the-eu-2.md" >}})
-- [OpenAI发布《欧盟经济蓝图2.0》加速欧洲AI应用与增长]({{< relref "posts/20260129-blogs_podcasts-the-next-chapter-for-ai-in-the-eu-3.md" >}})
-- [Sam Altman在市政厅会议回顾AI创业孵化模式]({{< relref "posts/20260130-blogs_podcasts-ainews-sam-altmans-ai-combinator-3.md" >}})
-- [Sam Altman提出AI孵化器模式以加速初创公司发展]({{< relref "posts/20260201-blogs_podcasts-ainews-sam-altmans-ai-combinator-5.md" >}})
+- [OpenAI发布《欧盟经济蓝图2.0》加速欧洲AI应用与增长]({{< relref "posts/20260129-blogs_podcasts-the-next-chapter-for-ai-in-the-eu-2.md" >}})
+- [Sam Altman在市政厅会议回顾AI创业孵化模式]({{< relref "posts/20260129-blogs_podcasts-ainews-sam-altmans-ai-combinator-0.md" >}})
+- [Sam Altman提出AI孵化器模式以加速初创公司发展]({{< relref "posts/20260129-blogs_podcasts-ainews-sam-altmans-ai-combinator-0.md" >}})
 - [构建AI版Wattpad以评估大模型小说创作能力]({{< relref "posts/20260203-hacker_news-show-hn-i-built-ai-wattpad-to-eval-llms-on-fiction-19.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

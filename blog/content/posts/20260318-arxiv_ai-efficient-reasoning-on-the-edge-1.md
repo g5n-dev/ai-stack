@@ -21,6 +21,10 @@ description: 本文介绍了一种在边缘设备（如移动设备）上实现�
 external_url: http://arxiv.org/abs/2603.16867v1
 scenarios:
 - Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 边缘端高效推理：资源受限设备的模型优化方法
@@ -133,7 +137,6 @@ scenarios:
 
 ---
 
-### 深入分析报告：Efficient Reasoning on the Edge
 
 ### 1. 研究背景与问题
 
@@ -498,7 +501,7 @@ scenarios:
 ### 相关文章
 
 - [智能体推理与工具使用的竞争：量化干扰与解调优]({{< relref "posts/20260203-arxiv_ai-reasoning-and-tool-use-compete-in-agentic-rlfrom-q-5.md" >}})
-- [共享LoRA子空间实现近乎严格的持续学习]({{< relref "posts/20260209-arxiv_ai-shared-lora-subspaces-for-almost-strict-continual--0.md" >}})
+- [共享LoRA子空间实现近乎严格的持续学习]({{< relref "posts/20260206-arxiv_ai-shared-lora-subspaces-for-almost-strict-continual--0.md" >}})
 - [Anagent For Enhancing Scientific Table & Figure Analysi]({{< relref "posts/20260211-arxiv_ai-anagent-for-enhancing-scientific-table-figure-anal-9.md" >}})
-- [通向无处不在的AI之路：实现每秒1.7万tokens推理]({{< relref "posts/20260221-hacker_news-the-path-to-ubiquitous-ai-17k-tokenssec-16.md" >}})
-- [GUI-Libra：动作感知监督与可验证强化学习的原生GUI智能体]({{< relref "posts/20260227-arxiv_ai-gui-libra-training-native-gui-agents-to-reason-and-4.md" >}})
+- [通向无处不在的AI之路：实现每秒1.7万tokens推理]({{< relref "posts/20260220-hacker_news-the-path-to-ubiquitous-ai-17k-tokenssec-0.md" >}})
+- [GUI-Libra：动作感知监督与可验证强化学习的原生GUI智能体]({{< relref "posts/20260226-arxiv_ai-gui-libra-training-native-gui-agents-to-reason-and-4.md" >}})

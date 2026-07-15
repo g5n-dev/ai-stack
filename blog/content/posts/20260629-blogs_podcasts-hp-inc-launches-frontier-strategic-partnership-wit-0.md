@@ -1,14 +1,30 @@
 ---
-title: "HP与OpenAI深化合作 AI落地企业运营三大场景"
-date: 2026-06-29T09:18:49+08:00
+title: HP与OpenAI深化合作 AI落地企业运营三大场景
+date: 2026-06-29 09:18:49+08:00
 draft: false
-entry_kind: "auto"
-tags: ["OpenAI", "惠普", "企业AI", "大模型落地", "客户体验", "软件开发", "企业运营", "战略合作"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- OpenAI
+- 惠普
+- 企业AI
+- 大模型落地
+- 客户体验
+- 软件开发
+- 企业运营
+- 战略合作
+categories:
+- 大模型
+- AI 工程
 source: blogs_podcasts
-description: "合作概述 HP Inc. 与 OpenAI 共同启动 Frontier 战略伙伴关系，旨在把 OpenAI 前沿模型深度嵌入 HP 的业务全链路。合作规模已升级，以加速 AI 在客户体验、软件开发及企业运营等关键环节的落地，推动 HP 数字化转型与竞争力提升。 应用场景 - **客户体验**：通过生成式模型实现智能客服"
+description: 合作概述 HP Inc. 与 OpenAI 共同启动 Frontier 战略伙伴关系，旨在把 OpenAI 前沿模型深度嵌入 HP 的业务全链路。合作规模已升级，以加速
+  AI 在客户体验、软件开发及企业运营等关键环节的落地，推动 HP 数字化转型与竞争力提升。 应用场景 - **客户体验**：通过生成式模型实现智能客服
 external_url: https://openai.com/index/hp-frontier-partnership
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # HP与OpenAI深化合作 AI落地企业运营三大场景
@@ -147,8 +163,8 @@ HP 通过 Frontier 与 OpenAI 的深度合作，能够在客户体验、软件�
 ### 相关文章
 
 - [OpenAI与亚马逊达成战略合作，将Frontier模型引入AWS]({{< relref "posts/20260227-blogs_podcasts-openai-and-amazon-announce-strategic-partnership-0.md" >}})
-- [OpenAI与亚马逊战略合作：将Frontier模型引入AWS]({{< relref "posts/20260228-blogs_podcasts-openai-and-amazon-announce-strategic-partnership-5.md" >}})
-- [OpenAI与亚马逊达成战略合作，将Frontier模型引入AWS]({{< relref "posts/20260302-blogs_podcasts-openai-and-amazon-announce-strategic-partnership-10.md" >}})
-- [OpenAI与亚马逊达成战略合作，Frontier模型接入AWS]({{< relref "posts/20260302-blogs_podcasts-openai-and-amazon-announce-strategic-partnership-7.md" >}})
-- [Snowflake与OpenAI达成2亿美元合作，将前沿智能引入企业数据]({{< relref "posts/20260203-blogs_podcasts-snowflake-and-openai-partner-to-bring-frontier-int-0.md" >}})
+- [OpenAI与亚马逊战略合作：将Frontier模型引入AWS]({{< relref "posts/20260227-blogs_podcasts-openai-and-amazon-announce-strategic-partnership-0.md" >}})
+- [OpenAI与亚马逊达成战略合作，将Frontier模型引入AWS]({{< relref "posts/20260227-blogs_podcasts-openai-and-amazon-announce-strategic-partnership-0.md" >}})
+- [OpenAI与亚马逊达成战略合作，Frontier模型接入AWS]({{< relref "posts/20260227-blogs_podcasts-openai-and-amazon-announce-strategic-partnership-0.md" >}})
+- [Snowflake与OpenAI达成2亿美元合作，将前沿智能引入企业数据]({{< relref "posts/20260202-blogs_podcasts-snowflake-and-openai-partner-to-bring-frontier-int-1.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

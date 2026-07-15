@@ -21,6 +21,19 @@ description: RunAnwhere 是一款专为 Apple Silicon 打造的 AI 推理工具�
 external_url: https://github.com/RunanywhereAI/rcli
 scenarios:
 - AI/ML项目
+aliases:
+- /posts/20260310-hacker_news-launch-hn-runanywhere-yc-w26-faster-ai-inference-o-1/
+- /posts/20260310-hacker_news-launch-hn-runanywhere-yc-w26-faster-ai-inference-o-6/
+- /posts/20260311-hacker_news-launch-hn-runanywhere-yc-w26-faster-ai-inference-o-12/
+- /posts/20260311-hacker_news-launch-hn-runanywhere-yc-w26-faster-ai-inference-o-15/
+- /posts/20260311-hacker_news-launch-hn-runanywhere-yc-w26-faster-ai-inference-o-18/
+- /posts/20260311-hacker_news-launch-hn-runanywhere-yc-w26-faster-ai-inference-o-19/
+- /posts/20260311-hacker_news-launch-hn-runanywhere-yc-w26-faster-ai-inference-o-6/
+- /posts/20260311-hacker_news-launch-hn-runanywhere-yc-w26-faster-ai-inference-o-9/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # RunAnwhere：在 Apple Silicon 上实现更快的 AI 推理

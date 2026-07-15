@@ -8,7 +8,7 @@ tags:
 - 语音合成
 - 小体积
 - 轻量级
-- AI模型
+- AI 模型
 - 开源
 - 嵌入式
 - 语音技术
@@ -20,6 +20,10 @@ description: Kitten TTS 近期发布了三款全新模型，其中最小的一�
 external_url: https://github.com/KittenML/KittenTTS
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Kitten TTS 三款新模型：小体积低于 25MB
@@ -307,7 +311,7 @@ Kitten TTS 团队在本次 Show HN 中发布了三款不同规模的文本转语
 ### 相关文章
 
 - [zclaw：体积小于888 KB的个人AI助手，可在ESP32运行]({{< relref "posts/20260221-hacker_news-zclaw-personal-ai-assistant-in-under-888-kb-runnin-12.md" >}})
-- [zclaw：体积小于888 KB的个人AI助手，运行于ESP32]({{< relref "posts/20260222-hacker_news-zclaw-personal-ai-assistant-in-under-888-kb-runnin-10.md" >}})
+- [zclaw：体积小于888 KB的个人AI助手，运行于ESP32]({{< relref "posts/20260221-hacker_news-zclaw-personal-ai-assistant-in-under-888-kb-runnin-12.md" >}})
 - [仅头文件的 C 语言向量数据库库]({{< relref "posts/20260214-hacker_news-a-header-only-c-vector-database-library-8.md" >}})
-- [Descript 利用 OpenAI 模型实现规模化多语言视频配音]({{< relref "posts/20260306-blogs_podcasts-how-descript-enables-multilingual-video-dubbing-at-3.md" >}})
+- [Descript 利用 OpenAI 模型实现规模化多语言视频配音]({{< relref "posts/20260306-blogs_podcasts-how-descript-enables-multilingual-video-dubbing-at-2.md" >}})
 - [PP-Claw：Go 语言复刻的轻量级 AI Agent 全栈方案]({{< relref "posts/20260306-juejin-pp-claw皮皮虾用-go-复刻一个轻量级-ai-agent-全栈解决方案-1.md" >}})

@@ -1,14 +1,30 @@
 ---
-title: "Show HN: Wispr Flow 等工具的免费替代方案"
-date: 2026-02-17T15:40:46+08:00
+title: 'Show HN: Wispr Flow 等工具的免费替代方案'
+date: 2026-02-17 15:40:46+08:00
 draft: false
-entry_kind: "auto"
-tags: ["语音输入", "免费替代", "Show HN", "生产力工具", "语音转文字", "Wispr Flow", "Superwhisper", "开源"]
-categories: ["效率与方法论", "产品与创业"]
+entry_kind: auto
+tags:
+- 语音输入
+- 免费替代
+- Show HN
+- 生产力工具
+- 语音转文字
+- Wispr Flow
+- Superwhisper
+- 开源
+categories:
+- 效率与方法论
+- 产品与创业
 source: hacker_news
-description: "随着语音交互在技术工作流中的普及，基于 AI 的语音转文字工具正成为提升效率的关键。本文介绍了一款开源工具，作为 Wispr Flow 和 Superwhisper 等商业软件的替代方案，它为开发者提供了更具性价比的本地化处理能力。通过阅读本文，你将了解该工具的核心功能、技术架构以及如何将其集成到日常开发环境中。"
+description: 随着语音交互在技术工作流中的普及，基于 AI 的语音转文字工具正成为提升效率的关键。本文介绍了一款开源工具，作为 Wispr Flow 和
+  Superwhisper 等商业软件的替代方案，它为开发者提供了更具性价比的本地化处理能力。通过阅读本文，你将了解该工具的核心功能、技术架构以及如何将其集成到日常开发环境中。
 external_url: https://github.com/zachlatta/freeflow
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Show HN: Wispr Flow 等工具的免费替代方案
@@ -286,7 +302,6 @@ Sarah 开始使用这款开源工具作为她的字幕工作流核心。她利�
 即使是在嘈杂的街头采访视频中，该工具也能生成 90% 准确率的初稿。Sarah 制作一期 15 分钟视频的字幕时间从原来的 3 小时缩短至 30 分钟。这不仅大幅降低了制作成本，还让她能够更频繁地更新视频，频道订阅量因此增长了 15%。
 
 ---
-## 最佳实践
 
 ## 最佳实践指南
 
@@ -451,9 +466,9 @@ Sarah 开始使用这款开源工具作为她的字幕工作流核心。她利�
 
 ### 相关文章
 
-- [Rowboat：将工作转化为知识图谱的AI助手]({{< relref "posts/20260211-hacker_news-show-hn-rowboat-ai-coworker-that-turns-your-work-i-14.md" >}})
+- [Rowboat：将工作转化为知识图谱的AI助手]({{< relref "posts/20260210-hacker_news-show-hn-rowboat-ai-coworker-that-turns-your-work-i-11.md" >}})
 - [一键生成AI员工：自带云端桌面环境]({{< relref "posts/20260207-hacker_news-show-hn-one-click-ai-employee-with-its-own-cloud-d-9.md" >}})
-- [Rowboat：将工作转化为知识图谱的 AI 同事]({{< relref "posts/20260210-hacker_news-show-hn-rowboat-ai-coworker-that-turns-your-work-i-9.md" >}})
-- [macOS神器：含胸驼背？屏幕立刻模糊！强制你挺直腰杆！💻✨]({{< relref "posts/20260126-hacker_news-a-macos-app-that-blurs-your-screen-when-you-slouch-19.md" >}})
-- [Microgpt：可在浏览器中可视化的GPT模型]({{< relref "posts/20260216-hacker_news-show-hn-microgpt-is-a-gpt-you-can-visualize-in-the-17.md" >}})
+- [Rowboat：将工作转化为知识图谱的 AI 同事]({{< relref "posts/20260210-hacker_news-show-hn-rowboat-ai-coworker-that-turns-your-work-i-11.md" >}})
+- [macOS神器：含胸驼背？屏幕立刻模糊！强制你挺直腰杆！💻✨]({{< relref "posts/20260126-hacker_news-a-macos-app-that-blurs-your-screen-when-you-slouch-4.md" >}})
+- [Microgpt：可在浏览器中可视化的GPT模型]({{< relref "posts/20260215-hacker_news-show-hn-microgpt-is-a-gpt-you-can-visualize-in-the-17.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

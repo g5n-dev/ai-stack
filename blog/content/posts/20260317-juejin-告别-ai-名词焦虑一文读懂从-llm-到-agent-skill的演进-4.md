@@ -22,6 +22,10 @@ scenarios:
 - 大语言模型
 - AI/ML项目
 - 命令行工具
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 从LLM到Agent：一文拆解AI核心概念与演进
@@ -184,4 +188,4 @@ RAG 是连接 LLM 与私有知识库的桥梁，是 Agent 构建中至关重要�
 - [当人类知识学会自己奔跑：Skill 属性与 AI 工程化实践]({{< relref "posts/20260305-juejin-当人类知识学会自己奔跑-skill-1.md" >}})
 - [深度解析Skill/MCP/RAG等五大AI技术的底层逻辑]({{< relref "posts/20260212-juejin-深入理解skillmcpragagentopenclaw底层逻辑-2.md" >}})
 - [从 Prompt 到 Agent Skill：AI 能力跃迁与设计实现]({{< relref "posts/20260303-juejin-agent-skill-是什么一文讲透-agent-skill-的设计与实现-3.md" >}})
-- [从 Prompt 到 Agent Skill：AI 交互模式的架构设计与实现]({{< relref "posts/20260303-juejin-agent-skill-是什么一文讲透-agent-skill-的设计与实现-4.md" >}})
+- [从 Prompt 到 Agent Skill：AI 交互模式的架构设计与实现]({{< relref "posts/20260303-juejin-agent-skill-是什么一文讲透-agent-skill-的设计与实现-3.md" >}})

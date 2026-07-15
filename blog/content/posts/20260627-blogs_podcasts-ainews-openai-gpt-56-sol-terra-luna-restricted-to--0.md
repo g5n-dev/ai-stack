@@ -1,14 +1,32 @@
 ---
-title: "OpenAI发布GPT-5.6分层版本，限制合作伙伴访问"
-date: 2026-06-27T22:26:00+08:00
+title: OpenAI发布GPT-5.6分层版本，限制合作伙伴访问
+date: 2026-06-27 22:26:00+08:00
 draft: false
-entry_kind: "auto"
-tags: ["OpenAI", "GPT-5.6", "分层授权", "合作伙伴", "多模态", "安全审计", "API接口", "模型发布"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- OpenAI
+- GPT-5.6
+- 分层授权
+- 合作伙伴
+- 多模态
+- 安全审计
+- API接口
+- 模型发布
+categories:
+- 大模型
+- AI 工程
 source: blogs_podcasts
-description: "概述 OpenAI 于近期同步推出了 GPT‑5.6 系列的三个变体：Sol、Terra 与 Luna。此次发布并未面向全体开发者，而是采用了分层的访问策略，仅向受信任的合作伙伴开放。 版本与定位 - **Sol**：基础版，针对通用对话与轻量级任务优化，开放给已签署合作协议的合作伙伴。 - **Terra**：中等规"
+description: 概述 OpenAI 于近期同步推出了 GPT‑5.6 系列的三个变体：Sol、Terra 与 Luna。此次发布并未面向全体开发者，而是采用了分层的访问策略，仅向受信任的合作伙伴开放。
+  版本与定位 - **Sol**：基础版，针对通用对话与轻量级任务优化，开放给已签署合作协议的合作伙伴。 - **Terra**：中等规
 external_url: https://www.latent.space/p/ainews-openai-gpt-56-sol-terra-luna
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+aliases:
+- /posts/20260628-blogs_podcasts-ainews-openai-gpt-56-sol-terra-luna-restricted-to--0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # OpenAI发布GPT-5.6分层版本，限制合作伙伴访问
@@ -138,9 +156,9 @@ Terra 版本在长文档处理场景中表现出显著优势，可用于法律�
 
 ### 相关文章
 
-- [OpenAI发布GPT-5.4 mini与nano：优化编程与多模态推理]({{< relref "posts/20260317-blogs_podcasts-introducing-gpt-54-mini-and-nano-5.md" >}})
-- [OpenAI发布GPT-4o mini与nano：更小更快，优化代码与多模态]({{< relref "posts/20260317-blogs_podcasts-introducing-gpt-54-mini-and-nano-8.md" >}})
-- [OpenAI发布GPT-4o mini与nano：更小更快，优化编码与多模态推理]({{< relref "posts/20260318-blogs_podcasts-introducing-gpt-54-mini-and-nano-9.md" >}})
+- [OpenAI发布GPT-5.4 mini与nano：优化编程与多模态推理]({{< relref "posts/20260317-hacker_news-gpt54-mini-and-nano-17.md" >}})
+- [OpenAI发布GPT-4o mini与nano：更小更快，优化代码与多模态]({{< relref "posts/20260317-hacker_news-gpt54-mini-and-nano-17.md" >}})
+- [OpenAI发布GPT-4o mini与nano：更小更快，优化编码与多模态推理]({{< relref "posts/20260317-hacker_news-gpt54-mini-and-nano-17.md" >}})
 - [GPT-5.3 Instant 系统卡发布：性能与安全机制详解]({{< relref "posts/20260303-blogs_podcasts-gpt-53-instant-system-card-7.md" >}})
-- [GPT-5.3 Instant 系统卡发布：模型规格与安全策略详解]({{< relref "posts/20260304-blogs_podcasts-gpt-53-instant-system-card-11.md" >}})
+- [GPT-5.3 Instant 系统卡发布：模型规格与安全策略详解]({{< relref "posts/20260303-blogs_podcasts-gpt-53-instant-system-card-7.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

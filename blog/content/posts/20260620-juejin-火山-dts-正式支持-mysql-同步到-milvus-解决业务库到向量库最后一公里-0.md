@@ -1,14 +1,29 @@
 ---
-title: "火山DTS实现MySQL数据自动同步至Milvus向量库"
-date: 2026-06-20T20:30:07+08:00
+title: 火山DTS实现MySQL数据自动同步至Milvus向量库
+date: 2026-06-20 20:30:07+08:00
 draft: false
-entry_kind: "auto"
-tags: ["火山DTS", "MySQL同步", "Milvus", "向量数据库", "向量化", "数据同步", "AI检索", "自动同步"]
-categories: ["数据", "AI 工程"]
+entry_kind: auto
+tags:
+- 火山DTS
+- MySQL同步
+- Milvus
+- 向量数据库
+- 向量化
+- 数据同步
+- AI检索
+- 自动同步
+categories:
+- 数据
+- AI 工程
 source: juejin
-description: "火山引擎DTS正式支持MySQL向Milvus的同步，凭借内置的向量化引擎实现全自动数据流转，无需额外的ETL环节，即可把业务库中的结构化数据直接转换为向量并存入Milvus，从而打通业务库到向量库的“最后一公里”。该方案显著降低了AI检索系统的部署成本和运维复杂度，并已开启邀测，企业可提前申请体验。"
+description: 火山引擎DTS正式支持MySQL向Milvus的同步，凭借内置的向量化引擎实现全自动数据流转，无需额外的ETL环节，即可把业务库中的结构化数据直接转换为向量并存入Milvus，从而打通业务库到向量库的“最后一公里”。该方案显著降低了AI检索系统的部署成本和运维复杂度，并已开启邀测，企业可提前申请体验。
 external_url: https://juejin.cn/post/7652744266588684314
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 火山DTS实现MySQL数据自动同步至Milvus向量库
@@ -87,8 +102,8 @@ DTS本身是企业级数据迁移工具，具备断点续传、增量同步等�
 
 ### 相关文章
 
-- [Retrieval After RAG：混合搜索、智能体与数据库设计]({{< relref "posts/20260313-blogs_podcasts-retrieval-after-rag-hybrid-search-agents-and-datab-1.md" >}})
-- [利用 Amazon Nova 构建多模态视频语义搜索系统]({{< relref "posts/20260316-blogs_podcasts-multimodal-embeddings-at-scale-ai-data-lake-for-me-10.md" >}})
+- [Retrieval After RAG：混合搜索、智能体与数据库设计]({{< relref "posts/20260313-blogs_podcasts-retrieval-after-rag-hybrid-search-agents-and-datab-0.md" >}})
+- [利用 Amazon Nova 构建多模态视频语义搜索系统]({{< relref "posts/20260312-blogs_podcasts-multimodal-embeddings-at-scale-ai-data-lake-for-me-0.md" >}})
 - [Pinecone Explorer：Pinecone 向量数据库桌面 GUI]({{< relref "posts/20260131-hacker_news-show-hn-pinecone-explorer-desktop-gui-for-the-pine-16.md" >}})
 - [AI大模型入门：Embedding原理与向量数据库应用]({{< relref "posts/20260305-juejin-ai大模型小白手册embedding-与向量数据库-0.md" >}})
 - [AI Agent 开发入门技术栈选型指南]({{< relref "posts/20260309-juejin-ai-agent-技术栈选型入门只需要这些-3.md" >}})

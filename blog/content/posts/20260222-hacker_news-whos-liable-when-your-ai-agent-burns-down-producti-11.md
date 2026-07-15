@@ -23,6 +23,10 @@ scenarios:
 - AI/ML项目
 - DevOps/运维
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 当 AI 智能体搞崩生产环境，责任由谁承担

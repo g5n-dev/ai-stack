@@ -21,6 +21,14 @@ description: '以下是关于《Spatial-TTT: Streaming Visual-based Spatial Inte
 external_url: http://arxiv.org/abs/2603.12255v1
 scenarios:
 - 大语言模型
+aliases:
+- /posts/20260314-arxiv_ai-spatial-ttt-streaming-visual-based-spatial-intelli-1/
+- /posts/20260315-arxiv_ai-spatial-ttt-streaming-visual-based-spatial-intelli-1/
+- /posts/20260316-arxiv_ai-spatial-ttt-streaming-visual-based-spatial-intelli-1/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Spatial-TTT：基于测试时训练的流式视觉空间智能
@@ -124,9 +132,7 @@ scenarios:
 
 ---
 
-### Spatial-TTT: 基于测试时训练的流式视觉空间智能深度解析
 
-### 1. 研究背景与问题
 
 ### 核心问题
 本研究致力于解决**无限长视频流中的动态空间感知与记忆维护**问题。具体而言，如何让一个视觉模型在处理连续不断的视频流时，不仅能够理解当前帧的内容，还能像人类一样，随着时间推移动态地筛选、组织并保留关键的空间证据（如房间布局、物体位置），从而形成对全局3D空间的一致性理解。
@@ -142,7 +148,6 @@ scenarios:
 ### 重要性
 该研究突破了“预训练-推理”的两阶段范式，引入了“测试时训练”的思想，使得模型在推理阶段具备了“持续学习”的能力。这对于构建能够在真实世界中长期运行的自主智能体具有重要的理论和应用价值。
 
-### 2. 核心方法与创新
 
 ### 核心方法：Spatial-TTT
 论文提出了 **Spatial-TTT**，这是一种基于测试时训练的流式空间智能框架。其核心在于将模型的部分参数（称为“快速权重”）视为动态记忆，在推理过程中，针对每一个输入的视频流，通过自监督学习实时更新这些权重，从而将该视频流特有的空间信息“内化”到模型参数中。
@@ -158,7 +163,6 @@ scenarios:
 - **参数级记忆：** 相比于显式的特征缓存，将信息压缩到参数中具有更高的容量潜力。
 - **流式处理：** 支持单次前向传播即可处理无限长视频，无需回溯历史帧。
 
-### 3. 理论基础
 
 ### 理论依据
 本研究的理论基础主要建立在**元学习**和**在线学习**的范畴之上。
@@ -172,7 +176,6 @@ scenarios:
 $$ \phi_{t+1} = \phi_t - \alpha \nabla_{\phi_t} \mathcal{L}_t $$
 最终输出基于更新后的 $\phi_{t+1}$。这种设计使得模型本身变成了一个可优化的函数。
 
-### 7. 学习建议
 
 ### 适合读者
 - 从事计算机视觉（CV）、具身智能、多模态大模型研究的研究生和工程师。
@@ -419,7 +422,7 @@ Spatial-TTT 特别适用于那些环境动态变化大、需要长期稳定运�
 ### 相关文章
 
 - [进化策略导致大语言模型出现灾难性遗忘]({{< relref "posts/20260129-arxiv_ai-evolutionary-strategies-lead-to-catastrophic-forge-0.md" >}})
-- [进化策略导致大语言模型出现灾难性遗忘]({{< relref "posts/20260130-arxiv_ai-evolutionary-strategies-lead-to-catastrophic-forge-0.md" >}})
+- [进化策略导致大语言模型出现灾难性遗忘]({{< relref "posts/20260129-arxiv_ai-evolutionary-strategies-lead-to-catastrophic-forge-0.md" >}})
 - [BEVLM：将LLM语义知识蒸馏至鸟瞰图表征]({{< relref "posts/20260309-arxiv_ai-bevlm-distilling-semantic-knowledge-from-llms-into-0.md" >}})
-- [BEVLM：将LLM语义知识蒸馏至鸟瞰图表示]({{< relref "posts/20260310-arxiv_ai-bevlm-distilling-semantic-knowledge-from-llms-into-0.md" >}})
+- [BEVLM：将LLM语义知识蒸馏至鸟瞰图表示]({{< relref "posts/20260309-arxiv_ai-bevlm-distilling-semantic-knowledge-from-llms-into-0.md" >}})
 - [测试时也能发现新规律？🤯AI解锁动态学习能力！]({{< relref "posts/20260125-arxiv_ai-learning-to-discover-at-test-time-6.md" >}})

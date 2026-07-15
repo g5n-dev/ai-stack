@@ -1,14 +1,32 @@
 ---
-title: "数学、计算机科学与人工智能综合资源指南"
-date: 2026-02-16T23:54:05+08:00
+title: 数学、计算机科学与人工智能综合资源指南
+date: 2026-02-16 23:54:05+08:00
 draft: false
-entry_kind: "auto"
-tags: ["资源指南", "数学", "计算机科学", "人工智能", "LLM", "机器学习", "深度学习", "CS"]
-categories: ["大模型", "数据"]
+entry_kind: auto
+tags:
+- 资源指南
+- 数学
+- 计算机科学
+- 人工智能
+- LLM
+- 机器学习
+- 深度学习
+- CS
+categories:
+- 大模型
+- 数据
 source: hacker_news
-description: "数学、计算机科学与人工智能的交叉融合，正成为推动技术创新的核心动力。这份资料系统梳理了三者之间的理论联系与前沿应用，帮助读者打破学科壁垒，建立更完整的技术视野。无论你是研究人员还是工程师，都能从中找到连接基础理论与实际应用的关键路径，为深入理解 AI 技术奠定扎实基础。"
+description: 数学、计算机科学与人工智能的交叉融合，正成为推动技术创新的核心动力。这份资料系统梳理了三者之间的理论联系与前沿应用，帮助读者打破学科壁垒，建立更完整的技术视野。无论你是研究人员还是工程师，都能从中找到连接基础理论与实际应用的关键路径，为深入理解
+  AI 技术奠定扎实基础。
 external_url: https://github.com/HenryNdubuaku/maths-cs-ai-compendium
-scenarios: ["大语言模型"]
+scenarios:
+- 大语言模型
+aliases:
+- /posts/20260217-hacker_news-show-hn-maths-cs-and-ai-compendium-18/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 数学、计算机科学与人工智能综合资源指南
@@ -193,7 +211,6 @@ print(binary_search([1, 3, 5, 7, 9], 2))  # 输出: -1
 **效果**: 最终模型体积缩小至 25MB（仅为原来的 5%），在普通 CPU 上的推理速度提升至 0.5 秒以内，且诊断准确率仅下降了 0.3%（保持在医生可接受范围内）。这使得该产品能够成功部署到数十家基层医疗机构，极大地扩大了市场覆盖范围。
 
 ---
-## 最佳实践
 
 ## 最佳实践指南
 
@@ -376,9 +393,9 @@ print(binary_search([1, 3, 5, 7, 9], 2))  # 输出: -1
 
 ### 相关文章
 
-- [从上下文学习的难度超出预期]({{< relref "posts/20260207-hacker_news-learning-from-context-is-harder-than-we-thought-16.md" >}})
-- [2026年AI展望：LLM、智能体、算力与AGI发展路径]({{< relref "posts/20260203-blogs_podcasts-490-state-of-ai-in-2026-llms-coding-scaling-laws-c-2.md" >}})
-- [通过文本反馈扩展强化学习的能力边界]({{< relref "posts/20260204-arxiv_ai-expanding-the-capabilities-of-reinforcement-learni-5.md" >}})
-- [从上下文学习比预期更难]({{< relref "posts/20260206-hacker_news-learning-from-context-is-harder-than-we-thought-4.md" >}})
-- [上下文学习难度超出原有认知]({{< relref "posts/20260206-hacker_news-learning-from-context-is-harder-than-we-thought-5.md" >}})
+- [从上下文学习的难度超出预期]({{< relref "posts/20260206-hacker_news-learning-from-context-is-harder-than-we-thought-6.md" >}})
+- [2026年AI展望：LLM、智能体、算力与AGI发展路径]({{< relref "posts/20260201-blogs_podcasts-490-state-of-ai-in-2026-llms-coding-scaling-laws-c-0.md" >}})
+- [通过文本反馈扩展强化学习的能力边界]({{< relref "posts/20260203-arxiv_ai-expanding-the-capabilities-of-reinforcement-learni-5.md" >}})
+- [从上下文学习比预期更难]({{< relref "posts/20260206-hacker_news-learning-from-context-is-harder-than-we-thought-6.md" >}})
+- [上下文学习难度超出原有认知]({{< relref "posts/20260206-hacker_news-learning-from-context-is-harder-than-we-thought-6.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

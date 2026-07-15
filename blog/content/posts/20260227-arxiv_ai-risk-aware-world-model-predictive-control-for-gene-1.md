@@ -21,6 +21,10 @@ description: 以下是针对《Risk-Aware World Model Predictive Control for Gen
 external_url: http://arxiv.org/abs/2602.23259v1
 scenarios:
 - 计算机视觉
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 风险感知世界模型预测控制提升端到端自动驾驶泛化性
@@ -127,9 +131,7 @@ scenarios:
 
 ---
 
-### 深入分析：Risk-Aware World Model Predictive Control for Generalizable End-to-End Autonomous Driving
 
-### 1. 研究背景与问题
 
 ### 核心问题
 该论文致力于解决端到端自动驾驶（E2E-AD）在**分布外泛化**和**长尾场景安全性**方面的核心瓶颈。现有的基于模仿学习的方法在面对训练数据中未见的罕见或危险场景时，往往因缺乏对风险的预判能力而导致决策失效，甚至引发严重事故。
@@ -145,7 +147,6 @@ scenarios:
 ### 为什么重要
 该研究突破了单纯依靠数据堆砌的范式，转向了基于世界模型的认知范式。它试图赋予车辆一种“想象力”，即在行动前预演未来，从而在理论上为解决自动驾驶的长尾安全问题提供了一条更具可解释性和鲁棒性的路径。
 
-### 2. 核心方法与创新
 
 ### 核心方法：RaWMPC 框架
 论文提出了一个名为 **Risk-Aware World Model Predictive Control (RaWMPC)** 的统一框架。该框架包含三个核心组件：
@@ -166,7 +167,6 @@ scenarios:
 *   **可解释性：** 决策不再是黑盒，而是基于对未来轨迹的预测和风险评分。
 *   **无监督/自监督特性：** 减少了对昂贵、稀缺的专家数据的依赖，可以通过与环境交互或非专家数据中学习。
 
-### 3. 理论基础
 
 ### 理论依据
 该方法主要基于 **模型预测控制（MPC）** 和 **基于模型的强化学习** 理论。
@@ -183,7 +183,6 @@ scenarios:
 ### 理论贡献分析
 该工作的理论贡献在于将**鲁棒控制理论**引入了端到端学习。传统的端到端学习往往被视为“开环”或“弱反馈”的系统，而RaWMPC通过闭环预测，理论上保证了决策在动力学上的可行性。
 
-### 7. 学习建议
 
 ### 适合读者
 *   从事自动驾驶决策规划算法研究的工程师和研究生。
@@ -422,8 +421,8 @@ scenarios:
 
 ### 相关文章
 
-- [Waymo 世界模型：端到端自动驾驶的仿真与预测架构]({{< relref "posts/20260207-hacker_news-the-waymo-world-model-1.md" >}})
+- [Waymo 世界模型：端到端自动驾驶的仿真与预测架构]({{< relref "posts/20260206-hacker_news-the-waymo-world-model-a-new-frontier-for-autonomou-4.md" >}})
 - [HERMES：基于视觉语言模型的长尾自动驾驶端到端风险感知系统]({{< relref "posts/20260203-arxiv_ai-hermes-a-holistic-end-to-end-risk-aware-multimodal-6.md" >}})
-- [Waymo 世界模型：利用生成式视频预测驾驶场景]({{< relref "posts/20260206-hacker_news-the-waymo-world-model-0.md" >}})
-- [Waymo世界模型：自动驾驶仿真的新前沿]({{< relref "posts/20260206-hacker_news-the-waymo-world-model-a-new-frontier-for-autonomou-0.md" >}})
+- [Waymo 世界模型：利用生成式视频预测驾驶场景]({{< relref "posts/20260206-hacker_news-the-waymo-world-model-a-new-frontier-for-autonomou-4.md" >}})
+- [Waymo世界模型：自动驾驶仿真的新前沿]({{< relref "posts/20260206-hacker_news-the-waymo-world-model-a-new-frontier-for-autonomou-4.md" >}})
 - [Waymo世界模型：自动驾驶仿真的新前沿]({{< relref "posts/20260206-hacker_news-the-waymo-world-model-a-new-frontier-for-autonomou-4.md" >}})

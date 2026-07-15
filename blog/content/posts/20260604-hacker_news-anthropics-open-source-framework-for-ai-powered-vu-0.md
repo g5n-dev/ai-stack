@@ -1,14 +1,29 @@
 ---
-title: "Anthropic开源AI漏洞发现框架"
-date: 2026-06-04T22:46:26+08:00
+title: Anthropic开源AI漏洞发现框架
+date: 2026-06-04 22:46:26+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI", "漏洞", "框架", "开源", "安全", "自动化", "代码审计", "大模型"]
-categories: ["AI 工程", "安全"]
+entry_kind: auto
+tags:
+- AI
+- 漏洞
+- 框架
+- 开源
+- 安全
+- 自动化
+- 代码审计
+- 大模型
+categories:
+- AI 工程
+- 安全
 source: hacker_news
-description: "Anthropic最新发布的开源框架为自动化漏洞发现提供了新的可能性。该框架利用大语言模型的能力，能够在代码中自主识别潜在安全弱点，相比传统静态分析工具大幅提升了检测范围与准确性。对于安全研究人员和开发团队而言，这一工具可以帮助在开发早期阶段及时发现漏洞，降低后期修复成本，同时减少对专业安全知识的依赖。无论是进行代码审"
+description: Anthropic最新发布的开源框架为自动化漏洞发现提供了新的可能性。该框架利用大语言模型的能力，能够在代码中自主识别潜在安全弱点，相比传统静态分析工具大幅提升了检测范围与准确性。对于安全研究人员和开发团队而言，这一工具可以帮助在开发早期阶段及时发现漏洞，降低后期修复成本，同时减少对专业安全知识的依赖。无论是进行代码审
 external_url: https://github.com/anthropics/defending-code-reference-harness
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Anthropic开源AI漏洞发现框架
@@ -77,9 +92,9 @@ Anthropic推出的开源漏洞发现框架代表了AI安全工具发展的重要
 
 ### 相关文章
 
-- [Agent Skills：AI 智能体技能框架]({{< relref "posts/20260203-hacker_news-agent-skills-1.md" >}})
+- [Agent Skills：AI 智能体技能框架]({{< relref "posts/20260203-hacker_news-agent-skills-0.md" >}})
 - [将个人思维库开源以减少AI重复填表工作]({{< relref "posts/20260303-juejin-我把大脑开源给了ai-0.md" >}})
 - [微软Copilot协作功能存在文件外泄漏洞]({{< relref "posts/20260525-hacker_news-microsoft-copilot-cowork-exfiltrates-files-0.md" >}})
 - [AI 正在摧毁开源生态，且技术尚未成熟]({{< relref "posts/20260223-hacker_news-ai-is-destroying-open-source-and-its-not-even-good-17.md" >}})
-- [不要信任 AI 智能体]({{< relref "posts/20260228-hacker_news-dont-trust-ai-agents-1.md" >}})
+- [不要信任 AI 智能体]({{< relref "posts/20260228-hacker_news-dont-trust-ai-agents-4.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

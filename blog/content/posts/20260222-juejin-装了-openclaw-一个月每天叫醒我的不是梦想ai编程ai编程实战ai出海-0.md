@@ -5,7 +5,7 @@ draft: false
 entry_kind: auto
 tags:
 - OpenClaw
-- AI编程
+- AI 编程
 - AI硬件
 - 开发工具
 - 实战应用
@@ -21,6 +21,12 @@ description: 这是一段关于**OpenClaw（开爪）AI硬件**的推广文案�
 external_url: https://juejin.cn/post/7608393462304800802
 scenarios:
 - AI/ML项目
+aliases:
+- /posts/20260223-juejin-装了-openclaw-一个月每天叫醒我的不是梦想ai编程ai编程实战ai出海-1/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # OpenClaw 体验：AI 编程工具的安装与实战应用
@@ -170,8 +176,8 @@ OpenClaw 适合广泛的开发者群体，特别是那些希望提升编码效�
 
 ### 相关文章
 
-- [LNAI：一次定义 AI 编码工具配置并同步至 Claude 与 Cursor]({{< relref "posts/20260203-hacker_news-lnai-define-ai-coding-tool-configs-once-sync-to-cl-17.md" >}})
-- [Codex 应用：基于 OpenAI 模型的代码生成工具]({{< relref "posts/20260203-hacker_news-the-codex-app-12.md" >}})
-- [OpenAI Codex 应用：VSCode 分支终结与多任务工作树]({{< relref "posts/20260204-blogs_podcasts-ainews-openai-codex-app-death-of-the-vscode-fork-m-3.md" >}})
-- [Codex for macOS：支持多智能体与并行工作流的 AI 编程指挥中心]({{< relref "posts/20260204-blogs_podcasts-introducing-the-codex-app-9.md" >}})
+- [LNAI：一次定义 AI 编码工具配置并同步至 Claude 与 Cursor]({{< relref "posts/20260203-hacker_news-lnai-define-ai-coding-tool-configs-once-sync-to-cl-3.md" >}})
+- [Codex 应用：基于 OpenAI 模型的代码生成工具]({{< relref "posts/20260202-hacker_news-the-codex-app-1.md" >}})
+- [OpenAI Codex 应用：VSCode 分支终结与多任务工作树]({{< relref "posts/20260203-blogs_podcasts-ainews-openai-codex-app-death-of-the-vscode-fork-m-0.md" >}})
+- [Codex for macOS：支持多智能体与并行工作流的 AI 编程指挥中心]({{< relref "posts/20260202-hacker_news-the-codex-app-1.md" >}})
 - [OpenClaw：比Apple Intelligence更实用的本地AI工具]({{< relref "posts/20260205-hacker_news-openclaw-is-what-apple-intelligence-should-have-be-0.md" >}})

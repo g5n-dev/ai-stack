@@ -1,14 +1,30 @@
 ---
-title: "人类与LLM研究想法的差距测量"
-date: 2026-07-02T21:28:58+08:00
+title: 人类与LLM研究想法的差距测量
+date: 2026-07-02 21:28:58+08:00
 draft: false
-entry_kind: "auto"
-tags: ["大模型", "研究想法", "人类对比", "研究品味", "机会模式", "研究范式", "结构偏差", "合成方法"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- 大模型
+- 研究想法
+- 人类对比
+- 研究品味
+- 机会模式
+- 研究范式
+- 结构偏差
+- 合成方法
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "研究框架 从高质量学术论文中提取每篇的核心灵感来源——若干紧密相关的先前工作。利用这些文献的标题和摘要提示大模型生成新研究思路，以模拟人类构思过程。 评价维度 提出两维度研究品味分类表：①机会模式（bridge‑like、增量式、探索式等），②研究范式（合成方法、实证验证、理论推演等）。通过两维度分布对比人类论文引用与"
+description: 研究框架 从高质量学术论文中提取每篇的核心灵感来源——若干紧密相关的先前工作。利用这些文献的标题和摘要提示大模型生成新研究思路，以模拟人类构思过程。
+  评价维度 提出两维度研究品味分类表：①机会模式（bridge‑like、增量式、探索式等），②研究范式（合成方法、实证验证、理论推演等）。通过两维度分布对比人类论文引用与
 external_url: http://arxiv.org/abs/2607.01233v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 人类与LLM研究想法的差距测量
@@ -118,8 +134,8 @@ scenarios: ["Web应用开发"]
 ### 相关文章
 
 - [ARO：面向大模型矩阵优化的新视角]({{< relref "posts/20260210-arxiv_ai-aro-a-new-lens-on-matrix-optimization-for-large-mo-8.md" >}})
-- [BitNet: 100B Param 1-Bit model for local CPUs]({{< relref "posts/20260312-hacker_news-bitnet-100b-param-1-bit-model-for-local-cpus-12.md" >}})
+- [BitNet: 100B Param 1-Bit model for local CPUs]({{< relref "posts/20260311-hacker_news-microsoft-bitnet-100b-param-1-bit-model-for-local--1.md" >}})
 - [SpeechParaling-Bench：副语言学感知语音生成基准]({{< relref "posts/20260423-arxiv_ai-speechparaling-bench-a-comprehensive-benchmark-for-0.md" >}})
-- [副语言感知语音生成基准评测]({{< relref "posts/20260424-arxiv_ai-speechparaling-bench-a-comprehensive-benchmark-for-0.md" >}})
-- [递归多智能体系统研究]({{< relref "posts/20260430-arxiv_ai-recursive-multi-agent-systems-0.md" >}})
+- [副语言感知语音生成基准评测]({{< relref "posts/20260423-arxiv_ai-speechparaling-bench-a-comprehensive-benchmark-for-0.md" >}})
+- [递归多智能体系统研究]({{< relref "posts/20260429-arxiv_ai-recursive-multi-agent-systems-0.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

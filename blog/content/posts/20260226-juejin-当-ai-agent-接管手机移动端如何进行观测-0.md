@@ -21,6 +21,10 @@ description: 以下是对该内容核心要点的简洁总结： **一、 背景
 external_url: https://juejin.cn/post/7610979696307126281
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AI Agent接管手机：移动端观测技术与事件特征提取
@@ -183,8 +187,8 @@ AI Agent 接管手机的关键在于**“观测”**技术。无论是通过底�
 
 ### 相关文章
 
-- [Waymo 世界模型：利用生成式世界模型提升自动驾驶决策能力]({{< relref "posts/20260207-hacker_news-the-waymo-world-model-6.md" >}})
-- [Waymo世界模型：自动驾驶仿真的新前沿]({{< relref "posts/20260206-hacker_news-the-waymo-world-model-a-new-frontier-for-autonomou-0.md" >}})
+- [Waymo 世界模型：利用生成式世界模型提升自动驾驶决策能力]({{< relref "posts/20260206-hacker_news-the-waymo-world-model-a-new-frontier-for-autonomou-4.md" >}})
+- [Waymo世界模型：自动驾驶仿真的新前沿]({{< relref "posts/20260206-hacker_news-the-waymo-world-model-a-new-frontier-for-autonomou-4.md" >}})
 - [Waymo世界模型：自动驾驶仿真的新前沿]({{< relref "posts/20260206-hacker_news-the-waymo-world-model-a-new-frontier-for-autonomou-4.md" >}})
 - [基于GLM-5与OpenClaw构建具备任务执行能力的AI伴侣]({{< relref "posts/20260212-juejin-我用-glm-5-做了个-ai-女友能发自拍发语音还能帮我干活-2.md" >}})
-- [Qwen3.5：迈向原生多模态智能体]({{< relref "posts/20260216-hacker_news-qwen35-towards-native-multimodal-agents-13.md" >}})
+- [Qwen3.5：迈向原生多模态智能体]({{< relref "posts/20260216-hacker_news-qwen35-towards-native-multimodal-agents-3.md" >}})

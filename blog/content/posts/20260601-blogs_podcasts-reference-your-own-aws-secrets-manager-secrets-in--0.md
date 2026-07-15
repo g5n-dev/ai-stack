@@ -1,14 +1,30 @@
 ---
-title: "AWS Secrets Manager为AgentCore Identity新增密钥引用功能，支持直接使用预先"
-date: 2026-06-01T23:28:09+08:00
+title: AWS Secrets Manager为AgentCore Identity新增密钥引用功能，支持直接使用预先
+date: 2026-06-01 23:28:09+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AWS", "密钥管理", "跨账户", "外部连接器", "安全", "Bedrock", "云原生", "Agent"]
-categories: ["AI 工程", "安全"]
+entry_kind: auto
+tags:
+- AWS
+- 密钥管理
+- 跨账户
+- 外部连接器
+- 安全
+- Bedrock
+- 云原生
+- Agent
+categories:
+- AI 工程
+- 安全
 source: blogs_podcasts
-description: "功能概述 亚马逊云服务在AgentCore Identity中新增了引用AWS Secrets Manager密钥的能力。用户可以在AgentCore直接使用已在Secrets Manager中预先配置好的密钥，无需在AgentCore中重新创建，从而复用已有的密钥管理流程。 关键优势 - 完全掌控密钥的加密配置、轮换"
+description: 功能概述 亚马逊云服务在AgentCore Identity中新增了引用AWS Secrets Manager密钥的能力。用户可以在AgentCore直接使用已在Secrets
+  Manager中预先配置好的密钥，无需在AgentCore中重新创建，从而复用已有的密钥管理流程。 关键优势 - 完全掌控密钥的加密配置、轮换
 external_url: https://aws.amazon.com/blogs/machine-learning/reference-your-own-aws-secrets-manager-secrets-in-amazon-bedrock-agentcore-identity
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AWS Secrets Manager为AgentCore Identity新增密钥引用功能，支持直接使用预先配置的密钥并保留完整管理控制权
@@ -164,9 +180,9 @@ AgentCore 通过 `aws:source-arn` 与 Secrets Manager 资源策略配合，在�
 
 ### 相关文章
 
-- [在SageMaker AI上基于Bedrock与LangGraph构建无服务器对话代理]({{< relref "posts/20260303-blogs_podcasts-build-a-serverless-conversational-ai-agent-using-c-11.md" >}})
-- [基于Amazon SageMaker AI构建无服务器对话AI代理]({{< relref "posts/20260303-blogs_podcasts-build-a-serverless-conversational-ai-agent-using-c-13.md" >}})
-- [基于Bedrock与LangGraph在SageMaker构建无服务器对话代理]({{< relref "posts/20260303-blogs_podcasts-build-a-serverless-conversational-ai-agent-using-c-3.md" >}})
-- [基于Bedrock与LangGraph构建SageMaker AI对话代理]({{< relref "posts/20260303-blogs_podcasts-build-a-serverless-conversational-ai-agent-using-c-4.md" >}})
-- [基于Bedrock与LangGraph在SageMaker构建无服务器对话代理]({{< relref "posts/20260304-blogs_podcasts-build-a-serverless-conversational-ai-agent-using-c-12.md" >}})
+- [在SageMaker AI上基于Bedrock与LangGraph构建无服务器对话代理]({{< relref "posts/20260302-blogs_podcasts-build-a-serverless-conversational-ai-agent-using-c-1.md" >}})
+- [基于Amazon SageMaker AI构建无服务器对话AI代理]({{< relref "posts/20260302-blogs_podcasts-build-a-serverless-conversational-ai-agent-using-c-1.md" >}})
+- [基于Bedrock与LangGraph在SageMaker构建无服务器对话代理]({{< relref "posts/20260302-blogs_podcasts-build-a-serverless-conversational-ai-agent-using-c-1.md" >}})
+- [基于Bedrock与LangGraph构建SageMaker AI对话代理]({{< relref "posts/20260302-blogs_podcasts-build-a-serverless-conversational-ai-agent-using-c-1.md" >}})
+- [基于Bedrock与LangGraph在SageMaker构建无服务器对话代理]({{< relref "posts/20260302-blogs_podcasts-build-a-serverless-conversational-ai-agent-using-c-1.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

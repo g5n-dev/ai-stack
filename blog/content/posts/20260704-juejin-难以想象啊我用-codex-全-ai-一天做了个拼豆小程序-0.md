@@ -1,14 +1,29 @@
 ---
-title: "用Codex AI一天开发微信拼豆小程序照片生成图纸功能"
-date: 2026-07-04T19:28:31+08:00
+title: 用Codex AI一天开发微信拼豆小程序照片生成图纸功能
+date: 2026-07-04 19:28:31+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI编程", "微信小程序", "拼豆", "照片处理", "全栈开发", "Codex", "图像生成", "快速开发"]
-categories: ["产品与创业"]
+entry_kind: auto
+tags:
+- AI 编程
+- 微信小程序
+- 拼豆
+- 照片处理
+- 全栈开发
+- Codex
+- 图像生成
+- 快速开发
+categories:
+- 产品与创业
 source: juejin
-description: "背景 我使用 Codex 全 AI 在一天内完成了一个微信小程序——嘎嘎拼豆。 功能 该程序让用户上传任意照片，即可在几秒钟内生成对应的拼豆（Perler bead）图纸和用色清单。核心功能包括：1）自动识别图片主体并裁剪合适尺寸；2）利用 AI 把图片颜色映射到常见的拼豆颜色库；3）输出像素化图纸和色块排列，便于用户"
+description: 背景 我使用 Codex 全 AI 在一天内完成了一个微信小程序——嘎嘎拼豆。 功能 该程序让用户上传任意照片，即可在几秒钟内生成对应的拼豆（Perler
+  bead）图纸和用色清单。核心功能包括：1）自动识别图片主体并裁剪合适尺寸；2）利用 AI 把图片颜色映射到常见的拼豆颜色库；3）输出像素化图纸和色块排列，便于用户
 external_url: https://juejin.cn/post/7658510258419220490
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 用Codex AI一天开发微信拼豆小程序照片生成图纸功能
@@ -102,9 +117,9 @@ AI 代码生成大幅缩短从概念到可运行原型的周期；自然语言�
 
 ### 相关文章
 
-- [Codex 应用：基于 AI 的代码生成与编辑工具]({{< relref "posts/20260203-hacker_news-the-codex-app-1.md" >}})
-- [Codex 应用：基于 OpenAI 模型的代码生成工具]({{< relref "posts/20260203-hacker_news-the-codex-app-12.md" >}})
-- [Codex 应用：基于 GPT-3 的代码生成工具]({{< relref "posts/20260203-hacker_news-the-codex-app-2.md" >}})
-- [Codex App：基于 GPT-3 的代码生成工具]({{< relref "posts/20260203-hacker_news-the-codex-app-3.md" >}})
-- [Codex App：基于自然语言指令的代码生成工具]({{< relref "posts/20260203-hacker_news-the-codex-app-4.md" >}})
+- [Codex 应用：基于 AI 的代码生成与编辑工具]({{< relref "posts/20260202-hacker_news-the-codex-app-1.md" >}})
+- [Codex 应用：基于 OpenAI 模型的代码生成工具]({{< relref "posts/20260202-hacker_news-the-codex-app-1.md" >}})
+- [Codex 应用：基于 GPT-3 的代码生成工具]({{< relref "posts/20260202-hacker_news-the-codex-app-1.md" >}})
+- [Codex App：基于 GPT-3 的代码生成工具]({{< relref "posts/20260202-hacker_news-the-codex-app-1.md" >}})
+- [Codex App：基于自然语言指令的代码生成工具]({{< relref "posts/20260202-hacker_news-the-codex-app-1.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

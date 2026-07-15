@@ -33,7 +33,7 @@ GC/prune 和历史重写。
 | 场景 | 工作流名 | 精确触发器 | 稳定检查/行为 |
 | --- | --- | --- | --- |
 | 功能分支更新、PR 新提交 | `PR CI` | `pull_request` → `main`；`workflow_dispatch` | 单 job `unit-tests`，显示名 `Unit Tests`；同一 PR 的旧运行可取消 |
-| PR 合并或直接推送到 main | `Build and Deploy` | `push` → `main` | 单 job `build-and-deploy`、bot-push 过滤；生成数据只暂存文章和图谱白名单 |
+| PR 合并或直接推送到 main | `Build and Deploy` | `push` → `main` | 单 job `build-and-deploy`、bot-push 过滤；直接验证并部署已评审快照，不运行抓取或改写生成数据 |
 | 周期性采集唤醒 | `Build and Deploy` | `17 * * * *`；`workflow_dispatch` | `cancel-in-progress: false`；候选池历史去重后生成、校验、提交并部署 |
 | 生产巡检 | `System Monitoring & Content Quality Tracking` | `23 */6 * * *`；`workflow_dispatch` | 只读校验 main 与线上 v2 图谱时间、文章数和 JSON 契约，异常非零退出 |
 
@@ -129,6 +129,14 @@ DAG、权限、Environment 和副作用顺序，因此必须在 ruleset、环境
 8. 最后才从 `main` HEAD 移走生成内容；不清理既有 Git 历史。
 
 只要任一门禁缺证据，迁移和去重命令必须 fail closed。时间门禁不能靠伪造时间戳或重复 run ID 补齐。
+
+### 一次性已评审仓库修复
+
+在生成内容尚未完全迁出 `main` 的过渡期，历史污染修复允许使用独立的
+`reviewed_git_repository` 配置，但只能在显式评审的 `codex/` 分支执行：工作树必须干净，计划必须同时
+绑定完整 Git HEAD 与 SHA-256 摘要，变更上限不得超过 10,000，所有受影响文件必须先写入独立回滚备份，
+并通过 PR CI 后合并。该配置只用于一次性、可枚举的仓库修复，不替代日常数据分支去重所需的
+24 次影子运行、3 次完整构建和 7 天稳定期。
 
 ## 回滚
 

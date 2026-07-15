@@ -1,12 +1,29 @@
 ---
-title: "Cloudflare自称实现Matrix？🤥打脸时刻！😱"
-date: 2026-01-27T20:26:59+08:00
+title: Cloudflare自称实现Matrix？🤥打脸时刻！😱
+date: 2026-01-27 20:26:59+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Cloudflare", "Workers", "Matrix", "Rust", "反向代理", "技术驳斥", "无状态", "TCP Sockets"]
-categories: ["系统与基础设施", "后端"]
+entry_kind: auto
+tags:
+- Cloudflare
+- Workers
+- Matrix
+- Rust
+- 反向代理
+- 技术驳斥
+- 无状态
+- TCP Sockets
+categories:
+- 系统与基础设施
+- 后端
 source: hacker_news
 external_url: https://tech.lgbt/@JadedBlueEyes/115967791152135761
+scenarios: []
+aliases:
+- /posts/20260127-hacker_news-cloudflare-claimed-they-implemented-matrix-on-clou-17/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 📰 Cloudflare自称实现Matrix？🤥打脸时刻！😱

@@ -1,14 +1,30 @@
 ---
-title: "AINews：开源模型热潮与模型实验室发展动态"
-date: 2026-06-11T15:09:22+08:00
+title: AINews：开源模型热潮与模型实验室发展动态
+date: 2026-06-11 15:09:22+08:00
 draft: false
-entry_kind: "auto"
-tags: ["开源模型", "大模型", "AI代理", "模型训练", "价值对齐", "AI治理", "技术前沿", "行业动态"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- 开源模型
+- 大模型
+- AI 代理
+- 模型训练
+- 价值对齐
+- AI 治理
+- 技术前沿
+- 行业动态
+categories:
+- 大模型
+- AI 工程
 source: blogs_podcasts
-description: "开放模型的现状与意义 文章指出，开放模型正从研究概念走向实际生态。通过开源权重、训练配方和评估基准，降低了中小企业和独立开发者的进入门槛，促进了模型多样性与安全审计的透明度。开放不仅意味着共享，更是一种对技术路线可控性的探索，让社区可以在开放的环境中快速迭代、发现并修正潜在缺陷。 模型实验室 vs. 代理实验室的定位差"
+description: 开放模型的现状与意义 文章指出，开放模型正从研究概念走向实际生态。通过开源权重、训练配方和评估基准，降低了中小企业和独立开发者的进入门槛，促进了模型多样性与安全审计的透明度。开放不仅意味着共享，更是一种对技术路线可控性的探索，让社区可以在开放的环境中快速迭代、发现并修正潜在缺陷。
+  模型实验室 vs. 代理实验室的定位差
 external_url: https://www.latent.space/p/ainews-open-models-model-labs-vs
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AINews：开源模型热潮与模型实验室发展动态
@@ -135,7 +151,7 @@ Guo认为，未来的竞争焦点不在于模型本身，而在于“不可训�
 
 ### 相关文章
 
-- [Anthropic 放弃核心安全承诺]({{< relref "posts/20260226-hacker_news-anthropic-ditches-its-core-safety-promise-3.md" >}})
+- [Anthropic 放弃核心安全承诺]({{< relref "posts/20260226-hacker_news-anthropic-ditches-its-core-safety-promise-5.md" >}})
 - [五分钟速览近半年LLM发展]({{< relref "posts/20260519-hacker_news-the-last-six-months-in-llms-in-five-minutes-0.md" >}})
 - [Cirrus Labs 团队加入 OpenAI]({{< relref "posts/20260411-hacker_news-cirrus-labs-to-join-openai-0.md" >}})
 - [Mistral AI巴黎峰会参会笔记]({{< relref "posts/20260529-hacker_news-notes-from-the-mistral-ai-now-summit-in-paris-0.md" >}})

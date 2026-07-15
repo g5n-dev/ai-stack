@@ -1,14 +1,24 @@
 ---
-title: "Claude Code Agent Teams多实例协作原理与主流框架对比"
-date: 2026-02-10T21:20:19+08:00
+title: Claude Code Agent Teams多实例协作原理与主流框架对比
+date: 2026-02-10 21:20:19+08:00
 draft: false
-entry_kind: "auto"
-tags: ["juejin"]
-categories: ["效率与方法论"]
+entry_kind: auto
+tags:
+- juejin
+categories:
+- 效率与方法论
 source: juejin
-description: "Claude Opus 4.6 推出的 Agent Teams 功能，让多个 AI 实例协同编写代码成为可能。本文将结合实际项目经验，解析多 Agent 并行工作的底层原理，并对比主流框架的实现差异。通过阅读，你可以了解如何利用这一机制提升开发效率，以及在不同技术栈下选择合适工具的决策依据。"
+description: Claude Opus 4.6 推出的 Agent Teams 功能，让多个 AI 实例协同编写代码成为可能。本文将结合实际项目经验，解析多
+  Agent 并行工作的底层原理，并对比主流框架的实现差异。通过阅读，你可以了解如何利用这一机制提升开发效率，以及在不同技术栈下选择合适工具的决策依据。
 external_url: https://juejin.cn/post/7604678037807988772
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+aliases:
+- /posts/20260211-juejin-claude-code-agent-teams3个ai同时写代码底层原理和主流框架对比-0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Claude Code Agent Teams多实例协作原理与主流框架对比
@@ -179,8 +189,8 @@ Claude Opus 4.6 推出的 Agent Teams 功能，让多个 AI 实例协同编写�
 ### 相关文章
 
 - [Airfoil 2024 发布：支持无损音频流传输至多端设备]({{< relref "posts/20260129-hacker_news-airfoil-2024-5.md" >}})
-- [Airfoil 2024：支持无损音频流传输与多设备同步]({{< relref "posts/20260129-hacker_news-airfoil-2024-7.md" >}})
+- [Airfoil 2024：支持无损音频流传输与多设备同步]({{< relref "posts/20260129-hacker_news-airfoil-2024-5.md" >}})
 - [AI对工程类岗位的影响或与预期不同]({{< relref "posts/20260129-hacker_news-ais-impact-on-engineering-jobs-may-be-different-th-3.md" >}})
-- [Shelvy Books：书籍管理与阅读追踪工具]({{< relref "posts/20260129-hacker_news-show-hn-shelvy-books-15.md" >}})
-- [AI辅助编程如何影响代码技能的形成]({{< relref "posts/20260130-hacker_news-how-ai-assistance-impacts-the-formation-of-coding--10.md" >}})
+- [Shelvy Books：书籍管理与阅读追踪工具]({{< relref "posts/20260129-hacker_news-show-hn-shelvy-books-16.md" >}})
+- [AI辅助编程如何影响代码技能的形成]({{< relref "posts/20260130-hacker_news-way-ai-assistance-impacts-the-formation-of-coding--17.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

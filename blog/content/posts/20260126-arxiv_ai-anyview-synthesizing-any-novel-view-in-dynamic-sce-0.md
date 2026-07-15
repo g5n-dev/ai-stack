@@ -1,12 +1,29 @@
 ---
-title: "🚀动态场景新视角合成！AnyView实现任意视角自由切换！🤯"
-date: 2026-01-26T22:15:20+08:00
+title: 🚀动态场景新视角合成！AnyView实现任意视角自由切换！🤯
+date: 2026-01-26 22:15:20+08:00
 draft: false
-entry_kind: "auto"
-tags: ["动态场景", "新视角合成", "扩散模型", "视频生成", "时空一致性", "零样本", "计算机视觉", "AnyView"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- 动态场景
+- 新视角合成
+- 扩散模型
+- 视频生成
+- 时空一致性
+- 零样本
+- 计算机视觉
+- AnyView
+categories:
+- 大模型
+- 论文
 source: arxiv
 external_url: http://arxiv.org/abs/2601.16982v1
+scenarios: []
+aliases:
+- /posts/20260127-arxiv_ai-anyview-synthesizing-any-novel-view-in-dynamic-sce-0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 📚 🚀动态场景新视角合成！AnyView实现任意视角自由切换！🤯
@@ -375,7 +392,6 @@ AnyView 的理论基石是 **流形学习** 与 **概率扩散模型** 的结合
 - 📉 **克服动态场景中的遮挡与伪影**：通过先进的架构设计，有效解决了动态场景中常见的遮挡问题以及因快速运动产生的模糊伪影，显著提升了重建质量。
 
 ---
-## 🗺️ 学习路径
 
 ## 学习路径
 

@@ -22,6 +22,10 @@ external_url: https://juejin.cn/post/7614889731939909659
 scenarios:
 - 大语言模型
 - RAG应用
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # OpenClaw Skill 系统设计：LLM 按需学习工作流与工具分发机制
@@ -196,7 +200,7 @@ OpenClaw 提倡“低代码”或“配置化”的开发模式。开发者通�
 ### 相关文章
 
 - [深度解析Skill/MCP/RAG等五大AI技术的底层逻辑]({{< relref "posts/20260212-juejin-深入理解skillmcpragagentopenclaw底层逻辑-2.md" >}})
-- [AI工程争议：Harness Engineering是否成立]({{< relref "posts/20260305-blogs_podcasts-ainews-is-harness-engineering-real-8.md" >}})
-- [Balyasny 基于 GPT-5.4 与 Agent 工作流构建 AI 投研引擎]({{< relref "posts/20260307-blogs_podcasts-how-balyasny-asset-management-built-an-ai-research-5.md" >}})
-- [Balyasny 构建 AI 投研引擎：基于 GPT-5.4 与 Agent 工作流]({{< relref "posts/20260309-blogs_podcasts-how-balyasny-asset-management-built-an-ai-research-5.md" >}})
-- [Balyasny 融合 GPT-5.4 与代理工作流构建 AI 投研引擎]({{< relref "posts/20260309-blogs_podcasts-how-balyasny-asset-management-built-an-ai-research-6.md" >}})
+- [AI工程争议：Harness Engineering是否成立]({{< relref "posts/20260305-blogs_podcasts-ainews-is-harness-engineering-real-0.md" >}})
+- [Balyasny 基于 GPT-5.4 与 Agent 工作流构建 AI 投研引擎]({{< relref "posts/20260306-blogs_podcasts-how-balyasny-asset-management-built-an-ai-research-1.md" >}})
+- [Balyasny 构建 AI 投研引擎：基于 GPT-5.4 与 Agent 工作流]({{< relref "posts/20260306-blogs_podcasts-how-balyasny-asset-management-built-an-ai-research-1.md" >}})
+- [Balyasny 融合 GPT-5.4 与代理工作流构建 AI 投研引擎]({{< relref "posts/20260306-blogs_podcasts-how-balyasny-asset-management-built-an-ai-research-1.md" >}})

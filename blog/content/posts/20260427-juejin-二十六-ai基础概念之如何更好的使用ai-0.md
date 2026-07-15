@@ -1,14 +1,29 @@
 ---
-title: "实战AI应用：Agent、Skills、Rules、MCP区别"
-date: 2026-04-27T11:27:45+08:00
+title: 实战AI应用：Agent、Skills、Rules、MCP区别
+date: 2026-04-27 11:27:45+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Agent", "Skills", "Rules", "MCP", "AI应用", "实战", "概念区别", "业务集成"]
-categories: ["AI 工程"]
+entry_kind: auto
+tags:
+- Agent
+- Skills
+- Rules
+- MCP
+- AI 应用
+- 实战
+- 概念区别
+- 业务集成
+categories:
+- AI 工程
 source: juejin
-description: "目标 本节旨在帮助学习者建立可落地的基础认知，核心围绕两个主题： 1. **AI 在实际工作中的使用方式**——如何将 AI 嵌入业务流程、提升效率、支持创新产品。 2. **Agent、Skills、Rules、MCP 的概念区别**——理解各概念的定位、作用范围以及相互关系。 关键概念区别 - **Agent（智能"
+description: 目标 本节旨在帮助学习者建立可落地的基础认知，核心围绕两个主题： 1. **AI 在实际工作中的使用方式**——如何将 AI 嵌入业务流程、提升效率、支持创新产品。
+  2. **Agent、Skills、Rules、MCP 的概念区别**——理解各概念的定位、作用范围以及相互关系。 关键概念区别 - **Agent（智能
 external_url: https://juejin.cn/post/7633205760817758251
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 实战AI应用：Agent、Skills、Rules、MCP区别
@@ -100,8 +115,8 @@ scenarios: ["AI/ML项目"]
 ### 相关文章
 
 - [从聊天机器人到数字员工：解析AI世界的运转逻辑]({{< relref "posts/20260313-juejin-从聊天机器人到超级数字员工一篇文章看懂-ai-世界的运转逻辑-1.md" >}})
-- [Anthropic 发布 MCP Apps 开放标准，定义富生成式 UI 规范]({{< relref "posts/20260129-blogs_podcasts-ainews-anthropic-launches-the-mcp-apps-open-spec-i-9.md" >}})
-- [Agent评估显示AGENTS.md配置优于Skills]({{< relref "posts/20260130-hacker_news-agentsmd-outperforms-skills-in-our-agent-evals-4.md" >}})
-- [Agent评估显示AGENTS.md配置优于Skills]({{< relref "posts/20260130-hacker_news-agentsmd-outperforms-skills-in-our-agent-evals-8.md" >}})
-- [AI vs SaaS：从 OpenClaw 到 MCP UI 的中心化效能]({{< relref "posts/20260208-blogs_podcasts-ainews-ai-vs-saas-the-unreasonable-effectiveness-o-1.md" >}})
+- [Anthropic 发布 MCP Apps 开放标准，定义富生成式 UI 规范]({{< relref "posts/20260127-blogs_podcasts-ainews-anthropic-launches-the-mcp-apps-open-spec-i-1.md" >}})
+- [Agent评估显示AGENTS.md配置优于Skills]({{< relref "posts/20260129-hacker_news-compressed-agentsmd-agent-skills-5.md" >}})
+- [Agent评估显示AGENTS.md配置优于Skills]({{< relref "posts/20260129-hacker_news-compressed-agentsmd-agent-skills-5.md" >}})
+- [AI vs SaaS：从 OpenClaw 到 MCP UI 的中心化效能]({{< relref "posts/20260207-blogs_podcasts-ainews-ai-vs-saas-the-unreasonable-effectiveness-o-0.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

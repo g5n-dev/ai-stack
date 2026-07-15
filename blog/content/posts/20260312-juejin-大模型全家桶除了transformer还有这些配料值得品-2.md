@@ -13,6 +13,10 @@ description: 这份内容主要介绍了大模型架构中除了Transformer核�
 external_url: https://juejin.cn/post/7615972610167980078
 scenarios:
 - Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 大模型技术解析：Transformer架构与RoPE位置编码

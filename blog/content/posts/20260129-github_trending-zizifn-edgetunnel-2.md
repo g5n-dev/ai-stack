@@ -1,13 +1,30 @@
 ---
-title: "在边缘/无服务器运行时中运行 V2ray"
-date: 2026-01-29T06:41:12+08:00
+title: 在边缘/无服务器运行时中运行 V2ray
+date: 2026-01-29 06:41:12+08:00
 draft: false
-entry_kind: "auto"
-tags: ["V2ray", "边缘计算", "Cloudflare Workers", "无服务器", "VLESS", "WebSocket", "JavaScript", "网络代理"]
-categories: ["系统与基础设施", "安全"]
+entry_kind: auto
+tags:
+- V2ray
+- 边缘计算
+- Cloudflare Workers
+- 无服务器
+- VLESS
+- WebSocket
+- JavaScript
+- 网络代理
+categories:
+- 系统与基础设施
+- 安全
 source: github_trending
 external_url: https://github.com/zizifn/edgetunnel
-scenarios: ["安全工具", "云原生/容器", "DevOps/运维"]
+scenarios:
+- 安全工具
+- 云原生/容器
+- DevOps/运维
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 在边缘/无服务器运行时中运行 V2ray
@@ -450,7 +467,6 @@ monitor.print_summary()
 - 校园网国际带宽负载降低40%，节省约30%的带宽扩容成本
 
 ---
-## 对比分析
 
 ## 与同类方案对比
 
@@ -475,7 +491,6 @@ monitor.print_summary()
 - 不足3：免费版有流量和连接数限制
 
 ---
-## 最佳实践
 
 ## 最佳实践指南
 
@@ -556,7 +571,6 @@ monitor.print_summary()
 **注意事项**: 更新前阅读 README 中的变更日志，确认新版本是否需要修改客户端配置方式。
 
 ---
-## 性能优化建议
 
 ## 性能优化建议
 
@@ -655,7 +669,6 @@ BBR 算法在高延迟或丢包网络中表现优于传统 Cubic 算法，可显
 - 该工具完全开源免费，为用户提供了零成本搭建代理服务的可行方案。
 
 ---
-## 学习路径
 
 ## 学习路径
 
@@ -823,9 +836,9 @@ BBR 算法在高延迟或丢包网络中表现优于传统 Cubic 算法，可显
 
 ### 相关文章
 
-- [🚀B站API神库！开源界新宠🔥开发者必备！]({{< relref "posts/20260128-github_trending-socialsisteryi-bilibili-api-collect-8.md" >}})
+- [🚀B站API神库！开源界新宠🔥开发者必备！]({{< relref "posts/20260127-github_trending-socialsisteryi-bilibili-api-collect-8.md" >}})
 - [✨无需重构！直接将应用迁移至Cloudflare Workers！🚀]({{< relref "posts/20260126-hacker_news-you-can-just-port-things-to-cloudflare-workers-6.md" >}})
-- [🤥Cloudflare谎称实现Matrix？真相让人震惊！💥]({{< relref "posts/20260127-hacker_news-cloudflare-claimed-they-implemented-matrix-on-clou-17.md" >}})
+- [🤥Cloudflare谎称实现Matrix？真相让人震惊！💥]({{< relref "posts/20260127-hacker_news-cloudflare-claimed-they-implemented-matrix-on-clou-15.md" >}})
 - [🛰️无网也能上网！背包卫星广播方案：随时随地连世界！]({{< relref "posts/20260127-hacker_news-knapsack-offline-internet-solution-satellite-datac-19.md" >}})
 - [Shadowrocket 广告过滤规则库：每日更新与多规则支持]({{< relref "posts/20260129-github_trending-johnshall-shadowrocket-adblock-rules-forever-8.md" >}})
 *这篇文章由 AI Stack 自动生成，包含多次大模型调用，提供深度的结构化分析。*

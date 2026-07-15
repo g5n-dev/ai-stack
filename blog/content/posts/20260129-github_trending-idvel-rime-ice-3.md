@@ -1,13 +1,30 @@
 ---
-title: "Rime 配置雾凇拼音：长期维护的简体词库"
-date: 2026-01-29T06:41:12+08:00
+title: Rime 配置雾凇拼音：长期维护的简体词库
+date: 2026-01-29 06:41:12+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Rime", "输入法", "Lua", "雾凇拼音", "词库", "双拼", "开源", "工具配置"]
-categories: ["开源生态", "效率与方法论"]
+entry_kind: auto
+tags:
+- Rime
+- 输入法
+- Lua
+- 雾凇拼音
+- 词库
+- 双拼
+- 开源
+- 工具配置
+categories:
+- 开源生态
+- 效率与方法论
 source: github_trending
 external_url: https://github.com/iDvel/rime-ice
-scenarios: ["效率工具", "桌面应用", "自然语言处理"]
+scenarios:
+- 效率工具
+- 桌面应用
+- 自然语言处理
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Rime 配置雾凇拼音：长期维护的简体词库
@@ -539,7 +556,6 @@ if release:
 - 审核周期从平均7天缩短至2天，文档更新延迟减少70%。
 
 ---
-## 对比分析
 
 ## 与同类方案对比
 
@@ -565,7 +581,6 @@ if release:
 - 不足3：文档分散，学习成本较高
 
 ---
-## 最佳实践
 
 ## 最佳实践指南
 
@@ -661,7 +676,6 @@ if release:
 **注意事项**: 精简词库前请做好备份，避免删减后影响日常常用词汇的输入。
 
 ---
-## 性能优化建议
 
 ## 性能优化建议
 
@@ -752,7 +766,6 @@ if release:
 - 通过模块化设计，用户可以灵活启用或禁用特定功能，避免冗余配置。
 
 ---
-## 学习路径
 
 ## 学习路径
 
@@ -966,7 +979,7 @@ if release:
 
 - [Eric S. Raymond 撰写：如何正确提问以获得技术答案]({{< relref "posts/20260129-github_trending-ryanhanwu-how-to-ask-questions-the-smart-way-5.md" >}})
 - [🚀Emissary：超快开源Java消息库！颠覆性能极限？]({{< relref "posts/20260126-hacker_news-emissary-a-fast-open-source-java-messaging-library-9.md" >}})
-- [🌍NVIDIA Earth-2开放模型覆盖全气象栈！精准预测未来🌦️]({{< relref "posts/20260127-blogs_podcasts-nvidia-earth-2-open-models-span-the-whole-weather--5.md" >}})
+- [🌍NVIDIA Earth-2开放模型覆盖全气象栈！精准预测未来🌦️]({{< relref "posts/20260126-blogs_podcasts-nvidia-earth-2-open-models-span-the-whole-weather--0.md" >}})
 - [🚀AI2重磅发布：开放式编程智能体！代码自动生成新纪元！]({{< relref "posts/20260127-hacker_news-ai2-open-coding-agents-11.md" >}})
-- [Xfce要上Wayland了！🚀 路线图首曝🗺️]({{< relref "posts/20260127-hacker_news-xfwl4-the-roadmap-for-a-xfce-wayland-compositor-16.md" >}})
+- [Xfce要上Wayland了！🚀 路线图首曝🗺️]({{< relref "posts/20260127-hacker_news-xfwl4-the-roadmap-for-a-xfce-wayland-compositor-0.md" >}})
 *这篇文章由 AI Stack 自动生成，包含多次大模型调用，提供深度的结构化分析。*

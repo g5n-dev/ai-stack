@@ -1,14 +1,31 @@
 ---
-title: "VTJ.PRO：Vue 3开源AI低代码平台核心解析"
-date: 2026-04-21T22:15:28+08:00
+title: VTJ.PRO：Vue 3开源AI低代码平台核心解析
+date: 2026-04-21 22:15:28+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Vue3", "低代码", "AI辅助", "开源", "双向代码转换", "前端开发", "开发效率", "Vue生态"]
-categories: ["前端", "开源生态"]
+entry_kind: auto
+tags:
+- Vue3
+- 低代码
+- AI辅助
+- 开源
+- 双向代码转换
+- 前端开发
+- 开发效率
+- Vue生态
+categories:
+- 前端
+- 开源生态
 source: juejin
-description: "VTJ.PRO 是面向 Vue 3 生态的开源“AI + 低代码”开发平台，旨在兼顾低代码的高效与手写代码的灵活。平台围绕两大核心能力展开： 双向代码转换 - **可视化→代码**：通过拖拽、属性配置等低代码 UI 编辑器，直接生成符合 Vue 3 Composition API 与 TypeScript 的单文件组件"
+description: VTJ.PRO 是面向 Vue 3 生态的开源“AI + 低代码”开发平台，旨在兼顾低代码的高效与手写代码的灵活。平台围绕两大核心能力展开：
+  双向代码转换 - **可视化→代码**：通过拖拽、属性配置等低代码 UI 编辑器，直接生成符合 Vue 3 Composition API 与 TypeScript
+  的单文件组件
 external_url: https://juejin.cn/post/7631118732268142602
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # VTJ.PRO：Vue 3开源AI低代码平台核心解析
@@ -116,7 +133,7 @@ VTJ.PRO 作为 Vue 3 生态下的“AI+低代码”平台，在技术创新层�
 
 - [JeecgBoot：集成AI低代码与代码生成器的企业级开发平台]({{< relref "posts/20260129-github_trending-jeecgboot-jeecgboot-7.md" >}})
 - [基于 ASCII 草图与 AI 快速生成前端代码]({{< relref "posts/20260217-juejin-用-ascii-草图-ai-快速生成前端代码-1.md" >}})
-- [JeecgBoot：集成AI低代码平台与代码生成器的Java开发框架]({{< relref "posts/20260129-github_trending-jeecgboot-jeecgboot-3.md" >}})
-- [利用 Gradio gr.HTML 组件一键封装任意 Web 应用]({{< relref "posts/20260219-blogs_podcasts-one-shot-any-web-app-with-gradios-grhtml-9.md" >}})
-- [JeecgBoot：集成AI低代码平台与代码生成器的企业级开发方案]({{< relref "posts/20260227-github_trending-jeecgboot-jeecgboot-6.md" >}})
+- [JeecgBoot：集成AI低代码平台与代码生成器的Java开发框架]({{< relref "posts/20260129-github_trending-jeecgboot-jeecgboot-7.md" >}})
+- [利用 Gradio gr.HTML 组件一键封装任意 Web 应用]({{< relref "posts/20260218-blogs_podcasts-one-shot-any-web-app-with-gradios-grhtml-8.md" >}})
+- [JeecgBoot：集成AI低代码平台与代码生成器的企业级开发方案]({{< relref "posts/20260129-github_trending-jeecgboot-jeecgboot-7.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

@@ -4,23 +4,11 @@
 <!DOCTYPE html>
 <html class="dark" lang="{{ .Site.LanguageCode }}">
 <head>
-    {{ partial "site-head.html" (dict "Page" . "Title" (printf "%s - %s" $termTitle .Site.Title) "Canonical" ($paginator.URL | absURL) "Scripts" (slice "/js/terminal.js")) }}
+    {{ partial "site-head.html" (dict "Page" . "Title" (printf "%s - %s" $termTitle .Site.Title) "Canonical" ($paginator.URL | absURL) "Scripts" (slice ("js/terminal.js" | relURL))) }}
 </head>
 <body data-pagefind-ignore="all" class="bg-deep-navy selection:bg-muted-teal selection:text-deep-navy font-display">
     <div class="relative flex min-h-screen w-full flex-col">
-        <header class="w-full border-b border-muted-teal/20 bg-deep-navy">
-            <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between gap-6">
-                <a href="/" class="flex items-center gap-3 text-primary">
-                    <span class="material-symbols-outlined text-2xl" aria-hidden="true">terminal</span>
-                    <span class="text-lg font-bold tracking-widest">{{ .Site.Title }}</span>
-                </a>
-                <nav aria-label="主导航" class="flex flex-wrap justify-end gap-5 text-xs text-off-white/70">
-                    {{ range .Site.Menus.main }}
-                    <a class="hover:text-primary" href="{{ .URL }}">{{ .Name }}</a>
-                    {{ end }}
-                </nav>
-            </div>
-        </header>
+        {{ partial "site-header.html" . }}
 
         <main class="flex-1 w-full px-4 md:px-8 py-10">
             <div class="w-full max-w-4xl mx-auto">

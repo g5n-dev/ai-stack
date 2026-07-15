@@ -1,12 +1,29 @@
 ---
-title: "🚀网站合规必备！首个欧盟主权审计工具，你的网站合规了吗？"
-date: 2026-01-27T17:33:25+08:00
+title: 🚀网站合规必备！首个欧盟主权审计工具，你的网站合规了吗？
+date: 2026-01-27 17:33:25+08:00
 draft: false
-entry_kind: "auto"
-tags: ["数字主权", "GDPR", "合规审计", "数据隐私", "欧盟", "开源工具", "网站安全", "基础设施"]
-categories: ["安全", "开发工具"]
+entry_kind: auto
+tags:
+- 数字主权
+- GDPR
+- 合规审计
+- 数据隐私
+- 欧盟
+- 开源工具
+- 网站安全
+- 基础设施
+categories:
+- 安全
+- 开发工具
 source: hacker_news
 external_url: https://lightwaves.io/en/eu-audit
+scenarios: []
+aliases:
+- /posts/20260127-hacker_news-show-hn-we-built-the-1-eu-sovereignty-audit-for-we-19/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 📰 🚀网站合规必备！首个欧盟主权审计工具，你的网站合规了吗？
@@ -181,7 +198,6 @@ external_url: https://lightwaves.io/en/eu-audit
 📉 **供应商锁定解除**：减少了 3 个关键路径上的美国技术供应商，提高了系统的自主可控性。
 
 ---
-## ✅ 最佳实践
 
 ## 最佳实践指南：建立数字主权审计工具
 

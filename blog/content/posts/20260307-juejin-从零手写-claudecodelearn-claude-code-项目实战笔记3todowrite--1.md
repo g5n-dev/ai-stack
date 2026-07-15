@@ -4,7 +4,7 @@ date: 2026-03-07 10:58:39+08:00
 draft: false
 entry_kind: auto
 tags:
-- ClaudeCode
+- Claude Code
 - Agent
 - LLM
 - 长链路
@@ -21,6 +21,10 @@ description: 本文总结《从零手写 ClaudeCode：learn-claude-code 项目�
 external_url: https://juejin.cn/post/7614205951298355246
 scenarios:
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # learn-claude-code 实战：用 TodoWrite 解决长链路健忘
@@ -165,8 +169,8 @@ TodoWrite 是 learn-claude-code 项目中的一个核心模块，专注于通过
 
 ### 相关文章
 
-- [Context Graphs与Agent Traces技术解析]({{< relref "posts/20260204-blogs_podcasts-ainews-context-graphs-and-agent-traces-2.md" >}})
-- [Context Graphs与Agent Traces：解析AI系统的上下文与追踪技术]({{< relref "posts/20260205-blogs_podcasts-ainews-context-graphs-and-agent-traces-5.md" >}})
-- [Moltis：具备记忆、工具与技能扩展能力的AI助手]({{< relref "posts/20260213-hacker_news-show-hn-moltis-ai-assistant-with-memory-tools-and--15.md" >}})
-- [Moltis：具备记忆、工具调用及自扩展技能的AI助手]({{< relref "posts/20260214-hacker_news-show-hn-moltis-ai-assistant-with-memory-tools-and--16.md" >}})
+- [Context Graphs与Agent Traces技术解析]({{< relref "posts/20260204-blogs_podcasts-ainews-context-graphs-and-agent-traces-0.md" >}})
+- [Context Graphs与Agent Traces：解析AI系统的上下文与追踪技术]({{< relref "posts/20260204-blogs_podcasts-ainews-context-graphs-and-agent-traces-0.md" >}})
+- [Moltis：具备记忆、工具与技能扩展能力的AI助手]({{< relref "posts/20260213-hacker_news-show-hn-moltis-ai-assistant-with-memory-tools-and--7.md" >}})
+- [Moltis：具备记忆、工具调用及自扩展技能的AI助手]({{< relref "posts/20260213-hacker_news-show-hn-moltis-ai-assistant-with-memory-tools-and--7.md" >}})
 - [基于Spring AI构建类OpenClaw自主Agent的实现方案]({{< relref "posts/20260302-juejin-spring-ai-实战从零构建类-openclaw-的自主-agent-2.md" >}})

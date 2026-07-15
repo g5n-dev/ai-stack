@@ -1,14 +1,29 @@
 ---
-title: "AI不一定能加快工作流程的原因分析"
-date: 2026-05-17T15:13:06+08:00
+title: AI不一定能加快工作流程的原因分析
+date: 2026-05-17 15:13:06+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI效率", "工作流程", "生产力悖论", "流程优化", "工具局限", "人机协作", "LLM", "预期管理"]
-categories: ["效率与方法论"]
+entry_kind: auto
+tags:
+- AI效率
+- 工作流程
+- 生产力悖论
+- 流程优化
+- 工具局限
+- 人机协作
+- LLM
+- 预期管理
+categories:
+- 效率与方法论
 source: hacker_news
-description: "在企业纷纷引入AI期望实现流程加速的背景下，实际效果常常与预期不符。本文通过案例分析与数据对比，揭示AI在流程优化中的局限性，并探讨其对组织效率和成本的真实影响。阅读后，你将掌握评估AI实际价值的思路，避免盲目投入导致的资源浪费。了解这些关键点后，你可以更有针对性地规划AI部署路径。"
+description: 在企业纷纷引入AI期望实现流程加速的背景下，实际效果常常与预期不符。本文通过案例分析与数据对比，揭示AI在流程优化中的局限性，并探讨其对组织效率和成本的真实影响。阅读后，你将掌握评估AI实际价值的思路，避免盲目投入导致的资源浪费。了解这些关键点后，你可以更有针对性地规划AI部署路径。
 external_url: https://frederickvanbrabant.com/blog/2026-05-15-i-dont-think-ai-will-make-your-processes-go-faster
-scenarios: ["AI/ML项目", "大语言模型"]
+scenarios:
+- AI/ML项目
+- 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AI不一定能加快工作流程的原因分析
@@ -82,8 +97,8 @@ scenarios: ["AI/ML项目", "大语言模型"]
 ### 相关文章
 
 - [AI不是同事而是外骨骼：增强人类能力的工具定位]({{< relref "posts/20260219-hacker_news-ai-is-not-a-coworker-its-an-exoskeleton-9.md" >}})
-- [AI不是同事而是外骨骼：增强人类能力的本质]({{< relref "posts/20260220-hacker_news-ai-is-not-a-coworker-its-an-exoskeleton-11.md" >}})
-- [AI不是同事而是外骨骼：增强人类能力的角色定位]({{< relref "posts/20260220-hacker_news-ai-is-not-a-coworker-its-an-exoskeleton-18.md" >}})
-- [AI不是同事而是外骨骼：增强人类能力的定位]({{< relref "posts/20260220-hacker_news-ai-is-not-a-coworker-its-an-exoskeleton-7.md" >}})
-- [智能体时代应重探文学化编程范式]({{< relref "posts/20260308-hacker_news-we-should-revisit-literate-programming-in-the-agen-2.md" >}})
+- [AI不是同事而是外骨骼：增强人类能力的本质]({{< relref "posts/20260219-hacker_news-ai-is-not-a-coworker-its-an-exoskeleton-9.md" >}})
+- [AI不是同事而是外骨骼：增强人类能力的角色定位]({{< relref "posts/20260219-hacker_news-ai-is-not-a-coworker-its-an-exoskeleton-9.md" >}})
+- [AI不是同事而是外骨骼：增强人类能力的定位]({{< relref "posts/20260219-hacker_news-ai-is-not-a-coworker-its-an-exoskeleton-9.md" >}})
+- [智能体时代应重探文学化编程范式]({{< relref "posts/20260308-hacker_news-we-should-revisit-literate-programming-in-the-agen-8.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

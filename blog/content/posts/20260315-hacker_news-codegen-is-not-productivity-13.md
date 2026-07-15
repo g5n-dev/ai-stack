@@ -10,7 +10,7 @@ tags:
 - LLM
 - DevEx
 - 软件工程
-- AI辅助编程
+- AI 辅助编程
 - 技术管理
 categories:
 - 效率与方法论
@@ -21,6 +21,10 @@ external_url: https://www.antifound.com/posts/codegen-is-not-productivity
 scenarios:
 - 大语言模型
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # CodeGen并非工程效能：代码生成与生产力的本质差异

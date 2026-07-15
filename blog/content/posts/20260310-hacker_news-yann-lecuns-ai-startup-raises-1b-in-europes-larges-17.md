@@ -20,6 +20,12 @@ description: Yann LeCun 联合创立的 AI 初创公司近日完成了 10 亿美
 external_url: https://www.ft.com/content/e5245ec3-1a58-4eff-ab58-480b6259aaf1
 scenarios:
 - AI/ML项目
+aliases:
+- /posts/20260310-hacker_news-yann-lecuns-ai-startup-raises-1b-in-europes-larges-13/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Y AI获10亿美元种子轮融资，系欧洲迄今最大规模

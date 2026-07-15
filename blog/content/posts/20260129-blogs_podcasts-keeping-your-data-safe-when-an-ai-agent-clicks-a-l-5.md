@@ -1,13 +1,32 @@
 ---
-title: "OpenAI 如何防范 AI 代理点击链接时的数据泄露与提示注入"
-date: 2026-01-29T05:01:24+08:00
+title: OpenAI 如何防范 AI 代理点击链接时的数据泄露与提示注入
+date: 2026-01-29 05:01:24+08:00
 draft: false
-entry_kind: "auto"
-tags: ["OpenAI", "AI Agent", "安全防护", "数据泄露", "提示注入", "沙箱隔离", "URL过滤", "隐私保护"]
-categories: ["安全", "大模型"]
+entry_kind: auto
+tags:
+- OpenAI
+- AI Agent
+- 安全防护
+- 数据泄露
+- 提示注入
+- 沙箱隔离
+- URL过滤
+- 隐私保护
+categories:
+- 安全
+- 大模型
 source: blogs_podcasts
 external_url: https://openai.com/index/ai-agent-link-safety
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+aliases:
+- /posts/20260129-blogs_podcasts-keeping-your-data-safe-when-an-ai-agent-clicks-a-l-6/
+- /posts/20260129-blogs_podcasts-keeping-your-data-safe-when-an-ai-agent-clicks-a-l-7/
+- /posts/20260129-blogs_podcasts-keeping-your-data-safe-when-an-ai-agent-clicks-a-l-8/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # OpenAI 如何防范 AI 代理点击链接时的数据泄露与提示注入
@@ -243,7 +262,6 @@ OpenAI通过构建基于沙箱的隔离环境、严格的流量过滤规则以�
     *   **观察窗口**：随着Agent能力的提升，观察是否有新的绕过这些防御手段的攻击论文发布（如“多模态注入”）。
 
 ---
-## 最佳实践
 
 ## 最佳实践指南
 
@@ -353,9 +371,9 @@ OpenAI通过构建基于沙箱的隔离环境、严格的流量过滤规则以�
 
 ### 相关文章
 
-- [🚨SoundCloud数据泄露！你的密码是否已遭泄露？快查！🔥]({{< relref "posts/20260127-hacker_news-soundcloud-data-breach-now-on-haveibeenpwned-3.md" >}})
+- [🚨SoundCloud数据泄露！你的密码是否已遭泄露？快查！🔥]({{< relref "posts/20260127-hacker_news-soundcloud-data-breach-now-on-haveibeenpwned-8.md" >}})
 - [🚨SoundCloud数据泄露！HaveIBeenPwned紧急更新！]({{< relref "posts/20260127-hacker_news-soundcloud-data-breach-now-on-haveibeenpwned-8.md" >}})
-- [⚠️FBI紧急调查！Signal聊天记录竟被追踪？ICE引发隐私大地震！🔓]({{< relref "posts/20260128-hacker_news-fbi-is-investigating-minnesota-signal-chats-tracki-14.md" >}})
-- [🚨SoundCloud数据泄露！你的账号是否已在HaveIBeenPwned“上榜”？]({{< relref "posts/20260128-hacker_news-soundcloud-data-breach-now-on-haveibeenpwned-13.md" >}})
+- [⚠️FBI紧急调查！Signal聊天记录竟被追踪？ICE引发隐私大地震！🔓]({{< relref "posts/20260127-hacker_news-fbi-is-investigating-minnesota-signal-chats-tracki-5.md" >}})
+- [🚨SoundCloud数据泄露！你的账号是否已在HaveIBeenPwned“上榜”？]({{< relref "posts/20260127-hacker_news-soundcloud-data-breach-now-on-haveibeenpwned-8.md" >}})
 - [Deep Researcher：结合序列规划反思与候选交叉的深度研究框架]({{< relref "posts/20260129-arxiv_ai-deep-researcher-with-sequential-plan-reflection-an-9.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

@@ -1,14 +1,29 @@
 ---
-title: "构建可靠的AI智能体系统"
-date: 2026-06-21T06:16:12+08:00
+title: 构建可靠的AI智能体系统
+date: 2026-06-21 06:16:12+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI智能体", "Agentic AI", "系统可靠性", "架构设计", "LLM", "工程实践", "智能代理", "AI系统"]
-categories: ["大模型"]
+entry_kind: auto
+tags:
+- AI 智能体
+- Agentic AI
+- 系统可靠性
+- 架构设计
+- LLM
+- 工程实践
+- 智能代理
+- AI系统
+categories:
+- 大模型
 source: hacker_news
-description: "随着 AI agent 在业务场景中的渗透，构建可靠、可控的代理系统已成为工程团队的核心挑战。本文从架构设计、错误恢复和监控三个维度，系统阐述实现可靠性的关键技术与最佳实践。阅读后，开发者可以直接在项目中落地安全的事务处理、异常捕获和持续评估机制，显著提升系统的鲁棒性与用户信任。"
+description: 随着 AI agent 在业务场景中的渗透，构建可靠、可控的代理系统已成为工程团队的核心挑战。本文从架构设计、错误恢复和监控三个维度，系统阐述实现可靠性的关键技术与最佳实践。阅读后，开发者可以直接在项目中落地安全的事务处理、异常捕获和持续评估机制，显著提升系统的鲁棒性与用户信任。
 external_url: https://martinfowler.com/articles/reliable-llm-bayer.html
-scenarios: ["AI/ML项目", "大语言模型"]
+scenarios:
+- AI/ML项目
+- 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 构建可靠的AI智能体系统
@@ -77,9 +92,9 @@ scenarios: ["AI/ML项目", "大语言模型"]
 
 ### 相关文章
 
-- [Lendi 基于 Amazon Bedrock 16 周构建 AI 贷款助手]({{< relref "posts/20260304-blogs_podcasts-how-lendi-revamped-the-refinance-journey-for-its-c-14.md" >}})
 - [Lendi 基于 Amazon Bedrock 16 周构建 AI 贷款助手]({{< relref "posts/20260303-blogs_podcasts-how-lendi-revamped-the-refinance-journey-for-its-c-5.md" >}})
-- [Lendi利用Amazon Bedrock构建AI贷款助手优化再贷流程]({{< relref "posts/20260304-blogs_podcasts-how-lendi-revamped-the-refinance-journey-for-its-c-12.md" >}})
-- [Lendi 基于 Amazon Bedrock 构建智能抵押贷款助手]({{< relref "posts/20260304-blogs_podcasts-how-lendi-revamped-the-refinance-journey-for-its-c-9.md" >}})
-- [Lendi 基于 Amazon Bedrock 构建智能房贷助手的实践]({{< relref "posts/20260305-blogs_podcasts-how-lendi-revamped-the-refinance-journey-for-its-c-14.md" >}})
+- [Lendi 基于 Amazon Bedrock 16 周构建 AI 贷款助手]({{< relref "posts/20260303-blogs_podcasts-how-lendi-revamped-the-refinance-journey-for-its-c-5.md" >}})
+- [Lendi利用Amazon Bedrock构建AI贷款助手优化再贷流程]({{< relref "posts/20260303-blogs_podcasts-how-lendi-revamped-the-refinance-journey-for-its-c-5.md" >}})
+- [Lendi 基于 Amazon Bedrock 构建智能抵押贷款助手]({{< relref "posts/20260303-blogs_podcasts-how-lendi-revamped-the-refinance-journey-for-its-c-5.md" >}})
+- [Lendi 基于 Amazon Bedrock 构建智能房贷助手的实践]({{< relref "posts/20260303-blogs_podcasts-how-lendi-revamped-the-refinance-journey-for-its-c-5.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

@@ -1,14 +1,30 @@
 ---
-title: "Amazon Bedrock AgentCore网络搜索功能详解"
-date: 2026-06-19T18:15:00+08:00
+title: Amazon Bedrock AgentCore网络搜索功能详解
+date: 2026-06-19 18:15:00+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Bedrock", "代理", "网络搜索", "插件", "实时检索", "大模型", "LLM", "云服务"]
-categories: ["AI 工程"]
+entry_kind: auto
+tags:
+- Bedrock
+- 代理
+- 网络搜索
+- 插件
+- 实时检索
+- 大模型
+- LLM
+- 云服务
+categories:
+- AI 工程
 source: blogs_podcasts
-description: "功能特点 - 作为 Bedrock AgentCore 的插件提供，实时检索网页信息。 - 可自定义检索范围、过滤规则和结果截取方式，提升答案准确率。 - 与现有 AgentCore 工作流无缝对接，无需额外基础设施。 为何重要 - 弥补大模型训练数据的时效性缺陷，让 Agent 在运行时获取最新信息。 - 省去自行搭"
+description: 功能特点 - 作为 Bedrock AgentCore 的插件提供，实时检索网页信息。 - 可自定义检索范围、过滤规则和结果截取方式，提升答案准确率。
+  - 与现有 AgentCore 工作流无缝对接，无需额外基础设施。 为何重要 - 弥补大模型训练数据的时效性缺陷，让 Agent 在运行时获取最新信息。 - 省去自行搭
 external_url: https://aws.amazon.com/blogs/machine-learning/introducing-web-search-on-amazon-bedrock-agentcore
-scenarios: ["大语言模型", "AI/ML项目"]
+scenarios:
+- 大语言模型
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Amazon Bedrock AgentCore网络搜索功能详解
@@ -180,8 +196,8 @@ Web Search 作为一种外部信息获取能力，被抽象为 Amazon Bedrock Ag
 ### 相关文章
 
 - [MosaicLeaks：研究代理能否保守秘密]({{< relref "posts/20260618-blogs_podcasts-mosaicleaks-can-your-research-agent-keep-a-secret-0.md" >}})
-- [中国开源AI生态架构选择：DeepSeek之外的技术路径]({{< relref "posts/20260129-blogs_podcasts-architectural-choices-in-chinas-open-source-ai-eco-9.md" >}})
-- [Claude Opus 4.6 发布]({{< relref "posts/20260206-hacker_news-claude-opus-46-3.md" >}})
-- [MDST引擎：基于WebGPU/WASM在浏览器运行GGUF模型]({{< relref "posts/20260215-hacker_news-mdst-engine-run-gguf-models-in-the-browser-with-we-17.md" >}})
+- [中国开源AI生态架构选择：DeepSeek之外的技术路径]({{< relref "posts/20260127-blogs_podcasts-architectural-choices-in-chinas-open-source-ai-eco-0.md" >}})
+- [Claude Opus 4.6 发布]({{< relref "posts/20260205-hacker_news-claude-opus-46-2.md" >}})
+- [MDST引擎：基于WebGPU/WASM在浏览器运行GGUF模型]({{< relref "posts/20260215-hacker_news-mdst-engine-run-gguf-models-in-the-browser-with-we-19.md" >}})
 - [Pi for Excel：基于 Pi 模型的 Excel 侧边栏 AI 助手]({{< relref "posts/20260220-hacker_news-pi-for-excel-ai-sidebar-add-in-for-excel-powered-b-5.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

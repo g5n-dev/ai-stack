@@ -1,14 +1,29 @@
 ---
-title: "PP-OCRv6登陆Hugging Face：支持50语言OCR"
-date: 2026-06-22T16:02:23+08:00
+title: PP-OCRv6登陆Hugging Face：支持50语言OCR
+date: 2026-06-22 16:02:23+08:00
 draft: false
-entry_kind: "auto"
-tags: ["OCR", "PP-OCRv6", "Hugging Face", "多语言", "文字识别", "开源模型", "模型压缩", "飞桨"]
-categories: ["AI 工程", "开源生态"]
+entry_kind: auto
+tags:
+- OCR
+- PP-OCRv6
+- Hugging Face
+- 多语言
+- 文字识别
+- 开源模型
+- 模型压缩
+- 飞桨
+categories:
+- AI 工程
+- 开源生态
 source: blogs_podcasts
-description: "PP-OCRv6已在Hugging Face平台正式发布，标志着多语言文字识别技术的重要进展。该模型从早期的轻量化版本扩展至完整版本（参数规模从1.5M增长至34.5M），识别能力得到显著提升。通过支持50种语言的文字识别，开发者能够在全球范围内更便捷地应用OCR技术。本文将解析新版本的核心改进点、技术实现细节以及实际"
+description: PP-OCRv6已在Hugging Face平台正式发布，标志着多语言文字识别技术的重要进展。该模型从早期的轻量化版本扩展至完整版本（参数规模从1.5M增长至34.5M），识别能力得到显著提升。通过支持50种语言的文字识别，开发者能够在全球范围内更便捷地应用OCR技术。本文将解析新版本的核心改进点、技术实现细节以及实际
 external_url: https://huggingface.co/blog/PaddlePaddle/pp-ocrv6
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # PP-OCRv6登陆Hugging Face：支持50语言OCR
@@ -118,7 +133,7 @@ PP‑OCRv6 在 Hugging Face 平台实现从 1.5M 参数的轻量检测模型�
 
 - [Sarvam 105B：首个具备竞争力的印度开源大模型]({{< relref "posts/20260307-hacker_news-sarvam-105b-the-first-competitive-indian-open-sour-9.md" >}})
 - [LeRobot v0.5.0 发布：扩展数据、算法与硬件支持]({{< relref "posts/20260309-blogs_podcasts-lerobot-v050-scaling-every-dimension-4.md" >}})
-- [LeRobot v0.5.0：扩展数据、算法与硬件支持]({{< relref "posts/20260309-blogs_podcasts-lerobot-v050-scaling-every-dimension-8.md" >}})
-- [LeRobot v0.5.0：全维度扩展与规模化升级]({{< relref "posts/20260310-blogs_podcasts-lerobot-v050-scaling-every-dimension-10.md" >}})
-- [LeRobot v0.5.0：扩展数据、模型与硬件维度]({{< relref "posts/20260310-blogs_podcasts-lerobot-v050-scaling-every-dimension-8.md" >}})
+- [LeRobot v0.5.0：扩展数据、算法与硬件支持]({{< relref "posts/20260309-blogs_podcasts-lerobot-v050-scaling-every-dimension-4.md" >}})
+- [LeRobot v0.5.0：全维度扩展与规模化升级]({{< relref "posts/20260309-blogs_podcasts-lerobot-v050-scaling-every-dimension-4.md" >}})
+- [LeRobot v0.5.0：扩展数据、模型与硬件维度]({{< relref "posts/20260309-blogs_podcasts-lerobot-v050-scaling-every-dimension-4.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

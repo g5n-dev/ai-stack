@@ -1,14 +1,30 @@
 ---
-title: "Anthropic Claude Sonnet 5登陆AWS Amazon Bedrock平台"
-date: 2026-06-30T20:26:03+08:00
+title: Anthropic Claude Sonnet 5登陆AWS Amazon Bedrock平台
+date: 2026-06-30 20:26:03+08:00
 draft: false
-entry_kind: "auto"
-tags: ["大模型", "Claude", "AWS", "Bedrock", "上下文窗口", "代码生成", "Agent", "安全对齐"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- 大模型
+- Claude
+- AWS
+- Bedrock
+- 上下文窗口
+- 代码生成
+- Agent
+- 安全对齐
+categories:
+- 大模型
+- AI 工程
 source: blogs_podcasts
-description: "今天，Anthropic 在 Amazon Bedrock 与 Claude Platform on AWS 上线了全新一代的 Sonnet 模型——Claude Sonnet 5。这是首个基于最新一代架构的 Sonnet，在保持与前代相同价格的前提下，提供业界领先的综合智能。Sonnet 5 在代码编写、多步代理、办"
+description: 今天，Anthropic 在 Amazon Bedrock 与 Claude Platform on AWS 上线了全新一代的 Sonnet
+  模型——Claude Sonnet 5。这是首个基于最新一代架构的 Sonnet，在保持与前代相同价格的前提下，提供业界领先的综合智能。Sonnet 5 在代码编写、多步代理、办
 external_url: https://aws.amazon.com/blogs/machine-learning/introducing-claude-sonnet-5-on-aws-anthropics-most-capable-sonnet-model
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Anthropic Claude Sonnet 5登陆AWS Amazon Bedrock平台
@@ -89,9 +105,9 @@ Claude Sonnet 5在AWS平台的发布是Anthropic企业级AI布局的重要一步
 
 ### 相关文章
 
-- [基于Bedrock与LangGraph构建SageMaker AI对话代理]({{< relref "posts/20260303-blogs_podcasts-build-a-serverless-conversational-ai-agent-using-c-4.md" >}})
-- [在SageMaker AI上基于Bedrock与LangGraph构建无服务器对话代理]({{< relref "posts/20260303-blogs_podcasts-build-a-serverless-conversational-ai-agent-using-c-11.md" >}})
-- [基于Amazon SageMaker AI构建无服务器对话AI代理]({{< relref "posts/20260303-blogs_podcasts-build-a-serverless-conversational-ai-agent-using-c-13.md" >}})
-- [基于Bedrock与LangGraph在SageMaker构建无服务器对话代理]({{< relref "posts/20260303-blogs_podcasts-build-a-serverless-conversational-ai-agent-using-c-3.md" >}})
-- [基于Bedrock与LangGraph在SageMaker构建无服务器对话代理]({{< relref "posts/20260304-blogs_podcasts-build-a-serverless-conversational-ai-agent-using-c-12.md" >}})
+- [基于Bedrock与LangGraph构建SageMaker AI对话代理]({{< relref "posts/20260302-blogs_podcasts-build-a-serverless-conversational-ai-agent-using-c-1.md" >}})
+- [在SageMaker AI上基于Bedrock与LangGraph构建无服务器对话代理]({{< relref "posts/20260302-blogs_podcasts-build-a-serverless-conversational-ai-agent-using-c-1.md" >}})
+- [基于Amazon SageMaker AI构建无服务器对话AI代理]({{< relref "posts/20260302-blogs_podcasts-build-a-serverless-conversational-ai-agent-using-c-1.md" >}})
+- [基于Bedrock与LangGraph在SageMaker构建无服务器对话代理]({{< relref "posts/20260302-blogs_podcasts-build-a-serverless-conversational-ai-agent-using-c-1.md" >}})
+- [基于Bedrock与LangGraph在SageMaker构建无服务器对话代理]({{< relref "posts/20260302-blogs_podcasts-build-a-serverless-conversational-ai-agent-using-c-1.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

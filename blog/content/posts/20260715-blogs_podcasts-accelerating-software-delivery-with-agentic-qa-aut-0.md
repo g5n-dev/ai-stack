@@ -1,14 +1,30 @@
 ---
-title: "Amazon Nova Act代理测试：批量回归与CI/CD集成"
-date: 2026-07-15T14:00:41+08:00
+title: Amazon Nova Act代理测试：批量回归与CI/CD集成
+date: 2026-07-15 14:00:41+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Amazon Nova Act", "QA自动化", "批量回归测试", "CI/CD集成", "测试套件", "命令行接口", "代理测试", "软件交付"]
-categories: ["开发工具"]
+entry_kind: auto
+tags:
+- Amazon Nova Act
+- QA自动化
+- 批量回归测试
+- CI/CD集成
+- 测试套件
+- 命令行接口
+- 代理测试
+- 软件交付
+categories:
+- 开发工具
 source: blogs_podcasts
-description: "本文是 Amazon Nova Act agentic QA 自动化的第二部分，聚焦于 QA Studio 在大规模回归测试和流水线集成上的能力。QA Studio 通过可组织的测试套件实现批量回归测试，套件内部支持并行执行，从而显著缩短测试周期；同时提供命令行接口（CLI），能够把基于代理的自动化测试无缝嵌入 CI/"
+description: 本文是 Amazon Nova Act agentic QA 自动化的第二部分，聚焦于 QA Studio 在大规模回归测试和流水线集成上的能力。QA
+  Studio 通过可组织的测试套件实现批量回归测试，套件内部支持并行执行，从而显著缩短测试周期；同时提供命令行接口（CLI），能够把基于代理的自动化测试无缝嵌入
+  CI/
 external_url: https://aws.amazon.com/blogs/machine-learning/accelerating-software-delivery-with-agentic-qa-automation-using-amazon-nova-act-part-2
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Amazon Nova Act代理测试：批量回归与CI/CD集成

@@ -22,6 +22,12 @@ external_url: https://juejin.cn/post/7611830146090008622
 scenarios:
 - 自然语言处理
 - 大语言模型
+aliases:
+- /posts/20260302-juejin-大模型连载1了解-token-3/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 大模型连载1：理解自然语言处理与大模型中的 Token 概念
@@ -204,8 +210,8 @@ Token 和字符是两种不同的计数方式，它们之间没有固定的换�
 
 ### 相关文章
 
-- [Alyah：评估阿拉伯语大模型阿联酋方言能力]({{< relref "posts/20260129-blogs_podcasts-alyah-toward-robust-evaluation-of-emirati-dialect--8.md" >}})
-- [Alyah：评估阿拉伯语大模型阿联酋方言能力]({{< relref "posts/20260129-blogs_podcasts-alyah-toward-robust-evaluation-of-emirati-dialect--9.md" >}})
+- [Alyah：评估阿拉伯语大模型阿联酋方言能力]({{< relref "posts/20260127-blogs_podcasts-alyah-toward-robust-evaluation-of-emirati-dialect--0.md" >}})
+- [Alyah：评估阿拉伯语大模型阿联酋方言能力]({{< relref "posts/20260127-blogs_podcasts-alyah-toward-robust-evaluation-of-emirati-dialect--0.md" >}})
 - [训练万亿参数模型使其具备幽默感]({{< relref "posts/20260203-hacker_news-training-a-trillion-parameter-model-to-be-funny-15.md" >}})
-- [从上下文学习比预期更难]({{< relref "posts/20260206-hacker_news-learning-from-context-is-harder-than-we-thought-4.md" >}})
-- [从上下文学习比预期更具挑战性]({{< relref "posts/20260206-hacker_news-learning-from-context-is-harder-than-we-thought-8.md" >}})
+- [从上下文学习比预期更难]({{< relref "posts/20260206-hacker_news-learning-from-context-is-harder-than-we-thought-6.md" >}})
+- [从上下文学习比预期更具挑战性]({{< relref "posts/20260206-hacker_news-learning-from-context-is-harder-than-we-thought-6.md" >}})

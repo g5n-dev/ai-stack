@@ -21,6 +21,12 @@ description: 本文介绍了一种在**干预实验**（如基因组学CRISPR筛
 external_url: http://arxiv.org/abs/2603.02204v1
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260304-arxiv_ai-partial-causal-structure-learning-for-valid-select-1/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 干预下基于部分因果学习的有效选择性共形推断
@@ -125,7 +131,6 @@ scenarios:
 
 ---
 
-### 1. 研究背景与问题
 
 ### 核心问题
 本研究旨在解决**在存在外部干预（如基因敲除）的情况下，如何为机器学习模型提供统计学上可靠（有效）且尽可能紧密（高效）的不确定性量化（UQ）**。具体而言，它解决了当训练数据（校准集）和测试数据因干预而产生分布偏移时，标准共形预测失效的问题。
@@ -145,7 +150,6 @@ scenarios:
 
 ---
 
-### 2. 核心方法与创新
 
 ### 核心方法
 作者提出了一套**“部分因果结构学习 + 鲁棒共形推断”**的框架。该方法不试图重建完整的因果图，而是专注于识别**“后代节点”**（即受干预影响的变量）。
@@ -167,7 +171,6 @@ scenarios:
 
 ---
 
-### 3. 理论基础
 
 ### 理论假设
 1.  **因果马尔可夫假设与忠实性**：假设数据的分布可以由某个因果DAG生成，且条件独立性对应于图中的d-分离。
@@ -182,7 +185,6 @@ scenarios:
 
 ---
 
-### 4. 实验与结果
 
 ### 实验设计
 *   **合成数据**：使用线性结构方程模型（SEM）生成数据，模拟不同类型的干预（单节点干预、多节点干预）。
@@ -203,7 +205,6 @@ scenarios:
 
 ---
 
-### 5. 应用前景
 
 ### 实际应用场景
 1.  **基因组学与药物研发**：这是论文最直接的应用。在CRISPR筛选或药物处理实验中，预测基因表达或细胞存活率，并量化预测的不确定性。
@@ -215,7 +216,6 @@ scenarios:
 
 ---
 
-### 6. 研究启示
 
 ### 对领域的启示
 *   **因果发现与UQ的融合**：该研究指出了因果推断在不确定性量化中的关键作用。未来的UQ研究不应仅依赖于数据分布的统计性质，必须引入因果机制来处理分布偏移。
@@ -228,7 +228,6 @@ scenarios:
 
 ---
 
-### 7. 学习建议
 
 ### 适合读者
 *   从事因果推断研究的研究生或学者。
@@ -262,7 +261,6 @@ scenarios:
 
 ---
 
-### 9. 研究哲学：可证伪性与边界
 
 ### 关键假设与归纳偏置
 *   **假设**：世界是由因果结构生成的，且干预只影响下游节点。
@@ -506,7 +504,7 @@ scenarios:
 ### 相关文章
 
 - [基于共形预测的策略控制方法]({{< relref "posts/20260303-arxiv_ai-conformal-policy-control-5.md" >}})
-- [知识嵌入潜在投影提升鲁棒表征学习]({{< relref "posts/20260220-arxiv_ai-knowledge-embedded-latent-projection-for-robust-re-0.md" >}})
+- [知识嵌入潜在投影提升鲁棒表征学习]({{< relref "posts/20260219-arxiv_ai-knowledge-embedded-latent-projection-for-robust-re-0.md" >}})
 - [非单调损失函数的保形风险控制方法]({{< relref "posts/20260224-arxiv_ai-conformal-risk-control-for-non-monotonic-losses-4.md" >}})
-- [非单调损失函数的共形风险控制方法]({{< relref "posts/20260225-arxiv_ai-conformal-risk-control-for-non-monotonic-losses-4.md" >}})
+- [非单调损失函数的共形风险控制方法]({{< relref "posts/20260224-arxiv_ai-conformal-risk-control-for-non-monotonic-losses-4.md" >}})
 - [评估学习表征可识别性的挑战与难点]({{< relref "posts/20260302-arxiv_ai-who-guards-the-guardians-the-challenges-of-evaluat-6.md" >}})

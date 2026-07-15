@@ -9,7 +9,7 @@ tags:
 - 数据泄露
 - 经济损失
 - Google
-- LLM安全
+- LLM 安全
 - HackerNews
 - 云安全
 categories:
@@ -20,6 +20,10 @@ description: API 密钥泄露带来的经济损失往往比预期更迅猛。本
 external_url: https://llmhorrors.com/all/gemini-stolen-api-key-82k
 scenarios:
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 被盗 Gemini API 密钥致 48 小时内损失 8.2 万美元

@@ -1,14 +1,30 @@
 ---
-title: "Amazon Bedrock上线Gemma 4系列模型"
-date: 2026-06-15T23:58:25+08:00
+title: Amazon Bedrock上线Gemma 4系列模型
+date: 2026-06-15 23:58:25+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Gemma 4", "Amazon Bedrock", "Google DeepMind", "开放权重", "MoE架构", "多模态", "Apache 2.0", "指令调优"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- Gemma 4
+- Amazon Bedrock
+- Google DeepMind
+- 开放权重
+- MoE架构
+- 多模态
+- Apache 2.0
+- 指令调优
+categories:
+- 大模型
+- AI 工程
 source: blogs_podcasts
-description: "概述 Gemma 4 系列模型已在 Amazon Bedrock 上线，由 Google DeepMind 开发，采用 Apache 2.0 开源许可，强调在多种部署环境下实现参数级智能优化。 主要模型 - **Gemma 4 31B**：稠密结构，适合大规模推理任务。 - **Gemma 4 26B‑A4B**：混合"
+description: 概述 Gemma 4 系列模型已在 Amazon Bedrock 上线，由 Google DeepMind 开发，采用 Apache 2.0
+  开源许可，强调在多种部署环境下实现参数级智能优化。 主要模型 - **Gemma 4 31B**：稠密结构，适合大规模推理任务。 - **Gemma 4 26B‑A4B**：混合
 external_url: https://aws.amazon.com/blogs/machine-learning/introducing-gemma-4-models-on-amazon-bedrock
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Amazon Bedrock上线Gemma 4系列模型
@@ -176,9 +192,9 @@ Gemma 4 在 Amazon Bedrock 上提供的开源权重模型，以“高参数�
 
 ### 相关文章
 
-- [How Amazon uses Amazon Nova models to automate operatio]({{< relref "posts/20260211-blogs_podcasts-how-amazon-uses-amazon-nova-models-to-automate-ope-6.md" >}})
-- [亚马逊利用Nova模型自动化新履约中心运营准备检测]({{< relref "posts/20260211-blogs_podcasts-how-amazon-uses-amazon-nova-models-to-automate-ope-7.md" >}})
-- [亚马逊利用Nova模型自动化新履约中心运营就绪测试]({{< relref "posts/20260212-blogs_podcasts-how-amazon-uses-amazon-nova-models-to-automate-ope-14.md" >}})
-- [亚马逊利用Nova模型自动化检测新履约中心组件]({{< relref "posts/20260212-blogs_podcasts-how-amazon-uses-amazon-nova-models-to-automate-ope-10.md" >}})
-- [Waymo 世界模型：利用生成式视频预测驾驶场景]({{< relref "posts/20260206-hacker_news-the-waymo-world-model-0.md" >}})
+- [How Amazon uses Amazon Nova models to automate operatio]({{< relref "posts/20260210-blogs_podcasts-how-amazon-uses-amazon-nova-models-to-automate-ope-0.md" >}})
+- [亚马逊利用Nova模型自动化新履约中心运营准备检测]({{< relref "posts/20260210-blogs_podcasts-how-amazon-uses-amazon-nova-models-to-automate-ope-0.md" >}})
+- [亚马逊利用Nova模型自动化新履约中心运营就绪测试]({{< relref "posts/20260210-blogs_podcasts-how-amazon-uses-amazon-nova-models-to-automate-ope-0.md" >}})
+- [亚马逊利用Nova模型自动化检测新履约中心组件]({{< relref "posts/20260210-blogs_podcasts-how-amazon-uses-amazon-nova-models-to-automate-ope-0.md" >}})
+- [Waymo 世界模型：利用生成式视频预测驾驶场景]({{< relref "posts/20260206-hacker_news-the-waymo-world-model-a-new-frontier-for-autonomou-4.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

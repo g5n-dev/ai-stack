@@ -21,6 +21,12 @@ description: 本文介绍了**CFG-Ctrl**，一个基于控制论的新型框架�
 external_url: http://arxiv.org/abs/2603.03281v1
 scenarios:
 - 计算机视觉
+aliases:
+- /posts/20260305-arxiv_ai-cfg-ctrl-control-based-classifier-free-diffusion-g-0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # CFG-Ctrl：基于分类器无关的扩散模型控制引导方法
@@ -115,9 +121,7 @@ scenarios:
 
 ---
 
-### CFG-Ctrl: Control-Based Classifier-Free Diffusion Guidance 深入分析报告
 
-### 1. 研究背景与问题
 
 ### 核心问题
 本研究旨在解决扩散模型中**无分类器引导**在强引导尺度下表现不稳定的问题。具体而言，当用户为了追求更高的生成图像与文本提示词的一致性而增大引导尺度时，现有的标准CFG方法往往会导致图像质量下降、色彩过饱和、细节扭曲甚至语义崩坏。
@@ -133,7 +137,6 @@ scenarios:
 ### 问题重要性
 随着文本到图像模型向更高分辨率、更复杂语义理解发展（如Flux, SD3.5），生成过程的动力学复杂性增加。传统的简单线性插值已难以驾驭这些强大的模型，导致用户在使用高CFG值时极易生成“废片”。引入先进的控制理论是解决这一瓶颈的必由之路。
 
-### 2. 核心方法与创新
 
 ### 核心方法：SMC-CFG
 论文提出了基于**滑模控制**的引导框架 **SMC-CFG**。该方法不再将引导视为静态的向量加减，而是将其建模为一个闭环控制过程。
@@ -150,7 +153,6 @@ scenarios:
 - **高鲁棒性**：在极大的引导尺度范围内（例如标准CFG会崩溃的高阈值），SMC-CFG仍能保持生成图像的语义完整性和视觉质量。
 - **无需重训练**：这是一种即插即用的推理阶段优化方法，不需要修改模型权重或进行昂贵的微调。
 
-### 3. 理论基础
 
 ### 理论依据
 论文的核心理论支柱是**滑模控制**，这是一种鲁棒控制策略，专门用于处理不确定性和非线性系统。
@@ -164,7 +166,6 @@ scenarios:
 ### 理论贡献
 论文通过李雅普诺夫稳定性分析，从数学上证明了SMC-CFG在生成过程中能够保证误差信号的收敛。这为扩散模型的引导过程提供了坚实的理论背书，将其从经验性的“调参技巧”提升到了具有稳定性保障的“控制算法”。
 
-### 7. 学习建议
 
 ### 适合读者背景
 - **深度学习研究员/工程师**：特别是从事扩散模型、生成式AI方向的研究者。
@@ -427,8 +428,8 @@ CFG-Ctrl 的设计初衷通常是作为一种即插即用的推理技术或微�
 
 ### 相关文章
 
-- [现成图像模型可攻破图像保护方案]({{< relref "posts/20260227-arxiv_ai-off-the-shelf-image-to-image-models-are-all-you-ne-2.md" >}})
-- [从噪声到图像：扩散模型交互指南]({{< relref "posts/20260228-hacker_news-from-noise-to-image-interactive-guide-to-diffusion-13.md" >}})
+- [现成图像模型可攻破图像保护方案]({{< relref "posts/20260226-arxiv_ai-off-the-shelf-image-to-image-models-are-all-you-ne-2.md" >}})
+- [从噪声到图像：扩散模型交互指南]({{< relref "posts/20260228-hacker_news-from-noise-to-image-interactive-guide-to-diffusion-15.md" >}})
 - [从噪声到图像：扩散模型交互式指南]({{< relref "posts/20260228-hacker_news-from-noise-to-image-interactive-guide-to-diffusion-15.md" >}})
 - [PixelGen：引入感知损失的像素扩散模型性能超越潜在扩散]({{< relref "posts/20260203-arxiv_ai-pixelgen-pixel-diffusion-beats-latent-diffusion-wi-2.md" >}})
-- [PixelGen：像素扩散结合感知损失超越潜在扩散]({{< relref "posts/20260204-arxiv_ai-pixelgen-pixel-diffusion-beats-latent-diffusion-wi-2.md" >}})
+- [PixelGen：像素扩散结合感知损失超越潜在扩散]({{< relref "posts/20260203-arxiv_ai-pixelgen-pixel-diffusion-beats-latent-diffusion-wi-2.md" >}})

@@ -1,14 +1,32 @@
 ---
-title: "跨架构蒸馏技术助力扩散大语言模型"
-date: 2026-04-30T23:11:36+08:00
+title: 跨架构蒸馏技术助力扩散大语言模型
+date: 2026-04-30 23:11:36+08:00
 draft: false
-entry_kind: "auto"
-tags: ["扩散模型", "大模型蒸馏", "跨架构", "知识迁移", "参数压缩", "推理加速", "代码生成", "MoE"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- 扩散模型
+- 大模型蒸馏
+- 跨架构
+- 知识迁移
+- 参数压缩
+- 推理加速
+- 代码生成
+- MoE
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "背景 扩散大语言模型（dLLM）具备并行解码和双向上下文优势，但最新模型需数十亿参数才能达到竞争力。已有蒸馏方法只针对单架构内部步数压缩，未实现跨架构知识迁移，即教师模型与学生模型在结构、注意力机制和分词器上均不同。 TIDE 框架 首次提出跨架构 dLLM 蒸馏框架 TIDE，包含三大模块化组件： 1. **TIDA"
+description: 背景 扩散大语言模型（dLLM）具备并行解码和双向上下文优势，但最新模型需数十亿参数才能达到竞争力。已有蒸馏方法只针对单架构内部步数压缩，未实现跨架构知识迁移，即教师模型与学生模型在结构、注意力机制和分词器上均不同。
+  TIDE 框架 首次提出跨架构 dLLM 蒸馏框架 TIDE，包含三大模块化组件： 1. **TIDA
 external_url: http://arxiv.org/abs/2604.26951v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+aliases:
+- /posts/20260501-arxiv_ai-turning-the-tide-cross-architecture-distillation-f-0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 跨架构蒸馏技术助力扩散大语言模型
@@ -149,9 +167,9 @@ TIDE 为算力受限环境（如边缘设备、低功耗服务器）提供了一
 
 ### 相关文章
 
-- [面向扩散语言模型的Sink感知剪枝方法]({{< relref "posts/20260221-arxiv_ai-sink-aware-pruning-for-diffusion-language-models-0.md" >}})
-- [面向扩散语言模型的感知汇点剪枝方法]({{< relref "posts/20260222-arxiv_ai-sink-aware-pruning-for-diffusion-language-models-0.md" >}})
-- [面向扩散语言模型的感知剪枝方法]({{< relref "posts/20260223-arxiv_ai-sink-aware-pruning-for-diffusion-language-models-0.md" >}})
-- [🔥自回归+掩码扩散！下一代生成模型架构强势登场！]({{< relref "posts/20260127-arxiv_ai-auto-regressive-masked-diffusion-models-3.md" >}})
+- [面向扩散语言模型的Sink感知剪枝方法]({{< relref "posts/20260220-arxiv_ai-sink-aware-pruning-for-diffusion-language-models-0.md" >}})
+- [面向扩散语言模型的感知汇点剪枝方法]({{< relref "posts/20260220-arxiv_ai-sink-aware-pruning-for-diffusion-language-models-0.md" >}})
+- [面向扩散语言模型的感知剪枝方法]({{< relref "posts/20260220-arxiv_ai-sink-aware-pruning-for-diffusion-language-models-0.md" >}})
+- [🔥自回归+掩码扩散！下一代生成模型架构强势登场！]({{< relref "posts/20260126-arxiv_ai-auto-regressive-masked-diffusion-models-3.md" >}})
 - [FOCUS：DLLMs如何突破算力瓶颈]({{< relref "posts/20260202-arxiv_ai-focus-dllms-know-how-to-tame-their-compute-bound-3.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

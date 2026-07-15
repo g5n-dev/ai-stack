@@ -22,6 +22,10 @@ external_url: https://juejin.cn/post/7610141315292315688
 scenarios:
 - 大语言模型
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # CLAUDE.md：规范 Claude Code 行为与工作流的最佳实践指南
@@ -167,8 +171,8 @@ CLAUDE.md 是一种针对 Claude AI 模型进行优化的提示词工程文件�
 
 ### 相关文章
 
-- [如何使用 Claude Code：规划与执行的分离]({{< relref "posts/20260222-hacker_news-how-i-use-claude-code-separation-of-planning-and-e-16.md" >}})
+- [如何使用 Claude Code：规划与执行的分离]({{< relref "posts/20260222-hacker_news-how-i-use-claude-code-separation-of-planning-and-e-0.md" >}})
 - [Claude Code Skills 系统实战：构建领域专家级助手]({{< relref "posts/20260221-juejin-skills-实战让-ai-成为你的领域专家-2.md" >}})
 - [如何使用 Claude Code：规划与执行的分离]({{< relref "posts/20260222-hacker_news-how-i-use-claude-code-separation-of-planning-and-e-0.md" >}})
-- [我如何使用 Claude Code：规划与执行的分离]({{< relref "posts/20260222-hacker_news-how-i-use-claude-code-separation-of-planning-and-e-17.md" >}})
-- [如何使用 Claude Code：规划与执行的分离]({{< relref "posts/20260222-hacker_news-how-i-use-claude-code-separation-of-planning-and-e-5.md" >}})
+- [我如何使用 Claude Code：规划与执行的分离]({{< relref "posts/20260222-hacker_news-how-i-use-claude-code-separation-of-planning-and-e-0.md" >}})
+- [如何使用 Claude Code：规划与执行的分离]({{< relref "posts/20260222-hacker_news-how-i-use-claude-code-separation-of-planning-and-e-0.md" >}})

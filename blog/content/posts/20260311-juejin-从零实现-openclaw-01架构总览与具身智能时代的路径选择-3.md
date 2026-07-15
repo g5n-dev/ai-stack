@@ -21,6 +21,10 @@ description: 以下是对该内容的简洁总结： **1. 背景与定位：2024
 external_url: https://juejin.cn/post/7615161431983276042
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # OpenClaw架构总览与具身智能时代的工程路径
@@ -196,6 +200,6 @@ OpenClaw 项目的路径倾向于支持 Sim-to-Real，因为这是目前实现�
 
 - [人人都在构建异步智能体 但鲜有人能定义其概念]({{< relref "posts/20260209-hacker_news-everyones-building-async-agents-but-almost-no-one--14.md" >}})
 - [OpenClaw实现高并发群聊AI的上下文隔离与并行调度]({{< relref "posts/20260218-juejin-openclaw怎么做到不串台能并行还总回对群-含源码解析-openclaw系列第1期-0.md" >}})
-- [LLM智能体新增Claws层以增强功能]({{< relref "posts/20260222-hacker_news-claws-are-now-a-new-layer-on-top-of-llm-agents-10.md" >}})
-- [Claws 成为 LLM 智能体顶层新抽象层]({{< relref "posts/20260222-hacker_news-claws-are-now-a-new-layer-on-top-of-llm-agents-12.md" >}})
+- [LLM智能体新增Claws层以增强功能]({{< relref "posts/20260221-hacker_news-claws-are-now-a-new-layer-on-top-of-llm-agents-13.md" >}})
+- [Claws 成为 LLM 智能体顶层新抽象层]({{< relref "posts/20260221-hacker_news-claws-are-now-a-new-layer-on-top-of-llm-agents-13.md" >}})
 - [从 Prompt 到 Agent Skill：AI 能力跃迁与设计实现]({{< relref "posts/20260303-juejin-agent-skill-是什么一文讲透-agent-skill-的设计与实现-3.md" >}})

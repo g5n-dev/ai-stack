@@ -1,14 +1,34 @@
 ---
-title: "Amazon Nova Micro微调实现低成本自定义文本转SQL"
-date: 2026-04-16T23:27:46+08:00
+title: Amazon Nova Micro微调实现低成本自定义文本转SQL
+date: 2026-04-16 23:27:46+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Nova Micro", "Text-to-SQL", "Amazon Bedrock", "RAG检索增强", "微调优化", "AWS云服务", "成本控制", "LLM应用"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- Nova Micro
+- Text-to-SQL
+- Amazon Bedrock
+- RAG检索增强
+- 微调优化
+- AWS云服务
+- 成本控制
+- LLM 应用
+categories:
+- 大模型
+- AI 工程
 source: blogs_podcasts
-description: "背景与目标 Amazon Nova Micro 是面向成本敏感场景的轻量语言模型。本文展示在 Amazon Bedrock 按需推理平台上，对 Nova Micro 进行微调，以生成自定义 SQL 方言，实现成本效益与生产级性能的双重目标。 方法一：数据驱动的微调 1. **数据准备**：收集目标业务的自定义 SQL"
+description: 背景与目标 Amazon Nova Micro 是面向成本敏感场景的轻量语言模型。本文展示在 Amazon Bedrock 按需推理平台上，对
+  Nova Micro 进行微调，以生成自定义 SQL 方言，实现成本效益与生产级性能的双重目标。 方法一：数据驱动的微调 1. **数据准备**：收集目标业务的自定义
+  SQL
 external_url: https://aws.amazon.com/blogs/machine-learning/cost-efficient-custom-text-to-sql-using-amazon-nova-micro-and-amazon-bedrock-on-demand-inference
-scenarios: ["RAG应用", "大语言模型"]
+scenarios:
+- RAG应用
+- 大语言模型
+aliases:
+- /posts/20260417-blogs_podcasts-cost-efficient-custom-text-to-sql-using-amazon-nov-0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Amazon Nova Micro微调实现低成本自定义文本转SQL
@@ -176,9 +196,9 @@ Amazon Nova Micro 是面向成本敏感场景的轻量语言模型。本文�
 
 ### 相关文章
 
-- [LinqAlpha利用Amazon Bedrock构建投资思路压力测试智能体]({{< relref "posts/20260212-blogs_podcasts-how-linqalpha-assesses-investment-theses-using-dev-6.md" >}})
-- [ShapedQL：支持多阶段排序与RAG的SQL引擎]({{< relref "posts/20260129-hacker_news-show-hn-shapedql-a-sql-engine-for-multi-stage-rank-17.md" >}})
+- [LinqAlpha利用Amazon Bedrock构建投资思路压力测试智能体]({{< relref "posts/20260211-blogs_podcasts-how-linqalpha-assesses-investment-theses-using-dev-3.md" >}})
+- [ShapedQL：支持多阶段排序与RAG的SQL引擎]({{< relref "posts/20260129-hacker_news-show-hn-shapedql-a-sql-engine-for-multi-stage-rank-6.md" >}})
 - [Claude Composer：AI 编排多 Agent 协作完成复杂任务]({{< relref "posts/20260206-hacker_news-claude-composer-9.md" >}})
-- [Claude Composer：AI 编排多智能体工作流]({{< relref "posts/20260207-hacker_news-claude-composer-18.md" >}})
-- [Agent-to-agent collaboration: Using Amazon Nova 2 Lite]({{< relref "posts/20260211-blogs_podcasts-agent-to-agent-collaboration-using-amazon-nova-2-l-13.md" >}})
+- [Claude Composer：AI 编排多智能体工作流]({{< relref "posts/20260206-hacker_news-claude-composer-9.md" >}})
+- [Agent-to-agent collaboration: Using Amazon Nova 2 Lite]({{< relref "posts/20260211-blogs_podcasts-agent-to-agent-collaboration-using-amazon-nova-2-l-12.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

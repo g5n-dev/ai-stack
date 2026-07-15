@@ -1,14 +1,30 @@
 ---
-title: "用ChatGPT项目组织聊天文件和指令"
-date: 2026-04-10T21:54:42+08:00
+title: 用ChatGPT项目组织聊天文件和指令
+date: 2026-04-10 21:54:42+08:00
 draft: false
-entry_kind: "auto"
-tags: ["ChatGPT", "项目组织", "文件管理", "工作流程", "协作工具", "提示词工程", "AI助手", "效率提升"]
-categories: ["效率与方法论", "AI 工程"]
+entry_kind: auto
+tags:
+- ChatGPT
+- 项目组织
+- 文件管理
+- 工作流程
+- 协作工具
+- 提示词工程
+- AI 助手
+- 效率提升
+categories:
+- 效率与方法论
+- AI 工程
 source: blogs_podcasts
-description: "项目（Projects）是 ChatGPT 中用于集中管理聊天、文件、指令和工作流的机制。用户可以在项目下创建多个会话，每个会话保留项目的上下文；可以将文档、代码、图片等上传到项目文件库，供对话时随时引用；还能在项目中预设系统指令或模板，使 AI 在特定场景下遵循统一的规则。通过这种方式，团队成员可以在同一项目空间内共"
+description: 项目（Projects）是 ChatGPT 中用于集中管理聊天、文件、指令和工作流的机制。用户可以在项目下创建多个会话，每个会话保留项目的上下文；可以将文档、代码、图片等上传到项目文件库，供对话时随时引用；还能在项目中预设系统指令或模板，使
+  AI 在特定场景下遵循统一的规则。通过这种方式，团队成员可以在同一项目空间内共
 external_url: https://openai.com/academy/projects
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 用ChatGPT项目组织聊天文件和指令
@@ -134,8 +150,8 @@ Projects功能在复杂多项目管理、长期研究追踪和团队协作场景
 ### 相关文章
 
 - [类似ChatGPT的电子表格工具加速解决复杂工程难题]({{< relref "posts/20260304-blogs_podcasts-a-chatgpt-for-spreadsheets-helps-solve-difficult-e-0.md" >}})
-- [电子表格版ChatGPT加速解决电网优化与车辆设计等工程难题]({{< relref "posts/20260304-blogs_podcasts-a-chatgpt-for-spreadsheets-helps-solve-difficult-e-2.md" >}})
-- [沃尔夫斯堡：将ChatGPT转化为全俱乐部能力的实践]({{< relref "posts/20260204-blogs_podcasts-vfl-wolfsburg-turns-chatgpt-into-a-club-wide-capab-3.md" >}})
-- [德甲沃尔夫斯堡：将ChatGPT转化为全俱乐部能力]({{< relref "posts/20260205-blogs_podcasts-vfl-wolfsburg-turns-chatgpt-into-a-club-wide-capab-3.md" >}})
-- [沃尔夫斯堡：将ChatGPT转化为全俱乐部能力的实践]({{< relref "posts/20260205-blogs_podcasts-vfl-wolfsburg-turns-chatgpt-into-a-club-wide-capab-4.md" >}})
+- [电子表格版ChatGPT加速解决电网优化与车辆设计等工程难题]({{< relref "posts/20260304-blogs_podcasts-a-chatgpt-for-spreadsheets-helps-solve-difficult-e-0.md" >}})
+- [沃尔夫斯堡：将ChatGPT转化为全俱乐部能力的实践]({{< relref "posts/20260204-blogs_podcasts-vfl-wolfsburg-turns-chatgpt-into-a-club-wide-capab-1.md" >}})
+- [德甲沃尔夫斯堡：将ChatGPT转化为全俱乐部能力]({{< relref "posts/20260204-blogs_podcasts-vfl-wolfsburg-turns-chatgpt-into-a-club-wide-capab-1.md" >}})
+- [沃尔夫斯堡：将ChatGPT转化为全俱乐部能力的实践]({{< relref "posts/20260204-blogs_podcasts-vfl-wolfsburg-turns-chatgpt-into-a-club-wide-capab-1.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

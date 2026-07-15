@@ -21,6 +21,10 @@ description: 随着生成式 AI 技术的普及，关于人工智能创作内容
 external_url: https://www.theverge.com/policy/887678/supreme-court-ai-art-copyright
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 最高法院拒绝受理：AI生成艺术作品不受版权保护

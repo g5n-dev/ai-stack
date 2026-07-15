@@ -1,14 +1,32 @@
 ---
-title: "CRoSS：面向可扩展强化学习的持续机器人仿真套件"
-date: 2026-02-05T23:03:18+08:00
+title: CRoSS：面向可扩展强化学习的持续机器人仿真套件
+date: 2026-02-05 23:03:18+08:00
 draft: false
-entry_kind: "auto"
-tags: ["强化学习", "持续学习", "机器人仿真", "Gazebo", "CRoSS", "cs.LG", "物理仿真", "可扩展性"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- 强化学习
+- 持续学习
+- 机器人仿真
+- Gazebo
+- CRoSS
+- cs.LG
+- 物理仿真
+- 可扩展性
+categories:
+- 大模型
+- AI 工程
 source: arxiv
-description: "本文介绍了 **CRoSS**（Continual Robotic Simulation Suite），一个旨在促进大规模、高任务多样性的**持续强化学习**（CRL）研究的基准测试套件。 **核心内容总结如下：** 1. **研究背景与目标：** CRoSS 旨在解决持续强化学习中的关键问题——即智能体如何在顺序学习"
+description: 本文介绍了 **CRoSS**（Continual Robotic Simulation Suite），一个旨在促进大规模、高任务多样性的**持续强化学习**（CRL）研究的基准测试套件。
+  **核心内容总结如下：** 1. **研究背景与目标：** CRoSS 旨在解决持续强化学习中的关键问题——即智能体如何在顺序学习
 external_url: http://arxiv.org/abs/2602.04868v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+aliases:
+- /posts/20260206-arxiv_ai-cross-a-continual-robotic-simulation-suite-for-sca-6/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # CRoSS：面向可扩展强化学习的持续机器人仿真套件
@@ -244,7 +262,6 @@ CRoSS 的创新性不在于物理引擎或算法，而在于**工程整合**。�
 *   **假设**：**“参数化生成的任务具有足够的多样性来代表现实世界的任务分布。”
 
 ---
-## 研究最佳实践
 
 ## 最佳实践指南
 
@@ -333,7 +350,6 @@ CRoSS 的创新性不在于物理引擎或算法，而在于**工程整合**。�
 - 该套件通过模块化设计降低了实验门槛，允许研究人员轻松定制或扩展新的任务场景和物理属性，促进了机器人学习领域的社区协作与创新。
 
 ---
-## 学习路径
 
 ## 学习路径
 
@@ -520,7 +536,7 @@ CRoSS 提供了标准化的基准测试脚本，研究人员可以轻松复现�
 
 ### 相关文章
 
-- [NVIDIA Cosmos策略：提升机器人控制能力]({{< relref "posts/20260203-blogs_podcasts-introducing-nvidia-cosmos-policy-for-advanced-robo-9.md" >}})
+- [NVIDIA Cosmos策略：提升机器人控制能力]({{< relref "posts/20260129-blogs_podcasts-introducing-nvidia-cosmos-policy-for-advanced-robo-0.md" >}})
 - [基于急停干预的鲁棒干预学习]({{< relref "posts/20260204-arxiv_ai-robust-intervention-learning-from-emergency-stop-i-7.md" >}})
 - [RN-D：基于正则化网络的离散分类演员与同策强化学习]({{< relref "posts/20260202-arxiv_ai-rn-d-discretized-categorical-actors-with-regulariz-7.md" >}})
 - [PLATE：面向几何感知持续学习的可塑性调谐高效适配器]({{< relref "posts/20260204-arxiv_ai-plate-plasticity-tunable-efficient-adapters-for-ge-0.md" >}})

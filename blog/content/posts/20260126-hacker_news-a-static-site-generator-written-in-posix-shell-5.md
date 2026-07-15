@@ -1,12 +1,29 @@
 ---
-title: "⚡️ 震惊！纯Shell打造的静态网站生成器，极客必备！🚀"
-date: 2026-01-26T12:12:08+08:00
+title: ⚡️ 震惊！纯Shell打造的静态网站生成器，极客必备！🚀
+date: 2026-01-26 12:12:08+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Shell", "静态网站生成器", "POSIX", "极简主义", "CLI", "Unix哲学", "零依赖", "Markdown"]
-categories: ["开发工具", "前端"]
+entry_kind: auto
+tags:
+- Shell
+- 静态网站生成器
+- POSIX
+- 极简主义
+- CLI
+- Unix哲学
+- 零依赖
+- Markdown
+categories:
+- 开发工具
+- 前端
 source: hacker_news
 external_url: https://aashvik.com/posts/shell-ssg
+scenarios: []
+aliases:
+- /posts/20260126-hacker_news-a-static-site-generator-written-in-posix-shell-13/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 📰 ⚡️ 震惊！纯Shell打造的静态网站生成器，极客必备！🚀
@@ -203,7 +220,6 @@ OpenWrt 系统的存储空间极其有限，无法容纳庞大的 Web 服务器�
 - **效率提升**：将原本手动编辑 HTML 的过程自动化为 Markdown 转换，减少了 90% 的文档编写时间。
 
 ---
-## ✅ 最佳实践
 
 ## 最佳实践指南
 

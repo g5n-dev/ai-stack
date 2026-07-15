@@ -1,14 +1,33 @@
 ---
-title: "让大语言模型互斗万智牌的实验项目"
-date: 2026-02-17T19:23:24+08:00
+title: 让大语言模型互斗万智牌的实验项目
+date: 2026-02-17 19:23:24+08:00
 draft: false
-entry_kind: "auto"
-tags: ["LLM", "Agent", "游戏AI", "万智牌", "多智能体", "Python", "实验项目", "Show HN"]
-categories: ["大模型", "开源生态"]
+entry_kind: auto
+tags:
+- LLM
+- Agent
+- 游戏AI
+- 万智牌
+- 多智能体
+- Python
+- 实验项目
+- Show HN
+categories:
+- 大模型
+- 开源生态
 source: hacker_news
-description: "让大语言模型（LLM）玩《万智牌》不仅是一个有趣的实验，更是检验其在复杂规则下逻辑推理与多步规划能力的试金石。本文详细介绍了作者如何构建系统，让模型在理解长篇规则文本的同时进行博弈。对于关注 AI 智能体进化与游戏技术实现的开发者而言，这篇文章提供了一套从规则解析到模型交互的完整工程实践参考。"
+description: 让大语言模型（LLM）玩《万智牌》不仅是一个有趣的实验，更是检验其在复杂规则下逻辑推理与多步规划能力的试金石。本文详细介绍了作者如何构建系统，让模型在理解长篇规则文本的同时进行博弈。对于关注
+  AI 智能体进化与游戏技术实现的开发者而言，这篇文章提供了一套从规则解析到模型交互的完整工程实践参考。
 external_url: https://mage-bench.com
-scenarios: ["大语言模型", "AI/ML项目"]
+scenarios:
+- 大语言模型
+- AI/ML项目
+aliases:
+- /posts/20260217-hacker_news-show-hn-i-taught-llms-to-play-magic-the-gathering--19/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 让大语言模型互斗万智牌的实验项目
@@ -225,7 +244,6 @@ Meta 开发了 CICERO，这是第一个在战略游戏中达到人类水平的 A
 在一个包含 40 位人类玩家的《外交》网络联赛中，CICERO 的得分是平均分的两倍多，并在所有参与者中排名前 10%。它不仅展现了高超的游戏策略，更令人震惊的是，许多人类玩家在赛后并不知道与自己谈判的是 AI。这标志着 LLM 技术在融合语言理解、战略规划和心理博弈方面取得了重大突破，为未来人机交互和谈判助手奠定了基础。
 
 ---
-## 最佳实践
 
 ## 最佳实践指南
 
@@ -394,9 +412,9 @@ MTG 的核心在于堆栈交互，即响应对手的动作。LLM 容易忘记上
 
 ### 相关文章
 
-- [Show HN: AI agents play SimCity through a REST API]({{< relref "posts/20260211-hacker_news-show-hn-ai-agents-play-simcity-through-a-rest-api-15.md" >}})
-- [LangBot：生产级多平台智能体机器人开发平台]({{< relref "posts/20260201-github_trending-langbot-app-langbot-0.md" >}})
-- [LangBot：支持多平台集成的生产级智能代理机器人开发平台]({{< relref "posts/20260201-github_trending-langbot-app-langbot-7.md" >}})
+- [Show HN: AI agents play SimCity through a REST API]({{< relref "posts/20260211-hacker_news-show-hn-ai-agents-play-simcity-through-a-rest-api-11.md" >}})
+- [LangBot：生产级多平台智能体机器人开发平台]({{< relref "posts/20260131-github_trending-langbot-app-langbot-7.md" >}})
+- [LangBot：支持多平台集成的生产级智能代理机器人开发平台]({{< relref "posts/20260131-github_trending-langbot-app-langbot-7.md" >}})
 - [迈向智能体系统规模化科学：作用机制与生效条件]({{< relref "posts/20260201-hacker_news-towards-a-science-of-scaling-agent-systems-when-an-11.md" >}})
-- [LangBot：生产级多平台智能 IM 机器人开发平台]({{< relref "posts/20260202-github_trending-langbot-app-langbot-0.md" >}})
+- [LangBot：生产级多平台智能 IM 机器人开发平台]({{< relref "posts/20260131-github_trending-langbot-app-langbot-7.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

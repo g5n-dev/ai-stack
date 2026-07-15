@@ -1,14 +1,32 @@
 ---
-title: "鲁棒性是函数而非数值：基于视觉驾驶的OOD鲁棒性因子化研究"
-date: 2026-02-10T22:46:04+08:00
+title: 鲁棒性是函数而非数值：基于视觉驾驶的OOD鲁棒性因子化研究
+date: 2026-02-10 22:46:04+08:00
 draft: false
-entry_kind: "auto"
-tags: ["OOD鲁棒性", "视觉驾驶", "因子化", "自动驾驶", "计算机视觉", "分布外检测", "鲁棒性评估", "cs.RO"]
-categories: ["论文", "大模型"]
+entry_kind: auto
+tags:
+- OOD鲁棒性
+- 视觉驾驶
+- 因子化
+- 自动驾驶
+- 计算机视觉
+- 分布外检测
+- 鲁棒性评估
+- cs.RO
+categories:
+- 论文
+- 大模型
 source: arxiv
-description: "本文题为《鲁棒性是函数而非数值：基于视觉驾驶中分布外（OOD）鲁棒性的分解综合研究》，针对自动驾驶中OOD鲁棒性评估过于简化的问题，提出了一套系统性的分解研究方法。 **核心观点与方法：** 作者利用VISTA仿真平台进行闭环控制测试，将环境沿场景、季节、天气、时间和智能体组合五个维度进行分解，并通过控制变量的$k$-"
+description: 本文题为《鲁棒性是函数而非数值：基于视觉驾驶中分布外（OOD）鲁棒性的分解综合研究》，针对自动驾驶中OOD鲁棒性评估过于简化的问题，提出了一套系统性的分解研究方法。
+  **核心观点与方法：** 作者利用VISTA仿真平台进行闭环控制测试，将环境沿场景、季节、天气、时间和智能体组合五个维度进行分解，并通过控制变量的$k$-
 external_url: http://arxiv.org/abs/2602.09018v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+aliases:
+- /posts/20260211-arxiv_ai-robustness-is-a-function-not-a-number-a-factorized-0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 鲁棒性是函数而非数值：基于视觉驾驶的OOD鲁棒性因子化研究
@@ -215,7 +233,6 @@ scenarios: ["Web应用开发"]
 
 
 ---
-## 学习路径
 
 ## 学习路径
 
@@ -421,7 +438,7 @@ scenarios: ["Web应用开发"]
 
 - [IRL-DAL：基于能量引导扩散模型的自动驾驶安全自适应轨迹规划]({{< relref "posts/20260202-arxiv_ai-irl-dal-safe-and-adaptive-trajectory-planning-for--6.md" >}})
 - [HERMES：基于视觉语言模型的长尾自动驾驶端到端风险感知系统]({{< relref "posts/20260203-arxiv_ai-hermes-a-holistic-end-to-end-risk-aware-multimodal-6.md" >}})
-- [IRL-DAL：基于能量引导扩散模型的安全自适应自动驾驶轨迹规划]({{< relref "posts/20260203-arxiv_ai-irl-dal-safe-and-adaptive-trajectory-planning-for--6.md" >}})
-- [Waymo 世界模型：利用生成式视频预测驾驶场景]({{< relref "posts/20260206-hacker_news-the-waymo-world-model-0.md" >}})
-- [Waymo 世界模型：自动驾驶场景生成与预测架构]({{< relref "posts/20260207-hacker_news-the-waymo-world-model-2.md" >}})
+- [IRL-DAL：基于能量引导扩散模型的安全自适应自动驾驶轨迹规划]({{< relref "posts/20260202-arxiv_ai-irl-dal-safe-and-adaptive-trajectory-planning-for--6.md" >}})
+- [Waymo 世界模型：利用生成式视频预测驾驶场景]({{< relref "posts/20260206-hacker_news-the-waymo-world-model-a-new-frontier-for-autonomou-4.md" >}})
+- [Waymo 世界模型：自动驾驶场景生成与预测架构]({{< relref "posts/20260206-hacker_news-the-waymo-world-model-a-new-frontier-for-autonomou-4.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

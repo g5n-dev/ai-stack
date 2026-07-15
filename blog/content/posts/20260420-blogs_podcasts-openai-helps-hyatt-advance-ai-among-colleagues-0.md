@@ -1,14 +1,30 @@
 ---
-title: "凯悦酒店集团部署ChatGPT Enterprise提升员工效率和宾客体验"
-date: 2026-04-20T15:16:13+08:00
+title: 凯悦酒店集团部署ChatGPT Enterprise提升员工效率和宾客体验
+date: 2026-04-20 15:16:13+08:00
 draft: false
-entry_kind: "auto"
-tags: ["大模型", "ChatGPT", "企业部署", "酒店行业", "运营优化", "生产力提升", "AI助手", "宾客体验"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- 大模型
+- ChatGPT
+- 企业部署
+- 酒店行业
+- 运营优化
+- 生产力提升
+- AI 助手
+- 宾客体验
+categories:
+- 大模型
+- AI 工程
 source: blogs_podcasts
-description: "OpenAI 与 Hyatt 合作，在全球员工中部署 ChatGPT Enterprise，基于 GPT‑5.4 与 Codex 技术，旨在提升内部生产力、优化运营流程并改善客人体验。通过 AI 助手，Hyatt 员工可更高效地获取信息、协同工作，从而加快服务创新并提升整体运营水平。"
+description: OpenAI 与 Hyatt 合作，在全球员工中部署 ChatGPT Enterprise，基于 GPT‑5.4 与 Codex 技术，旨在提升内部生产力、优化运营流程并改善客人体验。通过
+  AI 助手，Hyatt 员工可更高效地获取信息、协同工作，从而加快服务创新并提升整体运营水平。
 external_url: https://openai.com/index/hyatt-advances-ai-with-chatgpt-enterprise
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 凯悦酒店集团部署ChatGPT Enterprise提升员工效率和宾客体验
@@ -87,7 +103,7 @@ Hyatt借助OpenAI的企业版ChatGPT，将大模型能力下沉至全体员工�
 
 ### 相关文章
 
-- [大林建设部署ChatGPT Enterprise推动全球建筑业务人才发展]({{< relref "posts/20260202-blogs_podcasts-taisei-corporation-shapes-the-next-generation-of-t-8.md" >}})
+- [大林建设部署ChatGPT Enterprise推动全球建筑业务人才发展]({{< relref "posts/20260130-blogs_podcasts-taisei-corporation-shapes-the-next-generation-of-t-3.md" >}})
 - [OpenClaw：开源AI助手平台架构与演进]({{< relref "posts/20260228-juejin-openclaw开源ai助手平台的革命之路-0.md" >}})
 - [ChatGPT搜索与深度研究功能教程]({{< relref "posts/20260410-blogs_podcasts-research-with-chatgpt-0.md" >}})
 - [用ChatGPT项目组织聊天文件和指令]({{< relref "posts/20260410-blogs_podcasts-using-projects-in-chatgpt-0.md" >}})

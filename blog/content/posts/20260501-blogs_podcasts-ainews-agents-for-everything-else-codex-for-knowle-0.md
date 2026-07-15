@@ -1,14 +1,30 @@
 ---
-title: "Codex主知识Claude主创意：AI代理能力边界与管控挑战"
-date: 2026-05-01T15:23:34+08:00
+title: Codex主知识Claude主创意：AI代理能力边界与管控挑战
+date: 2026-05-01 15:23:34+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI代理", "Codex", "Claude", "知识工作", "创意工作", "AI安全", "智能体", "模型对比"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- AI 代理
+- Codex
+- Claude
+- 知识工作
+- 创意工作
+- AI 安全
+- 智能体
+- 模型对比
+categories:
+- 大模型
+- AI 工程
 source: blogs_podcasts
-description: "背景 AI 领域正出现新一代代理（Agent），将原本仅用于特定任务的模型推向更广阔的工作场景。 关键产品 - **Codex**：面向知识工作，如代码补全、文档生成、数据分析等，被称为“知识代理”。 - **Claude**：专注创意任务，包括写作、艺术构思、交互式故事，提供更强的想象力和情感表达。 “突破conta"
+description: 背景 AI 领域正出现新一代代理（Agent），将原本仅用于特定任务的模型推向更广阔的工作场景。 关键产品 - **Codex**：面向知识工作，如代码补全、文档生成、数据分析等，被称为“知识代理”。
+  - **Claude**：专注创意任务，包括写作、艺术构思、交互式故事，提供更强的想象力和情感表达。 “突破conta
 external_url: https://www.latent.space/p/ainews-agents-for-everything-else
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Codex主知识Claude主创意：AI代理能力边界与管控挑战
@@ -140,9 +156,9 @@ Agent技术的成熟正在重塑软件开发流程和内容生产方式。团队
 
 ### 相关文章
 
-- [OpenAI 与 Anthropic 之争：Claude Opus 4.6 对决 GPT 5.3 Codex]({{< relref "posts/20260206-blogs_podcasts-ainews-openai-and-anthropic-go-to-war-claude-opus--2.md" >}})
-- [OpenAI 对决 Anthropic：Claude Opus 4.6 挑战 GPT-5.3 Codex]({{< relref "posts/20260207-blogs_podcasts-ainews-openai-and-anthropic-go-to-war-claude-opus--2.md" >}})
-- [OpenAI 对决 Anthropic：Claude Opus 4.6 挑战 GPT-5.3 Codex]({{< relref "posts/20260209-blogs_podcasts-ainews-openai-and-anthropic-go-to-war-claude-opus--5.md" >}})
-- [[AINews] OpenAI and Anthropic go to war: Claude Opus 4]({{< relref "posts/20260210-blogs_podcasts-ainews-openai-and-anthropic-go-to-war-claude-opus--9.md" >}})
-- [OpenAI与Anthropic编码模型之争：Claude Opus 4.6对决GPT 5.3 Codex]({{< relref "posts/20260207-blogs_podcasts-ainews-openai-and-anthropic-go-to-war-claude-opus--5.md" >}})
+- [OpenAI 与 Anthropic 之争：Claude Opus 4.6 对决 GPT 5.3 Codex]({{< relref "posts/20260206-blogs_podcasts-ainews-openai-and-anthropic-go-to-war-claude-opus--0.md" >}})
+- [OpenAI 对决 Anthropic：Claude Opus 4.6 挑战 GPT-5.3 Codex]({{< relref "posts/20260206-blogs_podcasts-ainews-openai-and-anthropic-go-to-war-claude-opus--0.md" >}})
+- [OpenAI 对决 Anthropic：Claude Opus 4.6 挑战 GPT-5.3 Codex]({{< relref "posts/20260206-blogs_podcasts-ainews-openai-and-anthropic-go-to-war-claude-opus--0.md" >}})
+- [[AINews] OpenAI and Anthropic go to war: Claude Opus 4]({{< relref "posts/20260206-blogs_podcasts-ainews-openai-and-anthropic-go-to-war-claude-opus--0.md" >}})
+- [OpenAI与Anthropic编码模型之争：Claude Opus 4.6对决GPT 5.3 Codex]({{< relref "posts/20260206-blogs_podcasts-ainews-openai-and-anthropic-go-to-war-claude-opus--0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

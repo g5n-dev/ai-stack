@@ -1,14 +1,33 @@
 ---
-title: "AIE Europe汇报：Agent Labs无监督学习与潜在空间交叉特别篇"
-date: 2026-04-23T23:27:59+08:00
+title: AIE Europe汇报：Agent Labs无监督学习与潜在空间交叉特别篇
+date: 2026-04-23 23:27:59+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Agent Labs", "无监督学习", "潜在空间", "AI Agent", "AIE Europe", "LLM", "跨模态", "机器学习"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- Agent Labs
+- 无监督学习
+- 潜在空间
+- AI Agent
+- AIE Europe
+- LLM
+- 跨模态
+- 机器学习
+categories:
+- 大模型
+- AI 工程
 source: blogs_podcasts
-description: "概要 本期节目在 AIE Europe 大会结束不久后录制，赶在 Cursor‑xAI 交易宣布之前，对大会亮点进行回顾，并围绕 Agent Labs 提出的“无监督学习 × 跨潜伏空间”论点展开深入讨论。节目首先梳理了 AIE Europe 的主要议题，包括大规模语言模型的最新进展、开源生态的扩张以及多模态推理的实验"
+description: 概要 本期节目在 AIE Europe 大会结束不久后录制，赶在 Cursor‑xAI 交易宣布之前，对大会亮点进行回顾，并围绕 Agent
+  Labs 提出的“无监督学习 × 跨潜伏空间”论点展开深入讨论。节目首先梳理了 AIE Europe 的主要议题，包括大规模语言模型的最新进展、开源生态的扩张以及多模态推理的实验
 external_url: https://www.latent.space/p/unsupervised-learning-2026
-scenarios: ["AI/ML项目", "大语言模型"]
+scenarios:
+- AI/ML项目
+- 大语言模型
+aliases:
+- /posts/20260424-blogs_podcasts-aie-europe-debrief-agent-labs-thesis-unsupervised--0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AIE Europe汇报：Agent Labs无监督学习与潜在空间交叉特别篇
@@ -128,9 +147,9 @@ scenarios: ["AI/ML项目", "大语言模型"]
 
 ### 相关文章
 
-- [Meta 排序工程师代理：自主加速广告排名模型迭代]({{< relref "posts/20260318-blogs_podcasts-ranking-engineer-agent-rea-the-autonomous-ai-agent-3.md" >}})
-- [Agent评估显示AGENTS.md配置优于Skills]({{< relref "posts/20260130-hacker_news-agentsmd-outperforms-skills-in-our-agent-evals-4.md" >}})
-- [Agent评估显示AGENTS.md配置优于技能配置]({{< relref "posts/20260130-hacker_news-agentsmd-outperforms-skills-in-our-agent-evals-6.md" >}})
-- [Compressed Agents：Agent Skills 技术解析]({{< relref "posts/20260130-hacker_news-compressed-agentsmd-agent-skills-6.md" >}})
+- [Meta 排序工程师代理：自主加速广告排名模型迭代]({{< relref "posts/20260317-blogs_podcasts-ranking-engineer-agent-rea-the-autonomous-ai-agent-2.md" >}})
+- [Agent评估显示AGENTS.md配置优于Skills]({{< relref "posts/20260129-hacker_news-compressed-agentsmd-agent-skills-5.md" >}})
+- [Agent评估显示AGENTS.md配置优于技能配置]({{< relref "posts/20260129-hacker_news-compressed-agentsmd-agent-skills-5.md" >}})
+- [Compressed Agents：Agent Skills 技术解析]({{< relref "posts/20260129-hacker_news-compressed-agentsmd-agent-skills-5.md" >}})
 - [编码代理的成功对通用AI系统的启示]({{< relref "posts/20260130-hacker_news-what-the-success-of-coding-agents-teaches-us-about-11.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

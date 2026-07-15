@@ -1,14 +1,30 @@
 ---
-title: "Nova模型蒸馏优化视频搜索延迟成本"
-date: 2026-04-17T22:04:56+08:00
+title: Nova模型蒸馏优化视频搜索延迟成本
+date: 2026-04-17 22:04:56+08:00
 draft: false
-entry_kind: "auto"
-tags: ["模型蒸馏", "Amazon Nova", "Amazon Bedrock", "视频搜索", "语义搜索", "延迟优化", "成本优化", "模型压缩"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- 模型蒸馏
+- Amazon Nova
+- Amazon Bedrock
+- 视频搜索
+- 语义搜索
+- 延迟优化
+- 成本优化
+- 模型压缩
+categories:
+- 大模型
+- AI 工程
 source: blogs_podcasts
-description: "Amazon Bedrock 上的 Model Distillation 将大型教师模型 Nova Premier 的路由智能迁移至体积更小的学生模型 Nova Micro，专门用于视频语义搜索意图识别。该蒸馏过程保留了细致的路由质量，实现推理成本下降超过 95%，延迟降低约 50%，同时保持原有的识别准确度。"
+description: Amazon Bedrock 上的 Model Distillation 将大型教师模型 Nova Premier 的路由智能迁移至体积更小的学生模型
+  Nova Micro，专门用于视频语义搜索意图识别。该蒸馏过程保留了细致的路由质量，实现推理成本下降超过 95%，延迟降低约 50%，同时保持原有的识别准确度。
 external_url: https://aws.amazon.com/blogs/machine-learning/optimize-video-semantic-search-intent-with-amazon-nova-model-distillation-on-amazon-bedrock
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Nova模型蒸馏优化视频搜索延迟成本
@@ -153,9 +169,9 @@ Amazon Bedrock 上的 Model Distillation 将大型教师模型 Nova Premier �
 
 ### 相关文章
 
-- [Amazon Nova Micro微调实现成本效益SQL生成]({{< relref "posts/20260417-blogs_podcasts-cost-efficient-custom-text-to-sql-using-amazon-nov-0.md" >}})
-- [构建多模态视频搜索系统：基于Amazon Nova与OpenSearch]({{< relref "posts/20260315-blogs_podcasts-multimodal-embeddings-at-scale-ai-data-lake-for-me-10.md" >}})
-- [亚马逊利用Nova模型自动化新履约中心运营就绪测试]({{< relref "posts/20260211-blogs_podcasts-how-amazon-uses-amazon-nova-models-to-automate-ope-0.md" >}})
-- [How Amazon uses Amazon Nova models to automate operatio]({{< relref "posts/20260211-blogs_podcasts-how-amazon-uses-amazon-nova-models-to-automate-ope-6.md" >}})
-- [亚马逊利用Nova模型自动化新履约中心运营准备检测]({{< relref "posts/20260211-blogs_podcasts-how-amazon-uses-amazon-nova-models-to-automate-ope-7.md" >}})
+- [Amazon Nova Micro微调实现成本效益SQL生成]({{< relref "posts/20260416-blogs_podcasts-cost-efficient-custom-text-to-sql-using-amazon-nov-0.md" >}})
+- [构建多模态视频搜索系统：基于Amazon Nova与OpenSearch]({{< relref "posts/20260312-blogs_podcasts-multimodal-embeddings-at-scale-ai-data-lake-for-me-0.md" >}})
+- [亚马逊利用Nova模型自动化新履约中心运营就绪测试]({{< relref "posts/20260210-blogs_podcasts-how-amazon-uses-amazon-nova-models-to-automate-ope-0.md" >}})
+- [How Amazon uses Amazon Nova models to automate operatio]({{< relref "posts/20260210-blogs_podcasts-how-amazon-uses-amazon-nova-models-to-automate-ope-0.md" >}})
+- [亚马逊利用Nova模型自动化新履约中心运营准备检测]({{< relref "posts/20260210-blogs_podcasts-how-amazon-uses-amazon-nova-models-to-automate-ope-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

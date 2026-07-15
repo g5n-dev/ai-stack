@@ -1,14 +1,31 @@
 ---
-title: "AI编程Agent使用child_process命令执行的实战经验"
-date: 2026-07-14T22:32:28+08:00
+title: AI编程Agent使用child_process命令执行的实战经验
+date: 2026-07-14 22:32:28+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI编程Agent", "child_process", "Node.js", "命令执行", "进程管理", "实战经验", "踩坑笔记", "LLM"]
-categories: ["AI 工程", "后端"]
+entry_kind: auto
+tags:
+- AI编程Agent
+- child_process
+- Node.js
+- 命令执行
+- 进程管理
+- 实战经验
+- 踩坑笔记
+- LLM
+categories:
+- AI 工程
+- 后端
 source: juejin
-description: "背景 - AI 编程 Agent 在运行时经常需要执行外部命令（编译、脚本、系统工具等）。 - Node.js 主进程是单线程，直接在主线程调用阻塞或耗时任务会卡住事件循环。 为什么选 child_process - 子进程独立运行，保持主进程响应。 - 进程间资源隔离，单个子进程崩溃不影响 Agent。 - 方便捕获"
+description: 背景 - AI 编程 Agent 在运行时经常需要执行外部命令（编译、脚本、系统工具等）。 - Node.js 主进程是单线程，直接在主线程调用阻塞或耗时任务会卡住事件循环。
+  为什么选 child_process - 子进程独立运行，保持主进程响应。 - 进程间资源隔离，单个子进程崩溃不影响 Agent。 - 方便捕获
 external_url: https://juejin.cn/post/7662273240988057615
-scenarios: ["AI/ML项目", "大语言模型"]
+scenarios:
+- AI/ML项目
+- 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AI编程Agent使用child_process命令执行的实战经验

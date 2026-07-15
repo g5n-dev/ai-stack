@@ -1,14 +1,29 @@
 ---
-title: "微软Copilot协作功能存在文件外泄漏洞"
-date: 2026-05-25T23:20:30+08:00
+title: 微软Copilot协作功能存在文件外泄漏洞
+date: 2026-05-25 23:20:30+08:00
 draft: false
-entry_kind: "auto"
-tags: ["微软", "Copilot", "文件外泄", "漏洞", "安全", "协作", "AI", "隐私"]
-categories: ["安全"]
+entry_kind: auto
+tags:
+- 微软
+- Copilot
+- 文件外泄
+- 漏洞
+- 安全
+- 协作
+- AI
+- 隐私
+categories:
+- 安全
 source: hacker_news
-description: "Microsoft Copilot Cowork 在协作工作流中提供了文件共享的便利，但近期安全研究指出该功能可能存在未授权的文件外泄风险。本文深入剖析了攻击者如何利用 Copilot Cowork 的接口窃取敏感数据，并提供了检测异常访问行为和限制权限的实战建议，帮助企业用户在保持协作效率的同时防止信息泄漏。"
+description: Microsoft Copilot Cowork 在协作工作流中提供了文件共享的便利，但近期安全研究指出该功能可能存在未授权的文件外泄风险。本文深入剖析了攻击者如何利用
+  Copilot Cowork 的接口窃取敏感数据，并提供了检测异常访问行为和限制权限的实战建议，帮助企业用户在保持协作效率的同时防止信息泄漏。
 external_url: https://www.promptarmor.com/resources/microsoft-copilot-cowork-exfiltrates-files
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 微软Copilot协作功能存在文件外泄漏洞
@@ -57,9 +72,9 @@ Microsoft Copilot Cowork 在协作工作流中提供了文件共享的便利，�
 
 ### 相关文章
 
-- [AI如何影响技能形成与构建]({{< relref "posts/20260130-hacker_news-how-ai-impacts-skill-formation-13.md" >}})
-- [微软 Copilot 聊天机器人遭遇运行问题]({{< relref "posts/20260205-hacker_news-microsofts-copilot-chatbot-is-running-into-problem-13.md" >}})
-- [微软Copilot聊天机器人遭遇运行问题]({{< relref "posts/20260205-hacker_news-microsofts-copilot-chatbot-is-running-into-problem-14.md" >}})
+- [AI如何影响技能形成与构建]({{< relref "posts/20260130-hacker_news-how-ai-impacts-skill-formation-3.md" >}})
+- [微软 Copilot 聊天机器人遭遇运行问题]({{< relref "posts/20260205-hacker_news-microsofts-copilot-chatbot-is-running-into-problem-9.md" >}})
 - [微软Copilot聊天机器人遭遇运行问题]({{< relref "posts/20260205-hacker_news-microsofts-copilot-chatbot-is-running-into-problem-9.md" >}})
-- [OpenAI为何应打造企业协作平台Slack]({{< relref "posts/20260218-blogs_podcasts-ainews-why-openai-should-build-slack-3.md" >}})
+- [微软Copilot聊天机器人遭遇运行问题]({{< relref "posts/20260205-hacker_news-microsofts-copilot-chatbot-is-running-into-problem-9.md" >}})
+- [OpenAI为何应打造企业协作平台Slack]({{< relref "posts/20260214-hacker_news-openai-should-build-slack-2.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

@@ -1,14 +1,29 @@
 ---
-title: "小型企业Claude应用指南"
-date: 2026-05-14T10:40:51+08:00
+title: 小型企业Claude应用指南
+date: 2026-05-14 10:40:51+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Claude", "小型企业", "AI应用", "应用指南", "商业实践", "效率提升", "大模型", "入门教程"]
-categories: ["大模型", "产品与创业"]
+entry_kind: auto
+tags:
+- Claude
+- 小型企业
+- AI 应用
+- 应用指南
+- 商业实践
+- 效率提升
+- 大模型
+- 入门教程
+categories:
+- 大模型
+- 产品与创业
 source: hacker_news
-description: "在竞争激烈的商业环境中，小型企业正越来越多地寻求人工智能工具来提升运营效率。Claude 作为大规模语言模型，能够在客户服务、内容创作和数据分析等关键环节提供即时、精准的支持，尤其适合预算和技术资源有限的小团队。本文将介绍具体的集成步骤、常见误区以及通过实际案例展示如何快速实现成本与效益的双赢。"
+description: 在竞争激烈的商业环境中，小型企业正越来越多地寻求人工智能工具来提升运营效率。Claude 作为大规模语言模型，能够在客户服务、内容创作和数据分析等关键环节提供即时、精准的支持，尤其适合预算和技术资源有限的小团队。本文将介绍具体的集成步骤、常见误区以及通过实际案例展示如何快速实现成本与效益的双赢。
 external_url: https://www.anthropic.com/news/claude-for-small-business
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 小型企业Claude应用指南
@@ -74,8 +89,8 @@ scenarios: ["AI/ML项目"]
 ### 相关文章
 
 - [Anthropic 发布 AI 熟练度指数以评估教育领域应用]({{< relref "posts/20260223-hacker_news-anthropic-education-the-ai-fluency-index-11.md" >}})
-- [Anthropic 否认 Claude Code 用户成本高达五千美元]({{< relref "posts/20260310-hacker_news-no-it-doesnt-cost-anthropic-5k-per-claude-code-use-14.md" >}})
+- [Anthropic 否认 Claude Code 用户成本高达五千美元]({{< relref "posts/20260310-hacker_news-no-it-doesnt-cost-anthropic-5k-per-claude-code-use-8.md" >}})
 - [Anthropic 投资 1 亿美元扩展 Claude 合作伙伴网络]({{< relref "posts/20260315-hacker_news-anthropic-invests-100m-into-the-claude-partner-net-5.md" >}})
 - [Claude设计功能深度解析]({{< relref "posts/20260417-hacker_news-claude-design-0.md" >}})
-- [🤖Indeed如何用AI颠覆求职体验？招聘效率飙升！]({{< relref "posts/20260127-blogs_podcasts-how-indeed-uses-ai-to-help-evolve-the-job-search-5.md" >}})
+- [🤖Indeed如何用AI颠覆求职体验？招聘效率飙升！]({{< relref "posts/20260127-blogs_podcasts-how-indeed-uses-ai-to-help-evolve-the-job-search-1.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

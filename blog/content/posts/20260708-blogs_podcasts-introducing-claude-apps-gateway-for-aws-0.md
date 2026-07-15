@@ -1,14 +1,30 @@
 ---
-title: "Claude应用网关AWS版：自托管控制平面统一管理访问成本"
-date: 2026-07-08T22:24:27+08:00
+title: Claude应用网关AWS版：自托管控制平面统一管理访问成本
+date: 2026-07-08 22:24:27+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Claude", "AWS", "自托管", "控制平面", "成本管理", "部署策略", "Bedrock", "IAM"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- Claude
+- AWS
+- 自托管
+- 控制平面
+- 成本管理
+- 部署策略
+- Bedrock
+- IAM
+categories:
+- 大模型
+- AI 工程
 source: blogs_podcasts
-description: "功能概览 Claude apps gateway for AWS 是一款自托管控制面，为企业提供统一的访问、成本和策略管理能力，覆盖 Claude Code 与 Claude Desktop。 关键优势 - **集中鉴权**：统一身份验证和授权策略； - **成本可视**：实时监控 API 调用费用，支持配额与预算控制"
+description: 功能概览 Claude apps gateway for AWS 是一款自托管控制面，为企业提供统一的访问、成本和策略管理能力，覆盖 Claude
+  Code 与 Claude Desktop。 关键优势 - **集中鉴权**：统一身份验证和授权策略； - **成本可视**：实时监控 API 调用费用，支持配额与预算控制
 external_url: https://aws.amazon.com/blogs/machine-learning/introducing-claude-apps-gateway-for-aws
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Claude应用网关AWS版：自托管控制平面统一管理访问成本
@@ -124,9 +140,9 @@ Claude apps gateway的推出标志着AI平台服务商从“功能优先”向�
 
 ### 相关文章
 
-- [基于Bedrock与LangGraph构建SageMaker AI对话代理]({{< relref "posts/20260303-blogs_podcasts-build-a-serverless-conversational-ai-agent-using-c-4.md" >}})
+- [基于Bedrock与LangGraph构建SageMaker AI对话代理]({{< relref "posts/20260302-blogs_podcasts-build-a-serverless-conversational-ai-agent-using-c-1.md" >}})
 - [Anthropic Claude Sonnet 5登陆AWS Amazon Bedrock平台]({{< relref "posts/20260630-blogs_podcasts-introducing-claude-sonnet-5-on-aws-anthropics-most-0.md" >}})
-- [亚马逊Bedrock在东南亚及台湾推出Anthropic Claude模型]({{< relref "posts/20260225-blogs_podcasts-global-cross-region-inference-for-latest-anthropic-6.md" >}})
-- [在SageMaker AI上基于Bedrock与LangGraph构建无服务器对话代理]({{< relref "posts/20260303-blogs_podcasts-build-a-serverless-conversational-ai-agent-using-c-11.md" >}})
-- [基于Amazon SageMaker AI构建无服务器对话AI代理]({{< relref "posts/20260303-blogs_podcasts-build-a-serverless-conversational-ai-agent-using-c-13.md" >}})
+- [亚马逊Bedrock在东南亚及台湾推出Anthropic Claude模型]({{< relref "posts/20260224-blogs_podcasts-global-cross-region-inference-for-latest-anthropic-2.md" >}})
+- [在SageMaker AI上基于Bedrock与LangGraph构建无服务器对话代理]({{< relref "posts/20260302-blogs_podcasts-build-a-serverless-conversational-ai-agent-using-c-1.md" >}})
+- [基于Amazon SageMaker AI构建无服务器对话AI代理]({{< relref "posts/20260302-blogs_podcasts-build-a-serverless-conversational-ai-agent-using-c-1.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

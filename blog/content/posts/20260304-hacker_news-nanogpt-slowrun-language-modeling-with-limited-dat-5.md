@@ -20,6 +20,15 @@ description: 在语言模型领域，数据与算力的平衡往往决定了训�
 external_url: https://qlabs.sh/slowrun
 scenarios:
 - 大语言模型
+aliases:
+- /posts/20260304-hacker_news-nanogpt-slowrun-language-modeling-with-limited-dat-6/
+- /posts/20260305-hacker_news-nanogpt-slowrun-language-modeling-with-limited-dat-10/
+- /posts/20260305-hacker_news-nanogpt-slowrun-language-modeling-with-limited-dat-14/
+- /posts/20260305-hacker_news-nanogpt-slowrun-language-modeling-with-limited-dat-19/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # NanoGPT Slowrun：有限数据与无限算力的语言建模

@@ -14,6 +14,10 @@ description: '**H-GRAMA：无需训练的跨架构图神经网络合并方法** 
 external_url: http://arxiv.org/abs/2602.19332v1
 scenarios:
 - Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 无需训练的图神经网络跨架构合并方法
@@ -116,7 +120,6 @@ H-GRAMA为GNN模型合并提供了首个**训练无关、跨架构**的实用框
 
 以下是对论文《Training-Free Cross-Architecture Merging for Graph Neural Networks》（H-GRAMA）的深入分析报告。
 
-### 1. 研究背景与问题
 
 ### 核心问题
 该论文致力于解决图神经网络（GNN）模型合并中的一个根本性瓶颈：**如何在不进行额外训练的情况下，合并具有不同架构（异构）的图神经网络模型**。现有的模型合并技术（如模型汤、权重插值）大多假设待合并的模型共享相同的参数空间（即同构架构），这在图神经网络的多样化部署场景中限制极大。
@@ -134,7 +137,6 @@ H-GRAMA为GNN模型合并提供了首个**训练无关、跨架构**的实用框
 ### 为什么这个问题重要
 解决这一问题具有极高的理论与实践价值。理论上，它挑战了GNN参数空间的刚性约束；实践上，它允许开发者和工程师像搭积木一样，将现有的、针对不同任务或不同图结构优化的GNN模型直接融合，构建出一个通用的、高性能的"全能模型"，而无需从头训练或昂贵的推理集成。
 
-### 2. 核心方法与创新
 
 ### 提出的核心方法：H-GRAMA
 H-GRAMA（**H**eterogeneous **G**raph **R**outing and **A**lignment of **M**essage **A**ggregations，异构图路由与消息聚合对齐）是一个创新的框架，旨在通过**算子空间**的融合来实现**参数空间**的合并。
@@ -160,7 +162,6 @@ H-GRAMA（**H**eterogeneous **G**raph **R**outing and **A**lignment of **M**essa
 -   **鲁棒性**：在合并过程中，通过算子空间的平滑过渡，减少了对参数初始化和排列的敏感性。
 -   **通用性**：不依赖于特定的图数据分布，对同质性和异质性图均有效。
 
-### 3. 理论基础
 
 ### 使用的理论基础或假设
 H-GRAMA的理论建立在**流形学习**和**函数空间插值**的基础上。
@@ -181,7 +182,6 @@ $$ \mathcal{M}_{\text{merge}} = \alpha \cdot \mathcal{M}_{\text{GCN}} + (1-\alph
 ### 理论贡献分析
 该研究从理论上证明了，当且仅当模型处于"算子表示"时，不同架构的合并才等价于在特征空间寻找最优的联合表示。这为GNN的模块化设计提供了新的理论视角。
 
-### 7. 学习建议
 
 ### 适合什么背景的读者
 -   具备深度学习基础，了解图

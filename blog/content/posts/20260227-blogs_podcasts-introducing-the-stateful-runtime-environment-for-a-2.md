@@ -22,6 +22,14 @@ description: 以下是对该内容的中文简洁总结： **标题：Amazon Bed
 external_url: https://openai.com/index/introducing-the-stateful-runtime-environment-for-agents-in-amazon-bedrock
 scenarios:
 - AI/ML项目
+aliases:
+- /posts/20260228-blogs_podcasts-introducing-the-stateful-runtime-environment-for-a-3/
+- /posts/20260228-blogs_podcasts-introducing-the-stateful-runtime-environment-for-a-6/
+- /posts/20260301-blogs_podcasts-introducing-the-stateful-runtime-environment-for-a-7/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Amazon Bedrock 推出 Agent 有状态运行时环境
@@ -98,7 +106,6 @@ Amazon Bedrock 发布了针对 Agent 的有状态运行时环境。该功能将�
 
 ## 技术分析
 
-### 4. 应用价值分析
 
 ### 降低工程复杂度
 该技术方案将状态管理从应用层下沉至基础设施层。开发者无需自行编写代码来维护 Redis 或数据库中的会话状态，也无需处理复杂的并发同步问题，从而能够专注于业务逻辑的实现。
@@ -213,8 +220,8 @@ Amazon Bedrock 发布了针对 Agent 的有状态运行时环境。该功能将�
 
 ### 相关文章
 
-- [LinqAlpha利用Amazon Bedrock构建投资思路压力测试智能体]({{< relref "posts/20260212-blogs_podcasts-how-linqalpha-assesses-investment-theses-using-dev-6.md" >}})
-- [LinqAlpha利用Amazon Bedrock构建“唱反调”机制以压力测试投资逻辑]({{< relref "posts/20260212-blogs_podcasts-how-linqalpha-assesses-investment-theses-using-dev-7.md" >}})
-- [Moltis：具备记忆、工具与技能扩展能力的AI助手]({{< relref "posts/20260213-hacker_news-show-hn-moltis-ai-assistant-with-memory-tools-and--15.md" >}})
+- [LinqAlpha利用Amazon Bedrock构建投资思路压力测试智能体]({{< relref "posts/20260211-blogs_podcasts-how-linqalpha-assesses-investment-theses-using-dev-3.md" >}})
+- [LinqAlpha利用Amazon Bedrock构建“唱反调”机制以压力测试投资逻辑]({{< relref "posts/20260211-blogs_podcasts-how-linqalpha-assesses-investment-theses-using-dev-3.md" >}})
+- [Moltis：具备记忆、工具与技能扩展能力的AI助手]({{< relref "posts/20260213-hacker_news-show-hn-moltis-ai-assistant-with-memory-tools-and--7.md" >}})
 - [Moltis：具备记忆与工具调用能力的自扩展AI助手]({{< relref "posts/20260213-hacker_news-show-hn-moltis-ai-assistant-with-memory-tools-and--7.md" >}})
-- [Moltis：具备记忆、工具调用及自扩展技能的AI助手]({{< relref "posts/20260214-hacker_news-show-hn-moltis-ai-assistant-with-memory-tools-and--16.md" >}})
+- [Moltis：具备记忆、工具调用及自扩展技能的AI助手]({{< relref "posts/20260213-hacker_news-show-hn-moltis-ai-assistant-with-memory-tools-and--7.md" >}})

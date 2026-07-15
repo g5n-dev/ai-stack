@@ -1,14 +1,30 @@
 ---
-title: "AI助力神经多样性人士弥补执行功能缺陷"
-date: 2026-07-13T19:14:35+08:00
+title: AI助力神经多样性人士弥补执行功能缺陷
+date: 2026-07-13 19:14:35+08:00
 draft: false
-entry_kind: "auto"
-tags: ["神经多样性", "执行功能", "无障碍", "AI助理", "任务管理", "认知负荷", "生产力", "Quick助理"]
-categories: ["效率与方法论"]
+entry_kind: auto
+tags:
+- 神经多样性
+- 执行功能
+- 无障碍
+- AI助理
+- 任务管理
+- 认知负荷
+- 生产力
+- Quick助理
+categories:
+- 效率与方法论
 source: blogs_podcasts
-description: "背景 神经多样性（如 ADHD、自闭症谱系等）常伴随执行功能缺陷，影响工作记忆、任务组织和时间管理。 AI作为无障碍工具 AI可以实时补足这些缺口：自动安排日程、提醒关键步骤、整理信息流、生成结构化任务列表，从而降低认知负荷。 Amazon Quick桌面助理 基于Amazon Quick的桌面AI助手在本地运行，提供"
+description: 背景 神经多样性（如 ADHD、自闭症谱系等）常伴随执行功能缺陷，影响工作记忆、任务组织和时间管理。 AI作为无障碍工具 AI可以实时补足这些缺口：自动安排日程、提醒关键步骤、整理信息流、生成结构化任务列表，从而降低认知负荷。
+  Amazon Quick桌面助理 基于Amazon Quick的桌面AI助手在本地运行，提供
 external_url: https://aws.amazon.com/blogs/machine-learning/when-your-brain-works-differently-ai-isnt-a-luxury-its-accessibility
-scenarios: ["AI/ML项目", "命令行工具"]
+scenarios:
+- AI/ML项目
+- 命令行工具
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AI助力神经多样性人士弥补执行功能缺陷
@@ -108,9 +124,9 @@ AI可以实时补足这些缺口：自动安排日程、提醒关键步骤、整
 
 ### 相关文章
 
-- [AI 辅助编程对代码技能形成的影响研究]({{< relref "posts/20260130-hacker_news-how-ai-assistance-impacts-the-formation-of-coding--8.md" >}})
+- [AI 辅助编程对代码技能形成的影响研究]({{< relref "posts/20260130-hacker_news-way-ai-assistance-impacts-the-formation-of-coding--17.md" >}})
 - [AI对工程类岗位的影响或与预期不同]({{< relref "posts/20260129-hacker_news-ais-impact-on-engineering-jobs-may-be-different-th-3.md" >}})
-- [AI辅助编程如何影响代码技能的形成]({{< relref "posts/20260130-hacker_news-how-ai-assistance-impacts-the-formation-of-coding--10.md" >}})
-- [AI辅助编程对代码技能形成的影响研究]({{< relref "posts/20260130-hacker_news-how-ai-assistance-impacts-the-formation-of-coding--12.md" >}})
-- [AI 辅助编程对代码技能形成的影响]({{< relref "posts/20260130-hacker_news-how-ai-assistance-impacts-the-formation-of-coding--9.md" >}})
+- [AI辅助编程如何影响代码技能的形成]({{< relref "posts/20260130-hacker_news-way-ai-assistance-impacts-the-formation-of-coding--17.md" >}})
+- [AI辅助编程对代码技能形成的影响研究]({{< relref "posts/20260130-hacker_news-way-ai-assistance-impacts-the-formation-of-coding--17.md" >}})
+- [AI 辅助编程对代码技能形成的影响]({{< relref "posts/20260130-hacker_news-way-ai-assistance-impacts-the-formation-of-coding--17.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

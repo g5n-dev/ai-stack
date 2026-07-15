@@ -20,6 +20,10 @@ description: 在代码库中引入 AI 工具时，缺乏系统的思考往往会
 external_url: https://aicode.swerdlow.dev
 scenarios:
 - AI/ML项目
+content_mode: legacy_source_brief
+publication_tier: C
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 理性看待AI对代码库的改变

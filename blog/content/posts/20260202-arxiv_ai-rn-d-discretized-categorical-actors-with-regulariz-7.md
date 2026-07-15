@@ -1,14 +1,30 @@
 ---
-title: "RN-D：基于正则化网络的离散分类演员与同策强化学习"
-date: 2026-02-02T02:57:13+08:00
+title: RN-D：基于正则化网络的离散分类演员与同策强化学习
+date: 2026-02-02 02:57:13+08:00
 draft: false
-entry_kind: "auto"
-tags: ["强化学习", "RL", "连续控制", "策略梯度", "正则化网络", "离散分类", "深度学习", "cs.LG"]
-categories: ["论文", "AI 工程"]
+entry_kind: auto
+tags:
+- 强化学习
+- RL
+- 连续控制
+- 策略梯度
+- 正则化网络
+- 离散分类
+- 深度学习
+- cs.LG
+categories:
+- 论文
+- AI 工程
 source: arxiv
-description: "以下是针对论文《RN-D: Discretized Categorical Actors with Regularized Networks for On-Policy Reinforcement Learning》的中文总结： **论文总结** **1. 背景与问题** 在连续控制领域，基于策略的深度强化学习通常依赖"
+description: '以下是针对论文《RN-D: Discretized Categorical Actors with Regularized Networks
+  for On-Policy Reinforcement Learning》的中文总结： **论文总结** **1. 背景与问题** 在连续控制领域，基于策略的深度强化学习通常依赖'
 external_url: http://arxiv.org/abs/2601.23075v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # RN-D：基于正则化网络的离散分类演员与同策强化学习
@@ -144,7 +160,6 @@ RN-D（Regularized Networks with Discretized Categorical Actors）通过重新�
 *   **兼容性**：该方法具有通用性，可作为即插即用的模块替换现有在线策略算法（如PPO）中的策略头，无需修改底层算法逻辑。
 
 ---
-## 研究最佳实践
 
 ## 最佳实践指南
 
@@ -235,7 +250,6 @@ RN-D 是基于 On-Policy（在线策略）强化学习设计的。最佳实践�
 - 设计了轻量级的网络结构，在保持高性能的同时将计算复杂度降低了 40%，适合实时控制应用。
 
 ---
-## 学习路径
 
 ## 学习路径
 
@@ -418,7 +432,7 @@ RN-D 的核心创新点在于“Discretized Categorical Actors”和“Regulariz
 
 - [为何Adam在$β_1=β_2$时更优：缺失的梯度尺度不变性原理]({{< relref "posts/20260130-arxiv_ai-why-adam-works-better-with-β_1-β_2-the-missing-gra-8.md" >}})
 - [NVIDIA Cosmos策略：提升机器人控制能力]({{< relref "posts/20260129-blogs_podcasts-introducing-nvidia-cosmos-policy-for-advanced-robo-0.md" >}})
-- [DynaWeb：基于模型的强化学习网页智能体]({{< relref "posts/20260201-arxiv_ai-dynaweb-model-based-reinforcement-learning-of-web--6.md" >}})
+- [DynaWeb：基于模型的强化学习网页智能体]({{< relref "posts/20260130-arxiv_ai-dynaweb-model-based-reinforcement-learning-of-web--6.md" >}})
 - [测试时也能发现新规律？🤯AI解锁动态学习能力！]({{< relref "posts/20260125-arxiv_ai-learning-to-discover-at-test-time-6.md" >}})
 - [🔥LLM训练动力学新突破！可扩展损失景观曲率度量🚀]({{< relref "posts/20260126-arxiv_ai-a-scalable-measure-of-loss-landscape-curvature-for-1.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

@@ -21,6 +21,10 @@ external_url: http://arxiv.org/abs/2603.00895v1
 scenarios:
 - AI/ML项目
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 基于大规模真实手写数学数据评估AI阅卷性能
@@ -115,9 +119,7 @@ scenarios:
 
 ---
 
-### 评估真实手写大学数学作业的AI批改：迈向基准的大规模研究分析
 
-### 1. 研究背景与问题
 
 ### 核心问题
 本研究致力于解决大型本科STEM（科学、技术、工程、数学）课程中，由于师生比失衡导致的教学反馈滞后与缺失问题。具体而言，是如何利用人工智能技术（OCR与LLM）对近800名学生的数千份**真实手写微积分测验**进行自动化评分与反馈生成，并建立一套标准化的评估基准。
@@ -138,7 +140,6 @@ scenarios:
 ### 重要性
 这项研究不仅关乎技术落地，更关乎教育公平与质量。它标志着AI教育应用从“选择题自动批改”向“主观题/过程性评价”的跨越，是AI真正介入人类高阶认知技能评估的关键一步。
 
-### 2. 核心方法与创新
 
 ### 核心方法
 研究构建了一个端到端的AI评分流水线，主要包含两个阶段：
@@ -154,7 +155,6 @@ scenarios:
 - **真实性**：不同于以往使用合成数据或MNIST数据集，本研究基于真实的课堂作业，包含了涂改、字迹潦草、非标准符号等噪声，具有极高的生态效度。
 - **可解释性**：通过生成反馈，AI不仅给出分数，还解释了扣分原因，增强了系统的可信度。
 
-### 3. 理论基础
 
 ### 使用的理论基础
 1.  **认知负荷理论**：通过自动化处理重复性评分任务，释放助教的认知资源，使其专注于高层次的教学设计与学生辅导。
@@ -167,7 +167,6 @@ scenarios:
 ### 理论贡献分析
 本研究在理论上验证了LLM不仅具备数学解题能力，还具备**“元认知评估能力”**，即能够理解并执行复杂的评分规则，对不完美的解答进行精细化的价值判断。
 
-### 7. 学习建议
 
 ### 适合读者背景
 - 计算机科学/教育技术专业研究生或研究人员。
@@ -418,7 +417,7 @@ scenarios:
 ### 相关文章
 
 - [AgentDrive：首个开放基准！🚗 LLM生成场景驱动Agent智能推理]({{< relref "posts/20260126-arxiv_ai-agentdrive-an-open-benchmark-dataset-for-agentic-a-7.md" >}})
-- [Anthropic 公布 METR 数据评估 Agent 自主能力]({{< relref "posts/20260219-blogs_podcasts-ainews-anthropics-agent-autonomy-study-7.md" >}})
-- [53款模型“洗车”测试]({{< relref "posts/20260224-hacker_news-car-wash-test-with-53-models-15.md" >}})
-- [DARE-bench：评估大模型数据科学建模与指令保真度]({{< relref "posts/20260303-arxiv_ai-dare-bench-evaluating-modeling-and-instruction-fid-1.md" >}})
-- [AssetOpsBench：打破AI Agent评测与工业现实的壁垒！🚀]({{< relref "posts/20260126-blogs_podcasts-assetopsbench-bridging-the-gap-between-ai-agent-be-7.md" >}})
+- [Anthropic 公布 METR 数据评估 Agent 自主能力]({{< relref "posts/20260219-blogs_podcasts-ainews-anthropics-agent-autonomy-study-0.md" >}})
+- [53款模型“洗车”测试]({{< relref "posts/20260223-hacker_news-car-wash-test-with-53-models-9.md" >}})
+- [DARE-bench：评估大模型数据科学建模与指令保真度]({{< relref "posts/20260302-arxiv_ai-dare-bench-evaluating-modeling-and-instruction-fid-1.md" >}})
+- [AssetOpsBench：打破AI Agent评测与工业现实的壁垒！🚀]({{< relref "posts/20260125-blogs_podcasts-assetopsbench-bridging-the-gap-between-ai-agent-be-6.md" >}})

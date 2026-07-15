@@ -1,14 +1,29 @@
 ---
-title: "OpenAI推理模型辅助医师诊断儿童罕见遗传病"
-date: 2026-06-18T17:00:30+08:00
+title: OpenAI推理模型辅助医师诊断儿童罕见遗传病
+date: 2026-06-18 17:00:30+08:00
 draft: false
-entry_kind: "auto"
-tags: ["OpenAI", "推理模型", "罕见病", "遗传病", "儿科", "精准医学", "AI辅助诊断", "多模态"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- OpenAI
+- 推理模型
+- 罕见病
+- 遗传病
+- 儿科
+- 精准医学
+- AI辅助诊断
+- 多模态
+categories:
+- 大模型
+- 论文
 source: blogs_podcasts
-description: "研究团队将OpenAI的推理模型引入罕见遗传疾病的诊断流程。该模型基于大规模医学文献和基因组数据微调，能够在病例信息不完整时提供可能的致病基因候选。临床医师通过模型生成的线索进行针对性检测，已在原先未能解决的病例中成功确认18例新诊断，显著提升了诊断效率。研究表明，AI辅助可将罕见疾病的平均诊断时间从数月缩短至数周，并"
+description: 研究团队将OpenAI的推理模型引入罕见遗传疾病的诊断流程。该模型基于大规模医学文献和基因组数据微调，能够在病例信息不完整时提供可能的致病基因候选。临床医师通过模型生成的线索进行针对性检测，已在原先未能解决的病例中成功确认18例新诊断，显著提升了诊断效率。研究表明，AI辅助可将罕见疾病的平均诊断时间从数月缩短至数周，并
 external_url: https://openai.com/index/diagnose-rare-childhood-diseases
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # OpenAI推理模型辅助医师诊断儿童罕见遗传病
@@ -133,9 +148,9 @@ scenarios: ["AI/ML项目"]
 
 ### 相关文章
 
-- [GPT-5.4 Thinking 推理模型技术报告发布]({{< relref "posts/20260306-blogs_podcasts-gpt-54-thinking-system-card-6.md" >}})
-- [GPT-5.3-Codex：融合推理与编码能力的智能体模型]({{< relref "posts/20260205-blogs_podcasts-gpt-53-codex-system-card-7.md" >}})
-- [GPT-5.3-Codex：结合前沿编码与推理能力的具身智能体编程模型]({{< relref "posts/20260206-blogs_podcasts-gpt-53-codex-system-card-6.md" >}})
+- [GPT-5.4 Thinking 推理模型技术报告发布]({{< relref "posts/20260305-blogs_podcasts-gpt-54-thinking-system-card-6.md" >}})
+- [GPT-5.3-Codex：融合推理与编码能力的智能体模型]({{< relref "posts/20260205-blogs_podcasts-gpt-53-codex-system-card-4.md" >}})
+- [GPT-5.3-Codex：结合前沿编码与推理能力的具身智能体编程模型]({{< relref "posts/20260205-blogs_podcasts-gpt-53-codex-system-card-4.md" >}})
 - [GPT-5.3 Instant 系统卡发布：性能与安全机制详解]({{< relref "posts/20260303-blogs_podcasts-gpt-53-instant-system-card-7.md" >}})
-- [GPT-5.3 Instant 系统卡发布：模型规格与安全策略详解]({{< relref "posts/20260304-blogs_podcasts-gpt-53-instant-system-card-11.md" >}})
+- [GPT-5.3 Instant 系统卡发布：模型规格与安全策略详解]({{< relref "posts/20260303-blogs_podcasts-gpt-53-instant-system-card-7.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

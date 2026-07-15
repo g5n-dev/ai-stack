@@ -21,6 +21,10 @@ external_url: https://juejin.cn/post/7614084911991767078
 scenarios:
 - Web应用开发
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 唯杰WebCAD编辑平台发布：集成AI智能体，支持CAD与GIS高性能展示
@@ -179,7 +183,7 @@ WebCAD智能体背后依托的是大语言模型（LLM）与特定CAD领域知�
 ### 相关文章
 
 - [OpenClaw：GitHub 增长最快的开源 AI 智能体框架]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-0.md" >}})
-- [OpenClaw：GitHub 增长最快的开源 AI 代理框架]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-7.md" >}})
+- [OpenClaw：GitHub 增长最快的开源 AI 代理框架]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-0.md" >}})
 - [OpenTiny NEXT-SDK 发布：四步将前端应用升级为智能体]({{< relref "posts/20260302-juejin-opentiny-next-sdk-重磅发布四步把你的前端应用变成智能应用-4.md" >}})
-- [DynaWeb：基于模型的强化学习网页智能体框架]({{< relref "posts/20260131-arxiv_ai-dynaweb-model-based-reinforcement-learning-of-web--6.md" >}})
-- [迈向智能体系统规模化科学：工作原理与适用条件]({{< relref "posts/20260201-hacker_news-towards-a-science-of-scaling-agent-systems-when-an-13.md" >}})
+- [DynaWeb：基于模型的强化学习网页智能体框架]({{< relref "posts/20260130-arxiv_ai-dynaweb-model-based-reinforcement-learning-of-web--6.md" >}})
+- [迈向智能体系统规模化科学：工作原理与适用条件]({{< relref "posts/20260201-hacker_news-towards-a-science-of-scaling-agent-systems-when-an-11.md" >}})

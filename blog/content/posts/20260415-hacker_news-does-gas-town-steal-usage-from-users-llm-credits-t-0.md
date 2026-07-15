@@ -1,14 +1,30 @@
 ---
-title: "Gas Town被质疑窃取用户LLM用量进行自我优化"
-date: 2026-04-15T22:19:46+08:00
+title: Gas Town被质疑窃取用户LLM用量进行自我优化
+date: 2026-04-15 22:19:46+08:00
 draft: false
-entry_kind: "auto"
-tags: ["GasTown", "LLM滥用", "用户隐私", "信用盗用", "AI安全", "产品争议", "自优化", "数据伦理"]
-categories: ["安全", "产品与创业"]
+entry_kind: auto
+tags:
+- GasTown
+- LLM滥用
+- 用户隐私
+- 信用盗用
+- AI 安全
+- 产品争议
+- 自优化
+- 数据伦理
+categories:
+- 安全
+- 产品与创业
 source: hacker_news
-description: "Gas Town 作为基于大模型的付费平台，其计费方式直接影响用户成本。近期有用户质疑平台在后台将用户的调用额度用于模型自我提升，引发对透明度与公平性的担忧。本文通过技术分析与用户案例，探讨此类行为是否符合服务协议，以及在缺乏明确说明的情况下，用户应如何评估风险并保护自身权益。"
+description: Gas Town 作为基于大模型的付费平台，其计费方式直接影响用户成本。近期有用户质疑平台在后台将用户的调用额度用于模型自我提升，引发对透明度与公平性的担忧。本文通过技术分析与用户案例，探讨此类行为是否符合服务协议，以及在缺乏明确说明的情况下，用户应如何评估风险并保护自身权益。
 external_url: https://github.com/gastownhall/gastown/issues/3649
-scenarios: ["大语言模型", "AI/ML项目"]
+scenarios:
+- 大语言模型
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Gas Town被质疑窃取用户LLM用量进行自我优化
@@ -75,9 +91,9 @@ Gas Town 使用用户使用数据来改进系统的行为并非“窃取”，�
 
 ### 相关文章
 
-- [OpenAI 如何通过内置安全机制防范 AI 代理点击链接时的数据泄露与提示词注入]({{< relref "posts/20260129-blogs_podcasts-keeping-your-data-safe-when-an-ai-agent-clicks-a-l-6.md" >}})
+- [OpenAI 如何通过内置安全机制防范 AI 代理点击链接时的数据泄露与提示词注入]({{< relref "posts/20260129-blogs_podcasts-keeping-your-data-safe-when-an-ai-agent-clicks-a-l-5.md" >}})
 - [发现逾17.5万个Ollama AI实例公网暴露]({{< relref "posts/20260131-hacker_news-175k-publicly-exposed-ollama-ai-instances-discover-19.md" >}})
-- [RedSage：网络安全通用大语言模型]({{< relref "posts/20260201-arxiv_ai-redsage-a-cybersecurity-generalist-llm-0.md" >}})
-- [Sora Feed理念：个性化推荐与安全护栏构建]({{< relref "posts/20260204-blogs_podcasts-the-sora-feed-philosophy-7.md" >}})
-- [心理越狱揭示前沿模型内部冲突]({{< relref "posts/20260205-hacker_news-psychometric-jailbreaks-reveal-internal-conflict-i-11.md" >}})
+- [RedSage：网络安全通用大语言模型]({{< relref "posts/20260130-arxiv_ai-redsage-a-cybersecurity-generalist-llm-0.md" >}})
+- [Sora Feed理念：个性化推荐与安全护栏构建]({{< relref "posts/20260203-blogs_podcasts-the-sora-feed-philosophy-4.md" >}})
+- [心理越狱揭示前沿模型内部冲突]({{< relref "posts/20260205-hacker_news-psychometric-jailbreaks-reveal-internal-conflict-i-10.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

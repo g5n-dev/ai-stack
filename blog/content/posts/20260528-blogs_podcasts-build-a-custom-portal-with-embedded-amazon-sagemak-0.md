@@ -1,14 +1,31 @@
 ---
-title: "React+Flask实现嵌入式MLflow门户部署"
-date: 2026-05-28T21:25:11+08:00
+title: React+Flask实现嵌入式MLflow门户部署
+date: 2026-05-28 21:25:11+08:00
 draft: false
-entry_kind: "auto"
-tags: ["React", "Flask", "MLflow", "AWS CDK", "嵌入式UI", "SigV4", "反向代理", "部署实践"]
-categories: ["前端", "AI 工程"]
+entry_kind: auto
+tags:
+- React
+- Flask
+- MLflow
+- AWS CDK
+- 嵌入式UI
+- SigV4
+- 反向代理
+- 部署实践
+categories:
+- 前端
+- AI 工程
 source: blogs_podcasts
-description: "架构概览 - **前端**：React 单页应用（SPA），负责页面渲染和用户交互。 - **后端代理**：Flask 实现的反向代理，在请求到达 SageMaker MLflow UI 前加入 AWS Signature Version 4（SigV4）签名，确保与 AWS 服务的身份验证兼容。 关键技术要点 - *"
+description: 架构概览 - **前端**：React 单页应用（SPA），负责页面渲染和用户交互。 - **后端代理**：Flask 实现的反向代理，在请求到达
+  SageMaker MLflow UI 前加入 AWS Signature Version 4（SigV4）签名，确保与 AWS 服务的身份验证兼容。 关键技术要点
+  - *
 external_url: https://aws.amazon.com/blogs/machine-learning/build-a-custom-portal-with-embedded-amazon-sagemaker-ai-mlflow-apps
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # React+Flask实现嵌入式MLflow门户部署
@@ -160,8 +177,8 @@ Flask反向代理在整个架构中扮演关键角色，其核心功能是接收
 ### 相关文章
 
 - [Tambo 1.0：渲染 React 组件的开源 Agent 工具包]({{< relref "posts/20260211-hacker_news-tambo-10-open-source-toolkit-for-agents-that-rende-12.md" >}})
-- [Tambo 1.0：开源 AI Agent 工具包支持渲染 React 组件]({{< relref "posts/20260211-hacker_news-tambo-10-open-source-toolkit-for-agents-that-rende-17.md" >}})
+- [Tambo 1.0：开源 AI Agent 工具包支持渲染 React 组件]({{< relref "posts/20260211-hacker_news-tambo-10-open-source-toolkit-for-agents-that-rende-12.md" >}})
 - [Vercel AI SDK 流式传输原理与阻塞模式对比]({{< relref "posts/20260211-juejin-vercel-ai-sdk-使用指南流式传输-streaming-1.md" >}})
 - [团队一周内利用AI重构Next.js的技术实践]({{< relref "posts/20260224-hacker_news-how-we-rebuilt-nextjs-with-ai-in-one-week-4.md" >}})
-- [我们如何在一周内用AI重构Next.js]({{< relref "posts/20260225-hacker_news-how-we-rebuilt-nextjs-with-ai-in-one-week-14.md" >}})
+- [我们如何在一周内用AI重构Next.js]({{< relref "posts/20260224-hacker_news-how-we-rebuilt-nextjs-with-ai-in-one-week-4.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

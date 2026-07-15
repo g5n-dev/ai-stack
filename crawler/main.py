@@ -18,6 +18,7 @@ from crawler.reddit import RedditCrawler
 from crawler.twitter_crawler import TwitterRecentCrawler
 from crawler.dedupe import canonicalize_url
 from runtime_profile import apply_sources_runtime_profile, get_runtime_profile
+from ai_stack.source_contract import SourceContractError, apply_source_contract
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -137,51 +138,65 @@ class CrawlerOrchestrator:
 
     def _dedupe_results(self, results: Dict[str, List[Dict]]) -> Dict[str, List[Dict]]:
         """对爬取结果去重（默认跨数据源去重）。"""
+        contracted: Dict[str, List[Dict]] = {str(source): [] for source in results}
+        for source, items in results.items():
+            for item in items:
+                try:
+                    contracted[str(source)].append(apply_source_contract(item))
+                except (SourceContractError, TypeError, ValueError) as exc:
+                    logger.warning("Rejected invalid %s source record: %s", source, exc)
+        results = contracted
         if not self.dedupe:
             return results
 
-        deduped: Dict[str, List[Dict]] = {}
+        strength = {
+            "abstract": 4,
+            "excerpt": 4,
+            "social_post": 3,
+            "metadata_only": 1,
+        }
+
+        def evidence_key(item: Dict) -> tuple:
+            return (
+                -strength.get(str(item.get("source_capture_mode") or ""), 0),
+                item.get("source_is_truncated") is True,
+                -int(item.get("source_text_chars") or 0),
+                str(item.get("source") or ""),
+                str(item.get("source_snapshot_sha256") or ""),
+            )
+
+        def strongest(items: List[Dict]) -> List[Dict]:
+            by_url: Dict[str, List[Dict]] = {}
+            for item in items:
+                url = canonicalize_url(item.get("url", "") or "")
+                item["url"] = url
+                by_url.setdefault(url, []).append(item)
+            return [
+                sorted(candidates, key=evidence_key)[0]
+                for _url, candidates in sorted(by_url.items())
+            ]
+
+        deduped: Dict[str, List[Dict]] = {source: [] for source in results}
 
         if self.dedupe_scope == "per_source":
             for source, items in results.items():
-                seen: set[str] = set()
-                unique: List[Dict] = []
-                removed = 0
-                for item in items:
-                    url = canonicalize_url(item.get("url", "") or "")
-                    if url and url in seen:
-                        removed += 1
-                        continue
-                    if url:
-                        seen.add(url)
-                        item["url"] = url
-                    unique.append(item)
+                unique = strongest(items)
+                removed = len(items) - len(unique)
                 if removed:
                     logger.info(f"Dedupe(per_source) removed {removed} items from {source}")
                 deduped[source] = unique
             return deduped
 
-        # global dedupe
-        seen_global: set[str] = set()
-        removed_total = 0
-        for source, items in results.items():
-            unique: List[Dict] = []
-            removed = 0
-            for item in items:
-                url = canonicalize_url(item.get("url", "") or "")
-                if url and url in seen_global:
-                    removed += 1
-                    continue
-                if url:
-                    seen_global.add(url)
-                    item["url"] = url
-                unique.append(item)
-            if removed:
-                logger.info(f"Dedupe(global) removed {removed} items from {source}")
-            removed_total += removed
-            deduped[source] = unique
+        all_items = [item for items in results.values() for item in items]
+        winners = strongest(all_items)
+        for item in winners:
+            deduped.setdefault(str(item.get("source") or ""), []).append(item)
+        removed_total = len(all_items) - len(winners)
         if removed_total:
-            logger.info(f"Dedupe(global) removed {removed_total} duplicates across sources")
+            logger.info(
+                "Dedupe(global) removed %s weaker duplicate source records",
+                removed_total,
+            )
         return deduped
 
     def crawl_all(self) -> Dict[str, List[Dict]]:
@@ -302,7 +317,7 @@ class CrawlerOrchestrator:
             logger.info(f"Running {source_name} crawler...")
             data = self.crawlers[source_name].fetch()
             logger.info(f"{source_name} crawler completed: {len(data)} items")
-            return data
+            return [apply_source_contract(item) for item in data]
         except Exception as e:
             logger.error(f"{source_name} crawler failed: {e}")
             return []

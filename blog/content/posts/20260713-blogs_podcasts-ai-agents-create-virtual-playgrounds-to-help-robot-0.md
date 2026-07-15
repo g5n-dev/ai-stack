@@ -1,14 +1,29 @@
 ---
-title: "协作式AI智能体生成3D环境供机器人模拟家务"
-date: 2026-07-13T20:33:41+08:00
+title: 协作式AI智能体生成3D环境供机器人模拟家务
+date: 2026-07-13 20:33:41+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI智能体", "3D环境", "机器人训练", "虚拟仿真", "协作生成", "Sim-to-Real", "生成式AI", "场景生成"]
-categories: ["AI 工程"]
+entry_kind: auto
+tags:
+- AI 智能体
+- 3D环境
+- 机器人训练
+- 虚拟仿真
+- 协作生成
+- Sim-to-Real
+- 生成式 AI
+- 场景生成
+categories:
+- AI 工程
 source: blogs_podcasts
-description: "背景 人工智能代理（AI agents）能够在虚拟空间中自动生成多样化的环境，为机器人提供大量在现实中难以获取的训练数据。 SceneSmith 系统 SceneSmith 通过多个协作的 AI agents 同时工作，快速构建高保真的三维场景，如厨房、酒店客房、客厅等。系统利用生成式模型和渲染引擎，自动生成符合物理规"
+description: 背景 人工智能代理（AI agents）能够在虚拟空间中自动生成多样化的环境，为机器人提供大量在现实中难以获取的训练数据。 SceneSmith
+  系统 SceneSmith 通过多个协作的 AI agents 同时工作，快速构建高保真的三维场景，如厨房、酒店客房、客厅等。系统利用生成式模型和渲染引擎，自动生成符合物理规
 external_url: https://news.mit.edu/2026/ai-agents-create-virtual-playgrounds-to-help-robots-get-crucial-training-data-0713
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 协作式AI智能体生成3D环境供机器人模拟家务
@@ -90,8 +105,8 @@ SceneSmith通过协作式AI agents生成高质量3D虚拟环境，为机器人�
 ### 相关文章
 
 - [Snowflake与OpenAI合作2亿美元，在企业数据中直接启用AI智能体]({{< relref "posts/20260202-blogs_podcasts-snowflake-and-openai-partner-to-bring-frontier-int-1.md" >}})
-- [Snowflake与OpenAI达成2亿美元合作，将前沿智能引入企业数据]({{< relref "posts/20260203-blogs_podcasts-snowflake-and-openai-partner-to-bring-frontier-int-0.md" >}})
-- [Snowflake与OpenAI合作：在企业数据中直接部署AI智能体]({{< relref "posts/20260204-blogs_podcasts-snowflake-and-openai-partner-to-bring-frontier-int-6.md" >}})
-- [Snowflake与OpenAI合作：在数据平台内直接部署AI智能体]({{< relref "posts/20260204-blogs_podcasts-snowflake-and-openai-partner-to-bring-frontier-int-9.md" >}})
-- [Waymo 世界模型：基于多传感器数据生成驾驶场景]({{< relref "posts/20260207-hacker_news-the-waymo-world-model-10.md" >}})
+- [Snowflake与OpenAI达成2亿美元合作，将前沿智能引入企业数据]({{< relref "posts/20260202-blogs_podcasts-snowflake-and-openai-partner-to-bring-frontier-int-1.md" >}})
+- [Snowflake与OpenAI合作：在企业数据中直接部署AI智能体]({{< relref "posts/20260202-blogs_podcasts-snowflake-and-openai-partner-to-bring-frontier-int-1.md" >}})
+- [Snowflake与OpenAI合作：在数据平台内直接部署AI智能体]({{< relref "posts/20260202-blogs_podcasts-snowflake-and-openai-partner-to-bring-frontier-int-1.md" >}})
+- [Waymo 世界模型：基于多传感器数据生成驾驶场景]({{< relref "posts/20260206-hacker_news-the-waymo-world-model-a-new-frontier-for-autonomou-4.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

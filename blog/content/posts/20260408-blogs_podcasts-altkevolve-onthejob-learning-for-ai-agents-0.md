@@ -1,14 +1,28 @@
 ---
-title: "ALTK-Evolve让AI代理边工作边学习"
-date: 2026-04-08T17:24:55+08:00
+title: ALTK-Evolve让AI代理边工作边学习
+date: 2026-04-08 17:24:55+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI代理", "持续学习", "在线学习", "强化学习", "自主学习", "自适应", "边工作边学习", "模型训练"]
-categories: ["AI 工程"]
+entry_kind: auto
+tags:
+- AI 代理
+- 持续学习
+- 在线学习
+- 强化学习
+- 自主学习
+- 自适应
+- 边工作边学习
+- 模型训练
+categories:
+- AI 工程
 source: blogs_podcasts
-description: "随着AI智能体在各行业的部署规模不断扩大，传统的离线训练已难以满足动态环境的需求。ALTK‑Evolve提出一种在运行过程中实时学习和适应的机制，使智能体能够基于实际任务反馈持续优化策略。本文将详细阐述该框架的核心模块、实现路径以及在真实场景中的评估结果，帮助开发者了解如何将持续学习集成到生产级AI系统中。"
+description: 随着AI智能体在各行业的部署规模不断扩大，传统的离线训练已难以满足动态环境的需求。ALTK‑Evolve提出一种在运行过程中实时学习和适应的机制，使智能体能够基于实际任务反馈持续优化策略。本文将详细阐述该框架的核心模块、实现路径以及在真实场景中的评估结果，帮助开发者了解如何将持续学习集成到生产级AI系统中。
 external_url: https://huggingface.co/blog/ibm-research/altk-evolve
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # ALTK-Evolve让AI代理边工作边学习
@@ -71,9 +85,9 @@ ALTK‑Evolve的核心贡献在于推动AI系统从“训练即冻结”向“�
 
 ### 相关文章
 
-- [CRoSS：面向可扩展强化学习的持续机器人仿真套件]({{< relref "posts/20260206-arxiv_ai-cross-a-continual-robotic-simulation-suite-for-sca-6.md" >}})
-- [基于16个开源RL库的Token流生成经验总结]({{< relref "posts/20260310-blogs_podcasts-keep-the-tokens-flowing-lessons-from-16-open-sourc-7.md" >}})
-- [16个开源强化学习库的实践经验总结]({{< relref "posts/20260311-blogs_podcasts-keep-the-tokens-flowing-lessons-from-16-open-sourc-10.md" >}})
-- [🚀GPT-OSS智能体RL训练解密！从0到1实战复盘🔥]({{< relref "posts/20260127-blogs_podcasts-unlocking-agentic-rl-training-for-gpt-oss-a-practi-2.md" >}})
-- [揭秘Agentic RL训练！GPT-OSS实战回顾，核心干货🔥]({{< relref "posts/20260127-blogs_podcasts-unlocking-agentic-rl-training-for-gpt-oss-a-practi-3.md" >}})
+- [CRoSS：面向可扩展强化学习的持续机器人仿真套件]({{< relref "posts/20260205-arxiv_ai-cross-a-continual-robotic-simulation-suite-for-sca-6.md" >}})
+- [基于16个开源RL库的Token流生成经验总结]({{< relref "posts/20260310-blogs_podcasts-keep-the-tokens-flowing-lessons-from-16-open-sourc-2.md" >}})
+- [16个开源强化学习库的实践经验总结]({{< relref "posts/20260310-blogs_podcasts-keep-the-tokens-flowing-lessons-from-16-open-sourc-2.md" >}})
+- [🚀GPT-OSS智能体RL训练解密！从0到1实战复盘🔥]({{< relref "posts/20260127-blogs_podcasts-unlocking-agentic-rl-training-for-gpt-oss-a-practi-0.md" >}})
+- [揭秘Agentic RL训练！GPT-OSS实战回顾，核心干货🔥]({{< relref "posts/20260127-blogs_podcasts-unlocking-agentic-rl-training-for-gpt-oss-a-practi-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

@@ -1,12 +1,26 @@
 ---
-title: "🔥Post-LayerNorm强势回归！稳定、高效、深度训练的新神器！"
-date: 2026-01-28T07:28:04+08:00
+title: 🔥Post-LayerNorm强势回归！稳定、高效、深度训练的新神器！
+date: 2026-01-28 07:28:04+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Transformer", "Post-LayerNorm", "Keel", "深度学习", "模型架构", "训练稳定性", "Highway Networks", "梯度消失"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- Transformer
+- Post-LayerNorm
+- Keel
+- 深度学习
+- 模型架构
+- 训练稳定性
+- Highway Networks
+- 梯度消失
+categories:
+- 大模型
+- 论文
 source: arxiv
 external_url: http://arxiv.org/abs/2601.19895v1
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 📚 🔥Post-LayerNorm强势回归！稳定、高效、深度训练的新神器！
@@ -258,7 +272,6 @@ Keel 展示了“深而窄”的网络优于“浅而宽”。在某些推理场
 Keel 并没有发明全新的组件（Highway 和 Post-LN 都很古老），但它通过**理论分析**精准地指出了 Post-LN 的病灶（梯度流受阻），并用**最少的改动**（引入门控）解决了问题。这是一种“奥卡姆剃刀”式的优雅创新
 
 ---
-## ✅ 研究最佳实践
 
 ## 最佳实践指南：Post-LayerNorm 的复兴与稳定应用
 
@@ -344,7 +357,6 @@ Keel 并没有发明全新的组件（Highway 和 Post-LN 都很古老），但�
 - Post-Norm 架构天然地允许网络层保留 **前一层未归一化的原始信号分布**，这种“原始性”赋予了模型更强的表达能力，相比之下，Pre-Norm 的“干净路径”在深层堆叠时可能会损失这种特征表达的丰富性。
 
 ---
-## 🗺️ 学习路径
 
 ## 学习路径
 

@@ -1,14 +1,21 @@
 ---
-title: "OpenAI内部Codex使用数据：研究输出增长56倍"
-date: 2026-06-26T13:30:20+08:00
+title: OpenAI内部Codex使用数据：研究输出增长56倍
+date: 2026-06-26 13:30:20+08:00
 draft: false
-entry_kind: "auto"
-tags: ["blogs_podcasts"]
-categories: ["效率与方法论"]
+entry_kind: auto
+tags:
+- blogs_podcasts
+categories:
+- 效率与方法论
 source: blogs_podcasts
-description: "自2025年11月起，OpenAI内部Codex在各部门的输出token中位数大幅增长：研发提升约56倍，客服约32倍，工程约27倍，法务约13倍。增长最高的是研发，说明研究团队对代码生成、文献检索等任务高度依赖；客服和工程增幅显著，表明AI已渗透到日常工作和项目开发；法务虽增幅相对较小，但仍有两位数增长，显示出在合同"
+description: 自2025年11月起，OpenAI内部Codex在各部门的输出token中位数大幅增长：研发提升约56倍，客服约32倍，工程约27倍，法务约13倍。增长最高的是研发，说明研究团队对代码生成、文献检索等任务高度依赖；客服和工程增幅显著，表明AI已渗透到日常工作和项目开发；法务虽增幅相对较小，但仍有两位数增长，显示出在合同
 external_url: https://www.latent.space/p/ainews-openai-reports-median-internal
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # OpenAI内部Codex使用数据：研究输出增长56倍
@@ -127,9 +134,9 @@ Token增长数据存在若干解读边界。首先，内部使用数据不代表
 
 ### 相关文章
 
-- [OpenAI与Anthropic模型之争：Claude Opus 4.6对决GPT 5.3 Codex]({{< relref "posts/20260210-blogs_podcasts-ainews-openai-and-anthropic-go-to-war-claude-opus--8.md" >}})
+- [OpenAI与Anthropic模型之争：Claude Opus 4.6对决GPT 5.3 Codex]({{< relref "posts/20260206-blogs_podcasts-ainews-openai-and-anthropic-go-to-war-claude-opus--0.md" >}})
 - [亚马逊利用 Nova 模型自动化新履约中心运营就绪测试]({{< relref "posts/20260210-blogs_podcasts-how-amazon-uses-amazon-nova-models-to-automate-ope-0.md" >}})
-- [OpenAI在ChatGPT测试广告以支持免费访问]({{< relref "posts/20260210-blogs_podcasts-testing-ads-in-chatgpt-1.md" >}})
-- [Transformers.js v4 预览版已发布 NPM]({{< relref "posts/20260210-blogs_podcasts-transformersjs-v4-preview-now-available-on-npm-3.md" >}})
-- [Transformers.js v4 Preview: Now Available on NPM]({{< relref "posts/20260210-blogs_podcasts-transformersjs-v4-preview-now-available-on-npm-4.md" >}})
+- [OpenAI在ChatGPT测试广告以支持免费访问]({{< relref "posts/20260209-hacker_news-testing-ads-in-chatgpt-16.md" >}})
+- [Transformers.js v4 预览版已发布 NPM]({{< relref "posts/20260209-blogs_podcasts-transformersjs-v4-preview-now-available-on-npm-0.md" >}})
+- [Transformers.js v4 Preview: Now Available on NPM]({{< relref "posts/20260209-blogs_podcasts-transformersjs-v4-preview-now-available-on-npm-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

@@ -1,14 +1,29 @@
 ---
-title: "深度原生结构推理实现结构性能透明理解"
-date: 2026-07-09T23:40:17+08:00
+title: 深度原生结构推理实现结构性能透明理解
+date: 2026-07-09 23:40:17+08:00
 draft: false
-entry_kind: "auto"
-tags: ["多模态模型", "结构推理", "蛋白质预测", "化学逆合成", "材料科学", "可解释AI", "基准测试", "科学推理"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- 多模态模型
+- 结构推理
+- 蛋白质预测
+- 化学逆合成
+- 材料科学
+- 可解释AI
+- 基准测试
+- 科学推理
+categories:
+- 大模型
+- AI 工程
 source: arxiv
-description: "SciReasoner是一种多模态科学基础模型，专注于原生结构推理。它将蛋白质、小分子和无机晶体的坐标、拓扑和周期连通性统一离散化为结构感知词汇，使结构标记在推理过程中可定位为证据单元。在基因本体预测中，针对低同源或孤儿蛋白，SciReasoner将细胞组分的F_max从0.42提升至0.55；在化学逆合成方面，单步逆"
+description: SciReasoner是一种多模态科学基础模型，专注于原生结构推理。它将蛋白质、小分子和无机晶体的坐标、拓扑和周期连通性统一离散化为结构感知词汇，使结构标记在推理过程中可定位为证据单元。在基因本体预测中，针对低同源或孤儿蛋白，SciReasoner将细胞组分的F_max从0.42提升至0.55；在化学逆合成方面，单步逆
 external_url: http://arxiv.org/abs/2607.07708v1
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 深度原生结构推理实现结构性能透明理解
@@ -157,9 +172,9 @@ SciReasoner 将蛋白质残基、分子原子以及晶体原胞的坐标、拓�
 
 ### 相关文章
 
-- [AGENTS.md 架构在智能体评估中超越 Skills 技能]({{< relref "posts/20260130-hacker_news-agentsmd-outperforms-skills-in-our-agent-evals-5.md" >}})
-- [CRoSS：面向可扩展强化学习的持续机器人仿真套件]({{< relref "posts/20260206-arxiv_ai-cross-a-continual-robotic-simulation-suite-for-sca-6.md" >}})
-- [MiniMax M2.5 发布：SWE-bench Verified 得分 80.2%]({{< relref "posts/20260212-hacker_news-minimax-m25-released-802-in-swe-bench-verified-13.md" >}})
+- [AGENTS.md 架构在智能体评估中超越 Skills 技能]({{< relref "posts/20260129-hacker_news-compressed-agentsmd-agent-skills-5.md" >}})
+- [CRoSS：面向可扩展强化学习的持续机器人仿真套件]({{< relref "posts/20260205-arxiv_ai-cross-a-continual-robotic-simulation-suite-for-sca-6.md" >}})
 - [MiniMax M2.5 发布：SWE-bench Verified 得分 80.2%]({{< relref "posts/20260212-hacker_news-minimax-m25-released-802-in-swe-bench-verified-15.md" >}})
-- [OpenEnv实践：评估真实环境中的工具调用智能体]({{< relref "posts/20260213-blogs_podcasts-openenv-in-practice-evaluating-tool-using-agents-i-9.md" >}})
+- [MiniMax M2.5 发布：SWE-bench Verified 得分 80.2%]({{< relref "posts/20260212-hacker_news-minimax-m25-released-802-in-swe-bench-verified-15.md" >}})
+- [OpenEnv实践：评估真实环境中的工具调用智能体]({{< relref "posts/20260212-blogs_podcasts-openenv-in-practice-evaluating-tool-using-agents-i-4.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

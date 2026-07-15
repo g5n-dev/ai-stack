@@ -1,14 +1,30 @@
 ---
-title: "MCP零接触OAuth认证方案"
-date: 2026-06-19T00:59:17+08:00
+title: MCP零接触OAuth认证方案
+date: 2026-06-19 00:59:17+08:00
 draft: false
-entry_kind: "auto"
-tags: ["MCP", "OAuth", "零接触认证", "授权协议", "AI工具", "开发者体验", "API安全", "无感登录"]
-categories: ["AI 工程", "安全"]
+entry_kind: auto
+tags:
+- MCP
+- OAuth
+- 零接触认证
+- 授权协议
+- AI 工具
+- 开发者体验
+- API安全
+- 无感登录
+categories:
+- AI 工程
+- 安全
 source: hacker_news
-description: "Zero‑Touch OAuth for MCP 旨在实现授权流程的全自动化，使开发者无需手动干预即可完成身份验证与令牌管理。在多服务协同或跨平台调用时，繁琐的 OAuth 步骤往往成为集成瓶颈，影响系统的可扩展性与安全性。本文将剖析实现零接触授权的关键技术细节，包括令牌获取、刷新机制以及常见安全陷阱的防护策略，帮助团"
+description: Zero‑Touch OAuth for MCP 旨在实现授权流程的全自动化，使开发者无需手动干预即可完成身份验证与令牌管理。在多服务协同或跨平台调用时，繁琐的
+  OAuth 步骤往往成为集成瓶颈，影响系统的可扩展性与安全性。本文将剖析实现零接触授权的关键技术细节，包括令牌获取、刷新机制以及常见安全陷阱的防护策略，帮助团
 external_url: https://blog.modelcontextprotocol.io/posts/enterprise-managed-auth
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # MCP零接触OAuth认证方案
@@ -81,8 +97,8 @@ Zero-Touch OAuth for MCP代表了AI工具集成领域在认证机制上的重要
 ### 相关文章
 
 - [Ghidra MCP Server发布：集成110款工具实现AI辅助逆向工程]({{< relref "posts/20260204-hacker_news-show-hn-ghidra-mcp-server-110-tools-for-ai-assiste-1.md" >}})
-- [Ghidra MCP Server：集成110项工具的AI逆向工程辅助环境]({{< relref "posts/20260204-hacker_news-show-hn-ghidra-mcp-server-110-tools-for-ai-assiste-10.md" >}})
-- [Ghidra MCP Server：集成110款工具实现AI辅助逆向工程]({{< relref "posts/20260204-hacker_news-show-hn-ghidra-mcp-server-110-tools-for-ai-assiste-14.md" >}})
-- [Ghidra MCP Server：集成110种工具的AI辅助逆向工程]({{< relref "posts/20260204-hacker_news-show-hn-ghidra-mcp-server-110-tools-for-ai-assiste-16.md" >}})
-- [Ghidra MCP Server发布：集成110种工具实现AI辅助逆向工程]({{< relref "posts/20260204-hacker_news-show-hn-ghidra-mcp-server-110-tools-for-ai-assiste-18.md" >}})
+- [Ghidra MCP Server：集成110项工具的AI逆向工程辅助环境]({{< relref "posts/20260204-hacker_news-show-hn-ghidra-mcp-server-110-tools-for-ai-assiste-1.md" >}})
+- [Ghidra MCP Server：集成110款工具实现AI辅助逆向工程]({{< relref "posts/20260204-hacker_news-show-hn-ghidra-mcp-server-110-tools-for-ai-assiste-1.md" >}})
+- [Ghidra MCP Server：集成110种工具的AI辅助逆向工程]({{< relref "posts/20260204-hacker_news-show-hn-ghidra-mcp-server-110-tools-for-ai-assiste-1.md" >}})
+- [Ghidra MCP Server发布：集成110种工具实现AI辅助逆向工程]({{< relref "posts/20260204-hacker_news-show-hn-ghidra-mcp-server-110-tools-for-ai-assiste-1.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

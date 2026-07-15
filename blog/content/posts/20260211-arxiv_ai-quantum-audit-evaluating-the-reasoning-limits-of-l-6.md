@@ -1,14 +1,23 @@
 ---
-title: "Quantum-Audit：评估大语言模型量子计算推理能力极限"
-date: 2026-02-11T23:34:28+08:00
+title: Quantum-Audit：评估大语言模型量子计算推理能力极限
+date: 2026-02-11 23:34:28+08:00
 draft: false
-entry_kind: "auto"
-tags: ["arxiv", "cs.CL"]
-categories: ["论文"]
+entry_kind: auto
+tags:
+- arxiv
+- cs.CL
+categories:
+- 论文
 source: arxiv
-description: "本文介绍了**Quantum-Audit**，这是一个旨在系统评估大语言模型（LLM）在量子计算领域推理能力和概念理解水平的基准测试。以下是核心内容的总结： **1. 背景与目的** 尽管LLM已广泛应用于量子计算教育和科研（如总结论文、解释概念），但现有的评估基准多关注量子代码生成和电路设计，缺乏对模型**量子计算概"
+description: 本文介绍了**Quantum-Audit**，这是一个旨在系统评估大语言模型（LLM）在量子计算领域推理能力和概念理解水平的基准测试。以下是核心内容的总结：
+  **1. 背景与目的** 尽管LLM已广泛应用于量子计算教育和科研（如总结论文、解释概念），但现有的评估基准多关注量子代码生成和电路设计，缺乏对模型**量子计算概
 external_url: http://arxiv.org/abs/2602.10092v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Quantum-Audit：评估大语言模型量子计算推理能力极限
@@ -67,7 +76,6 @@ Quantum-Audit揭示了LLM在量子计算领域虽然具备较强的基础能力�
 
 
 ---
-## 学习路径
 
 ## 学习路径
 

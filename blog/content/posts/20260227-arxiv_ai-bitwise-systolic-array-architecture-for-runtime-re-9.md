@@ -21,6 +21,14 @@ description: '**中文总结：面向运行时可重构多精度量化的脉动�
 external_url: http://arxiv.org/abs/2602.23334v1
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260228-arxiv_ai-bitwise-systolic-array-architecture-for-runtime-re-9/
+- /posts/20260301-arxiv_ai-bitwise-systolic-array-architecture-for-runtime-re-9/
+- /posts/20260302-arxiv_ai-bitwise-systolic-array-architecture-for-runtime-re-9/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 面向硬件加速器的运行时可重构多精度量化乘法按位脉动阵列架构
@@ -126,9 +134,7 @@ scenarios:
 
 ---
 
-### 深入分析：面向运行时可重构多精度量化的位级脉动阵列架构
 
-### 1. 研究背景与问题
 
 ### 核心问题
 该论文致力于解决**边缘设备上神经网络推理的能效与精度平衡问题**。具体而言，是如何在硬件资源受限的情况下，支持混合精度量化神经网络（QNN）的高效计算，特别是如何设计一种能够**在运行时动态重构**以支持不同位宽（2-8位）乘法运算的硬件加速单元。
@@ -145,7 +151,6 @@ scenarios:
 ### 重要性
 解决这一问题对于推动高性能边缘AI计算至关重要。它使得在同一个硬件平台上，既能运行对精度要求极高的大模型，又能运行极度压缩的小模型，且无需重新流片（RTL重设计），极大地延长了硬件的生命周期和适用范围。
 
-### 2. 核心方法与创新
 
 ### 核心方法：位级脉动阵列
 论文提出了一种**基于位级的运行时可重构脉动阵列架构**。其核心思想是将传统的“数值级”乘法分解为“位级”操作，构建一个处理位流的脉动阵列。
@@ -168,7 +173,6 @@ scenarios:
 *   **高频潜力**：位级操作通常比完整的乘法器具有更短的关键路径，从而支持更高的时钟频率（论文中达到了250MHz）。
 *   **灵活性**：单一硬件支持从2位到8位的任意组合，适应未来不断变化的量化算法。
 
-### 3. 理论基础
 
 ### 数学模型
 该方法的理论基础是**乘法的位分解原理**。两个有符号整数 $A$ 和 $B$ 的乘积可以表示为：
@@ -182,7 +186,6 @@ $$ P = A \times B = \left( \sum_{i=0}^{n-1} a_i 2^i \right) \times \left( \sum_{
 ### 理论贡献
 论文不仅提出了架构，还从理论上分析了不同位宽组合下的吞吐量和延迟模型，证明了在混合精度场景下，位级架构相比传统固定位宽架构具有更高的平均利用率。
 
-### 7. 学习建议
 
 ### 适合读者
 *   从事AI芯片设计的数字IC工程师。
@@ -436,8 +439,8 @@ $$ P = A \times B = \left( \sum_{i=0}^{n-1} a_i 2^i \right) \times \left( \sum_{
 
 ### 相关文章
 
-- [在8位摩托罗拉6809上运行深度卷积神经网络玩桌游]({{< relref "posts/20260129-hacker_news-playing-board-games-with-deep-convolutional-neural-15.md" >}})
-- [zclaw：体积小于888 KB的个人AI助手，可运行于ESP32]({{< relref "posts/20260221-hacker_news-zclaw-personal-ai-assistant-in-under-888-kb-runnin-8.md" >}})
-- [单张RTX 3090利用NVMe直通运行Llama 3.1 70B]({{< relref "posts/20260222-hacker_news-show-hn-llama-31-70b-on-a-single-rtx-3090-via-nvme-6.md" >}})
-- [zclaw：体积小于888 KB的个人AI助手，运行于ESP32]({{< relref "posts/20260222-hacker_news-zclaw-personal-ai-assistant-in-under-888-kb-runnin-10.md" >}})
+- [在8位摩托罗拉6809上运行深度卷积神经网络玩桌游]({{< relref "posts/20260129-hacker_news-playing-board-games-with-deep-convolutional-neural-12.md" >}})
+- [zclaw：体积小于888 KB的个人AI助手，可运行于ESP32]({{< relref "posts/20260221-hacker_news-zclaw-personal-ai-assistant-in-under-888-kb-runnin-12.md" >}})
+- [单张RTX 3090利用NVMe直通运行Llama 3.1 70B]({{< relref "posts/20260222-hacker_news-show-hn-llama-31-70b-on-a-single-rtx-3090-via-nvme-2.md" >}})
+- [zclaw：体积小于888 KB的个人AI助手，运行于ESP32]({{< relref "posts/20260221-hacker_news-zclaw-personal-ai-assistant-in-under-888-kb-runnin-12.md" >}})
 - [在8位摩托罗拉6809上运行深度卷积神经网络玩棋盘游戏]({{< relref "posts/20260129-hacker_news-playing-board-games-with-deep-convolutional-neural-12.md" >}})

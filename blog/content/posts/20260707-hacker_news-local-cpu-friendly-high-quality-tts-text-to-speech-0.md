@@ -1,14 +1,30 @@
 ---
-title: "Kokoro语音合成：本地高效高质量TTS"
-date: 2026-07-07T23:27:17+08:00
+title: Kokoro语音合成：本地高效高质量TTS
+date: 2026-07-07 23:27:17+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Kokoro", "语音合成", "TTS", "本地部署", "CPU友好", "开源", "高质量", "实时"]
-categories: ["AI 工程", "开源生态"]
+entry_kind: auto
+tags:
+- Kokoro
+- 语音合成
+- TTS
+- 本地部署
+- CPU友好
+- 开源
+- 高质量
+- 实时
+categories:
+- AI 工程
+- 开源生态
 source: hacker_news
-description: "本文介绍 Kokoro，一个在本地 CPU 上即可运行的高质量文本转语音系统。它突破了传统 TTS 在资源占用和音质之间的权衡，让开发者在没有强大 GPU 的环境下也能部署流畅自然的语音合成。通过详细的架构解析、性能对比以及实操指南，读者可以快速掌握从模型配置到产品落地的完整流程。"
+description: 本文介绍 Kokoro，一个在本地 CPU 上即可运行的高质量文本转语音系统。它突破了传统 TTS 在资源占用和音质之间的权衡，让开发者在没有强大
+  GPU 的环境下也能部署流畅自然的语音合成。通过详细的架构解析、性能对比以及实操指南，读者可以快速掌握从模型配置到产品落地的完整流程。
 external_url: https://ariya.io/2026/03/local-cpu-friendly-high-quality-tts-text-to-speech-with-kokoro
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Kokoro语音合成：本地高效高质量TTS
@@ -81,7 +97,7 @@ scenarios: ["Web应用开发"]
 
 - [Kitten TTS 三款新模型：小体积低于 25MB]({{< relref "posts/20260319-hacker_news-show-hn-three-new-kitten-tts-models-smallest-less--7.md" >}})
 - [训练9M参数语音模型修正普通话声调]({{< relref "posts/20260131-hacker_news-show-hn-i-trained-a-9m-speech-model-to-fix-my-mand-1.md" >}})
-- [Show HN：我用9M参数语音模型修正普通话声调]({{< relref "posts/20260131-hacker_news-show-hn-i-trained-a-9m-speech-model-to-fix-my-mand-10.md" >}})
-- [训练9M参数语音模型修正普通话声调]({{< relref "posts/20260131-hacker_news-show-hn-i-trained-a-9m-speech-model-to-fix-my-mand-3.md" >}})
-- [训练900万参数语音模型修正普通话声调]({{< relref "posts/20260131-hacker_news-show-hn-i-trained-a-9m-speech-model-to-fix-my-mand-4.md" >}})
+- [Show HN：我用9M参数语音模型修正普通话声调]({{< relref "posts/20260131-hacker_news-show-hn-i-trained-a-9m-speech-model-to-fix-my-mand-1.md" >}})
+- [训练9M参数语音模型修正普通话声调]({{< relref "posts/20260131-hacker_news-show-hn-i-trained-a-9m-speech-model-to-fix-my-mand-1.md" >}})
+- [训练900万参数语音模型修正普通话声调]({{< relref "posts/20260131-hacker_news-show-hn-i-trained-a-9m-speech-model-to-fix-my-mand-1.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

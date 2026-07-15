@@ -1,14 +1,30 @@
 ---
-title: "Δ-Mem：大型语言模型的高效在线记忆机制"
-date: 2026-05-16T13:38:51+08:00
+title: Δ-Mem：大型语言模型的高效在线记忆机制
+date: 2026-05-16 13:38:51+08:00
 draft: false
-entry_kind: "auto"
-tags: ["LLM", "记忆机制", "效率优化", "模型推理", "上下文管理", "KV缓存", "在线学习", "资源优化"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- LLM
+- 记忆机制
+- 效率优化
+- 模型推理
+- 上下文管理
+- KV缓存
+- 在线学习
+- 资源优化
+categories:
+- 大模型
+- AI 工程
 source: hacker_news
-description: "随着大规模语言模型在推理阶段对显存的需求持续增长，如何在保持计算效率的同时实现动态记忆管理成为关键挑战。Δ-Mem 提出一种基于增量更新的在线记忆机制，通过轻量级的差分压缩显著降低存储开销并加速上下文检索。本篇将系统阐述 Δ-Mem 的核心设计、算法实现细节以及在多种任务上的性能对比，为研发团队提供切实可行的参考方案。"
+description: 随着大规模语言模型在推理阶段对显存的需求持续增长，如何在保持计算效率的同时实现动态记忆管理成为关键挑战。Δ-Mem 提出一种基于增量更新的在线记忆机制，通过轻量级的差分压缩显著降低存储开销并加速上下文检索。本篇将系统阐述
+  Δ-Mem 的核心设计、算法实现细节以及在多种任务上的性能对比，为研发团队提供切实可行的参考方案。
 external_url: https://arxiv.org/abs/2605.12357
-scenarios: ["大语言模型"]
+scenarios:
+- 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Δ-Mem：大型语言模型的高效在线记忆机制
@@ -49,7 +65,7 @@ scenarios: ["大语言模型"]
 
 - [learn-claude-code 实战：用 TodoWrite 解决长链路健忘]({{< relref "posts/20260307-juejin-从零手写-claudecodelearn-claude-code-项目实战笔记3todowrite--1.md" >}})
 - [Agent Skills：压缩智能体技能以提升模型效率]({{< relref "posts/20260129-hacker_news-compressed-agentsmd-agent-skills-5.md" >}})
-- [Context Graphs与Agent Traces技术解析]({{< relref "posts/20260204-blogs_podcasts-ainews-context-graphs-and-agent-traces-2.md" >}})
-- [Context Graphs 与 Agent Traces：解析 AI 智能体的记忆与回溯机制]({{< relref "posts/20260205-blogs_podcasts-ainews-context-graphs-and-agent-traces-3.md" >}})
-- [Context Graphs与Agent Traces：解析AI系统的上下文与追踪技术]({{< relref "posts/20260205-blogs_podcasts-ainews-context-graphs-and-agent-traces-5.md" >}})
+- [Context Graphs与Agent Traces技术解析]({{< relref "posts/20260204-blogs_podcasts-ainews-context-graphs-and-agent-traces-0.md" >}})
+- [Context Graphs 与 Agent Traces：解析 AI 智能体的记忆与回溯机制]({{< relref "posts/20260204-blogs_podcasts-ainews-context-graphs-and-agent-traces-0.md" >}})
+- [Context Graphs与Agent Traces：解析AI系统的上下文与追踪技术]({{< relref "posts/20260204-blogs_podcasts-ainews-context-graphs-and-agent-traces-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

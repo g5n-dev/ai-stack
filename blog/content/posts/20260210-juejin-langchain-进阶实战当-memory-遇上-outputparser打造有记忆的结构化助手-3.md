@@ -1,14 +1,34 @@
 ---
-title: "LangChain实战：结合Memory与OutputParser构建有记忆的结构化助手"
-date: 2026-02-10T21:20:19+08:00
+title: LangChain实战：结合Memory与OutputParser构建有记忆的结构化助手
+date: 2026-02-10 21:20:19+08:00
 draft: false
-entry_kind: "auto"
-tags: ["LangChain", "LLM", "RAG", "Prompt", "OutputParser", "Memory", "结构化输出", "多轮对话"]
-categories: ["AI 工程", "后端"]
+entry_kind: auto
+tags:
+- LangChain
+- LLM
+- RAG
+- Prompt
+- OutputParser
+- Memory
+- 结构化输出
+- 多轮对话
+categories:
+- AI 工程
+- 后端
 source: juejin
-description: "这是一篇关于 LangChain 进阶实战的简洁总结： 核心主题：结合 Memory（记忆）与 OutputParser（输出解析），打造既有记忆又能输出结构化数据的 AI 助手。 1. 背景与痛点 当前的 LLM 应用开发常面临两个极端的困境： * **“记性好的话痨”**：类似 ChatBot，拥有良好的上下文记忆"
+description: 这是一篇关于 LangChain 进阶实战的简洁总结： 核心主题：结合 Memory（记忆）与 OutputParser（输出解析），打造既有记忆又能输出结构化数据的
+  AI 助手。 1. 背景与痛点 当前的 LLM 应用开发常面临两个极端的困境： * **“记性好的话痨”**：类似 ChatBot，拥有良好的上下文记忆
 external_url: https://juejin.cn/post/7605051978872078355
-scenarios: ["AI/ML项目", "大语言模型", "RAG应用"]
+scenarios:
+- AI/ML项目
+- 大语言模型
+- RAG应用
+aliases:
+- /posts/20260211-juejin-langchain-进阶实战当-memory-遇上-outputparser打造有记忆的结构化助手-3/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # LangChain实战：结合Memory与OutputParser构建有记忆的结构化助手
@@ -166,9 +186,9 @@ scenarios: ["AI/ML项目", "大语言模型", "RAG应用"]
 
 ### 相关文章
 
-- [Kirara-AI：支持多平台接入的多模态聊天机器人框架]({{< relref "posts/20260130-github_trending-lss233-kirara-ai-2.md" >}})
+- [Kirara-AI：支持多平台接入的多模态聊天机器人框架]({{< relref "posts/20260127-github_trending-lss233-kirara-ai-2.md" >}})
 - [基于大模型的多平台聊天机器人：支持微信飞书钉钉接入]({{< relref "posts/20260131-github_trending-zhayujie-chatgpt-on-wechat-0.md" >}})
-- [LangBot：生产级多平台智能体机器人开发平台]({{< relref "posts/20260201-github_trending-langbot-app-langbot-0.md" >}})
-- [ChatGPT-on-WeChat：接入大模型的多平台聊天机器人]({{< relref "posts/20260201-github_trending-zhayujie-chatgpt-on-wechat-0.md" >}})
-- [LangBot：生产级多平台智能 IM 机器人开发平台]({{< relref "posts/20260202-github_trending-langbot-app-langbot-0.md" >}})
+- [LangBot：生产级多平台智能体机器人开发平台]({{< relref "posts/20260131-github_trending-langbot-app-langbot-7.md" >}})
+- [ChatGPT-on-WeChat：接入大模型的多平台聊天机器人]({{< relref "posts/20260131-github_trending-zhayujie-chatgpt-on-wechat-0.md" >}})
+- [LangBot：生产级多平台智能 IM 机器人开发平台]({{< relref "posts/20260131-github_trending-langbot-app-langbot-7.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

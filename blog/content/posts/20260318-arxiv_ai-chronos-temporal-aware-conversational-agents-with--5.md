@@ -23,6 +23,10 @@ external_url: http://arxiv.org/abs/2603.16862v1
 scenarios:
 - 大语言模型
 - RAG应用
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Chronos：基于结构化事件检索的时序感知对话智能体
@@ -375,8 +379,8 @@ Chronos 特别适合那些需要维护长期交互历史并依赖时间上下文
 
 ### 相关文章
 
-- [MemSkill：面向自进化代理的记忆技能学习与演化框架]({{< relref "posts/20260204-arxiv_ai-memskill-learning-and-evolving-memory-skills-for-s-9.md" >}})
-- [面向运行时智能体记忆的查询感知预算层路由]({{< relref "posts/20260207-arxiv_ai-learning-query-aware-budget-tier-routing-for-runti-9.md" >}})
-- [SkillsBench 论文解读：跨任务基准测试如何揭示 Agent 技能的实际效用]({{< relref "posts/20260218-juejin-你知道不你现在给-ai-用的-agent-skills-可能毫无作用甚至还拖后腿-2.md" >}})
-- [Agent Skills：智能体技能框架]({{< relref "posts/20260203-hacker_news-agent-skills-4.md" >}})
-- [Context Graphs与Agent Traces：解析AI系统的上下文与追踪技术]({{< relref "posts/20260205-blogs_podcasts-ainews-context-graphs-and-agent-traces-5.md" >}})
+- [MemSkill：面向自进化代理的记忆技能学习与演化框架]({{< relref "posts/20260203-arxiv_ai-memskill-learning-and-evolving-memory-skills-for-s-9.md" >}})
+- [面向运行时智能体记忆的查询感知预算层路由]({{< relref "posts/20260206-arxiv_ai-learning-query-aware-budget-tier-routing-for-runti-9.md" >}})
+- [SkillsBench 论文解读：跨任务基准测试如何揭示 Agent 技能的实际效用]({{< relref "posts/20260217-juejin-你知道不你现在给-ai-用的-agent-skills-可能毫无作用甚至还拖后腿-2.md" >}})
+- [Agent Skills：智能体技能框架]({{< relref "posts/20260203-hacker_news-agent-skills-0.md" >}})
+- [Context Graphs与Agent Traces：解析AI系统的上下文与追踪技术]({{< relref "posts/20260204-blogs_podcasts-ainews-context-graphs-and-agent-traces-0.md" >}})

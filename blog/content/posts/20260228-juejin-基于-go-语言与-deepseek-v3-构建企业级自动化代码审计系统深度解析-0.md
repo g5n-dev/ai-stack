@@ -21,6 +21,10 @@ description: 随着软件供应链安全的重要性日益凸显，传统静态�
 external_url: https://juejin.cn/post/7611172799504859171
 scenarios:
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 基于DeepSeek-V3与Go构建企业级代码审计系统
@@ -178,8 +182,8 @@ Prompt 工程直接决定了 DeepSeek-V3 的审计质量，以下是几项核心
 
 ### 相关文章
 
-- [在40MB二进制文件植入后门并测试AI与Ghidra检测能力]({{< relref "posts/20260222-hacker_news-we-hid-backdoors-in-40mb-binaries-and-asked-ai-ghi-16.md" >}})
+- [在40MB二进制文件植入后门并测试AI与Ghidra检测能力]({{< relref "posts/20260222-hacker_news-we-hid-backdoors-in-40mb-binaries-and-asked-ai-ghi-6.md" >}})
 - [我们在40MB二进制文件植入后门并测试AI与Ghidra的检测能力]({{< relref "posts/20260222-hacker_news-we-hid-backdoors-in-40mb-binaries-and-asked-ai-ghi-6.md" >}})
-- [AI与Ghidra协同分析40MB二进制文件中的隐藏后门]({{< relref "posts/20260222-hacker_news-we-hid-backdoors-in-40mb-binaries-and-asked-ai-ghi-9.md" >}})
+- [AI与Ghidra协同分析40MB二进制文件中的隐藏后门]({{< relref "posts/20260222-hacker_news-we-hid-backdoors-in-40mb-binaries-and-asked-ai-ghi-6.md" >}})
 - [AI代码审查的真实世界基准测试]({{< relref "posts/20260204-hacker_news-a-real-world-benchmark-for-ai-code-review-2.md" >}})
-- [面向真实场景的AI代码审查基准测试]({{< relref "posts/20260205-hacker_news-a-real-world-benchmark-for-ai-code-review-11.md" >}})
+- [面向真实场景的AI代码审查基准测试]({{< relref "posts/20260204-hacker_news-a-real-world-benchmark-for-ai-code-review-2.md" >}})

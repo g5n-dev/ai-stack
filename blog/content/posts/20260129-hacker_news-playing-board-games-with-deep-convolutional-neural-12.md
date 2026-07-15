@@ -1,14 +1,32 @@
 ---
-title: "在8位摩托罗拉6809上运行深度卷积神经网络玩棋盘游戏"
-date: 2026-01-29T17:19:02+08:00
+title: 在8位摩托罗拉6809上运行深度卷积神经网络玩棋盘游戏
+date: 2026-01-29 17:19:02+08:00
 draft: false
-entry_kind: "auto"
-tags: ["复古计算", "摩托罗拉6809", "边缘计算", "深度学习", "卷积神经网络", "模型量化", "嵌入式AI", "8位机"]
-categories: ["系统与基础设施", "AI 工程"]
+entry_kind: auto
+tags:
+- 复古计算
+- 摩托罗拉6809
+- 边缘计算
+- 深度学习
+- 卷积神经网络
+- 模型量化
+- 嵌入式AI
+- 8位机
+categories:
+- 系统与基础设施
+- AI 工程
 source: hacker_news
-description: "在深度学习通常依赖高性能硬件的今天，在 8 位微处理器上运行卷积神经网络（CNN）无疑是一项极具挑战性的尝试。本文详细记录了如何在资源极其受限的 Motorola 6809 芯片上实现这一过程，并以此驱动棋类游戏。通过阅读本文，读者不仅能了解模型量化的具体技术细节，还能直观感受早期硬件架构与现代算法结合时的工程权衡与独"
+description: 在深度学习通常依赖高性能硬件的今天，在 8 位微处理器上运行卷积神经网络（CNN）无疑是一项极具挑战性的尝试。本文详细记录了如何在资源极其受限的
+  Motorola 6809 芯片上实现这一过程，并以此驱动棋类游戏。通过阅读本文，读者不仅能了解模型量化的具体技术细节，还能直观感受早期硬件架构与现代算法结合时的工程权衡与独
 external_url: https://ipsj.ixsq.nii.ac.jp/records/229345
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+aliases:
+- /posts/20260129-hacker_news-playing-board-games-with-deep-convolutional-neural-15/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 在8位摩托罗拉6809上运行深度卷积神经网络玩棋盘游戏
@@ -233,7 +251,6 @@ print("编码结果:", encode_board(board))
 检测延迟降至 200ms/次，满足生产线实时要求（原方案需 1 秒）。系统升级成本降低 70%，并延长旧设备寿命 5 年以上。该方案被公司写入《工业遗产设备技术改造白皮书》。
 
 ---
-## 最佳实践
 
 ## 最佳实践指南
 
@@ -381,9 +398,9 @@ print("编码结果:", encode_board(board))
 
 ### 相关文章
 
-- [推出全球首个聚焦科学中AI的播客及工程师关注理由]({{< relref "posts/20260129-blogs_podcasts-its-time-to-science-1.md" >}})
+- [推出全球首个聚焦科学中AI的播客及工程师关注理由]({{< relref "posts/20260129-blogs_podcasts-its-time-to-science-0.md" >}})
 - [✨无需重构！直接将应用迁移至Cloudflare Workers！🚀]({{< relref "posts/20260126-hacker_news-you-can-just-port-things-to-cloudflare-workers-6.md" >}})
-- [🤥Cloudflare谎称实现Matrix？真相让人震惊！💥]({{< relref "posts/20260127-hacker_news-cloudflare-claimed-they-implemented-matrix-on-clou-17.md" >}})
+- [🤥Cloudflare谎称实现Matrix？真相让人震惊！💥]({{< relref "posts/20260127-hacker_news-cloudflare-claimed-they-implemented-matrix-on-clou-15.md" >}})
 - [🛰️无网也能上网！背包卫星广播方案：随时随地连世界！]({{< relref "posts/20260127-hacker_news-knapsack-offline-internet-solution-satellite-datac-19.md" >}})
 - [基于相机-IMU融合的鲁棒路面分类数据集与框架]({{< relref "posts/20260129-arxiv_ai-a-new-dataset-and-framework-for-robust-road-surfac-6.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

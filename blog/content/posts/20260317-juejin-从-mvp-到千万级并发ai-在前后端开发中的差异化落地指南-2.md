@@ -21,6 +21,10 @@ description: 这是一份关于《从 MVP 到千万级并发：AI 在前后端�
 external_url: https://juejin.cn/post/7618055361978843151
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AI在前后端开发中的差异化落地：基于任务确定性的应用策略
@@ -149,6 +153,6 @@ RAG 是通过外挂知识库来增强 LLM 事实准确性的技术。在高并�
 
 - [前端工程师总结半年使用 Claude Code 的 16 个实战技巧]({{< relref "posts/20260315-juejin-用了大半年-claude-code我总结了-16-个实用技巧-1.md" >}})
 - [AI造浏览器？别急着吹！先看代码仓库！🔍]({{< relref "posts/20260127-hacker_news-when-ai-builds-a-browser-check-the-repo-before-bel-11.md" >}})
-- [让 Claude 编写 CUDA 内核并指导开源模型]({{< relref "posts/20260129-blogs_podcasts-we-got-claude-to-build-cuda-kernels-and-teach-open-7.md" >}})
+- [让 Claude 编写 CUDA 内核并指导开源模型]({{< relref "posts/20260129-blogs_podcasts-we-got-claude-to-build-cuda-kernels-and-teach-open-6.md" >}})
 - [Opus 4.5 在 OTelBench 基准测试中得分仅 29%]({{< relref "posts/20260129-hacker_news-otelbench-ai-struggles-with-simple-sre-tasks-opus--1.md" >}})
-- [AI 辅助编程对代码技能形成的影响]({{< relref "posts/20260130-hacker_news-how-ai-assistance-impacts-the-formation-of-coding--9.md" >}})
+- [AI 辅助编程对代码技能形成的影响]({{< relref "posts/20260130-hacker_news-way-ai-assistance-impacts-the-formation-of-coding--17.md" >}})

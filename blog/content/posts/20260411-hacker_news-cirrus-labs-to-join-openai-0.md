@@ -1,14 +1,31 @@
 ---
-title: "Cirrus Labs 团队加入 OpenAI"
-date: 2026-04-11T16:54:49+08:00
+title: Cirrus Labs 团队加入 OpenAI
+date: 2026-04-11 16:54:49+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Cirrus团队", "OpenAI", "团队加入", "AI工程", "大模型", "人才招聘", "行业动态", "LLM"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- Cirrus团队
+- OpenAI
+- 团队加入
+- AI 工程
+- 大模型
+- 人才招聘
+- 行业动态
+- LLM
+categories:
+- 大模型
+- AI 工程
 source: hacker_news
-description: "OpenAI 近日宣布，AI 研发公司 Cirrus Labs 将正式加入其团队。此举旨在整合 Cirrus Labs 在模型压缩与边缘计算方面的技术优势，提升 OpenAI 在端侧部署的效率与可扩展性。对关注 AI 产业动向的读者而言，这不仅是一次资源的聚合，也可能预示着未来开放模型生态的进一步演进。"
+description: OpenAI 近日宣布，AI 研发公司 Cirrus Labs 将正式加入其团队。此举旨在整合 Cirrus Labs 在模型压缩与边缘计算方面的技术优势，提升
+  OpenAI 在端侧部署的效率与可扩展性。对关注 AI 产业动向的读者而言，这不仅是一次资源的聚合，也可能预示着未来开放模型生态的进一步演进。
 external_url: https://cirruslabs.org
-scenarios: ["AI/ML项目", "大语言模型"]
+scenarios:
+- AI/ML项目
+- 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Cirrus Labs 团队加入 OpenAI
@@ -76,9 +93,9 @@ Cirrus Labs加入OpenAI的举措，标志着AI基础设施竞争进入新阶段�
 
 ### 相关文章
 
-- [[AINews] Context Drought]({{< relref "posts/20260316-blogs_podcasts-ainews-context-drought-2.md" >}})
-- [Anthropic 推出百万上下文窗口，落后于 Gemini 与 OpenAI]({{< relref "posts/20260317-blogs_podcasts-ainews-context-drought-8.md" >}})
+- [[AINews] Context Drought]({{< relref "posts/20260314-blogs_podcasts-ainews-context-drought-0.md" >}})
+- [Anthropic 推出百万上下文窗口，落后于 Gemini 与 OpenAI]({{< relref "posts/20260314-blogs_podcasts-ainews-context-drought-0.md" >}})
 - [OpenAI前沿技术进展与模型能力解析]({{< relref "posts/20260205-hacker_news-openai-frontier-5.md" >}})
-- [Claude Opus 4.6 发布]({{< relref "posts/20260206-hacker_news-claude-opus-46-3.md" >}})
+- [Claude Opus 4.6 发布]({{< relref "posts/20260205-hacker_news-claude-opus-46-2.md" >}})
 - [OpenAI发布GPT-5.3-Codex代码生成模型]({{< relref "posts/20260206-hacker_news-gpt-53-codex-8.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

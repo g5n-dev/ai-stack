@@ -1,14 +1,32 @@
 ---
-title: "CoPE-VideoLM：基于编解码基元的高效视频语言模型"
-date: 2026-02-16T23:54:05+08:00
+title: CoPE-VideoLM：基于编解码基元的高效视频语言模型
+date: 2026-02-16 23:54:05+08:00
 draft: false
-entry_kind: "auto"
-tags: ["VideoLM", "多模态", "视频理解", "编解码", "CoPE", "Motion Vectors", "上下文窗口", "计算优化"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- VideoLM
+- 多模态
+- 视频理解
+- 编解码
+- CoPE
+- Motion Vectors
+- 上下文窗口
+- 计算优化
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "**CoPE-VideoLM：利用编解码原语实现高效视频语言模型** **背景与问题** 现有的视频语言模型在处理视频时面临两大主要挑战： 1. **上下文窗口限制**：为了适应有限的上下文窗口，当前方法通常采用关键帧采样，但这种稀疏的时间采样容易导致遗漏宏观事件或微观细节。 2. **计算开销巨大**：对每一帧都进行"
+description: '**CoPE-VideoLM：利用编解码原语实现高效视频语言模型** **背景与问题** 现有的视频语言模型在处理视频时面临两大主要挑战：
+  1. **上下文窗口限制**：为了适应有限的上下文窗口，当前方法通常采用关键帧采样，但这种稀疏的时间采样容易导致遗漏宏观事件或微观细节。 2. **计算开销巨大**：对每一帧都进行'
 external_url: http://arxiv.org/abs/2602.13191v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+aliases:
+- /posts/20260217-arxiv_ai-cope-videolm-codec-primitives-for-efficient-video--2/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # CoPE-VideoLM：基于编解码基元的高效视频语言模型
@@ -254,7 +272,6 @@ CoPE 代表 **C**odec **P**rimitives **E**mbeddings（编解码原语嵌入）�
 ## 9. 研究哲学：
 
 ---
-## 研究最佳实践
 
 ## 最佳实践指南
 
@@ -338,7 +355,6 @@ CoPE-VideoLM 的核心在于将视频 Token 视为一种“语言”。最佳实
 - CoPE-VideoLM 的模块化架构支持灵活扩展，能够便捷地集成新的视觉编码器或语言骨干网络，适应不同的下游任务需求。
 
 ---
-## 学习路径
 
 ## 学习路径
 

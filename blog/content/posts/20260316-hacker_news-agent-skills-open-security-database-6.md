@@ -8,7 +8,7 @@ tags:
 - 智能体
 - 安全数据库
 - LLM
-- AI安全
+- AI 安全
 - 开源
 - HackerNews
 - AgentSkills
@@ -21,6 +21,10 @@ external_url: https://index.tego.security/skills
 scenarios:
 - 大语言模型
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Agent Skills：面向智能体的开放安全数据库

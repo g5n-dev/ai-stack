@@ -21,6 +21,12 @@ description: 以下是该论文内容的中文总结： **论文标题：** Unti
 external_url: http://arxiv.org/abs/2602.21196v1
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260226-arxiv_ai-untied-ulysses-memory-efficient-context-parallelis-5/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Headwise Chunking：面向上下文并行的内存高效方案
@@ -134,7 +140,6 @@ UPipe在长序列训练中实现了显存的线性降低，同时保持了与Rin
 
 ---
 
-### 深入分析：Untied Ulysses (UPipe) —— 通过分头分块实现内存高效的长文本并行训练
 
 ### 1. 研究背景与问题
 
@@ -436,8 +441,8 @@ Untied Ulysses 相比 Ring Attention 的主要优势在于**通信效率和显�
 
 ### 相关文章
 
-- [基于对称性泰勒近似实现恒定每Token成本注意力机制]({{< relref "posts/20260204-hacker_news-attention-at-constant-cost-per-token-via-symmetry--3.md" >}})
-- [基于对称性泰勒近似实现恒定Token成本注意力机制]({{< relref "posts/20260204-hacker_news-attention-at-constant-cost-per-token-via-symmetry--6.md" >}})
-- [FlashAttention-T：张量化注意力机制优化方案]({{< relref "posts/20260204-hacker_news-flashattention-t-towards-tensorized-attention-11.md" >}})
-- [FlashAttention-T：张量化注意力机制优化方案]({{< relref "posts/20260204-hacker_news-flashattention-t-towards-tensorized-attention-2.md" >}})
-- [FlashAttention-T：张量化注意力机制实现方案]({{< relref "posts/20260204-hacker_news-flashattention-t-towards-tensorized-attention-8.md" >}})
+- [基于对称性泰勒近似实现恒定每Token成本注意力机制]({{< relref "posts/20260204-hacker_news-attention-at-constant-cost-per-token-via-symmetry--0.md" >}})
+- [基于对称性泰勒近似实现恒定Token成本注意力机制]({{< relref "posts/20260204-hacker_news-attention-at-constant-cost-per-token-via-symmetry--0.md" >}})
+- [FlashAttention-T：张量化注意力机制优化方案]({{< relref "posts/20260203-hacker_news-flashattention-t-towards-tensorized-attention-0.md" >}})
+- [FlashAttention-T：张量化注意力机制优化方案]({{< relref "posts/20260203-hacker_news-flashattention-t-towards-tensorized-attention-0.md" >}})
+- [FlashAttention-T：张量化注意力机制实现方案]({{< relref "posts/20260203-hacker_news-flashattention-t-towards-tensorized-attention-0.md" >}})

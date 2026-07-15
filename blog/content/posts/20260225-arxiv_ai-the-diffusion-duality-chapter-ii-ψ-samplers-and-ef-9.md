@@ -21,6 +21,12 @@ description: 这篇内容主要介绍了离散扩散模型领域的两项重要�
 external_url: http://arxiv.org/abs/2602.21185v1
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260226-arxiv_ai-the-diffusion-duality-chapter-ii-ψ-samplers-and-ef-9/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 扩散对偶性第二章：Ψ采样器与高效课程
@@ -126,7 +132,6 @@ scenarios:
 
 ---
 
-### 《The Diffusion Duality, Chapter II》深度分析报告
 
 ### 1. 研究背景与问题
 
@@ -434,4 +439,4 @@ $\Psi$-Sampler 是论文中提出的一种高效采样机制，旨在解决传�
 - [IRL-DAL：基于能量引导扩散模型的自动驾驶安全自适应轨迹规划]({{< relref "posts/20260202-arxiv_ai-irl-dal-safe-and-adaptive-trajectory-planning-for--6.md" >}})
 - [粒子引导扩散模型求解偏微分方程]({{< relref "posts/20260202-arxiv_ai-particle-guided-diffusion-models-for-partial-diffe-8.md" >}})
 - [VideoGPA：提取几何先验实现三维一致视频生成]({{< relref "posts/20260202-arxiv_ai-videogpa-distilling-geometry-priors-for-3d-consist-0.md" >}})
-- [粒子引导扩散模型用于偏微分方程求解]({{< relref "posts/20260203-arxiv_ai-particle-guided-diffusion-models-for-partial-diffe-8.md" >}})
+- [粒子引导扩散模型用于偏微分方程求解]({{< relref "posts/20260202-arxiv_ai-particle-guided-diffusion-models-for-partial-diffe-8.md" >}})

@@ -1,14 +1,31 @@
 ---
-title: "使用 Amazon Bedrock AgentCore 构建全渠道 AI 订购系统"
-date: 2026-04-20T16:30:38+08:00
+title: 使用 Amazon Bedrock AgentCore 构建全渠道 AI 订购系统
+date: 2026-04-20 16:30:38+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Amazon Bedrock", "AI 代理", "全渠道", "事件驱动", "语音交互", "系统架构", "弹性扩展", "安全治理"]
-categories: ["AI 工程", "系统与基础设施"]
+entry_kind: auto
+tags:
+- Amazon Bedrock
+- AI 代理
+- 全渠道
+- 事件驱动
+- 语音交互
+- 系统架构
+- 弹性扩展
+- 安全治理
+categories:
+- AI 工程
+- 系统与基础设施
 source: blogs_podcasts
-description: "概述 本文演示了如何使用 Amazon Bedrock AgentCore（一个代理平台）与 Amazon Nova 2 Sonic，构建完整的全渠道（omnichannel）点单系统。AgentCore 提供安全、可扩展的 AI Agent 生命周期管理，支持任意框架和基础模型；Nova 2 Sonic 则提供实时的"
+description: 概述 本文演示了如何使用 Amazon Bedrock AgentCore（一个代理平台）与 Amazon Nova 2 Sonic，构建完整的全渠道（omnichannel）点单系统。AgentCore
+  提供安全、可扩展的 AI Agent 生命周期管理，支持任意框架和基础模型；Nova 2 Sonic 则提供实时的
 external_url: https://aws.amazon.com/blogs/machine-learning/omnichannel-ordering-with-amazon-bedrock-agentcore-and-amazon-nova-2-sonic
-scenarios: ["AI/ML项目", "Web应用开发"]
+scenarios:
+- AI/ML项目
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 使用 Amazon Bedrock AgentCore 构建全渠道 AI 订购系统
@@ -147,9 +164,9 @@ Nova 2 Sonic在订购场景中的优势体现在三个方面：语音交互的�
 
 ### 相关文章
 
-- [构建基于Bedrock AgentCore的长运行MCP服务器与异步任务框架]({{< relref "posts/20260218-blogs_podcasts-build-long-running-mcp-servers-on-amazon-bedrock-a-14.md" >}})
+- [构建基于Bedrock AgentCore的长运行MCP服务器与异步任务框架]({{< relref "posts/20260212-blogs_podcasts-build-long-running-mcp-servers-on-amazon-bedrock-a-1.md" >}})
 - [基于Amazon Bedrock AgentCore构建长运行MCP服务器与异步任务管理]({{< relref "posts/20260212-blogs_podcasts-build-long-running-mcp-servers-on-amazon-bedrock-a-1.md" >}})
-- [基于Amazon Bedrock AgentCore构建长时运行MCP服务器集成方案]({{< relref "posts/20260212-blogs_podcasts-build-long-running-mcp-servers-on-amazon-bedrock-a-2.md" >}})
-- [基于Amazon Bedrock AgentCore构建支持长时运行任务的MCP服务器]({{< relref "posts/20260213-blogs_podcasts-build-long-running-mcp-servers-on-amazon-bedrock-a-2.md" >}})
-- [基于Amazon Bedrock AgentCore构建长运行MCP服务器与异步任务管理]({{< relref "posts/20260213-blogs_podcasts-build-long-running-mcp-servers-on-amazon-bedrock-a-3.md" >}})
+- [基于Amazon Bedrock AgentCore构建长时运行MCP服务器集成方案]({{< relref "posts/20260212-blogs_podcasts-build-long-running-mcp-servers-on-amazon-bedrock-a-1.md" >}})
+- [基于Amazon Bedrock AgentCore构建支持长时运行任务的MCP服务器]({{< relref "posts/20260212-blogs_podcasts-build-long-running-mcp-servers-on-amazon-bedrock-a-1.md" >}})
+- [基于Amazon Bedrock AgentCore构建长运行MCP服务器与异步任务管理]({{< relref "posts/20260212-blogs_podcasts-build-long-running-mcp-servers-on-amazon-bedrock-a-1.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

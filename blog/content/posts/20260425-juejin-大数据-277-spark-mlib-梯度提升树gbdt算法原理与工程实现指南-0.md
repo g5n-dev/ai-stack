@@ -1,14 +1,30 @@
 ---
-title: "Spark MLlib GBDT算法原理与工程实现"
-date: 2026-04-25T03:02:05+08:00
+title: Spark MLlib GBDT算法原理与工程实现
+date: 2026-04-25 03:02:05+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Spark", "MLlib", "GBDT", "梯度提升树", "机器学习", "大数据", "算法原理", "工程实现"]
-categories: ["AI 工程", "系统与基础设施"]
+entry_kind: auto
+tags:
+- Spark
+- MLlib
+- GBDT
+- 梯度提升树
+- 机器学习
+- 大数据
+- 算法原理
+- 工程实现
+categories:
+- AI 工程
+- 系统与基础设施
 source: juejin
-description: "梯度提升树（GBDT）是大规模机器学习中的核心模型之一，在 Spark MLlib 中的实现提供了高效的分布式训练能力。掌握其算法原理有助于在特征工程、超参数调优以及模型解释等环节做出更合理的决策。本文从理论推导出发，结合源码解析与实战案例，帮助你在真实业务场景中快速部署并优化 GBDT 模型。"
+description: 梯度提升树（GBDT）是大规模机器学习中的核心模型之一，在 Spark MLlib 中的实现提供了高效的分布式训练能力。掌握其算法原理有助于在特征工程、超参数调优以及模型解释等环节做出更合理的决策。本文从理论推导出发，结合源码解析与实战案例，帮助你在真实业务场景中快速部署并优化
+  GBDT 模型。
 external_url: https://juejin.cn/post/7632183161372164122
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Spark MLlib GBDT算法原理与工程实现
@@ -76,9 +92,9 @@ scenarios: ["AI/ML项目"]
 
 ### 相关文章
 
-- [基于 Union.ai 和 Flyte 在 Amazon EKS 上构建 AI 工作流]({{< relref "posts/20260220-blogs_podcasts-build-ai-workflows-on-amazon-eks-with-unionai-and--9.md" >}})
-- [基于 Union.ai 与 Flyte 在 Amazon EKS 上构建 AI 工作流]({{< relref "posts/20260222-blogs_podcasts-build-ai-workflows-on-amazon-eks-with-unionai-and--11.md" >}})
-- [基于 Union.ai 和 Flyte 在 Amazon EKS 上构建 AI 工作流]({{< relref "posts/20260223-blogs_podcasts-build-ai-workflows-on-amazon-eks-with-unionai-and--11.md" >}})
+- [基于 Union.ai 和 Flyte 在 Amazon EKS 上构建 AI 工作流]({{< relref "posts/20260219-blogs_podcasts-build-ai-workflows-on-amazon-eks-with-unionai-and--2.md" >}})
+- [基于 Union.ai 与 Flyte 在 Amazon EKS 上构建 AI 工作流]({{< relref "posts/20260219-blogs_podcasts-build-ai-workflows-on-amazon-eks-with-unionai-and--2.md" >}})
+- [基于 Union.ai 和 Flyte 在 Amazon EKS 上构建 AI 工作流]({{< relref "posts/20260219-blogs_podcasts-build-ai-workflows-on-amazon-eks-with-unionai-and--2.md" >}})
 - [深度学习通用逼近定理：神经网络的理论基础与核心原理]({{< relref "posts/20260228-juejin-一文搞懂深度学习中的通用逼近定理-0.md" >}})
-- [机器学习原理的可视化入门指南]({{< relref "posts/20260315-hacker_news-a-visual-introduction-to-machine-learning-2015-12.md" >}})
+- [机器学习原理的可视化入门指南]({{< relref "posts/20260315-hacker_news-a-visual-introduction-to-machine-learning-1.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

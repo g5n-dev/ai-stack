@@ -1,14 +1,29 @@
 ---
-title: "构建轻量级LLM：以代码直观展示语言模型工作原理"
-date: 2026-04-06T09:33:44+08:00
+title: 构建轻量级LLM：以代码直观展示语言模型工作原理
+date: 2026-04-06 09:33:44+08:00
 draft: false
-entry_kind: "auto"
-tags: ["轻量级LLM", "语言模型原理", "代码示例", "神经网络", "深度学习", "Python实现", "开源项目", "机器学习"]
-categories: ["AI 工程", "大模型"]
+entry_kind: auto
+tags:
+- 轻量级LLM
+- 语言模型原理
+- 代码示例
+- 神经网络
+- 深度学习
+- Python实现
+- 开源项目
+- 机器学习
+categories:
+- AI 工程
+- 大模型
 source: hacker_news
-description: "在深度学习领域，语言模型的内部工作原理常常被视作黑箱，导致学习曲线陡峭。本文作者通过构建一个极简的语言模型，以最基础的代码和原理，展示从输入词向量到输出概率的全过程。阅读本文，你将获得对Transformer、注意力机制以及训练流程的系统认识，帮助你在实际项目中更自信地调试和优化模型。"
+description: 在深度学习领域，语言模型的内部工作原理常常被视作黑箱，导致学习曲线陡峭。本文作者通过构建一个极简的语言模型，以最基础的代码和原理，展示从输入词向量到输出概率的全过程。阅读本文，你将获得对Transformer、注意力机制以及训练流程的系统认识，帮助你在实际项目中更自信地调试和优化模型。
 external_url: https://github.com/arman-bd/guppylm
-scenarios: ["大语言模型"]
+scenarios:
+- 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 构建轻量级LLM：以代码直观展示语言模型工作原理
@@ -80,9 +95,9 @@ scenarios: ["大语言模型"]
 
 ### 相关文章
 
-- [神经网络原理可视化解析]({{< relref "posts/20260206-hacker_news-understanding-neural-network-visually-10.md" >}})
+- [神经网络原理可视化解析]({{< relref "posts/20260206-hacker_news-understanding-neural-network-visually-16.md" >}})
 - [神经网络原理的可视化解析]({{< relref "posts/20260206-hacker_news-understanding-neural-network-visually-16.md" >}})
-- [神经网络原理可视化解析]({{< relref "posts/20260206-hacker_news-understanding-neural-network-visually-2.md" >}})
-- [神经网络原理可视化解析]({{< relref "posts/20260206-hacker_news-understanding-neural-network-visually-3.md" >}})
-- [神经网络原理可视化解析]({{< relref "posts/20260206-hacker_news-understanding-neural-network-visually-5.md" >}})
+- [神经网络原理可视化解析]({{< relref "posts/20260206-hacker_news-understanding-neural-network-visually-16.md" >}})
+- [神经网络原理可视化解析]({{< relref "posts/20260206-hacker_news-understanding-neural-network-visually-16.md" >}})
+- [神经网络原理可视化解析]({{< relref "posts/20260206-hacker_news-understanding-neural-network-visually-16.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

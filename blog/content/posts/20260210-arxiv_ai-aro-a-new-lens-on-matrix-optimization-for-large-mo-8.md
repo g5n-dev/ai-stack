@@ -1,14 +1,31 @@
 ---
-title: "ARO：面向大模型矩阵优化的新视角"
-date: 2026-02-10T22:46:04+08:00
+title: ARO：面向大模型矩阵优化的新视角
+date: 2026-02-10 22:46:04+08:00
 draft: false
-entry_kind: "auto"
-tags: ["矩阵优化", "ARO", "大模型", "线性代数", "模型训练", "性能优化", "cs.LG", "算法"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- 矩阵优化
+- ARO
+- 大模型
+- 线性代数
+- 模型训练
+- 性能优化
+- cs.LG
+- 算法
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "针对大规模模型训练中矩阵优化计算成本高昂的瓶颈，本文提出了 ARO 这一新视角，旨在通过改进矩阵优化策略来提升效率。文章展示了该方法在降低计算开销方面的潜力，不过其具体的算法细节与实验性能增益无法从摘要确认。该研究若能落地，有望为未来大模型的高效训练与部署提供一种新的技术路径。"
+description: 针对大规模模型训练中矩阵优化计算成本高昂的瓶颈，本文提出了 ARO 这一新视角，旨在通过改进矩阵优化策略来提升效率。文章展示了该方法在降低计算开销方面的潜力，不过其具体的算法细节与实验性能增益无法从摘要确认。该研究若能落地，有望为未来大模型的高效训练与部署提供一种新的技术路径。
 external_url: http://arxiv.org/abs/2602.09006v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+aliases:
+- /posts/20260211-arxiv_ai-aro-a-new-lens-on-matrix-optimization-for-large-mo-8/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # ARO：面向大模型矩阵优化的新视角
@@ -232,7 +249,6 @@ ARO 的主要贡献在于**视角的转换**。它证明了直接利用矩阵的
 - **理论推断**：ARO 具有更好的显存复杂度上界
 
 ---
-## 学习路径
 
 ## 学习路径
 
@@ -415,7 +431,7 @@ ARO 的主要贡献在于**视角的转换**。它证明了直接利用矩阵的
 
 - [🤖反事实训练！让模型学会靠谱又可落地的解释！]({{< relref "posts/20260125-arxiv_ai-counterfactual-training-teaching-models-plausible--3.md" >}})
 - [为何Adam在$β_1=β_2$时更优：缺失的梯度尺度不变性原理]({{< relref "posts/20260130-arxiv_ai-why-adam-works-better-with-β_1-β_2-the-missing-gra-8.md" >}})
-- [利用权重更新稀疏性提升分布式强化学习通信效率]({{< relref "posts/20260205-arxiv_ai-understanding-and-exploiting-weight-update-sparsit-3.md" >}})
+- [利用权重更新稀疏性提升分布式强化学习通信效率]({{< relref "posts/20260204-arxiv_ai-understanding-and-exploiting-weight-update-sparsit-3.md" >}})
 - [SplineFlow：基于B样条插值的动力系统流匹配方法]({{< relref "posts/20260202-arxiv_ai-splineflow-flow-matching-for-dynamical-systems-wit-8.md" >}})
 - [MEG-XL：基于长上下文预训练的高效脑电转文本模型]({{< relref "posts/20260203-arxiv_ai-meg-xl-data-efficient-brain-to-text-via-long-conte-1.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

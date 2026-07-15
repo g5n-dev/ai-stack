@@ -20,6 +20,10 @@ description: 随着 AI 辅助编程的普及，开源维护者正面临大量低
 external_url: https://406.fail
 scenarios:
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 处理与丢弃低质量AI生成拉取请求的标准协议

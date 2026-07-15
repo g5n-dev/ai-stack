@@ -1,14 +1,31 @@
 ---
-title: "皮查伊Google I/O 2026 Dialogues对话回顾"
-date: 2026-05-22T23:10:49+08:00
+title: 皮查伊Google I/O 2026 Dialogues对话回顾
+date: 2026-05-22 23:10:49+08:00
 draft: false
-entry_kind: "auto"
-tags: ["皮查伊", "生成式AI", "多模态AI", "量子计算", "可持续发展", "数据中心", "AI伦理", "Alphabet"]
-categories: ["大模型", "系统与基础设施"]
+entry_kind: auto
+tags:
+- 皮查伊
+- 生成式 AI
+- 多模态AI
+- 量子计算
+- 可持续发展
+- 数据中心
+- AI伦理
+- Alphabet
+categories:
+- 大模型
+- 系统与基础设施
 source: blogs_podcasts
-description: "活动概述 Google I/O 2026 的 Dialogues 舞台聚焦于高层对话，邀请 Alphabet 首席执行官桑达尔·皮查伊（Sundar Pichai）分享公司在 AI、量子计算、可持续发展等领域的最新进展。 主要议题 - **AI 发展方向**：强调生成式模型的安全与可解释性，提出多模态 AI 的商业化路"
+description: 活动概述 Google I/O 2026 的 Dialogues 舞台聚焦于高层对话，邀请 Alphabet 首席执行官桑达尔·皮查伊（Sundar
+  Pichai）分享公司在 AI、量子计算、可持续发展等领域的最新进展。 主要议题 - **AI 发展方向**：强调生成式模型的安全与可解释性，提出多模态 AI
+  的商业化路
 external_url: https://blog.google/innovation-and-ai/technology/ai/io-2026-dialogues-recap
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 皮查伊Google I/O 2026 Dialogues对话回顾
@@ -145,9 +162,9 @@ Dialogues舞台的技术内容更适用于中大型技术企业的战略规划�
 
 ### 相关文章
 
-- [NVIDIA Nemotron 3 Nano 30B 现已在 Amazon SageMaker JumpSta]({{< relref "posts/20260212-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-7.md" >}})
-- [NVIDIA Nemotron 3 Nano 30B 现已登陆 Amazon SageMaker JumpSt]({{< relref "posts/20260213-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-10.md" >}})
+- [NVIDIA Nemotron 3 Nano 30B 现已在 Amazon SageMaker JumpSta]({{< relref "posts/20260211-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-0.md" >}})
+- [NVIDIA Nemotron 3 Nano 30B 现已登陆 Amazon SageMaker JumpSt]({{< relref "posts/20260211-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-0.md" >}})
 - [Amazon Bedrock 新增中东区域支持 Anthropic Claude 模型推理]({{< relref "posts/20260224-blogs_podcasts-introducing-amazon-bedrock-global-cross-region-inf-3.md" >}})
-- [Amazon Bedrock 推出中东全球跨区域推理支持 Claude 模型]({{< relref "posts/20260224-blogs_podcasts-introducing-amazon-bedrock-global-cross-region-inf-4.md" >}})
-- [Amazon Bedrock 现支持在中东地区进行跨区域推理，使用 Anthropic Claude 模型]({{< relref "posts/20260224-blogs_podcasts-introducing-amazon-bedrock-global-cross-region-inf-6.md" >}})
+- [Amazon Bedrock 推出中东全球跨区域推理支持 Claude 模型]({{< relref "posts/20260224-blogs_podcasts-introducing-amazon-bedrock-global-cross-region-inf-3.md" >}})
+- [Amazon Bedrock 现支持在中东地区进行跨区域推理，使用 Anthropic Claude 模型]({{< relref "posts/20260224-blogs_podcasts-introducing-amazon-bedrock-global-cross-region-inf-3.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

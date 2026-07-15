@@ -1,14 +1,31 @@
 ---
-title: "伦敦首届AI工程师大会回顾"
-date: 2026-04-11T19:09:55+08:00
+title: 伦敦首届AI工程师大会回顾
+date: 2026-04-11 19:09:55+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI工程师大会", "伦敦", "欧洲大会", "会议回顾", "AI工程", "开源生态", "技术交流", "AIE"]
-categories: ["AI 工程"]
+entry_kind: auto
+tags:
+- AI工程师大会
+- 伦敦
+- 欧洲大会
+- 会议回顾
+- AI 工程
+- 开源生态
+- 技术交流
+- AIE
+categories:
+- AI 工程
 source: blogs_podcasts
-description: "AI Engineer Europe 2026 即将在欧洲举办，而伦敦的首次 AI Engineer（AIE）活动已圆满结束。近两天相对平静，为我们提供了回顾与思考的空间，总结经验为即将到来的欧洲大会做好准备。"
+description: AI Engineer Europe 2026 即将在欧洲举办，而伦敦的首次 AI Engineer（AIE）活动已圆满结束。近两天相对平静，为我们提供了回顾与思考的空间，总结经验为即将到来的欧洲大会做好准备。
 external_url: https://www.latent.space/p/ainews-ai-engineer-europe-2026
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+aliases:
+- /posts/20260412-blogs_podcasts-ainews-ai-engineer-europe-2026-0/
+- /posts/20260413-blogs_podcasts-ainews-ai-engineer-europe-2026-0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 伦敦首届AI工程师大会回顾
@@ -134,9 +151,9 @@ AIE Europe 系列会议正在构建欧洲 AI 工程实践的社区生态。跨�
 
 ### 相关文章
 
-- [2026年AI展望：LLM、智能体、扩展定律与中国角色]({{< relref "posts/20260202-blogs_podcasts-490-state-of-ai-in-2026-llms-coding-scaling-laws-c-0.md" >}})
-- [2026年AI展望：LLM、智能体、算力与Scaling Laws]({{< relref "posts/20260202-blogs_podcasts-490-state-of-ai-in-2026-llms-coding-scaling-laws-c-1.md" >}})
-- [2026年AI展望：LLM、智能体、算力与Scaling Laws]({{< relref "posts/20260202-blogs_podcasts-490-state-of-ai-in-2026-llms-coding-scaling-laws-c-2.md" >}})
-- [2026年AI展望：LLM、智能体、缩放定律与中国发展]({{< relref "posts/20260203-blogs_podcasts-490-state-of-ai-in-2026-llms-coding-scaling-laws-c-1.md" >}})
-- [2026年AI展望：LLM、智能体、缩放定律与中国发展]({{< relref "posts/20260203-blogs_podcasts-490-state-of-ai-in-2026-llms-coding-scaling-laws-c-3.md" >}})
+- [2026年AI展望：LLM、智能体、扩展定律与中国角色]({{< relref "posts/20260201-blogs_podcasts-490-state-of-ai-in-2026-llms-coding-scaling-laws-c-0.md" >}})
+- [2026年AI展望：LLM、智能体、算力与Scaling Laws]({{< relref "posts/20260201-blogs_podcasts-490-state-of-ai-in-2026-llms-coding-scaling-laws-c-0.md" >}})
+- [2026年AI展望：LLM、智能体、算力与Scaling Laws]({{< relref "posts/20260201-blogs_podcasts-490-state-of-ai-in-2026-llms-coding-scaling-laws-c-0.md" >}})
+- [2026年AI展望：LLM、智能体、缩放定律与中国发展]({{< relref "posts/20260201-blogs_podcasts-490-state-of-ai-in-2026-llms-coding-scaling-laws-c-0.md" >}})
+- [2026年AI展望：LLM、智能体、缩放定律与中国发展]({{< relref "posts/20260201-blogs_podcasts-490-state-of-ai-in-2026-llms-coding-scaling-laws-c-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

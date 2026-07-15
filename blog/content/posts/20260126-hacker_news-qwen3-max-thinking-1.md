@@ -1,12 +1,30 @@
 ---
-title: "🔥Qwen3-Max-Thinking！深度推理颠覆想象！"
-date: 2026-01-26T22:15:20+08:00
+title: 🔥Qwen3-Max-Thinking！深度推理颠覆想象！
+date: 2026-01-26 22:15:20+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Qwen", "通义千问", "深度推理", "思维链", "CoT", "长文本", "逻辑推理", "阿里云"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- Qwen
+- 通义千问
+- 深度推理
+- 思维链
+- CoT
+- 长文本
+- 逻辑推理
+- 阿里云
+categories:
+- 大模型
+- 论文
 source: hacker_news
 external_url: https://qwen.ai/blog?id=qwen3-max-thinking
+scenarios: []
+aliases:
+- /posts/20260127-hacker_news-qwen3-max-thinking-19/
+- /posts/20260127-hacker_news-qwen3-max-thinking-7/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 📰 🔥Qwen3-Max-Thinking！深度推理颠覆想象！
@@ -199,7 +217,6 @@ Qwen3-Max-Thinking 是阿里云通义千问（Qwen）团队发布的一款具备
 - **转化
 
 ---
-## ✅ 最佳实践
 
 ## Qwen3-Max-Thinking 最佳实践指南
 

@@ -1,12 +1,29 @@
 ---
-title: "🚀RL新突破！复用FLOPs，硬难题上通过离线前缀扩展"
-date: 2026-01-27T23:10:51+08:00
+title: 🚀RL新突破！复用FLOPs，硬难题上通过离线前缀扩展
+date: 2026-01-27 23:10:51+08:00
 draft: false
-entry_kind: "auto"
-tags: ["PrefixRL", "强化学习", "LLM", "离线策略", "推理优化", "样本效率", "拒绝采样", "自举学习"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- PrefixRL
+- 强化学习
+- LLM
+- 离线策略
+- 推理优化
+- 样本效率
+- 拒绝采样
+- 自举学习
+categories:
+- 大模型
+- 论文
 source: arxiv
 external_url: http://arxiv.org/abs/2601.18795v1
+scenarios: []
+aliases:
+- /posts/20260128-arxiv_ai-reuse-your-flops-scaling-rl-on-hard-problems-by-co-1/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 📚 🚀RL新突破！复用FLOPs，硬难题上通过离线前缀扩展
@@ -247,10 +264,10 @@ $$ J_{prefix}(\pi) = \mathbb{E}_{\tau_{prefix} \sim \beta} \left[ \mathbb{E}_{\t
 
 | 方法 | 数据来源 | 优化方式 | 优缺点 |
 | :--- | :--- | :--- | :--- |
-| **Standard PPO** | 在线采样 | 在线 RL | **优：** 理论成熟。<br>**缺：** 采样成本极高，难以探索。 |
-| **Expert Iteration** | 仅保留完美轨迹 | 监督学习 (BC) | **优：** 稳定。<br>**缺：** 浪费海量失败数据，无法从错误中学习。 |
-| **Standard Offline RL** | 混合轨迹 | 带约束的 RL (如 CQL) | **优：** 利用旧数据。<br>**缺：** 难以处理分布外动作，容易过拟合或崩溃。 |
-| **PrefixRL (本文)** | 失败轨迹作为前缀 | 条件化在线 RL | **优：** 结合了 BC 的数据效率和 RL 的探索能力，不完美轨迹也能提供梯度。<br>**缺：** 依赖前缀的质量（长度）。 |
+| **Standard PPO** | 在线采样 | 在线 RL | **优：** 理论成熟；**缺：** 采样成本极高，难以探索。 |
+| **Expert Iteration** | 仅保留完美轨迹 | 监督学习 (BC) | **优：** 稳定；**缺：** 浪费海量失败数据，无法从错误中学习。 |
+| **Standard Offline RL** | 混合轨迹 | 带约束的 RL (如 CQL) | **优：** 利用旧数据；**缺：** 难以处理分布外动作，容易过拟合或崩溃。 |
+| **PrefixRL (本文)** | 失败轨迹作为前缀 | 条件化在线 RL | **优：** 结合了 BC 的数据效率和 RL 的探索能力，不完美轨迹也能提供梯度；**缺：** 依赖前缀的质量（长度）。 |
 
 ---
 
@@ -265,7 +282,6 @@ $$ J_{prefix}(\pi) = \mathbb{E}_{\tau_{prefix} \sim \beta} \left[ \mathbb{E}_{\t
 - **分布漂移风险：** 如果前缀来自完全不同的分布（例如用代码生成的轨迹去训练数学模型），虽然论文显示有效，但极限情况下可能会损害模型的通用能力。
 
 ---
-## ✅ 研究最佳实践
 
 ## 最佳实践指南：基于离线策略前缀的强化学习扩展
 
@@ -361,7 +377,6 @@ $$ J_{prefix}(\pi) = \mathbb{E}_{\tau_{prefix} \sim \beta} \left[ \mathbb{E}_{\t
 - 离线强化学习数据的“去伪存真”** 🗑️：证明了在训练过程中，并不需要完美的演示数据，即使是在混合了大量噪声和次优行为的数据集中，只要能筛选出高Q值的片段，就能训练出高性能的策略。
 
 ---
-## 🗺️ 学习路径
 
 ## 学习路径
 

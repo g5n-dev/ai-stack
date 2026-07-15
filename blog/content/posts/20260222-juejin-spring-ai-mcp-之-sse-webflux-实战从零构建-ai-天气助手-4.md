@@ -23,6 +23,10 @@ scenarios:
 - AI/ML项目
 - Web应用开发
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Spring AI MCP 结合 WebFlux SSE 构建 AI 天气助手
@@ -170,7 +174,7 @@ MCP 是连接 AI 模型与外部数据源（如天气 API）的标准化桥梁�
 ### 相关文章
 
 - [Spring AI 多模型对话实战：统一接口与 Redis 记忆]({{< relref "posts/20260217-juejin-spring-ai-多模型对话-demo-实战openaiollama-一套接口redis-会话记忆-3.md" >}})
-- [Spring AI 多模态实战：构建图像理解应用]({{< relref "posts/20260219-juejin-spring-ai-多模态实战手把手教你构建图像理解应用-3.md" >}})
+- [Spring AI 多模态实战：构建图像理解应用]({{< relref "posts/20260219-juejin-spring-ai-多模态实战手把手教你构建图像理解应用-0.md" >}})
 - [Spring AI 多模态实战：构建图像理解应用]({{< relref "posts/20260219-juejin-spring-ai-多模态实战手把手教你构建图像理解应用-0.md" >}})
 - [Flutter SSE 流式响应：基于 Dio 实现 OpenAI 逐 Token 输出]({{< relref "posts/20260221-juejin-flutter-sse-流式响用-dio-实现-openai-兼容接口的逐-token-输出-0.md" >}})
 - [Spring AI 结构化输出转换器实战：告别字符串解析，拥抱类型安全]({{< relref "posts/20260218-juejin-spring-ai-结构化输出转换器实战告别字符串解析拥抱类型安全-4.md" >}})

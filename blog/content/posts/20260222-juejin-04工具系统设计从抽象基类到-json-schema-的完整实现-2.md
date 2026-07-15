@@ -23,6 +23,10 @@ external_url: https://juejin.cn/post/7607989878778019892
 scenarios:
 - 大语言模型
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # CountBot工具系统设计：从抽象基类到JSON Schema实现
@@ -201,8 +205,8 @@ JSON Schema 在工具系统中主要负责**结构化描述**和**数据校验**
 
 ### 相关文章
 
-- [LangBot：生产级多平台智能体机器人开发平台]({{< relref "posts/20260201-github_trending-langbot-app-langbot-0.md" >}})
-- [LangBot：支持多平台集成的生产级智能代理机器人开发平台]({{< relref "posts/20260201-github_trending-langbot-app-langbot-7.md" >}})
+- [LangBot：生产级多平台智能体机器人开发平台]({{< relref "posts/20260131-github_trending-langbot-app-langbot-7.md" >}})
+- [LangBot：支持多平台集成的生产级智能代理机器人开发平台]({{< relref "posts/20260131-github_trending-langbot-app-langbot-7.md" >}})
 - [迈向智能体系统规模化科学：作用机制与生效条件]({{< relref "posts/20260201-hacker_news-towards-a-science-of-scaling-agent-systems-when-an-11.md" >}})
-- [LangBot：生产级多平台智能 IM 机器人开发平台]({{< relref "posts/20260202-github_trending-langbot-app-langbot-0.md" >}})
-- [LangBot：生产级多平台智能 IM 机器人开发平台]({{< relref "posts/20260202-github_trending-langbot-app-langbot-3.md" >}})
+- [LangBot：生产级多平台智能 IM 机器人开发平台]({{< relref "posts/20260131-github_trending-langbot-app-langbot-7.md" >}})
+- [LangBot：生产级多平台智能 IM 机器人开发平台]({{< relref "posts/20260131-github_trending-langbot-app-langbot-7.md" >}})

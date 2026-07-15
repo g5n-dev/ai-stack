@@ -8,18 +8,28 @@ tags:
 - NVIDIA
 - GTC 2026
 - 战略合作
-- AI算力
-- 基础设施
+- AI 基础设施
+- 算力
 - 生产环境
-- 技术集成
+- 云服务
 categories:
 - 系统与基础设施
 - AI 工程
 source: blogs_podcasts
-description: 以下是该内容的中文总结： 在2026年NVIDIA GTC大会上，AWS与NVIDIA宣布深化战略合作，推出多项新的技术集成。此举旨在应对日益增长的AI算力需求，帮助企业客户加速将AI项目从试点阶段推向实际生产环境，从而构建并运行成熟的AI解决方案。
+description: 在2026年NVIDIA GTC大会上，AWS与NVIDIA宣布深化战略合作，通过新的技术集成来满足日益增长的AI计算需求，并致力于加速AI解决方案从试点阶段到生产环境的落地。
 external_url: https://aws.amazon.com/blogs/machine-learning/aws-and-nvidia-deepen-strategic-collaboration-to-accelerate-ai-from-pilot-to-production
 scenarios:
 - AI/ML项目
+aliases:
+- /posts/20260317-blogs_podcasts-aws-and-nvidia-deepen-strategic-collaboration-to-a-12/
+- /posts/20260317-blogs_podcasts-aws-and-nvidia-deepen-strategic-collaboration-to-a-2/
+- /posts/20260317-blogs_podcasts-aws-and-nvidia-deepen-strategic-collaboration-to-a-3/
+- /posts/20260317-blogs_podcasts-aws-and-nvidia-deepen-strategic-collaboration-to-a-8/
+- /posts/20260318-blogs_podcasts-aws-and-nvidia-deepen-strategic-collaboration-to-a-12/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AWS与NVIDIA深化战略合作，加速AI从试点到生产
@@ -36,75 +46,83 @@ scenarios:
 
 ## 摘要/简介
 
-在今日举行的 NVIDIA GTC 2026 上，AWS 和 NVIDIA 宣布扩大合作，推出一系列新的技术集成，以支持日益增长的 AI 算力需求，并助力您构建和运行可投入生产的 AI 解决方案。
+今日在 NVIDIA GTC 2026 大会上，AWS 与 NVIDIA 宣布深化合作，推出多项新的技术集成，以支持不断增长的 AI 算力需求，并助力您构建和运行可投入生产的 AI 解决方案。
 
 ---
 
 ## 导语
 
-在 NVIDIA GTC 2026 大会上，AWS 与 NVIDIA 宣布深化战略合作，通过一系列全新的技术集成来应对日益增长的 AI 算力挑战。此次合作旨在打破从原型开发到生产部署的瓶颈，解决企业在实际落地过程中常遇的算力与架构难题。本文将为您详细解读双方的技术升级细节，并探讨这些变化如何加速您的 AI 解决方案从概念验证走向大规模生产。
+在近日举行的 NVIDIA GTC 2026 大会上，AWS 与 NVIDIA 宣布深化战略合作，通过多项新的技术集成来应对日益增长的 AI 算力需求。这一举措旨在解决企业从 AI 实验室走向规模化生产时面临的瓶颈，确保基础设施的稳定性与效率。本文将为您详细解读双方的技术整合细节，并分析这些更新如何帮助您构建可投入实际生产的高性能 AI 解决方案。
 
 ---
 
 ## 摘要
 
-以下是该内容的中文总结：
-
-在2026年NVIDIA GTC大会上，AWS与NVIDIA宣布深化战略合作，推出多项新的技术集成。此举旨在应对日益增长的AI算力需求，帮助企业客户加速将AI项目从试点阶段推向实际生产环境，从而构建并运行成熟的AI解决方案。
-
-### 2. 关键技术架构解析
-
-### 硬件与系统层
-*   **Blackwell与Grace平台集成**：引入NVIDIA Blackwell架构GPU及Grace Hopper超级芯片，重点在于通过NVLink-C2C技术实现CPU与GPU间的缓存一致性互联，突破传统PCIe总线的带宽限制。
-*   **NVLink over EC2**：这是技术实现的关键。AWS通过Nitro System的定制化开发，在云虚拟化环境中实现了对物理NVLink互联的透传。这意味着在EC2实例中，虚拟机可以直接访问GPU的高速P2P通道，保持多卡训练时的线性加速比。
-*   **液冷与高密度部署**：针对Blackwell芯片的高TDP（热设计功耗），合作涉及数据中心基础设施的改造，包括液冷技术的引入和机架功率密度的提升，以支持单节点数千瓦的功耗需求。
-
-### 网络与互连
-*   **EFA与Quantum-2/Spectrum-X**：结合AWS的Elastic Fabric Adapter (EFA)与NVIDIA的高性能网络架构（如Quantum-2 InfiniBand或Spectrum-X以太网），解决大规模集群（万卡级）中的通信延迟问题，确保分布式训练的通信效率。
-
-### 软件与编排层
-*   **NIM与SageMaker/Bedrock集成**：NVIDIA AI Enterprise软件栈（特别是NIM微服务）与AWS SageMaker及Bedrock平台进行深度集成。这使得开发者可以在AWS原生环境中直接调用经过优化的NVIDIA推理微服务，无需手动配置底层驱动和CUDA环境。
-*   **自动化运维**：利用AWS EKS (Kubernetes)与NVIDIA GPU Operator的结合，实现了GPU资源的声明式调度，自动化处理驱动版本兼容、节点健康检查及故障恢复。
+在2026年NVIDIA GTC大会上，AWS与NVIDIA宣布深化战略合作，通过新的技术集成来满足日益增长的AI计算需求，并致力于加速AI解决方案从试点阶段到生产环境的落地。
 
 ---
 
 ## 评论
 
-### 深度评论：技术架构与行业影响分析
+**文章中心观点**
+AWS与英伟达的合作深化体现了AI基础设施从“通用硬件供应”向“垂直整合架构”的演进。双方通过整合Blackwell芯片、Project Ceiba超级计算机及AWS Nitro系统，旨在解决大模型从实验环境向大规模生产环境迁移时面临的算力扩展性、显存管理及工程稳定性挑战，试图在企业级AI基础设施领域确立技术标准。
 
-#### 1. 核心观点：从硬件堆叠到系统级优化
-文章的核心论点在于，AI算力的竞争焦点已从单一硬件性能指标（如FLOPS）转向了**全栈系统的集成效率**。AWS与NVIDIA的合作深化，标志着行业正在解决AI落地中最棘手的工程问题：如何将昂贵的实验性算力转化为可大规模复制的工业级产能。这不仅仅是“云+芯”的组合，而是通过虚拟化层、模型调度层与数据存储层的垂直整合，试图打破当前AI部署中的延迟瓶颈与成本壁垒。
+**支撑理由与深度评价**
 
-#### 2. 技术深度与工程实现
-**系统级融合趋势：**
-文章所描述的“Production-ready”（生产就绪）在技术层面通常指向三个具体的工程领域：
-*   **异构计算协同：** 涉及AWS Nitro系统对NVIDIA GPU的虚拟化卸载，以及NVLink技术在EC2实例层面的裸金属映射，旨在减少虚拟化损耗。
-*   **通信层优化：** 重点在于解决分布式训练中的通信墙。这通常表现为AWS EFA（Elastic Fabric Adapter）与NVIDIA NCCL（NVIDIA Collective Communications Library）的深度适配，以优化节点间的P2P通信带宽。
-*   **数据流加速：** 针对S3存储与GPU计算之间的数据搬运进行优化，解决I/O瓶颈，确保GPU不会因等待数据而空转。
+**1. 技术架构演进：从单点算力到集群协同优化**
+*   **支撑理由：** 文章核心逻辑在于强调“生产环境的稳定性”。当前行业痛点在于模型在小规模集群（如8卡）运行正常，但在千卡集群中常因通信开销或显存溢出（OOM）导致训练中断。此次合作利用NVIDIA Blackwell架构配合AWS的EFA网络架构，重点解决了**节点间通信延迟**与**显存统一编址**问题，提升了大规模分布式训练的工程可靠性。
+*   **边界条件：** 这种深度优化的架构主要针对大规模计算场景。对于**低延迟推理应用**（如高频交互）或**轻量级边缘计算**任务，此类集群可能存在资源浪费。此外，依赖特定CUDA生态可能增加后续迁移至非英伟达硬件（如AMD或ASIC）的技术难度。
 
-**工程挑战：**
-单纯的硬件绑定并不等同于生产就绪。真正的技术难点在于如何在高并发环境下保持SLA（服务等级协议）的稳定性，以及如何有效管理显存占用和网络抖动。
+**2. 行业应用价值：降低分布式系统的运维复杂度**
+*   **支撑理由：** 对行业的主要价值在于将超算级集群的运维标准化。通过Project Ceiba等项目验证，AWS提供了一套经过测试的万卡集群管理方案。企业用户可以利用现有的云管理工具（如SageMaker）进行大规模训练，而无需自建复杂的底层网络运维团队。
+*   **边界条件：** 这种便利性伴随着**成本结构的刚性**。对于预算有限的初创企业或处于早期验证阶段的项目，使用高性能Blackwell实例进行持续训练或推理的成本较高，需评估投入产出比。
 
-#### 3. 实用价值与决策参考
-**架构视角：**
-对于CTO和基础设施架构师而言，此类合作模式的价值在于提供了一套**“经过验证的参考架构”**。这降低了企业在构建大语言模型（LLM）基础设施时的试错成本，特别是在网络拓扑配置和驱动兼容性方面。
-**适用边界：**
-这种“超融合”架构特别适合需要大规模参数训练或高吞吐量推理的场景。然而，对于特定垂直领域的中小规模应用，这种全栈方案可能存在架构过重的问题，企业需评估其投入产出比（ROI）。
+**3. 资源管理创新：逻辑上的算力资源池化**
+*   **支撑理由：** 合作亮点在于通过NVLink与虚拟化技术打破物理服务器边界，将分散的GPU在逻辑上整合为统一的算力资源池。这种设计简化了模型并行化的开发流程，使开发者能更灵活地调度显存与计算资源。
+*   **边界条件：** 该架构的稳定性高度依赖于**底层网络拓扑的一致性**。在公有云多租户环境下，网络拥塞或“嘈杂邻居”效应可能成为影响资源池性能的不可控变量。
 
-#### 4. 行业格局与竞争态势
-**护城河构建：**
-这种深度绑定将在行业内产生显著的“马太效应”：
-*   **挤压中间层：** 专注于AI推理加速层或算力调度优化的初创厂商可能面临市场空间被压缩的风险，因为底层基础设施厂商已将部分优化能力集成到了IaaS层。
-*   **竞品应对策略：** 此举将迫使Google Cloud（依托TPU/Gemini）和Microsoft Azure（依托Maia/Mix及与OpenAI的深度绑定）加速推进其内部自研芯片的进程，或寻求差异化的软件栈优势。
+**4. 生态格局思考：标准化与供应商锁定**
+*   **争议点：** 双方合作旨在推动AI基础设施的标准化，但也客观上强化了特定技术栈的壁垒。通过深度整合CUDA及NVIDIA软件栈，企业工作流与底层硬件的绑定加深，可能导致未来迁移至其他平台（如基于TPU或ROCm的环境）时面临较高的重构成本。
+*   **批判性视角：** 这种深度整合可能会提升行业准入门槛，使得缺乏规模效应的中小型云服务商或算力厂商在竞争中面临更大压力，长期看可能影响市场的价格多样性。
 
-#### 5. 潜在风险与局限性
-**供应商锁定：**
-深度集成的双刃剑在于**迁移成本**的显著增加。一旦企业的数据流水线、模型训练脚本及运行时环境深度依赖AWS-NVIDIA特定的API（如EFA驱动的特定通信库），未来若需迁移至基于AMD或Intel的云平台，将面临极高的代码重构难度和时间成本。
-**成本效益悖论：**
-对于并非处于算力极限需求的用户，顶级全栈方案的边际收益可能递减。在某些场景下，使用量化模型配合推理专用芯片或消费级显卡，在总拥有成本（TCO）上可能更具优势。
+**实际应用建议**
 
-#### 6. 总结
-文章揭示了AI基础设施发展的必然路径：**软硬一体化与垂直整合**。虽然这种模式能最大化系统性能并降低工程复杂度，但也要求技术决策者在追求极致性能与保持架构灵活性之间做出权衡。
+1.  **负载匹配评估：** 企业应根据业务阶段选择实例类型。大规模预训练适合采用此类高性能集群架构；而对于微调（Fine-tuning）或特定领域的RAG（检索增强生成）应用，使用上一代实例（如H100）或CPU优化实例可能更具成本效益。
+2.  **架构弹性设计：** 为规避潜在的供应商锁定风险，建议在应用层维持抽象接口设计。例如使用容器化编排（如EKS）和标准化的模型服务接口，以便在未来需要时，能以较低成本切换至其他云厂商或硬件平台。
+3.  **关注网络性能指标：** 在测试该架构时，除了监控GPU利用率，应重点观测**跨节点通信带宽**（如GPUDirect RDMA性能）及**显存利用率**。这些指标直接反映了大规模集群在真实生产环境下的实际效能。
+
+**可验证的检查方式**
+
+1.  **技术指标验证（实验）：**
+    *   **扩展效率测试：** 在AWS p5实例与新架构实例上运行相同的训练任务（如Llama 3 70B微调），对比从128卡扩展到2048卡时的**MFU（Model FLOPS Utilization，模型算力利用率）**。若在大规模扩展下MFU保持稳定且无明显Loss spike，则证明其架构具备生产环境可用性。
+
+2.  **市场观察窗口（指标）：**
+    *   **TCO对比：** 持续跟踪AWS Blackwell实例与自有物理集群（采购+运维）的**总拥有成本（TCO）**平衡点。当实例运行时长超过特定阈值（如数月）时，自建集群可能在成本上更具优势，这是判断采用云服务还是自建的重要参考指标。
+
+---
+
+## 技术分析
+
+### 2. 关键技术要点与实现
+
+**核心技术组件**
+1.  **NVIDIA Blackwell架构**：作为算力核心，支持FP4/FP8等低精度计算，旨在提升大模型训练与推理的密度与能效。
+2.  **AWS Nitro System**：作为轻量级虚拟化层，负责卸载宿主机的CPU负载（网络与存储I/O），从而为AI工作负载释放更多的主机算力资源。
+3.  **高性能网络互联**：
+    *   **NVIDIA GPUDirect & RDMA**：允许GPU直接与网卡通信，绕过CPU内核栈，显著降低数据传输延迟。
+    *   **Amazon EFA (Elastic Fabric Adapter)**：AWS的超低延迟网络接口，配合NVIDIA的NVSwitch技术，支持跨节点的GPU集群通信，实现类似单一超级GPU的并行计算效果。
+4.  **存储与I/O优化**：集成NVIDIA MagnumIO技术与Amazon S3，优化多租户环境下的I/O路径，缓解“GPU等待数据”的闲置问题。
+
+**技术难点与解决方案**
+*   **内存与通信瓶颈**：在大规模分布式训练中，参数同步往往受限于内存带宽和网络延迟。
+    *   *解决方案*：通过NVLink over Fabrics (NVLFOF) 结合AWS EFA，构建高带宽、低延迟的通信平面，使得跨节点GPU通信带宽接近显存带宽。
+*   **集群散热与能效**：高密度算力集群带来了巨大的散热挑战。
+    *   *解决方案*：结合数据中心级液冷技术与芯片级动态能效管理，确保在高负载下的运行稳定性。
+
+### 3. 实际应用价值
+
+**对基础设施架构的影响**
+对于企业架构师而言，这一合作意味着在构建AI平台时，可以采用**“基础设施即代码”**的模式来管理底层异构算力。通过在AWS管理控制台中深度集成NVIDIA的软件栈（如通过SageMaker调用NIM微服务），开发人员无需手动配置底层CUDA驱动或处理硬件兼容性冲突。这种集成方式降低了AI工程化的门槛，使得技术团队能够更专注于模型算法与业务逻辑的优化，而非底层硬件的运维调试。
 
 ---
 
@@ -113,87 +131,87 @@ scenarios:
 ### 实践 1：利用 NVIDIA GH200 Grace Hopper 超级芯片突破内存瓶颈
 
 **说明**:
-在将 AI 模型从试点推向生产环境时，大型语言模型（LLM）和复杂推理任务往往受限于显存容量。AWS 和 NVIDIA 的合作使得 NVIDIA GH200 Grace Hopper 超级芯片得以在云端应用，该芯片通过 NVLink-C2C 技术将 NVIDIA GPU 与 Grace CPU 紧密连接，提供了更高的显存带宽和容量。使用该实例可以运行参数量极大的模型而无需过多的模型并行优化，从而加速从训练到部署的整个过程。
+在 AWS 上使用由 NVIDIA GH200 Grace Hopper 超级芯片驱动的实例，应对大规模 AI 模型训练和推理中的内存容量与带宽限制。该超级芯片通过 NVLink-C2C 互连技术整合了 NVIDIA Grace CPU 和 Hopper GPU，提供了较高的内存带宽和容量，适用于运行参数量较大的 LLM（大语言模型）。
 
 **实施步骤**:
-1. 评估现有模型的显存占用情况，确定是否受限于当前 GPU 的显存容量。
-2. 在 AWS 上申请访问配备 GH200 芯片的实例（如 Amazon EC2 P5 实例家族或特定合作伙伴实例）。
-3. 将模型加载脚本迁移至该环境，利用统一的内存空间简化数据加载流程。
+1. 评估现有 AI 工作负载的内存需求，识别受限于显存容量的模型。
+2. 在 AWS 上配置并预览搭载 GH200 芯片的实例（如 Amazon EC2 P5 实例家族的后续演进版本）。
+3. 将模型加载到统一内存空间中，利用高带宽互连减少数据搬运延迟。
 
 **注意事项**:
-需确保软件栈（CUDA 驱动、PyTorch/TensorFlow 版本）与 GH200 架构完全兼容，以充分利用其高性能内存带宽。
+需确认软件栈（如 CUDA 和驱动程序）已更新至支持 Grace Hopper 架构的版本，以确保兼容性和性能。
 
 ---
 
-### 实践 2：采用 NVIDIA DGX Cloud on AWS 实现混合云调度
+### 实践 2：采用 NVIDIA DGX Cloud on AWS 加速生成式 AI 开发
 
 **说明**:
-为了加速生产级 AI 的开发，NVIDIA DGX Cloud 已集成至 AWS 生态中。这项最佳实践建议企业利用这一集成，将本地的 NVIDIA Base Command 软件或云端的工作流直接扩展到 AWS 的超级计算集群。这允许企业不仅获得裸金属性能，还能通过统一的管理平面调度资源，实现从本地开发到云端大规模训练的无缝扩展。
+通过在 AWS 上部署 NVIDIA DGX Cloud，企业可以获得专为生成式 AI 设计的计算资源。这种集成模式结合了 AWS 的基础设施规模与安全性和 NVIDIA 的 AI 软件栈，帮助企业从原型验证过渡到生产环境，无需管理底层物理硬件。
 
 **实施步骤**:
-1. 在 AWS 控制台中配置与 NVIDIA DGX Cloud 的集成链接。
-2. 设置统一的 API 接口，允许开发团队通过相同的命令行工具提交训练任务，无论目标是本地集群还是云端 AWS。
-3. 配置自动扩缩容策略，当本地资源不足时自动溢出至 AWS 上的 DGX Cloud。
+1. 访问 AWS Marketplace 或通过 NVIDIA 合作渠道开通 DGX Cloud 服务。
+2. 利用预配置的 AI 企业级软件环境，部署训练作业。
+3. 集成 AWS Identity and Access Management (IAM) 以实现对 DGX Cloud 资源的细粒度访问控制。
 
 **注意事项**:
-数据传输成本和延迟是关键考量，建议使用 AWS Direct Connect 建立专用网络连接，并确保数据集在云端有缓存机制。
+DGX Cloud 适合高强度的短期训练冲刺或大规模推理任务，建议配合 Spot 实例使用以优化成本（如果架构支持），并制定明确的数据传输策略。
 
 ---
 
-### 实践 3：部署 NVIDIA AI Enterprise 获取企业级支持与安全
+### 实践 3：使用 NVIDIA AI Enterprise 简化模型部署与管理
 
 **说明**:
-从试点走向生产意味着需要高可用性和安全性。AWS 现已提供 NVIDIA AI Enterprise 软件的镜像，这是一套端到端的云原生 AI 和数据分析软件包。采用此实践可以确保在运行 CUDA、TensorRT、Triton 推理服务器等关键组件时，获得 NVIDIA 的企业级技术支持和安全补丁，降低生产环境的风险。
+NVIDIA AI Enterprise 是一套包含驱动程序、运行时库及优化框架（如 TensorFlow, PyTorch）的云原生套件。在 AWS 上使用此套件有助于确保 AI 应用从开发到生产环境的一致性和稳定性，并提供企业级支持。
 
 **实施步骤**:
-1. 在 AWS Marketplace 中订阅 NVIDIA AI Enterprise AMI 或容器镜像。
-2. 将现有的开发环境（基于开源 CUDA）迁移到经过认证的 NVIDIA AI Enterprise 运行时。
-3. 建立标准操作程序（SOP），以便在遇到生产问题时快速联系 NVIDIA 企业支持。
+1. 在 AWS Marketplace 中订阅 NVIDIA AI Enterprise AMI（Amazon Machine Image）。
+2. 在开发环境中使用容器化的 NVIDIA AI 软件栈进行模型构建。
+3. 将经过验证的容器镜像部署到 Amazon EKS (Elastic Kubernetes Service) 或 Amazon SageMaker 中进行生产推理。
 
 **注意事项**:
-需要提前管理好许可证成本，并确保安全团队了解 NVIDIA AI Enterprise 的合规性特性（如仅支持特定版本的加密库）。
+确保您的团队熟悉容器化技术（Docker/Kubernetes），并妥善管理 NVIDIA AI Enterprise 的许可证订阅状态。
 
 ---
 
-### 实践 4：使用 SageMaker 与 NVIDIA 集成优化 MLOps 流程
+### 实践 4：通过 Project Ceiba 构建超大规模生成式 AI 平台
 
 **说明**:
-AWS SageMaker 与 NVIDIA 硬件及软件栈的深度集成，为 MLOps 提供了最佳路径。通过利用 SageMaker 的托管 spot 实例结合 NVIDIA 的预训练容器，可以大幅降低训练成本并提高模型部署效率。此实践强调利用 AWS SageMaker 的功能来调度 NVIDIA GPU 资源，实现自动模型调优和部署。
+参考 AWS 与 NVIDIA 合作建立的 Project Ceiba 项目，企业可借鉴其高性能、低延迟的网络架构设计。利用 AWS EFA（Elastic Fabric Adapter）和 NVIDIA Quantum-2 InfiniBand Networking 技术，实现大规模 GPU 集群的高效互联。
 
 **实施步骤**:
-1. 在 SageMaker 项目中指定使用 NVIDIA 优化的深度学习容器。
-2. 配置 SageMaker Hyperparameter Tuning 作业以利用 GPU 实例进行自动调优。
-3. 使用 SageMaker Inference 配置多模型端点，利用 NVIDIA Triton Inference Server 优化 GPU 利用率。
+1. 在设计多节点 GPU 集群时，选择支持 EFA 的 EC2 实例类型（如 P5/P4 系列）。
+2. 配置集群的置放群组以最小化节点间网络延迟。
+3. 使用 NCCL（NVIDIA Collective Communications Library）优化通信性能，确保分布式训练效率。
 
 **注意事项**:
-监控 Spot 实例的中断情况，确保训练任务支持 Checkpoint（检查点）保存和恢复机制，以免因实例回收导致训练前功尽弃。
+高性能网络配置对安全组规则有特殊要求，需确保正确配置防火墙规则以允许 RDMA 流量。
 
 ---
 
-### 实践 5：利用共享基础设施加速特定领域创新
+### 实践 5：利用 Amazon SageMaker 与 NVIDIA 集成加速 MLOps 流程
 
 **说明**:
-AWS 与 NVIDIA 合作构建了大规模的 GPU 基础设施（如 Project Ceiba），旨在为特定领域的研究和开发提供集中式的高性能计算资源。这项实践建议企业关注此类共享基础设施项目，利用其提供的专用计算能力来加速特定垂直领域的模型训练与迭代，特别是在需要大规模算力协同的场景下。
+结合 Amazon SageMaker 的 MLOps 能力与 NVIDIA 的硬件加速特性，建立标准化的 AI 开发运维流程。这包括利用 NVIDIA 通过 SageMaker 提供的预优化容器和深度集成 AMI，简化环境配置并提升计算效率。
 
 **实施步骤**:
-1. 确定业务需求是否匹配共享基础设施的目标领域（如医疗、生物计算等）。
-2. 申请访问权限或通过 AWS/NVIDIA 渠道了解参与方式。
-3. 将特定的高负载训练任务迁移至该环境，利用其优化的网络和存储架构。
+1. 在 SageMaker 中调用 NVIDIA 认证的深度学习容器（DLCs），确保底层库与 GPU 的最佳兼容性。
+2. 配置 SageMaker 训练作业以利用 NVIDIA 的 Multi-Instance GPU (MIG) 技术，实现资源的细粒度分配。
+3. 使用 SageMaker Pipelines 自动化从数据预处理到模型部署的端到端工作流。
 
 **注意事项**:
-此类资源通常有特定的使用限制和审批流程，需提前规划数据迁移与合规性审查，并关注资源调度策略。
+在构建自定义容器时，需确保 CUDA 和 cuDNN 版本与 SageMaker 的底层驱动版本兼容，避免运行时错误。
 
 ---
 
 ## 学习要点
 
-- AWS计划上线基于NVIDIA Blackwell架构的GPU实例。
-- 双方推进Project Ceiba项目，计划部署搭载Blackwell超级芯片的AI超级计算机。
-- NVIDIA DGX Cloud作为由NVIDIA直接管理的AI服务，现已登陆AWS平台。
-- 通过集成NVIDIA Grace Hopper超级芯片与AWS EFA网络技术，提升了模型训练与数据处理性能。
-- AWS将引入NVIDIA NIM和NeMo Retriever等软件服务。
-- NVIDIA AI企业软件现已上架AWS Marketplace。
-- 双方将在医疗、生命科学及工业数字化领域开展合作。
+- 学习要点**
+- AWS将成为首个部署NVIDIA Grace Hopper超级芯片的云服务商，并结合Neocast库支持，旨在提升生成式AI的推理性能与效率。
+- 双方共同构建了代号为Project Ceiba的AI超级计算机，配备数万个Grace Hopper芯片，计划用于加速NVIDIA自身的下一代AI模型研发。
+- 通过将NVIDIA DGX Cloud集成至AWS，企业能够在AWS的云架构上直接访问和管理NVIDIA的超级计算资源，以简化AI基础设施的部署流程。
+- 此次合作扩展了NVIDIA软件生态在AWS上的可用性，包括用于医疗领域的BioNeMo和用于机器人开发的Isaac Sim，旨在降低特定行业开发AI的门槛。
+- 针对复杂的AI工作负载，双方深化了在SageMaker、EKS等AWS核心服务中对NVIDIA GPU和软件栈的优化，以加速从模型试验到生产环境的全流程。
+- 此次战略合作旨在帮助企业解决从试点到生产的转化问题，通过软硬件结合的优化方案，协助企业构建和部署生成式AI应用。
 
 ---
 
@@ -209,13 +227,13 @@ AWS 与 NVIDIA 合作构建了大规模的 GPU 基础设施（如 Project Ceiba�
 ## 站内链接
 
 - 分类： [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)
-- 标签： [AWS](/tags/aws/) / [NVIDIA](/tags/nvidia/) / [GTC 2026](/tags/gtc-2026/) / [战略合作](/tags/%E6%88%98%E7%95%A5%E5%90%88%E4%BD%9C/) / [AI算力](/tags/ai%E7%AE%97%E5%8A%9B/) / [基础设施](/tags/%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/) / [生产环境](/tags/%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83/) / [技术集成](/tags/%E6%8A%80%E6%9C%AF%E9%9B%86%E6%88%90/)
+- 标签： [AWS](/tags/aws/) / [NVIDIA](/tags/nvidia/) / [GTC 2026](/tags/gtc-2026/) / [战略合作](/tags/%E6%88%98%E7%95%A5%E5%90%88%E4%BD%9C/) / [AI 基础设施](/tags/ai-%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/) / [算力](/tags/%E7%AE%97%E5%8A%9B/) / [生产环境](/tags/%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83/) / [云服务](/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1/)
 - 场景： [AI/ML项目](/scenarios/ai-ml%E9%A1%B9%E7%9B%AE/)
 
 ### 相关文章
 
-- [Hexagon 利用 SageMaker HyperPod 加速 AI 模型生产]({{< relref "posts/20260224-blogs_podcasts-accelerating-ai-model-production-at-hexagon-with-a-10.md" >}})
-- [英伟达工程师探讨行星级智能体推理与光速计算]({{< relref "posts/20260310-blogs_podcasts-nvidias-ai-engineers-agent-inference-at-planetary--7.md" >}})
-- [利用 FAST 模板加速构建 Amazon Bedrock AgentCore 应用]({{< relref "posts/20260210-blogs_podcasts-accelerate-agentic-application-development-with-a--11.md" >}})
-- [Accelerate agentic application development with a full-]({{< relref "posts/20260211-blogs_podcasts-accelerate-agentic-application-development-with-a--11.md" >}})
-- [NVIDIA Nemotron 3 Nano 30B 现已登陆 Amazon SageMaker JumpSt]({{< relref "posts/20260212-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-0.md" >}})
+- [AWS and NVIDIA deepen strategic collaboration to accele]({{< relref "posts/20260317-blogs_podcasts-aws-and-nvidia-deepen-strategic-collaboration-to-a-1.md" >}})
+- [AWS与NVIDIA深化战略合作，集成多项新技术加速AI落地生产]({{< relref "posts/20260317-blogs_podcasts-aws-and-nvidia-deepen-strategic-collaboration-to-a-1.md" >}})
+- [AWS与NVIDIA深化战略合作，加速AI从试点到生产]({{< relref "posts/20260317-blogs_podcasts-aws-and-nvidia-deepen-strategic-collaboration-to-a-1.md" >}})
+- [AWS与NVIDIA深化战略合作 加速AI从试点到生产]({{< relref "posts/20260317-blogs_podcasts-aws-and-nvidia-deepen-strategic-collaboration-to-a-1.md" >}})
+- [Amazon SageMaker AI 2025回顾：弹性训练计划与推理性价比优化]({{< relref "posts/20260220-blogs_podcasts-amazon-sagemaker-ai-in-2025-a-year-in-review-part--0.md" >}})

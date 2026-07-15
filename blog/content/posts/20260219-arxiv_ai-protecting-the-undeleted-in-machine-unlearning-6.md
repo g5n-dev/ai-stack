@@ -21,6 +21,12 @@ description: 以下是关于《Protecting the Undeleted in Machine Unlearning》
 external_url: http://arxiv.org/abs/2602.16697v1
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260220-arxiv_ai-protecting-the-undeleted-in-machine-unlearning-6/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 机器遗忘中保护未删除数据的隐私防御机制
@@ -122,7 +128,6 @@ Aloni Cohen等人撰写的《Protecting the Undeleted in Machine Unlearning》�
 
 ## 技术分析
 
-### 1. 研究背景与问题
 
 ### 核心问题
 该论文主要研究机器遗忘过程中剩余数据的隐私安全问题。现有的数据删除框架通常侧重于验证被删除数据的不可区分性，而忽略了删除操作本身可能泄露关于数据集中其他保留数据的统计信息。
@@ -135,7 +140,6 @@ Aloni Cohen等人撰写的《Protecting the Undeleted in Machine Unlearning》�
 ### 研究意义
 这项研究揭示了机器遗忘中“幸存者隐私”的重要性。它指出，一个安全的遗忘算法不仅要保证被删除数据的不可见，还必须确保删除请求的执行过程不会成为攻击其他用户数据的侧信道。这为评估遗忘算法的安全性提供了新的维度。
 
-### 2. 核心方法与创新
 
 ### 提出的核心方法
 论文提出了一种基于**算法稳定性**和**信息论**的新安全定义框架。
@@ -151,7 +155,6 @@ Aloni Cohen等人撰写的《Protecting the Undeleted in Machine Unlearning》�
 *   **关注点转移**：将安全性评估的重点从“被删除数据”转移到了“剩余数据”。
 *   **通用性**：该定义框架不仅适用于深度学习模型，也适用于基础的统计查询机制。
 
-### 3. 理论基础
 
 ### 理论框架
 论文的理论推导主要基于以下两个概念：
@@ -421,7 +424,7 @@ Aloni Cohen等人撰写的《Protecting the Undeleted in Machine Unlearning》�
 ### 相关文章
 
 - [迈向可解释联邦学习：理解差分隐私的影响]({{< relref "posts/20260211-arxiv_ai-towards-explainable-federated-learning-understandi-2.md" >}})
-- [🚨SoundCloud数据泄露！你的密码是否已遭泄露？快查！🔥]({{< relref "posts/20260127-hacker_news-soundcloud-data-breach-now-on-haveibeenpwned-3.md" >}})
+- [🚨SoundCloud数据泄露！你的密码是否已遭泄露？快查！🔥]({{< relref "posts/20260127-hacker_news-soundcloud-data-breach-now-on-haveibeenpwned-8.md" >}})
 - [🚨SoundCloud数据泄露！HaveIBeenPwned紧急更新！]({{< relref "posts/20260127-hacker_news-soundcloud-data-breach-now-on-haveibeenpwned-8.md" >}})
-- [⚠️FBI紧急调查！Signal聊天记录竟被追踪？ICE引发隐私大地震！🔓]({{< relref "posts/20260128-hacker_news-fbi-is-investigating-minnesota-signal-chats-tracki-14.md" >}})
-- [🚨SoundCloud数据泄露！你的账号是否已在HaveIBeenPwned“上榜”？]({{< relref "posts/20260128-hacker_news-soundcloud-data-breach-now-on-haveibeenpwned-13.md" >}})
+- [⚠️FBI紧急调查！Signal聊天记录竟被追踪？ICE引发隐私大地震！🔓]({{< relref "posts/20260127-hacker_news-fbi-is-investigating-minnesota-signal-chats-tracki-5.md" >}})
+- [🚨SoundCloud数据泄露！你的账号是否已在HaveIBeenPwned“上榜”？]({{< relref "posts/20260127-hacker_news-soundcloud-data-breach-now-on-haveibeenpwned-8.md" >}})

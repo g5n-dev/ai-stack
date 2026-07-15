@@ -21,6 +21,10 @@ description: '**文章核心总结：迈向“贾维斯”的路径与方法** �
 external_url: https://juejin.cn/post/7613673150078435355
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Vibe Coding：优化人机协作模式与AI管家系统构想
@@ -180,8 +184,8 @@ Vibe Coding 降低了编写代码的入门门槛，但对资深开发者的架�
 
 ### 相关文章
 
-- [ElevenLabs获5亿美元融资，Cerebras估值达230亿美元]({{< relref "posts/20260205-blogs_podcasts-ainews-elevenlabs-500m-series-d-at-11b-cerebras-1b-2.md" >}})
-- [ElevenLabs融资5亿美元估值110亿美元，Cerebras融资10亿美元]({{< relref "posts/20260205-blogs_podcasts-ainews-elevenlabs-500m-series-d-at-11b-cerebras-1b-4.md" >}})
-- [ElevenLabs 融资 5 亿美元，Cerebras 融资 10 亿美元]({{< relref "posts/20260207-blogs_podcasts-ainews-elevenlabs-500m-series-d-at-11b-cerebras-1b-9.md" >}})
+- [ElevenLabs获5亿美元融资，Cerebras估值达230亿美元]({{< relref "posts/20260205-blogs_podcasts-ainews-elevenlabs-500m-series-d-at-11b-cerebras-1b-0.md" >}})
+- [ElevenLabs融资5亿美元估值110亿美元，Cerebras融资10亿美元]({{< relref "posts/20260205-blogs_podcasts-ainews-elevenlabs-500m-series-d-at-11b-cerebras-1b-0.md" >}})
+- [ElevenLabs 融资 5 亿美元，Cerebras 融资 10 亿美元]({{< relref "posts/20260205-blogs_podcasts-ainews-elevenlabs-500m-series-d-at-11b-cerebras-1b-0.md" >}})
 - [拆解 Inspo Radar：基于 AI 原生架构的实时热点洞察与自动化内容生产系统]({{< relref "posts/20260226-juejin-灵感启发日产文章-100-篇打造实时热点洞察引擎-2.md" >}})
 - [Lendi 基于 Amazon Bedrock 16 周构建 AI 贷款助手]({{< relref "posts/20260303-blogs_podcasts-how-lendi-revamped-the-refinance-journey-for-its-c-5.md" >}})

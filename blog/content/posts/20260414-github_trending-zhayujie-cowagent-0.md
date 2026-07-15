@@ -1,14 +1,38 @@
 ---
-title: "CowAgent：开源跨平台多模型AI助理框架"
-date: 2026-04-14T23:40:01+08:00
+title: CowAgent：开源跨平台多模型AI助理框架
+date: 2026-04-14 23:40:01+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI助理", "跨平台", "多模型", "开源框架", "Python", "Docker", "Skill", "长期记忆"]
-categories: ["AI 工程", "开发工具"]
+entry_kind: auto
+tags:
+- AI助理
+- 跨平台
+- 多模型
+- 开源框架
+- Python
+- Docker
+- Skill
+- 长期记忆
+categories:
+- AI 工程
+- 开发工具
 source: github_trending
-description: "CowAgent（chatgpt‑on‑wechat）是一款基于大模型的超级 AI 助理，旨在为个人和企业提供轻量化、可扩展的智能服务。项目使用 Python 编写，开源在 GitHub，已获得约 4.3 万星标，并保持每日数十颗新星的增长。 核心能力 - **主动思考与任务规划**：模型能够进行多步推理，分解复杂需求"
+description: CowAgent（chatgpt‑on‑wechat）是一款基于大模型的超级 AI 助理，旨在为个人和企业提供轻量化、可扩展的智能服务。项目使用
+  Python 编写，开源在 GitHub，已获得约 4.3 万星标，并保持每日数十颗新星的增长。 核心能力 - **主动思考与任务规划**：模型能够进行多步推理，分解复杂需求
 external_url: https://github.com/zhayujie/CowAgent
-scenarios: ["AI/ML项目", "大语言模型", "自然语言处理"]
+scenarios:
+- AI/ML项目
+- 大语言模型
+- 自然语言处理
+aliases:
+- /posts/20260415-github_trending-zhayujie-cowagent-0/
+- /posts/20260416-github_trending-zhayujie-cowagent-0/
+- /posts/20260417-github_trending-zhayujie-cowagent-0/
+- /posts/20260501-github_trending-zhayujie-cowagent-0/
+- /posts/20260502-github_trending-zhayujie-cowagent-0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # CowAgent：开源跨平台多模型AI助理框架
@@ -276,9 +300,9 @@ CowAgent 采用分层模块化架构，从代码结构可观察到明确的层�
 
 ### 相关文章
 
-- [ChatGPT-on-WeChat：支持多模型与多平台接入的AI助理框架]({{< relref "posts/20260207-github_trending-zhayujie-chatgpt-on-wechat-1.md" >}})
-- [ChatGPT-on-WeChat：接入多平台与大模型的企业级AI助理框架]({{< relref "posts/20260215-github_trending-zhayujie-chatgpt-on-wechat-7.md" >}})
-- [ChatGPT-on-WeChat：接入多平台与大模型的多模态AI助理]({{< relref "posts/20260221-github_trending-zhayujie-chatgpt-on-wechat-3.md" >}})
-- [基于大模型的AI助理ChatGPT-on-WeChat：支持多平台接入与多模型]({{< relref "posts/20260226-github_trending-zhayujie-chatgpt-on-wechat-1.md" >}})
-- [ChatGPT-on-wechat：支持多平台接入的AI助理框架]({{< relref "posts/20260301-github_trending-zhayujie-chatgpt-on-wechat-4.md" >}})
+- [ChatGPT-on-WeChat：支持多模型与多平台接入的AI助理框架]({{< relref "posts/20260131-github_trending-zhayujie-chatgpt-on-wechat-0.md" >}})
+- [ChatGPT-on-WeChat：接入多平台与大模型的企业级AI助理框架]({{< relref "posts/20260131-github_trending-zhayujie-chatgpt-on-wechat-0.md" >}})
+- [ChatGPT-on-WeChat：接入多平台与大模型的多模态AI助理]({{< relref "posts/20260131-github_trending-zhayujie-chatgpt-on-wechat-0.md" >}})
+- [基于大模型的AI助理ChatGPT-on-WeChat：支持多平台接入与多模型]({{< relref "posts/20260131-github_trending-zhayujie-chatgpt-on-wechat-0.md" >}})
+- [ChatGPT-on-wechat：支持多平台接入的AI助理框架]({{< relref "posts/20260131-github_trending-zhayujie-chatgpt-on-wechat-0.md" >}})
 *这篇文章由 AI Stack 自动生成，包含多次大模型调用，提供深度的结构化分析。*

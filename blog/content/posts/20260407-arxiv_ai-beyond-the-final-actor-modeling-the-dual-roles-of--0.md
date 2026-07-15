@@ -1,14 +1,30 @@
 ---
-title: "建模LLM生成文本中创造者与编辑者双重角色"
-date: 2026-04-07T23:54:00+08:00
+title: 建模LLM生成文本中创造者与编辑者双重角色
+date: 2026-04-07 23:54:00+08:00
 draft: false
-entry_kind: "auto"
-tags: ["LLM生成检测", "细粒度分类", "修辞结构理论", "RACE", "RST", "编辑者建模", "创造者建模", "文本溯源"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- LLM生成检测
+- 细粒度分类
+- 修辞结构理论
+- RACE
+- RST
+- 编辑者建模
+- 创造者建模
+- 文本溯源
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "研究背景 大模型（LLM）生成的文本被滥用风险日益突出，现有检测方法主要采用二元或三元分类，仅能区分纯人类、纯机器或粗略的协作文本。但政策层面常常需要区分“机器润色的人类稿件”和“人类化后的机器稿件”，这要求更细粒度的识别。 问题定义 作者在严格的四类设定下探索细粒度 LLM 生成文本检测： 1. 纯人类撰写； 2."
+description: 研究背景 大模型（LLM）生成的文本被滥用风险日益突出，现有检测方法主要采用二元或三元分类，仅能区分纯人类、纯机器或粗略的协作文本。但政策层面常常需要区分“机器润色的人类稿件”和“人类化后的机器稿件”，这要求更细粒度的识别。
+  问题定义 作者在严格的四类设定下探索细粒度 LLM 生成文本检测： 1. 纯人类撰写； 2.
 external_url: http://arxiv.org/abs/2604.04932v1
-scenarios: ["大语言模型"]
+scenarios:
+- 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 建模LLM生成文本中创造者与编辑者双重角色
@@ -155,9 +171,9 @@ RACE 通过显式区分创造者与编辑者的签名，实现了细粒度、可
 
 ### 相关文章
 
-- [TaxonRL：基于中间奖励强化学习的可解释细粒度视觉推理]({{< relref "posts/20260306-arxiv_ai-taxonrl-reinforcement-learning-with-intermediate-r-7.md" >}})
+- [TaxonRL：基于中间奖励强化学习的可解释细粒度视觉推理]({{< relref "posts/20260305-arxiv_ai-taxonrl-reinforcement-learning-with-intermediate-r-7.md" >}})
 - [进化策略导致大语言模型出现灾难性遗忘]({{< relref "posts/20260129-arxiv_ai-evolutionary-strategies-lead-to-catastrophic-forge-0.md" >}})
 - [SokoBench：评估大模型长程规划与推理能力]({{< relref "posts/20260129-arxiv_ai-sokobench-evaluating-long-horizon-planning-and-rea-2.md" >}})
-- [Alyah：评估阿拉伯语大模型阿联酋方言能力]({{< relref "posts/20260129-blogs_podcasts-alyah-toward-robust-evaluation-of-emirati-dialect--8.md" >}})
-- [Alyah：评估阿拉伯语大模型阿联酋方言能力]({{< relref "posts/20260129-blogs_podcasts-alyah-toward-robust-evaluation-of-emirati-dialect--9.md" >}})
+- [Alyah：评估阿拉伯语大模型阿联酋方言能力]({{< relref "posts/20260127-blogs_podcasts-alyah-toward-robust-evaluation-of-emirati-dialect--0.md" >}})
+- [Alyah：评估阿拉伯语大模型阿联酋方言能力]({{< relref "posts/20260127-blogs_podcasts-alyah-toward-robust-evaluation-of-emirati-dialect--0.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

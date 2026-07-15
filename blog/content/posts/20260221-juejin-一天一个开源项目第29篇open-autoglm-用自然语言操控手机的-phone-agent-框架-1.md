@@ -21,6 +21,10 @@ description: 以下是关于 **Open-AutoGLM** 的简洁总结： **项目概述*
 external_url: https://juejin.cn/post/7608382961723588658
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Open-AutoGLM：基于视觉语言模型的手机端智能助理框架
@@ -176,8 +180,8 @@ Open-AutoGLM 依赖于**视觉感知和语义理解**。它通过分析屏幕截
 
 ### 相关文章
 
-- [Show HN: AI agents play SimCity through a REST API]({{< relref "posts/20260211-hacker_news-show-hn-ai-agents-play-simcity-through-a-rest-api-15.md" >}})
-- [开源大模型涨价潮：Llama 3.5与GLM-5的商业化博弈]({{< relref "posts/20260215-juejin-开源大模型涨价策略分析llama-35-与-glm-5-的商业化博弈-2.md" >}})
-- [我让 Claude 控制我的笔式绘图仪]({{< relref "posts/20260216-hacker_news-i-gave-claude-access-to-my-pen-plotter-11.md" >}})
-- [授予Claude控制权：用笔式绘图仪生成实体艺术]({{< relref "posts/20260216-hacker_news-i-gave-claude-access-to-my-pen-plotter-6.md" >}})
-- [OpenAI内部数据智能体：自动化数据分析与决策]({{< relref "posts/20260129-hacker_news-openais-in-house-data-agent-11.md" >}})
+- [Show HN: AI agents play SimCity through a REST API]({{< relref "posts/20260211-hacker_news-show-hn-ai-agents-play-simcity-through-a-rest-api-11.md" >}})
+- [开源大模型涨价潮：Llama 3.5与GLM-5的商业化博弈]({{< relref "posts/20260215-juejin-开源大模型涨价策略分析llama-35-与-glm-5-的商业化博弈-1.md" >}})
+- [我让 Claude 控制我的笔式绘图仪]({{< relref "posts/20260215-hacker_news-i-gave-claude-access-to-my-pen-plotter-16.md" >}})
+- [授予Claude控制权：用笔式绘图仪生成实体艺术]({{< relref "posts/20260215-hacker_news-i-gave-claude-access-to-my-pen-plotter-16.md" >}})
+- [OpenAI内部数据智能体：自动化数据分析与决策]({{< relref "posts/20260129-hacker_news-openais-in-house-data-agent-14.md" >}})

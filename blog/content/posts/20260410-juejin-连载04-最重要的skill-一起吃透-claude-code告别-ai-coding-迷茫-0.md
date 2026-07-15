@@ -1,14 +1,30 @@
 ---
-title: "Claude Code Skill 应基于项目需求构建"
-date: 2026-04-10T13:28:21+08:00
+title: Claude Code Skill 应基于项目需求构建
+date: 2026-04-10 13:28:21+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Claude Code", "AI编程", "Skill构建", "工作流优化", "项目实践", "开发效率", "最佳实践", "模板"]
-categories: ["开发工具", "效率与方法论"]
+entry_kind: auto
+tags:
+- Claude Code
+- AI 编程
+- Skill构建
+- 工作流优化
+- 项目实践
+- 开发效率
+- 最佳实践
+- 模板
+categories:
+- 开发工具
+- 效率与方法论
 source: juejin
-description: "核心观点 别直接 fork 他人的 Claude Code Skill。真正有价值的 Skill 必须从项目自身的工作流中“生长”出来，而非直接搬运别人的模板。 为何不宜直接 Fork 1. **通用性不足**：高 star 的模板虽然功能丰富，却往往是大而全的设计，未必贴合特定业务或团队习惯。 2. **维护成本高*"
+description: 核心观点 别直接 fork 他人的 Claude Code Skill。真正有价值的 Skill 必须从项目自身的工作流中“生长”出来，而非直接搬运别人的模板。
+  为何不宜直接 Fork 1. **通用性不足**：高 star 的模板虽然功能丰富，却往往是大而全的设计，未必贴合特定业务或团队习惯。 2. **维护成本高*
 external_url: https://juejin.cn/post/7627001216109035572
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Claude Code Skill 应基于项目需求构建
@@ -105,7 +121,7 @@ GitHub 上存在大量高 star 的 Claude Code Skill 模板，可作为学习示
 
 - [Claude Code 实战指南：从智能助手到结对编程搭档]({{< relref "posts/20260316-juejin-claude-code-使用技巧把聪明实习生变成你的王牌搭档-0.md" >}})
 - [利用AI高效编写高质量代码的实践方法]({{< relref "posts/20260206-hacker_news-how-to-effectively-write-quality-code-with-ai-3.md" >}})
-- [利用AI高效编写高质量代码的实践指南]({{< relref "posts/20260206-hacker_news-how-to-effectively-write-quality-code-with-ai-5.md" >}})
-- [利用AI高效编写高质量代码的实践指南]({{< relref "posts/20260206-hacker_news-how-to-effectively-write-quality-code-with-ai-6.md" >}})
-- [利用AI高效编写高质量代码的实践方法]({{< relref "posts/20260207-hacker_news-how-to-effectively-write-quality-code-with-ai-15.md" >}})
+- [利用AI高效编写高质量代码的实践指南]({{< relref "posts/20260206-hacker_news-how-to-effectively-write-quality-code-with-ai-3.md" >}})
+- [利用AI高效编写高质量代码的实践指南]({{< relref "posts/20260206-hacker_news-how-to-effectively-write-quality-code-with-ai-3.md" >}})
+- [利用AI高效编写高质量代码的实践方法]({{< relref "posts/20260206-hacker_news-how-to-effectively-write-quality-code-with-ai-3.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

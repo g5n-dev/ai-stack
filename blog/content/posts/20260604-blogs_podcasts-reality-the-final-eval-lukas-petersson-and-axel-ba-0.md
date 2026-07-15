@@ -1,14 +1,31 @@
 ---
-title: "VendingBench作者谈Claude模型评估体系构建"
-date: 2026-06-04T22:46:26+08:00
+title: VendingBench作者谈Claude模型评估体系构建
+date: 2026-06-04 22:46:26+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Claude", "VendingBench", "模型评估", "评测体系", "基准测试", "前沿模型", "AI评测", "评测框架"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- Claude
+- VendingBench
+- 模型评估
+- 评测体系
+- 基准测试
+- 前沿模型
+- AI评测
+- 评测框架
+categories:
+- 大模型
+- AI 工程
 source: blogs_podcasts
-description: "在本次访谈中，Andon Labs的Lukas Petersson和Axel Backlund介绍了他们主持的VendingBench项目，围绕从轻量级的Haiku模型到规模最大的Mythos模型的Claude评估展开讨论。他们分享了如何从零搭建前沿、可长期运行的评估体系，包括明确的评估指标、可靠的数据集构建、跨模型对"
+description: 在本次访谈中，Andon Labs的Lukas Petersson和Axel Backlund介绍了他们主持的VendingBench项目，围绕从轻量级的Haiku模型到规模最大的Mythos模型的Claude评估展开讨论。他们分享了如何从零搭建前沿、可长期运行的评估体系，包括明确的评估指标、可靠的数据集构建、跨模型对
 external_url: https://www.latent.space/p/andon
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+aliases:
+- /posts/20260605-blogs_podcasts-reality-the-final-eval-lukas-petersson-and-axel-ba-0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # VendingBench作者谈Claude模型评估体系构建
@@ -151,8 +168,8 @@ scenarios: ["AI/ML项目"]
 ### 相关文章
 
 - [LLM 模型性能提升停滞的质疑与分析]({{< relref "posts/20260312-hacker_news-are-llms-not-getting-better-8.md" >}})
-- [仅调整框架，一下午提升15个大模型编程能力]({{< relref "posts/20260213-hacker_news-improving-15-llms-at-coding-in-one-afternoon-only--10.md" >}})
-- [Anthropic 发布自主智能体 METR 基准测试数据]({{< relref "posts/20260220-blogs_podcasts-ainews-anthropics-agent-autonomy-study-10.md" >}})
+- [仅调整框架，一下午提升15个大模型编程能力]({{< relref "posts/20260212-hacker_news-improving-15-llms-at-coding-in-one-afternoon-only--1.md" >}})
+- [Anthropic 发布自主智能体 METR 基准测试数据]({{< relref "posts/20260219-blogs_podcasts-ainews-anthropics-agent-autonomy-study-0.md" >}})
 - [OpenAI提出SWE-Bench-Dead：智能体前沿评估的下一步]({{< relref "posts/20260223-blogs_podcasts-swe-bench-dead-the-end-of-swe-bench-verified-mia-g-0.md" >}})
-- [OpenAI 推进智能体评估：SWE-Bench Verified 后续方向]({{< relref "posts/20260224-blogs_podcasts-the-end-of-swe-bench-verified-mia-glaese-olivia-wa-1.md" >}})
+- [OpenAI 推进智能体评估：SWE-Bench Verified 后续方向]({{< relref "posts/20260223-blogs_podcasts-swe-bench-dead-the-end-of-swe-bench-verified-mia-g-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

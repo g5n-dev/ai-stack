@@ -21,6 +21,10 @@ description: Stripe 官方博客近期披露了其内部代号为“Minions”�
 external_url: https://stripe.dev/blog/minions-stripes-one-shot-end-to-end-coding-agents
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Stripe 发布 Minions：端到端一次性编码代理

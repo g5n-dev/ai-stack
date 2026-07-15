@@ -1,13 +1,29 @@
 ---
-title: "缅因州“龙虾女士”去世：捕捞近百年，享年105岁"
-date: 2026-01-29T05:01:24+08:00
+title: 缅因州“龙虾女士”去世：捕捞近百年，享年105岁
+date: 2026-01-29 05:01:24+08:00
 draft: false
-entry_kind: "auto"
-tags: ["缅因州", "龙虾女士", "弗吉尼亚·奥利弗", "长寿", "渔业", "传奇人物", "美国文化", "百岁老人"]
-categories: ["生活与杂谈"]
+entry_kind: auto
+tags:
+- 缅因州
+- 龙虾女士
+- 弗吉尼亚·奥利弗
+- 长寿
+- 渔业
+- 传奇人物
+- 美国文化
+- 百岁老人
+categories:
+- 生活与杂谈
 source: hacker_news
 external_url: https://www.theguardian.com/us-news/2026/jan/28/maine-lobster-lady-dies-aged-105
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+aliases:
+- /posts/20260129-hacker_news-maines-lobster-lady-who-fished-for-nearly-a-centur-2/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 缅因州“龙虾女士”去世：捕捞近百年，享年105岁
@@ -215,7 +231,6 @@ print(result)  # 输出：{'捕龙虾人': 86.0, '教师': 58.0}
 弗吉尼亚的案例展示了老年人继续工作的积极影响，包括个人满足感和社会价值。她的故事鼓励了其他老年人追求自己的目标，并促使社会重新思考对老年劳动力的看法。
 
 ---
-## 最佳实践
 
 ## 最佳实践指南
 

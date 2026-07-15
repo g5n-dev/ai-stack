@@ -1,14 +1,29 @@
 ---
-title: "Amazon Lex辅助NLU优化对话机器人设计"
-date: 2026-05-14T18:04:44+08:00
+title: Amazon Lex辅助NLU优化对话机器人设计
+date: 2026-05-14 18:04:44+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Amazon Lex", "NLU", "对话机器人", "意图识别", "槽位抽取", "测试工作台", "迁移策略", "AWS"]
-categories: ["AI 工程"]
+entry_kind: auto
+tags:
+- Amazon Lex
+- NLU
+- 对话机器人
+- 意图识别
+- 槽位抽取
+- 测试工作台
+- 迁移策略
+- AWS
+categories:
+- AI 工程
 source: blogs_podcasts
-description: "概述 Amazon Lex Assisted NLU 通过在传统 NLU 基础上加入机器学习辅助，帮助机器人更准确地识别意图和抽取槽位。本文介绍如何从意图/槽位描述、测试验证和迁移计划三方面提升 bot 准确率。 关键实践 1. **意图描述**：使用简短动词+宾语的句子，列出同义表达，避免歧义。 2. **槽位描述*"
+description: 概述 Amazon Lex Assisted NLU 通过在传统 NLU 基础上加入机器学习辅助，帮助机器人更准确地识别意图和抽取槽位。本文介绍如何从意图/槽位描述、测试验证和迁移计划三方面提升
+  bot 准确率。 关键实践 1. **意图描述**：使用简短动词+宾语的句子，列出同义表达，避免歧义。 2. **槽位描述*
 external_url: https://aws.amazon.com/blogs/machine-learning/improve-bot-accuracy-with-amazon-lex-assisted-nlu
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Amazon Lex辅助NLU优化对话机器人设计
@@ -167,9 +182,9 @@ Assisted NLU 利用大规模预训练模型进行意图推断，并在标注数�
 
 ### 相关文章
 
-- [构建支持多开发者的 Amazon Lex CI/CD 流水线]({{< relref "posts/20260309-blogs_podcasts-drive-organizational-growth-with-amazon-lex-multi--10.md" >}})
+- [构建支持多开发者的 Amazon Lex CI/CD 流水线]({{< relref "posts/20260305-blogs_podcasts-drive-organizational-growth-with-amazon-lex-multi--1.md" >}})
 - [利用 Amazon Lex 多开发者 CI/CD 流水线推动组织增长]({{< relref "posts/20260305-blogs_podcasts-drive-organizational-growth-with-amazon-lex-multi--1.md" >}})
-- [构建Amazon Lex多开发者CI/CD流水线以实现隔离开发与自动化部署]({{< relref "posts/20260305-blogs_podcasts-drive-organizational-growth-with-amazon-lex-multi--2.md" >}})
-- [构建 Amazon Lex 多开发者 CI/CD 流水线：实现隔离开发与自动化部署]({{< relref "posts/20260306-blogs_podcasts-drive-organizational-growth-with-amazon-lex-multi--4.md" >}})
-- [构建 Amazon Lex 多开发者 CI/CD 流水线以实现自动化部署]({{< relref "posts/20260306-blogs_podcasts-drive-organizational-growth-with-amazon-lex-multi--9.md" >}})
+- [构建Amazon Lex多开发者CI/CD流水线以实现隔离开发与自动化部署]({{< relref "posts/20260305-blogs_podcasts-drive-organizational-growth-with-amazon-lex-multi--1.md" >}})
+- [构建 Amazon Lex 多开发者 CI/CD 流水线：实现隔离开发与自动化部署]({{< relref "posts/20260305-blogs_podcasts-drive-organizational-growth-with-amazon-lex-multi--1.md" >}})
+- [构建 Amazon Lex 多开发者 CI/CD 流水线以实现自动化部署]({{< relref "posts/20260305-blogs_podcasts-drive-organizational-growth-with-amazon-lex-multi--1.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

@@ -16,6 +16,7 @@ from typing import Any, Protocol, cast
 import yaml
 
 from ._json import canonical_json_bytes, json_ready, sha256_digest
+from .content_quality import analyze_post, markdown_body
 from .identity import make_generation_key
 from .models import (
     ArticleRevision,
@@ -32,11 +33,13 @@ from .models import (
     WorkflowStatus,
     model_to_dict,
 )
+from .source_contract import apply_source_contract, verify_source_contract
 from .stores import FileContentStore, FileOpsStore
+from .tag_taxonomy import normalize_tags
 
 DISCOVERY_SCHEMA = "discovery_event_v1"
 GENERATED_SCHEMA = "generated_candidate_v1"
-VALIDATED_SCHEMA = "validated_article_v1"
+VALIDATED_SCHEMA = "validated_article_v2"
 RUN_SCHEMA = "run_handoff_v1"
 OUTBOX_SCHEMA = "outbox_v1"
 RECEIPT_SCHEMA = "publish_receipt_v1"
@@ -371,10 +374,13 @@ def crawl(
                 normalized = json_ready(raw)
                 if not isinstance(normalized, dict):
                     raise TypeError("source payload must be an object")
+                normalized["source"] = source
+                normalized.setdefault("captured_at", _utc_text(observed_at))
+                normalized = apply_source_contract(normalized)
+                verify_source_contract(normalized)
                 url = _source_url(normalized)
                 if url is None:
                     raise ValueError("source item requires a canonical URL")
-                normalized["source"] = source
                 item = SourceItem(
                     source=source,
                     native_id=_native_id(normalized),
@@ -731,6 +737,56 @@ def _markdown_text(value: str) -> str:
     )
 
 
+def _gate_evidence_payload(evidence: Evidence, revision: Revision) -> dict[str, Any]:
+    locator = re.fullmatch(r"bytes:(\d+)-(\d+)", evidence.locator)
+    if locator is None:
+        raise PipelineError("generated candidate evidence locator is invalid")
+    start, end = (int(value) for value in locator.groups())
+    if start >= end or evidence.snapshot_digest != revision.source_snapshot_digest:
+        raise PipelineError("generated candidate evidence contract is inconsistent")
+    return {
+        "id": evidence.evidence_id,
+        "snapshot_id": revision.revision_id,
+        "url": evidence.source_url,
+        "snapshot_sha256": evidence.snapshot_digest.removeprefix("sha256:"),
+        "snippet": evidence.excerpt,
+        "start_byte": start,
+        "end_byte": end,
+    }
+
+
+def _validate_gate_payload_binding(
+    gate_payload: Mapping[str, Any],
+    *,
+    article: ArticleRevision,
+    evidence: Evidence,
+    item: SourceItem,
+    revision: Revision,
+    event: Event,
+) -> None:
+    expected_fields: dict[str, Any] = {
+        "body": article.body,
+        "claims": json_ready(article.claims),
+        "inferences": json_ready(article.inferences),
+        "evidence": [_gate_evidence_payload(evidence, revision)],
+    }
+    for field, expected in expected_fields.items():
+        if json_ready(gate_payload.get(field)) != expected:
+            raise PipelineError(f"generated candidate gate payload {field} mismatch")
+
+    article_claim_ids = tuple(
+        str(claim.get("id") or "").strip() for claim in article.claims
+    )
+    if (
+        article.event_id != event.event_id
+        or article.evidence_ids != (evidence.evidence_id,)
+        or evidence.claim_ids != article_claim_ids
+        or evidence.source_url != item.canonical_url
+        or evidence.captured_at != revision.observed_at
+    ):
+        raise PipelineError("generated candidate gate payload evidence mismatch")
+
+
 def _candidate_from_envelope(
     envelope: Mapping[str, Any], snapshot: str, run_id: str
 ) -> dict[str, Any]:
@@ -766,16 +822,14 @@ def _candidate_from_envelope(
         "evidence_ids": [evidence.evidence_id],
     }
     body = (
-        "这是自动生成的来源简讯，只复述已保存快照中可定位的字段，不包含扩展推断。\n\n"
-        f"**来源标题：** {_markdown_text(title)}\n\n"
-        f"[查看原始来源]({item.canonical_url})"
+        "## 基本信息\n\n"
+        f"- **来源标题**: {_markdown_text(title)}\n"
+        f"- **原始来源**: [查看原文]({item.canonical_url})\n\n"
+        "## 来源说明\n\n"
+        "这是自动生成的来源简讯，只复述已保存快照中可定位的字段，不包含扩展推断。"
     )
     raw_tags = item.payload.get("tags", ())
-    tags = (
-        tuple(str(tag).strip()[:80] for tag in raw_tags if str(tag).strip())
-        if isinstance(raw_tags, (list, tuple))
-        else ()
-    )
+    tags = tuple(normalize_tags(raw_tags, limit=8))
     article = ArticleRevision(
         event_id=event.event_id,
         generation_key=generation_key,
@@ -787,15 +841,7 @@ def _candidate_from_envelope(
         source_support=1.0,
         tags=tags,
     )
-    gate_evidence = {
-        "id": evidence.evidence_id,
-        "snapshot_id": revision.revision_id,
-        "url": item.canonical_url,
-        "snapshot_sha256": revision.source_snapshot_digest.removeprefix("sha256:"),
-        "snippet": title,
-        "start_byte": start,
-        "end_byte": end,
-    }
+    gate_evidence = _gate_evidence_payload(evidence, revision)
     return {
         "schema_version": GENERATED_SCHEMA,
         "run_id": run_id,
@@ -920,21 +966,42 @@ def _markdown_document(
     article: ArticleRevision,
     item: SourceItem,
     event: Event,
+    evidence: Evidence,
     tier: str,
 ) -> str:
     title = json.dumps(article.title, ensure_ascii=False)
     source_url = json.dumps(item.canonical_url, ensure_ascii=False)
     tags = json.dumps(list(article.tags), ensure_ascii=False)
+    capture_mode = json.dumps(
+        str(item.payload.get("source_capture_mode") or "metadata_only"),
+        ensure_ascii=False,
+    )
+    extractor_version = json.dumps(
+        str(item.payload.get("extractor_version") or "source-contract-v1"),
+        ensure_ascii=False,
+    )
+    discovery_method = json.dumps(
+        str(item.payload.get("discovery_method") or "crawler_payload"),
+        ensure_ascii=False,
+    )
+    source_is_truncated = item.payload.get("source_is_truncated") is True
     return (
         "---\n"
         f"title: {title}\n"
         f"date: {_utc_text(article.created_at)}\n"
         "draft: false\n"
         'entry_kind: "auto"\n'
+        f"source: {json.dumps(item.source, ensure_ascii=False)}\n"
         f'event_id: "{event.event_id}"\n'
         f'article_revision_id: "{article.article_revision_id}"\n'
         f"external_url: {source_url}\n"
         f'publication_tier: "{tier}"\n'
+        f'content_mode: "{"source_brief" if tier == "C" else "evidence_backed_article"}"\n'
+        f"source_capture_mode: {capture_mode}\n"
+        f'source_snapshot_sha256: "{evidence.snapshot_digest}"\n'
+        f"extractor_version: {extractor_version}\n"
+        f"discovery_method: {discovery_method}\n"
+        f"source_is_truncated: {'true' if source_is_truncated else 'false'}\n"
         f"source_support: {article.source_support}\n"
         f"tags: {tags}\n"
         "---\n\n"
@@ -958,11 +1025,20 @@ def validate_generated(
         article = ArticleRevision.from_dict(candidate["article"])
         evidence = Evidence.from_dict(candidate["evidence"])
         item = SourceItem.from_dict(candidate["source_item"])
+        revision = Revision.from_dict(candidate["revision"])
         event = Event.from_dict(candidate["event"])
         gate_payload = candidate.get("gate_payload")
         snapshots = candidate.get("snapshots")
         if not isinstance(gate_payload, Mapping) or not isinstance(snapshots, Mapping):
             raise PipelineError("generated candidate gate payload is invalid")
+        _validate_gate_payload_binding(
+            gate_payload,
+            article=article,
+            evidence=evidence,
+            item=item,
+            revision=revision,
+            event=event,
+        )
         decision = gate.evaluate(gate_payload, snapshots)
         if not decision.publishable:
             quarantined += 1
@@ -979,7 +1055,23 @@ def validate_generated(
         # Source briefs are deliberately downgraded to C even when their single
         # source claim has complete evidence.  C means "no added analysis".
         tier = "C" if gate_payload.get("content_mode") == "source_brief" else decision.tier.value
-        document = _markdown_document(article, item, event, tier)
+        document = _markdown_document(article, item, event, evidence, tier)
+        post_analysis = analyze_post(document)
+        if post_analysis.fatal_reasons:
+            quarantined += 1
+            files[f"content/quarantine/{article.article_revision_id}.json"] = _json_bytes(
+                {
+                    "schema_version": "quarantine_v1",
+                    "run_id": state["run_id"],
+                    "article_revision_id": article.article_revision_id,
+                    "reasons": [
+                        f"post_quality:{reason}"
+                        for reason in post_analysis.fatal_reasons
+                    ],
+                    "candidate_digest": _sha256_bytes(_json_bytes(candidate)),
+                }
+            )
+            continue
         try:
             _validate_markdown(document)
         except ValueError as exc:
@@ -995,6 +1087,17 @@ def validate_generated(
             )
             continue
         publishable += 1
+        publication_payload = {
+            "title": article.title,
+            "summary": article.body,
+            "url": item.canonical_url,
+            "source": item.source,
+            "tags": list(article.tags),
+        }
+        outbox_keys = [
+            _outbox_key(article.article_revision_id, platform, "source-brief-v1")
+            for platform in platforms
+        ]
         validated = {
             "schema_version": VALIDATED_SCHEMA,
             "run_id": state["run_id"],
@@ -1004,15 +1107,13 @@ def validate_generated(
             "event_id": event.event_id,
             "source_item_id": item.item_id,
             "markdown_path": f"content/posts/{article.article_revision_id}.md",
+            "markdown_sha256": _sha256_bytes(document.encode("utf-8")),
+            "publication_payload": publication_payload,
+            "outbox_keys": outbox_keys,
         }
         files[f"content/articles/{article.article_revision_id}.json"] = _json_bytes(validated)
         files[str(validated["markdown_path"])] = document.encode("utf-8")
-        for platform in platforms:
-            key = _outbox_key(
-                article.article_revision_id,
-                platform,
-                "source-brief-v1",
-            )
+        for platform, key in zip(platforms, outbox_keys, strict=True):
             files[f"content/outbox/{key}.json"] = _json_bytes(
                 {
                     "schema_version": OUTBOX_SCHEMA,
@@ -1021,13 +1122,7 @@ def validate_generated(
                     "event_revision": article.article_revision_id,
                     "platform": platform,
                     "template_version": "source-brief-v1",
-                    "payload": {
-                        "title": article.title,
-                        "summary": article.body,
-                        "url": item.canonical_url,
-                        "source": item.source,
-                        "tags": list(article.tags),
-                    },
+                    "payload": publication_payload,
                 }
             )
     files["content/outbox/index.json"] = _json_bytes(
@@ -1069,22 +1164,67 @@ def _load_validated(root: Path) -> tuple[dict[str, Any], list[dict[str, Any]]]:
     if state.get("schema_version") != RUN_SCHEMA or state.get("stage") != "VALIDATED":
         raise PipelineError("validated handoff has an unsupported schema or stage")
     records: list[dict[str, Any]] = []
+    expected_outbox: dict[str, tuple[str, dict[str, Any]]] = {}
     for path in sorted((root / "content/articles").glob("*.json")):
         record = _read_json(path)
         if record.get("schema_version") != VALIDATED_SCHEMA:
             raise PipelineError(f"invalid validated article schema: {path.name}")
         article = ArticleRevision.from_dict(record["article"])
-        Evidence.from_dict(record["evidence"])
+        evidence = Evidence.from_dict(record["evidence"])
         if article.article_revision_id != path.stem:
             raise PipelineError(f"validated article filename mismatch: {path.name}")
         markdown_path = str(record.get("markdown_path", ""))
         if markdown_path not in files:
             raise PipelineError(f"validated article Markdown is missing: {path.name}")
-        _validate_markdown(files[markdown_path].decode("utf-8"))
+        markdown_bytes = files[markdown_path]
+        if record.get("markdown_sha256") != _sha256_bytes(markdown_bytes):
+            raise PipelineError(f"validated article Markdown digest mismatch: {path.name}")
+        document = markdown_bytes.decode("utf-8")
+        _validate_markdown(document)
+        post_analysis = analyze_post(document)
+        if post_analysis.fatal_reasons:
+            raise PipelineError(f"validated article failed Post completeness: {path.name}")
+        if markdown_body(document).strip() != article.body.strip():
+            raise PipelineError(f"validated article body does not match record: {path.name}")
+        payload = record.get("publication_payload")
+        if not isinstance(payload, dict) or set(payload) != {
+            "title",
+            "summary",
+            "url",
+            "source",
+            "tags",
+        }:
+            raise PipelineError(f"validated article publication payload is invalid: {path.name}")
+        if (
+            payload.get("title") != article.title
+            or payload.get("summary") != article.body
+            or payload.get("url") != evidence.source_url
+            or payload.get("tags") != list(article.tags)
+            or not isinstance(payload.get("source"), str)
+            or not payload["source"].strip()
+        ):
+            raise PipelineError(f"validated article publication payload mismatch: {path.name}")
+        outbox_keys = record.get("outbox_keys")
+        if not isinstance(outbox_keys, list) or any(
+            not isinstance(key, str) or key in expected_outbox for key in outbox_keys
+        ):
+            raise PipelineError(f"validated article outbox keys are invalid: {path.name}")
+        for key in outbox_keys:
+            expected_outbox[key] = (article.article_revision_id, payload)
         records.append(record)
     expected = state.get("publishable")
     if expected != len(records):
         raise PipelineError("validated article count is inconsistent")
+    actual_outbox = _load_outbox(root / "content/outbox", str(state.get("run_id", "")))
+    if {record["idempotency_key"] for record in actual_outbox} != set(expected_outbox):
+        raise PipelineError("validated article outbox set is inconsistent")
+    for outbox_record in actual_outbox:
+        article_id, payload = expected_outbox[outbox_record["idempotency_key"]]
+        if (
+            outbox_record.get("event_revision") != article_id
+            or outbox_record.get("payload") != payload
+        ):
+            raise PipelineError("validated article outbox payload mismatch")
     return state, records
 
 
@@ -1180,11 +1320,7 @@ def _intelligence_events(envelopes: Sequence[Mapping[str, Any]]) -> list[dict[st
         item = SourceItem.from_dict(envelope["source_item"])
         title = _safe_title(item.payload, item.canonical_url)
         tags_raw = item.payload.get("tags", [])
-        tags = (
-            [str(tag).strip() for tag in tags_raw if str(tag).strip()]
-            if isinstance(tags_raw, (list, tuple))
-            else []
-        )
+        tags = normalize_tags(tags_raw, limit=8)
         result.append(
             {
                 "event_id": event.event_id,
@@ -1301,11 +1437,16 @@ def _load_outbox(input_root: Path, run_id: str) -> list[dict[str, Any]]:
     if input_root.is_symlink() or not input_root.is_dir():
         raise PipelineError("outbox input must be a regular directory")
     records: list[dict[str, Any]] = []
+    declared_count: int | None = None
     for path in sorted(input_root.glob("*.json")):
         value = _read_json(path)
         if path.name == "index.json":
             if value.get("schema_version") != OUTBOX_SCHEMA:
                 raise PipelineError("outbox index schema is invalid")
+            count = value.get("record_count")
+            if not isinstance(count, int) or isinstance(count, bool) or count < 0:
+                raise PipelineError("outbox index count is invalid")
+            declared_count = count
             continue
         required = {
             "schema_version",
@@ -1328,6 +1469,8 @@ def _load_outbox(input_root: Path, run_id: str) -> list[dict[str, Any]]:
         if expected != value["idempotency_key"] or not isinstance(value["payload"], dict):
             raise PipelineError(f"outbox idempotency key mismatch: {path.name}")
         records.append(value)
+    if declared_count is None or declared_count != len(records):
+        raise PipelineError("outbox index count is inconsistent")
     return records
 
 

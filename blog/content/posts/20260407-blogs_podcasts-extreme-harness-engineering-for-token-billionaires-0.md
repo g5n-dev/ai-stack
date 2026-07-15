@@ -1,14 +1,30 @@
 ---
-title: "Symphony：OpenAI代码工厂百万行代码日产十亿token"
-date: 2026-04-07T23:03:00+08:00
+title: Symphony：OpenAI代码工厂百万行代码日产十亿token
+date: 2026-04-07 23:03:00+08:00
 draft: false
-entry_kind: "auto"
-tags: ["大模型", "代码工厂", "自动化", "推理", "高吞吐", "零人工", "暗黑工厂", "LLM"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- 大模型
+- 代码工厂
+- 自动化
+- 推理
+- 高吞吐
+- 零人工
+- 暗黑工厂
+- LLM
+categories:
+- 大模型
+- AI 工程
 source: blogs_podcasts
-description: "项目背景 OpenAI Frontier & Symphony 团队首次公开披露其内部称为 **Dark Factory** 的全自动化流水线。该项目在“Extreme Harness Engineering for Token Billionaires”主题下展示，旨在支撑极大规模的语言模型推理。 关键特点 - **"
+description: 项目背景 OpenAI Frontier & Symphony 团队首次公开披露其内部称为 **Dark Factory** 的全自动化流水线。该项目在“Extreme
+  Harness Engineering for Token Billionaires”主题下展示，旨在支撑极大规模的语言模型推理。 关键特点 - **
 external_url: https://www.latent.space/p/harness-eng
-scenarios: ["大语言模型"]
+scenarios:
+- 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Symphony：OpenAI代码工厂百万行代码日产十亿token
@@ -147,9 +163,9 @@ OpenAI推出首个"暗工厂"（Dark Factory），采用极端的测试框架工
 
 ### 相关文章
 
-- [迈向自主数学研究]({{< relref "posts/20260215-hacker_news-towards-autonomous-mathematics-research-10.md" >}})
-- [迈向自主数学研究]({{< relref "posts/20260216-hacker_news-towards-autonomous-mathematics-research-14.md" >}})
-- [本地运行AI的可行性评估与硬件需求分析]({{< relref "posts/20260314-hacker_news-can-i-run-ai-locally-1.md" >}})
+- [迈向自主数学研究]({{< relref "posts/20260215-hacker_news-towards-autonomous-mathematics-research-3.md" >}})
+- [迈向自主数学研究]({{< relref "posts/20260215-hacker_news-towards-autonomous-mathematics-research-3.md" >}})
+- [本地运行AI的可行性评估与硬件需求分析]({{< relref "posts/20260313-hacker_news-can-i-run-ai-locally-4.md" >}})
 - [编码代理的成功对通用AI系统的启示]({{< relref "posts/20260130-hacker_news-what-the-success-of-coding-agents-teaches-us-about-11.md" >}})
 - [构建极简且具倾向性的编程代理的经验总结]({{< relref "posts/20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-1.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

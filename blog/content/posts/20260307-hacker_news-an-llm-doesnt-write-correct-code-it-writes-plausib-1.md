@@ -22,6 +22,17 @@ external_url: https://blog.katanaquant.com/p/your-llm-doesnt-write-correct-code
 scenarios:
 - 大语言模型
 - AI/ML项目
+aliases:
+- /posts/20260307-hacker_news-llms-work-best-when-the-user-defines-their-accepta-11/
+- /posts/20260307-hacker_news-llms-work-best-when-the-user-defines-their-accepta-15/
+- /posts/20260307-hacker_news-llms-work-best-when-the-user-defines-their-accepta-19/
+- /posts/20260307-hacker_news-llms-work-best-when-the-user-defines-their-accepta-4/
+- /posts/20260307-hacker_news-llms-work-best-when-the-user-defines-their-accepta-5/
+- /posts/20260307-hacker_news-llms-work-best-when-the-user-defines-their-accepta-6/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # LLM不生成正确代码而是生成看似合理的代码
@@ -331,8 +342,8 @@ LLM 是副驾驶，人类是机长。最佳实践是将 LLM 作为辅助工具�
 
 ### 相关文章
 
-- [大语言模型成为新型高级编程语言]({{< relref "posts/20260208-hacker_news-llms-as-the-new-high-level-language-11.md" >}})
-- [LLM成为新型高级编程语言]({{< relref "posts/20260208-hacker_news-llms-as-the-new-high-level-language-16.md" >}})
+- [大语言模型成为新型高级编程语言]({{< relref "posts/20260208-hacker_news-llms-as-the-new-high-level-language-8.md" >}})
+- [LLM成为新型高级编程语言]({{< relref "posts/20260208-hacker_news-llms-as-the-new-high-level-language-8.md" >}})
 - [大语言模型成为新一代高级编程语言]({{< relref "posts/20260208-hacker_news-llms-as-the-new-high-level-language-8.md" >}})
-- [超越智能体编码：AI 编程助手的演进方向]({{< relref "posts/20260208-hacker_news-beyond-agentic-coding-19.md" >}})
-- [超越智能体编码：AI 编程助手的演进方向]({{< relref "posts/20260208-hacker_news-beyond-agentic-coding-7.md" >}})
+- [超越智能体编码：AI 编程助手的演进方向]({{< relref "posts/20260208-hacker_news-haskell-for-all-beyond-agentic-coding-3.md" >}})
+- [超越智能体编码：AI 编程助手的演进方向]({{< relref "posts/20260208-hacker_news-haskell-for-all-beyond-agentic-coding-3.md" >}})

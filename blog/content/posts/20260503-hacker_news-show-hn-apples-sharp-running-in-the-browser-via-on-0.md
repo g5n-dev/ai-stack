@@ -1,14 +1,30 @@
 ---
-title: "苹果Sharp图像库通过ONNX Runtime Web实现浏览器运行"
-date: 2026-05-03T13:22:36+08:00
+title: 苹果Sharp图像库通过ONNX Runtime Web实现浏览器运行
+date: 2026-05-03 13:22:36+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Sharp", "ONNX", "浏览器", "图像处理", "WASM", "前端", "AI", "Node"]
-categories: ["前端", "AI 工程"]
+entry_kind: auto
+tags:
+- Sharp
+- ONNX
+- 浏览器
+- 图像处理
+- WASM
+- 前端
+- AI
+- Node
+categories:
+- 前端
+- AI 工程
 source: hacker_news
-description: "在机器学习模型日益普及的背景下，如何在浏览器中高效处理图像成为一个实际需求。通过 ONNX Runtime Web，Apple 的图像处理库 Sharp 已能在网页环境中运行，突破了传统方案依赖服务端计算的限制。该项目为前端开发者提供了在浏览器内直接进行高质量图像处理的思路，可应用于需要即时响应的图片编辑、预览等场景。"
+description: 在机器学习模型日益普及的背景下，如何在浏览器中高效处理图像成为一个实际需求。通过 ONNX Runtime Web，Apple 的图像处理库
+  Sharp 已能在网页环境中运行，突破了传统方案依赖服务端计算的限制。该项目为前端开发者提供了在浏览器内直接进行高质量图像处理的思路，可应用于需要即时响应的图片编辑、预览等场景。
 external_url: https://github.com/bring-shrubbery/ml-sharp-web
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 苹果Sharp图像库通过ONNX Runtime Web实现浏览器运行
@@ -73,9 +89,9 @@ scenarios: ["AI/ML项目"]
 
 ### 相关文章
 
-- [Microgpt：可在浏览器中可视化的GPT模型]({{< relref "posts/20260216-hacker_news-show-hn-microgpt-is-a-gpt-you-can-visualize-in-the-16.md" >}})
+- [Microgpt：可在浏览器中可视化的GPT模型]({{< relref "posts/20260215-hacker_news-show-hn-microgpt-is-a-gpt-you-can-visualize-in-the-17.md" >}})
 - [Transformers.js v4 预览版发布，现已登陆 NPM]({{< relref "posts/20260209-blogs_podcasts-transformersjs-v4-preview-now-available-on-npm-0.md" >}})
-- [Transformers.js v4 预览版发布，现已上线 NPM]({{< relref "posts/20260209-blogs_podcasts-transformersjs-v4-preview-now-available-on-npm-2.md" >}})
-- [MDST引擎：基于WebGPU/WASM在浏览器运行GGUF模型]({{< relref "posts/20260215-hacker_news-mdst-engine-run-gguf-models-in-the-browser-with-we-17.md" >}})
+- [Transformers.js v4 预览版发布，现已上线 NPM]({{< relref "posts/20260209-blogs_podcasts-transformersjs-v4-preview-now-available-on-npm-0.md" >}})
+- [MDST引擎：基于WebGPU/WASM在浏览器运行GGUF模型]({{< relref "posts/20260215-hacker_news-mdst-engine-run-gguf-models-in-the-browser-with-we-19.md" >}})
 - [MDST引擎：基于WebGPU和WASM在浏览器运行GGUF模型]({{< relref "posts/20260215-hacker_news-mdst-engine-run-gguf-models-in-the-browser-with-we-19.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

@@ -1,14 +1,30 @@
 ---
-title: "AI代理优化放射科工作流程：基于62家医院220万例研究"
-date: 2026-05-21T20:21:46+08:00
+title: AI代理优化放射科工作流程：基于62家医院220万例研究
+date: 2026-05-21 20:21:46+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI代理", "医疗AI", "放射科", "工作流优化", "影像诊断", "智慧医疗", "大模型应用", "系统优化"]
-categories: ["AI 工程", "大模型"]
+entry_kind: auto
+tags:
+- AI 代理
+- 医疗 AI
+- 放射科
+- 工作流优化
+- 影像诊断
+- 智慧医疗
+- 大模型应用
+- 系统优化
+categories:
+- AI 工程
+- 大模型
 source: blogs_podcasts
-description: "问题背景 传统放射工作列表系统采用固定规则，忽视病例复杂性、放射科医生的专业领域、当前工作负荷、疲劳程度等关键上下文。这导致医生倾向于挑选容易、价值高的病例，而回避复杂病例，从而造成诊断延迟和治疗成本上升。 AI工作流优化方案 引入基于AI的智能代理，可实时评估病例难度、医生专长、工作负载和疲劳状态，动态生成符合多约束"
+description: 问题背景 传统放射工作列表系统采用固定规则，忽视病例复杂性、放射科医生的专业领域、当前工作负荷、疲劳程度等关键上下文。这导致医生倾向于挑选容易、价值高的病例，而回避复杂病例，从而造成诊断延迟和治疗成本上升。
+  AI工作流优化方案 引入基于AI的智能代理，可实时评估病例难度、医生专长、工作负载和疲劳状态，动态生成符合多约束
 external_url: https://aws.amazon.com/blogs/machine-learning/intelligent-radiology-workflow-optimization-with-ai-agents-2
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AI代理优化放射科工作流程：基于62家医院220万例研究
@@ -133,9 +149,9 @@ AI代理系统持续采集并分析放射科医生的专业背景、历史报告
 
 ### 相关文章
 
-- [Compressed Agents：Agent Skills 技术解析]({{< relref "posts/20260130-hacker_news-compressed-agentsmd-agent-skills-6.md" >}})
-- [Codex与Claude支持定制内核以适配各类应用]({{< relref "posts/20260214-blogs_podcasts-custom-kernels-for-all-from-codex-and-claude-6.md" >}})
+- [Compressed Agents：Agent Skills 技术解析]({{< relref "posts/20260129-hacker_news-compressed-agentsmd-agent-skills-5.md" >}})
+- [Codex与Claude支持定制内核以适配各类应用]({{< relref "posts/20260213-blogs_podcasts-custom-kernels-for-all-from-codex-and-claude-1.md" >}})
 - [大模型API本质解析：Tools、MCP与Skills的区别]({{< relref "posts/20260215-juejin-从-0-诠释大模型-api-的本质-tools-mcp-skills-0.md" >}})
 - [基于AWS与Hugging Face smolagents构建医疗AI智能体]({{< relref "posts/20260223-blogs_podcasts-agentic-ai-with-multi-model-framework-using-huggin-0.md" >}})
-- [基于AWS与Hugging Face smolagents构建多模型医疗AI Agent]({{< relref "posts/20260223-blogs_podcasts-agentic-ai-with-multi-model-framework-using-huggin-3.md" >}})
+- [基于AWS与Hugging Face smolagents构建多模型医疗AI Agent]({{< relref "posts/20260223-blogs_podcasts-agentic-ai-with-multi-model-framework-using-huggin-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

@@ -21,6 +21,10 @@ description: 本文提出了一种基于大语言模型（LLM）的自动化单�
 external_url: http://arxiv.org/abs/2602.21997v1
 scenarios:
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 通过剔除已覆盖代码增强大模型测试生成
@@ -135,7 +139,6 @@ scenarios:
 
 ---
 
-### 1. 核心问题与研究动机
 
 ### 问题定义
 本研究聚焦于基于大语言模型（LLM）的自动化单元测试生成技术在面对**高复杂度、长函数**时的性能瓶颈问题。具体表现为：随着待测方法代码行数和逻辑分支的增加，现有LLM生成器的测试代码覆盖率显著下降，且生成的测试用例存在较高的编译错误率和运行时失效风险。
@@ -151,7 +154,6 @@ scenarios:
 
 ---
 
-### 2. 核心方法：迭代式代码消除
 
 ### 方法论概述
 本文提出了一种迭代式的测试生成框架，其核心流程是 **“生成 - 执行 - 消除”** 的闭环循环。该方法不直接修改LLM本身，而是通过改变输入上下文来引导生成行为。
@@ -182,7 +184,6 @@ scenarios:
 
 ---
 
-### 3. 理论基础与算法逻辑
 
 ### 理论依据
 1.  **分治策略**：
@@ -208,7 +209,6 @@ scenarios:
 
 ---
 
-### 4. 优势与局限性分析
 
 ### 主要优势
 *   **突破长度限制**：随着迭代进行，输入代码不断变短，使得原本可能因超出上下文窗口而无法处理的超长函数最终得以完全覆盖。
@@ -470,5 +470,5 @@ LLM 可能会生成语法正确但逻辑重复，或者无法通过编译/执行
 - [编码代理的成功对通用AI系统的启示]({{< relref "posts/20260130-hacker_news-what-the-success-of-coding-agents-teaches-us-about-11.md" >}})
 - [AgentRx：基于执行轨迹的AI智能体故障诊断]({{< relref "posts/20260203-arxiv_ai-agentrx-diagnosing-ai-agent-failures-from-executio-8.md" >}})
 - [Claude Opus 4.6 发布：性能与上下文窗口提升]({{< relref "posts/20260205-hacker_news-claude-opus-46-2.md" >}})
-- [Claude Opus 4.6 发布：上下文窗口与推理能力提升]({{< relref "posts/20260206-hacker_news-claude-opus-46-0.md" >}})
+- [Claude Opus 4.6 发布：上下文窗口与推理能力提升]({{< relref "posts/20260205-hacker_news-claude-opus-46-2.md" >}})
 - [LLM 不应取代编译器：语言模型与符号编译的差异分析]({{< relref "posts/20260206-hacker_news-llms-could-be-but-shouldnt-be-compilers-0.md" >}})

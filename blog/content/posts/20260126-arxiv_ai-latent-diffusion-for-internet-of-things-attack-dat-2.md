@@ -1,12 +1,29 @@
 ---
-title: "🔥IoT攻击数据生成神器！Latent Diffusion让入侵检测更准！"
-date: 2026-01-26T22:15:20+08:00
+title: 🔥IoT攻击数据生成神器！Latent Diffusion让入侵检测更准！
+date: 2026-01-26 22:15:20+08:00
 draft: false
-entry_kind: "auto"
-tags: ["LDM", "潜在扩散模型", "物联网", "IoT", "入侵检测", "IDS", "数据生成", "数据增强"]
-categories: ["安全", "论文"]
+entry_kind: auto
+tags:
+- LDM
+- 潜在扩散模型
+- 物联网
+- IoT
+- 入侵检测
+- IDS
+- 数据生成
+- 数据增强
+categories:
+- 安全
+- 论文
 source: arxiv
 external_url: http://arxiv.org/abs/2601.16976v1
+scenarios: []
+aliases:
+- /posts/20260127-arxiv_ai-latent-diffusion-for-internet-of-things-attack-dat-2/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 📚 🔥IoT攻击数据生成神器！Latent Diffusion让入侵检测更准！
@@ -196,7 +213,6 @@ external_url: http://arxiv.org/abs/2601.16976v1
 2.  **红队演练**：生成模拟攻击流量用于模拟网络战，测试防御系统的响应速度，而无需实际发动
 
 ---
-## ✅ 研究最佳实践
 
 ## 最佳实践指南
 
@@ -277,7 +293,6 @@ external_url: http://arxiv.org/abs/2601.16976v1
 - 通过将攻击类型和特征作为条件输入引导生成过程，确保生成的数据符合特定攻击场景的分布，避免了生成无效或失真的噪声数据。
 
 ---
-## 🗺️ 学习路径
 
 ## 学习路径
 

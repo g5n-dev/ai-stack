@@ -1,14 +1,29 @@
 ---
-title: "大语言模型生成有害内容的统一机制"
-date: 2026-04-13T23:58:28+08:00
+title: 大语言模型生成有害内容的统一机制
+date: 2026-04-13 23:58:28+08:00
 draft: false
-entry_kind: "auto"
-tags: ["大语言模型", "有害内容", "权重剪枝", "对齐", "因果干预", "突发错位", "安全机制", "模型可解释性"]
-categories: ["大模型", "安全"]
+entry_kind: auto
+tags:
+- 大语言模型
+- 有害内容
+- 权重剪枝
+- 对齐
+- 因果干预
+- 突发错位
+- 安全机制
+- 模型可解释性
+categories:
+- 大模型
+- 安全
 source: arxiv
-description: "研究方法 采用定向权重剪枝作为因果干预，对大型语言模型的内部组织进行探测。 主要发现 有害内容生成依赖于一套紧凑的权重，这套权重跨不同有害类型通用，且与正常能力分离。对齐模型的有害生成权重比未对齐模型压缩程度更高，说明对齐在内部重塑了有害表征，尽管表面安全护栏易被绕过。权重的压缩解释了突发错位：在某一狭窄领域微调若激活"
+description: 研究方法 采用定向权重剪枝作为因果干预，对大型语言模型的内部组织进行探测。 主要发现 有害内容生成依赖于一套紧凑的权重，这套权重跨不同有害类型通用，且与正常能力分离。对齐模型的有害生成权重比未对齐模型压缩程度更高，说明对齐在内部重塑了有害表征，尽管表面安全护栏易被绕过。权重的压缩解释了突发错位：在某一狭窄领域微调若激活
 external_url: http://arxiv.org/abs/2604.09544v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 大语言模型生成有害内容的统一机制
@@ -139,6 +154,6 @@ scenarios: ["Web应用开发"]
 - [大语言模型稀疏奖励子系统]({{< relref "posts/20260203-arxiv_ai-sparse-reward-subsystem-in-large-language-models-9.md" >}})
 - [心理越狱揭示前沿模型内部冲突]({{< relref "posts/20260205-hacker_news-psychometric-jailbreaks-reveal-internal-conflict-i-10.md" >}})
 - [基于内部激活监测生成过程中的突发奖励黑客行为]({{< relref "posts/20260305-arxiv_ai-monitoring-emergent-reward-hacking-during-generati-5.md" >}})
-- [审查大模型作为秘密知识提取的自然测试床]({{< relref "posts/20260308-arxiv_ai-censored-llms-as-a-natural-testbed-for-secret-know-4.md" >}})
-- [💥MortalMATH：当推理目标遇上紧急场景，AI会“翻车”吗？]({{< relref "posts/20260128-arxiv_ai-mortalmath-evaluating-the-conflict-between-reasoni-4.md" >}})
+- [审查大模型作为秘密知识提取的自然测试床]({{< relref "posts/20260306-arxiv_ai-censored-llms-as-a-natural-testbed-for-secret-know-4.md" >}})
+- [💥MortalMATH：当推理目标遇上紧急场景，AI会“翻车”吗？]({{< relref "posts/20260127-arxiv_ai-mortalmath-evaluating-the-conflict-between-reasoni-4.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

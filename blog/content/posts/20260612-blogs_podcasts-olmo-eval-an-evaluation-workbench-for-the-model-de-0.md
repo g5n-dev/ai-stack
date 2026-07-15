@@ -1,14 +1,29 @@
 ---
-title: "olmo-eval：模型开发循环评估工作台"
-date: 2026-06-12T19:23:07+08:00
+title: olmo-eval：模型开发循环评估工作台
+date: 2026-06-12 19:23:07+08:00
 draft: false
-entry_kind: "auto"
-tags: ["模型评估", "工作台", "大模型", "评测框架", "AI工程", "开发工具", "循环迭代", "开源"]
-categories: ["AI 工程", "开发工具"]
+entry_kind: auto
+tags:
+- 模型评估
+- 工作台
+- 大模型
+- 评测框架
+- AI 工程
+- 开发工具
+- 循环迭代
+- 开源
+categories:
+- AI 工程
+- 开发工具
 source: blogs_podcasts
-description: "olmo-eval是一个专为模型开发流程设计的评估工作台，旨在帮助团队在迭代过程中快速获取可靠的性能指标。它通过灵活的插件机制和自动化报告功能，实现评估结果的可视化和可追溯性。阅读本文，您可以了解olmo-eval的核心功能、集成方法以及在实际项目中的最佳实践。"
+description: olmo-eval是一个专为模型开发流程设计的评估工作台，旨在帮助团队在迭代过程中快速获取可靠的性能指标。它通过灵活的插件机制和自动化报告功能，实现评估结果的可视化和可追溯性。阅读本文，您可以了解olmo-eval的核心功能、集成方法以及在实际项目中的最佳实践。
 external_url: https://huggingface.co/blog/allenai/olmo-eval
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # olmo-eval：模型开发循环评估工作台
@@ -68,8 +83,8 @@ olmo-eval 作为模型开发循环中的评估工作台，其核心价值在于�
 ### 相关文章
 
 - [DeepClaude集成DeepSeek V4 Pro代理循环，成本降至1/17]({{< relref "posts/20260504-hacker_news-deepclaude-claude-code-agent-loop-with-deepseek-v4-0.md" >}})
-- [OpenAI 收购 Astral 布局 Python 开发工具]({{< relref "posts/20260320-blogs_podcasts-openai-to-acquire-astral-10.md" >}})
+- [OpenAI 收购 Astral 布局 Python 开发工具]({{< relref "posts/20260319-blogs_podcasts-openai-to-acquire-astral-6.md" >}})
 - [Anthropic收购API开发平台Stainless]({{< relref "posts/20260518-hacker_news-anthropic-acquires-stainless-0.md" >}})
-- [Show HN: Emdash – 开源智能体开发环境]({{< relref "posts/20260224-hacker_news-show-hn-emdash-open-source-agentic-development-env-10.md" >}})
-- [AI工程核心辩论：Harness Engineering是否成立]({{< relref "posts/20260306-blogs_podcasts-ainews-is-harness-engineering-real-10.md" >}})
+- [Show HN: Emdash – 开源智能体开发环境]({{< relref "posts/20260224-hacker_news-show-hn-emdash-open-source-agentic-development-env-15.md" >}})
+- [AI工程核心辩论：Harness Engineering是否成立]({{< relref "posts/20260305-blogs_podcasts-ainews-is-harness-engineering-real-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

@@ -1,12 +1,29 @@
 ---
-title: "🎭LLM驱动的交互式叙事设计：Dramamancer案例研究！🚀"
-date: 2026-01-27T23:10:51+08:00
+title: 🎭LLM驱动的交互式叙事设计：Dramamancer案例研究！🚀
+date: 2026-01-27 23:10:51+08:00
 draft: false
-entry_kind: "auto"
-tags: ["LLM", "交互式叙事", "游戏设计", "Dramamancer", "生成式AI", "玩家自由度", "叙事连贯性", "案例研究"]
-categories: ["大模型", "产品与创业"]
+entry_kind: auto
+tags:
+- LLM
+- 交互式叙事
+- 游戏设计
+- Dramamancer
+- 生成式 AI
+- 玩家自由度
+- 叙事连贯性
+- 案例研究
+categories:
+- 大模型
+- 产品与创业
 source: arxiv
 external_url: http://arxiv.org/abs/2601.18785v1
+scenarios: []
+aliases:
+- /posts/20260128-arxiv_ai-design-techniques-for-llm-powered-interactive-stor-6/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 📚 🎭LLM驱动的交互式叙事设计：Dramamancer案例研究！🚀
@@ -252,7 +269,6 @@ Dramamancer推进的主要是**“工程方法”**。它并没有在理论上�
 **总结**：Dramamancer是一篇极具实践价值的论文，它为构建基于LLM的互动娱乐系统提供了宝贵的**设计模式**和**架构蓝图**，是连接AI技术与人文艺术的重要桥梁。
 
 ---
-## ✅ 研究最佳实践
 
 ## 最佳实践指南：基于LLM的交互式叙事设计
 
@@ -328,7 +344,6 @@ LLM生成的内容偶尔会出现逻辑矛盾或幻觉。最佳实践是在生�
 - 🛠️ **建立迭代式“沙盒”开发流程**：交互式叙事系统的设计是一个非线性的循环过程，需要通过不断的 Prompt 调优（如调整温度参数和角色人设）来平衡模型的创造力与稳定性。
 
 ---
-## 🗺️ 学习路径
 
 ## 学习路径：基于 LLM 的交互式叙事设计技术（以 Dramamancer 系统为例）
 

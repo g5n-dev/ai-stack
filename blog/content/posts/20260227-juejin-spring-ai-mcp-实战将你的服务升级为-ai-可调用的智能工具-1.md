@@ -22,6 +22,10 @@ external_url: https://juejin.cn/post/7611064285587128347
 scenarios:
 - AI/ML项目
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Spring AI MCP 实战：将服务升级为 AI 可调用工具
@@ -202,8 +206,8 @@ MCP Server 可以独立部署，也可以与现有的 Spring Boot Web 应用共�
 
 ### 相关文章
 
-- [Spring AI 多模态实战：构建图像理解应用]({{< relref "posts/20260219-juejin-spring-ai-多模态实战手把手教你构建图像理解应用-3.md" >}})
+- [Spring AI 多模态实战：构建图像理解应用]({{< relref "posts/20260219-juejin-spring-ai-多模态实战手把手教你构建图像理解应用-0.md" >}})
 - [Spring AI 结构化输出转换器实战：告别字符串解析，拥抱类型安全]({{< relref "posts/20260218-juejin-spring-ai-结构化输出转换器实战告别字符串解析拥抱类型安全-4.md" >}})
 - [Spring AI MCP 结合 WebFlux SSE 构建 AI 天气助手]({{< relref "posts/20260222-juejin-spring-ai-mcp-之-sse-webflux-实战从零构建-ai-天气助手-4.md" >}})
-- [Ghidra MCP Server：集成110项工具的AI逆向工程辅助环境]({{< relref "posts/20260204-hacker_news-show-hn-ghidra-mcp-server-110-tools-for-ai-assiste-10.md" >}})
-- [Ghidra MCP Server：集成110款工具实现AI辅助逆向工程]({{< relref "posts/20260204-hacker_news-show-hn-ghidra-mcp-server-110-tools-for-ai-assiste-14.md" >}})
+- [Ghidra MCP Server：集成110项工具的AI逆向工程辅助环境]({{< relref "posts/20260204-hacker_news-show-hn-ghidra-mcp-server-110-tools-for-ai-assiste-1.md" >}})
+- [Ghidra MCP Server：集成110款工具实现AI辅助逆向工程]({{< relref "posts/20260204-hacker_news-show-hn-ghidra-mcp-server-110-tools-for-ai-assiste-1.md" >}})

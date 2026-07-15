@@ -21,6 +21,12 @@ description: '**LoRA-Pre：通过低秩近似优化动量以提升大模型训�
 external_url: http://arxiv.org/abs/2602.24283v1
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260303-arxiv_ai-taming-momentum-rethinking-optimizer-states-throug-4/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 通过低秩近似优化大模型动量状态以降低显存占用
@@ -132,9 +138,7 @@ LoRA-Pre 通过低秩近似成功“驯服”了动量带来的内存负担，�
 
 ---
 
-### 深入分析报告：通过低秩近似重塑优化器状态
 
-### 1. 研究背景与问题
 
 ### 核心问题
 本研究致力于解决现代深度学习优化器（特别是 Adam 及其变体）在训练大型语言模型时面临的**内存墙**问题。具体而言，优化器为了维持一阶和二阶动量，需要存储与模型参数同等规模的额外状态，这在大模型场景下构成了巨大的显存开销。
@@ -151,7 +155,6 @@ LoRA-Pre 通过低秩近似成功“驯服”了动量带来的内存负担，�
 ### 重要性
 LoRA-Pre 的提出具有重要意义，因为它试图打破“动量必须全秩存储”的传统假设。如果优化器状态可以被压缩为低秩形式，我们可以在不牺牲（甚至提升）收敛速度的前提下，成倍地减少训练显存占用，使得在消费级显卡上训练大模型或在工业级硬件上训练超大模型成为可能。
 
-### 2. 核心方法与创新
 
 ### 核心方法：LoRA-Pre
 LoRA-Pre 是一种新型的低秩优化器。其核心思想是**将动量的指数移动平均（EMA）重新构架为在线梯度流训练下的线性回归器**。
@@ -170,7 +173,6 @@ LoRA-Pre 是一种新型的低秩优化器。其核心思想是**将动量的指
 *   **秩效率**：实验表明仅需基线 1/8 的秩即可达到相当效果，这意味着显存占用可进一步降低。
 *   **性能提升**：在微调场景下，LoRA-Pre 不仅节省显存，还显著提升了性能（在 Llama-2-7B 上提升 6.17 点），说明低秩约束可能起到了正则化的作用，防止过拟合。
 
-### 3. 理论基础
 
 ### 理论依据：动量即回归
 论文的核心理论建立在以下洞察之上：
@@ -184,7 +186,6 @@ LoRA-Pre 是一种新型的低秩优化器。其核心思想是**将动量的指
 ### 理论贡献
 该研究挑战了优化器设计的直觉：通常认为动量需要捕捉所有维度的历史梯度信息。LoRA-Pre 从理论上证明了，梯度的有效信息往往流形分布于一个低维子空间中，因此动量矩阵本身具有低秩特性。
 
-### 7. 学习建议
 
 ### 适合读者
 *   从事大模型训练与优化的算法工程师。
@@ -440,8 +441,8 @@ Transformer 模型中，注意力机制的 Query, Key, Value (QKV) 投影以及 
 
 ### 相关文章
 
-- [挖掘模型仓库中的隐藏价值]({{< relref "posts/20260201-arxiv_ai-discovering-hidden-gems-in-model-repositories-1.md" >}})
+- [挖掘模型仓库中的隐藏价值]({{< relref "posts/20260130-arxiv_ai-discovering-hidden-gems-in-model-repositories-1.md" >}})
 - [TEON：张量化正交化技术优化大语言模型预训练]({{< relref "posts/20260202-arxiv_ai-teon-tensorized-orthonormalization-beyond-layer-wi-9.md" >}})
-- [TEON：张量化正交化方法优化大语言模型预训练]({{< relref "posts/20260203-arxiv_ai-teon-tensorized-orthonormalization-beyond-layer-wi-9.md" >}})
+- [TEON：张量化正交化方法优化大语言模型预训练]({{< relref "posts/20260202-arxiv_ai-teon-tensorized-orthonormalization-beyond-layer-wi-9.md" >}})
 - [权重衰减提升语言模型可塑性]({{< relref "posts/20260212-arxiv_ai-weight-decay-improves-language-model-plasticity-9.md" >}})
-- [权重衰减提升语言模型可塑性]({{< relref "posts/20260213-arxiv_ai-weight-decay-improves-language-model-plasticity-9.md" >}})
+- [权重衰减提升语言模型可塑性]({{< relref "posts/20260212-arxiv_ai-weight-decay-improves-language-model-plasticity-9.md" >}})

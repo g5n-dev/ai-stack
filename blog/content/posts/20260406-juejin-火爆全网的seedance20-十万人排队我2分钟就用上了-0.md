@@ -1,14 +1,29 @@
 ---
-title: "SeedDance2.0快速上手：跳过万人排队，两分钟体验AI视频生成"
-date: 2026-04-06T23:04:44+08:00
+title: SeedDance2.0快速上手：跳过万人排队，两分钟体验AI视频生成
+date: 2026-04-06 23:04:44+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI视频生成", "SeedDance2.0", "快速上手", "工具教程", "AIGC", "创作者工具", "视频生成", "使用教程"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- AI视频生成
+- SeedDance2.0
+- 快速上手
+- 工具教程
+- AIGC
+- 创作者工具
+- 视频生成
+- 使用教程
+categories:
+- 大模型
+- AI 工程
 source: juejin
-description: "Seedance2.0近日在网络上引发热议，因其能够快速生成高质量AI视频，吸引了近十万用户排队等待。袋鼠帝本人在看到B站某位AI视频创作者分享的精细工作流后，虽然承认该工作流产出的视频画面精美、运镜流畅，却感到操作过程复杂、门槛高。随后，他仅用两分钟便成功上手Seedance2.0，体验到其极简的操作界面和即时的渲染"
+description: Seedance2.0近日在网络上引发热议，因其能够快速生成高质量AI视频，吸引了近十万用户排队等待。袋鼠帝本人在看到B站某位AI视频创作者分享的精细工作流后，虽然承认该工作流产出的视频画面精美、运镜流畅，却感到操作过程复杂、门槛高。随后，他仅用两分钟便成功上手Seedance2.0，体验到其极简的操作界面和即时的渲染
 external_url: https://juejin.cn/post/7625209638578552851
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # SeedDance2.0快速上手：跳过万人排队，两分钟体验AI视频生成
@@ -60,7 +75,7 @@ Seedance2.0近日在网络上引发热议，因其能够快速生成高质量AI�
 
 - [COMIC：智能体驱动的素描喜剧生成框架]({{< relref "posts/20260312-arxiv_ai-comic-agentic-sketch-comedy-generation-0.md" >}})
 - [PrevizWhiz：结合粗略3D场景与2D视频引导生成视频预演]({{< relref "posts/20260204-arxiv_ai-previzwhiz-combining-rough-3d-scenes-and-2d-video--4.md" >}})
-- [PrevizWhiz：结合粗略3D场景与2D视频引导生成式预演]({{< relref "posts/20260205-arxiv_ai-previzwhiz-combining-rough-3d-scenes-and-2d-video--4.md" >}})
-- [COMIC：基于智能体的素描喜剧生成框架]({{< relref "posts/20260313-arxiv_ai-comic-agentic-sketch-comedy-generation-0.md" >}})
+- [PrevizWhiz：结合粗略3D场景与2D视频引导生成式预演]({{< relref "posts/20260204-arxiv_ai-previzwhiz-combining-rough-3d-scenes-and-2d-video--4.md" >}})
+- [COMIC：基于智能体的素描喜剧生成框架]({{< relref "posts/20260312-arxiv_ai-comic-agentic-sketch-comedy-generation-0.md" >}})
 - [🎬 Higgsfield：让简单idea秒变电影级社媒大片！✨]({{< relref "posts/20260125-blogs_podcasts-how-higgsfield-turns-simple-ideas-into-cinematic-s-5.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

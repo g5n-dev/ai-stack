@@ -1,14 +1,30 @@
 ---
-title: "智谱AI发布ZCode对标Claude Code"
-date: 2026-07-01T21:59:10+08:00
+title: 智谱AI发布ZCode对标Claude Code
+date: 2026-07-01 21:59:10+08:00
 draft: false
-entry_kind: "auto"
-tags: ["ZCode", "智谱AI", "Claude Code", "AI编程", "代码助手", "GLM", "大模型", "开发工具"]
-categories: ["大模型", "开发工具"]
+entry_kind: auto
+tags:
+- ZCode
+- 智谱AI
+- Claude Code
+- AI 编程
+- 代码助手
+- GLM
+- 大模型
+- 开发工具
+categories:
+- 大模型
+- 开发工具
 source: hacker_news
-description: "ZCode 是由 GLM 团队推出的智能编程助手，旨在将大规模语言模型的能力直接嵌入代码编辑流程。它通过上下文感知、实时代码补全和自动化重构等功能，帮助开发者快速完成从需求到实现的全链路转化。本文将详细解析 ZCode 的核心特性、使用场景以及与传统 IDE 插件的对比，为技术团队提供选型参考。"
+description: ZCode 是由 GLM 团队推出的智能编程助手，旨在将大规模语言模型的能力直接嵌入代码编辑流程。它通过上下文感知、实时代码补全和自动化重构等功能，帮助开发者快速完成从需求到实现的全链路转化。本文将详细解析
+  ZCode 的核心特性、使用场景以及与传统 IDE 插件的对比，为技术团队提供选型参考。
 external_url: https://zcode.z.ai/cn
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 智谱AI发布ZCode对标Claude Code
@@ -64,7 +80,7 @@ ZCode 是由 GLM 团队推出的智能编程助手，旨在将大规模语言模
 
 - [Codex多场景编程能力解析]({{< relref "posts/20260416-hacker_news-codex-for-almost-everything-0.md" >}})
 - [Tide Commander：多AI编程代理的3D战场可视化工具]({{< relref "posts/20260217-juejin-tide-commander-一个用3d战场管理多个ai编程agent的可视化工具claude-co-3.md" >}})
-- [Anthropic 否认 Claude Code 用户成本高达五千美元]({{< relref "posts/20260310-hacker_news-no-it-doesnt-cost-anthropic-5k-per-claude-code-use-14.md" >}})
+- [Anthropic 否认 Claude Code 用户成本高达五千美元]({{< relref "posts/20260310-hacker_news-no-it-doesnt-cost-anthropic-5k-per-claude-code-use-8.md" >}})
 - [Her：Claude Code会话分析工具]({{< relref "posts/20260607-blogs_podcasts-her-हर-a-detective-for-your-claude-code-sessions-0.md" >}})
 - [65行Markdown打造Claude Code热门项目]({{< relref "posts/20260212-hacker_news-65-lines-of-markdown-a-claude-code-sensation-2.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

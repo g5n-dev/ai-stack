@@ -21,6 +21,15 @@ description: Unsloth Dynamic 2.0 引入了对 GGUF 格式的支持，这一更�
 external_url: https://unsloth.ai/docs/basics/unsloth-dynamic-2.0-ggufs
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260228-hacker_news-unsloth-dynamic-20-ggufs-14/
+- /posts/20260228-hacker_news-unsloth-dynamic-20-ggufs-15/
+- /posts/20260228-hacker_news-unsloth-dynamic-20-ggufs-3/
+- /posts/20260228-hacker_news-unsloth-dynamic-20-ggufs-9/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Unsloth推出Dynamic 2.0 GGUF模型

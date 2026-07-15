@@ -22,6 +22,10 @@ external_url: https://juejin.cn/post/7617410783702777899
 scenarios:
 - AI/ML项目
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 基于 LangChain.js 与 ReAct 循环实现 AI 编程助手
@@ -191,7 +195,7 @@ LangChain.js 的学习曲线属于中等偏上。虽然它封装了很多大模�
 ### 相关文章
 
 - [LangChain.js 快速上手：模型接入与流式输出实现]({{< relref "posts/20260218-juejin-langchainjs-快速上手指南模型接入流式输出打造基础-2.md" >}})
-- [工程效能实践：在 Agent 优先架构中集成 Codex]({{< relref "posts/20260212-blogs_podcasts-harness-engineering-leveraging-codex-in-an-agent-f-10.md" >}})
-- [利用 Codex 构建以 Agent 为中心的工程体系]({{< relref "posts/20260212-blogs_podcasts-harness-engineering-leveraging-codex-in-an-agent-f-5.md" >}})
-- [利用 Codex 构建以 Agent 为中心的工程化实践]({{< relref "posts/20260212-blogs_podcasts-harness-engineering-leveraging-codex-in-an-agent-f-9.md" >}})
+- [工程效能实践：在 Agent 优先架构中集成 Codex]({{< relref "posts/20260211-blogs_podcasts-harness-engineering-leveraging-codex-in-an-agent-f-5.md" >}})
+- [利用 Codex 构建以 Agent 为中心的工程体系]({{< relref "posts/20260211-blogs_podcasts-harness-engineering-leveraging-codex-in-an-agent-f-5.md" >}})
+- [利用 Codex 构建以 Agent 为中心的工程化实践]({{< relref "posts/20260211-blogs_podcasts-harness-engineering-leveraging-codex-in-an-agent-f-5.md" >}})
 - [CodeFlicker 接入 MiniMax M2.5 与 GLM-5：降本增效，提升 Agent 效率]({{< relref "posts/20260221-juejin-成本大幅降低agent效率显著提升codeflicker-接入-minimax-m25-与-glm--0.md" >}})

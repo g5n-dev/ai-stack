@@ -21,6 +21,12 @@ description: 以下是对该内容的简洁总结： **核心事件与地位** 2
 external_url: https://juejin.cn/post/7607358297457459200
 scenarios:
 - AI/ML项目
+aliases:
+- /posts/20260220-juejin-混合精度npu爱芯元智如何登顶全球中高端边缘ai芯片市场-1/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 爱芯元智混合精度NPU助其登顶全球中高端边缘AI芯片市场
@@ -173,8 +179,8 @@ scenarios:
 
 ### 相关文章
 
-- [ElevenLabs融资11亿美元估值，Cerebras获23亿美元估值及音频与芯片代理进展]({{< relref "posts/20260206-blogs_podcasts-ainews-elevenlabs-500m-series-d-at-11b-cerebras-1b-4.md" >}})
+- [ElevenLabs融资11亿美元估值，Cerebras获23亿美元估值及音频与芯片代理进展]({{< relref "posts/20260205-blogs_podcasts-ainews-elevenlabs-500m-series-d-at-11b-cerebras-1b-0.md" >}})
 - [ElevenLabs获5亿美元融资，Cerebras估值达230亿美元]({{< relref "posts/20260205-blogs_podcasts-ainews-elevenlabs-500m-series-d-at-11b-cerebras-1b-0.md" >}})
-- [ElevenLabs获5亿美元融资，Cerebras估值达230亿美元]({{< relref "posts/20260205-blogs_podcasts-ainews-elevenlabs-500m-series-d-at-11b-cerebras-1b-2.md" >}})
-- [ElevenLabs 融资 5 亿美元，Cerebras 估值 230 亿美元]({{< relref "posts/20260205-blogs_podcasts-ainews-elevenlabs-500m-series-d-at-11b-cerebras-1b-3.md" >}})
-- [ElevenLabs融资5亿美元估值110亿美元，Cerebras融资10亿美元]({{< relref "posts/20260205-blogs_podcasts-ainews-elevenlabs-500m-series-d-at-11b-cerebras-1b-4.md" >}})
+- [ElevenLabs获5亿美元融资，Cerebras估值达230亿美元]({{< relref "posts/20260205-blogs_podcasts-ainews-elevenlabs-500m-series-d-at-11b-cerebras-1b-0.md" >}})
+- [ElevenLabs 融资 5 亿美元，Cerebras 估值 230 亿美元]({{< relref "posts/20260205-blogs_podcasts-ainews-elevenlabs-500m-series-d-at-11b-cerebras-1b-0.md" >}})
+- [ElevenLabs融资5亿美元估值110亿美元，Cerebras融资10亿美元]({{< relref "posts/20260205-blogs_podcasts-ainews-elevenlabs-500m-series-d-at-11b-cerebras-1b-0.md" >}})

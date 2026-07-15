@@ -21,6 +21,10 @@ description: 以下是基于您提供内容的总结： **Dify 构建 FE 工作�
 external_url: https://juejin.cn/post/7611354028866011151
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Dify 实战：构建可复用前端 AI 工作流与标准化编码流程
@@ -182,7 +186,7 @@ Dify 的工作流输入变量支持多种数据类型。前端在构建请求体
 ### 相关文章
 
 - [Claude 推出代码智能体团队协作模式]({{< relref "posts/20260205-hacker_news-claude-code-agent-teams-3.md" >}})
-- [编排多会话 Claude Code 团队协作]({{< relref "posts/20260205-hacker_news-orchestrate-teams-of-claude-code-sessions-2.md" >}})
-- [编排多会话 Claude Code 团队协作]({{< relref "posts/20260205-hacker_news-orchestrate-teams-of-claude-code-sessions-3.md" >}})
-- [编排多会话 Claude Code 团队协作]({{< relref "posts/20260205-hacker_news-orchestrate-teams-of-claude-code-sessions-5.md" >}})
-- [编排多会话 Claude Code 团队协作]({{< relref "posts/20260206-hacker_news-orchestrate-teams-of-claude-code-sessions-14.md" >}})
+- [编排多会话 Claude Code 团队协作]({{< relref "posts/20260205-hacker_news-claude-code-agent-teams-3.md" >}})
+- [编排多会话 Claude Code 团队协作]({{< relref "posts/20260205-hacker_news-claude-code-agent-teams-3.md" >}})
+- [编排多会话 Claude Code 团队协作]({{< relref "posts/20260205-hacker_news-claude-code-agent-teams-3.md" >}})
+- [编排多会话 Claude Code 团队协作]({{< relref "posts/20260205-hacker_news-claude-code-agent-teams-3.md" >}})

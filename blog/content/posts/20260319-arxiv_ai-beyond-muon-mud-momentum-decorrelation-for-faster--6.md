@@ -21,6 +21,12 @@ description: MUD优化器技术总结 研究背景 当前大语言模型训练�
 external_url: http://arxiv.org/abs/2603.17970v1
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260320-arxiv_ai-beyond-muon-mud-momentum-decorrelation-for-faster--6/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # MUD优化器通过动量去相关加速Transformer训练
@@ -87,7 +93,6 @@ scenarios:
 - **内步解释**：对应Gram矩阵的对称Gauss-Seidel预条件处理
 - **收敛性保证**：可证明在不动点附近具有二次局部收敛速度
 
-### 1. 研究背景与问题
 
 ### 核心问题
 
@@ -105,7 +110,6 @@ Muon的核心瓶颈在于极分解的计算复杂度。极分解需要多次大�
 
 随着模型规模突破万亿参数，训练效率的微小提升都能带来显著的计算成本节省。若能在保持收敛质量的前提下降低10%-50%的wall-clock时间，其产业价值不言而喻。
 
-### 2. 核心方法与创新
 
 ### 核心方法
 
@@ -127,7 +131,6 @@ MUD（矩动量去相关）采用三角白化策略替代极分解。其核心�
 
 行正交矩阵构成MUD映射的不动点集合，这一特性保证了收敛目标与Muon的一致性，同时提供了可验证的收敛判据。
 
-### 3. 理论基础
 
 ### 核心假设
 
@@ -148,7 +151,6 @@ $$M_{new} = T(M) = L(MM^T)^{-1/2}M$$
 
 首次建立了三角白化与动量去相关之间的显式联系，为后续研究提供了新的分析视角。
 
-### 7. 学习建议
 
 ### 适合读者
 
@@ -334,8 +336,8 @@ MUD（Momemtum Decorrelation）是一种专门为 Transformer 训练设计的新
 
 ### 相关文章
 
-- [通过低秩近似优化大模型动量状态以降低显存占用]({{< relref "posts/20260303-arxiv_ai-taming-momentum-rethinking-optimizer-states-throug-4.md" >}})
+- [通过低秩近似优化大模型动量状态以降低显存占用]({{< relref "posts/20260302-arxiv_ai-taming-momentum-rethinking-optimizer-states-throug-4.md" >}})
 - [FISMO：基于Fisher结构的动量正交化优化器]({{< relref "posts/20260130-arxiv_ai-fismo-fisher-structured-momentum-orthogonalized-op-4.md" >}})
-- [Claude Opus 4.6 发布]({{< relref "posts/20260206-hacker_news-claude-opus-46-3.md" >}})
+- [Claude Opus 4.6 发布]({{< relref "posts/20260205-hacker_news-claude-opus-46-2.md" >}})
 - [ARO：面向大模型矩阵优化的新视角]({{< relref "posts/20260210-arxiv_ai-aro-a-new-lens-on-matrix-optimization-for-large-mo-8.md" >}})
-- [OpenClaw：一个开源AI代理框架]({{< relref "posts/20260213-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-11.md" >}})
+- [OpenClaw：一个开源AI代理框架]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-0.md" >}})

@@ -1,14 +1,34 @@
 ---
-title: "推理大模型从被动求解转向主动提问"
-date: 2026-01-30T23:03:03+08:00
+title: 推理大模型从被动求解转向主动提问
+date: 2026-01-30 23:03:03+08:00
 draft: false
-entry_kind: "auto"
-tags: ["推理模型", "主动交互", "思维链", "不确定性感知", "模型微调", "RLHF", "数学推理", "代码生成"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- 推理模型
+- 主动交互
+- 思维链
+- 不确定性感知
+- 模型微调
+- RLHF
+- 数学推理
+- 代码生成
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "**标题：边问边推理：将推理大模型从被动解题者转变为主动询问者** **核心问题：** 现有的推理导向大语言模型虽然利用思维链取得了进展，但仍受限于“盲目自我思考”的范式。即在关键信息缺失或模糊时，模型仍倾向于进行大量的内部推理，而不是主动寻求澄清，这导致了解决问题的局限性。 **提出的方案：** 论文提出了**主动交"
+description: '**标题：边问边推理：将推理大模型从被动解题者转变为主动询问者** **核心问题：** 现有的推理导向大语言模型虽然利用思维链取得了进展，但仍受限于“盲目自我思考”的范式。即在关键信息缺失或模糊时，模型仍倾向于进行大量的内部推理，而不是主动寻求澄清，这导致了解决问题的局限性。
+  **提出的方案：** 论文提出了**主动交'
 external_url: http://arxiv.org/abs/2601.22139v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+aliases:
+- /posts/20260131-arxiv_ai-reasoning-while-asking-transforming-reasoning-larg-9/
+- /posts/20260201-arxiv_ai-reasoning-while-asking-transforming-reasoning-larg-9/
+- /posts/20260202-arxiv_ai-reasoning-while-asking-transforming-reasoning-larg-9/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 推理大模型从被动求解转向主动提问
@@ -260,7 +280,6 @@ PIR最可能在以下情况失效：
 *   **理论推断：** 这种方法能“泛化”到真实人类交互
 
 ---
-## 研究最佳实践
 
 ## 最佳实践指南
 
@@ -363,7 +382,6 @@ PIR最可能在以下情况失效：
 - 提出的方法具有通用性，不仅限于数学问题，还可扩展至需要多轮交互和信息补全的逻辑推理及代码生成场景。
 
 ---
-## 学习路径
 
 ## 学习路径
 
@@ -568,9 +586,9 @@ PIR最可能在以下情况失效：
 
 ### 相关文章
 
-- [🚀GPT-OSS智能体RL训练解密！从0到1实战复盘🔥]({{< relref "posts/20260127-blogs_podcasts-unlocking-agentic-rl-training-for-gpt-oss-a-practi-2.md" >}})
-- [让 Claude 编写 CUDA 内核并指导开源模型]({{< relref "posts/20260129-blogs_podcasts-we-got-claude-to-build-cuda-kernels-and-teach-open-8.md" >}})
+- [🚀GPT-OSS智能体RL训练解密！从0到1实战复盘🔥]({{< relref "posts/20260127-blogs_podcasts-unlocking-agentic-rl-training-for-gpt-oss-a-practi-0.md" >}})
+- [让 Claude 编写 CUDA 内核并指导开源模型]({{< relref "posts/20260129-blogs_podcasts-we-got-claude-to-build-cuda-kernels-and-teach-open-6.md" >}})
 - [🔥Qwen3-Max-Thinking！深度推理颠覆想象！]({{< relref "posts/20260126-hacker_news-qwen3-max-thinking-1.md" >}})
-- [🔥LLM序列标注新突破！揭秘高效策略，性能飙升！]({{< relref "posts/20260127-arxiv_ai-strategies-for-span-labeling-with-large-language-m-9.md" >}})
-- [阿里Qwen3-Max-Thinking深度思考模型！震撼发布🔥]({{< relref "posts/20260127-hacker_news-qwen3-max-thinking-19.md" >}})
+- [🔥LLM序列标注新突破！揭秘高效策略，性能飙升！]({{< relref "posts/20260126-arxiv_ai-strategies-for-span-labeling-with-large-language-m-9.md" >}})
+- [阿里Qwen3-Max-Thinking深度思考模型！震撼发布🔥]({{< relref "posts/20260126-hacker_news-qwen3-max-thinking-1.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

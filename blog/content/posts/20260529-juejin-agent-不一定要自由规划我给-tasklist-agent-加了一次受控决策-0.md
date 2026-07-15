@@ -1,14 +1,31 @@
 ---
-title: "Tasklist Agent受控决策实现方法"
-date: 2026-05-29T08:16:20+08:00
+title: Tasklist Agent受控决策实现方法
+date: 2026-05-29 08:16:20+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Agent设计", "受控决策", "状态机", "白名单过滤", "AI Mind", "任务调度", "LLM应用", "安全性"]
-categories: ["AI 工程"]
+entry_kind: auto
+tags:
+- Agent设计
+- 受控决策
+- 状态机
+- 白名单过滤
+- AI Mind
+- 任务调度
+- LLM 应用
+- 安全性
+categories:
+- AI 工程
 source: juejin
-description: "背景 固定流程的 Tasklist Agent 只能按预设步骤执行，缺乏灵活性。为在保持安全的前提下引入有限决策，团队在 AI Mind v0.1.1 中进行改造。 改造思路 - 将可选动作抽象为白名单，模型只能在白名单中选择下一步方向。 - 引入运行时状态机，对状态转换进行监控，确保不越界。 实现细节 - 在模型输出"
+description: 背景 固定流程的 Tasklist Agent 只能按预设步骤执行，缺乏灵活性。为在保持安全的前提下引入有限决策，团队在 AI Mind
+  v0.1.1 中进行改造。 改造思路 - 将可选动作抽象为白名单，模型只能在白名单中选择下一步方向。 - 引入运行时状态机，对状态转换进行监控，确保不越界。 实现细节
+  - 在模型输出
 external_url: https://juejin.cn/post/7645147525191696422
-scenarios: ["AI/ML项目", "大语言模型"]
+scenarios:
+- AI/ML项目
+- 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Tasklist Agent受控决策实现方法
@@ -117,9 +134,9 @@ If you actually need a different translation (e.g., to another language) or want
 
 ### 相关文章
 
-- [为何推出科学领域AI播客以及工程师应关注的原因]({{< relref "posts/20260129-blogs_podcasts-its-time-to-science-2.md" >}})
+- [为何推出科学领域AI播客以及工程师应关注的原因]({{< relref "posts/20260129-blogs_podcasts-its-time-to-science-0.md" >}})
 - [Claude Composer：AI 编排多 Agent 协作完成复杂任务]({{< relref "posts/20260206-hacker_news-claude-composer-9.md" >}})
-- [Claude Composer：AI 编排多智能体工作流]({{< relref "posts/20260207-hacker_news-claude-composer-18.md" >}})
+- [Claude Composer：AI 编排多智能体工作流]({{< relref "posts/20260206-hacker_news-claude-composer-9.md" >}})
 - [AI编程代理取代传统开发框架的实践]({{< relref "posts/20260207-hacker_news-coding-agents-have-replaced-every-framework-i-used-8.md" >}})
-- [LinqAlpha利用Amazon Bedrock构建投资思路压力测试智能体]({{< relref "posts/20260212-blogs_podcasts-how-linqalpha-assesses-investment-theses-using-dev-6.md" >}})
+- [LinqAlpha利用Amazon Bedrock构建投资思路压力测试智能体]({{< relref "posts/20260211-blogs_podcasts-how-linqalpha-assesses-investment-theses-using-dev-3.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

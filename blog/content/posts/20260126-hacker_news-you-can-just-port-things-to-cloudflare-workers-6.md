@@ -1,12 +1,26 @@
 ---
-title: "✨无需重构！直接将应用迁移至Cloudflare Workers！🚀"
-date: 2026-01-26T12:12:08+08:00
+title: ✨无需重构！直接将应用迁移至Cloudflare Workers！🚀
+date: 2026-01-26 12:12:08+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Cloudflare", "Workers", "边缘计算", "应用迁移", "Serverless", "Node.js", "WebAssembly", "性能优化"]
-categories: ["系统与基础设施", "后端"]
+entry_kind: auto
+tags:
+- Cloudflare
+- Workers
+- 边缘计算
+- 应用迁移
+- Serverless
+- Node.js
+- WebAssembly
+- 性能优化
+categories:
+- 系统与基础设施
+- 后端
 source: hacker_news
 external_url: https://sigh.dev/posts/you-can-just-port-things-to-cloudflare-workers
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 📰 ✨无需重构！直接将应用迁移至Cloudflare Workers！🚀
@@ -196,7 +210,6 @@ Optimizely 推出了基于 **Cloudflare Workers** 的边缘分流解决方案。
 - **成本节省**：边缘计算减轻了后端服务器的负载，减少了带宽和计算资源消耗。
 
 ---
-## ✅ 最佳实践
 
 ## 最佳实践指南
 

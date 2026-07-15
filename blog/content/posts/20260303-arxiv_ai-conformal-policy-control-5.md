@@ -21,6 +21,12 @@ description: '**共形策略控制** 本文介绍了一种名为“共形策略�
 external_url: http://arxiv.org/abs/2603.02196v1
 scenarios:
 - AI/ML项目
+aliases:
+- /posts/20260304-arxiv_ai-conformal-policy-control-5/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Conformal Policy Control：一种基于保形预测的策略控制方法
@@ -112,9 +118,7 @@ scenarios:
 
 ---
 
-### 论文深入分析：Conformal Policy Control
 
-### 1. 研究背景与问题
 
 ### 核心问题
 在高风险或安全敏感的决策环境中（如自动驾驶、医疗治疗、生物工程），智能体面临一个根本性的困境：**探索-利用困境与安全约束之间的冲突**。
@@ -128,7 +132,6 @@ scenarios:
 2.  **基于惩罚的RL**：通过在目标函数中加入约束违反的惩罚来鼓励安全。但这种方法对惩罚系数极其敏感，且无法保证在未知状态下的安全性（即“累积惩罚”不等于“零事故”）。
 3.  **离线RL的保守性**：现有的离线RL算法往往过度保守，为了安全牺牲了太多的性能提升，导致智能体在部署后几乎无法改进。
 
-### 2. 核心方法与创新
 
 ### 核心方法：共形策略控制
 CPC 的核心思想是将**共形预测**这一统计学工具应用于策略优化。它不试图对环境动力学建模，而是利用一个**已知的、安全的参考策略**来校准一个新的、经过优化的策略。
@@ -149,7 +152,6 @@ CPC 的核心思想是将**共形预测**这一统计学工具应用于策略优
 *   **非参数化**：不需要复杂的超参数调整，唯一的超参数是风险容忍度 $\delta$，具有明确的物理意义。
 *   **适应性**：随着新策略的表现趋于稳定或环境变化，可以通过更新校准数据集来动态调整安全边界。
 
-### 3. 理论基础
 
 ### 理论依据：共形预测
 CPC 的理论基础源于共形预测。这是一种用于构建预测集的框架，能够在无需强分布假设的情况下，提供边际覆盖保证。
@@ -166,7 +168,6 @@ $$ \hat{q} = \text{quantile}(\{A(s_i, a_i)\}_{i=1}^n, 1-\delta) $$
 $$ \mathbb{P}(\text{Violation}) \leq \delta $$
 这意味着，无论新策略 $\pi_{\text{new}}$ 是如何设计的（哪怕是随机的），只要经过 CPC 的过滤，其长期违反约束的概率上限是可控的。这一理论贡献打破了传统控制理论中对模型精确性的依赖。
 
-### 7. 学习建议
 
 ### 适合读者
 *   从事强化学习、安全 AI、运筹学研究的硕博士生。
@@ -429,6 +430,6 @@ Conformal Policy Control 是将共形预测应用于 RL 策略以进行安全性
 
 - [非单调损失函数的保形风险控制方法]({{< relref "posts/20260224-arxiv_ai-conformal-risk-control-for-non-monotonic-losses-4.md" >}})
 - [基于预测集的最优决策方法]({{< relref "posts/20260203-arxiv_ai-optimal-decision-making-based-on-prediction-sets-7.md" >}})
-- [AI 基准测试新进展：Game Arena 推进评估方法]({{< relref "posts/20260203-hacker_news-advancing-ai-benchmarking-with-game-arena-14.md" >}})
+- [AI 基准测试新进展：Game Arena 推进评估方法]({{< relref "posts/20260202-hacker_news-advancing-ai-benchmarking-with-game-arena-2.md" >}})
 - [Agent World Model: Infinity Synthetic Environments for]({{< relref "posts/20260211-arxiv_ai-agent-world-model-infinity-synthetic-environments--7.md" >}})
 - [部分可观测平均场博弈的循环结构策略梯度算法]({{< relref "posts/20260224-arxiv_ai-recurrent-structural-policy-gradient-for-partially-6.md" >}})

@@ -22,6 +22,10 @@ external_url: https://arxiv.org/abs/2511.04427
 scenarios:
 - AI/ML项目
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 开源项目研究：Cursor AI 以牺牲代码质量换取开发速度

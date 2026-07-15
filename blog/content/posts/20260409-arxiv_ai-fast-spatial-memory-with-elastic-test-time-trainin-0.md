@@ -1,14 +1,30 @@
 ---
-title: "弹性测试时训练实现快速空间记忆"
-date: 2026-04-09T23:49:41+08:00
+title: 弹性测试时训练实现快速空间记忆
+date: 2026-04-09 23:49:41+08:00
 draft: false
-entry_kind: "auto"
-tags: ["弹性测试时训练", "快速空间记忆", "长序列重建", "4D重建", "灾难性遗忘", "锚点状态", "指数移动平均", "计算机视觉"]
-categories: ["论文", "AI 工程"]
+entry_kind: auto
+tags:
+- 弹性测试时训练
+- 快速空间记忆
+- 长序列重建
+- 4D重建
+- 灾难性遗忘
+- 锚点状态
+- 指数移动平均
+- 计算机视觉
+categories:
+- 论文
+- AI 工程
 source: arxiv
-description: "背景与动机 大块时序测试时训练（LaCT）在长上下文三维重建上表现突出，但全塑性推理时更新容易导致灾难性遗忘和过拟合，通常只能采用覆盖全部输入的单一长块，限制了对任意长度序列的单遍处理能力。 弹性测试时训练（ETTT） 受弹性权重巩固启发，提出在每次快速权重更新时引入 Fisher 加权的弹性先验，围绕一个维护的锚状态"
+description: 背景与动机 大块时序测试时训练（LaCT）在长上下文三维重建上表现突出，但全塑性推理时更新容易导致灾难性遗忘和过拟合，通常只能采用覆盖全部输入的单一长块，限制了对任意长度序列的单遍处理能力。
+  弹性测试时训练（ETTT） 受弹性权重巩固启发，提出在每次快速权重更新时引入 Fisher 加权的弹性先验，围绕一个维护的锚状态
 external_url: http://arxiv.org/abs/2604.07350v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 弹性测试时训练实现快速空间记忆
@@ -131,8 +147,8 @@ FSM是基于ETTT架构设计的四维重建模型，能够从长观测序列中�
 ### 相关文章
 
 - [SCOPE：场景上下文增量式少样本3D分割]({{< relref "posts/20260309-arxiv_ai-scope-scene-contextualized-incremental-few-shot-3d-2.md" >}})
-- [SCOPE：场景上下文增量式少样本3D分割]({{< relref "posts/20260310-arxiv_ai-scope-scene-contextualized-incremental-few-shot-3d-2.md" >}})
+- [SCOPE：场景上下文增量式少样本3D分割]({{< relref "posts/20260309-arxiv_ai-scope-scene-contextualized-incremental-few-shot-3d-2.md" >}})
 - [LoGeR：基于混合记忆的长上下文几何重建]({{< relref "posts/20260304-arxiv_ai-loger-long-context-geometric-reconstruction-with-h-5.md" >}})
-- [LoGeR：基于混合记忆的长上下文几何重建]({{< relref "posts/20260305-arxiv_ai-loger-long-context-geometric-reconstruction-with-h-5.md" >}})
-- [SimpliHuMoN：简化人体运动预测]({{< relref "posts/20260306-arxiv_ai-simplihumon-simplifying-human-motion-prediction-0.md" >}})
+- [LoGeR：基于混合记忆的长上下文几何重建]({{< relref "posts/20260304-arxiv_ai-loger-long-context-geometric-reconstruction-with-h-5.md" >}})
+- [SimpliHuMoN：简化人体运动预测]({{< relref "posts/20260305-arxiv_ai-simplihumon-simplifying-human-motion-prediction-0.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

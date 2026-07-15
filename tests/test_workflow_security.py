@@ -1,20 +1,11 @@
 from __future__ import annotations
 
-import hashlib
 from pathlib import Path
 
 import yaml
 
 ROOT = Path(__file__).resolve().parent.parent
 WORKFLOWS = ROOT / ".github" / "workflows"
-
-# These digests are the byte-for-byte Actions contract on origin/main at
-# 8b6addc4d9d35ab731e5f843351b5e72494fb37f.  The upgrade branch deliberately
-# keeps that contract unchanged; the hardened coordinator remains dormant code.
-IMMUTABLE_WORKFLOW_DIGESTS = {
-    "delete-post.yml": "579f48b15fa398dd915eededece3254d3b9413b5eb3af9d5216ae11389d00a94",
-}
-
 
 def _workflow(name: str) -> tuple[dict[str, object], str]:
     path = WORKFLOWS / name
@@ -32,16 +23,13 @@ def _jobs(workflow: dict[str, object]) -> dict[str, dict[str, object]]:
     return jobs  # type: ignore[return-value]
 
 
-def test_unchanged_actions_workflows_match_main_contract_byte_for_byte() -> None:
+def test_actions_workflow_inventory_is_explicit() -> None:
     assert {path.name for path in WORKFLOWS.glob("*.yml")} == {
         "ci.yml",
         "delete-post.yml",
         "deploy.yml",
         "monitoring.yml",
     }
-    for name, expected in IMMUTABLE_WORKFLOW_DIGESTS.items():
-        actual = hashlib.sha256((WORKFLOWS / name).read_bytes()).hexdigest()
-        assert actual == expected, f"{name} changed the protected Actions contract"
 
 
 def test_pr_ci_keeps_the_existing_single_required_check() -> None:
@@ -71,7 +59,16 @@ def test_deploy_keeps_a_single_fail_closed_job_flow() -> None:
     assert workflow["name"] == "Build and Deploy"
     assert workflow["on"] == {
         "schedule": [{"cron": "17 * * * *"}],
-        "workflow_dispatch": "",
+        "workflow_dispatch": {
+            "inputs": {
+                "refresh_data": {
+                    "description": "Crawl and regenerate Post-derived data before deploy",
+                    "required": "false",
+                    "default": "true",
+                    "type": "boolean",
+                }
+            }
+        },
         "push": {"branches": ["main"]},
     }
     assert workflow["concurrency"] == {
@@ -99,27 +96,105 @@ def test_deploy_keeps_a_single_fail_closed_job_flow() -> None:
     steps = jobs["build-and-deploy"]["steps"]
     assert isinstance(steps, list)
     step_names = [step.get("name") for step in steps if isinstance(step, dict)]
-    assert step_names.index("Commit generated data") < step_names.index("Build Hugo site")
-    assert "python3 scripts/verify_graph.py" in text
+    steps_by_name = {
+        step.get("name"): step for step in steps if isinstance(step, dict)
+    }
+    assert step_names.index("Build Hugo site") < step_names.index(
+        "Commit generated data"
+    )
+    assert step_names.index(
+        "Build Pagefind search index and result catalog"
+    ) < step_names.index("Commit generated data")
+    assert step_names.index("Commit generated data") < step_names.index(
+        "Upload artifact"
+    )
+    for data_refresh_step in (
+        "Install Playwright browsers",
+        "Run crawler",
+        "Sanitize broken relref links",
+        "Build historical content quality manifest",
+        "Build tag graph",
+        "Commit generated data",
+    ):
+        assert steps_by_name[data_refresh_step]["if"] == (
+            "${{ env.AI_STACK_REFRESH_DATA == 'true' }}"
+        )
+    assert steps_by_name["Moderation cleanup (LLM)"]["if"] == (
+        "${{ env.AI_STACK_REFRESH_DATA == 'true' "
+        "&& env.AI_STACK_RUNTIME_PROFILE != 'ci' }}"
+    )
+    assert steps_by_name["Verify committed Post quality gate"]["if"] == (
+        "${{ env.AI_STACK_REFRESH_DATA != 'true' }}"
+    )
+    verify_run = steps_by_name["Verify generated graph"]["run"]
+    assert isinstance(verify_run, str)
+    assert 'if [ "${AI_STACK_REFRESH_DATA}" != "true" ]; then' in verify_run
+    assert (
+        "python3 scripts/verify_graph.py --assets-only --public-dir blog/static"
+        in verify_run
+    )
+    assert "python3 scripts/verify_graph.py" in verify_run
     assert "reset --hard" not in text
     assert "git pull --rebase" not in text
     assert "reusing existing graph artifacts" not in text
 
 
-def test_delete_workflow_keeps_the_existing_job_and_inputs() -> None:
-    deletion, _ = _workflow("delete-post.yml")
+def test_delete_workflow_rebuilds_derived_data_and_waits_for_deploy() -> None:
+    deletion, text = _workflow("delete-post.yml")
     assert deletion["name"] == "Delete Post"
     assert deletion["concurrency"] == {
         "group": "delete-post-main",
         "cancel-in-progress": "false",
     }
-    assert deletion["permissions"] == {"contents": "write"}
+    assert deletion["permissions"] == {"actions": "write", "contents": "write"}
     dispatch = deletion["on"]["workflow_dispatch"]  # type: ignore[index]
     assert isinstance(dispatch, dict)
     inputs = dispatch["inputs"]
     assert isinstance(inputs, dict)
     assert tuple(inputs) == ("mode", "post_path", "scan_limit", "dry_run")
     assert tuple(_jobs(deletion)) == ("delete-post",)
+    job = _jobs(deletion)["delete-post"]
+    assert job["timeout-minutes"] == "180"
+    steps = job["steps"]
+    assert isinstance(steps, list)
+    steps_by_name = {
+        step.get("name"): step for step in steps if isinstance(step, dict)
+    }
+    assert tuple(steps_by_name) == (
+        "Checkout main branch",
+        "Configure Git",
+        "Set up Python",
+        "Install Python dependencies",
+        "Validate inputs and prepare deletion",
+        "Rebuild Post-derived data",
+        "Commit deletion and generated data",
+        "Deploy committed deletion and wait",
+    )
+    rebuild = steps_by_name["Rebuild Post-derived data"]
+    assert rebuild["if"] == "${{ steps.prepare.outputs.changed == 'true' }}"
+    rebuild_run = rebuild["run"]
+    assert "scripts/build_content_quality_manifest.py" in rebuild_run
+    assert "--fail-on-quarantine" in rebuild_run
+    assert "--fail-on-structural-warning" in rebuild_run
+    assert 'TAG_GRAPH_ENABLE_CONTENT_MINING: "0"' in text
+    assert 'TAG_INTRO_ENABLED: "0"' in text
+    assert 'TAG_INTRO_MAX_NEW: "0"' in text
+    assert "python3 -m processor.tag_graph" in rebuild_run
+    assert "scripts/verify_graph.py --assets-only --public-dir blog/static" in rebuild_run
+
+    commit = steps_by_name["Commit deletion and generated data"]
+    commit_run = commit["run"]
+    assert "blog/data/content_quality.json" in commit_run
+    assert "blog/static/data/tag-graph" in commit_run
+    assert "git push origin HEAD:main" in commit_run
+    assert "[skip ci]" not in text
+
+    deploy = steps_by_name["Deploy committed deletion and wait"]
+    deploy_run = deploy["run"]
+    assert "gh workflow run deploy.yml --ref main -f refresh_data=false" in deploy_run
+    assert "gh run watch" in deploy_run
+    assert "--exit-status" in deploy_run
+    assert deploy["if"] == "${{ steps.commit.outputs.head_sha != '' }}"
 
 
 

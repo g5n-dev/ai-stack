@@ -1,14 +1,32 @@
 ---
-title: "基于D最优统计的高维仿真代理测试时适应稳定化方法"
-date: 2026-02-18T21:10:38+08:00
+title: 基于D最优统计的高维仿真代理测试时适应稳定化方法
+date: 2026-02-18 21:10:38+08:00
 draft: false
-entry_kind: "auto"
-tags: ["TTA", "仿真代理", "分布偏移", "D最优统计", "高维回归", "模型自适应", "cs.LG", "工程仿真"]
-categories: ["论文", "数据"]
+entry_kind: auto
+tags:
+- TTA
+- 仿真代理
+- 分布偏移
+- D最优统计
+- 高维回归
+- 模型自适应
+- cs.LG
+- 工程仿真
+categories:
+- 论文
+- 数据
 source: arxiv
-description: "本文针对工程仿真代理模型在部署时因分布偏移（如未见过的几何形状或配置）导致性能下降的问题，提出了一种基于**D-最优统计（D-Optimal Statistics）的测试时适应（TTA）框架**。 **主要贡献与核心方法：** 1. **解决高维适应难题**：现有的TTA方法主要用于低维分类任务，难以直接应用于高维、非"
+description: 本文针对工程仿真代理模型在部署时因分布偏移（如未见过的几何形状或配置）导致性能下降的问题，提出了一种基于**D-最优统计（D-Optimal
+  Statistics）的测试时适应（TTA）框架**。 **主要贡献与核心方法：** 1. **解决高维适应难题**：现有的TTA方法主要用于低维分类任务，难以直接应用于高维、非
 external_url: http://arxiv.org/abs/2602.15820v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+aliases:
+- /posts/20260219-arxiv_ai-stabilizing-test-time-adaptation-of-high-dimension-5/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 基于D最优统计的高维仿真代理测试时适应稳定化方法
@@ -264,7 +282,6 @@ scenarios: ["Web应用开发"]
 这篇论文主要推进的是**“方法”**。它提供了一个强大的工程工具，解决了一个实际的痛点。其代价是可能掩盖了对“模型为何能适应”这一本质问题的深层理解——我们仍然是在通过统计技巧来逼近物理真理，而非真正理解物理规律的迁移。但在工业应用层面，这种代价是完全值得的。
 
 ---
-## 研究最佳实践
 
 ## 最佳实践指南
 
@@ -361,7 +378,6 @@ $\lambda$ 值过大会导致模型预测趋于均匀分布（即完全不确定�
 - 理论分析表明，该方法在满足一定条件下能够保证适应过程的收敛性，为高维模拟的在线学习提供了可靠的理论支撑。
 
 ---
-## 学习路径
 
 ## 学习路径
 
@@ -543,7 +559,7 @@ $\lambda$ 值过大会导致模型预测趋于均匀分布（即完全不确定�
 ### 相关文章
 
 - [基于嵌入的Top-$k$检索：理论上$\mathbb{R}^{2k}$维空间已足够]({{< relref "posts/20260129-arxiv_ai-mathbbr2k-is-theoretically-large-enough-for-embedd-8.md" >}})
-- [R^{2k}维度理论上足以支持基于嵌入的Top-k检索]({{< relref "posts/20260130-arxiv_ai-mathbbr2k-is-theoretically-large-enough-for-embedd-8.md" >}})
+- [R^{2k}维度理论上足以支持基于嵌入的Top-k检索]({{< relref "posts/20260129-arxiv_ai-mathbbr2k-is-theoretically-large-enough-for-embedd-8.md" >}})
 - [数据块模型中的精确恢复方法]({{< relref "posts/20260206-arxiv_ai-exact-recovery-in-the-data-block-model-8.md" >}})
 - [基于熵排序流的非监督解耦表示学习模型]({{< relref "posts/20260209-arxiv_ai-from-core-to-detail-unsupervised-disentanglement-w-9.md" >}})
 - [Harpoon：面向条件表格扩散模型的广义流形引导]({{< relref "posts/20260210-arxiv_ai-harpoon-generalised-manifold-guidance-for-conditio-1.md" >}})

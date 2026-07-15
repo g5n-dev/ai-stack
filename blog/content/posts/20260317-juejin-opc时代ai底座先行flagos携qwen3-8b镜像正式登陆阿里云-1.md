@@ -13,6 +13,10 @@ description: '**总结：** FlagOS 联合阿里云宣布，针对 OPC（Open Pla
 external_url: https://juejin.cn/post/7617871842531622958
 scenarios:
 - Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # FlagOS携Qwen3-8B镜像登陆阿里云PAI平台

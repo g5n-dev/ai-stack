@@ -1,14 +1,29 @@
 ---
-title: "DeepSeek发布原生编程代理 主打高缓存低费用"
-date: 2026-05-24T22:42:38+08:00
+title: DeepSeek发布原生编程代理 主打高缓存低费用
+date: 2026-05-24 22:42:38+08:00
 draft: false
-entry_kind: "auto"
-tags: ["DeepSeek", "编程代理", "高缓存", "低费用", "代码生成", "AI编程", "开发工具", "成本优化"]
-categories: ["开发工具", "AI 工程"]
+entry_kind: auto
+tags:
+- DeepSeek
+- 编程代理
+- 高缓存
+- 低费用
+- 代码生成
+- AI 编程
+- 开发工具
+- 成本优化
+categories:
+- 开发工具
+- AI 工程
 source: hacker_news
-description: "DeepSeek推出的Reasonix是面向开发者的原生编程助手，旨在通过高效缓存机制显著提升代码生成的响应速度并降低资源消耗。该工具在保持低使用成本的同时，提供可扩展的集成方案，适用于从小型原型到大规模生产环境的多种场景。本文将深入解析Reasonix的技术实现、性能基准以及最佳实践，帮助读者快速上手并在项目中实现效"
+description: DeepSeek推出的Reasonix是面向开发者的原生编程助手，旨在通过高效缓存机制显著提升代码生成的响应速度并降低资源消耗。该工具在保持低使用成本的同时，提供可扩展的集成方案，适用于从小型原型到大规模生产环境的多种场景。本文将深入解析Reasonix的技术实现、性能基准以及最佳实践，帮助读者快速上手并在项目中实现效
 external_url: https://esengine.github.io/DeepSeek-Reasonix
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # DeepSeek发布原生编程代理 主打高缓存低费用
@@ -85,9 +100,9 @@ DeepSeek Reasonix作为DeepSeek原生代码生成代理，其“高缓存+低成
 
 ### 相关文章
 
-- [Codex 应用：基于 OpenAI 模型的代码生成工具]({{< relref "posts/20260203-hacker_news-the-codex-app-12.md" >}})
-- [OpenClaw实测：AI编程工具的安装体验与实战应用]({{< relref "posts/20260223-juejin-装了-openclaw-一个月每天叫醒我的不是梦想ai编程ai编程实战ai出海-1.md" >}})
-- [超越智能体编码：AI 编程助手的演进方向]({{< relref "posts/20260208-hacker_news-beyond-agentic-coding-19.md" >}})
+- [Codex 应用：基于 OpenAI 模型的代码生成工具]({{< relref "posts/20260202-hacker_news-the-codex-app-1.md" >}})
+- [OpenClaw实测：AI编程工具的安装体验与实战应用]({{< relref "posts/20260222-juejin-装了-openclaw-一个月每天叫醒我的不是梦想ai编程ai编程实战ai出海-0.md" >}})
+- [超越智能体编码：AI 编程助手的演进方向]({{< relref "posts/20260208-hacker_news-haskell-for-all-beyond-agentic-coding-3.md" >}})
 - [大模型AI编程实测：Opus 4.6与K2.5等模型排序对比]({{< relref "posts/20260219-juejin-大模型-ai-coding-比较-0.md" >}})
 - [Codex多场景编程能力解析]({{< relref "posts/20260416-hacker_news-codex-for-almost-everything-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

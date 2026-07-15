@@ -21,6 +21,10 @@ description: '**标题：面向大语言模型的在线经验学习（OEL）** *
 external_url: http://arxiv.org/abs/2603.16856v1
 scenarios:
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 大语言模型的在线体验学习框架
@@ -316,7 +320,7 @@ scenarios:
 ### 相关文章
 
 - [进化策略导致大语言模型出现灾难性遗忘]({{< relref "posts/20260129-arxiv_ai-evolutionary-strategies-lead-to-catastrophic-forge-0.md" >}})
-- [进化策略导致大语言模型出现灾难性遗忘]({{< relref "posts/20260130-arxiv_ai-evolutionary-strategies-lead-to-catastrophic-forge-0.md" >}})
-- [Untitled]({{< relref "posts/20260312-blogs_podcasts-accelerate-custom-llm-deployment-fine-tune-with-ou-13.md" >}})
-- [Mistral AI 发布 Forge：用于微调和测试的轻量级模型]({{< relref "posts/20260318-hacker_news-mistral-ai-releases-forge-4.md" >}})
-- [Mistral AI 发布 Forge：微调与推理优化工具]({{< relref "posts/20260318-hacker_news-mistral-ai-releases-forge-5.md" >}})
+- [进化策略导致大语言模型出现灾难性遗忘]({{< relref "posts/20260129-arxiv_ai-evolutionary-strategies-lead-to-catastrophic-forge-0.md" >}})
+- [Untitled]({{< relref "posts/20260310-blogs_podcasts-accelerate-custom-llm-deployment-fine-tune-with-ou-0.md" >}})
+- [Mistral AI 发布 Forge：用于微调和测试的轻量级模型]({{< relref "posts/20260318-hacker_news-mistral-ai-releases-forge-6.md" >}})
+- [Mistral AI 发布 Forge：微调与推理优化工具]({{< relref "posts/20260318-hacker_news-mistral-ai-releases-forge-6.md" >}})

@@ -1,14 +1,30 @@
 ---
-title: "μNPUs上ECG和EMG的实时建模方法"
-date: 2026-04-21T02:50:20+08:00
+title: μNPUs上ECG和EMG的实时建模方法
+date: 2026-04-21 02:50:20+08:00
 draft: false
-entry_kind: "auto"
-tags: ["ECG心电图", "EMG肌电图", "实时推理", "边缘部署", "低功耗NPU", "轻量级模型", "生物信号", "模型压缩"]
-categories: ["AI 工程", "数据"]
+entry_kind: auto
+tags:
+- ECG心电图
+- EMG肌电图
+- 实时推理
+- 边缘部署
+- 低功耗NPU
+- 轻量级模型
+- 生物信号
+- 模型压缩
+categories:
+- AI 工程
+- 数据
 source: arxiv
-description: "背景 随着微控制器级可穿戴硬件的普及，近实时、离线、隐私保护的推理需求日益增长。然而，生理信号（如心电图 ECG、肌电图 EMG）分析仍因模型过大、算子复杂而难以在低功耗神经处理单元（μNPU）上运行。Transformer 类模型虽然性能领先，却因动态注意力而无法适配资源受限的 μNPU。 方法 本文提出 Physi"
+description: 背景 随着微控制器级可穿戴硬件的普及，近实时、离线、隐私保护的推理需求日益增长。然而，生理信号（如心电图 ECG、肌电图 EMG）分析仍因模型过大、算子复杂而难以在低功耗神经处理单元（μNPU）上运行。Transformer
+  类模型虽然性能领先，却因动态注意力而无法适配资源受限的 μNPU。 方法 本文提出 Physi
 external_url: http://arxiv.org/abs/2604.18067v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # μNPUs上ECG和EMG的实时建模方法
@@ -133,9 +149,9 @@ PhysioLite的技术路线在可穿戴健康监测、远程医疗和运动生理�
 
 ### 相关文章
 
-- [面向异构数据的自适应子网络路由方法]({{< relref "posts/20260131-arxiv_ai-routing-the-lottery-adaptive-subnetworks-for-heter-8.md" >}})
+- [面向异构数据的自适应子网络路由方法]({{< relref "posts/20260130-arxiv_ai-routing-the-lottery-adaptive-subnetworks-for-heter-8.md" >}})
 - [ROCKET：校准导向背包增强截断的高效模型压缩]({{< relref "posts/20260212-arxiv_ai-rocket-rapid-optimization-via-calibration-guided-k-2.md" >}})
 - [KAN-FIF：基于样条参数化的轻量级气象卫星热带气旋估算模型]({{< relref "posts/20260213-arxiv_ai-kan-fif-spline-parameterized-lightweight-physics-b-4.md" >}})
-- [MonarchRT：面向实时视频生成的高效注意力机制]({{< relref "posts/20260214-arxiv_ai-monarchrt-efficient-attention-for-real-time-video--7.md" >}})
-- [MonarchRT：面向实时视频生成的高效注意力机制]({{< relref "posts/20260215-arxiv_ai-monarchrt-efficient-attention-for-real-time-video--7.md" >}})
+- [MonarchRT：面向实时视频生成的高效注意力机制]({{< relref "posts/20260213-arxiv_ai-monarchrt-efficient-attention-for-real-time-video--7.md" >}})
+- [MonarchRT：面向实时视频生成的高效注意力机制]({{< relref "posts/20260213-arxiv_ai-monarchrt-efficient-attention-for-real-time-video--7.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

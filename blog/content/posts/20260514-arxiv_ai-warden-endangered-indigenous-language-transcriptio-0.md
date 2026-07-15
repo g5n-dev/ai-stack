@@ -1,14 +1,32 @@
 ---
-title: "WARDEN模型：6小时数据实现濒危原住民语言转录翻译"
-date: 2026-05-14T23:14:11+08:00
+title: WARDEN模型：6小时数据实现濒危原住民语言转录翻译
+date: 2026-05-14 23:14:11+08:00
 draft: false
-entry_kind: "auto"
-tags: ["低资源语言", "语音转写", "机器翻译", "濒危语言保护", "跨语言模型", "预训练微调", "词典增强", "AI工程"]
-categories: ["论文", "大模型"]
+entry_kind: auto
+tags:
+- 低资源语言
+- 语音转写
+- 机器翻译
+- 濒危语言保护
+- 跨语言模型
+- 预训练微调
+- 词典增强
+- AI 工程
+categories:
+- 论文
+- 大模型
 source: arxiv
-description: "背景与挑战 WARDEN 是针对澳大利亚濒危语言 Wardaman 的语音转写与英译系统。当前缺乏大规模训练语料，仅有约 6 小时的标注音频。传统端到端统一模型在数据充足时表现优异，但在极低资源情况下难以收敛。 两阶段模型架构 - **转写阶段**：将 Wardaman 语音转为音标序列。采用独立模型，并利用与 War"
+description: 背景与挑战 WARDEN 是针对澳大利亚濒危语言 Wardaman 的语音转写与英译系统。当前缺乏大规模训练语料，仅有约 6 小时的标注音频。传统端到端统一模型在数据充足时表现优异，但在极低资源情况下难以收敛。
+  两阶段模型架构 - **转写阶段**：将 Wardaman 语音转为音标序列。采用独立模型，并利用与 War
 external_url: http://arxiv.org/abs/2605.13846v1
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+aliases:
+- /posts/20260515-arxiv_ai-warden-endangered-indigenous-language-transcriptio-0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # WARDEN模型：6小时数据实现濒危原住民语言转录翻译
@@ -169,6 +187,6 @@ Wardaman与Sundanese具有足够音系相似性（**可证伪**：对比两种�
 - [🚀低资源机器翻译的救星！结构化自反思引领新突破✨]({{< relref "posts/20260128-arxiv_ai-reflective-translation-improving-low-resource-mach-7.md" >}})
 - [FineInstructions：将合成指令数据扩展至预训练规模]({{< relref "posts/20260130-arxiv_ai-fineinstructions-scaling-synthetic-instructions-to-7.md" >}})
 - [机器翻译评估中的跨向污染问题研究]({{< relref "posts/20260129-arxiv_ai-when-flores-bloomz-wrong-cross-direction-contamina-1.md" >}})
-- [机器翻译评估中的跨向污染问题研究]({{< relref "posts/20260130-arxiv_ai-when-flores-bloomz-wrong-cross-direction-contamina-1.md" >}})
-- [OpenAI 内部数据代理：结合 GPT‑5 与记忆机制实现分钟级数据洞察]({{< relref "posts/20260130-blogs_podcasts-inside-openais-in-house-data-agent-2.md" >}})
+- [机器翻译评估中的跨向污染问题研究]({{< relref "posts/20260129-arxiv_ai-when-flores-bloomz-wrong-cross-direction-contamina-1.md" >}})
+- [OpenAI 内部数据代理：结合 GPT‑5 与记忆机制实现分钟级数据洞察]({{< relref "posts/20260129-hacker_news-openais-in-house-data-agent-14.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

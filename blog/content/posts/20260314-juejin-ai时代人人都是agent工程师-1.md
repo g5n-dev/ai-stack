@@ -21,6 +21,10 @@ description: AI时代：人人都是Agent工程师 1. **AI降低技术门槛，�
 external_url: https://juejin.cn/post/7616666752520978432
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AI编程工具普及：从传统职能转向Agent工程师
@@ -208,8 +212,8 @@ AI Agent 是一种能够利用大语言模型（LLM）作为核心“大脑”�
 
 ### 相关文章
 
-- [Claude Code 推出远程控制功能]({{< relref "posts/20260225-hacker_news-claude-code-remote-control-11.md" >}})
-- [软件工厂与智能体时刻：AI 编程范式的演进]({{< relref "posts/20260208-hacker_news-software-factories-and-the-agentic-moment-4.md" >}})
-- [软件工厂与代理时刻：AI 编程范式的演进]({{< relref "posts/20260208-hacker_news-software-factories-and-the-agentic-moment-9.md" >}})
-- [Launch HN: Cardboard – 智能体视频编辑器]({{< relref "posts/20260226-hacker_news-launch-hn-cardboard-yc-w26-agentic-video-editor-1.md" >}})
-- [Launch HN: Cardboard – 智能体视频编辑器]({{< relref "posts/20260227-hacker_news-launch-hn-cardboard-yc-w26-agentic-video-editor-6.md" >}})
+- [Claude Code 推出远程控制功能]({{< relref "posts/20260225-hacker_news-claude-code-remote-control-4.md" >}})
+- [软件工厂与智能体时刻：AI 编程范式的演进]({{< relref "posts/20260207-hacker_news-software-factories-and-the-agentic-moment-4.md" >}})
+- [软件工厂与代理时刻：AI 编程范式的演进]({{< relref "posts/20260207-hacker_news-software-factories-and-the-agentic-moment-4.md" >}})
+- [Launch HN: Cardboard – 智能体视频编辑器]({{< relref "posts/20260226-hacker_news-launch-hn-cardboard-yc-w26-agentic-video-editor-2.md" >}})
+- [Launch HN: Cardboard – 智能体视频编辑器]({{< relref "posts/20260226-hacker_news-launch-hn-cardboard-yc-w26-agentic-video-editor-2.md" >}})

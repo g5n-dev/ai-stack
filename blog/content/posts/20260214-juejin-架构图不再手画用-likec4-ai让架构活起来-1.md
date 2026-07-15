@@ -1,14 +1,29 @@
 ---
-title: "LikeC4 结合 AI 实现架构图自动维护与实时更新"
-date: 2026-02-14T09:12:50+08:00
+title: LikeC4 结合 AI 实现架构图自动维护与实时更新
+date: 2026-02-14 09:12:50+08:00
 draft: false
-entry_kind: "auto"
-tags: ["LikeC4", "架构图", "自动化", "实时更新", "代码生成", "可视化", "DSL", "架构治理"]
-categories: ["AI 工程", "开发工具"]
+entry_kind: auto
+tags:
+- LikeC4
+- 架构图
+- 自动化
+- 实时更新
+- 代码生成
+- 可视化
+- DSL
+- 架构治理
+categories:
+- AI 工程
+- 开发工具
 source: juejin
-description: "架构图往往在业务迭代中迅速过时，维护成本高且难以与代码保持同步。本文介绍如何结合 LikeC4 与 AI 工具，实现架构图的自动生成与动态更新。通过这种方法，你可以将架构文档转化为可维护的“活”资产，有效降低沟通成本，确保系统设计与实际演进保持一致。"
+description: 架构图往往在业务迭代中迅速过时，维护成本高且难以与代码保持同步。本文介绍如何结合 LikeC4 与 AI 工具，实现架构图的自动生成与动态更新。通过这种方法，你可以将架构文档转化为可维护的“活”资产，有效降低沟通成本，确保系统设计与实际演进保持一致。
 external_url: https://juejin.cn/post/7606156599624253474
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # LikeC4 结合 AI 实现架构图自动维护与实时更新
@@ -207,8 +222,8 @@ AI 的引入解决了以下痛点：
 ### 相关文章
 
 - [🤖解密Codex智能体闭环：AI如何自主进化？]({{< relref "posts/20260125-blogs_podcasts-unrolling-the-codex-agent-loop-1.md" >}})
-- [Claude Code：面向开发者的AI编程助手]({{< relref "posts/20260131-hacker_news-claude-code-is-your-customer-5.md" >}})
+- [Claude Code：面向开发者的AI编程助手]({{< relref "posts/20260131-hacker_news-claude-code-is-your-customer-16.md" >}})
 - [Zuckerman：极简个人AI代理，具备代码自编辑能力]({{< relref "posts/20260201-hacker_news-show-hn-zuckerman-minimalist-personal-ai-agent-tha-12.md" >}})
-- [构建极简编程代理的技术实践与经验总结]({{< relref "posts/20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-17.md" >}})
+- [构建极简编程代理的技术实践与经验总结]({{< relref "posts/20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-1.md" >}})
 - [Codex 应用：基于 GPT-3 的代码生成工具]({{< relref "posts/20260202-hacker_news-the-codex-app-1.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

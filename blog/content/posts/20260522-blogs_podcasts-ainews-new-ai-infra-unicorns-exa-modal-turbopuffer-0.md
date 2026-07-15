@@ -1,14 +1,29 @@
 ---
-title: "AI Infra新融资：Exa、Modal与TurboPuffer"
-date: 2026-05-22T14:57:39+08:00
+title: AI Infra新融资：Exa、Modal与TurboPuffer
+date: 2026-05-22 14:57:39+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI基础设施", "独角兽", "融资", "Exa", "Modal", "TurboPuffer", "无服务器GPU", "数据缓存"]
-categories: ["系统与基础设施"]
+entry_kind: auto
+tags:
+- AI 基础设施
+- 独角兽
+- 融资
+- Exa
+- Modal
+- TurboPuffer
+- 无服务器GPU
+- 数据缓存
+categories:
+- 系统与基础设施
 source: blogs_podcasts
-description: "本周 AI 基础设施领域出现三家新晋独角兽：Exa、Modal 与 TurboPuffer。三家公司均在近期完成新一轮融资，估值突破 10 亿美元。Exa 专注于高性能 AI 计算平台，提供大规模并行训练与推理能力；Modal 打造无服务器 GPU 计算服务，帮助开发者快速弹性部署 AI 工作负载；TurboPuffe"
+description: 本周 AI 基础设施领域出现三家新晋独角兽：Exa、Modal 与 TurboPuffer。三家公司均在近期完成新一轮融资，估值突破 10
+  亿美元。Exa 专注于高性能 AI 计算平台，提供大规模并行训练与推理能力；Modal 打造无服务器 GPU 计算服务，帮助开发者快速弹性部署 AI 工作负载；TurboPuffe
 external_url: https://www.latent.space/p/ainews-new-ai-infra-unicorns-exa
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AI Infra新融资：Exa、Modal与TurboPuffer
@@ -97,8 +112,8 @@ AI 基础设施领域近期出现了一批估值突破十亿美元的初创公�
 ### 相关文章
 
 - [英伟达投资数据中心创企Nscale 估值达146亿美元]({{< relref "posts/20260309-hacker_news-nvidia-backs-ai-data-center-startup-nscale-as-it-h-15.md" >}})
-- [Cerebras 60亿美元IPO：从低调到爆发]({{< relref "posts/20260517-blogs_podcasts-ainews-cerebras-60b-ipo-slowly-then-all-at-once-0.md" >}})
-- [ElevenLabs获5亿美元融资，Cerebras估值达230亿美元]({{< relref "posts/20260205-blogs_podcasts-ainews-elevenlabs-500m-series-d-at-11b-cerebras-1b-2.md" >}})
-- [ElevenLabs 融资 5 亿美元，Cerebras 估值 230 亿美元]({{< relref "posts/20260205-blogs_podcasts-ainews-elevenlabs-500m-series-d-at-11b-cerebras-1b-3.md" >}})
-- [ElevenLabs融资11亿美元估值，Cerebras获23亿美元估值及音频与芯片代理进展]({{< relref "posts/20260206-blogs_podcasts-ainews-elevenlabs-500m-series-d-at-11b-cerebras-1b-4.md" >}})
+- [Cerebras 60亿美元IPO：从低调到爆发]({{< relref "posts/20260516-blogs_podcasts-ainews-cerebras-60b-ipo-slowly-then-all-at-once-0.md" >}})
+- [ElevenLabs获5亿美元融资，Cerebras估值达230亿美元]({{< relref "posts/20260205-blogs_podcasts-ainews-elevenlabs-500m-series-d-at-11b-cerebras-1b-0.md" >}})
+- [ElevenLabs 融资 5 亿美元，Cerebras 估值 230 亿美元]({{< relref "posts/20260205-blogs_podcasts-ainews-elevenlabs-500m-series-d-at-11b-cerebras-1b-0.md" >}})
+- [ElevenLabs融资11亿美元估值，Cerebras获23亿美元估值及音频与芯片代理进展]({{< relref "posts/20260205-blogs_podcasts-ainews-elevenlabs-500m-series-d-at-11b-cerebras-1b-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

@@ -20,6 +20,10 @@ description: '**标题：从被动观察到主动批评：PRIMO R1利用强化�
 external_url: http://arxiv.org/abs/2603.15600v1
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 强化学习激发过程推理能力提升机器人操控性能
@@ -108,9 +112,7 @@ scenarios:
 
 ---
 
-### 从被动观察到主动批评：PRIMO R1 深度解析
 
-### 1. 研究背景与问题
 
 ### 核心问题
 该论文致力于解决长周期机器人操控任务中的**过程监督与状态评估**难题。具体而言，如何让智能体不仅“看到”当前的动作，还能像人类专家一样理解当前动作在整个任务流程中的位置，判断其是否偏离了最终目标，并预测最终结果的成功与否。
@@ -127,7 +129,6 @@ scenarios:
 ### 重要性
 该研究突破了MLLMs在具身场景下的应用瓶颈。通过引入强化学习（RL）激发模型的推理能力，它为解决长周期任务中的“黑盒”决策问题提供了一种轻量级且高效的解决方案，使得7B参数的模型在特定任务上超越了72B参数的通用模型。
 
-### 2. 核心方法与创新
 
 ### 核心方法：PRIMO R1
 论文提出了 **PRIMO R1**（Process Reasoning Induced Monitoring），这是一个基于强化学习的框架，旨在将视频MLLMs转变为主动的任务进度评估器。
@@ -148,7 +149,6 @@ scenarios:
 *   **显式过程推理**：首次系统性地将RL应用于激发视频MLLM的CoT能力，用于具身操作的过程监控。
 *   **锚定机制**：通过对比初始状态和当前状态，赋予了模型“相对位置”的概念，这是理解进度的前提。
 
-### 3. 理论基础
 
 ### 理论依据
 该工作的理论基础主要建立在**强化学习（RL）**与**过程监督**的结合上，特别是借鉴了**Outcome-based Supervision**的思想。
@@ -165,7 +165,6 @@ scenarios:
 ### 理论贡献
 论文在理论上验证了：**在仅有结果监督的情况下，利用RL可以有效诱导MLLM产生更可靠的过程推理能力，且这种能力优于传统的监督学习。**
 
-### 7. 学习建议
 
 ### 适合读者
 *   从事具身智能、机器人视觉感知、多模态大模型研究的研究生和工程师。
@@ -440,6 +439,6 @@ scenarios:
 
 - [强化注意力学习：基于奖励反馈的注意力机制优化方法]({{< relref "posts/20260205-arxiv_ai-reinforced-attention-learning-0.md" >}})
 - [受限群组相对策略优化]({{< relref "posts/20260206-arxiv_ai-constrained-group-relative-policy-optimization-1.md" >}})
-- [强化注意力学习：通过奖励机制优化视觉注意力模型]({{< relref "posts/20260206-arxiv_ai-reinforced-attention-learning-0.md" >}})
+- [强化注意力学习：通过奖励机制优化视觉注意力模型]({{< relref "posts/20260205-arxiv_ai-reinforced-attention-learning-0.md" >}})
 - [Kimi K2.5震撼开源！视觉SOTA Agent模型，性能炸裂🔥]({{< relref "posts/20260127-hacker_news-kimi-released-kimi-k25-open-source-visual-sota-age-2.md" >}})
 - [2026年AI展望：LLM、智能体、缩放定律与中国发展]({{< relref "posts/20260201-blogs_podcasts-490-state-of-ai-in-2026-llms-coding-scaling-laws-c-0.md" >}})

@@ -1,14 +1,30 @@
 ---
-title: "AINews Fable指南：消化世界重要AI模型发布"
-date: 2026-07-07T11:09:41+08:00
+title: AINews Fable指南：消化世界重要AI模型发布
+date: 2026-07-07 11:09:41+08:00
 draft: false
-entry_kind: "auto"
-tags: ["大模型", "模型发布", "架构设计", "训练数据", "性能指标", "部署", "微调", "Prompt工程"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- 大模型
+- 模型发布
+- 架构设计
+- 训练数据
+- 性能指标
+- 部署
+- 微调
+- Prompt 工程
+categories:
+- 大模型
+- AI 工程
 source: blogs_podcasts
-description: "背景 今天市场相对平静，给了我们时间细细消化截至目前全球最重要的模型发布——这正是《Fable 指南》所聚焦的内容。 指南概述 《Fable 指南》对该模型的架构设计、训练数据、关键性能指标以及实际应用场景做了系统梳理。内容覆盖模型的创新点、优势与局限，并提供了部署、微调以及 Prompt 工程的实践建议，帮助读者快速"
+description: 背景 今天市场相对平静，给了我们时间细细消化截至目前全球最重要的模型发布——这正是《Fable 指南》所聚焦的内容。 指南概述 《Fable
+  指南》对该模型的架构设计、训练数据、关键性能指标以及实际应用场景做了系统梳理。内容覆盖模型的创新点、优势与局限，并提供了部署、微调以及 Prompt 工程的实践建议，帮助读者快速
 external_url: https://www.latent.space/p/ainews-the-field-guide-to-fable
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AINews Fable指南：消化世界重要AI模型发布
@@ -162,9 +178,9 @@ Fable 为迄今为止规模最大、技术突破最深、行业影响最广的�
 
 ### 相关文章
 
-- [Claude Opus 4.6 发布]({{< relref "posts/20260206-hacker_news-claude-opus-46-3.md" >}})
-- [Gemini 3.1 Flash-Lite：Gemini 3 系列中速度最快且性价比最高的模型]({{< relref "posts/20260304-blogs_podcasts-gemini-31-flash-lite-built-for-intelligence-at-sca-4.md" >}})
-- [Qwen3.5微调指南：Unsloth文档与实现流程]({{< relref "posts/20260304-hacker_news-qwen35-fine-tuning-guide-unsloth-documentation-13.md" >}})
-- [Qwen3.5 微调指南]({{< relref "posts/20260305-hacker_news-qwen35-fine-tuning-guide-17.md" >}})
+- [Claude Opus 4.6 发布]({{< relref "posts/20260205-hacker_news-claude-opus-46-2.md" >}})
+- [Gemini 3.1 Flash-Lite：Gemini 3 系列中速度最快且性价比最高的模型]({{< relref "posts/20260303-blogs_podcasts-gemini-31-flash-lite-built-for-intelligence-at-sca-2.md" >}})
+- [Qwen3.5微调指南：Unsloth文档与实现流程]({{< relref "posts/20260304-hacker_news-qwen35-fine-tuning-guide-unsloth-documentation-7.md" >}})
+- [Qwen3.5 微调指南]({{< relref "posts/20260304-hacker_news-qwen35-fine-tuning-guide-unsloth-documentation-7.md" >}})
 - [Mistral AI巴黎峰会参会笔记]({{< relref "posts/20260529-hacker_news-notes-from-the-mistral-ai-now-summit-in-paris-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

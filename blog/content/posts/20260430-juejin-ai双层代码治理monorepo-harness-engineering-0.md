@@ -1,14 +1,31 @@
 ---
-title: "AI双层代码治理方案：Monorepo上下文+Harness规范执行"
-date: 2026-04-30T09:41:30+08:00
+title: AI双层代码治理方案：Monorepo上下文+Harness规范执行
+date: 2026-04-30 09:41:30+08:00
 draft: false
-entry_kind: "auto"
-tags: ["代码治理", "Monorepo", "Harness", "AI工程化", "CI/CD", "代码生成", "自动化测试", "质量保障"]
-categories: ["AI 工程", "开发工具"]
+entry_kind: auto
+tags:
+- 代码治理
+- Monorepo
+- Harness
+- AI工程化
+- CI/CD
+- 代码生成
+- 自动化测试
+- 质量保障
+categories:
+- AI 工程
+- 开发工具
 source: juejin
-description: "Monorepo 优势 - **完整上下文**：所有模块、依赖、配置集中于同一仓库，AI 能一次性获取全部代码与依赖关系，降低跨仓库检索成本。 - **统一工具链**：统一的构建、测试、发布流程让 AI 在生成代码时遵循一致的标准，减少因环境差异导致的错误。 - **增量分析**：通过图的依赖关系，AI 可精准定位受影"
+description: Monorepo 优势 - **完整上下文**：所有模块、依赖、配置集中于同一仓库，AI 能一次性获取全部代码与依赖关系，降低跨仓库检索成本。
+  - **统一工具链**：统一的构建、测试、发布流程让 AI 在生成代码时遵循一致的标准，减少因环境差异导致的错误。 - **增量分析**：通过图的依赖关系，AI
+  可精准定位受影
 external_url: https://juejin.cn/post/7634325990316605494
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AI双层代码治理方案：Monorepo上下文+Harness规范执行
@@ -100,9 +117,9 @@ AI 代码生成能力的提升并未直接转化为开发效率的显著改善�
 
 ### 相关文章
 
-- [Claude Code 每日基准测试用于性能退化追踪]({{< relref "posts/20260129-hacker_news-claude-code-daily-benchmarks-for-degradation-track-1.md" >}})
-- [Claude Code 每日基准测试用于性能退化追踪]({{< relref "posts/20260130-hacker_news-claude-code-daily-benchmarks-for-degradation-track-6.md" >}})
+- [Claude Code 每日基准测试用于性能退化追踪]({{< relref "posts/20260129-hacker_news-claude-code-daily-benchmarks-for-degradation-track-0.md" >}})
+- [Claude Code 每日基准测试用于性能退化追踪]({{< relref "posts/20260129-hacker_news-claude-code-daily-benchmarks-for-degradation-track-0.md" >}})
 - [Morph：在 GitHub 中嵌入 AI 代码审查视频]({{< relref "posts/20260204-hacker_news-show-hn-morph-videos-of-ai-testing-your-pr-embedde-10.md" >}})
-- [Morph：在 GitHub 中嵌入 AI 测试 PR 的视频]({{< relref "posts/20260205-hacker_news-show-hn-morph-videos-of-ai-testing-your-pr-embedde-19.md" >}})
-- [工程团队实践：在 Agent 优先架构中利用 Codex]({{< relref "posts/20260212-blogs_podcasts-harness-engineering-leveraging-codex-in-an-agent-f-12.md" >}})
+- [Morph：在 GitHub 中嵌入 AI 测试 PR 的视频]({{< relref "posts/20260204-hacker_news-show-hn-morph-videos-of-ai-testing-your-pr-embedde-10.md" >}})
+- [工程团队实践：在 Agent 优先架构中利用 Codex]({{< relref "posts/20260211-blogs_podcasts-harness-engineering-leveraging-codex-in-an-agent-f-5.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

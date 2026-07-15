@@ -1,14 +1,30 @@
 ---
-title: "从Prompt Engineering到Loop Engineering：AI开发从提问走向运转"
-date: 2026-06-12T23:39:03+08:00
+title: 从Prompt Engineering到Loop Engineering：AI开发从提问走向运转
+date: 2026-06-12 23:39:03+08:00
 draft: false
-entry_kind: "auto"
-tags: ["闭环工程", "提示工程", "AI开发方法论", "反馈循环", "自动化优化", "评估体系", "监控系统", "系统思维"]
-categories: ["AI 工程", "效率与方法论"]
+entry_kind: auto
+tags:
+- 闭环工程
+- 提示工程
+- AI开发方法论
+- 反馈循环
+- 自动化优化
+- 评估体系
+- 监控系统
+- 系统思维
+categories:
+- AI 工程
+- 效率与方法论
 source: juejin
-description: "从 Prompt Engineering 到 Loop Engineering，AI 开发的核心正在从“会提问”转向“会运转”。过去大家关注如何写好提示词，以一次性的交互完成任务；如今强调构建持续反馈、自动优化的闭环系统，即 Loop Engineering。该闭环包括推理、评估、反馈、修正四个环节：通过模型输出结果，"
+description: 从 Prompt Engineering 到 Loop Engineering，AI 开发的核心正在从“会提问”转向“会运转”。过去大家关注如何写好提示词，以一次性的交互完成任务；如今强调构建持续反馈、自动优化的闭环系统，即
+  Loop Engineering。该闭环包括推理、评估、反馈、修正四个环节：通过模型输出结果，
 external_url: https://juejin.cn/post/7650133122810003465
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 从Prompt Engineering到Loop Engineering：AI开发从提问走向运转
@@ -95,6 +111,6 @@ Loop Engineering 并非万能解。在确定性强的任务中，传统的线性
 - [Vibe Coding 提示工程技巧与直觉式开发指南]({{< relref "posts/20260218-juejin-针对-vibe-coding-的提示工程技巧详细指南-0.md" >}})
 - [LangChain 模型 I/O 模块：提示构建、模型调用与输出解析]({{< relref "posts/20260215-juejin-langchain-模型io输入提示调用模型解析输出-4.md" >}})
 - [提示工程悖论：为何与AI对话比预期更难]({{< relref "posts/20260217-juejin-提示工程的悖论为什么与-ai-对话比你想象的更难-0.md" >}})
-- [提示工程悖论：为何与AI对话比想象中更难]({{< relref "posts/20260218-juejin-提示工程的悖论为什么与-ai-对话比你想象的更难-0.md" >}})
-- [AI智能体自主性评估的实践方法]({{< relref "posts/20260220-hacker_news-measuring-ai-agent-autonomy-in-practice-15.md" >}})
+- [提示工程悖论：为何与AI对话比想象中更难]({{< relref "posts/20260217-juejin-提示工程的悖论为什么与-ai-对话比你想象的更难-0.md" >}})
+- [AI智能体自主性评估的实践方法]({{< relref "posts/20260219-hacker_news-measuring-ai-agent-autonomy-in-practice-16.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

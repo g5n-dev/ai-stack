@@ -1,14 +1,30 @@
 ---
-title: "开源多智能体研究论文分析框架"
-date: 2026-04-08T23:54:34+08:00
+title: 开源多智能体研究论文分析框架
+date: 2026-04-08 23:54:34+08:00
 draft: false
-entry_kind: "auto"
-tags: ["多智能体", "LLM", "文献检索", "知识图谱", "开源框架", "学术分析", "多准则评分", "可复现流水线"]
-categories: ["AI 工程", "开源生态"]
+entry_kind: auto
+tags:
+- 多智能体
+- LLM
+- 文献检索
+- 知识图谱
+- 开源框架
+- 学术分析
+- 多准则评分
+- 可复现流水线
+categories:
+- AI 工程
+- 开源生态
 source: arxiv
-description: "系统概述 Paper Circle 是面向科研文献的多智能体 LLM 系统，旨在降低发现、评估、组织和理解学术文献的成本。系统围绕两大互补流程构建：检索（Discovery）和分析（Analysis）。 检索流程 - 融合离线与在线多源检索，采用多准则评分和多样性感知排序，产生结构化输出（JSON、CSV、BibTeX"
+description: 系统概述 Paper Circle 是面向科研文献的多智能体 LLM 系统，旨在降低发现、评估、组织和理解学术文献的成本。系统围绕两大互补流程构建：检索（Discovery）和分析（Analysis）。
+  检索流程 - 融合离线与在线多源检索，采用多准则评分和多样性感知排序，产生结构化输出（JSON、CSV、BibTeX
 external_url: http://arxiv.org/abs/2604.06170v1
-scenarios: ["大语言模型"]
+scenarios:
+- 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 开源多智能体研究论文分析框架
@@ -188,9 +204,9 @@ Paper Circle 的创新点在于：① 开源全链路实现；② 多智能体�
 
 ### 相关文章
 
-- [Agent Swarm：开源多智能体自学习团队框架]({{< relref "posts/20260226-hacker_news-show-hn-agent-swarm-multi-agent-self-learning-team-6.md" >}})
+- [Agent Swarm：开源多智能体自学习团队框架]({{< relref "posts/20260226-hacker_news-show-hn-agent-swarm-multi-agent-self-learning-team-2.md" >}})
 - [OpenClaw：GitHub 增长最快的开源 AI 智能体框架]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-0.md" >}})
-- [Peter Steinberger 深度访谈：解析 GitHub 增长最快的开源 AI 代理框架 OpenCl]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-1.md" >}})
-- [OpenClaw 开源 AI Agent 框架解析与 GitHub 增长复盘]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-3.md" >}})
-- [OpenClaw：GitHub 增长最快的开源 AI 智能体框架]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-4.md" >}})
+- [Peter Steinberger 深度访谈：解析 GitHub 增长最快的开源 AI 代理框架 OpenCl]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-0.md" >}})
+- [OpenClaw 开源 AI Agent 框架解析与 GitHub 增长复盘]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-0.md" >}})
+- [OpenClaw：GitHub 增长最快的开源 AI 智能体框架]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-0.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

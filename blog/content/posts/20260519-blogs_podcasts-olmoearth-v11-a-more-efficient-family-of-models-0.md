@@ -1,14 +1,29 @@
 ---
-title: "OlmoEarth v1.1：更高效的模型系列"
-date: 2026-05-19T19:14:48+08:00
+title: OlmoEarth v1.1：更高效的模型系列
+date: 2026-05-19 19:14:48+08:00
 draft: false
-entry_kind: "auto"
-tags: ["高效模型", "模型系列", "大模型", "AI模型", "性能优化", "深度学习", "预训练", "开源"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- 高效模型
+- 模型系列
+- 大模型
+- AI 模型
+- 性能优化
+- 深度学习
+- 预训练
+- 开源
+categories:
+- 大模型
+- AI 工程
 source: blogs_podcasts
-description: "OlmoEarth v1.1 在保持模型性能的前提下，实现了显著的资源消耗降低。本文分析了新版本在算子融合、内存管理以及并行计算层面的改进，并通过基准测试验证其在实际部署中的效率提升。对关注模型效率的研发团队而言，这些优化提供了在有限硬件资源下获得更高吞吐量的实用参考。"
+description: OlmoEarth v1.1 在保持模型性能的前提下，实现了显著的资源消耗降低。本文分析了新版本在算子融合、内存管理以及并行计算层面的改进，并通过基准测试验证其在实际部署中的效率提升。对关注模型效率的研发团队而言，这些优化提供了在有限硬件资源下获得更高吞吐量的实用参考。
 external_url: https://huggingface.co/blog/allenai/olmoearth-v1-1
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # OlmoEarth v1.1：更高效的模型系列
@@ -140,7 +155,7 @@ OlmoEarth v1.1 通过结构优化与压缩技术实现效率提升，同时保
 
 - [Mac运行TRELLIS.2图像转3D无需Nvidia GPU]({{< relref "posts/20260420-hacker_news-show-hn-trellis2-image-to-3d-running-on-mac-silico-0.md" >}})
 - [谷歌发布 Nano Banana 2：最新 AI 图像生成模型]({{< relref "posts/20260226-hacker_news-nano-banana-2-googles-latest-ai-image-generation-m-1.md" >}})
-- [谷歌发布 Nano Banana 2 AI 图像生成模型]({{< relref "posts/20260226-hacker_news-nano-banana-2-googles-latest-ai-image-generation-m-18.md" >}})
-- [谷歌发布 Nano Banana 2 AI 图像生成模型]({{< relref "posts/20260226-hacker_news-nano-banana-2-googles-latest-ai-image-generation-m-4.md" >}})
-- [谷歌发布 Nano Banana 2：最新 AI 图像生成模型]({{< relref "posts/20260226-hacker_news-nano-banana-2-googles-latest-ai-image-generation-m-8.md" >}})
+- [谷歌发布 Nano Banana 2 AI 图像生成模型]({{< relref "posts/20260226-hacker_news-nano-banana-2-googles-latest-ai-image-generation-m-1.md" >}})
+- [谷歌发布 Nano Banana 2 AI 图像生成模型]({{< relref "posts/20260226-hacker_news-nano-banana-2-googles-latest-ai-image-generation-m-1.md" >}})
+- [谷歌发布 Nano Banana 2：最新 AI 图像生成模型]({{< relref "posts/20260226-hacker_news-nano-banana-2-googles-latest-ai-image-generation-m-1.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

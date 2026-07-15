@@ -1,14 +1,28 @@
 ---
-title: "AI客服长对话Token节省8种方案"
-date: 2026-04-15T03:25:27+08:00
+title: AI客服长对话Token节省8种方案
+date: 2026-04-15 03:25:27+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Token节省", "AI客服", "长对话", "上下文管理", "缓存机制", "对话摘要", "滑动窗口", "成本优化"]
-categories: ["效率与方法论"]
+entry_kind: auto
+tags:
+- Token节省
+- AI客服
+- 长对话
+- 上下文管理
+- 缓存机制
+- 对话摘要
+- 滑动窗口
+- 成本优化
+categories:
+- 效率与方法论
 source: juejin
-description: "文章指出在AI客服场景中，对话越长Token消耗越大。为解决既保留完整上下文又降低Token消耗的问题，提出八种方案，分别从压缩历史信息、分层上下文、滑动窗口、缓存、动态截断、对话摘要、模型裁剪以及费用控制等方面入手，以实现高效、低成本的对话管理。"
+description: 文章指出在AI客服场景中，对话越长Token消耗越大。为解决既保留完整上下文又降低Token消耗的问题，提出八种方案，分别从压缩历史信息、分层上下文、滑动窗口、缓存、动态截断、对话摘要、模型裁剪以及费用控制等方面入手，以实现高效、低成本的对话管理。
 external_url: https://juejin.cn/post/7628442107121598479
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AI客服长对话Token节省8种方案
@@ -93,9 +107,9 @@ scenarios: ["AI/ML项目"]
 
 ### 相关文章
 
-- [AI编写代码时是否应将会话记录纳入提交内容]({{< relref "posts/20260302-hacker_news-if-ai-writes-code-should-the-session-be-part-of-th-10.md" >}})
-- [AI编写代码时是否应将会话记录纳入提交]({{< relref "posts/20260302-hacker_news-if-ai-writes-code-should-the-session-be-part-of-th-7.md" >}})
-- [Context Gateway：压缩Agent上下文以降低LLM调用成本]({{< relref "posts/20260313-hacker_news-show-hn-context-gateway-compress-agent-context-bef-6.md" >}})
-- [Moonshot Kimi K25：成本减半超越Sonnet 45，原生图文视频与百并发Agent管理]({{< relref "posts/20260129-blogs_podcasts-ainews-moonshot-kimi-k25-beats-sonnet-45-at-half-t-2.md" >}})
-- [Moonshot Kimi K2.5：成本减半超越Sonnet 4.5，支持原生图文与百并发智能体]({{< relref "posts/20260129-blogs_podcasts-ainews-moonshot-kimi-k25-beats-sonnet-45-at-half-t-3.md" >}})
+- [AI编写代码时是否应将会话记录纳入提交内容]({{< relref "posts/20260302-hacker_news-if-ai-writes-code-should-the-session-be-part-of-th-1.md" >}})
+- [AI编写代码时是否应将会话记录纳入提交]({{< relref "posts/20260302-hacker_news-if-ai-writes-code-should-the-session-be-part-of-th-1.md" >}})
+- [Context Gateway：压缩Agent上下文以降低LLM调用成本]({{< relref "posts/20260313-hacker_news-show-hn-context-gateway-compress-agent-context-bef-2.md" >}})
+- [Moonshot Kimi K25：成本减半超越Sonnet 45，原生图文视频与百并发Agent管理]({{< relref "posts/20260129-blogs_podcasts-ainews-moonshot-kimi-k25-beats-sonnet-45-at-half-t-1.md" >}})
+- [Moonshot Kimi K2.5：成本减半超越Sonnet 4.5，支持原生图文与百并发智能体]({{< relref "posts/20260129-blogs_podcasts-ainews-moonshot-kimi-k25-beats-sonnet-45-at-half-t-1.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

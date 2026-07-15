@@ -1,14 +1,32 @@
 ---
-title: "Livedocs：面向数据分析的AI原生笔记本"
-date: 2026-02-10T19:57:28+08:00
+title: Livedocs：面向数据分析的AI原生笔记本
+date: 2026-02-10 19:57:28+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Livedocs", "AI原生", "数据分析", "笔记本", "YC", "生产力工具", "Jupyter", "LLM"]
-categories: ["开发工具", "数据"]
+entry_kind: auto
+tags:
+- Livedocs
+- AI原生
+- 数据分析
+- 笔记本
+- YC
+- 生产力工具
+- Jupyter
+- LLM
+categories:
+- 开发工具
+- 数据
 source: hacker_news
-description: "随着数据驱动决策的普及，传统的分析工具往往难以兼顾代码编写与可视化展示的灵活性。Livedocs 作为一款由 YC 孵化的 AI 原生笔记本，致力于通过深度集成智能辅助功能，重新定义数据分析的交互体验。本文将介绍其核心设计理念与技术实现，帮助读者了解如何利用这一工具提升数据处理效率并优化工作流。"
+description: 随着数据驱动决策的普及，传统的分析工具往往难以兼顾代码编写与可视化展示的灵活性。Livedocs 作为一款由 YC 孵化的 AI 原生笔记本，致力于通过深度集成智能辅助功能，重新定义数据分析的交互体验。本文将介绍其核心设计理念与技术实现，帮助读者了解如何利用这一工具提升数据处理效率并优化工作流。
 external_url: https://livedocs.com
-scenarios: ["AI/ML项目", "大语言模型"]
+scenarios:
+- AI/ML项目
+- 大语言模型
+aliases:
+- /posts/20260210-hacker_news-launch-hn-livedocs-yc-w22-an-ai-native-notebook-fo-13/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Livedocs：面向数据分析的AI原生笔记本
@@ -317,8 +335,8 @@ interactive_filter(data)
 ### 相关文章
 
 - [OpenAI内部数据智能体：自动化分析SQL数据库]({{< relref "posts/20260129-hacker_news-openais-in-house-data-agent-14.md" >}})
-- [OpenAI 内部数据代理：结合 GPT-5 与记忆机制实现分钟级数据洞察]({{< relref "posts/20260130-blogs_podcasts-inside-openais-in-house-data-agent-1.md" >}})
+- [OpenAI 内部数据代理：结合 GPT-5 与记忆机制实现分钟级数据洞察]({{< relref "posts/20260129-hacker_news-openais-in-house-data-agent-14.md" >}})
 - [OpenAI发布GPT-5.3-Codex代码生成模型]({{< relref "posts/20260206-hacker_news-gpt-53-codex-8.md" >}})
 - [一键生成AI员工：自带云端桌面环境]({{< relref "posts/20260207-hacker_news-show-hn-one-click-ai-employee-with-its-own-cloud-d-9.md" >}})
-- [Nemotron-Personas-Brazil：主权AI协同设计数据集]({{< relref "posts/20260129-blogs_podcasts-nemotron-personas-brazil-co-designed-data-for-sove-5.md" >}})
+- [Nemotron-Personas-Brazil：主权AI协同设计数据集]({{< relref "posts/20260128-blogs_podcasts-nemotron-personas-brazil-co-designed-data-for-sove-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

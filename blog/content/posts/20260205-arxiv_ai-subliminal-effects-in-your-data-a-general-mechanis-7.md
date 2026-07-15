@@ -1,14 +1,32 @@
 ---
-title: "数据中的阈下效应：一种基于对数线性性的通用机制"
-date: 2026-02-05T23:03:18+08:00
+title: 数据中的阈下效应：一种基于对数线性性的通用机制
+date: 2026-02-05 23:03:18+08:00
 draft: false
-entry_kind: "auto"
-tags: ["LLM", "数据质量", "Logit-Linear-Selection", "模型行为", "隐藏信号", "数据筛选", "对数线性性", "模型架构"]
-categories: ["大模型", "数据"]
+entry_kind: auto
+tags:
+- LLM
+- 数据质量
+- Logit-Linear-Selection
+- 模型行为
+- 隐藏信号
+- 数据筛选
+- 对数线性性
+- 模型架构
+categories:
+- 大模型
+- 数据
 source: arxiv
-description: "本文介绍了一项关于大型语言模型（LLMs）中**潜在效应**的研究。随着训练算法和数据的日益复杂，理解数据集如何影响模型特性变得至关重要，尤其是近期实验发现数据集能传递无法从单个数据点直接观察到的“隐藏信号”。 受LLM线性结构研究的启发，本文揭示了一种通用的潜在效应产生机制，并提出了**Logit-Linear-Se"
+description: 本文介绍了一项关于大型语言模型（LLMs）中**潜在效应**的研究。随着训练算法和数据的日益复杂，理解数据集如何影响模型特性变得至关重要，尤其是近期实验发现数据集能传递无法从单个数据点直接观察到的“隐藏信号”。
+  受LLM线性结构研究的启发，本文揭示了一种通用的潜在效应产生机制，并提出了**Logit-Linear-Se
 external_url: http://arxiv.org/abs/2602.04863v1
-scenarios: ["大语言模型"]
+scenarios:
+- 大语言模型
+aliases:
+- /posts/20260206-arxiv_ai-subliminal-effects-in-your-data-a-general-mechanis-7/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 数据中的阈下效应：一种基于对数线性性的通用机制
@@ -270,7 +288,6 @@ scenarios: ["大语言模型"]
 这篇论文在更长的时间尺度上，推进的是**“理解”**。它揭示了一个关于智能系统的基本属性：**数据的语义是相对的，取决于观察者（模型）的参数状态。** 这种理解的代价是，我们可能永远无法完全通过肉眼审查数据来保证AI的安全性，必须依赖更高级的数学工具来审计“数据-模型”的共生关系。
 
 ---
-## 研究最佳实践
 
 ## 最佳实践指南
 
@@ -360,7 +377,6 @@ scenarios: ["大语言模型"]
 - 未来可扩展至高维数据和动态系统，进一步探索阈下效应的边界条件。
 
 ---
-## 学习路径
 
 ## 学习路径
 
@@ -521,9 +537,9 @@ scenarios: ["大语言模型"]
 
 ### 相关文章
 
-- [Trinity Large：开源4000亿稀疏MoE模型]({{< relref "posts/20260129-hacker_news-trinity-large-an-open-400b-sparse-moe-model-14.md" >}})
-- [Kimi K2.5 技术报告发布：模型架构与性能评估]({{< relref "posts/20260131-hacker_news-kimi-k25-technical-report-pdf-10.md" >}})
-- [Kimi K2.5 技术报告发布：模型架构与训练细节]({{< relref "posts/20260131-hacker_news-kimi-k25-technical-report-pdf-16.md" >}})
-- [Kimi K2.5 技术报告发布：模型架构与性能评估]({{< relref "posts/20260131-hacker_news-kimi-k25-technical-report-pdf-19.md" >}})
-- [Kimi K2.5 技术报告发布：模型架构与性能评估]({{< relref "posts/20260131-hacker_news-kimi-k25-technical-report-pdf-3.md" >}})
+- [Trinity Large：开源4000亿稀疏MoE模型]({{< relref "posts/20260129-hacker_news-trinity-large-an-open-400b-sparse-moe-model-4.md" >}})
+- [Kimi K2.5 技术报告发布：模型架构与性能评估]({{< relref "posts/20260130-hacker_news-kimi-k25-technical-report-pdf-10.md" >}})
+- [Kimi K2.5 技术报告发布：模型架构与训练细节]({{< relref "posts/20260130-hacker_news-kimi-k25-technical-report-pdf-10.md" >}})
+- [Kimi K2.5 技术报告发布：模型架构与性能评估]({{< relref "posts/20260130-hacker_news-kimi-k25-technical-report-pdf-10.md" >}})
+- [Kimi K2.5 技术报告发布：模型架构与性能评估]({{< relref "posts/20260130-hacker_news-kimi-k25-technical-report-pdf-10.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

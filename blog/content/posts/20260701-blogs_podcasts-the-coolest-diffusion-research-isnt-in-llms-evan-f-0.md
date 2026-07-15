@@ -1,14 +1,29 @@
 ---
-title: "非LLM扩散研究：PEARL零样本OpenBind与co-folding前沿"
-date: 2026-07-01T16:05:02+08:00
+title: 非LLM扩散研究：PEARL零样本OpenBind与co-folding前沿
+date: 2026-07-01 16:05:02+08:00
 draft: false
-entry_kind: "auto"
-tags: ["扩散模型", "药物发现", "蛋白质", "零样本", "OpenBind", "co-folding", "分子AI", "Genesis"]
-categories: ["效率与方法论"]
+entry_kind: auto
+tags:
+- 扩散模型
+- 药物发现
+- 蛋白质
+- 零样本
+- OpenBind
+- co-folding
+- 分子AI
+- Genesis
+categories:
+- 效率与方法论
 source: blogs_podcasts
-description: "以下是中文翻译： --- **为什么Llama负责人离开Meta投身药物发现、PEARL的零样本OpenBind突破，以及当co-folding终于跨越准确度阈值时什么将成为可能。** --- 说明： - 保持了三段并列的结构（原文中用逗号分隔的三个部分） - 技术术语如\"Llama\"、\"Meta\"、\"PEARL\"、\""
+description: 以下是中文翻译： --- **为什么Llama负责人离开Meta投身药物发现、PEARL的零样本OpenBind突破，以及当co-folding终于跨越准确度阈值时什么将成为可能。**
+  --- 说明： - 保持了三段并列的结构（原文中用逗号分隔的三个部分） - 技术术语如"Llama"、"Meta"、"PEARL"、"
 external_url: https://www.latent.space/p/the-coolest-diffusion-research-isnt
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 非LLM扩散研究：PEARL零样本OpenBind与co-folding前沿
@@ -119,9 +134,9 @@ Co-folding指蛋白质与小分子配体的联合折叠预测。团队宣称该�
 
 ### 相关文章
 
-- [Boltz 开源药物发现平台：延续 AlphaFold 技术赋能分子研究]({{< relref "posts/20260212-blogs_podcasts-beyond-alphafold-how-boltz-is-open-sourcing-the-fu-3.md" >}})
+- [Boltz 开源药物发现平台：延续 AlphaFold 技术赋能分子研究]({{< relref "posts/20260212-blogs_podcasts-beyond-alphafold-how-boltz-is-open-sourcing-the-fu-1.md" >}})
 - [🚀动态场景新视角合成！AnyView实现任意视角自由切换！🤯]({{< relref "posts/20260126-arxiv_ai-anyview-synthesizing-any-novel-view-in-dynamic-sce-0.md" >}})
-- [🚀AnyView：动态场景任意新视角合成！开创性技术突破🔥]({{< relref "posts/20260127-arxiv_ai-anyview-synthesizing-any-novel-view-in-dynamic-sce-0.md" >}})
+- [🚀AnyView：动态场景任意新视角合成！开创性技术突破🔥]({{< relref "posts/20260126-arxiv_ai-anyview-synthesizing-any-novel-view-in-dynamic-sce-0.md" >}})
 - [伪可逆神经网络：兼具可逆性与灵活性的新架构]({{< relref "posts/20260206-arxiv_ai-pseudo-invertible-neural-networks-1.md" >}})
-- [伪可逆神经网络：基于伪逆变换的高效架构设计]({{< relref "posts/20260208-arxiv_ai-pseudo-invertible-neural-networks-1.md" >}})
+- [伪可逆神经网络：基于伪逆变换的高效架构设计]({{< relref "posts/20260206-arxiv_ai-pseudo-invertible-neural-networks-1.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

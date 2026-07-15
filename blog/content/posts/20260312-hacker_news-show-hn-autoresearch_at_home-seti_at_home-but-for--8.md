@@ -21,6 +21,10 @@ description: 分布式计算曾助力 SETI 项目处理海量天文数据，如�
 external_url: https://www.ensue-network.ai/autoresearch
 scenarios:
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Autoresearch_at_home：类SETI项目利用闲置资源训练LLM

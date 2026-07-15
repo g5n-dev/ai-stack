@@ -8,7 +8,7 @@ tags:
 - Gemini
 - Google
 - 基准测试
-- AI编程
+- AI 编程
 - 代码生成
 - Android Bench
 - LLM
@@ -22,6 +22,10 @@ external_url: https://juejin.cn/post/7614897667961143347
 scenarios:
 - AI/ML项目
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 谷歌发布 Android Bench：Gemini-3.1 Pro 开发基准测试领先
@@ -178,8 +182,8 @@ Studio Bot 目前主要针对 **Kotlin** 和 **Java** 进行了优化，特别�
 
 ### 相关文章
 
-- [53款模型“洗车”测试：评估代码生成与修复能力]({{< relref "posts/20260224-hacker_news-car-wash-test-with-53-models-13.md" >}})
-- [仅调整框架，一下午提升15个大模型编程能力]({{< relref "posts/20260213-hacker_news-improving-15-llms-at-coding-in-one-afternoon-only--10.md" >}})
-- [Gemini 3.1 Pro发布：ARC-AGI 2评测分数达3.0两倍]({{< relref "posts/20260223-blogs_podcasts-ainews-gemini-31-pro-2x-30-on-arc-agi-2-10.md" >}})
-- [OpenAI推出GPT-5.3-Codex-Spark：首款实时编程模型]({{< relref "posts/20260216-blogs_podcasts-introducing-gpt-53-codex-spark-13.md" >}})
+- [53款模型“洗车”测试：评估代码生成与修复能力]({{< relref "posts/20260223-hacker_news-car-wash-test-with-53-models-9.md" >}})
+- [仅调整框架，一下午提升15个大模型编程能力]({{< relref "posts/20260212-hacker_news-improving-15-llms-at-coding-in-one-afternoon-only--1.md" >}})
+- [Gemini 3.1 Pro发布：ARC-AGI 2评测分数达3.0两倍]({{< relref "posts/20260220-blogs_podcasts-ainews-gemini-31-pro-2x-30-on-arc-agi-2-0.md" >}})
+- [OpenAI推出GPT-5.3-Codex-Spark：首款实时编程模型]({{< relref "posts/20260213-blogs_podcasts-introducing-gpt-53-codex-spark-11.md" >}})
 - [大模型生成的代码看似合理实则存在错误]({{< relref "posts/20260307-hacker_news-llm-doesnt-write-correct-code-it-writes-plausible--17.md" >}})

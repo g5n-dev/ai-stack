@@ -1,14 +1,30 @@
 ---
-title: "科学推理模型引入拒答机制以提升准确性"
-date: 2026-02-17T03:10:02+08:00
+title: 科学推理模型引入拒答机制以提升准确性
+date: 2026-02-17 03:10:02+08:00
 draft: false
-entry_kind: "auto"
-tags: ["科学推理", "拒答机制", "NLI", "SciFact", "模型评估", "幻觉抑制", "证据验证", "Abstention"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- 科学推理
+- 拒答机制
+- NLI
+- SciFact
+- 模型评估
+- 幻觉抑制
+- 证据验证
+- Abstention
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "以下是该内容的中文总结： **摘要：科学推理中的“拒答”意识框架** 本文针对大型语言模型（LLM）在科学领域的应用提出了一个新的评估视角。传统的评估通常假设模型必须给出确定的答案，但在科学场景中，基于不充分或不确定证据得出的错误结论，其危害往往远大于“拒答”。 **核心方法：** 作者提出了一个**“拒答感知”验证框"
+description: 以下是该内容的中文总结： **摘要：科学推理中的“拒答”意识框架** 本文针对大型语言模型（LLM）在科学领域的应用提出了一个新的评估视角。传统的评估通常假设模型必须给出确定的答案，但在科学场景中，基于不充分或不确定证据得出的错误结论，其危害往往远大于“拒答”。
+  **核心方法：** 作者提出了一个**“拒答感知”验证框
 external_url: http://arxiv.org/abs/2602.14189v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 科学推理模型引入拒答机制以提升准确性
@@ -267,7 +283,6 @@ scenarios: ["Web应用开发"]
 从长远来看，这篇论文推进的是**“理解”**而非仅仅是“方法”。它标志着AI研究开始从“拟合数据”转向“理解知识的边界”。代价是AI系统的可用性在短期内可能下降（因为它变得更保守了），但换来的是长远的可信度和安全性。这是AI从“玩具”走向“工具”的必经之路。
 
 ---
-## 研究最佳实践
 
 ## 最佳实践指南
 
@@ -370,7 +385,6 @@ scenarios: ["Web应用开发"]
 - 该机制不仅提升了模型的可信度，还为构建更可靠、更诚实的科学问答系统提供了新的技术路径。
 
 ---
-## 学习路径
 
 ## 学习路径
 
@@ -532,7 +546,7 @@ scenarios: ["Web应用开发"]
 
 - [发现模型仓库中被忽视的高质量模型]({{< relref "posts/20260130-arxiv_ai-discovering-hidden-gems-in-model-repositories-1.md" >}})
 - [基于认知上下文学习构建大模型多智能体系统的信任机制]({{< relref "posts/20260130-arxiv_ai-epistemic-context-learning-building-trust-the-righ-7.md" >}})
-- [发现模型仓库中的隐藏价值]({{< relref "posts/20260131-arxiv_ai-discovering-hidden-gems-in-model-repositories-1.md" >}})
+- [发现模型仓库中的隐藏价值]({{< relref "posts/20260130-arxiv_ai-discovering-hidden-gems-in-model-repositories-1.md" >}})
 - [GLM-OCR：兼顾准确度、速度与通用性的多模态大模型]({{< relref "posts/20260211-hacker_news-glm-ocr-accurate-fast-comprehensive-3.md" >}})
-- [⚡️俄罗斯方块爆杀Opus！Gemini Flash胜率66%震撼实测🎮]({{< relref "posts/20260127-hacker_news-show-hn-tetrisbench-gemini-flash-reaches-66-win-ra-13.md" >}})
+- [⚡️俄罗斯方块爆杀Opus！Gemini Flash胜率66%震撼实测🎮]({{< relref "posts/20260127-hacker_news-show-hn-tetrisbench-gemini-flash-reaches-66-win-ra-6.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

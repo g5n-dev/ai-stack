@@ -1,14 +1,30 @@
 ---
-title: "Amazon Bedrock AgentCore Gateway扩展MCP支持强化生产环境安全管控"
-date: 2026-06-01T21:35:17+08:00
+title: Amazon Bedrock AgentCore Gateway扩展MCP支持强化生产环境安全管控
+date: 2026-06-01 21:35:17+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Amazon Bedrock", "MCP", "AgentCore Gateway", "安全管控", "访问控制", "可观测性", "凭证管理", "数据泄露防护"]
-categories: ["AI 工程", "安全"]
+entry_kind: auto
+tags:
+- Amazon Bedrock
+- MCP
+- AgentCore Gateway
+- 安全管控
+- 访问控制
+- 可观测性
+- 凭证管理
+- 数据泄露防护
+categories:
+- AI 工程
+- 安全
 source: blogs_podcasts
-description: "背景 在生产环境部署 Model Context Protocol (MCP) 服务器时，企业往往面临跨服务器细粒度权限控制、团队工具使用可观测性、数据泄露防护以及统一凭证管理等挑战。 需求 - **细粒度访问控制**：基于角色或项目划分服务器和工具权限。 - **可观测性**：实时追踪哪个团队使用了哪些工具，提供审计"
+description: 背景 在生产环境部署 Model Context Protocol (MCP) 服务器时，企业往往面临跨服务器细粒度权限控制、团队工具使用可观测性、数据泄露防护以及统一凭证管理等挑战。
+  需求 - **细粒度访问控制**：基于角色或项目划分服务器和工具权限。 - **可观测性**：实时追踪哪个团队使用了哪些工具，提供审计
 external_url: https://aws.amazon.com/blogs/machine-learning/extending-mcp-support-for-amazon-bedrock-agentcore-gateway-2
-scenarios: ["命令行工具"]
+scenarios:
+- 命令行工具
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Amazon Bedrock AgentCore Gateway扩展MCP支持强化生产环境安全管控
@@ -140,8 +156,8 @@ AgentCore Gateway在此场景中扮演流量网关角色，所有MCP请求必须
 ### 相关文章
 
 - [构建安全的 Amazon Bedrock 代理：利用 AgentCore Policy 实现细粒度访问控制]({{< relref "posts/20260312-blogs_podcasts-secure-ai-agents-with-policy-in-amazon-bedrock-age-2.md" >}})
-- [利用 Amazon Bedrock AgentCore Policy 实现安全访问]({{< relref "posts/20260313-blogs_podcasts-secure-ai-agents-with-policy-in-amazon-bedrock-age-3.md" >}})
-- [构建安全的 Amazon Bedrock 智能体：利用 AgentCore Policy 实现工具调用合规]({{< relref "posts/20260313-blogs_podcasts-secure-ai-agents-with-policy-in-amazon-bedrock-age-5.md" >}})
-- [构建确定性 AI 代理安全层：利用 Amazon Bedrock AgentCore 策略]({{< relref "posts/20260313-blogs_podcasts-secure-ai-agents-with-policy-in-amazon-bedrock-age-6.md" >}})
-- [构建确定性执行层：利用 Amazon Bedrock AgentCore Policy 管控 AI Agent]({{< relref "posts/20260313-blogs_podcasts-secure-ai-agents-with-policy-in-amazon-bedrock-age-7.md" >}})
+- [利用 Amazon Bedrock AgentCore Policy 实现安全访问]({{< relref "posts/20260312-blogs_podcasts-secure-ai-agents-with-policy-in-amazon-bedrock-age-2.md" >}})
+- [构建安全的 Amazon Bedrock 智能体：利用 AgentCore Policy 实现工具调用合规]({{< relref "posts/20260312-blogs_podcasts-secure-ai-agents-with-policy-in-amazon-bedrock-age-2.md" >}})
+- [构建确定性 AI 代理安全层：利用 Amazon Bedrock AgentCore 策略]({{< relref "posts/20260312-blogs_podcasts-secure-ai-agents-with-policy-in-amazon-bedrock-age-2.md" >}})
+- [构建确定性执行层：利用 Amazon Bedrock AgentCore Policy 管控 AI Agent]({{< relref "posts/20260312-blogs_podcasts-secure-ai-agents-with-policy-in-amazon-bedrock-age-2.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

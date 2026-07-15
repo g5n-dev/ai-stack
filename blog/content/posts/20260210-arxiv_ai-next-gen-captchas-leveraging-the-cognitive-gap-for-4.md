@@ -1,14 +1,23 @@
 ---
-title: "下一代验证码：利用认知差异防御GUI智能体"
-date: 2026-02-10T16:55:57+08:00
+title: 下一代验证码：利用认知差异防御GUI智能体
+date: 2026-02-10 16:55:57+08:00
 draft: false
-entry_kind: "auto"
-tags: ["arxiv", "cs.LG"]
-categories: ["论文"]
+entry_kind: auto
+tags:
+- arxiv
+- cs.LG
+categories:
+- 论文
 source: arxiv
-description: "本文介绍了**Next-Gen CAPTCHAs**，这是一种旨在防御下一代高级GUI智能代理的新型可扩展验证码框架。 **背景与问题：** 随着具备图形用户界面（GUI）能力的智能代理迅速发展，传统验证码已失去效用。尽管此前有基准（如OpenCaptchaWorld）用于评估多模态代理，但最新强推理模型（如Gemin"
+description: 本文介绍了**Next-Gen CAPTCHAs**，这是一种旨在防御下一代高级GUI智能代理的新型可扩展验证码框架。 **背景与问题：**
+  随着具备图形用户界面（GUI）能力的智能代理迅速发展，传统验证码已失去效用。尽管此前有基准（如OpenCaptchaWorld）用于评估多模态代理，但最新强推理模型（如Gemin
 external_url: http://arxiv.org/abs/2602.09012v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 下一代验证码：利用认知差异防御GUI智能体
@@ -107,7 +116,6 @@ scenarios: ["Web应用开发"]
 研究表明，通过利用AI与人类在认知和交互层面的差距，可以构建出比传统验证码更有效的防御体系。该框架为应对下一代GUI智能体的威胁提供了新的思路和可行的解决方案。
 
 ---
-## 研究最佳实践
 
 ## 最佳实践指南
 
@@ -202,7 +210,6 @@ scenarios: ["Web应用开发"]
 - 通过实验验证了该方法在保持高可用性的同时，能够显著降低先进多模态模型（如GPT-4V）的攻击成功率，证明了其在当前AI技术水平下的有效性。
 
 ---
-## 学习路径
 
 ## 学习路径
 
@@ -356,5 +363,5 @@ scenarios: ["Web应用开发"]
 - [基于朗之万动力学的直接软策略采样]({{< relref "posts/20260210-arxiv_ai-direct-soft-policy-sampling-via-langevin-dynamics-2.md" >}})
 - [MARTI-MARS$^2$: Scaling Multi-Agent Self-Search via Rei]({{< relref "posts/20260210-arxiv_ai-marti-mars2-scaling-multi-agent-self-search-via-re-7.md" >}})
 - [基于嵌入的Top-$k$检索：理论上$\mathbb{R}^{2k}$维空间已足够]({{< relref "posts/20260129-arxiv_ai-mathbbr2k-is-theoretically-large-enough-for-embedd-8.md" >}})
-- [R^{2k}维度理论上足以支持基于嵌入的Top-k检索]({{< relref "posts/20260130-arxiv_ai-mathbbr2k-is-theoretically-large-enough-for-embedd-8.md" >}})
+- [R^{2k}维度理论上足以支持基于嵌入的Top-k检索]({{< relref "posts/20260129-arxiv_ai-mathbbr2k-is-theoretically-large-enough-for-embedd-8.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

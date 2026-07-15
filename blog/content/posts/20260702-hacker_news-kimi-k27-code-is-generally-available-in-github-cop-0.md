@@ -1,14 +1,30 @@
 ---
-title: "Kimi K2.7 Code已在GitHub Copilot全面可用"
-date: 2026-07-02T07:50:47+08:00
+title: Kimi K2.7 Code已在GitHub Copilot全面可用
+date: 2026-07-02 07:50:47+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Kimi K2.7", "GitHub Copilot", "代码模型", "AI编程", "大模型", "开发者工具", "代码补全", "生成式AI"]
-categories: ["大模型", "开发工具"]
+entry_kind: auto
+tags:
+- Kimi K2.7
+- GitHub Copilot
+- 代码模型
+- AI 编程
+- 大模型
+- 开发者工具
+- 代码补全
+- 生成式 AI
+categories:
+- 大模型
+- 开发工具
 source: hacker_news
-description: "Kimi K2.7 代码现已正式在 GitHub Copilot 中开放使用，进一步将自然语言理解与代码生成深度融合。相较于早期版本，K2.7 在补全准确性、跨语言支持以及错误检测能力上都有显著提升，帮助开发者在日常编码中实现更快的迭代。通过本文，你将了解新功能的关键变化、典型应用场景以及实用配置技巧，快速在项目中发挥"
+description: Kimi K2.7 代码现已正式在 GitHub Copilot 中开放使用，进一步将自然语言理解与代码生成深度融合。相较于早期版本，K2.7
+  在补全准确性、跨语言支持以及错误检测能力上都有显著提升，帮助开发者在日常编码中实现更快的迭代。通过本文，你将了解新功能的关键变化、典型应用场景以及实用配置技巧，快速在项目中发挥
 external_url: https://github.blog/changelog/2026-07-01-kimi-k2-7-is-now-available-in-github-copilot
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Kimi K2.7 Code已在GitHub Copilot全面可用
@@ -80,8 +96,8 @@ Kimi K2.7 Code进入GitHub Copilot是国产AI编程模型走向全球开发者�
 ### 相关文章
 
 - [OpenAI Codex优惠券使用指南]({{< relref "posts/20260607-blogs_podcasts-sponsors-especially-openai-codex-voucher-usage-for-0.md" >}})
-- [Qwen3-Coder-Next：阿里新一代代码模型]({{< relref "posts/20260203-hacker_news-qwen3-coder-next-2.md" >}})
-- [Qwen3-Coder-Next：阿里下一代代码模型]({{< relref "posts/20260204-hacker_news-qwen3-coder-next-10.md" >}})
+- [Qwen3-Coder-Next：阿里新一代代码模型]({{< relref "posts/20260203-hacker_news-qwen3-coder-next-0.md" >}})
+- [Qwen3-Coder-Next：阿里下一代代码模型]({{< relref "posts/20260203-hacker_news-qwen3-coder-next-0.md" >}})
 - [OpenAI发布GPT-5.3-Codex-Spark：首款实时代码模型，速度提升15倍]({{< relref "posts/20260213-blogs_podcasts-introducing-gpt-53-codex-spark-11.md" >}})
-- [OpenAI发布首款实时编码模型：生成速度提升15倍]({{< relref "posts/20260214-blogs_podcasts-introducing-gpt-53-codex-spark-13.md" >}})
+- [OpenAI发布首款实时编码模型：生成速度提升15倍]({{< relref "posts/20260213-blogs_podcasts-introducing-gpt-53-codex-spark-11.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

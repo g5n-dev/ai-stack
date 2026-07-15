@@ -1,14 +1,30 @@
 ---
-title: "黄仁勋GTC 2026宣告：AI从生成式转向代理式"
-date: 2026-06-02T12:59:28+08:00
+title: 黄仁勋GTC 2026宣告：AI从生成式转向代理式
+date: 2026-06-02 12:59:28+08:00
 draft: false
-entry_kind: "auto"
-tags: ["黄仁勋", "GTC2026", "代理式AI", "生成式AI", "英伟达", "AI产业", "未来趋势", "范式转移"]
-categories: ["大模型", "系统与基础设施"]
+entry_kind: auto
+tags:
+- 黄仁勋
+- GTC2026
+- 代理式AI
+- 生成式 AI
+- 英伟达
+- AI产业
+- 未来趋势
+- 范式转移
+categories:
+- 大模型
+- 系统与基础设施
 source: juejin
-description: "2026年6月1日，英伟达CEO黄仁勋在台北GTC大会发表主题演讲，正式推出‘Agent AI（代理式AI）’，标志AI从生成式向代理式转型。此举重塑产业技术路径，为企业在自动化决策和复杂任务处理上提供新动能。本文梳理演讲核心要点，帮助读者快速把握Agent AI的特征与应用前景。"
+description: 2026年6月1日，英伟达CEO黄仁勋在台北GTC大会发表主题演讲，正式推出‘Agent AI（代理式AI）’，标志AI从生成式向代理式转型。此举重塑产业技术路径，为企业在自动化决策和复杂任务处理上提供新动能。本文梳理演讲核心要点，帮助读者快速把握Agent
+  AI的特征与应用前景。
 external_url: https://juejin.cn/post/7646587364769529890
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 黄仁勋GTC 2026宣告：AI从生成式转向代理式
@@ -85,8 +101,8 @@ scenarios: ["AI/ML项目"]
 ### 相关文章
 
 - [英伟达发布Vera CPU：专用于代理式AI]({{< relref "posts/20260316-hacker_news-nvidia-launches-vera-cpu-purpose-built-for-agentic-11.md" >}})
-- [NVIDIA Nemotron 3 Nano 30B 现已在 Amazon SageMaker JumpSta]({{< relref "posts/20260212-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-7.md" >}})
-- [NVIDIA Nemotron 3 Nano 30B 现已登陆 Amazon SageMaker JumpSt]({{< relref "posts/20260213-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-10.md" >}})
+- [NVIDIA Nemotron 3 Nano 30B 现已在 Amazon SageMaker JumpSta]({{< relref "posts/20260211-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-0.md" >}})
+- [NVIDIA Nemotron 3 Nano 30B 现已登陆 Amazon SageMaker JumpSt]({{< relref "posts/20260211-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-0.md" >}})
 - [Amazon Bedrock 新增中东区域支持 Anthropic Claude 模型推理]({{< relref "posts/20260224-blogs_podcasts-introducing-amazon-bedrock-global-cross-region-inf-3.md" >}})
-- [Amazon Bedrock 推出中东全球跨区域推理支持 Claude 模型]({{< relref "posts/20260224-blogs_podcasts-introducing-amazon-bedrock-global-cross-region-inf-4.md" >}})
+- [Amazon Bedrock 推出中东全球跨区域推理支持 Claude 模型]({{< relref "posts/20260224-blogs_podcasts-introducing-amazon-bedrock-global-cross-region-inf-3.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

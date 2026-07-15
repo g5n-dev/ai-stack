@@ -1,12 +1,26 @@
 ---
-title: "🚀用LLM重写ZORKS！让AI玩转文字冒险游戏，这波操作太硬核了！"
-date: 2026-01-28T02:56:41+08:00
+title: 🚀用LLM重写ZORKS！让AI玩转文字冒险游戏，这波操作太硬核了！
+date: 2026-01-28 02:56:41+08:00
 draft: false
-entry_kind: "auto"
-tags: ["LLM", "Zork", "文字冒险游戏", "自然语言处理", "Python", "GPT-4", "状态管理", "游戏开发"]
-categories: ["大模型", "开发工具"]
+entry_kind: auto
+tags:
+- LLM
+- Zork
+- 文字冒险游戏
+- 自然语言处理
+- Python
+- GPT-4
+- 状态管理
+- 游戏开发
+categories:
+- 大模型
+- 开发工具
 source: hacker_news
 external_url: https://infocom.tambo.co
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 📰 🚀用LLM重写ZORKS！让AI玩转文字冒险游戏，这波操作太硬核了！
@@ -190,7 +204,6 @@ Reddit 社区 r/zork 的开发者希望为原版游戏添加现代功能（如�
 - 成功兼容 1977-1990 年间的 30+ 款 Zork 系列。
 
 ---
-## ✅ 最佳实践
 
 ## 最佳实践指南
 

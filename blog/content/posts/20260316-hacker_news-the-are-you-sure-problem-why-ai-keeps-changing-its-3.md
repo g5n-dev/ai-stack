@@ -21,6 +21,10 @@ external_url: https://www.randalolson.com/2026/02/07/the-are-you-sure-problem-wh
 scenarios:
 - AI/ML项目
 - 大语言模型
+content_mode: legacy_source_brief
+publication_tier: C
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AI反复改变决策的“你确定吗”问题解析

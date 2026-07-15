@@ -1,12 +1,26 @@
 ---
-title: "无需真值！🔥颠覆性校准技术来了！🤯"
-date: 2026-01-28T07:28:04+08:00
+title: 无需真值！🔥颠覆性校准技术来了！🤯
+date: 2026-01-28 07:28:04+08:00
 draft: false
-entry_kind: "auto"
-tags: ["模型校准", "无监督学习", "LLM", "后处理", "Bregman投影", "无真值", "套利理论", "模型优化"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- 模型校准
+- 无监督学习
+- LLM
+- 后处理
+- Bregman投影
+- 无真值
+- 套利理论
+- 模型优化
+categories:
+- 大模型
+- 论文
 source: arxiv
 external_url: http://arxiv.org/abs/2601.19862v1
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 📚 无需真值！🔥颠覆性校准技术来了！🤯
@@ -293,7 +307,6 @@ $$ \min_{p \in \Delta} \quad D_{KL}(p \| q) + \lambda \cdot \text{Calibration-Er
 - **理论
 
 ---
-## ✅ 研究最佳实践
 
 ## 最佳实践指南：无真实值校准
 
@@ -386,7 +399,6 @@ $$ \min_{p \in \Delta} \quad D_{KL}(p \| q) + \lambda \cdot \text{Calibration-Er
 - 🌐 **解决跨域分布差异**：该方法能有效处理源域（训练集）与目标域（测试集）分布不一致的情况，使模型在面对新环境数据时依然保持可靠的置信度。
 
 ---
-## 🗺️ 学习路径
 
 ## 学习路径
 

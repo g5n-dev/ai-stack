@@ -1,14 +1,32 @@
 ---
-title: "Docker一键部署OpenCode浏览器访问即用AI编程"
-date: 2026-06-23T09:57:11+08:00
+title: Docker一键部署OpenCode浏览器访问即用AI编程
+date: 2026-06-23 09:57:11+08:00
 draft: false
-entry_kind: "auto"
-tags: ["OpenCode", "Docker", "一键部署", "AI编程", "浏览器访问", "容器化", "镜像加速", "零基础教程"]
-categories: ["开发工具", "系统与基础设施"]
+entry_kind: auto
+tags:
+- OpenCode
+- Docker
+- 一键部署
+- AI 编程
+- 浏览器访问
+- 容器化
+- 镜像加速
+- 零基础教程
+categories:
+- 开发工具
+- 系统与基础设施
 source: juejin
-description: "准备工作 - 确保已安装 Docker（Docker Desktop 或 docker‑ce）。 - 可选：配置轩辕镜像加速，将拉取源替换为 的加速地址，以提升下载速度。 一键拉取与启动 浏览器访问 AI 写代码界面 - 打开任意浏览器，输入 。 - 页面加载完成后，左侧为代码编辑区，右侧为 AI 交互面板。 使用 A"
+description: 准备工作 - 确保已安装 Docker（Docker Desktop 或 docker‑ce）。 - 可选：配置轩辕镜像加速，将拉取源替换为
+  的加速地址，以提升下载速度。 一键拉取与启动 浏览器访问 AI 写代码界面 - 打开任意浏览器，输入 。 - 页面加载完成后，左侧为代码编辑区，右侧为 AI 交互面板。
+  使用 A
 external_url: https://juejin.cn/post/7653694379728158783
-scenarios: ["云原生/容器", "AI/ML项目"]
+scenarios:
+- 云原生/容器
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Docker一键部署OpenCode浏览器访问即用AI编程
@@ -37,7 +55,6 @@ scenarios: ["云原生/容器", "AI/ML项目"]
 - 确保已安装 Docker（Docker Desktop 或 docker‑ce）。
 - 可选：配置轩辕镜像加速，将拉取源替换为 `openeuler/opencode` 的加速地址，以提升下载速度。
 
-#### 一键拉取与启动
 ```bash
 # 拉取最新镜像（使用轩辕加速）
 docker pull openeuler/opencode:latest
@@ -108,7 +125,7 @@ docker run -d -p 8080:8080 --name opencode openeuler/opencode:latest
 
 - [TRAE中国版接入IGA Pages实现一键部署]({{< relref "posts/20260429-juejin-trae-iga-pagestrae-中国版如何快速实现一键部署-0.md" >}})
 - [Claude Code 发布：面向基础设施的编程工具]({{< relref "posts/20260204-hacker_news-claude-code-for-infrastructure-11.md" >}})
-- [Claude Code：面向基础设施的编程工具]({{< relref "posts/20260204-hacker_news-claude-code-for-infrastructure-12.md" >}})
-- [Claude Code：面向基础设施的编程工具]({{< relref "posts/20260205-hacker_news-claude-code-for-infrastructure-11.md" >}})
-- [Claude Code：面向基础设施的编程工具]({{< relref "posts/20260205-hacker_news-claude-code-for-infrastructure-9.md" >}})
+- [Claude Code：面向基础设施的编程工具]({{< relref "posts/20260204-hacker_news-claude-code-for-infrastructure-11.md" >}})
+- [Claude Code：面向基础设施的编程工具]({{< relref "posts/20260204-hacker_news-claude-code-for-infrastructure-11.md" >}})
+- [Claude Code：面向基础设施的编程工具]({{< relref "posts/20260204-hacker_news-claude-code-for-infrastructure-11.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

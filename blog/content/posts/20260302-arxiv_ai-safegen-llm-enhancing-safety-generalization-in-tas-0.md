@@ -21,6 +21,10 @@ description: 本文介绍了名为 **SafeGen-LLM** 的大语言模型，旨在�
 external_url: http://arxiv.org/abs/2602.24235v1
 scenarios:
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # SafeGen-LLM：增强机器人系统任务规划的安全泛化能力
@@ -129,7 +133,6 @@ SafeGen-LLM 是一种**安全可泛化**的模型，不仅能提高任务计划�
 2.  **大语言模型（LLM）**：具备强大的常识推理与泛化能力，但其生成机制基于概率预测，无法从数学层面保证生成的动作序列不违反预定义的安全规则（即“幻觉”问题）。
 3.  **现有对齐技术**：常规的 RLHF 等技术主要侧重于内容安全性，难以有效针对机器人动作序列的逻辑安全性进行精确验证。
 
-### 3. 理论基础与技术特性
 
 ### 3.1 神经符号结合
 该研究体现了神经符号人工智能的范式，即利用符号主义工具（形式化验证器）的严谨性，为连接主义模型（神经网络）提供精确的监督信号。

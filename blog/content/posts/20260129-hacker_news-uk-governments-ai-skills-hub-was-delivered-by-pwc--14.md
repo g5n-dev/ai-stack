@@ -1,13 +1,30 @@
 ---
-title: "英国政府斥资410万英镑委托普华永道建设AI技能中心"
-date: 2026-01-29T05:01:24+08:00
+title: 英国政府斥资410万英镑委托普华永道建设AI技能中心
+date: 2026-01-29 05:01:24+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI技能中心", "普华永道", "英国政府", "数字化转型", "人才培养", "AI教育", "技术咨询", "政府采购"]
-categories: ["产品与创业", "开源生态"]
+entry_kind: auto
+tags:
+- AI技能中心
+- 普华永道
+- 英国政府
+- 数字化转型
+- 人才培养
+- AI 教育
+- 技术咨询
+- 政府采购
+categories:
+- 产品与创业
+- 开源生态
 source: hacker_news
 external_url: https://mahadk.com/posts/ai-skills-hub
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+aliases:
+- /posts/20260129-hacker_news-uk-governments-ai-skills-hub-was-delivered-by-pwc--19/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 英国政府斥资410万英镑委托普华永道建设AI技能中心
@@ -196,7 +213,6 @@ print(assess_risk_factors("AI技能中心", 4.1, 12, 20))
 **效果**: 该项目成功培养了一批具备 AI 战略眼光的公务员，使得多个关键部门（如税务、司法）成功上线了 AI 辅助决策系统。这不仅降低了行政运营成本，还通过提升算法的可解释性，增强了公众对政府使用 AI 技术的信任。
 
 ---
-## 最佳实践
 
 ## 最佳实践指南
 
@@ -352,9 +368,9 @@ print(assess_risk_factors("AI技能中心", 4.1, 12, 20))
 
 ### 相关文章
 
-- [🌍 Edu for Countries 重磅发布！赋能国家级教育的创新方案 🚀]({{< relref "posts/20260127-blogs_podcasts-introducing-edu-for-countries-9.md" >}})
-- [🌍 重磅！Edu for Countries：赋能国家级教育的未来！]({{< relref "posts/20260126-blogs_podcasts-introducing-edu-for-countries-7.md" >}})
+- [🌍 Edu for Countries 重磅发布！赋能国家级教育的创新方案 🚀]({{< relref "posts/20260125-blogs_podcasts-introducing-edu-for-countries-7.md" >}})
+- [🌍 重磅！Edu for Countries：赋能国家级教育的未来！]({{< relref "posts/20260125-blogs_podcasts-introducing-edu-for-countries-7.md" >}})
 - [🚀 国家级教育升级！Edu for Countries：开启智慧教育新时代！]({{< relref "posts/20260125-blogs_podcasts-introducing-edu-for-countries-7.md" >}})
-- [🌍 重磅！Edu for Countries 革命性教育解决方案，赋能国家未来！🚀]({{< relref "posts/20260126-blogs_podcasts-introducing-edu-for-countries-8.md" >}})
+- [🌍 重磅！Edu for Countries 革命性教育解决方案，赋能国家未来！🚀]({{< relref "posts/20260125-blogs_podcasts-introducing-edu-for-countries-7.md" >}})
 - [🔥技术青春期：颠覆性创新如何重塑未来！]({{< relref "posts/20260126-hacker_news-the-adolescence-of-technology-4.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

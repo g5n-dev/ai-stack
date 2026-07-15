@@ -1,14 +1,31 @@
 ---
-title: "多智能体系统实现潜在客户发现与邮件生成自动化"
-date: 2026-07-14T23:29:48+08:00
+title: 多智能体系统实现潜在客户发现与邮件生成自动化
+date: 2026-07-14 23:29:48+08:00
 draft: false
-entry_kind: "auto"
-tags: ["多智能体", "潜在客户发现", "邮件生成", "Amazon Bedrock", "编排模式", "性能基准", "加权评分", "LLM"]
-categories: ["AI 工程", "系统与基础设施"]
+entry_kind: auto
+tags:
+- 多智能体
+- 潜在客户发现
+- 邮件生成
+- Amazon Bedrock
+- 编排模式
+- 性能基准
+- 加权评分
+- LLM
+categories:
+- AI 工程
+- 系统与基础设施
 source: blogs_podcasts
-description: "系统概述 Thrad.ai 采用 Strands Agents 与 Amazon Bedrock AgentCore 构建多智能体系统，实现从潜在客户发现到个性化邮件生成的完整自动化流程。 编排模式对比 系统提供 **Swarm（蜂群）** 与 **Graph（图）** 两种编排方式。 - **Swarm**：去中心化"
+description: 系统概述 Thrad.ai 采用 Strands Agents 与 Amazon Bedrock AgentCore 构建多智能体系统，实现从潜在客户发现到个性化邮件生成的完整自动化流程。
+  编排模式对比 系统提供 **Swarm（蜂群）** 与 **Graph（图）** 两种编排方式。 - **Swarm**：去中心化
 external_url: https://aws.amazon.com/blogs/machine-learning/multi-agent-social-intelligence-with-strands-agents-and-amazon-bedrock
-scenarios: ["大语言模型", "AI/ML项目"]
+scenarios:
+- 大语言模型
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 多智能体系统实现潜在客户发现与邮件生成自动化

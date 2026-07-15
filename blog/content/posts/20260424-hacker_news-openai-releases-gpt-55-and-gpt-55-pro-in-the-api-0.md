@@ -1,14 +1,29 @@
 ---
-title: "OpenAI在API中推出GPT-5.5及Pro版"
-date: 2026-04-24T20:15:22+08:00
+title: OpenAI在API中推出GPT-5.5及Pro版
+date: 2026-04-24 20:15:22+08:00
 draft: false
-entry_kind: "auto"
-tags: ["OpenAI", "GPT-5.5", "API", "大模型", "语言模型", "深度学习", "新版本", "发布"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- OpenAI
+- GPT-5.5
+- API
+- 大模型
+- 语言模型
+- 深度学习
+- 新版本
+- 发布
+categories:
+- 大模型
+- AI 工程
 source: hacker_news
-description: "OpenAI 已在 API 平台推出 GPT‑5.5 与 GPT‑5.5 Pro，两个模型在上下文窗口、推理速度和多媒体交互方面实现显著提升，并针对企业调用提供更灵活的计费方案。对需要在生产环境部署大语言模型的开发者而言，这些改进有助于降低成本并加快响应。本篇将对比两个模型的核心差异、接口使用方法及常见调优策略，帮助读"
+description: OpenAI 已在 API 平台推出 GPT‑5.5 与 GPT‑5.5 Pro，两个模型在上下文窗口、推理速度和多媒体交互方面实现显著提升，并针对企业调用提供更灵活的计费方案。对需要在生产环境部署大语言模型的开发者而言，这些改进有助于降低成本并加快响应。本篇将对比两个模型的核心差异、接口使用方法及常见调优策略，帮助读
 external_url: https://developers.openai.com/api/docs/changelog
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # OpenAI在API中推出GPT-5.5及Pro版
@@ -85,7 +100,7 @@ OpenAI于近期正式在API平台上线GPT-5.5与GPT-5.5 Pro版本。GPT-5.5为�
 ### 相关文章
 
 - [OpenAI发布GPT-5.5]({{< relref "posts/20260423-hacker_news-gpt-55-0.md" >}})
-- [Claude Opus 4.7 发布]({{< relref "posts/20260417-hacker_news-claude-opus-47-0.md" >}})
+- [Claude Opus 4.7 发布]({{< relref "posts/20260416-hacker_news-claude-opus-47-0.md" >}})
 - [Anthropic发布Claude Opus 4.7]({{< relref "posts/20260416-hacker_news-claude-opus-47-0.md" >}})
 - [GPT‑5.3 Instant 模型发布]({{< relref "posts/20260303-hacker_news-gpt53-instant-2.md" >}})
 - [大模型幻觉频发：代码调试与API调用的隐形陷阱]({{< relref "posts/20260316-juejin-骗我可以注意次数-0.md" >}})

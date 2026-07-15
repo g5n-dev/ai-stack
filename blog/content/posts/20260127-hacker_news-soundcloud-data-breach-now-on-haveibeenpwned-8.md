@@ -1,12 +1,30 @@
 ---
-title: "🚨SoundCloud数据泄露！HaveIBeenPwned紧急更新！"
-date: 2026-01-27T20:26:59+08:00
+title: 🚨SoundCloud数据泄露！HaveIBeenPwned紧急更新！
+date: 2026-01-27 20:26:59+08:00
 draft: false
-entry_kind: "auto"
-tags: ["数据泄露", "SoundCloud", "HaveIBeenPwned", "HIBP", "凭证填充", "bcrypt", "黑客攻击", "隐私保护"]
-categories: ["安全"]
+entry_kind: auto
+tags:
+- 数据泄露
+- SoundCloud
+- HaveIBeenPwned
+- HIBP
+- 凭证填充
+- bcrypt
+- 黑客攻击
+- 隐私保护
+categories:
+- 安全
 source: hacker_news
 external_url: https://haveibeenpwned.com/Breach/SoundCloud
+scenarios: []
+aliases:
+- /posts/20260127-hacker_news-soundcloud-data-breach-now-on-haveibeenpwned-3/
+- /posts/20260128-hacker_news-soundcloud-data-breach-now-on-haveibeenpwned-13/
+- /posts/20260128-hacker_news-soundcloud-data-breach-now-on-haveibeenpwned-7/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 📰 🚨SoundCloud数据泄露！HaveIBeenPwned紧急更新！
@@ -190,7 +208,6 @@ SoundCloud 泄露事件爆发后，B公司发现其共用的品牌邮箱出现�
 📉 **主动防御了大规模盗号行为**。在攻击高峰期，平台成功拦截了超过 10 万次利用泄露凭证的非法登录尝试。通过主动通知用户修改密码，减少了 90% 因账号被盗引发的客服工单，极大地保护了用户的虚拟资产安全。
 
 ---
-## ✅ 最佳实践
 
 ## 最佳实践指南
 

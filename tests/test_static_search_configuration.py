@@ -32,10 +32,15 @@ def test_pagefind_and_node_test_runner_are_exactly_locked() -> None:
 
 def test_search_page_is_semantic_keyboard_ready_and_self_hosted() -> None:
     template = ROOT / "blog/themes/terminal-theme/layouts/search/list.html"
-    soup = BeautifulSoup(template.read_text(encoding="utf-8"), "html.parser")
+    template_text = template.read_text(encoding="utf-8")
+    soup = BeautifulSoup(template_text, "html.parser")
 
     assert soup.html is not None and soup.html.get("lang")
-    assert soup.title is not None
+    assert '{{ partial "site-head.html"' in template_text
+    shared_head = (
+        ROOT / "blog/themes/terminal-theme/layouts/partials/site-head.html"
+    ).read_text(encoding="utf-8")
+    assert "<title>{{ $title }}</title>" in shared_head
     assert len(soup.select("main")) == 1
     assert len(soup.select("h1")) == 1
     assert soup.select_one('a[href="#search-query"]') is not None
@@ -46,10 +51,8 @@ def test_search_page_is_semantic_keyboard_ready_and_self_hosted() -> None:
         assert control is not None
         assert soup.select_one(f'label[for="{control.get("id")}"]') is not None
 
-    script = soup.select_one('script[src="/js/search.js"]')
-    assert script is not None
-
-    template_text = template.read_text(encoding="utf-8")
+    assert '"js/search.js" | relURL' in template_text
+    assert 'src="/js/search.js"' not in template_text
     for low_contrast_class in (
         "text-primary/70",
         "text-muted-teal/70",

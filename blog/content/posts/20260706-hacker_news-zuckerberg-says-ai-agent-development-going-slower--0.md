@@ -1,14 +1,30 @@
 ---
-title: "扎克伯格：AI代理开发进展不及预期"
-date: 2026-07-06T00:24:35+08:00
+title: 扎克伯格：AI代理开发进展不及预期
+date: 2026-07-06 00:24:35+08:00
 draft: false
-entry_kind: "auto"
-tags: ["扎克伯格", "AI代理", "AI开发", "进度缓慢", "Meta", "大模型", "AI工程", "行业动态"]
-categories: ["AI 工程", "大模型"]
+entry_kind: auto
+tags:
+- 扎克伯格
+- AI 代理
+- AI 开发
+- 进度缓慢
+- Meta
+- 大模型
+- AI 工程
+- 行业动态
+categories:
+- AI 工程
+- 大模型
 source: hacker_news
-description: "Meta公司CEO马克·扎克伯格在最近的公开讲话中坦言，人工智能代理的研发进度未达预期。该言论引发了业界对技术成熟度、资源投入以及商业化时间表的重新审视。对关注 AI 前沿的读者来说，了解导致放缓的关键因素以及行业可能采取的应对策略，将有助于把握未来发展趋势并做出更明智的技术决策。"
+description: Meta公司CEO马克·扎克伯格在最近的公开讲话中坦言，人工智能代理的研发进度未达预期。该言论引发了业界对技术成熟度、资源投入以及商业化时间表的重新审视。对关注
+  AI 前沿的读者来说，了解导致放缓的关键因素以及行业可能采取的应对策略，将有助于把握未来发展趋势并做出更明智的技术决策。
 external_url: https://www.reuters.com/business/zuckerberg-says-ai-agent-development-going-slower-than-expected-2026-07-02
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 扎克伯格：AI代理开发进展不及预期

@@ -1,14 +1,29 @@
 ---
-title: "NVIDIA优化LLM训练速度"
-date: 2026-05-07T09:52:06+08:00
+title: NVIDIA优化LLM训练速度
+date: 2026-05-07 09:52:06+08:00
 draft: false
-entry_kind: "auto"
-tags: ["LLM", "训练加速", "Unsloth", "NVIDIA", "GPU优化", "深度学习", "性能优化", "高效训练"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- LLM
+- 训练加速
+- Unsloth
+- NVIDIA
+- GPU优化
+- 深度学习
+- 性能优化
+- 高效训练
+categories:
+- 大模型
+- AI 工程
 source: hacker_news
-description: "在大模型训练中，计算资源和时间成本往往是团队的主要瓶颈。Unsloth 与 NVIDIA 的合作通过底层算子融合和硬件加速，为大规模语言模型的迭代提供了显著的速度提升。本文将结合实际案例，展示如何借助这些技术降低显存占用、缩短训练周期，并给出可落地的调优思路，帮助研究者和工程师在实际项目中实现更高效的工作流。"
+description: 在大模型训练中，计算资源和时间成本往往是团队的主要瓶颈。Unsloth 与 NVIDIA 的合作通过底层算子融合和硬件加速，为大规模语言模型的迭代提供了显著的速度提升。本文将结合实际案例，展示如何借助这些技术降低显存占用、缩短训练周期，并给出可落地的调优思路，帮助研究者和工程师在实际项目中实现更高效的工作流。
 external_url: https://unsloth.ai/blog/nvidia-collab
-scenarios: ["大语言模型"]
+scenarios:
+- 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # NVIDIA优化LLM训练速度
@@ -78,9 +93,9 @@ scenarios: ["大语言模型"]
 
 ### 相关文章
 
-- [利用闲置算力将LLM训练速度提升一倍且保持精度]({{< relref "posts/20260226-blogs_podcasts-new-method-could-increase-llm-training-efficiency-10.md" >}})
-- [利用闲置算力将大模型训练速度提升一倍]({{< relref "posts/20260226-blogs_podcasts-new-method-could-increase-llm-training-efficiency-9.md" >}})
-- [利用闲置算力将大模型训练速度提高一倍且保持精度]({{< relref "posts/20260227-blogs_podcasts-new-method-could-increase-llm-training-efficiency-11.md" >}})
-- [Unsloth Studio]({{< relref "posts/20260318-hacker_news-unsloth-studio-8.md" >}})
-- [利用闲置算力将大模型训练速度提升一倍]({{< relref "posts/20260226-blogs_podcasts-new-method-could-increase-llm-training-efficiency-1.md" >}})
+- [利用闲置算力将LLM训练速度提升一倍且保持精度]({{< relref "posts/20260226-blogs_podcasts-new-method-could-increase-llm-training-efficiency-0.md" >}})
+- [利用闲置算力将大模型训练速度提升一倍]({{< relref "posts/20260226-blogs_podcasts-new-method-could-increase-llm-training-efficiency-0.md" >}})
+- [利用闲置算力将大模型训练速度提高一倍且保持精度]({{< relref "posts/20260226-blogs_podcasts-new-method-could-increase-llm-training-efficiency-0.md" >}})
+- [Unsloth Studio]({{< relref "posts/20260317-hacker_news-unsloth-studio-13.md" >}})
+- [利用闲置算力将大模型训练速度提升一倍]({{< relref "posts/20260226-blogs_podcasts-new-method-could-increase-llm-training-efficiency-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

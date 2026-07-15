@@ -1,14 +1,33 @@
 ---
-title: "人人都在构建异步智能体 但鲜有人能定义其概念"
-date: 2026-02-09T23:42:37+08:00
+title: 人人都在构建异步智能体 但鲜有人能定义其概念
+date: 2026-02-09 23:42:37+08:00
 draft: false
-entry_kind: "auto"
-tags: ["智能体", "Agent", "异步", "LLM", "架构设计", "AI 应用", "技术定义", "行业观察"]
-categories: ["AI 工程", "大模型"]
+entry_kind: auto
+tags:
+- 智能体
+- Agent
+- 异步
+- LLM
+- 架构设计
+- AI 应用
+- 技术定义
+- 行业观察
+categories:
+- AI 工程
+- 大模型
 source: hacker_news
-description: "尽管“异步智能体”已成为技术社区的热词，但业界对其核心定义尚未达成共识。这种概念的模糊不仅容易造成技术选型的误区，也可能掩盖其在实际工程中的真实价值。本文将梳理当前主流的实现路径，并尝试界定其边界，帮助读者厘清这一技术趋势的本质，从而更理性地评估其在具体场景中的应用潜力。"
+description: 尽管“异步智能体”已成为技术社区的热词，但业界对其核心定义尚未达成共识。这种概念的模糊不仅容易造成技术选型的误区，也可能掩盖其在实际工程中的真实价值。本文将梳理当前主流的实现路径，并尝试界定其边界，帮助读者厘清这一技术趋势的本质，从而更理性地评估其在具体场景中的应用潜力。
 external_url: https://www.omnara.com/blog/what-is-an-async-agent-really
-scenarios: ["大语言模型", "AI/ML项目"]
+scenarios:
+- 大语言模型
+- AI/ML项目
+aliases:
+- /posts/20260210-hacker_news-everyones-building-async-agents-but-almost-no-one--11/
+- /posts/20260210-hacker_news-everyones-building-async-agents-but-almost-no-one--16/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 人人都在构建异步智能体 但鲜有人能定义其概念
@@ -284,7 +303,6 @@ Klarna 部署了由 OpenAI 技术驱动的客服 Agent。该 Agent 被定义为�
 据报道，该 AI 客服上线后直接负责了 Klarna 三分之二的客服工单（相当于 700 名全职代理人的工作量）。它不仅将查询解决时间从 11 分钟缩短至 2 分钟，而且在客户满意度评分上与人工客服持平。这证明了异步代理在处理高并发、复杂逻辑任务时，能够达到甚至超越人类的工作效率。
 
 ---
-## 最佳实践
 
 ## 最佳实践指南
 
@@ -466,9 +484,9 @@ Klarna 部署了由 OpenAI 技术驱动的客服 Agent。该 Agent 被定义为�
 
 ### 相关文章
 
-- [AGENTS.md 架构在智能体评估中优于 Skills 架构]({{< relref "posts/20260130-hacker_news-agentsmd-outperforms-skills-in-our-agent-evals-9.md" >}})
-- [AGENTS.md 架构在智能体评估中超越 Skills 技能]({{< relref "posts/20260130-hacker_news-agentsmd-outperforms-skills-in-our-agent-evals-5.md" >}})
+- [AGENTS.md 架构在智能体评估中优于 Skills 架构]({{< relref "posts/20260129-hacker_news-compressed-agentsmd-agent-skills-5.md" >}})
+- [AGENTS.md 架构在智能体评估中超越 Skills 技能]({{< relref "posts/20260129-hacker_news-compressed-agentsmd-agent-skills-5.md" >}})
 - [Agent Skills：大模型智能体的技能评估框架]({{< relref "posts/20260203-hacker_news-agent-skills-0.md" >}})
-- [Agent Skills：AI 智能体技能框架]({{< relref "posts/20260203-hacker_news-agent-skills-1.md" >}})
-- [Agent Skills：AI 智能体的技能框架]({{< relref "posts/20260203-hacker_news-agent-skills-3.md" >}})
+- [Agent Skills：AI 智能体技能框架]({{< relref "posts/20260203-hacker_news-agent-skills-0.md" >}})
+- [Agent Skills：AI 智能体的技能框架]({{< relref "posts/20260203-hacker_news-agent-skills-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

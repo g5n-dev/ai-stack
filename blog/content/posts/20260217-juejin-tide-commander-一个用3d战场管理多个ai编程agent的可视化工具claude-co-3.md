@@ -1,14 +1,30 @@
 ---
-title: "Tide Commander：多AI编程代理的3D战场可视化工具"
-date: 2026-02-17T03:10:02+08:00
+title: Tide Commander：多AI编程代理的3D战场可视化工具
+date: 2026-02-17 03:10:02+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI编程", "多Agent", "3D可视化", "Claude Code", "Codex", "开发工具", "工作流", "自动化"]
-categories: ["开发工具", "效率与方法论"]
+entry_kind: auto
+tags:
+- AI 编程
+- 多Agent
+- 3D可视化
+- Claude Code
+- Codex
+- 开发工具
+- 工作流
+- 自动化
+categories:
+- 开发工具
+- 效率与方法论
 source: juejin
-description: "Tide Commander 是一个创新的可视化工具，旨在解决同时运行多个AI编程Agent（如Claude Code或Codex）时的管理难题。该工具通过3D战场的概念，将多个AI终端整合在一个直观的界面中，让用户能够高效监控和控制各个Agent的工作状态。其核心功能包括： 1. **多Agent集中管理**：将分散"
+description: Tide Commander 是一个创新的可视化工具，旨在解决同时运行多个AI编程Agent（如Claude Code或Codex）时的管理难题。该工具通过3D战场的概念，将多个AI终端整合在一个直观的界面中，让用户能够高效监控和控制各个Agent的工作状态。其核心功能包括：
+  1. **多Agent集中管理**：将分散
 external_url: https://juejin.cn/post/7606793134374666303
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Tide Commander：多AI编程代理的3D战场可视化工具
@@ -171,9 +187,9 @@ Tide Commander 是一个创新的可视化工具，旨在解决同时运行多�
 
 ### 相关文章
 
-- [Codex 应用：基于 OpenAI 模型的代码生成工具]({{< relref "posts/20260203-hacker_news-the-codex-app-12.md" >}})
+- [Codex 应用：基于 OpenAI 模型的代码生成工具]({{< relref "posts/20260202-hacker_news-the-codex-app-1.md" >}})
 - [65行Markdown打造Claude Code热门项目]({{< relref "posts/20260212-hacker_news-65-lines-of-markdown-a-claude-code-sensation-2.md" >}})
-- [Codex 应用：基于 GPT-3 的代码生成工具]({{< relref "posts/20260203-hacker_news-the-codex-app-2.md" >}})
-- [Codex App：基于自然语言指令的代码生成工具]({{< relref "posts/20260203-hacker_news-the-codex-app-4.md" >}})
-- [Claude Code：面向基础设施的编程工具]({{< relref "posts/20260205-hacker_news-claude-code-for-infrastructure-11.md" >}})
+- [Codex 应用：基于 GPT-3 的代码生成工具]({{< relref "posts/20260202-hacker_news-the-codex-app-1.md" >}})
+- [Codex App：基于自然语言指令的代码生成工具]({{< relref "posts/20260202-hacker_news-the-codex-app-1.md" >}})
+- [Claude Code：面向基础设施的编程工具]({{< relref "posts/20260204-hacker_news-claude-code-for-infrastructure-11.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

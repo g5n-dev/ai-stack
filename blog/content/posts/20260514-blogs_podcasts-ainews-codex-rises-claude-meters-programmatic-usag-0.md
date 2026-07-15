@@ -1,14 +1,30 @@
 ---
-title: "编程代理趋势报告：Codex增长 Claude统计使用量"
-date: 2026-05-14T15:39:12+08:00
+title: 编程代理趋势报告：Codex增长 Claude统计使用量
+date: 2026-05-14 15:39:12+08:00
 draft: false
-entry_kind: "auto"
-tags: ["编程代理", "Codex", "Claude", "代码生成", "AI编程助手", "使用量统计", "市场趋势", "自动化开发"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- 编程代理
+- Codex
+- Claude
+- 代码生成
+- AI编程助手
+- 使用量统计
+- 市场趋势
+- 自动化开发
+categories:
+- 大模型
+- AI 工程
 source: blogs_podcasts
-description: "概述 本篇AINews报道聚焦于当前AI编程助手的关键动态。OpenAI的Codex正快速崛起，成为企业和开发者首选的代码生成模型；而Anthropic的Claude则通过“Programmatic Usage”计量功能，实时监控并报告大规模代码生成任务的调用频次与分布。报道利用一个相对平静的交易日，对比了过去一年主要"
+description: 概述 本篇AINews报道聚焦于当前AI编程助手的关键动态。OpenAI的Codex正快速崛起，成为企业和开发者首选的代码生成模型；而Anthropic的Claude则通过“Programmatic
+  Usage”计量功能，实时监控并报告大规模代码生成任务的调用频次与分布。报道利用一个相对平静的交易日，对比了过去一年主要
 external_url: https://www.latent.space/p/ainews-codex-rises-claude-meters
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 编程代理趋势报告：Codex增长 Claude统计使用量
@@ -144,9 +160,9 @@ AI编程助手已进入规模化部署阶段，代码生成正从辅助工具向
 
 ### 相关文章
 
-- [OpenAI 对决 Anthropic：Claude Opus 4.6 挑战 GPT-5.3 Codex]({{< relref "posts/20260209-blogs_podcasts-ainews-openai-and-anthropic-go-to-war-claude-opus--5.md" >}})
-- [Codex 与 Claude 支持构建自定义内核]({{< relref "posts/20260213-blogs_podcasts-custom-kernels-for-all-from-codex-and-claude-2.md" >}})
-- [Codex与Claude赋能自定义内核生成]({{< relref "posts/20260218-blogs_podcasts-custom-kernels-for-all-from-codex-and-claude-11.md" >}})
-- [Claude Code：面向开发者的AI编程助手]({{< relref "posts/20260131-hacker_news-claude-code-is-your-customer-5.md" >}})
-- [Codex 应用：基于 AI 的代码生成与编辑工具]({{< relref "posts/20260203-hacker_news-the-codex-app-1.md" >}})
+- [OpenAI 对决 Anthropic：Claude Opus 4.6 挑战 GPT-5.3 Codex]({{< relref "posts/20260206-blogs_podcasts-ainews-openai-and-anthropic-go-to-war-claude-opus--0.md" >}})
+- [Codex 与 Claude 支持构建自定义内核]({{< relref "posts/20260213-blogs_podcasts-custom-kernels-for-all-from-codex-and-claude-1.md" >}})
+- [Codex与Claude赋能自定义内核生成]({{< relref "posts/20260213-blogs_podcasts-custom-kernels-for-all-from-codex-and-claude-1.md" >}})
+- [Claude Code：面向开发者的AI编程助手]({{< relref "posts/20260131-hacker_news-claude-code-is-your-customer-16.md" >}})
+- [Codex 应用：基于 AI 的代码生成与编辑工具]({{< relref "posts/20260202-hacker_news-the-codex-app-1.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

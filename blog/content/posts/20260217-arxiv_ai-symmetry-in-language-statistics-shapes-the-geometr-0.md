@@ -1,14 +1,31 @@
 ---
-title: "语言统计对称性塑造模型表征的几何结构"
-date: 2026-02-17T22:35:47+08:00
+title: 语言统计对称性塑造模型表征的几何结构
+date: 2026-02-17 22:35:47+08:00
 draft: false
-entry_kind: "auto"
-tags: ["表征学习", "几何结构", "统计对称性", "词嵌入", "流形", "LLM", "鲁棒性", "cs.LG"]
-categories: ["论文", "大模型"]
+entry_kind: auto
+tags:
+- 表征学习
+- 几何结构
+- 统计对称性
+- 词嵌入
+- 流形
+- LLM
+- 鲁棒性
+- cs.LG
+categories:
+- 论文
+- 大模型
 source: arxiv
-description: "本文探讨了语言统计中的对称性如何塑造模型表征的几何结构。研究发现，语言中存在一种平移对称性（例如，两个月份的共现概率仅取决于它们之间的时间间隔），这种对称性决定了高维词嵌入模型中简单几何结构的涌现，如月份呈圆形排列、年份形成一维流形等。即使当共现统计受到强烈扰动（如删除包含两个月份的所有句子）时，这些结构仍然存在，并在"
+description: 本文探讨了语言统计中的对称性如何塑造模型表征的几何结构。研究发现，语言中存在一种平移对称性（例如，两个月份的共现概率仅取决于它们之间的时间间隔），这种对称性决定了高维词嵌入模型中简单几何结构的涌现，如月份呈圆形排列、年份形成一维流形等。即使当共现统计受到强烈扰动（如删除包含两个月份的所有句子）时，这些结构仍然存在，并在
 external_url: http://arxiv.org/abs/2602.15029v1
-scenarios: ["大语言模型"]
+scenarios:
+- 大语言模型
+aliases:
+- /posts/20260218-arxiv_ai-symmetry-in-language-statistics-shapes-the-geometr-0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 语言统计对称性塑造模型表征的几何结构
@@ -254,7 +271,6 @@ scenarios: ["大语言模型"]
 - **代价**：这种研究不直接带来 SOTA 的性能提升，因此在工业界可能会被忽视，但对于构建可信、可控的 AI 是至关重要的基础。它提醒我们，模型的行为在训练开始之前，就已经被数据的统计物理特性所“注定”了。
 
 ---
-## 研究最佳实践
 
 ## 最佳实践指南
 
@@ -352,7 +368,6 @@ scenarios: ["大语言模型"]
 - 理解这种对称性关系有助于解释语言模型的能力来源及其内部运作机制
 
 ---
-## 学习路径
 
 ## 学习路径
 
@@ -529,8 +544,8 @@ scenarios: ["大语言模型"]
 ### 相关文章
 
 - [进化策略导致大语言模型出现灾难性遗忘]({{< relref "posts/20260129-arxiv_ai-evolutionary-strategies-lead-to-catastrophic-forge-0.md" >}})
-- [Alyah：评估阿拉伯语大模型阿联酋方言能力]({{< relref "posts/20260129-blogs_podcasts-alyah-toward-robust-evaluation-of-emirati-dialect--8.md" >}})
+- [Alyah：评估阿拉伯语大模型阿联酋方言能力]({{< relref "posts/20260127-blogs_podcasts-alyah-toward-robust-evaluation-of-emirati-dialect--0.md" >}})
 - [CATTO：平衡语言模型偏好与置信度的方法]({{< relref "posts/20260202-arxiv_ai-catto-balancing-preferences-and-confidence-in-lang-0.md" >}})
-- [TEON：张量化正交化方法优化大语言模型预训练]({{< relref "posts/20260203-arxiv_ai-teon-tensorized-orthonormalization-beyond-layer-wi-9.md" >}})
-- [通过文本反馈扩展强化学习的能力边界]({{< relref "posts/20260204-arxiv_ai-expanding-the-capabilities-of-reinforcement-learni-5.md" >}})
+- [TEON：张量化正交化方法优化大语言模型预训练]({{< relref "posts/20260202-arxiv_ai-teon-tensorized-orthonormalization-beyond-layer-wi-9.md" >}})
+- [通过文本反馈扩展强化学习的能力边界]({{< relref "posts/20260203-arxiv_ai-expanding-the-capabilities-of-reinforcement-learni-5.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

@@ -1,14 +1,31 @@
 ---
-title: "受限群组相对策略优化"
-date: 2026-02-06T03:10:07+08:00
+title: 受限群组相对策略优化
+date: 2026-02-06 03:10:07+08:00
 draft: false
-entry_kind: "auto"
-tags: ["GRPO", "强化学习", "策略优化", "拉格朗日松弛", "具身AI", "约束满足", "多模态", "机器人"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- GRPO
+- 强化学习
+- 策略优化
+- 拉格朗日松弛
+- 具身AI
+- 约束满足
+- 多模态
+- 机器人
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "本文介绍了**约束组相对策略优化**，这是一种针对无批评家策略学习框架的扩展方法，旨在解决显式行为约束下的优化问题。 **主要背景与问题：** 虽然组相对策略优化（GRPO）具有可扩展性，但将其应用于具有明确行为约束的场景尚未得到充分探索。 **方法创新：** 作者提出了基于拉格朗日松弛的Constrained GRP"
+description: 本文介绍了**约束组相对策略优化**，这是一种针对无批评家策略学习框架的扩展方法，旨在解决显式行为约束下的优化问题。 **主要背景与问题：**
+  虽然组相对策略优化（GRPO）具有可扩展性，但将其应用于具有明确行为约束的场景尚未得到充分探索。 **方法创新：** 作者提出了基于拉格朗日松弛的Constrained
+  GRP
 external_url: http://arxiv.org/abs/2602.05863v1
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 受限群组相对策略优化
@@ -239,7 +256,6 @@ scenarios: ["AI/ML项目"]
 这篇论文更多推进的是**“方法论”**。它提供了一个实用的工程解决方案，解决了一个具体的工程痛点（Critic训练难、不稳定）。其代价是可能缺乏像CPO那样严格的收敛性证明。在更长的时间尺度上，它代表了一种趋势：**用统计效率和工程鲁棒性替代复杂的理论近似**。
 
 ---
-## 研究最佳实践
 
 ## 最佳实践指南
 
@@ -324,7 +340,6 @@ scenarios: ["AI/ML项目"]
 - 该框架首次实现了将约束优化与相对策略优化的有机结合，为高效大模型对齐提供了新的技术范式
 
 ---
-## 学习路径
 
 ## 学习路径
 
@@ -482,8 +497,8 @@ scenarios: ["AI/ML项目"]
 ### 相关文章
 
 - [强化注意力学习：基于奖励反馈的注意力机制优化方法]({{< relref "posts/20260205-arxiv_ai-reinforced-attention-learning-0.md" >}})
-- [强化注意力学习：通过奖励机制优化视觉注意力模型]({{< relref "posts/20260206-arxiv_ai-reinforced-attention-learning-0.md" >}})
+- [强化注意力学习：通过奖励机制优化视觉注意力模型]({{< relref "posts/20260205-arxiv_ai-reinforced-attention-learning-0.md" >}})
 - [重新思考大模型强化学习中的信任区域]({{< relref "posts/20260205-arxiv_ai-rethinking-the-trust-region-in-llm-reinforcement-l-3.md" >}})
 - [Kimi K2.5震撼开源！视觉SOTA Agent模型，性能炸裂🔥]({{< relref "posts/20260127-hacker_news-kimi-released-kimi-k25-open-source-visual-sota-age-2.md" >}})
-- [🔥实战复盘：解锁GPT-OSS的智能体RL训练秘籍！]({{< relref "posts/20260128-blogs_podcasts-unlocking-agentic-rl-training-for-gpt-oss-a-practi-5.md" >}})
+- [🔥实战复盘：解锁GPT-OSS的智能体RL训练秘籍！]({{< relref "posts/20260127-blogs_podcasts-unlocking-agentic-rl-training-for-gpt-oss-a-practi-0.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

@@ -1,14 +1,30 @@
 ---
-title: "从规格说明到压力测试：使用Claude代码生成的周末实战"
-date: 2026-02-12T10:28:19+08:00
+title: 从规格说明到压力测试：使用Claude代码生成的周末实战
+date: 2026-02-12 10:28:19+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Claude", "代码生成", "LLM", "压力测试", "全栈开发", "Prompt工程", "自动化测试", "实战案例"]
-categories: ["AI 工程", "效率与方法论"]
+entry_kind: auto
+tags:
+- Claude
+- 代码生成
+- LLM
+- 压力测试
+- 全栈开发
+- Prompt 工程
+- 自动化测试
+- 实战案例
+categories:
+- AI 工程
+- 效率与方法论
 source: hacker_news
-description: "随着大模型应用从概念验证走向生产环境，开发者面临着如何将 API 规范转化为高可用系统的挑战。本文记录了作者利用周末时间，基于 Claude 完成从需求定义到极限压力测试的全过程。通过复盘实际代码与测试数据，文章探讨了在资源受限场景下保障系统稳定性的具体策略，为技术团队在模型落地阶段提供了可参考的工程实践。"
+description: 随着大模型应用从概念验证走向生产环境，开发者面临着如何将 API 规范转化为高可用系统的挑战。本文记录了作者利用周末时间，基于 Claude
+  完成从需求定义到极限压力测试的全过程。通过复盘实际代码与测试数据，文章探讨了在资源受限场景下保障系统稳定性的具体策略，为技术团队在模型落地阶段提供了可参考的工程实践。
 external_url: https://www.juxt.pro/blog/from-specification-to-stress-test
-scenarios: ["大语言模型"]
+scenarios:
+- 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 从规格说明到压力测试：使用Claude代码生成的周末实战
@@ -232,7 +248,6 @@ print(generate_test_data(schema, 5))
 **效果**: 系统吞吐量提升了40%，响应时间减少了60%。在接下来的促销活动中，库存超卖问题完全解决，系统稳定性显著提高。团队通过AI辅助，将原本需要一个月的优化工作压缩到了一周内完成。
 
 ---
-## 最佳实践
 
 ## 最佳实践指南
 
@@ -390,7 +405,7 @@ print(generate_test_data(schema, 5))
 
 - [Claude编码实战笔记：几周深度使用后的意外发现！💡]({{< relref "posts/20260128-hacker_news-a-few-random-notes-from-claude-coding-quite-a-bit--2.md" >}})
 - [利用AI高效编写高质量代码的实践方法]({{< relref "posts/20260206-hacker_news-how-to-effectively-write-quality-code-with-ai-3.md" >}})
-- [利用AI高效编写高质量代码的实践方法]({{< relref "posts/20260207-hacker_news-how-to-effectively-write-quality-code-with-ai-15.md" >}})
-- [让 Claude 编写 CUDA 内核并指导开源模型]({{< relref "posts/20260129-blogs_podcasts-we-got-claude-to-build-cuda-kernels-and-teach-open-7.md" >}})
-- [让 Claude 编写 CUDA 内核并指导开源模型]({{< relref "posts/20260129-blogs_podcasts-we-got-claude-to-build-cuda-kernels-and-teach-open-8.md" >}})
+- [利用AI高效编写高质量代码的实践方法]({{< relref "posts/20260206-hacker_news-how-to-effectively-write-quality-code-with-ai-3.md" >}})
+- [让 Claude 编写 CUDA 内核并指导开源模型]({{< relref "posts/20260129-blogs_podcasts-we-got-claude-to-build-cuda-kernels-and-teach-open-6.md" >}})
+- [让 Claude 编写 CUDA 内核并指导开源模型]({{< relref "posts/20260129-blogs_podcasts-we-got-claude-to-build-cuda-kernels-and-teach-open-6.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

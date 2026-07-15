@@ -1,14 +1,30 @@
 ---
-title: "VLK：基于合成交互的人形机器人运动操作学习"
-date: 2026-06-30T23:30:05+08:00
+title: VLK：基于合成交互的人形机器人运动操作学习
+date: 2026-06-30 23:30:05+08:00
 draft: false
-entry_kind: "auto"
-tags: ["人形机器人", "运动操作", "合成交互", "3DGS", "视觉语言动作", "合成数据", "动作预测", "仿真重建"]
-categories: ["论文", "AI 工程"]
+entry_kind: auto
+tags:
+- 人形机器人
+- 运动操作
+- 合成交互
+- 3DGS
+- 视觉语言动作
+- 合成数据
+- 动作预测
+- 仿真重建
+categories:
+- 论文
+- AI 工程
 source: arxiv
-description: "针对人形机器人在室内环境中的感知‑运动协同问题，提出VLK框架，以合成方式解决大规模视觉‑语言‑运动数据缺失的瓶颈。核心思路是利用3D Gaussian Splatting在真实尺度的室内场景中进行高保真重建；随后在重建的场景中利用特权信息生成导航与物体交互的运动轨迹；再对这些轨迹渲染配对的自我中心图像与语言指令。最终"
+description: 针对人形机器人在室内环境中的感知‑运动协同问题，提出VLK框架，以合成方式解决大规模视觉‑语言‑运动数据缺失的瓶颈。核心思路是利用3D Gaussian
+  Splatting在真实尺度的室内场景中进行高保真重建；随后在重建的场景中利用特权信息生成导航与物体交互的运动轨迹；再对这些轨迹渲染配对的自我中心图像与语言指令。最终
 external_url: http://arxiv.org/abs/2606.30645v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # VLK：基于合成交互的人形机器人运动操作学习
@@ -129,6 +145,6 @@ scenarios: ["Web应用开发"]
 - [让 Claude 编写 CUDA 内核并指导开源模型]({{< relref "posts/20260129-blogs_podcasts-we-got-claude-to-build-cuda-kernels-and-teach-open-6.md" >}})
 - [基于流策略梯度的机器人控制方法]({{< relref "posts/20260203-arxiv_ai-flow-policy-gradients-for-robot-control-6.md" >}})
 - [TabICLv2：更优性能与可扩展性的开源表格基础模型]({{< relref "posts/20260212-arxiv_ai-tabiclv2-a-better-faster-scalable-and-open-tabular-8.md" >}})
-- [扩展验证比扩展策略学习更有效实现视觉-语言-动作对齐]({{< relref "posts/20260214-arxiv_ai-scaling-verification-can-be-more-effective-than-sc-0.md" >}})
-- [Anthropic 模型蒸馏与 SWE-Bench 作弊机制解析]({{< relref "posts/20260301-blogs_podcasts-live-anthropic-distillation-how-models-cheat-swe-b-11.md" >}})
+- [扩展验证比扩展策略学习更有效实现视觉-语言-动作对齐]({{< relref "posts/20260213-arxiv_ai-scaling-verification-can-be-more-effective-than-sc-0.md" >}})
+- [Anthropic 模型蒸馏与 SWE-Bench 作弊机制解析]({{< relref "posts/20260226-blogs_podcasts-live-anthropic-distillation-how-models-cheat-swe-b-0.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

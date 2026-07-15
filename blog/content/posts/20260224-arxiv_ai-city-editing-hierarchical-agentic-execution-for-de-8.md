@@ -21,6 +21,10 @@ description: 本文介绍了名为 **City Editing** 的研究工作，旨在利�
 external_url: http://arxiv.org/abs/2602.19326v1
 scenarios:
 - Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 城市编辑：面向依赖感知的分层智能体城市地理空间修改
@@ -130,9 +134,7 @@ scenarios:
 
 ---
 
-### 深入分析报告：City Editing —— 城市地理空间修改的分层智能体执行
 
-### 1. 研究背景与问题
 
 ### 核心问题
 该研究旨在解决**城市更新与再设计过程中，地理空间布局修改效率低下、依赖大量人工操作且难以维护空间逻辑一致性**的问题。具体而言，是如何让人工智能理解自然语言指令，并自动对复杂的城市矢量数据（如 GeoJSON）进行精准的、符合空间逻辑的修改。
@@ -149,7 +151,6 @@ scenarios:
 ### 问题重要性
 城市是一个复杂的系统，要素间存在强耦合关系。解决这一问题不仅是技术上的突破（让 AI 懂几何），更是实现**“人机协同规划”**的关键一步，使规划师能从繁琐的绘图工作中解放出来，专注于创意和决策。
 
-### 2. 核心方法与创新
 
 ### 核心方法：分层智能体框架
 研究团队提出了一个名为 **City Editing** 的框架，其核心是将城市更新任务形式化为**结构化地理空间数据的迭代修改过程**。该框架包含三个关键模块：
@@ -175,7 +176,6 @@ scenarios:
 *   **可解释性**：分层结构使得每一步操作都有明确的意图对应，便于规划师理解和干预。
 *   **通用性**：不局限于特定的城市区域，通过 GeoJSON 的通用格式可应用于多种场景。
 
-### 3. 理论基础
 
 ### 理论依据
 本研究主要建立在**具身智能**和**多模态空间推理**的理论基础之上。
@@ -191,7 +191,6 @@ scenarios:
 ### 理论贡献
 该研究在理论上验证了**大语言模型具备处理结构化空间逻辑的潜力**。它证明了 LLM 不仅能处理文本，还能通过工具调用，理解并维护复杂的欧几里得几何关系和非欧几里得拓扑关系。
 
-### 7. 学习建议
 
 ### 适合人群
 *   城市规划、地理信息科学（GIS）专业的研究生。
@@ -476,6 +475,6 @@ City Editing（城市编辑）是指在现有的城市地理空间数据基础�
 
 - [DynaWeb：基于模型的强化学习网页智能体]({{< relref "posts/20260130-arxiv_ai-dynaweb-model-based-reinforcement-learning-of-web--6.md" >}})
 - [UniT：统一多模态思维链测试时扩展方法]({{< relref "posts/20260213-arxiv_ai-unit-unified-multimodal-chain-of-thought-test-time-1.md" >}})
-- [CM2：基于清单奖励强化学习的多步多轮智能体工具调用]({{< relref "posts/20260214-arxiv_ai-cm2-reinforcement-learning-with-checklist-rewards--9.md" >}})
+- [CM2：基于清单奖励强化学习的多步多轮智能体工具调用]({{< relref "posts/20260213-arxiv_ai-cm2-reinforcement-learning-with-checklist-rewards--9.md" >}})
 - [IBM与UC Berkeley利用IT-Bench和MAST诊断企业智能体失败原因]({{< relref "posts/20260218-blogs_podcasts-ibm-and-uc-berkeley-diagnose-why-enterprise-agents-0.md" >}})
-- [IBM与UC Berkeley发布IT-Bench及MAST诊断企业智能体失败原因]({{< relref "posts/20260218-blogs_podcasts-ibm-and-uc-berkeley-diagnose-why-enterprise-agents-1.md" >}})
+- [IBM与UC Berkeley发布IT-Bench及MAST诊断企业智能体失败原因]({{< relref "posts/20260218-blogs_podcasts-ibm-and-uc-berkeley-diagnose-why-enterprise-agents-0.md" >}})

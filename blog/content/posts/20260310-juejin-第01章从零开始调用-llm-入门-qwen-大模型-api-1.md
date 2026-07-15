@@ -21,6 +21,10 @@ description: 由于提供的内容在“你每”处中断，信息不完整。�
 external_url: https://juejin.cn/post/7615161431982620682
 scenarios:
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 从零开始调用 Qwen 大模型 API 的入门指南
@@ -188,5 +192,5 @@ scenarios:
 - [Qwen3-Coder-Next：阿里通义千问下一代代码模型]({{< relref "posts/20260203-hacker_news-qwen3-coder-next-0.md" >}})
 - [接入云端API快速调用GPT-4与DeepSeek大模型]({{< relref "posts/20260301-juejin-轻松接入大语言模型api-04-0.md" >}})
 - [Qwen 模型动态更新与能力演进分析]({{< relref "posts/20260305-hacker_news-something-is-afoot-in-the-land-of-qwen-11.md" >}})
-- [Compressed Agents：Agent Skills 技术解析]({{< relref "posts/20260130-hacker_news-compressed-agentsmd-agent-skills-6.md" >}})
-- [Qwen3-Coder-Next：下一代代码模型架构与性能解析]({{< relref "posts/20260204-hacker_news-qwen3-coder-next-13.md" >}})
+- [Compressed Agents：Agent Skills 技术解析]({{< relref "posts/20260129-hacker_news-compressed-agentsmd-agent-skills-5.md" >}})
+- [Qwen3-Coder-Next：下一代代码模型架构与性能解析]({{< relref "posts/20260203-hacker_news-qwen3-coder-next-0.md" >}})

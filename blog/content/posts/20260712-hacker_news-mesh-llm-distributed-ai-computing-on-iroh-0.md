@@ -1,14 +1,31 @@
 ---
-title: "iroh赋能Mesh LLM实现分布式AI计算"
-date: 2026-07-12T02:54:56+08:00
+title: iroh赋能Mesh LLM实现分布式AI计算
+date: 2026-07-12 02:54:56+08:00
 draft: false
-entry_kind: "auto"
-tags: ["分布式AI计算", "iroh", "MeshLLM", "P2P网络", "LLM部署", "分布式系统", "Rust", "开源"]
-categories: ["AI 工程", "系统与基础设施"]
+entry_kind: auto
+tags:
+- 分布式AI计算
+- iroh
+- MeshLLM
+- P2P网络
+- LLM部署
+- 分布式系统
+- Rust
+- 开源
+categories:
+- AI 工程
+- 系统与基础设施
 source: hacker_news
-description: "Mesh LLM 基于 iroh 实现分布式 AI 计算，将大规模语言模型推理任务拆分到多节点，提供弹性算力扩展。随着模型规模快速增长，单机算力难以满足实时需求，Mesh LLM 通过高效调度和容错机制，为企业实现低延迟、高可用的部署方案。本文将深入解析其核心架构与调度算法，并提供实际部署案例，帮助开发者快速在自有集群"
+description: Mesh LLM 基于 iroh 实现分布式 AI 计算，将大规模语言模型推理任务拆分到多节点，提供弹性算力扩展。随着模型规模快速增长，单机算力难以满足实时需求，Mesh
+  LLM 通过高效调度和容错机制，为企业实现低延迟、高可用的部署方案。本文将深入解析其核心架构与调度算法，并提供实际部署案例，帮助开发者快速在自有集群
 external_url: https://www.iroh.computer/blog/mesh-llm
-scenarios: ["AI/ML项目", "大语言模型"]
+scenarios:
+- AI/ML项目
+- 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # iroh赋能Mesh LLM实现分布式AI计算
@@ -75,9 +92,9 @@ Mesh LLM 基于 iroh 实现分布式 AI 计算，将大规模语言模型推理�
 
 ### 相关文章
 
-- [LocalGPT：基于Rust构建的本地优先AI助手，支持持久化记忆]({{< relref "posts/20260208-hacker_news-show-hn-localgpt-a-local-first-ai-assistant-in-rus-5.md" >}})
+- [LocalGPT：基于Rust构建的本地优先AI助手，支持持久化记忆]({{< relref "posts/20260208-hacker_news-show-hn-localgpt-a-local-first-ai-assistant-in-rus-0.md" >}})
 - [Show HN: Jido 2.0，基于 Elixir 的 Agent 框架]({{< relref "posts/20260305-hacker_news-show-hn-jido-20-elixir-agent-framework-1.md" >}})
-- [Amla Sandbox：面向 AI 智能体的 WASM Bash 沙箱]({{< relref "posts/20260130-hacker_news-show-hn-amla-sandbox-wasm-bash-shell-sandbox-for-a-13.md" >}})
+- [Amla Sandbox：面向 AI 智能体的 WASM Bash 沙箱]({{< relref "posts/20260130-hacker_news-show-hn-amla-sandbox-wasm-bash-shell-sandbox-for-a-4.md" >}})
 - [Zuckerman：极简个人AI代理，具备代码自编辑能力]({{< relref "posts/20260201-hacker_news-show-hn-zuckerman-minimalist-personal-ai-agent-tha-12.md" >}})
 - [Cline 开源编码代理：规划加行动范式与非技术场景应用]({{< relref "posts/20260202-blogs_podcasts-cline-the-open-source-coding-agent-that-doesnt-cut-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

@@ -21,6 +21,10 @@ description: 以下是该内容的中文总结： **研究背景** 在部署的�
 external_url: http://arxiv.org/abs/2603.03111v1
 scenarios:
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 多轮LLM系统模型切换性能漂移评估方法
@@ -133,7 +137,6 @@ scenarios:
 
 ## 技术分析
 
-### 1. 研究背景与问题
 
 ### 核心问题
 该研究针对多轮大语言模型（LLM）应用中的一个工程隐患进行了量化分析：**模型切换导致的性能漂移**。具体而言，当对话上下文由模型 A 生成，而后续回复由模型 B 生成时，模型 B 的表现是否会偏离其基准水平。
@@ -144,7 +147,6 @@ scenarios:
 ### 现有评估的局限性
 主流基准（如 MMLU, GSM8K）主要关注单轮问答或固定上下文。在多轮评估中，通常不区分上下文的来源模型。这导致了一个盲区：**模型 B 在处理模型 A 生成的历史时，是否会因语言风格、逻辑链条或格式的差异而产生理解偏差。**
 
-### 2. 核心方法与创新
 
 ### 切换矩阵
 研究者提出了一种名为 **“切换矩阵”** 的基准测试方法。
@@ -163,7 +165,6 @@ scenarios:
 *   **通用性**：该方法不依赖特定模型架构，适用于 API 级别的黑盒模型评估。
 *   **可操作性**：矩阵结果可直接用于指导路由策略，判断特定模型组合是否兼容。
 
-### 3. 理论基础
 
 ### 理论假设
 该研究基于以下假设：
@@ -398,8 +399,8 @@ $$ D_{A \to B} \approx \alpha \cdot \text{Influence}(A) + \beta \cdot \text{Sens
 
 ### 相关文章
 
-- [OpenEnv 实战：评估真实环境中的工具调用智能体]({{< relref "posts/20260213-blogs_podcasts-openenv-in-practice-evaluating-tool-using-agents-i-10.md" >}})
-- [OpenEnv 实践：评估真实环境中的工具调用智能体]({{< relref "posts/20260213-blogs_podcasts-openenv-in-practice-evaluating-tool-using-agents-i-12.md" >}})
-- [仅调整框架，一下午提升15个大模型编程能力]({{< relref "posts/20260213-hacker_news-improving-15-llms-at-coding-in-one-afternoon-only--10.md" >}})
-- [Anthropic 发布自主智能体 METR 基准测试数据]({{< relref "posts/20260220-blogs_podcasts-ainews-anthropics-agent-autonomy-study-10.md" >}})
-- [SWE-bench Verified 存在数据污染与评估偏差，建议改用 SWE-bench Pro]({{< relref "posts/20260224-blogs_podcasts-why-we-no-longer-evaluate-swe-bench-verified-11.md" >}})
+- [OpenEnv 实战：评估真实环境中的工具调用智能体]({{< relref "posts/20260212-blogs_podcasts-openenv-in-practice-evaluating-tool-using-agents-i-4.md" >}})
+- [OpenEnv 实践：评估真实环境中的工具调用智能体]({{< relref "posts/20260212-blogs_podcasts-openenv-in-practice-evaluating-tool-using-agents-i-4.md" >}})
+- [仅调整框架，一下午提升15个大模型编程能力]({{< relref "posts/20260212-hacker_news-improving-15-llms-at-coding-in-one-afternoon-only--1.md" >}})
+- [Anthropic 发布自主智能体 METR 基准测试数据]({{< relref "posts/20260219-blogs_podcasts-ainews-anthropics-agent-autonomy-study-0.md" >}})
+- [SWE-bench Verified 存在数据污染与评估偏差，建议改用 SWE-bench Pro]({{< relref "posts/20260223-blogs_podcasts-why-we-no-longer-evaluate-swe-bench-verified-3.md" >}})

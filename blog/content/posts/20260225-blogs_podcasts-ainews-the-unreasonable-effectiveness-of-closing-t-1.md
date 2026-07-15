@@ -22,6 +22,17 @@ external_url: https://www.latent.space/p/ainews-the-unreasonable-effectiveness
 scenarios:
 - AI/ML项目
 - 大语言模型
+aliases:
+- /posts/20260225-blogs_podcasts-ainews-the-unreasonable-effectiveness-of-closing-t-4/
+- /posts/20260225-blogs_podcasts-ainews-the-unreasonable-effectiveness-of-closing-t-5/
+- /posts/20260226-blogs_podcasts-ainews-the-unreasonable-effectiveness-of-closing-t-13/
+- /posts/20260226-blogs_podcasts-ainews-the-unreasonable-effectiveness-of-closing-t-7/
+- /posts/20260226-blogs_podcasts-ainews-the-unreasonable-effectiveness-of-closing-t-8/
+- /posts/20260226-blogs_podcasts-ainews-the-unreasonable-effectiveness-of-closing-t-9/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AI News：数十场发布会背后的共同主题是“闭环”
@@ -217,8 +228,8 @@ AI 模型在常见场景下通常表现良好，但在罕见的长尾案例中�
 
 ### 相关文章
 
-- [推出全球首个科学AI播客及工程师应关注的时机]({{< relref "posts/20260130-blogs_podcasts-its-time-to-science-5.md" >}})
-- [AI 正在重塑 B2B SaaS 商业模式]({{< relref "posts/20260204-hacker_news-ai-is-killing-b2b-saas-6.md" >}})
-- [AI 正在重塑 B2B SaaS 行业]({{< relref "posts/20260205-hacker_news-ai-is-killing-b2b-saas-5.md" >}})
-- [异步智能体成风潮但定义模糊]({{< relref "posts/20260210-hacker_news-everyones-building-async-agents-but-almost-no-one--16.md" >}})
-- [OpenAI应构建企业级协作平台Slack]({{< relref "posts/20260215-hacker_news-openai-should-build-slack-14.md" >}})
+- [推出全球首个科学AI播客及工程师应关注的时机]({{< relref "posts/20260129-blogs_podcasts-its-time-to-science-0.md" >}})
+- [AI 正在重塑 B2B SaaS 商业模式]({{< relref "posts/20260204-hacker_news-ai-is-killing-b2b-saas-11.md" >}})
+- [AI 正在重塑 B2B SaaS 行业]({{< relref "posts/20260204-hacker_news-ai-is-killing-b2b-saas-11.md" >}})
+- [异步智能体成风潮但定义模糊]({{< relref "posts/20260209-hacker_news-everyones-building-async-agents-but-almost-no-one--14.md" >}})
+- [OpenAI应构建企业级协作平台Slack]({{< relref "posts/20260214-hacker_news-openai-should-build-slack-2.md" >}})

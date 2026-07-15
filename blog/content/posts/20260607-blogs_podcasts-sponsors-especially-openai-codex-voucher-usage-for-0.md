@@ -1,14 +1,29 @@
 ---
-title: "OpenAI Codex优惠券使用指南"
-date: 2026-06-07T18:32:39+08:00
+title: OpenAI Codex优惠券使用指南
+date: 2026-06-07 18:32:39+08:00
 draft: false
-entry_kind: "auto"
-tags: ["OpenAI", "Codex", "优惠券", "使用指南", "大模型", "AI编程", "代码生成", "开发者工具"]
-categories: ["大模型", "开发工具"]
+entry_kind: auto
+tags:
+- OpenAI
+- Codex
+- 优惠券
+- 使用指南
+- 大模型
+- AI 编程
+- 代码生成
+- 开发者工具
+categories:
+- 大模型
+- 开发工具
 source: blogs_podcasts
-description: "本次挑战由多家赞助商提供 OpenAI Codex 兑换券，帮助参赛者在项目中快速集成 AI 代码生成能力。OpenAI Codex 具备强大的自然语言到代码转换功能，掌握其使用方法可以显著提升开发效率并降低成本。本文将详细讲解兑换券的领取流程、在实际代码库中的集成步骤，以及常见问题的解决方案，助您充分利用赞助资源，提"
+description: 本次挑战由多家赞助商提供 OpenAI Codex 兑换券，帮助参赛者在项目中快速集成 AI 代码生成能力。OpenAI Codex 具备强大的自然语言到代码转换功能，掌握其使用方法可以显著提升开发效率并降低成本。本文将详细讲解兑换券的领取流程、在实际代码库中的集成步骤，以及常见问题的解决方案，助您充分利用赞助资源，提
 external_url: https://huggingface.co/blog/build-small-hackathon/sponsors-vouchers
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # OpenAI Codex优惠券使用指南
@@ -150,8 +165,8 @@ Codex是OpenAI基于GPT语言模型专门针对代码生成优化的版本，已
 ### 相关文章
 
 - [OpenAI发布GPT-5.3-Codex-Spark：首款实时代码模型，速度提升15倍]({{< relref "posts/20260213-blogs_podcasts-introducing-gpt-53-codex-spark-11.md" >}})
-- [OpenAI发布首款实时编码模型：生成速度提升15倍]({{< relref "posts/20260214-blogs_podcasts-introducing-gpt-53-codex-spark-13.md" >}})
-- [OpenAI发布GPT-5.3-Codex-Spark：首款实时编程模型，生成提速15倍]({{< relref "posts/20260217-blogs_podcasts-introducing-gpt-53-codex-spark-13.md" >}})
-- [OpenAI发布GPT-5.3-Codex-Spark：首个实时编码模型，生成速度提升15倍]({{< relref "posts/20260217-blogs_podcasts-introducing-gpt-53-codex-spark-14.md" >}})
+- [OpenAI发布首款实时编码模型：生成速度提升15倍]({{< relref "posts/20260213-blogs_podcasts-introducing-gpt-53-codex-spark-11.md" >}})
+- [OpenAI发布GPT-5.3-Codex-Spark：首款实时编程模型，生成提速15倍]({{< relref "posts/20260213-blogs_podcasts-introducing-gpt-53-codex-spark-11.md" >}})
+- [OpenAI发布GPT-5.3-Codex-Spark：首个实时编码模型，生成速度提升15倍]({{< relref "posts/20260213-blogs_podcasts-introducing-gpt-53-codex-spark-11.md" >}})
 - [Codex多场景编程能力解析]({{< relref "posts/20260416-hacker_news-codex-for-almost-everything-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

@@ -22,6 +22,10 @@ description: 这段内容描述了一种名为“Agent First Engineering”（�
 external_url: https://juejin.cn/post/7613552054946332715
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Agent First Engineering：零人工代码与百万行规模的开发实践
@@ -205,8 +209,8 @@ Agent First Engineering 是一种软件设计和开发的新范式，它将 AI �
 
 ### 相关文章
 
-- [2025年人工代码消亡与2026年代码评审终结]({{< relref "posts/20260304-blogs_podcasts-how-to-kill-the-code-review-10.md" >}})
-- [代码审查消亡时间表：人工代码2025年终结]({{< relref "posts/20260303-blogs_podcasts-how-to-kill-the-code-review-0.md" >}})
-- [2025年人工代码消亡与2026年代码评审终结]({{< relref "posts/20260304-blogs_podcasts-how-to-kill-the-code-review-12.md" >}})
-- [2025年人类手写代码终结，2026年代码评审消亡]({{< relref "posts/20260304-blogs_podcasts-how-to-kill-the-code-review-14.md" >}})
-- [2025年人工编码终结，2026年代码评审消亡]({{< relref "posts/20260304-blogs_podcasts-how-to-kill-the-code-review-9.md" >}})
+- [2025年人工代码消亡与2026年代码评审终结]({{< relref "posts/20260302-blogs_podcasts-how-to-kill-the-code-review-0.md" >}})
+- [代码审查消亡时间表：人工代码2025年终结]({{< relref "posts/20260302-blogs_podcasts-how-to-kill-the-code-review-0.md" >}})
+- [2025年人工代码消亡与2026年代码评审终结]({{< relref "posts/20260302-blogs_podcasts-how-to-kill-the-code-review-0.md" >}})
+- [2025年人类手写代码终结，2026年代码评审消亡]({{< relref "posts/20260302-blogs_podcasts-how-to-kill-the-code-review-0.md" >}})
+- [2025年人工编码终结，2026年代码评审消亡]({{< relref "posts/20260302-blogs_podcasts-how-to-kill-the-code-review-0.md" >}})

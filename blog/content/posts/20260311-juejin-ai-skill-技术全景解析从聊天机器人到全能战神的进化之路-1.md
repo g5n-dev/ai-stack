@@ -23,6 +23,10 @@ external_url: https://juejin.cn/post/7615489354840080420
 scenarios:
 - 大语言模型
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AI Skill 技术全景解析：从聊天机器人到全能智能体的进化
@@ -179,8 +183,8 @@ scenarios:
 
 ### 相关文章
 
-- [迈向智能体系统规模化科学：工作原理与适用条件]({{< relref "posts/20260201-hacker_news-towards-a-science-of-scaling-agent-systems-when-an-13.md" >}})
-- [Agent Skills：智能体技能框架与开发指南]({{< relref "posts/20260203-hacker_news-agent-skills-5.md" >}})
-- [Agent Skills：AI 智能体技能框架与训练方法]({{< relref "posts/20260204-hacker_news-agent-skills-8.md" >}})
-- [Agent Skills：智能体技能框架与能力评估]({{< relref "posts/20260204-hacker_news-agent-skills-9.md" >}})
-- [Context Graphs 与 Agent Traces：解析 AI 智能体的记忆与回溯机制]({{< relref "posts/20260205-blogs_podcasts-ainews-context-graphs-and-agent-traces-3.md" >}})
+- [迈向智能体系统规模化科学：工作原理与适用条件]({{< relref "posts/20260201-hacker_news-towards-a-science-of-scaling-agent-systems-when-an-11.md" >}})
+- [Agent Skills：智能体技能框架与开发指南]({{< relref "posts/20260203-hacker_news-agent-skills-0.md" >}})
+- [Agent Skills：AI 智能体技能框架与训练方法]({{< relref "posts/20260203-hacker_news-agent-skills-0.md" >}})
+- [Agent Skills：智能体技能框架与能力评估]({{< relref "posts/20260203-hacker_news-agent-skills-0.md" >}})
+- [Context Graphs 与 Agent Traces：解析 AI 智能体的记忆与回溯机制]({{< relref "posts/20260204-blogs_podcasts-ainews-context-graphs-and-agent-traces-0.md" >}})

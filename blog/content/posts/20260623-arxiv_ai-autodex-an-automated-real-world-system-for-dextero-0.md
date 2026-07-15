@@ -1,14 +1,32 @@
 ---
-title: "AutoDex：面向真实场景的灵巧抓取数据自动采集系统"
-date: 2026-06-23T22:43:33+08:00
+title: AutoDex：面向真实场景的灵巧抓取数据自动采集系统
+date: 2026-06-23 22:43:33+08:00
 draft: false
-entry_kind: "auto"
-tags: ["灵巧抓取", "自动采集", "机器人", "机械手", "多视角", "碰撞监测", "数据集", "仿真对比"]
-categories: ["AI 工程", "系统与基础设施"]
+entry_kind: auto
+tags:
+- 灵巧抓取
+- 自动采集
+- 机器人
+- 机械手
+- 多视角
+- 碰撞监测
+- 数据集
+- 仿真对比
+categories:
+- AI 工程
+- 系统与基础设施
 source: arxiv
-description: "获取鲁棒的灵巧抓取数据需要真实物理结果，但现有方式或慢或有偏，或缺乏接触验证。AutoDex 提出全自动化数据采集闭环：先用 20 台密集相机在严重遮挡下定位物体，执行带有碰撞监测的机械臂运动，判定抓取成功或失败，并在每次试验后主动复位物体以覆盖不同稳定姿态。该系统兼容 Allegro 与 Inspire 机械手，已在"
+description: 获取鲁棒的灵巧抓取数据需要真实物理结果，但现有方式或慢或有偏，或缺乏接触验证。AutoDex 提出全自动化数据采集闭环：先用 20 台密集相机在严重遮挡下定位物体，执行带有碰撞监测的机械臂运动，判定抓取成功或失败，并在每次试验后主动复位物体以覆盖不同稳定姿态。该系统兼容
+  Allegro 与 Inspire 机械手，已在
 external_url: http://arxiv.org/abs/2606.23689v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+aliases:
+- /posts/20260624-arxiv_ai-autodex-an-automated-real-world-system-for-dextero-0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AutoDex：面向真实场景的灵巧抓取数据自动采集系统
@@ -125,8 +143,8 @@ AutoDex 为大规模真实抓取数据生成提供了可扩展方案，适用于
 ### 相关文章
 
 - [将机器人AI引入嵌入式平台：数据集录制、VLA微调与端侧优化]({{< relref "posts/20260305-blogs_podcasts-bringing-robotics-ai-to-embedded-platforms-dataset-0.md" >}})
-- [将机器人AI引入嵌入式平台：数据集录制、VLA微调与端侧优化]({{< relref "posts/20260305-blogs_podcasts-bringing-robotics-ai-to-embedded-platforms-dataset-3.md" >}})
-- [将机器人AI引入嵌入式平台：数据集记录、VLA微调与端侧优化]({{< relref "posts/20260305-blogs_podcasts-bringing-robotics-ai-to-embedded-platforms-dataset-4.md" >}})
-- [将机器人AI引入嵌入式平台：数据集录制、VLA微调与端侧优化]({{< relref "posts/20260306-blogs_podcasts-bringing-robotics-ai-to-embedded-platforms-dataset-11.md" >}})
-- [将机器人AI引入嵌入式平台：数据集录制、VLA微调与端侧优化]({{< relref "posts/20260306-blogs_podcasts-bringing-robotics-ai-to-embedded-platforms-dataset-6.md" >}})
+- [将机器人AI引入嵌入式平台：数据集录制、VLA微调与端侧优化]({{< relref "posts/20260305-blogs_podcasts-bringing-robotics-ai-to-embedded-platforms-dataset-0.md" >}})
+- [将机器人AI引入嵌入式平台：数据集记录、VLA微调与端侧优化]({{< relref "posts/20260305-blogs_podcasts-bringing-robotics-ai-to-embedded-platforms-dataset-0.md" >}})
+- [将机器人AI引入嵌入式平台：数据集录制、VLA微调与端侧优化]({{< relref "posts/20260305-blogs_podcasts-bringing-robotics-ai-to-embedded-platforms-dataset-0.md" >}})
+- [将机器人AI引入嵌入式平台：数据集录制、VLA微调与端侧优化]({{< relref "posts/20260305-blogs_podcasts-bringing-robotics-ai-to-embedded-platforms-dataset-0.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

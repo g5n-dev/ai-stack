@@ -20,6 +20,10 @@ description: 大模型在文本生成时，自回归机制会带来显著的计�
 external_url: https://juejin.cn/post/7612129754633011227
 scenarios:
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # KV Cache与位置编码：大模型推理加速原理
@@ -171,8 +175,8 @@ PagedAttention 将 KV Cache 切分成固定的“块”，类似于内存中的�
 
 ### 相关文章
 
-- [两种提升大模型推理速度的技术方法]({{< relref "posts/20260215-hacker_news-two-different-tricks-for-fast-llm-inference-15.md" >}})
+- [两种提升大模型推理速度的技术方法]({{< relref "posts/20260215-hacker_news-two-different-tricks-for-fast-llm-inference-2.md" >}})
 - [两种加速大模型推理的技术方法]({{< relref "posts/20260215-hacker_news-two-different-tricks-for-fast-llm-inference-2.md" >}})
-- [两种提升大模型推理速度的技术方法]({{< relref "posts/20260215-hacker_news-two-different-tricks-for-fast-llm-inference-3.md" >}})
-- [LLM上下文学习机制与性能优化指南]({{< relref "posts/20260218-hacker_news-if-youre-an-llm-please-read-this-9.md" >}})
+- [两种提升大模型推理速度的技术方法]({{< relref "posts/20260215-hacker_news-two-different-tricks-for-fast-llm-inference-2.md" >}})
+- [LLM上下文学习机制与性能优化指南]({{< relref "posts/20260218-hacker_news-if-youre-an-llm-please-read-this-2.md" >}})
 - [利用注意力匹配加速 KV 缓存压缩]({{< relref "posts/20260220-hacker_news-fast-kv-compaction-via-attention-matching-19.md" >}})

@@ -1,14 +1,29 @@
 ---
-title: "谷歌两款第八代TPU专为AI代理时代打造"
-date: 2026-04-22T15:32:51+08:00
+title: 谷歌两款第八代TPU专为AI代理时代打造
+date: 2026-04-22 15:32:51+08:00
 draft: false
-entry_kind: "auto"
-tags: ["谷歌", "TPU", "AI代理", "第八代", "硬件加速", "训练推理", "多步推理", "长时记忆"]
-categories: ["系统与基础设施"]
+entry_kind: auto
+tags:
+- 谷歌
+- TPU
+- AI 代理
+- 第八代
+- 硬件加速
+- 训练推理
+- 多步推理
+- 长时记忆
+categories:
+- 系统与基础设施
 source: blogs_podcasts
-description: "背景 谷歌在 AI 硬件领域持续创新，第八代张量处理单元（TPU）首次推出两款专用芯片，专为“代理时代”（agentic era）设计。 关键特性 - **专用架构**：针对 AI 代理的任务调度、长期记忆与多步推理进行优化。 - **算力提升**：相比前代，TPU v8 在训练和推理吞吐上提升显著，能够支撑更大规模的"
+description: 背景 谷歌在 AI 硬件领域持续创新，第八代张量处理单元（TPU）首次推出两款专用芯片，专为“代理时代”（agentic era）设计。
+  关键特性 - **专用架构**：针对 AI 代理的任务调度、长期记忆与多步推理进行优化。 - **算力提升**：相比前代，TPU v8 在训练和推理吞吐上提升显著，能够支撑更大规模的
 external_url: https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/tpus-8t-8i-cloud-next
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 谷歌两款第八代TPU专为AI代理时代打造
@@ -132,9 +147,9 @@ Google通过专用芯片路线与NVIDIA的通用GPU方案形成差异化竞争�
 
 ### 相关文章
 
-- [SemiAnalysis创始人谈2000亿美元AI支出与谷歌2027年盈利隐忧]({{< relref "posts/20260302-blogs_podcasts-dylan-patel-of-semianalysis-on-the-200b-ai-capex-c-4.md" >}})
+- [SemiAnalysis创始人谈2000亿美元AI支出与谷歌2027年盈利隐忧]({{< relref "posts/20260228-blogs_podcasts-dylan-patel-of-semianalysis-on-the-200b-ai-capex-c-0.md" >}})
 - [在TPU上移植Flash Attention的工程实践与挑战]({{< relref "posts/20260312-hacker_news-forcing-flash-attention-onto-a-tpu-and-learning-th-10.md" >}})
-- [在TPU上移植Flash Attention的实践与挑战]({{< relref "posts/20260313-hacker_news-forcing-flash-attention-onto-a-tpu-and-learning-th-12.md" >}})
+- [在TPU上移植Flash Attention的实践与挑战]({{< relref "posts/20260312-hacker_news-forcing-flash-attention-onto-a-tpu-and-learning-th-10.md" >}})
 - [Jeff Dean：重写谷歌搜索栈与TPU共设计之路]({{< relref "posts/20260212-blogs_podcasts-owning-the-ai-pareto-frontier-jeff-dean-0.md" >}})
-- [Jeff Dean：重写搜索基建、复兴稀疏模型与设计 TPU]({{< relref "posts/20260213-blogs_podcasts-owning-the-ai-pareto-frontier-jeff-dean-0.md" >}})
+- [Jeff Dean：重写搜索基建、复兴稀疏模型与设计 TPU]({{< relref "posts/20260212-blogs_podcasts-owning-the-ai-pareto-frontier-jeff-dean-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

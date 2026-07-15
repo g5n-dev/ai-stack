@@ -21,6 +21,10 @@ description: 本文简要总结如下： 针对“为何 Adam 在实际应用中
 external_url: http://arxiv.org/abs/2603.03099v1
 scenarios:
 - Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Adam为何优于SGD：二阶矩归一化产生更尖锐的尾部
@@ -112,9 +116,7 @@ scenarios:
 
 ---
 
-### 论文深入分析：Why Adam Can Beat SGD
 
-### 1. 研究背景与问题
 
 ### 核心问题
 本文旨在解决机器学习优化领域一个长期存在的理论与实践的鸿沟问题：**为何在深度学习等实际应用中，Adam 优化器通常比随机梯度下降（SGD）收敛得更快且表现更好，尽管现有的理论分析往往显示 Adam 并不优于 SGD？**
@@ -130,7 +132,6 @@ scenarios:
 ### 重要性
 该研究的重要性在于它填补了这一理论空白。通过引入新的分析工具，论文首次从数学上严格证明了 Adam 在高概率收敛意义下优于 SGD，这为理解自适应优化算法为何在工业界（如大模型微调）广受欢迎提供了坚实的理论依据。
 
-### 2. 核心方法与创新
 
 ### 核心发现：二阶矩归一化
 本文的核心创新点在于指出了 Adam 成功的关键机制——**二阶矩归一化**。
@@ -144,7 +145,6 @@ Adam 算法在更新参数时，会除以梯度平方的累积估计（即 $\hat
 ### 优势与特色
 该方法的特色在于“反直觉”且“深刻”。通常认为二阶矩估计只是为了调整步长，但本文揭示其更深层的概率论意义：**它通过归一化显著压缩了极坏情况发生的概率，使得优化过程更加平滑和可预测。**
 
-### 3. 理论基础
 
 ### 理论假设
 论文基于经典的随机优化设置：
@@ -161,7 +161,6 @@ Adam 算法在更新参数时，会除以梯度平方的累积估计（即 $\hat
 ### 理论贡献
 这是**首次**在通用假设下，从高概率角度严格建立了 Adam 对 SGD 的优越性。它解释了为何 Adam 在实际训练中更少受到“梯度爆炸”或“极端坏点”的干扰。
 
-### 7. 学习建议
 
 ### 适合读者
 - 机器学习优化方向的研究生和研究人员。
@@ -423,5 +422,5 @@ Adam 虽然能找到更平坦的极小值，但在某些极端的视觉任务中
 - [为何Adam在$β_1=β_2$时更优：缺失的梯度尺度不变性原理]({{< relref "posts/20260130-arxiv_ai-why-adam-works-better-with-β_1-β_2-the-missing-gra-8.md" >}})
 - [通过锚定机制提升模型一致性]({{< relref "posts/20260227-arxiv_ai-model-agreement-via-anchoring-0.md" >}})
 - [🤖反事实训练！让模型学会靠谱又可落地的解释！]({{< relref "posts/20260125-arxiv_ai-counterfactual-training-teaching-models-plausible--3.md" >}})
-- [通过文本反馈扩展强化学习的能力边界]({{< relref "posts/20260204-arxiv_ai-expanding-the-capabilities-of-reinforcement-learni-5.md" >}})
+- [通过文本反馈扩展强化学习的能力边界]({{< relref "posts/20260203-arxiv_ai-expanding-the-capabilities-of-reinforcement-learni-5.md" >}})
 - [Harpoon：面向条件表格扩散模型的广义流形引导]({{< relref "posts/20260210-arxiv_ai-harpoon-generalised-manifold-guidance-for-conditio-1.md" >}})

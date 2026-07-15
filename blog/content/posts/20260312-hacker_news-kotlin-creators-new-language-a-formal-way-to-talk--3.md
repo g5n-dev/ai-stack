@@ -22,6 +22,12 @@ external_url: https://codespeak.dev
 scenarios:
 - 大语言模型
 - AI/ML项目
+aliases:
+- /posts/20260312-hacker_news-kotlin-creators-new-language-a-formal-way-to-talk--8/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Kotlin 作者发布新语言：提供与 LLM 交互的规范化语法

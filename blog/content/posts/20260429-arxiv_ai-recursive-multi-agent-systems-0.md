@@ -1,14 +1,32 @@
 ---
-title: "递归多智能体系统"
-date: 2026-04-29T23:26:16+08:00
+title: 递归多智能体系统
+date: 2026-04-29 23:26:16+08:00
 draft: false
-entry_kind: "auto"
-tags: ["递归多智能体", "大模型", "协同推理", "潜在空间", "梯度稳定", "性能提升", "LLM", "开源"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- 递归多智能体
+- 大模型
+- 协同推理
+- 潜在空间
+- 梯度稳定
+- 性能提升
+- LLM
+- 开源
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "研究背景 - 语言模型通过递归或循环在潜在空间迭代细化推理，成为新的扩展方向。 - 能否把递归思想从单一模型扩展到多智能体系统，实现合作的规模化？ RecursiveMAS 框架 - 将整个多智能体系统建模为统一的潜在空间递归计算。 - 轻量级 RecursiveLink 模块连接异构智能体，实现跨智能体的潜在状态传递"
+description: 研究背景 - 语言模型通过递归或循环在潜在空间迭代细化推理，成为新的扩展方向。 - 能否把递归思想从单一模型扩展到多智能体系统，实现合作的规模化？
+  RecursiveMAS 框架 - 将整个多智能体系统建模为统一的潜在空间递归计算。 - 轻量级 RecursiveLink 模块连接异构智能体，实现跨智能体的潜在状态传递
 external_url: http://arxiv.org/abs/2604.25917v1
-scenarios: ["大语言模型"]
+scenarios:
+- 大语言模型
+aliases:
+- /posts/20260430-arxiv_ai-recursive-multi-agent-systems-0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 递归多智能体系统
@@ -132,9 +150,9 @@ RecursiveMAS框架将多智能体系统统一建模为潜在空间的递归计�
 
 ### 相关文章
 
-- [月之暗面发布 Kimi k2.5 技术报告]({{< relref "posts/20260131-hacker_news-kimi-k25-technical-report-pdf-7.md" >}})
-- [上下文学习难度超出原有认知]({{< relref "posts/20260206-hacker_news-learning-from-context-is-harder-than-we-thought-5.md" >}})
-- [GPT-5.2 推导出理论物理新结果]({{< relref "posts/20260214-hacker_news-gpt-52-derives-a-new-result-in-theoretical-physics-6.md" >}})
-- [面向自动定理证明的最小智能体框架]({{< relref "posts/20260303-arxiv_ai-a-minimal-agent-for-automated-theorem-proving-8.md" >}})
-- [Mixture-of-Depths 动态分配计算资源的注意力机制]({{< relref "posts/20260318-arxiv_ai-mixture-of-depths-attention-0.md" >}})
+- [月之暗面发布 Kimi k2.5 技术报告]({{< relref "posts/20260130-hacker_news-kimi-k25-technical-report-pdf-10.md" >}})
+- [上下文学习难度超出原有认知]({{< relref "posts/20260206-hacker_news-learning-from-context-is-harder-than-we-thought-6.md" >}})
+- [GPT-5.2 推导出理论物理新结果]({{< relref "posts/20260213-hacker_news-gpt-52-derives-a-new-result-in-theoretical-physics-0.md" >}})
+- [面向自动定理证明的最小智能体框架]({{< relref "posts/20260302-arxiv_ai-a-minimal-agent-for-automated-theorem-proving-8.md" >}})
+- [Mixture-of-Depths 动态分配计算资源的注意力机制]({{< relref "posts/20260317-arxiv_ai-mixture-of-depths-attention-0.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

@@ -1,14 +1,28 @@
 ---
-title: "几秒内精准估计AI能耗的新方法"
-date: 2026-04-27T06:21:53+08:00
+title: 几秒内精准估计AI能耗的新方法
+date: 2026-04-27 06:21:53+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI能耗", "数据中心", "能源优化", "资源分配", "能耗估算", "绿色计算", "快速评估", "节能技术"]
-categories: ["系统与基础设施"]
+entry_kind: auto
+tags:
+- AI能耗
+- 数据中心
+- 能源优化
+- 资源分配
+- 能耗估算
+- 绿色计算
+- 快速评估
+- 节能技术
+categories:
+- 系统与基础设施
 source: blogs_podcasts
-description: "EnergAIzer是一种快速估算AI功耗的方法，能够在秒级时间内生成可靠的功耗结果，帮助数据中心运营商高效分配资源，显著降低能源浪费。"
+description: EnergAIzer是一种快速估算AI功耗的方法，能够在秒级时间内生成可靠的功耗结果，帮助数据中心运营商高效分配资源，显著降低能源浪费。
 external_url: https://news.mit.edu/2026/faster-way-to-estimate-ai-power-consumption-0427
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 几秒内精准估计AI能耗的新方法
@@ -57,7 +71,7 @@ EnergAIzer是一种快速估算AI功耗的方法，能够在秒级时间内生�
 
 - [😱谷歌欲掌控俄州小镇水源！环保主义者紧急发声！]({{< relref "posts/20260126-hacker_news-environmentalists-worry-google-behind-bid-to-contr-15.md" >}})
 - [OpenAI 实时访问系统：速率限制与额度管理支撑 Sora 和 Codex]({{< relref "posts/20260213-blogs_podcasts-beyond-rate-limits-scaling-access-to-codex-and-sor-0.md" >}})
-- [OpenAI 实时接入系统：速率限制与额度管理支持 Sora 和 Codex]({{< relref "posts/20260216-blogs_podcasts-beyond-rate-limits-scaling-access-to-codex-and-sor-5.md" >}})
+- [OpenAI 实时接入系统：速率限制与额度管理支持 Sora 和 Codex]({{< relref "posts/20260213-blogs_podcasts-beyond-rate-limits-scaling-access-to-codex-and-sor-0.md" >}})
 - [AI致需求激增，西部数据称本年度机械硬盘已售罄]({{< relref "posts/20260216-hacker_news-thanks-a-lot-ai-hard-drives-are-sold-out-for-the-y-8.md" >}})
 - [英伟达投资数据中心创企Nscale 估值达146亿美元]({{< relref "posts/20260309-hacker_news-nvidia-backs-ai-data-center-startup-nscale-as-it-h-15.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

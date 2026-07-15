@@ -1,12 +1,25 @@
 ---
-title: "🐄牛用多功能工具灵活操作！动物智慧惊呆人类！🤯"
-date: 2026-01-27T23:10:51+08:00
+title: 🐄牛用多功能工具灵活操作！动物智慧惊呆人类！🤯
+date: 2026-01-27 23:10:51+08:00
 draft: false
-entry_kind: "auto"
-tags: ["动物行为", "工具使用", "认知科学", "观察研究", "牛", "智力", "生物学", "HackerNews"]
-categories: ["生活与杂谈"]
+entry_kind: auto
+tags:
+- 动物行为
+- 工具使用
+- 认知科学
+- 观察研究
+- 牛
+- 智力
+- 生物学
+- HackerNews
+categories:
+- 生活与杂谈
 source: hacker_news
 external_url: https://doi.org/10.1016/j.cub.2025.11.059
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 📰 🐄牛用多功能工具灵活操作！动物智慧惊呆人类！🤯
@@ -196,7 +209,6 @@ external_url: https://doi.org/10.1016/j.cub.2025.11.059
 - 合作企业Komatsu已开始商业化生产，预计2024年投放市场
 
 ---
-## ✅ 最佳实践
 
 ## 最佳实践指南：牛只多功能工具的灵活使用
 

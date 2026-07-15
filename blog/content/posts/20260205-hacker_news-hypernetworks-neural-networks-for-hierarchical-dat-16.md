@@ -1,14 +1,32 @@
 ---
-title: "超网络：面向层级数据的神经网络架构"
-date: 2026-02-05T22:07:19+08:00
+title: 超网络：面向层级数据的神经网络架构
+date: 2026-02-05 22:07:19+08:00
 draft: false
-entry_kind: "auto"
-tags: ["超网络", "层级数据", "神经网络架构", "深度学习", "动态网络", "元学习", "模型压缩", "Hypernetworks"]
-categories: ["论文", "大模型"]
+entry_kind: auto
+tags:
+- 超网络
+- 层级数据
+- 神经网络架构
+- 深度学习
+- 动态网络
+- 元学习
+- 模型压缩
+- Hypernetworks
+categories:
+- 论文
+- 大模型
 source: hacker_news
-description: "在处理图像、文本或代码等具有层级结构的数据时，传统神经网络往往难以有效捕捉其内在的复杂关联。本文深入探讨 Hypernetworks（超网络）这一架构，解析其如何通过动态生成子网络权重来应对层级化挑战。通过梳理核心原理与具体应用场景，读者将理解该技术如何提升模型对深层结构的表达能力，以及在实际工程中落地时的关键考量。"
+description: 在处理图像、文本或代码等具有层级结构的数据时，传统神经网络往往难以有效捕捉其内在的复杂关联。本文深入探讨 Hypernetworks（超网络）这一架构，解析其如何通过动态生成子网络权重来应对层级化挑战。通过梳理核心原理与具体应用场景，读者将理解该技术如何提升模型对深层结构的表达能力，以及在实际工程中落地时的关键考量。
 external_url: https://blog.sturdystatistics.com/posts/hnet_part_I
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+aliases:
+- /posts/20260206-hacker_news-hypernetworks-neural-networks-for-hierarchical-dat-17/
+- /posts/20260206-hacker_news-hypernetworks-neural-networks-for-hierarchical-dat-19/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 超网络：面向层级数据的神经网络架构
@@ -235,7 +253,6 @@ AlphaStar 采用了基于超网络的模块化架构。在这个架构中，一�
 这种层级化的超网络设计使得 AlphaStar 能够在所有三个种族中都达到宗师级水平。它证明了超网络不仅能处理数据层级，还能处理“策略层级”。通过动态调整网络权重，AI 展现出了惊人的适应性和多样性，能够根据战局灵活切换不同的战术风格，最终在实战中击败了顶级职业人类选手。
 
 ---
-## 最佳实践
 
 ## 最佳实践指南
 
@@ -422,9 +439,9 @@ AlphaStar 采用了基于超网络的模块化架构。在这个架构中，一�
 
 ### 相关文章
 
-- [Routing the Lottery: 面向异构数据的自适应子网络路由]({{< relref "posts/20260202-arxiv_ai-routing-the-lottery-adaptive-subnetworks-for-heter-8.md" >}})
+- [Routing the Lottery: 面向异构数据的自适应子网络路由]({{< relref "posts/20260130-arxiv_ai-routing-the-lottery-adaptive-subnetworks-for-heter-8.md" >}})
 - [超越预测不确定性！🚀结构约束下的可靠表征学习！🔥]({{< relref "posts/20260125-arxiv_ai-beyond-predictive-uncertainty-reliable-representat-7.md" >}})
 - [🔥LLM训练动力学新突破！可扩展损失景观曲率度量🚀]({{< relref "posts/20260126-arxiv_ai-a-scalable-measure-of-loss-landscape-curvature-for-1.md" >}})
-- [⚛️ 基于SE(3)流的刚性 motifs 3D 分子生成！🔥]({{< relref "posts/20260127-arxiv_ai-3d-molecule-generation-from-rigid-motifs-via-se3-f-8.md" >}})
-- [🔥LLM训练动力学新突破！可扩展损失景观曲率度量！]({{< relref "posts/20260127-arxiv_ai-a-scalable-measure-of-loss-landscape-curvature-for-1.md" >}})
+- [⚛️ 基于SE(3)流的刚性 motifs 3D 分子生成！🔥]({{< relref "posts/20260126-arxiv_ai-3d-molecule-generation-from-rigid-motifs-via-se3-f-8.md" >}})
+- [🔥LLM训练动力学新突破！可扩展损失景观曲率度量！]({{< relref "posts/20260126-arxiv_ai-a-scalable-measure-of-loss-landscape-curvature-for-1.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

@@ -22,6 +22,10 @@ external_url: https://github.com/knowsuchagency/mcp2cli
 scenarios:
 - 命令行工具
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Show HN: Mcp2cli – 一个CLI调用所有API，Token消耗比原生MCP减少96-99%

@@ -1,14 +1,29 @@
 ---
-title: "Strands Agents和LeRobot打通HF Hub与机器人硬件"
-date: 2026-06-17T12:02:13+08:00
+title: Strands Agents和LeRobot打通HF Hub与机器人硬件
+date: 2026-06-17 12:02:13+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Strands", "LeRobot", "HF Hub", "机器人", "硬件", "AI Agent", "开源", "模型部署"]
-categories: ["AI 工程", "开源生态"]
+entry_kind: auto
+tags:
+- Strands
+- LeRobot
+- HF Hub
+- 机器人
+- 硬件
+- AI Agent
+- 开源
+- 模型部署
+categories:
+- AI 工程
+- 开源生态
 source: blogs_podcasts
-description: "本文探讨如何将 Hugging Face Hub 上的模型与 Strands Agents 框架以及 LeRobot 机器人硬件直接对接，实现从模型训练到现场控制的完整流程。通过实际案例，演示模型加载、任务编排和硬件驱动的关键步骤，帮助开发者快速搭建可部署的机器人系统。阅读后，读者将掌握端到端的实现思路与常见坑的解决方"
+description: 本文探讨如何将 Hugging Face Hub 上的模型与 Strands Agents 框架以及 LeRobot 机器人硬件直接对接，实现从模型训练到现场控制的完整流程。通过实际案例，演示模型加载、任务编排和硬件驱动的关键步骤，帮助开发者快速搭建可部署的机器人系统。阅读后，读者将掌握端到端的实现思路与常见坑的解决方
 external_url: https://huggingface.co/blog/amazon/strands-lerobot-hub-to-hardware
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Strands Agents和LeRobot打通HF Hub与机器人硬件
@@ -116,9 +131,9 @@ Strands Agents 与 LeRobot 通过把 Hugging Face Hub 上的模型、策�
 
 ### 相关文章
 
-- [Agent Skills：智能体技能评估与开源框架]({{< relref "posts/20260204-hacker_news-agent-skills-7.md" >}})
-- [GGML与llama.cpp加入HF推动本地AI长期发展]({{< relref "posts/20260223-blogs_podcasts-ggml-and-llamacpp-join-hf-to-ensure-the-long-term--8.md" >}})
+- [Agent Skills：智能体技能评估与开源框架]({{< relref "posts/20260203-hacker_news-agent-skills-0.md" >}})
+- [GGML与llama.cpp加入HF推动本地AI长期发展]({{< relref "posts/20260220-blogs_podcasts-ggml-and-llamacpp-join-hf-to-ensure-the-long-term--2.md" >}})
 - [OpenClaw：开源自托管AI Agent网关与自动化任务调度]({{< relref "posts/20260309-juejin-openclaw-学习小组初识-2.md" >}})
-- [面向 AI 智能体的开源浏览器]({{< relref "posts/20260311-hacker_news-show-hn-open-source-browser-for-ai-agents-14.md" >}})
+- [面向 AI 智能体的开源浏览器]({{< relref "posts/20260311-hacker_news-show-hn-open-source-browser-for-ai-agents-8.md" >}})
 - [面向AI智能体的开源浏览器]({{< relref "posts/20260311-hacker_news-show-hn-open-source-browser-for-ai-agents-8.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

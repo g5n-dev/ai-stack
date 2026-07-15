@@ -23,6 +23,10 @@ external_url: https://juejin.cn/post/7615868122214760511
 scenarios:
 - AI/ML项目
 - DevOps/运维
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 软件开发生命周期已死？AI 编码智能体如何颠覆 SDLC
@@ -173,8 +177,8 @@ AI 编码智能体主要应用于 SDLC 的编码、单元测试、代码审查�
 
 ### 相关文章
 
-- [LNAI：统一定义 AI 编码工具配置并同步至多端]({{< relref "posts/20260203-hacker_news-lnai-define-ai-coding-tool-configs-once-sync-to-cl-9.md" >}})
-- [AI 代码审查的真实世界基准测试]({{< relref "posts/20260205-hacker_news-a-real-world-benchmark-for-ai-code-review-3.md" >}})
-- [超越自主编码：AI编程代理的演进方向]({{< relref "posts/20260208-hacker_news-beyond-agentic-coding-13.md" >}})
-- [超越智能体编码：AI 编程助手的演进方向]({{< relref "posts/20260208-hacker_news-beyond-agentic-coding-7.md" >}})
+- [LNAI：统一定义 AI 编码工具配置并同步至多端]({{< relref "posts/20260203-hacker_news-lnai-define-ai-coding-tool-configs-once-sync-to-cl-3.md" >}})
+- [AI 代码审查的真实世界基准测试]({{< relref "posts/20260204-hacker_news-a-real-world-benchmark-for-ai-code-review-2.md" >}})
+- [超越自主编码：AI编程代理的演进方向]({{< relref "posts/20260208-hacker_news-haskell-for-all-beyond-agentic-coding-3.md" >}})
+- [超越智能体编码：AI 编程助手的演进方向]({{< relref "posts/20260208-hacker_news-haskell-for-all-beyond-agentic-coding-3.md" >}})
 - [GitHub Agentic 工作流：AI 智能体自主编写代码]({{< relref "posts/20260208-hacker_news-github-agentic-workflows-3.md" >}})

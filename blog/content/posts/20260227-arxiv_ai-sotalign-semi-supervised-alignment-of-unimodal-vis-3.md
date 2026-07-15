@@ -20,6 +20,14 @@ description: '**SOTAlign：基于最优传输的半监督视觉与语言模型�
 external_url: http://arxiv.org/abs/2602.23353v1
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260228-arxiv_ai-sotalign-semi-supervised-alignment-of-unimodal-vis-3/
+- /posts/20260301-arxiv_ai-sotalign-semi-supervised-alignment-of-unimodal-vis-3/
+- /posts/20260302-arxiv_ai-sotalign-semi-supervised-alignment-of-unimodal-vis-3/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # SOTAlign：基于最优传输的单模态视觉与语言模型半监督对齐
@@ -123,9 +131,7 @@ SOTAlign 试图解决多模态学习中的一个核心痛点：如何降低对�
 
 ---
 
-### SOTAlign: 基于最优传输的半监督视觉与语言模型对齐深度分析
 
-### 1. 研究背景与问题
 
 ### 核心问题
 该研究致力于解决**多模态学习中的数据效率问题**，具体而言：**如何在没有大规模成对（图像-文本）标注数据的情况下，将预训练的单模态视觉编码器和语言编码器进行有效的对齐？**
@@ -142,7 +148,6 @@ SOTAlign 试图解决多模态学习中的一个核心痛点：如何降低对�
 ### 重要性
 这项研究的重要性在于它挑战了“大数据+大算力”的暴力美学，提出了一种更加符合人类认知的学习范式：利用少量强监督（成对数据）和大量弱监督（未配对数据），实现跨模态的理解。这对于低资源语言、特定领域（如医疗影像）的多模态应用具有重要价值。
 
-### 2. 核心方法与创新
 
 ### 核心方法：SOTAlign
 SOTAlign 是一个半监督的两阶段对齐框架，旨在将预训练的视觉和语言编码器映射到共享的潜在空间。
@@ -166,7 +171,6 @@ SOTAlign 是一个半监督的两阶段对齐框架，旨在将预训练的视�
 *   **鲁棒性强：** 由于OT对噪声和离群点具有一定的容忍度，该方法在未配对数据存在噪声时表现依然稳健。
 *   **通用性：** 可以适用于不同的编码器组合（ViT-B/32 + BERT等）。
 
-### 3. 理论基础
 
 ### 理论依据：最优传输
 最优传输理论是SOTAlign的数学基石。它提供了一种度量两个概率分布之间距离的方法。
@@ -183,7 +187,6 @@ SOTAlign 是一个半监督的两阶段对齐框架，旨在将预训练的视�
 ### 理论贡献分析
 论文从理论上证明了，在“柏拉图表征假设”成立的前提下，即单模态特征空间共享相似的流形结构，通过最优传输确实可以恢复出模态间的语义对应关系。这为利用未配对数据提供了理论保障。
 
-### 7. 学习建议
 
 ### 适合读者
 *   从事多模态学习、计算机视觉、自然语言处理的研究生和工程师。
@@ -427,8 +430,8 @@ SOTAlign 具有很强的通用性和灵活性。它并不强制要求特定的�
 
 ### 相关文章
 
-- [GLM-OCR：面向复杂文档理解的多模态OCR模型]({{< relref "posts/20260212-hacker_news-glm-ocr-a-multimodal-ocr-model-for-complex-documen-8.md" >}})
-- [视觉语言模型能否通过交互学习直观物理]({{< relref "posts/20260207-arxiv_ai-can-vision-language-models-learn-intuitive-physics-5.md" >}})
-- [视觉语言模型能否通过交互学习直觉物理]({{< relref "posts/20260208-arxiv_ai-can-vision-language-models-learn-intuitive-physics-5.md" >}})
-- [视觉语言模型能否通过交互学习直观物理]({{< relref "posts/20260209-arxiv_ai-can-vision-language-models-learn-intuitive-physics-5.md" >}})
-- [ANCRe: Adaptive Neural Connection Reassignment for Effi]({{< relref "posts/20260211-arxiv_ai-ancre-adaptive-neural-connection-reassignment-for--5.md" >}})
+- [GLM-OCR：面向复杂文档理解的多模态OCR模型]({{< relref "posts/20260211-hacker_news-glm-ocr-accurate-fast-comprehensive-3.md" >}})
+- [视觉语言模型能否通过交互学习直观物理]({{< relref "posts/20260206-arxiv_ai-can-vision-language-models-learn-intuitive-physics-5.md" >}})
+- [视觉语言模型能否通过交互学习直觉物理]({{< relref "posts/20260206-arxiv_ai-can-vision-language-models-learn-intuitive-physics-5.md" >}})
+- [视觉语言模型能否通过交互学习直观物理]({{< relref "posts/20260206-arxiv_ai-can-vision-language-models-learn-intuitive-physics-5.md" >}})
+- [ANCRe: Adaptive Neural Connection Reassignment for Effi]({{< relref "posts/20260210-arxiv_ai-ancre-adaptive-neural-connection-reassignment-for--5.md" >}})

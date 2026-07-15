@@ -11,7 +11,7 @@ tags:
 - 行业竞争
 - 技术伦理
 - 知识产权
-- AI治理
+- AI 治理
 categories:
 - 大模型
 - 安全
@@ -20,6 +20,10 @@ description: 以下是关于Anthropic指控中国大模型“蒸馏攻击”事�
 external_url: https://juejin.cn/post/7613660785901846580
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Anthropic指控三家中国公司大规模蒸馏模型
@@ -203,7 +207,7 @@ Anthropic 的强烈反应主要基于以下三个层面的考量：
 ### 相关文章
 
 - [Anthropic指控DeepSeek等遭超1600万次工业级蒸馏攻击]({{< relref "posts/20260224-blogs_podcasts-ainews-anthropic-accuses-deepseek-moonshot-and-min-0.md" >}})
-- [Anthropic指控DeepSeek等遭超1600万次工业级蒸馏攻击]({{< relref "posts/20260225-blogs_podcasts-ainews-anthropic-accuses-deepseek-moonshot-and-min-10.md" >}})
-- [Anthropic指控DeepSeek等三家中国公司遭超1600万次蒸馏攻击]({{< relref "posts/20260224-blogs_podcasts-ainews-anthropic-accuses-deepseek-moonshot-and-min-5.md" >}})
+- [Anthropic指控DeepSeek等遭超1600万次工业级蒸馏攻击]({{< relref "posts/20260224-blogs_podcasts-ainews-anthropic-accuses-deepseek-moonshot-and-min-0.md" >}})
+- [Anthropic指控DeepSeek等三家中国公司遭超1600万次蒸馏攻击]({{< relref "posts/20260224-blogs_podcasts-ainews-anthropic-accuses-deepseek-moonshot-and-min-0.md" >}})
 - [Mozilla组建AI联盟以对抗OpenAI与Anthropic]({{< relref "posts/20260129-hacker_news-mozilla-is-building-an-ai-rebel-alliance-to-take-o-10.md" >}})
-- [Anthropic指控DeepSeek等遭超1600万次蒸馏攻击]({{< relref "posts/20260224-blogs_podcasts-ainews-anthropic-accuses-deepseek-moonshot-and-min-4.md" >}})
+- [Anthropic指控DeepSeek等遭超1600万次蒸馏攻击]({{< relref "posts/20260224-blogs_podcasts-ainews-anthropic-accuses-deepseek-moonshot-and-min-0.md" >}})

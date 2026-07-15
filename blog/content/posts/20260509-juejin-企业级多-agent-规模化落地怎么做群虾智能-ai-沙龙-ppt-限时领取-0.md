@@ -1,14 +1,29 @@
 ---
-title: "多Agent规模化落地：群虾智能企业实践经验分享"
-date: 2026-05-09T06:37:32+08:00
+title: 多Agent规模化落地：群虾智能企业实践经验分享
+date: 2026-05-09 06:37:32+08:00
 draft: false
-entry_kind: "auto"
-tags: ["多Agent", "规模化落地", "企业实践", "AI原生", "开源沙龙", "QwenPaw", "数据答疑", "大模型"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- 多Agent
+- 规模化落地
+- 企业实践
+- AI原生
+- 开源沙龙
+- QwenPaw
+- 数据答疑
+- 大模型
+categories:
+- 大模型
+- AI 工程
 source: juejin
-description: "群虾智能在北京举办的AI原生应用开源开发者沙龙，吸引了110多名技术从业者参与。活动中深度分享了HiClaw企业级多Agent规模化养虾实践、QwenPaw智能搭档以及数据答疑Agent等关键方案，并提供相关PPT限时下载，帮助企业快速落地多Agent系统。"
+description: 群虾智能在北京举办的AI原生应用开源开发者沙龙，吸引了110多名技术从业者参与。活动中深度分享了HiClaw企业级多Agent规模化养虾实践、QwenPaw智能搭档以及数据答疑Agent等关键方案，并提供相关PPT限时下载，帮助企业快速落地多Agent系统。
 external_url: https://juejin.cn/post/7637477381956796431
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 多Agent规模化落地：群虾智能企业实践经验分享
@@ -88,9 +103,9 @@ scenarios: ["AI/ML项目"]
 
 ### 相关文章
 
-- [Claude Opus 4.6 发布]({{< relref "posts/20260206-hacker_news-claude-opus-46-3.md" >}})
-- [Gemini 3.1 Flash-Lite：Gemini 3 系列中速度最快且性价比最高的模型]({{< relref "posts/20260304-blogs_podcasts-gemini-31-flash-lite-built-for-intelligence-at-sca-4.md" >}})
-- [Qwen3.5 微调指南]({{< relref "posts/20260305-hacker_news-qwen35-fine-tuning-guide-17.md" >}})
+- [Claude Opus 4.6 发布]({{< relref "posts/20260205-hacker_news-claude-opus-46-2.md" >}})
+- [Gemini 3.1 Flash-Lite：Gemini 3 系列中速度最快且性价比最高的模型]({{< relref "posts/20260303-blogs_podcasts-gemini-31-flash-lite-built-for-intelligence-at-sca-2.md" >}})
+- [Qwen3.5 微调指南]({{< relref "posts/20260304-hacker_news-qwen35-fine-tuning-guide-unsloth-documentation-7.md" >}})
 - [利用RAG技术有效解决大模型幻觉问题]({{< relref "posts/20260314-juejin-别再信它一本正经地胡说了用-rag终结大模型幻觉-0.md" >}})
 - [大模型幻觉频发：代码调试与API调用的隐形陷阱]({{< relref "posts/20260316-juejin-骗我可以注意次数-0.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

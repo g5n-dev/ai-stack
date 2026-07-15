@@ -1,14 +1,31 @@
 ---
-title: "CodeRLM：基于 Tree-sitter 的 LLM 代码索引工具"
-date: 2026-02-12T05:30:02+08:00
+title: CodeRLM：基于 Tree-sitter 的 LLM 代码索引工具
+date: 2026-02-12 05:30:02+08:00
 draft: false
-entry_kind: "auto"
-tags: ["CodeRLM", "Tree-sitter", "代码索引", "LLM", "AI Agent", "代码解析", "AST", "Hacker News"]
-categories: ["开发工具", "大模型"]
+entry_kind: auto
+tags:
+- CodeRLM
+- Tree-sitter
+- 代码索引
+- LLM
+- AI Agent
+- 代码解析
+- AST
+- Hacker News
+categories:
+- 开发工具
+- 大模型
 source: hacker_news
-description: "在为大语言模型（LLM）构建智能体时，如何让代码检索超越简单的文本匹配，始终是提升推理能力的关键瓶颈。本文介绍的 CodeRLM，利用 Tree-sitter 实现了基于语法树的代码索引，能够精准捕捉代码结构与语义上下文。阅读本文，你将了解该工具如何通过更高质量的代码表示，有效增强 LLM 在复杂代码库中的理解与交互效"
+description: 在为大语言模型（LLM）构建智能体时，如何让代码检索超越简单的文本匹配，始终是提升推理能力的关键瓶颈。本文介绍的 CodeRLM，利用 Tree-sitter
+  实现了基于语法树的代码索引，能够精准捕捉代码结构与语义上下文。阅读本文，你将了解该工具如何通过更高质量的代码表示，有效增强 LLM 在复杂代码库中的理解与交互效
 external_url: https://github.com/JaredStewart/coderlm/blob/main/server/REPL_to_API.md
-scenarios: ["大语言模型", "AI/ML项目"]
+scenarios:
+- 大语言模型
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # CodeRLM：基于 Tree-sitter 的 LLM 代码索引工具
@@ -293,7 +310,6 @@ print(compare_code_semantics(old_version, new_version))
 - **知识沉淀**：新构建的语义索引成为了团队的知识库，LLM Agent 能够基于索引快速回答“这个功能在旧代码中是怎么实现的”等问题，加速了团队对旧系统的剥离。
 
 ---
-## 最佳实践
 
 ## 最佳实践指南
 
@@ -478,8 +494,8 @@ Tree-sitter 支持多语言，但不同语言的惯用模式不同。为了提�
 ### 相关文章
 
 - [Smooth CLI：面向 AI 智能体的低 Token 浏览器]({{< relref "posts/20260206-hacker_news-show-hn-smooth-cli-token-efficient-browser-for-ai--11.md" >}})
-- [Smooth CLI：面向 AI 智能体的低 Token 开销浏览器]({{< relref "posts/20260206-hacker_news-show-hn-smooth-cli-token-efficient-browser-for-ai--14.md" >}})
-- [Ghidra MCP Server：集成110项工具的AI逆向工程辅助环境]({{< relref "posts/20260204-hacker_news-show-hn-ghidra-mcp-server-110-tools-for-ai-assiste-10.md" >}})
-- [Ghidra MCP Server：集成110种工具的AI辅助逆向工程]({{< relref "posts/20260204-hacker_news-show-hn-ghidra-mcp-server-110-tools-for-ai-assiste-16.md" >}})
-- [Ghidra MCP Server发布：集成110款工具实现AI辅助逆向工程]({{< relref "posts/20260204-hacker_news-show-hn-ghidra-mcp-server-110-tools-for-ai-assiste-19.md" >}})
+- [Smooth CLI：面向 AI 智能体的低 Token 开销浏览器]({{< relref "posts/20260206-hacker_news-show-hn-smooth-cli-token-efficient-browser-for-ai--11.md" >}})
+- [Ghidra MCP Server：集成110项工具的AI逆向工程辅助环境]({{< relref "posts/20260204-hacker_news-show-hn-ghidra-mcp-server-110-tools-for-ai-assiste-1.md" >}})
+- [Ghidra MCP Server：集成110种工具的AI辅助逆向工程]({{< relref "posts/20260204-hacker_news-show-hn-ghidra-mcp-server-110-tools-for-ai-assiste-1.md" >}})
+- [Ghidra MCP Server发布：集成110款工具实现AI辅助逆向工程]({{< relref "posts/20260204-hacker_news-show-hn-ghidra-mcp-server-110-tools-for-ai-assiste-1.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

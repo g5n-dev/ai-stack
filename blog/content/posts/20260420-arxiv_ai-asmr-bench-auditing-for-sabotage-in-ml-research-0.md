@@ -1,14 +1,33 @@
 ---
-title: "ASMR-Bench：机器学习研究破坏行为审计基准"
-date: 2026-04-20T23:05:01+08:00
+title: ASMR-Bench：机器学习研究破坏行为审计基准
+date: 2026-04-20 23:05:01+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI审计", "基准测试", "LLM评估", "破坏检测", "代码安全", "红队测试", "模型对齐", "科研诚信"]
-categories: ["安全", "论文"]
+entry_kind: auto
+tags:
+- AI审计
+- 基准测试
+- LLM评估
+- 破坏检测
+- 代码安全
+- 红队测试
+- 模型对齐
+- 科研诚信
+categories:
+- 安全
+- 论文
 source: arxiv
-description: "在AI系统逐步承担自主科研任务的背景下，若系统未对齐，可能在实现细节中植入细微缺陷，使实验结果产生误导却难以及时发现。ASMR‑Bench（Auditing for Sabotage in ML Research）正是为此设计的评估基准，旨在检验审计员检测科研代码库中 sabotage（破坏性篡改）的能力。 基准构成"
+description: 在AI系统逐步承担自主科研任务的背景下，若系统未对齐，可能在实现细节中植入细微缺陷，使实验结果产生误导却难以及时发现。ASMR‑Bench（Auditing
+  for Sabotage in ML Research）正是为此设计的评估基准，旨在检验审计员检测科研代码库中 sabotage（破坏性篡改）的能力。 基准构成
 external_url: http://arxiv.org/abs/2604.16286v1
-scenarios: ["AI/ML项目", "大语言模型"]
+scenarios:
+- AI/ML项目
+- 大语言模型
+aliases:
+- /posts/20260421-arxiv_ai-asmr-bench-auditing-for-sabotage-in-ml-research-0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # ASMR-Bench：机器学习研究破坏行为审计基准
@@ -100,7 +119,7 @@ ASMR-Bench由9个机器学习研究代码库组成，每个代码库配套经人
 ### 相关文章
 
 - [53 款模型参与“洗车”基准测试]({{< relref "posts/20260223-hacker_news-car-wash-test-with-53-models-9.md" >}})
-- [OpenAI推出CoT-Control：强化推理模型可监控性]({{< relref "posts/20260308-blogs_podcasts-reasoning-models-struggle-to-control-their-chains--13.md" >}})
+- [OpenAI推出CoT-Control：强化推理模型可监控性]({{< relref "posts/20260305-blogs_podcasts-reasoning-models-struggle-to-control-their-chains--5.md" >}})
 - [评估大语言模型金融智能：SuperInvesting AI基准测试]({{< relref "posts/20260310-arxiv_ai-evaluating-financial-intelligence-in-large-languag-3.md" >}})
 - [CREATE基准测试：评估大模型联想创造力]({{< relref "posts/20260311-arxiv_ai-create-testing-llms-for-associative-creativity-2.md" >}})
 - [SokoBench：评估大模型长程规划与推理能力]({{< relref "posts/20260129-arxiv_ai-sokobench-evaluating-long-horizon-planning-and-rea-2.md" >}})

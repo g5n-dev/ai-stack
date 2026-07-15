@@ -1,14 +1,30 @@
 ---
-title: "亚马逊AgentCore Payments预览：AI代理即时支付内容"
-date: 2026-05-07T14:28:38+08:00
+title: 亚马逊AgentCore Payments预览：AI代理即时支付内容
+date: 2026-05-07 14:28:38+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI代理", "支付", "亚马逊", "Bedrock", "Coinbase", "Stripe", "自动化", "工作流"]
-categories: ["AI 工程", "后端"]
+entry_kind: auto
+tags:
+- AI 代理
+- 支付
+- 亚马逊
+- Bedrock
+- Coinbase
+- Stripe
+- 自动化
+- 工作流
+categories:
+- AI 工程
+- 后端
 source: blogs_podcasts
-description: "亚马逊云服务近日推出 Amazon Bedrock AgentCore Payments 预览版，这是一套新功能，使 AI 代理能够即时访问并支付其使用的资源。该特性由 Coinbase 与 Stripe 合作构建，支持代理在运行时无缝完成付款，显著提升自动化工作流的效率。"
+description: 亚马逊云服务近日推出 Amazon Bedrock AgentCore Payments 预览版，这是一套新功能，使 AI 代理能够即时访问并支付其使用的资源。该特性由
+  Coinbase 与 Stripe 合作构建，支持代理在运行时无缝完成付款，显著提升自动化工作流的效率。
 external_url: https://aws.amazon.com/blogs/machine-learning/agents-that-transact-introducing-amazon-bedrock-agentcore-payments-built-with-coinbase-and-stripe
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 亚马逊AgentCore Payments预览：AI代理即时支付内容
@@ -119,8 +135,8 @@ Amazon Bedrock AgentCore Payments 是亚马逊云服务在 AI Agent 领域的重
 ### 相关文章
 
 - [Stripe 编程代理 Minions：技术实现与工作流解析]({{< relref "posts/20260220-hacker_news-minions-stripes-coding-agents-part-2-1.md" >}})
-- [Stripe 编码代理 Minions：技术实现与工作流解析]({{< relref "posts/20260220-hacker_news-minions-stripes-coding-agents-part-2-10.md" >}})
-- [OpenAI内部数据智能体：自动化数据分析与决策]({{< relref "posts/20260129-hacker_news-openais-in-house-data-agent-11.md" >}})
+- [Stripe 编码代理 Minions：技术实现与工作流解析]({{< relref "posts/20260220-hacker_news-minions-stripes-coding-agents-part-2-1.md" >}})
+- [OpenAI内部数据智能体：自动化数据分析与决策]({{< relref "posts/20260129-hacker_news-openais-in-house-data-agent-14.md" >}})
 - [Claude 推出代码智能体团队协作模式]({{< relref "posts/20260205-hacker_news-claude-code-agent-teams-3.md" >}})
-- [编排多会话 Claude Code 团队协作]({{< relref "posts/20260205-hacker_news-orchestrate-teams-of-claude-code-sessions-2.md" >}})
+- [编排多会话 Claude Code 团队协作]({{< relref "posts/20260205-hacker_news-claude-code-agent-teams-3.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

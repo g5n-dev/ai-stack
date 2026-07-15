@@ -1,14 +1,33 @@
 ---
-title: "SokoBench：评估大模型长程规划与推理能力"
-date: 2026-01-29T22:59:16+08:00
+title: SokoBench：评估大模型长程规划与推理能力
+date: 2026-01-29 22:59:16+08:00
 draft: false
-entry_kind: "auto"
-tags: ["SokoBench", "长程规划", "推理能力", "LLM", "基准测试", "PDDL", "模型评估", "AI Agent"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- SokoBench
+- 长程规划
+- 推理能力
+- LLM
+- 基准测试
+- PDDL
+- 模型评估
+- AI Agent
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "**SokoBench：评估大型语言模型的长视界规划与推理能力** **背景与动机** 尽管大型语言模型（LLM）在复杂推理任务上的表现日益增强，但其在“长视界规划”方面的能力尚未得到充分研究。本文针对当前最先进的大型推理模型，对其规划和长视界推理能力进行了系统性评估。 **方法：SokoBench 基准测试** 为了"
+description: '**SokoBench：评估大型语言模型的长视界规划与推理能力** **背景与动机** 尽管大型语言模型（LLM）在复杂推理任务上的表现日益增强，但其在“长视界规划”方面的能力尚未得到充分研究。本文针对当前最先进的大型推理模型，对其规划和长视界推理能力进行了系统性评估。
+  **方法：SokoBench 基准测试** 为了'
 external_url: http://arxiv.org/abs/2601.20856v1
-scenarios: ["大语言模型", "AI/ML项目"]
+scenarios:
+- 大语言模型
+- AI/ML项目
+aliases:
+- /posts/20260130-arxiv_ai-sokobench-evaluating-long-horizon-planning-and-rea-2/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # SokoBench：评估大模型长程规划与推理能力
@@ -275,7 +294,6 @@ SokoBench 填补了纯逻辑、长视界规划的空白。
 该结论在**部分可观测环境（
 
 ---
-## 研究最佳实践
 
 ## 最佳实践指南
 
@@ -375,7 +393,6 @@ SokoBench 指出，仅看最终的成功率是不够的。为了全面评估模�
 - SokoBench 的开源特性将推动研究社区更关注长视域推理这一核心难题，促进具备更强逻辑规划能力的通用人工智能发展。
 
 ---
-## 学习路径
 
 ## 学习路径
 
@@ -540,9 +557,9 @@ SokoBench 指出，仅看最终的成功率是不够的。为了全面评估模�
 
 ### 相关文章
 
-- [⚡️俄罗斯方块爆杀Opus！Gemini Flash胜率66%震撼实测🎮]({{< relref "posts/20260127-hacker_news-show-hn-tetrisbench-gemini-flash-reaches-66-win-ra-13.md" >}})
-- [Alyah：评估阿拉伯语大模型阿联酋方言能力]({{< relref "posts/20260129-blogs_podcasts-alyah-toward-robust-evaluation-of-emirati-dialect--8.md" >}})
-- [AssetOpsBench：打破AI Agent评测与工业现实的壁垒！🚀]({{< relref "posts/20260126-blogs_podcasts-assetopsbench-bridging-the-gap-between-ai-agent-be-7.md" >}})
-- [AssetOpsBench：填补AI基准与工业现实的鸿沟！🤖🏭🚀]({{< relref "posts/20260127-blogs_podcasts-assetopsbench-bridging-the-gap-between-ai-agent-be-8.md" >}})
-- [🇦🇪 Alyah ⭐️：揭秘阿拉伯LLM方言鲁棒评估！]({{< relref "posts/20260128-blogs_podcasts-alyah-toward-robust-evaluation-of-emirati-dialect--1.md" >}})
+- [⚡️俄罗斯方块爆杀Opus！Gemini Flash胜率66%震撼实测🎮]({{< relref "posts/20260127-hacker_news-show-hn-tetrisbench-gemini-flash-reaches-66-win-ra-6.md" >}})
+- [Alyah：评估阿拉伯语大模型阿联酋方言能力]({{< relref "posts/20260127-blogs_podcasts-alyah-toward-robust-evaluation-of-emirati-dialect--0.md" >}})
+- [AssetOpsBench：打破AI Agent评测与工业现实的壁垒！🚀]({{< relref "posts/20260125-blogs_podcasts-assetopsbench-bridging-the-gap-between-ai-agent-be-6.md" >}})
+- [AssetOpsBench：填补AI基准与工业现实的鸿沟！🤖🏭🚀]({{< relref "posts/20260125-blogs_podcasts-assetopsbench-bridging-the-gap-between-ai-agent-be-6.md" >}})
+- [🇦🇪 Alyah ⭐️：揭秘阿拉伯LLM方言鲁棒评估！]({{< relref "posts/20260127-blogs_podcasts-alyah-toward-robust-evaluation-of-emirati-dialect--0.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

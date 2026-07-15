@@ -1,13 +1,27 @@
 ---
-title: "希腊化时期战象及其战前酒精使用研究"
-date: 2026-01-29T05:01:24+08:00
+title: 希腊化时期战象及其战前酒精使用研究
+date: 2026-01-29 05:01:24+08:00
 draft: false
-entry_kind: "auto"
-tags: ["历史", "军事史", "希腊化时期", "战象", "塞琉古帝国", "酒精", "战术", "冷兵器"]
-categories: ["生活与杂谈"]
+entry_kind: auto
+tags:
+- 历史
+- 军事史
+- 希腊化时期
+- 战象
+- 塞琉古帝国
+- 酒精
+- 战术
+- 冷兵器
+categories:
+- 生活与杂谈
 source: hacker_news
 external_url: https://www.cambridge.org/core/journals/classical-quarterly/article/hellenistic-warelephants-and-the-use-of-alcohol-before-battle/39A749F62E21ED16C9CCA3B03E176561
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 希腊化时期战象及其战前酒精使用研究
@@ -248,7 +262,6 @@ for terrain in ['平原', '森林', '山地']:
 **效果**: 这些反制措施极大地削弱了战象的战斗力。皮洛士的战象在贝内文托战役中因受惊而失控，反而踩踏了自己的军队。罗马的胜利标志着战象作为西方战场“秘密武器”时代的结束，也促使罗马军队在后续的布匿战争中更有效地应对汉尼拔的战象。
 
 ---
-## 最佳实践
 
 ## 最佳实践指南
 
@@ -404,7 +417,7 @@ for terrain in ['平原', '森林', '山地']:
 
 ### 相关文章
 
-- [💥揭开WD-40的神秘配方！这背后的秘密居然...]({{< relref "posts/20260127-hacker_news-people-who-know-the-formula-for-wd-40-17.md" >}})
+- [💥揭开WD-40的神秘配方！这背后的秘密居然...]({{< relref "posts/20260127-hacker_news-people-who-know-the-formula-for-wd-40-4.md" >}})
 - [🏛️ Pharos：世界七大奇迹之首！亚历山大灯塔如何照亮文明？]({{< relref "posts/20260127-hacker_news-pharos-the-lighthouse-at-alexandria-11.md" >}})
 - [缅因州“龙虾女士”去世：捕捞近百年，享年105岁]({{< relref "posts/20260129-hacker_news-maines-lobster-lady-who-fished-for-nearly-a-centur-1.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

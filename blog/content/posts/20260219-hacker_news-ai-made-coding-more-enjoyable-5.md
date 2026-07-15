@@ -4,7 +4,7 @@ date: 2026-02-19 17:46:17+08:00
 draft: false
 entry_kind: auto
 tags:
-- AI编程
+- AI 编程
 - 开发效率
 - Copilot
 - 代码质量
@@ -22,6 +22,10 @@ external_url: https://weberdominik.com/blog/ai-coding-enjoyable
 scenarios:
 - AI/ML项目
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AI 提升编程愉悦感与开发效率

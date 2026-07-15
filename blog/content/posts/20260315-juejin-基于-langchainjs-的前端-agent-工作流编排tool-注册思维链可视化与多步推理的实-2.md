@@ -23,6 +23,10 @@ external_url: https://juejin.cn/post/7616981752201199666
 scenarios:
 - AI/ML项目
 - 命令行工具
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 前端 Agent 工作流编排：Tool 注册、思维链可视化与实时 DAG 渲染
@@ -201,7 +205,7 @@ AgentExecutor.invoke 那个 Promise resolve 的时候，你用户已经对着空
 ### 相关文章
 
 - [LangChain.js 快速上手：模型接入与流式输出实现]({{< relref "posts/20260218-juejin-langchainjs-快速上手指南模型接入流式输出打造基础-2.md" >}})
-- [LangBot：生产级多平台智能 IM 机器人开发平台]({{< relref "posts/20260202-github_trending-langbot-app-langbot-0.md" >}})
-- [Claude Composer：AI 编排多智能体协作与任务流]({{< relref "posts/20260206-hacker_news-claude-composer-7.md" >}})
+- [LangBot：生产级多平台智能 IM 机器人开发平台]({{< relref "posts/20260131-github_trending-langbot-app-langbot-7.md" >}})
+- [Claude Composer：AI 编排多智能体协作与任务流]({{< relref "posts/20260206-hacker_news-claude-composer-9.md" >}})
 - [LangGraph核心解析：基于有向环图的状态机思维与灵活性突破]({{< relref "posts/20260304-juejin-agent教程16认识langchain中状态机思维-0.md" >}})
 - [Balyasny 融合 GPT-5.4 与 Agent 工作流构建 AI 投研引擎]({{< relref "posts/20260306-blogs_podcasts-how-balyasny-asset-management-built-an-ai-research-1.md" >}})

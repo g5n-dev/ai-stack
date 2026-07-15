@@ -1,14 +1,30 @@
 ---
-title: "AgentCore Memory命名空间设计与IAM访问控制实践"
-date: 2026-04-29T21:35:30+08:00
+title: AgentCore Memory命名空间设计与IAM访问控制实践
+date: 2026-04-29 21:35:30+08:00
 draft: false
-entry_kind: "auto"
-tags: ["命名空间", "层级设计", "IAM访问控制", "检索模式", "精确匹配", "前缀匹配", "内存管理", "AgentCore"]
-categories: ["系统与基础设施", "安全"]
+entry_kind: auto
+tags:
+- 命名空间
+- 层级设计
+- IAM访问控制
+- 检索模式
+- 精确匹配
+- 前缀匹配
+- 内存管理
+- AgentCore
+categories:
+- 系统与基础设施
+- 安全
 source: blogs_podcasts
-description: "Namespace 层级设计 - **按业务域划分**：顶层命名空间对应业务线或子系统，便于权限隔离和资源计量。 - **按功能细分**：在业务域下按功能模块（如用户、会话、日志）创建二级或三级命名空间，提升检索粒度。 - **层级深度控制**：保持三至四层结构，避免层级过深导致管理成本上升；每个层级需明确命名规范（如"
+description: Namespace 层级设计 - **按业务域划分**：顶层命名空间对应业务线或子系统，便于权限隔离和资源计量。 - **按功能细分**：在业务域下按功能模块（如用户、会话、日志）创建二级或三级命名空间，提升检索粒度。
+  - **层级深度控制**：保持三至四层结构，避免层级过深导致管理成本上升；每个层级需明确命名规范（如
 external_url: https://aws.amazon.com/blogs/machine-learning/organizing-agents-memory-at-scale-namespace-design-patterns-in-agentcore-memory
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AgentCore Memory命名空间设计与IAM访问控制实践
@@ -143,8 +159,8 @@ AgentCore Memory的设计思路反映了当前AI Agent开发领域的一个趋�
 ### 相关文章
 
 - [Iberdrola enhances IT operations using Amazon Bedrock A]({{< relref "posts/20260210-blogs_podcasts-iberdrola-enhances-it-operations-using-amazon-bedr-1.md" >}})
-- [利用全栈模板加速开发基于Amazon Bedrock AgentCore的应用]({{< relref "posts/20260211-blogs_podcasts-accelerate-agentic-application-development-with-a--12.md" >}})
-- [Iberdrola enhances IT operations using Amazon Bedrock A]({{< relref "posts/20260211-blogs_podcasts-iberdrola-enhances-it-operations-using-amazon-bedr-1.md" >}})
-- [Iberdrola enhances IT operations using Amazon Bedrock A]({{< relref "posts/20260211-blogs_podcasts-iberdrola-enhances-it-operations-using-amazon-bedr-2.md" >}})
-- [Iberdrola 利用 Amazon Bedrock 和 AgentCore 优化 ServiceNow 运]({{< relref "posts/20260212-blogs_podcasts-iberdrola-enhances-it-operations-using-amazon-bedr-10.md" >}})
+- [利用全栈模板加速开发基于Amazon Bedrock AgentCore的应用]({{< relref "posts/20260210-blogs_podcasts-accelerate-agentic-application-development-with-a--11.md" >}})
+- [Iberdrola enhances IT operations using Amazon Bedrock A]({{< relref "posts/20260210-blogs_podcasts-iberdrola-enhances-it-operations-using-amazon-bedr-1.md" >}})
+- [Iberdrola enhances IT operations using Amazon Bedrock A]({{< relref "posts/20260210-blogs_podcasts-iberdrola-enhances-it-operations-using-amazon-bedr-1.md" >}})
+- [Iberdrola 利用 Amazon Bedrock 和 AgentCore 优化 ServiceNow 运]({{< relref "posts/20260210-blogs_podcasts-iberdrola-enhances-it-operations-using-amazon-bedr-1.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

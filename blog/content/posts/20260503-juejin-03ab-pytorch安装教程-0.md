@@ -1,14 +1,32 @@
 ---
-title: "PyTorch安装教程"
-date: 2026-05-03T17:06:55+08:00
+title: PyTorch安装教程
+date: 2026-05-03 17:06:55+08:00
 draft: false
-entry_kind: "auto"
-tags: ["PyTorch", "安装教程", "Python", "深度学习", "CUDA", "GPU", "环境配置", "机器学习"]
-categories: ["AI 工程", "开发工具"]
+entry_kind: auto
+tags:
+- PyTorch
+- 安装教程
+- Python
+- 深度学习
+- CUDA
+- GPU
+- 环境配置
+- 机器学习
+categories:
+- AI 工程
+- 开发工具
 source: juejin
-description: "简介 PyTorch 是 Facebook 于 2016 年发布的开源深度学习框架，以动态计算图和易用性在学术与工业界广受欢迎。相比 TensorFlow，PyTorch 的动态图使模型调试、梯度计算和自定义操作更直观。 安装前准备 1. 确认操作系统（Windows、Linux、macOS）和 Python 版本（建"
+description: 简介 PyTorch 是 Facebook 于 2016 年发布的开源深度学习框架，以动态计算图和易用性在学术与工业界广受欢迎。相比 TensorFlow，PyTorch
+  的动态图使模型调试、梯度计算和自定义操作更直观。 安装前准备 1. 确认操作系统（Windows、Linux、macOS）和 Python 版本（建
 external_url: https://juejin.cn/post/7635465776091267122
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+aliases:
+- /posts/20260504-juejin-03ab-pytorch安装教程-0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # PyTorch安装教程
@@ -118,8 +136,8 @@ print(torch.cuda.is_available())   # GPU 版返回 True，CPU 版返回 False
 ### 相关文章
 
 - [PyTorch 可视化入门教程]({{< relref "posts/20260216-hacker_news-visual-introduction-to-pytorch-4.md" >}})
-- [PyTorch 可视化入门教程]({{< relref "posts/20260217-hacker_news-visual-introduction-to-pytorch-5.md" >}})
-- [PyTorch 可视化入门教程]({{< relref "posts/20260217-hacker_news-visual-introduction-to-pytorch-7.md" >}})
-- [PyTorch 可视化入门教程]({{< relref "posts/20260217-hacker_news-visual-introduction-to-pytorch-13.md" >}})
-- [PyTorch 可视化入门教程]({{< relref "posts/20260217-hacker_news-visual-introduction-to-pytorch-8.md" >}})
+- [PyTorch 可视化入门教程]({{< relref "posts/20260216-hacker_news-visual-introduction-to-pytorch-4.md" >}})
+- [PyTorch 可视化入门教程]({{< relref "posts/20260216-hacker_news-visual-introduction-to-pytorch-4.md" >}})
+- [PyTorch 可视化入门教程]({{< relref "posts/20260216-hacker_news-visual-introduction-to-pytorch-4.md" >}})
+- [PyTorch 可视化入门教程]({{< relref "posts/20260216-hacker_news-visual-introduction-to-pytorch-4.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

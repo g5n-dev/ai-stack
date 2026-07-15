@@ -1,14 +1,32 @@
 ---
-title: "VideoGPA：提取几何先验实现三维一致视频生成"
-date: 2026-02-02T19:22:59+08:00
+title: VideoGPA：提取几何先验实现三维一致视频生成
+date: 2026-02-02 19:22:59+08:00
 draft: false
-entry_kind: "auto"
-tags: ["视频生成", "3D一致性", "扩散模型", "几何先验", "DPO", "计算机视觉", "VideoGPA", "多模态"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- 视频生成
+- 3D一致性
+- 扩散模型
+- 几何先验
+- DPO
+- 计算机视觉
+- VideoGPA
+- 多模态
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "本文介绍了 **VideoGPA（Video Geometric Preference Alignment）**，一种旨在提升视频生成模型 3D 结构一致性的新框架。以下是对该内容的简洁总结： **背景与问题** 目前的视频扩散模型（VDM）虽然在视觉上效果出众，但很难维持 3D 结构的一致性。这导致生成的视频中常出现"
+description: 本文介绍了 **VideoGPA（Video Geometric Preference Alignment）**，一种旨在提升视频生成模型
+  3D 结构一致性的新框架。以下是对该内容的简洁总结： **背景与问题** 目前的视频扩散模型（VDM）虽然在视觉上效果出众，但很难维持 3D 结构的一致性。这导致生成的视频中常出现
 external_url: http://arxiv.org/abs/2601.23286v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+aliases:
+- /posts/20260203-arxiv_ai-videogpa-distilling-geometry-priors-for-3d-consist-0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # VideoGPA：提取几何先验实现三维一致视频生成
@@ -251,7 +269,6 @@ VideoGPA 展示了 **“利用基础模型作为监督信号”** 的巨大潜�
 ### 与同类研究的
 
 ---
-## 研究最佳实践
 
 ## 最佳实践指南
 
@@ -342,7 +359,6 @@ VideoGPA 展示了 **“利用基础模型作为监督信号”** 的巨大潜�
 - VideoGGA 的技术框架具有通用性，其几何先验提取方法可扩展应用于其他视频生成任务，如动态场景重建和新视角合成。
 
 ---
-## 学习路径
 
 ## 学习路径
 
@@ -498,7 +514,7 @@ VideoGPA的核心在于“提取几何先验”。你需要理解为什么直接
 ### 相关文章
 
 - [🚀动态场景新视角合成！AnyView实现任意视角自由切换！🤯]({{< relref "posts/20260126-arxiv_ai-anyview-synthesizing-any-novel-view-in-dynamic-sce-0.md" >}})
-- [🚀AnyView：动态场景任意新视角合成！开创性技术突破🔥]({{< relref "posts/20260127-arxiv_ai-anyview-synthesizing-any-novel-view-in-dynamic-sce-0.md" >}})
+- [🚀AnyView：动态场景任意新视角合成！开创性技术突破🔥]({{< relref "posts/20260126-arxiv_ai-anyview-synthesizing-any-novel-view-in-dynamic-sce-0.md" >}})
 - [IRL-DAL：基于能量引导扩散模型的自动驾驶安全自适应轨迹规划]({{< relref "posts/20260202-arxiv_ai-irl-dal-safe-and-adaptive-trajectory-planning-for--6.md" >}})
 - [🔥PyraTok！视频生成神器：语言对齐金字塔Tokenizer震撼来袭！]({{< relref "posts/20260125-arxiv_ai-pyratok-language-aligned-pyramidal-tokenizer-for-v-1.md" >}})
 - [🤖抽屉打不开？揭秘零样本组合动作识别中的“物体捷径”！]({{< relref "posts/20260125-arxiv_ai-why-cant-i-open-my-drawer-mitigating-object-driven-0.md" >}})

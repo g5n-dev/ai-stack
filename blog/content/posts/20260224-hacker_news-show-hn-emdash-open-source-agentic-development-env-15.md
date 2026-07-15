@@ -21,6 +21,19 @@ description: Emdash 是一个开源的“代理式”开发环境，旨在通过
 external_url: https://github.com/generalaction/emdash
 scenarios:
 - 大语言模型
+aliases:
+- /posts/20260224-hacker_news-show-hn-emdash-open-source-agentic-development-env-10/
+- /posts/20260224-hacker_news-show-hn-emdash-open-source-agentic-development-env-7/
+- /posts/20260225-hacker_news-show-hn-emdash-open-source-agentic-development-env-11/
+- /posts/20260225-hacker_news-show-hn-emdash-open-source-agentic-development-env-12/
+- /posts/20260225-hacker_news-show-hn-emdash-open-source-agentic-development-env-16/
+- /posts/20260225-hacker_news-show-hn-emdash-open-source-agentic-development-env-18/
+- /posts/20260225-hacker_news-show-hn-emdash-open-source-agentic-development-env-6/
+- /posts/20260225-hacker_news-show-hn-emdash-open-source-agentic-development-env-9/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Show HN: Emdash – 开源智能体开发环境
@@ -333,8 +346,8 @@ Emdash 本身是开源软件，这意味着你可以免费获取、使用甚至�
 
 ### 相关文章
 
-- [Agent Skills：智能体技能评估与开源框架]({{< relref "posts/20260204-hacker_news-agent-skills-7.md" >}})
-- [Moltis：具备记忆、工具与技能扩展能力的AI助手]({{< relref "posts/20260213-hacker_news-show-hn-moltis-ai-assistant-with-memory-tools-and--15.md" >}})
+- [Agent Skills：智能体技能评估与开源框架]({{< relref "posts/20260203-hacker_news-agent-skills-0.md" >}})
+- [Moltis：具备记忆、工具与技能扩展能力的AI助手]({{< relref "posts/20260213-hacker_news-show-hn-moltis-ai-assistant-with-memory-tools-and--7.md" >}})
 - [Xcode 26.3 引入 Agent 智能编码能力]({{< relref "posts/20260203-hacker_news-xcode-263-unlocks-the-power-of-agentic-coding-1.md" >}})
-- [Xcode 26.3 解锁智能体编码能力]({{< relref "posts/20260203-hacker_news-xcode-263-unlocks-the-power-of-agentic-coding-2.md" >}})
+- [Xcode 26.3 解锁智能体编码能力]({{< relref "posts/20260203-hacker_news-xcode-263-unlocks-the-power-of-agentic-coding-1.md" >}})
 - [🤖解密Codex智能体闭环：AI如何自主进化？]({{< relref "posts/20260125-blogs_podcasts-unrolling-the-codex-agent-loop-1.md" >}})

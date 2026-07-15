@@ -1,14 +1,30 @@
 ---
-title: "基于熵排序流的非监督解耦表示学习模型"
-date: 2026-02-09T23:42:37+08:00
+title: 基于熵排序流的非监督解耦表示学习模型
+date: 2026-02-09 23:42:37+08:00
 draft: false
-entry_kind: "auto"
-tags: ["无监督学习", "解耦表示", "EOFlows", "熵排序", "流模型", "特征提取", "去噪", "cs.LG"]
-categories: ["论文", "数据"]
+entry_kind: auto
+tags:
+- 无监督学习
+- 解耦表示
+- EOFlows
+- 熵排序
+- 流模型
+- 特征提取
+- 去噪
+- cs.LG
+categories:
+- 论文
+- 数据
 source: arxiv
-description: "本文介绍了一种名为**熵序流**的新型无监督学习框架，旨在解决表征学习中语义意义与稳定性难以兼得的问题。 **核心方法：** EOFlows通过类似于PCA解释方差的方式，根据潜在变量所解释的**熵**对维度进行排序。这一机制实现了“自适应单射流”：在推理阶段，用户可以灵活地保留前 $C$ 个主要变量作为**紧凑的核心"
+description: 本文介绍了一种名为**熵序流**的新型无监督学习框架，旨在解决表征学习中语义意义与稳定性难以兼得的问题。 **核心方法：** EOFlows通过类似于PCA解释方差的方式，根据潜在变量所解释的**熵**对维度进行排序。这一机制实现了“自适应单射流”：在推理阶段，用户可以灵活地保留前
+  $C$ 个主要变量作为**紧凑的核心
 external_url: http://arxiv.org/abs/2602.06940v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 基于熵排序流的非监督解耦表示学习模型
@@ -237,7 +253,6 @@ EOFlows在PCF的基础上迈出了重要一步，从单纯的数据几何分布�
 *   **理论推断**：作者推断这对应于信息熵的排序。然而，熵的精确计算在连续高维空间中是困难的，实验中更多是使用代理指标（如重建误差的变化率）来验证
 
 ---
-## 研究最佳实践
 
 ## 最佳实践指南
 
@@ -322,7 +337,6 @@ EOFlows在PCF的基础上迈出了重要一步，从单纯的数据几何分布�
 - 该方法为生成模型中的可控编辑提供了新思路，通过调整特定流模块可独立修改生成样本的局部细节。
 
 ---
-## 学习路径
 
 ## 学习路径
 
@@ -513,8 +527,8 @@ EOFlows在PCF的基础上迈出了重要一步，从单纯的数据几何分布�
 ### 相关文章
 
 - [基于嵌入的Top-$k$检索：理论上$\mathbb{R}^{2k}$维空间已足够]({{< relref "posts/20260129-arxiv_ai-mathbbr2k-is-theoretically-large-enough-for-embedd-8.md" >}})
-- [R^{2k}维度理论上足以支持基于嵌入的Top-k检索]({{< relref "posts/20260130-arxiv_ai-mathbbr2k-is-theoretically-large-enough-for-embedd-8.md" >}})
+- [R^{2k}维度理论上足以支持基于嵌入的Top-k检索]({{< relref "posts/20260129-arxiv_ai-mathbbr2k-is-theoretically-large-enough-for-embedd-8.md" >}})
 - [数据块模型中的精确恢复方法]({{< relref "posts/20260206-arxiv_ai-exact-recovery-in-the-data-block-model-8.md" >}})
 - [🔥无需标注！核变点检测+句嵌入实现超强文本分割🚀]({{< relref "posts/20260127-arxiv_ai-unsupervised-text-segmentation-via-kernel-change-p-5.md" >}})
-- [💥无需标注！基于核变化点检测的无监督文本分割！]({{< relref "posts/20260128-arxiv_ai-unsupervised-text-segmentation-via-kernel-change-p-5.md" >}})
+- [💥无需标注！基于核变化点检测的无监督文本分割！]({{< relref "posts/20260127-arxiv_ai-unsupervised-text-segmentation-via-kernel-change-p-5.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

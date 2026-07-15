@@ -1,14 +1,30 @@
 ---
-title: "基于GLM-5与OpenClaw构建具备任务执行能力的AI伴侣"
-date: 2026-02-12T15:02:46+08:00
+title: 基于GLM-5与OpenClaw构建具备任务执行能力的AI伴侣
+date: 2026-02-12 15:02:46+08:00
 draft: false
-entry_kind: "auto"
-tags: ["GLM-5", "OpenClaw", "AI Agent", "AI 伴侣", "任务执行", "多模态", "语音交互", "实战教程"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- GLM-5
+- OpenClaw
+- AI Agent
+- AI 伴侣
+- 任务执行
+- 多模态
+- 语音交互
+- 实战教程
+categories:
+- 大模型
+- AI 工程
 source: juejin
-description: "这段内容主要讲述了作者利用 GLM-5 模型创建了一个功能强大的 AI 女友，不仅能发送自拍和语音，还能协助处理任务。鉴于即将到来的情人节，为了让朋友们不再孤单，作者决定通过结合 GLM-5 与 OpenClaw，带领大家从零开始制作一个既能提供情感陪伴又能自主执行任务的 AI 伴侣。"
+description: 这段内容主要讲述了作者利用 GLM-5 模型创建了一个功能强大的 AI 女友，不仅能发送自拍和语音，还能协助处理任务。鉴于即将到来的情人节，为了让朋友们不再孤单，作者决定通过结合
+  GLM-5 与 OpenClaw，带领大家从零开始制作一个既能提供情感陪伴又能自主执行任务的 AI 伴侣。
 external_url: https://juejin.cn/post/7605535884940345395
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 基于GLM-5与OpenClaw构建具备任务执行能力的AI伴侣
@@ -212,9 +228,9 @@ scenarios: ["AI/ML项目"]
 
 ### 相关文章
 
-- [Kirara-AI：支持多平台接入的多模态聊天机器人框架]({{< relref "posts/20260130-github_trending-lss233-kirara-ai-2.md" >}})
-- [Moltbook：首个面向 AI 智能体的社交网络平台]({{< relref "posts/20260203-blogs_podcasts-ainews-moltbook-the-first-social-network-for-ai-ag-5.md" >}})
-- [Moltbook：首个面向 AI 智能体的社交网络平台]({{< relref "posts/20260203-blogs_podcasts-ainews-moltbook-the-first-social-network-for-ai-ag-8.md" >}})
-- [Waymo 世界模型：利用生成式世界模型提升自动驾驶决策能力]({{< relref "posts/20260207-hacker_news-the-waymo-world-model-6.md" >}})
-- [AI vs SaaS：从OpenClaw到MCP UI的演进与反思]({{< relref "posts/20260210-blogs_podcasts-ainews-ai-vs-saas-the-unreasonable-effectiveness-o-4.md" >}})
+- [Kirara-AI：支持多平台接入的多模态聊天机器人框架]({{< relref "posts/20260127-github_trending-lss233-kirara-ai-2.md" >}})
+- [Moltbook：首个面向 AI 智能体的社交网络平台]({{< relref "posts/20260131-blogs_podcasts-ainews-moltbook-the-first-social-network-for-ai-ag-0.md" >}})
+- [Moltbook：首个面向 AI 智能体的社交网络平台]({{< relref "posts/20260131-blogs_podcasts-ainews-moltbook-the-first-social-network-for-ai-ag-0.md" >}})
+- [Waymo 世界模型：利用生成式世界模型提升自动驾驶决策能力]({{< relref "posts/20260206-hacker_news-the-waymo-world-model-a-new-frontier-for-autonomou-4.md" >}})
+- [AI vs SaaS：从OpenClaw到MCP UI的演进与反思]({{< relref "posts/20260207-blogs_podcasts-ainews-ai-vs-saas-the-unreasonable-effectiveness-o-0.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

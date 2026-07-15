@@ -11,7 +11,7 @@ tags:
 - 红线
 - 员工抗议
 - Project Maven
-- AI安全
+- AI 安全
 categories:
 - 大模型
 - 安全
@@ -20,6 +20,12 @@ description: 随着生成式 AI 在军事领域的应用潜力日益凸显，科
 external_url: https://www.nytimes.com/2026/02/26/technology/google-deepmind-letter-pentagon.html
 scenarios:
 - AI/ML项目
+aliases:
+- /posts/20260227-hacker_news-google-workers-seek-red-lines-on-military-ai-echoi-3/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 谷歌员工效仿Anthropic，要求为军事AI设定红线

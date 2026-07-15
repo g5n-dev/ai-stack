@@ -5,6 +5,12 @@ on:
     # Avoid GitHub Actions' top-of-hour congestion window.
     - cron: "17 * * * *"
   workflow_dispatch:
+    inputs:
+      refresh_data:
+        description: "Crawl and regenerate Post-derived data before deploy"
+        required: false
+        default: true
+        type: boolean
   push:
     branches:
       - main
@@ -30,6 +36,7 @@ env:
   BING_INDEXNOW_MAX_URLS: "80"
   GOOGLE_INDEXING_API_KEY: ${{ secrets.GOOGLE_INDEXING_API_KEY }}
   GOOGLE_INDEXING_API_URL: ${{ secrets.GOOGLE_INDEXING_API_URL }}
+  AI_STACK_REFRESH_DATA: ${{ github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.refresh_data) }}
 
 jobs:
   build-and-deploy:
@@ -59,6 +66,15 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+
+      - name: Install locked frontend dependencies
+        run: npm ci --ignore-scripts
+
       - name: Run MiniMax response parsing tests
         run: |
           python3 -m unittest tests/test_anthropic_response_parsing.py
@@ -68,6 +84,7 @@ jobs:
           python3 -m unittest tests/test_search_fallback.py
 
       - name: Install Playwright browsers
+        if: ${{ env.AI_STACK_REFRESH_DATA == 'true' }}
         run: |
           if pip show playwright > /dev/null 2>&1; then
             playwright install chromium
@@ -83,6 +100,7 @@ jobs:
           extended: true
 
       - name: Run crawler
+        if: ${{ env.AI_STACK_REFRESH_DATA == 'true' }}
         env:
           PYTHONPATH: /home/runner/work/ai-stack/ai-stack
           ANTHROPIC_AUTH_TOKEN: ${{ secrets.ANTHROPIC_AUTH_TOKEN }}
@@ -97,7 +115,7 @@ jobs:
           fi
 
       - name: Moderation cleanup (LLM)
-        if: ${{ env.AI_STACK_RUNTIME_PROFILE != 'ci' }}
+        if: ${{ env.AI_STACK_REFRESH_DATA == 'true' && env.AI_STACK_RUNTIME_PROFILE != 'ci' }}
         env:
           PYTHONPATH: /home/runner/work/ai-stack/ai-stack
           ANTHROPIC_AUTH_TOKEN: ${{ secrets.ANTHROPIC_AUTH_TOKEN }}
@@ -228,6 +246,7 @@ jobs:
           PY
 
       - name: Sanitize broken relref links
+        if: ${{ env.AI_STACK_REFRESH_DATA == 'true' }}
         env:
           PYTHONPATH: /home/runner/work/ai-stack/ai-stack
         run: |
@@ -238,7 +257,31 @@ jobs:
             echo "Content generator not found, skipping relref sanitization"
           fi
 
+      - name: Build historical content quality manifest
+        if: ${{ env.AI_STACK_REFRESH_DATA == 'true' }}
+        env:
+          PYTHONPATH: /home/runner/work/ai-stack/ai-stack
+        run: |
+          python3 scripts/build_content_quality_manifest.py \
+            --content-root blog/content \
+            --output blog/data/content_quality.json \
+            --fail-on-quarantine \
+            --fail-on-structural-warning
+
+      - name: Verify committed Post quality gate
+        if: ${{ env.AI_STACK_REFRESH_DATA != 'true' }}
+        env:
+          PYTHONPATH: /home/runner/work/ai-stack/ai-stack
+        run: |
+          python3 scripts/build_content_quality_manifest.py \
+            --content-root blog/content \
+            --output /tmp/content_quality.json \
+            --fail-on-quarantine \
+            --fail-on-structural-warning
+          cmp --silent blog/data/content_quality.json /tmp/content_quality.json
+
       - name: Build tag graph
+        if: ${{ env.AI_STACK_REFRESH_DATA == 'true' }}
         env:
           PYTHONPATH: /home/runner/work/ai-stack/ai-stack
           ANTHROPIC_AUTH_TOKEN: ${{ secrets.ANTHROPIC_AUTH_TOKEN }}
@@ -257,21 +300,12 @@ jobs:
 
       - name: Verify generated graph
         run: |
-          python3 scripts/verify_graph.py
-
-      - name: Commit generated data
-        run: |
-          git add -A -- blog/content/posts blog/static/data/tag-graph
-          if git diff --cached --quiet; then
-            echo "No archive-new content or graph changes to commit"
-            echo "- Generated data: no changes" >> "$GITHUB_STEP_SUMMARY"
+          if [ "${AI_STACK_REFRESH_DATA}" != "true" ]; then
+            # Pushes and delete-triggered deploys reuse already-reviewed graph
+            # assets and do not install Chromium. Validate every referenced file.
+            python3 scripts/verify_graph.py --assets-only --public-dir blog/static
           else
-            changed_posts=$(git diff --cached --name-only --diff-filter=A -- blog/content/posts | wc -l | tr -d ' ')
-            echo "- New posts: ${changed_posts}" >> "$GITHUB_STEP_SUMMARY"
-            git commit -m "Update content and graph $(date -u +'%Y-%m-%dT%H:%M:%SZ') [skip ci]"
-            # A concurrent human update must fail closed. The next push/schedule
-            # will regenerate from the new main instead of deploying a stale tree.
-            git push origin HEAD:main
+            python3 scripts/verify_graph.py
           fi
 
       - name: Build Hugo site
@@ -283,6 +317,34 @@ jobs:
           else
             echo "Hugo config not found, skipping build"
             exit 1
+          fi
+
+      - name: Build Pagefind search index and result catalog
+        run: |
+          echo "=== Building Pagefind Search ==="
+          ./node_modules/.bin/pagefind --site blog/public
+          python3 -m ai_stack.pagefind_catalog --public-root blog/public
+          test -s blog/public/pagefind/pagefind.js
+          test -s blog/public/pagefind/catalog.json
+          test -s blog/public/pagefind/catalog.manifest.json
+
+      - name: Commit generated data
+        if: ${{ env.AI_STACK_REFRESH_DATA == 'true' }}
+        run: |
+          git add -A -- \
+            blog/content/posts \
+            blog/data/content_quality.json \
+            blog/static/data/tag-graph
+          if git diff --cached --quiet; then
+            echo "No archive-new content or graph changes to commit"
+            echo "- Generated data: no changes" >> "$GITHUB_STEP_SUMMARY"
+          else
+            changed_posts=$(git diff --cached --name-only --diff-filter=A -- blog/content/posts | wc -l | tr -d ' ')
+            echo "- New posts: ${changed_posts}" >> "$GITHUB_STEP_SUMMARY"
+            git commit -m "Update content and graph $(date -u +'%Y-%m-%dT%H:%M:%SZ') [skip ci]"
+            # The publish artifact has already passed Hugo, Pagefind, catalog, and
+            # graph validation. A concurrent human update must still fail closed.
+            git push origin HEAD:main
           fi
 
       - name: Prepare IndexNow key file

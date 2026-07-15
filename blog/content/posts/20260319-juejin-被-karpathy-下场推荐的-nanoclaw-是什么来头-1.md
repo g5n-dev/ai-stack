@@ -22,6 +22,10 @@ external_url: https://juejin.cn/post/7618795660519489590
 scenarios:
 - AI/ML项目
 - 命令行工具
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # NanoClaw：Karpathy 推荐的技术工具
@@ -167,7 +171,7 @@ NanoClaw 是一个轻量级的 Python 深度学习库，旨在提供最简洁的
 
 ### 相关文章
 
-- [将 Mermaid 图表渲染为 SVG 或 ASCII 艺术]({{< relref "posts/20260129-hacker_news-render-mermaid-diagrams-as-svgs-or-ascii-art-1.md" >}})
+- [将 Mermaid 图表渲染为 SVG 或 ASCII 艺术]({{< relref "posts/20260129-hacker_news-render-mermaid-diagrams-as-svgs-or-ascii-art-0.md" >}})
 - [GitHub 浏览器插件：在 PR 中标注 AI 代码贡献]({{< relref "posts/20260203-hacker_news-github-browser-plugin-for-ai-contribution-blame-in-2.md" >}})
 - [oh-my-opencode-slim：体积缩减80%的AI编程精简版]({{< relref "posts/20260224-juejin-什么oh-my-opencode-太重了那试试-oh-my-opencode-slim-0.md" >}})
 - [Claude-File-Recovery：恢复 ~/.claude 会话中的文件]({{< relref "posts/20260227-hacker_news-show-hn-claude-file-recovery-recover-files-from-yo-11.md" >}})

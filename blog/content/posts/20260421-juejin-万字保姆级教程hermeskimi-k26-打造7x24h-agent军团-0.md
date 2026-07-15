@@ -1,14 +1,31 @@
 ---
-title: "Hermes+Kimi K2.6实现7×24小时Agent运行教程"
-date: 2026-04-21T13:44:16+08:00
+title: Hermes+Kimi K2.6实现7×24小时Agent运行教程
+date: 2026-04-21 13:44:16+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Agent", "Kimi", "Hermes", "7×24h运行", "部署教程", "大模型", "智能体", "自动化"]
-categories: ["AI 工程", "大模型"]
+entry_kind: auto
+tags:
+- Agent
+- Kimi
+- Hermes
+- 7×24h运行
+- 部署教程
+- 大模型
+- 智能体
+- 自动化
+categories:
+- AI 工程
+- 大模型
 source: juejin
-description: "概述 本教程是“万字保姆级”实战指南，旨在手把手教你在 **Hermes** 多智能体框架下，集成 **Kimi K2.6** 语言模型，构建可 7×24 h 持续运行的 **Agent 军团**。教程覆盖从环境准备、框架部署、核心代码编写到生产级运维的全部流程，适合有一定 Python 基础的开发者快速落地。 核心组"
+description: 概述 本教程是“万字保姆级”实战指南，旨在手把手教你在 **Hermes** 多智能体框架下，集成 **Kimi K2.6** 语言模型，构建可
+  7×24 h 持续运行的 **Agent 军团**。教程覆盖从环境准备、框架部署、核心代码编写到生产级运维的全部流程，适合有一定 Python 基础的开发者快速落地。
+  核心组
 external_url: https://juejin.cn/post/7631040435458408494
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Hermes+Kimi K2.6实现7×24小时Agent运行教程
@@ -136,9 +153,9 @@ Hermes与Kimi K2.6的结合为多Agent系统提供了技术可行性的验证，
 
 ### 相关文章
 
-- [Agent Skills：AI 智能体技能框架]({{< relref "posts/20260203-hacker_news-agent-skills-1.md" >}})
-- [智能体工程化的能力层级划分]({{< relref "posts/20260310-hacker_news-levels-of-agentic-engineering-11.md" >}})
-- [LLM智能体新增Claws层以优化任务执行]({{< relref "posts/20260222-hacker_news-claws-are-now-a-new-layer-on-top-of-llm-agents-14.md" >}})
-- [Launch HN: Cardboard – 智能体视频编辑器]({{< relref "posts/20260226-hacker_news-launch-hn-cardboard-yc-w26-agentic-video-editor-1.md" >}})
-- [Launch HN: Cardboard – 智能体视频编辑器]({{< relref "posts/20260227-hacker_news-launch-hn-cardboard-yc-w26-agentic-video-editor-6.md" >}})
+- [Agent Skills：AI 智能体技能框架]({{< relref "posts/20260203-hacker_news-agent-skills-0.md" >}})
+- [智能体工程化的能力层级划分]({{< relref "posts/20260310-hacker_news-levels-of-agentic-engineering-18.md" >}})
+- [LLM智能体新增Claws层以优化任务执行]({{< relref "posts/20260221-hacker_news-claws-are-now-a-new-layer-on-top-of-llm-agents-13.md" >}})
+- [Launch HN: Cardboard – 智能体视频编辑器]({{< relref "posts/20260226-hacker_news-launch-hn-cardboard-yc-w26-agentic-video-editor-2.md" >}})
+- [Launch HN: Cardboard – 智能体视频编辑器]({{< relref "posts/20260226-hacker_news-launch-hn-cardboard-yc-w26-agentic-video-editor-2.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

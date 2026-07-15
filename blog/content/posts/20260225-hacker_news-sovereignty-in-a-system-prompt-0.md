@@ -21,6 +21,10 @@ external_url: https://pop.rdi.sh/sovereignty-in-a-system-prompt
 scenarios:
 - 大语言模型
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 系统提示词中的主权归属与控制机制

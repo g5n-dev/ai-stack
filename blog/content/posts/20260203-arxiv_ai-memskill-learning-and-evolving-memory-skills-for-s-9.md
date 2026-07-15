@@ -1,14 +1,32 @@
 ---
-title: "MemSkill：赋予自进化代理学习与演进记忆技能"
-date: 2026-02-03T23:08:59+08:00
+title: MemSkill：赋予自进化代理学习与演进记忆技能
+date: 2026-02-03 23:08:59+08:00
 draft: false
-entry_kind: "auto"
-tags: ["MemSkill", "智能体", "记忆机制", "自进化", "LLM", "长上下文", "强化学习", "系统设计"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- MemSkill
+- 智能体
+- 记忆机制
+- 自进化
+- LLM
+- 长上下文
+- 强化学习
+- 系统设计
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "**MemSkill：让自进化代理学会并进化记忆技能** **问题背景** 大多数大语言模型（LLM）代理的记忆系统依赖于一套静态的、人工设计的操作来进行记忆提取。这些固定的程序硬编码了关于“存什么”和“怎么改”的人类先验知识，导致它们在面对多样化的交互模式时缺乏灵活性，且在处理长历史记录时效率低下。 **解决方案：M"
+description: '**MemSkill：让自进化代理学会并进化记忆技能** **问题背景** 大多数大语言模型（LLM）代理的记忆系统依赖于一套静态的、人工设计的操作来进行记忆提取。这些固定的程序硬编码了关于“存什么”和“怎么改”的人类先验知识，导致它们在面对多样化的交互模式时缺乏灵活性，且在处理长历史记录时效率低下。
+  **解决方案：M'
 external_url: http://arxiv.org/abs/2602.02474v1
-scenarios: ["大语言模型"]
+scenarios:
+- 大语言模型
+aliases:
+- /posts/20260204-arxiv_ai-memskill-learning-and-evolving-memory-skills-for-s-9/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # MemSkill：赋予自进化代理学习与演进记忆技能
@@ -273,7 +291,6 @@ MemSkill 在**自适应性和进化能力**上显著优于现有方法。它不�
 *   **推进方向**：推进了**AI 系统的“软件工程”化**，即 AI 系统通过自我修改
 
 ---
-## 研究最佳实践
 
 ## 最佳实践指南
 
@@ -363,7 +380,6 @@ MemSkill 在**自适应性和进化能力**上显著优于现有方法。它不�
 - MemSkill 为构建具备终身学习能力的自主智能体提供了一种可扩展的通用架构，使模型能力不再受限于训练时的参数截止时间。
 
 ---
-## 学习路径
 
 ## 学习路径
 
@@ -531,9 +547,9 @@ MemSkill 在**自适应性和进化能力**上显著优于现有方法。它不�
 
 ### 相关文章
 
-- [Kimi K2.5 技术报告发布：强化学习与长上下文能力升级]({{< relref "posts/20260130-hacker_news-kimi-k25-technical-report-pdf-2.md" >}})
-- [DynaWeb：基于模型的强化学习网页智能体框架]({{< relref "posts/20260131-arxiv_ai-dynaweb-model-based-reinforcement-learning-of-web--6.md" >}})
-- [DynaWeb：基于模型的强化学习网页智能体]({{< relref "posts/20260202-arxiv_ai-dynaweb-model-based-reinforcement-learning-of-web--6.md" >}})
+- [Kimi K2.5 技术报告发布：强化学习与长上下文能力升级]({{< relref "posts/20260130-hacker_news-kimi-k25-technical-report-pdf-10.md" >}})
+- [DynaWeb：基于模型的强化学习网页智能体框架]({{< relref "posts/20260130-arxiv_ai-dynaweb-model-based-reinforcement-learning-of-web--6.md" >}})
+- [DynaWeb：基于模型的强化学习网页智能体]({{< relref "posts/20260130-arxiv_ai-dynaweb-model-based-reinforcement-learning-of-web--6.md" >}})
 - [🚀沙盒机制唤醒LLM智能体通用能力！AI Agent突破性架构！]({{< relref "posts/20260125-arxiv_ai-llm-in-sandbox-elicits-general-agentic-intelligenc-2.md" >}})
-- [迈向智能体系统规模化科学：工作原理与适用条件]({{< relref "posts/20260201-hacker_news-towards-a-science-of-scaling-agent-systems-when-an-13.md" >}})
+- [迈向智能体系统规模化科学：工作原理与适用条件]({{< relref "posts/20260201-hacker_news-towards-a-science-of-scaling-agent-systems-when-an-11.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

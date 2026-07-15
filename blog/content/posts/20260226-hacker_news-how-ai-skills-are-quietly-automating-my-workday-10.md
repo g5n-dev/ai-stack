@@ -22,6 +22,10 @@ external_url: https://medium.com/@ricardskrizanovskis/how-ai-skills-are-quietly-
 scenarios:
 - AI/ML项目
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AI技能如何悄然实现工作日自动化

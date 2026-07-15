@@ -182,7 +182,6 @@ class SuperEnhancedContentGenerator:
         label: str,
         postprocess: Callable[[str], str] | None = None,
     ) -> str:
-        last = ""
         attempts = max(1, 1 + self._quality_retries)
         for attempt in range(attempts):
             response = self.client.create_message(
@@ -194,7 +193,6 @@ class SuperEnhancedContentGenerator:
             text = (response or "").strip()
             if postprocess is not None:
                 text = postprocess(text)
-            last = text
             if validator(text):
                 return text
             if attempt < attempts - 1:
@@ -225,7 +223,7 @@ class SuperEnhancedContentGenerator:
                         "现在请直接给出新的最终版本（不要解释）。",
                     ]
                 )
-        return last
+        raise ValueError(f"{label} failed quality validation after {attempts} attempt(s)")
 
     def _validate_intro_output(self, text: str) -> bool:
         return self._validate_text(
@@ -1576,6 +1574,11 @@ def example2():
         lines = response.split('\n')
         current_resource = {}
 
+        field_pattern = re.compile(
+            r"^(名称|title|链接|link|说明)\s*[:：]\s*(.*?)\s*$",
+            re.IGNORECASE,
+        )
+
         def flush_current():
             nonlocal current_resource
             if current_resource.get('title') and current_resource.get('link'):
@@ -1587,14 +1590,19 @@ def example2():
             if not line:
                 flush_current()
                 continue
-            if line.startswith('名称') or line.startswith('Title'):
+            match = field_pattern.match(line)
+            if not match:
+                continue
+            field_name, value = match.groups()
+            normalized_name = field_name.lower()
+            if normalized_name in {'名称', 'title'}:
                 flush_current()
-                current_resource = {'title': line.split(':', 1)[1].strip()}
-            elif line.startswith('链接') or line.startswith('Link'):
+                current_resource = {'title': value}
+            elif normalized_name in {'链接', 'link'}:
                 if current_resource:
-                    current_resource['link'] = line.split(':', 1)[1].strip()
-            elif line.startswith('说明'):
-                current_resource['description'] = line.split(':', 1)[1].strip()
+                    current_resource['link'] = value
+            elif normalized_name == '说明' and current_resource:
+                current_resource['description'] = value
         flush_current()
         return resources[:5]
 

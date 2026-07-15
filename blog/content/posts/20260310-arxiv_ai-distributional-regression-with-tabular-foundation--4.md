@@ -22,6 +22,10 @@ description: 本文主要探讨了在表格基础模型（如TabPFN和TabICL）�
 external_url: http://arxiv.org/abs/2603.08206v1
 scenarios:
 - Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 表格基础模型分布回归：基于适当评分规则的预测评估
@@ -118,9 +122,7 @@ scenarios:
 
 ---
 
-### 深度分析报告：表格基础模型的分布回归与概率预测评估
 
-### 1. 研究背景与问题
 
 ### 核心问题
 本研究旨在解决当前表格数据基础模型（Tabular Foundation Models, 如 TabPFN, TabICL）在回归任务中评估指标单一化的问题。核心论点是：现有的基准测试过度关注点估计的准确性（如 MSE、$R^2$），导致模型被优化为仅预测均值，而忽视了回归任务中固有的不确定性。论文呼吁引入**分布回归**的视角，并采用**严格适当的评分规则**来全面评估模型的概率预测能力。
@@ -136,7 +138,6 @@ scenarios:
 ### 重要性
 将评估范式从“点估计”转向“分布估计”是表格基础模型走向实际应用的关键一步。这不仅更符合现实世界的不确定性，也为后续开发能够生成多样化预测形式的模型奠定了评价基础。
 
-### 2. 核心方法与创新
 
 ### 核心方法
 论文并没有提出一种全新的模型架构，而是提出了一种**评估范式的转变**和**方法论的重构**：
@@ -153,7 +154,6 @@ scenarios:
 -   **决策相关性**：CRPS 等指标直接对应于决策理论中的期望效用，比 MSE 更具实际指导意义。
 -   **鲁棒性**：分布回归模型对异常值更具鲁棒性，因为概率分布可以赋予异常值较低的似然，而不是像 MSE 那样产生巨大的梯度惩罚。
 
-### 3. 理论基础
 
 ### 理论依据
 论文的理论基石主要来源于**统计决策理论**和**概率预测**领域。
@@ -171,7 +171,6 @@ scenarios:
 3.  **基础模型的泛化能力**：
     TabPFN 等模型基于 Transformer 架构，理论上具有强大的函数逼近能力，可以拟合复杂的条件分布。论文的理论假设在于：**只要评估指标正确，基础模型就能通过少样本或微调展现出比传统模型更强的分布拟合能力。**
 
-### 7. 学习建议
 
 ### 适合读者
 -   从事表格数据挖掘、结构化数据建模的研究员和工程师。
@@ -439,6 +438,6 @@ scenarios:
 
 - [发现模型仓库中被忽视的高质量模型]({{< relref "posts/20260130-arxiv_ai-discovering-hidden-gems-in-model-repositories-1.md" >}})
 - [基于认知上下文学习构建大模型多智能体系统的信任机制]({{< relref "posts/20260130-arxiv_ai-epistemic-context-learning-building-trust-the-righ-7.md" >}})
-- [发现模型仓库中的隐藏价值]({{< relref "posts/20260131-arxiv_ai-discovering-hidden-gems-in-model-repositories-1.md" >}})
+- [发现模型仓库中的隐藏价值]({{< relref "posts/20260130-arxiv_ai-discovering-hidden-gems-in-model-repositories-1.md" >}})
 - [GLM-OCR：兼顾准确度、速度与通用性的多模态大模型]({{< relref "posts/20260211-hacker_news-glm-ocr-accurate-fast-comprehensive-3.md" >}})
 - [TabICLv2：更优性能与可扩展性的开源表格基础模型]({{< relref "posts/20260212-arxiv_ai-tabiclv2-a-better-faster-scalable-and-open-tabular-8.md" >}})

@@ -1,14 +1,30 @@
 ---
-title: "在SageMaker JumpStart上部署NEXUS大型表格模型并运行预测"
-date: 2026-06-03T19:15:06+08:00
+title: 在SageMaker JumpStart上部署NEXUS大型表格模型并运行预测
+date: 2026-06-03 19:15:06+08:00
 draft: false
-entry_kind: "auto"
-tags: ["大模型", "表格模型", "模型部署", "AWS", "JumpStart", "云计算", "机器学习", "预测"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- 大模型
+- 表格模型
+- 模型部署
+- AWS
+- JumpStart
+- 云计算
+- 机器学习
+- 预测
+categories:
+- 大模型
+- AI 工程
 source: blogs_podcasts
-description: "Fundamental 的大表格模型 NEXUS 现已在 Amazon SageMaker JumpStart 上线。本文简要介绍在 SageMaker JumpStart 上使用 NEXUS 的流程，包括模型启动、部署和推理步骤。首先在 SageMaker 控制台或 SDK 中找到 NEXUS，选择合适的实例类型并完"
+description: Fundamental 的大表格模型 NEXUS 现已在 Amazon SageMaker JumpStart 上线。本文简要介绍在 SageMaker
+  JumpStart 上使用 NEXUS 的流程，包括模型启动、部署和推理步骤。首先在 SageMaker 控制台或 SDK 中找到 NEXUS，选择合适的实例类型并完
 external_url: https://aws.amazon.com/blogs/machine-learning/fundamentals-large-tabular-model-nexus-is-now-available-on-amazon-sagemaker-jumpstart
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 在SageMaker JumpStart上部署NEXUS大型表格模型并运行预测
@@ -139,8 +155,8 @@ NEXUS 在 SageMaker JumpStart 上的托管化部署能够显著提升企业 AI �
 ### 相关文章
 
 - [NVIDIA Nemotron 3 Nano Omni 登陆 SageMaker JumpStart]({{< relref "posts/20260428-blogs_podcasts-nvidia-nemotron-3-nano-omni-model-now-available-on-0.md" >}})
-- [NVIDIA Nemotron 3 Nano 30B 现已登陆 Amazon SageMaker JumpSt]({{< relref "posts/20260212-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-0.md" >}})
-- [NVIDIA Nemotron 3 Nano 30B 现已登陆 Amazon SageMaker JumpSt]({{< relref "posts/20260212-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-5.md" >}})
-- [NVIDIA Nemotron 3 Nano 30B 现已在 Amazon SageMaker JumpSta]({{< relref "posts/20260212-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-8.md" >}})
-- [Sonrai 联手 AWS 构建 MLOps 框架加速精准医学试验]({{< relref "posts/20260224-blogs_podcasts-how-sonrai-uses-amazon-sagemaker-ai-to-accelerate--8.md" >}})
+- [NVIDIA Nemotron 3 Nano 30B 现已登陆 Amazon SageMaker JumpSt]({{< relref "posts/20260211-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-0.md" >}})
+- [NVIDIA Nemotron 3 Nano 30B 现已登陆 Amazon SageMaker JumpSt]({{< relref "posts/20260211-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-0.md" >}})
+- [NVIDIA Nemotron 3 Nano 30B 现已在 Amazon SageMaker JumpSta]({{< relref "posts/20260211-blogs_podcasts-nvidia-nemotron-3-nano-30b-moe-model-is-now-availa-0.md" >}})
+- [Sonrai 联手 AWS 构建 MLOps 框架加速精准医学试验]({{< relref "posts/20260223-blogs_podcasts-how-sonrai-uses-amazon-sagemaker-ai-to-accelerate--0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

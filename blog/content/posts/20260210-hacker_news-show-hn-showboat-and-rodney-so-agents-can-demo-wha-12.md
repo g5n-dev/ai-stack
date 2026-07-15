@@ -1,14 +1,33 @@
 ---
-title: "Showboat与Rodney发布：让AI Agent演示其构建成果"
-date: 2026-02-10T18:29:06+08:00
+title: Showboat与Rodney发布：让AI Agent演示其构建成果
+date: 2026-02-10 18:29:06+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI Agent", "Showboat", "Rodney", "自动化演示", "Hacker News", "开发工具", "产品发布", "Show HN"]
-categories: ["AI 工程", "产品与创业"]
+entry_kind: auto
+tags:
+- AI Agent
+- Showboat
+- Rodney
+- 自动化演示
+- Hacker News
+- 开发工具
+- 产品发布
+- Show HN
+categories:
+- AI 工程
+- 产品与创业
 source: hacker_news
-description: "在 AI Agent 的开发流程中，如何直观地展示 Agent 的实际运行逻辑与决策过程，往往比单纯的代码演示更具说服力。本文介绍了 Showboat 和 Rodney 两款工具，它们分别解决了 Agent 的可视化展示与交互控制难题，帮助开发者更清晰地呈现内部状态。通过阅读本文，你将了解如何利用这些工具，让 Agen"
+description: 在 AI Agent 的开发流程中，如何直观地展示 Agent 的实际运行逻辑与决策过程，往往比单纯的代码演示更具说服力。本文介绍了 Showboat
+  和 Rodney 两款工具，它们分别解决了 Agent 的可视化展示与交互控制难题，帮助开发者更清晰地呈现内部状态。通过阅读本文，你将了解如何利用这些工具，让
+  Agen
 external_url: https://simonwillison.net/2026/Feb/10/showboat-and-rodney
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+aliases:
+- /posts/20260210-hacker_news-show-hn-showboat-and-rodney-so-agents-can-demo-wha-3/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Showboat与Rodney发布：让AI Agent演示其构建成果
@@ -201,7 +220,6 @@ orchestrator.run_demo()
 **效果**: 业务用户能够利用该功能快速制作演示 Demo，向管理层展示 AI 如何准确处理复杂咨询。这种可视化的反馈机制也帮助用户自行修正配置错误，使得平台上的活跃用户留存率提升了 30%，技术支持工单减少了 40%。
 
 ---
-## 最佳实践
 
 ## 最佳实践指南
 
@@ -382,6 +400,6 @@ Showboat 和 Rodney 通过以下方式解决这一问题：
 - [Claude Code 发布：AI 代理直接面向客户]({{< relref "posts/20260131-hacker_news-claude-code-is-your-customer-16.md" >}})
 - [Smooth CLI：面向 AI 智能体的低 Token 浏览器]({{< relref "posts/20260206-hacker_news-show-hn-smooth-cli-token-efficient-browser-for-ai--11.md" >}})
 - [一键生成AI员工：自带云端桌面环境]({{< relref "posts/20260207-hacker_news-show-hn-one-click-ai-employee-with-its-own-cloud-d-9.md" >}})
-- [Zuckerman：具备代码自编辑能力的极简个人AI智能体]({{< relref "posts/20260201-hacker_news-show-hn-zuckerman-minimalist-personal-ai-agent-tha-13.md" >}})
-- [构建极简且具倾向性的编程代理的经验总结]({{< relref "posts/20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-3.md" >}})
+- [Zuckerman：具备代码自编辑能力的极简个人AI智能体]({{< relref "posts/20260201-hacker_news-show-hn-zuckerman-minimalist-personal-ai-agent-tha-12.md" >}})
+- [构建极简且具倾向性的编程代理的经验总结]({{< relref "posts/20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-1.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

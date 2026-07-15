@@ -1,14 +1,31 @@
 ---
-title: "NVIDIA Nemotron 3 Nano Omni 登陆 SageMaker JumpStart"
-date: 2026-04-28T17:12:06+08:00
+title: NVIDIA Nemotron 3 Nano Omni 登陆 SageMaker JumpStart
+date: 2026-04-28 17:12:06+08:00
 draft: false
-entry_kind: "auto"
-tags: ["NVIDIA Nemotron", "SageMaker JumpStart", "模型部署", "企业应用", "模型推理", "云端部署", "AWS", "机器学习"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- NVIDIA Nemotron
+- SageMaker JumpStart
+- 模型部署
+- 企业应用
+- 模型推理
+- 云端部署
+- AWS
+- 机器学习
+categories:
+- 大模型
+- AI 工程
 source: blogs_podcasts
-description: "模型概述 NVIDIA Nemotron 3 Nano Omni 是一款轻量级大语言模型，专为资源受限环境设计，采用 Transformer 架构并结合量化、稀疏化技术，在保持语言理解能力的同时显著降低显存和计算需求。 关键能力 - 高吞吐量：在 SageMaker JumpStart 上实现每秒千级 token 推理"
+description: 模型概述 NVIDIA Nemotron 3 Nano Omni 是一款轻量级大语言模型，专为资源受限环境设计，采用 Transformer
+  架构并结合量化、稀疏化技术，在保持语言理解能力的同时显著降低显存和计算需求。 关键能力 - 高吞吐量：在 SageMaker JumpStart 上实现每秒千级
+  token 推理
 external_url: https://aws.amazon.com/blogs/machine-learning/nvidia-nemotron-3-nano-omni-model-now-available-on-amazon-sagemaker-jumpstart
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # NVIDIA Nemotron 3 Nano Omni 登陆 SageMaker JumpStart
@@ -133,9 +150,9 @@ NVIDIA Nemotron 3 Nano Omni模型在Amazon SageMaker JumpStart平台实现首发
 
 ### 相关文章
 
-- [Sonrai 联手 AWS 构建 MLOps 框架加速精准医学试验]({{< relref "posts/20260224-blogs_podcasts-how-sonrai-uses-amazon-sagemaker-ai-to-accelerate--8.md" >}})
-- [Sonrai 联合 AWS SageMaker 构建 MLOps 框架，加速精准医学临床试验]({{< relref "posts/20260224-blogs_podcasts-how-sonrai-uses-amazon-sagemaker-ai-to-accelerate--9.md" >}})
+- [Sonrai 联手 AWS 构建 MLOps 框架加速精准医学试验]({{< relref "posts/20260223-blogs_podcasts-how-sonrai-uses-amazon-sagemaker-ai-to-accelerate--0.md" >}})
+- [Sonrai 联合 AWS SageMaker 构建 MLOps 框架，加速精准医学临床试验]({{< relref "posts/20260223-blogs_podcasts-how-sonrai-uses-amazon-sagemaker-ai-to-accelerate--0.md" >}})
 - [Amazon Bedrock环境部署Nemotron 3 Super模型指南]({{< relref "posts/20260320-blogs_podcasts-run-nvidia-nemotron-3-super-on-amazon-bedrock-0.md" >}})
-- [AWS SageMaker集成Dottxt Outlines实现LLM结构化输出]({{< relref "posts/20260225-blogs_podcasts-generate-structured-output-from-llms-with-dottxt-o-4.md" >}})
-- [在 Amazon SageMaker 上利用 Dottxt Outlines 实现 LLM 结构化输出]({{< relref "posts/20260225-blogs_podcasts-generate-structured-output-from-llms-with-dottxt-o-6.md" >}})
+- [AWS SageMaker集成Dottxt Outlines实现LLM结构化输出]({{< relref "posts/20260224-blogs_podcasts-generate-structured-output-from-llms-with-dottxt-o-1.md" >}})
+- [在 Amazon SageMaker 上利用 Dottxt Outlines 实现 LLM 结构化输出]({{< relref "posts/20260224-blogs_podcasts-generate-structured-output-from-llms-with-dottxt-o-1.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

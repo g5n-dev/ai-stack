@@ -1,14 +1,29 @@
 ---
-title: "MosaicLeaks：研究代理能否保守秘密"
-date: 2026-06-18T20:01:48+08:00
+title: MosaicLeaks：研究代理能否保守秘密
+date: 2026-06-18 20:01:48+08:00
 draft: false
-entry_kind: "auto"
-tags: ["代理", "隐私", "安全", "AI", "数据泄漏", "大模型", "研究", "LLM"]
-categories: ["安全"]
+entry_kind: auto
+tags:
+- 代理
+- 隐私
+- 安全
+- AI
+- 数据泄漏
+- 大模型
+- 研究
+- LLM
+categories:
+- 安全
 source: blogs_podcasts
-description: "随着大模型在各领域的广泛应用，研究者对模型隐私泄露的担忧日益加深。MosaicLeaks 聚焦于科研代理在处理敏感数据时的保密能力，通过系统实验揭示潜在的信息泄漏路径，帮助开发者评估并强化模型的安全防护。阅读本文，你将获得对代理保密机制的最新评估结果以及可操作的防御建议。"
+description: 随着大模型在各领域的广泛应用，研究者对模型隐私泄露的担忧日益加深。MosaicLeaks 聚焦于科研代理在处理敏感数据时的保密能力，通过系统实验揭示潜在的信息泄漏路径，帮助开发者评估并强化模型的安全防护。阅读本文，你将获得对代理保密机制的最新评估结果以及可操作的防御建议。
 external_url: https://huggingface.co/blog/ServiceNow/mosaicleaks
-scenarios: ["AI/ML项目", "大语言模型"]
+scenarios:
+- AI/ML项目
+- 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # MosaicLeaks：研究代理能否保守秘密
@@ -56,9 +71,9 @@ scenarios: ["AI/ML项目", "大语言模型"]
 
 ### 相关文章
 
-- [Claude Opus 4.6 发布]({{< relref "posts/20260206-hacker_news-claude-opus-46-3.md" >}})
-- [GPT-5.2 推导出理论物理新结果]({{< relref "posts/20260214-hacker_news-gpt-52-derives-a-new-result-in-theoretical-physics-6.md" >}})
-- [Qwen3.5 微调指南]({{< relref "posts/20260305-hacker_news-qwen35-fine-tuning-guide-17.md" >}})
-- [AI劳动力市场影响：新测量指标与早期证据]({{< relref "posts/20260306-hacker_news-labor-market-impacts-of-ai-a-new-measure-and-early-8.md" >}})
+- [Claude Opus 4.6 发布]({{< relref "posts/20260205-hacker_news-claude-opus-46-2.md" >}})
+- [GPT-5.2 推导出理论物理新结果]({{< relref "posts/20260213-hacker_news-gpt-52-derives-a-new-result-in-theoretical-physics-0.md" >}})
+- [Qwen3.5 微调指南]({{< relref "posts/20260304-hacker_news-qwen35-fine-tuning-guide-unsloth-documentation-7.md" >}})
+- [AI劳动力市场影响：新测量指标与早期证据]({{< relref "posts/20260306-hacker_news-labor-market-impacts-of-ai-a-new-measure-and-early-2.md" >}})
 - [Anthropic发布Claude Opus 4.7]({{< relref "posts/20260416-hacker_news-claude-opus-47-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

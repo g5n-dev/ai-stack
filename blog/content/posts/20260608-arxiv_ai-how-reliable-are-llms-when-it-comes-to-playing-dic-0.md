@@ -1,14 +1,32 @@
 ---
-title: "LLM掷骰子可靠性实证研究"
-date: 2026-06-08T23:04:00+08:00
+title: LLM掷骰子可靠性实证研究
+date: 2026-06-08 23:04:00+08:00
 draft: false
-entry_kind: "auto"
-tags: ["LLM可靠性", "掷骰子", "概率推理", "链式思维", "反直觉", "误导信息", "实证研究", "准确率下降"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- LLM可靠性
+- 掷骰子
+- 概率推理
+- 链式思维
+- 反直觉
+- 误导信息
+- 实证研究
+- 准确率下降
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "研究背景 大型语言模型（LLM）在高级数学任务中表现突出，但其在离散概率推理方面的可靠性尚不明确。 实验设计 - 构建两类数据集：标准练习题与反直觉练习题，后者旨在触发启发式错误。 - 选取8个前沿模型，分别使用普通提示和链式思维（CoT）提示进行评估。 主要发现 - 标准题上模型平均准确率达 0.96，表现良好。 -"
+description: 研究背景 大型语言模型（LLM）在高级数学任务中表现突出，但其在离散概率推理方面的可靠性尚不明确。 实验设计 - 构建两类数据集：标准练习题与反直觉练习题，后者旨在触发启发式错误。
+  - 选取8个前沿模型，分别使用普通提示和链式思维（CoT）提示进行评估。 主要发现 - 标准题上模型平均准确率达 0.96，表现良好。 -
 external_url: http://arxiv.org/abs/2606.07515v1
-scenarios: ["大语言模型"]
+scenarios:
+- 大语言模型
+aliases:
+- /posts/20260609-arxiv_ai-how-reliable-are-llms-when-it-comes-to-playing-dic-0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # LLM掷骰子可靠性实证研究
@@ -125,8 +143,8 @@ scenarios: ["大语言模型"]
 ### 相关文章
 
 - [OrLog：结合大模型与概率推理解决复杂查询]({{< relref "posts/20260202-arxiv_ai-orlog-resolving-complex-queries-with-llms-and-prob-5.md" >}})
-- [AI劳动力市场影响：新测度方法与早期证据]({{< relref "posts/20260306-hacker_news-labor-market-impacts-of-ai-a-new-measure-and-early-12.md" >}})
-- [AI劳动力市场影响：新测度方法与早期实证]({{< relref "posts/20260306-hacker_news-labor-market-impacts-of-ai-a-new-measure-and-early-6.md" >}})
+- [AI劳动力市场影响：新测度方法与早期证据]({{< relref "posts/20260306-hacker_news-labor-market-impacts-of-ai-a-new-measure-and-early-2.md" >}})
+- [AI劳动力市场影响：新测度方法与早期实证]({{< relref "posts/20260306-hacker_news-labor-market-impacts-of-ai-a-new-measure-and-early-2.md" >}})
 - [反事实解释指标与用户感知的一致性研究]({{< relref "posts/20260317-arxiv_ai-do-metrics-for-counterfactual-explanations-align-w-4.md" >}})
 - [进化策略导致大语言模型出现灾难性遗忘]({{< relref "posts/20260129-arxiv_ai-evolutionary-strategies-lead-to-catastrophic-forge-0.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

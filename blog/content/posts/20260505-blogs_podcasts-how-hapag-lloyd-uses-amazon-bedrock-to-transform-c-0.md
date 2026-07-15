@@ -1,14 +1,31 @@
 ---
-title: "赫伯罗特借助Amazon Bedrock实现客户反馈智能分析"
-date: 2026-05-05T19:45:40+08:00
+title: 赫伯罗特借助Amazon Bedrock实现客户反馈智能分析
+date: 2026-05-05 19:45:40+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Amazon Bedrock", "客户反馈分析", "LangChain", "LangGraph", "情感分析", "生成式AI", "物流数字化", "Elasticsearch"]
-categories: ["AI 工程", "大模型"]
+entry_kind: auto
+tags:
+- Amazon Bedrock
+- 客户反馈分析
+- LangChain
+- LangGraph
+- 情感分析
+- 生成式 AI
+- 物流数字化
+- Elasticsearch
+categories:
+- AI 工程
+- 大模型
 source: blogs_podcasts
-description: "项目背景 Hapag‑Lloyd 数字化客户体验与工程团队分布在汉堡和格但斯克，负责开发和维护面向客户的网页和移动产品。为快速把大量客户反馈转化为可操作的洞见，团队构建了一套基于生成式 AI 的反馈分析系统。 技术选型 - **Amazon Bedrock**：提供托管的基础模型（如大语言模型），负责自然语言理解、情感"
+description: 项目背景 Hapag‑Lloyd 数字化客户体验与工程团队分布在汉堡和格但斯克，负责开发和维护面向客户的网页和移动产品。为快速把大量客户反馈转化为可操作的洞见，团队构建了一套基于生成式
+  AI 的反馈分析系统。 技术选型 - **Amazon Bedrock**：提供托管的基础模型（如大语言模型），负责自然语言理解、情感
 external_url: https://aws.amazon.com/blogs/machine-learning/how-hapag-lloyd-uses-amazon-bedrock-to-transform-customer-feedback-into-actionable-insights
-scenarios: ["AI/ML项目", "Web应用开发"]
+scenarios:
+- AI/ML项目
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 赫伯罗特借助Amazon Bedrock实现客户反馈智能分析
@@ -102,7 +119,7 @@ Hapag‑Lloyd 数字化客户体验与工程团队分布在汉堡和格但斯克
 
 - [LangGraph核心解析：基于有向环图的状态机思维与灵活性突破]({{< relref "posts/20260304-juejin-agent教程16认识langchain中状态机思维-0.md" >}})
 - [LangGraph 框架指南：构建基于有向图与状态管理的生产级 AI 工作流]({{< relref "posts/20260306-juejin-langgraph-框架完全指南构建生产级-ai-工作流-2.md" >}})
-- [在印度使用Amazon Bedrock跨区域推理调用Claude模型]({{< relref "posts/20260310-blogs_podcasts-access-anthropic-claude-models-in-india-on-amazon--11.md" >}})
-- [在印度使用Amazon Bedrock跨区域推理调用Claude模型]({{< relref "posts/20260310-blogs_podcasts-access-anthropic-claude-models-in-india-on-amazon--5.md" >}})
-- [在印度使用Amazon Bedrock跨区域推理调用Claude模型]({{< relref "posts/20260311-blogs_podcasts-access-anthropic-claude-models-in-india-on-amazon--14.md" >}})
+- [在印度使用Amazon Bedrock跨区域推理调用Claude模型]({{< relref "posts/20260309-blogs_podcasts-access-anthropic-claude-models-in-india-on-amazon--1.md" >}})
+- [在印度使用Amazon Bedrock跨区域推理调用Claude模型]({{< relref "posts/20260309-blogs_podcasts-access-anthropic-claude-models-in-india-on-amazon--1.md" >}})
+- [在印度使用Amazon Bedrock跨区域推理调用Claude模型]({{< relref "posts/20260309-blogs_podcasts-access-anthropic-claude-models-in-india-on-amazon--1.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

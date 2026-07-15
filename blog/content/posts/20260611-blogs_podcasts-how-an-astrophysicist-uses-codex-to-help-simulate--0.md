@@ -1,14 +1,30 @@
 ---
-title: "天体物理学家利用Codex模拟黑洞研究极端物理"
-date: 2026-06-11T00:37:43+08:00
+title: 天体物理学家利用Codex模拟黑洞研究极端物理
+date: 2026-06-11 00:37:43+08:00
 draft: false
-entry_kind: "auto"
-tags: ["黑洞", "大模型", "Codex", "数值模拟", "广义相对论", "并行计算", "科学计算", "AI生成代码"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- 黑洞
+- 大模型
+- Codex
+- 数值模拟
+- 广义相对论
+- 并行计算
+- 科学计算
+- AI生成代码
+categories:
+- 大模型
+- AI 工程
 source: blogs_podcasts
-description: "研究背景 天体物理学家 Chi‑kwan Chan 致力于模拟黑洞，以探索极端物理环境并检验爱因斯坦的广义相对论。传统的数值模拟需要大量手工编写、调试计算代码，过程繁琐且易出错。 Codex 的优势 Chan 利用 OpenAI 的 Codex——一种基于大规模语言模型的代码生成工具——快速生成高精度数值模拟代码。Co"
+description: 研究背景 天体物理学家 Chi‑kwan Chan 致力于模拟黑洞，以探索极端物理环境并检验爱因斯坦的广义相对论。传统的数值模拟需要大量手工编写、调试计算代码，过程繁琐且易出错。
+  Codex 的优势 Chan 利用 OpenAI 的 Codex——一种基于大规模语言模型的代码生成工具——快速生成高精度数值模拟代码。Co
 external_url: https://openai.com/index/using-codex-to-simulate-black-holes
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 天体物理学家利用Codex模拟黑洞研究极端物理
@@ -121,8 +137,8 @@ Codex在科学模拟中的应用标志着AI从通用语言处理向专业科学�
 ### 相关文章
 
 - [OpenAI发布GPT-5.3-Codex-Spark：首款实时代码模型，速度提升15倍]({{< relref "posts/20260213-blogs_podcasts-introducing-gpt-53-codex-spark-11.md" >}})
-- [OpenAI发布首款实时编码模型：生成速度提升15倍]({{< relref "posts/20260214-blogs_podcasts-introducing-gpt-53-codex-spark-13.md" >}})
-- [OpenAI发布GPT-5.3-Codex-Spark：首款实时编程模型，生成提速15倍]({{< relref "posts/20260217-blogs_podcasts-introducing-gpt-53-codex-spark-13.md" >}})
-- [OpenAI发布GPT-5.3-Codex-Spark：首个实时编码模型，生成速度提升15倍]({{< relref "posts/20260217-blogs_podcasts-introducing-gpt-53-codex-spark-14.md" >}})
+- [OpenAI发布首款实时编码模型：生成速度提升15倍]({{< relref "posts/20260213-blogs_podcasts-introducing-gpt-53-codex-spark-11.md" >}})
+- [OpenAI发布GPT-5.3-Codex-Spark：首款实时编程模型，生成提速15倍]({{< relref "posts/20260213-blogs_podcasts-introducing-gpt-53-codex-spark-11.md" >}})
+- [OpenAI发布GPT-5.3-Codex-Spark：首个实时编码模型，生成速度提升15倍]({{< relref "posts/20260213-blogs_podcasts-introducing-gpt-53-codex-spark-11.md" >}})
 - [OpenAI收购Astral加速Codex和Python开发工具]({{< relref "posts/20260319-blogs_podcasts-openai-to-acquire-astral-6.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

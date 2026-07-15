@@ -21,6 +21,10 @@ description: 随着生成式 AI 技术的快速迭代，开源社区正面临前
 external_url: https://www.youtube.com/watch?v=bZJ7A1QoUEI
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AI 正在摧毁开源生态，且技术尚未成熟

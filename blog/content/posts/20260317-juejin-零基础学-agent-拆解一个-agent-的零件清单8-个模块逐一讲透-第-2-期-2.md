@@ -23,6 +23,10 @@ scenarios:
 - 大语言模型
 - RAG应用
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 零基础学 Agent ：拆解一个 Agent 的「零件清单」——8 个模块逐一讲透 第 2 期
@@ -166,8 +170,8 @@ LLM 自带的上下文窗口通常被称为“短期记忆”，它有两个主�
 
 ### 相关文章
 
-- [Agent Skills：智能体技能框架]({{< relref "posts/20260203-hacker_news-agent-skills-4.md" >}})
+- [Agent Skills：智能体技能框架]({{< relref "posts/20260203-hacker_news-agent-skills-0.md" >}})
 - [AI核心概念解析：Prompt、Agent与Function Call的区别]({{< relref "posts/20260307-juejin-promptagentfunction-callskillmcp傻傻分不清楚-1.md" >}})
-- [LangBot：生产级多平台智能体机器人开发平台]({{< relref "posts/20260201-github_trending-langbot-app-langbot-0.md" >}})
-- [Agent Skills：AI 智能体的技能框架]({{< relref "posts/20260203-hacker_news-agent-skills-3.md" >}})
-- [Agent Skills：大模型智能体技能框架]({{< relref "posts/20260204-hacker_news-agent-skills-17.md" >}})
+- [LangBot：生产级多平台智能体机器人开发平台]({{< relref "posts/20260131-github_trending-langbot-app-langbot-7.md" >}})
+- [Agent Skills：AI 智能体的技能框架]({{< relref "posts/20260203-hacker_news-agent-skills-0.md" >}})
+- [Agent Skills：大模型智能体技能框架]({{< relref "posts/20260203-hacker_news-agent-skills-0.md" >}})

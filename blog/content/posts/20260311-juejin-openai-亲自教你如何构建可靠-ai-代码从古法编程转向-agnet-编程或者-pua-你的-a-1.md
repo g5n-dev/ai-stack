@@ -11,7 +11,7 @@ tags:
 - 代码质量
 - LLM
 - 概率编程
-- AI应用
+- AI 应用
 categories:
 - AI 工程
 - 大模型
@@ -23,6 +23,10 @@ external_url: https://juejin.cn/post/7615455795723976739
 scenarios:
 - AI/ML项目
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # OpenAI 指南：从传统编程转向 Agent 编程以提升代码质量
@@ -189,8 +193,8 @@ OpenAI 官方工程实践揭示了当前 AI 编程的核心范式转移：从依
 
 ### 相关文章
 
-- [从 Prompt 到 Agent Skill：AI 交互模式的架构设计与实现]({{< relref "posts/20260303-juejin-agent-skill-是什么一文讲透-agent-skill-的设计与实现-4.md" >}})
-- [Codex与Claude支持定制化内核扩展]({{< relref "posts/20260217-blogs_podcasts-custom-kernels-for-all-from-codex-and-claude-7.md" >}})
+- [从 Prompt 到 Agent Skill：AI 交互模式的架构设计与实现]({{< relref "posts/20260303-juejin-agent-skill-是什么一文讲透-agent-skill-的设计与实现-3.md" >}})
+- [Codex与Claude支持定制化内核扩展]({{< relref "posts/20260213-blogs_podcasts-custom-kernels-for-all-from-codex-and-claude-1.md" >}})
 - [从 Prompt 到 Agent Skill：AI 能力跃迁与设计实现]({{< relref "posts/20260303-juejin-agent-skill-是什么一文讲透-agent-skill-的设计与实现-3.md" >}})
 - [OpenAI发布GPT-5.4：百万token上下文与计算机使用能力]({{< relref "posts/20260305-blogs_podcasts-introducing-gpt-54-6.md" >}})
-- [OpenAI发布GPT-5.4：百万token上下文与代码操控能力]({{< relref "posts/20260306-blogs_podcasts-introducing-gpt-54-12.md" >}})
+- [OpenAI发布GPT-5.4：百万token上下文与代码操控能力]({{< relref "posts/20260305-blogs_podcasts-introducing-gpt-54-6.md" >}})

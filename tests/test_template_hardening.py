@@ -35,8 +35,8 @@ def test_all_page_templates_share_the_strict_local_head() -> None:
     assert "script-src 'self'" in head
     assert "object-src 'none'" in head
     assert "base-uri 'none'" in head
-    assert 'href="/css/tailwind.css"' in head
-    assert 'href="/css/style.css"' in head
+    assert '"css/tailwind.css" | relURL' in head
+    assert '"css/style.css" | relURL' in head
     for template in PAGE_TEMPLATES:
         assert 'partial "site-head.html"' in template.read_text(encoding="utf-8"), template
 

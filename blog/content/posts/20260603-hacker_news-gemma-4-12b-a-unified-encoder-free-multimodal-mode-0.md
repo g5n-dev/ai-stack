@@ -1,14 +1,28 @@
 ---
-title: "Gemma 4 12B：统一无编码器的多模态模型"
-date: 2026-06-03T19:15:06+08:00
+title: Gemma 4 12B：统一无编码器的多模态模型
+date: 2026-06-03 19:15:06+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Gemma 4", "多模态模型", "无编码器", "开源模型", "视觉模型", "LLM", "统一模型", "参数12B"]
-categories: ["大模型"]
+entry_kind: auto
+tags:
+- Gemma 4
+- 多模态模型
+- 无编码器
+- 开源模型
+- 视觉模型
+- LLM
+- 统一模型
+- 参数12B
+categories:
+- 大模型
 source: hacker_news
-description: "Gemma 4 12B是谷歌推出的一种统一、无需编码器的多模态模型，能够同时处理文本、图像等多种数据形式。相比传统的多模态系统，它在结构上简化了编码器模块，降低了计算和部署成本，同时保持了跨模态信息的高效融合。本文将深入解析模型架构设计、训练流程以及在多个基准任务上的实验结果，帮助研发者快速评估其在实际项目中的适用性。"
+description: Gemma 4 12B是谷歌推出的一种统一、无需编码器的多模态模型，能够同时处理文本、图像等多种数据形式。相比传统的多模态系统，它在结构上简化了编码器模块，降低了计算和部署成本，同时保持了跨模态信息的高效融合。本文将深入解析模型架构设计、训练流程以及在多个基准任务上的实验结果，帮助研发者快速评估其在实际项目中的适用性。
 external_url: https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemma-4-12b
-scenarios: ["大语言模型"]
+scenarios:
+- 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Gemma 4 12B：统一无编码器的多模态模型
@@ -82,9 +96,9 @@ Gemma 4 12B作为统一的无编码器多模态模型，其技术方向具有显
 
 ### 相关文章
 
-- [中国开源AI生态的架构选择：超越DeepSeek的构建路径]({{< relref "posts/20260129-blogs_podcasts-architectural-choices-in-chinas-open-source-ai-eco-8.md" >}})
-- [让 Claude 编写 CUDA 内核并指导开源模型]({{< relref "posts/20260129-blogs_podcasts-we-got-claude-to-build-cuda-kernels-and-teach-open-7.md" >}})
-- [让 Claude 编写 CUDA 内核并指导开源模型]({{< relref "posts/20260129-blogs_podcasts-we-got-claude-to-build-cuda-kernels-and-teach-open-8.md" >}})
-- [Trinity Large：开源4000亿参数稀疏MoE模型]({{< relref "posts/20260129-hacker_news-trinity-large-an-open-400b-sparse-moe-model-6.md" >}})
-- [Kimi K2.5 技术报告发布：模型架构与性能评估]({{< relref "posts/20260131-hacker_news-kimi-k25-technical-report-pdf-10.md" >}})
+- [中国开源AI生态的架构选择：超越DeepSeek的构建路径]({{< relref "posts/20260127-blogs_podcasts-architectural-choices-in-chinas-open-source-ai-eco-0.md" >}})
+- [让 Claude 编写 CUDA 内核并指导开源模型]({{< relref "posts/20260129-blogs_podcasts-we-got-claude-to-build-cuda-kernels-and-teach-open-6.md" >}})
+- [让 Claude 编写 CUDA 内核并指导开源模型]({{< relref "posts/20260129-blogs_podcasts-we-got-claude-to-build-cuda-kernels-and-teach-open-6.md" >}})
+- [Trinity Large：开源4000亿参数稀疏MoE模型]({{< relref "posts/20260129-hacker_news-trinity-large-an-open-400b-sparse-moe-model-4.md" >}})
+- [Kimi K2.5 技术报告发布：模型架构与性能评估]({{< relref "posts/20260130-hacker_news-kimi-k25-technical-report-pdf-10.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

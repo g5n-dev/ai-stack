@@ -1,14 +1,29 @@
 ---
-title: "技能工程视角下人类判断为何仍是AI代理的关键"
-date: 2026-07-02T15:38:37+08:00
+title: 技能工程视角下人类判断为何仍是AI代理的关键
+date: 2026-07-02 15:38:37+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI代理", "技能工程", "人类判断", "模块化设计", "人机协作", "监督信号", "系统架构", "可维护性"]
-categories: ["AI 工程"]
+entry_kind: auto
+tags:
+- AI 代理
+- 技能工程
+- 人类判断
+- 模块化设计
+- 人机协作
+- 监督信号
+- 系统架构
+- 可维护性
+categories:
+- AI 工程
 source: blogs_podcasts
-description: "技能工程的概念 AI正从一次性全模型向模块化技能栈转变。把能力拆解为可复用、可解释的技能单元，便于调试、更新和组合，避免单体模型的黑箱和高昂的再训练成本。 人类判断的不可或缺 在“循环最大化”时代，虽然AI能够承担多数任务，但人类的精准、无误判断仍是训练监督信号的关键。人类的“完美判断”能防止错误在系统中累积，保证模型"
+description: 技能工程的概念 AI正从一次性全模型向模块化技能栈转变。把能力拆解为可复用、可解释的技能单元，便于调试、更新和组合，避免单体模型的黑箱和高昂的再训练成本。
+  人类判断的不可或缺 在“循环最大化”时代，虽然AI能够承担多数任务，但人类的精准、无误判断仍是训练监督信号的关键。人类的“完美判断”能防止错误在系统中累积，保证模型
 external_url: https://www.latent.space/p/skill-engineering-design
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 技能工程视角下人类判断为何仍是AI代理的关键
@@ -143,8 +158,8 @@ AI正从一次性全模型向模块化技能栈转变。把能力拆解为可复
 ### 相关文章
 
 - [Vibe Coding：优化人机协作模式与AI管家系统构想]({{< relref "posts/20260306-juejin-vibe-coding-之我们距离-贾维斯-还有多远-1.md" >}})
-- [迈向智能体系统规模化科学：工作原理与适用条件]({{< relref "posts/20260201-hacker_news-towards-a-science-of-scaling-agent-systems-when-an-13.md" >}})
-- [Agent-to-agent collaboration: Using Amazon Nova 2 Lite]({{< relref "posts/20260211-blogs_podcasts-agent-to-agent-collaboration-using-amazon-nova-2-l-13.md" >}})
+- [迈向智能体系统规模化科学：工作原理与适用条件]({{< relref "posts/20260201-hacker_news-towards-a-science-of-scaling-agent-systems-when-an-11.md" >}})
+- [Agent-to-agent collaboration: Using Amazon Nova 2 Lite]({{< relref "posts/20260211-blogs_podcasts-agent-to-agent-collaboration-using-amazon-nova-2-l-12.md" >}})
 - [OpenAI 实时访问系统：速率限制与额度管理支撑 Sora 和 Codex]({{< relref "posts/20260213-blogs_podcasts-beyond-rate-limits-scaling-access-to-codex-and-sor-0.md" >}})
-- [基于Amazon Bedrock AgentCore构建长运行MCP服务器与异步任务管理]({{< relref "posts/20260213-blogs_podcasts-build-long-running-mcp-servers-on-amazon-bedrock-a-5.md" >}})
+- [基于Amazon Bedrock AgentCore构建长运行MCP服务器与异步任务管理]({{< relref "posts/20260212-blogs_podcasts-build-long-running-mcp-servers-on-amazon-bedrock-a-1.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

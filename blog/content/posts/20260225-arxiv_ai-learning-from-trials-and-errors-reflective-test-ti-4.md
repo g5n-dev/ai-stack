@@ -21,6 +21,12 @@ description: '**论文总结：《从试错中学习：具身大模型的反思�
 external_url: http://arxiv.org/abs/2602.21198v1
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260226-arxiv_ai-learning-from-trials-and-errors-reflective-test-ti-4/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 基于试错反思的具身大模型测试时规划
@@ -129,7 +135,6 @@ scenarios:
 
 ---
 
-### 1. 研究背景与问题
 
 ### 核心问题
 该论文致力于解决具身智能领域中一个核心痛点：**具身大模型缺乏从失败中学习和自我修正的能力**。现有的具身Agent通常被视为“一次性执行器”，一旦部署，其行为模式即被固定。当Agent在执行长视距任务时遇到失败或环境干扰，它无法理解失败原因，也无法利用当前的错误信息来优化后续的决策，导致相同的错误在任务中反复出现，缺乏适应性。
@@ -147,7 +152,6 @@ scenarios:
 
 ---
 
-### 2. 核心方法与创新
 
 ### 提出的核心方法
 论文提出了 **反思式测试时规划**。该方法的核心在于将人类的“反思”过程分解为两个互补的阶段，并在测试时（而非训练时）进行计算扩展：
@@ -178,7 +182,6 @@ scenarios:
 
 ---
 
-### 3. 理论基础
 
 ### 使用的理论基础或假设
 1.  **认知心理学理论：** 方法借鉴了Donald Schön提出的“反思性实践”理论，将人类专家在行动中（Reflection-in-action）和行动后（Reflection-on-action）的学习过程映射到AI Agent中。
@@ -194,7 +197,6 @@ scenarios:
 
 ---
 
-### 4. 实验与结果
 
 ### 实验设计和数据集
 *   **新基准设计：** 为了测试长视距任务中的反思能力，作者设计了家庭环境中的长任务序列（涉及多步骤操作）。
@@ -216,7 +218,6 @@ scenarios:
 
 ---
 
-### 5. 应用前景
 
 ### 实际应用场景
 *   **家庭服务机器人：** 在复杂多变的家庭环境中，机器人经常遇到意想不到的情况（如找不到物品、被障碍物阻挡），反思机制能使其自主解决这些问题，减少人工干预。
@@ -232,7 +233,6 @@ scenarios:
 
 ---
 
-### 6. 研究启示
 
 ### 对该领域的启示
 该论文标志着具身智能研究从“规划优先”向“反馈优先”的范式转变。它提醒研究者，仅仅让LLM理解任务描述是不够的，必须构建闭环的交互系统，让模型能够“感知”其决策的后果。
@@ -249,7 +249,6 @@ scenarios:
 
 ---
 
-### 7. 学习建议
 
 ### 适合什么背景的读者
 *   机器人学、强化学习、多模态大模型方向的研究人员和研究生。
@@ -268,7 +267,6 @@ scenarios:
 
 ---
 
-### 8. 相关工作对比
 
 ### 与同类研究的对比
 *   **Reflexion (Shinn et al.):** Reflexion主要关注在文本任务中通过自我反思来更新Agent的上下文记忆。与之相比，本文不仅关注文本，更深入到了**具身物理交互**领域，且引入了“行动中”的实时评估，而不仅仅是事后的记忆更新。
@@ -506,4 +504,4 @@ RTP 方法包含三个核心步骤：**尝试、反思、规划**。
 - [仿真筛选模块化策略：从人类视频学习有效行为]({{< relref "posts/20260216-arxiv_ai-imitating-what-works-simulation-filtered-modular-p-0.md" >}})
 - [Squint：面向机器人具身迁移的快速视觉强化学习]({{< relref "posts/20260225-arxiv_ai-squint-fast-visual-reinforcement-learning-for-sim--1.md" >}})
 - [NVIDIA Cosmos策略：提升机器人控制能力]({{< relref "posts/20260129-blogs_podcasts-introducing-nvidia-cosmos-policy-for-advanced-robo-0.md" >}})
-- [NVIDIA Cosmos策略：提升机器人高级控制能力]({{< relref "posts/20260130-blogs_podcasts-introducing-nvidia-cosmos-policy-for-advanced-robo-1.md" >}})
+- [NVIDIA Cosmos策略：提升机器人高级控制能力]({{< relref "posts/20260129-blogs_podcasts-introducing-nvidia-cosmos-policy-for-advanced-robo-0.md" >}})

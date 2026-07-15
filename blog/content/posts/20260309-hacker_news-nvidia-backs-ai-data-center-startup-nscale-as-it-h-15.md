@@ -7,7 +7,7 @@ tags:
 - 英伟达
 - Nscale
 - 数据中心
-- AI基础设施
+- AI 基础设施
 - 融资
 - 估值
 - GPU
@@ -21,6 +21,10 @@ description: 随着生成式 AI 的爆发，数据中心基础设施正面临前
 external_url: https://www.cnbc.com/2026/03/09/nscale-ai-data-center-nvidia-raise.html
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 英伟达投资数据中心创企Nscale 估值达146亿美元

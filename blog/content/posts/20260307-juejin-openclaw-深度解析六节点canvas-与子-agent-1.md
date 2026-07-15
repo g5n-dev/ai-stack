@@ -21,6 +21,12 @@ description: 以下是对《OpenClaw 深度解析（六）》内容的简洁总�
 external_url: https://juejin.cn/post/7614205951335301130
 scenarios:
 - AI/ML项目
+aliases:
+- /posts/20260307-juejin-openclaw-深度解析六节点canvas-与子-agent-2/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # OpenClash 架构解析：节点、Canvas 与子 Agent 设计逻辑
@@ -207,6 +213,6 @@ Canvas 绝不仅仅是 UI 层的展示工具，它是 OpenClaw 工作流逻辑�
 
 - [OpenClaw实现高并发群聊AI的上下文隔离与并行调度]({{< relref "posts/20260218-juejin-openclaw怎么做到不串台能并行还总回对群-含源码解析-openclaw系列第1期-0.md" >}})
 - [Agent框架：运行时生成拓扑并动态演进]({{< relref "posts/20260212-hacker_news-show-hn-agent-framework-that-generates-its-own-top-13.md" >}})
-- [Context Graphs与Agent Traces：技术解析与应用前景]({{< relref "posts/20260205-blogs_podcasts-ainews-context-graphs-and-agent-traces-8.md" >}})
+- [Context Graphs与Agent Traces：技术解析与应用前景]({{< relref "posts/20260204-blogs_podcasts-ainews-context-graphs-and-agent-traces-0.md" >}})
 - [OpenClaw赋予AI全系统权限引发安全担忧]({{< relref "posts/20260206-hacker_news-openclaw-when-ai-agents-get-full-system-access-sec-14.md" >}})
-- [AI vs SaaS：从 OpenClaw 到 MCP UI 的中心化效能]({{< relref "posts/20260208-blogs_podcasts-ainews-ai-vs-saas-the-unreasonable-effectiveness-o-1.md" >}})
+- [AI vs SaaS：从 OpenClaw 到 MCP UI 的中心化效能]({{< relref "posts/20260207-blogs_podcasts-ainews-ai-vs-saas-the-unreasonable-effectiveness-o-0.md" >}})

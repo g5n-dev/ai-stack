@@ -1,14 +1,29 @@
 ---
-title: "近光速文本生成：Nemotron-Labs扩散语言模型解析"
-date: 2026-05-23T00:30:38+08:00
+title: 近光速文本生成：Nemotron-Labs扩散语言模型解析
+date: 2026-05-23 00:30:38+08:00
 draft: false
-entry_kind: "auto"
-tags: ["扩散模型", "语言模型", "推理加速", "文本生成", "NVIDIA", "效率优化", "生成式AI", "LLM"]
-categories: ["大模型"]
+entry_kind: auto
+tags:
+- 扩散模型
+- 语言模型
+- 推理加速
+- 文本生成
+- NVIDIA
+- 效率优化
+- 生成式 AI
+- LLM
+categories:
+- 大模型
 source: blogs_podcasts
-description: "在自然语言处理对实时交互需求日益增长的背景下，Nemotron‑Labs 提出了一种基于扩散机制的全新语言模型，旨在实现几乎瞬时的文本生成。该模型通过改进噪声调度和并行解码策略，在保持生成质量的同时大幅降低推理时延。本文将深入解析其核心架构、关键优化技术以及在不同场景下的性能评估，帮助开发者快速评估并迁移该技术至实际产"
+description: 在自然语言处理对实时交互需求日益增长的背景下，Nemotron‑Labs 提出了一种基于扩散机制的全新语言模型，旨在实现几乎瞬时的文本生成。该模型通过改进噪声调度和并行解码策略，在保持生成质量的同时大幅降低推理时延。本文将深入解析其核心架构、关键优化技术以及在不同场景下的性能评估，帮助开发者快速评估并迁移该技术至实际产
 external_url: https://huggingface.co/blog/nvidia/nemotron-labs-diffusion
-scenarios: ["AI/ML项目", "大语言模型"]
+scenarios:
+- AI/ML项目
+- 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 近光速文本生成：Nemotron-Labs扩散语言模型解析
@@ -109,9 +124,9 @@ scenarios: ["AI/ML项目", "大语言模型"]
 
 ### 相关文章
 
-- [一致性扩散语言模型提速14倍且无损质量]({{< relref "posts/20260220-hacker_news-consistency-diffusion-language-models-up-to-14x-fa-1.md" >}})
-- [一致性扩散语言模型提速14倍且无损质量]({{< relref "posts/20260220-hacker_news-consistency-diffusion-language-models-up-to-14x-fa-11.md" >}})
-- [一致性扩散语言模型提速14倍且无损质量]({{< relref "posts/20260220-hacker_news-consistency-diffusion-language-models-up-to-14x-fa-18.md" >}})
-- [一致性扩散语言模型提速14倍且无损质量]({{< relref "posts/20260220-hacker_news-consistency-diffusion-language-models-up-to-14x-fa-6.md" >}})
-- [Mercury 2：基于扩散模型的快速推理大语言模型]({{< relref "posts/20260225-hacker_news-mercury-2-fast-reasoning-llm-powered-by-diffusion-5.md" >}})
+- [一致性扩散语言模型提速14倍且无损质量]({{< relref "posts/20260220-hacker_news-consistency-diffusion-language-models-up-to-14x-fa-2.md" >}})
+- [一致性扩散语言模型提速14倍且无损质量]({{< relref "posts/20260220-hacker_news-consistency-diffusion-language-models-up-to-14x-fa-2.md" >}})
+- [一致性扩散语言模型提速14倍且无损质量]({{< relref "posts/20260220-hacker_news-consistency-diffusion-language-models-up-to-14x-fa-2.md" >}})
+- [一致性扩散语言模型提速14倍且无损质量]({{< relref "posts/20260220-hacker_news-consistency-diffusion-language-models-up-to-14x-fa-2.md" >}})
+- [Mercury 2：基于扩散模型的快速推理大语言模型]({{< relref "posts/20260225-hacker_news-mercury-2-the-fastest-reasoning-llm-powered-by-dif-19.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

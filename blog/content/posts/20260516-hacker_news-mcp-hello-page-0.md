@@ -1,14 +1,28 @@
 ---
-title: "MCP快速入门指南"
-date: 2026-05-16T23:16:15+08:00
+title: MCP快速入门指南
+date: 2026-05-16 23:16:15+08:00
 draft: false
-entry_kind: "auto"
-tags: ["MCP", "Protocol", "AI协议", "入门指南", "Anthropic", "Model Context", "开发者", "快速上手"]
-categories: ["AI 工程"]
+entry_kind: auto
+tags:
+- MCP
+- Protocol
+- AI协议
+- 入门指南
+- Anthropic
+- Model Context
+- 开发者
+- 快速上手
+categories:
+- AI 工程
 source: hacker_news
-description: "MCP Hello Page 通过最简代码示例，演示了 MCP 框架在页面加载、请求发送和结果渲染三个关键环节的工作原理。它帮助开发者在本地环境快速验证框架配置是否生效，并提供可直接拷贝的参考实现。阅读本文后，你将掌握从项目创建到功能跑通的完整流程，为后续业务开发奠定坚实基础。"
+description: MCP Hello Page 通过最简代码示例，演示了 MCP 框架在页面加载、请求发送和结果渲染三个关键环节的工作原理。它帮助开发者在本地环境快速验证框架配置是否生效，并提供可直接拷贝的参考实现。阅读本文后，你将掌握从项目创建到功能跑通的完整流程，为后续业务开发奠定坚实基础。
 external_url: https://www.hybridlogic.co.uk/blog/2026/05/mcp-hello-page
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # MCP快速入门指南
@@ -75,9 +89,9 @@ MCP Hello Page 通过最简代码示例，演示了 MCP 框架在页面加载、
 
 ### 相关文章
 
-- [Anthropic 发布 MCP Apps 开放标准，定义富生成式 UI 规范]({{< relref "posts/20260129-blogs_podcasts-ainews-anthropic-launches-the-mcp-apps-open-spec-i-9.md" >}})
+- [Anthropic 发布 MCP Apps 开放标准，定义富生成式 UI 规范]({{< relref "posts/20260127-blogs_podcasts-ainews-anthropic-launches-the-mcp-apps-open-spec-i-1.md" >}})
 - [AI vs SaaS：从OpenClaw到Cursor看AI中心化的效能]({{< relref "posts/20260207-blogs_podcasts-ainews-ai-vs-saas-the-unreasonable-effectiveness-o-0.md" >}})
-- [AI vs SaaS：从OpenClaw到Cursor看AI中心化效能]({{< relref "posts/20260208-blogs_podcasts-ainews-ai-vs-saas-the-unreasonable-effectiveness-o-0.md" >}})
-- [AI vs SaaS：从 OpenClaw 到 MCP UI 的中心化效能]({{< relref "posts/20260208-blogs_podcasts-ainews-ai-vs-saas-the-unreasonable-effectiveness-o-1.md" >}})
-- [AI vs SaaS：从OpenClaw到Cursor的AI中心化演进]({{< relref "posts/20260209-blogs_podcasts-ainews-ai-vs-saas-the-unreasonable-effectiveness-o-0.md" >}})
+- [AI vs SaaS：从OpenClaw到Cursor看AI中心化效能]({{< relref "posts/20260207-blogs_podcasts-ainews-ai-vs-saas-the-unreasonable-effectiveness-o-0.md" >}})
+- [AI vs SaaS：从 OpenClaw 到 MCP UI 的中心化效能]({{< relref "posts/20260207-blogs_podcasts-ainews-ai-vs-saas-the-unreasonable-effectiveness-o-0.md" >}})
+- [AI vs SaaS：从OpenClaw到Cursor的AI中心化演进]({{< relref "posts/20260207-blogs_podcasts-ainews-ai-vs-saas-the-unreasonable-effectiveness-o-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

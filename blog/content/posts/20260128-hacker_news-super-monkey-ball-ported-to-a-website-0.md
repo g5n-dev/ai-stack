@@ -1,12 +1,26 @@
 ---
-title: "🔥网页也能玩！超级猴子球移植上线！🐒🎮"
-date: 2026-01-28T07:28:04+08:00
+title: 🔥网页也能玩！超级猴子球移植上线！🐒🎮
+date: 2026-01-28 07:28:04+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Web游戏", "游戏移植", "浏览器", "超级猴子球", "WebGL", "跨平台", "无需下载", "经典游戏"]
-categories: ["前端", "开源生态"]
+entry_kind: auto
+tags:
+- Web游戏
+- 游戏移植
+- 浏览器
+- 超级猴子球
+- WebGL
+- 跨平台
+- 无需下载
+- 经典游戏
+categories:
+- 前端
+- 开源生态
 source: hacker_news
 external_url: https://monkeyball-online.pages.dev
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 📰 🔥网页也能玩！超级猴子球移植上线！🐒🎮
@@ -183,7 +197,6 @@ Ruffle 项目开发了一个用 Rust 语言编写的 Flash 模拟器，并将其
 在 GitHub 和 CodePen 等平台上涌现出大量高保真的复刻版本。这些 Demo 展示了在不需要任何插件的情况下，现代浏览器已经可以运行接近主机画质的物理游戏。这极大地鼓舞了游戏开发社区，推动了“浏览器即平台”的趋势。
 
 ---
-## ✅ 最佳实践
 
 ## 最佳实践指南
 

@@ -23,6 +23,10 @@ scenarios:
 - AI/ML项目
 - RAG应用
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # LangChain 实现图片 OCR 与多模态 RAG 数据读取
@@ -168,8 +172,8 @@ LangChain 提供了灵活的工具来处理不同来源的图片。对于本地�
 
 ### 相关文章
 
-- [Kirara-AI：支持多平台接入的多模态聊天机器人框架]({{< relref "posts/20260130-github_trending-lss233-kirara-ai-2.md" >}})
-- [CowAgent：具备主动思考与长期记忆的大模型 AI 助理]({{< relref "posts/20260204-github_trending-zhayujie-chatgpt-on-wechat-0.md" >}})
-- [CowAgent：基于大模型的自主任务规划与多平台接入助手]({{< relref "posts/20260205-github_trending-zhayujie-chatgpt-on-wechat-0.md" >}})
-- [基于大模型的主动思考型 AI 助理 CowAgent 支持多平台接入]({{< relref "posts/20260206-github_trending-zhayujie-chatgpt-on-wechat-1.md" >}})
-- [CowAgent：基于大模型的自主任务规划与多平台接入 AI 助理]({{< relref "posts/20260207-github_trending-zhayujie-chatgpt-on-wechat-0.md" >}})
+- [Kirara-AI：支持多平台接入的多模态聊天机器人框架]({{< relref "posts/20260127-github_trending-lss233-kirara-ai-2.md" >}})
+- [CowAgent：具备主动思考与长期记忆的大模型 AI 助理]({{< relref "posts/20260131-github_trending-zhayujie-chatgpt-on-wechat-0.md" >}})
+- [CowAgent：基于大模型的自主任务规划与多平台接入助手]({{< relref "posts/20260131-github_trending-zhayujie-chatgpt-on-wechat-0.md" >}})
+- [基于大模型的主动思考型 AI 助理 CowAgent 支持多平台接入]({{< relref "posts/20260131-github_trending-zhayujie-chatgpt-on-wechat-0.md" >}})
+- [CowAgent：基于大模型的自主任务规划与多平台接入 AI 助理]({{< relref "posts/20260131-github_trending-zhayujie-chatgpt-on-wechat-0.md" >}})

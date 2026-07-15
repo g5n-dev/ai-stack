@@ -22,6 +22,12 @@ external_url: http://arxiv.org/abs/2603.08704v1
 scenarios:
 - 大语言模型
 - RAG应用
+aliases:
+- /posts/20260311-arxiv_ai-evaluating-financial-intelligence-in-large-languag-3/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 评估大语言模型金融智能：SuperInvesting AI基准测试
@@ -128,7 +134,6 @@ scenarios:
 
 ## 技术分析
 
-### 1. 研究背景与问题界定
 
 ### 核心问题
 本研究的核心在于填补大型语言模型（LLM）在金融投资分析领域的**可靠性评估空白**。研究旨在量化评估模型在处理金融数据、执行逻辑推理及生成投资见解时的表现，具体考察其准确性、完整性与一致性。
@@ -141,7 +146,6 @@ scenarios:
 1.  **基准不匹配**：通用NLP基准缺乏金融领域的深度，难以测试模型对财报、市场情绪及宏观数据的综合理解能力。
 2.  **维度单一**：现有评估多侧重于“事实准确性”，较少关注投资研究中的“分析完整性”（即关键风险因素的覆盖度）和“稳定性”。
 
-### 3. 理论基础
 
 ### 理论假设
 本研究基于以下理论假设：
@@ -396,8 +400,8 @@ SuperInvesting AI 在论文中被视为一个专门的基准或经过特定优�
 
 ### 相关文章
 
-- [SkillsBench 论文解读：跨任务基准测试如何揭示 Agent 技能的实际效用]({{< relref "posts/20260218-juejin-你知道不你现在给-ai-用的-agent-skills-可能毫无作用甚至还拖后腿-2.md" >}})
-- [Skill-Inject：评估智能体技能文件攻击的脆弱性]({{< relref "posts/20260225-arxiv_ai-skill-inject-measuring-agent-vulnerability-to-skil-1.md" >}})
+- [SkillsBench 论文解读：跨任务基准测试如何揭示 Agent 技能的实际效用]({{< relref "posts/20260217-juejin-你知道不你现在给-ai-用的-agent-skills-可能毫无作用甚至还拖后腿-2.md" >}})
+- [Skill-Inject：评估智能体技能文件攻击的脆弱性]({{< relref "posts/20260224-arxiv_ai-skill-inject-measuring-agent-vulnerability-to-skil-1.md" >}})
 - [MC-Search：基于结构化长推理链的多模态智能体搜索评估与增强]({{< relref "posts/20260303-arxiv_ai-mc-search-evaluating-and-enhancing-multimodal-agen-9.md" >}})
-- [Balyasny 基于 GPT-5.4 与 Agent 工作流构建 AI 投研引擎]({{< relref "posts/20260307-blogs_podcasts-how-balyasny-asset-management-built-an-ai-research-5.md" >}})
-- [Balyasny 构建 AI 投研引擎：基于 GPT-5.4 与 Agent 工作流]({{< relref "posts/20260309-blogs_podcasts-how-balyasny-asset-management-built-an-ai-research-5.md" >}})
+- [Balyasny 基于 GPT-5.4 与 Agent 工作流构建 AI 投研引擎]({{< relref "posts/20260306-blogs_podcasts-how-balyasny-asset-management-built-an-ai-research-1.md" >}})
+- [Balyasny 构建 AI 投研引擎：基于 GPT-5.4 与 Agent 工作流]({{< relref "posts/20260306-blogs_podcasts-how-balyasny-asset-management-built-an-ai-research-1.md" >}})

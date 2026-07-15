@@ -1,12 +1,25 @@
 ---
-title: "💥爱比克泰德《手册》：古希腊斯多葛哲学经典！人生必读智慧宝典"
-date: 2026-01-27T20:26:59+08:00
+title: 💥爱比克泰德《手册》：古希腊斯多葛哲学经典！人生必读智慧宝典
+date: 2026-01-27 20:26:59+08:00
 draft: false
-entry_kind: "auto"
-tags: ["斯多葛哲学", "爱比克泰德", "控制二分法", "人生智慧", "情绪管理", "自我提升", "爱命运", "经典书单"]
-categories: ["生活与杂谈"]
+entry_kind: auto
+tags:
+- 斯多葛哲学
+- 爱比克泰德
+- 控制二分法
+- 人生智慧
+- 情绪管理
+- 自我提升
+- 爱命运
+- 经典书单
+categories:
+- 生活与杂谈
 source: hacker_news
 external_url: https://www.gutenberg.org/files/45109/45109-h/45109-h.htm
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 📰 💥爱比克泰德《手册》：古希腊斯多葛哲学经典！人生必读智慧宝典
@@ -201,7 +214,6 @@ James 应用《手册》中的观点：**“困扰我们的不是事物本身，
 这种思维转换极大地提升了 James 的抗压能力。他不再在情绪管理上浪费精力，而是将精力集中在优化产品和调整策略上。这种“情绪稳定性”感染了整个团队，让团队在融资寒冬中依然保持士气。最终，他带领公司完成了产品转型，并成功获得了下一轮融资。
 
 ---
-## ✅ 最佳实践
 
 ## 最佳实践指南：爱比克泰德的《手册》
 

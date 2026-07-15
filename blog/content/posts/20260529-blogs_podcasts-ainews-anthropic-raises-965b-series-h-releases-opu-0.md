@@ -1,14 +1,31 @@
 ---
-title: "Anthropic完成965亿美元H轮融资并发布Opus 4.8"
-date: 2026-05-29T08:16:20+08:00
+title: Anthropic完成965亿美元H轮融资并发布Opus 4.8
+date: 2026-05-29 08:16:20+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Anthropic", "融资", "H轮", "Opus 4.8", "大模型", "AI平台", "低代码", "多模态"]
-categories: ["大模型", "产品与创业"]
+entry_kind: auto
+tags:
+- Anthropic
+- 融资
+- H轮
+- Opus 4.8
+- 大模型
+- AI平台
+- 低代码
+- 多模态
+categories:
+- 大模型
+- 产品与创业
 source: blogs_podcasts
-description: "融资概况 Anthropic 在最新 H 轮融资中筹集约 965 亿美元（约 965B），估值再创新高，吸引多家顶级基金和科技巨头参与。 产品发布 - **Opus 4.8**：全新大模型版本，在多模态理解、长上下文推理和指令跟随上实现显著提升，训练效率提升约 30%。 - **Dynamic Workflows /"
+description: 融资概况 Anthropic 在最新 H 轮融资中筹集约 965 亿美元（约 965B），估值再创新高，吸引多家顶级基金和科技巨头参与。
+  产品发布 - **Opus 4.8**：全新大模型版本，在多模态理解、长上下文推理和指令跟随上实现显著提升，训练效率提升约 30%。 - **Dynamic Workflows
+  /
 external_url: https://www.latent.space/p/ainews-anthropic-raises-965b-series
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Anthropic完成965亿美元H轮融资并发布Opus 4.8
@@ -131,7 +148,7 @@ ultracode代表了Anthropic在模型部署效率方面的重要突破。该技�
 ### 相关文章
 
 - [Google投资Anthropic至多400亿美元，含现金及算力]({{< relref "posts/20260424-hacker_news-google-to-invest-up-to-40b-in-anthropic-in-cash-an-0.md" >}})
-- [Anthropic 否认 Claude Code 用户成本高达五千美元]({{< relref "posts/20260310-hacker_news-no-it-doesnt-cost-anthropic-5k-per-claude-code-use-14.md" >}})
+- [Anthropic 否认 Claude Code 用户成本高达五千美元]({{< relref "posts/20260310-hacker_news-no-it-doesnt-cost-anthropic-5k-per-claude-code-use-8.md" >}})
 - [Anthropic 投资 1 亿美元扩展 Claude 合作伙伴网络]({{< relref "posts/20260315-hacker_news-anthropic-invests-100m-into-the-claude-partner-net-5.md" >}})
 - [Claude设计功能深度解析]({{< relref "posts/20260417-hacker_news-claude-design-0.md" >}})
 - [Google将向Anthropic投资至多400亿美元]({{< relref "posts/20260424-hacker_news-google-plans-to-invest-up-to-40b-in-anthropic-0.md" >}})

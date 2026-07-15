@@ -1,14 +1,32 @@
 ---
-title: "代理站点技术：Adobe根据用户意图生成网页"
-date: 2026-07-02T23:17:40+08:00
+title: 代理站点技术：Adobe根据用户意图生成网页
+date: 2026-07-02 23:17:40+08:00
 draft: false
-entry_kind: "auto"
-tags: ["代理站点", "个性化", "意图推断", "动态生成", "用户体验", "LLM", "网页开发", "AI生成"]
-categories: ["大模型", "前端"]
+entry_kind: auto
+tags:
+- 代理站点
+- 个性化
+- 意图推断
+- 动态生成
+- 用户体验
+- LLM
+- 网页开发
+- AI生成
+categories:
+- 大模型
+- 前端
 source: blogs_podcasts
-description: "背景 用户对个性化体验的需求日益增长，传统预先生成的静态页面已难以精准匹配意图。 技术原理 Adobe 在 AIEWF 上展示的“agentic sites”利用大语言模型和意图推断引擎，在访问时实时分析用户的搜索意图、行为上下文和个人偏好，动态组合页面结构、文字、图片和交互元素。页面不再是预先编辑好的文档，而是由 A"
+description: 背景 用户对个性化体验的需求日益增长，传统预先生成的静态页面已难以精准匹配意图。 技术原理 Adobe 在 AIEWF 上展示的“agentic
+  sites”利用大语言模型和意图推断引擎，在访问时实时分析用户的搜索意图、行为上下文和个人偏好，动态组合页面结构、文字、图片和交互元素。页面不再是预先编辑好的文档，而是由
+  A
 external_url: https://www.latent.space/p/the-website-of-the-future
-scenarios: ["大语言模型", "AI/ML项目"]
+scenarios:
+- 大语言模型
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 代理站点技术：Adobe根据用户意图生成网页
@@ -174,8 +192,8 @@ Agentic sites（意图驱动的自组装网站）将成为未来主流 Web 形�
 ### 相关文章
 
 - [长期对话导致LLM模仿用户观点并形成回声室]({{< relref "posts/20260218-blogs_podcasts-personalization-features-can-make-llms-more-agreea-0.md" >}})
-- [长期对话导致大语言模型镜像用户观点形成回声室]({{< relref "posts/20260218-blogs_podcasts-personalization-features-can-make-llms-more-agreea-3.md" >}})
-- [Claude：打造用于深度思考的交互空间]({{< relref "posts/20260204-hacker_news-claude-is-a-space-to-think-12.md" >}})
-- [Claude Is a Space to Think]({{< relref "posts/20260204-hacker_news-claude-is-a-space-to-think-17.md" >}})
-- [Claude：打造用于深度思考的AI交互空间]({{< relref "posts/20260205-hacker_news-claude-is-a-space-to-think-18.md" >}})
+- [长期对话导致大语言模型镜像用户观点形成回声室]({{< relref "posts/20260218-blogs_podcasts-personalization-features-can-make-llms-more-agreea-0.md" >}})
+- [Claude：打造用于深度思考的交互空间]({{< relref "posts/20260204-hacker_news-claude-is-a-space-to-think-8.md" >}})
+- [Claude Is a Space to Think]({{< relref "posts/20260204-hacker_news-claude-is-a-space-to-think-8.md" >}})
+- [Claude：打造用于深度思考的AI交互空间]({{< relref "posts/20260204-hacker_news-claude-is-a-space-to-think-8.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

@@ -21,6 +21,12 @@ description: 以下是对论文内容的简洁总结： **核心问题** 现有�
 external_url: http://arxiv.org/abs/2603.09961v1
 scenarios:
 - Web应用开发
+aliases:
+- /posts/20260312-arxiv_ai-beacon-language-conditioned-navigation-affordance--5/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # BEACON：遮挡条件下的语言导航可行性预测
@@ -136,9 +142,7 @@ BEACON具有极高的应用落地价值，主要因为它解决了**“最后一
 
 ---
 
-### BEACON：遮挡条件下的语言条件化导航可达性预测深度解析
 
-### 1. 研究背景与问题
 
 ### 核心问题
 该论文致力于解决具身智能领域中的一个关键痛点：**在非结构化、存在遮挡的动态环境中，机器人如何根据开放词汇指令准确推断被遮挡目标的导航可达性**。
@@ -156,7 +160,6 @@ BEACON具有极高的应用落地价值，主要因为它解决了**“最后一
 ### 为什么这个问题重要
 解决这一问题意味着机器人将不再仅仅是一个“跟随者”，只能看到什么走向什么，而成为一个“探索者”，能够理解“那里应该有什么”。这极大地提高了机器人在拥挤家庭环境、仓库或商场中的鲁棒性和实用性。
 
-### 2. 核心方法与创新
 
 ### 提出的核心方法：BEACON
 BEACON（**B**ird's-Eye-view **E**nhanced **A**ffordance **C**onditi**O**ning **N**etwork）是一种将视觉语言特征与几何深度信息深度融合的神经网络架构。其核心输出是一个以机器人为中心的局部鸟瞰图（BEV）可达性热力图。
@@ -177,7 +180,6 @@ BEACON（**B**ird's-Eye-view **E**nhanced **A**ffordance **C**onditi**O**ning **
 *   **可解释性**：BEV热力图直观展示了机器人对周围空间的语义理解，便于调试和信任。
 *   **轻量化部署**：BEV网格的大小通常固定（如局部区域），计算复杂度受控，适合实时机器人系统。
 
-### 3. 理论基础
 
 ### 使用的理论基础或假设
 1.  **流形假设与几何一致性**：假设现实世界中的物体表面是连续的，且占据3D空间中的特定体积。通过多视角几何，可以重建出比单一视角更完整的场景结构。
@@ -187,7 +189,6 @@ BEACON（**B**ird's-Eye-view **E**nhanced **A**ffordance **C**onditi**O**ning **
 ### 理论分析
 BEACON的理论贡献在于提出了一种**“视点不变性”的语义映射构建方法**。传统的2D方法受限于视点，而BEV投影在数学上是一个从欧几里得群SE(3)到平面欧几里得群SE(2)的降维投影，这种投影消除了旋转（除偏航角外）和高度变化的干扰，使得后续的预测网络更容易收敛。
 
-### 7. 学习建议
 
 ### 适合什么背景的读者
 *   具备计算机视觉基础，了解Transformer架构。
@@ -420,8 +421,8 @@ BEACON的理论贡献在于提出了一种**“视点不变性”的语义映射
 
 ### 相关文章
 
-- [Tether：基于对应关系轨迹扭曲的自主功能玩]({{< relref "posts/20260305-arxiv_ai-tether-autonomous-functional-play-with-corresponde-2.md" >}})
-- [视觉语言模型能否通过交互学习直观物理]({{< relref "posts/20260207-arxiv_ai-can-vision-language-models-learn-intuitive-physics-5.md" >}})
-- [视觉语言模型能否通过交互学习直观物理]({{< relref "posts/20260209-arxiv_ai-can-vision-language-models-learn-intuitive-physics-5.md" >}})
+- [Tether：基于对应关系轨迹扭曲的自主功能玩]({{< relref "posts/20260304-arxiv_ai-tether-autonomous-functional-play-with-corresponde-2.md" >}})
+- [视觉语言模型能否通过交互学习直观物理]({{< relref "posts/20260206-arxiv_ai-can-vision-language-models-learn-intuitive-physics-5.md" >}})
+- [视觉语言模型能否通过交互学习直观物理]({{< relref "posts/20260206-arxiv_ai-can-vision-language-models-learn-intuitive-physics-5.md" >}})
 - [仿真筛选模块化策略：从人类视频学习有效行为]({{< relref "posts/20260216-arxiv_ai-imitating-what-works-simulation-filtered-modular-p-0.md" >}})
-- [视觉-语言-动作对齐：扩展验证比扩展策略学习更有效]({{< relref "posts/20260216-arxiv_ai-scaling-verification-can-be-more-effective-than-sc-0.md" >}})
+- [视觉-语言-动作对齐：扩展验证比扩展策略学习更有效]({{< relref "posts/20260213-arxiv_ai-scaling-verification-can-be-more-effective-than-sc-0.md" >}})

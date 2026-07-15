@@ -1,14 +1,29 @@
 ---
-title: "AI耗水量低于公众预期"
-date: 2026-05-01T19:34:40+08:00
+title: AI耗水量低于公众预期
+date: 2026-05-01 19:34:40+08:00
 draft: false
-entry_kind: "auto"
-tags: ["AI耗水", "数据中心", "大模型", "节能", "环保", "公众误解", "水资源", "冷却技术"]
-categories: ["大模型", "系统与基础设施"]
+entry_kind: auto
+tags:
+- AI耗水
+- 数据中心
+- 大模型
+- 节能
+- 环保
+- 公众误解
+- 水资源
+- 冷却技术
+categories:
+- 大模型
+- 系统与基础设施
 source: hacker_news
-description: "随着人工智能模型规模快速增长，数据中心的用水量成为业界关注的热点议题。然而，公开数据往往夸大了AI对水资源的消耗，实际运行中的高效冷却技术与废热回收显著降低了用水需求。了解真实用水情况有助于企业在算力布局时做出更环保的决策，并为政策制定者提供客观依据。"
+description: 随着人工智能模型规模快速增长，数据中心的用水量成为业界关注的热点议题。然而，公开数据往往夸大了AI对水资源的消耗，实际运行中的高效冷却技术与废热回收显著降低了用水需求。了解真实用水情况有助于企业在算力布局时做出更环保的决策，并为政策制定者提供客观依据。
 external_url: https://californiawaterblog.com/2026/04/26/ai-water-use-distractions-and-lessons-for-california
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AI耗水量低于公众预期
@@ -81,8 +96,8 @@ scenarios: ["AI/ML项目"]
 ### 相关文章
 
 - [😱谷歌欲掌控俄州小镇水源！环保主义者紧急发声！]({{< relref "posts/20260126-hacker_news-environmentalists-worry-google-behind-bid-to-contr-15.md" >}})
-- [Meta发布Muse Spark，首个基于全新栈的前沿模型]({{< relref "posts/20260409-blogs_podcasts-ainews-meta-superintelligence-labs-announces-muse--0.md" >}})
-- [SageMaker G7e实例发布：RTX PRO 6000 GPU加速AI推理]({{< relref "posts/20260421-blogs_podcasts-accelerate-generative-ai-inference-on-amazon-sagem-0.md" >}})
-- [全球开源AI生态展望：从DeepSeek到AI+]({{< relref "posts/20260204-blogs_podcasts-the-future-of-the-global-open-source-ai-ecosystem--1.md" >}})
-- [全球开源AI生态展望：从DeepSeek到AI+]({{< relref "posts/20260205-blogs_podcasts-the-future-of-the-global-open-source-ai-ecosystem--6.md" >}})
+- [Meta发布Muse Spark，首个基于全新栈的前沿模型]({{< relref "posts/20260408-blogs_podcasts-ainews-meta-superintelligence-labs-announces-muse--0.md" >}})
+- [SageMaker G7e实例发布：RTX PRO 6000 GPU加速AI推理]({{< relref "posts/20260420-blogs_podcasts-accelerate-generative-ai-inference-on-amazon-sagem-0.md" >}})
+- [全球开源AI生态展望：从DeepSeek到AI+]({{< relref "posts/20260203-blogs_podcasts-the-future-of-the-global-open-source-ai-ecosystem--0.md" >}})
+- [全球开源AI生态展望：从DeepSeek到AI+]({{< relref "posts/20260203-blogs_podcasts-the-future-of-the-global-open-source-ai-ecosystem--0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

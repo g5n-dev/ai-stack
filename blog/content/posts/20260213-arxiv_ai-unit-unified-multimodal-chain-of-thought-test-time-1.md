@@ -1,14 +1,33 @@
 ---
-title: "UniT：统一多模态思维链测试时扩展方法"
-date: 2026-02-13T23:30:43+08:00
+title: UniT：统一多模态思维链测试时扩展方法
+date: 2026-02-13 23:30:43+08:00
 draft: false
-entry_kind: "auto"
-tags: ["多模态", "思维链", "测试时扩展", "统一模型", "推理", "TTS", "Agent", "数据合成"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- 多模态
+- 思维链
+- 测试时扩展
+- 统一模型
+- 推理
+- TTS
+- Agent
+- 数据合成
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "**UniT：统一多模态思维链测试时扩展** **核心问题与背景** 当前的统一多模态模型（Unified Multimodal Models）虽然能在一个架构中同时处理理解和生成任务，但通常缺乏迭代优化输出的能力。面对涉及复杂空间关系、多对象交互或动态指令的任务，模型往往需要具备分解指令、验证中间结果及迭代修正的能力"
+description: '**UniT：统一多模态思维链测试时扩展** **核心问题与背景** 当前的统一多模态模型（Unified Multimodal Models）虽然能在一个架构中同时处理理解和生成任务，但通常缺乏迭代优化输出的能力。面对涉及复杂空间关系、多对象交互或动态指令的任务，模型往往需要具备分解指令、验证中间结果及迭代修正的能力'
 external_url: http://arxiv.org/abs/2602.12279v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+aliases:
+- /posts/20260214-arxiv_ai-unit-unified-multimodal-chain-of-thought-test-time-1/
+- /posts/20260215-arxiv_ai-unit-unified-multimodal-chain-of-thought-test-time-1/
+- /posts/20260216-arxiv_ai-unit-unified-multimodal-chain-of-thought-test-time-1/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # UniT：统一多模态思维链测试时扩展方法
@@ -283,7 +302,6 @@ UniT 的主要贡献在于打破了“统一模型 = 弱推理者”的刻板印
 - **分布外（OOD）数据**
 
 ---
-## 研究最佳实践
 
 ## 最佳实践指南
 
@@ -377,7 +395,6 @@ UniT 强调使用单一的 Transformer 解码器来处理所有模态的生成�
 - 实验证实现有的多模态模型严重欠拟合，通过在推理阶段增加计算量（测试时扩展）是挖掘模型潜力的高效途径。
 
 ---
-## 学习路径
 
 ## 学习路径
 
@@ -558,9 +575,9 @@ UniT 强调使用单一的 Transformer 解码器来处理所有模态的生成�
 
 ### 相关文章
 
-- [UEval：统一多模态生成基准评测]({{< relref "posts/20260201-arxiv_ai-ueval-a-benchmark-for-unified-multimodal-generatio-3.md" >}})
+- [UEval：统一多模态生成基准评测]({{< relref "posts/20260130-arxiv_ai-ueval-a-benchmark-for-unified-multimodal-generatio-3.md" >}})
 - [探索面向智能体的推理奖励模型]({{< relref "posts/20260130-arxiv_ai-exploring-reasoning-reward-model-for-agents-4.md" >}})
 - [UEval：统一多模态生成基准]({{< relref "posts/20260130-arxiv_ai-ueval-a-benchmark-for-unified-multimodal-generatio-3.md" >}})
-- [探索面向智能体的推理奖励模型]({{< relref "posts/20260131-arxiv_ai-exploring-reasoning-reward-model-for-agents-4.md" >}})
-- [UEval：统一多模态生成基准]({{< relref "posts/20260131-arxiv_ai-ueval-a-benchmark-for-unified-multimodal-generatio-3.md" >}})
+- [探索面向智能体的推理奖励模型]({{< relref "posts/20260130-arxiv_ai-exploring-reasoning-reward-model-for-agents-4.md" >}})
+- [UEval：统一多模态生成基准]({{< relref "posts/20260130-arxiv_ai-ueval-a-benchmark-for-unified-multimodal-generatio-3.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

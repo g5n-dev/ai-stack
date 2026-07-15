@@ -1,14 +1,31 @@
 ---
-title: "27B参数模型实现手机端运行"
-date: 2026-07-14T23:29:48+08:00
+title: 27B参数模型实现手机端运行
+date: 2026-07-14 23:29:48+08:00
 draft: false
-entry_kind: "auto"
-tags: ["手机端运行", "27B参数", "端侧AI", "模型压缩", "LLM", "推理优化", "轻量化部署", "移动端"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- 手机端运行
+- 27B参数
+- 端侧AI
+- 模型压缩
+- LLM
+- 推理优化
+- 轻量化部署
+- 移动端
+categories:
+- 大模型
+- AI 工程
 source: hacker_news
-description: "本文介绍 Bonsai 27B，这是一款规模达到 27B 参数、但经优化后能够在普通手机上本地运行的大语言模型。随着移动硬件算力提升，将大模型搬到端侧成为实现低延迟、离线交互的关键路径。文章将详细剖析其核心架构、推理效率的实测数据以及在真实设备上的部署要点，帮助开发者快速评估并落地移动端 AI 应用。"
+description: 本文介绍 Bonsai 27B，这是一款规模达到 27B 参数、但经优化后能够在普通手机上本地运行的大语言模型。随着移动硬件算力提升，将大模型搬到端侧成为实现低延迟、离线交互的关键路径。文章将详细剖析其核心架构、推理效率的实测数据以及在真实设备上的部署要点，帮助开发者快速评估并落地移动端
+  AI 应用。
 external_url: https://prismml.com/news/bonsai-27b
-scenarios: ["AI/ML项目", "大语言模型"]
+scenarios:
+- AI/ML项目
+- 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 27B参数模型实现手机端运行

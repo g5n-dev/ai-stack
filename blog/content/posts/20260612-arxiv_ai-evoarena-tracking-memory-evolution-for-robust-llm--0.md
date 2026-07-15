@@ -1,14 +1,34 @@
 ---
-title: "EvoArena系统追踪动态环境中LLM代理的记忆进化"
-date: 2026-06-12T23:39:03+08:00
+title: EvoArena系统追踪动态环境中LLM代理的记忆进化
+date: 2026-06-12 23:39:03+08:00
 draft: false
-entry_kind: "auto"
-tags: ["LLM代理", "记忆进化", "动态环境", "系统追踪", "自主代理", "鲁棒性", "智能体", "上下文学习"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- LLM代理
+- 记忆进化
+- 动态环境
+- 系统追踪
+- 自主代理
+- 鲁棒性
+- 智能体
+- 上下文学习
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "背景与挑战 大规模语言模型（LLM）智能体在静态基准上表现优异，但真实环境不断变化，要求智能体持续对齐知识、技能与行为。现有评估多假设环境不变，难以反映动态部署需求。 EvoArena 基准 EvoArena 将环境变化建模为跨终端、软件和社会偏好三个领域的渐进更新序列，模拟真实系统的持续演化。任务覆盖从单步指令到跨阶"
+description: 背景与挑战 大规模语言模型（LLM）智能体在静态基准上表现优异，但真实环境不断变化，要求智能体持续对齐知识、技能与行为。现有评估多假设环境不变，难以反映动态部署需求。
+  EvoArena 基准 EvoArena 将环境变化建模为跨终端、软件和社会偏好三个领域的渐进更新序列，模拟真实系统的持续演化。任务覆盖从单步指令到跨阶
 external_url: http://arxiv.org/abs/2606.13681v1
-scenarios: ["大语言模型"]
+scenarios:
+- 大语言模型
+aliases:
+- /posts/20260613-arxiv_ai-evoarena-tracking-memory-evolution-for-robust-llm--0/
+- /posts/20260614-arxiv_ai-evoarena-tracking-memory-evolution-for-robust-llm--0/
+- /posts/20260615-arxiv_ai-evoarena-tracking-memory-evolution-for-robust-llm--0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # EvoArena系统追踪动态环境中LLM代理的记忆进化
@@ -158,9 +178,9 @@ EvoMem 增强了对环境证据的捕获，能够保存完整的动态环境状�
 
 ### 相关文章
 
-- [Alyah：评估阿拉伯语大模型阿联酋方言能力]({{< relref "posts/20260129-blogs_podcasts-alyah-toward-robust-evaluation-of-emirati-dialect--8.md" >}})
-- [DynaWeb：基于模型的强化学习网页智能体框架]({{< relref "posts/20260131-arxiv_ai-dynaweb-model-based-reinforcement-learning-of-web--6.md" >}})
-- [DynaWeb：基于模型的强化学习网页智能体]({{< relref "posts/20260202-arxiv_ai-dynaweb-model-based-reinforcement-learning-of-web--6.md" >}})
-- [迈向智能体系统规模化科学：探究其生效机制与适用场景]({{< relref "posts/20260202-hacker_news-towards-a-science-of-scaling-agent-systems-when-an-10.md" >}})
+- [Alyah：评估阿拉伯语大模型阿联酋方言能力]({{< relref "posts/20260127-blogs_podcasts-alyah-toward-robust-evaluation-of-emirati-dialect--0.md" >}})
+- [DynaWeb：基于模型的强化学习网页智能体框架]({{< relref "posts/20260130-arxiv_ai-dynaweb-model-based-reinforcement-learning-of-web--6.md" >}})
+- [DynaWeb：基于模型的强化学习网页智能体]({{< relref "posts/20260130-arxiv_ai-dynaweb-model-based-reinforcement-learning-of-web--6.md" >}})
+- [迈向智能体系统规模化科学：探究其生效机制与适用场景]({{< relref "posts/20260201-hacker_news-towards-a-science-of-scaling-agent-systems-when-an-11.md" >}})
 - [MemSkill：赋予自进化代理学习与演进记忆技能]({{< relref "posts/20260203-arxiv_ai-memskill-learning-and-evolving-memory-skills-for-s-9.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

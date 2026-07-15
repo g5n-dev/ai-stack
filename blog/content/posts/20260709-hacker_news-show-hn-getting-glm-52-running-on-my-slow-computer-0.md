@@ -1,14 +1,31 @@
 ---
-title: "低配电脑运行GLM 5.2实战"
-date: 2026-07-09T23:40:17+08:00
+title: 低配电脑运行GLM 5.2实战
+date: 2026-07-09 23:40:17+08:00
 draft: false
-entry_kind: "auto"
-tags: ["GLM5.2", "低配电脑", "大模型部署", "推理优化", "开源模型", "硬件限制", "本地运行", "AI推理"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- GLM-5.2
+- 低配电脑
+- 大模型部署
+- 推理优化
+- 开源模型
+- 硬件限制
+- 本地运行
+- AI推理
+categories:
+- 大模型
+- AI 工程
 source: hacker_news
-description: "在资源受限的机器上部署大规模语言模型一直是一项挑战，本文展示了如何在普通慢速电脑上成功运行 GLM 5.2。通过对依赖和内存占用的细致调优，作者提供了实用的配置步骤和经验教训，帮助读者在有限硬件条件下实现高效推理。阅读后，你可以掌握降低内存占用的技巧，并在自己的机器上复现部署方案。"
+description: 在资源受限的机器上部署大规模语言模型一直是一项挑战，本文展示了如何在普通慢速电脑上成功运行 GLM 5.2。通过对依赖和内存占用的细致调优，作者提供了实用的配置步骤和经验教训，帮助读者在有限硬件条件下实现高效推理。阅读后，你可以掌握降低内存占用的技巧，并在自己的机器上复现部署方案。
 external_url: https://github.com/JustVugg/colibri
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+aliases:
+- /posts/20260710-hacker_news-show-hn-getting-glm-52-running-on-my-slow-computer-0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 低配电脑运行GLM 5.2实战
@@ -78,8 +95,8 @@ GLM（广义线性模型）作为经典的统计学习方法，在5.2版本中�
 ### 相关文章
 
 - [Qwen 3.6 27B本地开发的最佳选择]({{< relref "posts/20260629-hacker_news-qwen-36-27b-is-the-sweet-spot-for-local-developmen-0.md" >}})
-- [Step 3.5 Flash 开源基础模型：支持高速深度推理]({{< relref "posts/20260219-hacker_news-step-35-flash-open-source-foundation-model-support-17.md" >}})
+- [Step 3.5 Flash 开源基础模型：支持高速深度推理]({{< relref "posts/20260219-hacker_news-step-35-flash-fast-enough-to-think-reliable-enough-10.md" >}})
 - [Unsloth推出Dynamic 2.0 GGUF模型]({{< relref "posts/20260228-hacker_news-unsloth-dynamic-20-ggufs-1.md" >}})
 - [如何在本地运行 Qwen 3.5 大模型]({{< relref "posts/20260308-hacker_news-how-to-run-qwen-35-locally-16.md" >}})
-- [CyberSecQwen-4B：为何防御性网络安全需要小型本地模型]({{< relref "posts/20260509-blogs_podcasts-cybersecqwen-4b-why-defensive-cyber-needs-small-sp-0.md" >}})
+- [CyberSecQwen-4B：为何防御性网络安全需要小型本地模型]({{< relref "posts/20260508-blogs_podcasts-cybersecqwen-4b-why-defensive-cyber-needs-small-sp-0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*

@@ -21,6 +21,10 @@ description: 面对 Cursor、Copilot 等主流工具，OpenCode 提供了一种�
 external_url: https://juejin.cn/post/7613785351649329167
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # OpenCode 配置指南与高效使用手册
@@ -181,8 +185,8 @@ OpenCode 不仅可以写代码，也是强大的代码审计辅助工具：
 
 ### 相关文章
 
-- [Claude Code 广泛集成至微软内部开发环境]({{< relref "posts/20260202-hacker_news-claude-code-is-suddenly-everywhere-inside-microsof-15.md" >}})
+- [Claude Code 广泛集成至微软内部开发环境]({{< relref "posts/20260202-hacker_news-claude-code-is-suddenly-everywhere-inside-microsof-2.md" >}})
 - [Claude Code 全面集成至微软内部开发工作流]({{< relref "posts/20260202-hacker_news-claude-code-is-suddenly-everywhere-inside-microsof-2.md" >}})
-- [Claude Code 全面集成至微软内部开发工作流]({{< relref "posts/20260202-hacker_news-claude-code-is-suddenly-everywhere-inside-microsof-6.md" >}})
-- [Claude Code 全面接入微软开发环境]({{< relref "posts/20260202-hacker_news-claude-code-is-suddenly-everywhere-inside-microsof-8.md" >}})
-- [LNAI：一次定义 AI 编码工具配置并同步至 Claude 与 Cursor]({{< relref "posts/20260203-hacker_news-lnai-define-ai-coding-tool-configs-once-sync-to-cl-17.md" >}})
+- [Claude Code 全面集成至微软内部开发工作流]({{< relref "posts/20260202-hacker_news-claude-code-is-suddenly-everywhere-inside-microsof-2.md" >}})
+- [Claude Code 全面接入微软开发环境]({{< relref "posts/20260202-hacker_news-claude-code-is-suddenly-everywhere-inside-microsof-2.md" >}})
+- [LNAI：一次定义 AI 编码工具配置并同步至 Claude 与 Cursor]({{< relref "posts/20260203-hacker_news-lnai-define-ai-coding-tool-configs-once-sync-to-cl-3.md" >}})

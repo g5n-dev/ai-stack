@@ -8,7 +8,7 @@ tags:
 - LLM
 - 输出解析
 - 结构化数据
-- Prompt工程
+- Prompt 工程
 - Python
 - 开发教程
 - RAG
@@ -23,6 +23,10 @@ scenarios:
 - AI/ML项目
 - 大语言模型
 - RAG应用
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # LangChain结果解析器：将大模型非结构化输出转为结构化数据

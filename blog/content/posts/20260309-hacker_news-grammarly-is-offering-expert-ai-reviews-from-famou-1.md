@@ -8,7 +8,7 @@ tags:
 - AI写作
 - 个性化风格
 - 名人作家
-- 生成式AI
+- 生成式 AI
 - 写作辅助
 - NLP
 - 产品功能
@@ -21,6 +21,10 @@ external_url: https://www.wired.com/story/grammarly-is-offering-expert-ai-review
 scenarios:
 - AI/ML项目
 - 自然语言处理
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Grammarly推出生者与逝者名作家风格的AI写作审阅

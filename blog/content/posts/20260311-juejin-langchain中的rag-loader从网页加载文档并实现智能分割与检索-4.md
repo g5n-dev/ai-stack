@@ -23,6 +23,10 @@ scenarios:
 - AI/ML项目
 - RAG应用
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # LangChain RAG Loader：网页文档加载、智能分割与检索实现

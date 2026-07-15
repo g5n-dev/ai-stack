@@ -1,12 +1,30 @@
 ---
-title: "🇫🇷 法国向科技巨头宣战！自研视频会议App能否终结美企垄断？"
-date: 2026-01-26T22:15:20+08:00
+title: 🇫🇷 法国向科技巨头宣战！自研视频会议App能否终结美企垄断？
+date: 2026-01-26 22:15:20+08:00
 draft: false
-entry_kind: "auto"
-tags: ["数字主权", "数据隐私", "Tchap", "Zoom", "法国", "视频会议", "基础设施", "去中心化"]
-categories: ["开源生态", "安全"]
+entry_kind: auto
+tags:
+- 数字主权
+- 数据隐私
+- Tchap
+- Zoom
+- 法国
+- 视频会议
+- 基础设施
+- 去中心化
+categories:
+- 开源生态
+- 安全
 source: hacker_news
 external_url: https://twitter.com/lellouchenico/status/2015775970330882319
+scenarios: []
+aliases:
+- /posts/20260127-hacker_news-france-aiming-to-replace-zoom-google-meet-microsof-15/
+- /posts/20260127-hacker_news-france-aiming-to-replace-zoom-google-meet-microsof-17/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 📰 🇫🇷 法国向科技巨头宣战！自研视频会议App能否终结美企垄断？
@@ -189,7 +207,6 @@ DINUM 采购并部署了 **Dialow** 等法国本土开发的视频会议解决�
 这种方案赋予了大学对其数字工具的完全控制权。教授们可以不受限制地进行长达数小时的在线讲座，而无需担心会议时长限制或数据被监听。这不仅保护了学生和研究人员的隐私，也促进了开放源代码软件在学术界的普及，成为了欧洲教育领域去中心化通信的典范 🌍。
 
 ---
-## ✅ 最佳实践
 
 ## 最佳实践指南：构建自主可控的数字化办公平台
 

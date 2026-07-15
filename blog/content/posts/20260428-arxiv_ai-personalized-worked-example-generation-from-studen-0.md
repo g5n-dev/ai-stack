@@ -1,14 +1,30 @@
 ---
-title: "基于模式知识组件的个性化示例生成方法"
-date: 2026-04-28T23:33:32+08:00
+title: 基于模式知识组件的个性化示例生成方法
+date: 2026-04-28 23:33:32+08:00
 draft: false
-entry_kind: "auto"
-tags: ["知识组件", "个性化学习", "示例生成", "代码辅导", "教育技术", "模式识别", "自适应学习", "编程教育"]
-categories: ["论文", "AI 工程"]
+entry_kind: auto
+tags:
+- 知识组件
+- 个性化学习
+- 示例生成
+- 代码辅导
+- 教育技术
+- 模式识别
+- 自适应学习
+- 编程教育
+categories:
+- 论文
+- AI 工程
 source: arxiv
-description: "研究背景 自适应编程练习常依赖固定的工作示例库和练习题，编写成本高且难以匹配学生实际产生的逻辑错误和部分解。导致学习内容针对性不足，教师需额外投入或接受粗略个性化。 方法 提出一种基于知识组件（KC）的教育内容生成框架。先从学生代码中通过抽象语法树（AST）分析提取结构性KC模式，再将这些模式作为条件输入生成模型。聚焦"
+description: 研究背景 自适应编程练习常依赖固定的工作示例库和练习题，编写成本高且难以匹配学生实际产生的逻辑错误和部分解。导致学习内容针对性不足，教师需额外投入或接受粗略个性化。
+  方法 提出一种基于知识组件（KC）的教育内容生成框架。先从学生代码中通过抽象语法树（AST）分析提取结构性KC模式，再将这些模式作为条件输入生成模型。聚焦
 external_url: http://arxiv.org/abs/2604.24758v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 基于模式知识组件的个性化示例生成方法
@@ -136,9 +152,9 @@ scenarios: ["Web应用开发"]
 
 ### 相关文章
 
-- [AI如何理解视觉搜索：技术原理解析]({{< relref "posts/20260306-blogs_podcasts-ask-a-techspert-how-does-ai-understand-my-visual-s-6.md" >}})
-- [AI 视觉搜索技术解析：如何理解图像内容]({{< relref "posts/20260309-blogs_podcasts-ask-a-techspert-how-does-ai-understand-my-visual-s-9.md" >}})
+- [AI如何理解视觉搜索：技术原理解析]({{< relref "posts/20260305-blogs_podcasts-ask-a-techspert-how-does-ai-understand-my-visual-s-0.md" >}})
+- [AI 视觉搜索技术解析：如何理解图像内容]({{< relref "posts/20260305-blogs_podcasts-ask-a-techspert-how-does-ai-understand-my-visual-s-0.md" >}})
 - [FISMO：基于Fisher结构的动量正交化优化器]({{< relref "posts/20260130-arxiv_ai-fismo-fisher-structured-momentum-orthogonalized-op-4.md" >}})
 - [为何Adam在$β_1=β_2$时更优：缺失的梯度尺度不变性原理]({{< relref "posts/20260130-arxiv_ai-why-adam-works-better-with-β_1-β_2-the-missing-gra-8.md" >}})
-- [面向异构数据的自适应子网络路由方法]({{< relref "posts/20260131-arxiv_ai-routing-the-lottery-adaptive-subnetworks-for-heter-8.md" >}})
+- [面向异构数据的自适应子网络路由方法]({{< relref "posts/20260130-arxiv_ai-routing-the-lottery-adaptive-subnetworks-for-heter-8.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

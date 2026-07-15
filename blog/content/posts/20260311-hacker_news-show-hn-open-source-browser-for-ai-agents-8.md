@@ -22,6 +22,12 @@ external_url: https://github.com/theredsix/agent-browser-protocol
 scenarios:
 - AI/ML项目
 - Web应用开发
+aliases:
+- /posts/20260311-hacker_news-show-hn-open-source-browser-for-ai-agents-14/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 面向AI智能体的开源浏览器
@@ -243,7 +249,7 @@ Puppeteer 和 Playwright 是强大的自动化工具，但它们是为确定性�
 ### 相关文章
 
 - [Smooth CLI：面向 AI 智能体的低 Token 浏览器]({{< relref "posts/20260206-hacker_news-show-hn-smooth-cli-token-efficient-browser-for-ai--11.md" >}})
-- [Smooth CLI：面向 AI 智能体的低 Token 开销浏览器]({{< relref "posts/20260207-hacker_news-show-hn-smooth-cli-token-efficient-browser-for-ai--17.md" >}})
-- [Zuckerman：具备代码自编辑能力的极简个人AI智能体]({{< relref "posts/20260201-hacker_news-show-hn-zuckerman-minimalist-personal-ai-agent-tha-13.md" >}})
+- [Smooth CLI：面向 AI 智能体的低 Token 开销浏览器]({{< relref "posts/20260206-hacker_news-show-hn-smooth-cli-token-efficient-browser-for-ai--11.md" >}})
+- [Zuckerman：具备代码自编辑能力的极简个人AI智能体]({{< relref "posts/20260201-hacker_news-show-hn-zuckerman-minimalist-personal-ai-agent-tha-12.md" >}})
 - [OpenClaw：开源自托管AI Agent网关与自动化任务调度]({{< relref "posts/20260309-juejin-openclaw-学习小组初识-2.md" >}})
 - [Zuckerman：极简个人AI代理，具备代码自编辑能力]({{< relref "posts/20260201-hacker_news-show-hn-zuckerman-minimalist-personal-ai-agent-tha-12.md" >}})

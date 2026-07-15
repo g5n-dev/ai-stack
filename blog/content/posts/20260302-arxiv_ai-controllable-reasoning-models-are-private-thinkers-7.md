@@ -21,6 +21,10 @@ description: '**可控推理模型：隐私保护的“思想者”** **核心�
 external_url: http://arxiv.org/abs/2602.24210v1
 scenarios:
 - AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 可控推理模型：具备隐私保护能力的思维链
@@ -137,7 +141,6 @@ AI代理通常需要访问敏感用户数据，但其推理过程往往难以控
 
 ---
 
-### 深入分析：可控推理模型作为隐私保护的思想者
 
 ### 1. 研究背景与问题
 
@@ -426,7 +429,7 @@ AI代理通常需要访问敏感用户数据，但其推理过程往往难以控
 ### 相关文章
 
 - [OpenAI 如何防范 AI 代理点击链接时的数据泄露与提示注入]({{< relref "posts/20260129-blogs_podcasts-keeping-your-data-safe-when-an-ai-agent-clicks-a-l-5.md" >}})
-- [OpenAI 如何在 AI 代理点击链接时保护用户数据安全]({{< relref "posts/20260129-blogs_podcasts-keeping-your-data-safe-when-an-ai-agent-clicks-a-l-7.md" >}})
-- [OpenAI 如何防范 AI 代理点击链接时的数据外泄与提示注入]({{< relref "posts/20260129-blogs_podcasts-keeping-your-data-safe-when-an-ai-agent-clicks-a-l-8.md" >}})
+- [OpenAI 如何在 AI 代理点击链接时保护用户数据安全]({{< relref "posts/20260129-blogs_podcasts-keeping-your-data-safe-when-an-ai-agent-clicks-a-l-5.md" >}})
+- [OpenAI 如何防范 AI 代理点击链接时的数据外泄与提示注入]({{< relref "posts/20260129-blogs_podcasts-keeping-your-data-safe-when-an-ai-agent-clicks-a-l-5.md" >}})
 - [Android AI Agent四层架构与安全设计实战解析]({{< relref "posts/20260226-juejin-android-平台-ai-agent-技术架构深度解析-3.md" >}})
-- [MaliciousCorgi：AI插件将代码发送至中国]({{< relref "posts/20260202-hacker_news-maliciouscorgi-ai-extensions-send-your-code-to-chi-7.md" >}})
+- [MaliciousCorgi：AI插件将代码发送至中国]({{< relref "posts/20260202-hacker_news-maliciouscorgi-ai-extensions-send-your-code-to-chi-5.md" >}})

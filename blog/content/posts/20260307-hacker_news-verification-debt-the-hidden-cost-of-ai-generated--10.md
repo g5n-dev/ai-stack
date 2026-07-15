@@ -4,7 +4,7 @@ date: 2026-03-07 19:15:50+08:00
 draft: false
 entry_kind: auto
 tags:
-- AI编程
+- AI 编程
 - 代码质量
 - 技术债务
 - 验证成本
@@ -22,6 +22,10 @@ external_url: https://fazy.medium.com/agentic-coding-ais-adolescence-b0d13452f98
 scenarios:
 - AI/ML项目
 - 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # AI生成代码的隐性成本：验证债务

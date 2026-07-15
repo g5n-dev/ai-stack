@@ -1,14 +1,30 @@
 ---
-title: "最后一篇人类撰写的论文：智能体原生研究产物"
-date: 2026-04-28T03:12:40+08:00
+title: 最后一篇人类撰写的论文：智能体原生研究产物
+date: 2026-04-28 03:12:40+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Ara协议", "AI代理", "科研范式", "可执行规格", "失败轨迹", "代码规范", "智能评审", "复现能力"]
-categories: ["论文", "AI 工程"]
+entry_kind: auto
+tags:
+- Ara协议
+- AI 代理
+- 科研范式
+- 可执行规格
+- 失败轨迹
+- 代码规范
+- 智能评审
+- 复现能力
+categories:
+- 论文
+- AI 工程
 source: arxiv
-description: "背景 科学出版物把迭代、分支的研究过程压缩成线性叙事，导致两方面的税收：叙事税收（失败的实验、被否决的假设被丢弃）和工程税收（审查所需的描述与可执行规格之间的差距导致实现细节缺失）。这对人类读者可接受，但对需要理解、复现、扩展工作的 AI 代理是致命的。 Ara 协议结构 为此提出 Agent‑Native Resea"
+description: 背景 科学出版物把迭代、分支的研究过程压缩成线性叙事，导致两方面的税收：叙事税收（失败的实验、被否决的假设被丢弃）和工程税收（审查所需的描述与可执行规格之间的差距导致实现细节缺失）。这对人类读者可接受，但对需要理解、复现、扩展工作的
+  AI 代理是致命的。 Ara 协议结构 为此提出 Agent‑Native Resea
 external_url: http://arxiv.org/abs/2604.24658v1
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 最后一篇人类撰写的论文：智能体原生研究产物
@@ -155,9 +171,9 @@ Ara 通过四层结构将科研叙事与工程实现统一为机器可执行工�
 
 ### 相关文章
 
-- [为何推出首个科学AI播客及工程师应关注的原因]({{< relref "posts/20260129-blogs_podcasts-its-time-to-science-1.md" >}})
-- [LLM 单独使用无法治愈癌症：科学与模拟的局限]({{< relref "posts/20260212-blogs_podcasts-the-scientist-and-the-simulator-11.md" >}})
-- [TeamOut：利用AI代理规划公司团建活动]({{< relref "posts/20260225-hacker_news-launch-hn-teamout-yc-w22-ai-agent-for-planning-com-14.md" >}})
+- [为何推出首个科学AI播客及工程师应关注的原因]({{< relref "posts/20260129-blogs_podcasts-its-time-to-science-0.md" >}})
+- [LLM 单独使用无法治愈癌症：科学与模拟的局限]({{< relref "posts/20260210-blogs_podcasts-the-scientist-and-the-simulator-0.md" >}})
+- [TeamOut：利用AI代理规划公司团建活动]({{< relref "posts/20260225-hacker_news-launch-hn-teamout-yc-w22-ai-agent-for-planning-com-7.md" >}})
 - [波音747工程史对现代AI编程代理的启示]({{< relref "posts/20260228-hacker_news-747s-and-coding-agents-8.md" >}})
-- [OpenAI发布GPT 5.4：集成CUA模型，实现知识工作与编程SOTA]({{< relref "posts/20260309-blogs_podcasts-ainews-gpt-54-sota-knowledge-work-and-coding-and-c-4.md" >}})
+- [OpenAI发布GPT 5.4：集成CUA模型，实现知识工作与编程SOTA]({{< relref "posts/20260306-blogs_podcasts-ainews-gpt-54-sota-knowledge-work-and-coding-and-c-0.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

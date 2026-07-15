@@ -22,6 +22,10 @@ external_url: https://juejin.cn/post/7617784118893494326
 scenarios:
 - AI/ML项目
 - 后端开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # OpenClaw Skills 功能集成与开发指南
@@ -121,8 +125,8 @@ OpenClaw Skills 的发布标志着 AI 智能体开发从“单体大模型调用
 
 ### 相关文章
 
-- [OpenClaw：GitHub 增长最快的开源 AI 智能体框架]({{< relref "posts/20260213-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-7.md" >}})
+- [OpenClaw：GitHub 增长最快的开源 AI 智能体框架]({{< relref "posts/20260212-blogs_podcasts-491-openclaw-the-viral-ai-agent-that-broke-the-int-0.md" >}})
 - [OpenClaw：比Apple Intelligence更实用的本地AI工具]({{< relref "posts/20260205-hacker_news-openclaw-is-what-apple-intelligence-should-have-be-0.md" >}})
-- [GitHub 推出 Agentic Workflows：赋能 AI 智能体开发流程]({{< relref "posts/20260208-hacker_news-github-agentic-workflows-10.md" >}})
+- [GitHub 推出 Agentic Workflows：赋能 AI 智能体开发流程]({{< relref "posts/20260208-hacker_news-github-agentic-workflows-3.md" >}})
 - [Clawdbot接入OpenClaw，飞书部署个人AI助理教程]({{< relref "posts/20260212-juejin-clawdbot无痛升级openclaw飞书变个人ai助理保姆级教程-1.md" >}})
 - [OpenClaw集成peekaboo实现Mac界面自动化控制]({{< relref "posts/20260213-juejin-openclaw安装peekaboomac-超详细-3.md" >}})

@@ -1,14 +1,31 @@
 ---
-title: "Her：Claude Code会话分析工具"
-date: 2026-06-07T10:48:31+08:00
+title: Her：Claude Code会话分析工具
+date: 2026-06-07 10:48:31+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Claude Code", "会话分析", "AI编程", "开发工具", "代码审查", "LLM", "效率工具", "调试"]
-categories: ["开发工具", "AI 工程"]
+entry_kind: auto
+tags:
+- Claude Code
+- 会话分析
+- AI 编程
+- 开发工具
+- 代码审查
+- LLM
+- 效率工具
+- 调试
+categories:
+- 开发工具
+- AI 工程
 source: blogs_podcasts
-description: "Her 是一款专为 Claude Code 会话设计的调试与追踪工具，帮助开发者直观审视每一次交互的内部流程。它通过记录关键事件、捕获异常堆栈并生成可搜索的会话快照，让定位隐蔽问题变得高效。本文将展示 Her 的核心功能、在 VS Code 中的集成步骤，以及如何利用其报告快速诊断会话行为，提升开发与调试的流畅度。"
+description: Her 是一款专为 Claude Code 会话设计的调试与追踪工具，帮助开发者直观审视每一次交互的内部流程。它通过记录关键事件、捕获异常堆栈并生成可搜索的会话快照，让定位隐蔽问题变得高效。本文将展示
+  Her 的核心功能、在 VS Code 中的集成步骤，以及如何利用其报告快速诊断会话行为，提升开发与调试的流畅度。
 external_url: https://huggingface.co/blog/build-small-hackathon/her-blog
-scenarios: ["AI/ML项目", "大语言模型"]
+scenarios:
+- AI/ML项目
+- 大语言模型
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Her：Claude Code会话分析工具
@@ -142,7 +159,7 @@ Her 能够显著提升 Claude Code 调试效率并帮助构建可信的 AI 代�
 
 - [Claude Code 令牌消耗过高问题分析]({{< relref "posts/20260221-hacker_news-excessive-token-usage-in-claude-code-7.md" >}})
 - [65行Markdown打造Claude Code热门项目]({{< relref "posts/20260212-hacker_news-65-lines-of-markdown-a-claude-code-sensation-2.md" >}})
-- [Codex 应用：基于 OpenAI 模型的代码生成工具]({{< relref "posts/20260203-hacker_news-the-codex-app-12.md" >}})
-- [Claude Code 配额耗尽时接入本地模型的方法]({{< relref "posts/20260205-hacker_news-claude-code-connect-to-a-local-model-when-your-quo-1.md" >}})
-- [Claude Code 配额耗尽后接入本地模型的方法]({{< relref "posts/20260205-hacker_news-claude-code-connect-to-a-local-model-when-your-quo-15.md" >}})
+- [Codex 应用：基于 OpenAI 模型的代码生成工具]({{< relref "posts/20260202-hacker_news-the-codex-app-1.md" >}})
+- [Claude Code 配额耗尽时接入本地模型的方法]({{< relref "posts/20260204-hacker_news-claude-code-connect-to-a-local-model-when-your-quo-5.md" >}})
+- [Claude Code 配额耗尽后接入本地模型的方法]({{< relref "posts/20260204-hacker_news-claude-code-connect-to-a-local-model-when-your-quo-5.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

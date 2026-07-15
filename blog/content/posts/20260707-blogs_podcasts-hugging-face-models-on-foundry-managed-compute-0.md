@@ -1,14 +1,30 @@
 ---
-title: "Foundry托管计算部署Hugging Face模型指南"
-date: 2026-07-07T16:52:53+08:00
+title: Foundry托管计算部署Hugging Face模型指南
+date: 2026-07-07 16:52:53+08:00
 draft: false
-entry_kind: "auto"
-tags: ["模型部署", "托管计算", "大模型", "AI工程", "推理服务", "容器化", "MLOps", "Foundry"]
-categories: ["AI 工程", "系统与基础设施"]
+entry_kind: auto
+tags:
+- 模型部署
+- 托管计算
+- 大模型
+- AI 工程
+- 推理服务
+- 容器化
+- MLOps
+- Foundry
+categories:
+- AI 工程
+- 系统与基础设施
 source: blogs_podcasts
-description: "本文演示如何在 Foundry Managed Compute 平台上部署 Hugging Face 模型，涵盖从模型获取、容器化配置到自动化推理的全过程。利用平台提供的弹性资源和统一监控，可显著降低运维复杂度并提升服务响应速度。通过具体操作示例，读者可以快速掌握部署要点，实现 AI 业务的高效上线。"
+description: 本文演示如何在 Foundry Managed Compute 平台上部署 Hugging Face 模型，涵盖从模型获取、容器化配置到自动化推理的全过程。利用平台提供的弹性资源和统一监控，可显著降低运维复杂度并提升服务响应速度。通过具体操作示例，读者可以快速掌握部署要点，实现
+  AI 业务的高效上线。
 external_url: https://huggingface.co/blog/microsoft/foundry-managed-compute
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Foundry托管计算部署Hugging Face模型指南
@@ -128,9 +144,9 @@ Foundry Managed Compute 通过统一平台实现 Hugging Face 模型的一键部
 
 ### 相关文章
 
-- [2025年Amazon SageMaker AI可观测性、模型定制与托管功能增强]({{< relref "posts/20260223-blogs_podcasts-amazon-sagemaker-ai-in-2025-a-year-in-review-part--8.md" >}})
+- [2025年Amazon SageMaker AI可观测性、模型定制与托管功能增强]({{< relref "posts/20260220-blogs_podcasts-amazon-sagemaker-ai-in-2025-a-year-in-review-part--1.md" >}})
 - [Sonrai 利用 SageMaker AI 构建合规 MLOps 框架，加速精准医疗临床试验]({{< relref "posts/20260223-blogs_podcasts-how-sonrai-uses-amazon-sagemaker-ai-to-accelerate--0.md" >}})
-- [Sonrai 联手 AWS 构建 MLOps 框架加速精准医学试验]({{< relref "posts/20260224-blogs_podcasts-how-sonrai-uses-amazon-sagemaker-ai-to-accelerate--8.md" >}})
-- [Sonrai 联合 AWS SageMaker 构建 MLOps 框架，加速精准医学临床试验]({{< relref "posts/20260224-blogs_podcasts-how-sonrai-uses-amazon-sagemaker-ai-to-accelerate--9.md" >}})
-- [Sonrai携手AWS SageMaker构建MLOps框架加速精准医学试验]({{< relref "posts/20260225-blogs_podcasts-how-sonrai-uses-amazon-sagemaker-ai-to-accelerate--12.md" >}})
+- [Sonrai 联手 AWS 构建 MLOps 框架加速精准医学试验]({{< relref "posts/20260223-blogs_podcasts-how-sonrai-uses-amazon-sagemaker-ai-to-accelerate--0.md" >}})
+- [Sonrai 联合 AWS SageMaker 构建 MLOps 框架，加速精准医学临床试验]({{< relref "posts/20260223-blogs_podcasts-how-sonrai-uses-amazon-sagemaker-ai-to-accelerate--0.md" >}})
+- [Sonrai携手AWS SageMaker构建MLOps框架加速精准医学试验]({{< relref "posts/20260223-blogs_podcasts-how-sonrai-uses-amazon-sagemaker-ai-to-accelerate--0.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与方法论思考。*

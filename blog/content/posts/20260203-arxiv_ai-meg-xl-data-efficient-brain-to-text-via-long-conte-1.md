@@ -1,14 +1,31 @@
 ---
-title: "MEG-XL：基于长上下文预训练的高效脑电转文本模型"
-date: 2026-02-03T23:08:59+08:00
+title: MEG-XL：基于长上下文预训练的高效脑电转文本模型
+date: 2026-02-03 23:08:59+08:00
 draft: false
-entry_kind: "auto"
-tags: ["MEG-XL", "脑机接口", "BCI", "长上下文", "脑电转文本", "预训练", "数据效率", "cs.LG"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- MEG-XL
+- 脑机接口
+- BCI
+- 长上下文
+- 脑电转文本
+- 预训练
+- 数据效率
+- cs.LG
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "**MEG-XL：基于长上下文预训练的高效脑电-文本转换模型** **核心背景与问题** 针对瘫痪患者的临床脑机接口（BCI）面临一个主要挑战：由于患者无法提供长时间的大规模训练数据，导致数据样本极其有限。虽然预训练技术可以通过学习跨受试者的统计先验来提高数据效率，但现有方法通常仅使用几秒钟的上下文进行预训练，这与自然"
+description: '**MEG-XL：基于长上下文预训练的高效脑电-文本转换模型** **核心背景与问题** 针对瘫痪患者的临床脑机接口（BCI）面临一个主要挑战：由于患者无法提供长时间的大规模训练数据，导致数据样本极其有限。虽然预训练技术可以通过学习跨受试者的统计先验来提高数据效率，但现有方法通常仅使用几秒钟的上下文进行预训练，这与自然'
 external_url: http://arxiv.org/abs/2602.02494v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+aliases:
+- /posts/20260204-arxiv_ai-meg-xl-data-efficient-brain-to-text-via-long-conte-1/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # MEG-XL：基于长上下文预训练的高效脑电转文本模型
@@ -249,7 +266,6 @@ MEG-XL从实证角度验证了一个假设：**神经语言表征具有极长的
 *   **非平稳
 
 ---
-## 研究最佳实践
 
 ## 最佳实践指南
 
@@ -344,7 +360,6 @@ MEG-XL 的核心突破在于证明了通过增加预训练数据的上下文长�
 - 研究团队通过消融实验验证了长上下文建模对提升解码准确性的关键作用，为后续研究提供了重要参考。
 
 ---
-## 学习路径
 
 ## 学习路径
 
@@ -502,9 +517,9 @@ MEG-XL 的核心突破在于证明了通过增加预训练数据的上下文长�
 
 ### 相关文章
 
-- [TEON：张量化正交化方法优化大语言模型预训练]({{< relref "posts/20260203-arxiv_ai-teon-tensorized-orthonormalization-beyond-layer-wi-9.md" >}})
+- [TEON：张量化正交化方法优化大语言模型预训练]({{< relref "posts/20260202-arxiv_ai-teon-tensorized-orthonormalization-beyond-layer-wi-9.md" >}})
 - [混合线性注意力新架构：高效蒸馏与极长上下文处理]({{< relref "posts/20260130-arxiv_ai-hybrid-linear-attention-done-right-efficient-disti-2.md" >}})
-- [混合线性注意力新架构：高效蒸馏与超长上下文建模]({{< relref "posts/20260131-arxiv_ai-hybrid-linear-attention-done-right-efficient-disti-2.md" >}})
-- [混合线性注意力新架构：高效蒸馏与超长上下文处理]({{< relref "posts/20260201-arxiv_ai-hybrid-linear-attention-done-right-efficient-disti-2.md" >}})
-- [混合线性注意力新架构：高效蒸馏与超长上下文处理]({{< relref "posts/20260202-arxiv_ai-hybrid-linear-attention-done-right-efficient-disti-2.md" >}})
+- [混合线性注意力新架构：高效蒸馏与超长上下文建模]({{< relref "posts/20260130-arxiv_ai-hybrid-linear-attention-done-right-efficient-disti-2.md" >}})
+- [混合线性注意力新架构：高效蒸馏与超长上下文处理]({{< relref "posts/20260130-arxiv_ai-hybrid-linear-attention-done-right-efficient-disti-2.md" >}})
+- [混合线性注意力新架构：高效蒸馏与超长上下文处理]({{< relref "posts/20260130-arxiv_ai-hybrid-linear-attention-done-right-efficient-disti-2.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

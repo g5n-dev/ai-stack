@@ -1,14 +1,29 @@
 ---
-title: "Claude Code新增goal功能：自动跨轮执行至目标达成"
-date: 2026-05-13T03:46:42+08:00
+title: Claude Code新增goal功能：自动跨轮执行至目标达成
+date: 2026-05-13 03:46:42+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Claude Code", "goal功能", "AI自动化", "编程助手", "Haiku评估器", "跨轮执行", "开发者工具", "效率提升"]
-categories: ["开发工具"]
+entry_kind: auto
+tags:
+- Claude Code
+- goal功能
+- AI自动化
+- 编程助手
+- Haiku评估器
+- 跨轮执行
+- 开发者工具
+- 效率提升
+categories:
+- 开发工具
 source: juejin
-description: "Claude Code 新增的 goal 功能使用户能够设定明确的完成条件。设定后，Claude 会在每轮交互后调用 Haiku 评估器判断是否已达成目标，若未达标则自动进入下一轮继续工作，直至条件满足后自行停止。该特性支持非交互式的一键跑到底，适合批量处理或长时间任务。要求版本不低于 v2.1.139。"
+description: Claude Code 新增的 goal 功能使用户能够设定明确的完成条件。设定后，Claude 会在每轮交互后调用 Haiku 评估器判断是否已达成目标，若未达标则自动进入下一轮继续工作，直至条件满足后自行停止。该特性支持非交互式的一键跑到底，适合批量处理或长时间任务。要求版本不低于
+  v2.1.139。
 external_url: https://juejin.cn/post/7638983028574437419
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Claude Code新增goal功能：自动跨轮执行至目标达成
@@ -86,9 +101,9 @@ Claude Code推出的goal功能标志着AI辅助开发从“对话式交互”向
 
 ### 相关文章
 
-- [Anthropic为何认为AI应拥有专属电脑]({{< relref "posts/20260318-blogs_podcasts-why-anthropic-thinks-ai-should-have-its-own-comput-1.md" >}})
+- [Anthropic为何认为AI应拥有专属电脑]({{< relref "posts/20260317-blogs_podcasts-why-anthropic-thinks-ai-should-have-its-own-comput-0.md" >}})
 - [Claude Code 全面集成至微软内部开发工作流]({{< relref "posts/20260202-hacker_news-claude-code-is-suddenly-everywhere-inside-microsof-2.md" >}})
-- [Claude Code 全面接入微软开发环境]({{< relref "posts/20260202-hacker_news-claude-code-is-suddenly-everywhere-inside-microsof-7.md" >}})
-- [Xcode 26.3 集成编程助手，开发者可直接调用智能体]({{< relref "posts/20260204-hacker_news-xcode-263-developers-can-leverage-coding-agents-di-10.md" >}})
+- [Claude Code 全面接入微软开发环境]({{< relref "posts/20260202-hacker_news-claude-code-is-suddenly-everywhere-inside-microsof-2.md" >}})
+- [Xcode 26.3 集成编程助手，开发者可直接调用智能体]({{< relref "posts/20260203-hacker_news-xcode-263-unlocks-the-power-of-agentic-coding-1.md" >}})
 - [Claude Code Is Being Dumbed Down]({{< relref "posts/20260211-hacker_news-claude-code-is-being-dumbed-down-1.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

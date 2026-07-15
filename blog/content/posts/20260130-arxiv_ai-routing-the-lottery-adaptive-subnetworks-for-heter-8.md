@@ -1,14 +1,34 @@
 ---
-title: "面向异构数据的自适应子网络路由机制"
-date: 2026-01-30T23:03:03+08:00
+title: 面向异构数据的自适应子网络路由机制
+date: 2026-01-30 23:03:03+08:00
 draft: false
-entry_kind: "auto"
-tags: ["模型剪枝", "异构数据", "子网络", "自适应路由", "彩票假说", "CS.AI", "神经网络", "模型压缩"]
-categories: ["论文", "大模型"]
+entry_kind: auto
+tags:
+- 模型剪枝
+- 异构数据
+- 子网络
+- 自适应路由
+- 彩票假说
+- CS.AI
+- 神经网络
+- 模型压缩
+categories:
+- 论文
+- 大模型
 source: arxiv
-description: "**Routing the Lottery: Adaptive Subnetworks for Heterogeneous Data 内容总结** 本文提出了一种名为 **“Routing the Lottery”（RTL）** 的自适应剪枝框架，旨在解决现有剪枝方法在处理异构数据时的局限性。 **主要背景与问题：**"
+description: '**Routing the Lottery: Adaptive Subnetworks for Heterogeneous Data 内容总结**
+  本文提出了一种名为 **“Routing the Lottery”（RTL）** 的自适应剪枝框架，旨在解决现有剪枝方法在处理异构数据时的局限性。 **主要背景与问题：**'
 external_url: http://arxiv.org/abs/2601.22141v1
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+aliases:
+- /posts/20260131-arxiv_ai-routing-the-lottery-adaptive-subnetworks-for-heter-8/
+- /posts/20260201-arxiv_ai-routing-the-lottery-adaptive-subnetworks-for-heter-8/
+- /posts/20260202-arxiv_ai-routing-the-lottery-adaptive-subnetworks-for-heter-8/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 面向异构数据的自适应子网络路由机制
@@ -266,7 +286,6 @@ RTL最可能在以下条件下**失败**：
 - **理论推断：** 论文声称子网络崩溃是过度剪
 
 ---
-## 研究最佳实践
 
 ## 最佳实践指南
 
@@ -369,7 +388,6 @@ RTL最可能在以下条件下**失败**：
 - 研究揭示了子网络多样性对模型鲁棒性的重要性，为未来自适应神经网络的设计提供了理论支持。
 
 ---
-## 学习路径
 
 ## 学习路径
 
@@ -542,7 +560,7 @@ RTL最可能在以下条件下**失败**：
 ### 相关文章
 
 - [🚀SONIC: 颠覆频谱学习！神经网络不变性卷积的终极突破？]({{< relref "posts/20260128-arxiv_ai-sonic-spectral-oriented-neural-invariant-convoluti-5.md" >}})
-- [Compressed Agents：Agent Skills 技术解析]({{< relref "posts/20260130-hacker_news-compressed-agentsmd-agent-skills-6.md" >}})
+- [Compressed Agents：Agent Skills 技术解析]({{< relref "posts/20260129-hacker_news-compressed-agentsmd-agent-skills-5.md" >}})
 - [Deep Researcher：序列规划反思与候选交叉]({{< relref "posts/20260129-arxiv_ai-deep-researcher-with-sequential-plan-reflection-an-9.md" >}})
 - [SokoBench：评估大模型长程规划与推理能力]({{< relref "posts/20260129-arxiv_ai-sokobench-evaluating-long-horizon-planning-and-rea-2.md" >}})
 - [Agent Skills：压缩智能体技能以提升模型效率]({{< relref "posts/20260129-hacker_news-compressed-agentsmd-agent-skills-5.md" >}})

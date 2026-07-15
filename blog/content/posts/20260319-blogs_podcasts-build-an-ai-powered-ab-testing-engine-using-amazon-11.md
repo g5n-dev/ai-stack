@@ -20,6 +20,10 @@ description: AI驱动的A/B测试引擎构建指南 概述 本文介绍如何利
 external_url: https://aws.amazon.com/blogs/machine-learning/build-an-ai-powered-a-b-testing-engine-using-amazon-bedrock
 scenarios:
 - Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 使用 Amazon Bedrock 构建 AI 驱动 A/B 测试引擎
@@ -48,7 +52,6 @@ scenarios:
 
 ## 摘要
 
-### 技术架构
 
 ### 核心组件
 
@@ -72,7 +75,6 @@ scenarios:
 - 实现AI模型与外部系统的标准化交互
 - 确保模型能够获取必要的上下文信息
 
-### 核心功能
 
 ### 智能变体分配
 
@@ -146,7 +148,6 @@ AI模型可能学习到虚假的相关性并产生有偏的变体分配。例如
 
 ## 技术分析
 
-### 1. 核心观点深度解读
 
 ### 主要观点
 
@@ -169,9 +170,7 @@ AI模型可能学习到虚假的相关性并产生有偏的变体分配。例如
 
 这种创新使企业能够在保持统计有效性的同时，显著提升用户体验和转化率。
 
-### 2. 关键技术要点
 
-### 技术架构
 
 ```
 ┌─────────────────────────────────────────────────────┐
@@ -217,7 +216,6 @@ AI模型可能学习到虚假的相关性并产生有偏的变体分配。例如
 | 上下文获取 | MCP标准化协议简化集成 |
 | 实验有效性 | 保持基线组随机分配+分层分析 |
 
-### 3. 实际应用价值
 
 ### 适用场景
 
@@ -249,7 +247,6 @@ AI模型可能学习到虚假的相关性并产生有偏的变体分配。例如
 - 保持足够的随机对照组用于统计验证
 - 遵守数据隐私法规(GDPR、个人信息保护法等)
 
-### 4. 行业影响分析
 
 ### 对行业的启示
 
@@ -257,7 +254,6 @@ AI模型可能学习到虚假的相关性并产生有偏的变体分配。例如
 2. **用户体验升级**：从"一刀切"到"千人千面"
 3. **效率提升**：减少无效测试，缩短实验周期
 
-### 可能的变革
 
 ```
 传统模式: 大样本 → 均匀分配 → 事后分析 → 通用结论
@@ -271,7 +267,6 @@ AI模式: 小样本 → 智能分配 → 实时决策 → 个性化体验
 - 实时特征工程与在线学习
 - 可解释AI在实验决策中的应用
 
-### 5. 延伸思考
 
 ### 可拓展方向
 
@@ -285,7 +280,6 @@ AI模式: 小样本 → 智能分配 → 实时决策 → 个性化体验
 - 实时模型更新对实验有效性的影响
 - 多臂老虎机与传统A/B测试的混合策略
 
-### 7. 案例分析
 
 ### 假设场景：电商促销优化
 
@@ -307,7 +301,6 @@ AI模式: 小样本 → 智能分配 → 实时决策 → 个性化体验
 
 避免陷入"过度优化"陷阱：AI可能学习到虚假相关(如将特定设备类型与高转化关联)，导致模型泛化能力下降。
 
-### 8. 哲学与逻辑：论证地图
 
 ### 中心命题
 
@@ -431,8 +424,8 @@ AI驱动的A/B测试通过用户上下文感知和智能变体分配，能够在
 
 ### 相关文章
 
-- [亚马逊利用Nova模型自动化新履约中心运营就绪测试]({{< relref "posts/20260211-blogs_podcasts-how-amazon-uses-amazon-nova-models-to-automate-ope-0.md" >}})
+- [亚马逊利用Nova模型自动化新履约中心运营就绪测试]({{< relref "posts/20260210-blogs_podcasts-how-amazon-uses-amazon-nova-models-to-automate-ope-0.md" >}})
 - [基于Amazon Bedrock AgentCore构建长运行MCP服务器与异步任务管理]({{< relref "posts/20260212-blogs_podcasts-build-long-running-mcp-servers-on-amazon-bedrock-a-1.md" >}})
-- [基于Amazon Bedrock AgentCore构建长时运行MCP服务器集成方案]({{< relref "posts/20260212-blogs_podcasts-build-long-running-mcp-servers-on-amazon-bedrock-a-2.md" >}})
-- [亚马逊利用Nova模型自动化新履约中心运营就绪测试]({{< relref "posts/20260212-blogs_podcasts-how-amazon-uses-amazon-nova-models-to-automate-ope-14.md" >}})
-- [亚马逊利用 Nova 模型自动化新履约中心运营就绪测试]({{< relref "posts/20260212-blogs_podcasts-how-amazon-uses-amazon-nova-models-to-automate-ope-7.md" >}})
+- [基于Amazon Bedrock AgentCore构建长时运行MCP服务器集成方案]({{< relref "posts/20260212-blogs_podcasts-build-long-running-mcp-servers-on-amazon-bedrock-a-1.md" >}})
+- [亚马逊利用Nova模型自动化新履约中心运营就绪测试]({{< relref "posts/20260210-blogs_podcasts-how-amazon-uses-amazon-nova-models-to-automate-ope-0.md" >}})
+- [亚马逊利用 Nova 模型自动化新履约中心运营就绪测试]({{< relref "posts/20260210-blogs_podcasts-how-amazon-uses-amazon-nova-models-to-automate-ope-0.md" >}})

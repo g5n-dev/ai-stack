@@ -58,6 +58,56 @@ class GeneratorGuardRepairTest(unittest.TestCase):
 
         self.assertIn("engaging_intro", result["guard_failed_sections"])
 
+    def test_quality_retry_discards_the_last_invalid_output(self):
+        generator = SuperEnhancedContentGenerator(
+            _FakeClient(["第一次仍不合格", "第二次仍不合格"]),
+            {"quality_retries": 1},
+        )
+
+        with self.assertRaisesRegex(ValueError, "测试章节"):
+            generator._generate_with_quality_retry(
+                prompt="生成一段完整内容",
+                max_tokens=200,
+                temperature=0.2,
+                validator=lambda _text: False,
+                label="测试章节",
+            )
+
+        self.assertEqual(len(generator.client.calls), 2)
+
+    def test_resource_parser_accepts_chinese_and_ascii_colons(self):
+        generator = SuperEnhancedContentGenerator(_FakeClient([]), {"quality_retries": 0})
+
+        resources = generator._parse_resources(
+            "\n".join(
+                [
+                    "名称：项目文档",
+                    "链接：https://example.com/docs",
+                    "说明：官方使用指南",
+                    "",
+                    "Title: API Reference",
+                    "Link: https://example.com/api",
+                    "说明: 接口参考",
+                ]
+            )
+        )
+
+        self.assertEqual(
+            resources,
+            [
+                {
+                    "title": "项目文档",
+                    "link": "https://example.com/docs",
+                    "description": "官方使用指南",
+                },
+                {
+                    "title": "API Reference",
+                    "link": "https://example.com/api",
+                    "description": "接口参考",
+                },
+            ],
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

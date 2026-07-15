@@ -1,14 +1,31 @@
 ---
-title: "Vercel AI SDK v6 新增 generateImage 函数：统一图像模型调用"
-date: 2026-02-15T08:49:57+08:00
+title: Vercel AI SDK v6 新增 generateImage 函数：统一图像模型调用
+date: 2026-02-15 08:49:57+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Vercel AI SDK", "图像生成", "OpenAI", "DALL-E", "generateImage", "多模态", "AI 应用开发", "API 封装"]
-categories: ["AI 工程", "前端"]
+entry_kind: auto
+tags:
+- Vercel AI SDK
+- 图像生成
+- OpenAI
+- DALL-E
+- generateImage
+- 多模态
+- AI 应用开发
+- API 封装
+categories:
+- AI 工程
+- 前端
 source: juejin
-description: "在构建现代 AI 应用时，图像生成功能已成为提升用户体验的关键一环。Vercel AI SDK Core 在 v6 版本中推出了标准化的 函数，旨在解决不同模型间接口差异带来的开发难题。本文将详细介绍如何通过统一的 API 调用 OpenAI DALL·E 等主流模型，并涵盖从环境配置到代码实现的完整流程，帮助开发者高"
+description: 在构建现代 AI 应用时，图像生成功能已成为提升用户体验的关键一环。Vercel AI SDK Core 在 v6 版本中推出了标准化的
+  函数，旨在解决不同模型间接口差异带来的开发难题。本文将详细介绍如何通过统一的 API 调用 OpenAI DALL·E 等主流模型，并涵盖从环境配置到代码实现的完整流程，帮助开发者高
 external_url: https://juejin.cn/post/7606224197803261971
-scenarios: ["AI/ML项目", "后端开发"]
+scenarios:
+- AI/ML项目
+- 后端开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Vercel AI SDK v6 新增 generateImage 函数：统一图像模型调用
@@ -245,9 +262,9 @@ export async function POST(req: Request) {
 
 ### 相关文章
 
-- [kirara-ai：支持多平台接入的多模态AI聊天机器人框架]({{< relref "posts/20260131-github_trending-lss233-kirara-ai-2.md" >}})
-- [Qwen Image 2与Seedance 2：中国生成式媒体模型进展]({{< relref "posts/20260212-blogs_podcasts-ainews-qwen-image-2-and-seedance-2-6.md" >}})
+- [kirara-ai：支持多平台接入的多模态AI聊天机器人框架]({{< relref "posts/20260127-github_trending-lss233-kirara-ai-2.md" >}})
+- [Qwen Image 2与Seedance 2：中国生成式媒体模型进展]({{< relref "posts/20260211-blogs_podcasts-ainews-qwen-image-2-and-seedance-2-0.md" >}})
 - [Vercel AI SDK 实战：利用 Call Options 动态配置 Agent]({{< relref "posts/20260213-juejin-vercel-ai-sdk-使用指南call-options-动态配置-agent-2.md" >}})
 - [Gemini 3 Deep Think 生成鹈鹕骑自行车 SVG 图像]({{< relref "posts/20260214-hacker_news-gemini-3-deep-think-drew-me-a-good-svg-of-a-pelica-2.md" >}})
-- [Qwen Image 2与Seedance 2发布：中国生成式媒体表现强劲]({{< relref "posts/20260211-blogs_podcasts-ainews-qwen-image-2-and-seedance-2-5.md" >}})
+- [Qwen Image 2与Seedance 2发布：中国生成式媒体表现强劲]({{< relref "posts/20260211-blogs_podcasts-ainews-qwen-image-2-and-seedance-2-0.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

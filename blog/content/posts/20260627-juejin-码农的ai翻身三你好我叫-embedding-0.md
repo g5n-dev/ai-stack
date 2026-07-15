@@ -1,14 +1,30 @@
 ---
-title: "Embedding是什么：AI从死记硬背到真正理解"
-date: 2026-06-27T22:26:00+08:00
+title: Embedding是什么：AI从死记硬背到真正理解
+date: 2026-06-27 22:26:00+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Embedding", "向量", "词向量", "语义理解", "语义搜索", "机器学习", "自然语言处理", "技术科普"]
-categories: ["大模型", "AI 工程"]
+entry_kind: auto
+tags:
+- Embedding
+- 向量
+- 词向量
+- 语义理解
+- 语义搜索
+- 机器学习
+- 自然语言处理
+- 技术科普
+categories:
+- 大模型
+- AI 工程
 source: juejin
-description: "Embedding（向量）是把离散的符号（如单词、图像特征等）映射到连续向量空间的技术。通过学习，语义相近的符号在向量空间中距离更近，从而让AI能够“理解”而非死记硬背。相比稀疏的独热编码，Embedding 能捕捉潜在的语义关联，广泛用于词向量、句子向量、物品向量等。常见的训练方法包括 Word2Vec、GloVe、"
+description: Embedding（向量）是把离散的符号（如单词、图像特征等）映射到连续向量空间的技术。通过学习，语义相近的符号在向量空间中距离更近，从而让AI能够“理解”而非死记硬背。相比稀疏的独热编码，Embedding
+  能捕捉潜在的语义关联，广泛用于词向量、句子向量、物品向量等。常见的训练方法包括 Word2Vec、GloVe、
 external_url: https://juejin.cn/post/7655530849447575562
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Embedding是什么：AI从死记硬背到真正理解
@@ -106,6 +122,6 @@ Embedding技术的出现，标志着AI从“机械匹配”走向“语义理解
 - [LLM生成文本检测：原理、方法与技术挑战]({{< relref "posts/20260301-hacker_news-the-science-of-detecting-llm-generated-text-19.md" >}})
 - [LLM中的L代表谎言：大语言模型的幻觉问题分析]({{< relref "posts/20260305-hacker_news-the-l-in-llm-stands-for-lying-9.md" >}})
 - [AI大模型入门：Embedding原理与向量数据库应用]({{< relref "posts/20260305-juejin-ai大模型小白手册embedding-与向量数据库-0.md" >}})
-- [AI大模型指南：Embedding技术与向量数据库原理]({{< relref "posts/20260306-juejin-ai大模型小白手册embedding-与向量数据库-2.md" >}})
-- [构建多模态视频搜索系统：基于Amazon Nova与OpenSearch]({{< relref "posts/20260314-blogs_podcasts-multimodal-embeddings-at-scale-ai-data-lake-for-me-9.md" >}})
+- [AI大模型指南：Embedding技术与向量数据库原理]({{< relref "posts/20260305-juejin-ai大模型小白手册embedding-与向量数据库-0.md" >}})
+- [构建多模态视频搜索系统：基于Amazon Nova与OpenSearch]({{< relref "posts/20260312-blogs_podcasts-multimodal-embeddings-at-scale-ai-data-lake-for-me-0.md" >}})
 *本文由 AI Stack 自动生成，提供深度内容分析。*

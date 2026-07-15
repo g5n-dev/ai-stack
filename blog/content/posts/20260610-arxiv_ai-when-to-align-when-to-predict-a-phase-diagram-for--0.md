@@ -1,14 +1,31 @@
 ---
-title: "多模态学习何时对齐何时预测相位图揭示规律"
-date: 2026-06-10T22:19:43+08:00
+title: 多模态学习何时对齐何时预测相位图揭示规律
+date: 2026-06-10 22:19:43+08:00
 draft: false
-entry_kind: "auto"
-tags: ["多模态学习", "交叉模态对齐", "交叉模态预测", "相位图", "线性模型", "信号噪声模型", "分离比", "表示学习"]
-categories: ["论文"]
+entry_kind: auto
+tags:
+- 多模态学习
+- 交叉模态对齐
+- 交叉模态预测
+- 相位图
+- 线性模型
+- 信号噪声模型
+- 分离比
+- 表示学习
+categories:
+- 论文
 source: arxiv
-description: "研究动机 跨模态对齐（CA）和跨模态预测（CP）是多模态表示学习的两种主流范式，但在实际应用中何时使用哪种方法、跨模态训练是否真的有帮助，一直缺乏系统化的理论指导。尤其在生物医学、天体物理等科学领域，测量手段和噪声结构常常呈现跨视图的干扰，使得标准方法表现不佳。 统一线性模型 作者在“尖峰信号+噪声”模型下引入结构化的"
+description: 研究动机 跨模态对齐（CA）和跨模态预测（CP）是多模态表示学习的两种主流范式，但在实际应用中何时使用哪种方法、跨模态训练是否真的有帮助，一直缺乏系统化的理论指导。尤其在生物医学、天体物理等科学领域，测量手段和噪声结构常常呈现跨视图的干扰，使得标准方法表现不佳。
+  统一线性模型 作者在“尖峰信号+噪声”模型下引入结构化的
 external_url: http://arxiv.org/abs/2606.11190v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+aliases:
+- /posts/20260611-arxiv_ai-when-to-align-when-to-predict-a-phase-diagram-for--0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 多模态学习何时对齐何时预测相位图揭示规律

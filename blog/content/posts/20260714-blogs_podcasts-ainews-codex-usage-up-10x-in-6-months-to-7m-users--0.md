@@ -1,14 +1,30 @@
 ---
-title: "Codex用户数半年增长10倍至700万是否已超Claude Code"
-date: 2026-07-14T15:13:01+08:00
+title: Codex用户数半年增长10倍至700万是否已超Claude Code
+date: 2026-07-14 15:13:01+08:00
 draft: false
-entry_kind: "auto"
-tags: ["Codex", "Claude Code", "用户增长", "代码生成", "AI编程", "大模型", "开发者工具", "竞争分析"]
-categories: ["开发工具", "大模型"]
+entry_kind: auto
+tags:
+- Codex
+- Claude Code
+- 用户增长
+- 代码生成
+- AI 编程
+- 大模型
+- 开发者工具
+- 竞争分析
+categories:
+- 开发工具
+- 大模型
 source: blogs_podcasts
-description: "用户规模激增 Codex 在过去 6 个月里用户数量增长超过 10 倍，已累计达到约 700 万用户；在最近的约一天内又新增约 100 万用户，显示出强劲的增长势头。 与 Claude Code 的对比 该数据引发了对 Codex 是否已超越竞争对手 Claude Code 的猜测。由于 Claude Code 近期未"
+description: 用户规模激增 Codex 在过去 6 个月里用户数量增长超过 10 倍，已累计达到约 700 万用户；在最近的约一天内又新增约 100 万用户，显示出强劲的增长势头。
+  与 Claude Code 的对比 该数据引发了对 Codex 是否已超越竞争对手 Claude Code 的猜测。由于 Claude Code 近期未
 external_url: https://www.latent.space/p/ainews-codex-usage-up-10x-in-6-months
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Codex用户数半年增长10倍至700万是否已超Claude Code

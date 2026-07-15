@@ -1,14 +1,34 @@
 ---
-title: "混合线性注意力新架构：高效蒸馏与极长上下文处理"
-date: 2026-01-30T23:03:03+08:00
+title: 混合线性注意力新架构：高效蒸馏与极长上下文处理
+date: 2026-01-30 23:03:03+08:00
 draft: false
-entry_kind: "auto"
-tags: ["HALO", "HypeNet", "长上下文", "线性注意力", "模型蒸馏", "Transformer", "RNN", "混合架构"]
-categories: ["大模型", "论文"]
+entry_kind: auto
+tags:
+- HALO
+- HypeNet
+- 长上下文
+- 线性注意力
+- 模型蒸馏
+- Transformer
+- RNN
+- 混合架构
+categories:
+- 大模型
+- 论文
 source: arxiv
-description: "本文介绍了 **HALO**（一种将 Transformer 模型蒸馏为 RNN-Attention 混合模型的流程）和 **HypeNet**（一种新型混合架构），旨在解决长上下文建模中的效率与性能平衡问题。主要内容总结如下： **1. 背景与挑战** 结合 Softmax 注意力机制和循环神经网络（RNN）的混合"
+description: 本文介绍了 **HALO**（一种将 Transformer 模型蒸馏为 RNN-Attention 混合模型的流程）和 **HypeNet**（一种新型混合架构），旨在解决长上下文建模中的效率与性能平衡问题。主要内容总结如下：
+  **1. 背景与挑战** 结合 Softmax 注意力机制和循环神经网络（RNN）的混合
 external_url: http://arxiv.org/abs/2601.22156v1
-scenarios: ["Web应用开发"]
+scenarios:
+- Web应用开发
+aliases:
+- /posts/20260131-arxiv_ai-hybrid-linear-attention-done-right-efficient-disti-2/
+- /posts/20260201-arxiv_ai-hybrid-linear-attention-done-right-efficient-disti-2/
+- /posts/20260202-arxiv_ai-hybrid-linear-attention-done-right-efficient-disti-2/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 混合线性注意力新架构：高效蒸馏与极长上下文处理
@@ -243,7 +263,6 @@ scenarios: ["Web应用开发"]
 *   **归纳偏置**：局部依赖关系适合用 Softmax 处理（保留部分层），而全局/长距离依赖关系适合用线性注意力处理（转换大部分层）。
 
 ---
-## 研究最佳实践
 
 ## 最佳实践指南
 
@@ -338,7 +357,6 @@ scenarios: ["Web应用开发"]
 - 通过消融实验验证了分块大小和蒸馏策略对模型性能的影响，为后续优化线性注意力模型提供了重要的实验依据。
 
 ---
-## 学习路径
 
 ## 学习路径
 
@@ -503,8 +521,8 @@ scenarios: ["Web应用开发"]
 ### 相关文章
 
 - [🔥 视频修复难题：如何攻克时间一致性？]({{< relref "posts/20260125-hacker_news-the-temporal-consistency-challenge-in-video-restor-19.md" >}})
-- [PatchFormer：基于分层掩码重建的零样本多步预测时序基础模型]({{< relref "posts/20260130-arxiv_ai-patchformer-a-patch-based-time-series-foundation-m-7.md" >}})
+- [PatchFormer：基于分层掩码重建的零样本多步预测时序基础模型]({{< relref "posts/20260129-arxiv_ai-patchformer-a-patch-based-time-series-foundation-m-7.md" >}})
 - [🔥Post-LayerNorm强势回归！稳定、高效、深度训练的新神器！]({{< relref "posts/20260128-arxiv_ai-post-layernorm-is-back-stable-expressive-and-deep-2.md" >}})
 - [让 Claude 编写 CUDA 内核并指导开源模型]({{< relref "posts/20260129-blogs_podcasts-we-got-claude-to-build-cuda-kernels-and-teach-open-6.md" >}})
-- [Kimi K2.5 技术报告发布：长上下文与推理能力升级]({{< relref "posts/20260130-hacker_news-kimi-k25-technical-report-pdf-1.md" >}})
+- [Kimi K2.5 技术报告发布：长上下文与推理能力升级]({{< relref "posts/20260130-hacker_news-kimi-k25-technical-report-pdf-10.md" >}})
 *本文由 AI Stack 自动生成，深度解读学术研究。*

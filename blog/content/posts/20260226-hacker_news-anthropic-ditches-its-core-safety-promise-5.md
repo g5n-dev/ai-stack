@@ -6,7 +6,7 @@ entry_kind: auto
 tags:
 - Anthropic
 - 模型安全
-- AI治理
+- AI 治理
 - Claude
 - ScalingLaws
 - 风险控制
@@ -21,6 +21,14 @@ description: Anthropic 近期决定不再坚持其“不训练客户数据”的
 external_url: https://www.cnn.com/2026/02/25/tech/anthropic-safety-policy-change
 scenarios:
 - AI/ML项目
+aliases:
+- /posts/20260226-hacker_news-anthropic-ditches-its-core-safety-promise-1/
+- /posts/20260226-hacker_news-anthropic-ditches-its-core-safety-promise-11/
+- /posts/20260226-hacker_news-anthropic-ditches-its-core-safety-promise-3/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # Anthropic 放弃核心安全承诺，不再发布高风险模型
@@ -365,8 +373,8 @@ if __name__ == "__main__":
 
 ### 相关文章
 
-- [Anthropic 放弃旗舰产品安全承诺]({{< relref "posts/20260225-hacker_news-anthropic-drops-flagship-safety-pledge-14.md" >}})
+- [Anthropic 放弃旗舰产品安全承诺]({{< relref "posts/20260225-hacker_news-anthropic-drops-flagship-safety-pledge-15.md" >}})
 - [Anthropic 撤销旗舰级安全承诺，不再遵守自愿安全准则]({{< relref "posts/20260225-hacker_news-anthropic-drops-flagship-safety-pledge-15.md" >}})
-- [Anthropic 放弃旗舰安全承诺，不再遵守 AI 安全准则]({{< relref "posts/20260225-hacker_news-anthropic-drops-flagship-safety-pledge-12.md" >}})
-- [Anthropic 撤销旗舰产品安全承诺]({{< relref "posts/20260225-hacker_news-anthropic-drops-flagship-safety-pledge-18.md" >}})
-- [OpenAI 投入750万美元资助独立AI对齐研究]({{< relref "posts/20260220-blogs_podcasts-advancing-independent-research-on-ai-alignment-9.md" >}})
+- [Anthropic 放弃旗舰安全承诺，不再遵守 AI 安全准则]({{< relref "posts/20260225-hacker_news-anthropic-drops-flagship-safety-pledge-15.md" >}})
+- [Anthropic 撤销旗舰产品安全承诺]({{< relref "posts/20260225-hacker_news-anthropic-drops-flagship-safety-pledge-15.md" >}})
+- [OpenAI 投入750万美元资助独立AI对齐研究]({{< relref "posts/20260219-blogs_podcasts-advancing-independent-research-on-ai-alignment-6.md" >}})

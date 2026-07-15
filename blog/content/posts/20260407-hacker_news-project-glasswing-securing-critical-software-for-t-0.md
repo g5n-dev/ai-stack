@@ -1,14 +1,31 @@
 ---
-title: "玻璃翼项目：保护AI时代关键软件"
-date: 2026-04-07T22:11:42+08:00
+title: 玻璃翼项目：保护AI时代关键软件
+date: 2026-04-07 22:11:42+08:00
 draft: false
-entry_kind: "auto"
-tags: ["玻璃翼", "AI安全", "关键软件", "安全防护", "系统安全", "云原生", "容器", "开源"]
-categories: ["安全", "系统与基础设施"]
+entry_kind: auto
+tags:
+- 玻璃翼
+- AI 安全
+- 关键软件
+- 安全防护
+- 系统安全
+- 云原生
+- 容器
+- 开源
+categories:
+- 安全
+- 系统与基础设施
 source: hacker_news
-description: "随着AI技术在关键行业的深度渗透，软件供应链的安全风险正快速升级。ProjectGlasswing以系统化的防护模型和自动化审计手段，旨在为AI时代的核心软件提供可验证的防御基线。本文将解析Glasswing的架构设计、实际部署案例以及开发者可借鉴的防护策略，帮助团队在快速迭代中保持安全性。"
+description: 随着AI技术在关键行业的深度渗透，软件供应链的安全风险正快速升级。ProjectGlasswing以系统化的防护模型和自动化审计手段，旨在为AI时代的核心软件提供可验证的防御基线。本文将解析Glasswing的架构设计、实际部署案例以及开发者可借鉴的防护策略，帮助团队在快速迭代中保持安全性。
 external_url: https://www.anthropic.com/glasswing
-scenarios: ["AI/ML项目"]
+scenarios:
+- AI/ML项目
+aliases:
+- /posts/20260408-hacker_news-project-glasswing-securing-critical-software-for-t-0/
+content_mode: legacy_analysis
+publication_tier: LEGACY
+source_provenance: legacy_no_snapshot
+source_support: 0.0
 ---
 
 # 玻璃翼项目：保护AI时代关键软件
@@ -79,9 +96,9 @@ scenarios: ["AI/ML项目"]
 
 ### 相关文章
 
-- [不要轻信盐值：AI摘要、多语言安全与大模型防护机制]({{< relref "posts/20260219-hacker_news-dont-trust-the-salt-ai-summarization-multilingual--2.md" >}})
+- [不要轻信盐值：AI摘要、多语言安全与大模型防护机制]({{< relref "posts/20260219-hacker_news-dont-trust-the-salt-ai-summarization-multilingual--1.md" >}})
 - [OpenAI收购AI安全平台Promptfoo以修复系统漏洞]({{< relref "posts/20260309-blogs_podcasts-openai-to-acquire-promptfoo-2.md" >}})
-- [OpenAI 收购 AI 安全平台 Promptfoo 以修复系统漏洞]({{< relref "posts/20260309-blogs_podcasts-openai-to-acquire-promptfoo-5.md" >}})
-- [OpenAI 收购 AI 安全平台 Promptfoo 以修复系统漏洞]({{< relref "posts/20260310-blogs_podcasts-openai-to-acquire-promptfoo-14.md" >}})
-- [OpenAI 收购 AI 安全平台 Promptfoo 以强化系统漏洞修复能力]({{< relref "posts/20260310-blogs_podcasts-openai-to-acquire-promptfoo-9.md" >}})
+- [OpenAI 收购 AI 安全平台 Promptfoo 以修复系统漏洞]({{< relref "posts/20260309-blogs_podcasts-openai-to-acquire-promptfoo-2.md" >}})
+- [OpenAI 收购 AI 安全平台 Promptfoo 以修复系统漏洞]({{< relref "posts/20260309-blogs_podcasts-openai-to-acquire-promptfoo-2.md" >}})
+- [OpenAI 收购 AI 安全平台 Promptfoo 以强化系统漏洞修复能力]({{< relref "posts/20260309-blogs_podcasts-openai-to-acquire-promptfoo-2.md" >}})
 *本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*
