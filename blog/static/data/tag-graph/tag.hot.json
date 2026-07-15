@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-15T15:49:17Z",
+  "generated_at": "2026-07-15T16:48:07Z",
   "layer": "tag",
   "layers": {
     "application": {
@@ -35958,11 +35958,11 @@
       "weighted_degree": 90
     },
     {
-      "article_count": 49,
+      "article_count": 50,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
-      "degree": 254,
+      "degree": 257,
       "description": "文章标签: AI",
       "id": "tag:AI",
       "layer": "tag",
@@ -35971,8 +35971,8 @@
       "level": 6,
       "name": "AI",
       "rank": 25,
-      "related_count": 253,
-      "weighted_degree": 342.6
+      "related_count": 256,
+      "weighted_degree": 345.6
     },
     {
       "article_count": 132,
@@ -36888,7 +36888,7 @@
       "legacy_id": "hacker_news",
       "level": 6,
       "name": "hacker_news",
-      "rank": 6829,
+      "rank": 6830,
       "related_count": 0,
       "weighted_degree": 0
     },

@@ -1,5 +1,5 @@
 {
-  "active_count": 1923,
+  "active_count": 1924,
   "archived_count": 448,
   "complete_count": 0,
   "legacy_analysis_count": 1910,
@@ -10409,6 +10409,12 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260716-blogs_podcasts-celebrating-25-years-of-visual-search-innovation-0-bbfc4b37a7.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -10416,8 +10422,8 @@
     "archived_content": 448
   },
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 13,
-  "source_file_count": 2371,
-  "source_tree_sha256": "1997067d13e8e7cb450ce9cfa10568e282f16025060356f2dd7c57dc1c0fe6d8",
+  "source_brief_count": 14,
+  "source_file_count": 2372,
+  "source_tree_sha256": "e8aa8c2a880e334853dcf7f6c5ba5d87d6159c00c33a372cb6d84fe6077feade",
   "warning_counts": {}
 }
