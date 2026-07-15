@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:行业格局",
-  "generated_at": "2026-07-15T15:49:17Z",
+  "generated_at": "2026-07-15T18:27:57Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -360,7 +360,7 @@
       "legacy_id": "垂直领域",
       "level": 6,
       "name": "垂直领域",
-      "rank": 1073,
+      "rank": 1074,
       "related_count": 14,
       "weighted_degree": 14
     },
@@ -377,7 +377,7 @@
       "legacy_id": "初创企业",
       "level": 6,
       "name": "初创企业",
-      "rank": 1539,
+      "rank": 1540,
       "related_count": 11,
       "weighted_degree": 14
     },
@@ -394,7 +394,7 @@
       "legacy_id": "软银",
       "level": 6,
       "name": "软银",
-      "rank": 1557,
+      "rank": 1558,
       "related_count": 10,
       "weighted_degree": 14
     },
@@ -411,7 +411,7 @@
       "legacy_id": "ms-swift",
       "level": 6,
       "name": "ms-swift",
-      "rank": 1847,
+      "rank": 1849,
       "related_count": 7,
       "weighted_degree": 7.6
     },
@@ -428,7 +428,7 @@
       "legacy_id": "Nscale",
       "level": 6,
       "name": "Nscale",
-      "rank": 2734,
+      "rank": 2736,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -445,7 +445,7 @@
       "legacy_id": "OpenEvidence",
       "level": 6,
       "name": "OpenEvidence",
-      "rank": 2759,
+      "rank": 2761,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -462,7 +462,7 @@
       "legacy_id": "科技",
       "level": 6,
       "name": "科技",
-      "rank": 5720,
+      "rank": 5722,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -479,7 +479,7 @@
       "legacy_id": "行业格局",
       "level": 6,
       "name": "行业格局",
-      "rank": 6116,
+      "rank": 6118,
       "related_count": 7,
       "weighted_degree": 7
     }

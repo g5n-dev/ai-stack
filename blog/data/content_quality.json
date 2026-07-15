@@ -1,5 +1,5 @@
 {
-  "active_count": 1924,
+  "active_count": 1926,
   "archived_count": 448,
   "complete_count": 0,
   "legacy_analysis_count": 1910,
@@ -10410,7 +10410,19 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260716-blogs_podcasts-agentic-vision-building-visual-intelligence-with-a-0-ad37a98413.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260716-blogs_podcasts-celebrating-25-years-of-visual-search-innovation-0-bbfc4b37a7.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260716-juejin-七智能体的reflection机制让ai学会三省吾身-0-f08615b0cd.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -10422,8 +10434,8 @@
     "archived_content": 448
   },
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 14,
-  "source_file_count": 2372,
-  "source_tree_sha256": "e8aa8c2a880e334853dcf7f6c5ba5d87d6159c00c33a372cb6d84fe6077feade",
+  "source_brief_count": 16,
+  "source_file_count": 2374,
+  "source_tree_sha256": "492d85f3bed9196121f8e2482d15c794362f94ff7746fae7cf787c77d1c5bc53",
   "warning_counts": {}
 }

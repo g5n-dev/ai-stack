@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-15T16:48:07Z",
+  "generated_at": "2026-07-15T18:27:57Z",
   "layer": "tag",
   "layers": {
     "application": {
@@ -36315,11 +36315,11 @@
       "weighted_degree": 49.6
     },
     {
-      "article_count": 45,
+      "article_count": 46,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
-      "degree": 228,
+      "degree": 232,
       "description": "文章标签: Amazon Bedrock",
       "id": "tag:Amazon Bedrock",
       "layer": "tag",
@@ -36328,8 +36328,8 @@
       "level": 6,
       "name": "Amazon Bedrock",
       "rank": 29,
-      "related_count": 228,
-      "weighted_degree": 309
+      "related_count": 232,
+      "weighted_degree": 313
     },
     {
       "article_count": 14,
@@ -36395,7 +36395,7 @@
       "legacy_id": "arxiv",
       "level": 6,
       "name": "arxiv",
-      "rank": 915,
+      "rank": 916,
       "related_count": 5,
       "weighted_degree": 14
     },
@@ -36888,7 +36888,7 @@
       "legacy_id": "hacker_news",
       "level": 6,
       "name": "hacker_news",
-      "rank": 6830,
+      "rank": 6831,
       "related_count": 0,
       "weighted_degree": 0
     },
