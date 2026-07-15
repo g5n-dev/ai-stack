@@ -36,6 +36,7 @@ def _write_post(
     posts.mkdir(parents=True, exist_ok=True)
     metadata = {
         "title": title,
+        "description": "用于历史修复集成测试的可核验固定摘要。",
         "date": "2026-07-15T00:00:00+08:00",
         "draft": False,
         "source": "fixture",

@@ -23,11 +23,12 @@ def test_manifest_quarantines_only_high_confidence_synthetic_bodies(
     posts = content / "posts"
     posts.mkdir(parents=True)
     (posts / "safe.md").write_text(
-        "---\ntitle: Safe\n---\n\n这是来自原始来源的完整技术记录。\n",
+        "---\ntitle: Safe\ndescription: Safe description.\n---\n\n"
+        "这是来自原始来源的完整技术记录。\n",
         encoding="utf-8",
     )
     (posts / "unsafe.md").write_text(
-        "---\ntitle: Unsafe\n---\n\n"
+        "---\ntitle: Unsafe\ndescription: Unsafe description.\n---\n\n"
         "你在提示词中没有提供完整正文，因此以下内容只能根据标题推演。\n",
         encoding="utf-8",
     )
@@ -55,6 +56,7 @@ def test_manifest_writer_is_stable_and_frontmatter_is_not_scanned(
     document = (
         "---\n"
         "title: 您没有提供正文只是标题字段中的文字\n"
+        "description: Frontmatter is not body content.\n"
         "---\n\n"
         "正文包含可核验的来源事实。\n"
     )
@@ -76,8 +78,7 @@ def test_manifest_tracks_transparent_archives_without_counting_them_as_quarantin
     posts = content / "posts"
     posts.mkdir(parents=True)
     (posts / "archived.md").write_text(
-        "---\ntitle: Archived\narchived: true\n---\n\n"
-        "该条目仅保留原始来源入口。\n",
+        "---\ntitle: Archived\narchived: true\n---\n\n该条目仅保留原始来源入口。\n",
         encoding="utf-8",
     )
 
@@ -92,30 +93,115 @@ def test_manifest_tracks_transparent_archives_without_counting_them_as_quarantin
     }
 
 
-def test_completeness_gate_detects_unclosed_fences_and_truncated_endings() -> None:
-    assert body_completeness_reasons(
-        "## 示例\n\n```python\nprint('ok')\n```\n\n完整结论。\n"
-    ) == ()
-    assert body_completeness_reasons(
-        "## 示例\n\n```python\nprint('truncated')\n"
-    ) == ("unclosed_code_fence",)
-    assert body_completeness_reasons("## 行动建议\n") == ("truncated_ending",)
-    assert body_completeness_reasons("## 结论\n\n分析在这里中断，\n") == (
-        "truncated_ending",
+def test_active_post_rejects_atx_and_setext_h1_outside_fenced_code() -> None:
+    base = (
+        "---\n"
+        "title: Render-safe article\n"
+        "description: A complete render-safe description.\n"
+        "entry_kind: manual\n"
+        "---\n\n"
     )
-    assert body_completeness_reasons("## 结论\n\n完整但无需句号的来源说明\n") == ()
-    assert content_quality_reasons("```python\nprint('truncated')\n") == (
+    atx = base + "## 开始\n\n正常内容。\n\n# 重复页面标题\n\n后续内容。\n"
+    setext = base + "## 开始\n\n正常内容。\n\n重复页面标题\n===\n\n后续内容。\n"
+    fenced = base + "## 示例\n\n```markdown\n# 代码示例标题\n\n示例标题\n===\n```\n\n正文。\n"
+
+    assert "body_h1_heading" in analyze_post(atx).fatal_reasons
+    assert "body_h1_heading" in analyze_post(setext).fatal_reasons
+    assert "body_h1_heading" not in analyze_post(fenced).fatal_reasons
+
+
+def test_active_post_rejects_title_generation_prompt_leaks_with_tight_boundaries() -> None:
+    base = (
+        "---\n"
+        "title: Normal title\n"
+        "description: A complete description.\n"
+        "entry_kind: manual\n"
+        "---\n\n"
+    )
+    leaked_title = (
+        base.replace(
+            "title: Normal title",
+            "title: 基于描述内容，我将创建一个精准、具体的中文标题",
+        )
+        + "## 正文\n\n这里是完整正文。\n"
+    )
+    leaked_body = base + "## 标题建议\n\n推荐标题：\n\n**一篇正常标题**\n\n这里是正文。\n"
+    imperative = base + "## 输入残片\n\n请根据以下标题生成一个精准的中文标题。\n\n这里是正文。\n"
+    legitimate = (
+        base + "## 编辑系统\n\n在文章发布前，让 AI 基于内容分析推荐 3-5 个标题选项。\n\n"
+        "请根据以下文本内容生成一份简明扼要的中文摘要。\n"
+    )
+    fenced = (
+        base + "## 反例\n\n```text\n推荐标题：\n请根据以下标题生成标题\n```\n\n"
+        "这些字符串只是代码示例。\n"
+    )
+
+    assert "title_generation_prompt_leak" in analyze_post(leaked_title).fatal_reasons
+    assert "title_generation_prompt_leak" in analyze_post(leaked_body).fatal_reasons
+    assert "title_generation_prompt_leak" in analyze_post(imperative).fatal_reasons
+    assert "title_generation_prompt_leak" not in analyze_post(legitimate).fatal_reasons
+    assert "title_generation_prompt_leak" not in analyze_post(fenced).fatal_reasons
+
+
+def test_active_post_requires_a_non_empty_string_description() -> None:
+    body = "## 正文\n\n这里是完整正文。\n"
+    missing = "---\ntitle: Missing\nentry_kind: manual\n---\n\n" + body
+    blank = "---\ntitle: Blank\ndescription: '   '\nentry_kind: manual\n---\n\n" + body
+    present = "---\ntitle: Present\ndescription: 有效描述。\nentry_kind: manual\n---\n\n" + body
+
+    assert "missing_description" in analyze_post(missing).fatal_reasons
+    assert "missing_description" in analyze_post(blank).fatal_reasons
+    assert "missing_description" not in analyze_post(present).fatal_reasons
+
+
+def test_active_post_rejects_consecutive_horizontal_rules_outside_fences() -> None:
+    base = (
+        "---\n"
+        "title: Horizontal rules\n"
+        "description: A complete description.\n"
+        "entry_kind: manual\n"
+        "---\n\n"
+    )
+    consecutive = base + "## 正文\n\n内容。\n\n---\n\n* * *\n\n继续。\n"
+    separated = base + "## 正文\n\n内容。\n\n---\n\n补充内容。\n\n***\n\n继续。\n"
+    fenced = base + "## 示例\n\n```markdown\n---\n\n***\n```\n\n这些分隔符只是代码示例。\n"
+
+    assert "consecutive_horizontal_rules" in analyze_post(consecutive).fatal_reasons
+    assert "consecutive_horizontal_rules" not in analyze_post(separated).fatal_reasons
+    assert "consecutive_horizontal_rules" not in analyze_post(fenced).fatal_reasons
+
+
+def test_archived_posts_are_exempt_from_render_structure_gates() -> None:
+    archived = (
+        "---\n"
+        "title: 推荐标题：请根据描述生成标题\n"
+        "archived: true\n"
+        "---\n\n"
+        "# 重复标题\n\n---\n\n***\n"
+    )
+
+    analysis = analyze_post(archived)
+
+    assert analysis.status == "archived"
+    assert analysis.fatal_reasons == ()
+
+
+def test_completeness_gate_detects_unclosed_fences_and_truncated_endings() -> None:
+    assert body_completeness_reasons("## 示例\n\n```python\nprint('ok')\n```\n\n完整结论。\n") == ()
+    assert body_completeness_reasons("## 示例\n\n```python\nprint('truncated')\n") == (
         "unclosed_code_fence",
     )
+    assert body_completeness_reasons("## 行动建议\n") == ("truncated_ending",)
+    assert body_completeness_reasons("## 结论\n\n分析在这里中断，\n") == ("truncated_ending",)
+    assert body_completeness_reasons("## 结论\n\n完整但无需句号的来源说明\n") == ()
+    assert content_quality_reasons("```python\nprint('truncated')\n") == ("unclosed_code_fence",)
 
 
 def test_provenance_gate_detects_missing_or_truncated_source_assistant_responses() -> None:
     cases = {
         "missing_source_content": "用户没能提供完整原文，因此只能先给出框架。",
         "absent_source_inference": "未获得全文，以下分析只能基于标题进行推断。",
-        "truncated_source_inference": (
-            "原文似乎被截断，因此本分析只能基于现有片段进行推演。"
-        ),
+        "truncated_source_inference": ("原文似乎被截断，因此本分析只能基于现有片段进行推演。"),
         "source_request_leak": "如果您能补充完整正文，我可以继续完善分析。",
     }
 
@@ -140,28 +226,25 @@ def test_completeness_gate_detects_encoding_loss_translation_leak_and_placeholde
     assert "translation_response_leak" in content_quality_reasons(
         "## 描述\n\n这段内容已经是中文，无需再翻译成中文。是否需要我翻译成英文？\n"
     )
-    assert "placeholder_content" in content_quality_reasons(
-        "## 技术分析\n\n待补充\n"
-    )
+    assert "placeholder_content" in content_quality_reasons("## 技术分析\n\n待补充\n")
 
 
 def test_analyze_post_uses_body_only_and_requires_a_structural_source_brief() -> None:
     valid = (
         "---\n"
-            "title: Brief\n"
-            "entry_kind: auto\n"
-            "source: hacker_news\n"
-            "content_mode: legacy_source_brief\n"
-            "source_provenance: legacy_no_snapshot\n"
-            "source_support: 0.0\n"
-            "external_url: https://example.com/brief\n"
+        "title: Brief\n"
+        "description: A concise source card.\n"
+        "entry_kind: auto\n"
+        "source: hacker_news\n"
+        "content_mode: legacy_source_brief\n"
+        "source_provenance: legacy_no_snapshot\n"
+        "source_support: 0.0\n"
+        "external_url: https://example.com/brief\n"
         "---\n\n"
         "## 基本信息\n\n- **作者**: Ada\n\n"
         "这是一段完整、非空的来源叙述。\n"
     )
-    missing_narrative = valid.replace(
-        "这是一段完整、非空的来源叙述。\n", ""
-    )
+    missing_narrative = valid.replace("这是一段完整、非空的来源叙述。\n", "")
 
     analysis = analyze_post(valid)
     assert analysis.status == "source_brief"
@@ -170,28 +253,23 @@ def test_analyze_post_uses_body_only_and_requires_a_structural_source_brief() ->
 
 
 def test_declared_modern_source_brief_requires_provenance_frontmatter() -> None:
-    body = (
-        "## 基本信息\n\n- **来源**: arXiv\n\n"
-        "这是一段完整、非空的来源叙述。\n"
-    )
+    body = "## 基本信息\n\n- **来源**: arXiv\n\n这是一段完整、非空的来源叙述。\n"
     incomplete = (
         "---\n"
         "title: Brief\n"
+        "description: A concise source card.\n"
         "entry_kind: auto\n"
         "source: arxiv\n"
         "content_mode: source_brief\n"
         "external_url: https://arxiv.org/abs/2607.12345\n"
-        "---\n\n"
-        + body
+        "---\n\n" + body
     )
     complete = incomplete.replace(
         "external_url: https://arxiv.org/abs/2607.12345\n",
         "external_url: https://arxiv.org/abs/2607.12345\n"
         "publication_tier: C\n"
         "source_capture_mode: abstract\n"
-        "source_snapshot_sha256: sha256:"
-        + "a" * 64
-        + "\n"
+        "source_snapshot_sha256: sha256:" + "a" * 64 + "\n"
         "extractor_version: source-contract-v1\n"
         "discovery_method: arxiv_api\n"
         "source_is_truncated: false\n"
@@ -212,8 +290,7 @@ def test_uncontracted_auto_posts_fail_closed_after_legacy_migration() -> None:
     old = (
         "---\ntitle: Reviewed legacy\nentry_kind: auto\nsource: arxiv\n"
         "date: 2026-07-15T14:00:41+08:00\n"
-        "external_url: https://example.com/legacy\n---\n\n"
-        + body
+        "external_url: https://example.com/legacy\n---\n\n" + body
     )
     new = old.replace(
         "title: Reviewed legacy",
@@ -250,11 +327,13 @@ def test_model_reasoning_trace_is_fatal_outside_code_but_not_in_examples() -> No
 
 def test_empty_section_warning_distinguishes_container_from_empty_sibling() -> None:
     container = (
-        "---\ntitle: Container\nentry_kind: manual\n---\n\n"
+        "---\ntitle: Container\ndescription: Container description.\n"
+        "entry_kind: manual\n---\n\n"
         "## 常见问题\n\n### 如何部署\n\n这里有完整答案。\n"
     )
     empty_sibling = (
-        "---\ntitle: Empty sibling\nentry_kind: manual\n---\n\n"
+        "---\ntitle: Empty sibling\ndescription: Empty sibling description.\n"
+        "entry_kind: manual\n---\n\n"
         "## 最佳实践\n\n## 最佳实践指南\n\n这里有完整内容。\n"
     )
 
@@ -283,10 +362,7 @@ def test_empty_section_cleanup_removes_only_empty_sibling_headings() -> None:
 
 
 def test_legacy_hn_gate_detects_unterminated_prose_without_flagging_other_sources() -> None:
-    body = (
-        "## 分析\n\n"
-        "这一段旧生成内容在解释模型架构时突然停在高带宽显存和矩阵"
-    )
+    body = "## 分析\n\n这一段旧生成内容在解释模型架构时突然停在高带宽显存和矩阵"
     hn = (
         "---\ntitle: HN\nentry_kind: auto\nsource: hacker_news\n"
         "external_url: https://example.com/hn\n---\n\n" + body
@@ -307,7 +383,8 @@ def test_manifest_quarantines_structurally_incomplete_active_posts(
     posts = content / "posts"
     posts.mkdir(parents=True)
     (posts / "truncated.md").write_text(
-        "---\ntitle: Truncated\n---\n\n## 示例\n\n```python\nprint('cut')\n",
+        "---\ntitle: Truncated\ndescription: Truncated description.\n---\n\n"
+        "## 示例\n\n```python\nprint('cut')\n",
         encoding="utf-8",
     )
 
@@ -330,6 +407,7 @@ def test_manifest_separates_concise_source_briefs_from_incomplete_posts(
     (posts / "brief.md").write_text(
         "---\n"
         "title: Brief\n"
+        "description: A concise source card.\n"
         "entry_kind: auto\n"
         "source: hacker_news\n"
         "content_mode: legacy_source_brief\n"
@@ -343,6 +421,7 @@ def test_manifest_separates_concise_source_briefs_from_incomplete_posts(
     (posts / "complete.md").write_text(
         "---\n"
         "title: Complete\n"
+        "description: A complete manual record.\n"
         "source: manual\n"
         "external_url: https://example.com/complete\n"
         "---\n\n"
@@ -352,7 +431,7 @@ def test_manifest_separates_concise_source_briefs_from_incomplete_posts(
 
     manifest = build_content_quality_manifest(content)
 
-    assert manifest["schema_version"] == "content_quality_manifest_v3"
+    assert manifest["schema_version"] == "content_quality_manifest_v4"
     assert manifest["source_brief_count"] == 1
     assert manifest["complete_count"] == 1
     assert manifest["active_count"] == 2
@@ -364,10 +443,9 @@ def test_manifest_separates_concise_source_briefs_from_incomplete_posts(
 
 
 def test_article_template_quarantines_manifest_entries_from_body_and_search() -> None:
-    template = (
-        ROOT
-        / "blog/themes/terminal-theme/layouts/_default/single.html"
-    ).read_text(encoding="utf-8")
+    template = (ROOT / "blog/themes/terminal-theme/layouts/_default/single.html").read_text(
+        encoding="utf-8"
+    )
 
     assert ".Site.Data.content_quality" in template
     assert 'data-pagefind-ignore="all"' in template
@@ -380,10 +458,9 @@ def test_article_template_quarantines_manifest_entries_from_body_and_search() ->
 
 
 def test_article_template_labels_short_source_cards_without_hiding_the_body() -> None:
-    template = (
-        ROOT
-        / "blog/themes/terminal-theme/layouts/_default/single.html"
-    ).read_text(encoding="utf-8")
+    template = (ROOT / "blog/themes/terminal-theme/layouts/_default/single.html").read_text(
+        encoding="utf-8"
+    )
 
     assert "$isSourceBrief" in template
     assert '"source_brief"' in template
@@ -396,9 +473,9 @@ def test_article_template_labels_short_source_cards_without_hiding_the_body() ->
 
 
 def test_article_template_labels_legacy_analysis_without_claiming_source_completeness() -> None:
-    template = (
-        ROOT / "blog/themes/terminal-theme/layouts/_default/single.html"
-    ).read_text(encoding="utf-8")
+    template = (ROOT / "blog/themes/terminal-theme/layouts/_default/single.html").read_text(
+        encoding="utf-8"
+    )
 
     assert "$isLegacyAnalysis" in template
     assert 'data-content-mode="legacy-analysis"' in template
@@ -416,15 +493,18 @@ def test_manifest_cli_can_fail_closed_on_active_quarantine(tmp_path: Path) -> No
         encoding="utf-8",
     )
 
-    assert main(
-        [
-            "--content-root",
-            str(content),
-            "--output",
-            str(tmp_path / "quality.json"),
-            "--fail-on-quarantine",
-        ]
-    ) == 1
+    assert (
+        main(
+            [
+                "--content-root",
+                str(content),
+                "--output",
+                str(tmp_path / "quality.json"),
+                "--fail-on-quarantine",
+            ]
+        )
+        == 1
+    )
 
 
 def test_manifest_cli_can_fail_closed_on_empty_section_warnings(
@@ -436,17 +516,21 @@ def test_manifest_cli_can_fail_closed_on_empty_section_warnings(
     posts = content / "posts"
     posts.mkdir(parents=True)
     (posts / "empty-section.md").write_text(
-        "---\ntitle: Empty section\nentry_kind: manual\n---\n\n"
+        "---\ntitle: Empty section\ndescription: Empty section description.\n"
+        "entry_kind: manual\n---\n\n"
         "## 空标题\n\n## 有内容的标题\n\n这里有完整内容。\n",
         encoding="utf-8",
     )
 
-    assert main(
-        [
-            "--content-root",
-            str(content),
-            "--output",
-            str(tmp_path / "quality.json"),
-            "--fail-on-structural-warning",
-        ]
-    ) == 1
+    assert (
+        main(
+            [
+                "--content-root",
+                str(content),
+                "--output",
+                str(tmp_path / "quality.json"),
+                "--fail-on-structural-warning",
+            ]
+        )
+        == 1
+    )

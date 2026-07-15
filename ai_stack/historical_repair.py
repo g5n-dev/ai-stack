@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import copy
 import hashlib
+import html
 import json
 import os
 import re
@@ -101,6 +102,58 @@ _FRONTMATTER = re.compile(r"\A---[ \t]*\r?\n(.*?)\r?\n---[ \t]*\r?\n?(.*)\Z", re
 _RELREF = re.compile(
     r"(?P<prefix>\{\{[<%]\s*relref\s+)(?P<quote>['\"])(?P<target>.+?)(?P=quote)(?P<suffix>\s*[>%]\}\})"
 )
+_FENCE_LINE = re.compile(r"^ {0,3}(?P<fence>`{3,}|~{3,})(?P<tail>.*)$")
+_ATX_H1 = re.compile(r"^(?P<indent> {0,3})#[ \t]+(?P<title>.*?)[ \t]*$")
+_ATX_SECTION_HEADING = re.compile(r"^ {0,3}#{1,6}[ \t]+(?P<title>.*?)(?:[ \t]+#+)?[ \t]*$")
+_SETEXT_H1_UNDERLINE = re.compile(r"^ {0,3}=+[ \t]*$")
+_SETEXT_UNDERLINE = re.compile(r"^ {0,3}(?:=+|-+)[ \t]*$")
+_HORIZONTAL_RULE = re.compile(r"^ {0,3}(?:(?:\*[ \t]*){3,}|(?:-[ \t]*){3,}|(?:_[ \t]*){3,})$")
+_BLOCK_PREFIX = re.compile(
+    r"^(?:[ \t]*>[ \t]?)+|^[ \t]*(?:[-+*]|\d+[.)])[ \t]+|"
+    r"^[ \t]*\[[ xX]\][ \t]+"
+)
+_MARKDOWN_IMAGE = re.compile(r"!\[(?P<label>[^\]]*)\]\([^)]*\)")
+_MARKDOWN_LINK = re.compile(r"\[(?P<label>[^\]]+)\]\([^)]*\)")
+_MARKDOWN_REFERENCE_LINK = re.compile(r"\[(?P<label>[^\]]+)\](?:\[[^\]]*\])")
+_AUTOLINK = re.compile(r"<https?://[^>]+>", re.IGNORECASE)
+_RAW_URL = re.compile(r"https?://[^\s<>]+", re.IGNORECASE)
+_HTML_TAG = re.compile(r"</?[A-Za-z][^>]*>")
+_HTML_COMMENT = re.compile(r"<!--.*?-->", re.DOTALL)
+_REFERENCE_DEFINITION = re.compile(r"^[ \t]*\[[^\]]+\]:[ \t]+\S+")
+_REPAIRABLE_FATAL_REASONS = frozenset(
+    {
+        "body_h1_heading",
+        "consecutive_horizontal_rules",
+        "missing_description",
+    }
+)
+_PREFERRED_DESCRIPTION_HEADINGS = (
+    "摘要",
+    "简介",
+    "导语",
+    "概述",
+    "内容提要",
+    "核心要点",
+)
+_METADATA_DESCRIPTION_HEADINGS = (
+    "基本信息",
+    "来源信息",
+    "原始来源",
+    "参考资料",
+    "元数据",
+)
+_DESCRIPTION_META_PREAMBLE = re.compile(
+    r"^\s*(?:"
+    r"以下(?:是)?(?:为您)?(?:对(?:该|这段|上述)?内容的?)?"
+    r"(?:撰写|提供)?(?:的)?(?:主要)?(?:中文)?(?:内容)?"
+    r"(?:总结|摘要|引言|导语)(?:，[^：:\n]{0,100})?"
+    r"|(?:以下|这里)是(?:一个)?(?:为(?:您|你))?(?:精心)?"
+    r"(?:定制|打造|撰写|提供)的?(?:“[^”\n]{0,40}”的?)?"
+    r"(?:引言|导语|摘要|总结)(?:，[^：:\n]{0,100})?"
+    r")[：:]\s*"
+)
+
+
 @dataclass(frozen=True, slots=True)
 class PlannedWrite:
     """One compare-and-swap file replacement relative to the posts root."""
@@ -137,10 +190,20 @@ class _Document:
     raw: bytes
     metadata: dict[str, Any]
     body: str
+    normalized_metadata: dict[str, Any]
+    normalized_body: str
     canonical_url: str
     contamination_reasons: tuple[str, ...]
     warning_reasons: tuple[str, ...]
     quality_score: int
+
+
+@dataclass(frozen=True, slots=True)
+class _BodyH1:
+    start: int
+    end: int
+    title: str
+    kind: str
 
 
 def _sha256(payload: bytes) -> str:
@@ -173,11 +236,7 @@ def _regular_markdown_files(root: Path) -> list[Path]:
         for name in sorted(file_names):
             candidate = current_path / name
             details = candidate.lstat()
-            if (
-                candidate.is_symlink()
-                or not stat.S_ISREG(details.st_mode)
-                or details.st_nlink != 1
-            ):
+            if candidate.is_symlink() or not stat.S_ISREG(details.st_mode) or details.st_nlink != 1:
                 raise UnsafeStorePathError(
                     f"historical repair root contains an unsafe file: {candidate}"
                 )
@@ -215,6 +274,317 @@ def _normalized_list(value: object, *, limit: int | None = None) -> list[str]:
         if limit is not None and len(result) >= limit:
             break
     return result
+
+
+def _line_content(line: str) -> str:
+    return line.rstrip("\r\n")
+
+
+def _line_ending(line: str) -> str:
+    content = _line_content(line)
+    return line[len(content) :]
+
+
+def _outside_fence_flags(lines: list[str]) -> list[bool]:
+    """Return which Markdown lines are prose, treating fence markers as fenced."""
+
+    flags: list[bool] = []
+    open_character: str | None = None
+    open_length = 0
+    for line in lines:
+        match = _FENCE_LINE.match(_line_content(line))
+        if match is None:
+            flags.append(open_character is None)
+            continue
+        fence = match.group("fence")
+        character = fence[0]
+        if open_character is None:
+            flags.append(False)
+            open_character = character
+            open_length = len(fence)
+            continue
+        flags.append(False)
+        if (
+            character == open_character
+            and len(fence) >= open_length
+            and not match.group("tail").strip()
+        ):
+            open_character = None
+            open_length = 0
+    return flags
+
+
+def _plain_inline_markdown(value: str) -> str:
+    """Reduce inline Markdown to deterministic human-readable plain text."""
+
+    text = unicodedata.normalize("NFC", str(value or ""))
+    text = _HTML_COMMENT.sub(" ", text)
+    text = _MARKDOWN_IMAGE.sub(lambda match: match.group("label"), text)
+    text = _MARKDOWN_LINK.sub(lambda match: match.group("label"), text)
+    text = _MARKDOWN_REFERENCE_LINK.sub(lambda match: match.group("label"), text)
+    text = _AUTOLINK.sub(" ", text)
+    text = _RAW_URL.sub(" ", text)
+    text = _HTML_TAG.sub(" ", text)
+    text = re.sub(r"`+([^`\n]+?)`+", r"\1", text)
+    text = re.sub(r"\\([\\`*_[\]{}()#+.!<>~-])", r"\1", text)
+    text = re.sub(r"[*_~]", "", text)
+    text = text.replace("[", "").replace("]", "")
+    return " ".join(html.unescape(text).split())
+
+
+def _heading_title(value: str) -> str:
+    without_closing_hashes = re.sub(r"[ \t]+#+[ \t]*$", "", value.strip())
+    return _plain_inline_markdown(without_closing_hashes)
+
+
+def _title_key(value: object) -> str:
+    if not isinstance(value, str):
+        return ""
+    return " ".join(unicodedata.normalize("NFKC", _plain_inline_markdown(value)).casefold().split())
+
+
+def _is_setext_title_line(line: str) -> bool:
+    stripped = _line_content(line).strip()
+    if not stripped:
+        return False
+    return not bool(
+        re.match(
+            r"^(?:#{1,6}[ \t]|>|[-+*][ \t]|\d+[.)][ \t]|`{3,}|~{3,})",
+            stripped,
+        )
+    )
+
+
+def _body_h1_headings(lines: list[str], outside: list[bool]) -> list[_BodyH1]:
+    headings: list[_BodyH1] = []
+    index = 0
+    while index < len(lines):
+        if not outside[index]:
+            index += 1
+            continue
+        content = _line_content(lines[index])
+        atx = _ATX_H1.match(content)
+        if atx is not None:
+            headings.append(
+                _BodyH1(
+                    start=index,
+                    end=index,
+                    title=_heading_title(atx.group("title")),
+                    kind="atx",
+                )
+            )
+            index += 1
+            continue
+        if (
+            index + 1 < len(lines)
+            and outside[index + 1]
+            and _is_setext_title_line(lines[index])
+            and _SETEXT_H1_UNDERLINE.fullmatch(_line_content(lines[index + 1]))
+        ):
+            headings.append(
+                _BodyH1(
+                    start=index,
+                    end=index + 1,
+                    title=_heading_title(content),
+                    kind="setext",
+                )
+            )
+            index += 2
+            continue
+        index += 1
+    return headings
+
+
+def _collapse_adjacent_horizontal_rules(body: str) -> str:
+    lines = str(body or "").splitlines(keepends=True)
+    outside = _outside_fence_flags(lines)
+    result: list[str] = []
+    previous_block_was_rule = False
+    for index, line in enumerate(lines):
+        content = _line_content(line)
+        if not outside[index]:
+            result.append(line)
+            previous_block_was_rule = False
+            continue
+        if not content.strip():
+            result.append(line)
+            continue
+        is_rule = bool(_HORIZONTAL_RULE.fullmatch(content))
+        if is_rule and previous_block_was_rule:
+            continue
+        result.append(line)
+        previous_block_was_rule = is_rule
+    return "".join(result)
+
+
+def _normalize_body_h1(metadata: dict[str, Any], body: str) -> str:
+    lines = str(body or "").splitlines(keepends=True)
+    if not lines:
+        return body
+    outside = _outside_fence_flags(lines)
+    headings = _body_h1_headings(lines, outside)
+    if not headings:
+        return _collapse_adjacent_horizontal_rules(body)
+
+    first_prose_index = next(
+        (
+            index
+            for index, line in enumerate(lines)
+            if outside[index] and _line_content(line).strip()
+        ),
+        None,
+    )
+    leading = next(
+        (heading for heading in headings if heading.start == first_prose_index),
+        None,
+    )
+    removed: set[int] = set()
+    if leading is not None:
+        frontmatter_title = _title_key(metadata.get("title"))
+        body_title = _title_key(leading.title)
+        equivalent = bool(frontmatter_title) and frontmatter_title == body_title
+        strict_prefix = (
+            bool(frontmatter_title)
+            and len(frontmatter_title) < len(body_title)
+            and body_title.startswith(frontmatter_title)
+        )
+        if equivalent or strict_prefix:
+            removed.update(range(leading.start, leading.end + 1))
+            if strict_prefix:
+                metadata["title"] = leading.title
+            following = leading.end + 1
+            while following < len(lines) and not _line_content(lines[following]).strip():
+                following += 1
+            if (
+                following < len(lines)
+                and outside[following]
+                and _HORIZONTAL_RULE.fullmatch(_line_content(lines[following]))
+            ):
+                removed.add(following)
+
+    by_start = {heading.start: heading for heading in headings}
+    normalized: list[str] = []
+    index = 0
+    while index < len(lines):
+        if index in removed:
+            index += 1
+            continue
+        heading = by_start.get(index)
+        if heading is None:
+            normalized.append(lines[index])
+            index += 1
+            continue
+        if any(position in removed for position in range(heading.start, heading.end + 1)):
+            index = heading.end + 1
+            continue
+        if heading.kind == "atx":
+            match = _ATX_H1.match(_line_content(lines[index]))
+            assert match is not None
+            indent_length = len(match.group("indent"))
+            normalized.append(
+                lines[index][:indent_length] + "##" + lines[index][indent_length + 1 :]
+            )
+        else:
+            source_title = _line_content(lines[index]).strip()
+            ending = _line_ending(lines[index]) or _line_ending(lines[heading.end]) or "\n"
+            normalized.append(f"## {source_title}{ending}")
+        index = heading.end + 1
+    return _collapse_adjacent_horizontal_rules("".join(normalized))
+
+
+def _plain_description(body: str) -> str | None:
+    """Extract an 80–200 character summary solely from existing prose."""
+
+    lines = str(body or "").splitlines(keepends=True)
+    outside = _outside_fence_flags(lines)
+    preferred_lines: list[tuple[int, str]] = []
+    fallback_lines: list[tuple[int, str]] = []
+    preferred_section = False
+    metadata_section = False
+    index = 0
+    while index < len(lines):
+        line = lines[index]
+        if not outside[index]:
+            index += 1
+            continue
+        content = _line_content(line)
+        stripped = content.strip()
+        atx_heading = _ATX_SECTION_HEADING.match(content)
+        if atx_heading is not None:
+            heading = _title_key(_heading_title(atx_heading.group("title")))
+            preferred_section = any(label in heading for label in _PREFERRED_DESCRIPTION_HEADINGS)
+            metadata_section = any(label in heading for label in _METADATA_DESCRIPTION_HEADINGS)
+            index += 1
+            continue
+        if (
+            index + 1 < len(lines)
+            and outside[index + 1]
+            and _is_setext_title_line(line)
+            and _SETEXT_UNDERLINE.fullmatch(_line_content(lines[index + 1]))
+        ):
+            heading = _title_key(_heading_title(content))
+            preferred_section = any(label in heading for label in _PREFERRED_DESCRIPTION_HEADINGS)
+            metadata_section = any(label in heading for label in _METADATA_DESCRIPTION_HEADINGS)
+            index += 2
+            continue
+        if (
+            not stripped
+            or _SETEXT_UNDERLINE.fullmatch(content)
+            or _HORIZONTAL_RULE.fullmatch(content)
+            or _REFERENCE_DEFINITION.match(content)
+        ):
+            index += 1
+            continue
+        is_list_item = bool(re.match(r"^[ \t]*(?:[-+*]|\d+[.)])[ \t]+", content))
+        stripped = _BLOCK_PREFIX.sub("", stripped).strip()
+        plain = _plain_inline_markdown(stripped)
+        plain = _DESCRIPTION_META_PREAMBLE.sub("", plain).strip()
+        if plain:
+            if not (metadata_section and is_list_item):
+                fallback_lines.append((index, plain))
+            if preferred_section:
+                preferred_lines.append((index, plain))
+        index += 1
+
+    preferred = " ".join(value for _, value in preferred_lines)
+    if len(preferred) >= 80:
+        selected = preferred_lines
+    elif preferred_lines:
+        preferred_indexes = {line_index for line_index, _ in preferred_lines}
+        selected = [
+            *preferred_lines,
+            *(item for item in fallback_lines if item[0] not in preferred_indexes),
+        ]
+    else:
+        selected = fallback_lines
+    prose = " ".join(value for _, value in selected)
+    prose = " ".join(_HTML_COMMENT.sub(" ", prose).split())
+    if len(prose) < 80:
+        return None
+    if len(prose) <= 200:
+        return prose
+
+    window = prose[:200]
+    sentence_endings = [match.end() for match in re.finditer(r"[。！？!?；;]", window)]
+    eligible_endings = [ending for ending in sentence_endings if ending >= 80]
+    if eligible_endings:
+        return window[: eligible_endings[-1]].rstrip()
+    whitespace = window.rfind(" ", 79)
+    return (window[:whitespace] if whitespace >= 80 else window).rstrip()
+
+
+def _normalize_active_post(
+    metadata: Mapping[str, Any],
+    body: str,
+) -> tuple[dict[str, Any], str]:
+    normalized_metadata = copy.deepcopy(dict(metadata))
+    normalized_body = _normalize_body_h1(normalized_metadata, body)
+    description = normalized_metadata.get("description")
+    if not isinstance(description, str) or not description.strip():
+        extracted = _plain_description(normalized_body)
+        if extracted is not None:
+            normalized_metadata["description"] = extracted
+    return normalized_metadata, normalized_body
 
 
 def _quality_score(body: str, warning_reasons: tuple[str, ...] = ()) -> int:
@@ -257,17 +627,37 @@ def _parse_document(path: Path, root: Path) -> _Document:
         raise ValueError(f"Markdown has no external_url: {path}")
     canonical_url = canonicalize_url(external_url)
     body = match.group(2)
-    analysis = analyze_post(text)
+    initial_analysis = analyze_post(text)
+    initial_fatal = set(initial_analysis.fatal_reasons)
+
+    normalized_metadata = metadata
+    normalized_body = body
+    can_repair = not (initial_fatal - _REPAIRABLE_FATAL_REASONS)
+    if metadata.get("archived") is not True and can_repair:
+        normalized_metadata, normalized_body = _normalize_active_post(metadata, body)
+        normalized_document = _render_document(
+            normalized_metadata,
+            normalized_body,
+        ).decode("utf-8")
+        final_analysis = analyze_post(normalized_document)
+        final_fatal = set(final_analysis.fatal_reasons)
+        contamination_reasons = tuple(sorted(final_fatal))
+        warning_reasons = final_analysis.warning_reasons
+    else:
+        contamination_reasons = tuple(sorted(initial_fatal))
+        warning_reasons = initial_analysis.warning_reasons
     return _Document(
         path=path,
         relative_path=path.relative_to(root).as_posix(),
         raw=raw,
         metadata=metadata,
         body=body,
+        normalized_metadata=normalized_metadata,
+        normalized_body=normalized_body,
         canonical_url=canonical_url,
-        contamination_reasons=analysis.fatal_reasons,
-        warning_reasons=analysis.warning_reasons,
-        quality_score=_quality_score(body, analysis.warning_reasons),
+        contamination_reasons=contamination_reasons,
+        warning_reasons=warning_reasons,
+        quality_score=_quality_score(normalized_body, warning_reasons),
     )
 
 
@@ -344,17 +734,17 @@ def _filtered_metadata(
     category_whitelist: frozenset[str],
     scenario_whitelist: frozenset[str],
 ) -> dict[str, Any]:
-    metadata = copy.deepcopy(source.metadata)
+    metadata = copy.deepcopy(source.normalized_metadata)
     metadata["external_url"] = canonical_url
-    metadata["tags"] = normalize_tags(source.metadata.get("tags"), limit=8)
+    metadata["tags"] = normalize_tags(source.normalized_metadata.get("tags"), limit=8)
     metadata["categories"] = [
         value
-        for value in _normalized_list(source.metadata.get("categories"))
+        for value in _normalized_list(source.normalized_metadata.get("categories"))
         if value in category_whitelist
     ]
     metadata["scenarios"] = [
         value
-        for value in _normalized_list(source.metadata.get("scenarios"))
+        for value in _normalized_list(source.normalized_metadata.get("scenarios"))
         if value in scenario_whitelist
     ]
     if "date" in route.metadata:
@@ -366,12 +756,10 @@ def _filtered_metadata(
             metadata.pop(route_key, None)
     existing_aliases = _safe_aliases(route.metadata.get("aliases"))
     metadata["aliases"] = sorted(set(existing_aliases + aliases))
-    return _active_provenance_metadata(metadata, source.body)
+    return _active_provenance_metadata(metadata, source.normalized_body)
 
 
-def _active_provenance_metadata(
-    metadata: Mapping[str, Any], body: str
-) -> dict[str, Any]:
+def _active_provenance_metadata(metadata: Mapping[str, Any], body: str) -> dict[str, Any]:
     """Label legacy output honestly without claiming a missing source snapshot."""
 
     result = copy.deepcopy(dict(metadata))
@@ -397,12 +785,12 @@ def _normalized_singleton(
     unrelated frontmatter untouched. Empty shell headings are removed without
     inventing prose so structural cleanup shares the same backup mechanism.
     """
-    metadata = copy.deepcopy(document.metadata)
+    metadata = copy.deepcopy(document.normalized_metadata)
     metadata["external_url"] = canonical_url
     if document.metadata.get("archived") is True:
-        metadata["title"] = str(metadata.get("title") or "历史条目").replace(
-            "<", "＜"
-        ).replace(">", "＞")
+        metadata["title"] = (
+            str(metadata.get("title") or "历史条目").replace("<", "＜").replace(">", "＞")
+        )
         metadata["tags"] = []
         metadata["categories"] = []
         metadata["scenarios"] = []
@@ -410,12 +798,12 @@ def _normalized_singleton(
         metadata["build"] = {"list": "never", "render": "always"}
         if metadata == document.metadata:
             return None
-        return metadata, document.body
+        return metadata, document.normalized_body
 
-    normalized_tags = normalize_tags(document.metadata.get("tags"), limit=8)
+    normalized_tags = normalize_tags(document.normalized_metadata.get("tags"), limit=8)
     metadata["tags"] = normalized_tags
-    metadata = _active_provenance_metadata(metadata, document.body)
-    body, _ = remove_empty_section_headings(document.body)
+    metadata = _active_provenance_metadata(metadata, document.normalized_body)
+    body, _ = remove_empty_section_headings(document.normalized_body)
     if metadata == document.metadata and body == document.body:
         return None
     return metadata, body
@@ -455,9 +843,9 @@ def _archive_stub(
     metadata["source_support"] = 0.0
     metadata["archive_reason"] = "historical_content_quality_gate"
     metadata["description"] = "历史条目已归档：现有正文未通过内容质量门，请查阅原始来源。"
-    metadata["title"] = str(metadata.get("title") or "历史条目").replace(
-        "<", "＜"
-    ).replace(">", "＞")
+    metadata["title"] = (
+        str(metadata.get("title") or "历史条目").replace("<", "＜").replace(">", "＞")
+    )
     metadata["tags"] = []
     metadata["categories"] = []
     metadata["scenarios"] = []
@@ -508,10 +896,7 @@ def _rewrite_relrefs(
         )
 
     rewritten = _RELREF.sub(replace, text)
-    records = [
-        (source, target, count)
-        for (source, target), count in sorted(counts.items())
-    ]
+    records = [(source, target, count) for (source, target), count in sorted(counts.items())]
     return rewritten, records
 
 
@@ -552,9 +937,7 @@ def build_historical_repair_plan(
         try:
             document = _parse_document(path, root)
         except (OSError, ValueError) as exc:
-            issues.append(
-                {"path": path.relative_to(root).as_posix(), "reason": str(exc)}
-            )
+            issues.append({"path": path.relative_to(root).as_posix(), "reason": str(exc)})
             continue
         grouped[document.canonical_url].append(document)
 
@@ -611,7 +994,7 @@ def build_historical_repair_plan(
                     category_whitelist=categories,
                     scenario_whitelist=scenarios,
                 )
-                body, _ = remove_empty_section_headings(winner.body)
+                body, _ = remove_empty_section_headings(winner.normalized_body)
                 disposition = "merge"
                 archive_reason = None
         delete_paths = sorted(
@@ -761,8 +1144,7 @@ def build_historical_repair_plan(
             "body_source": "clean_candidates_only_then_capped_structural_quality_score",
             "metadata": "body_source_only_with_whitelists_and_eight_tag_cap",
             "active_singletons": (
-                "canonical_external_url_and_shared_tag_taxonomy_only; "
-                "unrelated_metadata_preserved"
+                "canonical_external_url_and_shared_tag_taxonomy_only; unrelated_metadata_preserved"
             ),
             "all_polluted": "transparent_archive_stub",
             "active_provenance": (
@@ -926,13 +1308,9 @@ def _verify_preconditions(plan: HistoricalRepairPlan) -> None:
     for deletion in plan.deletes:
         path = _operation_path(plan, deletion.path)
         if path.is_symlink() or not path.is_file():
-            raise MigrationSafetyError(
-                f"stale repair plan: delete source changed: {deletion.path}"
-            )
+            raise MigrationSafetyError(f"stale repair plan: delete source changed: {deletion.path}")
         if _sha256(path.read_bytes()) != deletion.before_sha256:
-            raise MigrationSafetyError(
-                f"stale repair plan: delete source changed: {deletion.path}"
-            )
+            raise MigrationSafetyError(f"stale repair plan: delete source changed: {deletion.path}")
 
 
 def _atomic_write(path: Path, payload: bytes, *, mode: int = 0o644) -> None:
@@ -1032,9 +1410,7 @@ def apply_historical_repair_plan(
     issues = plan.manifest.get("issues")
     if not isinstance(issues, list) or issues:
         issue_count = len(issues) if isinstance(issues, list) else "unknown"
-        raise MigrationSafetyError(
-            f"historical repair plan has unresolved issues: {issue_count}"
-        )
+        raise MigrationSafetyError(f"historical repair plan has unresolved issues: {issue_count}")
 
     safety_profile = "shadow_soak_dedupe"
     if repository_reviewed:
@@ -1049,13 +1425,9 @@ def apply_historical_repair_plan(
             raise MigrationSafetyError("reviewed repository repair plan digest mismatch")
         branch, worktree_status = _repository_review_state(plan.reference_root)
         if not branch.startswith("codex/"):
-            raise MigrationSafetyError(
-                "reviewed repository repair requires a codex/ branch"
-            )
+            raise MigrationSafetyError("reviewed repository repair requires a codex/ branch")
         if worktree_status:
-            raise MigrationSafetyError(
-                "reviewed repository repair requires a clean Git worktree"
-            )
+            raise MigrationSafetyError("reviewed repository repair requires a clean Git worktree")
         safety_profile = "reviewed_git_repository"
     else:
         validate_dedupe_execution_gate(

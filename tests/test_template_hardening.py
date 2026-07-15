@@ -19,6 +19,7 @@ PAGE_TEMPLATES = (
     LAYOUT_ROOT / "_default/single.html",
     LAYOUT_ROOT / "_default/terms.html",
     LAYOUT_ROOT / "about/single.html",
+    LAYOUT_ROOT / "search/list.html",
     LAYOUT_ROOT / "scenarios/list.html",
     LAYOUT_ROOT / "scenarios/single.html",
 )
@@ -60,7 +61,7 @@ def test_article_related_posts_use_the_offline_index_without_site_scan() -> None
 
     assert ".Site.Data.related.index.by_route" in template
     assert ".Site.Data.related.index.by_id" in template
-    assert "data-related-source=\"offline-index\"" in template
+    assert 'data-related-source="offline-index"' in template
     assert ".Site.RegularPages" not in template
 
 
@@ -100,6 +101,16 @@ def test_graph_template_uses_the_self_hosted_progressive_runtime() -> None:
     assert 'partial "site-head.html"' in template
     assert "https://unpkg.com" not in template
     assert "cdn.tailwindcss.com" not in template
+
+
+def test_search_actions_keep_mobile_touch_targets_at_least_44px() -> None:
+    template = (LAYOUT_ROOT / "search/list.html").read_text(encoding="utf-8")
+    soup = BeautifulSoup(template, "html.parser")
+
+    actions = soup.select("#search-form button")
+    assert len(actions) == 2
+    for action in actions:
+        assert "min-h-[44px]" in action.get("class", [])
 
 
 @pytest.mark.skipif(shutil.which("hugo") is None, reason="Hugo is not installed")
@@ -197,6 +208,7 @@ def test_single_page_resolves_related_entries_by_stable_id_in_constant_lookup(
     link = related.select_one('a[href="/posts/beta/"]')
     assert link is not None
     assert "Beta" in link.get_text(" ", strip=True)
+    assert len(soup.select("main h1")) == 1
     assert soup.select_one('meta[http-equiv="Content-Security-Policy"]') is not None
     assert soup.select_one('link[href="/css/tailwind.css"]') is not None
 
@@ -298,12 +310,8 @@ def test_article_links_resolve_taxonomy_routes_and_deepwiki_origin_relatives(
     assert hrefs["blogs_podcasts"] == {"/tags/blogs_podcasts/"}
     assert hrefs["AIE World’s Fair"] == {"/tags/aie-worlds-fair/"}
     assert hrefs["AI/ML项目"] == {"/scenarios/ai/ml%E9%A1%B9%E7%9B%AE/"}
-    assert hrefs["DeepWiki chapter"] == (
-        {"https://deepwiki.com/Owner/Repo/2-system-architecture"}
-    )
-    assert hrefs["Escaped DeepWiki"] == (
-        {"https://deepwiki.com/Owner/Repo/3-system-%28safe%29"}
-    )
+    assert hrefs["DeepWiki chapter"] == ({"https://deepwiki.com/Owner/Repo/2-system-architecture"})
+    assert hrefs["Escaped DeepWiki"] == ({"https://deepwiki.com/Owner/Repo/3-system-%28safe%29"})
     assert hrefs["GitHub repository path"] == {"/Owner/Repo/blob/main/README.md"}
     assert hrefs["Real local route"] == {"/about/"}
     assert hrefs["CI/CD"] == {"/tags/ci/cd/"}

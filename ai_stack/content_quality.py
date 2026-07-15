@@ -142,9 +142,7 @@ _TRUNCATED_SUFFIX_RE = re.compile(r"[,，:：（(\[{]$")
 _PLACEHOLDER_LINE_RE = re.compile(
     r"(?im)^\s*(?:待补充|待完善|暂无内容|内容缺失|TODO|TBD)[。.]?\s*$"
 )
-_DESCRIPTION_START_RE = re.compile(
-    r"(?m)^(?:##\s+描述\s*|-\s*\*\*描述\*\*\s*[:：])"
-)
+_DESCRIPTION_START_RE = re.compile(r"(?m)^(?:##\s+描述\s*|-\s*\*\*描述\*\*\s*[:：])")
 _TRANSLATION_RESPONSE_RE = re.compile(
     r"(?:您好[！!，,\s]*)?(?:(?:我)?注意到|我发现)?"
     r"(?:您提供的)?(?:这段|以下)?内容.{0,40}"
@@ -152,17 +150,42 @@ _TRANSLATION_RESPONSE_RE = re.compile(
     re.IGNORECASE | re.DOTALL,
 )
 _HEADING_LINE_RE = re.compile(r"^(?P<marks>#{2,6})[ \t]+\S.*$")
+_ATX_H1_LINE_RE = re.compile(r"^ {0,3}#[ \t]+\S.*$")
+_SETEXT_H1_UNDERLINE_RE = re.compile(r"^ {0,3}=+[ \t]*$")
+_HORIZONTAL_RULE_LINE_RE = re.compile(
+    r"^ {0,3}(?:(?:\*[ \t]*){3,}|(?:-[ \t]*){3,}|(?:_[ \t]*){3,})$"
+)
+_TITLE_GENERATION_PATTERNS: tuple[re.Pattern[str], ...] = (
+    re.compile(
+        r"基于.{0,24}(?:描述|内容|信息).{0,28}(?:我将|将为您|将)"
+        r".{0,20}(?:创建|生成|拟定|推荐|提供).{0,24}(?:中文|文章)?标题",
+        re.IGNORECASE | re.DOTALL,
+    ),
+    re.compile(
+        r"请(?:你|您)?(?:根据|基于).{0,24}(?:"
+        r"标题.{0,24}(?:生成|创建|拟定|推荐|撰写)|"
+        r"(?:描述|内容).{0,24}(?:生成|创建|拟定|推荐|撰写)"
+        r".{0,24}(?:中文|文章)?标题)",
+        re.IGNORECASE | re.DOTALL,
+    ),
+)
+_RECOMMENDED_TITLE_LINE_RE = re.compile(
+    r"(?im)^ {0,3}(?:#{1,6}[ \t]+)?(?:\*{1,2})?推荐标题"
+    r"(?:\*{1,2})?[ \t]*[：:]"
+)
+_RECOMMENDED_TITLE_VALUE_RE = re.compile(r"^\s*推荐标题\s*[：:]", re.IGNORECASE)
 _EXPLICIT_TRUNCATION_RE = re.compile(r"\[\s*\.{3}\s*truncated\s*\]", re.IGNORECASE)
 _HTTP_SCHEMES = frozenset({"http", "https"})
 _SOURCE_DIGEST_RE = re.compile(r"^sha256:[0-9a-f]{64}$")
-_SOURCE_CAPTURE_MODES = frozenset(
-    {"abstract", "excerpt", "metadata_only", "social_post"}
-)
+_SOURCE_CAPTURE_MODES = frozenset({"abstract", "excerpt", "metadata_only", "social_post"})
 _STANDARD_FOOTER_PREFIXES = (
     "*本文由 AI Stack",
     "*这篇文章由 AI Stack",
     "**📚 更多精彩内容",
 )
+_CONTENT_QUALITY_MANIFEST_SCHEMA = "content_quality_manifest_v4"
+
+
 @dataclass(frozen=True, slots=True)
 class PostQualityAnalysis:
     """One deterministic Post-level publication decision."""
@@ -210,11 +233,7 @@ def synthetic_body_reasons(body: str) -> tuple[str, ...]:
         return ("empty_body",)
     text = _prose_without_code(raw_text)
 
-    reasons = {
-        reason
-        for reason, pattern in _SYNTHETIC_BODY_PATTERNS
-        if pattern.search(text)
-    }
+    reasons = {reason for reason, pattern in _SYNTHETIC_BODY_PATTERNS if pattern.search(text)}
     if text.casefold().count("</think>") >= 2:
         reasons.add("model_reasoning_leak")
     return tuple(sorted(reasons))
@@ -311,6 +330,77 @@ def _has_empty_section(body: str) -> bool:
     return bool(_empty_section_heading_indexes(body))
 
 
+def _has_body_h1(body: str) -> bool:
+    """Detect rendered H1 headings outside fenced code blocks."""
+
+    lines = _prose_without_code(body).splitlines()
+    for index, line in enumerate(lines):
+        if _ATX_H1_LINE_RE.match(line):
+            return True
+        if not _SETEXT_H1_UNDERLINE_RE.fullmatch(line) or index == 0:
+            continue
+        previous = lines[index - 1]
+        if not previous.strip():
+            continue
+        if re.match(
+            r"^ {0,3}(?:#{1,6}(?:[ \t]+|$)|>|(?:[-+*]|\d+[.)])[ \t]+|<)",
+            previous,
+        ):
+            continue
+        return True
+    return False
+
+
+def _has_consecutive_horizontal_rules(body: str) -> bool:
+    """Detect adjacent thematic breaks while treating code as real content."""
+
+    previous_was_rule = False
+    open_character: str | None = None
+    open_length = 0
+    for line in str(body or "").splitlines():
+        fence_match = _FENCE_LINE_RE.match(line)
+        if fence_match is not None:
+            fence = fence_match.group("fence")
+            character = fence[0]
+            if open_character is None:
+                open_character = character
+                open_length = len(fence)
+                previous_was_rule = False
+            elif (
+                character == open_character
+                and len(fence) >= open_length
+                and not fence_match.group("tail").strip()
+            ):
+                open_character = None
+                open_length = 0
+            continue
+        if open_character is not None:
+            continue
+        if not line.strip():
+            continue
+        is_rule = _HORIZONTAL_RULE_LINE_RE.fullmatch(line) is not None
+        if is_rule and previous_was_rule:
+            return True
+        previous_was_rule = is_rule
+    return False
+
+
+def _has_title_generation_prompt_leak(title: str, body: str) -> bool:
+    """Detect high-confidence title-generator instructions outside code."""
+
+    normalized_title = unicodedata.normalize("NFC", str(title or ""))
+    prose = _prose_without_code(unicodedata.normalize("NFC", str(body or "")))
+    if _RECOMMENDED_TITLE_VALUE_RE.match(normalized_title):
+        return True
+    if _RECOMMENDED_TITLE_LINE_RE.search(prose):
+        return True
+    return any(
+        pattern.search(candidate)
+        for pattern in _TITLE_GENERATION_PATTERNS
+        for candidate in (normalized_title, prose)
+    )
+
+
 def remove_empty_section_headings(body: str) -> tuple[str, int]:
     """Remove empty shell headings without generating replacement prose."""
 
@@ -321,9 +411,7 @@ def remove_empty_section_headings(body: str) -> tuple[str, int]:
         if not indexes:
             return cleaned, removed
         lines = cleaned.splitlines(keepends=True)
-        cleaned = "".join(
-            line for index, line in enumerate(lines) if index not in indexes
-        )
+        cleaned = "".join(line for index, line in enumerate(lines) if index not in indexes)
         removed += len(indexes)
 
 
@@ -369,15 +457,13 @@ def is_source_brief(metadata: Mapping[str, Any], body: str) -> bool:
     if declared_mode == "source_brief":
         modern_provenance = (
             str(metadata.get("publication_tier") or "").strip() == "C"
-            and str(metadata.get("source_capture_mode") or "").strip()
-            in _SOURCE_CAPTURE_MODES
+            and str(metadata.get("source_capture_mode") or "").strip() in _SOURCE_CAPTURE_MODES
             and bool(
                 _SOURCE_DIGEST_RE.fullmatch(
                     str(metadata.get("source_snapshot_sha256") or "").strip()
                 )
             )
-            and str(metadata.get("extractor_version") or "").strip()
-            == "source-contract-v1"
+            and str(metadata.get("extractor_version") or "").strip() == "source-contract-v1"
             and bool(str(metadata.get("discovery_method") or "").strip())
             and isinstance(metadata.get("source_is_truncated"), bool)
             and metadata.get("source_support") == 1.0
@@ -458,6 +544,15 @@ def analyze_post(document: str) -> PostQualityAnalysis:
     title = str(metadata.get("title") or "").strip()
     if not title:
         fatal.add("missing_title")
+    description = metadata.get("description")
+    if not isinstance(description, str) or not description.strip():
+        fatal.add("missing_description")
+    if _has_body_h1(body):
+        fatal.add("body_h1_heading")
+    if _has_consecutive_horizontal_rules(body):
+        fatal.add("consecutive_horizontal_rules")
+    if _has_title_generation_prompt_leak(title, body):
+        fatal.add("title_generation_prompt_leak")
 
     source_brief = is_source_brief(metadata, body)
     declared_mode = str(metadata.get("content_mode") or "").strip().casefold()
@@ -567,7 +662,7 @@ def build_content_quality_manifest(content_root: Path | str) -> dict[str, Any]:
         }
 
     return {
-        "schema_version": "content_quality_manifest_v3",
+        "schema_version": _CONTENT_QUALITY_MANIFEST_SCHEMA,
         "source_tree_sha256": source_hash.hexdigest(),
         "source_file_count": source_file_count,
         "active_count": complete_count + source_brief_count + legacy_analysis_count,
