@@ -4,7 +4,7 @@
     {
       "article_count": 3555,
       "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/01-1fc7cb2b163b.json",
+      "hotspot_file": "community-hotspots/01-97cf78573fad.json",
       "id": "community:tag:插件系统",
       "leader_id": "tag:LLM",
       "name": "LLM",
@@ -16,7 +16,7 @@
     {
       "article_count": 600,
       "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/02-3820a871d534.json",
+      "hotspot_file": "community-hotspots/02-e3ab7de91959.json",
       "id": "community:tag:战略转型",
       "leader_id": "tag:OpenAI",
       "name": "OpenAI",
@@ -28,7 +28,7 @@
     {
       "article_count": 468,
       "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/03-c753fbf1c719.json",
+      "hotspot_file": "community-hotspots/03-908bdae270cd.json",
       "id": "community:tag:PaddlePaddle",
       "leader_id": "tag:深度学习",
       "name": "深度学习",
@@ -40,7 +40,7 @@
     {
       "article_count": 66,
       "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/04-d0a21ae131ee.json",
+      "hotspot_file": "community-hotspots/04-87007ff57262.json",
       "id": "community:tag:Scaling without Slop",
       "leader_id": "tag:AI资讯",
       "name": "AI资讯",
@@ -52,7 +52,7 @@
     {
       "article_count": 62,
       "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/05-1fb07ef08354.json",
+      "hotspot_file": "community-hotspots/05-19356848d7c3.json",
       "id": "community:tag:低秩更新",
       "leader_id": "tag:持续学习",
       "name": "持续学习",
@@ -64,7 +64,7 @@
     {
       "article_count": 256,
       "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/06-58d349b10a1f.json",
+      "hotspot_file": "community-hotspots/06-bb5c32476fd4.json",
       "id": "community:tag:外部工具",
       "leader_id": "tag:MCP",
       "name": "MCP",
@@ -76,7 +76,7 @@
     {
       "article_count": 143,
       "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/07-65aa06112696.json",
+      "hotspot_file": "community-hotspots/07-0219a6d7392a.json",
       "id": "community:tag:开源贡献",
       "leader_id": "tag:HackerNews",
       "name": "HackerNews",
@@ -88,7 +88,7 @@
     {
       "article_count": 34,
       "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/08-f11565dc4c22.json",
+      "hotspot_file": "community-hotspots/08-ee952e6a54a1.json",
       "id": "community:tag:威胁模型",
       "leader_id": "tag:METR",
       "name": "METR",
@@ -100,7 +100,7 @@
     {
       "article_count": 70,
       "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/09-3d1f4e8ff24b.json",
+      "hotspot_file": "community-hotspots/09-d07711bff167.json",
       "id": "community:tag:弱势群体",
       "leader_id": "tag:幻觉",
       "name": "幻觉",
@@ -112,7 +112,7 @@
     {
       "article_count": 138,
       "hotspot_count": 23,
-      "hotspot_file": "community-hotspots/10-83c3ba4ae9a9.json",
+      "hotspot_file": "community-hotspots/10-7cfa59892cc5.json",
       "id": "community:tag:Gemini 3",
       "leader_id": "tag:推理模型",
       "name": "推理模型",
@@ -124,7 +124,7 @@
     {
       "article_count": 135,
       "hotspot_count": 23,
-      "hotspot_file": "community-hotspots/11-ec1e0c1fb36e.json",
+      "hotspot_file": "community-hotspots/11-81386b95b1ba.json",
       "id": "community:tag:LIME",
       "leader_id": "tag:可解释性",
       "name": "可解释性",
@@ -134,18 +134,18 @@
       "weighted_degree": 1442
     },
     {
-      "article_count": 6583,
+      "article_count": 6585,
       "hotspot_count": 0,
       "id": "community:other",
       "leader_id": null,
       "name": "其他",
-      "node_count": 10948,
+      "node_count": 10957,
       "rank": 12,
-      "tag_occurrences": 43545,
-      "weighted_degree": 304354.2
+      "tag_occurrences": 43561,
+      "weighted_degree": 304466.2
     }
   ],
-  "generated_at": "2026-07-15T03:26:59Z",
+  "generated_at": "2026-07-15T06:00:41Z",
   "iterations": 11,
   "limit": 11,
   "links": [
@@ -519,8 +519,8 @@
     }
   ],
   "stats": {
-    "assigned_nodes": 11297,
-    "detected_communities": 2020,
+    "assigned_nodes": 11306,
+    "detected_communities": 2022,
     "emitted_communities": 12,
     "total_communities": 12,
     "total_links": 46,
