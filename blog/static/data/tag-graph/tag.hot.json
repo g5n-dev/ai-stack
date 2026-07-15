@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-14T15:29:48Z",
+  "generated_at": "2026-07-14T18:42:06Z",
   "layer": "tag",
   "layers": {
     "application": {
@@ -9813,7 +9813,7 @@
       "strength": 1,
       "target": "tag:Codex",
       "type": "cooccurrence",
-      "weight": 28
+      "weight": 29
     },
     {
       "id": "edge:cooccurrence:tag:AI编程->tag:Copilot",
@@ -9925,7 +9925,7 @@
       "strength": 1,
       "target": "tag:OpenAI",
       "type": "cooccurrence",
-      "weight": 21
+      "weight": 22
     },
     {
       "id": "edge:cooccurrence:tag:AI编程->tag:OpenClaw",
@@ -10125,7 +10125,7 @@
       "strength": 1,
       "target": "tag:大模型",
       "type": "cooccurrence",
-      "weight": 13
+      "weight": 14
     },
     {
       "id": "edge:cooccurrence:tag:AI编程->tag:容器化",
@@ -19709,7 +19709,7 @@
       "strength": 1,
       "target": "tag:OpenAI",
       "type": "cooccurrence",
-      "weight": 90
+      "weight": 91
     },
     {
       "id": "edge:cooccurrence:tag:Codex->tag:Prompt",
@@ -19845,7 +19845,7 @@
       "strength": 1,
       "target": "tag:大模型",
       "type": "cooccurrence",
-      "weight": 10
+      "weight": 11
     },
     {
       "id": "edge:cooccurrence:tag:Codex->tag:大模型应用",
@@ -30869,7 +30869,7 @@
       "strength": 1,
       "target": "tag:大模型",
       "type": "cooccurrence",
-      "weight": 23
+      "weight": 24
     },
     {
       "id": "edge:cooccurrence:tag:OpenAI->tag:大模型应用",
@@ -54289,11 +54289,11 @@
       "weighted_degree": 245.6
     },
     {
-      "article_count": 159,
+      "article_count": 160,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
-      "degree": 422,
+      "degree": 424,
       "description": "AI编程指利用人工智能技术辅助或自动完成软件开发任务，涵盖代码生成、调试及优化等环节，通常与代码助手、人机协作及大语言模型应用紧密相关。",
       "id": "tag:AI编程",
       "layer": "tag",
@@ -54302,8 +54302,8 @@
       "level": 6,
       "name": "AI编程",
       "rank": 32,
-      "related_count": 421,
-      "weighted_degree": 1112.6
+      "related_count": 423,
+      "weighted_degree": 1119.6
     },
     {
       "article_count": 31,
@@ -54556,7 +54556,7 @@
       "legacy_id": "blogs_podcasts",
       "level": 6,
       "name": "blogs_podcasts",
-      "rank": 11344,
+      "rank": 11348,
       "related_count": 0,
       "weighted_degree": 0
     },
@@ -54646,11 +54646,11 @@
       "weighted_degree": 476.6
     },
     {
-      "article_count": 167,
+      "article_count": 168,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
-      "degree": 305,
+      "degree": 308,
       "description": "Codex通常指代基于大语言模型的智能代码生成与自动化系统，是AI工程与智能体架构的核心组件，通过Agent循环机制实现编程任务的自主编排与执行。",
       "id": "tag:Codex",
       "layer": "tag",
@@ -54659,8 +54659,8 @@
       "level": 6,
       "name": "Codex",
       "rank": 29,
-      "related_count": 305,
-      "weighted_degree": 1169
+      "related_count": 308,
+      "weighted_degree": 1176
     },
     {
       "article_count": 70,
@@ -55015,7 +55015,7 @@
       "legacy_id": "hacker_news",
       "level": 6,
       "name": "hacker_news",
-      "rank": 11345,
+      "rank": 11349,
       "related_count": 0,
       "weighted_degree": 0
     },
@@ -55377,11 +55377,11 @@
       "weighted_degree": 314
     },
     {
-      "article_count": 526,
+      "article_count": 527,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:战略转型",
-      "degree": 972,
+      "degree": 976,
       "description": "OpenAI 是全球领先的人工智能研究实验室，专注于通用人工智能（AGI）技术的研发，其推出的 ChatGPT、GPT-4 等大模型产品深刻推动了 AIGC、AI 智能体及 AI 基础设施领域的创新与发展。",
       "id": "tag:OpenAI",
       "layer": "tag",
@@ -55390,8 +55390,8 @@
       "level": 6,
       "name": "OpenAI",
       "rank": 2,
-      "related_count": 972,
-      "weighted_degree": 3681
+      "related_count": 976,
+      "weighted_degree": 3688
     },
     {
       "article_count": 102,
@@ -55462,11 +55462,11 @@
       "weighted_degree": 252
     },
     {
-      "article_count": 266,
+      "article_count": 267,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:插件系统",
-      "degree": 439,
+      "degree": 442,
       "description": "Python 是一种广泛用于后端开发、数据分析、自动化脚本及人工智能领域的编程语言。它凭借简洁的语法和丰富的第三方库，成为构建 AI Agent、量化交易工具及各类自动化应用的首选技术。",
       "id": "tag:Python",
       "layer": "tag",
@@ -55475,8 +55475,8 @@
       "level": 6,
       "name": "Python",
       "rank": 14,
-      "related_count": 438,
-      "weighted_degree": 1856.6
+      "related_count": 441,
+      "weighted_degree": 1863.6
     },
     {
       "article_count": 40,
@@ -56278,11 +56278,11 @@
       "weighted_degree": 329
     },
     {
-      "article_count": 199,
+      "article_count": 200,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:插件系统",
-      "degree": 840,
+      "degree": 843,
       "description": "大模型通常指基于海量数据训练的深度神经网络，具备强大的通用智能与涌现能力，是当前AI编程、生态构建及科技竞争的核心驱动力。",
       "id": "tag:大模型",
       "layer": "tag",
@@ -56291,8 +56291,8 @@
       "level": 6,
       "name": "大模型",
       "rank": 20,
-      "related_count": 840,
-      "weighted_degree": 1391
+      "related_count": 843,
+      "weighted_degree": 1398
     },
     {
       "article_count": 31,
