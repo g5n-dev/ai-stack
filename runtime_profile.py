@@ -25,10 +25,14 @@ def apply_sources_runtime_profile(config: Dict[str, Any] | None, profile: str | 
     search_fallback["timeout"] = 5
 
     sources = result.setdefault("sources", {})
+    # CI still limits expensive LLM processing downstream, but the crawlers need
+    # a wider candidate pool so archive dedupe can move past a repeated headline.
+    # Keeping only Top 1 made every hourly run regenerate the same article.
     for source_name in ["github_trending", "hacker_news", "arxiv_ai", "juejin", "blogs_podcasts"]:
         source = sources.setdefault(source_name, {})
         source["enabled"] = True
-        source["limit"] = 1
+        configured_limit = int(source.get("limit", 8) or 8)
+        source["limit"] = max(8, min(configured_limit, 12))
 
     blogs = sources.setdefault("blogs_podcasts", {})
     blogs["timeout"] = min(int(blogs.get("timeout", 30) or 30), 10)

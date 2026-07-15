@@ -2,9 +2,13 @@
 
 import importlib.util
 import sys
+import tempfile
 import types
 import unittest
+from datetime import datetime, timezone
 from pathlib import Path
+
+import yaml as real_yaml
 
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -15,7 +19,7 @@ def _load_module():
     fake_runtime_env.load_project_env = lambda *args, **kwargs: None
 
     fake_yaml = types.ModuleType("yaml")
-    fake_yaml.safe_load = lambda *args, **kwargs: {}
+    fake_yaml.safe_load = real_yaml.safe_load
 
     fake_crawler_main = types.ModuleType("crawler.main")
     fake_crawler_main.CrawlerOrchestrator = object
@@ -160,6 +164,20 @@ class GenerateContentGuardsTest(unittest.TestCase):
             },
         )
 
+    def test_empty_crawl_is_fatal_instead_of_green_success(self):
+        generator = self.module.SuperEnhancedContentGenerator.__new__(
+            self.module.SuperEnhancedContentGenerator
+        )
+
+        with self.assertRaisesRegex(RuntimeError, "Crawler returned no items"):
+            generator._validate_crawled_data(
+                {
+                    "github_trending": [],
+                    "hacker_news": [],
+                    "arxiv_ai": [],
+                }
+            )
+
     def test_raise_for_fatal_post_generation_state_on_compat_failure(self):
         generator = self.module.SuperEnhancedContentGenerator.__new__(self.module.SuperEnhancedContentGenerator)
 
@@ -260,6 +278,124 @@ class GenerateContentGuardsTest(unittest.TestCase):
             "/posts/20260713-hacker_news-safe-project-0/",
         )
         self.assertNotIn("{{", link)
+
+    def test_filters_historical_canonical_urls_before_per_source_limit(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            posts_dir = Path(temp_dir)
+            (posts_dir / "20260714-hacker_news-seen-0.md").write_text(
+                "\n".join(
+                    [
+                        "---",
+                        'title: "Seen"',
+                        "date: 2026-07-14T08:00:00+08:00",
+                        'external_url: "https://Example.com/articles/seen/?utm_source=archive"',
+                        "---",
+                        "",
+                        "Already archived.",
+                    ]
+                ),
+                encoding="utf-8",
+            )
+
+            generator = self.module.SuperEnhancedContentGenerator.__new__(
+                self.module.SuperEnhancedContentGenerator
+            )
+            generator.posts_dir = posts_dir
+            generator._post_index = generator._load_post_index()
+            crawled = {
+                "hacker_news": [
+                    {
+                        "title": "Seen again",
+                        "url": "https://example.com/articles/seen#discussion",
+                    },
+                    {"title": "New one", "url": "https://example.com/articles/new-1"},
+                    {"title": "New two", "url": "https://example.com/articles/new-2"},
+                    {"title": "New three", "url": "https://example.com/articles/new-3"},
+                ]
+            }
+
+            selected = generator._filter_unseen_crawled_data(
+                crawled,
+                max_items_per_source=2,
+            )
+
+            self.assertEqual(
+                [item["url"] for item in selected["hacker_news"]],
+                [
+                    "https://example.com/articles/new-1",
+                    "https://example.com/articles/new-2",
+                ],
+            )
+
+    def test_explicit_utc_generation_time_crosses_into_shanghai_next_day(self):
+        generated_at = datetime(2026, 7, 14, 16, 30, tzinfo=timezone.utc)
+        local_now = self.module.content_now(generated_at)
+
+        self.assertIs(local_now.tzinfo, self.module.SHANGHAI_TZ)
+        self.assertEqual(local_now.isoformat(), "2026-07-15T00:30:00+08:00")
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            generator = self.module.SuperEnhancedContentGenerator.__new__(
+                self.module.SuperEnhancedContentGenerator
+            )
+            generator.posts_dir = Path(temp_dir)
+            generator._post_index = []
+
+            created = generator._generate_posts(
+                {
+                    "hacker_news": [
+                        {
+                            "title": "Midnight AI",
+                            "source": "hacker_news",
+                            "url": "https://example.com/midnight-ai",
+                            "summary": "A safe AI summary.",
+                            "tags": ["AI"],
+                            "categories": ["News"],
+                        }
+                    ]
+                },
+                generated_at=generated_at,
+            )
+
+            files = list(generator.posts_dir.glob("*.md"))
+            self.assertEqual(created, 1)
+            self.assertEqual(
+                [path.name for path in files],
+                ["20260715-hacker_news-midnight-ai-0.md"],
+            )
+            self.assertIn(
+                "date: 2026-07-15T00:30:00+08:00",
+                files[0].read_text(encoding="utf-8"),
+            )
+
+    def test_existing_target_file_is_not_overwritten_or_counted_as_created(self):
+        generated_at = datetime(2026, 7, 15, 2, 0, tzinfo=timezone.utc)
+        with tempfile.TemporaryDirectory() as temp_dir:
+            generator = self.module.SuperEnhancedContentGenerator.__new__(
+                self.module.SuperEnhancedContentGenerator
+            )
+            generator.posts_dir = Path(temp_dir)
+            generator._post_index = []
+            target = generator.posts_dir / "20260715-hacker_news-existing-target-0.md"
+            original = b"existing immutable article\n"
+            target.write_bytes(original)
+
+            created = generator._generate_posts(
+                {
+                    "hacker_news": [
+                        {
+                            "title": "Existing target",
+                            "source": "hacker_news",
+                            "url": "https://example.com/existing-target",
+                            "summary": "Replacement content must not be written.",
+                        }
+                    ]
+                },
+                generated_at=generated_at,
+            )
+
+            self.assertEqual(created, 0)
+            self.assertEqual(target.read_bytes(), original)
 
 
 if __name__ == "__main__":

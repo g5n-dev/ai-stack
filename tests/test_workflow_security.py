@@ -11,11 +11,8 @@ WORKFLOWS = ROOT / ".github" / "workflows"
 # These digests are the byte-for-byte Actions contract on origin/main at
 # 8b6addc4d9d35ab731e5f843351b5e72494fb37f.  The upgrade branch deliberately
 # keeps that contract unchanged; the hardened coordinator remains dormant code.
-WORKFLOW_DIGESTS = {
-    "ci.yml": "b6663c0a0dd77371960a462fd7f9e761552b7a1a750cbf9cf4e0594c5d440391",
+IMMUTABLE_WORKFLOW_DIGESTS = {
     "delete-post.yml": "579f48b15fa398dd915eededece3254d3b9413b5eb3af9d5216ae11389d00a94",
-    "deploy.yml": "e3aeeaafc58b4467f64cc6f7c3d2945626576e537a90d4a81cd67f21283242f8",
-    "monitoring.yml": "41f79677828d5163593cb81108101905ba9610c740e8e3260163923d543c544a",
 }
 
 
@@ -35,9 +32,14 @@ def _jobs(workflow: dict[str, object]) -> dict[str, dict[str, object]]:
     return jobs  # type: ignore[return-value]
 
 
-def test_actions_workflows_match_main_contract_byte_for_byte() -> None:
-    assert {path.name for path in WORKFLOWS.glob("*.yml")} == set(WORKFLOW_DIGESTS)
-    for name, expected in WORKFLOW_DIGESTS.items():
+def test_unchanged_actions_workflows_match_main_contract_byte_for_byte() -> None:
+    assert {path.name for path in WORKFLOWS.glob("*.yml")} == {
+        "ci.yml",
+        "delete-post.yml",
+        "deploy.yml",
+        "monitoring.yml",
+    }
+    for name, expected in IMMUTABLE_WORKFLOW_DIGESTS.items():
         actual = hashlib.sha256((WORKFLOWS / name).read_bytes()).hexdigest()
         assert actual == expected, f"{name} changed the protected Actions contract"
 
@@ -57,15 +59,18 @@ def test_pr_ci_keeps_the_existing_single_required_check() -> None:
     jobs = _jobs(workflow)
     assert tuple(jobs) == ("unit-tests",)
     assert jobs["unit-tests"]["name"] == "Unit Tests"
+    assert "pytest==9.0.3" in text
+    assert "tests/test_content_freshness.py" in text
+    assert "tests/test_workflow_security.py" in text
     assert "static-site" not in text
     assert "browser-e2e" not in text
 
 
-def test_deploy_keeps_the_existing_single_job_flow() -> None:
+def test_deploy_keeps_a_single_fail_closed_job_flow() -> None:
     workflow, text = _workflow("deploy.yml")
     assert workflow["name"] == "Build and Deploy"
     assert workflow["on"] == {
-        "schedule": [{"cron": "0 * * * *"}],
+        "schedule": [{"cron": "17 * * * *"}],
         "workflow_dispatch": "",
         "push": {"branches": ["main"]},
     }
@@ -91,8 +96,17 @@ def test_deploy_keeps_the_existing_single_job_flow() -> None:
     ):
         assert dormant_component not in text
 
+    steps = jobs["build-and-deploy"]["steps"]
+    assert isinstance(steps, list)
+    step_names = [step.get("name") for step in steps if isinstance(step, dict)]
+    assert step_names.index("Commit generated data") < step_names.index("Build Hugo site")
+    assert "python3 scripts/verify_graph.py" in text
+    assert "reset --hard" not in text
+    assert "git pull --rebase" not in text
+    assert "reusing existing graph artifacts" not in text
 
-def test_delete_and_monitoring_keep_the_existing_jobs_and_inputs() -> None:
+
+def test_delete_workflow_keeps_the_existing_job_and_inputs() -> None:
     deletion, _ = _workflow("delete-post.yml")
     assert deletion["name"] == "Delete Post"
     assert deletion["concurrency"] == {
@@ -107,23 +121,25 @@ def test_delete_and_monitoring_keep_the_existing_jobs_and_inputs() -> None:
     assert tuple(inputs) == ("mode", "post_path", "scan_limit", "dry_run")
     assert tuple(_jobs(deletion)) == ("delete-post",)
 
-    monitoring, _ = _workflow("monitoring.yml")
+
+
+def test_monitoring_checks_main_and_live_data_instead_of_legacy_gh_pages() -> None:
+    monitoring, text = _workflow("monitoring.yml")
     assert monitoring["name"] == "System Monitoring & Content Quality Tracking"
     assert monitoring["on"] == {
-        "schedule": [{"cron": "0 */6 * * *"}],
+        "schedule": [{"cron": "23 */6 * * *"}],
         "workflow_dispatch": "",
     }
-    assert "concurrency" not in monitoring
-    assert "permissions" not in monitoring
-    assert tuple(_jobs(monitoring)) == (
-        "monitor-main-branch",
-        "monitor-gh-pages-branch",
-        "monitor-content-quality",
-        "monitor-user-value",
-        "monitor-token-usage",
-        "monitor-sync-status",
-        "generate-report",
-    )
+    assert monitoring["concurrency"] == {
+        "group": "content-freshness-monitor",
+        "cancel-in-progress": "true",
+    }
+    assert monitoring["permissions"] == {"contents": "read"}
+    assert tuple(_jobs(monitoring)) == ("verify-data-freshness",)
+    assert "scripts/verify_content_freshness.py" in text
+    assert "https://ai-stack.site/data/tag-graph/index.json" in text
+    assert "--max-age-hours 12" in text
+    assert "gh-pages" not in text
 
 
 def test_all_external_publishers_remain_disabled_by_default() -> None:
@@ -167,10 +183,10 @@ def test_branch_architecture_marks_the_new_coordinator_as_dormant() -> None:
         "PR CI",
         "Build and Deploy",
         "System Monitoring & Content Quality Tracking",
-        "0 * * * *",
-        "0 */6 * * *",
+        "17 * * * *",
+        "23 */6 * * *",
         "Unit Tests",
-        "当前升级 PR 不修改任何 `.github/workflows/*.yml` 字节",
+        "本次可靠性修复修改 `deploy.yml` 与 `monitoring.yml`",
         "目标协调 DAG 尚未接入 GitHub Actions",
     ):
         assert required in document

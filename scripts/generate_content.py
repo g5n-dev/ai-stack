@@ -8,6 +8,7 @@ import sys
 import os
 from pathlib import Path
 from datetime import datetime
+from zoneinfo import ZoneInfo
 import logging
 import argparse
 import re
@@ -33,6 +34,56 @@ logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
 )
 logger = logging.getLogger(__name__)
+
+SHANGHAI_TZ = ZoneInfo("Asia/Shanghai")
+CONTENT_TIMEZONE = SHANGHAI_TZ
+_TRACKING_QUERY_PARAMS = {
+    "utm_source",
+    "utm_medium",
+    "utm_campaign",
+    "utm_term",
+    "utm_content",
+    "utm_id",
+    "gclid",
+    "fbclid",
+    "mc_cid",
+    "mc_eid",
+    "ref",
+    "ref_src",
+}
+
+
+def content_now(value: datetime | None = None) -> datetime:
+    """Return one timezone-aware clock value for filenames and frontmatter."""
+    if value is None:
+        return datetime.now(CONTENT_TIMEZONE)
+    if value.tzinfo is None:
+        raise ValueError("content generation time must be timezone-aware")
+    return value.astimezone(CONTENT_TIMEZONE)
+
+
+def canonicalize_content_url(value: object) -> str:
+    """Normalize archive identities without importing the complete crawler tree."""
+    raw = str(value or "").strip()
+    if not raw:
+        return ""
+    try:
+        parts = urllib.parse.urlsplit(raw)
+        scheme = (parts.scheme or "https").lower()
+        netloc = parts.netloc.lower()
+        path = parts.path.rstrip("/")
+        query = [
+            (key, item)
+            for key, item in urllib.parse.parse_qsl(
+                parts.query, keep_blank_values=True
+            )
+            if key not in _TRACKING_QUERY_PARAMS
+        ]
+        return urllib.parse.urlunsplit(
+            (scheme, netloc, path, urllib.parse.urlencode(query, doseq=True), "")
+        )
+    except Exception:
+        return raw
 
 _RELREF_RE = re.compile(r"""\{\{[<%]\s*relref\s+(['"])(.+?)\1\s*[>%]\}\}""")
 _TAXONOMY_MD_LINK_RE = re.compile(r"""\[([^\]]+)\]\(/(tags|categories|scenarios)/([^)]+?)\)""")
@@ -493,6 +544,7 @@ class SuperEnhancedContentGenerator:
         self.processor = ProcessorOrchestrator(runtime_profile=self.runtime_profile)
         self.publisher = PublisherOrchestrator()
         self.posts_dir = project_root / 'blog' / 'content' / 'posts'
+        self.max_new_items_per_source = 1 if self.runtime_profile == "ci" else None
 
         # 确保 posts 目录存在
         self.posts_dir.mkdir(parents=True, exist_ok=True)
@@ -525,18 +577,40 @@ class SuperEnhancedContentGenerator:
 
             total_items = sum(len(items) for items in crawled_data.values())
             logger.info(f"✓ Crawled {total_items} items from {len(crawled_data)} sources")
+            self._validate_crawled_data(crawled_data)
+            crawled_data = self._filter_unseen_crawled_data(
+                crawled_data,
+                max_items_per_source=self.max_new_items_per_source,
+            )
+            unseen_items = sum(len(items) for items in crawled_data.values())
+            logger.info(
+                "✓ Selected %s archive-new items for AI processing",
+                unseen_items,
+            )
 
             # 2. 超级增强处理（15次大模型调用）
             logger.info("\n[2/4] Processing content with AI (15+ LLM calls)...")
             logger.info("    This may take a while.")
-            processed_data = self.processor.process_by_source(crawled_data)
+            if unseen_items > 0:
+                processed_data = self.processor.process_by_source(crawled_data)
+            else:
+                processed_data = {source: [] for source in crawled_data}
+                logger.info("No archive-new items; skipping LLM processing")
             logger.info(f"✓ Super enhanced content from {len(processed_data)} sources")
             postability = summarize_processed_postability(processed_data)
 
             # 3. 生成超级增强版 Markdown 文章
             logger.info("\n[3/4] Generating Markdown posts...")
-            posts_created = self._generate_posts(processed_data)
-            logger.info(f"✓ Created {posts_created} Markdown posts")
+            posts_created = self._generate_posts(
+                processed_data,
+                generated_at=content_now(),
+            )
+            generation_stats = getattr(self, "last_generation_stats", {})
+            logger.info(
+                "✓ Markdown write summary: created=%s skipped_existing=%s",
+                posts_created,
+                int(generation_stats.get("skipped_existing", 0) or 0),
+            )
             self._raise_for_fatal_post_generation_state(
                 posts_created=posts_created,
                 postability=postability,
@@ -574,6 +648,73 @@ class SuperEnhancedContentGenerator:
         except Exception as e:
             logger.error(f"Content generation failed: {e}", exc_info=True)
             return False
+
+    def _validate_crawled_data(self, crawled_data: dict) -> None:
+        if not isinstance(crawled_data, dict):
+            raise RuntimeError("Crawler returned an invalid result")
+        total_items = sum(
+            len(items) for items in crawled_data.values() if isinstance(items, list)
+        )
+        if total_items <= 0:
+            raise RuntimeError(
+                "Crawler returned no items from all enabled sources; refusing a green no-op deployment"
+            )
+
+    def _filter_unseen_crawled_data(
+        self,
+        crawled_data: dict,
+        *,
+        max_items_per_source: int | None = None,
+    ) -> dict:
+        existing_urls = {
+            canonicalize_content_url(post.get("external_url"))
+            for post in getattr(self, "_post_index", [])
+            if isinstance(post, dict) and post.get("external_url")
+        }
+        seen_urls = set(existing_urls)
+        selected: dict[str, list[dict]] = {}
+        candidate_count = 0
+        skipped_historical = 0
+
+        for source, raw_items in (crawled_data or {}).items():
+            chosen: list[dict] = []
+            items = raw_items if isinstance(raw_items, list) else []
+            candidate_count += len(items)
+            for item in items:
+                if not isinstance(item, dict):
+                    continue
+                external_url = canonicalize_content_url(
+                    item.get("url") or item.get("repo_url") or item.get("link")
+                )
+                if external_url and external_url in seen_urls:
+                    skipped_historical += 1
+                    continue
+                if external_url:
+                    seen_urls.add(external_url)
+                    item["url"] = external_url
+                chosen.append(item)
+                if (
+                    max_items_per_source is not None
+                    and max_items_per_source > 0
+                    and len(chosen) >= max_items_per_source
+                ):
+                    break
+            selected[str(source)] = chosen
+
+        self.last_filter_stats = {
+            "candidates": candidate_count,
+            "historical_urls": len(existing_urls),
+            "skipped_historical": skipped_historical,
+            "selected": sum(len(items) for items in selected.values()),
+        }
+        logger.info(
+            "Archive dedupe: candidates=%s historical_urls=%s skipped=%s selected=%s",
+            self.last_filter_stats["candidates"],
+            self.last_filter_stats["historical_urls"],
+            self.last_filter_stats["skipped_historical"],
+            self.last_filter_stats["selected"],
+        )
+        return selected
 
     def _raise_for_fatal_post_generation_state(self, *, posts_created: int, postability: dict) -> None:
         total_items = int(postability.get("total_items", 0) or 0)
@@ -625,7 +766,12 @@ class SuperEnhancedContentGenerator:
                 f"Examples: {examples}"
             )
 
-    def _generate_posts(self, processed_data: dict) -> int:
+    def _generate_posts(
+        self,
+        processed_data: dict,
+        *,
+        generated_at: datetime | None = None,
+    ) -> int:
         """
         生成超级增强版 Markdown 文章文件
 
@@ -636,7 +782,9 @@ class SuperEnhancedContentGenerator:
             int: 创建的文章数量
         """
         created_count = 0
-        timestamp = datetime.now().strftime('%Y%m%d')
+        skipped_existing = 0
+        local_generated_at = content_now(generated_at)
+        timestamp = local_generated_at.strftime('%Y%m%d')
 
         for source, items in processed_data.items():
             for idx, item in enumerate(items):
@@ -649,8 +797,17 @@ class SuperEnhancedContentGenerator:
                     filename = f"{timestamp}-{source}-{slug}.md"
                     filepath = self.posts_dir / filename
 
+                    if filepath.exists():
+                        skipped_existing += 1
+                        logger.info("↷ Skipped existing immutable post: %s", filename)
+                        continue
+
                     # 生成 Markdown 内容
-                    markdown_content = self._format_super_enhanced_markdown(item, current_filename=filename)
+                    markdown_content = self._format_super_enhanced_markdown(
+                        item,
+                        current_filename=filename,
+                        generated_at=local_generated_at,
+                    )
                     markdown_content, _ = sanitize_public_markdown_text(text=markdown_content)
 
                     # 写入文件
@@ -665,6 +822,10 @@ class SuperEnhancedContentGenerator:
                     logger.error(f"Failed to generate post for {item.get('title', 'Unknown')}: {e}")
                     continue
 
+        self.last_generation_stats = {
+            "created": created_count,
+            "skipped_existing": skipped_existing,
+        }
         return created_count
 
     def _looks_like_meta_disclaimer(self, text: str) -> bool:
@@ -781,7 +942,13 @@ class SuperEnhancedContentGenerator:
         slug = slug.strip('-')[:50]
         return f"{slug}-{index}"
 
-    def _format_super_enhanced_markdown(self, item: dict, *, current_filename: str | None = None) -> str:
+    def _format_super_enhanced_markdown(
+        self,
+        item: dict,
+        *,
+        current_filename: str | None = None,
+        generated_at: datetime | None = None,
+    ) -> str:
         """
         格式化内容为超级增强版 Markdown（15+ 个章节）
 
@@ -794,7 +961,7 @@ class SuperEnhancedContentGenerator:
         source = item.get('source', 'unknown')
         raw_title = item.get('catchy_title') or item.get('title_translated') or item.get('title', 'Untitled')
         title = self._sanitize_title_for_seo(raw_title)
-        date = datetime.now().strftime('%Y-%m-%dT%H:%M:%S+08:00')
+        date = content_now(generated_at).isoformat(timespec="seconds")
 
         # 构建标签
         tags = self._normalize_taxonomy_list(item.get('tags', []))
@@ -965,6 +1132,9 @@ class SuperEnhancedContentGenerator:
             "filename": filename,
             "content_path": f"posts/{filename}",
             "title": str(title or "").strip(),
+            "external_url": canonicalize_content_url(
+                item.get("url") or item.get("repo_url") or item.get("link")
+            ),
             "tags": self._normalize_taxonomy_list(item.get("tags", [])),
             "categories": self._normalize_taxonomy_list(item.get("categories", [])),
             "scenarios": self._normalize_scenarios(item.get("scenarios")),
@@ -1003,6 +1173,9 @@ class SuperEnhancedContentGenerator:
             "filename": filename,
             "content_path": f"posts/{filename}",
             "title": title,
+            "external_url": canonicalize_content_url(
+                fm.get("external_url") or fm.get("url")
+            ),
             "tags": self._normalize_taxonomy_list(fm.get("tags", [])),
             "categories": self._normalize_taxonomy_list(fm.get("categories", [])),
             "scenarios": self._normalize_taxonomy_list(fm.get("scenarios", [])),

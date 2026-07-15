@@ -32,6 +32,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+          pip install pytest==9.0.3
 
       - name: Run stable unit test suite
         env:
@@ -46,3 +47,6 @@ jobs:
             tests.test_runtime_profiles \
             tests.test_search_fallback \
             tests.test_tag_graph_runtime
+          python3 -m pytest -q \
+            tests/test_content_freshness.py \
+            tests/test_workflow_security.py
