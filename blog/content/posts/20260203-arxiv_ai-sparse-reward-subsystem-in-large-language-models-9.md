@@ -116,7 +116,6 @@ source_support: 0.0
     *   **Vs. Transformer Interpretability (Circuit Analysis):** 传统的电路分析关注层与层的连接，本研究深入
 
 ---
-## 研究最佳实践
 
 ## 最佳实践指南
 
@@ -217,7 +216,6 @@ source_support: 0.0
 - 该方法为多模态大模型训练提供了新范式，在视觉-语言联合任务中展现出跨模态迁移能力。
 
 ---
-## 学习路径
 
 ## 学习路径
 

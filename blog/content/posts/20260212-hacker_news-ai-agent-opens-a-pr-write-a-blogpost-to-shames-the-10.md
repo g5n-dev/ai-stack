@@ -281,7 +281,6 @@ def analyze_pr_closing_behavior(repo_owner, repo_name, github_token):
 争议平息，项目透明度提升，后续 PR 合并流程更加规范。
 
 ---
-## 最佳实践
 
 ## 最佳实践指南
 

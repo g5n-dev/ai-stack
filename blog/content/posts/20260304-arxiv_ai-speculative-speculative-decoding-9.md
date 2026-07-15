@@ -122,7 +122,6 @@ source_support: 0.0
 
 ---
 
-### 论文深度分析：Speculative Speculative Decoding
 
 ### 1. 研究背景与问题
 

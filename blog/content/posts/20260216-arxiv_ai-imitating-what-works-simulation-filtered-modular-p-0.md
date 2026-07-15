@@ -287,7 +287,6 @@ $$ G^* = \arg\max_{G \in \mathcal{G}_{candidates}} P(Success(O, G, \tau_{video})
 1.  **软体或变形物体：** 仿真器很难
 
 ---
-## 研究最佳实践
 
 ## 最佳实践指南
 
@@ -399,7 +398,6 @@ $$ G^* = \arg\max_{G \in \mathcal{G}_{candidates}} P(Success(O, G, \tau_{video})
 - 实现了从人类视频到仿真再到现实世界的完整迁移流程，证明了在零样本或极少真实样本的情况下，机器人仍能有效地执行复杂的操作任务。
 
 ---
-## 学习路径
 
 ## 学习路径
 

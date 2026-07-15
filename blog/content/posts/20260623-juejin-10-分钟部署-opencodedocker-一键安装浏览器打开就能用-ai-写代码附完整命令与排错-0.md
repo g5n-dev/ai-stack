@@ -55,7 +55,6 @@ source_support: 0.0
 - 确保已安装 Docker（Docker Desktop 或 docker‑ce）。
 - 可选：配置轩辕镜像加速，将拉取源替换为 `openeuler/opencode` 的加速地址，以提升下载速度。
 
-#### 一键拉取与启动
 ```bash
 # 拉取最新镜像（使用轩辕加速）
 docker pull openeuler/opencode:latest

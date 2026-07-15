@@ -263,15 +263,19 @@ def test_empty_section_cleanup_removes_only_empty_sibling_headings() -> None:
     body = (
         "## 常见问题\n\n### 如何部署\n\n这里有完整答案。\n\n"
         "## 最佳实践\n\n## 最佳实践指南\n\n这里也有完整内容。\n\n"
+        "## 空容器\n\n### 空子标题\n\n## 最终章节\n\n这里仍有内容。\n\n"
         "```markdown\n## 代码块标题\n\n## 代码块中的相邻标题\n```\n"
     )
 
     cleaned, removed = remove_empty_section_headings(body)
 
-    assert removed == 1
+    assert removed == 3
     assert "## 常见问题" in cleaned
     assert "## 最佳实践\n" not in cleaned
     assert "## 最佳实践指南" in cleaned
+    assert "## 空容器" not in cleaned
+    assert "### 空子标题" not in cleaned
+    assert "## 最终章节" in cleaned
     assert "## 代码块标题" in cleaned
 
 

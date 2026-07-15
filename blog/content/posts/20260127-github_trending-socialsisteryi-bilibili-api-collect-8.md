@@ -460,7 +460,6 @@ Bilibili employs different authentication strategies depending on the client pla
 - 减少 60% 的重复劳动，运营团队可专注于内容策划。
 
 ---
-## ⚖️ 与同类方案对比
 
 ## 与同类方案对比
 
@@ -490,7 +489,6 @@ Bilibili employs different authentication strategies depending on the client pla
 - ⚠️ **仅限中文**：文档主要为中文，限制了非中文开发者的使用。
 
 ---
-## ✅ 最佳实践指南
 
 ## 最佳实践指南
 
@@ -571,7 +569,6 @@ Bilibili employs different authentication strategies depending on the client pla
 **注意事项**: 文档中的“已失效”标签（⚠️）应重点关注，及时剔除代码中的相关调用。
 
 ---
-## 🚀 性能优化建议
 
 ## 性能优化建议
 
@@ -683,7 +680,6 @@ Bilibili API数据可能具有时效性，对非实时接口实施客户端/服�
 - 📜 **跨平台协议的差异对比** 🔄：项目区分了网页版和App版（Android/iOS）的接口差异，帮助开发者理解同一业务在不同终端上的实现方式与性能优劣。
 
 ---
-## 🗺️ 循序渐进的学习路径
 
 ## 学习路径
 

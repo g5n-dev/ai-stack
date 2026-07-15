@@ -39,7 +39,6 @@ source_support: 0.0
 - **链接**: [https://juejin.cn/post/7628492748772950067](https://juejin.cn/post/7628492748772950067)
 
 ---
-## 描述
 
 ## 翻译结果
 

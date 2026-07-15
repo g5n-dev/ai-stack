@@ -258,7 +258,6 @@ def translate_webpage(content: str, target_lang: str, api_key: str) -> str:
 - 通过AI对多源信息的整合，快速解决了以往需要数小时搜索才能定位的隐蔽Bug。
 
 ---
-## 最佳实践
 
 ## 最佳实践指南
 

@@ -271,7 +271,6 @@ $$ G(\pi) = \underbrace{\mathbb{E}_q [\ln p(o|\pi)]}_{\text{Pragmatic (Reward)}}
 这篇论文推进
 
 ---
-## 研究最佳实践
 
 ## 最佳实践指南
 
@@ -359,7 +358,6 @@ $$ G(\pi) = \underbrace{\mathbb{E}_q [\ln p(o|\pi)]}_{\text{Pragmatic (Reward)}}
 - 研究将认知科学中的主动推理理论与机器学习算法深度融合，为开发具备类人认知能力的通用人工智能提供了一条新的、可解释的路径。
 
 ---
-## 学习路径
 
 ## 学习路径
 

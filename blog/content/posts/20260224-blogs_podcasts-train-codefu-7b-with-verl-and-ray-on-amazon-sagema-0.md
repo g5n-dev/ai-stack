@@ -138,7 +138,6 @@ source_support: 0.0
 
 ---
 
-### 深度分析：在 SageMaker 上使用 veRL 与 Ray 训练 CodeFu-7B
 
 ### 1. 核心观点深度解读
 

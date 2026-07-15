@@ -119,7 +119,6 @@ MooTDX includes tools to automatically select the fastest available TDX servers 
 
 ### Installation Methods
 
-#### Basic Installation
 
 #### Upgrade Installation
 
@@ -482,7 +481,6 @@ data = quotes.bars(symbol='600036', start=1, offset=100)
 2.  **轻量与性能**：`mootdx` 作为一个纯 Python 库，依赖极少，部署非常迅速。该微服务上线后，平均响应时间控制在 200ms 以内，完美满足了教学网站的演示需求。
 
 ---
-## ⚖️ 与同类方案对比
 
 ## 与同类方案对比
 
@@ -523,7 +521,6 @@ data = quotes.bars(symbol='600036', start=1, offset=100)
 > - 选择AKShare获取免费的多源数据但能容忍维护成本时
 
 ---
-## ✅ 最佳实践指南
 
 ## 最佳实践指南
 
@@ -603,7 +600,6 @@ data = quotes.bars(symbol='600036', start=1, offset=100)
 **注意事项**: 复权因子是动态变化的，历史数据在复权因子调整后可能会发生微小变化，长期回测需注意保存当期的复权因子。
 
 ---
-## 🚀 性能优化建议
 
 ## 性能优化建议
 
@@ -701,7 +697,6 @@ mootdx 在频繁请求通达信数据时，每次创建新连接会导致TCP握�
 - 🐍 **纯 Python 实现**：无需依赖复杂的 C++ 库或重型插件，安装轻便，代码易于维护和二次开发。
 
 ---
-## 🗺️ 循序渐进的学习路径
 
 ## 学习路径
 

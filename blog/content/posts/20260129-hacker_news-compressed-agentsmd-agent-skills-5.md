@@ -273,7 +273,6 @@ Rabbit 开发了“Large Action Model”（LAM）并推出了 R1 设备。其核
 Rabbit R1 在 CES 展示了无需适配即可操作 Spotify、Uber 和 DoorDash 等 30+ 种主流应用的能力。虽然产品初期面临硬件稳定性挑战，但其“基于 UI 交互的 Agent”范式为解决应用碎片化问题提供了新的方向，证明了 Agent 可以在不依赖官方 API 的情况下，通过模拟人类操作技能来执行复杂的跨应用任务。
 
 ---
-## 最佳实践
 
 ## 最佳实践指南
 

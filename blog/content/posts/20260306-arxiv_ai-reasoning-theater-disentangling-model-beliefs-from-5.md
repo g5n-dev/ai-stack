@@ -131,7 +131,6 @@ source_support: 0.0
 
 ---
 
-### 论文深入分析：Reasoning Theater: Disentangling Model Beliefs from Chain-of-Thought
 
 ### 1. 研究背景与问题
 

@@ -282,7 +282,6 @@ $$ P(\text{Temporal Context}) \times P(X_{t-1} | X_t, \text{Temporal Context}) $
 
 
 ---
-## 学习路径
 
 ## 学习路径
 

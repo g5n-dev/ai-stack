@@ -113,7 +113,6 @@ IBM 发布的 Granite 4.0 1B Speech 模型标志着语音 AI 技术向边缘侧�
 
 ---
 
-### Granite 4.0 1B Speech 深度分析报告
 
 ### 1. 核心观点深度解读
 

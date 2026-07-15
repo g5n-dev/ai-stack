@@ -307,7 +307,6 @@ $$ \min_{p \in \Delta} \quad D_{KL}(p \| q) + \lambda \cdot \text{Calibration-Er
 - **理论
 
 ---
-## ✅ 研究最佳实践
 
 ## 最佳实践指南：无真实值校准
 
@@ -400,7 +399,6 @@ $$ \min_{p \in \Delta} \quad D_{KL}(p \| q) + \lambda \cdot \text{Calibration-Er
 - 🌐 **解决跨域分布差异**：该方法能有效处理源域（训练集）与目标域（测试集）分布不一致的情况，使模型在面对新环境数据时依然保持可靠的置信度。
 
 ---
-## 🗺️ 学习路径
 
 ## 学习路径
 

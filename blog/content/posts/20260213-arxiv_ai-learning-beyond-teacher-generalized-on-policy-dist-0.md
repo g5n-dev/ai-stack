@@ -256,7 +256,6 @@ $$ \text{Maximize } E [\lambda \cdot r_{\text{Teacher}}(x, y) - \text{KL}(\pi_\t
 ###
 
 ---
-## 研究最佳实践
 
 ## 最佳实践指南
 
@@ -355,7 +354,6 @@ $$ \text{Maximize } E [\lambda \cdot r_{\text{Teacher}}(x, y) - \text{KL}(\pi_\t
 - 在多个具有挑战性的连续控制基准测试中进行了验证，实验结果表明该方法在样本效率和最终性能上均优于传统的异策略蒸馏和标准同策略强化学习算法。
 
 ---
-## 学习路径
 
 ## 学习路径
 

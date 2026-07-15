@@ -444,7 +444,6 @@ for category, count in stats.items():
 3. 校园网出口带宽利用率优化，IT 部门运维压力减轻。
 
 ---
-## 对比分析
 
 ## 与同类方案对比
 
@@ -470,7 +469,6 @@ for category, count in stats.items():
 - 不足3：规则更新需手动操作，维护成本较高
 
 ---
-## 最佳实践
 
 ## 最佳实践指南
 
@@ -578,7 +576,6 @@ Shadowrocket-ADBlock-Rules-Forever 是一个动态维护的广告拦截规则集
 **注意事项**:
 
 ---
-## 性能优化建议
 
 ## 性能优化建议
 
@@ -670,7 +667,6 @@ Shadowrocket-ADBlock-Rules-Forever 是一个动态维护的广告拦截规则集
 - 开源社区支持，用户可通过 GitHub 提交问题或贡献规则改进。
 
 ---
-## 学习路径
 
 ## 学习路径
 

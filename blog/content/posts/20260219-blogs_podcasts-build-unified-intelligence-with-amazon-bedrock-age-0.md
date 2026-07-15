@@ -104,7 +104,6 @@ source_support: 0.0
 
 ---
 
-### 深度分析报告：基于 Amazon Bedrock AgentCore 构建统一智能
 
 ### 1. 核心观点深度解读
 

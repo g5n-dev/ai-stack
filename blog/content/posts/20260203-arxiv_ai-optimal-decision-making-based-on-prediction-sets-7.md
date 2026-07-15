@@ -271,7 +271,6 @@ $$ \min_{C \in \mathcal{C}} \sup_{P \in \mathcal{P}_{\text{amb}}} \mathbb{E}_{(X
 - **验证方式**：通过 Back-testing（回测）检查历史数据上的覆盖率是否真的维持在 $1-\alpha$，
 
 ---
-## 研究最佳实践
 
 ## 最佳实践指南
 
@@ -391,7 +390,6 @@ $$ \min_{C \in \mathcal{C}} \sup_{P \in \mathcal{P}_{\text{amb}}} \mathbb{E}_{(X
 - 实验表明，基于预测集的决策在不确定性高或数据稀疏时优于传统方法，但计算复杂度可能增加。
 
 ---
-## 学习路径
 
 ## 学习路径
 

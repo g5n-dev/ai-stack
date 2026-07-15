@@ -245,7 +245,6 @@ visualize_ad_performance(ad_performance)
 - **创意民主化**：非营销岗位的员工（如客服、社群运营）也能利用 ChatGPT 生成高质量的推广文案，减轻了核心创意团队的负担。
 
 ---
-## 最佳实践
 
 ## 最佳实践指南
 

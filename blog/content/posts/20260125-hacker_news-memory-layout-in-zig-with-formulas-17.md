@@ -252,7 +252,6 @@ const UART_Register = extern struct {
 （注：以上案例基于真实项目改编，TigerBeetle 为实际使用 Zig 的知名项目，其他案例为 Zig 在相关领域的
 
 ---
-## ✅ 最佳实践
 
 ## 最佳实践指南
 

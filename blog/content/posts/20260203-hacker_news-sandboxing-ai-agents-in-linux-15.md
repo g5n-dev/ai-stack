@@ -299,7 +299,6 @@ def run_with_seccomp(command):
 2.  **绝对的安全边界**：在一次内部压力测试中，Agent 成功利用了一个 0-day 漏洞逃逸了容器内部的应用层，但由于受到 User Namespace 的限制，它试图修改 `/etc/shadow` 文件的操作被内核直接拒绝（Permission Denied），未能对宿主机造成任何影响。这证明了该沙箱方案在应对 AI Agent 产生不可控行为时的有效性。
 
 ---
-## 最佳实践
 
 ## 最佳实践指南
 

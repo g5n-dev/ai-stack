@@ -497,11 +497,8 @@ else:
 ## 思考题
 
 
-### ## 挑战与思考题
 
-### ### 挑战 1: 本地环境部署与基础测试
 
-### 问题**: 在你的本地环境中部署一个轻量级开源模型（如 Llama 3.2 3B 或 Phi-3），并通过 Ollama 或 LM Studio 提供 API 服务。编写一个简单的 Python 脚本，测试其是否能成功响应一个基础提示词。
 
 ### 提示**: 需要先安装 Ollama 或下载 LM Studio，确保模型下载完成。Python 脚本可以使用 requests 库向本地 API 端点（通常是 http://localhost:11434）发送 POST 请求。
 

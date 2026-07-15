@@ -125,7 +125,6 @@ LLVQ实现了最先进的LLM量化性能，优于Quip#、QTIP和PVQ等现有方�
 
 ---
 
-### Leech Lattice Vector Quantization for Efficient LLM Compression 深度分析报告
 
 ### 1. 研究背景与问题
 

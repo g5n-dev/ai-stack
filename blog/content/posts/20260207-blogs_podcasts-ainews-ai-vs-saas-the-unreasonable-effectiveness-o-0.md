@@ -182,7 +182,6 @@ source_support: 0.0
 2.  **企业知识库**：一个AI聊天窗口（UI）通过MCP同时连接Google Drive、Notion和Slack，实现跨平台数据检索。
 
 ---
-## 最佳实践
 
 ## 架构实施建议
 

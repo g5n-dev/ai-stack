@@ -320,13 +320,17 @@ def _has_empty_section(body: str) -> bool:
 def remove_empty_section_headings(body: str) -> tuple[str, int]:
     """Remove empty shell headings without generating replacement prose."""
 
-    text = str(body or "")
-    indexes = set(_empty_section_heading_indexes(text))
-    if not indexes:
-        return text, 0
-    lines = text.splitlines(keepends=True)
-    cleaned = "".join(line for index, line in enumerate(lines) if index not in indexes)
-    return cleaned, len(indexes)
+    cleaned = str(body or "")
+    removed = 0
+    while True:
+        indexes = set(_empty_section_heading_indexes(cleaned))
+        if not indexes:
+            return cleaned, removed
+        lines = cleaned.splitlines(keepends=True)
+        cleaned = "".join(
+            line for index, line in enumerate(lines) if index not in indexes
+        )
+        removed += len(indexes)
 
 
 def content_quality_reasons(body: str) -> tuple[str, ...]:

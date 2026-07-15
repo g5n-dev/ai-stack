@@ -143,7 +143,6 @@ UniLID 在数据效率和计算成本上远超现有基线，且准确率具有�
 
 ---
 
-### 论文深入分析：What Language is This? Ask Your Tokenizer
 
 ### 1. 研究背景与问题
 

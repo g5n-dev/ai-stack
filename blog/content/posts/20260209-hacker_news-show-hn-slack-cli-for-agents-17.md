@@ -256,7 +256,6 @@ def create_slack_shortcut(token, callback_id, title, description):
 团队的工作流更加连贯，创意人员的工具使用 adoption 率达到了 90% 以上。文案生成和翻译任务的耗时平均减少了 70%，使得团队能更专注于策略制定而非重复性的文字处理工作。
 
 ---
-## 最佳实践
 
 ## 最佳实践指南
 

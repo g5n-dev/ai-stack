@@ -118,7 +118,6 @@ source_support: 0.0
 
 ---
 
-### 深度分析报告：Amazon Nova 的强化微调（RFT）技术解析
 
 ### 1. 核心观点深度解读
 

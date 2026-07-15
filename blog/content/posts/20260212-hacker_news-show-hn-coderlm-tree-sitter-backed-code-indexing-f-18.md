@@ -310,7 +310,6 @@ print(compare_code_semantics(old_version, new_version))
 - **知识沉淀**：新构建的语义索引成为了团队的知识库，LLM Agent 能够基于索引快速回答“这个功能在旧代码中是怎么实现的”等问题，加速了团队对旧系统的剥离。
 
 ---
-## 最佳实践
 
 ## 最佳实践指南
 

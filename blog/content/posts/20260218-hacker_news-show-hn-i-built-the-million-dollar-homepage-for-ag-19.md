@@ -285,7 +285,6 @@ DefiMind 利用“Agent Million Dollar Homepage”的概念，在一个由 AI Ag
 - **生态协同**：这种“Agent 拼图”式的展示不仅推广了单个工具，还演示了多个 Agent 协同工作的可能性，吸引了科技博主的关注。
 
 ---
-## 最佳实践
 
 ## 最佳实践指南
 

@@ -137,7 +137,6 @@ source_support: 0.0
 
 ---
 
-### 深入分析报告：Efficient Reasoning on the Edge
 
 ### 1. 研究背景与问题
 

@@ -266,7 +266,6 @@ check_robots_txt("https://example.com")
 ---
 ## 最佳实践
 
-#### 最佳实践指南
 
 ### 实践 1：实施细粒度的 Robots.txt 协议控制
 

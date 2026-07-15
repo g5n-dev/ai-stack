@@ -288,7 +288,6 @@ $$ R_{total} = R_{accuracy} - \alpha \cdot R_{reflection} - \lambda(c) \cdot R_{
 该论文是
 
 ---
-## 研究最佳实践
 
 ## 最佳实践指南
 
@@ -372,7 +371,6 @@ $$ R_{total} = R_{accuracy} - \alpha \cdot R_{reflection} - \lambda(c) \cdot R_{
 - 通过优化反思策略，该方案为在资源受限的边缘设备上部署具备复杂推理能力的大模型提供了可行的技术路径。
 
 ---
-## 学习路径
 
 ## 学习路径
 

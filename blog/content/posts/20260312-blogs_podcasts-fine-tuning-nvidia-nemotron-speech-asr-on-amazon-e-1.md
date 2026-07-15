@@ -132,7 +132,6 @@ source_support: 0.0
 
 ---
 
-### 深入分析：在 Amazon EC2 上微调 NVIDIA Nemotron ASR 模型以实现领域适配
 
 ### 1. 核心观点深度解读
 

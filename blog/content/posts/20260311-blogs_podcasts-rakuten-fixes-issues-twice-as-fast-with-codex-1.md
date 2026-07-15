@@ -141,7 +141,6 @@ Rakuten uses Codex, the coding agent from OpenAI, to ship software faster and sa
 
 ---
 
-### Rakuten 使用 Codex 加速软件开发的核心技术与价值分析
 
 ### 1. 核心观点深度解读
 

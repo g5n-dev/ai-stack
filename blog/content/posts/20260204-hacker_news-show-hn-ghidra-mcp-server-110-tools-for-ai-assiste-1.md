@@ -300,7 +300,6 @@ def search_and_annotate(ghidra_api, pattern, comment):
 在演练的第 3 天，红队成功利用 AI 辅助定位的一个栈溢出漏洞，实现了对该通信软件的远程代码执行（RCE）。这一过程比纯手工挖掘快了近 70%。Ghidra MCP Server 在此过程中充当了“透视镜”的角色，让模糊测试从盲测变成了精准打击。
 
 ---
-## 最佳实践
 
 ## 最佳实践指南
 

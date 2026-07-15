@@ -125,7 +125,6 @@ source_support: 0.0
 
 ---
 
-### 论文深入分析：A Minimal Agent for Automated Theorem Proving
 
 ### 1. 研究背景与问题
 

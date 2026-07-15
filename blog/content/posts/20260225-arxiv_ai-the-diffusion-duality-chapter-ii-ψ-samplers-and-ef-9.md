@@ -132,7 +132,6 @@ source_support: 0.0
 
 ---
 
-### 《The Diffusion Duality, Chapter II》深度分析报告
 
 ### 1. 研究背景与问题
 

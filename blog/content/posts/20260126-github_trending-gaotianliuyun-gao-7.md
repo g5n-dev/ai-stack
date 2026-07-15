@@ -526,7 +526,6 @@ Sources: [README.md31-38](https://github.com/gaotianliuyun/gao/blob/8213bb04/REA
 > 注：数据基于各项目 2024 年最新公开信息整理，性能测试采用相同云环境下 10GB 文件传输基准。
 
 ---
-## ✅ 最佳实践指南
 
 ## 最佳实践指南
 
@@ -638,7 +637,6 @@ Sources: [README.md31-38](https://github.com/gaotianliuyun/gao/blob/8213bb04/REA
 - 锁定关键依赖版本，避免意外破坏性更新。
 
 ---
-## 🚀 性能优化建议
 
 ## 性能优化建议
 
