@@ -1,0 +1,475 @@
+{
+  "community_id": "community:tag:SpeechAnalyzer",
+  "generated_at": "2026-07-15T12:45:47Z",
+  "hotspot_limit": 24,
+  "link_limit": 32,
+  "links": [
+    {
+      "id": "edge:cooccurrence:tag:STT->tag:语音识别",
+      "source": "tag:STT",
+      "strength": 1,
+      "target": "tag:语音识别",
+      "type": "cooccurrence",
+      "weight": 3
+    },
+    {
+      "id": "edge:cooccurrence:tag:Whisper->tag:开源模型",
+      "source": "tag:Whisper",
+      "strength": 1,
+      "target": "tag:开源模型",
+      "type": "cooccurrence",
+      "weight": 2
+    },
+    {
+      "id": "edge:cooccurrence:tag:Whisper->tag:语音识别",
+      "source": "tag:Whisper",
+      "strength": 1,
+      "target": "tag:语音识别",
+      "type": "cooccurrence",
+      "weight": 2
+    },
+    {
+      "id": "edge:cooccurrence:tag:开源模型->tag:性能评测",
+      "source": "tag:开源模型",
+      "strength": 1,
+      "target": "tag:性能评测",
+      "type": "cooccurrence",
+      "weight": 2
+    },
+    {
+      "id": "edge:cooccurrence:tag:开源模型->tag:语音识别",
+      "source": "tag:开源模型",
+      "strength": 1,
+      "target": "tag:语音识别",
+      "type": "cooccurrence",
+      "weight": 2
+    },
+    {
+      "id": "edge:cooccurrence:tag:API对比->tag:Apple",
+      "source": "tag:API对比",
+      "strength": 0.5,
+      "target": "tag:Apple",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:API对比->tag:SpeechAnalyzer",
+      "source": "tag:API对比",
+      "strength": 0.5,
+      "target": "tag:SpeechAnalyzer",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:API对比->tag:Whisper",
+      "source": "tag:API对比",
+      "strength": 0.5,
+      "target": "tag:Whisper",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:API对比->tag:开源模型",
+      "source": "tag:API对比",
+      "strength": 0.5,
+      "target": "tag:开源模型",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:API对比->tag:性能评测",
+      "source": "tag:API对比",
+      "strength": 0.5,
+      "target": "tag:性能评测",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:API对比->tag:语音识别",
+      "source": "tag:API对比",
+      "strength": 0.5,
+      "target": "tag:语音识别",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Apple->tag:SpeechAnalyzer",
+      "source": "tag:Apple",
+      "strength": 0.5,
+      "target": "tag:SpeechAnalyzer",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Apple->tag:Whisper",
+      "source": "tag:Apple",
+      "strength": 0.5,
+      "target": "tag:Whisper",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Apple->tag:Xcode",
+      "source": "tag:Apple",
+      "strength": 0.5,
+      "target": "tag:Xcode",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Apple->tag:开源模型",
+      "source": "tag:Apple",
+      "strength": 0.5,
+      "target": "tag:开源模型",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Apple->tag:性能评测",
+      "source": "tag:Apple",
+      "strength": 0.5,
+      "target": "tag:性能评测",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Apple->tag:语音识别",
+      "source": "tag:Apple",
+      "strength": 0.5,
+      "target": "tag:语音识别",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Audio->tag:STT",
+      "source": "tag:Audio",
+      "strength": 0.5,
+      "target": "tag:STT",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Audio->tag:语音识别",
+      "source": "tag:Audio",
+      "strength": 0.5,
+      "target": "tag:语音识别",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Moonshine->tag:STT",
+      "source": "tag:Moonshine",
+      "strength": 0.5,
+      "target": "tag:STT",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Moonshine->tag:Whisper",
+      "source": "tag:Moonshine",
+      "strength": 0.5,
+      "target": "tag:Whisper",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Moonshine->tag:开源模型",
+      "source": "tag:Moonshine",
+      "strength": 0.5,
+      "target": "tag:开源模型",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Moonshine->tag:语音识别",
+      "source": "tag:Moonshine",
+      "strength": 0.5,
+      "target": "tag:语音识别",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:STT->tag:Whisper",
+      "source": "tag:STT",
+      "strength": 0.5,
+      "target": "tag:Whisper",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:STT->tag:开源模型",
+      "source": "tag:STT",
+      "strength": 0.5,
+      "target": "tag:开源模型",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:SpeechAnalyzer->tag:Whisper",
+      "source": "tag:SpeechAnalyzer",
+      "strength": 0.5,
+      "target": "tag:Whisper",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:SpeechAnalyzer->tag:开源模型",
+      "source": "tag:SpeechAnalyzer",
+      "strength": 0.5,
+      "target": "tag:开源模型",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:SpeechAnalyzer->tag:性能评测",
+      "source": "tag:SpeechAnalyzer",
+      "strength": 0.5,
+      "target": "tag:性能评测",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:SpeechAnalyzer->tag:语音识别",
+      "source": "tag:SpeechAnalyzer",
+      "strength": 0.5,
+      "target": "tag:语音识别",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Whisper->tag:性能评测",
+      "source": "tag:Whisper",
+      "strength": 0.5,
+      "target": "tag:性能评测",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:性能评测->tag:架构解析",
+      "source": "tag:性能评测",
+      "strength": 0.5,
+      "target": "tag:架构解析",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:性能评测->tag:语音识别",
+      "source": "tag:性能评测",
+      "strength": 0.5,
+      "target": "tag:语音识别",
+      "type": "cooccurrence",
+      "weight": 1
+    }
+  ],
+  "nodes": [
+    {
+      "article_count": 50,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:SpeechAnalyzer",
+      "degree": 250,
+      "description": "开源模型指公开源代码、权重及训练细节的AI模型，涵盖大语言模型、多模态模型等，与AI生态、Agent开发、AI编程等紧密相关，推动技术普惠与创新协作。",
+      "id": "tag:开源模型",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "开源模型",
+      "level": 6,
+      "name": "开源模型",
+      "rank": 25,
+      "related_count": 250,
+      "weighted_degree": 350
+    },
+    {
+      "article_count": 10,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:SpeechAnalyzer",
+      "degree": 61,
+      "description": "语音识别是一种将口语内容转换为文本的技术，广泛应用于实时会议记录、视频字幕生成及音频数据分析等领域，是实现人机交互和信息数字化处理的核心技术之一。",
+      "id": "tag:语音识别",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "语音识别",
+      "level": 6,
+      "name": "语音识别",
+      "rank": 184,
+      "related_count": 61,
+      "weighted_degree": 70
+    },
+    {
+      "article_count": 4,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:SpeechAnalyzer",
+      "degree": 25,
+      "description": "STT即自动语音识别技术，专注于将人类语音实时转换为文本，在模型部署与性能优化领域常与CPU推理、C语言实现等技术紧密相关。",
+      "id": "tag:STT",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "STT",
+      "level": 6,
+      "name": "STT",
+      "rank": 542,
+      "related_count": 25,
+      "weighted_degree": 28
+    },
+    {
+      "article_count": 3,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:SpeechAnalyzer",
+      "degree": 21,
+      "description": "Apple指苹果公司及其产品生态，涵盖硬件设备、软件服务及相关技术布局。近期涉及AI战略、定位追踪技术（如AirTag）及对初创企业的收购。",
+      "id": "tag:Apple",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Apple",
+      "level": 6,
+      "name": "Apple",
+      "rank": 631,
+      "related_count": 21,
+      "weighted_degree": 21
+    },
+    {
+      "article_count": 3,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:SpeechAnalyzer",
+      "degree": 20,
+      "description": "性能评测主要用于衡量系统或模型在特定任务中的运行效率与能力表现，常与AI编程、代码模型及架构解析等技术领域紧密相关，是评估模型优化效果的关键指标。",
+      "id": "tag:性能评测",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "性能评测",
+      "level": 6,
+      "name": "性能评测",
+      "rank": 782,
+      "related_count": 20,
+      "weighted_degree": 21
+    },
+    {
+      "article_count": 3,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:SpeechAnalyzer",
+      "degree": 19,
+      "description": "Whisper 是一种先进的自动语音识别系统，通常用于将音频转换为文本，与语音识别、音频处理及本地部署场景密切相关。",
+      "id": "tag:Whisper",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Whisper",
+      "level": 6,
+      "name": "Whisper",
+      "rank": 822,
+      "related_count": 19,
+      "weighted_degree": 21
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:SpeechAnalyzer",
+      "degree": 8,
+      "description": "文章标签: API对比",
+      "id": "tag:API对比",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "API对比",
+      "level": 6,
+      "name": "API对比",
+      "rank": 1875,
+      "related_count": 7,
+      "weighted_degree": 7.6
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:SpeechAnalyzer",
+      "degree": 7,
+      "description": "文章标签: Audio",
+      "id": "tag:Audio",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Audio",
+      "level": 6,
+      "name": "Audio",
+      "rank": 2076,
+      "related_count": 7,
+      "weighted_degree": 7
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:SpeechAnalyzer",
+      "degree": 7,
+      "description": "文章标签: Moonshine",
+      "id": "tag:Moonshine",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Moonshine",
+      "level": 6,
+      "name": "Moonshine",
+      "rank": 2754,
+      "related_count": 7,
+      "weighted_degree": 7
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:SpeechAnalyzer",
+      "degree": 7,
+      "description": "文章标签: SpeechAnalyzer",
+      "id": "tag:SpeechAnalyzer",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "SpeechAnalyzer",
+      "level": 6,
+      "name": "SpeechAnalyzer",
+      "rank": 3148,
+      "related_count": 7,
+      "weighted_degree": 7
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:SpeechAnalyzer",
+      "degree": 7,
+      "description": "Xcode 是苹果官方推出的集成开发环境，主要用于构建 macOS、iOS 等平台的应用程序。它支持 Swift 等编程语言，并正通过集成 Agent 与 LLM 技术向智能编码方向演进，以持续提升开发效率。",
+      "id": "tag:Xcode",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Xcode",
+      "level": 6,
+      "name": "Xcode",
+      "rank": 3365,
+      "related_count": 7,
+      "weighted_degree": 7
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:SpeechAnalyzer",
+      "degree": 7,
+      "description": "该标签主要聚焦于剖析技术系统的底层设计与实现原理，常涉及模型架构、算法机制及性能表现等核心维度的深度解读。",
+      "id": "tag:架构解析",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "架构解析",
+      "level": 6,
+      "name": "架构解析",
+      "rank": 5340,
+      "related_count": 7,
+      "weighted_degree": 7
+    }
+  ],
+  "stats": {
+    "total_links": 32,
+    "total_nodes": 12
+  },
+  "version": 2
+}

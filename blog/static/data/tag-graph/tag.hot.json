@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-15T06:00:41Z",
+  "generated_at": "2026-07-15T12:45:47Z",
   "layer": "tag",
   "layers": {
     "application": {
@@ -36755,11 +36755,11 @@
       "weighted_degree": 49.6
     },
     {
-      "article_count": 43,
+      "article_count": 44,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
-      "degree": 222,
+      "degree": 225,
       "description": "Amazon Bedrock 是 AWS 提供的全托管生成式 AI 服务，允许用户通过 API 访问多种基础模型和大语言模型，常用于构建智能代理、优化 IT 运营及基础设施管理。",
       "id": "tag:Amazon Bedrock",
       "layer": "tag",
@@ -36768,8 +36768,8 @@
       "level": 6,
       "name": "Amazon Bedrock",
       "rank": 31,
-      "related_count": 222,
-      "weighted_degree": 301
+      "related_count": 225,
+      "weighted_degree": 304
     },
     {
       "article_count": 12,
@@ -37328,7 +37328,7 @@
       "legacy_id": "hacker_news",
       "level": 6,
       "name": "hacker_news",
-      "rank": 7027,
+      "rank": 7031,
       "related_count": 0,
       "weighted_degree": 0
     },

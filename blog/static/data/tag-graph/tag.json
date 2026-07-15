@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-15T06:00:41Z",
+  "generated_at": "2026-07-15T12:45:47Z",
   "layer": "tag",
   "layers": {
     "application": {
@@ -72080,6 +72080,14 @@
       "weight": 1
     },
     {
+      "id": "edge:cooccurrence:tag:Amazon Bedrock->tag:Customer Solutions",
+      "source": "tag:Amazon Bedrock",
+      "strength": 0.5,
+      "target": "tag:Customer Solutions",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
       "id": "edge:cooccurrence:tag:Amazon Bedrock->tag:DynamoDB",
       "source": "tag:Amazon Bedrock",
       "strength": 0.5,
@@ -72596,6 +72604,14 @@
       "source": "tag:Amazon Bedrock",
       "strength": 0.5,
       "target": "tag:医疗 AI",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Amazon Bedrock->tag:博客与播客",
+      "source": "tag:Amazon Bedrock",
+      "strength": 0.5,
+      "target": "tag:博客与播客",
       "type": "cooccurrence",
       "weight": 1
     },
@@ -73164,6 +73180,14 @@
       "source": "tag:Amazon Bedrock",
       "strength": 0.5,
       "target": "tag:有状态运行时",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Amazon Bedrock->tag:来源快报",
+      "source": "tag:Amazon Bedrock",
+      "strength": 0.5,
+      "target": "tag:来源快报",
       "type": "cooccurrence",
       "weight": 1
     },
@@ -102452,6 +102476,22 @@
       "source": "tag:CuspAI",
       "strength": 0.5,
       "target": "tag:生成式 AI",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Customer Solutions->tag:博客与播客",
+      "source": "tag:Customer Solutions",
+      "strength": 0.5,
+      "target": "tag:博客与播客",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Customer Solutions->tag:来源快报",
+      "source": "tag:Customer Solutions",
+      "strength": 0.5,
+      "target": "tag:来源快报",
       "type": "cooccurrence",
       "weight": 1
     },
@@ -223856,6 +223896,22 @@
       "weight": 1
     },
     {
+      "id": "edge:cooccurrence:tag:arXiv->tag:cs.AI",
+      "source": "tag:arXiv",
+      "strength": 0.5,
+      "target": "tag:cs.AI",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:arXiv->tag:来源快报",
+      "source": "tag:arXiv",
+      "strength": 0.5,
+      "target": "tag:来源快报",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
       "id": "edge:cooccurrence:tag:arXiv论文->tag:IDC框架",
       "source": "tag:arXiv论文",
       "strength": 0.5,
@@ -224340,6 +224396,14 @@
       "source": "tag:cs.AI",
       "strength": 0.5,
       "target": "tag:机器意识",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:cs.AI->tag:来源快报",
+      "source": "tag:cs.AI",
+      "strength": 0.5,
+      "target": "tag:来源快报",
       "type": "cooccurrence",
       "weight": 1
     },
@@ -274180,6 +274244,14 @@
       "source": "tag:博士答辩",
       "strength": 0.5,
       "target": "tag:自我进化",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:博客与播客->tag:来源快报",
+      "source": "tag:博客与播客",
+      "strength": 0.5,
+      "target": "tag:来源快报",
       "type": "cooccurrence",
       "weight": 1
     },
@@ -390150,7 +390222,7 @@
       "legacy_id": "AI 辅助开发",
       "level": 6,
       "name": "AI 辅助开发",
-      "rank": 285,
+      "rank": 286,
       "related_count": 41,
       "weighted_degree": 42.6
     },
@@ -390524,7 +390596,7 @@
       "legacy_id": "AI交互",
       "level": 6,
       "name": "AI交互",
-      "rank": 294,
+      "rank": 295,
       "related_count": 36,
       "weighted_degree": 42.6
     },
@@ -390558,7 +390630,7 @@
       "legacy_id": "AI产品",
       "level": 6,
       "name": "AI产品",
-      "rank": 293,
+      "rank": 294,
       "related_count": 37,
       "weighted_degree": 42.6
     },
@@ -392989,7 +393061,7 @@
       "legacy_id": "AI芯片",
       "level": 6,
       "name": "AI芯片",
-      "rank": 286,
+      "rank": 287,
       "related_count": 41,
       "weighted_degree": 42.6
     },
@@ -393006,7 +393078,7 @@
       "legacy_id": "AI落地",
       "level": 6,
       "name": "AI落地",
-      "rank": 288,
+      "rank": 289,
       "related_count": 40,
       "weighted_degree": 42.6
     },
@@ -393844,11 +393916,11 @@
       "weighted_degree": 14
     },
     {
-      "article_count": 43,
+      "article_count": 44,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
-      "degree": 222,
+      "degree": 225,
       "description": "Amazon Bedrock 是 AWS 提供的全托管生成式 AI 服务，允许用户通过 API 访问多种基础模型和大语言模型，常用于构建智能代理、优化 IT 运营及基础设施管理。",
       "id": "tag:Amazon Bedrock",
       "layer": "tag",
@@ -393857,8 +393929,8 @@
       "level": 6,
       "name": "Amazon Bedrock",
       "rank": 31,
-      "related_count": 222,
-      "weighted_degree": 301
+      "related_count": 225,
+      "weighted_degree": 304
     },
     {
       "article_count": 1,
@@ -395221,6 +395293,23 @@
       "weighted_degree": 21
     },
     {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:other",
+      "degree": 2,
+      "description": "文章标签: arXiv",
+      "id": "tag:arXiv",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "arXiv",
+      "level": 6,
+      "name": "arXiv",
+      "rank": 7005,
+      "related_count": 2,
+      "weighted_degree": 2
+    },
+    {
       "article_count": 15,
       "category": "article_tag",
       "color": "#f59e0b",
@@ -396508,7 +396597,7 @@
       "legacy_id": "blogs_podcasts",
       "level": 6,
       "name": "blogs_podcasts",
-      "rank": 7028,
+      "rank": 7032,
       "related_count": 0,
       "weighted_degree": 0
     },
@@ -399284,11 +399373,11 @@
       "weighted_degree": 7
     },
     {
-      "article_count": 6,
+      "article_count": 7,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
-      "degree": 41,
+      "degree": 43,
       "description": "cs.AI 聚焦于人工智能的基础理论与应用研究，涵盖模型压缩、异构数据处理及医疗诊断等领域，致力于推动算法在低资源场景下的可持续发展与实际落地。",
       "id": "tag:cs.AI",
       "layer": "tag",
@@ -399296,9 +399385,9 @@
       "legacy_id": "cs.AI",
       "level": 6,
       "name": "cs.AI",
-      "rank": 296,
-      "related_count": 41,
-      "weighted_degree": 42
+      "rank": 285,
+      "related_count": 43,
+      "weighted_degree": 44
     },
     {
       "article_count": 10,
@@ -399330,7 +399419,7 @@
       "legacy_id": "cs.CR",
       "level": 6,
       "name": "cs.CR",
-      "rank": 7016,
+      "rank": 7020,
       "related_count": 1,
       "weighted_degree": 1
     },
@@ -399517,7 +399606,7 @@
       "legacy_id": "cs.SE",
       "level": 6,
       "name": "cs.SE",
-      "rank": 7017,
+      "rank": 7021,
       "related_count": 1,
       "weighted_degree": 1
     },
@@ -399724,6 +399813,23 @@
       "rank": 2269,
       "related_count": 7,
       "weighted_degree": 7
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:other",
+      "degree": 3,
+      "description": "文章标签: Customer Solutions",
+      "id": "tag:Customer Solutions",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Customer Solutions",
+      "level": 6,
+      "name": "Customer Solutions",
+      "rank": 6989,
+      "related_count": 3,
+      "weighted_degree": 3
     },
     {
       "article_count": 1,
@@ -403733,7 +403839,7 @@
       "legacy_id": "github_trending",
       "level": 6,
       "name": "github_trending",
-      "rank": 7018,
+      "rank": 7022,
       "related_count": 1,
       "weighted_degree": 1
     },
@@ -405093,7 +405199,7 @@
       "legacy_id": "hacker_news",
       "level": 6,
       "name": "hacker_news",
-      "rank": 7027,
+      "rank": 7031,
       "related_count": 0,
       "weighted_degree": 0
     },
@@ -406980,7 +407086,7 @@
       "legacy_id": "juejin",
       "level": 6,
       "name": "juejin",
-      "rank": 7029,
+      "rank": 7033,
       "related_count": 0,
       "weighted_degree": 0
     },
@@ -434197,7 +434303,7 @@
       "legacy_id": "全栈开发",
       "level": 6,
       "name": "全栈开发",
-      "rank": 289,
+      "rank": 290,
       "related_count": 40,
       "weighted_degree": 42.6
     },
@@ -437716,7 +437822,7 @@
       "legacy_id": "前端开发",
       "level": 6,
       "name": "前端开发",
-      "rank": 287,
+      "rank": 288,
       "related_count": 41,
       "weighted_degree": 42.6
     },
@@ -439266,6 +439372,23 @@
       "rank": 4024,
       "related_count": 7,
       "weighted_degree": 7
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:other",
+      "degree": 3,
+      "description": "文章标签: 博客与播客",
+      "id": "tag:博客与播客",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "博客与播客",
+      "level": 6,
+      "name": "博客与播客",
+      "rank": 6990,
+      "related_count": 3,
+      "weighted_degree": 3
     },
     {
       "article_count": 1,
@@ -442051,7 +442174,7 @@
       "legacy_id": "后端开发",
       "level": 6,
       "name": "后端开发",
-      "rank": 291,
+      "rank": 292,
       "related_count": 39,
       "weighted_degree": 42.6
     },
@@ -442442,7 +442565,7 @@
       "legacy_id": "命令行工具",
       "level": 6,
       "name": "命令行工具",
-      "rank": 290,
+      "rank": 291,
       "related_count": 40,
       "weighted_degree": 42.6
     },
@@ -456960,7 +457083,7 @@
       "legacy_id": "成本控制",
       "level": 6,
       "name": "成本控制",
-      "rank": 295,
+      "rank": 296,
       "related_count": 42,
       "weighted_degree": 42
     },
@@ -462621,7 +462744,7 @@
       "legacy_id": "数据可视化",
       "level": 6,
       "name": "数据可视化",
-      "rank": 292,
+      "rank": 293,
       "related_count": 39,
       "weighted_degree": 42.6
     },
@@ -468608,6 +468731,23 @@
       "rank": 5327,
       "related_count": 7,
       "weighted_degree": 7
+    },
+    {
+      "article_count": 2,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:other",
+      "degree": 5,
+      "description": "文章标签: 来源快报",
+      "id": "tag:来源快报",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "来源快报",
+      "level": 6,
+      "name": "来源快报",
+      "rank": 6975,
+      "related_count": 5,
+      "weighted_degree": 5
     },
     {
       "article_count": 1,
@@ -505043,14 +505183,14 @@
   ],
   "stats": {
     "links_by_type": {
-      "cooccurrence": 47780,
+      "cooccurrence": 47789,
       "semantic": 540
     },
     "nodes_by_layer": {
-      "tag": 6967
+      "tag": 6971
     },
-    "total_links": 48320,
-    "total_nodes": 6967
+    "total_links": 48329,
+    "total_nodes": 6971
   },
   "version": 2
 }

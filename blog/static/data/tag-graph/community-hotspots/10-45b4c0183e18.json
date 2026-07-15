@@ -1,0 +1,475 @@
+{
+  "community_id": "community:tag:SF6",
+  "generated_at": "2026-07-15T12:45:47Z",
+  "hotspot_limit": 24,
+  "link_limit": 32,
+  "links": [
+    {
+      "id": "edge:cooccurrence:tag:3D重建->tag:计算机视觉",
+      "source": "tag:3D重建",
+      "strength": 1,
+      "target": "tag:计算机视觉",
+      "type": "cooccurrence",
+      "weight": 5
+    },
+    {
+      "id": "edge:cooccurrence:tag:3D重建->tag:NeRF",
+      "source": "tag:3D重建",
+      "strength": 1,
+      "target": "tag:NeRF",
+      "type": "cooccurrence",
+      "weight": 3
+    },
+    {
+      "id": "edge:cooccurrence:tag:NeRF->tag:计算机视觉",
+      "source": "tag:NeRF",
+      "strength": 1,
+      "target": "tag:计算机视觉",
+      "type": "cooccurrence",
+      "weight": 3
+    },
+    {
+      "id": "edge:cooccurrence:tag:3D重建->tag:DIRSIG",
+      "source": "tag:3D重建",
+      "strength": 0.5,
+      "target": "tag:DIRSIG",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:3D重建->tag:LoGeR",
+      "source": "tag:3D重建",
+      "strength": 0.5,
+      "target": "tag:LoGeR",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:3D重建->tag:SF6",
+      "source": "tag:3D重建",
+      "strength": 0.5,
+      "target": "tag:SF6",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:3D重建->tag:伯克利",
+      "source": "tag:3D重建",
+      "strength": 0.5,
+      "target": "tag:伯克利",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:3D重建->tag:图形学",
+      "source": "tag:3D重建",
+      "strength": 0.5,
+      "target": "tag:图形学",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:3D重建->tag:实时渲染",
+      "source": "tag:3D重建",
+      "strength": 0.5,
+      "target": "tag:实时渲染",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:3D重建->tag:气体检测",
+      "source": "tag:3D重建",
+      "strength": 0.5,
+      "target": "tag:气体检测",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:3D重建->tag:红外成像",
+      "source": "tag:3D重建",
+      "strength": 0.5,
+      "target": "tag:红外成像",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:3D重建->tag:美国国家实验室",
+      "source": "tag:3D重建",
+      "strength": 0.5,
+      "target": "tag:美国国家实验室",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:DIRSIG->tag:NeRF",
+      "source": "tag:DIRSIG",
+      "strength": 0.5,
+      "target": "tag:NeRF",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:DIRSIG->tag:SF6",
+      "source": "tag:DIRSIG",
+      "strength": 0.5,
+      "target": "tag:SF6",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:DIRSIG->tag:气体检测",
+      "source": "tag:DIRSIG",
+      "strength": 0.5,
+      "target": "tag:气体检测",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:DIRSIG->tag:红外成像",
+      "source": "tag:DIRSIG",
+      "strength": 0.5,
+      "target": "tag:红外成像",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:DIRSIG->tag:美国国家实验室",
+      "source": "tag:DIRSIG",
+      "strength": 0.5,
+      "target": "tag:美国国家实验室",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:DIRSIG->tag:计算机视觉",
+      "source": "tag:DIRSIG",
+      "strength": 0.5,
+      "target": "tag:计算机视觉",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:LoGeR->tag:NeRF",
+      "source": "tag:LoGeR",
+      "strength": 0.5,
+      "target": "tag:NeRF",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:LoGeR->tag:伯克利",
+      "source": "tag:LoGeR",
+      "strength": 0.5,
+      "target": "tag:伯克利",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:LoGeR->tag:计算机视觉",
+      "source": "tag:LoGeR",
+      "strength": 0.5,
+      "target": "tag:计算机视觉",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:NeRF->tag:SF6",
+      "source": "tag:NeRF",
+      "strength": 0.5,
+      "target": "tag:SF6",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:NeRF->tag:伯克利",
+      "source": "tag:NeRF",
+      "strength": 0.5,
+      "target": "tag:伯克利",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:NeRF->tag:图形学",
+      "source": "tag:NeRF",
+      "strength": 0.5,
+      "target": "tag:图形学",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:NeRF->tag:实时渲染",
+      "source": "tag:NeRF",
+      "strength": 0.5,
+      "target": "tag:实时渲染",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:NeRF->tag:气体检测",
+      "source": "tag:NeRF",
+      "strength": 0.5,
+      "target": "tag:气体检测",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:NeRF->tag:红外成像",
+      "source": "tag:NeRF",
+      "strength": 0.5,
+      "target": "tag:红外成像",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:NeRF->tag:美国国家实验室",
+      "source": "tag:NeRF",
+      "strength": 0.5,
+      "target": "tag:美国国家实验室",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:SF6->tag:气体检测",
+      "source": "tag:SF6",
+      "strength": 0.5,
+      "target": "tag:气体检测",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:SF6->tag:红外成像",
+      "source": "tag:SF6",
+      "strength": 0.5,
+      "target": "tag:红外成像",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:SF6->tag:美国国家实验室",
+      "source": "tag:SF6",
+      "strength": 0.5,
+      "target": "tag:美国国家实验室",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:SF6->tag:计算机视觉",
+      "source": "tag:SF6",
+      "strength": 0.5,
+      "target": "tag:计算机视觉",
+      "type": "cooccurrence",
+      "weight": 1
+    }
+  ],
+  "nodes": [
+    {
+      "article_count": 48,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:SF6",
+      "degree": 262,
+      "description": "计算机视觉致力于让机器理解和解析视觉信息，广泛应用于图像识别、3D重建、自动驾驶及人机交互等领域。",
+      "id": "tag:计算机视觉",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "计算机视觉",
+      "level": 6,
+      "name": "计算机视觉",
+      "rank": 28,
+      "related_count": 260,
+      "weighted_degree": 337.2
+    },
+    {
+      "article_count": 6,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:SF6",
+      "degree": 34,
+      "description": "3D重建是指利用计算机视觉技术从二维图像或传感器数据中恢复三维场景的几何结构与外观。它常与动态场景重建、新视角合成及生成式模型相关，是构建数字孪生与三维内容生成的核心技术。",
+      "id": "tag:3D重建",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "3D重建",
+      "level": 6,
+      "name": "3D重建",
+      "rank": 338,
+      "related_count": 34,
+      "weighted_degree": 42
+    },
+    {
+      "article_count": 3,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:SF6",
+      "degree": 17,
+      "description": "NeRF是一种结合深度学习与图形学的神经渲染技术，通过隐式神经网络表示3D场景，能从稀疏2D图像合成高保真新视角图像，广泛应用于3D重建与实时渲染。",
+      "id": "tag:NeRF",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "NeRF",
+      "level": 6,
+      "name": "NeRF",
+      "rank": 887,
+      "related_count": 17,
+      "weighted_degree": 21
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:SF6",
+      "degree": 7,
+      "description": "文章标签: DIRSIG",
+      "id": "tag:DIRSIG",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "DIRSIG",
+      "level": 6,
+      "name": "DIRSIG",
+      "rank": 2300,
+      "related_count": 7,
+      "weighted_degree": 7
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:SF6",
+      "degree": 7,
+      "description": "文章标签: LoGeR",
+      "id": "tag:LoGeR",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "LoGeR",
+      "level": 6,
+      "name": "LoGeR",
+      "rank": 2661,
+      "related_count": 7,
+      "weighted_degree": 7
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:SF6",
+      "degree": 7,
+      "description": "文章标签: SF6",
+      "id": "tag:SF6",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "SF6",
+      "level": 6,
+      "name": "SF6",
+      "rank": 3088,
+      "related_count": 7,
+      "weighted_degree": 7
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:SF6",
+      "degree": 7,
+      "description": "文章标签: 伯克利",
+      "id": "tag:伯克利",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "伯克利",
+      "level": 6,
+      "name": "伯克利",
+      "rank": 3678,
+      "related_count": 7,
+      "weighted_degree": 7
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:SF6",
+      "degree": 7,
+      "description": "图形学主要研究利用计算机生成、处理和显示图像的理论与技术。它涵盖3D重建、实时渲染等领域，并随着深度学习的发展，与神经渲染等AI应用紧密结合。",
+      "id": "tag:图形学",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "图形学",
+      "level": 6,
+      "name": "图形学",
+      "rank": 4220,
+      "related_count": 7,
+      "weighted_degree": 7
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:SF6",
+      "degree": 7,
+      "description": "实时渲染是一种能够即时计算并输出图像的图形学技术，常与3D重建、神经渲染及深度学习结合，广泛应用于AI应用、计算机视觉及NeRF等领域。",
+      "id": "tag:实时渲染",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "实时渲染",
+      "level": 6,
+      "name": "实时渲染",
+      "rank": 4468,
+      "related_count": 7,
+      "weighted_degree": 7
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:SF6",
+      "degree": 7,
+      "description": "文章标签: 气体检测",
+      "id": "tag:气体检测",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "气体检测",
+      "level": 6,
+      "name": "气体检测",
+      "rank": 5498,
+      "related_count": 7,
+      "weighted_degree": 7
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:SF6",
+      "degree": 7,
+      "description": "文章标签: 红外成像",
+      "id": "tag:红外成像",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "红外成像",
+      "level": 6,
+      "name": "红外成像",
+      "rank": 6013,
+      "related_count": 7,
+      "weighted_degree": 7
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:SF6",
+      "degree": 7,
+      "description": "文章标签: 美国国家实验室",
+      "id": "tag:美国国家实验室",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "美国国家实验室",
+      "level": 6,
+      "name": "美国国家实验室",
+      "rank": 6117,
+      "related_count": 7,
+      "weighted_degree": 7
+    }
+  ],
+  "stats": {
+    "total_links": 32,
+    "total_nodes": 12
+  },
+  "version": 2
+}
