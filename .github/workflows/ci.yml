@@ -73,14 +73,20 @@ jobs:
             tests/test_scenario_analyzer_taxonomy.py \
             tests/test_historical_repair.py \
             tests/test_historical_repair_integration.py \
+            tests/test_historical_post_structure_repair.py \
+            tests/test_historical_integrity_recovery.py \
+            tests/test_historical_editorial_cleanup.py \
+            tests/test_historical_git_recovery.py \
             tests/test_content_quality_manifest.py \
             tests/test_crawler_dedupe_quality.py \
+            tests/test_blogs_podcasts_crawler.py \
             tests/test_source_contract.py \
             tests/test_evidence_pipeline.py \
             tests/test_pipeline_cli.py \
             tests/test_pipeline_safety.py \
             tests/test_static_search_configuration.py \
-            tests/test_pagefind_catalog.py
+            tests/test_pagefind_catalog.py \
+            tests/test_template_hardening.py
 
       - name: Verify committed Post quality manifest
         env:

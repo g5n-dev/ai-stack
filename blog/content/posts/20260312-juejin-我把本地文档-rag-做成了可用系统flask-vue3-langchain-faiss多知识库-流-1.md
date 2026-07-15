@@ -1,5 +1,5 @@
 ---
-title: 我把本地文档 RAG 做成了可用系统：Flask + Vue3 + LangChain + FAISS（多知识
+title: 我把本地文档 RAG 做成了可用系统：Flask + Vue3 + LangChain + FAISS（多知识库 + 流式输出）
 date: 2026-03-12 11:11:52+08:00
 draft: false
 entry_kind: auto

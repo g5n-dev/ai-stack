@@ -38,6 +38,7 @@ class TagGraphV2Test(unittest.TestCase):
             "---",
             f"title: {json.dumps(title, ensure_ascii=False)}",
             f"date: {date}",
+            f"description: {json.dumps(f'Test fixture for {title}.', ensure_ascii=False)}",
             f"tags: [{quoted_tags}]",
         ]
         if external_url:
@@ -140,8 +141,18 @@ class TagGraphV2Test(unittest.TestCase):
             all(required_fields <= set(node) for node in graph["nodes"]),
             "GraphNodeV2 fields must be present even when community_id is null",
         )
-        self.assertTrue(all(link["source"].split(":", 1)[0] in {"tech", "tag", "concept"} for link in graph["links"]))
-        self.assertTrue(all(link["target"].split(":", 1)[0] in {"tech", "tag", "concept"} for link in graph["links"]))
+        self.assertTrue(
+            all(
+                link["source"].split(":", 1)[0] in {"tech", "tag", "concept"}
+                for link in graph["links"]
+            )
+        )
+        self.assertTrue(
+            all(
+                link["target"].split(":", 1)[0] in {"tech", "tag", "concept"}
+                for link in graph["links"]
+            )
+        )
         self.assertTrue(all("related_tags" not in node for node in graph["nodes"]))
         self.assertTrue(all("related_concepts" not in node for node in graph["nodes"]))
         self.assertTrue(all("community" not in node for node in graph["nodes"]))
@@ -167,6 +178,7 @@ class TagGraphV2Test(unittest.TestCase):
                     ---
                     title: Block list
                     date: 2026-01-02T08:00:00+08:00
+                    description: Test fixture for block-list tag parsing.
                     tags:
                       - Python
                       - "LLM"
@@ -806,9 +818,13 @@ class TagGraphV2Test(unittest.TestCase):
             {payload["community_id"] for payload in hotspot_payloads},
         )
         self.assertTrue(
-            all("hotspot_file" not in item for item in community["communities"] if item["id"] == "community:other")
+            all(
+                "hotspot_file" not in item
+                for item in community["communities"]
+                if item["id"] == "community:other"
+            )
         )
-        for summary, payload in zip(visible_communities, hotspot_payloads):
+        for summary, payload in zip(visible_communities, hotspot_payloads, strict=True):
             self.assertEqual(payload["community_id"], summary["id"])
             self.assertEqual(len(payload["nodes"]), min(summary["node_count"], 24))
             self.assertLessEqual(len(payload["links"]), 32)

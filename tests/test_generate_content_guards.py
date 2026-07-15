@@ -651,6 +651,213 @@ class GenerateContentGuardsTest(unittest.TestCase):
             self.assertNotIn("## 代码示例", document)
             self.assertEqual(generator.last_generation_stats["skipped_quality"], 0)
 
+    def test_source_brief_ignores_generated_translation_and_legacy_tail_leaks(self):
+        generated_at = datetime.fromisoformat("2026-07-15T02:00:00+00:00")
+        with tempfile.TemporaryDirectory() as temp_dir:
+            generator = self.module.SuperEnhancedContentGenerator.__new__(
+                self.module.SuperEnhancedContentGenerator
+            )
+            generator.posts_dir = Path(temp_dir)
+            generator._post_index = []
+            item = self._contract(
+                {
+                    "title": "Safe evidence card",
+                    "source": "hacker_news",
+                    "url": "https://example.com/safe-evidence-card",
+                    "summary": "Crawler metadata is sufficient for a source card.",
+                    "tags": ["AI"],
+                }
+            )
+            item["description_translated"] = (
+                "这段内容本身就是中文，无需翻译，请告诉我。"
+            )
+            item["comprehensive_analysis"] = (
+                "## 技术分析\n\n2. **如果需要极高的灵活性**：\n\n## 引用\n"
+            )
+
+            created = generator._generate_posts(
+                {"hacker_news": [item]}, generated_at=generated_at
+            )
+
+            self.assertEqual(created, 1)
+            document = next(generator.posts_dir.glob("*.md")).read_text(
+                encoding="utf-8"
+            )
+            self.assertNotIn("本身就是中文", document)
+            self.assertNotIn("如果需要极高的灵活性", document)
+            self.assertNotIn("\n# Safe evidence card\n", document)
+            self.assertEqual(self.module.analyze_post(document).fatal_reasons, ())
+
+    def test_source_brief_preserves_the_complete_immutable_crawler_title(self):
+        title = (
+            "Win by Silence: Deletion Non-Monotonicity, Autonomous Exploitation, "
+            "and Typed-State Gating in LLM Plan Evaluation"
+        )
+        generator = self.module.SuperEnhancedContentGenerator.__new__(
+            self.module.SuperEnhancedContentGenerator
+        )
+        generator._post_index = []
+        item = self._contract(
+            {
+                "title": title,
+                "source": "arxiv",
+                "url": "https://arxiv.org/abs/2607.12986v1",
+                "summary": "A complete source abstract.",
+                "category": "cs.AI",
+            }
+        )
+
+        document = generator._format_super_enhanced_markdown(
+            item,
+            generated_at=datetime(2026, 7, 15, 2, 0, tzinfo=timezone.utc),
+        )
+        frontmatter = real_yaml.safe_load(document.split("---", 2)[1])
+
+        self.assertEqual(frontmatter["title"], title)
+        self.assertNotIn("Autonomous E\"", document)
+        self.assertEqual(generator._source_brief_publication_payload(item)["title"], title)
+
+    def test_source_brief_publishes_the_complete_stored_rss_capture(self):
+        generator = self.module.SuperEnhancedContentGenerator.__new__(
+            self.module.SuperEnhancedContentGenerator
+        )
+        generator._post_index = []
+        source_text = (
+            "Flo Health evidence paragraph with verified implementation details. " * 220
+        ) + "This is the complete final sentence."
+        item = self._contract(
+            {
+                "title": "Complete RSS evidence",
+                "source": "blogs_podcasts",
+                "url": "https://example.com/complete-rss-evidence",
+                "description": source_text,
+                "source_is_truncated": False,
+                "source_truncation_reason": "",
+                "feed_url": "https://example.com/feed.xml",
+            }
+        )
+
+        self.assertGreater(len(item["source_display_excerpt"].encode("utf-8")), 6_000)
+        self.assertEqual(item["source_display_excerpt"], source_text)
+
+        document = generator._format_super_enhanced_markdown(
+            item,
+            generated_at=datetime(2026, 7, 15, 2, 0, tzinfo=timezone.utc),
+        )
+        frontmatter = real_yaml.safe_load(document.split("---", 2)[1])
+
+        self.assertIn("This is the complete final sentence.", document)
+        self.assertFalse(frontmatter["source_is_truncated"])
+        self.assertNotIn("source_truncation_reason", frontmatter)
+        self.assertEqual(self.module.analyze_post(document).fatal_reasons, ())
+
+    def test_source_brief_bounds_an_extreme_title_at_a_complete_word(self):
+        title = ("complete-title-token " * 30) + "final-token"
+        generator = self.module.SuperEnhancedContentGenerator.__new__(
+            self.module.SuperEnhancedContentGenerator
+        )
+        generator._post_index = []
+        item = self._contract(
+            {
+                "title": title,
+                "source": "arxiv",
+                "url": "https://arxiv.org/abs/2607.12987v1",
+                "summary": "A complete source abstract.",
+                "category": "cs.AI",
+            }
+        )
+
+        document = generator._format_super_enhanced_markdown(
+            item,
+            generated_at=datetime(2026, 7, 15, 2, 0, tzinfo=timezone.utc),
+        )
+        frontmatter = real_yaml.safe_load(document.split("---", 2)[1])
+
+        self.assertEqual(frontmatter["title"], item["source_display_title"])
+        self.assertLessEqual(len(frontmatter["title"]), 300)
+        self.assertTrue(frontmatter["title"].endswith("complete-title-token"))
+        self.assertTrue(frontmatter["source_is_truncated"])
+        self.assertIn(
+            "publication_title_limit",
+            frontmatter["source_truncation_reason"],
+        )
+        self.assertEqual(
+            generator._source_brief_publication_payload(item)["title"],
+            item["source_display_title"],
+        )
+
+    def test_source_brief_derives_a_bounded_title_when_v1_derivatives_are_missing(self):
+        title = ("immutable-title-token " * 30) + "final-token"
+        generator = self.module.SuperEnhancedContentGenerator.__new__(
+            self.module.SuperEnhancedContentGenerator
+        )
+        generator._post_index = []
+        item = self._contract(
+            {
+                "title": title,
+                "source": "arxiv",
+                "url": "https://arxiv.org/abs/2607.12988v1",
+                "summary": "A complete source abstract.",
+                "category": "cs.AI",
+            }
+        )
+        expected = item.pop("source_display_title")
+        item.pop("source_title_chars_original")
+
+        document = generator._format_super_enhanced_markdown(
+            item,
+            generated_at=datetime(2026, 7, 15, 2, 0, tzinfo=timezone.utc),
+        )
+        frontmatter = real_yaml.safe_load(document.split("---", 2)[1])
+        publication = generator._source_brief_publication_payload(item)
+
+        self.assertEqual(frontmatter["title"], expected)
+        self.assertEqual(publication["title"], expected)
+        self.assertLessEqual(len(publication["title"]), 300)
+        self.assertEqual(frontmatter["source_title_chars_original"], len(title))
+
+    def test_seo_description_prefers_a_complete_chinese_sentence(self):
+        generator = self.module.SuperEnhancedContentGenerator.__new__(
+            self.module.SuperEnhancedContentGenerator
+        )
+        sentence = (
+            "这份说明基于可核验来源，完整交代系统边界、证据范围和部署条件，"
+            "同时保留关键指标与风险提示，方便读者快速判断内容价值，"
+            "并给出可复现的检查路径、适用条件和清晰结论。"
+        )
+        description = generator._seo_description(
+            {"summary": sentence + ("后续补充信息仍在展开" * 20)}
+        )
+
+        self.assertEqual(description, sentence)
+        self.assertGreaterEqual(len(description), 80)
+        self.assertLessEqual(len(description), 160)
+
+    def test_seo_description_truncates_english_at_a_complete_word(self):
+        generator = self.module.SuperEnhancedContentGenerator.__new__(
+            self.module.SuperEnhancedContentGenerator
+        )
+        description = generator._seo_description(
+            {"summary": "evidence-aware systems require careful validation " * 12}
+        )
+
+        self.assertLessEqual(len(description), 160)
+        self.assertTrue(description.endswith("…"))
+        self.assertRegex(description, r"validation…$")
+        self.assertNotRegex(description, r"[,，:：;；\-\[(]…$")
+
+    def test_seo_description_truncates_long_chinese_without_spaces_safely(self):
+        generator = self.module.SuperEnhancedContentGenerator.__new__(
+            self.module.SuperEnhancedContentGenerator
+        )
+        description = generator._seo_description(
+            {"summary": "知识图谱动态分析能力" * 40}
+        )
+
+        self.assertEqual(len(description), 160)
+        self.assertTrue(description.endswith("…"))
+        self.assertTrue(description[-2].isalpha())
+
     def test_metadata_only_hn_writes_only_a_tier_c_source_card(self):
         generated_at = datetime(2026, 7, 15, 2, 0, tzinfo=timezone.utc)
         with tempfile.TemporaryDirectory() as temp_dir:

@@ -31,6 +31,7 @@ from ai_stack.identity import canonicalize_url
 from ai_stack.source_contract import (
     SourceContractError,
     apply_source_contract,
+    publication_title_from_contract,
     verify_source_contract,
 )
 from ai_stack.tag_taxonomy import normalize_tags
@@ -912,9 +913,8 @@ class SuperEnhancedContentGenerator:
 
         verify_source_contract(item)
         evidence = item["evidence"]
-        fields = evidence["fields"]
         return {
-            "title": str(fields.get("title") or "来源快报").strip(),
+            "title": publication_title_from_contract(item),
             "summary": (
                 "来源证据快报，仅呈现抓取时保存的来源字段；"
                 "请以原始来源为准。"
@@ -1068,11 +1068,11 @@ class SuperEnhancedContentGenerator:
         )
         if content_mode == "source_brief":
             source = str(evidence.get("source") or "unknown")
-            raw_title = evidence_fields.get("title") or "来源快报"
+            title = publication_title_from_contract(item)
         else:
             source = item.get('source', 'unknown')
             raw_title = item.get('catchy_title') or item.get('title_translated') or item.get('title', 'Untitled')
-        title = self._sanitize_title_for_seo(raw_title)
+            title = self._sanitize_title_for_seo(raw_title, max_length=55)
         date = content_now(generated_at).isoformat(timespec="seconds")
 
         # 构建标签
@@ -1131,6 +1131,9 @@ class SuperEnhancedContentGenerator:
             lines.append(f'source_truncation_reason: "{self._yaml_escape(truncation_reason)}"')
         if content_mode == "source_brief":
             lines.append('source_support: 1.0')
+            source_title = str(evidence_fields.get("title") or "").strip()
+            if source_title:
+                lines.append(f"source_title_chars_original: {len(source_title)}")
 
         if content_mode == "source_brief":
             seo_description = self._source_brief_note(
@@ -1183,9 +1186,6 @@ class SuperEnhancedContentGenerator:
             if isinstance(evidence.get("fields"), dict)
             else {}
         )
-        title = self._sanitize_title_for_seo(
-            fields.get("title") or "来源快报"
-        )
         source = str(evidence.get("source") or "unknown").strip()
         url = canonicalize_content_url(evidence.get("external_url"))
         capture_mode = str(evidence.get("capture_mode") or "metadata_only")
@@ -1196,8 +1196,6 @@ class SuperEnhancedContentGenerator:
             return text.replace("{{", "&#123;&#123;").replace("}}", "&#125;&#125;")
 
         lines = [
-            f"# {safe(title)}",
-            "",
             "## 基本信息",
             "",
             f"- **来源**: {safe(source)}",
@@ -1246,15 +1244,31 @@ class SuperEnhancedContentGenerator:
             return f"{note}请以原始来源和 Hacker News 讨论为准。"
         return f"{note}请以原始来源为准。"
 
-    def _sanitize_title_for_seo(self, title: str) -> str:
+    def _sanitize_title_for_seo(
+        self,
+        title: str,
+        *,
+        max_length: int | None = 55,
+    ) -> str:
         t = str(title or "").strip()
         if not t:
             return "Untitled"
         t = re.sub(r"[\U0001F300-\U0001FAFF]", "", t)
         t = re.sub(r"[\u2600-\u27BF]", "", t)
         t = re.sub(r"\s+", " ", t).strip()
-        if len(t) > 55:
-            t = t[:55].rstrip()
+        if max_length is not None and max_length > 0 and len(t) > max_length:
+            shortened = t[:max_length].rstrip()
+            next_character = t[len(shortened) : len(shortened) + 1]
+            if (
+                shortened
+                and next_character
+                and not shortened[-1].isspace()
+                and not next_character.isspace()
+            ):
+                boundary = shortened.rfind(" ")
+                if boundary >= int(max_length * 0.8):
+                    shortened = shortened[:boundary].rstrip()
+            t = shortened
         t = t.rstrip("!！。．. ")
         return t or "Untitled"
 
@@ -1273,6 +1287,49 @@ class SuperEnhancedContentGenerator:
         t = re.sub(r"\s+", " ", t).strip()
         return t
 
+    @staticmethod
+    def _truncate_seo_description(
+        text: str,
+        *,
+        minimum_sentence_length: int = 80,
+        maximum_length: int = 160,
+    ) -> str:
+        value = str(text or "").strip()
+        if len(value) <= maximum_length:
+            return value
+
+        window = value[:maximum_length]
+        sentence_ends = [
+            match.end()
+            for match in re.finditer(r"(?:[。！？!?]|\.(?=\s|$))", window)
+            if match.end() >= minimum_sentence_length
+        ]
+        if sentence_ends:
+            return window[: sentence_ends[-1]].strip()
+
+        content_limit = maximum_length - 1
+        prefix = value[:content_limit].rstrip()
+        next_character = value[len(prefix) : len(prefix) + 1]
+
+        def ascii_word_character(character: str) -> bool:
+            return bool(character) and character.isascii() and (
+                character.isalnum() or character in "_-"
+            )
+
+        if (
+            prefix
+            and next_character
+            and ascii_word_character(prefix[-1])
+            and ascii_word_character(next_character)
+        ):
+            boundaries = list(re.finditer(r"[^A-Za-z0-9_-]+", prefix))
+            if not boundaries:
+                return "…"
+            prefix = prefix[: boundaries[-1].start()].rstrip()
+
+        prefix = prefix.rstrip(" \t\r\n,，:：;；、-—–([{（【《“‘/\\")
+        return f"{prefix}…" if prefix else "…"
+
     def _seo_description(self, item: dict) -> str:
         if not isinstance(item, dict):
             return ""
@@ -1288,9 +1345,7 @@ class SuperEnhancedContentGenerator:
                 continue
             if self._looks_like_meta_disclaimer(s):
                 continue
-            if len(s) > 160:
-                s = s[:160].rstrip()
-            return s
+            return self._truncate_seo_description(s)
         return ""
 
     def _yaml_escape(self, text: str) -> str:

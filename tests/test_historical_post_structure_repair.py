@@ -5,8 +5,8 @@ from pathlib import Path
 
 import yaml
 
-from ai_stack.content_quality import markdown_body
-from ai_stack.historical_repair import build_historical_repair_plan
+from ai_stack.content_quality import analyze_post, markdown_body
+from ai_stack.historical_repair import _plain_description, build_historical_repair_plan
 
 
 def _write_post(
@@ -231,6 +231,114 @@ def test_title_generation_prompt_leak_is_archived_instead_of_rewritten(
     assert metadata["archive_reason"] == "historical_content_quality_gate"
     assert "description" in metadata
     assert "请根据以下标题生成" not in markdown_body(document)
+
+
+def test_truncated_description_is_rebuilt_only_from_existing_body_evidence(
+    tmp_path: Path,
+) -> None:
+    root = tmp_path / "content/posts"
+    stale_description = "旧" * 160
+    evidence = (
+        "本文依据已经保存在正文中的日志、边界条件和验证结果，说明系统为何失败、"
+        "修复如何完成，以及哪些事实能够支持最终结论。迁移过程不会调用模型补写，"
+        "也不会根据标题猜测任何缺失内容。"
+    )
+    path = _write_post(
+        root,
+        "truncated-description.md",
+        title="历史描述重建",
+        description=stale_description,
+        body=f"## 摘要\n\n{evidence}\n\n## 结论\n\n现有证据支持该结论。",
+    )
+
+    document = _planned_document(root, path)
+    description = _metadata(document)["description"]
+
+    assert description == evidence
+    assert description != stale_description
+    assert "truncated_description" not in analyze_post(document).fatal_reasons
+
+
+def test_plain_description_marks_a_word_safe_summary_cut_with_ellipsis() -> None:
+    prose = "甲" * 190 + " deploymentPipelineSafety 后续正文继续提供已保存的证据"
+
+    description = _plain_description(f"## 摘要\n\n{prose}")
+
+    assert description == "甲" * 190 + "…"
+    assert len(description) <= 200
+    assert description.encode("utf-8").decode("utf-8") == description
+
+
+def test_complete_160_character_description_is_preserved(tmp_path: Path) -> None:
+    root = tmp_path / "content/posts"
+    complete_description = "甲" * 159 + "。"
+    path = _write_post(
+        root,
+        "complete-description.md",
+        title="完整描述边界",
+        description=complete_description,
+        body="# 摘要\n\n正文完整记录了事实依据、工程约束与最终结论。",
+    )
+
+    document = _planned_document(root, path)
+
+    assert _metadata(document)["description"] == complete_description
+    assert "truncated_description" not in analyze_post(document).fatal_reasons
+
+
+def test_truncated_description_without_body_evidence_is_transparently_archived(
+    tmp_path: Path,
+) -> None:
+    root = tmp_path / "content/posts"
+    path = _write_post(
+        root,
+        "no-description-evidence.md",
+        title="无摘要证据",
+        description="旧" * 160,
+        body="## 摘要\n\n证据太短。",
+    )
+
+    plan = build_historical_repair_plan(content_root=root)
+    group = plan.manifest["groups"][0]
+    rendered = next(write.content for write in plan.writes if write.path == path.name).decode()
+
+    assert group["disposition"] == "archive_stub"
+    assert group["body_source"] is None
+    assert _metadata(rendered)["archived"] is True
+
+
+def test_misplaced_strong_marker_before_emoji_is_removed_without_touching_valid_bold(
+    tmp_path: Path,
+) -> None:
+    root = tmp_path / "content/posts"
+    path = _write_post(
+        root,
+        "misplaced-strong.md",
+        title="学习要点格式修复",
+        description="正文已经完整保存，只需要清理误置的 Markdown 标记。",
+        body=(
+            "## 学习要点\n\n"
+            "- 核心差异化：现有证据支持这一完整结论。** 🤖✨\n"
+            "- 高可用与容灾是系统地基** 🛡️：现有证据支持服务连续性。\n"
+            "- 📝 隐式状态管理**：历史结果能够作为上下文记忆。\n"
+            "- **完整加粗句。** 🚀\n\n"
+            "## 引用\n\n- [原文](https://example.com)"
+        ),
+    )
+
+    document = _planned_document(root, path)
+    body = markdown_body(document)
+
+    assert "完整结论。 🤖✨" in body
+    assert "完整结论。** 🤖✨" not in body
+    assert "系统地基 🛡️：现有证据" in body
+    assert "系统地基** 🛡️：现有证据" not in body
+    assert "📝 隐式状态管理：历史结果" in body
+    assert "📝 隐式状态管理**：历史结果" not in body
+    assert "**完整加粗句。** 🚀" in body
+
+    path.write_text(document, encoding="utf-8")
+    assert not build_historical_repair_plan(content_root=root).writes
 
 
 def test_structural_repair_plan_is_idempotent(tmp_path: Path) -> None:

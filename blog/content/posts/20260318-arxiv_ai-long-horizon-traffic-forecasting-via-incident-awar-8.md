@@ -1,5 +1,5 @@
 ---
-title: Long-Horizon Traffic Forecasting via Incident-Aware Con
+title: Long-Horizon Traffic Forecasting via Incident-Aware Conformal Spatio-Temporal Transformers
 date: 2026-03-18 08:22:04+08:00
 draft: false
 entry_kind: auto

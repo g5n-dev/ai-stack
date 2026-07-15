@@ -5,10 +5,11 @@ Blogs & Podcasts crawler (RSS/Atom)
 
 from __future__ import annotations
 
-from dataclasses import dataclass
-from datetime import datetime, timezone
 import logging
-from typing import Any, Dict, List, Optional
+import re
+from dataclasses import dataclass
+from datetime import UTC, datetime
+from typing import Any
 
 import feedparser
 import requests
@@ -17,14 +18,52 @@ from bs4 import BeautifulSoup
 from .dedupe import canonicalize_url
 from .search_fallback import SearchFallbackService
 
-
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
-DEFAULT_FEEDS: List[Dict[str, str]] = [
+_MAX_CAPTURED_FEED_BYTES = 24 * 1024
+_HTML_BLOCK_TAGS = (
+    "address",
+    "article",
+    "aside",
+    "blockquote",
+    "dd",
+    "div",
+    "dl",
+    "dt",
+    "figcaption",
+    "figure",
+    "footer",
+    "h1",
+    "h2",
+    "h3",
+    "h4",
+    "h5",
+    "h6",
+    "header",
+    "li",
+    "main",
+    "nav",
+    "ol",
+    "p",
+    "pre",
+    "section",
+    "table",
+    "td",
+    "th",
+    "tr",
+    "ul",
+)
+
+
+DEFAULT_FEEDS: list[dict[str, str]] = [
     {"name": "Andrej Karpathy Blog", "url": "https://karpathy.github.io/feed.xml", "type": "blog"},
-    {"name": "Lilian Weng (Lil'Log)", "url": "https://lilianweng.github.io/lil-log/feed.xml", "type": "blog"},
+    {
+        "name": "Lilian Weng (Lil'Log)",
+        "url": "https://lilianweng.github.io/lil-log/feed.xml",
+        "type": "blog",
+    },
     {"name": "Jay Alammar", "url": "https://jalammar.github.io/feed.xml", "type": "blog"},
     {"name": "Colah's Blog", "url": "https://colah.github.io/rss.xml", "type": "blog"},
     {"name": "OpenAI Blog", "url": "https://openai.com/blog/rss.xml", "type": "blog"},
@@ -32,25 +71,29 @@ DEFAULT_FEEDS: List[Dict[str, str]] = [
     {"name": "Latent Space", "url": "https://www.latent.space/feed", "type": "blog"},
     {"name": "The Gradient", "url": "https://thegradient.pub/feed/", "type": "blog"},
     {"name": "Import AI (Jack Clark)", "url": "https://importai.substack.com/feed", "type": "blog"},
-    {"name": "Lex Fridman Podcast", "url": "https://lexfridman.com/feed/podcast/", "type": "podcast"},
+    {
+        "name": "Lex Fridman Podcast",
+        "url": "https://lexfridman.com/feed/podcast/",
+        "type": "podcast",
+    },
 ]
 
 
-def _to_iso(dt: Optional[datetime]) -> str:
+def _to_iso(dt: datetime | None) -> str:
     if not dt:
         return ""
     if dt.tzinfo is None:
-        dt = dt.replace(tzinfo=timezone.utc)
+        dt = dt.replace(tzinfo=UTC)
     return dt.isoformat()
 
 
-def _parse_entry_datetime(entry: Any) -> Optional[datetime]:
+def _parse_entry_datetime(entry: Any) -> datetime | None:
     # feedparser gives time.struct_time in *_parsed fields.
     ts = entry.get("published_parsed") or entry.get("updated_parsed") or entry.get("created_parsed")
     if not ts:
         return None
     try:
-        return datetime(*ts[:6], tzinfo=timezone.utc)
+        return datetime(*ts[:6], tzinfo=UTC)
     except Exception:
         return None
 
@@ -75,9 +118,67 @@ def _html_to_text(s: str) -> str:
         return ""
     try:
         soup = BeautifulSoup(s, "html.parser")
-        return soup.get_text(" ", strip=True)
+        for tag in soup.find_all(("script", "style", "noscript")):
+            tag.decompose()
+        for tag in soup.find_all("br"):
+            tag.replace_with("\n")
+        for tag in soup.find_all(_HTML_BLOCK_TAGS):
+            tag.insert_before("\n\n")
+            tag.insert_after("\n\n")
+
+        paragraphs: list[str] = []
+        for segment in re.split(r"\n+", soup.get_text()):
+            normalized = re.sub(r"[ \t\f\v]+", " ", segment).strip()
+            if normalized:
+                paragraphs.append(normalized)
+        return "\n\n".join(paragraphs)
     except Exception:
         return s
+
+
+def _truncate_utf8_at_word_boundary(value: str, limit: int) -> tuple[str, bool]:
+    """Bound feed captures without leaving a visibly cut Latin token."""
+
+    text = str(value or "")
+    raw = text.encode("utf-8")
+    if len(raw) <= limit:
+        return text, False
+
+    prefix = raw[:limit].decode("utf-8", errors="ignore").rstrip()
+    consumed = len(prefix.encode("utf-8"))
+    remainder = raw[consumed:].decode("utf-8", errors="ignore")
+    if prefix and remainder:
+        left = prefix[-1]
+        right = remainder[0]
+        continues_token = (
+            not left.isspace()
+            and not right.isspace()
+            and (left.isalnum() or left in "_-")
+            and (right.isalnum() or right in "_-")
+        )
+        if continues_token:
+            boundary = re.search(r"\s+\S*$", prefix)
+            if boundary is not None and boundary.start() >= int(len(prefix) * 0.8):
+                prefix = prefix[: boundary.start()].rstrip()
+    return prefix, True
+
+
+def _feed_entry_text(entry: Any) -> str:
+    """Prefer the richest text already present in the RSS/Atom payload."""
+
+    candidates: list[str] = []
+    for part in entry.get("content") or []:
+        value = part.get("value") if hasattr(part, "get") else ""
+        cleaned = _html_to_text(str(value or "")).strip()
+        if cleaned:
+            candidates.append(cleaned)
+
+    summary = entry.get("summary") or entry.get("description") or ""
+    cleaned_summary = _html_to_text(str(summary or "")).strip()
+    if cleaned_summary:
+        candidates.append(cleaned_summary)
+
+    return max(candidates, key=len, default="")
 
 
 @dataclass(frozen=True)
@@ -92,31 +193,34 @@ class BlogsPodcastsCrawler:
 
     def __init__(
         self,
-        feeds: Optional[List[Dict[str, str]]] = None,
+        feeds: list[dict[str, str]] | None = None,
         limit: int = 10,
         timeout: int = 30,
-        search_fallback: Optional[Dict[str, Any]] = None,
+        search_fallback: dict[str, Any] | None = None,
     ):
         self.feeds = [FeedConfig(**f) for f in (feeds or DEFAULT_FEEDS)]
         self.limit = limit
         self.timeout = timeout
         self.search_fallback_service = SearchFallbackService(search_fallback)
 
-    def fetch(self) -> List[Dict]:
+    def fetch(self) -> list[dict]:
         try:
             headers = {"User-Agent": "Mozilla/5.0 (AI-Stack; +https://github.com/)"}
-            all_items: List[Dict[str, Any]] = []
+            all_items: list[dict[str, Any]] = []
 
             for feed_cfg in self.feeds:
                 items = self._fetch_single_feed(feed_cfg, headers=headers)
                 all_items.extend(items)
 
             # sort by published_dt desc
-            all_items.sort(key=lambda x: x.get("_published_dt") or datetime.min.replace(tzinfo=timezone.utc), reverse=True)
+            all_items.sort(
+                key=lambda x: x.get("_published_dt") or datetime.min.replace(tzinfo=UTC),
+                reverse=True,
+            )
 
             # dedupe by normalized url
             seen: set[str] = set()
-            unique: List[Dict[str, Any]] = []
+            unique: list[dict[str, Any]] = []
             for item in all_items:
                 key = canonicalize_url(item.get("url", "")).lower().strip()
                 if not key:
@@ -135,7 +239,11 @@ class BlogsPodcastsCrawler:
             logger.error(f"Failed to fetch blogs/podcasts feeds: {e}")
             return []
 
-    def _fetch_single_feed(self, feed_cfg: FeedConfig, headers: Dict[str, str]) -> List[Dict[str, Any]]:
+    def _fetch_single_feed(
+        self,
+        feed_cfg: FeedConfig,
+        headers: dict[str, str],
+    ) -> list[dict[str, Any]]:
         try:
             resp = requests.get(feed_cfg.url, headers=headers, timeout=self.timeout)
             resp.raise_for_status()
@@ -143,9 +251,13 @@ class BlogsPodcastsCrawler:
             parsed = feedparser.parse(resp.content)
             if getattr(parsed, "bozo", False):
                 # bozo_exception may include useful details; log at debug to avoid noisy runs.
-                logger.debug(f"Feed parsing warning for {feed_cfg.url}: {getattr(parsed, 'bozo_exception', None)}")
+                logger.debug(
+                    "Feed parsing warning for %s: %s",
+                    feed_cfg.url,
+                    getattr(parsed, "bozo_exception", None),
+                )
 
-            items: List[Dict[str, Any]] = []
+            items: list[dict[str, Any]] = []
             for entry in getattr(parsed, "entries", [])[: max(self.limit * 3, 50)]:
                 item = self._extract_entry(entry, feed_cfg)
                 if item:
@@ -167,15 +279,18 @@ class BlogsPodcastsCrawler:
                 return fallback_items
             return []
 
-    def _extract_entry(self, entry: Any, feed_cfg: FeedConfig) -> Optional[Dict[str, Any]]:
+    def _extract_entry(self, entry: Any, feed_cfg: FeedConfig) -> dict[str, Any] | None:
         try:
             title = (entry.get("title") or "").strip()
             link = (entry.get("link") or "").strip()
             if not title or not link:
                 return None
 
-            summary = entry.get("summary") or entry.get("description") or ""
-            description = _html_to_text(summary)[:2000]
+            captured_text = _feed_entry_text(entry)
+            description, capture_truncated = _truncate_utf8_at_word_boundary(
+                captured_text,
+                _MAX_CAPTURED_FEED_BYTES,
+            )
 
             published_dt = _parse_entry_datetime(entry)
             published = entry.get("published") or entry.get("updated") or ""
@@ -192,6 +307,10 @@ class BlogsPodcastsCrawler:
                 "title": title,
                 "url": canonicalize_url(link),
                 "description": description,
+                "source_is_truncated": capture_truncated,
+                "source_truncation_reason": (
+                    "crawler_feed_content_limit" if capture_truncated else ""
+                ),
                 "author": (entry.get("author") or "").strip(),
                 "published": published,
                 "published_at": _to_iso(published_dt),
@@ -201,7 +320,7 @@ class BlogsPodcastsCrawler:
                 "audio_url": audio_url,
                 "tags": tags,
                 "source": "blogs_podcasts",
-                "crawled_at": datetime.now(timezone.utc).isoformat(),
+                "crawled_at": datetime.now(UTC).isoformat(),
                 "_published_dt": published_dt,
             }
         except Exception as e:

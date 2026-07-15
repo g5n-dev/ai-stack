@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import pytest
 
+from ai_stack import source_contract
 from ai_stack.source_contract import (
     SourceContractError,
     apply_source_contract,
@@ -133,7 +134,7 @@ def test_contract_rejects_unknown_sources_and_missing_minimum_evidence() -> None
         )
 
 
-def test_contract_keeps_full_payload_hash_but_bounds_the_published_excerpt() -> None:
+def test_contract_keeps_full_payload_hash_and_publishes_all_stored_evidence() -> None:
     original = "智能体证据段落。" * 2_000
     contracted = apply_source_contract(
         {
@@ -147,9 +148,92 @@ def test_contract_keeps_full_payload_hash_but_bounds_the_published_excerpt() -> 
 
     assert contracted["source_payload_sha256"].startswith("sha256:")
     assert contracted["source_text_chars_original"] == len(original)
-    assert len(contracted["source_display_excerpt"].encode("utf-8")) <= 6_000
+    assert contracted["source_display_excerpt"] == contracted["source_text_original"]
+    assert len(contracted["source_display_excerpt"].encode("utf-8")) <= 24 * 1024
     assert contracted["source_is_truncated"] is True
-    assert "publication_excerpt_limit" in contracted["source_truncation_reason"]
+    assert "source_contract_limit" in contracted["source_truncation_reason"]
+    assert "publication_excerpt_limit" not in contracted["source_truncation_reason"]
+    verify_source_contract(contracted)
+
+
+def test_contract_publishes_a_complete_stored_english_capture() -> None:
+    original = "complete-token " * 1_000
+    contracted = apply_source_contract(
+        {
+            "source": "arxiv",
+            "title": "Word-safe source excerpt",
+            "url": "https://arxiv.org/abs/2607.54321",
+            "summary": original,
+            "crawled_at": "2026-07-15T12:00:00Z",
+        }
+    )
+
+    assert contracted["source_display_excerpt"] == original.strip()
+    assert contracted["source_is_truncated"] is False
+    assert contracted["source_truncation_reason"] == ""
+    verify_source_contract(contracted)
+
+
+def test_verifier_accepts_the_pinned_legacy_v1_display_derivative() -> None:
+    contracted = apply_source_contract(
+        {
+            "source": "arxiv",
+            "title": "Legacy v1 display derivative",
+            "url": "https://arxiv.org/abs/2607.54322",
+            "summary": "complete-token " * 1_000,
+            "crawled_at": "2026-07-15T12:00:00Z",
+        }
+    )
+    evidence = contracted["evidence"]
+    evidence["is_truncated"] = True
+    evidence["truncation_reason"] = "publication_excerpt_limit"
+    evidence["digest"] = source_contract._evidence_digest(evidence)
+    contracted["source_snapshot_sha256"] = evidence["digest"]
+    contracted["source_display_excerpt"] = source_contract._truncate_utf8(
+        contracted["source_text_original"], 6_000
+    )[0]
+    contracted["source_is_truncated"] = True
+    contracted["source_truncation_reason"] = "publication_excerpt_limit"
+
+    verify_source_contract(contracted)
+
+
+def test_contract_bounds_publication_title_without_mutating_immutable_title() -> None:
+    title = ("complete-title-token " * 30) + "final-token"
+    contracted = apply_source_contract(
+        {
+            "source": "hacker_news",
+            "title": title,
+            "url": "https://example.com/long-title",
+            "hn_id": 987,
+            "crawled_at": "2026-07-15T12:00:00Z",
+        }
+    )
+
+    assert contracted["evidence"]["fields"]["title"] == title
+    assert contracted["source_title_chars_original"] == len(title)
+    assert len(contracted["source_display_title"]) <= 300
+    assert contracted["source_display_title"].endswith("complete-title-token")
+    assert contracted["source_is_truncated"] is True
+    assert "publication_title_limit" in contracted["source_truncation_reason"]
+    verify_source_contract(contracted)
+
+
+def test_explicit_false_does_not_trigger_the_legacy_2000_character_rss_rule() -> None:
+    contracted = apply_source_contract(
+        {
+            "source": "blogs_podcasts",
+            "title": "Exactly bounded feed text",
+            "url": "https://example.com/exactly-bounded",
+            "description": "x" * 2_000,
+            "source_is_truncated": False,
+            "source_truncation_reason": "",
+            "crawled_at": "2026-07-15T12:00:00Z",
+        }
+    )
+
+    assert contracted["source_is_truncated"] is False
+    assert contracted["source_truncation_reason"] == ""
     verify_source_contract(contracted)
 
 

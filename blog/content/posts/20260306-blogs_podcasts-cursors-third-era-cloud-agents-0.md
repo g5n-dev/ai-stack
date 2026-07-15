@@ -1,5 +1,5 @@
 ---
-title: Agent Lab 收购 Graphite 与 Autotab，推出 Cloud Agents 开启软件开发第
+title: "Cursor's Third Era: Cloud Agents"
 date: 2026-03-06 07:31:16+08:00
 draft: false
 entry_kind: auto

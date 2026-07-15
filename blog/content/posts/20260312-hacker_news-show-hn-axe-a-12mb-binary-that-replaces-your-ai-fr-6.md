@@ -1,5 +1,5 @@
 ---
-title: 'Show HN: Axe – A 12MB binary that replaces your AI fram'
+title: 'Show HN: Axe – A 12MB binary that replaces your AI framework'
 date: 2026-03-12 14:57:45+08:00
 draft: false
 entry_kind: auto

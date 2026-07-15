@@ -154,6 +154,55 @@ def test_active_post_requires_a_non_empty_string_description() -> None:
     assert "missing_description" not in analyze_post(present).fatal_reasons
 
 
+def test_post_gate_rejects_mechanically_truncated_descriptions() -> None:
+    body = "## 正文\n\n这里是完整且可核验的正文。\n"
+
+    def document(description: str) -> str:
+        return (
+            "---\n"
+            "title: Description boundary\n"
+            f"description: {json.dumps(description, ensure_ascii=False)}\n"
+            "entry_kind: manual\n"
+            "---\n\n" + body
+        )
+
+    mechanically_160 = "甲" * 160
+    mechanically_159 = "乙" * 150 + " observab"
+    mechanically_cut_list_item = "甲" * 157 + " 1."
+    complete_160 = "甲" * 159 + "。"
+    complete_english = "a" * 159 + "."
+    complete_with_quote = "甲" * 157 + "结论。”"
+    translation_prefix = "您提供的文本已经是中文"
+    translation_and_truncated = translation_prefix + "甲" * (160 - len(translation_prefix))
+    dangling = (
+        "该摘要概括了现有正文中的部署证据，但机械截断后停在 CI/",
+        "该摘要概括了现有正文中的部署证据，但最后停在逗号，",
+        "该摘要概括了现有正文中的部署证据，但最后停在冒号：",
+    )
+
+    assert len(mechanically_160) == 160
+    assert len(mechanically_159) == 159
+    assert len(complete_160) == 160
+    assert "truncated_description" in analyze_post(document(mechanically_160)).fatal_reasons
+    assert "truncated_description" in analyze_post(document(mechanically_159)).fatal_reasons
+    assert (
+        "truncated_description" in analyze_post(document(mechanically_cut_list_item)).fatal_reasons
+    )
+    assert "truncated_description" not in analyze_post(document(complete_160)).fatal_reasons
+    assert "truncated_description" not in analyze_post(document(complete_english)).fatal_reasons
+    assert "truncated_description" not in analyze_post(document(complete_with_quote)).fatal_reasons
+    combined_reasons = analyze_post(document(translation_and_truncated)).fatal_reasons
+    assert "translation_response_leak" in combined_reasons
+    assert "truncated_description" in combined_reasons
+    assert all(
+        "truncated_description" in analyze_post(document(value)).fatal_reasons for value in dangling
+    )
+    assert (
+        "truncated_description"
+        not in analyze_post(document("简短描述虽然没有句号，但并非机械长度边界。")).fatal_reasons
+    )
+
+
 def test_active_post_rejects_consecutive_horizontal_rules_outside_fences() -> None:
     base = (
         "---\n"
@@ -229,6 +278,340 @@ def test_completeness_gate_detects_encoding_loss_translation_leak_and_placeholde
     assert "placeholder_content" in content_quality_reasons("## 技术分析\n\n待补充\n")
 
 
+def test_post_gate_scans_frontmatter_description_for_translation_response_leak() -> None:
+    leaked = (
+        "---\n"
+        "title: Translation residue\n"
+        "description: 您好，注意到您提供的内容已经是中文，无需再次翻译。\n"
+        "entry_kind: manual\n"
+        "---\n\n"
+        "## 正文\n\n这里是完整且可独立阅读的正文。\n"
+    )
+    legitimate = leaked.replace(
+        "您好，注意到您提供的内容已经是中文，无需再次翻译。",
+        "本文分析翻译模型为何偶尔声称输入内容已经是中文。",
+    )
+
+    assert "translation_response_leak" in analyze_post(leaked).fatal_reasons
+    assert "translation_response_leak" not in analyze_post(legitimate).fatal_reasons
+
+
+def test_translation_response_gate_catches_high_confidence_wording_variants() -> None:
+    variants = (
+        "这段文字本身已经是中文了。如果您需要，我可以帮您润色。",
+        "您好，您提供的文本**已经是中文**了。",
+        "这句话已经是中文了，不过我可以帮助您优化表达。",
+        "如果您是想把这段中文翻译成英文，以下是翻译版本。",
+        "该中文文本已符合要求，无需翻译。如需翻译成英文，请提供相应内容。",
+    )
+
+    for text in variants:
+        assert "translation_response_leak" in content_quality_reasons(f"## 描述\n\n{text}\n")
+
+
+def test_translation_response_gate_does_not_flag_translation_discussion() -> None:
+    body = (
+        "## 描述\n\n"
+        "本文研究模型在收到“把这句话翻译成英文”的提示后如何保持术语一致，"
+        "并讨论系统偶尔声称输入内容已经是中文这一错误现象。\n"
+    )
+
+    assert "translation_response_leak" not in content_quality_reasons(body)
+
+
+def test_translation_response_gate_scans_every_description_section() -> None:
+    late_leak = (
+        "## 正文\n\n" + ("这是用于验证深层区块扫描的正常正文。" * 120) + "\n\n## 描述\n\n"
+        "您好，这段内容本身就是中文的，不需要翻译成中文。"
+        "如果您需要英译或润色，请告诉我。\n\n"
+        "## 评论\n\n这里是正常评论。\n"
+    )
+    code_example = (
+        "## 正文\n\n"
+        + ("这是用于验证代码围栏边界的正常正文。" * 120)
+        + "\n\n```markdown\n## 描述\n\n"
+        "这段内容本身就是中文，无需翻译，请告诉我。\n```\n"
+    )
+    other_section = (
+        "## 正文\n\n" + ("这是用于验证标题边界的正常正文。" * 120) + "\n\n## 评论\n\n"
+        "这段内容本身就是中文，无需翻译，请告诉我。\n"
+    )
+
+    assert "translation_response_leak" in content_quality_reasons(late_leak)
+    assert "translation_response_leak" not in content_quality_reasons(code_example)
+    assert "translation_response_leak" not in content_quality_reasons(other_section)
+
+
+def test_post_gate_rejects_editorial_meta_preamble_in_description_or_intro() -> None:
+    base = (
+        "---\ntitle: Editorial residue\ndescription: 正常的文章描述。\nentry_kind: manual\n---\n\n"
+    )
+    leaked_description = (
+        base.replace(
+            "description: 正常的文章描述。",
+            "description: 这是一个为您量身定制的引言，旨在抓住读者注意力。",
+        )
+        + "## 正文\n\n文章从这里开始。\n"
+    )
+    leaked_intro = (
+        base + "## ✨ 引人入胜的引言\n\n这里为你撰写了一个极具吸引力的导语：\n\n文章从这里开始。\n"
+    )
+
+    assert "editorial_meta_preamble" in analyze_post(leaked_description).fatal_reasons
+    assert "editorial_meta_preamble" in analyze_post(leaked_intro).fatal_reasons
+
+
+def test_editorial_meta_preamble_gate_has_tight_position_and_voice_boundaries() -> None:
+    base = (
+        "---\n"
+        "title: Editorial boundaries\n"
+        "description: 这里是我为团队撰写导语时总结的编辑规范。\n"
+        "entry_kind: manual\n"
+        "---\n\n"
+    )
+    first_person = base + "## 导语\n\n这里是我为团队撰写的项目背景。\n"
+    product_discussion = (
+        base + "## 导语\n\n这是一个为用户打造导语编辑器的技术方案。\n\n"
+        "## 评论\n\n原始模型曾回答：这是一个为您定制的引言。\n"
+    )
+    fenced = base + "## 导语\n\n```text\n这是一个为您定制的引言\n```\n\n正文自然开始。\n"
+
+    for document in (first_person, product_discussion, fenced):
+        assert "editorial_meta_preamble" not in analyze_post(document).fatal_reasons
+
+
+def test_auto_legacy_gate_detects_truncation_before_citation_footer() -> None:
+    base = (
+        "---\n"
+        "title: Pre-citation truncation\n"
+        "description: HN legacy analysis fixture.\n"
+        "entry_kind: auto\n"
+        "source: hacker_news\n"
+        "content_mode: legacy_analysis\n"
+        "external_url: https://example.com/hn\n"
+        "---\n\n"
+        "## 分析\n\n"
+    )
+    cases = (
+        base + "这段结论具有极高的**信号价值\n\n## 🔗 引用\n\n- [原文](https://example.com)\n",
+        base + "这段结论停在关键的*信号价值\n\n## 引用\n\n- [原文](https://example.com)\n",
+        base + "这个方案的关键限制仍然在于，\n\n## 引用\n\n- [原文](https://example.com)\n",
+        base + "部署前必须重新检查输入边界（\n\n## 来源\n\n- [原文](https://example.com)\n",
+        base + "这一段旧生成内容在解释模型架构时突然停在高带宽显存和矩阵，\n\n"
+        "## 🔗 引用\n\n- [原文](https://example.com)\n",
+    )
+
+    for document in cases:
+        assert "truncated_pre_citation_tail" in analyze_post(document).fatal_reasons
+
+    for source in ("arxiv", "juejin", "blogs_podcasts", "github_trending"):
+        document = (
+            base.replace("source: hacker_news", f"source: {source}")
+            + "这一段正文突然停在尚未完成的模型部署流程和高带宽矩阵计算，\n\n"
+            "## 引用\n\n- [原文](https://example.com)\n"
+        )
+        assert "truncated_pre_citation_tail" in analyze_post(document).fatal_reasons
+
+
+def test_pre_citation_tail_gate_excludes_complete_or_structural_endings() -> None:
+    base = (
+        "---\n"
+        "title: Pre-citation boundary\n"
+        "description: HN legacy analysis fixture.\n"
+        "entry_kind: auto\n"
+        "source: hacker_news\n"
+        "content_mode: legacy_analysis\n"
+        "external_url: https://example.com/hn\n"
+        "---\n\n"
+        "## 分析\n\n"
+    )
+    complete = base + "这是自然结束的完整结论。⚡️\n\n## 引用\n\n- [原文](https://example.com)\n"
+    list_tail = (
+        base + "- 第一项无需句号\n- 第二项无需句号\n\n## 引用\n\n- [原文](https://example.com)\n"
+    )
+    link_tail = (
+        base
+        + "[查看完整来源](https://example.com/source)\n\n## 引用\n\n- [原文](https://example.com)\n"
+    )
+    code_tail = (
+        base + "```python\nvalue = '代码块无需句号'\n```\n\n"
+        "## 引用\n\n- [原文](https://example.com)\n"
+    )
+    inline_math = base + "示例矩阵尺寸为 2*3\n\n## 引用\n\n- [原文](https://example.com)\n"
+    complete_without_period = (
+        base + "能够自动将流量切换到备用区域是保证业务连续性的关键\n\n"
+        "## 引用\n\n- [原文](https://example.com)\n"
+    )
+    misplaced_strong_before_emoji = (
+        base + "- 核心差异化：现有证据支持这一完整结论。** 🤖✨\n\n"
+        "## 引用\n\n- [原文](https://example.com)\n"
+    )
+    misplaced_label_strong = (
+        base + "- 高可用与容灾是支撑 8 亿用户的地基** 🛡️：虽然原文没有详细展开，"
+        "但现有证据足以说明服务连续性。\n\n"
+        "## 引用\n\n- [原文](https://example.com)\n"
+    )
+    misplaced_label_strong_without_emoji = (
+        base + "- 📝 隐式状态管理**：循环会利用历史结果作为上下文记忆，从而保持连贯性。\n\n"
+        "## 引用\n\n- [原文](https://example.com)\n"
+    )
+    mixed_punctuation_list = (
+        base + "- 第一项已经形成完整结论。\n"
+        "- 尊重用户隐私，仅将已同意接收定向内容的用户加入列表\n\n"
+        "## 引用\n\n- [原文](https://example.com)\n"
+    )
+    other_source = (
+        base.replace("source: hacker_news", "source: blogs_podcasts")
+        + "这一段正文突然停在尚未完成的模型部署流程和高带宽矩阵计算，\n\n"
+        "## 引用\n\n- [原文](https://example.com)\n"
+    )
+    manual = (
+        base.replace("entry_kind: auto", "entry_kind: manual")
+        + "正文突然停在未完成的模型部署和矩阵\n\n"
+        "## 引用\n\n- [原文](https://example.com)\n"
+    )
+    other_mode = (
+        base.replace("content_mode: legacy_analysis", "content_mode: source_brief")
+        + "正文突然停在未完成的模型部署和矩阵\n\n"
+        "## 引用\n\n- [原文](https://example.com)\n"
+    )
+
+    assert "truncated_pre_citation_tail" in analyze_post(other_source).fatal_reasons
+    for document in (
+        complete,
+        complete_without_period,
+        misplaced_strong_before_emoji,
+        misplaced_label_strong,
+        misplaced_label_strong_without_emoji,
+        mixed_punctuation_list,
+        list_tail,
+        link_tail,
+        code_tail,
+        inline_math,
+        manual,
+        other_mode,
+    ):
+        assert "truncated_pre_citation_tail" not in analyze_post(document).fatal_reasons
+
+
+def test_pre_citation_gate_uses_peer_punctuation_for_final_list_item() -> None:
+    base = (
+        "---\ntitle: List truncation\ndescription: Fixture.\n"
+        "entry_kind: auto\nsource: hacker_news\ncontent_mode: legacy_analysis\n"
+        "external_url: https://example.com/hn\n---\n\n"
+        "## 问答\n\n**A**: 建议包括：\n\n"
+    )
+    ambiguous_without_punctuation = (
+        base + "1. **第一项**：这是完整的第一项。\n"
+        "2. **第二项**：这一项在生成途中突然停止\n\n"
+        "## 引用\n\n- [原文](https://example.com)\n"
+    )
+    structurally_truncated = (
+        base + "1. **第一项**：这是完整的第一项。\n"
+        "2. **第二项**：这一项在生成途中突然停止，\n\n"
+        "## 引用\n\n- [原文](https://example.com)\n"
+    )
+    consistent = (
+        base + "- 安装依赖\n- 运行测试\n- 发布构建\n\n## 引用\n\n- [原文](https://example.com)\n"
+    )
+
+    assert (
+        "truncated_pre_citation_tail"
+        not in analyze_post(ambiguous_without_punctuation).fatal_reasons
+    )
+    assert "truncated_pre_citation_tail" in analyze_post(structurally_truncated).fatal_reasons
+    assert "truncated_pre_citation_tail" not in analyze_post(consistent).fatal_reasons
+
+
+def test_pre_citation_gate_detects_explicit_qa_tail_structures() -> None:
+    base = (
+        "---\ntitle: Q&A truncation\ndescription: Fixture.\n"
+        "entry_kind: auto\nsource: hacker_news\ncontent_mode: legacy_analysis\n"
+        "external_url: https://example.com/hn\n---\n\n"
+    )
+    unterminated = (
+        base + "### 6: 这个方案是否可行？\n\n6: 这个方案是否可行？\n\n"
+        "**A**: 这一答案在解释关键限制时突然停止，\n\n"
+        "## 引用\n\n- [原文](https://example.com)\n"
+    )
+    answer_fragment = (
+        base + "### 7: 最终答案是什么？\n\n7: 最终答案是什么？\n\n"
+        "**A**: 这\n\n## 引用\n\n- [原文](https://example.com)\n"
+    )
+    repeated_question = (
+        base + "### 7: 如何维护\n\n7: 如何维护\n\n## 引用\n\n- [原文](https://example.com)\n"
+    )
+
+    for document in (unterminated, answer_fragment, repeated_question):
+        assert "truncated_pre_citation_tail" in analyze_post(document).fatal_reasons
+
+
+def test_pre_citation_gate_detects_unbalanced_markup_and_bare_markers() -> None:
+    base = (
+        "---\ntitle: Markup truncation\ndescription: Fixture.\n"
+        "entry_kind: auto\nsource: hacker_news\ncontent_mode: legacy_analysis\n"
+        "external_url: https://example.com/hn\n---\n\n"
+    )
+    cases = (
+        "* **配置**：请检查部署参数（生产环境",
+        "* **路径**：配置文件位于 `/.config",
+        "*",
+        "###",
+    )
+
+    for tail in cases:
+        document = base + tail + "\n\n## 引用\n\n- [原文](https://example.com)\n"
+        assert "truncated_pre_citation_tail" in analyze_post(document).fatal_reasons
+
+
+def test_pre_citation_gate_does_not_apply_qa_rule_to_generic_short_prose() -> None:
+    base = (
+        "---\ntitle: Generic prose\ndescription: Fixture.\n"
+        "entry_kind: auto\nsource: hacker_news\ncontent_mode: legacy_analysis\n"
+        "external_url: https://example.com/hn\n---\n\n"
+    )
+    generic = (
+        base + "## 摘要\n\n这是一个没有句号的简短栏目名称\n\n"
+        "## 引用\n\n- [原文](https://example.com)\n"
+    )
+    command_list = (
+        base + "## 命令\n\n- npm install\n- npm test\n- npm run build\n\n"
+        "## 引用\n\n- [原文](https://example.com)\n"
+    )
+
+    for document in (generic, command_list):
+        assert "truncated_pre_citation_tail" not in analyze_post(document).fatal_reasons
+
+
+def test_completeness_signals_handle_fence_and_replacement_boundaries() -> None:
+    mismatched = "## 示例\n\n```python\nprint('cut')\n~~~\n"
+    longer_closer = "## 示例\n\n```python\nprint('complete')\n````\n\n结论。\n"
+    replacement_in_code = "## 样例\n\n```text\ncorrupt � byte\n```\n\n结论。\n"
+
+    assert "unclosed_code_fence" in body_completeness_reasons(mismatched)
+    assert "unclosed_code_fence" not in body_completeness_reasons(longer_closer)
+    assert "encoding_replacement_character" in body_completeness_reasons(replacement_in_code)
+
+
+def test_archived_post_bypasses_completeness_and_translation_gates() -> None:
+    archived = (
+        "---\n"
+        "title: Archived damaged source\n"
+        "description: 您提供的内容已经是中文，无需翻译。\n"
+        "archived: true\n"
+        "source: hacker_news\n"
+        "entry_kind: auto\n"
+        "content_mode: legacy_analysis\n"
+        "---\n\n"
+        "## 描述\n\n这段内容已经是中文。\n\n```text\n损坏字符 �\n"
+    )
+
+    analysis = analyze_post(archived)
+
+    assert analysis.status == "archived"
+    assert analysis.fatal_reasons == ()
+
+
 def test_analyze_post_uses_body_only_and_requires_a_structural_source_brief() -> None:
     valid = (
         "---\n"
@@ -278,6 +661,68 @@ def test_declared_modern_source_brief_requires_provenance_frontmatter() -> None:
 
     assert "invalid_source_brief" in analyze_post(incomplete).fatal_reasons
     assert analyze_post(complete).status == "source_brief"
+
+
+def test_truncated_source_brief_requires_an_explicit_reason() -> None:
+    base = (
+        "---\n"
+        "title: Brief\n"
+        "description: A concise source card.\n"
+        "entry_kind: auto\n"
+        "source: blogs_podcasts\n"
+        "content_mode: source_brief\n"
+        "external_url: https://example.com/source\n"
+        "publication_tier: C\n"
+        "source_capture_mode: excerpt\n"
+        "source_snapshot_sha256: sha256:" + "a" * 64 + "\n"
+        "extractor_version: source-contract-v1\n"
+        "discovery_method: rss_excerpt\n"
+        "source_support: 1.0\n"
+        "{truncation}\n"
+        "---\n\n"
+        "## 基本信息\n\n- **来源**: RSS\n\n"
+        "这是一段结构完整、来源边界清晰且足够长的证据正文。\n"
+    )
+    missing_reason = base.format(truncation="source_is_truncated: true")
+    explicit_reason = base.format(
+        truncation=(
+            "source_is_truncated: true\n"
+            'source_truncation_reason: "crawler_feed_content_limit"'
+        )
+    )
+
+    assert "invalid_source_brief" in analyze_post(missing_reason).fatal_reasons
+    assert analyze_post(explicit_reason).status == "source_brief"
+
+
+def test_modern_source_brief_accepts_a_fully_escaped_stored_capture() -> None:
+    body = (
+        "## 基本信息\n\n- **来源**: RSS\n\n"
+        "## 来源摘要/节选\n\n"
+        + ("> &amp; complete captured evidence\n" * 1_200)
+        + "\n## 来源说明\n\n本页完整呈现已经保存的来源证据。\n"
+    )
+    document = (
+        "---\n"
+        "title: Complete stored capture\n"
+        "description: Complete stored source evidence.\n"
+        "entry_kind: auto\n"
+        "source: blogs_podcasts\n"
+        "content_mode: source_brief\n"
+        "external_url: https://example.com/complete-source\n"
+        "publication_tier: C\n"
+        "source_capture_mode: excerpt\n"
+        "source_snapshot_sha256: sha256:" + "a" * 64 + "\n"
+        "extractor_version: source-contract-v1\n"
+        "discovery_method: rss_excerpt\n"
+        "source_is_truncated: false\n"
+        "source_support: 1.0\n"
+        "---\n\n"
+        + body
+    )
+
+    assert len(body.encode("utf-8")) > 32_000
+    assert analyze_post(document).status == "source_brief"
 
 
 def test_uncontracted_auto_posts_fail_closed_after_legacy_migration() -> None:
@@ -361,10 +806,13 @@ def test_empty_section_cleanup_removes_only_empty_sibling_headings() -> None:
     assert "## 代码块标题" in cleaned
 
 
-def test_legacy_hn_gate_detects_unterminated_prose_without_flagging_other_sources() -> None:
-    body = "## 分析\n\n这一段旧生成内容在解释模型架构时突然停在高带宽显存和矩阵"
+def test_legacy_hn_uses_the_shared_structural_tail_gate() -> None:
+    body = (
+        "## 分析\n\n这一段旧生成内容在解释模型架构时突然停在高带宽显存和矩阵，"
+        "\n\n## 引用\n\n- [原文](https://example.com)\n"
+    )
     hn = (
-        "---\ntitle: HN\nentry_kind: auto\nsource: hacker_news\n"
+        "---\ntitle: HN\nentry_kind: auto\nsource: hacker_news\ncontent_mode: legacy_analysis\n"
         "external_url: https://example.com/hn\n---\n\n" + body
     )
     manual = (
@@ -372,8 +820,53 @@ def test_legacy_hn_gate_detects_unterminated_prose_without_flagging_other_source
         "external_url: https://example.com/manual\n---\n\n" + body
     )
 
-    assert "unterminated_prose" in analyze_post(hn).fatal_reasons
-    assert "unterminated_prose" not in analyze_post(manual).fatal_reasons
+    assert "truncated_pre_citation_tail" in analyze_post(hn).fatal_reasons
+    assert "unterminated_prose" not in analyze_post(hn).fatal_reasons
+    assert "truncated_pre_citation_tail" not in analyze_post(manual).fatal_reasons
+
+
+def test_shared_structural_tail_gate_is_limited_to_auto_legacy_analysis() -> None:
+    body = (
+        "## 分析\n\n这一段旧生成内容在解释模型架构时突然停在高带宽显存和矩阵，"
+        "\n\n## 引用\n\n- [原文](https://example.com)\n"
+    )
+    legacy = (
+        "---\ntitle: Legacy HN\ndescription: Legacy analysis.\n"
+        "entry_kind: auto\nsource: hacker_news\ncontent_mode: legacy_analysis\n"
+        "external_url: https://example.com/legacy\n---\n\n" + body
+    )
+    manual_hn = legacy.replace("entry_kind: auto", "entry_kind: manual")
+    modern_analysis = legacy.replace("content_mode: legacy_analysis", "content_mode: complete")
+    other_source = legacy.replace("source: hacker_news", "source: blogs_podcasts")
+
+    assert "truncated_pre_citation_tail" in analyze_post(legacy).fatal_reasons
+    assert "truncated_pre_citation_tail" not in analyze_post(manual_hn).fatal_reasons
+    assert "truncated_pre_citation_tail" not in analyze_post(modern_analysis).fatal_reasons
+    assert "truncated_pre_citation_tail" in analyze_post(other_source).fatal_reasons
+    for document in (legacy, manual_hn, modern_analysis, other_source):
+        assert "unterminated_prose" not in analyze_post(document).fatal_reasons
+
+
+def test_unterminated_prose_exempts_source_briefs_footers_lists_and_links() -> None:
+    prefix = (
+        "---\ntitle: HN boundary\ndescription: Boundary fixture.\n"
+        "entry_kind: auto\nsource: hacker_news\ncontent_mode: legacy_analysis\n"
+        "external_url: https://example.com/hn\n---\n\n"
+    )
+    footer = prefix + "## 结论\n\n正文自然结束。\n\n*本文由 AI Stack 自动整理*\n"
+    list_tail = prefix + "## 清单\n\n- 第一项无句号\n- 第二项无句号\n"
+    link_tail = prefix + "## 来源\n\n[查看完整来源](https://example.com/source)\n"
+    source_brief = (
+        "---\ntitle: Brief\ndescription: Brief fixture.\n"
+        "entry_kind: auto\nsource: hacker_news\ncontent_mode: legacy_source_brief\n"
+        "source_provenance: legacy_no_snapshot\nsource_support: 0.0\n"
+        "external_url: https://example.com/brief\n---\n\n"
+        "## 基本信息\n\n- **来源**: Hacker News\n\n"
+        "这是一段足够完整但末尾没有句号的来源叙述\n"
+    )
+
+    for document in (footer, list_tail, link_tail, source_brief):
+        assert "unterminated_prose" not in analyze_post(document).fatal_reasons
 
 
 def test_manifest_quarantines_structurally_incomplete_active_posts(
