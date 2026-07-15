@@ -181,6 +181,26 @@ def test_all_polluted_group_plans_a_transparent_archive_stub(tmp_path: Path) -> 
     assert metadata["_build"] == {"list": "never", "render": "always"}
 
 
+def test_transparent_archive_title_cannot_be_interpreted_as_html(
+    tmp_path: Path,
+) -> None:
+    root = tmp_path / "content/posts"
+    canonical = _write_post(
+        root,
+        "20260101-think-tag.md",
+        title="为什么模型会输出 <think> 标签",
+        external_url="https://example.com/think-tag",
+        body="由于没有原文，我将只根据标题推测文章内容。",
+        date="2026-01-01T00:00:00+08:00",
+    )
+
+    rendered = _write_by_path(_build(root), canonical.name)
+    metadata = yaml.safe_load(rendered.split("---", 2)[1])
+
+    assert metadata["title"] == "为什么模型会输出 ＜think＞ 标签"
+    assert "<think>" not in rendered
+
+
 def test_complete_candidate_beats_a_longer_truncated_duplicate(tmp_path: Path) -> None:
     root = tmp_path / "content/posts"
     route = _write_post(

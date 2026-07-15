@@ -440,6 +440,9 @@ def _archive_stub(
     metadata["source_support"] = 0.0
     metadata["archive_reason"] = "historical_content_quality_gate"
     metadata["description"] = "历史条目已归档：现有正文未通过内容质量门，请查阅原始来源。"
+    metadata["title"] = str(metadata.get("title") or "历史条目").replace(
+        "<", "＜"
+    ).replace(">", "＞")
     metadata["tags"] = []
     metadata["categories"] = []
     metadata["scenarios"] = []

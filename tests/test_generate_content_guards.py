@@ -372,6 +372,31 @@ class GenerateContentGuardsTest(unittest.TestCase):
                 ],
             )
 
+    def test_archived_posts_do_not_block_a_fresh_source_contract_capture(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            posts_dir = Path(temp_dir)
+            (posts_dir / "archived.md").write_text(
+                "\n".join(
+                    [
+                        "---",
+                        'title: "Archived legacy copy"',
+                        "archived: true",
+                        'external_url: "https://example.com/articles/recover-me"',
+                        "---",
+                        "",
+                        "This body is intentionally no longer publishable.",
+                    ]
+                ),
+                encoding="utf-8",
+            )
+
+            generator = self.module.SuperEnhancedContentGenerator.__new__(
+                self.module.SuperEnhancedContentGenerator
+            )
+            generator.posts_dir = posts_dir
+
+            self.assertEqual(generator._load_post_index(), [])
+
     def test_generated_frontmatter_uses_shared_tag_and_url_canonicalization(self):
         generator = self.module.SuperEnhancedContentGenerator.__new__(
             self.module.SuperEnhancedContentGenerator

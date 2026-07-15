@@ -198,6 +198,66 @@ def test_declared_modern_source_brief_requires_provenance_frontmatter() -> None:
     assert analyze_post(complete).status == "source_brief"
 
 
+def test_uncontracted_auto_posts_after_the_reviewed_legacy_cutoff_fail_closed() -> None:
+    body = (
+        "## 技术分析\n\n"
+        "这是一段结构完整的自动生成内容，用于验证已评审历史边界。"
+        "内容包含足够的实质性文字、清晰的技术背景和可读的结论。"
+        "文档的段落、标点和结束位置都完整，可以作为稳定的回归测试样本。\n"
+    )
+    old = (
+        "---\ntitle: Reviewed legacy\nentry_kind: auto\nsource: arxiv\n"
+        "date: 2026-07-15T14:00:41+08:00\n"
+        "external_url: https://example.com/legacy\n---\n\n"
+        + body
+    )
+    new = old.replace(
+        "title: Reviewed legacy",
+        "title: Uncontracted future post",
+    ).replace(
+        "2026-07-15T14:00:41+08:00",
+        "2026-07-15T16:55:26+08:00",
+    )
+
+    assert analyze_post(old).status == "legacy_analysis"
+    assert "missing_source_contract" in analyze_post(new).fatal_reasons
+
+
+def test_model_reasoning_trace_is_fatal_outside_code_but_not_in_examples() -> None:
+    leaked = (
+        "---\ntitle: Leaked\nentry_kind: auto\nsource: arxiv\n---\n\n"
+        "## 评论\n\n翻译残片 1. **Analyze the User's Request:**\n\n"
+        "这里错误保留了模型内部处理步骤和后续生成正文。"
+    )
+    repeated_think = (
+        "---\ntitle: Think leak\nentry_kind: auto\nsource: blogs_podcasts\n---\n\n"
+        "## 评论\n\n1. </think> 2. </think>\n\n这里还有看似完整的正文。"
+    )
+    fenced_example = (
+        "---\ntitle: Safe example\nentry_kind: manual\nsource: manual\n---\n\n"
+        "## 示例\n\n```text\nUnderstand the User's Request:\n</think></think>\n```\n\n"
+        "正文明确说明这只是代码块里的测试样例，因此不应被误判。"
+    )
+
+    assert "model_reasoning_leak" in analyze_post(leaked).fatal_reasons
+    assert "model_reasoning_leak" in analyze_post(repeated_think).fatal_reasons
+    assert "model_reasoning_leak" not in analyze_post(fenced_example).fatal_reasons
+
+
+def test_empty_section_warning_distinguishes_container_from_empty_sibling() -> None:
+    container = (
+        "---\ntitle: Container\nentry_kind: manual\n---\n\n"
+        "## 常见问题\n\n### 如何部署\n\n这里有完整答案。\n"
+    )
+    empty_sibling = (
+        "---\ntitle: Empty sibling\nentry_kind: manual\n---\n\n"
+        "## 最佳实践\n\n## 最佳实践指南\n\n这里有完整内容。\n"
+    )
+
+    assert "empty_section" not in analyze_post(container).warning_reasons
+    assert "empty_section" in analyze_post(empty_sibling).warning_reasons
+
+
 def test_legacy_hn_gate_detects_unterminated_prose_without_flagging_other_sources() -> None:
     body = (
         "## 分析\n\n"

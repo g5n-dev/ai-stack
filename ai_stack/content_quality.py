@@ -9,6 +9,7 @@ import unicodedata
 from collections import Counter
 from collections.abc import Mapping
 from dataclasses import dataclass
+from datetime import datetime
 from pathlib import Path
 from typing import Any
 from urllib.parse import urlsplit
@@ -126,6 +127,14 @@ _SYNTHETIC_BODY_PATTERNS: tuple[tuple[str, re.Pattern[str]], ...] = (
             re.IGNORECASE | re.DOTALL,
         ),
     ),
+    (
+        "model_reasoning_leak",
+        re.compile(
+            r"\b(?:analy[sz]e|understand)\s+the\s+"
+            r"(?:user(?:['’]s)?\s+)?request\s*:\**",
+            re.IGNORECASE,
+        ),
+    ),
 )
 
 _FENCE_LINE_RE = re.compile(r"^ {0,3}(?P<fence>`{3,}|~{3,})(?P<tail>.*)$")
@@ -143,9 +152,7 @@ _TRANSLATION_RESPONSE_RE = re.compile(
     r"(?:已经是中文|本身已经是中文|翻译成英文|提供相应的英文版本)",
     re.IGNORECASE | re.DOTALL,
 )
-_EMPTY_HEADING_SECTION_RE = re.compile(
-    r"(?ms)^#{2,6}\s+[^\n]+\n\s*(?=^#{2,6}\s+|\Z)"
-)
+_HEADING_LINE_RE = re.compile(r"^(?P<marks>#{2,6})[ \t]+\S.*$")
 _EXPLICIT_TRUNCATION_RE = re.compile(r"\[\s*\.{3}\s*truncated\s*\]", re.IGNORECASE)
 _HTTP_SCHEMES = frozenset({"http", "https"})
 _SOURCE_DIGEST_RE = re.compile(r"^sha256:[0-9a-f]{64}$")
@@ -156,6 +163,9 @@ _STANDARD_FOOTER_PREFIXES = (
     "*本文由 AI Stack",
     "*这篇文章由 AI Stack",
     "**📚 更多精彩内容",
+)
+_REVIEWED_LEGACY_AUTO_CUTOFF = datetime.fromisoformat(
+    "2026-07-15T14:00:41+08:00"
 )
 
 
@@ -211,6 +221,8 @@ def synthetic_body_reasons(body: str) -> tuple[str, ...]:
         for reason, pattern in _SYNTHETIC_BODY_PATTERNS
         if pattern.search(text)
     }
+    if text.casefold().count("</think>") >= 2:
+        reasons.add("model_reasoning_leak")
     return tuple(sorted(reasons))
 
 
@@ -274,6 +286,27 @@ def body_completeness_reasons(body: str) -> tuple[str, ...]:
     ):
         reasons.add("truncated_ending")
     return tuple(sorted(reasons))
+
+
+def _has_empty_section(body: str) -> bool:
+    """Detect empty sibling sections without flagging heading containers."""
+
+    lines = _prose_without_code(body).splitlines()
+    for index, line in enumerate(lines):
+        heading = _HEADING_LINE_RE.match(line)
+        if heading is None:
+            continue
+        following_index = index + 1
+        while following_index < len(lines) and not lines[following_index].strip():
+            following_index += 1
+        if following_index >= len(lines):
+            return True
+        following_heading = _HEADING_LINE_RE.match(lines[following_index])
+        if following_heading is None:
+            continue
+        if len(following_heading.group("marks")) <= len(heading.group("marks")):
+            return True
+    return False
 
 
 def content_quality_reasons(body: str) -> tuple[str, ...]:
@@ -395,6 +428,29 @@ def _unterminated_legacy_hn_prose(metadata: Mapping[str, Any], body: str) -> boo
     return len(plain) >= 20 and bool(re.search(r"[\u3400-\u9fff]", plain))
 
 
+def _is_uncontracted_auto_after_legacy_cutoff(
+    metadata: Mapping[str, Any],
+) -> bool:
+    if str(metadata.get("entry_kind") or "").strip().casefold() != "auto":
+        return False
+    if str(metadata.get("content_mode") or "").strip():
+        return False
+    value = metadata.get("date")
+    parsed: datetime | None
+    if isinstance(value, datetime):
+        parsed = value
+    elif isinstance(value, str):
+        try:
+            parsed = datetime.fromisoformat(value.strip().replace("Z", "+00:00"))
+        except ValueError:
+            parsed = None
+    else:
+        parsed = None
+    if parsed is None or parsed.tzinfo is None:
+        return False
+    return parsed > _REVIEWED_LEGACY_AUTO_CUTOFF
+
+
 def analyze_post(document: str) -> PostQualityAnalysis:
     """Analyze one complete Markdown document through the shared Post gate."""
 
@@ -418,11 +474,13 @@ def analyze_post(document: str) -> PostQualityAnalysis:
         fatal.add("invalid_source_brief")
     if declared_mode == "legacy_source_brief" and not source_brief:
         fatal.add("invalid_source_brief")
+    if _is_uncontracted_auto_after_legacy_cutoff(metadata):
+        fatal.add("missing_source_contract")
     if _unterminated_legacy_hn_prose(metadata, body):
         fatal.add("unterminated_prose")
 
     warnings: set[str] = set()
-    if _EMPTY_HEADING_SECTION_RE.search(_prose_without_code(body)):
+    if _has_empty_section(body):
         warnings.add("empty_section")
     if _EXPLICIT_TRUNCATION_RE.search(_prose_without_code(body)):
         warnings.add("source_excerpt_truncated")

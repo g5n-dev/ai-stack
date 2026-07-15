@@ -1392,6 +1392,8 @@ class SuperEnhancedContentGenerator:
             fm = yaml.safe_load(fm_text) or {}
         except Exception:
             return None
+        if fm.get("archived") is True:
+            return None
 
         filename = path.name
         title = str(fm.get("title") or "").strip()
