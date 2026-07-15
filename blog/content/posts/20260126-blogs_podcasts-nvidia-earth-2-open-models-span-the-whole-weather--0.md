@@ -22,7 +22,7 @@ source_support: 0.0
 archived: true
 archive_reason: historical_content_quality_gate
 description: 历史条目已归档：现有正文未通过内容质量门，请查阅原始来源。
-_build:
+build:
   list: never
   render: always
 ---

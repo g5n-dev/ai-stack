@@ -17,7 +17,7 @@ source_provenance: legacy_no_snapshot
 source_support: 0.0
 archived: true
 archive_reason: historical_content_quality_gate
-_build:
+build:
   list: never
   render: always
 ---
