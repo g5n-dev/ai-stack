@@ -1,5 +1,5 @@
 {
-  "active_count": 1927,
+  "active_count": 1929,
   "archived_count": 448,
   "complete_count": 0,
   "legacy_analysis_count": 1910,
@@ -10431,6 +10431,18 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260716-blogs_podcasts-monitor-amazon-sagemaker-pipelines-cross-account-w-0-341d7ce40d.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260716-hacker_news-brainless-shadcn-components-that-look-like-claude--0-98a6a85447.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260716-juejin-七智能体的reflection机制让ai学会三省吾身-0-f08615b0cd.md": {
       "reasons": [
         "concise_source_card"
@@ -10443,9 +10455,9 @@
     "archived_content": 448
   },
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 17,
-  "source_file_count": 2375,
-  "source_tree_sha256": "68b25f2772c34849e18a1bf212eb71eb7e51a7f5f89ba13edbfcf9467341423f",
+  "source_brief_count": 19,
+  "source_file_count": 2377,
+  "source_tree_sha256": "da64834fbdeb479a345644061c337ebeb1d56f74da530649ad1dd8aa1dc643de",
   "warning_counts": {
     "source_excerpt_truncated": 1
   }

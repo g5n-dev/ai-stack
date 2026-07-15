@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-15T20:22:07Z",
+  "generated_at": "2026-07-15T22:15:26Z",
   "layer": "tag",
   "layers": {
     "application": {
@@ -15612,6 +15612,14 @@
       "source": "tag:Hacker News",
       "strength": 0.5,
       "target": "tag:智能体",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Hacker News->tag:来源快报",
+      "source": "tag:Hacker News",
+      "strength": 0.5,
+      "target": "tag:来源快报",
       "type": "cooccurrence",
       "weight": 1
     },
@@ -36251,7 +36259,7 @@
       "legacy_id": "arxiv",
       "level": 6,
       "name": "arxiv",
-      "rank": 917,
+      "rank": 918,
       "related_count": 5,
       "weighted_degree": 14
     },
@@ -36715,11 +36723,11 @@
       "weighted_degree": 91
     },
     {
-      "article_count": 34,
+      "article_count": 35,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
-      "degree": 180,
+      "degree": 181,
       "description": "文章标签: Hacker News",
       "id": "tag:Hacker News",
       "layer": "tag",
@@ -36728,8 +36736,8 @@
       "level": 6,
       "name": "Hacker News",
       "rank": 43,
-      "related_count": 180,
-      "weighted_degree": 238
+      "related_count": 181,
+      "weighted_degree": 239
     },
     {
       "article_count": 10,
@@ -36744,7 +36752,7 @@
       "legacy_id": "hacker_news",
       "level": 6,
       "name": "hacker_news",
-      "rank": 6831,
+      "rank": 6834,
       "related_count": 0,
       "weighted_degree": 0
     },
@@ -38857,11 +38865,11 @@
       "weighted_degree": 385
     },
     {
-      "article_count": 8,
+      "article_count": 9,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
-      "degree": 14,
+      "degree": 15,
       "description": "文章标签: 来源快报",
       "id": "tag:来源快报",
       "layer": "tag",
@@ -38869,9 +38877,9 @@
       "legacy_id": "来源快报",
       "level": 6,
       "name": "来源快报",
-      "rank": 577,
-      "related_count": 14,
-      "weighted_degree": 22
+      "rank": 573,
+      "related_count": 15,
+      "weighted_degree": 23
     },
     {
       "article_count": 40,
@@ -39998,13 +40006,13 @@
   ],
   "stats": {
     "links_by_type": {
-      "cooccurrence": 4416,
+      "cooccurrence": 4417,
       "semantic": 47
     },
     "nodes_by_layer": {
       "tag": 250
     },
-    "total_links": 4463,
+    "total_links": 4464,
     "total_nodes": 250
   },
   "version": 2
