@@ -175,6 +175,7 @@ def test_delete_workflow_rebuilds_derived_data_and_waits_for_deploy() -> None:
     rebuild_run = rebuild["run"]
     assert "scripts/build_content_quality_manifest.py" in rebuild_run
     assert "--fail-on-quarantine" in rebuild_run
+    assert "--fail-on-structural-warning" in rebuild_run
     assert 'TAG_GRAPH_ENABLE_CONTENT_MINING: "0"' in text
     assert 'TAG_INTRO_ENABLED: "0"' in text
     assert 'TAG_INTRO_MAX_NEW: "0"' in text

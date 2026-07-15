@@ -265,7 +265,8 @@ jobs:
           python3 scripts/build_content_quality_manifest.py \
             --content-root blog/content \
             --output blog/data/content_quality.json \
-            --fail-on-quarantine
+            --fail-on-quarantine \
+            --fail-on-structural-warning
 
       - name: Verify committed Post quality gate
         if: ${{ env.AI_STACK_REFRESH_DATA != 'true' }}
@@ -275,7 +276,8 @@ jobs:
           python3 scripts/build_content_quality_manifest.py \
             --content-root blog/content \
             --output /tmp/content_quality.json \
-            --fail-on-quarantine
+            --fail-on-quarantine \
+            --fail-on-structural-warning
           cmp --silent blog/data/content_quality.json /tmp/content_quality.json
 
       - name: Build tag graph

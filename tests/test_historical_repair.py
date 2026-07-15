@@ -178,7 +178,8 @@ def test_all_polluted_group_plans_a_transparent_archive_stub(tmp_path: Path) -> 
     assert metadata["tags"] == []
     assert metadata["categories"] == []
     assert metadata["scenarios"] == []
-    assert metadata["_build"] == {"list": "never", "render": "always"}
+    assert metadata["build"] == {"list": "never", "render": "always"}
+    assert "_build" not in metadata
 
 
 def test_transparent_archive_title_cannot_be_interpreted_as_html(
@@ -275,7 +276,9 @@ def test_active_historical_winner_is_labeled_as_unverified_legacy_analysis(
     assert metadata["source_support"] == 0.0
 
 
-def test_historical_source_card_is_labeled_tier_c(tmp_path: Path) -> None:
+def test_reviewed_historical_source_card_is_preserved_as_tier_c(
+    tmp_path: Path,
+) -> None:
     root = tmp_path / "content/posts"
     route = _write_post(
         root,
@@ -288,7 +291,15 @@ def test_historical_source_card_is_labeled_tier_c(tmp_path: Path) -> None:
         date="2026-01-01T00:00:00+08:00",
     )
     original = route.read_text(encoding="utf-8")
-    original = original.replace("scenarios: []\n", "scenarios: []\nentry_kind: auto\nsource: hacker_news\n")
+    original = original.replace(
+        "scenarios: []\n",
+        "scenarios: []\n"
+        "entry_kind: auto\n"
+        "source: hacker_news\n"
+        "content_mode: legacy_source_brief\n"
+        "source_provenance: legacy_no_snapshot\n"
+        "source_support: 0.0\n",
+    )
     route.write_text(original, encoding="utf-8")
 
     rendered = _write_by_path(_build(root), route.name)
@@ -488,10 +499,16 @@ def test_archived_singleton_is_not_treated_as_active_taxonomy(
     )
 
     plan = _build(root)
+    rendered = _write_by_path(plan, "20260101-archived.md")
+    metadata = yaml.safe_load(rendered.split("---", 2)[1])
 
-    assert plan.manifest["planned_changes"] == 0
-    assert plan.manifest["normalization_group_count"] == 0
-    assert plan.manifest["groups"] == []
+    assert plan.manifest["planned_changes"] == 1
+    assert plan.manifest["normalization_group_count"] == 1
+    assert metadata["tags"] == []
+    assert metadata["categories"] == []
+    assert metadata["scenarios"] == []
+    assert metadata["build"] == {"list": "never", "render": "always"}
+    assert "_build" not in metadata
 
 
 def test_alias_and_relref_rewrite_plan_preserves_old_routes(tmp_path: Path) -> None:

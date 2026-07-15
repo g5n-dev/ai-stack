@@ -89,7 +89,8 @@ jobs:
           python3 scripts/build_content_quality_manifest.py \
             --content-root blog/content \
             --output blog/data/content_quality.json \
-            --fail-on-quarantine
+            --fail-on-quarantine \
+            --fail-on-structural-warning
           git diff --exit-code -- blog/data/content_quality.json
 
       - name: Run browser-runtime unit tests

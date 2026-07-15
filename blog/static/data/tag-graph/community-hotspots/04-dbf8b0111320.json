@@ -1,0 +1,492 @@
+{
+  "community_id": "community:tag:Folo",
+  "generated_at": "2026-07-15T06:00:41Z",
+  "hotspot_limit": 24,
+  "link_limit": 32,
+  "links": [
+    {
+      "id": "edge:cooccurrence:tag:Next.js->tag:开源项目",
+      "source": "tag:Next.js",
+      "strength": 1,
+      "target": "tag:开源项目",
+      "type": "cooccurrence",
+      "weight": 2
+    },
+    {
+      "id": "edge:cooccurrence:tag:Next.js->tag:效率工具",
+      "source": "tag:Next.js",
+      "strength": 1,
+      "target": "tag:效率工具",
+      "type": "cooccurrence",
+      "weight": 2
+    },
+    {
+      "id": "edge:cooccurrence:tag:Next.js->tag:零成本",
+      "source": "tag:Next.js",
+      "strength": 1,
+      "target": "tag:零成本",
+      "type": "cooccurrence",
+      "weight": 2
+    },
+    {
+      "id": "edge:cooccurrence:tag:draw.io->tag:效率工具",
+      "source": "tag:draw.io",
+      "strength": 1,
+      "target": "tag:效率工具",
+      "type": "cooccurrence",
+      "weight": 2
+    },
+    {
+      "id": "edge:cooccurrence:tag:开源项目->tag:效率工具",
+      "source": "tag:开源项目",
+      "strength": 1,
+      "target": "tag:效率工具",
+      "type": "cooccurrence",
+      "weight": 2
+    },
+    {
+      "id": "edge:cooccurrence:tag:AI摘要->tag:Folo",
+      "source": "tag:AI摘要",
+      "strength": 0.5,
+      "target": "tag:Folo",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:AI摘要->tag:Next.js",
+      "source": "tag:AI摘要",
+      "strength": 0.5,
+      "target": "tag:Next.js",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:AI摘要->tag:RSS阅读器",
+      "source": "tag:AI摘要",
+      "strength": 0.5,
+      "target": "tag:RSS阅读器",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:AI摘要->tag:信息聚合",
+      "source": "tag:AI摘要",
+      "strength": 0.5,
+      "target": "tag:信息聚合",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:AI摘要->tag:多端同步",
+      "source": "tag:AI摘要",
+      "strength": 0.5,
+      "target": "tag:多端同步",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:AI摘要->tag:开源项目",
+      "source": "tag:AI摘要",
+      "strength": 0.5,
+      "target": "tag:开源项目",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:AI摘要->tag:效率工具",
+      "source": "tag:AI摘要",
+      "strength": 0.5,
+      "target": "tag:效率工具",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Folo->tag:Next.js",
+      "source": "tag:Folo",
+      "strength": 0.5,
+      "target": "tag:Next.js",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Folo->tag:RSS阅读器",
+      "source": "tag:Folo",
+      "strength": 0.5,
+      "target": "tag:RSS阅读器",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Folo->tag:信息聚合",
+      "source": "tag:Folo",
+      "strength": 0.5,
+      "target": "tag:信息聚合",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Folo->tag:多端同步",
+      "source": "tag:Folo",
+      "strength": 0.5,
+      "target": "tag:多端同步",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Folo->tag:开源项目",
+      "source": "tag:Folo",
+      "strength": 0.5,
+      "target": "tag:开源项目",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Folo->tag:效率工具",
+      "source": "tag:Folo",
+      "strength": 0.5,
+      "target": "tag:效率工具",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:GUI->tag:效率工具",
+      "source": "tag:GUI",
+      "strength": 0.5,
+      "target": "tag:效率工具",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:GUI->tag:数据管理",
+      "source": "tag:GUI",
+      "strength": 0.5,
+      "target": "tag:数据管理",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Next.js->tag:RSS阅读器",
+      "source": "tag:Next.js",
+      "strength": 0.5,
+      "target": "tag:RSS阅读器",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Next.js->tag:信息聚合",
+      "source": "tag:Next.js",
+      "strength": 0.5,
+      "target": "tag:信息聚合",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Next.js->tag:多端同步",
+      "source": "tag:Next.js",
+      "strength": 0.5,
+      "target": "tag:多端同步",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:RSS阅读器->tag:信息聚合",
+      "source": "tag:RSS阅读器",
+      "strength": 0.5,
+      "target": "tag:信息聚合",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:RSS阅读器->tag:多端同步",
+      "source": "tag:RSS阅读器",
+      "strength": 0.5,
+      "target": "tag:多端同步",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:RSS阅读器->tag:开源项目",
+      "source": "tag:RSS阅读器",
+      "strength": 0.5,
+      "target": "tag:开源项目",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:RSS阅读器->tag:效率工具",
+      "source": "tag:RSS阅读器",
+      "strength": 0.5,
+      "target": "tag:效率工具",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:draw.io->tag:GUI",
+      "source": "tag:draw.io",
+      "strength": 0.5,
+      "target": "tag:GUI",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:draw.io->tag:Next.js",
+      "source": "tag:draw.io",
+      "strength": 0.5,
+      "target": "tag:Next.js",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:draw.io->tag:开源项目",
+      "source": "tag:draw.io",
+      "strength": 0.5,
+      "target": "tag:开源项目",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:draw.io->tag:零成本",
+      "source": "tag:draw.io",
+      "strength": 0.5,
+      "target": "tag:零成本",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:信息聚合->tag:多端同步",
+      "source": "tag:信息聚合",
+      "strength": 0.5,
+      "target": "tag:多端同步",
+      "type": "cooccurrence",
+      "weight": 1
+    }
+  ],
+  "nodes": [
+    {
+      "article_count": 38,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Folo",
+      "degree": 213,
+      "description": "开源项目通常指公开源代码供他人自由使用、修改和分发的软件项目，常涉及协作开发与社区贡献，与编程语言、开发工具及各类应用场景紧密相关。",
+      "id": "tag:开源项目",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "开源项目",
+      "level": 6,
+      "name": "开源项目",
+      "rank": 38,
+      "related_count": 213,
+      "weighted_degree": 266
+    },
+    {
+      "article_count": 22,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Folo",
+      "degree": 120,
+      "description": "效率工具指能显著提升工作或开发速度的软件，涵盖数据可视化、代码搜索、音频流传输等，常与macOS、GitHub及UI组件相关。",
+      "id": "tag:效率工具",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "效率工具",
+      "level": 6,
+      "name": "效率工具",
+      "rank": 82,
+      "related_count": 119,
+      "weighted_degree": 154.6
+    },
+    {
+      "article_count": 5,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Folo",
+      "degree": 31,
+      "description": "Next.js 是基于 React 的全栈框架，支持服务端渲染与静态生成，常用于构建高性能 Web 应用。它与 Edge Functions、Vercel AI SDK 及流式传输等技术紧密相关，致力于优化用户体验。",
+      "id": "tag:Next.js",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Next.js",
+      "level": 6,
+      "name": "Next.js",
+      "rank": 360,
+      "related_count": 30,
+      "weighted_degree": 35.6
+    },
+    {
+      "article_count": 3,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Folo",
+      "degree": 19,
+      "description": "零成本通常指无需额外付费即可使用的技术方案或工具，常与开源项目、效率工具及自动化相关，如利用开源框架实现AI生成架构图。",
+      "id": "tag:零成本",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "零成本",
+      "level": 6,
+      "name": "零成本",
+      "rank": 859,
+      "related_count": 19,
+      "weighted_degree": 21
+    },
+    {
+      "article_count": 2,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Folo",
+      "degree": 14,
+      "description": "数据管理涉及数据的全生命周期治理，旨在确保数据的质量、安全与可用性。在当前语境下，它常与 AI 工程及向量数据库等技术紧密相关，服务于 RAG 等复杂应用场景的数据存储与检索需求。",
+      "id": "tag:数据管理",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "数据管理",
+      "level": 6,
+      "name": "数据管理",
+      "rank": 1197,
+      "related_count": 14,
+      "weighted_degree": 14
+    },
+    {
+      "article_count": 2,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Folo",
+      "degree": 13,
+      "description": "GUI 指图形用户界面，通过可视化窗口、图标和菜单实现人机交互。它常与 CLI 相对，在 AI 工程及向量数据库等工具中，为用户提供直观的操作与管理体验。",
+      "id": "tag:GUI",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "GUI",
+      "level": 6,
+      "name": "GUI",
+      "rank": 1399,
+      "related_count": 13,
+      "weighted_degree": 14
+    },
+    {
+      "article_count": 2,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Folo",
+      "degree": 12,
+      "description": "draw.io 是一款开源的跨平台流程图与架构图绘制工具，常被用于可视化系统设计。在自动化与 AI 辅助开发场景中，它常与 Next.js 结合，通过代码生成图表来提升技术文档的编写效率。",
+      "id": "tag:draw.io",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "draw.io",
+      "level": 6,
+      "name": "draw.io",
+      "rank": 1542,
+      "related_count": 12,
+      "weighted_degree": 14
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Folo",
+      "degree": 8,
+      "description": "AI摘要是一种利用人工智能技术自动提炼文本核心内容的功能，常与RSS阅读器、信息聚合及效率工具相关，旨在帮助用户快速获取关键信息并提升阅读效率。",
+      "id": "tag:AI摘要",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "AI摘要",
+      "level": 6,
+      "name": "AI摘要",
+      "rank": 1803,
+      "related_count": 7,
+      "weighted_degree": 7.6
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Folo",
+      "degree": 7,
+      "description": "Folo 是一款基于 Next.js 构建的开源信息聚合工具，专注于提供支持 AI 摘要与多端同步的 RSS 阅读体验，旨在帮助用户高效管理和阅读内容。",
+      "id": "tag:Folo",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Folo",
+      "level": 6,
+      "name": "Folo",
+      "rank": 2402,
+      "related_count": 7,
+      "weighted_degree": 7
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Folo",
+      "degree": 7,
+      "description": "RSS阅读器是一种用于订阅和聚合网站内容更新的工具，帮助用户高效管理信息流。它常与开源项目、AI摘要及多端同步等技术结合，以提升阅读效率。",
+      "id": "tag:RSS阅读器",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "RSS阅读器",
+      "level": 6,
+      "name": "RSS阅读器",
+      "rank": 3035,
+      "related_count": 7,
+      "weighted_degree": 7
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Folo",
+      "degree": 7,
+      "description": "信息聚合是指将分散的来源整合为统一视图，常与RSS阅读器、AI摘要及开源效率工具相关，旨在提升信息获取与管理的效率。",
+      "id": "tag:信息聚合",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "信息聚合",
+      "level": 6,
+      "name": "信息聚合",
+      "rank": 3736,
+      "related_count": 7,
+      "weighted_degree": 7
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Folo",
+      "degree": 7,
+      "description": "多端同步通常指将数据、文件或配置在多个设备或平台间保持一致性的技术，常用于提升用户体验和工作效率。它与配置管理、开发工具及跨平台协作密切相关。",
+      "id": "tag:多端同步",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "多端同步",
+      "level": 6,
+      "name": "多端同步",
+      "rank": 4329,
+      "related_count": 7,
+      "weighted_degree": 7
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Folo",
+      "degree": 7,
+      "description": "文章标签: 数据抓取",
+      "id": "tag:数据抓取",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "数据抓取",
+      "level": 6,
+      "name": "数据抓取",
+      "rank": 5067,
+      "related_count": 7,
+      "weighted_degree": 7
+    }
+  ],
+  "stats": {
+    "total_links": 32,
+    "total_nodes": 13
+  },
+  "version": 2
+}

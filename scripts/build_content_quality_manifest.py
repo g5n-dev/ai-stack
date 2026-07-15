@@ -31,6 +31,11 @@ def main(argv: Sequence[str] | None = None) -> int:
         action="store_true",
         help="return non-zero when any active Post fails the publication gate",
     )
+    parser.add_argument(
+        "--fail-on-structural-warning",
+        action="store_true",
+        help="return non-zero when active Posts contain empty section shells",
+    )
     args = parser.parse_args(argv)
 
     manifest = write_content_quality_manifest(args.content_root, args.output)
@@ -46,6 +51,14 @@ def main(argv: Sequence[str] | None = None) -> int:
     )
     if args.fail_on_quarantine and manifest["quarantined_count"]:
         print("content quality manifest rejected active quarantined Posts", file=sys.stderr)
+        return 1
+    if args.fail_on_structural_warning and manifest["warning_counts"].get(
+        "empty_section", 0
+    ):
+        print(
+            "content quality manifest rejected active Posts with empty sections",
+            file=sys.stderr,
+        )
         return 1
     return 0
 

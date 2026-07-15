@@ -9,7 +9,6 @@ import unicodedata
 from collections import Counter
 from collections.abc import Mapping
 from dataclasses import dataclass
-from datetime import datetime
 from pathlib import Path
 from typing import Any
 from urllib.parse import urlsplit
@@ -164,11 +163,6 @@ _STANDARD_FOOTER_PREFIXES = (
     "*这篇文章由 AI Stack",
     "**📚 更多精彩内容",
 )
-_REVIEWED_LEGACY_AUTO_CUTOFF = datetime.fromisoformat(
-    "2026-07-15T14:00:41+08:00"
-)
-
-
 @dataclass(frozen=True, slots=True)
 class PostQualityAnalysis:
     """One deterministic Post-level publication decision."""
@@ -452,29 +446,6 @@ def _unterminated_legacy_hn_prose(metadata: Mapping[str, Any], body: str) -> boo
     return len(plain) >= 20 and bool(re.search(r"[\u3400-\u9fff]", plain))
 
 
-def _is_uncontracted_auto_after_legacy_cutoff(
-    metadata: Mapping[str, Any],
-) -> bool:
-    if str(metadata.get("entry_kind") or "").strip().casefold() != "auto":
-        return False
-    if str(metadata.get("content_mode") or "").strip():
-        return False
-    value = metadata.get("date")
-    parsed: datetime | None
-    if isinstance(value, datetime):
-        parsed = value
-    elif isinstance(value, str):
-        try:
-            parsed = datetime.fromisoformat(value.strip().replace("Z", "+00:00"))
-        except ValueError:
-            parsed = None
-    else:
-        parsed = None
-    if parsed is None or parsed.tzinfo is None:
-        return False
-    return parsed > _REVIEWED_LEGACY_AUTO_CUTOFF
-
-
 def analyze_post(document: str) -> PostQualityAnalysis:
     """Analyze one complete Markdown document through the shared Post gate."""
 
@@ -498,7 +469,7 @@ def analyze_post(document: str) -> PostQualityAnalysis:
         fatal.add("invalid_source_brief")
     if declared_mode == "legacy_source_brief" and not source_brief:
         fatal.add("invalid_source_brief")
-    if _is_uncontracted_auto_after_legacy_cutoff(metadata):
+    if entry_kind == "auto" and not declared_mode:
         fatal.add("missing_source_contract")
     if _unterminated_legacy_hn_prose(metadata, body):
         fatal.add("unterminated_prose")

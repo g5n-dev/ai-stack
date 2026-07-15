@@ -148,10 +148,13 @@ def test_completeness_gate_detects_encoding_loss_translation_leak_and_placeholde
 def test_analyze_post_uses_body_only_and_requires_a_structural_source_brief() -> None:
     valid = (
         "---\n"
-        "title: Brief\n"
-        "entry_kind: auto\n"
-        "source: hacker_news\n"
-        "external_url: https://example.com/brief\n"
+            "title: Brief\n"
+            "entry_kind: auto\n"
+            "source: hacker_news\n"
+            "content_mode: legacy_source_brief\n"
+            "source_provenance: legacy_no_snapshot\n"
+            "source_support: 0.0\n"
+            "external_url: https://example.com/brief\n"
         "---\n\n"
         "## 基本信息\n\n- **作者**: Ada\n\n"
         "这是一段完整、非空的来源叙述。\n"
@@ -199,7 +202,7 @@ def test_declared_modern_source_brief_requires_provenance_frontmatter() -> None:
     assert analyze_post(complete).status == "source_brief"
 
 
-def test_uncontracted_auto_posts_after_the_reviewed_legacy_cutoff_fail_closed() -> None:
+def test_uncontracted_auto_posts_fail_closed_after_legacy_migration() -> None:
     body = (
         "## 技术分析\n\n"
         "这是一段结构完整的自动生成内容，用于验证已评审历史边界。"
@@ -220,7 +223,7 @@ def test_uncontracted_auto_posts_after_the_reviewed_legacy_cutoff_fail_closed() 
         "2026-07-15T16:55:26+08:00",
     )
 
-    assert analyze_post(old).status == "legacy_analysis"
+    assert "missing_source_contract" in analyze_post(old).fatal_reasons
     assert "missing_source_contract" in analyze_post(new).fatal_reasons
 
 
@@ -329,6 +332,9 @@ def test_manifest_separates_concise_source_briefs_from_incomplete_posts(
         "title: Brief\n"
         "entry_kind: auto\n"
         "source: hacker_news\n"
+        "content_mode: legacy_source_brief\n"
+        "source_provenance: legacy_no_snapshot\n"
+        "source_support: 0.0\n"
         "external_url: https://example.com/brief\n"
         "---\n\n"
         "## 基本信息\n\n这是来源卡片中的可核验摘要。\n",
@@ -417,5 +423,30 @@ def test_manifest_cli_can_fail_closed_on_active_quarantine(tmp_path: Path) -> No
             "--output",
             str(tmp_path / "quality.json"),
             "--fail-on-quarantine",
+        ]
+    ) == 1
+
+
+def test_manifest_cli_can_fail_closed_on_empty_section_warnings(
+    tmp_path: Path,
+) -> None:
+    from scripts.build_content_quality_manifest import main
+
+    content = tmp_path / "content"
+    posts = content / "posts"
+    posts.mkdir(parents=True)
+    (posts / "empty-section.md").write_text(
+        "---\ntitle: Empty section\nentry_kind: manual\n---\n\n"
+        "## 空标题\n\n## 有内容的标题\n\n这里有完整内容。\n",
+        encoding="utf-8",
+    )
+
+    assert main(
+        [
+            "--content-root",
+            str(content),
+            "--output",
+            str(tmp_path / "quality.json"),
+            "--fail-on-structural-warning",
         ]
     ) == 1

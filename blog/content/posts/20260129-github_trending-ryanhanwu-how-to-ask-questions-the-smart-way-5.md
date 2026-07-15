@@ -617,7 +617,7 @@ ryanhanwu 的版本适合需要中文参考的开发者，而 Stack Overflow 帮
 1. 内联关键CSS（首屏样式）
 2. 延迟加载非关键JavaScript（使用defer/async）
 3. 实施懒加载策略（图片、视频等）
-4. 预加载关键资源（使用<link rel="preload">）
+4. 预加载关键资源（使用 `<link rel="preload">`）
 
 **预期效果**: 首次内容绘制（FCP）时间减少30%-50%，首屏时间缩短20%-40%
 

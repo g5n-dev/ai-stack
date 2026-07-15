@@ -386,22 +386,33 @@ def _active_provenance_metadata(
     return result
 
 
-def _normalized_active_singleton(
+def _normalized_singleton(
     document: _Document,
     *,
     canonical_url: str,
 ) -> tuple[dict[str, Any], str] | None:
-    """Return a minimal rewrite for one active clean article.
+    """Return a minimal rewrite for one clean singleton article.
 
     Singleton normalization leaves categories, scenarios, routes, and all
     unrelated frontmatter untouched. Empty shell headings are removed without
     inventing prose so structural cleanup shares the same backup mechanism.
     """
-    if document.metadata.get("archived") is True:
-        return None
-    normalized_tags = normalize_tags(document.metadata.get("tags"), limit=8)
     metadata = copy.deepcopy(document.metadata)
     metadata["external_url"] = canonical_url
+    if document.metadata.get("archived") is True:
+        metadata["title"] = str(metadata.get("title") or "历史条目").replace(
+            "<", "＜"
+        ).replace(">", "＞")
+        metadata["tags"] = []
+        metadata["categories"] = []
+        metadata["scenarios"] = []
+        metadata.pop("_build", None)
+        metadata["build"] = {"list": "never", "render": "always"}
+        if metadata == document.metadata:
+            return None
+        return metadata, document.body
+
+    normalized_tags = normalize_tags(document.metadata.get("tags"), limit=8)
     metadata["tags"] = normalized_tags
     metadata = _active_provenance_metadata(metadata, document.body)
     body, _ = remove_empty_section_headings(document.body)
@@ -450,7 +461,7 @@ def _archive_stub(
     metadata["tags"] = []
     metadata["categories"] = []
     metadata["scenarios"] = []
-    metadata["_build"] = {"list": "never", "render": "always"}
+    metadata["build"] = {"list": "never", "render": "always"}
     body = (
         "## 历史条目归档说明\n\n"
         "该条目的历史正文未通过内容质量门，可能包含基于标题推测的内容。"
@@ -558,7 +569,7 @@ def build_historical_repair_plan(
         route = min(ordered, key=_date_key)
         is_clean_singleton = len(ordered) == 1 and not route.contamination_reasons
         if is_clean_singleton:
-            normalized = _normalized_active_singleton(
+            normalized = _normalized_singleton(
                 route,
                 canonical_url=canonical_url,
             )
