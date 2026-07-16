@@ -1,5 +1,5 @@
 {
-  "active_count": 1954,
+  "active_count": 1955,
   "archived_count": 448,
   "complete_count": 0,
   "legacy_analysis_count": 1910,
@@ -10563,6 +10563,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260717-blogs_podcasts-build-enterprise-search-for-agents-with-amazon-bed-0-f6710a64c9.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260717-blogs_podcasts-building-a-restaurant-telephony-ai-host-with-amazo-0-71f458bbb4.md": {
       "reasons": [
         "concise_source_card"
@@ -10605,9 +10611,9 @@
     "archived_content": 448
   },
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 44,
-  "source_file_count": 2402,
-  "source_tree_sha256": "0556a957bb330eeff30e246762bea20171c502438ef0645ed9d301cf672101af",
+  "source_brief_count": 45,
+  "source_file_count": 2403,
+  "source_tree_sha256": "fa4104a3ad342835f664fccac4d1ec40e5e1616e8f24db5c42546fd3db957827",
   "warning_counts": {
     "source_excerpt_truncated": 1
   }

@@ -27,7 +27,7 @@
       "focus-shards/004-7a725af0a10c.json",
       "focus-shards/005-f55e598925d3.json",
       "focus-shards/006-c366aab58ae7.json",
-      "focus-shards/007-1e000d2b6fb4.json",
+      "focus-shards/007-21ae0c95269f.json",
       "focus-shards/008-c844842184a9.json",
       "focus-shards/009-fd95fd0f342b.json",
       "focus-shards/010-0652c91e8694.json",
@@ -69,7 +69,7 @@
       "focus-shards/046-15085b62ddc3.json",
       "focus-shards/047-7ea2d31a6506.json",
       "focus-shards/048-702841d8fbb9.json",
-      "focus-shards/049-91613c998c4a.json",
+      "focus-shards/049-a574f569e651.json",
       "focus-shards/050-d8c8f6c02378.json",
       "focus-shards/051-9fd7cb8ccd19.json",
       "focus-shards/052-a280d76afc9b.json",
@@ -80,14 +80,14 @@
       "focus-shards/057-3c27184241e1.json",
       "focus-shards/058-f3069f5d2e51.json",
       "focus-shards/059-7316b41f20f9.json",
-      "focus-shards/060-a4a5e01bb9d0.json",
+      "focus-shards/060-c8f0c417c286.json",
       "focus-shards/061-51163ebe3659.json",
       "focus-shards/062-0628c761f430.json",
       "focus-shards/063-46fd3f1a6dd5.json",
       "focus-shards/064-03dad968811f.json",
       "focus-shards/065-2dd461f0cb8b.json",
       "focus-shards/066-9fcede394961.json",
-      "focus-shards/067-9fd9b8d7edc3.json",
+      "focus-shards/067-41d89a269649.json",
       "focus-shards/068-811b187eafaf.json",
       "focus-shards/069-dd299d27c58c.json",
       "focus-shards/070-c059462c60c3.json",
@@ -111,7 +111,7 @@
       "focus-shards/088-6d8fb1a68f8b.json",
       "focus-shards/089-24b9e37e493e.json",
       "focus-shards/090-19e62c201692.json",
-      "focus-shards/091-4af228142500.json",
+      "focus-shards/091-296fa537c69f.json",
       "focus-shards/092-be507af7a76b.json",
       "focus-shards/093-d462b0212367.json",
       "focus-shards/094-40b5649f9b7a.json",
@@ -153,7 +153,7 @@
     "tag": "tag.json",
     "tagHot": "tag.hot.json"
   },
-  "generated_at": "2026-07-16T21:19:25Z",
+  "generated_at": "2026-07-16T22:31:11Z",
   "layers": {
     "application": {
       "color": "#7aa6b8",
@@ -193,7 +193,7 @@
   },
   "stats": {
     "links_by_type": {
-      "cooccurrence": 46379,
+      "cooccurrence": 46383,
       "relation": 71,
       "semantic": 540
     },
@@ -203,13 +203,13 @@
       "language": 8,
       "model": 6,
       "scenario": 31,
-      "tag": 6798
+      "tag": 6799
     },
     "tag_stats": {
       "archived_article_files_skipped": 448,
       "archived_article_groups_skipped": 448,
       "avg_concepts_per_article": 0,
-      "avg_tags_per_article": 7.801944728761515,
+      "avg_tags_per_article": 7.8005115089514065,
       "canonical_duplicate_files_skipped": 0,
       "incomplete_article_files_skipped": 0,
       "incomplete_article_groups_skipped": 0,
@@ -278,16 +278,16 @@
       ],
       "synthetic_article_files_skipped": 0,
       "synthetic_article_groups_skipped": 0,
-      "total_articles": 1954,
+      "total_articles": 1955,
       "total_concept_links": 0,
       "total_concepts": 0,
-      "total_tag_links": 46379,
-      "total_tags": 6798
+      "total_tag_links": 46383,
+      "total_tags": 6799
     },
-    "total_articles": 1954,
+    "total_articles": 1955,
     "total_communities": 12,
-    "total_links": 46990,
-    "total_nodes": 6867
+    "total_links": 46994,
+    "total_nodes": 6868
   },
   "version": 2
 }

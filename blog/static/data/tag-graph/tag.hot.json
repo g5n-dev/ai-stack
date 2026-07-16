@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-16T21:19:25Z",
+  "generated_at": "2026-07-16T22:31:11Z",
   "layer": "tag",
   "layers": {
     "application": {
@@ -26573,7 +26573,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 12
+      "weight": 13
     },
     {
       "id": "edge:cooccurrence:tag:可观测性->tag:基准测试",
@@ -35653,7 +35653,7 @@
       "legacy_id": "AI for Science",
       "level": 6,
       "name": "AI for Science",
-      "rank": 186,
+      "rank": 187,
       "related_count": 55,
       "weighted_degree": 64.2
     },
@@ -35789,7 +35789,7 @@
       "legacy_id": "AI 开发",
       "level": 6,
       "name": "AI 开发",
-      "rank": 187,
+      "rank": 188,
       "related_count": 59,
       "weighted_degree": 63.6
     },
@@ -35840,7 +35840,7 @@
       "legacy_id": "AI 治理",
       "level": 6,
       "name": "AI 治理",
-      "rank": 188,
+      "rank": 189,
       "related_count": 54,
       "weighted_degree": 63.6
     },
@@ -36027,7 +36027,7 @@
       "legacy_id": "arXiv",
       "level": 6,
       "name": "arXiv",
-      "rank": 871,
+      "rank": 872,
       "related_count": 6,
       "weighted_degree": 18
     },
@@ -36554,7 +36554,7 @@
       "legacy_id": "hacker_news",
       "level": 6,
       "name": "hacker_news",
-      "rank": 6858,
+      "rank": 6859,
       "related_count": 0,
       "weighted_degree": 0
     },
@@ -37579,11 +37579,11 @@
       "weighted_degree": 105
     },
     {
-      "article_count": 13,
+      "article_count": 14,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:Amazon DynamoDB",
-      "degree": 23,
+      "degree": 24,
       "description": "文章标签: 博客与播客",
       "id": "tag:博客与播客",
       "layer": "tag",
@@ -37591,9 +37591,9 @@
       "legacy_id": "博客与播客",
       "level": 6,
       "name": "博客与播客",
-      "rank": 281,
-      "related_count": 23,
-      "weighted_degree": 42
+      "rank": 272,
+      "related_count": 24,
+      "weighted_degree": 46
     },
     {
       "article_count": 9,
@@ -38667,11 +38667,11 @@
       "weighted_degree": 385
     },
     {
-      "article_count": 31,
+      "article_count": 32,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
-      "degree": 24,
+      "degree": 25,
       "description": "文章标签: 来源快报",
       "id": "tag:来源快报",
       "layer": "tag",
@@ -38679,9 +38679,9 @@
       "legacy_id": "来源快报",
       "level": 6,
       "name": "来源快报",
-      "rank": 189,
-      "related_count": 24,
-      "weighted_degree": 63
+      "rank": 186,
+      "related_count": 25,
+      "weighted_degree": 67
     },
     {
       "article_count": 40,
