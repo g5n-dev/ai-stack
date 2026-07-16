@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-16T06:34:01Z",
+  "generated_at": "2026-07-16T09:30:51Z",
   "layer": "tag",
   "layers": {
     "application": {
@@ -464,6 +464,14 @@
       "weight": 1
     },
     {
+      "id": "edge:cooccurrence:tag:AI->tag:博客与播客",
+      "source": "tag:AI",
+      "strength": 0.5,
+      "target": "tag:博客与播客",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
       "id": "edge:cooccurrence:tag:AI->tag:可视化",
       "source": "tag:AI",
       "strength": 0.5,
@@ -848,14 +856,6 @@
       "weight": 1
     },
     {
-      "id": "edge:cooccurrence:tag:AI->tag:行业趋势",
-      "source": "tag:AI",
-      "strength": 0.5,
-      "target": "tag:行业趋势",
-      "type": "cooccurrence",
-      "weight": 1
-    },
-    {
       "id": "edge:cooccurrence:tag:AI->tag:谷歌",
       "source": "tag:AI",
       "strength": 0.5,
@@ -1206,6 +1206,14 @@
       "target": "tag:Vibe Coding",
       "type": "cooccurrence",
       "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:AI Agent->tag:cs.AI",
+      "source": "tag:AI Agent",
+      "strength": 1,
+      "target": "tag:cs.AI",
+      "type": "cooccurrence",
+      "weight": 2
     },
     {
       "id": "edge:cooccurrence:tag:AI Agent->tag:cs.CL",
@@ -1720,14 +1728,6 @@
       "weight": 1
     },
     {
-      "id": "edge:cooccurrence:tag:AI Agent->tag:编程代理",
-      "source": "tag:AI Agent",
-      "strength": 0.5,
-      "target": "tag:编程代理",
-      "type": "cooccurrence",
-      "weight": 1
-    },
-    {
       "id": "edge:cooccurrence:tag:AI Agent->tag:聊天机器人",
       "source": "tag:AI Agent",
       "strength": 1,
@@ -1916,6 +1916,14 @@
       "source": "tag:AI Agents",
       "strength": 0.5,
       "target": "tag:Prompt 工程",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:AI Agents->tag:cs.AI",
+      "source": "tag:AI Agents",
+      "strength": 0.5,
+      "target": "tag:cs.AI",
       "type": "cooccurrence",
       "weight": 1
     },
@@ -3424,6 +3432,14 @@
       "weight": 1
     },
     {
+      "id": "edge:cooccurrence:tag:AI 安全->tag:cs.AI",
+      "source": "tag:AI 安全",
+      "strength": 0.5,
+      "target": "tag:cs.AI",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
       "id": "edge:cooccurrence:tag:AI 安全->tag:不确定性量化",
       "source": "tag:AI 安全",
       "strength": 1,
@@ -4446,14 +4462,6 @@
       "target": "tag:行业动态",
       "type": "cooccurrence",
       "weight": 2
-    },
-    {
-      "id": "edge:cooccurrence:tag:AI 工程->tag:行业趋势",
-      "source": "tag:AI 工程",
-      "strength": 0.5,
-      "target": "tag:行业趋势",
-      "type": "cooccurrence",
-      "weight": 1
     },
     {
       "id": "edge:cooccurrence:tag:AI 工程->tag:软件开发",
@@ -6728,14 +6736,6 @@
       "weight": 1
     },
     {
-      "id": "edge:cooccurrence:tag:AI 编程->tag:编程代理",
-      "source": "tag:AI 编程",
-      "strength": 0.5,
-      "target": "tag:编程代理",
-      "type": "cooccurrence",
-      "weight": 1
-    },
-    {
       "id": "edge:cooccurrence:tag:AI 编程->tag:职业发展",
       "source": "tag:AI 编程",
       "strength": 1,
@@ -6996,14 +6996,6 @@
       "source": "tag:AI 辅助编程",
       "strength": 1,
       "target": "tag:系统设计",
-      "type": "cooccurrence",
-      "weight": 2
-    },
-    {
-      "id": "edge:cooccurrence:tag:AI 辅助编程->tag:编程代理",
-      "source": "tag:AI 辅助编程",
-      "strength": 1,
-      "target": "tag:编程代理",
       "type": "cooccurrence",
       "weight": 2
     },
@@ -7436,14 +7428,6 @@
       "source": "tag:AI新闻",
       "strength": 0.5,
       "target": "tag:行业动态",
-      "type": "cooccurrence",
-      "weight": 1
-    },
-    {
-      "id": "edge:cooccurrence:tag:AI新闻->tag:行业趋势",
-      "source": "tag:AI新闻",
-      "strength": 0.5,
-      "target": "tag:行业趋势",
       "type": "cooccurrence",
       "weight": 1
     },
@@ -9232,14 +9216,6 @@
       "weight": 1
     },
     {
-      "id": "edge:cooccurrence:tag:Agent->tag:行业趋势",
-      "source": "tag:Agent",
-      "strength": 0.5,
-      "target": "tag:行业趋势",
-      "type": "cooccurrence",
-      "weight": 1
-    },
-    {
       "id": "edge:cooccurrence:tag:Agent->tag:视频生成",
       "source": "tag:Agent",
       "strength": 0.5,
@@ -9736,6 +9712,14 @@
       "weight": 1
     },
     {
+      "id": "edge:cooccurrence:tag:Amazon Bedrock->tag:博客与播客",
+      "source": "tag:Amazon Bedrock",
+      "strength": 1,
+      "target": "tag:博客与播客",
+      "type": "cooccurrence",
+      "weight": 2
+    },
+    {
       "id": "edge:cooccurrence:tag:Amazon Bedrock->tag:可观测性",
       "source": "tag:Amazon Bedrock",
       "strength": 0.5,
@@ -9964,6 +9948,14 @@
       "source": "tag:Amazon Nova",
       "strength": 0.5,
       "target": "tag:Multi-Agent",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Amazon Nova->tag:博客与播客",
+      "source": "tag:Amazon Nova",
+      "strength": 0.5,
+      "target": "tag:博客与播客",
       "type": "cooccurrence",
       "weight": 1
     },
@@ -10694,14 +10686,6 @@
       "target": "tag:行业动态",
       "type": "cooccurrence",
       "weight": 4
-    },
-    {
-      "id": "edge:cooccurrence:tag:Anthropic->tag:行业趋势",
-      "source": "tag:Anthropic",
-      "strength": 0.5,
-      "target": "tag:行业趋势",
-      "type": "cooccurrence",
-      "weight": 1
     },
     {
       "id": "edge:cooccurrence:tag:Anthropic->tag:语言模型",
@@ -12376,14 +12360,6 @@
       "weight": 1
     },
     {
-      "id": "edge:cooccurrence:tag:Claude->tag:编程代理",
-      "source": "tag:Claude",
-      "strength": 1,
-      "target": "tag:编程代理",
-      "type": "cooccurrence",
-      "weight": 2
-    },
-    {
       "id": "edge:cooccurrence:tag:Claude->tag:自动化",
       "source": "tag:Claude",
       "strength": 1,
@@ -13200,14 +13176,6 @@
       "weight": 1
     },
     {
-      "id": "edge:cooccurrence:tag:Codex->tag:编程代理",
-      "source": "tag:Codex",
-      "strength": 0.5,
-      "target": "tag:编程代理",
-      "type": "cooccurrence",
-      "weight": 1
-    },
-    {
       "id": "edge:cooccurrence:tag:Codex->tag:自动化",
       "source": "tag:Codex",
       "strength": 1,
@@ -13904,26 +13872,10 @@
       "weight": 1
     },
     {
-      "id": "edge:cooccurrence:tag:DeepSeek->tag:编程代理",
-      "source": "tag:DeepSeek",
-      "strength": 0.5,
-      "target": "tag:编程代理",
-      "type": "cooccurrence",
-      "weight": 1
-    },
-    {
       "id": "edge:cooccurrence:tag:DeepSeek->tag:聊天机器人",
       "source": "tag:DeepSeek",
       "strength": 0.5,
       "target": "tag:聊天机器人",
-      "type": "cooccurrence",
-      "weight": 1
-    },
-    {
-      "id": "edge:cooccurrence:tag:DeepSeek->tag:行业趋势",
-      "source": "tag:DeepSeek",
-      "strength": 0.5,
-      "target": "tag:行业趋势",
       "type": "cooccurrence",
       "weight": 1
     },
@@ -14108,14 +14060,6 @@
       "source": "tag:DevOps",
       "strength": 0.5,
       "target": "tag:生产力",
-      "type": "cooccurrence",
-      "weight": 1
-    },
-    {
-      "id": "edge:cooccurrence:tag:DevOps->tag:编程代理",
-      "source": "tag:DevOps",
-      "strength": 0.5,
-      "target": "tag:编程代理",
       "type": "cooccurrence",
       "weight": 1
     },
@@ -16312,14 +16256,6 @@
       "weight": 1
     },
     {
-      "id": "edge:cooccurrence:tag:IDE->tag:编程代理",
-      "source": "tag:IDE",
-      "strength": 0.5,
-      "target": "tag:编程代理",
-      "type": "cooccurrence",
-      "weight": 1
-    },
-    {
       "id": "edge:cooccurrence:tag:IDE->tag:自动化",
       "source": "tag:IDE",
       "strength": 1,
@@ -17640,14 +17576,6 @@
       "weight": 5
     },
     {
-      "id": "edge:cooccurrence:tag:LLM->tag:编程代理",
-      "source": "tag:LLM",
-      "strength": 0.5,
-      "target": "tag:编程代理",
-      "type": "cooccurrence",
-      "weight": 1
-    },
-    {
       "id": "edge:cooccurrence:tag:LLM->tag:网络安全",
       "source": "tag:LLM",
       "strength": 1,
@@ -17742,14 +17670,6 @@
       "target": "tag:行业动态",
       "type": "cooccurrence",
       "weight": 2
-    },
-    {
-      "id": "edge:cooccurrence:tag:LLM->tag:行业趋势",
-      "source": "tag:LLM",
-      "strength": 1,
-      "target": "tag:行业趋势",
-      "type": "cooccurrence",
-      "weight": 3
     },
     {
       "id": "edge:cooccurrence:tag:LLM->tag:表征学习",
@@ -18636,14 +18556,6 @@
       "source": "tag:MCP",
       "strength": 0.5,
       "target": "tag:模型推理",
-      "type": "cooccurrence",
-      "weight": 1
-    },
-    {
-      "id": "edge:cooccurrence:tag:MCP->tag:编程代理",
-      "source": "tag:MCP",
-      "strength": 0.5,
-      "target": "tag:编程代理",
       "type": "cooccurrence",
       "weight": 1
     },
@@ -20174,14 +20086,6 @@
       "target": "tag:行业动态",
       "type": "cooccurrence",
       "weight": 3
-    },
-    {
-      "id": "edge:cooccurrence:tag:OpenAI->tag:行业趋势",
-      "source": "tag:OpenAI",
-      "strength": 1,
-      "target": "tag:行业趋势",
-      "type": "cooccurrence",
-      "weight": 2
     },
     {
       "id": "edge:cooccurrence:tag:OpenAI->tag:语言模型",
@@ -23832,6 +23736,86 @@
       "weight": 6
     },
     {
+      "id": "edge:cooccurrence:tag:cs.AI->tag:Gemini",
+      "source": "tag:cs.AI",
+      "strength": 0.5,
+      "target": "tag:Gemini",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:cs.AI->tag:GitHub",
+      "source": "tag:cs.AI",
+      "strength": 0.5,
+      "target": "tag:GitHub",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:cs.AI->tag:RLHF",
+      "source": "tag:cs.AI",
+      "strength": 0.5,
+      "target": "tag:RLHF",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:cs.AI->tag:不确定性量化",
+      "source": "tag:cs.AI",
+      "strength": 0.5,
+      "target": "tag:不确定性量化",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:cs.AI->tag:幻觉",
+      "source": "tag:cs.AI",
+      "strength": 0.5,
+      "target": "tag:幻觉",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:cs.AI->tag:强化学习",
+      "source": "tag:cs.AI",
+      "strength": 0.5,
+      "target": "tag:强化学习",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:cs.AI->tag:智能体",
+      "source": "tag:cs.AI",
+      "strength": 0.5,
+      "target": "tag:智能体",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:cs.AI->tag:来源快报",
+      "source": "tag:cs.AI",
+      "strength": 1,
+      "target": "tag:来源快报",
+      "type": "cooccurrence",
+      "weight": 2
+    },
+    {
+      "id": "edge:cooccurrence:tag:cs.AI->tag:模型评估",
+      "source": "tag:cs.AI",
+      "strength": 0.5,
+      "target": "tag:模型评估",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:cs.AI->tag:自动化",
+      "source": "tag:cs.AI",
+      "strength": 0.5,
+      "target": "tag:自动化",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
       "id": "edge:cooccurrence:tag:cs.CL->tag:LLM",
       "source": "tag:cs.CL",
       "strength": 1,
@@ -25648,14 +25632,6 @@
       "weight": 1
     },
     {
-      "id": "edge:cooccurrence:tag:代码生成->tag:编程代理",
-      "source": "tag:代码生成",
-      "strength": 1,
-      "target": "tag:编程代理",
-      "type": "cooccurrence",
-      "weight": 2
-    },
-    {
       "id": "edge:cooccurrence:tag:代码生成->tag:自动化",
       "source": "tag:代码生成",
       "strength": 1,
@@ -26654,6 +26630,14 @@
       "target": "tag:隐私保护",
       "type": "cooccurrence",
       "weight": 2
+    },
+    {
+      "id": "edge:cooccurrence:tag:博客与播客->tag:来源快报",
+      "source": "tag:博客与播客",
+      "strength": 1,
+      "target": "tag:来源快报",
+      "type": "cooccurrence",
+      "weight": 7
     },
     {
       "id": "edge:cooccurrence:tag:可观测性->tag:基准测试",
@@ -28800,14 +28784,6 @@
       "weight": 4
     },
     {
-      "id": "edge:cooccurrence:tag:大模型->tag:行业趋势",
-      "source": "tag:大模型",
-      "strength": 1,
-      "target": "tag:行业趋势",
-      "type": "cooccurrence",
-      "weight": 2
-    },
-    {
       "id": "edge:cooccurrence:tag:大模型->tag:视觉语言模型",
       "source": "tag:大模型",
       "strength": 0.5,
@@ -29632,14 +29608,6 @@
       "weight": 1
     },
     {
-      "id": "edge:cooccurrence:tag:工程化->tag:编程代理",
-      "source": "tag:工程化",
-      "strength": 0.5,
-      "target": "tag:编程代理",
-      "type": "cooccurrence",
-      "weight": 1
-    },
-    {
       "id": "edge:cooccurrence:tag:工程化->tag:职业发展",
       "source": "tag:工程化",
       "strength": 0.5,
@@ -29920,14 +29888,6 @@
       "weight": 1
     },
     {
-      "id": "edge:cooccurrence:tag:开发工具->tag:编程代理",
-      "source": "tag:开发工具",
-      "strength": 1,
-      "target": "tag:编程代理",
-      "type": "cooccurrence",
-      "weight": 2
-    },
-    {
       "id": "edge:cooccurrence:tag:开发工具->tag:自动化",
       "source": "tag:开发工具",
       "strength": 1,
@@ -30014,14 +29974,6 @@
       "target": "tag:最佳实践",
       "type": "cooccurrence",
       "weight": 7
-    },
-    {
-      "id": "edge:cooccurrence:tag:开发效率->tag:编程代理",
-      "source": "tag:开发效率",
-      "strength": 0.5,
-      "target": "tag:编程代理",
-      "type": "cooccurrence",
-      "weight": 1
     },
     {
       "id": "edge:cooccurrence:tag:开发效率->tag:自动化",
@@ -30696,14 +30648,6 @@
       "weight": 2
     },
     {
-      "id": "edge:cooccurrence:tag:开源模型->tag:行业趋势",
-      "source": "tag:开源模型",
-      "strength": 0.5,
-      "target": "tag:行业趋势",
-      "type": "cooccurrence",
-      "weight": 1
-    },
-    {
       "id": "edge:cooccurrence:tag:开源模型->tag:语言模型",
       "source": "tag:开源模型",
       "strength": 0.5,
@@ -31264,14 +31208,6 @@
       "weight": 1
     },
     {
-      "id": "edge:cooccurrence:tag:微调->tag:行业趋势",
-      "source": "tag:微调",
-      "strength": 0.5,
-      "target": "tag:行业趋势",
-      "type": "cooccurrence",
-      "weight": 1
-    },
-    {
       "id": "edge:cooccurrence:tag:微调->tag:语音识别",
       "source": "tag:微调",
       "strength": 0.5,
@@ -31692,14 +31628,6 @@
       "source": "tag:成本优化",
       "strength": 0.5,
       "target": "tag:生成式 AI",
-      "type": "cooccurrence",
-      "weight": 1
-    },
-    {
-      "id": "edge:cooccurrence:tag:成本优化->tag:编程代理",
-      "source": "tag:成本优化",
-      "strength": 0.5,
-      "target": "tag:编程代理",
       "type": "cooccurrence",
       "weight": 1
     },
@@ -32732,14 +32660,6 @@
       "source": "tag:效率提升",
       "strength": 0.5,
       "target": "tag:算法",
-      "type": "cooccurrence",
-      "weight": 1
-    },
-    {
-      "id": "edge:cooccurrence:tag:效率提升->tag:编程代理",
-      "source": "tag:效率提升",
-      "strength": 0.5,
-      "target": "tag:编程代理",
       "type": "cooccurrence",
       "weight": 1
     },
@@ -34336,14 +34256,6 @@
       "weight": 1
     },
     {
-      "id": "edge:cooccurrence:tag:模型训练->tag:行业趋势",
-      "source": "tag:模型训练",
-      "strength": 0.5,
-      "target": "tag:行业趋势",
-      "type": "cooccurrence",
-      "weight": 1
-    },
-    {
       "id": "edge:cooccurrence:tag:模型训练->tag:视频生成",
       "source": "tag:模型训练",
       "strength": 0.5,
@@ -34608,14 +34520,6 @@
       "weight": 1
     },
     {
-      "id": "edge:cooccurrence:tag:模型量化->tag:行业趋势",
-      "source": "tag:模型量化",
-      "strength": 0.5,
-      "target": "tag:行业趋势",
-      "type": "cooccurrence",
-      "weight": 1
-    },
-    {
       "id": "edge:cooccurrence:tag:模型量化->tag:边缘计算",
       "source": "tag:模型量化",
       "strength": 1,
@@ -34790,14 +34694,6 @@
       "target": "tag:自然语言处理",
       "type": "cooccurrence",
       "weight": 3
-    },
-    {
-      "id": "edge:cooccurrence:tag:深度学习->tag:行业趋势",
-      "source": "tag:深度学习",
-      "strength": 0.5,
-      "target": "tag:行业趋势",
-      "type": "cooccurrence",
-      "weight": 1
     },
     {
       "id": "edge:cooccurrence:tag:深度学习->tag:表征学习",
@@ -35128,14 +35024,6 @@
       "weight": 1
     },
     {
-      "id": "edge:cooccurrence:tag:硬件加速->tag:行业趋势",
-      "source": "tag:硬件加速",
-      "strength": 0.5,
-      "target": "tag:行业趋势",
-      "type": "cooccurrence",
-      "weight": 1
-    },
-    {
       "id": "edge:cooccurrence:tag:硬件加速->tag:谷歌",
       "source": "tag:硬件加速",
       "strength": 0.5,
@@ -35296,14 +35184,6 @@
       "weight": 1
     },
     {
-      "id": "edge:cooccurrence:tag:系统设计->tag:编程代理",
-      "source": "tag:系统设计",
-      "strength": 0.5,
-      "target": "tag:编程代理",
-      "type": "cooccurrence",
-      "weight": 1
-    },
-    {
       "id": "edge:cooccurrence:tag:系统设计->tag:自动化",
       "source": "tag:系统设计",
       "strength": 1,
@@ -35332,22 +35212,6 @@
       "source": "tag:系统设计",
       "strength": 0.5,
       "target": "tag:长上下文",
-      "type": "cooccurrence",
-      "weight": 1
-    },
-    {
-      "id": "edge:cooccurrence:tag:编程代理->tag:自动化",
-      "source": "tag:编程代理",
-      "strength": 1,
-      "target": "tag:自动化",
-      "type": "cooccurrence",
-      "weight": 2
-    },
-    {
-      "id": "edge:cooccurrence:tag:编程代理->tag:软件开发",
-      "source": "tag:编程代理",
-      "strength": 0.5,
-      "target": "tag:软件开发",
       "type": "cooccurrence",
       "weight": 1
     },
@@ -35574,14 +35438,6 @@
       "target": "tag:融资",
       "type": "cooccurrence",
       "weight": 4
-    },
-    {
-      "id": "edge:cooccurrence:tag:英伟达->tag:行业趋势",
-      "source": "tag:英伟达",
-      "strength": 0.5,
-      "target": "tag:行业趋势",
-      "type": "cooccurrence",
-      "weight": 1
     },
     {
       "id": "edge:cooccurrence:tag:英伟达->tag:语音交互",
@@ -36465,6 +36321,23 @@
       "rank": 180,
       "related_count": 58,
       "weighted_degree": 70
+    },
+    {
+      "article_count": 8,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:other",
+      "degree": 43,
+      "description": "文章标签: cs.AI",
+      "id": "tag:cs.AI",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "cs.AI",
+      "level": 6,
+      "name": "cs.AI",
+      "rank": 270,
+      "related_count": 43,
+      "weighted_degree": 46
     },
     {
       "article_count": 10,
@@ -37793,6 +37666,23 @@
       "weighted_degree": 105
     },
     {
+      "article_count": 8,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Amazon DynamoDB",
+      "degree": 20,
+      "description": "文章标签: 博客与播客",
+      "id": "tag:博客与播客",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "博客与播客",
+      "level": 6,
+      "name": "博客与播客",
+      "rank": 417,
+      "related_count": 20,
+      "weighted_degree": 29
+    },
+    {
       "article_count": 9,
       "category": "article_tag",
       "color": "#f59e0b",
@@ -38881,11 +38771,11 @@
       "weighted_degree": 385
     },
     {
-      "article_count": 16,
+      "article_count": 18,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:other",
-      "degree": 19,
+      "community_id": "community:tag:Amazon DynamoDB",
+      "degree": 20,
       "description": "文章标签: 来源快报",
       "id": "tag:来源快报",
       "layer": "tag",
@@ -38893,9 +38783,9 @@
       "legacy_id": "来源快报",
       "level": 6,
       "name": "来源快报",
-      "rank": 415,
-      "related_count": 19,
-      "weighted_degree": 34
+      "rank": 330,
+      "related_count": 20,
+      "weighted_degree": 38
     },
     {
       "article_count": 40,
@@ -39459,23 +39349,6 @@
       "weighted_degree": 56
     },
     {
-      "article_count": 7,
-      "category": "article_tag",
-      "color": "#f59e0b",
-      "community_id": "community:other",
-      "degree": 44,
-      "description": "文章标签: 编程代理",
-      "id": "tag:编程代理",
-      "layer": "tag",
-      "layer_name": "标签层",
-      "legacy_id": "编程代理",
-      "level": 6,
-      "name": "编程代理",
-      "rank": 247,
-      "related_count": 44,
-      "weighted_degree": 49
-    },
-    {
       "article_count": 11,
       "category": "article_tag",
       "color": "#f59e0b",
@@ -39678,23 +39551,6 @@
       "rank": 163,
       "related_count": 60,
       "weighted_degree": 77
-    },
-    {
-      "article_count": 7,
-      "category": "article_tag",
-      "color": "#f59e0b",
-      "community_id": "community:other",
-      "degree": 44,
-      "description": "文章标签: 行业趋势",
-      "id": "tag:行业趋势",
-      "layer": "tag",
-      "layer_name": "标签层",
-      "legacy_id": "行业趋势",
-      "level": 6,
-      "name": "行业趋势",
-      "rank": 248,
-      "related_count": 44,
-      "weighted_degree": 49
     },
     {
       "article_count": 7,
@@ -40022,13 +39878,13 @@
   ],
   "stats": {
     "links_by_type": {
-      "cooccurrence": 4419,
+      "cooccurrence": 4401,
       "semantic": 47
     },
     "nodes_by_layer": {
       "tag": 250
     },
-    "total_links": 4466,
+    "total_links": 4448,
     "total_nodes": 250
   },
   "version": 2

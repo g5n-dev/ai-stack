@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-16T06:34:01Z",
+  "generated_at": "2026-07-16T09:30:51Z",
   "layers": {
     "application": {
       "color": "#7aa6b8",
@@ -639,7 +639,7 @@
       "legacy_id": "agent",
       "level": 4,
       "name": "AI Agent",
-      "rank": 330,
+      "rank": 331,
       "weighted_degree": 37.4
     },
     {
@@ -690,7 +690,7 @@
       "legacy_id": "api",
       "level": 4,
       "name": "API服务",
-      "rank": 436,
+      "rank": 437,
       "weighted_degree": 28.2
     },
     {
@@ -1506,7 +1506,7 @@
       "legacy_id": "python",
       "level": 1,
       "name": "Python",
-      "rank": 1573,
+      "rank": 1575,
       "weighted_degree": 8.2
     },
     {
@@ -1523,7 +1523,7 @@
       "legacy_id": "pytorch",
       "level": 2,
       "name": "PyTorch",
-      "rank": 1613,
+      "rank": 1614,
       "weighted_degree": 7.6
     },
     {
@@ -1540,7 +1540,7 @@
       "legacy_id": "rag",
       "level": 4,
       "name": "RAG应用",
-      "rank": 1572,
+      "rank": 1574,
       "weighted_degree": 8.4
     },
     {
@@ -1761,7 +1761,7 @@
       "legacy_id": "web_dev",
       "level": 5,
       "name": "Web应用开发",
-      "rank": 1612,
+      "rank": 1613,
       "weighted_degree": 7.6
     },
     {

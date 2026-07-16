@@ -4,7 +4,7 @@
     {
       "article_count": 797,
       "hotspot_count": 21,
-      "hotspot_file": "community-hotspots/01-ec11294a5cf1.json",
+      "hotspot_file": "community-hotspots/01-70d6e56e3c8a.json",
       "id": "community:tag:面试考点",
       "leader_id": "tag:LLM",
       "name": "LLM",
@@ -14,93 +14,93 @@
       "weighted_degree": 8153.6
     },
     {
+      "article_count": 22,
+      "hotspot_count": 19,
+      "hotspot_file": "community-hotspots/02-a0be0a7e58bd.json",
+      "id": "community:tag:Amazon DynamoDB",
+      "leader_id": "tag:来源快报",
+      "name": "来源快报",
+      "node_count": 19,
+      "rank": 2,
+      "tag_occurrences": 58,
+      "weighted_degree": 206.6
+    },
+    {
       "article_count": 65,
       "hotspot_count": 17,
-      "hotspot_file": "community-hotspots/02-75ac0d265d2e.json",
+      "hotspot_file": "community-hotspots/03-83732cdabd11.json",
       "id": "community:tag:SpeechAnalyzer",
       "leader_id": "tag:开源模型",
       "name": "开源模型",
       "node_count": 17,
-      "rank": 2,
+      "rank": 3,
       "tag_occurrences": 88,
       "weighted_degree": 616.6
     },
     {
       "article_count": 77,
       "hotspot_count": 15,
-      "hotspot_file": "community-hotspots/03-35befae4bda5.json",
+      "hotspot_file": "community-hotspots/04-7fd9d4cc0e14.json",
       "id": "community:tag:P-EAGLE",
       "leader_id": "tag:性能优化",
       "name": "性能优化",
       "node_count": 15,
-      "rank": 3,
+      "rank": 4,
       "tag_occurrences": 112,
       "weighted_degree": 785.8
     },
     {
       "article_count": 87,
       "hotspot_count": 14,
-      "hotspot_file": "community-hotspots/04-0d66cfae01cd.json",
+      "hotspot_file": "community-hotspots/05-82833e10f4b3.json",
       "id": "community:tag:Flux",
       "leader_id": "tag:扩散模型",
       "name": "扩散模型",
       "node_count": 14,
-      "rank": 4,
+      "rank": 5,
       "tag_occurrences": 121,
       "weighted_degree": 729.8
     },
     {
       "article_count": 7,
       "hotspot_count": 14,
-      "hotspot_file": "community-hotspots/05-dd965404eb0e.json",
+      "hotspot_file": "community-hotspots/06-10af449ec1ef.json",
       "id": "community:tag:移动开发",
       "leader_id": "tag:Android",
       "name": "Android",
       "node_count": 14,
-      "rank": 5,
+      "rank": 6,
       "tag_occurrences": 23,
       "weighted_degree": 161
     },
     {
       "article_count": 107,
       "hotspot_count": 13,
-      "hotspot_file": "community-hotspots/06-2fd820801aa3.json",
+      "hotspot_file": "community-hotspots/07-5432d0fba969.json",
       "id": "community:tag:行业格局",
       "leader_id": "tag:OpenAI",
       "name": "OpenAI",
       "node_count": 13,
-      "rank": 6,
+      "rank": 7,
       "tag_occurrences": 134,
       "weighted_degree": 937.6
     },
     {
       "article_count": 34,
       "hotspot_count": 13,
-      "hotspot_file": "community-hotspots/07-e17a08ecc856.json",
+      "hotspot_file": "community-hotspots/08-c4d23b02607e.json",
       "id": "community:tag:Autotab",
       "leader_id": "tag:Cursor",
       "name": "Cursor",
       "node_count": 13,
-      "rank": 7,
+      "rank": 8,
       "tag_occurrences": 48,
       "weighted_degree": 337.2
     },
     {
-      "article_count": 9,
-      "hotspot_count": 13,
-      "hotspot_file": "community-hotspots/08-9cf3d887c9d8.json",
-      "id": "community:tag:Amazon DynamoDB",
-      "leader_id": "tag:博客与播客",
-      "name": "博客与播客",
-      "node_count": 13,
-      "rank": 8,
-      "tag_occurrences": 24,
-      "weighted_degree": 132.6
-    },
-    {
       "article_count": 67,
       "hotspot_count": 12,
-      "hotspot_file": "community-hotspots/09-d4dff0104e3b.json",
+      "hotspot_file": "community-hotspots/09-d05d40c7e716.json",
       "id": "community:tag:Gemini 3",
       "leader_id": "tag:模型发布",
       "name": "模型发布",
@@ -112,7 +112,7 @@
     {
       "article_count": 59,
       "hotspot_count": 12,
-      "hotspot_file": "community-hotspots/10-df4001fe91a0.json",
+      "hotspot_file": "community-hotspots/10-cdc01fb7cffb.json",
       "id": "community:tag:Folo",
       "leader_id": "tag:开源项目",
       "name": "开源项目",
@@ -124,7 +124,7 @@
     {
       "article_count": 53,
       "hotspot_count": 12,
-      "hotspot_file": "community-hotspots/11-a8abde2d69c3.json",
+      "hotspot_file": "community-hotspots/11-5e623a398d24.json",
       "id": "community:tag:Clippy",
       "leader_id": "tag:AI 助手",
       "name": "AI 助手",
@@ -134,18 +134,18 @@
       "weighted_degree": 491.8
     },
     {
-      "article_count": 1923,
+      "article_count": 1916,
       "hotspot_count": 0,
       "id": "community:other",
       "leader_id": null,
       "name": "其他",
-      "node_count": 6633,
+      "node_count": 6627,
       "rank": 12,
-      "tag_occurrences": 13243,
-      "weighted_degree": 92599.4
+      "tag_occurrences": 13215,
+      "weighted_degree": 92537.4
     }
   ],
-  "generated_at": "2026-07-16T06:34:01Z",
+  "generated_at": "2026-07-16T09:30:51Z",
   "iterations": 6,
   "limit": 11,
   "links": [
@@ -155,7 +155,7 @@
       "strength": 1,
       "target": "community:tag:Amazon DynamoDB",
       "type": "community",
-      "weight": 39
+      "weight": 50
     },
     {
       "id": "edge:community:community:other->community:tag:Autotab",
@@ -179,7 +179,7 @@
       "strength": 1,
       "target": "community:tag:Flux",
       "type": "community",
-      "weight": 546
+      "weight": 543
     },
     {
       "id": "edge:community:community:other->community:tag:Folo",
@@ -236,6 +236,14 @@
       "target": "community:tag:面试考点",
       "type": "community",
       "weight": 6758
+    },
+    {
+      "id": "edge:community:community:tag:Amazon DynamoDB->community:tag:Flux",
+      "source": "community:tag:Amazon DynamoDB",
+      "strength": 1,
+      "target": "community:tag:Flux",
+      "type": "community",
+      "weight": 3
     },
     {
       "id": "edge:community:community:tag:Amazon DynamoDB->community:tag:面试考点",
@@ -507,7 +515,7 @@
     "detected_communities": 1419,
     "emitted_communities": 12,
     "total_communities": 12,
-    "total_links": 44,
+    "total_links": 45,
     "weighting": "cosine-association"
   },
   "version": 2

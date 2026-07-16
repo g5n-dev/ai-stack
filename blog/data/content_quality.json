@@ -1,5 +1,5 @@
 {
-  "active_count": 1938,
+  "active_count": 1940,
   "archived_count": 448,
   "complete_count": 0,
   "legacy_analysis_count": 1910,
@@ -10410,6 +10410,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260716-arxiv-ai-accelerated-end-to-end-framework-for-rapid-prof-0-7770a3171f.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260716-arxiv-can-an-old-dog-be-taught-new-tricks-taking-llms-be-0-5b7b6765bf.md": {
       "reasons": [
         "concise_source_card"
@@ -10456,6 +10462,12 @@
       "status": "source_brief"
     },
     "posts/20260716-blogs_podcasts-exploring-hierarchical-interest-representation-for-0-235fa230d8.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260716-blogs_podcasts-gpt-red-unlocking-self-improvement-for-robustness-0-f8df3e0d3c.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -10509,9 +10521,9 @@
     "archived_content": 448
   },
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 28,
-  "source_file_count": 2386,
-  "source_tree_sha256": "c9c0a78b76bee699636584673157457bc0cad299e25821550fc439d03a093b83",
+  "source_brief_count": 30,
+  "source_file_count": 2388,
+  "source_tree_sha256": "91f4a48bac1c9239ccd6248b9de9bc31823a2acd125ef66f51a74cd991000423",
   "warning_counts": {
     "source_excerpt_truncated": 1
   }
