@@ -2,7 +2,7 @@
 
 <h1>AI Stack · AI 史塔克</h1>
 
-<p><strong>开源的 AI 情报长期档案与动态场景知识图谱</strong></p>
+<p><strong>AI 情报长期档案与动态场景知识图谱</strong></p>
 <p>从多源采集、历史去重、AI 精炼，到文章归档、图谱探索与自动发布，一个仓库跑通最小闭环。</p>
 <p><em>From AI firehose to a living knowledge graph.</em></p>
 
@@ -58,7 +58,7 @@ flowchart LR
 | --- | --- | --- |
 | 🌐 在线浏览 | 浏览器 | 无需账户、无需密钥 |
 | 💻 本地启动 UI | Git + Hugo Extended | 不调用模型，不需要 Python |
-| 🤖 完整数据刷新 | Python 3.11+ + Anthropic Messages 兼容端点 | 仅模型 API 与可选自定义域名可能产生费用 |
+| 🤖 完整数据刷新 | Python 3.11+ + Anthropic Messages 兼容端点 | 主要可变成本为模型 API；可选域名、自建搜索或非标准运行环境也可能产生费用 |
 
 成本说明参考 GitHub 官方的 [Actions 计费说明](https://docs.github.com/en/actions/concepts/billing-and-usage) 与 [Pages 使用限制](https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits)。
 
@@ -68,7 +68,7 @@ flowchart LR
   <img src="./docs/assets/readme/graph-demo.gif" alt="AI Stack 动态场景知识图谱演示" width="100%" />
 </a>
 
-<p align="center"><sub>8.4 秒真实交互：技术总览 → 标签社区 → 搜索 → 节点邻域 → 详情联动</sub></p>
+<p align="center"><sub>8.3 秒真实交互：技术总览 → 标签社区 → 搜索 → 节点邻域 → 详情联动</sub></p>
 
 ## 🛰️ 从信息洪流到可追溯洞察
 
@@ -76,22 +76,19 @@ flowchart LR
 
 <table>
   <tr>
-    <td width="50%" valign="top">
-      <a href="https://ai-stack.site/">
-        <img src="./docs/assets/readme/archive-feed.webp" alt="AI Stack 情报归档界面" width="100%" />
-      </a>
-      <br />
-      <sub><strong>01 · 长期归档</strong><br />跨来源内容沉淀为可搜索、可按日期回看的技术档案。</sub>
-    </td>
-    <td width="50%" valign="top">
-      <img src="./docs/assets/readme/article-detail.webp" alt="AI Stack 文章详情与来源摘要界面" width="100%" />
-      <br />
-      <sub><strong>02 · 文章精炼</strong><br />来源摘要、结构化正文、标签与元数据保留在同一页面。</sub>
-    </td>
+    <td width="50%" valign="top"><a href="https://ai-stack.site/"><img src="./docs/assets/readme/archive-feed.webp" alt="AI Stack 情报归档界面" width="100%" /></a><br /><sub><strong>01 · 长期归档</strong><br />跨来源内容沉淀为可搜索、可按日期回看的技术档案。</sub></td>
+    <td width="50%" valign="top"><img src="./docs/assets/readme/article-detail.webp" alt="AI Stack 文章详情与来源摘要界面" width="100%" /><br /><sub><strong>02 · 文章精炼</strong><br />来源摘要、结构化正文、标签与元数据保留在同一页面。</sub></td>
   </tr>
 </table>
 
 ### 03 · 分层图谱
+
+<table>
+  <tr>
+    <td width="50%" valign="top"><a href="https://ai-stack.site/scenarios/"><img src="./docs/assets/readme/graph-overview.webp" alt="AI Stack 技术总览分层图谱" width="100%" /></a><br /><sub><strong>技术总览</strong> · 首屏只载入 69 个核心节点与 71 条关系。</sub></td>
+    <td width="50%" valign="top"><a href="https://ai-stack.site/scenarios/"><img src="./docs/assets/readme/graph-focus.webp" alt="AI Stack API 搜索与节点邻域详情" width="100%" /></a><br /><sub><strong>节点邻域</strong> · 搜索后只展开一跳强关系与真实指标。</sub></td>
+  </tr>
+</table>
 
 | 模式 | 回答的问题 | 加载策略 |
 | --- | --- | --- |
@@ -162,8 +159,8 @@ bash scripts/run_local.sh
 
 | 触发方式 | 执行内容 | 设计目的 |
 | --- | --- | --- |
-| Push 到 `main` | 验证并部署已提交快照，不调用模型 | 代码与样式更新快速上线 |
-| 每小时第 `17` 分钟 | 抓取、质量清单、图谱重建、生成数据提交与部署 | 自动刷新情报档案 |
+| Push 到 `main` | 验证并部署已提交快照，不执行抓取与模型处理 | 代码与样式更新快速上线 |
+| 计划在每小时第 `17` 分钟 | 抓取、质量清单、图谱重建、生成数据提交与部署 | 自动刷新情报档案 |
 | 手动触发 | 按需执行完整刷新 | 故障恢复与运营控制 |
 | 每 `6` 小时第 `23` 分钟 | 检查仓库与线上图谱新鲜度 | 及时发现数据停滞 |
 
@@ -171,7 +168,7 @@ bash scripts/run_local.sh
 
 ## ⚙️ 配置与部署
 
-`scripts/setup.sh` 会从 [`.env.example`](./.env.example) 创建本地 `.env`。密钥只应放在本地环境或 GitHub Actions Secrets 中。
+`scripts/setup.sh` 会从 [`.env.example`](./.env.example) 创建本地 `.env`。密钥只应放在本地环境或 GitHub Actions Secrets 中；不要把真实值粘贴到截图、日志、Issue、PR 或文档里，疑似泄露时应立即轮换。
 
 | 变量 | 必需 | 用途 |
 | --- | --- | --- |
@@ -233,17 +230,7 @@ python3 -m pytest -q tests/test_graph_deploy_contract.py tests/test_site_header_
 - PR 检查规则：[`.github/workflows/ci.yml`](./.github/workflows/ci.yml)
 
 <div align="center">
-
 <h3>把一次性信息流，变成会持续生长的技术档案。</h3>
-
-<p>
-  <a href="https://ai-stack.site/"><strong>🚀 打开 AI Stack</strong></a>
-  ·
-  <a href="https://github.com/g5n-dev/ai-stack"><strong>⭐ 点亮 Star</strong></a>
-  ·
-  <a href="https://github.com/g5n-dev/ai-stack/fork"><strong>🍴 Fork 最小闭环</strong></a>
-</p>
-
+<p><a href="https://ai-stack.site/"><strong>🚀 打开 AI Stack</strong></a> · <a href="https://github.com/g5n-dev/ai-stack"><strong>⭐ 点亮 Star</strong></a> · <a href="https://github.com/g5n-dev/ai-stack/fork"><strong>🍴 Fork 最小闭环</strong></a></p>
 <strong>Built for traceable intelligence, not disposable feeds.</strong>
-
 </div>
