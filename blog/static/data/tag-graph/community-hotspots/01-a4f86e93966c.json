@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:面试考点",
-  "generated_at": "2026-07-16T09:30:51Z",
+  "generated_at": "2026-07-16T14:25:30Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -462,7 +462,7 @@
       "legacy_id": "Context",
       "level": 6,
       "name": "Context",
-      "rank": 1493,
+      "rank": 1494,
       "related_count": 12,
       "weighted_degree": 14
     },
@@ -479,7 +479,7 @@
       "legacy_id": "大模型原理",
       "level": 6,
       "name": "大模型原理",
-      "rank": 1522,
+      "rank": 1523,
       "related_count": 12,
       "weighted_degree": 14
     },

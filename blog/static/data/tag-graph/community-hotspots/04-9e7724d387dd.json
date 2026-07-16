@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:P-EAGLE",
-  "generated_at": "2026-07-16T09:30:51Z",
+  "generated_at": "2026-07-16T14:25:30Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -326,7 +326,7 @@
       "legacy_id": "vLLM",
       "level": 6,
       "name": "vLLM",
-      "rank": 323,
+      "rank": 324,
       "related_count": 34,
       "weighted_degree": 42
     },
@@ -343,7 +343,7 @@
       "legacy_id": "推测解码",
       "level": 6,
       "name": "推测解码",
-      "rank": 324,
+      "rank": 325,
       "related_count": 34,
       "weighted_degree": 42
     },
@@ -377,7 +377,7 @@
       "legacy_id": "Speculative Decoding",
       "level": 6,
       "name": "Speculative Decoding",
-      "rank": 986,
+      "rank": 987,
       "related_count": 14,
       "weighted_degree": 14
     },
@@ -394,7 +394,7 @@
       "legacy_id": "模型加速",
       "level": 6,
       "name": "模型加速",
-      "rank": 1197,
+      "rank": 1198,
       "related_count": 14,
       "weighted_degree": 14
     },
@@ -411,7 +411,7 @@
       "legacy_id": "论文解读",
       "level": 6,
       "name": "论文解读",
-      "rank": 1305,
+      "rank": 1306,
       "related_count": 14,
       "weighted_degree": 14
     },
@@ -428,7 +428,7 @@
       "legacy_id": "PagedAttention",
       "level": 6,
       "name": "PagedAttention",
-      "rank": 1561,
+      "rank": 1562,
       "related_count": 10,
       "weighted_degree": 14
     },

@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:Folo",
-  "generated_at": "2026-07-16T09:30:51Z",
+  "generated_at": "2026-07-16T14:25:30Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -343,7 +343,7 @@
       "legacy_id": "数据管理",
       "level": 6,
       "name": "数据管理",
-      "rank": 1163,
+      "rank": 1164,
       "related_count": 14,
       "weighted_degree": 14
     },
@@ -360,7 +360,7 @@
       "legacy_id": "GUI",
       "level": 6,
       "name": "GUI",
-      "rank": 1359,
+      "rank": 1360,
       "related_count": 13,
       "weighted_degree": 14
     },
@@ -377,7 +377,7 @@
       "legacy_id": "draw.io",
       "level": 6,
       "name": "draw.io",
-      "rank": 1495,
+      "rank": 1496,
       "related_count": 12,
       "weighted_degree": 14
     },

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-16T11:57:08Z",
+  "generated_at": "2026-07-16T14:25:30Z",
   "layers": {
     "application": {
       "color": "#7aa6b8",
@@ -1319,7 +1319,7 @@
       "legacy_id": "llm",
       "level": 3,
       "name": "大语言模型",
-      "rank": 416,
+      "rank": 417,
       "weighted_degree": 30.4
     },
     {
@@ -1778,7 +1778,7 @@
       "legacy_id": "webapp",
       "level": 4,
       "name": "Web应用",
-      "rank": 1569,
+      "rank": 1570,
       "weighted_degree": 12.2
     }
   ],

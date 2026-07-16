@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:SpeechAnalyzer",
-  "generated_at": "2026-07-16T09:30:51Z",
+  "generated_at": "2026-07-16T14:25:30Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -428,7 +428,7 @@
       "legacy_id": "CPU推理",
       "level": 6,
       "name": "CPU推理",
-      "rank": 933,
+      "rank": 934,
       "related_count": 14,
       "weighted_degree": 14
     },

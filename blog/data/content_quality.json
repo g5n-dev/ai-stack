@@ -1,5 +1,5 @@
 {
-  "active_count": 1943,
+  "active_count": 1946,
   "archived_count": 448,
   "complete_count": 0,
   "legacy_analysis_count": 1910,
@@ -10422,6 +10422,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260716-arxiv-deep-interaction-an-efficient-human-ai-interaction-0-2853af2a5d.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260716-arxiv-earthquaker-ai-a-retrieval-augmented-generation-fr-0-d0b35aad0d.md": {
       "reasons": [
         "concise_source_card"
@@ -10447,6 +10453,12 @@
       "status": "source_brief"
     },
     "posts/20260716-blogs_podcasts-agentic-vision-building-visual-intelligence-with-a-0-ad37a98413.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260716-blogs_podcasts-ainews-thinkys-inkling-975b-a41b-multimodal-new-be-0-34ced310fc.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -10509,6 +10521,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260716-hacker_news-show-hn-ai-law-tracker-one-audited-api-for-us-eu-a-0-0e30cb6394.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260716-juejin-七智能体的reflection机制让ai学会三省吾身-0-f08615b0cd.md": {
       "reasons": [
         "concise_source_card"
@@ -10539,9 +10557,9 @@
     "archived_content": 448
   },
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 33,
-  "source_file_count": 2391,
-  "source_tree_sha256": "eee57b7d5bbeea5758f2c1fd91bf15b6ba1771d7d98cffd4b65700f1019fae6a",
+  "source_brief_count": 36,
+  "source_file_count": 2394,
+  "source_tree_sha256": "7458dfaf27d3e59148817ab73aca31a96618c2f2de284706ce68412e08bbc16f",
   "warning_counts": {
     "source_excerpt_truncated": 1
   }

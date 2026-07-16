@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:行业格局",
-  "generated_at": "2026-07-16T09:30:51Z",
+  "generated_at": "2026-07-16T14:25:30Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -360,7 +360,7 @@
       "legacy_id": "垂直领域",
       "level": 6,
       "name": "垂直领域",
-      "rank": 1076,
+      "rank": 1077,
       "related_count": 14,
       "weighted_degree": 14
     },
@@ -377,7 +377,7 @@
       "legacy_id": "初创企业",
       "level": 6,
       "name": "初创企业",
-      "rank": 1547,
+      "rank": 1548,
       "related_count": 11,
       "weighted_degree": 14
     },
@@ -394,7 +394,7 @@
       "legacy_id": "软银",
       "level": 6,
       "name": "软银",
-      "rank": 1565,
+      "rank": 1566,
       "related_count": 10,
       "weighted_degree": 14
     },
