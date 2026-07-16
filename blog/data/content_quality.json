@@ -1,5 +1,5 @@
 {
-  "active_count": 1953,
+  "active_count": 1954,
   "archived_count": 448,
   "complete_count": 0,
   "legacy_analysis_count": 1910,
@@ -10575,6 +10575,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260717-blogs_podcasts-create-edit-and-star-in-videos-with-two-google-vid-0-0560403cac.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260717-blogs_podcasts-introducing-grok-on-amazon-bedrock-0-b81aab9551.md": {
       "reasons": [
         "concise_source_card"
@@ -10599,9 +10605,9 @@
     "archived_content": 448
   },
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 43,
-  "source_file_count": 2401,
-  "source_tree_sha256": "d5476e330b675c2aa9060352ec8554a725c5092e501134c7fe9d1177ec8e21ec",
+  "source_brief_count": 44,
+  "source_file_count": 2402,
+  "source_tree_sha256": "0556a957bb330eeff30e246762bea20171c502438ef0645ed9d301cf672101af",
   "warning_counts": {
     "source_excerpt_truncated": 1
   }

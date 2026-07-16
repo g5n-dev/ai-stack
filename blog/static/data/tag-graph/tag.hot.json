@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-16T20:15:17Z",
+  "generated_at": "2026-07-16T21:19:25Z",
   "layer": "tag",
   "layers": {
     "application": {
@@ -469,7 +469,7 @@
       "strength": 1,
       "target": "tag:博客与播客",
       "type": "cooccurrence",
-      "weight": 2
+      "weight": 3
     },
     {
       "id": "edge:cooccurrence:tag:AI->tag:可视化",
@@ -669,7 +669,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 2
+      "weight": 3
     },
     {
       "id": "edge:cooccurrence:tag:AI->tag:架构设计",
@@ -26573,7 +26573,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 11
+      "weight": 12
     },
     {
       "id": "edge:cooccurrence:tag:可观测性->tag:基准测试",
@@ -35590,11 +35590,11 @@
       "weighted_degree": 90
     },
     {
-      "article_count": 51,
+      "article_count": 52,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
-      "degree": 257,
+      "degree": 259,
       "description": "文章标签: AI",
       "id": "tag:AI",
       "layer": "tag",
@@ -35602,9 +35602,9 @@
       "legacy_id": "AI",
       "level": 6,
       "name": "AI",
-      "rank": 25,
-      "related_count": 256,
-      "weighted_degree": 348.6
+      "rank": 24,
+      "related_count": 258,
+      "weighted_degree": 352.6
     },
     {
       "article_count": 132,
@@ -36129,7 +36129,7 @@
       "legacy_id": "CI/CD",
       "level": 6,
       "name": "CI/CD",
-      "rank": 203,
+      "rank": 204,
       "related_count": 49,
       "weighted_degree": 63
     },
@@ -36418,7 +36418,7 @@
       "legacy_id": "Function Calling",
       "level": 6,
       "name": "Function Calling",
-      "rank": 205,
+      "rank": 206,
       "related_count": 45,
       "weighted_degree": 63
     },
@@ -36554,7 +36554,7 @@
       "legacy_id": "hacker_news",
       "level": 6,
       "name": "hacker_news",
-      "rank": 6856,
+      "rank": 6858,
       "related_count": 0,
       "weighted_degree": 0
     },
@@ -36639,7 +36639,7 @@
       "legacy_id": "KV Cache",
       "level": 6,
       "name": "KV Cache",
-      "rank": 206,
+      "rank": 207,
       "related_count": 44,
       "weighted_degree": 63
     },
@@ -36775,7 +36775,7 @@
       "legacy_id": "MCP 协议",
       "level": 6,
       "name": "MCP 协议",
-      "rank": 189,
+      "rank": 190,
       "related_count": 62,
       "weighted_degree": 63
     },
@@ -37149,7 +37149,7 @@
       "legacy_id": "Token优化",
       "level": 6,
       "name": "Token优化",
-      "rank": 195,
+      "rank": 196,
       "related_count": 56,
       "weighted_degree": 63
     },
@@ -37183,7 +37183,7 @@
       "legacy_id": "TTS",
       "level": 6,
       "name": "TTS",
-      "rank": 198,
+      "rank": 199,
       "related_count": 55,
       "weighted_degree": 63
     },
@@ -37489,7 +37489,7 @@
       "legacy_id": "信息检索",
       "level": 6,
       "name": "信息检索",
-      "rank": 199,
+      "rank": 200,
       "related_count": 55,
       "weighted_degree": 63
     },
@@ -37540,7 +37540,7 @@
       "legacy_id": "分布式训练",
       "level": 6,
       "name": "分布式训练",
-      "rank": 193,
+      "rank": 194,
       "related_count": 57,
       "weighted_degree": 63
     },
@@ -37579,11 +37579,11 @@
       "weighted_degree": 105
     },
     {
-      "article_count": 12,
+      "article_count": 13,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:Amazon DynamoDB",
-      "degree": 21,
+      "degree": 23,
       "description": "文章标签: 博客与播客",
       "id": "tag:博客与播客",
       "layer": "tag",
@@ -37591,9 +37591,9 @@
       "legacy_id": "博客与播客",
       "level": 6,
       "name": "博客与播客",
-      "rank": 331,
-      "related_count": 21,
-      "weighted_degree": 38
+      "rank": 281,
+      "related_count": 23,
+      "weighted_degree": 42
     },
     {
       "article_count": 9,
@@ -37608,7 +37608,7 @@
       "legacy_id": "可观测性",
       "level": 6,
       "name": "可观测性",
-      "rank": 200,
+      "rank": 201,
       "related_count": 55,
       "weighted_degree": 63
     },
@@ -37846,7 +37846,7 @@
       "legacy_id": "安全",
       "level": 6,
       "name": "安全",
-      "rank": 204,
+      "rank": 205,
       "related_count": 48,
       "weighted_degree": 63
     },
@@ -37914,7 +37914,7 @@
       "legacy_id": "工作流",
       "level": 6,
       "name": "工作流",
-      "rank": 24,
+      "rank": 25,
       "related_count": 210,
       "weighted_degree": 350
     },
@@ -38135,7 +38135,7 @@
       "legacy_id": "开源生态",
       "level": 6,
       "name": "开源生态",
-      "rank": 190,
+      "rank": 191,
       "related_count": 58,
       "weighted_degree": 63
     },
@@ -38288,7 +38288,7 @@
       "legacy_id": "技术选型",
       "level": 6,
       "name": "技术选型",
-      "rank": 196,
+      "rank": 197,
       "related_count": 56,
       "weighted_degree": 63
     },
@@ -38492,7 +38492,7 @@
       "legacy_id": "数学推理",
       "level": 6,
       "name": "数学推理",
-      "rank": 201,
+      "rank": 202,
       "related_count": 55,
       "weighted_degree": 63
     },
@@ -38667,11 +38667,11 @@
       "weighted_degree": 385
     },
     {
-      "article_count": 30,
+      "article_count": 31,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
-      "degree": 22,
+      "degree": 24,
       "description": "文章标签: 来源快报",
       "id": "tag:来源快报",
       "layer": "tag",
@@ -38679,9 +38679,9 @@
       "legacy_id": "来源快报",
       "level": 6,
       "name": "来源快报",
-      "rank": 207,
-      "related_count": 22,
-      "weighted_degree": 59
+      "rank": 189,
+      "related_count": 24,
+      "weighted_degree": 63
     },
     {
       "article_count": 40,
@@ -38900,7 +38900,7 @@
       "legacy_id": "模型评测",
       "level": 6,
       "name": "模型评测",
-      "rank": 197,
+      "rank": 198,
       "related_count": 56,
       "weighted_degree": 63
     },
@@ -38934,7 +38934,7 @@
       "legacy_id": "模型量化",
       "level": 6,
       "name": "模型量化",
-      "rank": 191,
+      "rank": 192,
       "related_count": 58,
       "weighted_degree": 63
     },
@@ -38968,7 +38968,7 @@
       "legacy_id": "浏览器",
       "level": 6,
       "name": "浏览器",
-      "rank": 192,
+      "rank": 193,
       "related_count": 58,
       "weighted_degree": 63
     },
@@ -39172,7 +39172,7 @@
       "legacy_id": "算法",
       "level": 6,
       "name": "算法",
-      "rank": 202,
+      "rank": 203,
       "related_count": 54,
       "weighted_degree": 63
     },
@@ -39393,7 +39393,7 @@
       "legacy_id": "自监督学习",
       "level": 6,
       "name": "自监督学习",
-      "rank": 194,
+      "rank": 195,
       "related_count": 57,
       "weighted_degree": 63
     },

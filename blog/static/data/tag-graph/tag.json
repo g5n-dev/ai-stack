@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-16T20:15:17Z",
+  "generated_at": "2026-07-16T21:19:25Z",
   "layer": "tag",
   "layers": {
     "application": {
@@ -4872,6 +4872,22 @@
       "weight": 2
     },
     {
+      "id": "edge:cooccurrence:tag:AI->tag:Google One",
+      "source": "tag:AI",
+      "strength": 0.5,
+      "target": "tag:Google One",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:AI->tag:Google Workspace",
+      "source": "tag:AI",
+      "strength": 0.5,
+      "target": "tag:Google Workspace",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
       "id": "edge:cooccurrence:tag:AI->tag:HDD",
       "source": "tag:AI",
       "strength": 0.5,
@@ -5485,7 +5501,7 @@
       "strength": 1,
       "target": "tag:博客与播客",
       "type": "cooccurrence",
-      "weight": 2
+      "weight": 3
     },
     {
       "id": "edge:cooccurrence:tag:AI->tag:原理",
@@ -6101,7 +6117,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 2
+      "weight": 3
     },
     {
       "id": "edge:cooccurrence:tag:AI->tag:架构设计",
@@ -124220,6 +124236,46 @@
       "source": "tag:Google I/O",
       "strength": 0.5,
       "target": "tag:自然语言编程",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Google One->tag:Google Workspace",
+      "source": "tag:Google One",
+      "strength": 0.5,
+      "target": "tag:Google Workspace",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Google One->tag:博客与播客",
+      "source": "tag:Google One",
+      "strength": 0.5,
+      "target": "tag:博客与播客",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Google One->tag:来源快报",
+      "source": "tag:Google One",
+      "strength": 0.5,
+      "target": "tag:来源快报",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Google Workspace->tag:博客与播客",
+      "source": "tag:Google Workspace",
+      "strength": 0.5,
+      "target": "tag:博客与播客",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Google Workspace->tag:来源快报",
+      "source": "tag:Google Workspace",
+      "strength": 0.5,
+      "target": "tag:来源快报",
       "type": "cooccurrence",
       "weight": 1
     },
@@ -267237,7 +267293,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 11
+      "weight": 12
     },
     {
       "id": "edge:cooccurrence:tag:博尔赫斯->tag:哲学",
@@ -375860,7 +375916,7 @@
       "legacy_id": "3D重建",
       "level": 6,
       "name": "3D重建",
-      "rank": 323,
+      "rank": 324,
       "related_count": 34,
       "weighted_degree": 42
     },
@@ -377480,11 +377536,11 @@
       "weighted_degree": 7
     },
     {
-      "article_count": 51,
+      "article_count": 52,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
-      "degree": 257,
+      "degree": 259,
       "description": "文章标签: AI",
       "id": "tag:AI",
       "layer": "tag",
@@ -377492,9 +377548,9 @@
       "legacy_id": "AI",
       "level": 6,
       "name": "AI",
-      "rank": 25,
-      "related_count": 256,
-      "weighted_degree": 348.6
+      "rank": 24,
+      "related_count": 258,
+      "weighted_degree": 352.6
     },
     {
       "article_count": 132,
@@ -377730,7 +377786,7 @@
       "legacy_id": "AI Research",
       "level": 6,
       "name": "AI Research",
-      "rank": 6822,
+      "rank": 6824,
       "related_count": 2,
       "weighted_degree": 2.6
     },
@@ -383748,7 +383804,7 @@
       "legacy_id": "Apple Silicon",
       "level": 6,
       "name": "Apple Silicon",
-      "rank": 313,
+      "rank": 314,
       "related_count": 36,
       "weighted_degree": 42
     },
@@ -384173,7 +384229,7 @@
       "legacy_id": "ASR",
       "level": 6,
       "name": "ASR",
-      "rank": 307,
+      "rank": 308,
       "related_count": 37,
       "weighted_degree": 42
     },
@@ -385329,7 +385385,7 @@
       "legacy_id": "blogs_podcasts",
       "level": 6,
       "name": "blogs_podcasts",
-      "rank": 6857,
+      "rank": 6859,
       "related_count": 0,
       "weighted_degree": 0
     },
@@ -386179,7 +386235,7 @@
       "legacy_id": "CI/CD",
       "level": 6,
       "name": "CI/CD",
-      "rank": 203,
+      "rank": 204,
       "related_count": 49,
       "weighted_degree": 63
     },
@@ -388117,7 +388173,7 @@
       "legacy_id": "cs.CR",
       "level": 6,
       "name": "cs.CR",
-      "rank": 6814,
+      "rank": 6816,
       "related_count": 3,
       "weighted_degree": 3
     },
@@ -388304,7 +388360,7 @@
       "legacy_id": "cs.SE",
       "level": 6,
       "name": "cs.SE",
-      "rank": 6847,
+      "rank": 6849,
       "related_count": 1,
       "weighted_degree": 1
     },
@@ -391653,7 +391709,7 @@
       "legacy_id": "Function Calling",
       "level": 6,
       "name": "Function Calling",
-      "rank": 205,
+      "rank": 206,
       "related_count": 45,
       "weighted_degree": 63
     },
@@ -392435,7 +392491,7 @@
       "legacy_id": "GitHub Copilot",
       "level": 6,
       "name": "GitHub Copilot",
-      "rank": 282,
+      "rank": 283,
       "related_count": 41,
       "weighted_degree": 42
     },
@@ -392452,7 +392508,7 @@
       "legacy_id": "github_trending",
       "level": 6,
       "name": "github_trending",
-      "rank": 6848,
+      "rank": 6850,
       "related_count": 1,
       "weighted_degree": 1
     },
@@ -392588,7 +392644,7 @@
       "legacy_id": "GLM-5",
       "level": 6,
       "name": "GLM-5",
-      "rank": 298,
+      "rank": 299,
       "related_count": 38,
       "weighted_degree": 42
     },
@@ -392639,7 +392695,7 @@
       "legacy_id": "Global Affairs",
       "level": 6,
       "name": "Global Affairs",
-      "rank": 6830,
+      "rank": 6832,
       "related_count": 2,
       "weighted_degree": 2
     },
@@ -392829,6 +392885,40 @@
       "rank": 2417,
       "related_count": 7,
       "weighted_degree": 7
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:other",
+      "degree": 4,
+      "description": "文章标签: Google One",
+      "id": "tag:Google One",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Google One",
+      "level": 6,
+      "name": "Google One",
+      "rank": 6805,
+      "related_count": 4,
+      "weighted_degree": 4
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:other",
+      "degree": 4,
+      "description": "文章标签: Google Workspace",
+      "id": "tag:Google Workspace",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Google Workspace",
+      "level": 6,
+      "name": "Google Workspace",
+      "rank": 6806,
+      "related_count": 4,
+      "weighted_degree": 4
     },
     {
       "article_count": 3,
@@ -393047,7 +393137,7 @@
       "legacy_id": "GPT-5.4",
       "level": 6,
       "name": "GPT-5.4",
-      "rank": 328,
+      "rank": 329,
       "related_count": 33,
       "weighted_degree": 42
     },
@@ -393795,7 +393885,7 @@
       "legacy_id": "hacker_news",
       "level": 6,
       "name": "hacker_news",
-      "rank": 6856,
+      "rank": 6858,
       "related_count": 0,
       "weighted_degree": 0
     },
@@ -395665,7 +395755,7 @@
       "legacy_id": "juejin",
       "level": 6,
       "name": "juejin",
-      "rank": 6858,
+      "rank": 6860,
       "related_count": 0,
       "weighted_degree": 0
     },
@@ -396124,7 +396214,7 @@
       "legacy_id": "KV Cache",
       "level": 6,
       "name": "KV Cache",
-      "rank": 206,
+      "rank": 207,
       "related_count": 44,
       "weighted_degree": 63
     },
@@ -398453,7 +398543,7 @@
       "legacy_id": "MCP 协议",
       "level": 6,
       "name": "MCP 协议",
-      "rank": 189,
+      "rank": 190,
       "related_count": 62,
       "weighted_degree": 63
     },
@@ -398776,7 +398866,7 @@
       "legacy_id": "Meta",
       "level": 6,
       "name": "Meta",
-      "rank": 283,
+      "rank": 284,
       "related_count": 41,
       "weighted_degree": 42
     },
@@ -398997,7 +399087,7 @@
       "legacy_id": "MiniMax",
       "level": 6,
       "name": "MiniMax",
-      "rank": 299,
+      "rank": 300,
       "related_count": 38,
       "weighted_degree": 42
     },
@@ -400272,7 +400362,7 @@
       "legacy_id": "Nemotron",
       "level": 6,
       "name": "Nemotron",
-      "rank": 318,
+      "rank": 319,
       "related_count": 35,
       "weighted_degree": 42
     },
@@ -403213,7 +403303,7 @@
       "legacy_id": "PPO",
       "level": 6,
       "name": "PPO",
-      "rank": 330,
+      "rank": 331,
       "related_count": 30,
       "weighted_degree": 42
     },
@@ -404029,7 +404119,7 @@
       "legacy_id": "q-bio.GN",
       "level": 6,
       "name": "q-bio.GN",
-      "rank": 6831,
+      "rank": 6833,
       "related_count": 2,
       "weighted_degree": 2
     },
@@ -404386,7 +404476,7 @@
       "legacy_id": "Qwen3.5",
       "level": 6,
       "name": "Qwen3.5",
-      "rank": 319,
+      "rank": 320,
       "related_count": 35,
       "weighted_degree": 42
     },
@@ -406868,7 +406958,7 @@
       "legacy_id": "Serverless",
       "level": 6,
       "name": "Serverless",
-      "rank": 308,
+      "rank": 309,
       "related_count": 37,
       "weighted_degree": 42
     },
@@ -410081,7 +410171,7 @@
       "legacy_id": "Token优化",
       "level": 6,
       "name": "Token优化",
-      "rank": 195,
+      "rank": 196,
       "related_count": 56,
       "weighted_degree": 63
     },
@@ -410642,7 +410732,7 @@
       "legacy_id": "TTS",
       "level": 6,
       "name": "TTS",
-      "rank": 198,
+      "rank": 199,
       "related_count": 55,
       "weighted_degree": 63
     },
@@ -411917,7 +412007,7 @@
       "legacy_id": "vLLM",
       "level": 6,
       "name": "vLLM",
-      "rank": 324,
+      "rank": 325,
       "related_count": 34,
       "weighted_degree": 42
     },
@@ -413855,7 +413945,7 @@
       "legacy_id": "上下文学习",
       "level": 6,
       "name": "上下文学习",
-      "rank": 294,
+      "rank": 295,
       "related_count": 39,
       "weighted_degree": 42
     },
@@ -418292,7 +418382,7 @@
       "legacy_id": "代码执行",
       "level": 6,
       "name": "代码执行",
-      "rank": 314,
+      "rank": 315,
       "related_count": 36,
       "weighted_degree": 42
     },
@@ -421182,7 +421272,7 @@
       "legacy_id": "信息检索",
       "level": 6,
       "name": "信息检索",
-      "rank": 199,
+      "rank": 200,
       "related_count": 55,
       "weighted_degree": 63
     },
@@ -422984,7 +423074,7 @@
       "legacy_id": "内容创作",
       "level": 6,
       "name": "内容创作",
-      "rank": 286,
+      "rank": 287,
       "related_count": 40,
       "weighted_degree": 42
     },
@@ -424463,7 +424553,7 @@
       "legacy_id": "分布式系统",
       "level": 6,
       "name": "分布式系统",
-      "rank": 287,
+      "rank": 288,
       "related_count": 40,
       "weighted_degree": 42
     },
@@ -424497,7 +424587,7 @@
       "legacy_id": "分布式训练",
       "level": 6,
       "name": "分布式训练",
-      "rank": 193,
+      "rank": 194,
       "related_count": 57,
       "weighted_degree": 63
     },
@@ -424752,7 +424842,7 @@
       "legacy_id": "创业",
       "level": 6,
       "name": "创业",
-      "rank": 309,
+      "rank": 310,
       "related_count": 37,
       "weighted_degree": 42
     },
@@ -427137,11 +427227,11 @@
       "weighted_degree": 7
     },
     {
-      "article_count": 12,
+      "article_count": 13,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:Amazon DynamoDB",
-      "degree": 21,
+      "degree": 23,
       "description": "文章标签: 博客与播客",
       "id": "tag:博客与播客",
       "layer": "tag",
@@ -427149,9 +427239,9 @@
       "legacy_id": "博客与播客",
       "level": 6,
       "name": "博客与播客",
-      "rank": 331,
-      "related_count": 21,
-      "weighted_degree": 38
+      "rank": 281,
+      "related_count": 23,
+      "weighted_degree": 42
     },
     {
       "article_count": 1,
@@ -429087,7 +429177,7 @@
       "legacy_id": "可观测性",
       "level": 6,
       "name": "可观测性",
-      "rank": 200,
+      "rank": 201,
       "related_count": 55,
       "weighted_degree": 63
     },
@@ -430413,7 +430503,7 @@
       "legacy_id": "商业模式",
       "level": 6,
       "name": "商业模式",
-      "rank": 300,
+      "rank": 301,
       "related_count": 38,
       "weighted_degree": 42
     },
@@ -430634,7 +430724,7 @@
       "legacy_id": "因果推断",
       "level": 6,
       "name": "因果推断",
-      "rank": 288,
+      "rank": 289,
       "related_count": 40,
       "weighted_degree": 42
     },
@@ -430957,7 +431047,7 @@
       "legacy_id": "图像处理",
       "level": 6,
       "name": "图像处理",
-      "rank": 310,
+      "rank": 311,
       "related_count": 37,
       "weighted_degree": 42
     },
@@ -431161,7 +431251,7 @@
       "legacy_id": "图神经网络",
       "level": 6,
       "name": "图神经网络",
-      "rank": 289,
+      "rank": 290,
       "related_count": 40,
       "weighted_degree": 42
     },
@@ -433439,7 +433529,7 @@
       "legacy_id": "多租户",
       "level": 6,
       "name": "多租户",
-      "rank": 301,
+      "rank": 302,
       "related_count": 38,
       "weighted_degree": 42
     },
@@ -434850,7 +434940,7 @@
       "legacy_id": "子代理",
       "level": 6,
       "name": "子代理",
-      "rank": 315,
+      "rank": 316,
       "related_count": 36,
       "weighted_degree": 42
     },
@@ -435309,7 +435399,7 @@
       "legacy_id": "安全",
       "level": 6,
       "name": "安全",
-      "rank": 204,
+      "rank": 205,
       "related_count": 48,
       "weighted_degree": 63
     },
@@ -436312,7 +436402,7 @@
       "legacy_id": "实战教程",
       "level": 6,
       "name": "实战教程",
-      "rank": 320,
+      "rank": 321,
       "related_count": 35,
       "weighted_degree": 42
     },
@@ -437655,7 +437745,7 @@
       "legacy_id": "对抗攻击",
       "level": 6,
       "name": "对抗攻击",
-      "rank": 302,
+      "rank": 303,
       "related_count": 38,
       "weighted_degree": 42
     },
@@ -438675,7 +438765,7 @@
       "legacy_id": "工作流",
       "level": 6,
       "name": "工作流",
-      "rank": 24,
+      "rank": 25,
       "related_count": 210,
       "weighted_degree": 350
     },
@@ -440970,7 +441060,7 @@
       "legacy_id": "开发指南",
       "level": 6,
       "name": "开发指南",
-      "rank": 303,
+      "rank": 304,
       "related_count": 38,
       "weighted_degree": 42
     },
@@ -441089,7 +441179,7 @@
       "legacy_id": "开发环境",
       "level": 6,
       "name": "开发环境",
-      "rank": 311,
+      "rank": 312,
       "related_count": 37,
       "weighted_degree": 42
     },
@@ -441259,7 +441349,7 @@
       "legacy_id": "开发范式",
       "level": 6,
       "name": "开发范式",
-      "rank": 316,
+      "rank": 317,
       "related_count": 36,
       "weighted_degree": 42
     },
@@ -441871,7 +441961,7 @@
       "legacy_id": "开源生态",
       "level": 6,
       "name": "开源生态",
-      "rank": 190,
+      "rank": 191,
       "related_count": 58,
       "weighted_degree": 63
     },
@@ -442925,7 +443015,7 @@
       "legacy_id": "微软",
       "level": 6,
       "name": "微软",
-      "rank": 290,
+      "rank": 291,
       "related_count": 40,
       "weighted_degree": 42
     },
@@ -443537,7 +443627,7 @@
       "legacy_id": "性能提升",
       "level": 6,
       "name": "性能提升",
-      "rank": 321,
+      "rank": 322,
       "related_count": 35,
       "weighted_degree": 42
     },
@@ -444200,7 +444290,7 @@
       "legacy_id": "成本控制",
       "level": 6,
       "name": "成本控制",
-      "rank": 281,
+      "rank": 282,
       "related_count": 42,
       "weighted_degree": 42
     },
@@ -445475,7 +445565,7 @@
       "legacy_id": "技术演进",
       "level": 6,
       "name": "技术演进",
-      "rank": 312,
+      "rank": 313,
       "related_count": 37,
       "weighted_degree": 42
     },
@@ -445747,7 +445837,7 @@
       "legacy_id": "技术选型",
       "level": 6,
       "name": "技术选型",
-      "rank": 196,
+      "rank": 197,
       "related_count": 56,
       "weighted_degree": 63
     },
@@ -447447,7 +447537,7 @@
       "legacy_id": "推测解码",
       "level": 6,
       "name": "推测解码",
-      "rank": 325,
+      "rank": 326,
       "related_count": 34,
       "weighted_degree": 42
     },
@@ -449130,7 +449220,7 @@
       "legacy_id": "教育科技",
       "level": 6,
       "name": "教育科技",
-      "rank": 284,
+      "rank": 285,
       "related_count": 41,
       "weighted_degree": 42
     },
@@ -449470,7 +449560,7 @@
       "legacy_id": "数学推理",
       "level": 6,
       "name": "数学推理",
-      "rank": 201,
+      "rank": 202,
       "related_count": 55,
       "weighted_degree": 63
     },
@@ -449827,7 +449917,7 @@
       "legacy_id": "数据安全",
       "level": 6,
       "name": "数据安全",
-      "rank": 291,
+      "rank": 292,
       "related_count": 40,
       "weighted_degree": 42
     },
@@ -451799,7 +451889,7 @@
       "legacy_id": "文生图",
       "level": 6,
       "name": "文生图",
-      "rank": 304,
+      "rank": 305,
       "related_count": 38,
       "weighted_degree": 42
     },
@@ -453227,7 +453317,7 @@
       "legacy_id": "显存优化",
       "level": 6,
       "name": "显存优化",
-      "rank": 295,
+      "rank": 296,
       "related_count": 39,
       "weighted_degree": 42
     },
@@ -455527,11 +455617,11 @@
       "weighted_degree": 7
     },
     {
-      "article_count": 30,
+      "article_count": 31,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
-      "degree": 22,
+      "degree": 24,
       "description": "文章标签: 来源快报",
       "id": "tag:来源快报",
       "layer": "tag",
@@ -455539,9 +455629,9 @@
       "legacy_id": "来源快报",
       "level": 6,
       "name": "来源快报",
-      "rank": 207,
-      "related_count": 22,
-      "weighted_degree": 59
+      "rank": 189,
+      "related_count": 24,
+      "weighted_degree": 63
     },
     {
       "article_count": 1,
@@ -458531,7 +458621,7 @@
       "legacy_id": "模型评测",
       "level": 6,
       "name": "模型评测",
-      "rank": 197,
+      "rank": 198,
       "related_count": 56,
       "weighted_degree": 63
     },
@@ -458854,7 +458944,7 @@
       "legacy_id": "模型量化",
       "level": 6,
       "name": "模型量化",
-      "rank": 191,
+      "rank": 192,
       "related_count": 58,
       "weighted_degree": 63
     },
@@ -460826,7 +460916,7 @@
       "legacy_id": "浏览器",
       "level": 6,
       "name": "浏览器",
-      "rank": 192,
+      "rank": 193,
       "related_count": 58,
       "weighted_degree": 63
     },
@@ -464719,7 +464809,7 @@
       "legacy_id": "生成式模型",
       "level": 6,
       "name": "生成式模型",
-      "rank": 322,
+      "rank": 323,
       "related_count": 35,
       "weighted_degree": 42
     },
@@ -469377,7 +469467,7 @@
       "legacy_id": "端到端",
       "level": 6,
       "name": "端到端",
-      "rank": 292,
+      "rank": 293,
       "related_count": 40,
       "weighted_degree": 42
     },
@@ -470006,7 +470096,7 @@
       "legacy_id": "算法",
       "level": 6,
       "name": "算法",
-      "rank": 202,
+      "rank": 203,
       "related_count": 54,
       "weighted_degree": 63
     },
@@ -470975,7 +471065,7 @@
       "legacy_id": "红队测试",
       "level": 6,
       "name": "红队测试",
-      "rank": 305,
+      "rank": 306,
       "related_count": 38,
       "weighted_degree": 42
     },
@@ -472403,7 +472493,7 @@
       "legacy_id": "编码代理",
       "level": 6,
       "name": "编码代理",
-      "rank": 329,
+      "rank": 330,
       "related_count": 31,
       "weighted_degree": 42
     },
@@ -472522,7 +472612,7 @@
       "legacy_id": "编程助手",
       "level": 6,
       "name": "编程助手",
-      "rank": 317,
+      "rank": 318,
       "related_count": 36,
       "weighted_degree": 42
     },
@@ -474494,7 +474584,7 @@
       "legacy_id": "自动化开发",
       "level": 6,
       "name": "自动化开发",
-      "rank": 326,
+      "rank": 327,
       "related_count": 34,
       "weighted_degree": 42
     },
@@ -475803,7 +475893,7 @@
       "legacy_id": "自监督学习",
       "level": 6,
       "name": "自监督学习",
-      "rank": 194,
+      "rank": 195,
       "related_count": 57,
       "weighted_degree": 63
     },
@@ -480070,7 +480160,7 @@
       "legacy_id": "评估基准",
       "level": 6,
       "name": "评估基准",
-      "rank": 285,
+      "rank": 286,
       "related_count": 41,
       "weighted_degree": 42
     },
@@ -482671,7 +482761,7 @@
       "legacy_id": "越狱",
       "level": 6,
       "name": "越狱",
-      "rank": 327,
+      "rank": 328,
       "related_count": 34,
       "weighted_degree": 42
     },
@@ -482858,7 +482948,7 @@
       "legacy_id": "跨平台",
       "level": 6,
       "name": "跨平台",
-      "rank": 296,
+      "rank": 297,
       "related_count": 39,
       "weighted_degree": 42
     },
@@ -486819,7 +486909,7 @@
       "legacy_id": "长文本",
       "level": 6,
       "name": "长文本",
-      "rank": 306,
+      "rank": 307,
       "related_count": 38,
       "weighted_degree": 42
     },
@@ -488400,7 +488490,7 @@
       "legacy_id": "零样本",
       "level": 6,
       "name": "零样本",
-      "rank": 293,
+      "rank": 294,
       "related_count": 40,
       "weighted_degree": 42
     },
@@ -489760,7 +489850,7 @@
       "legacy_id": "风险控制",
       "level": 6,
       "name": "风险控制",
-      "rank": 297,
+      "rank": 298,
       "related_count": 39,
       "weighted_degree": 42
     },
@@ -490872,14 +490962,14 @@
   ],
   "stats": {
     "links_by_type": {
-      "cooccurrence": 46372,
+      "cooccurrence": 46379,
       "semantic": 540
     },
     "nodes_by_layer": {
-      "tag": 6796
+      "tag": 6798
     },
-    "total_links": 46912,
-    "total_nodes": 6796
+    "total_links": 46919,
+    "total_nodes": 6798
   },
   "version": 2
 }
