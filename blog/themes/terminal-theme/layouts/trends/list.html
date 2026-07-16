@@ -131,7 +131,7 @@
       <section class="trend-stage" aria-labelledby="trend-stage-title">
         <div class="trend-stage__toolbar">
           <div>
-            <p class="trend-panel-index">02 / SIGNAL FIELD</p>
+            <p class="trend-panel-index">02 / SIGNAL TOPOLOGY</p>
             <h2 id="trend-stage-title">趋势矩阵</h2>
           </div>
           <div class="trend-stage__actions">
@@ -148,17 +148,18 @@
         </div>
 
         <div id="trend-matrix-panel" class="trend-matrix-panel">
-          <div class="trend-axis trend-axis--vertical" aria-hidden="true">证据数量 ↑</div>
-          <canvas id="trend-matrix" role="img" aria-label="趋势矩阵：横轴为增长方向，纵轴为当前证据数量，气泡大小表示来源覆盖；气泡偏移时通过引线连接真实数据锚点。"></canvas>
-          <div class="trend-axis trend-axis--horizontal" aria-hidden="true">
-            <span>降温</span><span>增长方向</span><span>上升</span>
+          <div class="trend-topology-meta" aria-hidden="true">
+            <span>SIGNAL TOPOLOGY</span>
+            <span>RANKED / EVIDENCE FIELD</span>
           </div>
-          <div class="trend-matrix-legend" aria-hidden="true">
-            <span data-state="new">新出现</span>
-            <span data-state="rising">上升</span>
-            <span data-state="steady">稳定</span>
-            <span data-state="cooling">降温</span>
+          <canvas id="trend-matrix" role="img" aria-label="趋势拓扑矩阵：每个细胞域代表一个真实趋势主题；外围圈径编码证据数量，中心琥珀域为当前或最高排名主题的固定放大展开态，用于展示来源与场景；标签显示真实排名、得分与信号状态。主题位置仅用于分组与排名轨道，不表示虚构的横纵坐标。"></canvas>
+          <div class="trend-matrix-legend" role="note" aria-label="趋势拓扑图例">
+            <span data-key="topic">青色：主题细胞域</span>
+            <span data-key="active">琥珀：当前主题</span>
+            <span data-key="metric">外圈圈径：证据量</span>
+            <span data-key="facet">节点：来源与场景</span>
           </div>
+          <p class="trend-matrix-note">位置用于主题分组与排名轨道；中心为固定放大展开态，外围圈径、证据、来源、得分与状态均来自当前数据窗口。</p>
         </div>
 
         <div id="trend-empty" class="trend-empty" hidden>
@@ -166,17 +167,17 @@
           <p>尝试扩大时间窗口，或清除来源与场景筛选。</p>
         </div>
 
+        <aside id="trend-detail" class="trend-detail" aria-labelledby="trend-detail-title">
+          <div class="trend-detail__placeholder">
+            <p class="trend-panel-index">03 / EVIDENCE DRILLDOWN</p>
+            <h2 id="trend-detail-title">主题详情</h2>
+            <p>选择主题细胞域或排名条目，查看评分依据、关联主题和证据文章。</p>
+            <small>站内文章在当前标签页打开；使用浏览器返回可恢复当前趋势状态。</small>
+          </div>
+        </aside>
+
         <ol id="trend-list" class="trend-list" aria-label="趋势主题排名"></ol>
       </section>
-
-      <aside id="trend-detail" class="trend-detail" aria-labelledby="trend-detail-title">
-        <div class="trend-detail__placeholder">
-          <p class="trend-panel-index">03 / EVIDENCE DRILLDOWN</p>
-          <h2 id="trend-detail-title">主题详情</h2>
-          <p>选择趋势气泡或排名条目，查看评分依据、关联主题和证据文章。</p>
-          <small>站内文章在当前标签页打开；使用浏览器返回可恢复当前趋势状态。</small>
-        </div>
-      </aside>
     </div>
 
     <noscript>

@@ -171,8 +171,9 @@
 }
 
 .trend-layout {
+  position: relative;
   display: grid;
-  grid-template-columns: minmax(238px, 280px) minmax(520px, 1fr) minmax(300px, 350px);
+  grid-template-columns: minmax(238px, 280px) minmax(0, 1fr);
   align-items: start;
   border: 1px solid var(--trend-border);
   border-radius: 10px;
@@ -189,8 +190,6 @@
 
 .trend-controls,
 .trend-detail {
-  position: sticky;
-  top: calc(var(--site-header-height) + 16px);
   max-height: calc(100vh - var(--site-header-height) - 32px);
   overflow-y: auto;
   scrollbar-width: thin;
@@ -198,17 +197,69 @@
 }
 
 .trend-controls {
+  position: sticky;
+  top: calc(var(--site-header-height) + 16px);
+  grid-column: 1;
   padding: 20px;
   border-right: 1px solid var(--trend-border);
 }
 
 .trend-detail {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 20;
+  width: min(370px, calc(100vw - 32px));
   padding: 20px;
   border-left: 1px solid var(--trend-border);
-  background: rgba(var(--terminal-bg), 0.34);
+  border: 1px solid rgba(var(--muted-teal), 0.38);
+  border-radius: 6px;
+  background: rgba(var(--terminal-bg), 0.98);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.62), 0 0 28px rgba(var(--primary), 0.08);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(calc(100% + 32px));
+  visibility: hidden;
+}
+
+.trend-workbench[data-detail="open"] .trend-detail {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0);
+  visibility: visible;
+}
+
+@media (min-width: 1440px) {
+  .trend-workbench[data-detail="open"] .trend-stage {
+    padding-right: 408px;
+  }
+}
+
+@media (max-width: 1439px) {
+  .trend-detail {
+    position: static;
+    grid-column: 2;
+    display: none;
+    width: auto;
+    max-height: none;
+    opacity: 1;
+    transform: none;
+    visibility: visible;
+    border-top: 1px solid var(--trend-border);
+    border-right: 0;
+    border-bottom: 0;
+    border-left: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .trend-workbench[data-detail="open"] .trend-detail {
+    display: block;
+  }
 }
 
 .trend-stage {
+  grid-column: 2;
   min-height: 740px;
   padding: 20px 22px 28px;
 }
@@ -462,81 +513,95 @@
 .trend-matrix-panel {
   position: relative;
   margin-top: 4px;
-  padding: 14px 10px 42px 34px;
+  padding: 0 0 66px;
   overflow: hidden;
-  border: 1px solid rgba(var(--muted-teal), 0.13);
-  border-radius: 8px;
-  background: rgba(var(--terminal-bg), 0.4);
+  border: 1px solid rgba(var(--muted-teal), 0.24);
+  border-radius: 4px;
+  background: rgb(3, 9, 18);
+  box-shadow: inset 0 0 54px rgba(var(--primary), 0.035);
 }
 
 #trend-matrix {
   display: block;
   width: 100%;
-  height: 430px;
-  border-radius: 4px;
-  cursor: crosshair;
+  height: clamp(560px, 52vw, 820px);
+  cursor: default;
 }
 
-.trend-axis {
-  color: var(--trend-faint);
+.trend-topology-meta {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  z-index: 2;
+  display: grid;
+  justify-items: end;
+  color: rgba(var(--off-white), 0.48);
   font-family: var(--site-font-mono);
   font-size: 11px;
-  letter-spacing: 0.05em;
-}
-
-.trend-axis--vertical {
-  position: absolute;
-  top: 50%;
-  left: 10px;
-  transform: translate(-42%, -50%) rotate(-90deg);
-  transform-origin: center;
-}
-
-.trend-axis--horizontal {
-  position: absolute;
-  right: 15px;
-  bottom: 13px;
-  left: 42px;
-  display: flex;
-  justify-content: space-between;
+  letter-spacing: 0.12em;
+  line-height: 1.45;
+  pointer-events: none;
 }
 
 .trend-matrix-legend {
   position: absolute;
-  top: 23px;
-  right: 20px;
+  right: 16px;
+  bottom: 35px;
+  left: 16px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-end;
-  gap: 7px 10px;
-  max-width: 260px;
+  gap: 6px 14px;
   color: var(--trend-muted);
   font-family: var(--site-font-mono);
   font-size: 11px;
-  pointer-events: none;
+}
+
+.trend-matrix-legend span {
+  white-space: nowrap;
 }
 
 .trend-matrix-legend span::before {
   display: inline-block;
-  width: 6px;
-  height: 6px;
-  margin-right: 5px;
+  width: 7px;
+  height: 7px;
+  margin-right: 6px;
   border-radius: 50%;
   background: rgb(var(--primary));
   box-shadow: 0 0 8px rgba(var(--primary), 0.48);
   content: "";
 }
 
-.trend-matrix-legend span[data-state="new"]::before {
+.trend-matrix-legend span[data-key="active"]::before {
   background: rgb(var(--trend-amber));
+  box-shadow: 0 0 8px rgba(var(--trend-amber), 0.48);
 }
 
-.trend-matrix-legend span[data-state="steady"]::before {
-  background: rgb(var(--trend-blue));
+.trend-matrix-legend span[data-key="metric"]::before {
+  background: transparent;
+  border: 1px solid rgba(var(--primary), 0.82);
+  box-shadow: none;
 }
 
-.trend-matrix-legend span[data-state="cooling"]::before {
-  background: rgba(var(--off-white), 0.46);
+.trend-matrix-legend span[data-key="facet"]::before {
+  width: 4px;
+  height: 4px;
+  margin-inline: 2px 7px;
+  background: rgba(var(--off-white), 0.84);
+  box-shadow: 0 0 7px rgba(var(--primary), 0.46);
+}
+
+.trend-matrix-note {
+  position: absolute;
+  right: 16px;
+  bottom: 10px;
+  left: 16px;
+  margin: 0;
+  overflow: hidden;
+  color: rgba(var(--off-white), 0.46);
+  font-size: 11px;
+  line-height: 1.4;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .trend-empty,
@@ -913,7 +978,7 @@
   }
 
   .trend-layout {
-    grid-template-columns: 240px minmax(470px, 1fr) 300px;
+    grid-template-columns: 240px minmax(0, 1fr);
   }
 
   .trend-stage {
@@ -972,7 +1037,7 @@
   }
 
   #trend-matrix {
-    height: clamp(220px, calc(100vh - 500px), 360px);
+    height: clamp(450px, calc(100vh - 360px), 620px);
   }
 }
 
@@ -985,13 +1050,6 @@
     grid-row: 1 / span 2;
   }
 
-  .trend-detail {
-    position: static;
-    grid-column: 2;
-    max-height: none;
-    border-top: 1px solid var(--trend-border);
-    border-left: 0;
-  }
 }
 
 @media (max-width: 760px) {
@@ -1077,17 +1135,25 @@
   }
 
   #trend-matrix {
-    height: 340px;
+    height: clamp(440px, 78vw, 600px);
   }
 
   .trend-matrix-panel {
-    padding-left: 28px;
+    padding-bottom: 88px;
   }
 
   .trend-matrix-legend {
-    top: 18px;
     right: 14px;
-    max-width: 180px;
+    bottom: 51px;
+    left: 14px;
+    gap: 5px 10px;
+  }
+
+  .trend-matrix-note {
+    right: 14px;
+    bottom: 12px;
+    left: 14px;
+    white-space: normal;
   }
 
   .trend-list {

@@ -27,12 +27,12 @@
         [0.572, 0.156],
         [0.798, 0.16],
         [0.124, 0.342],
-        [0.882, 0.43],
-        [0.136, 0.683],
-        [0.332, 0.82],
-        [0.577, 0.821],
-        [0.555, 1.02],
-        [0.795, 0.694]
+        [0.89, 0.36],
+        [0.14, 0.61],
+        [0.33, 0.78],
+        [0.8, 0.7],
+        [0.56, 0.93],
+        [0.91, 0.55]
     ];
     const COMMUNITY_COMPACT_SLOTS = [
         [0.16, 0.18],
@@ -41,6 +41,25 @@
         [0.8, 0.82],
         [0.5, 0.06]
     ];
+    const FOCUS_CONTEXT_SLOTS = [
+        [0.19, 0.2],
+        [0.79, 0.19],
+        [0.13, 0.51],
+        [0.85, 0.5],
+        [0.25, 0.81],
+        [0.72, 0.82]
+    ];
+    const FOCUS_COMPACT_SLOTS = [
+        [0.18, 0.17],
+        [0.82, 0.17],
+        [0.12, 0.48],
+        [0.88, 0.48],
+        [0.25, 0.79],
+        [0.75, 0.79]
+    ];
+    const FOCUS_INNER_LIMIT = 8;
+    const FOCUS_GROUP_SIZE = 3;
+    const FOCUS_GROUP_LIMIT = 6;
     const DEFAULT_INDEX_URL = "/data/tag-graph/index.json";
     const DEFAULT_WORKER_URL = "/js/data-parser-worker.js";
 
@@ -150,6 +169,8 @@
             this.currentGraph = this.coreGraph;
             this.communityGraph = null;
             this.expandedCommunityId = null;
+            this._detailCommunityId = null;
+            this._defaultCommunityExpansion = null;
             this.mode = "overview";
             this.layoutMode = "overview";
             this.cy = null;
@@ -407,11 +428,108 @@
             });
             this._bindCytoscapeEvents();
             this._initOverlay();
-            this.cy.ready(() => {
-                if (this.isDestroyed || !this.cy) return;
-                this._packOverviewLayers();
-                this._fitCurrentGraph(36);
+            this.cy.ready(() => this._settleInitialViewport());
+        }
+
+        _settleInitialViewport() {
+            if (this.isDestroyed || !this.cy || this.mode !== "overview") return false;
+            this._packOverviewLayers();
+            this._fitCurrentGraph(36);
+            return true;
+        }
+
+        _focusSemanticGroupKey(node) {
+            const communityId = String(node?.community_id ?? node?.community ?? "").trim();
+            if (communityId && communityId !== "community:other" && communityId !== "other") {
+                return `community:${communityId}`;
+            }
+            const category = String(node?.category ?? "").trim();
+            if (category && !["article_tag", "tag", "concept", "other"].includes(category)) {
+                return `category:${category}`;
+            }
+            const layer = String(node?.layer ?? "unknown").trim() || "unknown";
+            return `layer:${layer}`;
+        }
+
+        _buildFocusScenePlan(graphPayload, strengthByNode = new Map()) {
+            const graph = normalizeGraph(graphPayload);
+            const selectedId = String(this.selectedNodeId || "");
+            const compareFocusNodes = (left, right) =>
+                asNumber(strengthByNode.get(String(right.id)), 0) -
+                    asNumber(strengthByNode.get(String(left.id)), 0) ||
+                asNumber(left.rank, Number.MAX_SAFE_INTEGER) -
+                    asNumber(right.rank, Number.MAX_SAFE_INTEGER) ||
+                String(left.id).localeCompare(String(right.id));
+            const neighbors = graph.nodes
+                .filter((node) => String(node.id) !== selectedId && node.layer !== "community")
+                .sort(compareFocusNodes);
+            const innerCount = Math.min(
+                FOCUS_INNER_LIMIT,
+                Math.max(0, neighbors.length <= FOCUS_INNER_LIMIT + 2
+                    ? neighbors.length
+                    : Math.ceil(neighbors.length / 3))
+            );
+            const inner = neighbors.slice(0, innerCount);
+            const context = neighbors.slice(innerCount);
+            const nodes = new Map();
+            if (selectedId) nodes.set(selectedId, { role: "core", groupIndex: -1, groupOrder: 0 });
+            inner.forEach((node, index) => {
+                nodes.set(String(node.id), {
+                    role: "inner",
+                    groupIndex: -1,
+                    groupOrder: index
+                });
             });
+
+            const semanticGroups = new Map();
+            context.forEach((node) => {
+                const key = this._focusSemanticGroupKey(node);
+                if (!semanticGroups.has(key)) semanticGroups.set(key, []);
+                semanticGroups.get(key).push(node);
+            });
+            const chunks = [];
+            Array.from(semanticGroups.entries())
+                .sort((left, right) => {
+                    const leftOrder = context.indexOf(left[1][0]);
+                    const rightOrder = context.indexOf(right[1][0]);
+                    return leftOrder - rightOrder || left[0].localeCompare(right[0]);
+                })
+                .forEach(([key, groupNodes]) => {
+                    for (let offset = 0; offset < groupNodes.length; offset += FOCUS_GROUP_SIZE) {
+                        chunks.push({
+                            key: `${key}:${Math.floor(offset / FOCUS_GROUP_SIZE)}`,
+                            nodes: groupNodes.slice(offset, offset + FOCUS_GROUP_SIZE)
+                        });
+                    }
+                });
+            chunks.sort((left, right) => {
+                const leftNode = left.nodes[0];
+                const rightNode = right.nodes[0];
+                return compareFocusNodes(leftNode, rightNode) || left.key.localeCompare(right.key);
+            });
+            while (chunks.length > FOCUS_GROUP_LIMIT) {
+                const overflow = chunks.pop();
+                let targetIndex = 0;
+                for (let index = 1; index < chunks.length; index += 1) {
+                    if (chunks[index].nodes.length < chunks[targetIndex].nodes.length) {
+                        targetIndex = index;
+                    }
+                }
+                chunks[targetIndex].nodes.push(...overflow.nodes);
+                chunks[targetIndex].nodes.sort(compareFocusNodes);
+            }
+            chunks.forEach((group, groupIndex) => {
+                group.nodes.forEach((node, groupOrder) => {
+                    nodes.set(String(node.id), {
+                        role: "context",
+                        groupIndex,
+                        groupOrder,
+                        isGroupAnchor: groupOrder === 0,
+                        groupKey: group.key
+                    });
+                });
+            });
+            return { nodes, groups: chunks };
         }
 
         _formatElements(graphPayload) {
@@ -439,6 +557,9 @@
                 1,
                 ...Array.from(focusStrengthByNode.values(), (value) => Math.log1p(value))
             );
+            const focusScene = isFocusMode
+                ? this._buildFocusScenePlan(graph, focusStrengthByNode)
+                : { nodes: new Map(), groups: [] };
             const hotspotOrder = new Map(graph.nodes
                 .filter((node) => node.graph_role === "community-hotspot")
                 .sort((left, right) =>
@@ -469,6 +590,9 @@
                 const isFocusCore = isFocusMode && String(node.id) === String(this.selectedNodeId);
                 if (isFocusMode && node.layer !== "community") {
                     classes.push("focus-node", isFocusCore ? "focus-core" : "focus-neighbor");
+                    const focusRole = focusScene.nodes.get(String(node.id));
+                    if (focusRole?.role) classes.push(`focus-${focusRole.role}`);
+                    if (focusRole?.isGroupAnchor) classes.push("focus-group-anchor");
                 }
                 if (node.graph_role === "community-hotspot") {
                     const hotspotIndex = hotspotOrder.get(String(node.id)) || 0;
@@ -513,6 +637,9 @@
                                 : Math.min(64, 22 + Math.log1p(Math.max(0, importance)) * 7),
                         focusStrength,
                         focusTier,
+                        focusSceneRole: focusScene.nodes.get(String(node.id))?.role || "",
+                        focusGroupIndex: focusScene.nodes.get(String(node.id))?.groupIndex ?? -1,
+                        focusGroupOrder: focusScene.nodes.get(String(node.id))?.groupOrder ?? -1,
                         communityVisualSize: 15 + Math.max(0, communityImportance) * 8
                     },
                     classes: classes.join(" ")
@@ -523,7 +650,16 @@
                 const classes = [];
                 if (type === "community") classes.push("community-link");
                 if (type === "community-member") classes.push("community-member-link");
-                if (isFocusMode) classes.push("focus-link");
+                if (isFocusMode) {
+                    classes.push("focus-link");
+                    const sourceRole = focusScene.nodes.get(String(link.source))?.role;
+                    const targetRole = focusScene.nodes.get(String(link.target))?.role;
+                    if (sourceRole === "context" || targetRole === "context") {
+                        classes.push("focus-context-link");
+                    } else {
+                        classes.push("focus-inner-link");
+                    }
+                }
                 let source = link.source;
                 let target = link.target;
                 if (
@@ -817,6 +953,66 @@
                     }
                 },
                 {
+                    selector: "node.focus-inner",
+                    style: {
+                        "background-color": "#a96820",
+                        "background-opacity": 0.86,
+                        "border-color": "#efad53",
+                        "border-width": 1.25,
+                        "border-opacity": 0.96,
+                        color: "#ead2ad",
+                        "underlay-color": "#d97706",
+                        "underlay-padding": 2,
+                        "underlay-opacity": 0.04
+                    }
+                },
+                {
+                    selector: "node.focus-context",
+                    style: {
+                        label: "",
+                        "text-opacity": 0,
+                        "background-color": "#071923",
+                        "background-opacity": 0.58,
+                        "border-color": "#5fe1d6",
+                        "border-width": 1.15,
+                        "border-opacity": 0.9,
+                        "underlay-opacity": 0
+                    }
+                },
+                {
+                    selector: "node.focus-context.focus-group-anchor",
+                    style: {
+                        label: "data(label)",
+                        "text-opacity": 1,
+                        width: 18,
+                        height: 18,
+                        "background-opacity": 0.78,
+                        "border-color": "#33e6d2",
+                        "border-width": 1.9,
+                        "underlay-color": "#33e6d2",
+                        "underlay-padding": 5,
+                        "underlay-opacity": 0.06,
+                        "font-size": 8.4,
+                        "font-weight": 600,
+                        "text-valign": "top",
+                        "text-halign": "center",
+                        "text-margin-y": -42,
+                        "text-wrap": "ellipsis",
+                        "text-max-width": 86,
+                        "text-background-color": "#07131b",
+                        "text-background-opacity": 0.9,
+                        "text-background-padding": 3.5,
+                        "text-background-shape": "roundrectangle",
+                        "text-border-color": "#244c56",
+                        "text-border-width": 1,
+                        "text-border-opacity": 0.78
+                    }
+                },
+                {
+                    selector: "node.focus-context.label-visible",
+                    style: { label: "data(label)", "text-opacity": 1 }
+                },
+                {
                     selector: "node.faded",
                     style: { opacity: 0.12, "text-opacity": 0.08 }
                 },
@@ -912,6 +1108,34 @@
                     }
                 },
                 {
+                    selector: "edge.focus-inner-link",
+                    style: {
+                        width: "mapData(visualWeight, 0, 1, 0.55, 1.25)",
+                        "line-color": "#d9902e",
+                        "line-opacity": "mapData(visualWeight, 0, 1, 0.18, 0.42)",
+                        "curve-style": "straight"
+                    }
+                },
+                {
+                    selector: "edge.focus-context-link",
+                    style: {
+                        width: 0.65,
+                        "line-color": "#5fe1d6",
+                        "line-opacity": 0.035,
+                        "line-style": "dashed",
+                        "line-dash-pattern": [7, 9],
+                        "curve-style": "unbundled-bezier"
+                    }
+                },
+                {
+                    selector: "edge.focus-context-link.highlighted",
+                    style: {
+                        width: 1.1,
+                        "line-color": "#75e6d8",
+                        "line-opacity": 0.42
+                    }
+                },
+                {
                     selector: ".layer-hidden",
                     style: { display: "none" }
                 }
@@ -948,7 +1172,13 @@
         }
 
         _communityPresetPositions(nodes, bounds = {}, selectedId = null) {
-            const metrics = this._communitySceneMetrics(bounds, Boolean(selectedId));
+            const metrics = this._communitySceneMetrics(
+                bounds,
+                Boolean(selectedId && (
+                    this._detailCommunityId === String(selectedId) ||
+                    this.selectedNode?.length > 0
+                ))
+            );
             const {
                 compact,
                 height,
@@ -1039,6 +1269,93 @@
             return positions;
         }
 
+        _focusPresetPositions(nodes, bounds = {}) {
+            const metrics = this._communitySceneMetrics(bounds, true);
+            const {
+                compact,
+                height,
+                safeWidth,
+                safeHeight,
+                topInset,
+                sceneScale
+            } = metrics;
+            const sourceNodes = asArray(nodes).map((node) =>
+                typeof node?.data === "function" ? node.data() : node
+            ).filter(Boolean);
+            const center = {
+                x: safeWidth * (compact ? 0.5 : 0.477),
+                y: height * (compact ? 0.48 : 0.47)
+            };
+            const positions = {};
+            const core = sourceNodes.find((node) => node.focusSceneRole === "core") ||
+                sourceNodes.find((node) => String(node.id) === String(this.selectedNodeId));
+            if (core) positions[String(core.id)] = center;
+
+            const inner = sourceNodes
+                .filter((node) => node.focusSceneRole === "inner")
+                .sort((left, right) =>
+                    asNumber(left.focusGroupOrder, Number.MAX_SAFE_INTEGER) -
+                        asNumber(right.focusGroupOrder, Number.MAX_SAFE_INTEGER) ||
+                    String(left.id).localeCompare(String(right.id))
+                );
+            const firstRingCount = Math.min(3, inner.length);
+            inner.forEach((node, index) => {
+                const firstRing = index < firstRingCount;
+                const ringIndex = firstRing ? index : index - firstRingCount;
+                const ringCount = firstRing
+                    ? firstRingCount
+                    : Math.max(1, inner.length - firstRingCount);
+                const phase = firstRing ? -Math.PI / 2 : -Math.PI / 2 + 0.24;
+                const angle = phase + (ringIndex / Math.max(1, ringCount)) * Math.PI * 2;
+                const radiusX = (firstRing ? 54 : 112) * sceneScale;
+                const radiusY = (firstRing ? 42 : 78) * sceneScale;
+                positions[String(node.id)] = {
+                    x: center.x + Math.cos(angle) * radiusX,
+                    y: center.y + Math.sin(angle) * radiusY
+                };
+            });
+
+            const groups = new Map();
+            sourceNodes.filter((node) => node.focusSceneRole === "context")
+                .forEach((node) => {
+                    const groupIndex = Math.max(0, asNumber(node.focusGroupIndex, 0));
+                    if (!groups.has(groupIndex)) groups.set(groupIndex, []);
+                    groups.get(groupIndex).push(node);
+                });
+            const slots = compact ? FOCUS_COMPACT_SLOTS : FOCUS_CONTEXT_SLOTS;
+            Array.from(groups.entries())
+                .sort((left, right) => left[0] - right[0])
+                .forEach(([groupIndex, groupNodes], index) => {
+                    const [xRatio, yRatio] = slots[index % slots.length];
+                    const groupCenter = {
+                        x: safeWidth * xRatio,
+                        y: topInset + safeHeight * yRatio
+                    };
+                    groupNodes.sort((left, right) =>
+                        asNumber(left.focusGroupOrder, Number.MAX_SAFE_INTEGER) -
+                            asNumber(right.focusGroupOrder, Number.MAX_SAFE_INTEGER) ||
+                        String(left.id).localeCompare(String(right.id))
+                    );
+                    const anchor = groupNodes[0];
+                    if (anchor) positions[String(anchor.id)] = groupCenter;
+                    const satellites = groupNodes.slice(1);
+                    satellites.forEach((node, satelliteIndex) => {
+                        const angle = -Math.PI / 2 +
+                            (satelliteIndex / Math.max(1, satellites.length)) * Math.PI * 2;
+                        const orbitX = (compact ? 34 : 54) * sceneScale;
+                        const orbitY = (compact ? 26 : 40) * sceneScale;
+                        positions[String(node.id)] = {
+                            x: groupCenter.x + Math.cos(angle) * orbitX,
+                            y: groupCenter.y + Math.sin(angle) * orbitY
+                        };
+                    });
+                    groupNodes.forEach((node) => {
+                        if (!positions[String(node.id)]) positions[String(node.id)] = groupCenter;
+                    });
+                });
+            return positions;
+        }
+
         _syncCommunityDensity(mode, bounds = {}) {
             if (!this.cy) return;
             const metrics = this._communitySceneMetrics(
@@ -1083,6 +1400,15 @@
             });
         }
 
+        _hasCommunityCellNodes(nodes = null) {
+            const sourceNodes = nodes || this.cy?.nodes?.().map((node) => node.data()) || [];
+            if (sourceNodes.length === 0) return true;
+            return sourceNodes.some((node) => {
+                const data = typeof node?.data === "function" ? node.data() : node;
+                return data?.layer === "community";
+            });
+        }
+
         _getLayoutOptions(mode) {
             const animate = !this.reducedMotion;
             const bounds = this.container && typeof this.container.getBoundingClientRect === "function"
@@ -1105,11 +1431,42 @@
             }
             if (mode === "community") {
                 const nodes = this.cy?.nodes?.().map((node) => node.data()) || [];
+                if (!this._hasCommunityCellNodes(nodes)) {
+                    return {
+                        name: "concentric",
+                        fit: true,
+                        padding: compact ? 68 : 42,
+                        animate: false,
+                        animationDuration: 0,
+                        minNodeSpacing: compact ? 42 : 58,
+                        levelWidth: () => 2,
+                        concentric: (node) => {
+                            const rank = asNumber(node.data("rank"), 0);
+                            return rank > 0 ? 100 / rank : asNumber(node.degree(), 1);
+                        }
+                    };
+                }
                 const positions = this._communityPresetPositions(
                     nodes,
                     bounds || {},
                     this.expandedCommunityId
                 );
+                return {
+                    name: "preset",
+                    positions: (node) => positions[node.id()] || {
+                        x: Math.max(1, asNumber(bounds?.width, 960)) / 2,
+                        y: Math.max(1, asNumber(bounds?.height, 720)) / 2
+                    },
+                    fit: false,
+                    zoom: 1,
+                    pan: { x: 0, y: 0 },
+                    animate: false,
+                    animationDuration: 0
+                };
+            }
+            if (mode === "focus") {
+                const nodes = this.cy?.nodes?.().map((node) => node.data()) || [];
+                const positions = this._focusPresetPositions(nodes, bounds || {});
                 return {
                     name: "preset",
                     positions: (node) => positions[node.id()] || {
@@ -1133,7 +1490,6 @@
                 levelWidth: () => 1,
                 concentric: (node) => {
                     if (node.id() === this.selectedNodeId) return 1000;
-                    if (mode === "focus") return asNumber(node.data("focusTier"), 1);
                     const rank = asNumber(node.data("rank"), 0);
                     return rank > 0 ? 100 / rank : asNumber(node.degree(), 1);
                 }
@@ -1170,11 +1526,14 @@
 
         _runLayout(mode) {
             if (!this.cy || this.isDestroyed) return;
+            this.cy.stop?.();
             this._activeLayout?.stop?.();
             this._layoutFallback = null;
             const bounds = this.container?.getBoundingClientRect?.() || {};
             this._syncCommunityDensity(mode, bounds);
-            if (mode === "community") {
+            const semanticPreset = mode === "focus" ||
+                (mode === "community" && this._hasCommunityCellNodes());
+            if (semanticPreset) {
                 this.cy.zoom(1);
                 this.cy.pan({ x: 0, y: 0 });
             }
@@ -1183,7 +1542,7 @@
                 this._activeLayout = this.cy.layout(options);
                 this._trackLayoutLifecycle(this._activeLayout);
                 this._bindOverviewPacking(this._activeLayout, mode);
-                this._bindCommunityFieldDraw(this._activeLayout, mode);
+                this._bindCommunityFieldDraw(this._activeLayout, mode, semanticPreset);
                 this._activeLayout.run();
             } catch (error) {
                 if (mode !== "community") throw error;
@@ -1197,7 +1556,7 @@
                 };
                 this._activeLayout = this.cy.layout(options);
                 this._trackLayoutLifecycle(this._activeLayout);
-                this._bindCommunityFieldDraw(this._activeLayout, mode);
+                this._bindCommunityFieldDraw(this._activeLayout, mode, false);
                 this._activeLayout.run();
             }
         }
@@ -1223,12 +1582,14 @@
             this._layoutRunning = false;
         }
 
-        _bindCommunityFieldDraw(layout, mode) {
-            if (!layout || mode !== "community") return;
+        _bindCommunityFieldDraw(layout, mode, lockViewport = false) {
+            if (!layout || !["community", "focus"].includes(mode)) return;
             const finish = () => {
-                if (this.isDestroyed || this._paused || this.mode !== "community") return;
-                this.cy?.zoom?.(1);
-                this.cy?.pan?.({ x: 0, y: 0 });
+                if (this.isDestroyed || this._paused || this.mode !== mode) return;
+                if (lockViewport) {
+                    this.cy?.zoom?.(1);
+                    this.cy?.pan?.({ x: 0, y: 0 });
+                }
                 this._scheduleCommunityFieldDraw();
             };
             if (typeof layout.one === "function") {
@@ -1321,7 +1682,7 @@
 
         _replaceGraph(graphPayload, mode, options = {}) {
             if (!this.cy || this.isDestroyed) return;
-            this._stopCommunityFieldLoop(mode !== "community");
+            this._stopCommunityFieldLoop(!["community", "focus"].includes(mode));
             const graph = normalizeGraph(graphPayload);
             this.currentGraph = graph;
             this.data = {
@@ -1364,6 +1725,8 @@
                     this.expandCommunity(selected.id).catch((error) => {
                         if (error?.name !== "AbortError") this._emitError("community", error);
                     });
+                } else if (selected?.layer === "community" && this.mode === "community") {
+                    this._reserveExpandedCommunityDetail(selected.id);
                 }
             });
             this.cy.on("mouseover", "node", (event) => {
@@ -1396,6 +1759,21 @@
             this.cy.on("resize", () => this._resizeOverlay());
         }
 
+        _reserveExpandedCommunityDetail(nodeId) {
+            const wantedId = String(nodeId || "");
+            if (
+                !wantedId ||
+                this.mode !== "community" ||
+                wantedId !== this.expandedCommunityId ||
+                this._detailCommunityId === wantedId
+            ) {
+                return false;
+            }
+            this._detailCommunityId = wantedId;
+            this._runLayout("community");
+            return true;
+        }
+
         _selectNode(node, options = {}) {
             if (!node || node.length === 0) return null;
             this.cy.elements().unselect();
@@ -1424,6 +1802,16 @@
                 node.connectedEdges().forEach((edge) => {
                     if (edge.data("type") === "community") edge.addClass("community-route");
                     if (edge.data("type") === "community-member") edge.addClass("highlighted");
+                });
+                this._syncParticles();
+                this._scheduleCommunityFieldDraw();
+                return;
+            }
+            if (this.mode === "focus" && node.data("focusSceneRole") === "core") {
+                // The field canvas carries one semantic route per outer cell. Highlighting
+                // every raw incident edge here would recreate the old long-spoke fan.
+                node.connectedEdges().forEach((edge) => {
+                    if (edge.hasClass("focus-inner-link")) edge.addClass("highlighted");
                 });
                 this._syncParticles();
                 this._scheduleCommunityFieldDraw();
@@ -1548,6 +1936,63 @@
             };
         }
 
+        _defaultCommunityAnchorId(graphPayload) {
+            const communities = normalizeGraph(graphPayload).nodes
+                .filter((node) => node.layer === "community" && node.id !== "community:other")
+                .sort((left, right) =>
+                    asNumber(left.rank, Number.MAX_SAFE_INTEGER) -
+                        asNumber(right.rank, Number.MAX_SAFE_INTEGER) ||
+                    String(left.id).localeCompare(String(right.id))
+                );
+            if (communities.length === 0) return "";
+            return communities[communities.length >= 5 ? 4 : 0].id;
+        }
+
+        _queueDefaultCommunityExpansion(communityId, requestSequence) {
+            const task = this._loadDefaultCommunityExpansion(communityId, requestSequence);
+            this._defaultCommunityExpansion = task;
+            task.finally(() => {
+                if (this._defaultCommunityExpansion === task) {
+                    this._defaultCommunityExpansion = null;
+                }
+            });
+            return task;
+        }
+
+        async _loadDefaultCommunityExpansion(communityId, requestSequence) {
+            try {
+                const expansion = await this._request("focus", {
+                    nodeId: communityId,
+                    nodeLimit: 24,
+                    edgeLimit: 80
+                }, { operationKey: "view" });
+                if (
+                    requestSequence !== this._modeSequence ||
+                    this.isDestroyed ||
+                    this.mode !== "community" ||
+                    expansion.node?.layer !== "community"
+                ) {
+                    return false;
+                }
+                this._detailCommunityId = null;
+                this.expandedCommunityId = expansion.node.id || communityId;
+                this.selectedNodeId = this.expandedCommunityId;
+                this.communityGraph = normalizeGraph(expansion.graph);
+                this._replaceGraph(expansion.graph, "community");
+                this._emit("graph:modechange", {
+                    ...this._modeDetail("community"),
+                    progressive: true,
+                    phase: "detail"
+                });
+                return true;
+            } catch (error) {
+                // A stale request is expected when the user switches mode or selects another
+                // community while the default shard is still in flight. Summary cells remain.
+                if (error?.name === "AbortError") return false;
+                return false;
+            }
+        }
+
         async setMode(mode, options = {}) {
             await this.ready;
             if (this.isDestroyed) throw createAbortError();
@@ -1567,7 +2012,7 @@
                 return this.focusNode(nodeId);
             }
 
-            this.clearSelection();
+            this.clearSelection({ reflow: false });
 
             const requestSequence = ++this._modeSequence;
             const previousMode = this.mode;
@@ -1589,11 +2034,21 @@
 
                 this.mode = nextMode;
                 this.layoutMode = nextMode;
+                this._detailCommunityId = null;
                 this.selectedNodeId = null;
                 this.expandedCommunityId = null;
                 if (nextMode === "community") this.communityGraph = normalizeGraph(graph);
                 this._replaceGraph(graph, nextMode);
                 this._emit("graph:modechange", this._modeDetail(previousMode));
+                if (nextMode === "community" && this.worker) {
+                    const defaultCommunityId = this._defaultCommunityAnchorId(graph);
+                    if (defaultCommunityId) {
+                        this._queueDefaultCommunityExpansion(
+                            defaultCommunityId,
+                            requestSequence
+                        );
+                    }
+                }
                 return this.mode;
             } catch (error) {
                 if (error?.name === "AbortError") return this.mode;
@@ -1678,6 +2133,7 @@
 
                 this.mode = "focus";
                 this.layoutMode = "focus";
+                this._detailCommunityId = null;
                 this.expandedCommunityId = null;
                 this.selectedNodeId = response.node?.id || wantedId;
                 this._replaceGraph(response.graph, "focus");
@@ -1687,7 +2143,7 @@
                     : null;
                 this._emit("graph:modechange", this._modeDetail(previousMode));
                 if (node && node.length > 0) {
-                    this.cy.animate({ center: { eles: node }, zoom: Math.min(0.92, this.cy.zoom()) }, {
+                    this.cy.animate({ pan: { x: 0, y: 0 }, zoom: 1 }, {
                         duration: this.reducedMotion ? 0 : 450,
                         easing: "ease-out-cubic"
                     });
@@ -1734,6 +2190,7 @@
             this.mode = "community";
             this.layoutMode = "community";
             this.expandedCommunityId = response.node?.id || null;
+            this._detailCommunityId = this.expandedCommunityId;
             this.selectedNodeId = this.expandedCommunityId;
             this._replaceGraph(response.graph, "community");
             const node = this.cy.getElementById(this.expandedCommunityId);
@@ -1802,19 +2259,24 @@
             };
         }
 
-        clearSelection() {
+        clearSelection(options = {}) {
             if (!this.cy || this.isDestroyed) return;
+            const shouldReflowCommunity = options.reflow !== false &&
+                this.mode === "community" &&
+                Boolean(this._detailCommunityId);
             this._modeSequence += 1;
             this._cancelOperation("view");
             this.cy.elements().unselect();
             this.cy.nodes().removeClass("focus-root search-match");
             this.selectedNode = null;
             this.selectedNodeId = null;
+            this._detailCommunityId = null;
             this.hoveredNode = null;
             this._updateSemanticLabels(true);
             this._clearHighlights();
             this._emit("graph:selectionchange", { node: null, nodeId: null });
             this._emit("nodeSelect", null);
+            if (shouldReflowCommunity) this._runLayout("community");
         }
 
         async search(query) {
@@ -1942,6 +2404,11 @@
         }
 
         _fieldDescriptors() {
+            if (this.mode === "focus") return this._focusFieldDescriptors();
+            return this._communityFieldDescriptors();
+        }
+
+        _communityFieldDescriptors() {
             if (!this.cy || this.mode !== "community") return [];
             const visibleNodes = [];
             this.cy.nodes(":visible").forEach((node) => {
@@ -1950,7 +2417,10 @@
             const hasAnchor = visibleNodes.some((node) => node.id() === this.expandedCommunityId);
             const metrics = this._communitySceneMetrics(
                 { width: this._fieldWidth, height: this._fieldHeight },
-                hasAnchor
+                Boolean(hasAnchor && (
+                    this._detailCommunityId === this.expandedCommunityId ||
+                    this.selectedNode?.length > 0
+                ))
             );
             const { compact, sceneScale } = metrics;
             const contextScale = compact
@@ -1992,7 +2462,9 @@
                     memberCount,
                     anchor,
                     scale: sceneScale,
-                    rank: asNumber(node.data("rank"), 0)
+                    rank: asNumber(node.data("rank"), 0),
+                    scene: "community",
+                    syntheticSatellites: !anchor
                 };
             });
             if (compact && descriptors.length > 1) {
@@ -2013,6 +2485,91 @@
                     );
                 });
             }
+            return descriptors;
+        }
+
+        _focusFieldDescriptors() {
+            if (!this.cy || this.mode !== "focus") return [];
+            const visibleNodes = [];
+            this.cy.nodes(":visible").forEach((node) => {
+                if (node.data("focusSceneRole")) visibleNodes.push(node);
+            });
+            const core = visibleNodes.find((node) => node.data("focusSceneRole") === "core") ||
+                visibleNodes.find((node) => node.id() === this.selectedNodeId);
+            if (!core) return [];
+            const metrics = this._communitySceneMetrics(
+                { width: this._fieldWidth, height: this._fieldHeight },
+                true
+            );
+            const { compact, sceneScale } = metrics;
+            const corePosition = core.renderedPosition();
+            let innerRadius = 0;
+            visibleNodes.forEach((node) => {
+                if (node.data("focusSceneRole") !== "inner") return;
+                const position = node.renderedPosition();
+                innerRadius = Math.max(
+                    innerRadius,
+                    Math.hypot(position.x - corePosition.x, position.y - corePosition.y)
+                );
+            });
+            const descriptors = [{
+                id: `focus:${core.id()}`,
+                x: corePosition.x,
+                y: corePosition.y,
+                radius: Math.max(
+                    (compact ? 70 : 104) * sceneScale,
+                    Math.min((compact ? 112 : 170) * sceneScale, innerRadius + 30 * sceneScale)
+                ),
+                memberCount: visibleNodes.filter((node) =>
+                    node.data("focusSceneRole") === "inner"
+                ).length + 1,
+                anchor: true,
+                scale: sceneScale,
+                rank: 0,
+                scene: "focus",
+                syntheticSatellites: false
+            }];
+            const groups = new Map();
+            visibleNodes.forEach((node) => {
+                if (node.data("focusSceneRole") !== "context") return;
+                const groupIndex = Math.max(0, asNumber(node.data("focusGroupIndex"), 0));
+                if (!groups.has(groupIndex)) groups.set(groupIndex, []);
+                groups.get(groupIndex).push(node);
+            });
+            Array.from(groups.entries())
+                .sort((left, right) => left[0] - right[0])
+                .forEach(([groupIndex, nodes]) => {
+                    const groupAnchor = nodes.find((node) => node.hasClass?.("focus-group-anchor")) ||
+                        nodes.sort((left, right) =>
+                            asNumber(left.data("focusGroupOrder"), Number.MAX_SAFE_INTEGER) -
+                                asNumber(right.data("focusGroupOrder"), Number.MAX_SAFE_INTEGER) ||
+                            left.id().localeCompare(right.id())
+                        )[0];
+                    const position = groupAnchor.renderedPosition();
+                    let groupRadius = 0;
+                    nodes.forEach((node) => {
+                        const memberPosition = node.renderedPosition();
+                        groupRadius = Math.max(
+                            groupRadius,
+                            Math.hypot(memberPosition.x - position.x, memberPosition.y - position.y)
+                        );
+                    });
+                    descriptors.push({
+                        id: `focus-group:${groupIndex}`,
+                        x: position.x,
+                        y: position.y,
+                        radius: Math.max(
+                            46 * sceneScale,
+                            Math.min(92 * sceneScale, groupRadius + 30 * sceneScale)
+                        ),
+                        memberCount: nodes.length,
+                        anchor: false,
+                        scale: sceneScale,
+                        rank: groupIndex + 1,
+                        scene: "focus",
+                        syntheticSatellites: false
+                    });
+                });
             return descriptors;
         }
 
@@ -2049,7 +2606,7 @@
             if (!this._fieldContext || this.isDestroyed) return;
             const context = this._fieldContext;
             context.clearRect(0, 0, this._fieldWidth, this._fieldHeight);
-            if (this.mode !== "community" || !this.cy) {
+            if (!["community", "focus"].includes(this.mode) || !this.cy) {
                 this._communityFields = [];
                 return;
             }
@@ -2144,7 +2701,7 @@
                     );
                 }
 
-                if (!descriptor.anchor) {
+                if (!descriptor.anchor && descriptor.syntheticSatellites) {
                     const minimumSatellites = descriptor.scale < 0.7 ? 5 : 7;
                     const satellites = Math.max(minimumSatellites, Math.min(
                         descriptor.scale < 0.7 ? 8 : 12,
@@ -2241,7 +2798,8 @@
 
         _communityFieldTick(timestamp) {
             this._fieldFrame = null;
-            if (this._paused || this.isDestroyed || this.mode !== "community") return;
+            if (this._paused || this.isDestroyed ||
+                !["community", "focus"].includes(this.mode)) return;
             if (!this._fieldDirty) return;
             if (!this._shouldPaintCommunityFrame(timestamp)) {
                 this._fieldFrame = global.requestAnimationFrame?.((nextTimestamp) =>
@@ -2256,7 +2814,7 @@
 
         _scheduleCommunityFieldDraw() {
             if (!this._fieldContext || this.isDestroyed || this._paused) return;
-            if (this.mode !== "community") {
+            if (!["community", "focus"].includes(this.mode)) {
                 this._stopCommunityFieldLoop(true);
                 this._communityFields = [];
                 return;
@@ -2366,9 +2924,7 @@
                 }
                 if (this.mode === "focus") {
                     this._runLayout("focus");
-                    const selected = this.cy.getElementById(this.selectedNodeId || "");
-                    if (this.cy.zoom() > 0.92) this.cy.zoom(0.92);
-                    if (selected && selected.length > 0) this.cy.center(selected);
+                    if (this.cy.zoom() > 1) this.cy.zoom(1);
                     return;
                 }
                 const isCompact = this.container.getBoundingClientRect().width < 640;
@@ -2388,9 +2944,14 @@
                 return;
             }
             const edges = [];
-            const candidates = this.mode === "community" && this.selectedNode?.data?.("layer") === "community"
-                ? this.cy.edges(".community-route")
-                : this.cy.edges(".highlighted");
+            let candidates;
+            if (this.mode === "community" && this.selectedNode?.data?.("layer") === "community") {
+                candidates = this.cy.edges(".community-route");
+            } else if (this.mode === "focus") {
+                candidates = this.cy.edges(".focus-inner-link.highlighted");
+            } else {
+                candidates = this.cy.edges(".highlighted");
+            }
             candidates.forEach((edge) => {
                 if (typeof edge.visible !== "function" || edge.visible()) edges.push(edge);
             });
@@ -2555,15 +3116,15 @@
         }
 
         fitToScreen() {
-            if (this.mode === "community") {
-                this._runLayout("community");
+            if (this.mode === "community" || this.mode === "focus") {
+                this._runLayout(this.mode);
                 return;
             }
             this._fitCurrentGraph(32);
         }
 
         resetView() {
-            this.clearSelection();
+            this.clearSelection({ reflow: false });
             if (this.mode !== "overview") {
                 return this.setMode("overview");
             }
@@ -2609,6 +3170,8 @@
             this.isDestroyed = true;
             this._modeSequence += 1;
             this._searchSequence += 1;
+            this._detailCommunityId = null;
+            this._defaultCommunityExpansion = null;
             this._activeLayout?.stop?.();
             this._stopParticleLoop(true);
             this._stopCommunityFieldLoop(true);

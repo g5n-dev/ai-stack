@@ -777,7 +777,7 @@ test("engine exposes the workbench API and semantic mode layouts", () => {
   assert.equal(engine._getLayoutOptions("overview").name, "dagre");
   assert.equal(engine._getLayoutOptions("community").name, "preset");
   const focusLayout = engine._getLayoutOptions("focus");
-  assert.equal(focusLayout.name, "concentric");
+  assert.equal(focusLayout.name, "preset");
   assert.equal(
     focusLayout.animate,
     false,
@@ -831,6 +831,29 @@ test("engine exposes the workbench API and semantic mode layouts", () => {
   );
   assert.doesNotMatch(ENGINE_SOURCE, /container\.querySelector\(['"]canvas['"]\)/);
   assert.doesNotMatch(ENGINE_SOURCE, /cose-bilkent/);
+});
+
+test("a late Cytoscape ready callback cannot refit a semantic scene", () => {
+  const window = {};
+  vm.runInNewContext(ENGINE_SOURCE, { window }, {
+    filename: "cytoscape-graph-engine.js",
+  });
+  const Engine = window.CytoscapeGraphEngine;
+  const engine = Object.create(Engine.prototype);
+  const calls = [];
+  Object.assign(engine, {
+    isDestroyed: false,
+    cy: {},
+    mode: "community",
+    _packOverviewLayers: () => calls.push("pack"),
+    _fitCurrentGraph: () => calls.push("fit"),
+  });
+
+  assert.equal(engine._settleInitialViewport(), false);
+  assert.deepEqual(calls, []);
+  engine.mode = "overview";
+  assert.equal(engine._settleInitialViewport(), true);
+  assert.deepEqual(calls, ["pack", "fit"]);
 });
 
 test("overlay canvases cap their backing pixels on high-DPR displays", () => {
@@ -1011,7 +1034,410 @@ test("focus nodes use compact stellar tiers and reserve amber for the selected c
   assert.ok(coreStyle["underlay-opacity"] > 0);
 });
 
-test("focus resize settles the layout before capping sparse-graph magnification", () => {
+test("focus scene deterministically groups a bounded neighborhood into contour cells", () => {
+  const window = {};
+  vm.runInNewContext(ENGINE_SOURCE, { window }, {
+    filename: "cytoscape-graph-engine.js",
+  });
+  const Engine = window.CytoscapeGraphEngine;
+  const engine = Object.create(Engine.prototype);
+  Object.assign(engine, {
+    mode: "focus",
+    selectedNodeId: "tag:center",
+    data: { layers: { tag: { name: "标签层", color: "#4db6ac" } } },
+  });
+  const nodes = [
+    { id: "tag:center", name: "API", layer: "tag", rank: 1 },
+    ...Array.from({ length: 24 }, (_, index) => ({
+      id: `tag:neighbor-${index + 1}`,
+      name: `Neighbor ${index + 1}`,
+      layer: "tag",
+      category: "article_tag",
+      community_id: "community:other",
+      rank: index + 2,
+    })),
+  ];
+  const links = nodes.slice(1).map((node, index) => ({
+    id: `edge:${index}`,
+    source: "tag:center",
+    target: node.id,
+    weight: 100 - index,
+  }));
+  const formatted = engine._formatElements({ nodes, links });
+  const inner = formatted.nodes.filter((node) => node.data.focusSceneRole === "inner");
+  const context = formatted.nodes.filter((node) => node.data.focusSceneRole === "context");
+  const groupAnchors = formatted.nodes.filter((node) =>
+    node.classes.includes("focus-group-anchor")
+  );
+
+  assert.equal(inner.length, 8);
+  assert.equal(context.length, 16);
+  assert.equal(new Set(context.map((node) => node.data.focusGroupIndex)).size, 6);
+  assert.equal(groupAnchors.length, 6);
+  assert.ok(formatted.edges.filter((edge) =>
+    edge.classes.includes("focus-context-link")
+  ).length <= 16);
+
+  const dataNodes = formatted.nodes.map((node) => node.data);
+  const bounds = { width: 1269, height: 894 };
+  const positions = engine._focusPresetPositions(dataNodes, bounds);
+  const repeated = engine._focusPresetPositions(dataNodes, bounds);
+  assert.deepEqual(positions, repeated, "focus topology must be deterministic");
+  assert.equal(new Set(Object.values(positions).map(({ x, y }) => `${x}:${y}`)).size, 25);
+  const center = positions["tag:center"];
+  inner.forEach((node) => {
+    assert.ok(
+      Math.hypot(positions[node.data.id].x - center.x, positions[node.data.id].y - center.y) < 130,
+      `${node.data.id} escaped the selected focus cell`
+    );
+  });
+  groupAnchors.forEach((node) => {
+    assert.ok(
+      Math.hypot(positions[node.data.id].x - center.x, positions[node.data.id].y - center.y) > 190,
+      `${node.data.id} did not form an outer context cell`
+    );
+  });
+
+  const mobilePositions = engine._focusPresetPositions(
+    dataNodes,
+    { width: 390, height: 844 }
+  );
+  assert.equal(new Set(Object.values(mobilePositions).map(({ x, y }) => `${x}:${y}`)).size, 25);
+  assert.equal(new Set(groupAnchors.map((node) => {
+    const position = mobilePositions[node.data.id];
+    return `${position.x}:${position.y}`;
+  })).size, 6, "mobile focus groups must retain six independent cells");
+  Object.values(mobilePositions).forEach((position) => {
+    assert.ok(position.x >= 20 && position.x <= 370, `mobile focus x overflow: ${position.x}`);
+    assert.ok(position.y >= 24 && position.y <= 820, `mobile focus y overflow: ${position.y}`);
+  });
+});
+
+test("community mode chooses the fifth ranked cell as its bounded default expansion", () => {
+  const window = {};
+  vm.runInNewContext(ENGINE_SOURCE, { window }, {
+    filename: "cytoscape-graph-engine.js",
+  });
+  const Engine = window.CytoscapeGraphEngine;
+  const engine = Object.create(Engine.prototype);
+  const communities = Array.from({ length: 11 }, (_, index) => ({
+    id: `community:${11 - index}`,
+    name: `Community ${11 - index}`,
+    layer: "community",
+    rank: 11 - index,
+  }));
+
+  assert.equal(
+    engine._defaultCommunityAnchorId({ nodes: communities, links: [] }),
+    "community:5"
+  );
+  assert.equal(
+    engine._defaultCommunityAnchorId({ nodes: communities.slice(0, 3), links: [] }),
+    "community:9"
+  );
+});
+
+test("community mode progressively loads one bounded default hotspot shard", async () => {
+  const window = {};
+  vm.runInNewContext(ENGINE_SOURCE, { window }, {
+    filename: "cytoscape-graph-engine.js",
+  });
+  const Engine = window.CytoscapeGraphEngine;
+  const engine = Object.create(Engine.prototype);
+  const communities = Array.from({ length: 11 }, (_, index) => ({
+    id: `community:${index + 1}`,
+    name: `Community ${index + 1}`,
+    layer: "community",
+    rank: index + 1,
+  }));
+  const requests = [];
+  const renders = [];
+  let resolveExpansion;
+  const expansionPromise = new Promise((resolve) => {
+    resolveExpansion = resolve;
+  });
+  const expandedResponse = {
+    node: { ...communities[4], graph_role: "community-anchor" },
+    graph: {
+      nodes: [
+        ...communities.map((node) => ({
+          ...node,
+          graph_role: node.id === "community:5"
+            ? "community-anchor"
+            : "community-context",
+        })),
+        { id: "tag:hot", name: "Hot", layer: "tag", graph_role: "community-hotspot" },
+      ],
+      links: [{
+        source: "community:5",
+        target: "tag:hot",
+        type: "community-member",
+      }],
+    },
+  };
+  Object.assign(engine, {
+    ready: Promise.resolve(),
+    isDestroyed: false,
+    mode: "overview",
+    layoutMode: "overview",
+    worker: {},
+    _modeSequence: 0,
+    _request: async (type, payload) => {
+      requests.push({ type, payload });
+      if (type === "community") {
+        return { graph: { nodes: communities, links: [] } };
+      }
+      return expansionPromise;
+    },
+    clearSelection() {},
+    _replaceGraph: (graph, mode) => {
+      renders.push({ graph, mode });
+      engine.currentGraph = graph;
+    },
+    _emit() {},
+    _emitError() {},
+  });
+
+  assert.equal(await engine.setMode("community"), "community");
+  assert.deepEqual(requests.map((request) => request.type), ["community", "focus"]);
+  assert.equal(requests[1].payload.nodeId, "community:5");
+  assert.equal(requests[1].payload.nodeLimit, 24);
+  assert.equal(requests[1].payload.edgeLimit, 80);
+  assert.equal(engine.expandedCommunityId, null);
+  assert.equal(renders.length, 1, "summary skeleton must render before hotspot I/O resolves");
+  assert.equal(renders[0].mode, "community");
+  assert.equal(renders[0].graph.nodes.length, 11);
+
+  const progressiveTask = engine._defaultCommunityExpansion;
+  assert.ok(progressiveTask, "default hotspot load should continue in the background");
+  resolveExpansion(expandedResponse);
+  assert.equal(await progressiveTask, true);
+  assert.equal(engine.expandedCommunityId, "community:5");
+  assert.equal(renders.length, 2);
+  assert.equal(renders[1].graph.nodes.length, 12);
+});
+
+test("a stale progressive community expansion cannot replace a newer view", async () => {
+  const window = {};
+  vm.runInNewContext(ENGINE_SOURCE, { window }, {
+    filename: "cytoscape-graph-engine.js",
+  });
+  const Engine = window.CytoscapeGraphEngine;
+  const engine = Object.create(Engine.prototype);
+  let resolveExpansion;
+  const expansionPromise = new Promise((resolve) => {
+    resolveExpansion = resolve;
+  });
+  let replacements = 0;
+  Object.assign(engine, {
+    isDestroyed: false,
+    mode: "community",
+    _modeSequence: 7,
+    _request: async () => expansionPromise,
+    _replaceGraph: () => { replacements += 1; },
+    _emit() {},
+  });
+
+  const task = engine._queueDefaultCommunityExpansion("community:5", 7);
+  engine._modeSequence = 8;
+  engine.mode = "overview";
+  resolveExpansion({
+    node: { id: "community:5", layer: "community" },
+    graph: { nodes: [], links: [] },
+  });
+
+  assert.equal(await task, false);
+  assert.equal(replacements, 0);
+  assert.equal(engine.expandedCommunityId, undefined);
+});
+
+test("an explicit community drawer reserves its side channel before the only layout run", () => {
+  const window = {};
+  vm.runInNewContext(ENGINE_SOURCE, { window }, {
+    filename: "cytoscape-graph-engine.js",
+  });
+  const Engine = window.CytoscapeGraphEngine;
+  const engine = Object.create(Engine.prototype);
+  const communities = Array.from({ length: 11 }, (_, index) => ({
+    id: `community:${index + 1}`,
+    name: `Community ${index + 1}`,
+    layer: "community",
+    rank: index + 1,
+  }));
+  const response = {
+    node: communities[4],
+    graph: { nodes: communities, links: [] },
+  };
+  const fakeNode = { length: 1 };
+  const layouts = [];
+  Object.assign(engine, {
+    mode: "community",
+    selectedNode: null,
+    _detailCommunityId: null,
+    currentGraph: response.graph,
+    cy: {
+      getElementById: () => fakeNode,
+      nodes: () => ({ length: 11 }),
+      edges: () => ({ length: 0 }),
+    },
+    _replaceGraph(graph) {
+      engine.currentGraph = graph;
+      const positions = engine._communityPresetPositions(
+        graph.nodes,
+        { width: 1269, height: 894 },
+        "community:5"
+      );
+      layouts.push({
+        detailId: engine._detailCommunityId,
+        selectedAtLayout: engine.selectedNode,
+        center: positions["community:5"],
+      });
+    },
+    _selectNode(node) {
+      engine.selectedNode = node;
+      return { id: "community:5", layer: "community" };
+    },
+    _emit() {},
+    _scheduleCommunityFieldDraw() {},
+  });
+
+  engine._applyCommunityExpansion(response, "community");
+  assert.equal(layouts.length, 1);
+  assert.equal(layouts[0].detailId, "community:5");
+  assert.equal(layouts[0].selectedAtLayout, null, "test must preserve real call order");
+  assert.ok(layouts[0].center.x >= 450 && layouts[0].center.x <= 470);
+});
+
+test("tapping the already expanded center reserves the drawer and reflows exactly once", () => {
+  const window = {};
+  vm.runInNewContext(ENGINE_SOURCE, { window }, {
+    filename: "cytoscape-graph-engine.js",
+  });
+  const Engine = window.CytoscapeGraphEngine;
+  const engine = Object.create(Engine.prototype);
+  const handlers = [];
+  const order = [];
+  Object.assign(engine, {
+    mode: "community",
+    expandedCommunityId: "community:5",
+    _detailCommunityId: null,
+    cy: {
+      on(...args) { handlers.push(args); },
+    },
+    _selectNode() {
+      order.push("select");
+      return { id: "community:5", layer: "community" };
+    },
+    _runLayout(mode) { order.push(`layout:${mode}`); },
+    expandCommunity() {
+      throw new Error("the expanded center must not request its shard again");
+    },
+  });
+  engine._bindCytoscapeEvents();
+  const tapNode = handlers.find(([eventName, selector]) =>
+    eventName === "tap" && selector === "node"
+  )?.[2];
+  assert.equal(typeof tapNode, "function");
+
+  tapNode({ target: {} });
+  assert.deepEqual(order, ["select", "layout:community"]);
+  assert.equal(engine._detailCommunityId, "community:5");
+
+  tapNode({ target: {} });
+  assert.deepEqual(
+    order,
+    ["select", "layout:community", "select"],
+    "an already-reserved drawer must not trigger a second layout"
+  );
+});
+
+test("closing a community drawer restores the full stage exactly once", () => {
+  const window = {};
+  vm.runInNewContext(ENGINE_SOURCE, { window }, {
+    filename: "cytoscape-graph-engine.js",
+  });
+  const Engine = window.CytoscapeGraphEngine;
+  const engine = Object.create(Engine.prototype);
+  const communities = Array.from({ length: 11 }, (_, index) => ({
+    id: `community:${index + 1}`,
+    layer: "community",
+    rank: index + 1,
+  }));
+  const bounds = { width: 1269, height: 894 };
+  const centers = [];
+  Object.assign(engine, {
+    isDestroyed: false,
+    mode: "community",
+    expandedCommunityId: "community:5",
+    _detailCommunityId: "community:5",
+    selectedNode: { length: 1 },
+    selectedNodeId: "community:5",
+    hoveredNode: null,
+    _modeSequence: 0,
+    cy: {
+      elements: () => ({ unselect() {} }),
+      nodes: () => ({ removeClass() {} }),
+    },
+    _cancelOperation() {},
+    _updateSemanticLabels() {},
+    _clearHighlights() {},
+    _emit() {},
+    _runLayout(mode) {
+      assert.equal(mode, "community");
+      const positions = engine._communityPresetPositions(
+        communities,
+        bounds,
+        "community:5"
+      );
+      centers.push(positions["community:5"]);
+    },
+  });
+  const reservedCenter = engine._communityPresetPositions(
+    communities,
+    bounds,
+    "community:5"
+  )["community:5"];
+
+  engine.clearSelection();
+  assert.equal(engine._detailCommunityId, null);
+  assert.equal(centers.length, 1);
+  assert.ok(reservedCenter.x >= 450 && reservedCenter.x <= 470);
+  assert.ok(centers[0].x >= 595 && centers[0].x <= 615);
+
+  engine.clearSelection();
+  assert.equal(centers.length, 1, "an already-closed drawer must not reflow again");
+});
+
+test("v1 community payloads fall back to a bounded non-preset layout", () => {
+  const window = {};
+  vm.runInNewContext(ENGINE_SOURCE, { window }, {
+    filename: "cytoscape-graph-engine.js",
+  });
+  const Engine = window.CytoscapeGraphEngine;
+  const engine = Object.create(Engine.prototype);
+  const ordinaryNodes = Array.from({ length: 24 }, (_, index) => ({
+    id: `tag:${index}`,
+    layer: "tag",
+    rank: index + 1,
+  }));
+  Object.assign(engine, {
+    reducedMotion: false,
+    container: { getBoundingClientRect: () => ({ width: 800, height: 640 }) },
+    cy: {
+      nodes: () => ({
+        map: (callback) => ordinaryNodes.map((node) => callback({ data: () => node })),
+      }),
+    },
+  });
+
+  const layout = engine._getLayoutOptions("community");
+  assert.equal(layout.name, "concentric");
+  assert.equal(layout.fit, true);
+  assert.equal(layout.animate, false);
+  assert.ok(layout.minNodeSpacing >= 42);
+});
+
+test("focus resize restores its complete scene instead of re-centering one node", () => {
   const scheduled = [];
   const window = {
     setTimeout(callback) {
@@ -1057,8 +1483,8 @@ test("focus resize settles the layout before capping sparse-graph magnification"
   scheduled[0]();
 
   assert.deepEqual(layouts, ["focus"]);
-  assert.equal(zoom, 0.92);
-  assert.deepEqual(centered, ["tag:center"]);
+  assert.equal(zoom, 1);
+  assert.deepEqual(centered, []);
 });
 
 test("community preset keeps one selected field centered with ten separated satellites", () => {
@@ -1083,6 +1509,7 @@ test("community preset keeps one selected field centered with ten separated sate
   const nodes = [...communities, ...hotspots];
   // 1625x968 acceptance viewport minus the 356px console and 74px header.
   const bounds = { width: 1269, height: 894 };
+  engine.selectedNode = { length: 1 };
 
   const positions = engine._communityPresetPositions(
     nodes,
@@ -1204,6 +1631,38 @@ test("community preset keeps one selected field centered with ten separated sate
     mobileHotspotRadius <= 82,
     `mobile hotspot field must scale down instead of overflowing: ${mobileHotspotRadius}`
   );
+});
+
+test("automatic community expansion uses the full stage until a detail drawer is opened", () => {
+  const window = {};
+  vm.runInNewContext(ENGINE_SOURCE, { window }, {
+    filename: "cytoscape-graph-engine.js",
+  });
+  const Engine = window.CytoscapeGraphEngine;
+  const engine = Object.create(Engine.prototype);
+  engine.selectedNode = null;
+  const communities = Array.from({ length: 11 }, (_, index) => ({
+    id: `community:${index + 1}`,
+    layer: "community",
+    rank: index + 1,
+  }));
+  const bounds = { width: 968, height: 656 };
+  const positions = engine._communityPresetPositions(
+    communities,
+    bounds,
+    "community:5"
+  );
+  const center = positions["community:5"];
+  const contexts = communities
+    .filter((node) => node.id !== "community:5")
+    .map((node) => positions[node.id]);
+
+  assert.ok(center.x >= 450 && center.x <= 470, `unexpected automatic center x: ${center.x}`);
+  assert.ok(center.y >= 292 && center.y <= 312, `unexpected automatic center y: ${center.y}`);
+  assert.ok(Math.min(...contexts.map((position) => position.x)) <= 125);
+  assert.ok(Math.max(...contexts.map((position) => position.x)) >= 875);
+  assert.ok(Math.min(...contexts.map((position) => position.y)) <= 145);
+  assert.ok(Math.max(...contexts.map((position) => position.y)) >= 555);
 });
 
 test("compact community density keeps a small progressive context set", () => {
@@ -1557,6 +2016,43 @@ test("community field coalesces high-frequency viewport events to its paint budg
 
   assert.ok(paints > 0);
   assert.ok(paints <= 24, `paint budget exceeded: ${paints}`);
+});
+
+test("focus field remains demand-driven with reduced motion", () => {
+  const callbacks = [];
+  const window = {
+    requestAnimationFrame(callback) {
+      callbacks.push(callback);
+      return callbacks.length;
+    },
+    cancelAnimationFrame() {},
+  };
+  vm.runInNewContext(ENGINE_SOURCE, { window }, {
+    filename: "cytoscape-graph-engine.js",
+  });
+  const Engine = window.CytoscapeGraphEngine;
+  const engine = Object.create(Engine.prototype);
+  let paints = 0;
+  Object.assign(engine, {
+    _fieldContext: {},
+    _fieldFrame: null,
+    _fieldTimestamp: 0,
+    _fieldDirty: false,
+    _communityFields: [],
+    _paused: false,
+    reducedMotion: true,
+    isDestroyed: false,
+    mode: "focus",
+    _drawCommunityField: () => { paints += 1; },
+  });
+
+  engine._scheduleCommunityFieldDraw();
+  assert.equal(callbacks.length, 1);
+  callbacks.shift()(16);
+  assert.equal(paints, 1);
+  assert.equal(callbacks.length, 0, "focus field must not create a continuous RAF loop");
+  assert.equal(engine._fieldFrame, null);
+  assert.equal(engine._fieldDirty, false);
 });
 
 test("clearSelection invalidates an in-flight view request", () => {

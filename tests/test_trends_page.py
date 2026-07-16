@@ -33,6 +33,10 @@ def test_trends_page_is_a_progressive_shared_header_workbench() -> None:
     assert "趋势洞察" in source
     assert "STACK趋势" not in source
     assert "不代表全网热度" in source
+    assert "位置用于主题分组与排名轨道" in source
+    assert "外围圈径编码证据数量" in source
+    assert "中心为固定放大展开态" in source
+    assert "横轴为增长方向" not in source
     assert "https://cdn." not in source
     assert "requestAnimationFrame" not in source
 
@@ -57,6 +61,8 @@ def test_trends_styles_are_scoped_and_share_site_tokens() -> None:
     assert not any(f"font-size: {size}px" in source for size in (8, 9, 10))
     assert ".trend-evidence-link" in source
     assert ".trend-mobile-filter-toggle" in source
+    assert '.trend-workbench[data-detail="open"] .trend-detail' in source
+    assert "@media (max-width: 1439px)" in source
 
 
 def test_trends_runtime_uses_safe_text_progressive_loading_and_distinct_links() -> None:
@@ -79,6 +85,13 @@ def test_trends_runtime_uses_safe_text_progressive_loading_and_distinct_links() 
     assert "loadTopic(next.topic, { push: false, focus: true, scroll: true })" in source
     assert "setFilterPanel(!filterMedia?.matches)" in source
     assert "resolveWindowSignal" in source
+    assert "MAX_TOPOLOGY_CELLS = 11" in source
+    assert "MAX_MATRIX_PIXELS = 8 * 1024 * 1024" in source
+    assert 'root.dataset.detail = model.state.topic ? "open" : "closed"' in source
+    load_topic = source.index("async function loadTopic")
+    invalidate = source.index("const sequence = invalidateTopicLoad(model);", load_topic)
+    cache_lookup = source.index("const cached = model.topicCache.get(id);", load_topic)
+    assert invalidate < cache_lookup
     assert "30 天来源分布" in source
     assert "30 天证据文章" in source
 

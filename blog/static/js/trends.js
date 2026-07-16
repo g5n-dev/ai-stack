@@ -54,9 +54,23 @@
     arxiv: "arXiv",
     github_trending: "GitHub Trending",
   });
+  const MAX_TOPOLOGY_CELLS = 11;
+  const TOPOLOGY_SLOTS = Object.freeze([
+    Object.freeze([0.2, 0.18]),
+    Object.freeze([0.5, 0.15]),
+    Object.freeze([0.8, 0.18]),
+    Object.freeze([0.91, 0.39]),
+    Object.freeze([0.88, 0.68]),
+    Object.freeze([0.69, 0.85]),
+    Object.freeze([0.46, 0.88]),
+    Object.freeze([0.24, 0.84]),
+    Object.freeze([0.09, 0.66]),
+    Object.freeze([0.1, 0.38]),
+  ]);
   const MAX_INDEX_BYTES = 64 * 1024;
   const MAX_WINDOW_BYTES = 128 * 1024;
   const MAX_TOPIC_BYTES = 96 * 1024;
+  const MAX_MATRIX_PIXELS = 8 * 1024 * 1024;
   const MAX_TOPICS = 100;
   const MAX_TRENDS = 24;
   const MAX_EVIDENCE = 30;
@@ -629,96 +643,144 @@
     return hash;
   }
 
-  function layoutMatrix(trends, width, height) {
+  function resolveCanvasPixelRatio(width, height, requestedRatio = 1) {
+    const safeWidth = Math.max(1, Number(width) || 1);
+    const safeHeight = Math.max(1, Number(height) || 1);
+    const requested = Math.min(2, Math.max(1, Number(requestedRatio) || 1));
+    const budgetRatio = Math.sqrt(MAX_MATRIX_PIXELS / (safeWidth * safeHeight));
+    return Math.max(0.25, Math.min(requested, budgetRatio));
+  }
+
+  function resizeCanvasBackingStore(canvas, context, width, height, requestedRatio = 1) {
+    const pixelRatio = resolveCanvasPixelRatio(width, height, requestedRatio);
+    const targetWidth = Math.max(1, Math.round(width * pixelRatio));
+    const targetHeight = Math.max(1, Math.round(height * pixelRatio));
+    let resized = false;
+    if (canvas.width !== targetWidth) {
+      canvas.width = targetWidth;
+      resized = true;
+    }
+    if (canvas.height !== targetHeight) {
+      canvas.height = targetHeight;
+      resized = true;
+    }
+    context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+    return Object.freeze({ pixelRatio, targetWidth, targetHeight, resized });
+  }
+
+  function invalidateTopicLoad(model) {
+    model.topicController?.abort?.();
+    model.topicController = null;
+    model.topicSequence = (Number.isSafeInteger(model.topicSequence) ? model.topicSequence : 0) + 1;
+    return model.topicSequence;
+  }
+
+  function layoutMatrix(trends, width, height, selectedId = "", rankById = null) {
     const safeWidth = Math.max(240, Number(width) || 0);
     const safeHeight = Math.max(220, Number(height) || 0);
-    const left = 48;
-    const right = safeWidth - 48;
-    const top = 40;
-    const bottom = safeHeight - 48;
-    const maxEvents = Math.max(1, ...trends.map((item) => Number(item.counts?.current) || 0));
+    const source = Array.isArray(trends) ? trends : [];
+    const resolvedRanks = new Map(source.map((item, index) => {
+      const supplied = Number(rankById?.get?.(item?.id));
+      const embedded = Number(item?.rank);
+      const rank = Number.isSafeInteger(supplied) && supplied > 0
+        ? supplied
+        : (Number.isSafeInteger(embedded) && embedded > 0 ? embedded : index + 1);
+      return [item?.id, rank];
+    }));
+    const ranked = [...source]
+      .sort((left, right) => (
+        (resolvedRanks.get(left?.id) || Number.MAX_SAFE_INTEGER)
+        - (resolvedRanks.get(right?.id) || Number.MAX_SAFE_INTEGER)
+        || (Number(right?.score) || 0) - (Number(left?.score) || 0)
+        || String(left?.id || "").localeCompare(String(right?.id || ""))
+      ));
+    if (!ranked.length) return [];
+
+    const selected = ranked.find((item) => item.id === selectedId) || ranked[0];
+    const visible = [selected, ...ranked.filter((item) => item.id !== selected.id)]
+      .slice(0, MAX_TOPOLOGY_CELLS);
+    const maxEvents = Math.max(1, ...visible.map((item) => Number(item.counts?.current) || 0));
     const maxLog = Math.log1p(maxEvents);
-    const maximumOffset = 28;
-    const points = trends.map((item) => {
+    const quantitativeLeft = 28;
+    const quantitativeRight = safeWidth - 28;
+    const quantitativeTop = 24;
+    const quantitativeBottom = safeHeight - 24;
+    const outerCount = Math.max(0, visible.length - 1);
+    const slotFor = (index) => {
+      if (outerCount >= 8) return TOPOLOGY_SLOTS[index] || TOPOLOGY_SLOTS[TOPOLOGY_SLOTS.length - 1];
+      const angle = (-Math.PI / 2) + ((Math.PI * 2 * index) / Math.max(1, outerCount));
+      return [0.5 + (Math.cos(angle) * 0.4), 0.5 + (Math.sin(angle) * 0.35)];
+    };
+
+    return visible.map((item, index) => {
       const current = Number(item.counts?.current) || 0;
       const previous = Number(item.counts?.previous) || 0;
       const prePrevious = Number(item.counts?.pre_previous) || 0;
       const direction = (current - previous) / Math.max(current, previous, 1);
       const previousDirection = (previous - prePrevious) / Math.max(previous, prePrevious, 1);
+      const normalizedEvidence = maxLog === 0 ? 0 : Math.log1p(current) / maxLog;
+      const previousEvidence = maxLog === 0 ? 0 : Math.log1p(previous) / maxLog;
+      const sourceCount = Math.max(1, Number(item.unique_sources) || 1);
+      const isCenter = index === 0;
+      const slot = isCenter ? [0.5, 0.51] : slotFor(index - 1);
+      const cellRadiusX = isCenter
+        ? Math.max(78, Math.min(safeWidth * 0.19, safeHeight * 0.25))
+        : Math.max(43, Math.min(
+          safeWidth * (0.066 + (normalizedEvidence * 0.018)),
+          safeHeight * 0.14,
+        ));
+      const cellRadiusY = isCenter
+        ? Math.max(72, Math.min(safeHeight * 0.2, safeWidth * 0.18))
+        : Math.max(39, Math.min(
+          safeHeight * (0.062 + (normalizedEvidence * 0.016)),
+          safeWidth * 0.105,
+        ));
+      const facets = [
+        ...(Array.isArray(item.sources) ? item.sources : []).map((facet) => ({
+          role: "source",
+          name: String(facet.name || ""),
+          count: Number(facet.count) || 0,
+        })),
+        ...(Array.isArray(item.scenarios) ? item.scenarios : []).map((facet) => ({
+          role: "scenario",
+          name: String(facet.name || ""),
+          count: Number(facet.count) || 0,
+        })),
+      ]
+        .filter((facet) => facet.name)
+        .sort((left, right) => right.count - left.count || left.name.localeCompare(right.name))
+        .slice(0, isCenter ? 10 : 7)
+        .map((facet) => Object.freeze(facet));
       const normalizedX = Math.max(0, Math.min(1, 0.5 + (direction * 0.43)));
       const previousNormalizedX = Math.max(0, Math.min(1, 0.5 + (previousDirection * 0.43)));
-      const normalizedY = maxLog === 0 ? 0 : Math.log1p(current) / maxLog;
-      const previousNormalizedY = maxLog === 0 ? 0 : Math.log1p(previous) / maxLog;
-      const sourceCount = Math.max(1, Number(item.unique_sources) || 1);
-      const anchorX = left + ((right - left) * normalizedX);
-      const anchorY = Math.max(top, Math.min(bottom, bottom - ((bottom - top) * normalizedY)));
-      return {
+      const rank = resolvedRanks.get(item.id) || (ranked.findIndex((candidate) => candidate.id === item.id) + 1);
+      return Object.freeze({
         id: item.id,
         topic: item.topic,
         state: item.state,
         score: Number(item.score) || 0,
-        x: anchorX,
-        y: anchorY,
-        anchorX,
-        anchorY,
-        baseX: anchorX,
-        baseY: anchorY,
-        previousX: left + ((right - left) * previousNormalizedX),
-        previousY: bottom - ((bottom - top) * previousNormalizedY),
-        radius: Math.max(8, Math.min(19, 7 + (Math.sqrt(sourceCount) * 3.7))),
-      };
+        rank,
+        x: Math.round(safeWidth * slot[0] * 1000) / 1000,
+        y: Math.round(safeHeight * slot[1] * 1000) / 1000,
+        radius: Math.round((isCenter ? 20 : 12 + (Math.sqrt(sourceCount) * 1.5)) * 1000) / 1000,
+        cellRadiusX: Math.round(cellRadiusX * 1000) / 1000,
+        cellRadiusY: Math.round(cellRadiusY * 1000) / 1000,
+        anchorX: Math.round((quantitativeLeft + ((quantitativeRight - quantitativeLeft) * normalizedX)) * 1000) / 1000,
+        anchorY: Math.round((quantitativeBottom - ((quantitativeBottom - quantitativeTop) * normalizedEvidence)) * 1000) / 1000,
+        previousX: Math.round((quantitativeLeft + ((quantitativeRight - quantitativeLeft) * previousNormalizedX)) * 1000) / 1000,
+        previousY: Math.round((quantitativeBottom - ((quantitativeBottom - quantitativeTop) * previousEvidence)) * 1000) / 1000,
+        current,
+        previous,
+        prePrevious,
+        growth: Math.round(direction * 1000000) / 1000000,
+        sourceCount,
+        isCenter,
+        isSelected: item.id === selectedId,
+        facets: Object.freeze(facets),
+        visibleCount: visible.length,
+        totalCount: ranked.length,
+      });
     });
-
-    const clampOffset = (point) => {
-      const offsetX = point.x - point.anchorX;
-      const offsetY = point.y - point.anchorY;
-      const distance = Math.hypot(offsetX, offsetY);
-      if (distance <= maximumOffset) return;
-      const scale = maximumOffset / distance;
-      point.x = point.anchorX + (offsetX * scale);
-      point.y = point.anchorY + (offsetY * scale);
-    };
-
-    for (let pass = 0; pass < 36; pass += 1) {
-      for (let leftIndex = 0; leftIndex < points.length; leftIndex += 1) {
-        for (let rightIndex = leftIndex + 1; rightIndex < points.length; rightIndex += 1) {
-          const first = points[leftIndex];
-          const second = points[rightIndex];
-          let dx = second.x - first.x;
-          let dy = second.y - first.y;
-          let distance = Math.hypot(dx, dy);
-          if (distance < 0.01) {
-            const angle = ((stableHash(`${first.id}|${second.id}`) % 360) * Math.PI) / 180;
-            dx = Math.cos(angle);
-            dy = Math.sin(angle);
-            distance = 1;
-          }
-          const minimum = first.radius + second.radius + 7;
-          if (distance >= minimum) continue;
-          const push = (minimum - distance) / 2;
-          const unitX = dx / distance;
-          const unitY = dy / distance;
-          first.x = Math.max(left, Math.min(right, first.x - (unitX * push)));
-          first.y = Math.max(top, Math.min(bottom, first.y - (unitY * push)));
-          second.x = Math.max(left, Math.min(right, second.x + (unitX * push)));
-          second.y = Math.max(top, Math.min(bottom, second.y + (unitY * push)));
-          clampOffset(first);
-          clampOffset(second);
-        }
-      }
-    }
-    return points.map((point) => Object.freeze({
-      ...point,
-      x: Math.round(point.x * 1000) / 1000,
-      y: Math.round(point.y * 1000) / 1000,
-      anchorX: Math.round(point.anchorX * 1000) / 1000,
-      anchorY: Math.round(point.anchorY * 1000) / 1000,
-      baseX: Math.round(point.baseX * 1000) / 1000,
-      baseY: Math.round(point.baseY * 1000) / 1000,
-      previousX: Math.round(point.previousX * 1000) / 1000,
-      previousY: Math.round(point.previousY * 1000) / 1000,
-      radius: Math.round(point.radius * 1000) / 1000,
-    }));
   }
 
   function labeledPointIds(points, selectedId = "", hoveredId = "", limit = 8) {
@@ -785,7 +847,13 @@
   function hitTestMatrix(points, x, y) {
     return [...(points || [])]
       .reverse()
-      .find((point) => Math.hypot(point.x - x, point.y - y) <= point.radius + 5) || null;
+      .find((point) => {
+        const radiusX = Math.max(point.radius + 5, Number(point.cellRadiusX) || 0);
+        const radiusY = Math.max(point.radius + 5, Number(point.cellRadiusY) || 0);
+        const normalizedX = (point.x - x) / radiusX;
+        const normalizedY = (point.y - y) / radiusY;
+        return ((normalizedX * normalizedX) + (normalizedY * normalizedY)) <= 1;
+      }) || null;
   }
 
   function matrixColor(state) {
@@ -795,161 +863,353 @@
     return { solid: "#4db6ac", glow: "rgba(77,182,172,0.28)" };
   }
 
+  function hashUnit(seed, index) {
+    return (stableHash(`${seed}:${index}`) % 10000) / 9999;
+  }
+
+  function traceOrganicContour(context, point, scale, seedOffset = 0) {
+    const segments = 22;
+    const coordinates = [];
+    for (let index = 0; index < segments; index += 1) {
+      const angle = (Math.PI * 2 * index) / segments;
+      const perturbation = 0.94 + (hashUnit(point.id, (seedOffset * 31) + index) * 0.12);
+      coordinates.push({
+        x: point.x + (Math.cos(angle) * point.cellRadiusX * scale * perturbation),
+        y: point.y + (Math.sin(angle) * point.cellRadiusY * scale * perturbation),
+      });
+    }
+    const first = coordinates[0];
+    const last = coordinates[coordinates.length - 1];
+    context.beginPath();
+    context.moveTo((last.x + first.x) / 2, (last.y + first.y) / 2);
+    coordinates.forEach((current, index) => {
+      const next = coordinates[(index + 1) % coordinates.length];
+      context.quadraticCurveTo(current.x, current.y, (current.x + next.x) / 2, (current.y + next.y) / 2);
+    });
+    context.closePath();
+  }
+
+  function drawStarfield(context, width, height) {
+    const count = Math.max(84, Math.min(190, Math.round((width * height) / 4200)));
+    context.save();
+    for (let index = 0; index < count; index += 1) {
+      const x = hashUnit("trend-star-x", index) * width;
+      const y = hashUnit("trend-star-y", index) * height;
+      const bright = hashUnit("trend-star-a", index);
+      const radius = 0.45 + (hashUnit("trend-star-r", index) * 1.15);
+      context.fillStyle = bright > 0.9
+        ? `rgba(127,176,201,${0.18 + (bright * 0.32)})`
+        : `rgba(209,213,219,${0.055 + (bright * 0.13)})`;
+      context.beginPath();
+      context.arc(x, y, radius, 0, Math.PI * 2);
+      context.fill();
+    }
+    context.restore();
+  }
+
+  function ellipseBoundary(point, towardX, towardY, padding = 0) {
+    const dx = towardX - point.x;
+    const dy = towardY - point.y;
+    const denominator = Math.sqrt(
+      ((dx * dx) / Math.max(1, point.cellRadiusX * point.cellRadiusX))
+      + ((dy * dy) / Math.max(1, point.cellRadiusY * point.cellRadiusY)),
+    ) || 1;
+    const scale = Math.max(0, (1 / denominator) - (padding / Math.max(point.cellRadiusX, point.cellRadiusY)));
+    return { x: point.x + (dx * scale), y: point.y + (dy * scale) };
+  }
+
+  function drawTopologyRoute(context, center, point, index) {
+    const start = ellipseBoundary(center, point.x, point.y, 7);
+    const end = ellipseBoundary(point, center.x, center.y, -5);
+    const dx = end.x - start.x;
+    const dy = end.y - start.y;
+    const bend = ((index % 2 === 0 ? 1 : -1) * Math.min(42, Math.hypot(dx, dy) * 0.12));
+    const length = Math.hypot(dx, dy) || 1;
+    const normalX = -dy / length;
+    const normalY = dx / length;
+    const firstControl = {
+      x: start.x + (dx * 0.34) + (normalX * bend),
+      y: start.y + (dy * 0.34) + (normalY * bend),
+    };
+    const secondControl = {
+      x: start.x + (dx * 0.7) + (normalX * bend * 0.55),
+      y: start.y + (dy * 0.7) + (normalY * bend * 0.55),
+    };
+    context.save();
+    context.strokeStyle = "rgba(77,182,172,0.42)";
+    context.lineWidth = 1.15;
+    context.setLineDash([8, 9]);
+    context.beginPath();
+    context.moveTo(start.x, start.y);
+    context.bezierCurveTo(
+      firstControl.x,
+      firstControl.y,
+      secondControl.x,
+      secondControl.y,
+      end.x,
+      end.y,
+    );
+    context.stroke();
+    context.setLineDash([]);
+    const angle = Math.atan2(end.y - secondControl.y, end.x - secondControl.x);
+    const arrow = 7;
+    context.fillStyle = "rgba(90,218,207,0.72)";
+    context.beginPath();
+    context.moveTo(end.x, end.y);
+    context.lineTo(
+      end.x - (Math.cos(angle - 0.52) * arrow),
+      end.y - (Math.sin(angle - 0.52) * arrow),
+    );
+    context.lineTo(
+      end.x - (Math.cos(angle + 0.52) * arrow),
+      end.y - (Math.sin(angle + 0.52) * arrow),
+    );
+    context.closePath();
+    context.fill();
+    context.restore();
+  }
+
+  function drawCellContours(context, point, active = false, hovered = false) {
+    const amber = active;
+    context.save();
+    context.fillStyle = amber ? "rgba(243,169,72,0.045)" : "rgba(77,182,172,0.028)";
+    context.beginPath();
+    context.ellipse(point.x, point.y, point.cellRadiusX * 0.82, point.cellRadiusY * 0.8, 0, 0, Math.PI * 2);
+    context.fill();
+    const rings = active ? 7 : 6;
+    for (let ring = 0; ring < rings; ring += 1) {
+      const scale = 0.68 + (ring * (active ? 0.075 : 0.07));
+      traceOrganicContour(context, point, scale, ring);
+      context.strokeStyle = amber
+        ? `rgba(223,142,35,${0.2 - (ring * 0.015)})`
+        : `rgba(77,182,172,${(hovered ? 0.3 : 0.19) - (ring * 0.018)})`;
+      context.lineWidth = ring === 0 ? 1.25 : 1;
+      context.stroke();
+    }
+    context.restore();
+  }
+
+  function drawHub(context, point, active = false, hovered = false) {
+    const color = active ? "#f3a948" : "#4bd2c8";
+    const radius = point.radius + (hovered ? 2 : 0);
+    context.save();
+    context.shadowColor = active ? "rgba(243,169,72,0.52)" : "rgba(77,210,200,0.42)";
+    context.shadowBlur = active ? 14 : 10;
+    context.fillStyle = "rgba(6,15,24,0.96)";
+    context.strokeStyle = color;
+    context.lineWidth = active ? 3 : 2.2;
+    context.beginPath();
+    context.arc(point.x, point.y, radius, 0, Math.PI * 2);
+    context.fill();
+    context.stroke();
+    context.shadowBlur = 0;
+    context.strokeStyle = active ? "rgba(243,169,72,0.4)" : "rgba(77,210,200,0.34)";
+    context.lineWidth = 1;
+    context.beginPath();
+    context.arc(point.x, point.y, Math.max(5, radius * 0.56), 0, Math.PI * 2);
+    context.stroke();
+    context.beginPath();
+    context.moveTo(point.x - radius + 3, point.y);
+    context.lineTo(point.x + radius - 3, point.y);
+    context.moveTo(point.x, point.y - radius + 3);
+    context.lineTo(point.x, point.y + radius - 3);
+    context.stroke();
+    context.restore();
+  }
+
+  function facetLabel(facet) {
+    return facet.role === "source" ? formatSourceName(facet.name) : facet.name;
+  }
+
+  function truncateLabel(value, maximum) {
+    const characters = Array.from(String(value || ""));
+    return characters.length <= maximum ? characters.join("") : `${characters.slice(0, maximum).join("")}…`;
+  }
+
+  function drawOuterNetwork(context, point, hovered = false) {
+    drawCellContours(context, point, false, hovered);
+    const facets = point.facets || [];
+    facets.forEach((facet, index) => {
+      const angle = ((Math.PI * 2 * index) / Math.max(1, facets.length))
+        + ((stableHash(point.id) % 31) / 90);
+      const radial = 0.48 + (hashUnit(point.id, index + 70) * 0.18);
+      const nodeX = point.x + (Math.cos(angle) * point.cellRadiusX * radial);
+      const nodeY = point.y + (Math.sin(angle) * point.cellRadiusY * radial);
+      context.strokeStyle = "rgba(77,182,172,0.32)";
+      context.lineWidth = 1;
+      context.beginPath();
+      context.moveTo(point.x, point.y);
+      context.lineTo(nodeX, nodeY);
+      context.stroke();
+      context.fillStyle = "rgba(6,15,24,0.96)";
+      context.strokeStyle = hovered ? "rgba(113,238,228,0.94)" : "rgba(91,215,205,0.82)";
+      context.lineWidth = 1.2;
+      context.beginPath();
+      context.arc(nodeX, nodeY, 3 + Math.min(2.2, Math.sqrt(Math.max(0, facet.count)) * 0.62), 0, Math.PI * 2);
+      context.fill();
+      context.stroke();
+    });
+    drawHub(context, point, false, hovered);
+  }
+
+  function drawCentralNetwork(context, point, hovered = false) {
+    drawCellContours(context, point, true, hovered);
+    const slots = [
+      [0, -0.59], [0.36, -0.48], [0.61, -0.24], [0.65, 0.1], [0.47, 0.41],
+      [0.13, 0.58], [-0.27, 0.54], [-0.54, 0.33], [-0.64, -0.03], [-0.43, -0.4],
+    ];
+    const nodes = (point.facets || []).map((facet, index) => ({
+      facet,
+      x: point.x + (slots[index][0] * point.cellRadiusX),
+      y: point.y + (slots[index][1] * point.cellRadiusY),
+    }));
+    nodes.forEach((node, index) => {
+      context.strokeStyle = "rgba(221,148,50,0.43)";
+      context.lineWidth = 1;
+      context.beginPath();
+      context.moveTo(point.x, point.y);
+      context.lineTo(node.x, node.y);
+      context.stroke();
+      const next = nodes[index + 1];
+      if (next && stableHash(`${point.id}:${index}`) % 3 !== 0) {
+        context.strokeStyle = "rgba(77,182,172,0.22)";
+        context.beginPath();
+        context.moveTo(node.x, node.y);
+        context.lineTo(next.x, next.y);
+        context.stroke();
+      }
+    });
+    nodes.forEach((node) => {
+      const radius = 4 + Math.min(3, Math.sqrt(Math.max(0, node.facet.count)) * 0.7);
+      context.fillStyle = "rgba(172,105,22,0.88)";
+      context.strokeStyle = "rgba(243,169,72,0.94)";
+      context.lineWidth = 1.1;
+      context.beginPath();
+      context.arc(node.x, node.y, radius, 0, Math.PI * 2);
+      context.fill();
+      context.stroke();
+      const label = truncateLabel(facetLabel(node.facet), 10);
+      const deltaX = node.x - point.x;
+      const centered = Math.abs(deltaX) < point.cellRadiusX * 0.14;
+      const alignRight = deltaX < 0;
+      context.font = "600 12px ui-monospace, SFMono-Regular, Menlo, monospace";
+      context.textAlign = centered ? "center" : (alignRight ? "right" : "left");
+      context.textBaseline = "middle";
+      context.fillStyle = "rgba(231,211,180,0.92)";
+      context.fillText(
+        label,
+        centered ? node.x : node.x + (alignRight ? -9 : 9),
+        centered ? node.y + (node.y < point.y ? -13 : 13) : node.y,
+      );
+    });
+    drawHub(context, point, true, hovered);
+  }
+
+  function drawTerminalBadge(context, point, width, height, active = false, hovered = false) {
+    const title = `${String(point.rank).padStart(2, "0")}  ${truncateLabel(point.topic, active ? 14 : 11)}`;
+    const state = STATE_LABELS[point.state] || point.state;
+    const prefix = active ? (point.isSelected ? "展开中" : "TOP SIGNAL") : state;
+    const detail = `${prefix} · ${point.current}证据 · ${Math.round(point.score)}分`;
+    const titleSize = width >= 900 ? 13 : 12;
+    const detailSize = width >= 900 ? 12 : 11;
+    context.save();
+    context.font = `700 ${titleSize}px ui-monospace, SFMono-Regular, Menlo, monospace`;
+    const titleWidth = context.measureText(title).width;
+    context.font = `${detailSize}px ui-monospace, SFMono-Regular, Menlo, monospace`;
+    const detailWidth = context.measureText(detail).width;
+    const badgeWidth = Math.min(width - 16, Math.ceil(Math.max(titleWidth, detailWidth)) + 18);
+    const badgeHeight = width >= 900 ? 42 : 38;
+    const rawTop = point.y - point.cellRadiusY - badgeHeight - 4;
+    const left = Math.max(8, Math.min(width - badgeWidth - 8, point.x - (badgeWidth / 2)));
+    const top = Math.max(8, Math.min(height - badgeHeight - 8, rawTop));
+    context.fillStyle = "rgba(3,9,18,0.94)";
+    context.strokeStyle = active
+      ? "rgba(223,142,35,0.72)"
+      : (hovered ? "rgba(91,215,205,0.82)" : "rgba(77,182,172,0.34)");
+    context.lineWidth = hovered || active ? 1.35 : 1;
+    context.fillRect(left, top, badgeWidth, badgeHeight);
+    context.strokeRect(left + 0.5, top + 0.5, badgeWidth - 1, badgeHeight - 1);
+    context.textAlign = "left";
+    context.textBaseline = "alphabetic";
+    context.font = `700 ${titleSize}px ui-monospace, SFMono-Regular, Menlo, monospace`;
+    context.fillStyle = active ? "rgba(248,184,88,0.98)" : "rgba(222,237,238,0.96)";
+    context.fillText(title, left + 9, top + (width >= 900 ? 17 : 15));
+    context.font = `${detailSize}px ui-monospace, SFMono-Regular, Menlo, monospace`;
+    context.fillStyle = active ? "rgba(231,187,122,0.88)" : matrixColor(point.state).solid;
+    context.fillText(detail, left + 9, top + (width >= 900 ? 34 : 30));
+    context.restore();
+  }
+
   function drawMatrix(canvas, points, selectedId = "", hoveredId = "") {
     if (!canvas || typeof canvas.getContext !== "function") return;
     const width = Math.max(240, Math.round(canvas.clientWidth || canvas.width || 900));
     const height = Math.max(220, Math.round(canvas.clientHeight || canvas.height || 430));
-    const ratio = Math.min(2, Math.max(1, Number(globalThis.devicePixelRatio) || 1));
-    canvas.width = Math.round(width * ratio);
-    canvas.height = Math.round(height * ratio);
     const context = canvas.getContext("2d");
     if (!context) return;
-    context.setTransform(ratio, 0, 0, ratio, 0, 0);
-    context.clearRect(0, 0, width, height);
-
-    context.strokeStyle = "rgba(77,182,172,0.11)";
-    context.lineWidth = 1;
-    for (let step = 1; step < 5; step += 1) {
-      const x = Math.round((width / 5) * step) + 0.5;
-      const y = Math.round((height / 5) * step) + 0.5;
-      context.beginPath();
-      context.moveTo(x, 30);
-      context.lineTo(x, height - 34);
-      context.stroke();
-      context.beginPath();
-      context.moveTo(38, y);
-      context.lineTo(width - 30, y);
-      context.stroke();
-    }
-    context.strokeStyle = "rgba(77,182,172,0.26)";
-    context.beginPath();
-    context.moveTo(width / 2, 28);
-    context.lineTo(width / 2, height - 34);
-    context.stroke();
-
-    for (const point of points) {
-      const palette = matrixColor(point.state);
-      const anchorX = Number.isFinite(point.anchorX) ? point.anchorX : point.x;
-      const anchorY = Number.isFinite(point.anchorY) ? point.anchorY : point.y;
-      context.strokeStyle = point.state === "cooling"
-        ? "rgba(127,176,201,0.18)"
-        : "rgba(77,182,172,0.18)";
-      context.lineWidth = 1;
-      context.setLineDash([3, 4]);
-      context.beginPath();
-      context.moveTo(point.previousX, point.previousY);
-      context.lineTo(anchorX, anchorY);
-      context.stroke();
-      context.setLineDash([]);
-      context.fillStyle = "rgba(209,213,219,0.32)";
-      context.beginPath();
-      context.arc(point.previousX, point.previousY, 2.2, 0, Math.PI * 2);
-      context.fill();
-
-      context.strokeStyle = "rgba(77,182,172,0.07)";
-      context.beginPath();
-      context.moveTo(anchorX, anchorY);
-      context.lineTo(anchorX, height - 36);
-      context.stroke();
-
-      if (Math.hypot(point.x - anchorX, point.y - anchorY) > 1) {
-        context.strokeStyle = "rgba(209,213,219,0.42)";
-        context.setLineDash([2, 3]);
-        context.beginPath();
-        context.moveTo(anchorX, anchorY);
-        context.lineTo(point.x, point.y);
-        context.stroke();
-        context.setLineDash([]);
-        context.fillStyle = "rgba(209,213,219,0.72)";
-        context.beginPath();
-        context.arc(anchorX, anchorY, 2.4, 0, Math.PI * 2);
-        context.fill();
-      }
-
-      context.fillStyle = palette.glow;
-      context.beginPath();
-      context.arc(point.x, point.y, point.radius + 9, 0, Math.PI * 2);
-      context.fill();
-
-      context.fillStyle = "rgba(6,10,20,0.94)";
-      context.strokeStyle = palette.solid;
-      context.lineWidth = point.id === selectedId ? 3 : 1.5;
-      context.beginPath();
-      context.arc(point.x, point.y, point.radius, 0, Math.PI * 2);
-      context.fill();
-      context.stroke();
-
-      context.fillStyle = palette.solid;
-      context.beginPath();
-      context.arc(point.x, point.y, Math.max(3, point.radius * 0.24), 0, Math.PI * 2);
-      context.fill();
-
-      if (point.id === selectedId) {
-        context.strokeStyle = "rgba(243,169,72,0.9)";
-        context.lineWidth = 1.4;
-        context.beginPath();
-        context.arc(point.x, point.y, point.radius + 5, 0, Math.PI * 2);
-        context.stroke();
-        context.strokeStyle = "rgba(243,169,72,0.32)";
-        context.beginPath();
-        context.arc(point.x, point.y, point.radius + 10, 0, Math.PI * 2);
-        context.stroke();
-      }
-
-      context.fillStyle = "rgba(77,182,172,0.72)";
-      context.font = "11px ui-monospace, SFMono-Regular, Menlo, monospace";
-      context.textAlign = "center";
-      context.fillText(String(Math.round(point.score)), point.x, point.y + 3);
-    }
-
-    const annotations = layoutPointLabels(
-      points,
-      selectedId,
-      hoveredId,
+    resizeCanvasBackingStore(
+      canvas,
+      context,
       width,
       height,
-      height < 280 ? 4 : (width < 680 ? 6 : 8),
+      Number(globalThis.devicePixelRatio) || 1,
     );
-    for (const annotation of annotations) {
-      const label = Array.from(annotation.topic).slice(0, width < 680 ? 10 : 14).join("");
-      context.font = "600 12px ui-monospace, SFMono-Regular, Menlo, monospace";
-      context.textAlign = annotation.align;
-      const textWidth = Math.ceil(context.measureText(label).width);
-      const labelX = annotation.align === "left"
-        ? Math.min(annotation.x, width - textWidth - 5)
-        : Math.max(annotation.x, textWidth + 5);
-      const lineStartX = annotation.side === "right"
-        ? annotation.pointX + annotation.radius
-        : annotation.pointX - annotation.radius;
-      const lineEndX = annotation.side === "right" ? labelX - 5 : labelX + 5;
-      context.strokeStyle = "rgba(77,182,172,0.34)";
-      context.lineWidth = 1;
-      context.beginPath();
-      context.moveTo(lineStartX, annotation.pointY);
-      context.lineTo(lineEndX, annotation.y);
-      context.stroke();
-      const backgroundX = annotation.align === "left"
-        ? labelX - 3
-        : labelX - textWidth - 3;
-      context.fillStyle = "rgba(6,10,20,0.88)";
-      context.fillRect(backgroundX, annotation.y - 12, textWidth + 6, 17);
-      context.strokeStyle = "rgba(77,182,172,0.14)";
-      context.strokeRect(backgroundX + 0.5, annotation.y - 11.5, textWidth + 5, 16);
-      context.fillStyle = "rgba(209,213,219,0.94)";
-      context.fillText(label, labelX, annotation.y);
-    }
+    context.clearRect(0, 0, width, height);
+    context.fillStyle = "rgb(3,9,18)";
+    context.fillRect(0, 0, width, height);
+    drawStarfield(context, width, height);
+
+    const center = (points || []).find((point) => point.isCenter) || points?.[0];
+    if (!center) return;
+    const outer = points.filter((point) => point !== center);
+    outer.forEach((point, index) => drawTopologyRoute(context, center, point, index));
+    outer.forEach((point) => drawOuterNetwork(context, point, point.id === hoveredId));
+    drawCentralNetwork(context, center, center.id === hoveredId);
+    outer.forEach((point) => drawTerminalBadge(
+      context,
+      point,
+      width,
+      height,
+      false,
+      point.id === hoveredId,
+    ));
+    drawTerminalBadge(context, center, width, height, true, center.id === hoveredId);
+
+    context.save();
+    context.fillStyle = "rgba(209,213,219,0.74)";
+    context.strokeStyle = "rgba(77,182,172,0.34)";
+    context.lineWidth = 1;
+    context.fillRect(14, 14, 94, 32);
+    context.fillStyle = "rgba(3,9,18,0.96)";
+    context.fillRect(15, 15, 92, 30);
+    context.strokeRect(14.5, 14.5, 93, 31);
+    context.font = "600 11px ui-monospace, SFMono-Regular, Menlo, monospace";
+    context.textAlign = "center";
+    context.textBaseline = "middle";
+    context.fillStyle = "rgba(209,213,219,0.86)";
+    context.fillText("趋势总览", 61, 30);
+    const facetTotal = points.reduce((total, point) => total + (point.facets?.length || 0), 0);
+    const hidden = Math.max(0, (center.totalCount || points.length) - points.length);
+    const budget = `可见 ${points.length} 主题 / ${facetTotal} 维度${hidden ? ` / ${hidden} 待下钻` : ""}`;
+    context.font = "11px ui-monospace, SFMono-Regular, Menlo, monospace";
+    context.textAlign = "left";
+    context.fillStyle = "rgba(127,176,201,0.64)";
+    context.fillText(budget, 14, height - 15);
+    context.restore();
   }
 
   function drawSparkline(canvas, values, state) {
     if (!canvas || typeof canvas.getContext !== "function" || !Array.isArray(values)) return;
     const width = Math.max(220, Math.round(canvas.clientWidth || 280));
     const height = Math.max(68, Math.round(canvas.clientHeight || 74));
-    const ratio = Math.min(2, Math.max(1, Number(globalThis.devicePixelRatio) || 1));
-    canvas.width = Math.round(width * ratio);
-    canvas.height = Math.round(height * ratio);
     const context = canvas.getContext("2d");
     if (!context) return;
-    context.setTransform(ratio, 0, 0, ratio, 0, 0);
+    resizeCanvasBackingStore(
+      canvas,
+      context,
+      width,
+      height,
+      Number(globalThis.devicePixelRatio) || 1,
+    );
     context.clearRect(0, 0, width, height);
     context.strokeStyle = "rgba(77,182,172,0.12)";
     context.beginPath();
@@ -1200,6 +1460,7 @@
 
     function setButtonStates() {
       root.dataset.view = model.state.view;
+      root.dataset.detail = model.state.topic ? "open" : "closed";
       document.querySelectorAll("[data-trend-window]").forEach((button) => {
         button.setAttribute("aria-pressed", String(button.dataset.trendWindow === model.state.window));
       });
@@ -1289,7 +1550,14 @@
         return;
       }
       const rect = elements.matrix.getBoundingClientRect();
-      model.points = layoutMatrix(trends, rect.width || 900, rect.height || 430);
+      const rankById = new Map(model.windowData.trends.map((item, index) => [item.id, index + 1]));
+      model.points = layoutMatrix(
+        trends,
+        rect.width || 900,
+        rect.height || 620,
+        model.state.topic,
+        rankById,
+      );
       drawMatrix(elements.matrix, model.points, model.state.topic, model.hoveredId);
     }
 
@@ -1307,7 +1575,7 @@
       setButtonStates();
       setStatus(
         trends.length
-          ? `已显示 ${trends.length} 个可解释趋势；选择主题可查看证据。`
+          ? `已发现 ${trends.length} 个可解释趋势；拓扑首屏显示至多 ${MAX_TOPOLOGY_CELLS} 个主题细胞域，选择即可下钻证据。`
           : "当前筛选没有趋势信号。",
       );
     }
@@ -1560,6 +1828,7 @@
     }
 
     async function loadTopic(id, options = {}) {
+      const sequence = invalidateTopicLoad(model);
       if (!model.index || !TOPIC_ID.test(id) || !model.index.topics[id]) {
         model.state.topic = "";
         updateHistory(Boolean(options.push));
@@ -1584,27 +1853,28 @@
         completeDetailTransition(options);
         return;
       }
-      model.topicController?.abort();
-      model.topicController = new AbortController();
-      const sequence = ++model.topicSequence;
+      const controller = new AbortController();
+      model.topicController = controller;
       showDetailLoading();
       try {
         const ref = model.index.topics[id];
         const url = resolveAssetUrl(root.dataset.indexUrl, ref.path, windowObject);
         const raw = await fetchJson(url, {
-          signal: model.topicController.signal,
+          signal: controller.signal,
           maximumBytes: MAX_TOPIC_BYTES,
           expectedBytes: ref.bytes,
           expectedSha256: ref.sha256,
         }, windowObject);
         if (sequence !== model.topicSequence) return;
+        if (model.topicController === controller) model.topicController = null;
         const topic = validateTopic(raw, id, model.index);
         model.topicCache.set(id, topic);
         renderDetail(topic);
         completeDetailTransition(options);
       } catch (error) {
-        if (error?.name === "AbortError") return;
         if (sequence !== model.topicSequence) return;
+        if (model.topicController === controller) model.topicController = null;
+        if (error?.name === "AbortError") return;
         elements.detail.replaceChildren();
         const state = document.createElement("div");
         state.className = "trend-detail__placeholder";
@@ -1619,7 +1889,7 @@
     }
 
     function scrollDetailIntoView() {
-      if (!windowObject.matchMedia?.("(max-width: 1020px)").matches) return;
+      if (!windowObject.matchMedia?.("(max-width: 1439px)").matches) return;
       const reduced = windowObject.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
       elements.detail.scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "start" });
     }
@@ -1649,7 +1919,7 @@
     function closeTopicDetail(restoreFocus = false) {
       const returnTopicId = model.returnTopicId;
       const returnToStage = model.returnToStage;
-      model.topicController?.abort();
+      invalidateTopicLoad(model);
       model.state.topic = "";
       model.returnTopicId = "";
       model.returnToStage = false;
@@ -1663,7 +1933,7 @@
     async function loadWindow(windowName, options = {}) {
       if (!model.index || !WINDOWS.includes(windowName)) return;
       model.windowController?.abort();
-      model.topicController?.abort();
+      invalidateTopicLoad(model);
       model.windowController = new AbortController();
       const sequence = ++model.windowSequence;
       model.state.window = windowName;
@@ -1787,7 +2057,7 @@
         model.hoveredId = nextHoveredId;
         drawMatrix(elements.matrix, model.points, model.state.topic, model.hoveredId);
       }
-      elements.matrix.style.cursor = point ? "pointer" : "crosshair";
+      elements.matrix.style.cursor = point ? "pointer" : "default";
       elements.matrix.title = point ? `${point.topic} · 得分 ${Math.round(point.score)}` : "";
     });
     elements.matrix.addEventListener("mouseleave", () => {
@@ -1858,7 +2128,7 @@
     });
     windowObject.addEventListener("pagehide", () => {
       model.windowController?.abort();
-      model.topicController?.abort();
+      invalidateTopicLoad(model);
       model.resizeObserver?.disconnect();
       filterMedia?.removeEventListener?.("change", handleFilterViewportChange);
     }, { once: true });
@@ -1877,7 +2147,7 @@
     initialise();
     return Object.freeze({ model, loadWindow, loadTopic, destroy() {
       model.windowController?.abort();
-      model.topicController?.abort();
+      invalidateTopicLoad(model);
       model.resizeObserver?.disconnect();
       filterMedia?.removeEventListener?.("change", handleFilterViewportChange);
     } });
@@ -1894,10 +2164,13 @@
     freshnessStatus,
     hitTestMatrix,
     initializeTrendsPage,
+    invalidateTopicLoad,
     layoutMatrix,
     layoutPointLabels,
     labeledPointIds,
     parseState,
+    resizeCanvasBackingStore,
+    resolveCanvasPixelRatio,
     resolveWindowSignal,
     safeAssetPath,
     safeInternalUrl,

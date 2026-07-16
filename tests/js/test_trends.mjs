@@ -172,7 +172,55 @@ test("watchlist toggles a normalized topic without changing the existing schema"
 });
 
 
-test("matrix layout is deterministic, bounded and needs no animation frame", () => {
+test("topic load invalidation aborts and advances the sequence before a cache hit can render", () => {
+  let aborts = 0;
+  const model = {
+    topicController: { abort() { aborts += 1; } },
+    topicSequence: 7,
+  };
+
+  assert.equal(Trends.invalidateTopicLoad(model), 8);
+  assert.equal(aborts, 1);
+  assert.equal(model.topicController, null);
+  assert.equal(Trends.invalidateTopicLoad(model), 9);
+  assert.equal(aborts, 1);
+});
+
+
+test("canvas backing stores reuse unchanged allocations and obey the eight megapixel budget", () => {
+  const pixelBudget = 8 * 1024 * 1024;
+  const fourKRatio = Trends.resolveCanvasPixelRatio(3840, 2160, 2);
+  const eightKRatio = Trends.resolveCanvasPixelRatio(7680, 4320, 2);
+  assert.ok(fourKRatio < 2);
+  assert.ok(eightKRatio < 1);
+  for (const [width, height, ratio] of [
+    [3840, 2160, fourKRatio],
+    [7680, 4320, eightKRatio],
+  ]) {
+    assert.ok(width * height * ratio * ratio <= pixelBudget + 2);
+  }
+
+  let width = 0;
+  let height = 0;
+  let allocations = 0;
+  const canvas = {};
+  Object.defineProperties(canvas, {
+    width: { get: () => width, set: (value) => { width = value; allocations += 1; } },
+    height: { get: () => height, set: (value) => { height = value; allocations += 1; } },
+  });
+  const transforms = [];
+  const context = { setTransform: (...values) => transforms.push(values) };
+  const first = Trends.resizeCanvasBackingStore(canvas, context, 1200, 800, 2);
+  const second = Trends.resizeCanvasBackingStore(canvas, context, 1200, 800, 2);
+
+  assert.equal(first.resized, true);
+  assert.equal(second.resized, false);
+  assert.equal(allocations, 2, "hover redraw must not reallocate an unchanged backing store");
+  assert.equal(transforms.length, 2);
+});
+
+
+test("topology matrix is deterministic, bounded and needs no animation frame", () => {
   const values = [
     trend(),
     trend({ id: "tag:agent", topic: "Agent", score: 60, counts: { current: 4, previous: 0, pre_previous: 0 } }),
@@ -182,17 +230,53 @@ test("matrix layout is deterministic, bounded and needs no animation frame", () 
 
   assert.deepEqual(first, second);
   assert.equal(first.length, 2);
+  assert.equal(first[0].isCenter, true);
+  assert.equal(first[0].id, "tag:llm");
   for (const point of first) {
-    assert.ok(point.x >= 48 && point.x <= 852);
-    assert.ok(point.y >= 40 && point.y <= 432);
-    assert.ok(point.anchorX >= 48 && point.anchorX <= 852);
-    assert.ok(point.anchorY >= 40 && point.anchorY <= 432);
-    assert.ok(Math.hypot(point.x - point.anchorX, point.y - point.anchorY) <= 28.001);
-    assert.ok(point.radius >= 8 && point.radius <= 26);
-    assert.ok(point.previousX >= 48 && point.previousX <= 852);
-    assert.ok(point.previousY >= 40 && point.previousY <= 432);
+    assert.ok(point.x >= 0 && point.x <= 900);
+    assert.ok(point.y >= 0 && point.y <= 480);
+    assert.ok(point.anchorX >= 28 && point.anchorX <= 872);
+    assert.ok(point.anchorY >= 24 && point.anchorY <= 456);
+    assert.ok(point.radius >= 12 && point.radius <= 20);
+    assert.ok(point.cellRadiusX >= 43);
+    assert.ok(point.cellRadiusY >= 39);
+    assert.ok(point.previousX >= 28 && point.previousX <= 872);
+    assert.ok(point.previousY >= 24 && point.previousY <= 456);
+    assert.ok(Array.isArray(point.facets));
   }
   assert.equal(Trends.hitTestMatrix(first, first[0].x, first[0].y)?.id, first[0].id);
+});
+
+
+test("topology matrix caps the first paint and moves the selected topic into the expanded center", () => {
+  const values = Array.from({ length: 18 }, (_, index) => trend({
+    id: `tag:t-${index}`,
+    topic: `Topic ${index}`,
+    score: 100 - index,
+  }));
+  const points = Trends.layoutMatrix(values, 900, 620, "tag:t-15");
+
+  assert.equal(points.length, 11);
+  assert.equal(points[0].id, "tag:t-15");
+  assert.equal(points[0].isCenter, true);
+  assert.equal(points[0].isSelected, true);
+  assert.equal(points[0].totalCount, 18);
+  assert.equal(points.filter((point) => point.isCenter).length, 1);
+});
+
+
+test("filtered topology badges retain the full-window rank instead of renumbering", () => {
+  const filtered = [trend({ id: "tag:third", topic: "Third", score: 72 })];
+  const points = Trends.layoutMatrix(
+    filtered,
+    900,
+    620,
+    "",
+    new Map([["tag:third", 3]]),
+  );
+
+  assert.equal(points.length, 1);
+  assert.equal(points[0].rank, 3);
 });
 
 
@@ -213,7 +297,7 @@ test("matrix labels only the strongest eight plus selected and hovered evidence 
 });
 
 
-test("matrix collision offsets keep an explicit quantitative anchor", () => {
+test("topology orbit keeps explicit evidence and growth anchors without pretending they are positions", () => {
   const points = Trends.layoutMatrix([
     trend({ id: "tag:first", topic: "First" }),
     trend({ id: "tag:second", topic: "Second" }),
@@ -225,10 +309,9 @@ test("matrix collision offsets keep an explicit quantitative anchor", () => {
     [points[0].x, points[0].y],
     [points[1].x, points[1].y],
   );
-  assert.ok(points.every((point) => Math.hypot(
-    point.x - point.anchorX,
-    point.y - point.anchorY,
-  ) <= 28.001));
+  assert.equal(points[0].current, 12);
+  assert.equal(points[0].previous, 7);
+  assert.equal(points[0].growth, points[1].growth);
 });
 
 
