@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:行业格局",
-  "generated_at": "2026-07-15T22:15:26Z",
+  "generated_at": "2026-07-16T00:12:41Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -428,7 +428,7 @@
       "legacy_id": "Nscale",
       "level": 6,
       "name": "Nscale",
-      "rank": 2740,
+      "rank": 2746,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -445,7 +445,7 @@
       "legacy_id": "OpenEvidence",
       "level": 6,
       "name": "OpenEvidence",
-      "rank": 2765,
+      "rank": 2771,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -462,7 +462,7 @@
       "legacy_id": "科技",
       "level": 6,
       "name": "科技",
-      "rank": 5725,
+      "rank": 5733,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -479,7 +479,7 @@
       "legacy_id": "行业格局",
       "level": 6,
       "name": "行业格局",
-      "rank": 6121,
+      "rank": 6129,
       "related_count": 7,
       "weighted_degree": 7
     }

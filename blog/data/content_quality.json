@@ -1,5 +1,5 @@
 {
-  "active_count": 1930,
+  "active_count": 1933,
   "archived_count": 448,
   "complete_count": 0,
   "legacy_analysis_count": 1910,
@@ -10410,6 +10410,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260716-blogs_podcasts-3-questions-neural-transparency-and-the-future-of--0-2dfc72794b.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260716-blogs_podcasts-agentic-vision-building-visual-intelligence-with-a-0-ad37a98413.md": {
       "reasons": [
         "concise_source_card"
@@ -10449,7 +10455,19 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260716-hacker_news-llm-networking-with-mikrotik-0-ad58fc131d.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260716-juejin-七智能体的reflection机制让ai学会三省吾身-0-f08615b0cd.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260716-juejin-人类如何利用超长上下文与-ai-协作-0-7948c0b3cd.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -10461,9 +10479,9 @@
     "archived_content": 448
   },
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 20,
-  "source_file_count": 2378,
-  "source_tree_sha256": "2c651123a178a70db12384a8d3fb7b3df75e3a85f392cf6455c29f6487fecbdc",
+  "source_brief_count": 23,
+  "source_file_count": 2381,
+  "source_tree_sha256": "e6f508995871be9d89a0b4712c0aee3d8995304966e67f90746cb395b6bf98a9",
   "warning_counts": {
     "source_excerpt_truncated": 1
   }

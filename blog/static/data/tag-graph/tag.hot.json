@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-15T23:15:32Z",
+  "generated_at": "2026-07-16T00:12:41Z",
   "layer": "tag",
   "layers": {
     "application": {
@@ -15618,10 +15618,10 @@
     {
       "id": "edge:cooccurrence:tag:Hacker News->tag:来源快报",
       "source": "tag:Hacker News",
-      "strength": 0.5,
+      "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 1
+      "weight": 2
     },
     {
       "id": "edge:cooccurrence:tag:Hacker News->tag:模型优化",
@@ -36723,7 +36723,7 @@
       "weighted_degree": 91
     },
     {
-      "article_count": 35,
+      "article_count": 36,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
@@ -36737,7 +36737,7 @@
       "name": "Hacker News",
       "rank": 43,
       "related_count": 181,
-      "weighted_degree": 239
+      "weighted_degree": 240
     },
     {
       "article_count": 10,
@@ -36752,7 +36752,7 @@
       "legacy_id": "hacker_news",
       "level": 6,
       "name": "hacker_news",
-      "rank": 6835,
+      "rank": 6843,
       "related_count": 0,
       "weighted_degree": 0
     },
@@ -38865,7 +38865,7 @@
       "weighted_degree": 385
     },
     {
-      "article_count": 10,
+      "article_count": 12,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
@@ -38877,9 +38877,9 @@
       "legacy_id": "来源快报",
       "level": 6,
       "name": "来源快报",
-      "rank": 573,
+      "rank": 570,
       "related_count": 16,
-      "weighted_degree": 25
+      "weighted_degree": 27
     },
     {
       "article_count": 40,

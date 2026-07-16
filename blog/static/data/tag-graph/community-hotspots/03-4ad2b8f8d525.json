@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:P-EAGLE",
-  "generated_at": "2026-07-15T22:15:26Z",
+  "generated_at": "2026-07-16T00:12:41Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -462,7 +462,7 @@
       "legacy_id": "DSpark",
       "level": 6,
       "name": "DSpark",
-      "rank": 2257,
+      "rank": 2258,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -479,7 +479,7 @@
       "legacy_id": "EAGLE",
       "level": 6,
       "name": "EAGLE",
-      "rank": 2269,
+      "rank": 2270,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -496,7 +496,7 @@
       "legacy_id": "P-EAGLE",
       "level": 6,
       "name": "P-EAGLE",
-      "rank": 2783,
+      "rank": 2789,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -513,7 +513,7 @@
       "legacy_id": "特征选择",
       "level": 6,
       "name": "特征选择",
-      "rank": 5503,
+      "rank": 5511,
       "related_count": 7,
       "weighted_degree": 7
     }
