@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:Folo",
-  "generated_at": "2026-07-16T06:34:01Z",
+  "generated_at": "2026-07-16T11:57:08Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -309,7 +309,7 @@
       "legacy_id": "Next.js",
       "level": 6,
       "name": "Next.js",
-      "rank": 345,
+      "rank": 346,
       "related_count": 30,
       "weighted_degree": 35.6
     },
@@ -394,7 +394,7 @@
       "legacy_id": "AI摘要",
       "level": 6,
       "name": "AI摘要",
-      "rank": 1758,
+      "rank": 1759,
       "related_count": 7,
       "weighted_degree": 7.6
     },
@@ -411,7 +411,7 @@
       "legacy_id": "Folo",
       "level": 6,
       "name": "Folo",
-      "rank": 2354,
+      "rank": 2355,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -428,7 +428,7 @@
       "legacy_id": "RSS阅读器",
       "level": 6,
       "name": "RSS阅读器",
-      "rank": 2964,
+      "rank": 2965,
       "related_count": 7,
       "weighted_degree": 7
     },

@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:Gemini 3",
-  "generated_at": "2026-07-16T06:34:01Z",
+  "generated_at": "2026-07-16T11:57:08Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -343,7 +343,7 @@
       "legacy_id": "科学研究",
       "level": 6,
       "name": "科学研究",
-      "rank": 534,
+      "rank": 535,
       "related_count": 25,
       "weighted_degree": 28
     },
@@ -428,7 +428,7 @@
       "legacy_id": "AI 绘图",
       "level": 6,
       "name": "AI 绘图",
-      "rank": 1677,
+      "rank": 1678,
       "related_count": 7,
       "weighted_degree": 7.6
     },

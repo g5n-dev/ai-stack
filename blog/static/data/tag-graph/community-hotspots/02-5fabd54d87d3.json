@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:SpeechAnalyzer",
-  "generated_at": "2026-07-16T06:34:01Z",
+  "generated_at": "2026-07-16T11:57:08Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -309,7 +309,7 @@
       "legacy_id": "STT",
       "level": 6,
       "name": "STT",
-      "rank": 518,
+      "rank": 519,
       "related_count": 25,
       "weighted_degree": 28
     },
@@ -445,7 +445,7 @@
       "legacy_id": "API对比",
       "level": 6,
       "name": "API对比",
-      "rank": 1831,
+      "rank": 1832,
       "related_count": 7,
       "weighted_degree": 7.6
     },
@@ -462,7 +462,7 @@
       "legacy_id": "Moonshine",
       "level": 6,
       "name": "Moonshine",
-      "rank": 2691,
+      "rank": 2692,
       "related_count": 7,
       "weighted_degree": 7
     },

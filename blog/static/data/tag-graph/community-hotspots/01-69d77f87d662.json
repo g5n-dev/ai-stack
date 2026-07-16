@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:面试考点",
-  "generated_at": "2026-07-16T06:34:01Z",
+  "generated_at": "2026-07-16T11:57:08Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -496,7 +496,7 @@
       "legacy_id": "AI 术语",
       "level": 6,
       "name": "AI 术语",
-      "rank": 1667,
+      "rank": 1668,
       "related_count": 7,
       "weighted_degree": 7.6
     },
@@ -513,7 +513,7 @@
       "legacy_id": "AI 概念",
       "level": 6,
       "name": "AI 概念",
-      "rank": 1671,
+      "rank": 1672,
       "related_count": 7,
       "weighted_degree": 7.6
     },
@@ -530,7 +530,7 @@
       "legacy_id": "Apideck CLI",
       "level": 6,
       "name": "Apideck CLI",
-      "rank": 1829,
+      "rank": 1830,
       "related_count": 7,
       "weighted_degree": 7.6
     },

@@ -1,5 +1,5 @@
 {
-  "active_count": 1940,
+  "active_count": 1943,
   "archived_count": 448,
   "complete_count": 0,
   "legacy_analysis_count": 1910,
@@ -10422,6 +10422,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260716-arxiv-earthquaker-ai-a-retrieval-augmented-generation-fr-0-d0b35aad0d.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260716-arxiv-multi-expert-routing-for-multi-domain-low-resource-0-5cd26480cc.md": {
       "reasons": [
         "concise_source_card"
@@ -10479,6 +10485,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260716-blogs_podcasts-our-approach-to-bioresilience-0-16e13c52f7.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260716-blogs_podcasts-the-us-is-advancing-ai-safety-through-state-and-fe-0-23b1197c74.md": {
       "reasons": [
         "concise_source_card"
@@ -10514,6 +10526,12 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260716-juejin-从零构建-rag用-langchain-实现检索增强生成-0-bb5f1206fa.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -10521,9 +10539,9 @@
     "archived_content": 448
   },
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 30,
-  "source_file_count": 2388,
-  "source_tree_sha256": "91f4a48bac1c9239ccd6248b9de9bc31823a2acd125ef66f51a74cd991000423",
+  "source_brief_count": 33,
+  "source_file_count": 2391,
+  "source_tree_sha256": "eee57b7d5bbeea5758f2c1fd91bf15b6ba1771d7d98cffd4b65700f1019fae6a",
   "warning_counts": {
     "source_excerpt_truncated": 1
   }

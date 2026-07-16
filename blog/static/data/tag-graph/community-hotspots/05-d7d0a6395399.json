@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:Flux",
-  "generated_at": "2026-07-16T06:34:01Z",
+  "generated_at": "2026-07-16T11:57:08Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -343,7 +343,7 @@
       "legacy_id": "去噪",
       "level": 6,
       "name": "去噪",
-      "rank": 562,
+      "rank": 563,
       "related_count": 22,
       "weighted_degree": 28
     },
@@ -377,7 +377,7 @@
       "legacy_id": "Diffusion",
       "level": 6,
       "name": "Diffusion",
-      "rank": 1850,
+      "rank": 1851,
       "related_count": 7,
       "weighted_degree": 7.6
     },
@@ -394,7 +394,7 @@
       "legacy_id": "CFG",
       "level": 6,
       "name": "CFG",
-      "rank": 2114,
+      "rank": 2115,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -411,7 +411,7 @@
       "legacy_id": "Flux",
       "level": 6,
       "name": "Flux",
-      "rank": 2349,
+      "rank": 2350,
       "related_count": 7,
       "weighted_degree": 7
     },

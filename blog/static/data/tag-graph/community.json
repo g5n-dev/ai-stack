@@ -4,7 +4,7 @@
     {
       "article_count": 797,
       "hotspot_count": 21,
-      "hotspot_file": "community-hotspots/01-70d6e56e3c8a.json",
+      "hotspot_file": "community-hotspots/01-69d77f87d662.json",
       "id": "community:tag:面试考点",
       "leader_id": "tag:LLM",
       "name": "LLM",
@@ -14,33 +14,33 @@
       "weighted_degree": 8153.6
     },
     {
-      "article_count": 22,
-      "hotspot_count": 19,
-      "hotspot_file": "community-hotspots/02-a0be0a7e58bd.json",
-      "id": "community:tag:Amazon DynamoDB",
-      "leader_id": "tag:来源快报",
-      "name": "来源快报",
-      "node_count": 19,
-      "rank": 2,
-      "tag_occurrences": 58,
-      "weighted_degree": 206.6
-    },
-    {
       "article_count": 65,
       "hotspot_count": 17,
-      "hotspot_file": "community-hotspots/03-83732cdabd11.json",
+      "hotspot_file": "community-hotspots/02-5fabd54d87d3.json",
       "id": "community:tag:SpeechAnalyzer",
       "leader_id": "tag:开源模型",
       "name": "开源模型",
       "node_count": 17,
-      "rank": 3,
+      "rank": 2,
       "tag_occurrences": 88,
       "weighted_degree": 616.6
     },
     {
+      "article_count": 25,
+      "hotspot_count": 17,
+      "hotspot_file": "community-hotspots/03-8ded299e5426.json",
+      "id": "community:tag:Amazon DynamoDB",
+      "leader_id": "tag:来源快报",
+      "name": "来源快报",
+      "node_count": 17,
+      "rank": 3,
+      "tag_occurrences": 60,
+      "weighted_degree": 197.6
+    },
+    {
       "article_count": 77,
       "hotspot_count": 15,
-      "hotspot_file": "community-hotspots/04-7fd9d4cc0e14.json",
+      "hotspot_file": "community-hotspots/04-0b2f98c75903.json",
       "id": "community:tag:P-EAGLE",
       "leader_id": "tag:性能优化",
       "name": "性能优化",
@@ -52,7 +52,7 @@
     {
       "article_count": 87,
       "hotspot_count": 14,
-      "hotspot_file": "community-hotspots/05-82833e10f4b3.json",
+      "hotspot_file": "community-hotspots/05-d7d0a6395399.json",
       "id": "community:tag:Flux",
       "leader_id": "tag:扩散模型",
       "name": "扩散模型",
@@ -64,7 +64,7 @@
     {
       "article_count": 7,
       "hotspot_count": 14,
-      "hotspot_file": "community-hotspots/06-10af449ec1ef.json",
+      "hotspot_file": "community-hotspots/06-0ce26161e368.json",
       "id": "community:tag:移动开发",
       "leader_id": "tag:Android",
       "name": "Android",
@@ -76,7 +76,7 @@
     {
       "article_count": 107,
       "hotspot_count": 13,
-      "hotspot_file": "community-hotspots/07-5432d0fba969.json",
+      "hotspot_file": "community-hotspots/07-da0da9bc3df0.json",
       "id": "community:tag:行业格局",
       "leader_id": "tag:OpenAI",
       "name": "OpenAI",
@@ -88,7 +88,7 @@
     {
       "article_count": 34,
       "hotspot_count": 13,
-      "hotspot_file": "community-hotspots/08-c4d23b02607e.json",
+      "hotspot_file": "community-hotspots/08-626e627912b4.json",
       "id": "community:tag:Autotab",
       "leader_id": "tag:Cursor",
       "name": "Cursor",
@@ -100,7 +100,7 @@
     {
       "article_count": 67,
       "hotspot_count": 12,
-      "hotspot_file": "community-hotspots/09-d05d40c7e716.json",
+      "hotspot_file": "community-hotspots/09-0a0b33157ef6.json",
       "id": "community:tag:Gemini 3",
       "leader_id": "tag:模型发布",
       "name": "模型发布",
@@ -112,7 +112,7 @@
     {
       "article_count": 59,
       "hotspot_count": 12,
-      "hotspot_file": "community-hotspots/10-cdc01fb7cffb.json",
+      "hotspot_file": "community-hotspots/10-2425f41713da.json",
       "id": "community:tag:Folo",
       "leader_id": "tag:开源项目",
       "name": "开源项目",
@@ -124,7 +124,7 @@
     {
       "article_count": 53,
       "hotspot_count": 12,
-      "hotspot_file": "community-hotspots/11-5e623a398d24.json",
+      "hotspot_file": "community-hotspots/11-8e2849d149ab.json",
       "id": "community:tag:Clippy",
       "leader_id": "tag:AI 助手",
       "name": "AI 助手",
@@ -134,18 +134,18 @@
       "weighted_degree": 491.8
     },
     {
-      "article_count": 1916,
+      "article_count": 1917,
       "hotspot_count": 0,
       "id": "community:other",
       "leader_id": null,
       "name": "其他",
-      "node_count": 6627,
+      "node_count": 6629,
       "rank": 12,
-      "tag_occurrences": 13215,
-      "weighted_degree": 92537.4
+      "tag_occurrences": 13220,
+      "weighted_degree": 92556.4
     }
   ],
-  "generated_at": "2026-07-16T09:30:51Z",
+  "generated_at": "2026-07-16T11:57:08Z",
   "iterations": 6,
   "limit": 11,
   "links": [
@@ -155,7 +155,7 @@
       "strength": 1,
       "target": "community:tag:Amazon DynamoDB",
       "type": "community",
-      "weight": 50
+      "weight": 53
     },
     {
       "id": "edge:community:community:other->community:tag:Autotab",

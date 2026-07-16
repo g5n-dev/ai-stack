@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-16T09:30:51Z",
+  "generated_at": "2026-07-16T11:57:08Z",
   "layers": {
     "application": {
       "color": "#7aa6b8",
@@ -911,7 +911,7 @@
       "legacy_id": "data_science",
       "level": 5,
       "name": "数据科学",
-      "rank": 6795,
+      "rank": 6796,
       "weighted_degree": 4
     },
     {
@@ -1098,7 +1098,7 @@
       "legacy_id": "embedding",
       "level": 3,
       "name": "向量嵌入",
-      "rank": 6794,
+      "rank": 6795,
       "weighted_degree": 4.2
     },
     {
@@ -1302,7 +1302,7 @@
       "legacy_id": "langchain",
       "level": 2,
       "name": "LangChain",
-      "rank": 6793,
+      "rank": 6794,
       "weighted_degree": 4.2
     },
     {
@@ -1693,7 +1693,7 @@
       "legacy_id": "transformers",
       "level": 2,
       "name": "Transformers",
-      "rank": 6792,
+      "rank": 6793,
       "weighted_degree": 4.6
     },
     {

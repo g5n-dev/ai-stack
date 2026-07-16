@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:P-EAGLE",
-  "generated_at": "2026-07-16T06:34:01Z",
+  "generated_at": "2026-07-16T11:57:08Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -326,7 +326,7 @@
       "legacy_id": "vLLM",
       "level": 6,
       "name": "vLLM",
-      "rank": 323,
+      "rank": 324,
       "related_count": 34,
       "weighted_degree": 42
     },
@@ -343,7 +343,7 @@
       "legacy_id": "推测解码",
       "level": 6,
       "name": "推测解码",
-      "rank": 324,
+      "rank": 325,
       "related_count": 34,
       "weighted_degree": 42
     },
@@ -445,7 +445,7 @@
       "legacy_id": "AI 基准",
       "level": 6,
       "name": "AI 基准",
-      "rank": 1658,
+      "rank": 1659,
       "related_count": 7,
       "weighted_degree": 7.6
     },
@@ -462,7 +462,7 @@
       "legacy_id": "DSpark",
       "level": 6,
       "name": "DSpark",
-      "rank": 2266,
+      "rank": 2267,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -479,7 +479,7 @@
       "legacy_id": "EAGLE",
       "level": 6,
       "name": "EAGLE",
-      "rank": 2278,
+      "rank": 2279,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -496,7 +496,7 @@
       "legacy_id": "P-EAGLE",
       "level": 6,
       "name": "P-EAGLE",
-      "rank": 2796,
+      "rank": 2797,
       "related_count": 7,
       "weighted_degree": 7
     },

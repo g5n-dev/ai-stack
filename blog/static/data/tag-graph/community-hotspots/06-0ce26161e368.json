@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:移动开发",
-  "generated_at": "2026-07-16T06:34:01Z",
+  "generated_at": "2026-07-16T11:57:08Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -275,7 +275,7 @@
       "legacy_id": "Android",
       "level": 6,
       "name": "Android",
-      "rank": 389,
+      "rank": 390,
       "related_count": 31,
       "weighted_degree": 35
     },
@@ -292,7 +292,7 @@
       "legacy_id": "Kotlin",
       "level": 6,
       "name": "Kotlin",
-      "rank": 516,
+      "rank": 517,
       "related_count": 25,
       "weighted_degree": 28
     },
@@ -326,7 +326,7 @@
       "legacy_id": "Android Bench",
       "level": 6,
       "name": "Android Bench",
-      "rank": 1999,
+      "rank": 2000,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -343,7 +343,7 @@
       "legacy_id": "Bilibili",
       "level": 6,
       "name": "Bilibili",
-      "rank": 2080,
+      "rank": 2081,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -360,7 +360,7 @@
       "legacy_id": "Jetpack Compose",
       "level": 6,
       "name": "Jetpack Compose",
-      "rank": 2530,
+      "rank": 2531,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -377,7 +377,7 @@
       "legacy_id": "JNI",
       "level": 6,
       "name": "JNI",
-      "rank": 2534,
+      "rank": 2535,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -394,7 +394,7 @@
       "legacy_id": "JuiceSSH",
       "level": 6,
       "name": "JuiceSSH",
-      "rank": 2540,
+      "rank": 2541,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -411,7 +411,7 @@
       "legacy_id": "MVVM",
       "level": 6,
       "name": "MVVM",
-      "rank": 2710,
+      "rank": 2711,
       "related_count": 7,
       "weighted_degree": 7
     },
