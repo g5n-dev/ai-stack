@@ -211,7 +211,7 @@ class SiteHeaderContractTest(unittest.TestCase):
         config = (ROOT / "blog" / "config.toml").read_text(encoding="utf-8")
         positions = [
             config.index(f'name = "{label}"')
-            for label in ("首页", "归档", "搜索", "标签", "AI史塔克", "关于")
+            for label in ("首页", "归档", "搜索", "标签", "趋势", "AI史塔克", "关于")
         ]
         self.assertEqual(positions, sorted(positions))
 

@@ -1,0 +1,96 @@
+from __future__ import annotations
+
+from pathlib import Path
+
+from bs4 import BeautifulSoup
+
+ROOT = Path(__file__).resolve().parents[1]
+TEMPLATE = ROOT / "blog/themes/terminal-theme/layouts/trends/list.html"
+CSS = ROOT / "blog/static/css/trends.css"
+SCRIPT = ROOT / "blog/static/js/trends.js"
+
+
+def test_trends_page_is_a_progressive_shared_header_workbench() -> None:
+    source = TEMPLATE.read_text(encoding="utf-8")
+    soup = BeautifulSoup(source, "html.parser")
+
+    assert '{{ partial "site-head.html"' in source
+    assert '{{ partial "site-header.html" . }}' in source
+    assert '"css/trends.css" | relURL' in source
+    assert '"js/trends.js" | relURL' in source
+    assert '"js/watchlist.js" | relURL' in source
+    assert soup.select_one('main[id="trend-workbench"]') is not None
+    matrix = soup.select_one('canvas[id="trend-matrix"]')
+    assert matrix is not None
+    assert not matrix.has_attr("tabindex")
+    assert soup.select_one('ol[id="trend-list"]') is not None
+    assert soup.select_one('[id="trend-detail"]') is not None
+    assert soup.select_one('[id="trend-status"][aria-live="polite"]') is not None
+    assert soup.select_one('a[href="#trend-controls"]') is not None
+    assert soup.select_one('button.trend-mobile-filter-toggle[aria-controls="trend-filter-body"]') is not None
+    assert soup.select_one('[id="trend-filter-body"]') is not None
+    assert source.count("<h1") == 1
+    assert "趋势洞察" in source
+    assert "STACK趋势" not in source
+    assert "不代表全网热度" in source
+    assert "https://cdn." not in source
+    assert "requestAnimationFrame" not in source
+
+
+def test_trends_styles_are_scoped_and_share_site_tokens() -> None:
+    source = CSS.read_text(encoding="utf-8")
+
+    assert ".site-header" not in source
+    for token in (
+        "var(--site-font-sans)",
+        "var(--site-font-mono)",
+        "var(--primary)",
+        "var(--deep-navy)",
+        "var(--terminal-bg)",
+        "var(--muted-teal)",
+        "var(--off-white)",
+    ):
+        assert token in source
+    assert "@media (prefers-reduced-motion: reduce)" in source
+    assert "min-height: 44px" in source
+    assert "--trend-faint: rgba(var(--off-white), 0.58)" in source
+    assert not any(f"font-size: {size}px" in source for size in (8, 9, 10))
+    assert ".trend-evidence-link" in source
+    assert ".trend-mobile-filter-toggle" in source
+
+
+def test_trends_runtime_uses_safe_text_progressive_loading_and_distinct_links() -> None:
+    source = SCRIPT.read_text(encoding="utf-8")
+
+    assert "textContent" in source
+    assert "innerHTML" not in source
+    assert "AbortController" in source
+    assert "requestAnimationFrame" not in source
+    assert "history.pushState" in source
+    assert 'addEventListener("popstate"' in source
+    assert "/scenarios/" in source
+    assert 'mode: "focus"' in source
+    assert "AIStackWatchlist" in source
+    assert "external_url" not in source
+    assert "time.dateTime = item.published_at" in source
+    assert "completeDetailTransition" in source
+    assert "closeTopicDetail(true)" in source
+    assert "restoreTrendOrigin(previousTopic" in source
+    assert "loadTopic(next.topic, { push: false, focus: true, scroll: true })" in source
+    assert "setFilterPanel(!filterMedia?.matches)" in source
+    assert "resolveWindowSignal" in source
+    assert "30 天来源分布" in source
+    assert "30 天证据文章" in source
+
+
+def test_trends_route_and_navigation_use_the_short_user_facing_name() -> None:
+    config = (ROOT / "blog/config.toml").read_text(encoding="utf-8")
+    content = ROOT / "blog/content/trends/_index.md"
+
+    assert content.is_file()
+    assert 'name = "趋势"' in config
+    assert 'url = "/trends/"' in config
+    assert "STACK趋势" not in config
+    labels = ("首页", "归档", "搜索", "标签", "趋势", "AI史塔克", "关于")
+    positions = [config.index(f'name = "{label}"') for label in labels]
+    assert positions == sorted(positions)

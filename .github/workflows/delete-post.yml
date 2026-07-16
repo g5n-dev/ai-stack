@@ -34,10 +34,6 @@ permissions:
   actions: write
   contents: write
 
-env:
-  ANTHROPIC_AUTH_TOKEN: ${{ secrets.ANTHROPIC_AUTH_TOKEN }}
-  ANTHROPIC_BASE_URL: ${{ secrets.ANTHROPIC_BASE_URL }}
-
 jobs:
   delete-post:
     runs-on: ubuntu-latest
@@ -72,6 +68,8 @@ jobs:
           POST_PATH: ${{ inputs.post_path }}
           SCAN_LIMIT: ${{ inputs.scan_limit }}
           DRY_RUN: ${{ inputs.dry_run }}
+          ANTHROPIC_AUTH_TOKEN: ${{ secrets.ANTHROPIC_AUTH_TOKEN }}
+          ANTHROPIC_BASE_URL: ${{ secrets.ANTHROPIC_BASE_URL }}
         run: |
           set -euo pipefail
 
@@ -289,6 +287,13 @@ jobs:
             --fail-on-structural-warning
           python3 -m processor.tag_graph
           python3 scripts/verify_graph.py --assets-only --public-dir blog/static
+          python3 scripts/build_stack_trends.py \
+            --content-root blog/content \
+            --quality-manifest blog/data/content_quality.json \
+            --output blog/static/data/stack-trends
+          python3 scripts/verify_stack_trends.py \
+            --root blog/static/data/stack-trends \
+            --verify-hashes
 
       - name: Commit deletion and generated data
         id: commit
@@ -301,7 +306,8 @@ jobs:
           git add -A -- \
             blog/content/posts \
             blog/data/content_quality.json \
-            blog/static/data/tag-graph
+            blog/static/data/tag-graph \
+            blog/static/data/stack-trends
 
           if git diff --cached --quiet; then
             echo "Deletion was prepared but no tracked Post-derived change remains"

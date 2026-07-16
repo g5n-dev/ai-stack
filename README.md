@@ -3,7 +3,7 @@
 <h1>AI Stack · AI 史塔克</h1>
 
 <p><strong>AI 情报长期档案与动态场景知识图谱</strong></p>
-<p>从多源采集、历史去重、AI 精炼，到文章归档、图谱探索与自动发布，一个仓库跑通最小闭环。</p>
+<p>从多源采集、历史去重、AI 精炼，到文章归档、趋势洞察、图谱探索与自动发布，一个仓库跑通最小闭环。</p>
 <p><em>From AI firehose to a living knowledge graph.</em></p>
 
 <a href="https://github.com/g5n-dev/ai-stack/actions/workflows/deploy.yml"><img alt="Build and Deploy" src="https://img.shields.io/github/actions/workflow/status/g5n-dev/ai-stack/deploy.yml?branch=main&label=Build%20%26%20Deploy&style=for-the-badge&logo=githubactions&logoColor=white" /></a>
@@ -15,6 +15,8 @@
   <a href="https://ai-stack.site/"><strong>🚀 在线体验</strong></a>
   ·
   <a href="https://ai-stack.site/scenarios/"><strong>🕸️ 探索图谱</strong></a>
+  ·
+  <a href="https://ai-stack.site/trends/"><strong>📈 查看趋势</strong></a>
   ·
   <a href="#-60-秒开始"><strong>⚡ 60 秒开始</strong></a>
   ·
@@ -31,10 +33,11 @@
 
 ## ⚡ 为什么是 AI Stack
 
-| 一仓闭环 | 长期可追溯 | 活的知识图谱 |
-| --- | --- | --- |
-| **采集 → 精炼 → 归档 → 发布** 全部在一个仓库完成，不依赖数据库、消息队列或常驻服务。 | 先做历史 URL 去重，再生成摘要、标签和场景；文章保留原始来源，结论可回看、可复查。 | 以“技术总览 → 标签社区 → 节点邻域”渐进探索，只加载当前需要的子图。 |
-| ⚙️ 最小系统也能独立运行 | 🧭 情报不会变成一次性信息流 | 🕸️ 从文章继续追到关系与场景 |
+| ⚙️ 一仓闭环 | 🧭 长期可追溯 |
+| --- | --- |
+| **采集 → 精炼 → 归档 → 发布** 全部在一个仓库完成，不依赖数据库、消息队列或常驻服务；最小系统也能独立运行。 | 先做历史 URL 去重，再生成摘要、标签和场景；文章保留原始来源，结论可回看、可复查。 |
+| **📈 可解释趋势** | **🕸️ 活的知识图谱** |
+| 用证据数量、增长、加速度、来源多样性与新颖度识别信号，可从排名下钻到文章证据。 | 以“技术总览 → 标签社区 → 节点邻域”渐进探索，只加载当前需要的子图。 |
 
 > [!IMPORTANT]
 > 公开仓库使用标准 GitHub-hosted runner 与 GitHub Pages 时，托管和调度的固定基础设施成本可以接近 **0**。模型 API 与可选自定义域名可能产生外部费用；只浏览线上站点或本地启动 UI 不需要模型密钥。
@@ -50,7 +53,7 @@ flowchart LR
   A --> O["Markdown + Graph JSON v2"]
   O --> H["Hugo + Pagefind"]
   H --> P["GitHub Pages"]
-  P --> R["文章 · 标签 · 图谱"]
+  P --> R["文章 · 趋势 · 标签 · 图谱"]
   R -. "每小时第 17 分钟刷新" .-> S
 ```
 
@@ -98,11 +101,19 @@ flowchart LR
 
 搜索覆盖完整索引，但画布永远只绘制当前子图；密集数据留在 Worker 中切片，避免一次性渲染全量节点与边。
 
+### 04 · 趋势洞察
+
+<a href="https://ai-stack.site/trends/">
+  <img src="./docs/assets/readme/trends-overview.webp" alt="AI Stack 趋势洞察工作台真实界面" width="100%" />
+</a>
+
+<p align="center"><sub>真实界面 · 24h / 7d / 30d 窗口、证据矩阵、评分解释、文章与图谱双通道下钻</sub></p>
+
 ## ⚡ 60 秒开始
 
-### 路径 A：只看站点与图谱
+### 路径 A：只看站点、趋势与图谱
 
-无需 Python、数据库、容器或模型密钥。仓库已包含 Markdown 内容与生成后的图谱数据。
+无需 Python、数据库、容器或模型密钥。仓库已包含 Markdown 内容、生成后的图谱数据与趋势快照。
 
 ```bash
 git clone https://github.com/g5n-dev/ai-stack.git
@@ -130,19 +141,6 @@ nano .env
 bash scripts/run_local.sh --serve
 ```
 
-<details>
-<summary><strong>更多本地运行方式</strong></summary>
-
-```bash
-# 只生成 Markdown，不构建 Hugo
-bash scripts/run_local.sh --skip-build
-
-# 生成内容并构建静态站点
-bash scripts/run_local.sh
-```
-
-</details>
-
 ## 🧠 核心能力
 
 | 能力 | 说明 |
@@ -153,16 +151,17 @@ bash scripts/run_local.sh
 | 模型兼容层 | 基于 Anthropic SDK 与 Messages 请求结构，模型和 `base_url` 可配置。 |
 | GitHub 项目增强 | 为仓库内容补充 DeepWiki 上下文与结构化技术信息，形成适合长期阅读的项目档案。 |
 | 分层知识图谱 | 核心图、社区摘要、热点节点与焦点分片分层加载；搜索覆盖完整索引，画布只渲染当前子图。 |
-| 自动发布与监测 | Actions 生成内容与图谱、校验数据、构建 Pages、通知搜索引擎，并独立检查线上数据新鲜度。 |
+| 趋势洞察 | 复用收录证据生成确定性静态快照，支持窗口、来源、场景与信号筛选，并下钻文章或聚焦图谱节点。 |
+| 自动发布与监测 | Actions 生成内容、趋势与图谱，校验分片完整性，构建 Pages、通知搜索引擎，并独立检查线上数据新鲜度。 |
 
 ## 🚦 自动化与可靠性
 
 | 触发方式 | 执行内容 | 设计目的 |
 | --- | --- | --- |
 | Push 到 `main` | 验证并部署已提交快照，不执行抓取与模型处理 | 代码与样式更新快速上线 |
-| 计划在每小时第 `17` 分钟 | 抓取、质量清单、图谱重建、生成数据提交与部署 | 自动刷新情报档案 |
+| 计划在每小时第 `17` 分钟 | 抓取、质量清单、趋势快照、图谱重建、生成数据提交与部署 | 自动刷新情报档案 |
 | 手动触发 | 按需执行完整刷新 | 故障恢复与运营控制 |
-| 每 `6` 小时第 `23` 分钟 | 检查仓库与线上图谱新鲜度 | 及时发现数据停滞 |
+| 每 `6` 小时第 `23` 分钟 | 检查仓库与线上趋势、图谱新鲜度 | 及时发现数据停滞 |
 
 生产工作流固定使用 Python `3.11`、Node.js `22` 与 Hugo Extended `0.153.4`。两条部署路径都会构建 Hugo 与 Pagefind、发布 GitHub Pages，并按配置通知搜索引擎。
 
@@ -182,6 +181,7 @@ bash scripts/run_local.sh
 
 - [`config/sources.yaml`](./config/sources.yaml)：来源、抓取数量、超时与搜索兜底。
 - [`config/anthropic.yaml`](./config/anthropic.yaml)：模型参数、筛选、摘要、生成、标签与场景分析。
+- [`config/stack_trends.yaml`](./config/stack_trends.yaml)：趋势窗口、评分输入、标签排除与静态分片预算。
 - [`config/publisher.yaml`](./config/publisher.yaml)：微信、X/Twitter、Telegram 发布器，默认关闭。
 - [`runtime_profile.py`](./runtime_profile.py)：本地与 CI 的来源预算、并发与生成档位。
 
@@ -201,7 +201,7 @@ ai-stack/
 
 </details>
 
-生产地址为 [https://ai-stack.site/](https://ai-stack.site/)，图谱入口为 [https://ai-stack.site/scenarios/](https://ai-stack.site/scenarios/)。域名、Secrets 与 Pages 设置见 [部署指南](./DEPLOYMENT.md)。
+生产地址为 [https://ai-stack.site/](https://ai-stack.site/)，趋势入口为 [https://ai-stack.site/trends/](https://ai-stack.site/trends/)，图谱入口为 [https://ai-stack.site/scenarios/](https://ai-stack.site/scenarios/)。域名、Secrets 与 Pages 设置见 [部署指南](./DEPLOYMENT.md)。
 
 ## 📚 文档
 

@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="{{ .Site.LanguageCode }}" class="dark trends-page">
+<head>
+{{- $trendVersionSeed := printf "%s|%s"
+  (readFile "static/css/trends.css")
+  (readFile "static/js/trends.js")
+-}}
+{{- $trendVersion := $trendVersionSeed | md5 -}}
+{{- $trendStyles := slice (printf "%s?v=%s" ("css/trends.css" | relURL) $trendVersion) -}}
+{{ partial "site-head.html" (dict
+  "Page" .
+  "Title" (printf "%s · %s" .Title .Site.Title)
+  "Description" "AI Stack 趋势洞察：从站内收录证据发现技术信号，并下钻到文章与知识图谱。"
+  "Styles" $trendStyles
+) }}
+  <meta name="theme-color" content="#060a14">
+</head>
+<body class="trends-body">
+  <a class="trend-skip-link" href="#trend-controls">跳到趋势筛选</a>
+
+  {{ partial "site-header.html" . }}
+
+  <main
+    id="trend-workbench"
+    class="trend-workbench"
+    data-index-url="{{ "data/stack-trends/index.json" | relURL }}"
+    data-base-path="{{ .Site.Home.RelPermalink }}"
+  >
+    <section class="trend-hero" aria-labelledby="trend-page-title">
+      <div class="trend-hero__copy">
+        <p class="trend-kicker">INTELLIGENCE STACK / TREND_V1</p>
+        <h1 id="trend-page-title">趋势洞察</h1>
+        <p class="trend-hero__lead">从收录证据识别正在形成的技术信号，再下钻到文章脉络与知识图谱。</p>
+      </div>
+      <div class="trend-hero__status" role="status" aria-live="polite">
+        <span class="trend-live-dot" aria-hidden="true"></span>
+        <span id="trend-data-state">数据同步中</span>
+        <time id="trend-data-as-of" datetime="">—</time>
+      </div>
+    </section>
+
+    <p id="trend-disclaimer" class="trend-disclaimer">基于本站收录证据，不代表全网热度。</p>
+
+    <dl class="trend-kpis" aria-label="趋势数据概况">
+      <div>
+        <dt>可分析文章</dt>
+        <dd id="trend-stat-articles">—</dd>
+        <small>质量门禁通过</small>
+      </div>
+      <div>
+        <dt>趋势主题</dt>
+        <dd id="trend-stat-topics">—</dd>
+        <small>当前窗口</small>
+      </div>
+      <div>
+        <dt>活跃来源</dt>
+        <dd id="trend-stat-sources">—</dd>
+        <small>证据来源覆盖</small>
+      </div>
+      <div>
+        <dt>当前窗口</dt>
+        <dd id="trend-stat-window">30 天</dd>
+        <small>可切换 24h / 7d</small>
+      </div>
+    </dl>
+
+    <div class="trend-layout">
+      <aside id="trend-controls" class="trend-controls" aria-labelledby="trend-controls-title">
+        <div class="trend-panel-heading">
+          <div>
+            <p class="trend-panel-index">01 / SIGNAL FILTER</p>
+            <h2 id="trend-controls-title">趋势筛选</h2>
+          </div>
+          <div class="trend-panel-heading__actions">
+            <span class="trend-panel-chip">静态快照</span>
+            <button id="trend-mobile-filter-toggle" class="trend-mobile-filter-toggle" type="button"
+              aria-expanded="true" aria-controls="trend-filter-body">收起筛选</button>
+          </div>
+        </div>
+
+        <div id="trend-filter-body">
+        <fieldset class="trend-control-group">
+          <legend>观察窗口</legend>
+          <div class="trend-segmented" data-trend-window-group>
+            <button type="button" data-trend-window="24h" aria-pressed="false">24 小时</button>
+            <button type="button" data-trend-window="7d" aria-pressed="false">7 天</button>
+            <button type="button" data-trend-window="30d" aria-pressed="true">30 天</button>
+          </div>
+        </fieldset>
+
+        <div class="trend-control-group">
+          <label for="trend-query">搜索主题</label>
+          <input id="trend-query" type="search" maxlength="100" autocomplete="off"
+            placeholder="例如：Agent、RAG、LLM">
+        </div>
+
+        <div class="trend-control-group trend-control-grid">
+          <div>
+            <label for="trend-signal">信号状态</label>
+            <select id="trend-signal">
+              <option value="all">全部状态</option>
+              <option value="new">新出现</option>
+              <option value="rising">上升</option>
+              <option value="steady">稳定</option>
+              <option value="cooling">降温</option>
+            </select>
+          </div>
+          <div>
+            <label for="trend-source">来源</label>
+            <select id="trend-source"><option value="">全部来源</option></select>
+          </div>
+          <div class="trend-control-grid__wide">
+            <label for="trend-scenario">场景</label>
+            <select id="trend-scenario"><option value="">全部场景</option></select>
+          </div>
+        </div>
+
+        <div class="trend-control-actions">
+          <button id="trend-clear" type="button" class="trend-button trend-button--quiet">清除筛选</button>
+        </div>
+
+        <div class="trend-method-note">
+          <strong>可解释评分</strong>
+          <p>数量、增长、加速度、来源多样性、新颖度与来源权重共同计算；重复观测会降低得分。</p>
+        </div>
+
+        <p id="trend-sample-notice" class="trend-sample-notice" hidden></p>
+        </div>
+      </aside>
+
+      <section class="trend-stage" aria-labelledby="trend-stage-title">
+        <div class="trend-stage__toolbar">
+          <div>
+            <p class="trend-panel-index">02 / SIGNAL FIELD</p>
+            <h2 id="trend-stage-title">趋势矩阵</h2>
+          </div>
+          <div class="trend-stage__actions">
+            <span id="trend-result-count">— 个主题</span>
+            <div class="trend-view-switch" role="group" aria-label="趋势展示方式">
+              <button type="button" data-trend-view="matrix" aria-pressed="true">矩阵</button>
+              <button type="button" data-trend-view="list" aria-pressed="false">列表</button>
+            </div>
+          </div>
+        </div>
+
+        <div id="trend-status" class="trend-status" role="status" aria-live="polite" aria-atomic="true">
+          正在载入趋势索引…
+        </div>
+
+        <div id="trend-matrix-panel" class="trend-matrix-panel">
+          <div class="trend-axis trend-axis--vertical" aria-hidden="true">证据数量 ↑</div>
+          <canvas id="trend-matrix" role="img" aria-label="趋势矩阵：横轴为增长方向，纵轴为当前证据数量，气泡大小表示来源覆盖；气泡偏移时通过引线连接真实数据锚点。"></canvas>
+          <div class="trend-axis trend-axis--horizontal" aria-hidden="true">
+            <span>降温</span><span>增长方向</span><span>上升</span>
+          </div>
+          <div class="trend-matrix-legend" aria-hidden="true">
+            <span data-state="new">新出现</span>
+            <span data-state="rising">上升</span>
+            <span data-state="steady">稳定</span>
+            <span data-state="cooling">降温</span>
+          </div>
+        </div>
+
+        <div id="trend-empty" class="trend-empty" hidden>
+          <strong>当前条件没有趋势信号</strong>
+          <p>尝试扩大时间窗口，或清除来源与场景筛选。</p>
+        </div>
+
+        <ol id="trend-list" class="trend-list" aria-label="趋势主题排名"></ol>
+      </section>
+
+      <aside id="trend-detail" class="trend-detail" aria-labelledby="trend-detail-title">
+        <div class="trend-detail__placeholder">
+          <p class="trend-panel-index">03 / EVIDENCE DRILLDOWN</p>
+          <h2 id="trend-detail-title">主题详情</h2>
+          <p>选择趋势气泡或排名条目，查看评分依据、关联主题和证据文章。</p>
+          <small>站内文章在当前标签页打开；使用浏览器返回可恢复当前趋势状态。</small>
+        </div>
+      </aside>
+    </div>
+
+    <noscript>
+      <p class="trend-noscript">趋势洞察需要 JavaScript 加载静态分片；归档、标签和 RSS 仍可正常使用。</p>
+    </noscript>
+  </main>
+
+  <script src="{{ "js/watchlist.js" | relURL }}" defer></script>
+  <script src="{{ printf "%s?v=%s" ("js/trends.js" | relURL) $trendVersion }}" defer></script>
+</body>
+</html>

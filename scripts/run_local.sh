@@ -39,6 +39,19 @@ else
   python3 scripts/generate_content.py
 fi
 
+python3 scripts/build_content_quality_manifest.py \
+  --content-root blog/content \
+  --output blog/data/content_quality.json \
+  --fail-on-quarantine \
+  --fail-on-structural-warning
+python3 scripts/build_stack_trends.py \
+  --content-root blog/content \
+  --quality-manifest blog/data/content_quality.json \
+  --output blog/static/data/stack-trends
+python3 scripts/verify_stack_trends.py \
+  --root blog/static/data/stack-trends \
+  --verify-hashes
+
 if [[ "$SKIP_BUILD" -eq 0 ]]; then
   python3 scripts/preflight.py --require-hugo
   (

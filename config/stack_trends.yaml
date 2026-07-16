@@ -1,0 +1,32 @@
+version: 1
+
+# Exact source, transport and publication-format labels are not trend topics.
+# This list is deliberately reviewed and case-sensitive: semantic aliases belong
+# in config/tag_aliases.yaml, while newly observed source labels must be added here.
+excluded_tags:
+  - 来源快报
+  - 博客与播客
+  - 掘金
+  - arXiv
+  - Hacker News
+  - Show HN
+  - Ask HN
+  - Launch HN
+  - GitHub Trending
+  - Intermediate (200)
+  - cs.AI
+  - cs.CL
+  - cs.CR
+  - cs.CV
+  - cs.HC
+  - cs.LG
+  - cs.NE
+  - cs.RO
+  - cs.SE
+  - eess.IV
+  - math.OC
+  - stat.ML
+
+# Keep source contribution neutral until a reviewed provenance-based weighting
+# policy exists. Source diversity is already an explicit trend_v1 component.
+source_weight: 0.5

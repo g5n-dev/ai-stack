@@ -25,17 +25,10 @@ permissions:
   id-token: write
 
 env:
-  ANTHROPIC_AUTH_TOKEN: ${{ secrets.ANTHROPIC_AUTH_TOKEN }}
-  ANTHROPIC_BASE_URL: ${{ secrets.ANTHROPIC_BASE_URL }}
-  ANTHROPIC_MODEL: ${{ secrets.ANTHROPIC_MODEL }}
-  SEARXNG_BASE_URL: ${{ secrets.SEARXNG_BASE_URL }}
   AI_STACK_RUNTIME_PROFILE: ci
   SITE_BASE_URL: https://ai-stack.site/
   SITEMAP_PATH: blog/public/sitemap.xml
-  BING_INDEXNOW_API_KEY: ${{ secrets.BING_INDEXNOW_API_KEY }}
   BING_INDEXNOW_MAX_URLS: "80"
-  GOOGLE_INDEXING_API_KEY: ${{ secrets.GOOGLE_INDEXING_API_KEY }}
-  GOOGLE_INDEXING_API_URL: ${{ secrets.GOOGLE_INDEXING_API_URL }}
   AI_STACK_REFRESH_DATA: ${{ github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.refresh_data) }}
 
 jobs:
@@ -105,6 +98,7 @@ jobs:
           PYTHONPATH: /home/runner/work/ai-stack/ai-stack
           ANTHROPIC_AUTH_TOKEN: ${{ secrets.ANTHROPIC_AUTH_TOKEN }}
           ANTHROPIC_BASE_URL: ${{ secrets.ANTHROPIC_BASE_URL }}
+          ANTHROPIC_MODEL: ${{ secrets.ANTHROPIC_MODEL }}
           SEARXNG_BASE_URL: ${{ secrets.SEARXNG_BASE_URL }}
         run: |
           echo "=== Generating Posts (crawl + process + write markdown, runtime_profile=${AI_STACK_RUNTIME_PROFILE}) ==="
@@ -120,6 +114,7 @@ jobs:
           PYTHONPATH: /home/runner/work/ai-stack/ai-stack
           ANTHROPIC_AUTH_TOKEN: ${{ secrets.ANTHROPIC_AUTH_TOKEN }}
           ANTHROPIC_BASE_URL: ${{ secrets.ANTHROPIC_BASE_URL }}
+          ANTHROPIC_MODEL: ${{ secrets.ANTHROPIC_MODEL }}
         run: |
           echo "=== Moderation Cleanup (scan newly changed posts) ==="
           if [ -z "${ANTHROPIC_AUTH_TOKEN}" ]; then
@@ -284,8 +279,6 @@ jobs:
         if: ${{ env.AI_STACK_REFRESH_DATA == 'true' }}
         env:
           PYTHONPATH: /home/runner/work/ai-stack/ai-stack
-          ANTHROPIC_AUTH_TOKEN: ${{ secrets.ANTHROPIC_AUTH_TOKEN }}
-          ANTHROPIC_BASE_URL: ${{ secrets.ANTHROPIC_BASE_URL }}
           TAG_GRAPH_ENABLE_CONTENT_MINING: "0"
           TAG_INTRO_ENABLED: "0"
           TAG_INTRO_MAX_NEW: "0"
@@ -306,6 +299,28 @@ jobs:
             python3 scripts/verify_graph.py --assets-only --public-dir blog/static
           else
             python3 scripts/verify_graph.py
+          fi
+
+      - name: Build STACK trends
+        env:
+          PYTHONPATH: /home/runner/work/ai-stack/ai-stack
+        run: |
+          set -euo pipefail
+          python3 scripts/build_stack_trends.py \
+            --content-root blog/content \
+            --quality-manifest blog/data/content_quality.json \
+            --output blog/static/data/stack-trends
+
+      - name: Verify STACK trend assets
+        env:
+          PYTHONPATH: /home/runner/work/ai-stack/ai-stack
+        run: |
+          set -euo pipefail
+          python3 scripts/verify_stack_trends.py \
+            --root blog/static/data/stack-trends \
+            --verify-hashes
+          if [ "${AI_STACK_REFRESH_DATA}" != "true" ]; then
+            git diff --exit-code -- blog/static/data/stack-trends
           fi
 
       - name: Build Hugo site
@@ -334,20 +349,23 @@ jobs:
           git add -A -- \
             blog/content/posts \
             blog/data/content_quality.json \
-            blog/static/data/tag-graph
+            blog/static/data/tag-graph \
+            blog/static/data/stack-trends
           if git diff --cached --quiet; then
-            echo "No archive-new content or graph changes to commit"
+            echo "No content, graph, or trend changes to commit"
             echo "- Generated data: no changes" >> "$GITHUB_STEP_SUMMARY"
           else
             changed_posts=$(git diff --cached --name-only --diff-filter=A -- blog/content/posts | wc -l | tr -d ' ')
             echo "- New posts: ${changed_posts}" >> "$GITHUB_STEP_SUMMARY"
-            git commit -m "Update content and graph $(date -u +'%Y-%m-%dT%H:%M:%SZ') [skip ci]"
+            git commit -m "Update content, graph, and trends $(date -u +'%Y-%m-%dT%H:%M:%SZ') [skip ci]"
             # The publish artifact has already passed Hugo, Pagefind, catalog, and
             # graph validation. A concurrent human update must still fail closed.
             git push origin HEAD:main
           fi
 
       - name: Prepare IndexNow key file
+        env:
+          BING_INDEXNOW_API_KEY: ${{ secrets.BING_INDEXNOW_API_KEY }}
         run: |
           if [ -n "${BING_INDEXNOW_API_KEY}" ]; then
             mkdir -p blog/public
@@ -364,6 +382,10 @@ jobs:
         uses: actions/deploy-pages@v4
 
       - name: Notify search engines (IndexNow/Google)
+        env:
+          BING_INDEXNOW_API_KEY: ${{ secrets.BING_INDEXNOW_API_KEY }}
+          GOOGLE_INDEXING_API_KEY: ${{ secrets.GOOGLE_INDEXING_API_KEY }}
+          GOOGLE_INDEXING_API_URL: ${{ secrets.GOOGLE_INDEXING_API_URL }}
         run: |
           if [ -f scripts/notify_search_engines.py ]; then
             python3 scripts/notify_search_engines.py || true

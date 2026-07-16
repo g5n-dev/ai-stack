@@ -65,6 +65,9 @@ jobs:
           python3 -m pytest -q \
             tests/test_content_freshness.py \
             tests/test_workflow_security.py \
+            tests/test_trends_delivery_contract.py \
+            tests/test_stack_trends.py \
+            tests/test_stack_trends_monitoring.py \
             tests/test_graph_deploy_contract.py \
             tests/test_site_header_contract.py \
             tests/test_tag_graph_v2.py \
@@ -98,6 +101,21 @@ jobs:
             --fail-on-quarantine \
             --fail-on-structural-warning
           git diff --exit-code -- blog/data/content_quality.json
+
+      - name: Build committed STACK trend assets
+        env:
+          PYTHONPATH: ${{ github.workspace }}
+        run: python3 scripts/build_stack_trends.py
+
+      - name: Verify committed STACK trend assets
+        env:
+          PYTHONPATH: ${{ github.workspace }}
+        run: |
+          python3 scripts/verify_stack_trends.py \
+            --root blog/static/data/stack-trends \
+            --verify-hashes
+          git add --intent-to-add blog/static/data/stack-trends
+          git diff --exit-code -- blog/static/data/stack-trends
 
       - name: Run browser-runtime unit tests
         run: node --test tests/js/*.mjs tests/js/graph-runtime.test.js

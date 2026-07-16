@@ -91,14 +91,19 @@ url = "/tags/"
 weight = 4
 
 [[menu.main]]
+name = "趋势"
+url = "/trends/"
+weight = 5
+
+[[menu.main]]
 name = "AI史塔克"
 url = "/scenarios/"
-weight = 5
+weight = 6
 
 [[menu.main]]
 name = "关于"
 url = "/about/"
-weight = 6
+weight = 7
 
 [outputs]
 home = ["HTML", "RSS"]
