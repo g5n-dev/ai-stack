@@ -1,5 +1,5 @@
 {
-  "active_count": 1950,
+  "active_count": 1953,
   "archived_count": 448,
   "complete_count": 0,
   "legacy_analysis_count": 1910,
@@ -10557,6 +10557,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260717-arxiv-screening-of-biosecurity-features-in-metagenomic-d-0-b7fc03c76b.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260717-blogs_podcasts-building-a-restaurant-telephony-ai-host-with-amazo-0-71f458bbb4.md": {
       "reasons": [
         "concise_source_card"
@@ -10569,7 +10575,19 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260717-blogs_podcasts-introducing-grok-on-amazon-bedrock-0-b81aab9551.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260717-hacker_news-detecting-llm-generated-texts-with-classical-machi-0-30068d7445.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260717-hacker_news-notebooklm-is-now-gemini-notebook-0-7a40a45d7b.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -10581,9 +10599,9 @@
     "archived_content": 448
   },
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 40,
-  "source_file_count": 2398,
-  "source_tree_sha256": "200fe041838934d4a84eb5fc17bfb9e819d517b1120f849d63e7582b6f9fbb32",
+  "source_brief_count": 43,
+  "source_file_count": 2401,
+  "source_tree_sha256": "d5476e330b675c2aa9060352ec8554a725c5092e501134c7fe9d1177ec8e21ec",
   "warning_counts": {
     "source_excerpt_truncated": 1
   }
