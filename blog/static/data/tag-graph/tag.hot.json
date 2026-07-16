@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-16T16:45:57Z",
+  "generated_at": "2026-07-16T18:22:46Z",
   "layer": "tag",
   "layers": {
     "application": {
@@ -466,24 +466,16 @@
     {
       "id": "edge:cooccurrence:tag:AI->tag:博客与播客",
       "source": "tag:AI",
-      "strength": 0.5,
+      "strength": 1,
       "target": "tag:博客与播客",
       "type": "cooccurrence",
-      "weight": 1
+      "weight": 2
     },
     {
       "id": "edge:cooccurrence:tag:AI->tag:可视化",
       "source": "tag:AI",
       "strength": 0.5,
       "target": "tag:可视化",
-      "type": "cooccurrence",
-      "weight": 1
-    },
-    {
-      "id": "edge:cooccurrence:tag:AI->tag:商业化",
-      "source": "tag:AI",
-      "strength": 0.5,
-      "target": "tag:商业化",
       "type": "cooccurrence",
       "weight": 1
     },
@@ -674,10 +666,10 @@
     {
       "id": "edge:cooccurrence:tag:AI->tag:来源快报",
       "source": "tag:AI",
-      "strength": 0.5,
+      "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 1
+      "weight": 2
     },
     {
       "id": "edge:cooccurrence:tag:AI->tag:架构设计",
@@ -2744,14 +2736,6 @@
       "weight": 1
     },
     {
-      "id": "edge:cooccurrence:tag:AI 助手->tag:商业化",
-      "source": "tag:AI 助手",
-      "strength": 0.5,
-      "target": "tag:商业化",
-      "type": "cooccurrence",
-      "weight": 1
-    },
-    {
       "id": "edge:cooccurrence:tag:AI 助手->tag:图像生成",
       "source": "tag:AI 助手",
       "strength": 0.5,
@@ -4760,14 +4744,6 @@
       "weight": 1
     },
     {
-      "id": "edge:cooccurrence:tag:AI 应用->tag:商业化",
-      "source": "tag:AI 应用",
-      "strength": 0.5,
-      "target": "tag:商业化",
-      "type": "cooccurrence",
-      "weight": 1
-    },
-    {
       "id": "edge:cooccurrence:tag:AI 应用->tag:基础设施",
       "source": "tag:AI 应用",
       "strength": 0.5,
@@ -6428,14 +6404,6 @@
       "source": "tag:AI 编程",
       "strength": 0.5,
       "target": "tag:低延迟",
-      "type": "cooccurrence",
-      "weight": 1
-    },
-    {
-      "id": "edge:cooccurrence:tag:AI 编程->tag:商业化",
-      "source": "tag:AI 编程",
-      "strength": 0.5,
-      "target": "tag:商业化",
       "type": "cooccurrence",
       "weight": 1
     },
@@ -10384,14 +10352,6 @@
       "weight": 1
     },
     {
-      "id": "edge:cooccurrence:tag:Anthropic->tag:商业化",
-      "source": "tag:Anthropic",
-      "strength": 0.5,
-      "target": "tag:商业化",
-      "type": "cooccurrence",
-      "weight": 1
-    },
-    {
       "id": "edge:cooccurrence:tag:Anthropic->tag:基准测试",
       "source": "tag:Anthropic",
       "strength": 1,
@@ -11640,14 +11600,6 @@
       "weight": 1
     },
     {
-      "id": "edge:cooccurrence:tag:ChatGPT->tag:商业化",
-      "source": "tag:ChatGPT",
-      "strength": 0.5,
-      "target": "tag:商业化",
-      "type": "cooccurrence",
-      "weight": 1
-    },
-    {
       "id": "edge:cooccurrence:tag:ChatGPT->tag:图像生成",
       "source": "tag:ChatGPT",
       "strength": 0.5,
@@ -12060,14 +12012,6 @@
       "source": "tag:Claude",
       "strength": 0.5,
       "target": "tag:可视化",
-      "type": "cooccurrence",
-      "weight": 1
-    },
-    {
-      "id": "edge:cooccurrence:tag:Claude->tag:商业化",
-      "source": "tag:Claude",
-      "strength": 0.5,
-      "target": "tag:商业化",
       "type": "cooccurrence",
       "weight": 1
     },
@@ -13310,14 +13254,6 @@
       "target": "tag:低代码",
       "type": "cooccurrence",
       "weight": 2
-    },
-    {
-      "id": "edge:cooccurrence:tag:Copilot->tag:商业化",
-      "source": "tag:Copilot",
-      "strength": 0.5,
-      "target": "tag:商业化",
-      "type": "cooccurrence",
-      "weight": 1
     },
     {
       "id": "edge:cooccurrence:tag:Copilot->tag:大模型",
@@ -15408,14 +15344,6 @@
       "weight": 2
     },
     {
-      "id": "edge:cooccurrence:tag:Hacker News->tag:商业化",
-      "source": "tag:Hacker News",
-      "strength": 0.5,
-      "target": "tag:商业化",
-      "type": "cooccurrence",
-      "weight": 1
-    },
-    {
       "id": "edge:cooccurrence:tag:Hacker News->tag:多模态",
       "source": "tag:Hacker News",
       "strength": 0.5,
@@ -16876,14 +16804,6 @@
       "source": "tag:LLM",
       "strength": 1,
       "target": "tag:向量数据库",
-      "type": "cooccurrence",
-      "weight": 2
-    },
-    {
-      "id": "edge:cooccurrence:tag:LLM->tag:商业化",
-      "source": "tag:LLM",
-      "strength": 1,
-      "target": "tag:商业化",
       "type": "cooccurrence",
       "weight": 2
     },
@@ -19768,14 +19688,6 @@
       "weight": 1
     },
     {
-      "id": "edge:cooccurrence:tag:OpenAI->tag:商业化",
-      "source": "tag:OpenAI",
-      "strength": 1,
-      "target": "tag:商业化",
-      "type": "cooccurrence",
-      "weight": 2
-    },
-    {
       "id": "edge:cooccurrence:tag:OpenAI->tag:图像生成",
       "source": "tag:OpenAI",
       "strength": 0.5,
@@ -22416,14 +22328,6 @@
       "weight": 1
     },
     {
-      "id": "edge:cooccurrence:tag:SaaS->tag:商业化",
-      "source": "tag:SaaS",
-      "strength": 1,
-      "target": "tag:商业化",
-      "type": "cooccurrence",
-      "weight": 2
-    },
-    {
       "id": "edge:cooccurrence:tag:SaaS->tag:工作流",
       "source": "tag:SaaS",
       "strength": 1,
@@ -23712,6 +23616,38 @@
       "weight": 1
     },
     {
+      "id": "edge:cooccurrence:tag:arXiv->tag:cs.AI",
+      "source": "tag:arXiv",
+      "strength": 1,
+      "target": "tag:cs.AI",
+      "type": "cooccurrence",
+      "weight": 4
+    },
+    {
+      "id": "edge:cooccurrence:tag:arXiv->tag:cs.CL",
+      "source": "tag:arXiv",
+      "strength": 1,
+      "target": "tag:cs.CL",
+      "type": "cooccurrence",
+      "weight": 2
+    },
+    {
+      "id": "edge:cooccurrence:tag:arXiv->tag:cs.CV",
+      "source": "tag:arXiv",
+      "strength": 0.5,
+      "target": "tag:cs.CV",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:arXiv->tag:来源快报",
+      "source": "tag:arXiv",
+      "strength": 1,
+      "target": "tag:来源快报",
+      "type": "cooccurrence",
+      "weight": 8
+    },
+    {
       "id": "edge:cooccurrence:tag:arxiv->tag:cs.CL",
       "source": "tag:arxiv",
       "strength": 1,
@@ -23858,10 +23794,10 @@
     {
       "id": "edge:cooccurrence:tag:cs.CL->tag:来源快报",
       "source": "tag:cs.CL",
-      "strength": 0.5,
+      "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 1
+      "weight": 2
     },
     {
       "id": "edge:cooccurrence:tag:cs.CL->tag:模型对齐",
@@ -26637,7 +26573,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 9
+      "weight": 10
     },
     {
       "id": "edge:cooccurrence:tag:可观测性->tag:基准测试",
@@ -27236,46 +27172,6 @@
       "source": "tag:向量数据库",
       "strength": 0.5,
       "target": "tag:隐私保护",
-      "type": "cooccurrence",
-      "weight": 1
-    },
-    {
-      "id": "edge:cooccurrence:tag:商业化->tag:大模型",
-      "source": "tag:商业化",
-      "strength": 0.5,
-      "target": "tag:大模型",
-      "type": "cooccurrence",
-      "weight": 1
-    },
-    {
-      "id": "edge:cooccurrence:tag:商业化->tag:开发者工具",
-      "source": "tag:商业化",
-      "strength": 0.5,
-      "target": "tag:开发者工具",
-      "type": "cooccurrence",
-      "weight": 1
-    },
-    {
-      "id": "edge:cooccurrence:tag:商业化->tag:开源",
-      "source": "tag:商业化",
-      "strength": 0.5,
-      "target": "tag:开源",
-      "type": "cooccurrence",
-      "weight": 1
-    },
-    {
-      "id": "edge:cooccurrence:tag:商业化->tag:开源模型",
-      "source": "tag:商业化",
-      "strength": 0.5,
-      "target": "tag:开源模型",
-      "type": "cooccurrence",
-      "weight": 1
-    },
-    {
-      "id": "edge:cooccurrence:tag:商业化->tag:用户体验",
-      "source": "tag:商业化",
-      "strength": 0.5,
-      "target": "tag:用户体验",
       "type": "cooccurrence",
       "weight": 1
     },
@@ -35694,7 +35590,7 @@
       "weighted_degree": 90
     },
     {
-      "article_count": 50,
+      "article_count": 51,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
@@ -35708,7 +35604,7 @@
       "name": "AI",
       "rank": 25,
       "related_count": 256,
-      "weighted_degree": 345.6
+      "weighted_degree": 348.6
     },
     {
       "article_count": 132,
@@ -36029,7 +35925,7 @@
       "legacy_id": "AI伦理",
       "level": 6,
       "name": "AI伦理",
-      "rank": 230,
+      "rank": 231,
       "related_count": 48,
       "weighted_degree": 49.6
     },
@@ -36046,7 +35942,7 @@
       "legacy_id": "AI新闻",
       "level": 6,
       "name": "AI新闻",
-      "rank": 232,
+      "rank": 233,
       "related_count": 44,
       "weighted_degree": 49.6
     },
@@ -36119,6 +36015,23 @@
       "weighted_degree": 105.6
     },
     {
+      "article_count": 8,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Amazon DynamoDB",
+      "degree": 5,
+      "description": "文章标签: arXiv",
+      "id": "tag:arXiv",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "arXiv",
+      "level": 6,
+      "name": "arXiv",
+      "rank": 871,
+      "related_count": 5,
+      "weighted_degree": 16
+    },
+    {
       "article_count": 14,
       "category": "article_tag",
       "color": "#f59e0b",
@@ -36131,7 +36044,7 @@
       "legacy_id": "arxiv",
       "level": 6,
       "name": "arxiv",
-      "rank": 920,
+      "rank": 921,
       "related_count": 5,
       "weighted_degree": 14
     },
@@ -36335,12 +36248,12 @@
       "legacy_id": "cs.AI",
       "level": 6,
       "name": "cs.AI",
-      "rank": 229,
+      "rank": 230,
       "related_count": 43,
       "weighted_degree": 50
     },
     {
-      "article_count": 10,
+      "article_count": 11,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
@@ -36354,7 +36267,7 @@
       "name": "cs.CL",
       "rank": 228,
       "related_count": 49,
-      "weighted_degree": 53
+      "weighted_degree": 55
     },
     {
       "article_count": 15,
@@ -36709,7 +36622,7 @@
       "legacy_id": "JavaScript",
       "level": 6,
       "name": "JavaScript",
-      "rank": 231,
+      "rank": 232,
       "related_count": 46,
       "weighted_degree": 49.6
     },
@@ -36777,7 +36690,7 @@
       "legacy_id": "Llama 3.1",
       "level": 6,
       "name": "Llama 3.1",
-      "rank": 244,
+      "rank": 245,
       "related_count": 44,
       "weighted_degree": 49
     },
@@ -36828,7 +36741,7 @@
       "legacy_id": "Markdown",
       "level": 6,
       "name": "Markdown",
-      "rank": 238,
+      "rank": 239,
       "related_count": 46,
       "weighted_degree": 49
     },
@@ -37355,7 +37268,7 @@
       "legacy_id": "不确定性量化",
       "level": 6,
       "name": "不确定性量化",
-      "rank": 245,
+      "rank": 246,
       "related_count": 44,
       "weighted_degree": 49
     },
@@ -37491,7 +37404,7 @@
       "legacy_id": "企业AI",
       "level": 6,
       "name": "企业AI",
-      "rank": 236,
+      "rank": 237,
       "related_count": 47,
       "weighted_degree": 49
     },
@@ -37644,7 +37557,7 @@
       "legacy_id": "前沿模型",
       "level": 6,
       "name": "前沿模型",
-      "rank": 246,
+      "rank": 247,
       "related_count": 44,
       "weighted_degree": 49
     },
@@ -37666,7 +37579,7 @@
       "weighted_degree": 105
     },
     {
-      "article_count": 10,
+      "article_count": 11,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:Amazon DynamoDB",
@@ -37680,7 +37593,7 @@
       "name": "博客与播客",
       "rank": 416,
       "related_count": 20,
-      "weighted_degree": 31
+      "weighted_degree": 34
     },
     {
       "article_count": 9,
@@ -37783,23 +37696,6 @@
       "rank": 160,
       "related_count": 64,
       "weighted_degree": 77
-    },
-    {
-      "article_count": 7,
-      "category": "article_tag",
-      "color": "#f59e0b",
-      "community_id": "community:other",
-      "degree": 44,
-      "description": "文章标签: 商业化",
-      "id": "tag:商业化",
-      "layer": "tag",
-      "layer_name": "标签层",
-      "legacy_id": "商业化",
-      "level": 6,
-      "name": "商业化",
-      "rank": 247,
-      "related_count": 44,
-      "weighted_degree": 49
     },
     {
       "article_count": 26,
@@ -38001,7 +37897,7 @@
       "legacy_id": "小模型",
       "level": 6,
       "name": "小模型",
-      "rank": 233,
+      "rank": 234,
       "related_count": 49,
       "weighted_degree": 49
     },
@@ -38154,7 +38050,7 @@
       "legacy_id": "开发者体验",
       "level": 6,
       "name": "开发者体验",
-      "rank": 240,
+      "rank": 241,
       "related_count": 45,
       "weighted_degree": 49
     },
@@ -38647,7 +38543,7 @@
       "legacy_id": "数据治理",
       "level": 6,
       "name": "数据治理",
-      "rank": 239,
+      "rank": 240,
       "related_count": 46,
       "weighted_degree": 49
     },
@@ -38771,7 +38667,7 @@
       "weighted_degree": 385
     },
     {
-      "article_count": 25,
+      "article_count": 27,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:Amazon DynamoDB",
@@ -38783,9 +38679,9 @@
       "legacy_id": "来源快报",
       "level": 6,
       "name": "来源快报",
-      "rank": 271,
+      "rank": 229,
       "related_count": 20,
-      "weighted_degree": 47
+      "weighted_degree": 52
     },
     {
       "article_count": 40,
@@ -39157,7 +39053,7 @@
       "legacy_id": "生成模型",
       "level": 6,
       "name": "生成模型",
-      "rank": 234,
+      "rank": 235,
       "related_count": 48,
       "weighted_degree": 49
     },
@@ -39225,7 +39121,7 @@
       "legacy_id": "硬件",
       "level": 6,
       "name": "硬件",
-      "rank": 241,
+      "rank": 242,
       "related_count": 45,
       "weighted_degree": 49
     },
@@ -39242,7 +39138,7 @@
       "legacy_id": "硬件加速",
       "level": 6,
       "name": "硬件加速",
-      "rank": 237,
+      "rank": 238,
       "related_count": 47,
       "weighted_degree": 49
     },
@@ -39412,7 +39308,7 @@
       "legacy_id": "联邦学习",
       "level": 6,
       "name": "联邦学习",
-      "rank": 242,
+      "rank": 243,
       "related_count": 45,
       "weighted_degree": 49
     },
@@ -39565,7 +39461,7 @@
       "legacy_id": "表征学习",
       "level": 6,
       "name": "表征学习",
-      "rank": 243,
+      "rank": 244,
       "related_count": 45,
       "weighted_degree": 49
     },
@@ -39701,7 +39597,7 @@
       "legacy_id": "资源调度",
       "level": 6,
       "name": "资源调度",
-      "rank": 235,
+      "rank": 236,
       "related_count": 48,
       "weighted_degree": 49
     },
@@ -39878,13 +39774,13 @@
   ],
   "stats": {
     "links_by_type": {
-      "cooccurrence": 4401,
+      "cooccurrence": 4388,
       "semantic": 47
     },
     "nodes_by_layer": {
       "tag": 250
     },
-    "total_links": 4448,
+    "total_links": 4435,
     "total_nodes": 250
   },
   "version": 2

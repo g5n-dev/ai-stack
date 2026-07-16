@@ -1,5 +1,5 @@
 {
-  "active_count": 1948,
+  "active_count": 1950,
   "archived_count": 448,
   "complete_count": 0,
   "legacy_analysis_count": 1910,
@@ -10551,7 +10551,19 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260717-arxiv-hindcast-replaying-prediction-markets-to-evaluate--0-a7df4e0018.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260717-blogs_podcasts-building-a-restaurant-telephony-ai-host-with-amazo-0-71f458bbb4.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260717-blogs_podcasts-connect-more-of-your-apps-to-search-0-23c6974aa4.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -10569,9 +10581,9 @@
     "archived_content": 448
   },
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 38,
-  "source_file_count": 2396,
-  "source_tree_sha256": "611f506612c2c557182495eec01bd1c754fe65517866e8db911bb8ad7e42bc77",
+  "source_brief_count": 40,
+  "source_file_count": 2398,
+  "source_tree_sha256": "200fe041838934d4a84eb5fc17bfb9e819d517b1120f849d63e7582b6f9fbb32",
   "warning_counts": {
     "source_excerpt_truncated": 1
   }
