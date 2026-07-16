@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:Flux",
-  "generated_at": "2026-07-15T23:15:32Z",
+  "generated_at": "2026-07-16T03:39:14Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -343,7 +343,7 @@
       "legacy_id": "去噪",
       "level": 6,
       "name": "去噪",
-      "rank": 561,
+      "rank": 562,
       "related_count": 22,
       "weighted_degree": 28
     },
@@ -394,7 +394,7 @@
       "legacy_id": "CFG",
       "level": 6,
       "name": "CFG",
-      "rank": 2106,
+      "rank": 2107,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -411,7 +411,7 @@
       "legacy_id": "Flux",
       "level": 6,
       "name": "Flux",
-      "rank": 2338,
+      "rank": 2341,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -428,7 +428,7 @@
       "legacy_id": "SMC-CFG",
       "level": 6,
       "name": "SMC-CFG",
-      "rank": 3037,
+      "rank": 3045,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -445,7 +445,7 @@
       "legacy_id": "交互指南",
       "level": 6,
       "name": "交互指南",
-      "rank": 3424,
+      "rank": 3432,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -462,7 +462,7 @@
       "legacy_id": "图像保护",
       "level": 6,
       "name": "图像保护",
-      "rank": 4089,
+      "rank": 4097,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -479,7 +479,7 @@
       "legacy_id": "控制论",
       "level": 6,
       "name": "控制论",
-      "rank": 4813,
+      "rank": 4821,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -496,7 +496,7 @@
       "legacy_id": "cs.SE",
       "level": 6,
       "name": "cs.SE",
-      "rank": 6825,
+      "rank": 6834,
       "related_count": 1,
       "weighted_degree": 1
     }

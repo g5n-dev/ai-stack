@@ -1,5 +1,5 @@
 {
-  "active_count": 1933,
+  "active_count": 1936,
   "archived_count": 448,
   "complete_count": 0,
   "legacy_analysis_count": 1910,
@@ -10410,6 +10410,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260716-arxiv-can-an-old-dog-be-taught-new-tricks-taking-llms-be-0-5b7b6765bf.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260716-blogs_podcasts-3-questions-neural-transparency-and-the-future-of--0-2dfc72794b.md": {
       "reasons": [
         "concise_source_card"
@@ -10449,6 +10455,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260716-blogs_podcasts-the-us-is-advancing-ai-safety-through-state-and-fe-0-23b1197c74.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260716-hacker_news-brainless-shadcn-components-that-look-like-claude--0-98a6a85447.md": {
       "reasons": [
         "concise_source_card"
@@ -10467,6 +10479,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260716-juejin-个人电脑玩ai-10让5060-ti给你打工comfyui我差点被它劝退三次-0-b44e3c3473.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260716-juejin-人类如何利用超长上下文与-ai-协作-0-7948c0b3cd.md": {
       "reasons": [
         "concise_source_card"
@@ -10479,9 +10497,9 @@
     "archived_content": 448
   },
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 23,
-  "source_file_count": 2381,
-  "source_tree_sha256": "e6f508995871be9d89a0b4712c0aee3d8995304966e67f90746cb395b6bf98a9",
+  "source_brief_count": 26,
+  "source_file_count": 2384,
+  "source_tree_sha256": "55eceb131678dd03aa04330bb9796ead8e0613d45944bfd78c3cb3099a222517",
   "warning_counts": {
     "source_excerpt_truncated": 1
   }

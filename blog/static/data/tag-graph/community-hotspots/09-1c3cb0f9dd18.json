@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:Gemini 3",
-  "generated_at": "2026-07-15T23:15:32Z",
+  "generated_at": "2026-07-16T03:39:14Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -343,7 +343,7 @@
       "legacy_id": "科学研究",
       "level": 6,
       "name": "科学研究",
-      "rank": 533,
+      "rank": 534,
       "related_count": 25,
       "weighted_degree": 28
     },
@@ -445,7 +445,7 @@
       "legacy_id": "工程挑战",
       "level": 6,
       "name": "工程挑战",
-      "rank": 4463,
+      "rank": 4471,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -462,7 +462,7 @@
       "legacy_id": "长链思考",
       "level": 6,
       "name": "长链思考",
-      "rank": 6584,
+      "rank": 6592,
       "related_count": 7,
       "weighted_degree": 7
     }

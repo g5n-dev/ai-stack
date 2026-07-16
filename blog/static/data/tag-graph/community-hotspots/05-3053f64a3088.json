@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:移动开发",
-  "generated_at": "2026-07-15T23:15:32Z",
+  "generated_at": "2026-07-16T03:39:14Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -292,7 +292,7 @@
       "legacy_id": "Kotlin",
       "level": 6,
       "name": "Kotlin",
-      "rank": 515,
+      "rank": 516,
       "related_count": 25,
       "weighted_degree": 28
     },
@@ -343,7 +343,7 @@
       "legacy_id": "Bilibili",
       "level": 6,
       "name": "Bilibili",
-      "rank": 2072,
+      "rank": 2073,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -360,7 +360,7 @@
       "legacy_id": "Jetpack Compose",
       "level": 6,
       "name": "Jetpack Compose",
-      "rank": 2518,
+      "rank": 2522,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -377,7 +377,7 @@
       "legacy_id": "JNI",
       "level": 6,
       "name": "JNI",
-      "rank": 2522,
+      "rank": 2526,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -394,7 +394,7 @@
       "legacy_id": "JuiceSSH",
       "level": 6,
       "name": "JuiceSSH",
-      "rank": 2528,
+      "rank": 2532,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -411,7 +411,7 @@
       "legacy_id": "MVVM",
       "level": 6,
       "name": "MVVM",
-      "rank": 2697,
+      "rank": 2703,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -428,7 +428,7 @@
       "legacy_id": "SSH客户端",
       "level": 6,
       "name": "SSH客户端",
-      "rank": 3075,
+      "rank": 3083,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -445,7 +445,7 @@
       "legacy_id": "付费订阅",
       "level": 6,
       "name": "付费订阅",
-      "rank": 3478,
+      "rank": 3486,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -462,7 +462,7 @@
       "legacy_id": "模块化架构",
       "level": 6,
       "name": "模块化架构",
-      "rank": 5232,
+      "rank": 5240,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -479,7 +479,7 @@
       "legacy_id": "第三方客户端",
       "level": 6,
       "name": "第三方客户端",
-      "rank": 5783,
+      "rank": 5791,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -496,7 +496,7 @@
       "legacy_id": "软件更新",
       "level": 6,
       "name": "软件更新",
-      "rank": 6400,
+      "rank": 6408,
       "related_count": 7,
       "weighted_degree": 7
     }

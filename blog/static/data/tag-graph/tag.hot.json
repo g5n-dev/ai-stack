@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-16T00:12:41Z",
+  "generated_at": "2026-07-16T03:39:14Z",
   "layer": "tag",
   "layers": {
     "application": {
@@ -23872,6 +23872,14 @@
       "weight": 1
     },
     {
+      "id": "edge:cooccurrence:tag:cs.CL->tag:来源快报",
+      "source": "tag:cs.CL",
+      "strength": 0.5,
+      "target": "tag:来源快报",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
       "id": "edge:cooccurrence:tag:cs.CL->tag:模型对齐",
       "source": "tag:cs.CL",
       "strength": 0.5,
@@ -36451,11 +36459,11 @@
       "weighted_degree": 70
     },
     {
-      "article_count": 9,
+      "article_count": 10,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
-      "degree": 47,
+      "degree": 49,
       "description": "文章标签: cs.CL",
       "id": "tag:cs.CL",
       "layer": "tag",
@@ -36464,8 +36472,8 @@
       "level": 6,
       "name": "cs.CL",
       "rank": 228,
-      "related_count": 47,
-      "weighted_degree": 51
+      "related_count": 49,
+      "weighted_degree": 53
     },
     {
       "article_count": 14,
@@ -36752,7 +36760,7 @@
       "legacy_id": "hacker_news",
       "level": 6,
       "name": "hacker_news",
-      "rank": 6843,
+      "rank": 6844,
       "related_count": 0,
       "weighted_degree": 0
     },
@@ -38865,11 +38873,11 @@
       "weighted_degree": 385
     },
     {
-      "article_count": 12,
+      "article_count": 15,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
-      "degree": 16,
+      "degree": 18,
       "description": "文章标签: 来源快报",
       "id": "tag:来源快报",
       "layer": "tag",
@@ -38877,9 +38885,9 @@
       "legacy_id": "来源快报",
       "level": 6,
       "name": "来源快报",
-      "rank": 570,
-      "related_count": 16,
-      "weighted_degree": 27
+      "rank": 415,
+      "related_count": 18,
+      "weighted_degree": 32
     },
     {
       "article_count": 40,
@@ -39735,7 +39743,7 @@
       "article_count": 46,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:tag:SF6",
+      "community_id": "community:other",
       "degree": 254,
       "description": "文章标签: 计算机视觉",
       "id": "tag:计算机视觉",
@@ -40006,13 +40014,13 @@
   ],
   "stats": {
     "links_by_type": {
-      "cooccurrence": 4417,
+      "cooccurrence": 4418,
       "semantic": 47
     },
     "nodes_by_layer": {
       "tag": 250
     },
-    "total_links": 4464,
+    "total_links": 4465,
     "total_nodes": 250
   },
   "version": 2

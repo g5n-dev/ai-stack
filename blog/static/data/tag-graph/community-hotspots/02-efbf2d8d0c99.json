@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:SpeechAnalyzer",
-  "generated_at": "2026-07-15T23:15:32Z",
+  "generated_at": "2026-07-16T03:39:14Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -309,7 +309,7 @@
       "legacy_id": "STT",
       "level": 6,
       "name": "STT",
-      "rank": 517,
+      "rank": 518,
       "related_count": 25,
       "weighted_degree": 28
     },
@@ -462,7 +462,7 @@
       "legacy_id": "Moonshine",
       "level": 6,
       "name": "Moonshine",
-      "rank": 2678,
+      "rank": 2684,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -479,7 +479,7 @@
       "legacy_id": "SpeechAnalyzer",
       "level": 6,
       "name": "SpeechAnalyzer",
-      "rank": 3060,
+      "rank": 3068,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -496,7 +496,7 @@
       "legacy_id": "Xcode",
       "level": 6,
       "name": "Xcode",
-      "rank": 3266,
+      "rank": 3274,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -513,7 +513,7 @@
       "legacy_id": "实时转录",
       "level": 6,
       "name": "实时转录",
-      "rank": 4345,
+      "rank": 4353,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -530,7 +530,7 @@
       "legacy_id": "架构解析",
       "level": 6,
       "name": "架构解析",
-      "rank": 5180,
+      "rank": 5188,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -547,7 +547,7 @@
       "legacy_id": "浏览器端",
       "level": 6,
       "name": "浏览器端",
-      "rank": 5386,
+      "rank": 5394,
       "related_count": 7,
       "weighted_degree": 7
     }

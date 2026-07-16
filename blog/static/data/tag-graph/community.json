@@ -4,7 +4,7 @@
     {
       "article_count": 797,
       "hotspot_count": 21,
-      "hotspot_file": "community-hotspots/01-b699c83f2247.json",
+      "hotspot_file": "community-hotspots/01-a94c09f807c4.json",
       "id": "community:tag:面试考点",
       "leader_id": "tag:LLM",
       "name": "LLM",
@@ -16,7 +16,7 @@
     {
       "article_count": 65,
       "hotspot_count": 17,
-      "hotspot_file": "community-hotspots/02-c058f9e9b88c.json",
+      "hotspot_file": "community-hotspots/02-efbf2d8d0c99.json",
       "id": "community:tag:SpeechAnalyzer",
       "leader_id": "tag:开源模型",
       "name": "开源模型",
@@ -28,7 +28,7 @@
     {
       "article_count": 77,
       "hotspot_count": 15,
-      "hotspot_file": "community-hotspots/03-4ad2b8f8d525.json",
+      "hotspot_file": "community-hotspots/03-8f184b4390c4.json",
       "id": "community:tag:P-EAGLE",
       "leader_id": "tag:性能优化",
       "name": "性能优化",
@@ -40,7 +40,7 @@
     {
       "article_count": 86,
       "hotspot_count": 14,
-      "hotspot_file": "community-hotspots/04-3eb9e9bd33ca.json",
+      "hotspot_file": "community-hotspots/04-6b3978ed13c0.json",
       "id": "community:tag:Flux",
       "leader_id": "tag:扩散模型",
       "name": "扩散模型",
@@ -52,7 +52,7 @@
     {
       "article_count": 7,
       "hotspot_count": 14,
-      "hotspot_file": "community-hotspots/05-653e8a8cca68.json",
+      "hotspot_file": "community-hotspots/05-3053f64a3088.json",
       "id": "community:tag:移动开发",
       "leader_id": "tag:Android",
       "name": "Android",
@@ -64,7 +64,7 @@
     {
       "article_count": 107,
       "hotspot_count": 13,
-      "hotspot_file": "community-hotspots/06-124e8dc32148.json",
+      "hotspot_file": "community-hotspots/06-3cebf1771d89.json",
       "id": "community:tag:行业格局",
       "leader_id": "tag:OpenAI",
       "name": "OpenAI",
@@ -76,7 +76,7 @@
     {
       "article_count": 34,
       "hotspot_count": 13,
-      "hotspot_file": "community-hotspots/07-c93bea6ac572.json",
+      "hotspot_file": "community-hotspots/07-f14699bd7aa6.json",
       "id": "community:tag:Autotab",
       "leader_id": "tag:Cursor",
       "name": "Cursor",
@@ -86,69 +86,77 @@
       "weighted_degree": 337.2
     },
     {
+      "article_count": 9,
+      "hotspot_count": 13,
+      "hotspot_file": "community-hotspots/08-5e079d5fef4e.json",
+      "id": "community:tag:Amazon DynamoDB",
+      "leader_id": "tag:博客与播客",
+      "name": "博客与播客",
+      "node_count": 13,
+      "rank": 8,
+      "tag_occurrences": 24,
+      "weighted_degree": 132.6
+    },
+    {
       "article_count": 67,
       "hotspot_count": 12,
-      "hotspot_file": "community-hotspots/08-9d236766c6e6.json",
+      "hotspot_file": "community-hotspots/09-1c3cb0f9dd18.json",
       "id": "community:tag:Gemini 3",
       "leader_id": "tag:模型发布",
       "name": "模型发布",
       "node_count": 12,
-      "rank": 8,
+      "rank": 9,
       "tag_occurrences": 92,
       "weighted_degree": 640.2
     },
     {
       "article_count": 59,
       "hotspot_count": 12,
-      "hotspot_file": "community-hotspots/09-b61f8e743f0b.json",
+      "hotspot_file": "community-hotspots/10-b3585e5af7f6.json",
       "id": "community:tag:Folo",
       "leader_id": "tag:开源项目",
       "name": "开源项目",
       "node_count": 12,
-      "rank": 9,
+      "rank": 10,
       "tag_occurrences": 74,
       "weighted_degree": 519.8
     },
     {
       "article_count": 53,
       "hotspot_count": 12,
-      "hotspot_file": "community-hotspots/10-54e7b34e0d2c.json",
+      "hotspot_file": "community-hotspots/11-dee3767143a8.json",
       "id": "community:tag:Clippy",
       "leader_id": "tag:AI 助手",
       "name": "AI 助手",
       "node_count": 12,
-      "rank": 10,
+      "rank": 11,
       "tag_occurrences": 70,
       "weighted_degree": 491.8
     },
     {
-      "article_count": 47,
-      "hotspot_count": 12,
-      "hotspot_file": "community-hotspots/11-b80d99981bcd.json",
-      "id": "community:tag:SF6",
-      "leader_id": "tag:计算机视觉",
-      "name": "计算机视觉",
-      "node_count": 12,
-      "rank": 11,
-      "tag_occurrences": 64,
-      "weighted_degree": 449.2
-    },
-    {
-      "article_count": 1918,
+      "article_count": 1921,
       "hotspot_count": 0,
       "id": "community:other",
       "leader_id": null,
       "name": "其他",
       "node_count": 6628,
       "rank": 12,
-      "tag_occurrences": 13185,
-      "weighted_degree": 92207
+      "tag_occurrences": 13233,
+      "weighted_degree": 92537.6
     }
   ],
-  "generated_at": "2026-07-16T00:12:41Z",
+  "generated_at": "2026-07-16T03:39:14Z",
   "iterations": 6,
   "limit": 11,
   "links": [
+    {
+      "id": "edge:community:community:other->community:tag:Amazon DynamoDB",
+      "source": "community:other",
+      "strength": 1,
+      "target": "community:tag:Amazon DynamoDB",
+      "type": "community",
+      "weight": 39
+    },
     {
       "id": "edge:community:community:other->community:tag:Autotab",
       "source": "community:other",
@@ -171,7 +179,7 @@
       "strength": 1,
       "target": "community:tag:Flux",
       "type": "community",
-      "weight": 521
+      "weight": 544
     },
     {
       "id": "edge:community:community:other->community:tag:Folo",
@@ -187,7 +195,7 @@
       "strength": 1,
       "target": "community:tag:Gemini 3",
       "type": "community",
-      "weight": 436
+      "weight": 438
     },
     {
       "id": "edge:community:community:other->community:tag:P-EAGLE",
@@ -196,14 +204,6 @@
       "target": "community:tag:P-EAGLE",
       "type": "community",
       "weight": 533
-    },
-    {
-      "id": "edge:community:community:other->community:tag:SF6",
-      "source": "community:other",
-      "strength": 1,
-      "target": "community:tag:SF6",
-      "type": "community",
-      "weight": 320
     },
     {
       "id": "edge:community:community:other->community:tag:SpeechAnalyzer",
@@ -235,7 +235,15 @@
       "strength": 1,
       "target": "community:tag:面试考点",
       "type": "community",
-      "weight": 6756
+      "weight": 6758
+    },
+    {
+      "id": "edge:community:community:tag:Amazon DynamoDB->community:tag:面试考点",
+      "source": "community:tag:Amazon DynamoDB",
+      "strength": 1,
+      "target": "community:tag:面试考点",
+      "type": "community",
+      "weight": 1
     },
     {
       "id": "edge:community:community:tag:Autotab->community:tag:Folo",
@@ -350,14 +358,6 @@
       "weight": 11
     },
     {
-      "id": "edge:community:community:tag:Flux->community:tag:SF6",
-      "source": "community:tag:Flux",
-      "strength": 1,
-      "target": "community:tag:SF6",
-      "type": "community",
-      "weight": 23
-    },
-    {
       "id": "edge:community:community:tag:Flux->community:tag:行业格局",
       "source": "community:tag:Flux",
       "strength": 1,
@@ -396,14 +396,6 @@
       "target": "community:tag:P-EAGLE",
       "type": "community",
       "weight": 1
-    },
-    {
-      "id": "edge:community:community:tag:Gemini 3->community:tag:SF6",
-      "source": "community:tag:Gemini 3",
-      "strength": 1,
-      "target": "community:tag:SF6",
-      "type": "community",
-      "weight": 2
     },
     {
       "id": "edge:community:community:tag:Gemini 3->community:tag:SpeechAnalyzer",
@@ -470,14 +462,6 @@
       "weight": 59
     },
     {
-      "id": "edge:community:community:tag:SF6->community:tag:面试考点",
-      "source": "community:tag:SF6",
-      "strength": 1,
-      "target": "community:tag:面试考点",
-      "type": "community",
-      "weight": 3
-    },
-    {
       "id": "edge:community:community:tag:SpeechAnalyzer->community:tag:行业格局",
       "source": "community:tag:SpeechAnalyzer",
       "strength": 1,
@@ -519,11 +503,11 @@
     }
   ],
   "stats": {
-    "assigned_nodes": 6783,
-    "detected_communities": 1419,
+    "assigned_nodes": 6784,
+    "detected_communities": 1418,
     "emitted_communities": 12,
     "total_communities": 12,
-    "total_links": 46,
+    "total_links": 44,
     "weighting": "cosine-association"
   },
   "version": 2
