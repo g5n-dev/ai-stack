@@ -1,5 +1,5 @@
 {
-  "active_count": 1946,
+  "active_count": 1948,
   "archived_count": 448,
   "complete_count": 0,
   "legacy_analysis_count": 1910,
@@ -10550,6 +10550,18 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260717-blogs_podcasts-building-a-restaurant-telephony-ai-host-with-amazo-0-71f458bbb4.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260717-hacker_news-detecting-llm-generated-texts-with-classical-machi-0-30068d7445.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -10557,9 +10569,9 @@
     "archived_content": 448
   },
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 36,
-  "source_file_count": 2394,
-  "source_tree_sha256": "7458dfaf27d3e59148817ab73aca31a96618c2f2de284706ce68412e08bbc16f",
+  "source_brief_count": 38,
+  "source_file_count": 2396,
+  "source_tree_sha256": "611f506612c2c557182495eec01bd1c754fe65517866e8db911bb8ad7e42bc77",
   "warning_counts": {
     "source_excerpt_truncated": 1
   }

@@ -21,20 +21,20 @@
     "core": "core.json",
     "focusShards": [
       "focus-shards/000-0bf02d47aba6.json",
-      "focus-shards/001-7efae715227a.json",
+      "focus-shards/001-e5fc3880031f.json",
       "focus-shards/002-7a0aee3259a5.json",
-      "focus-shards/003-0a0281e02847.json",
+      "focus-shards/003-54702af0b12a.json",
       "focus-shards/004-7a725af0a10c.json",
       "focus-shards/005-f55e598925d3.json",
       "focus-shards/006-c366aab58ae7.json",
-      "focus-shards/007-6b16253a44dd.json",
+      "focus-shards/007-2365331f6bfa.json",
       "focus-shards/008-119ff7c935f3.json",
       "focus-shards/009-fd95fd0f342b.json",
       "focus-shards/010-0652c91e8694.json",
       "focus-shards/011-016454cc6519.json",
       "focus-shards/012-b142180bd400.json",
       "focus-shards/013-9e46079fdba0.json",
-      "focus-shards/014-742e4ea837d5.json",
+      "focus-shards/014-2c528530a0fe.json",
       "focus-shards/015-c34d241a8bd5.json",
       "focus-shards/016-cbd238602cc8.json",
       "focus-shards/017-ccd248b3add0.json",
@@ -63,13 +63,13 @@
       "focus-shards/040-673d2c69b81c.json",
       "focus-shards/041-315a6aee4dc4.json",
       "focus-shards/042-b3f890154b77.json",
-      "focus-shards/043-d974830c08b6.json",
+      "focus-shards/043-1e4696250e8e.json",
       "focus-shards/044-3bb175934534.json",
       "focus-shards/045-711bebf3825e.json",
       "focus-shards/046-15085b62ddc3.json",
       "focus-shards/047-7ea2d31a6506.json",
       "focus-shards/048-702841d8fbb9.json",
-      "focus-shards/049-f69c4e3af898.json",
+      "focus-shards/049-cc4e1e853c26.json",
       "focus-shards/050-d8c8f6c02378.json",
       "focus-shards/051-dd4bfc05cbd4.json",
       "focus-shards/052-a280d76afc9b.json",
@@ -87,12 +87,12 @@
       "focus-shards/064-03dad968811f.json",
       "focus-shards/065-2dd461f0cb8b.json",
       "focus-shards/066-9fcede394961.json",
-      "focus-shards/067-37d52dd02ec2.json",
+      "focus-shards/067-bfacbb0276b1.json",
       "focus-shards/068-811b187eafaf.json",
       "focus-shards/069-dd299d27c58c.json",
       "focus-shards/070-c059462c60c3.json",
       "focus-shards/071-13dd0e783e06.json",
-      "focus-shards/072-31a57d6e69c4.json",
+      "focus-shards/072-f116942a0acc.json",
       "focus-shards/073-6b9aa5f3e6d3.json",
       "focus-shards/074-47ec4cde1ab1.json",
       "focus-shards/075-c23197180f2d.json",
@@ -112,7 +112,7 @@
       "focus-shards/089-24b9e37e493e.json",
       "focus-shards/090-19e62c201692.json",
       "focus-shards/091-4af228142500.json",
-      "focus-shards/092-9a4d73ca619a.json",
+      "focus-shards/092-be507af7a76b.json",
       "focus-shards/093-d462b0212367.json",
       "focus-shards/094-40b5649f9b7a.json",
       "focus-shards/095-b3c46b60120c.json",
@@ -138,7 +138,7 @@
       "focus-shards/115-f54f60ab0e40.json",
       "focus-shards/116-4f407dab06e5.json",
       "focus-shards/117-9485d7aa11bd.json",
-      "focus-shards/118-75e67fc591df.json",
+      "focus-shards/118-fa82986615b7.json",
       "focus-shards/119-9935a2115770.json",
       "focus-shards/120-3b3dc891e8dd.json",
       "focus-shards/121-affe5205c437.json",
@@ -153,7 +153,7 @@
     "tag": "tag.json",
     "tagHot": "tag.hot.json"
   },
-  "generated_at": "2026-07-16T14:25:30Z",
+  "generated_at": "2026-07-16T16:45:57Z",
   "layers": {
     "application": {
       "color": "#7aa6b8",
@@ -193,9 +193,9 @@
   },
   "stats": {
     "links_by_type": {
-      "cooccurrence": 46341,
+      "cooccurrence": 46366,
       "relation": 71,
-      "semantic": 539
+      "semantic": 540
     },
     "nodes_by_layer": {
       "application": 8,
@@ -203,13 +203,13 @@
       "language": 8,
       "model": 6,
       "scenario": 31,
-      "tag": 6789
+      "tag": 6794
     },
     "tag_stats": {
       "archived_article_files_skipped": 448,
       "archived_article_groups_skipped": 448,
       "avg_concepts_per_article": 0,
-      "avg_tags_per_article": 7.8175745118191164,
+      "avg_tags_per_article": 7.814681724845996,
       "canonical_duplicate_files_skipped": 0,
       "incomplete_article_files_skipped": 0,
       "incomplete_article_groups_skipped": 0,
@@ -278,16 +278,16 @@
       ],
       "synthetic_article_files_skipped": 0,
       "synthetic_article_groups_skipped": 0,
-      "total_articles": 1946,
+      "total_articles": 1948,
       "total_concept_links": 0,
       "total_concepts": 0,
-      "total_tag_links": 46341,
-      "total_tags": 6789
+      "total_tag_links": 46366,
+      "total_tags": 6794
     },
-    "total_articles": 1946,
+    "total_articles": 1948,
     "total_communities": 12,
-    "total_links": 46951,
-    "total_nodes": 6858
+    "total_links": 46977,
+    "total_nodes": 6863
   },
   "version": 2
 }

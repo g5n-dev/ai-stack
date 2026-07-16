@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-16T14:25:30Z",
+  "generated_at": "2026-07-16T16:45:57Z",
   "layer": "tag",
   "layers": {
     "application": {
@@ -15565,7 +15565,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 3
+      "weight": 4
     },
     {
       "id": "edge:cooccurrence:tag:Hacker News->tag:模型优化",
@@ -36131,7 +36131,7 @@
       "legacy_id": "arxiv",
       "level": 6,
       "name": "arxiv",
-      "rank": 918,
+      "rank": 920,
       "related_count": 5,
       "weighted_degree": 14
     },
@@ -36612,7 +36612,7 @@
       "weighted_degree": 91
     },
     {
-      "article_count": 37,
+      "article_count": 38,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
@@ -36626,7 +36626,7 @@
       "name": "Hacker News",
       "rank": 43,
       "related_count": 181,
-      "weighted_degree": 241
+      "weighted_degree": 242
     },
     {
       "article_count": 10,
@@ -36641,7 +36641,7 @@
       "legacy_id": "hacker_news",
       "level": 6,
       "name": "hacker_news",
-      "rank": 6849,
+      "rank": 6854,
       "related_count": 0,
       "weighted_degree": 0
     },
@@ -38771,7 +38771,7 @@
       "weighted_degree": 385
     },
     {
-      "article_count": 24,
+      "article_count": 25,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:Amazon DynamoDB",
@@ -38785,7 +38785,7 @@
       "name": "来源快报",
       "rank": 271,
       "related_count": 20,
-      "weighted_degree": 46
+      "weighted_degree": 47
     },
     {
       "article_count": 40,
