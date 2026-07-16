@@ -1,5 +1,5 @@
 {
-  "active_count": 1955,
+  "active_count": 1956,
   "archived_count": 448,
   "complete_count": 0,
   "legacy_analysis_count": 1910,
@@ -10593,6 +10593,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260717-blogs_podcasts-why-teens-deserve-access-to-safe-ai-0-a907415b44.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260717-hacker_news-detecting-llm-generated-texts-with-classical-machi-0-30068d7445.md": {
       "reasons": [
         "concise_source_card"
@@ -10611,9 +10617,9 @@
     "archived_content": 448
   },
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 45,
-  "source_file_count": 2403,
-  "source_tree_sha256": "fa4104a3ad342835f664fccac4d1ec40e5e1616e8f24db5c42546fd3db957827",
+  "source_brief_count": 46,
+  "source_file_count": 2404,
+  "source_tree_sha256": "9fd2d75e8ee7dfcd8f763e893d8b7953c941feb09befcff1a861cccf47a4e7d3",
   "warning_counts": {
     "source_excerpt_truncated": 1
   }

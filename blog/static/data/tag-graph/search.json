@@ -12,7 +12,7 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-07-16T22:31:11Z",
+  "generated_at": "2026-07-16T23:15:15Z",
   "items": [
     {
       "article_count": 561,
@@ -2420,9 +2420,9 @@
       "weighted_degree": 70
     },
     {
-      "article_count": 32,
+      "article_count": 33,
       "category": "article_tag",
-      "community_id": "community:other",
+      "community_id": "community:tag:Amazon DynamoDB",
       "degree": 25,
       "description": "文章标签: 来源快报",
       "id": "tag:来源快报",
@@ -2430,7 +2430,7 @@
       "legacy_id": "来源快报",
       "name": "来源快报",
       "rank": 186,
-      "weighted_degree": 67
+      "weighted_degree": 69
     },
     {
       "article_count": 9,
@@ -3538,7 +3538,7 @@
       "weighted_degree": 49
     },
     {
-      "article_count": 14,
+      "article_count": 15,
       "category": "article_tag",
       "community_id": "community:tag:Amazon DynamoDB",
       "degree": 24,
@@ -3548,7 +3548,7 @@
       "legacy_id": "博客与播客",
       "name": "博客与播客",
       "rank": 272,
-      "weighted_degree": 46
+      "weighted_degree": 48
     },
     {
       "article_count": 6,
@@ -20425,7 +20425,7 @@
       "weighted_degree": 12.2
     },
     {
-      "article_count": 2,
+      "article_count": 3,
       "category": "article_tag",
       "community_id": "community:other",
       "degree": 9,
@@ -20435,7 +20435,7 @@
       "legacy_id": "Safety",
       "name": "Safety",
       "rank": 1571,
-      "weighted_degree": 9
+      "weighted_degree": 11
     },
     {
       "article_count": 1,
@@ -88391,7 +88391,7 @@
     {
       "article_count": 5,
       "category": "article_tag",
-      "community_id": "community:other",
+      "community_id": "community:tag:Amazon DynamoDB",
       "degree": 1,
       "description": "文章标签: 掘金",
       "id": "tag:掘金",

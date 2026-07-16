@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-16T22:31:11Z",
+  "generated_at": "2026-07-16T23:15:15Z",
   "layer": "tag",
   "layers": {
     "application": {
@@ -198130,18 +198130,18 @@
     {
       "id": "edge:cooccurrence:tag:Safety->tag:博客与播客",
       "source": "tag:Safety",
-      "strength": 0.5,
+      "strength": 1,
       "target": "tag:博客与播客",
       "type": "cooccurrence",
-      "weight": 1
+      "weight": 2
     },
     {
       "id": "edge:cooccurrence:tag:Safety->tag:来源快报",
       "source": "tag:Safety",
-      "strength": 0.5,
+      "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 1
+      "weight": 2
     },
     {
       "id": "edge:cooccurrence:tag:SageMaker->tag:SDK",
@@ -267325,7 +267325,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 13
+      "weight": 14
     },
     {
       "id": "edge:cooccurrence:tag:博尔赫斯->tag:哲学",
@@ -406298,7 +406298,7 @@
       "weighted_degree": 8.2
     },
     {
-      "article_count": 2,
+      "article_count": 3,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
@@ -406312,7 +406312,7 @@
       "name": "Safety",
       "rank": 1571,
       "related_count": 9,
-      "weighted_degree": 9
+      "weighted_degree": 11
     },
     {
       "article_count": 27,
@@ -427276,7 +427276,7 @@
       "weighted_degree": 7
     },
     {
-      "article_count": 14,
+      "article_count": 15,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:Amazon DynamoDB",
@@ -427290,7 +427290,7 @@
       "name": "博客与播客",
       "rank": 272,
       "related_count": 24,
-      "weighted_degree": 46
+      "weighted_degree": 48
     },
     {
       "article_count": 1,
@@ -447373,7 +447373,7 @@
       "article_count": 5,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:other",
+      "community_id": "community:tag:Amazon DynamoDB",
       "degree": 1,
       "description": "文章标签: 掘金",
       "id": "tag:掘金",
@@ -455666,10 +455666,10 @@
       "weighted_degree": 7
     },
     {
-      "article_count": 32,
+      "article_count": 33,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:other",
+      "community_id": "community:tag:Amazon DynamoDB",
       "degree": 25,
       "description": "文章标签: 来源快报",
       "id": "tag:来源快报",
@@ -455680,7 +455680,7 @@
       "name": "来源快报",
       "rank": 186,
       "related_count": 25,
-      "weighted_degree": 67
+      "weighted_degree": 69
     },
     {
       "article_count": 1,
