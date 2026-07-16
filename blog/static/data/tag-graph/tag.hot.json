@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-16T03:39:14Z",
+  "generated_at": "2026-07-16T06:34:01Z",
   "layer": "tag",
   "layers": {
     "application": {
@@ -24024,6 +24024,14 @@
       "weight": 2
     },
     {
+      "id": "edge:cooccurrence:tag:cs.CV->tag:来源快报",
+      "source": "tag:cs.CV",
+      "strength": 0.5,
+      "target": "tag:来源快报",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
       "id": "edge:cooccurrence:tag:cs.CV->tag:模型安全",
       "source": "tag:cs.CV",
       "strength": 0.5,
@@ -36476,11 +36484,11 @@
       "weighted_degree": 53
     },
     {
-      "article_count": 14,
+      "article_count": 15,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:Flux",
-      "degree": 59,
+      "degree": 61,
       "description": "文章标签: cs.CV",
       "id": "tag:cs.CV",
       "layer": "tag",
@@ -36489,8 +36497,8 @@
       "level": 6,
       "name": "cs.CV",
       "rank": 165,
-      "related_count": 59,
-      "weighted_degree": 74
+      "related_count": 61,
+      "weighted_degree": 76
     },
     {
       "article_count": 65,
@@ -36760,7 +36768,7 @@
       "legacy_id": "hacker_news",
       "level": 6,
       "name": "hacker_news",
-      "rank": 6844,
+      "rank": 6849,
       "related_count": 0,
       "weighted_degree": 0
     },
@@ -38873,11 +38881,11 @@
       "weighted_degree": 385
     },
     {
-      "article_count": 15,
+      "article_count": 16,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
-      "degree": 18,
+      "degree": 19,
       "description": "文章标签: 来源快报",
       "id": "tag:来源快报",
       "layer": "tag",
@@ -38886,8 +38894,8 @@
       "level": 6,
       "name": "来源快报",
       "rank": 415,
-      "related_count": 18,
-      "weighted_degree": 32
+      "related_count": 19,
+      "weighted_degree": 34
     },
     {
       "article_count": 40,
@@ -40014,13 +40022,13 @@
   ],
   "stats": {
     "links_by_type": {
-      "cooccurrence": 4418,
+      "cooccurrence": 4419,
       "semantic": 47
     },
     "nodes_by_layer": {
       "tag": 250
     },
-    "total_links": 4465,
+    "total_links": 4466,
     "total_nodes": 250
   },
   "version": 2

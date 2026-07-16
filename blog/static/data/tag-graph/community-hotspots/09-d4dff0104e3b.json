@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:Gemini 3",
-  "generated_at": "2026-07-16T00:12:41Z",
+  "generated_at": "2026-07-16T06:34:01Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -343,7 +343,7 @@
       "legacy_id": "科学研究",
       "level": 6,
       "name": "科学研究",
-      "rank": 533,
+      "rank": 534,
       "related_count": 25,
       "weighted_degree": 28
     },
@@ -411,7 +411,7 @@
       "legacy_id": "技术更新",
       "level": 6,
       "name": "技术更新",
-      "rank": 1564,
+      "rank": 1567,
       "related_count": 13,
       "weighted_degree": 13
     },
@@ -428,7 +428,7 @@
       "legacy_id": "AI 绘图",
       "level": 6,
       "name": "AI 绘图",
-      "rank": 1673,
+      "rank": 1677,
       "related_count": 7,
       "weighted_degree": 7.6
     },
@@ -445,7 +445,7 @@
       "legacy_id": "工程挑战",
       "level": 6,
       "name": "工程挑战",
-      "rank": 4471,
+      "rank": 4477,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -462,7 +462,7 @@
       "legacy_id": "长链思考",
       "level": 6,
       "name": "长链思考",
-      "rank": 6592,
+      "rank": 6598,
       "related_count": 7,
       "weighted_degree": 7
     }

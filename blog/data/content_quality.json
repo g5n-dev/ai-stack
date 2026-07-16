@@ -1,5 +1,5 @@
 {
-  "active_count": 1936,
+  "active_count": 1938,
   "archived_count": 448,
   "complete_count": 0,
   "legacy_analysis_count": 1910,
@@ -10416,7 +10416,19 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260716-arxiv-multi-expert-routing-for-multi-domain-low-resource-0-5cd26480cc.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260716-blogs_podcasts-3-questions-neural-transparency-and-the-future-of--0-2dfc72794b.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260716-blogs_podcasts-a-better-way-to-turn-2d-designs-into-3d-models-for-0-660a6401b7.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -10497,9 +10509,9 @@
     "archived_content": 448
   },
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 26,
-  "source_file_count": 2384,
-  "source_tree_sha256": "55eceb131678dd03aa04330bb9796ead8e0613d45944bfd78c3cb3099a222517",
+  "source_brief_count": 28,
+  "source_file_count": 2386,
+  "source_tree_sha256": "c9c0a78b76bee699636584673157457bc0cad299e25821550fc439d03a093b83",
   "warning_counts": {
     "source_excerpt_truncated": 1
   }

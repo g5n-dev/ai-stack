@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:Flux",
-  "generated_at": "2026-07-16T00:12:41Z",
+  "generated_at": "2026-07-16T06:34:01Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -297,11 +297,11 @@
       "weighted_degree": 182
     },
     {
-      "article_count": 14,
+      "article_count": 15,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:Flux",
-      "degree": 59,
+      "degree": 61,
       "description": "文章标签: cs.CV",
       "id": "tag:cs.CV",
       "layer": "tag",
@@ -310,8 +310,8 @@
       "level": 6,
       "name": "cs.CV",
       "rank": 165,
-      "related_count": 59,
-      "weighted_degree": 74
+      "related_count": 61,
+      "weighted_degree": 76
     },
     {
       "article_count": 10,
@@ -343,7 +343,7 @@
       "legacy_id": "去噪",
       "level": 6,
       "name": "去噪",
-      "rank": 561,
+      "rank": 562,
       "related_count": 22,
       "weighted_degree": 28
     },
@@ -377,7 +377,7 @@
       "legacy_id": "Diffusion",
       "level": 6,
       "name": "Diffusion",
-      "rank": 1844,
+      "rank": 1850,
       "related_count": 7,
       "weighted_degree": 7.6
     },
@@ -394,7 +394,7 @@
       "legacy_id": "CFG",
       "level": 6,
       "name": "CFG",
-      "rank": 2107,
+      "rank": 2114,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -411,7 +411,7 @@
       "legacy_id": "Flux",
       "level": 6,
       "name": "Flux",
-      "rank": 2341,
+      "rank": 2349,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -428,7 +428,7 @@
       "legacy_id": "SMC-CFG",
       "level": 6,
       "name": "SMC-CFG",
-      "rank": 3045,
+      "rank": 3051,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -445,7 +445,7 @@
       "legacy_id": "交互指南",
       "level": 6,
       "name": "交互指南",
-      "rank": 3432,
+      "rank": 3438,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -462,7 +462,7 @@
       "legacy_id": "图像保护",
       "level": 6,
       "name": "图像保护",
-      "rank": 4097,
+      "rank": 4103,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -479,7 +479,7 @@
       "legacy_id": "控制论",
       "level": 6,
       "name": "控制论",
-      "rank": 4821,
+      "rank": 4827,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -496,7 +496,7 @@
       "legacy_id": "cs.SE",
       "level": 6,
       "name": "cs.SE",
-      "rank": 6833,
+      "rank": 6840,
       "related_count": 1,
       "weighted_degree": 1
     }

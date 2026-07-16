@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:行业格局",
-  "generated_at": "2026-07-16T00:12:41Z",
+  "generated_at": "2026-07-16T06:34:01Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -326,7 +326,7 @@
       "legacy_id": "亚马逊",
       "level": 6,
       "name": "亚马逊",
-      "rank": 554,
+      "rank": 555,
       "related_count": 23,
       "weighted_degree": 28
     },
@@ -343,7 +343,7 @@
       "legacy_id": "科技巨头",
       "level": 6,
       "name": "科技巨头",
-      "rank": 562,
+      "rank": 563,
       "related_count": 22,
       "weighted_degree": 28
     },
@@ -377,7 +377,7 @@
       "legacy_id": "初创企业",
       "level": 6,
       "name": "初创企业",
-      "rank": 1544,
+      "rank": 1547,
       "related_count": 11,
       "weighted_degree": 14
     },
@@ -394,7 +394,7 @@
       "legacy_id": "软银",
       "level": 6,
       "name": "软银",
-      "rank": 1562,
+      "rank": 1565,
       "related_count": 10,
       "weighted_degree": 14
     },
@@ -411,7 +411,7 @@
       "legacy_id": "ms-swift",
       "level": 6,
       "name": "ms-swift",
-      "rank": 1852,
+      "rank": 1858,
       "related_count": 7,
       "weighted_degree": 7.6
     },
@@ -428,7 +428,7 @@
       "legacy_id": "Nscale",
       "level": 6,
       "name": "Nscale",
-      "rank": 2746,
+      "rank": 2753,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -445,7 +445,7 @@
       "legacy_id": "OpenEvidence",
       "level": 6,
       "name": "OpenEvidence",
-      "rank": 2771,
+      "rank": 2778,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -462,7 +462,7 @@
       "legacy_id": "科技",
       "level": 6,
       "name": "科技",
-      "rank": 5733,
+      "rank": 5739,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -479,7 +479,7 @@
       "legacy_id": "行业格局",
       "level": 6,
       "name": "行业格局",
-      "rank": 6129,
+      "rank": 6135,
       "related_count": 7,
       "weighted_degree": 7
     }

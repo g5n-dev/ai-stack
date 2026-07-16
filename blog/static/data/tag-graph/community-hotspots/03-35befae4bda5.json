@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:P-EAGLE",
-  "generated_at": "2026-07-16T00:12:41Z",
+  "generated_at": "2026-07-16T06:34:01Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -428,7 +428,7 @@
       "legacy_id": "PagedAttention",
       "level": 6,
       "name": "PagedAttention",
-      "rank": 1558,
+      "rank": 1561,
       "related_count": 10,
       "weighted_degree": 14
     },
@@ -445,7 +445,7 @@
       "legacy_id": "AI 基准",
       "level": 6,
       "name": "AI 基准",
-      "rank": 1654,
+      "rank": 1658,
       "related_count": 7,
       "weighted_degree": 7.6
     },
@@ -462,7 +462,7 @@
       "legacy_id": "DSpark",
       "level": 6,
       "name": "DSpark",
-      "rank": 2258,
+      "rank": 2266,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -479,7 +479,7 @@
       "legacy_id": "EAGLE",
       "level": 6,
       "name": "EAGLE",
-      "rank": 2270,
+      "rank": 2278,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -496,7 +496,7 @@
       "legacy_id": "P-EAGLE",
       "level": 6,
       "name": "P-EAGLE",
-      "rank": 2789,
+      "rank": 2796,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -513,7 +513,7 @@
       "legacy_id": "特征选择",
       "level": 6,
       "name": "特征选择",
-      "rank": 5511,
+      "rank": 5517,
       "related_count": 7,
       "weighted_degree": 7
     }
