@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-17T09:24:29Z",
+  "generated_at": "2026-07-17T11:43:21Z",
   "layer": "tag",
   "layers": {
     "application": {
@@ -23634,10 +23634,10 @@
     {
       "id": "edge:cooccurrence:tag:arXiv->tag:cs.CV",
       "source": "tag:arXiv",
-      "strength": 0.5,
+      "strength": 1,
       "target": "tag:cs.CV",
       "type": "cooccurrence",
-      "weight": 1
+      "weight": 2
     },
     {
       "id": "edge:cooccurrence:tag:arXiv->tag:cs.LG",
@@ -23653,7 +23653,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 12
+      "weight": 13
     },
     {
       "id": "edge:cooccurrence:tag:arxiv->tag:cs.CL",
@@ -23954,10 +23954,10 @@
     {
       "id": "edge:cooccurrence:tag:cs.CV->tag:来源快报",
       "source": "tag:cs.CV",
-      "strength": 0.5,
+      "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 1
+      "weight": 2
     },
     {
       "id": "edge:cooccurrence:tag:cs.CV->tag:模型安全",
@@ -35584,7 +35584,7 @@
       "legacy_id": "Agentic AI",
       "level": 6,
       "name": "Agentic AI",
-      "rank": 156,
+      "rank": 157,
       "related_count": 69,
       "weighted_degree": 77
     },
@@ -36031,7 +36031,7 @@
       "weighted_degree": 105.6
     },
     {
-      "article_count": 12,
+      "article_count": 13,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
@@ -36043,15 +36043,15 @@
       "legacy_id": "arXiv",
       "level": 6,
       "name": "arXiv",
-      "rank": 576,
+      "rank": 575,
       "related_count": 7,
-      "weighted_degree": 24
+      "weighted_degree": 26
     },
     {
       "article_count": 14,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:tag:Flux",
+      "community_id": "community:other",
       "degree": 5,
       "description": "文章标签: arxiv",
       "id": "tag:arxiv",
@@ -36286,7 +36286,7 @@
       "weighted_degree": 55
     },
     {
-      "article_count": 15,
+      "article_count": 16,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:Flux",
@@ -36298,9 +36298,9 @@
       "legacy_id": "cs.CV",
       "level": 6,
       "name": "cs.CV",
-      "rank": 166,
+      "rank": 153,
       "related_count": 61,
-      "weighted_degree": 76
+      "weighted_degree": 78
     },
     {
       "article_count": 66,
@@ -36689,7 +36689,7 @@
       "legacy_id": "Linux",
       "level": 6,
       "name": "Linux",
-      "rank": 154,
+      "rank": 155,
       "related_count": 70,
       "weighted_degree": 77
     },
@@ -37216,7 +37216,7 @@
       "legacy_id": "Vibe Coding",
       "level": 6,
       "name": "Vibe Coding",
-      "rank": 155,
+      "rank": 156,
       "related_count": 70,
       "weighted_degree": 77
     },
@@ -37352,7 +37352,7 @@
       "legacy_id": "人机协作",
       "level": 6,
       "name": "人机协作",
-      "rank": 153,
+      "rank": 154,
       "related_count": 72,
       "weighted_degree": 77
     },
@@ -37709,7 +37709,7 @@
       "legacy_id": "向量数据库",
       "level": 6,
       "name": "向量数据库",
-      "rank": 161,
+      "rank": 162,
       "related_count": 64,
       "weighted_degree": 77
     },
@@ -38355,7 +38355,7 @@
       "legacy_id": "推理",
       "level": 6,
       "name": "推理",
-      "rank": 159,
+      "rank": 160,
       "related_count": 65,
       "weighted_degree": 77
     },
@@ -38406,7 +38406,7 @@
       "legacy_id": "推理模型",
       "level": 6,
       "name": "推理模型",
-      "rank": 163,
+      "rank": 164,
       "related_count": 61,
       "weighted_degree": 77
     },
@@ -38542,7 +38542,7 @@
       "legacy_id": "数据分析",
       "level": 6,
       "name": "数据分析",
-      "rank": 157,
+      "rank": 158,
       "related_count": 68,
       "weighted_degree": 77
     },
@@ -38683,7 +38683,7 @@
       "weighted_degree": 385
     },
     {
-      "article_count": 39,
+      "article_count": 40,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
@@ -38697,7 +38697,7 @@
       "name": "来源快报",
       "rank": 152,
       "related_count": 26,
-      "weighted_degree": 78
+      "weighted_degree": 80
     },
     {
       "article_count": 40,
@@ -38797,7 +38797,7 @@
       "legacy_id": "模型对齐",
       "level": 6,
       "name": "模型对齐",
-      "rank": 158,
+      "rank": 159,
       "related_count": 66,
       "weighted_degree": 77
     },
@@ -39273,7 +39273,7 @@
       "legacy_id": "网络安全",
       "level": 6,
       "name": "网络安全",
-      "rank": 160,
+      "rank": 161,
       "related_count": 65,
       "weighted_degree": 77
     },
@@ -39426,7 +39426,7 @@
       "legacy_id": "英伟达",
       "level": 6,
       "name": "英伟达",
-      "rank": 165,
+      "rank": 166,
       "related_count": 59,
       "weighted_degree": 77
     },
@@ -39460,7 +39460,7 @@
       "legacy_id": "行业动态",
       "level": 6,
       "name": "行业动态",
-      "rank": 164,
+      "rank": 165,
       "related_count": 60,
       "weighted_degree": 77
     },
@@ -39647,7 +39647,7 @@
       "legacy_id": "软件开发",
       "level": 6,
       "name": "软件开发",
-      "rank": 162,
+      "rank": 163,
       "related_count": 63,
       "weighted_degree": 77
     },

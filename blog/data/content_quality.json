@@ -1,5 +1,5 @@
 {
-  "active_count": 1962,
+  "active_count": 1963,
   "archived_count": 448,
   "complete_count": 0,
   "legacy_analysis_count": 1910,
@@ -10569,6 +10569,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260717-arxiv-scenebind-binding-what-and-where-across-vision-aud-0-fc6ace2f7a.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260717-arxiv-screening-of-biosecurity-features-in-metagenomic-d-0-b7fc03c76b.md": {
       "reasons": [
         "concise_source_card"
@@ -10656,9 +10662,9 @@
     "archived_content": 448
   },
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 52,
-  "source_file_count": 2410,
-  "source_tree_sha256": "38151036e7799e51a11562fb48b92315e1cdf87fc366201123be973f8c02693e",
+  "source_brief_count": 53,
+  "source_file_count": 2411,
+  "source_tree_sha256": "0ca1e9af6689f9f6fa51c2a601cb8e045053805bfec31e159b8370adb91c9f89",
   "warning_counts": {
     "source_excerpt_truncated": 2
   }

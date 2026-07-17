@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-17T09:24:29Z",
+  "generated_at": "2026-07-17T11:43:21Z",
   "layers": {
     "application": {
       "color": "#7aa6b8",
@@ -1336,7 +1336,7 @@
       "legacy_id": "llm_scene",
       "level": 5,
       "name": "大语言模型",
-      "rank": 575,
+      "rank": 576,
       "weighted_degree": 25.4
     },
     {

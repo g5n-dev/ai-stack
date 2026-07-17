@@ -12,7 +12,7 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-07-17T09:24:29Z",
+  "generated_at": "2026-07-17T11:43:21Z",
   "items": [
     {
       "article_count": 561,
@@ -1978,7 +1978,7 @@
       "weighted_degree": 84
     },
     {
-      "article_count": 39,
+      "article_count": 40,
       "category": "article_tag",
       "community_id": "community:other",
       "degree": 26,
@@ -1988,6 +1988,19 @@
       "legacy_id": "来源快报",
       "name": "来源快报",
       "rank": 152,
+      "weighted_degree": 80
+    },
+    {
+      "article_count": 16,
+      "category": "article_tag",
+      "community_id": "community:tag:Flux",
+      "degree": 61,
+      "description": "文章标签: cs.CV",
+      "id": "tag:cs.CV",
+      "layer": "tag",
+      "legacy_id": "cs.CV",
+      "name": "cs.CV",
+      "rank": 153,
       "weighted_degree": 78
     },
     {
@@ -2000,7 +2013,7 @@
       "layer": "tag",
       "legacy_id": "人机协作",
       "name": "人机协作",
-      "rank": 153,
+      "rank": 154,
       "weighted_degree": 77
     },
     {
@@ -2013,7 +2026,7 @@
       "layer": "tag",
       "legacy_id": "Linux",
       "name": "Linux",
-      "rank": 154,
+      "rank": 155,
       "weighted_degree": 77
     },
     {
@@ -2026,7 +2039,7 @@
       "layer": "tag",
       "legacy_id": "Vibe Coding",
       "name": "Vibe Coding",
-      "rank": 155,
+      "rank": 156,
       "weighted_degree": 77
     },
     {
@@ -2039,7 +2052,7 @@
       "layer": "tag",
       "legacy_id": "Agentic AI",
       "name": "Agentic AI",
-      "rank": 156,
+      "rank": 157,
       "weighted_degree": 77
     },
     {
@@ -2052,7 +2065,7 @@
       "layer": "tag",
       "legacy_id": "数据分析",
       "name": "数据分析",
-      "rank": 157,
+      "rank": 158,
       "weighted_degree": 77
     },
     {
@@ -2065,7 +2078,7 @@
       "layer": "tag",
       "legacy_id": "模型对齐",
       "name": "模型对齐",
-      "rank": 158,
+      "rank": 159,
       "weighted_degree": 77
     },
     {
@@ -2078,7 +2091,7 @@
       "layer": "tag",
       "legacy_id": "推理",
       "name": "推理",
-      "rank": 159,
+      "rank": 160,
       "weighted_degree": 77
     },
     {
@@ -2091,7 +2104,7 @@
       "layer": "tag",
       "legacy_id": "网络安全",
       "name": "网络安全",
-      "rank": 160,
+      "rank": 161,
       "weighted_degree": 77
     },
     {
@@ -2104,7 +2117,7 @@
       "layer": "tag",
       "legacy_id": "向量数据库",
       "name": "向量数据库",
-      "rank": 161,
+      "rank": 162,
       "weighted_degree": 77
     },
     {
@@ -2117,7 +2130,7 @@
       "layer": "tag",
       "legacy_id": "软件开发",
       "name": "软件开发",
-      "rank": 162,
+      "rank": 163,
       "weighted_degree": 77
     },
     {
@@ -2130,7 +2143,7 @@
       "layer": "tag",
       "legacy_id": "推理模型",
       "name": "推理模型",
-      "rank": 163,
+      "rank": 164,
       "weighted_degree": 77
     },
     {
@@ -2143,7 +2156,7 @@
       "layer": "tag",
       "legacy_id": "行业动态",
       "name": "行业动态",
-      "rank": 164,
+      "rank": 165,
       "weighted_degree": 77
     },
     {
@@ -2156,21 +2169,8 @@
       "layer": "tag",
       "legacy_id": "英伟达",
       "name": "英伟达",
-      "rank": 165,
-      "weighted_degree": 77
-    },
-    {
-      "article_count": 15,
-      "category": "article_tag",
-      "community_id": "community:tag:Flux",
-      "degree": 61,
-      "description": "文章标签: cs.CV",
-      "id": "tag:cs.CV",
-      "layer": "tag",
-      "legacy_id": "cs.CV",
-      "name": "cs.CV",
       "rank": 166,
-      "weighted_degree": 76
+      "weighted_degree": 77
     },
     {
       "article_count": 10,
@@ -7477,6 +7477,19 @@
       "weighted_degree": 27
     },
     {
+      "article_count": 13,
+      "category": "article_tag",
+      "community_id": "community:other",
+      "degree": 7,
+      "description": "文章标签: arXiv",
+      "id": "tag:arXiv",
+      "layer": "tag",
+      "legacy_id": "arXiv",
+      "name": "arXiv",
+      "rank": 575,
+      "weighted_degree": 26
+    },
+    {
       "article_count": 626,
       "category": "ai",
       "community_id": null,
@@ -7486,21 +7499,8 @@
       "layer": "scenario",
       "legacy_id": "llm_scene",
       "name": "大语言模型",
-      "rank": 575,
-      "weighted_degree": 25.4
-    },
-    {
-      "article_count": 12,
-      "category": "article_tag",
-      "community_id": "community:other",
-      "degree": 7,
-      "description": "文章标签: arXiv",
-      "id": "tag:arXiv",
-      "layer": "tag",
-      "legacy_id": "arXiv",
-      "name": "arXiv",
       "rank": 576,
-      "weighted_degree": 24
+      "weighted_degree": 25.4
     },
     {
       "article_count": 3,
@@ -11990,7 +11990,7 @@
     {
       "article_count": 14,
       "category": "article_tag",
-      "community_id": "community:tag:Flux",
+      "community_id": "community:other",
       "degree": 5,
       "description": "文章标签: arxiv",
       "id": "tag:arxiv",
@@ -89054,7 +89054,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:Flux",
+      "community_id": "community:other",
       "degree": 1,
       "description": "文章标签: cs.SE",
       "id": "tag:cs.SE",

@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:Flux",
-  "generated_at": "2026-07-17T06:30:45Z",
+  "generated_at": "2026-07-17T11:43:21Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -25,14 +25,6 @@
       "source": "tag:Stable Diffusion",
       "strength": 1,
       "target": "tag:图像生成",
-      "type": "cooccurrence",
-      "weight": 4
-    },
-    {
-      "id": "edge:cooccurrence:tag:arxiv->tag:cs.CV",
-      "source": "tag:arxiv",
-      "strength": 1,
-      "target": "tag:cs.CV",
       "type": "cooccurrence",
       "weight": 4
     },
@@ -259,6 +251,14 @@
       "target": "tag:控制论",
       "type": "cooccurrence",
       "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Stable Diffusion->tag:交互指南",
+      "source": "tag:Stable Diffusion",
+      "strength": 0.5,
+      "target": "tag:交互指南",
+      "type": "cooccurrence",
+      "weight": 1
     }
   ],
   "nodes": [
@@ -297,7 +297,7 @@
       "weighted_degree": 182
     },
     {
-      "article_count": 15,
+      "article_count": 16,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:Flux",
@@ -309,9 +309,9 @@
       "legacy_id": "cs.CV",
       "level": 6,
       "name": "cs.CV",
-      "rank": 166,
+      "rank": 153,
       "related_count": 61,
-      "weighted_degree": 76
+      "weighted_degree": 78
     },
     {
       "article_count": 10,
@@ -346,23 +346,6 @@
       "rank": 564,
       "related_count": 22,
       "weighted_degree": 28
-    },
-    {
-      "article_count": 14,
-      "category": "article_tag",
-      "color": "#f59e0b",
-      "community_id": "community:tag:Flux",
-      "degree": 5,
-      "description": "文章标签: arxiv",
-      "id": "tag:arxiv",
-      "layer": "tag",
-      "layer_name": "标签层",
-      "legacy_id": "arxiv",
-      "level": 6,
-      "name": "arxiv",
-      "rank": 922,
-      "related_count": 5,
-      "weighted_degree": 14
     },
     {
       "article_count": 1,
@@ -482,28 +465,11 @@
       "rank": 4833,
       "related_count": 7,
       "weighted_degree": 7
-    },
-    {
-      "article_count": 1,
-      "category": "article_tag",
-      "color": "#f59e0b",
-      "community_id": "community:tag:Flux",
-      "degree": 1,
-      "description": "文章标签: cs.SE",
-      "id": "tag:cs.SE",
-      "layer": "tag",
-      "layer_name": "标签层",
-      "legacy_id": "cs.SE",
-      "level": 6,
-      "name": "cs.SE",
-      "rank": 6850,
-      "related_count": 1,
-      "weighted_degree": 1
     }
   ],
   "stats": {
     "total_links": 32,
-    "total_nodes": 14
+    "total_nodes": 12
   },
   "version": 2
 }

@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:Autotab",
-  "generated_at": "2026-07-17T06:30:45Z",
+  "generated_at": "2026-07-17T11:43:21Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -309,7 +309,7 @@
       "legacy_id": "软件开发",
       "level": 6,
       "name": "软件开发",
-      "rank": 161,
+      "rank": 163,
       "related_count": 63,
       "weighted_degree": 77
     },
