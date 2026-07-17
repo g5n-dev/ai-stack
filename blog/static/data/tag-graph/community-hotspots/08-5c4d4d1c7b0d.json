@@ -1,0 +1,475 @@
+{
+  "community_id": "community:tag:Gemini 3",
+  "generated_at": "2026-07-17T22:09:31Z",
+  "hotspot_limit": 24,
+  "link_limit": 32,
+  "links": [
+    {
+      "id": "edge:cooccurrence:tag:Google->tag:模型发布",
+      "source": "tag:Google",
+      "strength": 1,
+      "target": "tag:模型发布",
+      "type": "cooccurrence",
+      "weight": 9
+    },
+    {
+      "id": "edge:cooccurrence:tag:Deep Think->tag:Gemini 3",
+      "source": "tag:Deep Think",
+      "strength": 1,
+      "target": "tag:Gemini 3",
+      "type": "cooccurrence",
+      "weight": 3
+    },
+    {
+      "id": "edge:cooccurrence:tag:Deep Think->tag:Google",
+      "source": "tag:Deep Think",
+      "strength": 1,
+      "target": "tag:Google",
+      "type": "cooccurrence",
+      "weight": 2
+    },
+    {
+      "id": "edge:cooccurrence:tag:Deep Think->tag:推理模型",
+      "source": "tag:Deep Think",
+      "strength": 1,
+      "target": "tag:推理模型",
+      "type": "cooccurrence",
+      "weight": 2
+    },
+    {
+      "id": "edge:cooccurrence:tag:Gemini 3->tag:Google",
+      "source": "tag:Gemini 3",
+      "strength": 1,
+      "target": "tag:Google",
+      "type": "cooccurrence",
+      "weight": 2
+    },
+    {
+      "id": "edge:cooccurrence:tag:Gemini 3->tag:推理模型",
+      "source": "tag:Gemini 3",
+      "strength": 1,
+      "target": "tag:推理模型",
+      "type": "cooccurrence",
+      "weight": 2
+    },
+    {
+      "id": "edge:cooccurrence:tag:AI 推理->tag:Deep Think",
+      "source": "tag:AI 推理",
+      "strength": 0.5,
+      "target": "tag:Deep Think",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:AI 推理->tag:Gemini 3",
+      "source": "tag:AI 推理",
+      "strength": 0.5,
+      "target": "tag:Gemini 3",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:AI 推理->tag:工程挑战",
+      "source": "tag:AI 推理",
+      "strength": 0.5,
+      "target": "tag:工程挑战",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:AI 推理->tag:技术更新",
+      "source": "tag:AI 推理",
+      "strength": 0.5,
+      "target": "tag:技术更新",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:AI 推理->tag:推理模型",
+      "source": "tag:AI 推理",
+      "strength": 0.5,
+      "target": "tag:推理模型",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:AI 推理->tag:科学研究",
+      "source": "tag:AI 推理",
+      "strength": 0.5,
+      "target": "tag:科学研究",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:AI 推理->tag:谷歌",
+      "source": "tag:AI 推理",
+      "strength": 0.5,
+      "target": "tag:谷歌",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:AI 绘图->tag:Deep Think",
+      "source": "tag:AI 绘图",
+      "strength": 0.5,
+      "target": "tag:Deep Think",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:AI 绘图->tag:Gemini 3",
+      "source": "tag:AI 绘图",
+      "strength": 0.5,
+      "target": "tag:Gemini 3",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:AI 绘图->tag:Google",
+      "source": "tag:AI 绘图",
+      "strength": 0.5,
+      "target": "tag:Google",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Deep Think->tag:工程挑战",
+      "source": "tag:Deep Think",
+      "strength": 0.5,
+      "target": "tag:工程挑战",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Deep Think->tag:技术更新",
+      "source": "tag:Deep Think",
+      "strength": 0.5,
+      "target": "tag:技术更新",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Deep Think->tag:模型发布",
+      "source": "tag:Deep Think",
+      "strength": 0.5,
+      "target": "tag:模型发布",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Deep Think->tag:科学研究",
+      "source": "tag:Deep Think",
+      "strength": 0.5,
+      "target": "tag:科学研究",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Deep Think->tag:谷歌",
+      "source": "tag:Deep Think",
+      "strength": 0.5,
+      "target": "tag:谷歌",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Deep Think->tag:长链思考",
+      "source": "tag:Deep Think",
+      "strength": 0.5,
+      "target": "tag:长链思考",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Gemini 3->tag:工程挑战",
+      "source": "tag:Gemini 3",
+      "strength": 0.5,
+      "target": "tag:工程挑战",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Gemini 3->tag:技术更新",
+      "source": "tag:Gemini 3",
+      "strength": 0.5,
+      "target": "tag:技术更新",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Gemini 3->tag:模型发布",
+      "source": "tag:Gemini 3",
+      "strength": 0.5,
+      "target": "tag:模型发布",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Gemini 3->tag:科学研究",
+      "source": "tag:Gemini 3",
+      "strength": 0.5,
+      "target": "tag:科学研究",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Gemini 3->tag:谷歌",
+      "source": "tag:Gemini 3",
+      "strength": 0.5,
+      "target": "tag:谷歌",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Gemini 3->tag:长链思考",
+      "source": "tag:Gemini 3",
+      "strength": 0.5,
+      "target": "tag:长链思考",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Google->tag:技术更新",
+      "source": "tag:Google",
+      "strength": 0.5,
+      "target": "tag:技术更新",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Google->tag:推理模型",
+      "source": "tag:Google",
+      "strength": 0.5,
+      "target": "tag:推理模型",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Google->tag:长链思考",
+      "source": "tag:Google",
+      "strength": 0.5,
+      "target": "tag:长链思考",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:工程挑战->tag:技术更新",
+      "source": "tag:工程挑战",
+      "strength": 0.5,
+      "target": "tag:技术更新",
+      "type": "cooccurrence",
+      "weight": 1
+    }
+  ],
+  "nodes": [
+    {
+      "article_count": 29,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Gemini 3",
+      "degree": 122,
+      "description": "文章标签: 模型发布",
+      "id": "tag:模型发布",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "模型发布",
+      "level": 6,
+      "name": "模型发布",
+      "rank": 51,
+      "related_count": 122,
+      "weighted_degree": 201
+    },
+    {
+      "article_count": 25,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Gemini 3",
+      "degree": 117,
+      "description": "文章标签: Google",
+      "id": "tag:Google",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Google",
+      "level": 6,
+      "name": "Google",
+      "rank": 65,
+      "related_count": 117,
+      "weighted_degree": 173
+    },
+    {
+      "article_count": 11,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Gemini 3",
+      "degree": 61,
+      "description": "文章标签: 推理模型",
+      "id": "tag:推理模型",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "推理模型",
+      "level": 6,
+      "name": "推理模型",
+      "rank": 164,
+      "related_count": 61,
+      "weighted_degree": 77
+    },
+    {
+      "article_count": 10,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Gemini 3",
+      "degree": 65,
+      "description": "文章标签: 谷歌",
+      "id": "tag:谷歌",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "谷歌",
+      "level": 6,
+      "name": "谷歌",
+      "rank": 170,
+      "related_count": 65,
+      "weighted_degree": 70
+    },
+    {
+      "article_count": 4,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Gemini 3",
+      "degree": 25,
+      "description": "文章标签: 科学研究",
+      "id": "tag:科学研究",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "科学研究",
+      "level": 6,
+      "name": "科学研究",
+      "rank": 536,
+      "related_count": 25,
+      "weighted_degree": 28
+    },
+    {
+      "article_count": 3,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Gemini 3",
+      "degree": 17,
+      "description": "文章标签: Deep Think",
+      "id": "tag:Deep Think",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Deep Think",
+      "level": 6,
+      "name": "Deep Think",
+      "rank": 852,
+      "related_count": 17,
+      "weighted_degree": 21
+    },
+    {
+      "article_count": 3,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Gemini 3",
+      "degree": 17,
+      "description": "文章标签: Gemini 3",
+      "id": "tag:Gemini 3",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Gemini 3",
+      "level": 6,
+      "name": "Gemini 3",
+      "rank": 854,
+      "related_count": 17,
+      "weighted_degree": 21
+    },
+    {
+      "article_count": 2,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Gemini 3",
+      "degree": 15,
+      "description": "文章标签: AI 推理",
+      "id": "tag:AI 推理",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "AI 推理",
+      "level": 6,
+      "name": "AI 推理",
+      "rank": 886,
+      "related_count": 14,
+      "weighted_degree": 14.6
+    },
+    {
+      "article_count": 2,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Gemini 3",
+      "degree": 13,
+      "description": "文章标签: 技术更新",
+      "id": "tag:技术更新",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "技术更新",
+      "level": 6,
+      "name": "技术更新",
+      "rank": 1571,
+      "related_count": 13,
+      "weighted_degree": 13
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Gemini 3",
+      "degree": 8,
+      "description": "文章标签: AI 绘图",
+      "id": "tag:AI 绘图",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "AI 绘图",
+      "level": 6,
+      "name": "AI 绘图",
+      "rank": 1683,
+      "related_count": 7,
+      "weighted_degree": 7.6
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Gemini 3",
+      "degree": 7,
+      "description": "文章标签: 工程挑战",
+      "id": "tag:工程挑战",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "工程挑战",
+      "level": 6,
+      "name": "工程挑战",
+      "rank": 4484,
+      "related_count": 7,
+      "weighted_degree": 7
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Gemini 3",
+      "degree": 7,
+      "description": "文章标签: 长链思考",
+      "id": "tag:长链思考",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "长链思考",
+      "level": 6,
+      "name": "长链思考",
+      "rank": 6605,
+      "related_count": 7,
+      "weighted_degree": 7
+    }
+  ],
+  "stats": {
+    "total_links": 32,
+    "total_nodes": 12
+  },
+  "version": 2
+}

@@ -1,5 +1,5 @@
 {
-  "active_count": 1971,
+  "active_count": 1973,
   "archived_count": 448,
   "complete_count": 0,
   "legacy_analysis_count": 1910,
@@ -10692,6 +10692,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260718-arxiv-meanflownft-bringing-forward-process-rl-to-average-0-ae3c665a0d.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260718-arxiv-scidiagramedit-learning-to-edit-scientific-diagram-0-44f35e55d9.md": {
       "reasons": [
         "concise_source_card"
@@ -10703,6 +10709,12 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260718-blogs_podcasts-introducing-mobile-layout-for-amazon-quick-dashboa-0-c969d458ad.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -10710,9 +10722,9 @@
     "archived_content": 448
   },
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 61,
-  "source_file_count": 2419,
-  "source_tree_sha256": "5ba83e2e98e5357ae58e60f91b4575434dca05fb9a20c9215887aa426c8b60fe",
+  "source_brief_count": 63,
+  "source_file_count": 2421,
+  "source_tree_sha256": "e871240abff3f6e8a0aecadc7a69777e1a94157b639af19f64ffe498b88d92e3",
   "warning_counts": {
     "source_excerpt_truncated": 2
   }
