@@ -2,21 +2,21 @@
   "algorithm": "deterministic-weighted-label-propagation",
   "communities": [
     {
-      "article_count": 106,
+      "article_count": 107,
       "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/01-bc1da6f41db1.json",
+      "hotspot_file": "community-hotspots/01-eea29a05d9a8.json",
       "id": "community:tag:Amazon DynamoDB",
       "leader_id": "tag:来源快报",
       "name": "来源快报",
       "node_count": 32,
       "rank": 1,
-      "tag_occurrences": 206,
-      "weighted_degree": 877.6
+      "tag_occurrences": 211,
+      "weighted_degree": 897.6
     },
     {
       "article_count": 797,
       "hotspot_count": 21,
-      "hotspot_file": "community-hotspots/02-ca8f186225a2.json",
+      "hotspot_file": "community-hotspots/02-ee14880aab70.json",
       "id": "community:tag:面试考点",
       "leader_id": "tag:LLM",
       "name": "LLM",
@@ -28,7 +28,7 @@
     {
       "article_count": 65,
       "hotspot_count": 17,
-      "hotspot_file": "community-hotspots/03-896c10c5e5ac.json",
+      "hotspot_file": "community-hotspots/03-a1d80ecff5a4.json",
       "id": "community:tag:SpeechAnalyzer",
       "leader_id": "tag:开源模型",
       "name": "开源模型",
@@ -40,7 +40,7 @@
     {
       "article_count": 77,
       "hotspot_count": 15,
-      "hotspot_file": "community-hotspots/04-85ce8ca304b7.json",
+      "hotspot_file": "community-hotspots/04-ffda6ad6e06a.json",
       "id": "community:tag:P-EAGLE",
       "leader_id": "tag:性能优化",
       "name": "性能优化",
@@ -52,7 +52,7 @@
     {
       "article_count": 7,
       "hotspot_count": 14,
-      "hotspot_file": "community-hotspots/05-2008e4b5ee82.json",
+      "hotspot_file": "community-hotspots/05-e4adf2c31957.json",
       "id": "community:tag:移动开发",
       "leader_id": "tag:Android",
       "name": "Android",
@@ -64,7 +64,7 @@
     {
       "article_count": 107,
       "hotspot_count": 13,
-      "hotspot_file": "community-hotspots/06-47b0cfddbb0e.json",
+      "hotspot_file": "community-hotspots/06-63e185bf7f76.json",
       "id": "community:tag:行业格局",
       "leader_id": "tag:OpenAI",
       "name": "OpenAI",
@@ -76,7 +76,7 @@
     {
       "article_count": 34,
       "hotspot_count": 13,
-      "hotspot_file": "community-hotspots/07-a4785e459c51.json",
+      "hotspot_file": "community-hotspots/07-d3c9f68c791d.json",
       "id": "community:tag:Autotab",
       "leader_id": "tag:Cursor",
       "name": "Cursor",
@@ -88,7 +88,7 @@
     {
       "article_count": 67,
       "hotspot_count": 12,
-      "hotspot_file": "community-hotspots/08-5c4d4d1c7b0d.json",
+      "hotspot_file": "community-hotspots/08-6a046a601858.json",
       "id": "community:tag:Gemini 3",
       "leader_id": "tag:模型发布",
       "name": "模型发布",
@@ -100,7 +100,7 @@
     {
       "article_count": 59,
       "hotspot_count": 12,
-      "hotspot_file": "community-hotspots/09-c390332369c0.json",
+      "hotspot_file": "community-hotspots/09-1b41d9966192.json",
       "id": "community:tag:Folo",
       "leader_id": "tag:开源项目",
       "name": "开源项目",
@@ -112,7 +112,7 @@
     {
       "article_count": 53,
       "hotspot_count": 12,
-      "hotspot_file": "community-hotspots/10-4089a6a22e9a.json",
+      "hotspot_file": "community-hotspots/10-367974c31a2e.json",
       "id": "community:tag:Clippy",
       "leader_id": "tag:AI 助手",
       "name": "AI 助手",
@@ -124,7 +124,7 @@
     {
       "article_count": 47,
       "hotspot_count": 12,
-      "hotspot_file": "community-hotspots/11-3bf713007374.json",
+      "hotspot_file": "community-hotspots/11-8431c355d085.json",
       "id": "community:tag:SF6",
       "leader_id": "tag:计算机视觉",
       "name": "计算机视觉",
@@ -145,7 +145,7 @@
       "weighted_degree": 92455.6
     }
   ],
-  "generated_at": "2026-07-17T22:09:31Z",
+  "generated_at": "2026-07-17T23:10:40Z",
   "iterations": 6,
   "limit": 11,
   "links": [

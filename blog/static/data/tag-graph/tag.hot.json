@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-17T22:09:31Z",
+  "generated_at": "2026-07-17T23:10:40Z",
   "layer": "tag",
   "layers": {
     "application": {
@@ -26453,7 +26453,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 19
+      "weight": 20
     },
     {
       "id": "edge:cooccurrence:tag:可观测性->tag:基准测试",
@@ -35541,7 +35541,7 @@
       "legacy_id": "AI for Science",
       "level": 6,
       "name": "AI for Science",
-      "rank": 187,
+      "rank": 188,
       "related_count": 55,
       "weighted_degree": 64.2
     },
@@ -35677,7 +35677,7 @@
       "legacy_id": "AI 开发",
       "level": 6,
       "name": "AI 开发",
-      "rank": 188,
+      "rank": 189,
       "related_count": 59,
       "weighted_degree": 63.6
     },
@@ -35728,7 +35728,7 @@
       "legacy_id": "AI 治理",
       "level": 6,
       "name": "AI 治理",
-      "rank": 189,
+      "rank": 190,
       "related_count": 54,
       "weighted_degree": 63.6
     },
@@ -35898,7 +35898,7 @@
       "legacy_id": "API",
       "level": 6,
       "name": "API",
-      "rank": 108,
+      "rank": 109,
       "related_count": 90,
       "weighted_degree": 105.6
     },
@@ -35932,7 +35932,7 @@
       "legacy_id": "arxiv",
       "level": 6,
       "name": "arxiv",
-      "rank": 923,
+      "rank": 925,
       "related_count": 5,
       "weighted_degree": 14
     },
@@ -36272,7 +36272,7 @@
       "legacy_id": "DeepSeek",
       "level": 6,
       "name": "DeepSeek",
-      "rank": 114,
+      "rank": 115,
       "related_count": 82,
       "weighted_degree": 105
     },
@@ -36476,7 +36476,7 @@
       "legacy_id": "Hugging Face",
       "level": 6,
       "name": "Hugging Face",
-      "rank": 112,
+      "rank": 113,
       "related_count": 89,
       "weighted_degree": 105
     },
@@ -36833,7 +36833,7 @@
       "legacy_id": "Prompt 工程",
       "level": 6,
       "name": "Prompt 工程",
-      "rank": 115,
+      "rank": 116,
       "related_count": 78,
       "weighted_degree": 105
     },
@@ -36867,7 +36867,7 @@
       "legacy_id": "Qwen",
       "level": 6,
       "name": "Qwen",
-      "rank": 110,
+      "rank": 111,
       "related_count": 90,
       "weighted_degree": 105
     },
@@ -37445,12 +37445,12 @@
       "legacy_id": "医疗 AI",
       "level": 6,
       "name": "医疗 AI",
-      "rank": 109,
+      "rank": 110,
       "related_count": 97,
       "weighted_degree": 105
     },
     {
-      "article_count": 20,
+      "article_count": 21,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:Amazon DynamoDB",
@@ -37462,9 +37462,9 @@
       "legacy_id": "博客与播客",
       "level": 6,
       "name": "博客与播客",
-      "rank": 190,
+      "rank": 187,
       "related_count": 30,
-      "weighted_degree": 63
+      "weighted_degree": 67
     },
     {
       "article_count": 9,
@@ -38210,7 +38210,7 @@
       "legacy_id": "掘金",
       "level": 6,
       "name": "掘金",
-      "rank": 1617,
+      "rank": 1618,
       "related_count": 1,
       "weighted_degree": 8
     },
@@ -38555,7 +38555,7 @@
       "weighted_degree": 385
     },
     {
-      "article_count": 50,
+      "article_count": 51,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:Amazon DynamoDB",
@@ -38567,9 +38567,9 @@
       "legacy_id": "来源快报",
       "level": 6,
       "name": "来源快报",
-      "rank": 116,
+      "rank": 108,
       "related_count": 33,
-      "weighted_degree": 104
+      "weighted_degree": 108
     },
     {
       "article_count": 40,
@@ -38703,7 +38703,7 @@
       "legacy_id": "模型推理",
       "level": 6,
       "name": "模型推理",
-      "rank": 113,
+      "rank": 114,
       "related_count": 88,
       "weighted_degree": 105
     },
@@ -39638,7 +39638,7 @@
       "legacy_id": "预训练",
       "level": 6,
       "name": "预训练",
-      "rank": 111,
+      "rank": 112,
       "related_count": 90,
       "weighted_degree": 105
     },

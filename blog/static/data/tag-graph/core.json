@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-17T22:09:31Z",
+  "generated_at": "2026-07-17T23:10:40Z",
   "layers": {
     "application": {
       "color": "#7aa6b8",
@@ -792,7 +792,7 @@
       "legacy_id": "chatbot",
       "level": 4,
       "name": "聊天机器人",
-      "rank": 6799,
+      "rank": 6800,
       "weighted_degree": 5.2
     },
     {
@@ -996,7 +996,7 @@
       "legacy_id": "diffusion",
       "level": 3,
       "name": "扩散模型",
-      "rank": 6800,
+      "rank": 6801,
       "weighted_degree": 5.1
     },
     {
@@ -1438,7 +1438,7 @@
       "legacy_id": "nlp",
       "level": 3,
       "name": "自然语言处理",
-      "rank": 6788,
+      "rank": 6789,
       "weighted_degree": 6.2
     },
     {
@@ -1506,7 +1506,7 @@
       "legacy_id": "python",
       "level": 1,
       "name": "Python",
-      "rank": 1579,
+      "rank": 1580,
       "weighted_degree": 8.2
     },
     {
@@ -1523,7 +1523,7 @@
       "legacy_id": "pytorch",
       "level": 2,
       "name": "PyTorch",
-      "rank": 1619,
+      "rank": 1620,
       "weighted_degree": 7.6
     },
     {
@@ -1540,7 +1540,7 @@
       "legacy_id": "rag",
       "level": 4,
       "name": "RAG应用",
-      "rank": 1578,
+      "rank": 1579,
       "weighted_degree": 8.4
     },
     {
@@ -1761,7 +1761,7 @@
       "legacy_id": "web_dev",
       "level": 5,
       "name": "Web应用开发",
-      "rank": 1618,
+      "rank": 1619,
       "weighted_degree": 7.6
     },
     {
@@ -1778,7 +1778,7 @@
       "legacy_id": "webapp",
       "level": 4,
       "name": "Web应用",
-      "rank": 1573,
+      "rank": 1574,
       "weighted_degree": 12.2
     }
   ],

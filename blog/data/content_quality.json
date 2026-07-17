@@ -1,5 +1,5 @@
 {
-  "active_count": 1973,
+  "active_count": 1974,
   "archived_count": 448,
   "complete_count": 0,
   "legacy_analysis_count": 1910,
@@ -10715,6 +10715,12 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260718-blogs_podcasts-transform-your-sales-organization-with-amazon-quic-0-41e9a3ed93.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -10722,9 +10728,9 @@
     "archived_content": 448
   },
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 63,
-  "source_file_count": 2421,
-  "source_tree_sha256": "e871240abff3f6e8a0aecadc7a69777e1a94157b639af19f64ffe498b88d92e3",
+  "source_brief_count": 64,
+  "source_file_count": 2422,
+  "source_tree_sha256": "27edf38cbf3172e925726fe9948547bd5742663190f87aae244be009b493bb14",
   "warning_counts": {
     "source_excerpt_truncated": 2
   }
