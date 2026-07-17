@@ -1,5 +1,5 @@
 {
-  "active_count": 1958,
+  "active_count": 1960,
   "archived_count": 448,
   "complete_count": 0,
   "legacy_analysis_count": 1910,
@@ -10563,6 +10563,21 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260717-arxiv-searchos-v1-towards-robust-open-domain-information-0-31ed054ff4.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260717-blogs_podcasts-ainews-kimi-k3-28t-a50b-the-largest-open-model-eve-0-a1fa918dc4.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
+    },
     "posts/20260717-blogs_podcasts-build-enterprise-search-for-agents-with-amazon-bed-0-f6710a64c9.md": {
       "reasons": [
         "concise_source_card"
@@ -10629,10 +10644,10 @@
     "archived_content": 448
   },
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 48,
-  "source_file_count": 2406,
-  "source_tree_sha256": "fff87b90885ac3a32c8923d32841dbaeca85272bbe133d9079e9af334180cf88",
+  "source_brief_count": 50,
+  "source_file_count": 2408,
+  "source_tree_sha256": "b5318b55721141525e8e16353b28dc9e3a4bd5d942b9c14166789bfafd76ab4b",
   "warning_counts": {
-    "source_excerpt_truncated": 1
+    "source_excerpt_truncated": 2
   }
 }

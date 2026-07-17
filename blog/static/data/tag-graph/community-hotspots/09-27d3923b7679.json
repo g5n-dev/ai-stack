@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:Gemini 3",
-  "generated_at": "2026-07-16T23:15:15Z",
+  "generated_at": "2026-07-17T03:39:12Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -326,7 +326,7 @@
       "legacy_id": "谷歌",
       "level": 6,
       "name": "谷歌",
-      "rank": 169,
+      "rank": 170,
       "related_count": 65,
       "weighted_degree": 70
     },

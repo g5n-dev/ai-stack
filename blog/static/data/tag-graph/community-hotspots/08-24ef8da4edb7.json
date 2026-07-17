@@ -1,25 +1,9 @@
 {
   "community_id": "community:tag:Amazon DynamoDB",
-  "generated_at": "2026-07-16T23:15:15Z",
+  "generated_at": "2026-07-17T03:39:12Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
-    {
-      "id": "edge:cooccurrence:tag:博客与播客->tag:来源快报",
-      "source": "tag:博客与播客",
-      "strength": 1,
-      "target": "tag:来源快报",
-      "type": "cooccurrence",
-      "weight": 14
-    },
-    {
-      "id": "edge:cooccurrence:tag:掘金->tag:来源快报",
-      "source": "tag:掘金",
-      "strength": 1,
-      "target": "tag:来源快报",
-      "type": "cooccurrence",
-      "weight": 5
-    },
     {
       "id": "edge:cooccurrence:tag:AWS Lambda->tag:Technical How-to",
       "source": "tag:AWS Lambda",
@@ -77,26 +61,10 @@
       "weight": 2
     },
     {
-      "id": "edge:cooccurrence:tag:Search->tag:来源快报",
-      "source": "tag:Search",
-      "strength": 1,
-      "target": "tag:来源快报",
-      "type": "cooccurrence",
-      "weight": 2
-    },
-    {
       "id": "edge:cooccurrence:tag:AI Research->tag:博客与播客",
       "source": "tag:AI Research",
       "strength": 0.5,
       "target": "tag:博客与播客",
-      "type": "cooccurrence",
-      "weight": 1
-    },
-    {
-      "id": "edge:cooccurrence:tag:AI Research->tag:来源快报",
-      "source": "tag:AI Research",
-      "strength": 0.5,
-      "target": "tag:来源快报",
       "type": "cooccurrence",
       "weight": 1
     },
@@ -259,28 +227,43 @@
       "target": "tag:Amazon SageMaker",
       "type": "cooccurrence",
       "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Amazon EventBridge->tag:Technical How-to",
+      "source": "tag:Amazon EventBridge",
+      "strength": 0.5,
+      "target": "tag:Technical How-to",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Amazon EventBridge->tag:博客与播客",
+      "source": "tag:Amazon EventBridge",
+      "strength": 0.5,
+      "target": "tag:博客与播客",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Amazon Quick Sight->tag:AWS Lambda",
+      "source": "tag:Amazon Quick Sight",
+      "strength": 0.5,
+      "target": "tag:AWS Lambda",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Amazon Quick Sight->tag:Amazon Simple Storage Service (S3)",
+      "source": "tag:Amazon Quick Sight",
+      "strength": 0.5,
+      "target": "tag:Amazon Simple Storage Service (S3)",
+      "type": "cooccurrence",
+      "weight": 1
     }
   ],
   "nodes": [
     {
-      "article_count": 33,
-      "category": "article_tag",
-      "color": "#f59e0b",
-      "community_id": "community:tag:Amazon DynamoDB",
-      "degree": 25,
-      "description": "文章标签: 来源快报",
-      "id": "tag:来源快报",
-      "layer": "tag",
-      "layer_name": "标签层",
-      "legacy_id": "来源快报",
-      "level": 6,
-      "name": "来源快报",
-      "rank": 186,
-      "related_count": 25,
-      "weighted_degree": 69
-    },
-    {
-      "article_count": 15,
+      "article_count": 17,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:Amazon DynamoDB",
@@ -292,9 +275,9 @@
       "legacy_id": "博客与播客",
       "level": 6,
       "name": "博客与播客",
-      "rank": 272,
+      "rank": 231,
       "related_count": 24,
-      "weighted_degree": 48
+      "weighted_degree": 50
     },
     {
       "article_count": 4,
@@ -462,26 +445,9 @@
       "legacy_id": "Search",
       "level": 6,
       "name": "Search",
-      "rank": 6788,
+      "rank": 6789,
       "related_count": 3,
       "weighted_degree": 6
-    },
-    {
-      "article_count": 5,
-      "category": "article_tag",
-      "color": "#f59e0b",
-      "community_id": "community:tag:Amazon DynamoDB",
-      "degree": 1,
-      "description": "文章标签: 掘金",
-      "id": "tag:掘金",
-      "layer": "tag",
-      "layer_name": "标签层",
-      "legacy_id": "掘金",
-      "level": 6,
-      "name": "掘金",
-      "rank": 6799,
-      "related_count": 1,
-      "weighted_degree": 5
     },
     {
       "article_count": 1,
@@ -520,7 +486,7 @@
   ],
   "stats": {
     "total_links": 32,
-    "total_nodes": 15
+    "total_nodes": 13
   },
   "version": 2
 }

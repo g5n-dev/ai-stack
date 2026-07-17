@@ -12,7 +12,7 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-07-17T00:15:41Z",
+  "generated_at": "2026-07-17T03:39:12Z",
   "items": [
     {
       "article_count": 561,
@@ -2160,9 +2160,9 @@
       "weighted_degree": 76
     },
     {
-      "article_count": 35,
+      "article_count": 37,
       "category": "article_tag",
-      "community_id": "community:tag:Amazon DynamoDB",
+      "community_id": "community:other",
       "degree": 25,
       "description": "文章标签: 来源快报",
       "id": "tag:来源快报",
@@ -2170,7 +2170,7 @@
       "legacy_id": "来源快报",
       "name": "来源快报",
       "rank": 166,
-      "weighted_degree": 71
+      "weighted_degree": 74
     },
     {
       "article_count": 10,
@@ -2992,7 +2992,7 @@
       "weighted_degree": 55
     },
     {
-      "article_count": 10,
+      "article_count": 11,
       "category": "article_tag",
       "community_id": "community:other",
       "degree": 43,
@@ -3002,6 +3002,19 @@
       "legacy_id": "cs.AI",
       "name": "cs.AI",
       "rank": 230,
+      "weighted_degree": 52
+    },
+    {
+      "article_count": 17,
+      "category": "article_tag",
+      "community_id": "community:tag:Amazon DynamoDB",
+      "degree": 24,
+      "description": "文章标签: 博客与播客",
+      "id": "tag:博客与播客",
+      "layer": "tag",
+      "legacy_id": "博客与播客",
+      "name": "博客与播客",
+      "rank": 231,
       "weighted_degree": 50
     },
     {
@@ -3014,7 +3027,7 @@
       "layer": "tag",
       "legacy_id": "AI伦理",
       "name": "AI伦理",
-      "rank": 231,
+      "rank": 232,
       "weighted_degree": 49.6
     },
     {
@@ -3027,7 +3040,7 @@
       "layer": "tag",
       "legacy_id": "JavaScript",
       "name": "JavaScript",
-      "rank": 232,
+      "rank": 233,
       "weighted_degree": 49.6
     },
     {
@@ -3040,21 +3053,8 @@
       "layer": "tag",
       "legacy_id": "AI新闻",
       "name": "AI新闻",
-      "rank": 233,
-      "weighted_degree": 49.6
-    },
-    {
-      "article_count": 16,
-      "category": "article_tag",
-      "community_id": "community:tag:Amazon DynamoDB",
-      "degree": 24,
-      "description": "文章标签: 博客与播客",
-      "id": "tag:博客与播客",
-      "layer": "tag",
-      "legacy_id": "博客与播客",
-      "name": "博客与播客",
       "rank": 234,
-      "weighted_degree": 49
+      "weighted_degree": 49.6
     },
     {
       "article_count": 7,
@@ -11312,6 +11312,19 @@
       "weighted_degree": 21
     },
     {
+      "article_count": 10,
+      "category": "article_tag",
+      "community_id": "community:other",
+      "degree": 6,
+      "description": "文章标签: arXiv",
+      "id": "tag:arXiv",
+      "layer": "tag",
+      "legacy_id": "arXiv",
+      "name": "arXiv",
+      "rank": 870,
+      "weighted_degree": 20
+    },
+    {
       "article_count": 3,
       "category": "article_tag",
       "community_id": "community:other",
@@ -11321,7 +11334,7 @@
       "layer": "tag",
       "legacy_id": "产品更新",
       "name": "产品更新",
-      "rank": 870,
+      "rank": 871,
       "weighted_degree": 20
     },
     {
@@ -11334,21 +11347,8 @@
       "layer": "tag",
       "legacy_id": "实战案例",
       "name": "实战案例",
-      "rank": 871,
-      "weighted_degree": 20
-    },
-    {
-      "article_count": 9,
-      "category": "article_tag",
-      "community_id": "community:other",
-      "degree": 6,
-      "description": "文章标签: arXiv",
-      "id": "tag:arXiv",
-      "layer": "tag",
-      "legacy_id": "arXiv",
-      "name": "arXiv",
       "rank": 872,
-      "weighted_degree": 18
+      "weighted_degree": 20
     },
     {
       "article_count": 2,
@@ -88248,7 +88248,7 @@
     {
       "article_count": 6,
       "category": "article_tag",
-      "community_id": "community:tag:Amazon DynamoDB",
+      "community_id": "community:other",
       "degree": 1,
       "description": "文章标签: 掘金",
       "id": "tag:掘金",

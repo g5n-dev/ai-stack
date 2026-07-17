@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-17T00:15:41Z",
+  "generated_at": "2026-07-17T03:39:12Z",
   "layer": "tag",
   "layers": {
     "application": {
@@ -23621,7 +23621,7 @@
       "strength": 1,
       "target": "tag:cs.AI",
       "type": "cooccurrence",
-      "weight": 4
+      "weight": 5
     },
     {
       "id": "edge:cooccurrence:tag:arXiv->tag:cs.CL",
@@ -23645,7 +23645,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 9
+      "weight": 10
     },
     {
       "id": "edge:cooccurrence:tag:arxiv->tag:cs.CL",
@@ -23733,7 +23733,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 4
+      "weight": 5
     },
     {
       "id": "edge:cooccurrence:tag:cs.AI->tag:模型评估",
@@ -26573,7 +26573,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 15
+      "weight": 16
     },
     {
       "id": "edge:cooccurrence:tag:可观测性->tag:基准测试",
@@ -35925,7 +35925,7 @@
       "legacy_id": "AI伦理",
       "level": 6,
       "name": "AI伦理",
-      "rank": 231,
+      "rank": 232,
       "related_count": 48,
       "weighted_degree": 49.6
     },
@@ -35942,7 +35942,7 @@
       "legacy_id": "AI新闻",
       "level": 6,
       "name": "AI新闻",
-      "rank": 233,
+      "rank": 234,
       "related_count": 44,
       "weighted_degree": 49.6
     },
@@ -36015,7 +36015,7 @@
       "weighted_degree": 105.6
     },
     {
-      "article_count": 9,
+      "article_count": 10,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
@@ -36027,9 +36027,9 @@
       "legacy_id": "arXiv",
       "level": 6,
       "name": "arXiv",
-      "rank": 872,
+      "rank": 870,
       "related_count": 6,
-      "weighted_degree": 18
+      "weighted_degree": 20
     },
     {
       "article_count": 14,
@@ -36236,7 +36236,7 @@
       "weighted_degree": 70
     },
     {
-      "article_count": 10,
+      "article_count": 11,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
@@ -36250,7 +36250,7 @@
       "name": "cs.AI",
       "rank": 230,
       "related_count": 43,
-      "weighted_degree": 50
+      "weighted_degree": 52
     },
     {
       "article_count": 11,
@@ -36622,7 +36622,7 @@
       "legacy_id": "JavaScript",
       "level": 6,
       "name": "JavaScript",
-      "rank": 232,
+      "rank": 233,
       "related_count": 46,
       "weighted_degree": 49.6
     },
@@ -37579,7 +37579,7 @@
       "weighted_degree": 105
     },
     {
-      "article_count": 16,
+      "article_count": 17,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:Amazon DynamoDB",
@@ -37591,9 +37591,9 @@
       "legacy_id": "博客与播客",
       "level": 6,
       "name": "博客与播客",
-      "rank": 234,
+      "rank": 231,
       "related_count": 24,
-      "weighted_degree": 49
+      "weighted_degree": 50
     },
     {
       "article_count": 9,
@@ -38667,10 +38667,10 @@
       "weighted_degree": 385
     },
     {
-      "article_count": 35,
+      "article_count": 37,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:tag:Amazon DynamoDB",
+      "community_id": "community:other",
       "degree": 25,
       "description": "文章标签: 来源快报",
       "id": "tag:来源快报",
@@ -38681,7 +38681,7 @@
       "name": "来源快报",
       "rank": 166,
       "related_count": 25,
-      "weighted_degree": 71
+      "weighted_degree": 74
     },
     {
       "article_count": 40,
