@@ -255,10 +255,10 @@
     const items = [];
     for (const result of results) {
       const item = document.createElement("li");
-      item.className = "terminal-glass rounded-xl border border-muted-teal/20 p-5";
+      item.className = "search-result terminal-glass rounded-xl border border-muted-teal/20 p-5";
 
       const link = document.createElement("a");
-      link.className = "text-off-white text-lg hover:text-primary focus:text-primary";
+      link.className = "search-result__title text-sm";
       link.setAttribute("href", safeResultUrl(result?.url));
       link.textContent = result?.meta?.title || "无标题条目";
       item.append(link);
@@ -270,14 +270,14 @@
         document,
         item,
         "p",
-        "mt-2 text-xs font-mono text-muted-teal",
+        "search-result__meta text-xs",
         metadata,
       );
       appendTextElement(
         document,
         item,
         "p",
-        "mt-3 text-sm leading-relaxed text-off-white/65",
+        "search-result__excerpt text-sm",
         typeof result?.plain_excerpt === "string" ? result.plain_excerpt.slice(0, 600) : "",
       );
       items.push(item);

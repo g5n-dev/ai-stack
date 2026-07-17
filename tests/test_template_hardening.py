@@ -93,7 +93,8 @@ def test_graph_template_uses_the_self_hosted_progressive_runtime() -> None:
     assert "GRAPH_UI_PENDING_INTEGRATION" not in template
     assert 'id="graph-workbench"' in template
     assert "cytoscape-3.34.0.min.js" in template
-    assert "dagre-0.8.5.min.js" in template
+    assert "dagre-0.8.5.min.js" not in template
+    assert "cytoscape-dagre.js" not in template
     assert "cytoscape-graph-engine.js" in template
     assert "cytoscape-graph-renderer.js" in template
     assert "graph-workbench.js" in template

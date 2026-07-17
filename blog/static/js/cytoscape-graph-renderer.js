@@ -276,14 +276,17 @@
                 this._syncFocusControls(Boolean(node));
                 this._updateStats();
             });
-            this._listen(container, "graph:layerchange", () => {
+            this._listen(container, "graph:layerchange", (event) => {
                 this._syncLayerInputs();
-                this._updateStats();
+                this._updateStats(event.detail);
             });
             this._listen(container, "graph:viewportchange", (event) => {
                 const zoom = Number(event.detail?.zoom);
                 if (Number.isFinite(zoom)) {
                     setText(this.elements.zoomLevel, `${Math.round(zoom * 100)}%`);
+                }
+                if (event.detail?.reason !== "zoom") {
+                    this._updateStats(event.detail || {});
                 }
             });
             this._listen(container, "graph:error", (event) => {
@@ -597,8 +600,12 @@
         }
 
         _updateStats(detail = {}) {
-            const visibleNodes = detail.visibleNodes ?? this.engine.cy?.nodes(":visible")?.length ?? 0;
-            const visibleEdges = detail.visibleEdges ?? this.engine.cy?.edges(":visible")?.length ?? 0;
+            const hasVisibleSnapshot = detail.visibleNodes !== undefined && detail.visibleEdges !== undefined;
+            const visible = hasVisibleSnapshot
+                ? {}
+                : this.engine.getVisibleCounts?.() || {};
+            const visibleNodes = detail.visibleNodes ?? visible.nodes ?? this.engine.cy?.nodes(":visible")?.length ?? 0;
+            const visibleEdges = detail.visibleEdges ?? visible.edges ?? this.engine.cy?.edges(":visible")?.length ?? 0;
             const stats = this.engine.data?.stats || {};
             const totalArticles = stats.total_articles ?? stats.tag_stats?.total_articles ?? 0;
             setText(this.elements.stats.nodes, formatMetric(visibleNodes));

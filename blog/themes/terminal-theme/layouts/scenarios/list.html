@@ -19,8 +19,6 @@
 -}}
 {{- $graphScripts := slice
   ("vendor/cytoscape/cytoscape-3.34.0.min.js" | relURL)
-  ("vendor/dagre/dagre-0.8.5.min.js" | relURL)
-  ("js/cytoscape-dagre.js" | relURL)
   (printf "%s?v=%s" ("js/cytoscape-graph-engine.js" | relURL) $graphAssetVersion)
   (printf "%s?v=%s" ("js/cytoscape-graph-renderer.js" | relURL) $graphAssetVersion)
   (printf "%s?v=%s" ("js/graph-workbench.js" | relURL) $graphAssetVersion)

@@ -19,6 +19,10 @@ const RENDERER_SOURCE = fs.readFileSync(
   path.join(ROOT, "blog/static/js/cytoscape-graph-renderer.js"),
   "utf8"
 );
+const CORE_GRAPH = JSON.parse(fs.readFileSync(
+  path.join(ROOT, "blog/static/data/tag-graph/core.json"),
+  "utf8"
+));
 
 function jsonResponse(value) {
   const bytes = new TextEncoder().encode(JSON.stringify(value));
@@ -763,6 +767,7 @@ test("engine exposes the workbench API and semantic mode layouts", () => {
     "focusNode",
     "getCommunityInsights",
     "getCommunityVisualState",
+    "getVisibleCounts",
     "clearSelection",
     "pause",
     "resume",
@@ -774,7 +779,12 @@ test("engine exposes the workbench API and semantic mode layouts", () => {
   const engine = Object.create(prototype);
   engine.options = {};
   engine.reducedMotion = false;
-  assert.equal(engine._getLayoutOptions("overview").name, "dagre");
+  engine.data = { layers: CORE_GRAPH.layers || {} };
+  engine.currentGraph = CORE_GRAPH;
+  const overviewLayout = engine._getLayoutOptions("overview");
+  assert.equal(overviewLayout.name, "preset");
+  assert.equal(overviewLayout.fit, false);
+  assert.equal(overviewLayout.animate, false);
   assert.equal(engine._getLayoutOptions("community").name, "preset");
   const focusLayout = engine._getLayoutOptions("focus");
   assert.equal(focusLayout.name, "preset");
@@ -791,43 +801,37 @@ test("engine exposes the workbench API and semantic mode layouts", () => {
   engine.cy = { zoom: () => 1.25 };
   assert.equal(engine._labelsShouldBeExpanded(), true);
 
-  const packedNodes = [
-    {
-      id: () => "tech:python",
-      data: (key) => ({ layer: "language" })[key],
-      position(value) {
-        if (value) this.value = value;
-        return this.value || { x: 0, y: 0 };
-      },
-    },
-    ...Array.from({ length: 31 }, (_, index) => ({
-      id: () => `tech:scenario-${index}`,
-      data: (key) => ({ layer: "scenario" })[key],
-      position(value) {
-        if (value) this.value = value;
-        return this.value || { x: 500, y: index * 10 };
-      },
-    })),
-  ];
-  engine.data = {
-    layers: {
-      language: { level: 1 },
-      scenario: { level: 5 },
-    },
-  };
   engine.mode = "overview";
-  engine.cy = {
-    nodes: () => packedNodes,
-    batch: (callback) => callback(),
-  };
-  engine._packOverviewLayers();
-  const scenarioPositions = packedNodes.slice(1).map((node) => node.position());
-  assert.equal(new Set(scenarioPositions.map((position) => position.x)).size, 3);
-  for (const x of new Set(scenarioPositions.map((position) => position.x))) {
-    assert.ok(scenarioPositions.filter((position) => position.x === x).length <= 11);
-  }
-  assert.ok(
-    Math.min(...scenarioPositions.map((position) => position.x)) - packedNodes[0].position().x >= 200
+  const scene = engine._buildOverviewScenePlan(CORE_GRAPH);
+  assert.equal(scene.layers.length, 5);
+  assert.equal(scene.nodes.size, 69);
+  assert.equal(
+    Array.from(scene.nodes.values()).filter((node) => node.role === "anchor").length,
+    5
+  );
+  const formatted = engine._formatElements(CORE_GRAPH);
+  assert.equal(formatted.nodes.length, 69);
+  assert.equal(formatted.edges.length, 71);
+  assert.equal(
+    formatted.nodes.filter((node) => node.classes.includes("overview-anchor")).length,
+    5
+  );
+  assert.ok(formatted.edges.every((edge) => edge.classes.includes("overview-cross-link")));
+  const bounds = { width: 1269, height: 894 };
+  const positions = engine._overviewPresetPositions(
+    formatted.nodes.map((node) => node.data),
+    bounds
+  );
+  const repeated = engine._overviewPresetPositions(
+    formatted.nodes.map((node) => node.data),
+    bounds
+  );
+  assert.deepEqual(positions, repeated, "overview preset must be deterministic");
+  assert.equal(Object.keys(positions).length, 69);
+  assert.equal(
+    new Set(Object.values(positions).map(({ x, y }) => `${x}:${y}`)).size,
+    69,
+    "all core nodes must retain unique positions inside their layer cells"
   );
   assert.doesNotMatch(ENGINE_SOURCE, /container\.querySelector\(['"]canvas['"]\)/);
   assert.doesNotMatch(ENGINE_SOURCE, /cose-bilkent/);
@@ -843,17 +847,453 @@ test("a late Cytoscape ready callback cannot refit a semantic scene", () => {
   const calls = [];
   Object.assign(engine, {
     isDestroyed: false,
-    cy: {},
+    cy: {
+      zoom: (value) => { if (value !== undefined) calls.push(`zoom:${value}`); },
+      pan: (value) => calls.push(`pan:${value.x}:${value.y}`),
+    },
     mode: "community",
-    _packOverviewLayers: () => calls.push("pack"),
-    _fitCurrentGraph: () => calls.push("fit"),
+    _syncOverviewDensity: () => calls.push("density"),
+    _scheduleCommunityFieldDraw: () => calls.push("field"),
+    _emitViewportChange: (reason) => calls.push(`viewport:${reason}`),
   });
 
   assert.equal(engine._settleInitialViewport(), false);
   assert.deepEqual(calls, []);
   engine.mode = "overview";
   assert.equal(engine._settleInitialViewport(), true);
-  assert.deepEqual(calls, ["pack", "fit"]);
+  assert.deepEqual(calls, [
+    "density",
+    "zoom:1",
+    "pan:0:0",
+    "field",
+    "viewport:initial-layout",
+  ]);
+});
+
+test("layout density emits one viewport snapshot and renderer consumes its real counts", () => {
+  const window = {};
+  vm.runInNewContext(ENGINE_SOURCE, { window }, {
+    filename: "cytoscape-graph-engine.js",
+  });
+  const Engine = window.CytoscapeGraphEngine;
+  const engine = Object.create(Engine.prototype);
+  let finishLayout;
+  const snapshots = [];
+  Object.assign(engine, {
+    isDestroyed: false,
+    _paused: false,
+    mode: "community",
+    cy: { zoom: () => 0.8, pan() {} },
+    _scheduleCommunityFieldDraw() {},
+    _emitViewportChange(reason) {
+      snapshots.push(reason);
+    },
+  });
+  engine._bindCommunityFieldDraw({
+    one: (event, callback) => {
+      assert.equal(event, "layoutstop");
+      finishLayout = callback;
+    },
+  }, "community", false);
+  finishLayout();
+  assert.deepEqual(snapshots, ["layout-density"]);
+
+  const emitted = [];
+  let visibleCountReads = 0;
+  Object.assign(engine, {
+    getVisibleCounts: () => {
+      visibleCountReads += 1;
+      return { nodes: 17, edges: 23 };
+    },
+    _emit: (name, detail) => emitted.push([name, detail]),
+  });
+  delete engine._emitViewportChange;
+  const detail = engine._emitViewportChange("resize");
+  assert.equal(detail.reason, "resize");
+  assert.equal(detail.zoom, 0.8);
+  assert.equal(detail.visibleNodes, 17);
+  assert.equal(detail.visibleEdges, 23);
+  assert.equal(emitted.length, 1);
+  assert.equal(emitted[0][0], "graph:viewportchange");
+  assert.equal(emitted[0][1], detail);
+  assert.equal(visibleCountReads, 1);
+
+  const zoomDetail = engine._emitViewportChange("zoom");
+  assert.equal(zoomDetail.zoom, 0.8);
+  assert.equal(zoomDetail.visibleNodes, undefined);
+  assert.equal(zoomDetail.visibleEdges, undefined);
+  assert.equal(visibleCountReads, 1, "zoom must not rescan the visible graph");
+
+  const rendererWindow = {};
+  vm.runInNewContext(RENDERER_SOURCE, { window: rendererWindow }, {
+    filename: "cytoscape-graph-renderer.js",
+  });
+  const Renderer = rendererWindow.CytoscapeGraphRenderer;
+  const renderer = Object.create(Renderer.prototype);
+  const listeners = {};
+  const receivedStats = [];
+  Object.assign(renderer, {
+    _listeners: [],
+    engine: {
+      container: {
+        addEventListener: (type, callback) => { listeners[type] = callback; },
+      },
+    },
+    elements: { zoomLevel: { textContent: "" } },
+    _updateStats: (snapshot) => receivedStats.push(snapshot),
+  });
+  renderer._bindEngineEvents();
+  const viewportDetail = {
+    zoom: 0.8,
+    visibleNodes: 17,
+    visibleEdges: 23,
+  };
+  listeners["graph:viewportchange"]({ detail: viewportDetail });
+  assert.equal(renderer.elements.zoomLevel.textContent, "80%");
+  assert.deepEqual(receivedStats, [viewportDetail]);
+
+  listeners["graph:viewportchange"]({ detail: { reason: "zoom", zoom: 1.25 } });
+  assert.equal(renderer.elements.zoomLevel.textContent, "125%");
+  assert.deepEqual(receivedStats, [viewportDetail], "zoom only updates the zoom readout");
+});
+
+test("visible telemetry excludes filtered and compact-hidden topology elements", () => {
+  const window = {};
+  vm.runInNewContext(ENGINE_SOURCE, { window }, {
+    filename: "cytoscape-graph-engine.js",
+  });
+  const Engine = window.CytoscapeGraphEngine;
+  const engine = Object.create(Engine.prototype);
+  const node = (id, classes = []) => ({
+    id: () => id,
+    hasClass: (name) => classes.includes(name),
+  });
+  const visible = node("visible");
+  const filtered = node("filtered", ["layer-hidden"]);
+  const compact = node("compact", ["community-compact-hidden"]);
+  const edges = [
+    { source: () => visible, target: () => visible, hasClass: () => false },
+    { source: () => visible, target: () => filtered, hasClass: () => false },
+    { source: () => visible, target: () => compact, hasClass: () => false },
+    { source: () => visible, target: () => visible, hasClass: (name) => name === "layer-hidden" },
+  ];
+  engine.cy = {
+    nodes: () => ({ forEach: (callback) => [visible, filtered, compact].forEach(callback) }),
+    edges: () => ({ forEach: (callback) => edges.forEach(callback) }),
+  };
+
+  const counts = engine.getVisibleCounts();
+  assert.equal(counts.nodes, 1);
+  assert.equal(counts.edges, 1);
+});
+
+test("overview cells stay bounded on mobile and expose only five aggregated real routes", () => {
+  const window = {};
+  vm.runInNewContext(ENGINE_SOURCE, { window }, {
+    filename: "cytoscape-graph-engine.js",
+  });
+  const Engine = window.CytoscapeGraphEngine;
+  const engine = Object.create(Engine.prototype);
+  Object.assign(engine, {
+    mode: "overview",
+    data: { layers: CORE_GRAPH.layers || {} },
+    currentGraph: CORE_GRAPH,
+    selectedNode: null,
+  });
+
+  const formatted = engine._formatElements(CORE_GRAPH);
+  const mobileBounds = { width: 390, height: 467 };
+  const positions = engine._overviewPresetPositions(
+    formatted.nodes.map((node) => node.data),
+    mobileBounds
+  );
+  const metrics = engine._overviewSceneMetrics(mobileBounds, false);
+  const groups = new Map();
+  formatted.nodes.forEach(({ data }) => {
+    if (!groups.has(data.layer)) groups.set(data.layer, []);
+    groups.get(data.layer).push(data);
+  });
+  const cells = [];
+  groups.forEach((nodes, layer) => {
+    const anchor = nodes.find((node) => node.overviewSceneRole === "anchor");
+    const center = positions[anchor.id];
+    const memberRadius = Math.max(...nodes.map((node) => {
+      const position = positions[node.id];
+      return Math.hypot(position.x - center.x, position.y - center.y);
+    }));
+    const radius = Math.max(
+      34 * metrics.sceneScale,
+      Math.min(154 * metrics.sceneScale, memberRadius + 24 * metrics.sceneScale)
+    );
+    cells.push({ layer, ...center, radius });
+    assert.ok(center.x - radius * 0.94 >= 0, `${layer} contour escapes the left edge`);
+    assert.ok(center.x + radius * 0.94 <= mobileBounds.width, `${layer} contour escapes the right edge`);
+    assert.ok(center.y - radius * 0.68 >= 0, `${layer} contour escapes the top edge`);
+    assert.ok(center.y + radius * 0.68 <= mobileBounds.height, `${layer} contour escapes the bottom edge`);
+  });
+  assert.equal(cells.length, 5);
+  for (let left = 0; left < cells.length; left += 1) {
+    for (let right = left + 1; right < cells.length; right += 1) {
+      const first = cells[left];
+      const second = cells[right];
+      const distance = Math.hypot(first.x - second.x, first.y - second.y);
+      assert.ok(
+        distance >= (first.radius + second.radius) * 0.82,
+        `${first.layer} and ${second.layer} collapse into one mobile contour mass`
+      );
+    }
+  }
+
+  const nodeById = new Map(CORE_GRAPH.nodes.map((node) => [node.id, node]));
+  const edges = CORE_GRAPH.links.map((link) => ({
+    source: () => ({ data: (key) => nodeById.get(link.source)[key] }),
+    target: () => ({ data: (key) => nodeById.get(link.target)[key] }),
+    data: (key) => link[key],
+  }));
+  engine.cy = {
+    edges: () => ({ forEach: (callback) => edges.forEach(callback) }),
+  };
+  const descriptors = Array.from(groups.values())
+    .map((nodes) => nodes.find((node) => node.overviewSceneRole === "anchor"))
+    .sort((left, right) => left.overviewLayerIndex - right.overviewLayerIndex)
+    .map((node) => ({
+      layer: node.layer,
+      order: node.overviewLayerIndex,
+      x: node.overviewLayerIndex * 100,
+      y: 100,
+      radius: 40,
+    }));
+  const routes = engine._overviewFieldRoutes(descriptors);
+  assert.equal(routes.length, 5);
+  assert.deepEqual(
+    Object.fromEntries(routes.map((route) => [
+      `${route.source.layer}->${route.target.layer}`,
+      route.count,
+    ])),
+    {
+      "language->framework": 16,
+      "framework->model": 14,
+      "framework->application": 13,
+      "model->application": 9,
+      "application->scenario": 19,
+    }
+  );
+});
+
+test("overview contour and route geometry scale with zoom and clamp at the canvas edge", () => {
+  const window = {};
+  vm.runInNewContext(ENGINE_SOURCE, { window }, {
+    filename: "cytoscape-graph-engine.js",
+  });
+  const Engine = window.CytoscapeGraphEngine;
+  const engine = Object.create(Engine.prototype);
+
+  const descriptorsAt = (zoom, anchorX = 500) => {
+    const rawNodes = [
+      {
+        id: "tech:anchor",
+        layer: "language",
+        overviewSceneRole: "anchor",
+        overviewLayerIndex: 0,
+        offset: { x: 0, y: 0 },
+      },
+      {
+        id: "tech:left",
+        layer: "language",
+        overviewSceneRole: "satellite",
+        overviewLayerIndex: 0,
+        offset: { x: -40, y: 0 },
+      },
+      {
+        id: "tech:right",
+        layer: "language",
+        overviewSceneRole: "satellite",
+        overviewLayerIndex: 0,
+        offset: { x: 40, y: 0 },
+      },
+    ];
+    const nodes = rawNodes.map((rawNode) => ({
+      data: (key) => key === undefined ? rawNode : rawNode[key],
+      renderedPosition: () => ({
+        x: anchorX + rawNode.offset.x * zoom,
+        y: 400 + rawNode.offset.y * zoom,
+      }),
+    }));
+    Object.assign(engine, {
+      mode: "overview",
+      selectedNode: null,
+      _fieldWidth: 1000,
+      _fieldHeight: 800,
+      cy: {
+        zoom: () => zoom,
+        nodes: () => ({ forEach: (callback) => nodes.forEach(callback) }),
+      },
+    });
+    return engine._overviewFieldDescriptors();
+  };
+
+  const half = descriptorsAt(0.5)[0];
+  const double = descriptorsAt(2)[0];
+  const quadruple = descriptorsAt(4)[0];
+  assert.ok(half && double && quadruple);
+  assert.ok(Math.abs(double.radius / half.radius - 4) < 0.01);
+  assert.ok(Math.abs(quadruple.radius / half.radius - 8) < 0.01);
+  assert.ok(Math.abs(double.contourStep / half.contourStep - 4) < 0.01);
+  assert.ok(Math.abs(quadruple.contourStep / half.contourStep - 8) < 0.01);
+
+  const routeAt = (renderScale) => engine._overviewRouteStyle({
+    source: { renderScale },
+    target: { renderScale },
+  }, 1);
+  const routeHalf = routeAt(0.5);
+  const routeDouble = routeAt(2);
+  const routeQuadruple = routeAt(4);
+  assert.equal(routeDouble.width / routeHalf.width, 4);
+  assert.equal(routeQuadruple.arrowSize / routeHalf.arrowSize, 8);
+  assert.equal(routeQuadruple.dash[0] / routeHalf.dash[0], 8);
+
+  const clamped = descriptorsAt(4, 80)[0];
+  const outerRadius = clamped.radius + clamped.contourStep * 5;
+  assert.ok(outerRadius <= clamped.maxOuterRadius + 0.001);
+  assert.ok(clamped.x - outerRadius * 1.1 >= 3.9);
+  assert.ok(clamped.y - outerRadius * 0.91 >= 3.9);
+});
+
+test("overview assigns unique non-overlapping slots when six or seven layers are present", () => {
+  const window = {};
+  vm.runInNewContext(ENGINE_SOURCE, { window }, {
+    filename: "cytoscape-graph-engine.js",
+  });
+  const Engine = window.CytoscapeGraphEngine;
+  const engine = Object.create(Engine.prototype);
+  const layerIds = [
+    "language",
+    "framework",
+    "model",
+    "application",
+    "scenario",
+    "tag",
+    "concept",
+  ];
+  const layerMetadata = Object.fromEntries(layerIds.map((layer, index) => [
+    layer,
+    { level: index + 1, name: `Layer ${index + 1}` },
+  ]));
+  Object.assign(engine, {
+    mode: "overview",
+    selectedNode: null,
+    data: { layers: layerMetadata },
+  });
+
+  for (const layerCount of [6, 7]) {
+    const nodes = layerIds.slice(0, layerCount).map((layer, index) => ({
+      id: `tech:${layer}`,
+      name: layer,
+      layer,
+      rank: index + 1,
+      degree: 1,
+      weighted_degree: 1,
+    }));
+    const graph = { nodes, links: [], layers: layerMetadata };
+    const formatted = engine._formatElements(graph).nodes.map((node) => node.data);
+    for (const bounds of [
+      { width: 1180, height: 720 },
+      { width: 390, height: 467 },
+    ]) {
+      const positions = engine._overviewPresetPositions(formatted, bounds);
+      const anchors = formatted.map((node) => positions[node.id]);
+      assert.equal(
+        new Set(anchors.map(({ x, y }) => `${x}:${y}`)).size,
+        layerCount,
+        `${layerCount} layers reuse a slot at ${bounds.width}px`
+      );
+      for (let left = 0; left < anchors.length; left += 1) {
+        for (let right = left + 1; right < anchors.length; right += 1) {
+          assert.ok(
+            Math.hypot(
+              anchors[left].x - anchors[right].x,
+              anchors[left].y - anchors[right].y
+            ) >= 80,
+            `${layerCount} layer anchors overlap at ${bounds.width}px`
+          );
+        }
+      }
+      const modelNode = formatted.find((node) => node.layer === "model");
+      const modelPosition = positions[modelNode.id];
+      const metrics = engine._overviewSceneMetrics(bounds, false);
+      assert.ok(Math.abs(modelPosition.x - metrics.safeWidth * 0.5) < 0.001);
+    }
+  }
+});
+
+test("hiding the selected layer clears selection before applying visibility", async () => {
+  const window = {};
+  vm.runInNewContext(ENGINE_SOURCE, { window }, {
+    filename: "cytoscape-graph-engine.js",
+  });
+  const Engine = window.CytoscapeGraphEngine;
+  const engine = Object.create(Engine.prototype);
+  const calls = [];
+  Object.assign(engine, {
+    ready: Promise.resolve(),
+    visibleLayers: new Set(["language", "model"]),
+    selectedNode: {
+      length: 1,
+      data: (key) => ({ layer: "model" })[key],
+    },
+    clearSelection: (options) => {
+      calls.push(["clear", options]);
+      engine.selectedNode = null;
+    },
+    _applyLayerVisibility: () => calls.push(["apply"]),
+    getVisibleCounts: () => ({ nodes: 12, edges: 9 }),
+    _emit: (name, detail) => calls.push([name, detail]),
+  });
+
+  assert.equal(await engine.toggleLayer("model"), false);
+  assert.equal(calls[0][0], "clear");
+  assert.equal(calls[0][1].reflow, false);
+  assert.equal(calls[1][0], "apply");
+  assert.equal(calls[2][0], "graph:layerchange");
+  assert.equal(calls[2][1].visible, false);
+  assert.equal(calls[2][1].visibleNodes, 12);
+  assert.equal(calls[2][1].visibleEdges, 9);
+});
+
+test("overview keeps a single amber signal when a non-model layer is selected", () => {
+  const window = {};
+  vm.runInNewContext(ENGINE_SOURCE, { window }, {
+    filename: "cytoscape-graph-engine.js",
+  });
+  const Engine = window.CytoscapeGraphEngine;
+  const engine = Object.create(Engine.prototype);
+  const classes = new Set(["overview-primary"]);
+  const modelAnchor = {
+    toggleClass(name, enabled) {
+      if (enabled) classes.add(name);
+      else classes.delete(name);
+    },
+  };
+  Object.assign(engine, {
+    mode: "overview",
+    selectedNode: { data: (key) => ({ layer: "language" })[key] },
+    cy: {
+      nodes: (selector) => {
+        assert.equal(selector, ".overview-primary");
+        return { forEach: (callback) => callback(modelAnchor) };
+      },
+    },
+  });
+  engine._syncOverviewPrimaryState();
+  assert.equal(classes.has("overview-primary-muted"), true);
+  engine.selectedNode = null;
+  engine._syncOverviewPrimaryState();
+  assert.equal(classes.has("overview-primary-muted"), false);
+  assert.ok(
+    engine._getStylesheet().some((entry) =>
+      entry.selector.includes("overview-primary-muted")
+    )
+  );
 });
 
 test("overlay canvases cap their backing pixels on high-DPR displays", () => {
