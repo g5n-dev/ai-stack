@@ -1,5 +1,5 @@
 {
-  "active_count": 1960,
+  "active_count": 1961,
   "archived_count": 448,
   "complete_count": 0,
   "legacy_analysis_count": 1910,
@@ -10551,6 +10551,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260717-arxiv-decoding-market-emotion-from-blockchain-activity-a-0-98429142c0.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260717-arxiv-hindcast-replaying-prediction-markets-to-evaluate--0-a7df4e0018.md": {
       "reasons": [
         "concise_source_card"
@@ -10644,9 +10650,9 @@
     "archived_content": 448
   },
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 50,
-  "source_file_count": 2408,
-  "source_tree_sha256": "b5318b55721141525e8e16353b28dc9e3a4bd5d942b9c14166789bfafd76ab4b",
+  "source_brief_count": 51,
+  "source_file_count": 2409,
+  "source_tree_sha256": "f3617e73d6a89d8f418cf77d46f8f8bf3dbf93583c199fae803f7f6b369052f2",
   "warning_counts": {
     "source_excerpt_truncated": 2
   }

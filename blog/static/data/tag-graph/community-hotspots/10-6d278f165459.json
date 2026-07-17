@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:Folo",
-  "generated_at": "2026-07-17T00:15:41Z",
+  "generated_at": "2026-07-17T06:30:45Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -326,7 +326,7 @@
       "legacy_id": "零成本",
       "level": 6,
       "name": "零成本",
-      "rank": 828,
+      "rank": 829,
       "related_count": 19,
       "weighted_degree": 21
     },

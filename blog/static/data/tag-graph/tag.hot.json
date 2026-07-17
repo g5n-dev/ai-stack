@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-17T03:39:12Z",
+  "generated_at": "2026-07-17T06:30:45Z",
   "layer": "tag",
   "layers": {
     "application": {
@@ -23640,12 +23640,20 @@
       "weight": 1
     },
     {
+      "id": "edge:cooccurrence:tag:arXiv->tag:cs.LG",
+      "source": "tag:arXiv",
+      "strength": 0.5,
+      "target": "tag:cs.LG",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
       "id": "edge:cooccurrence:tag:arXiv->tag:来源快报",
       "source": "tag:arXiv",
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 10
+      "weight": 11
     },
     {
       "id": "edge:cooccurrence:tag:arxiv->tag:cs.CL",
@@ -24150,6 +24158,14 @@
       "target": "tag:机器学习",
       "type": "cooccurrence",
       "weight": 5
+    },
+    {
+      "id": "edge:cooccurrence:tag:cs.LG->tag:来源快报",
+      "source": "tag:cs.LG",
+      "strength": 0.5,
+      "target": "tag:来源快报",
+      "type": "cooccurrence",
+      "weight": 1
     },
     {
       "id": "edge:cooccurrence:tag:cs.LG->tag:模型压缩",
@@ -36015,11 +36031,11 @@
       "weighted_degree": 105.6
     },
     {
-      "article_count": 10,
+      "article_count": 11,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
-      "degree": 6,
+      "degree": 7,
       "description": "文章标签: arXiv",
       "id": "tag:arXiv",
       "layer": "tag",
@@ -36027,9 +36043,9 @@
       "legacy_id": "arXiv",
       "level": 6,
       "name": "arXiv",
-      "rank": 870,
-      "related_count": 6,
-      "weighted_degree": 20
+      "rank": 580,
+      "related_count": 7,
+      "weighted_degree": 22
     },
     {
       "article_count": 14,
@@ -36282,16 +36298,16 @@
       "legacy_id": "cs.CV",
       "level": 6,
       "name": "cs.CV",
-      "rank": 165,
+      "rank": 166,
       "related_count": 61,
       "weighted_degree": 76
     },
     {
-      "article_count": 65,
+      "article_count": 66,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
-      "degree": 346,
+      "degree": 348,
       "description": "文章标签: cs.LG",
       "id": "tag:cs.LG",
       "layer": "tag",
@@ -36300,8 +36316,8 @@
       "level": 6,
       "name": "cs.LG",
       "rank": 18,
-      "related_count": 346,
-      "weighted_degree": 419
+      "related_count": 348,
+      "weighted_degree": 421
     },
     {
       "article_count": 8,
@@ -38667,11 +38683,11 @@
       "weighted_degree": 385
     },
     {
-      "article_count": 37,
+      "article_count": 38,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
-      "degree": 25,
+      "degree": 26,
       "description": "文章标签: 来源快报",
       "id": "tag:来源快报",
       "layer": "tag",
@@ -38679,9 +38695,9 @@
       "legacy_id": "来源快报",
       "level": 6,
       "name": "来源快报",
-      "rank": 166,
-      "related_count": 25,
-      "weighted_degree": 74
+      "rank": 165,
+      "related_count": 26,
+      "weighted_degree": 76
     },
     {
       "article_count": 40,
@@ -39774,13 +39790,13 @@
   ],
   "stats": {
     "links_by_type": {
-      "cooccurrence": 4388,
+      "cooccurrence": 4390,
       "semantic": 47
     },
     "nodes_by_layer": {
       "tag": 250
     },
-    "total_links": 4435,
+    "total_links": 4437,
     "total_nodes": 250
   },
   "version": 2

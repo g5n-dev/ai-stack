@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:Flux",
-  "generated_at": "2026-07-17T00:15:41Z",
+  "generated_at": "2026-07-17T06:30:45Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -309,7 +309,7 @@
       "legacy_id": "cs.CV",
       "level": 6,
       "name": "cs.CV",
-      "rank": 165,
+      "rank": 166,
       "related_count": 61,
       "weighted_degree": 76
     },

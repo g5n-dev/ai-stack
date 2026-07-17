@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:SpeechAnalyzer",
-  "generated_at": "2026-07-17T00:15:41Z",
+  "generated_at": "2026-07-17T06:30:45Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -326,7 +326,7 @@
       "legacy_id": "Apple",
       "level": 6,
       "name": "Apple",
-      "rank": 608,
+      "rank": 609,
       "related_count": 21,
       "weighted_degree": 21
     },
@@ -343,7 +343,7 @@
       "legacy_id": "C语言",
       "level": 6,
       "name": "C语言",
-      "rank": 612,
+      "rank": 613,
       "related_count": 21,
       "weighted_degree": 21
     },
@@ -360,7 +360,7 @@
       "legacy_id": "Mistral",
       "level": 6,
       "name": "Mistral",
-      "rank": 719,
+      "rank": 720,
       "related_count": 20,
       "weighted_degree": 21
     },
@@ -377,7 +377,7 @@
       "legacy_id": "Voxtral",
       "level": 6,
       "name": "Voxtral",
-      "rank": 727,
+      "rank": 728,
       "related_count": 20,
       "weighted_degree": 21
     },
@@ -394,7 +394,7 @@
       "legacy_id": "性能评测",
       "level": 6,
       "name": "性能评测",
-      "rank": 753,
+      "rank": 754,
       "related_count": 20,
       "weighted_degree": 21
     },
@@ -411,7 +411,7 @@
       "legacy_id": "Whisper",
       "level": 6,
       "name": "Whisper",
-      "rank": 790,
+      "rank": 791,
       "related_count": 19,
       "weighted_degree": 21
     },
