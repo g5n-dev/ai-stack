@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:SpeechAnalyzer",
-  "generated_at": "2026-07-16T22:31:11Z",
+  "generated_at": "2026-07-17T00:15:41Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -292,7 +292,7 @@
       "legacy_id": "语音识别",
       "level": 6,
       "name": "语音识别",
-      "rank": 179,
+      "rank": 180,
       "related_count": 61,
       "weighted_degree": 70
     },

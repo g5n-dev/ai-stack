@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-16T23:15:15Z",
+  "generated_at": "2026-07-17T00:15:41Z",
   "layers": {
     "application": {
       "color": "#7aa6b8",
@@ -792,7 +792,7 @@
       "legacy_id": "chatbot",
       "level": 4,
       "name": "聊天机器人",
-      "rank": 6797,
+      "rank": 6798,
       "weighted_degree": 5.2
     },
     {
@@ -996,7 +996,7 @@
       "legacy_id": "diffusion",
       "level": 3,
       "name": "扩散模型",
-      "rank": 6798,
+      "rank": 6799,
       "weighted_degree": 5.1
     },
     {

@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:Flux",
-  "generated_at": "2026-07-16T22:31:11Z",
+  "generated_at": "2026-07-17T00:15:41Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -326,7 +326,7 @@
       "legacy_id": "Stable Diffusion",
       "level": 6,
       "name": "Stable Diffusion",
-      "rank": 167,
+      "rank": 168,
       "related_count": 50,
       "weighted_degree": 70.6
     },
