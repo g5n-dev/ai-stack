@@ -52,6 +52,9 @@ def test_search_page_is_semantic_keyboard_ready_and_self_hosted() -> None:
         assert soup.select_one(f'label[for="{control.get("id")}"]') is not None
 
     assert '"js/search.js" | relURL' in template_text
+    assert '$searchVersion' in template_text
+    assert '(readFile "static/js/search.js")' in template_text
+    assert 'printf "%s?v=%s" ("js/search.js" | relURL) $searchVersion' in template_text
     assert 'src="/js/search.js"' not in template_text
     for low_contrast_class in (
         "text-primary/70",
@@ -67,6 +70,43 @@ def test_search_page_is_semantic_keyboard_ready_and_self_hosted() -> None:
     assert 'cache: refresh ? "reload" : "no-cache"' in search_script
     assert 'cache: "force-cache"' not in search_script
     assert not template.read_text(encoding="utf-8").__contains__("https://cdn.")
+
+
+def test_search_page_uses_the_shared_site_type_scale() -> None:
+    template = ROOT / "blog/themes/terminal-theme/layouts/search/list.html"
+    template_text = template.read_text(encoding="utf-8")
+    shared_css = (ROOT / "blog/static/css/style.css").read_text(encoding="utf-8")
+    search_css = (ROOT / "blog/static/css/search.css").read_text(encoding="utf-8")
+    search_script = (ROOT / "blog/static/js/search.js").read_text(encoding="utf-8")
+
+    for token in (
+        "--site-page-title-size: 30px",
+        "--site-copy-size: 14px",
+        "--site-control-size: 13px",
+    ):
+        assert token in shared_css
+
+    assert '"css/search.css" | relURL' in template_text
+    assert 'class="search-page' in template_text
+    assert "search-page__title" in template_text
+    assert "search-control" in template_text
+    assert "md:text-5xl" not in template_text
+
+    for declaration in (
+        "font-family: var(--site-font-sans)",
+        "font-size: var(--site-page-title-size, 30px)",
+        "font-size: var(--site-copy-size, 14px)",
+        "font-size: var(--site-control-size, 13px)",
+        "font-size: 16px",
+        "min-height: 44px",
+        "color: var(--search-muted)",
+    ):
+        assert declaration in search_css
+
+    assert "search-result__title" in search_script
+    assert "search-result__excerpt" in search_script
+    assert "search-result__title text-sm" in search_script
+    assert 'className = "text-off-white text-lg' not in search_script
 
 
 def test_article_template_exposes_search_body_and_versioned_facets() -> None:

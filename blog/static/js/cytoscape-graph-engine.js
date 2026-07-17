@@ -12,11 +12,35 @@
     const MAX_OVERLAY_PIXELS = 8 * 1024 * 1024;
     const LABEL_EXPAND_ZOOM = 1.25;
     const DEFAULT_LABEL_RANK_LIMIT = 48;
-    const OVERVIEW_MAX_ROWS = 11;
-    const OVERVIEW_MAX_COLUMNS = 3;
-    const OVERVIEW_LAYER_GAP = 220;
-    const OVERVIEW_COLUMN_GAP = 132;
-    const OVERVIEW_ROW_GAP = 58;
+    const OVERVIEW_COMPACT_WIDTH = 720;
+    const OVERVIEW_ROUTE_LIMIT = 8;
+    const OVERVIEW_RING_PLAN = [
+        { count: 6, radiusX: 38, radiusY: 29, phase: -Math.PI / 2 },
+        { count: 10, radiusX: 68, radiusY: 50, phase: -Math.PI / 2 + 0.18 },
+        { count: 14, radiusX: 102, radiusY: 74, phase: -Math.PI / 2 + 0.08 },
+        { count: 18, radiusX: 134, radiusY: 96, phase: -Math.PI / 2 + 0.25 }
+    ];
+    const OVERVIEW_WIDE_SLOTS = [
+        [0.16, 0.25],
+        [0.24, 0.74],
+        [0.5, 0.49],
+        [0.76, 0.74],
+        [0.84, 0.25]
+    ];
+    const OVERVIEW_COMPACT_SLOTS = [
+        [0.24, 0.2],
+        [0.22, 0.72],
+        [0.5, 0.46],
+        [0.78, 0.72],
+        [0.76, 0.2]
+    ];
+    const OVERVIEW_LAYER_COLORS = {
+        language: "#58ddd2",
+        framework: "#30cdbd",
+        model: "#efad53",
+        application: "#67bfd4",
+        scenario: "#9ccbd2"
+    };
     const COMMUNITY_DETAIL_RESERVE = 306;
     const COMMUNITY_COMPACT_WIDTH = 900;
     const COMMUNITY_SIDE_DETAIL_MIN_WIDTH = 720;
@@ -433,8 +457,11 @@
 
         _settleInitialViewport() {
             if (this.isDestroyed || !this.cy || this.mode !== "overview") return false;
-            this._packOverviewLayers();
-            this._fitCurrentGraph(36);
+            this._syncOverviewDensity(this.container?.getBoundingClientRect?.() || {});
+            this.cy.zoom?.(1);
+            this.cy.pan?.({ x: 0, y: 0 });
+            this._scheduleCommunityFieldDraw();
+            this._emitViewportChange("initial-layout");
             return true;
         }
 
@@ -532,10 +559,90 @@
             return { nodes, groups: chunks };
         }
 
+        _overviewNodeScore(node) {
+            const rank = Math.max(0, asNumber(node?.rank, 0));
+            const rankSignal = rank > 0 ? 8 / Math.log2(rank + 2) : 0;
+            return Math.log1p(Math.max(0, asNumber(node?.article_count, 0))) * 1.6 +
+                Math.log1p(Math.max(0, asNumber(node?.weighted_degree, 0))) * 1.2 +
+                Math.log1p(Math.max(0, asNumber(node?.degree, 0))) + rankSignal;
+        }
+
+        _buildOverviewScenePlan(graphPayload) {
+            const graph = normalizeGraph(graphPayload);
+            const layerMetadata = { ...(this.data?.layers || {}), ...(graph.layers || {}) };
+            const groups = new Map();
+            graph.nodes.forEach((node) => {
+                const layer = String(node.layer || "unknown");
+                if (!groups.has(layer)) groups.set(layer, []);
+                groups.get(layer).push(node);
+            });
+            const orderedLayers = Array.from(groups.keys()).sort((left, right) =>
+                asNumber(layerMetadata[left]?.level, Number.MAX_SAFE_INTEGER) -
+                    asNumber(layerMetadata[right]?.level, Number.MAX_SAFE_INTEGER) ||
+                left.localeCompare(right)
+            );
+            const nodes = new Map();
+            const layers = [];
+            orderedLayers.forEach((layer, layerIndex) => {
+                const layerNodes = groups.get(layer).slice().sort((left, right) =>
+                    this._overviewNodeScore(right) - this._overviewNodeScore(left) ||
+                    asNumber(left.rank, Number.MAX_SAFE_INTEGER) -
+                        asNumber(right.rank, Number.MAX_SAFE_INTEGER) ||
+                    String(left.id).localeCompare(String(right.id))
+                );
+                const maximumScore = Math.max(
+                    1,
+                    ...layerNodes.map((node) => this._overviewNodeScore(node))
+                );
+                const metadata = layerMetadata[layer] || {};
+                const layerName = String(metadata.name || layerNodes[0]?.layer_name || layer);
+                const color = OVERVIEW_LAYER_COLORS[layer] || metadata.color || "#58ddd2";
+                layerNodes.forEach((node, layerOrder) => {
+                    const anchor = layerOrder === 0;
+                    const normalizedScore = Math.max(
+                        0,
+                        Math.min(1, this._overviewNodeScore(node) / maximumScore)
+                    );
+                    nodes.set(String(node.id), {
+                        role: anchor ? "anchor" : "satellite",
+                        layer,
+                        layerIndex,
+                        layerOrder,
+                        layerCount: layerNodes.length,
+                        layerName,
+                        color,
+                        primary: layer === "model",
+                        key: !anchor && layerOrder <= 2,
+                        visualSize: anchor ? 21 : 5.5 + normalizedScore * 7.5,
+                        label: anchor
+                            ? `${String(layerIndex + 1).padStart(2, "0")}  ${layerName}\n${node.name} · ${layerNodes.length} 节点`
+                            : node.name
+                    });
+                });
+                layers.push({
+                    id: layer,
+                    index: layerIndex,
+                    name: layerName,
+                    color,
+                    count: layerNodes.length,
+                    anchorId: String(layerNodes[0]?.id || "")
+                });
+            });
+            return { nodes, layers };
+        }
+
         _formatElements(graphPayload) {
             const graph = normalizeGraph(graphPayload);
+            const isOverviewMode = this.mode === "overview";
             const isFocusMode = this.mode === "focus";
             const layerMetadata = { ...(this.data.layers || {}), ...(graph.layers || {}) };
+            const overviewScene = isOverviewMode
+                ? this._buildOverviewScenePlan(graph)
+                : { nodes: new Map(), layers: [] };
+            const nodeLayerById = new Map(graph.nodes.map((node) => [
+                String(node.id),
+                String(node.layer || "unknown")
+            ]));
             const communityScale = Math.max(1, ...graph.nodes
                 .filter((node) => node.layer === "community" && node.id !== "community:other")
                 .map((node) => Math.log1p(asNumber(node.node_count ?? node.degree, 0))));
@@ -578,6 +685,16 @@
                     asNumber(node.article_count)
                 );
                 const classes = [];
+                const overviewRole = overviewScene.nodes.get(String(node.id));
+                if (overviewRole) {
+                    classes.push(
+                        "overview-node",
+                        `overview-${overviewRole.role}`,
+                        `overview-layer-${overviewRole.layer}`
+                    );
+                    if (overviewRole.primary) classes.push("overview-primary");
+                    if (overviewRole.key) classes.push("overview-key");
+                }
                 if (node.layer === "community") classes.push("community-node");
                 if (node.layer === "community") {
                     const communityRank = asNumber(node.rank, 0);
@@ -612,7 +729,12 @@
                         ((hotspotIndex - ringOffset) / Math.max(1, ringCount)) * Math.PI * 2;
                     if (Math.cos(angle) < 0) classes.push("hotspot-label-left");
                 }
-                if (this._shouldDeferLabel(node)) classes.push("deferred-label");
+                if (
+                    this._shouldDeferLabel(node) ||
+                    (overviewRole?.role === "satellite" && !overviewRole.key)
+                ) {
+                    classes.push("deferred-label");
+                }
                 const communityImportance = Math.log1p(asNumber(
                     node.node_count ?? node.degree ?? node.article_count,
                     0
@@ -623,14 +745,16 @@
                 const focusTier = focusImportance >= 0.68 ? 3 : focusImportance >= 0.38 ? 2 : 1;
                 const communityLabel = node.layer === "community"
                     ? `${String(Math.max(0, asNumber(node.rank, 0))).padStart(2, "0")}  ${node.name}\n${node.graph_role === "community-anchor" ? "展开中 · " : ""}${asNumber(node.node_count ?? node.degree, 0)} 节点`
-                    : node.name;
+                    : overviewRole?.label || node.name;
                 return {
                     data: {
                         ...node,
                         label: communityLabel,
                         layerName: node.layer_name || layer.name || node.layer || "Unknown",
                         color: node.color || layer.color || "#4db6ac",
-                        visualSize: isFocusMode && node.layer !== "community"
+                        visualSize: overviewRole
+                            ? overviewRole.visualSize
+                            : isFocusMode && node.layer !== "community"
                             ? (isFocusCore ? 32 : 10 + Math.max(0, Math.min(1, focusImportance)) * 12)
                             : node.graph_role === "community-hotspot"
                                 ? Math.min(10, 5.2 + Math.max(0, Math.min(1, hotspotImportance)) * 4.8)
@@ -640,7 +764,14 @@
                         focusSceneRole: focusScene.nodes.get(String(node.id))?.role || "",
                         focusGroupIndex: focusScene.nodes.get(String(node.id))?.groupIndex ?? -1,
                         focusGroupOrder: focusScene.nodes.get(String(node.id))?.groupOrder ?? -1,
-                        communityVisualSize: 15 + Math.max(0, communityImportance) * 8
+                        communityVisualSize: 15 + Math.max(0, communityImportance) * 8,
+                        overviewVisualSize: overviewRole?.visualSize || 0,
+                        overviewSceneRole: overviewRole?.role || "",
+                        overviewLayerIndex: overviewRole?.layerIndex ?? -1,
+                        overviewLayerOrder: overviewRole?.layerOrder ?? -1,
+                        overviewLayerCount: overviewRole?.layerCount ?? 0,
+                        overviewLayerName: overviewRole?.layerName || "",
+                        overviewColor: overviewRole?.color || node.color || layer.color || "#58ddd2"
                     },
                     classes: classes.join(" ")
                 };
@@ -648,6 +779,16 @@
             const edges = graph.links.map((link, index) => {
                 const type = String(link.type || "");
                 const classes = [];
+                if (isOverviewMode) {
+                    const sourceLayer = nodeLayerById.get(String(link.source));
+                    const targetLayer = nodeLayerById.get(String(link.target));
+                    classes.push(
+                        "overview-link",
+                        sourceLayer === targetLayer
+                            ? "overview-inner-link"
+                            : "overview-cross-link"
+                    );
+                }
                 if (type === "community") classes.push("community-link");
                 if (type === "community-member") classes.push("community-member-link");
                 if (isFocusMode) {
@@ -714,6 +855,126 @@
                         "transition-property": "opacity, border-width, border-opacity, background-opacity",
                         "transition-duration": "180ms"
                     }
+                },
+                {
+                    selector: "node.overview-node",
+                    style: {
+                        shape: "ellipse",
+                        width: "data(overviewVisualSize)",
+                        height: "data(overviewVisualSize)",
+                        "background-color": "#071923",
+                        "background-opacity": 0.72,
+                        "border-color": "data(overviewColor)",
+                        "border-width": 1.1,
+                        "border-opacity": 0.94,
+                        "underlay-color": "data(overviewColor)",
+                        "underlay-padding": 3,
+                        "underlay-opacity": 0.035,
+                        "overlay-opacity": 0,
+                        color: "#d8eeee",
+                        "font-size": 7.8,
+                        "font-weight": 500,
+                        "min-zoomed-font-size": 6,
+                        "text-margin-y": 5,
+                        "text-outline-width": 2.2,
+                        "text-max-width": 76
+                    }
+                },
+                {
+                    selector: "node.overview-node.overview-satellite",
+                    style: {
+                        "background-opacity": 0.5,
+                        "underlay-opacity": 0.018
+                    }
+                },
+                {
+                    selector: "node.overview-node.overview-key",
+                    style: {
+                        "background-opacity": 0.78,
+                        "border-width": 1.3,
+                        "font-size": 7.6,
+                        "text-background-color": "#071019",
+                        "text-background-opacity": 0.64,
+                        "text-background-padding": 1.5
+                    }
+                },
+                {
+                    selector: "node.overview-node.overview-anchor",
+                    style: {
+                        width: 21,
+                        height: 21,
+                        "background-color": "#0a2930",
+                        "background-opacity": 0.96,
+                        "border-width": 2.2,
+                        "underlay-padding": 7,
+                        "underlay-opacity": 0.1,
+                        "text-valign": "top",
+                        "text-halign": "center",
+                        "text-margin-y": -88,
+                        "font-size": 9.5,
+                        "font-weight": 600,
+                        "text-wrap": "wrap",
+                        "text-max-width": 116,
+                        "text-background-color": "#07131b",
+                        "text-background-opacity": 0.9,
+                        "text-background-padding": 3.5,
+                        "text-background-shape": "roundrectangle",
+                        "text-border-color": "data(overviewColor)",
+                        "text-border-width": 1,
+                        "text-border-opacity": 0.62
+                    }
+                },
+                {
+                    selector: "node.overview-node.overview-anchor.overview-primary",
+                    style: {
+                        "background-color": "#6b4212",
+                        "background-opacity": 0.92,
+                        "border-color": "#f8c15c",
+                        "underlay-color": "#d97706",
+                        "underlay-opacity": 0.14,
+                        color: "#f8d18b",
+                        "text-border-color": "#8b5a1b"
+                    }
+                },
+                {
+                    selector: "node.overview-node.overview-anchor.overview-primary.overview-primary-muted",
+                    style: {
+                        "background-color": "#0a2930",
+                        "background-opacity": 0.96,
+                        "border-color": "data(overviewColor)",
+                        "underlay-color": "data(overviewColor)",
+                        "underlay-opacity": 0.1,
+                        color: "#d8eeee",
+                        "text-border-color": "data(overviewColor)"
+                    }
+                },
+                {
+                    selector: "node.overview-node.overview-compact",
+                    style: {
+                        width: "mapData(overviewVisualSize, 5, 21, 4, 13)",
+                        height: "mapData(overviewVisualSize, 5, 21, 4, 13)",
+                        "font-size": 6.5,
+                        "text-max-width": 56
+                    }
+                },
+                {
+                    selector: "node.overview-node.overview-anchor.overview-compact",
+                    style: {
+                        width: 15,
+                        height: 15,
+                        "text-margin-y": -47,
+                        "font-size": 7.5,
+                        "text-max-width": 78,
+                        "text-background-padding": 2.5
+                    }
+                },
+                {
+                    selector: "node.overview-key-mobile-hidden",
+                    style: { label: "", "text-opacity": 0 }
+                },
+                {
+                    selector: "node.overview-key-mobile-hidden.search-match",
+                    style: { label: "data(label)", "text-opacity": 1 }
                 },
                 {
                     selector: "node.community-node",
@@ -1029,6 +1290,32 @@
                     }
                 },
                 {
+                    selector: "edge.overview-link",
+                    style: {
+                        width: "mapData(visualWeight, 0, 1, 0.35, 0.85)",
+                        "line-color": "#58b8b4",
+                        "line-opacity": 0.018,
+                        "curve-style": "unbundled-bezier",
+                        "control-point-distances": 18,
+                        "control-point-weights": 0.5,
+                        "target-arrow-shape": "none"
+                    }
+                },
+                {
+                    selector: "edge.overview-inner-link",
+                    style: {
+                        "line-opacity": 0.15,
+                        "curve-style": "straight"
+                    }
+                },
+                {
+                    selector: "edge.overview-cross-link",
+                    style: {
+                        "line-opacity": 0.012,
+                        "line-style": "solid"
+                    }
+                },
+                {
                     selector: "edge.community-link",
                     style: {
                         width: "mapData(visualWeight, 0, 1, 0.7, 2.2)",
@@ -1169,6 +1456,133 @@
                 bottomInset,
                 sceneScale
             };
+        }
+
+        _overviewSceneMetrics(bounds = {}, hasSelection = false) {
+            const width = Math.max(320, asNumber(bounds.width, 1180));
+            const height = Math.max(360, asNumber(bounds.height, 720));
+            const usesSideDetail = Boolean(
+                hasSelection && width > COMMUNITY_SIDE_DETAIL_MIN_WIDTH
+            );
+            const detailReserve = usesSideDetail
+                ? Math.min(COMMUNITY_DETAIL_RESERVE, Math.max(0, width - 320))
+                : 0;
+            const safeWidth = Math.max(320, width - detailReserve);
+            const compact = safeWidth <= OVERVIEW_COMPACT_WIDTH || height < 520;
+            const topInset = compact ? 52 : 76;
+            const bottomInset = compact ? 54 : 62;
+            const safeHeight = Math.max(250, height - topInset - bottomInset);
+            const sceneScale = Math.max(
+                0.42,
+                Math.min(1.16, safeWidth / 1180, safeHeight / 640)
+            );
+            return {
+                width,
+                height,
+                compact,
+                usesSideDetail,
+                detailReserve,
+                safeWidth,
+                safeHeight,
+                topInset,
+                bottomInset,
+                sceneScale
+            };
+        }
+
+        _overviewLayerSlots(orderedLayers, compact = false) {
+            const layers = asArray(orderedLayers).map(String);
+            const baseSlots = compact ? OVERVIEW_COMPACT_SLOTS : OVERVIEW_WIDE_SLOTS;
+            if (layers.length <= baseSlots.length) return baseSlots.slice(0, layers.length);
+
+            const primaryIndex = Math.max(0, layers.indexOf("model"));
+            const slots = new Array(layers.length);
+            slots[primaryIndex] = compact ? [0.5, 0.46] : [0.5, 0.49];
+            const outerIndices = layers
+                .map((_, index) => index)
+                .filter((index) => index !== primaryIndex);
+            const radiusX = compact ? 0.32 : 0.36;
+            const radiusY = compact ? 0.29 : 0.31;
+            outerIndices.forEach((layerIndex, orbitIndex) => {
+                const angle = -Math.PI / 2 +
+                    (orbitIndex / Math.max(1, outerIndices.length)) * Math.PI * 2;
+                slots[layerIndex] = [
+                    0.5 + Math.cos(angle) * radiusX,
+                    0.49 + Math.sin(angle) * radiusY
+                ];
+            });
+            return slots;
+        }
+
+        _overviewPresetPositions(nodes, bounds = {}) {
+            const metrics = this._overviewSceneMetrics(
+                bounds,
+                Boolean(this.selectedNode?.length > 0)
+            );
+            const {
+                compact,
+                safeWidth,
+                safeHeight,
+                topInset,
+                sceneScale
+            } = metrics;
+            const sourceNodes = asArray(nodes).map((node) =>
+                typeof node?.data === "function" ? node.data() : node
+            ).filter(Boolean);
+            const groups = new Map();
+            sourceNodes.forEach((node) => {
+                const layer = String(node.layer || "unknown");
+                if (!groups.has(layer)) groups.set(layer, []);
+                groups.get(layer).push(node);
+            });
+            const layerMetadata = this.data?.layers || {};
+            const orderedLayers = Array.from(groups.keys()).sort((left, right) =>
+                asNumber(layerMetadata[left]?.level, Number.MAX_SAFE_INTEGER) -
+                    asNumber(layerMetadata[right]?.level, Number.MAX_SAFE_INTEGER) ||
+                left.localeCompare(right)
+            );
+            const slots = this._overviewLayerSlots(orderedLayers, compact);
+            const positions = {};
+            orderedLayers.forEach((layer, layerIndex) => {
+                const slot = slots[layerIndex];
+                const center = {
+                    x: safeWidth * slot[0],
+                    y: topInset + safeHeight * slot[1]
+                };
+                const layerNodes = groups.get(layer).slice().sort((left, right) =>
+                    asNumber(left.overviewLayerOrder, Number.MAX_SAFE_INTEGER) -
+                        asNumber(right.overviewLayerOrder, Number.MAX_SAFE_INTEGER) ||
+                    this._overviewNodeScore(right) - this._overviewNodeScore(left) ||
+                    String(left.id).localeCompare(String(right.id))
+                );
+                const anchor = layerNodes.find((node) =>
+                    node.overviewSceneRole === "anchor"
+                ) || layerNodes[0];
+                if (anchor) positions[String(anchor.id)] = center;
+                const satellites = layerNodes.filter((node) => !anchor || node.id !== anchor.id);
+                let offset = 0;
+                OVERVIEW_RING_PLAN.forEach((ring) => {
+                    const ringNodes = satellites.slice(offset, offset + ring.count);
+                    ringNodes.forEach((node, index) => {
+                        const angle = ring.phase +
+                            (index / Math.max(1, ringNodes.length)) * Math.PI * 2;
+                        positions[String(node.id)] = {
+                            x: center.x + Math.cos(angle) * ring.radiusX * sceneScale,
+                            y: center.y + Math.sin(angle) * ring.radiusY * sceneScale
+                        };
+                    });
+                    offset += ringNodes.length;
+                });
+                satellites.slice(offset).forEach((node, index, overflow) => {
+                    const angle = -Math.PI / 2 + 0.31 +
+                        (index / Math.max(1, overflow.length)) * Math.PI * 2;
+                    positions[String(node.id)] = {
+                        x: center.x + Math.cos(angle) * 164 * sceneScale,
+                        y: center.y + Math.sin(angle) * 116 * sceneScale
+                    };
+                });
+            });
+            return positions;
         }
 
         _communityPresetPositions(nodes, bounds = {}, selectedId = null) {
@@ -1356,8 +1770,40 @@
             return positions;
         }
 
+        _syncOverviewDensity(bounds = {}) {
+            if (!this.cy) return;
+            const metrics = this._overviewSceneMetrics(
+                bounds,
+                Boolean(this.selectedNode?.length > 0)
+            );
+            this.cy.nodes(".overview-node").forEach((node) => {
+                node.toggleClass("overview-compact", metrics.compact);
+                node.toggleClass(
+                    "overview-key-mobile-hidden",
+                    metrics.compact &&
+                        node.hasClass("overview-key") &&
+                        asNumber(node.data("overviewLayerOrder"), 0) > 1
+                );
+            });
+        }
+
+        _syncOverviewPrimaryState() {
+            if (!this.cy || this.mode !== "overview") return;
+            const selectedLayer = this.selectedNode?.data?.("layer") || null;
+            this.cy.nodes(".overview-primary").forEach((node) => {
+                node.toggleClass(
+                    "overview-primary-muted",
+                    Boolean(selectedLayer && selectedLayer !== "model")
+                );
+            });
+        }
+
         _syncCommunityDensity(mode, bounds = {}) {
             if (!this.cy) return;
+            if (mode === "overview") {
+                this._syncOverviewDensity(bounds);
+                return;
+            }
             const metrics = this._communitySceneMetrics(
                 bounds,
                 Boolean(this.expandedCommunityId)
@@ -1416,17 +1862,20 @@
                 : null;
             const compact = Boolean(bounds && bounds.width < 640);
             if (mode === "overview") {
+                const nodes = this.cy?.nodes?.().map((node) => node.data()) ||
+                    this.currentGraph?.nodes || [];
+                const positions = this._overviewPresetPositions(nodes, bounds || {});
                 return {
-                    name: "dagre",
-                    rankDir: "LR",
-                    ranker: "network-simplex",
-                    nodeSep: 46,
-                    edgeSep: 18,
-                    rankSep: 96,
-                    padding: compact ? 52 : 36,
-                    fit: true,
-                    animate,
-                    animationDuration: animate ? 650 : 0
+                    name: "preset",
+                    positions: (node) => positions[node.id()] || {
+                        x: Math.max(1, asNumber(bounds?.width, 1180)) / 2,
+                        y: Math.max(1, asNumber(bounds?.height, 720)) / 2
+                    },
+                    fit: false,
+                    zoom: 1,
+                    pan: { x: 0, y: 0 },
+                    animate: false,
+                    animationDuration: 0
                 };
             }
             if (mode === "community") {
@@ -1531,7 +1980,7 @@
             this._layoutFallback = null;
             const bounds = this.container?.getBoundingClientRect?.() || {};
             this._syncCommunityDensity(mode, bounds);
-            const semanticPreset = mode === "focus" ||
+            const semanticPreset = mode === "overview" || mode === "focus" ||
                 (mode === "community" && this._hasCommunityCellNodes());
             if (semanticPreset) {
                 this.cy.zoom(1);
@@ -1541,7 +1990,6 @@
             try {
                 this._activeLayout = this.cy.layout(options);
                 this._trackLayoutLifecycle(this._activeLayout);
-                this._bindOverviewPacking(this._activeLayout, mode);
                 this._bindCommunityFieldDraw(this._activeLayout, mode, semanticPreset);
                 this._activeLayout.run();
             } catch (error) {
@@ -1583,7 +2031,7 @@
         }
 
         _bindCommunityFieldDraw(layout, mode, lockViewport = false) {
-            if (!layout || !["community", "focus"].includes(mode)) return;
+            if (!layout || !["overview", "community", "focus"].includes(mode)) return;
             const finish = () => {
                 if (this.isDestroyed || this._paused || this.mode !== mode) return;
                 if (lockViewport) {
@@ -1591,6 +2039,7 @@
                     this.cy?.pan?.({ x: 0, y: 0 });
                 }
                 this._scheduleCommunityFieldDraw();
+                this._emitViewportChange("layout-density");
             };
             if (typeof layout.one === "function") {
                 layout.one("layoutstop", finish);
@@ -1603,86 +2052,9 @@
             }
         }
 
-        _bindOverviewPacking(layout, mode) {
-            if (mode !== "overview" || !layout) return;
-            const finish = () => {
-                if (this.isDestroyed || this._paused || this.mode !== "overview") return;
-                this._packOverviewLayers();
-                this._fitCurrentGraph(36);
-            };
-            if (typeof layout.one === "function") {
-                layout.one("layoutstop", finish);
-                return;
-            }
-            if (typeof layout.on === "function") {
-                const once = () => {
-                    layout.off?.("layoutstop", once);
-                    finish();
-                };
-                layout.on("layoutstop", once);
-            }
-        }
-
-        _packOverviewLayers() {
-            if (!this.cy || this.isDestroyed || this.mode !== "overview") return false;
-            const groups = new Map();
-            this.cy.nodes(":visible").forEach((node) => {
-                const layer = String(node.data("layer") || "unknown");
-                if (!groups.has(layer)) groups.set(layer, []);
-                groups.get(layer).push(node);
-            });
-            if (groups.size === 0) return false;
-
-            const layerMetadata = this.data?.layers || {};
-            const orderedLayers = Array.from(groups.keys()).sort((left, right) => {
-                const levelDifference = asNumber(layerMetadata[left]?.level, Number.MAX_SAFE_INTEGER) -
-                    asNumber(layerMetadata[right]?.level, Number.MAX_SAFE_INTEGER);
-                if (levelDifference !== 0) return levelDifference;
-                const leftX = Math.min(...groups.get(left).map((node) => node.position().x));
-                const rightX = Math.min(...groups.get(right).map((node) => node.position().x));
-                return leftX - rightX || left.localeCompare(right);
-            });
-
-            const packed = [];
-            let layerStartX = 0;
-            for (const layer of orderedLayers) {
-                const nodes = groups.get(layer);
-                nodes.sort((left, right) =>
-                    left.position().y - right.position().y || left.id().localeCompare(right.id())
-                );
-                const columnCount = Math.min(
-                    OVERVIEW_MAX_COLUMNS,
-                    Math.max(1, Math.ceil(nodes.length / OVERVIEW_MAX_ROWS))
-                );
-                const rowsPerColumn = Math.ceil(nodes.length / columnCount);
-                nodes.forEach((node, index) => {
-                    const column = Math.floor(index / rowsPerColumn);
-                    const row = index % rowsPerColumn;
-                    const itemsInColumn = Math.min(
-                        rowsPerColumn,
-                        nodes.length - column * rowsPerColumn
-                    );
-                    packed.push({
-                        node,
-                        x: layerStartX + column * OVERVIEW_COLUMN_GAP,
-                        y: (row - (itemsInColumn - 1) / 2) * OVERVIEW_ROW_GAP
-                    });
-                });
-                layerStartX += (columnCount - 1) * OVERVIEW_COLUMN_GAP + OVERVIEW_LAYER_GAP;
-            }
-
-            const minX = Math.min(...packed.map((item) => item.x));
-            const maxX = Math.max(...packed.map((item) => item.x));
-            const centerX = (minX + maxX) / 2;
-            this.cy.batch(() => {
-                packed.forEach(({ node, x, y }) => node.position({ x: x - centerX, y }));
-            });
-            return true;
-        }
-
         _replaceGraph(graphPayload, mode, options = {}) {
             if (!this.cy || this.isDestroyed) return;
-            this._stopCommunityFieldLoop(!["community", "focus"].includes(mode));
+            this._stopCommunityFieldLoop(!["overview", "community", "focus"].includes(mode));
             const graph = normalizeGraph(graphPayload);
             this.currentGraph = graph;
             this.data = {
@@ -1752,7 +2124,7 @@
             this.cy.on("zoom", () => {
                 this._updateSemanticLabels();
                 this._scheduleCommunityFieldDraw();
-                this._emit("graph:viewportchange", { zoom: this.cy.zoom() });
+                this._emitViewportChange("zoom");
             });
             this.cy.on("pan", () => this._scheduleCommunityFieldDraw());
             this.cy.on("position", "node", () => this._scheduleCommunityFieldDraw());
@@ -1782,12 +2154,14 @@
             this.selectedNode = node;
             this.selectedNodeId = node.id();
             if (options.focusRoot) node.addClass("focus-root");
+            this._syncOverviewPrimaryState();
             this._updateSemanticLabels(true);
             this._highlightNode(node);
             this._scheduleCommunityFieldDraw();
             const data = this._getNodeData(node);
             this._emit("graph:selectionchange", { node: data, nodeId: data.id });
             this._emit("nodeSelect", data);
+            if (this.mode === "overview") this._runLayout("overview");
             return data;
         }
 
@@ -2203,14 +2577,65 @@
         }
 
         _modeDetail(previousMode) {
+            const visible = this.getVisibleCounts();
             return {
                 mode: this.mode,
                 previousMode,
-                visibleNodes: this.cy?.nodes(":visible")?.length ?? this.currentGraph.nodes.length,
-                visibleEdges: this.cy?.edges(":visible")?.length ?? this.currentGraph.links.length,
+                visibleNodes: visible.nodes,
+                visibleEdges: visible.edges,
                 layoutFallback: this._layoutFallback,
                 expandedCommunityId: this.expandedCommunityId
             };
+        }
+
+        _emitViewportChange(reason = "viewport") {
+            const detail = {
+                reason,
+                zoom: asNumber(this.cy?.zoom?.(), 1)
+            };
+            if (reason !== "zoom") {
+                const visible = this.getVisibleCounts();
+                detail.visibleNodes = visible.nodes;
+                detail.visibleEdges = visible.edges;
+            }
+            this._emit("graph:viewportchange", detail);
+            return detail;
+        }
+
+        getVisibleCounts() {
+            if (!this.cy) {
+                return {
+                    nodes: this.currentGraph?.nodes?.length || 0,
+                    edges: this.currentGraph?.links?.length || 0
+                };
+            }
+            const hiddenNode = (node) =>
+                node.hasClass?.("layer-hidden") || node.hasClass?.("community-compact-hidden");
+            let nodes = 0;
+            const nodeCollection = this.cy.nodes?.();
+            if (typeof nodeCollection?.forEach === "function") {
+                nodeCollection.forEach((node) => {
+                    if (!hiddenNode(node)) nodes += 1;
+                });
+            } else {
+                nodes = asNumber(nodeCollection?.length, 0);
+            }
+            let edges = 0;
+            const edgeCollection = this.cy.edges?.();
+            if (typeof edgeCollection?.forEach === "function") {
+                edgeCollection.forEach((edge) => {
+                    if (
+                        !edge.hasClass?.("layer-hidden") &&
+                        !hiddenNode(edge.source()) &&
+                        !hiddenNode(edge.target())
+                    ) {
+                        edges += 1;
+                    }
+                });
+            } else {
+                edges = asNumber(edgeCollection?.length, 0);
+            }
+            return { nodes, edges };
         }
 
         _buildLegacyCommunityGraph() {
@@ -2264,6 +2689,9 @@
             const shouldReflowCommunity = options.reflow !== false &&
                 this.mode === "community" &&
                 Boolean(this._detailCommunityId);
+            const shouldReflowOverview = options.reflow !== false &&
+                this.mode === "overview" &&
+                Boolean(this.selectedNode?.length > 0);
             this._modeSequence += 1;
             this._cancelOperation("view");
             this.cy.elements().unselect();
@@ -2272,11 +2700,13 @@
             this.selectedNodeId = null;
             this._detailCommunityId = null;
             this.hoveredNode = null;
+            this._syncOverviewPrimaryState();
             this._updateSemanticLabels(true);
             this._clearHighlights();
             this._emit("graph:selectionchange", { node: null, nodeId: null });
             this._emit("nodeSelect", null);
             if (shouldReflowCommunity) this._runLayout("community");
+            if (shouldReflowOverview) this._runLayout("overview");
         }
 
         async search(query) {
@@ -2316,10 +2746,18 @@
         _applySearchMatches(items) {
             if (!this.cy) return;
             const ids = new Set(asArray(items).map((item) => String(item.id)));
-            this.cy.nodes().removeClass("search-match");
+            this.cy.nodes(".search-match").forEach((node) => {
+                node.removeClass("search-match");
+                if (String(node.id()) !== String(this.selectedNodeId || "")) {
+                    node.toggleClass(
+                        "label-visible",
+                        node.hasClass("deferred-label") && this._labelsShouldBeExpanded()
+                    );
+                }
+            });
             if (ids.size === 0) return;
             this.cy.nodes().forEach((node) => {
-                if (ids.has(node.id())) node.addClass("search-match");
+                if (ids.has(node.id())) node.addClass("search-match label-visible");
             });
         }
 
@@ -2329,13 +2767,23 @@
             if (!layerId) return false;
             if (this.visibleLayers.has(layerId)) this.visibleLayers.delete(layerId);
             else this.visibleLayers.add(layerId);
+            const isVisible = this.visibleLayers.has(layerId);
+            if (
+                !isVisible &&
+                String(this.selectedNode?.data?.("layer") || "") === layerId
+            ) {
+                this.clearSelection({ reflow: false });
+            }
             this._applyLayerVisibility();
+            const visible = this.getVisibleCounts();
             this._emit("graph:layerchange", {
                 layer: layerId,
-                visible: this.visibleLayers.has(layerId),
-                visibleLayers: Array.from(this.visibleLayers)
+                visible: isVisible,
+                visibleLayers: Array.from(this.visibleLayers),
+                visibleNodes: visible.nodes,
+                visibleEdges: visible.edges
             });
-            return this.visibleLayers.has(layerId);
+            return isVisible;
         }
 
         _applyLayerVisibility() {
@@ -2351,6 +2799,7 @@
                 });
             });
             this._syncParticles();
+            this._scheduleCommunityFieldDraw();
         }
 
         filterByLayer(layer) {
@@ -2404,8 +2853,151 @@
         }
 
         _fieldDescriptors() {
+            if (this.mode === "overview") return this._overviewFieldDescriptors();
             if (this.mode === "focus") return this._focusFieldDescriptors();
             return this._communityFieldDescriptors();
+        }
+
+        _overviewFieldDescriptors() {
+            if (!this.cy || this.mode !== "overview") return [];
+            const groups = new Map();
+            this.cy.nodes(":visible").forEach((node) => {
+                if (!node.data("overviewSceneRole")) return;
+                const layer = String(node.data("layer") || "unknown");
+                if (!groups.has(layer)) groups.set(layer, []);
+                groups.get(layer).push(node);
+            });
+            const selectedLayer = this.selectedNode?.data?.("layer") || null;
+            const metrics = this._overviewSceneMetrics(
+                { width: this._fieldWidth, height: this._fieldHeight },
+                Boolean(this.selectedNode?.length > 0)
+            );
+            const zoom = Math.max(0.05, asNumber(this.cy.zoom?.(), 1));
+            const renderScale = metrics.sceneScale * zoom;
+            const descriptors = [];
+            Array.from(groups.entries())
+                .sort((left, right) =>
+                    asNumber(left[1][0]?.data("overviewLayerIndex"), Number.MAX_SAFE_INTEGER) -
+                        asNumber(right[1][0]?.data("overviewLayerIndex"), Number.MAX_SAFE_INTEGER) ||
+                    left[0].localeCompare(right[0])
+                )
+                .forEach(([layer, nodes]) => {
+                    const anchorNode = nodes.find((node) =>
+                        node.data("overviewSceneRole") === "anchor"
+                    ) || nodes[0];
+                    if (!anchorNode) return;
+                    const anchorPosition = anchorNode.renderedPosition();
+                    if (
+                        anchorPosition.x < 0 || anchorPosition.x > this._fieldWidth ||
+                        anchorPosition.y < 0 || anchorPosition.y > this._fieldHeight
+                    ) {
+                        return;
+                    }
+                    let memberRadius = 0;
+                    nodes.forEach((node) => {
+                        const position = node.renderedPosition();
+                        memberRadius = Math.max(
+                            memberRadius,
+                            Math.hypot(position.x - anchorPosition.x, position.y - anchorPosition.y)
+                        );
+                    });
+                    const isActive = selectedLayer
+                        ? layer === selectedLayer
+                        : layer === "model";
+                    const availableOuterRadius = Math.min(
+                        anchorPosition.x / 1.1,
+                        (this._fieldWidth - anchorPosition.x) / 1.1,
+                        anchorPosition.y / 0.91,
+                        (this._fieldHeight - anchorPosition.y) / 0.91
+                    ) - 4;
+                    if (availableOuterRadius <= 8) return;
+                    const naturalRadius = Math.max(
+                        34 * renderScale,
+                        Math.min(154 * renderScale, memberRadius + 24 * renderScale)
+                    );
+                    const radius = Math.max(
+                        8,
+                        Math.min(naturalRadius, availableOuterRadius * 0.72)
+                    );
+                    const contourStep = Math.max(
+                        0,
+                        Math.min(
+                            10 * renderScale,
+                            (availableOuterRadius - radius) / 5
+                        )
+                    );
+                    descriptors.push({
+                        id: `overview:${layer}`,
+                        layer,
+                        order: asNumber(anchorNode.data("overviewLayerIndex"), descriptors.length),
+                        x: anchorPosition.x,
+                        y: anchorPosition.y,
+                        radius,
+                        memberCount: nodes.length,
+                        anchor: isActive,
+                        scale: metrics.sceneScale,
+                        renderScale,
+                        contourStep,
+                        pulseScale: renderScale,
+                        maxOuterRadius: availableOuterRadius,
+                        rank: asNumber(anchorNode.data("overviewLayerIndex"), 0) + 1,
+                        scene: "overview",
+                        color: isActive
+                            ? "rgba(217, 119, 6, 1)"
+                            : "rgba(77, 182, 172, 1)",
+                        fillColor: isActive
+                            ? "rgba(217, 119, 6, 0.055)"
+                            : "rgba(38, 166, 154, 0.022)",
+                        syntheticSatellites: false
+                    });
+                });
+            return descriptors;
+        }
+
+        _overviewFieldRoutes(descriptors) {
+            if (!this.cy || this.mode !== "overview") return [];
+            const byLayer = new Map(descriptors.map((descriptor) => [
+                descriptor.layer,
+                descriptor
+            ]));
+            const aggregated = new Map();
+            this.cy.edges(":visible").forEach((edge) => {
+                const sourceLayer = String(edge.source().data("layer") || "unknown");
+                const targetLayer = String(edge.target().data("layer") || "unknown");
+                if (sourceLayer === targetLayer || !byLayer.has(sourceLayer) || !byLayer.has(targetLayer)) {
+                    return;
+                }
+                let source = byLayer.get(sourceLayer);
+                let target = byLayer.get(targetLayer);
+                if (source.order > target.order) [source, target] = [target, source];
+                const key = `${source.layer}->${target.layer}`;
+                const current = aggregated.get(key) || { source, target, count: 0, weight: 0 };
+                current.count += 1;
+                current.weight += Math.max(0, asNumber(edge.data("weight"), 1));
+                aggregated.set(key, current);
+            });
+            return Array.from(aggregated.values())
+                .sort((left, right) =>
+                    left.source.order - right.source.order ||
+                    left.target.order - right.target.order ||
+                    right.count - left.count
+                )
+                .slice(0, OVERVIEW_ROUTE_LIMIT);
+        }
+
+        _overviewRouteStyle(route, strength = 0) {
+            const normalizedStrength = Math.max(0, Math.min(1, asNumber(strength, 0)));
+            const routeScale = Math.max(
+                0.25,
+                (asNumber(route?.source?.renderScale, 1) +
+                    asNumber(route?.target?.renderScale, 1)) / 2
+            );
+            return {
+                opacity: 0.34 + normalizedStrength * 0.3,
+                width: (0.8 + normalizedStrength * 1.05) * routeScale,
+                arrowSize: (6 + normalizedStrength * 2) * routeScale,
+                dash: [7 * routeScale, 9 * routeScale]
+            };
         }
 
         _communityFieldDescriptors() {
@@ -2602,11 +3194,69 @@
             context.stroke();
         }
 
+        _drawFieldRoute(context, source, target, index = 0, options = {}) {
+            const dx = target.x - source.x;
+            const dy = target.y - source.y;
+            const length = Math.max(1, Math.hypot(dx, dy));
+            const unitX = dx / length;
+            const unitY = dy / length;
+            const ellipseInset = (field) => {
+                const radiusX = Math.max(1, field.radius * 0.94);
+                const radiusY = Math.max(1, field.radius * 0.68);
+                return 1 / Math.sqrt(
+                    (unitX * unitX) / (radiusX * radiusX) +
+                    (unitY * unitY) / (radiusY * radiusY)
+                );
+            };
+            const startInset = Math.min(ellipseInset(source) * 1.04, length * 0.42);
+            const endInset = Math.min(ellipseInset(target) * 0.96, length * 0.42);
+            const startX = source.x + unitX * startInset;
+            const startY = source.y + unitY * startInset;
+            const endX = target.x - unitX * endInset;
+            const endY = target.y - unitY * endInset;
+            const curve = (index % 2 === 0 ? 1 : -1) * Math.min(28, length * 0.04);
+            const controlX = Math.max(
+                4,
+                Math.min(this._fieldWidth - 4, (startX + endX) / 2 - unitY * curve)
+            );
+            const controlY = Math.max(
+                4,
+                Math.min(this._fieldHeight - 4, (startY + endY) / 2 + unitX * curve)
+            );
+            context.setLineDash(options.dash || [8, 8]);
+            context.beginPath();
+            context.moveTo(startX, startY);
+            context.quadraticCurveTo(controlX, controlY, endX, endY);
+            context.strokeStyle = options.color || "rgba(95, 225, 214, 0.66)";
+            context.globalAlpha = asNumber(options.opacity, 0.72);
+            context.lineWidth = asNumber(options.width, 1.05);
+            context.stroke();
+
+            const arrowAngle = Math.atan2(endY - controlY, endX - controlX);
+            const arrowSize = asNumber(options.arrowSize, 8);
+            context.setLineDash([]);
+            context.beginPath();
+            context.moveTo(endX, endY);
+            context.lineTo(
+                endX - Math.cos(arrowAngle - 0.5) * arrowSize,
+                endY - Math.sin(arrowAngle - 0.5) * arrowSize
+            );
+            context.lineTo(
+                endX - Math.cos(arrowAngle + 0.5) * arrowSize,
+                endY - Math.sin(arrowAngle + 0.5) * arrowSize
+            );
+            context.closePath();
+            context.fillStyle = options.arrowColor || "rgba(117, 230, 216, 0.84)";
+            context.globalAlpha = Math.min(1, asNumber(options.opacity, 0.72) + 0.12);
+            context.fill();
+            context.setLineDash([]);
+        }
+
         _drawCommunityField(timestamp = 0) {
             if (!this._fieldContext || this.isDestroyed) return;
             const context = this._fieldContext;
             context.clearRect(0, 0, this._fieldWidth, this._fieldHeight);
-            if (!["community", "focus"].includes(this.mode) || !this.cy) {
+            if (!["overview", "community", "focus"].includes(this.mode) || !this.cy) {
                 this._communityFields = [];
                 return;
             }
@@ -2619,63 +3269,33 @@
             context.lineCap = "round";
 
             const anchorDescriptor = descriptors.find((descriptor) => descriptor.anchor);
-            if (anchorDescriptor) {
-                const contexts = descriptors.filter((descriptor) => !descriptor.anchor);
-                context.setLineDash([8, 8]);
-                context.lineWidth = 1.05;
-                contexts.forEach((descriptor, index) => {
-                    const dx = descriptor.x - anchorDescriptor.x;
-                    const dy = descriptor.y - anchorDescriptor.y;
-                    const length = Math.max(1, Math.hypot(dx, dy));
-                    const unitX = dx / length;
-                    const unitY = dy / length;
-                    const ellipseInset = (field) => {
-                        const radiusX = Math.max(1, field.radius * 0.94);
-                        const radiusY = Math.max(1, field.radius * 0.68);
-                        return 1 / Math.sqrt(
-                            (unitX * unitX) / (radiusX * radiusX) +
-                            (unitY * unitY) / (radiusY * radiusY)
-                        );
-                    };
-                    const startInset = ellipseInset(anchorDescriptor) * 1.04;
-                    const startX = anchorDescriptor.x + (dx / length) * startInset;
-                    const startY = anchorDescriptor.y + (dy / length) * startInset;
-                    const endInset = ellipseInset(descriptor) * 0.96;
-                    const endX = descriptor.x - (dx / length) * endInset;
-                    const endY = descriptor.y - (dy / length) * endInset;
-                    const curve = (index % 2 === 0 ? 1 : -1) * Math.min(28, length * 0.04);
-                    const controlX = (startX + endX) / 2 - (dy / length) * curve;
-                    const controlY = (startY + endY) / 2 + (dx / length) * curve;
-                    context.beginPath();
-                    context.moveTo(startX, startY);
-                    context.quadraticCurveTo(controlX, controlY, endX, endY);
-                    context.strokeStyle = "rgba(95, 225, 214, 0.66)";
-                    context.globalAlpha = 0.72;
-                    context.stroke();
-
-                    const arrowAngle = Math.atan2(endY - controlY, endX - controlX);
-                    context.setLineDash([]);
-                    context.beginPath();
-                    context.moveTo(endX, endY);
-                    context.lineTo(
-                        endX - Math.cos(arrowAngle - 0.5) * 8,
-                        endY - Math.sin(arrowAngle - 0.5) * 8
+            if (this.mode === "overview") {
+                const routes = this._overviewFieldRoutes(descriptors);
+                const maximumCount = Math.max(1, ...routes.map((route) => route.count));
+                routes.forEach((route, index) => {
+                    const strength = Math.max(0, Math.min(1, route.count / maximumCount));
+                    this._drawFieldRoute(
+                        context,
+                        route.source,
+                        route.target,
+                        index,
+                        this._overviewRouteStyle(route, strength)
                     );
-                    context.lineTo(
-                        endX - Math.cos(arrowAngle + 0.5) * 8,
-                        endY - Math.sin(arrowAngle + 0.5) * 8
-                    );
-                    context.closePath();
-                    context.fillStyle = "rgba(117, 230, 216, 0.84)";
-                    context.fill();
-                    context.setLineDash([8, 8]);
                 });
-                context.setLineDash([]);
+            } else if (anchorDescriptor) {
+                const contexts = descriptors.filter((descriptor) => !descriptor.anchor);
+                contexts.forEach((descriptor, index) => {
+                    this._drawFieldRoute(context, anchorDescriptor, descriptor, index);
+                });
             }
 
             for (const descriptor of descriptors) {
-                const color = descriptor.anchor ? "rgba(217, 119, 6, 1)" : "rgba(77, 182, 172, 1)";
-                const fillColor = descriptor.anchor ? "rgba(217, 119, 6, 0.055)" : "rgba(38, 166, 154, 0.022)";
+                const color = descriptor.color || (
+                    descriptor.anchor ? "rgba(217, 119, 6, 1)" : "rgba(77, 182, 172, 1)"
+                );
+                const fillColor = descriptor.fillColor || (
+                    descriptor.anchor ? "rgba(217, 119, 6, 0.055)" : "rgba(38, 166, 154, 0.022)"
+                );
                 context.beginPath();
                 context.ellipse(
                     descriptor.x,
@@ -2691,10 +3311,12 @@
                 context.fill();
 
                 for (let contour = 0; contour < 6; contour += 1) {
+                    const contourStep = descriptor.contourStep ??
+                        10 * descriptor.scale * descriptor.scale;
                     this._drawFieldContour(
                         context,
                         descriptor,
-                        descriptor.radius + contour * 10 * descriptor.scale * descriptor.scale,
+                        descriptor.radius + contour * contourStep,
                         color,
                         descriptor.anchor ? 0.27 - contour * 0.038 : 0.15 - contour * 0.022,
                         contour * 0.42
@@ -2759,14 +3381,20 @@
                 }
 
                 if (descriptor.anchor) {
+                    const pulseScale = descriptor.pulseScale || descriptor.scale;
+                    const pulseRadius = (offset) => Math.min(
+                        asNumber(descriptor.maxOuterRadius, Number.POSITIVE_INFINITY),
+                        descriptor.radius + offset * pulseScale
+                    );
                     context.setLineDash([4, 8]);
                     for (let pulseRing = 0; pulseRing < 2; pulseRing += 1) {
+                        const ringRadius = pulseRadius(22 + pulseRing * 18);
                         context.beginPath();
                         context.ellipse(
                             descriptor.x,
                             descriptor.y,
-                            descriptor.radius + (22 + pulseRing * 18) * descriptor.scale,
-                            (descriptor.radius + (22 + pulseRing * 18) * descriptor.scale) * 0.82,
+                            ringRadius,
+                            ringRadius * 0.82,
                             0,
                             0,
                             Math.PI * 2
@@ -2780,7 +3408,7 @@
                     this._drawFieldContour(
                         context,
                         descriptor,
-                        descriptor.radius + (12 + phase * 26) * descriptor.scale,
+                        pulseRadius(12 + phase * 26),
                         color,
                         0.28 * (1 - phase),
                         phase * Math.PI * 2
@@ -2799,7 +3427,7 @@
         _communityFieldTick(timestamp) {
             this._fieldFrame = null;
             if (this._paused || this.isDestroyed ||
-                !["community", "focus"].includes(this.mode)) return;
+                !["overview", "community", "focus"].includes(this.mode)) return;
             if (!this._fieldDirty) return;
             if (!this._shouldPaintCommunityFrame(timestamp)) {
                 this._fieldFrame = global.requestAnimationFrame?.((nextTimestamp) =>
@@ -2814,7 +3442,7 @@
 
         _scheduleCommunityFieldDraw() {
             if (!this._fieldContext || this.isDestroyed || this._paused) return;
-            if (!["community", "focus"].includes(this.mode)) {
+            if (!["overview", "community", "focus"].includes(this.mode)) {
                 this._stopCommunityFieldLoop(true);
                 this._communityFields = [];
                 return;
@@ -2918,6 +3546,10 @@
             const refit = () => {
                 this._resizeFitTimer = null;
                 if (!this.cy || this.isDestroyed) return;
+                if (this.mode === "overview") {
+                    this._runLayout("overview");
+                    return;
+                }
                 if (this.mode === "community") {
                     this._runLayout("community");
                     return;
@@ -2927,8 +3559,6 @@
                     if (this.cy.zoom() > 1) this.cy.zoom(1);
                     return;
                 }
-                const isCompact = this.container.getBoundingClientRect().width < 640;
-                this._fitCurrentGraph(isCompact ? 68 : 36);
             };
             if (typeof global.setTimeout === "function") {
                 this._resizeFitTimer = global.setTimeout(refit, 120);
@@ -3116,7 +3746,7 @@
         }
 
         fitToScreen() {
-            if (this.mode === "community" || this.mode === "focus") {
+            if (["overview", "community", "focus"].includes(this.mode)) {
                 this._runLayout(this.mode);
                 return;
             }
@@ -3128,7 +3758,7 @@
             if (this.mode !== "overview") {
                 return this.setMode("overview");
             }
-            this._fitCurrentGraph(36);
+            this._runLayout("overview");
             return Promise.resolve(this.mode);
         }
 

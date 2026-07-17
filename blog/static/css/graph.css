@@ -506,10 +506,12 @@
   animation-play-state: paused;
 }
 
+.graph-workbench.is-mode-overview .graph-stage,
 .graph-workbench.is-mode-community .graph-stage {
   background-color: rgba(2, 8, 15, 0.58);
 }
 
+.graph-workbench.is-mode-overview .graph-stage::before,
 .graph-workbench.is-mode-community .graph-stage::before {
   opacity: 0.42;
 }
@@ -551,6 +553,7 @@
   transition: opacity 280ms ease;
 }
 
+.graph-workbench.is-mode-overview .graph-field-overlay,
 .graph-workbench.is-mode-community .graph-field-overlay,
 .graph-workbench.is-mode-focus .graph-field-overlay {
   opacity: 1;
@@ -1264,6 +1267,7 @@
     opacity: 0.18;
   }
 
+  .graph-workbench.is-mode-overview .graph-stage::before,
   .graph-workbench.is-mode-community .graph-stage::before {
     opacity: 0.22;
   }
