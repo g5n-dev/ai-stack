@@ -1,5 +1,5 @@
 {
-  "active_count": 1969,
+  "active_count": 1971,
   "archived_count": 448,
   "complete_count": 0,
   "legacy_analysis_count": 1910,
@@ -10691,6 +10691,18 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260718-arxiv-scidiagramedit-learning-to-edit-scientific-diagram-0-44f35e55d9.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260718-blogs_podcasts-how-smartsheet-built-a-remote-mcp-server-on-aws-0-13cb1b4785.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -10698,9 +10710,9 @@
     "archived_content": 448
   },
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 59,
-  "source_file_count": 2417,
-  "source_tree_sha256": "f786c2ea49eb1f6868696baac8c29b24c384422878cbdeec5f64b5d27d59534f",
+  "source_brief_count": 61,
+  "source_file_count": 2419,
+  "source_tree_sha256": "5ba83e2e98e5357ae58e60f91b4575434dca05fb9a20c9215887aa426c8b60fe",
   "warning_counts": {
     "source_excerpt_truncated": 2
   }

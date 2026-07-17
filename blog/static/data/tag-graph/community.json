@@ -2,57 +2,57 @@
   "algorithm": "deterministic-weighted-label-propagation",
   "communities": [
     {
+      "article_count": 104,
+      "hotspot_count": 24,
+      "hotspot_file": "community-hotspots/01-fbfe7e4b76cf.json",
+      "id": "community:tag:Amazon DynamoDB",
+      "leader_id": "tag:Amazon Bedrock",
+      "name": "Amazon Bedrock",
+      "node_count": 30,
+      "rank": 1,
+      "tag_occurrences": 198,
+      "weighted_degree": 843.6
+    },
+    {
       "article_count": 797,
       "hotspot_count": 21,
-      "hotspot_file": "community-hotspots/01-06e257860828.json",
+      "hotspot_file": "community-hotspots/02-6a952666e460.json",
       "id": "community:tag:面试考点",
       "leader_id": "tag:LLM",
       "name": "LLM",
       "node_count": 21,
-      "rank": 1,
+      "rank": 2,
       "tag_occurrences": 1164,
       "weighted_degree": 8153.6
     },
     {
       "article_count": 65,
       "hotspot_count": 17,
-      "hotspot_file": "community-hotspots/02-52e740a2d684.json",
+      "hotspot_file": "community-hotspots/03-67916cf1ab20.json",
       "id": "community:tag:SpeechAnalyzer",
       "leader_id": "tag:开源模型",
       "name": "开源模型",
       "node_count": 17,
-      "rank": 2,
+      "rank": 3,
       "tag_occurrences": 88,
       "weighted_degree": 616.6
     },
     {
       "article_count": 77,
       "hotspot_count": 15,
-      "hotspot_file": "community-hotspots/03-1a894da1478e.json",
+      "hotspot_file": "community-hotspots/04-3d67b39bb5a7.json",
       "id": "community:tag:P-EAGLE",
       "leader_id": "tag:性能优化",
       "name": "性能优化",
       "node_count": 15,
-      "rank": 3,
+      "rank": 4,
       "tag_occurrences": 112,
       "weighted_degree": 785.8
     },
     {
-      "article_count": 21,
-      "hotspot_count": 14,
-      "hotspot_file": "community-hotspots/04-c24309394b6d.json",
-      "id": "community:tag:Amazon DynamoDB",
-      "leader_id": "tag:博客与播客",
-      "name": "博客与播客",
-      "node_count": 14,
-      "rank": 4,
-      "tag_occurrences": 40,
-      "weighted_degree": 183.6
-    },
-    {
       "article_count": 7,
       "hotspot_count": 14,
-      "hotspot_file": "community-hotspots/05-a0284a5c0824.json",
+      "hotspot_file": "community-hotspots/05-a9448f8b3525.json",
       "id": "community:tag:移动开发",
       "leader_id": "tag:Android",
       "name": "Android",
@@ -64,7 +64,7 @@
     {
       "article_count": 107,
       "hotspot_count": 13,
-      "hotspot_file": "community-hotspots/06-7ddd66587301.json",
+      "hotspot_file": "community-hotspots/06-84b502d9f5a3.json",
       "id": "community:tag:行业格局",
       "leader_id": "tag:OpenAI",
       "name": "OpenAI",
@@ -76,7 +76,7 @@
     {
       "article_count": 34,
       "hotspot_count": 13,
-      "hotspot_file": "community-hotspots/07-2c84c420f519.json",
+      "hotspot_file": "community-hotspots/07-bb8980499754.json",
       "id": "community:tag:Autotab",
       "leader_id": "tag:Cursor",
       "name": "Cursor",
@@ -88,7 +88,7 @@
     {
       "article_count": 79,
       "hotspot_count": 12,
-      "hotspot_file": "community-hotspots/08-276a9de8b1d4.json",
+      "hotspot_file": "community-hotspots/08-a6d9df944169.json",
       "id": "community:tag:Flux",
       "leader_id": "tag:扩散模型",
       "name": "扩散模型",
@@ -100,7 +100,7 @@
     {
       "article_count": 67,
       "hotspot_count": 12,
-      "hotspot_file": "community-hotspots/09-91e7ba7b1578.json",
+      "hotspot_file": "community-hotspots/09-c1cd1ceddcd7.json",
       "id": "community:tag:Gemini 3",
       "leader_id": "tag:模型发布",
       "name": "模型发布",
@@ -112,7 +112,7 @@
     {
       "article_count": 59,
       "hotspot_count": 12,
-      "hotspot_file": "community-hotspots/10-1e139e05691f.json",
+      "hotspot_file": "community-hotspots/10-65eddb74fefb.json",
       "id": "community:tag:Folo",
       "leader_id": "tag:开源项目",
       "name": "开源项目",
@@ -124,7 +124,7 @@
     {
       "article_count": 53,
       "hotspot_count": 12,
-      "hotspot_file": "community-hotspots/11-531a5eb3210b.json",
+      "hotspot_file": "community-hotspots/11-6117bf536089.json",
       "id": "community:tag:Clippy",
       "leader_id": "tag:AI 助手",
       "name": "AI 助手",
@@ -134,18 +134,18 @@
       "weighted_degree": 491.8
     },
     {
-      "article_count": 1959,
+      "article_count": 1932,
       "hotspot_count": 0,
       "id": "community:other",
       "leader_id": null,
       "name": "其他",
-      "node_count": 6645,
+      "node_count": 6630,
       "rank": 12,
-      "tag_occurrences": 13333,
-      "weighted_degree": 92796
+      "tag_occurrences": 13185,
+      "weighted_degree": 92184
     }
   ],
-  "generated_at": "2026-07-17T15:42:15Z",
+  "generated_at": "2026-07-17T21:15:29Z",
   "iterations": 6,
   "limit": 11,
   "links": [
@@ -155,7 +155,7 @@
       "strength": 1,
       "target": "community:tag:Amazon DynamoDB",
       "type": "community",
-      "weight": 80
+      "weight": 409
     },
     {
       "id": "edge:community:community:other->community:tag:Autotab",
@@ -179,7 +179,7 @@
       "strength": 1,
       "target": "community:tag:Flux",
       "type": "community",
-      "weight": 545
+      "weight": 538
     },
     {
       "id": "edge:community:community:other->community:tag:Folo",
@@ -227,7 +227,7 @@
       "strength": 1,
       "target": "community:tag:行业格局",
       "type": "community",
-      "weight": 735
+      "weight": 734
     },
     {
       "id": "edge:community:community:other->community:tag:面试考点",
@@ -235,7 +235,23 @@
       "strength": 1,
       "target": "community:tag:面试考点",
       "type": "community",
-      "weight": 6758
+      "weight": 6729
+    },
+    {
+      "id": "edge:community:community:tag:Amazon DynamoDB->community:tag:Flux",
+      "source": "community:tag:Amazon DynamoDB",
+      "strength": 1,
+      "target": "community:tag:Flux",
+      "type": "community",
+      "weight": 7
+    },
+    {
+      "id": "edge:community:community:tag:Amazon DynamoDB->community:tag:行业格局",
+      "source": "community:tag:Amazon DynamoDB",
+      "strength": 1,
+      "target": "community:tag:行业格局",
+      "type": "community",
+      "weight": 1
     },
     {
       "id": "edge:community:community:tag:Amazon DynamoDB->community:tag:面试考点",
@@ -243,7 +259,7 @@
       "strength": 1,
       "target": "community:tag:面试考点",
       "type": "community",
-      "weight": 1
+      "weight": 30
     },
     {
       "id": "edge:community:community:tag:Autotab->community:tag:Folo",
@@ -503,11 +519,11 @@
     }
   ],
   "stats": {
-    "assigned_nodes": 6800,
-    "detected_communities": 1424,
+    "assigned_nodes": 6801,
+    "detected_communities": 1421,
     "emitted_communities": 12,
     "total_communities": 12,
-    "total_links": 44,
+    "total_links": 46,
     "weighting": "cosine-association"
   },
   "version": 2
