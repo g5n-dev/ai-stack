@@ -1,5 +1,5 @@
 {
-  "active_count": 1963,
+  "active_count": 1966,
   "archived_count": 448,
   "complete_count": 0,
   "legacy_analysis_count": 1910,
@@ -10569,6 +10569,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260717-arxiv-pretraining-data-can-be-poisoned-through-computati-0-39c1750752.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260717-arxiv-scenebind-binding-what-and-where-across-vision-aud-0-fc6ace2f7a.md": {
       "reasons": [
         "concise_source_card"
@@ -10582,6 +10588,12 @@
       "status": "source_brief"
     },
     "posts/20260717-arxiv-searchos-v1-towards-robust-open-domain-information-0-31ed054ff4.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260717-blogs_podcasts-a-scorecard-for-the-ai-age-0-c5c5248230.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -10655,6 +10667,12 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260717-juejin-ai-时代程序员会消失吗-0-246c88535f.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -10662,9 +10680,9 @@
     "archived_content": 448
   },
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 53,
-  "source_file_count": 2411,
-  "source_tree_sha256": "0ca1e9af6689f9f6fa51c2a601cb8e045053805bfec31e159b8370adb91c9f89",
+  "source_brief_count": 56,
+  "source_file_count": 2414,
+  "source_tree_sha256": "7ccdadc529d23d0b44e922fffbe87f96505109b4c941870b8962ad8762ea2109",
   "warning_counts": {
     "source_excerpt_truncated": 2
   }

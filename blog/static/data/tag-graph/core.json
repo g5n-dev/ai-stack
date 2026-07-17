@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-17T11:43:21Z",
+  "generated_at": "2026-07-17T14:05:13Z",
   "layers": {
     "application": {
       "color": "#7aa6b8",
@@ -622,7 +622,7 @@
       "legacy_id": "actix",
       "level": 2,
       "name": "Actix",
-      "rank": 6835,
+      "rank": 6836,
       "weighted_degree": 2
     },
     {
@@ -673,7 +673,7 @@
       "legacy_id": "animation",
       "level": 5,
       "name": "动画/3D",
-      "rank": 6862,
+      "rank": 6863,
       "weighted_degree": 0
     },
     {
@@ -724,7 +724,7 @@
       "legacy_id": "automation_scene",
       "level": 5,
       "name": "自动化脚本",
-      "rank": 6844,
+      "rank": 6845,
       "weighted_degree": 1.6
     },
     {
@@ -741,7 +741,7 @@
       "legacy_id": "axum",
       "level": 2,
       "name": "Axum",
-      "rank": 6836,
+      "rank": 6837,
       "weighted_degree": 2
     },
     {
@@ -775,7 +775,7 @@
       "legacy_id": "blockchain",
       "level": 5,
       "name": "区块链",
-      "rank": 6863,
+      "rank": 6864,
       "weighted_degree": 0
     },
     {
@@ -843,7 +843,7 @@
       "legacy_id": "cpp",
       "level": 1,
       "name": "C++",
-      "rank": 6845,
+      "rank": 6846,
       "weighted_degree": 1.2
     },
     {
@@ -877,7 +877,7 @@
       "legacy_id": "cv_scene",
       "level": 5,
       "name": "计算机视觉",
-      "rank": 6854,
+      "rank": 6855,
       "weighted_degree": 0.6
     },
     {
@@ -894,7 +894,7 @@
       "legacy_id": "dashboard",
       "level": 4,
       "name": "数据仪表板",
-      "rank": 6837,
+      "rank": 6838,
       "weighted_degree": 2
     },
     {
@@ -928,7 +928,7 @@
       "legacy_id": "database",
       "level": 5,
       "name": "数据库",
-      "rank": 6857,
+      "rank": 6858,
       "weighted_degree": 0.6
     },
     {
@@ -945,7 +945,7 @@
       "legacy_id": "design",
       "level": 5,
       "name": "设计工具",
-      "rank": 6840,
+      "rank": 6841,
       "weighted_degree": 1.8
     },
     {
@@ -962,7 +962,7 @@
       "legacy_id": "desktop",
       "level": 5,
       "name": "桌面应用",
-      "rank": 6846,
+      "rank": 6847,
       "weighted_degree": 1.2
     },
     {
@@ -979,7 +979,7 @@
       "legacy_id": "devops",
       "level": 5,
       "name": "DevOps/运维",
-      "rank": 6841,
+      "rank": 6842,
       "weighted_degree": 1.6
     },
     {
@@ -1030,7 +1030,7 @@
       "legacy_id": "documentation",
       "level": 5,
       "name": "文档工具",
-      "rank": 6864,
+      "rank": 6865,
       "weighted_degree": 0
     },
     {
@@ -1047,7 +1047,7 @@
       "legacy_id": "echo",
       "level": 2,
       "name": "Echo",
-      "rank": 6838,
+      "rank": 6839,
       "weighted_degree": 2
     },
     {
@@ -1064,7 +1064,7 @@
       "legacy_id": "editor",
       "level": 5,
       "name": "编辑器/IDE",
-      "rank": 6865,
+      "rank": 6866,
       "weighted_degree": 0
     },
     {
@@ -1081,7 +1081,7 @@
       "legacy_id": "embedded",
       "level": 5,
       "name": "嵌入式系统",
-      "rank": 6866,
+      "rank": 6867,
       "weighted_degree": 0
     },
     {
@@ -1149,7 +1149,7 @@
       "legacy_id": "frontend",
       "level": 5,
       "name": "前端开发",
-      "rank": 6842,
+      "rank": 6843,
       "weighted_degree": 1.6
     },
     {
@@ -1183,7 +1183,7 @@
       "legacy_id": "game",
       "level": 5,
       "name": "游戏开发",
-      "rank": 6848,
+      "rank": 6849,
       "weighted_degree": 1.2
     },
     {
@@ -1200,7 +1200,7 @@
       "legacy_id": "gin",
       "level": 2,
       "name": "Gin",
-      "rank": 6839,
+      "rank": 6840,
       "weighted_degree": 2
     },
     {
@@ -1234,7 +1234,7 @@
       "legacy_id": "iot",
       "level": 5,
       "name": "物联网",
-      "rank": 6849,
+      "rank": 6850,
       "weighted_degree": 1.2
     },
     {
@@ -1251,7 +1251,7 @@
       "legacy_id": "java",
       "level": 1,
       "name": "Java",
-      "rank": 6855,
+      "rank": 6856,
       "weighted_degree": 0.6
     },
     {
@@ -1285,7 +1285,7 @@
       "legacy_id": "kubernetes",
       "level": 5,
       "name": "Kubernetes",
-      "rank": 6856,
+      "rank": 6857,
       "weighted_degree": 0.6
     },
     {
@@ -1353,7 +1353,7 @@
       "legacy_id": "mobile",
       "level": 5,
       "name": "移动应用",
-      "rank": 6867,
+      "rank": 6868,
       "weighted_degree": 0
     },
     {
@@ -1387,7 +1387,7 @@
       "legacy_id": "monitoring_scene",
       "level": 5,
       "name": "监控/日志",
-      "rank": 6852,
+      "rank": 6853,
       "weighted_degree": 1
     },
     {
@@ -1438,7 +1438,7 @@
       "legacy_id": "nlp",
       "level": 3,
       "name": "自然语言处理",
-      "rank": 6787,
+      "rank": 6788,
       "weighted_degree": 6.2
     },
     {
@@ -1472,7 +1472,7 @@
       "legacy_id": "nuxt",
       "level": 2,
       "name": "Nuxt",
-      "rank": 6868,
+      "rank": 6869,
       "weighted_degree": 0
     },
     {
@@ -1625,7 +1625,7 @@
       "legacy_id": "svelte",
       "level": 2,
       "name": "Svelte",
-      "rank": 6853,
+      "rank": 6854,
       "weighted_degree": 1
     },
     {
@@ -1642,7 +1642,7 @@
       "legacy_id": "swift",
       "level": 1,
       "name": "Swift",
-      "rank": 6847,
+      "rank": 6848,
       "weighted_degree": 1.2
     },
     {
@@ -1676,7 +1676,7 @@
       "legacy_id": "testing",
       "level": 5,
       "name": "测试工具",
-      "rank": 6858,
+      "rank": 6859,
       "weighted_degree": 0.6
     },
     {
@@ -1727,7 +1727,7 @@
       "legacy_id": "visualization",
       "level": 5,
       "name": "数据可视化",
-      "rank": 6843,
+      "rank": 6844,
       "weighted_degree": 1.6
     },
     {

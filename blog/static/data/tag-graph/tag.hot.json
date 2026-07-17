@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-17T11:43:21Z",
+  "generated_at": "2026-07-17T14:05:13Z",
   "layer": "tag",
   "layers": {
     "application": {
@@ -23621,7 +23621,7 @@
       "strength": 1,
       "target": "tag:cs.AI",
       "type": "cooccurrence",
-      "weight": 5
+      "weight": 6
     },
     {
       "id": "edge:cooccurrence:tag:arXiv->tag:cs.CL",
@@ -23653,7 +23653,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 13
+      "weight": 14
     },
     {
       "id": "edge:cooccurrence:tag:arxiv->tag:cs.CL",
@@ -23741,7 +23741,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 5
+      "weight": 6
     },
     {
       "id": "edge:cooccurrence:tag:cs.AI->tag:模型评估",
@@ -26589,7 +26589,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 16
+      "weight": 17
     },
     {
       "id": "edge:cooccurrence:tag:可观测性->tag:基准测试",
@@ -35567,7 +35567,7 @@
       "legacy_id": "AgentCore",
       "level": 6,
       "name": "AgentCore",
-      "rank": 149,
+      "rank": 150,
       "related_count": 66,
       "weighted_degree": 84
     },
@@ -36031,7 +36031,7 @@
       "weighted_degree": 105.6
     },
     {
-      "article_count": 13,
+      "article_count": 14,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
@@ -36043,9 +36043,9 @@
       "legacy_id": "arXiv",
       "level": 6,
       "name": "arXiv",
-      "rank": 575,
+      "rank": 438,
       "related_count": 7,
-      "weighted_degree": 26
+      "weighted_degree": 28
     },
     {
       "article_count": 14,
@@ -36252,7 +36252,7 @@
       "weighted_degree": 70
     },
     {
-      "article_count": 11,
+      "article_count": 12,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
@@ -36266,7 +36266,7 @@
       "name": "cs.AI",
       "rank": 230,
       "related_count": 43,
-      "weighted_degree": 52
+      "weighted_degree": 54
     },
     {
       "article_count": 11,
@@ -36366,7 +36366,7 @@
       "legacy_id": "Cursor",
       "level": 6,
       "name": "Cursor",
-      "rank": 147,
+      "rank": 148,
       "related_count": 70,
       "weighted_degree": 84
     },
@@ -36570,7 +36570,7 @@
       "legacy_id": "hacker_news",
       "level": 6,
       "name": "hacker_news",
-      "rank": 6859,
+      "rank": 6860,
       "related_count": 0,
       "weighted_degree": 0
     },
@@ -36621,7 +36621,7 @@
       "legacy_id": "IDE",
       "level": 6,
       "name": "IDE",
-      "rank": 151,
+      "rank": 152,
       "related_count": 62,
       "weighted_degree": 84
     },
@@ -36808,7 +36808,7 @@
       "legacy_id": "MoE",
       "level": 6,
       "name": "MoE",
-      "rank": 150,
+      "rank": 151,
       "related_count": 65,
       "weighted_degree": 84
     },
@@ -37335,7 +37335,7 @@
       "legacy_id": "人机交互",
       "level": 6,
       "name": "人机交互",
-      "rank": 143,
+      "rank": 144,
       "related_count": 80,
       "weighted_degree": 84
     },
@@ -37471,7 +37471,7 @@
       "legacy_id": "低代码",
       "level": 6,
       "name": "低代码",
-      "rank": 144,
+      "rank": 145,
       "related_count": 72,
       "weighted_degree": 84
     },
@@ -37522,7 +37522,7 @@
       "legacy_id": "具身智能",
       "level": 6,
       "name": "具身智能",
-      "rank": 145,
+      "rank": 146,
       "related_count": 72,
       "weighted_degree": 84
     },
@@ -37595,11 +37595,11 @@
       "weighted_degree": 105
     },
     {
-      "article_count": 17,
+      "article_count": 18,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:Amazon DynamoDB",
-      "degree": 24,
+      "degree": 25,
       "description": "文章标签: 博客与播客",
       "id": "tag:博客与播客",
       "layer": "tag",
@@ -37608,8 +37608,8 @@
       "level": 6,
       "name": "博客与播客",
       "rank": 231,
-      "related_count": 24,
-      "weighted_degree": 50
+      "related_count": 25,
+      "weighted_degree": 52
     },
     {
       "article_count": 9,
@@ -38423,7 +38423,7 @@
       "legacy_id": "推理能力",
       "level": 6,
       "name": "推理能力",
-      "rank": 146,
+      "rank": 147,
       "related_count": 72,
       "weighted_degree": 84
     },
@@ -38576,7 +38576,7 @@
       "legacy_id": "数据泄露",
       "level": 6,
       "name": "数据泄露",
-      "rank": 148,
+      "rank": 149,
       "related_count": 68,
       "weighted_degree": 84
     },
@@ -38683,11 +38683,11 @@
       "weighted_degree": 385
     },
     {
-      "article_count": 40,
+      "article_count": 43,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
-      "degree": 26,
+      "degree": 27,
       "description": "文章标签: 来源快报",
       "id": "tag:来源快报",
       "layer": "tag",
@@ -38695,9 +38695,9 @@
       "legacy_id": "来源快报",
       "level": 6,
       "name": "来源快报",
-      "rank": 152,
-      "related_count": 26,
-      "weighted_degree": 80
+      "rank": 143,
+      "related_count": 27,
+      "weighted_degree": 85
     },
     {
       "article_count": 40,
