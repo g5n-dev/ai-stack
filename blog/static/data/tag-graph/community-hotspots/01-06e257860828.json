@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:面试考点",
-  "generated_at": "2026-07-17T11:43:21Z",
+  "generated_at": "2026-07-17T15:42:15Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -496,7 +496,7 @@
       "legacy_id": "AI 术语",
       "level": 6,
       "name": "AI 术语",
-      "rank": 1669,
+      "rank": 1670,
       "related_count": 7,
       "weighted_degree": 7.6
     },
@@ -513,7 +513,7 @@
       "legacy_id": "AI 概念",
       "level": 6,
       "name": "AI 概念",
-      "rank": 1673,
+      "rank": 1674,
       "related_count": 7,
       "weighted_degree": 7.6
     },
@@ -530,7 +530,7 @@
       "legacy_id": "Apideck CLI",
       "level": 6,
       "name": "Apideck CLI",
-      "rank": 1832,
+      "rank": 1833,
       "related_count": 7,
       "weighted_degree": 7.6
     },
@@ -547,7 +547,7 @@
       "legacy_id": "Self-Feedback",
       "level": 6,
       "name": "Self-Feedback",
-      "rank": 3017,
+      "rank": 3018,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -564,7 +564,7 @@
       "legacy_id": "Token 节省",
       "level": 6,
       "name": "Token 节省",
-      "rank": 3160,
+      "rank": 3161,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -581,7 +581,7 @@
       "legacy_id": "工具分发",
       "level": 6,
       "name": "工具分发",
-      "rank": 4455,
+      "rank": 4456,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -598,7 +598,7 @@
       "legacy_id": "自扩展",
       "level": 6,
       "name": "自扩展",
-      "rank": 6062,
+      "rank": 6063,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -615,7 +615,7 @@
       "legacy_id": "面试考点",
       "level": 6,
       "name": "面试考点",
-      "rank": 6688,
+      "rank": 6689,
       "related_count": 7,
       "weighted_degree": 7
     }

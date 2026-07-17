@@ -1,5 +1,5 @@
 {
-  "active_count": 1966,
+  "active_count": 1969,
   "archived_count": 448,
   "complete_count": 0,
   "legacy_analysis_count": 1910,
@@ -10569,6 +10569,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260717-arxiv-online-neural-space-time-memory-for-dynamic-novel--0-81b4f832ab.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260717-arxiv-pretraining-data-can-be-poisoned-through-computati-0-39c1750752.md": {
       "reasons": [
         "concise_source_card"
@@ -10650,6 +10656,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260717-hacker_news-ai-meets-cryptography-2-what-ai-found-in-openvms-z-0-780ff46db4.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260717-hacker_news-detecting-llm-generated-texts-with-classical-machi-0-30068d7445.md": {
       "reasons": [
         "concise_source_card"
@@ -10673,6 +10685,12 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260717-juejin-每日一个开源项目第161篇open-interpreter-开源-ai-编程-agent用-rust-0-72d10eb23e.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -10680,9 +10698,9 @@
     "archived_content": 448
   },
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 56,
-  "source_file_count": 2414,
-  "source_tree_sha256": "7ccdadc529d23d0b44e922fffbe87f96505109b4c941870b8962ad8762ea2109",
+  "source_brief_count": 59,
+  "source_file_count": 2417,
+  "source_tree_sha256": "f786c2ea49eb1f6868696baac8c29b24c384422878cbdeec5f64b5d27d59534f",
   "warning_counts": {
     "source_excerpt_truncated": 2
   }

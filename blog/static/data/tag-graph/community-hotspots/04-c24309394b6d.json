@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:Amazon DynamoDB",
-  "generated_at": "2026-07-17T11:43:21Z",
+  "generated_at": "2026-07-17T15:42:15Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -263,11 +263,11 @@
   ],
   "nodes": [
     {
-      "article_count": 17,
+      "article_count": 18,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:Amazon DynamoDB",
-      "degree": 24,
+      "degree": 25,
       "description": "文章标签: 博客与播客",
       "id": "tag:博客与播客",
       "layer": "tag",
@@ -276,8 +276,8 @@
       "level": 6,
       "name": "博客与播客",
       "rank": 231,
-      "related_count": 24,
-      "weighted_degree": 50
+      "related_count": 25,
+      "weighted_degree": 52
     },
     {
       "article_count": 4,
@@ -292,7 +292,7 @@
       "legacy_id": "AWS Lambda",
       "level": 6,
       "name": "AWS Lambda",
-      "rank": 562,
+      "rank": 563,
       "related_count": 22,
       "weighted_degree": 28
     },
@@ -360,7 +360,7 @@
       "legacy_id": "Amazon CloudWatch",
       "level": 6,
       "name": "Amazon CloudWatch",
-      "rank": 1985,
+      "rank": 1986,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -377,7 +377,7 @@
       "legacy_id": "Amazon EventBridge",
       "level": 6,
       "name": "Amazon EventBridge",
-      "rank": 1987,
+      "rank": 1988,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -394,7 +394,7 @@
       "legacy_id": "Amazon Quick Sight",
       "level": 6,
       "name": "Amazon Quick Sight",
-      "rank": 1992,
+      "rank": 1993,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -411,7 +411,7 @@
       "legacy_id": "Amazon SageMaker",
       "level": 6,
       "name": "Amazon SageMaker",
-      "rank": 1993,
+      "rank": 1994,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -428,7 +428,7 @@
       "legacy_id": "Amazon Simple Storage Service (S3)",
       "level": 6,
       "name": "Amazon Simple Storage Service (S3)",
-      "rank": 1994,
+      "rank": 1995,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -472,6 +472,23 @@
       "color": "#f59e0b",
       "community_id": "community:tag:Amazon DynamoDB",
       "degree": 2,
+      "description": "文章标签: Company",
+      "id": "tag:Company",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Company",
+      "level": 6,
+      "name": "Company",
+      "rank": 6833,
+      "related_count": 2,
+      "weighted_degree": 2
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Amazon DynamoDB",
+      "degree": 2,
       "description": "文章标签: Global Affairs",
       "id": "tag:Global Affairs",
       "layer": "tag",
@@ -479,14 +496,14 @@
       "legacy_id": "Global Affairs",
       "level": 6,
       "name": "Global Affairs",
-      "rank": 6833,
+      "rank": 6834,
       "related_count": 2,
       "weighted_degree": 2
     }
   ],
   "stats": {
     "total_links": 32,
-    "total_nodes": 13
+    "total_nodes": 14
   },
   "version": 2
 }

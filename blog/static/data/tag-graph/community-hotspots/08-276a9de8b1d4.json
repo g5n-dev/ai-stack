@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:Flux",
-  "generated_at": "2026-07-17T11:43:21Z",
+  "generated_at": "2026-07-17T15:42:15Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -297,7 +297,7 @@
       "weighted_degree": 182
     },
     {
-      "article_count": 16,
+      "article_count": 17,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:Flux",
@@ -311,7 +311,7 @@
       "name": "cs.CV",
       "rank": 153,
       "related_count": 61,
-      "weighted_degree": 78
+      "weighted_degree": 80
     },
     {
       "article_count": 10,
@@ -343,7 +343,7 @@
       "legacy_id": "去噪",
       "level": 6,
       "name": "去噪",
-      "rank": 564,
+      "rank": 565,
       "related_count": 22,
       "weighted_degree": 28
     },
@@ -360,7 +360,7 @@
       "legacy_id": "Diffusion",
       "level": 6,
       "name": "Diffusion",
-      "rank": 1853,
+      "rank": 1854,
       "related_count": 7,
       "weighted_degree": 7.6
     },
@@ -377,7 +377,7 @@
       "legacy_id": "CFG",
       "level": 6,
       "name": "CFG",
-      "rank": 2119,
+      "rank": 2120,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -394,7 +394,7 @@
       "legacy_id": "Flux",
       "level": 6,
       "name": "Flux",
-      "rank": 2356,
+      "rank": 2357,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -411,7 +411,7 @@
       "legacy_id": "SMC-CFG",
       "level": 6,
       "name": "SMC-CFG",
-      "rank": 3057,
+      "rank": 3058,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -428,7 +428,7 @@
       "legacy_id": "交互指南",
       "level": 6,
       "name": "交互指南",
-      "rank": 3444,
+      "rank": 3445,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -445,7 +445,7 @@
       "legacy_id": "图像保护",
       "level": 6,
       "name": "图像保护",
-      "rank": 4109,
+      "rank": 4110,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -462,7 +462,7 @@
       "legacy_id": "控制论",
       "level": 6,
       "name": "控制论",
-      "rank": 4833,
+      "rank": 4834,
       "related_count": 7,
       "weighted_degree": 7
     }

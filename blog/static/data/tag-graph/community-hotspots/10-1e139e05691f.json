@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:Folo",
-  "generated_at": "2026-07-17T11:43:21Z",
+  "generated_at": "2026-07-17T15:42:15Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -394,7 +394,7 @@
       "legacy_id": "AI摘要",
       "level": 6,
       "name": "AI摘要",
-      "rank": 1760,
+      "rank": 1761,
       "related_count": 7,
       "weighted_degree": 7.6
     },
@@ -411,7 +411,7 @@
       "legacy_id": "Folo",
       "level": 6,
       "name": "Folo",
-      "rank": 2361,
+      "rank": 2362,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -428,7 +428,7 @@
       "legacy_id": "RSS阅读器",
       "level": 6,
       "name": "RSS阅读器",
-      "rank": 2971,
+      "rank": 2972,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -445,7 +445,7 @@
       "legacy_id": "信息聚合",
       "level": 6,
       "name": "信息聚合",
-      "rank": 3651,
+      "rank": 3652,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -462,7 +462,7 @@
       "legacy_id": "多端同步",
       "level": 6,
       "name": "多端同步",
-      "rank": 4220,
+      "rank": 4221,
       "related_count": 7,
       "weighted_degree": 7
     }

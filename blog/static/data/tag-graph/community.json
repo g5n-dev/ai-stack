@@ -4,7 +4,7 @@
     {
       "article_count": 797,
       "hotspot_count": 21,
-      "hotspot_file": "community-hotspots/01-0442227391eb.json",
+      "hotspot_file": "community-hotspots/01-06e257860828.json",
       "id": "community:tag:面试考点",
       "leader_id": "tag:LLM",
       "name": "LLM",
@@ -16,7 +16,7 @@
     {
       "article_count": 65,
       "hotspot_count": 17,
-      "hotspot_file": "community-hotspots/02-648ef18c3de7.json",
+      "hotspot_file": "community-hotspots/02-52e740a2d684.json",
       "id": "community:tag:SpeechAnalyzer",
       "leader_id": "tag:开源模型",
       "name": "开源模型",
@@ -28,7 +28,7 @@
     {
       "article_count": 77,
       "hotspot_count": 15,
-      "hotspot_file": "community-hotspots/03-177a645bbebc.json",
+      "hotspot_file": "community-hotspots/03-1a894da1478e.json",
       "id": "community:tag:P-EAGLE",
       "leader_id": "tag:性能优化",
       "name": "性能优化",
@@ -40,7 +40,7 @@
     {
       "article_count": 21,
       "hotspot_count": 14,
-      "hotspot_file": "community-hotspots/04-0058208dbd83.json",
+      "hotspot_file": "community-hotspots/04-c24309394b6d.json",
       "id": "community:tag:Amazon DynamoDB",
       "leader_id": "tag:博客与播客",
       "name": "博客与播客",
@@ -52,7 +52,7 @@
     {
       "article_count": 7,
       "hotspot_count": 14,
-      "hotspot_file": "community-hotspots/05-542a834415d1.json",
+      "hotspot_file": "community-hotspots/05-a0284a5c0824.json",
       "id": "community:tag:移动开发",
       "leader_id": "tag:Android",
       "name": "Android",
@@ -64,7 +64,7 @@
     {
       "article_count": 107,
       "hotspot_count": 13,
-      "hotspot_file": "community-hotspots/06-403271d7a927.json",
+      "hotspot_file": "community-hotspots/06-7ddd66587301.json",
       "id": "community:tag:行业格局",
       "leader_id": "tag:OpenAI",
       "name": "OpenAI",
@@ -76,7 +76,7 @@
     {
       "article_count": 34,
       "hotspot_count": 13,
-      "hotspot_file": "community-hotspots/07-e89dbce6dc0f.json",
+      "hotspot_file": "community-hotspots/07-2c84c420f519.json",
       "id": "community:tag:Autotab",
       "leader_id": "tag:Cursor",
       "name": "Cursor",
@@ -86,21 +86,21 @@
       "weighted_degree": 337.2
     },
     {
-      "article_count": 78,
+      "article_count": 79,
       "hotspot_count": 12,
-      "hotspot_file": "community-hotspots/08-52f80757cd09.json",
+      "hotspot_file": "community-hotspots/08-276a9de8b1d4.json",
       "id": "community:tag:Flux",
       "leader_id": "tag:扩散模型",
       "name": "扩散模型",
       "node_count": 12,
       "rank": 8,
-      "tag_occurrences": 107,
-      "weighted_degree": 716.8
+      "tag_occurrences": 108,
+      "weighted_degree": 718.8
     },
     {
       "article_count": 67,
       "hotspot_count": 12,
-      "hotspot_file": "community-hotspots/09-a65e4634616d.json",
+      "hotspot_file": "community-hotspots/09-91e7ba7b1578.json",
       "id": "community:tag:Gemini 3",
       "leader_id": "tag:模型发布",
       "name": "模型发布",
@@ -112,7 +112,7 @@
     {
       "article_count": 59,
       "hotspot_count": 12,
-      "hotspot_file": "community-hotspots/10-3220a850a33e.json",
+      "hotspot_file": "community-hotspots/10-1e139e05691f.json",
       "id": "community:tag:Folo",
       "leader_id": "tag:开源项目",
       "name": "开源项目",
@@ -124,7 +124,7 @@
     {
       "article_count": 53,
       "hotspot_count": 12,
-      "hotspot_file": "community-hotspots/11-686a1dba23f7.json",
+      "hotspot_file": "community-hotspots/11-531a5eb3210b.json",
       "id": "community:tag:Clippy",
       "leader_id": "tag:AI 助手",
       "name": "AI 助手",
@@ -134,18 +134,18 @@
       "weighted_degree": 491.8
     },
     {
-      "article_count": 1956,
+      "article_count": 1959,
       "hotspot_count": 0,
       "id": "community:other",
       "leader_id": null,
       "name": "其他",
       "node_count": 6645,
       "rank": 12,
-      "tag_occurrences": 13327,
-      "weighted_degree": 92788
+      "tag_occurrences": 13333,
+      "weighted_degree": 92796
     }
   ],
-  "generated_at": "2026-07-17T14:05:13Z",
+  "generated_at": "2026-07-17T15:42:15Z",
   "iterations": 6,
   "limit": 11,
   "links": [
@@ -179,7 +179,7 @@
       "strength": 1,
       "target": "community:tag:Flux",
       "type": "community",
-      "weight": 543
+      "weight": 545
     },
     {
       "id": "edge:community:community:other->community:tag:Folo",

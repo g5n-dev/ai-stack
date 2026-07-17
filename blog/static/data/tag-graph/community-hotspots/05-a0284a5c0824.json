@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:移动开发",
-  "generated_at": "2026-07-17T11:43:21Z",
+  "generated_at": "2026-07-17T15:42:15Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -292,7 +292,7 @@
       "legacy_id": "Kotlin",
       "level": 6,
       "name": "Kotlin",
-      "rank": 517,
+      "rank": 518,
       "related_count": 25,
       "weighted_degree": 28
     },
@@ -326,7 +326,7 @@
       "legacy_id": "Android Bench",
       "level": 6,
       "name": "Android Bench",
-      "rank": 2003,
+      "rank": 2004,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -343,7 +343,7 @@
       "legacy_id": "Bilibili",
       "level": 6,
       "name": "Bilibili",
-      "rank": 2085,
+      "rank": 2086,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -360,7 +360,7 @@
       "legacy_id": "Jetpack Compose",
       "level": 6,
       "name": "Jetpack Compose",
-      "rank": 2537,
+      "rank": 2538,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -377,7 +377,7 @@
       "legacy_id": "JNI",
       "level": 6,
       "name": "JNI",
-      "rank": 2541,
+      "rank": 2542,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -394,7 +394,7 @@
       "legacy_id": "JuiceSSH",
       "level": 6,
       "name": "JuiceSSH",
-      "rank": 2547,
+      "rank": 2548,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -411,7 +411,7 @@
       "legacy_id": "MVVM",
       "level": 6,
       "name": "MVVM",
-      "rank": 2717,
+      "rank": 2718,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -428,7 +428,7 @@
       "legacy_id": "SSH客户端",
       "level": 6,
       "name": "SSH客户端",
-      "rank": 3095,
+      "rank": 3096,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -445,7 +445,7 @@
       "legacy_id": "付费订阅",
       "level": 6,
       "name": "付费订阅",
-      "rank": 3498,
+      "rank": 3499,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -462,7 +462,7 @@
       "legacy_id": "模块化架构",
       "level": 6,
       "name": "模块化架构",
-      "rank": 5252,
+      "rank": 5253,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -479,7 +479,7 @@
       "legacy_id": "第三方客户端",
       "level": 6,
       "name": "第三方客户端",
-      "rank": 5803,
+      "rank": 5804,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -496,7 +496,7 @@
       "legacy_id": "软件更新",
       "level": 6,
       "name": "软件更新",
-      "rank": 6420,
+      "rank": 6421,
       "related_count": 7,
       "weighted_degree": 7
     }
