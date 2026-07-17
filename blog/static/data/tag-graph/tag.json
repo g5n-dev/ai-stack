@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-17T06:30:45Z",
+  "generated_at": "2026-07-17T09:24:29Z",
   "layer": "tag",
   "layers": {
     "application": {
@@ -218090,10 +218090,10 @@
     {
       "id": "edge:cooccurrence:tag:arXiv->tag:cs.CR",
       "source": "tag:arXiv",
-      "strength": 0.5,
+      "strength": 1,
       "target": "tag:cs.CR",
       "type": "cooccurrence",
-      "weight": 1
+      "weight": 2
     },
     {
       "id": "edge:cooccurrence:tag:arXiv->tag:cs.CV",
@@ -218125,7 +218125,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 11
+      "weight": 12
     },
     {
       "id": "edge:cooccurrence:tag:arXiv论文->tag:IDC框架",
@@ -219074,10 +219074,10 @@
     {
       "id": "edge:cooccurrence:tag:cs.CR->tag:来源快报",
       "source": "tag:cs.CR",
-      "strength": 0.5,
+      "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 1
+      "weight": 2
     },
     {
       "id": "edge:cooccurrence:tag:cs.CV->tag:DINOv2",
@@ -377052,7 +377052,7 @@
       "legacy_id": "Agentic AI",
       "level": 6,
       "name": "Agentic AI",
-      "rank": 155,
+      "rank": 156,
       "related_count": 69,
       "weighted_degree": 77
     },
@@ -382679,7 +382679,7 @@
       "legacy_id": "Amazon Bedrock Knowledge Bases",
       "level": 6,
       "name": "Amazon Bedrock Knowledge Bases",
-      "rank": 6804,
+      "rank": 6805,
       "related_count": 4,
       "weighted_degree": 4
     },
@@ -382883,7 +382883,7 @@
       "legacy_id": "Amazon Rekognition",
       "level": 6,
       "name": "Amazon Rekognition",
-      "rank": 6805,
+      "rank": 6806,
       "related_count": 4,
       "weighted_degree": 4
     },
@@ -384163,7 +384163,7 @@
       "weighted_degree": 21
     },
     {
-      "article_count": 11,
+      "article_count": 12,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
@@ -384175,9 +384175,9 @@
       "legacy_id": "arXiv",
       "level": 6,
       "name": "arXiv",
-      "rank": 580,
+      "rank": 576,
       "related_count": 7,
-      "weighted_degree": 22
+      "weighted_degree": 24
     },
     {
       "article_count": 14,
@@ -388226,7 +388226,7 @@
       "weighted_degree": 55
     },
     {
-      "article_count": 2,
+      "article_count": 3,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
@@ -388238,9 +388238,9 @@
       "legacy_id": "cs.CR",
       "level": 6,
       "name": "cs.CR",
-      "rank": 6817,
+      "rank": 6800,
       "related_count": 3,
-      "weighted_degree": 3
+      "weighted_degree": 5
     },
     {
       "article_count": 3,
@@ -392964,7 +392964,7 @@
       "legacy_id": "Google One",
       "level": 6,
       "name": "Google One",
-      "rank": 6806,
+      "rank": 6807,
       "related_count": 4,
       "weighted_degree": 4
     },
@@ -392981,7 +392981,7 @@
       "legacy_id": "Google Workspace",
       "level": 6,
       "name": "Google Workspace",
-      "rank": 6807,
+      "rank": 6808,
       "related_count": 4,
       "weighted_degree": 4
     },
@@ -396738,7 +396738,7 @@
       "legacy_id": "Linux",
       "level": 6,
       "name": "Linux",
-      "rank": 153,
+      "rank": 154,
       "related_count": 70,
       "weighted_degree": 77
     },
@@ -397044,7 +397044,7 @@
       "legacy_id": "LLM Agent",
       "level": 6,
       "name": "LLM Agent",
-      "rank": 576,
+      "rank": 577,
       "related_count": 21,
       "weighted_degree": 22.8
     },
@@ -397061,7 +397061,7 @@
       "legacy_id": "LLM Agents",
       "level": 6,
       "name": "LLM Agents",
-      "rank": 577,
+      "rank": 578,
       "related_count": 21,
       "weighted_degree": 22.2
     },
@@ -397146,7 +397146,7 @@
       "legacy_id": "LLM 推理",
       "level": 6,
       "name": "LLM 推理",
-      "rank": 579,
+      "rank": 580,
       "related_count": 18,
       "weighted_degree": 22.2
     },
@@ -397452,7 +397452,7 @@
       "legacy_id": "LLM评估",
       "level": 6,
       "name": "LLM评估",
-      "rank": 578,
+      "rank": 579,
       "related_count": 20,
       "weighted_degree": 22.2
     },
@@ -411800,7 +411800,7 @@
       "legacy_id": "Vibe Coding",
       "level": 6,
       "name": "Vibe Coding",
-      "rank": 154,
+      "rank": 155,
       "related_count": 70,
       "weighted_degree": 77
     },
@@ -417427,7 +417427,7 @@
       "legacy_id": "人机协作",
       "level": 6,
       "name": "人机协作",
-      "rank": 152,
+      "rank": 153,
       "related_count": 72,
       "weighted_degree": 77
     },
@@ -430109,7 +430109,7 @@
       "legacy_id": "向量数据库",
       "level": 6,
       "name": "向量数据库",
-      "rank": 160,
+      "rank": 161,
       "related_count": 64,
       "weighted_degree": 77
     },
@@ -447619,7 +447619,7 @@
       "legacy_id": "推理",
       "level": 6,
       "name": "推理",
-      "rank": 158,
+      "rank": 159,
       "related_count": 65,
       "weighted_degree": 77
     },
@@ -447908,7 +447908,7 @@
       "legacy_id": "推理模型",
       "level": 6,
       "name": "推理模型",
-      "rank": 162,
+      "rank": 163,
       "related_count": 61,
       "weighted_degree": 77
     },
@@ -449812,7 +449812,7 @@
       "legacy_id": "数据分析",
       "level": 6,
       "name": "数据分析",
-      "rank": 156,
+      "rank": 157,
       "related_count": 68,
       "weighted_degree": 77
     },
@@ -455682,7 +455682,7 @@
       "weighted_degree": 7
     },
     {
-      "article_count": 38,
+      "article_count": 39,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
@@ -455694,9 +455694,9 @@
       "legacy_id": "来源快报",
       "level": 6,
       "name": "来源快报",
-      "rank": 165,
+      "rank": 152,
       "related_count": 26,
-      "weighted_degree": 76
+      "weighted_degree": 78
     },
     {
       "article_count": 1,
@@ -457802,7 +457802,7 @@
       "legacy_id": "模型对齐",
       "level": 6,
       "name": "模型对齐",
-      "rank": 157,
+      "rank": 158,
       "related_count": 66,
       "weighted_degree": 77
     },
@@ -473102,7 +473102,7 @@
       "legacy_id": "网络安全",
       "level": 6,
       "name": "网络安全",
-      "rank": 159,
+      "rank": 160,
       "related_count": 65,
       "weighted_degree": 77
     },
@@ -476468,7 +476468,7 @@
       "legacy_id": "英伟达",
       "level": 6,
       "name": "英伟达",
-      "rank": 164,
+      "rank": 165,
       "related_count": 59,
       "weighted_degree": 77
     },
@@ -477233,7 +477233,7 @@
       "legacy_id": "行业动态",
       "level": 6,
       "name": "行业动态",
-      "rank": 163,
+      "rank": 164,
       "related_count": 60,
       "weighted_degree": 77
     },
@@ -483574,7 +483574,7 @@
       "legacy_id": "软件开发",
       "level": 6,
       "name": "软件开发",
-      "rank": 161,
+      "rank": 162,
       "related_count": 63,
       "weighted_degree": 77
     },

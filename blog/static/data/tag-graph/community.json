@@ -4,7 +4,7 @@
     {
       "article_count": 797,
       "hotspot_count": 21,
-      "hotspot_file": "community-hotspots/01-0669f6f5ccd4.json",
+      "hotspot_file": "community-hotspots/01-a2e2eff4afb2.json",
       "id": "community:tag:面试考点",
       "leader_id": "tag:LLM",
       "name": "LLM",
@@ -16,7 +16,7 @@
     {
       "article_count": 65,
       "hotspot_count": 17,
-      "hotspot_file": "community-hotspots/02-3bf8fb2b0af1.json",
+      "hotspot_file": "community-hotspots/02-532ee2b910d4.json",
       "id": "community:tag:SpeechAnalyzer",
       "leader_id": "tag:开源模型",
       "name": "开源模型",
@@ -28,7 +28,7 @@
     {
       "article_count": 77,
       "hotspot_count": 15,
-      "hotspot_file": "community-hotspots/03-8211350aa31c.json",
+      "hotspot_file": "community-hotspots/03-4151ce33c6d6.json",
       "id": "community:tag:P-EAGLE",
       "leader_id": "tag:性能优化",
       "name": "性能优化",
@@ -40,7 +40,7 @@
     {
       "article_count": 87,
       "hotspot_count": 14,
-      "hotspot_file": "community-hotspots/04-755ba8709f45.json",
+      "hotspot_file": "community-hotspots/04-34f591c49960.json",
       "id": "community:tag:Flux",
       "leader_id": "tag:扩散模型",
       "name": "扩散模型",
@@ -52,7 +52,7 @@
     {
       "article_count": 7,
       "hotspot_count": 14,
-      "hotspot_file": "community-hotspots/05-1987b76019f5.json",
+      "hotspot_file": "community-hotspots/05-97575ca4deb3.json",
       "id": "community:tag:移动开发",
       "leader_id": "tag:Android",
       "name": "Android",
@@ -64,7 +64,7 @@
     {
       "article_count": 107,
       "hotspot_count": 13,
-      "hotspot_file": "community-hotspots/06-992ad1ca9a2e.json",
+      "hotspot_file": "community-hotspots/06-3b71d3dc5612.json",
       "id": "community:tag:行业格局",
       "leader_id": "tag:OpenAI",
       "name": "OpenAI",
@@ -76,7 +76,7 @@
     {
       "article_count": 34,
       "hotspot_count": 13,
-      "hotspot_file": "community-hotspots/07-08a474290faa.json",
+      "hotspot_file": "community-hotspots/07-f391b6edafe0.json",
       "id": "community:tag:Autotab",
       "leader_id": "tag:Cursor",
       "name": "Cursor",
@@ -88,7 +88,7 @@
     {
       "article_count": 20,
       "hotspot_count": 13,
-      "hotspot_file": "community-hotspots/08-e02d7958a503.json",
+      "hotspot_file": "community-hotspots/08-bbdebdda6e4a.json",
       "id": "community:tag:Amazon DynamoDB",
       "leader_id": "tag:博客与播客",
       "name": "博客与播客",
@@ -100,7 +100,7 @@
     {
       "article_count": 67,
       "hotspot_count": 12,
-      "hotspot_file": "community-hotspots/09-ce8d10fbc92d.json",
+      "hotspot_file": "community-hotspots/09-dfc2bc98cd54.json",
       "id": "community:tag:Gemini 3",
       "leader_id": "tag:模型发布",
       "name": "模型发布",
@@ -112,7 +112,7 @@
     {
       "article_count": 59,
       "hotspot_count": 12,
-      "hotspot_file": "community-hotspots/10-6d278f165459.json",
+      "hotspot_file": "community-hotspots/10-3b12f9e39161.json",
       "id": "community:tag:Folo",
       "leader_id": "tag:开源项目",
       "name": "开源项目",
@@ -124,7 +124,7 @@
     {
       "article_count": 53,
       "hotspot_count": 12,
-      "hotspot_file": "community-hotspots/11-1967bea9e406.json",
+      "hotspot_file": "community-hotspots/11-ef038c1913f1.json",
       "id": "community:tag:Clippy",
       "leader_id": "tag:AI 助手",
       "name": "AI 助手",
@@ -134,18 +134,18 @@
       "weighted_degree": 491.8
     },
     {
-      "article_count": 1946,
+      "article_count": 1947,
       "hotspot_count": 0,
       "id": "community:other",
       "leader_id": null,
       "name": "其他",
       "node_count": 6643,
       "rank": 12,
-      "tag_occurrences": 13301,
-      "weighted_degree": 92753
+      "tag_occurrences": 13304,
+      "weighted_degree": 92759
     }
   ],
-  "generated_at": "2026-07-17T06:30:45Z",
+  "generated_at": "2026-07-17T09:24:29Z",
   "iterations": 6,
   "limit": 11,
   "links": [

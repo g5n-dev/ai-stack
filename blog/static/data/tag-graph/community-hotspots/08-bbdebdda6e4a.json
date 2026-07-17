@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:Amazon DynamoDB",
-  "generated_at": "2026-07-17T03:39:12Z",
+  "generated_at": "2026-07-17T09:24:29Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -309,7 +309,7 @@
       "legacy_id": "Amazon DynamoDB",
       "level": 6,
       "name": "Amazon DynamoDB",
-      "rank": 864,
+      "rank": 865,
       "related_count": 16,
       "weighted_degree": 21
     },
@@ -326,7 +326,7 @@
       "legacy_id": "Technical How-to",
       "level": 6,
       "name": "Technical How-to",
-      "rank": 866,
+      "rank": 867,
       "related_count": 16,
       "weighted_degree": 21
     },

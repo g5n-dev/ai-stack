@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:Clippy",
-  "generated_at": "2026-07-17T03:39:12Z",
+  "generated_at": "2026-07-17T09:24:29Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -326,7 +326,7 @@
       "legacy_id": "智能化",
       "level": 6,
       "name": "智能化",
-      "rank": 802,
+      "rank": 803,
       "related_count": 19,
       "weighted_degree": 21
     },
@@ -343,7 +343,7 @@
       "legacy_id": "结构化提示",
       "level": 6,
       "name": "结构化提示",
-      "rank": 869,
+      "rank": 870,
       "related_count": 16,
       "weighted_degree": 21
     },

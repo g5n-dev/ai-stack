@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-17T06:30:45Z",
+  "generated_at": "2026-07-17T09:24:29Z",
   "layers": {
     "application": {
       "color": "#7aa6b8",
@@ -860,7 +860,7 @@
       "legacy_id": "cv",
       "level": 3,
       "name": "计算机视觉",
-      "rank": 6816,
+      "rank": 6817,
       "weighted_degree": 3.1
     },
     {
@@ -911,7 +911,7 @@
       "legacy_id": "data_science",
       "level": 5,
       "name": "数据科学",
-      "rank": 6803,
+      "rank": 6804,
       "weighted_degree": 4
     },
     {
@@ -1098,7 +1098,7 @@
       "legacy_id": "embedding",
       "level": 3,
       "name": "向量嵌入",
-      "rank": 6802,
+      "rank": 6803,
       "weighted_degree": 4.2
     },
     {
@@ -1132,7 +1132,7 @@
       "legacy_id": "flask",
       "level": 2,
       "name": "Flask",
-      "rank": 6811,
+      "rank": 6812,
       "weighted_degree": 3.6
     },
     {
@@ -1217,7 +1217,7 @@
       "legacy_id": "go",
       "level": 1,
       "name": "Go",
-      "rank": 6814,
+      "rank": 6815,
       "weighted_degree": 3.2
     },
     {
@@ -1302,7 +1302,7 @@
       "legacy_id": "langchain",
       "level": 2,
       "name": "LangChain",
-      "rank": 6801,
+      "rank": 6802,
       "weighted_degree": 4.2
     },
     {
@@ -1404,7 +1404,7 @@
       "legacy_id": "multimodal",
       "level": 3,
       "name": "多模态模型",
-      "rank": 6813,
+      "rank": 6814,
       "weighted_degree": 3.4
     },
     {
@@ -1557,7 +1557,7 @@
       "legacy_id": "rag_scene",
       "level": 5,
       "name": "RAG应用",
-      "rank": 6812,
+      "rank": 6813,
       "weighted_degree": 3.4
     },
     {
@@ -1574,7 +1574,7 @@
       "legacy_id": "react",
       "level": 2,
       "name": "React",
-      "rank": 6809,
+      "rank": 6810,
       "weighted_degree": 3.7
     },
     {
@@ -1659,7 +1659,7 @@
       "legacy_id": "tensorflow",
       "level": 2,
       "name": "TensorFlow",
-      "rank": 6808,
+      "rank": 6809,
       "weighted_degree": 4
     },
     {
@@ -1693,7 +1693,7 @@
       "legacy_id": "transformers",
       "level": 2,
       "name": "Transformers",
-      "rank": 6800,
+      "rank": 6801,
       "weighted_degree": 4.6
     },
     {
@@ -1710,7 +1710,7 @@
       "legacy_id": "typescript",
       "level": 1,
       "name": "TypeScript",
-      "rank": 6810,
+      "rank": 6811,
       "weighted_degree": 3.6
     },
     {
@@ -1744,7 +1744,7 @@
       "legacy_id": "vue",
       "level": 2,
       "name": "Vue",
-      "rank": 6815,
+      "rank": 6816,
       "weighted_degree": 3.2
     },
     {
