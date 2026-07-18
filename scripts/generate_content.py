@@ -71,7 +71,7 @@ def content_now(value: datetime | None = None) -> datetime:
 
 
 def safe_source_metadata_text(value: object, *, maximum_length: int = 160) -> str:
-    """Render signed-but-untrusted source metadata as one inert text line."""
+    """Render hash-bound but untrusted source metadata as one inert text line."""
 
     normalized = " ".join(str(value or "").split())
     normalized = _SOURCE_METADATA_URL_RE.sub("", normalized)
@@ -744,7 +744,7 @@ class SuperEnhancedContentGenerator:
 
         Hydration intentionally happens after archive dedupe and the CI per-source
         limit, so an hourly run performs at most one article request.  WAF and
-        structural failures keep the already signed Tier-C RSS brief.
+        structural failures keep the already hash-bound Tier-C RSS brief.
         """
 
         selected = {

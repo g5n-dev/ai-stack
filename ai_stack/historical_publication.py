@@ -2,16 +2,17 @@
 
 The adapter deliberately accepts no historical body.  Only the caller-owned
 route metadata (``date`` and ``aliases``) can cross the boundary; every factual
-field is rebuilt from a bounded :class:`HistoricalSourceCapture`, signed by the
-shared source contract, and rendered as a Tier-C source brief.
+field is rebuilt from a bounded :class:`HistoricalSourceCapture`, hash-bound by
+the shared source contract, and rendered as a Tier-C source brief.
 """
 
 from __future__ import annotations
 
+import hashlib
 import html
 import re
 import unicodedata
-from collections.abc import Mapping
+from collections.abc import Mapping, Sequence
 from datetime import datetime
 from pathlib import PurePosixPath
 from typing import Any
@@ -19,10 +20,12 @@ from urllib.parse import urlsplit
 
 import yaml
 
+from content_security import ContentSecurityError, validate_markdown_document
 from crawler.historical_source_fetch import HistoricalSourceCapture
 
 from .content_quality import analyze_post
 from .historical_taxonomy import infer_historical_taxonomy
+from .publication_security import sensitive_publication_reasons
 from .source_contract import (
     SourceContractError,
     apply_source_contract,
@@ -43,6 +46,8 @@ _CAPTURE_SPECS: dict[str, tuple[str, str, str]] = {
 }
 _MAX_CAPTURE_TITLE_CHARS = 300
 _MAX_CAPTURE_TEXT_BYTES = 24 * 1024
+_MAX_PUBLICATION_EXCERPT_CHARS = 800
+_MIN_PUBLICATION_EXCERPT_BOUNDARY = 480
 _MAX_ALIAS_CHARS = 512
 _CONTROL_CHARACTERS = re.compile(r"[\x00-\x1f\x7f]")
 _MARKDOWN_SPECIAL = re.compile(r"([\\`*{}\[\]()_])")
@@ -151,6 +156,43 @@ def _integer(value: object, *, field: str) -> int:
     return number
 
 
+def _bounded_publication_excerpt(source: str, source_text: str) -> tuple[str, bool]:
+    text = unicodedata.normalize("NFC", source_text).strip()
+    if source not in {"blogs_podcasts", "juejin"} or len(text) <= (
+        _MAX_PUBLICATION_EXCERPT_CHARS
+    ):
+        return text, False
+    prefix = text[: _MAX_PUBLICATION_EXCERPT_CHARS - 1]
+    boundary = max(
+        prefix.rfind(marker) + len(marker)
+        for marker in ("\n\n", "。", "！", "？", ". ", "! ", "? ")
+    )
+    if boundary < _MIN_PUBLICATION_EXCERPT_BOUNDARY:
+        boundary = len(prefix)
+    return f"{prefix[:boundary].rstrip()}…", True
+
+
+def _public_text_values(value: object) -> list[str]:
+    if isinstance(value, Mapping):
+        return [
+            text
+            for key, child in value.items()
+            if str(key) not in {"captured_at", "crawled_at"}
+            for text in _public_text_values(child)
+        ]
+    if isinstance(value, Sequence) and not isinstance(value, (str, bytes, bytearray)):
+        return [text for child in value for text in _public_text_values(child)]
+    return [value] if isinstance(value, str) else []
+
+
+def _reject_sensitive_publication_fields(value: Mapping[str, Any]) -> None:
+    reasons = sensitive_publication_reasons("\n".join(_public_text_values(value)))
+    if reasons:
+        raise HistoricalPublicationError(
+            f"capture public fields contain sensitive content: {reasons[0]}"
+        )
+
+
 def capture_to_source_contract_item(
     capture: HistoricalSourceCapture,
 ) -> dict[str, Any]:
@@ -171,15 +213,18 @@ def capture_to_source_contract_item(
         raise HistoricalPublicationError("capture truncation flag must be boolean")
 
     title = _one_line(capture.title)
-    source_text = str(capture.source_text or "").strip()
+    captured_source_text = str(capture.source_text or "").strip()
     if not title:
         raise HistoricalPublicationError("capture title is missing")
     if len(title) > _MAX_CAPTURE_TITLE_CHARS:
         raise HistoricalPublicationError("capture title exceeds the publication limit")
-    if not source_text:
+    if not captured_source_text:
         raise HistoricalPublicationError("capture source text is missing")
-    if len(source_text.encode("utf-8")) > _MAX_CAPTURE_TEXT_BYTES:
+    if len(captured_source_text.encode("utf-8")) > _MAX_CAPTURE_TEXT_BYTES:
         raise HistoricalPublicationError("capture source text exceeds the evidence limit")
+    source_text, publication_excerpt_truncated = _bounded_publication_excerpt(
+        source, captured_source_text
+    )
     captured_at = _capture_timestamp(capture.captured_at)
     metadata = _metadata_mapping(capture)
     external_url = str(capture.external_url or "").strip()
@@ -198,7 +243,9 @@ def capture_to_source_contract_item(
     ):
         raise HistoricalPublicationError("capture external URL is unsafe")
 
-    truncation_reason = "historical_capture_limit" if capture.source_is_truncated else ""
+    truncation_reasons = (
+        ["historical_capture_limit"] if capture.source_is_truncated else []
+    )
     if source == "juejin":
         article_id = _one_line(metadata.get("article_id"))
         article_match = _JUEJIN_ARTICLE_PATH.fullmatch(parsed_url.path)
@@ -221,7 +268,11 @@ def capture_to_source_contract_item(
             raise HistoricalPublicationError(
                 "capture Juejin truncation reason is invalid"
             )
-        truncation_reason = "historical_excerpt_only"
+        truncation_reasons = ["historical_excerpt_only"]
+    if publication_excerpt_truncated:
+        truncation_reasons.append("historical_publication_excerpt_limit")
+    source_is_truncated = capture.source_is_truncated or publication_excerpt_truncated
+    truncation_reason = ",".join(dict.fromkeys(truncation_reasons))
 
     raw: dict[str, Any] = {
         "source": source,
@@ -232,9 +283,15 @@ def capture_to_source_contract_item(
         "discovery_method": discovery_method,
         "fetch_status": "captured",
         "source_completeness": expected_completeness,
-        "source_is_truncated": capture.source_is_truncated,
+        "source_is_truncated": source_is_truncated,
         "source_truncation_reason": truncation_reason,
         "tags": ["掘金"] if source == "juejin" else [],
+        "source_capture_sha256": (
+            "sha256:"
+            + hashlib.sha256(captured_source_text.encode("utf-8")).hexdigest()
+        ),
+        "source_capture_chars_original": len(captured_source_text),
+        "source_publication_excerpt_chars": len(source_text),
     }
     if source == "arxiv":
         arxiv_id = _one_line(metadata.get("arxiv_id"))
@@ -312,6 +369,8 @@ def capture_to_source_contract_item(
             }
         )
 
+    _reject_sensitive_publication_fields(raw)
+
     try:
         contracted = apply_source_contract(raw)
         verify_source_contract(contracted)
@@ -325,7 +384,7 @@ def capture_to_source_contract_item(
         raise HistoricalPublicationError("source contract changed the capture mode")
     if contracted.get("source_completeness") != expected_completeness:
         raise HistoricalPublicationError("source contract changed capture completeness")
-    if contracted.get("source_is_truncated") is not capture.source_is_truncated:
+    if contracted.get("source_is_truncated") is not source_is_truncated:
         raise HistoricalPublicationError("source contract changed capture truncation")
     return contracted
 
@@ -335,6 +394,16 @@ def _markdown_text(value: object) -> str:
     text = html.escape(text, quote=False)
     text = text.replace("{{", "&#123;&#123;").replace("}}", "&#125;&#125;")
     return _MARKDOWN_SPECIAL.sub(r"\\\1", text)
+
+
+def _frontmatter_text(value: object) -> str:
+    text = unicodedata.normalize("NFC", _one_line(value))
+    return (
+        text.replace("{{", "｛｛")
+        .replace("}}", "｝｝")
+        .replace("<", "＜")
+        .replace(">", "＞")
+    )
 
 
 def _source_note(capture_mode: str, source: str) -> str:
@@ -406,7 +475,15 @@ def _render_body(item: Mapping[str, Any]) -> str:
 
     source_text = str(item.get("source_display_excerpt") or "").strip()
     if capture_mode != "metadata_only" and source_text:
+        truncation_reason = str(item.get("source_truncation_reason") or "")
         lines.extend(["", "## 来源摘要/节选", ""])
+        if "historical_publication_excerpt_limit" in truncation_reason.split(","):
+            lines.extend(
+                [
+                    "公开展示已截断至最多 800 个字符；请访问原始来源查看完整上下文。",
+                    "",
+                ]
+            )
         lines.extend(
             f"> {_markdown_text(line)}" if line.strip() else ">"
             for line in source_text.splitlines()
@@ -428,7 +505,7 @@ def _render_body(item: Mapping[str, Any]) -> str:
             "",
             _source_note(capture_mode, source),
             "",
-            "> 本页只呈现已签名的来源证据，不包含基于旧正文或缺失原文的扩展推断。",
+            "> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。",
         ]
     )
     return "\n".join(lines).strip()
@@ -450,7 +527,7 @@ def render_historical_tier_c_markdown(
     taxonomy = infer_historical_taxonomy(capture)
     evidence = item["evidence"]
     source = str(evidence["source"])
-    title = publication_title_from_contract(item)
+    title = _frontmatter_text(publication_title_from_contract(item))
     capture_mode = str(item["source_capture_mode"])
     frontmatter: dict[str, Any] = {
         "title": title,
@@ -476,6 +553,11 @@ def render_historical_tier_c_markdown(
         "source_support": 1.0,
         "source_title_chars_original": int(item["source_title_chars_original"]),
         "captured_at": str(item["captured_at"]),
+        "source_capture_sha256": str(item["source_capture_sha256"]),
+        "source_capture_chars_original": int(item["source_capture_chars_original"]),
+        "source_publication_excerpt_chars": int(
+            item["source_publication_excerpt_chars"]
+        ),
     }
     truncation_reason = str(item.get("source_truncation_reason") or "").strip()
     if truncation_reason:
@@ -487,6 +569,12 @@ def render_historical_tier_c_markdown(
         sort_keys=False,
     ).rstrip()
     document = f"---\n{encoded}\n---\n\n{_render_body(item)}\n"
+    try:
+        validate_markdown_document(document)
+    except ContentSecurityError as exc:
+        raise HistoricalPublicationError(
+            "rendered historical source brief failed security gate"
+        ) from exc
     analysis = analyze_post(document)
     if analysis.status != "source_brief" or analysis.fatal_reasons:
         reasons = ", ".join(analysis.fatal_reasons) or analysis.status

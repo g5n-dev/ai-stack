@@ -3,6 +3,8 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
+import pytest
+
 from ai_stack.content_quality import (
     analyze_post,
     body_completeness_reasons,
@@ -54,6 +56,28 @@ def test_prompt_gate_does_not_bridge_a_marketing_phrase_to_a_renderer_note() -> 
     )
 
     assert "prompt_context_leak" not in content_quality_reasons(body)
+
+
+@pytest.mark.parametrize(
+    ("body", "reason"),
+    (
+        ("凭据 " + "sk-" + "test_" + "x" * 24, "credential_token"),
+        ('password = "' + "b" * 32 + '"', "credential_assignment"),
+        ("联系 privacy@example.com", "email_address"),
+        ("调试文件 /home/example/private.log", "user_home_path"),
+        ("内网地址 10.20.30.40", "private_network_address"),
+        ("内网 IPv6 fd00::1234", "private_network_address"),
+    ),
+)
+def test_content_quality_rejects_sensitive_public_text(body: str, reason: str) -> None:
+    assert reason in content_quality_reasons(body)
+
+
+def test_content_quality_allows_environment_credential_references() -> None:
+    body = 'api_key = os.getenv("OPENAI_API_KEY"); docs use 192.0.2.10'
+
+    assert "credential_assignment" not in content_quality_reasons(body)
+    assert "private_network_address" not in content_quality_reasons(body)
 
 
 def test_manifest_writer_is_stable_and_frontmatter_is_not_scanned(

@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import hashlib
 from dataclasses import replace
 from datetime import datetime
 
@@ -7,7 +8,7 @@ import pytest
 import yaml
 
 from ai_stack.content_quality import analyze_post
-from ai_stack.source_contract import verify_source_contract
+from ai_stack.source_contract import SourceContractError, verify_source_contract
 from crawler.historical_source_fetch import HistoricalSourceCapture
 
 CAPTURED_AT = "2026-07-18T02:03:04Z"
@@ -252,7 +253,7 @@ def test_renderer_uses_capture_taxonomy_in_frontmatter(
     assert metadata["scenarios"] == expected["scenarios"]
 
 
-def test_renderer_displays_only_signed_official_repository_and_paper_metadata() -> None:
+def test_renderer_displays_only_hash_bound_repository_and_paper_metadata() -> None:
     from ai_stack.historical_publication import (
         _render_body,
         capture_to_source_contract_item,
@@ -305,7 +306,7 @@ def test_renderer_escapes_untrusted_source_text_without_hiding_the_evidence() ->
 
     capture = HistoricalSourceCapture(
         source="blogs_podcasts",
-        title='Unsafe <title> "quoted"',
+        title="Untrusted quoted title",
         external_url="https://example.com/source",
         source_text=(
             '<script>alert("x")</script> {{< unsafe >}} '
@@ -330,6 +331,158 @@ def test_renderer_escapes_untrusted_source_text_without_hiding_the_evidence() ->
     assert "&#123;&#123;&lt; unsafe &gt;&#125;&#125;" in document
     assert "\\[click\\]\\(javascript:alert\\(1\\)\\)" in document
     assert analyze_post(document).status == "source_brief"
+
+
+def test_renderer_neutralizes_active_delimiters_in_publication_title() -> None:
+    from ai_stack.historical_publication import render_historical_tier_c_markdown
+
+    capture = replace(
+        _capture("blogs_podcasts"),
+        title="Why <think> and {{< shortcode >}} must stay inert",
+    )
+
+    document = render_historical_tier_c_markdown(
+        capture,
+        prior_metadata={"date": HISTORICAL_DATE, "aliases": []},
+    )
+
+    metadata = _frontmatter(document)
+    assert metadata["title"] == "Why ＜think＞ and ｛｛＜ shortcode ＞｝｝ must stay inert"
+    assert "<think>" not in document
+    assert "{{<" not in document
+
+
+def test_blog_publication_keeps_only_a_bounded_short_excerpt() -> None:
+    from ai_stack.historical_publication import (
+        capture_to_source_contract_item,
+        render_historical_tier_c_markdown,
+    )
+
+    source_text = "第一段提供可核验的公开背景。" * 80 + "TAIL_MUST_NOT_BE_PUBLISHED"
+    capture = replace(
+        _capture("blogs_podcasts"),
+        source_text=source_text,
+        source_is_truncated=False,
+    )
+
+    item = capture_to_source_contract_item(capture)
+    document = render_historical_tier_c_markdown(
+        capture,
+        prior_metadata={"date": HISTORICAL_DATE, "aliases": []},
+    )
+
+    assert len(item["source_display_excerpt"]) <= 800
+    assert item["source_is_truncated"] is True
+    assert "historical_publication_excerpt_limit" in item["source_truncation_reason"]
+    assert item["source_capture_chars_original"] == len(source_text)
+    assert item["source_capture_sha256"] == (
+        "sha256:" + hashlib.sha256(source_text.encode("utf-8")).hexdigest()
+    )
+    tampered = dict(item)
+    tampered["source_capture_sha256"] = "sha256:" + "0" * 64
+    with pytest.raises(SourceContractError, match="capture payload digest"):
+        verify_source_contract(tampered)
+    assert "TAIL_MUST_NOT_BE_PUBLISHED" not in item["source_display_excerpt"]
+    assert "TAIL_MUST_NOT_BE_PUBLISHED" not in document
+    assert "公开展示已截断至最多 800 个字符" in document
+    assert analyze_post(document).status == "source_brief"
+
+
+@pytest.mark.parametrize(
+    ("length", "expected_length", "expected_truncated"),
+    ((800, 800, False), (801, 800, True)),
+)
+def test_publication_excerpt_limit_has_an_exact_character_boundary(
+    length: int,
+    expected_length: int,
+    expected_truncated: bool,
+) -> None:
+    from ai_stack.historical_publication import capture_to_source_contract_item
+
+    capture = replace(
+        _capture("blogs_podcasts"),
+        source_text="证" * length,
+        source_is_truncated=False,
+    )
+
+    item = capture_to_source_contract_item(capture)
+
+    assert len(item["source_display_excerpt"]) == expected_length
+    assert item["source_is_truncated"] is expected_truncated
+
+
+def test_juejin_publication_combines_capture_and_publication_truncation() -> None:
+    from ai_stack.historical_publication import render_historical_tier_c_markdown
+
+    capture = replace(
+        _capture("juejin", truncated=True),
+        source_text="这是可核验来源节选。" * 100,
+    )
+
+    document = render_historical_tier_c_markdown(
+        capture,
+        prior_metadata={"date": HISTORICAL_DATE, "aliases": []},
+    )
+    metadata = _frontmatter(document)
+
+    assert len(metadata["source_truncation_reason"].split(",")) == 2
+    assert "historical_excerpt_only" in metadata["source_truncation_reason"]
+    assert "historical_publication_excerpt_limit" in metadata["source_truncation_reason"]
+    assert "公开展示已截断至最多 800 个字符" in document
+
+
+@pytest.mark.parametrize(
+    ("unsafe_text", "reason"),
+    (
+        ("凭据 " + "sk-" + "test_" + "x" * 24, "credential_token"),
+        ('api_key = "' + "a" * 32 + '"', "credential_assignment"),
+        ("联系 privacy@example.com 获取资料", "email_address"),
+        ("本机路径 /Users/example/private/project", "user_home_path"),
+        ("内部服务位于 192.168.10.22", "private_network_address"),
+    ),
+)
+def test_capture_adapter_rejects_sensitive_publication_fields(
+    unsafe_text: str,
+    reason: str,
+) -> None:
+    from ai_stack.historical_publication import (
+        HistoricalPublicationError,
+        capture_to_source_contract_item,
+    )
+
+    capture = replace(
+        _capture("blogs_podcasts"),
+        source_text=f"公开节选。{unsafe_text}",
+    )
+
+    with pytest.raises(HistoricalPublicationError, match=reason):
+        capture_to_source_contract_item(capture)
+
+
+def test_capture_adapter_allows_environment_variable_credential_examples() -> None:
+    from ai_stack.historical_publication import capture_to_source_contract_item
+
+    capture = replace(
+        _capture("blogs_podcasts"),
+        source_text='Use api_key = os.getenv("OPENAI_API_KEY") instead of literals.',
+    )
+
+    item = capture_to_source_contract_item(capture)
+
+    assert item["content_mode"] == "source_brief"
+
+
+def test_capture_adapter_does_not_treat_documentation_ip_as_private() -> None:
+    from ai_stack.historical_publication import capture_to_source_contract_item
+
+    capture = replace(
+        _capture("blogs_podcasts"),
+        source_text="Documentation endpoint 192.0.2.10 is reserved for examples.",
+    )
+
+    item = capture_to_source_contract_item(capture)
+
+    assert item["content_mode"] == "source_brief"
 
 
 @pytest.mark.parametrize(
@@ -389,6 +542,24 @@ def test_renderer_rejects_unsafe_route_metadata() -> None:
                 "date": datetime.fromisoformat(HISTORICAL_DATE),
                 "aliases": ["../../escape"],
             },
+        )
+
+
+def test_renderer_fails_closed_when_markdown_security_validation_rejects(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    import ai_stack.historical_publication as publication
+    from content_security import ContentSecurityError, SecurityFinding
+
+    def reject(_document: str) -> None:
+        raise ContentSecurityError(SecurityFinding("unsafe-html", "rejected"))
+
+    monkeypatch.setattr(publication, "validate_markdown_document", reject, raising=False)
+
+    with pytest.raises(publication.HistoricalPublicationError, match="security gate"):
+        publication.render_historical_tier_c_markdown(
+            _capture("arxiv"),
+            prior_metadata={"date": HISTORICAL_DATE, "aliases": []},
         )
 
 
@@ -508,7 +679,7 @@ def test_renderer_rejects_malformed_prior_metadata(prior_metadata: object) -> No
         )
 
 
-def test_renderer_fails_closed_when_signed_source_text_trips_the_post_gate() -> None:
+def test_renderer_fails_closed_when_hash_bound_source_text_trips_the_post_gate() -> None:
     from ai_stack.historical_publication import (
         HistoricalPublicationError,
         render_historical_tier_c_markdown,

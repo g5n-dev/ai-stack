@@ -18,6 +18,7 @@ from urllib.parse import urlsplit
 import yaml
 
 from .identity import canonicalize_url
+from .publication_security import sensitive_publication_reasons
 
 _FRONTMATTER_RE = re.compile(
     r"\A(?:\ufeff)?---[ \t]*\r?\n.*?\r?\n---[ \t]*(?:\r?\n|\Z)",
@@ -786,6 +787,7 @@ def content_quality_reasons(body: str) -> tuple[str, ...]:
             {
                 *synthetic_body_reasons(body),
                 *body_completeness_reasons(body),
+                *sensitive_publication_reasons(body),
             }
         )
     )

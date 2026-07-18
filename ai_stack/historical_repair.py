@@ -1283,7 +1283,7 @@ def _active_provenance_metadata(metadata: Mapping[str, Any], body: str) -> dict[
         is_evidence_backed_rewrite(result, body)
         or is_curated_evidence_backed_rewrite(result, body)
     ):
-        # Modern Tier-B output already carries either a signed crawler contract
+        # Modern Tier-B output already carries either a hash-bound crawler contract
         # or a reviewed multi-source editorial contract. Historical maintenance
         # must be a fixed point for both forms instead of relabeling them as an
         # unverifiable legacy analysis.

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Plan or explicitly apply authenticated historical source-recovery evidence."""
+"""Plan or explicitly apply hash-bound historical source-recovery evidence."""
 
 from __future__ import annotations
 
@@ -28,6 +28,10 @@ from ai_stack.historical_capture_job import (  # noqa: E402
     HistoricalCaptureJobError,
     load_capture_audit,
     load_historical_capture_inventory,
+)
+from ai_stack.historical_publication import (  # noqa: E402
+    HistoricalPublicationError,
+    capture_to_source_contract_item,
 )
 from ai_stack.historical_rehydration import (  # noqa: E402
     HISTORICAL_RECOVERY_FAILURE_TYPES,
@@ -139,6 +143,14 @@ def _same_input(left: Path, right: Path) -> bool:
         return os.path.samefile(left, right)
     except OSError:
         return False
+
+
+def _inside_repository(path: Path) -> bool:
+    try:
+        path.absolute().relative_to(PROJECT_ROOT.absolute())
+    except ValueError:
+        return False
+    return True
 
 
 def _require_private_capture_audit(path: Path) -> None:
@@ -287,6 +299,10 @@ def load_historical_rehydration_outcomes(
     audit_file = Path(capture_audit_path).absolute()
     if _same_input(inventory_file, audit_file):
         raise HistoricalRehydrationCLIError("input_paths_must_differ")
+    if _inside_repository(audit_file):
+        raise HistoricalRehydrationCLIError(
+            "capture_audit_repository_path_rejected"
+        )
     _require_private_capture_audit(audit_file)
     inventory = load_historical_capture_inventory(inventory_file)
     audit = load_capture_audit(audit_file)
@@ -365,6 +381,17 @@ def load_historical_rehydration_outcomes(
                 failures[path] = HistoricalRecoveryFailure(
                     failure_type="capture_validation_error",
                     reason=f"capture_{terminal_reasons[0]}",
+                    attempted_at=str(result["attempted_at"]),
+                )
+                continue
+            try:
+                capture_to_source_contract_item(capture)
+            except HistoricalPublicationError:
+                if not archive_failures:
+                    raise HistoricalRehydrationCLIError("capture_payload_invalid") from None
+                failures[path] = HistoricalRecoveryFailure(
+                    failure_type="capture_validation_error",
+                    reason="capture_publication_validation_error",
                     attempted_at=str(result["attempted_at"]),
                 )
                 continue

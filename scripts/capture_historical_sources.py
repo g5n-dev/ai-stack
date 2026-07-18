@@ -89,6 +89,14 @@ def _same_path(left: Path, right: Path) -> bool:
     return left.absolute() == right.absolute()
 
 
+def _inside_repository(path: Path) -> bool:
+    try:
+        path.absolute().relative_to(PROJECT_ROOT.absolute())
+    except ValueError:
+        return False
+    return True
+
+
 def main(argv: Sequence[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
     try:
@@ -106,6 +114,10 @@ def main(argv: Sequence[str] | None = None) -> int:
         if args.resume and args.output is None:
             raise HistoricalCaptureJobError("resume_requires_output")
         if args.output is not None:
+            if _inside_repository(args.output):
+                raise HistoricalCaptureJobError(
+                    "capture_output_repository_path_rejected"
+                )
             if _same_path(args.output, args.inventory):
                 raise HistoricalCaptureJobError("capture_output_invalid")
             if args.blog_allowlist_config is not None and _same_path(

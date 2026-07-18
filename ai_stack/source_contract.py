@@ -24,6 +24,7 @@ _MAX_EVIDENCE_BYTES = 64 * 1024
 _MAX_STORED_SOURCE_BYTES = 24 * 1024
 _LEGACY_MAX_DISPLAY_EXCERPT_BYTES = 6_000
 _MAX_PUBLICATION_TITLE_CHARS = 300
+_SHA256_DIGEST_RE = re.compile(r"^sha256:[0-9a-f]{64}$")
 _ALLOWED_SOURCES = frozenset(
     {
         "arxiv",
@@ -169,6 +170,42 @@ def _evidence_fields(source: str, item: Mapping[str, Any], source_text: str) -> 
         "source_text": source_text,
         "tags": source_tags,
     }
+    capture_field_names = (
+        "source_capture_sha256",
+        "source_capture_chars_original",
+        "source_publication_excerpt_chars",
+    )
+    if any(name in item for name in capture_field_names):
+        capture_sha256 = _text(item.get("source_capture_sha256"))
+        capture_chars = item.get("source_capture_chars_original")
+        excerpt_chars = item.get("source_publication_excerpt_chars")
+        if (
+            _SHA256_DIGEST_RE.fullmatch(capture_sha256) is None
+            or type(capture_chars) is not int
+            or type(excerpt_chars) is not int
+            or capture_chars < 1
+            or excerpt_chars < 1
+            or excerpt_chars > capture_chars
+            or (
+                source in {"blogs_podcasts", "juejin"}
+                and excerpt_chars > 800
+            )
+            or excerpt_chars != len(source_text)
+            or (
+                excerpt_chars == capture_chars
+                and capture_sha256
+                != "sha256:"
+                + hashlib.sha256(source_text.encode("utf-8")).hexdigest()
+            )
+        ):
+            raise SourceContractError("source capture publication metadata is invalid")
+        common.update(
+            {
+                "source_capture_sha256": capture_sha256,
+                "source_capture_chars_original": capture_chars,
+                "source_publication_excerpt_chars": excerpt_chars,
+            }
+        )
     if source == "hacker_news":
         common.update(
             {
@@ -239,7 +276,7 @@ def _evidence_digest(evidence: Mapping[str, Any]) -> str:
         "fields": evidence.get("fields"),
     }
     # v1 digests are already persisted in historical crawler records.  New v2
-    # provenance fields are signed only by v2 so those immutable v1 snapshots
+    # provenance fields are hash-bound only by v2 so those immutable v1 snapshots
     # remain verifiable during rolling deploys and archive repair.
     if _text(evidence.get("extractor_version")) == FULL_ARTICLE_EXTRACTOR_VERSION:
         payload.update(
@@ -465,6 +502,13 @@ def verify_source_contract(item: Mapping[str, Any]) -> None:
         raise SourceContractError("source text does not match evidence")
     if item.get("source_text_chars") != len(_text(fields.get("source_text"))):
         raise SourceContractError("source text length does not match evidence")
+    for name, label in (
+        ("source_capture_sha256", "capture payload digest"),
+        ("source_capture_chars_original", "capture payload length"),
+        ("source_publication_excerpt_chars", "publication excerpt length"),
+    ):
+        if name in fields and item.get(name) != fields.get(name):
+            raise SourceContractError(f"source {label} does not match evidence")
     if _text(item.get("captured_at")) != _text(evidence.get("captured_at")):
         raise SourceContractError("source capture time does not match evidence")
     if _text(item.get("discovery_method")) != _text(evidence.get("discovery_method")):
@@ -602,7 +646,7 @@ def promote_juejin_full_article(
 
 
 def publication_title_from_contract(item: Mapping[str, Any]) -> str:
-    """Derive the bounded display title from signed immutable evidence."""
+    """Derive the bounded display title from hash-bound immutable evidence."""
 
     verify_source_contract(item)
     evidence = item.get("evidence")

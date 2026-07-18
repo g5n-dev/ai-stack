@@ -1180,6 +1180,51 @@ def test_cli_writes_only_explicit_0600_audit_and_never_logs_evidence(
     assert inventory_path.read_text(encoding="utf-8").startswith("{")
 
 
+def test_cli_rejects_capture_audit_output_inside_the_repository(
+    tmp_path: Path,
+    capsys,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    import scripts.capture_historical_sources as cli
+
+    repository = tmp_path / "repository"
+    repository.mkdir()
+    inventory_path = tmp_path / "inventory.json"
+    inventory_path.write_text(json.dumps(_inventory([])), encoding="utf-8")
+    output = repository / "capture-audit.json"
+    monkeypatch.setattr(cli, "PROJECT_ROOT", repository)
+    monkeypatch.setattr(
+        cli,
+        "run_historical_capture_job",
+        lambda *_args, **_kwargs: pytest.fail("network job must not start"),
+    )
+
+    assert cli.main(["--inventory", str(inventory_path), "--output", str(output)]) == 2
+    assert "capture_output_repository_path_rejected" in capsys.readouterr().err
+    assert not output.exists()
+
+
+def test_capture_audit_library_rejects_repository_paths(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    import ai_stack.historical_capture_job as job
+
+    repository = tmp_path / "repository"
+    repository.mkdir()
+    destination = repository / "capture-audit.json"
+    audit = run_historical_capture_job(_inventory([]), limit=1)
+    monkeypatch.setattr(job, "_PROJECT_ROOT", repository, raising=False)
+
+    with pytest.raises(HistoricalCaptureJobError, match="repository_path_rejected"):
+        job.write_capture_audit(destination, audit)
+
+    destination.write_text(json.dumps(audit), encoding="utf-8")
+    destination.chmod(0o600)
+    with pytest.raises(HistoricalCaptureJobError, match="repository_path_rejected"):
+        job.load_capture_audit(destination)
+
+
 def test_cli_resume_limit_moves_to_the_next_unseen_inventory_rows(
     tmp_path: Path,
     capsys,

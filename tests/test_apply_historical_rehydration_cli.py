@@ -315,6 +315,40 @@ def test_capture_validation_does_not_reject_excerpt_shape_that_renderer_can_wrap
     assert outcomes.failures == {}
 
 
+def test_sensitive_capture_is_converted_to_a_safe_terminal_outcome(
+    tmp_path: Path,
+) -> None:
+    from scripts.apply_historical_rehydration import (
+        HistoricalRehydrationCLIError,
+        load_historical_rehydration_outcomes,
+    )
+
+    _posts, inventory_path, audit_path, _inventory_payload, audit_payload = _fixture(tmp_path)
+    capture = audit_payload["results"][0]["capture"]  # type: ignore[index]
+    capture["source_text"] = "凭据 " + "sk-" + "test_" + "x" * 24  # type: ignore[index]
+    audit_payload["results_sha256"] = sha256_digest(audit_payload["results"])
+    _write_json(audit_path, audit_payload)
+
+    with pytest.raises(HistoricalRehydrationCLIError, match="capture_payload_invalid"):
+        load_historical_rehydration_outcomes(
+            inventory_path,
+            audit_path,
+            archive_failures=False,
+        )
+
+    outcomes = load_historical_rehydration_outcomes(
+        inventory_path,
+        audit_path,
+        archive_failures=True,
+    )
+
+    assert outcomes.captures == {}
+    failure = outcomes.failures["article.md"]
+    assert failure.failure_type == "capture_validation_error"
+    assert failure.reason == "capture_publication_validation_error"
+    assert failure.attempted_at == ATTEMPTED_AT
+
+
 def test_rejects_capture_audit_inventory_digest_mismatch_without_secret_logging(
     tmp_path: Path, capsys
 ) -> None:
@@ -353,6 +387,28 @@ def test_rejects_non_0600_audit_symlinks_and_same_input_path(tmp_path: Path, cap
     inventory.chmod(0o600)
     assert main(_base_arguments(posts, inventory, inventory)) == 2
     assert "input_paths_must_differ" in capsys.readouterr().err
+
+
+def test_rejects_capture_audit_stored_inside_the_repository(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    import scripts.apply_historical_rehydration as cli
+
+    posts, inventory, audit, _inventory_payload, _audit_payload = _fixture(tmp_path)
+    monkeypatch.setattr(cli, "PROJECT_ROOT", tmp_path)
+
+    with pytest.raises(
+        cli.HistoricalRehydrationCLIError,
+        match="capture_audit_repository_path_rejected",
+    ):
+        cli.load_historical_rehydration_outcomes(
+            inventory,
+            audit,
+            archive_failures=False,
+        )
+
+    assert (posts / "article.md").is_file()
 
 
 @pytest.mark.parametrize(

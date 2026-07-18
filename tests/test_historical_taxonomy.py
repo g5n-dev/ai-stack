@@ -51,7 +51,7 @@ def test_arxiv_taxonomy_comes_only_from_title_abstract_and_category() -> None:
     assert taxonomy["scenarios"] == ["AI/ML项目", "大语言模型", "RAG应用"]
 
 
-def test_github_taxonomy_uses_signed_topics_and_language_conservatively() -> None:
+def test_github_taxonomy_uses_hash_bound_topics_and_language_conservatively() -> None:
     from ai_stack.historical_taxonomy import infer_historical_taxonomy
 
     capture = _capture(

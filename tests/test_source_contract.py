@@ -87,7 +87,7 @@ def test_contract_normalizes_source_identity_and_accepts_string_hn_ids() -> None
     verify_source_contract(contracted)
 
 
-def test_existing_contract_cannot_be_resigned_after_downstream_tampering() -> None:
+def test_existing_contract_cannot_be_rehashed_after_downstream_tampering() -> None:
     contracted = apply_source_contract(
         {
             "source": "arxiv",

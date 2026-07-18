@@ -48,6 +48,7 @@ CAPTURE_AUDIT_SCHEMA = "ai_stack.historical_capture.audit"
 CAPTURE_AUDIT_VERSION = 1
 BLOG_ALLOWLIST_SCHEMA = "ai_stack.historical_capture.blog_allowlist"
 BLOG_ALLOWLIST_VERSION = 1
+_PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
 DEFAULT_LIMIT = 20
 MAX_LIMIT = 500
@@ -187,6 +188,29 @@ def _reject_symlink_components(path: Path) -> None:
         current /= part
         if current.is_symlink():
             raise HistoricalCaptureJobError("unsafe_symlink_path")
+
+
+def _reject_capture_audit_repository_path(path: Path) -> None:
+    try:
+        path.absolute().relative_to(_PROJECT_ROOT.absolute())
+    except ValueError:
+        return
+    raise HistoricalCaptureJobError("capture_audit_repository_path_rejected")
+
+
+def _require_private_capture_audit(path: Path) -> None:
+    _reject_capture_audit_repository_path(path)
+    _reject_symlink_components(path)
+    try:
+        details = path.lstat()
+    except OSError as exc:
+        raise HistoricalCaptureJobError("capture_audit_private_file_required") from exc
+    if (
+        not stat.S_ISREG(details.st_mode)
+        or details.st_nlink != 1
+        or stat.S_IMODE(details.st_mode) != 0o600
+    ):
+        raise HistoricalCaptureJobError("capture_audit_private_file_required")
 
 
 def _read_json_file(path: str | Path, *, maximum_bytes: int) -> Mapping[str, Any]:
@@ -1105,7 +1129,9 @@ def run_historical_capture_job(
 
 
 def load_capture_audit(path: str | Path) -> dict[str, Any]:
-    audit = dict(_read_json_file(path, maximum_bytes=_MAX_INPUT_BYTES))
+    candidate = Path(path).absolute()
+    _require_private_capture_audit(candidate)
+    audit = dict(_read_json_file(candidate, maximum_bytes=_MAX_INPUT_BYTES))
     _validated_resume_successes(audit)
     return audit
 
@@ -1116,6 +1142,7 @@ def write_capture_audit(path: str | Path, audit: Mapping[str, Any]) -> None:
     destination = Path(path).absolute()
     if destination.suffix.casefold() != ".json":
         raise HistoricalCaptureJobError("capture_output_invalid")
+    _reject_capture_audit_repository_path(destination)
     _validated_resume_successes(audit)
     _reject_symlink_components(destination)
     try:
