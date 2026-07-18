@@ -45,6 +45,14 @@
     steady: "稳定",
     cooling: "降温",
   });
+  const STATE_GLYPHS = Object.freeze({ new: "✦", rising: "↑", steady: "•", cooling: "↓" });
+  const HEAT_VISUALS = Object.freeze([
+    Object.freeze({ key: "cold", label: "低热", minimum: 0, color: "#75818d", rgb: "117,129,141", rings: 2, glow: 0.08 }),
+    Object.freeze({ key: "watch", label: "观察", minimum: 50, color: "#7fb0c9", rgb: "127,176,201", rings: 3, glow: 0.14 }),
+    Object.freeze({ key: "active", label: "活跃", minimum: 60, color: "#4db6ac", rgb: "77,182,172", rings: 4, glow: 0.2 }),
+    Object.freeze({ key: "hot", label: "高热", minimum: 67, color: "#5adacf", rgb: "90,218,207", rings: 5, glow: 0.3 }),
+    Object.freeze({ key: "signal", label: "强信号", minimum: 70, color: "#f3a948", rgb: "243,169,72", rings: 7, glow: 0.42 }),
+  ]);
   const CONFIDENCE_LABELS = Object.freeze({ high: "高置信", medium: "中等置信" });
   const WINDOW_LABELS = Object.freeze({ "24h": "24 小时", "7d": "7 天", "30d": "30 天" });
   const SOURCE_LABELS = Object.freeze({
@@ -596,6 +604,10 @@
     return view === "matrix" && !compact;
   }
 
+  function shouldDestroyOnPageHide(event) {
+    return event?.persisted !== true;
+  }
+
   function resolveWindowSignal(current, topicWindows, windowName) {
     if (current && typeof current === "object") return current;
     if (!WINDOWS.includes(windowName) || !topicWindows || typeof topicWindows !== "object") return null;
@@ -624,13 +636,54 @@
     const source = normalizeCompare(state.source);
     const scenario = normalizeCompare(state.scenario);
     const signal = SIGNALS.includes(state.signal) ? state.signal : "all";
-    return trends.filter((trend) => {
+    const filtered = trends.filter((trend) => {
       if (!trend || typeof trend !== "object") return false;
       if (signal !== "all" && trend.state !== signal) return false;
       if (query && !normalizeCompare(trend.topic).includes(query)) return false;
       if (source && !(trend.sources || []).some((item) => normalizeCompare(item.name) === source)) return false;
       if (scenario && !(trend.scenarios || []).some((item) => normalizeCompare(item.name) === scenario)) return false;
       return true;
+    });
+    if (!source && !scenario) return filtered;
+
+    function facetCount(items, target) {
+      if (!target) return 0;
+      return (items || []).find((item) => normalizeCompare(item.name) === target)?.count || 0;
+    }
+
+    return filtered.sort((left, right) => {
+      const scenarioDelta = facetCount(right.scenarios, scenario) - facetCount(left.scenarios, scenario);
+      if (scenarioDelta) return scenarioDelta;
+      const sourceDelta = facetCount(right.sources, source) - facetCount(left.sources, source);
+      if (sourceDelta) return sourceDelta;
+      return right.score - left.score || normalizeCompare(left.topic).localeCompare(normalizeCompare(right.topic));
+    });
+  }
+
+  function countFacetTopics(trends, key, name) {
+    if (!Array.isArray(trends) || !["sources", "scenarios"].includes(key)) return 0;
+    const target = normalizeCompare(name);
+    if (!target) return 0;
+    return trends.reduce((total, trend) => (
+      (trend?.[key] || []).some((facet) => normalizeCompare(facet.name) === target)
+        ? total + 1
+        : total
+    ), 0);
+  }
+
+  function reconcileFacetState(state = {}, facets = {}) {
+    function canonicalFacet(items, value) {
+      const target = normalizeCompare(value);
+      if (!target) return "";
+      return (Array.isArray(items) ? items : [])
+        .find((facet) => normalizeCompare(facet?.name) === target)?.name || "";
+    }
+
+    const source = canonicalFacet(facets.sources, state.source);
+    const scenario = canonicalFacet(facets.scenarios, state.scenario);
+    return Object.freeze({
+      state: { ...state, source, scenario },
+      changed: source !== (state.source || "") || scenario !== (state.scenario || ""),
     });
   }
 
@@ -673,6 +726,22 @@
     model.topicController = null;
     model.topicSequence = (Number.isSafeInteger(model.topicSequence) ? model.topicSequence : 0) + 1;
     return model.topicSequence;
+  }
+
+  function heatVisual(score) {
+    const value = Math.max(0, Math.min(100, Number(score) || 0));
+    for (let index = HEAT_VISUALS.length - 1; index >= 0; index -= 1) {
+      if (value >= HEAT_VISUALS[index].minimum) return HEAT_VISUALS[index];
+    }
+    return HEAT_VISUALS[0];
+  }
+
+  function heatTier(score) {
+    return heatVisual(score).key;
+  }
+
+  function heatRgba(visual, alpha) {
+    return `rgba(${visual.rgb},${Math.max(0, Math.min(1, alpha))})`;
   }
 
   function layoutMatrix(trends, width, height, selectedId = "", rankById = null) {
@@ -759,6 +828,7 @@
         topic: item.topic,
         state: item.state,
         score: Number(item.score) || 0,
+        heat: heatVisual(item.score),
         rank,
         x: Math.round(safeWidth * slot[0] * 1000) / 1000,
         y: Math.round(safeHeight * slot[1] * 1000) / 1000,
@@ -919,6 +989,7 @@
   }
 
   function drawTopologyRoute(context, center, point, index) {
+    const visual = point.heat || heatVisual(point.score);
     const start = ellipseBoundary(center, point.x, point.y, 7);
     const end = ellipseBoundary(point, center.x, center.y, -5);
     const dx = end.x - start.x;
@@ -936,8 +1007,8 @@
       y: start.y + (dy * 0.7) + (normalY * bend * 0.55),
     };
     context.save();
-    context.strokeStyle = "rgba(77,182,172,0.42)";
-    context.lineWidth = 1.15;
+    context.strokeStyle = heatRgba(visual, 0.2 + (visual.glow * 0.55));
+    context.lineWidth = 1 + (visual.glow * 0.55);
     context.setLineDash([8, 9]);
     context.beginPath();
     context.moveTo(start.x, start.y);
@@ -953,7 +1024,7 @@
     context.setLineDash([]);
     const angle = Math.atan2(end.y - secondControl.y, end.x - secondControl.x);
     const arrow = 7;
-    context.fillStyle = "rgba(90,218,207,0.72)";
+    context.fillStyle = heatRgba(visual, 0.58 + (visual.glow * 0.48));
     context.beginPath();
     context.moveTo(end.x, end.y);
     context.lineTo(
@@ -970,40 +1041,39 @@
   }
 
   function drawCellContours(context, point, active = false, hovered = false) {
-    const amber = active;
+    const visual = point.heat || heatVisual(point.score);
     context.save();
-    context.fillStyle = amber ? "rgba(243,169,72,0.045)" : "rgba(77,182,172,0.028)";
+    context.fillStyle = heatRgba(visual, 0.018 + (visual.glow * (active ? 0.13 : 0.08)));
     context.beginPath();
     context.ellipse(point.x, point.y, point.cellRadiusX * 0.82, point.cellRadiusY * 0.8, 0, 0, Math.PI * 2);
     context.fill();
-    const rings = active ? 7 : 6;
+    const rings = visual.rings;
     for (let ring = 0; ring < rings; ring += 1) {
-      const scale = 0.68 + (ring * (active ? 0.075 : 0.07));
+      const scale = 0.7 + (ring * (rings > 5 ? 0.065 : 0.078));
       traceOrganicContour(context, point, scale, ring);
-      context.strokeStyle = amber
-        ? `rgba(223,142,35,${0.2 - (ring * 0.015)})`
-        : `rgba(77,182,172,${(hovered ? 0.3 : 0.19) - (ring * 0.018)})`;
-      context.lineWidth = ring === 0 ? 1.25 : 1;
+      const alpha = Math.max(0.055, 0.12 + visual.glow + (hovered ? 0.09 : 0) - (ring * 0.026));
+      context.strokeStyle = heatRgba(visual, alpha);
+      context.lineWidth = ring === 0 ? 1.2 + (visual.glow * 0.8) : 1;
       context.stroke();
     }
     context.restore();
   }
 
   function drawHub(context, point, active = false, hovered = false) {
-    const color = active ? "#f3a948" : "#4bd2c8";
+    const visual = point.heat || heatVisual(point.score);
     const radius = point.radius + (hovered ? 2 : 0);
     context.save();
-    context.shadowColor = active ? "rgba(243,169,72,0.52)" : "rgba(77,210,200,0.42)";
-    context.shadowBlur = active ? 14 : 10;
+    context.shadowColor = heatRgba(visual, 0.3 + (visual.glow * 0.62));
+    context.shadowBlur = Math.min(18, 6 + (visual.glow * 24) + (hovered ? 2 : 0));
     context.fillStyle = "rgba(6,15,24,0.96)";
-    context.strokeStyle = color;
-    context.lineWidth = active ? 3 : 2.2;
+    context.strokeStyle = visual.color;
+    context.lineWidth = 1.8 + (visual.glow * 1.8) + (active ? 0.8 : 0);
     context.beginPath();
     context.arc(point.x, point.y, radius, 0, Math.PI * 2);
     context.fill();
     context.stroke();
     context.shadowBlur = 0;
-    context.strokeStyle = active ? "rgba(243,169,72,0.4)" : "rgba(77,210,200,0.34)";
+    context.strokeStyle = heatRgba(visual, 0.3 + (visual.glow * 0.36));
     context.lineWidth = 1;
     context.beginPath();
     context.arc(point.x, point.y, Math.max(5, radius * 0.56), 0, Math.PI * 2);
@@ -1014,6 +1084,13 @@
     context.moveTo(point.x, point.y - radius + 3);
     context.lineTo(point.x, point.y + radius - 3);
     context.stroke();
+    if (active) {
+      context.strokeStyle = heatRgba(visual, 0.42 + (visual.glow * 0.55));
+      context.lineWidth = 1;
+      context.beginPath();
+      context.arc(point.x, point.y, radius + 6, 0, Math.PI * 2);
+      context.stroke();
+    }
     context.restore();
   }
 
@@ -1027,6 +1104,7 @@
   }
 
   function drawOuterNetwork(context, point, hovered = false) {
+    const visual = point.heat || heatVisual(point.score);
     drawCellContours(context, point, false, hovered);
     const facets = point.facets || [];
     facets.forEach((facet, index) => {
@@ -1035,14 +1113,14 @@
       const radial = 0.48 + (hashUnit(point.id, index + 70) * 0.18);
       const nodeX = point.x + (Math.cos(angle) * point.cellRadiusX * radial);
       const nodeY = point.y + (Math.sin(angle) * point.cellRadiusY * radial);
-      context.strokeStyle = "rgba(77,182,172,0.32)";
+      context.strokeStyle = heatRgba(visual, 0.2 + (visual.glow * 0.45));
       context.lineWidth = 1;
       context.beginPath();
       context.moveTo(point.x, point.y);
       context.lineTo(nodeX, nodeY);
       context.stroke();
       context.fillStyle = "rgba(6,15,24,0.96)";
-      context.strokeStyle = hovered ? "rgba(113,238,228,0.94)" : "rgba(91,215,205,0.82)";
+      context.strokeStyle = heatRgba(visual, hovered ? 0.96 : 0.72 + (visual.glow * 0.4));
       context.lineWidth = 1.2;
       context.beginPath();
       context.arc(nodeX, nodeY, 3 + Math.min(2.2, Math.sqrt(Math.max(0, facet.count)) * 0.62), 0, Math.PI * 2);
@@ -1053,6 +1131,7 @@
   }
 
   function drawCentralNetwork(context, point, hovered = false) {
+    const visual = point.heat || heatVisual(point.score);
     drawCellContours(context, point, true, hovered);
     const slots = [
       [0, -0.59], [0.36, -0.48], [0.61, -0.24], [0.65, 0.1], [0.47, 0.41],
@@ -1064,7 +1143,7 @@
       y: point.y + (slots[index][1] * point.cellRadiusY),
     }));
     nodes.forEach((node, index) => {
-      context.strokeStyle = "rgba(221,148,50,0.43)";
+      context.strokeStyle = heatRgba(visual, 0.3 + (visual.glow * 0.42));
       context.lineWidth = 1;
       context.beginPath();
       context.moveTo(point.x, point.y);
@@ -1072,7 +1151,7 @@
       context.stroke();
       const next = nodes[index + 1];
       if (next && stableHash(`${point.id}:${index}`) % 3 !== 0) {
-        context.strokeStyle = "rgba(77,182,172,0.22)";
+        context.strokeStyle = heatRgba(visual, 0.15 + (visual.glow * 0.28));
         context.beginPath();
         context.moveTo(node.x, node.y);
         context.lineTo(next.x, next.y);
@@ -1081,8 +1160,8 @@
     });
     nodes.forEach((node) => {
       const radius = 4 + Math.min(3, Math.sqrt(Math.max(0, node.facet.count)) * 0.7);
-      context.fillStyle = "rgba(172,105,22,0.88)";
-      context.strokeStyle = "rgba(243,169,72,0.94)";
+      context.fillStyle = heatRgba(visual, 0.56 + (visual.glow * 0.68));
+      context.strokeStyle = heatRgba(visual, 0.9);
       context.lineWidth = 1.1;
       context.beginPath();
       context.arc(node.x, node.y, radius, 0, Math.PI * 2);
@@ -1095,7 +1174,7 @@
       context.font = "600 12px ui-monospace, SFMono-Regular, Menlo, monospace";
       context.textAlign = centered ? "center" : (alignRight ? "right" : "left");
       context.textBaseline = "middle";
-      context.fillStyle = "rgba(231,211,180,0.92)";
+      context.fillStyle = "rgba(222,237,238,0.92)";
       context.fillText(
         label,
         centered ? node.x : node.x + (alignRight ? -9 : 9),
@@ -1106,10 +1185,12 @@
   }
 
   function drawTerminalBadge(context, point, width, height, active = false, hovered = false) {
+    const visual = point.heat || heatVisual(point.score);
     const title = `${String(point.rank).padStart(2, "0")}  ${truncateLabel(point.topic, active ? 14 : 11)}`;
     const state = STATE_LABELS[point.state] || point.state;
-    const prefix = active ? (point.isSelected ? "展开中" : "TOP SIGNAL") : state;
-    const detail = `${prefix} · ${point.current}证据 · ${Math.round(point.score)}分`;
+    const stateGlyph = STATE_GLYPHS[point.state] || "•";
+    const prefix = active ? (point.isSelected ? "展开中" : "TOP SIGNAL") : `${stateGlyph} ${state}`;
+    const detail = `${prefix} · ${visual.label} · ${point.current}证据 · ${Math.round(point.score)}分`;
     const titleSize = width >= 900 ? 13 : 12;
     const detailSize = width >= 900 ? 12 : 11;
     context.save();
@@ -1123,19 +1204,17 @@
     const left = Math.max(8, Math.min(width - badgeWidth - 8, point.x - (badgeWidth / 2)));
     const top = Math.max(8, Math.min(height - badgeHeight - 8, rawTop));
     context.fillStyle = "rgba(3,9,18,0.94)";
-    context.strokeStyle = active
-      ? "rgba(223,142,35,0.72)"
-      : (hovered ? "rgba(91,215,205,0.82)" : "rgba(77,182,172,0.34)");
+    context.strokeStyle = heatRgba(visual, active || hovered ? 0.78 : 0.28 + (visual.glow * 0.72));
     context.lineWidth = hovered || active ? 1.35 : 1;
     context.fillRect(left, top, badgeWidth, badgeHeight);
     context.strokeRect(left + 0.5, top + 0.5, badgeWidth - 1, badgeHeight - 1);
     context.textAlign = "left";
     context.textBaseline = "alphabetic";
     context.font = `700 ${titleSize}px ui-monospace, SFMono-Regular, Menlo, monospace`;
-    context.fillStyle = active ? "rgba(248,184,88,0.98)" : "rgba(222,237,238,0.96)";
+    context.fillStyle = active ? visual.color : "rgba(222,237,238,0.96)";
     context.fillText(title, left + 9, top + (width >= 900 ? 17 : 15));
     context.font = `${detailSize}px ui-monospace, SFMono-Regular, Menlo, monospace`;
-    context.fillStyle = active ? "rgba(231,187,122,0.88)" : matrixColor(point.state).solid;
+    context.fillStyle = heatRgba(visual, 0.88 + (visual.glow * 0.25));
     context.fillText(detail, left + 9, top + (width >= 900 ? 34 : 30));
     context.restore();
   }
@@ -1352,6 +1431,311 @@
     return value;
   }
 
+  function createTrendSelect(document, select, windowObject = globalThis) {
+    const host = select?.closest?.("[data-trend-select]");
+    if (!host || host.dataset.enhanced === "true" || !document.body) return null;
+
+    const listId = `${select.id}-listbox`;
+    const triggerId = `${select.id}-trigger`;
+    const label = document.querySelector(`label[for="${select.id}"]`);
+    const previousTabIndex = select.getAttribute("tabindex");
+    const previousHidden = select.hidden;
+    const trigger = document.createElement("button");
+    const value = document.createElement("span");
+    const list = document.createElement("div");
+    let activeIndex = Math.max(0, select.selectedIndex);
+    let typeahead = "";
+    let typeaheadTimer = 0;
+    let positionFrame = 0;
+    let positionScheduled = false;
+    let destroyed = false;
+
+    trigger.id = triggerId;
+    trigger.type = "button";
+    trigger.className = "trend-select__trigger";
+    trigger.setAttribute("role", "combobox");
+    trigger.setAttribute("aria-haspopup", "listbox");
+    trigger.setAttribute("aria-expanded", "false");
+    trigger.setAttribute("aria-controls", listId);
+    trigger.setAttribute("aria-autocomplete", "none");
+    trigger.setAttribute("aria-labelledby", label?.id ? `${label.id} ${triggerId}` : triggerId);
+
+    value.className = "trend-select__value";
+    trigger.append(value);
+
+    list.id = listId;
+    list.className = "trend-select__list";
+    list.setAttribute("role", "listbox");
+    list.setAttribute("aria-labelledby", label?.id || triggerId);
+    list.hidden = true;
+
+    host.append(trigger);
+    document.body.append(list);
+    select.tabIndex = -1;
+    select.setAttribute("aria-hidden", "true");
+    select.hidden = true;
+    host.dataset.enhanced = "true";
+    host.dataset.open = "false";
+
+    function optionParts(option) {
+      const text = String(option?.textContent || "").trim();
+      const match = text.match(/^(.*?)(?:\s+·\s+(.+))$/u);
+      return match ? { label: match[1], meta: match[2] } : { label: text, meta: "" };
+    }
+
+    function optionNodes() {
+      return Array.from(list.querySelectorAll('[role="option"]'));
+    }
+
+    function syncSelection() {
+      const options = Array.from(select.options || []);
+      const selectedIndex = Math.max(0, options.findIndex((option) => option.value === select.value));
+      activeIndex = Math.min(Math.max(0, activeIndex), Math.max(0, options.length - 1));
+      optionNodes().forEach((node, index) => {
+        node.setAttribute("aria-selected", String(index === selectedIndex));
+        node.dataset.active = String(index === activeIndex);
+      });
+      value.textContent = optionParts(options[selectedIndex] || options[0]).label || "请选择";
+    }
+
+    function setActive(index, scroll = true) {
+      const nodes = optionNodes();
+      if (!nodes.length) return;
+      activeIndex = Math.max(0, Math.min(nodes.length - 1, index));
+      nodes.forEach((node, position) => {
+        node.dataset.active = String(position === activeIndex);
+      });
+      trigger.setAttribute("aria-activedescendant", nodes[activeIndex].id);
+      if (scroll) nodes[activeIndex].scrollIntoView?.({ block: "nearest" });
+    }
+
+    function refresh() {
+      if (destroyed) return;
+      const options = Array.from(select.options || []);
+      list.replaceChildren();
+      options.forEach((option, index) => {
+        const item = document.createElement("button");
+        const copy = optionParts(option);
+        const itemLabel = document.createElement("span");
+        item.id = `${listId}-option-${index}`;
+        item.type = "button";
+        item.setAttribute("role", "option");
+        item.tabIndex = -1;
+        item.dataset.value = option.value;
+        itemLabel.className = "trend-select__option-label";
+        itemLabel.textContent = copy.label;
+        item.append(itemLabel);
+        if (copy.meta) {
+          const meta = document.createElement("span");
+          meta.className = "trend-select__option-meta";
+          meta.textContent = copy.meta;
+          item.append(meta);
+        }
+        list.append(item);
+      });
+      activeIndex = Math.max(0, select.selectedIndex);
+      syncSelection();
+      if (!list.hidden) schedulePosition();
+    }
+
+    function positionList() {
+      if (list.hidden) return;
+      const rect = trigger.getBoundingClientRect();
+      const viewportWidth = Math.max(320, windowObject.innerWidth || document.documentElement.clientWidth || 0);
+      const viewportHeight = Math.max(320, windowObject.innerHeight || document.documentElement.clientHeight || 0);
+      const width = Math.max(180, Math.min(rect.width, viewportWidth - 16));
+      const left = Math.max(8, Math.min(viewportWidth - width - 8, rect.left));
+      list.style.width = `${Math.round(width)}px`;
+      list.style.left = `${Math.round(left)}px`;
+      const menuHeight = Math.min(286, list.scrollHeight || 0);
+      const below = viewportHeight - rect.bottom - 8;
+      const above = rect.top - 8;
+      const openAbove = below < Math.min(menuHeight, 220) && above > below;
+      const top = openAbove
+        ? Math.max(8, rect.top - menuHeight - 6)
+        : Math.min(viewportHeight - menuHeight - 8, rect.bottom + 6);
+      list.style.top = `${Math.max(8, Math.round(top))}px`;
+      list.dataset.placement = openAbove ? "top" : "bottom";
+    }
+
+    function close(focus = false) {
+      if (destroyed || list.hidden) return;
+      list.hidden = true;
+      host.dataset.open = "false";
+      trigger.setAttribute("aria-expanded", "false");
+      trigger.removeAttribute("aria-activedescendant");
+      typeahead = "";
+      if (focus) trigger.focus();
+    }
+
+    function cancelScheduledPosition() {
+      if (!positionScheduled) return;
+      windowObject.clearTimeout(positionFrame);
+      positionFrame = 0;
+      positionScheduled = false;
+    }
+
+    function schedulePosition() {
+      if (destroyed || list.hidden || positionScheduled) return;
+      positionScheduled = true;
+      const update = () => {
+        positionScheduled = false;
+        positionFrame = 0;
+        if (!destroyed && !list.hidden) positionList();
+      };
+      positionFrame = windowObject.setTimeout(update, 16);
+    }
+
+    function open() {
+      if (destroyed || !list.hidden) return;
+      refresh();
+      list.hidden = false;
+      host.dataset.open = "true";
+      trigger.setAttribute("aria-expanded", "true");
+      activeIndex = Math.max(0, select.selectedIndex);
+      setActive(activeIndex, false);
+      positionList();
+      optionNodes()[activeIndex]?.scrollIntoView?.({ block: "nearest" });
+    }
+
+    function choose(index) {
+      const options = Array.from(select.options || []);
+      const option = options[index];
+      if (!option) return;
+      const changed = select.value !== option.value;
+      select.value = option.value;
+      activeIndex = index;
+      syncSelection();
+      close(true);
+      if (changed) {
+        const EventConstructor = windowObject.Event || globalThis.Event;
+        select.dispatchEvent(new EventConstructor("change", { bubbles: true }));
+      }
+    }
+
+    function move(delta) {
+      const length = select.options?.length || 0;
+      if (!length) return;
+      if (list.hidden) open();
+      setActive((activeIndex + delta + length) % length);
+    }
+
+    function onTriggerClick() {
+      if (list.hidden) open();
+      else close(false);
+    }
+
+    function onTriggerKeydown(event) {
+      if (event.key === "ArrowDown" || event.key === "ArrowUp") {
+        event.preventDefault();
+        move(event.key === "ArrowDown" ? 1 : -1);
+        return;
+      }
+      if (event.key === "Home" || event.key === "End") {
+        event.preventDefault();
+        if (list.hidden) open();
+        setActive(event.key === "Home" ? 0 : Math.max(0, select.options.length - 1));
+        return;
+      }
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        if (list.hidden) open();
+        else choose(activeIndex);
+        return;
+      }
+      if (event.key === "Escape") {
+        if (!list.hidden) {
+          event.preventDefault();
+          event.stopPropagation();
+          close(true);
+        }
+        return;
+      }
+      if (event.key === "Tab") {
+        close(false);
+        return;
+      }
+      if (event.key.length !== 1 || event.ctrlKey || event.metaKey || event.altKey) return;
+      typeahead += event.key.toLocaleLowerCase("zh-CN");
+      windowObject.clearTimeout(typeaheadTimer);
+      typeaheadTimer = windowObject.setTimeout(() => { typeahead = ""; }, 560);
+      const options = Array.from(select.options || []);
+      const index = options.findIndex((option) => (
+        optionParts(option).label.toLocaleLowerCase("zh-CN").startsWith(typeahead)
+      ));
+      if (index >= 0) {
+        event.preventDefault();
+        if (list.hidden) open();
+        setActive(index);
+      }
+    }
+
+    function onListClick(event) {
+      const option = event.target.closest?.('[role="option"]');
+      if (!option || !list.contains(option)) return;
+      choose(optionNodes().indexOf(option));
+    }
+
+    function onListPointerDown(event) {
+      if (event.pointerType === "mouse") event.preventDefault();
+    }
+
+    function onPointerDown(event) {
+      if (host.contains(event.target) || list.contains(event.target)) return;
+      close(false);
+    }
+
+    function onLabelClick(event) {
+      event.preventDefault();
+      trigger.focus();
+    }
+
+    function onViewportChange(event) {
+      if (event?.type === "scroll" && list.contains(event.target)) return;
+      schedulePosition();
+    }
+
+    trigger.addEventListener("click", onTriggerClick);
+    trigger.addEventListener("keydown", onTriggerKeydown);
+    list.addEventListener("click", onListClick);
+    list.addEventListener("pointerdown", onListPointerDown);
+    select.addEventListener("change", syncSelection);
+    label?.addEventListener("click", onLabelClick);
+    document.addEventListener("pointerdown", onPointerDown);
+    windowObject.addEventListener?.("resize", onViewportChange);
+    windowObject.addEventListener?.("scroll", onViewportChange, true);
+    refresh();
+
+    return Object.freeze({
+      close,
+      refresh,
+      trigger,
+      destroy() {
+        if (destroyed) return;
+        destroyed = true;
+        windowObject.clearTimeout(typeaheadTimer);
+        cancelScheduledPosition();
+        trigger.removeEventListener("click", onTriggerClick);
+        trigger.removeEventListener("keydown", onTriggerKeydown);
+        list.removeEventListener("click", onListClick);
+        list.removeEventListener("pointerdown", onListPointerDown);
+        select.removeEventListener("change", syncSelection);
+        label?.removeEventListener("click", onLabelClick);
+        document.removeEventListener("pointerdown", onPointerDown);
+        windowObject.removeEventListener?.("resize", onViewportChange);
+        windowObject.removeEventListener?.("scroll", onViewportChange, true);
+        list.remove();
+        trigger.remove();
+        host.removeAttribute("data-enhanced");
+        host.removeAttribute("data-open");
+        select.removeAttribute("aria-hidden");
+        select.hidden = previousHidden;
+        if (previousTabIndex === null) select.removeAttribute("tabindex");
+        else select.setAttribute("tabindex", previousTabIndex);
+      },
+    });
+  }
+
   class LruCache {
     constructor(limit = 8) {
       this.limit = limit;
@@ -1385,6 +1769,7 @@
       source: document.getElementById("trend-source"),
       scenario: document.getElementById("trend-scenario"),
       clear: document.getElementById("trend-clear"),
+      filterSummary: document.getElementById("trend-filter-summary"),
       status: document.getElementById("trend-status"),
       dataState: document.getElementById("trend-data-state"),
       dataAsOf: document.getElementById("trend-data-as-of"),
@@ -1402,6 +1787,16 @@
       detail: document.getElementById("trend-detail"),
     };
     if (Object.values(elements).some((element) => !element)) return null;
+    const listenerCleanups = [];
+    let destroyed = false;
+    function listen(target, type, handler, options) {
+      if (typeof target?.addEventListener !== "function") return;
+      target.addEventListener(type, handler, options);
+      listenerCleanups.push(() => target.removeEventListener(type, handler, options));
+    }
+    const selectMenus = [elements.signal, elements.source, elements.scenario]
+      .map((select) => createTrendSelect(document, select, windowObject))
+      .filter(Boolean);
 
     const model = {
       index: null,
@@ -1450,7 +1845,7 @@
     }
 
     setFilterPanel(!filterMedia?.matches);
-    filterMedia?.addEventListener?.("change", handleFilterViewportChange);
+    listen(filterMedia, "change", handleFilterViewportChange);
 
     function updateHistory(push = false) {
       const url = `${windowObject.location.pathname}${serializeState(model.state)}`;
@@ -1471,6 +1866,7 @@
       elements.signal.value = model.state.signal;
       elements.source.value = model.state.source;
       elements.scenario.value = model.state.scenario;
+      selectMenus.forEach((menu) => menu.refresh());
     }
 
     function appendOption(select, value, label) {
@@ -1482,7 +1878,9 @@
 
     function populateFacets() {
       const facets = model.windowData?.facets;
-      if (!facets) return;
+      if (!facets) return false;
+      const reconciled = reconcileFacetState(model.state, facets);
+      model.state = reconciled.state;
       const sourceValue = model.state.source;
       const scenarioValue = model.state.scenario;
       elements.source.replaceChildren();
@@ -1492,12 +1890,12 @@
       facets.sources.forEach((facet) => appendOption(
         elements.source,
         facet.name,
-        `${formatSourceName(facet.name)} · ${formatNumber(facet.count)}`,
+        `${formatSourceName(facet.name)} · ${formatNumber(countFacetTopics(model.windowData.trends, "sources", facet.name))} 主题 / ${formatNumber(facet.count)} 条证据`,
       ));
       facets.scenarios.forEach((facet) => appendOption(
         elements.scenario,
         facet.name,
-        `${facet.name} · ${formatNumber(facet.count)}`,
+        `${facet.name} · ${formatNumber(countFacetTopics(model.windowData.trends, "scenarios", facet.name))} 主题 / ${formatNumber(facet.count)} 条证据`,
       ));
       elements.source.value = [...elements.source.options].some((option) => option.value === sourceValue)
         ? sourceValue
@@ -1507,6 +1905,18 @@
         : "";
       model.state.source = elements.source.value;
       model.state.scenario = elements.scenario.value;
+      selectMenus.forEach((menu) => menu.refresh());
+      return reconciled.changed;
+    }
+
+    function clearTopicOutsideResults(trends) {
+      if (!model.state.topic || trends.some((trend) => trend.id === model.state.topic)) return false;
+      invalidateTopicLoad(model);
+      model.state.topic = "";
+      model.returnTopicId = "";
+      model.returnToStage = false;
+      renderDetailPlaceholder();
+      return true;
     }
 
     function currentTrend(id = model.state.topic) {
@@ -1517,14 +1927,16 @@
       elements.list.replaceChildren();
       trends.forEach((item) => {
         const rank = model.windowData.trends.findIndex((candidate) => candidate.id === item.id) + 1;
+        const visual = heatVisual(item.score);
         const row = document.createElement("li");
         row.className = "trend-card";
+        row.dataset.heat = visual.key;
         const button = document.createElement("button");
         button.type = "button";
         button.className = "trend-card__button";
         button.dataset.topicId = item.id;
         button.setAttribute("aria-pressed", String(model.state.topic === item.id));
-        button.setAttribute("aria-label", `查看 ${item.topic} 趋势详情，得分 ${Math.round(item.score)}`);
+        button.setAttribute("aria-label", `查看 ${item.topic} 趋势详情，${visual.label}，得分 ${Math.round(item.score)}`);
         appendText(document, button, "span", "trend-card__rank", String(rank).padStart(2, "0"));
         const copy = document.createElement("span");
         copy.className = "trend-card__copy";
@@ -1537,7 +1949,11 @@
           `${STATE_LABELS[item.state]} · ${formatNumber(item.unique_events)} 篇证据 · ${formatNumber(item.unique_sources)} 来源`,
         );
         button.append(copy);
-        appendText(document, button, "span", "trend-card__score", Math.round(item.score));
+        const score = document.createElement("span");
+        score.className = "trend-card__score";
+        appendText(document, score, "small", "trend-card__heat-label", visual.label);
+        appendText(document, score, "strong", "", Math.round(item.score));
+        button.append(score);
         row.append(button);
         elements.list.append(row);
       });
@@ -1572,6 +1988,15 @@
       elements.statTopics.textContent = formatNumber(model.index.stats.windows[model.state.window].trend_count);
       elements.statSources.textContent = formatNumber(model.index.stats.windows[model.state.window].source_count);
       elements.statWindow.textContent = WINDOW_LABELS[model.state.window];
+      const activeFilters = [];
+      if (model.state.signal !== "all") activeFilters.push(`状态 ${STATE_LABELS[model.state.signal]}`);
+      if (model.state.source) activeFilters.push(`来源 ${formatSourceName(model.state.source)}`);
+      if (model.state.scenario) activeFilters.push(`场景 ${model.state.scenario}`);
+      if (model.state.query) activeFilters.push(`主题 “${model.state.query}”`);
+      elements.filterSummary.dataset.active = String(activeFilters.length > 0);
+      elements.filterSummary.textContent = activeFilters.length
+        ? `当前筛选：${activeFilters.join(" / ")} · 命中 ${trends.length} 个主题；场景与来源按匹配证据强度排序。`
+        : `当前未启用附加筛选 · 共 ${trends.length} 个主题。`;
       setButtonStates();
       setStatus(
         trends.length
@@ -1953,7 +2378,9 @@
         model.windowData = validateWindow(raw, windowName, model.index);
         elements.sampleNotice.hidden = !model.windowData.sample_notice;
         elements.sampleNotice.textContent = model.windowData.sample_notice || "";
-        populateFacets();
+        const facetsChanged = populateFacets();
+        const topicChanged = clearTopicOutsideResults(filterTrends(model.windowData.trends, model.state));
+        if (facetsChanged || topicChanged) updateHistory(false);
         renderResults();
         if (model.state.topic) await loadTopic(model.state.topic, { push: false });
         else renderDetailPlaceholder();
@@ -2001,18 +2428,19 @@
         source: normalizeStateText(elements.source.value, 160),
         scenario: normalizeStateText(elements.scenario.value, 160),
       };
+      clearTopicOutsideResults(filterTrends(model.windowData?.trends || [], model.state));
       updateHistory(push);
       renderResults();
     }
 
     document.querySelectorAll("[data-trend-window]").forEach((button) => {
-      button.addEventListener("click", () => {
+      listen(button, "click", () => {
         const windowName = button.dataset.trendWindow;
         if (windowName !== model.state.window) loadWindow(windowName, { push: true });
       });
     });
     document.querySelectorAll("[data-trend-view]").forEach((button) => {
-      button.addEventListener("click", () => {
+      listen(button, "click", () => {
         const view = button.dataset.trendView;
         if (!VIEWS.includes(view) || view === model.state.view) return;
         model.state.view = view;
@@ -2020,22 +2448,22 @@
         renderResults();
       });
     });
-    elements.query.addEventListener("input", () => changeFilters(false));
-    elements.signal.addEventListener("change", () => changeFilters(true));
-    elements.source.addEventListener("change", () => changeFilters(true));
-    elements.scenario.addEventListener("change", () => changeFilters(true));
-    elements.clear.addEventListener("click", () => {
+    listen(elements.query, "input", () => changeFilters(false));
+    listen(elements.signal, "change", () => changeFilters(true));
+    listen(elements.source, "change", () => changeFilters(true));
+    listen(elements.scenario, "change", () => changeFilters(true));
+    listen(elements.clear, "click", () => {
       model.state = { ...model.state, signal: "all", source: "", scenario: "", query: "" };
       setButtonStates();
       updateHistory(true);
       renderResults();
       elements.query.focus();
     });
-    elements.filterToggle.addEventListener("click", () => {
+    listen(elements.filterToggle, "click", () => {
       setFilterPanel(elements.filterToggle.getAttribute("aria-expanded") !== "true");
     });
 
-    elements.list.addEventListener("click", (event) => {
+    listen(elements.list, "click", (event) => {
       const button = event.target.closest?.("[data-topic-id]");
       if (button) loadTopic(button.dataset.topicId, {
         push: true,
@@ -2044,12 +2472,12 @@
         returnTopicId: button.dataset.topicId,
       });
     });
-    elements.matrix.addEventListener("click", (event) => {
+    listen(elements.matrix, "click", (event) => {
       const rect = elements.matrix.getBoundingClientRect();
       const point = hitTestMatrix(model.points, event.clientX - rect.left, event.clientY - rect.top);
       if (point) loadTopic(point.id, { push: true, scroll: true, focus: true, returnToStage: true });
     });
-    elements.matrix.addEventListener("mousemove", (event) => {
+    listen(elements.matrix, "mousemove", (event) => {
       const rect = elements.matrix.getBoundingClientRect();
       const point = hitTestMatrix(model.points, event.clientX - rect.left, event.clientY - rect.top);
       const nextHoveredId = point?.id || "";
@@ -2060,13 +2488,13 @@
       elements.matrix.style.cursor = point ? "pointer" : "default";
       elements.matrix.title = point ? `${point.topic} · 得分 ${Math.round(point.score)}` : "";
     });
-    elements.matrix.addEventListener("mouseleave", () => {
+    listen(elements.matrix, "mouseleave", () => {
       if (!model.hoveredId) return;
       model.hoveredId = "";
       drawMatrix(elements.matrix, model.points, model.state.topic, "");
       elements.matrix.title = "";
     });
-    elements.detail.addEventListener("click", (event) => {
+    listen(elements.detail, "click", (event) => {
       const related = event.target.closest?.("[data-related-topic-id]");
       if (related) {
         loadTopic(related.dataset.relatedTopicId, { push: true, scroll: false, focus: true });
@@ -2097,7 +2525,7 @@
       }
     });
 
-    windowObject.addEventListener("popstate", async () => {
+    listen(windowObject, "popstate", async () => {
       const previousTopic = model.state.topic;
       const next = adaptStateForViewport(
         parseState(windowObject.location.search),
@@ -2110,28 +2538,46 @@
       setButtonStates();
       if (changedWindow) {
         await loadWindow(next.window);
-        if (next.topic) completeDetailTransition({ focus: true, scroll: true });
+        if (model.state.topic) completeDetailTransition({ focus: true, scroll: true });
         else restoreTrendOrigin(previousTopic, Boolean(previousTopic));
       } else {
+        const reconciled = reconcileFacetState(model.state, model.windowData?.facets || {});
+        if (reconciled.changed) {
+          model.state = reconciled.state;
+          setButtonStates();
+          updateHistory(false);
+        }
         renderResults();
-        if (next.topic) await loadTopic(next.topic, { push: false, focus: true, scroll: true });
+        if (model.state.topic) await loadTopic(model.state.topic, { push: false, focus: true, scroll: true });
         else {
           renderDetailPlaceholder();
           restoreTrendOrigin(previousTopic, Boolean(previousTopic));
         }
       }
     });
-    document.addEventListener("keydown", (event) => {
+    listen(document, "keydown", (event) => {
       if (event.key === "Escape" && model.state.topic) {
         closeTopicDetail(true);
       }
     });
-    windowObject.addEventListener("pagehide", () => {
+    function destroy() {
+      if (destroyed) return;
+      destroyed = true;
       model.windowController?.abort();
       invalidateTopicLoad(model);
       model.resizeObserver?.disconnect();
-      filterMedia?.removeEventListener?.("change", handleFilterViewportChange);
-    }, { once: true });
+      selectMenus.forEach((menu) => menu.destroy());
+      listenerCleanups.splice(0).forEach((cleanup) => cleanup());
+      root.removeAttribute("data-trends-ready");
+    }
+    function handlePageHide(event) {
+      if (!shouldDestroyOnPageHide(event)) {
+        selectMenus.forEach((menu) => menu.close(false));
+        return;
+      }
+      destroy();
+    }
+    listen(windowObject, "pagehide", handlePageHide);
 
     if (typeof windowObject.ResizeObserver === "function") {
       model.resizeObserver = new windowObject.ResizeObserver(() => {
@@ -2139,29 +2585,27 @@
       });
       model.resizeObserver.observe(elements.matrix);
     } else {
-      windowObject.addEventListener("resize", () => {
+      listen(windowObject, "resize", () => {
         if (model.windowData) renderMatrix(filterTrends(model.windowData.trends, model.state));
       });
     }
 
     initialise();
-    return Object.freeze({ model, loadWindow, loadTopic, destroy() {
-      model.windowController?.abort();
-      invalidateTopicLoad(model);
-      model.resizeObserver?.disconnect();
-      filterMedia?.removeEventListener?.("change", handleFilterViewportChange);
-    } });
+    return Object.freeze({ model, loadWindow, loadTopic, destroy });
   }
 
   return {
     TrendDataError,
     adaptStateForViewport,
     buildGraphUrl,
+    countFacetTopics,
     drawMatrix,
     drawSparkline,
     filterTrends,
     formatSourceName,
     freshnessStatus,
+    heatTier,
+    heatVisual,
     hitTestMatrix,
     initializeTrendsPage,
     invalidateTopicLoad,
@@ -2170,11 +2614,13 @@
     labeledPointIds,
     parseState,
     resizeCanvasBackingStore,
+    reconcileFacetState,
     resolveCanvasPixelRatio,
     resolveWindowSignal,
     safeAssetPath,
     safeInternalUrl,
     serializeState,
+    shouldDestroyOnPageHide,
     shouldRenderMatrix,
     toggleWatchlistTopic,
     validateIndex,

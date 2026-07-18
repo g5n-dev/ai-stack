@@ -41,11 +41,12 @@
                     </div>
 
                     <div>
-                        <label for="search-source" class="search-label">来源</label>
-                        <select id="search-source" name="source"
-                            class="search-control">
-                            <option value="">全部来源</option>
-                        </select>
+                        <label id="search-source-label" for="search-source" class="search-label">来源</label>
+                        <div class="search-select" data-search-select>
+                            <select id="search-source" name="source" class="search-control">
+                                <option value="">全部来源</option>
+                            </select>
+                        </div>
                     </div>
                     <div>
                         <label for="search-date" class="search-label">日期</label>
@@ -53,25 +54,28 @@
                             class="search-control" />
                     </div>
                     <div>
-                        <label for="search-entity" class="search-label">规范实体 ID</label>
-                        <input id="search-entity" name="entity" type="text" list="search-entities" maxlength="200"
-                            autocomplete="off" placeholder="例如 entity-openai"
-                            class="search-control" />
-                        <datalist id="search-entities"></datalist>
+                        <label id="search-entity-label" for="search-entity" class="search-label">规范实体 ID</label>
+                        <div class="search-autocomplete" data-search-autocomplete>
+                            <input id="search-entity" name="entity" type="text" list="search-entities" maxlength="200"
+                                autocomplete="off" placeholder="例如 entity-openai" class="search-control" />
+                            <datalist id="search-entities"></datalist>
+                        </div>
                     </div>
                     <div>
-                        <label for="search-tag" class="search-label">标签</label>
-                        <input id="search-tag" name="tag" type="text" list="search-tags" maxlength="200"
-                            autocomplete="off" placeholder="输入或选择标签"
-                            class="search-control" />
-                        <datalist id="search-tags"></datalist>
+                        <label id="search-tag-label" for="search-tag" class="search-label">标签</label>
+                        <div class="search-autocomplete" data-search-autocomplete>
+                            <input id="search-tag" name="tag" type="text" list="search-tags" maxlength="200"
+                                autocomplete="off" placeholder="输入或选择标签" class="search-control" />
+                            <datalist id="search-tags"></datalist>
+                        </div>
                     </div>
                     <div>
-                        <label for="search-scenario" class="search-label">场景</label>
-                        <input id="search-scenario" name="scenario" type="text" list="search-scenarios" maxlength="200"
-                            autocomplete="off" placeholder="输入或选择场景"
-                            class="search-control" />
-                        <datalist id="search-scenarios"></datalist>
+                        <label id="search-scenario-label" for="search-scenario" class="search-label">场景</label>
+                        <div class="search-autocomplete" data-search-autocomplete>
+                            <input id="search-scenario" name="scenario" type="text" list="search-scenarios" maxlength="200"
+                                autocomplete="off" placeholder="输入或选择场景" class="search-control" />
+                            <datalist id="search-scenarios"></datalist>
+                        </div>
                     </div>
                 </div>
             </fieldset>

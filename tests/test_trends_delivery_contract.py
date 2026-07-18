@@ -157,6 +157,7 @@ def test_required_ci_check_runs_delivery_and_trend_contract_tests() -> None:
 
     assert job["name"] == "Unit Tests"
     assert "tests/test_trends_delivery_contract.py" in text
+    assert "tests/test_trends_page.py" in text
     assert "tests/test_stack_trends.py" in text
     assert "tests/test_stack_trends_monitoring.py" in text
 

@@ -314,6 +314,351 @@
     dataList.replaceChildren(...options);
   }
 
+  function createSearchPicker(document, control, source, windowObject = globalThis) {
+    const isSelect = control?.tagName === "SELECT";
+    const host = control?.closest?.(isSelect ? "[data-search-select]" : "[data-search-autocomplete]");
+    if (!host || host.dataset.enhanced === "true" || !document.body || !source) return null;
+
+    const originalList = isSelect ? "" : control.getAttribute("list") || "";
+    const originalAutocomplete = isSelect ? null : control.getAttribute("autocomplete");
+    const originalHidden = control.hidden;
+    const originalTabIndex = control.getAttribute("tabindex");
+    const label = document.querySelector?.(`label[for="${control.id}"]`);
+    const trigger = isSelect ? document.createElement("button") : control;
+    const valueNode = isSelect ? document.createElement("span") : null;
+    const list = document.createElement("div");
+    const listId = `${control.id}-listbox`;
+    let activeIndex = 0;
+    let timer = 0;
+    let compositionRefreshTimer = 0;
+    let composing = false;
+    let destroyed = false;
+    let suppressAutoOpen = false;
+    const listenerCleanups = [];
+
+    function listen(target, type, handler, options) {
+      if (typeof target?.addEventListener !== "function") return;
+      target.addEventListener(type, handler, options);
+      listenerCleanups.push(() => target.removeEventListener(type, handler, options));
+    }
+
+    if (isSelect) {
+      trigger.type = "button";
+      trigger.className = "search-control search-select__trigger";
+      valueNode.className = "search-select__value";
+      trigger.append(valueNode);
+      host.append(trigger);
+      control.hidden = true;
+      control.tabIndex = -1;
+      control.setAttribute("aria-hidden", "true");
+    } else {
+      control.removeAttribute("list");
+      control.setAttribute("autocomplete", "off");
+    }
+
+    trigger.id = isSelect ? `${control.id}-trigger` : control.id;
+    trigger.setAttribute("role", "combobox");
+    trigger.setAttribute("aria-haspopup", "listbox");
+    trigger.setAttribute("aria-expanded", "false");
+    trigger.setAttribute("aria-controls", listId);
+    trigger.setAttribute("aria-autocomplete", isSelect ? "none" : "list");
+    trigger.setAttribute(
+      "aria-labelledby",
+      label?.id ? (isSelect ? `${label.id} ${trigger.id}` : label.id) : trigger.id,
+    );
+
+    list.id = listId;
+    list.className = isSelect
+      ? "search-picker__list search-select__list"
+      : "search-picker__list search-autocomplete__list";
+    list.setAttribute("role", "listbox");
+    list.setAttribute("aria-labelledby", label?.id || trigger.id);
+    list.hidden = true;
+    document.body.append(list);
+    host.dataset.enhanced = "true";
+    host.dataset.open = "false";
+
+    function allItems() {
+      if (isSelect) {
+        return Array.from(control.options || []).map((option) => ({
+          label: String(option.textContent || "").trim(),
+          value: option.value,
+          selected: option.value === control.value,
+        }));
+      }
+      const query = String(control.value || "").normalize("NFKC").trim().toLocaleLowerCase("zh-CN");
+      return Array.from(source.children || [])
+        .map((option) => String(option.value || option.textContent || "").trim())
+        .filter((value, index, values) => value && values.indexOf(value) === index)
+        .filter((value) => !query || value.normalize("NFKC").toLocaleLowerCase("zh-CN").includes(query))
+        .slice(0, 20)
+        .map((value) => ({ label: value, value, selected: value === control.value }));
+    }
+
+    function optionNodes() {
+      return Array.from(list.querySelectorAll('[role="option"]'));
+    }
+
+    function positionList() {
+      if (list.hidden) return;
+      const rect = trigger.getBoundingClientRect();
+      const visualViewport = windowObject.visualViewport;
+      const viewportWidth = Math.max(1, visualViewport?.width || windowObject.innerWidth || document.documentElement.clientWidth || 0);
+      const viewportHeight = Math.max(1, visualViewport?.height || windowObject.innerHeight || document.documentElement.clientHeight || 0);
+      const viewportLeft = Math.max(0, visualViewport?.offsetLeft || 0);
+      const viewportTop = Math.max(0, visualViewport?.offsetTop || 0);
+      const width = Math.max(1, Math.min(Math.max(180, rect.width), Math.max(1, viewportWidth - 16)));
+      const left = Math.max(viewportLeft + 8, Math.min(viewportLeft + viewportWidth - width - 8, rect.left));
+      list.style.width = `${Math.round(width)}px`;
+      list.style.left = `${Math.round(left)}px`;
+      const menuHeight = Math.min(286, list.scrollHeight || 0, Math.max(1, viewportHeight - 16));
+      list.style.maxHeight = `${Math.max(1, Math.round(menuHeight))}px`;
+      const viewportBottom = viewportTop + viewportHeight;
+      const below = viewportBottom - rect.bottom - 8;
+      const above = rect.top - viewportTop - 8;
+      const openAbove = below < Math.min(menuHeight, 220) && above > below;
+      const top = openAbove ? rect.top - menuHeight - 6 : rect.bottom + 6;
+      list.style.top = `${Math.max(viewportTop + 8, Math.min(viewportBottom - menuHeight - 8, Math.round(top)))}px`;
+    }
+
+    function setActive(index) {
+      const nodes = optionNodes();
+      if (!nodes.length) return;
+      activeIndex = Math.max(0, Math.min(nodes.length - 1, index));
+      nodes.forEach((node, position) => { node.dataset.active = String(position === activeIndex); });
+      trigger.setAttribute("aria-activedescendant", nodes[activeIndex].id);
+      nodes[activeIndex].scrollIntoView?.({ block: "nearest" });
+    }
+
+    function render() {
+      if (destroyed) return;
+      const items = allItems();
+      list.replaceChildren();
+      items.forEach((item, index) => {
+        const option = document.createElement("button");
+        option.id = `${listId}-option-${index}`;
+        option.type = "button";
+        option.tabIndex = -1;
+        option.dataset.value = item.value;
+        option.setAttribute("role", "option");
+        option.setAttribute("aria-selected", String(item.selected));
+        option.textContent = item.label;
+        list.append(option);
+      });
+      if (isSelect) {
+        const selected = items.find((item) => item.selected) || items[0];
+        valueNode.textContent = selected?.label || "请选择";
+        activeIndex = Math.max(0, items.findIndex((item) => item.selected));
+      } else {
+        activeIndex = Math.min(activeIndex, Math.max(0, items.length - 1));
+      }
+      if (!list.hidden) {
+        if (!items.length) close(false);
+        else {
+          setActive(activeIndex);
+          schedulePosition();
+        }
+      } else if (!isSelect && !suppressAutoOpen && document.activeElement === control && items.length) {
+        open();
+      }
+    }
+
+    function close(focus = false) {
+      if (destroyed || list.hidden) return;
+      list.hidden = true;
+      host.dataset.open = "false";
+      trigger.setAttribute("aria-expanded", "false");
+      trigger.removeAttribute("aria-activedescendant");
+      if (focus) trigger.focus();
+    }
+
+    function open() {
+      if (destroyed) return;
+      const items = allItems();
+      if (!items.length) return;
+      if (list.hidden) {
+        list.hidden = false;
+        host.dataset.open = "true";
+        trigger.setAttribute("aria-expanded", "true");
+      }
+      render();
+      positionList();
+    }
+
+    function choose(index) {
+      const node = optionNodes()[index];
+      if (!node) return;
+      const changed = control.value !== node.dataset.value;
+      control.value = node.dataset.value;
+      if (isSelect) render();
+      close(true);
+      if (changed) {
+        const EventConstructor = windowObject.Event || globalThis.Event;
+        suppressAutoOpen = true;
+        try {
+          control.dispatchEvent(new EventConstructor(isSelect ? "change" : "input", { bubbles: true }));
+        } finally {
+          suppressAutoOpen = false;
+        }
+      }
+    }
+
+    function schedulePosition(event) {
+      if (event?.type === "scroll" && list.contains(event.target)) return;
+      windowObject.clearTimeout(timer);
+      timer = windowObject.setTimeout(positionList, 16);
+    }
+
+    function onKeydown(event) {
+      if (!isSelect && (composing || event.isComposing || event.keyCode === 229)) return;
+      const nodes = optionNodes();
+      if (event.key === "ArrowDown" || event.key === "ArrowUp") {
+        event.preventDefault();
+        const wasHidden = list.hidden;
+        if (wasHidden) open();
+        const available = optionNodes();
+        if (available.length) {
+          const next = wasHidden && !isSelect
+            ? (event.key === "ArrowDown" ? 0 : available.length - 1)
+            : (activeIndex + (event.key === "ArrowDown" ? 1 : -1) + available.length) % available.length;
+          setActive(next);
+        }
+      } else if (event.key === "Home" || event.key === "End") {
+        if (list.hidden) return;
+        event.preventDefault();
+        setActive(event.key === "Home" ? 0 : nodes.length - 1);
+      } else if (event.key === "Enter" || (isSelect && event.key === " ")) {
+        if (list.hidden) {
+          if (isSelect) {
+            event.preventDefault();
+            open();
+          }
+          return;
+        }
+        event.preventDefault();
+        choose(activeIndex);
+      } else if (event.key === "Escape") {
+        if (!list.hidden) {
+          event.preventDefault();
+          event.stopPropagation();
+          close(true);
+        }
+      } else if (event.key === "Tab") {
+        close(false);
+      }
+    }
+
+    function onListClick(event) {
+      const option = event.target.closest?.('[role="option"]');
+      if (option && list.contains(option)) choose(optionNodes().indexOf(option));
+    }
+    function onDocumentPointerDown(event) {
+      if (!host.contains(event.target) && !list.contains(event.target)) close(false);
+    }
+
+    function onTriggerClick() {
+      if (isSelect) {
+        if (list.hidden) open();
+        else close(false);
+        return;
+      }
+      open();
+    }
+
+    function onListPointerDown(event) {
+      if (event.pointerType === "mouse") event.preventDefault();
+    }
+
+    function onInput(event) {
+      if (composing || event.isComposing) {
+        close(false);
+        return;
+      }
+      windowObject.clearTimeout(compositionRefreshTimer);
+      render();
+    }
+
+    function onCompositionStart() {
+      windowObject.clearTimeout(compositionRefreshTimer);
+      composing = true;
+      close(false);
+    }
+
+    function onCompositionEnd() {
+      composing = false;
+      compositionRefreshTimer = windowObject.setTimeout(render, 0);
+    }
+
+    function onLabelClick(event) {
+      if (!isSelect) return;
+      event.preventDefault();
+      trigger.focus();
+    }
+
+    listen(trigger, "keydown", onKeydown);
+    listen(trigger, "click", onTriggerClick);
+    if (!isSelect) {
+      listen(trigger, "focus", open);
+      listen(trigger, "input", onInput);
+      listen(trigger, "compositionstart", onCompositionStart);
+      listen(trigger, "compositionend", onCompositionEnd);
+    } else {
+      listen(control, "change", render);
+      listen(label, "click", onLabelClick);
+    }
+    listen(list, "click", onListClick);
+    listen(list, "pointerdown", onListPointerDown);
+    listen(document, "pointerdown", onDocumentPointerDown);
+    listen(windowObject, "resize", schedulePosition);
+    listen(windowObject, "scroll", schedulePosition, true);
+    listen(windowObject.visualViewport, "resize", schedulePosition);
+    listen(windowObject.visualViewport, "scroll", schedulePosition);
+    render();
+
+    return Object.freeze({
+      trigger,
+      close,
+      refresh: render,
+      destroy() {
+        if (destroyed) return;
+        destroyed = true;
+        windowObject.clearTimeout(timer);
+        windowObject.clearTimeout(compositionRefreshTimer);
+        listenerCleanups.splice(0).forEach((cleanup) => cleanup());
+        list.remove();
+        trigger.removeAttribute("role");
+        trigger.removeAttribute("aria-haspopup");
+        trigger.removeAttribute("aria-expanded");
+        trigger.removeAttribute("aria-controls");
+        trigger.removeAttribute("aria-autocomplete");
+        trigger.removeAttribute("aria-labelledby");
+        if (isSelect) {
+          trigger.remove();
+          control.hidden = originalHidden;
+          if (originalTabIndex === null) control.removeAttribute("tabindex");
+          else control.setAttribute("tabindex", originalTabIndex);
+          control.removeAttribute("aria-hidden");
+        } else {
+          if (originalList) control.setAttribute("list", originalList);
+          if (originalAutocomplete === null) control.removeAttribute("autocomplete");
+          else control.setAttribute("autocomplete", originalAutocomplete);
+        }
+        host.removeAttribute("data-enhanced");
+        host.removeAttribute("data-open");
+      },
+    });
+  }
+
+  function createSearchSelect(document, select, windowObject = globalThis) {
+    return createSearchPicker(document, select, select, windowObject);
+  }
+
+  function createSearchAutocomplete(document, input, windowObject = globalThis) {
+    const listId = input?.getAttribute?.("list");
+    const dataList = listId ? document.getElementById(listId) : null;
+    return createSearchPicker(document, input, dataList, windowObject);
+  }
+
   function getFormValues(form) {
     const values = {};
     for (const key of FILTER_KEYS) {
@@ -359,17 +704,34 @@
     const results = document.getElementById("search-results");
     const submit = document.getElementById("search-submit");
     const source = document.getElementById("search-source");
+    const windowObject = document.defaultView || globalThis;
+    const sourceMenu = createSearchSelect(document, source, windowObject);
     const suggestionLists = {
       entity: document.getElementById("search-entities"),
       tag: document.getElementById("search-tags"),
       scenario: document.getElementById("search-scenarios"),
     };
+    const autocompleteInputs = ["search-entity", "search-tag", "search-scenario"]
+      .map((id) => document.getElementById(id))
+      .filter(Boolean);
+    const autocompleteMenus = autocompleteInputs
+      .map((input) => createSearchAutocomplete(document, input, windowObject))
+      .filter(Boolean);
+    const listenerCleanups = [];
 
     let pagefindPromise;
     let catalogPromise;
     let filtersPromise;
     let filtersLoaded = false;
     let searchSequence = 0;
+    let resetTimer = 0;
+    let destroyed = false;
+
+    function listen(target, type, handler, options) {
+      if (typeof target?.addEventListener !== "function") return;
+      target.addEventListener(type, handler, options);
+      listenerCleanups.push(() => target.removeEventListener(type, handler, options));
+    }
 
     async function getPagefind() {
       if (!pagefindPromise) {
@@ -424,12 +786,14 @@
           const filters = await pagefind.filters();
           if (source) {
             populateSelect(document, source, filters.source);
+            sourceMenu?.refresh();
           }
           for (const [key, dataList] of Object.entries(suggestionLists)) {
             if (dataList) {
               populateDataList(document, dataList, filters[key]);
             }
           }
+          autocompleteMenus.forEach((menu) => menu.refresh());
           filtersLoaded = true;
         })().catch((error) => {
           filtersPromise = undefined;
@@ -490,30 +854,56 @@
       }
     }
 
-    query.addEventListener("focus", () => {
+    const preloadFilters = () => (
       loadFilters().catch(() => {
         status.textContent = "过滤条件加载失败，仍可使用关键词检索。";
-      });
-    }, { once: true });
-    form.addEventListener("submit", (event) => {
+      })
+    );
+    const preloadControls = [query, sourceMenu?.trigger || source, ...autocompleteInputs]
+      .filter(Boolean);
+    preloadControls.forEach((control) => {
+      listen(control, "focus", preloadFilters);
+      listen(control, "pointerdown", preloadFilters, { passive: true });
+    });
+    listen(form, "submit", (event) => {
       event.preventDefault();
       runSearch();
     });
-    form.addEventListener("reset", () => {
+    listen(form, "reset", () => {
       searchSequence += 1;
-      globalThis.setTimeout(() => {
+      windowObject.clearTimeout(resetTimer);
+      resetTimer = windowObject.setTimeout(() => {
+        if (destroyed) return;
         results.replaceChildren();
         status.textContent = "输入关键词或至少选择一个过滤条件。";
+        sourceMenu?.refresh();
+        autocompleteMenus.forEach((menu) => menu.refresh());
         query.focus();
       }, 0);
     });
 
-    return Object.freeze({ getCatalog, getPagefind, loadFilters, runSearch });
+    return Object.freeze({
+      getCatalog,
+      getPagefind,
+      loadFilters,
+      runSearch,
+      destroy() {
+        if (destroyed) return;
+        destroyed = true;
+        searchSequence += 1;
+        windowObject.clearTimeout(resetTimer);
+        listenerCleanups.splice(0).forEach((cleanup) => cleanup());
+        sourceMenu?.destroy();
+        autocompleteMenus.forEach((menu) => menu.destroy());
+      },
+    });
   }
 
   return {
     FILTER_KEYS,
     MAX_RESULTS,
+    createSearchAutocomplete,
+    createSearchSelect,
     executeSearch,
     initializeSearchPage,
     normalizeFilters,

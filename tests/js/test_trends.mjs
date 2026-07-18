@@ -1,5 +1,7 @@
 import assert from "node:assert/strict";
 import { createRequire } from "node:module";
+import { readFileSync } from "node:fs";
+import path from "node:path";
 import test from "node:test";
 
 const require = createRequire(import.meta.url);
@@ -80,6 +82,13 @@ test("compact view uses the accessible list instead of claiming a hidden matrix"
 });
 
 
+test("BFCache pagehide preserves the enhanced controls until a real unload", () => {
+  assert.equal(Trends.shouldDestroyOnPageHide({ persisted: true }), false);
+  assert.equal(Trends.shouldDestroyOnPageHide({ persisted: false }), true);
+  assert.equal(Trends.shouldDestroyOnPageHide({}), true);
+});
+
+
 test("topic drill-down never borrows a signal from another observation window", () => {
   const windows = {
     "24h": null,
@@ -111,6 +120,35 @@ test("freshness labels static snapshots without realtime claims", () => {
 });
 
 
+test("heat tiers use stable cross-window thresholds with monotonic visual emphasis", () => {
+  const boundaries = [
+    [0, "cold"],
+    [49.999, "cold"],
+    [50, "watch"],
+    [59.999, "watch"],
+    [60, "active"],
+    [66.999, "active"],
+    [67, "hot"],
+    [69.999, "hot"],
+    [70, "signal"],
+    [100, "signal"],
+  ];
+
+  assert.deepEqual(
+    boundaries.map(([score]) => Trends.heatTier(score)),
+    boundaries.map(([, expected]) => expected),
+  );
+
+  const visuals = [0, 50, 60, 67, 70].map((score) => Trends.heatVisual(score));
+  assert.deepEqual(visuals.map((item) => item.key), ["cold", "watch", "active", "hot", "signal"]);
+  assert.deepEqual(visuals.map((item) => item.label), ["低热", "观察", "活跃", "高热", "强信号"]);
+  for (let index = 1; index < visuals.length; index += 1) {
+    assert.ok(visuals[index].rings > visuals[index - 1].rings);
+    assert.ok(visuals[index].glow > visuals[index - 1].glow);
+  }
+});
+
+
 test("filters trends by signal, source, scenario and case-insensitive topic query", () => {
   const values = [
     trend(),
@@ -133,6 +171,68 @@ test("filters trends by signal, source, scenario and case-insensitive topic quer
     ["tag:agent"],
   );
   assert.equal(Trends.filterTrends(values, { query: "不存在" }).length, 0);
+});
+
+
+test("facet filters rank the strongest matching evidence before global heat", () => {
+  const values = [
+    trend({
+      id: "tag:global-hot",
+      topic: "Global Hot",
+      score: 95,
+      sources: [{ name: "GitHub", count: 2 }],
+      scenarios: [{ name: "大语言模型", count: 3 }],
+    }),
+    trend({
+      id: "tag:facet-strong",
+      topic: "Facet Strong",
+      score: 61,
+      sources: [{ name: "GitHub", count: 9 }],
+      scenarios: [{ name: "大语言模型", count: 14 }],
+    }),
+  ];
+
+  assert.deepEqual(
+    Trends.filterTrends(values, { scenario: "大语言模型" }).map((item) => item.id),
+    ["tag:facet-strong", "tag:global-hot"],
+  );
+  assert.deepEqual(
+    Trends.filterTrends(values, { source: "github" }).map((item) => item.id),
+    ["tag:facet-strong", "tag:global-hot"],
+  );
+});
+
+
+test("facet summaries distinguish matching topics from evidence and reconcile stale URL state", () => {
+  const values = [
+    trend({ sources: [{ name: "GitHub", count: 9 }], scenarios: [{ name: "大语言模型", count: 14 }] }),
+    trend({ id: "tag:agent", sources: [{ name: "GitHub", count: 2 }], scenarios: [{ name: "大语言模型", count: 3 }] }),
+  ];
+
+  assert.equal(Trends.countFacetTopics(values, "scenarios", "大语言模型"), 2);
+  assert.equal(Trends.countFacetTopics(values, "sources", "github"), 2);
+  assert.deepEqual(
+    Trends.reconcileFacetState(
+      { source: "GitHub", scenario: "RAG应用", query: "LLM" },
+      { sources: [{ name: "GitHub", count: 11 }], scenarios: [{ name: "大语言模型", count: 17 }] },
+    ),
+    {
+      state: { source: "GitHub", scenario: "", query: "LLM" },
+      changed: true,
+    },
+  );
+});
+
+
+test("committed trend data visibly drills the LLM scenario into its strongest topic", () => {
+  const dataRoot = path.resolve(import.meta.dirname, "../../blog/static/data/stack-trends");
+  const index = JSON.parse(readFileSync(path.join(dataRoot, "index.json"), "utf8"));
+  const windowData = JSON.parse(readFileSync(path.join(dataRoot, index.windows["30d"].path), "utf8"));
+  const filtered = Trends.filterTrends(windowData.trends, { scenario: "大语言模型" });
+
+  assert.ok(filtered.length > 0 && filtered.length < windowData.trends.length);
+  assert.equal(filtered[0].topic, "大语言模型");
+  assert.ok(filtered.every((item) => item.scenarios.some((facet) => facet.name === "大语言模型")));
 });
 
 
@@ -243,6 +343,7 @@ test("topology matrix is deterministic, bounded and needs no animation frame", (
     assert.ok(point.previousX >= 28 && point.previousX <= 872);
     assert.ok(point.previousY >= 24 && point.previousY <= 456);
     assert.ok(Array.isArray(point.facets));
+    assert.equal(point.heat.key, Trends.heatTier(point.score));
   }
   assert.equal(Trends.hitTestMatrix(first, first[0].x, first[0].y)?.id, first[0].id);
 });

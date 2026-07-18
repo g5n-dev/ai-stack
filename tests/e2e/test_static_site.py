@@ -132,7 +132,11 @@ def test_search_is_keyboard_operable_filtered_and_same_origin(page: Page, site_u
 
     expect(page.locator("#search-source option")).not_to_have_count(1, timeout=15_000)
     page.locator("#search-query").fill("VideoGPA")
-    page.locator("#search-source").select_option("arxiv")
+    page.locator("#search-source-trigger").click()
+    page.locator(
+        '#search-source-listbox [role="option"][data-value="arxiv"]'
+    ).click()
+    page.locator("#search-query").focus()
     page.keyboard.press("Enter")
 
     expect(page.locator("#search-status")).to_contain_text("找到", timeout=15_000)

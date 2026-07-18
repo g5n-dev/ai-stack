@@ -96,28 +96,38 @@
 
         <div class="trend-control-group trend-control-grid">
           <div>
-            <label for="trend-signal">信号状态</label>
-            <select id="trend-signal">
-              <option value="all">全部状态</option>
-              <option value="new">新出现</option>
-              <option value="rising">上升</option>
-              <option value="steady">稳定</option>
-              <option value="cooling">降温</option>
-            </select>
+            <label id="trend-signal-label" for="trend-signal">信号状态</label>
+            <div class="trend-select" data-trend-select>
+              <select id="trend-signal">
+                <option value="all">全部状态</option>
+                <option value="new">新出现</option>
+                <option value="rising">上升</option>
+                <option value="steady">稳定</option>
+                <option value="cooling">降温</option>
+              </select>
+            </div>
           </div>
           <div>
-            <label for="trend-source">来源</label>
-            <select id="trend-source"><option value="">全部来源</option></select>
+            <label id="trend-source-label" for="trend-source">来源</label>
+            <div class="trend-select" data-trend-select>
+              <select id="trend-source"><option value="">全部来源</option></select>
+            </div>
           </div>
           <div class="trend-control-grid__wide">
-            <label for="trend-scenario">场景</label>
-            <select id="trend-scenario"><option value="">全部场景</option></select>
+            <label id="trend-scenario-label" for="trend-scenario">场景</label>
+            <div class="trend-select" data-trend-select>
+              <select id="trend-scenario"><option value="">全部场景</option></select>
+            </div>
           </div>
         </div>
 
         <div class="trend-control-actions">
           <button id="trend-clear" type="button" class="trend-button trend-button--quiet">清除筛选</button>
         </div>
+
+        <p id="trend-filter-summary" class="trend-filter-summary" role="status" aria-live="polite" aria-atomic="true">
+          当前未启用附加筛选。
+        </p>
 
         <div class="trend-method-note">
           <strong>可解释评分</strong>
@@ -152,14 +162,19 @@
             <span>SIGNAL TOPOLOGY</span>
             <span>RANKED / EVIDENCE FIELD</span>
           </div>
-          <canvas id="trend-matrix" role="img" aria-label="趋势拓扑矩阵：每个细胞域代表一个真实趋势主题；外围圈径编码证据数量，中心琥珀域为当前或最高排名主题的固定放大展开态，用于展示来源与场景；标签显示真实排名、得分与信号状态。主题位置仅用于分组与排名轨道，不表示虚构的横纵坐标。"></canvas>
-          <div class="trend-matrix-legend" role="note" aria-label="趋势拓扑图例">
-            <span data-key="topic">青色：主题细胞域</span>
-            <span data-key="active">琥珀：当前主题</span>
-            <span data-key="metric">外圈圈径：证据量</span>
-            <span data-key="facet">节点：来源与场景</span>
+          <canvas id="trend-matrix" role="img" aria-label="趋势拓扑矩阵：每个细胞域代表一个真实趋势主题；颜色与辉光编码综合热度，外围圈径编码证据数量，中心为当前或最高排名主题的固定放大展开态，用于展示来源与场景；符号表示变化状态，标签显示真实排名、热度、证据与得分。主题位置仅用于分组与排名轨道，不表示虚构的横纵坐标。"></canvas>
+          <div class="trend-matrix-legend" role="note" aria-label="趋势热度与拓扑编码图例">
+            <strong>综合热度</strong>
+            <span data-heat="cold">低热</span>
+            <span data-heat="watch">观察</span>
+            <span data-heat="active">活跃</span>
+            <span data-heat="hot">高热</span>
+            <span data-heat="signal">强信号</span>
+            <span data-key="metric">圈径：证据量</span>
+            <span data-key="facet">节点：来源 / 场景</span>
+            <span data-key="state">符号：变化状态</span>
           </div>
-          <p class="trend-matrix-note">位置用于主题分组与排名轨道；中心为固定放大展开态，外围圈径、证据、来源、得分与状态均来自当前数据窗口。</p>
+          <p class="trend-matrix-note">位置用于主题分组与排名轨道；中心为固定放大展开态。颜色 / 辉光：综合热度；圈径：证据量；符号：变化状态，所有指标均来自当前数据窗口。</p>
         </div>
 
         <div id="trend-empty" class="trend-empty" hidden>

@@ -26,9 +26,20 @@ def test_trends_page_is_a_progressive_shared_header_workbench() -> None:
     assert soup.select_one('ol[id="trend-list"]') is not None
     assert soup.select_one('[id="trend-detail"]') is not None
     assert soup.select_one('[id="trend-status"][aria-live="polite"]') is not None
+    assert soup.select_one('[id="trend-filter-summary"][aria-live="polite"]') is not None
     assert soup.select_one('a[href="#trend-controls"]') is not None
     assert soup.select_one('button.trend-mobile-filter-toggle[aria-controls="trend-filter-body"]') is not None
     assert soup.select_one('[id="trend-filter-body"]') is not None
+    enhanced_selects = soup.select('[data-trend-select] > select')
+    assert [select.get("id") for select in enhanced_selects] == [
+        "trend-signal",
+        "trend-source",
+        "trend-scenario",
+    ]
+    assert soup.select_one('.trend-matrix-legend [data-heat="cold"]') is not None
+    assert soup.select_one('.trend-matrix-legend [data-heat="signal"]') is not None
+    assert "颜色 / 辉光：综合热度" in source
+    assert "符号：变化状态" in source
     assert source.count("<h1") == 1
     assert "趋势洞察" in source
     assert "STACK趋势" not in source
@@ -61,6 +72,10 @@ def test_trends_styles_are_scoped_and_share_site_tokens() -> None:
     assert not any(f"font-size: {size}px" in source for size in (8, 9, 10))
     assert ".trend-evidence-link" in source
     assert ".trend-mobile-filter-toggle" in source
+    assert ".trend-select__trigger" in source
+    assert ".trend-select__list" in source
+    assert '[role="option"]' in source
+    assert '.trend-matrix-legend span[data-heat="signal"]' in source
     assert '.trend-workbench[data-detail="open"] .trend-detail' in source
     assert "@media (max-width: 1439px)" in source
 
@@ -73,7 +88,7 @@ def test_trends_runtime_uses_safe_text_progressive_loading_and_distinct_links() 
     assert "AbortController" in source
     assert "requestAnimationFrame" not in source
     assert "history.pushState" in source
-    assert 'addEventListener("popstate"' in source
+    assert 'listen(windowObject, "popstate"' in source
     assert "/scenarios/" in source
     assert 'mode: "focus"' in source
     assert "AIStackWatchlist" in source
@@ -82,11 +97,14 @@ def test_trends_runtime_uses_safe_text_progressive_loading_and_distinct_links() 
     assert "completeDetailTransition" in source
     assert "closeTopicDetail(true)" in source
     assert "restoreTrendOrigin(previousTopic" in source
-    assert "loadTopic(next.topic, { push: false, focus: true, scroll: true })" in source
+    assert "loadTopic(model.state.topic, { push: false, focus: true, scroll: true })" in source
     assert "setFilterPanel(!filterMedia?.matches)" in source
     assert "resolveWindowSignal" in source
     assert "MAX_TOPOLOGY_CELLS = 11" in source
     assert "MAX_MATRIX_PIXELS = 8 * 1024 * 1024" in source
+    assert "createTrendSelect" in source
+    assert "aria-activedescendant" in source
+    assert "heatVisual" in source
     assert 'root.dataset.detail = model.state.topic ? "open" : "closed"' in source
     load_topic = source.index("async function loadTopic")
     invalidate = source.index("const sequence = invalidateTopicLoad(model);", load_topic)

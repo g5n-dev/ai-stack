@@ -5,6 +5,10 @@ import test from "node:test";
 const require = createRequire(import.meta.url);
 const Search = require("../../blog/static/js/search.js");
 
+test("search exposes the progressive source select enhancer", () => {
+  assert.equal(typeof Search.createSearchSelect, "function");
+});
+
 
 class FakeElement {
   constructor(tagName = "div") {
@@ -14,20 +18,34 @@ class FakeElement {
     this.dataset = {};
     this.hidden = false;
     this.listeners = new Map();
+    this.style = {};
     this.textContent = "";
     this.value = "";
+    this.scrollHeight = 180;
   }
 
   append(...children) {
+    children.forEach((child) => { child.parentNode = this; });
     this.children.push(...children);
   }
 
+  appendChild(child) {
+    this.append(child);
+    return child;
+  }
+
   replaceChildren(...children) {
+    this.children.forEach((child) => { child.parentNode = null; });
+    children.forEach((child) => { child.parentNode = this; });
     this.children = [...children];
   }
 
   setAttribute(name, value) {
     this.attributes.set(name, String(value));
+    if (name.startsWith("data-")) {
+      const key = name.slice(5).replace(/-([a-z])/g, (_, letter) => letter.toUpperCase());
+      this.dataset[key] = String(value);
+    }
   }
 
   getAttribute(name) {
@@ -36,6 +54,10 @@ class FakeElement {
 
   removeAttribute(name) {
     this.attributes.delete(name);
+    if (name.startsWith("data-")) {
+      const key = name.slice(5).replace(/-([a-z])/g, (_, letter) => letter.toUpperCase());
+      delete this.dataset[key];
+    }
   }
 
   addEventListener(name, listener) {
@@ -44,28 +66,259 @@ class FakeElement {
     this.listeners.set(name, listeners);
   }
 
+  removeEventListener(name, listener) {
+    const listeners = this.listeners.get(name) ?? [];
+    this.listeners.set(name, listeners.filter((candidate) => candidate !== listener));
+  }
+
   async dispatch(name, event = {}) {
+    event.target ??= this;
     for (const listener of this.listeners.get(name) ?? []) {
       await listener(event);
     }
   }
 
+  dispatchEvent(event) {
+    event.target ??= this;
+    for (const listener of this.listeners.get(event.type) ?? []) listener(event);
+    return true;
+  }
+
+  closest() {
+    return this.closestTarget ?? null;
+  }
+
+  contains(target) {
+    return target === this || this.children.some((child) => child.contains?.(target));
+  }
+
+  querySelectorAll(selector) {
+    const matches = [];
+    const visit = (node) => {
+      if (selector === '[role="option"]' && node.getAttribute?.("role") === "option") matches.push(node);
+      node.children?.forEach(visit);
+    };
+    this.children.forEach(visit);
+    return matches;
+  }
+
+  getBoundingClientRect() {
+    return { top: 80, right: 320, bottom: 124, left: 80, width: 240, height: 44 };
+  }
+
+  scrollIntoView() {}
+
+  remove() {
+    if (!this.parentNode) return;
+    this.parentNode.children = this.parentNode.children.filter((child) => child !== this);
+    this.parentNode = null;
+  }
+
+  get options() {
+    return this.tagName === "SELECT" ? this.children : undefined;
+  }
+
+  get selectedIndex() {
+    if (this.tagName !== "SELECT") return -1;
+    return Math.max(0, this.children.findIndex((option) => option.value === this.value));
+  }
+
   focus() {
     this.focused = true;
+    if (this.ownerDocument) this.ownerDocument.activeElement = this;
   }
 }
 
 
 function fakeDocument() {
-  return {
+  const document = {
+    activeElement: null,
+    body: new FakeElement("body"),
+    documentElement: { clientWidth: 1024, clientHeight: 768 },
     createElement(tagName) {
-      return new FakeElement(tagName);
+      const element = new FakeElement(tagName);
+      element.ownerDocument = document;
+      return element;
     },
     getElementById() {
       return null;
     },
+    querySelector() {
+      return null;
+    },
+    addEventListener() {},
+    removeEventListener() {},
+  };
+  document.body.ownerDocument = document;
+  return document;
+}
+
+
+function fakeWindow() {
+  const listeners = new Map();
+  const visualListeners = new Map();
+  return {
+    innerWidth: 1024,
+    innerHeight: 768,
+    Event: class FakeEvent {
+      constructor(type, options = {}) {
+        this.type = type;
+        this.bubbles = Boolean(options.bubbles);
+      }
+    },
+    addEventListener(name, listener) {
+      const values = listeners.get(name) ?? [];
+      values.push(listener);
+      listeners.set(name, values);
+    },
+    removeEventListener(name, listener) {
+      listeners.set(name, (listeners.get(name) ?? []).filter((value) => value !== listener));
+    },
+    setTimeout,
+    clearTimeout,
+    visualViewport: {
+      width: 1024,
+      height: 768,
+      offsetLeft: 0,
+      offsetTop: 0,
+      addEventListener(name, listener) {
+        const values = visualListeners.get(name) ?? [];
+        values.push(listener);
+        visualListeners.set(name, values);
+      },
+      removeEventListener(name, listener) {
+        visualListeners.set(name, (visualListeners.get(name) ?? []).filter((value) => value !== listener));
+      },
+    },
   };
 }
+
+
+test("custom source select supports keyboard selection and restores the native control", async () => {
+  const document = fakeDocument();
+  const windowObject = fakeWindow();
+  const host = new FakeElement("div");
+  const label = new FakeElement("label");
+  const select = new FakeElement("select");
+  const all = new FakeElement("option");
+  const arxiv = new FakeElement("option");
+  label.id = "search-source-label";
+  select.id = "search-source";
+  select.ownerDocument = document;
+  select.closestTarget = host;
+  all.value = "";
+  all.textContent = "全部来源";
+  arxiv.value = "arxiv";
+  arxiv.textContent = "arxiv";
+  select.append(all, arxiv);
+  document.querySelector = () => label;
+  let changes = 0;
+  select.addEventListener("change", () => { changes += 1; });
+
+  const picker = Search.createSearchSelect(document, select, windowObject);
+
+  assert.ok(picker);
+  assert.equal(select.hidden, true);
+  assert.equal(select.getAttribute("aria-hidden"), "true");
+  assert.equal(picker.trigger.getAttribute("role"), "combobox");
+  await picker.trigger.dispatch("click");
+  assert.equal(picker.trigger.getAttribute("aria-expanded"), "true");
+  await picker.trigger.dispatch("keydown", { key: "ArrowDown", preventDefault() {} });
+  await picker.trigger.dispatch("keydown", { key: "Enter", preventDefault() {} });
+  assert.equal(select.value, "arxiv");
+  assert.equal(changes, 1);
+
+  picker.destroy();
+  assert.equal(select.hidden, false);
+  assert.equal(select.getAttribute("aria-hidden"), null);
+  assert.equal(select.getAttribute("tabindex"), null);
+  assert.equal(host.dataset.enhanced, undefined);
+  assert.equal(document.body.children.length, 0);
+});
+
+
+test("custom autocomplete keeps its input identity, chooses the first result and restores datalist", async () => {
+  const document = fakeDocument();
+  const windowObject = fakeWindow();
+  const host = new FakeElement("div");
+  const label = new FakeElement("label");
+  const input = new FakeElement("input");
+  const dataList = new FakeElement("datalist");
+  const first = new FakeElement("option");
+  const second = new FakeElement("option");
+  label.id = "search-tag-label";
+  input.id = "search-tag";
+  input.ownerDocument = document;
+  input.closestTarget = host;
+  input.setAttribute("list", "search-tags");
+  input.setAttribute("autocomplete", "off");
+  first.value = "智能体";
+  second.value = "知识图谱";
+  dataList.append(first, second);
+  document.getElementById = (id) => (id === "search-tags" ? dataList : null);
+  document.querySelector = () => label;
+  let inputEvents = 0;
+  input.addEventListener("input", () => { inputEvents += 1; });
+
+  const picker = Search.createSearchAutocomplete(document, input, windowObject);
+
+  assert.ok(picker);
+  assert.equal(input.id, "search-tag");
+  assert.equal(input.getAttribute("list"), null);
+  assert.equal(input.getAttribute("aria-labelledby"), "search-tag-label");
+  document.activeElement = input;
+  await input.dispatch("focus");
+  await input.dispatch("keydown", { key: "Escape", preventDefault() {}, stopPropagation() {} });
+  await input.dispatch("keydown", { key: "ArrowDown", preventDefault() {} });
+  await input.dispatch("keydown", { key: "Enter", preventDefault() {} });
+  assert.equal(input.value, "智能体");
+  assert.equal(inputEvents, 1);
+  assert.equal(input.getAttribute("aria-expanded"), "false");
+
+  picker.destroy();
+  assert.equal(input.getAttribute("list"), "search-tags");
+  assert.equal(input.getAttribute("autocomplete"), "off");
+  assert.equal(document.body.children.length, 0);
+});
+
+
+test("custom autocomplete never steals Enter from an active Chinese IME composition", async () => {
+  const document = fakeDocument();
+  const windowObject = fakeWindow();
+  const host = new FakeElement("div");
+  const label = new FakeElement("label");
+  const input = new FakeElement("input");
+  const dataList = new FakeElement("datalist");
+  const option = new FakeElement("option");
+  label.id = "search-scenario-label";
+  input.id = "search-scenario";
+  input.ownerDocument = document;
+  input.closestTarget = host;
+  input.setAttribute("list", "search-scenarios");
+  option.value = "智能体工具";
+  dataList.append(option);
+  document.getElementById = (id) => (id === "search-scenarios" ? dataList : null);
+  document.querySelector = () => label;
+  const picker = Search.createSearchAutocomplete(document, input, windowObject);
+  document.activeElement = input;
+  await input.dispatch("focus");
+  input.value = "智";
+  await input.dispatch("compositionstart");
+  await input.dispatch("input", { isComposing: true });
+  let prevented = false;
+  await input.dispatch("keydown", {
+    key: "Enter",
+    keyCode: 229,
+    isComposing: true,
+    preventDefault() { prevented = true; },
+  });
+
+  assert.equal(prevented, false);
+  assert.equal(input.value, "智");
+  assert.equal(input.getAttribute("aria-expanded"), "false");
+  await input.dispatch("compositionend");
+  picker.destroy();
+});
 
 
 function fakeSearchDocument() {
@@ -572,4 +825,30 @@ test("allows a failed facet preload to be retried without poisoning keyword sear
 
   assert.equal(filterCalls, 2);
   assert.equal(document.ids["search-status"].textContent, "没有匹配条目。");
+});
+
+
+test("direct interaction with a filter preloads facets before keyword focus", async () => {
+  const document = fakeSearchDocument();
+  let filterCalls = 0;
+  const pagefind = {
+    async init() {},
+    async filters() {
+      filterCalls += 1;
+      return {
+        source: { arxiv: 4 },
+        entity: {},
+        tag: { 智能体: 3 },
+        scenario: { RAG应用: 2 },
+      };
+    },
+  };
+  const controller = Search.initializeSearchPage(document, async () => pagefind);
+
+  await document.ids["search-source"].dispatch("pointerdown", { pointerType: "mouse" });
+
+  assert.equal(filterCalls, 1);
+  assert.equal(document.ids["search-source"].children.length, 2);
+  assert.equal(document.ids["search-tags"].children[0].value, "智能体");
+  controller.destroy();
 });
