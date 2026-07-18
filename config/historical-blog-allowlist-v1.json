@@ -1,0 +1,18 @@
+{
+  "schema": "ai_stack.historical_capture.blog_allowlist",
+  "version": 1,
+  "allowed_hosts": [
+    "aws.amazon.com",
+    "bair.berkeley.edu",
+    "blog.google",
+    "deepmind.google",
+    "engineering.fb.com",
+    "huggingface.co",
+    "karpathy.github.io",
+    "lexfridman.com",
+    "news.mit.edu",
+    "openai.com",
+    "thegradient.pub",
+    "www.latent.space"
+  ]
+}

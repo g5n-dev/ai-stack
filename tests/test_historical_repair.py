@@ -458,6 +458,47 @@ def test_clean_active_singleton_is_canonically_normalized_and_then_idempotent(
     assert repeated.manifest["groups"] == []
 
 
+def test_curated_evidence_backed_rewrite_is_preserved_and_idempotent(
+    tmp_path: Path,
+) -> None:
+    root = tmp_path / "content/posts"
+    route = _write_post(
+        root,
+        "20260718-curated.md",
+        external_url="https://example.com/curated",
+        body=(
+            "## 转写说明\n\n本文基于多个公开一手来源独立转写，不复制来源正文。\n\n"
+            "## 30 秒结论\n\n"
+            + "这是一段已核验、可追溯且不依赖标题推测的工程分析。" * 80
+        ),
+        date="2026-07-18T10:00:00+08:00",
+        tags=["AI Agent", "工程实践"],
+        categories=["AI 工程"],
+        scenarios=["AI/ML项目"],
+    )
+    document = route.read_text(encoding="utf-8")
+    document = document.replace(
+        "scenarios:\n- AI/ML项目\n",
+        "scenarios:\n- AI/ML项目\n"
+        "entry_kind: curated\n"
+        "source: juejin\n"
+        "content_mode: evidence_backed_rewrite\n"
+        "publication_tier: B\n"
+        "source_capture_mode: curated_sources\n"
+        "source_completeness: verified\n"
+        "source_is_truncated: false\n"
+        "editorial_sources:\n"
+        "- https://example.com/curated\n"
+        "- https://docs.example.com/primary\n",
+    )
+    route.write_text(document, encoding="utf-8")
+
+    plan = _build(root)
+
+    assert plan.manifest["planned_changes"] == 0
+    assert plan.manifest["groups"] == []
+
+
 def test_plan_documents_both_safe_execution_profiles(tmp_path: Path) -> None:
     root = tmp_path / "content/posts"
     _write_post(

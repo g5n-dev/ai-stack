@@ -186,6 +186,12 @@ def _evidence_fields(source: str, item: Mapping[str, Any], source_text: str) -> 
                 "arxiv_id": _text(item.get("arxiv_id")),
             }
         )
+        if "published" in item or "published_at" in item:
+            common["published"] = _text(
+                item.get("published_at") or item.get("published")
+            )
+        if "pdf_url" in item:
+            common["pdf_url"] = _text(item.get("pdf_url"))
     elif source in {"blogs_podcasts", "juejin", "reddit"}:
         common.update(
             {
@@ -201,6 +207,17 @@ def _evidence_fields(source: str, item: Mapping[str, Any], source_text: str) -> 
                 "today_stars": _text(item.get("today_stars")),
             }
         )
+        if "forks" in item:
+            common["forks"] = _text(item.get("forks"))
+        if "license" in item:
+            common["license"] = _text(item.get("license"))
+        if "topics" in item:
+            raw_topics = item.get("topics")
+            common["topics"] = (
+                [_text(topic) for topic in raw_topics if _text(topic)]
+                if isinstance(raw_topics, (list, tuple))
+                else []
+            )
     return common
 
 

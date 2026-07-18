@@ -40,6 +40,7 @@ def _article_html() -> str:
     <html lang="zh-CN">
       <body>
         <article data-entry-id="{ARTICLE_ID}">
+          <h1 class="article-title">Open Interpreter Rust：Harness 与 ACP</h1>
           <div id="article-root">
             <div class="article-viewer markdown-body">
               <h2>核心机制</h2>
@@ -105,6 +106,7 @@ def test_extracts_complete_ssr_article_and_preserves_structure() -> None:
     )
 
     assert capture.article_id == ARTICLE_ID
+    assert capture.title == "Open Interpreter Rust：Harness 与 ACP"
     assert capture.heading_count == 3
     assert capture.code_block_count == 1
     assert START_SENTINEL in capture.markdown

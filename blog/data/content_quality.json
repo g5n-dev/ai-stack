@@ -10721,10 +10721,21 @@
   "reason_counts": {
     "archived_content": 448
   },
+  "rehydration_pending_by_source": {
+    "arxiv": 554,
+    "blogs_podcasts": 523,
+    "github_trending": 42,
+    "hacker_news": 769,
+    "juejin": 477
+  },
+  "rehydration_pending_count": 2365,
+  "rehydration_terminal_by_source": {},
+  "rehydration_terminal_count": 0,
   "schema_version": "content_quality_manifest_v4",
   "source_brief_count": 63,
   "source_file_count": 2423,
   "source_tree_sha256": "57f148e5ebec16ea7c9c376076d1df08fd28e9c0c00c4928b104e16c8bfa9728",
+  "verified_provenance_count": 58,
   "warning_counts": {
     "source_excerpt_truncated": 2
   }

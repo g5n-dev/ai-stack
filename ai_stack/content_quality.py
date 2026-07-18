@@ -3,17 +3,21 @@
 from __future__ import annotations
 
 import hashlib
+import ipaddress
 import json
 import re
 import unicodedata
 from collections import Counter
 from collections.abc import Mapping
 from dataclasses import dataclass
+from datetime import datetime
 from pathlib import Path
 from typing import Any
 from urllib.parse import urlsplit
 
 import yaml
+
+from .identity import canonicalize_url
 
 _FRONTMATTER_RE = re.compile(
     r"\A(?:\ufeff)?---[ \t]*\r?\n.*?\r?\n---[ \t]*(?:\r?\n|\Z)",
@@ -220,6 +224,19 @@ _EXPLICIT_TRUNCATION_RE = re.compile(r"\[\s*\.{3}\s*truncated\s*\]", re.IGNORECA
 _HTTP_SCHEMES = frozenset({"http", "https"})
 _SOURCE_DIGEST_RE = re.compile(r"^sha256:[0-9a-f]{64}$")
 _SOURCE_CAPTURE_MODES = frozenset({"abstract", "excerpt", "metadata_only", "social_post"})
+_SAFE_SNAKE_CASE_RE = re.compile(r"^[a-z][a-z0-9]*(?:_[a-z0-9]+)*$")
+HISTORICAL_RECOVERY_SOURCES = frozenset(
+    {"arxiv", "blogs_podcasts", "github_trending", "hacker_news", "juejin"}
+)
+HISTORICAL_RECOVERY_FAILURE_TYPES = frozenset(
+    {
+        "capture_validation_error",
+        "dispatch_error",
+        "source_fetch_error",
+        "source_locator_error",
+        "unexpected_fetch_error",
+    }
+)
 _REWRITE_REQUIRED_HEADINGS = (
     "转写说明",
     "核心结论",
@@ -795,6 +812,83 @@ def markdown_frontmatter(document: str) -> dict[str, Any]:
     return {str(key): value for key, value in parsed.items()}
 
 
+def _canonical_public_http_url(value: Any) -> str | None:
+    if not isinstance(value, str) or value != value.strip():
+        return None
+    try:
+        canonical_url = canonicalize_url(value)
+    except ValueError:
+        return None
+    hostname = urlsplit(canonical_url).hostname
+    folded_hostname = hostname.casefold() if hostname else ""
+    if (
+        not folded_hostname
+        or ("." not in folded_hostname and ":" not in folded_hostname)
+        or folded_hostname == "localhost"
+        or folded_hostname.endswith((".localhost", ".local", ".internal", ".home", ".lan"))
+    ):
+        return None
+    try:
+        address = ipaddress.ip_address(hostname)
+    except ValueError:
+        return canonical_url
+    return canonical_url if address.is_global else None
+
+
+def is_terminal_recovery_failure_archive(metadata: Mapping[str, Any], body: str) -> bool:
+    """Return whether an archive is a strict, auditable recovery terminal state."""
+
+    source = metadata.get("source")
+    failure_type = metadata.get("recovery_failure_type")
+    failure_reason = metadata.get("recovery_failure_reason")
+    attempted_at = metadata.get("recovery_attempted_at")
+    if source not in HISTORICAL_RECOVERY_SOURCES:
+        return False
+    if failure_type not in HISTORICAL_RECOVERY_FAILURE_TYPES:
+        return False
+    if not (
+        isinstance(failure_reason, str)
+        and failure_reason == failure_reason.strip()
+        and 1 <= len(failure_reason) <= 128
+        and _SAFE_SNAKE_CASE_RE.fullmatch(failure_reason) is not None
+    ):
+        return False
+    if not isinstance(attempted_at, str) or attempted_at != attempted_at.strip():
+        return False
+    normalized_time = f"{attempted_at[:-1]}+00:00" if attempted_at.endswith("Z") else attempted_at
+    try:
+        parsed_time = datetime.fromisoformat(normalized_time)
+    except ValueError:
+        return False
+    canonical_url = _canonical_public_http_url(metadata.get("external_url"))
+    if canonical_url is None or not isinstance(body, str):
+        return False
+    expected_markers = (
+        "## 历史来源恢复说明",
+        f"`{failure_type}`",
+        f"`{failure_reason}`",
+        canonical_url,
+    )
+    source_support = metadata.get("source_support")
+    return (
+        metadata.get("archived") is True
+        and metadata.get("content_mode") == "archived"
+        and metadata.get("publication_tier") == "ARCHIVED"
+        and metadata.get("source_provenance") == "historical_recovery_failed"
+        and isinstance(source_support, float)
+        and source_support == 0.0
+        and metadata.get("archive_reason") == "historical_source_recovery_failed"
+        and parsed_time.tzinfo is not None
+        and parsed_time.utcoffset() is not None
+        and metadata.get("tags") == []
+        and metadata.get("categories") == []
+        and metadata.get("scenarios") == []
+        and metadata.get("build") == {"list": "never", "render": "always"}
+        and len(body.encode("utf-8")) <= 4096
+        and all(marker in body for marker in expected_markers)
+    )
+
+
 def is_source_brief(metadata: Mapping[str, Any], body: str) -> bool:
     """Return whether a safe post satisfies the structural source-card contract."""
 
@@ -802,9 +896,7 @@ def is_source_brief(metadata: Mapping[str, Any], body: str) -> bool:
     declared_mode = str(metadata.get("content_mode") or "").strip().casefold()
     if declared_mode == "source_brief":
         source_is_truncated = metadata.get("source_is_truncated")
-        truncation_reason = str(
-            metadata.get("source_truncation_reason") or ""
-        ).strip()
+        truncation_reason = str(metadata.get("source_truncation_reason") or "").strip()
         modern_provenance = (
             str(metadata.get("publication_tier") or "").strip() == "C"
             and str(metadata.get("source_capture_mode") or "").strip() in _SOURCE_CAPTURE_MODES
@@ -840,9 +932,7 @@ def is_source_brief(metadata: Mapping[str, Any], body: str) -> bool:
         return False
     text = str(body or "")
     maximum_bytes = (
-        _MAX_MODERN_SOURCE_BRIEF_BODY_BYTES
-        if declared_mode == "source_brief"
-        else 1_200
+        _MAX_MODERN_SOURCE_BRIEF_BODY_BYTES if declared_mode == "source_brief" else 1_200
     )
     if len(text.encode("utf-8")) >= maximum_bytes:
         return False
@@ -901,6 +991,43 @@ def is_evidence_backed_rewrite(metadata: Mapping[str, Any], body: str) -> bool:
     )
 
 
+def is_curated_evidence_backed_rewrite(metadata: Mapping[str, Any], body: str) -> bool:
+    """Return whether a reviewed multi-source rewrite has verifiable provenance."""
+
+    if str(metadata.get("entry_kind") or "").strip().casefold() != "curated":
+        return False
+    if str(metadata.get("content_mode") or "").strip().casefold() != "evidence_backed_rewrite":
+        return False
+    if str(metadata.get("publication_tier") or "").strip() != "B":
+        return False
+    if str(metadata.get("source_capture_mode") or "").strip() != "curated_sources":
+        return False
+    if str(metadata.get("source_completeness") or "").strip() != "verified":
+        return False
+    if metadata.get("source_is_truncated") is not False:
+        return False
+    raw_sources = metadata.get("editorial_sources")
+    if not isinstance(raw_sources, (list, tuple, set)):
+        return False
+    sources: set[str] = set()
+    for value in raw_sources:
+        if not isinstance(value, str):
+            return False
+        source = value.strip()
+        parsed = urlsplit(source)
+        if (
+            parsed.scheme.casefold() != "https"
+            or not parsed.hostname
+            or parsed.username
+            or parsed.password
+        ):
+            return False
+        sources.add(source)
+    if len(sources) < 2:
+        return False
+    return len(re.sub(r"\s+", "", _prose_without_code(str(body or "")))) >= 700
+
+
 def analyze_post(document: str) -> PostQualityAnalysis:
     """Analyze one complete Markdown document through the shared Post gate."""
 
@@ -932,6 +1059,7 @@ def analyze_post(document: str) -> PostQualityAnalysis:
 
     source_brief = is_source_brief(metadata, body)
     evidence_backed_rewrite = is_evidence_backed_rewrite(metadata, body)
+    curated_evidence_backed_rewrite = is_curated_evidence_backed_rewrite(metadata, body)
     declared_mode = str(metadata.get("content_mode") or "").strip().casefold()
     entry_kind = str(metadata.get("entry_kind") or "").strip().casefold()
     substantive_length = len(re.sub(r"\s+", "", _prose_without_code(body)))
@@ -942,7 +1070,7 @@ def analyze_post(document: str) -> PostQualityAnalysis:
     if declared_mode == "legacy_source_brief" and not source_brief:
         fatal.add("invalid_source_brief")
     if declared_mode == "evidence_backed_rewrite" and not (
-        evidence_backed_rewrite or entry_kind == "curated"
+        evidence_backed_rewrite or curated_evidence_backed_rewrite
     ):
         fatal.add("invalid_evidence_backed_rewrite")
     if entry_kind == "auto" and not declared_mode:
@@ -994,6 +1122,11 @@ def build_content_quality_manifest(content_root: Path | str) -> dict[str, Any]:
     source_brief_count = 0
     complete_count = 0
     legacy_analysis_count = 0
+    verified_provenance_count = 0
+    rehydration_pending_count = 0
+    rehydration_pending_by_source: Counter[str] = Counter()
+    rehydration_terminal_count = 0
+    rehydration_terminal_by_source: Counter[str] = Counter()
     warning_counts: Counter[str] = Counter()
 
     for path in sorted(root.rglob("*.md"), key=lambda item: item.as_posix()):
@@ -1011,6 +1144,8 @@ def build_content_quality_manifest(content_root: Path | str) -> dict[str, Any]:
 
         document = payload.decode("utf-8", errors="replace")
         metadata = markdown_frontmatter(document)
+        body = markdown_body(document)
+        declared_mode = str(metadata.get("content_mode") or "").strip().casefold()
         status: str
         reasons: tuple[str, ...]
         warnings: tuple[str, ...]
@@ -1034,6 +1169,30 @@ def build_content_quality_manifest(content_root: Path | str) -> dict[str, Any]:
                 legacy_analysis_count += 1
             else:
                 complete_count += 1
+
+        terminal_archive = is_terminal_recovery_failure_archive(metadata, body)
+        provenance_pending = (
+            metadata.get("archived") is True and not terminal_archive
+        ) or declared_mode in {"legacy_analysis", "legacy_source_brief"}
+        source = str(metadata.get("source") or "").strip() or "unknown"
+        if terminal_archive:
+            rehydration_terminal_count += 1
+            rehydration_terminal_by_source[source] += 1
+        elif provenance_pending:
+            rehydration_pending_count += 1
+            rehydration_pending_by_source[source] += 1
+        elif (
+            status == "source_brief"
+            and declared_mode == "source_brief"
+            and is_source_brief(metadata, body)
+        ) or (
+            status == "complete"
+            and (
+                is_evidence_backed_rewrite(metadata, body)
+                or is_curated_evidence_backed_rewrite(metadata, body)
+            )
+        ):
+            verified_provenance_count += 1
         if not reasons and not warnings and status == "complete":
             continue
         if status != "source_brief":
@@ -1052,6 +1211,11 @@ def build_content_quality_manifest(content_root: Path | str) -> dict[str, Any]:
         "complete_count": complete_count,
         "source_brief_count": source_brief_count,
         "legacy_analysis_count": legacy_analysis_count,
+        "verified_provenance_count": verified_provenance_count,
+        "rehydration_pending_count": rehydration_pending_count,
+        "rehydration_pending_by_source": dict(sorted(rehydration_pending_by_source.items())),
+        "rehydration_terminal_count": rehydration_terminal_count,
+        "rehydration_terminal_by_source": dict(sorted(rehydration_terminal_by_source.items())),
         "quarantined_count": quarantined_count,
         "archived_count": archived_count,
         "reason_counts": dict(sorted(reason_counts.items())),
