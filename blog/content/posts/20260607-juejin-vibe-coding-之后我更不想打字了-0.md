@@ -1,104 +1,81 @@
 ---
-title: Vibe Coding体验：代码生成替代手动编写
+title: vibe coding 之后，我更不想打字了
 date: 2026-06-07 22:23:43+08:00
 draft: false
 entry_kind: auto
 tags:
-- Vibe Coding
-- AI 编程
-- 代码生成
-- 开发效率
-- 自然语言
-- 自动化
-- 编程体验
-- 工具使用
+- 掘金
+- AI Agent
+- 大语言模型
+- Python
+- TypeScript
 categories:
-- 开发工具
-source: juejin
-description: 在尝试 vibe coding 工具后，代码直接由人工智能补全，我发现自己对手动输入的冲动大幅下降。AI 能在瞬间完成重复性编码，让我们把精力集中在架构和业务逻辑上，但也让人担忧是否会淡化传统的编程技能。本文将分享使用感受，分析效率提升、学习路径以及保持主动编码的平衡点，为开发者提供可行的参考。
-  在体验 vibe coding 工具后，我发现敲代码的频率明显下降。
-external_url: https://juejin.cn/post/7648053214596284443
+- 大模型
 scenarios:
 - AI/ML项目
-content_mode: legacy_analysis
-publication_tier: LEGACY
-source_provenance: legacy_no_snapshot
-source_support: 0.0
+- 大语言模型
+source: juejin
+description: 当前只保存了公开页面节选，不代表原文全文。请以原始来源为准。
+external_url: https://juejin.cn/post/7648053214596284443
+aliases: []
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: excerpt
+source_snapshot_sha256: sha256:a1e616b239ae7efc1ec67c8d5d4d9fa3855cf49072da0dcf5f91ccdcf8c2a8b2
+extractor_version: source-contract-v1
+discovery_method: article_html_excerpt
+fetch_status: captured
+source_completeness: partial
+source_is_truncated: true
+source_support: 1.0
+source_title_chars_original: 22
+captured_at: '2026-07-18T04:21:37.297003Z'
+source_capture_sha256: sha256:9890012b04d451e0679573348b84253a36ffd05cbb81b1c8ca9e10f0c3a9c3da
+source_capture_chars_original: 1821
+source_publication_excerpt_chars: 792
+source_truncation_reason: historical_excerpt_only,historical_publication_excerpt_limit
 ---
 
 ## 基本信息
 
-- **作者**: counterxing
-- **链接**: [https://juejin.cn/post/7648053214596284443](https://juejin.cn/post/7648053214596284443)
+- **来源**: juejin
+- **原始来源**: [https://juejin.cn/post/7648053214596284443](<https://juejin.cn/post/7648053214596284443>)
 
----
-## 导语
+## 来源摘要/节选
 
-在尝试 vibe coding 工具后，代码直接由人工智能补全，我发现自己对手动输入的冲动大幅下降。AI 能在瞬间完成重复性编码，让我们把精力集中在架构和业务逻辑上，但也让人担忧是否会淡化传统的编程技能。本文将分享使用感受，分析效率提升、学习路径以及保持主动编码的平衡点，为开发者提供可行的参考。
+公开展示已截断至最多 800 个字符；请访问原始来源查看完整上下文。
 
----
-## 描述
+> 作品链接：
+> github.com/xingbofeng/…
+> 最近用 Cursor、Claude Code、Codex 这类工具比较多，我有一个感受越来越明显：
+> 写代码这件事，正在从“敲代码”变成“描述意图”。
+> 以前我大部分时间是在键盘上写实现。现在很多时候，我是在跟 AI 说：这里的逻辑改一下、这个状态不要放这里、这个 API 的 JSON 结构兼容一下旧字段、这个报错顺着调用链往上查一下。
+> 这些话用嘴说很自然，但一个字一个字打出来，就会明显慢一拍。
+> 我试过一些现成工具，但还是想自己做一个
+> 一开始我也不是想自己造轮子。
+> 我试过闪电说、Typeless 这类产品。它们各有优点，有的功能完整，有的体验也不错，也有一些支持本地模型、云端模型、自定义配置。
+> 但用下来，我发现自己真正想要的东西其实更简单。
+> 对我来说，现有方案经常会卡在几个地方：
+> 要么是收费；
+> 要么自定义模型需要配置云端；
+> 要么本地模型在中文技术场景里还不够聪明。
+> 这里不是说它们不好。它们面对的是更大的场景，功能自然会做得更完整。但我自己的需求很窄：我只是想在 vibe coding 的时候，把脑子里的话更快地输入到当前光标位置。
+> 我不想打开一个新窗口。
+> 不想多维护一套复杂配置。
+> 也不想每次语音输入都变成一个新的工作流。
+> 我想要的其实很简单：轻一点，快一点，少折腾一点。
+> 所以我把语音输入做成了一个按键
+> VoiceInput 的交互非常简单：
+> 按住右 Command，开始说话。
+> 松开右 Command，文字直接落到当前光标位置。
+> 它不是语音助手，也不想替你做决策。它更像一个“语音键盘”。
+> 光标在哪，文字就去哪。
+> 聊天框、文档、浏览器输入框、Cursor、代码编辑器，都可以按这个方式使用。
+> 这也是我自己最在意的地方：不要打断正在进行的工作。
+> 很多工具的问题不是能力不够，而是它会让你从原来的上下文里跳出去。…
 
-在使用 vibe coding 工具后，编码过程变得更加顺畅和自然，以至于自己更不愿意手动打字，因为 AI 能够快速生成代码、简化开发流程。
+## 来源说明
 
----
-## 摘要
+当前只保存了公开页面节选，不代表原文全文。请以原始来源为准。
 
-在体验 vibe coding 工具后，我发现敲代码的频率明显下降。AI 能根据自然语言或少量提示快速生成完整的代码块，省去逐行键入的繁琐步骤。与此同时，工具提供的实时补全、错误提示和自动化重构让整个开发过程更流畅、自然。随之而来的是对传统键盘输入的依赖减弱，甚至出现“不想打字”的感觉——因为大部分需求已经由模型完成，剩余的手动编辑也主要集中在微调和业务逻辑的细枝末节上。这种转变提升了开发效率，但也提醒我们仍需保持对代码结构的把控和对细节的理解，以免过度依赖 AI 生成导致代码质量下降。总体而言，vibe coding 让编码更自然、更高效，使得手动打字的需求大幅下降。
-
----
-## 评论
-
-#### 核心观点概括
-（事实）vibe coding 工具在近两年快速发展，主流 IDE 插件已实现自然语言描述即生成可执行代码。
-（作者观点）作者认为使用这类工具后，代码产出效率显著提升，导致自己对手动敲键盘的意愿下降。
-（推断）如果工具的生成质量与维护成本得到有效控制，未来“手写代码”在日常开发中的比例可能进一步下降。
-
-#### 支撑理由与边界条件
-- **生成速度**：AI 在数秒内完成常规函数、API 脚手架，远快于手动实现（事实）。
-- **上下文感知**：IDE 插件可读取项目结构、类型系统，生成的代码往往符合既有约定（事实）。
-- **降低认知负荷**：开发者只需描述需求，而不必记忆语法细节，提升了流畅度（作者观点）。
-- **边界条件**：
-  1. **语言/框架覆盖**：对新兴或小众语言的生成效果仍不稳定。
-  2. **安全与隐私**：敏感业务逻辑若上传至外部模型，存在数据泄露风险。
-  3. **可维护性**：自动生成的代码若缺乏可读注释或统一风格，后期维护成本会上升（推断）。
-
-#### 实践启发
-- 将 vibe coding 作为**快速原型**和**样板代码**的首选，手写代码聚焦在核心业务、复杂算法和性能关键路径。
-- 在团队内部建立**生成代码审查**机制，确保质量与安全。
-- 保持**键入练习**，防止对工具过度依赖导致基础编码能力退化。
-- 根据项目需求和语言成熟度，灵活选择是否启用 vibe coding，避免“一刀切”。
-
----
-## 学习要点
-
-- Vibe coding 通过自然语言、视觉和声音等交互方式大幅降低手工输入代码的需求，让开发者更倾向于使用高层抽象而非直接打字。
-- 采用 vibe coding 可显著加快原型迭代和功能验证的节奏，提升从概念到可运行系统的转化速度。
-- 即使在 vibe coding 环境下，调试和维护仍需对底层实现有一定了解，以快速定位隐蔽错误。
-- Vibe coding 促使开发者培养跨模态交互设计、语音和手势编程等新技能，适应多感官的开发方式。
-- 行业需要制定统一的 vibe coding 规范和元数据标准，确保不同平台和工具之间的兼容性与可移植性。
-- 教育培训应融入 vibe coding 理念，鼓励学生在非传统输入方式下进行编程实践，培养创新思维。
-
----
-## 引用
-
-- **掘金原文**: [https://juejin.cn/post/7648053214596284443](https://juejin.cn/post/7648053214596284443)
-
-> 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
-
----
-
-## 站内链接
-
-- 分类： [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/)
-- 标签： [Vibe Coding](/tags/vibe-coding/) / [AI编程](/tags/ai%E7%BC%96%E7%A8%8B/) / [代码生成](/tags/%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90/) / [开发效率](/tags/%E5%BC%80%E5%8F%91%E6%95%88%E7%8E%87/) / [自然语言](/tags/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80/) / [自动化](/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/) / [编程体验](/tags/%E7%BC%96%E7%A8%8B%E4%BD%93%E9%AA%8C/) / [工具使用](/tags/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/)
-- 场景： [AI/ML项目](/scenarios/ai-ml%E9%A1%B9%E7%9B%AE/)
-
-### 相关文章
-
-- [Codex App：基于自然语言指令的代码生成工具]({{< relref "posts/20260202-hacker_news-the-codex-app-1.md" >}})
-- [构建极简编程代理的技术实践与经验总结]({{< relref "posts/20260201-hacker_news-what-i-learned-building-an-opinionated-and-minimal-1.md" >}})
-- [Codex 应用：基于 OpenAI 模型的代码生成工具]({{< relref "posts/20260202-hacker_news-the-codex-app-1.md" >}})
-- [Codex 应用：基于 GPT-3 的代码生成工具]({{< relref "posts/20260202-hacker_news-the-codex-app-1.md" >}})
-- [OpenAI Codex 应用更新：VSCode 分支替代与多任务工作树]({{< relref "posts/20260203-blogs_podcasts-ainews-openai-codex-app-death-of-the-vscode-fork-m-0.md" >}})
-*本文由 AI Stack 自动生成，提供深度内容分析。*
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

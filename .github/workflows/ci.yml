@@ -76,6 +76,17 @@ jobs:
             tests/test_tagger_taxonomy_normalization.py \
             tests/test_scenario_analyzer_taxonomy.py \
             tests/test_historical_repair.py \
+            tests/test_historical_provenance_priority.py \
+            tests/test_historical_repair_check.py \
+            tests/test_historical_rehydration.py \
+            tests/test_historical_publication.py \
+            tests/test_historical_taxonomy.py \
+            tests/test_historical_source_fetch.py \
+            tests/test_historical_capture_job.py \
+            tests/test_historical_rehydration_apply.py \
+            tests/test_apply_historical_rehydration_cli.py \
+            tests/test_content_quality_terminal_archives.py \
+            tests/test_historical_ci_configuration.py \
             tests/test_historical_repair_integration.py \
             tests/test_historical_post_structure_repair.py \
             tests/test_historical_integrity_recovery.py \
@@ -103,6 +114,11 @@ jobs:
             --fail-on-quarantine \
             --fail-on-structural-warning
           git diff --exit-code -- blog/data/content_quality.json
+
+      - name: Verify historical repair fixed point
+        env:
+          PYTHONPATH: ${{ github.workspace }}
+        run: python3 scripts/repair_historical_content.py --check
 
       - name: Build committed STACK trend assets
         env:

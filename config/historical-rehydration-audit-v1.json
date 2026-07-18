@@ -1,0 +1,63 @@
+{
+  "capture": {
+    "captured_count": 2097,
+    "failed_count": 268,
+    "raw_audit_committed": false,
+    "result_count": 2365,
+    "results_sha256": "sha256:26352cf80e4e548d4acf4f7c73580de0c4030cba61dab08d40f5e765fedec88a"
+  },
+  "completed_on": "2026-07-18",
+  "deduplication_transaction": {
+    "backup_id": "historical-dedupe-20260718-v1",
+    "canonical_writes": 5,
+    "duplicate_deletes": 7,
+    "expected_source_head": "b4b89b23acc7dbe3b1207a5df63b3e2505b7558c",
+    "fixed_point": true,
+    "plan_digest": "sha256:6dd67def63a455f20c721a938d45dde96f816517e198ed8238cf0e7dc7c65641",
+    "planned_changes": 12,
+    "receipt_state": "applied"
+  },
+  "final_inventory": {
+    "classification_counts": {
+      "needs_source_recovery": 0,
+      "terminal_unrecoverable": 276,
+      "verified_rewrite": 2,
+      "verified_source_brief": 2138
+    },
+    "entries_sha256": "sha256:0ce519df14d344050a8dcd71d1e964e3dc121a9dd7178e43bc75b33fb2b3477a",
+    "entry_count": 2416,
+    "publication_modes": {
+      "abstract": 571,
+      "excerpt": 768,
+      "metadata_only": 799
+    }
+  },
+  "input_inventory": {
+    "entries_sha256": "sha256:893bdb29d6ea19b8e8bd3722c77f534fcfd0580156f53f815a298019aa3efcf6",
+    "entry_count": 2422,
+    "needs_source_recovery": 2365,
+    "verified_rewrite": 1,
+    "verified_source_brief": 56
+  },
+  "notes": [
+    "This file contains counts and content digests only; raw captures, URLs, local paths and backup bodies are intentionally excluded.",
+    "SHA-256 values provide consistency checks and hash binding only; they are not digital signatures or source authentication.",
+    "Terminal archives are the current workflow outcome and may be reconsidered if new lawful, verifiable source evidence becomes available."
+  ],
+  "publication": {
+    "capture_validation_error": 8,
+    "new_source_briefs": 2089,
+    "source_fetch_error": 268,
+    "terminal_archives": 276
+  },
+  "rehydration_transaction": {
+    "applied_count": 2365,
+    "backup_id": "historical-rehydration-20260718-v2",
+    "expected_head": "30deed974de48b7550dc57cb4e100f261e00a12f",
+    "plan_digest": "sha256:d6991736ad17b4a35c3046becec314f87d5d1b873e2b159f10695623418fe4ac",
+    "receipt_file_sha256": "sha256:68d2252d8477e615e5a817ed5f474331f68345777c8d7ffae8c170523bd2ead6",
+    "receipt_state": "applied"
+  },
+  "schema": "ai_stack.historical_rehydration.redacted_audit",
+  "version": 1
+}

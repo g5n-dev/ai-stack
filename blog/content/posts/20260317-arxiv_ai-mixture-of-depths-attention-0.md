@@ -1,30 +1,54 @@
 ---
-title: Mixture-of-Depths 动态分配计算资源的注意力机制
+title: Mixture-of-Depths Attention
 date: 2026-03-17 20:30:33+08:00
 draft: false
 entry_kind: auto
-tags: []
-categories: []
+tags:
+- ArXiv
+- 大语言模型
+categories:
+- 论文
+- 大模型
+scenarios:
+- AI/ML项目
+- 大语言模型
 source: arxiv
-description: 历史条目已归档：现有正文未通过内容质量门，请查阅原始来源。
-external_url: http://arxiv.org/abs/2603.15619v1
-scenarios: []
+description: 当前只保存了官方论文摘要，不代表论文全文。请以原始来源为准。
+external_url: https://arxiv.org/abs/2603.15619v1
 aliases:
 - /posts/20260318-arxiv_ai-mixture-of-depths-attention-0/
-content_mode: archived
-publication_tier: ARCHIVED
-source_provenance: legacy_no_snapshot
-source_support: 0.0
-archived: true
-archive_reason: historical_content_quality_gate
-build:
-  list: never
-  render: always
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: abstract
+source_snapshot_sha256: sha256:219b15e308f02cf1d78b77ae7e04222efe894f3ddeef72165385c54529bdf0b6
+extractor_version: source-contract-v1
+discovery_method: arxiv_api
+fetch_status: captured
+source_completeness: abstract_only
+source_is_truncated: false
+source_support: 1.0
+source_title_chars_original: 27
+captured_at: '2026-07-18T04:28:34.236322Z'
+source_capture_sha256: sha256:7f51e1c6444b26df1601f4ea511887fa0613f90d588c3227c1cec977e4512d76
+source_capture_chars_original: 1191
+source_publication_excerpt_chars: 1191
 ---
 
-## 历史条目归档说明
+## 基本信息
 
-该条目的历史正文未通过内容质量门，可能包含基于标题推测的内容。为避免继续传播不可核验文本，本站仅保留透明归档记录。
+- **来源**: arxiv
+- **原始来源**: [https://arxiv.org/abs/2603.15619v1](<https://arxiv.org/abs/2603.15619v1>)
+- **作者**: Lianghui Zhu, Yuxin Fang, Bencheng Liao, Shijie Wang, Tianheng Cheng, Zilong Huang, Chen Chen, Lai Wei, Yutao Zeng, Ya Wang, Yi Lin, Yu Li, Xinggang Wang
+- **分类**: cs.CL
+- **论文时间**: 2026-03-16T17:59:55Z
+- **论文 PDF**: [https://arxiv.org/pdf/2603.15619v1.pdf](<https://arxiv.org/pdf/2603.15619v1.pdf>)
 
-- 历史内容质量门未通过
-- 原始来源：<http://arxiv.org/abs/2603.15619v1>
+## 来源摘要/节选
+
+> Scaling depth is a key driver for large language models \(LLMs\). Yet, as LLMs become deeper, they often suffer from signal degradation: informative features formed in shallow layers are gradually diluted by repeated residual updates, making them harder to recover in deeper layers. We introduce mixture-of-depths attention \(MoDA\), a mechanism that allows each attention head to attend to sequence KV pairs at the current layer and depth KV pairs from preceding layers. We further describe a hardware-efficient algorithm for MoDA that resolves non-contiguous memory-access patterns, achieving 97.3% of FlashAttention-2's efficiency at a sequence length of 64K. Experiments on 1.5B-parameter models demonstrate that MoDA consistently outperforms strong baselines. Notably, it improves average perplexity by 0.2 across 10 validation benchmarks and increases average performance by 2.11% on 10 downstream tasks, with a negligible 3.7% FLOPs computational overhead. We also find that combining MoDA with post-norm yields better performance than using it with pre-norm. These results suggest that MoDA is a promising primitive for depth scaling. Code is released at https://github.com/hustvl/MoDA .
+
+## 来源说明
+
+当前只保存了官方论文摘要，不代表论文全文。请以原始来源为准。
+
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

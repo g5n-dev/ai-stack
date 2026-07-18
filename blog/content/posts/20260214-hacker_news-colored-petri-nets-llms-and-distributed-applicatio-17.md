@@ -1,30 +1,49 @@
 ---
-title: 着色Petri网结合大语言模型构建分布式应用
+title: Colored Petri Nets, LLMs, and distributed applications
 date: 2026-02-14 22:06:52+08:00
 draft: false
 entry_kind: auto
-tags: []
-categories: []
+tags:
+- Hacker News
+- 大语言模型
+categories:
+- 大模型
+scenarios:
+- AI/ML项目
+- 大语言模型
 source: hacker_news
-description: 历史条目已归档：现有正文未通过内容质量门，请查阅原始来源。
+description: 当前只保存了来源元数据，未抓取外链全文。请以原始来源和 Hacker News 讨论为准。
 external_url: https://blog.sao.dev/cpns-llms-distributed-apps
-scenarios: []
 aliases:
 - /posts/20260214-hacker_news-colored-petri-nets-llms-and-distributed-applicatio-12/
-content_mode: archived
-publication_tier: ARCHIVED
-source_provenance: legacy_no_snapshot
-source_support: 0.0
-archived: true
-archive_reason: historical_content_quality_gate
-build:
-  list: never
-  render: always
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: metadata_only
+source_snapshot_sha256: sha256:3eeadfff40ebd8d1f386d43187196364c4dcde4a97c098a1f1a95e5375be5702
+extractor_version: source-contract-v1
+discovery_method: api_metadata
+fetch_status: captured
+source_completeness: metadata_only
+source_is_truncated: false
+source_support: 1.0
+source_title_chars_original: 54
+captured_at: '2026-07-18T04:17:18.534054Z'
+source_capture_sha256: sha256:8ac309286ba45aca6197d8a9a57f5771f21387ce3cf677df347850d461dab6da
+source_capture_chars_original: 54
+source_publication_excerpt_chars: 54
 ---
 
-## 历史条目归档说明
+## 基本信息
 
-该条目的历史正文未通过内容质量门，可能包含基于标题推测的内容。为避免继续传播不可核验文本，本站仅保留透明归档记录。
+- **来源**: hacker\_news
+- **原始来源**: [https://blog.sao.dev/cpns-llms-distributed-apps](<https://blog.sao.dev/cpns-llms-distributed-apps>)
+- **作者**: stuartaxelowen
+- **评分**: 53
+- **评论数**: 6
+- **HN 讨论**: [https://news.ycombinator.com/item?id=47018405](<https://news.ycombinator.com/item?id=47018405>)
 
-- 历史内容质量门未通过
-- 原始来源：<https://blog.sao.dev/cpns-llms-distributed-apps>
+## 来源说明
+
+当前只保存了来源元数据，未抓取外链全文。请以原始来源和 Hacker News 讨论为准。
+
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

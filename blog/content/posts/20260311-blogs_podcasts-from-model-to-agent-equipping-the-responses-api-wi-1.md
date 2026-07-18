@@ -1,27 +1,26 @@
 ---
-title: OpenAI 利用 Responses API 构建具备文件与状态管理的代理运行时
+title: 'From model to agent: Equipping the Responses API with a computer environment'
 date: 2026-03-11 19:02:51+08:00
 draft: false
 entry_kind: auto
 tags:
-- OpenAI
-- Responses API
-- Agent
-- 代理运行时
-- Shell 工具
-- 容器化
-- 状态管理
-- 文件管理
+- 博客与播客
+- AI Agent
+- Python
+- Java
+- 命令行工具
+- Docker
+- 数据库
 categories:
-- 大模型
 - AI 工程
-source: blogs_podcasts
-description: OpenAI 如何利用 Responses API、Shell 工具和托管容器构建了一个代理运行时，以运行具备文件、工具和状态的安全、可扩展的代理。
-  将大模型升级为具备自主规划与执行能力的智能体，关键在于如何安全、可控地赋予其操作计算机环境的能力。
-external_url: https://openai.com/index/equip-responses-api-computer-environment
+- 数据
 scenarios:
 - AI/ML项目
-- 后端开发
+- 云原生/容器
+- 命令行工具
+source: blogs_podcasts
+description: 当前只保存了公开页面节选，不代表原文全文。请以原始来源为准。
+external_url: https://openai.com/index/equip-responses-api-computer-environment
 aliases:
 - /posts/20260311-blogs_podcasts-from-model-to-agent-equipping-the-responses-api-wi-3/
 - /posts/20260311-blogs_podcasts-from-model-to-agent-equipping-the-responses-api-wi-5/
@@ -31,331 +30,41 @@ aliases:
 - /posts/20260312-blogs_podcasts-from-model-to-agent-equipping-the-responses-api-wi-8/
 - /posts/20260312-blogs_podcasts-from-model-to-agent-equipping-the-responses-api-wi-9/
 - /posts/20260313-blogs_podcasts-from-model-to-agent-equipping-the-responses-api-wi-14/
-content_mode: legacy_analysis
-publication_tier: LEGACY
-source_provenance: legacy_no_snapshot
-source_support: 0.0
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: excerpt
+source_snapshot_sha256: sha256:1a258b009482d030ccd261d8298a1f68a806bdc408b20774a58904d69b0939c3
+extractor_version: source-contract-v1
+discovery_method: article_html_excerpt
+fetch_status: captured
+source_completeness: partial
+source_is_truncated: true
+source_support: 1.0
+source_title_chars_original: 76
+captured_at: '2026-07-18T04:18:49.241076Z'
+source_capture_sha256: sha256:75e559ade58de4b9aaf11e602e50205ab7e36c381e819906d12b395029e00e87
+source_capture_chars_original: 5830
+source_publication_excerpt_chars: 760
+source_truncation_reason: historical_capture_limit,historical_publication_excerpt_limit
 ---
 
 ## 基本信息
 
-- **来源**: OpenAI Blog (blog)
-- **发布时间**: 2026-03-11T11:00:00+00:00
-- **链接**: [https://openai.com/index/equip-responses-api-computer-environment](https://openai.com/index/equip-responses-api-computer-environment)
+- **来源**: blogs\_podcasts
+- **原始来源**: [https://openai.com/index/equip-responses-api-computer-environment](<https://openai.com/index/equip-responses-api-computer-environment>)
 
----
+## 来源摘要/节选
 
-## 摘要/简介
+公开展示已截断至最多 800 个字符；请访问原始来源查看完整上下文。
 
-OpenAI 如何利用 Responses API、Shell 工具和托管容器构建了一个代理运行时，以运行具备文件、工具和状态的安全、可扩展的代理。
+> By Bo Xu, Danny Zhang, and Rohit Arunachalam
+>
+> We're currently in a shift from using models, which excel at particular tasks, to using agents capable of handling complex workflows. By prompting models, you can only access trained intelligence. However, giving the model a computer environment can achieve a much wider range of use cases, like running services, requesting data from APIs, or generating more useful artifacts like spreadsheets or reports.
+>
+> A few practical problems emerge when you try to build agents: where to put intermediate files, how to avoid pasting large tables into a prompt, how to give the workflow network access without creating a security headache, and how to handle timeouts and retries without building a workflow system yourself.…
 
----
+## 来源说明
 
-## 导语
+当前只保存了公开页面节选，不代表原文全文。请以原始来源为准。
 
-将大模型升级为具备自主规划与执行能力的智能体，关键在于如何安全、可控地赋予其操作计算机环境的能力。本文详细解析了 OpenAI 如何通过 Responses API 结合 Shell 工具与托管容器，构建出一个支持文件操作、工具调用及状态管理的代理运行时。通过阅读这篇文章，你将掌握构建可扩展 Agent 系统的工程化路径，了解如何在保障安全性的前提下，让模型突破对话边界，真正融入业务工作流。
-
----
-
-## 评论
-
-### 中心观点
-这篇文章揭示了 OpenAI 从“对话模型”向“智能体生态”转型的关键一步，即通过 Responses API 与沙箱容器环境的深度耦合，构建了一个**标准化、高安全性的有状态执行层**，旨在解决大模型落地应用中“最后一步执行”的断点问题。
-
-### 支撑理由与边界分析
-
-**1. 架构演进：从无状态对话到有状态智能体**
-*   **[事实陈述]** 文章详细描述了利用 Responses API 协调 Shell Tool 和 Hosted Containers 的技术路径。这标志着技术栈从单纯的“请求-响应”模式，转变为“规划-执行-反馈”的闭环模式。
-*   **[你的推断]** 这一架构将 LLM 的角色从“文本生成器”重新定义为“操作系统内核”的调度者。LLM 不再直接输出最终答案，而是输出控制指令，由外部环境（容器）执行并返回结果。
-*   **[反例/边界条件]** 这种架构增加了系统的**延迟**。对于简单的问答任务，引入容器环境是资源浪费。此外，多轮调用的链路延长，使得 Trace（链路追踪）和 Debug 变得极其复杂。
-
-**2. 安全边界：Sandboxing 是 Agent 落地的必要非充分条件**
-*   **[事实陈述]** 文章重点强调了 Hosted Containers 的隔离性，确保代码执行不会逃逸到宿主机或泄露用户数据。
-*   **[作者观点]** 安全是阻碍企业级 Agent 应用（尤其是涉及代码执行、文件操作）的最大壁垒。OpenAI 提供的托管容器方案，实际上是将安全责任收归自身，降低了用户的使用门槛。
-*   **[反例/边界条件]** 容器隔离只能解决系统层面的安全，无法解决**语义层面的攻击**（如 Prompt Injection 导致的越权操作）。如果模型被诱导执行 `rm -rf` 或发送恶意邮件，容器环境只能防止宿主机崩溃，无法防止业务逻辑的破坏。
-
-**3. 开发范式转移：定义 Tool 即定义能力**
-*   **[事实陈述]** 文章展示了如何通过 Responses API 定义工具，模型自主决定何时调用。
-*   **[你的推断]** 这实际上是在推行一种**“Interface as a Service”**的开发范式。开发者不再需要编写复杂的 Agent 循环逻辑，只需定义好 Tool 的 OpenAPI 规范，模型的推理能力自动填补了逻辑空缺。
-*   **[反例/边界条件]** 这种高度依赖模型“判断力”的机制存在**不确定性**。模型可能会因为幻觉而调用不存在的工具，或者对工具参数的理解出现偏差，导致运行时错误，这在金融或医疗等高可靠性场景下是不可接受的。
-
-### 深度评价（基于六大维度）
-
-#### 1. 内容深度与严谨性
-文章在技术实现上具备较高的**颗粒度**，明确指出了 `Responses API`、`Shell Tool` 和 `Containers` 三者的交互逻辑。然而，文章属于**“工程导向”**而非“研究导向”，它隐去了底层的资源调度算法（如冷启动优化、并发控制机制）以及 Token 消耗的具体细节，这使得架构师在评估成本时缺乏依据。
-
-#### 2. 实用价值
-对于开发者而言，价值极高。它提供了一套**开箱即用的 Agent 标准组件**。在此之前，构建 Agent 需要开发者自己搭建 Docker 环境、处理 WebSocket 连接、管理会话状态。现在，OpenAI 将这些“脏活累活”基础设施化了，开发者只需关注业务逻辑本身。
-
-#### 3. 创新性
-**[你的推断]** 这里的创新不在于技术组件的发明（容器、API 都不是新东西），而在于**组合模式的标准化**。OpenAI 试图定义 Agent 的“Win32 API”——即 Responses API。如果这一标准被广泛采纳，未来的 AI 应用开发将不再依赖 LangChain 或 Semantic Kernel 等第三方中间件，而是直接通过 API 协议与模型层“握手”。
-
-#### 4. 可读性
-文章结构清晰，采用了“问题-方案-实现”的经典技术博客结构。它成功地将复杂的分布式系统概念（容器化、远程执行）抽象为简单的 API 调用流程，非资深架构师也能理解其核心逻辑。
-
-#### 5. 行业影响
-这是对**传统 RPA（机器人流程自动化）和低代码平台的一次降维打击**。通过自然语言定义工具并在容器中执行，OpenAI 正在吞噬传统的“工作流自动化”市场。同时，这也对 MaaS（Model as a Service）提供商提出了新要求：**只提供模型是不够的，必须提供执行环境**。
-
-#### 6. 争议点与不同观点
-*   **厂商锁定风险：** 依赖 OpenAI 的 Hosted Containers 意味着深度绑定其生态。一旦迁移到 Anthropic 或开源模型，整个运行时环境需要重写。
-*   **黑盒监控难题：** 将执行逻辑交给模型动态决定，使得传统的单元测试方法失效。我们如何测试一个“每次决策可能不同”的 Agent？目前的文章未提供可观测性的最佳实践。
-
----
-
-## 技术分析
-
-基于文章标题《From model to agent: Equipping the Responses API with a computer environment》及摘要内容，以下是对OpenAI如何构建智能体运行时环境的深度分析。
-
----
-
-### 1. 核心观点深度解读
-
-**主要观点与核心思想**
-文章的核心观点在于阐述如何将大型语言模型（LLM）从单纯的“文本生成器”转变为具备实际操作能力的“智能体”。作者传达的核心思想是：**模型能力的上限不仅仅取决于其参数规模或训练数据，更取决于其能否安全、有效地感知和操作外部环境。** 通过 Responses API 结合 Shell 工具和托管容器，OpenAI 构建了一个标准化的运行时，赋予模型文件访问、工具调用和状态管理的能力，使其能够像人类程序员一样思考、执行代码并处理任务。
-
-**创新性与深度**
-这一观点的创新性在于它**系统性地解决了“模型幻觉”与“确定性执行”之间的矛盾**。传统的 API 调用是静态的，而 OpenAI 提出的架构引入了“计算环境”作为模型的手和眼。这不仅仅是增加了一个插件，而是改变了交互范式：从“对话即目的”转变为“对话即手段，执行即目的”。深度在于它承认了模型在复杂推理时需要外部辅助（如代码解释器），并提供了一种安全隔离的沙箱机制来实现这一点。
-
-**重要性**
-这个观点至关重要，因为它标志着 AI 应用开发从“提示词工程”向“智能体工程”的跨越。它解决了构建 AI 应用中最棘手的**状态管理**和**安全性**问题，为构建能够处理复杂数据分析、自动化工作流和实时交互的下一代 AI 应用奠定了基础设施。
-
----
-
-### 2. 关键技术要点
-
-**关键技术概念**
-1.  **Responses API**：作为统一的大脑接口，负责意图识别、工具调度和结果汇总。
-2.  **Sandboxed Container (沙箱容器)**：提供隔离的计算环境。这是安全的核心，确保模型执行的恶意或错误代码不会逃逸到宿主服务器或用户环境。
-3.  **Shell Tool (Shell 工具)**：模型与操作系统交互的桥梁，允许模型执行 Bash 命令、运行 Python 脚本、操作文件系统。
-4.  **State Management (状态管理)**：在无状态的 HTTP 请求之间维护文件和上下文，使得多步推理成为可能。
-
-**技术原理与实现**
-系统采用 **Tool Use (工具使用)** 的逻辑循环：
-1.  **User Query** -> **LLM**：模型分析请求，判断是否需要使用 Shell。
-2.  **LLM** -> **API**：模型输出特定的函数调用标记（例如 `run_code`）。
-3.  **Runtime** -> **Container**：运行时在隔离的 Docker 容器中执行命令。
-4.  **Container** -> **Runtime** -> **LLM**：标准输出/错误（stdout/stderr）被捕获并反馈给模型。
-5.  **LLM** -> **User**：模型根据执行结果生成最终回复。
-
-**难点与解决方案**
-*   **难点**：安全性（例如模型执行 `rm -rf /`）。
-*   **方案**：使用严格的容器化技术，限制网络访问和文件系统权限。
-*   **难点**：超时与资源消耗。
-*   **方案**：设置严格的执行超时和内存限制，通过非阻塞 I/O 管理长时运行任务。
-*   **难点**：上下文过长。
-*   **方案**：智能截断和文件引用，只将关键的执行结果或错误信息返回给模型，而非冗余的日志。
-
----
-
-### 3. 实际应用价值
-
-**指导意义**
-该架构为开发者提供了一个**“Reference Architecture” (参考架构)**。它告诉我们，不要试图让模型在“脑子里”完成所有计算（比如心算大数乘法或复杂数据分析），而是应该给它一个“草稿纸”（代码执行环境）。
-
-**应用场景**
-1.  **数据分析与可视化**：用户上传 CSV，模型编写 Python 代码进行清洗、绘图，并返回图片。
-2.  **文档处理与转换**：接收 PDF/Word，在容器中安装 Pandoc/Poppler 进行格式转换。
-3.  **自动化运维**：通过受控的脚本执行，查询系统状态或重启服务。
-4.  **代码调试与测试**：模型编写测试用例，在容器中运行，并根据报错信息修正代码。
-
-**注意事项**
-*   **冷启动时间**：容器的启动可能带来延迟，不适用于毫秒级响应的简单问答。
-*   **成本**：执行代码需要消耗 GPU/CPU 资源，比单纯的 Token 生成成本更高。
-
----
-
-### 4. 行业影响分析
-
-**启示与变革**
-这篇文章暗示了 AI 交互的标准正在发生**“类操作系统的进化”**。未来的 AI API 不再只是输入输出的文本流，而是类似操作系统的系统调用——包含内存（上下文）、进程（工具调用）和文件系统（沙箱）。这将推动行业从“聊天机器人”向“数字员工”转型。
-
-**发展趋势**
-*   **Serverless Agents**：像 Serverless 函数一样，按需启动的 Agent 运行时将成为标配。
-*   **多模态交互的深化**：代码执行环境将支持更多模态，如音频处理、视频剪辑。
-*   **安全标准的提升**：随着 AI 获得执行权限，行业将建立更严格的 AI 沙箱安全标准（类似 WebAssembly 的安全性）。
-
----
-
-### 5. 延伸思考
-
-**拓展方向**
-*   **持久化进程**：目前的容器通常是即用即抛的。未来是否支持长期运行的 Daemon 进程，让 Agent 可以主动监控事件？
-*   **多 Agent 协作**：如果每个 Agent 都有一个容器，容器之间如何通过网络通信？这引出了 Swarm Intelligence 的技术栈。
-*   **人机协同**：当 Agent 遇到无法确定的操作（如删除重要文件），如何优雅地介入人工确认？
-
-**未来研究**
-如何优化“模型-工具”之间的反馈循环？目前的循环是串行的，未来是否能并行执行多个独立的工具调用以提高效率？
-
----
-
-### 6. 实践建议
-
-**如何应用到项目**
-1.  **评估需求**：如果你的应用需要处理数学、数据分析或访问实时 API，不要依赖模型自身的推理，必须引入 Code Interpreter。
-2.  **架构设计**：采用“路由-执行”模式。你的后端作为 Orchestrator（编排器），接收 LLM 的指令，决定是在本地执行还是发送到沙箱。
-3.  **工具定义**：清晰地向 LLM 描述工具的功能。例如，明确告诉模型“有一个 python 环境可用，支持 pandas 和 matplotlib”。
-
-**行动建议**
-*   **阅读 OpenAI 的 Function Calling 文档**：深入理解如何定义 Schema。
-*   **学习 Docker 基础**：理解容器隔离原理，即使你使用托管服务，这对理解边界条件也至关重要。
-*   **小步快跑**：先从简单的文件上传和 Python 脚本执行开始 MVP（最小可行性产品）开发。
-
----
-
-### 7. 案例分析
-
-**成功案例：Data Analyst Agent**
-*   **场景**：金融分析师上传 Excel 表格，询问“上个季度的利润率趋势如何？”。
-*   **流程**：
-    1.  Agent 识别需要处理文件。
-    2.  调用 Python 环境，加载 Pandas。
-    3.  编写代码计算利润率。
-    4.  生成 Matplotlib 图表。
-    5.  将图表转 Base64 返回给用户展示。
-*   **经验**：将数据操作完全交给代码环境，模型仅负责生成代码逻辑和解读结果，准确率远高于直接让模型预测数字。
-
-**失败反思：无限循环的 Agent**
-*   **场景**：Agent 尝试修复代码 Bug，但修复失败，导致错误信息触发模型再次尝试修复，陷入死循环。
-*   **教训**：必须设置**最大迭代次数**或**退避策略**。当工具连续返回错误时，应强制停止并请求用户输入，而不是盲目重试。
-
----
-
-### 8. 哲学与逻辑：论证地图
-
-**中心命题**
-**通过在 Responses API 中集成隔离的 Shell 工具和托管容器运行时，可以将静态的 LLM 转化为具备高可靠性和安全性的智能体，从而解决复杂任务中的幻觉与执行鸿沟问题。**
-
-**支撑理由与依据**
-1.  **理由 1：确定性执行优于概率性生成。**
-    *   *依据*：LLM 无法准确计算 `1234 * 5678` 或解析复杂 JSON，但 Python 代码可以。将任务委托给代码环境可以获得 100% 的准确性。
-2.  **理由 2：沙箱环境消除了代码执行的系统性风险。**
-    *   *依据*：直接在服务器执行用户生成的代码极其危险（注入攻击）。容器化技术（如 Docker）提供了 proven 的隔离边界。
-3.  **理由 3：状态管理是实现多步推理的必要条件。**
-    *   *依据*：复杂任务（如数据分析）需要文件在步骤之间传递。无状态 API 无法做到这一点，而文件系统持久化解决了此问题。
-
-**反例与边界条件**
-1.  **反例 1：高延迟场景。** 对于简单的知识问答（如“法国首都是哪里？”），启动容器和执行代码的开销是巨大的浪费，且不比直接生成答案更准确。
-2.  **反例 2：非确定性任务。** 对于创意写作或情感咨询，代码执行环境毫无帮助，反而限制了模型的发散性思维。
-
-**命题性质分析**
-*   **事实**：容器化技术能提供隔离环境；LLM 在数学计算上存在缺陷。
-*   **价值判断**：认为“准确性”和“安全性”对于 AI Agent 的落地比“响应速度”更重要。
-*   **可检验预测**：采用此架构的 AI 应用在处理数据分析任务时的错误率将显著低于纯 Prompt 模型（例如 <1% vs >15%）。
-
-**立场与验证**
-*   **立场**：支持将“模型+工具运行时”作为构建复杂 AI 应用的标准范式。
-*   **验证方式**：
-    *   *指标*：任务完成率、代码执行成功率、安全逃逸事故数（应为0）。
-    *   *A/B测试*：对比纯文本模型与带 Code Interpreter 模型在处理 CSV 数据分析任务时的准确率和用户满意度。
-
----
-
-## 最佳实践
-
-### 实践 1：构建结构化的工具定义
-
-**说明**:
-为了让模型（Agent）有效地与计算机环境交互，必须提供清晰、结构化的工具定义。这不仅仅是简单的 API 端点列表，而是需要为每个工具提供详细的语义描述，包括工具的功能、输入参数的约束以及预期的输出结构。这有助于模型准确理解何时以及如何调用特定的系统功能。
-
-**实施步骤**:
-1.  **定义接口规范**: 使用标准的 JSON Schema 或 OpenAPI 规范来描述每个工具的输入和输出。
-2.  **编写语义描述**: 为每个工具添加详细的自然语言描述，解释其在计算机环境中的具体作用（例如：“截取当前活动窗口的屏幕截图”）。
-3.  **参数验证**: 在定义中明确指定参数类型（如字符串、整数、布尔值）和必填字段，以减少模型生成无效调用的可能性。
-
-**注意事项**:
-避免使用模糊的命名。工具名称应具有描述性（如 `read_file` 而不是 `do_thing`），并且描述应尽量涵盖工具的边界条件。
-
----
-
-### 实践 2：实施细粒度的权限控制与沙箱隔离
-
-**说明**:
-赋予模型计算机环境访问权限（如文件系统操作或命令执行）会带来潜在的安全风险。最佳实践是实施最小权限原则，并在隔离的沙箱环境中运行 Agent。确保 Agent 只能访问完成任务所必需的特定目录或资源，从而防止意外或恶意的系统修改。
-
-**实施步骤**:
-1.  **容器化部署**: 在 Docker 容器或类似的隔离环境中运行 Agent 的计算机环境，限制其对宿主机操作系统的直接访问。
-2.  **权限白名单**: 配置工具调用层，仅允许执行经过预先批准的命令列表或文件路径。
-3.  **资源限制**: 设置计算资源（CPU、内存、执行时间）的硬性限制，防止 Agent 陷入无限循环或资源耗尽攻击。
-
-**注意事项**:
-即使使用了沙箱，也应监控 Agent 的行为。如果 Agent 尝试执行被禁止的操作，系统应返回明确的错误信息，而不是直接崩溃。
-
----
-
-### 实践 3：设计具有上下文感知能力的错误处理机制
-
-**说明**:
-在与计算机环境交互时，Agent 经常会遇到错误（如“文件未找到”或“网络超时”）。简单的错误提示往往不足以让模型自我修正。最佳实践是捕获这些错误，并将其转化为具有上下文信息的反馈，引导模型进行重试或采取替代方案。
-
-**实施步骤**:
-1.  **错误拦截**: 在工具执行层捕获所有异常和标准错误输出。
-2.  **上下文增强**: 将原始错误信息转换为更具指导性的语言。例如，将“Error 404”转换为“指定的文件路径 /path/to/file 不存在，请检查当前工作目录下的可用文件”。
-3.  **反馈循环**: 将增强后的错误信息作为新的用户消息或系统提示反馈给模型，触发重试逻辑。
-
-**注意事项**:
-避免将敏感的系统堆栈跟踪信息直接暴露给模型，以防信息泄露或干扰模型的推理过程。
-
----
-
-### 实践 4：管理短期记忆与执行历史
-
-**说明**:
-计算机环境的操作往往是连续的（例如，先创建文件，再编辑文件，最后保存）。模型需要“记住”之前的操作结果以维持上下文。最佳实践是在对话历史中维护一个结构化的执行历史记录，而不是仅仅依赖模型的上下文窗口。
-
-**实施步骤**:
-1.  **日志记录**: 自动记录每个工具调用的请求参数和返回结果。
-2.  **摘要更新**: 在长对话中，定期对过去的操作结果进行摘要，将其压缩为关键状态信息（例如：“已成功创建 3 个文件，目前位于 /home/user 目录”）。
-3.  **状态注入**: 在后续的 API 调用中，将相关的历史状态作为上下文注入，确保模型知道当前的系统状态。
-
-**注意事项**:
-注意上下文窗口的 Token 限制。如果执行历史过长，必须进行有效的剪裁或摘要，否则会超出模型的处理能力并增加延迟和成本。
-
----
-
-### 实践 5：优化多模态输入（视觉与文本的结合）
-
-**说明**:
-当 Agent 具备计算机环境访问能力时，它通常需要处理屏幕截图或图像文件。最佳实践是确保 Responses API 能够高效处理多模态输入，将视觉信息与文本指令相结合。这对于 GUI 自动化或视觉调试任务至关重要。
-
-**实施步骤**:
-1.  **图像预处理**: 在将屏幕截图传递给模型之前，根据需要进行压缩或裁剪，以减少 Token 消耗并聚焦于相关区域。
-2.  **视觉提示**: 在系统提示词中明确指示模型如何“看”图。例如：“在执行操作前，请先分析截图中的 UI 元素位置”。
-3.  **坐标映射**: 确保工具能够理解模型输出的坐标或相对位置，并将其转换为计算机环境可执行的点击或输入命令。
-
-**注意事项**:
-高分辨率图像会消耗大量 Token。在大多数情况下，降低分辨率或仅截取特定活动窗口比全屏截图更有效率。
-
----
-
-## 学习要点
-
-- Responses API 通过集成计算机环境（如代码解释器），使模型能够自主执行代码、处理文件并分析数据，从而从单纯生成文本的“模型”进化为可解决复杂任务的“智能体”。
-- 该功能通过在 API 响应中无缝调用工具（如 Python 代码沙箱），实现了生成内容与执行操作的深度融合，突破了传统仅限于文本交互的局限。
-- 开发者无需构建复杂的基础设施，即可通过简单的 API 调用赋予模型动态计算和数据处理能力，显著降低了构建 AI 应用的门槛。
-- 模型在执行过程中具备自我纠错能力，当代码运行出错时会自动分析并重试，确保最终交付给用户的结果准确且可用。
-- 这种“模型+环境”的架构设计，为未来 AI 智能体在更广泛场景（如自动化办公、数据分析）中的应用奠定了基础。
-
----
-
-## 引用
-
-- **文章/节目**: [https://openai.com/index/equip-responses-api-computer-environment](https://openai.com/index/equip-responses-api-computer-environment)
-- **RSS 源**: [https://openai.com/blog/rss.xml](https://openai.com/blog/rss.xml)
-
-> 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
-
----
-
-## 站内链接
-
-- 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)
-- 标签： [OpenAI](/tags/openai/) / [Responses API](/tags/responses-api/) / [Agent](/tags/agent/) / [代理运行时](/tags/%E4%BB%A3%E7%90%86%E8%BF%90%E8%A1%8C%E6%97%B6/) / [Shell 工具](/tags/shell-%E5%B7%A5%E5%85%B7/) / [容器化](/tags/%E5%AE%B9%E5%99%A8%E5%8C%96/) / [状态管理](/tags/%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86/) / [文件管理](/tags/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/)
-- 场景： [AI/ML项目](/scenarios/ai-ml%E9%A1%B9%E7%9B%AE/) / [后端开发](/scenarios/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/)
-
-### 相关文章
-
-- [GPT-5.3-Codex：结合前沿编码性能与推理能力的代理式模型]({{< relref "posts/20260205-blogs_podcasts-gpt-53-codex-system-card-4.md" >}})
-- [OpenAI提出SWE-Bench-Dead：智能体前沿评估的下一步]({{< relref "posts/20260223-blogs_podcasts-swe-bench-dead-the-end-of-swe-bench-verified-mia-g-0.md" >}})
-- [OpenAI前沿评估团队：超越SWE-Bench Verified的智能体评估新阶段]({{< relref "posts/20260223-blogs_podcasts-swe-bench-dead-the-end-of-swe-bench-verified-mia-g-0.md" >}})
-- [OpenAI 推进智能体评估：SWE-Bench Verified 后续方向]({{< relref "posts/20260223-blogs_podcasts-swe-bench-dead-the-end-of-swe-bench-verified-mia-g-0.md" >}})
-- [OpenAI 前沿评估团队探讨迈向智能体评估的下一阶段]({{< relref "posts/20260223-blogs_podcasts-swe-bench-dead-the-end-of-swe-bench-verified-mia-g-0.md" >}})
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

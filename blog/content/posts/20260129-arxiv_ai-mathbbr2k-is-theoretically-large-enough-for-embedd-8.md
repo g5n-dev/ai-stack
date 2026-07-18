@@ -1,30 +1,51 @@
 ---
-title: 基于嵌入的Top-$k$检索：理论上$\mathbb{R}^{2k}$维空间已足够
+title: $\mathbb{R}^{2k}$ is Theoretically Large Enough for Embedding-based Top-$k$
+  Retrieval
 date: 2026-01-29 22:59:16+08:00
 draft: false
 entry_kind: auto
-tags: []
-categories: []
-source: arxiv
-description: 历史条目已归档：现有正文未通过内容质量门，请查阅原始来源。
-external_url: http://arxiv.org/abs/2601.20844v1
+tags:
+- ArXiv
+categories:
+- 论文
 scenarios: []
+source: arxiv
+description: 当前只保存了官方论文摘要，不代表论文全文。请以原始来源为准。
+external_url: https://arxiv.org/abs/2601.20844v1
 aliases:
 - /posts/20260130-arxiv_ai-mathbbr2k-is-theoretically-large-enough-for-embedd-8/
-content_mode: archived
-publication_tier: ARCHIVED
-source_provenance: legacy_no_snapshot
-source_support: 0.0
-archived: true
-archive_reason: historical_content_quality_gate
-build:
-  list: never
-  render: always
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: abstract
+source_snapshot_sha256: sha256:1dd821b2c96c236c4dafd8f5898ff288fed6d09f2cbd9f44f3d8d26356ea9314
+extractor_version: source-contract-v1
+discovery_method: arxiv_api
+fetch_status: captured
+source_completeness: abstract_only
+source_is_truncated: false
+source_support: 1.0
+source_title_chars_original: 85
+captured_at: '2026-07-18T04:09:34.038253Z'
+source_capture_sha256: sha256:1cee039c20c7de164432675b17624df44d692c02602d4072835d20be96792a4a
+source_capture_chars_original: 877
+source_publication_excerpt_chars: 877
 ---
 
-## 历史条目归档说明
+## 基本信息
 
-该条目的历史正文未通过内容质量门，可能包含基于标题推测的内容。为避免继续传播不可核验文本，本站仅保留透明归档记录。
+- **来源**: arxiv
+- **原始来源**: [https://arxiv.org/abs/2601.20844v1](<https://arxiv.org/abs/2601.20844v1>)
+- **作者**: Zihao Wang, Hang Yin, Lihui Liu, Hanghang Tong, Yangqiu Song, Ginny Wong, Simon See
+- **分类**: cs.LG
+- **论文时间**: 2026-01-28T18:45:43Z
+- **论文 PDF**: [https://arxiv.org/pdf/2601.20844v1.pdf](<https://arxiv.org/pdf/2601.20844v1.pdf>)
 
-- 历史内容质量门未通过
-- 原始来源：<http://arxiv.org/abs/2601.20844v1>
+## 来源摘要/节选
+
+> This paper studies the minimal dimension required to embed subset memberships \($m$ elements and $\{m\\choose k\}$ subsets of at most $k$ elements\) into vector spaces, denoted as Minimal Embeddable Dimension \(MED\). The tight bounds of MED are derived theoretically and supported empirically for various notions of "distances" or "similarities," including the $\\ell\_2$ metric, inner product, and cosine similarity. In addition, we conduct numerical simulation in a more achievable setting, where the $\{m\\choose k\}$ subset embeddings are chosen as the centroid of the embeddings of the contained elements. Our simulation easily realizes a logarithmic dependency between the MED and the number of elements to embed. These findings imply that embedding-based retrieval limitations stem primarily from learnability challenges, not geometric constraints, guiding future algorithm design.
+
+## 来源说明
+
+当前只保存了官方论文摘要，不代表论文全文。请以原始来源为准。
+
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

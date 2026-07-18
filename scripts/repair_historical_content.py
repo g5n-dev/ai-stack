@@ -51,6 +51,11 @@ def build_parser() -> argparse.ArgumentParser:
         action="store_true",
         help="Apply an explicitly reviewed plan in a clean codex/ Git branch",
     )
+    apply_mode.add_argument(
+        "--check",
+        action="store_true",
+        help="Read-only fixed-point check; return 1 when repairs or issues remain",
+    )
     parser.add_argument(
         "--batch",
         action="store_true",
@@ -76,6 +81,15 @@ def build_parser() -> argparse.ArgumentParser:
 def main(argv: Sequence[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
     try:
+        if args.check and (
+            args.batch
+            or args.recovery_manifest is not None
+            or args.manifest_output is not None
+        ):
+            raise MigrationSafetyError(
+                "--check cannot be combined with --batch, --recovery-manifest, "
+                "or --manifest-output"
+            )
         if args.batch:
             if args.max_changes is None:
                 raise MigrationSafetyError("--batch requires --max-changes")
@@ -92,6 +106,20 @@ def main(argv: Sequence[str] | None = None) -> int:
                 content_root=args.content_root,
                 recovery_manifest_path=args.recovery_manifest,
             )
+        if args.check:
+            issues = plan.manifest.get("issues")
+            issue_list = issues if isinstance(issues, list) else ["invalid issues field"]
+            planned_changes = int(plan.manifest.get("planned_changes", 0))
+            fixed_point = planned_changes == 0 and not issue_list
+            output = {
+                "schema_version": "historical_repair_check_v1",
+                "fixed_point": fixed_point,
+                "planned_changes": planned_changes,
+                "issues": issue_list,
+                "plan_digest": plan.manifest.get("plan_digest"),
+            }
+            print(json.dumps(output, ensure_ascii=False, indent=2, sort_keys=True))
+            return 0 if fixed_point else 1
         if args.manifest_output is not None:
             write_repair_manifest(args.manifest_output, plan.manifest)
         if args.apply or args.repository_apply:

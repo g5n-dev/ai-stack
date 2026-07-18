@@ -1,224 +1,65 @@
 ---
-title: Agent 开发实战：赋予大模型工具调用能力
+title: Agent 自学指南1 - 别只会"Hi"了：给大模型装上手脚，5分钟变身 Agent
 date: 2026-02-20 22:59:37+08:00
 draft: false
 entry_kind: auto
 tags:
-- Agent
-- LLM
-- Tool Use
-- Function Calling
-- 智能体
-- 实战教程
-- Anthropic
-- AI应用开发
+- 掘金
+- AI Agent
+- 大语言模型
 categories:
 - 大模型
-- AI 工程
-source: juejin
-description: 在当前的 AI 开发实践中，Agent 正逐渐成为连接大模型与现实世界的关键桥梁，但关于其定义的讨论往往众说纷纭。本文将基于 Anthropic
-  的技术视角，厘清 Agent 的核心概念，并探讨如何通过简单的配置赋予模型实际的操作能力。阅读本文，你将获得从基础对话模型进阶到具备执行能力的 Agent 的清晰路径。
-external_url: https://juejin.cn/post/7608236965554274347
 scenarios:
-- 大语言模型
 - AI/ML项目
-content_mode: legacy_analysis
-publication_tier: LEGACY
-source_provenance: legacy_no_snapshot
-source_support: 0.0
+- 大语言模型
+source: juejin
+description: 当前只保存了公开页面节选，不代表原文全文。请以原始来源为准。
+external_url: https://juejin.cn/post/7608236965554274347
+aliases: []
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: excerpt
+source_snapshot_sha256: sha256:053ae4bb963d68c0a527e07c4e8ba548daeb29ccb1c440edf9e5f7aa06a97c16
+extractor_version: source-contract-v1
+discovery_method: article_html_excerpt
+fetch_status: captured
+source_completeness: partial
+source_is_truncated: true
+source_support: 1.0
+source_title_chars_original: 43
+captured_at: '2026-07-18T04:17:30.730575Z'
+source_capture_sha256: sha256:304134507aa93c78b4a8601c2a7488764257c010421be0a8cf0efabafa1cb8dd
+source_capture_chars_original: 2477
+source_publication_excerpt_chars: 720
+source_truncation_reason: historical_excerpt_only,historical_publication_excerpt_limit
 ---
 
 ## 基本信息
 
-- **作者**: 杨天宇ttx
-- **链接**: [https://juejin.cn/post/7608236965554274347](https://juejin.cn/post/7608236965554274347)
+- **来源**: juejin
+- **原始来源**: [https://juejin.cn/post/7608236965554274347](<https://juejin.cn/post/7608236965554274347>)
 
----
+## 来源摘要/节选
 
-## 导语
+公开展示已截断至最多 800 个字符；请访问原始来源查看完整上下文。
 
-在当前的 AI 开发实践中，Agent 正逐渐成为连接大模型与现实世界的关键桥梁，但关于其定义的讨论往往众说纷纭。本文将基于 Anthropic 的技术视角，厘清 Agent 的核心概念，并探讨如何通过简单的配置赋予模型实际的操作能力。阅读本文，你将获得从基础对话模型进阶到具备执行能力的 Agent 的清晰路径。
+> 项目总介绍：
+> Agent自学指南
+> 前言
+> 在开始写代码之前，先回答一个问题：Agent 到底是什么？
+> 这个词被用滥了，各家有各家的说法。Anthropic 在
+> Building Effective Agents
+> 里给出了一个相对清晰的定义，他们先区分了两个容易混淆的概念：
+> Workflows
+> are systems where LLMs and tools are orchestrated through predefined code paths.
+> Agents
+> , on the other hand, are systems where LLMs dynamically direct their own processes and tool usage, maintaining control over how they accomplish tasks.
+> 翻译过来就是：Workflow 是按剧本走的，每一步都是提前写死的；Agent 是自己决定怎么走的，根据当前情况动态选择下一步该做什么。
+> Anthropic 进一步描述了 Agent 的运作方式：
+> Agents begin their work with either a command from, or interactive discussion with, the human user. Once the task is clear, agents plan and operate independently, potentially returning to the human for further information or judgement.…
 
----
+## 来源说明
 
-## 描述
+当前只保存了公开页面节选，不代表原文全文。请以原始来源为准。
 
-前言 在开始写代码之前，先回答一个问题：Agent 到底是什么？ 这个词被用滥了，各家有各家的说法。Anthropic 在 Building Effective Agents 里给出了一个相对清晰的定义。
-
----
-
-## 摘要
-
-由于提供的内容在“各家有各家的说法”处中断，基于标题、前言及常见的 Agent 定义，为您总结如下：
-
-**核心概念：Agent 的本质与进化**
-本文旨在探讨如何将大语言模型（LLM）从单纯的对话工具进化为具备执行能力的智能体。
-
-1.  **现状痛点**：目前大多数用户对大模型的使用仅限于“Hi”等简单对话，模型只有“大脑”，缺乏行动能力。
-2.  **Agent 定义**：引用 Anthropic 的观点，Agent 不仅仅是语言模型，更是具备**自主规划、调用工具（Tool Use）和执行任务**能力的系统。简而言之，就是给大模型装上“手脚”，使其能与环境交互并解决具体问题。
-3.  **学习目标**：通过后续教程（预计5分钟上手），掌握构建 Agent 的核心方法，让模型能够理解指令、拆解任务并利用工具达成目标，实现从“聊天机器人”到“智能代理”的蜕变。
-
----
-
-## 评论
-
-### 中心观点
-该文章试图通过解构 Agent 的核心组件（规划、记忆、工具），主张**“Agent = LLM + 工具调用 + 规划循环”**，并认为通过简单的工程化手段即可将基础大模型转化为具备执行力的智能体，从而降低 AI 应用的开发门槛。
-
-### 支撑理由与边界条件
-
-**1. 模块化解构降低了认知门槛**
-*   **事实陈述**：文章引用了 Anthropic 的定义，将 Agent 拆解为感知、规划、行动和反思等模块。这种拆分符合软件工程中“分而治之”的思想，使得开发者不再将 Agent 视为黑盒，而是可组装的积木。
-*   **实际案例**：文章中提到的“ReAct 模式”（推理+行动）是目前构建 Agent 最主流的范式，例如 LangChain 和 AutoGPT 的核心逻辑均基于此。
-
-**2. 强调“工具使用”是 Agent 的核心价值**
-*   **事实陈述**：文章指出单纯的语言交互（只说“Hi”）没有生产力，必须通过 API 或 Function Calling 给大模型装上“手脚”。
-*   **作者观点**：作者认为大模型的通用能力与垂直领域的工具 API 结合，是解决大模型“幻觉”和“时效性”短板的关键。
-
-**3. 提供了低代码的快速实现路径**
-*   **事实陈述**：文章承诺“5分钟变身”，暗示了利用现有的框架（如 LangChain, Coze, Dify）或简单的 Python 脚本即可搭建原型。
-*   **你的推断**：这表明文章的目标受众主要是初级开发者和产品经理，而非算法科学家，重点在于工程落地而非模型微调。
-
-**反例与边界条件：**
-*   **反例 1（复杂规划失效）**：对于需要多步推理且中间步骤容错率极低的任务（如复杂的金融审计或医疗诊断），简单的 ReAct 循环往往会导致“误差累积”，一步错导致步步错，此时简单的 Agent 框架会失效。
-*   **反例 2（非确定性问题）**：在创意写作或心理咨询等场景中，强制引入工具和结构化规划反而会限制模型的发散性思维，此时直接使用 Chat 模式效果更好。
-*   **边界条件**：该方法论高度依赖于 LLM 的指令遵循能力。如果基座模型过小（如 <7B）或未经过 SFT（监督微调）强化工具调用能力，Agent 的成功率会极低。
-
-### 维度评价
-
-#### 1. 内容深度
-文章属于**入门科普与工程实践类**，深度适中。
-*   **严谨性**：引用了业界公认的定义（Anthropic），逻辑自洽。但未深入探讨 Agent 的稳定性问题（如循环死锁、中间步骤的语义漂移），属于“Hello World”级别的深度。
-*   **缺失**：未提及“多智能体”（Multi-Agent）协作或“反思机制”的具体算法实现，而这才是目前 Agent 进阶开发的核心难点。
-
-#### 2. 实用价值
-**极高**。
-*   对于初学者，它清晰地指出了从“调 API”到“搭 Agent”的思维转变。
-*   文章中关于 Prompt 结构（Thought -> Action -> Action Input -> Observation）的展示，是实际调试 Agent 时的标准日志格式，对 Debug 非常有帮助。
-
-#### 3. 创新性
-**无显著创新**。
-*   **你的推断**：文章内容是对 2022-2023 年间业界成熟技术栈（如 ReAct 论文、LangChain 概念）的汇总和通俗化解读。它没有提出新的架构范式，但胜在传播了已有的最佳实践。
-
-#### 4. 可读性
-**优秀**。
-*   标题直击痛点，使用了“装上手脚”等形象的比喻。
-*   结构上遵循了“是什么 -> 为什么 -> 怎么做”的黄金圈法则，逻辑清晰。
-
-#### 5. 行业影响
-此类文章是**AI 工程化浪潮中的催化剂**。
-*   它加速了“AI 原生应用”的开发普及，让更多人意识到“不懂模型训练也能做 AI 应用”。
-*   潜在的负面影响是可能导致市场上出现大量同质化、能力脆弱的“套壳 Agent”，增加了用户对 AI 体验的失望风险。
-
-#### 6. 争议点或不同观点
-*   **规划能力的来源**：文章隐含观点是 LLM 自带规划能力。然而，部分学派（如 System 2 架构倡导者）认为，不应依赖 LLM 进行隐式规划，而应外挂传统的符号推理引擎或 DAG（有向无环图）调度器，因为 LLM 的概率本质不适合严谨的逻辑规划。
-*   **上下文窗口限制**：文章未充分强调随着记忆和工具调用日志的增加，Token 消耗会迅速爆炸，导致单次对话成本过高或上下文溢出。
-
-#### 7. 实际应用建议
-*   **不要过度设计**：对于简单任务（如查天气、发邮件），硬编码脚本比 Agent 更可靠。
-*   **人机协同**：在 Agent 执行关键操作（如删除数据库、转账）前，必须引入“人类确认”机制，不要完全信任 LLM 的输出。
-*   **工具描述**：给 LLM 看的工具文档至关重要，必须清晰、准确，甚至包含 Example，否则 LLM 会胡乱调用工具。
-
----
-
-## 学习要点
-
-- 根据文章内容，总结关键要点如下：
-- Agent 的核心在于“感知-决策-行动”的闭环，即大模型通过调用工具（API）将思维转化为改变环境的实际行动。
-- Function Calling（函数调用）是连接大模型与现实世界的桥梁，它让模型具备了执行代码、搜索信息等“手脚”能力。
-- 一个完整的 Agent 必须包含记忆机制，使其能够处理多轮对话并在执行过程中保持上下文的连贯性。
-- Prompt Engineering（提示词工程）是构建 Agent 的关键，需要通过角色设定和思维链引导模型进行正确的逻辑推理。
-- Agent 的开发流程通常遵循“模型即服务”的理念，利用 LangChain 等框架快速编排大模型与外部工具的集成。
-- 将复杂任务拆解为子任务是 Agent 解决问题的核心策略，这能有效降低单次推理的错误率并提高成功率。
-
----
-
-## 常见问题
-
-### 普通的大语言模型（LLM）和 AI Agent 之间有什么本质区别？
-
-普通的大语言模型本质上是一个被动的“文本生成器”或“聊天机器人”。它的能力局限于接收输入的文本，并根据概率预测下一个字来生成回复。一旦对话结束，它的任务就完成了，无法直接对外部世界产生实质性的影响。
-
-而 AI Agent 则是一个具备“自主性”的系统。它不仅拥有大模型的“大脑”（规划、推理能力），还被装上了“手脚”（工具使用能力，如搜索网页、执行代码、调用 API）和“感官”（感知环境变化）。Agent 的核心工作流程是：感知 -> 规划 -> 行动 -> 反馈。它能根据用户设定的目标，自主拆解任务，调用工具去执行操作，并根据执行结果不断调整策略，直到最终完成任务。
-
-### 对于初学者来说，搭建第一个 Agent 应该选择哪种框架或工具？
-
-对于初学者，建议从**LangChain**或**AutoGPT**（及其变种）入手。
-
-1.  **LangChain**: 目前最流行的框架，它提供了丰富的文档和社区支持。它将“提示词管理”、“链式调用”和“Agent 执行器”封装得很好，非常适合理解 Agent 的运行逻辑。你可以快速定义一个工具，然后看着 LangChain 帮你决定何时使用这个工具。
-2.  **AgentGPT / AutoGPT**: 如果你想通过可视化界面快速体验 Agent 的效果，而不想写太多底层代码，这些基于 Web 的工具是最好的选择。你只需输入一个目标，它就会自动循环执行“思考-行动-观察”的步骤。
-
-对于 Python 基础较弱的用户，也可以尝试在 **OpenAI ChatGPT** 的 GPTs 商店中创建自定义 GPT，通过配置“Actions（动作）”来连接外部 API，这也是一种低门槛的 Agent 实现方式。
-
-### 在开发 Agent 时，如何定义“工具”才能让模型准确调用？
-
-定义工具是 Agent 开发中最关键的一环，核心在于**结构化的描述**。模型并不真正理解代码，它是通过阅读工具的“元数据”来决定是否调用的。为了提高准确率，必须遵循以下原则：
-
-1.  **名称清晰**: 函数名必须具有语义，例如 `get_current_weather` 而不是 `func1`。
-2.  **描述精准**: 在 Docstring 或描述字段中，必须详细说明这个工具是做什么的，以及**何时**应该使用它。
-3.  **参数规范**: 参数定义必须严格符合 JSON Schema 格式，并且对每个参数的含义、类型和取值范围做详细说明。
-
-**错误示例**:
-```python
-def search(query):
-    return results
-```
-
-**正确示例**:
-```python
-def search_engine(query: str):
-    """
-    用于搜索互联网上的实时信息。
-    当用户询问最新的新闻、数据或不确定的事实时，请使用此工具。
-    参数:
-        query (str): 需要搜索的关键词，尽量简练。
-    """
-    return results
-```
-
-### 为什么我的 Agent 经常陷入死循环，或者无法完成复杂任务？
-
-这是 Agent 开发中常见的问题，通常由以下原因造成：
-
-1.  **缺乏“记忆”机制**: Agent 在执行多步任务时，容易“忘了”之前做过什么。解决方案是引入**记忆组件**，将之前的对话历史、执行过的动作和观察结果存储下来，并在每次新的思考时注入给模型。
-2.  **提示词设计不当**: 如果没有给 Agent 设定清晰的“角色设定”或“思维链”指导，模型容易在行动和观察之间迷失。需要在 System Prompt 中明确告诉它：“你需要一步步思考，确定完成目标后再结束”。
-3.  **工具返回结果过长**: 模型通常有上下文窗口限制。如果工具（比如网页抓取）返回了海量文本，可能会淹没关键信息，导致模型无法提取有效内容。应对工具返回做摘要或截断处理。
-
-### 文章中提到的“ReAct 模式”是什么意思？
-
-ReAct 是 **Reasoning（推理）** 和 **Acting（行动）** 的缩写，是目前构建 Agent 最主流的范式。
-
-传统的模型可能直接给出答案，或者直接行动。而 ReAct 模式要求模型在执行任务时，交替进行以下步骤：
-1.  **Thought (思考)**: 分析当前的情况，决定下一步该做什么。
-2.  **Action (行动)**: 选择并执行一个具体的工具。
-3.  **Observation (观察)**: 查看工具执行后的结果。
-
-这种模式让 Agent 的过程变得透明且可解释。例如，Agent 会输出：“我需要查天气 -> 我调用天气 API -> 我发现下雨了 -> 我决定建议用户带伞”。这种“思考-行动”的循环是 Agent 能够处理复杂逻辑的基石。
-
-### 如何让 Agent 能够访问互联网或私有数据？
-
-大模型本身的数据是截止于训练时间的，且
-
----
-
-## 引用
-
-- **掘金原文**: [https://juejin.cn/post/7608236965554274347](https://juejin.cn/post/7608236965554274347)
-
-> 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
-
----
-
-## 站内链接
-
-- 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)
-- 标签： [Agent](/tags/agent/) / [LLM](/tags/llm/) / [Tool Use](/tags/tool-use/) / [Function Calling](/tags/function-calling/) / [智能体](/tags/%E6%99%BA%E8%83%BD%E4%BD%93/) / [实战教程](/tags/%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B/) / [Anthropic](/tags/anthropic/) / [AI应用开发](/tags/ai%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/)
-- 场景： [大语言模型](/scenarios/%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/) / [AI/ML项目](/scenarios/ai-ml%E9%A1%B9%E7%9B%AE/)
-
-### 相关文章
-
-- [OpenEnv实践：评估真实环境中的工具调用智能体]({{< relref "posts/20260212-blogs_podcasts-openenv-in-practice-evaluating-tool-using-agents-i-4.md" >}})
-- [OpenEnv 实战：评估真实环境中的工具调用智能体]({{< relref "posts/20260212-blogs_podcasts-openenv-in-practice-evaluating-tool-using-agents-i-4.md" >}})
-- [Anthropic发布基于METR数据的Agent自主性研究]({{< relref "posts/20260219-blogs_podcasts-ainews-anthropics-agent-autonomy-study-0.md" >}})
-- [AGENTS.md 架构在智能体评估中超越 Skills 技能]({{< relref "posts/20260129-hacker_news-compressed-agentsmd-agent-skills-5.md" >}})
-- [Agent Skills：大模型智能体的技能评估框架]({{< relref "posts/20260203-hacker_news-agent-skills-0.md" >}})
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

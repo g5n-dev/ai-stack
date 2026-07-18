@@ -1,136 +1,35 @@
 ---
-title: vLLM V0到V1：正确性优先于修正的RL演进
+title: 历史来源恢复记录 · 博客与播客
 date: 2026-05-06 20:43:07+08:00
 draft: false
 entry_kind: auto
-tags:
-- vLLM
-- V0
-- V1
-- RL
-- 正确性
-- 强化学习
-- 推理
-- 性能优化
-categories:
-- 大模型
-- AI 工程
+tags: []
+categories: []
+scenarios: []
 source: blogs_podcasts
-description: vLLM 从 V0 演进到 V1，标志着在强化学习环境中对模型行为正确性的更高要求。不同于先进行错误纠正的思路，V1 采用先确保输出符合业务约束，再逐步完善纠正层的策略，从而在复杂交互中保持稳定表现。本文深入解析
-  V1 的设计动机、关键实现细节以及在真实任务中的实验结果，为希望在实际项目中平滑升级的开发者提供可操作的参考。
+description: 历史来源恢复未成功；旧正文已移除，仅保留可审计归档记录。
 external_url: https://huggingface.co/blog/ServiceNow-AI/correctness-before-corrections
-scenarios:
-- 大语言模型
-content_mode: legacy_analysis
-publication_tier: LEGACY
-source_provenance: legacy_no_snapshot
+aliases: []
+archived: true
+content_mode: archived
+publication_tier: ARCHIVED
+source_provenance: historical_recovery_failed
 source_support: 0.0
+archive_reason: historical_source_recovery_failed
+recovery_failure_type: source_fetch_error
+recovery_failure_reason: source_access_interstitial
+recovery_attempted_at: '2026-07-18T04:22:23.866326Z'
+build:
+  list: never
+  render: always
 ---
 
-## 基本信息
+## 历史来源恢复说明
 
-- **来源**: Hugging Face Blog (blog)
-- **发布时间**: 2026-05-06T19:06:55+00:00
-- **链接**: [https://huggingface.co/blog/ServiceNow-AI/correctness-before-corrections](https://huggingface.co/blog/ServiceNow-AI/correctness-before-corrections)
+该条目的公开来源恢复未能完成。为避免继续传播不可核验文本，旧正文未被保留，本页仅保存透明归档记录。
 
----
-## 导语
-
-vLLM 从 V0 演进到 V1，标志着在强化学习环境中对模型行为正确性的更高要求。不同于先进行错误纠正的思路，V1 采用先确保输出符合业务约束，再逐步完善纠正层的策略，从而在复杂交互中保持稳定表现。本文深入解析 V1 的设计动机、关键实现细节以及在真实任务中的实验结果，为希望在实际项目中平滑升级的开发者提供可操作的参考。
-
----
-## 评论
-
-#### 中心观点
-
-vLLM从V0到V1的版本迭代揭示了一个重要的工程原则：在强化学习（RL）场景中，框架设计必须在正确性与性能之间做出明确取舍。V1版本选择以正确性优先的策略，这一决定反映了作者对RL训练稳定性的深刻理解，但也意味着某些性能优化被推迟或放弃。
-
-#### 支撑理由
-
-**事实陈述**：vLLM V0版本在处理RL环境交互时存在状态一致性问题，V1版本通过重构底层调度机制解决了这一问题。作者在原文中明确指出，V0中的某些设计决策在多步骤交互场景下会导致状态丢失或不一致。
-
-**作者观点**：作者认为在RL训练中，中间状态的一致性比单次推理的吞吐量更重要。这一观点基于RL训练的特性——任何中间步骤的错误都会通过梯度传播放大，最终导致训练失败。
-
-**你的推断**：V1版本的设计决策可能受到RL生态系统成熟度的影响。当前RL框架（如Ray RLlib、Stable-Baselines3）的集成需求迫使vLLM必须提供更可靠的状态管理，而非单纯追求推理速度。
-
-#### 边界条件
-
-这一“正确性优先”策略的有效性取决于具体场景。在需要长时间训练、重视收敛稳定性的学术研究中，V1版本优势明显；但在对延迟敏感、交互频率极高的在线应用（如实时对话系统）中，V0的部分优化可能更具实用价值。此外，不同RL算法对状态一致性的敏感度差异显著——基于模型的方法通常比无模型方法更能容忍一定的状态扰动。
-
-#### 实践启发
-
-对于正在构建RL训练流水线的工程师，建议在项目初期评估阶段明确区分“训练稳定性需求”与“推理性能需求”。如果你的场景涉及长时间运行（超过数小时）的RL任务，V1版本的可靠性投资将获得回报；但对于快速原型验证或短时实验，V0版本可能提供更快的迭代速度。关键在于不要在生产环境中混合使用两个版本的特性，以免引入难以追踪的一致性问题。
-
----
-## 技术分析
-
-#### 核心观点与技术理念
-
-vLLM从V0到V1的演进体现了**"正确性先于修正"**的核心设计哲学。这一版本迭代并非简单的性能优化，而是在强化学习训练场景中对模型行为正确性的系统性保障。文章指出，在RL框架中若缺乏基础正确性验证，优化工作将成为无本之木。V1版本通过重新设计底层架构，建立了更加稳健的推理与训练一致性机制，确保在复杂RL环境中模型输出的可预测性和可验证性。
-
-#### 关键技术架构演进
-
-**推理引擎重构**：V1版本对调度器(scheduler)进行了深度优化，引入细粒度的请求管理单元，解决了V0版本中长序列处理时的显存碎片化问题。新设计采用动态批处理策略，能够在保证延迟约束的前提下最大化GPU利用率。
-
-**RL训练集成优化**：针对强化学习特有的梯度更新模式，V1提供了原生支持。文章揭示了V0在处理PPO、GRPO等算法时的局限性——主要是checkpoint保存与恢复的一致性问题。V1通过引入事务性状态管理，确保训练中断恢复后的模型权重与优化器状态严格同步。
-
-**显存管理机制**：引入分层显存分配策略，将KV Cache按生命周期划分为热区、温区和冷区。热区存储当前迭代必需的关键状态，冷区用于持久化检查点，中间层则承载历史信息以支持回溯验证。
-
-#### 论证地图与设计逻辑
-
-**中心命题**：RL场景下LLM推理的正确性是不可妥协的前提
-
-**支撑理由**：强化学习对环境交互的敏感性要求模型输出具有确定性，任何非预期的行为偏差都可能被策略网络放大，导致训练不稳定甚至崩溃。
-
-**反例边界**：文章暗示在纯推理场景(无RL训练循环)中，V0的性能表现未必逊色于V1，因为其设计针对离线服务场景已做充分优化。这说明V1的改进具有明确的问题指向性。
-
-**可验证方式**：通过对比实验可验证——在同等硬件条件下，V1在长对话轮次和跨episode状态保持任务中的幻觉率应显著低于V0。
-
-#### 行业影响与实践价值
-
-**框架生态意义**：vLLM作为开源LLM推理的事实标准，V1的发布为学术研究提供了更可靠的RL实验基座。研究者无需自行处理复杂的一致性问题，可直接聚焦于算法创新。
-
-**工程落地参考**：该演进路径为其他LLM框架提供了"先验正确性"的设计范式。开发者在构建训练推理一体化系统时，应优先建立验证层，再进行性能调优。
-
-#### 边界条件与实践建议
-
-**适用场景**：需要RL训练的模型部署、科学研究环境、不容忍不确定性输出的生产系统。
-
-**非适用场景**：对延迟极度敏感的纯推理服务(此时V0可能是更轻量的选择)、资源极度受限的边缘部署。
-
-**实践建议**：团队在升级时应进行全面的回归测试，特别是针对涉及状态累积的任务；建议分阶段灰度发布，初期以V0作为兜底方案；关注vLLM官方提供的V0到V1迁移指南，避免直接替换导致的服务中断。
-
----
-## 学习要点
-
-- 在 RL 训练中，vLLM V1 坚持正确性优先原则，先确保模型输出准确再进行奖励校正（最重要）
-- V0 到 V1 的迁移需要重新设计数据管道，以适配新的 RL 框架和更高的采样效率
-- V1 引入了更高效的低方差采样方法，显著降低了 RL 过程中的计算成本
-- V1 提供了细粒度的日志和诊断工具，使得 RL 中的错误定位更快速、可调试性更强
-- V1 增强了模型兼容性和部署灵活性，支持更多模型结构和外部 RL 系统集成
-- V1 在随机种子控制和实验复现方面做了关键改进，提升了训练结果的稳定性
-
----
-## 引用
-
-- **文章/节目**: [https://huggingface.co/blog/ServiceNow-AI/correctness-before-corrections](https://huggingface.co/blog/ServiceNow-AI/correctness-before-corrections)
-- **RSS 源**: [https://huggingface.co/blog/feed.xml](https://huggingface.co/blog/feed.xml)
-
-> 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
-
----
-
-## 站内链接
-
-- 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)
-- 标签： [vLLM](/tags/vllm/) / [V0](/tags/v0/) / [V1](/tags/v1/) / [RL](/tags/rl/) / [正确性](/tags/%E6%AD%A3%E7%A1%AE%E6%80%A7/) / [强化学习](/tags/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/) / [推理](/tags/%E6%8E%A8%E7%90%86/) / [性能优化](/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/)
-- 场景： [大语言模型](/scenarios/%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/)
-
-### 相关文章
-
-- [从16个开源强化学习库中总结的Token流优化经验]({{< relref "posts/20260310-blogs_podcasts-keep-the-tokens-flowing-lessons-from-16-open-sourc-2.md" >}})
-- [Nano-vLLM 技术解析：vLLM 风格推理引擎的运行机制]({{< relref "posts/20260202-hacker_news-nano-vllm-how-a-vllm-style-inference-engine-works-0.md" >}})
-- [两种提升大模型推理速度的技术方法]({{< relref "posts/20260215-hacker_news-two-different-tricks-for-fast-llm-inference-2.md" >}})
-- [两种提升大模型推理速度的技术方法]({{< relref "posts/20260215-hacker_news-two-different-tricks-for-fast-llm-inference-2.md" >}})
-- [本地运行 Qwen 3.5 大模型的完整指南]({{< relref "posts/20260308-hacker_news-how-to-run-qwen-35-locally-16.md" >}})
-*本文由 AI Stack 自动生成，包含深度分析与方法论思考。*
+- **来源类型**: `blogs_podcasts`
+- **恢复尝试时间**: `2026-07-18T04:22:23.866326Z`
+- **恢复失败类型**: `source_fetch_error`
+- **恢复失败原因**: `source_access_interstitial`
+- **原始来源**: [查看公开来源](<https://huggingface.co/blog/ServiceNow-AI/correctness-before-corrections>)

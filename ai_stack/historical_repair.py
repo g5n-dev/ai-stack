@@ -32,6 +32,8 @@ from .content_quality import (
     analyze_post,
     content_quality_reasons,
     description_is_truncated,
+    is_curated_evidence_backed_rewrite,
+    is_evidence_backed_rewrite,
     is_source_brief,
     remove_empty_section_headings,
     remove_misplaced_strong_markers,
@@ -1277,6 +1279,16 @@ def _active_provenance_metadata(metadata: Mapping[str, Any], body: str) -> dict[
         # evidence-backed provenance to ``legacy_no_snapshot``.
         result.pop("source_provenance", None)
         return result
+    if declared_mode == "evidence_backed_rewrite" and (
+        is_evidence_backed_rewrite(result, body)
+        or is_curated_evidence_backed_rewrite(result, body)
+    ):
+        # Modern Tier-B output already carries either a hash-bound crawler contract
+        # or a reviewed multi-source editorial contract. Historical maintenance
+        # must be a fixed point for both forms instead of relabeling them as an
+        # unverifiable legacy analysis.
+        result.pop("source_provenance", None)
+        return result
     if is_source_brief(result, body):
         result["content_mode"] = "legacy_source_brief"
         result["publication_tier"] = "C"
@@ -1286,6 +1298,34 @@ def _active_provenance_metadata(metadata: Mapping[str, Any], body: str) -> dict[
     result["source_provenance"] = "legacy_no_snapshot"
     result["source_support"] = 0.0
     return result
+
+
+def _provenance_priority(document: _Document) -> int:
+    """Rank clean candidates by verifiable source support before presentation size."""
+
+    metadata = document.normalized_metadata
+    body = document.normalized_body
+    declared_mode = str(metadata.get("content_mode") or "").strip().casefold()
+    if is_evidence_backed_rewrite(metadata, body):
+        return 0
+    if declared_mode == "source_brief" and is_source_brief(metadata, body):
+        return 1
+    if declared_mode == "evidence_backed_rewrite" and is_curated_evidence_backed_rewrite(
+        metadata, body
+    ):
+        return 2
+    if declared_mode == "legacy_source_brief" and is_source_brief(metadata, body):
+        return 4
+    if declared_mode == "legacy_analysis":
+        return 3
+    if declared_mode:
+        # An explicit but invalid/unknown modern contract is not proof. Keep it
+        # behind every recognised legacy candidate if an older trustworthy body
+        # exists in the duplicate group.
+        return 5
+    # Pre-migration documents without an explicit mode retain the same semantic
+    # ordering that `_active_provenance_metadata` will assign to the winner.
+    return 4 if is_source_brief(metadata, body) else 3
 
 
 def _normalized_singleton(
@@ -1909,6 +1949,7 @@ def build_historical_repair_plan(
                 sorted(
                     clean,
                     key=lambda document: (
+                        _provenance_priority(document),
                         -document.quality_score,
                         document.relative_path,
                     ),
@@ -2114,7 +2155,10 @@ def build_historical_repair_plan(
         },
         "selection_policy": {
             "canonical_route": "oldest_frontmatter_date_then_lexical_path",
-            "body_source": "clean_candidates_only_then_capped_structural_quality_score",
+            "body_source": (
+                "clean_candidates_only_then_modern_source_provenance_priority_then_"
+                "capped_structural_quality_score"
+            ),
             "metadata": "body_source_only_with_whitelists_and_eight_tag_cap",
             "active_singletons": (
                 "canonical_external_url_and_shared_tag_taxonomy_only; unrelated_metadata_preserved"

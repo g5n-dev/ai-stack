@@ -1,106 +1,61 @@
 ---
-title: 多Agent规模化落地：群虾智能企业实践经验分享
+title: 企业级多 Agent 规模化落地怎么做？群虾智能 AI 沙龙 PPT 限时领取
 date: 2026-05-09 06:37:32+08:00
 draft: false
 entry_kind: auto
 tags:
-- 多Agent
-- 规模化落地
-- 企业实践
-- AI原生
-- 开源沙龙
-- QwenPaw
-- 数据答疑
-- 大模型
+- 掘金
+- AI Agent
+- 大语言模型
+- Java
 categories:
 - 大模型
-- AI 工程
-source: juejin
-description: 群虾智能在北京举办的AI原生应用开源开发者沙龙，吸引了110多名技术从业者参与。活动中深度分享了HiClaw企业级多Agent规模化养虾实践、QwenPaw智能搭档以及数据答疑Agent等关键方案，并提供相关PPT限时下载，帮助企业快速落地多Agent系统。
-external_url: https://juejin.cn/post/7637477381956796431
 scenarios:
 - AI/ML项目
-content_mode: legacy_analysis
-publication_tier: LEGACY
-source_provenance: legacy_no_snapshot
-source_support: 0.0
+- 大语言模型
+source: juejin
+description: 当前只保存了公开页面节选，不代表原文全文。请以原始来源为准。
+external_url: https://juejin.cn/post/7637477381956796431
+aliases: []
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: excerpt
+source_snapshot_sha256: sha256:852a14d0a1dc954867d1436509f92149c888463dbb26e6331ea92d0477cd680d
+extractor_version: source-contract-v1
+discovery_method: article_html_excerpt
+fetch_status: captured
+source_completeness: partial
+source_is_truncated: true
+source_support: 1.0
+source_title_chars_original: 39
+captured_at: '2026-07-18T04:19:50.744005Z'
+source_capture_sha256: sha256:43a179c6fac686aa629adf2a3d0fa0641e2ec857a5426c57e466ffcf7d547367
+source_capture_chars_original: 1524
+source_publication_excerpt_chars: 775
+source_truncation_reason: historical_excerpt_only,historical_publication_excerpt_limit
 ---
 
 ## 基本信息
 
-- **作者**: 阿里云云原生
-- **链接**: [https://juejin.cn/post/7637477381956796431](https://juejin.cn/post/7637477381956796431)
+- **来源**: juejin
+- **原始来源**: [https://juejin.cn/post/7637477381956796431](<https://juejin.cn/post/7637477381956796431>)
 
----
-## 导语
+## 来源摘要/节选
 
-企业级多Agent系统的规模化落地是当前AI工程化领域的核心挑战之一。随着大语言模型能力的不断提升，如何在实际生产环境中高效部署和协调多个智能Agent，已成为技术团队必须直面的关键问题。本次群虾智能AI沙龙北京站汇集了110余名技术从业者，深入探讨了HiClaw企业规模化养虾实践、QwenPaw智能搭档以及数据答疑Agent等典型应用场景。参与者不仅能够了解一线工程师的实战经验，还可获取相关分享资料，为自身的AI落地项目提供参考。
+公开展示已截断至最多 800 个字符；请访问原始来源查看完整上下文。
 
----
-## 描述
+> 作者：盈楹
+> 近日，群虾智能——AI 原生应用开源开发者沙龙·北京站圆满落幕。本场活动吸引了 110+ 名技术从业者深度参与，深度分享了HiClaw 企业规模化养虾实践、QwenPaw 智能搭档、数据答疑 Agent、Nacos 企业级 Skill 注册中心，并设置了动手实操环节。
+> 关注「阿里云云原生」公众号，后台回复：0428
+> 免费获得北京站讲师 PPT 合辑
+> 精彩回顾
+> 议题一：基于 HiClaw 实现企业级多 Agent 协作&amp;Harness 工程最佳实践丨王泉力，HiClaw Maintainer，阿里云智能产品解决方案架构师
+> HiClaw 是面向企业级 AI 应用的多 Agent 协作平台，聚焦基于多 Agent 的真实落地场景。其核心采用 Manager-Team TL-Workers 架构，Manager 负责任务拆解与调度，Team Leader 协调子任务，Workers 执行具体技能。系统基于 Matrix 协议实现人与 Agent、Agent 与 Agent 之间的透明化协作，并通过现场 Demo 演示从零搭建 AI 团队的完整流程。针对企业关注的安全凭证隔离、SubAgent 协作效率和资源占用等问题，HiClaw 引入 AI 网关统一鉴权、沙箱运行环境隔离执行、以及轻量级通信机制，有效支撑多 Agent 在复杂业务中的规模化部署与治理。
+> 议题二：QwenPaw，即刻加载你的专属智能搭档丨马志建，阿里巴巴通义实验室技术专家
+> QwenPaw 是基于 AgentScope-AI 生态构建的个人智能助理工作站，强调本地化、安全可控与高效交互。系统围绕小模型优化设计，集成技能市场、工具调用防护机制和长期记忆管理模块，支持多种开源或私有模型后端。用户可在本地环境中部署完整的 Agent 工作流，避免敏感数据外泄。…
 
-近日，群虾智能——AI 原生应用开源开发者沙龙·北京站圆满落幕。本场活动吸引了 110+ 名技术从业者深度参与，深度分享了 HiClaw 企业规模化养虾实践、QwenPaw 智能搭档、数据答疑 Agent。
+## 来源说明
 
----
-## 摘要
+当前只保存了公开页面节选，不代表原文全文。请以原始来源为准。
 
-群虾智能在北京举办的AI原生应用开源开发者沙龙，吸引了110多名技术从业者参与。活动中深度分享了HiClaw企业级多Agent规模化养虾实践、QwenPaw智能搭档以及数据答疑Agent等关键方案，并提供相关PPT限时下载，帮助企业快速落地多Agent系统。
-
----
-## 评论
-
-#### 中心观点概述
-企业级多 Agent 系统正从实验走向规模化落地，核心在于把复杂业务拆解为可组合、可观测的微智能单元，并通过统一调度实现效率提升。
-
-#### 事实陈述
-本次群虾智能沙龙在北京站汇聚 110+ 名技术人员，现场分享了 HiClaw 在养虾场的规模化养殖监控、QwenPaw 智能助手以及数据答疑 Agent 的实现案例，展示了跨行业落地的可行性。
-
-#### 作者观点
-作者认为，多 Agent 框架在企业内部的协同、自动化和决策支持方面具备显著优势，且开源生态为快速原型提供了坚实基础。
-
-#### 你的推断
-基于当前案例，可推断出多 Agent 仍受限于领域知识的结构化程度与系统的可观测性，未来在标准化协议成熟后将有更大突破。
-
-#### 支撑理由
-1. 现场参会规模说明业界对规模化落地的强烈需求；2. 开源项目的实际业务验证提升了技术的可信度；3. 案例中出现的跨行业迁移表明模块化设计的通用价值。
-
-#### 边界条件
-- 仅适用于拥有成熟 DevOps 与监控体系的企业；- 数据质量与标注成本是实现效果的前提；- 小团队或预算受限的组织难以一次性投入完整调度平台。
-
-#### 实践启发
-1. 先在低风险业务场景（如客服、数据清洗）做小范围试点；2. 采用标准化 Agent 接口（如 OpenAI 的 Function Calling）降低耦合；3. 建立统一的日志与追踪机制，保证多 Agent 协同可观测；4. 在选型时优先考虑支持可扩展编排的开源框架，以便后期平滑升级。
-
----
-## 学习要点
-
-- 明确业务场景与 Agent 角色划分是关键，确保每个 Agent 职责单一、协作高效。
-- 采用分层或中心化的编排层，实现 Agent 间的统一调度和消息路由，提高系统的可扩展性。
-- 通过统一的协议和标准（如 HTTP/gRPC、OpenAPI）实现 Agent 之间的互操作性，降低耦合。
-- 设计容错与自愈机制（重试、降级、熔断），保证在大规模部署时的稳定性。
-- 引入细粒度的监控、日志和追踪体系，实时掌握 Agent 性能和异常。
-- 在安全和合规层面进行身份认证、授权和数据加密，确保企业级安全要求。
-- 使用容器化（如 Docker）和编排平台（Kubernetes）实现弹性伸缩和资源调度。
-
----
-## 引用
-
-- **掘金原文**: [https://juejin.cn/post/7637477381956796431](https://juejin.cn/post/7637477381956796431)
-
-> 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
-
----
-
-## 站内链接
-
-- 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)
-- 标签： [多Agent](/tags/%E5%A4%9Aagent/) / [规模化落地](/tags/%E8%A7%84%E6%A8%A1%E5%8C%96%E8%90%BD%E5%9C%B0/) / [企业实践](/tags/%E4%BC%81%E4%B8%9A%E5%AE%9E%E8%B7%B5/) / [AI原生](/tags/ai%E5%8E%9F%E7%94%9F/) / [开源沙龙](/tags/%E5%BC%80%E6%BA%90%E6%B2%99%E9%BE%99/) / [QwenPaw](/tags/qwenpaw/) / [数据答疑](/tags/%E6%95%B0%E6%8D%AE%E7%AD%94%E7%96%91/) / [大模型](/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)
-- 场景： [AI/ML项目](/scenarios/ai-ml%E9%A1%B9%E7%9B%AE/)
-
-### 相关文章
-
-- [Claude Opus 4.6 发布]({{< relref "posts/20260205-hacker_news-claude-opus-46-2.md" >}})
-- [Gemini 3.1 Flash-Lite：Gemini 3 系列中速度最快且性价比最高的模型]({{< relref "posts/20260303-blogs_podcasts-gemini-31-flash-lite-built-for-intelligence-at-sca-2.md" >}})
-- [Qwen3.5 微调指南]({{< relref "posts/20260304-hacker_news-qwen35-fine-tuning-guide-unsloth-documentation-7.md" >}})
-- [利用RAG技术有效解决大模型幻觉问题]({{< relref "posts/20260314-juejin-别再信它一本正经地胡说了用-rag终结大模型幻觉-0.md" >}})
-- [大模型幻觉频发：代码调试与API调用的隐形陷阱]({{< relref "posts/20260316-juejin-骗我可以注意次数-0.md" >}})
-*本文由 AI Stack 自动生成，提供深度内容分析。*
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

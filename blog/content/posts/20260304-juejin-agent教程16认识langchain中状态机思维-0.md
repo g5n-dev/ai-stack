@@ -1,178 +1,75 @@
 ---
-title: LangGraph核心解析：基于有向环图的状态机思维与灵活性突破
+title: Agent教程16：认识LangChain(中)，状态机思维
 date: 2026-03-04 01:39:34+08:00
 draft: false
 entry_kind: auto
 tags:
-- LangGraph
-- LangChain
-- 状态机
-- 有向图
-- Agent
-- LLM
-- 工作流编排
-- 架构设计
+- 掘金
+- Python
+- 数据库
 categories:
-- AI 工程
-- 大模型
+- 数据
+scenarios: []
 source: juejin
-description: 好的，以下是中文简洁总结： LangGraph 核心突破：引入支持环的有向图结构，相比 LangChain 早期链式版本，显著增强了系统灵活性。
+description: 当前只保存了公开页面节选，不代表原文全文。请以原始来源为准。
 external_url: https://juejin.cn/post/7613032876864258088
-scenarios:
-- AI/ML项目
-- 大语言模型
-content_mode: legacy_analysis
-publication_tier: LEGACY
-source_provenance: legacy_no_snapshot
-source_support: 0.0
+aliases: []
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: excerpt
+source_snapshot_sha256: sha256:3e8628ebf7b5bc8cc0fdbeee346488a60442c1f979f58a5d5aebb63d611bf527
+extractor_version: source-contract-v1
+discovery_method: article_html_excerpt
+fetch_status: captured
+source_completeness: partial
+source_is_truncated: true
+source_support: 1.0
+source_title_chars_original: 30
+captured_at: '2026-07-18T04:18:33.064246Z'
+source_capture_sha256: sha256:3f07362fecbb638f1f791d30c197b9907ad9b47745cd48461bd1d752f1763ed5
+source_capture_chars_original: 3582
+source_publication_excerpt_chars: 743
+source_truncation_reason: historical_excerpt_only,historical_publication_excerpt_limit
 ---
 
 ## 基本信息
 
-- **作者**: 摸鱼的春哥
-- **链接**: [https://juejin.cn/post/7613032876864258088](https://juejin.cn/post/7613032876864258088)
+- **来源**: juejin
+- **原始来源**: [https://juejin.cn/post/7613032876864258088](<https://juejin.cn/post/7613032876864258088>)
 
----
+## 来源摘要/节选
 
-## 导语
+公开展示已截断至最多 800 个字符；请访问原始来源查看完整上下文。
 
-LangChain 的早期版本主要依赖线性链路，这在处理复杂逻辑时往往显得力不从心。LangGraph 的核心突破在于引入了支持环的有向图结构，使开发者能够以“状态机”的思维来构建应用，从而显著提升了架构的灵活性。本文将深入解析这一设计理念，帮助你掌握如何利用 LangGraph 编排更智能、更具适应性的 AI Agent 工作流。
+> 上一节我们列举了LangGraph的基本节点类型，但是只是知道，并不知道怎么组装和使用，先列举下来，后面讲如何组装：
+> Node：一个函数（LLM调用、工具、判断）。
+> Edge：跳转规则（普通边 + 条件边）。
+> State：共享状态（情绪、记忆、亲密度等），支持Reducer自动合并。
+> Checkpoint：自动持久化（内存/SQLite/Postgres），支持崩溃恢复 + 时间旅行调试。
+> Interrupt：原生Human-in-the-loop（用户中途纠正、审批、回滚）。
+> 一、状态机思维
+> 在 LangChain 早期版本（包括 LCEL）中，绝大多数工作流本质上是
+> 有向无环图（DAG）
+> 或简单的线性流水线（Pipeline）。数据像流水一样从 A 流到 B 再流到 C，但很难 “回头”。
+> LangGraph 最核心的突破就是它是支持环的有向图，相比于LangChain古早的链式版本极大的增强了灵活性。
+> 假设，我们现在有这样一个业务，理想状态下希望LLM依次执行：
+> 调用工具查询数据
+> 格式化数据
+> 打印结果
+> 对，这就是早期的链式思维，一旦LLM因为其随机性出错，整个流程就会轰然倒塌。
+> 因此，事实证明，链式操作救不了Agent开发。
+> 一种更稳健，更方便影对随机性的设计哲学被LangGraph选中：状态机。
+> 状态：可以理解为一组能被所有节点读取和更新的变量。
+> 对状态的使用通常遵循这样的规则：
+> 在Node中更新状态
+> 在选择连线时读取状态
+> 以上图为例，如果格式化失败，那么state='fail'，而在选择连线时，因为 state == 'fail'，因此进入了格式化自循环的连线。
+> 在正式生产中，我们还可以加入
+> fail\_count
+> 这样的状态，来保证自循环的上限次数。…
 
----
+## 来源说明
 
-## 描述
+当前只保存了公开页面节选，不代表原文全文。请以原始来源为准。
 
-LangGraph 的核心突破在于它是一种支持环的有向图，相比 LangChain 早期链式版本，显著提升了灵活性。
-
----
-
-## 摘要
-
-好的，以下是中文简洁总结：
-
-LangGraph 核心突破：引入支持环的有向图结构，相比 LangChain 早期链式版本，显著增强了系统灵活性。
-
----
-
-## 评论
-
-### 深度评价：Agent教程16——LangGraph与状态机思维的范式转移
-
-**中心观点**
-文章的核心观点在于：**LangChain 通过引入 LangGraph 这一基于有向图的架构，正式确立了以“状态机”为核心的 Agent 开发范式，从而在底层逻辑上彻底解决了传统线性链式结构在处理复杂、循环推理任务时的僵化问题。** (事实陈述/作者观点归纳)
-
-#### 一、 支撑理由与深度剖析
-
-**1. 从“链”到“图”的结构性必然**
-*   **理由**：文章敏锐地指出了 LangChain 早期版本（Chain）的局限性。早期的 LLM 应用多为“Prompt A -> Output B -> Prompt C”的线性流水线，适合单一任务，但在面对需要自我修正、多步推理或工具调用的 Agent 场景时显得力不从心。LangGraph 引入节点和边，特别是支持循环，使得模型可以根据当前状态决定是继续执行、调用工具还是回退重试。
-*   **你的推断**：这不仅是技术架构的升级，更是对 LLM 应用认知的升级。它承认了 LLM 的非确定性，将应用设计从“预设脚本”转变为“动态规划”。
-
-**2. 状态机思维对“幻觉”与“错误”的鲁棒性**
-*   **理由**：通过状态机思维，开发者可以显式地定义 Agent 的状态（如：`need_human_input`, `processing`, `finished`）。文章强调了这种思维模式的重要性——即把 Agent 的运行过程看作状态的流转。
-*   **行业结合**：在实际金融或法律分析场景中，Agent 可能会检索到错误信息。在链式结构中，错误会直接传递给最终用户。而在图结构中，可以设计一个“审查节点”，如果状态检测到置信度过低，边就会指向“重新检索”节点，而不是直接输出结果。
-
-**3. 确立了 Agent 开发的标准化控制流**
-*   **理由**：LangGraph 实际上是在 LLM 应用层补齐了传统编程中“控制流”的拼图。它允许开发者像写后端逻辑一样处理 LLM 的输出，实现了 `if/else` 和 `while/loop` 的语义化。
-*   **作者观点**：文章认为这是 LangChain 生态最核心的突破，因为它赋予了开发者编排复杂工作流的能力，而不仅仅是简单的 Prompt 套娃。
-
-#### 二、 反例与边界条件
-
-尽管状态机思维极具价值，但在实际应用中存在以下明显的边界与挑战：
-
-**1. 调试复杂度的指数级上升**
-*   **反例**：在一个包含 10 个以上节点和多重条件边的复杂 LangGraph 中，当 Agent 输出不符合预期时，排查问题的难度远高于线性链。
-*   **你的推断**：图结构的灵活性带来了“状态爆炸”的风险。开发者不仅需要调试 Prompt，还需要调试图的拓扑结构和状态传递逻辑。这可能导致“可解释性危机”——即开发者知道 Agent 出错了，但不知道它在图的哪个环路中陷入了死循环。
-
-**2. 并非所有场景都需要“图”的复杂性**
-*   **反例**：对于简单的 RAG（检索增强生成）应用，如“用户提问 -> 检索 -> 生成答案”，引入 LangGraph 的图架构属于过度设计。
-*   **事实陈述**：LangChain 的 LCEL（LangChain Expression Language）在处理简单串行逻辑时，代码更简洁、启动更快，且认知负担更低。强行使用状态机思维会增加不必要的样板代码。
-
-**3. 状态管理的隐形成本**
-*   **边界条件**：LangGraph 需要持久化状态以支持长周期的 Agent 运行（如跨越多天的对话）。这意味着架构必须引入 Redis 或 PostgreSQL 等外部数据库，这与无状态的函数计算（如 AWS Lambda）模式存在冲突，增加了运维的复杂度。
-
-#### 三、 综合评价维度
-
-*   **内容深度**：文章切中肯綮，准确识别了从 Chain 到 Graph 的范式转移。它没有停留在 API 层面的介绍，而是上升到了“状态机”这一计算机科学经典理论的高度，论证具有相当的深度。
-*   **实用价值**：对于正在从 Demo 转向生产级应用的开发者具有极高的指导意义。它指出了如何构建具备自我纠错能力的 Agent，是解决当前 Agent 应用“傻乐”、“出错不回头”痛点的关键解法。
-*   **创新性**：虽然“状态机”概念不新，但将其系统性地引入 LLM Agent 编排领域，并将其作为 LangChain 的核心差异化卖点进行阐述，具有很高的认知创新性。
-*   **可读性**：逻辑清晰，对比鲜明。
-*   **行业影响**：预示着 LLM 应用开发正在从“手工作坊”走向“工业化编排”，推动了 Agent 开发框架的标准化。
-
-#### 四、 可验证的检查方式
-
-为了验证文章观点及 LangGraph 架构在实际项目中的有效性，建议进行以下检查：
-
-1.  **“死循环”压力测试**：
-    *   **方法**：构建一个包含自我修正循环的 Agent，故意在 Prompt 或工具返回中注入会导致逻辑冲突的错误信息。
-    *   **指标**：观察 Agent 是否能在有限的步数（如 5 步）内通过状态机逻辑跳出循环并达到 `finish` 状态，还是会在 `retry` 状态中无限震荡。
-
----
-
-## 学习要点
-
-- LangChain 的底层逻辑是将 LLM 视为状态机中的状态转移函数，通过 Prompt 和 Context 驱动状态流转。
-- 构建复杂 Agent 时，应采用状态机思维替代线性流程思维，以处理非确定性的模型输出和循环逻辑。
-- LangChain 中的“链”本质上是定义状态在不同节点间的流转规则及更新方式，而非简单的函数拼接。
-- 基于状态机思维，可以将历史上下文作为状态变量传递，从而设计出有效的 Agent “记忆”机制。
-- 理解 LangChain 的执行原理，关键在于识别系统中的“状态”（如输入文本、中间变量）与“转换”（如 LLM 调用、工具执行）。
-- 这种架构模式将 Agent 的开发转变为定义一套基于状态流转的规则系统。
-
----
-
-## 常见问题
-
-### 在 LangChain 中，为什么要引入“状态机”思维来理解 Agent？
-
-引入状态机思维是为了更清晰地描述 Agent 的运行逻辑和生命周期。在 LangChain 中，Agent 的执行过程不是简单的线性函数调用，而是一个不断循环的过程：接收用户输入 -> 决定下一步行动（使用工具或结束） -> 执行行动 -> 观察结果 -> 更新内部状态。将这个过程视为状态机，有助于开发者理解 Agent 如何在不同阶段（如“思考”、“执行”、“观察”）之间流转，以及如何通过维护上下文来处理复杂的推理链，从而构建出更健壮的智能体应用。
-
-### LangChain 中的 AgentExecutor 与 RunnableAgent 有什么区别？
-
-这两者代表了 LangChain 中不同阶段的架构设计，也体现了状态机思维的应用深度。`RunnableAgent`（通常基于 LCEL 构建）更侧重于定义 Agent 的“大脑”逻辑，即如何根据输入和中间步骤决定下一步动作。而 `AgentExecutor` 则是一个完整的运行时环境（或称为“循环控制器”），它封装了状态机的执行循环，负责处理最大迭代次数、错误处理、工具调用以及早期停止等逻辑。简单来说，`RunnableAgent` 负责决策，而 `AgentExecutor` 负责流程控制和环境管理。
-
-### 如何理解 Agent 中的“中间步骤”在状态流转中的作用？
-
-“中间步骤”是 Agent 状态机中的核心记忆组件。它记录了 Agent 已经采取的行动和相应的观察结果。在状态机的每一次循环中，当前的输入都会包含“原始用户输入”加上“历史中间步骤”。这使得 Agent 具备了上下文感知能力，能够基于之前的行动结果来调整下一步的策略，而不是每次都从零开始。这种状态的累积和传递，是实现 Agent 能够进行多步推理和纠错的关键机制。
-
-### 在 Agent 的状态机循环中，如何防止陷入无限循环？
-
-在实际开发中，必须为状态机的循环设置终止条件。LangChain 的 `AgentExecutor` 提供了多种机制来处理这个问题：
-1.  **最大迭代次数**：设置 `max_iterations` 参数，当循环达到该次数时强制停止，防止模型在错误的路径上无限打转。
-2.  **提前终止机制**：Agent 可以返回特定的结束信号（如 `AgentFinish`），直接中断循环并输出最终答案。
-3.  **超时处理**：设置单个步骤或整体执行的超时时间。
-理解状态机思维意味着开发者需要显式地考虑这些边界条件，以确保系统的稳定性。
-
-### 既然有了状态机思维，LangChain 是如何处理 Agent 执行过程中的错误和异常的？
-
-在状态机的视角下，错误被视为状态流转的一种特殊情况。LangChain 允许开发者配置错误处理策略。例如，当工具调用发生异常时，状态机不会直接崩溃，而是可以将错误信息作为“观察结果”反馈给 LLM。这样，Agent 的状态机就流转回“思考”阶段，LLM 会根据错误提示尝试修正指令或选择其他工具，从而实现自我修复能力。这种设计将异常处理整合进了状态循环中，而不是将其抛出到外部流程。
-
-### 从状态机的角度看，`return_intermediate_steps` 参数有什么实际用途？
-
-当开启 `return_intermediate_steps=True` 时，AgentExecutor 不仅返回最终状态（Final Answer），还会返回整个状态流转的历史轨迹。这对于调试和可视化至关重要。开发者可以通过这些数据回溯 Agent 的思考路径，查看它在哪一步选择了哪个工具，看到了什么结果，以及是如何一步步推导出最终结论的。这相当于记录了状态机在各个时刻的快照，有助于优化 Prompt 或工具配置，提升 Agent 的可靠性。
-
-### LangGraph 与传统 LangChain AgentExecutor 在状态机表达上有什么演进？
-
-虽然 `AgentExecutor` 内部使用了状态机逻辑，但它是一个相对封闭的黑盒。而 LangGraph 是 LangChain 对状态机思维的进一步升华，它将 Agent 明确定义为一个图结构的状态机。在 LangGraph 中，每一个节点是一个函数，边控制状态流转，开发者可以显式地定义状态、条件边和循环结构。相比 `AgentExecutor`，LangGraph 提供了更底层的控制力，使得构建具有复杂状态管理、多智能体协作或长期记忆的 Agent 变得更加直观和灵活。
-
----
-
-## 引用
-
-- **掘金原文**: [https://juejin.cn/post/7613032876864258088](https://juejin.cn/post/7613032876864258088)
-
-> 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
-
----
-
-## 站内链接
-
-- 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)
-- 标签： [LangGraph](/tags/langgraph/) / [LangChain](/tags/langchain/) / [状态机](/tags/%E7%8A%B6%E6%80%81%E6%9C%BA/) / [有向图](/tags/%E6%9C%89%E5%90%91%E5%9B%BE/) / [Agent](/tags/agent/) / [LLM](/tags/llm/) / [工作流编排](/tags/%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%BC%96%E6%8E%92/) / [架构设计](/tags/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/)
-- 场景： [AI/ML项目](/scenarios/ai-ml%E9%A1%B9%E7%9B%AE/) / [大语言模型](/scenarios/%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/)
-
-### 相关文章
-
-- [Claude Composer：AI 编排多智能体协作与任务流]({{< relref "posts/20260206-hacker_news-claude-composer-9.md" >}})
-- [人人都在构建异步智能体 但鲜有人能定义其概念]({{< relref "posts/20260209-hacker_news-everyones-building-async-agents-but-almost-no-one--14.md" >}})
-- [LLM智能体新增Claws层以增强功能]({{< relref "posts/20260221-hacker_news-claws-are-now-a-new-layer-on-top-of-llm-agents-13.md" >}})
-- [Claws 成为 LLM 智能体顶层新抽象层]({{< relref "posts/20260221-hacker_news-claws-are-now-a-new-layer-on-top-of-llm-agents-13.md" >}})
-- [从 Prompt 到 Agent Skill：AI 能力跃迁与设计实现]({{< relref "posts/20260303-juejin-agent-skill-是什么一文讲透-agent-skill-的设计与实现-3.md" >}})
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

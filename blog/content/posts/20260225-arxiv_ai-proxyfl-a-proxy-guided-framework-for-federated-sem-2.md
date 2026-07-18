@@ -1,29 +1,49 @@
 ---
-title: ProxyFL：面向联邦半监督学习的代理引导框架
+title: 'ProxyFL: A Proxy-Guided Framework for Federated Semi-Supervised Learning'
 date: 2026-02-25 02:57:16+08:00
 draft: false
 entry_kind: auto
-tags: []
-categories: []
-source: arxiv
-description: 历史条目已归档：现有正文未通过内容质量门，请查阅原始来源。
-external_url: http://arxiv.org/abs/2602.21078v1
+tags:
+- ArXiv
+categories:
+- 论文
 scenarios: []
+source: arxiv
+description: 当前只保存了官方论文摘要，不代表论文全文。请以原始来源为准。
+external_url: https://arxiv.org/abs/2602.21078v1
 aliases: []
-content_mode: archived
-publication_tier: ARCHIVED
-source_provenance: legacy_no_snapshot
-source_support: 0.0
-archived: true
-archive_reason: historical_content_quality_gate
-build:
-  list: never
-  render: always
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: abstract
+source_snapshot_sha256: sha256:559fd8ac6429f3dddb5598525a08ca82bb476be9c32f4cea6b185684c75bab1d
+extractor_version: source-contract-v1
+discovery_method: arxiv_api
+fetch_status: captured
+source_completeness: abstract_only
+source_is_truncated: false
+source_support: 1.0
+source_title_chars_original: 72
+captured_at: '2026-07-18T04:16:49.996029Z'
+source_capture_sha256: sha256:9529dfac6726a2a8d25c25a587a29cbdd1f768ea52da0b62270e2bef5be3d3b6
+source_capture_chars_original: 1525
+source_publication_excerpt_chars: 1525
 ---
 
-## 历史条目归档说明
+## 基本信息
 
-该条目的历史正文未通过内容质量门，可能包含基于标题推测的内容。为避免继续传播不可核验文本，本站仅保留透明归档记录。
+- **来源**: arxiv
+- **原始来源**: [https://arxiv.org/abs/2602.21078v1](<https://arxiv.org/abs/2602.21078v1>)
+- **作者**: Duowen Chen, Yan Wang
+- **分类**: cs.LG
+- **论文时间**: 2026-02-24T16:41:16Z
+- **论文 PDF**: [https://arxiv.org/pdf/2602.21078v1.pdf](<https://arxiv.org/pdf/2602.21078v1.pdf>)
 
-- 历史内容质量门未通过
-- 原始来源：<http://arxiv.org/abs/2602.21078v1>
+## 来源摘要/节选
+
+> Federated Semi-Supervised Learning \(FSSL\) aims to collaboratively train a global model across clients by leveraging partially-annotated local data in a privacy-preserving manner. In FSSL, data heterogeneity is a challenging issue, which exists both across clients and within clients. External heterogeneity refers to the data distribution discrepancy across different clients, while internal heterogeneity represents the mismatch between labeled and unlabeled data within clients. Most FSSL methods typically design fixed or dynamic parameter aggregation strategies to collect client knowledge on the server \(external\) and / or filter out low-confidence unlabeled samples to reduce mistakes in local client \(internal\). But, the former is hard to precisely fit the ideal global distribution via direct weights, and the latter results in fewer data participation into FL training. To this end, we propose a proxy-guided framework called ProxyFL that focuses on simultaneously mitigating external and internal heterogeneity via a unified proxy. I.e., we consider the learnable weights of classifier as proxy to simulate the category distribution both locally and globally. For external, we explicitly optimize global proxy against outliers instead of direct weights; for internal, we re-include the discarded samples into training by a positive-negative proxy pool to mitigate the impact of potentially-incorrect pseudo-labels. Insight experiments &amp; theoretical analysis show our significant performance and convergence in FSSL.
+
+## 来源说明
+
+当前只保存了官方论文摘要，不代表论文全文。请以原始来源为准。
+
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

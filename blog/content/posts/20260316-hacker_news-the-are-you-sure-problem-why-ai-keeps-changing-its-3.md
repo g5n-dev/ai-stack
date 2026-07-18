@@ -1,42 +1,44 @@
 ---
-title: AI反复改变决策的“你确定吗”问题解析
+title: 'The "are you sure?" Problem: Why AI keeps changing its mind'
 date: 2026-03-16 16:46:25+08:00
 draft: false
 entry_kind: auto
 tags:
-- 决策一致性
-- 模型幻觉
-- 提示词工程
-- AI交互
-- 模型稳定性
-- 用户体验
-- LLM
-- 确定性
-categories:
-- 大模型
-- 产品与创业
+- Hacker News
+categories: []
+scenarios: []
 source: hacker_news
-description: 随着大模型能力的提升，开发者发现 AI 在推理过程中存在一种反复横跳的现象：模型往往在生成中间结论时表现得十分确信，但在后续步骤中又推翻了之前的判断。这种不稳定性不仅增加了调试的难度，也严重影响了复杂任务（如多步推理或代码生成）的可靠性。本文将深入剖析这一问题的成因，探讨模型内部置信度与最终输出之间的偏差，并为开发者提供提升模型输出一致性的实用策略。
+description: 当前只保存了来源元数据，未抓取外链全文。请以原始来源和 Hacker News 讨论为准。
 external_url: https://www.randalolson.com/2026/02/07/the-are-you-sure-problem-why-your-ai-keeps-changing-its-mind
-scenarios:
-- AI/ML项目
-- 大语言模型
-content_mode: legacy_source_brief
+aliases: []
+content_mode: source_brief
 publication_tier: C
-source_provenance: legacy_no_snapshot
-source_support: 0.0
+source_capture_mode: metadata_only
+source_snapshot_sha256: sha256:1072c71ebdff346c8610a03f755a0e321efa55cb82b85c5fcfcf38557d5f8d06
+extractor_version: source-contract-v1
+discovery_method: api_metadata
+fetch_status: captured
+source_completeness: metadata_only
+source_is_truncated: false
+source_support: 1.0
+source_title_chars_original: 59
+captured_at: '2026-07-18T04:19:18.768127Z'
+source_capture_sha256: sha256:8af7d8c05324f224f5e1ff4a5b86a87a3aac500a2648248560e34f88406cf552
+source_capture_chars_original: 59
+source_publication_excerpt_chars: 59
 ---
 
 ## 基本信息
 
+- **来源**: hacker\_news
+- **原始来源**: [https://www.randalolson.com/2026/02/07/the-are-you-sure-problem-why-your-ai-keeps-changing-its-mind](<https://www.randalolson.com/2026/02/07/the-are-you-sure-problem-why-your-ai-keeps-changing-its-mind>)
 - **作者**: turoczy
-- **评分**: 13
-- **评论数**: 14
-- **链接**: [https://www.randalolson.com/2026/02/07/the-are-you-sure-problem-why-your-ai-keeps-changing-its-mind](https://www.randalolson.com/2026/02/07/the-are-you-sure-problem-why-your-ai-keeps-changing-its-mind)
-- **HN 讨论**: [https://news.ycombinator.com/item?id=47390609](https://news.ycombinator.com/item?id=47390609)
+- **评分**: 41
+- **评论数**: 33
+- **HN 讨论**: [https://news.ycombinator.com/item?id=47390609](<https://news.ycombinator.com/item?id=47390609>)
 
----
+## 来源说明
 
-## 导语
+当前只保存了来源元数据，未抓取外链全文。请以原始来源和 Hacker News 讨论为准。
 
-随着大模型能力的提升，开发者发现 AI 在推理过程中存在一种反复横跳的现象：模型往往在生成中间结论时表现得十分确信，但在后续步骤中又推翻了之前的判断。这种不稳定性不仅增加了调试的难度，也严重影响了复杂任务（如多步推理或代码生成）的可靠性。本文将深入剖析这一问题的成因，探讨模型内部置信度与最终输出之间的偏差，并为开发者提供提升模型输出一致性的实用策略。
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

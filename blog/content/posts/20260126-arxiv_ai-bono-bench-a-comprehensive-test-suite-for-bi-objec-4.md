@@ -1,30 +1,52 @@
 ---
-title: 🚀BONO-Bench：可追溯Pareto集的双目标优化基准测试！
+title: 'BONO-Bench: A Comprehensive Test Suite for Bi-objective Numerical Optimization
+  with Traceable Pareto Sets'
 date: 2026-01-26 22:15:20+08:00
 draft: false
 entry_kind: auto
-tags: []
-categories: []
-source: arxiv
-external_url: http://arxiv.org/abs/2601.16970v1
+tags:
+- ArXiv
+- Python
+categories:
+- 论文
 scenarios: []
+source: arxiv
+description: 当前只保存了官方论文摘要，不代表论文全文。请以原始来源为准。
+external_url: https://arxiv.org/abs/2601.16970v1
 aliases:
 - /posts/20260127-arxiv_ai-bono-bench-a-comprehensive-test-suite-for-bi-objec-4/
-content_mode: archived
-publication_tier: ARCHIVED
-source_provenance: legacy_no_snapshot
-source_support: 0.0
-description: 历史条目已归档：现有正文未通过内容质量门，请查阅原始来源。
-archived: true
-archive_reason: historical_content_quality_gate
-build:
-  list: never
-  render: always
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: abstract
+source_snapshot_sha256: sha256:8d1f635317766263a9bedf0a70cb853102f95d49f190c4ab7b2209c0ed97698d
+extractor_version: source-contract-v1
+discovery_method: arxiv_api
+fetch_status: captured
+source_completeness: abstract_only
+source_is_truncated: false
+source_support: 1.0
+source_title_chars_original: 105
+captured_at: '2026-07-18T04:09:03.986411Z'
+source_capture_sha256: sha256:2f8a57f1a8e72214cda2f74a9ed1ba4346e8ca3ca7dc0d54e6ed30db674946ac
+source_capture_chars_original: 1716
+source_publication_excerpt_chars: 1716
 ---
 
-## 历史条目归档说明
+## 基本信息
 
-该条目的历史正文未通过内容质量门，可能包含基于标题推测的内容。为避免继续传播不可核验文本，本站仅保留透明归档记录。
+- **来源**: arxiv
+- **原始来源**: [https://arxiv.org/abs/2601.16970v1](<https://arxiv.org/abs/2601.16970v1>)
+- **作者**: Lennart Schäpermeier, Pascal Kerschke
+- **分类**: math.OC
+- **论文时间**: 2026-01-23T18:42:20Z
+- **论文 PDF**: [https://arxiv.org/pdf/2601.16970v1.pdf](<https://arxiv.org/pdf/2601.16970v1.pdf>)
 
-- 历史内容质量门未通过
-- 原始来源：<http://arxiv.org/abs/2601.16970v1>
+## 来源摘要/节选
+
+> The evaluation of heuristic optimizers on test problems, better known as \\emph\{benchmarking\}, is a cornerstone of research in multi-objective optimization. However, most test problems used in benchmarking numerical multi-objective black-box optimizers come from one of two flawed approaches: On the one hand, problems are constructed manually, which result in problems with well-understood optimal solutions, but unrealistic properties and biases. On the other hand, more realistic and complex single-objective problems are composited into multi-objective problems, but with a lack of control and understanding of problem properties. This paper proposes an extensive problem generation approach for bi-objective numerical optimization problems consisting of the combination of theoretically well-understood convex-quadratic functions into unimodal and multimodal landscapes with and without global structure. It supports configuration of test problem properties, such as the number of decision variables, local optima, Pareto front shape, plateaus in the objective space, or degree of conditioning, while maintaining theoretical tractability: The optimal front can be approximated to an arbitrary degree of precision regarding Pareto-compliant performance indicators such as the hypervolume or the exact R2 indicator. To demonstrate the generator's capabilities, a test suite of 20 problem categories, called \\emph\{BONO-Bench\}, is created and subsequently used as a basis of an illustrative benchmark study. Finally, the general approach underlying our proposed generator, together with the associated test suite, is publicly released in the Python package \\texttt\{bonobench\} to facilitate reproducible benchmarking.
+
+## 来源说明
+
+当前只保存了官方论文摘要，不代表论文全文。请以原始来源为准。
+
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

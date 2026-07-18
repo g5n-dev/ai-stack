@@ -1,29 +1,53 @@
 ---
-title: 基于枢纽重采样的LLM强化学习深度密集探索
+title: Deep Dense Exploration for LLM Reinforcement Learning via Pivot-Driven Resampling
 date: 2026-02-17 03:10:02+08:00
 draft: false
 entry_kind: auto
-tags: []
-categories: []
+tags:
+- ArXiv
+- 大语言模型
+categories:
+- 论文
+- 大模型
+scenarios:
+- AI/ML项目
+- 大语言模型
 source: arxiv
-description: 历史条目已归档：现有正文未通过内容质量门，请查阅原始来源。
-external_url: http://arxiv.org/abs/2602.14169v1
-scenarios: []
+description: 当前只保存了官方论文摘要，不代表论文全文。请以原始来源为准。
+external_url: https://arxiv.org/abs/2602.14169v1
 aliases: []
-content_mode: archived
-publication_tier: ARCHIVED
-source_provenance: legacy_no_snapshot
-source_support: 0.0
-archived: true
-archive_reason: historical_content_quality_gate
-build:
-  list: never
-  render: always
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: abstract
+source_snapshot_sha256: sha256:be6f18d208ce366ae77e0900abb5278ea58dd9d6528fb1c4b5c76160f4f5725c
+extractor_version: source-contract-v1
+discovery_method: arxiv_api
+fetch_status: captured
+source_completeness: abstract_only
+source_is_truncated: false
+source_support: 1.0
+source_title_chars_original: 81
+captured_at: '2026-07-18T04:15:33.978565Z'
+source_capture_sha256: sha256:d84a0d2a409169a9b3398ba1cec5b6849b60070973b41c83c946dba02a279833
+source_capture_chars_original: 1345
+source_publication_excerpt_chars: 1345
 ---
 
-## 历史条目归档说明
+## 基本信息
 
-该条目的历史正文未通过内容质量门，可能包含基于标题推测的内容。为避免继续传播不可核验文本，本站仅保留透明归档记录。
+- **来源**: arxiv
+- **原始来源**: [https://arxiv.org/abs/2602.14169v1](<https://arxiv.org/abs/2602.14169v1>)
+- **作者**: Yiran Guo, Zhongjian Qiao, Yingqi Xie, Jie Liu, Dan Ye, Ruiqing Zhang, Shuang Qiu, Lijie Xu
+- **分类**: cs.LG
+- **论文时间**: 2026-02-15T14:44:15Z
+- **论文 PDF**: [https://arxiv.org/pdf/2602.14169v1.pdf](<https://arxiv.org/pdf/2602.14169v1.pdf>)
 
-- 历史内容质量门未通过
-- 原始来源：<http://arxiv.org/abs/2602.14169v1>
+## 来源摘要/节选
+
+> Effective exploration is a key challenge in reinforcement learning for large language models: discovering high-quality trajectories within a limited sampling budget from the vast natural language sequence space. Existing methods face notable limitations: GRPO samples exclusively from the root, saturating high-probability trajectories while leaving deep, error-prone states under-explored. Tree-based methods blindly disperse budgets across trivial or unrecoverable states, causing sampling dilution that fails to uncover rare correct suffixes and destabilizes local baselines. To address this, we propose Deep Dense Exploration \(DDE\), a strategy that focuses exploration on $\\textit\{pivots\}$-deep, recoverable states within unsuccessful trajectories. We instantiate DDE with DEEP-GRPO, which introduces three key innovations: \(1\) a lightweight data-driven utility function that automatically balances recoverability and depth bias to identify pivot states; \(2\) local dense resampling at each pivot to increase the probability of discovering correct subsequent trajectories; and \(3\) a dual-stream optimization objective that decouples global policy learning from local corrective updates. Experiments on mathematical reasoning benchmarks demonstrate that our method consistently outperforms GRPO, tree-based methods, and other strong baselines.
+
+## 来源说明
+
+当前只保存了官方论文摘要，不代表论文全文。请以原始来源为准。
+
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

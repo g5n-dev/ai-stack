@@ -1,179 +1,72 @@
 ---
-title: Tide Commander：多AI编程代理的3D战场可视化工具
+title: Tide Commander — 一个用3D战场管理多个AI编程Agent的可视化工具（Claude Code + Codex）
 date: 2026-02-17 03:10:02+08:00
 draft: false
 entry_kind: auto
 tags:
-- AI 编程
-- 多Agent
-- 3D可视化
-- Claude Code
-- Codex
-- 开发工具
-- 工作流
-- 自动化
+- 掘金
+- AI Agent
+- 命令行工具
+- Docker
+- 数据库
 categories:
-- 开发工具
-- 效率与方法论
-source: juejin
-description: 管理多个 AI 编程代理往往意味着在繁杂的终端窗口间频繁切换，缺乏全局视角容易导致协作效率低下。Tide Commander 通过引入 3D
-  战场可视化概念，将 Claude Code 和 Codex 等代理的运行状态转化为直观的空间布局。本文将介绍这一工具的设计思路与核心功能，展示它如何帮助开发者更从容地监控与调度多
-  Agent 协作流，从而提升复杂编程任务的可控性。
-external_url: https://juejin.cn/post/7606793134374666303
+- AI 工程
+- 数据
 scenarios:
 - AI/ML项目
-content_mode: legacy_analysis
-publication_tier: LEGACY
-source_provenance: legacy_no_snapshot
-source_support: 0.0
+- 云原生/容器
+- 命令行工具
+source: juejin
+description: 当前只保存了公开页面节选，不代表原文全文。请以原始来源为准。
+external_url: https://juejin.cn/post/7606793134374666303
+aliases: []
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: excerpt
+source_snapshot_sha256: sha256:e35e9e8e4c92dd216c9f7293befad1176cf4b86cb3fe1d9f1e5df38903a942e8
+extractor_version: source-contract-v1
+discovery_method: article_html_excerpt
+fetch_status: captured
+source_completeness: partial
+source_is_truncated: true
+source_support: 1.0
+source_title_chars_original: 64
+captured_at: '2026-07-18T04:17:23.277903Z'
+source_capture_sha256: sha256:23c324ba345808ce2b3a78d95f9f64bd5eb1d3b71a664a2d1ed039f970e7002e
+source_capture_chars_original: 1606
+source_publication_excerpt_chars: 730
+source_truncation_reason: historical_excerpt_only,historical_publication_excerpt_limit
 ---
 
 ## 基本信息
 
-- **作者**: 用户83352530287
-- **链接**: [https://juejin.cn/post/7606793134374666303](https://juejin.cn/post/7606793134374666303)
+- **来源**: juejin
+- **原始来源**: [https://juejin.cn/post/7606793134374666303](<https://juejin.cn/post/7606793134374666303>)
 
----
-## 导语
+## 来源摘要/节选
 
-管理多个 AI 编程代理往往意味着在繁杂的终端窗口间频繁切换，缺乏全局视角容易导致协作效率低下。Tide Commander 通过引入 3D 战场可视化概念，将 Claude Code 和 Codex 等代理的运行状态转化为直观的空间布局。本文将介绍这一工具的设计思路与核心功能，展示它如何帮助开发者更从容地监控与调度多 Agent 协作流，从而提升复杂编程任务的可控性。
+公开展示已截断至最多 800 个字符；请访问原始来源查看完整上下文。
 
----
-## 描述
+> Tide Commander — 一个用3D战场管理多个AI编程Agent的可视化工具（Claude Code + Codex）
+> 如果你同时运行多个Claude Code或Codex终端，你一定懂这种痛苦：标签页到处都是，上下文丢失，完成的任务被淹没。我开发了Tide Commander来解决这个问题。
+> 它是一个可视化的多Agent编排工具。你的AI Agent以3D角色出现在战场上，点击选择，输入命令，实时观看它们工作。看起来像游戏，但内部是一个完整的开发者工具。
+> bunx tide-commander
+> 需要 Node.js 18+，Linux 或 Mac，PATH 中有 Claude Code 或 Codex CLI。
+> 解决什么问题
+> AI编程Agent并行工作效果最好——一个跑测试，一个写功能，一个修Bug。但同时管理五个终端是一团乱。哪个有认证模块的上下文？测试Agent完成了吗？
+> Tide Commander把所有东西放在一个可视化界面里，包含文件差异对比、Git集成的文件浏览器和实时流式输出。很多场景下，IDE变得几乎不必要了。
+> 核心概念
+> Boss Agent
+> — 拥有下属Agent的上下文，把任务分配给最合适的Agent，汇总工作进度。跟一个Boss对话，不用在终端之间切换。
+> Supervisor（监督者）
+> — 上帝视角观察者。Agent完成任务时自动生成摘要。你不会错过任何完成的任务。
+> Group Areas（区域）
+> — 在战场上画区域来按项目组织Agent。分配文件夹可启用文件浏览器。
+> Classes（职业）
+> — 类似游戏里的职业系统：每个职业有3D模型、指令（类似claude.md）和技能。支持上传自定义GLB模型。…
 
-Tide Commander — 一个用于管理多个 AI 编程代理（Claude Code + Codex）的 3D 战场可视化工具。如果你同时运行多个 Claude Code 或 Codex 终端，你一定懂这种。
+## 来源说明
 
----
-## 摘要
+当前只保存了公开页面节选，不代表原文全文。请以原始来源为准。
 
-Tide Commander 是一个创新的可视化工具，旨在解决同时运行多个AI编程Agent（如Claude Code或Codex）时的管理难题。该工具通过3D战场的概念，将多个AI终端整合在一个直观的界面中，让用户能够高效监控和控制各个Agent的工作状态。其核心功能包括：
-
-1. **多Agent集中管理**：将分散的AI编程终端统一到一个3D可视化平台，避免窗口混乱。
-2. **实时状态监控**：通过动态3D界面，清晰展示每个Agent的任务进度、资源占用及运行状态。
-3. **交互式操作**：支持直接在3D场景中分配任务、调整优先级或终止Agent进程。
-4. **兼容性强**：适配主流AI编程工具（Claude Code、Codex等），适合复杂项目协作。
-
-这一工具尤其适合需要并行处理多个AI任务的场景（如批量代码生成、自动化测试），显著提升工作流效率。
-
----
-## 评论
-
-### 文章评价报告
-
-#### 1. 中心观点
-**文章提出了一种“上帝视角**文章提出了一种“上帝视角**文章提出了一种“上帝视角**的文章核心观点：通过将编程环境从传统的命令行（CLI）重构为3D可视化战场，利用空间隐喻**文章提出了一种“上帝视角**文章提出了一种“上帝视角**文章提出了一种“上帝视角”**文章提出了一种“上帝视角**文章提出了一种“上帝视角”的文章核心观点：通过将编程环境从传统的2D命令行（CLI）重构为3D可视化战场，利用空间隐喻（如“战斗单位”、“战场”）**文章提出了一种“上帝视角**文章提出了一种“上帝视角”的文章核心观点：通过将编程环境从传统的2D命令行（CLI）重构为3D可视化**文章核心观点：** Tide Commander 试图通过将多 Agent 编程环境从传统的二维命令行重构为三维可视化“战场”，利用空间隐喻来解决高并发 AI 任务**文章核心观点：** Tide Commander 试图通过将多 Agent**文章核心观点：** Tide Commander 试图通过将多 Agent 编程环境从传统的二维命令行重构为三维可视化“战场”，利用空间隐喻来解决高并发 AI**文章核心观点：** Tide Commander 试图通过将多 Agent 编程环境从传统的二维命令行重构为三维可视化“战场”，利用空间隐喻来解决高并发**文章核心观点：** Tide Commander 试图通过将多 Agent 编程**文章核心观点：****文章核心观点：** Tide Commander 试图通过将多 Agent 编程**文章核心观点：** Tide Commander **文章核心观点：** Tide Commander 试图通过将多 Agent 编程环境从传统的二维命令行重构为三维可视化“战场”，利用空间隐喻来解决高并发 AI**文章核心观点：** Tide Commander 试图通过将多 Agent 编程环境从传统的二维命令行重构为三维可视化“战场”，利用空间隐喻来解决高并发 AI**文章核心观点：** Tide Commander 试图通过将多 Agent 编程环境从**文章核心观点：** Tide Commander 试图通过将多 Agent 编程环境从传统的二维命令行重构为三维可视化“战场”，利用空间隐喻来解决高并发 AI**文章核心观点：** Tide Commander 试图通过将多 Agent 编程环境从传统的二维命令行重构为三维可视化“战场”，利用空间隐喻来解决高并发 AI**文章核心观点：** Tide Commander 试图通过将多 Agent 编程环境从传统的二维命令行重构为三维可视化“战场”，利用空间隐喻来解决高并发 AI**文章核心观点：** Tide Commander 试图通过将多 Agent 编程环境从传统的二维命令行重构为三维可视化“战场”，利用空间隐喻来解决高并发 AI**文章核心观点：** Tide Commander 试图通过将多 Agent 编程环境从传统的二维命令行重构为三维可视化“战场”，利用空间隐喻来解决高并发 AI**文章核心观点：** Tide Commander 试图通过将多 Agent 编程环境从传统的二维命令行重构为三维可视化“战场”，利用空间隐喻来解决高并发 AI 编程**文章核心观点：**文章核心观点：** Tide Commander 试图通过将多 Agent 编程**文章核心观点：** Tide Commander 试图通过将多 Agent 编程环境从传统的二维命令行重构为三维可视化“战场”，利用空间隐喻来解决高并发 AI 编程**文章核心观点：** Tide Commander 试图通过将多 Agent 编程环境从传统的二维命令行重构为**文章核心观点：** Tide Commander **文章核心观点：** Tide Commander 试图通过将多 Agent 编程环境从传统的二维命令行重构为三维可视化“战场”，利用空间隐喻来解决高并发 AI 编程任务**文章核心观点：** Tide Commander 试图通过将**文章核心观点：** Tide Commander 试图通过将多 Agent 编程环境从传统的二维命令行重构为三维可视化“战场”，利用空间隐喻来解决高并发 AI 编程任务**文章核心观点：** Tide Commander 试图通过将多 Agent 编程环境从传统的二维命令行重构为三维可视化“战场”，利用空间隐喻来解决高并发 AI 编程任务**文章核心观点：** Tide Commander 试图通过将多 Agent 编程环境从传统的二维命令行重构为三维可视化“战场”，利用空间隐喻来解决高并发 AI 编程任务**文章核心观点：** Tide Commander 试图通过将多 Agent 编程环境从传统的二维命令行重构为三维可视化“战场”，利用空间隐喻来解决高并发 AI 编程任务
-
-
-
-**文章核心观点：** Tide Commander 试图通过将多 Agent 编程环境从传统的二维命令行重构为三维可视化“战场”，利用空间隐喻来解决高并发 AI 编程任务**文章核心观点：** Tide Commander 试图通过将多 Agent 编程环境从传统的二维命令行重构为三维可视化“战场”，利用空间隐喻来解决高并发 AI 编程任务**文章核心观点：** Tide Commander 试图通过将多 Agent 编程环境从传统的二维命令行重构为三维可视化“战场”，利用空间隐喻来解决高并发 AI 编程任务中的认知负荷与**文章核心**文章核心观点：** Tide Commander 试图通过将多 Agent 编程环境从传统的二维命令行重构为**文章核心观点：****文章核心观点：** Tide Commander 试图通过将多 Agent 编程**文章核心观点：** Tide Commander 试图通过将多 Agent 编程环境从传统的二维命令行重构为三维可视化“战场”，利用空间隐喻来解决高并发 AI 编程任务
-
----
-## 学习要点
-
-- Tide Commander通过3D可视化战场实现了多个AI编程Agent的实时监控与调度，为复杂开发任务提供直观管理界面
-- 集成Claude Code与Codex双模型架构，分别擅长代码生成与逻辑推理，形成互补的AI协作模式
-- 引入"战场"概念将编程任务抽象为空间化操作，通过拖拽、缩放等交互方式降低多Agent管理复杂度
-- 支持动态分配任务优先级与资源调度，可根据实时反馈调整Agent工作负载，提升团队协作效率
-- 内置代码冲突检测与合并机制，当多个Agent修改同一文件时自动生成差异报告并建议解决方案
-- 提供历史回放功能记录所有Agent的操作轨迹，便于复盘优化工作流程与调试AI决策逻辑
-- 采用模块化设计允许开发者自定义Agent行为模板，扩展性强可适应不同编程语言与框架需求
-
----
-## 常见问题
-
-
-### 1: Tide Commander 是什么？它与传统的代码编辑器（如 VS Code）有什么区别？
-
-**A**: Tide Commander 是一个创新的可视化工具，旨在通过 3D 战场界面来管理和协调多个 AI 编程 Agent（如 Claude Code 和 OpenAI 的 Codex）。与传统的代码编辑器不同，Tide Commander 不仅仅是一个编写代码的场所，更是一个指挥中心。
-
-主要区别包括：
-1.  **可视化交互**：它将代码库和任务抽象为 3D 空间中的实体，用户可以直观地看到不同 Agent 的工作区域和状态。
-2.  **多 Agent 协同**：传统编辑器通常需要人工切换或调用 AI，而 Tide Commander 允许用户同时部署多个 Agent，让它们在不同的“战场”区域并行处理不同的模块或任务。
-3.  **宏观管理视角**：它提供了项目进度的宏观视图，用户可以像玩即时战略游戏一样，监控 AI 们的资源消耗、代码生成进度和冲突解决情况。
-
----
-
-
-
-### 2: 使用 Tide Commander 需要什么样的本地硬件配置？对显卡有特殊要求吗？
-
-**A**: 由于 Tide Commander 包含 3D 渲染界面并需要同时与多个云端或本地 AI 模型进行通信，因此对硬件有一定要求。
-
-**推荐配置：**
-*   **CPU**: 多核处理器（如 Intel i5/Ryzen 5 以上），因为需要处理多个 Agent 的并发请求。
-*   **内存 (RAM)**: 建议 16GB 以上。如果同时运行大型语言模型（LLM）或处理超大型代码库，32GB 会更流畅。
-*   **显卡 (GPU)**: 这是一个关键点。虽然基本的 3D 界面显示可能只需要集成显卡或入门级独显，但为了获得流畅的 3D 战场操作体验（缩放、旋转、多 Agent 动画渲染），建议配备支持现代图形 API（如 Vulkan, DirectX 12 或 Metal）的中端独立显卡（如 NVIDIA GTX 1660 或以上）。如果使用本地运行的小型模型，显存（VRAM）大小也是决定性因素。
-
----
-
-
-
-### 3: Tide Commander 支持哪些 AI 模型？我能否混用不同厂商的 Agent？
-
-**A**: 根据目前的描述，Tide Commander 主要设计为与 **Claude Code** 和 **Codex**（OpenAI 的技术）配合使用。这意味着它主要支持 Anthropic 和 OpenAI 的 API 接口。
-
-关于混用：
-理论上，该工具的设计初衷是“管理多个 Agent”，因此它应该支持配置不同类型的 Agent。例如，你可以指派一个基于 Claude 3.5 Sonnet 的 Agent 负责复杂的架构重构，同时指派一个基于 GPT-4 的 Agent 负责编写单元测试。只要工具支持标准的 API 密钥配置，用户就可以在同一个 3D 战场中混合部署这些不同“兵种”的 AI，利用它们各自的优势。
-
----
-
-
-
-### 4: 如何在 3D 战场中解决代码冲突？如果两个 AI Agent 修改了同一个文件会怎样？
-
-**A**: 这是 Tide Commander 核心功能之一。在传统的多线程编程或多人协作中，冲突处理往往很枯燥，但在 Tide Commander 的 3D 视图中，冲突会被具象化。
-
-**处理机制：**
-1.  **视觉预警**：当两个 Agent 试图修改同一代码块时，3D 战场中的对应区域可能会变色（例如变红）或显示碰撞特效。
-2.  **指挥官干预**：系统会暂停相关 Agent 的操作，向用户（指挥官）发送警报。
-3.  **解决策略**：用户可以介入查看两者的差异，并决定：
-    *   **接受一方**：让其中一个 Agent 的修改覆盖另一方。
-    *   **合并**：手动或辅助合并两者的逻辑。
-    *   **隔离**：将冲突部分复制到新的分支进行独立处理。
-
----
-
-
-
-### 5: Tide Commander 是否适合非程序员或初级开发者使用？
-
-**A**: Tide Commander 是一个双刃剑。对于**资深开发者或架构师**来说，它是一个强大的生产力工具，可以用来规划复杂的软件架构，将繁琐的编码任务“外包”给 AI 军团。
-
-对于**非程序员或初级开发者**：
-*   **优势**：可视化的界面降低了理解代码结构的门槛，他们可以通过拖拽和简单的指令让 AI 生成基础代码。
-*   **劣势**：由于涉及多个 Agent 的管理，用户仍然需要具备一定的逻辑思维能力来判断 AI 生成的代码质量，以及处理 Agent 之间的冲突。如果完全不懂编程，调试 AI 产生的错误可能会非常困难。因此，它更适合作为辅助工具而非完全的替代品。
-
----
-
-
-
-### 6: 数据隐私如何保障？我的代码会被发送到哪里？
-
-**A**: 使用 Tide Commander 时，数据隐私主要取决于你所配置的 AI Agent 的后端。
-
-1.  **云端 API 模式**：如果你使用的是标准的 Claude 或 OpenAI API 密钥，你的代码片段（作为上下文）将会被发送到 Anthropic 或 OpenAI 的服务器进行处理。虽然这些公司
-
----
-## 引用
-
-- **掘金原文**: [https://juejin.cn/post/7606793134374666303](https://juejin.cn/post/7606793134374666303)
-
-> 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
-
----
-
-
-## 站内链接
-
-- 分类： [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/) / [效率与方法论](/categories/%E6%95%88%E7%8E%87%E4%B8%8E%E6%96%B9%E6%B3%95%E8%AE%BA/)
-- 标签： [AI编程](/tags/ai%E7%BC%96%E7%A8%8B/) / [多Agent](/tags/%E5%A4%9Aagent/) / [3D可视化](/tags/3d%E5%8F%AF%E8%A7%86%E5%8C%96/) / [Claude Code](/tags/claude-code/) / [Codex](/tags/codex/) / [开发工具](/tags/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/) / [工作流](/tags/%E5%B7%A5%E4%BD%9C%E6%B5%81/) / [自动化](/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/)
-- 场景： [AI/ML项目](/scenarios/ai-ml%E9%A1%B9%E7%9B%AE/)
-
-### 相关文章
-
-- [Codex 应用：基于 OpenAI 模型的代码生成工具]({{< relref "posts/20260202-hacker_news-the-codex-app-1.md" >}})
-- [65行Markdown打造Claude Code热门项目]({{< relref "posts/20260212-hacker_news-65-lines-of-markdown-a-claude-code-sensation-2.md" >}})
-- [Codex 应用：基于 GPT-3 的代码生成工具]({{< relref "posts/20260202-hacker_news-the-codex-app-1.md" >}})
-- [Codex App：基于自然语言指令的代码生成工具]({{< relref "posts/20260202-hacker_news-the-codex-app-1.md" >}})
-- [Claude Code：面向基础设施的编程工具]({{< relref "posts/20260204-hacker_news-claude-code-for-infrastructure-11.md" >}})
-*本文由 AI Stack 自动生成，提供深度内容分析。*
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

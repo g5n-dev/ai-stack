@@ -1,30 +1,54 @@
 ---
-title: Google 在 AI Impact Summit 2026 宣布合作与投资
+title: AI Impact Summit 2026
 date: 2026-02-18 14:08:49+08:00
 draft: false
 entry_kind: auto
-tags: []
+tags:
+- 博客与播客
 categories: []
-source: blogs_podcasts
-description: 历史条目已归档：现有正文未通过内容质量门，请查阅原始来源。
-external_url: https://blog.google/innovation-and-ai/technology/ai/ai-impact-summit-2026-collection
 scenarios: []
+source: blogs_podcasts
+description: 当前只保存了公开页面节选，不代表原文全文。请以原始来源为准。
+external_url: https://blog.google/innovation-and-ai/technology/ai/ai-impact-summit-2026-collection
 aliases:
 - /posts/20260219-blogs_podcasts-ai-impact-summit-2026-2/
-content_mode: archived
-publication_tier: ARCHIVED
-source_provenance: legacy_no_snapshot
-source_support: 0.0
-archived: true
-archive_reason: historical_content_quality_gate
-build:
-  list: never
-  render: always
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: excerpt
+source_snapshot_sha256: sha256:c5bf245fff95332750d6eb52bd66ac3eb28e50b538bf8917def2f345ac430de5
+extractor_version: source-contract-v1
+discovery_method: article_html_excerpt
+fetch_status: captured
+source_completeness: partial
+source_is_truncated: true
+source_support: 1.0
+source_title_chars_original: 21
+captured_at: '2026-07-18T04:17:25.634318Z'
+source_capture_sha256: sha256:667c265e303b41689fc2fa815c7ab4c02657ec26afa5f817a8afcdb20c28ccb5
+source_capture_chars_original: 3194
+source_publication_excerpt_chars: 656
+source_truncation_reason: historical_publication_excerpt_limit
 ---
 
-## 历史条目归档说明
+## 基本信息
 
-该条目的历史正文未通过内容质量门，可能包含基于标题推测的内容。为避免继续传播不可核验文本，本站仅保留透明归档记录。
+- **来源**: blogs\_podcasts
+- **原始来源**: [https://blog.google/innovation-and-ai/technology/ai/ai-impact-summit-2026-collection](<https://blog.google/innovation-and-ai/technology/ai/ai-impact-summit-2026-collection>)
 
-- 历史内容质量门未通过
-- 原始来源：<https://blog.google/innovation-and-ai/technology/ai/ai-impact-summit-2026-collection>
+## 来源摘要/节选
+
+公开展示已截断至最多 800 个字符；请访问原始来源查看完整上下文。
+
+> Our last decade of breakthroughs in AI are helping us make progress against some of humanity’s biggest challenges. At the AI Impact Summit in India, we’re launching new global partnerships, research, investment and innovation, to ensure that these benefits are accessible for everyone.
+>
+> A message from our CEO “No technology has me dreaming bigger than AI” Sundar Pichai gave remarks at the opening ceremony of the AI Impact Summit. Read a transcript of his speech. By Sundar Pichai - Feb 19, 2026
+>
+> “No technology has me dreaming bigger than AI”
+>
+> Sundar Pichai gave remarks at the opening ceremony of the AI Impact Summit. Read a transcript of his speech.…
+
+## 来源说明
+
+当前只保存了公开页面节选，不代表原文全文。请以原始来源为准。
+
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

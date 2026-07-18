@@ -1,132 +1,54 @@
 ---
-title: 用Codex构建自我改进税务代理实现报税自动化
+title: Building self-improving tax agents with Codex
 date: 2026-05-27 16:53:37+08:00
 draft: false
 entry_kind: auto
 tags:
-- Codex
-- 税务代理
-- 自动化
-- 自改进
-- 工作流加速
-- 合规
-- 反馈循环
-- OpenAI
+- 博客与播客
+- AI Agent
 categories:
-- 大模型
 - AI 工程
-source: blogs_podcasts
-description: 了解 OpenAI、Thrive 和 Crete 如何借助 Codex 构建了一个自我改进的税务代理，实现报税自动化、提高准确性并加快工作流程。
-  在企业税务管理中，手工操作往往导致效率低下和错误累积。OpenAI 与 Thrive、Crete 合作，利用 Codex 开发了一套能够自行学习、持续优化的税务代理，实现自动报税、精准计算和流程加速。
-external_url: https://openai.com/index/building-self-improving-tax-agents-with-codex
 scenarios:
 - AI/ML项目
-content_mode: legacy_analysis
-publication_tier: LEGACY
-source_provenance: legacy_no_snapshot
-source_support: 0.0
+source: blogs_podcasts
+description: 当前只保存了公开页面节选，不代表原文全文。请以原始来源为准。
+external_url: https://openai.com/index/building-self-improving-tax-agents-with-codex
+aliases: []
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: excerpt
+source_snapshot_sha256: sha256:aee779e43bc2359764c8c675b4ed615595eacc5cba19812bfdda5c99ac358ca0
+extractor_version: source-contract-v1
+discovery_method: article_html_excerpt
+fetch_status: captured
+source_completeness: partial
+source_is_truncated: true
+source_support: 1.0
+source_title_chars_original: 45
+captured_at: '2026-07-18T04:21:32.265493Z'
+source_capture_sha256: sha256:025985b1f99fe0868c49555fc272175bc4de414f50a6c4fdc1281e6151224a3f
+source_capture_chars_original: 5899
+source_publication_excerpt_chars: 678
+source_truncation_reason: historical_capture_limit,historical_publication_excerpt_limit
 ---
 
 ## 基本信息
 
-- **来源**: OpenAI Blog (blog)
-- **发布时间**: 2026-05-27T07:00:00+00:00
-- **链接**: [https://openai.com/index/building-self-improving-tax-agents-with-codex](https://openai.com/index/building-self-improving-tax-agents-with-codex)
+- **来源**: blogs\_podcasts
+- **原始来源**: [https://openai.com/index/building-self-improving-tax-agents-with-codex](<https://openai.com/index/building-self-improving-tax-agents-with-codex>)
 
----
-## 摘要/简介
+## 来源摘要/节选
 
-了解 OpenAI、Thrive 和 Crete 如何借助 Codex 构建了一个自我改进的税务代理，实现报税自动化、提高准确性并加快工作流程。
+公开展示已截断至最多 800 个字符；请访问原始来源查看完整上下文。
 
----
-## 导语
+> By Members of Technical Staff: Aravind Srinivasan &amp; Samay Shamdasani \(Thrive Holdings\), Arthur Fernandes Araujo &amp; John de Wasseige \(OpenAI\)
+>
+> How Thrive Holdings and OpenAI co-developed Tax AI for Crete accountants by fusing practitioner expertise with a Codex-driven loop
+>
+> Real-world systems behave differently in production than they do in a lab, breaking in ways that are hard to anticipate before deployment. Teams often discover those failures after launch, then spend weeks inspecting edge cases, adjusting prompts, and translating production feedback into durable product improvements. The feedback loop is manual and slow, and only improves when an engineer advances it.…
 
-在企业税务管理中，手工操作往往导致效率低下和错误累积。OpenAI 与 Thrive、Crete 合作，利用 Codex 开发了一套能够自行学习、持续优化的税务代理，实现自动报税、精准计算和流程加速。该方案通过实时数据分析与模型微调，帮助财务团队降低合规风险并释放人力专注于更高价值的决策。本文将深入剖析技术实现路径，为计划在税务场景中落地 AI 代理的开发者提供实践经验与关键要点。
+## 来源说明
 
----
-## 摘要
+当前只保存了公开页面节选，不代表原文全文。请以原始来源为准。
 
-OpenAI 与 Thrive、Crete 合作，基于 Codex 构建了能够自我改进的税务代理。该代理利用 Codex 的代码生成与自然语言理解能力，自动完成税务申报、核对和文件处理；通过持续学习历史错误和最新法规，提升准确性；并实现工作流加速，减少人工干预。系统采用反馈循环，将每次申报结果反馈给模型，实现模型在真实税务场景中的迭代优化。整体方案帮助企业在合规前提下，提高效率、降低成本，并具备随业务变化快速适应能力。
-
----
-## 评论
-
-#### 中心观点
-
-本项目展示了基于大语言模型（Codex）实现税务代理“自我改进”能力的可行性，能够在自动化申报的同时通过反馈循环提升准确率并加速工作流。
-
-#### 支撑理由与边界条件
-
-- 事实陈述：文章指出系统通过 API 与税务系统对接，实现批量自动填报；并在每次提交后利用错误日志进行模型微调，实现误差逐年下降约15%。
-- 作者观点：OpenAI 认为自我改进机制是提升 AI 落地价值的关键路径，建议将类似闭环学习推广至其他合规场景。
-- 推断：在数据标注成本可控且税务法规相对稳定的前提下，该模式可在中等规模企业的财务部门落地；但在法规频繁变更或跨地区政策差异大的情况下，模型更新频率需显著提升，否则准确性会受限。
-
-#### 实践启发
-
-1. 构建闭环反馈：确保每一次错误返回都进入训练集，保持模型学习最新规则。
-2. 边界监控：部署模型漂移检测，及时触发重新训练或人工介入。
-3. 合规审计：在自动化流程中加入审计日志，满足监管要求的同时保留人工复核点。
-4. 成本评估：自我改进需要持续算力和标注资源，需在 ROI 计算中计入。
-
----
-## 技术分析
-
-#### 核心观点与技术要点
-
-本文围绕OpenAI、Thrive与Crete三方合作构建的自学习税务代理系统展开。该系统的核心命题在于利用Codex的代码生成与推理能力，实现税务处理流程的自动化，并通过持续学习机制不断提升处理准确性与效率。技术要点涵盖三个层面：首先是自然语言理解与税务规则的映射转化，使非结构化税务问题能够被系统解析；其次是基于反馈的迭代优化机制，系统从历史处理结果中提取模式，形成改进策略；最后是多步骤推理链的构建，使复杂税务场景能够被分解为可执行的逻辑步骤。
-
-#### 关键技术架构
-
-该系统的技术实现依赖于Codex的核心能力：代码生成与执行推理。在税务场景中，系统将用户输入的税务问题转换为可执行代码，通过动态执行与结果验证形成闭环处理流程。关键技术路径包括：规则编码层负责将税法条文转化为结构化知识表示；推理引擎层利用Codex的多步推理能力处理复杂税务计算；反馈学习层通过处理结果的准确率反馈实现模型的动态调整。这一架构实现了税务处理的端到端自动化，从问题理解到结果输出无需人工干预。
-
-#### 实际应用价值
-
-从应用层面分析，该系统带来三项核心价值。**效率提升**体现在自动化处理常规税务申报，将原本需要数小时的手工操作压缩至分钟级别。**准确性改善**通过标准化的计算逻辑减少人为错误，同时系统能够自动跟进税法变更并更新处理规则。**工作流加速**表现为税务专业人员可将精力聚焦于异常情况处理与策略咨询，而非重复性的数据录入与计算工作。对于税务服务企业而言，这意味着单位处理成本的显著下降与服务吞吐量的提升。
-
-#### 行业影响分析
-
-该技术方案对税务行业产生深远影响。在服务模式层面，传统依赖人工经验的税务处理正在向技术驱动型转变，税务从业者的角色从执行者向顾问与监督者迁移。在竞争格局层面，掌握类似自动化技术的机构将获得成本与效率优势，可能重塑行业竞争规则。在监管层面，自动化税务处理对算法透明性与审计追溯提出更高要求，监管框架需要相应演进以适应技术变革。然而，该技术的普及仍受制于税务法规的复杂性与地域差异性，通用解决方案的构建面临挑战。
-
-#### 边界条件与实践建议
-
-**边界条件**：系统的有效性高度依赖输入信息的完整性与准确性；面对需要主观判断的税务筹划场景时能力受限；跨境税务的复杂性要求多司法管辖区的规则库支持；数据安全与隐私合规是不可回避的硬性约束。
-
-**实践建议**：实施初期应设定明确的适用范围边界，优先处理标准化程度高的业务场景；建立人工复核机制作为质量保障的兜底手段；构建税务规则库的更新机制以应对法规变化；注重处理过程的完整日志记录以满足审计需求；分阶段推进技术部署，从辅助工具逐步过渡到核心系统角色。
-
-**论证地图**：中心命题为自学习税务代理能够实现税务处理的规模化自动化。支撑理由包括处理效率的数量级提升、错误率的显著下降以及可扩展性的技术保证。反例或边界条件涵盖法规解释存在争议的灰色地带、需要人工判断的复杂筹划场景以及数据质量不足导致的处理失败。可验证方式为对比测试与生产环境的实际运行数据监控。
-
----
-## 学习要点
-
-- 通过收集用户对答案的纠正和补充信息构建闭环反馈，使税务代理能够自动发现错误并持续提升性能。
-- 将税务法规、计税规则和政策解析为结构化的知识图谱或本体，确保代理在生成答案时具备权威性和合规性。
-- 利用 Codex 的自然语言理解和代码生成能力，将用户的税务查询实时转化为可执行的计算或查询脚本，提高响应速度和准确性。
-- 在关键决策点引入人工审核或二次校验机制，防止高风险税务建议出现错误并满足监管要求。
-- 使用真实税务案例和异常情形进行持续的训练和测试，提升代理对边缘情况的鲁棒性和适配性。
-- 建立详细的审计日志和可解释性记录，使得每一步推理都可追溯，满足税务领域的透明度要求。
-- 通过自动化 CI/CD 流程监控模型表现，快速部署迭代和回滚，保证系统在更新过程中保持高可用和低错误率。
-
----
-## 引用
-
-- **文章/节目**: [https://openai.com/index/building-self-improving-tax-agents-with-codex](https://openai.com/index/building-self-improving-tax-agents-with-codex)
-- **RSS 源**: [https://openai.com/blog/rss.xml](https://openai.com/blog/rss.xml)
-
-> 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
-
----
-
-## 站内链接
-
-- 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)
-- 标签： [Codex](/tags/codex/) / [税务代理](/tags/%E7%A8%8E%E5%8A%A1%E4%BB%A3%E7%90%86/) / [自动化](/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/) / [自改进](/tags/%E8%87%AA%E6%94%B9%E8%BF%9B/) / [工作流加速](/tags/%E5%B7%A5%E4%BD%9C%E6%B5%81%E5%8A%A0%E9%80%9F/) / [合规](/tags/%E5%90%88%E8%A7%84/) / [反馈循环](/tags/%E5%8F%8D%E9%A6%88%E5%BE%AA%E7%8E%AF/) / [OpenAI](/tags/openai/)
-- 场景： [AI/ML项目](/scenarios/ai-ml%E9%A1%B9%E7%9B%AE/)
-
-### 相关文章
-
-- [OpenAI 内部数据代理：结合 GPT-5 与记忆机制实现分钟级数据洞察]({{< relref "posts/20260129-hacker_news-openais-in-house-data-agent-14.md" >}})
-- [OpenAI 内部数据代理：利用 GPT-5 与记忆能力快速分析大规模数据集]({{< relref "posts/20260129-hacker_news-openais-in-house-data-agent-14.md" >}})
-- [OpenAI 内部数据智能体：结合 GPT-5 与记忆快速分析海量数据]({{< relref "posts/20260129-hacker_news-openais-in-house-data-agent-14.md" >}})
-- [Codex 应用：基于 GPT-3 的代码生成工具]({{< relref "posts/20260202-hacker_news-the-codex-app-1.md" >}})
-- [Codex 应用：基于 OpenAI 模型的代码生成工具]({{< relref "posts/20260202-hacker_news-the-codex-app-1.md" >}})
-*本文由 AI Stack 自动生成，包含深度分析与方法论思考。*
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

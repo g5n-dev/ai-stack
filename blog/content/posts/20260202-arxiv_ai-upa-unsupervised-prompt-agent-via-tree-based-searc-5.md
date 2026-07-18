@@ -1,30 +1,55 @@
 ---
-title: UPA：基于树搜索与筛选的无监督提示智能体
+title: 'UPA: Unsupervised Prompt Agent via Tree-Based Search and Selection'
 date: 2026-02-02 19:22:59+08:00
 draft: false
 entry_kind: auto
-tags: []
-categories: []
+tags:
+- ArXiv
+- AI Agent
+- 大语言模型
+categories:
+- 论文
+- 大模型
+scenarios:
+- AI/ML项目
+- 大语言模型
 source: arxiv
-description: 历史条目已归档：现有正文未通过内容质量门，请查阅原始来源。
-external_url: http://arxiv.org/abs/2601.23273v1
-scenarios: []
+description: 当前只保存了官方论文摘要，不代表论文全文。请以原始来源为准。
+external_url: https://arxiv.org/abs/2601.23273v1
 aliases:
 - /posts/20260203-arxiv_ai-upa-unsupervised-prompt-agent-via-tree-based-searc-5/
-content_mode: archived
-publication_tier: ARCHIVED
-source_provenance: legacy_no_snapshot
-source_support: 0.0
-archived: true
-archive_reason: historical_content_quality_gate
-build:
-  list: never
-  render: always
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: abstract
+source_snapshot_sha256: sha256:4b3cf54d663ac90c8b7e9548f1dec15a31babd6845c65f9163668e89a395e052
+extractor_version: source-contract-v1
+discovery_method: arxiv_api
+fetch_status: captured
+source_completeness: abstract_only
+source_is_truncated: false
+source_support: 1.0
+source_title_chars_original: 66
+captured_at: '2026-07-18T04:10:19.257843Z'
+source_capture_sha256: sha256:1f949f2af0d451c452db9b888507f88d95178476f714828334e8ceaae4ff7c84
+source_capture_chars_original: 1421
+source_publication_excerpt_chars: 1421
 ---
 
-## 历史条目归档说明
+## 基本信息
 
-该条目的历史正文未通过内容质量门，可能包含基于标题推测的内容。为避免继续传播不可核验文本，本站仅保留透明归档记录。
+- **来源**: arxiv
+- **原始来源**: [https://arxiv.org/abs/2601.23273v1](<https://arxiv.org/abs/2601.23273v1>)
+- **作者**: Siran Peng, Weisong Zhao, Tianyu Fu, Chenxu Zhao, Tianshuo Zhang, Haoyuan Zhang, Xiangyu Zhu, Minghui Wu, Zhen Lei
+- **分类**: cs.CL
+- **论文时间**: 2026-01-30T18:39:09Z
+- **论文 PDF**: [https://arxiv.org/pdf/2601.23273v1.pdf](<https://arxiv.org/pdf/2601.23273v1.pdf>)
 
-- 历史内容质量门未通过
-- 原始来源：<http://arxiv.org/abs/2601.23273v1>
+## 来源摘要/节选
+
+> Prompt agents have recently emerged as a promising paradigm for automated prompt optimization, framing refinement as a sequential decision-making problem over a structured prompt space. While this formulation enables the use of advanced planning algorithms, these methods typically assume access to supervised reward signals, which are often unavailable in practical scenarios. In this work, we propose UPA, an Unsupervised Prompt Agent that realizes structured search and selection without relying on supervised feedback. Specifically, during search, UPA iteratively constructs an evolving tree structure to navigate the prompt space, guided by fine-grained and order-invariant pairwise comparisons from Large Language Models \(LLMs\). Crucially, as these local comparisons do not inherently yield a consistent global scale, we decouple systematic prompt exploration from final selection, introducing a two-stage framework grounded in the Bradley-Terry-Luce \(BTL\) model. This framework first performs path-wise Bayesian aggregation of local comparisons to filter candidates under uncertainty, followed by global tournament-style comparisons to infer latent prompt quality and identify the optimal prompt. Experiments across multiple tasks demonstrate that UPA consistently outperforms existing prompt optimization methods, showing that agent-style optimization remains highly effective even in fully unsupervised settings.
+
+## 来源说明
+
+当前只保存了官方论文摘要，不代表论文全文。请以原始来源为准。
+
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

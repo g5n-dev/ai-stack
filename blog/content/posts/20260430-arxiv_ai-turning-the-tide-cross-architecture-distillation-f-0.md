@@ -1,170 +1,55 @@
 ---
-title: 跨架构蒸馏技术助力扩散大语言模型
+title: 'Turning the TIDE: Cross-Architecture Distillation for Diffusion Large Language
+  Models'
 date: 2026-04-30 23:11:36+08:00
 draft: false
 entry_kind: auto
 tags:
-- 扩散模型
-- 大模型蒸馏
-- 跨架构
-- 知识迁移
-- 参数压缩
-- 推理加速
-- 代码生成
-- MoE
+- ArXiv
+- 大语言模型
 categories:
-- 大模型
 - 论文
-source: arxiv
-description: TIDE（Turing‑Informed Distillation for dLLM）是首个跨架构 dLLM 蒸馏框架，提出三大模块化组件：TIDAL、CompDemo、Reverse
-  CALM。（来自摘要） 通过这些组件的协同作用，TIDE 在教师‑学生结构、注意力实现及分词器均不同的情况下完成知识迁移。
-external_url: http://arxiv.org/abs/2604.26951v1
+- 大模型
 scenarios:
-- Web应用开发
+- AI/ML项目
+- 大语言模型
+source: arxiv
+description: 当前只保存了官方论文摘要，不代表论文全文。请以原始来源为准。
+external_url: https://arxiv.org/abs/2604.26951v1
 aliases:
 - /posts/20260501-arxiv_ai-turning-the-tide-cross-architecture-distillation-f-0/
-content_mode: legacy_analysis
-publication_tier: LEGACY
-source_provenance: legacy_no_snapshot
-source_support: 0.0
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: abstract
+source_snapshot_sha256: sha256:012be519f8f201532a51be2b958500d9de2f3b174820f2a6f0f1de9f8c6b3464
+extractor_version: source-contract-v1
+discovery_method: arxiv_api
+fetch_status: captured
+source_completeness: abstract_only
+source_is_truncated: false
+source_support: 1.0
+source_title_chars_original: 85
+captured_at: '2026-07-18T04:29:27.867360Z'
+source_capture_sha256: sha256:ab9830a140d04d0fd55382c45231c0be5de30b2eee5b93e2c6bc1aa005f838fb
+source_capture_chars_original: 1269
+source_publication_excerpt_chars: 1269
 ---
 
 ## 基本信息
 
-- **ArXiv ID**: 2604.26951v1
-- **分类**: cs.CL
+- **来源**: arxiv
+- **原始来源**: [https://arxiv.org/abs/2604.26951v1](<https://arxiv.org/abs/2604.26951v1>)
 - **作者**: Gongbo Zhang, Wen Wang, Ye Tian, Li Yuan
-- **PDF**: [https://arxiv.org/pdf/2604.26951v1.pdf](https://arxiv.org/pdf/2604.26951v1.pdf)
-- **链接**: [http://arxiv.org/abs/2604.26951v1](http://arxiv.org/abs/2604.26951v1)
+- **分类**: cs.CL
+- **论文时间**: 2026-04-29T17:59:01Z
+- **论文 PDF**: [https://arxiv.org/pdf/2604.26951v1.pdf](<https://arxiv.org/pdf/2604.26951v1.pdf>)
 
----
-## 摘要
+## 来源摘要/节选
 
-#### 背景
-扩散大语言模型（dLLM）具备并行解码和双向上下文优势，但最新模型需数十亿参数才能达到竞争力。已有蒸馏方法只针对单架构内部步数压缩，未实现跨架构知识迁移，即教师模型与学生模型在结构、注意力机制和分词器上均不同。
+> Diffusion large language models \(dLLMs\) offer parallel decoding and bidirectional context, but state-of-the-art dLLMs require billions of parameters for competitive performance. While existing distillation methods for dLLMs reduce inference steps within a single architecture, none address cross-architecture knowledge transfer, in which the teacher and student differ in architecture, attention mechanism, and tokenizer. We present TIDE, the first framework for cross-architecture dLLM distillation, comprising three modular components: \(1\) TIDAL, which jointly modulates distillation strength across training progress and diffusion timestep to account for the teacher's noise-dependent reliability; \(2\) CompDemo, which enriches the teacher's context via complementary mask splitting to improve predictions under heavy masking; and \(3\) Reverse CALM, a cross-tokenizer objective that inverts chunk-level likelihood matching, yielding bounded gradients and dual-end noise filtering. Distilling 8B dense and 16B MoE teachers into a 0.6B student via two heterogeneous pipelines outperforms the baseline by an average of 1.53 points across eight benchmarks, yielding notable gains in code generation, where HumanEval scores reach 48.78 compared to 32.3 for the AR baseline.
 
-#### TIDE 框架
-首次提出跨架构 dLLM 蒸馏框架 TIDE，包含三大模块化组件：
+## 来源说明
 
-1. **TIDAL**：在训练进度和扩散时间步上联合调节蒸馏强度，以匹配教师噪声依赖的可靠性。
-2. **CompDemo**：通过互补掩码分割丰富教师上下文，提升在高掩码率下的预测质量。
-3. **Reverse CALM**：跨分词器目标，将块级似然匹配倒置，产生有界梯度并实现双端噪声过滤。
+当前只保存了官方论文摘要，不代表论文全文。请以原始来源为准。
 
-#### 实验与结果
-在两种异构流水线下，将 8B Dense 与 16B MoE 教师蒸馏至 0.6B 学生，八项基准平均提升 1.53 分。特别在代码生成任务上，HumanEval 分数从基线 32.3 提升至 48.78，显著超越现有 AR 基线。
-
-#### 意义
-TIDE 为在算力受限环境下部署高效 dLLM 提供新路径，首次实现了跨架构、跨注意力、跨分词器的知识传递。
-
----
-## 技术分析
-
-#### 研究背景
-##### 扩散大语言模型 (dLLM) 与蒸馏需求
-dLLM 通过噪声驱动的逐步生成实现并行解码和双向上下文，表现出强大的语言建模能力。然而，为获得竞争力，最新模型往往需要数十亿参数。**（来自摘要）** 这导致在资源受限场景下部署成本高。已有的蒸馏方法仅在单架构内部进行步数压缩，缺乏跨不同模型结构（注意力实现、分词器等）的知识迁移手段。**（推断）** 因此，实现跨架构蒸馏是提升小模型性能的关键路径。
-
-##### 跨架构蒸馏的空白
-传统知识蒸馏（如 DistillBERT、L2P）在教师‑学生结构相同或相似时有效；而针对扩散模型的蒸馏（如 MiniLLM、Step‑Distillation）亦只关注同架构的步数压缩。**（来自摘要）** 跨架构蒸馏尚未被系统研究，特别是当教师与学生使用不同的注意力机制或分词器时，如何保证信息有效传递仍缺乏理论指导和实践方案。
-
-#### TIDE 框架概述
-TIDE（Turing‑Informed Distillation for dLLM）是首个跨架构 dLLM 蒸馏框架，提出三大模块化组件：TIDAL、CompDemo、Reverse CALM。**（来自摘要）** 通过这些组件的协同作用，TIDE 在教师‑学生结构、注意力实现及分词器均不同的情况下完成知识迁移。
-
-##### 组件概览
-- **TIDAL**：在训练进度（curriculum）和扩散时间步上联合调节蒸馏强度。
-- **CompDemo**：利用互补掩码分割提升教师在高掩码率下的预测质量。
-- **Reverse CALM**：对块级似然匹配进行倒置，生成有界梯度并实现双端噪声过滤。**（来自摘要）**
-
-#### 核心方法
-##### TIDAL：协同进度与噪声步调节
-TIDAL 通过对教师噪声依赖的可靠性进行建模，在训练早期使用较大噪声强度，使学生能够捕获粗粒度的语义结构；随着训练推进逐步降低噪声并提升教师信息的精细度。**（推断）** 这种动态调节避免了在早期引入过多噪声导致的误导，同时保证后期学生对细节的精准复制。
-
-##### CompDemo：互补掩码分割
-CompDemo 将教师上下文划分为若干互补的掩码块，每块对应不同的语义子空间。高掩码率下，教师仍能基于未被掩盖的块提供可靠预测，从而提升学生在此阶段的生成质量。**（推断）** 互补掩码策略保证每个块的信息互补且不冗余，有助于学生捕获多层次语义。
-
-##### Reverse CALM：块级似然匹配倒置
-传统的块级似然匹配在教师侧直接计算似然，学生侧难以提供相同尺度的信号。Reverse CALM 将匹配方向倒置，使学生在块级别上最大化与教师的似然差，并通过对梯度进行裁剪实现有界梯度，防止噪声放大。**（推断）** 同时，逆向匹配实现双端噪声过滤，即在生成早期过滤高频噪声，在后期过滤低频漂移。
-
-#### 理论基础
-##### 噪声依赖可靠性
-教师模型的预测可靠性随噪声水平呈指数衰减，TIDAL 通过学习噪声‑可靠性曲线，实现对蒸馏强度的自适应调节。**（推断）** 该假设基于扩散模型的噪声调度理论，可通过实验测量教师在不同噪声步的预测误差进行验证。
-
-##### 梯度有界性与噪声过滤
-Reverse CALM 通过梯度裁剪和双向噪声过滤保证学生更新的稳定性。理论上，若梯度范数上界已知，则学生的更新步长受限于该上界，从而避免因大噪声导致的梯度爆炸。**（推断）** 该理论依赖于对块级似然梯度的精确估计。
-
-#### 实验与结果
-##### 实验设置
-论文在两种异构流水线上进行实验：8B Dense 教师 → 0.6B 学生，以及 16B MoE 教师 → 0.6B 学生。**（来自摘要）** 评估覆盖八项基准任务，包括语言理解、推理和代码生成等。
-
-##### 主要结果
-- 八项基准平均提升 **+1.53 分**。
-- HumanEval 代码生成分数从基线 **32.3** 提升至 **48.78**，显著超越同等规模的自回归基线。**（来自摘要）**
-- 跨架构（不同分词器）蒸馏仍保持显著增益，验证了 TIDAL、CompDemo 与 Reverse CALM 的协同有效性。**（推断）**
-
-#### 应用前景
-TIDE 为算力受限环境（如边缘设备、低功耗服务器）提供了一条高效部署 dLLM 的路径。通过将大模型压缩至亚十亿参数级别，可在保持竞争力的前提下实现更低延迟和能耗。**（推断）** 此外，框架的模块化设计允许针对特定硬件（CPU、GPU、专用加速器）进行组件定制。
-
-#### 研究启示
-1. **跨架构知识迁移的可行性**：首次证实即使教师与学生使用不同的注意力机制或分词器，仍能通过适当的调节实现有效的知识传递。
-2. **模块化蒸馏的优势**：将蒸馏过程分解为时间步调节、掩码策略和梯度约束三个独立模块，便于单独优化和组合使用。
-3. **噪声调度的关键作用**：噪声水平的动态调节是跨架构蒸馏成功的核心因素，提示未来工作可进一步探索更细粒度的噪声调度策略。
-
-#### 相关工作对比
-- **单架构蒸馏**（如 MiniLLM、Step‑Distillation）仅在同模型内部压缩步数，未涉及结构差异。
-- **跨模态蒸馏**（L2P、AKD）虽跨越模态，但仍假设教师‑学生共享相同的特征空间。
-- **自回归模型的跨架构蒸馏**（如 BERT‑to‑TinyBERT）通过层级映射实现，但在扩散模型中缺乏对应的噪声感知机制。
-- **TIDE** 的创新在于将噪声依赖的可靠性估计、互补掩码信息与块级似然倒置相结合，形成完整的跨架构蒸馏体系。**（推断）**
-
-#### 关键假设与潜在失效
-##### 关键假设
-1. **教师噪声依赖可靠性可被准确建模**，即教师的预测误差随噪声步呈单调递减趋势。
-2. **互补掩码块能够完整覆盖语义空间**，不存在信息遗漏或冗余。
-3. **块级似然匹配的梯度裁剪能够有效限制更新幅度**，防止噪声放大。
-
-##### 潜在失效条件
-- 若教师噪声依赖曲线不单调或存在局部峰值，TIDAL 的调节策略可能失效。
-- 在极低掩码率（如 >80%）下，CompDemo 的互补掩码可能不足以提供足够上下文，导致学生预测质量下降。
-- Reverse CALM 的梯度上界若设定过低，可能限制学生学习能力；若设定过高，则梯度爆炸风险上升。
-- 分词器差异显著时，块级似然匹配的对齐误差会放大，导致跨分词器的知识迁移受阻。
-
-##### 可证伪方式
-- **噪声依赖曲线实验**：在不同噪声步对教师预测误差进行测量，若误差出现非单调波动，则假设失效。
-- **掩码率敏感性实验**：系统化改变掩码率（10%–90%），观察学生生成指标是否呈倒 U 形，若出现单调下降，则 CompDemo 失效。
-- **梯度裁剪阈值扫描**：设定不同的梯度上界（如 0.1、0.5、1.0、unbounded），比较学生收敛速度和最终性能，若出现显著性能差异，则反向匹配的梯度约束假设需要修正。
-- **分词器替换实验**：使用完全不同的分词方案（如 BPE vs. WordPiece），评估跨分词器蒸馏的相对增益，若增益接近零，则块级似然匹配的对齐机制不可行。
-
-通过上述实验可对假设进行系统验证，并在失效时提供针对性的改进方向。
-
----
-## 学习要点
-
-- TIDE 通过跨架构蒸馏将大型扩散语言模型的知识高效迁移到小型模型，显著降低计算需求同时保持生成质量。
-- 论文提出融合扩散重建损失、KL 散度和特征对齐的多目标损失函数，以弥合不同模型架构之间的差异。
-- 该框架兼容多种架构组合，如连续扩散模型到离散 Transformer，或扩散模型到线性循环网络，实现真正的跨架构迁移。
-- 实验结果显示，学生模型在语言建模、代码生成等任务上几乎达到教师模型的性能，且参数量和推理成本大幅下降。
-- 蒸馏过程采用课程学习策略，渐进提升扩散噪声调度难度，加速收敛并提升最终质量。
-- 该方法不仅适用于语言任务，还可推广到图像等多模态扩散模型的压缩与部署。
-
----
-## 引用
-
-- **ArXiv**: [http://arxiv.org/abs/2604.26951v1](http://arxiv.org/abs/2604.26951v1)
-- **PDF**: [https://arxiv.org/pdf/2604.26951v1.pdf](https://arxiv.org/pdf/2604.26951v1.pdf)
-
-> 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
-
----
-
-## 站内链接
-
-- 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)
-- 标签： [扩散模型](/tags/%E6%89%A9%E6%95%A3%E6%A8%A1%E5%9E%8B/) / [大模型蒸馏](/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E8%92%B8%E9%A6%8F/) / [跨架构](/tags/%E8%B7%A8%E6%9E%B6%E6%9E%84/) / [知识迁移](/tags/%E7%9F%A5%E8%AF%86%E8%BF%81%E7%A7%BB/) / [参数压缩](/tags/%E5%8F%82%E6%95%B0%E5%8E%8B%E7%BC%A9/) / [推理加速](/tags/%E6%8E%A8%E7%90%86%E5%8A%A0%E9%80%9F/) / [代码生成](/tags/%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90/) / [MoE](/tags/moe/)
-- 场景： [Web应用开发](/scenarios/web%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/)
-
-### 相关文章
-
-- [面向扩散语言模型的Sink感知剪枝方法]({{< relref "posts/20260220-arxiv_ai-sink-aware-pruning-for-diffusion-language-models-0.md" >}})
-- [面向扩散语言模型的感知汇点剪枝方法]({{< relref "posts/20260220-arxiv_ai-sink-aware-pruning-for-diffusion-language-models-0.md" >}})
-- [面向扩散语言模型的感知剪枝方法]({{< relref "posts/20260220-arxiv_ai-sink-aware-pruning-for-diffusion-language-models-0.md" >}})
-- [🔥自回归+掩码扩散！下一代生成模型架构强势登场！]({{< relref "posts/20260126-arxiv_ai-auto-regressive-masked-diffusion-models-3.md" >}})
-- [FOCUS：DLLMs如何突破算力瓶颈]({{< relref "posts/20260202-arxiv_ai-focus-dllms-know-how-to-tame-their-compute-bound-3.md" >}})
-*本文由 AI Stack 自动生成，深度解读学术研究。*
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

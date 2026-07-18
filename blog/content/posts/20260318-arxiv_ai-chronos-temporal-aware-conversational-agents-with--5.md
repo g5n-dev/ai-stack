@@ -1,381 +1,55 @@
 ---
-title: Chronos：基于结构化事件检索的时序感知对话智能体
+title: 'Chronos: Temporal-Aware Conversational Agents with Structured Event Retrieval
+  for Long-Term Memory'
 date: 2026-03-18 05:34:51+08:00
 draft: false
 entry_kind: auto
 tags:
-- LLM
-- Agent
-- RAG
-- 长期记忆
-- 时序感知
-- 事件检索
-- 多跳推理
-- LongMemEval
-categories:
-- 大模型
-- 论文
-source: arxiv
-description: 针对大型语言模型在长期交互中难以有效推理时间锚定事实与演变偏好的问题，本文提出了 Chronos 框架。该方法通过构建包含事件元组和完整上下文的双重日历索引，结合动态提示与迭代工具调用，实现了对长历史中多跳、时间敏感查询的精准检索。实验显示其在
-  LongMemEvalS 基准上取得了优异表现，但该框架在更复杂真实场景下的具体计算开销目前尚无法从摘要确认。
-external_url: http://arxiv.org/abs/2603.16862v1
-scenarios:
+- ArXiv
+- AI Agent
 - 大语言模型
-- RAG应用
-content_mode: legacy_analysis
-publication_tier: LEGACY
-source_provenance: legacy_no_snapshot
-source_support: 0.0
+categories:
+- 论文
+- 大模型
+scenarios:
+- AI/ML项目
+- 大语言模型
+source: arxiv
+description: 当前只保存了官方论文摘要，不代表论文全文。请以原始来源为准。
+external_url: https://arxiv.org/abs/2603.16862v1
+aliases: []
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: abstract
+source_snapshot_sha256: sha256:b66434b4f6cffde9a495d3ab08ae7f6c3e1db349839a0d7d6f6e14e96e9f61ee
+extractor_version: source-contract-v1
+discovery_method: arxiv_api
+fetch_status: captured
+source_completeness: abstract_only
+source_is_truncated: false
+source_support: 1.0
+source_title_chars_original: 98
+captured_at: '2026-07-18T04:28:41.690884Z'
+source_capture_sha256: sha256:a649ebb5a52682951c121dca226dabc829266da6b924f116bafc6a8ed06e98c6
+source_capture_chars_original: 1579
+source_publication_excerpt_chars: 1579
 ---
 
 ## 基本信息
 
-- **ArXiv ID**: 2603.16862v1
-- **分类**: cs.CL
+- **来源**: arxiv
+- **原始来源**: [https://arxiv.org/abs/2603.16862v1](<https://arxiv.org/abs/2603.16862v1>)
 - **作者**: Sahil Sen, Elias Lumer, Anmol Gulati, Vamse Kumar Subbiah
-- **PDF**: [https://arxiv.org/pdf/2603.16862v1.pdf](https://arxiv.org/pdf/2603.16862v1.pdf)
-- **链接**: [http://arxiv.org/abs/2603.16862v1](http://arxiv.org/abs/2603.16862v1)
+- **分类**: cs.CL
+- **论文时间**: 2026-03-17T17:59:20Z
+- **论文 PDF**: [https://arxiv.org/pdf/2603.16862v1.pdf](<https://arxiv.org/pdf/2603.16862v1.pdf>)
 
----
+## 来源摘要/节选
 
-## 导语
+> Recent advances in Large Language Models \(LLMs\) have enabled conversational AI agents to engage in extended multi-turn interactions spanning weeks or months. However, existing memory systems struggle to reason over temporally grounded facts and preferences that evolve across months of interaction and lack effective retrieval strategies for multi-hop, time-sensitive queries over long dialogue histories. We introduce Chronos, a novel temporal-aware memory framework that decomposes raw dialogue into subject-verb-object event tuples with resolved datetime ranges and entity aliases, indexing them in a structured event calendar alongside a turn calendar that preserves full conversational context. At query time, Chronos applies dynamic prompting to generate tailored retrieval guidance for each question, directing the agent on what to retrieve, how to filter across time ranges, and how to approach multi-hop reasoning through an iterative tool-calling loop over both calendars. We evaluate Chronos with 8 LLMs, both open-source and closed-source, on the LongMemEvalS benchmark comprising 500 questions spanning six categories of dialogue history tasks. Chronos Low achieves 92.60% and Chronos High scores 95.60% accuracy, setting a new state of the art with an improvement of 7.67% over the best prior system. Ablation results reveal the events calendar accounts for a 58.9% gain on the baseline while all other components yield improvements between 15.5% and 22.3%. Notably, Chronos Low alone surpasses prior approaches evaluated under their strongest model configurations.
 
-针对大型语言模型在长期交互中难以有效推理时间锚定事实与演变偏好的问题，本文提出了 Chronos 框架。该方法通过构建包含事件元组和完整上下文的双重日历索引，结合动态提示与迭代工具调用，实现了对长历史中多跳、时间敏感查询的精准检索。实验显示其在 LongMemEvalS 基准上取得了优异表现，但该框架在更复杂真实场景下的具体计算开销目前尚无法从摘要确认。
+## 来源说明
 
----
+当前只保存了官方论文摘要，不代表论文全文。请以原始来源为准。
 
-## 摘要
-
-本文介绍了**Chronos**，一种新型的时间感知对话代理记忆框架，旨在解决大型语言模型（LLM）在长期多轮交互（长达数月）中面临的关键挑战。
-
-**核心问题：**
-现有的记忆系统难以对跨越长期的时间锚定事实和演变的偏好进行推理，且缺乏针对长对话历史中多跳、时间敏感查询的有效检索策略。
-
-**Chronos 的解决方案：**
-1.  **结构化索引：** 将原始对话分解为包含解析时间范围和实体别名的“主-谓-宾”事件元组，并将其索引到**事件日历**中；同时，保留完整上下文的**对话日历**。
-2.  **动态检索与推理：** 在查询时，利用动态提示生成针对每个问题的定制检索指导。通过迭代工具调用循环，指示代理检索内容、过滤时间范围以及在两个日历间进行多跳推理。
-
-**实验结果：**
-在包含500个问题的 LongMemEvalS 基准测试中，Chronos 取得了最先进的结果：
-*   Chronos Low 准确率达 **92.60%**，Chronos High 达 **95.60%**。
-*   相比之前的最佳系统，性能提升了 **7.67%**。
-*   消融实验显示，事件日历贡献了基线之上 **58.9%** 的增益。值得注意的是，仅 Chronos Low 版本即超越了以往最强模型配置下的所有方法。
-
----
-
-## 评论
-
-以下是对论文《Chronos: Temporal-Aware Conversational Agents with Structured Event Retrieval for Long-Term Memory》的深度学术评价。该评价基于提供的摘要及该领域（长期记忆、时间推理、RAG）的通用技术架构进行分析。
-
----
-
-### **Chronos 论文深度评价报告**
-
-#### **1. 研究创新性**
-
-*   **论文声称：** Chronos 提出了一种“结构化事件索引”机制，将非结构化对话转换为带时间戳的“主-谓-宾（SPO）”元组，并结合“动态提示”进行检索指导。
-*   **技术分析：**
-    *   **结构化粒度：** 传统 RAG（检索增强生成）系统通常基于语义相似度检索文本块，忽略了“时间”这一关键维度。Chronos 的创新在于引入了**符号化与结构化**的混合方法。通过提取 SPO 元组，它将模糊的文本匹配转化为对离散事件的查询，这在处理“上周一 *谁* 说过 *什么*”这类查询时，比纯向量检索具有更高的精确度。
-    *   **动态检索策略：** 摘要中提到的“动态提示生成定制检索指导”是一个亮点。这表明系统并非使用静态的查询向量，而是利用 LLM 的推理能力，在检索前对用户的自然语言查询进行**查询重写或子查询分解**，以适应结构化的索引。
-*   **推断：** 该方法试图弥合神经符号 AI 与纯参数化模型之间的鸿沟，利用 LLM 进行理解（神经），利用结构化数据库进行事实存储（符号）。
-
-#### **2. 理论贡献**
-
-*   **论文声称：** 能够对跨越长期的“时间锚定事实”和“演变的偏好”进行推理。
-*   **理论补充：**
-    *   **动态记忆理论：** 在认知科学启发下的 AI 记忆机制中，大多数研究侧重于“情景记忆”的存储与检索。Chronos 的贡献在于强调了**事件的时序性和演变性**。传统的向量检索假设信息是静态的，而 Chronos 的理论框架承认用户偏好是时间的函数 $P(t)$，即同一实体在不同时间点的属性可能不同。
-    *   **多跳时间推理：** 通过将对话分解为事件元组，理论上支持更复杂的逻辑推理，例如“事件 A 发生后，用户是否改变了关于 B 的看法”。
-*   **推断：** 该工作补充了长期记忆系统中关于“时态一致性”的理论空白，即如何防止模型在长期交互中产生时间线错乱的幻觉。
-
-#### **3. 实验验证**
-
-*   **论文声称：** 解决了长对话历史中多跳、时间敏感查询的挑战。
-*   **关键假设与失效条件：**
-    *   **假设：** LLM 能够准确地将非结构化对话解析为结构化的 SPO 元组，且错误率在可控范围内。
-    *   **失效条件：** 当对话包含高度隐含的指代、讽刺或复杂的时态逻辑（如“下周三的前一天”）时，解析器可能失效，导致索引错误，进而导致检索失败。
-*   **验证建议：**
-    *   **指标：** 建议引入 **Event F1 Score**（事件提取的准确率）和 **Temporal Hit Rate**（时间敏感检索的命中率）。
-    *   **对比实验：** 必须与纯向量数据库检索（如 Pinecone/Cassandra）以及混合检索系统进行对比，特别关注长尾分布的查询。
-    *   **消融实验：** 验证“动态提示”模块是否真的比简单的关键词检索更有效，还是仅仅增加了推理延迟。
-
-#### **4. 应用前景**
-
-*   **实际价值：**
-    *   **生产力工具：** 对于需要长期跟踪项目进度的 AI 助手，Chronos 能准确回忆特定时间点的决策，极大提升了实用性。
-    *   **个性化伴侣：** 在情感陪伴或角色扮演场景中，记住“用户三年前喜欢过某支乐队”但“上个月说不再喜欢了”这种**偏好演变**，对于建立情感共鸣至关重要。
-*   **挑战：** 结构化索引的维护成本较高。随着对话量级达到数百万轮，SPO 元组的数量会呈指数级增长，可能导致检索效率下降。
-
-#### **5. 可复现性**
-
-*   **分析：**
-    *   **优势：** 使用 SPO 元组和事件日历的概念相对清晰，属于工程上可实现的路径。
-    *   **隐患：** 摘要中提到的“动态提示生成”可能包含大量的 Prompt Engineering 细节。这部分往往是“秘方”，如果论文不公开具体的 Prompt 模板和解析规则，复现难度较大。
-    *   **检验方式：** 评估其开源代码中是否包含完整的“文本转 SPO”的解析 Pipeline，以及是否提供了构建“事件日历”的数据格式标准。
-
-#### **6. 相关工作对比**
-
-*   **对比维度：**
-    *   **vs. 标准向量 RAG (e.g., ChatPDF):** 标准 RAG 容易受语义漂移影响，且难以区分“用户上周说想吃苹果”和“用户去年说想吃苹果”。Chronos 通过显式的时间戳索引解决了这个问题。
-    *   **vs. MemGPT/Mem0:** 这些主流的长期记忆框架通常采用分层记忆结构，但多基于文本块或摘要。Chronos 的优势在于**细粒度的结构化**，劣势在于系统复杂度更高，且对 LLM 的解析能力依赖更强。
-
----
-
-## 研究最佳实践
-
-### 实践 1：构建结构化的事件抽取与存储机制
-
-**说明**:
-Chronos 的核心在于将非结构化的对话历史转化为结构化的事件表示。为了实现长期记忆的有效检索，系统必须能够从对话流中提取出关键事件（如人物、地点、时间、动作），并将其存储为结构化的数据格式（如 JSON 或数据库记录）。这比单纯的向量检索更能捕捉事实的精确性。
-
-**实施步骤**:
-1. 利用大语言模型（LLM）设计提示词，从对话中提取事件元组（主体、谓语、客体、时间戳）。
-2. 建立结构化数据库（如 SQL 或图数据库），专门存储这些离散的事件记录。
-3. 确保每个事件条目都包含明确的时间索引，以便后续进行时间维度的排序。
-
-**注意事项**:
-避免仅依赖文本切片的向量化存储，因为这种方式难以处理“时间”和“事件逻辑”的精确查询。结构化存储能弥补语义检索在事实准确性上的不足。
-
----
-
-### 实践 2：实施基于时间感知的检索策略
-
-**说明**:
-长期记忆中的信息具有时效性。Chronos 强调根据用户查询的时间范围来过滤和排序检索结果。最佳实践要求系统在检索记忆时，不仅要匹配语义相似度，还要考虑事件发生的时间与当前上下文或查询时间的关系。
-
-**实施步骤**:
-1. 在用户查询中识别时间实体（如“上周”、“去年”、“在我们第一次见面时”）。
-2. 在检索阶段，将时间范围作为硬性过滤条件或加权因子应用于检索算法。
-3. 优先返回符合时间逻辑的事件，并结合语义相关性进行综合排序。
-
-**注意事项**:
-时间解析必须准确，否则会导致检索出正确的事件但错误的版本（例如，检索到了去年的生日聚会而不是今年的）。建议使用专门的时间解析库来处理自然语言中的时间表达。
-
----
-
-### 实践 3：结合结构化检索与非结构化检索的混合架构
-
-**说明**:
-Chronos 的方法论表明，单一的检索方式往往存在局限。结构化检索擅长精确匹配事实（如“谁去了哪里”），而非结构化（向量）检索擅长模糊匹配语义和上下文。最佳实践是构建一个混合检索系统，利用两者的互补性。
-
-**实施步骤**:
-1. 建立双通道检索机制：通道 A 查询结构化事件数据库，通道 B 查询向量数据库。
-2. 设计重排序模块，对来自两个通道的候选结果进行融合打分。
-3. 根据查询类型动态调整两者的权重（例如，事实性查询增加结构化权重，开放式对话增加语义权重）。
-
-**注意事项**:
-混合检索会增加系统的延迟和复杂度。需要在召回率和响应速度之间找到平衡，可以通过缓存常见查询的结果来优化性能。
-
----
-
-### 实践 4：设计动态的长期记忆摘要机制
-
-**说明**:
-随着对话历史的增长，直接检索所有相关事件可能会导致上下文窗口溢出。Chronos 建议对长期记忆进行分层管理，保留详细的结构化事件，同时生成动态摘要来概括过去的状态，帮助模型快速建立背景认知。
-
-**实施步骤**:
-1. 定期（如每天或每段对话结束后）触发摘要生成任务，基于过去的事件链更新用户画像或状态摘要。
-2. 将摘要作为独立的上下文片段与检索到的具体事件一起输入给大模型。
-3. 确保摘要中包含关键的状态变化信息，而不是简单的流水账。
-
-**注意事项**:
-摘要可能会丢失细节。因此，摘要应作为“背景信息”使用，而具体的事实回答仍应依赖检索到的结构化事件细节，以防止幻觉的产生。
-
----
-
-### 实践 5：建立事件冲突检测与消解流程
-
-**说明**:
-在长期记忆中，信息可能会随着时间推移而改变（例如，用户昨天喜欢咖啡，今天改喝茶了）。Chronos 的结构化检索使得检测这种冲突成为可能。最佳实践要求系统具备识别新旧事件冲突并优先采用最新信息的能力。
-
-**实施步骤**:
-1. 在写入新事件时，检查数据库中是否存在语义冲突的旧事件（同一主体、同一属性但值不同）。
-2. 引入时间戳比较逻辑，默认信任时间戳较新的事件。
-3. 在生成回答时，如果检测到冲突信息，在回复中明确提及状态的变化（例如，“虽然您之前喜欢咖啡，但您最近提到改喝红茶了”）。
-
-**注意事项**:
-并非所有差异都是冲突，可能是不同的情况。需要精细调整冲突检测的阈值，避免错误地覆盖有效的历史记录。
-
----
-
-### 实践 6：优化提示词以利用结构化上下文
-
-**说明**:
-仅仅检索到结构化事件是不够的，关键在于如何让大语言模型（LLM）理解并利用这些信息。需要设计专门的提示词策略，指导 LLM 将检索到的 JSON 或结构化数据自然地融入对话回复中。
-
-**实施步骤**:
-1. 设计提示词模板，明确区分“系统指令”、“历史对话”、“检索到的结构化事件”和“生成的回复”。
-2. 指示模型在生成回复时，必须严格依据
-
----
-
-## 学习要点
-
-- Chronos 提出了一种将非结构化对话历史自动重构为结构化事件时间轴的机制，从而赋予大语言模型（LLM）精确的长期记忆能力和时间感知能力。
-- 该系统通过“事件提取”和“事件检索”两个核心模块，解决了传统 RAG（检索增强生成）方法在处理长时序信息时容易丢失时间上下文和具体细节的问题。
-- 在事件提取阶段，Chronos 将对话转化为包含时间、事件描述和参与实体的结构化三元组，并利用 LLM 的推理能力对模糊的时间表达（如“上周”）进行规范化处理。
-- 在事件检索阶段，系统采用了一种基于时间步进和语义相似度的混合检索策略，能够根据用户查询精准定位到具体的时间切片并召回相关事件。
-- 为了解决幻觉问题并验证事实一致性，Chronos 引入了“检索后验证”机制，利用 LLM 检查生成内容是否与检索到的结构化事件相矛盾。
-- 实验表明，该方法在需要时间推理和长期事实记忆的任务中显著优于基线模型，有效减少了 LLM 遗忘过去事件或编造虚假信息的风险。
-- Chronos 展示了将非结构化文本转化为结构化知识图谱并结合时间索引，是提升 AI 智能体长期记忆效能的高效范式。
-
----
-
-## 学习路径
-
-### 阶段 1：基础理论与技术储备
-
-**学习内容**:
-- 大语言模型（LLM）基础原理与架构（Transformer, Attention机制）
-- 对话系统基础：检索式对话与生成式对话的区别
-- 自然语言处理中的向量表示与语义相似度计算
-- 时间序列数据在文本中的基本表示方法
-
-**学习时间**: 2-3周
-
-**学习资源**:
-- 《Speech and Language Processing》（第3版）相关章节
-- huggingface Transformers官方教程
-- arxiv论文《Attention Is All You Need》
-
-**学习建议**:
-重点掌握Transformer架构和预训练语言模型的基本概念，建议通过实践项目（如使用OpenAI API或Hugging Face模型）构建简单对话系统来巩固理解。
-
----
-
-### 阶段 2：长期记忆与事件提取技术
-
-**学习内容**:
-- 对话系统中的长期记忆机制设计
-- 结构化事件提取技术（Event Extraction）
-- 时序推理在对话中的应用
-- 记忆检索与更新的算法设计
-
-**学习时间**: 3-4周
-
-**学习资源**:
-- 论文《Chronos: Temporal-Aware Conversational Agents with Structured Event Retrieval for Long-Term Memory》
-- ACL/EMNLP会议中关于事件提取的近期论文
-- 开源项目：MemGPT（记忆管理框架）
-
-**学习建议**:
-深入理解Chronos论文中的事件提取模块和时序感知机制，尝试复现论文中的关键算法。建议对比分析不同长期记忆管理方案的优劣。
-
----
-
-### 阶段 3：时序感知与检索优化
-
-**学习内容**:
-- 时间感知的表示学习方法
-- 高效的相似事件检索算法（如FAISS向量检索）
-- 多轮对话中的上下文建模技术
-- 时序一致性约束与验证方法
-
-**学习时间**: 4-5周
-
-**学习资源**:
-- 论文《Time-Aware LSTM for Time Series Prediction》
-- FAISS官方文档与教程
-- arxiv论文《Dense Passage Retrieval for Open-Domain Question Answering》
-
-**学习建议**:
-重点关注Chronos中如何结合时间信息优化检索效果，建议实现一个简化版的时间感知检索系统。实验不同时间编码方式对性能的影响。
-
----
-
-### 阶段 4：系统集成与性能优化
-
-**学习内容**:
-- 端到端对话系统架构设计
-- 记忆模块与生成模型的集成策略
-- 系统性能评估指标（BLEU, ROUGE, 时间准确性等）
-- 生产环境部署考虑（延迟、可扩展性）
-
-**学习时间**: 3-4周
-
-**学习资源**:
-- LangChain框架文档（记忆模块部分）
-- 论文《Memory-Augmented Transformer for Generative Dialogue》
-- AWS/Azure云服务相关文档
-
-**学习建议**:
-尝试构建完整的Chronos原型系统，重点优化检索效率和生成质量。建议使用真实对话数据集（如PersonaChat）进行测试和调优。
-
----
-
-### 阶段 5：前沿探索与研究方向
-
-**学习内容**:
-- 多模态时序对话系统
-- 动态记忆更新机制
-- 可解释性在时序推理中的应用
-- 跨领域时序知识迁移
-
-**学习时间**: 持续学习
-
-**学习资源**:
-- 最新顶会论文（ACL, EMNLP, NeurIPS）
-- 学术研讨会与讲座
-- 开源社区讨论（如Reddit r/MachineLearning）
-
-**学习建议**:
-关注该领域最新研究进展，尝试提出改进方案。建议参与相关学术会议或开源项目贡献，保持对前沿技术的敏感度。
-
----
-
-## 常见问题
-
-### Chronos 的核心功能是什么，它与现有的对话智能体（如 ChatGPT）有何不同？
-
-Chronos 是一个具有时间感知能力的对话智能体，旨在解决大型语言模型（LLM）在处理长期记忆和时序推理方面的局限性。与主要依赖参数化知识或无结构检索增强生成（RAG）的现有智能体不同，Chronos 引入了“结构化事件检索”机制。它不仅能够从对话历史中检索相关信息，还能准确理解事件发生的时间顺序和相对时间距离。这使得 Chronos 能够回答诸如“上周讨论了什么？”或“这件事发生在那件事之前吗？”等需要精确时间上下文的问题，而传统的对话智能体往往会混淆时间线或无法关联跨越很长历史的对话内容。
-
-### Chronos 如何解决长期记忆中的“时间感知”问题？
-
-Chronos 通过构建一个结构化的记忆层来解决时间感知问题。具体而言，它将对话历史解析为结构化的事件，并利用时间表达式识别和规范化技术，将这些事件映射到统一的时间轴上。在检索阶段，Chronos 采用了时间感知的排序算法，该算法不仅计算查询与记忆事件之间的语义相关性，还计算时间上的相关性（例如查询的时间范围与事件发生时间的重叠度或距离）。通过这种双重匹配机制，Chronos 能够过滤掉语义相关但时间不符的信息，从而确保生成回答的准确性和逻辑性。
-
-### 在 Chronos 的架构中，结构化事件检索是如何工作的？
-
-结构化事件检索是 Chronos 的核心组件，其工作流程主要分为三个步骤：
-1.  **事件提取与结构化**：系统首先从原始对话日志中提取关键事件，并将其转化为结构化格式（如包含事件类型、实体、时间戳和摘要的记录）。
-2.  **索引构建**：这些结构化事件被存储在专门的索引数据库中，支持高效的语义搜索和时间范围过滤。
-3.  **检索与排序**：当用户提出问题时，系统会分析查询中的时间约束，结合语义相似度和时间距离对候选事件进行重新排序。只有那些既符合语义意图又满足时间条件的事件会被作为上下文输入给大语言模型，从而生成最终的回复。
-
-### Chronos 主要适用于哪些应用场景？
-
-Chronos 特别适合那些需要维护长期交互历史并依赖时间上下文的应用场景。典型的例子包括：
-*   **个人助理与生活管理**：例如，用户询问“我上个月提到的想要尝试的餐厅有哪些？”，智能体需要回顾很久以前的记录并准确锁定时间范围。
-*   **医疗与健康咨询**：在长期的慢病管理中，医生或智能体需要根据患者过去特定时间点的症状变化或用药记录来调整方案。
-*   **客户服务与售后**：处理需要跨越多个时间节点的复杂投诉，例如“我三个月前报修的问题，为什么两周前还没有解决？”。
-*   **教育与辅导**：导师根据学生几周前掌握薄弱的知识点，推荐当前的学习计划。
-
-### Chronos 面临的主要技术挑战是什么？
-
-尽管 Chronos 提出了有效的解决方案，但在实际落地中仍面临挑战。首先是**时间表达式的多样性**，用户口语中可能包含模糊的时间描述（如“刚才”、“那阵子”），系统需要高精度地将其解析为绝对时间或相对时间。其次是**检索效率与准确率的平衡**，随着对话历史的不断增长，如何在海量事件中快速进行时间+语义的双重检索而不增加延迟，是一个工程上的难点。此外，**时间推理的复杂性**也是挑战之一，例如处理“事件 A 发生在事件 B 之前两周”这种间接的时间关联，对模型的推理能力要求极高。
-
-### Chronos 的实验结果表现如何？
-
-根据论文中的实验数据，Chronos 在多个需要长期记忆和时间推理的基准数据集上表现优异。相比于传统的 RAG 方法（如仅使用向量数据库检索）以及微调过的 SOTA 模型，Chronos 在检索准确率和最终回答的质量（如 FactScore 和时间一致性指标）上均有显著提升。实验表明，引入结构化的时间约束能有效减少大语言模型的“幻觉”现象，特别是在回答涉及具体时间跨度和事件顺序的问题时，Chronos 能够提供更可靠的答案。
-
----
-
-## 引用
-
-- **ArXiv**: [http://arxiv.org/abs/2603.16862v1](http://arxiv.org/abs/2603.16862v1)
-- **PDF**: [https://arxiv.org/pdf/2603.16862v1.pdf](https://arxiv.org/pdf/2603.16862v1.pdf)
-
-> 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
-
----
-
-## 站内链接
-
-- 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)
-- 标签： [LLM](/tags/llm/) / [Agent](/tags/agent/) / [RAG](/tags/rag/) / [长期记忆](/tags/%E9%95%BF%E6%9C%9F%E8%AE%B0%E5%BF%86/) / [时序感知](/tags/%E6%97%B6%E5%BA%8F%E6%84%9F%E7%9F%A5/) / [事件检索](/tags/%E4%BA%8B%E4%BB%B6%E6%A3%80%E7%B4%A2/) / [多跳推理](/tags/%E5%A4%9A%E8%B7%B3%E6%8E%A8%E7%90%86/) / [LongMemEval](/tags/longmemeval/)
-- 场景： [大语言模型](/scenarios/%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/) / [RAG应用](/scenarios/rag%E5%BA%94%E7%94%A8/)
-
-### 相关文章
-
-- [MemSkill：面向自进化代理的记忆技能学习与演化框架]({{< relref "posts/20260203-arxiv_ai-memskill-learning-and-evolving-memory-skills-for-s-9.md" >}})
-- [面向运行时智能体记忆的查询感知预算层路由]({{< relref "posts/20260206-arxiv_ai-learning-query-aware-budget-tier-routing-for-runti-9.md" >}})
-- [SkillsBench 论文解读：跨任务基准测试如何揭示 Agent 技能的实际效用]({{< relref "posts/20260217-juejin-你知道不你现在给-ai-用的-agent-skills-可能毫无作用甚至还拖后腿-2.md" >}})
-- [Agent Skills：智能体技能框架]({{< relref "posts/20260203-hacker_news-agent-skills-0.md" >}})
-- [Context Graphs与Agent Traces：解析AI系统的上下文与追踪技术]({{< relref "posts/20260204-blogs_podcasts-ainews-context-graphs-and-agent-traces-0.md" >}})
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

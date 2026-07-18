@@ -284,6 +284,11 @@ jobs:
             --fail-on-structural-warning
           cmp --silent blog/data/content_quality.json /tmp/content_quality.json
 
+      - name: Verify historical repair fixed point (offline)
+        env:
+          PYTHONPATH: ${{ github.workspace }}
+        run: python3 scripts/repair_historical_content.py --check
+
       - name: Build tag graph
         if: ${{ env.AI_STACK_REFRESH_DATA == 'true' }}
         env:

@@ -1,145 +1,54 @@
 ---
-title: Requential Coding：自生成训练数据提升模型压缩效率
+title: 'Requential Coding: Pushing the Limits of Model Compression with Self-Generated
+  Training Data'
 date: 2026-07-14 23:29:48+08:00
 draft: false
 entry_kind: auto
 tags:
-- 模型压缩
-- 自生成训练数据
-- 大模型
-- PAC-Bayes
-- 泛化上界
-- 过拟合预测
-- 信息熵
-- 压缩效率
+- ArXiv
+- 大语言模型
 categories:
 - 论文
 - 大模型
-source: arxiv
-description: 压缩是智能的核心，能用短码表示训练数据的模型已发现可推广的规律。传统基于参数的方法（如量化）产生的码长随参数量增长，与参数实际承载的信息无关。已有的先验编码（prequential
-  coding）通过压缩训练轨迹来实现压缩，但仍需对原始数据序列编码，若数据熵高则码长仍然很大。requential coding 的关键在于使用教师模型从学生自身的分布中挑选训练样本，学生仅记录这些挑选决策。
-external_url: http://arxiv.org/abs/2607.11883v1
 scenarios:
-- Web应用开发
-content_mode: legacy_analysis
-publication_tier: LEGACY
-source_provenance: legacy_no_snapshot
-source_support: 0.0
+- AI/ML项目
+- 大语言模型
+source: arxiv
+description: 当前只保存了官方论文摘要，不代表论文全文。请以原始来源为准。
+external_url: https://arxiv.org/abs/2607.11883v1
+aliases: []
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: abstract
+source_snapshot_sha256: sha256:190997724ca70d742afe0901127fb53eaea497e8ddd22340fd1a60471d54c204
+extractor_version: source-contract-v1
+discovery_method: arxiv_api
+fetch_status: captured
+source_completeness: abstract_only
+source_is_truncated: false
+source_support: 1.0
+source_title_chars_original: 92
+captured_at: '2026-07-18T04:30:25.647174Z'
+source_capture_sha256: sha256:8c2a8c3d63594c2478d6dfca235f95f5ed3f8f9b5ddc78673cb8df341041cfdd
+source_capture_chars_original: 1919
+source_publication_excerpt_chars: 1919
 ---
 
 ## 基本信息
 
-- **ArXiv ID**: 2607.11883v1
-- **分类**: cs.LG
+- **来源**: arxiv
+- **原始来源**: [https://arxiv.org/abs/2607.11883v1](<https://arxiv.org/abs/2607.11883v1>)
 - **作者**: Shikai Qiu, Marc Finzi, Yujia Zheng, Kun Zhang, Andrew Gordon Wilson
-- **PDF**: [https://arxiv.org/pdf/2607.11883v1.pdf](https://arxiv.org/pdf/2607.11883v1.pdf)
-- **链接**: [http://arxiv.org/abs/2607.11883v1](http://arxiv.org/abs/2607.11883v1)
+- **分类**: cs.LG
+- **论文时间**: 2026-07-13T17:58:50Z
+- **论文 PDF**: [https://arxiv.org/pdf/2607.11883v1.pdf](<https://arxiv.org/pdf/2607.11883v1.pdf>)
 
----
-## 摘要
+## 来源摘要/节选
 
-#### 基本思路
-压缩是智能的核心，能用短码表示训练数据的模型已发现可推广的规律。传统基于参数的方法（如量化）产生的码长随参数量增长，与参数实际承载的信息无关。已有的先验编码（prequential coding）通过压缩训练轨迹来实现压缩，但仍需对原始数据序列编码，若数据熵高则码长仍然很大。requential coding 的关键在于使用教师模型从学生自身的分布中挑选训练样本，学生仅记录这些挑选决策。因为只在教师与学生不一致时产生比特，码长不再受参数量和数据熵限制。
+> Compression is fundamental to intelligence. A model that can represent its training data as a short code has discovered regularities that enable generalization. Large neural networks may learn functions far simpler than their parameter counts suggest, but it is challenging to construct codes that realize this simplicity. Parameter-based methods such as quantization produce code lengths that scale with model size, insensitive to how much information the parameters store. Prequential coding bypasses this issue by compressing the training trajectory, but codes the exact data sequence regardless of how much the model learns, yielding large codes when the data has high entropy. We introduce requential coding, where a teacher model selects training samples drawn from the student's own distribution. The student's code records only these selections, which cost bits only where teacher and student disagree. The resulting code length is independent of parameter count and data entropy, and often orders of magnitude shorter than the prequential counterpart, with an advantage that grows with scale. This compression sheds light on phenomena inaccessible to prior compressors. Holding loss fixed, larger models and ensembles compress to much smaller sizes despite more parameters. Plugged into a PAC-Bayes bound, the requential code yields state-of-the-art generalization guarantees for billion-parameter LLMs, outperforming bounds built on aggressive post-training quantization even granted zero error. The bound tightens with scale in the compute-optimal regime, as models become increasingly compressible relative to dataset size. The same code predicts that models gradually overfit when trained for multiple epochs. It also isolates the learnable information in a dataset from its unpredictable, random content, revealing that lower-entropy text holds far more learnable structure than higher-entropy image data.
 
-#### 码长优势
-与先验编码相比，requential 码长可低一个数量级甚至更多，且优势随模型规模增大而放大。即使在保持相同损失的情况下，更大的模型或模型集成反而能压缩到更小的尺寸，说明它们学到了更紧凑的函数表示。
+## 来源说明
 
-#### 泛化保证
-将 requential 码嵌入 PAC‑Bayes 界，可得到对十亿参数规模语言模型的最新泛化上界。该界优于基于激进后训练量化的界，即使后者假设零误差也能被 requential 界超越。随着计算最优化区间的规模提升，界限进一步收紧，验证了模型相对于数据集的可压缩性随规模提升。
+当前只保存了官方论文摘要，不代表论文全文。请以原始来源为准。
 
-#### 其他发现
-requential 编码还能预测多轮训练后的过拟合趋势：在多 epoch 训练时，模型的可压缩性逐步下降。此外，它能够把数据集中“可学习”的结构与不可预测的随机内容分离，揭示低熵文本比高熵图像拥有更多可学习的模式。
-
----
-## 评论
-
-#### 压缩范式的理论价值
-
-论文将压缩提升至智能本质的高度，声称“能用短码表示训练数据的模型已发现可推广的规律”。这一论断基于最小描述长度（MDL）原则和 Solomonoff 归纳推理的传统，具有坚实的理论基础。然而，将其等同于“压缩是智能的核心”是一种较强的哲学立场，而非严格可证的命题。作者实际展示的是：在特定条件下，码长可作为模型学习能力的有效度量。这是有价值的理论贡献，但需避免过度推广。
-
-#### 方法创新的核心机制
-
-requential coding 的关键创新在于将压缩对象从原始数据转为教师模型的挑选决策。论文声称这一转变使码长摆脱参数量和数据熵的限制，仅取决于教师与学生的一致性比例。从信息论角度看，这一论断是自洽的：若学生已学会教师分布，不一致概率趋近于零，码长自然压缩至极小。实验数据显示，相比先验编码，requential 码长低一个数量级以上，验证了这一机制在受控环境下的有效性。
-
-#### 关键假设与潜在失效条件
-
-该方法的成立依赖两个关键假设：其一，教师模型质量足够高，能提供有意义的分布采样；其二，教师-学生不一致真正反映了学习缺口，而非随机噪声。当教师模型本身存在偏差时，挑选决策会系统性偏离目标分布，导致学生继承教师缺陷。论文在 CIFAR-10/ImageNet 等标准数据集上验证，但这些数据集的结构化程度较高，对高熵、噪声丰富的真实场景（如网页抓取数据）缺乏检验。此外，计算教师模型本身需要额外资源，压缩收益是否抵消这部分开销值得量化分析。
-
-#### 可验证性与开放问题
-
-该工作的可验证性较强：码长是客观指标，实验可复现作者的核心结论。后续研究可从以下方向推进：一是将 requential coding 应用于大语言模型，检验其在高维 token 空间的可扩展性；二是探索无需预训练教师的自监督变体，降低对外部模型的依赖。总体而言，这是一项在信息论与机器学习交叉处提出的有启发性的工作，其核心思想值得在更大规模问题中接受检验。
-
----
-## 技术分析
-
-#### 研究背景
-
-压缩被视为智能的核心能力之一：能够用更短码长表示训练数据的模型，往往掌握了更具普遍性的规律。传统参数类压缩方法（如量化）在编码过程中，码长随模型参数量增长，却与参数实际承载的信息量之间缺乏直接对应关系。换言之，参数量大并不等价于信息密度高，却必然导致更大的编码开销。已有的先验编码（prequential coding）通过压缩模型训练轨迹而非原始数据序列来实现压缩，但仍然需要对数据序列本身进行编码，当数据熵较高时码长仍然显著。论文的motivation正是要突破这两重限制——参数量对码长的约束以及高熵数据带来的编码负担。
-
-#### 核心方法
-
-Requential coding的核心创新在于引入教师模型与学生模型之间的协作机制。具体而言，教师模型从学生自身的概率分布中主动挑选训练样本，学生模型仅需记录这些挑选决策本身产生的比特流。由于比特生成仅在教师预测与学生实际分布不一致时发生，码长不再受制于参数量大小或原始数据的熵水平。这一设计将编码对象从“数据本身”转向“师生不一致的程度”，从根本上改变了码长的决定因素。根据摘要原文，这一机制使得码长与参数量、数据熵之间实现了解耦。
-
-#### 理论基础
-
-论文将requential编码嵌入PAC-Bayes泛化理论框架中，推导出针对十亿参数规模语言模型的泛化上界。该理论结果表明，更紧凑的可压缩性等价于更小的泛化误差上界，从而为“更可压缩的模型具有更强泛化能力”这一论点提供了形式化保证。PAC-Bayes界的引入意味着可以从信息论角度而非仅凭经验验证来评估模型泛化性能，这为理论分析大规模深度学习模型提供了新工具。
-
-#### 实验与结果
-
-实验部分从多个维度验证了方法的有效性。在码长对比上，requential编码相比先验编码可实现一个数量级甚至更多的压缩率提升，且该优势随模型规模增大而放大。更引人注目的是，在保持相同损失值的条件下，更大的模型或模型集成反而能被压缩到更小尺寸——这一现象表明大规模模型学到了更紧凑的函数表示，而非冗余的参数堆积。
-
-在泛化上界方面，requential界优于基于激进后训练量化的传统界，即使后者假设零误差也无法超越requential界。随着计算资源投入的增加（对应论文提到的“计算最优化区间规模提升”），界进一步收紧，验证了模型可压缩性与规模之间的正向关联。
-
-此外，requential编码展现出超越压缩本身的应用潜力：它能够预测多轮训练后的过拟合趋势——多epoch训练中，模型可压缩性逐步下降反映了过拟合的累积；同时，该方法能够将数据集中“可学习的结构”与不可预测的随机内容分离，揭示出低熵文本相比高熵图像蕴含更多可学习模式的本质差异。
-
-#### 应用前景
-
-从实际应用角度，requential coding的码长优势使其有潜力成为模型选择与早停的新依据——通过监测编码长度的变化趋势，可在过拟合明显之前及时终止训练。进一步地，基于PAC-Bayes框架的泛化上界为神经网络架构搜索提供了理论驱动的评估指标，有望减少对大规模验证集的依赖。此外，模型可压缩性作为结构-随机内容分离的代理指标，可用于分析不同数据集或不同任务的学习难度。
-
-#### 研究启示
-
-论文的核心理念挑战了“参数量即能力”的直观认知：更小的压缩体积而非更大的参数量，才是衡量模型学习效率的关键指标。这暗示当前大模型研究中部分“涌现能力”可能源于更紧凑的内部表示，而非单纯的规模效应。从方法论层面，将信息论编码与PAC-Bayes学习理论相结合，为深度学习泛化分析开辟了新路径。
-
-#### 相关工作对比
-
-与传统参数压缩方法相比，requential coding不再将参数视为编码对象，而是编码师生不一致性，实现与参数量解耦。与先验编码相比，requential coding通过自生成样本而非原始数据序列编码，从根本上规避了高熵数据的编码瓶颈。对比基于量化的激进后训练方法，requential编码在理论上已被证明能够获得更紧的泛化界，表明信息论压缩路径在泛化保证方面具有优势。
-
-#### 关键假设与潜在失效条件
-
-论文方法的有效性依赖于以下关键假设：教师模型具备从学生分布中准确识别高质量样本的能力，若教师模型本身泛化性能不足，挑选决策的编码收益将大幅缩水。另一假设是师生不一致程度能够有效捕捉模型学习进度与泛化潜力，若模型陷入随机波动或模式崩塌，该假设可能失效。可证伪方式包括：设计对照实验，若使用随机教师模型（而非训练好的教师）时码长无显著增加，则假设不成立；或在不同噪声水平的数据集上测试，若可压缩性与学习效果的正相关消失，则方法的有效性边界被明确。
-
----
-## 学习要点
-
-- 核心发现：通过在压缩模型中自生成训练数据并采用顺序编码，可以突破传统压缩方法的性能下限。
-- 顺序编码机制：将模型划分为若干层级，逐步生成并使用伪标签数据训练后续层，实现信息的递进式保留与压缩。
-- 自生成数据策略：利用模型自身的预测置信度筛选高质量伪样本，避免噪声累计，提高压缩后模型的鲁棒性。
-- 性能表现：在极端量化（如1-2位）下，仍能保持接近全精度模型的准确率，且在多种网络结构（CNN、Transformer）上验证有效。
-- 理论分析：基于信息瓶颈理论，证明顺序自生成数据能够在压缩过程中逼近信息理论极限，降低冗余信息。
-- 实际收益：压缩后的模型体积显著减小（如10倍以上），推理速度提升显著，能耗降低，适合边缘部署。
-- 防止灾难性遗忘：通过顺序训练和自生成数据，逐步更新知识，防止压缩模型遗忘先前学到的信息。
-
----
-## 引用
-
-- **ArXiv**: [http://arxiv.org/abs/2607.11883v1](http://arxiv.org/abs/2607.11883v1)
-- **PDF**: [https://arxiv.org/pdf/2607.11883v1.pdf](https://arxiv.org/pdf/2607.11883v1.pdf)
-
-> 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
-
----
-
-## 站内链接
-
-- 分类： [论文](/categories/%E8%AE%BA%E6%96%87/) / [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)
-- 标签： [模型压缩](/tags/%E6%A8%A1%E5%9E%8B%E5%8E%8B%E7%BC%A9/) / [自生成训练数据](/tags/%E8%87%AA%E7%94%9F%E6%88%90%E8%AE%AD%E7%BB%83%E6%95%B0%E6%8D%AE/) / [大模型](/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [PAC-Bayes](/tags/pac-bayes/) / [泛化上界](/tags/%E6%B3%9B%E5%8C%96%E4%B8%8A%E7%95%8C/) / [过拟合预测](/tags/%E8%BF%87%E6%8B%9F%E5%90%88%E9%A2%84%E6%B5%8B/) / [信息熵](/tags/%E4%BF%A1%E6%81%AF%E7%86%B5/) / [压缩效率](/tags/%E5%8E%8B%E7%BC%A9%E6%95%88%E7%8E%87/)
-- 场景： [Web应用开发](/scenarios/web%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/)
-
-### 相关文章
-
-- [BitNet: 100B Param 1-Bit model for local CPUs](/posts/20260312-hacker_news-bitnet-100b-param-1-bit-model-for-local-cpus-12/)
-- [超网络：面向层级数据的神经网络架构](/posts/20260205-hacker_news-hypernetworks-neural-networks-for-hierarchical-dat-16/)
-- [共享LoRA子空间实现近乎严格的持续学习](/posts/20260209-arxiv_ai-shared-lora-subspaces-for-almost-strict-continual--0/)
-- [ARO：面向大模型矩阵优化的新视角](/posts/20260210-arxiv_ai-aro-a-new-lens-on-matrix-optimization-for-large-mo-8/)
-- [CoPE-VideoLM：基于编解码基元的高效视频语言模型](/posts/20260217-arxiv_ai-cope-videolm-codec-primitives-for-efficient-video--2/)
-*本文由 AI Stack 自动生成，深度解读学术研究。*
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

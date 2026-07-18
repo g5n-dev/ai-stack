@@ -3,6 +3,8 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
+import pytest
+
 from ai_stack.content_quality import (
     analyze_post,
     body_completeness_reasons,
@@ -45,6 +47,37 @@ def test_manifest_quarantines_only_high_confidence_synthetic_bodies(
         "prompt_context_leak",
         "title_only_generation",
     }
+
+
+def test_prompt_gate_does_not_bridge_a_marketing_phrase_to_a_renderer_note() -> None:
+    body = (
+        "如果本知识库能为您提供帮助，别忘了给予支持哦（关注、点赞、分享）。\n\n"
+        "## 来源说明\n\n当前只保存了来源元数据，未抓取完整正文。"
+    )
+
+    assert "prompt_context_leak" not in content_quality_reasons(body)
+
+
+@pytest.mark.parametrize(
+    ("body", "reason"),
+    (
+        ("凭据 " + "sk-" + "test_" + "x" * 24, "credential_token"),
+        ('password = "' + "b" * 32 + '"', "credential_assignment"),
+        ("联系 privacy@example.com", "email_address"),
+        ("调试文件 /home/example/private.log", "user_home_path"),
+        ("内网地址 10.20.30.40", "private_network_address"),
+        ("内网 IPv6 fd00::1234", "private_network_address"),
+    ),
+)
+def test_content_quality_rejects_sensitive_public_text(body: str, reason: str) -> None:
+    assert reason in content_quality_reasons(body)
+
+
+def test_content_quality_allows_environment_credential_references() -> None:
+    body = 'api_key = os.getenv("OPENAI_API_KEY"); docs use 192.0.2.10'
+
+    assert "credential_assignment" not in content_quality_reasons(body)
+    assert "private_network_address" not in content_quality_reasons(body)
 
 
 def test_manifest_writer_is_stable_and_frontmatter_is_not_scanned(
@@ -933,6 +966,209 @@ def test_manifest_separates_concise_source_briefs_from_incomplete_posts(
         "reasons": ["concise_source_card"],
     }
     assert "posts/complete.md" not in manifest["pages"]
+
+
+def test_manifest_tracks_verified_provenance_and_rehydration_backlog(
+    tmp_path: Path,
+) -> None:
+    content = tmp_path / "content"
+    posts = content / "posts"
+    posts.mkdir(parents=True)
+    digest_a = "sha256:" + "a" * 64
+    digest_b = "sha256:" + "b" * 64
+    sentence = "这段内容只陈述来源能够直接支持且可以复核的工程事实。"
+    required_headings = (
+        "转写说明",
+        "核心结论",
+        "能力机制",
+        "快速开始",
+        "适用边界",
+        "核验清单",
+        "来源与核验",
+    )
+    rewrite_body = "\n\n".join(
+        f"## {heading}\n\n{sentence * 6}" for heading in required_headings
+    )
+    documents = {
+        "modern-brief.md": (
+            "---\n"
+            "title: Modern brief\n"
+            "description: Signed source excerpt.\n"
+            "entry_kind: auto\n"
+            "source: blogs_podcasts\n"
+            "content_mode: source_brief\n"
+            "publication_tier: C\n"
+            "source_capture_mode: excerpt\n"
+            f"source_snapshot_sha256: {digest_a}\n"
+            "extractor_version: source-contract-v1\n"
+            "discovery_method: rss_excerpt\n"
+            "source_is_truncated: false\n"
+            "source_support: 1.0\n"
+            "external_url: https://example.com/brief\n"
+            "---\n\n"
+            "## 基本信息\n\n- **来源**: RSS\n\n这是来源中保存的可核验摘要。\n"
+        ),
+        "modern-rewrite.md": (
+            "---\n"
+            "title: Modern rewrite\n"
+            "description: Signed evidence-backed rewrite.\n"
+            "entry_kind: auto\n"
+            "source: juejin\n"
+            "content_mode: evidence_backed_rewrite\n"
+            "publication_tier: B\n"
+            "source_capture_mode: full_article\n"
+            "source_completeness: complete\n"
+            "source_is_truncated: false\n"
+            f"source_snapshot_sha256: {digest_a}\n"
+            f"parent_snapshot_sha256: {digest_b}\n"
+            "extractor_version: source-contract-v2\n"
+            "discovery_method: article_html\n"
+            "source_support: 1.0\n"
+            "external_url: https://juejin.cn/post/1234567890\n"
+            f"---\n\n{rewrite_body}\n"
+        ),
+        "curated-rewrite.md": (
+            "---\n"
+            "title: Curated rewrite\n"
+            "description: Independently verified editorial rewrite.\n"
+            "entry_kind: curated\n"
+            "source: blogs_podcasts\n"
+            "content_mode: evidence_backed_rewrite\n"
+            "publication_tier: B\n"
+            "source_capture_mode: curated_sources\n"
+            "source_completeness: verified\n"
+            "source_is_truncated: false\n"
+            "external_url: https://example.com/original\n"
+            "editorial_sources:\n"
+            "  - https://example.com/original\n"
+            "  - https://docs.example.com/primary\n"
+            f"---\n\n## 独立核验\n\n{sentence * 40}\n"
+        ),
+        "legacy-analysis.md": (
+            "---\n"
+            "title: Legacy analysis\n"
+            "description: No retained source snapshot.\n"
+            "entry_kind: auto\n"
+            "source: hacker_news\n"
+            "content_mode: legacy_analysis\n"
+            "publication_tier: LEGACY\n"
+            "source_provenance: legacy_no_snapshot\n"
+            "source_support: 0.0\n"
+            "external_url: https://example.com/legacy\n"
+            f"---\n\n## 历史分析\n\n{sentence * 4}\n"
+        ),
+        "legacy-brief.md": (
+            "---\n"
+            "title: Legacy brief\n"
+            "description: No retained source snapshot.\n"
+            "entry_kind: auto\n"
+            "source: hacker_news\n"
+            "content_mode: legacy_source_brief\n"
+            "publication_tier: C\n"
+            "source_provenance: legacy_no_snapshot\n"
+            "source_support: 0.0\n"
+            "external_url: https://example.com/legacy-brief\n"
+            "---\n\n## 基本信息\n\n这是历史来源卡片中的简短记录。\n"
+        ),
+        "archived.md": (
+            "---\n"
+            "title: Archived\n"
+            "archived: true\n"
+            "source: arxiv\n"
+            "content_mode: archived\n"
+            "---\n\n该条目只保留透明归档入口。\n"
+        ),
+        "manual.md": (
+            "---\n"
+            "title: Manual record\n"
+            "description: Manual record without a crawler source contract.\n"
+            "entry_kind: manual\n"
+            "source: manual\n"
+            "external_url: https://example.com/manual\n"
+            "---\n\n## 手工记录\n\n这是手工维护的完整记录。\n"
+        ),
+    }
+    for name, document in documents.items():
+        (posts / name).write_text(document, encoding="utf-8")
+
+    manifest = build_content_quality_manifest(content)
+
+    assert manifest["verified_provenance_count"] == 3
+    assert manifest["rehydration_pending_count"] == 3
+    assert manifest["rehydration_pending_by_source"] == {
+        "arxiv": 1,
+        "hacker_news": 2,
+    }
+
+
+def test_manifest_does_not_verify_invalid_modern_source_contracts(
+    tmp_path: Path,
+) -> None:
+    content = tmp_path / "content"
+    posts = content / "posts"
+    posts.mkdir(parents=True)
+    (posts / "invalid-brief.md").write_text(
+        "---\n"
+        "title: Invalid brief\n"
+        "description: Missing an immutable source digest.\n"
+        "entry_kind: auto\n"
+        "source: blogs_podcasts\n"
+        "content_mode: source_brief\n"
+        "publication_tier: C\n"
+        "source_capture_mode: excerpt\n"
+        "extractor_version: source-contract-v1\n"
+        "discovery_method: rss_excerpt\n"
+        "source_is_truncated: false\n"
+        "source_support: 1.0\n"
+        "external_url: https://example.com/invalid-brief\n"
+        "---\n\n## 基本信息\n\n这是没有来源摘要签名的卡片。\n",
+        encoding="utf-8",
+    )
+    (posts / "invalid-rewrite.md").write_text(
+        "---\n"
+        "title: Invalid rewrite\n"
+        "description: Missing the required evidence sections.\n"
+        "entry_kind: auto\n"
+        "source: juejin\n"
+        "content_mode: evidence_backed_rewrite\n"
+        "publication_tier: B\n"
+        "source_capture_mode: full_article\n"
+        "source_completeness: complete\n"
+        "source_is_truncated: false\n"
+        f"source_snapshot_sha256: {('sha256:' + 'a' * 64)}\n"
+        f"parent_snapshot_sha256: {('sha256:' + 'b' * 64)}\n"
+        "extractor_version: source-contract-v2\n"
+        "discovery_method: article_html\n"
+        "source_support: 1.0\n"
+        "external_url: https://juejin.cn/post/1234567890\n"
+        "---\n\n## 不完整\n\n缺少来源转写所要求的完整结构。\n",
+        encoding="utf-8",
+    )
+
+    manifest = build_content_quality_manifest(content)
+
+    assert manifest["verified_provenance_count"] == 0
+    assert manifest["rehydration_pending_count"] == 0
+    assert manifest["rehydration_pending_by_source"] == {}
+    assert manifest["quarantined_count"] == 2
+
+
+def test_manifest_keeps_pending_archives_with_unknown_source_visible(
+    tmp_path: Path,
+) -> None:
+    content = tmp_path / "content"
+    posts = content / "posts"
+    posts.mkdir(parents=True)
+    (posts / "archived.md").write_text(
+        "---\ntitle: Archived\narchived: true\n---\n\n透明归档记录。\n",
+        encoding="utf-8",
+    )
+
+    manifest = build_content_quality_manifest(content)
+
+    assert manifest["verified_provenance_count"] == 0
+    assert manifest["rehydration_pending_count"] == 1
+    assert manifest["rehydration_pending_by_source"] == {"unknown": 1}
 
 
 def test_article_template_quarantines_manifest_entries_from_body_and_search() -> None:

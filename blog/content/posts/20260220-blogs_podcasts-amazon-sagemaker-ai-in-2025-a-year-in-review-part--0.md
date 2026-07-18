@@ -1,14 +1,20 @@
 ---
-title: 2025年回顾：SageMaker AI弹性训练计划与推理性价比优化
+title: 'Amazon SageMaker AI in 2025, a year in review part 1: Flexible Training Plans
+  and improvements to price performance for inference workloads | Amazon Web Services'
 date: 2026-02-20 22:59:37+08:00
 draft: false
 entry_kind: auto
-tags: []
-categories: []
+tags:
+- 博客与播客
+- 大语言模型
+categories:
+- 大模型
+scenarios:
+- AI/ML项目
+- 大语言模型
 source: blogs_podcasts
-description: 历史条目已归档：现有正文未通过内容质量门，请查阅原始来源。
+description: 当前只保存了公开页面节选，不代表原文全文。请以原始来源为准。
 external_url: https://aws.amazon.com/blogs/machine-learning/amazon-sagemaker-ai-in-2025-a-year-in-review-part-1-flexible-training-plans-and-improvements-to-price-performance-for-inference-workloads
-scenarios: []
 aliases:
 - /posts/20260221-blogs_podcasts-amazon-sagemaker-ai-in-2025-a-year-in-review-part--0/
 - /posts/20260221-blogs_podcasts-amazon-sagemaker-ai-in-2025-a-year-in-review-part--1/
@@ -22,20 +28,39 @@ aliases:
 - /posts/20260224-blogs_podcasts-amazon-sagemaker-ai-in-2025-a-year-in-review-part--14/
 - /posts/20260224-blogs_podcasts-amazon-sagemaker-ai-in-2025-a-year-in-review-part--8/
 - /posts/20260224-blogs_podcasts-amazon-sagemaker-ai-in-2025-a-year-in-review-part--9/
-content_mode: archived
-publication_tier: ARCHIVED
-source_provenance: legacy_no_snapshot
-source_support: 0.0
-archived: true
-archive_reason: historical_content_quality_gate
-build:
-  list: never
-  render: always
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: excerpt
+source_snapshot_sha256: sha256:360acdd0c63413ad56b2de9702726594bb35447fb46651b4c91700e8a161d402
+extractor_version: source-contract-v1
+discovery_method: article_html_excerpt
+fetch_status: captured
+source_completeness: partial
+source_is_truncated: true
+source_support: 1.0
+source_title_chars_original: 161
+captured_at: '2026-07-18T04:17:30.432145Z'
+source_capture_sha256: sha256:5d37ac482842ae04e737b05cd058a2c2841780d5ecd5321e4a16ec7da71516ea
+source_capture_chars_original: 5976
+source_publication_excerpt_chars: 755
+source_truncation_reason: historical_capture_limit,historical_publication_excerpt_limit
 ---
 
-## 历史条目归档说明
+## 基本信息
 
-该条目的历史正文未通过内容质量门，可能包含基于标题推测的内容。为避免继续传播不可核验文本，本站仅保留透明归档记录。
+- **来源**: blogs\_podcasts
+- **原始来源**: [https://aws.amazon.com/blogs/machine-learning/amazon-sagemaker-ai-in-2025-a-year-in-review-part-1-flexible-training-plans-and-improvements-to-price-performance-for-inference-workloads](<https://aws.amazon.com/blogs/machine-learning/amazon-sagemaker-ai-in-2025-a-year-in-review-part-1-flexible-training-plans-and-improvements-to-price-performance-for-inference-workloads>)
 
-- 历史内容质量门未通过
-- 原始来源：<https://aws.amazon.com/blogs/machine-learning/amazon-sagemaker-ai-in-2025-a-year-in-review-part-1-flexible-training-plans-and-improvements-to-price-performance-for-inference-workloads>
+## 来源摘要/节选
+
+公开展示已截断至最多 800 个字符；请访问原始来源查看完整上下文。
+
+> In 2025, Amazon SageMaker AI saw dramatic improvements to core infrastructure offerings along four dimensions: capacity, price performance, observability, and usability. In this series of posts, we discuss these various improvements and their benefits. In Part 1, we discuss capacity improvements with the launch of Flexible Training Plans. We also describe improvements to price performance for inference workloads. In Part 2 , we discuss enhancements made to observability, model customization, and model hosting.
+>
+> SageMaker AI Training Plans now support inference endpoints, extending a powerful capacity reservation capability originally designed for training workloads to address the critical challenge of GPU availability for inference deployments.…
+
+## 来源说明
+
+当前只保存了公开页面节选，不代表原文全文。请以原始来源为准。
+
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

@@ -51,3 +51,9 @@ tmp/
 
 # Verification reports
 *_verification_report.json
+
+# Private historical-recovery evidence (must remain outside the repository)
+capture-audit*.json
+historical-capture*.json
+historical-rehydration-inventory*.json
+historical-rehydration-backup*/

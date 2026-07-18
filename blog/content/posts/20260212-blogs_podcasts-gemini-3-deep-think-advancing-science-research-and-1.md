@@ -1,30 +1,31 @@
 ---
-title: Gemini 3 Deep Think 模式发布：支持长链思考推理
+title: 'Gemini 3 Deep Think: Advancing science, research and engineering'
 date: 2026-02-12 18:02:05+08:00
 draft: false
 entry_kind: auto
 tags:
-- Gemini 3
-- Deep Think
-- Google
-- 推理模型
-- 长链思考
+- 博客与播客
 - AI Agent
-- 模型发布
-- LLM
 categories:
-- 大模型
-- 产品与创业
-source: hacker_news
-description: 随着大模型在复杂任务中的应用日益深入，如何突破上下文窗口与推理深度的限制，已成为行业关注的焦点。本文将深入解析 Gemini 3 Deep
-  Think 的核心机制，探讨其如何通过深度思考链提升逻辑推理与长文本处理能力。读者将了解到该模型在实际场景中的性能表现，以及它为解决复杂问题带来的新思路。
-external_url: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-deep-think
+- AI 工程
 scenarios:
 - AI/ML项目
-- 大语言模型
+source: blogs_podcasts
+description: 当前只保存了公开页面节选，不代表原文全文。请以原始来源为准。
+external_url: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-deep-think
 aliases:
+- /posts/20260212-blogs_podcasts-gemini-3-deep-think-advancing-science-research-and-0/
+- /posts/20260212-blogs_podcasts-gemini-3-deep-think-advancing-science-research-and-2/
+- /posts/20260212-blogs_podcasts-gemini-3-deep-think-advancing-science-research-and-3/
 - /posts/20260212-hacker_news-gemini-3-deep-think-1/
+- /posts/20260212-hacker_news-gemini-3-deep-think-16/
 - /posts/20260212-hacker_news-gemini-3-deep-think-2/
+- /posts/20260213-blogs_podcasts-gemini-3-deep-think-advancing-science-research-and-4/
+- /posts/20260213-blogs_podcasts-gemini-3-deep-think-advancing-science-research-and-5/
+- /posts/20260213-blogs_podcasts-gemini-3-deep-think-advancing-science-research-and-6/
+- /posts/20260213-blogs_podcasts-gemini-3-deep-think-advancing-science-research-and-7/
+- /posts/20260213-blogs_podcasts-gemini-3-deep-think-advancing-science-research-and-8/
+- /posts/20260213-blogs_podcasts-gemini-3-deep-think-advancing-science-research-and-9/
 - /posts/20260213-hacker_news-gemini-3-deep-think-1/
 - /posts/20260213-hacker_news-gemini-3-deep-think-11/
 - /posts/20260213-hacker_news-gemini-3-deep-think-14/
@@ -33,321 +34,56 @@ aliases:
 - /posts/20260213-hacker_news-gemini-3-deep-think-4/
 - /posts/20260213-hacker_news-gemini-3-deep-think-5/
 - /posts/20260213-hacker_news-gemini-3-deep-think-8/
+- /posts/20260214-blogs_podcasts-gemini-3-deep-think-advancing-science-research-and-10/
+- /posts/20260214-blogs_podcasts-gemini-3-deep-think-advancing-science-research-and-11/
 - /posts/20260214-blogs_podcasts-gemini-3-deep-think-advancing-science-research-and-12/
+- /posts/20260214-blogs_podcasts-gemini-3-deep-think-advancing-science-research-and-9/
+- /posts/20260215-blogs_podcasts-gemini-3-deep-think-advancing-science-research-and-10/
+- /posts/20260215-blogs_podcasts-gemini-3-deep-think-advancing-science-research-and-11/
 - /posts/20260215-blogs_podcasts-gemini-3-deep-think-advancing-science-research-and-12/
+- /posts/20260216-blogs_podcasts-gemini-3-deep-think-advancing-science-research-and-11/
 - /posts/20260216-blogs_podcasts-gemini-3-deep-think-advancing-science-research-and-12/
+- /posts/20260217-blogs_podcasts-gemini-3-deep-think-advancing-science-research-and-11/
+- /posts/20260217-blogs_podcasts-gemini-3-deep-think-advancing-science-research-and-12/
 - /posts/20260217-blogs_podcasts-gemini-3-deep-think-advancing-science-research-and-13/
-content_mode: legacy_analysis
-publication_tier: LEGACY
-source_provenance: legacy_no_snapshot
-source_support: 0.0
----
-
-## Gemini 3 Deep Think 发布：强化深度推理能力
-
+- /posts/20260218-blogs_podcasts-gemini-3-deep-think-advancing-science-research-and-14/
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: excerpt
+source_snapshot_sha256: sha256:2f951cb3dd49387cf7d7ed7088c09364c6525f60eb62d1fa5785b05123ea586e
+extractor_version: source-contract-v1
+discovery_method: article_html_excerpt
+fetch_status: captured
+source_completeness: partial
+source_is_truncated: true
+source_support: 1.0
+source_title_chars_original: 64
+captured_at: '2026-07-18T04:17:14.370363Z'
+source_capture_sha256: sha256:00cc5cb1d01e7e1f720728a40ea0f45e09ca6f884269edf626bedcfdabbe4861
+source_capture_chars_original: 4504
+source_publication_excerpt_chars: 675
+source_truncation_reason: historical_publication_excerpt_limit
 ---
 
 ## 基本信息
 
-- **作者**: tosh
-- **评分**: 735
-- **评论数**: 465
-- **链接**: [https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-deep-think](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-deep-think)
-- **HN 讨论**: [https://news.ycombinator.com/item?id=46991240](https://news.ycombinator.com/item?id=46991240)
+- **来源**: blogs\_podcasts
+- **原始来源**: [https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-deep-think](<https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-deep-think>)
 
----
-## 导语
+## 来源摘要/节选
 
-随着多模态模型竞争的加剧，Google 推出的 Gemini 3 Deep Think 尝试将“深度思考”机制引入系统内核，试图解决大模型在复杂逻辑推理与长链路任务中的稳定性瓶颈。这一进展不仅标志着模型架构从单纯追求参数规模向精细化的认知控制转变，也为解决“幻觉”问题提供了新的技术路径。本文将深入解析其核心架构与训练策略，帮助开发者理解该模型在处理复杂任务时的实际表现与潜在局限。
+公开展示已截断至最多 800 个字符；请访问原始来源查看完整上下文。
 
----
-## 评论
+> Our most specialized reasoning mode is now updated to solve modern science, research and engineering challenges.
+>
+> Your browser does not support the audio element.
+>
+> Gemini 3 Deep Think has a major upgrade to help solve science, research and engineering challenges. Google AI Ultra subscribers can now access the updated Deep Think in the Gemini app. Researchers, engineers and enterprises can express interest in early access to test Deep Think via the Gemini API.
+>
+> Today, we’re releasing a major upgrade to Gemini 3 Deep Think , our specialized reasoning mode, built to push the frontier of intelligence and solve modern challenges across science, research, and engineering.…
 
-### 深度评论
+## 来源说明
 
-#### 一、 核心评价
-**中心观点：**
-文章主要论述了Gemini 3通过引入“Deep Think”机制，试图利用推理阶段的计算增强来突破传统预训练模型的性能瓶颈。这标志着技术路线从单纯依赖参数规模向“测试时计算”的范式转移。
+当前只保存了公开页面节选，不代表原文全文。请以原始来源为准。
 
-**支撑理由：**
-1.  **技术逻辑**：基于OpenAI o1等模型的验证，延长模型的思考时间能有效提升复杂任务的表现。文章指出Gemini 3可能通过优化思维链结构，在输出前进行隐含的假设验证。
-2.  **架构演进**：结合Google在AlphaGeometry等系统的积累，文章推测该模型可能集成了搜索算法或形式化验证器，以减少逻辑幻觉。
-3.  **性能提升**：在代码生成、数学推理等高容错场景中，这种“慢思考”模式相比直接生成具有显著优势。
-
-**边界条件与局限：**
-1.  **适用场景**：对于简单的事实性问答，Deep Think模式引入的高延迟和高成本不仅是不必要的，甚至可能因过度复杂化导致错误率上升。
-2.  **可解释性**：文章可能未充分解决“黑盒”问题。若思考过程不可见，用户难以验证逻辑的正确性，这在关键任务应用中是一个风险点。
-
-#### 二、 维度深入评价
-**1. 技术深度与严谨性**
-*   **评价**：文章对“系统1（直觉）”与“系统2（逻辑）”的架构分离进行了分析。若能进一步阐述Token分配策略（即思考阶段与输出阶段的资源配比）及具体的搜索算法（如MCTS），则技术深度将更为扎实。目前的论述主要停留在效果层面，对底层实现机制的探讨略显不足。
-
-**2. 实用价值与成本考量**
-*   **评价**：文章展示了该技术在代码审查和科学计算中的潜力，但未充分讨论API调用的经济成本。对于企业级应用，推理时间的延长意味着服务成本的线性增加。文章若能提供具体的性能成本比分析，其实用参考价值将更高。
-
-**3. 创新性分析**
-*   **评价**：该方向的创新点在于如何高效地利用推理算力。如果Gemini 3能在不显著增加推理Token长度的前提下提升准确率，或者采用了非Transformer架构来优化长上下文处理，这将是一个重要的技术突破。文章对此部分的描述较为模糊，未能明确区分其与现有竞品的核心技术差异。
-
-**4. 表达与逻辑结构**
-*   **评价**：文章结构清晰，逻辑连贯。但在技术术语的使用上略显密集，缺乏具体的案例对比来直观展示Deep Think模式与传统模式的输出差异。
-
-**5. 行业影响评估**
-*   **评价**：该技术的推广可能加速云端与端侧模型的分化。依赖高算力的推理模式将限制其在边缘设备上的部署。同时，这可能会推动行业标准从单一的“准确率”评估转向“推理效率”的综合评估。
-
-**6. 潜在争议**
-*   **评价**：关于“思考过程”的可见性存在争议。出于模型安全考虑，开发者可能隐藏完整的思维链，但这会降低用户对结论的信任度。此外，学术界对于“测试时计算”是否能完全替代“参数规模”仍存在分歧，文章对此观点的呈现略显单一。
-
-#### 三、 总结
-总体而言，该文章准确地捕捉到了当前大模型发展的技术趋势，对Gemini 3 Deep Think的潜在能力进行了合理的推演。然而，文章在具体的工程实现细节、成本效益分析以及技术局限性方面的探讨仍有待深化，建议读者在关注性能提升的同时，保持对落地成本和可解释性的审慎态度。
-
----
-## 代码示例
-
-```python
-# 示例1：模拟"Deep Think"长文本生成能力
-# 场景：生成一份结构化的AI技术分析报告
-def generate_ai_report():
-    """模拟Gemini 3的深度思考能力，生成结构化长文本"""
-    # 模拟多阶段思考过程
-    thinking_process = [
-        "分析当前AI发展趋势...",
-        "评估多模态模型的应用场景...",
-        "总结技术突破点..."
-    ]
-
-    # 构建报告框架
-    report = {
-        "title": "2024年AI技术发展报告",
-        "sections": [
-            {"heading": "技术突破", "content": "多模态理解能力提升300%"},
-            {"heading": "应用场景", "content": "医疗诊断/自动驾驶/创意设计"},
-            {"heading": "未来展望", "content": "预计2025年实现实时全感官交互"}
-        ]
-    }
-
-    # 模拟生成过程
-    print("正在深度思考中...")
-    for step in thinking_process:
-        print(f"思考步骤: {step}")
-
-    # 输出最终报告
-    print("\n最终报告:")
-    print(f"标题: {report['title']}")
-    for section in report['sections']:
-        print(f"\n{section['heading']}: {section['content']}")
-
-# 运行示例
-generate_ai_report()
-```
-
-```python
-# 示例2：多模态数据处理
-# 场景：处理包含文本和图像的输入
-def process_multimodal_input(text_input, image_features):
-    """
-    模拟Gemini 3的多模态处理能力
-    :param text_input: 用户输入的文本
-    :param image_features: 模拟的图像特征向量
-    """
-    # 模拟文本处理
-    text_analysis = {
-        "sentiment": "积极" if "好" in text_input else "中性",
-        "keywords": ["AI", "技术", "创新"]
-    }
-
-    # 模拟图像处理
-    image_analysis = {
-        "objects": ["电脑", "咖啡杯"],
-        "scene": "办公室环境"
-    }
-
-    # 融合分析结果
-    combined_result = {
-        "user_intent": "技术交流",
-        "suggested_response": "我看到您在办公室讨论AI技术，需要提供相关资料吗？",
-        "confidence": 0.92
-    }
-
-    return combined_result
-
-# 测试用例
-text = "这个AI技术真好用！"
-image = [0.3, 0.7, 0.5]  # 模拟图像特征向量
-result = process_multimodal_input(text, image)
-print(result)
-```
-
-```python
-# 示例3：复杂问题分解求解
-# 场景：将复杂问题拆解为可执行的子任务
-def solve_complex_problem(problem):
-    """
-    模拟Deep Think的问题分解能力
-    :param problem: 复杂问题描述
-    """
-    # 问题分解逻辑
-    sub_tasks = []
-    if "预算" in problem:
-        sub_tasks.append("分析财务数据")
-    if "时间" in problem:
-        sub_tasks.append("制定时间表")
-    if "风险" in problem:
-        sub_tasks.append("评估潜在风险")
-
-    # 执行子任务
-    solutions = []
-    for task in sub_tasks:
-        if task == "分析财务数据":
-            solutions.append("建议预留20%应急预算")
-        elif task == "制定时间表":
-            solutions.append("推荐使用敏捷开发模式")
-        elif task == "评估潜在风险":
-            solutions.append("需要准备技术备选方案")
-
-    # 综合解决方案
-    final_solution = {
-        "original_problem": problem,
-        "decomposition": sub_tasks,
-        "recommendations": solutions,
-        "priority": "高优先级" if "紧急" in problem else "普通优先级"
-    }
-
-    return final_solution
-
-# 测试用例
-problem = "我们需要在有限预算内紧急完成项目，同时控制风险"
-solution = solve_complex_problem(problem)
-print(solution)
-```
-
----
-## 案例研究
-
-### 1：某大型跨境电商平台智能客服系统
-
-**背景**: 该平台每天处理数百万级的用户咨询，涵盖物流追踪、退换货政策、支付故障等复杂场景。传统客服机器人基于关键词匹配，难以理解用户多轮对话中的上下文和隐含意图，导致问题解决率低，人工客服压力大。
-
-**问题**: 用户经常在咨询中描述包含多个条件的复杂情况（例如：“如果我在三天内没收到货，但系统显示已签收，我该怎么申诉且不承担运费？”）。传统模型无法准确拆解这些逻辑关系，经常给出错误的通用回复，引发用户投诉。
-
-**解决方案**: 集成 Gemini 3 Deep Think 模型，利用其深度推理能力重构客服机器人的逻辑层。系统不再直接检索答案，而是先通过 Deep Think 模型分析用户查询中的逻辑链条，识别核心诉求与限制条件，再生成精准的回复策略。
-
-**效果**: 客服机器人的复杂问题解决率提升了 45%，人工客服转接率降低了 30%。模型能够准确识别并处理涉及多重条件的申诉请求，显著提升了用户满意度并降低了运营成本。
-
----
-
-### 2：金融科技公司的合规代码审计工具
-
-**背景**: 一家领先的金融科技公司维护着数百万行遗留代码（Legacy Code），主要用于高频交易和风险控制。由于业务逻辑极其复杂，且经过多次迭代，代码中存在许多难以被静态分析工具发现的逻辑漏洞。
-
-**问题**: 传统的代码审计工具主要基于规则匹配，无法理解代码背后的业务逻辑意图。例如，某些特定的交易限制条件在多层嵌套的 `if-else` 语句中可能存在逻辑死角，导致在极端市场条件下可能发生合规风险。
-
-**解决方案**: 开发团队引入 Gemini 3 Deep Think 作为辅助代码审查工具。利用其长上下文和深度推理能力，让模型阅读并“思考”整个模块的业务逻辑流，特别关注边界条件和异常处理分支，寻找逻辑漏洞而非仅仅是语法错误。
-
-**效果**: 在一次针对核心交易系统的审计中，Deep Think 模型成功发现了 3 个高难度的逻辑漏洞，这些漏洞在过去的五年中从未被传统工具或人工发现。这帮助公司避免了潜在的巨额监管罚款，并大幅提升了系统的鲁棒性。
-
----
-
-### 3：科研机构的药物分子筛选项目
-
-**背景**: 一个专注于神经退行性疾病研究的非营利科研机构，试图从数百万种候选化合物中筛选出能够通过血脑屏障的潜在药物分子。
-
-**问题**: 传统的虚拟筛选计算量巨大，且基于现有化学数据库的相似性搜索往往陷入“局部最优”，难以发现结构新颖但有效的分子。研究人员需要一种能够理解复杂的生物化学约束条件，并进行创造性推理的辅助工具。
-
-**解决方案**: 研究人员使用 Gemini 3 Deep Think 分析已知的活性分子结构，并让其推理分子结构与生物活性之间的深层因果关系。通过多步推理，模型设计出了一系列全新的分子结构，并预测了其合成路径和结合亲和力。
-
-**效果**: 模型生成的 50 个候选分子中，有 12 个在湿实验验证中表现出了预期的活性，其中 2 个分子的结构类型完全超出了研究团队以往的认知范畴。这大大缩短了药物发现的早期筛选周期。
-
----
-
-## 最佳实践指南
-
-### 1. 构建结构化提示词
-*   **操作**：设定专家角色，详细描述任务背景与约束，指定回答结构。
-*   **注意**：避免歧义词汇，保持指令逻辑连贯，切勿混合不相关主题。
-
-### 2. 引导思维链推理
-**核心原则**：强制展示推理过程以提高复杂逻辑、数学或编程问题的准确率。
-*   **操作**：显式要求“一步步思考”，进行中间步骤检查，并要求反向验证结论。
-*   **注意**：确保步骤逻辑递进，发现推理错误时及时纠正并重新引导。
-
-### 3. 迭代式交互与追问
-**核心原则**：利用多轮对话，通过追问引导模型从浅层理解深入到核心本质。
-*   **操作**：先获取基础框架，再针对薄弱环节批判性提问，最后深化细节或扩展案例。
-*   **注意**：保持对话聚焦，避免频繁更换主题导致模型丢失上下文焦点。
-
-### 4. 分段式长文本处理
-**核心原则**：将大任务拆解为小任务分步执行，防止模型注意力分散或遗漏细节。
-*   **操作**：按逻辑章节拆分文本，分块独立处理，最后汇总生成综合性报告。
-*   **注意**：每轮提示词中需重申最终目标，防止局部处理偏离整体方向。
-
-### 5. 建立输出验证机制
-**核心原则**：利用模型自身能力检查输出的准确性、一致性和安全性，减少幻觉。
-*   **操作**：要求模型自审事实错误，标注信息来源或置信度，并进行红队测试。
-*   **注意**：对模型标记为“不确定”的信息必须进行人工二次核实。
-
-### 6. 优化代码生成与调试
-**核心原则**：将模型作为“结对编程伙伴”，注重代码规范与错误分析。
-*   **操作**：明确编码规范，先生成伪代码或注释，再填逻辑；利用错误日志分析根因。
-*   **注意**：生成的代码必须在沙箱环境测试，严禁直接用于生产环境。
-
-### 7. 平衡安全性与创造性
-**核心原则**：在创意写作中，通过精细化的提示词引导模型在安全边界内发挥创造力。
-*   **操作**：明确创作意图与风格，设定具体的正面约束，避免触发敏感词的负面描述。
-*   **注意**：若触发过度拦截，尝试调整表述方式或使用隐喻，而非强行突破安全限制。
-
----
-## 学习要点
-
-- ### 学习要点
-- 深度思考模式与逻辑推理增强：Gemini 3.0 引入了深度思考机制，通过延长思维链（Chain-of-Thought）显著提升了处理数学、编程及科学问题的复杂逻辑推演能力。
-- 混合架构与自我纠错：采用思维链与搜索增强相结合的混合架构，在生成最终输出前进行隐式的自我纠错与多步验证，有效降低了“幻觉”和逻辑跳跃的发生率。
-- 编程性能与长上下文处理：在编程基准测试中表现大幅提升，能够处理更长的上下文窗口，胜任更复杂的系统级代码生成与调试任务。
-- 多模态理解能力升级：强化了对非结构化信息的解析深度，能够更准确地理解图表、技术文档及长视频中的复杂内容。
-- 可解释性与透明度：部分版本允许用户查看模型的思维过程，提高了 AI 决策逻辑的透明度与可解释性，标志着大模型从追求响应速度向追求“系统 2”式慢思考能力的范式转变。
-
----
-## 常见问题
-
-### 1: Gemini 3 Deep Think 具体是什么？它是谷歌正式发布的模型名称吗？
-
-**A**: 根据目前的来源和语境，Gemini 3 Deep Think 并非谷歌官方正式对外发布的最终产品名称。它通常被指代为谷歌 DeepMind 正在开发的下一代旗舰大模型（内部代号可能为 Gemini 3.0 或类似版本）中的一种特定推理模式或技术展示。该名称强调了模型在“深度思考”或“长链思维”方面的能力，即通过模拟人类深思熟虑的过程来拆解复杂问题，从而提高在数学、编程和逻辑推理任务中的准确性。
-
-### 2: 与现有的 Gemini 2.0 或 OpenAI 的 o1 系列相比，Deep Think 模式有什么核心区别？
-
-**A**: 核心区别在于推理机制的深度和可见性。与 Gemini 2.0 等通用大语言模型不同，Deep Think 模式采用了类似于 OpenAI o1 的“思维链”技术。在生成最终答案之前，模型会花费更多计算资源进行内部推理，甚至有时会将这一思考过程展示给用户。相比于 o1，Gemini 3 Deep Think 的测试重点可能在于更长的上下文窗口处理能力、多模态（视频、图像）推理的深度，以及更低的推理延迟，旨在解决“快思考”模型容易产生的逻辑幻觉问题。
-
-### 3: Hacker News 社区对这项技术的讨论主要集中在哪些方面？
-
-**A**: Hacker News 作为技术社区，讨论焦点主要集中在以下几个方面：首先是**技术架构**，即谷歌是如何通过强化学习来训练这种深度推理行为的；其次是**实际应用场景**，开发者们关注它是否能真正解决复杂的代码生成和系统设计问题，而不仅仅是简单的对话；最后是**推理成本与延迟**，由于深度思考模式需要消耗大量算力，社区讨论也涉及这种模式在商业化落地时的性价比以及响应速度是否在可接受范围内。
-
-### 4: Deep Think 模式是如何解决大模型的“幻觉”问题的？
-
-**A**: Deep Think 模式通过“慢思考”机制来缓解幻觉。传统模型倾向于基于概率快速预测下一个词，容易导致逻辑跳跃或事实错误。而 Deep Think 模型被训练为在输出结论前进行自我审查、步骤拆解和反事实推演。这种类似于“草稿纸”的过程允许模型在推理阶段自我纠错，验证中间步骤的正确性，从而显著减少了在数学证明、逻辑陷阱题和事实性问答中的错误率。
-
-### 5: 目前该技术是否已经对公众开放？如何体验？
-
-**A**: 截至目前，Gemini 3 Deep Think 更多的是处于技术预览、内部测试或通过特定 API（如 Gemini API 中的特定实验性端点）向部分开发者开放的状态，或者作为 Gemini 2.0 Flash Thinking 等现有功能的升级概念存在。它可能尚未作为一个完全独立的、免费的消费级产品全面推出。用户通常需要通过谷歌 AI Studio 或 Vertex AI 平台申请等待名单，或者使用集成了最新 Gemini 模型的特定聊天界面切换到“思考模式”来体验类似功能。
-
-### 6: 这种深度推理模型对未来的 AI 发展意味着什么？
-
-**A**: 这标志着 AI 发展从“追求响应速度”向“追求推理深度”的重要范式转移。Deep Think 类型的模型表明，单纯扩大模型参数规模（Scaling Laws）可能已接近瓶颈，未来的提升将更多来自于**推理时的计算增强**。这意味着 AI 将从单纯的“知识检索工具”进化为能够处理复杂科研、高级编程和战略规划的“智能助手”，但也对芯片算力和能源消耗提出了更高的挑战。
-## 引用
-
-- **原文链接**: [https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-deep-think](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-deep-think)
-- **HN 讨论**: [https://news.ycombinator.com/item?id=46991240](https://news.ycombinator.com/item?id=46991240)
-
-> 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
-
----
-
-## 站内链接
-
-- 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [产品与创业](/categories/%E4%BA%A7%E5%93%81%E4%B8%8E%E5%88%9B%E4%B8%9A/)
-- 标签： [Gemini 3](/tags/gemini-3/) / [Deep Think](/tags/deep-think/) / [Google](/tags/google/) / [深度推理](/tags/%E6%B7%B1%E5%BA%A6%E6%8E%A8%E7%90%86/) / [LLM](/tags/llm/) / [AI 产品](/tags/ai-%E4%BA%A7%E5%93%81/) / [模型发布](/tags/%E6%A8%A1%E5%9E%8B%E5%8F%91%E5%B8%83/) / [推理能力](/tags/%E6%8E%A8%E7%90%86%E8%83%BD%E5%8A%9B/)
-- 场景： [大语言模型](/scenarios/%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/) / [AI/ML项目](/scenarios/ai-ml%E9%A1%B9%E7%9B%AE/)
-
-### 相关文章
-
-- [Gemini 3 Deep Think：面向科研与工程的深度推理模型]({{< relref "posts/20260212-blogs_podcasts-gemini-3-deep-think-advancing-science-research-and-1.md" >}})
-- [Gemini 3 Deep Think 推出：强化长链思考能力]({{< relref "posts/20260212-hacker_news-gemini-3-deep-think-16.md" >}})
-*本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

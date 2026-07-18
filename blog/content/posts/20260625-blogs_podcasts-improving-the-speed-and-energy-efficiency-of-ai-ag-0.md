@@ -1,150 +1,57 @@
 ---
-title: Murakkab系统提升AI工作流速度和能效
+title: Improving the speed and energy-efficiency of AI agents
 date: 2026-06-25 13:41:21+08:00
 draft: false
 entry_kind: auto
 tags:
-- 算子融合
-- 任务调度
-- 依赖图分析
-- 动态功耗管理
-- AI 工作流
-- 资源感知
-- 云边协同
-- 能效优化
+- 博客与播客
+- AI Agent
+- Python
 categories:
 - AI 工程
-- 系统与基础设施
-source: blogs_podcasts
-description: 一个被称为 Murakkab 的新系统，优化了为 AI 应用提供支持的多步骤工作流程的设计和部署。 在 AI 系统逐步承担关键业务负载的背景下，工作流的执行效率和能耗已成为制约规模部署的瓶颈。Murakkab
-  通过对多步骤流程的调度策略与资源分配模型进行协同优化，实现了显著的速度提升与功耗下降。该方案为企业提供了一套可落地的技术路径，帮助在保证服务质量的同时实现绿色计算目标。
-external_url: https://news.mit.edu/2026/improving-ai-agent-speed-and-energy-efficiency-0625
 scenarios:
 - AI/ML项目
-content_mode: legacy_analysis
-publication_tier: LEGACY
-source_provenance: legacy_no_snapshot
-source_support: 0.0
+source: blogs_podcasts
+description: 当前只保存了公开页面节选，不代表原文全文。请以原始来源为准。
+external_url: https://news.mit.edu/2026/improving-ai-agent-speed-and-energy-efficiency-0625
+aliases: []
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: excerpt
+source_snapshot_sha256: sha256:430639f7570638956cd33d11591392ace2279d19634d3abb76818af319e750ee
+extractor_version: source-contract-v1
+discovery_method: article_html_excerpt
+fetch_status: captured
+source_completeness: partial
+source_is_truncated: true
+source_support: 1.0
+source_title_chars_original: 54
+captured_at: '2026-07-18T04:21:46.263974Z'
+source_capture_sha256: sha256:e654b37954e7b73b81bb488fee6114d831297d5571878e521dfbd3468d07eb80
+source_capture_chars_original: 5978
+source_publication_excerpt_chars: 767
+source_truncation_reason: historical_capture_limit,historical_publication_excerpt_limit
 ---
 
 ## 基本信息
 
-- **来源**: MIT News (Machine Learning) (blog)
-- **发布时间**: 2026-06-25T04:00:00+00:00
-- **链接**: [https://news.mit.edu/2026/improving-ai-agent-speed-and-energy-efficiency-0625](https://news.mit.edu/2026/improving-ai-agent-speed-and-energy-efficiency-0625)
+- **来源**: blogs\_podcasts
+- **原始来源**: [https://news.mit.edu/2026/improving-ai-agent-speed-and-energy-efficiency-0625](<https://news.mit.edu/2026/improving-ai-agent-speed-and-energy-efficiency-0625>)
 
----
-## 摘要/简介
+## 来源摘要/节选
 
-一个被称为 Murakkab 的新系统，优化了为 AI 应用提供支持的多步骤工作流程的设计和部署。
+公开展示已截断至最多 800 个字符；请访问原始来源查看完整上下文。
 
----
-## 导语
+> Agentic workflows are artificial intelligence-powered software systems that chain together multiple models and external tools to tackle complicated tasks, like analyzing a video and answering questions about it.
+>
+> But the way these highly fragmented systems are designed and deployed often causes inefficiencies that can lead to wasted computation, energy, and cost.
+>
+> To improve efficiency, researchers from MIT and Microsoft developed an intelligent system that streamlines the process of designing agentic workflows and automatically optimizes how those workflows are implemented.
+>
+> With this new method, a developer can describe what they want the agentic workflow to do in plain language, without needing to specify all the details of their application in advance.…
 
-在 AI 系统逐步承担关键业务负载的背景下，工作流的执行效率和能耗已成为制约规模部署的瓶颈。Murakkab 通过对多步骤流程的调度策略与资源分配模型进行协同优化，实现了显著的速度提升与功耗下降。该方案为企业提供了一套可落地的技术路径，帮助在保证服务质量的同时实现绿色计算目标。
+## 来源说明
 
----
-## 摘要
+当前只保存了公开页面节选，不代表原文全文。请以原始来源为准。
 
-#### 背景与挑战
-随着 AI 应用规模快速扩大，多步骤工作流（pipeline）已成为主流。然而，传统实现往往缺乏全局协同优化，导致计算资源浪费和能耗居高不下，成为部署成本的主要瓶颈。
-
-#### Murakkab 系统概述
-Murakkab 是一种新型系统，专门用于多步骤 AI 工作流的自动化设计与部署优化。其核心做法包括：
-- **算子融合与任务调度**：通过智能合并相邻算子、并行化可分离任务，降低数据传输和空闲等待。
-- **依赖图分析与资源感知**：对工作流构建细粒度依赖图，预判算力需求并动态分配 CPU/GPU 资源。
-- **动态功耗管理**：依据实时负载调节芯片频率与供电策略，实现细粒度能耗控制。
-
-#### 关键优势
-1. **速度提升**：算子融合与并行调度显著缩短整体执行时延。
-2. **能效改进**：功耗管理机制使单位计算消耗的能耗降低约 30%~50%。
-3. **可扩展性**：兼容主流深度学习框架并支持云‑边协同部署，易于集成到现有平台。
-
-#### 结论
-Murakkab 为 AI 代理提供了系统化的提速与节能方案，在大规模生产环境中能够显著提升资源利用率并降低运营成本。
-
----
-## 评论
-
-#### 中心观点
-
-Murakkab系统在多步骤AI工作流优化方面展现了工程层面的创新价值，但其实际效果仍需结合具体部署场景进行验证。这一技术路径代表了当前行业对大模型推理成本控制的主流探索方向。
-
-#### 事实陈述
-
-根据摘要信息，Murakkab专注于优化AI应用的多步骤工作流设计，目标是提升速度并降低能耗。从技术角度看，多步骤工作流涉及多次模型调用和状态管理，传统的串行处理方式确实存在效率瓶颈。加速与节能这对组合目标在资源受限场景下具有现实意义。
-
-#### 推断与分析
-
-作者观点层面，摘要强调“优化设计与部署”而非底层模型改进，暗示Murakkab采取的是系统层面的工程方案而非算法层面的突破。这种做法符合当前AI落地的主要矛盾——模型能力已相对成熟，但部署成本和响应延迟仍是商业化的关键障碍。
-
-我的推断是，这类工作流优化技术可能涉及任务分解、并行调度和缓存策略等传统系统工程手段，其效果高度依赖具体应用场景。在对话式AI中效果显著，但在实时控制或流式处理场景中增益有限。
-
-#### 边界条件
-
-该技术的适用边界需要关注三点：首先是工作流的步骤数量，过短的简单任务可能无法体现优化价值；其次是任务间的依赖关系，强依赖场景下的并行化空间受限；最后是模型选择，异构模型混用会显著增加调度复杂度。
-
-#### 实践启发
-
-对于从业者，建议在引入此类优化方案前先进行性能剖析，明确瓶颈是否真的在工作流层面而非模型推理本身。同时应评估系统改造成本与收益的比值，避免为追求技术新颖性而引入不必要的架构复杂性。在资源受限的边缘部署场景中，这类优化可能具有更高的优先级。
-
----
-## 技术分析
-
-#### 核心观点
-
-Murakkab系统通过创新性的工作流设计与部署优化方法，显著提升AI代理的运行速度和能源利用效率。该系统的核心价值在于解决当前AI应用在多步骤工作流场景中普遍存在的资源消耗过高和响应延迟问题，为企业级AI部署提供了一条可行的优化路径。
-
-#### 关键技术点
-
-Murakkab采用了多层次优化策略。在工作流编排层面，系统引入了动态任务调度机制，能够根据实时负载自动调整任务执行顺序和资源分配。在底层计算层面，通过模型量化和剪枝技术的协同配合，有效降低了推理过程中的计算复杂度。系统在能耗管理方面实现了细粒度控制，支持基于任务重要性的差异化功耗策略。
-
-系统的自适应学习模块能够持续监测工作流执行过程中的性能指标，积累历史数据并据此优化未来的资源调度决策。这一闭环反馈机制是实现持续性能提升的关键技术基础。
-
-#### 实际应用价值
-
-从部署成本角度看，能源效率的提升直接转化为运营费用的降低。根据系统测试数据，在典型电商推荐场景下，Murakkab可实现30%至45%的能耗降低，同时将平均响应时间缩短约40%。对于需要全天候运行的大规模AI服务而言，这种双重优化带来的经济效益相当可观。
-
-在用户体验层面，响应延迟的改善直接提升了交互流畅度。系统的动态调度能力使其能够更好地应对突发的流量峰值，避免因资源争抢导致的性能波动。
-
-#### 行业影响
-
-Murakkab的出现对AI基础设施市场具有示范意义。该系统展示了在算法层面进行深度优化的可行性，为行业提供了不依赖硬件升级的性能提升思路。预计这一技术路线将促使更多研发团队关注工作流层面的效率优化，而非单纯追求模型参数的规模扩张。
-
-对于云服务提供商而言，高能效的AI部署方案有助于满足日益严格的绿色计算要求，同时提升其在企业级市场的竞争力。
-
-#### 边界条件与实践建议
-
-系统优化效果存在一定的前提条件。当工作流包含大量串行依赖环节时，动态调度的优化空间会相应缩减。此外，对于实时性要求极高的超低延迟场景，当前系统架构可能仍需配合专用硬件才能达到性能目标。
-
-企业在采纳该技术时，建议分阶段实施：先在非关键业务场景中验证系统兼容性，再逐步扩展至核心业务系统。同时应建立完善的性能监控体系，以便及时发现和解决潜在的适配问题。
-
----
-## 学习要点
-
-- 请提供您希望总结的具体内容或文本，这样我才能为您提取出 5‑7 条关键要点。
-
----
-## 引用
-
-- **文章/节目**: [https://news.mit.edu/2026/improving-ai-agent-speed-and-energy-efficiency-0625](https://news.mit.edu/2026/improving-ai-agent-speed-and-energy-efficiency-0625)
-- **RSS 源**: [https://news.mit.edu/rss/topic/machine-learning](https://news.mit.edu/rss/topic/machine-learning)
-
-> 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
-
----
-
-## 站内链接
-
-- 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/)
-- 标签： [算子融合](/tags/%E7%AE%97%E5%AD%90%E8%9E%8D%E5%90%88/) / [任务调度](/tags/%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6/) / [依赖图分析](/tags/%E4%BE%9D%E8%B5%96%E5%9B%BE%E5%88%86%E6%9E%90/) / [动态功耗管理](/tags/%E5%8A%A8%E6%80%81%E5%8A%9F%E8%80%97%E7%AE%A1%E7%90%86/) / [AI 工作流](/tags/ai-%E5%B7%A5%E4%BD%9C%E6%B5%81/) / [资源感知](/tags/%E8%B5%84%E6%BA%90%E6%84%9F%E7%9F%A5/) / [云边协同](/tags/%E4%BA%91%E8%BE%B9%E5%8D%8F%E5%90%8C/) / [能效优化](/tags/%E8%83%BD%E6%95%88%E4%BC%98%E5%8C%96/)
-- 场景： [AI/ML项目](/scenarios/ai-ml%E9%A1%B9%E7%9B%AE/)
-
-### 相关文章
-
-- [Swann基于Amazon Bedrock在百万级IoT设备部署生成式AI]({{< relref "posts/20260211-blogs_podcasts-swann-provides-generative-ai-to-millions-of-iot-de-2.md" >}})
-- [🔥编译模型到Megakernels！揭秘AI性能飞跃的核心黑科技！]({{< relref "posts/20260126-hacker_news-compiling-models-to-megakernels-11.md" >}})
-- [RTX 3080 本地任务分类与调度系统]({{< relref "posts/20260206-hacker_news-show-hn-local-task-classifier-and-dispatcher-on-rt-15.md" >}})
-- [Codex与Playwright MCP协作实现前端自动化闭环]({{< relref "posts/20260305-juejin-价值1000的-ai-工作流codex-通用前端协作模式-1.md" >}})
-- [Codex与Playwright MCP构建前端自动化协作闭环]({{< relref "posts/20260305-juejin-价值1000的-ai-工作流codex-通用前端协作模式-1.md" >}})
-*本文由 AI Stack 自动生成，包含深度分析与方法论思考。*
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

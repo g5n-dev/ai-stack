@@ -1,14 +1,15 @@
 ---
-title: 2026年2月威胁报告：AI模型结合网站与社交平台的恶意利用及防御
+title: Disrupting malicious uses of AI
 date: 2026-02-25 17:32:41+08:00
 draft: false
 entry_kind: auto
-tags: []
+tags:
+- 博客与播客
 categories: []
-source: blogs_podcasts
-description: 历史条目已归档：现有正文未通过内容质量门，请查阅原始来源。
-external_url: https://openai.com/index/disrupting-malicious-ai-uses
 scenarios: []
+source: blogs_podcasts
+description: 当前只保存了公开页面节选，不代表原文全文。请以原始来源为准。
+external_url: https://openai.com/index/disrupting-malicious-ai-uses
 aliases:
 - /posts/20260225-blogs_podcasts-disrupting-malicious-uses-of-ai-february-2026-5/
 - /posts/20260225-blogs_podcasts-disrupting-malicious-uses-of-ai-february-2026-6/
@@ -17,20 +18,39 @@ aliases:
 - /posts/20260226-blogs_podcasts-disrupting-malicious-uses-of-ai-february-2026-11/
 - /posts/20260226-blogs_podcasts-disrupting-malicious-uses-of-ai-february-2026-8/
 - /posts/20260226-blogs_podcasts-disrupting-malicious-uses-of-ai-february-2026-9/
-content_mode: archived
-publication_tier: ARCHIVED
-source_provenance: legacy_no_snapshot
-source_support: 0.0
-archived: true
-archive_reason: historical_content_quality_gate
-build:
-  list: never
-  render: always
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: excerpt
+source_snapshot_sha256: sha256:8e905b1d7e05c461463d2d4d7e2179e5d912ae7c2a12fdc0e2c5fd6b0fb0c899
+extractor_version: source-contract-v1
+discovery_method: article_html_excerpt
+fetch_status: captured
+source_completeness: partial
+source_is_truncated: true
+source_support: 1.0
+source_title_chars_original: 31
+captured_at: '2026-07-18T04:17:39.400440Z'
+source_capture_sha256: sha256:3ad85f6865e0bd1d035c463bdc796e1f02a30dd0549dc0d75240a79cb5def9d8
+source_capture_chars_original: 941
+source_publication_excerpt_chars: 717
+source_truncation_reason: historical_publication_excerpt_limit
 ---
 
-## 历史条目归档说明
+## 基本信息
 
-该条目的历史正文未通过内容质量门，可能包含基于标题推测的内容。为避免继续传播不可核验文本，本站仅保留透明归档记录。
+- **来源**: blogs\_podcasts
+- **原始来源**: [https://openai.com/index/disrupting-malicious-ai-uses](<https://openai.com/index/disrupting-malicious-ai-uses>)
 
-- 历史内容质量门未通过
-- 原始来源：<https://openai.com/index/disrupting-malicious-ai-uses>
+## 来源摘要/节选
+
+公开展示已截断至最多 800 个字符；请访问原始来源查看完整上下文。
+
+> Our latest report featuring case studies of how we’re detecting and preventing malicious uses of AI.
+>
+> In the two years since we began publishing these threat reports, we have gained important insights into the ways threat actors attempt to abuse AI models. In particular, the case studies in this report, as in our earlier reports, illustrate how threat actors typically use AI in combination with other, more traditional tools such as websites and social media accounts. Threat activity is seldom limited to one platform; as our report on a Chinese influence operator shows, it is not always limited to one AI model. Rather, threat actors may use different AI models at various points in their operational workflow.…
+
+## 来源说明
+
+当前只保存了公开页面节选，不代表原文全文。请以原始来源为准。
+
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

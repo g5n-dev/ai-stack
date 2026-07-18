@@ -1,29 +1,50 @@
 ---
-title: 🤖抽屉打不开？揭秘零样本组合动作识别中的“物体捷径”！
+title: Why Can't I Open My Drawer? Mitigating Object-Driven Shortcuts in Zero-Shot
+  Compositional Action Recognition
 date: 2026-01-25 12:39:55+08:00
 draft: false
 entry_kind: auto
-tags: []
-categories: []
-source: arxiv
-external_url: http://arxiv.org/abs/2601.16211v1
+tags:
+- ArXiv
+categories:
+- 论文
 scenarios: []
+source: arxiv
+description: 当前只保存了官方论文摘要，不代表论文全文。请以原始来源为准。
+external_url: https://arxiv.org/abs/2601.16211v1
 aliases: []
-content_mode: archived
-publication_tier: ARCHIVED
-source_provenance: legacy_no_snapshot
-source_support: 0.0
-archived: true
-archive_reason: historical_content_quality_gate
-description: 历史条目已归档：现有正文未通过内容质量门，请查阅原始来源。
-build:
-  list: never
-  render: always
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: abstract
+source_snapshot_sha256: sha256:0b2c2d22e3c85facd560ced147c6983288f087f5c91846d6abb744661222a20b
+extractor_version: source-contract-v1
+discovery_method: arxiv_api
+fetch_status: captured
+source_completeness: abstract_only
+source_is_truncated: false
+source_support: 1.0
+source_title_chars_original: 108
+captured_at: '2026-07-18T04:08:56.487166Z'
+source_capture_sha256: sha256:24c67193026684e56d18e1162723d2e60abe8cf4bf5a7c74edf16495f4ab8192
+source_capture_chars_original: 1551
+source_publication_excerpt_chars: 1551
 ---
 
-## 历史条目归档说明
+## 基本信息
 
-该条目的历史正文未通过内容质量门，可能包含基于标题推测的内容。为避免继续传播不可核验文本，本站仅保留透明归档记录。
+- **来源**: arxiv
+- **原始来源**: [https://arxiv.org/abs/2601.16211v1](<https://arxiv.org/abs/2601.16211v1>)
+- **作者**: Geo Ahn, Inwoong Lee, Taeoh Kim, Minho Shim, Dongyoon Wee, Jinwoo Choi
+- **分类**: cs.CV
+- **论文时间**: 2026-01-22T18:59:13Z
+- **论文 PDF**: [https://arxiv.org/pdf/2601.16211v1.pdf](<https://arxiv.org/pdf/2601.16211v1.pdf>)
 
-- 历史内容质量门未通过
-- 原始来源：<http://arxiv.org/abs/2601.16211v1>
+## 来源摘要/节选
+
+> We study Compositional Video Understanding \(CVU\), where models must recognize verbs and objects and compose them to generalize to unseen combinations. We find that existing Zero-Shot Compositional Action Recognition \(ZS-CAR\) models fail primarily due to an overlooked failure mode: object-driven verb shortcuts. Through systematic analysis, we show that this behavior arises from two intertwined factors: severe sparsity and skewness of compositional supervision, and the asymmetric learning difficulty between verbs and objects. As training progresses, the existing ZS-CAR model increasingly ignores visual evidence and overfits to co-occurrence statistics. Consequently, the existing model does not gain the benefit of compositional recognition in unseen verb-object compositions. To address this, we propose RCORE, a simple and effective framework that enforces temporally grounded verb learning. RCORE introduces \(i\) a composition-aware augmentation that diversifies verb-object combinations without corrupting motion cues, and \(ii\) a temporal order regularization loss that penalizes shortcut behaviors by explicitly modeling temporal structure. Across two benchmarks, Sth-com and our newly constructed EK100-com, RCORE significantly improves unseen composition accuracy, reduces reliance on co-occurrence bias, and achieves consistently positive compositional gaps. Our findings reveal object-driven shortcuts as a critical limiting factor in ZS-CAR and demonstrate that addressing them is essential for robust compositional video understanding.
+
+## 来源说明
+
+当前只保存了官方论文摘要，不代表论文全文。请以原始来源为准。
+
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

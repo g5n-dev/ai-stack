@@ -38,6 +38,7 @@ class JuejinArticleCapture:
     plain_text: str
     heading_count: int
     code_block_count: int
+    title: str = ""
 
 
 def _article_id_from_url(value: str) -> str:
@@ -123,6 +124,18 @@ def extract_juejin_article_html(
     if not markdown or len(re.sub(r"\s+", "", markdown)) < minimum_text_chars:
         raise JuejinArticleAccessError("article_markdown_too_short")
 
+    title_node = (
+        article.select_one("h1.article-title")
+        or article.select_one("h1")
+        or soup.select_one('meta[property="og:title"]')
+        or soup.select_one("title")
+    )
+    source_title = ""
+    if title_node is not None:
+        source_title = " ".join(
+            str(title_node.get("content") or title_node.get_text(" ", strip=True)).split()
+        ).strip()
+
     return JuejinArticleCapture(
         article_id=expected,
         source_url=source_url,
@@ -130,6 +143,7 @@ def extract_juejin_article_html(
         plain_text=plain_text,
         heading_count=heading_count,
         code_block_count=code_block_count,
+        title=source_title,
     )
 
 

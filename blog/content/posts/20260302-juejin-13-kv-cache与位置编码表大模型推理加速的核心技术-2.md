@@ -1,178 +1,130 @@
 ---
-title: KV Cache与位置编码：大模型推理加速原理
+title: 13-KV Cache与位置编码表：大模型推理加速的核心技术
 date: 2026-03-02 05:21:09+08:00
 draft: false
 entry_kind: auto
 tags:
-- KV Cache
-- 位置编码
-- 推理加速
-- 自回归生成
-- LLM
-- 性能优化
-- Transformer
-- RoPE
-categories:
-- 大模型
-- AI 工程
+- 掘金
+categories: []
+scenarios: []
 source: juejin
-description: 大模型在文本生成时，自回归机制会带来显著的计算延迟，而 KV Cache 与位置编码正是解决这一性能瓶颈的关键技术。本文将深入剖析这两项技术如何通过缓存复用与位置信息管理，有效降低推理过程中的冗余计算。通过阅读，读者可以掌握优化模型推理速度的核心逻辑，为实际部署与调优打下基础。
+description: 当前只保存了公开页面节选，不代表原文全文。请以原始来源为准。
 external_url: https://juejin.cn/post/7612129754633011227
-scenarios:
-- 大语言模型
-content_mode: legacy_analysis
-publication_tier: LEGACY
-source_provenance: legacy_no_snapshot
-source_support: 0.0
+aliases: []
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: excerpt
+source_snapshot_sha256: sha256:e24e6f3a3b0b5d346aece9c4f34f57679a2228d2f9703a764d8cc87bc4245e09
+extractor_version: source-contract-v1
+discovery_method: article_html_excerpt
+fetch_status: captured
+source_completeness: partial
+source_is_truncated: true
+source_support: 1.0
+source_title_chars_original: 30
+captured_at: '2026-07-18T04:18:28.373533Z'
+source_capture_sha256: sha256:d34668e7f32f69231f400cb979f5db456a640ddd448ec867b18c8a8e9ff4c4d0
+source_capture_chars_original: 6000
+source_publication_excerpt_chars: 799
+source_truncation_reason: historical_excerpt_only,historical_publication_excerpt_limit
 ---
 
 ## 基本信息
 
-- **作者**: 树獭叔叔
-- **链接**: [https://juejin.cn/post/7612129754633011227](https://juejin.cn/post/7612129754633011227)
+- **来源**: juejin
+- **原始来源**: [https://juejin.cn/post/7612129754633011227](<https://juejin.cn/post/7612129754633011227>)
 
----
+## 来源摘要/节选
 
-## 导语
+公开展示已截断至最多 800 个字符；请访问原始来源查看完整上下文。
 
-大模型在文本生成时，自回归机制会带来显著的计算延迟，而 KV Cache 与位置编码正是解决这一性能瓶颈的关键技术。本文将深入剖析这两项技术如何通过缓存复用与位置信息管理，有效降低推理过程中的冗余计算。通过阅读，读者可以掌握优化模型推理速度的核心逻辑，为实际部署与调优打下基础。
+> 从自回归生成说起
+> 在前面的章节中，我们学习了大模型的核心原理：给定前面的Token序列，预测下一个Token。但是，当我们实际使用大模型进行文本生成时，会遇到一个严重的
+> 性能问题
+> 。
+> 自回归生成的过程
+> 假设我们要让模型生成一句话："今天天气真好"（5个Token）
+> 第1步
+> ：输入提示词"今天"
+> 输入序列：\["今天"\]（1个Token）
+> 模型计算注意力，输出：\["天气"\]
+> 第2步
+> ：继续生成
+> 输入序列：\["今天", "天气"\]（2个Token）
+> 模型
+> 重新
+> 计算这2个Token的注意力，输出：\["真"\]
+> 第3步
+> ：继续生成
+> 输入序列：\["今天", "天气", "真"\]（3个Token）
+> 模型
+> 重新
+> 计算这3个Token的注意力，输出：\["好"\]
+> 注意到问题了吗？
+> 每次生成新Token时，模型都要重新计算前面所有Token的注意力！
+> 重复计算的代价
+> 让我们用数学来量化这个问题。
+> 注意力计算回顾
+> 在注意力机制中，对于每个Token，我们需要计算：
+> Q
+> =
+> X
+> ⋅
+> W
+> Q
+> \(Query\)
+> K
+> =
+> X
+> ⋅
+> W
+> K
+> \(Key\)
+> V
+> =
+> X
+> ⋅
+> W
+> V
+> \(Value\)
+> Output
+> =
+> softmax
+> \(
+> Q
+> ⋅
+> K
+> T
+> d
+> k
+> \)
+> ⋅
+> V
+> \\begin\{aligned\}
+> Q &amp;= X \\cdot W\_Q \\quad \\text\{\(Query\)\} \\\\
+> K &amp;= X \\cdot W\_K \\quad \\text\{\(Key\)\} \\\\
+> V &amp;= X \\cdot W\_V \\quad \\text\{\(Value\)\} \\\\
+> \\text\{Output\} &amp;= \\text\{softmax\}\\left\(\\frac\{Q \\cdot K^T\}\{\\sqrt\{d\_k&#125;&#125;\\right\) \\cdot V
+> \\end\{aligned\}
+> Q
+> K
+> V
+> Output
+> ​
+> =
+> X
+> ⋅
+> W
+> Q
+> ​
+> \(Query\)
+> =
+> X
+> ⋅
+> W…
 
----
+## 来源说明
 
-## 描述
+当前只保存了公开页面节选，不代表原文全文。请以原始来源为准。
 
-从自回归生成说起 在前面的章节中，我们学习了大模型的核心原理：给定前面的Token序列，预测下一个Token。但是，当我们实际使用大模型进行文本生成时，会遇到一个严重的性能问题。 自回归生成的过程 假
-
----
-
-## 评论
-
-### 中心观点
-文章试图论证 KV Cache 与位置编码表是大模型推理加速的基石，其核心逻辑在于通过空间换时间减少冗余计算，并利用静态表结构规避动态位置编码的运算开销。
-
-### 支撑理由与边界条件分析
-
-**1. 计算冗余的消除（事实陈述 / 作者观点）**
-*   **支撑理由**：文章正确指出了自回归生成中“注意力机制”的 $O(N^2)$ 复杂度瓶颈。在推理阶段，KV Cache 通过缓存历史 Token 的 Key 和 Value 向量，将每一步生成的计算复杂度从“重新计算全序列”降低为“仅计算新 Token 与历史序列的交互”。这是目前所有主流推理框架（如 vLLM, TGI）的默认优化手段。
-*   **边界条件/反例**：KV Cache 并非万能。在 **长文本场景** 下，KV Cache 会带来巨大的显存压力（显存占用与序列长度成正比），可能导致显存溢出（OOM）。此时，业界通常采用 **PagedAttention（如 vLLM）** 或 **Multi-Query Attention (MQA)/Grouped-Query Attention (GQA)** 等技术来压缩 KV Cache 显存占用，而非简单的缓存。
-
-**2. 位置编码的静态化处理（作者观点 / 你的推断）**
-*   **支撑理由**：文章强调“位置编码表”的作用。在推理中，对于像 RoPE（旋转位置编码）这样的方案，虽然可以通过三角函数计算，但在特定硬件（如 GPU）上，预计算并查找或利用特定算子加速确实能减少延迟。
-*   **边界条件/反例**：这一观点略显陈旧或片面。现代主流大模型（如 Llama 2/3, Mistral）普遍采用 **RoPE（旋转位置编码）**。RoPE 是通过元素级运算动态融入位置信息的，并不存在一个传统的、巨大的“查找表”来存储位置 Embedding。如果文章过分强调“查表”，可能混淆了早期的 `Learned Absolute Embeddings`（如 BERT/GPT-3）与现代的 `RoPE` 机制。RoPE 的加速更多依赖于算子融合而非简单的查表。
-
-**3. 推理吞吐量的提升（事实陈述）**
-*   **支撑理由**：引入 KV Cache 后，推理吞吐量确实有数量级的提升。没有 KV Cache，生成长文本的时间将呈指数级增长。
-*   **边界条件/反例**：在 **Prefill（首句填充）阶段**，KV Cache 的构建本身也是巨大的显存带宽压力。对于高并发、短文本生成的场景（如聊天机器人），**Continuous Batching（连续批处理）** 和 **Speculative Decoding（投机采样）** 的优化效果往往比单纯的 KV Cache 更为关键。
-
-### 可验证的检查方式（指标与实验）
-
-为了验证文章观点的有效性及边界，建议进行以下检查：
-
-1.  **显存带宽利用率测试（Nvbandwidth 或 Nsight Systems）**：
-    *   *验证点*：开启与关闭 KV Cache，对比显存读写带宽。在长序列生成时，如果带宽打满，说明 KV Cache 的读写成为了瓶颈，验证了“空间换时间”带来的显存压力。
-
-2.  **算子融合对比**：
-    *   *验证点*：对比使用原生 PyTorch 实现的 Attention 与使用 FlashAttention（融合了 Attention 和 Softmax 及部分位置编码计算）的推理速度。如果 FlashAttention 快很多，说明单纯的“表”或简单缓存不如底层算子优化关键。
-
-3.  **位置编码机制验证**：
-    *   *验证点*：检查目标模型是否支持“外推”。如果文章强调的“位置编码表”不支持动态位置扩展，那么在处理超过训练长度的文本时，模型性能会断崖式下跌。这可以反向验证该技术方案的局限性。
-
-### 深入评价
-
-#### 1. 内容深度
-文章触及了推理加速的入门核心，但**深度不足**。
-*   **严谨性评价**：将 KV Cache 和位置编码表并列作为“核心技术”在逻辑上略显生硬。KV Cache 是架构层面的存储优化，而位置编码是模型结构设计的一部分。真正的推理加速核心技术，除了 KV Cache，更应包括 **FlashAttention（减少 HBM 访问）**、**KV Cache 量化（如 INT8/FP8 量化）** 以及 **投机采样**。文章若仅停留在“有 Cache 就快”的层面，未涉及 Cache 的 Page Management（页管理）或 Quantization（量化），则对于工程实践的指导较为有限。
-
-#### 2. 实用价值
-对于初学者理解“为什么大模型生成慢”有**中等价值**。
-*   **指导意义**：它解释了为什么显存大小通常限制了上下文长度，以及为什么推理需要高端 GPU（高显存带宽）。
-*   **局限性**：对于实际部署者，仅仅知道这两点是不够的。实际工作中，解决 KV Cache 碎片化、处理多轮对话中的位置编码越界问题才是痛点。
-
-#### 3. 创新性
-**无创新性**。KV Cache 是 Transformer 模型的标准配置，并非新观点。如果文章提出了某种新型 Cache 淘汰策略或位置编码插值算法，才具有创新性。目前的描述更像是教科书式的知识复述。
-
-#### 4. 可读性
-从摘要推测，文章采用了“从原理到问题再到方案”的逻辑结构，逻辑性较强。但需警惕术语
-
----
-
-## 学习要点
-
-- KV Cache 是大模型推理加速的核心技术，通过缓存历史 Token 的键值对避免了重复计算，从而显著降低显存访问压力并提升生成速度。
-- 位置编码表是 Transformer 架构中不可或缺的组件，用于为模型注入 Token 的顺序信息，使模型能够理解上下文的相对位置关系。
-- 在推理阶段，KV Cache 会随着上下文长度的增加而线性增长，因此显存管理（如 PagedAttention 算法）是长文本推理优化的关键。
-- 位置编码的实现方式（如 RoPE 旋转位置编码）直接影响模型处理“外推长度”的能力，决定了模型能否处理超出训练长度的文本。
-- 将高频访问的 KV Cache 和位置编码表常驻于 GPU 高速显存中，是减少 I/O 瓶颈、最大化推理吞吐量的必要手段。
-- 推理加速不仅依赖算法优化，还需要结合 FlashAttention 等底层算子对注意力计算进行并行化加速。
-
----
-
-## 常见问题
-
-### 什么是 KV Cache，它在大模型推理中起什么作用？
-
-KV Cache（键值缓存）是大模型推理加速中的一项核心技术。在 Transformer 架构的生成式模型中，模型采用自回归的方式进行预测，即每次生成一个新的 Token 都需要基于之前所有的 Token 序列。
-
-如果没有 KV Cache，每次生成新词时，模型都需要将之前的所有历史序列与当前的输入重新拼接，再次完整地通过神经网络进行计算。这种做法会导致巨大的计算冗余，因为历史序列的 Attention 计算结果在每一步其实是固定的。
-
-KV Cache 的作用是在推理过程中缓存历史序列在计算 Attention 时产生的 Key（键）和 Value（值）矩阵。当生成新 Token 时，只需将新 Token 的 Key 和 Value 与缓存中的历史 Key、Value 进行拼接，然后仅计算新 Token 与历史序列的 Attention 分数。这避免了历史序列的重复计算，从而显著降低了推理延迟，提高了生成速度。
-
-### 既然 KV Cache 能加速，为什么还会带来显存瓶颈？
-
-虽然 KV Cache 极大地减少了计算量，但它是以牺牲显存为代价的。在推理过程中，KV Cache 需要存储每一个已生成 Token 的 Key 和 Value 向量。
-
-显存瓶颈主要由以下两个因素导致：
-1.  **上下文长度与 Batch Size**：随着对话上下文变长或并发请求增加，需要缓存的 Token 数量呈线性增长。对于 GPT-3 或 Llama 2 等大模型，每个 Token 的 KV 数据量较大（取决于隐藏层维度和层数），长序列下 KV Cache 可能占用数 GB 甚至数十 GB 的显存。
-2.  **显存带宽限制**：在自回归生成中，每一步都需要从显存中读取整个 KV Cache 来计算 Attention。当 KV Cache 体积过大，超过了 GPU 片上缓存（如 SRAM）的容量时，数据需要反复从高带宽显存（HBM）搬运，这种数据搬运的延迟往往会超过实际计算的延迟，从而成为推理速度的瓶颈。
-
-### 什么是位置编码表？为什么在 KV Cache 机制下处理位置编码比较棘手？
-
-位置编码用于给 Transformer 模型输入中的 Token 注入位置信息，因为模型本身不具备感知顺序的能力。
-
-在 KV Cache 推理场景下，位置编码的处理变得复杂，主要原因在于“相对位置”的维护。当使用 KV Cache 时，模型是在动态地处理序列。对于某些绝对位置编码（如 Alibi、RoPE 等），在计算 Attention 分数时，需要知道当前 Token 与历史缓存中所有 Token 的相对距离。
-
-如果仅仅是将 KV 向量简单拼接，而没有正确处理位置索引或位置编码的数学计算，模型就无法准确判断当前生成词在全文中的位置，从而导致生成结果乱码或逻辑错误。因此，在推理加速框架中，必须精确管理位置编码表，确保在增量计算时，位置偏移量是连续且正确的。
-
-### 什么是 PagedAttention（如 vLLM 中使用的技术），它如何解决 KV Cache 的管理问题？
-
-PagedAttention 是受操作系统虚拟内存中分页管理启发的技术，主要用于解决 KV Cache 显存管理碎片化和浪费的问题。
-
-在传统推理中，系统必须为每个请求预先连续分配一段显存空间来存储 KV Cache。如果请求生成的长度超过了预留空间，就需要重新分配并拷贝数据，极其低效；而如果预留过大，又会浪费显存导致并发量降低。
-
-PagedAttention 将 KV Cache 切分成固定的“块”，类似于内存中的“页”。这些块不需要在显存中连续存储，可以像链表一样通过指针连接。
-1.  **高效利用**：当生成序列变长时，只需动态分配新的 Block，无需拷贝旧数据。
-2.  **共享内存**：对于并行解码或系统提示词相同的请求，多个请求可以共享同一个 KV Cache Block，极大节省了显存，从而允许更大的 Batch Size 和更长的上下文长度。
-
-### 常见的 KV Cache 量化技术有哪些？它们是如何工作的？
-
-为了缓解 KV Cache 占用显存过大的问题，量化技术被广泛应用。常见的量化方法包括 8-bit (FP8/INT8) 和 4-bit (INT4) 量化。
-
-其工作原理通常是将计算精度较高的 Key 和 Value 矩阵（通常是 FP16 或 BF16）转换为低比特格式存储：
-1.  **静态量化**：在推理前根据校准数据集确定好量化参数，推理过程中直接量化。这种方法实现简单，但可能对极端情况不够鲁棒。
-2.  **动态量化**：在推理过程中，根据当前张量的最大值和最小值动态计算量化参数。虽然每一步多了一点计算开销，但能更好地保持精度。
-
-通过量化，KV Cache 的显存占用可以减半（8-bit）甚至减少 75%（4-bit）。这不仅节省了显存，更重要的是减少了显存读写带宽的压力，从而在牺牲极少精度的情况下大幅提升推理吞吐量。
-
----
-
-## 引用
-
-- **掘金原文**: [https://juejin.cn/post/7612129754633011227](https://juejin.cn/post/7612129754633011227)
-
-> 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
-
----
-
-## 站内链接
-
-- 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)
-- 标签： [KV Cache](/tags/kv-cache/) / [位置编码](/tags/%E4%BD%8D%E7%BD%AE%E7%BC%96%E7%A0%81/) / [推理加速](/tags/%E6%8E%A8%E7%90%86%E5%8A%A0%E9%80%9F/) / [自回归生成](/tags/%E8%87%AA%E5%9B%9E%E5%BD%92%E7%94%9F%E6%88%90/) / [LLM](/tags/llm/) / [性能优化](/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/) / [Transformer](/tags/transformer/) / [RoPE](/tags/rope/)
-- 场景： [大语言模型](/scenarios/%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/)
-
-### 相关文章
-
-- [两种提升大模型推理速度的技术方法]({{< relref "posts/20260215-hacker_news-two-different-tricks-for-fast-llm-inference-2.md" >}})
-- [两种加速大模型推理的技术方法]({{< relref "posts/20260215-hacker_news-two-different-tricks-for-fast-llm-inference-2.md" >}})
-- [两种提升大模型推理速度的技术方法]({{< relref "posts/20260215-hacker_news-two-different-tricks-for-fast-llm-inference-2.md" >}})
-- [LLM上下文学习机制与性能优化指南]({{< relref "posts/20260218-hacker_news-if-youre-an-llm-please-read-this-2.md" >}})
-- [利用注意力匹配加速 KV 缓存压缩]({{< relref "posts/20260220-hacker_news-fast-kv-compaction-via-attention-matching-19.md" >}})
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

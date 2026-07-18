@@ -1,121 +1,99 @@
 ---
-title: LLM工具选择：三个实验揭示描述质量与异常处理的影响
+title: Agent 系列（16）：工具链设计——让 LLM 用对工具的五个原则
 date: 2026-06-08 23:04:00+08:00
 draft: false
 entry_kind: auto
 tags:
-- LLM
-- Agent
-- 工具设计
-- 工具选择
-- 异常处理
-- 描述质量
-- 提示词工程
-- 对比实验
+- 掘金
+- AI Agent
+- 大语言模型
+- 数据库
 categories:
 - 大模型
-- AI 工程
-source: juejin
-description: 在构建 LLM Agent 时，工具的设计本质是为模型服务，如何让模型精准选择并正确使用工具，直接决定系统的可靠性与任务完成率。本文通过三组对比实验，揭示描述质量、异常处理和粒度设计等关键因素对工具调用的影响，并提炼出五条可落地的设计原则，帮助开发者在实际项目中快速提升工具链表现。
-external_url: https://juejin.cn/post/7649040940744605759
+- 数据
 scenarios:
+- AI/ML项目
 - 大语言模型
-content_mode: legacy_analysis
-publication_tier: LEGACY
-source_provenance: legacy_no_snapshot
-source_support: 0.0
+source: juejin
+description: 当前只保存了公开页面节选，不代表原文全文。请以原始来源为准。
+external_url: https://juejin.cn/post/7649040940744605759
+aliases: []
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: excerpt
+source_snapshot_sha256: sha256:e1c3132429029d63c59164e30072dbe3523ce4f5879f0fe9d0270359112a5064
+extractor_version: source-contract-v1
+discovery_method: article_html_excerpt
+fetch_status: captured
+source_completeness: partial
+source_is_truncated: true
+source_support: 1.0
+source_title_chars_original: 35
+captured_at: '2026-07-18T04:21:37.672853Z'
+source_capture_sha256: sha256:d7ba7cd6ebfa0d325bf43db23636747acbfd9fe4aa9d618b5909fd2b18904609
+source_capture_chars_original: 5821
+source_publication_excerpt_chars: 673
+source_truncation_reason: historical_excerpt_only,historical_publication_excerpt_limit
 ---
 
 ## 基本信息
 
-- **作者**: 冬奇Lab
-- **链接**: [https://juejin.cn/post/7649040940744605759](https://juejin.cn/post/7649040940744605759)
+- **来源**: juejin
+- **原始来源**: [https://juejin.cn/post/7649040940744605759](<https://juejin.cn/post/7649040940744605759>)
 
----
-## 导语
+## 来源摘要/节选
 
-在构建 LLM Agent 时，工具的设计本质是为模型服务，如何让模型精准选择并正确使用工具，直接决定系统的可靠性与任务完成率。本文通过三组对比实验，揭示描述质量、异常处理和粒度设计等关键因素对工具调用的影响，并提炼出五条可落地的设计原则，帮助开发者在实际项目中快速提升工具链表现。
+公开展示已截断至最多 800 个字符；请访问原始来源查看完整上下文。
 
----
-## 描述
+> 工具文档是写给 LLM 的，不是写给人的
+> 你有没有写过这样的工具文档：
+> @lc\_tool
+> def
+> get\_data
+> \(
+> query:
+> str
+> \) -&gt;
+> str
+> :
+> """Get data."""
+> ...
+> 这对人类来说是糟糕的文档，对 LLM 来说更糟——它不知道这个工具做什么、什么时候调它、传什么参数。
+> 工具设计有三条核心维度：
+> 描述质量（LLM 选不选你）、错误处理（出错时崩不崩）、粒度设计（参数好不好提取）
+> 。本文用实验数据说话。
+> Demo 1：描述质量——真正影响工具选择的条件
+> 对比同一个天气工具的两个版本：
+> # 版本 A：模糊
+> @lc\_tool
+> def
+> weather\_vague
+> \(
+> city:
+> str
+> \) -&gt;
+> str
+> :
+> """Get data."""
+> ...
+> # 版本 B：精准
+> @lc\_tool
+> def
+> weather\_precise
+> \(
+> city:
+> str
+> \) -&gt;
+> str
+> :
+> """Get current weather for a city.
+>
+>     Returns temperature \(Celsius\) and condition \(sunny / cloudy / rainy / unknown\).
+>     Use this whenever the user asks about weather, temperature, or sky conditions
+>     for a specific city. Pass the city name as a plain string, e.g.…
 
-工具设计不是给人看的，是给 LLM 看的。本文用三个对比实验覆盖工具设计的核心原则：描述质量影响工具选择（但有反直觉的前提条件）、raise 异常 vs 返回错误字符串的实测差异、以及粗粒度 omni
+## 来源说明
 
----
-## 摘要
+当前只保存了公开页面节选，不代表原文全文。请以原始来源为准。
 
-#### 描述质量与工具选择
-工具的描述是 LLM 判断“该不该调用”的关键信号。实验表明，描述越准确、关键词越贴合任务，工具被选中的概率越高。但存在反直觉的前提：**只有在 LLM 已具备足够上下文且描述不产生歧义时，高质量描述才能提升选择**；若描述中混入相似词或缺少前置条件，反而会导致误选。
-
-#### 错误处理：异常 vs 错误字符串
-在工具返回错误时，使用 `raise` 抛出异常比返回错误字符串（如 `error_msg: "..."`）更能帮助 LLM 正确恢复。实验数据显示，异常捕获率提升约 15%，且 LLM 能更快进入错误处理分支，而错误字符串常被当作普通返回值处理，导致后续逻辑错乱。
-
-#### 粒度设计：粗粒度 Omni 工具的优势
-将功能相近的多个子操作封装为**Omni 工具**（粗粒度）可显著降低调用次数和上下文累积。实验发现，适度的 Omni 粒度（每个工具覆盖 2‑4 个相关操作）在保持可组合性的同时，使整体任务完成率提升约 20%。但粒度过粗会导致 LLM 对工具内部分支的推理成本上升，需在覆盖范围与实现复杂度间做平衡。
-
-#### 五大设计原则概览
-1. **描述精准且上下文匹配**：关键词要直接映射任务需求，避免歧义。
-2. **参数命名统一且自解释**：统一风格（如驼峰或下划线），使用业务术语。
-3. **错误统一采用异常机制**：让 LLM 通过捕获异常来感知错误，提升恢复能力。
-4. **适度粒度与 Omni 封装**：在功能相似且调用频繁的场景下，使用粗粒度工具减少调用频次。
-5. **可组合性与可观测性**：工具间保持清晰的输入输出契约，并在日志中标注调用结果，便于 LLM 后续推理。
-
-遵循这些原则，可让 LLM 在复杂工具链中更可靠地“选对、用对、管好”工具，从而提升整体系统的鲁棒性与执行效率。
-
----
-## 评论
-
-#### 中心观点
-
-本文揭示了工具设计中的“AI优先”思维转变：工具的价值不再取决于人类的可读性，而在于能否被LLM准确理解和正确调用。这一原则看似直白，却在工程实践中频繁被忽视。
-
-#### 支撑理由
-
-从实验数据来看，描述质量对工具选择的影响并非线性关系。作者通过对照实验发现，当工具描述与实际功能存在语义模糊时，LLM的选错率显著上升。更值得关注的是“反直觉的前提条件”——过于详细的描述反而可能干扰LLM的判断，这说明描述的精准度比信息量更重要。
-
-在异常处理层面，raise异常与返回错误字符串的实测差异具有实际工程意义。作者指出，结构化的异常抛出会被LLM更一致地识别和处理，而字符串错误则可能被误解为正常返回值。这与传统的API设计习惯形成张力——很多现有工具在设计时并未考虑AI调用场景。
-
-粗粒度omni工具的讨论则指向一个权衡问题：单一复杂工具减少了调用次数，但增加了单次执行的风险；细粒度工具组合提供了更多灵活性，却要求LLM具备更强的编排能力。
-
-#### 边界条件
-
-上述结论的适用性存在边界。首先，它依赖于特定的LLM版本和能力水平，不同模型对工具描述的解析能力存在差异。其次，当工具数量从十几个扩展到上百个时，描述质量的影响力可能让位于元数据结构和检索机制。第三，在多智能体协作场景中，工具设计还需考虑跨agent的一致性理解问题。
-
-#### 实践启发
-
-对于工具开发者而言，最直接的启发是建立“AI可读性”审查环节，而非仅依赖人类的代码审查。同时，异常处理的规范化应成为工具链设计的前置要求。在行业层面，随着工具生态的膨胀，工具描述的标准化和版本管理可能成为新的基础设施需求。
-
----
-## 学习要点
-
-- 要点一（最重要）：每个工具只负责单一职责，降低 LLM 的选择难度并提升可靠性。
-- 要点二：提供清晰、结构化的工具描述（包括功能、输入输出和适用场景），帮助 LLM 精准匹配。
-- 要点三：统一工具的调用接口与数据格式，采用标准化的 JSON Schema，减少解析错误和调用成本。
-- 要点四：实现完善的错误捕获、回退与重试机制，保证链路在异常情况下能够优雅降级。
-- 要点五：加入可观测性（日志、追踪和监控），便于调试、分析性能并持续优化工具链。
-- 要点六：采用模块化、可插拔的架构设计，便于快速扩展新工具或替换已有实现，提升系统灵活性。
-- 要点七（可选）：强化安全与权限控制，确保 LLM 只能调用授权工具，防止误用或恶意攻击。
-
----
-## 引用
-
-- **掘金原文**: [https://juejin.cn/post/7649040940744605759](https://juejin.cn/post/7649040940744605759)
-
-> 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
-
----
-
-## 站内链接
-
-- 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)
-- 标签： [LLM](/tags/llm/) / [Agent](/tags/agent/) / [工具设计](/tags/%E5%B7%A5%E5%85%B7%E8%AE%BE%E8%AE%A1/) / [工具选择](/tags/%E5%B7%A5%E5%85%B7%E9%80%89%E6%8B%A9/) / [异常处理](/tags/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/) / [描述质量](/tags/%E6%8F%8F%E8%BF%B0%E8%B4%A8%E9%87%8F/) / [提示词工程](/tags/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B/) / [对比实验](/tags/%E5%AF%B9%E6%AF%94%E5%AE%9E%E9%AA%8C/)
-- 场景： [大语言模型](/scenarios/%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/)
-
-### 相关文章
-
-- [零基础学 Agent ：拆解一个 Agent 的「零件清单」——8 个模块逐一讲透 第 2 期]({{< relref "posts/20260317-juejin-零基础学-agent-拆解一个-agent-的零件清单8-个模块逐一讲透-第-2-期-2.md" >}})
-- [AI工程争议：Harness Engineering是否成立]({{< relref "posts/20260305-blogs_podcasts-ainews-is-harness-engineering-real-0.md" >}})
-- [揭秘Codex Agent循环！🚀 智能体核心逻辑全解析！]({{< relref "posts/20260125-blogs_podcasts-unrolling-the-codex-agent-loop-1.md" >}})
-- [揭秘 Codex Agent 智能循环！🤖 AI自动化新范式？]({{< relref "posts/20260125-blogs_podcasts-unrolling-the-codex-agent-loop-1.md" >}})
-- [揭秘Codex Agent核心循环！🔥智能编程的终极引擎！🤖✨]({{< relref "posts/20260125-blogs_podcasts-unrolling-the-codex-agent-loop-1.md" >}})
-*本文由 AI Stack 自动生成，提供深度内容分析。*
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

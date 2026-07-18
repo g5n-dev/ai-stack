@@ -1,41 +1,44 @@
 ---
-title: 研究称小丑妆容可干扰面部识别技术
+title: Juggalo makeup blocks facial recognition technology (2019)
 date: 2026-03-20 04:08:49+08:00
 draft: false
 entry_kind: auto
 tags:
-- 面部识别
-- 小丑妆容
-- 人工智能
-- 安全
-- 隐私
-- 对抗样本
-- 研究
-- 防骗
-categories:
-- 安全
-- AI 工程
+- Hacker News
+categories: []
+scenarios: []
 source: hacker_news
-description: 在面部识别技术广泛渗透日常生活的当下，Juggalo族群的夸张彩妆意外成为天然的“伪装层”。研究表明，这种以对称图案和浓重油彩为主的装扮，能够显著降低主流算法的识别准确率。对安全研究者而言，这一现象揭示了对抗性化妆在隐私保护中的潜力，也为评估算法的鲁棒性提供了真实案例。
+description: 当前只保存了来源元数据，未抓取外链全文。请以原始来源和 Hacker News 讨论为准。
 external_url: https://consequence.net/2019/07/juggalo-makeup-facial-recognition
-scenarios:
-- Web应用开发
-content_mode: legacy_source_brief
+aliases: []
+content_mode: source_brief
 publication_tier: C
-source_provenance: legacy_no_snapshot
-source_support: 0.0
+source_capture_mode: metadata_only
+source_snapshot_sha256: sha256:2bfca2e6cd0ba1e2b74905c3d73b05d5bb8d39df5d40b204c88e4e64d29f92f7
+extractor_version: source-contract-v1
+discovery_method: api_metadata
+fetch_status: captured
+source_completeness: metadata_only
+source_is_truncated: false
+source_support: 1.0
+source_title_chars_original: 58
+captured_at: '2026-07-18T04:19:26.167849Z'
+source_capture_sha256: sha256:d4e5961f04d7355cbff951c6b82e04bd50eaf18f2bae3f9f8cb2283875edf345
+source_capture_chars_original: 58
+source_publication_excerpt_chars: 58
 ---
 
 ## 基本信息
 
+- **来源**: hacker\_news
+- **原始来源**: [https://consequence.net/2019/07/juggalo-makeup-facial-recognition](<https://consequence.net/2019/07/juggalo-makeup-facial-recognition>)
 - **作者**: speckx
-- **评分**: 224
-- **评论数**: 140
-- **链接**: [https://consequence.net/2019/07/juggalo-makeup-facial-recognition](https://consequence.net/2019/07/juggalo-makeup-facial-recognition)
-- **HN 讨论**: [https://news.ycombinator.com/item?id=47438675](https://news.ycombinator.com/item?id=47438675)
+- **评分**: 263
+- **评论数**: 155
+- **HN 讨论**: [https://news.ycombinator.com/item?id=47438675](<https://news.ycombinator.com/item?id=47438675>)
 
----
+## 来源说明
 
-## 导语
+当前只保存了来源元数据，未抓取外链全文。请以原始来源和 Hacker News 讨论为准。
 
-在面部识别技术广泛渗透日常生活的当下，Juggalo族群的夸张彩妆意外成为天然的“伪装层”。研究表明，这种以对称图案和浓重油彩为主的装扮，能够显著降低主流算法的识别准确率。对安全研究者而言，这一现象揭示了对抗性化妆在隐私保护中的潜力，也为评估算法的鲁棒性提供了真实案例。
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

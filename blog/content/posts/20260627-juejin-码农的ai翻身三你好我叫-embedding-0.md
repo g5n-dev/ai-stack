@@ -1,94 +1,157 @@
 ---
-title: Embedding是什么：AI从死记硬背到真正理解
+title: 码农的AI翻身（三）你好，我叫 Embedding
 date: 2026-06-27 22:26:00+08:00
 draft: false
 entry_kind: auto
 tags:
-- Embedding
-- 向量
-- 词向量
-- 语义理解
-- 语义搜索
-- 机器学习
-- 自然语言处理
-- 技术科普
+- 掘金
+- Java
+- 数据库
 categories:
-- 大模型
-- AI 工程
+- 数据
+scenarios: []
 source: juejin
-description: 在AI领域，Embedding是一个常被忽视却至关重要的概念。它本质上是将文字、图像等原始数据转化为计算机能够处理的数值向量，让机器不再依赖简单的关键词匹配，而是真正理解语义之间的关系。对于技术从业者而言，掌握Embedding不仅有助于理解大语言模型的工作原理，也能为后续的向量数据库应用和RAG系统开发奠定基础。
+description: 当前只保存了公开页面节选，不代表原文全文。请以原始来源为准。
 external_url: https://juejin.cn/post/7655530849447575562
-scenarios:
-- Web应用开发
-content_mode: legacy_analysis
-publication_tier: LEGACY
-source_provenance: legacy_no_snapshot
-source_support: 0.0
+aliases: []
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: excerpt
+source_snapshot_sha256: sha256:ea5b32e3d73e7f38eb77788aed3be27cb16ed17ac142bc2426aebcce6af2437e
+extractor_version: source-contract-v1
+discovery_method: article_html_excerpt
+fetch_status: captured
+source_completeness: partial
+source_is_truncated: true
+source_support: 1.0
+source_title_chars_original: 25
+captured_at: '2026-07-18T04:21:46.726315Z'
+source_capture_sha256: sha256:ddb0d4c716bbe9ade4b2c179b39d637d314806f00314a5bbf18b9542b445f070
+source_capture_chars_original: 1750
+source_publication_excerpt_chars: 782
+source_truncation_reason: historical_excerpt_only,historical_publication_excerpt_limit
 ---
 
 ## 基本信息
 
-- **作者**: Kfaino
-- **链接**: [https://juejin.cn/post/7655530849447575562](https://juejin.cn/post/7655530849447575562)
+- **来源**: juejin
+- **原始来源**: [https://juejin.cn/post/7655530849447575562](<https://juejin.cn/post/7655530849447575562>)
 
----
-## 导语
+## 来源摘要/节选
 
-在AI领域，Embedding是一个常被忽视却至关重要的概念。它本质上是将文字、图像等原始数据转化为计算机能够处理的数值向量，让机器不再依赖简单的关键词匹配，而是真正理解语义之间的关系。对于技术从业者而言，掌握Embedding不仅有助于理解大语言模型的工作原理，也能为后续的向量数据库应用和RAG系统开发奠定基础。
+公开展示已截断至最多 800 个字符；请访问原始来源查看完整上下文。
 
+> AI翻身（三）
+> 你好，我叫 Embedding——AI终于学会了理解，而不是死记硬背
+> 大家好。
+> 我叫
+> Embedding
+> 。
+> 有人叫我：
+> 向量。
+> 有人叫我：
+> 词向量。
+> 还有人喜欢给我起一个特别高大上的名字：
+> 语义空间映射。
+> 听起来很厉害。
+> 其实。
+> 我就是一个翻译。
+> 不过。
+> 我翻译的不是中文和英文。
+> 我翻译的是：
+> 文字和数学。
+> 我第一次见到老板的时候
+> 老板（Transformer）对我说：
+> "以后，人类说什么，你负责翻译。"
+> 我愣住了。
+> "我不会中文啊。"
+> 老板笑了。
+> "没关系。"
+> "我也不会。"
+> AI其实是个文盲
+> 很多人以为。
+> ChatGPT每天都在看文字。
+> 其实。
+> 它从来没有见过一个字。
+> 它眼里只有数字。
+> 比如。
+> "猫"
+> 在AI眼里。
+> 可能是：
+> 0.183
+> -0.924
+> 0.772
+> ...
+> 1536个数字
+> "小猫"
+> 又变成另一串数字。
+> "Java"
+> 也是。
+> "Spring Boot"
+> 也是。
+> 整个互联网。
+> 最后都会变成：
+> 一串一串数字。
+> 老板最喜欢数字。
+> 因为。
+> GPU只会算数字。
+> 不会认字。
+> 我为什么会出生？
+> 早些年。
+> AI特别笨。
+> 有人问：
+> 北京是中国的首都。
+> 再问：
+> 中国首都是哪里？
+> AI居然不知道。
+> 因为。
+> 两句话完全不同。
+> 后来。
+> 程序员终于发现。
+> AI不是不会回答。
+> 它只是：
+> 不会理解意思。
+> 于是。
+> 他们把我造出来了。
+> 我的工作只有一句话：
+> 意思一样，就站近一点。
+> 我的世界，没有文字
+> 假设。
+> 这里有四个词。
+> 猫
+>
+> 小猫
+>
+> 狗
+>
+> Java
+> 以前。
+> AI看到的是：
+> 猫 ≠ 小猫
+>
+> 小猫 ≠ 狗
+>
+> 狗 ≠ Java
+> 全部不同。
+> 没有任何关系。
+> 我来了以后。
+> 事情变了。
+> 我把它们放进一个巨大的空间。
+> 狗
+> 小猫
+> 猫
+> Java
+> 突然。
+> 老板发现：
+> 猫和小猫离得很近。
+> 狗也不远。
+> Java跑到了另外一个世界。
+> 原来。
+> 距离。
+> 就是意思。…
 
-## 摘要
+## 来源说明
 
-Embedding（向量）是把离散的符号（如单词、图像特征等）映射到连续向量空间的技术。通过学习，语义相近的符号在向量空间中距离更近，从而让AI能够“理解”而非死记硬背。相比稀疏的独热编码，Embedding 能捕捉潜在的语义关联，广泛用于词向量、句子向量、物品向量等。常见的训练方法包括 Word2Vec、GloVe、BERT 等模型。实际应用中，Embedding 支撑文本相似度计算、推荐系统、语义搜索、情感分析等任务，使开发者能够在不显式编写规则的情况下实现智能化功能。
+当前只保存了公开页面节选，不代表原文全文。请以原始来源为准。
 
----
-## 评论
-
-#### 中心观点
-
-Embedding技术的出现，标志着AI从“机械匹配”走向“语义理解”的关键转折。对于码农而言，掌握Embedding不仅是技术栈的扩展，更是把握AI应用主线的核心能力。
-
-#### 事实陈述
-
-传统NLP方法依赖词表匹配和手工规则，处理语言的方式本质上是“查表”。Embedding将文本、图像、音频等原始数据映射到连续的向量空间，使得语义相似的内容在向量层面产生几何关联。Word2Vec、BERT、CLIP等模型均基于这一范式。向量数据库（如Pinecone、Milvus）在检索场景的广泛应用，验证了Embedding从实验室走向工业部署的成熟度。
-
-#### 作者观点
-
-文章强调Embedding让AI“学会理解”，而非“死记硬背”，这一判断成立。向量表示保留了语义关联的不对称性和传递性，使得AI能够捕捉“国王-男人+女人≈女王”这类抽象关系。码农若仅停留在调用API层面，将错失对底层机制的认知。
-
-#### 边界条件
-
-需注意Embedding并非万能。向量表示的质量高度依赖训练数据的分布和规模；特定垂直领域的术语和语义可能未被充分覆盖；实时性要求极高的场景下，高维向量计算的算力成本不容忽视。此外，向量检索的精确度与召回率之间存在天然权衡。
-
-#### 实践启发
-
-从职业角度看，建议码农从三个层次切入：理解向量化的基本原理，能够根据业务场景选择合适的Embedding模型；掌握向量数据库的集成方法，在RAG、知识库等场景中落地实践；关注多模态Embedding的发展，将文本、图像的语义统一到同一空间。三级标题的使用应服务于逻辑分层，避免形式主义。
-
----
-## 学习要点
-
-- 请提供文章的具体内容或主要段落，我将据此为您总结关键要点。
-
----
-## 引用
-
-- **掘金原文**: [https://juejin.cn/post/7655530849447575562](https://juejin.cn/post/7655530849447575562)
-
-> 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
-
----
-
-## 站内链接
-
-- 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)
-- 标签： [Embedding](/tags/embedding/) / [向量](/tags/%E5%90%91%E9%87%8F/) / [词向量](/tags/%E8%AF%8D%E5%90%91%E9%87%8F/) / [语义理解](/tags/%E8%AF%AD%E4%B9%89%E7%90%86%E8%A7%A3/) / [语义搜索](/tags/%E8%AF%AD%E4%B9%89%E6%90%9C%E7%B4%A2/) / [机器学习](/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/) / [自然语言处理](/tags/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/) / [技术科普](/tags/%E6%8A%80%E6%9C%AF%E7%A7%91%E6%99%AE/)
-- 场景： [Web应用开发](/scenarios/web%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/)
-
-### 相关文章
-
-- [LLM生成文本检测：原理、方法与技术挑战]({{< relref "posts/20260301-hacker_news-the-science-of-detecting-llm-generated-text-19.md" >}})
-- [LLM中的L代表谎言：大语言模型的幻觉问题分析]({{< relref "posts/20260305-hacker_news-the-l-in-llm-stands-for-lying-9.md" >}})
-- [AI大模型入门：Embedding原理与向量数据库应用]({{< relref "posts/20260305-juejin-ai大模型小白手册embedding-与向量数据库-0.md" >}})
-- [AI大模型指南：Embedding技术与向量数据库原理]({{< relref "posts/20260305-juejin-ai大模型小白手册embedding-与向量数据库-0.md" >}})
-- [构建多模态视频搜索系统：基于Amazon Nova与OpenSearch]({{< relref "posts/20260312-blogs_podcasts-multimodal-embeddings-at-scale-ai-data-lake-for-me-0.md" >}})
-*本文由 AI Stack 自动生成，提供深度内容分析。*
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

@@ -1,31 +1,56 @@
 ---
-title: OpenAI 成立 Frontier 联盟：携手合作伙伴，护航企业智能体安全落地
+title: Introducing Frontier Alliances
 date: 2026-02-23 22:40:51+08:00
 draft: false
 entry_kind: auto
-tags: []
-categories: []
+tags:
+- 博客与播客
+- AI Agent
+categories:
+- AI 工程
+scenarios:
+- AI/ML项目
 source: blogs_podcasts
-description: 历史条目已归档：现有正文未通过内容质量门，请查阅原始来源。
+description: 当前只保存了公开页面节选，不代表原文全文。请以原始来源为准。
 external_url: https://openai.com/index/frontier-alliance-partners
-scenarios: []
 aliases:
 - /posts/20260224-blogs_podcasts-openai-announces-frontier-alliance-partners-12/
 - /posts/20260224-blogs_podcasts-openai-announces-frontier-alliance-partners-8/
-content_mode: archived
-publication_tier: ARCHIVED
-source_provenance: legacy_no_snapshot
-source_support: 0.0
-archived: true
-archive_reason: historical_content_quality_gate
-build:
-  list: never
-  render: always
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: excerpt
+source_snapshot_sha256: sha256:7ff920c3e912d4c82c73726dfc5eb07afa5447b0050549a3b97f1ceccc167c1e
+extractor_version: source-contract-v1
+discovery_method: article_html_excerpt
+fetch_status: captured
+source_completeness: partial
+source_is_truncated: true
+source_support: 1.0
+source_title_chars_original: 30
+captured_at: '2026-07-18T04:17:34.619867Z'
+source_capture_sha256: sha256:e104ff651832f5fafaafaee02e0a3ed7deb15a70ce4b4f31c7047b5821c73acf
+source_capture_chars_original: 4769
+source_publication_excerpt_chars: 744
+source_truncation_reason: historical_publication_excerpt_limit
 ---
 
-## 历史条目归档说明
+## 基本信息
 
-该条目的历史正文未通过内容质量门，可能包含基于标题推测的内容。为避免继续传播不可核验文本，本站仅保留透明归档记录。
+- **来源**: blogs\_podcasts
+- **原始来源**: [https://openai.com/index/frontier-alliance-partners](<https://openai.com/index/frontier-alliance-partners>)
 
-- 历史内容质量门未通过
-- 原始来源：<https://openai.com/index/frontier-alliance-partners>
+## 来源摘要/节选
+
+公开展示已截断至最多 800 个字符；请访问原始来源查看完整上下文。
+
+> The limiting factor for seeing value from AI in enterprises isn’t model intelligence, it’s how agents are built and run in their organizations. We recently introduced Frontier ⁠ , our platform for building, deploying, and managing AI coworkers that can do real work across the enterprise. For example, an AI coworker that resolves a customer issue end-to-end by pulling context from the CRM, checking policies, filing the update, and escalating only when needed.
+>
+> Frontier provides the technical foundation. But making real impact with AI also requires leadership alignment, workflow redesign, integration across systems and data, as well as the kind of change management that drives adoption.
+>
+> Today, we’re announcing our Frontier Alliances .…
+
+## 来源说明
+
+当前只保存了公开页面节选，不代表原文全文。请以原始来源为准。
+
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

@@ -1,153 +1,52 @@
 ---
-title: 递归多智能体系统
+title: Recursive Multi-Agent Systems
 date: 2026-04-29 23:26:16+08:00
 draft: false
 entry_kind: auto
 tags:
-- 递归多智能体
-- 大模型
-- 协同推理
-- 潜在空间
-- 梯度稳定
-- 性能提升
-- LLM
-- 开源
+- ArXiv
+- AI Agent
 categories:
-- 大模型
 - 论文
-source: arxiv
-description: 语言模型通过递归或循环在潜在空间迭代细化推理，成为新的扩展方向。 能否把递归思想从单一模型扩展到多智能体系统，实现合作的规模化？ 将整个多智能体系统建模为统一的潜在空间递归计算。
-  轻量级 RecursiveLink 模块连接异构智能体，实现跨智能体的潜在状态传递和内部生成。 采用内‑外环学习算法，通过共享梯度在多轮递归中联合优化。 递归链路仅在潜在空间传递信息，降低文本通信开销。
-external_url: http://arxiv.org/abs/2604.25917v1
 scenarios:
-- 大语言模型
+- AI/ML项目
+source: arxiv
+description: 当前只保存了官方论文摘要，不代表论文全文。请以原始来源为准。
+external_url: https://arxiv.org/abs/2604.25917v1
 aliases:
 - /posts/20260430-arxiv_ai-recursive-multi-agent-systems-0/
-content_mode: legacy_analysis
-publication_tier: LEGACY
-source_provenance: legacy_no_snapshot
-source_support: 0.0
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: abstract
+source_snapshot_sha256: sha256:314baa376bba181c92e5bf79062a880fd32ff4e8db52323f3290fa1b70650324
+extractor_version: source-contract-v1
+discovery_method: arxiv_api
+fetch_status: captured
+source_completeness: abstract_only
+source_is_truncated: false
+source_support: 1.0
+source_title_chars_original: 29
+captured_at: '2026-07-18T04:29:27.867360Z'
+source_capture_sha256: sha256:71146d0f9aa473c54c2df74ecd84605419d8d8a6d153f98348b771806ea6f915
+source_capture_chars_original: 1588
+source_publication_excerpt_chars: 1588
 ---
 
 ## 基本信息
 
-- **ArXiv ID**: 2604.25917v1
+- **来源**: arxiv
+- **原始来源**: [https://arxiv.org/abs/2604.25917v1](<https://arxiv.org/abs/2604.25917v1>)
+- **作者**: Xiyuan Yang, Jiaru Zou, Rui Pan, Ruizhong Qiu, Pan Lu, Shizhe Diao, Jindong Jiang, Hanghang Tong, Tong Zhang, Markus J. Buehler, Jingrui He, James Zou
 - **分类**: cs.AI
-- **作者**: Xiyuan Yang, Jiaru Zou, Rui Pan, Ruizhong Qiu, Pan Lu
-- **PDF**: [https://arxiv.org/pdf/2604.25917v1.pdf](https://arxiv.org/pdf/2604.25917v1.pdf)
-- **链接**: [http://arxiv.org/abs/2604.25917v1](http://arxiv.org/abs/2604.25917v1)
+- **论文时间**: 2026-04-28T17:59:34Z
+- **论文 PDF**: [https://arxiv.org/pdf/2604.25917v1.pdf](<https://arxiv.org/pdf/2604.25917v1.pdf>)
 
----
-## 摘要
+## 来源摘要/节选
 
-#### 研究背景
-- 语言模型通过递归或循环在潜在空间迭代细化推理，成为新的扩展方向。
-- 能否把递归思想从单一模型扩展到多智能体系统，实现合作的规模化？
+> Recursive or looped language models have recently emerged as a new scaling axis by iteratively refining the same model computation over latent states to deepen reasoning. We extend such scaling principle from a single model to multi-agent systems, and ask: Can agent collaboration itself be scaled through recursion? To this end, we introduce RecursiveMAS, a recursive multi-agent framework that casts the entire system as a unified latent-space recursive computation. RecursiveMAS connects heterogeneous agents as a collaboration loop through the lightweight RecursiveLink module, enabling in-distribution latent thoughts generation and cross-agent latent state transfer. To optimize our framework, we develop an inner-outer loop learning algorithm for iterative whole-system co-optimization through shared gradient-based credit assignment across recursion rounds. Theoretical analyses of runtime complexity and learning dynamics establish that RecursiveMAS is more efficient than standard text-based MAS and maintains stable gradients during recursive training. Empirically, we instantiate RecursiveMAS under 4 representative agent collaboration patterns and evaluate across 9 benchmarks spanning mathematics, science, medicine, search, and code generation. In comparison with advanced single/multi-agent and recursive computation baselines, RecursiveMAS consistently delivers an average accuracy improvement of 8.3%, together with 1.2$\\times$-2.4$\\times$ end-to-end inference speedup, and 34.6%-75.6% token usage reduction. Code and Data are provided in https://recursivemas.github.io.
 
-#### RecursiveMAS 框架
-- 将整个多智能体系统建模为统一的潜在空间递归计算。
-- 轻量级 RecursiveLink 模块连接异构智能体，实现跨智能体的潜在状态传递和内部生成。
-- 采用内‑外环学习算法，通过共享梯度在多轮递归中联合优化。
+## 来源说明
 
-#### 理论特性
-- 递归链路仅在潜在空间传递信息，降低文本通信开销。
-- 梯度稳定性得到理论保证，递归训练时梯度不随层数衰减。
-- 运行时复杂度优于传统文本交互的多智能体系统。
+当前只保存了官方论文摘要，不代表论文全文。请以原始来源为准。
 
-#### 实验验证
-- 在 4 种典型合作模式、9 个基准（数学、科学、医学、搜索、代码生成）上评估。
-- 与先进单/多智能体基线相比，平均准确率提升 8.3%。
-- 推理速度提升 1.2×‑2.4×，token 使用量下降 34.6%‑75.6%。
-- 代码与数据已在 https://recursivemas.github.io 公开。
-
----
-## 评论
-
-#### 学术价值与理论创新
-
-RecursiveMAS框架将多智能体系统统一建模为潜在空间的递归计算，这一思路在理论层面具有创新性。论文声称通过RecursiveLink模块实现异构智能体间的潜在状态传递，若实验数据支持，则该方案有效突破了传统多智能体系统中依赖显式文本通信的瓶颈。作者提出的内外环学习算法通过共享梯度实现联合优化，理论上可避免递归层数增加导致的梯度衰减问题。
-
-#### 关键假设与潜在失效条件
-
-然而，论文的理论保证依赖于若干关键假设。首先，梯度稳定性分析假设智能体间的潜在空间映射具有线性或近线性特性，若实际系统呈现高度非线性交互，该保证可能失效。其次，内外环学习假设所有智能体可访问共享梯度，这在分布式部署场景下可能因通信延迟或数据隐私限制而难以实现。潜在失效条件还包括：异构智能体的潜在表示空间若存在显著差异，RecursiveLink模块的跨智能体传递机制可能失效。
-
-#### 实证验证与可验证性
-
-论文需提供充分的实验验证以支持其理论声明。可验证方式包括：在相同任务上与现有文本交互多智能体系统进行性能对比，测量通信开销与收敛速度的量化改进；通过消融实验验证RecursiveLink模块的贡献度；以及在不同规模智能体网络（从小规模2-3个到大规模10个以上）上测试梯度稳定性。
-
-#### 应用前景与推断
-
-从应用角度，若RecursiveMAS的理论特性在实际任务中得到验证，其在需要高效协作的复杂推理任务（如多步骤问题求解、协同规划）中具有显著潜力。然而，当前论文呈现的证据尚不完整，缺乏与主流多智能体框架的全面对比实验。我推断，该框架的实际效用取决于其在真实世界任务（如代码生成、多模态推理）中的表现，而非仅在受控实验环境下。后续研究应关注其在开放域环境下的鲁棒性与可扩展性。
-
----
-## 技术分析
-
-#### 研究背景
-- 语言模型的递归推理已在单模型层面取得显著进展，表现为在潜在空间迭代细化答案（摘要）。
-- 将递归思想迁移到多智能体系统，以实现合作的大规模扩展，是本研究的核心动机（推断）。
-
-#### RecursiveMAS 框架
-- **统一潜在空间递归计算**：将整个多智能体系统视为在共享潜在空间中进行多轮递归计算，而非显式文本交互（摘要）。
-- **RecursiveLink 模块**：轻量级连接器，负责跨智能体传递潜在状态并内部生成新状态，实现异构智能体的信息融合（摘要）。
-- **内‑外环学习算法**：共享梯度在多轮递归中同步更新，确保整个系统在端到端训练时保持协同（摘要）。
-
-#### 理论基础
-- **信息传递效率**：潜在空间仅传递向量，显著降低文本通信开销（摘要）。
-- **梯度稳定性**：理论上保证递归层数增加时梯度不衰减，提供可扩展的训练保障（摘要）。
-- **运行时复杂度**：相较于基于文本交互的多智能体系统，运行时开销更低（摘要）。
-- **关键假设**：潜在空间必须连续且能够捕获跨智能体的语义；若空间建模不当，梯度信号可能失效（推断）。
-
-#### 实验验证
-- **实验设置**：4 种合作模式、9 项基准（数学、科学、医学、搜索、代码生成），与先进单/多智能体基线对比（摘要）。
-- **性能提升**：平均准确率提升 8.3%，推理速度提升 1.2×‑2.4×，token 使用量下降 34.6%‑75.6%（摘要）。
-- **推断解释**：提升源于递归潜在传递减少通信瓶颈以及梯度稳定带来的更好协同优化（推断）。
-
-#### 应用前景
-- **协同推理**：在需要多专家协同的复杂任务（如医学诊断、跨学科科研）中，可实现更快且更精准的答案生成（推断）。
-- **大规模 AI 系统**：为构建由数百甚至数千个专用模型组成的统一系统提供高效的信息交互框架（推断）。
-- **实时交互**：低 token 消耗与高速推理使其适用于实时对话和边缘计算场景（推断）。
-
-#### 研究启示
-- **潜在通信范式**：表明在高层抽象空间进行信息传递是多智能体协作的有效途径，可显著降低通信成本（推断）。
-- **端到端统一学习**：内‑外环共享梯度的设计为未来多智能体系统的端到端优化提供新思路（推断）。
-- **理论‑实践结合**：梯度稳定性的理论证明与实验效果相呼应，强化了方法的可信度（推断）。
-
-#### 相关工作对比
-- **传统多智能体系统**：多依赖显式文本或消息传递，通信开销随智能体数量线性增长（推断）。
-- **链式推理（Chain‑of‑Thought）**：仅在单一模型内部进行递归，缺乏跨智能体的潜在状态共享（推断）。
-- **递归语言模型**：在单模型层面已验证潜在空间迭代的有效性，RecursiveMAS 将其推广至多智能体协作（推断）。
-
-#### 关键假设、潜在失效条件与可证伪方式
-- **假设**：① 潜在空间能够捕获所有智能体的语义；② 递归链路保持梯度可传递；③ 轻量级 RecursiveLink 能适配异构模型结构（推断）。
-- **失效条件**：若智能体间潜在表示不兼容或梯度在高维空间中出现噪声放大，递归训练可能出现不稳定或性能下降（推断）。
-- **可证伪方式**：在基准实验中引入结构差异极大的模型（如纯视觉模型与语言模型），若性能显著下降，则假设不成立；此外，可通过调节潜在空间维度或使用随机噪声注入，检测梯度稳定性的理论预测（推断）。
-
----
-## 学习要点
-
-- 请提供Recursive Multi-Agent Systems的具体内容或摘要，以便为您提炼出 5‑7 条关键要点。
-
----
-## 引用
-
-- **ArXiv**: [http://arxiv.org/abs/2604.25917v1](http://arxiv.org/abs/2604.25917v1)
-- **PDF**: [https://arxiv.org/pdf/2604.25917v1.pdf](https://arxiv.org/pdf/2604.25917v1.pdf)
-
-> 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
-
----
-
-## 站内链接
-
-- 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)
-- 标签： [递归多智能体](/tags/%E9%80%92%E5%BD%92%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93/) / [大模型](/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [协同推理](/tags/%E5%8D%8F%E5%90%8C%E6%8E%A8%E7%90%86/) / [潜在空间](/tags/%E6%BD%9C%E5%9C%A8%E7%A9%BA%E9%97%B4/) / [梯度稳定](/tags/%E6%A2%AF%E5%BA%A6%E7%A8%B3%E5%AE%9A/) / [性能提升](/tags/%E6%80%A7%E8%83%BD%E6%8F%90%E5%8D%87/) / [LLM](/tags/llm/) / [开源](/tags/%E5%BC%80%E6%BA%90/)
-- 场景： [大语言模型](/scenarios/%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/)
-
-### 相关文章
-
-- [月之暗面发布 Kimi k2.5 技术报告]({{< relref "posts/20260130-hacker_news-kimi-k25-technical-report-pdf-10.md" >}})
-- [上下文学习难度超出原有认知]({{< relref "posts/20260206-hacker_news-learning-from-context-is-harder-than-we-thought-6.md" >}})
-- [GPT-5.2 推导出理论物理新结果]({{< relref "posts/20260213-hacker_news-gpt-52-derives-a-new-result-in-theoretical-physics-0.md" >}})
-- [面向自动定理证明的最小智能体框架]({{< relref "posts/20260302-arxiv_ai-a-minimal-agent-for-automated-theorem-proving-8.md" >}})
-- [Mixture-of-Depths 动态分配计算资源的注意力机制]({{< relref "posts/20260317-arxiv_ai-mixture-of-depths-attention-0.md" >}})
-*本文由 AI Stack 自动生成，深度解读学术研究。*
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

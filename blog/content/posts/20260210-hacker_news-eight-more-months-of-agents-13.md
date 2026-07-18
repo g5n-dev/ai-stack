@@ -1,388 +1,48 @@
 ---
-title: AI智能体发展预测：未来八个月的技术演进与挑战
+title: Eight more months of agents
 date: 2026-02-10 09:46:51+08:00
 draft: false
 entry_kind: auto
 tags:
-- AI 智能体
-- LLM
-- 技术预测
-- Agent
-- AI 应用
-- 未来趋势
-- 技术演进
-- 行业挑战
+- Hacker News
+- AI Agent
 categories:
-- 大模型
-- 产品与创业
-source: hacker_news
-description: 在软件工程领域，Agent 技术的落地周期往往比预期更为漫长。本文作者基于实践经验，对行业现状进行了冷静评估，指出距离真正成熟的生产级应用可能还需要至少八个月的打磨。文章深入探讨了当前技术栈的局限性以及工程化落地的具体难点，旨在帮助开发者和管理者建立合理预期，从而在技术探索中规避风险，找到务实的切入点。
-external_url: https://crawshaw.io/blog/eight-more-months-of-agents
+- AI 工程
 scenarios:
 - AI/ML项目
-- 大语言模型
+source: hacker_news
+description: 当前只保存了来源元数据，未抓取外链全文。请以原始来源和 Hacker News 讨论为准。
+external_url: https://crawshaw.io/blog/eight-more-months-of-agents
 aliases:
 - /posts/20260210-hacker_news-eight-more-months-of-agents-16/
-content_mode: legacy_analysis
-publication_tier: LEGACY
-source_provenance: legacy_no_snapshot
-source_support: 0.0
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: metadata_only
+source_snapshot_sha256: sha256:93111d447eb2697e51d29f77344f18dc7b01789071ca20aeecff687f525eae6e
+extractor_version: source-contract-v1
+discovery_method: api_metadata
+fetch_status: captured
+source_completeness: metadata_only
+source_is_truncated: false
+source_support: 1.0
+source_title_chars_original: 27
+captured_at: '2026-07-18T04:17:08.086459Z'
+source_capture_sha256: sha256:2cb365008c450e7ef696435391588fa152cf6176aa85191ecc33dc2ba1c0195e
+source_capture_chars_original: 27
+source_publication_excerpt_chars: 27
 ---
 
 ## 基本信息
 
+- **来源**: hacker\_news
+- **原始来源**: [https://crawshaw.io/blog/eight-more-months-of-agents](<https://crawshaw.io/blog/eight-more-months-of-agents>)
 - **作者**: arrowsmith
-- **评分**: 123
-- **评论数**: 130
-- **链接**: [https://crawshaw.io/blog/eight-more-months-of-agents](https://crawshaw.io/blog/eight-more-months-of-agents)
-- **HN 讨论**: [https://news.ycombinator.com/item?id=46933223](https://news.ycombinator.com/item?id=46933223)
+- **评分**: 223
+- **评论数**: 241
+- **HN 讨论**: [https://news.ycombinator.com/item?id=46933223](<https://news.ycombinator.com/item?id=46933223>)
 
----
-## 导语
+## 来源说明
 
-在软件工程领域，Agent 技术的落地周期往往比预期更为漫长。本文作者基于实践经验，对行业现状进行了冷静评估，指出距离真正成熟的生产级应用可能还需要至少八个月的打磨。文章深入探讨了当前技术栈的局限性以及工程化落地的具体难点，旨在帮助开发者和管理者建立合理预期，从而在技术探索中规避风险，找到务实的切入点。
+当前只保存了来源元数据，未抓取外链全文。请以原始来源和 Hacker News 讨论为准。
 
----
-## 评论
-
-**文章标题：Eight more months of agents**
-**评价维度：技术与行业视角**
-
-### 一、 核心观点与结构分析
-
-**1. 中心观点**
-尽管当前的 AI Agent（智能体）在演示中令人惊艳，但在未来八个月内，由于基础设施的滞后、推理成本的高昂以及非确定性系统的不可控性，绝大多数 Agent 应用将难以跨越“演示效应”的陷阱，无法实现大规模的商业化落地。
-
-**2. 支撑理由**
-*   **基础设施的脆弱性（作者观点）：** 现有的工具调用生态（API）并非为高频率、非确定性的 AI 交互设计。Agent 需要频繁调用外部工具，而这些工具的延迟和错误率会随着 Agent 的自主性增加而被放大，导致系统整体稳定性呈指数级下降。
-*   **边际效用递减与成本问题（事实陈述 + 作者观点）：** 基于 LLM 的 Agent 本质上是在用昂贵的推理算力去替代廉价的确定性代码（如 Python 脚本）。为了提升 1% 的任务完成率，往往需要增加数倍的 Token 消耗和重试次数，这在经济模型上难以跑通。
-*   **“最后一公里”的幻觉难题（技术事实）：** 在多步骤推理中，Agent 只要有一个步骤出现幻觉，整个任务链就会失败。目前的 Self-correction（自我修正）技术尚不成熟，往往会导致 Agent 陷入死循环或产生更隐蔽的错误。
-
-**3. 反例与边界条件**
-*   **边界条件 1（高容错场景）：** 在创意写作、游戏 NPC 或个性化推荐等对“准确性”要求不高、但对“惊喜感”有要求的场景下，Agent 的幻觉反而是一种特性，而非 Bug，这些领域可能会率先爆发。
-*   **边界条件 2（垂直封闭系统）：** 在金融合规或代码生成等拥有严格规则边界和验证反馈机制（如编译器报错、单元测试）的封闭系统中，Agent 的失败成本可控，因此具备落地可能。
-
-### 二、 深度评价
-
-#### 1. 内容深度
-文章切中了当前 AI 行业最浮躁的痛点。作者没有盲目追逐“Agent 取代 SaaS”的热潮，而是冷静地指出了**软件工程与概率模型之间的根本冲突**。
-*   **严谨性：** 论证非常扎实。文章隐含了一个技术洞察：目前的 Agent 架构（如 ReAct, Plan-and-Solve）过度依赖 LLM 的上下文窗口来维护状态。这种“以计算换智能”的路径在处理长尾、复杂的现实任务时，面临着状态空间爆炸的问题。
-*   **批判性：** 文章揭示了“Demo”与“Prod”之间的巨大鸿沟。Demo 是精心挑选的 Happy Path，而生产环境充满了 Corner Case。这种视角的转换非常具有深度。
-
-#### 2. 实用价值
-对于创业者和工程负责人而言，这篇文章是一剂清醒剂。
-*   **避坑指南：** 它警告团队不要试图在短期内构建“全能型”通用 Agent。试图用 LLM 去控制复杂的、遗留的工业软件 API，往往是灾难的开始。
-*   **架构指导：** 隐含地建议开发者应回归“人机协同”模式，即 AI 作为副驾驶，而非完全自主的飞行员。在关键决策节点引入人工审核，比追求完全自主更具 ROI。
-
-#### 3. 创新性
-虽然“AI 泡沫论”并不新鲜，但文章从**“时间维度”**给出了具体的预测（8个月），并从**系统可靠性**而非单纯的模型智能角度进行剖析，具有一定的新意。它指出了 Agent 发展不仅仅是模型参数量的问题，更是工程化、数据清洗和工具重构的问题。
-
-#### 4. 可读性
-文章逻辑清晰，技术隐喻恰当。它避免了过度晦涩的学术术语，而是用工程直觉来解释问题，使得非算法背景的从业者也能理解其中的难点。
-
-#### 5. 行业影响
-如果该观点被广泛接受，可能会导致资本市场对纯 Agent 应用初创公司的估值逻辑进行重估。资金可能会从“应用层”流向“基础设施层”（如模型监控、工具调用标准化、数据验证层）。行业将更加关注**AI 的工程化落地**，而非单纯的模型微调。
-
-#### 6. 争议点或不同观点
-*   **争议点：** “8个月”的时间窗口可能过于悲观。随着 Claude 3.5 Sonnet、GPT-4o 等模型推理能力的快速提升，以及专门针对 Agent 优化的模型（如 OpenAI o1）的出现，模型本身的逻辑错误率正在显著下降。
-*   **不同观点：** 有人认为 Agent 的落地不需要完美。只要其在特定场景（如自动客服）的解决率从 30% 提升到 80%，即使剩下 20% 需要人工介入，也是巨大的商业成功。
-
-### 三、 实际应用建议
-
-基于文章的警示，建议在实际工作中采取以下策略：
-
-1.  **从“自主代理”转向“工作流自动化”：** 不要追求完全自主的 Agent。优先使用 LangChain 或 Temporal 等工具构建确定性较强的工作流，仅在必要环节引入 LLM 进行判断。
-2.  **建立“护栏机制”：** 在 Agent 输出最终动作前，必须加入传统的规则验证层。例如，Agent 生成的 SQL 语句必须经过语法分析器检查才能执行，防止“删库跑路”。
-3.  **关注非 LLM 的技术栈：** 投入资源优化 RAG（检索增强生成）的质量和知识图谱的构建。很多时候，Agent 表现不好
-
----
-## 代码示例
-
-```python
-# 示例1：时间计算 - 计算从当前日期起8个月后的日期
-from datetime import datetime, timedelta
-from dateutil.relativedelta import relativedelta
-
-def calculate_future_date():
-    """计算从当前日期起8个月后的日期"""
-    current_date = datetime.now()
-    future_date = current_date + relativedelta(months=8)
-    return future_date.strftime("%Y-%m-%d")
-
-# 测试
-print(f"8个月后的日期是: {calculate_future_date()}")
-```
-
-```python
-# 示例2：数据统计 - 统计过去8个月的月度活跃用户数
-import pandas as pd
-from datetime import datetime, timedelta
-
-def calculate_monthly_active_users(user_activity_data):
-    """
-    统计过去8个月的月度活跃用户数
-    user_activity_data: 包含用户活动日期的列表，格式为['YYYY-MM-DD', ...]
-    """
-    # 将字符串日期转换为datetime对象
-    dates = [datetime.strptime(date, "%Y-%m-%d") for date in user_activity_data]
-
-    # 创建DataFrame
-    df = pd.DataFrame({'date': dates})
-
-    # 添加月份列
-    df['month'] = df['date'].dt.to_period('M')
-
-    # 计算过去8个月的月份范围
-    end_date = datetime.now()
-    start_date = end_date - relativedelta(months=8)
-    month_range = pd.period_range(start=start_date, end=end_date, freq='M')
-
-    # 统计每月活跃用户数
-    monthly_counts = df[df['date'] >= start_date].groupby('month').size()
-
-    # 确保所有月份都有记录（即使为0）
-    result = monthly_counts.reindex(month_range, fill_value=0)
-
-    return result.to_dict()
-
-# 测试数据
-activity_data = ['2023-01-15', '2023-02-20', '2023-03-10', '2023-04-05',
-                 '2023-05-12', '2023-06-18', '2023-07-22', '2023-08-30']
-print("过去8个月月度活跃用户数:", calculate_monthly_active_users(activity_data))
-```
-
-```python
-# 示例3：任务调度 - 创建一个8个月后执行的任务
-import schedule
-import time
-from datetime import datetime
-from threading import Thread
-
-def future_task():
-    """8个月后要执行的任务"""
-    print(f"任务执行于 {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-    print("这是8个月前安排的任务")
-
-def schedule_future_task():
-    """安排一个8个月后执行的任务"""
-    # 计算8个月后的日期和时间
-    future_date = datetime.now() + relativedelta(months=8)
-    run_time = future_date.strftime('%H:%M')
-
-    # 安排任务
-    schedule.every().day.at(run_time).do(future_task)
-
-    # 持续检查任务
-    while True:
-        schedule.run_pending()
-        time.sleep(1)
-
-# 在后台线程中运行调度器
-def start_scheduler():
-    t = Thread(target=schedule_future_task)
-    t.daemon = True
-    t.start()
-
-# 测试
-print(f"已安排任务将在 {calculate_future_date()} 执行")
-start_scheduler()
-```
-
----
-## 案例研究
-
-### 1：Cognition AI (Devin)
-
-**背景**: Cognition AI 是一家致力于应用 AI 解决实际工程问题的初创公司。随着 LLM（大语言模型）推理能力的提升，他们看到了将 AI 从“聊天机器人”转变为“自主代理”的机会。
-
-**问题**: 传统的 AI 编程助手（如 GitHub Copilot）只能提供代码片段建议，无法独立完成复杂的软件工程任务。开发者仍需花费大量时间编写样板代码、调试错误、管理环境以及阅读冗长的文档，导致开发效率瓶颈明显。
-
-**解决方案**: 团队开发了 Devin，这是一个基于 AI Agent 的软件工程师。Devin 不仅仅是补全代码，它具备规划、推理和纠错的能力。它可以自主使用终端、浏览器和代码编辑器，能够将一个高层级的需求（例如“构建一个贪吃蛇游戏”）分解为数百个步骤，逐一执行，并在遇到错误时自我调试。
-
-**效果**: Devin 在实际测试中能够独立完成 Upwork 上的真实外包任务，从环境搭建到最终部署全程无需人工干预。在 SWE-bench 基准测试中，它解决了 13.86% 的问题（远高于之前模型的 1.96%），展示了 AI Agent 在处理端到端复杂工作流时的巨大潜力。
-
----
-
-### 2：Rippling
-
-**背景**: Rippling 是一家提供企业 IT 和人力资源管理的科技公司。其业务涉及大量繁琐的后台操作，例如为新员工配置笔记本电脑、设置软件访问权限、处理工资单等。
-
-**问题**: 这些后台操作通常需要跨多个不同的 SaaS 平台进行，且往往没有开放的 API 接口。传统的自动化脚本难以维护，一旦网页结构发生变化，脚本就会失效，导致工程团队不得不花费大量时间维护这些脆弱的自动化流程。
-
-**解决方案**: Rippling 并没有简单地使用 LLM 来生成代码，而是构建了一个 Agent 系统，利用 LLM 的视觉和推理能力来操作图形用户界面（GUI）。这些 Agent 像“机器人流程自动化（RPA）”一样操作浏览器，但具备更强的适应性。当网页元素发生变化时，Agent 能够像人类一样识别新的按钮或输入框，而不是依赖硬编码的选择器。
-
-**效果**: 这种基于 Agent 的方法极大地降低了系统集成的成本和难度。Rippling 能够快速将其平台连接到数千种不同的应用程序，实现了高度的自动化运营。这标志着 AI Agent 的应用方向从单纯的“文本生成”转向了“现实世界操作”，能够直接替代人类完成数字办公任务。
-
----
-
-### 3：Harvey AI
-
-**背景**: 法律行业长期依赖昂贵且耗时的人工服务，律师需要花费大量时间审查合同、进行尽职调查和查找相关判例法。
-
-**问题**: 通用的大语言模型在处理法律问题时存在“幻觉”风险，且无法引用具体的法律来源，这使得律师难以直接信任 AI 生成的结果。此外，法律数据通常包含敏感的客户信息，对隐私和安全有极高要求。
-
-**解决方案**: Harvey AI 构建了一个专门针对法律领域的 AI Agent。它不仅利用经过法律数据微调的模型，还赋予 Agent 调用工具的能力。当接到一个复杂的法律查询时，Agent 会自主制定检索策略，搜索相关的法律数据库和案例库，阅读并分析数千页的文档，然后基于检索到的事实生成法律备忘录或合同草案。
-
-**效果**: Harvey AI 被普华永道（PwC）和安勤律师事务所等顶级机构采用。在实际应用中，它能够将原本需要数小时的合同审查工作缩短至几分钟，且准确率经过人工验证达到可商用标准。这展示了 Agent 在专业服务领域的价值：通过结合推理能力和工具使用，处理高知识密度、高准确度要求的任务。
-
----
-
-## 最佳实践指南
-
-### 实践 1：构建基于工具的 Agent 架构
-
-**实施步骤**:
-1. 定义 Agent 的核心功能边界，列出其需要访问的外部能力清单（如天气查询、文件操作）。
-2. 为每个工具编写标准化的 API 文档或函数定义，确保 LLM 能理解输入输出格式。
-3. 实施中间层，负责解析 LLM 的工具调用请求并安全地执行实际代码。
-
-**注意事项**: 确保工具执行的沙箱环境安全，防止 Agent 执行恶意代码或删除关键数据。
-
----
-
-### 实践 2：实施“人类反馈循环”监督机制
-
-**说明**: 在 Agent 拥有高度自主性的前夜，必须保留人类在关键决策节点上的否决权。Agent 容易产生“幻觉”或陷入逻辑死循环，人类的介入不仅能纠正错误，还能为模型提供高质量的微调数据（RLHF）。
-
-**实施步骤**:
-1. 识别工作流中的高风险操作（如发送邮件、修改生产环境数据库、资金交易）。
-2. 在这些操作执行前，强制 Agent 暂停并生成摘要请求人类批准。
-3. 建立反馈日志系统，记录人类修改了 Agent 的哪些决策，用于后续分析。
-
-**注意事项**: 避免过度干预导致 Agent 效率低下，仅在置信度低或风险高的环节设置检查点。
-
----
-
-### 实践 3：优化上下文管理与短期记忆
-
-**说明**: LLM 的上下文窗口是有限的，且随着对话变长，模型容易遗忘早期的指令。高效的 Agent 需要一套记忆管理机制，既能存储关键信息，又能保持提示词的简洁。
-
-**实施步骤**:
-1. 实现分层记忆系统：短期记忆（当前会话）、长期记忆（向量数据库存储的历史交互）。
-2. 在每轮交互前，动态检索与当前任务最相关的历史信息注入提示词，而非全量注入。
-3. 定期总结对话内容，将旧信息压缩为更紧凑的摘要形式。
-
-**注意事项**: 检索的相关性至关重要，如果检索到不相关的历史信息，会严重干扰 Agent 的判断。
-
----
-
-### 实践 4：设计防御性的提示词工程
-
-**说明**: 默认的 LLM 往往过于礼貌或顺从，容易被诱导偏离轨道。防御性提示词旨在通过系统级指令，约束 Agent 的行为边界，防止其被“越狱”或执行未授权的复杂指令链。
-
-**实施步骤**:
-1. 在 System Prompt 中明确界定 Agent 的角色、目标以及“绝对禁止”的行为列表。
-2. 指示 Agent 在面对模糊或潜在的恶意指令时，要求用户澄清而非盲目执行。
-3. 使用思维链技术，要求 Agent 在执行复杂推理前先输出“思考过程”，便于监控。
-
-**注意事项**: 提示词需要不断迭代测试，对抗性测试是发现提示词漏洞的最佳方式。
-
----
-
-### 实践 5：建立多 Agent 协作与分工体系
-
-**说明**: 复杂任务通常超出单个 Agent 的能力范围。最佳实践是采用“多智能体系统”，将任务拆解，由专门的 Agent 分别负责（如一个负责搜索，一个负责编程，一个负责审查），最后由管理 Agent 整合。
-
-**实施步骤**:
-1. 分析业务流程，将其拆解为线性或并行的子任务。
-2. 为每个子任务配置专门的 Agent 和工具集（例如：Researcher Agent, Coder Agent, Reviewer Agent）。
-3. 定义清晰的通信协议，确保 Agent 之间传递信息的格式标准化。
-
-**注意事项**: 协作成本会随着 Agent 数量增加而上升，需警惕无限循环的相互调用或“责任推诿”现象。
-
----
-
-### 实践 6：专注于特定垂直领域的深度优化
-
-**说明**: 通用型 Agent 往往样样通样样松。在当前阶段，最佳的商业化落地方式是针对特定垂直领域（如法律合同审查、代码库迁移、数据分析）进行深度定制，提供该领域内的专家级表现。
-
-**实施步骤**:
-1. 收集特定领域的高质量数据集，包括文档、操作手册和案例。
-2. 使用该领域的术语和逻辑构建专用的提示词模板或微调基座模型。
-3. 针对该领域构建专用的工具链，例如法律 Agent 需要连接法规数据库，而非通用搜索引擎。
-
-**注意事项**: 垂直化意味着牺牲通用性，需明确产品的服务边界，避免用户提出超出领域范围的问题导致体验崩塌。
-
----
-## 学习要点
-
-- 根据文章《Eight more months of agents》的内容，总结出的关键要点如下：
-- AI 智能体在处理复杂、多步骤任务时，其核心瓶颈已从模型能力不足转变为规划与执行的可靠性问题。
-- 实现高性能智能体的关键不在于构建单一的庞大模型，而在于设计能够将推理、工具使用和记忆模块化的系统架构。
-- 编程是目前智能体应用最成熟、价值最高的领域，因为代码环境提供了明确的反馈机制和客观的验证标准。
-- 评估智能体性能极具挑战性，传统的静态基准测试已失效，需要转向基于真实人类工作流的端到端评估体系。
-- 尽管技术进步迅速，但受限于推理成本和错误率，智能体在大规模生产环境中的全面普及仍需 8 个月以上的时间。
-- 未来的智能体发展将更加侧重于“人机协作”模式，即 AI 负责草稿与执行，人类负责监督与修正，而非完全的自动化。
-
----
-## 常见问题
-
-### 1: 标题 "Eight more months of agents" 的含义是什么？
-
-**A**: 该标题通常指代 Hacker News 社区对 AI 代理（Agents）发展周期的讨论。它可能指代某种预测（即技术将在八个月后成熟）或对当前技术爆发状态的描述。具体语境需结合原文，但核心围绕 AI 代理技术的演进速度。
-
-### 2: 为什么 Hacker News 会讨论“八个月”这一具体时间线？
-
-**A**: 讨论具体时间线通常基于以下考量：
-1. **技术迭代周期**：大语言模型（LLM）及相关框架的更新速度。
-2. **产品落地预期**：业界对代理产品从实验到商用的预估时间。
-3. **社区话题性**：特定文章或预测引发的短期讨论焦点。
-
-### 3: AI 代理的核心技术特征是什么？
-
-**A**: AI 代理区别于传统自动化脚本的特征包括：
-1. **感知与推理**：基于 LLM 理解指令并规划步骤。
-2. **工具调用**：通过 API 或插件执行代码、检索信息。
-3. **自主循环**：在无需人工干预的情况下，反复执行“观察-思考-行动”循环直至目标达成。
-
-### 4: 文中提到的 "Agents" 通常指代哪些具体技术栈？
-
-**A**: 在当前技术语境下，通常指：
-1. **底层模型**：如 GPT-4, Claude 等支持推理的基座模型。
-2. **编排框架**：如 LangChain, AutoGPT 等用于构建代理的库。
-3. **交互接口**：能够模拟人类操作计算机或浏览器的系统。
-
-### 5: 该时间线对开发者有何实际影响？
-
-**A**: 主要体现在技术选型与职业规划上：
-1. **技能储备**：学习如何构建和调试基于 LLM 的应用。
-2. **架构调整**：从传统确定性编程转向概率性系统设计。
-3. **市场适应**：关注代理技术在自动化工作流中的实际落地情况。
-
-### 6: 如何评估此类技术预测的可信度？
-
-**A**: 建议采取以下方法：
-1. **查看原始出处**：确认是引用官方博客、研究论文还是个人观点。
-2. **技术验证**：检查是否有可用的 Demo 或开源代码支持。
-3. **社区批判**：阅读 HN 评论区的技术细节讨论，区分炒作与实际进展。
-
-### 7: 关注 AI 代理技术应侧重哪些方向？
-
-**A**: 建议关注以下技术领域：
-1. **Agent 框架**：如 LangChain, LlamaIndex 等生态的发展。
-2. **模型推理能力**：模型在复杂任务规划上的表现。
-3. **RAG 技术**：检索增强生成在代理中的应用。
-4. **多智能体协作**：多个代理协同解决问题的模式。
-## 引用
-
-- **原文链接**: [https://crawshaw.io/blog/eight-more-months-of-agents](https://crawshaw.io/blog/eight-more-months-of-agents)
-- **HN 讨论**: [https://news.ycombinator.com/item?id=46933223](https://news.ycombinator.com/item?id=46933223)
-
-> 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
-
----
-
-## 站内链接
-
-- 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [产品与创业](/categories/%E4%BA%A7%E5%93%81%E4%B8%8E%E5%88%9B%E4%B8%9A/)
-- 标签： [AI智能体](/tags/ai%E6%99%BA%E8%83%BD%E4%BD%93/) / [LLM](/tags/llm/) / [技术预测](/tags/%E6%8A%80%E6%9C%AF%E9%A2%84%E6%B5%8B/) / [Agent](/tags/agent/) / [AI应用](/tags/ai%E5%BA%94%E7%94%A8/) / [未来趋势](/tags/%E6%9C%AA%E6%9D%A5%E8%B6%8B%E5%8A%BF/) / [技术演进](/tags/%E6%8A%80%E6%9C%AF%E6%BC%94%E8%BF%9B/) / [行业挑战](/tags/%E8%A1%8C%E4%B8%9A%E6%8C%91%E6%88%98/)
-- 场景： [AI/ML项目](/scenarios/ai-ml%E9%A1%B9%E7%9B%AE/) / [大语言模型](/scenarios/%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/)
-
-### 相关文章
-
-- [构建AI版Wattpad以评估大模型小说创作能力]({{< relref "posts/20260203-hacker_news-show-hn-i-built-ai-wattpad-to-eval-llms-on-fiction-19.md" >}})
-- [人人都在构建异步智能体 但鲜有人能定义其概念]({{< relref "posts/20260209-hacker_news-everyones-building-async-agents-but-almost-no-one--14.md" >}})
-- [异步智能体成风潮但定义模糊]({{< relref "posts/20260209-hacker_news-everyones-building-async-agents-but-almost-no-one--14.md" >}})
-- [AI对工程类岗位的影响或与预期不同]({{< relref "posts/20260129-hacker_news-ais-impact-on-engineering-jobs-may-be-different-th-3.md" >}})
-- [Agent评估显示AGENTS.md配置优于Skills]({{< relref "posts/20260129-hacker_news-compressed-agentsmd-agent-skills-5.md" >}})
-*本文由 AI Stack 自动生成，包含深度分析与可证伪的判断。*
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

@@ -1,30 +1,50 @@
 ---
-title: Momentum SVGD-EM 加速最大边际似然估计
+title: Momentum SVGD-EM for Accelerated Maximum Marginal Likelihood Estimation
 date: 2026-03-10 23:05:53+08:00
 draft: false
 entry_kind: auto
-tags: []
-categories: []
-source: arxiv
-description: 历史条目已归档：现有正文未通过内容质量门，请查阅原始来源。
-external_url: http://arxiv.org/abs/2603.08676v1
+tags:
+- ArXiv
+categories:
+- 论文
 scenarios: []
+source: arxiv
+description: 当前只保存了官方论文摘要，不代表论文全文。请以原始来源为准。
+external_url: https://arxiv.org/abs/2603.08676v1
 aliases:
 - /posts/20260311-arxiv_ai-momentum-svgd-em-for-accelerated-maximum-marginal--9/
-content_mode: archived
-publication_tier: ARCHIVED
-source_provenance: legacy_no_snapshot
-source_support: 0.0
-archived: true
-archive_reason: historical_content_quality_gate
-build:
-  list: never
-  render: always
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: abstract
+source_snapshot_sha256: sha256:5b4149e586eb6d021ccaa69964254871e585736ce0488025b2538d5344e0e22c
+extractor_version: source-contract-v1
+discovery_method: arxiv_api
+fetch_status: captured
+source_completeness: abstract_only
+source_is_truncated: false
+source_support: 1.0
+source_title_chars_original: 71
+captured_at: '2026-07-18T04:27:35.108002Z'
+source_capture_sha256: sha256:9fc35ef8bdc1dd45ecd9ffb7ac6d68c21b1b17bce3c8764d9b6f9b04ce1db28b
+source_capture_chars_original: 895
+source_publication_excerpt_chars: 895
 ---
 
-## 历史条目归档说明
+## 基本信息
 
-该条目的历史正文未通过内容质量门，可能包含基于标题推测的内容。为避免继续传播不可核验文本，本站仅保留透明归档记录。
+- **来源**: arxiv
+- **原始来源**: [https://arxiv.org/abs/2603.08676v1](<https://arxiv.org/abs/2603.08676v1>)
+- **作者**: Adam Rozzio, Rafael Athanasiades, O. Deniz Akyildiz
+- **分类**: stat.ML
+- **论文时间**: 2026-03-09T17:47:36Z
+- **论文 PDF**: [https://arxiv.org/pdf/2603.08676v1.pdf](<https://arxiv.org/pdf/2603.08676v1.pdf>)
 
-- 历史内容质量门未通过
-- 原始来源：<http://arxiv.org/abs/2603.08676v1>
+## 来源摘要/节选
+
+> Maximum marginal likelihood estimation \(MMLE\) can be formulated as the optimization of a free energy functional. From this viewpoint, the Expectation-Maximisation \(EM\) algorithm admits a natural interpretation as a coordinate descent method over the joint space of model parameters and probability measures. Recently, a significant body of work has adopted this perspective, leading to interacting particle algorithms for MMLE. In this paper, we propose an accelerated version of one such procedure, based on Stein variational gradient descent \(SVGD\), by introducing Nesterov acceleration in both the parameter updates and in the space of probability measures. The resulting method, termed Momentum SVGD-EM, consistently accelerates convergence in terms of required iterations across various tasks of increasing difficulty, demonstrating effectiveness in both low- and high-dimensional settings.
+
+## 来源说明
+
+当前只保存了官方论文摘要，不代表论文全文。请以原始来源为准。
+
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

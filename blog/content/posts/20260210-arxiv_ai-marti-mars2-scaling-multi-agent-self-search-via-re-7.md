@@ -5,71 +5,51 @@ date: 2026-02-10 03:34:40+08:00
 draft: false
 entry_kind: auto
 tags:
-- arxiv
-- cs.LG
+- ArXiv
+- AI Agent
+- 大语言模型
 categories:
 - 论文
-source: arxiv
-description: 本文介绍了 MARTI-MARS$^2$，一种结合强化学习与多智能体树搜索的代码生成框架，旨在突破单一大语言模型（LLM）的性能瓶颈。 单智能体系统在复杂代码生成任务中面临性能天花板。现有的多智能体框架通常依赖基于提示词的交互或同质化参数训练，缺乏有效的错误纠正能力和策略多样性。
-external_url: http://arxiv.org/abs/2602.07848v1
+- 大模型
 scenarios:
-- Web应用开发
-content_mode: legacy_analysis
-publication_tier: LEGACY
-source_provenance: legacy_no_snapshot
-source_support: 0.0
+- AI/ML项目
+- 大语言模型
+source: arxiv
+description: 当前只保存了官方论文摘要，不代表论文全文。请以原始来源为准。
+external_url: https://arxiv.org/abs/2602.07848v1
+aliases: []
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: abstract
+source_snapshot_sha256: sha256:9a0ffc69a96673a165c27440f084581b45963cc28277cfac11556810dd363f72
+extractor_version: source-contract-v1
+discovery_method: arxiv_api
+fetch_status: captured
+source_completeness: abstract_only
+source_is_truncated: false
+source_support: 1.0
+source_title_chars_original: 94
+captured_at: '2026-07-18T04:14:28.443184Z'
+source_capture_sha256: sha256:cd068d05cf13e5d5f8ca43ae8c1fd6751624b0a2a2994d554587689c44b885c6
+source_capture_chars_original: 1820
+source_publication_excerpt_chars: 1820
 ---
 
 ## 基本信息
 
-- **ArXiv ID**: 2602.07848v1
+- **来源**: arxiv
+- **原始来源**: [https://arxiv.org/abs/2602.07848v1](<https://arxiv.org/abs/2602.07848v1>)
+- **作者**: Shijie Wang, Pengfei Li, Yikun Fu, Kaifeng Liu, Fangyuan Li, Yang Liu, Xiaowei Sun, Zonglin Li, Siyao Zhao, Jian Zhao, Kai Tian, Dong Li, Junqi Gao, Yutong Zhang, Yiqun Chen, Yuqiang Li, Zoe Li, Weinan Zhang, Peng Ye, Shuyue Hu, Lei Bai, Bowen Zhou, Kaiyan Zhang, Biqing Qi
 - **分类**: cs.LG
-- **作者**: Shijie Wang, Pengfei Li, Yikun Fu, Kaifeng Liu, Fangyuan Li
-- **PDF**: [https://arxiv.org/pdf/2602.07848v1.pdf](https://arxiv.org/pdf/2602.07848v1.pdf)
-- **链接**: [http://arxiv.org/abs/2602.07848v1](http://arxiv.org/abs/2602.07848v1)
+- **论文时间**: 2026-02-08T07:28:44Z
+- **论文 PDF**: [https://arxiv.org/pdf/2602.07848v1.pdf](<https://arxiv.org/pdf/2602.07848v1.pdf>)
 
----
-## 摘要
+## 来源摘要/节选
 
-本文介绍了 **MARTI-MARS$^2$**，一种结合强化学习与多智能体树搜索的代码生成框架，旨在突破单一大语言模型（LLM）的性能瓶颈。
+> While the complex reasoning capability of Large Language Models \(LLMs\) has attracted significant attention, single-agent systems often encounter inherent performance ceilings in complex tasks such as code generation. Multi-agent collaboration offers a promising avenue to transcend these boundaries. However, existing frameworks typically rely on prompt-based test-time interactions or multi-role configurations trained with homogeneous parameters, limiting error correction capabilities and strategic diversity. In this paper, we propose a Multi-Agent Reinforced Training and Inference Framework with Self-Search Scaling \(MARTI-MARS2\), which integrates policy learning with multi-agent tree search by formulating the multi-agent collaborative exploration process as a dynamic and learnable environment. By allowing agents to iteratively explore and refine within the environment, the framework facilitates evolution from parameter-sharing homogeneous multi-role training to heterogeneous multi-agent training, breaking through single-agent capability limits. We also introduce an efficient inference strategy MARTI-MARS2-T+ to fully exploit the scaling potential of multi-agent collaboration at test time. We conduct extensive experiments across varied model scales \(8B, 14B, and 32B\) on challenging code generation benchmarks. Utilizing two collaborating 32B models, MARTI-MARS2 achieves 77.7%, outperforming strong baselines like GPT-5.1. Furthermore, MARTI-MARS2 reveals a novel scaling law: shifting from single-agent to homogeneous multi-role and ultimately to heterogeneous multi-agent paradigms progressively yields higher RL performance ceilings, robust TTS capabilities, and greater policy diversity, suggesting that policy diversity is critical for scaling intelligence via multi-agent reinforcement learning.
 
-### 核心问题与动机
-单智能体系统在复杂代码生成任务中面临性能天花板。现有的多智能体框架通常依赖基于提示词的交互或同质化参数训练，缺乏有效的错误纠正能力和策略多样性。
+## 来源说明
 
-### 方法创新
-MARTI-MARS$^2$ 将多智能体协作探索过程构建为一个动态且可学习的环境，通过以下方式实现突破：
-1.  **策略学习与树搜索融合**：允许智能体在环境中迭代探索和修正。
-2.  **从同质到异质的演进**：训练过程从“参数共享的同质多角色”进化为“异质多智能体”，打破了单智能体的能力限制。
-3.  **高效推理策略**：提出了 MARTI-MARS$^2$-T+ 策略，在测试时充分释放多智能体协作的潜力。
+当前只保存了官方论文摘要，不代表论文全文。请以原始来源为准。
 
-### 实验结果与新发现
-在多个规模的代码生成基准测试中，该框架表现优异。使用两个协作的 32B 模型，MARTI-MARS$^2$ 达到了 **77.7%** 的通过率，超越了 GPT-5.1 等强基线模型。
-
-### 新缩放定律
-研究揭示了一条新的缩放定律：从单智能体过渡到同质多角色，最终演变为异质多智能体范式，能够逐步提高强化学习的性能上限、增强鲁棒的文本到代码（TTS）能力，并显著提升策略多样性。这表明，**策略多样性**是通过多智能体强化学习扩展智能的关键因素。
-
----
-## 引用
-
-- **ArXiv**: [http://arxiv.org/abs/2602.07848v1](http://arxiv.org/abs/2602.07848v1)
-- **PDF**: [https://arxiv.org/pdf/2602.07848v1.pdf](https://arxiv.org/pdf/2602.07848v1.pdf)
-
-> 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
-
----
-
-
-## 站内链接
-
-- 分类： [论文](/categories/%E8%AE%BA%E6%96%87/)
-- 标签： [arxiv](/tags/arxiv/) / [cs.LG](/tags/cs.lg/)
-- 场景： [Web应用开发](/scenarios/web%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/)
-
-### 相关文章
-
-- [基于朗之万动力学的直接软策略采样]({{< relref "posts/20260210-arxiv_ai-direct-soft-policy-sampling-via-langevin-dynamics-2.md" >}})
-- [基于嵌入的Top-$k$检索：理论上$\mathbb{R}^{2k}$维空间已足够]({{< relref "posts/20260129-arxiv_ai-mathbbr2k-is-theoretically-large-enough-for-embedd-8.md" >}})
-- [R^{2k}维度理论上足以支持基于嵌入的Top-k检索]({{< relref "posts/20260129-arxiv_ai-mathbbr2k-is-theoretically-large-enough-for-embedd-8.md" >}})
-- [为何Adam在$β_1=β_2$时更优：缺失的梯度尺度不变性原理]({{< relref "posts/20260130-arxiv_ai-why-adam-works-better-with-β_1-β_2-the-missing-gra-8.md" >}})
-- [神经网络转逻辑流以优化边缘计算性能]({{< relref "posts/20260130-arxiv_ai-late-breaking-results-conversion-of-neural-network-5.md" >}})
-*本文由 AI Stack 自动生成，深度解读学术研究。*
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

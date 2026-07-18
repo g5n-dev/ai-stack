@@ -1,29 +1,50 @@
 ---
-title: 异步联邦学习聚合中梯度陈旧度评估的距离指标研究
+title: 'Revisiting Gradient Staleness: Evaluating Distance Metrics for Asynchronous
+  Federated Learning Aggregation'
 date: 2026-03-10 02:45:40+08:00
 draft: false
 entry_kind: auto
-tags: []
-categories: []
-source: arxiv
-description: 历史条目已归档：现有正文未通过内容质量门，请查阅原始来源。
-external_url: http://arxiv.org/abs/2603.08211v1
+tags:
+- ArXiv
+categories:
+- 论文
 scenarios: []
+source: arxiv
+description: 当前只保存了官方论文摘要，不代表论文全文。请以原始来源为准。
+external_url: https://arxiv.org/abs/2603.08211v1
 aliases: []
-content_mode: archived
-publication_tier: ARCHIVED
-source_provenance: legacy_no_snapshot
-source_support: 0.0
-archived: true
-archive_reason: historical_content_quality_gate
-build:
-  list: never
-  render: always
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: abstract
+source_snapshot_sha256: sha256:ec6ce437ea1ff10ddb8eb307890a4c774dcdbc0e96a99e3f3b4c6ba9477c2831
+extractor_version: source-contract-v1
+discovery_method: arxiv_api
+fetch_status: captured
+source_completeness: abstract_only
+source_is_truncated: false
+source_support: 1.0
+source_title_chars_original: 106
+captured_at: '2026-07-18T04:27:35.108002Z'
+source_capture_sha256: sha256:f7305f87b4dd9a15b9039270af445aadf5a314d2561bf8a27944fc9a4531386e
+source_capture_chars_original: 893
+source_publication_excerpt_chars: 893
 ---
 
-## 历史条目归档说明
+## 基本信息
 
-该条目的历史正文未通过内容质量门，可能包含基于标题推测的内容。为避免继续传播不可核验文本，本站仅保留透明归档记录。
+- **来源**: arxiv
+- **原始来源**: [https://arxiv.org/abs/2603.08211v1](<https://arxiv.org/abs/2603.08211v1>)
+- **作者**: Patrick Wilhelm, Odej Kao
+- **分类**: cs.LG
+- **论文时间**: 2026-03-09T10:40:25Z
+- **论文 PDF**: [https://arxiv.org/pdf/2603.08211v1.pdf](<https://arxiv.org/pdf/2603.08211v1.pdf>)
 
-- 历史内容质量门未通过
-- 原始来源：<http://arxiv.org/abs/2603.08211v1>
+## 来源摘要/节选
+
+> In asynchronous federated learning \(FL\), client devices send updates to a central server at varying times based on their computational speed, often using stale versions of the global model. This staleness can degrade the convergence and accuracy of the global model. Previous work, such as AsyncFedED, proposed an adaptive aggregation method using Euclidean distance to measure staleness. In this paper, we extend this approach by exploring alternative distance metrics to more accurately capture the effect of gradient staleness. We integrate these metrics into the aggregation process and evaluate their impact on convergence speed, model performance, and training stability under heterogeneous clients and non-IID data settings. Our results demonstrate that certain metrics lead to more robust and efficient asynchronous FL training, offering a stronger foundation for practical deployment.
+
+## 来源说明
+
+当前只保存了官方论文摘要，不代表论文全文。请以原始来源为准。
+
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

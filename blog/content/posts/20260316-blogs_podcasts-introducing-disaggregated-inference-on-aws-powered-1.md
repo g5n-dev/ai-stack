@@ -1,26 +1,23 @@
 ---
-title: AWS基于LLM的分离式推理技术解析与SageMaker HyperPod部署实践
+title: Introducing Disaggregated Inference on AWS powered by llm-d | Amazon Web Services
 date: 2026-03-16 20:59:01+08:00
 draft: false
 entry_kind: auto
 tags:
-- AWS
-- LLM
-- llm-d
-- 分离式推理
-- SageMaker
-- HyperPod
-- EKS
-- MoE
-categories:
-- AI 工程
-- 系统与基础设施
-source: blogs_podcasts
-description: 在这篇博文中，我们将介绍下一代推理能力背后的概念，包括分离式服务、智能请求调度和专家并行。我们将探讨它们的优势，并演示如何在 Amazon
-  SageMaker HyperPod EKS 上实施这些概念，从而显著提升推理性能、资源利用率和运营效率。 随着大模型参数规模的持续增长，传统的单体推理架构在资源利用与成本控制上正面临严峻挑战。
-external_url: https://aws.amazon.com/blogs/machine-learning/introducing-disaggregated-inference-on-aws-powered-by-llm-d
-scenarios:
+- 博客与播客
+- AI Agent
 - 大语言模型
+- Kubernetes
+- Docker
+categories:
+- 大模型
+scenarios:
+- AI/ML项目
+- 大语言模型
+- Kubernetes
+source: blogs_podcasts
+description: 当前只保存了公开页面节选，不代表原文全文。请以原始来源为准。
+external_url: https://aws.amazon.com/blogs/machine-learning/introducing-disaggregated-inference-on-aws-powered-by-llm-d
 aliases:
 - /posts/20260316-blogs_podcasts-introducing-disaggregated-inference-on-aws-powered-3/
 - /posts/20260317-blogs_podcasts-introducing-disaggregated-inference-on-aws-powered-10/
@@ -30,331 +27,41 @@ aliases:
 - /posts/20260317-blogs_podcasts-introducing-disaggregated-inference-on-aws-powered-5/
 - /posts/20260317-blogs_podcasts-introducing-disaggregated-inference-on-aws-powered-9/
 - /posts/20260318-blogs_podcasts-introducing-disaggregated-inference-on-aws-powered-14/
-content_mode: legacy_analysis
-publication_tier: LEGACY
-source_provenance: legacy_no_snapshot
-source_support: 0.0
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: excerpt
+source_snapshot_sha256: sha256:9d0e99baa793925e4d10c6bc8a9496386d0aff6837b3e62617c37464b298d912
+extractor_version: source-contract-v1
+discovery_method: article_html_excerpt
+fetch_status: captured
+source_completeness: partial
+source_is_truncated: true
+source_support: 1.0
+source_title_chars_original: 81
+captured_at: '2026-07-18T04:19:17.971030Z'
+source_capture_sha256: sha256:7950b71fc624c5201c931f268ef413b849c382344cfa9b3333d7f8cac93b75a8
+source_capture_chars_original: 5935
+source_publication_excerpt_chars: 784
+source_truncation_reason: historical_capture_limit,historical_publication_excerpt_limit
 ---
 
 ## 基本信息
 
-- **来源**: AWS Machine Learning Blog (blog)
-- **发布时间**: 2026-03-16T16:55:53+00:00
-- **链接**: [https://aws.amazon.com/blogs/machine-learning/introducing-disaggregated-inference-on-aws-powered-by-llm-d](https://aws.amazon.com/blogs/machine-learning/introducing-disaggregated-inference-on-aws-powered-by-llm-d)
+- **来源**: blogs\_podcasts
+- **原始来源**: [https://aws.amazon.com/blogs/machine-learning/introducing-disaggregated-inference-on-aws-powered-by-llm-d](<https://aws.amazon.com/blogs/machine-learning/introducing-disaggregated-inference-on-aws-powered-by-llm-d>)
 
----
+## 来源摘要/节选
 
-## 摘要/简介
+公开展示已截断至最多 800 个字符；请访问原始来源查看完整上下文。
 
-在这篇博文中，我们将介绍下一代推理能力背后的概念，包括分离式服务、智能请求调度和专家并行。我们将探讨它们的优势，并演示如何在 Amazon SageMaker HyperPod EKS 上实施这些概念，从而显著提升推理性能、资源利用率和运营效率。
+> We thank Greg Pereira and Robert Shaw from Red Hat for their support in bringing llm-d to AWS.
+>
+> In the agentic and reasoning era, large language models \(LLMs\) generate 10x more tokens and compute through complex reasoning chains compared to single-shot replies. Agentic AI workflows also create highly variable demands and another exponential increase in processing, bogging down the inference process and degrading the user experience. As the world transitions from prototyping AI solutions to deploying AI at scale, efficient inference is becoming the gating factor.
+>
+> LLM inference consists of two distinct phases: prefill and decode . The prefill phase is compute bound. It processes the entire input prompt in parallel to generate the initial set of key-value \(KV\) cache entries.…
 
----
+## 来源说明
 
-## 导语
+当前只保存了公开页面节选，不代表原文全文。请以原始来源为准。
 
-随着大模型参数规模的持续增长，传统的单体推理架构在资源利用与成本控制上正面临严峻挑战。本文深入探讨了基于 llm-d 的分离式推理技术，解析其如何通过服务解耦、智能调度及专家并行来优化性能。通过阅读本文，您将掌握在 Amazon SageMaker HyperPod EKS 上实施这些新概念的具体方法，从而有效提升系统的吞吐量与运营效率。
-
----
-
-## 摘要
-
-**总结：AWS 基于 llm-d 的解耦推理技术**
-
-本文介绍了由 llm-d 驱动的下一代 AWS 推理能力，重点阐述了以下核心概念及其在 Amazon SageMaker HyperPod EKS 上的实现：
-
-1.  **核心技术概念**：
-    *   **解耦服务**：将推理服务的各个组件分离，以提高灵活性。
-    *   **智能请求调度**：优化请求处理流程。
-    *   **专家并行**：通过并行化策略处理特定任务。
-
-2.  **主要优势**：
-    *   显著提升推理性能。
-    *   提高资源利用率。
-    *   增强运营效率。
-
-文章还简要说明了如何在 Amazon SageMaker HyperPod EKS 上实施这些技术，以帮助用户实现上述收益。
-
----
-
-## 评论
-
-**中心观点**
-该文章阐述了通过解耦推理架构来解决大模型部署中资源利用率瓶颈的技术趋势，其核心在于利用 AWS SageMaker HyperPod 和 llm-d 将计算密集型的张量并行与延迟敏感的请求路由分离，从而实现异构算力的极致效能优化。
-
-**支撑理由与边界条件分析**
-
-**1. 架构层面的解耦是提升 GPU 资源利用率的关键（事实陈述）**
-文章提出的“Disaggregated Inference”（解耦推理）直击当前 LLM 部署的痛点。在传统的耦合架构中，GPU 必须同时承担预填充和解码任务，导致显存和计算单元无法同时满载（Prefill 阶段算力吃满但显存带宽闲置，Decode 阶段显存带宽吃满但算力闲置）。
-*   **技术深度：** 这种解耦不仅仅是物理上的服务器分离，更是逻辑上的流水线重构。通过将 Prefill（计算密集型）调度给高性能 GPU（如 H100），将 Decode（显存带宽敏感型）调度给低成本 GPU 或专用推理卡，可以显著降低 TCPO（Total Cost of Ownership）。
-*   **反例/边界条件：** 这种架构在**超低延迟场景**下可能失效。如果业务要求端到端延迟在毫秒级，解耦带来的网络传输开销（即使是 RDMA）可能会超过解耦带来的收益，此时单体全量 GPU 依然是首选。
-
-**2. 智能请求调度与专家并行是 MoE 模型落地的必要条件（作者观点）**
-文章强调了 llm-d 在“Intelligent Request Scheduling”和“Expert Parallelism”中的作用。随着模型向 MoE（如 Mixtral, Grok）演进，推理的动态性大幅增加。
-*   **创新性：** 将调度层从通用的负载均衡器升级为感知模型拓扑的智能路由，这是行业发展的必然方向。llm-d 作为一个控制平面，能够根据当前各专家节点的负载动态分片，这比静态的哈希路由要高效得多。
-*   **反例/边界条件：** 对于**稠密模型**或**参数量较小（<7B）**的模型，这种复杂的调度机制引入的额外上下文切换开销和系统复杂度，可能远大于其带来的性能提升。此外，如果 MoE 的专家激活策略非常均匀，路由优化的空间也会被压缩。
-
-**3. 云原生的标准化封装降低了技术落地门槛（你的推断）**
-AWS 选择在 SageMaker HyperPod EKS 上落地，意在将这种原本属于超大规模互联网公司的“定制化架构”通过云服务产品化。
-*   **实用价值：** 这使得企业不需要自己开发复杂的调度系统（如 Orca 或 vLLM 的某些高级功能），而是可以直接利用云原生的组件进行拼装。这对于希望快速迭代但缺乏底层系统团队的中型企业极具吸引力。
-*   **反例/边界条件：** **厂商锁定风险**。llm-d 如果是 AWS 专有或深度优化的组件，企业未来迁移出 AWS 生态的沉没成本将极高。此外，对于已有成熟 K8s 运维团队且习惯于开源技术栈（如 Ray Serve + KServe）的用户，引入新的专有控制平面可能会增加运维认知负担。
-
-**批判性思考与争议点**
-
-*   **过度营销的嫌疑：** 文章标题中的“Next-generation”略显宏大。解耦计算在 HPC 领域并非新鲜事，AWS 只是将 Storage Disaggregation 的概念应用到了 Inference 领域。真正的挑战在于**网络带宽**。解耦后，Prefill 节点与 Decode 节点之间的 KV Cache 传输对网络吞吐要求极高，如果文章未提及对 Nitro/ENA 网络卡的特定优化，实际效果可能打折扣。
-*   **开源生态的博弈：** 目前 vLLM、TensorRT-LLM 等推理引擎都在向“Continuous Batching”和“Prefill/Decode 解耦”演进（例如 vLLM 的分离推理模式）。AWS 推出 llm-d 试图在框架层之上再建立一层控制，这是否会与底层推理引擎的功能重叠，导致“两层调度”带来的效率损耗，是一个值得观察的技术疑点。
-
-**实际应用建议**
-
-1.  **适用场景评估：** 仅建议在**吞吐量敏感型业务**（如后台批处理、离线任务生成）或**超大规模 MoE 模型部署**时考虑该架构。对于实时对话机器人，需谨慎评估网络延迟。
-2.  **成本测算：** 不要只看 GPU 利用率提升。解耦架构意味着你需要管理更多的 Pod、更复杂的网络策略和监控指标，运维成本会显著上升。建议进行详细的 TCO 模型测算。
-3.  **技术验证：** 在全量上线前，务必在同构架构（单节点多卡）与解耦架构之间进行 A/B 测试，重点关注 P95/P99 延迟而非仅仅是平均吞吐量。
-
-**可验证的检查方式**
-
-1.  **GPU SM 利用率对比实验：**
-    *   *指标：* 使用 `nvidia-smi` 或 DCGM 监控 Prefill 节点和 Decode 节点的 SM (Streaming Multiprocessor) 利用率和显存带宽利用率。
-    *   *预期：* 在解耦架构下，Prefill 节点的 SM 利用率应接近 90-100%，而 Decode 节点的显存带宽（HBM）利用率应接近饱和，两者波形互补，而非同步波动。
-
----
-
-## 技术分析
-
-基于提供的标题和摘要，这篇文章介绍了AWS基于`llm-d`（推测为一种用于解耦推理的底层驱动或框架）推出的**解耦推理**架构。该架构旨在通过Amazon SageMaker HyperPod EKS解决大模型（LLM）推理中的资源浪费和效率瓶颈问题。
-
-### 1. 核心观点深度解读
-
-**主要观点**
-文章的核心观点是：**传统的“单体”推理架构（即每个GPU实例都加载完整的模型副本）已无法满足下一代超大模型的高效部署需求。必须转向“解耦推理”架构，将计算密集型任务与内存密集型任务分离，并结合智能调度，以实现成本效益最大化的高性能推理。**
-
-**核心思想**
-作者试图传达一种**“专业化分工”**的硬件利用哲学。在LLM推理中，Prefill（预填充/前文处理）阶段是计算密集的，而Decode（解码/生词生成）阶段是内存带宽密集的。通过`llm-d`技术，AWS主张不再让所有GPU都“大而全”地处理所有任务，而是通过解耦架构，让不同的硬件资源专门处理它们最擅长的阶段，从而消除资源闲置。
-
-**观点的创新性与深度**
-*   **创新性**：将云计算中的“存算分离”理念具体化到了LLM推理的每一个Token生成步骤中。不仅仅是模型与存储的分离，而是模型内部计算流水的分离。
-*   **深度**：触及了Transformer模型推理的物理瓶颈——内存墙。它指出单纯增加算力（FLOPS）已无法线性提升推理速度，必须通过架构优化来掩盖内存延迟。
-
-**重要性**
-随着模型参数量迈向万亿级别（如GPT-4级别），全量加载模型需要巨大的显存（VRAM）。如果按照传统方式，推理成本将指数级上升。解耦推理是降低AI推理成本、实现超大规模模型商业落地的关键技术路径。
-
-### 2. 关键技术要点
-
-**涉及的关键技术概念**
-1.  **解耦推理**：将模型推理的前向传播过程拆解。通常指将Prefill阶段（处理高并发输入Prompt）与Decode阶段（顺序生成输出）分配到不同类型的计算资源上。
-2.  **智能请求调度**：一个中间调度层，负责将进入的请求根据其当前状态（是需要Prefill还是Decode）路由到合适的计算节点。
-3.  **专家并行ism**：针对混合专家模型的技术。不同的专家模型可以驻留在不同的计算节点上，推理时按需调用特定专家的节点，而不是在每个节点上都加载所有专家。
-
-**技术原理与实现方式**
-*   **原理**：利用LLM推理的两个阶段的异构性。Prefill阶段需要高算力（Tensor Core利用率高），Decode阶段需要高内存带宽（HBM利用率高）。
-*   **实现**：在SageMaker HyperPod EKS上，`llm-d`驱动允许构建一个分离的集群。一组节点配置为高算力实例（如P4/P5）处理Prefill，另一组节点配置为高内存带宽实例处理Decode。通过高速互连（如EFA）传递中间状态（KV Cache）。
-
-**技术难点与解决方案**
-*   **难点1：KV Cache传输**。解耦后，Prefill生成的KV Cache需要传输给Decode节点，这可能产生延迟。
-    *   *解决方案*：利用AWS的EFA（Elastic Fabric Adapter）和Nitro架构，提供节点间超低延迟通信，尽可能掩盖传输开销。
-*   **难点2：调度复杂性**。系统需要动态管理Prefill和Decode队列，防止头节点阻塞。
-    *   *解决方案*：文中提到的“智能请求调度”通过连续批处理和预测性调度算法来优化吞吐量。
-
-**技术创新点分析**
-最大的创新在于**打破了“模型副本”与“GPU实例”的一对一绑定**。通过`llm-d`，可以实现多个Decode节点共享一个Prefill节点的输出，或者动态扩容Decode节点而不必重复加载模型权重，从而极大提高了内存利用率。
-
-### 3. 实际应用价值
-
-**对实际工作的指导意义**
-对于AI架构师而言，这意味着在设计推理系统时，不再需要为了应对偶尔的流量高峰而部署大量昂贵的高性能GPU（如H100）。可以配置少量的高性能GPU做Prefill，配合较多的高性价比GPU做Decode，从而显著降低TCO（总拥有成本）。
-
-**应用场景**
-1.  **长文本生成**：输入Prompt极长，输出也较长。Prefill阶段压力大，解耦后可快速处理输入。
-2.  **高并发聊天机器人**：大量用户同时在线，大部分时间处于低算力消耗的Decode状态，解耦架构能支持更高的并发用户数。
-3.  **MoE模型部署**：当模型参数量极大但每次推理只激活部分参数时，专家并行ism能避免显存浪费。
-
-**需要注意的问题**
-*   **网络延迟**：如果部署在非EFA优化的环境下，节点间通信可能成为新的瓶颈。
-*   **状态同步**：在分布式环境下保持解码的一致性较为复杂。
-
-**实施建议**
-建议先在SageMaker HyperPod上测试特定负载下的性能表现。对比“单体架构”与“解耦架构”在P90延迟和每美元吞吐量上的差异，再决定是否全面迁移。
-
-### 4. 行业影响分析
-
-**对行业的启示**
-AWS此举标志着**云厂商的竞争从“算力堆砌”转向“架构效率”**。未来的推理服务将不再是简单的“租个GPU”，而是租用经过优化的“解耦计算流”。
-
-**可能带来的变革**
-*   **硬件采购多元化**：企业可能会采购不同类型的GPU组合，而非清一色的顶配卡。
-*   **模型部署标准化**：`llm-d`如果开源或成为标准，可能会推动Kubernetes上LLM编排接口的统一。
-
-**对行业格局的影响**
-这巩固了AWS在企业级AI基础设施领域的地位。通过提供垂直优化的解决方案（SageMaker + EKS + Nitro），AWS为希望在自有云上部署大模型的企业提供了一条比公有API更灵活、比裸金属更易用的路径。
-
-### 5. 延伸思考
-
-**引发的其他思考**
-*   **冷启动问题**：在解耦架构下，如何快速唤醒和扩展Decode节点？
-*   **跨区域解耦**：未来Prefill和Decode是否可以跨地域部署？例如在边缘节点做Prefill（处理用户输入），在中心节点做Decode（生成回复）？
-
-**未来发展趋势**
-*   **推理专用芯片的崛起**：解耦架构将加速LPU、TPU等针对特定阶段（带宽或计算）优化的专用芯片的应用。
-*   **Serverless推理的极致形态**：由于解耦降低了状态耦合，未来的LLM推理可能完全无状态化，按Token精确计费。
-
-### 7. 案例分析
-
-**成功案例（推测性）**
-*   **Character.AI或类似聊天应用**：这类应用特点是Prompt短（用户单次输入），但Context极长（需要加载历史对话），且生成长度中等。使用解耦推理，可以用一组强大的节点处理长Context的加载，用大量廉价节点维持长连接的生成，大幅降低成本。
-
-**失败案例反思**
-*   **极短请求场景**：如果业务场景主要是极短的问答（如输入“天气”，输出“晴天”），解耦带来的网络通信开销可能超过了并行计算带来的收益，导致性能反而下降。
-
-### 8. 哲学与逻辑：论证地图
-
-**中心命题**
-**在AWS SageMaker HyperPod上实施基于llm-d的解耦推理架构，能够显著降低超大模型推理的延迟与成本，优于传统的单体部署模式。**
-
-**支撑理由**
-1.  **资源利用率优化**：依据是Prefill和Decode阶段的计算特性不同（计算密集 vs 带宽密集），解耦允许为不同阶段匹配最合适的硬件，避免资源闲置。
-2.  **扩展性弹性**：依据是解耦后，Decode节点可以独立扩容，无需重复加载模型权重，使得水平扩展更廉价、更快速。
-3.  **MoE模型适配**：依据是专家并行ism允许将庞大的MoE模型拆分分布，使得单次推理无需加载全量参数，从而突破显存限制。
-
-**反例 / 边界条件**
-1.  **低延迟敏感型任务**：如果任务对端到端延迟极其敏感（毫秒级），节点间通信的额外延迟可能会抵消架构优势。
-2.  **小参数模型**：对于参数量较小（如<7B）能完全装入单个GPU显存的模型，解耦的管理复杂度可能超过其带来的性能收益。
-
-**事实与价值判断**
-*   *事实*：LLM推理包含Prefill和Decode两个不同特性的阶段；AWS推出了llm-d和HyperPod EKS功能。
-*   *价值判断*：“显著降低成本”、“优于传统模式”属于价值判断，需通过实际Benchmark验证。
-*   *可检验预测*：在处理长Prompt、高并发请求的场景下，解构架构的吞吐量将比单体架构高出X%。
-
-**立场与验证**
-*   **立场**：支持在**大规模、高并发、长上下文**的生产场景中采用解耦推理架构。
-*   **验证方式**：
-    *   *指标*：对比 Time-to-First-Token (TTFT) 和 Token Generation Throughput (Tokens/秒)。
-    *   *实验*：在相同硬件预算下，对比单体集群与解耦集群在RPS（每秒请求数）峰值下的P99延迟表现。
-    *   *观察窗口*：观察在流量突发时，解耦架构的扩缩容响应速度是否快于单体架构。
-
----
-
-## 最佳实践
-
-### 实践 1：合理选择推理实例类型
-
-**说明**: llm-d 支持解耦架构，允许将计算密集型任务与内存密集型任务分离。应根据模型大小和吞吐量需求，选择合适的实例类型组合。例如，使用计算优化型实例处理推理请求，使用内存优化型实例存储模型权重。
-
-**实施步骤**:
-1. 评估模型参数量和显存需求。
-2. 在 AWS 控制台中查看支持 llm-d 的实例列表（如 P5、Inf2 等）。
-3. 根据预算和延迟要求，选择计算实例与内存实例的最佳配比。
-
-**注意事项**: 避免过度配置计算资源导致成本浪费，或内存不足导致模型加载失败。
-
----
-
-### 实践 2：优化模型加载与缓存策略
-
-**说明**: 解耦架构下，模型权重存储在独立节点。频繁加载模型会增加 I/O 延迟。应利用 llm-d 的缓存机制，将热点模型保留在本地或高速缓存层。
-
-**实施步骤**:
-1. 识别高频使用的模型。
-2. 配置 llm-d 的缓存参数，设置合理的缓存大小和过期策略。
-3. 监控缓存命中率，动态调整缓存配置。
-
-**注意事项**: 缓存大小需与可用内存匹配，防止内存溢出（OOM）。
-
----
-
-### 实践 3：实施高效的请求批处理
-
-**说明**: 批处理可显著提高 GPU 利用率。llm-d 支持动态批处理，建议启用该功能以合并多个推理请求，减少空转时间。
-
-**实施步骤**:
-1. 在服务配置中启用动态批处理（如 `--batch-size` 参数）。
-2. 根据请求延迟容忍度调整批处理超时时间。
-3. 测试不同批大小下的吞吐量和延迟，找到平衡点。
-
-**注意事项**: 过大的批处理可能导致长尾延迟，需根据实时性要求权衡。
-
----
-
-### 实践 4：配置自动扩缩容策略
-
-**说明**: 推理负载通常具有波动性。利用 AWS Auto Scaling 动态调整计算和内存节点数量，可在保证性能的同时优化成本。
-
-**实施步骤**:
-1. 定义基于 CPU/GPU 利用率或请求队列长度的扩缩容指标。
-2. 设置最小/最大实例数限制，防止资源失控。
-3. 结合预测性扩缩容（如 AWS Forecast）应对周期性流量。
-
-**注意事项**: 冷启动时间可能影响实时性，建议预留部分基线实例。
-
----
-
-### 实践 5：启用模型量化和压缩
-
-**说明**: 通过量化（如 FP16/INT8）和模型压缩技术，可减少显存占用和传输开销，提升推理速度。llm-d 原生支持多种量化格式。
-
-**实施步骤**:
-1. 使用工具（如 llm-d-quantize）将模型转换为量化版本。
-2. 在部署时指定量化后的模型路径。
-3. 验证量化后的精度损失是否在可接受范围内。
-
-**注意事项**: 某些模型对量化敏感，需进行充分测试。
-
----
-
-### 实践 6：监控端到端性能指标
-
-**说明**: 解耦架构增加了监控复杂度。需同时跟踪计算节点、内存节点和网络延迟，确保整体性能达标。
-
-**实施步骤**:
-1. 配置 CloudWatch 或 Prometheus 收集关键指标（如吞吐量、P99 延迟、错误率）。
-2. 设置告警阈值，及时响应异常。
-3. 定期分析日志，识别瓶颈（如网络带宽或内存带宽）。
-
-**注意事项**: 确保监控数据采集本身不影响推理性能。
-
----
-
-### 实践 7：确保安全与合规性
-
-**说明**: 在多租户或公有云环境中，需保护模型资产和推理数据安全。llm-d 支持基于 IAM 的访问控制和数据加密。
-
-**实施步骤**:
-1. 为计算和内存节点配置 IAM 角色，遵循最小权限原则。
-2. 启用传输中加密（TLS）和静态加密（如 KMS）。
-3. 定期审计访问日志，检测异常行为。
-
-**注意事项**: 加密可能增加轻微性能开销，需在安全性和效率间平衡。
-
----
-
-## 学习要点
-
-- AWS推出了基于llm-d的解耦推理架构，通过分离计算和内存资源，显著降低了大模型推理的延迟和成本
-- 该架构支持动态扩展计算节点，可根据推理负载自动调整资源，提升整体吞吐量
-- 利用llm-d的分布式优化技术，实现了跨多个GPU的高效模型并行处理
-- 解耦设计允许独立升级计算或内存组件，提高了系统的灵活性和可维护性
-- 该解决方案特别适用于需要高并发推理的场景，如实时对话和批量生成任务
-- 通过与AWS SageMaker集成，简化了部署流程，降低了用户的技术门槛
-- 实验数据显示，相比传统架构，该方案在特定工作负载下可将推理成本降低达50%
-
----
-
-## 引用
-
-- **文章/节目**: [https://aws.amazon.com/blogs/machine-learning/introducing-disaggregated-inference-on-aws-powered-by-llm-d](https://aws.amazon.com/blogs/machine-learning/introducing-disaggregated-inference-on-aws-powered-by-llm-d)
-- **RSS 源**: [https://aws.amazon.com/blogs/machine-learning/feed/](https://aws.amazon.com/blogs/machine-learning/feed/)
-
-> 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
-
----
-
-## 站内链接
-
-- 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/)
-- 标签： [AWS](/tags/aws/) / [LLM](/tags/llm/) / [llm-d](/tags/llm-d/) / [分离式推理](/tags/%E5%88%86%E7%A6%BB%E5%BC%8F%E6%8E%A8%E7%90%86/) / [SageMaker](/tags/sagemaker/) / [HyperPod](/tags/hyperpod/) / [EKS](/tags/eks/) / [MoE](/tags/moe/)
-- 场景： [大语言模型](/scenarios/%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/)
-
-### 相关文章
-
-- [AWS 推出基于 LLM-d 的分离式推理技术及 SageMaker HyperPod 实践]({{< relref "posts/20260316-blogs_podcasts-introducing-disaggregated-inference-on-aws-powered-1.md" >}})
-- [AWS 基于llm-d推出分离式推理：解耦服务与智能调度]({{< relref "posts/20260316-blogs_podcasts-introducing-disaggregated-inference-on-aws-powered-1.md" >}})
-- [AWS 推出基于 llm-d 的分离式推理技术]({{< relref "posts/20260316-blogs_podcasts-introducing-disaggregated-inference-on-aws-powered-1.md" >}})
-- [AWS 解耦式推理技术解析：解耦服务、智能调度与专家并行]({{< relref "posts/20260316-blogs_podcasts-introducing-disaggregated-inference-on-aws-powered-1.md" >}})
-- [AWS 基于 LLM-d 的解耦推理技术及 SageMaker HyperPod EKS 实践]({{< relref "posts/20260316-blogs_podcasts-introducing-disaggregated-inference-on-aws-powered-1.md" >}})
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

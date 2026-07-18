@@ -1,102 +1,76 @@
 ---
-title: 仓库 Agent 就绪度评估：发现基础设施短板
+title: 你的仓库 Agent Ready 了吗？
 date: 2026-05-18 09:00:19+08:00
 draft: false
 entry_kind: auto
 tags:
+- 掘金
 - AI Agent
-- Agent就绪度
-- CI/CD评估
-- 测试覆盖率
-- 依赖管理
-- 文档完善度
-- 代码库结构
-- 基础设施短板
+- 大语言模型
+- Python
+- Rust
+- TypeScript
+- Java
+- 命令行工具
 categories:
-- AI 工程
-- 系统与基础设施
-source: juejin
-description: 随着 AI 编程助手在团队中的普及，如何判断现有的工程基础设施是否能够充分发挥其效能变得尤为关键。本文聚焦 Agent Readiness，探讨在引入
-  AI Coding Agent 前需要审视的关键环节，帮助开发团队识别潜在的短板并有针对性地进行改进，从而提升研发效率与代码质量。
-external_url: https://juejin.cn/post/7641043284966146048
+- 大模型
 scenarios:
 - AI/ML项目
-content_mode: legacy_analysis
-publication_tier: LEGACY
-source_provenance: legacy_no_snapshot
-source_support: 0.0
+- 大语言模型
+- 命令行工具
+source: juejin
+description: 当前只保存了公开页面节选，不代表原文全文。请以原始来源为准。
+external_url: https://juejin.cn/post/7641043284966146048
+aliases: []
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: excerpt
+source_snapshot_sha256: sha256:aea2a6e96ce909f9b383f781b186005a5a7779503c9980401b0bd6322f093d6d
+extractor_version: source-contract-v1
+discovery_method: article_html_excerpt
+fetch_status: captured
+source_completeness: partial
+source_is_truncated: true
+source_support: 1.0
+source_title_chars_original: 20
+captured_at: '2026-07-18T04:21:25.471131Z'
+source_capture_sha256: sha256:71c5c54e698b9a61d865e63731a829d744ee06724923c4754fa823aaf67191db
+source_capture_chars_original: 6000
+source_publication_excerpt_chars: 778
+source_truncation_reason: historical_excerpt_only,historical_publication_excerpt_limit
 ---
 
 ## 基本信息
 
-- **作者**: 挖坑的张师傅
-- **链接**: [https://juejin.cn/post/7641043284966146048](https://juejin.cn/post/7641043284966146048)
+- **来源**: juejin
+- **原始来源**: [https://juejin.cn/post/7641043284966146048](<https://juejin.cn/post/7641043284966146048>)
 
----
-## 导语
+## 来源摘要/节选
 
-随着 AI 编程助手在团队中的普及，如何判断现有的工程基础设施是否能够充分发挥其效能变得尤为关键。本文聚焦 Agent Readiness，探讨在引入 AI Coding Agent 前需要审视的关键环节，帮助开发团队识别潜在的短板并有针对性地进行改进，从而提升研发效率与代码质量。
+公开展示已截断至最多 800 个字符；请访问原始来源查看完整上下文。
 
----
+> 这个项目源自
+> Factory.ai
+> 今年一月发布的 Agent Readiness 概念。Factory 是一个 AI Coding Agent 平台，他们的 Agent 叫 Droid，在帮企业客户大规模部署 Agent 的过程中发现了一个规律：Agent 表现好不好，最大的变量不是模型，而是代码仓库本身的工程基础。
+> "The agent is not broken. The environment is."
+> —— Agent 没坏，是环境有问题。
+> Factory 基于这个认知做了一套
+> 评估体系
+> ，但它跟 Factory 平台深度绑定。我觉得这个思路太好了，不应该只能在一个平台上用，于是做了这个
+> 开源版本
+> ——不绑定任何 Agent 或平台，只要有 Git 仓库和 Node.js 就能跑。
+> 一个真实的痛点
+> 最近半年，我一直在用各种 AI Coding Agent 写代码——Claude Code、Cursor、Copilot，轮番上阵。体验下来有个很明显的感受：同样的 Agent，放在不同的仓库里，表现差距大得离谱。
+> 有些项目里，Agent 干活特别顺。你说"加个接口"，它就能顺着 lint 配置、测试框架、CI 流程一路跑通，甚至能帮你开 PR。但换到另一个仓库——哪怕是同一个团队的——它就开始犯傻：lint 规则不知道在哪，测试跑不起来，构建命令靠猜，折腾半天出来的代码还得你手动收拾。
+> 问题不在 Agent，而在仓库本身。Agent 能力的天花板，很大程度上取决于它落地的那个环境是不是"agent-friendly"。
+> 这个认知促使我做了
+> Agent Readiness
+> 这个项目。
+> 什么是 Agent Readiness
+> 一句话讲：它是一个静态审计工具，用来衡量一个 Git 仓库到底有多"适合 AI Agent 来干活"。…
 
-## 中文翻译
+## 来源说明
 
-**Agent Readiness**
+当前只保存了公开页面节选，不代表原文全文。请以原始来源为准。
 
-如果你的团队已经在用或者准备用 AI Coding Agent，那 Agent Readiness 能帮你找到工程基础设施的短板。它不是告诉你"该不该用 Agent"
-
----
-## 摘要
-
-Agent Readiness 是一种评估工具，帮助已经使用或计划使用 AI Coding Agent 的团队发现工程基础设施的不足之处。它不负责判断是否应采用 Agent，而是专注于现有系统的准备情况。通过检查代码库结构、CI/CD 流程、测试覆盖率、依赖管理、文档化等维度，Agent Readiness 能指出需要改进的具体环节，使团队在引入 Agent 时更加顺畅，降低因基础设施薄弱导致的效率损失。
-
----
-## 评论
-
-#### 核心观点
-
-Agent Readiness的价值不在于告诉你该不该用AI Coding Agent，而在于帮你发现工程基础设施的薄弱环节。这一评估框架将Agent效能与工程成熟度挂钩，是一次思路上的重要转向。
-
-#### 事实陈述
-
-当前业界普遍关注Agent本身的能力边界，却忽视了底层基础设施对Agent表现的深刻影响。事实是，代码风格混乱、测试覆盖率不足、依赖关系不清晰的仓库，即使接入最先进的Agent，也难以发挥应有价值。相反，整洁的代码基底、完善的CI/CD流程、清晰的接口定义，能让Agent快速理解上下文并产生高质量输出。
-
-#### 作者观点
-
-作者认为Agent Readiness应该成为团队引入AI Coding前的必选项，而非可选项。这不仅是一个技术问题，更是一个认知问题——它要求工程团队重新审视"基础设施"在智能化时代的定位。从这个角度看，Agent Readiness更像是一面镜子，映射出团队工程能力的真实水位。
-
-#### 你的推断
-
-从当前技术趋势推断，未来会有更多团队将Agent Readiness纳入技术债务评估体系。如果这一概念得到广泛认可，可能催生专门的评估工具和最佳实践库，甚至成为招聘和晋升的参考维度。
-
-#### 边界条件
-
-需要明确的是，Agent Readiness针对的是技术基础设施层面，不涉及组织文化、团队协作模式等软性因素。此外，不同技术栈和业务场景对基础设施的要求差异显著，评估结果需要结合实际情况解读。
-
-#### 实践启发
-
-对于计划引入AI Coding Agent的团队，建议分三步走：首先用Agent Readiness框架做一次全面体检；其次识别关键短板并制定改进计划；最后将改进指标纳入团队OKR。关键是避免将Agent Readiness变成一次性的检查，而应将其视为持续优化的起点。
-
----
-## 引用
-
-- **掘金原文**: [https://juejin.cn/post/7641043284966146048](https://juejin.cn/post/7641043284966146048)
-
-> 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
-
----
-
-## 站内链接
-
-- 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/)
-- 标签： [AI Agent](/tags/ai-agent/) / [Agent就绪度](/tags/agent%E5%B0%B1%E7%BB%AA%E5%BA%A6/) / [CI/CD评估](/tags/ci-cd%E8%AF%84%E4%BC%B0/) / [测试覆盖率](/tags/%E6%B5%8B%E8%AF%95%E8%A6%86%E7%9B%96%E7%8E%87/) / [依赖管理](/tags/%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86/) / [文档完善度](/tags/%E6%96%87%E6%A1%A3%E5%AE%8C%E5%96%84%E5%BA%A6/) / [代码库结构](/tags/%E4%BB%A3%E7%A0%81%E5%BA%93%E7%BB%93%E6%9E%84/) / [基础设施短板](/tags/%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD%E7%9F%AD%E6%9D%BF/)
-- 场景： [AI/ML项目](/scenarios/ai-ml%E9%A1%B9%E7%9B%AE/)
-
-### 相关文章
-
-- [OpenClaw Skills机制：三层渐进式加载与依赖管理的AI Agent框架]({{< relref "posts/20260309-juejin-拆解-openclaw-的-skills-机制一个为-ai-agent-设计的包管理器-3.md" >}})
-- [Sonarly：利用AI代理分类并修复生产环境告警]({{< relref "posts/20260217-hacker_news-launch-hn-sonarly-yc-w26-ai-agent-to-triage-and-fi-12.md" >}})
-- [Sonarly：AI 智能体用于生产告警的分诊与修复]({{< relref "posts/20260217-hacker_news-launch-hn-sonarly-yc-w26-ai-agent-to-triage-and-fi-12.md" >}})
-- [OpenClaw 集成阿里云 SLS 构建 AI Agent 可观测体系]({{< relref "posts/20260303-juejin-你的-openclaw-真的在受控运行吗-0.md" >}})
-- [OpenHands框架拆解：Runtime组件与数据流解析]({{< relref "posts/20260305-juejin-ai-agent框架探秘拆解-openhands11-runtime主要组件-3.md" >}})
-*本文由 AI Stack 自动生成，提供深度内容分析。*
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

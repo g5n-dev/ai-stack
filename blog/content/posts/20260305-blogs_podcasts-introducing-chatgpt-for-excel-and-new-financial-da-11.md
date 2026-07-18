@@ -1,32 +1,59 @@
 ---
-title: OpenAI推出Excel版ChatGPT及金融数据集成功能
+title: Introducing ChatGPT for Excel and new financial data integrations
 date: 2026-03-05 22:28:24+08:00
 draft: false
 entry_kind: auto
-tags: []
-categories: []
+tags:
+- 博客与播客
+- MCP
+categories:
+- AI 工程
+scenarios:
+- AI/ML项目
 source: blogs_podcasts
-description: 历史条目已归档：现有正文未通过内容质量门，请查阅原始来源。
+description: 当前只保存了公开页面节选，不代表原文全文。请以原始来源为准。
 external_url: https://openai.com/index/chatgpt-for-excel
-scenarios: []
 aliases:
 - /posts/20260306-blogs_podcasts-introducing-chatgpt-for-excel-and-new-financial-da-10/
 - /posts/20260306-blogs_podcasts-introducing-chatgpt-for-excel-and-new-financial-da-11/
 - /posts/20260306-blogs_podcasts-introducing-chatgpt-for-excel-and-new-financial-da-13/
-content_mode: archived
-publication_tier: ARCHIVED
-source_provenance: legacy_no_snapshot
-source_support: 0.0
-archived: true
-archive_reason: historical_content_quality_gate
-build:
-  list: never
-  render: always
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: excerpt
+source_snapshot_sha256: sha256:9fbc41e9d82b74dedad9e5179f260b70e01781539b7c06a1f4ebc3337dbb98d4
+extractor_version: source-contract-v1
+discovery_method: article_html_excerpt
+fetch_status: captured
+source_completeness: partial
+source_is_truncated: true
+source_support: 1.0
+source_title_chars_original: 65
+captured_at: '2026-07-18T04:18:35.225278Z'
+source_capture_sha256: sha256:ed2602dde954693b41fb3bfab16a4ce4ec2982a9f9f663dc73b40125917969d2
+source_capture_chars_original: 5805
+source_publication_excerpt_chars: 758
+source_truncation_reason: historical_capture_limit,historical_publication_excerpt_limit
 ---
 
-## 历史条目归档说明
+## 基本信息
 
-该条目的历史正文未通过内容质量门，可能包含基于标题推测的内容。为避免继续传播不可核验文本，本站仅保留透明归档记录。
+- **来源**: blogs\_podcasts
+- **原始来源**: [https://openai.com/index/chatgpt-for-excel](<https://openai.com/index/chatgpt-for-excel>)
 
-- 历史内容质量门未通过
-- 原始来源：<https://openai.com/index/chatgpt-for-excel>
+## 来源摘要/节选
+
+公开展示已截断至最多 800 个字符；请访问原始来源查看完整上下文。
+
+> Use ChatGPT in Excel to build, update, and analyze spreadsheets faster, and new integrations in ChatGPT for financial workflows.
+>
+> Update on May 5, 2026 : ChatGPT for Excel and Google Sheets are now generally available across all plans—powered by GPT‑5.5. Install ChatGPT for Excel or Google Sheets ⁠ \(opens in a new window\) .
+>
+> Update on April 22, 2026 : ChatGPT for Google Sheets is now available in beta. We've also added support for app integrations and skills for both ChatGPT for Excel and ChatGPT for Google Sheets.
+>
+> Today, we’re introducing ChatGPT for Excel ⁠ \(opens in a new window\) in beta, an Excel add-in that brings ChatGPT directly into workbooks to help build and update models, run scenarios, and generate outputs based on cells and formulas.…
+
+## 来源说明
+
+当前只保存了公开页面节选，不代表原文全文。请以原始来源为准。
+
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

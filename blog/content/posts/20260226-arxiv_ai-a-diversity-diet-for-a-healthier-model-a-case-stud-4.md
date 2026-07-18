@@ -1,29 +1,52 @@
 ---
-title: 面向法语的ModernBERT多样性训练案例研究
+title: 'A Diversity Diet for a Healthier Model: A Case Study of French ModernBERT'
 date: 2026-02-26 02:52:57+08:00
 draft: false
 entry_kind: auto
-tags: []
-categories: []
+tags:
+- ArXiv
+- 自然语言处理
+categories:
+- 论文
+scenarios:
+- AI/ML项目
+- 自然语言处理
 source: arxiv
-description: 历史条目已归档：现有正文未通过内容质量门，请查阅原始来源。
-external_url: http://arxiv.org/abs/2602.22014v1
-scenarios: []
+description: 当前只保存了官方论文摘要，不代表论文全文。请以原始来源为准。
+external_url: https://arxiv.org/abs/2602.22014v1
 aliases: []
-content_mode: archived
-publication_tier: ARCHIVED
-source_provenance: legacy_no_snapshot
-source_support: 0.0
-archived: true
-archive_reason: historical_content_quality_gate
-build:
-  list: never
-  render: always
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: abstract
+source_snapshot_sha256: sha256:aebdc04fb18837aea888dfcb470b65ee56cddbd5e235982390e9d40ca9b2a2ba
+extractor_version: source-contract-v1
+discovery_method: arxiv_api
+fetch_status: captured
+source_completeness: abstract_only
+source_is_truncated: false
+source_support: 1.0
+source_title_chars_original: 73
+captured_at: '2026-07-18T04:17:01.203007Z'
+source_capture_sha256: sha256:d658527efa938e7635b9f2a48a4dbb10e17a21fb7f63632b6a1b80d080c7fad0
+source_capture_chars_original: 895
+source_publication_excerpt_chars: 895
 ---
 
-## 历史条目归档说明
+## 基本信息
 
-该条目的历史正文未通过内容质量门，可能包含基于标题推测的内容。为避免继续传播不可核验文本，本站仅保留透明归档记录。
+- **来源**: arxiv
+- **原始来源**: [https://arxiv.org/abs/2602.22014v1](<https://arxiv.org/abs/2602.22014v1>)
+- **作者**: Louis Estève, Christophe Servan, Thomas Lavergne, Agata Savary
+- **分类**: cs.CL
+- **论文时间**: 2026-02-25T15:29:30Z
+- **论文 PDF**: [https://arxiv.org/pdf/2602.22014v1.pdf](<https://arxiv.org/pdf/2602.22014v1.pdf>)
 
-- 历史内容质量门未通过
-- 原始来源：<http://arxiv.org/abs/2602.22014v1>
+## 来源摘要/节选
+
+> Diversity has been gaining interest in the NLP community in recent years. At the same time, state-of-the-art transformer models such as ModernBERT use very large pre-training datasets, which are driven by size rather than by diversity. This summons for an investigation of the impact of diversity on the ModernBERT pre-training. We do so in this study, with the express intent of reducing pre-training dataset size, while retaining at least comparable performance. We compare diversity-driven sampling algorithms, so as to pick the best one. We find that diversity-driven sampling allows in some tasks to gain 10 points relative to randomly-sampled pre-training data of commensurate size. We also see that a model pre-trained for 483h on a diversity-driven dataset of 150M tokens can yield a commensurate performance to a model pre-trained for 1,775h on a randomly-driven dataset of 2.4B tokens.
+
+## 来源说明
+
+当前只保存了官方论文摘要，不代表论文全文。请以原始来源为准。
+
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

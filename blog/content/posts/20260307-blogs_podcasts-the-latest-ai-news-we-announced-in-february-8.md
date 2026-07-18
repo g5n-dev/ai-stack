@@ -1,29 +1,58 @@
 ---
-title: 谷歌二月发布Gemini 3.1 Pro与Nano Banana 2
+title: The latest AI news we announced in February
 date: 2026-03-07 01:11:26+08:00
 draft: false
 entry_kind: auto
-tags: []
-categories: []
+tags:
+- 博客与播客
+- 机器学习
+categories:
+- AI 工程
+scenarios:
+- AI/ML项目
 source: blogs_podcasts
-description: 历史条目已归档：现有正文未通过内容质量门，请查阅原始来源。
+description: 当前只保存了公开页面节选，不代表原文全文。请以原始来源为准。
 external_url: https://blog.google/innovation-and-ai/products/google-ai-updates-february-2026
-scenarios: []
 aliases: []
-content_mode: archived
-publication_tier: ARCHIVED
-source_provenance: legacy_no_snapshot
-source_support: 0.0
-archived: true
-archive_reason: historical_content_quality_gate
-build:
-  list: never
-  render: always
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: excerpt
+source_snapshot_sha256: sha256:caa599056c99e22784ad3155f43c99d4d572ef8dc6f3949de637bcf475753b1d
+extractor_version: source-contract-v1
+discovery_method: article_html_excerpt
+fetch_status: captured
+source_completeness: partial
+source_is_truncated: true
+source_support: 1.0
+source_title_chars_original: 43
+captured_at: '2026-07-18T04:18:40.518892Z'
+source_capture_sha256: sha256:c543ae91681133cc5faa369c3e2d18874faff6782296d2eb211947da7d910f71
+source_capture_chars_original: 5954
+source_publication_excerpt_chars: 740
+source_truncation_reason: historical_capture_limit,historical_publication_excerpt_limit
 ---
 
-## 历史条目归档说明
+## 基本信息
 
-该条目的历史正文未通过内容质量门，可能包含基于标题推测的内容。为避免继续传播不可核验文本，本站仅保留透明归档记录。
+- **来源**: blogs\_podcasts
+- **原始来源**: [https://blog.google/innovation-and-ai/products/google-ai-updates-february-2026](<https://blog.google/innovation-and-ai/products/google-ai-updates-february-2026>)
 
-- 历史内容质量门未通过
-- 原始来源：<https://blog.google/innovation-and-ai/products/google-ai-updates-february-2026>
+## 来源摘要/节选
+
+公开展示已截断至最多 800 个字符；请访问原始来源查看完整上下文。
+
+> Here’s a recap of our biggest AI updates from February, including highlights from the AI Impact Summit in India, the release of Gemini 3.1 Pro and Nano Banana 2.
+>
+> Your browser does not support the audio element.
+>
+> Google made several AI announcements in February to show how AI can solve real-world problems. They launched partnerships and investments at the AI Impact Summit in India. New AI tools and upgrades include Nano Banana 2, Lyria 3, Gemini 3.1 Pro and Deep Think, and an AI video analysis tool for Team USA.
+>
+> This article, "The latest AI news we announced in February," highlights Google's AI advancements and global impact.
+>
+> Google showcased AI solving real-world problems at the AI Impact Summit in India with new partnerships.…
+
+## 来源说明
+
+当前只保存了公开页面节选，不代表原文全文。请以原始来源为准。
+
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

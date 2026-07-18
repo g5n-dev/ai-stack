@@ -1,29 +1,52 @@
 ---
-title: RetinaVision：基于XAI增强调控的深度学习视网膜疾病分类
+title: 'RetinaVision: XAI-Driven Augmented Regulation for Precise Retinal Disease
+  Classification using deep learning framework'
 date: 2026-02-24 03:30:14+08:00
 draft: false
 entry_kind: auto
-tags: []
-categories: []
+tags:
+- ArXiv
+- 深度学习
+categories:
+- 论文
+scenarios:
+- AI/ML项目
 source: arxiv
-description: 历史条目已归档：现有正文未通过内容质量门，请查阅原始来源。
-external_url: http://arxiv.org/abs/2602.19324v1
-scenarios: []
+description: 当前只保存了官方论文摘要，不代表论文全文。请以原始来源为准。
+external_url: https://arxiv.org/abs/2602.19324v1
 aliases: []
-content_mode: archived
-publication_tier: ARCHIVED
-source_provenance: legacy_no_snapshot
-source_support: 0.0
-archived: true
-archive_reason: historical_content_quality_gate
-build:
-  list: never
-  render: always
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: abstract
+source_snapshot_sha256: sha256:e1d89a84d906900646afa6d0a0d95783e32d1e22b888528f76b73467e5149a34
+extractor_version: source-contract-v1
+discovery_method: arxiv_api
+fetch_status: captured
+source_completeness: abstract_only
+source_is_truncated: false
+source_support: 1.0
+source_title_chars_original: 118
+captured_at: '2026-07-18T04:16:34.952314Z'
+source_capture_sha256: sha256:aa12a5de46e791001252f7ca34fb6fe8e60b743e2e41dc70353a88888a65631b
+source_capture_chars_original: 1094
+source_publication_excerpt_chars: 1094
 ---
 
-## 历史条目归档说明
+## 基本信息
 
-该条目的历史正文未通过内容质量门，可能包含基于标题推测的内容。为避免继续传播不可核验文本，本站仅保留透明归档记录。
+- **来源**: arxiv
+- **原始来源**: [https://arxiv.org/abs/2602.19324v1](<https://arxiv.org/abs/2602.19324v1>)
+- **作者**: Mohammad Tahmid Noor, Shayan Abrar, Jannatul Adan Mahi, Md Parvez Mia, Asaduzzaman Hridoy, Samanta Ghosh
+- **分类**: cs.CV
+- **论文时间**: 2026-02-22T20:05:54Z
+- **论文 PDF**: [https://arxiv.org/pdf/2602.19324v1.pdf](<https://arxiv.org/pdf/2602.19324v1.pdf>)
 
-- 历史内容质量门未通过
-- 原始来源：<http://arxiv.org/abs/2602.19324v1>
+## 来源摘要/节选
+
+> Early and accurate classification of retinal diseases is critical to counter vision loss and for guiding clinical management of retinal diseases. In this study, we proposed a deep learning method for retinal disease classification utilizing optical coherence tomography \(OCT\) images from the Retinal OCT Image Classification - C8 dataset \(comprising 24,000 labeled images spanning eight conditions\). Images were resized to 224x224 px and tested on convolutional neural network \(CNN\) architectures: Xception and InceptionV3. Data augmentation techniques \(CutMix, MixUp\) were employed to enhance model generalization. Additionally, we applied GradCAM and LIME for interpretability evaluation. We implemented this in a real-world scenario via our web application named RetinaVision. This study found that Xception was the most accurate network \(95.25%\), followed closely by InceptionV3 \(94.82%\). These results suggest that deep learning methods allow effective OCT retinal disease classification and highlight the importance of implementing accuracy and interpretability for clinical applications.
+
+## 来源说明
+
+当前只保存了官方论文摘要，不代表论文全文。请以原始来源为准。
+
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

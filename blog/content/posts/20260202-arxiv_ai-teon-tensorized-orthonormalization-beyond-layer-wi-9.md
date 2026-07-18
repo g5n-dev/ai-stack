@@ -1,30 +1,55 @@
 ---
-title: TEON：张量化正交化技术优化大语言模型预训练
+title: 'TEON: Tensorized Orthonormalization Beyond Layer-Wise Muon for Large Language
+  Model Pre-Training'
 date: 2026-02-02 19:22:59+08:00
 draft: false
 entry_kind: auto
-tags: []
-categories: []
+tags:
+- ArXiv
+- 大语言模型
+categories:
+- 论文
+- 大模型
+scenarios:
+- AI/ML项目
+- 大语言模型
 source: arxiv
-description: 历史条目已归档：现有正文未通过内容质量门，请查阅原始来源。
-external_url: http://arxiv.org/abs/2601.23261v1
-scenarios: []
+description: 当前只保存了官方论文摘要，不代表论文全文。请以原始来源为准。
+external_url: https://arxiv.org/abs/2601.23261v1
 aliases:
 - /posts/20260203-arxiv_ai-teon-tensorized-orthonormalization-beyond-layer-wi-9/
-content_mode: archived
-publication_tier: ARCHIVED
-source_provenance: legacy_no_snapshot
-source_support: 0.0
-archived: true
-archive_reason: historical_content_quality_gate
-build:
-  list: never
-  render: always
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: abstract
+source_snapshot_sha256: sha256:a2ddb325583e2071f31fff6598075a322ad3bb49b49bbd8d37f638f884245ebe
+extractor_version: source-contract-v1
+discovery_method: arxiv_api
+fetch_status: captured
+source_completeness: abstract_only
+source_is_truncated: false
+source_support: 1.0
+source_title_chars_original: 96
+captured_at: '2026-07-18T04:10:19.257843Z'
+source_capture_sha256: sha256:c89076e9ceb91a45a8af6320230f355ccc422f65889cb9cbfce2e2684570bf4e
+source_capture_chars_original: 953
+source_publication_excerpt_chars: 953
 ---
 
-## 历史条目归档说明
+## 基本信息
 
-该条目的历史正文未通过内容质量门，可能包含基于标题推测的内容。为避免继续传播不可核验文本，本站仅保留透明归档记录。
+- **来源**: arxiv
+- **原始来源**: [https://arxiv.org/abs/2601.23261v1](<https://arxiv.org/abs/2601.23261v1>)
+- **作者**: Ruijie Zhang, Yequan Zhao, Ziyue Liu, Zhengyang Wang, Dongyang Li, Yupeng Su, Sijia Liu, Zheng Zhang
+- **分类**: cs.LG
+- **论文时间**: 2026-01-30T18:30:12Z
+- **论文 PDF**: [https://arxiv.org/pdf/2601.23261v1.pdf](<https://arxiv.org/pdf/2601.23261v1.pdf>)
 
-- 历史内容质量门未通过
-- 原始来源：<http://arxiv.org/abs/2601.23261v1>
+## 来源摘要/节选
+
+> The Muon optimizer has demonstrated strong empirical performance in pre-training large language models by performing matrix-level gradient \(or momentum\) orthogonalization in each layer independently. In this work, we propose TEON, a principled generalization of Muon that extends orthogonalization beyond individual layers by modeling the gradients of a neural network as a structured higher-order tensor. We present TEON's improved convergence guarantee over layer-wise Muon, and further develop a practical instantiation of TEON based on the theoretical analysis with corresponding ablation. We evaluate our approach on two widely adopted architectures: GPT-style models, ranging from 130M to 774M parameters, and LLaMA-style models, ranging from 60M to 1B parameters. Experimental results show that TEON consistently improves training and validation perplexity across model scales and exhibits strong robustness under various approximate SVD schemes.
+
+## 来源说明
+
+当前只保存了官方论文摘要，不代表论文全文。请以原始来源为准。
+
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

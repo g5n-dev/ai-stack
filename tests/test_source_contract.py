@@ -87,7 +87,7 @@ def test_contract_normalizes_source_identity_and_accepts_string_hn_ids() -> None
     verify_source_contract(contracted)
 
 
-def test_existing_contract_cannot_be_resigned_after_downstream_tampering() -> None:
+def test_existing_contract_cannot_be_rehashed_after_downstream_tampering() -> None:
     contracted = apply_source_contract(
         {
             "source": "arxiv",
@@ -291,6 +291,66 @@ def test_arxiv_contract_preserves_original_abstract() -> None:
     assert contracted["content_mode"] == "source_brief"
     assert contracted["source_summary_original"] == "Original abstract text."
     assert contracted["source_text_original"] == "Original abstract text."
+
+
+def test_contract_signs_official_arxiv_metadata_and_detects_tampering() -> None:
+    item = {
+        "source": "arxiv",
+        "title": "Evidence-aware agents",
+        "url": "https://arxiv.org/abs/2607.12345v1",
+        "summary": "Original abstract text.",
+        "arxiv_id": "2607.12345v1",
+        "authors": ["Ada Lovelace"],
+        "category": "cs.AI",
+        "published": "2026-07-17T01:02:03Z",
+        "pdf_url": "https://arxiv.org/pdf/2607.12345v1.pdf",
+        "crawled_at": "2026-07-18T02:03:04Z",
+    }
+
+    contracted = apply_source_contract(item)
+    fields = contracted["evidence"]["fields"]
+
+    assert fields["published"] == item["published"]
+    assert fields["pdf_url"] == item["pdf_url"]
+    verify_source_contract(contracted)
+
+    tampered = dict(contracted)
+    tampered["evidence"] = dict(contracted["evidence"])
+    tampered["evidence"]["fields"] = dict(fields)
+    tampered["evidence"]["fields"]["pdf_url"] = "https://evil.example/paper.pdf"
+    with pytest.raises(SourceContractError, match="digest"):
+        verify_source_contract(tampered)
+
+
+def test_contract_signs_official_github_metadata_and_detects_tampering() -> None:
+    item = {
+        "source": "github_trending",
+        "title": "octo/evidence-agent",
+        "url": "https://github.com/octo/evidence-agent",
+        "description": "A Rust agent runtime.",
+        "language": "Rust",
+        "stars": 123,
+        "today_stars": 5,
+        "forks": 7,
+        "license": "Apache-2.0",
+        "topics": ["agent", "rust"],
+        "crawled_at": "2026-07-18T02:03:04Z",
+    }
+
+    contracted = apply_source_contract(item)
+    fields = contracted["evidence"]["fields"]
+
+    assert fields["forks"] == "7"
+    assert fields["license"] == "Apache-2.0"
+    assert fields["topics"] == ["agent", "rust"]
+    verify_source_contract(contracted)
+
+    tampered = dict(contracted)
+    tampered["evidence"] = dict(contracted["evidence"])
+    tampered["evidence"]["fields"] = dict(fields)
+    tampered["evidence"]["fields"]["license"] = "MIT"
+    with pytest.raises(SourceContractError, match="digest"):
+        verify_source_contract(tampered)
 
 
 def test_hacker_news_processor_returns_source_brief_without_any_llm_call() -> None:

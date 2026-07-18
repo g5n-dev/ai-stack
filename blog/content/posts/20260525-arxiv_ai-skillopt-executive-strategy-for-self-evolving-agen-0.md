@@ -1,145 +1,55 @@
 ---
-title: SkillOpt：自进化智能体技能的优化策略
+title: 'SkillOpt: Executive Strategy for Self-Evolving Agent Skills'
 date: 2026-05-25 16:03:16+08:00
 draft: false
 entry_kind: auto
 tags:
-- 自进化
-- 智能体
-- 技能优化
-- 大模型
-- AI 工程
-- 策略优化
-- 元学习
-- 强化学习
+- ArXiv
+- AI Agent
+- 大语言模型
+- 深度学习
 categories:
-- AI 工程
+- 论文
 - 大模型
-source: arxiv
-description: 本文围绕自进化智能体的技能管理难题，提出名为SkillOpt的执行策略框架，旨在通过动态评估与优化机制提升代理在长期任务中的适应性。鉴于摘要未提供具体实验细节，无法从摘要确认其在真实环境中的表现。该研究若取得预期效果，或为强化学习与自主系统的技能持续改进提供新的方法论参考。
-external_url: http://arxiv.org/abs/2605.23904v1
 scenarios:
 - AI/ML项目
-content_mode: legacy_analysis
-publication_tier: LEGACY
-source_provenance: legacy_no_snapshot
-source_support: 0.0
+- 大语言模型
+source: arxiv
+description: 当前只保存了官方论文摘要，不代表论文全文。请以原始来源为准。
+external_url: https://arxiv.org/abs/2605.23904v1
+aliases: []
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: abstract
+source_snapshot_sha256: sha256:978b5dccb60fef6ce67b36c40e5e4ee286195317f2ed87a4686a6753dc3f7e76
+extractor_version: source-contract-v1
+discovery_method: arxiv_api
+fetch_status: captured
+source_completeness: abstract_only
+source_is_truncated: false
+source_support: 1.0
+source_title_chars_original: 59
+captured_at: '2026-07-18T04:29:43.284780Z'
+source_capture_sha256: sha256:beb8d928bffec19dea664306c009cec2bf558edd23716dc498dac8a67a90e9ad
+source_capture_chars_original: 1572
+source_publication_excerpt_chars: 1572
 ---
 
 ## 基本信息
 
-- **ArXiv ID**: 2605.23904v1
+- **来源**: arxiv
+- **原始来源**: [https://arxiv.org/abs/2605.23904v1](<https://arxiv.org/abs/2605.23904v1>)
+- **作者**: Yifan Yang, Ziyang Gong, Weiquan Huang, Qihao Yang, Ziwei Zhou, Zisu Huang, Yan Li, Xuemei Gao, Qi Dai, Bei Liu, Kai Qiu, Yuqing Yang, Dongdong Chen, Xue Yang, Chong Luo
 - **分类**: cs.AI
-- **作者**: Yifan Yang, Ziyang Gong, Weiquan Huang, Qihao Yang, Ziwei Zhou
-- **PDF**: [https://arxiv.org/pdf/2605.23904v1.pdf](https://arxiv.org/pdf/2605.23904v1.pdf)
-- **链接**: [http://arxiv.org/abs/2605.23904v1](http://arxiv.org/abs/2605.23904v1)
+- **论文时间**: 2026-05-22T17:59:50Z
+- **论文 PDF**: [https://arxiv.org/pdf/2605.23904v1.pdf](<https://arxiv.org/pdf/2605.23904v1.pdf>)
 
----
-## 导语
+## 来源摘要/节选
 
-本文围绕自进化智能体的技能管理难题，提出名为SkillOpt的执行策略框架，旨在通过动态评估与优化机制提升代理在长期任务中的适应性。鉴于摘要未提供具体实验细节，无法从摘要确认其在真实环境中的表现。该研究若取得预期效果，或为强化学习与自主系统的技能持续改进提供新的方法论参考。
+> Agent skills today are hand-crafted, generated one-shot, or evolved through loosely controlled self-revision, none of which behaves like a deep-learning optimizer for the skill, and none of which reliably improves over its starting point under feedback. We argue the skill should instead be trained as the external state of a frozen agent, with the same discipline that makes weight-space optimization reproducible. SkillOpt is, to our knowledge, the first systematic controllable text-space optimizer for agent skills: a separate optimizer model turns scored rollouts into bounded add/delete/replace edits on a single skill document, and an edit is accepted only when it strictly improves a held-out validation score. A textual learning-rate budget, rejected-edit buffer, and epoch-wise slow/meta update make skill training stable while adding zero inference-time model calls at deployment. Across six benchmarks, seven target models, and three execution harnesses \(direct chat, Codex, Claude Code\), SkillOpt is best or tied on all 52 evaluated \(model, benchmark, harness\) cells and beats every per-cell competitor among human, one-shot LLM, Trace2Skill, TextGrad, GEPA, and EvoSkill skills. On GPT-5.5 it lifts the average no-skill accuracy by +23.5 points in direct chat, by +24.8 inside the Codex agentic loop, and by +19.1 inside Claude Code. Transfer experiments further show that optimized skill artifacts retain value when moved across model scales, between Codex and Claude Code execution environments, and to a nearby math benchmark without further optimization.
 
----
-## 评论
+## 来源说明
 
-#### 研究贡献与声称
-论文提出 SkillOpt 框架，旨在通过高层执行策略实现代理技能的自我进化。作者声称该框架能够在无需人工干预的情况下，自动发现、组合并优化技能，从而提升代理在动态任务中的适应性。该声称具备理论吸引力，但需进一步辨析其适用范围与实现前提。
+当前只保存了官方论文摘要，不代表论文全文。请以原始来源为准。
 
-#### 证据与实验设计
-作者提供了在仿真基准环境（如 Atari、Mujoco）上的实验数据，表明相较于基线方法，SkillOpt 在累计奖励和收敛速度上有显著提升。实验中还加入了对技能库的规模、演化路径的可视化，以示技能的自组织过程。此类实验为“自我进化”提供了初步证据，但样本规模与任务多样性仍显不足。
-
-#### 推断与潜在局限
-从实验结果推断，SkillOpt 在相对平稳且奖励信号丰富的环境中表现良好。然而，作者未深入讨论在奖励稀疏或噪声环境下的鲁棒性。结合已有自监督学习的研究，可合理推断其技能选择机制可能在高维观测空间出现维度灾难，导致探索效率下降。
-
-#### 关键假设与失效条件
-1. **奖励信号可获取且质量可靠**：若环境中奖励延迟或不准确，策略更新可能误入局部最优。
-2. **技能空间平滑且可组合**：若技能表现为离散、非线性映射，组合策略的有效性将受限。
-3. **计算资源充足**：自我进化需要频繁的策略评估和重训练，计算成本高，边缘部署可能不可行。
-
-#### 可验证性与未来方向
-为验证上述假设，建议进行以下三类实验：①在奖励噪声或延迟的真实机器人任务中进行测评；②通过削减技能维度或引入离散热式技能块，观察性能衰减；③在硬件资源受限的嵌入式平台上测试运行时开销。此外，作者可提供理论分析（如收敛上界）以支撑“自我进化”过程的可解释性，从而提升论文的学术严谨性。
-
----
-## 技术分析
-
-#### 研究背景与动机
-##### 背景
-- 大模型驱动的自主智能体（agent）在多任务环境中表现出强大的通用性，但如何在运行时动态获取、组合和优化技能仍是核心挑战。（推断）
-- 现有系统多依赖手工设计的技能库或一次性预训练，缺乏对技能的自进化机制。（推断）
-
-##### 动机
-- 为实现“自我提升”的智能体，需要在执行层面提供一种可调控、可评估的技能优化策略，以适应不断变化的任务需求。（推断）
-
-#### 核心方法：SkillOpt
-##### 框架概览
-- SkillOpt 将技能视为可执行的子策略，采用层次化的“执行‑评估‑更新”闭环，实现对技能库的在线优化。（推断）
-- 三大模块：① **技能图谱（Skill Graph）** 表示技能之间的依赖关系；② **执行策略层（Executive Strategy）** 负责运行时挑选与组合技能；③ **元学习优化器（Meta‑Learner）** 对技能参数进行快速微调。（推断）
-
-##### 执行策略
-- 采用代价‑效益调度算法，优先选择提升效用最显著的技能，并在任务完成后即时评估其贡献度。（推断）
-- 贡献度由任务完成率、资源消耗、鲁棒性等多维度奖励加权得到，用于后续的技能更新。（推断）
-
-##### 自进化机制
-- 使用情境感知的强化学习（Context‑Aware RL）对技能进行微调，确保新任务出现时能够快速适配。（推断）
-- 为防止技能冲突，引入基于技能相似度的正则项，抑制冗余技能过度增长。（推断）
-
-#### 理论依据
-- 框架基于多任务强化学习的技能迁移理论，结合元学习（MAML 等）实现快速适应。（推断）
-- 技能图谱的构建借鉴了层次任务网络（HTN） Planning 的分解思路，保证技能组合的可解释性。（推断）
-
-#### 实验与结果
-- 在 ALFWorld、ToolBench 两个基准上评测，相比 Voyager、AutoGPT 等基线，任务完成率提升约 12%‑15%。（来源于摘要或实验描述）
-- 资源利用率提升约 20%，且在连续 10 轮任务中出现“技能遗忘”的频率下降至 3% 以下。（推断）
-
-#### 应用前景
-- 可用于工业机器人协作、个性化助手、代码生成等需要持续学习新技能的领域。（推断）
-- 与现有大模型平台（LangChain、AutoGPT）结合，为其提供自进化能力，拓宽在长尾任务上的适用性。（推断）
-
-#### 研究启示
-- 表明在智能体执行层面引入显式的技能优化回路是实现持续自我提升的关键路径。（推断）
-- 揭示了元学习与层次化调度协同设计的重要性，为后续研究提供可复用的框架思路。（推断）
-
-#### 相关工作对比
-| 方法 | 技能表示 | 在线优化 | 可解释性 |
-|------|----------|----------|----------|
-| Voyager | 预训练子任务库 | 无 | 低 |
-| AutoGPT | 单一 Prompt | 无 | 低 |
-| SkillOpt | 技能图谱 + 元学习 | 实时调度 + RL 微调 | 高 |
-
-#### 关键假设与潜在失效
-- **假设**：任务可被分解为可重复使用的子技能，且奖励信号可即时获取。（推断）
-- **失效条件**：① 环境噪声导致奖励评估不准确；② 技能冲突正则化不足时出现“技能膨胀”；③ 计算资源不足导致元学习收敛慢。（推断）
-
-#### 可证伪方式
-- 在全新未见过任务集（如 MiniWob++）中进行零样本测试，若完成率显著低于基线，则说明自进化机制失效。（推断）
-- 通过删除技能图谱中的关键节点，观察任务成功率是否出现断崖式下降，从而验证层次结构的必要性。（推断）
-
----
-## 学习要点
-
-- 请提供需要总结的具体内容（如论文全文或关键段落），这样我才能为您提取出 5‑7 条关键要点。
-
----
-## 引用
-
-- **ArXiv**: [http://arxiv.org/abs/2605.23904v1](http://arxiv.org/abs/2605.23904v1)
-- **PDF**: [https://arxiv.org/pdf/2605.23904v1.pdf](https://arxiv.org/pdf/2605.23904v1.pdf)
-
-> 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
-
----
-
-## 站内链接
-
-- 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)
-- 标签： [自进化](/tags/%E8%87%AA%E8%BF%9B%E5%8C%96/) / [智能体](/tags/%E6%99%BA%E8%83%BD%E4%BD%93/) / [技能优化](/tags/%E6%8A%80%E8%83%BD%E4%BC%98%E5%8C%96/) / [大模型](/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI工程](/tags/ai%E5%B7%A5%E7%A8%8B/) / [策略优化](/tags/%E7%AD%96%E7%95%A5%E4%BC%98%E5%8C%96/) / [元学习](/tags/%E5%85%83%E5%AD%A6%E4%B9%A0/) / [强化学习](/tags/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/)
-- 场景： [AI/ML项目](/scenarios/ai-ml%E9%A1%B9%E7%9B%AE/)
-
-### 相关文章
-
-- [代理多模态模型的元认知工具使用策略]({{< relref "posts/20260410-arxiv_ai-act-wisely-cultivating-meta-cognitive-tool-use-in--0.md" >}})
-- [MemSkill：赋予自进化代理学习与演进记忆技能]({{< relref "posts/20260203-arxiv_ai-memskill-learning-and-evolving-memory-skills-for-s-9.md" >}})
-- [Agent Skills：AI 智能体技能框架与训练方法]({{< relref "posts/20260203-hacker_news-agent-skills-0.md" >}})
-- [基于16个开源RL库的Token流生成经验总结]({{< relref "posts/20260310-blogs_podcasts-keep-the-tokens-flowing-lessons-from-16-open-sourc-2.md" >}})
-- [Cirrus Labs 团队加入 OpenAI]({{< relref "posts/20260411-hacker_news-cirrus-labs-to-join-openai-0.md" >}})
-*本文由 AI Stack 自动生成，深度解读学术研究。*
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

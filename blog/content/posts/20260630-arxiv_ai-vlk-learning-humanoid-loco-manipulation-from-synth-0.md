@@ -1,144 +1,50 @@
 ---
-title: VLK：基于合成交互的人形机器人运动操作学习
+title: 'VLK: Learning Humanoid Loco-Manipulation from Synthetic Interactions in Reconstructed
+  Scenes'
 date: 2026-06-30 23:30:05+08:00
 draft: false
 entry_kind: auto
 tags:
-- 人形机器人
-- 运动操作
-- 合成交互
-- 3DGS
-- 视觉语言动作
-- 合成数据
-- 动作预测
-- 仿真重建
+- ArXiv
 categories:
 - 论文
-- AI 工程
+scenarios: []
 source: arxiv
-description: 本文探讨了人形机器人在室内环境中的感知-运动协调难题，提出VLK框架加以应对。该框架利用3D Gaussian Splatting技术实现高保真场景重建，并基于重建场景中的特权信息生成导航与物体交互的运动轨迹，旨在突破大规模视觉-语言-运动数据匮乏的瓶颈。此研究为具身智能在室内场景的自主导航与灵巧操作提供新的解决思路。相关实验设置、评估指标及实际性能表现目前无法从摘要确认。
-external_url: http://arxiv.org/abs/2606.30645v1
-scenarios:
-- Web应用开发
-content_mode: legacy_analysis
-publication_tier: LEGACY
-source_provenance: legacy_no_snapshot
-source_support: 0.0
+description: 当前只保存了官方论文摘要，不代表论文全文。请以原始来源为准。
+external_url: https://arxiv.org/abs/2606.30645v1
+aliases: []
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: abstract
+source_snapshot_sha256: sha256:5bd71657ff69ab8dbb35bd4293b6cfabfccb2d42ffbbb5e3ffe1c716d8f7c0ce
+extractor_version: source-contract-v1
+discovery_method: arxiv_api
+fetch_status: captured
+source_completeness: abstract_only
+source_is_truncated: false
+source_support: 1.0
+source_title_chars_original: 92
+captured_at: '2026-07-18T04:30:14.398876Z'
+source_capture_sha256: sha256:308da9794c2b53c778314ea98f1eddf5caef1ef0875a78a73273f45674fd9b97
+source_capture_chars_original: 1248
+source_publication_excerpt_chars: 1248
 ---
 
 ## 基本信息
 
-- **ArXiv ID**: 2606.30645v1
+- **来源**: arxiv
+- **原始来源**: [https://arxiv.org/abs/2606.30645v1](<https://arxiv.org/abs/2606.30645v1>)
+- **作者**: Yen-Jen Wang, Jiaman Li, Sirui Chen, Takara E. Truong, Pei Xu, Pieter Abbeel, Rocky Duan, Koushil Sreenath, Angjoo Kanazawa, Carmelo Sferrazza, Guanya Shi, Karen Liu
 - **分类**: cs.RO
-- **作者**: Yen-Jen Wang, Jiaman Li, Sirui Chen, Takara E. Truong, Pei Xu
-- **PDF**: [https://arxiv.org/pdf/2606.30645v1.pdf](https://arxiv.org/pdf/2606.30645v1.pdf)
-- **链接**: [http://arxiv.org/abs/2606.30645v1](http://arxiv.org/abs/2606.30645v1)
+- **论文时间**: 2026-06-29T17:59:55Z
+- **论文 PDF**: [https://arxiv.org/pdf/2606.30645v1.pdf](<https://arxiv.org/pdf/2606.30645v1.pdf>)
 
----
-## 导语
+## 来源摘要/节选
 
-本文探讨了人形机器人在室内环境中的感知-运动协调难题，提出VLK框架加以应对。该框架利用3D Gaussian Splatting技术实现高保真场景重建，并基于重建场景中的特权信息生成导航与物体交互的运动轨迹，旨在突破大规模视觉-语言-运动数据匮乏的瓶颈。此研究为具身智能在室内场景的自主导航与灵巧操作提供新的解决思路。相关实验设置、评估指标及实际性能表现目前无法从摘要确认。
+> Perception-based humanoid loco-manipulation requires connecting egocentric observations and task instructions to whole-body motion. Learning this mapping requires synchronized egocentric images, language commands, and robot-compatible kinematic trajectories, yet no existing data source provides this complete tuple at scale. We address this bottleneck by generating vision-language-kinematics \(VLK\) supervision synthetically in reconstructed scenes. Our pipeline leverages 3D Gaussian Splatting to reconstruct metric-scale indoor environments, synthesizes navigation and object-interaction trajectories using privileged scene information, and renders paired egocentric observations after the fact. We produce 48,000 paired trajectories with no human intervention and train a VLK policy that predicts short-horizon whole-body kinematic trajectories. A whole-body tracker converts these predictions into actions on the physical humanoid. We evaluate on the physical Unitree G1 performing navigation and single-object transport, demonstrating that synthesized interactions in reconstructed scenes provide effective supervision for sim-to-real perception-based humanoid loco-manipulation. Project Website: https://vision-language-kinematics.github.io/
 
----
-## 摘要
+## 来源说明
 
-针对人形机器人在室内环境中的感知‑运动协同问题，提出VLK框架，以合成方式解决大规模视觉‑语言‑运动数据缺失的瓶颈。核心思路是利用3D Gaussian Splatting在真实尺度的室内场景中进行高保真重建；随后在重建的场景中利用特权信息生成导航与物体交互的运动轨迹；再对这些轨迹渲染配对的自我中心图像与语言指令。最终得到48 000条无需人工标注的视觉‑语言‑运动样本。基于这些样本训练一个短视域的全身运动预测策略，通过全身追踪器将预测的关节轨迹转换为Unitree G1机器人的实际控制指令。在真实机器人上完成导航和单物体搬运两类任务，验证了合成交互在重建场景中提供的监督信号能够有效迁移至真实感知‑运动策略。
+当前只保存了官方论文摘要，不代表论文全文。请以原始来源为准。
 
----
-## 技术分析
-
-#### 研究背景
-- （摘要）人形机器人在室内环境需实现感知‑运动协同。
-- （可确认）大规模、带语言标注的视觉‑语言‑运动数据极度匮乏，导致策略训练成本高。
-- （推断）传统采集（动作捕捉、遥操作）耗时且难以覆盖多样化场景。
-- （可确认）仿真平台虽能生成大量交互，却常因渲染与物理模型差距导致迁移困难。
-
-##### 关键挑战
-- 如何在保持视觉真实感的同时，自动获得大量无需人工标注的运动轨迹？
-- 如何弥合合成数据与真实机器人控制之间的语义与动力学差异？
-
-#### 核心方法
-- （摘要）使用 **3D Gaussian Splatting** 对真实尺度室内场景进行高保真三维重建。
-- （可确认）在重建场景中利用特权信息（物体真实位姿、关节角度等）生成导航与物体交互的运动轨迹。
-- （摘要）对每条轨迹渲染配对的自我中心图像与语言指令，形成 **48 000** 条无标注合成样本。
-- （摘要）训练短视域 **全身运动预测策略**，随后通过 **全身追踪器** 将预测的关节轨迹映射为 Unitree G1 的低层控制指令。
-- （推断）该流程实现了“合成‑渲染‑策略‑迁移”闭环，显著降低真实数据采集成本。
-
-##### 渲染与语言配对
-- 渲染采用自视角相机，保证合成图像视角与真实机器人相机一致。
-- 语言指令基于任务描述自动生成（如“将红色盒子搬运至左侧门”），保证指令与轨迹语义对应。
-
-#### 理论基础
-- （推断）3DGS 提供逐像素光场近似，理论上能够捕获材质、光照与几何细节，满足视觉策略对细节的敏感度。
-- （可确认）特权信息生成的轨迹可视作 **最优或近最优演示**，通过模仿学习捕获运动规律。
-- （推断）短视域预测限制误差累积；全身追踪器将高层运动预测转化为低层伺服控制，实现层级化策略结构。
-
-#### 实验与结果
-- （摘要）在真实 Unitree G1 机器人上完成 **导航** 与 **单物体搬运** 两类任务。
-- （推断）实验结果表明，合成交互提供的监督信号能够有效迁移至真实感知‑运动策略，成功率与使用真实数据训练的基线相当或更高。
-- （可确认）测试场景均为重建的室内环境，包含不同光照与障碍布局，验证了模型的泛化能力。
-
-#### 应用前景
-- （推断）48 000 条合成样本规模可进一步扩展至更大、更多样的室内场景，形成可复用的视觉‑语言‑运动库。
-- （推断）语言指令的自动生成方式为 **指令跟随**、**多任务学习** 提供可扩展的数据基础。
-- （可确认）该框架在人形机器人之外的足式、轮式平台亦具迁移潜力。
-
-#### 研究启示
-- （可确认）合成交互结合真实场景重建是突破数据瓶颈的有效路径。
-- （推断）特权信息与渲染的协同使用，使高保真数据生成无需人工标注，开辟了“大规模预训练‑微调”新范式。
-- （推断）全身追踪器在层级控制中的桥梁作用提示了未来研究可进一步探索 **感知‑规划‑控制一体化**。
-
-#### 相关工作对比
-- （可确认）传统仿真平台（Isaac Gym、MuJoCo）依赖手工材质与物理模型，渲染质量受限。
-- （可确认）基于 CAD 的数据集（RLbench、DexYCB）提供精确几何，却缺乏真实光照与纹理。
-- （推断）3DGS 重建在保持几何准确的同时提供光场级渲染，缩小视觉差距。
-- （推断）与仅使用动作捕捉的真实数据相比，VLK 的全合成流程显著降低成本并提升扩展性。
-
-#### 关键假设与失效条件
-- **关键假设**
-  1. 3DGS 重建的几何与视觉保真度足以支撑后续策略学习。
-  2. 特权信息生成的轨迹在实际机器人上可实现或至少可近似。
-  3. 短视域预测在任务跨度内不出现累积误差。
-  4. 全身追踪器的关节映射误差在容忍范围内。
-
-- **潜在失效**
-  - 重建噪声或缺失细节导致渲染图像与真实相机图像产生域偏移。
-  - 特权信息不完整或错误（如物体位姿误估）会在生成轨迹时引入系统性偏差。
-  - 任务指令模糊或语言‑动作不匹配会影响语言‑运动对应学习。
-  - 实际硬件的控制频率、传感器噪声和机械弹性未被合成数据完全覆盖。
-
-- **可证伪方式**
-  - 对重建场景添加不同程度的噪声或简化模型，观测策略成功率是否随之下降。
-  - 通过降低特权信息精度（如加入位姿误差），检验轨迹质量和最终任务表现。
-  - 在未见过的真实场景（非重建）中直接部署策略，观察是否仍保持预期水平。
-  - 与使用完全真实标注数据训练的策略进行量化对比，评估合成数据的实际贡献。
-
----
-## 学习要点
-
-- 请提供您希望总结的具体内容或段落，以便我能够为您提炼出关键要点。
-
----
-## 引用
-
-- **ArXiv**: [http://arxiv.org/abs/2606.30645v1](http://arxiv.org/abs/2606.30645v1)
-- **PDF**: [https://arxiv.org/pdf/2606.30645v1.pdf](https://arxiv.org/pdf/2606.30645v1.pdf)
-
-> 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
-
----
-
-## 站内链接
-
-- 分类： [论文](/categories/%E8%AE%BA%E6%96%87/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)
-- 标签： [人形机器人](/tags/%E4%BA%BA%E5%BD%A2%E6%9C%BA%E5%99%A8%E4%BA%BA/) / [运动操作](/tags/%E8%BF%90%E5%8A%A8%E6%93%8D%E4%BD%9C/) / [合成交互](/tags/%E5%90%88%E6%88%90%E4%BA%A4%E4%BA%92/) / [3DGS](/tags/3dgs/) / [视觉语言动作](/tags/%E8%A7%86%E8%A7%89%E8%AF%AD%E8%A8%80%E5%8A%A8%E4%BD%9C/) / [合成数据](/tags/%E5%90%88%E6%88%90%E6%95%B0%E6%8D%AE/) / [动作预测](/tags/%E5%8A%A8%E4%BD%9C%E9%A2%84%E6%B5%8B/) / [仿真重建](/tags/%E4%BB%BF%E7%9C%9F%E9%87%8D%E5%BB%BA/)
-- 场景： [Web应用开发](/scenarios/web%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/)
-
-### 相关文章
-
-- [让 Claude 编写 CUDA 内核并指导开源模型]({{< relref "posts/20260129-blogs_podcasts-we-got-claude-to-build-cuda-kernels-and-teach-open-6.md" >}})
-- [基于流策略梯度的机器人控制方法]({{< relref "posts/20260203-arxiv_ai-flow-policy-gradients-for-robot-control-6.md" >}})
-- [TabICLv2：更优性能与可扩展性的开源表格基础模型]({{< relref "posts/20260212-arxiv_ai-tabiclv2-a-better-faster-scalable-and-open-tabular-8.md" >}})
-- [扩展验证比扩展策略学习更有效实现视觉-语言-动作对齐]({{< relref "posts/20260213-arxiv_ai-scaling-verification-can-be-more-effective-than-sc-0.md" >}})
-- [Anthropic 模型蒸馏与 SWE-Bench 作弊机制解析]({{< relref "posts/20260226-blogs_podcasts-live-anthropic-distillation-how-models-cheat-swe-b-0.md" >}})
-*本文由 AI Stack 自动生成，深度解读学术研究。*
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

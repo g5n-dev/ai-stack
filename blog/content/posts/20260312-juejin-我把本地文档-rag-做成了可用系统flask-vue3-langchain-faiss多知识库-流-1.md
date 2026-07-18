@@ -3,27 +3,86 @@ title: 我把本地文档 RAG 做成了可用系统：Flask + Vue3 + LangChain +
 date: 2026-03-12 11:11:52+08:00
 draft: false
 entry_kind: auto
-tags: []
-categories: []
+tags:
+- 掘金
+- RAG
+- 大语言模型
+- Python
+- Docker
+categories:
+- 大模型
+scenarios:
+- AI/ML项目
+- 大语言模型
+- RAG应用
 source: juejin
-description: 历史条目已归档：现有正文未通过内容质量门，请查阅原始来源。
+description: 当前只保存了公开页面节选，不代表原文全文。请以原始来源为准。
 external_url: https://juejin.cn/post/7616184939038572579
-scenarios: []
-content_mode: archived
-publication_tier: ARCHIVED
-source_provenance: legacy_no_snapshot
-source_support: 0.0
 aliases: []
-archived: true
-archive_reason: historical_content_quality_gate
-build:
-  list: never
-  render: always
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: excerpt
+source_snapshot_sha256: sha256:5b341fc23e6d3f740290b98b1d9ac3bd4591f066eb14758e5f3e21faa7c54d2b
+extractor_version: source-contract-v1
+discovery_method: article_html_excerpt
+fetch_status: captured
+source_completeness: partial
+source_is_truncated: true
+source_support: 1.0
+source_title_chars_original: 64
+captured_at: '2026-07-18T04:19:10.757447Z'
+source_capture_sha256: sha256:d03917f41a3133dacfe65f74f02d245f43bb30ec6132e04ac9e13fc9301eef70
+source_capture_chars_original: 2542
+source_publication_excerpt_chars: 753
+source_truncation_reason: historical_excerpt_only,historical_publication_excerpt_limit
 ---
 
-## 历史条目归档说明
+## 基本信息
 
-该条目的历史正文未通过内容质量门，可能包含基于标题推测的内容。为避免继续传播不可核验文本，本站仅保留透明归档记录。
+- **来源**: juejin
+- **原始来源**: [https://juejin.cn/post/7616184939038572579](<https://juejin.cn/post/7616184939038572579>)
 
-- 历史内容质量门未通过
-- 原始来源：<https://juejin.cn/post/7616184939038572579>
+## 来源摘要/节选
+
+公开展示已截断至最多 800 个字符；请访问原始来源查看完整上下文。
+
+> 我把本地文档 RAG 做成了可用系统：Flask + Vue3 + LangChain + FAISS（多知识库 + 流式输出）
+> 很多 RAG Demo 都停留在“能回答一次问题”，但真正要用起来，至少还要解决这几件事：
+> 多个知识库隔离（不同业务、不同团队互不影响）
+> 文档管理（上传、列表、删除、URL 入库）
+> 多轮会话记忆（不仅是检索，还要记住上下文）
+> 流式输出（边生成边展示，减少等待焦虑）
+> 我把这些做成了一个完整项目：
+> docs-rag-chat
+> 。
+> 技术栈是
+> Flask + Vue3 + LangChain + FAISS
+> ，后端支持按
+> app\_id
+> 隔离知识库，前端支持实时流式渲染答案。
+> 项目地址：
+> https://github.com/eagle1949/docs-rag-chat
+> 项目图片：
+> 1. 项目结构和整体链路
+> 核心链路可以概括为：
+> 文档入库：上传文件 / URL 抓取
+> 文档切分：按 chunk 切成可检索片段
+> 向量化存储：写入 FAISS
+> 问答检索：相似召回 + LLM 生成
+> 会话记忆：摘要 + 最近对话
+> 流式返回：SSE token 推送到前端
+> 简化架构：
+> Vue3 Frontend
+>   -&gt; Flask RAG API
+>      -&gt; DocumentLoader \(md/txt/pdf/url\)
+>      -&gt; DocumentSplitter \(chunk=500, overlap=50\)
+>      -&gt; FAISS VectorStore \(Qianfan Embeddings\)
+>      -&gt; ChatOpenAI \(Moonshot by default\)
+>      -&gt; SummaryBufferMemory \(session level\)
+> 2.…
+
+## 来源说明
+
+当前只保存了公开页面节选，不代表原文全文。请以原始来源为准。
+
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

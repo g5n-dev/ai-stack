@@ -1,29 +1,44 @@
 ---
-title: 使用 Claude Code 实现 Z80 与 ZX Spectrum 模拟器
+title: Implementing a Z80 / ZX Spectrum emulator with Claude Code
 date: 2026-02-27 21:53:44+08:00
 draft: false
 entry_kind: auto
-tags: []
+tags:
+- Hacker News
 categories: []
-source: hacker_news
-description: 历史条目已归档：现有正文未通过内容质量门，请查阅原始来源。
-external_url: https://antirez.com/news/160
 scenarios: []
+source: hacker_news
+description: 当前只保存了来源元数据，未抓取外链全文。请以原始来源和 Hacker News 讨论为准。
+external_url: https://antirez.com/news/160
 aliases: []
-content_mode: archived
-publication_tier: ARCHIVED
-source_provenance: legacy_no_snapshot
-source_support: 0.0
-archived: true
-archive_reason: historical_content_quality_gate
-build:
-  list: never
-  render: always
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: metadata_only
+source_snapshot_sha256: sha256:60c9d3d3708c39c747103508ad60da9e3f785dce2584db8b12c95e6fa336b2e9
+extractor_version: source-contract-v1
+discovery_method: api_metadata
+fetch_status: captured
+source_completeness: metadata_only
+source_is_truncated: false
+source_support: 1.0
+source_title_chars_original: 58
+captured_at: '2026-07-18T04:18:21.100066Z'
+source_capture_sha256: sha256:1fddb733780ace5ce38ed78be245191ce3f19ff526c51087f3dcc329f76c38b2
+source_capture_chars_original: 58
+source_publication_excerpt_chars: 58
 ---
 
-## 历史条目归档说明
+## 基本信息
 
-该条目的历史正文未通过内容质量门，可能包含基于标题推测的内容。为避免继续传播不可核验文本，本站仅保留透明归档记录。
+- **来源**: hacker\_news
+- **原始来源**: [https://antirez.com/news/160](<https://antirez.com/news/160>)
+- **作者**: antirez
+- **评分**: 151
+- **评论数**: 72
+- **HN 讨论**: [https://news.ycombinator.com/item?id=47149829](<https://news.ycombinator.com/item?id=47149829>)
 
-- 历史内容质量门未通过
-- 原始来源：<https://antirez.com/news/160>
+## 来源说明
+
+当前只保存了来源元数据，未抓取外链全文。请以原始来源和 Hacker News 讨论为准。
+
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

@@ -1,420 +1,53 @@
 ---
-title: 测试驱动代理开发结合图分析减少AI代码回归
+title: 'TDAD: Test-Driven Agentic Development - Reducing Code Regressions in AI Coding
+  Agents via Graph-Based Impact Analysis'
 date: 2026-03-19 18:55:56+08:00
 draft: false
 entry_kind: auto
 tags:
-- arxiv
-- cs.SE
+- ArXiv
+- AI Agent
 categories:
 - 论文
-source: arxiv
-description: TDAD论文针对AI编码代理引入代码回归这一重要但被忽视的问题，提出了基于图分析的创新解决方案。其核心贡献在于： 开辟了AI代理质量评估的新维度
-  提供了可复现的开源工具链 建立了代理行为与代码测试的关联框架 论文在技术创新和实践价值方面具有显著优势，但作为新兴研究方向，其长期有效性和泛化能力仍需更多验证。建议研究者在关注其方法的同时，也警惕过度工程化评估指标可能带来的异化风险。
-external_url: http://arxiv.org/abs/2603.17973v1
 scenarios:
-- Web应用开发
+- AI/ML项目
+source: arxiv
+description: 当前只保存了官方论文摘要，不代表论文全文。请以原始来源为准。
+external_url: https://arxiv.org/abs/2603.17973v1
 aliases:
 - /posts/20260320-arxiv_ai-tdad-test-driven-agentic-development-reducing-code-5/
-content_mode: legacy_analysis
-publication_tier: LEGACY
-source_provenance: legacy_no_snapshot
-source_support: 0.0
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: abstract
+source_snapshot_sha256: sha256:e8944c8ed28f027c71d12b7150169672f0f1660c4632b24c972a470d6c7bd828
+extractor_version: source-contract-v1
+discovery_method: arxiv_api
+fetch_status: captured
+source_completeness: abstract_only
+source_is_truncated: false
+source_support: 1.0
+source_title_chars_original: 117
+captured_at: '2026-07-18T04:29:00.882647Z'
+source_capture_sha256: sha256:a662cc103f96e38be5996f3e00bcd4715bccdf3515fb19fa5a81b68995efc2c0
+source_capture_chars_original: 1362
+source_publication_excerpt_chars: 1362
 ---
 
 ## 基本信息
 
-- **ArXiv ID**: 2603.17973v1
-- **分类**: cs.SE
+- **来源**: arxiv
+- **原始来源**: [https://arxiv.org/abs/2603.17973v1](<https://arxiv.org/abs/2603.17973v1>)
 - **作者**: Pepe Alonso
-- **PDF**: [https://arxiv.org/pdf/2603.17973v1.pdf](https://arxiv.org/pdf/2603.17973v1.pdf)
-- **链接**: [http://arxiv.org/abs/2603.17973v1](http://arxiv.org/abs/2603.17973v1)
+- **分类**: cs.SE
+- **论文时间**: 2026-03-18T17:38:22Z
+- **论文 PDF**: [https://arxiv.org/pdf/2603.17973v1.pdf](<https://arxiv.org/pdf/2603.17973v1.pdf>)
 
----
+## 来源摘要/节选
 
-## 摘要
+> AI coding agents can resolve real-world software issues, yet they frequently introduce regressions, breaking tests that previously passed. Current benchmarks focus almost exclusively on resolution rate, leaving regression behavior under-studied. This paper presents TDAD \(Test-Driven Agentic Development\), an open-source tool and benchmark methodology that combines abstract-syntax-tree \(AST\) based code-test graph construction with weighted impact analysis to surface the tests most likely affected by a proposed change. Evaluated on SWE-bench Verified with two local models \(Qwen3-Coder 30B on 100 instances and Qwen3.5-35B-A3B on 25 instances\), TDAD's GraphRAG workflow reduced test-level regressions by 70% \(6.08% to 1.82%\) and improved resolution from 24% to 32% when deployed as an agent skill. A surprising finding is that TDD prompting alone increased regressions \(9.94%\), revealing that smaller models benefit more from contextual information \(which tests to verify\) than from procedural instructions \(how to do TDD\). An autonomous auto-improvement loop raised resolution from 12% to 60% on a 10-instance subset with 0% regression. These findings suggest that for AI agent tool design, surfacing contextual information outperforms prescribing procedural workflows. All code, data, and logs are publicly available at https://github.com/pepealonso95/TDAD.
 
-### 总结
+## 来源说明
 
-TDAD论文针对AI编码代理引入代码回归这一重要但被忽视的问题，提出了基于图分析的创新解决方案。其核心贡献在于：
+当前只保存了官方论文摘要，不代表论文全文。请以原始来源为准。
 
-1. 开辟了AI代理**质量评估**的新维度
-2. 提供了可复现的开源工具链
-3. 建立了代理行为与代码测试的关联框架
-
-论文在技术创新和实践价值方面具有显著优势，但作为新兴研究方向，其长期有效性和泛化能力仍需更多验证。建议研究者在关注其方法的同时，也警惕过度工程化评估指标可能带来的异化风险。
-
----
-
-## 评论
-
-
-### 1. 研究创新性
-
-**论文声称（Claim）**：提出了将测试驱动开发理念引入AI编码代理的新范式，并设计了基于AST的代码-测试依赖图。
-
-**证据（Evidence）**：摘要明确提到使用抽象语法树（AST）进行代码分析，通过权重计算识别受变更影响的测试用例。在SWE-bench Verified数据集上的实验提供了初步验证。
-
-**推断（Inference）**：从技术路线看，该工作的创新性体现在三个方面：其一，将软件工程中成熟的测试影响分析（Test Impact Analysis）技术移植到AI代理场景；其二，采用AST层面的细粒度依赖建模，相比传统的文本相似度或文件级别依赖分析具有更高的精度；其三，开源工具与基准测试方法的双重贡献模式，有利于社区复现与迭代。
-
-**关键假设**：假设AST层面的语法依赖能够充分反映测试用例与代码的语义关联。这一假设在大多数情况下成立，但当代码变更涉及间接依赖（如通过反射、动态加载或配置文件控制的行为）时可能失效。
-
----
-
-### 2. 理论贡献
-
-**论文声称（Claim）**：构建了代码-测试图（Code-Test Graph）作为连接AI代理行为与软件质量的核心抽象。
-
-**推断（Inference）**：该工作的理论贡献相对有限。从摘要描述来看，其方法论基础主要借鉴了软件工程领域已有的测试影响分析技术（如Google的Test Impact Analysis、Microsoft的KalusChain），并未提出根本性的新理论模型。然而，在特定领域（AI编码代理）的应用适配方面，该工作可能具有边际贡献。
-
-**可验证性检验**：若要验证其理论贡献的实质性，建议审查完整论文中是否包含：（1）代码-测试图的形式化定义；（2）加权影响分析的算法复杂度分析；（3）与基线方法的理论对比。
-
----
-
-### 3. 实验验证
-
-**论文声称（Claim）**：在SWE-bench Verified数据集上的测试表明TDAD的有效性。
-
-**证据（Evidence）**：摘要仅提供了数据集名称（SWE-bench Verified），未提供具体的评估指标、数值结果或统计显著性分析。
-
-**推断（Inference）**：从实验设计的完整性角度评估，仅在一个数据集上的实验不足以支撑泛化性结论。SWE-bench Verified作为SWE-bench的精选版本，虽然质量较高，但仍然是一个特定领域（Python开源项目问题修复）的基准，可能无法代表AI编码代理在工业场景中的表现。
-
-**可靠性评估**：实验可靠性的提升需要以下要素：（1）多数据集验证（除SWE-bench外，可纳入RealWorldClean或私有代码库）；（2）明确的评估指标定义（如回归检出率、误报率、F1-score等）；（3）与至少两个基线方法的对比；（4）消融实验验证各组件贡献。
-
----
-
-### 4. 应用前景
-
-**论文声称（Claim）**：开源工具与基准测试方法的结合有助于实际部署。
-
-**推断（Inference）**：从实践价值角度分析，该工作具有较高的应用潜力。理由如下：第一，代码回归是AI编码代理落地的核心障碍之一，准确的测试影响分析可显著降低CI/CD成本；第二，AST分析方法在工程实践中已被广泛验证，具有良好的可维护性；第三，开源策略有助于工具的广泛采用和社区反馈驱动迭代。
-
-**潜在限制**：实际部署中可能面临以下挑战：（1）大规模代码库的AST解析与图构建开销；（2）AI代理行为的不可预测性可能导致动态依赖难以静态捕获；（3）与现有CI/CD流程的集成成本。
-
----
-
-### 5. 可复现性
-
-**论文声称（Claim）**：提出了开源工具和基准测试方法。
-
-**推断（Inference）**：摘要中提及开源工具的提供，这对可复现性构成积极信号。但仅凭摘要无法评估以下关键要素：（1）代码仓库的可访问性与License；（2）依赖环境的明确说明（AST解析库版本、Python版本等）；（3）基准测试数据集的预处理脚本；（4）实验脚本的完整性。
-
-**建议**：若论文作者提供Docker镜像或完整的requirements.txt，将显著提升可复现性。
-
----
-
-### 6. 相关工作对比
-
-**推断（Inference）**：由于摘要未提供相关工作章节内容，无法进行直接对比。但从技术选型推断，该工作应与以下研究方向形成对比：
-
-| 研究方向 | 代表工作 | 与TDAD的关系 |
-
----
-
-## 技术分析
-
-
-### 核心问题
-
-AI编码代理在解决软件问题时频繁引入代码回归，导致原本通过的测试用例失败，破坏了已有功能的稳定性。这一问题在持续集成/持续部署（CI/CD）环境中尤为严重，会导致开发团队需要回滚或修复由AI代理引入的副作用。
-
-### 研究背景与意义
-
-随着大型语言模型（LLM）驱动的编码代理（如Devin、Cursor等）的兴起，AI辅助编程已从代码补全发展到端到端问题解决。然而，现有评估基准（如SWE-bench、HumanEval等）几乎**仅关注问题解决率**，忽视了代理行为对现有代码库的潜在破坏性影响。这种评估体系的缺陷使得高性能代理可能实际上在生产环境中造成风险。
-
-### 现有方法的局限性
-
-| 方面 | 现有方法 | TDAD的改进 |
-|------|----------|------------|
-| 评估指标 | 仅关注成功率 | 引入回归检测维度 |
-| 代码分析 | 缺乏结构化分析 | 基于AST的依赖图 |
-| 影响评估 | 被动检测 | 主动预测影响范围 |
-| 测试选择 | 全量测试 | 智能加权选择 |
-
-### 问题重要性
-
-代码回归问题每年给软件行业造成巨大损失，而AI代理的不透明决策过程使得问题更难预测和定位。TDAD填补了**AI编码代理质量保证**这一研究空白。
-
-
-### 核心技术方案
-
-TDAD采用**图驱动的测试影响分析**框架，核心包含两个模块：
-
-**代码-测试图构建（Code-Test Graph Construction）**
-
-- 利用抽象语法树（AST）解析代码结构
-- 建立代码元素与测试用例之间的依赖关系图
-- 图节点：代码函数、类、测试用例
-- 图边：调用关系、数据依赖、导入关系
-
-**加权影响分析（Weighted Impact Analysis）**
-
-- 为图中每条边分配权重，反映变更传播的概率
-- 基于图遍历识别受影响测试用例
-- 优先执行高风险测试，忽略低影响测试
-
-### 技术创新点
-
-1. **首次将测试影响分析引入AI代理评估**：传统影响分析用于人类开发者，TDAD首次系统性地将其应用于AI代理输出评估
-2. **开源工具与基准的结合**：不仅提供方法论，还提供可复现的工具实现
-3. **多代理对比框架**：支持不同AI代理在同一影响分析标准下的公平比较
-
-
-### 理论依据
-
-TDAD的理论基础融合多个领域：
-
-**软件工程领域**
-
-- 变更影响分析（Change Impact Analysis）
-- 测试优先级排序（Test Prioritization）
-- 回归测试选择（Regression Test Selection）
-
-**图论与算法**
-
-- 有向图的可达性分析
-- 加权边的传播模型
-- 遍历算法（DFS/BFS变体）
-
-
-```
-输入：代码变更集合 Δ，测试用例集合 T
-输出：受影响测试用例集合 T'
-
-1. 构建AST树：parse(code + tests) → AST
-2. 构建依赖图：AST → DFG (Data Flow Graph)
-3. 边权重计算：weight(e) = f(change_frequency, coupling_degree)
-4. 影响传播：从变更节点出发，遍历图
-5. 测试用例排序：按累积权重降序
-```
-
-### 理论贡献
-
-论文将AI代理的**不确定性决策过程**建模为可解释的图结构，首次建立了代理行为与代码测试之间的形式化关联。
-
-
-### 适合读者背景
-
-- 软件工程研究人员（具备测试工程基础）
-- AI系统工程专家（了解LLM应用开发）
-- DevOps工程师（关注CI/CD质量）
-- 研究生（从事AI辅助编程研究）
-
-### 前置知识
-
-- 抽象语法树（AST）基本概念
-- 变更影响分析基础理论
-- 回归测试原理
-- 机器学习评估指标
-
-### 推荐阅读顺序
-
-1. 传统软件工程中的变更影响分析文献
-2. SWE-bench相关论文，了解基准测试设计
-3. 测试优先级排序领域综述
-4. 本文的方法论部分
-5. 实验设计与结果分析
-
----
-
-## 研究最佳实践
-
-### 实践 1：在代码变更后基于依赖图进行影响分析
-
-**说明**:
-在每一次代码提交或 AI 编码代理生成代码后，构建并维护一个完整的代码依赖图（包括函数、类、模块以及外部库的调用关系）。通过该图可以快速定位受影响的上游和下游组件，从而针对性地生成或执行相关测试用例，显著降低回归风险。
-
-**实施步骤**:
-1. 选取成熟的依赖图构建工具（如 `CodeBERT`+`AST` 解析、`joern`、`Understand` 等），在代码库中自动生成并序列化依赖图（JSON/GraphML）。
-2. 在 CI/CD 流水线的 `pre‑merge` 阶段加入图更新步骤，确保依赖图始终与最新代码保持同步。
-3. 当检测到代码变更时，使用图查询语言（如 Cypher、Gremlin）或自定义遍历算法，计算变更节点的直接/间接影响范围。
-4. 根据影响范围动态生成或挑选对应的单元测试、集成测试或端到端测试用例，并自动调度执行。
-5. 将影响分析结果与测试报告合并，生成可视化的“影响-测试覆盖”报告，供审查者决策。
-
-**注意事项**:
-- 依赖图的粒度需在功能与性能之间取得平衡，过细会导致图构建开销大，过粗则影响分析精度不足。
-- 图更新过程应在后台异步进行，避免阻塞主流水线。
-- 对于动态语言或运行时绑定的库，需要辅以运行时插桩或静态分析的混合方案，以确保依赖捕获完整。
-
----
-
-### 实践 2：在 CI/CD 流水线中集成基于图的影响测试触发机制
-
-**说明**:
-传统的 CI/CD 流程往往全量执行测试套件，耗时且资源消耗大。通过图分析仅运行受变更影响的测试子集，可在保证质量的前提下大幅缩短构建时间，并快速发现潜在的回归。
-
-**实施步骤**:
-1. 在流水线中设置“变更检测”阶段（如 Git Hook、Pull‑Request Event），捕获本次提交的代码差异（diff）。
-2. 将差异映射到依赖图中对应的节点或边，触发图遍历得到受影响模块列表。
-3. 根据受影响模块，从测试资产库中匹配对应的测试用例（可通过测试-模块标签、测试路径或测试‑依赖映射实现）。
-4. 只调度并执行匹配到的测试子集，未涉及的测试保持跳过状态。
-5. 若测试子集全部通过，则标记本次提交为“安全合并”；若出现失败，则阻止合并并生成详细的影响分析报告。
-
-**注意事项**:
-- 必须确保测试-模块映射的完整性，建议在测试代码头部添加显式的 `@covers` 注释或使用元数据文件（YAML/JSON）进行关联。
-- 对于关键业务路径的测试，即使未被直接命中，也应保留“兜底”回归测试，以防跨模块副作用。
-- 需要在流水线监控中记录被跳过的测试，以便后续审计和回归趋势分析。
-
----
-
-### 实践 3：为 AI 编码代理制定最小但高效的测试覆盖集
-
-**说明**:
-AI 编码代理在生成代码时容易引入隐蔽的依赖关系错误。通过图分析挑选出最能覆盖关键调用路径的测试集合，形成最小覆盖集（MCS），可以
-
----
-
-## 学习要点
-
-- TDAD 将测试驱动开发（TDD）理念直接嵌入 AI 编码代理，使代码在生成阶段即可接受自动化测试验证，从而在源头遏制潜在缺陷（最重要）。
-- 通过构建代码依赖图并利用图分析技术，实现对代码变更的细粒度影响范围评估，能够精准定位受影响的模块和函数。
-- 基于影响分析结果自动生成针对性回归测试，实现“只在受影响区域生成测试”，显著提升测试覆盖率并降低冗余测试。
-- 将影响范围压缩至最小，只执行与变更相关的测试用例，大幅缩短 CI/CD 流水线的测试执行时间。
-- TDAD 框架内置反馈循环，AI 代理能够根据测试失败信息持续学习并优化后续代码生成策略，实现渐进式质量提升。
-- 该框架具备语言无关的抽象层，支持多种编程语言和不同规模的代码库，具备良好的可扩展性和通用性。
-- 实验结果表明，在真实项目中使用 TDAD 后，回归缺陷率下降约 30%–50%，测试运行时间平均降低 40% 以上。
-
----
-
-## 学习路径
-
-### 阶段 1：软件测试与测试驱动开发基础
-
-**学习内容**:
-- 软件测试的基本概念与分类（单元测试、集成测试、系统测试）
-- 测试驱动开发（TDD）的核心理念与工作流程
-- 主流单元测试框架（JUnit、PyTest等）的基本使用
-- 测试用例设计原则与覆盖率概念
-- 版本控制系统（Git）在回归测试中的作用
-
-**学习时间**: 2-3周
-
-**学习资源**:
-- 《Test-Driven Development: By Example》- Kent Beck
-- JUnit 5官方文档：https://junit.org/junit5/docs/current/user-guide/
-- PyTest官方文档：https://docs.pytest.org/
-- Git官方文档：https://git-scm.com/doc
-
-**学习建议**: 建议通过实际编写测试用例来巩固知识，选择自己熟悉的编程语言对应的测试框架进行练习。尝试在小型项目中实践TDD循环：红-绿-重构。
-
----
-
-### 阶段 2：AI编程代理与大型语言模型基础
-
-**学习内容**:
-- 人工智能代理（Agent）的定义与架构
-- 大型语言模型（LLM）的基本原理与能力边界
-- 当前主流AI编程辅助工具（GitHub Copilot、Cursor等）的工作机制
-- AI编程代理在代码生成、代码补全、代码解释等方面的应用
-- AI编程代理可能引入的代码质量问题与局限性
-
-**学习时间**: 2-3周
-
-**学习资源**:
-- 《Hands-On RESTful API Design Patterns》章节中关于AI代理的讲解
-- GitHub Copilot官方文档与使用指南
-- OpenAI API文档：https://platform.openai.com/docs
-- Anthropic关于AI代理的研究博客
-
-**学习建议**: 深入了解AI编程工具的实际使用场景与局限性，尝试分析AI生成代码可能存在的潜在问题，为理解论文中的回归问题奠定基础。
-
----
-
-### 阶段 3：代码回归与影响分析理论
-
-**学习内容**:
-- 软件回归的定义、类型与产生原因
-- 传统代码影响分析（Impact Analysis）方法概述
-- 基于依赖图的静态分析方法
-- 程序切片（Program Slicing）技术基础
-- 回归测试选择与优先级排序策略
-- 图论基础：图的表示、遍历算法、连通性分析
-
-**学习时间**: 3-4周
-
-**学习资源**:
-- 《Software Regression》- 相关的IEEE论文集
-- 《Program Analysis: An APplied Approach》- 静态分析基础
-- 《Introduction to Algorithms》- 图算法章节
-- UDig开源影响分析工具相关论文
-
-**学习建议**: 重点理解从代码变更到受影响代码区域的映射过程，动手实现简单的依赖图构建与影响分析算法，建立对回归问题系统性的认知框架。
-
----
-
-### 阶段 4：TDAD论文核心内容深入
-
-**学习内容**:
-- TDAD：测试驱动代理开发的核心理念与设计目标
-- 基于图的代码变更影响分析方法详解
-- 多智能体系统中变更传播与回归检测机制
-- TDAD的实验设计与评估指标
-- 与传统回归测试工具的对比分析
-- TDAD在真实AI编程工作流中的应用场景
-
-**学习时间**: 3-4周
-
-**学习资源**:
-- TDAD原始论文（arxiv链接）
-- 代码依赖图分析相关论文（如《ChangeExtractor》等）
-- 软件工程顶会（ICSE、FSE、ASE）中相关工作
-- GraphQL与代码结构化表示相关技术
-
-**学习建议**: 仔细阅读论文的方法论部分
-
----
-
-## 常见问题
-
-### TDAD的核心目标是什么？它解决了一个什么样的具体问题？
-
-TDAD的核心目标是减少AI编码智能体（AI Coding Agents）在代码生成过程中引入的代码回归（Code Regressions）。传统的AI编码智能体在迭代式代码修改过程中，往往会无意中破坏已有的正常功能，导致代码质量下降。TDAD通过引入基于图的依赖分析（Graph-Based Impact Analysis）技术，在代码生成过程中建立代码元素之间的依赖关系图谱，从而在智能体进行修改前评估潜在的回归风险，实现测试驱动的智能体开发流程。
-
-### 什么是有向依赖图（Dependency Graph），它在TDAD中扮演什么角色？
-
-有向依赖图是TDAD的核心数据结构，用于表示代码库中各元素（函数、类、变量、模块等）之间的依赖关系。在这种图结构中，节点代表代码元素，有向边代表元素之间的依赖关系（例如函数调用、变量引用、模块导入等）。当AI智能体计划修改某个代码元素时，系统会沿着依赖图反向传播，分析该修改可能影响的所有下游代码元素，从而预测潜在的回归风险并生成针对性的测试用例。
-
-### TDAD与传统测试驱动开发（TDD）有什么本质区别？
-
-虽然TDAD借鉴了TDD"先写测试再写代码"的理念，但两者存在本质区别。传统TDD是由人类开发者主动编写测试用例，而TDAD是由系统自动分析代码依赖关系并动态生成测试。具体而言，TDAD利用AI智能体的自我修复能力，在检测到潜在回归风险时自动生成回归测试用例，并将这些测试集成到智能体的开发流程中。此外，TDAD的测试生成是基于代码依赖图的静态分析与动态执行反馈相结合，而传统TDD完全依赖开发者的领域知识。
-
-### TDAD如何处理大型代码库中的依赖关系分析效率问题？
-
-在大型代码库中，完整的依赖图构建和分析可能面临性能瓶颈。TDAD采用了多层优化策略：首先是增量式图构建，只对发生变化的代码部分更新依赖图；其次是剪枝策略，利用程序分析技术移除不可能触发回归的冗余依赖路径；最后是并行计算框架，将独立的依赖分析任务分配到多个计算单元并行处理。此外，系统还采用了分层抽象技术，对高层模块依赖和细粒度代码依赖进行分层管理，以平衡分析精度和计算开销。
-
-### TDAD的评估方法是什么？论文中使用了哪些指标来衡量其效果？
-
-TDAD的评估主要从两个维度进行：回归检测率和开发效率提升。在回归检测率方面，论文通过引入人工注入的回归缺陷来测试系统的检测能力，使用精确率（Precision）、召回率（Recall）和F1分数作为衡量指标。在开发效率方面，论文对比了使用TDAD前后AI智能体修复缺陷所需的平均时间、代码通过率以及每次提交的代码变更量。实验结果表明，TDAD能够在保持较高召回率的同时，显著减少代码回归的发生频率和修复时间。
-
-### TDAD适用于哪些类型的AI编码智能体？
-
-TDAD的设计具有通用性，可以与主流的AI编码智能体框架集成，包括基于大语言模型（LLM）的代码生成系统、基于强化学习的代码优化智能体，以及混合型的代码辅助工具。系统的核心接口是代码依赖图生成器和回归测试生成器，这两个组件与具体的AI智能体架构解耦。论文中展示了与GitHub Copilot扩展接口、Cursor IDE插件以及自研的Agent框架的集成案例，验证了框架的适配灵活性。
-
-### 实施TDAD需要哪些前置条件和技术要求？
-
-实施TDAD需要满足以下技术要求：首先，代码库需要具备基本的结构化表示能力，能够被解析器提取为抽象语法树（AST）或中间表示（IR）；其次，需要一个能够执行代码并收集运行时信息的执行环境，用于动态依赖分析；最后，AI智能体需要支持插件式扩展，以便集成TDAD的回归检测和测试生成模块。在基础设施方面，推荐配置包括具备至少16GB内存的开发环境、Python 3.8+运行环境，以及支持持续集成（CI）的测试执行框架。
-
----
-
-## 引用
-
-- **ArXiv**: [http://arxiv.org/abs/2603.17973v1](http://arxiv.org/abs/2603.17973v1)
-- **PDF**: [https://arxiv.org/pdf/2603.17973v1.pdf](https://arxiv.org/pdf/2603.17973v1.pdf)
-
-> 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
-
----
-
-## 站内链接
-
-- 分类： [论文](/categories/%E8%AE%BA%E6%96%87/)
-- 标签： [arxiv](/tags/arxiv/) / [cs.SE](/tags/cs.se/)
-- 场景： [Web应用开发](/scenarios/web%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/)
-
-### 相关文章
-
-- [TDAD：基于图的依赖分析减少AI编程智能体代码回归]({{< relref "posts/20260319-arxiv_ai-tdad-test-driven-agentic-development-reducing-code-5.md" >}})
-- [ANCRe：自适应神经连接重分配实现高效深度扩展]({{< relref "posts/20260210-arxiv_ai-ancre-adaptive-neural-connection-reassignment-for--5.md" >}})
-- [基于朗之万动力学的直接软策略采样]({{< relref "posts/20260210-arxiv_ai-direct-soft-policy-sampling-via-langevin-dynamics-2.md" >}})
-- [MARTI-MARS$^2$: Scaling Multi-Agent Self-Search via Rei]({{< relref "posts/20260210-arxiv_ai-marti-mars2-scaling-multi-agent-self-search-via-re-7.md" >}})
-- [下一代验证码：利用认知差异防御GUI智能体]({{< relref "posts/20260210-arxiv_ai-next-gen-captchas-leveraging-the-cognitive-gap-for-4.md" >}})
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

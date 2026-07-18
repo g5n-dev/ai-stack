@@ -1,95 +1,46 @@
 ---
-title: AI与Ghidra协同分析40MB二进制文件中的隐藏后门
+title: We hid backdoors in ~40MB binaries and asked AI + Ghidra to find them
 date: 2026-02-22 17:55:38+08:00
 draft: false
 entry_kind: auto
 tags:
-- 逆向工程
-- Ghidra
-- 二进制分析
-- 漏洞挖掘
-- 后门检测
-- LLM
-- 静态分析
-- 网络安全
-categories:
-- 安全
-- AI 工程
+- Hacker News
+categories: []
+scenarios: []
 source: hacker_news
-description: 在软件安全领域，针对大型二进制文件的漏洞挖掘往往面临巨大的逆向工程挑战。本文介绍了一项实验，研究者在约 40MB 的二进制文件中植入后门，并尝试利用
-  AI 辅助 Ghidra 进行自动化分析与检测。文章详细记录了这一过程的有效性与局限性，展示了当前技术手段在处理大规模代码时的实际表现。通过阅读本文，读者可以了解
-  AI 在逆向工程中的真实应用潜力，以及如何将其融入现有的安全分析工作流中。
+description: 当前只保存了来源元数据，未抓取外链全文。请以原始来源和 Hacker News 讨论为准。
 external_url: https://quesma.com/blog/introducing-binaryaudit
-scenarios:
-- 大语言模型
 aliases:
 - /posts/20260222-hacker_news-we-hid-backdoors-in-40mb-binaries-and-asked-ai-ghi-16/
 - /posts/20260222-hacker_news-we-hid-backdoors-in-40mb-binaries-and-asked-ai-ghi-9/
-content_mode: legacy_analysis
-publication_tier: LEGACY
-source_provenance: legacy_no_snapshot
-source_support: 0.0
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: metadata_only
+source_snapshot_sha256: sha256:015c3009082bd6d6e08b6bf9178f064ea0ece9e90a88c87c5fcd1b0c789a1946
+extractor_version: source-contract-v1
+discovery_method: api_metadata
+fetch_status: captured
+source_completeness: metadata_only
+source_is_truncated: false
+source_support: 1.0
+source_title_chars_original: 69
+captured_at: '2026-07-18T04:17:32.990140Z'
+source_capture_sha256: sha256:2cb11c5520d3276c82d9e263733ecef17aef2571d4ed3ce3e1da1889d47f01d0
+source_capture_chars_original: 69
+source_publication_excerpt_chars: 69
 ---
 
 ## 基本信息
 
+- **来源**: hacker\_news
+- **原始来源**: [https://quesma.com/blog/introducing-binaryaudit](<https://quesma.com/blog/introducing-binaryaudit>)
 - **作者**: jakozaur
-- **评分**: 144
-- **评论数**: 58
-- **链接**: [https://quesma.com/blog/introducing-binaryaudit](https://quesma.com/blog/introducing-binaryaudit)
-- **HN 讨论**: [https://news.ycombinator.com/item?id=47111440](https://news.ycombinator.com/item?id=47111440)
+- **评分**: 245
+- **评论数**: 98
+- **HN 讨论**: [https://news.ycombinator.com/item?id=47111440](<https://news.ycombinator.com/item?id=47111440>)
 
----
+## 来源说明
 
-## 导语
+当前只保存了来源元数据，未抓取外链全文。请以原始来源和 Hacker News 讨论为准。
 
-在软件安全领域，针对大型二进制文件的漏洞挖掘往往面临巨大的逆向工程挑战。本文介绍了一项实验，研究者在约 40MB 的二进制文件中植入后门，并尝试利用 AI 辅助 Ghidra 进行自动化分析与检测。文章详细记录了这一过程的有效性与局限性，展示了当前技术手段在处理大规模代码时的实际表现。通过阅读本文，读者可以了解 AI 在逆向工程中的真实应用潜力，以及如何将其融入现有的安全分析工作流中。
-
----
-
-## 评论
-
-### 评价综述
-
-**中心观点：**
-该文章通过实证研究表明，尽管当前的大语言模型（LLM）在辅助逆向工程工具（如Ghidra）时展现出强大的语义理解能力，但在面对大型二进制文件（~40MB）中复杂的后门时，仍存在严重的漏报与幻觉问题，尚无法完全替代人工进行自动化的漏洞挖掘，但在辅助分析层面具有显著潜力。
-
-### 深入评价
-
-#### 1. 支撑理由（基于事实与推断）
-
-*   **上下文窗口与精度的博弈（技术事实/推断）：**
-    文章选取 ~40MB 的二进制文件作为测试对象是一个极具挑战性的边界条件。40MB 的二进制文件在反编译后产生的伪代码量级往往在百万行以上，这远超出了当前主流 LLM（即便是 GPT-4 或 Claude 3.5）的有效上下文窗口。这意味着 AI 无法“一眼”看完整个程序，必须依赖切片检索。文章中 AI 的失败案例，很大程度上归因于**全局控制流分析（CFG）的断裂**——AI 只能看到函数片段，而无法理解跨模块的恶意调用链。这揭示了当前 RAG（检索增强生成）技术在处理大规模代码库时的架构性短板。
-
-*   **语义理解与模式匹配的差距（技术观点）：**
-    Ghidra 等传统工具擅长基于特征码和静态结构的模式匹配，而 AI 擅长理解代码的“意图”。文章可能展示了 AI 能够识别出经过混淆的加密算法或非标准的网络调用，这是传统工具难以做到的。然而，AI 在处理“未公开行为”时表现不佳。如果后门利用了一个极其冷门的系统调用或者是一个特定的逻辑漏洞（而非常见的加密后门），AI 会因为训练数据中缺乏类似样本而将其忽略。这说明 AI 目前更多是在做“基于概率的代码补全”，而非真正的“逻辑推理”。
-
-*   **误报率与信任危机（行业推断）：**
-    在安全审计中，一次漏报可能比误报更致命，但高误报率会导致工具不可用。文章中提到的 AI 发现后门的过程，极大概率伴随着大量的“幻觉”——即 AI 指出一段无害代码为恶意代码。在实际工作中，安全分析师需要花费大量时间去验证这些“假阳性”。如果文章未能有效展示如何降低误报率，那么该方法的实用价值将大打折扣。
-
-#### 2. 反例与边界条件
-
-*   **边界条件 1：代码混淆与多态性**
-    如果测试的二进制文件使用了高级的代码混淆技术（如控制流平坦化 Control Flow Flattening）或虚拟化保护（如 VMProtect），Ghidra 生成的伪代码将变得极其晦涩（包含大量 goto 跳转和垃圾变量）。在这种情况下，AI 的分析能力会呈指数级下降，因为其训练数据主要基于整洁的源码，而非经过严重混淆的伪代码。此时，传统的人工动态调试可能比 AI 分析更有效。
-
-*   **边界条件 2：特定领域的逻辑后门**
-    针对“硬件木马”或“特定业务逻辑漏洞”（如只有特定输入序列才会触发的漏洞），AI 可能完全失效。例如，一个后门隐藏在看似正常的 FPGA 位流解析逻辑中，只有当数据包长度为特定恶意值时才触发。AI 缺乏对业务逻辑的先验知识，很容易将其判定为正常的数据处理代码。
-
-*   **反例：小型、高特征度的恶意软件**
-    对于 1MB 以下、使用标准网络库（如 OpenSSL）且未加壳的木马，传统的 Yara 规则或杀毒软件的静态扫描可能比 AI + Ghidra 的组合快几个数量级，且准确率更高。引入 AI 在此场景下属于“杀鸡用牛刀”，且增加了推理成本。
-
-#### 3. 维度详细分析
-
-*   **内容深度与严谨性：**
-    文章的核心价值在于设定了一个极具难度的基准（40MB）。大多数类似研究仅停留在简单的 CTF 题目或小型 binaries 上。然而，如果文章未详细披露所使用的 Prompt Engineering 细节（如：是否使用了 Few-shot prompting，是否提供了函数依赖图），则其结论的严谨性存疑。AI 的表现高度依赖于 Prompt 的设计，缺乏此细节会导致实验难以复现。
-
-*   **创新性：**
-    将 LLM 引入大规模二进制分析是当前的前沿方向。文章的创新点在于“人机回环”的探索，即 AI 不是黑盒跑完，而是作为 Ghidra 的插件辅助人类。这种“副驾驶”模式比全自动审计更具现实意义。
-
-*   **实用价值与行业影响：**
-    对于恶意软件分析师和漏洞赏金猎人，该文章指明了一个方向：利用 AI 快速定位可疑的加密函数和网络 IO 接口，缩小人工审查的范围。虽然 AI 不能直接“找到”后门，但它能充当高效的“过滤器”。这可能会推动 Ghidra 插件生态向 AI 原生方向发展。
-
-### 实际应用建议
-
-1.  **建立分层分析机制：** 不要试图让 AI 一次性分析 40MB 文件。应先用传统工具（如 BinDiff, IDA/Ghidra 的自动分析）筛选出“可疑函数列表”，再将这些特定函数的上下文输入 AI 进行深度语义分析。
-2.  **关注“解释性”而非“结论性”：** 在使用 AI 时，询问它“为什么这段代码是可疑的”，而不是直接问“这是否是后门”。要求 AI 解释代码逻辑，由分析师最终判定，可以有效
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。
