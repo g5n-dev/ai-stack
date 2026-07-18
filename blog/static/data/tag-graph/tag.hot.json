@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-17T23:10:40Z",
+  "generated_at": "2026-07-18T03:34:31Z",
   "layer": "tag",
   "layers": {
     "application": {
@@ -957,7 +957,7 @@
       "strength": 1,
       "target": "tag:Codex",
       "type": "cooccurrence",
-      "weight": 4
+      "weight": 5
     },
     {
       "id": "edge:cooccurrence:tag:AI Agent->tag:Copilot",
@@ -1149,7 +1149,7 @@
       "strength": 1,
       "target": "tag:Rust",
       "type": "cooccurrence",
-      "weight": 4
+      "weight": 5
     },
     {
       "id": "edge:cooccurrence:tag:AI Agent->tag:SOTA",
@@ -1389,7 +1389,7 @@
       "strength": 1,
       "target": "tag:工程实践",
       "type": "cooccurrence",
-      "weight": 4
+      "weight": 5
     },
     {
       "id": "edge:cooccurrence:tag:AI Agent->tag:开发工具",
@@ -12880,6 +12880,14 @@
       "weight": 1
     },
     {
+      "id": "edge:cooccurrence:tag:Codex->tag:Rust",
+      "source": "tag:Codex",
+      "strength": 0.5,
+      "target": "tag:Rust",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
       "id": "edge:cooccurrence:tag:Codex->tag:SOTA",
       "source": "tag:Codex",
       "strength": 0.5,
@@ -12958,6 +12966,14 @@
       "target": "tag:工具调用",
       "type": "cooccurrence",
       "weight": 2
+    },
+    {
+      "id": "edge:cooccurrence:tag:Codex->tag:工程实践",
+      "source": "tag:Codex",
+      "strength": 0.5,
+      "target": "tag:工程实践",
+      "type": "cooccurrence",
+      "weight": 1
     },
     {
       "id": "edge:cooccurrence:tag:Codex->tag:开发工具",
@@ -22040,6 +22056,14 @@
       "weight": 1
     },
     {
+      "id": "edge:cooccurrence:tag:Rust->tag:工程实践",
+      "source": "tag:Rust",
+      "strength": 0.5,
+      "target": "tag:工程实践",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
       "id": "edge:cooccurrence:tag:Rust->tag:开发者工具",
       "source": "tag:Rust",
       "strength": 0.5,
@@ -29424,6 +29448,14 @@
       "weight": 4
     },
     {
+      "id": "edge:cooccurrence:tag:工程实践->tag:掘金",
+      "source": "tag:工程实践",
+      "strength": 0.5,
+      "target": "tag:掘金",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
       "id": "edge:cooccurrence:tag:工程实践->tag:推理优化",
       "source": "tag:工程实践",
       "strength": 0.5,
@@ -31805,7 +31837,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 8
+      "weight": 7
     },
     {
       "id": "edge:cooccurrence:tag:推理->tag:本地部署",
@@ -35495,11 +35527,11 @@
       "weighted_degree": 352.6
     },
     {
-      "article_count": 132,
+      "article_count": 133,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:面试考点",
-      "degree": 598,
+      "degree": 601,
       "description": "文章标签: AI Agent",
       "id": "tag:AI Agent",
       "layer": "tag",
@@ -35508,8 +35540,8 @@
       "level": 6,
       "name": "AI Agent",
       "rank": 2,
-      "related_count": 596,
-      "weighted_degree": 925.2
+      "related_count": 599,
+      "weighted_degree": 932.2
     },
     {
       "article_count": 13,
@@ -35779,7 +35811,7 @@
       "legacy_id": "AI 辅助编程",
       "level": 6,
       "name": "AI 辅助编程",
-      "rank": 91,
+      "rank": 93,
       "related_count": 95,
       "weighted_degree": 126.6
     },
@@ -36068,16 +36100,16 @@
       "legacy_id": "CLI",
       "level": 6,
       "name": "CLI",
-      "rank": 92,
+      "rank": 94,
       "related_count": 90,
       "weighted_degree": 126.6
     },
     {
-      "article_count": 38,
+      "article_count": 39,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
-      "degree": 170,
+      "degree": 176,
       "description": "文章标签: Codex",
       "id": "tag:Codex",
       "layer": "tag",
@@ -36085,9 +36117,9 @@
       "legacy_id": "Codex",
       "level": 6,
       "name": "Codex",
-      "rank": 38,
-      "related_count": 170,
-      "weighted_degree": 266
+      "rank": 35,
+      "related_count": 176,
+      "weighted_degree": 273
     },
     {
       "article_count": 18,
@@ -36102,7 +36134,7 @@
       "legacy_id": "Copilot",
       "level": 6,
       "name": "Copilot",
-      "rank": 99,
+      "rank": 101,
       "related_count": 80,
       "weighted_degree": 126
     },
@@ -36442,7 +36474,7 @@
       "legacy_id": "hacker_news",
       "level": 6,
       "name": "hacker_news",
-      "rank": 6863,
+      "rank": 6867,
       "related_count": 0,
       "weighted_degree": 0
     },
@@ -36714,7 +36746,7 @@
       "legacy_id": "NLP",
       "level": 6,
       "name": "NLP",
-      "rank": 90,
+      "rank": 91,
       "related_count": 108,
       "weighted_degree": 127.2
     },
@@ -36731,7 +36763,7 @@
       "legacy_id": "NVIDIA",
       "level": 6,
       "name": "NVIDIA",
-      "rank": 94,
+      "rank": 96,
       "related_count": 102,
       "weighted_degree": 126
     },
@@ -36782,7 +36814,7 @@
       "legacy_id": "OpenClaw",
       "level": 6,
       "name": "OpenClaw",
-      "rank": 37,
+      "rank": 38,
       "related_count": 200,
       "weighted_degree": 266
     },
@@ -36850,7 +36882,7 @@
       "legacy_id": "Python",
       "level": 6,
       "name": "Python",
-      "rank": 35,
+      "rank": 36,
       "related_count": 204,
       "weighted_degree": 267.6
     },
@@ -36923,11 +36955,11 @@
       "weighted_degree": 161
     },
     {
-      "article_count": 17,
+      "article_count": 18,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
-      "degree": 98,
+      "degree": 104,
       "description": "文章标签: Rust",
       "id": "tag:Rust",
       "layer": "tag",
@@ -36935,9 +36967,9 @@
       "legacy_id": "Rust",
       "level": 6,
       "name": "Rust",
-      "rank": 100,
-      "related_count": 97,
-      "weighted_degree": 119.6
+      "rank": 92,
+      "related_count": 103,
+      "weighted_degree": 126.6
     },
     {
       "article_count": 13,
@@ -37054,7 +37086,7 @@
       "legacy_id": "Transformer",
       "level": 6,
       "name": "Transformer",
-      "rank": 36,
+      "rank": 37,
       "related_count": 202,
       "weighted_degree": 266
     },
@@ -37241,7 +37273,7 @@
       "legacy_id": "代码审查",
       "level": 6,
       "name": "代码审查",
-      "rank": 96,
+      "rank": 98,
       "related_count": 86,
       "weighted_degree": 126
     },
@@ -37841,11 +37873,11 @@
       "weighted_degree": 98
     },
     {
-      "article_count": 17,
+      "article_count": 19,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
-      "degree": 104,
+      "degree": 112,
       "description": "文章标签: 工程实践",
       "id": "tag:工程实践",
       "layer": "tag",
@@ -37853,9 +37885,9 @@
       "legacy_id": "工程实践",
       "level": 6,
       "name": "工程实践",
-      "rank": 102,
-      "related_count": 104,
-      "weighted_degree": 119
+      "rank": 90,
+      "related_count": 112,
+      "weighted_degree": 128
     },
     {
       "article_count": 13,
@@ -38201,8 +38233,8 @@
       "article_count": 8,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:tag:Amazon DynamoDB",
-      "degree": 1,
+      "community_id": "community:other",
+      "degree": 3,
       "description": "文章标签: 掘金",
       "id": "tag:掘金",
       "layer": "tag",
@@ -38210,9 +38242,9 @@
       "legacy_id": "掘金",
       "level": 6,
       "name": "掘金",
-      "rank": 1618,
-      "related_count": 1,
-      "weighted_degree": 8
+      "rank": 1576,
+      "related_count": 3,
+      "weighted_degree": 9
     },
     {
       "article_count": 11,
@@ -38363,7 +38395,7 @@
       "legacy_id": "效率提升",
       "level": 6,
       "name": "效率提升",
-      "rank": 93,
+      "rank": 95,
       "related_count": 112,
       "weighted_degree": 126
     },
@@ -38555,7 +38587,7 @@
       "weighted_degree": 385
     },
     {
-      "article_count": 51,
+      "article_count": 50,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:Amazon DynamoDB",
@@ -38569,7 +38601,7 @@
       "name": "来源快报",
       "rank": 108,
       "related_count": 33,
-      "weighted_degree": 108
+      "weighted_degree": 107
     },
     {
       "article_count": 40,
@@ -38601,7 +38633,7 @@
       "legacy_id": "模型优化",
       "level": 6,
       "name": "模型优化",
-      "rank": 95,
+      "rank": 97,
       "related_count": 101,
       "weighted_degree": 126
     },
@@ -39111,7 +39143,7 @@
       "legacy_id": "系统设计",
       "level": 6,
       "name": "系统设计",
-      "rank": 97,
+      "rank": 99,
       "related_count": 85,
       "weighted_degree": 126
     },
@@ -39315,7 +39347,7 @@
       "legacy_id": "融资",
       "level": 6,
       "name": "融资",
-      "rank": 98,
+      "rank": 100,
       "related_count": 85,
       "weighted_degree": 126
     },
@@ -39383,7 +39415,7 @@
       "legacy_id": "视频生成",
       "level": 6,
       "name": "视频生成",
-      "rank": 101,
+      "rank": 102,
       "related_count": 105,
       "weighted_degree": 119
     },
@@ -39662,13 +39694,13 @@
   ],
   "stats": {
     "links_by_type": {
-      "cooccurrence": 4374,
+      "cooccurrence": 4378,
       "semantic": 47
     },
     "nodes_by_layer": {
       "tag": 250
     },
-    "total_links": 4421,
+    "total_links": 4425,
     "total_nodes": 250
   },
   "version": 2
