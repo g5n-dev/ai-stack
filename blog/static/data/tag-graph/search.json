@@ -12,7 +12,7 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-07-18T12:07:56Z",
+  "generated_at": "2026-07-18T17:17:21Z",
   "items": [
     {
       "article_count": 653,
@@ -41,7 +41,7 @@
       "weighted_degree": 1223.2
     },
     {
-      "article_count": 440,
+      "article_count": 441,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 25,
@@ -51,7 +51,7 @@
       "legacy_id": "掘金",
       "name": "掘金",
       "rank": 3,
-      "weighted_degree": 1170
+      "weighted_degree": 1172
     },
     {
       "article_count": 328,
@@ -457,6 +457,19 @@
       "weighted_degree": 20
     },
     {
+      "article_count": 6,
+      "category": "article_tag",
+      "community_id": "community:tag:Codex",
+      "degree": 9,
+      "description": "文章标签: 工程实践",
+      "id": "tag:工程实践",
+      "layer": "tag",
+      "legacy_id": "工程实践",
+      "name": "工程实践",
+      "rank": 35,
+      "weighted_degree": 17
+    },
+    {
       "article_count": 4,
       "category": "article_tag",
       "community_id": "community:tag:Foundational (100)",
@@ -466,7 +479,7 @@
       "layer": "tag",
       "legacy_id": "Announcements",
       "name": "Announcements",
-      "rank": 35,
+      "rank": 36,
       "weighted_degree": 17
     },
     {
@@ -479,21 +492,8 @@
       "layer": "tag",
       "legacy_id": "Amazon Quick Sight",
       "name": "Amazon Quick Sight",
-      "rank": 36,
-      "weighted_degree": 16
-    },
-    {
-      "article_count": 5,
-      "category": "article_tag",
-      "community_id": "community:tag:Codex",
-      "degree": 9,
-      "description": "文章标签: 工程实践",
-      "id": "tag:工程实践",
-      "layer": "tag",
-      "legacy_id": "工程实践",
-      "name": "工程实践",
       "rank": 37,
-      "weighted_degree": 15
+      "weighted_degree": 16
     },
     {
       "article_count": 2,
@@ -626,6 +626,19 @@
       "weighted_degree": 10.6
     },
     {
+      "article_count": 5,
+      "category": "article_tag",
+      "community_id": "community:tag:Codex",
+      "degree": 2,
+      "description": "文章标签: 来源转写",
+      "id": "tag:来源转写",
+      "layer": "tag",
+      "legacy_id": "来源转写",
+      "name": "来源转写",
+      "rank": 48,
+      "weighted_degree": 10
+    },
+    {
       "article_count": 1,
       "category": "backend",
       "community_id": null,
@@ -635,7 +648,7 @@
       "layer": "application",
       "legacy_id": "api",
       "name": "API服务",
-      "rank": 48,
+      "rank": 49,
       "weighted_degree": 9.6
     },
     {
@@ -648,7 +661,7 @@
       "layer": "tag",
       "legacy_id": "Foundational (100)",
       "name": "Foundational (100)",
-      "rank": 49,
+      "rank": 50,
       "weighted_degree": 9
     },
     {
@@ -661,19 +674,6 @@
       "layer": "tag",
       "legacy_id": "cs.CV",
       "name": "cs.CV",
-      "rank": 50,
-      "weighted_degree": 8
-    },
-    {
-      "article_count": 4,
-      "category": "article_tag",
-      "community_id": "community:tag:Codex",
-      "degree": 2,
-      "description": "文章标签: 来源转写",
-      "id": "tag:来源转写",
-      "layer": "tag",
-      "legacy_id": "来源转写",
-      "name": "来源转写",
       "rank": 51,
       "weighted_degree": 8
     },

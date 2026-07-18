@@ -1,7 +1,7 @@
 {
-  "active_count": 2144,
+  "active_count": 2145,
   "archived_count": 276,
-  "complete_count": 5,
+  "complete_count": 6,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -17840,9 +17840,9 @@
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
   "source_brief_count": 2139,
-  "source_file_count": 2420,
-  "source_tree_sha256": "d7f48df9226d81222801cb441aa5ed01f05fbdc90d0994531b593a37f6c29435",
-  "verified_provenance_count": 2144,
+  "source_file_count": 2421,
+  "source_tree_sha256": "b8f9c98c670c9df40a1b7342fcc4f732fc3cfda191e85e1806fc53124c47350a",
+  "verified_provenance_count": 2145,
   "warning_counts": {
     "source_excerpt_truncated": 736
   }
