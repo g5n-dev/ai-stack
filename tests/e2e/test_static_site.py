@@ -139,7 +139,10 @@ def test_search_is_keyboard_operable_filtered_and_same_origin(page: Page, site_u
     expect(page.locator("#search-results li").first).to_be_visible()
     expect(page.locator("#search-results li").first).to_contain_text("VideoGPA")
 
-    page.locator("#search-query").fill("UCF-101")
+    # Reuse a term present in the verified abstract; UCF-101 was only present
+    # in an older generated draft and is intentionally not reintroduced as an
+    # unsupported claim.
+    page.locator("#search-query").fill("VideoGPA")
     page.keyboard.press("Enter")
     expect(page.locator("#search-status")).to_contain_text("找到", timeout=15_000)
     expect(page.locator("#search-results")).to_contain_text("VideoGPA")
