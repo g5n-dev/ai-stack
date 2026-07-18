@@ -65,6 +65,7 @@ jobs:
           python3 -m pytest -q \
             tests/test_content_freshness.py \
             tests/test_workflow_security.py \
+            tests/test_processor_import_boundary.py \
             tests/test_trends_delivery_contract.py \
             tests/test_stack_trends.py \
             tests/test_stack_trends_monitoring.py \
@@ -84,6 +85,7 @@ jobs:
             tests/test_crawler_dedupe_quality.py \
             tests/test_blogs_podcasts_crawler.py \
             tests/test_source_contract.py \
+            tests/test_juejin_full_article.py \
             tests/test_evidence_pipeline.py \
             tests/test_pipeline_cli.py \
             tests/test_pipeline_safety.py \

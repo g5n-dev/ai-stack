@@ -1,7 +1,7 @@
 {
   "active_count": 1974,
   "archived_count": 448,
-  "complete_count": 0,
+  "complete_count": 1,
   "legacy_analysis_count": 1910,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -10686,12 +10686,6 @@
       ],
       "status": "source_brief"
     },
-    "posts/20260717-juejin-每日一个开源项目第161篇open-interpreter-开源-ai-编程-agent用-rust-0-72d10eb23e.md": {
-      "reasons": [
-        "concise_source_card"
-      ],
-      "status": "source_brief"
-    },
     "posts/20260718-arxiv-meanflownft-bringing-forward-process-rl-to-average-0-ae3c665a0d.md": {
       "reasons": [
         "concise_source_card"
@@ -10728,9 +10722,9 @@
     "archived_content": 448
   },
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 64,
+  "source_brief_count": 63,
   "source_file_count": 2422,
-  "source_tree_sha256": "27edf38cbf3172e925726fe9948547bd5742663190f87aae244be009b493bb14",
+  "source_tree_sha256": "f46ae2c1cecb35a5ab36675ba11e1163bda68efd286ab308d83596f83ed631e3",
   "warning_counts": {
     "source_excerpt_truncated": 2
   }

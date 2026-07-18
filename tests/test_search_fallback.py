@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 
-from types import SimpleNamespace
 import sys
 import types
 import unittest
+from types import SimpleNamespace
 from unittest.mock import patch
 
 try:
@@ -23,12 +23,16 @@ except ModuleNotFoundError:  # pragma: no cover - local fallback for bare Python
     requests.get = lambda *args, **kwargs: None
     sys.modules["requests"] = requests
 
-if "feedparser" not in sys.modules:
+try:
+    __import__("feedparser")
+except ModuleNotFoundError:  # pragma: no cover - local fallback for bare Python
     fake_feedparser = types.ModuleType("feedparser")
     fake_feedparser.parse = lambda *args, **kwargs: SimpleNamespace(bozo=0, entries=[])
     sys.modules["feedparser"] = fake_feedparser
 
-if "bs4" not in sys.modules:
+try:
+    __import__("bs4")
+except ModuleNotFoundError:  # pragma: no cover - local fallback for bare Python
     fake_bs4 = types.ModuleType("bs4")
 
     class _BeautifulSoup:
@@ -46,8 +50,8 @@ from crawler.reddit import RedditCrawler
 from crawler.search_fallback import (
     MultilingualQueryPlanner,
     PlannedQuery,
-    SearXNGSearchClient,
     SearchFallbackService,
+    SearXNGSearchClient,
 )
 
 
@@ -105,7 +109,11 @@ class SearchFallbackTest(unittest.TestCase):
     def test_query_planner_generates_multilingual_site_queries(self):
         planner = MultilingualQueryPlanner(max_queries_per_target=2)
 
-        plans = planner.plan_site_queries(site="juejin.cn/post", topics=["人工智能", "LLM"], target="掘金")
+        plans = planner.plan_site_queries(
+            site="juejin.cn/post",
+            topics=["人工智能", "LLM"],
+            target="掘金",
+        )
 
         self.assertGreaterEqual(len(plans), 4)
         self.assertIn("zh-CN", {plan.language for plan in plans})

@@ -110,6 +110,15 @@ class JuejinRSSCrawler:
                 'published': published,
                 'tags': tags,
                 'source': 'juejin',
+                'feed_url': self.rss_url,
+                'discovery_method': 'rss_excerpt',
+                'fetch_status': 'captured',
+                # Juejin's RSS description is a discovery excerpt.  It may be
+                # internally well-formed, but it does not prove that the
+                # article body was captured.
+                'source_completeness': 'partial',
+                'source_is_truncated': True,
+                'source_truncation_reason': 'rss_excerpt_only',
                 'crawled_at': datetime.now().isoformat()
             }
 
