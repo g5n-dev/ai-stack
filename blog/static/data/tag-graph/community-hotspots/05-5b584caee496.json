@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:Codex",
-  "generated_at": "2026-07-18T12:07:56Z",
+  "generated_at": "2026-07-18T18:10:41Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -10,7 +10,7 @@
       "strength": 1,
       "target": "tag:来源转写",
       "type": "cooccurrence",
-      "weight": 4
+      "weight": 5
     },
     {
       "id": "edge:cooccurrence:tag:ACP->tag:Codex",
@@ -135,7 +135,7 @@
   ],
   "nodes": [
     {
-      "article_count": 5,
+      "article_count": 6,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:Codex",
@@ -147,12 +147,12 @@
       "legacy_id": "工程实践",
       "level": 6,
       "name": "工程实践",
-      "rank": 37,
+      "rank": 35,
       "related_count": 9,
-      "weighted_degree": 15
+      "weighted_degree": 17
     },
     {
-      "article_count": 4,
+      "article_count": 5,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:Codex",
@@ -164,9 +164,9 @@
       "legacy_id": "来源转写",
       "level": 6,
       "name": "来源转写",
-      "rank": 51,
+      "rank": 48,
       "related_count": 2,
-      "weighted_degree": 8
+      "weighted_degree": 10
     },
     {
       "article_count": 1,

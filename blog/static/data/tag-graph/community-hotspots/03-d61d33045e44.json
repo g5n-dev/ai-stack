@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:来源快报",
-  "generated_at": "2026-07-18T12:07:56Z",
+  "generated_at": "2026-07-18T18:10:41Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -79,7 +79,7 @@
   ],
   "nodes": [
     {
-      "article_count": 51,
+      "article_count": 52,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:来源快报",
@@ -93,7 +93,7 @@
       "name": "来源快报",
       "rank": 19,
       "related_count": 33,
-      "weighted_degree": 108
+      "weighted_degree": 109
     },
     {
       "article_count": 6,
@@ -125,7 +125,7 @@
       "legacy_id": "cs.CV",
       "level": 6,
       "name": "cs.CV",
-      "rank": 50,
+      "rank": 51,
       "related_count": 2,
       "weighted_degree": 8
     },

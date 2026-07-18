@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-18T17:17:21Z",
+  "generated_at": "2026-07-18T18:10:41Z",
   "layer": "tag",
   "layers": {
     "application": {
@@ -4253,7 +4253,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 7
+      "weight": 8
     },
     {
       "id": "edge:cooccurrence:tag:掘金->tag:来源转写",
@@ -5801,7 +5801,7 @@
       "weighted_degree": 17
     },
     {
-      "article_count": 441,
+      "article_count": 442,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -5815,7 +5815,7 @@
       "name": "掘金",
       "rank": 3,
       "related_count": 25,
-      "weighted_degree": 1172
+      "weighted_degree": 1173
     },
     {
       "article_count": 146,
@@ -5852,7 +5852,7 @@
       "weighted_degree": 240
     },
     {
-      "article_count": 51,
+      "article_count": 52,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:来源快报",
@@ -5866,7 +5866,7 @@
       "name": "来源快报",
       "rank": 19,
       "related_count": 33,
-      "weighted_degree": 108
+      "weighted_degree": 109
     },
     {
       "article_count": 5,
