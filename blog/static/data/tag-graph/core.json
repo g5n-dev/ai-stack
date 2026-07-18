@@ -622,15 +622,15 @@
       "legacy_id": "actix",
       "level": 2,
       "name": "Actix",
-      "rank": 6843,
+      "rank": 115,
       "weighted_degree": 2
     },
     {
-      "article_count": 298,
+      "article_count": 653,
       "category": "ai",
       "color": "#7aa6b8",
       "community_id": null,
-      "degree": 60,
+      "degree": 5,
       "description": "自主决策的AI智能体，任务规划与执行",
       "icon": "smart_toy",
       "id": "tech:agent",
@@ -639,15 +639,15 @@
       "legacy_id": "agent",
       "level": 4,
       "name": "AI Agent",
-      "rank": 332,
-      "weighted_degree": 37.4
+      "rank": 86,
+      "weighted_degree": 4.4
     },
     {
-      "article_count": 950,
+      "article_count": 665,
       "category": "ai",
       "color": "#cbd5e1",
       "community_id": null,
-      "degree": 277,
+      "degree": 7,
       "description": "人工智能和机器学习项目开发",
       "icon": "psychology",
       "id": "tech:ai_ml",
@@ -656,8 +656,8 @@
       "legacy_id": "ai_ml",
       "level": 5,
       "name": "AI/ML项目",
-      "rank": 68,
-      "weighted_degree": 167.4
+      "rank": 84,
+      "weighted_degree": 5.4
     },
     {
       "article_count": 0,
@@ -673,15 +673,15 @@
       "legacy_id": "animation",
       "level": 5,
       "name": "动画/3D",
-      "rank": 6870,
+      "rank": 146,
       "weighted_degree": 0
     },
     {
-      "article_count": 58,
+      "article_count": 1,
       "category": "backend",
       "color": "#7aa6b8",
       "community_id": null,
-      "degree": 42,
+      "degree": 10,
       "description": "RESTful/GraphQL API服务",
       "icon": "api",
       "id": "tech:api",
@@ -690,15 +690,15 @@
       "legacy_id": "api",
       "level": 4,
       "name": "API服务",
-      "rank": 419,
-      "weighted_degree": 28.8
+      "rank": 48,
+      "weighted_degree": 9.6
     },
     {
-      "article_count": 3,
+      "article_count": 0,
       "category": "tools",
       "color": "#7aa6b8",
       "community_id": null,
-      "degree": 3,
+      "degree": 2,
       "description": "自动化脚本和工具",
       "icon": "auto_fix",
       "id": "tech:automation",
@@ -707,15 +707,15 @@
       "legacy_id": "automation",
       "level": 4,
       "name": "自动化工具",
-      "rank": 6830,
-      "weighted_degree": 2.6
+      "rank": 116,
+      "weighted_degree": 2
     },
     {
-      "article_count": 1,
+      "article_count": 0,
       "category": "tools",
       "color": "#cbd5e1",
       "community_id": null,
-      "degree": 2,
+      "degree": 1,
       "description": "任务自动化、工作流和批处理脚本",
       "icon": "auto_fix",
       "id": "tech:automation_scene",
@@ -724,8 +724,8 @@
       "legacy_id": "automation_scene",
       "level": 5,
       "name": "自动化脚本",
-      "rank": 6852,
-      "weighted_degree": 1.6
+      "rank": 131,
+      "weighted_degree": 1
     },
     {
       "article_count": 0,
@@ -741,15 +741,15 @@
       "legacy_id": "axum",
       "level": 2,
       "name": "Axum",
-      "rank": 6844,
+      "rank": 117,
       "weighted_degree": 2
     },
     {
-      "article_count": 5,
+      "article_count": 0,
       "category": "web",
       "color": "#cbd5e1",
       "community_id": null,
-      "degree": 3,
+      "degree": 2,
       "description": "服务器端逻辑、API开发和微服务架构",
       "icon": "dns",
       "id": "tech:backend",
@@ -758,8 +758,8 @@
       "legacy_id": "backend",
       "level": 5,
       "name": "后端开发",
-      "rank": 6828,
-      "weighted_degree": 2.6
+      "rank": 118,
+      "weighted_degree": 2
     },
     {
       "article_count": 0,
@@ -775,15 +775,15 @@
       "legacy_id": "blockchain",
       "level": 5,
       "name": "区块链",
-      "rank": 6871,
+      "rank": 147,
       "weighted_degree": 0
     },
     {
-      "article_count": 9,
+      "article_count": 0,
       "category": "ai",
       "color": "#7aa6b8",
       "community_id": null,
-      "degree": 6,
+      "degree": 4,
       "description": "对话式AI助手",
       "icon": "forum",
       "id": "tech:chatbot",
@@ -792,15 +792,15 @@
       "legacy_id": "chatbot",
       "level": 4,
       "name": "聊天机器人",
-      "rank": 6803,
-      "weighted_degree": 5.2
+      "rank": 92,
+      "weighted_degree": 4
     },
     {
-      "article_count": 26,
+      "article_count": 141,
       "category": "tools",
       "color": "#cbd5e1",
       "community_id": null,
-      "degree": 4,
+      "degree": 1,
       "description": "CLI工具、终端应用和命令行界面",
       "icon": "terminal",
       "id": "tech:cli",
@@ -809,15 +809,15 @@
       "legacy_id": "cli",
       "level": 5,
       "name": "命令行工具",
-      "rank": 6833,
-      "weighted_degree": 2.4
+      "rank": 140,
+      "weighted_degree": 0.6
     },
     {
-      "article_count": 4,
+      "article_count": 0,
       "category": "infra",
       "color": "#cbd5e1",
       "community_id": null,
-      "degree": 4,
+      "degree": 0,
       "description": "Docker、Kubernetes和云原生应用",
       "icon": "cloud",
       "id": "tech:cloud",
@@ -826,15 +826,15 @@
       "legacy_id": "cloud",
       "level": 5,
       "name": "云原生/容器",
-      "rank": 6834,
-      "weighted_degree": 2.4
+      "rank": 148,
+      "weighted_degree": 0
     },
     {
-      "article_count": 6,
+      "article_count": 2,
       "category": "language",
       "color": "#4db6ac",
       "community_id": null,
-      "degree": 2,
+      "degree": 1,
       "description": "高性能计算和系统编程",
       "icon": "",
       "id": "tech:cpp",
@@ -843,11 +843,11 @@
       "legacy_id": "cpp",
       "level": 1,
       "name": "C++",
-      "rank": 6853,
-      "weighted_degree": 1.2
+      "rank": 145,
+      "weighted_degree": 0.6
     },
     {
-      "article_count": 46,
+      "article_count": 16,
       "category": "vision",
       "color": "#d97706",
       "community_id": null,
@@ -860,11 +860,11 @@
       "legacy_id": "cv",
       "level": 3,
       "name": "计算机视觉",
-      "rank": 6823,
+      "rank": 97,
       "weighted_degree": 3.1
     },
     {
-      "article_count": 46,
+      "article_count": 16,
       "category": "ai",
       "color": "#cbd5e1",
       "community_id": null,
@@ -877,7 +877,7 @@
       "legacy_id": "cv_scene",
       "level": 5,
       "name": "计算机视觉",
-      "rank": 6862,
+      "rank": 143,
       "weighted_degree": 0.6
     },
     {
@@ -894,15 +894,15 @@
       "legacy_id": "dashboard",
       "level": 4,
       "name": "数据仪表板",
-      "rank": 6845,
+      "rank": 119,
       "weighted_degree": 2
     },
     {
-      "article_count": 16,
+      "article_count": 1,
       "category": "ai",
       "color": "#cbd5e1",
       "community_id": null,
-      "degree": 6,
+      "degree": 2,
       "description": "数据分析、统计建模和数据挖掘",
       "icon": "analytics",
       "id": "tech:data_science",
@@ -911,11 +911,11 @@
       "legacy_id": "data_science",
       "level": 5,
       "name": "数据科学",
-      "rank": 6810,
-      "weighted_degree": 4
+      "rank": 128,
+      "weighted_degree": 1.6
     },
     {
-      "article_count": 1,
+      "article_count": 146,
       "category": "infra",
       "color": "#cbd5e1",
       "community_id": null,
@@ -928,15 +928,15 @@
       "legacy_id": "database",
       "level": 5,
       "name": "数据库",
-      "rank": 6865,
+      "rank": 139,
       "weighted_degree": 0.6
     },
     {
-      "article_count": 2,
+      "article_count": 1,
       "category": "design",
       "color": "#cbd5e1",
       "community_id": null,
-      "degree": 3,
+      "degree": 2,
       "description": "UI/UX设计、原型和设计系统",
       "icon": "palette",
       "id": "tech:design",
@@ -945,15 +945,15 @@
       "legacy_id": "design",
       "level": 5,
       "name": "设计工具",
-      "rank": 6848,
-      "weighted_degree": 1.8
+      "rank": 130,
+      "weighted_degree": 1.2
     },
     {
-      "article_count": 6,
+      "article_count": 0,
       "category": "other",
       "color": "#cbd5e1",
       "community_id": null,
-      "degree": 2,
+      "degree": 0,
       "description": "跨平台桌面应用和GUI程序",
       "icon": "laptop",
       "id": "tech:desktop",
@@ -962,15 +962,15 @@
       "legacy_id": "desktop",
       "level": 5,
       "name": "桌面应用",
-      "rank": 6854,
-      "weighted_degree": 1.2
+      "rank": 149,
+      "weighted_degree": 0
     },
     {
-      "article_count": 28,
+      "article_count": 0,
       "category": "infra",
       "color": "#cbd5e1",
       "community_id": null,
-      "degree": 2,
+      "degree": 1,
       "description": "CI/CD、部署自动化和系统运维",
       "icon": "settings",
       "id": "tech:devops",
@@ -979,15 +979,15 @@
       "legacy_id": "devops",
       "level": 5,
       "name": "DevOps/运维",
-      "rank": 6849,
-      "weighted_degree": 1.6
+      "rank": 132,
+      "weighted_degree": 1
     },
     {
-      "article_count": 47,
+      "article_count": 0,
       "category": "generative",
       "color": "#d97706",
       "community_id": null,
-      "degree": 8,
+      "degree": 2,
       "description": "Stable Diffusion等图像生成模型",
       "icon": "gradient",
       "id": "tech:diffusion",
@@ -996,8 +996,8 @@
       "legacy_id": "diffusion",
       "level": 3,
       "name": "扩散模型",
-      "rank": 6804,
-      "weighted_degree": 5.1
+      "rank": 129,
+      "weighted_degree": 1.5
     },
     {
       "article_count": 0,
@@ -1013,7 +1013,7 @@
       "legacy_id": "django",
       "level": 2,
       "name": "Django",
-      "rank": 6824,
+      "rank": 98,
       "weighted_degree": 3
     },
     {
@@ -1030,7 +1030,7 @@
       "legacy_id": "documentation",
       "level": 5,
       "name": "文档工具",
-      "rank": 6872,
+      "rank": 150,
       "weighted_degree": 0
     },
     {
@@ -1047,7 +1047,7 @@
       "legacy_id": "echo",
       "level": 2,
       "name": "Echo",
-      "rank": 6846,
+      "rank": 120,
       "weighted_degree": 2
     },
     {
@@ -1064,7 +1064,7 @@
       "legacy_id": "editor",
       "level": 5,
       "name": "编辑器/IDE",
-      "rank": 6873,
+      "rank": 151,
       "weighted_degree": 0
     },
     {
@@ -1081,15 +1081,15 @@
       "legacy_id": "embedded",
       "level": 5,
       "name": "嵌入式系统",
-      "rank": 6874,
+      "rank": 152,
       "weighted_degree": 0
     },
     {
-      "article_count": 7,
+      "article_count": 0,
       "category": "embedding",
       "color": "#d97706",
       "community_id": null,
-      "degree": 5,
+      "degree": 3,
       "description": "文本向量表示，语义搜索基础",
       "icon": "scatter_plot",
       "id": "tech:embedding",
@@ -1098,8 +1098,8 @@
       "legacy_id": "embedding",
       "level": 3,
       "name": "向量嵌入",
-      "rank": 6809,
-      "weighted_degree": 4.2
+      "rank": 99,
+      "weighted_degree": 3
     },
     {
       "article_count": 0,
@@ -1115,15 +1115,15 @@
       "legacy_id": "fastapi",
       "level": 2,
       "name": "FastAPI",
-      "rank": 6825,
+      "rank": 100,
       "weighted_degree": 3
     },
     {
-      "article_count": 1,
+      "article_count": 0,
       "category": "web",
       "color": "#26a69a",
       "community_id": null,
-      "degree": 4,
+      "degree": 3,
       "description": "轻量级Python微框架",
       "icon": "",
       "id": "tech:flask",
@@ -1132,15 +1132,15 @@
       "legacy_id": "flask",
       "level": 2,
       "name": "Flask",
-      "rank": 6818,
-      "weighted_degree": 3.6
+      "rank": 101,
+      "weighted_degree": 3
     },
     {
-      "article_count": 6,
+      "article_count": 0,
       "category": "web",
       "color": "#cbd5e1",
       "community_id": null,
-      "degree": 2,
+      "degree": 1,
       "description": "用户界面开发、组件库和前端框架",
       "icon": "desktop_windows",
       "id": "tech:frontend",
@@ -1149,15 +1149,15 @@
       "legacy_id": "frontend",
       "level": 5,
       "name": "前端开发",
-      "rank": 6850,
-      "weighted_degree": 1.6
+      "rank": 133,
+      "weighted_degree": 1
     },
     {
-      "article_count": 6,
+      "article_count": 0,
       "category": "web",
       "color": "#cbd5e1",
       "community_id": null,
-      "degree": 3,
+      "degree": 2,
       "description": "同时处理前端和后端开发的完整解决方案",
       "icon": "layers",
       "id": "tech:fullstack",
@@ -1166,15 +1166,15 @@
       "legacy_id": "fullstack",
       "level": 5,
       "name": "全栈开发",
-      "rank": 6827,
-      "weighted_degree": 2.6
+      "rank": 121,
+      "weighted_degree": 2
     },
     {
-      "article_count": 4,
+      "article_count": 0,
       "category": "other",
       "color": "#cbd5e1",
       "community_id": null,
-      "degree": 2,
+      "degree": 0,
       "description": "游戏引擎、游戏开发和游戏工具",
       "icon": "sports_esports",
       "id": "tech:game",
@@ -1183,8 +1183,8 @@
       "legacy_id": "game",
       "level": 5,
       "name": "游戏开发",
-      "rank": 6856,
-      "weighted_degree": 1.2
+      "rank": 153,
+      "weighted_degree": 0
     },
     {
       "article_count": 0,
@@ -1200,15 +1200,15 @@
       "legacy_id": "gin",
       "level": 2,
       "name": "Gin",
-      "rank": 6847,
+      "rank": 122,
       "weighted_degree": 2
     },
     {
-      "article_count": 7,
+      "article_count": 6,
       "category": "language",
       "color": "#4db6ac",
       "community_id": null,
-      "degree": 4,
+      "degree": 3,
       "description": "高性能并发编程语言，云原生时代的C语言",
       "icon": "",
       "id": "tech:go",
@@ -1217,15 +1217,15 @@
       "legacy_id": "go",
       "level": 1,
       "name": "Go",
-      "rank": 6821,
-      "weighted_degree": 3.2
+      "rank": 106,
+      "weighted_degree": 2.6
     },
     {
-      "article_count": 4,
+      "article_count": 0,
       "category": "other",
       "color": "#cbd5e1",
       "community_id": null,
-      "degree": 2,
+      "degree": 0,
       "description": "IoT设备、传感器和边缘计算",
       "icon": "sensors",
       "id": "tech:iot",
@@ -1234,11 +1234,11 @@
       "legacy_id": "iot",
       "level": 5,
       "name": "物联网",
-      "rank": 6857,
-      "weighted_degree": 1.2
+      "rank": 154,
+      "weighted_degree": 0
     },
     {
-      "article_count": 6,
+      "article_count": 42,
       "category": "language",
       "color": "#4db6ac",
       "community_id": null,
@@ -1251,11 +1251,11 @@
       "legacy_id": "java",
       "level": 1,
       "name": "Java",
-      "rank": 6863,
+      "rank": 141,
       "weighted_degree": 0.6
     },
     {
-      "article_count": 7,
+      "article_count": 37,
       "category": "language",
       "color": "#4db6ac",
       "community_id": null,
@@ -1268,11 +1268,11 @@
       "legacy_id": "javascript",
       "level": 1,
       "name": "JavaScript",
-      "rank": 6838,
+      "rank": 109,
       "weighted_degree": 2.1
     },
     {
-      "article_count": 3,
+      "article_count": 18,
       "category": "infra",
       "color": "#cbd5e1",
       "community_id": null,
@@ -1285,15 +1285,15 @@
       "legacy_id": "kubernetes",
       "level": 5,
       "name": "Kubernetes",
-      "rank": 6864,
+      "rank": 142,
       "weighted_degree": 0.6
     },
     {
-      "article_count": 23,
+      "article_count": 0,
       "category": "ai",
       "color": "#26a69a",
       "community_id": null,
-      "degree": 5,
+      "degree": 3,
       "description": "LLM应用开发框架，Agent编排利器",
       "icon": "",
       "id": "tech:langchain",
@@ -1302,15 +1302,15 @@
       "legacy_id": "langchain",
       "level": 2,
       "name": "LangChain",
-      "rank": 6808,
-      "weighted_degree": 4.2
+      "rank": 102,
+      "weighted_degree": 3
     },
     {
-      "article_count": 626,
+      "article_count": 524,
       "category": "nlp",
       "color": "#d97706",
       "community_id": null,
-      "degree": 46,
+      "degree": 8,
       "description": "GPT、Claude等大型语言模型，理解与生成文本",
       "icon": "auto_awesome",
       "id": "tech:llm",
@@ -1319,15 +1319,15 @@
       "legacy_id": "llm",
       "level": 3,
       "name": "大语言模型",
-      "rank": 418,
-      "weighted_degree": 30.4
+      "rank": 52,
+      "weighted_degree": 7.6
     },
     {
-      "article_count": 626,
+      "article_count": 524,
       "category": "ai",
       "color": "#cbd5e1",
       "community_id": null,
-      "degree": 41,
+      "degree": 3,
       "description": "LLM应用开发、提示工程和模型微调",
       "icon": "auto_awesome",
       "id": "tech:llm_scene",
@@ -1336,8 +1336,8 @@
       "legacy_id": "llm_scene",
       "level": 5,
       "name": "大语言模型",
-      "rank": 577,
-      "weighted_degree": 25.4
+      "rank": 104,
+      "weighted_degree": 2.6
     },
     {
       "article_count": 0,
@@ -1353,15 +1353,15 @@
       "legacy_id": "mobile",
       "level": 5,
       "name": "移动应用",
-      "rank": 6875,
+      "rank": 155,
       "weighted_degree": 0
     },
     {
-      "article_count": 1,
+      "article_count": 0,
       "category": "devops",
       "color": "#7aa6b8",
       "community_id": null,
-      "degree": 3,
+      "degree": 2,
       "description": "系统监控与告警",
       "icon": "monitor_heart",
       "id": "tech:monitoring",
@@ -1370,8 +1370,8 @@
       "legacy_id": "monitoring",
       "level": 4,
       "name": "监控系统",
-      "rank": 6832,
-      "weighted_degree": 2.6
+      "rank": 123,
+      "weighted_degree": 2
     },
     {
       "article_count": 0,
@@ -1387,15 +1387,15 @@
       "legacy_id": "monitoring_scene",
       "level": 5,
       "name": "监控/日志",
-      "rank": 6860,
+      "rank": 134,
       "weighted_degree": 1
     },
     {
-      "article_count": 5,
+      "article_count": 0,
       "category": "multimodal",
       "color": "#d97706",
       "community_id": null,
-      "degree": 4,
+      "degree": 3,
       "description": "图文、音视频等多模态理解模型",
       "icon": "view_in_ar",
       "id": "tech:multimodal",
@@ -1404,15 +1404,15 @@
       "legacy_id": "multimodal",
       "level": 3,
       "name": "多模态模型",
-      "rank": 6820,
-      "weighted_degree": 3.4
+      "rank": 103,
+      "weighted_degree": 2.8
     },
     {
-      "article_count": 5,
+      "article_count": 0,
       "category": "frontend",
       "color": "#26a69a",
       "community_id": null,
-      "degree": 3,
+      "degree": 2,
       "description": "React全栈框架，SSR/SSG解决方案",
       "icon": "",
       "id": "tech:nextjs",
@@ -1421,15 +1421,15 @@
       "legacy_id": "nextjs",
       "level": 2,
       "name": "Next.js",
-      "rank": 6829,
-      "weighted_degree": 2.6
+      "rank": 124,
+      "weighted_degree": 2
     },
     {
-      "article_count": 30,
+      "article_count": 26,
       "category": "nlp",
       "color": "#d97706",
       "community_id": null,
-      "degree": 7,
+      "degree": 6,
       "description": "文本分析、情感分析、命名实体识别",
       "icon": "chat",
       "id": "tech:nlp",
@@ -1438,15 +1438,15 @@
       "legacy_id": "nlp",
       "level": 3,
       "name": "自然语言处理",
-      "rank": 6792,
-      "weighted_degree": 6.2
+      "rank": 83,
+      "weighted_degree": 5.6
     },
     {
-      "article_count": 30,
+      "article_count": 26,
       "category": "ai",
       "color": "#cbd5e1",
       "community_id": null,
-      "degree": 3,
+      "degree": 2,
       "description": "文本分析、语言模型和文本处理应用",
       "icon": "chat",
       "id": "tech:nlp_scene",
@@ -1455,8 +1455,8 @@
       "legacy_id": "nlp_scene",
       "level": 5,
       "name": "自然语言处理",
-      "rank": 6836,
-      "weighted_degree": 2.2
+      "rank": 127,
+      "weighted_degree": 1.6
     },
     {
       "article_count": 0,
@@ -1472,15 +1472,15 @@
       "legacy_id": "nuxt",
       "level": 2,
       "name": "Nuxt",
-      "rank": 6876,
+      "rank": 156,
       "weighted_degree": 0
     },
     {
-      "article_count": 23,
+      "article_count": 0,
       "category": "tools",
       "color": "#cbd5e1",
       "community_id": null,
-      "degree": 3,
+      "degree": 1,
       "description": "提高开发效率的实用工具集",
       "icon": "bolt",
       "id": "tech:productivity",
@@ -1489,15 +1489,15 @@
       "legacy_id": "productivity",
       "level": 5,
       "name": "效率工具",
-      "rank": 6837,
-      "weighted_degree": 2.2
+      "rank": 135,
+      "weighted_degree": 1
     },
     {
-      "article_count": 40,
+      "article_count": 161,
       "category": "language",
       "color": "#4db6ac",
       "community_id": null,
-      "degree": 9,
+      "degree": 8,
       "description": "简洁优雅的通用编程语言，AI/ML领域首选",
       "icon": "",
       "id": "tech:python",
@@ -1506,15 +1506,15 @@
       "legacy_id": "python",
       "level": 1,
       "name": "Python",
-      "rank": 1581,
-      "weighted_degree": 8.2
+      "rank": 53,
+      "weighted_degree": 7.6
     },
     {
-      "article_count": 4,
+      "article_count": 0,
       "category": "ml",
       "color": "#26a69a",
       "community_id": null,
-      "degree": 8,
+      "degree": 7,
       "description": "深度学习研究框架，动态图先驱",
       "icon": "",
       "id": "tech:pytorch",
@@ -1523,15 +1523,15 @@
       "legacy_id": "pytorch",
       "level": 2,
       "name": "PyTorch",
-      "rank": 1620,
-      "weighted_degree": 7.6
+      "rank": 76,
+      "weighted_degree": 7
     },
     {
-      "article_count": 81,
+      "article_count": 96,
       "category": "ai",
       "color": "#7aa6b8",
       "community_id": null,
-      "degree": 10,
+      "degree": 7,
       "description": "检索增强生成，结合知识库的问答系统",
       "icon": "library_books",
       "id": "tech:rag",
@@ -1540,15 +1540,15 @@
       "legacy_id": "rag",
       "level": 4,
       "name": "RAG应用",
-      "rank": 1580,
-      "weighted_degree": 8.4
+      "rank": 77,
+      "weighted_degree": 6.6
     },
     {
-      "article_count": 81,
+      "article_count": 96,
       "category": "ai",
       "color": "#cbd5e1",
       "community_id": null,
-      "degree": 5,
+      "degree": 2,
       "description": "检索增强生成、知识库问答系统",
       "icon": "library_books",
       "id": "tech:rag_scene",
@@ -1557,15 +1557,15 @@
       "legacy_id": "rag_scene",
       "level": 5,
       "name": "RAG应用",
-      "rank": 6819,
-      "weighted_degree": 3.4
+      "rank": 126,
+      "weighted_degree": 1.6
     },
     {
-      "article_count": 8,
+      "article_count": 0,
       "category": "frontend",
       "color": "#26a69a",
       "community_id": null,
-      "degree": 5,
+      "degree": 3,
       "description": "组件化前端框架，声明式UI",
       "icon": "",
       "id": "tech:react",
@@ -1574,11 +1574,11 @@
       "legacy_id": "react",
       "level": 2,
       "name": "React",
-      "rank": 6816,
-      "weighted_degree": 3.7
+      "rank": 108,
+      "weighted_degree": 2.5
     },
     {
-      "article_count": 18,
+      "article_count": 29,
       "category": "language",
       "color": "#4db6ac",
       "community_id": null,
@@ -1591,15 +1591,15 @@
       "legacy_id": "rust",
       "level": 1,
       "name": "Rust",
-      "rank": 6826,
+      "rank": 105,
       "weighted_degree": 2.6
     },
     {
-      "article_count": 4,
+      "article_count": 0,
       "category": "infra",
       "color": "#cbd5e1",
       "community_id": null,
-      "degree": 4,
+      "degree": 0,
       "description": "安全扫描、漏洞检测和防护工具",
       "icon": "shield",
       "id": "tech:security",
@@ -1608,8 +1608,8 @@
       "legacy_id": "security",
       "level": 5,
       "name": "安全工具",
-      "rank": 6835,
-      "weighted_degree": 2.4
+      "rank": 157,
+      "weighted_degree": 0
     },
     {
       "article_count": 0,
@@ -1625,15 +1625,15 @@
       "legacy_id": "svelte",
       "level": 2,
       "name": "Svelte",
-      "rank": 6861,
+      "rank": 136,
       "weighted_degree": 1
     },
     {
-      "article_count": 5,
+      "article_count": 10,
       "category": "language",
       "color": "#4db6ac",
       "community_id": null,
-      "degree": 2,
+      "degree": 1,
       "description": "Apple生态的现代编程语言",
       "icon": "",
       "id": "tech:swift",
@@ -1642,8 +1642,8 @@
       "legacy_id": "swift",
       "level": 1,
       "name": "Swift",
-      "rank": 6855,
-      "weighted_degree": 1.2
+      "rank": 144,
+      "weighted_degree": 0.6
     },
     {
       "article_count": 0,
@@ -1659,15 +1659,15 @@
       "legacy_id": "tensorflow",
       "level": 2,
       "name": "TensorFlow",
-      "rank": 6815,
+      "rank": 93,
       "weighted_degree": 4
     },
     {
-      "article_count": 1,
+      "article_count": 0,
       "category": "tools",
       "color": "#cbd5e1",
       "community_id": null,
-      "degree": 1,
+      "degree": 0,
       "description": "单元测试、集成测试和质量保证",
       "icon": "bug_report",
       "id": "tech:testing",
@@ -1676,15 +1676,15 @@
       "legacy_id": "testing",
       "level": 5,
       "name": "测试工具",
-      "rank": 6866,
-      "weighted_degree": 0.6
+      "rank": 158,
+      "weighted_degree": 0
     },
     {
-      "article_count": 1,
+      "article_count": 0,
       "category": "ai",
       "color": "#26a69a",
       "community_id": null,
-      "degree": 5,
+      "degree": 4,
       "description": "HuggingFace预训练模型库",
       "icon": "",
       "id": "tech:transformers",
@@ -1693,11 +1693,11 @@
       "legacy_id": "transformers",
       "level": 2,
       "name": "Transformers",
-      "rank": 6807,
-      "weighted_degree": 4.6
+      "rank": 94,
+      "weighted_degree": 4
     },
     {
-      "article_count": 6,
+      "article_count": 69,
       "category": "language",
       "color": "#4db6ac",
       "community_id": null,
@@ -1710,15 +1710,15 @@
       "legacy_id": "typescript",
       "level": 1,
       "name": "TypeScript",
-      "rank": 6817,
+      "rank": 95,
       "weighted_degree": 3.6
     },
     {
-      "article_count": 5,
+      "article_count": 0,
       "category": "design",
       "color": "#cbd5e1",
       "community_id": null,
-      "degree": 2,
+      "degree": 1,
       "description": "图表、仪表板和数据展示",
       "icon": "bar_chart",
       "id": "tech:visualization",
@@ -1727,15 +1727,15 @@
       "legacy_id": "visualization",
       "level": 5,
       "name": "数据可视化",
-      "rank": 6851,
-      "weighted_degree": 1.6
+      "rank": 137,
+      "weighted_degree": 1
     },
     {
-      "article_count": 2,
+      "article_count": 0,
       "category": "frontend",
       "color": "#26a69a",
       "community_id": null,
-      "degree": 4,
+      "degree": 2,
       "description": "渐进式JavaScript框架，易学易用",
       "icon": "",
       "id": "tech:vue",
@@ -1744,15 +1744,15 @@
       "legacy_id": "vue",
       "level": 2,
       "name": "Vue",
-      "rank": 6822,
-      "weighted_degree": 3.2
+      "rank": 125,
+      "weighted_degree": 2
     },
     {
-      "article_count": 11,
+      "article_count": 0,
       "category": "web",
       "color": "#cbd5e1",
       "community_id": null,
-      "degree": 12,
+      "degree": 1,
       "description": "构建响应式网站、单页应用和Web服务",
       "icon": "web",
       "id": "tech:web_dev",
@@ -1761,15 +1761,15 @@
       "legacy_id": "web_dev",
       "level": 5,
       "name": "Web应用开发",
-      "rank": 1619,
-      "weighted_degree": 7.6
+      "rank": 138,
+      "weighted_degree": 1
     },
     {
-      "article_count": 2,
+      "article_count": 0,
       "category": "web",
       "color": "#7aa6b8",
       "community_id": null,
-      "degree": 14,
+      "degree": 12,
       "description": "Web应用程序",
       "icon": "web",
       "id": "tech:webapp",
@@ -1778,8 +1778,8 @@
       "legacy_id": "webapp",
       "level": 4,
       "name": "Web应用",
-      "rank": 1574,
-      "weighted_degree": 12.2
+      "rank": 46,
+      "weighted_degree": 11
     }
   ],
   "stats": {

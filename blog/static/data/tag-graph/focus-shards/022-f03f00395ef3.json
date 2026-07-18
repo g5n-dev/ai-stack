@@ -1,0 +1,1 @@
+{"algorithm":"fnv1a32","bucket":22,"entries":{"tech:actix":[["tech:api",1,"relation",1],["tech:rust",1,"relation",-1]],"tech:javascript":[["tech:vue",1,"relation",1],["tag:JavaScript",0.6,"semantic",-1],["tech:react",0.5,"relation",1]]},"version":2}
