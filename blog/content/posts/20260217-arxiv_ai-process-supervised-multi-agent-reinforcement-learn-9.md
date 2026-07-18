@@ -1,29 +1,55 @@
 ---
-title: 过程监督多智能体强化学习提升临床推理可靠性
+title: Process-Supervised Multi-Agent Reinforcement Learning for Reliable Clinical
+  Reasoning
 date: 2026-02-17 03:10:02+08:00
 draft: false
 entry_kind: auto
-tags: []
-categories: []
+tags:
+- ArXiv
+- AI Agent
+- 大语言模型
+categories:
+- 论文
+- 大模型
+scenarios:
+- AI/ML项目
+- 大语言模型
 source: arxiv
-description: 历史条目已归档：现有正文未通过内容质量门，请查阅原始来源。
-external_url: http://arxiv.org/abs/2602.14160v1
-scenarios: []
+description: 当前只保存了官方论文摘要，不代表论文全文。请以原始来源为准。
+external_url: https://arxiv.org/abs/2602.14160v1
 aliases: []
-content_mode: archived
-publication_tier: ARCHIVED
-source_provenance: legacy_no_snapshot
-source_support: 0.0
-archived: true
-archive_reason: historical_content_quality_gate
-build:
-  list: never
-  render: always
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: abstract
+source_snapshot_sha256: sha256:3465fab61801e26689c018d927e6d85c858aaa62047c9b32b25f8f5e69d8011a
+extractor_version: source-contract-v1
+discovery_method: arxiv_api
+fetch_status: captured
+source_completeness: abstract_only
+source_is_truncated: false
+source_support: 1.0
+source_title_chars_original: 85
+captured_at: '2026-07-18T04:15:37.655804Z'
+source_capture_sha256: sha256:044fdf1ca6a4495f894a16fbdd0c2744deb5480b9d251c6644163dd66389b7e9
+source_capture_chars_original: 1271
+source_publication_excerpt_chars: 1271
 ---
 
-## 历史条目归档说明
+## 基本信息
 
-该条目的历史正文未通过内容质量门，可能包含基于标题推测的内容。为避免继续传播不可核验文本，本站仅保留透明归档记录。
+- **来源**: arxiv
+- **原始来源**: [https://arxiv.org/abs/2602.14160v1](<https://arxiv.org/abs/2602.14160v1>)
+- **作者**: Chaeeun Lee, T. Michael Yates, Pasquale Minervini, T. Ian Simpson
+- **分类**: cs.AI
+- **论文时间**: 2026-02-15T14:21:21Z
+- **论文 PDF**: [https://arxiv.org/pdf/2602.14160v1.pdf](<https://arxiv.org/pdf/2602.14160v1.pdf>)
 
-- 历史内容质量门未通过
-- 原始来源：<http://arxiv.org/abs/2602.14160v1>
+## 来源摘要/节选
+
+> Clinical decision-making requires nuanced reasoning over heterogeneous evidence and traceable justifications. While recent LLM multi-agent systems \(MAS\) show promise, they largely optimise for outcome accuracy while overlooking process-grounded reasoning aligned with clinical standards. One critical real-world case of this is gene-disease validity curation, where experts must determine whether a gene is causally implicated in a disease by synthesising diverse biomedical evidence. We introduce an agent-as-tool reinforcement learning framework for this task with two objectives: \(i\) process-level supervision to ensure reasoning follows valid clinical pathways, and \(ii\) efficient coordination via a hierarchical multi-agent system. Our evaluation on the ClinGen dataset shows that with outcome-only rewards, MAS with a GRPO-trained Qwen3-4B supervisor agent substantially improves final outcome accuracy from 0.195 with a base model supervisor to 0.732, but results in poor process alignment \(0.392 F1\). Conversely, with process + outcome rewards, MAS with GRPO-trained supervisor achieves higher outcome accuracy \(0.750\) while significantly improving process fidelity to 0.520 F1. Our code is available at https://github.com/chaeeunlee-io/GeneDiseaseCurationAgents.
+
+## 来源说明
+
+当前只保存了官方论文摘要，不代表论文全文。请以原始来源为准。
+
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

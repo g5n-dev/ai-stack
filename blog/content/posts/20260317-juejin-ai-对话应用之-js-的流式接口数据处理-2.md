@@ -1,245 +1,60 @@
 ---
-title: JS 实现流式接口处理与 AI 对话内容渲染
+title: AI 对话应用之 JS 的流式接口数据处理
 date: 2026-03-17 18:33:56+08:00
 draft: false
 entry_kind: auto
 tags:
-- JavaScript
-- 流式传输
-- AI 对话
-- Fetch API
-- 数据渲染
-- 前端开发
-- Stream
-- 实时交互
-categories:
-- 前端
-- AI 工程
+- 掘金
+- Java
+categories: []
+scenarios: []
 source: juejin
-description: 在 AI 对话类应用中，将模型生成的思考过程实时渲染至页面，已成为提升用户体验的标准交互范式。这一效果背后，核心在于前端如何高效处理 JavaScript
-  的流式接口数据。本文将深入解析流式传输的技术原理与实现逻辑，帮助开发者掌握从数据接收到视图更新的完整处理流程，从而在项目中构建出流畅的打字机效果。
+description: 当前只保存了公开页面节选，不代表原文全文。请以原始来源为准。
 external_url: https://juejin.cn/post/7618115042275606543
-scenarios:
-- AI/ML项目
-content_mode: legacy_analysis
-publication_tier: LEGACY
-source_provenance: legacy_no_snapshot
-source_support: 0.0
+aliases: []
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: excerpt
+source_snapshot_sha256: sha256:c53f2257ca59c6fb15526fd03e1fada6b3a6ee68536092f027ef0d4c698fb02a
+extractor_version: source-contract-v1
+discovery_method: article_html_excerpt
+fetch_status: captured
+source_completeness: partial
+source_is_truncated: true
+source_support: 1.0
+source_title_chars_original: 21
+captured_at: '2026-07-18T04:19:21.234509Z'
+source_capture_sha256: sha256:16a5c177394154663b44a9939c86c9bbb31fc89754422f3b55f312040a70cc86
+source_capture_chars_original: 4801
+source_publication_excerpt_chars: 537
+source_truncation_reason: historical_excerpt_only,historical_publication_excerpt_limit
 ---
 
 ## 基本信息
 
-- **作者**: Setsuna_F_Seiei
-- **链接**: [https://juejin.cn/post/7618115042275606543](https://juejin.cn/post/7618115042275606543)
-
----
-
-## 导语
-
-在 AI 对话类应用中，将模型生成的思考过程实时渲染至页面，已成为提升用户体验的标准交互范式。这一效果背后，核心在于前端如何高效处理 JavaScript 的流式接口数据。本文将深入解析流式传输的技术原理与实现逻辑，帮助开发者掌握从数据接收到视图更新的完整处理流程，从而在项目中构建出流畅的打字机效果。
-
----
-
-## 描述
-
-AI聊天软件基本上都是不断将AI思考的内容渲染到页面上，这是流式数据传输方式在前端展示中的处理逻辑。
-
----
-
-## 摘要
-
-这是一份关于“AI 对话应用中 JS 流式接口数据处理”的简洁总结：
-
-**核心概念：流式传输**
-AI 聊天应用采用流式传输，本质上是**边生成边传输**。不同于传统请求需等待全部内容生成完毕才返回，流式处理将数据像“水龙头滴水”一样，实时分块推送到前端。
-
-**前端处理流程（JavaScript 逻辑）：**
-
-1.  **发起请求**
-    *   使用 `fetch` API，但关键在于获得响应对象后，不要使用标准的 `.json()` 方法，而是通过 `.body.getReader()` 获取一个**读取器**。
-
-2.  **循环读取数据**
-    *   利用 `reader.read()` 方法在循环中不断读取数据流。
-    *   每次读取返回一个对象，包含 `done`（是否完成）和 `value`（二进制数据块/Uint8Array）。
-
-3.  **解码与处理**
-    *   **解码**：使用 `TextDecoder` 将二进制数据块转换为人类可读的文本字符串。
-    *   **清洗**：通常服务器返回的是 SSE（Server-Sent Events）格式，数据前缀会有 `data: ` 等标记，JS 需要使用正则或字符串操作剥离这些前缀，提取出纯 JSON 或纯文本。
-
-4.  **渲染上屏**
-    *   将提取出的增量文本追加到当前的对话内容中。
-    *   通常配合 DOM 操作（如 `innerHTML += text`）或 Vue/React 的状态更新来实现“打字机”效果。
-
-5.  **结束与异常处理**
-    *   当 `reader.read()` 返回 `done: true` 时，关闭流。
-    *   同时需处理网络中断或解析错误的情况。
-
-**总结优势**
-这种机制极大降低了用户感知的延迟（首字生成时间），实现了流畅的交互体验。
-
----
-
-## 评论
-
-**文章中心观点**
-文章主张在 AI 对话应用的前端开发中，利用 JavaScript 的流式接口处理技术是实现“打字机”渲染效果、提升用户感知响应速度的核心手段。
-
-**支撑理由与边界条件分析**
-
-1.  **技术实现的必要性（事实陈述）：**
-    文章指出 AI 模型的生成机制是基于 Token 的增量输出，而非一次性返回全文。从技术角度看，采用 Server-Sent Events (SSE) 或 Fetch API 的 `ReadableStream` 读取流式数据，是符合 HTTP 协议和浏览器运行机制的标准做法。这避免了长时间阻塞导致的请求超时，并能显著降低首字节时间（TTFB）。
-    *   **反例/边界条件：** 并非所有场景都必须使用流式处理。对于非实时生成类任务（如后台批量生成报告、翻译长文档并存储），流式处理不仅增加前端复杂度，还可能引入不必要的并发状态管理问题，此时传统的异步请求更为合适。
-
-2.  **用户体验的感知优化（作者观点）：**
-    作者认为流式渲染能营造“AI 正在思考”的沉浸感，减少用户等待焦虑。这在心理学上通过“进度效应”提升满意度。
-    *   **反例/边界条件：** 如果流式输出速度过快且未做平滑处理，会导致屏幕剧烈闪烁（DOM 频繁重排）；如果输出过慢或卡顿，体验反而不如“思考完毕后一次性展示”。此外，对于需要阅读完整逻辑链条的复杂推理（如数学证明或代码生成），分段展示可能会打断用户的连贯性思维，导致用户试图在句子生成完成前进行预测，增加认知负荷。
-
-3.  **前端数据处理的复杂性（你的推断）：**
-    文章暗示了处理流数据需要解析增量片段（如处理 SSE 的 `data:` 前缀或截断的 JSON 片段）。这要求开发者具备较强的异步编程能力，能够处理背压和缓冲。
-    *   **反例/边界条件：** 随着 React Server Components (RSC) 或 Next.js 等现代框架对流式支持的原生集成，开发者已无需手动处理底层的 Stream Reader。如果文章仅停留在原生 JS 的 `reader.read()` 层面而未结合现代框架生态，其工程化指导意义将大打折扣。
-
-**多维度深入评价**
-
-**1. 内容深度**
-文章聚焦于前端工程中一个非常具体但关键的痛点。从深度来看，如果文章仅涉及如何调用 `response.body.getReader()`，则属于基础教程性质；若能深入探讨如何处理“多轮对话中的上下文增量更新”或“Markdown 实时渲染时的语法树崩溃问题”（例如代码块未闭合时的样式错乱），则具备较高的技术深度。严谨的论证应包含错误处理机制，如网络中断时的流恢复策略。
-
-**2. 实用价值**
-对于正在从传统 Web 转向 AI 应用的开发者而言，该类文章具有极高的“破冰”价值。它填补了后端大模型 API 与前端 UI 展示之间的鸿沟。特别是关于如何解析 SSE 协议、如何将 Uint8Array 解码为文本的代码片段，是直接可复用的工程资产。
-
-**3. 创新性**
-“流式接口”并非新技术，但在 LLM 爆发背景下，将其重新定义为 AI 交互的标准范式具有时代意义。如果文章提出了诸如“基于 Token 密度的动态渲染速率控制”或“流式数据的差异 DOM 更新算法”以优化性能，则具备显著创新性；否则仅为现有技术的场景化应用。
-
-**4. 可读性**
-此类技术文章极易陷入代码堆砌。优秀的结构应当是：问题背景 -> 协议原理 -> 核心代码 -> 边缘情况处理。如果文章能结合图示说明流式数据如何通过管道传输至页面，将大幅提升理解效率。
-
-**5. 行业影响**
-它推动了前端开发范式的转变：从“请求-响应”模式转向“流-订阅”模式。这促使前端开发者必须重新思考状态管理，即状态不再是静态的快照，而是随时间推移的累积流。
-
-**6. 争议点与不同观点**
-*   **渲染策略之争：** 是每个 Token 到达即渲染（低延迟，但抖动大），还是积累 n 个 Token 或等待句子结束再渲染（平滑，但有延迟）？文章若只谈前者不谈权衡，是不完整的。
-*   **全量 vs 增量：** 在 React 等框架中，是维护一个不断变长的字符串 State，还是利用虚拟 DOM 的特性只追加节点？后者在性能上更优，但实现难度更高。
-
-**7. 实际应用建议**
-在实际项目中，建议不要直接裸写 `reader.read()` 循环。应结合以下策略：
-*   **Markdown 增量解析：** 使用 `markdown-it` 或类似库的流式解析插件，防止未闭合的代码块破坏页面布局。
-*   **自动滚动控制：** 实现智能滚动逻辑——仅当用户处于底部时自动跟随，若用户向上滚动查看历史记录，则锁定滚动位置，避免“强制拖拽”用户。
-*   **AbortController：** 必须实现取消机制，允许用户在生成过程中点击“停止生成”，这需要前端中断流读取并调用后端的终止接口。
-
-**可验证的检查方式**
-
-1.  **首字节延迟（TTFB）对比测试：**
-    *   *指标：* 使用 Chrome DevTools 测量从发起请求到接收到第一个 Chunk 的时间。
-    *   *验证：* 流
-
----
-
-## 学习要点
-
-- 核心在于利用 ReadableStream API 和 TextDecoder 将二进制流数据实时解码并逐块渲染，从而实现类似 ChatGPT 的打字机视觉效果。
-- 必须使用增量式 JSON 解析策略，因为 SSE 数据流可能被任意截断，直接使用 JSON.parse 会导致解析失败。
-- 处理数据流时需重点解决“粘包”与“半包”问题，即需要准确识别并以 data: 为分隔符切分出完整的 JSON 数据块。
-- 建议使用正则表达式或状态机逻辑来清洗非标准格式的数据流，以应对不同后端接口返回格式的差异。
-- 在流式传输过程中必须构建完善的错误捕获与重试机制，确保网络中断或服务端报错时前端 UI 仍能优雅降级。
-- 实现流式输出时需注意维护前端状态，特别是在用户中断请求或发送新请求时，要及时取消（AbortController）旧的流读取以避免数据错乱。
-
----
-
-## 常见问题
-
-### 为什么在处理流式响应时，`response.json()` 会报错，应该使用什么方法代替？
-
-在处理流式响应时，`response.json()` 会报错是因为该方法要求响应体必须完整传输完毕才能进行解析。而流式响应的数据是分块传输的，在数据未完全接收时，JSON 结构是不完整的，因此无法解析。
-
-**解决方法**：应该使用 `response.body` 属性，它返回一个 `ReadableStream`。通过调用 `reader = response.body.getReader()` 获取读取器，然后使用 `reader.read()` 循环读取数据流中的每一个块。
-
-### 如何处理流式数据中的“截断”或“乱码”问题（例如只收到半个汉字）？
-
-这是流式处理中非常常见的问题。网络传输的数据块可能恰好将一个多字节字符（如 UTF-8 编码的汉字通常占 3 个字节）切断。如果直接将每个 `chunk` 转换为字符串并渲染，会导致末尾出现乱码。
-
-**解决方法**：
-1.  **使用 TextDecoder**：不要直接使用 `TextDecoder` 解码每一个单独的 chunk。建议维护一个缓冲区（例如 `Uint8Array` 数组），将每次接收到的 chunk 推入缓冲区，然后统一解码。
-2.  **利用 `stream: true` 选项**：在较新的浏览器环境中，`TextDecoder` 构造函数接受一个 `{ stream: true }` 选项。这告诉解码器当前块可能是不完整的，解码器会会暂存不完整的字节并在下一次解码时组合，从而避免乱码。
-
-代码示例：
-```javascript
-const reader = response.body.getReader();
-const decoder = new TextDecoder("utf-8");
-let result = "";
-
-while (true) {
-  const { done, value } = await reader.read();
-  if (done) break;
-  // 使用 stream: true 处理截断字符
-  const chunk = decoder.decode(value, { stream: true });
-  result += chunk;
-}
-```
-
-### SSE（Server-Sent Events）接口返回的数据格式是什么样的？如何解析 `data: ` 字段？
-
-SSE 接口通常返回的是 `text/event-stream` 格式。数据并不是标准的 JSON，而是由换行符分隔的文本块。
-
-**数据结构示例**：
-```
-data: {"id": 1, "content": "Hello"}
-
-data: {"id": 2, "content": " World"}
-
-data: [DONE]
-```
-
-**解析逻辑**：
-1.  将接收到的文本流按 `\n\n`（双换行）分割，得到一个个独立的 Event。
-2.  遍历每个 Event，去除以 `data: ` 开头的行。
-3.  检查内容是否为 `[DONE]`，这通常表示流结束。
-4.  使用 `JSON.parse()` 解析 `data` 后面的 JSON 字符串。
-
-### 如何在前端实现“打字机效果”，即让文字一个字一个字蹦出来？
-
-实现打字机效果的核心在于**不要**每收到一个网络包就直接替换整个 DOM 的 `innerText`。
-
-**解决方法**：
-1.  维护一个全局变量（例如 `fullText`）来存储当前累积的完整文本。
-2.  每当解析出一个新的 chunk 并提取出文本内容后，将其追加到 `fullText` 中。
-3.  将 DOM 元素的内容更新为 `fullText`。
-
-**进阶（平滑光标）**：如果希望光标闪烁或移动更平滑，不要频繁操作 DOM。可以将解析出的文本存入一个队列，使用 `requestAnimationFrame` 定时器从队列中取出几个字符追加到 DOM 中，从而控制渲染速度，使其看起来像是在打字。
-
-### 在流式传输过程中，如何处理 JSON 解析错误？
-
-即使使用了 `TextDecoder`，有时接收到的字符串可能仍然不是一个完整的 JSON 对象（例如收到了 `{"content": "Hel`，后面还有 `lo"}`）。
-
-**解决方法**：
-1.  **缓冲与分割**：将解码后的字符串追加到一个缓冲区变量中。
-2.  **按行处理**：尝试按换行符 `\n` 分割缓冲区。
-3.  **逐行尝试解析**：遍历分割后的行，尝试 `JSON.parse()`。
-    *   如果解析成功，说明该行是完整的，处理数据并从缓冲区移除。
-    *   如果解析失败（抛出异常），说明该行数据不完整（可能是最后一行）。保留该行在缓冲区中，等待下一次数据到达并拼接后再尝试解析。
-
-### 如何中止正在进行中的流式请求？
-
-流式请求如果不适
-
----
-
-## 引用
-
-- **掘金原文**: [https://juejin.cn/post/7618115042275606543](https://juejin.cn/post/7618115042275606543)
-
-> 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
-
----
-
-## 站内链接
-
-- 分类： [前端](/categories/%E5%89%8D%E7%AB%AF/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)
-- 标签： [JavaScript](/tags/javascript/) / [流式传输](/tags/%E6%B5%81%E5%BC%8F%E4%BC%A0%E8%BE%93/) / [AI 对话](/tags/ai-%E5%AF%B9%E8%AF%9D/) / [Fetch API](/tags/fetch-api/) / [数据渲染](/tags/%E6%95%B0%E6%8D%AE%E6%B8%B2%E6%9F%93/) / [前端开发](/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/) / [Stream](/tags/stream/) / [实时交互](/tags/%E5%AE%9E%E6%97%B6%E4%BA%A4%E4%BA%92/)
-- 场景： [AI/ML项目](/scenarios/ai-ml%E9%A1%B9%E7%9B%AE/)
-
-### 相关文章
-
-- [Transformers.js v4 预览版发布，现已登陆 NPM]({{< relref "posts/20260209-blogs_podcasts-transformersjs-v4-preview-now-available-on-npm-0.md" >}})
-- [Transformers.js v4 预览版发布，现已上线 NPM]({{< relref "posts/20260209-blogs_podcasts-transformersjs-v4-preview-now-available-on-npm-0.md" >}})
-- [Tambo 1.0：渲染 React 组件的开源 Agent 工具包]({{< relref "posts/20260211-hacker_news-tambo-10-open-source-toolkit-for-agents-that-rende-12.md" >}})
-- [Vercel AI SDK 流式传输原理与阻塞模式对比]({{< relref "posts/20260211-juejin-vercel-ai-sdk-使用指南流式传输-streaming-1.md" >}})
-- [基于 ASCII 草图与 AI 快速生成前端代码]({{< relref "posts/20260217-juejin-用-ascii-草图-ai-快速生成前端代码-1.md" >}})
+- **来源**: juejin
+- **原始来源**: [https://juejin.cn/post/7618115042275606543](<https://juejin.cn/post/7618115042275606543>)
+
+## 来源摘要/节选
+
+公开展示已截断至最多 800 个字符；请访问原始来源查看完整上下文。
+
+> 需求背景
+> 市面上的 AI 聊天软件基本上都是不断地向页面渲染出来 AI 思考的内容，传统的 web 网络 request 接口并不适合这种 ai 不断思考，不断输出内容的场景。而这种不断输出内容的应用场景最适合使用流式数据传输这种技术这不仅能够提升用户体验，还能优化数据传输效率，增强系统的可靠性和安全性；通过流式数据传输方案，满足用户对AI对话的多样化需求。
+> 技术选型
+> 而网页前端 js 当中针对流式数据的接收处理主流有以下几种形式：
+> Server-Sent Events \(SSE\)
+> WebSocket
+> fetch API + stream API
+> 虽然有很多种 AI 对话处理的技术选型，但是其实还是取决于后台这次使用 java 的 Spring AI 返回的是 Stream 形式的数据，因此最后的技术选型使用的是
+> fetch API + stream API
+> 。
+> 具体实现与封装
+> 原生 fetch api
+> 其实使用 XMLRequest 也是能够实现接收 stream 流式数据的接口请求，只需要通过 api 当中的 onprogress 对接口返回的数据进行监听则可以实现；但是已经是现代化的应用了，我们可以使用更加现代化的 fetch api 进行开发处理。…
+
+## 来源说明
+
+当前只保存了公开页面节选，不代表原文全文。请以原始来源为准。
+
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

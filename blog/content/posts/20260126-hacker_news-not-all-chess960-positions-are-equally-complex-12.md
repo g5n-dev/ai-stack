@@ -1,30 +1,45 @@
 ---
-title: 🧠并非所有Chess960局面都同样复杂！揭秘棋局难度的隐藏差异？
+title: Not all Chess960 positions are equally complex
 date: 2026-01-26 22:15:20+08:00
 draft: false
 entry_kind: auto
-tags: []
+tags:
+- Hacker News
 categories: []
-source: hacker_news
-external_url: https://arxiv.org/abs/2512.14319
 scenarios: []
+source: hacker_news
+description: 当前只保存了来源元数据，未抓取外链全文。请以原始来源和 Hacker News 讨论为准。
+external_url: https://arxiv.org/abs/2512.14319
 aliases:
 - /posts/20260127-hacker_news-not-all-chess960-positions-are-equally-complex-13/
-content_mode: archived
-publication_tier: ARCHIVED
-source_provenance: legacy_no_snapshot
-source_support: 0.0
-archived: true
-archive_reason: historical_content_quality_gate
-description: 历史条目已归档：现有正文未通过内容质量门，请查阅原始来源。
-build:
-  list: never
-  render: always
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: metadata_only
+source_snapshot_sha256: sha256:8a9444ffbf42a0450692c43d9f848a5be1a157ac356f028909e7abb76e1d8e8c
+extractor_version: source-contract-v1
+discovery_method: api_metadata
+fetch_status: captured
+source_completeness: metadata_only
+source_is_truncated: false
+source_support: 1.0
+source_title_chars_original: 46
+captured_at: '2026-07-18T04:11:41.561385Z'
+source_capture_sha256: sha256:cb069cfd368b6182488ac7307d64260ee47eff9fc4ac14f1aa4a5c5d0245b03b
+source_capture_chars_original: 46
+source_publication_excerpt_chars: 46
 ---
 
-## 历史条目归档说明
+## 基本信息
 
-该条目的历史正文未通过内容质量门，可能包含基于标题推测的内容。为避免继续传播不可核验文本，本站仅保留透明归档记录。
+- **来源**: hacker\_news
+- **原始来源**: [https://arxiv.org/abs/2512.14319](<https://arxiv.org/abs/2512.14319>)
+- **作者**: MaysonL
+- **评分**: 57
+- **评论数**: 27
+- **HN 讨论**: [https://news.ycombinator.com/item?id=46727603](<https://news.ycombinator.com/item?id=46727603>)
 
-- 历史内容质量门未通过
-- 原始来源：<https://arxiv.org/abs/2512.14319>
+## 来源说明
+
+当前只保存了来源元数据，未抓取外链全文。请以原始来源和 Hacker News 讨论为准。
+
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

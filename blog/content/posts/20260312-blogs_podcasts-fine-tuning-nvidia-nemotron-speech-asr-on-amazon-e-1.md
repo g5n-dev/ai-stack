@@ -1,26 +1,25 @@
 ---
-title: 在 EC2 上微调 NVIDIA Nemotron ASR 模型实现领域适配
+title: Fine-tuning NVIDIA Nemotron Speech ASR on Amazon EC2 for domain adaptation
+  | Amazon Web Services
 date: 2026-03-12 21:14:37+08:00
 draft: false
 entry_kind: auto
 tags:
-- ASR
-- NVIDIA
-- 微调
-- AWS
-- EC2
-- 语音识别
-- 领域适配
-- 端到端工作流
+- 博客与播客
+- 大语言模型
+- 深度学习
+- 生成式 AI
+- Kubernetes
+- Docker
 categories:
-- AI 工程
-- 系统与基础设施
-source: blogs_podcasts
-description: 本文介绍了如何在 Amazon EC2 上对 NVIDIA Nemotron Speech ASR 模型（特别是 Parakeet TDT
-  0.6B V2）进行微调，以通过合成语音数据实现特定领域的语音识别优化，并结合 AWS 基础设施和开源框架构建端到端工作流。
-external_url: https://aws.amazon.com/blogs/machine-learning/fine-tuning-nvidia-nemotron-speech-asr-on-amazon-ec2-for-domain-adaptation
+- 大模型
 scenarios:
-- Web应用开发
+- AI/ML项目
+- 大语言模型
+- Kubernetes
+source: blogs_podcasts
+description: 当前只保存了公开页面节选，不代表原文全文。请以原始来源为准。
+external_url: https://aws.amazon.com/blogs/machine-learning/fine-tuning-nvidia-nemotron-speech-asr-on-amazon-ec2-for-domain-adaptation
 aliases:
 - /posts/20260312-blogs_podcasts-fine-tuning-nvidia-nemotron-speech-asr-on-amazon-e-4/
 - /posts/20260313-blogs_podcasts-fine-tuning-nvidia-nemotron-speech-asr-on-amazon-e-5/
@@ -34,293 +33,41 @@ aliases:
 - /posts/20260315-blogs_podcasts-fine-tuning-nvidia-nemotron-speech-asr-on-amazon-e-11/
 - /posts/20260316-blogs_podcasts-fine-tuning-nvidia-nemotron-speech-asr-on-amazon-e-11/
 - /posts/20260316-blogs_podcasts-fine-tuning-nvidia-nemotron-speech-asr-on-amazon-e-13/
-content_mode: legacy_analysis
-publication_tier: LEGACY
-source_provenance: legacy_no_snapshot
-source_support: 0.0
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: excerpt
+source_snapshot_sha256: sha256:4bd1accf160a4f4c590cad080d8b402d845a1ed12299c832eeccd0a16eedc1ac
+extractor_version: source-contract-v1
+discovery_method: article_html_excerpt
+fetch_status: captured
+source_completeness: partial
+source_is_truncated: true
+source_support: 1.0
+source_title_chars_original: 96
+captured_at: '2026-07-18T04:18:52.921049Z'
+source_capture_sha256: sha256:7b3cc20b3424fe7f921d869a9f601eeba2a2781219fe7a0c83f9684a5b428db3
+source_capture_chars_original: 5978
+source_publication_excerpt_chars: 777
+source_truncation_reason: historical_capture_limit,historical_publication_excerpt_limit
 ---
 
 ## 基本信息
 
-- **来源**: AWS Machine Learning Blog (blog)
-- **发布时间**: 2026-03-12T15:57:22+00:00
-- **链接**: [https://aws.amazon.com/blogs/machine-learning/fine-tuning-nvidia-nemotron-speech-asr-on-amazon-ec2-for-domain-adaptation](https://aws.amazon.com/blogs/machine-learning/fine-tuning-nvidia-nemotron-speech-asr-on-amazon-ec2-for-domain-adaptation)
+- **来源**: blogs\_podcasts
+- **原始来源**: [https://aws.amazon.com/blogs/machine-learning/fine-tuning-nvidia-nemotron-speech-asr-on-amazon-ec2-for-domain-adaptation](<https://aws.amazon.com/blogs/machine-learning/fine-tuning-nvidia-nemotron-speech-asr-on-amazon-ec2-for-domain-adaptation>)
 
----
+## 来源摘要/节选
 
-## 摘要/简介
+公开展示已截断至最多 800 个字符；请访问原始来源查看完整上下文。
 
-在本文中，我们将探讨如何微调一款名列排行榜前茅的 NVIDIA Nemotron 语音自动语音识别（ASR）模型：Parakeet TDT 0.6B V2。通过使用合成语音数据为特定应用实现卓越的转录效果，我们将演示一个结合 AWS 基础设施与以下热门开源框架的端到端工作流。
+> This post is a collaboration between AWS, NVIDIA and Heidi .
+>
+> Automatic speech recognition \(ASR\), often called speech-to-text \(STT\) is becoming increasingly critical across industries like healthcare, customer service, and media production. While pre-trained models offer strong capabilities for general speech, fine-tuning for specific domains and use cases can enhance accuracy and performance.
+>
+> In this post, we explore how to fine-tune a leaderboard-topping, NVIDIA Nemotron Speech Automatic Speech Recognition \(ASR\) model; Parakeet TDT 0.6B V2 . Using synthetic speech data to achieve superior transcription results for specialised applications, we’ll walk through an end-to-end workflow that combines AWS infrastructure with the following popular open-source frameworks:…
 
----
+## 来源说明
 
-## 导语
+当前只保存了公开页面节选，不代表原文全文。请以原始来源为准。
 
-在语音识别的实际应用中，通用模型往往难以应对特定领域的专业术语或独特语境。本文将详细介绍如何在 Amazon EC2 上微调 NVIDIA Nemotron Parakeet ASR 模型，通过构建包含合成数据的端到端工作流来实现高效的领域适应。阅读本文，您将掌握结合 AWS 基础设施与主流开源框架的具体步骤，从而优化特定场景下的转录准确率。
-
----
-
-## 摘要
-
-本文介绍了如何在 Amazon EC2 上对 NVIDIA Nemotron Speech ASR 模型（特别是 Parakeet TDT 0.6B V2）进行微调，以通过合成语音数据实现特定领域的语音识别优化，并结合 AWS 基础设施和开源框架构建端到端工作流。
-
----
-
-## 评论
-
-### 核心评价
-
-这篇文章的中心观点是：**通过在亚马逊 EC2 云端基础设施上利用合成数据对 NVIDIA 开源的高性能 ASR 模型进行微调，是实现特定领域语音识别快速适配且具备成本效益的最优路径。**
-
-以下是针对该文章的深入评价：
-
-### 1. 支撑理由与深度分析
-
-**理由一：软硬协同的“杠杆效应”显著降低了垂直领域的准入门槛**
-*   **[事实陈述]** 文章展示了 NVIDIA Nemotron (Parakeet) 模型与 Amazon EC2 (特别是 P4/P5 实例) 的结合。
-*   **[你的推断]** 这不仅仅是“模型+云”的简单堆叠，而是利用了 NVIDIA 在 CUDA 和 NeMo 框架上的底层优化，以及 AWS 的弹性算力。对于行业而言，这意味着企业不再需要从零开始训练 ASR 模型，也不需要一次性投入巨额硬件资本。这种“杠杆效应”使得中小型企业也能在医疗、法律等高价值垂直领域快速部署定制化的语音系统。
-*   **[深度分析]** 技术上，Parakeet TDT 0.6B V2 采用了 Transformer-Transducer 架构，其在流式处理场景下的延迟表现优于传统的 Attention 机制。文章强调了这一点，抓住了工业界最关心的“实时性”痛点。
-
-**理由二：合成数据策略解决了“长尾数据匮乏”的核心痛点**
-*   **[事实陈述]** 文章提出使用合成语音数据来提升特定领域的转录效果。
-*   **[作者观点]** 合成数据是解决特定领域（如生僻医学术语、工业行话）标注数据稀缺的关键。
-*   **[深度分析]** 这是一个非常务实且具有前瞻性的技术路线。在真实场景中，获取高质量的“人声+完美标注”数据极其昂贵且涉及隐私合规（如 HIPAA）。文章隐含的逻辑是：利用 TTS（文本转语音）技术生成大量带有完美标注的合成语音，混合少量真实数据进行微调，可以显著提升模型对领域词汇的鲁棒性。这在数据工程中已成为一种标准范式。
-
-**理由三：端到端工作流打通了从“实验”到“生产”的最后一公里**
-*   **[事实陈述]** 文章涵盖了数据处理、微调、部署的全流程。
-*   **[你的推断]** 许多技术博客止步于模型训练，而忽略了部署。这篇文章如果涉及 SageMaker 或 NeMo 的导出部署，则具有很高的工程指导价值。它暗示了 MLOps 的最佳实践：模型不应停留在 Jupyter Notebook 中，而应转化为可服务的 API。
-
-### 2. 反例与边界条件
-
-**反例一：合成数据的“恐怖谷效应”与域漂移**
-*   **[你的推断/批判性思考]** 虽然文章推崇合成数据，但并未深入探讨其局限性。如果 TTS 模型的音质、韵律或背景噪音与真实采集环境差异过大，模型可能会学到错误的特征，导致在真实数据上的表现反而下降。这种“域漂移”是微调中常见的陷阱。例如，用纯净的合成语音微调模型，去处理嘈杂工厂车间的录音，效果可能适得其反。
-
-**反例二：算力成本与延迟的商业权衡**
-*   **[边界条件]** 文章基于 EC2 进行微调，虽然方便，但对于超大规模数据集（数万小时），云端 GPU 的租用成本和传输成本可能高于本地自有集群。此外，Parakeet 0.6B 模型虽然精度高，但对于边缘设备（如智能手环、车载低算力芯片）而言，模型体积过大，推理延迟可能不可接受。文章若未提及模型蒸馏或量化，则其对边缘计算场景的指导意义有限。
-
-### 3. 综合维度评分
-
-*   **内容深度 (4/5)**：涵盖了当前 SOTA 的模型架构和主流的合成数据策略，技术栈选择合理。但略显遗憾的是，摘要中未提及具体的 WER (词错率) 下降幅度或具体的消融实验结果，缺乏量化数据的支撑会削弱论证的严谨性。
-*   **实用价值 (4.5/5)**：对于正在寻找 ASR 落地方案的技术团队极具参考价值。它提供了一套可复制的“菜单”，避免了踩坑。
-*   **创新性 (3.5/5)**：组合了现有的成熟技术，方法论上属于工程创新而非算法理论突破。
-*   **可读性 (4/5)**：通常此类 NVIDIA/AWS 联合技术博客结构清晰，代码示例丰富，适合工程师阅读。
-*   **行业影响**：强化了“基础大模型 + 行业小数据 + 云端算力”这一行业标准范式。
-
-### 4. 可验证的检查方式
-
-为了验证文章所述方法的有效性，建议在实际操作中执行以下检查：
-
-1.  **WER 对比测试**：
-    *   **指标**：在相同的测试集上，对比微调前后的 Word Error Rate (WER)。
-    *   **验证点**：重点关注“领域特定词汇”的识别准确率提升。如果合成数据有效，领域术语的 WER 应有显著下降（如 >10%）。
-
-2.  **噪声鲁棒性测试**：
-    *   **实验**：在合成数据中混入不同信噪比 (SNR) 的背景噪音（如白噪音、街道噪音），观察模型在低信噪比环境下的表现是否退化。
-    *   **验证点**：检查模型是否过度拟合了合成数据的“纯净度”。
-
-3.
-
----
-
-## 技术分析
-
-基于提供的文章标题和摘要，结合NVIDIA Nemotron（特别是Parakeet TDT 0.6B V2模型）的技术特性以及Amazon EC2的云计算环境，以下是对该技术方案的深入分析。
-
----
-
-
-### 1. 核心观点深度解读
-
-**主要观点：**
-文章的核心主张是，利用**合成语音数据**在云端高性能实例（Amazon EC2）上对**预训练的大型ASR模型（NVIDIA Parakeet TDT 0.6B V2）**进行高效微调，是实现特定领域语音识别高精度的最佳路径。
-
-**核心思想：**
-作者传达了“**合成数据驱动 + 云端算力优化**”的范式转移。传统的ASR微调依赖于昂贵且难以获取的真实人工标注数据，而本文提出了一种新范式：利用高质量的文本转语音（TTS）技术生成合成数据，结合NVIDIA优化的训练框架（如NeMo），在AWS弹性算力上快速适配模型，从而解决“长尾”专业领域的识别难题。
-
-**观点的创新性与深度：**
-*   **数据层面的创新：** 摆脱了对真实音频数据的绝对依赖。通过合成数据，可以完美覆盖专业术语表，解决真实数据分布不均的问题。
-*   **工程层面的深度：** 展示了如何将NVIDIA的软件栈（NeMo, TensorRT等）与AWS的硬件基础设施（如基于NVIDIA GPU的EC2实例，可能是G5或P4/P5实例）进行深度整合，实现“开箱即用”的高性能训练。
-
-**重要性：**
-这一观点极其重要，因为它降低了行业AI落地的门槛。对于医疗、法律、金融等高度专业化的领域，收集真实数据不仅成本高昂，且涉及隐私合规问题。合成数据+云端微调提供了一种既保护隐私又高效的解决方案。
-
-### 2. 关键技术要点
-
-**涉及的关键技术：**
-1.  **NVIDIA Parakeet TDT 0.6B V2：** 这是一个基于Transformer架构的编码器-解码器模型。TDT可能代表特定的架构变体（如Transformer-Dual-Decoder或特定的优化配置），拥有6亿参数，在性能与速度之间取得了平衡。
-2.  **NVIDIA NeMo Framework：** 用于构建、训练和微调GPU加速对话AI模型的工具包。
-3.  **合成数据生成：** 使用TTS模型将纯文本转换为带有标注的音频数据。
-4.  **Amazon EC2 (P3/P4/G5 instances)：** 提供高性能GPU计算能力。
-
-**技术原理与实现：**
-*   **预训练基座：** 使用在数万小时通用数据上训练好的Parakeet模型作为起点，它已经学会了语音的声学特性和语言的一般规律。
-*   **领域适配：**
-    *   **数据准备：** 收集特定领域的纯文本（如病历、法律文书）。
-    *   **合成：** 使用高自然度的TTS模型将这些文本转换为语音，自动生成完美的“音频-文本”配对。
-    *   **微调：** 在EC2 GPU实例上加载NeMo框架，使用合成数据对Parakeet模型进行全参数微调或适配器微调。
-*   **推理优化：** 微调后，可能利用TensorRT进行模型量化或编译，以在EC2上实现低延迟推理。
-
-**技术难点与解决方案：**
-*   **难点：合成数据的“真实感”缺失。** TTS生成的语音可能缺乏背景噪音或自然的语调变化，导致模型在真实环境中鲁棒性下降。
-*   **方案：** 数据增强。在训练时人为加入噪音、混响、速度扰动等，使模型适应真实世界的声学环境。
-*   **难点：云端资源管理。** 训练大模型需要昂贵的GPU资源。
-*   **方案：** 利用AWS Spot实例或自动伸缩组，结合NeMo的分布式训练能力，降低成本并缩短时间。
-
-### 3. 实际应用价值
-
-**指导意义：**
-该方案为企业提供了一条标准化的“私有模型部署”流水线。企业不需要从零开始训练模型，只需准备文本语料，即可在短时间内获得一个懂“行话”的ASR系统。
-
-**应用场景：**
-*   **医疗问诊：** 自动录入电子病历（EMR），识别药物名称和复杂症状。
-*   **金融合规：** 识别交易员通话中的黑话或特定合规术语。
-*   **会议记录：** 针对技术会议，识别特定的代码库、架构名称。
-*   **客服中心：** 针对特定产品的售后支持。
-
-**需要注意的问题：**
-*   **版权与许可：** NVIDIA模型和AWS服务的商业许可费用。
-*   **数据隐私：** 虽然使用合成数据，但如果为了微调混合了真实用户数据，上传至云端前必须脱敏。
-
-**实施建议：**
-不要直接使用全量参数微调，建议先尝试**PEFT（参数高效微调）**，如Adapter或LoRA，这能显著降低在EC2上的租用成本和训练时间。
-
-### 4. 行业影响分析
-
-**对行业的启示：**
-*   **“数据即代码”趋势：** 未来的AI模型迭代可能更多依赖高质量的合成数据，而非人工采集。
-*   **垂直领域大模型爆发：** 通用大模型（如Whisper, Nemotron）将成为基座，行业竞争的关键在于谁能利用领域文本更快地生成更好的合成数据进行微调。
-
-**可能带来的变革：**
-ASR服务将从“通用服务”转向“高度定制化服务”。SaaS公司将不再提供统一的语音转文字接口，而是提供“可微调的模型容器”。
-
-**发展趋势：**
-*   **端云协同：** 在云端（EC2）训练，在边缘端部署。
-*   **实时微调：** 随着用户的使用，模型能够持续从新文本中学习并自动合成数据进行迭代。
-
-### 5. 延伸思考
-
-**拓展方向：**
-*   **跨语言迁移：** 是否可以利用英文的合成数据微调多语言模型，提升小语种的识别能力？
-*   **情感识别：** 在合成数据中加入情感标签，微调出的模型不仅能识别文字，还能识别客户情绪。
-
-**需进一步研究的问题：**
-*   合成数据的“极简阈值”是多少？即最少需要多少小时的合成数据能达到与真实数据微调相同的效果？
-*   如何评估合成数据的质量？是否存在“数据毒化”风险？
-
-### 7. 案例分析
-
-**成功案例（假设性推演）：**
-*   **场景：** 某大型医院的电子病历录入。
-*   **挑战：** 医生口音重，且药物名称极其生僻，通用ASR模型错误率高达20%。
-*   **实施：** 医院导出过去5年的脱敏病历文本（约50万字），使用NVIDIA的TTS模型生成200小时合成语音。在AWS EC2 P4实例上微调Parakeet模型。
-*   **结果：** 药物名称识别准确率提升至98%，整体WER（词错率）降低至5%以下。
-
-**失败反思：**
-*   **教训：** 如果合成数据的TTS发音过于标准（像新闻联播），而实际应用场景是嘈杂的工厂车间，模型上线后会因为无法处理噪音而完全失效。**必须进行针对性的噪声增强。**
-
-### 8. 哲学与逻辑：论证地图
-
-**中心命题:**
-对于专业领域的语音识别任务，利用合成数据在云端高性能计算实例上微调开源大模型，在准确率和成本效益上均优于直接使用通用模型或依赖人工标注数据进行微调。
-
-**支撑理由:**
-1.  **数据获取效率:** 真实专业数据的标注成本极高且周期长，而合成数据可由文本瞬间生成，且文本数据通常远多于音频数据。
-2.  **术语覆盖度:** 合成数据可以强制模型学习特定的专业术语，通过针对性的文本生成，确保每个生僻词都出现在训练集中。
-3.  **算力可扩展性:** Amazon EC2 提供弹性的NVIDIA GPU算力，配合NeMo框架，能将数周的训练时间压缩至数小时，且按需付费避免了硬件采购风险。
-
-**反例 / 边界条件:**
-1.  **声学环境失配:** 如果真实应用环境的声学特征（如背景噪音、回声、方言口音）极其复杂且未被合成数据模拟，模型微调后可能过拟合于“干净的合成语音”，导致在真实场景下表现退化。
-2.  **极低资源语言:** 如果目标语言缺乏高质量的TTS模型来生成合成数据，此方法则无法启动。
-
-**事实与价值判断:**
-*   *事实:* NVIDIA Parakeet 0.6B 是开源高性能模型；EC2 提供GPU租用；NeMo 支持微调。
-*   *可检验预测:* 在特定领域（如医疗术语）的WER将比通用模型降低 15% 以上。
-
-**立场与验证:**
-我支持该命题。**验证方式：** 设计A/B测试，A组使用Whisper Large-v3通用模型，B组使用本文所述的微调后Parakeet模型。测试集为真实的领域专家录音。指标为WER（词错率）和特定实体识别的F1 Score。若B组指标显著优于A组（如p<0.05），且总训练成本低于人工标注成本，则命题得证。
-
----
-
-## 最佳实践
-
-### 实践 1：选择优化的 EC2 实例类型以加速训练
-
-**说明**: NVIDIA Nemotron Speech ASR 模型通常属于大规模深度学习模型，对 GPU 显存和计算能力有较高要求。在 Amazon EC2 上，选择配备最新一代 GPU 的实例（如 P5 或 G5 实例族）可以显著减少微调时间并提高吞吐量。P5 实例（如 p5.48xlarge）配备 NVIDIA H100 Tensor Core GPU，适合大规模分布式训练，而 G5 实例（如 g5.xlarge 或 g5.48xlarge）配备 A10G Tensor Core GPU，适合中小规模的微调任务。
-
-**实施步骤**:
-1. 根据数据集大小和预算，评估使用 `p5`（H100）或 `g5`（A10G）实例。
-2. 启动 EC2 实例时，确保选择最新的 AWS Deep Learning AMI (DLAMI)，该镜像已预装 NVIDIA 驱动、CUDA 和 cuDNN。
-3. 如果使用 P5 实例，确保启用 EFA（Elastic Fabric Adapter）以支持高性能的节点间通信（如果是多节点训练）。
-
-**注意事项**: 确保账户中有足够的配额来运行所需的实例类型，特别是 P5 系列实例通常需要申请特定的配额。
-
----
-
-### 实践 2：利用 FSx for Lustre 处理高 I/O 数据加载
-
-**说明**: 微调 ASR 模型涉及大量的音频数据读取和预处理。标准的 EBS 存储可能会成为 I/O 瓶颈，导致 GPU 利用率下降。使用 Amazon FSx for Lustre 可以提供亚毫秒级的延迟和高吞吐量，特别适合与 S3 配合使用，能够快速加载海量音频片段和对应的文本标签。
-
-**实施步骤**:
-1. 将原始音频数据集上传至 Amazon S3。
-2. 创建 Amazon FSx for Lustre 文件系统，并将其导入路径配置为 S3 存储桶。
-3. 在 EC2 实例启动脚本中，挂载 FSx for Lustre 文件系统到本地路径（例如 `/fsx`）。
-4. 修改训练脚本中的数据路径，指向挂载的 Lustre 文件系统。
-
-**注意事项**: FSx for Lustre 的吞吐容量（如 50 MB/s/TB 或 125 MB/s/TB）需根据训练并发度进行选择，以避免存储带宽受限。
-
----
-
-### 实践 3：针对特定领域的数据预处理与增强
-
-**说明**: 通用 ASR 模型在特定领域（如医疗、金融或客服）表现不佳往往是因为词汇分布和声学环境的差异。在微调前，必须对领域数据进行清洗、标准化，并进行针对性的数据增强（如添加背景噪音、改变语速或混响），以提高模型在特定场景下的鲁棒性。
-
-**实施步骤**:
-1. 清洗数据：去除音频中的静音片段、无效文本和低质量录音。
-2. 使用 NVIDIA Riva TTS Toolkit 或 SoX 等工具进行数据增强，生成带有特定领域背景噪音的变体数据。
-3. 对文本进行标准化处理（如展开缩写、统一单位格式），确保与 Nemotron 模型的 Tokenizer 兼容。
-
-**注意事项**: 数据增强的比例应适度，过多的合成噪音可能会导致模型在处理清晰语音时性能下降。
-
----
-
-### 实践 4：利用混合精度训练优化显存与速度
-
-**说明**: NVIDIA Nemotron 模型支持混合精度训练。利用 Tensor Core 技术，结合 FP16 或 BF16（Bfloat16）数据格式，可以在几乎不损失模型精度的情况下，将训练速度提升一倍并减少显存占用。这对于在显存有限的 GPU（如 G5 实例）上微调大模型至关重要。
-
-**实施步骤**:
-1. 在训练配置文件中启用混合精度（通常设置为 `bf16`，因为其在数值稳定性上优于 `fp16`）。
-2. 确保 PyTorch 或 TensorFlow 框架及 CUDA 版本支持混合精度（通常 DLAMI 已预装）。
-3. 调整 Batch Size：由于显存占用减少，可以适当增大 Batch Size 以进一步提高 GPU 利用率。
-
-**注意事项**: 如果使用 FP16，必须配合 Loss Scaling（损失缩放）以防止数值下溢。BF16 通常不需要 Loss Scaling，推荐在 Ampere 架构（A10G）及更新架构上使用。
-
----
-
-### 实践 5：配置高效的 Checkpointing 与断点续训
-
-**说明**: 在 EC2 上进行长时间训练可能会面临实例中断或 Spot 实例回收的风险。配置频繁的 Checkpointing（检查点保存）策略，将模型权重和优化器状态定期保存到持久化存储（如 S3 或 EFS），可以确保在意外中断后能够从最近的进度恢复训练，避免计算资源浪费。
-
----
-
-## 引用
-
-- **文章/节目**: [https://aws.amazon.com/blogs/machine-learning/fine-tuning-nvidia-nemotron-speech-asr-on-amazon-ec2-for-domain-adaptation](https://aws.amazon.com/blogs/machine-learning/fine-tuning-nvidia-nemotron-speech-asr-on-amazon-ec2-for-domain-adaptation)
-- **RSS 源**: [https://aws.amazon.com/blogs/machine-learning/feed/](https://aws.amazon.com/blogs/machine-learning/feed/)
-
-> 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
-
----
-
-## 站内链接
-
-- 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/)
-- 标签： [ASR](/tags/asr/) / [NVIDIA](/tags/nvidia/) / [微调](/tags/%E5%BE%AE%E8%B0%83/) / [AWS](/tags/aws/) / [EC2](/tags/ec2/) / [语音识别](/tags/%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB/) / [领域适配](/tags/%E9%A2%86%E5%9F%9F%E9%80%82%E9%85%8D/) / [端到端工作流](/tags/%E7%AB%AF%E5%88%B0%E7%AB%AF%E5%B7%A5%E4%BD%9C%E6%B5%81/)
-- 场景： [Web应用开发](/scenarios/web%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/)
-
-### 相关文章
-
-- [在 EC2 上微调 NVIDIA Nemotron ASR 模型实现领域适配]({{< relref "posts/20260312-blogs_podcasts-fine-tuning-nvidia-nemotron-speech-asr-on-amazon-e-1.md" >}})
-- [在 EC2 上微调 NVIDIA Nemotron ASR 模型实现领域适配]({{< relref "posts/20260312-blogs_podcasts-fine-tuning-nvidia-nemotron-speech-asr-on-amazon-e-1.md" >}})
-- [在 EC2 上使用 Oumi 微调并部署 Llama 至 Amazon Bedrock]({{< relref "posts/20260310-blogs_podcasts-accelerate-custom-llm-deployment-fine-tune-with-ou-0.md" >}})
-- [在 EC2 上使用 Oumi 微调 Llama 并将其部署至 Amazon Bedrock]({{< relref "posts/20260310-blogs_podcasts-accelerate-custom-llm-deployment-fine-tune-with-ou-0.md" >}})
-- [在 EC2 上使用 Oumi 微调 Llama 并部署至 Amazon Bedrock]({{< relref "posts/20260310-blogs_podcasts-accelerate-custom-llm-deployment-fine-tune-with-ou-0.md" >}})
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

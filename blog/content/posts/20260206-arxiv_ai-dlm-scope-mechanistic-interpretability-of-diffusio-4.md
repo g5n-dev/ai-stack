@@ -1,29 +1,54 @@
 ---
-title: DLM-Scope：利用稀疏自编码器解析扩散语言模型
+title: 'DLM-Scope: Mechanistic Interpretability of Diffusion Language Models via Sparse
+  Autoencoders'
 date: 2026-02-06 03:10:07+08:00
 draft: false
 entry_kind: auto
-tags: []
-categories: []
+tags:
+- ArXiv
+- 大语言模型
+categories:
+- 论文
+- 大模型
+scenarios:
+- AI/ML项目
+- 大语言模型
 source: arxiv
-description: 历史条目已归档：现有正文未通过内容质量门，请查阅原始来源。
-external_url: http://arxiv.org/abs/2602.05859v1
-scenarios: []
+description: 当前只保存了官方论文摘要，不代表论文全文。请以原始来源为准。
+external_url: https://arxiv.org/abs/2602.05859v1
 aliases: []
-content_mode: archived
-publication_tier: ARCHIVED
-source_provenance: legacy_no_snapshot
-source_support: 0.0
-archived: true
-archive_reason: historical_content_quality_gate
-build:
-  list: never
-  render: always
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: abstract
+source_snapshot_sha256: sha256:4b8f93147f771e4d6f9b7c2d82a2d0ebb2ecbf7347ebda0f3365ec7716ea214c
+extractor_version: source-contract-v1
+discovery_method: arxiv_api
+fetch_status: captured
+source_completeness: abstract_only
+source_is_truncated: false
+source_support: 1.0
+source_title_chars_original: 92
+captured_at: '2026-07-18T04:11:12.826784Z'
+source_capture_sha256: sha256:8b3802685e470d31238c0f3b41dcb1bdca1cfb35934fef9ab7938f7a4793ff15
+source_capture_chars_original: 1407
+source_publication_excerpt_chars: 1407
 ---
 
-## 历史条目归档说明
+## 基本信息
 
-该条目的历史正文未通过内容质量门，可能包含基于标题推测的内容。为避免继续传播不可核验文本，本站仅保留透明归档记录。
+- **来源**: arxiv
+- **原始来源**: [https://arxiv.org/abs/2602.05859v1](<https://arxiv.org/abs/2602.05859v1>)
+- **作者**: Xu Wang, Bingqing Jiang, Yu Wan, Baosong Yang, Lingpeng Kong, Difan Zou
+- **分类**: cs.LG
+- **论文时间**: 2026-02-05T16:41:25Z
+- **论文 PDF**: [https://arxiv.org/pdf/2602.05859v1.pdf](<https://arxiv.org/pdf/2602.05859v1.pdf>)
 
-- 历史内容质量门未通过
-- 原始来源：<http://arxiv.org/abs/2602.05859v1>
+## 来源摘要/节选
+
+> Sparse autoencoders \(SAEs\) have become a standard tool for mechanistic interpretability in autoregressive large language models \(LLMs\), enabling researchers to extract sparse, human-interpretable features and intervene on model behavior. Recently, as diffusion language models \(DLMs\) have become an increasingly promising alternative to the autoregressive LLMs, it is essential to develop tailored mechanistic interpretability tools for this emerging class of models. In this work, we present DLM-Scope, the first SAE-based interpretability framework for DLMs, and demonstrate that trained Top-K SAEs can faithfully extract interpretable features. Notably, we find that inserting SAEs affects DLMs differently than autoregressive LLMs: while SAE insertion in LLMs typically incurs a loss penalty, in DLMs it can reduce cross-entropy loss when applied to early layers, a phenomenon absent or markedly weaker in LLMs. Additionally, SAE features in DLMs enable more effective diffusion-time interventions, often outperforming LLM steering. Moreover, we pioneer certain new SAE-based research directions for DLMs: we show that SAEs can provide useful signals for DLM decoding order; and the SAE features are stable during the post-training phase of DLMs. Our work establishes a foundation for mechanistic interpretability in DLMs and shows a great potential of applying SAEs to DLM-related tasks and algorithms.
+
+## 来源说明
+
+当前只保存了官方论文摘要，不代表论文全文。请以原始来源为准。
+
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

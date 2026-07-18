@@ -1,29 +1,49 @@
 ---
-title: 轻量化用户个性化方法用于封闭式拆分计算
+title: Lightweight User-Personalization Method for Closed Split Computing
 date: 2026-03-17 03:25:32+08:00
 draft: false
 entry_kind: auto
-tags: []
-categories: []
-source: arxiv
-description: 历史条目已归档：现有正文未通过内容质量门，请查阅原始来源。
-external_url: http://arxiv.org/abs/2603.14958v1
+tags:
+- ArXiv
+categories:
+- 论文
 scenarios: []
+source: arxiv
+description: 当前只保存了官方论文摘要，不代表论文全文。请以原始来源为准。
+external_url: https://arxiv.org/abs/2603.14958v1
 aliases: []
-content_mode: archived
-publication_tier: ARCHIVED
-source_provenance: legacy_no_snapshot
-source_support: 0.0
-archived: true
-archive_reason: historical_content_quality_gate
-build:
-  list: never
-  render: always
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: abstract
+source_snapshot_sha256: sha256:841d6488eacb36a5146c4338aa6276116ee3b7f4447f4174c4114fb881223cd1
+extractor_version: source-contract-v1
+discovery_method: arxiv_api
+fetch_status: captured
+source_completeness: abstract_only
+source_is_truncated: false
+source_support: 1.0
+source_title_chars_original: 66
+captured_at: '2026-07-18T04:28:34.236322Z'
+source_capture_sha256: sha256:02625062ae01618ea5c74e2496ab9e642483b50aeb64effe3be9deff4de2d540
+source_capture_chars_original: 1639
+source_publication_excerpt_chars: 1639
 ---
 
-## 历史条目归档说明
+## 基本信息
 
-该条目的历史正文未通过内容质量门，可能包含基于标题推测的内容。为避免继续传播不可核验文本，本站仅保留透明归档记录。
+- **来源**: arxiv
+- **原始来源**: [https://arxiv.org/abs/2603.14958v1](<https://arxiv.org/abs/2603.14958v1>)
+- **作者**: Yuya Okada, Takayuki Nishio
+- **分类**: cs.LG
+- **论文时间**: 2026-03-16T08:16:50Z
+- **论文 PDF**: [https://arxiv.org/pdf/2603.14958v1.pdf](<https://arxiv.org/pdf/2603.14958v1.pdf>)
 
-- 历史内容质量门未通过
-- 原始来源：<http://arxiv.org/abs/2603.14958v1>
+## 来源摘要/节选
+
+> Split Computing enables collaborative inference between edge devices and the cloud by partitioning a deep neural network into an edge-side head and a server-side tail, reducing latency and limiting exposure of raw input data. However, inference performance often degrades in practical deployments due to user-specific data distribution shifts, unreliable communication, and privacy-oriented perturbations, especially in closed environments where model architectures and parameters are inaccessible. To address this challenge, we propose SALT \(Split-Adaptive Lightweight Tuning\), a lightweight adaptation framework for closed Split Computing systems. SALT introduces a compact client-side adapter that refines intermediate representations produced by a frozen head network, enabling effective model adaptation without modifying the head or tail networks or increasing communication overhead. By modifying only the training conditions, SALT supports multiple adaptation objectives, including user personalization, communication robustness, and privacy-aware inference. Experiments using ResNet-18 on CIFAR-10 and CIFAR-100 show that SALT achieves higher accuracy than conventional retraining and fine-tuning while significantly reducing training cost. On CIFAR-10, SALT improves personalized accuracy from 88.1% to 93.8% while reducing training latency by more than 60%. SALT also maintains over 90% accuracy under 75% packet loss and preserves high accuracy \(about 88% at sigma = 1.0\) under noise injection. These results demonstrate that SALT provides an efficient and practical adaptation framework for real-world Split Computing systems.
+
+## 来源说明
+
+当前只保存了官方论文摘要，不代表论文全文。请以原始来源为准。
+
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

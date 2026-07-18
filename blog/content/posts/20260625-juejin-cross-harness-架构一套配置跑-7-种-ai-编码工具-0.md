@@ -1,139 +1,94 @@
 ---
-title: Cross-Harness 架构：一套配置适配七种 AI 编码工具
+title: Cross-Harness 架构——一套配置跑 7 种 AI 编码工具
 date: 2026-06-25 08:12:06+08:00
 draft: false
 entry_kind: auto
 tags:
-- Cross-Harness
-- AI编码工具
-- 统一配置
-- Token管理
-- 多工具协作
-- 系统架构
-- 资源调度
-- 安全策略
+- 掘金
+- MCP
+- AI Agent
+- Python
+- Rust
+- TypeScript
+- Go
+- 命令行工具
 categories:
-- 效率与方法论
-source: juejin
-description: 随着 AI 编程工具的种类和功能快速扩展，分别维护每套工具的配置已成为开发团队的沉重负担。Cross‑Harness 架构通过统一描述语言，将
-  token 管理、记忆、学习和安全等核心能力抽象为一套可复用的配置，支持一次性部署至七种主流 AI 编码工具。读者可以了解该架构的设计思路、实现要点，以及在实际项目中实现配置统一后带来的效率提升与维护成本下降。
-external_url: https://juejin.cn/post/7654919203225550867
+- AI 工程
 scenarios:
 - AI/ML项目
-content_mode: legacy_analysis
-publication_tier: LEGACY
-source_provenance: legacy_no_snapshot
-source_support: 0.0
+- 命令行工具
+source: juejin
+description: 当前只保存了公开页面节选，不代表原文全文。请以原始来源为准。
+external_url: https://juejin.cn/post/7654919203225550867
+aliases: []
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: excerpt
+source_snapshot_sha256: sha256:4f1a712cae7b0bb53f3119e64eb5a5cce8bdbe420ca4cd2578be369148f88381
+extractor_version: source-contract-v1
+discovery_method: article_html_excerpt
+fetch_status: captured
+source_completeness: partial
+source_is_truncated: true
+source_support: 1.0
+source_title_chars_original: 35
+captured_at: '2026-07-18T04:21:46.197461Z'
+source_capture_sha256: sha256:377022bdc8df70b89bea5bc08f1bb3555e11e81c46e4890b90fb13cc6dd11a8a
+source_capture_chars_original: 6000
+source_publication_excerpt_chars: 796
+source_truncation_reason: historical_excerpt_only,historical_publication_excerpt_limit
 ---
 
 ## 基本信息
 
-- **作者**: 清水寺小和尚
-- **链接**: [https://juejin.cn/post/7654919203225550867](https://juejin.cn/post/7654919203225550867)
+- **来源**: juejin
+- **原始来源**: [https://juejin.cn/post/7654919203225550867](<https://juejin.cn/post/7654919203225550867>)
 
----
-## 导语
+## 来源摘要/节选
 
-随着 AI 编程工具的种类和功能快速扩展，分别维护每套工具的配置已成为开发团队的沉重负担。Cross‑Harness 架构通过统一描述语言，将 token 管理、记忆、学习和安全等核心能力抽象为一套可复用的配置，支持一次性部署至七种主流 AI 编码工具。读者可以了解该架构的设计思路、实现要点，以及在实际项目中实现配置统一后带来的效率提升与维护成本下降。
+公开展示已截断至最多 800 个字符；请访问原始来源查看完整上下文。
 
----
+> Cross-Harness 架构——一套配置跑 7 种 AI 编码工具
+> 前四篇讲的能力（token 管理、memory、learning、安全）都是在一个工具内的优化。但现实是：
+> AI 编码工具百花齐放
+> 。你的团队里可能有人用 Claude Code、有人用 Cursor、有人用 Codex——每个工具的配置格式完全不同，最佳实践无法跨工具共享。
+> ECC 从一开始的 "Everything Claude Code" 进化成了 "ecc-universal"——一个跨 7 种 AI 编码工具的"Agent 操作系统"。它的核心设计问题是：
+> 怎么让同一套 agents/skills/rules/hooks 在不同 harness 上运行？
+> 源仓库：
+> affaan-m/everything-claude-code
+> 碎片化问题
+> 2026 年中，主流的 AI 编码工具（agent harness）至少有这些：
+> 工具
+> 配置方式
+> 约束格式
+> Claude Code
+> .claude/
+> + CLAUDE.md + settings.json
+> Skills: Markdown, Hooks: JSON
+> OpenAI Codex
+> .codex/config.toml
+> + agents/\*.toml
+> TOML + Markdown
+> Cursor
+> .cursor/rules/
+> + hooks.json
+> Markdown + JS hooks
+> Gemini CLI
+> .gemini/GEMINI.md
+> 单文件 Markdown
+> Zed
+> 编辑器内配置
+> 编辑器 API
+> OpenCode
+> TypeScript 插件
+> TS/JS
+> Copilot CLI
+> .github/copilot-instructions.md
+> Markdown
+> 同一个"写代码前先写测试"的规则，在每个工具里要写一遍、格式各不相同。…
 
-## 翻译
+## 来源说明
 
-**Cross Harness 架构——一套配置跑 7 种 AI 编码工具**
+当前只保存了公开页面节选，不代表原文全文。请以原始来源为准。
 
-前四篇讲的能力（token 管理、memory、learning、安全）都是在一个工具内的优化。但现实是：AI 编码...
-
----
-
-*注：原文末尾似乎未完整，如有后续内容可继续提供。*
-
----
-## 摘要
-
-#### 背景
-前四篇围绕 token 管理、memory、learning、安全等单个工具内部的优化展开。
-
-#### 问题
-实际项目往往需要多个 AI 编码工具并行使用，各自独立配置导致重复工作、策略不一致、资源难以统一调度。
-
-#### 方案概述
-Cross‑Harness 采用“一套配置、一次部署、多个实例”思路，抽象出统一的配置层，兼容七种主流 AI 编码工具（如代码补全、代码审查、重构、文档生成等）。
-
-#### 关键技术点
-- **统一 Token 管理**：在同一配额池内动态分配，防止某工具耗尽导致整体受限。
-- **共享 Memory 与 Learning**：工具之间共享上下文缓存和学习成果，实现跨工具的知识积累。
-- **统一安全策略**：一次性定义访问权限、审计日志、数据脱敏规则，所有工具统一执行。
-- **可插拔适配器**：每种工具只需实现适配接口，配置即插即用，扩展新工具成本低。
-
-#### 优势
-2. **资源统一调度**：根据实时负载在工具间动态迁移 token 与算力，提高整体吞吐。
-3. **策略一致**：安全、审计、合规等规则一次性部署，避免各工具自行实现导致的漏洞。
-4. **快速上线**：新加入 AI 工具只需编写适配器并声明到配置，立即生效。
-
-#### 适用场景
-- 多模型协作的 CI/CD 流水线；
-- 同时进行代码补全、审查、重构的多阶段开发流程；
-- 需要统一审计的大规模代码库管理。
-
-#### 结论
-Cross‑Harness 通过统一配置层让七种 AI 编码工具共享 token、memory、learning 与安全策略，实现了“一套配置跑多工具”，显著提升效率、降低成本并保证一致性。
-
----
-## 评论
-
-Cross-Harness 架构的核心理念在于通过抽象层实现配置复用，这一思路在 AI 编码工具碎片化的当下具有实际意义。
-
-#### 事实陈述
-
-从技术实现角度看，Cross-Harness 架构将 token 管理、memory、learning 和安全等能力抽离为通用模块，再通过适配层与不同的 AI 编码工具对接。这意味着同一套配置可以在多个工具间共享，理论上减少了重复配置的工作量。
-
-#### 作者观点
-
-作者认为这种架构代表了 AI 编码工具生态从“各自为战”向“统一抽象”演进的趋势。在开发者频繁切换工具的场景下，Cross-Harness 有助于降低学习成本和维护复杂度。
-
-#### 你的推断
-
-然而，这一架构的实际效果取决于几个关键因素。其一是不同工具的 API 规范和交互模式差异是否能够在适配层被有效屏蔽；其二是抽象层本身是否会引入额外的性能开销；其三是当底层工具升级时，适配层的维护成本是否可控。个人认为，若适配层设计不当，反而可能成为新的复杂度来源。
-
-#### 边界条件
-
-该架构的适用场景主要是团队内部需要同时使用多款 AI 编码工具的情况。对于单一工具的深度用户或对性能敏感的场景，现有方案可能更具优势。
-
-#### 实践启发
-
-在实际评估时，建议重点关注：配置文件的迁移成本、适配层的可扩展性、以及社区对该架构的维护活跃度。同时，应结合自身团队的实际情况判断是否值得引入这一层抽象。
-
----
-## 学习要点
-
-- 通过统一的配置框架，Cross‑Harness 可在同一环境中运行七种主流 AI 编程助手，实现一次配置即可切换使用。
-- 采用插件式适配器（Adapter）模式，每个 AI 工具只需要实现统一接口即可快速接入，提升可扩展性。
-- 所有工具的运行参数、权限、日志等配置集中在一份声明式配置文件里，保证一致性并简化管理。
-- 通过标准化的输入/输出格式和交互协议，Cross‑Harness 能在不同工具之间进行结果对比和性能评估。
-- 内置基准测试与指标收集功能，帮助开发者量化各 AI 工具的编码效率、准确率等关键指标。
-- 提供容器化或虚拟环境隔离，确保每种 AI 工具的依赖不冲突，提升实验可重复性。
-
----
-## 引用
-
-- **掘金原文**: [https://juejin.cn/post/7654919203225550867](https://juejin.cn/post/7654919203225550867)
-
-> 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
-
----
-
-## 站内链接
-
-- 分类： [效率与方法论](/categories/%E6%95%88%E7%8E%87%E4%B8%8E%E6%96%B9%E6%B3%95%E8%AE%BA/)
-- 标签： [Cross-Harness](/tags/cross-harness/) / [AI编码工具](/tags/ai%E7%BC%96%E7%A0%81%E5%B7%A5%E5%85%B7/) / [统一配置](/tags/%E7%BB%9F%E4%B8%80%E9%85%8D%E7%BD%AE/) / [Token管理](/tags/token%E7%AE%A1%E7%90%86/) / [多工具协作](/tags/%E5%A4%9A%E5%B7%A5%E5%85%B7%E5%8D%8F%E4%BD%9C/) / [系统架构](/tags/%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84/) / [资源调度](/tags/%E8%B5%84%E6%BA%90%E8%B0%83%E5%BA%A6/) / [安全策略](/tags/%E5%AE%89%E5%85%A8%E7%AD%96%E7%95%A5/)
-- 场景： [AI/ML项目](/scenarios/ai-ml%E9%A1%B9%E7%9B%AE/)
-
-### 相关文章
-
-- [OpenAI 实时访问系统：结合速率限制与额度管理支撑 Sora 和 Codex]({{< relref "posts/20260213-blogs_podcasts-beyond-rate-limits-scaling-access-to-codex-and-sor-0.md" >}})
-- [OpenAI 实时访问系统：结合速率限制与用量追踪支持 Sora 和 Codex]({{< relref "posts/20260213-blogs_podcasts-beyond-rate-limits-scaling-access-to-codex-and-sor-0.md" >}})
-- [AI 时代下的软件行业变革与程序员职业思考]({{< relref "posts/20260227-juejin-程序员的明天ai-时代下的行业观察与个人思考-2.md" >}})
-- [Agent First Engineering：零人工代码与百万行规模的开发实践]({{< relref "posts/20260305-juejin-agent-first-engineering-0.md" >}})
-- [告别技术债！🚀 高效扩展系统架构，实现无Slop增长！✨]({{< relref "posts/20260125-blogs_podcasts-scaling-without-slop-0.md" >}})
-*本文由 AI Stack 自动生成，提供深度内容分析。*
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

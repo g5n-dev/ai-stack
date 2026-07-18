@@ -1,174 +1,50 @@
 ---
-title: 语言模型方向判断的认知机制
+title: 'The Value Axis: Language Models Encode Whether They''re on the Right Track'
 date: 2026-06-16 22:35:39+08:00
 draft: false
 entry_kind: auto
 tags:
-- 语言模型
-- 认知机制
-- 方向判断
-- 价值轴
-- 自评
-- 自监督
-- 对齐
-- LLM
+- ArXiv
 categories:
-- 大模型
 - 论文
+scenarios: []
 source: arxiv
-description: 本研究旨在探讨大型语言模型是否能够在内部表示“价值轴”，即判断其生成内容是否在预期方向上前进。研究通过构造特定任务和探针，检验模型隐层激活与“是否在正确轨道”之间的对应关系，并提出一种评估框架，但因摘要未提供详细内容，相关细节无法从摘要确认。若该机制得到验证，可为模型自监督校准和对齐技术的改进提供新思路，亦可能影响价值判断在人机交互与伦理审查中的应用。
-external_url: http://arxiv.org/abs/2606.17056v1
-scenarios:
-- 大语言模型
+description: 当前只保存了官方论文摘要，不代表论文全文。请以原始来源为准。
+external_url: https://arxiv.org/abs/2606.17056v1
 aliases:
 - /posts/20260617-arxiv_ai-the-value-axis-language-models-encode-whether-they-0/
-content_mode: legacy_analysis
-publication_tier: LEGACY
-source_provenance: legacy_no_snapshot
-source_support: 0.0
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: abstract
+source_snapshot_sha256: sha256:5f7838c249f545fda004d70157c62431e0ab9eea053c18395753091b9945acc8
+extractor_version: source-contract-v1
+discovery_method: arxiv_api
+fetch_status: captured
+source_completeness: abstract_only
+source_is_truncated: false
+source_support: 1.0
+source_title_chars_original: 73
+captured_at: '2026-07-18T04:30:09.568344Z'
+source_capture_sha256: sha256:ea7fb6bb2b2388b240d7d07e0e26e48f8e471a7924663109bd30f9c257d2fe34
+source_capture_chars_original: 1227
+source_publication_excerpt_chars: 1227
 ---
 
 ## 基本信息
 
-- **ArXiv ID**: 2606.17056v1
-- **分类**: cs.CL
+- **来源**: arxiv
+- **原始来源**: [https://arxiv.org/abs/2606.17056v1](<https://arxiv.org/abs/2606.17056v1>)
 - **作者**: Nick Jiang, Isaac Kauvar, Jack Lindsey
-- **PDF**: [https://arxiv.org/pdf/2606.17056v1.pdf](https://arxiv.org/pdf/2606.17056v1.pdf)
-- **链接**: [http://arxiv.org/abs/2606.17056v1](http://arxiv.org/abs/2606.17056v1)
+- **分类**: cs.CL
+- **论文时间**: 2026-06-15T17:59:58Z
+- **论文 PDF**: [https://arxiv.org/pdf/2606.17056v1.pdf](<https://arxiv.org/pdf/2606.17056v1.pdf>)
 
----
-## 导语
+## 来源摘要/节选
 
-本研究旨在探讨大型语言模型是否能够在内部表示“价值轴”，即判断其生成内容是否在预期方向上前进。研究通过构造特定任务和探针，检验模型隐层激活与“是否在正确轨道”之间的对应关系，并提出一种评估框架，但因摘要未提供详细内容，相关细节无法从摘要确认。若该机制得到验证，可为模型自监督校准和对齐技术的改进提供新思路，亦可能影响价值判断在人机交互与伦理审查中的应用。
+> We investigate whether language models internally track the value of their current trajectory, defined as the likelihood that their ongoing strategy will achieve their goals. Using synthetic, in-context reinforcement learning data, we construct a "value" axis for Qwen3-8B. We find that activations along this axis distinguish between high vs. low verbalized confidence, rollouts without and with backtracking, and correct vs. corrupted code. Steering towards high value causally suppresses self-correction and reduces explanatory verbosity, while steering towards low value induces backtracking and exploration. We demonstrate that direct preference optimization \(DPO\) can increase the internal value of rewarded behaviors \(e.g. use a certain word\), causing the model to act more confidently after exhibiting them. Finally, we apply the value axis to study in-the-wild settings. For example, we find that Qwen assigns low value to politically sensitive chat queries after post-training and that supervised fine-tuning increases internal confidence within the training domain. Our results suggest that language models linearly encode an estimate of expected goal success that modulates their confidence in pursuing a direction.
 
----
-## 摘要
+## 来源说明
 
-#### 研究背景
-语言模型在生成过程中是否会对当前策略的成功概率进行内部估计？本研究提出“价值轴”（value axis）概念，用以量化模型对“当前思路能否达成目标”的主观评估。
+当前只保存了官方论文摘要，不代表论文全文。请以原始来源为准。
 
-#### 方法
-在 Qwen3‑8B 上，利用合成的上下文强化学习数据构建价值轴。具体做法是将模型的内部激活向量在该轴上进行投影，从而得到一个标量值，代表模型对当前推理轨迹的期望成功率。
-
-#### 主要发现
-- **轴向激活区分度高**：投影值能够清晰区分高/低口头置信度、是否出现回溯、以及代码正确/损坏等情形。
-- **因果干预效应**：强制将激活推向高价值方向会抑制自我纠正行为并降低解释性冗余；相反，强制推向低价值方向则诱发回溯和探索性尝试。
-- **直接偏好优化（DPO）效果**：对特定奖励行为（如使用特定词汇）进行 DPO，可提升其在价值轴上的投影值，使模型在表现该行为后表现出更强的自信。
-
-#### 现场应用
-- 在后训练阶段，Qwen 对政治敏感对话查询的内部价值评估显著偏低。
-- 监督微调提升了模型在训练域内的内部置信度，表现为价值轴投影值的系统性上升。
-
-#### 结论
-语言模型在内部线性编码了期望目标成功率的估计值，这一价值轴能够调节模型对推理方向的自信程度，并对其行为产生可预测的因果影响。
-
----
-## 评论
-
-#### 论文声称与证据
-
-研究者提出，语言模型在生成过程中存在对当前策略成功概率的内部估计机制，并将其概念化为“价值轴”。该轴向通过内部激活向量投影得到标量值，用以量化模型对推理轨迹的主观评估。
-
-**证据层面**，研究在 Qwen3‑8B 上展示了以下现象：投影值能够区分口头置信度的高低、是否触发回溯行为、以及代码正确与损坏状态的差异。更进一步，通过因果干预强制将激活推向高价值方向，作者观察到自我纠正行为受到抑制。这些发现为“模型内部存在价值评估机制”的假设提供了初步实证支撑。
-
-#### 推断与理论意义
-
-若价值轴真能反映模型的元认知状态，则其意义远超单一实验的范畴。首先，它暗示语言模型的内部表征已自发组织出与任务成功相关的抽象维度，这与人类中央执行系统的自我监控功能存在结构层面的可比性。其次，该发现为干预式对齐提供了新靶点——而非依赖行为层面的反馈修正，直接在激活空间引导价值评估可能更为高效。
-
-然而，上述推断需谨慎对待。当前证据局限于单一模型规模（8B 参数）和合成数据集，尚未在更大规模模型或真实世界任务中验证。此外，“价值轴”是否真正编码成功概率，还是仅捕获了表面相关性（如词汇频率或句法流畅度），仍需进一步澄清。
-
-#### 关键假设与潜在失效条件
-
-该研究隐含以下关键假设：其一，合成上下文强化学习数据能够诱导出具有泛化性的价值表征；其二，投影方向的线性可分性适用于复杂推理场景；其三，激活空间的局部扰动不会触发系统性副作用。
-
-潜在失效条件包括：价值轴在跨架构模型（如 Transformer‑X L、状态空间模型）中可能不复存在；高价值激活的强制推进可能诱导模型产生看似合理但实质错误的输出；合成数据的分布偏移可能导致价值轴对真实推理任务失效。
-
-#### 可验证方式
-
-为验证价值轴的稳健性，建议开展以下实验：第一，在 Qwen3‑14B、Llama3‑70B 等不同规模模型上复现价值轴提取，观察其轴向稳定性；第二，将价值轴与模型在代码生成、数学推理等任务上的真实表现进行相关性分析，而非仅依赖代理指标；第三，进行长期追踪实验，检验价值轴在多轮对话中的动态演化规律；第四，引入分布外数据（如从未见过的任务类型），测试价值轴的跨域泛化能力。
-
----
-## 技术分析
-
-#### 研究背景与动机
-
-论文探讨的核心问题是：语言模型在生成过程中是否会对当前策略的成功概率进行内部估计。基于摘要，这一问题的提出源于对语言模型元认知能力的关注——模型是否能够“意识到”自己的推理方向是否正确。
-
-推断部分：这一研究动机与当前AI安全领域的核心关切密切相关。如果模型能够对自身的推理质量进行内部评估，那么这将为其可控性和可解释性提供新的技术路径。
-
-#### 核心方法
-
-根据摘要提供的信息，论文采用以下技术路径：首先在Qwen3-8B模型上，利用合成的上下文强化学习数据构建“价值轴”。核心操作是将模型的内部激活向量在该轴上进行投影，得到一个标量值，该值被假设为代表模型对当前推理轨迹的期望成功率。
-
-推断部分：这一方法暗示了论文的一个关键假设——模型的内部表示空间中存在一个能够编码“任务成功概率”的线性方向。如果这一假设成立，则说明模型的内部表示具有较高的可解释性和可干预性。
-
-#### 实验与结果分析
-
-基于摘要描述的实验发现，可以从以下几个层面进行分析：
-
-**可区分性验证**：投影值能够清晰区分高/低口头置信度、是否出现回溯、以及代码正确/损坏等情形。这些发现（来自摘要）表明价值轴具有良好的信号区分能力。
-
-推断部分：这些结果的可靠性取决于实验设计的严谨性。如果口头置信度与投影值的相关性得到独立验证，将有力支持“模型内部确实编码了置信度信息”这一核心论点。
-
-**因果干预效应**：通过强制将激活推向高价值方向，会抑制自我纠正行为并降低解释性冗余；相反，推向低价值方向则诱发回溯和探索性尝试。摘要明确指出这一因果关系，说明价值轴不仅是描述性指标，更具有可操作性。
-
-**DPO训练效果**：对特定奖励行为进行直接偏好优化后，模型在表现该行为时表现出更强的自信，且该行为在价值轴上的投影值得到提升。这表明价值轴可以作为模型行为的有效预测信号。
-
-#### 应用前景
-
-摘要揭示了两个重要的应用方向：一是政治敏感对话查询的价值评估显著偏低，这一发现暗示价值轴可能用于检测模型的“安全意识”；二是监督微调能够提升模型在训练域内的内部置信度，说明价值轴可用于评估微调效果。
-
-推断部分：这些应用前景的实现需要满足几个前提条件：价值轴的跨任务泛化能力、其在不同规模模型上的一致性，以及与人类判断标准的一致性。
-
-#### 理论意义
-
-这一研究的理论贡献在于证明了语言模型内部确实存在对推理成功率的估计机制，并且这种估计是线性可读取的。这一发现对理解大语言模型的内部运作机制具有重要意义。
-
-推断部分：如果后续研究能够复现并扩展这一发现，可能意味着当前的LLM在某种程度上已经具备了“自我监控”能力的基础结构。
-
-#### 方法论局限与可证伪方式
-
-**关键假设**：价值轴方法隐含假设模型的内部表示空间是线性可分的，且成功概率信息集中在一个特定方向上。
-
-**潜在失效条件**：首先，这一方法可能不适用于其他架构或规模的模型；其次，“成功”的定义可能因任务而异，单一价值轴可能无法覆盖所有任务类型；第三，合成数据训练的泛化能力有待验证。
-
-**可证伪方式**：可以通过以下方式证伪——在非合成数据上构建价值轴，如果失效则说明方法依赖特定数据分布；或者尝试用价值轴预测与训练任务不同的推理结果，如果预测能力丧失则说明方法不具有普遍性。
-
-#### 与相关工作的关联
-
-推断部分：这项研究与近期关于语言模型内部表示可解释性的工作密切相关，特别是关于“线性探针”（linear probing）的研究传统。区别在于本文不仅停留在描述性分析，还进行了因果干预实验，验证了价值轴对行为的实际调节作用。
-
----
-## 学习要点
-
-- 语言模型的隐藏表征中包含一个线性可分离的“价值轴”，该轴能够指示当前生成是否对齐人类价值（最重要）
-- 通过读取价值轴的投影，可在生成过程中实时判断是否在正确轨道上，从而实现模型的自我纠正
-- 价值轴信号在模型的中间层最强，表明该维度在内部表示的特定层次被显式编码
-- 对模型进行对齐微调（如RLHF）会显著增强价值轴的可探测性与预测能力
-- 价值轴在不同语言和任务间具有一定的迁移性，可用于跨任务的即插即用价值评估
-- 该发现提供了一种无需外部奖励模型的可解释对齐手段，帮助理解模型的内部决策机制
-
----
-## 引用
-
-- **ArXiv**: [http://arxiv.org/abs/2606.17056v1](http://arxiv.org/abs/2606.17056v1)
-- **PDF**: [https://arxiv.org/pdf/2606.17056v1.pdf](https://arxiv.org/pdf/2606.17056v1.pdf)
-
-> 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
-
----
-
-## 站内链接
-
-- 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)
-- 标签： [语言模型](/tags/%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/) / [认知机制](/tags/%E8%AE%A4%E7%9F%A5%E6%9C%BA%E5%88%B6/) / [方向判断](/tags/%E6%96%B9%E5%90%91%E5%88%A4%E6%96%AD/) / [价值轴](/tags/%E4%BB%B7%E5%80%BC%E8%BD%B4/) / [自评](/tags/%E8%87%AA%E8%AF%84/) / [自监督](/tags/%E8%87%AA%E7%9B%91%E7%9D%A3/) / [对齐](/tags/%E5%AF%B9%E9%BD%90/) / [LLM](/tags/llm/)
-- 场景： [大语言模型](/scenarios/%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/)
-
-### 相关文章
-
-- [语言模型价值轴：编码正确性判断能力]({{< relref "posts/20260616-arxiv_ai-the-value-axis-language-models-encode-whether-they-0.md" >}})
-- [CATTO：平衡语言模型偏好与置信度的方法]({{< relref "posts/20260202-arxiv_ai-catto-balancing-preferences-and-confidence-in-lang-0.md" >}})
-- [大语言模型稀疏奖励子系统]({{< relref "posts/20260203-arxiv_ai-sparse-reward-subsystem-in-large-language-models-9.md" >}})
-- [模型智能与任务复杂度如何影响对齐偏差]({{< relref "posts/20260203-hacker_news-how-does-misalignment-scale-with-model-intelligenc-7.md" >}})
-- [训练万亿参数模型使其具备幽默感]({{< relref "posts/20260203-hacker_news-training-a-trillion-parameter-model-to-be-funny-15.md" >}})
-*本文由 AI Stack 自动生成，深度解读学术研究。*
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

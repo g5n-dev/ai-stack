@@ -1,170 +1,50 @@
 ---
-title: 视觉语言动作模型的免标定自由视角方法
+title: 'From Fixed to Free Cameras: Calibration-Free View-Robust Vision-Language-Action
+  Model'
 date: 2026-07-07 23:27:17+08:00
 draft: false
 entry_kind: auto
 tags:
-- VLA
-- 无标定
-- 机器人
-- 单目RGB
-- 视点鲁棒
-- 相机外参
-- 动作预测
-- 视觉语言模型
+- ArXiv
 categories:
-- 大模型
 - 论文
+scenarios: []
 source: arxiv
-description: CamVLA 将操作控制与相机几何解耦，输出两项预测： 相机中心动作——在局部相机坐标系下的末端执行器动作（姿态），实现“我应该如何移动”与相机位置无关；
-  6‑DoF 手‑眼矩阵——描述相机相对于机器人基座的刚体变换，完成“我从哪儿看”。 随后通过确定性几何变换把这两项组合为机器人基座坐标系下的完整动作，实现 无标定、深度信息、单目
-  RGB 的策略部署。
-external_url: http://arxiv.org/abs/2607.05396v1
-scenarios:
-- Web应用开发
-content_mode: legacy_analysis
-publication_tier: LEGACY
-source_provenance: legacy_no_snapshot
-source_support: 0.0
+description: 当前只保存了官方论文摘要，不代表论文全文。请以原始来源为准。
+external_url: https://arxiv.org/abs/2607.05396v1
+aliases: []
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: abstract
+source_snapshot_sha256: sha256:e872772d21b9c1fc43e717a13f2ac8265999988f7fc231d09b965cde59d7dba8
+extractor_version: source-contract-v1
+discovery_method: arxiv_api
+fetch_status: captured
+source_completeness: abstract_only
+source_is_truncated: false
+source_support: 1.0
+source_title_chars_original: 85
+captured_at: '2026-07-18T04:30:25.647174Z'
+source_capture_sha256: sha256:941da7bc3cca738f928e18fcd36d55b9a6790a17b3df83390b9f9e85fbec3d4e
+source_capture_chars_original: 1433
+source_publication_excerpt_chars: 1433
 ---
 
 ## 基本信息
 
-- **ArXiv ID**: 2607.05396v1
+- **来源**: arxiv
+- **原始来源**: [https://arxiv.org/abs/2607.05396v1](<https://arxiv.org/abs/2607.05396v1>)
+- **作者**: Wenhao Li, Xueying Jiang, Quanhao Qian, Deli Zhao, Shijian Lu, Gongjie Zhang, Ran Xu
 - **分类**: cs.CV
-- **作者**: Wenhao Li, Xueying Jiang, Quanhao Qian, Deli Zhao, Shijian Lu
-- **PDF**: [https://arxiv.org/pdf/2607.05396v1.pdf](https://arxiv.org/pdf/2607.05396v1.pdf)
-- **链接**: [http://arxiv.org/abs/2607.05396v1](http://arxiv.org/abs/2607.05396v1)
+- **论文时间**: 2026-07-06T17:59:59Z
+- **论文 PDF**: [https://arxiv.org/pdf/2607.05396v1.pdf](<https://arxiv.org/pdf/2607.05396v1.pdf>)
 
----
-## 摘要
+## 来源摘要/节选
 
-#### 背景与动机
-现实机器人部署时相机常被重新定位或更换，已有的视点鲁棒视觉-语言-动作（VLA）策略大多依赖外部提供相机外参，使用不便且脆弱。作者认为策略应自行推断相机位置，而非依赖标定。
+> Real-world robot deployment rarely maintains the training-stage camera setup, where cameras often experience repositioning or remounting depending on actual scenarios. Existing view-robust Vision-Language-Action \(VLA\) policies tolerate such camera variations only when the camera extrinsics are explicitly provided, making them fragile and hard to use especially when view robustness is critical. We argue that the policy should not be told where the camera is, but rather figure it out by itself. To this end, we introduce Camera-Centric VLA \(CamVLA\), a new VLA model that decouples manipulation controls from camera geometry by predicting \(i\) a camera-centric end-effector action expressed in the local camera frame, and \(ii\) a 6-DoF hand-eye matrix relating cameras to the robot base. A deterministic geometric transformation composes the two predictions into a robot base-frame action. This disentangles how I should move in pose-independent camera-centric action generation from where I am looking from in camera-perspective geometric grounding. The resulting policy is calibration-free, depth-free, and single-view, requiring only a single monocular RGB image as the visual observation and task instruction at deployment. Evaluations in both simulation and real-world robot data show that CamVLA consistently improves success rates across diverse unseen viewpoints. Project page: https://alibaba-damo-academy.github.io/CamVLA/.
 
-#### 方法概述
-CamVLA 将操作控制与相机几何解耦，输出两项预测：
-1. **相机中心动作**——在局部相机坐标系下的末端执行器动作（姿态），实现“我应该如何移动”与相机位置无关；
-2. **6‑DoF 手‑眼矩阵**——描述相机相对于机器人基座的刚体变换，完成“我从哪儿看”。
+## 来源说明
 
-随后通过确定性几何变换把这两项组合为机器人基座坐标系下的完整动作，实现 **无标定、深度信息、单目 RGB** 的策略部署。
+当前只保存了官方论文摘要，不代表论文全文。请以原始来源为准。
 
-#### 关键特性
-- **无标定**：无需提前标定相机外参或深度图。
-- **单视图**：仅输入一张单目 RGB 图像和任务指令。
-- **视点鲁棒**：相机姿态变化不影响策略核心预测，只在后期几何组合阶段处理。
-
-#### 实验验证
-在仿真与真实机器人平台上，CamVLA 在多样化未知视点下均显著提升成功率，验证了其视点适应能力和实际部署的可行性。
-
-项目主页：https://alibaba-damo-academy.github.io/CamVLA/
-
----
-## 评论
-
-#### 核心贡献与技术路径
-
-CamVLA提出将VLA策略的输出解耦为相机中心动作和6-DoF手眼矩阵两部分。论文声称这种方法能够在相机位置变化时保持鲁棒性，实现无标定深度信息单目RGB输入的操控策略。
-
-从技术路径看，作者将相机几何推理嵌入到策略网络中，而非依赖传统标定流程。这种设计思路的合理性在于：末端执行器动作在相机坐标系下具有视角不变性，而手眼矩阵的在线估计可以适应相机更换或移动的场景。论文期望通过确定性几何变换将两项输出组合为基座坐标系下的完整动作。
-
-#### 关键假设与潜在失效条件
-
-本方法的可靠性建立在几个关键假设之上。首先，模型必须能够从单目RGB图像中准确估计6-DoF手眼矩阵，这要求图像包含足够的几何特征信息。其次，相机中心动作的预测需要足够精确，因为任何误差都会通过几何变换传播到最终输出。最后，论文假设相机内参已知或可通过自监督方式获得。
-
-潜在失效条件包括：纹理缺失场景下图像特征不足导致手眼矩阵估计失败；相机快速运动造成图像模糊或运动模糊；光照剧烈变化影响特征提取稳定性；以及模型在未见过的相机配置下泛化能力不足。论文未明确讨论这些边界情况。
-
-#### 可验证方式
-
-对于相机中心动作的视角不变性，可在仿真或真实环境中设置多个不同位置的相机，对比相同操控任务下动作预测的一致性。对于手眼矩阵估计精度，可与已标定系统对比测量误差。失效条件则可通过设计针对性实验验证：相机快速移动测试、纹理缺失物体测试、光照剧烈变化测试等。
-
-#### 评析与开放问题
-
-论文的核心价值在于将相机几何推理内化为学习目标，这比传统后处理方式更具端到端优化优势。然而目前论文未提供与基线方法的定量对比实验，也未系统分析失效模式的边界条件。确定性几何变换的精度上限本质上由两项输出的误差下界决定，这一点需要通过大规模实验验证。
-
-整体而言，这是一项概念新颖的工作，但在缺乏充分实验支撑的情况下，其相对于现有方法的实际改进幅度尚难判断。后续工作应重点补充对比实验和失效分析。
-
----
-## 技术分析
-
-#### 研究背景与动机
-本文针对的是**视点鲁棒**的视觉‑语言‑动作（VLA）策略在实际部署中的痛点：相机经常被重新定位或更换，而现有方法大多依赖外部提供的相机外参，使用不便且脆弱。论文的核心主张是**策略应自行推断相机位置**，从而实现真正的“无标定”部署。该动机直接来源于摘要，属于可确认事实。
-
-#### 核心方法与理论
-##### 相机中心动作与相机坐标系
-CamVLA 将末端执行器的动作预测在**局部相机坐标系**下进行，即输出“我应该如何移动”。这相当于把动作预测与相机姿态解耦，使得同一策略在不同视角下产生相同的局部动作。抽象层面，这是一种**几何解耦**思路；在实现上，需要网络能够理解相对运动而非绝对空间位置。
-
-##### 6‑DoF 手‑眼矩阵预测
-网络同时输出**相机相对于机器人基座的刚体变换**（6‑DoF），即“我从哪儿看”。该矩阵描述了相机坐标系统到基座坐标系统的旋转与平移，属于传统手‑眼标定的学习版。通过大量数据驱动，网络学会从单目 RGB 图像中推断该变换。
-
-##### 几何组合实现无标定
-采用**确定性几何变换**：将相机中心动作（左乘相机‑基座的逆变换）映射到基座坐标系，从而得到可直接用于机器人控制的完整姿态。这一步仅涉及矩阵乘法，不依赖深度图或外参标定，实现了真正意义上的“无标定”。
-
-#### 关键技术特性
-- **无标定**：不需要提前获取相机外参或深度图。
-- **单视图**：仅使用单目 RGB 图像和语言指令。
-- **视点鲁棒**：相机姿态变化在后期几何组合阶段统一处理，核心策略不受影响。
-
-这些特性均来自摘要，属于可确认事实。
-
-#### 实验验证
-作者在仿真平台和真实机器人上进行评估，使用多种未知相机姿态（如不同高度、角度）进行测试。结果显示 CamVLA 在所有新视点下均显著提升成功率，验证了其视点适应能力与部署可行性。实验设置和结论同样直接引自摘要。
-
-#### 应用前景与局限性
-##### 应用前景
-- 快速更换相机或在不同工作空间部署时，无需重新标定。
-- 可与现有视觉‑语言模型无缝结合，实现跨环境的通用任务执行。
-
-##### 关键假设与潜在失效
-1. **刚性相机‑基座假设**：相机与基座之间的相对位姿保持刚性。若相机在运行过程中出现震动或软性形变，6‑DoF 预测误差会直接导致动作错误。
-2. **训练分布覆盖**：网络对相机姿态的推断能力受限于训练时的视角多样性。若相机被放置在极端或未见过的高度/角度，性能可能急剧下降。
-3. **单目深度缺失**：虽然不需要深度图，但网络必须隐式学习深度信息；若场景出现大幅度尺度变化或深度歧义（如镜面、玻璃），相机中心动作的尺度误差会被放大。
-
-##### 可证伪方式
-- 在实验中将相机姿态随机化至训练集未覆盖的范围（如旋转角 > 90°），观察成功率是否显著下降。
-- 通过在真实机器人上施加额外的随机抖动或软性连接，检测刚性假设失效时的误差增幅。
-- 将相同策略在需要显式深度信息的任务（如精细抓取）中进行对比，验证是否出现尺度误判。
-
-#### 相关工作对比
-| 工作 | 标定方式 | 输入模态 | 视点鲁棒性 | 关键创新点 |
-|------|----------|----------|------------|------------|
-| 传统 VLA | 依赖外部标定 | RGB‑D / 多视图 | 较弱 | 动作在基座坐标系直接预测 |
-| 视点无关 VLA (如 RoboCat) | 预标定相机 | 单目 RGB | 中等 | 通过数据增强实现视点多样性 |
-| CamVLA（本文） | 完全无需标定 | 单目 RGB | 强 | 将动作解耦至相机坐标系并学习手‑眼矩阵 |
-
-相对而言，CamVLA 的创新在于**显式建模相机几何**（6‑DoF）并在网络内部学习该变换，从而在保持单目输入的轻量化同时实现真正的视点鲁棒性。
-
----
-## 学习要点
-
-- 该工作实现了无需相机标定即可在任意视角下完成视觉-语言-动作（VLA）对齐的模型，显著降低了机器人部署的先验要求。
-- 通过在模型内部嵌入自监督的相机姿态估计模块，使视觉特征能够在未知内外参的情况下自适应对齐。
-- 提出多视角交叉注意力机制，将语言指令与不同相机捕获的图像特征统一映射，实现跨视角的动作预测一致性。
-- 采用大规模视觉-语言预训练结合少量动作示意的联合训练策略，使模型在不依赖显式相机信息的前提下获得强语义理解能力。
-- 实验验证了模型在仿真和真实机器人上对未见过的相机角度、姿态变化以及动态相机运动的鲁棒性和泛化能力。
-- 该方法省去传统系统中繁琐的相机标定流程，极大简化了从实验室到实际环境的迁移过程。
-
----
-## 引用
-
-- **ArXiv**: [http://arxiv.org/abs/2607.05396v1](http://arxiv.org/abs/2607.05396v1)
-- **PDF**: [https://arxiv.org/pdf/2607.05396v1.pdf](https://arxiv.org/pdf/2607.05396v1.pdf)
-
-> 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
-
----
-
-## 站内链接
-
-- 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)
-- 标签： [VLA](/tags/vla/) / [无标定](/tags/%E6%97%A0%E6%A0%87%E5%AE%9A/) / [机器人](/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/) / [单目RGB](/tags/%E5%8D%95%E7%9B%AErgb/) / [视点鲁棒](/tags/%E8%A7%86%E7%82%B9%E9%B2%81%E6%A3%92/) / [相机外参](/tags/%E7%9B%B8%E6%9C%BA%E5%A4%96%E5%8F%82/) / [动作预测](/tags/%E5%8A%A8%E4%BD%9C%E9%A2%84%E6%B5%8B/) / [视觉语言模型](/tags/%E8%A7%86%E8%A7%89%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/)
-- 场景： [Web应用开发](/scenarios/web%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/)
-
-### 相关文章
-
-- [扩展验证比扩展策略学习更能有效实现视觉-语言-动作对齐]({{< relref "posts/20260213-arxiv_ai-scaling-verification-can-be-more-effective-than-sc-0.md" >}})
-- [扩展验证比扩展策略学习更有效实现视觉-语言-动作对齐]({{< relref "posts/20260213-arxiv_ai-scaling-verification-can-be-more-effective-than-sc-0.md" >}})
-- [扩展验证比扩展策略学习更能有效实现视觉-语言-动作对齐]({{< relref "posts/20260213-arxiv_ai-scaling-verification-can-be-more-effective-than-sc-0.md" >}})
-- [视觉-语言-动作对齐：扩展验证比扩展策略学习更有效]({{< relref "posts/20260213-arxiv_ai-scaling-verification-can-be-more-effective-than-sc-0.md" >}})
-- [Cosmos重磅：微调视频模型！解锁 visuomotor 控制与规划 🚀✨]({{< relref "posts/20260125-arxiv_ai-cosmos-policy-fine-tuning-video-models-for-visuomo-9.md" >}})
-*本文由 AI Stack 自动生成，深度解读学术研究。*
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

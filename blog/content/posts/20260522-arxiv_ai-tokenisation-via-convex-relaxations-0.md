@@ -1,124 +1,54 @@
 ---
-title: 基于凸松弛的分词方法
+title: Tokenisation via Convex Relaxations
 date: 2026-05-22 21:33:49+08:00
 draft: false
 entry_kind: auto
 tags:
-- 凸松弛
-- 分词
-- 词元化
-- ConvexTok
-- 线性规划
-- NLP
-- 语言模型
-- 优化框架
+- ArXiv
+- 自然语言处理
 categories:
 - 论文
-- AI 工程
-source: arxiv
-description: 当前 NLP 流程中，词元化（tokenisation）至关重要。BPE、Unigram 等常用算法采用贪心策略，仅在局部做最优决策，未全局考虑词汇表构造。
-  我们将词元化器的构建形式化为线性规划，并利用凸优化求解，得到新算法 ConvexTok。该方法可在给定词汇规模下，求得近似全局最优的词表。
-external_url: http://arxiv.org/abs/2605.22821v1
 scenarios:
+- AI/ML项目
 - 自然语言处理
+source: arxiv
+description: 当前只保存了官方论文摘要，不代表论文全文。请以原始来源为准。
+external_url: https://arxiv.org/abs/2605.22821v1
 aliases:
 - /posts/20260523-arxiv_ai-tokenisation-via-convex-relaxations-0/
 - /posts/20260524-arxiv_ai-tokenisation-via-convex-relaxations-0/
-content_mode: legacy_analysis
-publication_tier: LEGACY
-source_provenance: legacy_no_snapshot
-source_support: 0.0
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: abstract
+source_snapshot_sha256: sha256:c8997c5133152fc9bb10060154325190f2ad895b83db8107d92fbcb27b61e362
+extractor_version: source-contract-v1
+discovery_method: arxiv_api
+fetch_status: captured
+source_completeness: abstract_only
+source_is_truncated: false
+source_support: 1.0
+source_title_chars_original: 35
+captured_at: '2026-07-18T04:29:43.284780Z'
+source_capture_sha256: sha256:c6141642e9dee7efaaade69ca22b99c209c2aa044302e56f048c5fe77fb74758
+source_capture_chars_original: 816
+source_publication_excerpt_chars: 816
 ---
 
 ## 基本信息
 
-- **ArXiv ID**: 2605.22821v1
-- **分类**: cs.CL
+- **来源**: arxiv
+- **原始来源**: [https://arxiv.org/abs/2605.22821v1](<https://arxiv.org/abs/2605.22821v1>)
 - **作者**: Jan Tempus, Philip Whittington, Craig W. Schmidt, Dennis Komm, Tiago Pimentel
-- **PDF**: [https://arxiv.org/pdf/2605.22821v1.pdf](https://arxiv.org/pdf/2605.22821v1.pdf)
-- **链接**: [http://arxiv.org/abs/2605.22821v1](http://arxiv.org/abs/2605.22821v1)
+- **分类**: cs.CL
+- **论文时间**: 2026-05-21T17:59:56Z
+- **论文 PDF**: [https://arxiv.org/pdf/2605.22821v1.pdf](<https://arxiv.org/pdf/2605.22821v1.pdf>)
 
----
-## 摘要
+## 来源摘要/节选
 
-#### 背景
-当前 NLP 流程中，词元化（tokenisation）至关重要。BPE、Unigram 等常用算法采用贪心策略，仅在局部做最优决策，未全局考虑词汇表构造。
+> Tokenisation is an integral part of the current NLP pipeline. Current tokenisation algorithms such as BPE and Unigram are greedy algorithms -- they make locally optimal decisions without considering the resulting vocabulary as a whole. We instead formulate tokeniser construction as a linear program and solve it using convex optimisation tools, yielding a new algorithm we call ConvexTok. We find ConvexTok consistently improves intrinsic tokenisation metrics and the bits-per-byte \(BpB\) achieved by language models; it also improves downstream task performance, but less consistently. Furthermore, ConvexTok allows the user to certify how far their tokeniser is from optimal, with respect to a certain objective, via a lower bound, and we empirically find it to be within 1\\% of optimal at common vocabulary sizes.
 
-#### 方法
-我们将词元化器的构建形式化为线性规划，并利用凸优化求解，得到新算法 ConvexTok。该方法可在给定词汇规模下，求得近似全局最优的词表。
+## 来源说明
 
-#### 结果
-实验表明，ConvexTok 在词元化内在指标和语言模型的 bits‑per‑byte（BpB）上均优于传统方法；在下游任务中表现提升，但一致性略低。算法还能提供目标函数的下界，证明在常见词汇规模下与最优解的差距不超过 1%。
+当前只保存了官方论文摘要，不代表论文全文。请以原始来源为准。
 
-#### 意义
-ConvexTok 为词元化提供了可验证的优化框架，兼具性能提升与可解释性，适用于对词表质量要求高的实际系统。
-
----
-## 技术分析
-
-#### 研究背景
-
-词元化是现代NLP流程中的关键预处理步骤，其质量直接影响下游语言模型的表现。摘要指出，当前主流的BPE（Byte-Pair Encoding）和Unigram等算法均采用贪心策略，仅在局部进行最优决策，未能从全局视角优化词汇表的构造。这一局限性可能导致词汇表在整体性能上并非最优，存在进一步提升的空间。该背景描述基于摘要原文，属于可确认事实。
-
-#### 核心方法
-
-论文提出将词元化器的构建形式化为线性规划问题，并利用凸优化方法求解，得到新算法ConvexTok。这一方法的核心思想是：在给定词汇规模约束下，通过全局优化获得近似最优的词表，而非依赖传统的贪心或启发式搜索。摘要明确指出，该方法能够在可接受的计算成本下求得全局近优解，这是本文的方法论贡献，属于可确认事实。
-
-#### 理论基础
-
-论文的理论基础建立在线性规划和凸优化两大支柱之上。线性规划提供了一种精确表达词元化组合优化问题的方式，而凸优化则保证了在松弛后能够高效求解。需要注意的是，将离散组合优化问题松弛为连续凸问题是典型的凸松弛技术，其理论保证依赖于目标函数的凸性和约束集合的凸性。然而，这种松弛可能导致解的离散化误差。论文声称在常见词汇规模下与最优解的差距不超过1%，这表明作者对松弛误差进行了理论分析或实验验证，但具体理论证明的严谨性需要查阅原文确认。
-
-#### 实验与结果
-
-根据摘要，ConvexTok在词元化内在指标和语言模型的bits-per-byte（BpB）上均优于传统方法，这直接验证了方法的有效性。然而，摘要也指出在下游任务中虽然表现提升，但一致性略低。这一矛盾暗示全局优化的词元化可能并非在所有下游任务上均保持一致优势，可能存在任务适配性问题。实验结果部分属于可确认事实，但关于一致性的具体原因和影响程度需要进一步推断。
-
-#### 应用前景
-
-ConvexTok为词元化提供了可验证的优化框架，兼具性能提升与可解释性。对于对词表质量要求高的实际系统，如专业领域语料处理或多语言模型训练，该方法具有明确的实用价值。特别是其能够提供目标函数下界的能力，使得优化结果的质量可量化、可追溯，这是传统贪心方法难以实现的优势。
-
-#### 研究启示
-
-本研究揭示了全局优化视角在词元化任务中的重要性，表明即使是看似局部的预处理步骤，也可能从全局优化中获益。这一思路对其他NLP中的离散结构选择问题（如词汇表设计、特征选择等）具有借鉴意义。
-
-#### 相关工作对比
-
-传统词元化算法如BPE和Unigram Language Model（ULM）已被广泛研究和应用，其优势在于计算效率高、实现简单，但在全局最优性上存在固有缺陷。ConvexTok的创新之处在于引入了优化理论的框架，为词元化提供了理论可解释的解决方案。然而，凸优化方法的计算复杂度可能高于贪心策略，在超大规模语料上的可扩展性需要进一步验证。
-
-#### 关键假设与潜在失效条件
-
-本文的关键假设包括：词汇表规模可预先指定、线性规划松弛后的解可通过舍入得到高质量的离散词表、以及全局优化词表能够提升下游任务性能。潜在失效条件包括：当词汇表规模非常大时，线性规划的求解成本可能显著上升；在特定领域或低资源语言上，全局优化的词表可能因数据分布差异而表现不佳；凸松弛的误差上界在极端情况下可能超出预期。论文可通过增大词汇规模、引入非凸约束或更换下游任务类型进行可证伪验证。
-
----
-## 学习要点
-
-- 把分词问题形式化为组合优化并通过凸松弛实现多项式时间求解，提升分词效率。
-- 端到端联合训练分词和语言模型，自动学习任务专属的最优词汇表和分词粒度。
-- 在低曲率或稀疏性等条件下，凸松弛紧致且能提供近似最优的理论保证。
-- 能自然处理未登录词（OOV）和跨语言场景，增强模型的鲁棒性。
-- 与传统频率驱动的子词算法相比，显著降低标记数量和推理成本，同时保持或降低困惑度。
-- 在多语言和多种任务的实验中表现更优，实现更好的压缩率和下游性能。
-
----
-## 引用
-
-- **ArXiv**: [http://arxiv.org/abs/2605.22821v1](http://arxiv.org/abs/2605.22821v1)
-- **PDF**: [https://arxiv.org/pdf/2605.22821v1.pdf](https://arxiv.org/pdf/2605.22821v1.pdf)
-
-> 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
-
----
-
-## 站内链接
-
-- 分类： [论文](/categories/%E8%AE%BA%E6%96%87/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)
-- 标签： [凸松弛](/tags/%E5%87%B8%E6%9D%BE%E5%BC%9B/) / [分词](/tags/%E5%88%86%E8%AF%8D/) / [词元化](/tags/%E8%AF%8D%E5%85%83%E5%8C%96/) / [ConvexTok](/tags/convextok/) / [线性规划](/tags/%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92/) / [NLP](/tags/nlp/) / [语言模型](/tags/%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/) / [优化框架](/tags/%E4%BC%98%E5%8C%96%E6%A1%86%E6%9E%B6/)
-- 场景： [自然语言处理](/scenarios/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/)
-
-### 相关文章
-
-- [凸松弛分词技术研究]({{< relref "posts/20260522-arxiv_ai-tokenisation-via-convex-relaxations-0.md" >}})
-- [大模型连载1：理解自然语言处理与大模型中的 Token 概念]({{< relref "posts/20260301-juejin-大模型连载1了解-token-1.md" >}})
-- [大模型连载1：理解 Token 这一基础概念]({{< relref "posts/20260301-juejin-大模型连载1了解-token-1.md" >}})
-- [机器翻译性别消歧：仅解码器架构诊断评估]({{< relref "posts/20260319-arxiv_ai-gender-disambiguation-in-machine-translation-diagn-9.md" >}})
-- [TIDE：扩散大语言模型的跨架构蒸馏方法]({{< relref "posts/20260430-arxiv_ai-turning-the-tide-cross-architecture-distillation-f-0.md" >}})
-*本文由 AI Stack 自动生成，深度解读学术研究。*
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

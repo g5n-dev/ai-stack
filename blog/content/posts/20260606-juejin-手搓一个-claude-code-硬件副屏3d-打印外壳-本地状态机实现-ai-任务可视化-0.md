@@ -1,101 +1,83 @@
 ---
-title: 手作Claude Code硬件副屏：3D打印加本地状态机实现AI可视化
+title: 我给 Claude Code 装了一个红绿灯，AI 干活还是摸鱼，一眼看穿
 date: 2026-06-06 21:23:29+08:00
 draft: false
 entry_kind: auto
 tags:
-- Claude Code
-- 3D打印
-- 状态机
-- AI可视化
-- 硬件DIY
-- 嵌入式开发
-- 开源项目
-- 交互设计
+- 掘金
+- AI Agent
 categories:
-- 开发工具
-- 系统与基础设施
-source: juejin
-description: 在使用 Claude Code 编写代码时，任务状态常常埋在终端的滚动日志里，开发者难以快速捕捉关键阶段。本文利用 3D 打印制作外壳，并结合本地状态机实现一个独立的硬件副屏，实时展示
-  AI 任务的执行进度、错误信息和核心指标。读者将获得从硬件选型、结构设计到固件实现的完整步骤，帮助自己在项目中加入可视化监控，同时探索嵌入式系统与 AI 工具的结合方式。
-external_url: https://juejin.cn/post/7648054502554779698
+- AI 工程
 scenarios:
 - AI/ML项目
-content_mode: legacy_analysis
-publication_tier: LEGACY
-source_provenance: legacy_no_snapshot
-source_support: 0.0
+source: juejin
+description: 当前只保存了公开页面节选，不代表原文全文。请以原始来源为准。
+external_url: https://juejin.cn/post/7648054502554779698
+aliases: []
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: excerpt
+source_snapshot_sha256: sha256:3f893faeabfa656ef976c5fb87f1aa576b910b86e8b6dadff710777c7270d9a1
+extractor_version: source-contract-v1
+discovery_method: article_html_excerpt
+fetch_status: captured
+source_completeness: partial
+source_is_truncated: true
+source_support: 1.0
+source_title_chars_original: 37
+captured_at: '2026-07-18T04:21:37.030149Z'
+source_capture_sha256: sha256:fac4c86f9b5f4a66302c683ec33bd8d2130286f23a781ce8107f84a7a1456e14
+source_capture_chars_original: 3167
+source_publication_excerpt_chars: 691
+source_truncation_reason: historical_excerpt_only,historical_publication_excerpt_limit
 ---
 
 ## 基本信息
 
-- **作者**: Jartto
-- **链接**: [https://juejin.cn/post/7648054502554779698](https://juejin.cn/post/7648054502554779698)
+- **来源**: juejin
+- **原始来源**: [https://juejin.cn/post/7648054502554779698](<https://juejin.cn/post/7648054502554779698>)
 
----
-## 导语
+## 来源摘要/节选
 
-在使用 Claude Code 编写代码时，任务状态常常埋在终端的滚动日志里，开发者难以快速捕捉关键阶段。本文利用 3D 打印制作外壳，并结合本地状态机实现一个独立的硬件副屏，实时展示 AI 任务的执行进度、错误信息和核心指标。读者将获得从硬件选型、结构设计到固件实现的完整步骤，帮助自己在项目中加入可视化监控，同时探索嵌入式系统与 AI 工具的结合方式。
+公开展示已截断至最多 800 个字符；请访问原始来源查看完整上下文。
 
+> 用\*\* Claude Code\*\* 跑长任务时，我遇到过最窒息的一幕：把复杂任务丢给它，转身去处理其他事情。过一会想起来回来，要么卡在了等待界面，要么已经空闲了很久，小东西真会偷懒。
+> 有朋友说系统通知能解决？前提是你坐在电脑前、且没有淹没在其他任务里。这是一个你根本意识不到的盲区——直到你发现时间被偷走了。所以我要
+> 给 Claude Code 装了一个 Mini 红绿灯副屏，监视 AI 牛马干活
+> 。
+> 一、灵光乍现
+> 核心技术主要考虑几个：
+> 用 3D 打印外壳 + HDMI 小屏 + 本地状态服务
+> ，通过红绿灯，把 Claude Code 的运行状态实时映射到桌面上。至于为什么要用小屏，主要是为了好玩。
+> 🔴 红灯 —— AI 正在全速运行，CPU/Token 消耗中；
+> 🟡 黄灯 —— AI 等待用户确认，任务卡在半路，这是最容易被遗漏的状态；
+> 🟢 绿灯 —— AI 处于空闲，任务已完成或尚未开始。
+> 无法上传视频，效果可以关注微信视频号：
+> 涛哥玩3D
+> 。
+> 整个方案成本可控、复现门槛不高，下面按
+> 硬件组装 → 软件状态机实现 → 前端展示
+> 的顺序展开。
+> 二、硬件准备
+> 1、Mini 显示器外壳
+> 外壳不需要自己建模，直接用开源方案。拓竹 MakerWorld 上搜索 "Mocintosh 摸鱼小副屏"，作者提供了两款尺寸：
+> 尺寸
+> 分辨率
+> 打印时长
+> 耗材重量
+> 2.8-inch（推荐）
+> 640×480
+> 约 4.4h
+> 161g
+> 3.54-inch
+> 960×640
+> 约 4.8h
+> 179g
+> 个人推荐 2.8 寸款
+> ，打印耗时更短，且 640×480 分辨率对静态状态展示完全够用。…
 
-## 摘要
+## 来源说明
 
-在使用 Claude Code 执行长时间任务时，AI 有时会表现出拖延或不干活的情况。为解决这一问题，作者自行制作了一个硬件副屏。该副屏采用 3D 打印的外壳，内部搭载小型显示屏和红绿 LED 灯，通过本地状态机实时监测 Claude Code 的运行状态，并将状态以红绿灯光的形式直观呈现，从而让 AI 保持在“工作”模式。整个系统包括硬件选型（微型控制板、LED、显示屏），结构设计（3D 打印模型），以及状态机逻辑（状态转换、异常检测）。该副屏的优势在于：无须额外软件依赖，响应快，成本低，且能够在视觉上直接提醒 AI 维持高效运行。实际使用中，红灯常亮表示 AI 处于空闲或异常，绿灯闪烁代表正在处理任务。作者通过这种实体化的监督方式，有效抑制了 AI 的“偷懒”行为，提高了任务完成率。
+当前只保存了公开页面节选，不代表原文全文。请以原始来源为准。
 
----
-## 评论
-
-#### 核心观点
-
-这个项目揭示了AI辅助编程工具在交互设计上的一次有益探索：通过实体硬件将抽象的任务状态具象化，试图解决AI"黑箱"运行带来的信任缺失问题。然而，这种方案的实用性仍需打个问号。
-
-#### 事实陈述与观点区分
-
-**事实层面**：作者确实通过3D打印和状态机实现了红绿黄三色LED的状态显示，并成功与Claude Code的运行状态进行了联动。从技术实现角度看，这套方案的成本控制在百元以内，代码逻辑也相对简洁。
-
-**作者观点**：他认为AI在长任务中会"偷懒"，因此需要外部激励机制来"卷起来"。这里存在一个预设——AI的不可靠性是普遍现象，而非特定场景下的偶发问题。
-
-**推断部分**：从行业视角来看，这种设计思路的底层逻辑是"注意力即资源"。当开发者无法直接感知AI的工作状态时，会产生焦虑和失控感。实体副屏本质上是一种注意力补偿机制，满足的是心理需求而非技术需求。
-
-#### 边界条件
-
-该方案的有效性存在明显边界：对于短时任务，红绿灯的意义几乎为零；对于真正卡死或异常的情况，开发者需要的是调试手段而非状态指示。只有在"任务在运行但进度不明"这种模糊场景下，视觉反馈才能发挥作用。然而，这种场景的出现频率本身也值得商榷——现代CLI工具普遍提供了进度输出。
-
-#### 实践启发
-
-从产品设计角度，这个项目提醒我们：AI工具的可观测性是一个被低估的需求。无论模型能力多强，用户对"正在发生什么"的感知需求始终存在。但实体化的解法是否是最优路径，需要打上问号——更轻量的终端UI或IDE插件可能具备更高的实用价值。
-
----
-## 学习要点
-
-- 本地状态机是实现 AI 任务在硬件副屏上实时可视化的核心，能够在本地快速响应并避免云端延迟。
-- 3D 打印外壳提供了灵活的外观定制和精准的尺寸匹配，使硬件副屏具备美观和实用性。
-- 选用低成本的微控制器（如 ESP32）配合显示模块（OLED/LCD）是实现硬件副屏的简易方案。
-- 使用统一的状态协议（如 JSON）进行 Claude Code 与硬件通信，可靠且易于扩展。
-- 模块化的软硬件设计（状态机 + UI 渲染）便于后期功能迭代和维护。
-- 电源管理与低功耗策略是确保便携式副屏长时间运行的重要因素。
-- 调试阶段利用串口日志和状态图可视化，可快速定位软硬件问题。
-
----
-## 引用
-
-- **掘金原文**: [https://juejin.cn/post/7648054502554779698](https://juejin.cn/post/7648054502554779698)
-
-> 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
-
----
-
-## 站内链接
-
-- 分类： [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/) / [系统与基础设施](/categories/%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD/)
-- 标签： [Claude Code](/tags/claude-code/) / [3D打印](/tags/3d%E6%89%93%E5%8D%B0/) / [状态机](/tags/%E7%8A%B6%E6%80%81%E6%9C%BA/) / [AI可视化](/tags/ai%E5%8F%AF%E8%A7%86%E5%8C%96/) / [硬件DIY](/tags/%E7%A1%AC%E4%BB%B6diy/) / [嵌入式开发](/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/) / [开源项目](/tags/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/) / [交互设计](/tags/%E4%BA%A4%E4%BA%92%E8%AE%BE%E8%AE%A1/)
-- 场景： [AI/ML项目](/scenarios/ai-ml%E9%A1%B9%E7%9B%AE/)
-
-### 相关文章
-
-- [Claude Code 发布：面向基础设施的编程工具]({{< relref "posts/20260204-hacker_news-claude-code-for-infrastructure-11.md" >}})
-- [Claude Code：面向基础设施的编程工具]({{< relref "posts/20260204-hacker_news-claude-code-for-infrastructure-11.md" >}})
-- [🔥GitHub爆款：MatsuriDayo/nekoray！网络神器震撼来袭！]({{< relref "posts/20260125-github_trending-matsuridayo-nekoray-1.md" >}})
-- [❄️看呆了！这款极致逼真的雪景模拟器，你不想把冬天带回家吗？]({{< relref "posts/20260127-hacker_news-snow-simulation-toy-4.md" >}})
-- [Mousefood：为微控制器构建嵌入式终端界面]({{< relref "posts/20260129-hacker_news-mousefood-build-embedded-terminal-uis-for-microcon-11.md" >}})
-*本文由 AI Stack 自动生成，提供深度内容分析。*
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

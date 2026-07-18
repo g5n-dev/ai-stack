@@ -1,34 +1,61 @@
 ---
-title: 🤖Indeed用AI革命性进化求职！智能招聘新玩法⚡️
+title: How Indeed uses AI to help evolve the job search
 date: 2026-01-27 05:11:50+08:00
 draft: false
 entry_kind: auto
-tags: []
-categories: []
+tags:
+- 博客与播客
+- AI Agent
+categories:
+- AI 工程
+scenarios:
+- AI/ML项目
 source: blogs_podcasts
+description: 当前只保存了公开页面节选，不代表原文全文。请以原始来源为准。
 external_url: https://openai.com/index/indeed-maggie-hulce
-scenarios: []
 aliases:
 - /posts/20260127-blogs_podcasts-how-indeed-uses-ai-to-help-evolve-the-job-search-2/
 - /posts/20260127-blogs_podcasts-how-indeed-uses-ai-to-help-evolve-the-job-search-4/
 - /posts/20260127-blogs_podcasts-how-indeed-uses-ai-to-help-evolve-the-job-search-5/
 - /posts/20260127-blogs_podcasts-how-indeed-uses-ai-to-help-evolve-the-job-search-6/
 - /posts/20260128-blogs_podcasts-how-indeed-uses-ai-to-help-evolve-the-job-search-6/
-content_mode: archived
-publication_tier: ARCHIVED
-source_provenance: legacy_no_snapshot
-source_support: 0.0
-archived: true
-archive_reason: historical_content_quality_gate
-description: 历史条目已归档：现有正文未通过内容质量门，请查阅原始来源。
-build:
-  list: never
-  render: always
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: excerpt
+source_snapshot_sha256: sha256:144245c967e3221342539baffbddbfbb6d3fad0f204ccb8f8586a220d4b2fe61
+extractor_version: source-contract-v1
+discovery_method: article_html_excerpt
+fetch_status: captured
+source_completeness: partial
+source_is_truncated: true
+source_support: 1.0
+source_title_chars_original: 48
+captured_at: '2026-07-18T04:11:53.951558Z'
+source_capture_sha256: sha256:58324a05f93477c5d14c7c7ba26da79281221629399b4f360947b2a16828d13b
+source_capture_chars_original: 5838
+source_publication_excerpt_chars: 776
+source_truncation_reason: historical_capture_limit,historical_publication_excerpt_limit
 ---
 
-## 历史条目归档说明
+## 基本信息
 
-该条目的历史正文未通过内容质量门，可能包含基于标题推测的内容。为避免继续传播不可核验文本，本站仅保留透明归档记录。
+- **来源**: blogs\_podcasts
+- **原始来源**: [https://openai.com/index/indeed-maggie-hulce](<https://openai.com/index/indeed-maggie-hulce>)
 
-- 历史内容质量门未通过
-- 原始来源：<https://openai.com/index/indeed-maggie-hulce>
+## 来源摘要/节选
+
+公开展示已截断至最多 800 个字符；请访问原始来源查看完整上下文。
+
+> A conversation with Maggie Hulce, Chief Revenue Officer, Indeed.
+>
+> Indeed is a platform that helps people find jobs and helps employers find the right talent. Job seekers use Indeed to search for opportunities, upload resumes, and research companies, while employers use the platform to attract, screen, and hire candidates more efficiently.
+>
+> We spoke with Maggie Hulce, Chief Revenue Officer at Indeed, about how AI is unlocking opportunities for employers and job seekers, driving internal AI adoption, and shaping the future of talent acquisition.
+>
+> AI is core to our mission of helping people get jobs. For nearly 20 years, we’ve used AI to power billions of connections between job seekers and employers, all with the goal of making hiring simpler, faster, and more human.…
+
+## 来源说明
+
+当前只保存了公开页面节选，不代表原文全文。请以原始来源为准。
+
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

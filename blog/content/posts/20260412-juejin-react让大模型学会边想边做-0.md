@@ -1,114 +1,89 @@
 ---
-title: ReAct让大模型掌握边想边做的循环机制
+title: ReAct：让大模型学会边想边做
 date: 2026-04-12 12:09:13+08:00
 draft: false
 entry_kind: auto
 tags:
-- ReAct
-- LLM
-- 推理链
-- 工具调用
-- Prompt 工程
-- 思维模式
-- 自我纠错
-- Agent
+- 掘金
+- AI Agent
 categories:
-- 大模型
 - AI 工程
-source: juejin
-description: ReAct是一种让大模型从被动应答转变为主动推理和行动的技术框架。与传统的问答模式不同，它通过思考、行动、观察的循环机制，使模型能够像人一样边想边做，真正调用工具完成复杂任务。掌握ReAct的原理，能帮助我们理解大模型如何突破“只会说不会做”的局限，实现更高水平的智能行为。
-  ReAct是一种让大型语言模型实现“边想边做”的框架。
-external_url: https://juejin.cn/post/7627365452814598154
 scenarios:
-- 大语言模型
-content_mode: legacy_analysis
-publication_tier: LEGACY
-source_provenance: legacy_no_snapshot
-source_support: 0.0
+- AI/ML项目
+source: juejin
+description: 当前只保存了公开页面节选，不代表原文全文。请以原始来源为准。
+external_url: https://juejin.cn/post/7627365452814598154
+aliases: []
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: excerpt
+source_snapshot_sha256: sha256:50129af0018d6ea275e4a1bb739bf9ab096e66c4d2758262452171bd8d240f4a
+extractor_version: source-contract-v1
+discovery_method: article_html_excerpt
+fetch_status: captured
+source_completeness: partial
+source_is_truncated: true
+source_support: 1.0
+source_title_chars_original: 16
+captured_at: '2026-07-18T04:19:32.340185Z'
+source_capture_sha256: sha256:43b9a0ed28b5bfd963e6dfc16bcbb3d9a62b9529c778fb20c8c48aa3fb20de97
+source_capture_chars_original: 4020
+source_publication_excerpt_chars: 675
+source_truncation_reason: historical_excerpt_only,historical_publication_excerpt_limit
 ---
 
 ## 基本信息
 
-- **作者**: Java随想录
-- **链接**: [https://juejin.cn/post/7627365452814598154](https://juejin.cn/post/7627365452814598154)
+- **来源**: juejin
+- **原始来源**: [https://juejin.cn/post/7627365452814598154](<https://juejin.cn/post/7627365452814598154>)
 
----
-## 导语
+## 来源摘要/节选
 
-ReAct是一种让大模型从被动应答转变为主动推理和行动的技术框架。与传统的问答模式不同，它通过思考、行动、观察的循环机制，使模型能够像人一样边想边做，真正调用工具完成复杂任务。掌握ReAct的原理，能帮助我们理解大模型如何突破“只会说不会做”的局限，实现更高水平的智能行为。
+公开展示已截断至最多 800 个字符；请访问原始来源查看完整上下文。
 
----
-## 描述
+> 本文已收录至GitHub，推荐阅读 👉
+> Java随想录
+> 微信公众号：Java随想录
+> 传统聊天机器人相信大家都用过——你问一句，它答一句。线性，简单，但遇到复杂问题就露馅了。比如问"特斯拉股价相比去年涨了多少"，它要么瞎编，要么说"我无法获取实时信息"。
+> 2022年，Google Research提出了ReAct框架。它要解决的就是这个问题：
+> 让大模型像人一样，一边想一边做，做完再看结果，接着想下一步
+> 。
+> ReAct的核心原理
+> 先看个例子
+> 想象你在一个陌生城市旅行。
+> 早上醒来，你想：今天天气怎么样？要不要带伞？
+> 你打开天气APP看了一眼——有阵雨。
+> 于是你调整计划：上午去博物馆躲雨，晚上再去看夜景。
+> 这个"想→做→看→再想"的过程，就是ReAct在做的事。
+> 三个阶段
+> ReAct由三个部分构成：
+> 思考（Thought）
+> ：分析当前问题，决定下一步做什么。比如"用户问的是某国人口，我需要查数据"。
+> 行动（Action）
+> ：调用外部工具。输出格式类似
+> search\(query="某国人口"\)
+> 。
+> 观察（Observation）
+> ：工具返回结果，成为下一轮思考的依据。比如
+> \{"population": "1.4亿"\}
+> 。
+> 循环往复，直到任务完成。
+> 什么时候停下来
+> 两种方式：
+> 硬限制
+> ：设个最大迭代数，比如
+> max\_iterations=10
+> ，到了就强制结束。
+> 条件触发
+> ：模型觉得自己很有把握了，或者连续失败好几次，就主动收手。
+> 技术实现
+> 工具怎么设计
+> 三个原则：
+> 原子性
+> ：一个工具只做一件事。计算器就做计算，搜索就做搜索，别搞大而全。…
 
-**翻译如下：**
+## 来源说明
 
-ReAct让大模型学会“边想边做”——通过思考、行动、观察的循环往复，不再只是“嘴硬”，而是真正能够运用工具解决复杂问题。
+当前只保存了公开页面节选，不代表原文全文。请以原始来源为准。
 
-**说明：**
-
-- 保留了原文中“边想边做”“嘴硬”等生动的比喻表达
-- “不再只会‘嘴硬’”调整为“不再只是‘嘴硬’”，使表达更自然流畅
-- 将“用工具”改为“运用工具”，语气更正式一些，与后半句整体风格更协调
-
----
-## 摘要
-
-ReAct是一种让大型语言模型实现“边想边做”的框架。它把模型的推理过程拆解为思考（Thought）、行动（Action）和观察（Observation）三个环节，并在每一步根据上一步的观察结果生成下一步的思考和行动，形成循环。模型不再仅仅输出文字，而是能够主动调用外部工具（如搜索、计算、API），把工具的返回结果纳入思考，从而在多步骤、复杂任务中进行自我纠错和信息累积。该机制让模型突破纯生成的局限，提升了对需要实时信息检索、数值计算或特定业务接口的任务的完成度。
-
----
-## 评论
-
-#### 核心观点
-
-ReAct的价值在于将大模型的“思考”与“行动”真正闭环，让模型从被动的答案生成者转变为主动的任务执行者。这不仅是技术上的改进，更是一种范式转换——大模型终于能够“动手”而不只是“动嘴”。
-
-#### 支撑理由
-
-**事实陈述**：ReAct采用Thought-Action-Observation的循环结构，模型在每个步骤中先推理（Thought），再决定采取什么行动（Action），然后观察结果（Observation），循环往复直到任务完成。这种设计让大模型能够调用外部工具——如搜索引擎、API接口、代码解释器——来突破自身知识库的局限。
-
-**作者观点**：这种“边想边做”的机制更贴近人类解决问题的真实认知过程。我们很少有人能一次性想清楚所有步骤后再行动，往往是在行动中不断调整策略。ReAct承认了推理的渐进性，这是一个更务实的定位。
-
-**你的推断**：ReAct很可能会成为AI Agent（智能体）架构的核心组件，而非只是一个临时性的技巧。随着工具生态的丰富，ReAct的表现边界会持续扩展，未来有望看到更复杂的自主Agent系统。
-
-#### 边界条件
-
-ReAct并非万能。首先，工具的质量直接决定系统上限——如果搜索引擎返回错误信息，模型再强也无济于事。其次，推理链越长，错误累积的风险越高，可能导致“一步错、步步错”的连锁反应。此外，多轮交互带来的计算成本和延迟也是实际部署中必须权衡的因素。最后，模型对工具返回结果的“观察”能力仍受限于其语义理解水平，噪音信息的过滤仍是挑战。
-
-#### 实践启发
-
-在实践中应用ReAct，建议从相对封闭、可控的场景切入，比如代码调试、数据分析等，明确工具的使用边界。设计错误恢复机制至关重要——当某一步骤失败时，系统应有回退或重试的策略。同时，监控推理链的长度与成本，避免为简单任务付出不必要的代价。对于开发者而言，选择合适的工具集并持续优化工具描述（prompts），往往比追求更强大的推理模型更能提升整体效果。ReAct打开了可能性，但真正落地仍需在工程细节上精打细算。
-
----
-## 学习要点
-
-- ReAct 将大模型的“思考”过程与“行动”过程有机结合，形成先推理后行动的迭代循环。
-- 通过在提示中显式插入 Thought、Action、Observation 步骤，使模型能够在内部推理的同时调用外部工具或查询信息。
-- 该框架显著降低模型幻觉，理由推理直接基于工具返回的观察结果进行校正。
-- 在多跳问答、复杂决策和交互式任务上，ReAct 明显提升准确率和成功率。
-- 每一步显式记录思考与行动，使模型的推理过程可追溯、可解释，便于调试。
-- ReAct 可与多种外部资源（如搜索 API、数据库、代码执行器）灵活组合，实现跨领域通用性。
-- 通过在循环中反复审视和修正中间结果，模型能够在长任务中实现自我纠错，提升鲁棒性。
-
----
-## 引用
-
-- **掘金原文**: [https://juejin.cn/post/7627365452814598154](https://juejin.cn/post/7627365452814598154)
-
-> 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
-
----
-
-## 站内链接
-
-- 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)
-- 标签： [ReAct](/tags/react/) / [LLM](/tags/llm/) / [推理链](/tags/%E6%8E%A8%E7%90%86%E9%93%BE/) / [工具调用](/tags/%E5%B7%A5%E5%85%B7%E8%B0%83%E7%94%A8/) / [Prompt工程](/tags/prompt%E5%B7%A5%E7%A8%8B/) / [思维模式](/tags/%E6%80%9D%E7%BB%B4%E6%A8%A1%E5%BC%8F/) / [自我纠错](/tags/%E8%87%AA%E6%88%91%E7%BA%A0%E9%94%99/) / [Agent](/tags/agent/)
-- 场景： [大语言模型](/scenarios/%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/)
-
-### 相关文章
-
-- [Agent Skills：AI 智能体技能框架]({{< relref "posts/20260203-hacker_news-agent-skills-0.md" >}})
-- [Agent Skills：智能体技能框架]({{< relref "posts/20260203-hacker_news-agent-skills-0.md" >}})
-- [OpenEnv实践：评估真实环境中的工具调用智能体]({{< relref "posts/20260212-blogs_podcasts-openenv-in-practice-evaluating-tool-using-agents-i-4.md" >}})
-- [OpenEnv实践：评估真实环境中的工具调用智能体]({{< relref "posts/20260212-blogs_podcasts-openenv-in-practice-evaluating-tool-using-agents-i-4.md" >}})
-- [OpenEnv 实战：评估真实环境中的工具调用智能体]({{< relref "posts/20260212-blogs_podcasts-openenv-in-practice-evaluating-tool-using-agents-i-4.md" >}})
-*本文由 AI Stack 自动生成，提供深度内容分析。*
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

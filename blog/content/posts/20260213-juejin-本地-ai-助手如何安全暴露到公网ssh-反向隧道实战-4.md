@@ -1,29 +1,35 @@
 ---
-title: SSH反向隧道实战：安全暴露本地AI助手至公网
+title: 历史来源恢复记录 · 掘金
 date: 2026-02-13 11:27:57+08:00
 draft: false
 entry_kind: auto
 tags: []
 categories: []
-source: juejin
-description: 历史条目已归档：现有正文未通过内容质量门，请查阅原始来源。
-external_url: https://juejin.cn/post/7605869591563092003
 scenarios: []
-content_mode: archived
-publication_tier: ARCHIVED
-source_provenance: legacy_no_snapshot
-source_support: 0.0
+source: juejin
+description: 历史来源恢复未成功；旧正文已移除，仅保留可审计归档记录。
+external_url: https://juejin.cn/post/7605869591563092003
 aliases: []
 archived: true
-archive_reason: historical_content_quality_gate
+content_mode: archived
+publication_tier: ARCHIVED
+source_provenance: historical_recovery_failed
+source_support: 0.0
+archive_reason: historical_source_recovery_failed
+recovery_failure_type: capture_validation_error
+recovery_failure_reason: capture_publication_validation_error
+recovery_attempted_at: '2026-07-18T04:21:16.767858Z'
 build:
   list: never
   render: always
 ---
 
-## 历史条目归档说明
+## 历史来源恢复说明
 
-该条目的历史正文未通过内容质量门，可能包含基于标题推测的内容。为避免继续传播不可核验文本，本站仅保留透明归档记录。
+该条目的公开来源恢复未能完成。为避免继续传播不可核验文本，旧正文未被保留，本页仅保存透明归档记录。
 
-- 历史内容质量门未通过
-- 原始来源：<https://juejin.cn/post/7605869591563092003>
+- **来源类型**: `juejin`
+- **恢复尝试时间**: `2026-07-18T04:21:16.767858Z`
+- **恢复失败类型**: `capture_validation_error`
+- **恢复失败原因**: `capture_publication_validation_error`
+- **原始来源**: [查看公开来源](<https://juejin.cn/post/7605869591563092003>)

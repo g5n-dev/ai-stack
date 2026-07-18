@@ -1,159 +1,50 @@
 ---
-title: 同构潜在空间频率桥接优化视频统一模型
+title: 'Lumos-Nexus: Efficient Frequency Bridging with Homogeneous Latent Space for
+  Video Unified Models'
 date: 2026-06-01 21:35:17+08:00
 draft: false
 entry_kind: auto
 tags:
-- 视频生成
-- 统一模型
-- 频率桥接
-- 同质潜在空间
-- 轻量对齐
-- 渐进细化
-- 开源生态
-- UPFB
+- ArXiv
 categories:
 - 论文
-- 大模型
+scenarios: []
 source: arxiv
-description: 视频统一生成模型在指令理解方面已取得显著进展，但将大容量高保真生成器纳入统一训练的计算开销限制了视觉质量的进一步突破。Lumos‑Nexus提出两阶段训练框架，在训练阶段仅更新轻量生成器以学习推理驱动的语义控制，推理阶段通过统一渐进频率桥接技术在共享潜在空间中逐步将生成任务转移至预训练大容量模型，实现粗到细的生成优化。
-external_url: http://arxiv.org/abs/2605.31603v1
-scenarios:
-- Web应用开发
-content_mode: legacy_analysis
-publication_tier: LEGACY
-source_provenance: legacy_no_snapshot
-source_support: 0.0
+description: 当前只保存了官方论文摘要，不代表论文全文。请以原始来源为准。
+external_url: https://arxiv.org/abs/2605.31603v1
+aliases: []
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: abstract
+source_snapshot_sha256: sha256:25debb0f1ea0cd20cc5504497b4645a944c39d358582e0ff20758d63fa0d04ba
+extractor_version: source-contract-v1
+discovery_method: arxiv_api
+fetch_status: captured
+source_completeness: abstract_only
+source_is_truncated: false
+source_support: 1.0
+source_title_chars_original: 96
+captured_at: '2026-07-18T04:29:58.207159Z'
+source_capture_sha256: sha256:7ed26bee5ba374e107b965863c9fec9b601f3d58ad5f2eae0a648bf692dc11e3
+source_capture_chars_original: 1456
+source_publication_excerpt_chars: 1456
 ---
 
 ## 基本信息
 
-- **ArXiv ID**: 2605.31603v1
+- **来源**: arxiv
+- **原始来源**: [https://arxiv.org/abs/2605.31603v1](<https://arxiv.org/abs/2605.31603v1>)
+- **作者**: Jiazheng Xing, Hangjie Yuan, Lingling Cai, Xinyu Liu, Yujie Wei, Fei Du, Hai Ci, Tao Feng, Jiasheng Tang, Weihua Chen, Fan Wang, Yong Liu
 - **分类**: cs.CV
-- **作者**: Jiazheng Xing, Hangjie Yuan, Lingling Cai, Xinyu Liu, Yujie Wei
-- **PDF**: [https://arxiv.org/pdf/2605.31603v1.pdf](https://arxiv.org/pdf/2605.31603v1.pdf)
-- **链接**: [http://arxiv.org/abs/2605.31603v1](http://arxiv.org/abs/2605.31603v1)
+- **论文时间**: 2026-05-29T17:59:50Z
+- **论文 PDF**: [https://arxiv.org/pdf/2605.31603v1.pdf](<https://arxiv.org/pdf/2605.31603v1.pdf>)
 
----
-## 导语
+## 来源摘要/节选
 
-视频统一生成模型在指令理解方面已取得显著进展，但将大容量高保真生成器纳入统一训练的计算开销限制了视觉质量的进一步突破。Lumos‑Nexus提出两阶段训练框架，在训练阶段仅更新轻量生成器以学习推理驱动的语义控制，推理阶段通过统一渐进频率桥接技术在共享潜在空间中逐步将生成任务转移至预训练大容量模型，实现粗到细的生成优化。该方法在VBench和VR‑Bench上的评测结果展示了其在视觉真实度和时序一致性上的提升，代码与模型已开源。
+> Connector-based video unified models have demonstrated strong capability in instruction-grounded video synthesis, but integrating a large high-fidelity generator into the unified training loop is computationally prohibitive, limiting achievable visual quality. We therefore propose Lumos-Nexus, a training-efficient unified video generation framework that facilitates the development of strong reasoning-driven generation capabilities while significantly enhancing visual fidelity. Lumos-Nexus adopts a two-stage design: 1\) During training, only a lightweight generator is aligned with the understanding block to learn to take in reasoning-driven semantic control. 2\) During inference, we introduce Unified Progressive Frequency Bridging \(UPFB\) to progressively hand off generation to a high-capacity pretrained generator in the shared latent space, enabling coarse-to-fine refinement and producing high-fidelity videos without compromising reasoning quality. To fill the gap in reasoning-driven video generation benchmarks, we introduce VR-Bench, which assesses a model's capability to translate inferred intent into coherent and semantically aligned video content. Extensive experiments demonstrate that Lumos-Nexus achieves substantial gains in visual realism and temporal coherence on VBench, while exhibiting strong reasoning-based generative performance on VR-Bench. Code and models are available at https://jiazheng-xing.github.io/nexus-lumos-home/.
 
----
-## 摘要
+## 来源说明
 
-#### 背景
-当前基于Connector的视频统一模型在指令引导的生成上表现良好，但将大容量高保真生成器纳入统一训练计算代价巨大，限制视觉质量提升。
+当前只保存了官方论文摘要，不代表论文全文。请以原始来源为准。
 
-#### 方法概述
-Lumos‑Nexus采用两阶段设计。训练阶段仅对轻量生成器进行对齐，使其在理解模块控制下学习推理驱动的语义控制；推理阶段引入统一渐进频率桥接（UPFB），在共享潜在空间中将生成任务逐步转移给预训练的大容量生成器，实现粗到细细化，兼顾推理质量与高保真。
-
-#### 核心技术
-- 轻量对齐训练：冻结大模型，仅更新轻量生成器，大幅降低显存和计算消耗。
-- 统一渐进频率桥接（UPFB）：多频率层逐步替换，低频到高频渐进补充细节，视觉细节平滑提升。
-- 同质潜在空间：理解与生成共享潜在表征，保证语义控制信息有效传递。
-
-#### 评测与结果
-为评估推理驱动的视频生成能力，推出VR‑Bench。实验显示，Lumos‑Nexus在VBench上显著提升视觉真实度和时序一致性；在VR‑Bench上展现强推理生成性能。
-
-#### 开源资源
-代码与模型已在项目主页公开（https://jiazheng-xing.github.io/nexus-lumos-home/），便于复现与进一步研究。
-
----
-## 评论
-
-#### 论文声称与证据
-论文声称两阶段训练能在保持大模型质量的同时显著降低显存与计算成本。支撑点包括：仅对轻量生成器进行梯度更新，实现冻结大模型的对齐；在推理阶段使用统一渐进频率桥接（UPFB）逐步将生成任务从轻量模型转移至大容量模型。实验部分提供了标准指标（FID、FVD）和显存占用的对比数据，初步验证了计算节约与质量保持的可行性。
-
-#### 关键假设与潜在失效条件
-- **轻量对齐的有效性假设**：轻量生成器在冻结大模型的控制下能够学习到足够的语义控制。若对齐不足，频率桥接后期可能出现细节缺失或结构失真。
-- **共享潜在空间的兼容性假设**：两模型在同一潜在空间进行特征映射。空间不兼容会导致频率桥接时信息泄漏或噪声放大，尤其在高频层更为敏感。
-- **渐进频率层的调度假设**：低频到高频的逐步替换顺序与步数是否最优未充分论证。若层数过少，高频细节保留不足；若层数过多，推理时延可能抵消计算节约的优势。
-- **实验评估的局限**：当前指标侧重全局保真度，未对时序连贯性、动作细节进行细化评估，可能掩盖低频到高频转移过程中的时序伪影。
-
-#### 可验证方式与推断
-1. **层数与桥接步长的消融实验**：在不同层数、每层迭代次数下测量质量‑计算权衡，检验论文提出的最优调度是否具备鲁棒性。
-2. **潜在空间相似度度量**：使用分布距离（如KL散度）或对齐误差（Cosine相似度）量化轻量模型与冻结大模型在特征空间的一致性，直接验证兼容性假设。
-3. **跨域泛化测试**：在未见的视频类别（如动画、医学影像）上评估UPFB的迁移能力，确认高频细节补全不依赖于训练集的分布偏差。
-4. **时序一致性专项评估**：引入时序度量（如temporal flicker、动作连贯性评分），补充传统FID/FVD的不足，捕捉频率桥接过程中的潜在时序噪声。
-
-基于上述实验，若轻量对齐能够保持特征兼容且频率桥接层数可调至计算‑质量平衡点，Lumos‑Nexus 有望在实际部署中实现“大模型质量、轻量化开销”的双赢局面。否则，方法可能仍受限于对齐误差累积和潜在空间不匹配，需要额外的正则化或层级自适应策略来保证高保真生成。
-
----
-## 技术分析
-
-#### 研究背景
-- **摘要来源**：当前基于Connector 的视频统一模型在指令引导的生成上表现良好，但将大容量高保真生成器纳入统一训练计算代价巨大，限制视觉质量提升。
-- **推断**：随着生成模型参数规模增大，显存与算力需求呈指数级增长，导致大多数团队只能使用轻量模型进行端到端训练；因此两阶段或模块化方案成为解决资源瓶颈的潜在路径。
-
-#### 核心技术与理论
-##### 同质潜在空间
-- **摘要来源**：理解与生成共享潜在表征，保证语义控制信息有效传递。
-- **推断**：该设计隐含假设——语义特征在语言/视觉模型之间具备线性可分性，若此假设不成立，语义控制将失效。
-
-##### 轻量对齐训练
-- **摘要来源**：训练阶段仅对轻量生成器进行对齐，冻结大模型，仅更新轻量生成器，大幅降低显存和计算消耗。
-- **推断**：此策略假设大模型已具备足够的高层语义信息，且轻量模型能够在冻结背景下学习有效的控制映射。
-
-##### 统一渐进频率桥接（UPFB）
-- **摘要来源**：在共享潜在空间中将生成任务逐步转移给预训练的大容量生成器，实现粗到细的细化，兼顾推理质量与高保真。
-- **理论**：多频率层逐步替换，低频到高频渐进补充细节，视觉细节平滑提升。
-- **假设**：频率层级之间的映射是单调且可逆的；若出现频率交叉或非线性，则渐进桥接可能产生伪影。
-
-#### 实验与结果
-- **摘要来源**：VR‑Bench 为新推出的推理驱动视频生成评估基准；在 VBench 上显著提升视觉真实度和时序一致性；在 VR‑Bench 上展现强推理生成性能。
-- **推断**：实验结果表明两阶段设计在保持低计算成本的同时，可有效利用大模型的细节恢复能力；但未提供与同等算力单阶段模型的直接对比，难以量化“显著提升”的幅度。
-
-#### 应用前景与启示
-- **应用**：适合资源受限的移动端或云端部署；通过大模型后处理实现高质量视频生成。
-- **启示**：模块化（语义控制 + 细节恢复）是突破算力瓶颈的可复制思路；同质潜在空间为跨模态控制提供统一入口。
-
-#### 关键假设与潜在失效
-| 假设 | 潜在失效条件 | 可证伪方式 |
-|------|--------------|------------|
-| 大模型冻结后仍保持语义完整性 | 若大模型在冻结阶段出现权重漂移或任务冲突 | 在冻结前后对比语义特征分布变化 |
-| 轻量生成器能够在冻结背景下学习有效映射 | 控制信号噪声大或潜在空间不兼容 | 通过不同随机种子、噪声级别的消融实验 |
-| 频率桥接的单调可逆性 | 频率层之间存在非线性交叉导致细节丢失 | 逐层可视化频率残差、检查重建误差的层级递增情况 |
-| 同质潜在空间能够跨模态传递控制信息 | 跨模态对齐不充分导致语义错位 | 使用不同语言提示的语义一致性度量（如BLEU、CLIP Score）进行评估 |
-
-#### 相关工作对比
-- **Connector 系列**：端到端统一模型在指令跟随上表现好，但算力需求高。Lumos‑Nexus 通过冻结大模型、将生成任务解耦，实现同等质量下的显存削减。
-- **两阶段生成（如 T2V‑Adapter、Dual‑Generator）**：通常采用独立的控制编码器与生成器，未强调同质潜在空间；UPFB 的渐进频率策略在细节恢复上更具系统性。
-- **频率分解方法（如频域迁移）**：侧重单帧图像提升，未考虑视频时序一致性；Lumos‑Nexus 将频率桥接嵌入统一潜在空间，兼顾时序与空间细节。
-
-> **总结**：Lumos‑Nexus 通过轻量对齐与统一渐进频率桥接，实现低资源占用的同时利用大模型提升视觉质量。其核心贡献在于同质潜在空间的语义-生成共享以及频率层的可控渐进转移。实验验证了推理驱动生成的有效性，但仍需在更广泛数据集和跨模态任务上进一步检验假设的可推广性。
-
----
-## 学习要点
-
-- 同质潜在空间（Homogeneous Latent Space）将不同视频任务统一到同一表示空间，实现跨任务权重共享和多任务协同学习。
-- 频率桥接（Frequent Bridging）机制在低层细节与高层语义之间高效传递高频信息，显著提升视频生成的细节质量和时序一致性。
-- 轻量化频率聚合模块仅使用少量参数完成多尺度频率交互，保持模型计算效率的同时增强特征融合。
-- 统一的视频模型同时支持生成、预测、分割等多种任务，减少了模型维护成本并提升了训练资源利用率。
-- 在多个基准数据集上，Lumos‑Nexus 在质量和速度上均超越针对单一任务的专用模型，尤其在长时序视频生成任务中表现突出。
-- 代码与预训练模型已开源，为研究复现和后续扩展提供便利。
-
----
-## 引用
-
-- **ArXiv**: [http://arxiv.org/abs/2605.31603v1](http://arxiv.org/abs/2605.31603v1)
-- **PDF**: [https://arxiv.org/pdf/2605.31603v1.pdf](https://arxiv.org/pdf/2605.31603v1.pdf)
-
-> 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
-
----
-
-## 站内链接
-
-- 分类： [论文](/categories/%E8%AE%BA%E6%96%87/) / [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)
-- 标签： [视频生成](/tags/%E8%A7%86%E9%A2%91%E7%94%9F%E6%88%90/) / [统一模型](/tags/%E7%BB%9F%E4%B8%80%E6%A8%A1%E5%9E%8B/) / [频率桥接](/tags/%E9%A2%91%E7%8E%87%E6%A1%A5%E6%8E%A5/) / [同质潜在空间](/tags/%E5%90%8C%E8%B4%A8%E6%BD%9C%E5%9C%A8%E7%A9%BA%E9%97%B4/) / [轻量对齐](/tags/%E8%BD%BB%E9%87%8F%E5%AF%B9%E9%BD%90/) / [渐进细化](/tags/%E6%B8%90%E8%BF%9B%E7%BB%86%E5%8C%96/) / [开源生态](/tags/%E5%BC%80%E6%BA%90%E7%94%9F%E6%80%81/) / [UPFB](/tags/upfb/)
-- 场景： [Web应用开发](/scenarios/web%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/)
-
-### 相关文章
-
-- [VideoGPA：提取几何先验实现三维一致视频生成]({{< relref "posts/20260202-arxiv_ai-videogpa-distilling-geometry-priors-for-3d-consist-0.md" >}})
-- [VideoGPA：提取几何先验实现三维一致性视频生成]({{< relref "posts/20260202-arxiv_ai-videogpa-distilling-geometry-priors-for-3d-consist-0.md" >}})
-- [DreamDojo：基于大规模人类视频的通用机器人世界模型]({{< relref "posts/20260209-arxiv_ai-dreamdojo-a-generalist-robot-world-model-from-larg-4.md" >}})
-- [UniT：统一多模态思维链测试时扩展方法]({{< relref "posts/20260213-arxiv_ai-unit-unified-multimodal-chain-of-thought-test-time-1.md" >}})
-- [UniT：统一多模态思维链测试时扩展]({{< relref "posts/20260213-arxiv_ai-unit-unified-multimodal-chain-of-thought-test-time-1.md" >}})
-*本文由 AI Stack 自动生成，深度解读学术研究。*
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

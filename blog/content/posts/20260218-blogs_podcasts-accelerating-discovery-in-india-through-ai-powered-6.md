@@ -1,33 +1,39 @@
 ---
-title: DeepMind在印度推动AI科学与教育规模化发展
+title: 历史来源恢复记录 · 博客与播客
 date: 2026-02-18 16:04:21+08:00
 draft: false
 entry_kind: auto
 tags: []
 categories: []
-source: blogs_podcasts
-description: 历史条目已归档：现有正文未通过内容质量门，请查阅原始来源。
-external_url: https://deepmind.google/blog/accelerating-discovery-in-india-through-ai-powered-science-and-education
 scenarios: []
+source: blogs_podcasts
+description: 历史来源恢复未成功；旧正文已移除，仅保留可审计归档记录。
+external_url: https://deepmind.google/blog/accelerating-discovery-in-india-through-ai-powered-science-and-education
 aliases:
 - /posts/20260218-blogs_podcasts-accelerating-discovery-in-india-through-ai-powered-11/
 - /posts/20260218-blogs_podcasts-accelerating-discovery-in-india-through-ai-powered-9/
 - /posts/20260219-blogs_podcasts-accelerating-discovery-in-india-through-ai-powered-12/
 - /posts/20260219-blogs_podcasts-accelerating-discovery-in-india-through-ai-powered-13/
+archived: true
 content_mode: archived
 publication_tier: ARCHIVED
-source_provenance: legacy_no_snapshot
+source_provenance: historical_recovery_failed
 source_support: 0.0
-archived: true
-archive_reason: historical_content_quality_gate
+archive_reason: historical_source_recovery_failed
+recovery_failure_type: source_fetch_error
+recovery_failure_reason: source_article_incomplete
+recovery_attempted_at: '2026-07-18T04:22:23.866326Z'
 build:
   list: never
   render: always
 ---
 
-## 历史条目归档说明
+## 历史来源恢复说明
 
-该条目的历史正文未通过内容质量门，可能包含基于标题推测的内容。为避免继续传播不可核验文本，本站仅保留透明归档记录。
+该条目的公开来源恢复未能完成。为避免继续传播不可核验文本，旧正文未被保留，本页仅保存透明归档记录。
 
-- 历史内容质量门未通过
-- 原始来源：<https://deepmind.google/blog/accelerating-discovery-in-india-through-ai-powered-science-and-education>
+- **来源类型**: `blogs_podcasts`
+- **恢复尝试时间**: `2026-07-18T04:22:23.866326Z`
+- **恢复失败类型**: `source_fetch_error`
+- **恢复失败原因**: `source_article_incomplete`
+- **原始来源**: [查看公开来源](<https://deepmind.google/blog/accelerating-discovery-in-india-through-ai-powered-science-and-education>)

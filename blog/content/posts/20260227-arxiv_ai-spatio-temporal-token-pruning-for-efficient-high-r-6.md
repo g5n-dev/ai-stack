@@ -1,353 +1,51 @@
 ---
-title: 面向高效高分辨率GUI智能体的时空令牌剪枝
+title: Spatio-Temporal Token Pruning for Efficient High-Resolution GUI Agents
 date: 2026-02-27 02:54:04+08:00
 draft: false
 entry_kind: auto
 tags:
-- GUI Agent
-- Token Pruning
-- Qwen2-VL
-- 计算机视觉
-- 模型压缩
-- 多模态
-- 时空冗余
-- 高分辨率
+- ArXiv
+- AI Agent
 categories:
-- 大模型
 - 论文
-source: arxiv
-description: 纯视觉 GUI 智能体在处理高分辨率截图及历史轨迹时，常面临严重的时空冗余与效率瓶颈。为此，研究提出了 GUIPruner 这一免训练框架，通过时间自适应分辨率调整与分层结构感知裁剪，在消除历史冗余的同时保护了网格完整性。实验表明，该方法能有效防止大规模模型在高压缩率下的性能崩溃，但具体对推理延迟的量化影响无法从摘要确认。
-external_url: http://arxiv.org/abs/2602.23235v1
 scenarios:
-- Web应用开发
-content_mode: legacy_analysis
-publication_tier: LEGACY
-source_provenance: legacy_no_snapshot
-source_support: 0.0
+- AI/ML项目
+source: arxiv
+description: 当前只保存了官方论文摘要，不代表论文全文。请以原始来源为准。
+external_url: https://arxiv.org/abs/2602.23235v1
+aliases: []
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: abstract
+source_snapshot_sha256: sha256:cf6536da8fb9f9dd1b6dbb1f5c95462fb06b06e9dfa54daca099899c91d64546
+extractor_version: source-contract-v1
+discovery_method: arxiv_api
+fetch_status: captured
+source_completeness: abstract_only
+source_is_truncated: false
+source_support: 1.0
+source_title_chars_original: 70
+captured_at: '2026-07-18T04:30:44.821176Z'
+source_capture_sha256: sha256:4ac076fb0916a0ce436362f83d2b2dbece05e4abb8a854351c6a135f917e4bdc
+source_capture_chars_original: 1435
+source_publication_excerpt_chars: 1435
 ---
 
 ## 基本信息
 
-- **ArXiv ID**: 2602.23235v1
-- **分类**: cs.CV
+- **来源**: arxiv
+- **原始来源**: [https://arxiv.org/abs/2602.23235v1](<https://arxiv.org/abs/2602.23235v1>)
 - **作者**: Zhou Xu, Bowen Zhou, Qi Wang, Shuwen Feng, Jingyu Xiao
-- **PDF**: [https://arxiv.org/pdf/2602.23235v1.pdf](https://arxiv.org/pdf/2602.23235v1.pdf)
-- **链接**: [http://arxiv.org/abs/2602.23235v1](http://arxiv.org/abs/2602.23235v1)
+- **分类**: cs.CV
+- **论文时间**: 2026-02-26T17:12:40Z
+- **论文 PDF**: [https://arxiv.org/pdf/2602.23235v1.pdf](<https://arxiv.org/pdf/2602.23235v1.pdf>)
 
----
+## 来源摘要/节选
 
-## 导语
+> Pure-vision GUI agents provide universal interaction capabilities but suffer from severe efficiency bottlenecks due to the massive spatiotemporal redundancy inherent in high-resolution screenshots and historical trajectories. We identify two critical misalignments in existing compression paradigms: the temporal mismatch, where uniform history encoding diverges from the agent's "fading memory" attention pattern, and the spatial topology conflict, where unstructured pruning compromises the grid integrity required for precise coordinate grounding, inducing spatial hallucinations. To address these challenges, we introduce GUIPruner, a training-free framework tailored for high-resolution GUI navigation. It synergizes Temporal-Adaptive Resolution \(TAR\), which eliminates historical redundancy via decay-based resizing, and Stratified Structure-aware Pruning \(SSP\), which prioritizes interactive foregrounds and semantic anchors while safeguarding global layout. Extensive evaluations across diverse benchmarks demonstrate that GUIPruner consistently achieves state-of-the-art performance, effectively preventing the collapse observed in large-scale models under high compression. Notably, on Qwen2-VL-2B, our method delivers a 3.4x reduction in FLOPs and a 3.3x speedup in vision encoding latency while retaining over 94% of the original performance, enabling real-time, high-precision navigation with minimal resource consumption.
 
-纯视觉 GUI 智能体在处理高分辨率截图及历史轨迹时，常面临严重的时空冗余与效率瓶颈。为此，研究提出了 GUIPruner 这一免训练框架，通过时间自适应分辨率调整与分层结构感知裁剪，在消除历史冗余的同时保护了网格完整性。实验表明，该方法能有效防止大规模模型在高压缩率下的性能崩溃，但具体对推理延迟的量化影响无法从摘要确认。
+## 来源说明
 
----
+当前只保存了官方论文摘要，不代表论文全文。请以原始来源为准。
 
-## 摘要
-
-以下是该内容的中文总结：
-
-**论文标题：面向高效高分辨率 GUI 智能体的时空 Token 裁剪**
-
-**核心问题：**
-纯视觉 GUI 智能体虽然具备通用的交互能力，但在处理高分辨率截图和历史轨迹时，面临严重的时空冗余问题，导致效率瓶颈。现有的压缩范式主要存在两大缺陷：
-1.  **时间不匹配：** 统一的历史轨迹编码与智能体“衰减记忆”的注意力模式相悖。
-2.  **空间拓扑冲突：** 无结构的裁剪破坏了精确坐标定位所需的网格完整性，导致产生空间幻觉。
-
-**提出方案：**
-论文介绍了 **GUIPruner**，这是一个专为高分辨率 GUI 导航设计的**免训练框架**。它包含两个协同工作的模块：
-1.  **时间自适应分辨率（TAR）：** 基于衰减机制调整历史图像大小，消除历史冗余。
-2.  **分层结构感知裁剪（SSP）：** 优先保留交互式前景和语义锚点，同时保护全局布局结构。
-
-**实验结果：**
-在多个基准测试中，GUIPruner 始终达到最先进的性能，有效防止了大规模模型在高压缩率下的性能崩溃。以 **Qwen2-VL-2B** 模型为例，该方法实现了以下成效：
-*   **运算量降低 3.4 倍**（FLOPs reduction）。
-*   **视觉编码延迟降低 3.3 倍**（Speedup）。
-*   **保留了超过 94% 的原始性能**。
-
-**结论：**
-GUIPruner 使得智能体能够在最小资源消耗下，实现实时、高精度的导航。
-
----
-
-## 评论
-
-以下是对《Spatio-Temporal Token Pruning for Efficient High-Resolution GUI Agents》一文的深度学术评价。该论文针对纯视觉GUI智能体在处理高分辨率图像及长历史轨迹时的计算瓶颈，提出了GUIPruner这一免训练的裁剪框架。
-
-### 一、 研究创新性
-
-**论文声称：** 现有的Token裁剪方法（如基于相似度或重要性评分）在GUI领域失效，因为它们忽略了GUI任务的时空特性；GUIPruner通过解耦空间拓扑约束和时间衰减机制，实现了在不重训练模型前提下的高效推理。
-
-**证据：** 论文指出现有方法破坏了屏幕坐标的网格完整性，导致“空间幻觉”（即模型无法准确定位点击位置）。GUIPruner引入了“拓扑感知裁剪”，通过保留关键网格行/列来维持坐标映射；同时引入“时间衰减策略”，根据时间步距离动态分配Token预算。
-
-**推断与评价：**
-该研究的主要创新在于**“任务感知的压缩范式”**。传统的NLP或通用视觉压缩方法追求信息保留率的最大化，而GUI任务具有高度的结构化（窗口、按钮）和时序性（操作流）。
-*   **新发现：** 论文敏锐地指出了LLM/VLM在处理GUI时的“注意力衰减”现象——即模型并不需要均等地关注所有历史帧，这与人眼视觉习惯一致，但被以往的研究忽视。
-*   **方法创新：** 摒弃了端到端的训练式压缩（如ToMe），转而利用规则和启发式算法进行免训练压缩。这种方法虽然在“学术性感度”上不如训练型方法，但在工程落地上的风险极低，具有很强的实用主义色彩。
-
-### 二、 理论贡献
-
-**论文声称：** 提出了“空间拓扑冲突”与“时间不匹配”两个理论问题，并证明了维持网格完整性和模拟衰减记忆的必要性。
-
-**证据：** 文中推导了在像素空间进行非结构化裁剪会导致坐标映射函数 $f(x,y)$ 失效的数学逻辑；在时间维度上，论证了固定长度历史窗口无法捕捉动态变化的上下文重要性。
-
-**推断与评价：**
-*   **对Transformer理论的补充：** 该论文在某种程度上补充了Vision Transformers (ViT) 在结构化数据上的应用理论。它证明了对于具有强2D几何约束的任务，ViT的Patch Embedding不能被随意打散，**结构先验** 必须在Token化阶段被保留。
-*   **认知科学视角的验证：** “衰减记忆”假设实际上是对智能体内部认知状态的显式建模，这为理解多模态大模型如何处理长上下文提供了一个具体的实证案例。
-
-### 三、 实验验证
-
-**论文声称：** GUIPruner在多个基准测试（如AndroidWorld、Mind2Web等）中，在保持95%以上任务成功率的同时，显著降低了推理延迟和显存占用。
-
-**证据：** 论文展示了在不同分辨率（如4K分辨率）下的Token数量变化曲线，以及在单步操作时间和最终任务完成率上的对比数据。消融实验验证了时间衰减因子和网格保留率对性能的影响。
-
-**推断与评价：**
-*   **可靠性分析：** 实验设计较为全面，覆盖了不同的分辨率和模型规模。使用“任务成功率”作为核心指标而非单纯的视觉重建质量（如FID Score），是非常正确的选择，因为GUI Agent的核心是决策而非生成。
-*   **潜在漏洞：** 实验可能过于依赖“点击”类任务。如果GUI任务涉及大量的文本阅读（如长PDF阅读），简单的网格裁剪可能会切断文字的语义连贯性，导致理解错误。论文未充分展示在“密集文本理解”场景下的表现。
-
-### 四、 应用前景
-
-**论文声称：** 该框架是通用的，可即插即用于现有的VLM-based GUI Agent（如SeeClick, CogAgent等）。
-
-**证据：** 论文展示了GUIPruner应用于不同开源模型后的性能提升，且无需修改模型权重。
-
-**推断与评价：**
-*   **极高价值：** 随着手机、PC端侧AI的兴起，高分辨率屏幕（2K/4K）与端侧算力受限的矛盾日益突出。该技术直接解决了**“端侧部署”**的痛点，使得在手机上运行高性能GUI Agent成为可能。
-*   **成本效益：** 对于云服务提供商，该方法能大幅降低API调用的GPU显存成本，具有直接的商业化潜力。
-
-### 五、 可复现性与局限性
-
-**关键假设与失效条件：**
-1.  **假设：** GUI界面元素主要依附于特定的网格结构，且操作目标在空间上是稀疏的。
-2.  **假设：** 智能体的注意力严格遵循时间衰减规律，即很久以前的操作对当前决策影响极小。
-
-**可能的失效条件：**
-*   **复杂UI布局：** 如果UI设计极其紧凑、重叠严重或非网格化（如某些游戏界面、设计软件），保留网格行/列可能仍然保留了大量冗余信息，或误删了位于被裁剪列中的关键小按钮。
-*   **长程依赖任务：** 在某些需要“回溯”很久以前信息的任务中（如“对比十分钟前看到的那个价格和现在的价格”），时间衰减策略可能会过早丢弃关键信息，导致Agent“失忆”。
-
----
-
-## 研究最佳实践
-
-### 实践 1：构建基于语义相似度的时空剪枝模块
-
-**说明**:
-高分辨率 GUI 代理在处理屏幕截图时，输入的 Token 数量会随着分辨率的增加呈平方级增长，导致计算成本过高。该实践的核心在于引入一个轻量级的剪枝模块，该模块能够评估视觉 Token 的重要性。通过计算当前观测帧与历史帧（或初始参考帧）之间的语义相似度，识别并剔除那些包含冗余信息或静止内容的 Token（如未变化的背景、静态文本），从而显著减少进入大语言模型（LLM）的序列长度。
-
-**实施步骤**:
-1.  **特征提取**：使用视觉编码器（如 CLIP 或 SAM）提取当前屏幕截图的特征图。
-2.  **相似度计算**：计算当前帧特征与初始帧（或上一关键帧）特征的余弦相似度。
-3.  **重要性评分**：根据相似度得分生成重要性掩码，低分代表冗余或低变化区域。
-4.  **Token 筛选**：保留重要性得分高的 Token，丢弃低分 Token，形成稀疏的表示序列。
-
-**注意事项**:
-- 在剪枝过程中，必须保留鼠标光标附近的 Token，因为这是交互的核心区域。
-- 需设定最小保留阈值，防止过度剪枝导致丢失关键上下文信息。
-
----
-
-### 实践 2：实施分阶段的 Token 压缩策略
-
-**说明**:
-单纯的随机剪枝可能会丢失细粒度的 UI 信息（如小按钮或文本）。最佳实践是采用分阶段的压缩方法，首先在空间维度上对图像进行分块处理，然后在时间维度上进行对齐。具体而言，将图像分割为较大的 Patch（块），对每个 Patch 进行内部聚合，再根据时序变化决定是否保留该 Patch 的详细特征。这种方法既保留了全局布局，又减少了细节带来的 Token 开销。
-
-**实施步骤**:
-1.  **网格划分**：将高分辨率图像划分为非重叠的网格。
-2.  **空间聚合**：对每个网格内的特征进行池化或注意力聚合，将多个 Token 合并为一个代表性 Token。
-3.  **时序过滤**：对比当前帧与历史帧的聚合 Token，仅保留发生显著变化的网格 Token。
-4.  **序列重组**：将保留下来的 Token 重新排序，输入到 LLM 中。
-
-**注意事项**:
-- 网格的大小需要权衡，过大会导致交互目标模糊，过小则压缩效率不明显。
-- 确保重组后的序列保留原始的空间位置编码，以便 LLM 理解目标位置。
-
----
-
-### 实践 3：动态调整剪枝率与分辨率
-
-**说明**:
-并非所有任务都需要相同程度的视觉细节。例如，阅读长文档需要较高的文本清晰度，而点击大按钮则只需要粗略的布局信息。实施动态剪枝策略，根据任务的复杂度和当前的交互阶段（如探索阶段 vs. 操作阶段）动态调整剪枝率和输入分辨率，可以在保证性能的前提下最大化效率。
-
-**实施步骤**:
-1.  **任务分类**：设计一个分类器判断当前任务的类型（如“文本阅读”、“图标点击”、“拖拽操作”）。
-2.  **策略映射**：为不同任务类型预设不同的剪枝率。例如，阅读任务剪枝率低（保留更多 Token），点击任务剪枝率高。
-3.  **反馈机制**：根据 Agent 的操作成功率反馈，动态调整下一轮的剪枝激进程度。
-
-**注意事项**:
-- 避免在单次交互过程中频繁大幅度改变分辨率，这可能会导致视觉抖动，影响模型的连续性理解。
-- 需要建立基准测试，以确定不同任务下的最佳剪枝阈值。
-
----
-
-### 实践 4：保留高频交互区域的上下文
-
-**说明**:
-在 GUI Agent 的运行轨迹中，用户的操作通常集中在屏幕的特定区域（如光标附近、对话框中心）。通用的全局剪枝可能会误删这些关键区域的微小变化。最佳实践是结合“注意力机制”或“光标位置”，对高频交互区域实施低剪枝率甚至不剪枝的策略，而对边缘区域实施高剪枝率。
-
-**实施步骤**:
-1.  **焦点追踪**：实时获取鼠标光标或当前操作焦点的坐标。
-2.  **区域加权**：在计算 Token 重要性时，给焦点附近的 Token 额外的权重。
-3.  **非均匀剪枝**：在焦点周围保留高分辨率的 Token 密度，在远离焦点区域大幅降低 Token 密度。
-
-**注意事项**:
-- 焦点区域的半径需要根据屏幕分辨率和 UI 元素的大小进行自适应调整。
-- 确保焦点切换时，Token 的保留区域能够平滑过渡。
-
----
-
-### 实践 5：针对轻量级适配器的微调训练
-
-**说明**:
-直接在预训练的多模态大模型上应用剪枝可能会导致性能下降，因为模型期望完整的输入。最佳实践是引入额外的轻量级适配器或“剪枝感知”层。这些模块经过训练，能够理解被剪枝后的稀疏特征表示，并补偿
-
----
-
-## 学习要点
-
-- 提出了一种时空 Token 裁剪（STP）框架，通过移除冗余的视觉 Token，解决了高分辨率 GUI Agent 因计算量过大而难以在消费级 GPU 上部署的瓶颈。
-- 设计了空间裁剪模块，利用 OCR 文本边界框和显著性图作为指导，精准过滤掉背景噪声，仅保留与界面交互相关的关键视觉区域。
-- 设计了时间裁剪模块，通过计算相邻帧之间的余弦相似度，剔除高度重复的静态帧 Token，显著降低了多步推理中的冗余计算。
-- 该方法在保持模型性能（准确率）基本不变的前提下，将推理延迟降低了 2-3 倍，大幅提升了高分辨率场景下的交互效率。
-- 该框架具有即插即用的通用性，无需重新训练现有的基础模型（如 Qwen-VL），即可直接应用于现有的多模态 Agent 架构中。
-- 通过引入辅助损失函数进行微调，训练后的模型能够主动适应稀疏的 Token 输入，从而在低比特率下仍能维持对 GUI 任务的理解能力。
-
----
-
-## 学习路径
-
-### 阶段 1：基础理论与技术背景
-
-**学习内容**:
-- **计算机视觉基础**: 卷积神经网络 (CNN)、Vision Transformer (ViT) 及其变体 (如 Swin Transformer)。
-- **自然语言处理基础**: Transformer 架构、Token Embedding、注意力机制。
-- **多模态模型入门**: 理解视觉-语言模型 (VLM) 的基本架构，如 CLIP, BLIP。
-- **GUI Agent 基本概念**: 了解基于大模型的智能体如何通过感知屏幕像素进行操作。
-
-**学习时间**: 3-4周
-
-**学习资源**:
-- **课程**:斯坦福大学 CS231n (计算机视觉) & CS224n (NLP)。
-- **论文**: "Attention Is All You Need" (Transformer 原理), "An Image is Worth 16x16 Words" (ViT 原理)。
-- **博客**: Lil'Log 系列关于 Transformer 和 VLM 的文章。
-
-**学习建议**: 重点理解 Transformer 中的 Token 概念，以及图像如何被转化为 Patch Tokens。这是后续理解“剪枝”的物理基础。
-
----
-
-### 阶段 2：核心问题与模型架构
-
-**学习内容**:
-- **高分辨率处理的挑战**: 理解为什么高分辨率 GUI 截图会导致计算量爆炸 (复杂度与 Token 数量的平方关系)。
-- **现有 GUI Agent 架构**: 深入研究基于视觉的 Agent (如 SeeClick, CogAgent) 的工作流程。
-- **时空特性**: 理解视频数据中的时间维度 如何与空间维度 结合。
-- **效率优化技术**: 学习模型压缩的基础知识，包括知识蒸馏 和早期的 Token Pruning (如 DynamicViT)。
-
-**学习时间**: 4-6周
-
-**学习资源**:
-- **论文**: "CogAgent: A Visual Language Model for GUI Agents", "DynamicViT: Efficient Vision Transformers with Dynamic Token Sparsity"。
-- **项目**: 阅读 HuggingFace Transformers 库中 ViT 的源码实现。
-
-**学习建议**: 尝试复现简单的 ViT 模型，并计算不同分辨率下的 FLOPs (浮点运算数)，直观感受高分辨率带来的计算负担。
-
----
-
-### 阶段 3：算法原理精读
-
-**学习内容**:
-- **Spatio-Temporal Token Pruning 核心机制**:
-    - **空间剪枝**: 如何在单帧图像中识别并剔除不相关的背景 Token，保留前景 GUI 元素。
-    - **时间剪枝**: 如何在视频流 (多帧) 中检测冗余信息 (如静态背景)，仅处理变化区域。
-- **评分与决策策略**: 学习论文中用于评估 Token 重要性的标准 (如熵值、注意力分数)。
-- **训练策略**: 了解如何端到端训练这种稀疏模型，包括辅助损失函数 的设计。
-
-**学习时间**: 3-5周
-
-**学习资源**:
-- **核心论文**: "Spatio-Temporal Token Pruning for Efficient High-Resolution GUI Agents" (精读原文及附录)。
-- **相关论文**: "To Be or Not To Be: A Pruned Token Framework for Efficient Video Generation" (参考视频领域的剪枝思路)。
-
-**学习建议**: 绘制论文中的算法流程图，特别是关于 Token 在时间轴和空间轴上如何被筛选和传递的逻辑。手动推导 Token 数量减少带来的计算量节省公式。
-
----
-
-### 阶段 4：工程实现与实验复现
-
-**学习内容**:
-- **代码框架分析**: 熟悉 PyTorch 或 JAX 实现，特别是如何操作不规则的张量。
-- **算子实现**: 学习如何实现 Mask 操作，使得被剪枝的 Token 不参与后续的矩阵运算，且不破坏 Batch 训练。
-- **数据集处理**: 研究 GUI Agent 常用数据集 (如 AndroidWorld, Mind2Web) 的预处理流程。
-- **评估指标**: 理解 Agent 的任务成功率 与模型的计算效率 之间的权衡。
-
-**学习时间**: 4-6周
-
-**学习资源**:
-- **代码库**: GitHub 上搜索 "Efficient GUI Agents" 或 "Token Pruning PyTorch" 相关开源代码。
-- **工具**: TensorBoard 或 Weights & Biases (用于可视化 Token 剪枝率和注意力图)。
-
-**学习建议**: 尝试在一个小型的 ViT 模型上实现简单的 Token Pruning 层，验证其对推理速度的提升。重点关注论文中关于保持 Agent 性能不变的同时减少 FLOPs 的实验设置。
-
----
-
-## 常见问题
-
-### 什么是高分辨率 GUI Agent，为什么传统的视觉 Transformer 在处理它们时效率低下？
-
-高分辨率 GUI Agent 是指能够理解并操作图形用户界面（GUI）的智能体，通常需要处理高分辨率的屏幕截图以识别微小的 UI 元素（如图标、文本）。传统的视觉 Transformer（如 ViT）在处理这些图像时，计算复杂度与图像分辨率的平方成正比。为了看清细节，必须将图像切成大量的图块，导致 Token 数量激增，进而使得推理速度变慢且显存消耗巨大，难以在标准硬件上实现实时交互。
-
-### 本文提出的“时空 Token 剪枝”核心机制是什么？
-
-该机制旨在动态地丢弃视觉 Transformer 中不重要的 Token，以减少计算量。它包含两个维度的剪枝：
-1.  **空间剪枝：** 在单帧图像中，识别并剔除那些包含背景、无关内容或冗余信息的图块，仅保留包含关键 UI 元素的 Token。
-2.  **时间剪枝：** 在视频流或多帧交互序列中，利用帧与帧之间的相似性，跳过对那些相对于上一帧没有发生变化的 Token 的计算。
-通过这种“稀疏化”处理，模型能够以较低的算力开销处理高分辨率输入。
-
-### 该方法如何决定哪些 Token 应该被保留，哪些应该被剪枝？
-
-模型通常使用轻量级的评分网络或基于注意力图的分析来评估 Token 的重要性。具体来说，它会计算每个 Token 对于最终任务（如点击目标检测或动作预测）的贡献度（即重要性分数）。在空间上，包含丰富语义信息（如按钮、对话框）的区域得分较高；在时间上，发生剧烈运动或变化的区域得分较高。得分低于特定阈值的 Token 会在进入深层 Transformer 计算之前被移除。
-
-### 引入剪枝机制是否会降低 GUI Agent 的任务准确率？
-
-理论上，激进地剪枝可能会导致部分细微信息的丢失，从而影响准确率。然而，该研究表明，GUI 场景通常具有高度的空间稀疏性（大片的背景或空白区域）和时间冗余性（连续帧之间大部分区域静止）。通过智能地保留关键 Token，该方法可以在保持与密集模型相当的任务准确率（如在 AndroidWorld 或 OWA Benchmark 等数据集上的表现）的同时，显著降低计算成本。
-
-### 该技术对现有的 GUI Agent 基础模型（如基于 SeeClick、CogAgent 或 GPT-4V 的 Agent）有什么改进？
-
-该技术主要作为即插即用的加速模块，可以集成到现有的基于 Transformer 的 GUI Agent 架构中。改进主要体现在：
-1.  **吞吐量提升：** 允许 Agent 处理更高分辨率的屏幕截图（例如 4K），从而看清更多细节。
-2.  **延迟降低：** 减少了推理时间，使得 Agent 能够更快地响应用户指令或执行自动化任务。
-3.  **资源效率：** 降低了显存占用，使得在消费级显卡或边缘设备上部署高性能 GUI Agent 成为可能。
-
-### 这种剪枝方法在训练和推理阶段的难度如何？
-
-该方法的一个主要优势是它通常不需要重新训练整个庞大的基础模型。在推理阶段，它利用预训练模型现有的特征或通过微调一个轻量级的“剪枝网络”来决定 Token 的去留。这种设计使得它能够较容易地迁移到现有的多模态大模型（LMM）上，而无需付出巨大的重新训练成本。
-
-### 除了 GUI Agent，这项技术还能应用在哪些领域？
-
-**A:** 虽然本文专注于 GUI 场景，但“时空 Token 剪枝”的思想同样适用于其他需要处理高分辨率视频或图像序列的任务，例如：
-1.  **自动驾驶：** 处理车载摄像头的高清视频流，关注动态障碍物而忽略静态背景。
-2.  **视频会议：** 实时视频编码与传输，仅编码说话人变化的部分。
-3.  **长视频理解：** 在分析电影或监控录像时，快速跳过无变化的静止帧。
-
----
-
-## 引用
-
-- **ArXiv**: [http://arxiv.org/abs/2602.23235v1](http://arxiv.org/abs/2602.23235v1)
-- **PDF**: [https://arxiv.org/pdf/2602.23235v1.pdf](https://arxiv.org/pdf/2602.23235v1.pdf)
-
-> 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
-
----
-
-## 站内链接
-
-- 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)
-- 标签： [GUI Agent](/tags/gui-agent/) / [Token Pruning](/tags/token-pruning/) / [Qwen2-VL](/tags/qwen2-vl/) / [计算机视觉](/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/) / [模型压缩](/tags/%E6%A8%A1%E5%9E%8B%E5%8E%8B%E7%BC%A9/) / [多模态](/tags/%E5%A4%9A%E6%A8%A1%E6%80%81/) / [时空冗余](/tags/%E6%97%B6%E7%A9%BA%E5%86%97%E4%BD%99/) / [高分辨率](/tags/%E9%AB%98%E5%88%86%E8%BE%A8%E7%8E%87/)
-- 场景： [Web应用开发](/scenarios/web%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/)
-
-### 相关文章
-
-- [VideoGPA：提取几何先验实现三维一致视频生成]({{< relref "posts/20260202-arxiv_ai-videogpa-distilling-geometry-priors-for-3d-consist-0.md" >}})
-- [共享LoRA子空间实现近乎严格的持续学习]({{< relref "posts/20260206-arxiv_ai-shared-lora-subspaces-for-almost-strict-continual--0.md" >}})
-- [UniT：统一多模态思维链测试时扩展]({{< relref "posts/20260213-arxiv_ai-unit-unified-multimodal-chain-of-thought-test-time-1.md" >}})
-- [UniT：统一多模态思维链测试时扩展方法]({{< relref "posts/20260213-arxiv_ai-unit-unified-multimodal-chain-of-thought-test-time-1.md" >}})
-- [CoPE-VideoLM：基于编解码基元的高效视频语言模型]({{< relref "posts/20260216-arxiv_ai-cope-videolm-codec-primitives-for-efficient-video--2.md" >}})
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

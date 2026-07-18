@@ -1,111 +1,82 @@
 ---
-title: AI编码规则的npm包化实践
+title: 我自己写的第一个skills--project-core-standards
 date: 2026-05-02 11:11:10+08:00
 draft: false
 entry_kind: auto
 tags:
-- AI编码规范
-- npm包
-- Skill封装
-- 模块化
-- 版本管理
-- 跨IDE
-- 提示词工程
-- 自动化测试
+- 掘金
+- AI Agent
+- TypeScript
+- 命令行工具
+- 数据库
 categories:
 - AI 工程
-- 开发工具
-source: juejin
-description: 本文展示如何把 AI 编码规则封装成可发布的 npm 包，实现规则的模块化、版本化管理以及跨 IDE 复用。传统的 prompt 分散在项目中，维护成本高且难以统一，导致团队协作效率受限。通过将规范沉淀为基础设施，开发者可以快速搭建统一的
-  AI 开发标准体系，提升代码一致性并降低规范落地成本。
-external_url: https://juejin.cn/post/7634860379345092617
+- 数据
 scenarios:
 - AI/ML项目
-content_mode: legacy_analysis
-publication_tier: LEGACY
-source_provenance: legacy_no_snapshot
-source_support: 0.0
+- 命令行工具
+source: juejin
+description: 当前只保存了公开页面节选，不代表原文全文。请以原始来源为准。
+external_url: https://juejin.cn/post/7634860379345092617
+aliases: []
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: excerpt
+source_snapshot_sha256: sha256:586c02e28efb3951f63793fc6aa6b16246bf13dadf1c61507c65c926a59e5532
+extractor_version: source-contract-v1
+discovery_method: article_html_excerpt
+fetch_status: captured
+source_completeness: partial
+source_is_truncated: true
+source_support: 1.0
+source_title_chars_original: 38
+captured_at: '2026-07-18T04:19:46.806024Z'
+source_capture_sha256: sha256:bdd0bf50de1b5a29fee67a71d3b327f463411bd92bc5b06ca479678ac279eb8d
+source_capture_chars_original: 2633
+source_publication_excerpt_chars: 516
+source_truncation_reason: historical_excerpt_only,historical_publication_excerpt_limit
 ---
 
 ## 基本信息
 
-- **作者**: 去伪存真
-- **链接**: [https://juejin.cn/post/7634860379345092617](https://juejin.cn/post/7634860379345092617)
+- **来源**: juejin
+- **原始来源**: [https://juejin.cn/post/7634860379345092617](<https://juejin.cn/post/7634860379345092617>)
 
----
-## 导语
+## 来源摘要/节选
 
-本文展示如何把 AI 编码规则封装成可发布的 npm 包，实现规则的模块化、版本化管理以及跨 IDE 复用。传统的 prompt 分散在项目中，维护成本高且难以统一，导致团队协作效率受限。通过将规范沉淀为基础设施，开发者可以快速搭建统一的 AI 开发标准体系，提升代码一致性并降低规范落地成本。
+公开展示已截断至最多 800 个字符；请访问原始来源查看完整上下文。
 
+> 背景
+> 用 AI 写代码一段时间后，我发现一个很反直觉的问题：我们其实已经有一些“最佳实践”，但它们无法复用：
+> A 项目调教好的 AI，在 B 项目完全失忆
+> 规则散落在 prompt / 文档 / IDE 配置中，无法版本化
+> 每次新项目，都在重复“驯化 AI”
+> 既然代码可以用 Git 管理、用 NPM 分发，为什么 AI 规范还停留在“复制粘贴”？
+> 本质问题是：
+> 我一直把规则当“文本”，而不是“代码”。
+> 把规则当代码看
+> 如果把 AI 规则当作代码，它应该具备三个能力：
+> 可组合（Composable）
+> → 不同规则可以拆分、复用
+> 可分发（Distributable）
+> → 像 npm 包一样安装
+> 可演进（Versioned）
+> → 有版本、有变更记录
+> 否则它就不是工程资产，而只是碎片化经验沉淀。一个规范，如果不能被 install，那它本质上只是不成体系的经验。
+> Skill 的最小抽象模型
+> 那问题来了：
+> 一个“可安装的 AI 规范”，在工程上到底长什么样？
+> 最小结构其实非常简单：
+> my-skill/
+> ├── SKILL.md
+> ├── rules/
+> ├──
+> package
+> .json
+> 但真正的关键不是结构，而是它解决的问题。…
 
-## 摘要
+## 来源说明
 
-#### 背景
-传统 AI 编码规则散落在 prompt 文档、配置文件或 IDE 插件中，缺乏统一管理，导致难以维护、难以复用。
+当前只保存了公开页面节选，不代表原文全文。请以原始来源为准。
 
-#### 目标
-将 AI 编码规则封装为可安装的 **Skill**，通过 npm 包形式发布，实现规则的模块化、版本化以及跨 IDE 复用。
-
-#### 实现方式
-- 使用标准化的 JSON Schema 或 YAML 定义规则结构。
-- 在 npm 包中组织规则的元数据、默认实现与测试用例。
-- 提供统一加载接口，使 IDE、CI/CD、命令行工具均可读取并应用同一套规则。
-
-#### 优势
-1. **模块化**：规则可按功能或业务拆分，便于独立升级。
-2. **版本化**：借助 npm 语义化版本控制，实现规则的演进与回滚。
-3. **跨 IDE**：同一包可在 VS Code、JetBrains、Sublime 等编辑器中统一生效。
-4. **可测试**：规则配备单元测试，确保规范的一致性。
-
-#### 前景
-将 AI 开发规范当作基础设施来管理，可帮助团队快速落地统一的代码质量标准，提升 AI 辅助编程的可靠性与协作效率。
-
----
-## 评论
-
-将AI编码规则封装为可安装的npm包，这一思路充分利用了成熟的包管理生态，有望解决传统prompt分散、难以维护的核心痛点。
-
-#### 事实陈述
-
-npm是当前最成熟的JavaScript包管理平台，拥有完整的版本控制、分发和依赖解析机制。VS Code等主流IDE均支持通过扩展机制加载外部规则。这种技术组合为规则工程化提供了可行基础。
-
-#### 作者观点
-
-作者认为通过npm包形式可以实现AI开发规范的模块化、版本化与跨IDE复用。这一判断在技术层面具备可行性：将规则代码化为可执行模块，配合版本号管理，确实能够解决prompt难以追踪和复现的问题。
-
-#### 推断与边界条件
-
-我认为这种方式在团队内部推广时价值最为明显，原因在于内部包可以针对特定技术栈深度定制，版本迭代也更容易控制。但需要注意几个边界条件：其一，该方案依赖IDE的扩展支持，不同IDE之间的兼容性问题尚未完全解决；其二，规则的粒度划分需要经验积累，过细会导致包数量膨胀，过粗则失去灵活性；其三，包的维护成本不容忽视，尤其是规则涉及多个项目时，同步更新会成为持续投入点。
-
-#### 实践启发
-
-对于有意尝试的团队，建议从小范围试点开始，例如在单一项目中验证规则的完整生命周期。关键是要建立明确的规则贡献流程，包括评审机制和版本策略。随着经验积累，再考虑构建内部规则市场的可能性。
-
----
-## 学习要点
-
-- 请提供需要总结的具体内容，这样我才能帮助您提炼出关键要点。
-
----
-## 引用
-
-- **掘金原文**: [https://juejin.cn/post/7634860379345092617](https://juejin.cn/post/7634860379345092617)
-
-> 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
-
----
-
-## 站内链接
-
-- 分类： [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/) / [开发工具](/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/)
-- 标签： [AI编码规范](/tags/ai%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/) / [npm包](/tags/npm%E5%8C%85/) / [Skill封装](/tags/skill%E5%B0%81%E8%A3%85/) / [模块化](/tags/%E6%A8%A1%E5%9D%97%E5%8C%96/) / [版本管理](/tags/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/) / [跨IDE](/tags/%E8%B7%A8ide/) / [提示词工程](/tags/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B/) / [自动化测试](/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/)
-- 场景： [AI/ML项目](/scenarios/ai-ml%E9%A1%B9%E7%9B%AE/)
-
-### 相关文章
-
-- [Morph：在 GitHub 中嵌入 AI 代码审查视频]({{< relref "posts/20260204-hacker_news-show-hn-morph-videos-of-ai-testing-your-pr-embedde-10.md" >}})
-- [AI 代码审查的真实世界基准测试]({{< relref "posts/20260204-hacker_news-a-real-world-benchmark-for-ai-code-review-2.md" >}})
-- [Morph：在 GitHub 中嵌入 AI 测试 PR 的视频]({{< relref "posts/20260204-hacker_news-show-hn-morph-videos-of-ai-testing-your-pr-embedde-10.md" >}})
-- [The Death of Traditional Testing: Agentic Development B]({{< relref "posts/20260211-blogs_podcasts-the-death-of-traditional-testing-agentic-developme-0.md" >}})
-- [代理化开发加速传统测试消亡，JiTTesting 实现即时错误检测]({{< relref "posts/20260211-blogs_podcasts-the-death-of-traditional-testing-agentic-developme-0.md" >}})
-*本文由 AI Stack 自动生成，提供深度内容分析。*
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

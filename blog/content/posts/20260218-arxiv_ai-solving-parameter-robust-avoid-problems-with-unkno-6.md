@@ -1,29 +1,50 @@
 ---
-title: 利用强化学习解决未知可行性的参数鲁棒避障问题
+title: Solving Parameter-Robust Avoid Problems with Unknown Feasibility using Reinforcement
+  Learning
 date: 2026-02-18 21:10:38+08:00
 draft: false
 entry_kind: auto
-tags: []
-categories: []
-source: arxiv
-description: 历史条目已归档：现有正文未通过内容质量门，请查阅原始来源。
-external_url: http://arxiv.org/abs/2602.15817v1
+tags:
+- ArXiv
+categories:
+- 论文
 scenarios: []
-content_mode: archived
-publication_tier: ARCHIVED
-source_provenance: legacy_no_snapshot
-source_support: 0.0
+source: arxiv
+description: 当前只保存了官方论文摘要，不代表论文全文。请以原始来源为准。
+external_url: https://arxiv.org/abs/2602.15817v1
 aliases: []
-archived: true
-archive_reason: historical_content_quality_gate
-build:
-  list: never
-  render: always
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: abstract
+source_snapshot_sha256: sha256:eb4425ffaab3ec6bb6ae1d1f291a4dac7617d709cc7e131a68693a26d24b86ff
+extractor_version: source-contract-v1
+discovery_method: arxiv_api
+fetch_status: captured
+source_completeness: abstract_only
+source_is_truncated: false
+source_support: 1.0
+source_title_chars_original: 93
+captured_at: '2026-07-18T04:15:52.664467Z'
+source_capture_sha256: sha256:288e8ff7d0f4840723127b82dcd107735bc277fa4127781185686854d07a7965
+source_capture_chars_original: 1239
+source_publication_excerpt_chars: 1239
 ---
 
-## 历史条目归档说明
+## 基本信息
 
-该条目的历史正文未通过内容质量门，可能包含基于标题推测的内容。为避免继续传播不可核验文本，本站仅保留透明归档记录。
+- **来源**: arxiv
+- **原始来源**: [https://arxiv.org/abs/2602.15817v1](<https://arxiv.org/abs/2602.15817v1>)
+- **作者**: Oswin So, Eric Yang Yu, Songyuan Zhang, Matthew Cleaveland, Mitchell Black, Chuchu Fan
+- **分类**: cs.LG
+- **论文时间**: 2026-02-17T18:53:31Z
+- **论文 PDF**: [https://arxiv.org/pdf/2602.15817v1.pdf](<https://arxiv.org/pdf/2602.15817v1.pdf>)
 
-- 历史内容质量门未通过
-- 原始来源：<http://arxiv.org/abs/2602.15817v1>
+## 来源摘要/节选
+
+> Recent advances in deep reinforcement learning \(RL\) have achieved strong results on high-dimensional control tasks, but applying RL to reachability problems raises a fundamental mismatch: reachability seeks to maximize the set of states from which a system remains safe indefinitely, while RL optimizes expected returns over a user-specified distribution. This mismatch can result in policies that perform poorly on low-probability states that are still within the safe set. A natural alternative is to frame the problem as a robust optimization over a set of initial conditions that specify the initial state, dynamics and safe set, but whether this problem has a solution depends on the feasibility of the specified set, which is unknown a priori. We propose Feasibility-Guided Exploration \(FGE\), a method that simultaneously identifies a subset of feasible initial conditions under which a safe policy exists, and learns a policy to solve the reachability problem over this set of initial conditions. Empirical results demonstrate that FGE learns policies with over 50% more coverage than the best existing method for challenging initial conditions across tasks in the MuJoCo simulator and the Kinetix simulator with pixel observations.
+
+## 来源说明
+
+当前只保存了官方论文摘要，不代表论文全文。请以原始来源为准。
+
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

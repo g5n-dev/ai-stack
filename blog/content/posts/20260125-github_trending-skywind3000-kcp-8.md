@@ -1,29 +1,50 @@
 ---
-title: 🚀 KCP：极速可靠传输！🔥 GitHub之星Skywind3000力作！⚡️
+title: skywind3000/kcp
 date: 2026-01-25 12:39:55+08:00
 draft: false
 entry_kind: auto
-tags: []
-categories: []
-source: github_trending
-external_url: https://github.com/skywind3000/kcp
-content_mode: archived
-publication_tier: ARCHIVED
-source_provenance: legacy_no_snapshot
-source_support: 0.0
-description: 历史条目已归档：现有正文未通过内容质量门，请查阅原始来源。
+tags:
+- GitHub
+categories:
+- 开源生态
 scenarios: []
+source: github_trending
+description: 当前只保存了来源元数据，未抓取完整正文。请以原始来源为准。
+external_url: https://github.com/skywind3000/kcp
 aliases: []
-archived: true
-archive_reason: historical_content_quality_gate
-build:
-  list: never
-  render: always
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: metadata_only
+source_snapshot_sha256: sha256:2004f31dd2aa19a2c3df1b97443702274870a011d594d743e62fa9a1fb8fc032
+extractor_version: source-contract-v1
+discovery_method: repository_metadata
+fetch_status: captured
+source_completeness: metadata_only
+source_is_truncated: false
+source_support: 1.0
+source_title_chars_original: 15
+captured_at: '2026-07-18T04:11:28.040859Z'
+source_capture_sha256: sha256:bf046bb66a64fc32952b1567e3e59d1021c92364754f6bb5bf6e719918c617f8
+source_capture_chars_original: 44
+source_publication_excerpt_chars: 44
 ---
 
-## 历史条目归档说明
+## 基本信息
 
-该条目的历史正文未通过内容质量门，可能包含基于标题推测的内容。为避免继续传播不可核验文本，本站仅保留透明归档记录。
+- **来源**: github\_trending
+- **原始来源**: [https://github.com/skywind3000/kcp](<https://github.com/skywind3000/kcp>)
+- **主要语言**: C
+- **Stars**: 16828
+- **Forks**: 2618
+- **许可证**: MIT
+- **Topics**: accelerator, ack, arq, c, kcp, kcptun, low-latency, protocol, quic, rtc, rtt, socket, srt, tunnel, udp
 
-- 历史内容质量门未通过
-- 原始来源：<https://github.com/skywind3000/kcp>
+## 已保存元数据
+
+:zap: KCP - A Fast and Reliable ARQ Protocol
+
+## 来源说明
+
+当前只保存了来源元数据，未抓取完整正文。请以原始来源为准。
+
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

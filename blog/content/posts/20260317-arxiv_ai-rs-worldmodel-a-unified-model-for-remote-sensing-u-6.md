@@ -1,29 +1,50 @@
 ---
-title: RS-WorldModel：遥感理解与未来预测统一模型
+title: 'RS-WorldModel: a Unified Model for Remote Sensing Understanding and Future
+  Sense Forecasting'
 date: 2026-03-17 03:25:32+08:00
 draft: false
 entry_kind: auto
-tags: []
-categories: []
-source: arxiv
-description: 历史条目已归档：现有正文未通过内容质量门，请查阅原始来源。
-external_url: http://arxiv.org/abs/2603.14941v1
+tags:
+- ArXiv
+categories:
+- 论文
 scenarios: []
+source: arxiv
+description: 当前只保存了官方论文摘要，不代表论文全文。请以原始来源为准。
+external_url: https://arxiv.org/abs/2603.14941v1
 aliases: []
-content_mode: archived
-publication_tier: ARCHIVED
-source_provenance: legacy_no_snapshot
-source_support: 0.0
-archived: true
-archive_reason: historical_content_quality_gate
-build:
-  list: never
-  render: always
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: abstract
+source_snapshot_sha256: sha256:e2bda02197f81e247e044d77606297d8b78372b8fa7e672090501ee04cd344b1
+extractor_version: source-contract-v1
+discovery_method: arxiv_api
+fetch_status: captured
+source_completeness: abstract_only
+source_is_truncated: false
+source_support: 1.0
+source_title_chars_original: 92
+captured_at: '2026-07-18T04:28:41.690884Z'
+source_capture_sha256: sha256:dc2226db6d86119a061700adc7c50e5b9db4116cd9c50662c14127e554d69dbd
+source_capture_chars_original: 1177
+source_publication_excerpt_chars: 1177
 ---
 
-## 历史条目归档说明
+## 基本信息
 
-该条目的历史正文未通过内容质量门，可能包含基于标题推测的内容。为避免继续传播不可核验文本，本站仅保留透明归档记录。
+- **来源**: arxiv
+- **原始来源**: [https://arxiv.org/abs/2603.14941v1](<https://arxiv.org/abs/2603.14941v1>)
+- **作者**: Linrui Xu, Zhongan Wang, Fei Shen, Gang Xu, Huiping Zhuang, Ming Li, Haifeng Li
+- **分类**: cs.AI
+- **论文时间**: 2026-03-16T07:45:15Z
+- **论文 PDF**: [https://arxiv.org/pdf/2603.14941v1.pdf](<https://arxiv.org/pdf/2603.14941v1.pdf>)
 
-- 历史内容质量门未通过
-- 原始来源：<http://arxiv.org/abs/2603.14941v1>
+## 来源摘要/节选
+
+> Remote sensing world models aim to both explain observed changes and forecast plausible futures, two tasks that share spatiotemporal priors. Existing methods, however, typically address them separately, limiting cross-task transfer. We present RS-WorldModel, a unified world model for remote sensing that jointly handles spatiotemporal change understanding and text-guided future scene forecasting, and we build RSWBench-1.1M, a 1.1 million sample dataset with rich language annotations covering both tasks. RS-WorldModel is trained in three stages: \(1\) Geo-Aware Generative Pre-training \(GAGP\) conditions forecasting on geographic and acquisition metadata; \(2\) synergistic instruction tuning \(SIT\) jointly trains understanding and forecasting; \(3\) verifiable reinforcement optimization \(VRO\) refines outputs with verifiable, task-specific rewards. With only 2B parameters, RS-WorldModel surpasses open-source models up to 120$ \\times $ larger on most spatiotemporal change question-answering metrics. It achieves an FID of 43.13 on text-guided future scene forecasting, outperforming all open-source baselines as well as the closed-source Gemini-2.5-Flash Image \(Nano Banana\).
+
+## 来源说明
+
+当前只保存了官方论文摘要，不代表论文全文。请以原始来源为准。
+
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

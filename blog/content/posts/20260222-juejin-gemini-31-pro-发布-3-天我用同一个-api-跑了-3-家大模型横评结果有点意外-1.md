@@ -1,170 +1,35 @@
 ---
-title: Gemini 2.5 Pro实测：同API对比三款大模型找Bug能力
+title: 历史来源恢复记录 · 掘金
 date: 2026-02-22 09:52:55+08:00
 draft: false
 entry_kind: auto
-tags:
-- Gemini
-- Claude
-- GPT
-- 模型横评
-- 代码调试
-- API测试
-- 性价比
-- 多模型协作
-categories:
-- 大模型
-- AI 工程
+tags: []
+categories: []
+scenarios: []
 source: juejin
-description: Gemini 3.1 Pro 发布后，其宣称的性能提升引发了广泛关注。为了验证其在实际开发场景中的表现，我们选取了一段包含三个典型 Bug
-  的代码，通过统一 API 调用，让 Gemini、Claude 与 GPT-5 进行了同台实测。结果显示，不同模型在代码定位与修复能力上的差异，远超许多开发者的预期。
+description: 历史来源恢复未成功；旧正文已移除，仅保留可审计归档记录。
 external_url: https://juejin.cn/post/7608028493722075142
-scenarios:
-- Web应用开发
-content_mode: legacy_analysis
-publication_tier: LEGACY
-source_provenance: legacy_no_snapshot
+aliases: []
+archived: true
+content_mode: archived
+publication_tier: ARCHIVED
+source_provenance: historical_recovery_failed
 source_support: 0.0
+archive_reason: historical_source_recovery_failed
+recovery_failure_type: source_fetch_error
+recovery_failure_reason: http_status_404
+recovery_attempted_at: '2026-07-18T04:22:23.866326Z'
+build:
+  list: never
+  render: always
 ---
 
-## 基本信息
+## 历史来源恢复说明
 
-- **作者**: ofox
-- **链接**: [https://juejin.cn/post/7608028493722075142](https://juejin.cn/post/7608028493722075142)
+该条目的公开来源恢复未能完成。为避免继续传播不可核验文本，旧正文未被保留，本页仅保存透明归档记录。
 
----
-
-## 导语
-
-Gemini 3.1 Pro 发布后，其宣称的性能提升引发了广泛关注。为了验证其在实际开发场景中的表现，我们选取了一段包含三个典型 Bug 的代码，通过统一 API 调用，让 Gemini、Claude 与 GPT-5 进行了同台实测。结果显示，不同模型在代码定位与修复能力上的差异，远超许多开发者的预期。本文将详细还原测试过程，并提供多模型工作流代码与价格对比，助你根据业务需求做出更具性价比的选择。
-
----
-
-## 描述
-
-Gemini 3.1 Pro 实测横评：同一段含 3 个 bug 的代码，丢给 Gemini、Claude、GPT-5 找 bug，结果差距大到离谱。附价格对比和多模型工作流代码。
-
----
-
-## 摘要
-
-这篇文章主要分享了在 Google 发布 **Gemini 3.1 Pro** 三天后，作者使用同一段包含 3 个 bug 的代码，对 **Gemini 3.1 Pro**、**Claude** 和 **GPT-5**（推测指 GPT-4.5 或最新 OpenAI 模型）进行的横向评测对比结果。
-
-以下是核心内容的总结：
-
-**1. 测试方法：**
-作者使用 Python 脚本调用这三家大模型的 API，将一段故意编写了 3 个明显错误（逻辑错误、语法错误、边界条件问题）的代码发送给它们，要求模型找出 bug 并提供修复建议。整个过程通过自动化脚本运行，以确保公平和一致性。
-
-**2. 评测结果（差距离谱）：**
-*   **Claude：** 表现最为稳健。它精准地找出了全部 3 个 bug，解释清晰，修复代码可用性高。在处理复杂逻辑和细节方面依然保持了领先优势。
-*   **Gemini 3.1 Pro：** 表现令人惊喜，超越了 GPT-5。它成功找出了 2-3 个 bug（视具体提示词版本而定），回复速度极快，且在代码生成的上下文理解上非常流畅。作为 Pro 版本，其实力证明 Google 在追赶路线上取得了显著进步。
-*   **GPT-5：** 表现相对最差，结果“有点意外”。它仅找出了 1 个 bug，甚至对某些明显的错误视而不见，且给出的修复建议有时会出现幻觉或引入新问题。在这一轮代码 Debug 的实测中，它不仅落后于 Claude，也被新出的 Gemini 反超。
-
-**3. 价格对比：**
-*   **Gemini 3.1 Pro** 在性价比上极具竞争力，API 调用价格远低于 Claude 和 GPT 系列。
-*   Claude 价格最高，但考虑到其准确率，对于复杂任务仍具价值。
-*   GPT-5 价格较高，但实测表现与其价格不匹配，性价比在本次测试中最低。
-
----
-
-## 评论
-
-**文章核心论点：**
-该文章通过一个特定的代码纠错案例，对比了 Gemini 1.5 Pro、Claude 与 GPT-4o（文中误称为 GPT-5）的表现，试图论证 Gemini 在性价比上的优势。然而，受限于样本量过小及标题存在事实性偏差，其结论的普适性较弱。
-
-**深入评价与分析：**
-
-**1. 样本局限性与论证严谨性**
-*   **事实陈述：** 文章仅选取了包含 3 个特定类型 Bug 的代码作为单一测试集进行横向对比。
-*   **分析：** 这种基于单一案例的评测方式在统计学上缺乏严谨性。大模型在不同任务维度（如逻辑推理、代码生成、长文本理解）上的表现差异较大，仅凭“找 Bug”这一单项任务难以全面衡量模型的整体能力层级。
-*   **边界条件：** 若测试场景切换为“复杂系统架构设计”或“长上下文窗口指令跟随”，Claude 3.5 Sonnet 或 GPT-4o 通常表现出更强的鲁棒性。单一维度的测试结果不能直接等同于综合能力的排序。
-
-**2. 实用价值：工作流参考意义大于模型排名**
-*   **价值点：** 文章提供的“多模型 API 路由”代码示例具有一定的参考价值。这种“分配中端模型处理常规纠错，高端模型处理核心架构”的混合调用策略，确实有助于优化 API 调用成本。
-*   **风险提示：** 该工作流存在适用边界。在金融、医疗等高风险领域的代码审查中，仅依赖中端模型可能会漏掉非逻辑类的深层安全隐患（如特定类型的安全漏洞）。
-
-**3. 信息准确性与行业规范**
-*   **事实偏差：** 文章标题提及“GPT-5”，但截至当前知识截止点，OpenAI 尚未发布 GPT-5。文中极有可能是指代 GPT-4o 或 GPT-4 Turbo。
-*   **影响分析：** 这种命名上的不严谨容易在技术传播中产生误导，降低文章的专业可信度，也可能导致非技术背景的管理者在进行技术选型时产生误判。
-
-**4. 检验结论的可复现性建议**
-*   **扩展测试集：** 建议引入 HumanEval 或 MBPP 等标准代码基准测试集，或将 Bug 类型扩展至并发竞态、内存泄漏等更复杂的场景，以验证结论是否成立。
-*   **A/B 对比：** 在实际生产环境中进行对比测试，统计不同模型在代码审查中的“漏报率”和“误报率”，而不仅仅是单次成功的案例。
-
----
-
-## 学习要点
-
-- 在编程与逻辑推理能力的横向评测中，Gemini 3.1 Pro 的综合表现超越了 GPT-4o 和 Claude 3.5 Sonnet，位列第一。
-- Gemini 3.1 Pro 在处理长文本和复杂指令遵循方面表现出色，特别是在生成结构化数据（如 JSON）时稳定性极高。
-- 该模型在中文语境下的理解与生成能力有显著提升，能够精准识别并处理中文的细微语义差异。
-- 在处理需要极高准确性的“幻觉”问题上，Gemini 3.1 Pro 展现了比竞品更严谨的逻辑自洽性。
-- 尽管综合性能强劲，但在某些极具创意或发散性的文学创作任务中，其表现略逊于专门擅长创意的模型。
-- 实测表明，通过同一个 API 标准化调用不同模型，能有效排除环境干扰，得出更具客观性的横向对比结果。
-- 对于追求代码生成质量与逻辑严密性的开发者而言，Gemini 3.1 Pro 目前是一个极具性价比的优先选择。
-
----
-
-## 常见问题
-
-### 在本次横评中，Gemini 3.1 Pro 的测试结果如何？文章为何称其为“意外”？
-
-测试结果显示，Gemini 3.1 Pro 的性能表现良好，在部分测试维度中达到了与 GPT-4o 和 Claude 3.5 Sonnet 相当的水平。所谓的“意外”主要指：
-1.  **价格差异**：在输出质量接近的情况下，Gemini 3.1 Pro 的 API 调用价格低于另外两款模型。
-2.  **能力均衡**：在代码生成、长文本处理及逻辑推理测试中，该模型表现稳定，未出现明显短板，修正了部分用户对其早期版本性能不稳定的印象。
-
-### 在代码生成和逻辑推理方面，Gemini 3.1 Pro 与 GPT-4o 及 Claude 3.5 Sonnet 相比有哪些具体表现？
-
-在代码生成测试中，Gemini 3.1 Pro 展现了较高的准确率，处理复杂算法时逻辑清晰，生成的代码可用性较高。与 GPT-4o 相比，其在长上下文代码修改的测试中表现较为精准；与 Claude 3.5 Sonnet 相比，在部分特定逻辑题的测试中表现稳健，减少了逻辑断层的情况。
-
-### 测试是如何确保环境一致性和结果公平性的？
-
-为了确保公平性，测试使用了统一的 API 接口规范（通常基于 OpenAI 接口标准）调用这三款模型。测试方法主要包括：
-1.  **统一提示词**：对三个模型使用完全相同的 Prompt，减少指令理解带来的偏差。
-2.  **多场景覆盖**：涵盖创意写作、Python 脚本编写、数据提取及长文本摘要等场景。
-3.  **综合评估**：不仅考察输出结果的正确性，还记录了响应速度、Token 消耗及格式规范性，以反映模型在同等条件下的实际处理能力。
-
-### 对于开发者而言，迁移到 Gemini 3.1 Pro 的难度如何？API 兼容性表现怎样？
-
-迁移难度较低。Gemini API 目前支持 OpenAI 接口标准，或通过第三方网关（如 OneAPI）进行适配。开发者通常只需修改 Base URL 和 API Key，无需大幅调整业务代码逻辑。结合其 API 价格策略，对于成本敏感的项目或团队，是一个可供参考的选项。
-
-### Gemini 3.1 Pro 在长文本处理方面的实际表现如何？
-
-长文本处理是 Gemini 系列的功能特点之一，在 3.1 Pro 版本中保持了相关性能。在横评的长文本摘要测试中，它能够有效提取长上下文中的关键信息，未出现明显的“遗忘”现象。对于需要处理大量文档或长代码库的任务，该版本提供了相应的支持，且在长文本处理时的响应延迟控制在可接受范围内。
-
-### 尽管 Gemini 3.1 Pro 表现良好，为何目前的市场使用率似乎不及 ChatGPT？
-
-这主要受限于非技术因素：
-1.  **生态差异**：ChatGPT 和 Claude 拥有较为成熟的客户端和插件生态，用户粘性较高。
-2.  **访问限制**：Gemini 在部分地区的访问存在网络限制，影响了使用便利性。
-3.  **信任惯性**：开发者对 GPT-4 的稳定性有长期的使用习惯和信任，迁移新模型需要验证周期。文章旨在通过测试数据展示 Gemini 3.1 Pro 的实际技术能力，供用户参考。
-
-### 基于文章的“3 天横评”结论，对企业选型有哪些建议？
-
-基于本次横评，企业选型建议如下：
-1.  **代码与逻辑密集型任务**：可优先考虑 Gemini 3.1 Pro 或 Claude 3.5 Sonnet，Gemini 在成本控制上具有一定优势。
-2.  **通用客服与对话场景**：GPT-4o 在自然语言理解方面表现成熟，仍是稳妥选择，但 Gemini 3.1 Pro 也可作为备选方案进行测试。
-
----
-
-## 引用
-
-- **掘金原文**: [https://juejin.cn/post/7608028493722075142](https://juejin.cn/post/7608028493722075142)
-
-> 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
-
----
-
-## 站内链接
-
-- 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)
-- 标签： [Gemini](/tags/gemini/) / [Claude](/tags/claude/) / [GPT](/tags/gpt/) / [模型横评](/tags/%E6%A8%A1%E5%9E%8B%E6%A8%AA%E8%AF%84/) / [代码调试](/tags/%E4%BB%A3%E7%A0%81%E8%B0%83%E8%AF%95/) / [API测试](/tags/api%E6%B5%8B%E8%AF%95/) / [性价比](/tags/%E6%80%A7%E4%BB%B7%E6%AF%94/) / [多模型协作](/tags/%E5%A4%9A%E6%A8%A1%E5%9E%8B%E5%8D%8F%E4%BD%9C/)
-- 场景： [Web应用开发](/scenarios/web%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/)
-
-### 相关文章
-
-- [Agent Alcove：支持多模型在论坛中进行辩论]({{< relref "posts/20260211-hacker_news-show-hn-agent-alcove-claude-gpt-and-gemini-debate--17.md" >}})
-- [OpenAI 与 Anthropic 之争：Claude Opus 4.6 对决 GPT 5.3 Codex]({{< relref "posts/20260206-blogs_podcasts-ainews-openai-and-anthropic-go-to-war-claude-opus--0.md" >}})
-- [OpenAI 对决 Anthropic：Claude Opus 4.6 挑战 GPT-5.3 Codex]({{< relref "posts/20260206-blogs_podcasts-ainews-openai-and-anthropic-go-to-war-claude-opus--0.md" >}})
-- [OpenAI 对决 Anthropic：Claude Opus 4.6 挑战 GPT-5.3 Codex]({{< relref "posts/20260206-blogs_podcasts-ainews-openai-and-anthropic-go-to-war-claude-opus--0.md" >}})
-- [[AINews] OpenAI and Anthropic go to war: Claude Opus 4]({{< relref "posts/20260206-blogs_podcasts-ainews-openai-and-anthropic-go-to-war-claude-opus--0.md" >}})
+- **来源类型**: `juejin`
+- **恢复尝试时间**: `2026-07-18T04:22:23.866326Z`
+- **恢复失败类型**: `source_fetch_error`
+- **恢复失败原因**: `http_status_404`
+- **原始来源**: [查看公开来源](<https://juejin.cn/post/7608028493722075142>)

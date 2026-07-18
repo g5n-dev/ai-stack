@@ -1,114 +1,49 @@
 ---
-title: ELF：嵌入式语言流方法
+title: 'ELF: Embedded Language Flows'
 date: 2026-05-12 23:19:57+08:00
 draft: false
 entry_kind: auto
 tags:
-- ELF
-- 嵌入式语言流
-- 语言模型
-- 流模型
-- 深度学习
-- NLP
 - ArXiv
-- 模型压缩
 categories:
 - 论文
-- 大模型
+scenarios: []
 source: arxiv
-description: 'ELF: Embedded Language Flows聚焦于将语言序列建模为连续的潜在流，以期提升序列信息的表达能力。该研究提出一种基于可逆变换的嵌入式语言流框架，但具体实现与实验细节在摘要中未展开，无法从摘要确认其性能提升的实际幅度。该工作或为基于流的语言表示提供新思路，仍需后续实验验证。'
-external_url: http://arxiv.org/abs/2605.10938v1
-scenarios:
-- 自然语言处理
-content_mode: legacy_analysis
-publication_tier: LEGACY
-source_provenance: legacy_no_snapshot
-source_support: 0.0
+description: 当前只保存了官方论文摘要，不代表论文全文。请以原始来源为准。
+external_url: https://arxiv.org/abs/2605.10938v1
+aliases: []
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: abstract
+source_snapshot_sha256: sha256:b9ec299c1c7646d6271421ec1f59985b96a05386d5964b6811e41ad537223f2a
+extractor_version: source-contract-v1
+discovery_method: arxiv_api
+fetch_status: captured
+source_completeness: abstract_only
+source_is_truncated: false
+source_support: 1.0
+source_title_chars_original: 28
+captured_at: '2026-07-18T04:29:39.576255Z'
+source_capture_sha256: sha256:ccb6dbfc50788577cbacb7a4de2b44ecf11e936b46c89e0ba946c58f70011b80
+source_capture_chars_original: 1175
+source_publication_excerpt_chars: 1175
 ---
 
 ## 基本信息
 
-- **ArXiv ID**: 2605.10938v1
+- **来源**: arxiv
+- **原始来源**: [https://arxiv.org/abs/2605.10938v1](<https://arxiv.org/abs/2605.10938v1>)
+- **作者**: Keya Hu, Linlu Qiu, Yiyang Lu, Hanhong Zhao, Tianhong Li, Yoon Kim, Jacob Andreas, Kaiming He
 - **分类**: cs.CL
-- **作者**: Keya Hu, Linlu Qiu, Yiyang Lu, Hanhong Zhao, Tianhong Li
-- **PDF**: [https://arxiv.org/pdf/2605.10938v1.pdf](https://arxiv.org/pdf/2605.10938v1.pdf)
-- **链接**: [http://arxiv.org/abs/2605.10938v1](http://arxiv.org/abs/2605.10938v1)
+- **论文时间**: 2026-05-11T17:59:29Z
+- **论文 PDF**: [https://arxiv.org/pdf/2605.10938v1.pdf](<https://arxiv.org/pdf/2605.10938v1.pdf>)
 
----
-## 导语
+## 来源摘要/节选
 
-ELF: Embedded Language Flows聚焦于将语言序列建模为连续的潜在流，以期提升序列信息的表达能力。该研究提出一种基于可逆变换的嵌入式语言流框架，但具体实现与实验细节在摘要中未展开，无法从摘要确认其性能提升的实际幅度。该工作或为基于流的语言表示提供新思路，仍需后续实验验证。
+> Diffusion and flow-based models have become the de facto approaches for generating continuous data, e.g., in domains such as images and videos. Their success has attracted growing interest in applying them to language modeling. Unlike their image-domain counterparts, today's leading diffusion language models \(DLMs\) primarily operate over discrete tokens. In this paper, we show that continuous DLMs can be made effective with minimal adaptation to the discrete domain. We propose Embedded Language Flows \(ELF\), a class of diffusion models in continuous embedding space based on continuous-time Flow Matching. Unlike existing DLMs, ELF predominantly stays within the continuous embedding space until the final time step, where it maps to discrete tokens using a shared-weight network. This formulation makes it straightforward to adapt established techniques from image-domain diffusion models, e.g., classifier-free guidance \(CFG\). Experiments show that ELF substantially outperforms leading discrete and continuous DLMs, achieving better generation quality with fewer sampling steps. These results suggest that ELF offers a promising path toward effective continuous DLMs.
 
----
-## 摘要
+## 来源说明
 
-#### 背景
-扩散与流模型在图像、视频等连续数据生成中表现突出，近年来被尝试用于语言建模。当前领先的扩散语言模型（DLM）大多在离散词符上操作，生成质量与采样步数仍受限。
+当前只保存了官方论文摘要，不代表论文全文。请以原始来源为准。
 
-#### 核心设计
-- **连续嵌入空间**：ELF 在整个前向过程保持连续嵌入，仅在最后时间步通过共享权重的网络映射到离散词符。
-- **连续时间 Flow Matching**：采用连续时间流匹配作为生成过程，能够平滑地在嵌入空间进行噪声去除。
-- **技术迁移**：由于全程在连续空间，可直接借鉴图像域的成熟技巧，如无分类器引导（CFG），无需针对离散 token 做特殊改造。
-
-#### 实验结果
-在同等采样步数下，ELF 相比当前最好的离散与连续 DLM 均取得显著提升：生成质量更高、困惑度更低，且收敛所需的步数更少。消融实验验证了连续嵌入与 Flow Matching 的关键作用。
-
-#### 意义
-ELF 展示了在语言建模中保持连续嵌入的优势，提供了一条通过最小适配即可将图像域扩散技术迁移至语言模型的可行路径，为高效、可控的语言生成提供了新思路。
-
----
-## 技术分析
-
-#### 研究背景与动机
-
-扩散模型与流匹配模型在图像、视频等连续数据生成任务中已取得显著成功，展示了强大的生成能力。近年来，研究者开始尝试将这些技术迁移至语言建模领域。根据摘要，当前的扩散语言模型（DLM）大多在离散词符上操作，其生成质量与采样步数仍受到限制。这表明从连续空间到离散空间的转换可能带来信息损失或建模困难，从而推动了连续嵌入方案的研究需求。
-
-#### 核心方法设计
-
-ELF的核心设计包含三个关键创新点。首先是连续嵌入空间的保持，整个前向过程在连续嵌入空间中进行，仅在最后时间步通过共享权重的网络映射到离散词符。这种设计避免了早期方法中因直接在离散token上操作而引入的近似误差累积。其次是连续时间Flow Matching的采用，作为生成过程的核心机制，能够在嵌入空间中进行平滑的噪声去除，理论上可以获得更稳定的训练动态和更好的生成轨迹。第三是技术迁移的便利性，由于全程在连续空间运行，图像域的成熟技巧如无分类器引导（CFG）可以直接应用，无需针对离散token进行特殊改造。这一优势显著降低了将图像扩散技术迁移至语言模型的工程成本。
-
-#### 理论基础
-
-Flow Matching作为一种基于常微分方程的生成范式，通过定义从噪声分布到数据分布的连续路径实现生成。在ELF中，该框架与连续嵌入空间相结合，使得噪声去除过程可以在高维连续空间中进行，理论上能够更好地捕捉语言的语义结构而无需进行离散化近似。连续时间 formulation 使得模型可以灵活选择推理时的步数，这一特性在实验中被验证能够显著减少收敛所需的步数。
-
-#### 实验与结果分析
-
-根据摘要信息，在同等采样步数条件下，ELF相比当前最好的离散与连续DLM均取得显著提升，具体体现在生成质量更高、困惑度更低、收敛步数更少三个方面。消融实验验证了连续嵌入设计与Flow Matching机制各自的关键作用，表明这两个设计选择并非冗余而是相互增强的关系。然而，摘要未提供具体数值对比、模型规模或训练数据规模等细节，这些信息的缺失限制了对其相对改进幅度的精确评估。
-
-#### 应用前景与启示
-
-ELF展示了一条通过最小适配将图像域扩散技术迁移至语言模型的有效路径，具有重要的方法论意义。如果连续嵌入空间的设计能够 scale 至更大规模模型和更复杂任务，可能为构建更高效、更可控的语言生成系统提供新的技术基础。此外，该方法为探索语言表征的连续本质提供了实验平台，有助于理解离散符号与连续表示在语言建模中的作用机制。
-
-#### 关键假设与潜在失效条件
-
-ELF的核心假设是连续嵌入空间能够保留足够的语言信息且可以被有效学习。如果嵌入空间的结构与自然语言的离散本质存在根本性不兼容，例如某些需要精确离散决策的任务，该方法可能表现不佳。潜在失效条件包括：嵌入空间维度过高导致优化困难、连续表示对精确语法约束的表达能力不足、以及在推理时从连续空间到离散词符的映射引入额外误差。可证伪方式为：在严格的离散化任务（如精确序列复制或精确模板填充）上测试模型性能，若表现显著低于纯离散方法，则支持上述失效假设。
-
----
-## 学习要点
-
-- 请提供论文的具体内容或摘要，以便我能够为您总结出 5‑7 个关键要点。
-
----
-## 引用
-
-- **ArXiv**: [http://arxiv.org/abs/2605.10938v1](http://arxiv.org/abs/2605.10938v1)
-- **PDF**: [https://arxiv.org/pdf/2605.10938v1.pdf](https://arxiv.org/pdf/2605.10938v1.pdf)
-
-> 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
-
----
-
-## 站内链接
-
-- 分类： [论文](/categories/%E8%AE%BA%E6%96%87/) / [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)
-- 标签： [ELF](/tags/elf/) / [嵌入式语言流](/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%AF%AD%E8%A8%80%E6%B5%81/) / [语言模型](/tags/%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/) / [流模型](/tags/%E6%B5%81%E6%A8%A1%E5%9E%8B/) / [深度学习](/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/) / [NLP](/tags/nlp/) / [ArXiv](/tags/arxiv/) / [模型压缩](/tags/%E6%A8%A1%E5%9E%8B%E5%8E%8B%E7%BC%A9/)
-- 场景： [自然语言处理](/scenarios/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/)
-
-### 相关文章
-
-- [TIDE：扩散大语言模型的跨架构蒸馏方法]({{< relref "posts/20260430-arxiv_ai-turning-the-tide-cross-architecture-distillation-f-0.md" >}})
-- [从上下文学习比预期更难]({{< relref "posts/20260206-hacker_news-learning-from-context-is-harder-than-we-thought-6.md" >}})
-- [从上下文学习比预期更具挑战性]({{< relref "posts/20260206-hacker_news-learning-from-context-is-harder-than-we-thought-6.md" >}})
-- [从上下文学习的难度超出预期]({{< relref "posts/20260206-hacker_news-learning-from-context-is-harder-than-we-thought-6.md" >}})
-- [从上下文学习比预期更难]({{< relref "posts/20260206-hacker_news-learning-from-context-is-harder-than-we-thought-6.md" >}})
-*本文由 AI Stack 自动生成，深度解读学术研究。*
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

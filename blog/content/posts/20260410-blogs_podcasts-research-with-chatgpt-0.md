@@ -1,140 +1,56 @@
 ---
-title: ChatGPT搜索与深度研究功能教程
+title: Research with ChatGPT
 date: 2026-04-10 22:49:19+08:00
 draft: false
 entry_kind: auto
 tags:
-- ChatGPT
-- 搜索功能
-- 深度研究
-- AI 助手
-- 使用教程
-- 信息获取
-- 提示词技巧
-- 大模型应用
+- 博客与播客
+- AI Agent
 categories:
-- 大模型
-- 效率与方法论
-source: blogs_podcasts
-description: 学习如何使用 ChatGPT 进行研究，通过搜索和深度研究功能获取最新信息、分析来源并生成结构化的洞察。 ChatGPT 的搜索与深度研究功能为学术和行业研究提供了新的路径。在信息爆炸的时代，快速定位可靠来源、筛选噪声并生成结构化的洞察，是提升研究效率的关键。通过本指南，你可以掌握如何利用ChatGPT进行文献检索、来源评估和报告撰写，从而在短时间内完成高质量的研究成果。
-external_url: https://openai.com/academy/search-and-deep-research
+- AI 工程
 scenarios:
 - AI/ML项目
-content_mode: legacy_analysis
-publication_tier: LEGACY
-source_provenance: legacy_no_snapshot
-source_support: 0.0
+source: blogs_podcasts
+description: 当前只保存了公开页面节选，不代表原文全文。请以原始来源为准。
+external_url: https://openai.com/academy/search-and-deep-research
+aliases: []
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: excerpt
+source_snapshot_sha256: sha256:0a0ac4396409d8c8fd45721620d106bc174d39fabebf7ac68ae01c3bc1af1445
+extractor_version: source-contract-v1
+discovery_method: article_html_excerpt
+fetch_status: captured
+source_completeness: partial
+source_is_truncated: true
+source_support: 1.0
+source_title_chars_original: 21
+captured_at: '2026-07-18T04:19:32.366979Z'
+source_capture_sha256: sha256:8d3d0284b6436316bae4a8a27e4b43aa2ee7372e66c1145e1da46a911f9378c1
+source_capture_chars_original: 4873
+source_publication_excerpt_chars: 704
+source_truncation_reason: historical_publication_excerpt_limit
 ---
 
 ## 基本信息
 
-- **来源**: OpenAI Blog (blog)
-- **发布时间**: 2026-04-10T00:00:00+00:00
-- **链接**: [https://openai.com/academy/search-and-deep-research](https://openai.com/academy/search-and-deep-research)
+- **来源**: blogs\_podcasts
+- **原始来源**: [https://openai.com/academy/search-and-deep-research](<https://openai.com/academy/search-and-deep-research>)
 
----
-## 摘要/简介
+## 来源摘要/节选
 
-学习如何使用 ChatGPT 进行研究，通过搜索和深度研究功能获取最新信息、分析来源并生成结构化的洞察。
+公开展示已截断至最多 800 个字符；请访问原始来源查看完整上下文。
 
----
-## 导语
+> Use search and deep research to find, analyze, and synthesize information from across the web.
+>
+> ChatGPT can be a helpful research partner because it quickly brings together information from many sources, making it easier to explore ideas, spot patterns, and understand complex topics. By reasoning through context, citing sources, and producing clear, structured summaries, it helps turn open questions into well-defined insights.
+>
+> There are two different ways to search the public internet with ChatGPT— search and deep research . Below is an explanation of both, and when to use each.
+>
+> ChatGPT search allows ChatGPT to pull in the latest information from the internet directly into your conversations.…
 
-ChatGPT 的搜索与深度研究功能为学术和行业研究提供了新的路径。在信息爆炸的时代，快速定位可靠来源、筛选噪声并生成结构化的洞察，是提升研究效率的关键。通过本指南，你可以掌握如何利用ChatGPT进行文献检索、来源评估和报告撰写，从而在短时间内完成高质量的研究成果。
+## 来源说明
 
----
-## 摘要
+当前只保存了公开页面节选，不代表原文全文。请以原始来源为准。
 
-#### 搜索与深度研究
-- 使用 ChatGPT 的搜索功能快速获取最新网络信息，支持多语言查询。
-- 深度研究模式能够追踪来源、检索学术文献，并提供引用信息。
-
-#### 信息分析与结构化
-- 自动评估可信度，过滤噪音，生成摘要或要点列表。
-- 支持将结果整理为表格、流程图或思维导图，便于后续撰写报告。
-
-#### 实践建议
-- 明确研究目标，细化查询词，提升回答精准度。
-- 核对 ChatGPT 提供的来源，必要时手动补充或验证。
-- 利用多轮对话迭代深化，确保结论完整且逻辑连贯。
-
-#### 常见场景
-- **学术论文准备**：快速定位相关文献，生成文献综述框架。
-- **市场调研**：抓取行业报告、竞争情报，形成结构化报告。
-- **日常学习**：解答概念、梳理知识体系，提升学习效率。
-
-整体来看，ChatGPT 通过搜索与深度研究结合，可帮助用户高效获取最新信息、分析来源并输出结构化成果，但仍需用户主动复核与补充，以确保准确性。
-
----
-## 评论
-
-#### 核心观点
-ChatGPT在研究场景中的价值主要体现在快速定位信息、整合多源文本、提供结构化输出，但在权威性和实时性方面仍有限制，需要使用者主动校验。
-
-#### 支撑与边界
-事实陈述：ChatGPT依赖预训练模型的知识截至2024年，无法直接访问实时网络；作者观点认为它在“搜索+深度研究”链路中可显著提升效率；我的推断是随着插件和API的完善，未来或能弥补实时性缺陷。
-
-#### 实践建议
-使用时建议将ChatGPT的输出作为初稿或灵感来源，结合官方文档、学术论文或权威数据库进行二次核实；在构建查询时提供明确的上下文和约束，以提升答案的相关性；针对需要高可靠性的结论，仍需人工审查或使用专门的检索工具。持续关注模型更新，以便及时利用新功能。
-
----
-## 技术分析
-
-#### 核心观点与技术要点
-
-ChatGPT的研究功能代表了AI辅助知识探索的新范式。其Search功能通过实时网络检索突破了大语言模型的训练数据时效限制，能够获取当前时间点的最新信息。Deep Research则进一步整合了多轮检索、来源分析与内容综合能力，形成端到端的研究工作流。用户只需提出研究问题，系统即可自动执行检索策略、评估信息可信度、整合多源观点并生成结构化报告。
-
-关键技术架构包括：基于检索增强生成（RAG）的实时知识获取机制、多源信息的交叉验证与溯源能力、以及面向研究场景的输出结构化模板。这些技术协同实现了从开放式问答到系统性研究的跨越。
-
-#### 实际应用价值
-
-在学术研究场景中，Deep Research可辅助文献调研的初期阶段，帮助研究者快速定位相关领域的研究现状与关键论文，但需注意其生成的研究概述不能替代原始文献的深度阅读。在商业情报分析中，该工具能够快速整合行业动态、竞品信息和市场趋势，为决策提供参考框架。
-
-教育领域受益尤为明显：学生可用于课题研究的资料收集与初步分析，教师可借助其快速构建课程参考资料库。新闻工作者则可用于事实核查与背景资料整理，提升报道的准确性与效率。
-
-#### 行业影响
-
-ChatGPT研究功能的成熟正在重塑知识工作的生产方式。传统研究流程中的信息检索、筛选与整理环节被显著压缩，研究者可将精力集中于高阶分析与创新思考。这一变化对搜索引擎市场形成补充而非替代——它满足了用户对“答案”而非“链接列表”的需求。
-
-知识付费行业面临重新定位压力：基础信息整合的价值下降，而专业判断与深度洞察的需求上升。学术出版领域也在适应AI辅助研究的普及，需要建立新的学术规范与引用标准。
-
-#### 边界条件与实践建议
-
-**适用边界**：该工具最适合开放性课题的探索阶段和跨领域知识的快速扫盲。对于需要专业知识深度验证的敏感领域（如医疗诊断、法律建议），建议将AI生成内容作为起点而非最终依据。在涉及最新实验数据或未公开发表的研究时，AI检索能力存在明显局限。
-
-**实践建议**：使用者应培养批判性评估意识，区分“事实性陈述”与“推断性结论”。建议对关键信息进行二次溯源确认，特别是涉及数据引用和统计数字的内容。在使用AI生成的研究报告时，应明确标注辅助工具的使用，并保持对内容准确性的个人责任。
-
-#### 论证地图
-
-**中心命题**：ChatGPT的研究功能正在成为知识工作者的重要辅助工具，但需要配合人类判断才能发挥最大价值。
-
-**支撑理由**：实时检索能力弥补了LLM的时效缺陷；多源整合功能提升了信息获取效率；结构化输出降低了知识整理成本。
-
-**反例与边界**：对于高度专业化、需要同行评审验证的领域，AI生成内容可能存在专业术语误用或上下文理解偏差；在信息真空或网络受限环境下功能受限。
-
-**可验证方式**：通过对比同一研究课题下AI辅助与传统方法的研究效率和质量，可量化其实际效用。建议在受控实验中测试其在不同学科领域的准确率与局限性。
-
----
-## 引用
-
-- **文章/节目**: [https://openai.com/academy/search-and-deep-research](https://openai.com/academy/search-and-deep-research)
-- **RSS 源**: [https://openai.com/blog/rss.xml](https://openai.com/blog/rss.xml)
-
-> 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
-
----
-
-## 站内链接
-
-- 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [效率与方法论](/categories/%E6%95%88%E7%8E%87%E4%B8%8E%E6%96%B9%E6%B3%95%E8%AE%BA/)
-- 标签： [ChatGPT](/tags/chatgpt/) / [搜索功能](/tags/%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD/) / [深度研究](/tags/%E6%B7%B1%E5%BA%A6%E7%A0%94%E7%A9%B6/) / [AI助手](/tags/ai%E5%8A%A9%E6%89%8B/) / [使用教程](/tags/%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/) / [信息获取](/tags/%E4%BF%A1%E6%81%AF%E8%8E%B7%E5%8F%96/) / [提示词技巧](/tags/%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%8A%80%E5%B7%A7/) / [大模型应用](/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BA%94%E7%94%A8/)
-- 场景： [AI/ML项目](/scenarios/ai-ml%E9%A1%B9%E7%9B%AE/)
-
-### 相关文章
-
-- [用ChatGPT项目组织聊天文件和指令]({{< relref "posts/20260410-blogs_podcasts-using-projects-in-chatgpt-0.md" >}})
-- [微软 Copilot 聊天机器人遭遇运行问题]({{< relref "posts/20260205-hacker_news-microsofts-copilot-chatbot-is-running-into-problem-9.md" >}})
-- [OpenClaw：开源AI助手平台架构与演进]({{< relref "posts/20260228-juejin-openclaw开源ai助手平台的革命之路-0.md" >}})
-- [OpenAI 将在 ChatGPT 中停用 GPT-4o 等四款模型]({{< relref "posts/20260129-hacker_news-retiring-gpt-4o-gpt-41-gpt-41-mini-and-openai-o4-m-2.md" >}})
-- [OpenAI 将在 ChatGPT 中下架 GPT-4o 等四款模型]({{< relref "posts/20260129-hacker_news-retiring-gpt-4o-gpt-41-gpt-41-mini-and-openai-o4-m-2.md" >}})
-*本文由 AI Stack 自动生成，包含深度分析与方法论思考。*
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

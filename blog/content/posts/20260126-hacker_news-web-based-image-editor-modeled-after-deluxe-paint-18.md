@@ -1,29 +1,44 @@
 ---
-title: 🎨 Web版Deluxe Paint复刻！经典绘图神器复活！
+title: Web-based image editor modeled after Deluxe Paint
 date: 2026-01-26 12:12:08+08:00
 draft: false
 entry_kind: auto
-tags: []
+tags:
+- Hacker News
 categories: []
-source: hacker_news
-external_url: https://github.com/steffest/DPaint-js
 scenarios: []
+source: hacker_news
+description: 当前只保存了来源元数据，未抓取外链全文。请以原始来源和 Hacker News 讨论为准。
+external_url: https://github.com/steffest/DPaint-js
 aliases: []
-content_mode: archived
-publication_tier: ARCHIVED
-source_provenance: legacy_no_snapshot
-source_support: 0.0
-archived: true
-archive_reason: historical_content_quality_gate
-description: 历史条目已归档：现有正文未通过内容质量门，请查阅原始来源。
-build:
-  list: never
-  render: always
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: metadata_only
+source_snapshot_sha256: sha256:800893693c2599d40f364d3f3d6578f28fb0e5c065aa2b4bc46a0f50103d5a44
+extractor_version: source-contract-v1
+discovery_method: api_metadata
+fetch_status: captured
+source_completeness: metadata_only
+source_is_truncated: false
+source_support: 1.0
+source_title_chars_original: 49
+captured_at: '2026-07-18T04:11:50.974115Z'
+source_capture_sha256: sha256:ff774d06d890525766bef2dcb95645e37d3e78de2daead3e63e801da306c49f4
+source_capture_chars_original: 49
+source_publication_excerpt_chars: 49
 ---
 
-## 历史条目归档说明
+## 基本信息
 
-该条目的历史正文未通过内容质量门，可能包含基于标题推测的内容。为避免继续传播不可核验文本，本站仅保留透明归档记录。
+- **来源**: hacker\_news
+- **原始来源**: [https://github.com/steffest/DPaint-js](<https://github.com/steffest/DPaint-js>)
+- **作者**: bananaboy
+- **评分**: 250
+- **评论数**: 30
+- **HN 讨论**: [https://news.ycombinator.com/item?id=46753708](<https://news.ycombinator.com/item?id=46753708>)
 
-- 历史内容质量门未通过
-- 原始来源：<https://github.com/steffest/DPaint-js>
+## 来源说明
+
+当前只保存了来源元数据，未抓取外链全文。请以原始来源和 Hacker News 讨论为准。
+
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

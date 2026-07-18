@@ -1,175 +1,36 @@
 ---
-title: Zico Kolter等解读AI安全：超越网络安全视角
+title: 历史来源恢复记录 · 博客与播客
 date: 2026-06-22 22:20:00+08:00
 draft: false
 entry_kind: auto
-tags:
-- AI 安全
-- 红队测试
-- 对抗样本
-- 数据投毒
-- 模型抽取
-- 风险模型
-- 跨学科合作
-- 大模型审计
-categories:
-- 安全
-- 大模型
+tags: []
+categories: []
+scenarios: []
 source: blogs_podcasts
-description: OpenAI董事会成员Zico Kolter与Gray Swan首席执行官Matt Fredrikson做客swyx访谈，解释为什么AI安全不仅仅是"AI赋能的网络安全"。
-  当AI系统的能力边界不断扩展，传统的安全评估方法逐渐暴露出局限性。
+description: 历史来源恢复未成功；旧正文已移除，仅保留可审计归档记录。
 external_url: https://www.latent.space/p/gray-swan
-scenarios:
-- AI/ML项目
 aliases:
 - /posts/20260623-blogs_podcasts-red-teaming-after-mythos-zico-kolter-matt-fredriks-0/
-content_mode: legacy_analysis
-publication_tier: LEGACY
-source_provenance: legacy_no_snapshot
+archived: true
+content_mode: archived
+publication_tier: ARCHIVED
+source_provenance: historical_recovery_failed
 source_support: 0.0
+archive_reason: historical_source_recovery_failed
+recovery_failure_type: source_fetch_error
+recovery_failure_reason: source_access_interstitial
+recovery_attempted_at: '2026-07-18T04:22:23.866326Z'
+build:
+  list: never
+  render: always
 ---
 
-## 基本信息
+## 历史来源恢复说明
 
-- **来源**: Latent Space (blog)
-- **发布时间**: 2026-06-22T21:06:55+00:00
-- **链接**: [https://www.latent.space/p/gray-swan](https://www.latent.space/p/gray-swan)
+该条目的公开来源恢复未能完成。为避免继续传播不可核验文本，旧正文未被保留，本页仅保存透明归档记录。
 
----
-## 摘要/简介
-
-OpenAI董事会成员Zico Kolter与Gray Swan首席执行官Matt Fredrikson做客swyx访谈，解释为什么AI安全不仅仅是"AI赋能的网络安全"。
-
----
-## 导语
-
-当AI系统的能力边界不断扩展，传统的安全评估方法逐渐暴露出局限性。OpenAI董事会成员Zico Kolter与Gray Swan首席执行官Matt Fredrikson在本次访谈中，挑战了将AI安全简单等同于“AI赋能的网络安全”这一常见认知，深入探讨Red-Teaming在AI安全评估中的核心价值与实践方法。对于希望超越传统安全思维、理解AI系统真正风险的技术从业者而言，这场对话提供了来自一线的专业洞察与思考框架。
-
----
-## 摘要
-
-在本次对话中，OpenAI 董事会成员 Zico Kolter 与 Gray Swan 创始人兼 CEO Matt Fredrikson 共同阐述 AI 安全的独特性。他们指出，AI 安全并非“把网络安全加在 AI 上”，而是需要全新的风险模型和防御思路。传统安全关注的是漏洞利用、代码注入和系统边界，而 AI 系统面临的是数据投毒、对抗样本、模型抽取以及行为漂移等新威胁。尤其是大模型的“黑箱”特性，使得审计与红队测试必须从模型训练、输入处理、输出解释等多个层面同步展开。他们提出“Red‑Teaming after Mythos”概念，即在已构建的安全基线（Mythos）之上，进一步进行针对性红队，以捕捉模型在实际使用中可能产生的意外危害。具体实践中，Gray Swan 采用分层红队：先是数据层面的投毒检测，随后对模型的对抗鲁棒性进行攻击实验，最后对系统的集成与部署进行渗透验证。通过这种全链路的安全评估，能够发现传统渗透测试难以捕获的 AI 特有漏洞。Kolter 与 Fredrikson 强调，AI 安全的成功离不开跨学科合作：安全工程师需要掌握机器学习原理，数据科学家则要具备安全意识。只有在组织流程、工具链和文化上都把 AI 安全纳入常规，才能在快速迭代的模型发布中保持可控风险。简言之，AI 安全必须超越传统网络安全的思维定式，围绕模型本身的风险构建专门的红队与防御体系。
-
----
-## 评论
-
-#### 中心观点
-
-AI安全与传统网络安全的本质差异，决定了“cybersecurity with AI”这一类比具有误导性。Kolter和Fredrikson的核心论点在于：AI系统的行为不可完全预测、攻击面跨越数据与模型层、传统的漏洞修复范式不直接适用。这不是技术手段的扩展，而是安全范式的根本转变。
-
-#### 支撑理由
-
-**事实陈述：** Kolter作为OpenAI董事会成员，Fredrikson创立的Gray Swan专注AI安全审计，两人的专业背景使其观点具备行业代表性。当前AI系统的红队测试（red-teaming）已从概念验证进入实战部署阶段。
-
-**作者观点：** 文章明确指出，将AI安全等同于“在网络安全基础上加AI”是错误框架。AI模型具有涌现性（emergent capabilities），其安全风险无法通过传统渗透测试穷举发现。
-
-**你的推断：** Mythos作为高级AI系统，其红队方法论可能代表行业标准的前瞻。这两位专家的结合（学术与产业）暗示AI安全正走向制度化，但也意味着标准制定权可能向少数技术领袖集中。
-
-#### 边界条件
-
-这一观点成立的前提是AI系统确实表现出超越传统软件的不可预测性。若某类AI应用高度确定性（如规则引擎），传统安全方法仍可复用。边界在于：模型复杂度越高、自主决策空间越大，AI安全的独特性越显著。
-
-#### 实践启发
-
-对于从业者，区分两种安全范式意味着：不仅需要传统的防御技术，还需构建模型行为监控、对抗样本检测、持续红队等新能力。对组织而言，这意味着安全团队需要引入懂模型机理的人才，而非简单依赖传统安全工具链。对行业而言，标准化工作（如模型卡、安全基准）将成为基础设施，但当前仍依赖专家判断——这是过渡期的现实。
-
----
-## 技术分析
-
-#### 核心观点与论证地图
-
-##### 中心命题
-
-AI安全与传统的网络安全有本质区别，不能简单地将传统安全工具或方法论直接套用于AI系统。AI安全需要全新的技术范式和评估框架。
-
-##### 支撑理由
-
-首先，AI系统的攻击面与传统软件不同。传统安全关注代码层面的漏洞，而AI安全需要关注模型行为、训练数据污染、提示注入等多维度风险。其次，AI系统具有黑箱特性和不可解释性，使得传统安全测试方法难以直接应用。Red-teaming作为一种对抗性测试方法，在AI安全领域展现出独特价值，能够发现模型在特定场景下的失效模式和恶意利用路径。
-
-##### 反例或边界条件
-
-简单的AI安全工具或自动化扫描工具可能无法捕捉复杂的安全风险。对抗性攻击的隐蔽性要求安全评估必须结合人类专家的判断。AI安全的边界在于模型能力的快速演进和新型攻击向量的不断涌现。
-
-##### 可验证方式
-
-通过构建多样化的红队测试场景，评估模型在边界条件下的行为一致性和安全性指标。建立持续的安全监控和反馈机制，追踪安全事件的模式和趋势。
-
-#### 关键技术点
-
-##### Red-Teaming方法论
-
-传统的red-teaming侧重于网络和系统层面的攻击模拟，而AI red-teaming需要针对模型的特定能力进行对抗性测试。关键方法包括：提示注入攻击、角色扮演绕过的构造、敏感信息诱导、以及模型行为的边界探测。Gray Swan提出的方法强调系统性地构建攻击场景，通过结构化测试揭示模型的潜在风险。
-
-##### 对抗性鲁棒性
-
-模型对对抗性输入的抵抗能力是AI安全的核心指标。这包括对精心构造的对抗样本的鲁棒性、对误导性上下文的识别能力、以及在恶意引导下的行为边界控制。Zico Kolter作为OpenAI董事会成员，强调需要在模型训练阶段就嵌入安全约束，而非事后补救。
-
-##### 模型可解释性与可控性
-
-理解模型为何产生特定输出是安全评估的基础。技术层面涉及注意力可视化、特征归因分析、决策路径追踪等方法。可控性则关注如何在保持模型效用的同时限制其能力边界，防止被恶意利用。
-
-#### 实际应用价值
-
-##### 企业部署场景
-
-企业在生产环境中部署大语言模型时面临多重安全挑战：数据泄露风险、第三方API依赖的安全审计、用户交互过程中的信息泄露等。Gray Swan的方法论为企业提供了系统化的AI安全评估框架，帮助识别和缓解这些风险。
-
-##### 安全审计与合规
-
-随着AI监管趋严，企业需要证明其AI系统的安全性和可控性。结构化的red-teaming流程能够提供可追溯的安全评估报告，满足监管要求和行业标准。
-
-#### 行业影响
-
-##### 安全范式转变
-
-这次讨论标志着AI安全从理论走向实践的转变。传统的“网络安全+AI”思维正在被更深入的认知取代：AI系统本身构成新的攻击面，需要专门的安全学科支撑。
-
-##### 技术生态演进
-
-AI安全工具和服务市场正在形成。专业的AI red-teaming团队、自动化安全评估平台、以及针对AI系统的合规框架将成为行业基础设施的重要组成部分。
-
-#### 边界条件与实践建议
-
-##### 适用边界
-
-red-teaming方法适用于有明确能力边界的AI系统，对于通用性强、开放式的模型，测试场景的设计难度显著提升。安全评估的深度与模型的复杂度和应用场景密切相关。
-
-##### 实践建议
-
-建立跨学科安全团队，结合机器学习专家和安全工程师的协同工作。实施分层的红队测试策略，从基础功能测试逐步深入到高级对抗场景。投资于自动化安全工具的同时，保持人类专家的深度参与。将安全评估嵌入模型开发的全生命周期，而非作为事后检查。
-
----
-## 学习要点
-
-- 红队测试必须基于清晰的威胁模型，明确对手的能力和模型的部署场景，从而有针对性地发现安全风险。
-- 在完成像 Mythos 这样的系统性基线评估后，红队应聚焦于基线未覆盖的残余漏洞，填补评估盲区。
-- 将自动化攻击（如梯度、查询驱动）与专家人工红队相结合，可覆盖更广的攻击面并发现新颖的失败模式。
-- 建立可重复、可文档化的攻击流水线，使评估结果可比较、可共享并直接嵌入开发流程。
-- 红队发现必须通过迭代对抗训练和安全防护措施反馈到模型改进中，实现闭环提升。
-- 领域知识对于设计针对特定任务（如代码生成、自然语言）的定向攻击至关重要，可揭示真实风险。
-- 将红队活动视为持续过程，在模型部署后进行监控与定期再评估，以应对模型演化带来的新威胁。
-
----
-## 引用
-
-- **文章/节目**: [https://www.latent.space/p/gray-swan](https://www.latent.space/p/gray-swan)
-- **RSS 源**: [https://www.latent.space/feed](https://www.latent.space/feed)
-
-> 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
-
----
-
-## 站内链接
-
-- 分类： [安全](/categories/%E5%AE%89%E5%85%A8/) / [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)
-- 标签： [AI安全](/tags/ai%E5%AE%89%E5%85%A8/) / [红队测试](/tags/%E7%BA%A2%E9%98%9F%E6%B5%8B%E8%AF%95/) / [对抗样本](/tags/%E5%AF%B9%E6%8A%97%E6%A0%B7%E6%9C%AC/) / [数据投毒](/tags/%E6%95%B0%E6%8D%AE%E6%8A%95%E6%AF%92/) / [模型抽取](/tags/%E6%A8%A1%E5%9E%8B%E6%8A%BD%E5%8F%96/) / [风险模型](/tags/%E9%A3%8E%E9%99%A9%E6%A8%A1%E5%9E%8B/) / [跨学科合作](/tags/%E8%B7%A8%E5%AD%A6%E7%A7%91%E5%90%88%E4%BD%9C/) / [大模型审计](/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%A1%E8%AE%A1/)
-- 场景： [AI/ML项目](/scenarios/ai-ml%E9%A1%B9%E7%9B%AE/)
-
-### 相关文章
-
-- [评估与缓解大模型发现的零日漏洞风险]({{< relref "posts/20260207-hacker_news-evaluating-and-mitigating-the-growing-risk-of-llm--13.md" >}})
-- [评估与缓解大模型发现零日漏洞的新兴风险]({{< relref "posts/20260207-hacker_news-evaluating-and-mitigating-the-growing-risk-of-llm--13.md" >}})
-- [恶意提示词分类器在真实分布偏移下的评估方法]({{< relref "posts/20260217-arxiv_ai-when-benchmarks-lie-evaluating-malicious-prompt-cl-8.md" >}})
-- [MIT新方法揭示大模型隐藏偏差并提升安全性]({{< relref "posts/20260219-blogs_podcasts-exposing-biases-moods-personalities-and-abstract-c-1.md" >}})
-- [OpenAI推出CoT-Control：强化推理模型可监控性]({{< relref "posts/20260305-blogs_podcasts-reasoning-models-struggle-to-control-their-chains--5.md" >}})
-*本文由 AI Stack 自动生成，包含深度分析与方法论思考。*
+- **来源类型**: `blogs_podcasts`
+- **恢复尝试时间**: `2026-07-18T04:22:23.866326Z`
+- **恢复失败类型**: `source_fetch_error`
+- **恢复失败原因**: `source_access_interstitial`
+- **原始来源**: [查看公开来源](<https://www.latent.space/p/gray-swan>)

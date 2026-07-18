@@ -1,29 +1,52 @@
 ---
-title: RapidAI/RapidOCR：支持多推理引擎的跨语言OCR工具包
+title: RapidAI/RapidOCR
 date: 2026-03-10 21:20:59+08:00
 draft: false
 entry_kind: auto
-tags: []
-categories: []
-source: github_trending
-description: 历史条目已归档：现有正文未通过内容质量门，请查阅原始来源。
-external_url: https://github.com/RapidAI/RapidOCR
+tags:
+- GitHub
+- Python
+categories:
+- 开源生态
+- 开发工具
 scenarios: []
+source: github_trending
+description: 当前只保存了来源元数据，未抓取完整正文。请以原始来源为准。
+external_url: https://github.com/RapidAI/RapidOCR
 aliases: []
-content_mode: archived
-publication_tier: ARCHIVED
-source_provenance: legacy_no_snapshot
-source_support: 0.0
-archived: true
-archive_reason: historical_content_quality_gate
-build:
-  list: never
-  render: always
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: metadata_only
+source_snapshot_sha256: sha256:0b0419aef86993950fe5d32e71059563967f4ce89bcd276f684b356e499c7ead
+extractor_version: source-contract-v1
+discovery_method: repository_metadata
+fetch_status: captured
+source_completeness: metadata_only
+source_is_truncated: false
+source_support: 1.0
+source_title_chars_original: 16
+captured_at: '2026-07-18T04:18:46.232195Z'
+source_capture_sha256: sha256:5a7703369bef651b4571147adafd4699aa004dfd883bff10c20b07f4aeb3abaf
+source_capture_chars_original: 126
+source_publication_excerpt_chars: 126
 ---
 
-## 历史条目归档说明
+## 基本信息
 
-该条目的历史正文未通过内容质量门，可能包含基于标题推测的内容。为避免继续传播不可核验文本，本站仅保留透明归档记录。
+- **来源**: github\_trending
+- **原始来源**: [https://github.com/RapidAI/RapidOCR](<https://github.com/RapidAI/RapidOCR>)
+- **主要语言**: Python
+- **Stars**: 7189
+- **Forks**: 680
+- **许可证**: Apache-2.0
+- **Topics**: chineseocr, crnn, dbnet, easyocr, mnn, ocr, onnxocr, onnxruntime, openvino, paddleocr, rapidocr, tensorrt
 
-- 历史内容质量门未通过
-- 原始来源：<https://github.com/RapidAI/RapidOCR>
+## 已保存元数据
+
+📄 Awesome OCR multiple programing languages toolkits based on ONNX Runtime, OpenVINO, MNN, PaddlePaddle, TensorRT and PyTorch.
+
+## 来源说明
+
+当前只保存了来源元数据，未抓取完整正文。请以原始来源为准。
+
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

@@ -1,30 +1,52 @@
 ---
-title: EMEA青年与健康资助计划开放申请，50万欧元支持AI时代青年安全研究
+title: EMEA Youth & Wellbeing Grant
 date: 2026-01-29 05:01:24+08:00
 draft: false
 entry_kind: auto
-tags: []
+tags:
+- 博客与播客
 categories: []
-source: blogs_podcasts
-external_url: https://openai.com/index/emea-youth-and-wellbeing-grant
 scenarios: []
+source: blogs_podcasts
+description: 当前只保存了公开页面节选，不代表原文全文。请以原始来源为准。
+external_url: https://openai.com/index/emea-youth-and-wellbeing-grant
 aliases:
 - /posts/20260129-blogs_podcasts-emea-youth-wellbeing-grant-4/
-content_mode: archived
-publication_tier: ARCHIVED
-source_provenance: legacy_no_snapshot
-source_support: 0.0
-archived: true
-archive_reason: historical_content_quality_gate
-description: 历史条目已归档：现有正文未通过内容质量门，请查阅原始来源。
-build:
-  list: never
-  render: always
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: excerpt
+source_snapshot_sha256: sha256:eaa09160c2ab9a7b5673ae8f4fcb2318d3243e74f402853a2a83c2d0f476be2b
+extractor_version: source-contract-v1
+discovery_method: article_html_excerpt
+fetch_status: captured
+source_completeness: partial
+source_is_truncated: true
+source_support: 1.0
+source_title_chars_original: 28
+captured_at: '2026-07-18T04:12:16.917868Z'
+source_capture_sha256: sha256:f7879413e0e5eb26dd46b3b46a68a377775c4f518a2a014d0304badd6498959a
+source_capture_chars_original: 5006
+source_publication_excerpt_chars: 581
+source_truncation_reason: historical_publication_excerpt_limit
 ---
 
-## 历史条目归档说明
+## 基本信息
 
-该条目的历史正文未通过内容质量门，可能包含基于标题推测的内容。为避免继续传播不可核验文本，本站仅保留透明归档记录。
+- **来源**: blogs\_podcasts
+- **原始来源**: [https://openai.com/index/emea-youth-and-wellbeing-grant](<https://openai.com/index/emea-youth-and-wellbeing-grant>)
 
-- 历史内容质量门未通过
-- 原始来源：<https://openai.com/index/emea-youth-and-wellbeing-grant>
+## 来源摘要/节选
+
+公开展示已截断至最多 800 个字符；请访问原始来源查看完整上下文。
+
+> Supporting organizations improving youth safety and wellbeing in the age of AI.
+>
+> April 2026 update: A pplications for 2026 are now closed. Finalists for the EMEA Youth &amp; Wellbeing Grant program have now been selected. If you have not been contacted by the team, it unfortunately means your project was not selected for the final round. We truly appreciate the time and effort invested in your application and the important work you are doing.
+>
+> The EMEA Youth &amp; Wellbeing Grant is a €500,000 funding program for organizations across the region to help young people benefit from AI.…
+
+## 来源说明
+
+当前只保存了公开页面节选，不代表原文全文。请以原始来源为准。
+
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

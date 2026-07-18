@@ -1,172 +1,51 @@
 ---
-title: 预算高效缩放定律拟合：基于主动实验选择策略
+title: 'Spend Less, Fit Better: Budget-Efficient Scaling Law Fitting via Active Experiment
+  Selection'
 date: 2026-04-27 23:08:13+08:00
 draft: false
 entry_kind: auto
 tags:
-- 缩放定律
-- 预算分配
-- 主动学习
-- 实验设计
-- 大模型训练
-- 不确定性量化
-- 外推预测
-- 资源优化
+- ArXiv
 categories:
-- 大模型
-- AI 工程
+- 论文
+scenarios: []
 source: arxiv
-description: 在大规模模型训练中，扩展律的拟合本身已消耗可观资源，如何在有限预算下高效挑选关键实验以提升外推精度成为重要挑战。本文将其重新定义为预算感知的顺序实验设计，采用基于不确定性的动态预算分配，仅用约10%的总训练预算即可在多种基准上逼近全量实验的拟合效果，表明所提策略能够显著降低计算成本并为大规模训练的预算规划提供可行路径。
-external_url: http://arxiv.org/abs/2604.22753v1
-scenarios:
-- Web应用开发
+description: 当前只保存了官方论文摘要，不代表论文全文。请以原始来源为准。
+external_url: https://arxiv.org/abs/2604.22753v1
 aliases:
 - /posts/20260428-arxiv_ai-spend-less-fit-better-budget-efficient-scaling-law-0/
-content_mode: legacy_analysis
-publication_tier: LEGACY
-source_provenance: legacy_no_snapshot
-source_support: 0.0
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: abstract
+source_snapshot_sha256: sha256:975084f493cdd3daf6e287fb96b54d5f4ad40d0e58b375cd8fd9fecba81310a4
+extractor_version: source-contract-v1
+discovery_method: arxiv_api
+fetch_status: captured
+source_completeness: abstract_only
+source_is_truncated: false
+source_support: 1.0
+source_title_chars_original: 92
+captured_at: '2026-07-18T04:29:27.867360Z'
+source_capture_sha256: sha256:d92d1ba86672a695392067990beb5a533ff470bb3ef24d56248095030afa7186
+source_capture_chars_original: 1017
+source_publication_excerpt_chars: 1017
 ---
 
 ## 基本信息
 
-- **ArXiv ID**: 2604.22753v1
+- **来源**: arxiv
+- **原始来源**: [https://arxiv.org/abs/2604.22753v1](<https://arxiv.org/abs/2604.22753v1>)
+- **作者**: Sijie Li, Shanda Li, Haowei Lin, Weiwei Sun, Ameet Talwalkar, Yiming Yang
 - **分类**: cs.LG
-- **作者**: Sijie Li, Shanda Li, Haowei Lin, Weiwei Sun, Ameet Talwalkar
-- **PDF**: [https://arxiv.org/pdf/2604.22753v1.pdf](https://arxiv.org/pdf/2604.22753v1.pdf)
-- **链接**: [http://arxiv.org/abs/2604.22753v1](http://arxiv.org/abs/2604.22753v1)
+- **论文时间**: 2026-04-24T17:59:42Z
+- **论文 PDF**: [https://arxiv.org/pdf/2604.22753v1.pdf](<https://arxiv.org/pdf/2604.22753v1.pdf>)
 
----
-## 导语
+## 来源摘要/节选
 
-在大规模模型训练中，扩展律的拟合本身已消耗可观资源，如何在有限预算下高效挑选关键实验以提升外推精度成为重要挑战。本文将其重新定义为预算感知的顺序实验设计，采用基于不确定性的动态预算分配，仅用约10%的总训练预算即可在多种基准上逼近全量实验的拟合效果，表明所提策略能够显著降低计算成本并为大规模训练的预算规划提供可行路径。
+> Scaling laws are used to plan multi-million-dollar training runs, but fitting those laws can itself cost millions. In modern large-scale workflows, assembling a sufficiently informative set of pilot experiments is already a major budget-allocation problem rather than a routine preprocessing step. We formulate scaling-law fitting as budget-aware sequential experimental design: given a finite pool of runnable experiments with heterogeneous costs, choose which runs to execute so as to maximize extrapolation accuracy in a high-cost target region. We then propose an uncertainty-aware method for sequentially allocating experimental budget toward the runs most useful for target-region extrapolation. Across a diverse benchmark of scaling-law tasks, our method consistently outperforms classical design-based baselines, and often approaches the performance of fitting on the full experimental set while using only about 10% of the total training budget. Our code is available at https://github.com/PlanarG/active-sl.
 
----
-## 摘要
+## 来源说明
 
-#### 背景
-扩展律用于规划数百万美元的训练运行，但其本身拟合往往已耗费数百万。在大规模工作流中，快速构建信息充分的试点实验集合本身就是预算分配的关键难题。
+当前只保存了官方论文摘要，不代表论文全文。请以原始来源为准。
 
-#### 目标
-将扩展律拟合重新定义为预算感知的顺序实验设计：在给定的异构成本实验池中，挑选最有助于在高价目标区域进行外推的实验，以最大化目标区域的外推精度。
-
-#### 方法
-提出不确定性驱动的预算分配策略：在每一步根据模型对未实验点的预测不确定性，将预算分配给对目标区域外推贡献最大的实验，实现顺序、动态的实验选择。
-
-#### 结果
-在多种扩展律任务的基准测试中，该方法显著优于传统基于设计的基线，通常仅使用约 10% 的总训练预算即可接近全量实验的拟合效果。
-
-#### 资源
-代码已开源：https://github.com/PlanarG/active-sl
-
----
-## 评论
-
-#### 论文声称
-- 将扩展律拟合重新定义为预算感知的顺序实验设计，在异构成本池中挑选对高价目标区域外推贡献最大的实验。
-- 提出不确定性驱动的预算分配策略，声称在多种基准上仅使用约 10% 的总预算即可取得与全预算相当或更好的外推精度。
-
-#### 证据
-- 实验在多个扩展律任务（不同模型规模、数据规模）中与基于设计的基线（如均匀采样、格子采样）相比，误差显著降低。
-- 文中提供误差随预算变化的趋势图，显示预算利用率随步数提升而趋于平稳。
-
-#### 推断
-- 基于不确定性的贪心选择在新实验成本差异不大、模型对未测点预测误差可靠的情况下，可能捕获“信息瓶颈”。
-- 若实验成本呈极端分布（如少数实验费用极高），方法倾向于优先选取低成本点，可能导致对高价区域的覆盖不足。
-
-#### 关键假设与潜在失效条件
-- **不确定性估计可靠**：依赖模型对未实验点的预测方差；若模型本身偏差大，估计失效，选择策略不再有效。
-- **实验池与目标区域匹配**：假设池中包含足够的多样性；若目标区域在池外或稀疏，外推误差难以通过局部不确定性补偿。
-- **成本同质性假设**：方法在成本差异显著时可能产生选择偏差，导致预算倾斜至低价而非高价值实验。
-
-#### 验证方式
-- 在不同模型族（Transformer、CNN）和不同规模（千级到百万级）上交叉验证，检验不确定性与真实误差的相关性。
-- 对比随机采样、贪心、信息增益等基线，分析在不同成本分布下的预算使用效率曲线。
-- 通过模拟噪声注入或模型错误设定，评估在不确定性失真情况下的鲁棒性。
-
----
-## 技术分析
-
-#### 研究背景
-- **已知事实**：扩展律用于预测大模型损失随参数量、数据规模等的变化，是大规模训练预算规划的核心工具。摘要指出在大型工作流中，构建信息充分的试点实验集合本身已成为预算分配的关键难题。
-- **推断**：随着模型规模突破十亿至万亿参数，单次全尺度实验成本可达数百万美元，传统的全枚举式实验（grid search、均匀采样）在成本上不可承受，需要更高效的实验选择策略。
-
-#### 核心方法
-- **方法概述**：提出基于不确定性驱动的预算分配（Uncertainty‑Driven Budget Allocation，UDBA），在每一步利用当前模型对未实验点的预测方差/置信区间，将预算分配给对高价目标区域外推贡献最大的实验，实现顺序、动态的实验选择。
-- **实现细节（推断）**：通常采用贝叶斯回归或高斯过程（GP）作为元模型，对候选实验池进行不确定性估计；信息增益（Expected Improvement、UCB 等）作为选择准则，兼顾实验成本与信息价值。
-
-#### 理论基础
-- **关键假设**：① 元模型能够提供相对可靠的方差估计；② 目标区域的外推误差是关于实验点信息量的单调递减函数；③ 实验成本可预先量化且与信息价值可比较。
-- **理论依据**：在主动学习与贝叶斯优化文献中，信息的边际增益（Expected Information Gain）与预算约束下的选择原则被证明能在满足采样复杂度上界的前提下提升预测精度。本方法可视作在异构成本环境下的信息价值最大化。
-
-#### 实验与结果
-- **实验设置（摘要）**：在多种扩展律任务（包括语言模型、数据规模、计算量等）上与均匀网格、随机抽样、成本感知贪心等基线进行比较。
-- **主要结论（摘要）**：在保持相近外推精度的前提下，UDBA 仅使用约 10% 的总训练预算即可接近全量实验的拟合效果，显著优于基线。
-- **推断**：该结果表明在成本异构场景下，信息增益驱动能够有效压缩实验空间，使高信息密度的点被优先选中。
-
-#### 应用前景
-- 对大模型研发团队：在预算受限的情况下，可通过 UDBA 快速构建试点实验集，指导大规模训练的资源分配。
-- 扩展至其他高成本实验（如超参数调优、硬件调度）时，类似的不确定性驱动策略有潜力降低实验成本。
-
-#### 研究启示
-1. **信息价值与成本协同**：仅考虑信息增益而不计成本会导致预算失控；结合成本加权是关键。
-2. **元模型选择的重要性**：GP 假设平滑性，若扩展律出现突变或噪声较大，可能导致方差估计失真。
-3. **实验池的构建**：池的覆盖度决定了外推的上限，若候选点稀疏，即使最优选择也难以提升精度。
-
-#### 相关工作对比
-| 方法 | 预算利用 | 信息度量 | 适用场景 |
-|------|----------|----------|----------|
-| 随机/均匀采样 | 低效，预算浪费 | 无 | 成本均匀时 |
-| 成本感知贪心 | 直接考虑成本 | 简单（信息增量） | 成本异构 |
-| 贝叶斯优化 | 较好 | 采集函数（EI、UCB） | 单点成本相近 |
-| UDBA（本文） | 高效 | 不确定性+成本加权 | 强异构成本、目标区域外推 |
-
-#### 关键假设
-- 元模型方差能够真实反映模型对未实验点的预测不确定性。
-- 目标区域的外推误差随实验信息量单调下降。
-- 实验成本已知且不随时间变化。
-
-#### 潜在失效条件
-- **元模型不准确**：若扩展律出现非线性转折或噪声过大，GP 等模型难以捕获真实方差，导致选择偏差。
-- **成本估算错误**：若实验实际成本与预设成本差异显著，预算分配失效。
-- **候选点覆盖不足**：池中缺少对目标区域有影响力的关键点，导致信息增益受限。
-
-#### 可证伪方式
-- **随机对照实验**：在同一成本约束下使用随机或均匀采样，若其外推误差不显著高于 UDBA，则方法失效。
-- **敏感性分析**：对元模型假设进行扰动（如改变核函数、噪声水平），若结果大幅波动，说明方法依赖特定模型假设。
-
----
-## 学习要点
-
-- 主动实验选择通过在有限预算下挑选信息量最大的实验，实现扩展律拟合的显著效率提升。
-- 使用贝叶斯优化或信息增益等获取函数，可依据当前模型的不确定性动态决定下一步实验，提升参数估计精度。
-- 该方法兼容多种扩展律形式（幂律、指数律等），并能在模型规模、数据量、训练步数等多维空间中进行联合搜索。
-- 与均匀采样或网格搜索相比，主动选择在相同预算下可减少约30%~50%的实验次数，同时保持相近或更低的预测误差。
-- 通过对实验空间建立先验分布并量化不确定性，系统能够在早期快速过滤无效配置，显著提升资源利用率。
-- 论文提供系统化的预算分配策略，使研究者能够在实验前预估不同规模实验的收益，科学分配计算资源。
-- 在语言模型、视觉模型等多任务上的实验验证表明该框架具有通用性，可为大规模模型训练提供可扩展的实验设计思路。
-
----
-## 引用
-
-- **ArXiv**: [http://arxiv.org/abs/2604.22753v1](http://arxiv.org/abs/2604.22753v1)
-- **PDF**: [https://arxiv.org/pdf/2604.22753v1.pdf](https://arxiv.org/pdf/2604.22753v1.pdf)
-
-> 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
-
----
-
-## 站内链接
-
-- 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [AI 工程](/categories/ai-%E5%B7%A5%E7%A8%8B/)
-- 标签： [缩放定律](/tags/%E7%BC%A9%E6%94%BE%E5%AE%9A%E5%BE%8B/) / [预算分配](/tags/%E9%A2%84%E7%AE%97%E5%88%86%E9%85%8D/) / [主动学习](/tags/%E4%B8%BB%E5%8A%A8%E5%AD%A6%E4%B9%A0/) / [实验设计](/tags/%E5%AE%9E%E9%AA%8C%E8%AE%BE%E8%AE%A1/) / [大模型训练](/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/) / [不确定性量化](/tags/%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7%E9%87%8F%E5%8C%96/) / [外推预测](/tags/%E5%A4%96%E6%8E%A8%E9%A2%84%E6%B5%8B/) / [资源优化](/tags/%E8%B5%84%E6%BA%90%E4%BC%98%E5%8C%96/)
-- 场景： [Web应用开发](/scenarios/web%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/)
-
-### 相关文章
-
-- [自适应组合实验设计：决策与推断的帕累托最优]({{< relref "posts/20260302-arxiv_ai-adaptive-combinatorial-experimental-design-pareto--2.md" >}})
-- [2026年AI展望：LLM、智能体、缩放定律与中国发展]({{< relref "posts/20260201-blogs_podcasts-490-state-of-ai-in-2026-llms-coding-scaling-laws-c-0.md" >}})
-- [2026年AI展望：LLM、智能体、缩放定律与中国发展]({{< relref "posts/20260201-blogs_podcasts-490-state-of-ai-in-2026-llms-coding-scaling-laws-c-0.md" >}})
-- [2026年AI展望：LLM、智能体、缩放定律与中国发展]({{< relref "posts/20260201-blogs_podcasts-490-state-of-ai-in-2026-llms-coding-scaling-laws-c-0.md" >}})
-- [2026年AI展望：LLM、智能体、缩放定律与中国发展]({{< relref "posts/20260201-blogs_podcasts-490-state-of-ai-in-2026-llms-coding-scaling-laws-c-0.md" >}})
-*本文由 AI Stack 自动生成，深度解读学术研究。*
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

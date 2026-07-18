@@ -1,30 +1,50 @@
 ---
-title: LoGeR：基于混合记忆的长上下文几何重建
+title: 'LoGeR: Long-Context Geometric Reconstruction with Hybrid Memory'
 date: 2026-03-04 22:47:32+08:00
 draft: false
 entry_kind: auto
-tags: []
-categories: []
-source: arxiv
-description: 历史条目已归档：现有正文未通过内容质量门，请查阅原始来源。
-external_url: http://arxiv.org/abs/2603.03269v1
+tags:
+- ArXiv
+categories:
+- 论文
 scenarios: []
+source: arxiv
+description: 当前只保存了官方论文摘要，不代表论文全文。请以原始来源为准。
+external_url: https://arxiv.org/abs/2603.03269v1
 aliases:
 - /posts/20260305-arxiv_ai-loger-long-context-geometric-reconstruction-with-h-5/
-content_mode: archived
-publication_tier: ARCHIVED
-source_provenance: legacy_no_snapshot
-source_support: 0.0
-archived: true
-archive_reason: historical_content_quality_gate
-build:
-  list: never
-  render: always
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: abstract
+source_snapshot_sha256: sha256:fcc9d338f3dfab30d9e370ab5af62efbcd645118f4130af01d889ea4b1d75d29
+extractor_version: source-contract-v1
+discovery_method: arxiv_api
+fetch_status: captured
+source_completeness: abstract_only
+source_is_truncated: false
+source_support: 1.0
+source_title_chars_original: 63
+captured_at: '2026-07-18T04:26:46.139217Z'
+source_capture_sha256: sha256:1568c600af99307ab0b37f14b85d9b8dc9ba8deadb07592e9868838143d4d9f3
+source_capture_chars_original: 1375
+source_publication_excerpt_chars: 1375
 ---
 
-## 历史条目归档说明
+## 基本信息
 
-该条目的历史正文未通过内容质量门，可能包含基于标题推测的内容。为避免继续传播不可核验文本，本站仅保留透明归档记录。
+- **来源**: arxiv
+- **原始来源**: [https://arxiv.org/abs/2603.03269v1](<https://arxiv.org/abs/2603.03269v1>)
+- **作者**: Junyi Zhang, Charles Herrmann, Junhwa Hur, Chen Sun, Ming-Hsuan Yang, Forrester Cole, Trevor Darrell, Deqing Sun
+- **分类**: cs.CV
+- **论文时间**: 2026-03-03T18:55:37Z
+- **论文 PDF**: [https://arxiv.org/pdf/2603.03269v1.pdf](<https://arxiv.org/pdf/2603.03269v1.pdf>)
 
-- 历史内容质量门未通过
-- 原始来源：<http://arxiv.org/abs/2603.03269v1>
+## 来源摘要/节选
+
+> Feedforward geometric foundation models achieve strong short-window reconstruction, yet scaling them to minutes-long videos is bottlenecked by quadratic attention complexity or limited effective memory in recurrent designs. We present LoGeR \(Long-context Geometric Reconstruction\), a novel architecture that scales dense 3D reconstruction to extremely long sequences without post-optimization. LoGeR processes video streams in chunks, leveraging strong bidirectional priors for high-fidelity intra-chunk reasoning. To manage the critical challenge of coherence across chunk boundaries, we propose a learning-based hybrid memory module. This dual-component system combines a parametric Test-Time Training \(TTT\) memory to anchor the global coordinate frame and prevent scale drift, alongside a non-parametric Sliding Window Attention \(SWA\) mechanism to preserve uncompressed context for high-precision adjacent alignment. Remarkably, this memory architecture enables LoGeR to be trained on sequences of 128 frames, and generalize up to thousands of frames during inference. Evaluated across standard benchmarks and a newly repurposed VBR dataset with sequences of up to 19k frames, LoGeR substantially outperforms prior state-of-the-art feedforward methods--reducing ATE on KITTI by over 74%--and achieves robust, globally consistent reconstruction over unprecedented horizons.
+
+## 来源说明
+
+当前只保存了官方论文摘要，不代表论文全文。请以原始来源为准。
+
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

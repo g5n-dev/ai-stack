@@ -1,30 +1,45 @@
 ---
-title: 警惕！💀 软件拉高出货时代来临！韭菜收割机全揭秘！
+title: The age of Pump and Dump software
 date: 2026-01-27 17:33:25+08:00
 draft: false
 entry_kind: auto
-tags: []
+tags:
+- Hacker News
 categories: []
-source: hacker_news
-external_url: https://tautvilas.medium.com/software-pump-and-dump-c8a9a73d313b
 scenarios: []
+source: hacker_news
+description: 当前只保存了来源元数据，未抓取外链全文。请以原始来源和 Hacker News 讨论为准。
+external_url: https://tautvilas.medium.com/software-pump-and-dump-c8a9a73d313b
 aliases:
 - /posts/20260127-hacker_news-the-age-of-pump-and-dump-software-14/
-content_mode: archived
-publication_tier: ARCHIVED
-source_provenance: legacy_no_snapshot
-source_support: 0.0
-archived: true
-archive_reason: historical_content_quality_gate
-description: 历史条目已归档：现有正文未通过内容质量门，请查阅原始来源。
-build:
-  list: never
-  render: always
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: metadata_only
+source_snapshot_sha256: sha256:3da8935ca51a5716b78db819bd2f423f5b73e29a40469a2c81c57b768a405455
+extractor_version: source-contract-v1
+discovery_method: api_metadata
+fetch_status: captured
+source_completeness: metadata_only
+source_is_truncated: false
+source_support: 1.0
+source_title_chars_original: 33
+captured_at: '2026-07-18T04:12:05.574084Z'
+source_capture_sha256: sha256:150990f97beb99787c3b71f3bb5fdf2fd2231af2d515f2aa0926f38f33a9f14d
+source_capture_chars_original: 33
+source_publication_excerpt_chars: 33
 ---
 
-## 历史条目归档说明
+## 基本信息
 
-该条目的历史正文未通过内容质量门，可能包含基于标题推测的内容。为避免继续传播不可核验文本，本站仅保留透明归档记录。
+- **来源**: hacker\_news
+- **原始来源**: [https://tautvilas.medium.com/software-pump-and-dump-c8a9a73d313b](<https://tautvilas.medium.com/software-pump-and-dump-c8a9a73d313b>)
+- **作者**: brisky
+- **评分**: 232
+- **评论数**: 75
+- **HN 讨论**: [https://news.ycombinator.com/item?id=46780065](<https://news.ycombinator.com/item?id=46780065>)
 
-- 历史内容质量门未通过
-- 原始来源：<https://tautvilas.medium.com/software-pump-and-dump-c8a9a73d313b>
+## 来源说明
+
+当前只保存了来源元数据，未抓取外链全文。请以原始来源和 Hacker News 讨论为准。
+
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

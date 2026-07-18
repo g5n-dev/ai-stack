@@ -1,138 +1,54 @@
 ---
-title: 感知扰动与奖励建模缓解多模态LLM判断偏差
+title: Mitigating Perceptual Judgment Bias in Multimodal LLM-as-a-Judge via Perceptual
+  Perturbation and Reward Modeling
 date: 2026-06-02 21:10:39+08:00
 draft: false
 entry_kind: auto
 tags:
-- 多模态LLM
-- 奖励建模
-- 感知偏差
-- 视觉扰动
-- LLM评判
-- 排序一致性
-- 人类对齐
-- 感知保真度
-categories:
-- 大模型
-- 论文
-source: arxiv
-description: 多模态大模型在推理任务中表现突出，但在自动评估时容易产生感知判断偏差，尤其在文本与视觉信息冲突时倾向依赖叙事而忽视真实视觉。该研究构建感知扰动判断数据集并提出结构化GRPO奖励结合批量排序框架，以全局排序提升模型对视觉感知的依赖。实验结果显示该方法显著提升感知保真度、排序一致性及与人类评估的对齐度，为更可解释、基于感知的评估模型提供可扩展路径。
-external_url: http://arxiv.org/abs/2606.02578v1
-scenarios:
+- ArXiv
 - 大语言模型
-content_mode: legacy_analysis
-publication_tier: LEGACY
-source_provenance: legacy_no_snapshot
-source_support: 0.0
+categories:
+- 论文
+- 大模型
+scenarios:
+- AI/ML项目
+- 大语言模型
+source: arxiv
+description: 当前只保存了官方论文摘要，不代表论文全文。请以原始来源为准。
+external_url: https://arxiv.org/abs/2606.02578v1
+aliases: []
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: abstract
+source_snapshot_sha256: sha256:b63a1b46e78a8279e4bf376576683e56a99f9c65b6887779f407941943def22a
+extractor_version: source-contract-v1
+discovery_method: arxiv_api
+fetch_status: captured
+source_completeness: abstract_only
+source_is_truncated: false
+source_support: 1.0
+source_title_chars_original: 112
+captured_at: '2026-07-18T04:29:58.207159Z'
+source_capture_sha256: sha256:d50ee83ccbb7e595bec4b60468ba9ed61177368f4a3697af6693d6a0869223b7
+source_capture_chars_original: 1375
+source_publication_excerpt_chars: 1375
 ---
 
 ## 基本信息
 
-- **ArXiv ID**: 2606.02578v1
+- **来源**: arxiv
+- **原始来源**: [https://arxiv.org/abs/2606.02578v1](<https://arxiv.org/abs/2606.02578v1>)
+- **作者**: Seojeong Park, Jiho Choi, Junyong Kang, Seonho Lee, Jaeyo Shin, Hyunjung Shim
 - **分类**: cs.CV
-- **作者**: Seojeong Park, Jiho Choi, Junyong Kang, Seonho Lee, Jaeyo Shin
-- **PDF**: [https://arxiv.org/pdf/2606.02578v1.pdf](https://arxiv.org/pdf/2606.02578v1.pdf)
-- **链接**: [http://arxiv.org/abs/2606.02578v1](http://arxiv.org/abs/2606.02578v1)
+- **论文时间**: 2026-06-01T17:59:46Z
+- **论文 PDF**: [https://arxiv.org/pdf/2606.02578v1.pdf](<https://arxiv.org/pdf/2606.02578v1.pdf>)
 
----
-## 导语
+## 来源摘要/节选
 
-多模态大模型在推理任务中表现突出，但在自动评估时容易产生感知判断偏差，尤其在文本与视觉信息冲突时倾向依赖叙事而忽视真实视觉。该研究构建感知扰动判断数据集并提出结构化GRPO奖励结合批量排序框架，以全局排序提升模型对视觉感知的依赖。实验结果显示该方法显著提升感知保真度、排序一致性及与人类评估的对齐度，为更可解释、基于感知的评估模型提供可扩展路径。
+> Recent multimodal large language models have demonstrated strong reasoning ability, yet their reliability as automated evaluators remains limited by a critical weakness: when visual evidence conflicts with textual cues, MLLM judges tend to reward plausible narratives over perceptually correct answers. We identify and systematically analyze this phenomenon, which we term Perceptual Judgment Bias. Through controlled visual perturbations, existing multimodal judges frequently anchor on the response text instead of their own visual perception, leading to inconsistent and non-verifiable evaluations. To address this issue, we introduce the Perceptually Perturbed Judgment Dataset, which constructs minimally edited counterfactual responses that isolate perceptual errors and enable verifiable supervision. Building on this dataset, we develop a unified training framework that combines a structured GRPO-based reward with a batch-ranking objective, achieving coherent global ordering without explicit pairwise labels. Experiments across diverse MLLM-as-a-Judge benchmarks show that our approach substantially improves perceptual fidelity, ranking coherence, and alignment with human evaluation. Our results establish a scalable and generalizable pathway for training multimodal judges that are perceptually grounded, interpretable, and robust to visual-reasoning conflicts.
 
----
-## 摘要
+## 来源说明
 
-#### 研究背景
-多模态大模型在推理任务上表现突出，但作为自动评估器时会出现“感知判断偏差”。当文本提示与视觉信息冲突时，模型倾向于奖励看似合理的叙事而非视觉感知正确的答案。
+当前只保存了官方论文摘要，不代表论文全文。请以原始来源为准。
 
-#### 问题定位
-通过受控的视觉扰动实验，发现现有模型在面对视觉冲突时仍然锚定于文本响应，导致评估结果不一致且难以验证。
-
-#### 数据集与训练框架
-- 构建了感知扰动判断数据集（PPJD），通过最小编辑生成逆向样本，仅改变视觉感知相关细节，便于有监督验证。
-- 提出统一的训练框架：结构化 GRPO 奖励结合批量排序目标，实现全局排序而无需显式配对标注。
-
-#### 实验结果
-在多个多模态 LLM‑as‑a‑Judge 基准上，方法显著提升了感知保真度、排序一致性与人类评估的对齐度。
-
-#### 结论与意义
-研究提供了可扩展、通用的训练路径，使多模态判断模型更加基于感知、可解释，并在视觉‑推理冲突场景下保持鲁棒。
-
----
-## 技术分析
-
-#### 研究背景
-- 多模态大模型在推理任务上表现突出，但作为自动评估器时出现“感知判断偏差”。（来自摘要）
-- 当文本提示与视觉信息冲突时，模型倾向于奖励看似合理的叙事而非视觉感知正确的答案。（来自摘要）
-- 这种偏差导致评估结果不一致且难以验证，对自动评估的可靠性构成挑战。（推断）
-
-#### 核心方法
-##### 感知扰动判断数据集（PPJD）
-- 通过最小编辑生成逆向样本，仅改变视觉感知相关细节，保持语义基本不变。（来自摘要）
-- 便于有监督验证，能够在同一文本前提下形成正负对，支持对比学习。（推断）
-- 核心假设是视觉感知相关的微小扰动足以暴露模型的文本偏好，而不改变任务语义。（推断）
-
-##### 结构化GRPO奖励与批量排序目标
-- 采用结构化GRPO（Group Relative Policy Optimization）奖励机制，将感知对齐作为奖励项加入策略梯度。（来自摘要）
-- 批量排序目标（Batch Ranking Objective）在全局层面进行排序优化，避免显式配对标注，实现高效学习。（来自摘要）
-- 结构化GRPO通过相对策略更新确保在同一批样本中，感知正确的响应获得更高的累积奖励。（推断）
-
-#### 理论基础
-- 将感知保真度建模为奖励函数的一部分，类比强化学习中的奖励塑造（Reward Shaping）理论。（推断）
-- 批量排序目标借鉴对比学习的思想，通过全局相对排序而非成对比较来优化，理论上可以减少标注成本同时保持排序一致性。（推断）
-- 潜在假设是感知对齐与语义正确性在奖励空间中可分离，模型可以同时优化两者而不产生冲突。（推断）
-
-#### 实验与结果
-- 在多个多模态LLM-as-a-Judge基准上测试，方法显著提升感知保真度、排序一致性与人类评估对齐度。（来自摘要）
-- 消融实验显示GRPO与批量排序目标的协同作用是性能提升的关键。（推断）
-- 在视觉扰动样本上的表现优于基线模型，表明方法在感知冲突场景下具有更好的鲁棒性。（推断）
-
-#### 相关工作对比
-- 传统多模态评估方法通常依赖人工标注或固定规则，缺乏对感知偏差的系统性建模。（推断）
-- 现有方法多采用事后校准或提示工程，而该方法从训练阶段直接优化感知对齐，属于端到端的改进。（推断）
-- 与成对对比学习方法相比，批量排序目标无需显式配对标注，扩展性更强。（推断）
-
-#### 应用前景
-- 可作为通用训练路径，迁移至视频、3D等更复杂多模态场景，提升多模态判断模型的感知保真度。（推断）
-- 为可解释的多模态判断模型提供感知对齐的训练范式，支持下游任务如视觉问答、自动驾驶决策等。（推断）
-- 在需要严格视觉验证的领域（如医疗影像、工业检测）中具有潜在应用价值。（推断）
-
-#### 关键假设、潜在失效条件与可证伪方式
-- 关键假设：视觉扰动生成的样本能够有效覆盖感知判断偏差的主要场景；感知对齐与语义正确性在奖励空间中可分离且可同时优化。（推断）
-- 潜在失效条件：当视觉信息极度模糊或与文本高度冲突时，模型可能仍倾向于文本偏好；批量排序目标在极端长尾分布下可能失效。（推断）
-- 可证伪方式：在纯文本推理任务或视觉信息完全缺失的场景下测试，若模型表现无显著差异，则说明方法未真正解决感知判断偏差；若在人工构造的对抗性样本上性能大幅下降，则假设不成立。（推断）
-
----
-## 学习要点
-
-- 多模态LLM在充任评判者时会出现对低层次视觉特征的感知偏差，导致评价偏离人类意图（最重要）
-- 通过在输入图像上施加感知扰动（如噪声、颜色失真）可以迫使模型聚焦于语义信息，降低对表面特征的依赖
-- 引入奖励建模学习人类偏好，并在训练过程中对LLM的评分进行对齐，以纠正系统性偏差
-- 感知扰动与奖励建模的协同作用显著提升了评判结果与人类标注的一致性
-- 该方法在图像描述、视觉问答、视觉推理等多种任务中均表现出鲁棒性和可迁移性
-- 实施时只需在现有多模态LLM流程中加入轻量级的扰动模块和奖励模型模块，计算开销相对可控
-
----
-## 引用
-
-- **ArXiv**: [http://arxiv.org/abs/2606.02578v1](http://arxiv.org/abs/2606.02578v1)
-- **PDF**: [https://arxiv.org/pdf/2606.02578v1.pdf](https://arxiv.org/pdf/2606.02578v1.pdf)
-
-> 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
-
----
-
-## 站内链接
-
-- 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/) / [论文](/categories/%E8%AE%BA%E6%96%87/)
-- 标签： [多模态LLM](/tags/%E5%A4%9A%E6%A8%A1%E6%80%81llm/) / [奖励建模](/tags/%E5%A5%96%E5%8A%B1%E5%BB%BA%E6%A8%A1/) / [感知偏差](/tags/%E6%84%9F%E7%9F%A5%E5%81%8F%E5%B7%AE/) / [视觉扰动](/tags/%E8%A7%86%E8%A7%89%E6%89%B0%E5%8A%A8/) / [LLM评判](/tags/llm%E8%AF%84%E5%88%A4/) / [排序一致性](/tags/%E6%8E%92%E5%BA%8F%E4%B8%80%E8%87%B4%E6%80%A7/) / [人类对齐](/tags/%E4%BA%BA%E7%B1%BB%E5%AF%B9%E9%BD%90/) / [感知保真度](/tags/%E6%84%9F%E7%9F%A5%E4%BF%9D%E7%9C%9F%E5%BA%A6/)
-- 场景： [大语言模型](/scenarios/%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/)
-
-### 相关文章
-
-- [LLM评测新范式：从表面启发式到知识 grounded 评估]({{< relref "posts/20260312-arxiv_ai-beyond-the-illusion-of-consensus-from-surface-heur-5.md" >}})
-- [超越VLM奖励：扩散原生潜在奖励建模]({{< relref "posts/20260212-arxiv_ai-beyond-vlm-based-rewards-diffusion-native-latent-r-3.md" >}})
-- [超越VLM奖励：扩散原生潜在奖励建模]({{< relref "posts/20260212-arxiv_ai-beyond-vlm-based-rewards-diffusion-native-latent-r-3.md" >}})
-- [MMARS：基于边际感知与自我精炼的奖励建模]({{< relref "posts/20260220-arxiv_ai-mars-margin-aware-reward-modeling-with-self-refine-2.md" >}})
-- [RLAIF强化微调技术解析：LLM担任评判者的实现方法]({{< relref "posts/20260430-blogs_podcasts-reinforcement-fine-tuning-with-llm-as-a-judge-0.md" >}})
-*本文由 AI Stack 自动生成，深度解读学术研究。*
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

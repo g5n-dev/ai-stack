@@ -1,87 +1,68 @@
 ---
-title: 从RAG到Wiki：AI个人知识库的持续积累演进
+title: 从RAG到LLM Wiki：用AI构建持续进化的个人知识库
 date: 2026-05-17 03:38:57+08:00
 draft: false
 entry_kind: auto
 tags:
+- 掘金
 - RAG
-- 知识库
-- 知识图谱
-- LLM
-- AI 应用
-- 文档处理
-- 信息检索
-- 持续进化
+- AI Agent
+- 大语言模型
 categories:
 - 大模型
-source: juejin
-description: 传统的检索增强生成（RAG）模式在个人知识管理中虽能快速提供答案，却始终停留在“查即答”，缺少知识的沉淀与综合。随着大语言模型（LLM）能力的提升，构建一个持续演进的个人知识库成为可能，能够在交互中自我更新并形成结构化的关联网络。本文介绍从RAG到LLMWiki的迁移路径，帮助读者实现知识的自动化组织与持续积累。
-external_url: https://juejin.cn/post/7640091786766598207
 scenarios:
-- RAG应用
-- 大语言模型
 - AI/ML项目
-content_mode: legacy_analysis
-publication_tier: LEGACY
-source_provenance: legacy_no_snapshot
-source_support: 0.0
+- 大语言模型
+- RAG应用
+source: juejin
+description: 当前只保存了公开页面节选，不代表原文全文。请以原始来源为准。
+external_url: https://juejin.cn/post/7640091786766598207
+aliases: []
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: excerpt
+source_snapshot_sha256: sha256:07ca2467a26ec33f03cdbbc69872d5124717f5c557fee1057359709304b5c0ba
+extractor_version: source-contract-v1
+discovery_method: article_html_excerpt
+fetch_status: captured
+source_completeness: partial
+source_is_truncated: true
+source_support: 1.0
+source_title_chars_original: 29
+captured_at: '2026-07-18T04:21:25.111367Z'
+source_capture_sha256: sha256:74b209af895dd9258e03baccf9197614d111411a758aed345e8736c03846ce7b
+source_capture_chars_original: 4025
+source_publication_excerpt_chars: 795
+source_truncation_reason: historical_excerpt_only,historical_publication_excerpt_limit
 ---
 
 ## 基本信息
 
-- **作者**: 深度学习机器
-- **链接**: [https://juejin.cn/post/7640091786766598207](https://juejin.cn/post/7640091786766598207)
+- **来源**: juejin
+- **原始来源**: [https://juejin.cn/post/7640091786766598207](<https://juejin.cn/post/7640091786766598207>)
 
----
-## 导语
+## 来源摘要/节选
 
-传统的检索增强生成（RAG）模式在个人知识管理中虽能快速提供答案，却始终停留在“查即答”，缺少知识的沉淀与综合。随着大语言模型（LLM）能力的提升，构建一个持续演进的个人知识库成为可能，能够在交互中自我更新并形成结构化的关联网络。本文介绍从RAG到LLMWiki的迁移路径，帮助读者实现知识的自动化组织与持续积累。
+公开展示已截断至最多 800 个字符；请访问原始来源查看完整上下文。
 
----
-## 描述
+> 自从大模型诞生以来，我们主动或者被动接收到的信息越来越多，信息爆炸是我们每个人必须面对的问题。如果想提升自己的效率，就得从这些信息中精确筛选出有用的部分，避免自己被淹没在信息的海洋里。试想一下，比如你现在看到一篇文章，随手点了收藏，以为过后就会仔细去阅读，但是很多时候往往进了收藏夹之后就会吃灰。就算哪天真的想起来要看一下收藏夹的文章，如果收藏夹中已经有了大量的文章，且杂乱无序，这时候整理起来也费劲，往往会让人没有想看的欲望。
+> 主流的个人知识库管理工具，主要还是利用了RAG的思想，即：上传文件，查询时检索片段，生成答案。这意味着每次提问，LLM都会重复执行一遍检索，然后根据上下文回答，整个过程没有积累，没有综合，更没有交叉引用。
+> 一、LLM Wiki是什么
+> 基本原理
+> LLM WiKi是Andrej Karpathy提出的一种基于LLM构建个人知识库的设想，这种构建的思路与RAG不同。当你添加一篇新资料时，LLM不只是索引它以备后用，而是
+> 阅读它、提取关键信息、并将其整合到现有 Wiki 中
+> 。这个过程会不断更新实体页面、修订主题摘要、标注新旧数据的矛盾之处、强化或修改正在演化的综合分析。
+> 三层架构
+> LLM Wiki由三层组成：
+> 1. 原始资料层 \(raw/\)
+> 上传的源文档集合，可以是文章、论文、图片等形式的数据。这些是不可变的，LLM只读不改，也被称为真相来源（source of truth）。
+> 2. Wiki层 \(wiki/\)
+> 由LLM生成和维护的Markdown文件目录。包括摘要、实体页面、概念页面、对比分析、综述等。完全由LLM来维护这个文件目录，包括创建页面、在新资料到来时更新、维护交叉引用、保持一致性等操作。
+> 3. Schema层
+> 一个配置文档（如 CLAUDE.md、AGENTS.md 或 SCHEMA.md），告诉LLMWiki的结构约定、工作流程。…
 
-主流的个人知识库管理工具，主要还是利用了RAG的思想，即：上传文件，查询时检索片段，生成答案。这意味着每次提问，LLM都会重复执行一遍检索，然后根据上下文回答，整个过程没有积累，没有综合
+## 来源说明
 
----
-## 摘要
+当前只保存了公开页面节选，不代表原文全文。请以原始来源为准。
 
-#### 当前局限
-当前的个人知识库主要基于RAG范式：上传文档后，在提问时检索相关片段，交由大语言模型生成答案。这种方式在每次查询时都重新检索、重新生成，缺乏对已有知识的积累和跨文档的融合，难以形成系统化的知识网络。
-
-#### 进化路径
-为实现持续进化的个人知识库，需要从检索‑生成的单一链路转向构建“LLM Wiki”。在AI的帮助下，对文档进行抽取、关联、归纳，形成可迭代的知识图谱，并在用户提问时直接基于已构建的知识库提供综合答案，实现知识的累积、复用和自我更新。
-
----
-## 学习要点
-
-- 将检索增强生成（RAG）融入LLM，实现外部知识的动态检索与生成，是构建可进化个人知识库的核心技术。
-- 通过向量数据库（如FAISS、Milvus）对文档进行语义索引，支持高效的相似度检索，提升答案的准确性。
-- 采用增量式文档摄入与自动去重机制，保证知识库随时间持续更新且不产生冗余。
-- 将结构化知识（如知识图谱）与向量检索相结合，能够在粗细粒度上提供更精准的上下文信息。
-- 设计反馈循环（如用户纠错、置信度阈值）驱动模型再训练或索引更新，实现系统的自我优化。
-- 在本地或私有云部署开源LLM（如LLaMA、ChatGLM）并在检索环节加入隐私过滤，确保敏感信息不外泄。
-- 定期评估检索质量（如Recall@K、MRR）和生成质量（如BLEU、人类评估），通过指标驱动系统迭代。
-
----
-## 引用
-
-- **掘金原文**: [https://juejin.cn/post/7640091786766598207](https://juejin.cn/post/7640091786766598207)
-
-> 注：文中事实性信息以以上引用为准；观点与推断为 AI Stack 的分析。
-
----
-
-## 站内链接
-
-- 分类： [大模型](/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/)
-- 标签： [RAG](/tags/rag/) / [知识库](/tags/%E7%9F%A5%E8%AF%86%E5%BA%93/) / [知识图谱](/tags/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/) / [LLM](/tags/llm/) / [AI应用](/tags/ai%E5%BA%94%E7%94%A8/) / [文档处理](/tags/%E6%96%87%E6%A1%A3%E5%A4%84%E7%90%86/) / [信息检索](/tags/%E4%BF%A1%E6%81%AF%E6%A3%80%E7%B4%A2/) / [持续进化](/tags/%E6%8C%81%E7%BB%AD%E8%BF%9B%E5%8C%96/)
-- 场景： [RAG应用](/scenarios/rag%E5%BA%94%E7%94%A8/) / [大语言模型](/scenarios/%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/) / [AI/ML项目](/scenarios/ai-ml%E9%A1%B9%E7%9B%AE/)
-
-### 相关文章
-
-- [利用RAG技术有效解决大模型幻觉问题]({{< relref "posts/20260314-juejin-别再信它一本正经地胡说了用-rag终结大模型幻觉-0.md" >}})
-- [利用 Amazon Bedrock 构建AI驱动的招聘系统优化人才获取]({{< relref "posts/20260212-blogs_podcasts-ai-meets-hr-transforming-talent-acquisition-with-a-0.md" >}})
-- [基于Amazon Bedrock构建AI招聘系统优化人才获取流程]({{< relref "posts/20260212-blogs_podcasts-ai-meets-hr-transforming-talent-acquisition-with-a-0.md" >}})
-- [Captain：面向文件的自动化检索增强生成系统]({{< relref "posts/20260313-hacker_news-launch-hn-captain-yc-w26-automated-rag-for-files-5.md" >}})
-- [从聊天机器人到数字员工：解析AI世界的运转逻辑]({{< relref "posts/20260313-juejin-从聊天机器人到超级数字员工一篇文章看懂-ai-世界的运转逻辑-1.md" >}})
-*本文由 AI Stack 自动生成，提供深度内容分析。*
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

@@ -4,42 +4,43 @@ date: 2026-03-12 14:57:45+08:00
 draft: false
 entry_kind: auto
 tags:
-- Axe
-- AI 框架
-- 二进制
-- Rust
-- 推理引擎
-- LLM
-- 本地部署
-- 性能优化
-categories:
-- AI 工程
-- 开发工具
+- Hacker News
+categories: []
+scenarios: []
 source: hacker_news
-description: 在 AI 开发领域，依赖庞大的框架往往意味着沉重的环境负担。Axe 作为一个仅 12 MB 的二进制文件，试图通过精简的底层实现来替代主流框架，从而大幅降低部署复杂度与资源占用。本文将介绍其核心设计思路与适用场景，帮助开发者评估这一轻量方案是否适合当前的项目需求。
+description: 当前只保存了来源元数据，未抓取外链全文。请以原始来源和 Hacker News 讨论为准。
 external_url: https://github.com/jrswab/axe
-scenarios:
-- AI/ML项目
-- 大语言模型
 aliases:
 - /posts/20260312-hacker_news-show-hn-axe-a-12mb-binary-that-replaces-your-ai-fr-14/
 - /posts/20260313-hacker_news-show-hn-axe-a-12mb-binary-that-replaces-your-ai-fr-18/
-content_mode: legacy_source_brief
+content_mode: source_brief
 publication_tier: C
-source_provenance: legacy_no_snapshot
-source_support: 0.0
+source_capture_mode: metadata_only
+source_snapshot_sha256: sha256:6a9265c6b84a3d8c5747be23ee9a8d12ad3fb7ac8a7447175e58fa9a250635da
+extractor_version: source-contract-v1
+discovery_method: api_metadata
+fetch_status: captured
+source_completeness: metadata_only
+source_is_truncated: false
+source_support: 1.0
+source_title_chars_original: 60
+captured_at: '2026-07-18T04:19:09.952609Z'
+source_capture_sha256: sha256:10ff8e81a006b5ba854b1cab3abaed75d326d62b871de0cfa558f89b2f955534
+source_capture_chars_original: 60
+source_publication_excerpt_chars: 60
 ---
 
 ## 基本信息
 
+- **来源**: hacker\_news
+- **原始来源**: [https://github.com/jrswab/axe](<https://github.com/jrswab/axe>)
 - **作者**: jrswab
-- **评分**: 66
-- **评论数**: 55
-- **链接**: [https://github.com/jrswab/axe](https://github.com/jrswab/axe)
-- **HN 讨论**: [https://news.ycombinator.com/item?id=47350516](https://news.ycombinator.com/item?id=47350516)
+- **评分**: 227
+- **评论数**: 128
+- **HN 讨论**: [https://news.ycombinator.com/item?id=47350516](<https://news.ycombinator.com/item?id=47350516>)
 
----
+## 来源说明
 
-## 导语
+当前只保存了来源元数据，未抓取外链全文。请以原始来源和 Hacker News 讨论为准。
 
-在 AI 开发领域，依赖庞大的框架往往意味着沉重的环境负担。Axe 作为一个仅 12 MB 的二进制文件，试图通过精简的底层实现来替代主流框架，从而大幅降低部署复杂度与资源占用。本文将介绍其核心设计思路与适用场景，帮助开发者评估这一轻量方案是否适合当前的项目需求。
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

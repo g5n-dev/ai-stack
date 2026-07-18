@@ -1,14 +1,19 @@
 ---
-title: Amazon Bedrock AgentCore 浏览器新增代理、配置文件及扩展支持
+title: Customize AI agent browsing with proxies, profiles, and extensions in Amazon
+  Bedrock AgentCore Browser | Amazon Web Services
 date: 2026-02-13 23:30:43+08:00
 draft: false
 entry_kind: auto
-tags: []
-categories: []
+tags:
+- 博客与播客
+- AI Agent
+categories:
+- AI 工程
+scenarios:
+- AI/ML项目
 source: blogs_podcasts
-description: 历史条目已归档：现有正文未通过内容质量门，请查阅原始来源。
+description: 当前只保存了公开页面节选，不代表原文全文。请以原始来源为准。
 external_url: https://aws.amazon.com/blogs/machine-learning/customize-ai-agent-browsing-with-proxies-profiles-and-extensions-in-amazon-bedrock-agentcore-browser
-scenarios: []
 aliases:
 - /posts/20260214-blogs_podcasts-customize-ai-agent-browsing-with-proxies-profiles--0/
 - /posts/20260214-blogs_podcasts-customize-ai-agent-browsing-with-proxies-profiles--1/
@@ -24,20 +29,39 @@ aliases:
 - /posts/20260218-blogs_podcasts-customize-ai-agent-browsing-with-proxies-profiles--5/
 - /posts/20260218-blogs_podcasts-customize-ai-agent-browsing-with-proxies-profiles--6/
 - /posts/20260218-blogs_podcasts-customize-ai-agent-browsing-with-proxies-profiles--9/
-content_mode: archived
-publication_tier: ARCHIVED
-source_provenance: legacy_no_snapshot
-source_support: 0.0
-archived: true
-archive_reason: historical_content_quality_gate
-build:
-  list: never
-  render: always
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: excerpt
+source_snapshot_sha256: sha256:b434a4b2975acb79073d36a7d81186d039cf3be5a5fa0a0dfd68c4afdd85033e
+extractor_version: source-contract-v1
+discovery_method: article_html_excerpt
+fetch_status: captured
+source_completeness: partial
+source_is_truncated: true
+source_support: 1.0
+source_title_chars_original: 124
+captured_at: '2026-07-18T04:17:16.327960Z'
+source_capture_sha256: sha256:5cee11f5dca8bceeb90865b193033830a4c616bfcda8571f7a5aca2aa1247c57
+source_capture_chars_original: 5512
+source_publication_excerpt_chars: 728
+source_truncation_reason: historical_capture_limit,historical_publication_excerpt_limit
 ---
 
-## 历史条目归档说明
+## 基本信息
 
-该条目的历史正文未通过内容质量门，可能包含基于标题推测的内容。为避免继续传播不可核验文本，本站仅保留透明归档记录。
+- **来源**: blogs\_podcasts
+- **原始来源**: [https://aws.amazon.com/blogs/machine-learning/customize-ai-agent-browsing-with-proxies-profiles-and-extensions-in-amazon-bedrock-agentcore-browser](<https://aws.amazon.com/blogs/machine-learning/customize-ai-agent-browsing-with-proxies-profiles-and-extensions-in-amazon-bedrock-agentcore-browser>)
 
-- 历史内容质量门未通过
-- 原始来源：<https://aws.amazon.com/blogs/machine-learning/customize-ai-agent-browsing-with-proxies-profiles-and-extensions-in-amazon-bedrock-agentcore-browser>
+## 来源摘要/节选
+
+公开展示已截断至最多 800 个字符；请访问原始来源查看完整上下文。
+
+> AI agents that browse the web need more than basic page navigation. Our customers tell us they need agents that maintain session state across interactions, route traffic through corporate proxy infrastructure, and run with custom browser configurations. AgentCore Browser provides a secure, isolated browser environment for your agents to interact with web applications. Until now, in Agent Core Browser, each browser session started from a blank slate with default settings and direct internet access, limiting what agents could accomplish in real-world enterprise environments.
+>
+> Today, we are announcing three new capabilities that address these requirements: proxy configuration , browser profiles , and browser extensions .…
+
+## 来源说明
+
+当前只保存了公开页面节选，不代表原文全文。请以原始来源为准。
+
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。

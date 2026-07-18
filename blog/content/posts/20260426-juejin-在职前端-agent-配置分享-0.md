@@ -1,29 +1,76 @@
 ---
-title: 前端Agent配置实践与AI开发范式演进
+title: 在职前端 Agent 配置分享
 date: 2026-04-26 13:32:47+08:00
 draft: false
 entry_kind: auto
-tags: []
-categories: []
+tags:
+- 掘金
+- MCP
+- AI Agent
+- 命令行工具
+categories:
+- AI 工程
+scenarios:
+- AI/ML项目
+- 命令行工具
 source: juejin
-description: 历史条目已归档：现有正文未通过内容质量门，请查阅原始来源。
+description: 当前只保存了公开页面节选，不代表原文全文。请以原始来源为准。
 external_url: https://juejin.cn/post/7632567246008270902
-scenarios: []
 aliases: []
-content_mode: archived
-publication_tier: ARCHIVED
-source_provenance: legacy_no_snapshot
-source_support: 0.0
-archived: true
-archive_reason: historical_content_quality_gate
-build:
-  list: never
-  render: always
+content_mode: source_brief
+publication_tier: C
+source_capture_mode: excerpt
+source_snapshot_sha256: sha256:9a638dac7ee0b3b30d0beaa0feeca59211e48a2cbe17bc62965bdd2f9940db51
+extractor_version: source-contract-v1
+discovery_method: article_html_excerpt
+fetch_status: captured
+source_completeness: partial
+source_is_truncated: true
+source_support: 1.0
+source_title_chars_original: 15
+captured_at: '2026-07-18T04:19:41.786127Z'
+source_capture_sha256: sha256:417dd4203601c1f158499eb486082a5dcd310d094deaa830922b791be538f069
+source_capture_chars_original: 1980
+source_publication_excerpt_chars: 645
+source_truncation_reason: historical_excerpt_only,historical_publication_excerpt_limit
 ---
 
-## 历史条目归档说明
+## 基本信息
 
-该条目的历史正文未通过内容质量门，可能包含基于标题推测的内容。为避免继续传播不可核验文本，本站仅保留透明归档记录。
+- **来源**: juejin
+- **原始来源**: [https://juejin.cn/post/7632567246008270902](<https://juejin.cn/post/7632567246008270902>)
 
-- 历史内容质量门未通过
-- 原始来源：<https://juejin.cn/post/7632567246008270902>
+## 来源摘要/节选
+
+公开展示已截断至最多 800 个字符；请访问原始来源查看完整上下文。
+
+> 前言
+> 去年花了半年时间对公司旧业务代码做了不少架构优化，今年开始陆续就要开始业务开发了。
+> 不得不说在 AI 时代背景下，开发范式每天都在变化，prompt engineering -&gt; context engineering -&gt; agent engineering -&gt; harness engineering，一路狂飙，看似每天都有新东西要学习，到最后大多都是 FOMO。
+> 然而在显而易见的不确定性面前，总有一些东西是固定不变的。今天我来分享在 AI 冲击下我的前端 Agent 开发配置，这些内容个人认为属于长期不变的地基。
+> （本文以 Mac 为例）
+> 基本工具
+> 首先是两个配置工具：
+> cc-switch
+> skills.sh
+> 前者用于接入不同 AI 供应商，例如业内熟知的 Claude、Codex、Gemini、OpenCode 等等；后者用来添加 skills，一些固定的工作流被总结为技能供模型识别和调用。
+> CC Switch
+> 安装
+> 以 Homebrew（macOS）为例：
+> brew tap farion1231/ccswitch
+> brew install --cask cc-switch
+> # 更新
+> brew upgrade --cask cc-switch
+> 其他平台也可以在
+> Release
+> 找到对应的安装包。
+> 更新
+> APP 的关于页可以检查更新、同时还兼具了本地环境检查：
+> 我觉得特别好的一点就是还提供了一键安装的脚本：
+> 以往我都是要去官方文档上找，这里一键复制更方便。…
+
+## 来源说明
+
+当前只保存了公开页面节选，不代表原文全文。请以原始来源为准。
+
+> 本页只呈现已做哈希绑定的来源证据，不包含基于旧正文或缺失原文的扩展推断。
