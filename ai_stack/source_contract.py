@@ -18,6 +18,7 @@ from ._json import canonical_json_bytes
 from .identity import canonicalize_url
 
 EXTRACTOR_VERSION = "source-contract-v1"
+FULL_ARTICLE_EXTRACTOR_VERSION = "source-contract-v2"
 EVIDENCE_SCHEMA = "source_evidence_v1"
 _MAX_EVIDENCE_BYTES = 64 * 1024
 _MAX_STORED_SOURCE_BYTES = 24 * 1024
@@ -92,6 +93,8 @@ def _source_summary(source: str, item: Mapping[str, Any]) -> str:
         return ""
     if source == "arxiv":
         return _text(item.get("summary"))
+    if source == "juejin" and _text(item.get("full_article_text")):
+        return _text(item.get("full_article_text"))
     if source in {"blogs_podcasts", "juejin"}:
         return _text(item.get("summary") or item.get("description"))
     if source == "github_trending":
@@ -116,6 +119,8 @@ def _canonical_url(item: Mapping[str, Any]) -> str:
 def _capture(item: Mapping[str, Any]) -> tuple[str, str, str, str]:
     source = _text(item.get("source")).casefold()
     original_summary = _source_summary(source, item)
+    if source == "juejin" and _text(item.get("full_article_text")):
+        return "full_article", "evidence_backed_rewrite", original_summary, "article_html"
     if _text(item.get("discovery_method")).casefold() == "search_fallback":
         return "metadata_only", "source_brief", _text(item.get("title")), "search_fallback"
     if source == "hacker_news":
@@ -146,6 +151,8 @@ def _origin_url(source: str, item: Mapping[str, Any], final_url: str) -> str:
         return f"https://hacker-news.firebaseio.com/v0/item/{hn_id}.json"
     if source == "arxiv":
         return "https://export.arxiv.org/api/query"
+    if source == "juejin" and _text(item.get("full_article_text")):
+        return final_url
     feed_url = _text(item.get("feed_url"))
     return feed_url or final_url
 
@@ -214,6 +221,17 @@ def _evidence_digest(evidence: Mapping[str, Any]) -> str:
         "truncation_reason": evidence.get("truncation_reason"),
         "fields": evidence.get("fields"),
     }
+    # v1 digests are already persisted in historical crawler records.  New v2
+    # provenance fields are signed only by v2 so those immutable v1 snapshots
+    # remain verifiable during rolling deploys and archive repair.
+    if _text(evidence.get("extractor_version")) == FULL_ARTICLE_EXTRACTOR_VERSION:
+        payload.update(
+            {
+                "captured_at": evidence.get("captured_at"),
+                "source_completeness": evidence.get("source_completeness"),
+                "parent_snapshot_sha256": evidence.get("parent_snapshot_sha256"),
+            }
+        )
     return "sha256:" + hashlib.sha256(canonical_json_bytes(payload)).hexdigest()
 
 
@@ -248,11 +266,16 @@ def apply_source_contract(item: Mapping[str, Any]) -> dict[str, Any]:
         raise SourceContractError("Hacker News evidence requires a numeric hn_id")
 
     capture_mode, content_mode, raw_source_text, discovery_method = _capture(result)
-    if capture_mode in {"abstract", "excerpt", "social_post"} and not raw_source_text:
+    if (
+        capture_mode in {"abstract", "excerpt", "social_post", "full_article"}
+        and not raw_source_text
+    ):
         raise SourceContractError(f"{capture_mode} source text is missing")
     source_payload_sha256 = "sha256:" + hashlib.sha256(raw_source_text.encode("utf-8")).hexdigest()
     source_text_chars_original = len(raw_source_text)
     source_text, storage_truncated = _truncate_utf8(raw_source_text, _MAX_STORED_SOURCE_BYTES)
+    if capture_mode == "full_article" and storage_truncated:
+        raise SourceContractError("full article exceeds the verified evidence limit")
     # Publication must not silently discard evidence that was already captured and
     # retained by the contract.  Older v1 records used a second 6 KB display cap;
     # verification below keeps those immutable records readable, while every new
@@ -282,6 +305,41 @@ def apply_source_contract(item: Mapping[str, Any]) -> dict[str, Any]:
         truncation_reasons.append("source_contract_limit")
     truncation_reason = ",".join(dict.fromkeys(truncation_reasons))
     is_truncated = bool(truncation_reasons)
+    if capture_mode == "full_article" and is_truncated:
+        raise SourceContractError("full article capture cannot be marked truncated")
+
+    source_completeness = _text(result.get("source_completeness")).casefold()
+    if not source_completeness:
+        source_completeness = {
+            "full_article": "complete",
+            "excerpt": "partial",
+            "abstract": "abstract_only",
+            "metadata_only": "metadata_only",
+            "social_post": "single_item",
+        }.get(capture_mode, "unknown")
+    allowed_completeness = {
+        "complete",
+        "partial",
+        "abstract_only",
+        "metadata_only",
+        "single_item",
+        "unknown",
+    }
+    if source_completeness not in allowed_completeness:
+        raise SourceContractError("source completeness is invalid")
+    if capture_mode == "full_article" and source_completeness != "complete":
+        raise SourceContractError("full article capture requires complete source evidence")
+
+    parent_snapshot_sha256 = _text(result.get("parent_snapshot_sha256"))
+    extractor_version = (
+        FULL_ARTICLE_EXTRACTOR_VERSION
+        if capture_mode == "full_article"
+        else EXTRACTOR_VERSION
+    )
+    if capture_mode == "full_article" and not re.fullmatch(
+        r"sha256:[0-9a-f]{64}", parent_snapshot_sha256
+    ):
+        raise SourceContractError("full article capture requires a parent source snapshot")
 
     discovery_method = _text(result.get("discovery_method")) or discovery_method
     fetch_status = _text(result.get("fetch_status")) or "captured"
@@ -295,10 +353,12 @@ def apply_source_contract(item: Mapping[str, Any]) -> dict[str, Any]:
         "captured_at": captured_at,
         "discovery_method": discovery_method,
         "fetch_status": fetch_status,
-        "extractor_version": EXTRACTOR_VERSION,
+        "extractor_version": extractor_version,
         "source_payload_sha256": source_payload_sha256,
         "source_text_chars_original": source_text_chars_original,
         "source_summary_original": original_summary,
+        "source_completeness": source_completeness,
+        "parent_snapshot_sha256": parent_snapshot_sha256,
         "is_truncated": is_truncated,
         "truncation_reason": truncation_reason,
         "fields": fields,
@@ -325,7 +385,9 @@ def apply_source_contract(item: Mapping[str, Any]) -> dict[str, Any]:
             "source_text_chars_original": source_text_chars_original,
             "source_payload_sha256": source_payload_sha256,
             "source_snapshot_sha256": snapshot_digest,
-            "extractor_version": EXTRACTOR_VERSION,
+            "extractor_version": extractor_version,
+            "source_completeness": source_completeness,
+            "parent_snapshot_sha256": parent_snapshot_sha256,
             "source_is_truncated": is_truncated,
             "source_truncation_reason": truncation_reason,
             "captured_at": captured_at,
@@ -408,6 +470,12 @@ def verify_source_contract(item: Mapping[str, Any]) -> None:
         raise SourceContractError("source original text length mismatch")
     if _text(item.get("source_summary_original")) != _text(evidence.get("source_summary_original")):
         raise SourceContractError("source summary does not match evidence")
+    if _text(item.get("source_completeness")) != _text(evidence.get("source_completeness")):
+        raise SourceContractError("source completeness does not match evidence")
+    if _text(item.get("parent_snapshot_sha256")) != _text(
+        evidence.get("parent_snapshot_sha256")
+    ):
+        raise SourceContractError("parent source snapshot does not match evidence")
     evidence_truncation_reason = _text(evidence.get("truncation_reason"))
     if "publication_excerpt_limit" in evidence_truncation_reason.split(","):
         expected_display_excerpt, _ = _truncate_utf8(
@@ -421,10 +489,45 @@ def verify_source_contract(item: Mapping[str, Any]) -> None:
         raise SourceContractError("source truncation flag mismatch")
     if _text(item.get("source_truncation_reason")) != _text(evidence.get("truncation_reason")):
         raise SourceContractError("source truncation reason mismatch")
-    if _text(item.get("content_mode")) != "source_brief":
+    content_mode = _text(item.get("content_mode"))
+    capture_mode = _text(item.get("source_capture_mode"))
+    publication_tier = _text(item.get("publication_tier"))
+    extractor_version = _text(item.get("extractor_version"))
+    if content_mode == "source_brief":
+        if publication_tier != "C":
+            raise SourceContractError("source brief must use publication tier C")
+        if capture_mode == "full_article":
+            raise SourceContractError("full article cannot be published as a source brief")
+        if extractor_version != EXTRACTOR_VERSION:
+            raise SourceContractError("source brief extractor version is invalid")
+        expected_completeness = {
+            "abstract": "abstract_only",
+            "excerpt": "partial",
+            "metadata_only": "metadata_only",
+            "social_post": "single_item",
+        }.get(capture_mode, "unknown")
+        declared_completeness = _text(item.get("source_completeness"))
+        if declared_completeness and declared_completeness != expected_completeness:
+            raise SourceContractError("source brief completeness is invalid")
+        if _text(item.get("parent_snapshot_sha256")):
+            raise SourceContractError("source brief cannot declare a parent snapshot")
+    elif content_mode == "evidence_backed_rewrite":
+        if publication_tier != "B":
+            raise SourceContractError("evidence-backed rewrite must use publication tier B")
+        if capture_mode != "full_article":
+            raise SourceContractError("evidence-backed rewrite requires full article evidence")
+        if extractor_version != FULL_ARTICLE_EXTRACTOR_VERSION:
+            raise SourceContractError("evidence-backed rewrite extractor version is invalid")
+        if item.get("source_is_truncated") is not False:
+            raise SourceContractError("evidence-backed rewrite cannot use truncated evidence")
+        if _text(item.get("source_completeness")) != "complete":
+            raise SourceContractError("evidence-backed rewrite requires complete evidence")
+        if not re.fullmatch(
+            r"sha256:[0-9a-f]{64}", _text(item.get("parent_snapshot_sha256"))
+        ):
+            raise SourceContractError("evidence-backed rewrite parent snapshot is invalid")
+    else:
         raise SourceContractError("unsupported publication content mode")
-    if _text(item.get("publication_tier")) != "C":
-        raise SourceContractError("source brief must use publication tier C")
     if (
         _text(item.get("discovery_method")).casefold() == "search_fallback"
         and _text(item.get("source_capture_mode")) != "metadata_only"
@@ -432,6 +535,53 @@ def verify_source_contract(item: Mapping[str, Any]) -> None:
         raise SourceContractError("search fallback cannot claim source body evidence")
     if len(canonical_json_bytes(dict(evidence))) > _MAX_EVIDENCE_BYTES:
         raise SourceContractError("source evidence exceeds the size limit")
+
+
+def promote_juejin_full_article(
+    item: Mapping[str, Any],
+    full_article_text: str,
+) -> dict[str, Any]:
+    """Promote a verified Juejin RSS snapshot with a complete SSR body.
+
+    The original Tier-C digest remains linked as ``parent_snapshot_sha256`` so
+    an article body cannot appear without a traceable discovery record.
+    """
+
+    verify_source_contract(item)
+    evidence = item.get("evidence")
+    fields = evidence.get("fields") if isinstance(evidence, Mapping) else None
+    if not isinstance(fields, Mapping):
+        raise SourceContractError("source evidence fields are invalid")
+    if _text(item.get("source")).casefold() != "juejin":
+        raise SourceContractError("only Juejin evidence can be promoted by this function")
+    if _text(item.get("content_mode")) != "source_brief":
+        raise SourceContractError("Juejin promotion requires a Tier-C source brief")
+    if _text(item.get("source_capture_mode")) != "excerpt":
+        raise SourceContractError("Juejin promotion requires an RSS excerpt parent")
+    body = str(full_article_text or "").strip()
+    if len(re.sub(r"\s+", "", body)) < 600:
+        raise SourceContractError("full article evidence is too short")
+
+    raw: dict[str, Any] = {
+        "source": "juejin",
+        "title": _text(fields.get("title")),
+        "url": _text(evidence.get("external_url")),
+        "author": _text(fields.get("author")),
+        "published": _text(fields.get("published")),
+        "tags": list(fields.get("tags") or []),
+        "crawled_at": _text(evidence.get("captured_at")),
+        "captured_at": _text(evidence.get("captured_at")),
+        "full_article_text": body,
+        "discovery_method": "article_html",
+        "fetch_status": "captured",
+        "source_completeness": "complete",
+        "source_is_truncated": False,
+        "source_truncation_reason": "",
+        "parent_snapshot_sha256": _text(item.get("source_snapshot_sha256")),
+    }
+    promoted = apply_source_contract(raw)
+    verify_source_contract(promoted)
+    return promoted
 
 
 def publication_title_from_contract(item: Mapping[str, Any]) -> str:
@@ -451,8 +601,10 @@ def publication_title_from_contract(item: Mapping[str, Any]) -> str:
 __all__ = [
     "EVIDENCE_SCHEMA",
     "EXTRACTOR_VERSION",
+    "FULL_ARTICLE_EXTRACTOR_VERSION",
     "SourceContractError",
     "apply_source_contract",
     "publication_title_from_contract",
+    "promote_juejin_full_article",
     "verify_source_contract",
 ]

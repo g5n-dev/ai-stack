@@ -220,6 +220,15 @@ _EXPLICIT_TRUNCATION_RE = re.compile(r"\[\s*\.{3}\s*truncated\s*\]", re.IGNORECA
 _HTTP_SCHEMES = frozenset({"http", "https"})
 _SOURCE_DIGEST_RE = re.compile(r"^sha256:[0-9a-f]{64}$")
 _SOURCE_CAPTURE_MODES = frozenset({"abstract", "excerpt", "metadata_only", "social_post"})
+_REWRITE_REQUIRED_HEADINGS = (
+    "转写说明",
+    "核心结论",
+    "能力机制",
+    "快速开始",
+    "适用边界",
+    "核验清单",
+    "来源与核验",
+)
 _MAX_MODERN_SOURCE_BRIEF_BODY_BYTES = 192 * 1024
 _STANDARD_FOOTER_PREFIXES = (
     "*本文由 AI Stack",
@@ -853,6 +862,45 @@ def is_source_brief(metadata: Mapping[str, Any], body: str) -> bool:
     return any(len(re.sub(r"\s+", "", line)) >= 12 for line in narrative_lines)
 
 
+def is_evidence_backed_rewrite(metadata: Mapping[str, Any], body: str) -> bool:
+    """Return whether a generated Tier-B rewrite has complete source provenance."""
+
+    if str(metadata.get("entry_kind") or "").strip().casefold() != "auto":
+        return False
+    if str(metadata.get("content_mode") or "").strip().casefold() != "evidence_backed_rewrite":
+        return False
+    if str(metadata.get("publication_tier") or "").strip() != "B":
+        return False
+    if str(metadata.get("source_capture_mode") or "").strip() != "full_article":
+        return False
+    if str(metadata.get("source_completeness") or "").strip() != "complete":
+        return False
+    if metadata.get("source_is_truncated") is not False:
+        return False
+    if str(metadata.get("extractor_version") or "").strip() != "source-contract-v2":
+        return False
+    if str(metadata.get("discovery_method") or "").strip() != "article_html":
+        return False
+    if metadata.get("source_support") != 1.0:
+        return False
+    for name in ("source_snapshot_sha256", "parent_snapshot_sha256"):
+        if _SOURCE_DIGEST_RE.fullmatch(str(metadata.get(name) or "").strip()) is None:
+            return False
+    external_url = metadata.get("external_url")
+    if not isinstance(external_url, str):
+        return False
+    parsed = urlsplit(external_url.strip())
+    if parsed.scheme.casefold() not in _HTTP_SCHEMES or not parsed.hostname:
+        return False
+    text = str(body or "")
+    if len(re.sub(r"\s+", "", _prose_without_code(text))) < 700:
+        return False
+    return all(
+        re.search(rf"(?m)^##[ \t]+{re.escape(heading)}[ \t]*$", text)
+        for heading in _REWRITE_REQUIRED_HEADINGS
+    )
+
+
 def analyze_post(document: str) -> PostQualityAnalysis:
     """Analyze one complete Markdown document through the shared Post gate."""
 
@@ -883,6 +931,7 @@ def analyze_post(document: str) -> PostQualityAnalysis:
         fatal.add("title_generation_prompt_leak")
 
     source_brief = is_source_brief(metadata, body)
+    evidence_backed_rewrite = is_evidence_backed_rewrite(metadata, body)
     declared_mode = str(metadata.get("content_mode") or "").strip().casefold()
     entry_kind = str(metadata.get("entry_kind") or "").strip().casefold()
     substantive_length = len(re.sub(r"\s+", "", _prose_without_code(body)))
@@ -892,6 +941,10 @@ def analyze_post(document: str) -> PostQualityAnalysis:
         fatal.add("invalid_source_brief")
     if declared_mode == "legacy_source_brief" and not source_brief:
         fatal.add("invalid_source_brief")
+    if declared_mode == "evidence_backed_rewrite" and not (
+        evidence_backed_rewrite or entry_kind == "curated"
+    ):
+        fatal.add("invalid_evidence_backed_rewrite")
     if entry_kind == "auto" and not declared_mode:
         fatal.add("missing_source_contract")
     if _has_truncated_pre_citation_tail(metadata, body):
@@ -914,6 +967,8 @@ def analyze_post(document: str) -> PostQualityAnalysis:
         status = "quarantined"
     elif source_brief:
         status = "source_brief"
+    elif evidence_backed_rewrite:
+        status = "complete"
     elif declared_mode == "legacy_analysis" or (entry_kind == "auto" and not declared_mode):
         status = "legacy_analysis"
     else:

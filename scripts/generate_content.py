@@ -32,6 +32,7 @@ from ai_stack.source_contract import (
     SourceContractError,
     apply_source_contract,
     publication_title_from_contract,
+    promote_juejin_full_article,
     verify_source_contract,
 )
 from ai_stack.tag_taxonomy import normalize_tags
@@ -48,6 +49,18 @@ logger = logging.getLogger(__name__)
 
 SHANGHAI_TZ = ZoneInfo("Asia/Shanghai")
 CONTENT_TIMEZONE = SHANGHAI_TZ
+_SOURCE_METADATA_URL_RE = re.compile(r"(?i)\b(?:https?://|www\.)\S+")
+_MARKDOWN_PUNCTUATION_RE = re.compile(r"([\\`*_[\]{}()#+.!|>~-])")
+
+
+def fetch_selected_juejin_article(source_url: str, *, timeout: int = 10):
+    """Lazy import keeps lightweight content-guard tooling dependency-isolated."""
+
+    from crawler.juejin_article import fetch_juejin_article
+
+    return fetch_juejin_article(source_url, timeout=timeout)
+
+
 def content_now(value: datetime | None = None) -> datetime:
     """Return one timezone-aware clock value for filenames and frontmatter."""
     if value is None:
@@ -55,6 +68,16 @@ def content_now(value: datetime | None = None) -> datetime:
     if value.tzinfo is None:
         raise ValueError("content generation time must be timezone-aware")
     return value.astimezone(CONTENT_TIMEZONE)
+
+
+def safe_source_metadata_text(value: object, *, maximum_length: int = 160) -> str:
+    """Render signed-but-untrusted source metadata as one inert text line."""
+
+    normalized = " ".join(str(value or "").split())
+    normalized = _SOURCE_METADATA_URL_RE.sub("", normalized)
+    normalized = " ".join(normalized.split()).strip()[:maximum_length].rstrip()
+    escaped = _MARKDOWN_PUNCTUATION_RE.sub(r"\\\1", normalized)
+    return html.escape(escaped, quote=False)
 
 
 def canonicalize_content_url(value: object) -> str:
@@ -568,6 +591,7 @@ class SuperEnhancedContentGenerator:
                 crawled_data,
                 max_items_per_source=self.max_new_items_per_source,
             )
+            crawled_data = self._hydrate_selected_juejin_articles(crawled_data)
             unseen_items = sum(len(items) for items in crawled_data.values())
             logger.info(
                 "✓ Selected %s archive-new items for AI processing",
@@ -713,6 +737,47 @@ class SuperEnhancedContentGenerator:
             self.last_filter_stats["skipped_historical"],
             self.last_filter_stats["selected"],
         )
+        return selected
+
+    def _hydrate_selected_juejin_articles(self, crawled_data: dict) -> dict:
+        """Promote only selected Juejin candidates when complete SSR is provable.
+
+        Hydration intentionally happens after archive dedupe and the CI per-source
+        limit, so an hourly run performs at most one article request.  WAF and
+        structural failures keep the already signed Tier-C RSS brief.
+        """
+
+        selected = {
+            str(source): list(items) if isinstance(items, list) else []
+            for source, items in (crawled_data or {}).items()
+        }
+        items = selected.get("juejin", [])
+        for index, item in enumerate(items):
+            if not isinstance(item, dict):
+                continue
+            if str(item.get("content_mode") or "") != "source_brief":
+                continue
+            if str(item.get("source_capture_mode") or "") != "excerpt":
+                continue
+            evidence = item.get("evidence") if isinstance(item.get("evidence"), dict) else {}
+            source_url = str(evidence.get("external_url") or item.get("url") or "").strip()
+            try:
+                capture = fetch_selected_juejin_article(source_url, timeout=10)
+                items[index] = promote_juejin_full_article(item, capture.markdown)
+                logger.info(
+                    "Juejin full article verified: id=%s chars=%s headings=%s code_blocks=%s",
+                    capture.article_id,
+                    len(capture.plain_text),
+                    capture.heading_count,
+                    capture.code_block_count,
+                )
+            except (SourceContractError, OSError, ValueError) as exc:
+                logger.warning(
+                    "Juejin full article unavailable; keeping Tier-C RSS excerpt: %s (%s)",
+                    source_url,
+                    exc,
+                )
+        selected["juejin"] = items
         return selected
 
     def _raise_for_fatal_post_generation_state(
@@ -874,7 +939,7 @@ class SuperEnhancedContentGenerator:
                         )
                         continue
 
-                    publication_payload = self._source_brief_publication_payload(item)
+                    publication_payload = self._publication_payload(item)
 
                     # 写入文件
                     with open(filepath, 'w', encoding='utf-8') as f:
@@ -908,11 +973,25 @@ class SuperEnhancedContentGenerator:
         }
         return created_count
 
-    def _source_brief_publication_payload(self, item: dict) -> dict:
-        """Build the only payload social publishers may receive after Post validation."""
+    def _publication_payload(self, item: dict) -> dict:
+        """Build a mode-aware payload only after the Post validation gate."""
 
         verify_source_contract(item)
         evidence = item["evidence"]
+        if str(item.get("content_mode") or "") == "evidence_backed_rewrite":
+            return {
+                "title": publication_title_from_contract(item),
+                "summary": self._truncate_seo_description(
+                    self._strip_markdown_for_seo(item.get("rewritten_body", "")),
+                    maximum_length=160,
+                ),
+                "url": str(evidence.get("external_url") or "").strip(),
+                "source": str(evidence.get("source") or "").strip(),
+                "tags": self._normalize_tags(item.get("tags", [])),
+                "content_mode": "evidence_backed_rewrite",
+                "publication_tier": "B",
+                "source_snapshot_sha256": str(evidence.get("digest") or "").strip(),
+            }
         return {
             "title": publication_title_from_contract(item),
             "summary": (
@@ -926,6 +1005,14 @@ class SuperEnhancedContentGenerator:
             "publication_tier": "C",
             "source_snapshot_sha256": str(evidence.get("digest") or "").strip(),
         }
+
+    def _source_brief_publication_payload(self, item: dict) -> dict:
+        """Backward-compatible wrapper for callers that publish Tier-C cards."""
+
+        payload = self._publication_payload(item)
+        if payload.get("content_mode") != "source_brief":
+            raise SourceContractError("expected a source brief publication payload")
+        return payload
 
     def _looks_like_meta_disclaimer(self, text: str) -> bool:
         t = str(text or "").strip()
@@ -1066,7 +1153,7 @@ class SuperEnhancedContentGenerator:
             if isinstance(evidence.get("fields"), dict)
             else {}
         )
-        if content_mode == "source_brief":
+        if content_mode in {"source_brief", "evidence_backed_rewrite"}:
             source = str(evidence.get("source") or "unknown")
             title = publication_title_from_contract(item)
         else:
@@ -1087,7 +1174,11 @@ class SuperEnhancedContentGenerator:
         scenarios_str = ', '.join([f'"{self._yaml_escape(s)}"' for s in scenarios])
 
         # 获取 URL
-        url = evidence.get("external_url", "") if content_mode == "source_brief" else item.get('url', '')
+        url = (
+            evidence.get("external_url", "")
+            if content_mode in {"source_brief", "evidence_backed_rewrite"}
+            else item.get('url', '')
+        )
         if not url and source == 'github_trending':
             url = item.get('repo_url', '')
         url = canonicalize_content_url(url)
@@ -1123,13 +1214,23 @@ class SuperEnhancedContentGenerator:
         discovery_method = str(item.get("discovery_method") or "").strip()
         if discovery_method:
             lines.append(f'discovery_method: "{self._yaml_escape(discovery_method)}"')
+        source_completeness = str(item.get("source_completeness") or "").strip()
+        if source_completeness:
+            lines.append(
+                f'source_completeness: "{self._yaml_escape(source_completeness)}"'
+            )
+        parent_snapshot = str(item.get("parent_snapshot_sha256") or "").strip()
+        if parent_snapshot:
+            lines.append(
+                f'parent_snapshot_sha256: "{self._yaml_escape(parent_snapshot)}"'
+            )
         lines.append(
             f'source_is_truncated: {"true" if item.get("source_is_truncated") is True else "false"}'
         )
         truncation_reason = str(item.get("source_truncation_reason") or "").strip()
         if truncation_reason:
             lines.append(f'source_truncation_reason: "{self._yaml_escape(truncation_reason)}"')
-        if content_mode == "source_brief":
+        if content_mode in {"source_brief", "evidence_backed_rewrite"}:
             lines.append('source_support: 1.0')
             source_title = str(evidence_fields.get("title") or "").strip()
             if source_title:
@@ -1139,6 +1240,11 @@ class SuperEnhancedContentGenerator:
             seo_description = self._source_brief_note(
                 str(evidence.get("capture_mode") or "metadata_only"),
                 source,
+            )
+        elif content_mode == "evidence_backed_rewrite":
+            seo_description = self._truncate_seo_description(
+                self._strip_markdown_for_seo(item.get("rewritten_body", "")),
+                maximum_length=160,
             )
         else:
             seo_description = self._seo_description(item)
@@ -1155,6 +1261,8 @@ class SuperEnhancedContentGenerator:
         # 根据来源生成不同格式
         if content_mode == "source_brief":
             lines.extend(self._format_source_brief(item))
+        elif content_mode == "evidence_backed_rewrite":
+            lines.extend(self._format_evidence_backed_rewrite(item))
         elif source == 'github_trending':
             lines.extend(self._format_github_repo_super_enhanced(item))
         elif source == 'hacker_news':
@@ -1174,6 +1282,45 @@ class SuperEnhancedContentGenerator:
             related = self._find_related_posts(item, current_filename=current_filename)
             self._inject_internal_links(lines, item, related)
         return '\n'.join(lines)
+
+    def _format_evidence_backed_rewrite(self, item: dict) -> list[str]:
+        """Render a Tier-B rewrite without exposing the captured source body."""
+
+        evidence: dict[str, Any] = (
+            item.get("evidence") if isinstance(item.get("evidence"), dict) else {}
+        )
+        fields: dict[str, Any] = (
+            evidence.get("fields")
+            if isinstance(evidence.get("fields"), dict)
+            else {}
+        )
+        url = canonicalize_content_url(evidence.get("external_url"))
+        author = safe_source_metadata_text(fields.get("author"), maximum_length=120)
+        author = author or "来源作者"
+        published = safe_source_metadata_text(fields.get("published"), maximum_length=96)
+        body = str(item.get("rewritten_body") or "").strip()
+        if not body:
+            raise ValueError("evidence-backed rewrite body is missing")
+        lines = [
+            "## 转写说明",
+            "",
+            "> 本文基于已校验的公开原文进行结构化转写与事实梳理，非原文转载。",
+            "> 转写保留可核验的技术事实，并将工程建议与来源观点明确分开。",
+            "",
+            f"- **原作者**: {author}",
+            f"- **原始来源**: [{url}]({url})",
+        ]
+        if published:
+            lines.append(f"- **原文发布时间**: {published}")
+        lines.extend(["", body, "", "## 来源与核验", ""])
+        lines.extend(
+            [
+                f"- [原始文章]({url})",
+                "- 页面事实以原始来源及其引用的官方资料为准；版本、星标和模型能力会随时间变化。",
+                "- AI Stack 不公开抓取到的全文快照，只发布独立转写与来源入口。",
+            ]
+        )
+        return lines
 
     def _format_source_brief(self, item: dict) -> list[str]:
         """Render only crawler evidence; generated enrichment is never included."""

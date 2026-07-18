@@ -198,6 +198,29 @@ def test_verifier_accepts_the_pinned_legacy_v1_display_derivative() -> None:
     verify_source_contract(contracted)
 
 
+def test_verifier_accepts_a_frozen_v1_digest_without_v2_fields() -> None:
+    contracted = apply_source_contract(
+        {
+            "source": "hacker_news",
+            "title": "Frozen legacy contract",
+            "url": "https://example.com/story",
+            "author": "ada",
+            "score": 42,
+            "descendants": 7,
+            "hn_id": 123,
+            "crawled_at": "2026-07-15T12:00:00Z",
+        }
+    )
+    for name in ("source_completeness", "parent_snapshot_sha256"):
+        contracted.pop(name)
+        contracted["evidence"].pop(name)
+    frozen_digest = "sha256:c7e7df981bf0b72977079842fca694b37d34b6184efd1218a57175c1bf9917c9"
+    contracted["evidence"]["digest"] = frozen_digest
+    contracted["source_snapshot_sha256"] = frozen_digest
+
+    verify_source_contract(contracted)
+
+
 def test_contract_bounds_publication_title_without_mutating_immutable_title() -> None:
     title = ("complete-title-token " * 30) + "final-token"
     contracted = apply_source_contract(

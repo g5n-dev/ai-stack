@@ -58,6 +58,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+          pip install pytest==9.0.3
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -75,6 +76,14 @@ jobs:
       - name: Run search fallback tests
         run: |
           python3 -m unittest tests/test_search_fallback.py
+
+      - name: Run source completeness contract tests
+        env:
+          PYTHONPATH: ${{ github.workspace }}
+        run: |
+          python3 -m pytest -q \
+            tests/test_source_contract.py \
+            tests/test_juejin_full_article.py
 
       - name: Install Playwright browsers
         if: ${{ env.AI_STACK_REFRESH_DATA == 'true' }}

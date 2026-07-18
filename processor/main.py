@@ -20,6 +20,7 @@ from processor.tagger import ContentTagger
 from processor.enricher import enrich_github_repo
 from processor.scenario_analyzer import ScenarioAnalyzer
 from processor.ai_filter import AIThemeFilter
+from processor.evidence_rewriter import EvidenceBackedRewriter
 from processor.tech_stack import export_to_json
 from runtime_profile import apply_anthropic_runtime_profile, get_runtime_profile
 from ai_stack.source_contract import verify_source_contract
@@ -72,6 +73,7 @@ class ProcessorOrchestrator:
             self.client,
             config=scenario_config
         )
+        self.evidence_rewriter = EvidenceBackedRewriter(self.client)
 
         ai_filter_config = self.config.get("ai_filter", {})
         self.ai_filter = AIThemeFilter(self.client, ai_filter_config)
@@ -303,6 +305,60 @@ class ProcessorOrchestrator:
             source = content.get('source', '')
 
             logger.info(f"Processing content from {source}: {content.get('title', 'N/A')}")
+
+            if content.get("content_mode") == "evidence_backed_rewrite":
+                raw_evidence = content.get("evidence")
+                evidence: Dict = raw_evidence if isinstance(raw_evidence, dict) else {}
+                fields: Dict = (
+                    evidence.get("fields")
+                    if isinstance(evidence.get("fields"), dict)
+                    else {}
+                )
+                review = {
+                    "source": str(evidence.get("source") or source),
+                    "title": str(fields.get("title") or ""),
+                    "url": str(evidence.get("external_url") or ""),
+                    "source_display_excerpt": str(fields.get("source_text") or ""),
+                    "tags": list(fields.get("tags") or []),
+                    "categories": [],
+                }
+                review = self.ai_filter.filter_evidence_only(review)
+                review = self.ai_filter.moderate_evidence_only(review)
+                for key in (
+                    "ai_related",
+                    "ai_reason",
+                    "ai_confidence",
+                    "ai_filter_mode",
+                    "should_publish",
+                    "moderation_reason",
+                    "moderation_confidence",
+                    "moderation_flags",
+                    "moderation_mode",
+                ):
+                    if key in review:
+                        content[key] = review[key]
+                if (not content.get("ai_related")) or (not content.get("should_publish")):
+                    content["skip_post"] = True
+                    return content
+
+                result = self.evidence_rewriter.rewrite(content)
+                result.update(
+                    {
+                        "catchy_title": str(fields.get("title") or content.get("title") or "").strip(),
+                        "tags": normalize_tags(
+                            [*list(fields.get("tags") or []), "掘金", "工程实践", "来源转写"],
+                            limit=8,
+                        ),
+                        "categories": ["AI 工程"],
+                        "scenarios": [],
+                        "source_note": (
+                            "基于已校验的公开原文进行结构化转写；非原文转载，"
+                            "动态事实仍以原始来源与官方资料为准。"
+                        ),
+                    }
+                )
+                verify_source_contract(result)
+                return result
 
             if content.get("content_mode") == "source_brief":
                 raw_evidence = content.get("evidence")
