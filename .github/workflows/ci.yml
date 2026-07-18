@@ -67,6 +67,7 @@ jobs:
             tests/test_workflow_security.py \
             tests/test_processor_import_boundary.py \
             tests/test_trends_delivery_contract.py \
+            tests/test_trends_page.py \
             tests/test_stack_trends.py \
             tests/test_stack_trends_monitoring.py \
             tests/test_graph_deploy_contract.py \

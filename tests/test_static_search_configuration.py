@@ -50,6 +50,8 @@ def test_search_page_is_semantic_keyboard_ready_and_self_hosted() -> None:
         control = soup.select_one(f'[name="{name}"]')
         assert control is not None
         assert soup.select_one(f'label[for="{control.get("id")}"]') is not None
+    assert soup.select_one('[data-search-select] > select[name="source"]') is not None
+    assert len(soup.select('[data-search-autocomplete] > input[list]')) == 3
 
     assert '"js/search.js" | relURL' in template_text
     assert '$searchVersion' in template_text
@@ -107,6 +109,10 @@ def test_search_page_uses_the_shared_site_type_scale() -> None:
     assert "search-result__excerpt" in search_script
     assert "search-result__title text-sm" in search_script
     assert 'className = "text-off-white text-lg' not in search_script
+    assert ".search-select__trigger" in search_css
+    assert ".search-select__list" in search_css
+    assert "color-scheme: dark" in search_css
+    assert "createSearchSelect" in search_script
 
 
 def test_article_template_exposes_search_body_and_versioned_facets() -> None:
