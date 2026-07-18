@@ -21,6 +21,7 @@ if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
 from ai_stack._json import sha256_digest  # noqa: E402
+from ai_stack.content_quality import content_quality_reasons  # noqa: E402
 from ai_stack.historical_capture_job import (  # noqa: E402
     CAPTURE_AUDIT_SCHEMA,
     CAPTURE_AUDIT_VERSION,
@@ -74,6 +75,7 @@ _RESULT_BASE_FIELDS = frozenset(
 _SAFE_FAILURE = re.compile(r"^[a-z][a-z0-9_]{1,127}$")
 _MAX_CAPTURE_TEXT_CHARS = 12_000
 _MAX_CAPTURE_METADATA_BYTES = 64 * 1024
+_TERMINAL_CAPTURE_QUALITY_REASONS = frozenset({"encoding_replacement_character"})
 
 
 class HistoricalRehydrationCLIError(ValueError):
@@ -314,6 +316,7 @@ def load_historical_rehydration_outcomes(
     captured_count, failed_count = _validated_audit_counts(audit, raw_results)
     captures: dict[str, HistoricalSourceCapture] = {}
     failures: dict[str, HistoricalRecoveryFailure] = {}
+    included_failed_result_count = 0
     seen_paths: set[str] = set()
     for raw_result in raw_results:
         if not isinstance(raw_result, Mapping):
@@ -351,16 +354,31 @@ def load_historical_rehydration_outcomes(
             capture = _capture_from_payload(result.get("capture"))
             if capture.source != result.get("source"):
                 raise HistoricalRehydrationCLIError("capture_result_inventory_mismatch")
+            terminal_reasons = sorted(
+                _TERMINAL_CAPTURE_QUALITY_REASONS.intersection(
+                    content_quality_reasons(capture.source_text)
+                )
+            )
+            if terminal_reasons:
+                if not archive_failures:
+                    raise HistoricalRehydrationCLIError("capture_payload_invalid")
+                failures[path] = HistoricalRecoveryFailure(
+                    failure_type="capture_validation_error",
+                    reason=f"capture_{terminal_reasons[0]}",
+                    attempted_at=str(result["attempted_at"]),
+                )
+                continue
             captures[path] = capture
         elif archive_failures:
             failures[path] = _mapped_failure(result)
+            included_failed_result_count += 1
     return HistoricalRehydrationOutcomes(
         inventory=inventory,
         captures=captures,
         failures=failures,
         captured_result_count=captured_count,
         failed_result_count=failed_count,
-        excluded_failure_count=failed_count - len(failures),
+        excluded_failure_count=failed_count - included_failed_result_count,
     )
 
 

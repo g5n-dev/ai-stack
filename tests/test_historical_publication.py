@@ -281,6 +281,25 @@ def test_renderer_displays_only_signed_official_repository_and_paper_metadata() 
     assert "UNSIGNED LICENSE MUST NOT RENDER" not in body
 
 
+def test_renderer_accepts_large_but_bounded_official_author_lists() -> None:
+    from ai_stack.historical_publication import render_historical_tier_c_markdown
+
+    base = _capture("arxiv")
+    capture = replace(
+        base,
+        metadata={**base.metadata, "authors": [f"Author {index}" for index in range(34)]},
+    )
+
+    document = render_historical_tier_c_markdown(
+        capture,
+        prior_metadata={"date": HISTORICAL_DATE, "aliases": []},
+    )
+
+    assert "Author 0" in document
+    assert "Author 33" in document
+    assert analyze_post(document).status == "source_brief"
+
+
 def test_renderer_escapes_untrusted_source_text_without_hiding_the_evidence() -> None:
     from ai_stack.historical_publication import render_historical_tier_c_markdown
 

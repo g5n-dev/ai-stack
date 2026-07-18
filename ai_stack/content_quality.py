@@ -33,7 +33,7 @@ _SYNTHETIC_BODY_PATTERNS: tuple[tuple[str, re.Pattern[str]], ...] = (
         "prompt_context_leak",
         re.compile(
             r"(?:您|你)(?:在提示词中)?.{0,16}(?:提供|未提供|没有提供)"
-            r".{0,140}(?:标题|摘要|简介|导语|原文|正文|全文|文章内容)",
+            r".{0,40}(?:标题|摘要|简介|导语|原文|正文|全文|文章内容)",
             re.IGNORECASE | re.DOTALL,
         ),
     ),

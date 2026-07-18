@@ -257,6 +257,64 @@ def test_failure_archival_is_explicit_maps_robots_and_uses_result_timestamp(
     assert archived_summary["outcome_counts"] == {"terminal_unrecoverable": 1}
 
 
+def test_invalid_captured_evidence_is_archived_only_with_explicit_consent(
+    tmp_path: Path,
+) -> None:
+    from scripts.apply_historical_rehydration import (
+        HistoricalRehydrationCLIError,
+        load_historical_rehydration_outcomes,
+    )
+
+    _posts, inventory_path, audit_path, _inventory_payload, audit_payload = _fixture(tmp_path)
+    capture = audit_payload["results"][0]["capture"]  # type: ignore[index]
+    capture["source_text"] = "来源正文包含损坏字符：�"  # type: ignore[index]
+    audit_payload["results_sha256"] = sha256_digest(audit_payload["results"])
+    _write_json(audit_path, audit_payload)
+
+    with pytest.raises(HistoricalRehydrationCLIError, match="capture_payload_invalid"):
+        load_historical_rehydration_outcomes(
+            inventory_path,
+            audit_path,
+            archive_failures=False,
+        )
+
+    outcomes = load_historical_rehydration_outcomes(
+        inventory_path,
+        audit_path,
+        archive_failures=True,
+    )
+
+    assert outcomes.captures == {}
+    failure = outcomes.failures["article.md"]
+    assert failure.failure_type == "capture_validation_error"
+    assert failure.reason == "capture_encoding_replacement_character"
+    assert failure.attempted_at == ATTEMPTED_AT
+    assert outcomes.captured_result_count == 1
+    assert outcomes.failed_result_count == 0
+    assert outcomes.excluded_failure_count == 0
+
+
+def test_capture_validation_does_not_reject_excerpt_shape_that_renderer_can_wrap(
+    tmp_path: Path,
+) -> None:
+    from scripts.apply_historical_rehydration import load_historical_rehydration_outcomes
+
+    _posts, inventory_path, audit_path, _inventory_payload, audit_payload = _fixture(tmp_path)
+    capture = audit_payload["results"][0]["capture"]  # type: ignore[index]
+    capture["source_text"] = "A bounded official excerpt that naturally ends,"  # type: ignore[index]
+    audit_payload["results_sha256"] = sha256_digest(audit_payload["results"])
+    _write_json(audit_path, audit_payload)
+
+    outcomes = load_historical_rehydration_outcomes(
+        inventory_path,
+        audit_path,
+        archive_failures=False,
+    )
+
+    assert set(outcomes.captures) == {"article.md"}
+    assert outcomes.failures == {}
+
+
 def test_rejects_capture_audit_inventory_digest_mismatch_without_secret_logging(
     tmp_path: Path, capsys
 ) -> None:

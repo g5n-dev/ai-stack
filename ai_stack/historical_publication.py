@@ -260,7 +260,9 @@ def capture_to_source_contract_item(
             {
                 "summary": source_text,
                 "arxiv_id": arxiv_id,
-                "authors": _string_list(metadata.get("authors"), field="authors"),
+                "authors": _string_list(
+                    metadata.get("authors"), field="authors", maximum_items=100
+                ),
                 "category": _one_line(metadata.get("category")),
                 "published": _one_line(metadata.get("published")),
                 "pdf_url": pdf_url,

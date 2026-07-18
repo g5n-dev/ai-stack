@@ -47,6 +47,15 @@ def test_manifest_quarantines_only_high_confidence_synthetic_bodies(
     }
 
 
+def test_prompt_gate_does_not_bridge_a_marketing_phrase_to_a_renderer_note() -> None:
+    body = (
+        "如果本知识库能为您提供帮助，别忘了给予支持哦（关注、点赞、分享）。\n\n"
+        "## 来源说明\n\n当前只保存了来源元数据，未抓取完整正文。"
+    )
+
+    assert "prompt_context_leak" not in content_quality_reasons(body)
+
+
 def test_manifest_writer_is_stable_and_frontmatter_is_not_scanned(
     tmp_path: Path,
 ) -> None:
