@@ -15,15 +15,18 @@ description: 当前只保存了公开页面节选，不代表原文全文。请�
 external_url: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-flash-lite
 aliases:
 - /posts/20260304-blogs_podcasts-gemini-31-flash-lite-built-for-intelligence-at-sca-11/
+- /posts/20260304-blogs_podcasts-gemini-31-flash-lite-built-for-intelligence-at-sca-12/
 - /posts/20260304-blogs_podcasts-gemini-31-flash-lite-built-for-intelligence-at-sca-2/
 - /posts/20260304-blogs_podcasts-gemini-31-flash-lite-built-for-intelligence-at-sca-3/
 - /posts/20260304-blogs_podcasts-gemini-31-flash-lite-built-for-intelligence-at-sca-4/
+- /posts/20260304-blogs_podcasts-gemini-31-flash-lite-built-for-intelligence-at-sca-5/
 - /posts/20260304-blogs_podcasts-gemini-31-flash-lite-built-for-intelligence-at-sca-6/
 - /posts/20260304-blogs_podcasts-gemini-31-flash-lite-built-for-intelligence-at-sca-8/
 - /posts/20260304-blogs_podcasts-gemini-31-flash-lite-built-for-intelligence-at-sca-9/
 - /posts/20260305-blogs_podcasts-gemini-31-flash-lite-built-for-intelligence-at-sca-11/
 - /posts/20260305-blogs_podcasts-gemini-31-flash-lite-built-for-intelligence-at-sca-12/
 - /posts/20260305-blogs_podcasts-gemini-31-flash-lite-built-for-intelligence-at-sca-13/
+- /posts/20260305-blogs_podcasts-gemini-31-flash-lite-built-for-intelligence-at-sca-14/
 content_mode: source_brief
 publication_tier: C
 source_capture_mode: excerpt

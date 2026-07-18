@@ -10,7 +10,10 @@ scenarios: []
 source: hacker_news
 description: 当前只保存了来源元数据，未抓取外链全文。请以原始来源和 Hacker News 讨论为准。
 external_url: https://rlhfbook.com
-aliases: []
+aliases:
+- /posts/20260207-hacker_news-reinforcement-learning-from-human-feedback-15/
+- /posts/20260207-hacker_news-reinforcement-learning-from-human-feedback-19/
+- /posts/20260207-hacker_news-reinforcement-learning-from-human-feedback-4/
 content_mode: source_brief
 publication_tier: C
 source_capture_mode: metadata_only

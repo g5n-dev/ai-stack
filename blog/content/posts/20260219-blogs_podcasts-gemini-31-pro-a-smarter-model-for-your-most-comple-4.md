@@ -17,10 +17,17 @@ description: 当前只保存了公开页面节选，不代表原文全文。请�
 external_url: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-pro
 aliases:
 - /posts/20260219-blogs_podcasts-gemini-31-pro-a-smarter-model-for-your-most-comple-5/
+- /posts/20260219-hacker_news-gemini-31-pro-0/
+- /posts/20260219-hacker_news-gemini-31-pro-preview-10/
+- /posts/20260219-hacker_news-gemini-31-pro-preview-18/
 - /posts/20260220-blogs_podcasts-gemini-31-pro-a-smarter-model-for-your-most-comple-11/
 - /posts/20260220-blogs_podcasts-gemini-31-pro-a-smarter-model-for-your-most-comple-6/
 - /posts/20260220-blogs_podcasts-gemini-31-pro-a-smarter-model-for-your-most-comple-7/
 - /posts/20260220-blogs_podcasts-gemini-31-pro-a-smarter-model-for-your-most-comple-9/
+- /posts/20260220-hacker_news-gemini-31-pro-0/
+- /posts/20260220-hacker_news-gemini-31-pro-2/
+- /posts/20260220-hacker_news-gemini-31-pro-3/
+- /posts/20260220-hacker_news-gemini-31-pro-5/
 - /posts/20260221-blogs_podcasts-gemini-31-pro-a-smarter-model-for-your-most-comple-12/
 - /posts/20260221-blogs_podcasts-gemini-31-pro-a-smarter-model-for-your-most-comple-13/
 - /posts/20260222-blogs_podcasts-gemini-31-pro-a-smarter-model-for-your-most-comple-13/
