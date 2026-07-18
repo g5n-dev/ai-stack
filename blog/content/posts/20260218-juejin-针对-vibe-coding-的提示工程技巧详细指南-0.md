@@ -61,10 +61,8 @@ source_truncation_reason: historical_excerpt_only,historical_publication_excerpt
 > 提示：“用 Next.js 14 + Tailwind CSS 写一个视频转 GIF 的完整前端页面，包括拖拽上传、实时预览、进度条和下载按钮。页面要简洁现代风。
 > 只输出完整代码
 > ，用 \`\`\`tsx 包裹，
-> 不要任何解释、注释或额外文字
 > 。”
 > 常见坑
-> ：忘记指定“不要解释”，AI 会加一堆废话。
 > Vibe 应用
 > ：适合个人工具/玩具项目，先 vibe 出界面或核心功能，再跑起来看感觉。
 > 技巧2：角色扮演 + 注入 Vibe 风格

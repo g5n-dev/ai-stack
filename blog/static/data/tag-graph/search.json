@@ -12,7 +12,7 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-07-18T03:34:31Z",
+  "generated_at": "2026-07-18T06:23:42Z",
   "items": [
     {
       "article_count": 653,
@@ -41,7 +41,7 @@
       "weighted_degree": 1223.2
     },
     {
-      "article_count": 437,
+      "article_count": 438,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 25,
@@ -51,10 +51,10 @@
       "legacy_id": "掘金",
       "name": "掘金",
       "rank": 3,
-      "weighted_degree": 1164
+      "weighted_degree": 1166
     },
     {
-      "article_count": 327,
+      "article_count": 328,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 49,
@@ -64,7 +64,7 @@
       "legacy_id": "博客与播客",
       "name": "博客与播客",
       "rank": 4,
-      "weighted_degree": 636
+      "weighted_degree": 637
     },
     {
       "article_count": 161,
@@ -249,7 +249,7 @@
       "weighted_degree": 136.6
     },
     {
-      "article_count": 50,
+      "article_count": 51,
       "category": "article_tag",
       "community_id": "community:tag:cs.AI",
       "degree": 33,
@@ -259,7 +259,7 @@
       "legacy_id": "来源快报",
       "name": "来源快报",
       "rank": 19,
-      "weighted_degree": 107
+      "weighted_degree": 108
     },
     {
       "article_count": 32,
@@ -600,6 +600,19 @@
       "weighted_degree": 11
     },
     {
+      "article_count": 3,
+      "category": "article_tag",
+      "community_id": "community:tag:Codex",
+      "degree": 9,
+      "description": "文章标签: 工程实践",
+      "id": "tag:工程实践",
+      "layer": "tag",
+      "legacy_id": "工程实践",
+      "name": "工程实践",
+      "rank": 46,
+      "weighted_degree": 11
+    },
+    {
       "article_count": 0,
       "category": "web",
       "community_id": null,
@@ -609,7 +622,7 @@
       "layer": "application",
       "legacy_id": "webapp",
       "name": "Web应用",
-      "rank": 46,
+      "rank": 47,
       "weighted_degree": 11
     },
     {
@@ -622,7 +635,7 @@
       "layer": "tag",
       "legacy_id": "AI",
       "name": "AI",
-      "rank": 47,
+      "rank": 48,
       "weighted_degree": 10.6
     },
     {
@@ -635,21 +648,8 @@
       "layer": "application",
       "legacy_id": "api",
       "name": "API服务",
-      "rank": 48,
-      "weighted_degree": 9.6
-    },
-    {
-      "article_count": 2,
-      "category": "article_tag",
-      "community_id": "community:tag:Codex",
-      "degree": 9,
-      "description": "文章标签: 工程实践",
-      "id": "tag:工程实践",
-      "layer": "tag",
-      "legacy_id": "工程实践",
-      "name": "工程实践",
       "rank": 49,
-      "weighted_degree": 9
+      "weighted_degree": 9.6
     },
     {
       "article_count": 2,
@@ -1146,6 +1146,19 @@
       "weighted_degree": 4
     },
     {
+      "article_count": 2,
+      "category": "article_tag",
+      "community_id": "community:tag:Codex",
+      "degree": 2,
+      "description": "文章标签: 来源转写",
+      "id": "tag:来源转写",
+      "layer": "tag",
+      "legacy_id": "来源转写",
+      "name": "来源转写",
+      "rank": 88,
+      "weighted_degree": 4
+    },
+    {
       "article_count": 1,
       "category": "article_tag",
       "community_id": "community:tag:Foundational (100)",
@@ -1155,7 +1168,7 @@
       "layer": "tag",
       "legacy_id": "Amazon Bedrock Knowledge Bases",
       "name": "Amazon Bedrock Knowledge Bases",
-      "rank": 88,
+      "rank": 89,
       "weighted_degree": 4
     },
     {
@@ -1168,7 +1181,7 @@
       "layer": "tag",
       "legacy_id": "Amazon Rekognition",
       "name": "Amazon Rekognition",
-      "rank": 89,
+      "rank": 90,
       "weighted_degree": 4
     },
     {
@@ -1181,7 +1194,7 @@
       "layer": "tag",
       "legacy_id": "Google One",
       "name": "Google One",
-      "rank": 90,
+      "rank": 91,
       "weighted_degree": 4
     },
     {
@@ -1194,7 +1207,7 @@
       "layer": "tag",
       "legacy_id": "Google Workspace",
       "name": "Google Workspace",
-      "rank": 91,
+      "rank": 92,
       "weighted_degree": 4
     },
     {
@@ -1207,7 +1220,7 @@
       "layer": "application",
       "legacy_id": "chatbot",
       "name": "聊天机器人",
-      "rank": 92,
+      "rank": 93,
       "weighted_degree": 4
     },
     {
@@ -1220,7 +1233,7 @@
       "layer": "framework",
       "legacy_id": "tensorflow",
       "name": "TensorFlow",
-      "rank": 93,
+      "rank": 94,
       "weighted_degree": 4
     },
     {
@@ -1233,7 +1246,7 @@
       "layer": "framework",
       "legacy_id": "transformers",
       "name": "Transformers",
-      "rank": 94,
+      "rank": 95,
       "weighted_degree": 4
     },
     {
@@ -1246,7 +1259,7 @@
       "layer": "language",
       "legacy_id": "typescript",
       "name": "TypeScript",
-      "rank": 95,
+      "rank": 96,
       "weighted_degree": 3.6
     },
     {
@@ -1259,7 +1272,7 @@
       "layer": "tag",
       "legacy_id": "C++",
       "name": "C++",
-      "rank": 96,
+      "rank": 97,
       "weighted_degree": 3.6
     },
     {
@@ -1272,7 +1285,7 @@
       "layer": "model",
       "legacy_id": "cv",
       "name": "计算机视觉",
-      "rank": 97,
+      "rank": 98,
       "weighted_degree": 3.1
     },
     {
@@ -1285,7 +1298,7 @@
       "layer": "framework",
       "legacy_id": "django",
       "name": "Django",
-      "rank": 98,
+      "rank": 99,
       "weighted_degree": 3
     },
     {
@@ -1298,7 +1311,7 @@
       "layer": "model",
       "legacy_id": "embedding",
       "name": "向量嵌入",
-      "rank": 99,
+      "rank": 100,
       "weighted_degree": 3
     },
     {
@@ -1311,7 +1324,7 @@
       "layer": "framework",
       "legacy_id": "fastapi",
       "name": "FastAPI",
-      "rank": 100,
+      "rank": 101,
       "weighted_degree": 3
     },
     {
@@ -1324,7 +1337,7 @@
       "layer": "framework",
       "legacy_id": "flask",
       "name": "Flask",
-      "rank": 101,
+      "rank": 102,
       "weighted_degree": 3
     },
     {
@@ -1337,7 +1350,7 @@
       "layer": "framework",
       "legacy_id": "langchain",
       "name": "LangChain",
-      "rank": 102,
+      "rank": 103,
       "weighted_degree": 3
     },
     {
@@ -1350,7 +1363,7 @@
       "layer": "model",
       "legacy_id": "multimodal",
       "name": "多模态模型",
-      "rank": 103,
+      "rank": 104,
       "weighted_degree": 2.8
     },
     {
@@ -1363,7 +1376,7 @@
       "layer": "scenario",
       "legacy_id": "llm_scene",
       "name": "大语言模型",
-      "rank": 104,
+      "rank": 105,
       "weighted_degree": 2.6
     },
     {
@@ -1376,7 +1389,7 @@
       "layer": "language",
       "legacy_id": "rust",
       "name": "Rust",
-      "rank": 105,
+      "rank": 106,
       "weighted_degree": 2.6
     },
     {
@@ -1389,7 +1402,7 @@
       "layer": "language",
       "legacy_id": "go",
       "name": "Go",
-      "rank": 106,
+      "rank": 107,
       "weighted_degree": 2.6
     },
     {
@@ -1402,7 +1415,7 @@
       "layer": "tag",
       "legacy_id": "AI Research",
       "name": "AI Research",
-      "rank": 107,
+      "rank": 108,
       "weighted_degree": 2.6
     },
     {
@@ -1415,7 +1428,7 @@
       "layer": "framework",
       "legacy_id": "react",
       "name": "React",
-      "rank": 108,
+      "rank": 109,
       "weighted_degree": 2.5
     },
     {
@@ -1428,7 +1441,7 @@
       "layer": "language",
       "legacy_id": "javascript",
       "name": "JavaScript",
-      "rank": 109,
+      "rank": 110,
       "weighted_degree": 2.1
     },
     {
@@ -1441,7 +1454,7 @@
       "layer": "tag",
       "legacy_id": "Company",
       "name": "Company",
-      "rank": 110,
+      "rank": 111,
       "weighted_degree": 2
     },
     {
@@ -1454,7 +1467,7 @@
       "layer": "tag",
       "legacy_id": "cs.LG",
       "name": "cs.LG",
-      "rank": 111,
+      "rank": 112,
       "weighted_degree": 2
     },
     {
@@ -1467,7 +1480,7 @@
       "layer": "tag",
       "legacy_id": "Global Affairs",
       "name": "Global Affairs",
-      "rank": 112,
+      "rank": 113,
       "weighted_degree": 2
     },
     {
@@ -1480,19 +1493,6 @@
       "layer": "tag",
       "legacy_id": "q-bio.GN",
       "name": "q-bio.GN",
-      "rank": 113,
-      "weighted_degree": 2
-    },
-    {
-      "article_count": 1,
-      "category": "article_tag",
-      "community_id": "community:tag:Codex",
-      "degree": 2,
-      "description": "文章标签: 来源转写",
-      "id": "tag:来源转写",
-      "layer": "tag",
-      "legacy_id": "来源转写",
-      "name": "来源转写",
       "rank": 114,
       "weighted_degree": 2
     },

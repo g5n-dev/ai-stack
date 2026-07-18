@@ -49,7 +49,6 @@ source_truncation_reason: historical_excerpt_only,historical_publication_excerpt
 > 给大模型的指令
 > ，它决定了模型如何理解和响应你的需求：
 > Prompt
-> = 任务的描述 + 上下文信息 + 输出要求
 >
 > 好的Prompt能让模型：
 > ├── 理解你的真实意图

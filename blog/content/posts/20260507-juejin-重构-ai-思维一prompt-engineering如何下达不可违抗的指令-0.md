@@ -50,7 +50,6 @@ source_truncation_reason: historical_excerpt_only,historical_publication_excerpt
 > “初级开发”
 > 或者
 > “外包伙计”\*\*。
-> 你给外包下需求，如果只是随口一句“帮我实现个抢票逻辑”，他保准给你搞出一堆 Bug。你得有清晰的文档、明确的边界、严苛的格式要求。
 > 这，就是
 > Prompt Engineering（提示词工程）
 > 。它是咱们重构 AI 思维的第一步：

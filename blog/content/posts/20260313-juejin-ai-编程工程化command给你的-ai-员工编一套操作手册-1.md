@@ -60,7 +60,6 @@ source_truncation_reason: historical_excerpt_only,historical_publication_excerpt
 > - 使用约定式提交格式（feat/fix/refactor/docs/chore）
 > - 描述用中文
 > - 不超过 50 个字
-> - 不要加多余的解释
 > 每次，同样的要求，重复输入。
 > 用了几天之后，我开始想：这件事能不能只做一次？
 > 可以。这就是 Command。
