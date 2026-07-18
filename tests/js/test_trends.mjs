@@ -149,6 +149,62 @@ test("heat tiers use stable cross-window thresholds with monotonic visual emphas
 });
 
 
+test("topology badges keep only topic and direction while hover owns score details", () => {
+  const [point] = Trends.layoutMatrix([
+    trend({ topic: "Amazon Bedrock", score: 73, state: "rising", unique_sources: 4,
+      counts: { current: 16, previous: 9, pre_previous: 5 } }),
+  ], 900, 480);
+
+  assert.deepEqual(Trends.matrixBadgeCopy(point), {
+    title: "01  Amazon Bedrock",
+    status: "↑ 上升",
+  });
+  assert.deepEqual(Trends.matrixTooltipCopy(point), {
+    topic: "Amazon Bedrock",
+    rank: "01",
+    status: "↑ 上升",
+    heat: "强信号",
+    score: "73",
+    evidence: "16",
+    sources: "4",
+  });
+
+  assert.equal(Trends.matrixBadgeCopy({ ...point, state: "steady" }).status, "• 稳定");
+  assert.equal(Trends.matrixBadgeCopy({ ...point, state: "cooling" }).status, "↓ 降温");
+  assert.equal(Trends.matrixBadgeCopy({ ...point, state: "new" }).status, "✦ 新出现");
+});
+
+
+test("every topology node receives a visible heat-scaled glow budget", () => {
+  const cold = Trends.nodeGlowVisual({ score: 30 }, false, false);
+  const hot = Trends.nodeGlowVisual({ score: 73 }, false, false);
+  const selected = Trends.nodeGlowVisual({ score: 73 }, true, false);
+  const hovered = Trends.nodeGlowVisual({ score: 73 }, false, true);
+
+  assert.ok(cold.blur >= 16);
+  assert.ok(cold.facetBlur >= 8);
+  assert.ok(cold.haloAlpha >= 0.26);
+  assert.ok(cold.auraAlpha >= 0.1);
+  assert.ok(hot.blur > cold.blur);
+  assert.ok(hot.haloAlpha > cold.haloAlpha);
+  assert.ok(hot.auraAlpha > cold.auraAlpha);
+  assert.ok(selected.blur > hot.blur);
+  assert.ok(hovered.blur > hot.blur);
+});
+
+
+test("topology keeps every outer node luminous teal and reserves amber for focus", () => {
+  const coldOuter = Trends.topologyNodeVisual({ score: 30 }, false);
+  const hotOuter = Trends.topologyNodeVisual({ score: 73 }, false);
+  const focused = Trends.topologyNodeVisual({ score: 30 }, true);
+
+  assert.equal(coldOuter.color, "#5adacf");
+  assert.equal(hotOuter.color, "#5adacf");
+  assert.ok(hotOuter.glow > coldOuter.glow);
+  assert.equal(focused.color, "#f3a948");
+});
+
+
 test("filters trends by signal, source, scenario and case-insensitive topic query", () => {
   const values = [
     trend(),

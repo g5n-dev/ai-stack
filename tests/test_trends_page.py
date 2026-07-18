@@ -23,6 +23,10 @@ def test_trends_page_is_a_progressive_shared_header_workbench() -> None:
     matrix = soup.select_one('canvas[id="trend-matrix"]')
     assert matrix is not None
     assert not matrix.has_attr("tabindex")
+    assert matrix.get("aria-describedby") == "trend-matrix-tooltip"
+    tooltip = soup.select_one('[id="trend-matrix-tooltip"][role="tooltip"]')
+    assert tooltip is not None
+    assert tooltip.has_attr("hidden")
     assert soup.select_one('ol[id="trend-list"]') is not None
     assert soup.select_one('[id="trend-detail"]') is not None
     assert soup.select_one('[id="trend-status"][aria-live="polite"]') is not None
@@ -76,6 +80,7 @@ def test_trends_styles_are_scoped_and_share_site_tokens() -> None:
     assert ".trend-select__list" in source
     assert '[role="option"]' in source
     assert '.trend-matrix-legend span[data-heat="signal"]' in source
+    assert ".trend-matrix-tooltip" in source
     assert '.trend-workbench[data-detail="open"] .trend-detail' in source
     assert "@media (max-width: 1439px)" in source
 
@@ -105,6 +110,9 @@ def test_trends_runtime_uses_safe_text_progressive_loading_and_distinct_links() 
     assert "createTrendSelect" in source
     assert "aria-activedescendant" in source
     assert "heatVisual" in source
+    assert "matrixTooltipCopy" in source
+    assert "renderMatrixTooltip" in source
+    assert "elements.matrix.title" not in source
     assert 'root.dataset.detail = model.state.topic ? "open" : "closed"' in source
     load_topic = source.index("async function loadTopic")
     invalidate = source.index("const sequence = invalidateTopicLoad(model);", load_topic)

@@ -740,6 +740,55 @@
     return heatVisual(score).key;
   }
 
+  function topologyNodeVisual(point, active = false) {
+    const visual = point?.heat || heatVisual(point?.score);
+    return Object.freeze({
+      ...visual,
+      color: active ? "#f3a948" : "#5adacf",
+      rgb: active ? "243,169,72" : "90,218,207",
+    });
+  }
+
+  function matrixBadgeCopy(point, active = Boolean(point?.isCenter)) {
+    const rank = String(Number(point?.rank) || 0).padStart(2, "0");
+    const topic = truncateLabel(point?.topic, active ? 18 : 14);
+    const state = STATE_LABELS[point?.state] || String(point?.state || "");
+    const glyph = STATE_GLYPHS[point?.state] || "•";
+    return Object.freeze({
+      title: `${rank}  ${topic}`,
+      status: `${glyph} ${state}`.trim(),
+    });
+  }
+
+  function matrixTooltipCopy(point) {
+    const badge = matrixBadgeCopy(point);
+    const visual = point?.heat || heatVisual(point?.score);
+    return Object.freeze({
+      topic: String(point?.topic || ""),
+      rank: String(Number(point?.rank) || 0).padStart(2, "0"),
+      status: badge.status,
+      heat: visual.label,
+      score: String(Math.round(Number(point?.score) || 0)),
+      evidence: String(Math.max(0, Number(point?.current) || 0)),
+      sources: String(Math.max(0, Number(point?.sourceCount) || 0)),
+    });
+  }
+
+  function nodeGlowVisual(point, active = false, hovered = false) {
+    const visual = point?.heat || heatVisual(point?.score);
+    const activeBoost = active ? 8 : 0;
+    const hoverBoost = hovered ? 6 : 0;
+    return Object.freeze({
+      blur: 16 + (visual.glow * 32) + activeBoost + hoverBoost,
+      facetBlur: Math.min(18, 8 + (visual.glow * 16) + (hovered ? 4 : 0)),
+      haloAlpha: Math.min(0.86, 0.26 + (visual.glow * 0.9) + (active ? 0.08 : 0) + (hovered ? 0.1 : 0)),
+      haloRadius: 5 + (visual.glow * 8) + (active ? 2 : 0),
+      haloWidth: 2.2 + (visual.glow * 2.8) + (active ? 0.8 : 0),
+      auraAlpha: Math.min(0.38, 0.1 + (visual.glow * 0.42) + (active ? 0.04 : 0) + (hovered ? 0.04 : 0)),
+      coreAlpha: Math.min(0.82, 0.34 + (visual.glow * 0.76) + (active ? 0.06 : 0)),
+    });
+  }
+
   function heatRgba(visual, alpha) {
     return `rgba(${visual.rgb},${Math.max(0, Math.min(1, alpha))})`;
   }
@@ -989,7 +1038,7 @@
   }
 
   function drawTopologyRoute(context, center, point, index) {
-    const visual = point.heat || heatVisual(point.score);
+    const visual = topologyNodeVisual(point, false);
     const start = ellipseBoundary(center, point.x, point.y, 7);
     const end = ellipseBoundary(point, center.x, center.y, -5);
     const dx = end.x - start.x;
@@ -1041,7 +1090,7 @@
   }
 
   function drawCellContours(context, point, active = false, hovered = false) {
-    const visual = point.heat || heatVisual(point.score);
+    const visual = topologyNodeVisual(point, active);
     context.save();
     context.fillStyle = heatRgba(visual, 0.018 + (visual.glow * (active ? 0.13 : 0.08)));
     context.beginPath();
@@ -1060,17 +1109,40 @@
   }
 
   function drawHub(context, point, active = false, hovered = false) {
-    const visual = point.heat || heatVisual(point.score);
+    const visual = topologyNodeVisual(point, active);
+    const glow = nodeGlowVisual(point, active, hovered);
     const radius = point.radius + (hovered ? 2 : 0);
     context.save();
-    context.shadowColor = heatRgba(visual, 0.3 + (visual.glow * 0.62));
-    context.shadowBlur = Math.min(18, 6 + (visual.glow * 24) + (hovered ? 2 : 0));
+    const auraRadius = Math.min(55, radius + glow.haloRadius + (glow.blur * 0.56));
+    const aura = context.createRadialGradient(
+      point.x,
+      point.y,
+      Math.max(1, radius * 0.38),
+      point.x,
+      point.y,
+      auraRadius,
+    );
+    aura.addColorStop(0, heatRgba(visual, glow.auraAlpha));
+    aura.addColorStop(0.38, heatRgba(visual, glow.auraAlpha * 0.68));
+    aura.addColorStop(0.72, heatRgba(visual, glow.auraAlpha * 0.18));
+    aura.addColorStop(1, heatRgba(visual, 0));
+    context.fillStyle = aura;
+    context.beginPath();
+    context.arc(point.x, point.y, auraRadius, 0, Math.PI * 2);
+    context.fill();
+    context.shadowColor = heatRgba(visual, 0.56 + (visual.glow * 0.72));
+    context.shadowBlur = glow.blur;
     context.fillStyle = "rgba(6,15,24,0.96)";
     context.strokeStyle = visual.color;
     context.lineWidth = 1.8 + (visual.glow * 1.8) + (active ? 0.8 : 0);
     context.beginPath();
     context.arc(point.x, point.y, radius, 0, Math.PI * 2);
     context.fill();
+    context.stroke();
+    context.strokeStyle = heatRgba(visual, glow.haloAlpha);
+    context.lineWidth = glow.haloWidth;
+    context.beginPath();
+    context.arc(point.x, point.y, radius + glow.haloRadius, 0, Math.PI * 2);
     context.stroke();
     context.shadowBlur = 0;
     context.strokeStyle = heatRgba(visual, 0.3 + (visual.glow * 0.36));
@@ -1104,7 +1176,7 @@
   }
 
   function drawOuterNetwork(context, point, hovered = false) {
-    const visual = point.heat || heatVisual(point.score);
+    const visual = topologyNodeVisual(point, false);
     drawCellContours(context, point, false, hovered);
     const facets = point.facets || [];
     facets.forEach((facet, index) => {
@@ -1122,16 +1194,29 @@
       context.fillStyle = "rgba(6,15,24,0.96)";
       context.strokeStyle = heatRgba(visual, hovered ? 0.96 : 0.72 + (visual.glow * 0.4));
       context.lineWidth = 1.2;
+      const glow = nodeGlowVisual(point, false, hovered);
+      context.save();
+      context.fillStyle = heatRgba(visual, 0.12 + (visual.glow * 0.34));
+      context.strokeStyle = heatRgba(visual, Math.min(0.98, 0.78 + (visual.glow * 0.42)));
+      context.shadowColor = heatRgba(visual, 0.9);
+      context.shadowBlur = glow.facetBlur;
       context.beginPath();
-      context.arc(nodeX, nodeY, 3 + Math.min(2.2, Math.sqrt(Math.max(0, facet.count)) * 0.62), 0, Math.PI * 2);
+      const nodeRadius = 3 + Math.min(2.2, Math.sqrt(Math.max(0, facet.count)) * 0.62);
+      context.arc(nodeX, nodeY, nodeRadius, 0, Math.PI * 2);
       context.fill();
       context.stroke();
+      context.shadowBlur = 0;
+      context.fillStyle = heatRgba(visual, glow.coreAlpha);
+      context.beginPath();
+      context.arc(nodeX, nodeY, Math.max(1.1, nodeRadius * 0.28), 0, Math.PI * 2);
+      context.fill();
+      context.restore();
     });
     drawHub(context, point, false, hovered);
   }
 
   function drawCentralNetwork(context, point, hovered = false) {
-    const visual = point.heat || heatVisual(point.score);
+    const visual = topologyNodeVisual(point, true);
     drawCellContours(context, point, true, hovered);
     const slots = [
       [0, -0.59], [0.36, -0.48], [0.61, -0.24], [0.65, 0.1], [0.47, 0.41],
@@ -1160,13 +1245,23 @@
     });
     nodes.forEach((node) => {
       const radius = 4 + Math.min(3, Math.sqrt(Math.max(0, node.facet.count)) * 0.7);
-      context.fillStyle = heatRgba(visual, 0.56 + (visual.glow * 0.68));
+      const glow = nodeGlowVisual(point, true, hovered);
+      context.fillStyle = heatRgba(visual, glow.coreAlpha * 0.74);
       context.strokeStyle = heatRgba(visual, 0.9);
       context.lineWidth = 1.1;
+      context.save();
+      context.shadowColor = heatRgba(visual, 0.94);
+      context.shadowBlur = glow.facetBlur;
       context.beginPath();
       context.arc(node.x, node.y, radius, 0, Math.PI * 2);
       context.fill();
       context.stroke();
+      context.shadowBlur = 0;
+      context.fillStyle = heatRgba(visual, glow.coreAlpha);
+      context.beginPath();
+      context.arc(node.x, node.y, Math.max(1.2, radius * 0.26), 0, Math.PI * 2);
+      context.fill();
+      context.restore();
       const label = truncateLabel(facetLabel(node.facet), 10);
       const deltaX = node.x - point.x;
       const centered = Math.abs(deltaX) < point.cellRadiusX * 0.14;
@@ -1185,12 +1280,10 @@
   }
 
   function drawTerminalBadge(context, point, width, height, active = false, hovered = false) {
-    const visual = point.heat || heatVisual(point.score);
-    const title = `${String(point.rank).padStart(2, "0")}  ${truncateLabel(point.topic, active ? 14 : 11)}`;
-    const state = STATE_LABELS[point.state] || point.state;
-    const stateGlyph = STATE_GLYPHS[point.state] || "•";
-    const prefix = active ? (point.isSelected ? "展开中" : "TOP SIGNAL") : `${stateGlyph} ${state}`;
-    const detail = `${prefix} · ${visual.label} · ${point.current}证据 · ${Math.round(point.score)}分`;
+    const visual = topologyNodeVisual(point, active);
+    const copy = matrixBadgeCopy(point, active);
+    const title = copy.title;
+    const detail = copy.status;
     const titleSize = width >= 900 ? 13 : 12;
     const detailSize = width >= 900 ? 12 : 11;
     context.save();
@@ -1217,6 +1310,58 @@
     context.fillStyle = heatRgba(visual, 0.88 + (visual.glow * 0.25));
     context.fillText(detail, left + 9, top + (width >= 900 ? 34 : 30));
     context.restore();
+  }
+
+  function renderMatrixTooltip(document, tooltip, point) {
+    if (!tooltip) return;
+    tooltip.replaceChildren();
+    if (!point) {
+      tooltip.hidden = true;
+      tooltip.setAttribute("aria-hidden", "true");
+      delete tooltip.dataset.heat;
+      return;
+    }
+    const copy = matrixTooltipCopy(point);
+    tooltip.dataset.heat = point.heat?.key || heatTier(point.score);
+    const header = document.createElement("div");
+    header.className = "trend-matrix-tooltip__header";
+    appendText(document, header, "span", "trend-matrix-tooltip__rank", copy.rank);
+    appendText(document, header, "strong", "trend-matrix-tooltip__topic", copy.topic);
+    appendText(document, header, "span", "trend-matrix-tooltip__state", copy.status);
+    const metrics = document.createElement("dl");
+    metrics.className = "trend-matrix-tooltip__metrics";
+    [
+      ["综合得分", copy.score],
+      ["证据", copy.evidence],
+      ["来源", copy.sources],
+    ].forEach(([label, value]) => {
+      const cell = document.createElement("div");
+      appendText(document, cell, "dt", "", label);
+      appendText(document, cell, "dd", "", value);
+      metrics.append(cell);
+    });
+    tooltip.append(header);
+    appendText(document, tooltip, "small", "trend-matrix-tooltip__heat", copy.heat);
+    tooltip.append(metrics);
+    tooltip.hidden = false;
+    tooltip.setAttribute("aria-hidden", "false");
+  }
+
+  function positionMatrixTooltip(tooltip, panel, clientX, clientY) {
+    if (!tooltip || tooltip.hidden || !panel) return;
+    const rect = panel.getBoundingClientRect();
+    const gap = 14;
+    const inset = 8;
+    const tooltipWidth = tooltip.offsetWidth || 216;
+    const tooltipHeight = tooltip.offsetHeight || 98;
+    const pointerX = clientX - rect.left;
+    const pointerY = clientY - rect.top;
+    let left = pointerX + gap;
+    let top = pointerY + gap;
+    if (left + tooltipWidth > rect.width - inset) left = pointerX - tooltipWidth - gap;
+    if (top + tooltipHeight > rect.height - inset) top = pointerY - tooltipHeight - gap;
+    tooltip.style.left = `${Math.max(inset, Math.min(rect.width - tooltipWidth - inset, left))}px`;
+    tooltip.style.top = `${Math.max(inset, Math.min(rect.height - tooltipHeight - inset, top))}px`;
   }
 
   function drawMatrix(canvas, points, selectedId = "", hoveredId = "") {
@@ -1782,6 +1927,7 @@
       sampleNotice: document.getElementById("trend-sample-notice"),
       matrixPanel: document.getElementById("trend-matrix-panel"),
       matrix: document.getElementById("trend-matrix"),
+      matrixTooltip: document.getElementById("trend-matrix-tooltip"),
       list: document.getElementById("trend-list"),
       empty: document.getElementById("trend-empty"),
       detail: document.getElementById("trend-detail"),
@@ -1979,6 +2125,8 @@
 
     function renderResults() {
       if (!model.windowData) return;
+      model.hoveredId = "";
+      renderMatrixTooltip(document, elements.matrixTooltip, null);
       const trends = filterTrends(model.windowData.trends, model.state);
       elements.resultCount.textContent = `${formatNumber(trends.length)} 个主题`;
       elements.empty.hidden = trends.length !== 0;
@@ -2481,18 +2629,19 @@
       const rect = elements.matrix.getBoundingClientRect();
       const point = hitTestMatrix(model.points, event.clientX - rect.left, event.clientY - rect.top);
       const nextHoveredId = point?.id || "";
-      if (nextHoveredId !== model.hoveredId) {
+      if (nextHoveredId !== model.hoveredId || (point && elements.matrixTooltip?.hidden)) {
         model.hoveredId = nextHoveredId;
         drawMatrix(elements.matrix, model.points, model.state.topic, model.hoveredId);
+        renderMatrixTooltip(document, elements.matrixTooltip, point);
       }
       elements.matrix.style.cursor = point ? "pointer" : "default";
-      elements.matrix.title = point ? `${point.topic} · 得分 ${Math.round(point.score)}` : "";
+      positionMatrixTooltip(elements.matrixTooltip, elements.matrixPanel, event.clientX, event.clientY);
     });
     listen(elements.matrix, "mouseleave", () => {
+      renderMatrixTooltip(document, elements.matrixTooltip, null);
       if (!model.hoveredId) return;
       model.hoveredId = "";
       drawMatrix(elements.matrix, model.points, model.state.topic, "");
-      elements.matrix.title = "";
     });
     listen(elements.detail, "click", (event) => {
       const related = event.target.closest?.("[data-related-topic-id]");
@@ -2612,6 +2761,10 @@
     layoutMatrix,
     layoutPointLabels,
     labeledPointIds,
+    matrixBadgeCopy,
+    matrixTooltipCopy,
+    nodeGlowVisual,
+    topologyNodeVisual,
     parseState,
     resizeCanvasBackingStore,
     reconcileFacetState,

@@ -708,6 +708,104 @@
   cursor: default;
 }
 
+.trend-matrix-tooltip {
+  --tooltip-heat: 77, 182, 172;
+  position: absolute;
+  z-index: 4;
+  width: max-content;
+  min-width: 206px;
+  max-width: min(260px, calc(100% - 16px));
+  padding: 10px 12px 11px;
+  border: 1px solid rgba(var(--tooltip-heat), 0.68);
+  border-radius: 3px;
+  background: rgba(3, 9, 18, 0.97);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.46), 0 0 18px rgba(var(--tooltip-heat), 0.16);
+  color: rgb(var(--off-white));
+  font-family: var(--site-font-mono);
+  pointer-events: none;
+}
+
+.trend-matrix-tooltip[hidden] {
+  display: none;
+}
+
+.trend-matrix-tooltip[data-heat="cold"] { --tooltip-heat: 117, 129, 141; }
+.trend-matrix-tooltip[data-heat="watch"] { --tooltip-heat: 127, 176, 201; }
+.trend-matrix-tooltip[data-heat="active"] { --tooltip-heat: 77, 182, 172; }
+.trend-matrix-tooltip[data-heat="hot"] { --tooltip-heat: 90, 218, 207; }
+.trend-matrix-tooltip[data-heat="signal"] { --tooltip-heat: 243, 169, 72; }
+
+.trend-matrix-tooltip__header {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 3px 9px;
+  align-items: baseline;
+}
+
+.trend-matrix-tooltip__rank {
+  grid-row: 1 / span 2;
+  color: rgb(var(--tooltip-heat));
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.trend-matrix-tooltip__topic {
+  overflow: hidden;
+  font-size: 13px;
+  line-height: 1.25;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.trend-matrix-tooltip__state,
+.trend-matrix-tooltip__heat {
+  color: rgb(var(--tooltip-heat));
+  font-size: 11px;
+}
+
+.trend-matrix-tooltip__heat {
+  display: block;
+  margin: 7px 0 0 30px;
+  letter-spacing: 0.08em;
+}
+
+.trend-matrix-tooltip__metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  margin: 9px 0 0;
+  padding-top: 8px;
+  border-top: 1px solid rgba(var(--tooltip-heat), 0.22);
+}
+
+.trend-matrix-tooltip__metrics > div {
+  display: grid;
+  gap: 2px;
+  padding: 0 8px;
+  border-left: 1px solid rgba(var(--tooltip-heat), 0.16);
+}
+
+.trend-matrix-tooltip__metrics > div:first-child {
+  padding-left: 0;
+  border-left: 0;
+}
+
+.trend-matrix-tooltip__metrics > div:last-child {
+  padding-right: 0;
+}
+
+.trend-matrix-tooltip__metrics dt {
+  color: rgba(var(--off-white), 0.52);
+  font-size: 11px;
+}
+
+.trend-matrix-tooltip__metrics dd {
+  margin: 0;
+  color: rgb(var(--tooltip-heat));
+  font-size: 14px;
+  font-weight: 800;
+}
+
 .trend-topology-meta {
   position: absolute;
   top: 14px;
