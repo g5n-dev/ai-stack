@@ -49,6 +49,9 @@ jobs:
       - name: Install locked frontend dependencies
         run: npm ci --ignore-scripts
 
+      - name: Install Chromium for graph UI smoke tests
+        run: python3 -m playwright install --with-deps chromium
+
       - name: Run stable unit test suite
         env:
           PYTHONPATH: ${{ github.workspace }}
@@ -103,7 +106,9 @@ jobs:
             tests/test_pipeline_safety.py \
             tests/test_static_search_configuration.py \
             tests/test_pagefind_catalog.py \
-            tests/test_template_hardening.py
+            tests/test_template_hardening.py \
+            tests/test_secret_safe_logging.py \
+            tests/test_v1_release_contract.py
 
       - name: Verify committed Post quality manifest
         env:
@@ -113,7 +118,8 @@ jobs:
             --content-root blog/content \
             --output blog/data/content_quality.json \
             --fail-on-quarantine \
-            --fail-on-structural-warning
+            --fail-on-structural-warning \
+            --fail-on-unverified-provenance
           git diff --exit-code -- blog/data/content_quality.json
 
       - name: Verify historical repair fixed point
@@ -138,3 +144,23 @@ jobs:
 
       - name: Run browser-runtime unit tests
         run: node --test tests/js/*.mjs tests/js/graph-runtime.test.js
+
+      - name: Run real graph workbench browser smoke
+        env:
+          PYTHONPATH: ${{ github.workspace }}
+        run: python3 scripts/verify_graph.py
+
+      - name: Build Hugo and Pagefind delivery
+        env:
+          PYTHONPATH: ${{ github.workspace }}
+        run: |
+          npm run build:css
+          git diff --exit-code -- blog/static/css/tailwind.css
+          cd blog
+          hugo --baseURL "https://ai-stack.site/" --minify --cleanDestinationDir
+          cd ..
+          ./node_modules/.bin/pagefind --site blog/public
+          python3 -m ai_stack.pagefind_catalog --public-root blog/public
+          test -s blog/public/pagefind/pagefind.js
+          test -s blog/public/pagefind/catalog.json
+          test -s blog/public/pagefind/catalog.manifest.json

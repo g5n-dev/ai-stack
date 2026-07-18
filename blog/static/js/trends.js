@@ -39,6 +39,14 @@
     novelty: "主题新颖度",
     source_weight: "来源权重",
   });
+  const COMPONENT_WEIGHTS = Object.freeze({
+    quantity: 0.25,
+    growth: 0.25,
+    acceleration: 0.15,
+    source_diversity: 0.15,
+    novelty: 0.10,
+    source_weight: 0.10,
+  });
   const STATE_LABELS = Object.freeze({
     new: "新出现",
     rising: "上升",
@@ -55,6 +63,11 @@
   ]);
   const CONFIDENCE_LABELS = Object.freeze({ high: "高置信", medium: "中等置信" });
   const WINDOW_LABELS = Object.freeze({ "24h": "24 小时", "7d": "7 天", "30d": "30 天" });
+  const WINDOW_BUCKETS = Object.freeze({
+    "24h": Object.freeze({ span: 24, unit: "小时" }),
+    "7d": Object.freeze({ span: 7, unit: "天" }),
+    "30d": Object.freeze({ span: 30, unit: "天" }),
+  });
   const SOURCE_LABELS = Object.freeze({
     blogs_podcasts: "博客与播客",
     hacker_news: "Hacker News",
@@ -596,6 +609,23 @@
     return `?${params.toString()}`;
   }
 
+  function buildTrendReturnUrl(pathname = "/trends/", state = {}) {
+    const safePath = safeInternalUrl(pathname);
+    if (safePath === "#") return "#";
+    const parsed = new URL(safePath, CANONICAL_ORIGIN);
+    return `${parsed.pathname}${serializeState(state)}`;
+  }
+
+  function appendReturnContext(value, returnTo = "") {
+    const target = safeInternalUrl(value);
+    if (target === "#") return "#";
+    const safeReturn = safeInternalUrl(returnTo);
+    if (safeReturn === "#" || !returnTo) return target;
+    const parsed = new URL(target, CANONICAL_ORIGIN);
+    parsed.searchParams.set("return_to", safeReturn);
+    return `${parsed.pathname}${parsed.search}${parsed.hash}`;
+  }
+
   function adaptStateForViewport(state, compact) {
     return compact ? { ...state, view: "list" } : { ...state };
   }
@@ -740,6 +770,62 @@
     return heatVisual(score).key;
   }
 
+  function trendCardScoreCopy(value) {
+    const state = STATE_LABELS[value?.state] || String(value?.state || "");
+    const glyph = STATE_GLYPHS[value?.state] || "•";
+    const visual = value?.heat || heatVisual(value?.score);
+    const evidence = Number.isFinite(Number(value?.current))
+      ? Number(value.current)
+      : Number(value?.counts?.current ?? value?.unique_events);
+    const sources = Number.isFinite(Number(value?.sourceCount))
+      ? Number(value.sourceCount)
+      : Number(value?.unique_sources);
+    return Object.freeze({
+      status: `${glyph} ${state}`.trim(),
+      heat: visual.label,
+      score: String(Math.round(Number(value?.score) || 0)),
+      evidence: String(Math.max(0, evidence || 0)),
+      sources: String(Math.max(0, sources || 0)),
+    });
+  }
+
+  function scoreExplanation(signal, windowName = "30d", formula = "") {
+    const resolvedWindow = WINDOWS.includes(windowName) ? windowName : "30d";
+    const bucket = WINDOW_BUCKETS[resolvedWindow];
+    const formatOffset = (multiple) => `${bucket.span * multiple} ${bucket.unit}`;
+    const components = signal?.components || {};
+    const weightedSubtotal = COMPONENTS.reduce((total, name) => (
+      total + ((Number(components[name]) || 0) * COMPONENT_WEIGHTS[name])
+    ), 0);
+    const uniqueEvents = Math.max(0, Number(signal?.unique_events) || 0);
+    const observations = Math.max(uniqueEvents, Number(signal?.observations) || uniqueEvents);
+    const inferredRate = observations > 0 ? (observations - uniqueEvents) / observations : 0;
+    const duplicateRate = Math.max(0, Math.min(
+      1,
+      Number.isFinite(Number(signal?.duplicate_rate)) ? Number(signal.duplicate_rate) : inferredRate,
+    ));
+    const duplicateMultiplier = 1 - (0.5 * duplicateRate);
+    const round = (value) => Math.round(value * 1000000) / 1000000;
+    return Object.freeze({
+      formula: String(formula || ""),
+      windowLabel: WINDOW_LABELS[resolvedWindow],
+      ranges: Object.freeze([
+        `当前：[截止−${formatOffset(1)}, 截止]`,
+        `上一周期：[截止−${formatOffset(2)}, 截止−${formatOffset(1)})`,
+        `前两周期：[截止−${formatOffset(3)}, 截止−${formatOffset(2)})`,
+      ]),
+      growthDefinition: "growth = clamp(0.5 + 0.5 × (current−previous) / max(current, previous, 1), 0, 1)",
+      accelerationDefinition: "acceleration = clamp(0.5 + 0.5 × ((current−previous)−(previous−pre_previous)) / max(current, previous, pre_previous, 1), 0, 1)",
+      uniqueEvents,
+      observations,
+      duplicateCount: Math.max(0, Math.round(observations - uniqueEvents)),
+      duplicateRate: round(duplicateRate),
+      duplicateMultiplier: round(duplicateMultiplier),
+      weightedSubtotal: round(weightedSubtotal),
+      recomputedScore: round(100 * weightedSubtotal * duplicateMultiplier),
+    });
+  }
+
   function topologyNodeVisual(point, active = false) {
     const visual = point?.heat || heatVisual(point?.score);
     return Object.freeze({
@@ -762,15 +848,15 @@
 
   function matrixTooltipCopy(point) {
     const badge = matrixBadgeCopy(point);
-    const visual = point?.heat || heatVisual(point?.score);
+    const scoreCopy = trendCardScoreCopy(point);
     return Object.freeze({
       topic: String(point?.topic || ""),
       rank: String(Number(point?.rank) || 0).padStart(2, "0"),
       status: badge.status,
-      heat: visual.label,
-      score: String(Math.round(Number(point?.score) || 0)),
-      evidence: String(Math.max(0, Number(point?.current) || 0)),
-      sources: String(Math.max(0, Number(point?.sourceCount) || 0)),
+      heat: scoreCopy.heat,
+      score: scoreCopy.score,
+      evidence: scoreCopy.evidence,
+      sources: scoreCopy.sources,
     });
   }
 
@@ -1462,13 +1548,15 @@
     });
   }
 
-  function buildGraphUrl(id, basePath = "/") {
+  function buildGraphUrl(id, basePath = "/", returnTo = "") {
     if (typeof id !== "string" || !TOPIC_ID.test(id)) return "#";
     const normalizedBase = typeof basePath === "string" && basePath.startsWith("/")
       ? `${basePath.replace(/\/+$/u, "")}/`
       : "/";
     const path = `${normalizedBase === "//" ? "/" : normalizedBase}${GRAPH_ROUTE.slice(1)}`.replace(/\/+/gu, "/");
     const params = new URLSearchParams({ mode: "focus", node: id });
+    const safeReturn = safeInternalUrl(returnTo);
+    if (returnTo && safeReturn !== "#") params.set("return_to", safeReturn);
     return `${path}?${params.toString()}`;
   }
 
@@ -1994,7 +2082,7 @@
     listen(filterMedia, "change", handleFilterViewportChange);
 
     function updateHistory(push = false) {
-      const url = `${windowObject.location.pathname}${serializeState(model.state)}`;
+      const url = buildTrendReturnUrl(windowObject.location.pathname, model.state);
       if (push) windowObject.history.pushState({ trends: true }, "", url);
       else windowObject.history.replaceState({ trends: true }, "", url);
     }
@@ -2074,6 +2162,7 @@
       trends.forEach((item) => {
         const rank = model.windowData.trends.findIndex((candidate) => candidate.id === item.id) + 1;
         const visual = heatVisual(item.score);
+        const scoreCopy = trendCardScoreCopy(item);
         const row = document.createElement("li");
         row.className = "trend-card";
         row.dataset.heat = visual.key;
@@ -2082,7 +2171,10 @@
         button.className = "trend-card__button";
         button.dataset.topicId = item.id;
         button.setAttribute("aria-pressed", String(model.state.topic === item.id));
-        button.setAttribute("aria-label", `查看 ${item.topic} 趋势详情，${visual.label}，得分 ${Math.round(item.score)}`);
+        button.setAttribute(
+          "aria-label",
+          `查看 ${item.topic} 趋势详情，${scoreCopy.status}，${scoreCopy.heat}，综合得分 ${scoreCopy.score}，${scoreCopy.evidence} 篇证据，${scoreCopy.sources} 个来源`,
+        );
         appendText(document, button, "span", "trend-card__rank", String(rank).padStart(2, "0"));
         const copy = document.createElement("span");
         copy.className = "trend-card__copy";
@@ -2092,14 +2184,21 @@
           copy,
           "small",
           "trend-card__meta",
-          `${STATE_LABELS[item.state]} · ${formatNumber(item.unique_events)} 篇证据 · ${formatNumber(item.unique_sources)} 来源`,
+          scoreCopy.status,
         );
         button.append(copy);
-        const score = document.createElement("span");
-        score.className = "trend-card__score";
-        appendText(document, score, "small", "trend-card__heat-label", visual.label);
-        appendText(document, score, "strong", "", Math.round(item.score));
-        button.append(score);
+        const details = document.createElement("span");
+        details.className = "trend-card__focus-details";
+        details.setAttribute("aria-hidden", "true");
+        appendText(document, details, "strong", "", `${scoreCopy.heat} · ${scoreCopy.score} 分`);
+        appendText(
+          document,
+          details,
+          "small",
+          "",
+          `${scoreCopy.evidence} 篇证据 · ${scoreCopy.sources} 个来源`,
+        );
+        button.append(details);
         row.append(button);
         elements.list.append(row);
       });
@@ -2208,6 +2307,51 @@
       parent.append(section);
     }
 
+    function appendScoreExplanation(parent, signal) {
+      if (!signal) return;
+      const explanation = scoreExplanation(signal, model.state.window, model.index.formula);
+      const section = document.createElement("section");
+      section.className = "trend-detail-section trend-score-method";
+      appendText(document, section, "h3", "", "评分公式与窗口语义");
+      appendText(
+        document,
+        section,
+        "p",
+        "trend-score-method__window",
+        `窗口采用互斥时间切片：${explanation.ranges.join("；")}。当前窗口包含起止边界，前序窗口不含右边界。`,
+      );
+      const formula = appendText(
+        document,
+        section,
+        "code",
+        "trend-score-method__formula",
+        explanation.formula,
+      );
+      formula.setAttribute("aria-label", "趋势综合评分公式");
+      const audit = document.createElement("dl");
+      audit.className = "trend-score-method__audit";
+      [
+        ["加权子项", `${(explanation.weightedSubtotal * 100).toFixed(1)}%`],
+        ["去重结果", `${formatNumber(explanation.uniqueEvents)} / ${formatNumber(explanation.observations)} 条观测`],
+        ["重复惩罚", `${(explanation.duplicateRate * 100).toFixed(1)}% → × ${(explanation.duplicateMultiplier * 100).toFixed(1)}%`],
+        ["公式复算", `${explanation.recomputedScore.toFixed(1)} 分`],
+      ].forEach(([label, value]) => {
+        const cell = document.createElement("div");
+        appendText(document, cell, "dt", "", label);
+        appendText(document, cell, "dd", "", value);
+        audit.append(cell);
+      });
+      section.append(audit);
+      appendText(
+        document,
+        section,
+        "p",
+        "trend-score-method__definition",
+        `增长：${explanation.growthDefinition}；加速度：${explanation.accelerationDefinition}。两者 0.5 表示持平或无加速，所有子项限制在 0–1。`,
+      );
+      parent.append(section);
+    }
+
     function appendTagSection(parent, title, facets, className, labelFormatter = (value) => value) {
       if (!facets.length) return;
       const section = document.createElement("section");
@@ -2257,7 +2401,10 @@
         row.className = "trend-evidence-item";
         const link = document.createElement("a");
         link.className = "trend-evidence-link";
-        link.href = withBasePath(item.internal_url, root.dataset.basePath || "/");
+        link.href = appendReturnContext(
+          withBasePath(item.internal_url, root.dataset.basePath || "/"),
+          buildTrendReturnUrl(windowObject.location.pathname, model.state),
+        );
         link.dataset.articleId = item.id;
         appendText(document, link, "strong", "trend-evidence-title", item.title);
         if (item.summary) appendText(document, link, "p", "", item.summary);
@@ -2351,7 +2498,11 @@
       actions.className = "trend-detail__actions";
       const graph = document.createElement("a");
       graph.className = "trend-link trend-link--graph";
-      graph.href = buildGraphUrl(topic.graph_node_id, root.dataset.basePath || "/");
+      graph.href = buildGraphUrl(
+        topic.graph_node_id,
+        root.dataset.basePath || "/",
+        buildTrendReturnUrl(windowObject.location.pathname, model.state),
+      );
       graph.textContent = "进入知识图谱聚焦";
       actions.append(graph);
       if (model.watchlistStore) {
@@ -2368,6 +2519,7 @@
 
       if (signal) {
         appendMetricGrid(elements.detail, signal);
+        appendScoreExplanation(elements.detail, signal);
         const seriesSection = document.createElement("section");
         seriesSection.className = "trend-detail-section";
         appendText(document, seriesSection, "h3", "", `${WINDOW_LABELS[model.state.window]}证据走势`);
@@ -2380,7 +2532,7 @@
         drawSparkline(canvas, signal.sparkline, signal.state);
       }
 
-      appendComponents(elements.detail, trend?.components);
+      if (signal) appendComponents(elements.detail, signal.components);
       appendTagSection(elements.detail, "30 天来源分布", topic.sources, "trend-source-tag", formatSourceName);
       appendTagSection(elements.detail, "30 天场景", topic.scenarios, "trend-category-tag");
       appendTagSection(elements.detail, "30 天内容分类", topic.categories, "trend-category-tag");
@@ -2746,7 +2898,9 @@
   return {
     TrendDataError,
     adaptStateForViewport,
+    appendReturnContext,
     buildGraphUrl,
+    buildTrendReturnUrl,
     countFacetTopics,
     drawMatrix,
     drawSparkline,
@@ -2772,10 +2926,12 @@
     resolveWindowSignal,
     safeAssetPath,
     safeInternalUrl,
+    scoreExplanation,
     serializeState,
     shouldDestroyOnPageHide,
     shouldRenderMatrix,
     toggleWatchlistTopic,
+    trendCardScoreCopy,
     validateIndex,
     validateTopic,
     validateWindow,

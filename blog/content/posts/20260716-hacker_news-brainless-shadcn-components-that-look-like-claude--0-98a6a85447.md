@@ -12,6 +12,7 @@ source_capture_mode: "metadata_only"
 source_snapshot_sha256: "sha256:d089675ebdd7434e087422419911b7b21b0a67a2d6ce7e3b40a3bd4548e19137"
 extractor_version: "source-contract-v1"
 discovery_method: "api_metadata"
+source_completeness: "metadata_only"
 source_is_truncated: false
 source_support: 1.0
 source_title_chars_original: 71

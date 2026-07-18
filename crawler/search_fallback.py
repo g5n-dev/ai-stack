@@ -206,7 +206,7 @@ class SearXNGSearchClient:
         }
         max_results = max(1, min(10, int(limit or self.per_query_limit)))
 
-        for base_url in self.base_urls:
+        for provider_index, base_url in enumerate(self.base_urls, start=1):
             try:
                 response = self.session.get(base_url, params=params, headers=headers, timeout=self.timeout)
                 response.raise_for_status()
@@ -220,7 +220,11 @@ class SearXNGSearchClient:
                 if normalized:
                     return normalized
             except Exception as exc:
-                logger.warning(f"SearXNG query failed via {base_url}: {exc}")
+                logger.warning(
+                    "SearXNG query failed (provider_index=%d error_type=%s)",
+                    provider_index,
+                    type(exc).__name__,
+                )
 
         return []
 

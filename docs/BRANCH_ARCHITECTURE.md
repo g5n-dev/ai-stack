@@ -1,13 +1,12 @@
 # 分支架构与 CI 合并契约
 
-状态：P0 迁移基线，目标协调器尚未启用。本文同时说明目标架构、过渡期事实，以及现行
-GitHub Actions 的可靠性边界。
+状态：目标迁移设计，协调器尚未接入生产。现行发布事实以 [`DEPLOYMENT.md`](../DEPLOYMENT.md)
+和仓库内 `.github/workflows/*.yml` 为准。
 
-> 合并边界：本次可靠性修复修改 `deploy.yml` 与 `monitoring.yml`，只处理非整点唤醒、增量数据写入、
-> fail-closed 图谱构建和真实线上新鲜度巡检。
-> 目标协调 DAG 尚未接入 GitHub Actions。新的 CAS、预算、artifact guard、release health 和 outbox
-> 代码只是待切换能力，不能据此宣称生产权限隔离、安全删除或双 SHA 发布已经生效。`ci.yml` 仅在
-> 原 `Unit Tests` job 内加入本次数据新鲜度与 workflow 语义回归，`delete-post.yml` 保持既有字节契约。
+> 当前 v1 工作流已经覆盖内容来源门禁、历史修复固定点、图谱/趋势派生数据、真实图谱浏览器烟测、
+> Hugo 与 Pagefind 交付构建；`delete-post.yml` 也会按同一来源与派生数据契约重建。本文后续描述的
+> CAS、预算、artifact guard、release health 与 outbox 仍是待单独评审的目标能力，不能据此宣称
+> 生产权限隔离、安全删除或双 SHA 发布已经生效。
 
 ## 结论
 
@@ -37,9 +36,9 @@ GC/prune 和历史重写。
 | 周期性采集唤醒 | `Build and Deploy` | `17 * * * *`；`workflow_dispatch` | `cancel-in-progress: false`；候选池历史去重后生成、校验、提交并部署 |
 | 生产巡检 | `System Monitoring & Content Quality Tracking` | `23 */6 * * *`；`workflow_dispatch` | 只读校验 main 与线上 v2 图谱时间、文章数和 JSON 契约，异常非零退出 |
 
-`content`、`ops` 提交不匹配上述 push 分支，因此不会触发代码 PR CI 或递归部署。测试继续以 SHA-256
-锁住未改动的 `delete-post.yml`；`ci.yml` 保留同名 required job 并运行新增回归，对数据生成和巡检
-工作流则锁定触发器、最小权限、顺序、白名单与 fail-closed 语义。
+`content`、`ops` 提交不匹配上述 push 分支，因此不会触发代码 PR CI 或递归部署。测试锁定
+`delete-post.yml`、数据生成、巡检与发布的触发器、最小权限、顺序、白名单和 fail-closed 语义；
+`ci.yml` 保留同名 required job，并在一个 `Unit Tests` job 内覆盖完整交付边界。
 
 ## 为什么旧 Action 会是一个大 Job
 
@@ -152,7 +151,8 @@ DAG、权限、Environment 和副作用顺序，因此必须在 ruleset、环境
 - PR 分支更新后，GitHub 上显示 `PR CI / Unit Tests`，名称未变化。
 - 合并到 `main` 后，显示 `Build and Deploy`，触发来源仍为 push。
 - 小时运行使用 `17 * * * *`，六小时巡检使用 `23 */6 * * *`，避开整点拥塞窗口。
-- `delete-post.yml` 的 SHA-256 仍与基线一致；`ci.yml` 保持同名 required job 并加入数据可靠性回归。
+- `delete-post.yml` 与发布流程使用同一内容来源、图谱和趋势重建契约；`ci.yml` 保持同名 required job，
+  并运行安全、浏览器、Hugo 与 Pagefind 交付回归。
 - 图谱失败不再复用旧数据；远端冲突不再 `reset --hard` 后假成功；巡检不再读取废弃的 `gh-pages`。
 - `content` 与 `ops` 不触发代码部署，但旧 workflow 仍可能把生成内容写回 `main`。
 - 仓库 ruleset、默认只读 Actions 权限和受保护 Environment 未实际启用前，不宣称强推/删除防护或

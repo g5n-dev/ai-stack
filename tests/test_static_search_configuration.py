@@ -16,11 +16,11 @@ def test_pagefind_and_node_test_runner_are_exactly_locked() -> None:
     assert package["devDependencies"]["pagefind"] == "1.5.2"
     assert package["scripts"]["build:search"] == (
         "pagefind --site blog/public && "
-        "uv run python scripts/build_pagefind_catalog.py --public-root blog/public"
+        "python3 scripts/build_pagefind_catalog.py --public-root blog/public"
     )
     assert package["scripts"]["test"] == (
         "node --test tests/js/*.mjs && "
-        "uv run pytest -q tests/test_pagefind_catalog.py tests/test_static_search_configuration.py "
+        "python3 -m pytest -q tests/test_pagefind_catalog.py tests/test_static_search_configuration.py "
         "tests/test_template_hardening.py"
     )
     assert lock["packages"][""]["devDependencies"]["pagefind"] == "1.5.2"

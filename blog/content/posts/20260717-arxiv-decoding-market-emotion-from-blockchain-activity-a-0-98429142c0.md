@@ -3,7 +3,7 @@ title: "Decoding Market Emotion from Blockchain Activity: A Data-Driven Sentimen
 date: 2026-07-17T14:30:45+08:00
 draft: false
 entry_kind: "auto"
-tags: ["cs.LG", "arXiv", "来源快报"]
+tags: ["cs.LG", "ArXiv", "来源快报"]
 categories: []
 source: "arxiv"
 content_mode: "source_brief"
@@ -12,6 +12,7 @@ source_capture_mode: "abstract"
 source_snapshot_sha256: "sha256:cbbe7d44157a99a355efbceafca7d80e1ef100fd6784c4f389f4a0dc7aadd08c"
 extractor_version: "source-contract-v1"
 discovery_method: "arxiv_api"
+source_completeness: "abstract_only"
 source_is_truncated: false
 source_support: 1.0
 source_title_chars_original: 84

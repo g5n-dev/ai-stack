@@ -154,9 +154,21 @@ def test_manifest_separates_terminal_failure_archives_from_pending_archives(
     assert manifest["archived_count"] == 4
     assert manifest["rehydration_terminal_count"] == 1
     assert manifest["rehydration_terminal_by_source"] == {"blogs_podcasts": 1}
+    assert manifest["recovery_failure_type_counts"] == {"source_fetch_error": 1}
+    assert manifest["recovery_failure_reason_counts"] == {
+        "source_access_interstitial": 1
+    }
     assert manifest["rehydration_pending_count"] == 3
     assert manifest["rehydration_pending_by_source"] == {
         "arxiv": 1,
         "hacker_news": 1,
         "juejin": 1,
     }
+    assert manifest["pages"]["posts/terminal.md"]["recovery_failure"] == {
+        "type": "source_fetch_error",
+        "reason": "source_access_interstitial",
+    }
+    assert all(
+        "recovery_failure" not in manifest["pages"][f"posts/{name}.md"]
+        for name in ("ordinary", "forged-metadata", "forged-body")
+    )

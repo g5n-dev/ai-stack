@@ -12,6 +12,7 @@ source_capture_mode: "excerpt"
 source_snapshot_sha256: "sha256:fd9f818fa19317d0e72affd392cd769c01968c0bbd161bd965e28e39b19d6149"
 extractor_version: "source-contract-v1"
 discovery_method: "rss_excerpt"
+source_completeness: "partial"
 source_is_truncated: false
 source_support: 1.0
 source_title_chars_original: 50

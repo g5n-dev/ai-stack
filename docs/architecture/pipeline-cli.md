@@ -1,9 +1,10 @@
 # Unified pipeline CLI contract
 
-The CLI is implemented as a dormant migration target. The current upgrade does
-not wire this coordination DAG into `.github/workflows/*.yml`; it only completes
-the existing Pages build with the locked Pagefind artifacts and extends the
-existing PR test job without changing trigger, job-name, or permission boundaries.
+The CLI is implemented as a dormant migration target. The current production
+workflow does not wire this coordination DAG into `.github/workflows/*.yml`;
+instead, its single stable CI job covers provenance, historical fixed points,
+graph and trend assets, a real graph browser smoke, Hugo, and Pagefind without
+changing the required check name or introducing the target permission split.
 A later, separately reviewed Actions migration can preserve the existing trigger
 contract while making each trust boundary explicit. Every cross-job directory contains only `content/`,
 `ops/`, and/or `state/` paths and must be repackaged by `artifact_guard`.
@@ -131,7 +132,7 @@ Each Hugo-only shadow comparison can append an audit record while retaining the
 existing standalone report:
 
 ```text
-uv run python scripts/shadow_compare.py \
+python3 scripts/shadow_compare.py \
   --baseline legacy-public --candidate ledger-public \
   --report shadow-report.json \
   --code-sha CODE_SHA --content-sha CONTENT_SHA \
@@ -153,7 +154,7 @@ only the resulting regular-file `pagefind/` subtree into both final tree
 copies. The full-build attestation is then generated with:
 
 ```text
-uv run python scripts/shadow_full_build.py \
+python3 scripts/shadow_full_build.py \
   --hugo-baseline legacy-hugo-public \
   --hugo-candidate ledger-hugo-public \
   --final-baseline legacy-final-public \

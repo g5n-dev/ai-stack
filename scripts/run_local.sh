@@ -43,7 +43,13 @@ python3 scripts/build_content_quality_manifest.py \
   --content-root blog/content \
   --output blog/data/content_quality.json \
   --fail-on-quarantine \
-  --fail-on-structural-warning
+  --fail-on-structural-warning \
+  --fail-on-unverified-provenance
+TAG_GRAPH_ENABLE_CONTENT_MINING=0 \
+TAG_INTRO_ENABLED=0 \
+TAG_INTRO_MAX_NEW=0 \
+  python3 -m processor.tag_graph
+python3 scripts/verify_graph.py --assets-only --public-dir blog/static
 python3 scripts/build_stack_trends.py \
   --content-root blog/content \
   --quality-manifest blog/data/content_quality.json \

@@ -3,7 +3,7 @@ title: "Watermark Forensics for Generative Models: An Information-Theoretic Pers
 date: 2026-07-15T23:05:07+08:00
 draft: false
 entry_kind: "auto"
-tags: ["cs.CR", "arXiv", "来源快报"]
+tags: ["cs.CR", "ArXiv", "来源快报"]
 categories: []
 source: "arxiv"
 content_mode: "source_brief"
@@ -12,6 +12,7 @@ source_capture_mode: "abstract"
 source_snapshot_sha256: "sha256:cf3cf00c5341ab396fb6524b6aacb1cc3c10d8b7ddbb4af91fea4da9508df3ae"
 extractor_version: "source-contract-v1"
 discovery_method: "arxiv_api"
+source_completeness: "abstract_only"
 source_is_truncated: false
 source_support: 1.0
 source_title_chars_original: 79

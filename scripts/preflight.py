@@ -11,6 +11,7 @@ import os
 import shutil
 import sys
 from pathlib import Path
+from urllib.parse import urlsplit
 
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
@@ -33,10 +34,32 @@ def _status_line(level: str, message: str) -> str:
     return f"[{icon}] {message}"
 
 
+def _is_supported_python(major: int, minor: int) -> bool:
+    return major == 3 and 11 <= minor < 14
+
+
+def _is_placeholder_configuration(name: str, value: str) -> bool:
+    normalized = str(value or "").strip()
+    folded = normalized.casefold()
+    if folded.startswith(("replace_with_", "your_")):
+        return True
+    if name.endswith("BASE_URL"):
+        try:
+            hostname = (urlsplit(normalized).hostname or "").casefold()
+        except ValueError:
+            return True
+        if hostname == "example.com" or hostname.endswith(".example.com"):
+            return True
+    return False
+
+
 def _check_python() -> tuple[str, str]:
     version = sys.version_info
-    if version < (3, 11):
-        return "FAIL", f"Python 版本过低: {version.major}.{version.minor}.{version.micro}，需要 3.11+"
+    if not _is_supported_python(version.major, version.minor):
+        return (
+            "FAIL",
+            f"Python 版本不受支持: {version.major}.{version.minor}.{version.micro}，需要 3.11–3.13",
+        )
     return "PASS", f"Python 版本: {version.major}.{version.minor}.{version.micro}"
 
 
@@ -75,28 +98,26 @@ def _check_env() -> list[tuple[str, str]]:
     else:
         checks.append(("WARN", "未找到 .env，本地运行将依赖当前 shell 环境变量"))
 
-    required_envs = ["ANTHROPIC_AUTH_TOKEN", "ANTHROPIC_BASE_URL", "ANTHROPIC_MODEL"]
-    for key in required_envs[:2]:
+    required_envs = (
+        ("ANTHROPIC_AUTH_TOKEN", True),
+        ("ANTHROPIC_BASE_URL", True),
+        ("ANTHROPIC_MODEL", False),
+    )
+    for key, required in required_envs:
         value = str(os.environ.get(key) or "").strip()
-        if value:
+        if _is_placeholder_configuration(key, value):
+            checks.append(("FAIL", f"环境变量仍是占位符: {key}"))
+        elif value:
             checks.append(("PASS", f"环境变量已配置: {key}"))
-        else:
+        elif required:
             checks.append(("FAIL", f"环境变量缺失: {key}"))
-
-    base_url = str(os.environ.get("ANTHROPIC_BASE_URL") or "").strip().lower()
-    model = str(os.environ.get("ANTHROPIC_MODEL") or "").strip()
-    if model:
-        checks.append(("PASS", "环境变量已配置: ANTHROPIC_MODEL"))
-    elif "minimax" in base_url:
-        checks.append(("WARN", "未配置 ANTHROPIC_MODEL，将默认回落到 MiniMax-M2.7-highspeed"))
-    else:
-        checks.append(("WARN", "未配置 ANTHROPIC_MODEL，将使用客户端默认模型"))
-
-    if "minimax" in base_url and model and not model.lower().startswith("minimax"):
-        checks.append(("FAIL", f"MiniMax 后端应使用 MiniMax 模型名，当前是: {model}"))
+        else:
+            checks.append(("WARN", f"环境变量未配置: {key}，将使用客户端默认模型"))
 
     searxng = str(os.environ.get("SEARXNG_BASE_URL") or "").strip()
-    if searxng:
+    if _is_placeholder_configuration("SEARXNG_BASE_URL", searxng):
+        checks.append(("WARN", "SEARXNG_BASE_URL 仍是占位符，将不作为可用搜索服务"))
+    elif searxng:
         checks.append(("PASS", "已配置 SEARXNG_BASE_URL"))
     else:
         checks.append(("WARN", "未配置 SEARXNG_BASE_URL，将回退到公共 SearXNG 实例"))

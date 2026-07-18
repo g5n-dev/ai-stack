@@ -3,7 +3,7 @@ title: "AI-accelerated End-to-End Framework for Rapid Professional Upskilling"
 date: 2026-07-16T17:30:51+08:00
 draft: false
 entry_kind: "auto"
-tags: ["cs.AI", "arXiv", "来源快报"]
+tags: ["cs.AI", "ArXiv", "来源快报"]
 categories: []
 source: "arxiv"
 content_mode: "source_brief"
@@ -12,6 +12,7 @@ source_capture_mode: "abstract"
 source_snapshot_sha256: "sha256:b9384d9e6bf602ec0810b0f2b743b59b505a029eaf59d02432bf93fc570e74b3"
 extractor_version: "source-contract-v1"
 discovery_method: "arxiv_api"
+source_completeness: "abstract_only"
 source_is_truncated: false
 source_support: 1.0
 source_title_chars_original: 69

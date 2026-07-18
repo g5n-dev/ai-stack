@@ -61,7 +61,7 @@ flowchart LR
 | --- | --- | --- |
 | 🌐 在线浏览 | 浏览器 | 无需账户、无需密钥 |
 | 💻 本地启动 UI | Git + Hugo Extended | 不调用模型，不需要 Python |
-| 🤖 完整数据刷新 | Python 3.11+ + Anthropic Messages 兼容端点 | 主要可变成本为模型 API；可选域名、自建搜索或非标准运行环境也可能产生费用 |
+| 🤖 完整数据刷新 | Python 3.11–3.13 + Anthropic Messages 兼容端点 | 主要可变成本为模型 API；可选域名、自建搜索或非标准运行环境也可能产生费用 |
 
 成本说明参考 GitHub 官方的 [Actions 计费说明](https://docs.github.com/en/actions/concepts/billing-and-usage) 与 [Pages 使用限制](https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits)。
 
@@ -125,7 +125,7 @@ hugo server -D
 
 ### 路径 B：运行完整情报流水线
 
-需要 Python `3.11+`、Hugo Extended，以及一个兼容 Anthropic Messages API 的模型端点。
+需要 Python `3.11–3.13`、Hugo Extended 0.153.4，以及一个兼容 Anthropic Messages API 的模型端点。
 
 ```bash
 git clone https://github.com/g5n-dev/ai-stack.git
@@ -211,6 +211,8 @@ ai-stack/
 | [部署指南](./DEPLOYMENT.md) | GitHub Pages、自定义域名、Secrets 与部署验证 |
 | [分支架构](./docs/BRANCH_ARCHITECTURE.md) | 分支职责、同步机制与部署边界 |
 | [历史文章质量报告](./docs/HISTORICAL_CONTENT_QUALITY.md) | 异常识别、透明归档、标签修复与验收统计 |
+| [v1.0 发布清单](./docs/V1_RELEASE_CHECKLIST.md) | 数据、内容、图谱、趋势、搜索、安全与线上烟测 |
+| [新鲜度排障手册](./docs/operations/freshness-runbook.md) | 12 小时检查、失败阶段判断与安全处置 |
 | [CI 信任模型](./docs/architecture/ci-trust-model.md) | 工作流权限、发布边界与安全假设 |
 | [系统设计](./docs/系统设计文档.md) | 数据流、AI 处理、展示层与扩展设计 |
 
@@ -225,6 +227,7 @@ python3 -m unittest tests.test_tag_graph_runtime tests.test_generate_content_gua
 python3 -m pytest -q tests/test_graph_deploy_contract.py tests/test_site_header_contract.py
 ```
 
+- 贡献约定与本地验证：[CONTRIBUTING.md](./CONTRIBUTING.md)
 - Bug 与功能建议：[GitHub Issues](https://github.com/g5n-dev/ai-stack/issues)
 - 方案讨论与经验分享：[GitHub Discussions](https://github.com/g5n-dev/ai-stack/discussions)
 - PR 检查规则：[`.github/workflows/ci.yml`](./.github/workflows/ci.yml)

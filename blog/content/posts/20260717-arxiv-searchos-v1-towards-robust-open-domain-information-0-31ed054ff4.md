@@ -3,7 +3,7 @@ title: "SearchOS-V1: Towards Robust Open-Domain Information-Seeking Agent Collab
 date: 2026-07-17T11:39:12+08:00
 draft: false
 entry_kind: "auto"
-tags: ["cs.AI", "arXiv", "来源快报"]
+tags: ["cs.AI", "ArXiv", "来源快报"]
 categories: []
 source: "arxiv"
 content_mode: "source_brief"
@@ -12,6 +12,7 @@ source_capture_mode: "abstract"
 source_snapshot_sha256: "sha256:8157d67d3bd7ef1daf18802d1b5e6ffea6c668940aa9b70002f60ff5c5dbbcbf"
 extractor_version: "source-contract-v1"
 discovery_method: "arxiv_api"
+source_completeness: "abstract_only"
 source_is_truncated: false
 source_support: 1.0
 source_title_chars_original: 79

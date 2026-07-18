@@ -69,7 +69,7 @@ jobs:
       - name: Install locked frontend dependencies
         run: npm ci --ignore-scripts
 
-      - name: Run MiniMax response parsing tests
+      - name: Run model response parsing tests
         run: |
           python3 -m unittest tests/test_anthropic_response_parsing.py
 
@@ -270,7 +270,8 @@ jobs:
             --content-root blog/content \
             --output blog/data/content_quality.json \
             --fail-on-quarantine \
-            --fail-on-structural-warning
+            --fail-on-structural-warning \
+            --fail-on-unverified-provenance
 
       - name: Verify committed Post quality gate
         if: ${{ env.AI_STACK_REFRESH_DATA != 'true' }}
@@ -281,7 +282,8 @@ jobs:
             --content-root blog/content \
             --output /tmp/content_quality.json \
             --fail-on-quarantine \
-            --fail-on-structural-warning
+            --fail-on-structural-warning \
+            --fail-on-unverified-provenance
           cmp --silent blog/data/content_quality.json /tmp/content_quality.json
 
       - name: Verify historical repair fixed point (offline)
@@ -382,6 +384,10 @@ jobs:
           BING_INDEXNOW_API_KEY: ${{ secrets.BING_INDEXNOW_API_KEY }}
         run: |
           if [ -n "${BING_INDEXNOW_API_KEY}" ]; then
+            if [[ ! "${BING_INDEXNOW_API_KEY}" =~ ^[A-Za-z0-9-]{8,128}$ ]]; then
+              echo "Invalid IndexNow public ownership key format" >&2
+              exit 1
+            fi
             mkdir -p blog/public
             printf '%s' "${BING_INDEXNOW_API_KEY}" > "blog/public/${BING_INDEXNOW_API_KEY}.txt"
           fi

@@ -3,7 +3,7 @@ title: "Deep Interaction: An Efficient Human-AI Interaction Method for Large Rea
 date: 2026-07-16T22:25:30+08:00
 draft: false
 entry_kind: "auto"
-tags: ["cs.AI", "arXiv", "来源快报"]
+tags: ["cs.AI", "ArXiv", "来源快报"]
 categories: []
 source: "arxiv"
 content_mode: "source_brief"
@@ -12,6 +12,7 @@ source_capture_mode: "abstract"
 source_snapshot_sha256: "sha256:9edf3090bc0f15d6762a0e57738f0fe5d14a1a2220e9d7c6c014acdf9bca8757"
 extractor_version: "source-contract-v1"
 discovery_method: "arxiv_api"
+source_completeness: "abstract_only"
 source_is_truncated: false
 source_support: 1.0
 source_title_chars_original: 85

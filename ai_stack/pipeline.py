@@ -1008,6 +1008,10 @@ def _markdown_document(
         str(item.payload.get("source_capture_mode") or "metadata_only"),
         ensure_ascii=False,
     )
+    source_completeness = json.dumps(
+        str(item.payload.get("source_completeness") or ""),
+        ensure_ascii=False,
+    )
     extractor_version = json.dumps(
         str(item.payload.get("extractor_version") or "source-contract-v1"),
         ensure_ascii=False,
@@ -1046,6 +1050,7 @@ def _markdown_document(
         f'publication_tier: "{tier}"\n'
         f'content_mode: "{"source_brief" if tier == "C" else "evidence_backed_article"}"\n'
         f"source_capture_mode: {capture_mode}\n"
+        f"source_completeness: {source_completeness}\n"
         f'source_snapshot_sha256: "{evidence.snapshot_digest}"\n'
         f"extractor_version: {extractor_version}\n"
         f"discovery_method: {discovery_method}\n"

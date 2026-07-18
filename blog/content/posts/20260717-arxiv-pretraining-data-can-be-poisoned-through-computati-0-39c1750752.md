@@ -3,7 +3,7 @@ title: "Pretraining Data Can Be Poisoned through Computational Propaganda"
 date: 2026-07-17T22:05:13+08:00
 draft: false
 entry_kind: "auto"
-tags: ["cs.AI", "arXiv", "来源快报"]
+tags: ["cs.AI", "ArXiv", "来源快报"]
 categories: []
 source: "arxiv"
 content_mode: "source_brief"
@@ -12,6 +12,7 @@ source_capture_mode: "abstract"
 source_snapshot_sha256: "sha256:b2141921966c87b6ef0d6c6806bfa65c57d362476ec457395bbc5858c854eeed"
 extractor_version: "source-contract-v1"
 discovery_method: "arxiv_api"
+source_completeness: "abstract_only"
 source_is_truncated: false
 source_support: 1.0
 source_title_chars_original: 65

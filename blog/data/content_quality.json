@@ -68,6 +68,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_http_429",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260125-blogs_podcasts-horizon-1000-advancing-ai-for-primary-healthcare-9.md": {
@@ -137,6 +141,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260125-blogs_podcasts-unrolling-the-codex-agent-loop-1.md": {
@@ -386,6 +394,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_http_429",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260126-github_trending-521xueweihan-hellogithub-6.md": {
@@ -512,6 +524,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_payload_incomplete",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260126-hacker_news-emissary-a-fast-open-source-java-messaging-library-9.md": {
@@ -836,18 +852,30 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260127-blogs_podcasts-alyah-toward-robust-evaluation-of-emirati-dialect--0.md": {
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_http_429",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260127-blogs_podcasts-architectural-choices-in-chinas-open-source-ai-eco-0.md": {
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_http_429",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260127-blogs_podcasts-how-indeed-uses-ai-to-help-evolve-the-job-search-1.md": {
@@ -872,6 +900,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_http_429",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260127-github_trending-lss233-kirara-ai-2.md": {
@@ -986,6 +1018,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_payload_incomplete",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260127-hacker_news-google-books-removed-all-search-functions-for-any--17.md": {
@@ -1280,6 +1316,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_http_429",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260128-hacker_news-a-few-random-notes-from-claude-coding-quite-a-bit--2.md": {
@@ -1436,12 +1476,20 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260129-blogs_podcasts-ainews-sam-altmans-ai-combinator-0.md": {
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260129-blogs_podcasts-emea-youth-wellbeing-grant-3.md": {
@@ -1457,12 +1505,20 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_http_429",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260129-blogs_podcasts-its-time-to-science-0.md": {
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260129-blogs_podcasts-keeping-your-data-safe-when-an-ai-agent-clicks-a-l-5.md": {
@@ -1487,12 +1543,20 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_http_429",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260129-github_trending-alibaba-higress-9.md": {
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_http_301",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260129-github_trending-idvel-rime-ice-3.md": {
@@ -1841,6 +1905,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260130-blogs_podcasts-taisei-corporation-shapes-the-next-generation-of-t-3.md": {
@@ -1898,6 +1966,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260131-github_trending-langbot-app-langbot-7.md": {
@@ -1910,6 +1982,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_http_301",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260131-hacker_news-175k-publicly-exposed-ollama-ai-instances-discover-19.md": {
@@ -2105,6 +2181,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260202-blogs_podcasts-snowflake-and-openai-partner-to-bring-frontier-int-1.md": {
@@ -2276,12 +2356,20 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260203-blogs_podcasts-the-future-of-the-global-open-source-ai-ecosystem--0.md": {
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_http_429",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260203-blogs_podcasts-the-sora-feed-philosophy-4.md": {
@@ -2297,6 +2385,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_http_429",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260203-hacker_news-agent-skills-0.md": {
@@ -2423,12 +2515,20 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260204-blogs_podcasts-nemotron-colembed-v2-raising-the-bar-for-multimoda-0.md": {
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_http_429",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260204-blogs_podcasts-unlocking-the-codex-harness-how-we-built-the-app-s-1.md": {
@@ -2591,12 +2691,20 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260205-blogs_podcasts-community-evals-because-were-done-trusting-black-b-7.md": {
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_http_429",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260205-blogs_podcasts-gpt-5-lowers-the-cost-of-cell-free-protein-synthes-1.md": {
@@ -2621,6 +2729,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260205-github_trending-astrbotdevs-astrbot-3.md": {
@@ -2795,6 +2907,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260206-hacker_news-claude-composer-9.md": {
@@ -2879,6 +2995,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260207-blogs_podcasts-experts-have-world-models-llms-have-word-models-0.md": {
@@ -2903,6 +3023,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_payload_incomplete",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260207-hacker_news-make-trust-irrelevant-a-gamers-take-on-agentic-ai--18.md": {
@@ -3044,6 +3168,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_http_429",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260209-hacker_news-ai-makes-the-easy-part-easier-and-the-hard-part-ha-12.md": {
@@ -3248,6 +3376,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260210-hacker_news-eight-more-months-of-agents-13.md": {
@@ -3326,6 +3458,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "http_status_404",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260210-juejin-langchain-进阶实战当-memory-遇上-outputparser打造有记忆的结构化助手-3.md": {
@@ -3440,6 +3576,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260211-blogs_podcasts-harness-engineering-leveraging-codex-in-an-agent-f-5.md": {
@@ -3710,12 +3850,20 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260212-blogs_podcasts-beyond-alphafold-how-boltz-is-open-sourcing-the-fu-1.md": {
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260212-blogs_podcasts-build-long-running-mcp-servers-on-amazon-bedrock-a-1.md": {
@@ -3740,18 +3888,30 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "robots_fetch_failed",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260212-blogs_podcasts-openenv-in-practice-evaluating-tool-using-agents-i-4.md": {
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_http_429",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260212-blogs_podcasts-owning-the-ai-pareto-frontier-jeff-dean-0.md": {
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260212-hacker_news-65-lines-of-markdown-a-claude-code-sensation-2.md": {
@@ -3962,6 +4122,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260213-blogs_podcasts-beyond-rate-limits-scaling-access-to-codex-and-sor-0.md": {
@@ -3977,6 +4141,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_http_429",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260213-blogs_podcasts-customize-ai-agent-browsing-with-proxies-profiles--0.md": {
@@ -4094,6 +4262,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "article_structure_incomplete",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260213-juejin-即梦seedance20海外火爆出圈ai-视频的-deepseek-时刻来了附实测教程-2.md": {
@@ -4109,12 +4281,20 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "capture_publication_validation_error",
+        "type": "capture_validation_error"
+      },
       "status": "archived"
     },
     "posts/20260213-juejin-阿里卷麻了千问-qwen-image-20-发布超强文字渲染信息图ppt-轻松做附实测提示词-1.md": {
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "article_structure_incomplete",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260214-arxiv_ai-creative-ownership-in-the-age-of-ai-8.md": {
@@ -4190,12 +4370,20 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "article_structure_incomplete",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260214-juejin-国产windows-版-claude-cowork-来了内置海量-skills绝了-1.md": {
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "article_structure_incomplete",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260214-juejin-宝藏skills90个顶尖博客信源自动抓ai每天帮我筛出20篇精华-2.md": {
@@ -4439,6 +4627,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_http_404",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260216-hacker_news-anthropic-tries-to-hide-claudes-ai-actions-devs-ha-7.md": {
@@ -4643,6 +4835,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260217-hacker_news-ai-is-destroying-open-source-and-its-not-even-good-3.md": {
@@ -4685,6 +4881,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_payload_incomplete",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260217-hacker_news-show-hn-continue-source-controlled-ai-checks-enfor-16.md": {
@@ -4748,6 +4948,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "article_structure_incomplete",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260217-juejin-创业半年我用5个ai-agent替代了一个团队-0.md": {
@@ -4763,6 +4967,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "article_structure_incomplete",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260217-juejin-提示工程的悖论为什么与-ai-对话比你想象的更难-0.md": {
@@ -4853,6 +5061,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_article_incomplete",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260218-blogs_podcasts-ai-impact-summit-2026-1.md": {
@@ -4868,6 +5080,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260218-blogs_podcasts-evaluating-ai-agents-real-world-lessons-from-build-0.md": {
@@ -4883,18 +5099,30 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_http_429",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260218-blogs_podcasts-nvidia-nemotron-2-nano-9b-japanese-日本のソブリンaiを支える最先-0.md": {
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_http_429",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260218-blogs_podcasts-one-shot-any-web-app-with-gradios-grhtml-8.md": {
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_http_429",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260218-blogs_podcasts-our-2026-responsible-ai-progress-report-1.md": {
@@ -4931,6 +5159,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_payload_incomplete",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260218-hacker_news-why-ai-velocity-is-becoming-a-debt-accelerator-0.md": {
@@ -5072,6 +5304,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260219-blogs_podcasts-build-ai-workflows-on-amazon-eks-with-unionai-and--2.md": {
@@ -5114,6 +5350,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260219-blogs_podcasts-the-reasonable-effectiveness-of-virtue-ethics-in-a-4.md": {
@@ -5129,12 +5369,20 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_http_429",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260219-blogs_podcasts-データ不足の壁を越える合成ペルソナが日本のai開発を加速-5.md": {
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_http_429",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260219-hacker_news-ai-is-not-a-coworker-its-an-exoskeleton-9.md": {
@@ -5318,6 +5566,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260220-blogs_podcasts-amazon-sagemaker-ai-in-2025-a-year-in-review-part--0.md": {
@@ -5342,6 +5594,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_http_429",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260220-blogs_podcasts-integrate-external-tools-with-amazon-quick-agents--0.md": {
@@ -5447,6 +5703,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260221-blogs_podcasts-our-first-proof-submissions-3.md": {
@@ -5540,6 +5800,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "http_status_404",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260221-juejin-成本大幅降低agent效率显著提升codeflicker-接入-minimax-m25-与-glm--0.md": {
@@ -5603,6 +5867,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_payload_incomplete",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260222-hacker_news-why-is-claude-an-electron-app-0.md": {
@@ -5642,6 +5910,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "http_status_404",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260222-juejin-go-eino-构建-ai-agent二tool-calling-0.md": {
@@ -5657,6 +5929,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "article_structure_incomplete",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260222-juejin-spring-ai-mcp-之-sse-webflux-实战从零构建-ai-天气助手-4.md": {
@@ -5768,6 +6044,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260223-blogs_podcasts-why-we-no-longer-evaluate-swe-bench-verified-3.md": {
@@ -5957,6 +6237,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260224-blogs_podcasts-build-an-intelligent-photo-search-using-amazon-rek-0.md": {
@@ -5972,12 +6256,20 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260224-blogs_podcasts-deploying-open-source-vision-language-models-vlm-o-0.md": {
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_http_429",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260224-blogs_podcasts-generate-structured-output-from-llms-with-dottxt-o-1.md": {
@@ -6098,6 +6390,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "article_structure_incomplete",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260224-juejin-什么oh-my-opencode-太重了那试试-oh-my-opencode-slim-0.md": {
@@ -6113,6 +6409,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "article_structure_incomplete",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260224-juejin-喂饭级教程免费部署云端-openclaw-打通飞书自动抓取-clawhub-技能并写入飞书表格-0.md": {
@@ -6128,6 +6428,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "article_body_too_short",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260224-juejin-聊聊大模型开发的发展历程-1.md": {
@@ -6278,6 +6582,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260225-blogs_podcasts-building-intelligent-event-agents-using-amazon-bed-0.md": {
@@ -6311,6 +6619,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260225-hacker_news-anthropic-drops-flagship-safety-pledge-15.md": {
@@ -6404,6 +6716,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "article_structure_incomplete",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260225-juejin-claude-code-构建完全指南十大核心功能深度解析-3.md": {
@@ -6491,6 +6807,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260226-blogs_podcasts-build-with-nano-banana-2-our-best-image-generation-5.md": {
@@ -6524,12 +6844,20 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260226-blogs_podcasts-mixture-of-experts-moes-in-transformers-2.md": {
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_http_429",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260226-blogs_podcasts-new-method-could-increase-llm-training-efficiency-0.md": {
@@ -6881,6 +7209,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260227-blogs_podcasts-introducing-the-stateful-runtime-environment-for-a-2.md": {
@@ -6896,6 +7228,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260227-blogs_podcasts-openai-and-amazon-announce-strategic-partnership-0.md": {
@@ -7058,6 +7394,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "article_body_too_short",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260227-juejin-零基础带你用-ai-搞定命令行-1.md": {
@@ -7082,12 +7422,20 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260228-blogs_podcasts-dylan-patel-of-semianalysis-on-the-200b-ai-capex-c-0.md": {
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260228-hacker_news-747s-and-coding-agents-8.md": {
@@ -7142,6 +7490,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_payload_incomplete",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260228-hacker_news-show-hn-sqlite-for-rivet-actors-one-database-per-a-9.md": {
@@ -7190,6 +7542,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "article_structure_incomplete",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260228-juejin-openclaw开源ai助手平台的革命之路-0.md": {
@@ -7214,6 +7570,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "article_structure_incomplete",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260228-juejin-基于-go-语言与-deepseek-v3-构建企业级自动化代码审计系统深度解析-0.md": {
@@ -7349,6 +7709,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "article_structure_incomplete",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260301-juejin-我用openclaw搭了11个ai-agent它们学会了自我进化-3.md": {
@@ -7499,6 +7863,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260302-hacker_news-a-case-for-go-as-the-best-language-for-ai-agents-14.md": {
@@ -7637,12 +8005,20 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "capture_publication_validation_error",
+        "type": "capture_validation_error"
+      },
       "status": "archived"
     },
     "posts/20260302-juejin-大模型连载2初步认识-tokenizer-的过程-3.md": {
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "article_structure_incomplete",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260303-arxiv_ai-active-flow-matching-7.md": {
@@ -7790,6 +8166,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_article_incomplete",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260303-blogs_podcasts-how-lendi-revamped-the-refinance-journey-for-its-c-5.md": {
@@ -7805,6 +8185,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260303-hacker_news-ai-generated-art-cant-be-copyrighted-supreme-court-18.md": {
@@ -8045,6 +8429,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260304-blogs_podcasts-embed-amazon-quick-suite-chat-agents-in-enterprise-0.md": {
@@ -8120,6 +8508,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_payload_incomplete",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260304-hacker_news-show-hn-agentbus-centralized-ai-agent-to-agent-mes-15.md": {
@@ -8237,6 +8629,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260305-blogs_podcasts-ask-a-techspert-how-does-ai-understand-my-visual-s-0.md": {
@@ -8252,6 +8648,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260305-blogs_podcasts-building-custom-model-provider-for-strands-agents--2.md": {
@@ -8285,6 +8685,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_article_incomplete",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260305-blogs_podcasts-introducing-chatgpt-for-excel-and-new-financial-da-11.md": {
@@ -8309,6 +8713,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260305-blogs_podcasts-reasoning-models-struggle-to-control-their-chains--5.md": {
@@ -8465,6 +8873,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "article_structure_incomplete",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260306-arxiv_ai-censored-llms-as-a-natural-testbed-for-secret-know-4.md": {
@@ -8525,6 +8937,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260306-blogs_podcasts-codex-security-now-in-research-preview-1.md": {
@@ -8540,12 +8956,20 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_http_404",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260306-blogs_podcasts-cursors-third-era-cloud-agents-0.md": {
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260306-blogs_podcasts-how-balyasny-asset-management-built-an-ai-research-1.md": {
@@ -8765,12 +9189,20 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "article_structure_incomplete",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260307-blogs_podcasts-ainews-ai-engineer-will-be-the-last-job-0.md": {
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260307-blogs_podcasts-the-latest-ai-news-we-announced-in-february-8.md": {
@@ -8822,6 +9254,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_payload_incomplete",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260307-hacker_news-verification-debt-the-hidden-cost-of-ai-generated--10.md": {
@@ -9080,6 +9516,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260309-blogs_podcasts-improving-ai-models-ability-to-explain-their-predi-0.md": {
@@ -9095,6 +9535,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260309-blogs_podcasts-neurons-receive-precisely-tailored-teaching-signal-0.md": {
@@ -9128,6 +9572,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260309-hacker_news-grammarly-is-offering-expert-ai-reviews-from-famou-1.md": {
@@ -9206,6 +9654,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "http_status_404",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260309-juejin-skills-是什么如何用于-agent-开发-0.md": {
@@ -9239,6 +9691,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "http_status_404",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260309-juejin-拆解-openclaw-的-skills-机制一个为-ai-agent-设计的包管理器-3.md": {
@@ -9362,12 +9818,20 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260310-blogs_podcasts-from-games-to-biology-and-beyond-10-years-of-alpha-9.md": {
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_article_incomplete",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260310-blogs_podcasts-gemini-in-google-sheets-just-achieved-state-of-the-0.md": {
@@ -9383,6 +9847,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260310-blogs_podcasts-improving-instruction-hierarchy-in-frontier-llms-2.md": {
@@ -9398,12 +9866,20 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260310-blogs_podcasts-keep-the-tokens-flowing-lessons-from-16-open-sourc-2.md": {
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260310-blogs_podcasts-new-ways-to-learn-math-and-science-in-chatgpt-2.md": {
@@ -9419,6 +9895,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260310-github_trending-rapidai-rapidocr-6.md": {
@@ -9590,6 +10070,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "capture_publication_validation_error",
+        "type": "capture_validation_error"
+      },
       "status": "archived"
     },
     "posts/20260311-arxiv_ai-beacon-language-conditioned-navigation-affordance--5.md": {
@@ -9653,12 +10137,20 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260311-blogs_podcasts-code-concepts-a-large-scale-synthetic-dataset-gene-0.md": {
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260311-blogs_podcasts-designing-ai-agents-to-resist-prompt-injection-2.md": {
@@ -9881,6 +10373,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "http_status_404",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260311-juejin-面试官大模型是怎么调用工具的呢-2.md": {
@@ -9947,6 +10443,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260312-blogs_podcasts-can-ai-help-predict-which-heart-failure-patients-w-0.md": {
@@ -9971,6 +10471,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260312-blogs_podcasts-improve-operational-visibility-for-inference-workl-1.md": {
@@ -10064,6 +10568,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_payload_incomplete",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260312-hacker_news-reliable-software-in-the-llm-era-18.md": {
@@ -10130,6 +10638,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "http_status_404",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260312-juejin-openclaw深度揭秘从架构原理到实战部署打造专属ai数字员工-1.md": {
@@ -10181,6 +10693,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "capture_encoding_replacement_character",
+        "type": "capture_validation_error"
+      },
       "status": "archived"
     },
     "posts/20260312-juejin-我把本地文档-rag-做成了可用系统flask-vue3-langchain-faiss多知识库-流-1.md": {
@@ -10196,6 +10712,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "article_body_too_short",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260312-juejin-苦-claudemd-久矣claude-code-刚上的自动记忆终于不用每次都手动喂上下文了-0.md": {
@@ -10280,18 +10800,30 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260313-blogs_podcasts-beyond-semantic-similarity-introducing-nvidia-nemo-0.md": {
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260313-blogs_podcasts-build-an-agent-that-thinks-like-a-data-scientist-h-0.md": {
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260313-blogs_podcasts-p-eagle-faster-llm-inference-with-parallel-specula-1.md": {
@@ -10316,6 +10848,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260313-hacker_news-can-i-run-ai-locally-4.md": {
@@ -10448,12 +10984,20 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260314-blogs_podcasts-identifying-interactions-at-scale-for-llms-4.md": {
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "robots_fetch_failed",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260314-hacker_news-1m-context-is-now-generally-available-for-opus-46--0.md": {
@@ -10808,6 +11352,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260316-blogs_podcasts-why-codex-security-doesnt-include-a-sast-report-6.md": {
@@ -10940,6 +11488,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "capture_publication_validation_error",
+        "type": "capture_validation_error"
+      },
       "status": "archived"
     },
     "posts/20260316-juejin-openclaw-skills-是什么功能安装与使用指南-1.md": {
@@ -11102,6 +11654,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260317-blogs_podcasts-aws-ai-league-atos-fine-tunes-approach-to-ai-educa-3.md": {
@@ -11126,6 +11682,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260317-blogs_podcasts-mit-ibm-watson-ai-lab-seed-to-signal-amplifying-ea-1.md": {
@@ -11150,12 +11710,20 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260317-blogs_podcasts-why-anthropic-thinks-ai-should-have-its-own-comput-0.md": {
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260317-hacker_news-get-shit-done-a-meta-prompting-context-engineering-2.md": {
@@ -11360,6 +11928,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260318-hacker_news-launch-an-autonomous-ai-agent-with-sandboxed-execu-18.md": {
@@ -11510,6 +12082,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260319-blogs_podcasts-kick-off-nova-customization-experiments-using-nova-8.md": {
@@ -11552,6 +12128,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "capture_publication_validation_error",
+        "type": "capture_validation_error"
+      },
       "status": "archived"
     },
     "posts/20260319-juejin-被-karpathy-下场推荐的-nanoclaw-是什么来头-1.md": {
@@ -11567,12 +12147,20 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260320-blogs_podcasts-how-we-monitor-internal-coding-agents-for-misalign-6.md": {
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260320-blogs_podcasts-introducing-v-rag-revolutionizing-ai-powered-video-2.md": {
@@ -11678,6 +12266,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260403-hacker_news-google-releases-gemma-4-open-models-0.md": {
@@ -11690,6 +12282,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "article_body_too_short",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260403-juejin-最近爆火的-harness-engineering-被我提炼成了-skill小白也能快速上手-0.md": {
@@ -11729,6 +12325,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "article_structure_incomplete",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260405-hacker_news-gemma-4-on-iphone-0.md": {
@@ -11750,6 +12350,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "http_status_404",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260405-juejin-告别vibe-coding为什么sddspec-driven-development才是ai项目开发-0.md": {
@@ -11798,6 +12402,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "capture_publication_validation_error",
+        "type": "capture_validation_error"
+      },
       "status": "archived"
     },
     "posts/20260406-hacker_news-launch-hn-freestyle-sandboxes-for-ai-coding-agents-0.md": {
@@ -11831,6 +12439,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "article_structure_incomplete",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260406-juejin-用-ai-搞定用户系统superpowers-工程化开发教程-0.md": {
@@ -11852,6 +12464,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260407-blogs_podcasts-building-real-time-conversational-podcasts-with-am-0.md": {
@@ -11867,6 +12483,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260407-blogs_podcasts-helping-data-centers-deliver-higher-performance-wi-0.md": {
@@ -11957,18 +12577,30 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260408-blogs_podcasts-ainews-meta-superintelligence-labs-announces-muse--0.md": {
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260408-blogs_podcasts-altkevolve-onthejob-learning-for-ai-agents-0.md": {
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260408-blogs_podcasts-customize-amazon-nova-models-with-amazon-bedrock-f-0.md": {
@@ -12101,12 +12733,20 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "http_status_404",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260411-blogs_podcasts-ainews-ai-engineer-europe-2026-0.md": {
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260411-hacker_news-cirrus-labs-to-join-openai-0.md": {
@@ -12338,6 +12978,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260415-hacker_news-does-gas-town-steal-usage-from-users-llm-credits-t-0.md": {
@@ -12350,6 +12994,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "article_structure_incomplete",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260415-juejin-从程序员到ai工程师距离有多远附全套学习路线图-0.md": {
@@ -12389,6 +13037,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260416-blogs_podcasts-cost-efficient-custom-text-to-sql-using-amazon-nov-0.md": {
@@ -12434,6 +13086,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260417-blogs_podcasts-bringing-ai-driven-protein-design-tools-to-biologi-0.md": {
@@ -12467,6 +13123,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260417-blogs_podcasts-optimize-video-semantic-search-intent-with-amazon--0.md": {
@@ -12488,6 +13148,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260418-hacker_news-thoughts-and-feelings-around-claude-design-0.md": {
@@ -12647,12 +13311,20 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260421-blogs_podcasts-qimma-قمة-a-quality-first-arabic-llm-leaderboard-0.md": {
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260421-github_trending-yunaiv-ruoyi-vue-pro-0.md": {
@@ -12704,6 +13376,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260422-blogs_podcasts-amazon-sagemaker-ai-now-supports-optimized-generat-0.md": {
@@ -12737,6 +13413,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260422-blogs_podcasts-were-launching-two-specialized-tpus-for-the-agenti-0.md": {
@@ -12764,12 +13444,20 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260423-blogs_podcasts-ainews-tasteful-tokenmaxxing-0.md": {
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260423-blogs_podcasts-amazon-quick-for-marketing-from-scattered-data-to--0.md": {
@@ -12797,6 +13485,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "article_structure_incomplete",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260423-juejin-gpt-55codex全自动搓出macos游戏创作链路首次真正连续-0.md": {
@@ -12845,6 +13537,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260425-hacker_news-show-hn-a-karpathy-style-llm-wiki-your-agents-main-0.md": {
@@ -12935,6 +13631,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_article_incomplete",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260427-blogs_podcasts-automate-repetitive-tasks-with-amazon-quick-flows-0.md": {
@@ -12974,6 +13674,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "http_status_404",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260427-juejin-二十六-ai基础概念之如何更好的使用ai-0.md": {
@@ -13001,6 +13705,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260428-blogs_podcasts-migrating-a-text-agent-to-a-voice-assistant-with-a-0.md": {
@@ -13025,6 +13733,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260428-juejin-算个账也要开顶配-ai我让-ai-自己劝我换了个小的-0.md": {
@@ -13046,6 +13758,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260429-blogs_podcasts-building-ai-ready-data-vanguards-virtual-analyst-j-0.md": {
@@ -13070,6 +13786,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260429-blogs_podcasts-organizing-agents-memory-at-scale-namespace-design-0.md": {
@@ -13160,6 +13880,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260430-blogs_podcasts-aws-generative-ai-model-agility-solution-a-compreh-0.md": {
@@ -13175,6 +13899,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_article_incomplete",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260430-blogs_podcasts-reinforcement-fine-tuning-with-llm-as-a-judge-0.md": {
@@ -13214,6 +13942,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260501-hacker_news-ai-uses-less-water-than-the-public-thinks-0.md": {
@@ -13244,6 +13976,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260502-hacker_news-llms-consistently-pick-resumes-they-generate-over--0.md": {
@@ -13415,12 +14151,20 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260505-blogs_podcasts-doing-vibe-physics-alex-lupsasca-openai-0.md": {
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260505-blogs_podcasts-games-people-and-machines-play-untangling-strategi-0.md": {
@@ -13481,12 +14225,20 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260506-blogs_podcasts-vllm-v0-to-v1-correctness-before-corrections-in-rl-0.md": {
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260506-hacker_news-agents-can-now-create-cloudflare-accounts-buy-doma-0.md": {
@@ -13523,6 +14275,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260507-blogs_podcasts-parloa-builds-service-agents-customers-want-to-tal-0.md": {
@@ -13577,12 +14333,20 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260508-blogs_podcasts-cybersecqwen-4b-why-defensive-cyber-needs-small-sp-0.md": {
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260508-blogs_podcasts-halliburton-enhances-seismic-workflow-creation-wit-0.md": {
@@ -13598,6 +14362,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260508-blogs_podcasts-see-what-happens-when-creative-legends-use-ai-to-m-0.md": {
@@ -13622,12 +14390,20 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260509-blogs_podcasts-oncoagent-a-dual-tier-multi-agent-framework-for-pr-0.md": {
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260509-hacker_news-a-recent-experience-with-chatgpt-55-pro-0.md": {
@@ -13658,6 +14434,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260510-juejin-rag-系列十二高级分块策略parent-child-与-contextual-retrieval-0.md": {
@@ -13724,12 +14504,20 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_article_incomplete",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260511-juejin-企微又偷偷进化ai并开始不对劲了-0.md": {
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "article_structure_incomplete",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260511-juejin-程序员连夜带团队跑路省了23万这ai太贵真的用不起了-0.md": {
@@ -13751,12 +14539,20 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260512-blogs_podcasts-building-blocks-for-foundation-model-training-and--0.md": {
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260512-blogs_podcasts-how-amazon-finance-streamlines-regulatory-inquirie-0.md": {
@@ -13787,6 +14583,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260513-blogs_podcasts-build-financial-document-processing-with-pulse-ai--0.md": {
@@ -13844,18 +14644,30 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260514-blogs_podcasts-ainews-codex-rises-claude-meters-programmatic-usag-0.md": {
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260514-blogs_podcasts-granite-embedding-multilingual-r2-open-apache-20-m-0.md": {
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260514-blogs_podcasts-improve-bot-accuracy-with-amazon-lex-assisted-nlu-0.md": {
@@ -13910,12 +14722,20 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "article_structure_incomplete",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260516-blogs_podcasts-ainews-cerebras-60b-ipo-slowly-then-all-at-once-0.md": {
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260516-hacker_news-mcp-hello-page-0.md": {
@@ -13940,6 +14760,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "http_status_404",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260516-juejin-个人中心与-ai-头像生成从页面到-dall-e-的完整实现-0.md": {
@@ -14039,12 +14863,20 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260519-blogs_podcasts-olmoearth-v11-a-more-efficient-family-of-models-0.md": {
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260519-blogs_podcasts-scalable-voice-agent-design-with-amazon-nova-sonic-0.md": {
@@ -14102,6 +14934,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260520-hacker_news-an-openai-model-has-disproved-a-central-conjecture-0.md": {
@@ -14129,6 +14965,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260521-blogs_podcasts-amazon-nova-act-is-now-hipaa-eligible-0.md": {
@@ -14189,6 +15029,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "article_structure_incomplete",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260522-arxiv_ai-tokenisation-via-convex-relaxations-0.md": {
@@ -14201,6 +15045,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260522-blogs_podcasts-catch-up-on-the-dialogues-stage-at-google-io-2026-0.md": {
@@ -14216,6 +15064,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260522-hacker_news-coda-rewriting-transformer-blocks-as-gemm-epilogue-0.md": {
@@ -14237,12 +15089,20 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260523-blogs_podcasts-towards-speed-of-light-text-generation-with-nemotr-0.md": {
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260523-juejin-感谢雷总mimo大模型价值659月的-max-套餐让我免费领到了-0.md": {
@@ -14303,6 +15163,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260525-blogs_podcasts-openai-grupo-folha-and-grupo-uol-announce-strategi-0.md": {
@@ -14360,6 +15224,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260527-blogs_podcasts-building-self-improving-tax-agents-with-codex-0.md": {
@@ -14429,6 +15297,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260528-blogs_podcasts-build-a-custom-portal-with-embedded-amazon-sagemak-0.md": {
@@ -14498,6 +15370,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260529-blogs_podcasts-check-out-real-life-ai-prototypes-from-the-futures-0.md": {
@@ -14552,6 +15428,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260530-hacker_news-anthropic-surpasses-openai-to-become-most-valuable-0.md": {
@@ -14621,6 +15501,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260601-juejin-我把终端小说阅读器接上了-ai-agenttrnovel-现在能用-skill-生成书源了-0.md": {
@@ -14642,12 +15526,20 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260602-blogs_podcasts-githubs-plan-for-agents-kyle-daigle-github-0.md": {
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260602-blogs_podcasts-the-art-and-science-of-hyperparameter-optimization-0.md": {
@@ -14684,6 +15576,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260603-blogs_podcasts-fundamentals-large-tabular-model-nexus-is-now-avai-0.md": {
@@ -14738,6 +15634,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260604-blogs_podcasts-nvidia-nemotron-3-ultra-now-available-on-amazon-sa-0.md": {
@@ -14753,6 +15653,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260604-hacker_news-anthropics-open-source-framework-for-ai-powered-vu-0.md": {
@@ -14795,6 +15699,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260605-blogs_podcasts-startup-helps-retailers-track-their-products-in-re-0.md": {
@@ -14834,6 +15742,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260606-hacker_news-how-llms-work-0.md": {
@@ -14864,12 +15776,20 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260607-blogs_podcasts-sponsors-especially-openai-codex-voucher-usage-for-0.md": {
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_http_404",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260607-hacker_news-llms-are-eroding-my-software-engineering-career-an-0.md": {
@@ -14897,6 +15817,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260608-blogs_podcasts-unlocking-ai-flexibility-in-europe-a-guide-to-cros-0.md": {
@@ -14963,12 +15887,20 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260609-blogs_podcasts-neurobait-i-fine-tuned-a-model-to-spark-dopamine-f-0.md": {
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260609-blogs_podcasts-scale-robot-reinforcement-learning-with-nvidia-isa-0.md": {
@@ -14996,6 +15928,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260610-blogs_podcasts-diffusiongemma-4x-faster-text-generation-0.md": {
@@ -15026,6 +15962,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260611-blogs_podcasts-evaluate-ai-agents-systematically-with-agent-evalk-0.md": {
@@ -15092,6 +16032,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_http_404",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260612-blogs_podcasts-building-supercharger-how-rocket-close-optimized-t-0.md": {
@@ -15107,6 +16051,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260612-hacker_news-ai-agent-bankrupted-their-operator-while-trying-to-0.md": {
@@ -15137,6 +16085,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260614-hacker_news-rio-de-janeiros-homegrown-llm-appears-to-be-a-merg-0.md": {
@@ -15197,6 +16149,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_article_incomplete",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260616-hacker_news-microsoft-turns-to-aws-as-github-faces-ai-capacity-0.md": {
@@ -15230,6 +16186,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260617-blogs_podcasts-amazon-sagemaker-ai-async-inference-now-supports-i-0.md": {
@@ -15245,6 +16205,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260617-blogs_podcasts-new-in-amazon-bedrock-agentcore-build-agents-with--0.md": {
@@ -15269,6 +16233,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260617-juejin-玩转-linux-机器视觉手把手带你搞定-ubuntu-下海康工业相机-c-sdk-0.md": {
@@ -15290,12 +16258,20 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260618-blogs_podcasts-mosaicleaks-can-your-research-agent-keep-a-secret-0.md": {
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260618-blogs_podcasts-using-ai-to-help-physicians-diagnose-rare-genetic--0.md": {
@@ -15350,6 +16326,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260619-blogs_podcasts-introducing-web-search-on-amazon-bedrock-agentcore-0.md": {
@@ -15386,6 +16366,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "article_structure_incomplete",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260620-juejin-火山-dts-正式支持-mysql-同步到-milvus-解决业务库到向量库最后一公里-0.md": {
@@ -15434,12 +16418,20 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260622-blogs_podcasts-red-teaming-after-mythos-zico-kolter-matt-fredriks-0.md": {
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260622-juejin-告别黑盒进化基于阿里云-agentloop-实现-ai-agent-全栈自进化闭环-0.md": {
@@ -15518,6 +16510,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260624-blogs_podcasts-how-loka-built-a-natural-low-latency-voice-agent-w-0.md": {
@@ -15533,6 +16529,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260624-hacker_news-openai-unveils-its-first-custom-chip-built-by-broa-0.md": {
@@ -15602,6 +16602,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260626-hacker_news-previewing-gpt56-sol-a-next-generation-model-0.md": {
@@ -15614,6 +16618,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260627-hacker_news-deepseek-open-sources-inference-optimizations-with-0.md": {
@@ -15755,12 +16763,20 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260701-blogs_podcasts-how-cursor-deploys-ai-inside-the-enterprise-0.md": {
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260701-blogs_podcasts-how-inscribe-uses-amazon-bedrock-to-stop-document--0.md": {
@@ -15785,6 +16801,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260701-hacker_news-zcode-claude-code-from-the-makers-of-glm-0.md": {
@@ -15818,6 +16838,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260702-blogs_podcasts-how-amazon-bedrock-catches-ai-generated-phishing-0.md": {
@@ -15833,12 +16857,20 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260702-blogs_podcasts-the-website-of-the-future-may-assemble-itself-for--0.md": {
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260702-hacker_news-kimi-k27-code-is-generally-available-in-github-cop-0.md": {
@@ -15857,6 +16889,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260703-blogs_podcasts-google-deepmind-and-a24-announce-first-of-its-kind-0.md": {
@@ -15872,6 +16908,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260703-hacker_news-jamesobs-guide-to-running-sota-llms-locally-0.md": {
@@ -15884,12 +16924,20 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "capture_publication_validation_error",
+        "type": "capture_validation_error"
+      },
       "status": "archived"
     },
     "posts/20260703-juejin-没有长期记忆agent-谈何持续进化一图看懂火山-mem0解锁-agent-持续学习与进化之路-0.md": {
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "article_body_too_short",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260704-hacker_news-agentic-coding-notes-from-galapagos-island-0.md": {
@@ -15947,12 +16995,20 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260706-blogs_podcasts-lerobot-v060-imagine-evaluate-improve-0.md": {
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_http_429",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260706-hacker_news-amd-ryzen-ai-halo-4k-ai-dev-kit-0.md": {
@@ -15986,18 +17042,30 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260707-blogs_podcasts-from-hugging-face-to-amazon-sagemaker-studio-in-on-0.md": {
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_http_429",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260707-blogs_podcasts-hugging-face-models-on-foundry-managed-compute-0.md": {
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_http_429",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260707-hacker_news-local-cpu-friendly-high-quality-tts-text-to-speech-0.md": {
@@ -16025,12 +17093,20 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260708-blogs_podcasts-data-for-agents-0.md": {
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_http_429",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260708-blogs_podcasts-introducing-claude-apps-gateway-for-aws-0.md": {
@@ -16067,6 +17143,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260709-blogs_podcasts-mcp-tool-design-practical-approaches-and-tradeoffs-0.md": {
@@ -16082,6 +17162,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260709-hacker_news-show-hn-getting-glm-52-running-on-my-slow-computer-0.md": {
@@ -16109,6 +17193,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260710-blogs_podcasts-fine-tune-nvidia-nemotron-3-models-with-amazon-sag-0.md": {
@@ -16187,6 +17275,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "article_structure_incomplete",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260713-arxiv_ai-phinn-eeg-topological-time-series-analysis-of-drea-0.md": {
@@ -16265,6 +17357,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260714-blogs_podcasts-can-ai-build-a-jet-engine-jarvis-challenge-tests-r-0.md": {
@@ -16340,6 +17436,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260715-blogs_podcasts-accelerating-software-delivery-with-agentic-qa-aut-0.md": {
@@ -16355,6 +17455,10 @@
       "reasons": [
         "archived_content"
       ],
+      "recovery_failure": {
+        "reason": "source_access_interstitial",
+        "type": "source_fetch_error"
+      },
       "status": "archived"
     },
     "posts/20260715-blogs_podcasts-scaling-medical-content-review-at-flo-health-with--0-2c05a64e62.md": {
@@ -16707,6 +17811,24 @@
   "reason_counts": {
     "archived_content": 276
   },
+  "recovery_failure_reason_counts": {
+    "article_body_too_short": 5,
+    "article_structure_incomplete": 25,
+    "capture_encoding_replacement_character": 1,
+    "capture_publication_validation_error": 7,
+    "http_status_404": 11,
+    "robots_fetch_failed": 2,
+    "source_access_interstitial": 174,
+    "source_article_incomplete": 8,
+    "source_http_301": 2,
+    "source_http_404": 4,
+    "source_http_429": 27,
+    "source_payload_incomplete": 10
+  },
+  "recovery_failure_type_counts": {
+    "capture_validation_error": 8,
+    "source_fetch_error": 268
+  },
   "rehydration_pending_by_source": {},
   "rehydration_pending_count": 0,
   "rehydration_terminal_by_source": {
@@ -16719,7 +17841,7 @@
   "schema_version": "content_quality_manifest_v4",
   "source_brief_count": 2139,
   "source_file_count": 2419,
-  "source_tree_sha256": "61c7149b28972636d1acb8daf9797426a20ce003f9577fbceb5bf185026e7825",
+  "source_tree_sha256": "d4dab3fa4138a825a39ae76f6b29ca65574400075fd4a7942c0e223bea4de49b",
   "verified_provenance_count": 2143,
   "warning_counts": {
     "source_excerpt_truncated": 736

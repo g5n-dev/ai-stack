@@ -72,6 +72,7 @@ def test_current_source_brief_provenance_is_preserved_idempotently(
         "content_mode": "source_brief",
         "publication_tier": "C",
         "source_capture_mode": "excerpt",
+        "source_completeness": "partial",
         "source_snapshot_sha256": "sha256:" + "a" * 64,
         "extractor_version": "source-contract-v1",
         "discovery_method": "rss_excerpt",

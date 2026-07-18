@@ -3,7 +3,7 @@ title: "Online Neural Space Time Memory for Dynamic Novel View Synthesis"
 date: 2026-07-17T23:42:15+08:00
 draft: false
 entry_kind: "auto"
-tags: ["cs.CV", "arXiv", "来源快报"]
+tags: ["cs.CV", "ArXiv", "来源快报"]
 categories: []
 source: "arxiv"
 content_mode: "source_brief"
@@ -12,6 +12,7 @@ source_capture_mode: "abstract"
 source_snapshot_sha256: "sha256:c5713a12bcf244469ddc98e60b566de2404681dd89c39a8abf516d3e8b8a3ac9"
 extractor_version: "source-contract-v1"
 discovery_method: "arxiv_api"
+source_completeness: "abstract_only"
 source_is_truncated: false
 source_support: 1.0
 source_title_chars_original: 64

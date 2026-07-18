@@ -184,6 +184,36 @@ function resolveUrl(file) {
     return slash >= 0 ? `${state.indexUrl.slice(0, slash + 1)}${value}` : value;
 }
 
+function withIndexGeneration(url) {
+    if (!url) return "";
+    const indexUrl = String(state.indexUrl || "");
+    const queryStart = indexUrl.indexOf("?");
+    const fragmentStart = queryStart >= 0 ? indexUrl.indexOf("#", queryStart) : -1;
+    const inheritedQuery = queryStart >= 0
+        ? indexUrl.slice(queryStart + 1, fragmentStart >= 0 ? fragmentStart : undefined)
+        : "";
+    const generation = [];
+    if (inheritedQuery) {
+        generation.push(inheritedQuery);
+    } else {
+        const version = String(state.index?.version ?? state.index?.schema_version ?? state.version ?? "").trim();
+        const generatedAt = String(state.index?.generated_at || "").trim();
+        if (version) generation.push(`graph_version=${encodeURIComponent(version)}`);
+        if (generatedAt) generation.push(`graph_generated_at=${encodeURIComponent(generatedAt)}`);
+    }
+    if (generation.length === 0) return url;
+
+    const hashIndex = url.indexOf("#");
+    const resource = hashIndex >= 0 ? url.slice(0, hashIndex) : url;
+    const fragment = hashIndex >= 0 ? url.slice(hashIndex) : "";
+    const separator = resource.includes("?") ? "&" : "?";
+    return `${resource}${separator}${generation.join("&")}${fragment}`;
+}
+
+function resolveStableUrl(file) {
+    return withIndexGeneration(resolveUrl(file));
+}
+
 function fileFor(role) {
     const files = state.files || {};
     const v2Files = files.v2 || state.index?.v2?.files || {};
@@ -283,7 +313,7 @@ async function fetchJson(url, id, operation) {
 async function loadGraphFile(role, id, operation) {
     const file = fileFor(role);
     if (!file) return { nodes: [], links: [], layers: {}, stats: {} };
-    return normalizeGraph(await fetchJson(resolveUrl(file), id, operation));
+    return normalizeGraph(await fetchJson(resolveStableUrl(file), id, operation));
 }
 
 function communityPayloadToGraph(payload) {
@@ -415,7 +445,7 @@ function startSearchItemsLoad() {
     const epoch = state.epoch;
     const loadId = `search-index:${epoch}`;
     const searchUrl = state.version >= 2 && fileFor("search")
-        ? resolveUrl(fileFor("search"))
+        ? resolveStableUrl(fileFor("search"))
         : "";
     state.controllers.set(loadId, new AbortController());
 
@@ -529,7 +559,7 @@ async function community(id, payload) {
 async function ensureCommunityGraph(id, operation) {
     if (state.communityGraph) return state.communityGraph;
     if (!fileFor("community")) return null;
-    const raw = await fetchJson(resolveUrl(fileFor("community")), id, operation);
+    const raw = await fetchJson(resolveStableUrl(fileFor("community")), id, operation);
     state.communityGraph = communityPayloadToGraph(raw);
     return state.communityGraph;
 }
