@@ -603,6 +603,88 @@ def test_resume_accumulates_evidence_across_all_supported_source_filters() -> No
     ]
 
 
+def test_resume_source_filter_preserves_results_from_other_sources() -> None:
+    entries = [
+        _entry(
+            "a-arxiv.md",
+            "arxiv",
+            "https://arxiv.org/abs/2601.30001",
+            {"kind": "arxiv", "status": "resolved", "arxiv_id": "2601.30001"},
+            target_character="a",
+        ),
+        _entry(
+            "b-github.md",
+            "github_trending",
+            "https://github.com/octo/repo",
+            {"kind": "github", "status": "resolved", "owner": "octo", "repo": "repo"},
+            target_character="b",
+        ),
+    ]
+    inventory = _inventory(entries)
+    first = run_historical_capture_job(
+        inventory,
+        sources={"github_trending"},
+        limit=1,
+        concurrency=1,
+        per_host_concurrency=1,
+        dispatcher=lambda target, _hosts, _timeout: _capture(target),
+    )
+    calls: list[str] = []
+
+    def capture_arxiv(target, _hosts, _timeout):
+        calls.append(target.source)
+        return _capture(target)
+
+    resumed = run_historical_capture_job(
+        inventory,
+        sources={"arxiv"},
+        limit=1,
+        concurrency=1,
+        per_host_concurrency=1,
+        resume_audit=first,
+        dispatcher=capture_arxiv,
+    )
+
+    assert calls == ["arxiv"]
+    assert resumed["captured_count"] == 2
+    assert [result["source"] for result in resumed["results"]] == [
+        "arxiv",
+        "github_trending",
+    ]
+
+
+def test_resume_rejects_audit_bound_to_another_inventory() -> None:
+    inventory = _inventory(
+        [
+            _entry(
+                "a.md",
+                "arxiv",
+                "https://arxiv.org/abs/2601.30001",
+                {"kind": "arxiv", "status": "resolved", "arxiv_id": "2601.30001"},
+                target_character="a",
+            )
+        ]
+    )
+    audit = run_historical_capture_job(
+        inventory,
+        limit=1,
+        concurrency=1,
+        per_host_concurrency=1,
+        dispatcher=lambda target, _hosts, _timeout: _capture(target),
+    )
+    audit["inventory_entries_sha256"] = "sha256:" + "f" * 64
+
+    with pytest.raises(HistoricalCaptureJobError, match="resume_audit_invalid"):
+        run_historical_capture_job(
+            inventory,
+            limit=1,
+            concurrency=1,
+            per_host_concurrency=1,
+            resume_audit=audit,
+            dispatcher=lambda target, _hosts, _timeout: _capture(target),
+        )
+
+
 def test_arxiv_uses_bounded_batches_and_rate_limits_between_requests(
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:

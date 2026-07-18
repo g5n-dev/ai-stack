@@ -933,6 +933,10 @@ def run_historical_capture_job(
     source_filter = _validated_sources(sources)
     folded_filter = _selection_filter(filter_text)
     maximum = _validated_limit(limit)
+    all_targets = _eligible_capture_targets(inventory)
+    all_targets_by_key = {
+        (target.path, target.target_sha256): target for target in all_targets
+    }
     eligible_targets = _eligible_capture_targets(
         inventory,
         sources=source_filter,
@@ -943,7 +947,24 @@ def run_historical_capture_job(
         _normalized_allowed_hosts(raw_hosts) if raw_hosts else frozenset()
     )
     previous_results = _validated_resume_results(resume_audit)
-    retained: dict[tuple[str, str], dict[str, Any]] = {}
+    if resume_audit is not None and resume_audit.get(
+        "inventory_entries_sha256"
+    ) != inventory.get("entries_sha256"):
+        raise HistoricalCaptureJobError("resume_audit_invalid")
+    for key, previous in previous_results.items():
+        target = all_targets_by_key.get(key)
+        if target is None or any(
+            previous.get(field) != expected
+            for field, expected in (
+                ("path", target.path),
+                ("target_sha256", target.target_sha256),
+                ("source", target.source),
+                ("canonical_url", target.canonical_url),
+                ("source_locator", target.source_locator),
+            )
+        ):
+            raise HistoricalCaptureJobError("resume_audit_invalid")
+    retained: dict[tuple[str, str], dict[str, Any]] = dict(previous_results)
     never_attempted: list[CaptureTarget] = []
     failed_retries: list[CaptureTarget] = []
     skipped_success_count = 0
@@ -1042,7 +1063,7 @@ def run_historical_capture_job(
     retained.update(captured_now)
     results = [
         retained[(target.path, target.target_sha256)]
-        for target in eligible_targets
+        for target in all_targets
         if (target.path, target.target_sha256) in retained
     ]
     captured_count = sum(result["status"] == "captured" for result in results)
