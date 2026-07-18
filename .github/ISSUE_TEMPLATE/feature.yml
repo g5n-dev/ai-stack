@@ -1,0 +1,44 @@
+name: 功能建议
+description: 为自动探索、长期归档、趋势洞察或动态图谱提出可验收改进
+title: "[Feature] "
+labels:
+  - enhancement
+body:
+  - type: markdown
+    attributes:
+      value: |
+        请围绕 **v1.0 · 可持续情报闭环** 描述用户价值、证据与完成条件。
+        示例和日志不得包含真实密钥、cookie、token 或私有 endpoint。
+  - type: textarea
+    id: problem
+    attributes:
+      label: 要解决的问题
+      placeholder: 谁在什么场景下遇到了什么问题？
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: 期望结果
+      placeholder: 用户可观察到的结果是什么？
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: 验收标准
+      placeholder: 请列出可自动化或可人工复核的完成条件。
+    validations:
+      required: true
+  - type: textarea
+    id: boundaries
+    attributes:
+      label: 性能、成本与安全边界
+      placeholder: 是否影响分层加载、GitHub Actions 权限、模型用量或数据格式？
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: 安全确认
+      options:
+        - label: 我没有提交密钥或其他敏感信息。
+          required: true

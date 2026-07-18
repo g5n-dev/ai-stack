@@ -1,0 +1,50 @@
+name: 缺陷报告
+description: 报告站点、内容、趋势、图谱或自动化中的可复现问题
+title: "[Bug] "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢反馈。当前路线图：**v1.0 · 可持续情报闭环**。
+        请先移除密钥、cookie、token、私有地址和完整请求头；疑似泄漏时先轮换密钥。
+  - type: dropdown
+    id: area
+    attributes:
+      label: 影响区域
+      options:
+        - 内容与历史文章
+        - 搜索与标签
+        - 趋势洞察
+        - 动态知识图谱
+        - CI/CD 与数据新鲜度
+        - 文档与本地启动
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 预期结果
+      placeholder: 应该发生什么？
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: 实际结果与复现步骤
+      placeholder: 页面、时间、操作步骤和稳定复现条件。
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 脱敏证据
+      description: 可附截图、公开运行链接或控制台错误；不要粘贴任何密钥。
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: 安全确认
+      options:
+        - label: 我已移除密钥、cookie、token、私有 endpoint 和完整认证请求头。
+          required: true

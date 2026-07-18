@@ -3,7 +3,7 @@ title: "Hindcast: Replaying Prediction Markets to Evaluate LLM Forecasters"
 date: 2026-07-17T02:22:46+08:00
 draft: false
 entry_kind: "auto"
-tags: ["cs.CL", "arXiv", "来源快报"]
+tags: ["cs.CL", "ArXiv", "来源快报"]
 categories: []
 source: "arxiv"
 content_mode: "source_brief"
@@ -12,6 +12,7 @@ source_capture_mode: "abstract"
 source_snapshot_sha256: "sha256:97b78d8d456839a31dfe39b100497c20483849015296bebe5a46a3f78d2339fc"
 extractor_version: "source-contract-v1"
 discovery_method: "arxiv_api"
+source_completeness: "abstract_only"
 source_is_truncated: false
 source_support: 1.0
 source_title_chars_original: 66

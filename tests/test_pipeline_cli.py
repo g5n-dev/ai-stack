@@ -167,6 +167,7 @@ def test_pipeline_cli_runs_a_fail_closed_static_source_brief_round_trip(
         validated_post.read_text(encoding="utf-8").split("---", 2)[1]
     )
     assert validated_frontmatter["tags"] == ["AI 编程", "Vibe Coding"]
+    assert validated_frontmatter["source_completeness"] == "metadata_only"
 
     assert (
         main(

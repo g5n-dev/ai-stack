@@ -79,6 +79,18 @@ class GraphDeployContractTest(unittest.TestCase):
         self.assertTrue(module.FIXTURE_CONTENT.is_dir())
         self.assertEqual("hugo_content", module.FIXTURE_CONTENT.name)
 
+    def test_browser_smoke_contract_covers_http_failures_modes_mobile_and_reduced_motion(self) -> None:
+        source = VERIFY_SCRIPT.read_text(encoding="utf-8")
+
+        self.assertIn('page.on("response"', source)
+        self.assertIn("response.status >= 400", source)
+        self.assertIn('data-graph-mode="community"', source)
+        self.assertIn('data-graph-mode="focus"', source)
+        self.assertIn('fill("API")', source)
+        self.assertIn('{"width": 390, "height": 844}', source)
+        self.assertIn('reduced_motion="reduce"', source)
+        self.assertIn("_particleFrame === null", source)
+
     def test_asset_verifier_checks_every_progressive_graph_file(self) -> None:
         module = self._load_verify_module()
         with tempfile.TemporaryDirectory() as tmp_dir:

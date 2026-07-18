@@ -17,7 +17,7 @@ canonical plan；只有显式传入 `--apply`，且仓库全名、不可复用�
 默认命令只读，不接受“隐式执行”：
 
 ```bash
-uv run python scripts/github_hardening.py --repository g5n-dev/ai-stack
+python3 scripts/github_hardening.py --repository g5n-dev/ai-stack
 ```
 
 输出中的 `snapshot_sha256`、repository ID 和 `main_sha` 是后续审批输入。计划应由第二人核对
@@ -29,7 +29,7 @@ uv run python scripts/github_hardening.py --repository g5n-dev/ai-stack
 实际执行必须重新读取当前快照，并同时提供四项期望值：
 
 ```bash
-uv run python scripts/github_hardening.py \
+python3 scripts/github_hardening.py \
   --repository g5n-dev/ai-stack \
   --apply \
   --expected-full-name g5n-dev/ai-stack \
@@ -49,16 +49,15 @@ update/create 的幂等语义继续。不要使用旧摘要重试。
 - Actions 默认 `GITHUB_TOKEN` 为 read，且 `can_approve_pull_request_reviews=false`。
 - immutable releases 开启后，已发布 release 的资产和 tag 受保护；应先创建 draft、上传并校验
   全部资产，最后发布，因为发布后资产不可改。
-- `main` 禁止删除和 force push，必须从 PR 合入，并要求稳定检查 `Unit Tests`、`secret-scan`、
-  `static-site`、`browser-e2e`。PR 规则的 approving review count 为 0：它强制 PR 和检查，但不会虚称已经建立
+- `main` 禁止删除和 force push，必须从 PR 合入，并要求当前单一稳定检查 `Unit Tests`；该 job 内部已包含
+  Python/JavaScript、安全、图谱浏览器烟测、Hugo 与 Pagefind 交付边界。PR 规则的 approving review count 为 0：它强制 PR 和检查，但不会虚称已经建立
   双人审批；单维护者仓库若直接要求 1 个非作者审批会造成永久阻塞。
 - `content`/`ops` 禁止删除、force push 和 merge commit（`required_linear_history`），但这些规则
   本身只约束更新形状，不会把普通 fast-forward push 自动限定为某个 writer。
 - `backup-*` 与 `content-seed-*` tag 创建后禁止更新和删除；创建本身仍允许，以便先产生新的、
   不可移动的备份或内容种子 tag。
-- `github-pages` 保留既有 `gh-pages` 并增加 `main` 的 custom deployment branch policy，避免改变
-  原 Pages 发布路径，同时允许新协调流程从 `main` 部署。`production-publish`、`data-deletion`
-  仍只允许 `main`。前两个 Environment 用于隔离 Pages/渠道凭据但不要求人工审批；
+- `github-pages`、`production-publish` 与 `data-deletion` 都只允许 `main`。生产站点由 Pages artifact
+  发布，不再依赖独立发布分支。前两个 Environment 用于隔离 Pages/渠道凭据但不要求人工审批；
   `data-deletion` 把仓库 owner 配为
   required reviewer，且 `prevent_self_review=false`，在单维护者仓库中仍保留一次显式 Environment
   审批而不自锁。若后续增加独立管理员，应把它改为独立 reviewer 并开启禁止自审。

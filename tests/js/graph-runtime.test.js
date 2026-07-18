@@ -255,6 +255,7 @@ function buildFixture() {
 function createWorkerHarness(fixtures = buildFixture()) {
   const posted = [];
   const fetched = [];
+  const requested = [];
   const self = {
     postMessage(message) {
       posted.push(message);
@@ -270,8 +271,11 @@ function createWorkerHarness(fixtures = buildFixture()) {
     DOMException,
     console,
     fetch: async (url) => {
-      fetched.push(String(url));
-      const value = fixtures[String(url)];
+      const requestUrl = String(url);
+      requested.push(requestUrl);
+      const fixtureUrl = new URL(requestUrl, "https://graph.test").pathname;
+      fetched.push(fixtureUrl);
+      const value = fixtures[fixtureUrl];
       if (!value) {
         return { ok: false, status: 404, headers: { get: () => null } };
       }
@@ -286,7 +290,7 @@ function createWorkerHarness(fixtures = buildFixture()) {
     return posted.slice(before);
   }
 
-  return { fetched, posted, request };
+  return { fetched, posted, requested, request };
 }
 
 function success(messages, operation) {
@@ -307,6 +311,55 @@ test("bootstrap prefers v2 metadata and fetches core only", async () => {
   assert.equal(response.data.version, 2);
   assert.equal(response.data.graph.nodes.length, 2);
   assert.deepEqual(worker.fetched, ["/graph/index.json", "/graph/core.json"]);
+});
+
+test("bootstrap stays within the first-screen request budget and pins core to the index generation", async () => {
+  const worker = createWorkerHarness();
+
+  const messages = await worker.request("bootstrap", {
+    indexUrl: "/graph/index.json?v=template-hash",
+  });
+
+  assert.ok(success(messages, "bootstrap"));
+  assert.deepEqual(worker.fetched, ["/graph/index.json", "/graph/core.json"]);
+  assert.deepEqual(worker.requested, [
+    "/graph/index.json?v=template-hash",
+    "/graph/core.json?v=template-hash",
+  ]);
+  assert.equal(worker.requested.length, 2, "bootstrap must issue exactly index + core requests");
+  assert.ok(
+    worker.requested.every((url) => !/(?:search|community|tag(?:\.hot)?|concept\.hot)\.json/.test(url)),
+    "bootstrap must not download deferred graph payloads",
+  );
+});
+
+test("stable manifest children share the index generation while content-addressed shards keep their own identity", async () => {
+  const worker = createWorkerHarness();
+  await worker.request("bootstrap", {
+    indexUrl: "/graph/index.json?v=template-hash&deployment=pages",
+  });
+  await worker.request("search", { query: "agent" });
+  await worker.request("community", { limit: 11 });
+  await worker.request("focus", { nodeId: "community:0" });
+  await worker.request("focus", { nodeId: "tag:center" });
+
+  const stableRequests = worker.requested.filter((url) =>
+    /\/(?:core|search|community|tag(?:\.hot)?|concept\.hot)\.json(?:\?|$)/.test(url)
+  );
+  assert.ok(stableRequests.length >= 3);
+  assert.ok(stableRequests.every((url) =>
+    url.includes("v=template-hash") &&
+    url.includes("deployment=pages") &&
+    !url.includes("graph_generated_at=")
+  ));
+  assert.ok(
+    worker.requested.some((url) => url === "/graph/community-hotspots/01.json"),
+    "community hotspot shards must remain addressed by their manifest path",
+  );
+  assert.ok(
+    worker.requested.some((url) => url.startsWith("/graph/focus-shards/") && !url.includes("?")),
+    "focus shards must remain addressed by their manifest path",
+  );
 });
 
 test("search is case-insensitive, rank ordered, and capped at ten", async () => {

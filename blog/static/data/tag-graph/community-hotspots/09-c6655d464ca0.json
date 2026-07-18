@@ -1,0 +1,115 @@
+{
+  "community_id": "community:tag:Google Workspace",
+  "generated_at": "2026-07-18T10:46:01Z",
+  "hotspot_limit": 24,
+  "link_limit": 32,
+  "links": [
+    {
+      "id": "edge:cooccurrence:tag:AI->tag:Search",
+      "source": "tag:AI",
+      "strength": 1,
+      "target": "tag:Search",
+      "type": "cooccurrence",
+      "weight": 2
+    },
+    {
+      "id": "edge:cooccurrence:tag:AI->tag:Google One",
+      "source": "tag:AI",
+      "strength": 0.5,
+      "target": "tag:Google One",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:AI->tag:Google Workspace",
+      "source": "tag:AI",
+      "strength": 0.5,
+      "target": "tag:Google Workspace",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Google One->tag:Google Workspace",
+      "source": "tag:Google One",
+      "strength": 0.5,
+      "target": "tag:Google Workspace",
+      "type": "cooccurrence",
+      "weight": 1
+    }
+  ],
+  "nodes": [
+    {
+      "article_count": 3,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Google Workspace",
+      "degree": 6,
+      "description": "文章标签: AI",
+      "id": "tag:AI",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "AI",
+      "level": 6,
+      "name": "AI",
+      "rank": 52,
+      "related_count": 5,
+      "weighted_degree": 10.6
+    },
+    {
+      "article_count": 2,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Google Workspace",
+      "degree": 3,
+      "description": "文章标签: Search",
+      "id": "tag:Search",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Search",
+      "level": 6,
+      "name": "Search",
+      "rank": 95,
+      "related_count": 3,
+      "weighted_degree": 6
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Google Workspace",
+      "degree": 4,
+      "description": "文章标签: Google One",
+      "id": "tag:Google One",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Google One",
+      "level": 6,
+      "name": "Google One",
+      "rank": 111,
+      "related_count": 4,
+      "weighted_degree": 4
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Google Workspace",
+      "degree": 4,
+      "description": "文章标签: Google Workspace",
+      "id": "tag:Google Workspace",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Google Workspace",
+      "level": 6,
+      "name": "Google Workspace",
+      "rank": 112,
+      "related_count": 4,
+      "weighted_degree": 4
+    }
+  ],
+  "stats": {
+    "total_links": 4,
+    "total_nodes": 4
+  },
+  "version": 2
+}

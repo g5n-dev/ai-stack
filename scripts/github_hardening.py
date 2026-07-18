@@ -613,7 +613,7 @@ def _validate_expected_contract(
         _string(_object(check, "required check").get("context"), "required check context")
         for check in checks
     }
-    if contexts != {"Unit Tests", "static-site", "browser-e2e", "secret-scan"}:
+    if contexts != {"Unit Tests"}:
         raise GitHubHardeningError("main stable status check contract is invalid")
     if parameters.get("strict_required_status_checks_policy") is not True:
         raise GitHubHardeningError("main status checks must use the latest main revision")
@@ -665,10 +665,7 @@ def _validate_expected_contract(
     }
     main_branch_policy = [{"name": "main", "type": "branch"}]
     expected_branch_policies = {
-        "github-pages": [
-            {"name": "gh-pages", "type": "branch"},
-            {"name": "main", "type": "branch"},
-        ],
+        "github-pages": main_branch_policy,
         "production-publish": main_branch_policy,
         "data-deletion": main_branch_policy,
     }

@@ -3,7 +3,7 @@
 # Setup script for AI Stack Blog
 # 环境设置脚本
 
-set -e
+set -euo pipefail
 
 echo "========================================"
 echo "AI Stack Blog Setup Script"
@@ -26,9 +26,13 @@ echo -e "${BLUE}Project root:${NC} $PROJECT_ROOT"
 echo -e "\n${YELLOW}[1/5]${NC} Checking Python version..."
 if command -v python3 &> /dev/null; then
     PYTHON_VERSION=$(python3 --version)
-    echo -e "${GREEN}✓ Python found:${NC} $PYTHON_VERSION"
+    if ! python3 -c 'import sys; raise SystemExit(0 if (3, 11) <= sys.version_info[:2] < (3, 14) else 1)'; then
+        echo -e "${YELLOW}⚠ Unsupported Python: $PYTHON_VERSION. Install Python 3.11–3.13.${NC}"
+        exit 1
+    fi
+    echo -e "${GREEN}✓ Supported Python found:${NC} $PYTHON_VERSION"
 else
-    echo -e "${YELLOW}⚠ Python 3 not found. Please install Python 3.11 or later.${NC}"
+    echo -e "${YELLOW}⚠ Python 3 not found. Please install Python 3.11–3.13.${NC}"
     exit 1
 fi
 
@@ -50,6 +54,7 @@ echo -e "${GREEN}✓ Virtual environment activated${NC}"
 echo -e "\n${YELLOW}[4/5]${NC} Installing Python dependencies..."
 pip install --upgrade pip
 pip install -r requirements.txt
+pip install pytest==9.0.3
 echo -e "${GREEN}✓ Dependencies installed${NC}"
 
 # 5. 创建配置文件
@@ -59,9 +64,9 @@ if [ ! -f ".env" ]; then
         cp .env.example .env
     else
         cat > .env << 'EOF'
-ANTHROPIC_AUTH_TOKEN=your_anthropic_token
-ANTHROPIC_BASE_URL=https://api.minimaxi.com/anthropic
-ANTHROPIC_MODEL=MiniMax-M2.7-highspeed
+ANTHROPIC_AUTH_TOKEN=replace_with_your_token
+ANTHROPIC_BASE_URL=https://llm.example.com/anthropic
+ANTHROPIC_MODEL=replace_with_your_model_id
 EOF
     fi
     echo -e "${GREEN}✓ .env file created${NC}"

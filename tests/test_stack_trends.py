@@ -88,7 +88,7 @@ def _fixture_site(
             content_root,
             name,
             date=date,
-            tags=["LLM", "来源快报", "arXiv" if source == "arxiv" else "博客与播客"],
+            tags=["LLM", "来源快报", "ArXiv" if source == "arxiv" else "博客与播客"],
             source=source,
             title=f"LLM evidence {index}",
             description=(
@@ -220,8 +220,9 @@ def test_config_uses_versioned_exact_denylist() -> None:
 
     assert config.version == 1
     assert "来源快报" in config.excluded_tags
-    assert "arXiv" in config.excluded_tags
+    assert "ArXiv" in config.excluded_tags
     assert "Intermediate (200)" in config.excluded_tags
+    assert "arXiv" not in config.excluded_tags
     assert "ARXIV" not in config.excluded_tags
 
 
@@ -262,7 +263,7 @@ def test_adapter_applies_quality_canonicalization_aliases_and_cutoff(tmp_path: P
     assert sum("Duplicate Topic" in event["topics"] for event in events) == 1
     assert all(event["occurred_at"] <= AS_OF for event in events)
     assert all("来源快报" not in event["topics"] for event in events)
-    assert all("arXiv" not in event["topics"] for event in events)
+    assert all("ArXiv" not in event["topics"] for event in events)
     assert any("AI 编程" in event["topics"] for event in events)
     assert all("external_url" not in event for event in events)
     assert all("path" not in key for event in events for key in event)
@@ -361,13 +362,30 @@ def test_build_reuses_trend_v1_and_emits_drilldown_contract(tmp_path: Path) -> N
     assert index["default_window"] == "30d"
     assert index["realtime"] is False
     assert index["data_as_of"] == "2026-07-16T10:00:00Z"
+    assert window["formula"] == index["formula"]
     assert llm["score"] == expected["score"]
     assert llm["components"] == expected["components"]
+    assert llm["observations"] == expected["observations"]
+    assert llm["duplicate_rate"] == expected["duplicate_rate"]
+    assert llm["score"] == round(
+        100
+        * (
+            0.25 * llm["components"]["quantity"]
+            + 0.25 * llm["components"]["growth"]
+            + 0.15 * llm["components"]["acceleration"]
+            + 0.15 * llm["components"]["source_diversity"]
+            + 0.10 * llm["components"]["novelty"]
+            + 0.10 * llm["components"]["source_weight"]
+        )
+        * (1 - 0.5 * llm["duplicate_rate"]),
+        6,
+    )
     assert llm["counts"] == {"current": 3, "previous": 2, "pre_previous": 1}
     assert llm["state"] == "rising"
     assert llm["confidence"] == "medium"
     assert llm["graph_node_id"] == "tag:LLM"
     assert llm["detail_path"] == topic_ref["path"]
+    assert all(item["topic"] != "ArXiv" for item in window["trends"])
     assert len(llm["sparkline"]) == 12
     assert sum(llm["sparkline"]) == 3
 

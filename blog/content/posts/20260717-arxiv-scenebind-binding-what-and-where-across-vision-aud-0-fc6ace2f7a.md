@@ -3,7 +3,7 @@ title: "SceneBind: Binding What and Where Across Vision, Audio and Language"
 date: 2026-07-17T19:43:21+08:00
 draft: false
 entry_kind: "auto"
-tags: ["cs.CV", "arXiv", "来源快报"]
+tags: ["cs.CV", "ArXiv", "来源快报"]
 categories: []
 source: "arxiv"
 content_mode: "source_brief"
@@ -12,6 +12,7 @@ source_capture_mode: "abstract"
 source_snapshot_sha256: "sha256:76db2b6721cb42c8a865991185b673ceeb7cde845ec2a32066d1c0f2c49fe2da"
 extractor_version: "source-contract-v1"
 discovery_method: "arxiv_api"
+source_completeness: "abstract_only"
 source_is_truncated: false
 source_support: 1.0
 source_title_chars_original: 67

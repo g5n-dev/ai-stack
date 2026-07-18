@@ -3,7 +3,7 @@ title: "Can an Old Dog Be Taught New Tricks? Taking LLMs Beyond Sentence Level T
 date: 2026-07-16T11:39:14+08:00
 draft: false
 entry_kind: "auto"
-tags: ["cs.CL", "arXiv", "来源快报"]
+tags: ["cs.CL", "ArXiv", "来源快报"]
 categories: []
 source: "arxiv"
 content_mode: "source_brief"
@@ -12,6 +12,7 @@ source_capture_mode: "abstract"
 source_snapshot_sha256: "sha256:758f2e0cc6b1ca8f8cce78deaa5caf7e7af13bfd8e637f673b434a694d3cad6e"
 extractor_version: "source-contract-v1"
 discovery_method: "arxiv_api"
+source_completeness: "abstract_only"
 source_is_truncated: false
 source_support: 1.0
 source_title_chars_original: 82

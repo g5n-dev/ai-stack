@@ -3,7 +3,7 @@ title: "Win by Silence: Deletion Non-Monotonicity, Autonomous Exploitation, and 
 date: 2026-07-15T20:45:47+08:00
 draft: false
 entry_kind: "auto"
-tags: ["cs.AI", "arXiv", "来源快报"]
+tags: ["cs.AI", "ArXiv", "来源快报"]
 categories: []
 source: "arxiv"
 content_mode: "source_brief"
@@ -12,6 +12,7 @@ source_capture_mode: "abstract"
 source_snapshot_sha256: "sha256:c2392514f36091d80212ef675fd26c09916f8d6aaa23ffe9d5eaf9a03da2f45e"
 extractor_version: "source-contract-v1"
 discovery_method: "arxiv_api"
+source_completeness: "abstract_only"
 source_is_truncated: false
 source_support: 1.0
 description: "当前保存的是来源摘要，不代表论文全文。请以原始来源为准。"

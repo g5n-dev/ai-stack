@@ -225,6 +225,12 @@ _EXPLICIT_TRUNCATION_RE = re.compile(r"\[\s*\.{3}\s*truncated\s*\]", re.IGNORECA
 _HTTP_SCHEMES = frozenset({"http", "https"})
 _SOURCE_DIGEST_RE = re.compile(r"^sha256:[0-9a-f]{64}$")
 _SOURCE_CAPTURE_MODES = frozenset({"abstract", "excerpt", "metadata_only", "social_post"})
+_SOURCE_COMPLETENESS_BY_CAPTURE_MODE = {
+    "abstract": "abstract_only",
+    "excerpt": "partial",
+    "metadata_only": "metadata_only",
+    "social_post": "single_item",
+}
 _SAFE_SNAKE_CASE_RE = re.compile(r"^[a-z][a-z0-9]*(?:_[a-z0-9]+)*$")
 HISTORICAL_RECOVERY_SOURCES = frozenset(
     {"arxiv", "blogs_podcasts", "github_trending", "hacker_news", "juejin"}
@@ -899,9 +905,12 @@ def is_source_brief(metadata: Mapping[str, Any], body: str) -> bool:
     if declared_mode == "source_brief":
         source_is_truncated = metadata.get("source_is_truncated")
         truncation_reason = str(metadata.get("source_truncation_reason") or "").strip()
+        source_capture_mode = str(metadata.get("source_capture_mode") or "").strip()
         modern_provenance = (
             str(metadata.get("publication_tier") or "").strip() == "C"
-            and str(metadata.get("source_capture_mode") or "").strip() in _SOURCE_CAPTURE_MODES
+            and source_capture_mode in _SOURCE_CAPTURE_MODES
+            and str(metadata.get("source_completeness") or "").strip()
+            == _SOURCE_COMPLETENESS_BY_CAPTURE_MODE.get(source_capture_mode)
             and bool(
                 _SOURCE_DIGEST_RE.fullmatch(
                     str(metadata.get("source_snapshot_sha256") or "").strip()
@@ -1129,6 +1138,8 @@ def build_content_quality_manifest(content_root: Path | str) -> dict[str, Any]:
     rehydration_pending_by_source: Counter[str] = Counter()
     rehydration_terminal_count = 0
     rehydration_terminal_by_source: Counter[str] = Counter()
+    recovery_failure_type_counts: Counter[str] = Counter()
+    recovery_failure_reason_counts: Counter[str] = Counter()
     warning_counts: Counter[str] = Counter()
 
     for path in sorted(root.rglob("*.md"), key=lambda item: item.as_posix()):
@@ -1180,6 +1191,12 @@ def build_content_quality_manifest(content_root: Path | str) -> dict[str, Any]:
         if terminal_archive:
             rehydration_terminal_count += 1
             rehydration_terminal_by_source[source] += 1
+            recovery_failure_type_counts[
+                str(metadata["recovery_failure_type"])
+            ] += 1
+            recovery_failure_reason_counts[
+                str(metadata["recovery_failure_reason"])
+            ] += 1
         elif provenance_pending:
             rehydration_pending_count += 1
             rehydration_pending_by_source[source] += 1
@@ -1199,11 +1216,17 @@ def build_content_quality_manifest(content_root: Path | str) -> dict[str, Any]:
             continue
         if status != "source_brief":
             reason_counts.update(reasons)
-        pages[relative] = {
+        page_record: dict[str, Any] = {
             "status": status,
             "reasons": list(reasons),
             **({"warnings": list(warnings)} if warnings else {}),
         }
+        if terminal_archive:
+            page_record["recovery_failure"] = {
+                "type": str(metadata["recovery_failure_type"]),
+                "reason": str(metadata["recovery_failure_reason"]),
+            }
+        pages[relative] = page_record
 
     return {
         "schema_version": _CONTENT_QUALITY_MANIFEST_SCHEMA,
@@ -1218,6 +1241,12 @@ def build_content_quality_manifest(content_root: Path | str) -> dict[str, Any]:
         "rehydration_pending_by_source": dict(sorted(rehydration_pending_by_source.items())),
         "rehydration_terminal_count": rehydration_terminal_count,
         "rehydration_terminal_by_source": dict(sorted(rehydration_terminal_by_source.items())),
+        "recovery_failure_type_counts": dict(
+            sorted(recovery_failure_type_counts.items())
+        ),
+        "recovery_failure_reason_counts": dict(
+            sorted(recovery_failure_reason_counts.items())
+        ),
         "quarantined_count": quarantined_count,
         "archived_count": archived_count,
         "reason_counts": dict(sorted(reason_counts.items())),

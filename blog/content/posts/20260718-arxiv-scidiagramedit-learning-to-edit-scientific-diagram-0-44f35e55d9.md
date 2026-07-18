@@ -3,7 +3,7 @@ title: "SciDiagramEdit: Learning to Edit Scientific Diagrams from Paper Revision
 date: 2026-07-18T05:15:29+08:00
 draft: false
 entry_kind: "auto"
-tags: ["cs.CL", "arXiv", "来源快报"]
+tags: ["cs.CL", "ArXiv", "来源快报"]
 categories: []
 source: "arxiv"
 content_mode: "source_brief"
@@ -12,6 +12,7 @@ source_capture_mode: "abstract"
 source_snapshot_sha256: "sha256:8079e4d5954bc06025aee6c68e822dbfbfcb77559462704af5dcea4106ca8cd8"
 extractor_version: "source-contract-v1"
 discovery_method: "arxiv_api"
+source_completeness: "abstract_only"
 source_is_truncated: false
 source_support: 1.0
 source_title_chars_original: 73

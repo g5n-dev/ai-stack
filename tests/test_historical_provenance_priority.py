@@ -86,6 +86,7 @@ def _modern_brief(root: Path, name: str, *, date: str, repeat: int) -> Path:
             "content_mode": "source_brief",
             "publication_tier": "C",
             "source_capture_mode": "excerpt",
+            "source_completeness": "partial",
             "source_snapshot_sha256": "sha256:" + "c" * 64,
             "extractor_version": "source-contract-v1",
             "discovery_method": "rss_excerpt",

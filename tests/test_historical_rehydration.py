@@ -70,6 +70,7 @@ def _source_brief() -> str:
         content_mode="source_brief",
         publication_tier="C",
         source_capture_mode="abstract",
+        source_completeness="abstract_only",
         source_snapshot_sha256="sha256:" + "a" * 64,
         extractor_version="source-contract-v1",
         discovery_method="arxiv_api",

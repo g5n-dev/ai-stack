@@ -3,7 +3,7 @@ title: "Beyond Success Rate: Cost-Aware Evaluation of Offensive and Defensive Se
 date: 2026-07-17T17:24:29+08:00
 draft: false
 entry_kind: "auto"
-tags: ["cs.CR", "arXiv", "来源快报"]
+tags: ["cs.CR", "ArXiv", "来源快报"]
 categories: []
 source: "arxiv"
 content_mode: "source_brief"
@@ -12,6 +12,7 @@ source_capture_mode: "abstract"
 source_snapshot_sha256: "sha256:9358cd28add3e790392f133c74491517a7a1859afbc82a7a304241e93747b9e2"
 extractor_version: "source-contract-v1"
 discovery_method: "arxiv_api"
+source_completeness: "abstract_only"
 source_is_truncated: false
 source_support: 1.0
 source_title_chars_original: 85

@@ -14,12 +14,18 @@ import tempfile
 import threading
 from pathlib import Path
 from typing import Any
+from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 BLOG = ROOT / "blog"
 FIXTURE_CONTENT = ROOT / "tests" / "fixtures" / "hugo_content"
 GRAPH_DATA_PATH = Path("data/tag-graph")
 GRAPH_STATIC_FILE_KEYS = ("core", "community", "search", "tag", "tagHot", "conceptHot")
+GRAPH_NODE_LIMIT = 100
+GRAPH_EDGE_LIMIT = 500
+GRAPH_FOCUS_EDGE_LIMIT = 80
+GRAPH_READY_TIMEOUT_MS = 20_000
+GRAPH_INTERACTION_TIMEOUT_MS = 8_000
 
 
 class QuietHandler(http.server.SimpleHTTPRequestHandler):
@@ -204,6 +210,245 @@ def build_fixture(destination: Path) -> None:
     )
 
 
+def _attach_page_diagnostics(page: Any, failures: list[str], label: str) -> None:
+    page.on("pageerror", lambda error: failures.append(f"{label} page error: {error}"))
+    page.on(
+        "requestfailed",
+        lambda request: failures.append(
+            f"{label} request failed: {request.url} ({request.failure})"
+        ),
+    )
+
+    def capture_response(response: Any) -> None:
+        if response.status >= 400:
+            failures.append(f"{label} HTTP {response.status}: {response.url}")
+
+    def capture_console(message: Any) -> None:
+        text = message.text
+        if message.type == "error" or "invalid selector" in text.casefold():
+            failures.append(f"{label} console {message.type}: {text}")
+
+    page.on("response", capture_response)
+    page.on("console", capture_console)
+
+
+def _wait_for_graph(page: Any) -> None:
+    page.wait_for_selector("#graph-workbench.is-ready", timeout=GRAPH_READY_TIMEOUT_MS)
+    page.wait_for_function(
+        "() => window.graphEngine && graphEngine.cy && graphEngine.cy.nodes().length > 0",
+        timeout=GRAPH_READY_TIMEOUT_MS,
+    )
+
+
+def _runtime_snapshot(page: Any) -> dict[str, Any]:
+    return page.evaluate(
+        """() => {
+          const engine = window.graphEngine;
+          const visible = engine?.getVisibleCounts?.() || { nodes: 0, edges: 0 };
+          return {
+            mode: engine?.mode || "unknown",
+            canvas: Boolean(document.querySelector('#graph-container canvas')),
+            nodeCount: engine?.cy?.nodes().length || 0,
+            edgeCount: engine?.cy?.edges().length || 0,
+            visibleNodes: visible.nodes || 0,
+            visibleEdges: visible.edges || 0,
+            api: ['setMode', 'focusNode', 'clearSelection', 'pause', 'resume', 'destroy']
+              .every((name) => typeof engine?.[name] === 'function')
+          };
+        }"""
+    )
+
+
+def _assert_runtime_budget(
+    runtime: dict[str, Any],
+    failures: list[str],
+    label: str,
+) -> None:
+    if not runtime["canvas"]:
+        failures.append(f"{label} Cytoscape canvas is missing")
+    if runtime["nodeCount"] <= 0:
+        failures.append(f"{label} rendered no graph nodes")
+    if not runtime["api"]:
+        failures.append(f"{label} public graph engine API is incomplete")
+    if runtime["nodeCount"] > GRAPH_NODE_LIMIT:
+        failures.append(
+            f"{label} node budget exceeded: {runtime['nodeCount']} > {GRAPH_NODE_LIMIT}"
+        )
+    if runtime["edgeCount"] > GRAPH_EDGE_LIMIT:
+        failures.append(
+            f"{label} edge budget exceeded: {runtime['edgeCount']} > {GRAPH_EDGE_LIMIT}"
+        )
+    if runtime["mode"] == "focus" and runtime["edgeCount"] > GRAPH_FOCUS_EDGE_LIMIT:
+        failures.append(
+            f"{label} focus edge budget exceeded: "
+            f"{runtime['edgeCount']} > {GRAPH_FOCUS_EDGE_LIMIT}"
+        )
+
+
+def _verify_desktop_workbench(
+    browser: Any,
+    url: str,
+    failures: list[str],
+    screenshot: Path | None,
+) -> None:
+    context = browser.new_context(viewport={"width": 1280, "height": 720})
+    page = context.new_page()
+    graph_requests: list[str] = []
+    _attach_page_diagnostics(page, failures, "desktop")
+
+    def capture_graph_request(request: Any) -> None:
+        path = urlsplit(request.url).path
+        if "/data/tag-graph/" in path:
+            graph_requests.append(path[path.index("/data/tag-graph/") :])
+
+    page.on("request", capture_graph_request)
+    try:
+        response = page.goto(
+            url,
+            wait_until="domcontentloaded",
+            timeout=GRAPH_READY_TIMEOUT_MS,
+        )
+        if response is None or response.status != 200:
+            status = getattr(response, "status", None)
+            failures.append(f"desktop unexpected navigation status: {status}")
+        _wait_for_graph(page)
+
+        expected_bootstrap = [
+            "/data/tag-graph/index.json",
+            "/data/tag-graph/core.json",
+        ]
+        if graph_requests != expected_bootstrap:
+            failures.append(
+                "desktop first-screen graph request budget mismatch: "
+                f"expected {expected_bootstrap}, got {graph_requests}"
+            )
+        overview = _runtime_snapshot(page)
+        if overview["mode"] != "overview":
+            failures.append(f"desktop expected overview mode, got {overview['mode']}")
+        _assert_runtime_budget(overview, failures, "desktop overview")
+
+        page.locator('[data-graph-mode="community"]').click(
+            timeout=GRAPH_INTERACTION_TIMEOUT_MS
+        )
+        page.wait_for_function(
+            "() => window.graphEngine?.mode === 'community' && "
+            "window.graphEngine?._defaultCommunityExpansion === null",
+            timeout=GRAPH_INTERACTION_TIMEOUT_MS,
+        )
+        community = _runtime_snapshot(page)
+        _assert_runtime_budget(community, failures, "desktop community")
+
+        page.locator('[data-graph-mode="focus"]').click(
+            timeout=GRAPH_INTERACTION_TIMEOUT_MS
+        )
+        page.wait_for_function(
+            "() => window.graphEngine?.mode === 'focus' && "
+            "Boolean(window.graphEngine?.selectedNodeId)",
+            timeout=GRAPH_INTERACTION_TIMEOUT_MS,
+        )
+        focus = _runtime_snapshot(page)
+        _assert_runtime_budget(focus, failures, "desktop focus")
+
+        search = page.locator("#graph-search")
+        search.fill("API")
+        page.wait_for_selector(
+            "#graph-search-results:not([hidden]) .graph-search-result",
+            timeout=GRAPH_INTERACTION_TIMEOUT_MS,
+        )
+        result_count = page.locator("#graph-search-results .graph-search-result").count()
+        if not 1 <= result_count <= 10:
+            failures.append(f"desktop search result budget invalid: {result_count}")
+        target_id = page.evaluate(
+            "window.graphRenderer?._searchItems?.[0]?.id || ''"
+        )
+        search.press("ArrowDown")
+        search.press("Enter")
+        if target_id:
+            page.wait_for_function(
+                "nodeId => window.graphEngine?.selectedNodeId === nodeId",
+                arg=target_id,
+                timeout=GRAPH_INTERACTION_TIMEOUT_MS,
+            )
+        page.wait_for_selector(
+            '#graph-detail[aria-hidden="false"]',
+            timeout=GRAPH_INTERACTION_TIMEOUT_MS,
+        )
+        detail = page.locator("#detail-name").inner_text().strip()
+        if not detail or detail == "节点详情":
+            failures.append("desktop selected node detail is empty")
+        _assert_runtime_budget(_runtime_snapshot(page), failures, "desktop search focus")
+
+        if screenshot:
+            screenshot.parent.mkdir(parents=True, exist_ok=True)
+            page.screenshot(path=str(screenshot), full_page=True)
+    finally:
+        context.close()
+
+
+def _verify_mobile_reduced_motion(
+    browser: Any,
+    url: str,
+    failures: list[str],
+) -> None:
+    context = browser.new_context(
+        viewport={"width": 390, "height": 844},
+        reduced_motion="reduce",
+    )
+    page = context.new_page()
+    _attach_page_diagnostics(page, failures, "mobile reduced-motion")
+    try:
+        response = page.goto(
+            url,
+            wait_until="domcontentloaded",
+            timeout=GRAPH_READY_TIMEOUT_MS,
+        )
+        if response is None or response.status != 200:
+            status = getattr(response, "status", None)
+            failures.append(f"mobile unexpected navigation status: {status}")
+        _wait_for_graph(page)
+        runtime = _runtime_snapshot(page)
+        _assert_runtime_budget(runtime, failures, "mobile overview")
+        mobile = page.evaluate(
+            """() => {
+              const engine = window.graphEngine;
+              const modeButtons = Array.from(document.querySelectorAll('[data-graph-mode]'));
+              const stage = document.querySelector('.graph-stage');
+              return {
+                reducedMotion: engine?.reducedMotion === true,
+                particleFrameStopped: engine?._particleFrame === null,
+                particleCount: engine?._particles?.length || 0,
+                starfieldAnimation: stage
+                  ? getComputedStyle(stage, '::before').animationName
+                  : 'missing',
+                horizontalOverflow: document.documentElement.scrollWidth - window.innerWidth,
+                shortestModeButton: Math.min(
+                  ...modeButtons.map((button) => button.getBoundingClientRect().height)
+                )
+              };
+            }"""
+        )
+        if not mobile["reducedMotion"]:
+            failures.append("mobile reduced-motion preference did not reach graph engine")
+        if not mobile["particleFrameStopped"] or mobile["particleCount"] != 0:
+            failures.append("mobile reduced-motion still has a running particle loop")
+        if mobile["starfieldAnimation"] != "none":
+            failures.append(
+                "mobile reduced-motion starfield animation is still active: "
+                f"{mobile['starfieldAnimation']}"
+            )
+        if mobile["horizontalOverflow"] > 1:
+            failures.append(
+                f"mobile page overflows horizontally by {mobile['horizontalOverflow']}px"
+            )
+        if mobile["shortestModeButton"] < 44:
+            failures.append(
+                "mobile mode control touch target is below 44px: "
+                f"{mobile['shortestModeButton']}px"
+            )
+    finally:
+        context.close()
+
+
 def verify(public_dir: Path, screenshot: Path | None = None) -> list[str]:
     from playwright.sync_api import sync_playwright
 
@@ -217,71 +462,16 @@ def verify(public_dir: Path, screenshot: Path | None = None) -> list[str]:
     try:
         with sync_playwright() as playwright:
             browser = playwright.chromium.launch()
-            page = browser.new_page(viewport={"width": 1280, "height": 720})
-            page.on("pageerror", lambda error: failures.append(f"page error: {error}"))
-            page.on(
-                "requestfailed",
-                lambda request: failures.append(
-                    f"request failed: {request.url} ({request.failure})"
-                ),
-            )
-
-            def capture_console(message) -> None:
-                text = message.text
-                if message.type == "error" or "invalid selector" in text.casefold():
-                    failures.append(f"console {message.type}: {text}")
-
-            page.on("console", capture_console)
-
-            response = page.goto(url, wait_until="domcontentloaded")
-            if response is None or response.status != 200:
-                status = getattr(response, "status", None)
-                failures.append(f"unexpected navigation status: {status}")
-
             try:
-                page.wait_for_selector("#graph-workbench.is-ready", timeout=20_000)
-                page.wait_for_function(
-                    "window.graphEngine && graphEngine.cy && graphEngine.cy.nodes().length > 0",
-                    timeout=20_000,
+                _verify_desktop_workbench(
+                    browser,
+                    url,
+                    failures,
+                    screenshot,
                 )
-            except Exception as exc:
-                failures.append(f"graph did not become ready: {exc}")
-
-            runtime = page.evaluate(
-                """() => {
-                  const engine = window.graphEngine;
-                  return {
-                    canvas: Boolean(document.querySelector('#graph-container canvas')),
-                    nodeCount: engine?.cy?.nodes().length || 0,
-                    edgeCount: engine?.cy?.edges().length || 0,
-                    api: ['setMode', 'focusNode', 'clearSelection', 'pause', 'resume', 'destroy']
-                      .every((name) => typeof engine?.[name] === 'function')
-                  };
-                }"""
-            )
-            if not runtime["canvas"]:
-                failures.append("Cytoscape canvas is missing")
-            if runtime["nodeCount"] <= 0:
-                failures.append("no graph nodes were rendered")
-            if not runtime["api"]:
-                failures.append("public graph engine API is incomplete")
-
-            if runtime["nodeCount"] > 0:
-                page.evaluate("() => graphEngine.cy.nodes().first().emit('tap')")
-                try:
-                    page.wait_for_selector('#graph-detail[aria-hidden="false"]', timeout=5_000)
-                except Exception as exc:
-                    failures.append(f"node detail did not open: {exc}")
-                detail = page.locator("#detail-name").inner_text().strip()
-                if not detail or detail == "节点详情":
-                    failures.append("selected node detail is empty")
-                page.wait_for_timeout(450)
-
-            if screenshot:
-                screenshot.parent.mkdir(parents=True, exist_ok=True)
-                page.screenshot(path=str(screenshot), full_page=True)
-
-            browser.close()
+                _verify_mobile_reduced_motion(browser, url, failures)
+            finally:
+                browser.close()
     finally:
         server.shutdown()
         server.server_close()

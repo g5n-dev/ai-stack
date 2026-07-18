@@ -265,7 +265,7 @@ class AnthropicClient:
         status_code = getattr(error, "status_code", None)
         message = str(error)
         if status_code in {401, 403} or self._looks_like_auth_error(message):
-            return LLMAuthError(message)
+            return LLMAuthError("Model request authentication failed")
         retryable = isinstance(
             error,
             (
@@ -279,8 +279,32 @@ class AnthropicClient:
             if status_code in {408, 409, 429} or status_code >= 500:
                 retryable = True
         if retryable:
-            return LLMTransientAPIError(message)
-        return LLMRequestError(message, category="api", retryable=False)
+            return LLMTransientAPIError("Model API request failed transiently")
+        return LLMRequestError("Model API request failed", category="api", retryable=False)
+
+    def _log_request_failure(
+        self,
+        *,
+        error: BaseException,
+        category: str,
+        purpose: str,
+        retryable: bool,
+    ) -> None:
+        status_code = getattr(error, "status_code", None)
+        public_status = (
+            str(status_code)
+            if isinstance(status_code, int) and 100 <= status_code <= 599
+            else "unknown"
+        )
+        logger.error(
+            "Model request failed "
+            "(error_type=%s, category=%s, status=%s, purpose=%s, retryable=%s)",
+            type(error).__name__,
+            category,
+            public_status,
+            purpose,
+            "true" if retryable else "false",
+        )
 
     def _init_client(self) -> anthropic.Anthropic:
         """初始化 Anthropic 客户端"""
@@ -290,7 +314,10 @@ class AnthropicClient:
         if not api_key:
             raise ValueError("Anthropic API key is not configured")
 
-        logger.info(f"Initializing Anthropic client with base_url: {base_url}")
+        logger.info(
+            "Initializing Anthropic client (custom_base_url=%s)",
+            "true" if bool(base_url) else "false",
+        )
 
         if base_url:
             return anthropic.Anthropic(api_key=api_key, base_url=base_url)
@@ -406,19 +433,43 @@ class AnthropicClient:
                     time.sleep(backoff)
                     api_attempt += 1
                     continue
-                logger.error(f"Anthropic API error ({classified.category}): {e}")
-                raise classified from e
+                self._log_request_failure(
+                    error=e,
+                    category=classified.category,
+                    purpose=purpose,
+                    retryable=classified.retryable,
+                )
+                raise classified from None
 
             except LLMRequestError as e:
-                logger.error(f"LLM request failed ({e.category}, purpose={purpose}): {e}")
+                self._log_request_failure(
+                    error=e,
+                    category=e.category,
+                    purpose=purpose,
+                    retryable=e.retryable,
+                )
                 raise
 
             except Exception as e:
                 if self._looks_like_auth_error(str(e)):
-                    logger.error(f"Anthropic API error (auth): {e}")
-                    raise LLMAuthError(str(e)) from e
-                logger.error(f"Failed to create message (purpose={purpose}): {e}")
-                raise LLMRequestError(str(e), category="unknown", retryable=False) from e
+                    self._log_request_failure(
+                        error=e,
+                        category="auth",
+                        purpose=purpose,
+                        retryable=False,
+                    )
+                    raise LLMAuthError("Model request authentication failed") from None
+                self._log_request_failure(
+                    error=e,
+                    category="unknown",
+                    purpose=purpose,
+                    retryable=False,
+                )
+                raise LLMRequestError(
+                    "Model request failed",
+                    category="unknown",
+                    retryable=False,
+                ) from None
 
 
 if __name__ == '__main__':

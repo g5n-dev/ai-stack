@@ -680,7 +680,7 @@ def test_declared_modern_source_brief_requires_provenance_frontmatter() -> None:
         "external_url: https://arxiv.org/abs/2607.12345\n"
         "---\n\n" + body
     )
-    complete = incomplete.replace(
+    missing_completeness = incomplete.replace(
         "external_url: https://arxiv.org/abs/2607.12345\n",
         "external_url: https://arxiv.org/abs/2607.12345\n"
         "publication_tier: C\n"
@@ -691,8 +691,18 @@ def test_declared_modern_source_brief_requires_provenance_frontmatter() -> None:
         "source_is_truncated: false\n"
         "source_support: 1.0\n",
     )
+    complete = missing_completeness.replace(
+        "source_capture_mode: abstract\n",
+        "source_capture_mode: abstract\nsource_completeness: abstract_only\n",
+    )
+    wrong_completeness = missing_completeness.replace(
+        "source_capture_mode: abstract\n",
+        "source_capture_mode: abstract\nsource_completeness: complete\n",
+    )
 
     assert "invalid_source_brief" in analyze_post(incomplete).fatal_reasons
+    assert "invalid_source_brief" in analyze_post(missing_completeness).fatal_reasons
+    assert "invalid_source_brief" in analyze_post(wrong_completeness).fatal_reasons
     assert analyze_post(complete).status == "source_brief"
 
 
@@ -707,6 +717,7 @@ def test_truncated_source_brief_requires_an_explicit_reason() -> None:
         "external_url: https://example.com/source\n"
         "publication_tier: C\n"
         "source_capture_mode: excerpt\n"
+        "source_completeness: partial\n"
         "source_snapshot_sha256: sha256:" + "a" * 64 + "\n"
         "extractor_version: source-contract-v1\n"
         "discovery_method: rss_excerpt\n"
@@ -745,6 +756,7 @@ def test_modern_source_brief_accepts_a_fully_escaped_stored_capture() -> None:
         "external_url: https://example.com/complete-source\n"
         "publication_tier: C\n"
         "source_capture_mode: excerpt\n"
+        "source_completeness: partial\n"
         "source_snapshot_sha256: sha256:" + "a" * 64 + "\n"
         "extractor_version: source-contract-v1\n"
         "discovery_method: rss_excerpt\n"
@@ -999,6 +1011,7 @@ def test_manifest_tracks_verified_provenance_and_rehydration_backlog(
             "content_mode: source_brief\n"
             "publication_tier: C\n"
             "source_capture_mode: excerpt\n"
+            "source_completeness: partial\n"
             f"source_snapshot_sha256: {digest_a}\n"
             "extractor_version: source-contract-v1\n"
             "discovery_method: rss_excerpt\n"
@@ -1263,3 +1276,40 @@ def test_manifest_cli_can_fail_closed_on_empty_section_warnings(
         )
         == 1
     )
+
+
+def test_manifest_cli_can_fail_closed_on_unverified_active_provenance(
+    tmp_path: Path,
+) -> None:
+    from scripts.build_content_quality_manifest import main
+
+    content = tmp_path / "content"
+    posts = content / "posts"
+    posts.mkdir(parents=True)
+    (posts / "manual.md").write_text(
+        "---\n"
+        "title: Manual note\n"
+        "description: A readable but unverified manual note.\n"
+        "entry_kind: manual\n"
+        "---\n\n"
+        "## 研究记录\n\n这是一段结构完整、但没有可核验来源契约的人工记录。\n",
+        encoding="utf-8",
+    )
+
+    output = tmp_path / "quality.json"
+    assert (
+        main(
+            [
+                "--content-root",
+                str(content),
+                "--output",
+                str(output),
+                "--fail-on-unverified-provenance",
+            ]
+        )
+        == 1
+    )
+
+    manifest = json.loads(output.read_text(encoding="utf-8"))
+    assert manifest["active_count"] == 1
+    assert manifest["verified_provenance_count"] == 0

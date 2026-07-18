@@ -1,19 +1,32 @@
 #!/usr/bin/env python3
 
-import os
-import sys
-import json
 import logging
+import os
+import re
+import sys
 from datetime import datetime, timedelta, timezone
 from typing import List, Optional, Tuple
+from urllib.parse import urlparse
+
 import requests
-from urllib.parse import urljoin, urlparse
 
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s'
 )
 logger = logging.getLogger(__name__)
+
+_INDEXNOW_KEY_RE = re.compile(r"^[A-Za-z0-9-]{8,128}$")
+
+
+def validate_indexnow_key(value: Optional[str]) -> Optional[str]:
+    """Validate the public IndexNow domain-ownership key without logging it."""
+
+    if value is None or value == "":
+        return None
+    if not _INDEXNOW_KEY_RE.fullmatch(value):
+        raise ValueError("IndexNow ownership key must use 8–128 letters, digits, or dashes")
+    return value
 
 def _parse_iso_datetime(value: str) -> Optional[datetime]:
     v = (value or "").strip()
@@ -117,7 +130,7 @@ class SearchEngineNotifier:
         self.base_url = base_url.rstrip('/')
         self.google_api_key = google_api_key
         self.google_search_console_url = google_search_console_url
-        self.bing_api_key = bing_api_key
+        self.bing_api_key = validate_indexnow_key(bing_api_key)
         self.bing_max_urls = bing_max_urls
 
     def get_sitemap_entries(self, sitemap_path: str = None) -> List[Tuple[str, Optional[datetime]]]:
@@ -153,16 +166,23 @@ class SearchEngineNotifier:
         google_url = f"{self.google_search_console_url}?key={self.google_api_key}"
 
         try:
-            for url in urls[:100]:
+            for request_index, url in enumerate(urls[:100], start=1):
                 payload = {"url": url}
                 response = requests.post(google_url, json=payload, timeout=30)
                 if response.status_code == 200:
-                    logger.info(f"✓ Google indexing request sent: {url}")
+                    logger.info(
+                        "Google indexing request accepted (request_index=%d)",
+                        request_index,
+                    )
                 else:
-                    logger.warning(f"✗ Google indexing failed: {url} - {response.text}")
+                    logger.warning(
+                        "Google indexing failed (request_index=%d status=%s)",
+                        request_index,
+                        response.status_code,
+                    )
             return True
         except Exception as e:
-            logger.error(f"Error notifying Google: {e}")
+            logger.error("Error notifying Google (error_type=%s)", type(e).__name__)
             return False
 
     def notify_bing(self, urls: List[str]) -> bool:
@@ -186,12 +206,20 @@ class SearchEngineNotifier:
                 }
                 response = requests.post(bing_url, json=payload, timeout=30)
                 if response.status_code == 200:
-                    logger.info(f"✓ Bing indexing request sent for batch {i//batch_size + 1} ({len(batch)} URLs)")
+                    logger.info(
+                        "Bing indexing request accepted (batch=%d urls=%d)",
+                        i // batch_size + 1,
+                        len(batch),
+                    )
                 else:
-                    logger.warning(f"✗ Bing indexing failed for batch {i//batch_size + 1}: {response.text}")
+                    logger.warning(
+                        "Bing indexing failed (batch=%d status=%s)",
+                        i // batch_size + 1,
+                        response.status_code,
+                    )
             return True
         except Exception as e:
-            logger.error(f"Error notifying Bing: {e}")
+            logger.error("Error notifying Bing (error_type=%s)", type(e).__name__)
             return False
 
 
@@ -213,13 +241,17 @@ def main():
     if bing_max_urls < 0:
         bing_max_urls = 80
 
-    notifier = SearchEngineNotifier(
-        base_url=base_url,
-        google_api_key=google_api_key,
-        google_search_console_url=google_search_console_url,
-        bing_api_key=bing_api_key,
-        bing_max_urls=bing_max_urls,
-    )
+    try:
+        notifier = SearchEngineNotifier(
+            base_url=base_url,
+            google_api_key=google_api_key,
+            google_search_console_url=google_search_console_url,
+            bing_api_key=bing_api_key,
+            bing_max_urls=bing_max_urls,
+        )
+    except ValueError as exc:
+        logger.error("IndexNow configuration rejected (error_type=%s)", type(exc).__name__)
+        sys.exit(2)
 
     entries = notifier.get_sitemap_entries(sitemap_path)
     urls = _select_indexnow_urls(entries, base_url)

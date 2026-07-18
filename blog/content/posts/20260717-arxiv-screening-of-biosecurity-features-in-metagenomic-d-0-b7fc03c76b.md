@@ -3,7 +3,7 @@ title: "Screening of Biosecurity Features in Metagenomic Data with Evo 2 Probes"
 date: 2026-07-17T04:15:17+08:00
 draft: false
 entry_kind: "auto"
-tags: ["q-bio.GN", "arXiv", "来源快报"]
+tags: ["q-bio.GN", "ArXiv", "来源快报"]
 categories: []
 source: "arxiv"
 content_mode: "source_brief"
@@ -12,6 +12,7 @@ source_capture_mode: "abstract"
 source_snapshot_sha256: "sha256:fab2a475bb54d51f0ed05098fa16306e81cae43203bfffb565057220719c01a3"
 extractor_version: "source-contract-v1"
 discovery_method: "arxiv_api"
+source_completeness: "abstract_only"
 source_is_truncated: false
 source_support: 1.0
 source_title_chars_original: 71

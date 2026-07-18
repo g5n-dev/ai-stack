@@ -36,6 +36,11 @@ def main(argv: Sequence[str] | None = None) -> int:
         action="store_true",
         help="return non-zero when active Posts contain empty section shells",
     )
+    parser.add_argument(
+        "--fail-on-unverified-provenance",
+        action="store_true",
+        help="return non-zero unless every active Post has verified provenance",
+    )
     args = parser.parse_args(argv)
 
     manifest = write_content_quality_manifest(args.content_root, args.output)
@@ -45,6 +50,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         f"complete={manifest['complete_count']} "
         f"legacy_analysis={manifest['legacy_analysis_count']} "
         f"source_briefs={manifest['source_brief_count']} "
+        f"verified_provenance={manifest['verified_provenance_count']} "
         f"quarantined={manifest['quarantined_count']} "
         f"archived={manifest['archived_count']} "
         f"output={args.output}"
@@ -57,6 +63,18 @@ def main(argv: Sequence[str] | None = None) -> int:
     ):
         print(
             "content quality manifest rejected active Posts with empty sections",
+            file=sys.stderr,
+        )
+        return 1
+    if (
+        args.fail_on_unverified_provenance
+        and manifest["active_count"] != manifest["verified_provenance_count"]
+    ):
+        print(
+            "content quality manifest rejected active Posts without verified "
+            "provenance: "
+            f"active={manifest['active_count']} "
+            f"verified={manifest['verified_provenance_count']}",
             file=sys.stderr,
         )
         return 1

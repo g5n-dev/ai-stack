@@ -151,12 +151,7 @@ def test_expected_configuration_encodes_the_repository_security_contract() -> No
     }
     status_rule = next(rule for rule in main_rules if rule["type"] == "required_status_checks")
     contexts = status_rule["parameters"]["required_status_checks"]
-    assert [check["context"] for check in contexts] == [
-        "Unit Tests",
-        "browser-e2e",
-        "secret-scan",
-        "static-site",
-    ]
+    assert [check["context"] for check in contexts] == ["Unit Tests"]
 
     data_rules = rulesets["ai-stack/data-branches-v1"]
     assert data_rules["conditions"]["ref_name"]["include"] == [
@@ -183,7 +178,6 @@ def test_expected_configuration_encodes_the_repository_security_contract() -> No
         {"type": "User", "id": OWNER_ID}
     ]
     assert environments["github-pages"]["deployment_branch_policies"] == [
-        {"name": "gh-pages", "type": "branch"},
         {"name": "main", "type": "branch"},
     ]
     assert environments["production-publish"]["deployment_branch_policies"] == [
@@ -465,7 +459,7 @@ def test_unapproved_managed_environment_policy_is_reported_and_blocks_apply() ->
     assert api.writes == []
 
 
-def test_existing_github_pages_and_main_policies_are_managed_as_an_unordered_set() -> None:
+def test_existing_main_pages_policy_is_managed_as_an_unordered_set() -> None:
     environment = {
         "id": 502,
         "name": "github-pages",
@@ -481,10 +475,9 @@ def test_existing_github_pages_and_main_policies_are_managed_as_an_unordered_set
         "?per_page=100&page=1"
     )
     responses[("GET", policies_endpoint)] = {
-        "total_count": 2,
+        "total_count": 1,
         "branch_policies": [
             {"id": 2, "name": "main", "type": "branch"},
-            {"id": 1, "name": "gh-pages", "type": "branch"},
         ],
     }
     snapshot = collect_snapshot(FakeGitHubApi(responses), REPOSITORY)
@@ -500,20 +493,23 @@ def test_existing_github_pages_and_main_policies_are_managed_as_an_unordered_set
     )
 
 
-def test_expected_contract_rejects_missing_pages_or_content_seed_protection() -> None:
+def test_expected_contract_rejects_stale_pages_or_missing_content_seed_protection() -> None:
     _, snapshot = _snapshot()
 
-    missing_pages_policy = copy.deepcopy(_expected_config())
-    environments = missing_pages_policy["environments"]
+    stale_pages_policy = copy.deepcopy(_expected_config())
+    environments = stale_pages_policy["environments"]
     assert isinstance(environments, list)
     github_pages = next(
         environment
         for environment in environments
         if isinstance(environment, dict) and environment.get("name") == "github-pages"
     )
-    github_pages["deployment_branch_policies"] = [{"name": "main", "type": "branch"}]
+    github_pages["deployment_branch_policies"] = [
+        {"name": "gh-pages", "type": "branch"},
+        {"name": "main", "type": "branch"},
+    ]
     with pytest.raises(GitHubHardeningError, match="environment github-pages policy"):
-        build_plan(snapshot, missing_pages_policy)
+        build_plan(snapshot, stale_pages_policy)
 
     missing_content_seed = copy.deepcopy(_expected_config())
     rulesets = missing_content_seed["rulesets"]

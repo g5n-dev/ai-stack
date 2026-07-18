@@ -3,7 +3,7 @@ title: "Multi-Expert Routing for Multi-Domain Low-Resource OCR: A Manchu Case St
 date: 2026-07-16T14:34:01+08:00
 draft: false
 entry_kind: "auto"
-tags: ["cs.CV", "arXiv", "来源快报"]
+tags: ["cs.CV", "ArXiv", "来源快报"]
 categories: []
 source: "arxiv"
 content_mode: "source_brief"
@@ -12,6 +12,7 @@ source_capture_mode: "abstract"
 source_snapshot_sha256: "sha256:fac7515b360256b80f8347657f9113d4310e946b285547c066c6c5e9c2780b30"
 extractor_version: "source-contract-v1"
 discovery_method: "arxiv_api"
+source_completeness: "abstract_only"
 source_is_truncated: false
 source_support: 1.0
 source_title_chars_original: 75

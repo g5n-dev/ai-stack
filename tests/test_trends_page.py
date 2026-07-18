@@ -81,6 +81,11 @@ def test_trends_styles_are_scoped_and_share_site_tokens() -> None:
     assert '[role="option"]' in source
     assert '.trend-matrix-legend span[data-heat="signal"]' in source
     assert ".trend-matrix-tooltip" in source
+    assert ".trend-card__focus-details" in source
+    assert ".trend-card__button:focus-visible .trend-card__focus-details" in source
+    assert ".trend-list:has(.trend-card__button:focus-visible)" in source
+    assert ".trend-score-method__formula" in source
+    assert ".trend-score-method__audit" in source
     assert '.trend-workbench[data-detail="open"] .trend-detail' in source
     assert "@media (max-width: 1439px)" in source
 
@@ -112,6 +117,12 @@ def test_trends_runtime_uses_safe_text_progressive_loading_and_distinct_links() 
     assert "heatVisual" in source
     assert "matrixTooltipCopy" in source
     assert "renderMatrixTooltip" in source
+    assert "trendCardScoreCopy" in source
+    assert "appendScoreExplanation" in source
+    assert "scoreExplanation(signal, model.state.window, model.index.formula)" in source
+    assert "appendComponents(elements.detail, signal.components)" in source
+    assert "buildTrendReturnUrl(windowObject.location.pathname, model.state)" in source
+    assert "appendReturnContext" in source
     assert "elements.matrix.title" not in source
     assert 'root.dataset.detail = model.state.topic ? "open" : "closed"' in source
     load_topic = source.index("async function loadTopic")

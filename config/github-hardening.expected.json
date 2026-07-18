@@ -39,10 +39,7 @@
           "parameters": {
             "do_not_enforce_on_create": true,
             "required_status_checks": [
-              {"context": "Unit Tests"},
-              {"context": "browser-e2e"},
-              {"context": "secret-scan"},
-              {"context": "static-site"}
+              {"context": "Unit Tests"}
             ],
             "strict_required_status_checks_policy": true
           }
@@ -97,7 +94,6 @@
         "custom_branch_policies": true
       },
       "deployment_branch_policies": [
-        {"name": "gh-pages", "type": "branch"},
         {"name": "main", "type": "branch"}
       ]
     },

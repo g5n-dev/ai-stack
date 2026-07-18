@@ -16,7 +16,9 @@ function trend(overrides = {}) {
     state: "rising",
     confidence: "high",
     unique_events: 12,
+    observations: 12,
     unique_sources: 3,
+    duplicate_rate: 0,
     counts: { current: 12, previous: 7, pre_previous: 4 },
     components: {
       quantity: 1,
@@ -37,13 +39,13 @@ function trend(overrides = {}) {
 
 test("parses only bounded trend URL state and preserves a valid topic drill-down", () => {
   const state = Trends.parseState(
-    "?window=7d&signal=rising&source=arXiv&scenario=%E6%A8%A1%E5%9E%8B%E7%A0%94%E5%8F%91&topic=tag%3Allm&view=list&ignored=boom",
+    "?window=7d&signal=rising&source=arxiv&scenario=%E6%A8%A1%E5%9E%8B%E7%A0%94%E5%8F%91&topic=tag%3Allm&view=list&ignored=boom",
   );
 
   assert.deepEqual(state, {
     window: "7d",
     signal: "rising",
-    source: "arXiv",
+    source: "arxiv",
     scenario: "模型研发",
     query: "",
     topic: "tag:llm",
@@ -51,7 +53,7 @@ test("parses only bounded trend URL state and preserves a valid topic drill-down
   });
   assert.equal(
     Trends.serializeState(state),
-    "?window=7d&signal=rising&source=arXiv&scenario=%E6%A8%A1%E5%9E%8B%E7%A0%94%E5%8F%91&topic=tag%3Allm&view=list",
+    "?window=7d&signal=rising&source=arxiv&scenario=%E6%A8%A1%E5%9E%8B%E7%A0%94%E5%8F%91&topic=tag%3Allm&view=list",
   );
 });
 
@@ -175,6 +177,58 @@ test("topology badges keep only topic and direction while hover owns score detai
 });
 
 
+test("keyboard trend cards expose the same score detail as topology hover", () => {
+  const value = trend({
+    topic: "Amazon Bedrock",
+    score: 73,
+    state: "steady",
+    unique_events: 16,
+    unique_sources: 4,
+    counts: { current: 16, previous: 16, pre_previous: 12 },
+  });
+  const [point] = Trends.layoutMatrix([value], 900, 480);
+
+  assert.deepEqual(Trends.trendCardScoreCopy(value), {
+    status: "• 稳定",
+    heat: "强信号",
+    score: "73",
+    evidence: "16",
+    sources: "4",
+  });
+  assert.deepEqual(
+    Trends.trendCardScoreCopy(value),
+    (({ status, heat, score, evidence, sources }) => ({ status, heat, score, evidence, sources }))(
+      Trends.matrixTooltipCopy(point),
+    ),
+  );
+});
+
+
+test("score explanation makes formula, window buckets and duplicate penalty auditable", () => {
+  const formula = "100 × weighted_components × (1 − 0.5×duplicate_rate)";
+  const explanation = Trends.scoreExplanation(trend({
+    score: 58.23125,
+    observations: 16,
+    duplicate_rate: 0.25,
+  }), "7d", formula);
+
+  assert.equal(explanation.formula, formula);
+  assert.equal(explanation.windowLabel, "7 天");
+  assert.deepEqual(explanation.ranges, [
+    "当前：[截止−7 天, 截止]",
+    "上一周期：[截止−14 天, 截止−7 天)",
+    "前两周期：[截止−21 天, 截止−14 天)",
+  ]);
+  assert.match(explanation.growthDefinition, /current−previous/u);
+  assert.match(explanation.accelerationDefinition, /previous−pre_previous/u);
+  assert.equal(explanation.duplicateCount, 4);
+  assert.equal(explanation.duplicateRate, 0.25);
+  assert.equal(explanation.duplicateMultiplier, 0.875);
+  assert.equal(explanation.weightedSubtotal, 0.6655);
+  assert.equal(explanation.recomputedScore, 58.23125);
+});
+
+
 test("every topology node receives a visible heat-scaled glow budget", () => {
   const cold = Trends.nodeGlowVisual({ score: 30 }, false, false);
   const hot = Trends.nodeGlowVisual({ score: 73 }, false, false);
@@ -292,6 +346,61 @@ test("committed trend data visibly drills the LLM scenario into its strongest to
 });
 
 
+test("every committed 30 day filter independently changes the visible result set", () => {
+  const dataRoot = path.resolve(import.meta.dirname, "../../blog/static/data/stack-trends");
+  const index = JSON.parse(readFileSync(path.join(dataRoot, "index.json"), "utf8"));
+  const windowData = JSON.parse(readFileSync(path.join(dataRoot, index.windows["30d"].path), "utf8"));
+  const total = windowData.trends.length;
+  const partialState = [...new Set(windowData.trends.map((item) => item.state))]
+    .find((state) => {
+      const count = windowData.trends.filter((item) => item.state === state).length;
+      return count > 0 && count < total;
+    });
+  const partialSource = windowData.facets.sources.find((facet) => {
+    const count = Trends.countFacetTopics(windowData.trends, "sources", facet.name);
+    return count > 0 && count < total;
+  });
+  const partialScenario = windowData.facets.scenarios.find((facet) => {
+    const count = Trends.countFacetTopics(windowData.trends, "scenarios", facet.name);
+    return count > 0 && count < total;
+  });
+  assert.ok(partialState, "committed data needs at least one selective signal state");
+  assert.ok(partialSource, "committed data needs at least one selective source");
+  assert.ok(partialScenario, "committed data needs at least one selective scenario");
+
+  const byState = Trends.filterTrends(windowData.trends, { signal: partialState });
+  assert.ok(byState.length > 0 && byState.length < total);
+  assert.ok(byState.every((item) => item.state === partialState));
+
+  const bySource = Trends.filterTrends(windowData.trends, { source: partialSource.name });
+  assert.ok(bySource.length > 0 && bySource.length < total);
+  assert.ok(bySource.every((item) => item.sources.some((facet) => facet.name === partialSource.name)));
+
+  const byScenario = Trends.filterTrends(windowData.trends, { scenario: partialScenario.name });
+  assert.ok(byScenario.length > 0 && byScenario.length < total);
+  assert.ok(byScenario.every((item) => item.scenarios.some((facet) => facet.name === partialScenario.name)));
+
+  const query = windowData.trends.at(-1).topic;
+  const byQuery = Trends.filterTrends(windowData.trends, { query });
+  assert.ok(byQuery.length > 0 && byQuery.length < total);
+  assert.ok(byQuery.every((item) => item.topic.toLocaleLowerCase("zh-CN").includes(query.toLocaleLowerCase("zh-CN"))));
+});
+
+
+test("committed observation windows select distinct snapshots", () => {
+  const dataRoot = path.resolve(import.meta.dirname, "../../blog/static/data/stack-trends");
+  const index = JSON.parse(readFileSync(path.join(dataRoot, "index.json"), "utf8"));
+  const loadWindow = (name) => JSON.parse(
+    readFileSync(path.join(dataRoot, index.windows[name].path), "utf8"),
+  );
+  const day = loadWindow("24h");
+  const month = loadWindow("30d");
+
+  assert.notDeepEqual(day.trends.map((item) => item.id), month.trends.map((item) => item.id));
+  assert.notEqual(day.trends.length, month.trends.length);
+});
+
+
 test("builds safe, distinct article and graph drill-down destinations", () => {
   assert.equal(Trends.safeInternalUrl("/2026/07/an-article/?ref=trend"), "/2026/07/an-article/?ref=trend");
   assert.equal(Trends.safeInternalUrl("https://ai-stack.site/2026/07/post/"), "/2026/07/post/");
@@ -304,6 +413,35 @@ test("builds safe, distinct article and graph drill-down destinations", () => {
     "/scenarios/?mode=focus&node=tag%3ALLM",
   );
   assert.equal(Trends.buildGraphUrl("javascript:boom"), "#");
+});
+
+
+test("reload, popstate and drill-down links preserve the complete trend context", () => {
+  const state = {
+    window: "7d",
+    signal: "rising",
+    source: "arxiv",
+    scenario: "模型研发",
+    query: "Agent",
+    topic: "tag:LLM",
+    view: "list",
+  };
+  const returnTo = Trends.buildTrendReturnUrl("/trends/", state);
+
+  assert.equal(
+    returnTo,
+    "/trends/?window=7d&signal=rising&source=arxiv&scenario=%E6%A8%A1%E5%9E%8B%E7%A0%94%E5%8F%91&query=Agent&topic=tag%3ALLM&view=list",
+  );
+  assert.deepEqual(Trends.parseState(new URL(returnTo, "https://ai-stack.site").search), state);
+  assert.equal(
+    Trends.buildGraphUrl("tag:LLM", "/", returnTo),
+    "/scenarios/?mode=focus&node=tag%3ALLM&return_to=%2Ftrends%2F%3Fwindow%3D7d%26signal%3Drising%26source%3Darxiv%26scenario%3D%25E6%25A8%25A1%25E5%259E%258B%25E7%25A0%2594%25E5%258F%2591%26query%3DAgent%26topic%3Dtag%253ALLM%26view%3Dlist",
+  );
+  assert.equal(
+    Trends.appendReturnContext("/posts/example/?ref=evidence#proof", returnTo),
+    "/posts/example/?ref=evidence&return_to=%2Ftrends%2F%3Fwindow%3D7d%26signal%3Drising%26source%3Darxiv%26scenario%3D%25E6%25A8%25A1%25E5%259E%258B%25E7%25A0%2594%25E5%258F%2591%26query%3DAgent%26topic%3Dtag%253ALLM%26view%3Dlist#proof",
+  );
+  assert.equal(Trends.appendReturnContext("/posts/example/", "https://evil.example/"), "/posts/example/");
 });
 
 

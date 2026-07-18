@@ -261,7 +261,7 @@ def test_branch_architecture_marks_the_new_coordinator_as_dormant() -> None:
         "17 * * * *",
         "23 */6 * * *",
         "Unit Tests",
-        "本次可靠性修复修改 `deploy.yml` 与 `monitoring.yml`",
-        "目标协调 DAG 尚未接入 GitHub Actions",
+        "当前 v1 工作流已经覆盖内容来源门禁",
+        "协调器尚未接入生产",
     ):
         assert required in document

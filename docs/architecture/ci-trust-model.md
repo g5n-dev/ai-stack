@@ -1,8 +1,8 @@
 # GitHub Actions 信任模型与发布状态机
 
-> 状态：目标设计，尚未接入 GitHub Actions。当前生产工作流仍使用原有 job 名称、触发器与
-> 权限边界；部署构建仅补齐锁定版本的 Pagefind 索引与结果目录，PR CI 补入对应回归测试。
-> 本文件描述后续独立 Actions 迁移 PR 应实现的协调 DAG，不代表当前生产配置。
+> 状态：目标设计，尚未接入 GitHub Actions。当前生产工作流已经具备内容来源门禁、历史固定点、
+> 图谱/趋势派生数据、图谱浏览器烟测、Hugo 与 Pagefind 交付构建，但仍使用单一 `Unit Tests` 与
+> `build-and-deploy` job。本文描述后续独立 Actions 迁移应实现的权限隔离协调 DAG，不代表当前生产配置。
 
 状态：P0 设计基线。此文档解释每个触发器、权限和门禁存在的原因。
 

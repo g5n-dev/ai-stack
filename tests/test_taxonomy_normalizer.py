@@ -26,6 +26,8 @@ def test_default_alias_config_is_versioned_and_applies_exact_aliases():
     assert normalize_tag("AI编程", aliases=aliases) == "AI 编程"
     assert normalize_tag("GPT 5.4", aliases=aliases) == "GPT-5.4"
     assert normalize_tag("Llama3.1", aliases=aliases) == "Llama 3.1"
+    assert normalize_tag("arXiv", aliases=aliases) == "ArXiv"
+    assert normalize_tags(["arXiv", "ArXiv"], aliases=aliases) == ["ArXiv"]
 
 
 def test_normalization_is_nfc_whitespace_only_before_exact_alias_lookup():
