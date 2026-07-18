@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-18T06:23:42Z",
+  "generated_at": "2026-07-18T10:46:01Z",
   "layer": "tag",
   "layers": {
     "application": {
@@ -4221,7 +4221,7 @@
       "strength": 1,
       "target": "tag:掘金",
       "type": "cooccurrence",
-      "weight": 2
+      "weight": 3
     },
     {
       "id": "edge:cooccurrence:tag:工程实践->tag:来源转写",
@@ -4229,7 +4229,7 @@
       "strength": 1,
       "target": "tag:来源转写",
       "type": "cooccurrence",
-      "weight": 2
+      "weight": 3
     },
     {
       "id": "edge:cooccurrence:tag:掘金->tag:数据库",
@@ -4261,7 +4261,7 @@
       "strength": 1,
       "target": "tag:来源转写",
       "type": "cooccurrence",
-      "weight": 2
+      "weight": 3
     },
     {
       "id": "edge:cooccurrence:tag:掘金->tag:深度学习",
@@ -4640,7 +4640,7 @@
       "legacy_id": "Amazon Bedrock Guardrails",
       "level": 6,
       "name": "Amazon Bedrock Guardrails",
-      "rank": 80,
+      "rank": 81,
       "related_count": 6,
       "weighted_degree": 6
     },
@@ -4725,7 +4725,7 @@
       "legacy_id": "Amazon Nova",
       "level": 6,
       "name": "Amazon Nova",
-      "rank": 42,
+      "rank": 43,
       "related_count": 13,
       "weighted_degree": 13
     },
@@ -4759,7 +4759,7 @@
       "legacy_id": "Amazon Quick Suite",
       "level": 6,
       "name": "Amazon Quick Suite",
-      "rank": 85,
+      "rank": 86,
       "related_count": 5,
       "weighted_degree": 5
     },
@@ -4895,7 +4895,7 @@
       "legacy_id": "AWS Fargate",
       "level": 6,
       "name": "AWS Fargate",
-      "rank": 43,
+      "rank": 44,
       "related_count": 13,
       "weighted_degree": 13
     },
@@ -4929,7 +4929,7 @@
       "legacy_id": "Best Practices",
       "level": 6,
       "name": "Best Practices",
-      "rank": 81,
+      "rank": 82,
       "related_count": 6,
       "weighted_degree": 6
     },
@@ -5031,7 +5031,7 @@
       "legacy_id": "cs.AI",
       "level": 6,
       "name": "cs.AI",
-      "rank": 44,
+      "rank": 45,
       "related_count": 2,
       "weighted_degree": 12
     },
@@ -5065,7 +5065,7 @@
       "legacy_id": "cs.CR",
       "level": 6,
       "name": "cs.CR",
-      "rank": 87,
+      "rank": 88,
       "related_count": 2,
       "weighted_degree": 4
     },
@@ -5116,7 +5116,7 @@
       "legacy_id": "Customer Solutions",
       "level": 6,
       "name": "Customer Solutions",
-      "rank": 41,
+      "rank": 42,
       "related_count": 10,
       "weighted_degree": 13
     },
@@ -5558,7 +5558,7 @@
       "legacy_id": "Partner solutions",
       "level": 6,
       "name": "Partner solutions",
-      "rank": 82,
+      "rank": 83,
       "related_count": 6,
       "weighted_degree": 6
     },
@@ -5660,7 +5660,7 @@
       "legacy_id": "Safety",
       "level": 6,
       "name": "Safety",
-      "rank": 45,
+      "rank": 46,
       "related_count": 9,
       "weighted_degree": 11
     },
@@ -5677,7 +5677,7 @@
       "legacy_id": "Search",
       "level": 6,
       "name": "Search",
-      "rank": 79,
+      "rank": 80,
       "related_count": 3,
       "weighted_degree": 6
     },
@@ -5801,7 +5801,7 @@
       "weighted_degree": 1223.2
     },
     {
-      "article_count": 3,
+      "article_count": 4,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:Codex",
@@ -5813,12 +5813,12 @@
       "legacy_id": "工程实践",
       "level": 6,
       "name": "工程实践",
-      "rank": 46,
+      "rank": 41,
       "related_count": 9,
-      "weighted_degree": 11
+      "weighted_degree": 13
     },
     {
-      "article_count": 438,
+      "article_count": 439,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -5832,7 +5832,7 @@
       "name": "掘金",
       "rank": 3,
       "related_count": 25,
-      "weighted_degree": 1166
+      "weighted_degree": 1168
     },
     {
       "article_count": 146,
@@ -5886,7 +5886,7 @@
       "weighted_degree": 108
     },
     {
-      "article_count": 2,
+      "article_count": 3,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:Codex",
@@ -5898,9 +5898,9 @@
       "legacy_id": "来源转写",
       "level": 6,
       "name": "来源转写",
-      "rank": 88,
+      "rank": 79,
       "related_count": 2,
-      "weighted_degree": 4
+      "weighted_degree": 6
     },
     {
       "article_count": 32,

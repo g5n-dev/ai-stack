@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-18T06:23:42Z",
+  "generated_at": "2026-07-18T10:46:01Z",
   "layers": {
     "application": {
       "color": "#7aa6b8",
@@ -639,7 +639,7 @@
       "legacy_id": "agent",
       "level": 4,
       "name": "AI Agent",
-      "rank": 86,
+      "rank": 87,
       "weighted_degree": 4.4
     },
     {
@@ -656,7 +656,7 @@
       "legacy_id": "ai_ml",
       "level": 5,
       "name": "AI/ML项目",
-      "rank": 84,
+      "rank": 85,
       "weighted_degree": 5.4
     },
     {
@@ -1438,7 +1438,7 @@
       "legacy_id": "nlp",
       "level": 3,
       "name": "自然语言处理",
-      "rank": 83,
+      "rank": 84,
       "weighted_degree": 5.6
     },
     {

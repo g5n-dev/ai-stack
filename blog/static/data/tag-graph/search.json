@@ -12,7 +12,7 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-07-18T06:23:42Z",
+  "generated_at": "2026-07-18T10:46:01Z",
   "items": [
     {
       "article_count": 653,
@@ -41,7 +41,7 @@
       "weighted_degree": 1223.2
     },
     {
-      "article_count": 438,
+      "article_count": 439,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 25,
@@ -51,7 +51,7 @@
       "legacy_id": "掘金",
       "name": "掘金",
       "rank": 3,
-      "weighted_degree": 1166
+      "weighted_degree": 1168
     },
     {
       "article_count": 328,
@@ -535,6 +535,19 @@
       "weighted_degree": 14
     },
     {
+      "article_count": 4,
+      "category": "article_tag",
+      "community_id": "community:tag:Codex",
+      "degree": 9,
+      "description": "文章标签: 工程实践",
+      "id": "tag:工程实践",
+      "layer": "tag",
+      "legacy_id": "工程实践",
+      "name": "工程实践",
+      "rank": 41,
+      "weighted_degree": 13
+    },
+    {
       "article_count": 3,
       "category": "article_tag",
       "community_id": "community:tag:Amazon DynamoDB",
@@ -544,7 +557,7 @@
       "layer": "tag",
       "legacy_id": "Customer Solutions",
       "name": "Customer Solutions",
-      "rank": 41,
+      "rank": 42,
       "weighted_degree": 13
     },
     {
@@ -557,7 +570,7 @@
       "layer": "tag",
       "legacy_id": "Amazon Nova",
       "name": "Amazon Nova",
-      "rank": 42,
+      "rank": 43,
       "weighted_degree": 13
     },
     {
@@ -570,7 +583,7 @@
       "layer": "tag",
       "legacy_id": "AWS Fargate",
       "name": "AWS Fargate",
-      "rank": 43,
+      "rank": 44,
       "weighted_degree": 13
     },
     {
@@ -583,7 +596,7 @@
       "layer": "tag",
       "legacy_id": "cs.AI",
       "name": "cs.AI",
-      "rank": 44,
+      "rank": 45,
       "weighted_degree": 12
     },
     {
@@ -596,19 +609,6 @@
       "layer": "tag",
       "legacy_id": "Safety",
       "name": "Safety",
-      "rank": 45,
-      "weighted_degree": 11
-    },
-    {
-      "article_count": 3,
-      "category": "article_tag",
-      "community_id": "community:tag:Codex",
-      "degree": 9,
-      "description": "文章标签: 工程实践",
-      "id": "tag:工程实践",
-      "layer": "tag",
-      "legacy_id": "工程实践",
-      "name": "工程实践",
       "rank": 46,
       "weighted_degree": 11
     },
@@ -1029,6 +1029,19 @@
       "weighted_degree": 6
     },
     {
+      "article_count": 3,
+      "category": "article_tag",
+      "community_id": "community:tag:Codex",
+      "degree": 2,
+      "description": "文章标签: 来源转写",
+      "id": "tag:来源转写",
+      "layer": "tag",
+      "legacy_id": "来源转写",
+      "name": "来源转写",
+      "rank": 79,
+      "weighted_degree": 6
+    },
+    {
       "article_count": 2,
       "category": "article_tag",
       "community_id": "community:tag:Google Workspace",
@@ -1038,7 +1051,7 @@
       "layer": "tag",
       "legacy_id": "Search",
       "name": "Search",
-      "rank": 79,
+      "rank": 80,
       "weighted_degree": 6
     },
     {
@@ -1051,7 +1064,7 @@
       "layer": "tag",
       "legacy_id": "Amazon Bedrock Guardrails",
       "name": "Amazon Bedrock Guardrails",
-      "rank": 80,
+      "rank": 81,
       "weighted_degree": 6
     },
     {
@@ -1064,7 +1077,7 @@
       "layer": "tag",
       "legacy_id": "Best Practices",
       "name": "Best Practices",
-      "rank": 81,
+      "rank": 82,
       "weighted_degree": 6
     },
     {
@@ -1077,7 +1090,7 @@
       "layer": "tag",
       "legacy_id": "Partner solutions",
       "name": "Partner solutions",
-      "rank": 82,
+      "rank": 83,
       "weighted_degree": 6
     },
     {
@@ -1090,7 +1103,7 @@
       "layer": "model",
       "legacy_id": "nlp",
       "name": "自然语言处理",
-      "rank": 83,
+      "rank": 84,
       "weighted_degree": 5.6
     },
     {
@@ -1103,7 +1116,7 @@
       "layer": "scenario",
       "legacy_id": "ai_ml",
       "name": "AI/ML项目",
-      "rank": 84,
+      "rank": 85,
       "weighted_degree": 5.4
     },
     {
@@ -1116,7 +1129,7 @@
       "layer": "tag",
       "legacy_id": "Amazon Quick Suite",
       "name": "Amazon Quick Suite",
-      "rank": 85,
+      "rank": 86,
       "weighted_degree": 5
     },
     {
@@ -1129,7 +1142,7 @@
       "layer": "application",
       "legacy_id": "agent",
       "name": "AI Agent",
-      "rank": 86,
+      "rank": 87,
       "weighted_degree": 4.4
     },
     {
@@ -1142,19 +1155,6 @@
       "layer": "tag",
       "legacy_id": "cs.CR",
       "name": "cs.CR",
-      "rank": 87,
-      "weighted_degree": 4
-    },
-    {
-      "article_count": 2,
-      "category": "article_tag",
-      "community_id": "community:tag:Codex",
-      "degree": 2,
-      "description": "文章标签: 来源转写",
-      "id": "tag:来源转写",
-      "layer": "tag",
-      "legacy_id": "来源转写",
-      "name": "来源转写",
       "rank": 88,
       "weighted_degree": 4
     },
