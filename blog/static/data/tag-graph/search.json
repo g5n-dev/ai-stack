@@ -12,7 +12,7 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-07-19T15:19:40Z",
+  "generated_at": "2026-07-19T18:13:23Z",
   "items": [
     {
       "article_count": 653,
@@ -41,7 +41,7 @@
       "weighted_degree": 1223.2
     },
     {
-      "article_count": 444,
+      "article_count": 445,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 25,
@@ -51,7 +51,7 @@
       "legacy_id": "掘金",
       "name": "掘金",
       "rank": 3,
-      "weighted_degree": 1176
+      "weighted_degree": 1178
     },
     {
       "article_count": 328,
@@ -392,6 +392,19 @@
       "weighted_degree": 25
     },
     {
+      "article_count": 8,
+      "category": "article_tag",
+      "community_id": "community:tag:Codex",
+      "degree": 9,
+      "description": "文章标签: 工程实践",
+      "id": "tag:工程实践",
+      "layer": "tag",
+      "legacy_id": "工程实践",
+      "name": "工程实践",
+      "rank": 30,
+      "weighted_degree": 21
+    },
+    {
       "article_count": 5,
       "category": "article_tag",
       "community_id": "community:tag:Partner solutions",
@@ -401,7 +414,7 @@
       "layer": "tag",
       "legacy_id": "Intermediate (200)",
       "name": "Intermediate (200)",
-      "rank": 30,
+      "rank": 31,
       "weighted_degree": 21
     },
     {
@@ -414,7 +427,7 @@
       "layer": "tag",
       "legacy_id": "Amazon DynamoDB",
       "name": "Amazon DynamoDB",
-      "rank": 31,
+      "rank": 32,
       "weighted_degree": 21
     },
     {
@@ -427,7 +440,7 @@
       "layer": "tag",
       "legacy_id": "AWS Lambda",
       "name": "AWS Lambda",
-      "rank": 32,
+      "rank": 33,
       "weighted_degree": 21
     },
     {
@@ -440,7 +453,7 @@
       "layer": "tag",
       "legacy_id": "Technical How-to",
       "name": "Technical How-to",
-      "rank": 33,
+      "rank": 34,
       "weighted_degree": 21
     },
     {
@@ -453,21 +466,8 @@
       "layer": "tag",
       "legacy_id": "Advanced (300)",
       "name": "Advanced (300)",
-      "rank": 34,
-      "weighted_degree": 20
-    },
-    {
-      "article_count": 7,
-      "category": "article_tag",
-      "community_id": "community:tag:Codex",
-      "degree": 9,
-      "description": "文章标签: 工程实践",
-      "id": "tag:工程实践",
-      "layer": "tag",
-      "legacy_id": "工程实践",
-      "name": "工程实践",
       "rank": 35,
-      "weighted_degree": 19
+      "weighted_degree": 20
     },
     {
       "article_count": 4,
@@ -496,6 +496,19 @@
       "weighted_degree": 16
     },
     {
+      "article_count": 7,
+      "category": "article_tag",
+      "community_id": "community:tag:Codex",
+      "degree": 2,
+      "description": "文章标签: 来源转写",
+      "id": "tag:来源转写",
+      "layer": "tag",
+      "legacy_id": "来源转写",
+      "name": "来源转写",
+      "rank": 38,
+      "weighted_degree": 14
+    },
+    {
       "article_count": 2,
       "category": "article_tag",
       "community_id": "community:tag:Computer modeling",
@@ -505,7 +518,7 @@
       "layer": "tag",
       "legacy_id": "Artificial intelligence",
       "name": "Artificial intelligence",
-      "rank": 38,
+      "rank": 39,
       "weighted_degree": 14
     },
     {
@@ -518,7 +531,7 @@
       "layer": "tag",
       "legacy_id": "Machine learning",
       "name": "Machine learning",
-      "rank": 39,
+      "rank": 40,
       "weighted_degree": 14
     },
     {
@@ -531,7 +544,7 @@
       "layer": "tag",
       "legacy_id": "Research",
       "name": "Research",
-      "rank": 40,
+      "rank": 41,
       "weighted_degree": 14
     },
     {
@@ -544,7 +557,7 @@
       "layer": "tag",
       "legacy_id": "Customer Solutions",
       "name": "Customer Solutions",
-      "rank": 41,
+      "rank": 42,
       "weighted_degree": 13
     },
     {
@@ -557,7 +570,7 @@
       "layer": "tag",
       "legacy_id": "Amazon Nova",
       "name": "Amazon Nova",
-      "rank": 42,
+      "rank": 43,
       "weighted_degree": 13
     },
     {
@@ -570,7 +583,7 @@
       "layer": "tag",
       "legacy_id": "AWS Fargate",
       "name": "AWS Fargate",
-      "rank": 43,
+      "rank": 44,
       "weighted_degree": 13
     },
     {
@@ -583,19 +596,6 @@
       "layer": "tag",
       "legacy_id": "cs.AI",
       "name": "cs.AI",
-      "rank": 44,
-      "weighted_degree": 12
-    },
-    {
-      "article_count": 6,
-      "category": "article_tag",
-      "community_id": "community:tag:Codex",
-      "degree": 2,
-      "description": "文章标签: 来源转写",
-      "id": "tag:来源转写",
-      "layer": "tag",
-      "legacy_id": "来源转写",
-      "name": "来源转写",
       "rank": 45,
       "weighted_degree": 12
     },

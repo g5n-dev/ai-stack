@@ -95,8 +95,8 @@
       "focus-shards/072-f9f73d55c14d.json",
       "focus-shards/073-0e421fbeb34f.json",
       "focus-shards/074-9d5103f231ff.json",
-      "focus-shards/075-06a095bc8b74.json",
-      "focus-shards/076-f3c1aecb118c.json",
+      "focus-shards/075-f2ebd2334f64.json",
+      "focus-shards/076-cf555b8ea636.json",
       "focus-shards/077-3dd7a0f41cca.json",
       "focus-shards/078-0269085fbd08.json",
       "focus-shards/079-3f9052b8e1f6.json",
@@ -118,7 +118,7 @@
       "focus-shards/095-5f5c1e3d5662.json",
       "focus-shards/096-fea1e6b849ab.json",
       "focus-shards/097-2eb296e2f99f.json",
-      "focus-shards/098-1de276e665f1.json",
+      "focus-shards/098-834c710d5fda.json",
       "focus-shards/099-5e083eae516f.json",
       "focus-shards/100-b84c9aab25ce.json",
       "focus-shards/101-d848f86f98fa.json",
@@ -153,7 +153,7 @@
     "tag": "tag.json",
     "tagHot": "tag.hot.json"
   },
-  "generated_at": "2026-07-19T15:19:40Z",
+  "generated_at": "2026-07-19T18:13:23Z",
   "layers": {
     "application": {
       "color": "#7aa6b8",
@@ -209,7 +209,7 @@
       "archived_article_files_skipped": 276,
       "archived_article_groups_skipped": 276,
       "avg_concepts_per_article": 0,
-      "avg_tags_per_article": 2.2108938547486034,
+      "avg_tags_per_article": 2.211261051651931,
       "canonical_duplicate_files_skipped": 0,
       "incomplete_article_files_skipped": 0,
       "incomplete_article_groups_skipped": 0,
@@ -266,7 +266,7 @@
         [
           "掘金",
           {
-            "article_count": 444,
+            "article_count": 445,
             "category": "article_tag",
             "description": "文章标签: 掘金",
             "id": "掘金",
@@ -278,13 +278,13 @@
       ],
       "synthetic_article_files_skipped": 0,
       "synthetic_article_groups_skipped": 0,
-      "total_articles": 2148,
+      "total_articles": 2149,
       "total_concept_links": 0,
       "total_concepts": 0,
       "total_tag_links": 524,
       "total_tags": 88
     },
-    "total_articles": 2148,
+    "total_articles": 2149,
     "total_communities": 10,
     "total_links": 623,
     "total_nodes": 157
