@@ -12,7 +12,7 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-07-19T03:56:07Z",
+  "generated_at": "2026-07-19T15:19:40Z",
   "items": [
     {
       "article_count": 653,
@@ -41,7 +41,7 @@
       "weighted_degree": 1223.2
     },
     {
-      "article_count": 443,
+      "article_count": 444,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 25,
@@ -51,7 +51,7 @@
       "legacy_id": "掘金",
       "name": "掘金",
       "rank": 3,
-      "weighted_degree": 1174
+      "weighted_degree": 1176
     },
     {
       "article_count": 328,
@@ -457,7 +457,7 @@
       "weighted_degree": 20
     },
     {
-      "article_count": 6,
+      "article_count": 7,
       "category": "article_tag",
       "community_id": "community:tag:Codex",
       "degree": 9,
@@ -467,7 +467,7 @@
       "legacy_id": "工程实践",
       "name": "工程实践",
       "rank": 35,
-      "weighted_degree": 17
+      "weighted_degree": 19
     },
     {
       "article_count": 4,
@@ -587,6 +587,19 @@
       "weighted_degree": 12
     },
     {
+      "article_count": 6,
+      "category": "article_tag",
+      "community_id": "community:tag:Codex",
+      "degree": 2,
+      "description": "文章标签: 来源转写",
+      "id": "tag:来源转写",
+      "layer": "tag",
+      "legacy_id": "来源转写",
+      "name": "来源转写",
+      "rank": 45,
+      "weighted_degree": 12
+    },
+    {
       "article_count": 3,
       "category": "article_tag",
       "community_id": "community:tag:Faculty",
@@ -596,7 +609,7 @@
       "layer": "tag",
       "legacy_id": "Safety",
       "name": "Safety",
-      "rank": 45,
+      "rank": 46,
       "weighted_degree": 11
     },
     {
@@ -609,7 +622,7 @@
       "layer": "application",
       "legacy_id": "webapp",
       "name": "Web应用",
-      "rank": 46,
+      "rank": 47,
       "weighted_degree": 11
     },
     {
@@ -622,21 +635,8 @@
       "layer": "tag",
       "legacy_id": "AI",
       "name": "AI",
-      "rank": 47,
-      "weighted_degree": 10.6
-    },
-    {
-      "article_count": 5,
-      "category": "article_tag",
-      "community_id": "community:tag:Codex",
-      "degree": 2,
-      "description": "文章标签: 来源转写",
-      "id": "tag:来源转写",
-      "layer": "tag",
-      "legacy_id": "来源转写",
-      "name": "来源转写",
       "rank": 48,
-      "weighted_degree": 10
+      "weighted_degree": 10.6
     },
     {
       "article_count": 1,
