@@ -1,5 +1,5 @@
 {
-  "active_count": 2146,
+  "active_count": 2147,
   "archived_count": 276,
   "complete_count": 6,
   "legacy_analysis_count": 0,
@@ -17806,6 +17806,15 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260719-juejin-ai-agent-跑长任务不能只靠一个-asyncagenttask-和-agentstep-状态机-0-460f93d9a9.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
+    },
     "posts/20260719-juejin-别再让-ai-裸奔了用-skills-让-ai-秒变专属员工-0-7f9e0dbf64.md": {
       "reasons": [
         "concise_source_card"
@@ -17848,11 +17857,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2140,
-  "source_file_count": 2422,
-  "source_tree_sha256": "75596e24dad3f368e9154f2c156de260a96549e3699f7efdb4853355a7c77160",
-  "verified_provenance_count": 2146,
+  "source_brief_count": 2141,
+  "source_file_count": 2423,
+  "source_tree_sha256": "122b98fa7b5dc58235c310ed125c2bc806c7941d6b7145d979e67d933f050a1a",
+  "verified_provenance_count": 2147,
   "warning_counts": {
-    "source_excerpt_truncated": 737
+    "source_excerpt_truncated": 738
   }
 }
