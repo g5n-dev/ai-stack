@@ -12,7 +12,7 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-07-19T18:13:23Z",
+  "generated_at": "2026-07-19T19:35:34Z",
   "items": [
     {
       "article_count": 653,
@@ -41,7 +41,7 @@
       "weighted_degree": 1223.2
     },
     {
-      "article_count": 445,
+      "article_count": 446,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 25,
@@ -51,7 +51,7 @@
       "legacy_id": "掘金",
       "name": "掘金",
       "rank": 3,
-      "weighted_degree": 1178
+      "weighted_degree": 1180
     },
     {
       "article_count": 328,
@@ -392,7 +392,7 @@
       "weighted_degree": 25
     },
     {
-      "article_count": 8,
+      "article_count": 9,
       "category": "article_tag",
       "community_id": "community:tag:Codex",
       "degree": 9,
@@ -402,7 +402,7 @@
       "legacy_id": "工程实践",
       "name": "工程实践",
       "rank": 30,
-      "weighted_degree": 21
+      "weighted_degree": 23
     },
     {
       "article_count": 5,
@@ -483,6 +483,19 @@
       "weighted_degree": 17
     },
     {
+      "article_count": 8,
+      "category": "article_tag",
+      "community_id": "community:tag:Codex",
+      "degree": 2,
+      "description": "文章标签: 来源转写",
+      "id": "tag:来源转写",
+      "layer": "tag",
+      "legacy_id": "来源转写",
+      "name": "来源转写",
+      "rank": 37,
+      "weighted_degree": 16
+    },
+    {
       "article_count": 3,
       "category": "article_tag",
       "community_id": "community:tag:Amazon DynamoDB",
@@ -492,21 +505,8 @@
       "layer": "tag",
       "legacy_id": "Amazon Quick Sight",
       "name": "Amazon Quick Sight",
-      "rank": 37,
-      "weighted_degree": 16
-    },
-    {
-      "article_count": 7,
-      "category": "article_tag",
-      "community_id": "community:tag:Codex",
-      "degree": 2,
-      "description": "文章标签: 来源转写",
-      "id": "tag:来源转写",
-      "layer": "tag",
-      "legacy_id": "来源转写",
-      "name": "来源转写",
       "rank": 38,
-      "weighted_degree": 14
+      "weighted_degree": 16
     },
     {
       "article_count": 2,
