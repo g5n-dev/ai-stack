@@ -1,0 +1,509 @@
+{
+  "community_id": "community:tag:Amazon DynamoDB",
+  "generated_at": "2026-07-20T04:08:34Z",
+  "hotspot_limit": 24,
+  "link_limit": 32,
+  "links": [
+    {
+      "id": "edge:cooccurrence:tag:AWS Lambda->tag:Technical How-to",
+      "source": "tag:AWS Lambda",
+      "strength": 1,
+      "target": "tag:Technical How-to",
+      "type": "cooccurrence",
+      "weight": 3
+    },
+    {
+      "id": "edge:cooccurrence:tag:Amazon DynamoDB->tag:AWS Lambda",
+      "source": "tag:Amazon DynamoDB",
+      "strength": 1,
+      "target": "tag:AWS Lambda",
+      "type": "cooccurrence",
+      "weight": 3
+    },
+    {
+      "id": "edge:cooccurrence:tag:Amazon DynamoDB->tag:Technical How-to",
+      "source": "tag:Amazon DynamoDB",
+      "strength": 1,
+      "target": "tag:Technical How-to",
+      "type": "cooccurrence",
+      "weight": 3
+    },
+    {
+      "id": "edge:cooccurrence:tag:Advanced (300)->tag:AWS Lambda",
+      "source": "tag:Advanced (300)",
+      "strength": 1,
+      "target": "tag:AWS Lambda",
+      "type": "cooccurrence",
+      "weight": 2
+    },
+    {
+      "id": "edge:cooccurrence:tag:Advanced (300)->tag:Amazon Bedrock",
+      "source": "tag:Advanced (300)",
+      "strength": 1,
+      "target": "tag:Amazon Bedrock",
+      "type": "cooccurrence",
+      "weight": 2
+    },
+    {
+      "id": "edge:cooccurrence:tag:Advanced (300)->tag:Amazon DynamoDB",
+      "source": "tag:Advanced (300)",
+      "strength": 1,
+      "target": "tag:Amazon DynamoDB",
+      "type": "cooccurrence",
+      "weight": 2
+    },
+    {
+      "id": "edge:cooccurrence:tag:Advanced (300)->tag:Technical How-to",
+      "source": "tag:Advanced (300)",
+      "strength": 1,
+      "target": "tag:Technical How-to",
+      "type": "cooccurrence",
+      "weight": 2
+    },
+    {
+      "id": "edge:cooccurrence:tag:Amazon Bedrock->tag:Customer Solutions",
+      "source": "tag:Amazon Bedrock",
+      "strength": 1,
+      "target": "tag:Customer Solutions",
+      "type": "cooccurrence",
+      "weight": 2
+    },
+    {
+      "id": "edge:cooccurrence:tag:AWS Fargate->tag:AWS Lambda",
+      "source": "tag:AWS Fargate",
+      "strength": 0.5,
+      "target": "tag:AWS Lambda",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:AWS Fargate->tag:Best Practices",
+      "source": "tag:AWS Fargate",
+      "strength": 0.5,
+      "target": "tag:Best Practices",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:AWS Fargate->tag:Customer Solutions",
+      "source": "tag:AWS Fargate",
+      "strength": 0.5,
+      "target": "tag:Customer Solutions",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:AWS Fargate->tag:Technical How-to",
+      "source": "tag:AWS Fargate",
+      "strength": 0.5,
+      "target": "tag:Technical How-to",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Advanced (300)->tag:AWS Fargate",
+      "source": "tag:Advanced (300)",
+      "strength": 0.5,
+      "target": "tag:AWS Fargate",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Advanced (300)->tag:Amazon CloudWatch",
+      "source": "tag:Advanced (300)",
+      "strength": 0.5,
+      "target": "tag:Amazon CloudWatch",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Advanced (300)->tag:Amazon EventBridge",
+      "source": "tag:Advanced (300)",
+      "strength": 0.5,
+      "target": "tag:Amazon EventBridge",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Advanced (300)->tag:Amazon Nova",
+      "source": "tag:Advanced (300)",
+      "strength": 0.5,
+      "target": "tag:Amazon Nova",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Advanced (300)->tag:Amazon Quick Sight",
+      "source": "tag:Advanced (300)",
+      "strength": 0.5,
+      "target": "tag:Amazon Quick Sight",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Advanced (300)->tag:Amazon SageMaker",
+      "source": "tag:Advanced (300)",
+      "strength": 0.5,
+      "target": "tag:Amazon SageMaker",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Advanced (300)->tag:Amazon Simple Storage Service (S3)",
+      "source": "tag:Advanced (300)",
+      "strength": 0.5,
+      "target": "tag:Amazon Simple Storage Service (S3)",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Advanced (300)->tag:Best Practices",
+      "source": "tag:Advanced (300)",
+      "strength": 0.5,
+      "target": "tag:Best Practices",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Advanced (300)->tag:Customer Solutions",
+      "source": "tag:Advanced (300)",
+      "strength": 0.5,
+      "target": "tag:Customer Solutions",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Amazon Bedrock->tag:AWS Fargate",
+      "source": "tag:Amazon Bedrock",
+      "strength": 0.5,
+      "target": "tag:AWS Fargate",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Amazon Bedrock->tag:AWS Lambda",
+      "source": "tag:Amazon Bedrock",
+      "strength": 0.5,
+      "target": "tag:AWS Lambda",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Amazon Bedrock->tag:Amazon DynamoDB",
+      "source": "tag:Amazon Bedrock",
+      "strength": 0.5,
+      "target": "tag:Amazon DynamoDB",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Amazon Bedrock->tag:Amazon Nova",
+      "source": "tag:Amazon Bedrock",
+      "strength": 0.5,
+      "target": "tag:Amazon Nova",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Amazon Bedrock->tag:Amazon Quick Sight",
+      "source": "tag:Amazon Bedrock",
+      "strength": 0.5,
+      "target": "tag:Amazon Quick Sight",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Amazon Bedrock->tag:Amazon Simple Storage Service (S3)",
+      "source": "tag:Amazon Bedrock",
+      "strength": 0.5,
+      "target": "tag:Amazon Simple Storage Service (S3)",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Amazon Bedrock->tag:Best Practices",
+      "source": "tag:Amazon Bedrock",
+      "strength": 0.5,
+      "target": "tag:Best Practices",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Amazon Bedrock->tag:Technical How-to",
+      "source": "tag:Amazon Bedrock",
+      "strength": 0.5,
+      "target": "tag:Technical How-to",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Amazon CloudWatch->tag:AWS Lambda",
+      "source": "tag:Amazon CloudWatch",
+      "strength": 0.5,
+      "target": "tag:AWS Lambda",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Amazon CloudWatch->tag:Amazon DynamoDB",
+      "source": "tag:Amazon CloudWatch",
+      "strength": 0.5,
+      "target": "tag:Amazon DynamoDB",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Amazon CloudWatch->tag:Amazon EventBridge",
+      "source": "tag:Amazon CloudWatch",
+      "strength": 0.5,
+      "target": "tag:Amazon EventBridge",
+      "type": "cooccurrence",
+      "weight": 1
+    }
+  ],
+  "nodes": [
+    {
+      "article_count": 6,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Amazon DynamoDB",
+      "degree": 15,
+      "description": "文章标签: Amazon Bedrock",
+      "id": "tag:Amazon Bedrock",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Amazon Bedrock",
+      "level": 6,
+      "name": "Amazon Bedrock",
+      "rank": 30,
+      "related_count": 15,
+      "weighted_degree": 25
+    },
+    {
+      "article_count": 3,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Amazon DynamoDB",
+      "degree": 16,
+      "description": "文章标签: Amazon DynamoDB",
+      "id": "tag:Amazon DynamoDB",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Amazon DynamoDB",
+      "level": 6,
+      "name": "Amazon DynamoDB",
+      "rank": 32,
+      "related_count": 16,
+      "weighted_degree": 21
+    },
+    {
+      "article_count": 3,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Amazon DynamoDB",
+      "degree": 16,
+      "description": "文章标签: AWS Lambda",
+      "id": "tag:AWS Lambda",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "AWS Lambda",
+      "level": 6,
+      "name": "AWS Lambda",
+      "rank": 33,
+      "related_count": 16,
+      "weighted_degree": 21
+    },
+    {
+      "article_count": 3,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Amazon DynamoDB",
+      "degree": 16,
+      "description": "文章标签: Technical How-to",
+      "id": "tag:Technical How-to",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Technical How-to",
+      "level": 6,
+      "name": "Technical How-to",
+      "rank": 34,
+      "related_count": 16,
+      "weighted_degree": 21
+    },
+    {
+      "article_count": 3,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Amazon DynamoDB",
+      "degree": 15,
+      "description": "文章标签: Advanced (300)",
+      "id": "tag:Advanced (300)",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Advanced (300)",
+      "level": 6,
+      "name": "Advanced (300)",
+      "rank": 35,
+      "related_count": 15,
+      "weighted_degree": 20
+    },
+    {
+      "article_count": 3,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Amazon DynamoDB",
+      "degree": 12,
+      "description": "文章标签: Amazon Quick Sight",
+      "id": "tag:Amazon Quick Sight",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Amazon Quick Sight",
+      "level": 6,
+      "name": "Amazon Quick Sight",
+      "rank": 38,
+      "related_count": 12,
+      "weighted_degree": 16
+    },
+    {
+      "article_count": 3,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Amazon DynamoDB",
+      "degree": 10,
+      "description": "文章标签: Customer Solutions",
+      "id": "tag:Customer Solutions",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Customer Solutions",
+      "level": 6,
+      "name": "Customer Solutions",
+      "rank": 42,
+      "related_count": 10,
+      "weighted_degree": 13
+    },
+    {
+      "article_count": 2,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Amazon DynamoDB",
+      "degree": 13,
+      "description": "文章标签: Amazon Nova",
+      "id": "tag:Amazon Nova",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Amazon Nova",
+      "level": 6,
+      "name": "Amazon Nova",
+      "rank": 43,
+      "related_count": 13,
+      "weighted_degree": 13
+    },
+    {
+      "article_count": 2,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Amazon DynamoDB",
+      "degree": 13,
+      "description": "文章标签: AWS Fargate",
+      "id": "tag:AWS Fargate",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "AWS Fargate",
+      "level": 6,
+      "name": "AWS Fargate",
+      "rank": 44,
+      "related_count": 13,
+      "weighted_degree": 13
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Amazon DynamoDB",
+      "degree": 7,
+      "description": "文章标签: Amazon CloudWatch",
+      "id": "tag:Amazon CloudWatch",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Amazon CloudWatch",
+      "level": 6,
+      "name": "Amazon CloudWatch",
+      "rank": 61,
+      "related_count": 7,
+      "weighted_degree": 7
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Amazon DynamoDB",
+      "degree": 7,
+      "description": "文章标签: Amazon EventBridge",
+      "id": "tag:Amazon EventBridge",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Amazon EventBridge",
+      "level": 6,
+      "name": "Amazon EventBridge",
+      "rank": 62,
+      "related_count": 7,
+      "weighted_degree": 7
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Amazon DynamoDB",
+      "degree": 7,
+      "description": "文章标签: Amazon SageMaker",
+      "id": "tag:Amazon SageMaker",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Amazon SageMaker",
+      "level": 6,
+      "name": "Amazon SageMaker",
+      "rank": 63,
+      "related_count": 7,
+      "weighted_degree": 7
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Amazon DynamoDB",
+      "degree": 7,
+      "description": "文章标签: Amazon Simple Storage Service (S3)",
+      "id": "tag:Amazon Simple Storage Service (S3)",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Amazon Simple Storage Service (S3)",
+      "level": 6,
+      "name": "Amazon Simple Storage Service (S3)",
+      "rank": 64,
+      "related_count": 7,
+      "weighted_degree": 7
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Amazon DynamoDB",
+      "degree": 6,
+      "description": "文章标签: Best Practices",
+      "id": "tag:Best Practices",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Best Practices",
+      "level": 6,
+      "name": "Best Practices",
+      "rank": 81,
+      "related_count": 6,
+      "weighted_degree": 6
+    }
+  ],
+  "stats": {
+    "total_links": 32,
+    "total_nodes": 14
+  },
+  "version": 2
+}

@@ -12,7 +12,7 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-07-20T00:15:13Z",
+  "generated_at": "2026-07-20T04:08:34Z",
   "items": [
     {
       "article_count": 653,
@@ -41,7 +41,7 @@
       "weighted_degree": 1223.2
     },
     {
-      "article_count": 446,
+      "article_count": 447,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 25,
@@ -51,7 +51,7 @@
       "legacy_id": "掘金",
       "name": "掘金",
       "rank": 3,
-      "weighted_degree": 1180
+      "weighted_degree": 1182
     },
     {
       "article_count": 328,
@@ -379,6 +379,19 @@
       "weighted_degree": 27
     },
     {
+      "article_count": 10,
+      "category": "article_tag",
+      "community_id": "community:tag:Codex",
+      "degree": 9,
+      "description": "文章标签: 工程实践",
+      "id": "tag:工程实践",
+      "layer": "tag",
+      "legacy_id": "工程实践",
+      "name": "工程实践",
+      "rank": 29,
+      "weighted_degree": 25
+    },
+    {
       "article_count": 6,
       "category": "article_tag",
       "community_id": "community:tag:Amazon DynamoDB",
@@ -388,21 +401,8 @@
       "layer": "tag",
       "legacy_id": "Amazon Bedrock",
       "name": "Amazon Bedrock",
-      "rank": 29,
-      "weighted_degree": 25
-    },
-    {
-      "article_count": 9,
-      "category": "article_tag",
-      "community_id": "community:tag:Codex",
-      "degree": 9,
-      "description": "文章标签: 工程实践",
-      "id": "tag:工程实践",
-      "layer": "tag",
-      "legacy_id": "工程实践",
-      "name": "工程实践",
       "rank": 30,
-      "weighted_degree": 23
+      "weighted_degree": 25
     },
     {
       "article_count": 5,
@@ -470,6 +470,19 @@
       "weighted_degree": 20
     },
     {
+      "article_count": 9,
+      "category": "article_tag",
+      "community_id": "community:tag:Codex",
+      "degree": 2,
+      "description": "文章标签: 来源转写",
+      "id": "tag:来源转写",
+      "layer": "tag",
+      "legacy_id": "来源转写",
+      "name": "来源转写",
+      "rank": 36,
+      "weighted_degree": 18
+    },
+    {
       "article_count": 4,
       "category": "article_tag",
       "community_id": "community:tag:Foundational (100)",
@@ -479,21 +492,8 @@
       "layer": "tag",
       "legacy_id": "Announcements",
       "name": "Announcements",
-      "rank": 36,
-      "weighted_degree": 17
-    },
-    {
-      "article_count": 8,
-      "category": "article_tag",
-      "community_id": "community:tag:Codex",
-      "degree": 2,
-      "description": "文章标签: 来源转写",
-      "id": "tag:来源转写",
-      "layer": "tag",
-      "legacy_id": "来源转写",
-      "name": "来源转写",
       "rank": 37,
-      "weighted_degree": 16
+      "weighted_degree": 17
     },
     {
       "article_count": 3,
