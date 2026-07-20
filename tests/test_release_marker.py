@@ -2,6 +2,8 @@ from __future__ import annotations
 
 import hashlib
 import json
+import subprocess
+import sys
 from pathlib import Path
 
 import pytest
@@ -16,6 +18,7 @@ from scripts import release_guard
 
 
 SHA = "a" * 40
+ROOT = Path(__file__).resolve().parents[1]
 
 
 def _write_json(path: Path, payload: object) -> str:
@@ -137,3 +140,36 @@ def test_release_guard_binds_marker_to_the_complete_pages_tree(tmp_path: Path) -
     ) == 0
     payload = json.loads(tree.read_text(encoding="utf-8"))
     assert "ai_stack_release_v1.json" in {item["path"] for item in payload["files"]}
+
+
+def test_release_guard_script_entrypoint_can_import_release_marker(tmp_path: Path) -> None:
+    public = tmp_path / "public"
+    _public_tree(public)
+    (public / "index.html").write_text("<h1>ready</h1>", encoding="utf-8")
+    marker = build_release_marker(public, exact_sha=SHA)
+    marker_path = public / "ai_stack_release_v1.json"
+    marker_path.write_text(json.dumps(marker), encoding="utf-8")
+    tree = tmp_path / "public-tree-manifest.json"
+
+    completed = subprocess.run(
+        [
+            sys.executable,
+            str(ROOT / "scripts" / "release_guard.py"),
+            "guard-marker",
+            "--public-root",
+            str(public),
+            "--marker",
+            str(marker_path),
+            "--expected-sha",
+            SHA,
+            "--tree-manifest-output",
+            str(tree),
+        ],
+        cwd=ROOT,
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+
+    assert completed.returncode == 0, completed.stderr
+    assert tree.is_file()
