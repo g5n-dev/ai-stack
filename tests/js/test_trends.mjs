@@ -698,3 +698,143 @@ test("strict shard validators reject unknown schemas, unsafe paths and oversized
     /invalid trend data/i,
   );
 });
+
+
+test("v2 validators expose event accounting while retaining the v1 rollout fallback", () => {
+  const baseStats = {
+    eligible_articles: 4,
+    unique_events: 3,
+    redundant_observations: 1,
+    topic_count: 1,
+    source_count: 3,
+    windows: {
+      "24h": { trend_count: 1, evidence_articles: 4, unique_events: 3, redundant_observations: 1, source_count: 3 },
+      "7d": { trend_count: 1, evidence_articles: 4, unique_events: 3, redundant_observations: 1, source_count: 3 },
+      "30d": { trend_count: 1, evidence_articles: 4, unique_events: 3, redundant_observations: 1, source_count: 3 },
+    },
+  };
+  const index = Trends.validateIndex({
+    schema_version: "stack_trends_index_v2",
+    generated_at: "2026-07-16T10:00:00Z",
+    data_as_of: "2026-07-16T10:00:00Z",
+    realtime: false,
+    lineage_mode: "lineage_index_v1",
+    timezone: "Asia/Shanghai",
+    default_window: "30d",
+    disclaimer: "基于本站收录证据，不代表全网热度。",
+    formula: "transparent formula",
+    normalization: {
+      quantity_target_unique_events: 10,
+      growth_neutral: 0.5,
+      acceleration_neutral: 0.5,
+      component_range: [0, 1],
+      score_range: [0, 100],
+    },
+    stats: baseStats,
+    windows: {
+      "24h": { path: "windows/24h-a.json", bytes: 1200, sha256: "a".repeat(64), trend_count: 1 },
+      "7d": { path: "windows/7d-b.json", bytes: 1200, sha256: "b".repeat(64), trend_count: 1 },
+      "30d": { path: "windows/30d-c.json", bytes: 1200, sha256: "c".repeat(64), trend_count: 1 },
+    },
+    topics: {
+      "tag:llm": { path: "topics/llm-a.json", bytes: 1200, sha256: "d".repeat(64) },
+    },
+  });
+  const value = trend({
+    graph_node_id: "tag:llm",
+    sparkline: Array(12).fill(1),
+    unique_events: 3,
+    observations: 4,
+    redundant_observations: 1,
+    source_diversity: 3,
+    detail_path: "topics/llm-a.json",
+  });
+  const windowData = Trends.validateWindow({
+    schema_version: "stack_trends_window_v2",
+    window: "30d",
+    data_as_of: index.data_as_of,
+    minimum_unique_events: 3,
+    formula: index.formula,
+    sample_notice: null,
+    facets: { sources: value.sources, scenarios: value.scenarios },
+    trends: [value],
+  }, "30d", index);
+  const topic = Trends.validateTopic({
+    schema_version: "stack_trends_topic_v2",
+    id: "tag:llm",
+    topic: "LLM",
+    graph_node_id: "tag:llm",
+    data_as_of: index.data_as_of,
+    description: "可审计主题",
+    windows: {
+      "24h": null,
+      "7d": null,
+      "30d": {
+        score: 82.4,
+        state: "rising",
+        confidence: "high",
+        unique_events: 3,
+        observations: 4,
+        redundant_observations: 1,
+        unique_sources: 3,
+        source_diversity: 3,
+        counts: { current: 3, previous: 2, pre_previous: 1 },
+        sparkline: Array(12).fill(1),
+      },
+    },
+    related_topics: [],
+    sources: value.sources,
+    scenarios: value.scenarios,
+    categories: [{ name: "模型", count: 3 }],
+    evidence: [{
+      id: `evt_${"1".repeat(64)}`,
+      observation_id: `obs_${"1".repeat(64)}`,
+      title: "代表报道",
+      summary: "代表摘要",
+      source: "arxiv",
+      published_at: "2026-07-16T09:00:00Z",
+      internal_url: "/posts/original/",
+      relation: "original",
+      associated_observations: 2,
+      related_reports: [{
+        observation_id: `obs_${"2".repeat(64)}`,
+        title: "转载报道",
+        source: "wire",
+        published_at: "2026-07-16T09:30:00Z",
+        internal_url: "/posts/reprint/",
+        relation: "syndicated",
+      }],
+    }],
+  }, "tag:llm", index);
+
+  assert.equal(index.schema_version, "stack_trends_index_v2");
+  assert.equal(windowData.trends[0].redundant_observations, 1);
+  assert.equal(topic.evidence[0].associated_observations, 2);
+  assert.equal(topic.evidence[0].related_reports[0].relation, "syndicated");
+  assert.throws(
+    () => Trends.validateWindow({
+      ...windowData,
+      trends: [{ ...value, redundant_observations: 0 }],
+    }, "30d", index),
+    /invalid trend data/i,
+  );
+});
+
+
+test("trend evidence links disclose associated reports and drill into article lineage", () => {
+  assert.deepEqual(
+    Trends.evidenceAssociationCopy({
+      associated_observations: 4,
+      internal_url: "/posts/original/",
+    }, "/archive/"),
+    {
+      count: 3,
+      label: "另有 3 条关联报道",
+      href: "/archive/posts/original/#intelligence-lineage",
+    },
+  );
+  assert.equal(
+    Trends.evidenceAssociationCopy({ associated_observations: 1, internal_url: "/posts/one/" }),
+    null,
+  );
+});

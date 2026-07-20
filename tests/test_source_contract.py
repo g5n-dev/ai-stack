@@ -214,6 +214,7 @@ def test_verifier_accepts_a_frozen_v1_digest_without_v2_fields() -> None:
     for name in ("source_completeness", "parent_snapshot_sha256"):
         contracted.pop(name)
         contracted["evidence"].pop(name)
+    contracted["evidence"]["schema_version"] = "source_evidence_v1"
     frozen_digest = "sha256:c7e7df981bf0b72977079842fca694b37d34b6184efd1218a57175c1bf9917c9"
     contracted["evidence"]["digest"] = frozen_digest
     contracted["source_snapshot_sha256"] = frozen_digest
@@ -274,6 +275,88 @@ def test_contract_digest_excludes_capture_time_and_search_snippets_are_metadata_
     assert first["source_snapshot_sha256"] == second["source_snapshot_sha256"]
     assert first["source_capture_mode"] == "metadata_only"
     assert first["content_mode"] == "source_brief"
+
+
+def test_v2_contract_separates_capture_and_source_publication_times() -> None:
+    contracted = apply_source_contract(
+        {
+            "source": "blogs_podcasts",
+            "title": "A verifiable release",
+            "url": "https://example.com/releases/agent-runtime",
+            "description": "The runtime release includes deterministic evidence metadata.",
+            "published_at": "2026-07-15T10:00:00Z",
+            "crawled_at": "2026-07-15T12:00:00Z",
+            "feed_url": "https://example.com/feed.xml",
+        }
+    )
+
+    assert contracted["evidence"]["schema_version"] == "source_evidence_v2"
+    assert contracted["captured_at"] == "2026-07-15T12:00:00Z"
+    assert contracted["source_published_at"] == "2026-07-15T10:00:00Z"
+    assert contracted["timestamp_confidence"] == "feed"
+    assert contracted["evidence"]["source_published_at"] == "2026-07-15T10:00:00Z"
+    verify_source_contract(contracted)
+
+
+def test_v2_contract_never_substitutes_publication_time_for_capture_time() -> None:
+    with pytest.raises(SourceContractError, match="capture time"):
+        apply_source_contract(
+            {
+                "source": "arxiv",
+                "title": "Publication time is not observation time",
+                "url": "https://arxiv.org/abs/2607.99999",
+                "summary": "A sufficiently complete abstract for the source contract.",
+                "published_at": "2026-07-15T10:00:00Z",
+            }
+        )
+
+
+def test_v2_timestamp_metadata_is_hash_bound() -> None:
+    contracted = apply_source_contract(
+        {
+            "source": "reddit",
+            "title": "Agent release discussion",
+            "url": "https://reddit.com/r/MachineLearning/comments/abc123/release",
+            "selftext": "Source-backed community discussion about an agent runtime release.",
+            "published_at": "2026-07-15T10:00:00Z",
+            "crawled_at": "2026-07-15T12:00:00Z",
+        }
+    )
+    tampered = dict(contracted)
+    tampered["evidence"] = dict(contracted["evidence"])
+    tampered["evidence"]["source_published_at"] = "2026-07-14T10:00:00Z"
+
+    with pytest.raises(SourceContractError, match="digest"):
+        verify_source_contract(tampered)
+
+
+def test_feed_publication_time_is_normalized_to_utc_and_unstructured_time_is_ignored() -> None:
+    feed = apply_source_contract(
+        {
+            "source": "juejin",
+            "title": "Structured feed time",
+            "url": "https://juejin.cn/post/structured-time",
+            "description": "A bounded RSS discovery excerpt.",
+            "published": "Wed, 15 Jul 2026 10:00:00 +0800",
+            "crawled_at": "2026-07-15T12:00:00Z",
+        }
+    )
+    fallback = apply_source_contract(
+        {
+            "source": "juejin",
+            "title": "Unstructured search time",
+            "url": "https://juejin.cn/post/unstructured-time",
+            "description": "search result snippet",
+            "published_at": "昨天",
+            "discovery_method": "search_fallback",
+            "crawled_at": "2026-07-15T12:00:00Z",
+        }
+    )
+
+    assert feed["source_published_at"] == "2026-07-15T02:00:00Z"
+    assert feed["timestamp_confidence"] == "feed"
+    assert fallback["source_published_at"] == ""
+    assert fallback["timestamp_confidence"] == "unknown"
 
 
 def test_arxiv_contract_preserves_original_abstract() -> None:

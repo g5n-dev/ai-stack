@@ -4,7 +4,7 @@ Juejin RSS crawler
 """
 
 import feedparser
-from datetime import datetime
+from datetime import datetime, timezone
 from typing import List, Dict
 import logging
 import html
@@ -119,7 +119,7 @@ class JuejinRSSCrawler:
                 'source_completeness': 'partial',
                 'source_is_truncated': True,
                 'source_truncation_reason': 'rss_excerpt_only',
-                'crawled_at': datetime.now().isoformat()
+                'crawled_at': datetime.now(timezone.utc).isoformat()
             }
 
         except Exception as e:

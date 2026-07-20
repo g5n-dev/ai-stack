@@ -104,6 +104,81 @@ def test_graph_template_uses_the_self_hosted_progressive_runtime() -> None:
     assert "cdn.tailwindcss.com" not in template
 
 
+def test_article_template_exposes_lazy_lineage_without_root_path_assumptions() -> None:
+    template = (LAYOUT_ROOT / "_default/single.html").read_text(encoding="utf-8")
+
+    assert '.Params.lineage_canonical_url' in template
+    assert 'content="noindex, follow"' in template
+    assert 'data-lineage-card' in template
+    assert 'data-observation-id="{{ .Params.observation_id }}"' in template
+    assert '"data/lineage/index.json" | relURL' in template
+    assert '("css/lineage.css" | relURL)' in template
+    assert '("js/lineage.js" | relURL)' in template
+    assert 'href="/"' not in template
+    assert 'href="/posts/"' not in template
+
+
+@pytest.mark.skipif(shutil.which("hugo") is None, reason="Hugo is not installed")
+def test_lineage_duplicate_renders_canonical_noindex_and_subpath_assets(tmp_path: Path) -> None:
+    site = tmp_path / "site"
+    (site / "content/posts").mkdir(parents=True)
+    themes_dir = ROOT / "blog/themes"
+    (site / "hugo.toml").write_text(
+        textwrap.dedent(
+            f"""\
+            baseURL = "https://fixture.example/archive/"
+            languageCode = "zh-CN"
+            title = "Lineage Fixture"
+            theme = "terminal-theme"
+            themesDir = "{themes_dir.as_posix()}"
+            disableKinds = ["home", "taxonomy", "term", "RSS", "sitemap", "robotsTXT", "404"]
+
+            [params]
+            description = "fixture"
+            profile_image = "/img/profile-holo.png"
+            """
+        ),
+        encoding="utf-8",
+    )
+    observation_id = "obs_" + "a" * 64
+    (site / "content/posts/reprint.md").write_text(
+        textwrap.dedent(
+            f"""\
+            ---
+            title: Reprint
+            date: 2026-07-20T00:00:00+00:00
+            observation_id: {observation_id}
+            lineage_noindex: true
+            lineage_canonical_url: /posts/original/
+            ---
+
+            Source-backed body.
+            """
+        ),
+        encoding="utf-8",
+    )
+    result = subprocess.run(
+        ["hugo", "--source", str(site), "--destination", str(site / "public"), "--quiet"],
+        check=False,
+        capture_output=True,
+        text=True,
+        timeout=60,
+    )
+    assert result.returncode == 0, result.stderr
+    soup = BeautifulSoup(
+        (site / "public/posts/reprint/index.html").read_text(encoding="utf-8"),
+        "html.parser",
+    )
+    assert soup.select_one('link[rel="canonical"]')["href"] == "https://fixture.example/archive/posts/original/"
+    assert soup.select_one('meta[name="robots"]')["content"] == "noindex, follow"
+    assert soup.body["data-pagefind-ignore"] == "all"
+    card = soup.select_one("[data-lineage-card]")
+    assert card["data-observation-id"] == observation_id
+    assert card["data-index-url"] == "/archive/data/lineage/index.json"
+    assert soup.select_one('link[href="/archive/css/lineage.css"]') is not None
+    assert soup.select_one('script[src="/archive/js/lineage.js"]') is not None
+
+
 def test_search_actions_keep_mobile_touch_targets_at_least_44px() -> None:
     template = (LAYOUT_ROOT / "search/list.html").read_text(encoding="utf-8")
     soup = BeautifulSoup(template, "html.parser")

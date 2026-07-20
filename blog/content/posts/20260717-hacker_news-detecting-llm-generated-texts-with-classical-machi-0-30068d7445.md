@@ -18,6 +18,15 @@ source_support: 1.0
 source_title_chars_original: 63
 description: "当前只保存了标题与来源元数据，未抓取外链全文。请以原始来源和 Hacker News 讨论为准。"
 external_url: https://blog.lyc8503.net/en/post/llm-classifier
+observation_id: obs_30068d7445a6d923138f19e9264cf944e49e477eaf384b809aad389d55f4687c
+revision_id: rev_5a189f1b8bda0b82679b473f78293665a2050d0204f369b3c7b4f79121b49e85
+event_id: evt_6cf5dff81abbba0ac20e7c6c6dc5429c91a8baf8b52c578d7463ad4fd2de166f
+lineage_relation: original
+parent_observation_id: null
+source_published_at: null
+first_seen_at: 2026-07-16T16:47:55Z
+last_seen_at: 2026-07-20T00:00:00Z
+timestamp_confidence: git
 ---
 
 ## 基本信息

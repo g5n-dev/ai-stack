@@ -201,3 +201,25 @@ def test_recovery_monitoring_and_delete_workflows_enforce_locked_boundaries() ->
     assert "scripts/build_lineage.py --apply-post-metadata" in rebuild
     assert order < rebuild.index("scripts/build_stack_trends.py", order)
     assert order < rebuild.index("python3 -m processor.tag_graph", order)
+
+
+def test_required_pr_check_executes_lineage_tests_and_fixed_point() -> None:
+    _, ci = _load("ci.yml")
+    for test_path in (
+        "tests/test_lineage_core.py",
+        "tests/test_lineage_assets.py",
+        "tests/test_lineage_cli.py",
+    ):
+        assert test_path in ci
+    fixed_point = ci[
+        ci.index("- name: Verify committed lineage fixed point"):
+        ci.index("- name: Verify committed Post quality manifest")
+    ]
+    assert "scripts/build_lineage.py --apply-post-metadata" in fixed_point
+    assert "scripts/verify_lineage.py --verify-hashes" in fixed_point
+    for path in (
+        "blog/content/posts",
+        "data/lineage",
+        "blog/static/data/lineage",
+    ):
+        assert path in fixed_point

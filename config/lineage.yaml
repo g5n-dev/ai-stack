@@ -1,0 +1,41 @@
+version: 1
+
+# Stable storage and browser lookup contract.
+shard_count: 128
+max_source_chars: 24576
+max_shingles: 4096
+kmv_size: 256
+max_candidates: 50
+
+# High-confidence duplicate policy. Generated article prose is never an input.
+exact_min_chars: 160
+exact_min_shingles: 48
+syndicated_min_chars: 300
+syndicated_min_shingles: 80
+syndicated_jaccard: 0.92
+syndicated_containment: 0.96
+syndicated_confidence: 0.98
+
+# Non-destructive lineage relations.
+derivative_jaccard: 0.35
+derivative_containment: 0.72
+derivative_common_shingles: 80
+same_event_hours: 72
+same_event_title_similarity: 0.85
+same_event_shared_signals: 2
+
+# Suppression fails open when a batch looks anomalous. Ratio protection starts
+# at four proposed suppressions so a single proven duplicate can still close.
+suppression_absolute_limit: 10
+suppression_ratio_limit: 0.35
+suppression_ratio_min_count: 4
+
+# Public assets remain small enough for three-request progressive drill-down.
+index_max_bytes: 65536
+shard_max_bytes: 65536
+public_max_bytes: 3145728
+public_max_files: 300
+
+boilerplate_patterns:
+  - '^subscribe (?:to|for) updates$'
+  - '^关注我们(?:获取|了解).*$'

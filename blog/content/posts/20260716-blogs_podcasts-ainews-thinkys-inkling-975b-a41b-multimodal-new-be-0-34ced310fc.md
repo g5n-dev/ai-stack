@@ -18,6 +18,15 @@ source_support: 1.0
 source_title_chars_original: 120
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://www.latent.space/p/ainews-thinkys-inkling-975b-a41b
+observation_id: obs_34ced310fc3298ab86aede96334a8a6883c6a365ddeed3ecc1db91c0d6c2fd53
+revision_id: rev_8e958f4873de8844b6a70a1f299d5793b27b8d68e9081f902f8de11f3b5188fc
+event_id: evt_f4184901a1d493ae9a218d26043b17c1cf9861cf3cad18c5c24209a8c2b4b38f
+lineage_relation: original
+parent_observation_id: null
+source_published_at: null
+first_seen_at: 2026-07-16T14:27:34Z
+last_seen_at: 2026-07-20T00:00:00Z
+timestamp_confidence: git
 ---
 
 ## 基本信息

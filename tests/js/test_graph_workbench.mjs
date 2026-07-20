@@ -80,3 +80,57 @@ test("falls back to overview when a deep-linked focus node cannot load", async (
   assert.equal(result.mode, "overview");
   assert.match(result.message, /missing node/);
 });
+
+
+test("detail focus uses the captured node id and produces a reproducible deep link", async () => {
+  const calls = [];
+  const engine = {
+    ready: Promise.resolve(),
+    mode: "community",
+    async focusNode(nodeId) {
+      calls.push(nodeId);
+      this.mode = "focus";
+      return { id: nodeId };
+    },
+  };
+
+  const result = await Workbench.focusSelectedNode(engine, "tag:AI Agent");
+  assert.deepEqual(calls, ["tag:AI Agent"]);
+  assert.equal(result.id, "tag:AI Agent");
+  assert.equal(engine.mode, "focus");
+  assert.equal(
+    Workbench.focusRequestUrl("https://ai-stack.site/archive/scenarios/?return_to=%2Ftrends%2F", "tag:AI Agent"),
+    "/archive/scenarios/?return_to=%2Ftrends%2F&mode=focus&node=tag%3AAI+Agent",
+  );
+});
+
+
+test("mode links clear stale focus state while preserving unrelated navigation state", () => {
+  assert.equal(
+    Workbench.modeRequestUrl(
+      "https://ai-stack.site/archive/scenarios/?return_to=%2Ftrends%2F&mode=focus&node=tag%3ALLM#map",
+      "overview",
+    ),
+    "/archive/scenarios/?return_to=%2Ftrends%2F#map",
+  );
+  assert.equal(
+    Workbench.modeRequestUrl(
+      "https://ai-stack.site/archive/scenarios/?return_to=%2Ftrends%2F&mode=focus&node=tag%3ALLM",
+      "community",
+    ),
+    "/archive/scenarios/?return_to=%2Ftrends%2F&mode=community",
+  );
+});
+
+
+test("detail focus rejects unsafe or missing node ids before calling the engine", async () => {
+  let calls = 0;
+  const engine = {
+    ready: Promise.resolve(),
+    async focusNode() { calls += 1; },
+  };
+  for (const nodeId of ["", "javascript:alert(1)", "tag:<script>"]) {
+    await assert.rejects(Workbench.focusSelectedNode(engine, nodeId), /node/i);
+  }
+  assert.equal(calls, 0);
+});

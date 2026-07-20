@@ -18,6 +18,15 @@ source_support: 1.0
 source_title_chars_original: 81
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://aws.amazon.com/blogs/machine-learning/transform-your-sales-organization-with-amazon-quick-your-new-agentic-ai-teammate
+observation_id: obs_41e9a3ed93ef302cebd3cd57746f335bffe488f324f6a071010bc7040b2393d9
+revision_id: rev_186f5fac3e5d4855ec5291c9b31cd3b782a202089fb6374c9b082d9c9bc5a54d
+event_id: evt_f714a9cd64e41a1d39de124f95a37dea51313bae3e70b2bc12d4eb6a396a447a
+lineage_relation: original
+parent_observation_id: null
+source_published_at: null
+first_seen_at: 2026-07-17T23:12:44Z
+last_seen_at: 2026-07-20T00:00:00Z
+timestamp_confidence: git
 ---
 
 ## 基本信息

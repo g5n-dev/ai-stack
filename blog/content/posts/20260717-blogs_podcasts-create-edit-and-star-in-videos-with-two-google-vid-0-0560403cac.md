@@ -18,6 +18,15 @@ source_support: 1.0
 source_title_chars_original: 60
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://blog.google/products-and-platforms/products/workspace/gemini-omni-personal-avatars
+observation_id: obs_0560403cacf5a7a127ad3346cf7cb4d95f0f91a7608124c700ae51ada640df2f
+revision_id: rev_52f8a0cd5b5ffebcd59ae8209c97f718f2533f3b04fa639f9f315138d3cea9af
+event_id: evt_3aaadffc07d091ff5ff91700269107e0a1392847eea7e6b2d65f8db2e5acfa4a
+lineage_relation: original
+parent_observation_id: null
+source_published_at: null
+first_seen_at: 2026-07-16T21:21:24Z
+last_seen_at: 2026-07-20T00:00:00Z
+timestamp_confidence: git
 ---
 
 ## 基本信息

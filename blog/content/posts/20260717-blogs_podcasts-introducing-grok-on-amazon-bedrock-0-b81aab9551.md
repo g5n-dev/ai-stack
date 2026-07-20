@@ -18,6 +18,15 @@ source_support: 1.0
 source_title_chars_original: 34
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://aws.amazon.com/blogs/machine-learning/introducing-grok-on-amazon-bedrock
+observation_id: obs_b81aab955185ba38ce0e119e1a04f211d4b775fea86fdd14cb839b7a61fb51c2
+revision_id: rev_a4ab916d7685d2677ddf9c6dd2c5864d3735df525cfebc3f47384e33a2de5ad4
+event_id: evt_7e6a88f4b36a3b05565f5724610e17c48a3f867de8e228e7ccf755445f8a4dd4
+lineage_relation: original
+parent_observation_id: null
+source_published_at: null
+first_seen_at: 2026-07-16T20:17:16Z
+last_seen_at: 2026-07-20T00:00:00Z
+timestamp_confidence: git
 ---
 
 ## 基本信息

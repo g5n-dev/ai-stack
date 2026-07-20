@@ -18,6 +18,15 @@ source_support: 1.0
 source_title_chars_original: 32
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://www.latent.space/p/ainews-not-much-happened-today-830
+observation_id: obs_484e4328f46223ad738befe99d5870341634c28c2c0631a3105e2afe158f0816
+revision_id: rev_93ea8b75a6c79db127d16525296e96d8e3ecf1c888731dc1098f1d430274406b
+event_id: evt_a162344605a94db8f0d0f5921fb04c51a6f1bb0a264fa9875b5906a699f6989f
+lineage_relation: original
+parent_observation_id: null
+source_published_at: null
+first_seen_at: 2026-07-18T06:24:47Z
+last_seen_at: 2026-07-20T00:00:00Z
+timestamp_confidence: git
 ---
 
 ## 基本信息

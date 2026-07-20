@@ -23,7 +23,7 @@
 
 ## 本地准备
 
-只改 UI 或文档时，不需要模型密钥：
+项目支持 Python `>=3.11,<3.14`（即 3.11–3.13）；生产 Actions 固定使用 3.11。只改 UI 或文档时，不需要模型密钥：
 
 ```bash
 cd blog
@@ -61,7 +61,8 @@ cmp --silent blog/data/content_quality.json /tmp/content_quality.json
 # 历史修复固定点
 python3 scripts/repair_historical_content.py --check
 
-# 图谱与趋势静态资产
+# 谱系、图谱与趋势静态资产
+python3 scripts/verify_lineage.py --verify-hashes
 python3 scripts/verify_graph.py --assets-only --public-dir blog/static
 python3 scripts/verify_stack_trends.py \
   --root blog/static/data/stack-trends \
@@ -94,9 +95,9 @@ Pull Request 描述至少包含：
 ## 提交与生成数据
 
 - 人工代码提交不要直接写入 `main`，使用功能分支和 PR。
-- 定时生成的 Markdown、质量清单、图谱与趋势资产由生产工作流统一提交。
+- 定时生成的 Markdown、谱系、质量清单、图谱与趋势资产由生产工作流统一提交。
 - 如果代码改动会改变确定性生成结果，请在同一 PR 中提交对应资产并说明重建命令。
-- 不要手工修改质量 manifest、图谱分片或趋势分片来绕过生成器。
+- 不要手工修改谱系、质量 manifest、图谱分片或趋势分片来绕过生成器。
 
 ## 完成定义
 
@@ -106,6 +107,6 @@ Pull Request 描述至少包含：
 - Hugo、Pagefind 和相关静态资产验证通过。
 - 无密钥、个人路径、失效链接和虚假实时指标。
 - 移动端、键盘和 reduced-motion 行为没有退化。
-- PR CI 绿色，发布路径及回滚方式清楚。
+- PR CI 绿色；发布路径、精确 SHA 的生产验证证据及恢复方式清楚。
 
 完整发布闸门见 [docs/V1_RELEASE_CHECKLIST.md](./docs/V1_RELEASE_CHECKLIST.md)。

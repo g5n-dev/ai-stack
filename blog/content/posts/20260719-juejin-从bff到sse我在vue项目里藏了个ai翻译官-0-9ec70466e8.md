@@ -19,6 +19,15 @@ source_support: 1.0
 source_title_chars_original: 27
 description: "核心结论 BFF（Backend For Frontend）作为前端与LLM之间的中间层，能够将API Key隔离在服务端，并承担流式数据的转发与格式化工作。前端只需发起普通fetch请求，即可获得处理好的流式文本，无需关注二进制流解码、SSE格式解析等底层细节。"
 external_url: https://juejin.cn/post/7663405360652795947
+observation_id: obs_9ec70466e813e1967719ed911fa8875b610e20ba937c7b48942a665b519fd37c
+revision_id: rev_78aab8dc6c08dc537edb8123370ebf72ca8353b5537a1c8bc94178d9c5e8d85b
+event_id: evt_1190dc97ecaadfedb14823022984a875054fbf8b0d97d0b0172162181482ec25
+lineage_relation: original
+parent_observation_id: null
+source_published_at: null
+first_seen_at: 2026-07-18T17:17:21Z
+last_seen_at: 2026-07-20T00:00:00Z
+timestamp_confidence: observed
 ---
 
 ## 转写说明

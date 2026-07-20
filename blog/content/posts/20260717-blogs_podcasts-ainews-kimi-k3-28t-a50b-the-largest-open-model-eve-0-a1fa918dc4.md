@@ -19,6 +19,15 @@ source_support: 1.0
 source_title_chars_original: 100
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://www.latent.space/p/ainews-kimi-k3-28t-a50b-the-largest
+observation_id: obs_a1fa918dc4b4a86f59b4e2dd6084a46703b100dbc2dc3f2211dff5713338f80a
+revision_id: rev_819fdcc590550d876f42c1f6a4567ed468a72f6e169b3b156a8e4b0a08294576
+event_id: evt_3fa8bbba06d3f57a666dc1bc01b93e57b68e335d239c3e0127c224a8e9b058ed
+lineage_relation: original
+parent_observation_id: null
+source_published_at: null
+first_seen_at: 2026-07-17T03:41:13Z
+last_seen_at: 2026-07-20T00:00:00Z
+timestamp_confidence: git
 ---
 
 ## 基本信息

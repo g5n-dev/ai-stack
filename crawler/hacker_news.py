@@ -4,7 +4,7 @@ Hacker News crawler
 """
 
 import requests
-from datetime import datetime
+from datetime import datetime, timezone
 from typing import List, Dict
 import logging
 
@@ -84,7 +84,7 @@ class HackerNewsCrawler:
                 'descendants': story_data.get('descendants', 0),
                 'hn_id': story_id,
                 'source': 'hacker_news',
-                'crawled_at': datetime.now().isoformat()
+                'crawled_at': datetime.now(timezone.utc).isoformat()
             }
 
         except Exception as e:

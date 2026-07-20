@@ -256,7 +256,7 @@ def test_hugo_external_mount_keeps_local_pages_and_uses_content_ledger() -> None
     assert text.count('target = "content"') == 1
 
 
-def test_branch_architecture_marks_the_new_coordinator_as_dormant() -> None:
+def test_branch_architecture_documents_the_active_release_coordinator() -> None:
     document = (ROOT / "docs" / "BRANCH_ARCHITECTURE.md").read_text(
         encoding="utf-8"
     )
@@ -268,9 +268,9 @@ def test_branch_architecture_marks_the_new_coordinator_as_dormant() -> None:
         "Build and Deploy",
         "System Monitoring & Content Quality Tracking",
         "17 * * * *",
-        "23 */6 * * *",
+        "41 * * * *",
         "Unit Tests",
         "当前 v1 工作流已经覆盖内容来源门禁",
-        "协调器尚未接入生产",
+        "refresh → validate → persist → build → deploy → production-verify → notify",
     ):
         assert required in document

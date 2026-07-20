@@ -18,6 +18,15 @@ source_support: 1.0
 source_title_chars_original: 105
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://www.latent.space/p/the-lab-of-the-future-should-feel
+observation_id: obs_12559ee9e76aa6b366b0fd27393eaece105305cf83afecd24b191b6fb5adb5d0
+revision_id: rev_46a62d4124a82868ff7f80663457807b61c140234b499876cd9cc883f8c6c5b8
+event_id: evt_19a85fdef2ff0faa77515a4b7eba62068feb7c351a730d33ac9dc09cafa88a4d
+lineage_relation: original
+parent_observation_id: null
+source_published_at: null
+first_seen_at: 2026-07-17T00:17:38Z
+last_seen_at: 2026-07-20T00:00:00Z
+timestamp_confidence: git
 ---
 
 ## 基本信息

@@ -928,6 +928,227 @@ class GenerateContentGuardsTest(unittest.TestCase):
                 item["_publication_payload"]["summary"],
             )
 
+    def test_generated_post_persists_hash_bound_lineage_frontmatter(self):
+        generator = self.module.SuperEnhancedContentGenerator.__new__(
+            self.module.SuperEnhancedContentGenerator
+        )
+        generator._post_index = []
+        item = self._contract(
+            {
+                "title": "Agent runtime release analysis",
+                "source": "blogs_podcasts",
+                "url": "https://example.com/analysis/runtime",
+                "description": "A source-backed derivative analysis of the runtime release.",
+                "feed_url": "https://example.com/feed.xml",
+                "published_at": "2026-07-15T10:00:00Z",
+            }
+        )
+        item.update(
+            {
+                "observation_id": "obs_" + "1" * 64,
+                "event_id": "evt_" + "2" * 64,
+                "first_seen_at": "2026-07-15T12:00:00Z",
+                "lineage_relation": "derivative",
+                "parent_observation_id": "obs_" + "3" * 64,
+            }
+        )
+
+        document = generator._format_super_enhanced_markdown(
+            item,
+            generated_at=datetime(2026, 7, 15, 13, 0, tzinfo=timezone.utc),
+        )
+        frontmatter = real_yaml.safe_load(document.split("---", 2)[1])
+
+        self.assertEqual(
+            frontmatter["source_payload_sha256"], item["source_payload_sha256"]
+        )
+        self.assertEqual(frontmatter["observation_id"], item["observation_id"])
+        self.assertEqual(frontmatter["event_id"], item["event_id"])
+        self.assertEqual(frontmatter["source_published_at"], "2026-07-15T10:00:00Z")
+        self.assertEqual(frontmatter["first_seen_at"], "2026-07-15T12:00:00Z")
+        self.assertEqual(frontmatter["timestamp_confidence"], "feed")
+        self.assertEqual(frontmatter["lineage_relation"], "derivative")
+        self.assertEqual(
+            frontmatter["parent_observation_id"], item["parent_observation_id"]
+        )
+
+    def test_lineage_policy_suppresses_cross_url_exact_copy_before_processing(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            generator = self.module.SuperEnhancedContentGenerator.__new__(
+                self.module.SuperEnhancedContentGenerator
+            )
+            generator.posts_dir = Path(temp_dir) / "posts"
+            generator.posts_dir.mkdir()
+            generator.lineage_registry_dir = Path(temp_dir) / "lineage-registry"
+            source_text = " ".join(f"evidence{index}" for index in range(180))
+            origin = self._contract(
+                {
+                    "title": "Agent Runtime production release",
+                    "source": "blogs_podcasts",
+                    "url": "https://publisher.example/runtime",
+                    "description": source_text,
+                    "feed_url": "https://publisher.example/feed.xml",
+                    "published_at": "2026-07-15T08:00:00Z",
+                }
+            )
+            mirror = self._contract(
+                {
+                    "title": "Agent Runtime production release",
+                    "source": "blogs_podcasts",
+                    "url": "https://mirror.example/runtime",
+                    "description": source_text,
+                    "feed_url": "https://mirror.example/feed.xml",
+                    "published_at": "2026-07-15T09:00:00Z",
+                }
+            )
+
+            selected = generator._apply_lineage_policy(
+                {"blogs_podcasts": [origin, mirror]},
+                observations=[origin, mirror],
+            )
+
+            self.assertEqual(selected["blogs_podcasts"], [origin])
+            self.assertEqual(origin["lineage_relation"], "original")
+            self.assertFalse(origin["lineage_suppressed"])
+            self.assertEqual(mirror["lineage_relation"], "exact_copy")
+            self.assertTrue(mirror["lineage_suppressed"])
+            self.assertEqual(origin["event_id"], mirror["event_id"])
+            self.assertEqual(mirror["parent_observation_id"], origin["observation_id"])
+            self.assertEqual(origin["first_seen_at"], "2026-07-15T12:00:00Z")
+            self.assertEqual(origin["last_seen_at"], "2026-07-15T00:00:00Z")
+            self.assertTrue(any(generator.lineage_registry_dir.rglob("*.json")))
+
+    def test_lineage_policy_keeps_derivative_as_an_independent_event(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            generator = self.module.SuperEnhancedContentGenerator.__new__(
+                self.module.SuperEnhancedContentGenerator
+            )
+            generator.posts_dir = Path(temp_dir) / "posts"
+            generator.posts_dir.mkdir()
+            generator.lineage_registry_dir = Path(temp_dir) / "lineage-registry"
+            origin_text = " ".join(f"signal{index}" for index in range(150))
+            derivative_text = " ".join(f"signal{index}" for index in range(300))
+            origin_parent = self._contract(
+                {
+                    "title": "Research Agent architecture",
+                    "source": "juejin",
+                    "url": "https://publisher.example/research",
+                    "description": "Verified discovery excerpt for the original.",
+                    "published_at": "2026-07-15T08:00:00Z",
+                }
+            )
+            analysis_parent = self._contract(
+                {
+                    "title": "Research Agent architecture explained",
+                    "source": "juejin",
+                    "url": "https://analyst.example/research",
+                    "description": "Verified discovery excerpt for the analysis.",
+                    "published_at": "2026-07-16T08:00:00Z",
+                }
+            )
+            origin = self.module.promote_juejin_full_article(origin_parent, origin_text)
+            analysis = self.module.promote_juejin_full_article(
+                analysis_parent, derivative_text
+            )
+
+            selected = generator._apply_lineage_policy(
+                {"blogs_podcasts": [origin, analysis]},
+                observations=[origin, analysis],
+            )
+
+            self.assertEqual(selected["blogs_podcasts"], [origin, analysis])
+            self.assertEqual(analysis["lineage_relation"], "derivative")
+            self.assertFalse(analysis["lineage_suppressed"])
+            self.assertNotEqual(origin["event_id"], analysis["event_id"])
+            self.assertEqual(analysis["parent_observation_id"], origin["observation_id"])
+
+    def test_run_never_sends_suppressed_copy_to_the_model_processor(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            source_text = " ".join(f"source{index}" for index in range(180))
+            origin = self._contract(
+                {
+                    "title": "Runtime release evidence",
+                    "source": "blogs_podcasts",
+                    "url": "https://publisher.example/release",
+                    "description": source_text,
+                    "feed_url": "https://publisher.example/feed.xml",
+                    "published_at": "2026-07-15T08:00:00Z",
+                }
+            )
+            copy = self._contract(
+                {
+                    "title": "Runtime release evidence",
+                    "source": "blogs_podcasts",
+                    "url": "https://mirror.example/release",
+                    "description": source_text,
+                    "feed_url": "https://mirror.example/feed.xml",
+                    "published_at": "2026-07-15T09:00:00Z",
+                }
+            )
+
+            class FakeCrawler:
+                last_observations = [origin, copy]
+
+                @staticmethod
+                def crawl_all():
+                    return {"blogs_podcasts": [origin, copy]}
+
+            class RecordingProcessor:
+                def __init__(self):
+                    self.received = None
+
+                def process_by_source(self, value):
+                    self.received = value
+                    return value
+
+            generator = self.module.SuperEnhancedContentGenerator.__new__(
+                self.module.SuperEnhancedContentGenerator
+            )
+            generator.runtime_profile = "ci"
+            generator.crawler = FakeCrawler()
+            generator.processor = RecordingProcessor()
+            generator.posts_dir = Path(temp_dir) / "posts"
+            generator.posts_dir.mkdir()
+            generator.lineage_registry_dir = Path(temp_dir) / "lineage"
+            generator.max_new_items_per_source = None
+            generator._post_index = []
+            generator._generate_posts = types.MethodType(
+                lambda self, processed, generated_at=None: (
+                    setattr(
+                        self,
+                        "last_generation_stats",
+                        {
+                            "created": 1,
+                            "skipped_existing": 0,
+                            "skipped_quality": 0,
+                            "contract_failed": 0,
+                            "generation_failed": 0,
+                        },
+                    )
+                    or 1
+                ),
+                generator,
+            )
+            generator._raise_for_fatal_post_generation_state = types.MethodType(
+                lambda self, **kwargs: None, generator
+            )
+            generator._publish_content = types.MethodType(
+                lambda self, processed: None, generator
+            )
+            original_manifest = self.module.build_content_quality_manifest
+            self.module.build_content_quality_manifest = lambda _root: {
+                "quarantined_count": 0
+            }
+            try:
+                self.assertTrue(generator.run(sanitize_relrefs=False))
+            finally:
+                self.module.build_content_quality_manifest = original_manifest
+
+            received = generator.processor.received
+            self.assertIsNotNone(received)
+            self.assertEqual(received["blogs_podcasts"], [origin])
+            self.assertTrue(copy["lineage_suppressed"])
+
     def test_generate_posts_rejects_items_without_a_crawler_contract(self):
         generated_at = datetime(2026, 7, 15, 2, 0, tzinfo=timezone.utc)
         with tempfile.TemporaryDirectory() as temp_dir:

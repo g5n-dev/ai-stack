@@ -31,6 +31,15 @@ captured_at: '2026-07-18T04:17:22.229236Z'
 source_capture_sha256: sha256:279b92d5cce9192bb053bf18bbeabf1bc95fe104a4967b53fd99f65a5651aa06
 source_capture_chars_original: 57
 source_publication_excerpt_chars: 57
+observation_id: obs_1751ef1025184216efa632cc1ba5b0e975f46d8eb5f43c9c0c741df267fe0e49
+revision_id: rev_601899327aba3619b98ffbadb87f930a3478171c9dbc13e57870b40cf1837270
+event_id: evt_1bff0da96fdc1cb90577106266d24dcec56d2e9de36add618a2249f715876d32
+lineage_relation: original
+parent_observation_id: null
+source_published_at: null
+first_seen_at: 2026-07-10T00:28:17Z
+last_seen_at: 2026-07-20T00:00:00Z
+timestamp_confidence: git
 ---
 
 ## 基本信息

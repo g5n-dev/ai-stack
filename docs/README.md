@@ -1,6 +1,6 @@
 # AI Stack 使用文档
 
-AI Stack 是“AI 情报长期档案 + 动态场景知识图谱”。它把多源采集、历史去重、内容整理、趋势挖掘、图谱探索、静态检索和 GitHub Pages 发布放进一个可版本化仓库。
+AI Stack 是“AI 情报长期档案 + 动态场景知识图谱”。它把多源采集、跨 URL 事件溯源、内容整理、趋势挖掘、图谱探索、静态检索和 GitHub Pages 发布放进一个可版本化仓库。
 
 ## 导航
 
@@ -80,10 +80,11 @@ bash scripts/run_local.sh --skip-build
 
 ```mermaid
 flowchart LR
-  S["GitHub · HN · arXiv · 掘金 · RSS"] --> D["历史 URL 去重"]
+  S["GitHub · HN · arXiv · 掘金 · RSS"] --> D["规范 URL 去重"]
   D --> C["抓取与来源契约"]
   C --> L["AI 筛选与结构化整理"]
-  L --> M["Markdown + 质量 manifest"]
+  L --> E["跨 URL 事件谱系"]
+  E --> M["Markdown + 质量 manifest"]
   M --> T["趋势分片"]
   M --> G["Graph JSON v2"]
   M --> H["Hugo + Pagefind"]
@@ -106,7 +107,7 @@ flowchart LR
 - 掘金
 - 博客/播客 RSS
 
-Reddit、X/Twitter 与 SearXNG 可以在本地按配置启用。增加来源时必须同时实现规范 URL、超时、内容完整性和去重测试。
+Reddit、X/Twitter 与 SearXNG 可以在本地按配置启用。增加来源时必须同时实现规范 URL、超时、内容完整性、事件谱系和去重测试。
 
 ### 模型
 
@@ -161,9 +162,18 @@ python3 scripts/repair_historical_content.py --check
 
 详细说明见 [HISTORICAL_CONTENT_QUALITY.md](./HISTORICAL_CONTENT_QUALITY.md)。
 
+### 事件谱系
+
+[`config/lineage.yaml`](../config/lineage.yaml) 控制跨 URL 谱系。系统只对有界的原始来源证据做确定性指纹，不把生成文章正文当成原创性证据；界面使用本站最早观测、疑似源头、转载、衍生、同事件和仅相关等可证实措辞。
+
+```bash
+python3 scripts/build_lineage.py
+python3 scripts/verify_lineage.py --verify-hashes
+```
+
 ## 趋势洞察
 
-趋势是确定性静态快照，不宣称实时流。它复用已经进入档案且通过质量闸门的证据，支持：
+趋势是确定性静态快照，不宣称实时流。它按稳定 `event_id` 统计，只有 allowlist 认可的 `same_event` 才合并；`unique_events` 是独立事件数，`redundant_observations` 是额外来源观察。它支持：
 
 - 24 小时、7 天、30 天观察窗口。
 - 新出现、上升、稳定、降温状态。
@@ -258,8 +268,9 @@ npm run build:search
 | 工作流 | 触发 | 职责 |
 | --- | --- | --- |
 | `ci.yml` | PR、手动 | 稳定测试、内容固定点、趋势/图谱/搜索构建 |
-| `deploy.yml` | main push、每小时第 17 分钟、手动 | 快速发布或完整数据刷新与 Pages 部署 |
-| `monitoring.yml` | 每 6 小时第 23 分钟、手动 | 图谱/趋势 12 小时新鲜度与故障定位 |
+| `deploy.yml` | main push、每小时第 17 分钟、手动 | `refresh → validate → persist → build → deploy → production-verify → notify`；写权与模型密钥隔离 |
+| `monitoring.yml` | 每小时第 41 分钟、手动 | 只读检查 `main`/生产 SHA 3 小时收敛与 release 12 小时新鲜度 |
+| `production-recovery.yml` | 手动 | 仅重建有 90 天生产验证回执的精确历史 SHA |
 | `delete-post.yml` | 手动 | 内容删除 dry run、派生资产重建与部署 |
 
 部署细节见 [../DEPLOYMENT.md](../DEPLOYMENT.md)。
@@ -293,7 +304,7 @@ npm run build:search
 
 ### 定时任务成功但没有新增文章
 
-历史 URL 去重可能使本轮没有新候选，这是正常结果。查看 Actions Summary 的来源候选、重复、抓取错误和质量闸门统计。
+规范 URL 去重与跨 URL 事件谱系可能使本轮没有新候选，这是正常结果。查看 Actions Summary 的来源候选、重复、抓取错误和质量闸门统计。
 
 ## 安全与成本
 

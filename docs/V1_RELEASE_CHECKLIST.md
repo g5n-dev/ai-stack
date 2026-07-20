@@ -27,7 +27,18 @@ python3 scripts/repair_historical_content.py --check
 - [ ] 无法恢复的历史来源保留透明归档原因，不发布推测正文。
 - [ ] 质量 manifest 的 `source_tree_sha256` 与当前文章树一致。
 
-## 3. 图谱数据与交互
+## 3. 事件谱系
+
+```bash
+python3 scripts/build_lineage.py
+python3 scripts/verify_lineage.py --verify-hashes
+```
+
+- [ ] 跨 URL 关系只使用有界来源证据；使用“本站最早观测/疑似源头”等可证实措辞，不宣称绝对原创。
+- [ ] 公共 lineage 分片的 path、bytes、sha256 与索引一致，且不包含来源正文或敏感值。
+- [ ] 转载、衍生、同事件与仅相关关系可区分；异常批次触发失败关闭或保守降级。
+
+## 4. 图谱数据与交互
 
 ```bash
 python3 scripts/verify_graph.py --assets-only --public-dir blog/static
@@ -40,7 +51,7 @@ node --test tests/js/graph-runtime.test.js tests/js/test_graph_workbench.mjs
 - [ ] 1280×720 与 390×844 下控件不遮挡，触控目标不少于 44px。
 - [ ] reduced-motion、页面隐藏、恢复和销毁不会留下重复动画循环。
 
-## 4. 趋势数据与下钻
+## 5. 趋势数据与下钻
 
 ```bash
 python3 scripts/build_stack_trends.py
@@ -51,11 +62,12 @@ node --test tests/js/test_trends.mjs
 ```
 
 - [ ] 24h、7d、30d 窗口均可加载，分片哈希与字节数匹配。
+- [ ] 热度按稳定 `event_id` 的 `unique_events` 计数，只合并 allowlist 认可的 `same_event`，且 `redundant_observations = observations - unique_events`。
 - [ ] 信号、来源、场景和主题筛选真实改变结果，URL 刷新后状态保持。
 - [ ] 默认节点只显示主题与状态；hover/focus 展示分数、证据与来源。
 - [ ] 每个趋势均可下钻到证据文章与相关图谱，并保留返回上下文。
 
-## 5. Hugo、搜索与静态资源
+## 6. Hugo、搜索与静态资源
 
 ```bash
 npm ci --ignore-scripts
@@ -71,25 +83,27 @@ npm run build:search
 - [ ] 首页、归档、搜索、标签、趋势、图谱、文章详情与 404 无资源错误。
 - [ ] 共享顶部导航在所有页面保持一致。
 
-## 6. 自动化与新鲜度
+## 7. 自动化与新鲜度
 
 - [ ] [`.github/workflows/ci.yml`](../.github/workflows/ci.yml) 在 PR 上通过稳定测试矩阵。
 - [ ] [`.github/workflows/deploy.yml`](../.github/workflows/deploy.yml) 的 push 路径不抓取，schedule 路径在每小时第 17 分钟刷新。
-- [ ] [`.github/workflows/monitoring.yml`](../.github/workflows/monitoring.yml) 每 6 小时验证仓库与线上图谱/趋势的新鲜度。
-- [ ] 图谱与趋势未超过 12 小时陈旧阈值；失败步骤能定位到采集、质量、派生数据、写入或部署阶段。
+- [ ] [`.github/workflows/deploy.yml`](../.github/workflows/deploy.yml) 按 `refresh → validate → persist → build → deploy → production-verify → notify` 执行，模型密钥、Git 写权与 Pages 写权隔离。
+- [ ] [`.github/workflows/monitoring.yml`](../.github/workflows/monitoring.yml) 每小时第 41 分钟只读检查生产 release。
+- [ ] `main` 与线上 SHA 在 3 小时内收敛，生产 marker 未超过 12 小时陈旧阈值；失败步骤可定位。
 - [ ] 数据生成提交使用 CAS/冲突失败关闭策略，不覆盖并发人工改动。
+- [ ] `production-verify` 通过，并产生对应精确 SHA、保留 90 天的 `verified-release-<sha>` 回执。
 
 故障处置以 [新鲜度排障手册](./operations/freshness-runbook.md) 为准。
 
-## 7. 安全与成本边界
+## 8. 安全与成本边界
 
 - [ ] 文档、Issue、PR、日志和截图中没有真实密钥、cookie、token、私有 endpoint 或完整认证请求头。
 - [ ] `.env` 未被跟踪，示例只含明显占位符。
-- [ ] Actions 权限未无故扩大；第三方 Action 使用已审查的明确 major 版本。
+- [ ] Actions 权限未无故扩大；第三方 Action 固定到已审查的完整 commit SHA。
 - [ ] 静态 UI 不需要模型密钥；完整刷新产生的模型/API 用量成本已说明。
 - [ ] 自托管前端依赖没有退回运行时 CDN。
 
-## 8. 线上烟测
+## 9. 线上烟测
 
 部署成功后逐项验证：
 
@@ -100,10 +114,10 @@ npm run build:search
 - [ ] 抽查文章详情：正文、标签、来源和返回路径完整。
 - [ ] 关键 JS、CSS、Graph JSON 与趋势分片均为 HTTP 200，无控制台异常。
 
-## 9. 发布收口
+## 10. 发布收口
 
 - [ ] PR 已关联并更新对应 Issue 的验收清单。
 - [ ] PR CI 全绿后才合并到 `main`。
-- [ ] Build and Deploy 成功，线上烟测通过。
+- [ ] Build and Deploy 成功，线上烟测与生产回执均对应本次精确 SHA。
 - [ ] Issue 附上测试、运行与部署证据后关闭。
 - [ ] 所有 v1.0 Issue 关闭后再关闭里程碑，不以“代码已写”代替“线上已验证”。

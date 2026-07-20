@@ -1,31 +1,31 @@
 # 数据新鲜度排障手册
 
-这是一份面向静态博客的轻量手册。AI Stack 不建设独立监控服务：每 6 小时由 GitHub Actions 检查线上与仓库数据是否在 **12 小时**阈值内，长期运行状态直接查看 Actions 历史与 README 徽章。
+这是一份面向静态博客的轻量手册。AI Stack 不建设独立监控服务：GitHub Actions 每小时第 41 分钟只读比较 `main` 与生产 release marker；版本分歧达到 **3 小时**或生产 release 达到 **12 小时**陈旧即失败。
 
 ## 先看三处证据
 
 1. **System Monitoring & Content Quality Tracking** 的最新运行状态。
-2. 失败运行的 **Actions Summary**：图谱和趋势分别显示仓库/线上状态、生成时间与文章数。
-3. 最近一次 **Build and Deploy** 中首个失败步骤。
+2. 失败运行的 **Actions Summary**：查看 `status`、`stale_hours`、`divergence_hours`，以及线上 marker 的精确 SHA、release ID 和生成时间。
+3. 最近一次 **Build and Deploy** 中首个失败 job；当前顺序为 `refresh → validate → persist → build → deploy → production-verify → notify`。
 
-不要把“没有新增文章”直接判断为故障。全历史 URL 去重后，本轮候选全部已存在是正常结果。
+不要把“没有新增文章”直接判断为故障。规范 URL 去重和跨 URL 事件谱系后，本轮候选全部已存在或只是同一事件的重复观察，都可能是正常结果。
 
 ## 决策顺序
 
 | 首个失败阶段 | 含义 | 首要动作 |
 | --- | --- | --- |
-| Run crawler | 采集或模型处理未完成 | 查看来源级超时、候选数和脱敏错误类型 |
-| Build historical content quality manifest | 内容质量拒绝新增/变更文章 | 定位 manifest 原因，修生成器或透明归档 |
-| Verify historical repair fixed point | 历史修复发生非预期回退 | 运行本地 `--check`，不要直接提交计划变更 |
-| Build/Verify tag graph 或 STACK trends | 派生数据 schema、分片或哈希异常 | 重建对应资产并运行验证器 |
-| Build Hugo / Build Pagefind | 模板、站内链接或搜索 catalog 异常 | 本地 clean build，修内容或模板 |
-| Commit generated data | 没有变化或写入冲突 | 无变化是成功；冲突时同步 `main` 后重跑，禁止 force push |
-| Upload artifact / Deploy to GitHub Pages | Pages 发布失败 | 检查 Pages 设置、权限和 artifact，不重新抓取内容 |
-| Verify local and live graph/trend freshness | 线上新鲜度或完整性失败 | 比较仓库与线上 `generated_at`、hash 和部署提交 |
+| `refresh` | 采集或模型处理未完成 | 查看来源级超时、候选数和脱敏错误类型 |
+| `validate` | artifact、lineage、内容质量或派生数据拒绝候选 | 定位首个验证器，修生成器或透明归档，不手改分片 |
+| `persist` | exact-base CAS 写入冲突 | 等待当前运行结束，在最新 `main` 上重跑，禁止 force push |
+| `build` | 固定点、CSS、Hugo、Pagefind 或 release guard 失败 | 本地 clean build，检查零差异与公开树门禁 |
+| `deploy` | Pages 发布失败 | 检查 Pages 设置、权限和 artifact，不重新抓取内容 |
+| `production-verify` | 线上 SHA/release ID 或关键资源未收敛 | 比较 marker、缓存与部署记录；烟测通过前不会通知 |
+| `notify` | 已验证版本的可选索引通知失败 | 站点已经验证上线；单独修通知配置，不回滚内容 |
+| `monitoring` | 线上新鲜度或版本收敛失败 | 比较 `main` SHA、marker SHA、`stale_hours` 与 `divergence_hours` |
 
 ## 采集失败
 
-1. 查看 `Run crawler` 是否真正失败，而不是成功但新增数为零。
+1. 查看 `refresh` 是否真正失败，而不是成功但新增数为零。
 2. 按来源区分网络失败、访问限制、结构解析失败和模型调用失败。
 3. 单个来源异常时保持其他来源可运行；不要为追求数量放宽正文质量门禁。
 4. 如果模型认证失败，轮换或修复 Secret 后手动执行完整刷新。
@@ -53,51 +53,49 @@ python3 scripts/repair_historical_content.py --check
 
 ## 派生数据失败
 
-图谱：
+按发布依赖顺序验证：
 
 ```bash
-python3 scripts/verify_graph.py --assets-only --public-dir blog/static
-```
-
-趋势：
-
-```bash
+python3 scripts/verify_lineage.py --verify-hashes
 python3 scripts/verify_stack_trends.py \
   --root blog/static/data/stack-trends \
   --verify-hashes
+python3 scripts/verify_graph.py --assets-only --public-dir blog/static
 ```
 
-错误通常来自索引与分片 path、bytes、sha256 或 schema 不一致。必须通过生成器重建，不能手工修改 JSON 绕过校验。
+错误通常来自索引与分片 path、bytes、sha256 或 schema 不一致。必须通过生成器重建，不能手工修改 JSON 绕过校验。趋势还应满足 `redundant_observations = observations - unique_events`，且只有 allowlist 认可的 `same_event` 才合并。
 
 ## 写入冲突
 
-生成任务以失败关闭方式保护 `main`。如果推送前远端发生变化：
+`persist` 以失败关闭方式保护 `main`。如果 expected base SHA 已变化：
 
 1. 确认新提交来自人工 PR 还是另一轮生成任务。
-2. 让失败运行结束，不执行 force push。
+2. 让失败运行结束，不执行 force push、reset 或 rebase。
 3. 在最新 `main` 上重新触发 `refresh_data=true`。
-4. 再次确认生成资产和 Hugo/Pagefind 构建通过。
+4. 再次确认 lineage、质量、趋势、图谱和 Hugo/Pagefind 固定点通过。
 
-## Pages 部署失败或线上仍是旧内容
+## Pages 部署或生产验证失败
 
-1. 确认 Build and Deploy 对应最新 `main` 提交。
-2. 检查 Upload artifact 与 Deploy to GitHub Pages 两步。
-3. 直接访问：
-   - `https://ai-stack.site/data/tag-graph/index.json`
-   - `https://ai-stack.site/data/stack-trends/index.json`
-4. 对比仓库与线上 `generated_at`；如果仓库新、线上旧，问题在构建/部署而非采集。
-5. 样式问题再比较 JS/CSS 哈希和浏览器缓存，不重跑模型生成。
+1. 确认 `build` 检出的 SHA 等于 `persist` 输出的完整 SHA。
+2. 检查 release guard、Upload Pages artifact 与 Deploy to GitHub Pages。
+3. 访问 `https://ai-stack.site/ai_stack_release_v1.json`，核对 exact SHA、release ID 与产品摘要。
+4. 如果 deploy 绿色但 production-verify 失败，检查缓存收敛、路由、共享顶部、CSS/JS、文章链接和数据分片。
+5. 样式问题比较线上与 artifact 的 JS/CSS 哈希，不重跑模型生成。
+
+production-verify 失败时不会生成 `verified-release-<sha>`，也不会执行搜索索引通知。
 
 ## 线上新鲜度失败
 
-- **仓库和线上都旧**：最近完整刷新没有产生或提交有效数据，向前追溯 scheduled Build and Deploy。
-- **仓库新、线上旧**：Pages artifact 或部署链路问题。
-- **生成时间新但 hash 错**：索引与分片代际混用或资产不完整，重新构建并部署。
-- **网络/HTTP 错误**：先确认站点和具体资源可访问，不把传输故障误判为数据陈旧。
+- **`main` 与线上 SHA 相同但超过 12 小时**：完整刷新没有推进新 release，向前追溯 scheduled Build and Deploy。
+- **`main` 新、线上旧且接近 3 小时**：persist 后的构建、Pages 部署或缓存收敛问题；查看首个失败 job。
+- **SHA 相同但 release ID/摘要不符**：marker 与公开资产代际混用，重新构建并部署。
+- **网络/HTTP 错误**：先确认站点和 marker 可访问，不把传输故障误判为数据陈旧。
 
-12 小时阈值已经为 GitHub 计划任务延迟留出余量。不要通过持续放宽阈值掩盖停止更新。
+3 小时收敛和 12 小时陈旧阈值已经为 GitHub 计划任务延迟留出余量。不要持续放宽阈值掩盖停止更新。
 
-## 手动恢复
+## 手动刷新与历史恢复
+
+重新运行主链：
 
 ```bash
 gh workflow run deploy.yml \
@@ -105,18 +103,22 @@ gh workflow run deploy.yml \
   -f refresh_data=true
 ```
 
-随后等待 Build and Deploy 成功，再手动运行监控：
+随后可以手动运行只读监控：
 
 ```bash
 gh workflow run monitoring.yml --repo g5n-dev/ai-stack
 ```
 
-恢复完成的证据是：最新部署绿色、监控绿色、线上两个索引在 12 小时内、关键页面可正常下钻；不是单纯“工作流启动了”。
+恢复完成的证据是：production-verify 绿色、对应精确 SHA 的 `verified-release-<sha>` 已保留、监控绿色且关键页面可正常下钻；不是单纯“工作流启动了”。需要回到历史版本时，使用 **Production Recovery**，目标必须是有未过期生产验证回执的完整 `main` 祖先 SHA。
+
+## 是否需要 7 天 SLO 报表
+
+对当前静态博客，它不是发布必需项。小时巡检、Actions 历史和 90 天生产验证回执已经提供可复用证据；如需周度复盘，可按需汇总部署成功率、新鲜度达标率和恢复时间，不新增数据库、日志平台或常驻报表服务，也不把 7 天窗口包装成对外可用性承诺。
 
 ## 安全边界
 
 - GitHub Actions 日志只写布尔状态、计数、错误类别、运行链接和公开资源 URL。
-- 密钥只存在于本地 `.env` 或 GitHub Actions Secrets。
+- 密钥只存在于本地 `.env` 或 GitHub Actions Secrets；公开 IndexNow ownership key 使用 repository Variable。
 - 诊断截图先裁掉终端历史、浏览器自动填充和请求头。
 - 疑似泄漏时先撤销/轮换，再提交脱敏报告。
 - 不在监控中新增数据库、持久化日志平台或常驻进程。

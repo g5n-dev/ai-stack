@@ -48,6 +48,9 @@
             this._active = false;
             this._busy = false;
             this._detailNode = null;
+            this._intelligenceSequence = 0;
+            this._intelligenceAbort = null;
+            this._busyFocusOrigin = null;
 
             this.elements = {
                 workbench: global.document.getElementById("graph-workbench"),
@@ -68,6 +71,10 @@
                 detailCommunityMembers: global.document.getElementById("detail-community-members"),
                 detailCommunityLinks: global.document.getElementById("detail-community-links"),
                 detailCommunityMemberCount: global.document.getElementById("detail-community-member-count"),
+                detailNodeIntelligence: global.document.getElementById("detail-node-intelligence"),
+                detailIntelligenceStatus: global.document.getElementById("detail-intelligence-status"),
+                detailIntelligenceList: global.document.getElementById("detail-intelligence-list"),
+                detailTrendLink: global.document.getElementById("detail-trend-link"),
                 stageMode: global.document.getElementById("stage-mode-label"),
                 capacity: global.document.getElementById("graph-capacity"),
                 consoleScope: global.document.getElementById("console-scope"),
@@ -146,6 +153,7 @@
                     await this.engine.resetView();
                     this._closeDetail();
                     this._clearSearch();
+                    this._syncModeUrl("overview");
                 } catch (error) {
                     this._showError(error);
                 }
@@ -161,6 +169,11 @@
                     this._setBusy(true);
                     try {
                         await this.engine.setMode(mode);
+                        if (mode === "focus" && this.engine.selectedNodeId) {
+                            this._syncFocusUrl(this.engine.selectedNodeId);
+                        } else {
+                            this._syncModeUrl(mode);
+                        }
                     } catch (error) {
                         this._showError(error);
                     } finally {
@@ -242,20 +255,37 @@
                 this._closeDetail();
             });
             this._listen(this.elements.detailFocus, "click", async () => {
-                const nodeId = this.engine.selectedNodeId;
+                const nodeId = this._detailNode?.id || this.engine.selectedNodeId;
                 if (!nodeId || this._busy) return;
-                this._setBusy(true);
+                this._setBusy(true, "正在加载节点邻域…");
+                let failure = null;
                 try {
                     if (this._detailNode?.layer === "community") {
                         if (this.engine.expandedCommunityId === nodeId) this.engine.fitToScreen();
                         else await this.engine.expandCommunity(nodeId);
+                    } else if (
+                        this.engine.mode === "focus" &&
+                        this._detailNode?.focusSceneRole === "core"
+                    ) {
+                        this._syncFocusUrl(nodeId);
+                        this._closeDetail();
                     } else {
-                        await this.engine.focusNode(nodeId);
+                        const focus = global.AIStackGraphWorkbench?.focusSelectedNode;
+                        if (typeof focus === "function") await focus(this.engine, nodeId);
+                        else await this.engine.focusNode(nodeId);
+                        this._setActiveMode("focus");
+                        this._syncFocusUrl(nodeId);
+                        this._closeDetail();
                     }
                 } catch (error) {
-                    this._showError(error);
+                    failure = error;
                 } finally {
                     this._setBusy(false);
+                }
+                if (failure) this._showError(failure);
+                else if (this.engine.mode === "focus") {
+                    setText(this.elements.liveState, "节点邻域已就绪");
+                    this._focusGraphStage();
                 }
             });
         }
@@ -375,6 +405,8 @@
             this._hideSearchResults();
             try {
                 await this.engine.focusNode(item.id);
+                this._setActiveMode("focus");
+                this._syncFocusUrl(item.id);
             } catch (error) {
                 this._showError(error);
             } finally {
@@ -479,9 +511,7 @@
             }
             setText(
                 this.elements.detailFocus,
-                isCommunity
-                    ? (this.engine.expandedCommunityId === node.id ? "适配社区势场" : "展开中心热点")
-                    : "进入节点邻域"
+                this._detailFocusLabel(node, isCommunity)
             );
 
             const panel = this.elements.detail;
@@ -493,6 +523,110 @@
             panel.setAttribute("aria-hidden", "false");
             panel.classList.remove("animate__fadeOutRight");
             panel.classList.add("animate__fadeInRight", "is-open");
+            this._loadNodeIntelligence(node);
+        }
+
+        _detailFocusLabel(node, isCommunity = node?.layer === "community") {
+            if (isCommunity) {
+                return this.engine.expandedCommunityId === node?.id
+                    ? "适配社区势场"
+                    : "展开中心热点";
+            }
+            if (this.engine.mode !== "focus") return "进入节点邻域";
+            return node?.focusSceneRole === "core"
+                ? "收起详情，查看完整邻域"
+                : "以此节点重新聚焦";
+        }
+
+        _syncFocusUrl(nodeId) {
+            try {
+                const builder = global.AIStackGraphWorkbench?.focusRequestUrl;
+                const next = typeof builder === "function"
+                    ? builder(global.location.href, nodeId)
+                    : null;
+                if (next) global.history?.replaceState?.(global.history.state, "", next);
+            } catch (error) {
+                global.console?.warn?.("Unable to persist graph focus URL", error);
+            }
+        }
+
+        _syncModeUrl(mode) {
+            try {
+                const builder = global.AIStackGraphWorkbench?.modeRequestUrl;
+                const next = typeof builder === "function"
+                    ? builder(global.location.href, mode)
+                    : null;
+                if (next) global.history?.replaceState?.(global.history.state, "", next);
+            } catch (error) {
+                global.console?.warn?.("Unable to persist graph mode URL", error);
+            }
+        }
+
+        _loadNodeIntelligence(node) {
+            const section = this.elements.detailNodeIntelligence;
+            const list = this.elements.detailIntelligenceList;
+            const loader = global.AIStackGraphIntelligence?.loadNodeIntelligence;
+            this._intelligenceSequence += 1;
+            const sequence = this._intelligenceSequence;
+            this._intelligenceAbort?.abort?.();
+            this._intelligenceAbort = null;
+            clearChildren(list);
+            if (!section || node?.layer === "community" || !String(node?.id || "").startsWith("tag:")) {
+                if (section) section.hidden = true;
+                return;
+            }
+            section.hidden = false;
+            setText(this.elements.detailIntelligenceStatus, "正在载入关联情报…");
+            if (typeof loader !== "function") {
+                setText(this.elements.detailIntelligenceStatus, "关联情报组件暂不可用。");
+                return;
+            }
+            const Controller = global.AbortController;
+            const controller = typeof Controller === "function" ? new Controller() : null;
+            this._intelligenceAbort = controller;
+            Promise.resolve(loader({
+                indexUrl: this.elements.workbench?.dataset.trendsIndexUrl,
+                nodeId: node.id,
+                baseUrl: global.location?.href,
+                fetchFn: global.fetch?.bind(global),
+                signal: controller?.signal
+            })).then((payload) => {
+                if (sequence !== this._intelligenceSequence || controller?.signal.aborted) return;
+                this._renderNodeIntelligence(payload);
+            }).catch((error) => {
+                if (sequence !== this._intelligenceSequence || error?.name === "AbortError") return;
+                setText(this.elements.detailIntelligenceStatus, "暂无可核验的关联情报，图谱浏览不受影响。");
+            });
+        }
+
+        _renderNodeIntelligence(payload) {
+            const list = this.elements.detailIntelligenceList;
+            clearChildren(list);
+            const articles = Array.isArray(payload?.articles) ? payload.articles.slice(0, 6) : [];
+            articles.forEach((article) => {
+                const item = global.document.createElement("li");
+                const link = global.document.createElement("a");
+                link.className = "detail-article-link";
+                link.href = String(article.article_url || "");
+                const title = global.document.createElement("strong");
+                title.textContent = String(article.title || "未命名情报");
+                const meta = global.document.createElement("span");
+                meta.textContent = `${article.source || "来源待核验"} · ${article.associated_observations || 1} 条观测`;
+                link.append(title, meta);
+                const lineage = global.document.createElement("a");
+                lineage.className = "detail-article-lineage";
+                lineage.href = String(article.lineage_url || article.article_url || "");
+                lineage.textContent = "查看溯源";
+                item.append(link, lineage);
+                list?.appendChild(item);
+            });
+            setText(
+                this.elements.detailIntelligenceStatus,
+                articles.length ? `已载入 ${articles.length} 条关联情报` : "该节点暂无可核验的关联情报。"
+            );
+            if (this.elements.detailTrendLink && payload?.trend_url) {
+                this.elements.detailTrendLink.href = String(payload.trend_url);
+            }
         }
 
         _renderCommunityInsights(insight) {
@@ -539,6 +673,9 @@
         }
 
         _closeDetail() {
+            this._intelligenceSequence += 1;
+            this._intelligenceAbort?.abort?.();
+            this._intelligenceAbort = null;
             this._detailNode = null;
             this.elements.workbench?.classList.remove("has-detail");
             const panel = this.elements.detail;
@@ -548,7 +685,21 @@
             panel.hidden = true;
         }
 
-        _setBusy(busy) {
+        _focusGraphStage() {
+            const stage = this.engine?.container;
+            if (typeof stage?.focus !== "function") return;
+            try {
+                stage.focus({ preventScroll: true });
+            } catch (_error) {
+                stage.focus();
+            }
+        }
+
+        _setBusy(busy, message = "计算中") {
+            if (busy && !this._busy) {
+                const active = global.document?.activeElement;
+                this._busyFocusOrigin = this.modeButtons.includes(active) ? active : null;
+            }
             this._busy = Boolean(busy);
             this.modeButtons.forEach((button) => {
                 button.disabled = this._busy;
@@ -556,7 +707,15 @@
             if (this.elements.detailFocus) {
                 this.elements.detailFocus.disabled = this._busy || !this.engine.selectedNodeId;
             }
-            setText(this.elements.liveState, this._busy ? "计算中" : "在线");
+            if (this._busy) setText(this.elements.liveState, message);
+            else {
+                if (this.elements.liveState?.textContent !== "连接失败") setText(this.elements.liveState, "在线");
+                const origin = this._busyFocusOrigin;
+                this._busyFocusOrigin = null;
+                if (origin && !origin.disabled && typeof origin.focus === "function") {
+                    origin.focus({ preventScroll: true });
+                }
+            }
         }
 
         _setActiveMode(mode) {
@@ -655,6 +814,9 @@
             });
             this._listeners = [];
             this._searchItems = [];
+            this._intelligenceSequence += 1;
+            this._intelligenceAbort?.abort?.();
+            this._intelligenceAbort = null;
             this.elements.workbench?.classList.remove("has-detail");
             this.engine = null;
         }

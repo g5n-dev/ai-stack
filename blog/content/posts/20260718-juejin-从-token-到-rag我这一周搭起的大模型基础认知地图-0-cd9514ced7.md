@@ -19,6 +19,15 @@ source_support: 1.0
 source_title_chars_original: 30
 description: "核心结论 LLM 生成回答的完整链路可概括为：输入文本经 Tokenizer 切分为 Token ID，再通过 Embedding 表映射为向量；Transformer 通过 Self-Attention 机制处理上下文信息；生成过程中 KV Cache 复用历史 K/V 以避免重复计算；当模型需要参数之外的知识时…"
 external_url: https://juejin.cn/post/7663518564783931401
+observation_id: obs_cd9514ced76acaec01f809f630c089248d7bd3afb00a9ba9e632ea78fd272d60
+revision_id: rev_227ec38dd4f4244fd23c9206f21b74a7e57ac8cea67cc0b41d8ff8190a2b69e2
+event_id: evt_dd6039738f0609c2d600c7f4bd827e09b91832242cb92231ac05ca41e5602600
+lineage_relation: original
+parent_observation_id: null
+source_published_at: null
+first_seen_at: 2026-07-18T12:07:56Z
+last_seen_at: 2026-07-20T00:00:00Z
+timestamp_confidence: observed
 ---
 
 ## 转写说明

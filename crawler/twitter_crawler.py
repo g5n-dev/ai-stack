@@ -188,7 +188,7 @@ class TwitterCrawler:
             if screenshot_rel:
                 tweet_data["screenshot"] = screenshot_rel
 
-            tweet_data['scraped_at'] = datetime.now().isoformat()
+            tweet_data['scraped_at'] = datetime.now(timezone.utc).isoformat()
 
             return tweet_data
 

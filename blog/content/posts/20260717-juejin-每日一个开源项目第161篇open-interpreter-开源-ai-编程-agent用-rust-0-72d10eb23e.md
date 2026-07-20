@@ -11,7 +11,7 @@ source_capture_mode: "curated_sources"
 source_completeness: "verified"
 source_is_truncated: false
 source_author: "冬奇Lab"
-source_published_at: 2026-07-17T21:50:00+08:00
+source_published_at: 2026-07-17T13:50:00Z
 fact_checked_at: 2026-07-18
 tags: ["Open Interpreter", "AI Agent", "Rust", "Codex", "Harness", "ACP", "Kimi K3", "工程实践"]
 categories: ["AI 工程", "开发工具"]
@@ -25,6 +25,14 @@ editorial_sources:
   - https://www.openinterpreter.com/docs/terminal/acp
   - https://www.openinterpreter.com/docs/terminal/sdk
   - https://www.openinterpreter.com/docs/terminal/sandbox
+observation_id: obs_72d10eb23e71a758549ac88b545edc0e91554f07a1b5fab7b9ecd56f2da0ab85
+revision_id: rev_704b3c1f7e9c26d9807b20790674ba3b8e815403bf1893b0b0cc22ea84f274be
+event_id: evt_4f341100e7dbd9672642ee0e2018f10e4e8af2f1a599c85f62fa06dd92b1b5da
+lineage_relation: original
+parent_observation_id: null
+first_seen_at: 2026-07-17T15:42:15Z
+last_seen_at: 2026-07-20T00:00:00Z
+timestamp_confidence: publisher
 ---
 
 ## 转写说明

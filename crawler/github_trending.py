@@ -5,7 +5,7 @@ GitHub Trending crawler
 
 import requests
 from bs4 import BeautifulSoup
-from datetime import datetime
+from datetime import datetime, timezone
 from typing import List, Dict
 import logging
 
@@ -120,7 +120,7 @@ class GitHubTrendingCrawler:
             'forks': forks,
             'today_stars': today_stars,
             'source': 'github_trending',
-            'crawled_at': datetime.now().isoformat()
+            'crawled_at': datetime.now(timezone.utc).isoformat()
         }
 
 

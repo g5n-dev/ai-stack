@@ -35,7 +35,7 @@
 
 | ⚙️ 一仓闭环 | 🧭 长期可追溯 |
 | --- | --- |
-| **采集 → 精炼 → 归档 → 发布** 全部在一个仓库完成，不依赖数据库、消息队列或常驻服务；最小系统也能独立运行。 | 先做历史 URL 去重，再生成摘要、标签和场景；文章保留原始来源，结论可回看、可复查。 |
+| **采集 → 精炼 → 归档 → 发布** 全部在一个仓库完成，不依赖数据库、消息队列或常驻服务；最小系统也能独立运行。 | 先按 URL 去重，再用有限来源证据识别跨 URL 的转载、衍生与同事件观察；原始来源和谱系关系都可回查。 |
 | **📈 可解释趋势** | **🕸️ 活的知识图谱** |
 | 用证据数量、增长、加速度、来源多样性与新颖度识别信号，可从排名下钻到文章证据。 | 以“技术总览 → 标签社区 → 节点邻域”渐进探索，只加载当前需要的子图。 |
 
@@ -48,8 +48,8 @@ AI Stack 把一个容易失控的情报工程压缩成可版本化的静态闭�
 
 ```mermaid
 flowchart LR
-  S["5 类生产数据源"] --> D["历史 URL 去重"]
-  D --> A["AI 筛选与内容增强"]
+  S["5 类生产数据源"] --> D["URL 去重 + 事件谱系"]
+  D --> A["AI 筛选与结构化整理"]
   A --> O["Markdown + Graph JSON v2"]
   O --> H["Hugo + Pagefind"]
   H --> P["GitHub Pages"]
@@ -146,24 +146,24 @@ bash scripts/run_local.sh --serve
 | 能力 | 说明 |
 | --- | --- |
 | 多源采集 | 生产任务持续采集 GitHub Trending、Hacker News、arXiv、掘金与博客/播客 RSS；Reddit、X/Twitter 与 SearXNG 可在本地按需启用。 |
-| 历史去重 | 使用规范化外链识别已归档内容，先去重、再限制来源预算，避免重复消耗模型和覆盖旧文章。 |
+| 事件去重与溯源 | 先按规范 URL 去重，再以有限来源证据建立跨 URL 谱系；区分本站最早观测、疑似源头、转载、衍生、同事件与仅相关，不把相似自动宣称为原创。 |
 | AI 内容管线 | 自动完成相关性筛选、摘要、翻译、评论、标签与场景分析，并保留原始来源链接。 |
 | 模型兼容层 | 基于 Anthropic SDK 与 Messages 请求结构，模型和 `base_url` 可配置。 |
 | GitHub 项目增强 | 为仓库内容补充 DeepWiki 上下文与结构化技术信息，形成适合长期阅读的项目档案。 |
 | 分层知识图谱 | 核心图、社区摘要、热点节点与焦点分片分层加载；搜索覆盖完整索引，画布只渲染当前子图。 |
-| 趋势洞察 | 复用收录证据生成确定性静态快照，支持窗口、来源、场景与信号筛选，并下钻文章或聚焦图谱节点。 |
-| 自动发布与监测 | Actions 生成内容、趋势与图谱，校验分片完整性，构建 Pages、通知搜索引擎，并独立检查线上数据新鲜度。 |
+| 趋势洞察 | 按稳定 `event_id` 计算 `unique_events`，仅合并 allowlist 认可的 `same_event`，重复观察单列为 `redundant_observations`；支持筛选与双通道下钻。 |
+| 自动发布与监测 | Actions 分离模型处理与写入权限，构建并验证精确 SHA 后发布 Pages；生产烟测通过才保留回执并通知搜索引擎。 |
 
 ## 🚦 自动化与可靠性
 
 | 触发方式 | 执行内容 | 设计目的 |
 | --- | --- | --- |
 | Push 到 `main` | 验证并部署已提交快照，不执行抓取与模型处理 | 代码与样式更新快速上线 |
-| 计划在每小时第 `17` 分钟 | 抓取、质量清单、趋势快照、图谱重建、生成数据提交与部署 | 自动刷新情报档案 |
-| 手动触发 | 按需执行完整刷新 | 故障恢复与运营控制 |
-| 每 `6` 小时第 `23` 分钟 | 检查仓库与线上趋势、图谱新鲜度 | 及时发现数据停滞 |
+| 每小时第 `17` 分钟 | 抓取、谱系/质量/趋势/图谱重建、CAS 持久化与部署 | 自动探索、整理和刷新档案 |
+| 手动触发 | 选择完整刷新或只发布；恢复仅接受有生产验证回执的精确 SHA | 故障恢复与运营控制 |
+| 每小时第 `41` 分钟 | 只读比较 `main` 与生产 release marker，检查 3 小时分歧和 12 小时陈旧阈值 | 及时发现数据或部署停滞 |
 
-生产工作流固定使用 Python `3.11`、Node.js `22` 与 Hugo Extended `0.153.4`。两条部署路径都会构建 Hugo 与 Pagefind、发布 GitHub Pages，并按配置通知搜索引擎。
+生产 DAG 为 `refresh → validate → persist → build → deploy → production-verify → notify`：模型密钥只进入只读刷新阶段，写入阶段没有模型密钥，Pages 权限只进入部署阶段。每次生产烟测成功会保留 90 天 `verified-release-<sha>` 回执；搜索通知只在验证后发生。生产固定使用 Python `3.11`、Node.js `22` 与 Hugo Extended `0.153.4`。
 
 ## ⚙️ 配置与部署
 
@@ -182,6 +182,7 @@ bash scripts/run_local.sh --serve
 - [`config/sources.yaml`](./config/sources.yaml)：来源、抓取数量、超时与搜索兜底。
 - [`config/anthropic.yaml`](./config/anthropic.yaml)：模型参数、筛选、摘要、生成、标签与场景分析。
 - [`config/stack_trends.yaml`](./config/stack_trends.yaml)：趋势窗口、评分输入、标签排除与静态分片预算。
+- [`config/lineage.yaml`](./config/lineage.yaml)：有限来源证据指纹、跨 URL 事件谱系与公开分片预算。
 - [`config/publisher.yaml`](./config/publisher.yaml)：微信、X/Twitter、Telegram 发布器，默认关闭。
 - [`runtime_profile.py`](./runtime_profile.py)：本地与 CI 的来源预算、并发与生成档位。
 
@@ -190,7 +191,7 @@ ai-stack/
 ├── crawler/             # 数据源、搜索兜底与抓取编排
 ├── processor/           # 模型兼容层、内容处理、标签与图谱
 ├── publisher/           # 可选发布器
-├── ai_stack/            # 领域模型、清单、迁移与流水线 CLI
+├── ai_stack/            # 事件谱系、领域模型、清单与流水线 CLI
 ├── blog/                # Hugo 内容、主题、静态资源与 Graph JSON
 ├── config/              # 来源、模型、发布与标签配置
 ├── scripts/             # 本地运行、校验、构建与运维脚本

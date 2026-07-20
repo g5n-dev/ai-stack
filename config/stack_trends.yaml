@@ -30,3 +30,10 @@ excluded_tags:
 # Keep source contribution neutral until a reviewed provenance-based weighting
 # policy exists. Source diversity is already an explicit trend_v1 component.
 source_weight: 0.5
+
+# `same_event` is always a visible shadow relationship, never a trend merge by
+# default. A pair may enter this reviewed allowlist only after all evidence gates
+# are met: >=24 successful refreshes, >=3 deterministic full builds, >=7 stable
+# days, and an audited false-merge rate strictly below 0.5%. The build validates
+# every field and also requires reviewed_at to be no later than the data cutoff.
+same_event_promotions: []

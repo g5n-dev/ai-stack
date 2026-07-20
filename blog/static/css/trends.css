@@ -1396,6 +1396,26 @@
   font-size: 11px;
 }
 
+.trend-evidence-lineage {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 11px;
+  border-top: 1px solid rgba(var(--primary), 0.13);
+  color: rgba(var(--primary), 0.82);
+  background: rgba(var(--primary), 0.035);
+  font-family: var(--site-font-mono);
+  font-size: 11px;
+  line-height: 1.4;
+  text-decoration: none;
+}
+
+.trend-evidence-lineage:hover,
+.trend-evidence-lineage:focus-visible {
+  color: rgb(var(--primary));
+  background: rgba(var(--primary), 0.09);
+}
+
 .trend-series {
   display: block;
   width: 100%;

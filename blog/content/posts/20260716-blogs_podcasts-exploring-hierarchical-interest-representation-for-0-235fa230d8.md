@@ -18,6 +18,15 @@ source_support: 1.0
 source_title_chars_original: 84
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://engineering.fb.com/2026/07/15/ai-research/exploring-hierarchical-interest-representation-for-meta-ads-deep-funnel-optimization
+observation_id: obs_235fa230d8103318ceecd98d1c0f446430e16476bd14eb2cb5167b58203f331f
+revision_id: rev_28761c53811b6d766c4e53e9c323ce4b3a0de7d528b79b3572fb62097738894f
+event_id: evt_c8cf05ac47d250b0a92749ac7989b693f1be538a428146224a2b0800b26761a7
+lineage_relation: original
+parent_observation_id: null
+source_published_at: null
+first_seen_at: 2026-07-15T23:17:25Z
+last_seen_at: 2026-07-20T00:00:00Z
+timestamp_confidence: git
 ---
 
 ## 基本信息

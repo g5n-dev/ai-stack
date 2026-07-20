@@ -18,6 +18,15 @@ source_support: 1.0
 source_title_chars_original: 68
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://news.mit.edu/2026/turning-2d-designs-into-3d-models-for-rapid-prototyping-0716
+observation_id: obs_660a6401b7178f7c3b8f12536335eece845af4d240f750ec8a9f8c4866f66eae
+revision_id: rev_eda4027d21289ffbc7c9b0eab5a9c25ff45f27fa26b80ae6ac7d03cbcbfcfdde
+event_id: evt_75a0d9d71db5fdf32ee7a019afdb0e9fb6791133e9fad4a790df79727202b56d
+lineage_relation: original
+parent_observation_id: null
+source_published_at: null
+first_seen_at: 2026-07-16T06:35:58Z
+last_seen_at: 2026-07-20T00:00:00Z
+timestamp_confidence: git
 ---
 
 ## 基本信息

@@ -18,6 +18,15 @@ source_support: 1.0
 source_title_chars_original: 28
 description: "当前只保存了标题与来源元数据，未抓取外链全文。请以原始来源和 Hacker News 讨论为准。"
 external_url: https://blog.greg.technology/2026/07/14/llm-networking-with-mikrotik.html
+observation_id: obs_ad58fc131d6c7250e2c9d80611366681f22243ad089c03b14f26e3cf180de112
+revision_id: rev_07d43d1035d48d913e40ba5c54e6197a12baf1e33adc0671397458f9ade595d5
+event_id: evt_ef23c98be00aa691db84f7f48c4e1987e51c8807309cccea58f19c7367e08e21
+lineage_relation: original
+parent_observation_id: null
+source_published_at: null
+first_seen_at: 2026-07-16T00:14:36Z
+last_seen_at: 2026-07-20T00:00:00Z
+timestamp_confidence: git
 ---
 
 ## 基本信息
