@@ -1034,7 +1034,10 @@ def _guard_marker(
     tree_manifest_output: Path,
     require_lineage: bool,
 ) -> dict[str, object]:
-    from scripts.release_marker import ReleaseMarkerError, verify_release_marker
+    if __package__:
+        from scripts.release_marker import ReleaseMarkerError, verify_release_marker
+    else:
+        from release_marker import ReleaseMarkerError, verify_release_marker
 
     try:
         marker_details = marker_path.lstat()
