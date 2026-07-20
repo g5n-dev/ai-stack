@@ -2138,19 +2138,23 @@ def build_lineage_assets(
         as_of = max(candidate_dates, default="1970-01-01T00:00:00Z")
     generated_at = _canonical_timestamp(as_of)
     observations: list[ObservationInput] = []
+    trusted_first_seen_ids: set[str] = set()
     errors: list[str] = []
     for path in paths:
+        git_first_seen = first_seen.get(path.resolve())
         try:
             observation = parse_historical_post(
                 path,
                 content_root=content_root,
-                first_seen_at=first_seen.get(path.resolve()),
+                first_seen_at=git_first_seen,
             )
         except (OSError, ValueError, yaml.YAMLError) as exc:
             errors.append(f"{path.as_posix()}: {exc}")
             continue
         if observation is not None:
             observations.append(observation)
+            if git_first_seen is not None:
+                trusted_first_seen_ids.add(observation.observation_id)
     if errors:
         raise LineageValidationError("failed to parse Posts: " + "; ".join(errors[:5]))
     observations.sort(key=_time_sort_key)
@@ -2173,10 +2177,20 @@ def build_lineage_assets(
             continue
         rebuilt_first = rebuilt.get("first_seen_at")
         existing_first = record.get("first_seen_at")
-        rebuilt["first_seen_at"] = min(
-            (value for value in (rebuilt_first, existing_first) if isinstance(value, str)),
-            default=None,
-        )
+        if identifier in trusted_first_seen_ids:
+            rebuilt["first_seen_at"] = min(
+                (value for value in (rebuilt_first, existing_first) if isinstance(value, str)),
+                default=None,
+            )
+        elif isinstance(existing_first, str):
+            # A shallow checkout cannot prove Git introduction time.  Keep the
+            # registry's established first observation instead of replacing
+            # it with a Post-date fallback that has weaker provenance.
+            rebuilt["first_seen_at"] = existing_first
+            if not rebuilt.get("source_published_at") and isinstance(
+                record.get("timestamp_confidence"), str
+            ):
+                rebuilt["timestamp_confidence"] = record["timestamp_confidence"]
         rebuilt_last = rebuilt.get("last_seen_at")
         existing_last = record.get("last_seen_at")
         rebuilt["last_seen_at"] = max(

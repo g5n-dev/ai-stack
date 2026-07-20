@@ -264,6 +264,59 @@ def test_build_writes_128_deterministic_internal_and_content_addressed_public_sh
     assert report["observations"] == 3
 
 
+def test_existing_git_observation_time_survives_a_shallow_rebuild(
+    tmp_path: Path,
+) -> None:
+    content_root = tmp_path / "content"
+    post = content_root / "posts" / "historical.md"
+    post.parent.mkdir(parents=True)
+    post.write_text(
+        """---
+title: Historical signal
+date: 2026-02-17T14:35:47Z
+draft: false
+source: fixture
+external_url: https://example.com/historical-signal
+source_capture_mode: metadata_only
+source_completeness: metadata_only
+source_is_truncated: false
+---
+
+## 来源摘要/节选
+
+> Historical source metadata.
+""",
+        encoding="utf-8",
+    )
+    internal = tmp_path / "internal"
+    public = tmp_path / "public"
+    git_seen = "2026-07-10T00:28:17Z"
+
+    build_lineage_assets(
+        content_root=content_root,
+        internal_dir=internal,
+        public_dir=public,
+        as_of="2026-07-20T00:00:00Z",
+        first_seen_by_path={post.resolve(): git_seen},
+    )
+    internal_before = _tree_bytes(internal)
+    public_before = _tree_bytes(public)
+
+    build_lineage_assets(
+        content_root=content_root,
+        internal_dir=internal,
+        public_dir=public,
+        as_of="2026-07-20T00:00:00Z",
+        first_seen_by_path={},
+    )
+
+    assert _tree_bytes(internal) == internal_before
+    assert _tree_bytes(public) == public_before
+    record = next(iter(LineageRegistry.load(internal)._records.values()))
+    assert record["first_seen_at"] == git_seen
+    assert record["timestamp_confidence"] == TimestampConfidence.GIT.value
+
+
 def test_public_cluster_schema_exposes_safe_timeline_and_duplicate_relation(
     tmp_path: Path,
 ) -> None:

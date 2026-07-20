@@ -27,6 +27,24 @@ def _git_first_seen(content_root: Path) -> dict[Path, str]:
         relative = content_root.resolve().relative_to(PROJECT_ROOT.resolve())
     except ValueError:
         return {}
+    try:
+        shallow = subprocess.run(
+            ["git", "rev-parse", "--is-shallow-repository"],
+            cwd=PROJECT_ROOT,
+            check=True,
+            capture_output=True,
+            text=True,
+            timeout=10,
+        )
+    except (OSError, subprocess.CalledProcessError, subprocess.TimeoutExpired):
+        return {}
+    # A depth-one checkout reports every tracked Post as added by the shallow
+    # boundary commit.  Treating that boundary as first-seen time advances
+    # last_seen_at and makes the committed registry differ between local and
+    # CI builds.  Post metadata and the existing registry remain the safe
+    # fallback until complete history is available.
+    if shallow.stdout.strip().casefold() != "false":
+        return {}
     command = [
         "git",
         "log",

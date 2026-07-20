@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import subprocess
 from pathlib import Path
 
 from scripts import build_lineage, verify_lineage
@@ -25,6 +26,55 @@ timestamp_confidence: publisher
 
 > {excerpt}
 """
+
+
+def test_git_first_seen_ignores_shallow_boundary_commits(
+    tmp_path: Path, monkeypatch: object
+) -> None:
+    content = tmp_path / "blog" / "content"
+    (content / "posts").mkdir(parents=True)
+    calls: list[list[str]] = []
+
+    def fake_run(command: list[str], **_kwargs: object) -> subprocess.CompletedProcess[str]:
+        calls.append(command)
+        return subprocess.CompletedProcess(command, 0, stdout="true\n", stderr="")
+
+    monkeypatch.setattr(build_lineage, "PROJECT_ROOT", tmp_path)
+    monkeypatch.setattr(build_lineage.subprocess, "run", fake_run)
+
+    assert build_lineage._git_first_seen(content) == {}
+    assert calls == [["git", "rev-parse", "--is-shallow-repository"]]
+
+
+def test_git_first_seen_uses_addition_history_in_complete_repository(
+    tmp_path: Path, monkeypatch: object
+) -> None:
+    content = tmp_path / "blog" / "content"
+    post = content / "posts" / "fixture.md"
+    post.parent.mkdir(parents=True)
+    calls: list[list[str]] = []
+
+    def fake_run(command: list[str], **_kwargs: object) -> subprocess.CompletedProcess[str]:
+        calls.append(command)
+        if command[-1] == "--is-shallow-repository":
+            return subprocess.CompletedProcess(command, 0, stdout="false\n", stderr="")
+        return subprocess.CompletedProcess(
+            command,
+            0,
+            stdout=(
+                "__LINEAGE_COMMIT__2026-07-01T08:00:00+00:00\n"
+                "blog/content/posts/fixture.md\n"
+            ),
+            stderr="",
+        )
+
+    monkeypatch.setattr(build_lineage, "PROJECT_ROOT", tmp_path)
+    monkeypatch.setattr(build_lineage.subprocess, "run", fake_run)
+
+    assert build_lineage._git_first_seen(content) == {
+        post.resolve(): "2026-07-01T08:00:00+00:00"
+    }
+    assert len(calls) == 2
 
 
 def test_build_and_verify_cli_return_machine_readable_success(
