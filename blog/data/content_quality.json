@@ -1,5 +1,5 @@
 {
-  "active_count": 2152,
+  "active_count": 2153,
   "archived_count": 276,
   "complete_count": 10,
   "legacy_analysis_count": 0,
@@ -17824,6 +17824,12 @@
         "source_excerpt_truncated"
       ]
     },
+    "posts/20260720-arxiv-learning-standard-model-structure-from-lhc-data-wi-0-ea871cff25.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260720-hacker_news-openai-reduces-codex-model-context-size-from-372k--0-d1255b05e8.md": {
       "reasons": [
         "concise_source_card"
@@ -17863,10 +17869,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2142,
-  "source_file_count": 2428,
-  "source_tree_sha256": "9377b06ed6f09ce2b6158696aff8344d9a1f39018d8ac448bf1df0be3b22b0d1",
-  "verified_provenance_count": 2152,
+  "source_brief_count": 2143,
+  "source_file_count": 2429,
+  "source_tree_sha256": "cb81a63ccb01eb0386197b0de979ba445758677562320b29f783e70d5991ae42",
+  "verified_provenance_count": 2153,
   "warning_counts": {
     "source_excerpt_truncated": 738
   }
