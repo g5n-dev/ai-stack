@@ -13,7 +13,13 @@
       "name": "ai-stack/main-protection-v1",
       "target": "branch",
       "enforcement": "active",
-      "bypass_actors": [],
+      "bypass_actors": [
+        {
+          "actor_id": 15368,
+          "actor_type": "Integration",
+          "bypass_mode": "always"
+        }
+      ],
       "conditions": {
         "ref_name": {
           "include": ["refs/heads/main"],
@@ -110,6 +116,17 @@
     },
     {
       "name": "data-deletion",
+      "wait_timer": 0,
+      "prevent_self_review": false,
+      "reviewers": [{"type": "User", "id": "$REPOSITORY_OWNER_ID"}],
+      "deployment_branch_policy": {
+        "protected_branches": false,
+        "custom_branch_policies": true
+      },
+      "deployment_branch_policies": [{"name": "main", "type": "branch"}]
+    },
+    {
+      "name": "production-recovery",
       "wait_timer": 0,
       "prevent_self_review": false,
       "reviewers": [{"type": "User", "id": "$REPOSITORY_OWNER_ID"}],

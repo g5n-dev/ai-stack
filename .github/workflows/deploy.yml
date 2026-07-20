@@ -2,7 +2,7 @@ name: Build and Deploy
 
 on:
   schedule:
-    # Avoid GitHub Actions' top-of-hour congestion window.
+    # 避开整点拥塞；保留已锁定的 :17 触发。
     - cron: "17 * * * *"
   workflow_dispatch:
     inputs:
@@ -19,394 +19,490 @@ concurrency:
   group: build-and-deploy-main
   cancel-in-progress: false
 
-permissions:
-  contents: write
-  pages: write
-  id-token: write
-
-env:
-  AI_STACK_RUNTIME_PROFILE: ci
-  SITE_BASE_URL: https://ai-stack.site/
-  SITEMAP_PATH: blog/public/sitemap.xml
-  BING_INDEXNOW_MAX_URLS: "80"
-  AI_STACK_REFRESH_DATA: ${{ github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.refresh_data) }}
+permissions: {}
 
 jobs:
-  build-and-deploy:
+  refresh:
     if: ${{ !(github.event_name == 'push' && github.actor == 'github-actions[bot]') }}
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 60
+    permissions:
+      contents: read
+    outputs:
+      base_sha: ${{ steps.base.outputs.base_sha }}
+    env:
+      AI_STACK_RUNTIME_PROFILE: ci
+      AI_STACK_REFRESH_DATA: ${{ github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.refresh_data) }}
     steps:
-      - name: Checkout main branch
-        uses: actions/checkout@v4
+      - name: Checkout main at workflow base
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
         with:
           ref: main
           fetch-depth: 0
 
-      - name: Configure Git
-        run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+      - name: Record exact base SHA
+        id: base
+        run: echo "base_sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
         with:
           python-version: "3.11"
-          cache: "pip"
+          cache: pip
 
-      - name: Install Python dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
-          pip install pytest==9.0.3
+      - name: Install refresh dependencies
+        run: python3 -m pip install --disable-pip-version-check -r requirements.txt
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "22"
-          cache: "npm"
-
-      - name: Install locked frontend dependencies
-        run: npm ci --ignore-scripts
-
-      - name: Run model response parsing tests
-        run: |
-          python3 -m unittest tests/test_anthropic_response_parsing.py
-
-      - name: Run search fallback tests
-        run: |
-          python3 -m unittest tests/test_search_fallback.py
-
-      - name: Run source completeness contract tests
-        env:
-          PYTHONPATH: ${{ github.workspace }}
-        run: |
-          python3 -m pytest -q \
-            tests/test_source_contract.py \
-            tests/test_juejin_full_article.py
-
-      - name: Install Playwright browsers
+      - name: Install crawler browser
         if: ${{ env.AI_STACK_REFRESH_DATA == 'true' }}
         run: |
-          if pip show playwright > /dev/null 2>&1; then
-            playwright install chromium
-            playwright install-deps chromium
-          else
-            echo "Playwright not found, skipping browser installation"
+          if python3 -m pip show playwright >/dev/null 2>&1; then
+            python3 -m playwright install --with-deps chromium
           fi
 
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
-        with:
-          hugo-version: "0.153.4"
-          extended: true
-
-      - name: Run crawler
+      - name: Refresh Posts with crawler and model
         if: ${{ env.AI_STACK_REFRESH_DATA == 'true' }}
         env:
-          PYTHONPATH: /home/runner/work/ai-stack/ai-stack
           ANTHROPIC_AUTH_TOKEN: ${{ secrets.ANTHROPIC_AUTH_TOKEN }}
           ANTHROPIC_BASE_URL: ${{ secrets.ANTHROPIC_BASE_URL }}
           ANTHROPIC_MODEL: ${{ secrets.ANTHROPIC_MODEL }}
           SEARXNG_BASE_URL: ${{ secrets.SEARXNG_BASE_URL }}
         run: |
-          echo "=== Generating Posts (crawl + process + write markdown, runtime_profile=${AI_STACK_RUNTIME_PROFILE}) ==="
-          if [ -f scripts/generate_content.py ]; then
-            python3 scripts/generate_content.py --dedupe-scope global --runtime-profile "${AI_STACK_RUNTIME_PROFILE}"
-          else
-            echo "Content generator not found, skipping..."
-          fi
+          set -euo pipefail
+          python3 scripts/generate_content.py \
+            --dedupe-scope global \
+            --runtime-profile "$AI_STACK_RUNTIME_PROFILE"
+          python3 scripts/generate_content.py --sanitize-relrefs-only
 
-      - name: Moderation cleanup (LLM)
-        if: ${{ env.AI_STACK_REFRESH_DATA == 'true' && env.AI_STACK_RUNTIME_PROFILE != 'ci' }}
+      - name: Package exact refresh handoff
         env:
-          PYTHONPATH: /home/runner/work/ai-stack/ai-stack
           ANTHROPIC_AUTH_TOKEN: ${{ secrets.ANTHROPIC_AUTH_TOKEN }}
           ANTHROPIC_BASE_URL: ${{ secrets.ANTHROPIC_BASE_URL }}
           ANTHROPIC_MODEL: ${{ secrets.ANTHROPIC_MODEL }}
-        run: |
-          echo "=== Moderation Cleanup (scan newly changed posts) ==="
-          if [ -z "${ANTHROPIC_AUTH_TOKEN}" ]; then
-            echo "ANTHROPIC_AUTH_TOKEN not set, skipping moderation cleanup"
-            exit 0
-          fi
-          python3 - <<'PY'
-          import os
-          import re
-          import subprocess
-          from pathlib import Path
-
-          import yaml
-
-          from processor.anthropic_client import AnthropicClient
-          from processor.ai_filter import AIThemeFilter
-
-          def list_changed_posts() -> list[str]:
-              out = subprocess.check_output(["git", "status", "--porcelain"], text=True)
-              paths: list[str] = []
-              for line in out.splitlines():
-                  if len(line) < 4:
-                      continue
-                  path = line[3:].strip()
-                  if not path:
-                      continue
-                  if path.startswith("blog/content/posts/") and path.endswith(".md") and not path.endswith("/.gitkeep"):
-                      paths.append(path)
-              deduped: list[str] = []
-              seen: set[str] = set()
-              for p in paths:
-                  if p in seen:
-                      continue
-                  seen.add(p)
-                  deduped.append(p)
-              return deduped
-
-          def extract_frontmatter_and_body(path: Path) -> tuple[dict, str]:
-              text = path.read_text(encoding="utf-8", errors="ignore")
-              if not text.startswith("---"):
-                  return {}, text
-              parts = text.split("\n---\n", 1)
-              if len(parts) != 2:
-                  return {}, text
-              fm_raw = parts[0].lstrip("-").strip("\n")
-              body = parts[1]
-              try:
-                  fm = yaml.safe_load(fm_raw) or {}
-                  if not isinstance(fm, dict):
-                      fm = {}
-              except Exception:
-                  fm = {}
-              return fm, body
-
-          def looks_like_meta_disclaimer(t: str) -> bool:
-              s = (t or "").strip()
-              if not s:
-                  return False
-              banned = ["由于您提供", "仅为标题", "我将基于", "鉴于您提供", "无法从提供", "我无法从"]
-              return any(b in s for b in banned)
-
-          config_path = "config/anthropic.yaml"
-          client = AnthropicClient(config_path)
-          cfg = yaml.safe_load(Path(config_path).read_text(encoding="utf-8")) or {}
-          ai_filter_cfg = ((cfg.get("anthropic") or {}).get("ai_filter") or {})
-          flt = AIThemeFilter(client, ai_filter_cfg)
-
-          changed = list_changed_posts()
-          if not changed:
-              print("No changed posts to moderate")
-              raise SystemExit(0)
-
-          deleted: list[str] = []
-          for p in changed:
-              path = Path(p)
-              if not path.exists():
-                  continue
-              fm, body = extract_frontmatter_and_body(path)
-              title = str(fm.get("title") or "").strip()
-              description = str(fm.get("description") or "").strip()
-              tags = fm.get("tags", [])
-              categories = fm.get("categories", [])
-              source = str(fm.get("source") or "").strip()
-              external_url = str(fm.get("external_url") or fm.get("url") or "").strip()
-
-              body_snippet = re.sub(r"\s+", " ", body.strip())[:900]
-              if looks_like_meta_disclaimer(body_snippet):
-                  deleted.append(p)
-                  continue
-
-              content = {
-                  "source": source,
-                  "title": title,
-                  "catchy_title": title,
-                  "description": description,
-                  "summary": body_snippet,
-                  "tags": tags if isinstance(tags, list) else [],
-                  "categories": categories if isinstance(categories, list) else [],
-                  "url": external_url,
-              }
-
-              content = flt.filter(content)
-              content = flt.moderate(content)
-
-              should_publish = bool(content.get("should_publish", True))
-              ai_related = bool(content.get("ai_related", True))
-              if (not should_publish) or (not ai_related):
-                  deleted.append(p)
-
-          if not deleted:
-              print(f"Moderation OK: scanned={len(changed)} deleted=0")
-              raise SystemExit(0)
-
-          for p in deleted:
-              proc = subprocess.run(["git", "rm", "-f", p], capture_output=True, text=True)
-              if proc.returncode != 0:
-                  try:
-                      Path(p).unlink(missing_ok=True)
-                  except Exception:
-                      pass
-          print(f"Moderation done: scanned={len(changed)} deleted={len(deleted)}")
-          for p in deleted:
-              print(f"- deleted {p}")
-          PY
-
-      - name: Sanitize broken relref links
-        if: ${{ env.AI_STACK_REFRESH_DATA == 'true' }}
-        env:
-          PYTHONPATH: /home/runner/work/ai-stack/ai-stack
-        run: |
-          echo "=== Sanitizing broken relref links ==="
-          if [ -f scripts/generate_content.py ]; then
-            python3 scripts/generate_content.py --sanitize-relrefs-only
-          else
-            echo "Content generator not found, skipping relref sanitization"
-          fi
-
-      - name: Build historical content quality manifest
-        if: ${{ env.AI_STACK_REFRESH_DATA == 'true' }}
-        env:
-          PYTHONPATH: /home/runner/work/ai-stack/ai-stack
-        run: |
-          python3 scripts/build_content_quality_manifest.py \
-            --content-root blog/content \
-            --output blog/data/content_quality.json \
-            --fail-on-quarantine \
-            --fail-on-structural-warning \
-            --fail-on-unverified-provenance
-
-      - name: Verify committed Post quality gate
-        if: ${{ env.AI_STACK_REFRESH_DATA != 'true' }}
-        env:
-          PYTHONPATH: /home/runner/work/ai-stack/ai-stack
-        run: |
-          python3 scripts/build_content_quality_manifest.py \
-            --content-root blog/content \
-            --output /tmp/content_quality.json \
-            --fail-on-quarantine \
-            --fail-on-structural-warning \
-            --fail-on-unverified-provenance
-          cmp --silent blog/data/content_quality.json /tmp/content_quality.json
-
-      - name: Verify historical repair fixed point (offline)
-        env:
-          PYTHONPATH: ${{ github.workspace }}
-        run: python3 scripts/repair_historical_content.py --check
-
-      - name: Build tag graph
-        if: ${{ env.AI_STACK_REFRESH_DATA == 'true' }}
-        env:
-          PYTHONPATH: /home/runner/work/ai-stack/ai-stack
-          TAG_GRAPH_ENABLE_CONTENT_MINING: "0"
-          TAG_INTRO_ENABLED: "0"
-          TAG_INTRO_MAX_NEW: "0"
-        run: |
-          echo "=== Building Tag Graph ==="
-          if [ -f processor/tag_graph.py ]; then
-            python3 -m processor.tag_graph
-          else
-            echo "Tag graph generator not found"
-            exit 1
-          fi
-
-      - name: Verify generated graph
-        run: |
-          if [ "${AI_STACK_REFRESH_DATA}" != "true" ]; then
-            # Pushes and delete-triggered deploys reuse already-reviewed graph
-            # assets and do not install Chromium. Validate every referenced file.
-            python3 scripts/verify_graph.py --assets-only --public-dir blog/static
-          else
-            python3 scripts/verify_graph.py
-          fi
-
-      - name: Build STACK trends
-        env:
-          PYTHONPATH: /home/runner/work/ai-stack/ai-stack
+          SEARXNG_BASE_URL: ${{ secrets.SEARXNG_BASE_URL }}
         run: |
           set -euo pipefail
-          python3 scripts/build_stack_trends.py \
-            --content-root blog/content \
-            --quality-manifest blog/data/content_quality.json \
-            --output blog/static/data/stack-trends
+          root=/tmp/refresh-handoff
+          mkdir -p "$root/blog/content/posts"
+          rsync -a --prune-empty-dirs \
+            --include='*/' --include='*.md' --exclude='*' \
+            blog/content/posts/ "$root/blog/content/posts/"
+          if [[ -d data/lineage ]]; then
+            mkdir -p "$root/data/lineage"
+            rsync -a --prune-empty-dirs \
+              --include='*/' --include='*.json' --exclude='*' \
+              data/lineage/ "$root/data/lineage/"
+          fi
+          python3 scripts/artifact_guard.py pack \
+            --profile refresh \
+            --root "$root" \
+            --archive /tmp/refresh.tar \
+            --manifest /tmp/refresh.manifest.json \
+            --reject-env ANTHROPIC_AUTH_TOKEN \
+            --reject-env ANTHROPIC_BASE_URL \
+            --reject-env SEARXNG_BASE_URL
 
-      - name: Verify STACK trend assets
-        env:
-          PYTHONPATH: /home/runner/work/ai-stack/ai-stack
+      - name: Upload refresh handoff
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: refresh-${{ github.run_id }}
+          path: |
+            /tmp/refresh.tar
+            /tmp/refresh.manifest.json
+          retention-days: 1
+          compression-level: 0
+          if-no-files-found: error
+
+  validate:
+    needs: refresh
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout exact workflow base
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
+        with:
+          ref: ${{ needs.refresh.outputs.base_sha }}
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install validation dependencies
+        run: python3 -m pip install --disable-pip-version-check -r requirements.txt
+
+      - name: Download untrusted refresh handoff
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: refresh-${{ github.run_id }}
+          path: /tmp/download-refresh
+
+      - name: Validate hashes and apply refresh handoff
         run: |
           set -euo pipefail
-          python3 scripts/verify_stack_trends.py \
-            --root blog/static/data/stack-trends \
-            --verify-hashes
-          if [ "${AI_STACK_REFRESH_DATA}" != "true" ]; then
-            git diff --exit-code -- blog/static/data/stack-trends
+          python3 scripts/artifact_guard.py validate \
+            --profile refresh \
+            --archive /tmp/download-refresh/refresh.tar \
+            --manifest /tmp/download-refresh/refresh.manifest.json \
+            --extract-to /tmp/validated-refresh
+          python3 scripts/refresh_transition_guard.py \
+            --baseline blog/content/posts \
+            --candidate /tmp/validated-refresh/blog/content/posts \
+            --max-added 500 \
+            --max-added-percent 35
+          mkdir -p blog/content/posts
+          find blog/content/posts -type f -name '*.md' -delete
+          cp -R /tmp/validated-refresh/blog/content/posts/. blog/content/posts/
+          if [[ -d /tmp/validated-refresh/data/lineage ]]; then
+            rm -rf data/lineage
+            mkdir -p data/lineage
+            cp -R /tmp/validated-refresh/data/lineage/. data/lineage/
           fi
 
-      - name: Build Hugo site
-        run: |
-          echo "=== Building Hugo Site ==="
-          if [ -f blog/config.toml ]; then
-            cd blog
-            hugo --baseURL "https://ai-stack.site/" --minify --cleanDestinationDir
-          else
-            echo "Hugo config not found, skipping build"
-            exit 1
-          fi
+      - name: Rebuild and validate derived release data without secrets
+        run: bash scripts/rebuild_release_data.sh
 
-      - name: Build Pagefind search index and result catalog
+      - name: Package exact validated handoff
         run: |
-          echo "=== Building Pagefind Search ==="
+          set -euo pipefail
+          root=/tmp/validated-handoff
+          mkdir -p \
+            "$root/blog/content/posts" \
+            "$root/blog/data" \
+            "$root/blog/static/data/stack-trends" \
+            "$root/blog/static/data/tag-graph"
+          rsync -a --prune-empty-dirs --include='*/' --include='*.md' --exclude='*' \
+            blog/content/posts/ "$root/blog/content/posts/"
+          cp blog/data/content_quality.json "$root/blog/data/content_quality.json"
+          rsync -a --prune-empty-dirs --include='*/' --include='*.json' --exclude='*' \
+            blog/static/data/stack-trends/ "$root/blog/static/data/stack-trends/"
+          rsync -a --prune-empty-dirs --include='*/' --include='*.json' --exclude='*' \
+            blog/static/data/tag-graph/ "$root/blog/static/data/tag-graph/"
+          if [[ -d data/lineage ]]; then
+            mkdir -p "$root/data/lineage"
+            rsync -a --prune-empty-dirs --include='*/' --include='*.json' --exclude='*' \
+              data/lineage/ "$root/data/lineage/"
+          fi
+          if [[ -d blog/static/data/lineage ]]; then
+            mkdir -p "$root/blog/static/data/lineage"
+            rsync -a --prune-empty-dirs --include='*/' --include='*.json' --exclude='*' \
+              blog/static/data/lineage/ "$root/blog/static/data/lineage/"
+          fi
+          python3 scripts/artifact_guard.py pack \
+            --profile validated \
+            --root "$root" \
+            --archive /tmp/validated.tar \
+            --manifest /tmp/validated.manifest.json
+
+      - name: Upload validated handoff
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: validated-${{ github.run_id }}
+          path: |
+            /tmp/validated.tar
+            /tmp/validated.manifest.json
+          retention-days: 1
+          compression-level: 0
+          if-no-files-found: error
+
+  persist:
+    needs: [refresh, validate]
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    outputs:
+      persisted_sha: ${{ steps.persist.outputs.persisted_sha }}
+    steps:
+      - name: Checkout main for exact CAS write
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Download validated handoff
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: validated-${{ github.run_id }}
+          path: /tmp/download-validated
+
+      - name: Validate exact handoff and replace allowlisted data
+        env:
+          BASE_SHA: ${{ needs.refresh.outputs.base_sha }}
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$BASE_SHA"
+          python3 scripts/artifact_guard.py validate \
+            --profile validated \
+            --archive /tmp/download-validated/validated.tar \
+            --manifest /tmp/download-validated/validated.manifest.json \
+            --extract-to /tmp/persist-input
+          find blog/content/posts -type f -name '*.md' -delete
+          cp -R /tmp/persist-input/blog/content/posts/. blog/content/posts/
+          for path in \
+            blog/static/data/stack-trends \
+            blog/static/data/tag-graph; do
+            rm -rf "$path"
+            mkdir -p "$path"
+            cp -R "/tmp/persist-input/$path/." "$path/"
+          done
+          mkdir -p blog/data
+          cp /tmp/persist-input/blog/data/content_quality.json blog/data/content_quality.json
+          for path in data/lineage blog/static/data/lineage; do
+            if [[ -d "/tmp/persist-input/$path" ]]; then
+              rm -rf "$path"
+              mkdir -p "$path"
+              cp -R "/tmp/persist-input/$path/." "$path/"
+            fi
+          done
+
+      - name: Persist validated files with exact-base CAS
+        id: persist
+        env:
+          BASE_SHA: ${{ needs.refresh.outputs.base_sha }}
+        run: |
+          set -euo pipefail
+          python3 scripts/git_cas_writer.py commit-and-push \
+            --repository . \
+            --branch main \
+            --allowed-root blog \
+            --allowed-root data \
+            --allowed-path 'blog/content/posts/*.md' \
+            --allowed-path 'blog/data/content_quality.json' \
+            --allowed-path 'blog/static/data/lineage/*.json' \
+            --allowed-path 'blog/static/data/stack-trends/*.json' \
+            --allowed-path 'blog/static/data/tag-graph/*.json' \
+            --allowed-path 'data/lineage/*.json' \
+            --allow-deletions \
+            --expected-base "${BASE_SHA}" \
+            --message 'chore(data): persist validated release [skip ci]' \
+            >/tmp/persist-receipt.json
+          persisted_sha="$(git rev-parse HEAD)"
+          git fetch --no-tags origin main
+          test "$(git rev-parse origin/main)" = "$persisted_sha"
+          echo "persisted_sha=$persisted_sha" >> "$GITHUB_OUTPUT"
+
+  build:
+    needs: persist
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: read
+    outputs:
+      exact_sha: ${{ steps.marker.outputs.exact_sha }}
+      release_id: ${{ steps.marker.outputs.release_id }}
+    steps:
+      - name: Checkout exact persisted SHA
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
+        with:
+          ref: ${{ needs.persist.outputs.persisted_sha }}
+          fetch-depth: 0
+
+      - name: Assert exact build input
+        run: test "$(git rev-parse HEAD)" = "${{ needs.persist.outputs.persisted_sha }}"
+
+      - name: Set up Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Set up Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Set up Hugo
+        uses: peaceiris/actions-hugo@dc99976453b04b1029527154fc04fef80a4a49cf
+        with:
+          hugo-version: "0.153.4"
+          extended: true
+
+      - name: Install build dependencies
+        run: |
+          python3 -m pip install --disable-pip-version-check -r requirements.txt
+          npm ci --ignore-scripts
+
+      - name: Rebuild persisted products and prove fixed point
+        run: |
+          set -euo pipefail
+          bash scripts/rebuild_release_data.sh
+          npm run build:css
+          git diff --exit-code
+          test -z "$(git status --porcelain --untracked-files=all -- \
+            data/lineage \
+            blog/content/posts \
+            blog/data/content_quality.json \
+            blog/static/css/tailwind.css \
+            blog/static/data/lineage \
+            blog/static/data/stack-trends \
+            blog/static/data/tag-graph)"
+
+      - name: Build exact Hugo and Pagefind site
+        run: |
+          set -euo pipefail
+          cd blog
+          hugo --baseURL "https://ai-stack.site/" --minify --cleanDestinationDir
+          cd ..
           ./node_modules/.bin/pagefind --site blog/public
           python3 -m ai_stack.pagefind_catalog --public-root blog/public
           test -s blog/public/pagefind/pagefind.js
           test -s blog/public/pagefind/catalog.json
-          test -s blog/public/pagefind/catalog.manifest.json
+          mkdir -p blog/public/data
+          cp blog/data/content_quality.json blog/public/data/content-quality.json
 
-      - name: Commit generated data
-        if: ${{ env.AI_STACK_REFRESH_DATA == 'true' }}
-        run: |
-          git add -A -- \
-            blog/content/posts \
-            blog/data/content_quality.json \
-            blog/static/data/tag-graph \
-            blog/static/data/stack-trends
-          if git diff --cached --quiet; then
-            echo "No content, graph, or trend changes to commit"
-            echo "- Generated data: no changes" >> "$GITHUB_STEP_SUMMARY"
-          else
-            changed_posts=$(git diff --cached --name-only --diff-filter=A -- blog/content/posts | wc -l | tr -d ' ')
-            echo "- New posts: ${changed_posts}" >> "$GITHUB_STEP_SUMMARY"
-            git commit -m "Update content, graph, and trends $(date -u +'%Y-%m-%dT%H:%M:%SZ') [skip ci]"
-            # The publish artifact has already passed Hugo, Pagefind, catalog, and
-            # graph validation. A concurrent human update must still fail closed.
-            git push origin HEAD:main
-          fi
-
-      - name: Prepare IndexNow key file
+      - name: Prepare dedicated public IndexNow ownership key
         env:
-          BING_INDEXNOW_API_KEY: ${{ secrets.BING_INDEXNOW_API_KEY }}
+          BING_INDEXNOW_OWNERSHIP_KEY: ${{ vars.BING_INDEXNOW_OWNERSHIP_KEY }}
         run: |
-          if [ -n "${BING_INDEXNOW_API_KEY}" ]; then
-            if [[ ! "${BING_INDEXNOW_API_KEY}" =~ ^[A-Za-z0-9-]{8,128}$ ]]; then
+          set -euo pipefail
+          if [[ -n "$BING_INDEXNOW_OWNERSHIP_KEY" ]]; then
+            [[ "$BING_INDEXNOW_OWNERSHIP_KEY" =~ ^[A-Za-z0-9-]{8,128}$ ]] || {
               echo "Invalid IndexNow public ownership key format" >&2
               exit 1
-            fi
-            mkdir -p blog/public
-            printf '%s' "${BING_INDEXNOW_API_KEY}" > "blog/public/${BING_INDEXNOW_API_KEY}.txt"
+            }
+            printf '%s' "$BING_INDEXNOW_OWNERSHIP_KEY" \
+              >"blog/public/${BING_INDEXNOW_OWNERSHIP_KEY}.txt"
           fi
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Create immutable release marker and guard Pages tree
+        id: marker
+        env:
+          EXACT_SHA: ${{ needs.persist.outputs.persisted_sha }}
+        run: |
+          set -euo pipefail
+          lineage_args=()
+          [[ ! -f config/lineage.yaml ]] || lineage_args+=(--require-lineage)
+          python3 scripts/release_marker.py create \
+            --public-root blog/public \
+            --exact-sha "$EXACT_SHA" \
+            --output blog/public/ai_stack_release_v1.json \
+            "${lineage_args[@]}"
+          mkdir -p /tmp/release-evidence
+          python3 scripts/release_guard.py guard-marker \
+            --public-root blog/public \
+            --marker blog/public/ai_stack_release_v1.json \
+            --expected-sha "$EXACT_SHA" \
+            --tree-manifest-output /tmp/release-evidence/public-tree-manifest.json \
+            "${lineage_args[@]}"
+          cp blog/public/ai_stack_release_v1.json /tmp/release-evidence/
+          release_id="$(python3 -c 'import json; print(json.load(open("blog/public/ai_stack_release_v1.json"))["release_id"])')"
+          echo "exact_sha=$EXACT_SHA" >> "$GITHUB_OUTPUT"
+          echo "release_id=$release_id" >> "$GITHUB_OUTPUT"
+
+      - name: Upload guarded Pages artifact
+        uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa
         with:
           path: blog/public
 
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Upload release proof
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: release-proof-${{ github.run_id }}
+          path: /tmp/release-evidence
+          retention-days: 30
+          if-no-files-found: error
 
-      - name: Notify search engines (IndexNow/Google)
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy exact guarded artifact to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e
+
+  production-verify:
+    needs: [build, deploy]
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout verifier at exact release SHA
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
+        with:
+          ref: ${{ needs.build.outputs.exact_sha }}
+
+      - name: Verify production after cache convergence
         env:
-          BING_INDEXNOW_API_KEY: ${{ secrets.BING_INDEXNOW_API_KEY }}
+          EXPECTED_SHA: ${{ needs.build.outputs.exact_sha }}
+          EXPECTED_RELEASE_ID: ${{ needs.build.outputs.release_id }}
+        run: |
+          set -euo pipefail
+          python3 scripts/production_smoke.py \
+            --base-url "https://ai-stack.site/" \
+            --expected-sha "$EXPECTED_SHA" \
+            --expected-release-id "$EXPECTED_RELEASE_ID" \
+            >/tmp/production-smoke.json
+          python3 - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          report = json.loads(Path("/tmp/production-smoke.json").read_text())
+          evidence = {
+              "schema_version": "verified_production_release_v1",
+              "exact_sha": os.environ["EXPECTED_SHA"],
+              "release_id": os.environ["EXPECTED_RELEASE_ID"],
+              "status": report["status"],
+          }
+          Path("/tmp/verified-release.json").write_text(
+              json.dumps(evidence, sort_keys=True, separators=(",", ":")) + "\n"
+          )
+          PY
+
+      - name: Retain verified release proof for recovery authorization
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: verified-release-${{ needs.build.outputs.exact_sha }}
+          path: /tmp/verified-release.json
+          retention-days: 90
+          if-no-files-found: error
+
+  notify:
+    needs: [build, production-verify]
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    environment:
+      name: production-publish
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout notifier at verified release SHA
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
+        with:
+          ref: ${{ needs.build.outputs.exact_sha }}
+
+      - name: Set up Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: "3.11"
+
+      - name: Install notifier dependency
+        run: python3 -m pip install --disable-pip-version-check requests==2.32.5
+
+      - name: Notify search indexes only after production verification
+        env:
+          SITE_BASE_URL: https://ai-stack.site/
+          BING_INDEXNOW_API_KEY: ${{ vars.BING_INDEXNOW_OWNERSHIP_KEY }}
           GOOGLE_INDEXING_API_KEY: ${{ secrets.GOOGLE_INDEXING_API_KEY }}
           GOOGLE_INDEXING_API_URL: ${{ secrets.GOOGLE_INDEXING_API_URL }}
         run: |
-          if [ -f scripts/notify_search_engines.py ]; then
-            python3 scripts/notify_search_engines.py || true
+          set -euo pipefail
+          if [[ -z "$BING_INDEXNOW_API_KEY" && -z "$GOOGLE_INDEXING_API_KEY" ]]; then
+            echo "Search index notification is not configured"
+            exit 0
           fi
+          python3 scripts/notify_search_engines.py

@@ -29,6 +29,7 @@ def test_actions_workflow_inventory_is_explicit() -> None:
         "delete-post.yml",
         "deploy.yml",
         "monitoring.yml",
+        "production-recovery.yml",
     }
 
 
@@ -54,7 +55,7 @@ def test_pr_ci_keeps_the_existing_single_required_check() -> None:
     assert "browser-e2e" not in text
 
 
-def test_deploy_keeps_a_single_fail_closed_job_flow() -> None:
+def test_deploy_uses_a_fail_closed_least_privilege_job_flow() -> None:
     workflow, text = _workflow("deploy.yml")
     assert workflow["name"] == "Build and Deploy"
     assert workflow["on"] == {
@@ -75,68 +76,38 @@ def test_deploy_keeps_a_single_fail_closed_job_flow() -> None:
         "group": "build-and-deploy-main",
         "cancel-in-progress": "false",
     }
-    assert workflow["permissions"] == {
-        "contents": "write",
-        "pages": "write",
-        "id-token": "write",
-    }
+    assert workflow["permissions"] == {}
     jobs = _jobs(workflow)
-    assert tuple(jobs) == ("build-and-deploy",)
-    assert jobs["build-and-deploy"]["if"] == (
+    assert tuple(jobs) == (
+        "refresh",
+        "validate",
+        "persist",
+        "build",
+        "deploy",
+        "production-verify",
+        "notify",
+    )
+    assert jobs["refresh"]["if"] == (
         "${{ !(github.event_name == 'push' && github.actor == 'github-actions[bot]') }}"
     )
-    for dormant_component in (
-        "git_cas_writer.py",
-        "release_guard.py",
-        "artifact_guard.py",
-        "persist_receipt",
-    ):
-        assert dormant_component not in text
-
-    steps = jobs["build-and-deploy"]["steps"]
-    assert isinstance(steps, list)
-    step_names = [step.get("name") for step in steps if isinstance(step, dict)]
-    steps_by_name = {
-        step.get("name"): step for step in steps if isinstance(step, dict)
+    assert {name: job["permissions"] for name, job in jobs.items()} == {
+        "refresh": {"contents": "read"},
+        "validate": {"contents": "read"},
+        "persist": {"contents": "write"},
+        "build": {"contents": "read"},
+        "deploy": {"pages": "write", "id-token": "write"},
+        "production-verify": {"contents": "read"},
+        "notify": {"contents": "read"},
     }
-    assert step_names.index("Build Hugo site") < step_names.index(
-        "Commit generated data"
-    )
-    assert step_names.index(
-        "Build Pagefind search index and result catalog"
-    ) < step_names.index("Commit generated data")
-    assert step_names.index("Commit generated data") < step_names.index(
-        "Upload artifact"
-    )
-    for data_refresh_step in (
-        "Install Playwright browsers",
-        "Run crawler",
-        "Sanitize broken relref links",
-        "Build historical content quality manifest",
-        "Build tag graph",
-        "Commit generated data",
-    ):
-        assert steps_by_name[data_refresh_step]["if"] == (
-            "${{ env.AI_STACK_REFRESH_DATA == 'true' }}"
-        )
-    assert steps_by_name["Moderation cleanup (LLM)"]["if"] == (
-        "${{ env.AI_STACK_REFRESH_DATA == 'true' "
-        "&& env.AI_STACK_RUNTIME_PROFILE != 'ci' }}"
-    )
-    assert steps_by_name["Verify committed Post quality gate"]["if"] == (
-        "${{ env.AI_STACK_REFRESH_DATA != 'true' }}"
-    )
-    verify_run = steps_by_name["Verify generated graph"]["run"]
-    assert isinstance(verify_run, str)
-    assert 'if [ "${AI_STACK_REFRESH_DATA}" != "true" ]; then' in verify_run
-    assert (
-        "python3 scripts/verify_graph.py --assets-only --public-dir blog/static"
-        in verify_run
-    )
-    assert "python3 scripts/verify_graph.py" in verify_run
+    assert jobs["deploy"]["environment"]["name"] == "github-pages"
+    assert "scripts/artifact_guard.py" in text
+    assert "scripts/git_cas_writer.py" in text
+    assert "scripts/release_guard.py guard-marker" in text
+    assert "scripts/production_smoke.py" in text
+    assert "ref: ${{ needs.persist.outputs.persisted_sha }}" in text
+    assert "[skip ci]" in text
     assert "reset --hard" not in text
     assert "git pull --rebase" not in text
-    assert "reusing existing graph artifacts" not in text
 
 
 def test_delete_workflow_rebuilds_derived_data_and_waits_for_deploy() -> None:
@@ -146,55 +117,26 @@ def test_delete_workflow_rebuilds_derived_data_and_waits_for_deploy() -> None:
         "group": "delete-post-main",
         "cancel-in-progress": "false",
     }
-    assert deletion["permissions"] == {"actions": "write", "contents": "write"}
+    assert deletion["permissions"] == {}
     dispatch = deletion["on"]["workflow_dispatch"]  # type: ignore[index]
     assert isinstance(dispatch, dict)
     inputs = dispatch["inputs"]
     assert isinstance(inputs, dict)
     assert tuple(inputs) == ("mode", "post_path", "scan_limit", "dry_run")
-    assert tuple(_jobs(deletion)) == ("delete-post",)
-    job = _jobs(deletion)["delete-post"]
-    assert job["timeout-minutes"] == "180"
-    steps = job["steps"]
-    assert isinstance(steps, list)
-    steps_by_name = {
-        step.get("name"): step for step in steps if isinstance(step, dict)
+    jobs = _jobs(deletion)
+    assert tuple(jobs) == ("analyze", "writer")
+    assert jobs["analyze"]["permissions"] == {"contents": "read"}
+    assert jobs["writer"]["permissions"] == {
+        "actions": "write",
+        "contents": "write",
     }
-    assert tuple(steps_by_name) == (
-        "Checkout main branch",
-        "Configure Git",
-        "Set up Python",
-        "Install Python dependencies",
-        "Validate inputs and prepare deletion",
-        "Rebuild Post-derived data",
-        "Commit deletion and generated data",
-        "Deploy committed deletion and wait",
-    )
-    rebuild = steps_by_name["Rebuild Post-derived data"]
-    assert rebuild["if"] == "${{ steps.prepare.outputs.changed == 'true' }}"
-    rebuild_run = rebuild["run"]
-    assert "scripts/build_content_quality_manifest.py" in rebuild_run
-    assert "--fail-on-quarantine" in rebuild_run
-    assert "--fail-on-structural-warning" in rebuild_run
-    assert 'TAG_GRAPH_ENABLE_CONTENT_MINING: "0"' in text
-    assert 'TAG_INTRO_ENABLED: "0"' in text
-    assert 'TAG_INTRO_MAX_NEW: "0"' in text
-    assert "python3 -m processor.tag_graph" in rebuild_run
-    assert "scripts/verify_graph.py --assets-only --public-dir blog/static" in rebuild_run
-
-    commit = steps_by_name["Commit deletion and generated data"]
-    commit_run = commit["run"]
-    assert "blog/data/content_quality.json" in commit_run
-    assert "blog/static/data/tag-graph" in commit_run
-    assert "git push origin HEAD:main" in commit_run
-    assert "[skip ci]" not in text
-
-    deploy = steps_by_name["Deploy committed deletion and wait"]
-    deploy_run = deploy["run"]
-    assert "gh workflow run deploy.yml --ref main -f refresh_data=false" in deploy_run
-    assert "gh run watch" in deploy_run
-    assert "--exit-status" in deploy_run
-    assert deploy["if"] == "${{ steps.commit.outputs.head_sha != '' }}"
+    writer_text = text[text.index("  writer:"):]
+    assert "secrets." not in writer_text
+    assert "scripts/artifact_guard.py validate" in writer_text
+    assert "scripts/git_cas_writer.py commit-and-push" in writer_text
+    assert "bash scripts/rebuild_release_data.sh" in writer_text
+    assert "gh workflow run deploy.yml --ref main -f refresh_data=false" in writer_text
+    assert "gh run watch" in writer_text
 
 
 
@@ -202,18 +144,18 @@ def test_monitoring_checks_main_and_live_data_instead_of_legacy_gh_pages() -> No
     monitoring, text = _workflow("monitoring.yml")
     assert monitoring["name"] == "System Monitoring & Content Quality Tracking"
     assert monitoring["on"] == {
-        "schedule": [{"cron": "23 */6 * * *"}],
+        "schedule": [{"cron": "41 * * * *"}],
         "workflow_dispatch": "",
     }
     assert monitoring["concurrency"] == {
-        "group": "content-freshness-monitor",
+        "group": "production-release-monitor",
         "cancel-in-progress": "true",
     }
-    assert monitoring["permissions"] == {"contents": "read"}
-    assert tuple(_jobs(monitoring)) == ("verify-data-freshness",)
-    assert "scripts/verify_content_freshness.py" in text
-    assert "https://ai-stack.site/data/tag-graph/index.json" in text
-    assert "--max-age-hours 12" in text
+    assert monitoring["permissions"] == {}
+    assert tuple(_jobs(monitoring)) == ("verify-production-state",)
+    assert "scripts/production_monitor.py" in text
+    assert "--max-divergence-hours 3" in text
+    assert "--max-stale-hours 12" in text
     assert "gh-pages" not in text
 
 

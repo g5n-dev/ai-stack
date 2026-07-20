@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import fnmatch
 import hashlib
 import json
 import os
@@ -46,6 +47,8 @@ class GitCASWriter:
         *,
         branch: str,
         allowed_roots: Sequence[str],
+        allowed_paths: Sequence[str] = (),
+        allow_deletions: bool = False,
     ) -> None:
         self.repository = Path(repository).resolve()
         if not allowed_roots or any(
@@ -54,6 +57,16 @@ class GitCASWriter:
         ):
             raise UnsafeWriteError("allowed roots must be simple relative names")
         self.allowed_roots = frozenset(allowed_roots)
+        if any(
+            not pattern
+            or pattern.startswith("/")
+            or "\\" in pattern
+            or ".." in PurePosixPath(pattern).parts
+            for pattern in allowed_paths
+        ):
+            raise UnsafeWriteError("allowed path patterns must be safe relative globs")
+        self.allowed_paths = tuple(allowed_paths)
+        self.allow_deletions = allow_deletions
         self.branch = branch
         branch_check = self._run(
             ["check-ref-format", "--branch", branch],
@@ -125,7 +138,7 @@ class GitCASWriter:
         )
         return tuple(sorted(tracked | untracked))
 
-    def _validate_path(self, raw_path: str) -> int:
+    def _validate_path(self, raw_path: str, *, deleted: bool = False) -> int:
         path = PurePosixPath(raw_path)
         if (
             not raw_path
@@ -135,6 +148,14 @@ class GitCASWriter:
             or path.parts[0] not in self.allowed_roots
         ):
             raise UnsafeWriteError(f"path outside writer allowlist: {raw_path!r}")
+        if self.allowed_paths and not any(
+            fnmatch.fnmatchcase(raw_path, pattern) for pattern in self.allowed_paths
+        ):
+            raise UnsafeWriteError(f"path outside exact writer path allowlist: {raw_path!r}")
+        if deleted:
+            if not self.allow_deletions:
+                raise UnsafeWriteError(f"deletions are not allowed: {raw_path}")
+            return 0
         absolute = self.repository.joinpath(*path.parts)
         try:
             details = absolute.lstat()
@@ -162,10 +183,6 @@ class GitCASWriter:
             return CASCommit(False, actual_base, actual_base, ())
         if len(paths) > _MAX_FILES:
             raise UnsafeWriteError("writer file-count limit exceeded")
-        total_bytes = sum(self._validate_path(path) for path in paths)
-        if total_bytes > _MAX_TOTAL_BYTES:
-            raise UnsafeWriteError("writer total-size limit exceeded")
-
         deleted = self._decode_paths(
             self._git_bytes(
                 "diff",
@@ -177,11 +194,18 @@ class GitCASWriter:
                 "--",
             )
         )
-        if deleted:
+        if deleted and not self.allow_deletions:
             raise UnsafeWriteError(f"deletions are not allowed: {sorted(deleted)}")
+        total_bytes = sum(
+            self._validate_path(path, deleted=path in deleted) for path in paths
+        )
+        if total_bytes > _MAX_TOTAL_BYTES:
+            raise UnsafeWriteError("writer total-size limit exceeded")
 
         for path in paths:
             self._run(["add", "--", path], check=True, text=True)
+            if path in deleted:
+                continue
             staged_body = self._git_bytes("show", f":{path}")
             worktree_body = self.repository.joinpath(*PurePosixPath(path).parts).read_bytes()
             if not hashlib.sha256(staged_body).digest() == hashlib.sha256(
@@ -249,6 +273,8 @@ def _parser() -> argparse.ArgumentParser:
     commit.add_argument("--repository", type=Path, required=True)
     commit.add_argument("--branch", required=True)
     commit.add_argument("--allowed-root", action="append", required=True)
+    commit.add_argument("--allowed-path", action="append", default=[])
+    commit.add_argument("--allow-deletions", action="store_true")
     commit.add_argument("--expected-base", required=True)
     commit.add_argument("--message", required=True)
     commit.add_argument("--remote", default="origin")
@@ -262,6 +288,8 @@ def main(argv: Sequence[str] | None = None) -> int:
             args.repository,
             branch=args.branch,
             allowed_roots=args.allowed_root,
+            allowed_paths=args.allowed_path,
+            allow_deletions=args.allow_deletions,
         )
         commit = writer.commit(expected_base=args.expected_base, message=args.message)
         writer.push(commit, remote=args.remote)

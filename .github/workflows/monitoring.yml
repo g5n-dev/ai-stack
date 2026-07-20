@@ -2,48 +2,40 @@ name: System Monitoring & Content Quality Tracking
 
 on:
   schedule:
-    # Offset from the top of the hour to reduce delayed or dropped schedules.
-    - cron: "23 */6 * * *"
+    # 每小时错峰，避免整点调度拥塞。
+    - cron: "41 * * * *"
   workflow_dispatch:
 
 concurrency:
-  group: content-freshness-monitor
+  group: production-release-monitor
   cancel-in-progress: true
 
-permissions:
-  contents: read
+permissions: {}
 
 jobs:
-  verify-data-freshness:
-    name: Verify Repository and Production Data Freshness
+  verify-production-state:
+    name: Verify Production Release State
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    permissions:
+      contents: read
     steps:
-      - name: Checkout main branch
-        uses: actions/checkout@v4
+      - name: Checkout complete main history
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
         with:
           ref: main
+          fetch-depth: 0
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: "3.11"
-
-      - name: Install trend verifier dependency
-        run: python3 -m pip install --disable-pip-version-check PyYAML==6.0.1
-
-      - name: Verify local and live graph freshness
+      - name: Enforce divergence and stale thresholds
+        env:
+          MAIN_SHA: ${{ github.sha }}
         run: |
-          python3 scripts/verify_content_freshness.py \
-            --local-index blog/static/data/tag-graph/index.json \
-            --live-index-url https://ai-stack.site/data/tag-graph/index.json \
-            --max-age-hours 12
-
-      - name: Verify local and live trend freshness
-        run: |
-          python3 scripts/verify_stack_trends.py \
-            --root blog/static/data/stack-trends \
-            --verify-hashes
-          python3 scripts/verify_stack_trends_live.py \
-            --live-index-url https://ai-stack.site/data/stack-trends/index.json \
-            --max-age-hours 12
+          set -euo pipefail
+          main_sha="$(git rev-parse HEAD)"
+          main_committed_at="$(git show -s --format=%cI HEAD)"
+          python3 scripts/production_monitor.py \
+            --marker-url "https://ai-stack.site/ai_stack_release_v1.json" \
+            --main-sha "$main_sha" \
+            --main-committed-at "$main_committed_at" \
+            --max-divergence-hours 3 \
+            --max-stale-hours 12

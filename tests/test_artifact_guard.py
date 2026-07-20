@@ -212,6 +212,16 @@ def test_rejects_missing_or_extra_manifest_files(tmp_path: Path) -> None:
             ).encode(),
             "secret-like content",
         ),
+        (
+            json.dumps(
+                {
+                    "schema_version": "1",
+                    "event_id": "evt",
+                    "url": "https://source.invalid/item?token=private-query-value-123",
+                }
+            ).encode(),
+            "secret-like content",
+        ),
     ],
 )
 def test_rejects_invalid_schema_mime_and_secrets(
@@ -345,6 +355,119 @@ def test_accepts_allowlisted_png_magic(tmp_path: Path) -> None:
     )
 
     assert report.file_count == 1
+
+
+def test_accepts_non_sensitive_public_url_query_names(tmp_path: Path) -> None:
+    artifact = tmp_path / "public-query.tar"
+    payload = json.dumps(
+        {
+            "schema_version": "1",
+            "event_id": "evt",
+            "url": "https://source.invalid/item?id=42&post=one&v=3&langVersion=en",
+        }
+    ).encode()
+    expected = _write_tar(
+        artifact,
+        [("content/events/evt.json", payload, 0o644, "file")],
+    )
+
+    assert validate_tar_artifact(
+        artifact,
+        policy=_policy(),
+        expected_files=expected,
+    ).file_count == 1
+
+
+def test_accepts_public_model_name_assignment(tmp_path: Path) -> None:
+    artifact = tmp_path / "public-model.tar"
+    payload = b"ANTHROPIC_MODEL=claude-sonnet-public-model\n"
+    expected = _write_tar(
+        artifact,
+        [("content/post.md", payload, 0o644, "file")],
+    )
+
+    assert validate_tar_artifact(
+        artifact,
+        policy=_policy(),
+        expected_files=expected,
+    ).file_count == 1
+
+
+@pytest.mark.parametrize(
+    "payload",
+    [
+        b'key: "sk-ant-api03-super-secret-material"',
+        b'key: "sk-proj-super-secret-material"',
+        b'Authorization: Bearer opaque-private-token-value',
+        b'jwt=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcml2YXRlIn0.c2lnbmF0dXJl',
+        b'https://private-user:private-password@example.test/resource',
+        b'ANTHROPIC_AUTH_TOKEN=provider-private-value',
+        b'OPENAI_API_KEY: provider-private-value',
+        b'SEARXNG_BASE_URL=https://private-search.internal',
+        b'https://example.test/item?X-Amz-Credential=private-value',
+    ],
+)
+def test_rejects_provider_credentials_authenticated_urls_and_sensitive_queries(
+    tmp_path: Path,
+    payload: bytes,
+) -> None:
+    artifact = tmp_path / "handoff.tar"
+    expected = _write_tar(
+        artifact,
+        [("content/post.md", payload, 0o644, "file")],
+    )
+
+    with pytest.raises(ArtifactValidationError, match="secret-like content"):
+        validate_tar_artifact(artifact, policy=_policy(), expected_files=expected)
+
+
+def test_pack_rejects_exact_job_secret_without_disclosing_value_or_hash(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
+    secret = "unknown-format-private-material-984731"
+    root = tmp_path / "handoff"
+    (root / "content").mkdir(parents=True)
+    (root / "content" / "post.md").write_text(
+        f"ordinary prose accidentally contains {secret}\n",
+        encoding="utf-8",
+    )
+    monkeypatch.setenv("ANTHROPIC_AUTH_TOKEN", secret)
+    archive = tmp_path / "handoff.tar"
+    manifest = tmp_path / "handoff.json"
+
+    assert main(
+        _pack_cli("generated", root, archive, manifest)
+        + ["--reject-env", "ANTHROPIC_AUTH_TOKEN"]
+    ) == 2
+
+    output = capsys.readouterr()
+    combined = output.out + output.err
+    assert secret not in combined
+    assert sha256(secret.encode()).hexdigest() not in combined
+    assert not archive.exists()
+
+
+def test_pack_ignores_unset_and_short_exact_secret_values(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    root = tmp_path / "handoff"
+    (root / "content").mkdir(parents=True)
+    (root / "content" / "post.md").write_text("short xyz value\n", encoding="utf-8")
+    monkeypatch.delenv("UNSET_EXACT_SECRET", raising=False)
+    monkeypatch.setenv("SHORT_EXACT_SECRET", "xyz")
+
+    assert main(
+        _pack_cli("generated", root, tmp_path / "a.tar", tmp_path / "a.json")
+        + [
+            "--reject-env",
+            "UNSET_EXACT_SECRET",
+            "--reject-env",
+            "SHORT_EXACT_SECRET",
+        ]
+    ) == 0
 
 
 def test_cli_packages_validates_and_safely_extracts_handoff(
@@ -650,6 +773,34 @@ def test_rejects_invalid_webp_subtype_and_unknown_profile(tmp_path: Path) -> Non
             archive_path=tmp_path / "unknown.tar",
             manifest_path=tmp_path / "unknown.json",
             profile="unknown",
+        )
+
+
+def test_refresh_and_validated_profiles_enforce_exact_delivery_path_allowlist(
+    tmp_path: Path,
+) -> None:
+    root = tmp_path / "handoff"
+    (root / "blog/content/posts").mkdir(parents=True)
+    (root / "data/lineage/registry").mkdir(parents=True)
+    (root / "blog/content/posts/one.md").write_text("safe\n", encoding="utf-8")
+    (root / "data/lineage/registry/00.json").write_text("{}\n", encoding="utf-8")
+
+    report = package_tar_artifact(
+        root,
+        archive_path=tmp_path / "refresh.tar",
+        manifest_path=tmp_path / "refresh.json",
+        profile="refresh",
+    )
+    assert report.file_count == 2
+
+    (root / "blog/static/data/untrusted").mkdir(parents=True)
+    (root / "blog/static/data/untrusted/payload.json").write_text("{}\n")
+    with pytest.raises(ArtifactValidationError, match="allowlist"):
+        package_tar_artifact(
+            root,
+            archive_path=tmp_path / "forged.tar",
+            manifest_path=tmp_path / "forged.json",
+            profile="validated",
         )
 
 

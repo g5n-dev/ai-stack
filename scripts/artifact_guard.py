@@ -7,6 +7,7 @@ regular, non-executable files with exact caller-provided digests are accepted.
 from __future__ import annotations
 
 import argparse
+import fnmatch
 import hmac
 import json
 import os
@@ -31,6 +32,7 @@ class ArtifactValidationError(ValueError):
 class ArtifactPolicy:
     allowed_roots: tuple[str, ...] = ("content", "state")
     allowed_suffixes: tuple[str, ...] = (".json", ".md", ".txt", ".yaml", ".yml")
+    allowed_patterns: tuple[str, ...] = ("*",)
     max_files: int = 2_000
     max_file_bytes: int = 2 * 1024 * 1024
     max_total_bytes: int = 64 * 1024 * 1024
@@ -47,6 +49,14 @@ class ArtifactPolicy:
             for suffix in self.allowed_suffixes
         ):
             raise ValueError("allowed_suffixes must be safe file extensions")
+        if not self.allowed_patterns or any(
+            not pattern
+            or pattern.startswith("/")
+            or "\\" in pattern
+            or ".." in PurePosixPath(pattern).parts
+            for pattern in self.allowed_patterns
+        ):
+            raise ValueError("allowed_patterns must contain safe relative globs")
         if min(self.max_files, self.max_file_bytes, self.max_total_bytes) <= 0:
             raise ValueError("artifact limits must be positive")
 
@@ -64,9 +74,25 @@ _SECRET_PATTERNS = (
     re.compile(rb"github_pat_[A-Za-z0-9_]{40,}"),
     re.compile(rb"AKIA[A-Z0-9]{16}"),
     re.compile(rb"-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----"),
+    re.compile(rb"(?i)\bsk-(?:ant|proj)-[A-Za-z0-9_-]{8,}"),
+    re.compile(rb"(?i)\bbearer\s+[A-Za-z0-9._~+/=-]{8,}"),
+    re.compile(
+        rb"(?<![A-Za-z0-9_-])[A-Za-z0-9_-]{8,}\.[A-Za-z0-9_-]{8,}\."
+        rb"[A-Za-z0-9_-]{8,}(?![A-Za-z0-9_-])"
+    ),
+    re.compile(rb"(?i)\bhttps?://[^\s/?#:@]+(?::[^\s/?#@]*)?@"),
     re.compile(
         rb"(?i)(?:anthropic|openai|minimax|telegram|twitter)[A-Z0-9_]*(?:api_)?"
         rb"(?:key|token)\s*[:=]\s*[\"']?[A-Za-z0-9_\-]{16,}"
+    ),
+    re.compile(
+        rb"(?i)\b(?:(?:anthropic|openai)_"
+        rb"(?:AUTH_TOKEN|API_KEY|ACCESS_TOKEN|SECRET|BASE_URL)|"
+        rb"[A-Z][A-Z0-9_]*_BASE_URL)\s*[:=]\s*[\"']?[^\s\"',;}{]{1,}"
+    ),
+    re.compile(
+        rb"(?i)[?&](?:sk|token|code|key|sig|signature|session|x-amz-[a-z0-9-]+)="
+        rb"[^&#\s\"']+"
     ),
 )
 
@@ -106,9 +132,29 @@ _PROFILES: Mapping[str, ArtifactPolicy] = {
         allowed_roots=("content", "state"),
         allowed_suffixes=_SAFE_SUFFIXES,
     ),
+    "refresh": ArtifactPolicy(
+        allowed_roots=("blog", "data"),
+        allowed_suffixes=(".json", ".md"),
+        allowed_patterns=(
+            "blog/content/posts/*.md",
+            "data/lineage/*.json",
+        ),
+        max_files=8_000,
+        max_total_bytes=128 * 1024 * 1024,
+    ),
     "validated": ArtifactPolicy(
-        allowed_roots=("content", "state"),
-        allowed_suffixes=_SAFE_SUFFIXES,
+        allowed_roots=("blog", "data"),
+        allowed_suffixes=(".json", ".md"),
+        allowed_patterns=(
+            "blog/content/posts/*.md",
+            "blog/data/content_quality.json",
+            "blog/static/data/lineage/*.json",
+            "blog/static/data/stack-trends/*.json",
+            "blog/static/data/tag-graph/*.json",
+            "data/lineage/*.json",
+        ),
+        max_files=8_000,
+        max_total_bytes=128 * 1024 * 1024,
     ),
     "release": ArtifactPolicy(
         allowed_roots=("content", "state"),
@@ -149,6 +195,11 @@ def _safe_member_path(raw_name: str, allowed_roots: tuple[str, ...]) -> PurePosi
     return path
 
 
+def _validate_allowed_pattern(name: str, policy: ArtifactPolicy) -> None:
+    if not any(fnmatch.fnmatchcase(name, pattern) for pattern in policy.allowed_patterns):
+        raise ArtifactValidationError(f"outside exact artifact path allowlist: {name}")
+
+
 def _decode_text(name: str, payload: bytes) -> str:
     if b"\x00" in payload:
         raise ArtifactValidationError(f"invalid text MIME for {name}: NUL byte")
@@ -163,8 +214,11 @@ def _validate_payload(
     suffix: str,
     payload: bytes,
     required_json_fields: Mapping[str, frozenset[str]],
+    forbidden_values: Sequence[bytes] = (),
 ) -> None:
-    if any(pattern.search(payload) for pattern in _SECRET_PATTERNS):
+    if any(pattern.search(payload) for pattern in _SECRET_PATTERNS) or any(
+        value in payload for value in forbidden_values
+    ):
         raise ArtifactValidationError(f"secret-like content in {name}")
 
     if suffix == ".json":
@@ -228,6 +282,7 @@ def validate_tar_artifact(
                 continue
             if not member.isreg():
                 raise ArtifactValidationError(f"non-regular member: {member.name}")
+            _validate_allowed_pattern(member.name, policy)
             if member.name in seen:
                 raise ArtifactValidationError(f"duplicate path: {member.name}")
             if member.mode & 0o111:
@@ -313,6 +368,7 @@ def package_tar_artifact(
     archive_path: Path | str,
     manifest_path: Path | str,
     profile: str,
+    forbidden_values: Sequence[bytes | str] = (),
 ) -> ArtifactReport:
     policy = _profile_policy(profile)
     source = Path(root)
@@ -323,6 +379,11 @@ def package_tar_artifact(
     if _is_within(archive, source) or _is_within(manifest, source):
         raise ArtifactValidationError("archive outputs must be outside artifact root")
 
+    exact_rejections = tuple(
+        value.encode("utf-8") if isinstance(value, str) else bytes(value)
+        for value in forbidden_values
+        if len(value.encode("utf-8") if isinstance(value, str) else bytes(value)) >= 8
+    )
     files: list[tuple[str, bytes]] = []
     total_bytes = 0
     for candidate in sorted(source.rglob("*"), key=lambda item: item.as_posix()):
@@ -335,6 +396,7 @@ def package_tar_artifact(
             raise ArtifactValidationError(f"artifact root contains non-regular file: {candidate}")
         relative = candidate.relative_to(source).as_posix()
         member = _safe_member_path(relative, policy.allowed_roots)
+        _validate_allowed_pattern(relative, policy)
         if member.suffix.casefold() not in policy.allowed_suffixes:
             raise ArtifactValidationError(f"disallowed suffix: {relative}")
         if details.st_mode & 0o111:
@@ -344,7 +406,13 @@ def package_tar_artifact(
         payload = candidate.read_bytes()
         if len(payload) != details.st_size:
             raise ArtifactValidationError(f"file changed while packaging: {relative}")
-        _validate_payload(relative, member.suffix.casefold(), payload, policy.required_json_fields)
+        _validate_payload(
+            relative,
+            member.suffix.casefold(),
+            payload,
+            policy.required_json_fields,
+            exact_rejections,
+        )
         files.append((relative, payload))
         total_bytes += len(payload)
         if len(files) > policy.max_files:
@@ -523,6 +591,13 @@ def _parser() -> argparse.ArgumentParser:
     pack.add_argument("--root", type=Path, required=True)
     pack.add_argument("--archive", type=Path, required=True)
     pack.add_argument("--manifest", type=Path, required=True)
+    pack.add_argument(
+        "--reject-env",
+        action="append",
+        default=[],
+        metavar="NAME",
+        help="reject exact values from named environment variables when length is at least 8",
+    )
     validate = commands.add_parser("validate")
     validate.add_argument("--profile", choices=sorted(_PROFILES), required=True)
     validate.add_argument("--archive", type=Path, required=True)
@@ -535,11 +610,18 @@ def main(argv: Sequence[str] | None = None) -> int:
     args = _parser().parse_args(argv)
     try:
         if args.command == "pack":
+            if any(not re.fullmatch(r"[A-Z][A-Z0-9_]{0,127}", name) for name in args.reject_env):
+                raise ArtifactValidationError("invalid exact-secret environment name")
             report = package_tar_artifact(
                 args.root,
                 archive_path=args.archive,
                 manifest_path=args.manifest,
                 profile=args.profile,
+                forbidden_values=tuple(
+                    value
+                    for name in args.reject_env
+                    if (value := os.environ.get(name)) is not None
+                ),
             )
         else:
             report = validate_packaged_artifact(
