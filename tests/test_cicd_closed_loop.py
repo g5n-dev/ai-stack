@@ -74,6 +74,16 @@ def test_deploy_is_a_fail_closed_least_privilege_job_chain() -> None:
     assert "secrets." not in text[text.index("  validate:"):text.index("  notify:")]
     assert "secrets." in text[text.index("  refresh:"):text.index("  validate:")]
     assert "secrets." in text[text.index("  notify:"):]
+    refresh_steps = jobs["refresh"]["steps"]
+    sanitize = next(
+        step for step in refresh_steps if step.get("name") == "Sanitize public source URLs"
+    )
+    assert "if" not in sanitize
+    assert sanitize["run"] == "python3 scripts/generate_content.py --sanitize-relrefs-only"
+    step_names = [step.get("name") for step in refresh_steps]
+    assert step_names.index("Sanitize public source URLs") < step_names.index(
+        "Package exact refresh handoff"
+    )
 
 
 def test_workflow_artifacts_are_hashed_allowlisted_and_actions_are_pinned() -> None:

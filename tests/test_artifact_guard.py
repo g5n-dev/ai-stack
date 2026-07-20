@@ -421,6 +421,29 @@ def test_rejects_provider_credentials_authenticated_urls_and_sensitive_queries(
         validate_tar_artifact(artifact, policy=_policy(), expected_files=expected)
 
 
+def test_allows_qualified_javascript_api_identifiers(tmp_path: Path) -> None:
+    artifact = tmp_path / "javascript-api.tar"
+    expected = _write_tar(
+        artifact,
+        [
+            (
+                "content/post.md",
+                b"navigator.modelContext.registerTool()\n",
+                0o644,
+                "file",
+            )
+        ],
+    )
+
+    report = validate_tar_artifact(
+        artifact,
+        policy=_policy(),
+        expected_files=expected,
+    )
+
+    assert report.file_count == 1
+
+
 def test_pack_rejects_exact_job_secret_without_disclosing_value_or_hash(
     tmp_path: Path,
     monkeypatch: pytest.MonkeyPatch,

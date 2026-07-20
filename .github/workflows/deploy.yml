@@ -72,7 +72,9 @@ jobs:
           python3 scripts/generate_content.py \
             --dedupe-scope global \
             --runtime-profile "$AI_STACK_RUNTIME_PROFILE"
-          python3 scripts/generate_content.py --sanitize-relrefs-only
+
+      - name: Sanitize public source URLs
+        run: python3 scripts/generate_content.py --sanitize-relrefs-only
 
       - name: Package exact refresh handoff
         env:

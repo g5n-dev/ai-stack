@@ -92,6 +92,11 @@ def canonicalize_content_url(value: object) -> str:
 
 _RELREF_RE = re.compile(r"""\{\{[<%]\s*relref\s+(['"])(.+?)\1\s*[>%]\}\}""")
 _TAXONOMY_MD_LINK_RE = re.compile(r"""\[([^\]]+)\]\(/(tags|categories|scenarios)/([^)]+?)\)""")
+_PUBLIC_HTTP_URL_RE = re.compile(r"https?://[^\s<>\"']+")
+_URL_TRAILING_PUNCTUATION = ".,;:!?)]}"
+_SENSITIVE_PUBLIC_QUERY_KEYS = frozenset(
+    {"sk", "token", "code", "key", "sig", "signature", "session"}
+)
 
 _PROMPT_LEAK_KEYWORDS = [
     "评价对象",
@@ -463,6 +468,79 @@ def sanitize_relrefs_in_posts(*, posts_dir: Path, content_root: Path) -> tuple[i
         removed_lines_total += removed
 
     return changed_files, removed_lines_total
+
+
+def _is_sensitive_public_query_key(value: str) -> bool:
+    folded = str(value or "").strip().casefold()
+    return folded in _SENSITIVE_PUBLIC_QUERY_KEYS or folded.startswith("x-amz-")
+
+
+def sanitize_sensitive_source_urls_in_markdown_text(*, text: str) -> tuple[str, int]:
+    """Remove credential-like query parameters while preserving public URL identity."""
+
+    if not text:
+        return text, 0
+
+    removed = 0
+
+    def _replace(match: re.Match[str]) -> str:
+        nonlocal removed
+        raw = match.group(0)
+        url = raw.rstrip(_URL_TRAILING_PUNCTUATION)
+        trailing = raw[len(url) :]
+        try:
+            parsed = urllib.parse.urlsplit(url)
+            pairs = urllib.parse.parse_qsl(parsed.query, keep_blank_values=True)
+        except ValueError:
+            return raw
+        filtered = [
+            (key, value)
+            for key, value in pairs
+            if not _is_sensitive_public_query_key(key)
+        ]
+        removed_now = len(pairs) - len(filtered)
+        if removed_now <= 0:
+            return raw
+        removed += removed_now
+        sanitized = urllib.parse.urlunsplit(
+            (
+                parsed.scheme,
+                parsed.netloc,
+                parsed.path,
+                urllib.parse.urlencode(filtered, doseq=True),
+                parsed.fragment,
+            )
+        )
+        return sanitized + trailing
+
+    return _PUBLIC_HTTP_URL_RE.sub(_replace, text), removed
+
+
+def sanitize_sensitive_source_urls_in_posts(*, posts_dir: Path) -> tuple[int, int]:
+    changed_files = 0
+    removed_parameters_total = 0
+
+    try:
+        paths = sorted(posts_dir.glob("*.md"))
+    except Exception:
+        return 0, 0
+
+    for path in paths:
+        try:
+            original = path.read_text(encoding="utf-8")
+        except Exception:
+            continue
+        sanitized, removed = sanitize_sensitive_source_urls_in_markdown_text(text=original)
+        if removed <= 0:
+            continue
+        try:
+            path.write_text(sanitized, encoding="utf-8")
+        except Exception:
+            continue
+        changed_files += 1
+        removed_parameters_total += removed
+
+    return changed_files, removed_parameters_total
 
 
 def _taxonomy_term_slug(term: str) -> str:
@@ -2779,6 +2857,16 @@ def main(argv=None):
             logger.info(f"✓ Sanitized relref links: files={changed_files} lines_removed={removed_lines}")
         else:
             logger.info("✓ Relref links OK")
+        changed_files, removed_parameters = sanitize_sensitive_source_urls_in_posts(
+            posts_dir=posts_dir
+        )
+        if changed_files > 0:
+            logger.info(
+                "✓ Sanitized source URLs: "
+                f"files={changed_files} query_parameters_removed={removed_parameters}"
+            )
+        else:
+            logger.info("✓ Source URLs OK")
         changed_files, changed_links = sanitize_taxonomy_links_in_posts(posts_dir=posts_dir)
         if changed_files > 0:
             logger.info(f"✓ Sanitized taxonomy links: files={changed_files} links_fixed={changed_links}")

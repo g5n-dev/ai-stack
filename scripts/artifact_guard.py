@@ -76,8 +76,11 @@ _SECRET_PATTERNS = (
     re.compile(rb"-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----"),
     re.compile(rb"(?i)\bsk-(?:ant|proj)-[A-Za-z0-9_-]{8,}"),
     re.compile(rb"(?i)\bbearer\s+[A-Za-z0-9._~+/=-]{8,}"),
+    # A compact JWT has a Base64URL JSON header, which starts with ``eyJ`` for
+    # a JSON object. Requiring that prefix avoids treating ordinary qualified
+    # JavaScript identifiers as credentials.
     re.compile(
-        rb"(?<![A-Za-z0-9_-])[A-Za-z0-9_-]{8,}\.[A-Za-z0-9_-]{8,}\."
+        rb"(?<![A-Za-z0-9_-])eyJ[A-Za-z0-9_-]{5,}\.[A-Za-z0-9_-]{8,}\."
         rb"[A-Za-z0-9_-]{8,}(?![A-Za-z0-9_-])"
     ),
     re.compile(rb"(?i)\bhttps?://[^\s/?#:@]+(?::[^\s/?#@]*)?@"),
