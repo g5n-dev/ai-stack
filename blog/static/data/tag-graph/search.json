@@ -12,7 +12,7 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-07-19T19:35:34Z",
+  "generated_at": "2026-07-20T00:15:13Z",
   "items": [
     {
       "article_count": 653,
@@ -184,7 +184,7 @@
       "weighted_degree": 259
     },
     {
-      "article_count": 759,
+      "article_count": 760,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 19,
@@ -194,7 +194,7 @@
       "legacy_id": "Hacker News",
       "name": "Hacker News",
       "rank": 14,
-      "weighted_degree": 254
+      "weighted_degree": 255
     },
     {
       "article_count": 98,
@@ -249,7 +249,7 @@
       "weighted_degree": 136.6
     },
     {
-      "article_count": 53,
+      "article_count": 54,
       "category": "article_tag",
       "community_id": "community:tag:来源快报",
       "degree": 33,
@@ -259,7 +259,7 @@
       "legacy_id": "来源快报",
       "name": "来源快报",
       "rank": 19,
-      "weighted_degree": 110
+      "weighted_degree": 111
     },
     {
       "article_count": 32,

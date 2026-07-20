@@ -1,5 +1,5 @@
 {
-  "active_count": 2150,
+  "active_count": 2151,
   "archived_count": 276,
   "complete_count": 9,
   "legacy_analysis_count": 0,
@@ -17823,6 +17823,12 @@
       "warnings": [
         "source_excerpt_truncated"
       ]
+    },
+    "posts/20260720-hacker_news-openai-reduces-codex-model-context-size-from-372k--0-d1255b05e8.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -17857,10 +17863,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2141,
-  "source_file_count": 2426,
-  "source_tree_sha256": "6b00529ba8a3a8c1c50963bea69b1a078f89242113a5b8ae52bc0987d7979281",
-  "verified_provenance_count": 2150,
+  "source_brief_count": 2142,
+  "source_file_count": 2427,
+  "source_tree_sha256": "c3158aeeb76ba84e516c2ac8c94b5c0a610f426b64159b7196175419c3fe0699",
+  "verified_provenance_count": 2151,
   "warning_counts": {
     "source_excerpt_truncated": 738
   }

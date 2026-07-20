@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-19T19:35:34Z",
+  "generated_at": "2026-07-20T00:15:13Z",
   "layer": "tag",
   "layers": {
     "application": {
@@ -2693,7 +2693,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 6
+      "weight": 7
     },
     {
       "id": "edge:cooccurrence:tag:Hacker News->tag:深度学习",
@@ -5308,7 +5308,7 @@
       "weighted_degree": 4
     },
     {
-      "article_count": 759,
+      "article_count": 760,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -5322,7 +5322,7 @@
       "name": "Hacker News",
       "rank": 14,
       "related_count": 19,
-      "weighted_degree": 254
+      "weighted_degree": 255
     },
     {
       "article_count": 1,
@@ -5852,7 +5852,7 @@
       "weighted_degree": 240
     },
     {
-      "article_count": 53,
+      "article_count": 54,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:来源快报",
@@ -5866,7 +5866,7 @@
       "name": "来源快报",
       "rank": 19,
       "related_count": 33,
-      "weighted_degree": 110
+      "weighted_degree": 111
     },
     {
       "article_count": 8,
