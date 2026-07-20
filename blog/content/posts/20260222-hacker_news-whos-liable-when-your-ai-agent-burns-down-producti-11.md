@@ -8,7 +8,7 @@ categories: []
 scenarios: []
 source: hacker_news
 description: 历史来源恢复未成功；旧正文已移除，仅保留可审计归档记录。
-external_url: https://reading.sh/whos-liable-when-your-ai-agent-burns-down-production-039193d82746?sk=4921ed2dbc46f0c618835ac458cf5051
+external_url: https://reading.sh/whos-liable-when-your-ai-agent-burns-down-production-039193d82746
 aliases: []
 archived: true
 content_mode: archived
@@ -32,4 +32,4 @@ build:
 - **恢复尝试时间**: `2026-07-18T04:22:23.866326Z`
 - **恢复失败类型**: `source_fetch_error`
 - **恢复失败原因**: `source_payload_incomplete`
-- **原始来源**: [查看公开来源](<https://reading.sh/whos-liable-when-your-ai-agent-burns-down-production-039193d82746?sk=4921ed2dbc46f0c618835ac458cf5051>)
+- **原始来源**: [查看公开来源](<https://reading.sh/whos-liable-when-your-ai-agent-burns-down-production-039193d82746>)

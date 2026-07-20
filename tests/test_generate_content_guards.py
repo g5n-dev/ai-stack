@@ -309,6 +309,26 @@ class GenerateContentGuardsTest(unittest.TestCase):
         self.assertEqual(sanitized, document)
         self.assertEqual(removed, 0)
 
+    def test_source_url_sanitizer_removes_sensitive_queries_only(self):
+        document = (
+            "---\n"
+            "external_url: https://example.com/item?lang=zh&code=temporary-access-value\n"
+            "---\n\n"
+            "[来源](https://example.com/item?token=temporary-access-value&page=2)\n"
+            "[安全查询](https://example.com/list?page=3&sort=new)\n"
+        )
+
+        sanitized, removed = (
+            self.module.sanitize_sensitive_source_urls_in_markdown_text(text=document)
+        )
+
+        self.assertEqual(removed, 2)
+        self.assertIn("external_url: https://example.com/item?lang=zh", sanitized)
+        self.assertIn("[来源](https://example.com/item?page=2)", sanitized)
+        self.assertIn(
+            "[安全查询](https://example.com/list?page=3&sort=new)", sanitized
+        )
+
     def test_related_post_links_do_not_emit_hugo_shortcodes(self):
         generator = self.module.SuperEnhancedContentGenerator.__new__(
             self.module.SuperEnhancedContentGenerator
