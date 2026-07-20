@@ -198,8 +198,8 @@ def test_indexnow_public_key_is_validated_before_it_becomes_a_path() -> None:
     )
     deployment = (ROOT / "DEPLOYMENT.md").read_text(encoding="utf-8")
 
-    prepare = workflow.index("- name: Prepare IndexNow key file")
-    upload = workflow.index("- name: Upload artifact")
+    prepare = workflow.index("- name: Prepare dedicated public IndexNow ownership key")
+    upload = workflow.index("- name: Upload guarded Pages artifact")
     step = workflow[prepare:upload]
     assert "^[A-Za-z0-9-]{8,128}$" in step
     assert "专用公开" in deployment

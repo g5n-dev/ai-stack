@@ -81,12 +81,15 @@ def test_ci_runs_every_historical_recovery_contract_without_network_capture() ->
 
 def test_deploy_uses_only_offline_historical_gates_before_derived_assets() -> None:
     source = DEPLOY_WORKFLOW.read_text(encoding="utf-8")
+    rebuild = (ROOT / "scripts" / "rebuild_release_data.sh").read_text(encoding="utf-8")
     fixed_point = "python3 scripts/repair_historical_content.py --check"
 
-    assert fixed_point in source
-    assert "python3 scripts/build_content_quality_manifest.py" in source
-    assert source.index(fixed_point) < source.index("- name: Build tag graph")
-    assert source.index(fixed_point) < source.index("- name: Build Hugo site")
+    assert "bash scripts/rebuild_release_data.sh" in source
+    assert fixed_point in rebuild
+    assert "python3 scripts/build_content_quality_manifest.py" in rebuild
+    assert rebuild.index(fixed_point) < rebuild.index("scripts/build_lineage.py")
+    assert rebuild.index(fixed_point) < rebuild.index("scripts/build_stack_trends.py")
+    assert rebuild.index(fixed_point) < rebuild.index("python3 -m processor.tag_graph")
     for forbidden in (
         "scripts/capture_historical_sources.py",
         "python3 crawler/historical_source_fetch.py",
@@ -95,3 +98,4 @@ def test_deploy_uses_only_offline_historical_gates_before_derived_assets() -> No
         "python3 -m ai_stack.historical_capture_job",
     ):
         assert forbidden not in source
+        assert forbidden not in rebuild

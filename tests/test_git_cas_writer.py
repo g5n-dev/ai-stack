@@ -228,3 +228,46 @@ def test_cli_commits_pushes_and_reports_exact_sha(
         )
         == 2
     )
+
+
+def test_explicit_release_allowlist_can_replace_hash_named_shards(
+    tmp_path: Path,
+) -> None:
+    _, remote = _seed_remote(tmp_path)
+    clone = _clone(remote, tmp_path / "clone")
+    base = _git(clone, "rev-parse", "HEAD")
+    old = clone / "content/base.json"
+    old.unlink()
+    (clone / "content/new.json").write_text('{"new":true}\n', encoding="utf-8")
+    writer = GitCASWriter(
+        clone,
+        branch="content",
+        allowed_roots=("content",),
+        allowed_paths=("content/*.json",),
+        allow_deletions=True,
+    )
+
+    commit = writer.commit(expected_base=base, message="replace exact release data")
+
+    assert commit.paths == ("content/base.json", "content/new.json")
+    assert _git(clone, "diff-tree", "--no-commit-id", "--name-status", "-r", "HEAD") == (
+        "D\tcontent/base.json\nA\tcontent/new.json"
+    )
+
+
+def test_writer_path_patterns_still_reject_other_files_under_allowed_root(
+    tmp_path: Path,
+) -> None:
+    _, remote = _seed_remote(tmp_path)
+    clone = _clone(remote, tmp_path / "clone")
+    base = _git(clone, "rev-parse", "HEAD")
+    (clone / "content/payload.md").write_text("not allowlisted\n", encoding="utf-8")
+    writer = GitCASWriter(
+        clone,
+        branch="content",
+        allowed_roots=("content",),
+        allowed_paths=("content/*.json",),
+    )
+
+    with pytest.raises(UnsafeWriteError, match="path allowlist"):
+        writer.commit(expected_base=base, message="reject")

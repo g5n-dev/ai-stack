@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import importlib.util
 import json
+import re
 import tempfile
 import unittest
 from pathlib import Path
@@ -16,6 +17,7 @@ SCENARIO_TEMPLATE = (
 )
 VERIFY_SCRIPT = ROOT / "scripts" / "verify_graph.py"
 DEPLOY_WORKFLOW = ROOT / ".github" / "workflows" / "deploy.yml"
+REBUILD_SCRIPT = ROOT / "scripts" / "rebuild_release_data.sh"
 
 
 class GraphDeployContractTest(unittest.TestCase):
@@ -173,10 +175,12 @@ class GraphDeployContractTest(unittest.TestCase):
 
     def test_deploy_builds_pagefind_before_uploading_pages_artifact(self) -> None:
         source = DEPLOY_WORKFLOW.read_text(encoding="utf-8")
+        rebuild = REBUILD_SCRIPT.read_text(encoding="utf-8")
 
-        self.assertIn("actions/setup-node@v4", source)
+        self.assertRegex(source, r"actions/setup-node@[0-9a-f]{40}")
         self.assertIn("npm ci --ignore-scripts", source)
-        self.assertIn("python3 scripts/build_content_quality_manifest.py", source)
+        self.assertIn("bash scripts/rebuild_release_data.sh", source)
+        self.assertIn("python3 scripts/build_content_quality_manifest.py", rebuild)
         self.assertIn("blog/data/content_quality.json", source)
         self.assertIn("./node_modules/.bin/pagefind --site blog/public", source)
         self.assertIn(
@@ -186,11 +190,13 @@ class GraphDeployContractTest(unittest.TestCase):
         self.assertNotIn("uv run", source)
         self.assertNotIn("npm run build:search", source)
         self.assertIn("test -s blog/public/pagefind/pagefind.js", source)
+        upload = re.search(r"actions/upload-pages-artifact@[0-9a-f]{40}", source)
+        self.assertIsNotNone(upload)
         self.assertLess(
             source.index("./node_modules/.bin/pagefind --site blog/public"),
-            source.index("actions/upload-pages-artifact@v3"),
+            upload.start(),
         )
-        self.assertIn("--assets-only --public-dir blog/static", source)
+        self.assertIn("--assets-only --public-dir blog/static", rebuild)
 
 
 if __name__ == "__main__":

@@ -231,7 +231,7 @@ def main():
     bing_max_urls_raw = os.getenv('BING_INDEXNOW_MAX_URLS', '80')
     sitemap_path = os.getenv('SITEMAP_PATH', 'blog/public/sitemap.xml')
 
-    logger.info(f"Base URL: {base_url}")
+    logger.info("Production base URL configured")
     logger.info(f"Sitemap path: {sitemap_path}")
 
     try:

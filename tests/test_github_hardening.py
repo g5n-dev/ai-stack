@@ -142,6 +142,13 @@ def test_expected_configuration_encodes_the_repository_security_contract() -> No
     assert expected["immutable_releases"] == {"enabled": True}
 
     rulesets = {item["name"]: item for item in expected["rulesets"]}  # type: ignore[index]
+    assert rulesets["ai-stack/main-protection-v1"]["bypass_actors"] == [
+        {
+            "actor_id": 15368,
+            "actor_type": "Integration",
+            "bypass_mode": "always",
+        }
+    ]
     main_rules = rulesets["ai-stack/main-protection-v1"]["rules"]
     assert {rule["type"] for rule in main_rules} == {
         "deletion",
@@ -173,8 +180,16 @@ def test_expected_configuration_encodes_the_repository_security_contract() -> No
     assert {rule["type"] for rule in backup_rules["rules"]} == {"deletion", "update"}
 
     environments = {item["name"]: item for item in expected["environments"]}  # type: ignore[index]
-    assert set(environments) == {"github-pages", "production-publish", "data-deletion"}
+    assert set(environments) == {
+        "github-pages",
+        "production-publish",
+        "data-deletion",
+        "production-recovery",
+    }
     assert environments["data-deletion"]["reviewers"] == [
+        {"type": "User", "id": OWNER_ID}
+    ]
+    assert environments["production-recovery"]["reviewers"] == [
         {"type": "User", "id": OWNER_ID}
     ]
     assert environments["github-pages"]["deployment_branch_policies"] == [
@@ -184,6 +199,9 @@ def test_expected_configuration_encodes_the_repository_security_contract() -> No
         {"name": "main", "type": "branch"}
     ]
     assert environments["data-deletion"]["deployment_branch_policies"] == [
+        {"name": "main", "type": "branch"}
+    ]
+    assert environments["production-recovery"]["deployment_branch_policies"] == [
         {"name": "main", "type": "branch"}
     ]
 

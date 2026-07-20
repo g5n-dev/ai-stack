@@ -34,6 +34,40 @@ def test_indexnow_public_ownership_key_accepts_the_documented_character_set() ->
     assert notify_search_engines.validate_indexnow_key(None) is None
 
 
+def test_notifier_main_never_logs_private_base_url_or_key(
+    monkeypatch: pytest.MonkeyPatch,
+    caplog: pytest.LogCaptureFixture,
+) -> None:
+    private_base = f"https://private.example/{SECRET}"
+    monkeypatch.setenv("SITE_BASE_URL", private_base)
+    monkeypatch.setenv("BING_INDEXNOW_API_KEY", "Abcd-1234")
+    monkeypatch.setattr(
+        notify_search_engines.SearchEngineNotifier,
+        "get_sitemap_entries",
+        lambda self, _path: [(self.base_url + "/posts/one/", None)],
+    )
+    monkeypatch.setattr(
+        notify_search_engines.SearchEngineNotifier,
+        "notify_google",
+        lambda self, urls: False,
+    )
+    monkeypatch.setattr(
+        notify_search_engines.SearchEngineNotifier,
+        "notify_bing",
+        lambda self, urls: True,
+    )
+
+    with caplog.at_level(logging.INFO):
+        with pytest.raises(SystemExit) as raised:
+            notify_search_engines.main()
+
+    assert raised.value.code == 0
+    output = _messages(caplog)
+    assert private_base not in output
+    assert SECRET not in output
+    assert "Abcd-1234" not in output
+
+
 class _FailingMessages:
     def __init__(self, error: BaseException):
         self.error = error

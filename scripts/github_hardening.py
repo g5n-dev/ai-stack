@@ -13,6 +13,7 @@ import json
 import re
 import subprocess
 import sys
+import time
 from collections.abc import Mapping, Sequence
 from pathlib import Path
 from typing import Protocol, cast
@@ -34,7 +35,7 @@ _MANAGED_RULESETS = frozenset(
     }
 )
 _MANAGED_ENVIRONMENTS = frozenset(
-    {"github-pages", "production-publish", "data-deletion"}
+    {"github-pages", "production-publish", "data-deletion", "production-recovery"}
 )
 
 
@@ -91,16 +92,30 @@ class GhCliApi:
         if body is not None:
             command.extend(["--input", "-"])
             encoded_body = canonical_json(body)
-        try:
-            completed = subprocess.run(
-                command,
-                input=encoded_body,
-                check=False,
-                capture_output=True,
-                text=True,
+        attempts = 3 if normalized_method == "GET" else 1
+        completed: subprocess.CompletedProcess[str] | None = None
+        for attempt in range(attempts):
+            try:
+                completed = subprocess.run(
+                    command,
+                    input=encoded_body,
+                    check=False,
+                    capture_output=True,
+                    text=True,
+                    timeout=60,
+                )
+            except subprocess.TimeoutExpired:
+                completed = None
+            except OSError as exc:
+                raise GitHubApiError("GitHub CLI could not be executed") from exc
+            if completed is not None and completed.returncode == 0:
+                break
+            if attempt + 1 < attempts:
+                time.sleep(attempt + 1)
+        if completed is None:
+            raise GitHubApiError(
+                f"GitHub API request timed out ({normalized_method} {endpoint})"
             )
-        except OSError as exc:
-            raise GitHubApiError("GitHub CLI could not be executed") from exc
         if completed.returncode != 0:
             if allow_not_found and re.search(r"\bHTTP 404\b", completed.stderr):
                 return None
@@ -559,10 +574,19 @@ def _validate_expected_contract(
     }
     for name, (target, includes) in expected_refs.items():
         ruleset = by_name[name]
+        expected_bypass: list[dict[str, object]] = []
+        if name == "ai-stack/main-protection-v1":
+            expected_bypass = [
+                {
+                    "actor_id": 15368,
+                    "actor_type": "Integration",
+                    "bypass_mode": "always",
+                }
+            ]
         if (
             ruleset["target"] != target
             or ruleset["enforcement"] != "active"
-            or ruleset["bypass_actors"] != []
+            or ruleset["bypass_actors"] != expected_bypass
         ):
             raise GitHubHardeningError(f"ruleset {name} target/enforcement/bypass is invalid")
         conditions = _object(ruleset["conditions"], f"ruleset {name} conditions")
@@ -668,6 +692,7 @@ def _validate_expected_contract(
         "github-pages": main_branch_policy,
         "production-publish": main_branch_policy,
         "data-deletion": main_branch_policy,
+        "production-recovery": main_branch_policy,
     }
     for name, environment in environments_by_name.items():
         if (
@@ -681,16 +706,21 @@ def _validate_expected_contract(
     for name in ("github-pages", "production-publish"):
         if environments_by_name[name].get("reviewers") != []:
             raise GitHubHardeningError(f"environment {name} must not require an approver")
-    deletion_reviewers = environments_by_name["data-deletion"].get("reviewers")
     expected_reviewer = [{"id": owner_id, "type": "User"}] if owner_id is not None else None
-    if not isinstance(deletion_reviewers, list) or len(deletion_reviewers) != 1:
-        raise GitHubHardeningError("data-deletion must require one repository owner review")
-    deletion_reviewer = _object(deletion_reviewers[0], "data-deletion reviewer")
-    if deletion_reviewer.get("type") != "User":
-        raise GitHubHardeningError("data-deletion reviewer is invalid")
-    _integer(deletion_reviewer.get("id"), "data-deletion reviewer id")
-    if expected_reviewer is not None and deletion_reviewers != expected_reviewer:
-        raise GitHubHardeningError("data-deletion reviewer must be the repository owner")
+    for name in ("data-deletion", "production-recovery"):
+        reviewers = environments_by_name[name].get("reviewers")
+        if not isinstance(reviewers, list) or len(reviewers) != 1:
+            raise GitHubHardeningError(
+                f"{name} must require one repository owner review"
+            )
+        reviewer = _object(reviewers[0], f"{name} reviewer")
+        if reviewer.get("type") != "User":
+            raise GitHubHardeningError(f"{name} reviewer is invalid")
+        _integer(reviewer.get("id"), f"{name} reviewer id")
+        if expected_reviewer is not None and reviewers != expected_reviewer:
+            raise GitHubHardeningError(
+                f"{name} reviewer must be the repository owner"
+            )
 
 
 def load_expected_config(path: Path | str, *, owner_id: int) -> dict[str, object]:

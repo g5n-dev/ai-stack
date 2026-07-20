@@ -1014,11 +1014,100 @@ def _parser() -> argparse.ArgumentParser:
     verify.add_argument("--expected-code-sha")
     verify.add_argument("--expected-content-sha")
     verify.add_argument("--expected-artifact-digest")
+    marker = subparsers.add_parser(
+        "guard-marker",
+        help="bind ai_stack_release_v1 marker to the complete Pages tree",
+    )
+    marker.add_argument("--public-root", type=Path, required=True)
+    marker.add_argument("--marker", type=Path, required=True)
+    marker.add_argument("--expected-sha", required=True)
+    marker.add_argument("--tree-manifest-output", type=Path, required=True)
+    marker.add_argument("--require-lineage", action="store_true")
     return parser
+
+
+def _guard_marker(
+    *,
+    public_root: Path,
+    marker_path: Path,
+    expected_sha: str,
+    tree_manifest_output: Path,
+    require_lineage: bool,
+) -> dict[str, object]:
+    from scripts.release_marker import ReleaseMarkerError, verify_release_marker
+
+    try:
+        marker_details = marker_path.lstat()
+        if (
+            marker_path.is_symlink()
+            or not stat.S_ISREG(marker_details.st_mode)
+            or marker_details.st_nlink != 1
+            or marker_details.st_size > 128 * 1024
+        ):
+            raise ReleaseValidationError("release marker must be a small regular file")
+        marker = json.loads(marker_path.read_text(encoding="utf-8"))
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError) as exc:
+        raise ReleaseValidationError("release marker is unreadable or invalid") from exc
+    if not isinstance(marker, dict):
+        raise ReleaseValidationError("release marker must be a JSON object")
+    try:
+        verified = verify_release_marker(
+            public_root,
+            marker,
+            expected_sha=expected_sha,
+            require_lineage=require_lineage,
+        )
+    except ReleaseMarkerError as exc:
+        raise ReleaseValidationError(str(exc)) from exc
+    tree = _public_tree_manifest(public_root)
+    if not any(
+        item.get("path") == marker_path.relative_to(public_root).as_posix()
+        for item in tree["files"]
+        if isinstance(item, dict)
+    ):
+        raise ReleaseValidationError("release marker is outside the Pages tree")
+    if tree_manifest_output.exists() or tree_manifest_output.is_symlink():
+        raise ReleaseValidationError("tree manifest output must not already exist")
+    tree_manifest_output.parent.mkdir(parents=True, exist_ok=True)
+    payload = json.dumps(tree, ensure_ascii=False, indent=2, sort_keys=True) + "\n"
+    temporary_name: str | None = None
+    try:
+        with tempfile.NamedTemporaryFile(
+            mode="w",
+            encoding="utf-8",
+            dir=tree_manifest_output.parent,
+            prefix=f".{tree_manifest_output.name}.",
+            delete=False,
+        ) as handle:
+            temporary_name = handle.name
+            os.chmod(handle.name, 0o600)
+            handle.write(payload)
+            handle.flush()
+            os.fsync(handle.fileno())
+        os.replace(temporary_name, tree_manifest_output)
+        temporary_name = None
+    finally:
+        if temporary_name is not None:
+            Path(temporary_name).unlink(missing_ok=True)
+    return {
+        "release_id": verified["release_id"],
+        "exact_sha": verified["exact_sha"],
+        "tree_digest": hashlib.sha256(_canonical_json_bytes(tree)).hexdigest(),
+    }
 
 
 def main(argv: Sequence[str] | None = None) -> int:
     args = _parser().parse_args(argv)
+    if args.command == "guard-marker":
+        result = _guard_marker(
+            public_root=args.public_root,
+            marker_path=args.marker,
+            expected_sha=args.expected_sha,
+            tree_manifest_output=args.tree_manifest_output,
+            require_lineage=args.require_lineage,
+        )
+        print(json.dumps(result, separators=(",", ":"), sort_keys=True))
+        return 0
     if args.command == "create":
         descriptor = create_release_descriptor(
             public_root=args.public_root,
