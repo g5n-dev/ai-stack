@@ -131,7 +131,7 @@ class GitCASWriter:
 
     def _changed_paths(self) -> tuple[str, ...]:
         tracked = self._decode_paths(
-            self._git_bytes("diff", "--name-only", "-z", "HEAD", "--")
+            self._git_bytes("diff", "--no-renames", "--name-only", "-z", "HEAD", "--")
         )
         untracked = self._decode_paths(
             self._git_bytes("ls-files", "--others", "--exclude-standard", "-z", "--")
@@ -214,7 +214,15 @@ class GitCASWriter:
                 raise UnsafeWriteError(f"Git filter changed staged bytes: {path}")
 
         staged = self._decode_paths(
-            self._git_bytes("diff", "--cached", "--name-only", "-z", "HEAD", "--")
+            self._git_bytes(
+                "diff",
+                "--cached",
+                "--no-renames",
+                "--name-only",
+                "-z",
+                "HEAD",
+                "--",
+            )
         )
         if staged != set(paths):
             raise UnsafeWriteError("staged path set differs from validated path set")
