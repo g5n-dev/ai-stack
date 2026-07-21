@@ -12,7 +12,7 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-07-21T18:43:40Z",
+  "generated_at": "2026-07-21T20:49:49Z",
   "items": [
     {
       "article_count": 653,
@@ -54,7 +54,7 @@
       "weighted_degree": 1183
     },
     {
-      "article_count": 334,
+      "article_count": 335,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 53,
@@ -64,7 +64,7 @@
       "legacy_id": "博客与播客",
       "name": "博客与播客",
       "rank": 4,
-      "weighted_degree": 659
+      "weighted_degree": 660
     },
     {
       "article_count": 161,
@@ -223,7 +223,7 @@
       "weighted_degree": 148.6
     },
     {
-      "article_count": 67,
+      "article_count": 68,
       "category": "article_tag",
       "community_id": "community:tag:Amazon SageMaker",
       "degree": 40,
@@ -233,7 +233,7 @@
       "legacy_id": "来源快报",
       "name": "来源快报",
       "rank": 17,
-      "weighted_degree": 144
+      "weighted_degree": 145
     },
     {
       "article_count": 29,
