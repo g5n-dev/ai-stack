@@ -379,6 +379,7 @@ def _run_trusted_ci(
         body={"inputs": {"target_sha": target_sha}, "ref": "main"},
     )
     completed: dict[str, object] | None = None
+    expected_run_name = f"trusted-ci:{target_sha}"
     for _ in range(attempts):
         run = _object(
             api.request("GET", f"/repos/{repository}/actions/runs/{run_id}"),
@@ -386,12 +387,12 @@ def _run_trusted_ci(
         )
         if (
             run.get("id") != run_id
-            or run.get("name") != "PR CI"
+            or run.get("name") != expected_run_name
             or run.get("path") != ".github/workflows/ci.yml"
             or run.get("event") != "workflow_dispatch"
             or run.get("head_branch") != "main"
             or run.get("head_sha") != main_sha
-            or run.get("display_title") != f"trusted-ci:{target_sha}"
+            or run.get("display_title") != expected_run_name
         ):
             raise ProtectedBranchMergeError("trusted validation workflow identity mismatch")
         if run.get("status") == "completed":

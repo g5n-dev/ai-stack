@@ -160,7 +160,9 @@ def test_trusted_ci_dispatch_contract_matches_the_controller_helper() -> None:
 
     helper = (ROOT / "scripts/protected_branch_merge.py").read_text(encoding="utf-8")
     assert 'body={"inputs": {"target_sha": target_sha}, "ref": "main"}' in helper
-    assert 'run.get("display_title") != f"trusted-ci:{target_sha}"' in helper
+    assert 'expected_run_name = f"trusted-ci:{target_sha}"' in helper
+    assert 'run.get("name") != expected_run_name' in helper
+    assert 'run.get("display_title") != expected_run_name' in helper
 
 
 def test_recovery_monitoring_and_delete_workflows_enforce_locked_boundaries() -> None:
