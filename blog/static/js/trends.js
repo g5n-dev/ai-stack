@@ -94,6 +94,7 @@
   const MAX_INDEX_BYTES = 64 * 1024;
   const MAX_WINDOW_BYTES = 128 * 1024;
   const MAX_TOPIC_BYTES = 96 * 1024;
+  const WINDOW_REQUEST_TIMEOUT_MS = 12 * 1000;
   const MAX_MATRIX_PIXELS = 8 * 1024 * 1024;
   const MAX_TOPICS = 100;
   const MAX_TRENDS = 24;
@@ -1026,6 +1027,37 @@
     });
   }
 
+  function terminalBadgeBounds(point) {
+    const width = Math.round(Math.max(240, Number(point?.viewportWidth) || 900));
+    const height = Math.round(Math.max(220, Number(point?.viewportHeight) || 430));
+    const active = Boolean(point?.isCenter);
+    const copy = matrixBadgeCopy(point, active);
+    const titleSize = width >= 900 ? 13 : 12;
+    const detailSize = width >= 900 ? 12 : 11;
+    const estimateTextWidth = (value, size) => [...String(value || "")]
+      .reduce((total, character) => total + (/[\u2E80-\u9FFF\uF900-\uFAFF]/u.test(character) ? size : size * 0.62), 0);
+    const badgeWidth = Math.min(
+      width - 16,
+      Math.ceil(Math.max(
+        estimateTextWidth(copy.title, titleSize),
+        estimateTextWidth(copy.status, detailSize),
+      )) + 18,
+    );
+    const badgeHeight = width >= 900 ? 42 : 38;
+    const rawTop = point.y - point.cellRadiusY - badgeHeight - 4;
+    const left = Math.max(8, Math.min(width - badgeWidth - 8, point.x - (badgeWidth / 2)));
+    const top = Math.max(8, Math.min(height - badgeHeight - 8, rawTop));
+    return Object.freeze({
+      id: point.id,
+      left,
+      right: left + badgeWidth,
+      top,
+      bottom: top + badgeHeight,
+      width: badgeWidth,
+      height: badgeHeight,
+    });
+  }
+
   function nodeGlowVisual(point, active = false, hovered = false) {
     const visual = point?.heat || heatVisual(point?.score);
     const activeBoost = active ? 8 : 0;
@@ -1046,8 +1078,8 @@
   }
 
   function layoutMatrix(trends, width, height, selectedId = "", rankById = null) {
-    const safeWidth = Math.max(240, Number(width) || 0);
-    const safeHeight = Math.max(220, Number(height) || 0);
+    const safeWidth = Math.round(Math.max(240, Number(width) || 0));
+    const safeHeight = Math.round(Math.max(220, Number(height) || 0));
     const source = Array.isArray(trends) ? trends : [];
     const resolvedRanks = new Map(source.map((item, index) => {
       const supplied = Number(rankById?.get?.(item?.id));
@@ -1150,6 +1182,8 @@
         facets: Object.freeze(facets),
         visibleCount: visible.length,
         totalCount: ranked.length,
+        viewportWidth: safeWidth,
+        viewportHeight: safeHeight,
       });
     });
   }
@@ -1216,8 +1250,20 @@
   }
 
   function hitTestMatrix(points, x, y) {
-    return [...(points || [])]
-      .reverse()
+    const source = [...(points || [])];
+    const center = source.find((point) => point.isCenter);
+    const badgeDrawOrder = [
+      ...source.filter((point) => point !== center),
+      ...(center ? [center] : []),
+    ];
+    const topmostFirst = badgeDrawOrder.reverse();
+    const badgeMatch = topmostFirst
+      .find((point) => {
+        const bounds = terminalBadgeBounds(point);
+        return x >= bounds.left && x <= bounds.right && y >= bounds.top && y <= bounds.bottom;
+      });
+    if (badgeMatch) return badgeMatch;
+    return topmostFirst
       .find((point) => {
         const radiusX = Math.max(point.radius + 5, Number(point.cellRadiusX) || 0);
         const radiusY = Math.max(point.radius + 5, Number(point.cellRadiusY) || 0);
@@ -1538,29 +1584,21 @@
     const detail = copy.status;
     const titleSize = width >= 900 ? 13 : 12;
     const detailSize = width >= 900 ? 12 : 11;
+    const bounds = terminalBadgeBounds(point);
     context.save();
-    context.font = `700 ${titleSize}px ui-monospace, SFMono-Regular, Menlo, monospace`;
-    const titleWidth = context.measureText(title).width;
-    context.font = `${detailSize}px ui-monospace, SFMono-Regular, Menlo, monospace`;
-    const detailWidth = context.measureText(detail).width;
-    const badgeWidth = Math.min(width - 16, Math.ceil(Math.max(titleWidth, detailWidth)) + 18);
-    const badgeHeight = width >= 900 ? 42 : 38;
-    const rawTop = point.y - point.cellRadiusY - badgeHeight - 4;
-    const left = Math.max(8, Math.min(width - badgeWidth - 8, point.x - (badgeWidth / 2)));
-    const top = Math.max(8, Math.min(height - badgeHeight - 8, rawTop));
     context.fillStyle = "rgba(3,9,18,0.94)";
     context.strokeStyle = heatRgba(visual, active || hovered ? 0.78 : 0.28 + (visual.glow * 0.72));
     context.lineWidth = hovered || active ? 1.35 : 1;
-    context.fillRect(left, top, badgeWidth, badgeHeight);
-    context.strokeRect(left + 0.5, top + 0.5, badgeWidth - 1, badgeHeight - 1);
+    context.fillRect(bounds.left, bounds.top, bounds.width, bounds.height);
+    context.strokeRect(bounds.left + 0.5, bounds.top + 0.5, bounds.width - 1, bounds.height - 1);
     context.textAlign = "left";
     context.textBaseline = "alphabetic";
     context.font = `700 ${titleSize}px ui-monospace, SFMono-Regular, Menlo, monospace`;
     context.fillStyle = active ? visual.color : "rgba(222,237,238,0.96)";
-    context.fillText(title, left + 9, top + (width >= 900 ? 17 : 15));
+    context.fillText(title, bounds.left + 9, bounds.top + (width >= 900 ? 17 : 15));
     context.font = `${detailSize}px ui-monospace, SFMono-Regular, Menlo, monospace`;
     context.fillStyle = heatRgba(visual, 0.88 + (visual.glow * 0.25));
-    context.fillText(detail, left + 9, top + (width >= 900 ? 34 : 30));
+    context.fillText(detail, bounds.left + 9, bounds.top + (width >= 900 ? 34 : 30));
     context.restore();
   }
 
@@ -2237,13 +2275,21 @@
 
     function setLoadState(state) {
       const ready = state === "ready";
+      const loading = state === "loading";
+      const recoverableWindowError = state === "window-error" && Boolean(model.index);
       root.dataset.loadState = state;
-      root.setAttribute("aria-busy", String(state === "loading"));
-      root.querySelectorAll("[data-trend-window], [data-trend-view]").forEach((button) => {
+      root.setAttribute("aria-busy", String(loading));
+      root.querySelectorAll("[data-trend-window]").forEach((button) => {
+        button.disabled = loading || (!ready && !recoverableWindowError);
+      });
+      root.querySelectorAll("[data-trend-view]").forEach((button) => {
         button.disabled = !ready;
       });
       [elements.query, elements.signal, elements.source, elements.scenario, elements.clear]
         .forEach((control) => { control.disabled = !ready; });
+      elements.matrix.setAttribute("aria-disabled", String(!ready));
+      elements.matrix.tabIndex = ready ? 0 : -1;
+      if (!ready) elements.matrix.style.cursor = "default";
       selectMenus.forEach((menu) => menu.refresh());
     }
 
@@ -2442,6 +2488,34 @@
       appendText(document, placeholder, "p", "", "选择趋势气泡或排名条目，查看评分依据、关联主题和证据文章。");
       appendText(document, placeholder, "small", "", "站内文章在当前标签页打开；使用浏览器返回可恢复当前趋势状态。");
       elements.detail.append(placeholder);
+    }
+
+    function renderWindowState(titleText, message) {
+      elements.detail.replaceChildren();
+      const state = document.createElement("div");
+      state.className = "trend-detail__placeholder";
+      appendText(document, state, "p", "trend-panel-index", "03 / EVIDENCE DRILLDOWN");
+      const title = appendText(document, state, "h2", "", titleText);
+      title.id = "trend-detail-title";
+      title.tabIndex = -1;
+      appendText(document, state, "p", "", message);
+      elements.detail.append(state);
+    }
+
+    function resetWindowPresentation(windowName) {
+      elements.statTopics.textContent = "—";
+      elements.statSources.textContent = "—";
+      elements.statWindow.textContent = WINDOW_LABELS[windowName];
+      elements.resultCount.textContent = "— 个主题";
+      elements.filterSummary.dataset.active = "false";
+      elements.filterSummary.textContent = "正在切换观察窗口，筛选暂不可用。";
+      elements.sampleNotice.hidden = true;
+      elements.sampleNotice.textContent = "";
+      if (model.state.topic) {
+        renderWindowState("正在切换观察窗口", "旧窗口详情已清除，正在确认当前主题在新窗口中的证据。");
+      } else {
+        renderDetailPlaceholder();
+      }
     }
 
     function appendMetricGrid(parent, signal) {
@@ -2760,7 +2834,7 @@
         model.returnTopicId = options.returnTopicId;
         model.returnToStage = false;
       } else if (options.returnToStage) {
-        model.returnTopicId = "";
+        model.returnTopicId = id;
         model.returnToStage = true;
       }
       model.visibleEvidence = 8;
@@ -2824,15 +2898,26 @@
     function restoreTrendOrigin(topicId, fallbackToStage = false) {
       const topicButton = Array.from(elements.list.querySelectorAll?.("[data-topic-id]") || [])
         .find((button) => button.dataset.topicId === topicId);
+      if (model.state.view === "list" && topicButton && typeof topicButton.focus === "function") {
+        topicButton.focus();
+        return;
+      }
+      if (
+        fallbackToStage
+        && model.state.view === "matrix"
+        && root.dataset.loadState === "ready"
+        && typeof elements.matrix.focus === "function"
+      ) {
+        elements.matrix.focus();
+        return;
+      }
       if (topicButton && typeof topicButton.focus === "function") {
         topicButton.focus();
         return;
       }
-      if (!fallbackToStage) return;
-      const stageTitle = document.getElementById("trend-stage-title");
-      if (stageTitle && typeof stageTitle.focus === "function") {
-        stageTitle.tabIndex = -1;
-        stageTitle.focus();
+      const activeView = root.querySelector(`[data-trend-view="${model.state.view}"]`);
+      if (activeView && typeof activeView.focus === "function") {
+        activeView.focus();
       }
     }
 
@@ -2854,17 +2939,34 @@
       if (!model.index || !WINDOWS.includes(windowName)) return;
       model.windowController?.abort();
       invalidateTopicLoad(model);
-      model.windowController = new AbortController();
+      const controller = new AbortController();
+      model.windowController = controller;
+      let timedOut = false;
+      const scheduleTimeout = windowObject.setTimeout?.bind(windowObject) || globalThis.setTimeout;
+      const cancelTimeout = windowObject.clearTimeout?.bind(windowObject) || globalThis.clearTimeout;
+      const timeoutId = scheduleTimeout(() => {
+        timedOut = true;
+        controller.abort();
+      }, WINDOW_REQUEST_TIMEOUT_MS);
       const sequence = ++model.windowSequence;
       model.state.window = windowName;
       if (options.push !== undefined) updateHistory(Boolean(options.push));
       setButtonStates();
+      model.windowData = null;
+      model.points = [];
+      model.hoveredId = "";
+      elements.list.replaceChildren();
+      elements.empty.hidden = true;
+      renderMatrixTooltip(document, elements.matrixTooltip, null);
+      drawMatrix(elements.matrix, []);
+      resetWindowPresentation(windowName);
+      setLoadState("loading");
       setStatus(`正在加载${WINDOW_LABELS[windowName]}趋势分片…`);
       try {
         const ref = model.index.windows[windowName];
         const url = resolveAssetUrl(root.dataset.indexUrl, ref.path, windowObject);
         const raw = await fetchJson(url, {
-          signal: model.windowController.signal,
+          signal: controller.signal,
           maximumBytes: MAX_WINDOW_BYTES,
           expectedBytes: ref.bytes,
           expectedSha256: ref.sha256,
@@ -2877,16 +2979,29 @@
         const topicChanged = clearTopicOutsideResults(filterTrends(model.windowData.trends, model.state));
         if (facetsChanged || topicChanged) updateHistory(false);
         renderResults();
+        setLoadState("ready");
         if (model.state.topic) await loadTopic(model.state.topic, { push: false });
         else renderDetailPlaceholder();
       } catch (error) {
-        if (error?.name === "AbortError") return;
+        if (error?.name === "AbortError" && !timedOut) return;
         if (sequence !== model.windowSequence) return;
         model.windowData = null;
         elements.list.replaceChildren();
         elements.matrixPanel.hidden = true;
         elements.empty.hidden = false;
-        setStatus(error?.message || "趋势窗口加载失败。", true);
+        elements.filterSummary.dataset.active = "false";
+        elements.filterSummary.textContent = "当前窗口数据不可用；可重试当前窗口或切换观察窗口。";
+        if (model.state.topic) {
+          renderWindowState("观察窗口暂不可用", "旧窗口详情未被保留，请重试当前窗口或切换观察窗口。");
+        }
+        setLoadState("window-error");
+        setStatus(
+          timedOut ? "趋势窗口加载超时，请重试当前窗口或切换观察窗口。" : (error?.message || "趋势窗口加载失败。"),
+          true,
+        );
+      } finally {
+        cancelTimeout(timeoutId);
+        if (model.windowController === controller) model.windowController = null;
       }
     }
 
@@ -2905,7 +3020,6 @@
         elements.dataAsOf.dateTime = model.index.data_as_of;
         elements.dataAsOf.textContent = `数据截止 ${formatTimestamp(model.index.data_as_of)}`;
         elements.statArticles.textContent = formatNumber(model.index.stats.eligible_articles);
-        setLoadState("ready");
         await loadWindow(model.state.window, { push: false });
       } catch (error) {
         setLoadState("error");
@@ -2933,7 +3047,9 @@
     document.querySelectorAll("[data-trend-window]").forEach((button) => {
       listen(button, "click", () => {
         const windowName = button.dataset.trendWindow;
-        if (windowName !== model.state.window) loadWindow(windowName, { push: true });
+        if (windowName !== model.state.window || !model.windowData) {
+          loadWindow(windowName, { push: true });
+        }
       });
     });
     document.querySelectorAll("[data-trend-view]").forEach((button) => {
@@ -2970,11 +3086,23 @@
       });
     });
     listen(elements.matrix, "click", (event) => {
+      if (root.dataset.loadState !== "ready") return;
       const rect = elements.matrix.getBoundingClientRect();
       const point = hitTestMatrix(model.points, event.clientX - rect.left, event.clientY - rect.top);
       if (point) loadTopic(point.id, { push: true, scroll: true, focus: true, returnToStage: true });
     });
+    listen(elements.matrix, "keydown", (event) => {
+      if (root.dataset.loadState !== "ready") return;
+      if (event.key !== "Enter" && event.key !== " ") return;
+      const point = model.points.find((candidate) => candidate.id === model.state.topic)
+        || model.points.find((candidate) => candidate.isCenter)
+        || model.points[0];
+      if (!point) return;
+      event.preventDefault();
+      loadTopic(point.id, { push: true, scroll: true, focus: true, returnToStage: true });
+    });
     listen(elements.matrix, "mousemove", (event) => {
+      if (root.dataset.loadState !== "ready") return;
       const rect = elements.matrix.getBoundingClientRect();
       const point = hitTestMatrix(model.points, event.clientX - rect.left, event.clientY - rect.top);
       const nextHoveredId = point?.id || "";

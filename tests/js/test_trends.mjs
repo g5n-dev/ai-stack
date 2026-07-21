@@ -545,6 +545,50 @@ test("topology matrix is deterministic, bounded and needs no animation frame", (
 });
 
 
+test("topology badge rectangle is part of the node hit target", () => {
+  const width = 900;
+  const height = 480;
+  const [point] = Trends.layoutMatrix([
+    trend({ topic: "Amazon Bedrock", score: 73, state: "rising" }),
+  ], width, height);
+  const badgeHeight = width >= 900 ? 42 : 38;
+  const badgeCenterX = point.x;
+  const badgeCenterY = Math.max(
+    8 + (badgeHeight / 2),
+    point.y - point.cellRadiusY - 4 - (badgeHeight / 2),
+  );
+
+  const normalizedY = (point.y - badgeCenterY) / point.cellRadiusY;
+  assert.ok(
+    normalizedY > 1,
+    "the probe must be outside the existing organic cell so this specifically covers the badge",
+  );
+  assert.equal(
+    Trends.hitTestMatrix([point], badgeCenterX, badgeCenterY)?.id,
+    point.id,
+    "hovering or clicking the visible badge must resolve to the same trend node",
+  );
+});
+
+
+test("topology normalizes viewport geometry and gives the visually topmost center priority", () => {
+  const points = Trends.layoutMatrix([
+    trend(),
+    trend({ id: "tag:agent", topic: "Agent", score: 60 }),
+  ], 899.6, 479.6);
+  assert.equal(points[0].viewportWidth, 900);
+  assert.equal(points[0].viewportHeight, 480);
+
+  const center = { ...points[0], x: 450, y: 240, cellRadiusX: 90, cellRadiusY: 80 };
+  const coveredOuter = { ...points[1], x: 450, y: 240, cellRadiusX: 70, cellRadiusY: 60 };
+  assert.equal(
+    Trends.hitTestMatrix([center, coveredOuter], 450, 240)?.id,
+    center.id,
+    "the center is drawn last and must win overlapping node hit tests",
+  );
+});
+
+
 test("topology matrix caps the first paint and moves the selected topic into the expanded center", () => {
   const values = Array.from({ length: 18 }, (_, index) => trend({
     id: `tag:t-${index}`,
