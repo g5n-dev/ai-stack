@@ -1,5 +1,5 @@
 {
-  "active_count": 2165,
+  "active_count": 2166,
   "archived_count": 276,
   "complete_count": 10,
   "legacy_analysis_count": 0,
@@ -17905,6 +17905,12 @@
         "source_excerpt_truncated"
       ]
     },
+    "posts/20260722-blogs_podcasts-introducing-gemini-36-flash-35-flash-lite-and-35-f-0-627cfabda0.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260722-blogs_podcasts-microsoft-expands-azure-ai-and-hpc-infrastructure--0-a0f09f7c50.md": {
       "reasons": [
         "concise_source_card"
@@ -17950,10 +17956,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2155,
-  "source_file_count": 2441,
-  "source_tree_sha256": "c9ab51299a7fb1b910e40726a971d7643cf5c05e6e90c9b8e0ffd35504c41d75",
-  "verified_provenance_count": 2165,
+  "source_brief_count": 2156,
+  "source_file_count": 2442,
+  "source_tree_sha256": "9f3430ac0ce7eab88099f8f891bfd983611a31ad5c95787ae14b2b9a95499bd5",
+  "verified_provenance_count": 2166,
   "warning_counts": {
     "source_excerpt_truncated": 741
   }
