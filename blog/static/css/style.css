@@ -19,9 +19,25 @@
   --site-font-mono: ui-monospace, "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --site-page-title-size: 30px;
   --site-page-title-line-height: 1.2;
+  --site-page-title-weight: 300;
+  --site-workbench-title-size: 22px;
+  --site-workbench-title-mobile-size: 18px;
+  --site-workbench-title-line-height: 1.25;
+  --site-workbench-title-weight: 600;
+  --site-section-title-size: 18px;
+  --site-section-title-line-height: 1.35;
+  --site-section-title-weight: 600;
   --site-copy-size: 14px;
   --site-copy-line-height: 1.75;
   --site-control-size: 13px;
+  --site-control-line-height: 1.5;
+  --site-control-weight: 600;
+  --site-meta-size: 11px;
+  --site-meta-line-height: 1.45;
+  --site-micro-size: 9px;
+  --site-micro-line-height: 1.35;
+  --site-data-size: 22px;
+  --site-data-compact-size: 14px;
   --site-header-telemetry-label-row: 11px;
   --site-header-telemetry-value-row: 13px;
   --site-header-telemetry-note-row: 8px;
@@ -37,8 +53,67 @@ body {
   color: rgb(var(--off-white));
   cursor: crosshair;
   font-family: var(--site-font-sans);
+  font-size: var(--site-copy-size);
+  line-height: var(--site-copy-line-height);
   overflow-x: hidden;
   overflow-y: auto;
+}
+
+/* ===== Shared typography hierarchy =====
+ * These semantic classes are the public contract for DOM typography across
+ * archive, search, trend and graph modules. Editorial article copy and canvas
+ * labels intentionally keep their own context-specific scales.
+ */
+.site-page-title {
+  font-family: var(--site-font-sans);
+  font-size: var(--site-page-title-size);
+  font-weight: var(--site-page-title-weight);
+  line-height: var(--site-page-title-line-height);
+  letter-spacing: -0.025em;
+}
+
+.site-workbench-title {
+  font-family: var(--site-font-sans);
+  font-size: var(--site-workbench-title-size);
+  font-weight: var(--site-workbench-title-weight);
+  line-height: var(--site-workbench-title-line-height);
+}
+
+.site-section-title {
+  font-family: var(--site-font-sans);
+  font-size: var(--site-section-title-size);
+  font-weight: var(--site-section-title-weight);
+  line-height: var(--site-section-title-line-height);
+}
+
+.site-body-copy {
+  font-family: var(--site-font-sans);
+  font-size: var(--site-copy-size);
+  line-height: var(--site-copy-line-height);
+}
+
+.site-body-copy :where(p, li) {
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.site-control-text {
+  font-family: var(--site-font-sans);
+  font-size: var(--site-control-size);
+  font-weight: var(--site-control-weight);
+  line-height: var(--site-control-line-height);
+}
+
+.site-meta-text {
+  font-family: var(--site-font-mono);
+  font-size: var(--site-meta-size);
+  line-height: var(--site-meta-line-height);
+}
+
+@media (max-width: 900px) {
+  .site-workbench-title {
+    font-size: var(--site-workbench-title-mobile-size);
+  }
 }
 
 a {
@@ -682,7 +757,7 @@ a {
 
 .frame-label {
   position: absolute;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-family: var(--site-font-mono);
   font-size: 9px;
   letter-spacing: 0.28em;
   text-transform: uppercase;
@@ -837,7 +912,7 @@ a {
   position: absolute;
   left: 14px;
   bottom: 14px;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-family: var(--site-font-mono);
   font-size: 10px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -900,7 +975,7 @@ a {
 
 .holo-scan-meta {
   position: absolute;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-family: var(--site-font-mono);
   font-size: 9px;
   line-height: 1.25;
   letter-spacing: 0.12em;
@@ -928,7 +1003,7 @@ a {
   position: absolute;
   right: 10px;
   top: -18px;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-family: var(--site-font-mono);
   font-size: 9px;
   letter-spacing: 0.25em;
   text-transform: uppercase;
@@ -945,7 +1020,7 @@ a {
   left: 50%;
   bottom: 42px;
   transform: translateX(-50%);
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-family: var(--site-font-mono);
   font-size: 10px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -1358,7 +1433,7 @@ a {
 }
 
 .terminal-overlay-title {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-family: var(--site-font-mono);
   font-size: 10px;
   letter-spacing: 0.25em;
   text-transform: uppercase;
@@ -1402,7 +1477,7 @@ a {
 }
 
 .terminal-line {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-family: var(--site-font-mono);
   font-size: 12px;
   line-height: 1.5;
   white-space: pre-wrap;

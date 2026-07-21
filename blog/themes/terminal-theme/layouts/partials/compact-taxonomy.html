@@ -13,7 +13,7 @@
             <div class="w-full max-w-4xl mx-auto">
                 <div class="border-b border-muted-teal/20 pb-5 mb-6">
                     <p class="text-primary/70 text-xs font-mono tracking-wide">TAXONOMY</p>
-                    <h1 class="mt-2 text-off-white text-3xl font-light">{{ .Title }}</h1>
+                    <h1 class="site-page-title mt-2 text-off-white">{{ .Title }}</h1>
                     <p class="mt-2 text-muted-teal/55 text-xs font-mono">共 {{ len $terms }} 项</p>
                 </div>
 
@@ -22,7 +22,7 @@
                     <li class="border-b border-muted-teal/10 last:border-b-0">
                         <a href="{{ .RelPermalink }}" data-term-link="{{ .RelPermalink }}"
                             class="flex items-center justify-between gap-4 py-4 text-off-white/80 hover:text-primary">
-                            <span>{{ .Data.Term }}</span>
+                            <span class="site-body-copy">{{ .Data.Term }}</span>
                             <span class="shrink-0 text-muted-teal/50 text-xs font-mono">{{ len .RegularPages }}</span>
                         </a>
                     </li>

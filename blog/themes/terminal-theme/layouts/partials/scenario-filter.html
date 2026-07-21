@@ -1,13 +1,13 @@
 {{- with .Taxonomies.scenarios }}
 <div class="glass-panel rounded-lg p-4">
-    <h3 class="text-primary/70 text-[11px] font-bold tracking-wide mb-3 flex items-center gap-2">
+    <h3 class="site-meta-text text-primary/70 font-bold tracking-wide mb-3 flex items-center gap-2">
         <span class="material-symbols-outlined text-sm">explore</span>
         应用场景
     </h3>
     <div class="flex flex-wrap gap-2">
         {{- range .Alphabetical }}
         <a href="{{ .Page.RelPermalink }}"
-            class="scenario-tag px-2 py-1 rounded border border-primary/15 bg-primary/5 hover:bg-primary/10 text-primary/70 text-[10px] font-mono tracking-wide transition-all flex items-center gap-1"
+            class="site-control-text scenario-tag px-2 py-1 rounded border border-primary/15 bg-primary/5 hover:bg-primary/10 text-primary/70 tracking-wide transition-all flex items-center gap-1"
             title="{{ len .Pages }} 个项目">
             <span class="material-symbols-outlined text-[10px] align-middle">category</span>
             {{ .Term }}

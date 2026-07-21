@@ -173,3 +173,40 @@
 本轮未遗留 P0/P1/P2 项。
 
 final result: passed
+
+## 全站子模块字体系统（2026-07-21）
+
+本轮将首页、Posts、时间线归档、搜索、标签、趋势、知识图谱、About、场景详情与文章内的溯源模块放入同一排版契约。桌面对照均为 1280×720，比较图上半部分为修改前、下半部分为修改后；移动端统一使用 390×844。
+
+| 标签目录 | About | 图谱工作台 |
+| --- | --- | --- |
+| ![标签目录字体前后对照](docs/assets/design-qa/site-typography-tags-1280.webp) | ![About 字体前后对照](docs/assets/design-qa/site-typography-about-1280.webp) | ![图谱字体前后对照](docs/assets/design-qa/site-typography-graph-1280.webp) |
+
+![趋势、图谱与 About 的 390×844 移动端结果](docs/assets/design-qa/site-typography-mobile-390.webp)
+
+### 统一后的语义标尺
+
+- 普通页面标题：30px / 1.2 / 300；首页、Posts、Archive、Search、Tags、About、趋势与场景详情共享同一语义类。
+- 工作台标题：桌面 22px、移动端 18px / 1.25 / 600；用于知识图谱这类高密度操作界面。
+- 模块标题：18px / 1.35 / 600；搜索结果、趋势面板、图谱详情、About 模块和文章内功能模块一致。
+- 正文：14px / 1.75；控件：13px / 1.5 / 600；元信息：11px / 1.45；主要 KPI：22px，紧凑指标：14px。
+- Sans 与 Mono 均由 `style.css` 的共享变量唯一提供；Tailwind 工具类不再维护第二套字体栈。
+
+### 保留的合理例外
+
+- 文章标题与 18px 阅读正文维持编辑阅读尺度，不被工具页 14px 基线压缩。
+- Cytoscape/Canvas 标签继续受碰撞与缩放预算控制；本轮只统一 DOM 标题、按钮、筛选器、详情抽屉和遥测。
+- 9px 只允许用于不可交互的画布模式/容量提示；触控输入保持 16px，避免移动浏览器聚焦缩放。
+
+### 修复与验证
+
+- 修复图谱 `.graph-body button, input { font: inherit; }` 高特异性规则覆盖组件字号的问题，改用低特异性 `:where()` reset。
+- 标签目录条目由浏览器回退 16px 收口为 14px；About 从 48px/700 的孤立视觉标题恢复为可见的 30px `h1`；首页卡片标题不再小于正文。
+- 搜索、趋势和 lineage 的标题、按钮、摘要、状态与指标均引用共享 token；lineage 不再引用未定义的 `--font-mono`。
+- 新增静态字体契约与跨页计算样式 E2E：9 个静态契约、7 个普通页面标题、趋势全部筛选控件，以及图谱桌面/触控输入与工作台标题均有精确断言。
+- 全局 `tailwind.css`、`style.css` 与文章 `lineage.css` 使用真实内容哈希版本，避免滚动部署时新模板命中旧字体 CSS。
+- Hugo 0.153.4 生产构建、Pagefind 2,161 页索引、91 个 Node 测试、41 个交付测试、45 个定向 Python 测试与 12 个浏览器 E2E 通过；桌面和 390×844 视觉检查未发现截断、横向溢出或控件缩小。
+
+本轮未遗留 P0/P1/P2 项。
+
+final result: passed

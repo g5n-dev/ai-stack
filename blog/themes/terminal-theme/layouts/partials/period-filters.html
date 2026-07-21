@@ -2,7 +2,7 @@
 {{- $monthNames := dict "01" "一月" "02" "二月" "03" "三月" "04" "四月" "05" "五月" "06" "六月" "07" "七月" "08" "八月" "09" "九月" "10" "十月" "11" "十一月" "12" "十二月" -}}
 {{- $pages := where $site.RegularPages "Section" "posts" -}}
 <div class="glass-panel rounded-lg p-4">
-    <h3 class="text-primary/70 text-[11px] font-bold tracking-wide mb-3 flex items-center gap-2">
+    <h3 class="site-meta-text text-primary/70 font-bold tracking-wide mb-3 flex items-center gap-2">
         <span class="material-symbols-outlined text-sm">calendar_month</span>
         按年份筛选
     </h3>
@@ -10,7 +10,7 @@
         {{- range $pages.GroupByDate "2006" }}
         <li>
             <a href="/posts/?year={{ .Key }}"
-                class="flex items-center justify-between px-3 py-1.5 rounded text-[11px] transition-all text-off-white/50 hover:bg-muted-teal/5 hover:text-off-white/70">
+                class="site-control-text flex items-center justify-between px-3 py-1.5 rounded transition-all text-off-white/50 hover:bg-muted-teal/5 hover:text-off-white/70">
                 <span>{{ .Key }}</span>
                 <span class="font-mono text-off-white/30">{{ len .Pages }}</span>
             </a>
@@ -20,7 +20,7 @@
 </div>
 
 <div class="glass-panel rounded-lg p-4">
-    <h3 class="text-primary/70 text-[11px] font-bold tracking-wide mb-3 flex items-center gap-2">
+    <h3 class="site-meta-text text-primary/70 font-bold tracking-wide mb-3 flex items-center gap-2">
         <span class="material-symbols-outlined text-sm">date_range</span>
         按月份筛选
     </h3>
@@ -31,7 +31,7 @@
         {{- $month := index (split $yearMonth "-") 1 -}}
         <li>
             <a href="/posts/?month={{ $yearMonth }}"
-                class="flex items-center justify-between px-3 py-1.5 rounded text-[11px] transition-all text-off-white/50 hover:bg-muted-teal/5 hover:text-off-white/70">
+                class="site-control-text flex items-center justify-between px-3 py-1.5 rounded transition-all text-off-white/50 hover:bg-muted-teal/5 hover:text-off-white/70">
                 <span>{{ $year }}年{{ index $monthNames $month }}</span>
                 <span class="font-mono text-off-white/30">{{ len .Pages }}</span>
             </a>

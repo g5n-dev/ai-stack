@@ -276,6 +276,16 @@ def test_trends_typography_uses_the_shared_site_scale(
             moduleLine: style(".trend-stage__toolbar h2").lineHeight,
             control: style("#trend-query").fontSize,
             button: style('[data-trend-window="30d"]').fontSize,
+            buttonFamily: style('[data-trend-window="30d"]').fontFamily,
+            buttonLine: style('[data-trend-window="30d"]').lineHeight,
+            buttonWeight: style('[data-trend-window="30d"]').fontWeight,
+            inputFamily: style("#trend-query").fontFamily,
+            inputLine: style("#trend-query").lineHeight,
+            inputWeight: style("#trend-query").fontWeight,
+            selectFamily: style(".trend-select__trigger").fontFamily,
+            selectLine: style(".trend-select__trigger").lineHeight,
+            selectWeight: style(".trend-select__trigger").fontWeight,
+            kickerLine: style(".trend-kicker").lineHeight,
           };
         }
         """
@@ -288,6 +298,13 @@ def test_trends_typography_uses_the_shared_site_scale(
     assert float(desktop["moduleLine"].removesuffix("px")) == pytest.approx(24.3, abs=0.1)
     assert desktop["control"] == "13px"
     assert desktop["button"] == "13px"
+    assert desktop["buttonFamily"] == desktop["inputFamily"]
+    assert desktop["selectFamily"] == desktop["inputFamily"]
+    assert float(desktop["buttonLine"].removesuffix("px")) == pytest.approx(19.5, abs=0.1)
+    assert float(desktop["inputLine"].removesuffix("px")) == pytest.approx(19.5, abs=0.1)
+    assert float(desktop["selectLine"].removesuffix("px")) == pytest.approx(19.5, abs=0.1)
+    assert {desktop["buttonWeight"], desktop["inputWeight"], desktop["selectWeight"]} == {"600"}
+    assert float(desktop["kickerLine"].removesuffix("px")) == pytest.approx(15.95, abs=0.1)
 
     page.set_viewport_size({"width": 1440, "height": 901})
     expect(page.locator("#trend-page-title")).to_have_css("font-size", "30px")
@@ -306,7 +323,61 @@ def test_trends_typography_uses_the_shared_site_scale(
     assert runtime_errors == []
 
 
-def test_trends_touch_input_avoids_mobile_browser_zoom(
+def test_all_regular_modules_share_one_dom_typography_hierarchy(
+    page: Page, site_url: str
+) -> None:
+    page.set_viewport_size({"width": 1440, "height": 900})
+    routes = (
+        "/",
+        "/posts/",
+        "/archive/",
+        "/search/",
+        "/tags/",
+        "/about/",
+        "/trends/?window=30d",
+    )
+    title_styles: list[dict[str, str]] = []
+
+    for route in routes:
+        response = page.goto(f"{site_url}{route}", wait_until="domcontentloaded")
+        assert response is not None and response.ok, route
+        title = page.locator(".site-page-title").first
+        expect(title).to_be_visible()
+        title_styles.append(
+            title.evaluate(
+                """
+                (node) => {
+                  const style = getComputedStyle(node);
+                  return {
+                    family: style.fontFamily,
+                    size: style.fontSize,
+                    line: style.lineHeight,
+                    weight: style.fontWeight,
+                  };
+                }
+                """
+            )
+        )
+
+    assert len({style["family"] for style in title_styles}) == 1
+    assert {style["size"] for style in title_styles} == {"30px"}
+    assert {style["line"] for style in title_styles} == {"36px"}
+    assert {style["weight"] for style in title_styles} == {"300"}
+
+    response = page.goto(f"{site_url}/scenarios/", wait_until="domcontentloaded")
+    assert response is not None and response.ok
+    expect(page.locator(".site-workbench-title")).to_have_css("font-size", "22px")
+    expect(page.locator(".mode-button").first).to_have_css("font-size", "13px")
+    expect(page.locator(".graph-search input")).to_have_css("font-size", "13px")
+
+    page.set_viewport_size({"width": 390, "height": 844})
+    response = page.goto(f"{site_url}/scenarios/", wait_until="domcontentloaded")
+    assert response is not None and response.ok
+    expect(page.locator(".site-workbench-title")).to_have_css("font-size", "18px")
+    expect(page.locator(".mode-button").first).to_have_css("font-size", "13px")
+
+
+def test_touch_inputs_avoid_mobile_browser_zoom(
     browser: Browser, site_url: str
 ) -> None:
     context = browser.new_context(
@@ -321,6 +392,9 @@ def test_trends_touch_input_avoids_mobile_browser_zoom(
         assert response is not None and response.ok
         expect(page.locator("#trend-status")).to_contain_text("已发现", timeout=15_000)
         expect(page.locator("#trend-query")).to_have_css("font-size", "16px")
+        response = page.goto(f"{site_url}/scenarios/", wait_until="domcontentloaded")
+        assert response is not None and response.ok
+        expect(page.locator(".graph-search input")).to_have_css("font-size", "16px")
     finally:
         context.close()
 

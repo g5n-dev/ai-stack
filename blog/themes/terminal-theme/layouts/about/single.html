@@ -25,7 +25,6 @@
         {{ partial "site-header.html" . }}
 
         <main class="flex-1 overflow-y-auto custom-scrollbar flex items-start justify-center p-6 lg:p-12 relative">
-            <h1 class="sr-only">{{ .Title }}</h1>
             <div class="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
                 <div class="lg:col-span-5 flex flex-col gap-6 relative">
                     {{- $img := .Site.Params.profile_image | default "/img/profile-placeholder.svg" -}}
@@ -96,9 +95,9 @@
                         <div
                             class="absolute -left-[5px] top-0 w-2 h-2 bg-primary rounded-full shadow-[0_0_10px_#4db6ac]">
                         </div>
-                        <h2 class="text-4xl md:text-5xl font-bold text-off-white mb-2 tracking-tighter font-display">
+                        <h1 class="site-page-title text-off-white mb-2 tracking-tight font-display">
                             SUBJECT: <span class="text-primary/90">{{ .Title }}</span>
-                        </h2>
+                        </h1>
                         <p class="text-primary/80 font-mono text-sm tracking-widest uppercase">
                             // Neural Interface Consultant // Class A
                         </p>
@@ -111,23 +110,23 @@
                         </div>
                         <div class="relative z-10 flex flex-col gap-4">
                             <div class="flex justify-between items-end border-b border-muted-teal/10 pb-2 mb-2">
-                                <h3 class="text-off-white text-lg font-bold tracking-tight flex items-center gap-2">
+                                <h2 class="site-section-title text-off-white tracking-tight flex items-center gap-2">
                                     <span class="material-symbols-outlined text-primary text-sm">history_edu</span>
                                     DOSSIER_SUMMARY
-                                </h3>
+                                </h2>
                                 <span class="text-[10px] text-off-white/30 font-mono">READ_ONLY</span>
                             </div>
-                            <div class="prose prose-invert max-w-none text-slate-300">
+                            <div class="site-body-copy prose prose-invert max-w-none text-slate-300">
                                 {{ .Content }}
                             </div>
                         </div>
                     </div>
 
                     <div class="space-y-5">
-                        <h3
-                            class="text-sm font-bold text-off-white/40 tracking-widest uppercase flex items-center gap-2">
+                        <h2
+                            class="site-section-title text-off-white/40 tracking-widest uppercase flex items-center gap-2">
                             <span class="w-2 h-2 bg-primary rounded-sm"></span> System Competencies
-                        </h3>
+                        </h2>
 
                         <div class="group">
                             <div class="flex justify-between text-xs font-mono mb-1 text-off-white/60">
@@ -162,12 +161,12 @@
 
                     <div class="flex flex-wrap gap-4 mt-2">
                         <a href="{{ .Site.Params.github }}"
-                            class="relative overflow-hidden flex items-center gap-3 px-6 py-3 bg-primary/10 border border-primary/30 hover:bg-primary/15 text-off-white text-sm font-bold tracking-widest transition-all group w-full sm:w-auto rounded hover:shadow-[0_0_20px_rgba(77,182,172,0.35)]">
+                            class="site-control-text relative overflow-hidden flex min-h-11 items-center gap-3 px-6 py-3 bg-primary/10 border border-primary/30 hover:bg-primary/15 text-off-white tracking-widest transition-all group w-full sm:w-auto rounded hover:shadow-[0_0_20px_rgba(77,182,172,0.35)]">
                             <span class="material-symbols-outlined text-lg">hub</span>
                             INITIATE_CONNECTION
                         </a>
                         <a href="/"
-                            class="relative flex items-center gap-3 px-6 py-3 bg-off-white/5 border border-off-white/10 hover:bg-off-white/10 text-off-white/70 hover:text-off-white text-sm font-bold tracking-widest transition-all w-full sm:w-auto rounded">
+                            class="site-control-text relative flex min-h-11 items-center gap-3 px-6 py-3 bg-off-white/5 border border-off-white/10 hover:bg-off-white/10 text-off-white/70 hover:text-off-white tracking-widest transition-all w-full sm:w-auto rounded">
                             <span class="material-symbols-outlined text-lg">folder_open</span>
                             RETURN_HOME
                         </a>
