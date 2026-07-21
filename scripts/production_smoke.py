@@ -102,10 +102,19 @@ def _cache_url(base_url: str, path: str, token: str) -> str:
     base_parts = urllib.parse.urlsplit(base_url)
     if parts.scheme != "https" or parts.netloc != base_parts.netloc:
         raise ProductionSmokeError("cross-origin production reference is forbidden")
+    # urllib.request requires an ASCII request target. Hugo keeps Unicode slugs
+    # readable in lineage JSON, so encode only non-ASCII/path-unsafe bytes while
+    # preserving existing percent escapes instead of turning ``%E4`` into
+    # ``%25E4``.
+    path = re.sub(r"%(?![0-9A-Fa-f]{2})", "%25", parts.path or "/")
+    encoded_path = urllib.parse.quote(
+        path,
+        safe="/%:@!$&'()*+,;=-._~",
+    )
     query = urllib.parse.parse_qsl(parts.query, keep_blank_values=True)
     query.append(("__ai_stack_release", token))
     return urllib.parse.urlunsplit(
-        (parts.scheme, parts.netloc, parts.path or "/", urllib.parse.urlencode(query), "")
+        (parts.scheme, parts.netloc, encoded_path, urllib.parse.urlencode(query), "")
     )
 
 
