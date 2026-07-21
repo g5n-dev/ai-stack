@@ -141,4 +141,35 @@
 - 实测当前筛选场景中所有可见主节点和内部子节点均有光感；悬停中心节点显示“命令行工具 / 上升 / 72 分 / 16 证据 / 3 来源”，常态画面不再出现信息过载。
 - Pass 8：同视域复核发现低热节点在 DPR=2 与截图缩放后光晕衰减、外圈高分节点可能误用琥珀色。补充径向光场与内核光，外围统一青色、中心保留琥珀色，并锁定绘制预算；P0/P1/P2 均为 0。
 
+## 趋势页共享排版尺度（2026-07-21）
+
+- source visual truth path: `docs/assets/design-qa/trend-typography-reference-2016.webp`
+- implementation screenshot path: `docs/assets/design-qa/trend-typography-after-2016.webp`
+- before screenshot path: `docs/assets/design-qa/trend-typography-before-2016.webp`
+- viewport: 2016×951；自动化响应式检查另覆盖 1440×900、1440×901、390×844、844×390 触控横屏。
+- state: 深色主题、共享站点头部、趋势 30 天窗口、矩阵视图、数据加载完成。
+
+同一视口并排检查检索页与趋势页后，趋势页已复用全站排版尺度：页面标题 30px/36px、字重 300，说明文字 14px，模块标题 18px，控件 13px，11px 仅用于排名、证据数和终端元信息。标题、说明、KPI、筛选控件和模块标题在原始截图中均可辨认，因此不需要额外裁切；计算样式测试补充验证精确值。
+
+| 全站排版参照 | 修复前趋势页 | 修复后趋势页 |
+| --- | --- | --- |
+| ![检索页全站排版参照](docs/assets/design-qa/trend-typography-reference-2016.webp) | ![趋势页修复前](docs/assets/design-qa/trend-typography-before-2016.webp) | ![趋势页修复后](docs/assets/design-qa/trend-typography-after-2016.webp) |
+
+### 本轮对照迭代
+
+- Pass 9：趋势标题原为 28–44px、字重 520，与检索/列表页 30px、字重 300 不一致；正文与控件又大量使用 11–12px。现已改用 `--site-page-title-size`、`--site-page-title-line-height`、`--site-copy-size` 和 `--site-control-size`。
+- Pass 10：独立审查发现 900/901px 高度断点仍改变说明文字行高，横屏触控视口仍可能以 13px 聚焦输入。现只压缩外部间距，文字行高保持共享值；coarse pointer 输入固定 16px，避免移动 Safari 自动缩放。
+
+### 必查表面与验证
+
+- 字体：通过；标题、正文、控件、模块与 meta 五级尺度稳定。
+- 间距：通过；未改变工作台网格、节点预算或面板尺寸。
+- 颜色：通过；继续使用全站深蓝、青绿、灰白与琥珀状态色。
+- 图片：不适用；未新增或替换图片资产，Canvas 图谱保持原实现。
+- 文案：通过；未改变动态数据、标签或说明语义。
+- 响应式与可访问性：通过；触控输入 16px，按钮至少 44px，reduced-motion 和键盘交互未受影响。
+- 生产边界：Hugo 0.153.4 构建、Pagefind、图谱/趋势/lineage 固定点、91 个 Node 测试、41 个交付测试与 11 个浏览器 E2E 全部通过；页面运行时异常为 0。
+
+本轮未遗留 P0/P1/P2 项。
+
 final result: passed

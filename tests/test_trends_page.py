@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import re
 from pathlib import Path
 
 from bs4 import BeautifulSoup
@@ -65,6 +66,10 @@ def test_trends_styles_are_scoped_and_share_site_tokens() -> None:
     for token in (
         "var(--site-font-sans)",
         "var(--site-font-mono)",
+        "var(--site-page-title-size, 30px)",
+        "var(--site-page-title-line-height, 1.2)",
+        "var(--site-copy-size, 14px)",
+        "var(--site-control-size, 13px)",
         "var(--primary)",
         "var(--deep-navy)",
         "var(--terminal-bg)",
@@ -90,6 +95,30 @@ def test_trends_styles_are_scoped_and_share_site_tokens() -> None:
     assert ".trend-score-method__audit" in source
     assert '.trend-workbench[data-detail="open"] .trend-detail' in source
     assert "@media (max-width: 1439px)" in source
+    assert source.count(".trend-hero h1 {") == 1
+    assert "font-size: clamp(28px, 3vw, 44px)" not in source
+    assert "font-size: clamp(27px, 2.4vw, 36px)" not in source
+    assert re.search(
+        r"@media \(hover: none\) and \(pointer: coarse\).*?"
+        r"\.trend-control-group input\s*\{\s*font-size:\s*16px;",
+        source,
+        re.DOTALL,
+    )
+    compact_height = re.search(
+        r"@media \(min-width: 761px\) and \(max-height: 900px\) \{(.*?)"
+        r"@media \(max-width: 1020px\)",
+        source,
+        re.DOTALL,
+    )
+    assert compact_height is not None
+    assert ".trend-hero h1" not in compact_height.group(1)
+    compact_lead = re.search(
+        r"\.trend-hero__lead\s*\{(.*?)\}",
+        compact_height.group(1),
+        re.DOTALL,
+    )
+    assert compact_lead is not None
+    assert "line-height:" not in compact_lead.group(1)
 
 
 def test_trends_runtime_uses_safe_text_progressive_loading_and_distinct_links() -> None:
