@@ -363,6 +363,16 @@
   min-height: 44px;
 }
 
+.trend-segmented button:disabled,
+.trend-view-switch button:disabled,
+.trend-select__trigger:disabled,
+.trend-control-group input:disabled,
+.trend-button:disabled {
+  opacity: 0.42;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
 .trend-control-group input,
 .trend-control-group select {
   width: 100%;
