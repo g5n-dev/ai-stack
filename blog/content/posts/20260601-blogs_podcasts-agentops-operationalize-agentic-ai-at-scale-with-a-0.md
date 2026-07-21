@@ -43,7 +43,7 @@ event_id: evt_46f614ac408f2cc44f0db9dd71f4ad578e58e293c5134d8ddf6fea2e075aa22a
 lineage_relation: original
 parent_observation_id: null
 source_published_at: null
-first_seen_at: 2026-07-10T00:28:17Z
+first_seen_at: 2026-06-01T17:30:23Z
 last_seen_at: 2026-07-20T00:00:00Z
 timestamp_confidence: git
 ---
