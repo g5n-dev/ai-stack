@@ -337,8 +337,10 @@ test("facet summaries distinguish matching topics from evidence and reconcile st
 test("committed trend data visibly drills the LLM scenario into its strongest topic", () => {
   const dataRoot = path.resolve(import.meta.dirname, "../../blog/static/data/stack-trends");
   const index = JSON.parse(readFileSync(path.join(dataRoot, "index.json"), "utf8"));
+  const validatedIndex = Trends.validateIndex(index);
   const windowData = JSON.parse(readFileSync(path.join(dataRoot, index.windows["30d"].path), "utf8"));
-  const filtered = Trends.filterTrends(windowData.trends, { scenario: "大语言模型" });
+  const validatedWindow = Trends.validateWindow(windowData, "30d", validatedIndex);
+  const filtered = Trends.filterTrends(validatedWindow.trends, { scenario: "大语言模型" });
 
   assert.ok(filtered.length > 0 && filtered.length < windowData.trends.length);
   assert.equal(filtered[0].topic, "大语言模型");
@@ -705,6 +707,7 @@ test("v2 validators expose event accounting while retaining the v1 rollout fallb
     eligible_articles: 4,
     unique_events: 3,
     redundant_observations: 1,
+    promoted_same_event_pairs: 1,
     topic_count: 1,
     source_count: 3,
     windows: {
@@ -808,6 +811,7 @@ test("v2 validators expose event accounting while retaining the v1 rollout fallb
   }, "tag:llm", index);
 
   assert.equal(index.schema_version, "stack_trends_index_v2");
+  assert.equal(index.stats.promoted_same_event_pairs, 1);
   assert.equal(windowData.trends[0].redundant_observations, 1);
   assert.equal(topic.evidence[0].associated_observations, 2);
   assert.equal(topic.evidence[0].related_reports[0].relation, "syndicated");
@@ -817,6 +821,51 @@ test("v2 validators expose event accounting while retaining the v1 rollout fallb
       trends: [{ ...value, redundant_observations: 0 }],
     }, "30d", index),
     /invalid trend data/i,
+  );
+
+  const legacyV2Stats = { ...baseStats };
+  delete legacyV2Stats.promoted_same_event_pairs;
+  const legacyV2Index = Trends.validateIndex({
+    schema_version: "stack_trends_index_v2",
+    generated_at: "2026-07-16T10:00:00Z",
+    data_as_of: "2026-07-16T10:00:00Z",
+    realtime: false,
+    lineage_mode: "lineage_index_v1",
+    timezone: "Asia/Shanghai",
+    default_window: "30d",
+    disclaimer: "基于本站收录证据，不代表全网热度。",
+    formula: "transparent formula",
+    normalization: {
+      quantity_target_unique_events: 10,
+      growth_neutral: 0.5,
+      acceleration_neutral: 0.5,
+      component_range: [0, 1],
+      score_range: [0, 100],
+    },
+    stats: legacyV2Stats,
+    windows: {
+      "24h": { path: "windows/24h-a.json", bytes: 1200, sha256: "a".repeat(64), trend_count: 1 },
+      "7d": { path: "windows/7d-b.json", bytes: 1200, sha256: "b".repeat(64), trend_count: 1 },
+      "30d": { path: "windows/30d-c.json", bytes: 1200, sha256: "c".repeat(64), trend_count: 1 },
+    },
+    topics: {
+      "tag:llm": { path: "topics/llm-a.json", bytes: 1200, sha256: "d".repeat(64) },
+    },
+  });
+  assert.equal(legacyV2Index.stats.promoted_same_event_pairs, 0);
+  assert.throws(
+    () => Trends.validateIndex({
+      ...legacyV2Index,
+      stats: { ...baseStats, unknown_counter: 1 },
+    }),
+    /invalid trend data: stats fields/i,
+  );
+  assert.throws(
+    () => Trends.validateIndex({
+      ...legacyV2Index,
+      stats: { ...baseStats, promoted_same_event_pairs: 2 },
+    }),
+    /invalid trend data: stats promoted same event accounting/i,
   );
 });
 

@@ -295,24 +295,30 @@ def _publish_required_check(
     details_url: str,
     conclusion: str,
     subject: str,
-) -> None:
+) -> tuple[int, str]:
     if conclusion not in {"success", "failure"}:
         raise ProtectedBranchMergeError("required check conclusion is invalid")
+    summary = (
+        f"PR Test Suite run {run_id} "
+        f"{'passed' if conclusion == 'success' else 'failed'} "
+        f"for the exact {subject}."
+    )
+    external_id = f"trusted-ci:{run_id}:{head_sha}"
+    requested_details_url = f"https://github.com/{repository}/actions/runs/{run_id}"
+    if details_url != requested_details_url:
+        raise ProtectedBranchMergeError("required check trusted run URL mismatch")
     response = _object(
         api.request(
             "POST",
             f"/repos/{repository}/check-runs",
             {
                 "conclusion": conclusion,
-                "details_url": details_url,
+                "details_url": requested_details_url,
+                "external_id": external_id,
                 "head_sha": head_sha,
                 "name": _REQUIRED_CHECK,
                 "output": {
-                    "summary": (
-                        f"PR Test Suite run {run_id} "
-                        f"{'passed' if conclusion == 'success' else 'failed'} "
-                        f"for the exact {subject}."
-                    ),
+                    "summary": summary,
                     "title": "Validated GitHub Actions test run",
                 },
                 "status": "completed",
@@ -320,15 +326,28 @@ def _publish_required_check(
         ),
         "required check response",
     )
+    check_id = _integer(response.get("id"), "required check ID")
     app = _object(response.get("app"), "required check app")
+    output = _object(response.get("output"), "required check output")
+    # GitHub Actions currently normalizes an explicitly supplied workflow URL
+    # to the canonical check-run URL for checks created with GITHUB_TOKEN.
+    # Bind the check to the trusted run through its immutable ID, external_id,
+    # exact head SHA and signed output instead of assuming details_url survives.
+    canonical_details_url = f"https://github.com/{repository}/runs/{check_id}"
     if (
         response.get("name") != _REQUIRED_CHECK
         or response.get("head_sha") != head_sha
         or response.get("status") != "completed"
         or response.get("conclusion") != conclusion
+        or response.get("external_id") != external_id
+        or response.get("details_url")
+        not in {requested_details_url, canonical_details_url}
+        or output.get("summary") != summary
+        or output.get("title") != "Validated GitHub Actions test run"
         or app.get("id") != _TRUSTED_ACTIONS_APP_ID
     ):
         raise ProtectedBranchMergeError("required check response failed identity validation")
+    return check_id, external_id
 
 
 def _required_check_visible(
@@ -337,6 +356,8 @@ def _required_check_visible(
     repository: str,
     head_sha: str,
     run_id: int,
+    check_id: int,
+    external_id: str,
 ) -> bool:
     response = _object(
         api.request(
@@ -345,16 +366,27 @@ def _required_check_visible(
         ),
         "required check list",
     )
-    expected_url = f"https://github.com/{repository}/actions/runs/{run_id}"
+    expected_summary = f"PR Test Suite run {run_id} passed for the exact automation head."
+    accepted_urls = {
+        f"https://github.com/{repository}/actions/runs/{run_id}",
+        f"https://github.com/{repository}/runs/{check_id}",
+    }
     matches = []
     for raw in _array(response.get("check_runs"), "required check runs"):
         check = _object(raw, "required check run")
+        if check.get("id") != check_id:
+            continue
         app = _object(check.get("app"), "required check app")
+        output = _object(check.get("output"), "required check output")
         if (
             check.get("name") == _REQUIRED_CHECK
+            and check.get("head_sha") == head_sha
             and check.get("status") == "completed"
             and check.get("conclusion") == "success"
-            and check.get("details_url") == expected_url
+            and check.get("external_id") == external_id
+            and check.get("details_url") in accepted_urls
+            and output.get("summary") == expected_summary
+            and output.get("title") == "Validated GitHub Actions test run"
             and app.get("id") == _TRUSTED_ACTIONS_APP_ID
         ):
             matches.append(check)
@@ -476,7 +508,7 @@ def merge_validated_branch(
     )
     if conclusion != "success":
         raise ProtectedBranchMergeError("validation workflow did not succeed")
-    _publish_required_check(
+    required_check_id, required_check_external_id = _publish_required_check(
         api,
         repository=repository,
         head_sha=head_sha,
@@ -536,6 +568,8 @@ def merge_validated_branch(
             repository=repository,
             head_sha=head_sha,
             run_id=run_id,
+            check_id=required_check_id,
+            external_id=required_check_external_id,
         ):
             sleep(poll_seconds)
             continue

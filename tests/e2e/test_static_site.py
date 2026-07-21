@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import threading
 from collections.abc import Generator
 from functools import partial
@@ -176,6 +177,113 @@ def test_search_page_passes_basic_automated_wcag_checks(page: Page, site_url: st
         """
     )
     assert violations == []
+
+
+def test_trends_initializes_and_all_primary_controls_change_real_state(
+    page: Page, site_url: str
+) -> None:
+    response = page.goto(f"{site_url}/trends/?window=30d", wait_until="networkidle")
+    assert response is not None and response.ok
+
+    workbench = page.locator("#trend-workbench")
+    status = page.locator("#trend-status")
+    expect(status).to_contain_text("已发现", timeout=15_000)
+    expect(status).not_to_have_class(re.compile(r"\bis-error\b"))
+    expect(page.locator("#trend-result-count")).to_contain_text("个主题")
+
+    page.locator('[data-trend-view="list"]').click()
+    expect(workbench).to_have_attribute("data-view", "list")
+    expect(page.locator("#trend-list .trend-card__button").first).to_be_visible()
+    assert "view=list" in page.url
+
+    page.locator('[data-trend-view="matrix"]').click()
+    expect(workbench).to_have_attribute("data-view", "matrix")
+    expect(page.locator("#trend-matrix-panel")).to_be_visible()
+
+    page.locator('[data-trend-window="7d"]').click()
+    expect(page.locator("#trend-stat-window")).to_have_text("7 天", timeout=15_000)
+    expect(page.locator('[data-trend-window="7d"]')).to_have_attribute("aria-pressed", "true")
+    assert "window=7d" in page.url
+
+    page.locator("#trend-signal-trigger").click()
+    page.locator('#trend-signal-listbox [role="option"][data-value="all"]').click()
+    expect(page.locator("#trend-signal-trigger")).to_have_attribute("aria-expanded", "false")
+
+    page.locator("#trend-source-trigger").click()
+    source_option = page.locator(
+        '#trend-source-listbox [role="option"]:not([data-value=""])'
+    ).first
+    source_value = source_option.get_attribute("data-value")
+    assert source_value
+    source_option.click()
+    expect(page.locator("#trend-filter-summary")).to_contain_text("来源")
+    assert "source=" in page.url
+
+    page.locator("#trend-scenario-trigger").click()
+    scenario_option = page.locator(
+        '#trend-scenario-listbox [role="option"]:not([data-value=""])'
+    ).first
+    scenario_value = scenario_option.get_attribute("data-value")
+    assert scenario_value
+    scenario_option.click()
+    expect(page.locator("#trend-filter-summary")).to_contain_text("场景")
+    assert "scenario=" in page.url
+
+    page.locator("#trend-clear").click()
+    expect(page.locator("#trend-filter-summary")).to_contain_text("当前未启用附加筛选")
+    assert "source=" not in page.url and "scenario=" not in page.url
+
+    page.locator('[data-trend-view="list"]').click()
+    first_topic = page.locator("#trend-list .trend-card__button").first
+    first_topic.click()
+    expect(workbench).to_have_attribute("data-detail", "open")
+    expect(page.locator("#trend-detail .trend-link--graph")).to_be_visible(timeout=15_000)
+    assert "topic=" in page.url
+
+    page.locator("#trend-detail [data-close-trend-detail]").click()
+    expect(workbench).to_have_attribute("data-detail", "closed")
+    assert "topic=" not in page.url
+
+    page.locator('[data-trend-view="matrix"]').click()
+    matrix = page.locator("#trend-matrix")
+    box = matrix.bounding_box()
+    assert box is not None
+    matrix.click(position={"x": box["width"] / 2, "y": box["height"] / 2})
+    expect(workbench).to_have_attribute("data-detail", "open", timeout=15_000)
+    expect(page.locator("#trend-detail .trend-link--graph")).to_be_visible(timeout=15_000)
+
+
+def test_trends_fails_closed_without_presenting_phantom_data_controls(
+    page: Page, site_url: str
+) -> None:
+    page.route(
+        "**/data/stack-trends/index.json",
+        lambda route: route.fulfill(
+            status=200,
+            content_type="application/json",
+            body='{"schema_version":"stack_trends_index_v2","stats":{"unexpected":1}}',
+        ),
+    )
+    response = page.goto(f"{site_url}/trends/?window=30d", wait_until="networkidle")
+    assert response is not None and response.ok
+
+    expect(page.locator("#trend-status")).to_have_class(re.compile(r"\bis-error\b"))
+    expect(page.locator("#trend-workbench")).to_have_attribute("data-load-state", "error")
+    expect(page.locator("#trend-workbench")).to_have_attribute("aria-busy", "false")
+    expect(page.locator('[data-trend-window="30d"]')).to_be_disabled()
+    expect(page.locator('[data-trend-view="list"]')).to_be_disabled()
+    expect(page.locator("#trend-query")).to_be_disabled()
+    expect(page.locator("#trend-signal-trigger")).to_be_disabled()
+    expect(page.locator("#trend-source-trigger")).to_be_disabled()
+    expect(page.locator("#trend-scenario-trigger")).to_be_disabled()
+    expect(page.locator("#trend-clear")).to_be_disabled()
+
+    # Layout disclosure remains usable even when the external data contract is rejected.
+    page.set_viewport_size({"width": 390, "height": 844})
+    toggle = page.locator("#trend-mobile-filter-toggle")
+    expect(toggle).to_be_enabled()
+    toggle.click()
+    expect(toggle).to_have_attribute("aria-expanded", "true")
 
 
 def test_pagefind_index_contains_article_body_and_facets(public_dir: Path) -> None:

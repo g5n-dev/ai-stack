@@ -259,8 +259,18 @@
   }
 
   function validateStats(value, v2 = false) {
+    const v2Fields = [
+      "eligible_articles",
+      "unique_events",
+      "redundant_observations",
+      "topic_count",
+      "source_count",
+      "windows",
+    ];
+    const hasPromotionCounter = v2
+      && Object.prototype.hasOwnProperty.call(value || {}, "promoted_same_event_pairs");
     assertExactFields(value, v2
-      ? ["eligible_articles", "unique_events", "redundant_observations", "topic_count", "source_count", "windows"]
+      ? (hasPromotionCounter ? [...v2Fields, "promoted_same_event_pairs"] : v2Fields)
       : ["eligible_articles", "topic_count", "source_count", "windows"], "stats");
     assertExactFields(value.windows, WINDOWS, "stats windows");
     const result = {
@@ -279,8 +289,19 @@
         0,
         100000,
       );
+      result.promoted_same_event_pairs = hasPromotionCounter
+        ? safeInteger(
+          value.promoted_same_event_pairs,
+          "stats promoted_same_event_pairs",
+          0,
+          100000,
+        )
+        : 0;
       if (result.eligible_articles !== result.unique_events + result.redundant_observations) {
         fail("stats observation accounting");
+      }
+      if (result.promoted_same_event_pairs > result.redundant_observations) {
+        fail("stats promoted same event accounting");
       }
     }
     return Object.freeze(result);
@@ -1889,6 +1910,8 @@
 
     function refresh() {
       if (destroyed) return;
+      trigger.disabled = Boolean(select.disabled);
+      if (trigger.disabled && !list.hidden) close(false);
       const options = Array.from(select.options || []);
       list.replaceChildren();
       options.forEach((option, index) => {
@@ -2210,6 +2233,18 @@
     function setStatus(message, error = false) {
       elements.status.textContent = message;
       elements.status.classList.toggle("is-error", error);
+    }
+
+    function setLoadState(state) {
+      const ready = state === "ready";
+      root.dataset.loadState = state;
+      root.setAttribute("aria-busy", String(state === "loading"));
+      root.querySelectorAll("[data-trend-window], [data-trend-view]").forEach((button) => {
+        button.disabled = !ready;
+      });
+      [elements.query, elements.signal, elements.source, elements.scenario, elements.clear]
+        .forEach((control) => { control.disabled = !ready; });
+      selectMenus.forEach((menu) => menu.refresh());
     }
 
     function setFilterPanel(expanded) {
@@ -2870,8 +2905,10 @@
         elements.dataAsOf.dateTime = model.index.data_as_of;
         elements.dataAsOf.textContent = `数据截止 ${formatTimestamp(model.index.data_as_of)}`;
         elements.statArticles.textContent = formatNumber(model.index.stats.eligible_articles);
+        setLoadState("ready");
         await loadWindow(model.state.window, { push: false });
       } catch (error) {
+        setLoadState("error");
         elements.dataState.textContent = "数据异常";
         elements.dataState.dataset.freshness = "error";
         elements.matrixPanel.hidden = true;
@@ -3051,6 +3088,7 @@
       });
     }
 
+    setLoadState("loading");
     initialise();
     return Object.freeze({ model, loadWindow, loadTopic, destroy });
   }
