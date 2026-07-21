@@ -23,10 +23,10 @@ revision_id: rev_1de17fc3061c15256005d5aa0af4cdec8c76c2e0933ca3f7799bd078a554ba8
 event_id: evt_78319719c0e8c6f2b3168ffa5577a1cc8e5d9c2942743da2085cff4b65cada50
 lineage_relation: original
 parent_observation_id: null
-source_published_at: null
+source_published_at: 2026-07-17T16:32:06Z
 first_seen_at: 2026-07-17T21:17:33Z
-last_seen_at: 2026-07-20T00:00:00Z
-timestamp_confidence: git
+last_seen_at: 2026-07-21T00:00:00Z
+timestamp_confidence: feed
 ---
 
 ## 基本信息
