@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-21T12:03:24Z",
+  "generated_at": "2026-07-21T14:37:54Z",
   "layer": "tag",
   "layers": {
     "application": {
@@ -928,6 +928,14 @@
       "weight": 1
     },
     {
+      "id": "edge:cooccurrence:tag:Amazon Bedrock->tag:Amazon Elastic Kubernetes Service",
+      "source": "tag:Amazon Bedrock",
+      "strength": 0.5,
+      "target": "tag:Amazon Elastic Kubernetes Service",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
       "id": "edge:cooccurrence:tag:Amazon Bedrock->tag:Amazon Nova",
       "source": "tag:Amazon Bedrock",
       "strength": 0.5,
@@ -960,6 +968,14 @@
       "weight": 1
     },
     {
+      "id": "edge:cooccurrence:tag:Amazon Bedrock->tag:Amazon VPC",
+      "source": "tag:Amazon Bedrock",
+      "strength": 0.5,
+      "target": "tag:Amazon VPC",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
       "id": "edge:cooccurrence:tag:Amazon Bedrock->tag:Announcements",
       "source": "tag:Amazon Bedrock",
       "strength": 0.5,
@@ -981,7 +997,7 @@
       "strength": 1,
       "target": "tag:Customer Solutions",
       "type": "cooccurrence",
-      "weight": 2
+      "weight": 3
     },
     {
       "id": "edge:cooccurrence:tag:Amazon Bedrock->tag:Intermediate (200)",
@@ -1005,7 +1021,7 @@
       "strength": 1,
       "target": "tag:博客与播客",
       "type": "cooccurrence",
-      "weight": 4
+      "weight": 5
     },
     {
       "id": "edge:cooccurrence:tag:Amazon Bedrock->tag:来源快报",
@@ -1013,7 +1029,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 4
+      "weight": 5
     },
     {
       "id": "edge:cooccurrence:tag:Amazon Bedrock AgentCore->tag:AWS Fargate",
@@ -1278,6 +1294,46 @@
       "target": "tag:博客与播客",
       "type": "cooccurrence",
       "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Amazon Elastic Kubernetes Service->tag:Amazon VPC",
+      "source": "tag:Amazon Elastic Kubernetes Service",
+      "strength": 0.5,
+      "target": "tag:Amazon VPC",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Amazon Elastic Kubernetes Service->tag:Customer Solutions",
+      "source": "tag:Amazon Elastic Kubernetes Service",
+      "strength": 0.5,
+      "target": "tag:Customer Solutions",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Amazon Elastic Kubernetes Service->tag:博客与播客",
+      "source": "tag:Amazon Elastic Kubernetes Service",
+      "strength": 0.5,
+      "target": "tag:博客与播客",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Amazon Elastic Kubernetes Service->tag:来源快报",
+      "source": "tag:Amazon Elastic Kubernetes Service",
+      "strength": 0.5,
+      "target": "tag:来源快报",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:semantic:tag:Amazon Elastic Kubernetes Service->tech:kubernetes",
+      "source": "tag:Amazon Elastic Kubernetes Service",
+      "strength": 0.6,
+      "target": "tech:kubernetes",
+      "type": "semantic",
+      "weight": 0.6
     },
     {
       "id": "edge:cooccurrence:tag:Amazon EventBridge->tag:AWS Lambda",
@@ -1564,6 +1620,30 @@
       "source": "tag:Amazon Simple Storage Service (S3)",
       "strength": 0.5,
       "target": "tag:Technical How-to",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Amazon VPC->tag:Customer Solutions",
+      "source": "tag:Amazon VPC",
+      "strength": 0.5,
+      "target": "tag:Customer Solutions",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Amazon VPC->tag:博客与播客",
+      "source": "tag:Amazon VPC",
+      "strength": 0.5,
+      "target": "tag:博客与播客",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Amazon VPC->tag:来源快报",
+      "source": "tag:Amazon VPC",
+      "strength": 0.5,
+      "target": "tag:来源快报",
       "type": "cooccurrence",
       "weight": 1
     },
@@ -2101,7 +2181,7 @@
       "strength": 1,
       "target": "tag:博客与播客",
       "type": "cooccurrence",
-      "weight": 3
+      "weight": 4
     },
     {
       "id": "edge:cooccurrence:tag:Customer Solutions->tag:来源快报",
@@ -2109,7 +2189,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 3
+      "weight": 4
     },
     {
       "id": "edge:cooccurrence:tag:Design->tag:Machine learning",
@@ -4149,7 +4229,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 24
+      "weight": 25
     },
     {
       "id": "edge:cooccurrence:tag:博客与播客->tag:深度学习",
@@ -4599,7 +4679,7 @@
       "legacy_id": "Advanced (300)",
       "level": 6,
       "name": "Advanced (300)",
-      "rank": 36,
+      "rank": 37,
       "related_count": 15,
       "weighted_degree": 20
     },
@@ -4650,7 +4730,7 @@
       "legacy_id": "AI Research",
       "level": 6,
       "name": "AI Research",
-      "rank": 109,
+      "rank": 111,
       "related_count": 2,
       "weighted_degree": 2.6
     },
@@ -4706,11 +4786,11 @@
       "weighted_degree": 7.6
     },
     {
-      "article_count": 6,
+      "article_count": 7,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:Amazon DynamoDB",
-      "degree": 15,
+      "degree": 17,
       "description": "文章标签: Amazon Bedrock",
       "id": "tag:Amazon Bedrock",
       "layer": "tag",
@@ -4718,9 +4798,9 @@
       "legacy_id": "Amazon Bedrock",
       "level": 6,
       "name": "Amazon Bedrock",
-      "rank": 30,
-      "related_count": 15,
-      "weighted_degree": 25
+      "rank": 26,
+      "related_count": 17,
+      "weighted_degree": 30
     },
     {
       "article_count": 1,
@@ -4769,7 +4849,7 @@
       "legacy_id": "Amazon Bedrock Knowledge Bases",
       "level": 6,
       "name": "Amazon Bedrock Knowledge Bases",
-      "rank": 88,
+      "rank": 90,
       "related_count": 4,
       "weighted_degree": 4
     },
@@ -4803,9 +4883,26 @@
       "legacy_id": "Amazon DynamoDB",
       "level": 6,
       "name": "Amazon DynamoDB",
-      "rank": 33,
+      "rank": 34,
       "related_count": 16,
       "weighted_degree": 21
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Amazon VPC",
+      "degree": 6,
+      "description": "文章标签: Amazon Elastic Kubernetes Service",
+      "id": "tag:Amazon Elastic Kubernetes Service",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Amazon Elastic Kubernetes Service",
+      "level": 6,
+      "name": "Amazon Elastic Kubernetes Service",
+      "rank": 85,
+      "related_count": 5,
+      "weighted_degree": 5.6
     },
     {
       "article_count": 1,
@@ -4888,7 +4985,7 @@
       "legacy_id": "Amazon Rekognition",
       "level": 6,
       "name": "Amazon Rekognition",
-      "rank": 89,
+      "rank": 91,
       "related_count": 4,
       "weighted_degree": 4
     },
@@ -4927,6 +5024,23 @@
       "weighted_degree": 7
     },
     {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Amazon VPC",
+      "degree": 5,
+      "description": "文章标签: Amazon VPC",
+      "id": "tag:Amazon VPC",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Amazon VPC",
+      "level": 6,
+      "name": "Amazon VPC",
+      "rank": 87,
+      "related_count": 5,
+      "weighted_degree": 5
+    },
+    {
       "article_count": 5,
       "category": "article_tag",
       "color": "#f59e0b",
@@ -4939,7 +5053,7 @@
       "legacy_id": "Announcements",
       "level": 6,
       "name": "Announcements",
-      "rank": 32,
+      "rank": 33,
       "related_count": 9,
       "weighted_degree": 21
     },
@@ -4956,7 +5070,7 @@
       "legacy_id": "Artificial Intelligence",
       "level": 6,
       "name": "Artificial Intelligence",
-      "rank": 90,
+      "rank": 92,
       "related_count": 4,
       "weighted_degree": 4
     },
@@ -5007,7 +5121,7 @@
       "legacy_id": "AWS DeepRacer",
       "level": 6,
       "name": "AWS DeepRacer",
-      "rank": 91,
+      "rank": 93,
       "related_count": 4,
       "weighted_degree": 4
     },
@@ -5041,7 +5155,7 @@
       "legacy_id": "AWS Lambda",
       "level": 6,
       "name": "AWS Lambda",
-      "rank": 34,
+      "rank": 35,
       "related_count": 16,
       "weighted_degree": 21
     },
@@ -5075,7 +5189,7 @@
       "legacy_id": "C++",
       "level": 6,
       "name": "C++",
-      "rank": 98,
+      "rank": 100,
       "related_count": 2,
       "weighted_degree": 3.6
     },
@@ -5109,7 +5223,7 @@
       "legacy_id": "Company",
       "level": 6,
       "name": "Company",
-      "rank": 112,
+      "rank": 114,
       "related_count": 2,
       "weighted_degree": 2
     },
@@ -5194,7 +5308,7 @@
       "legacy_id": "cs.CR",
       "level": 6,
       "name": "cs.CR",
-      "rank": 87,
+      "rank": 89,
       "related_count": 2,
       "weighted_degree": 4
     },
@@ -5228,16 +5342,16 @@
       "legacy_id": "cs.LG",
       "level": 6,
       "name": "cs.LG",
-      "rank": 113,
+      "rank": 115,
       "related_count": 2,
       "weighted_degree": 2
     },
     {
-      "article_count": 4,
+      "article_count": 5,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:Amazon DynamoDB",
-      "degree": 11,
+      "degree": 13,
       "description": "文章标签: Customer Solutions",
       "id": "tag:Customer Solutions",
       "layer": "tag",
@@ -5245,9 +5359,9 @@
       "legacy_id": "Customer Solutions",
       "level": 6,
       "name": "Customer Solutions",
-      "rank": 38,
-      "related_count": 11,
-      "weighted_degree": 16
+      "rank": 32,
+      "related_count": 13,
+      "weighted_degree": 21
     },
     {
       "article_count": 1,
@@ -5296,7 +5410,7 @@
       "legacy_id": "econ.EM",
       "level": 6,
       "name": "econ.EM",
-      "rank": 114,
+      "rank": 116,
       "related_count": 2,
       "weighted_degree": 2
     },
@@ -5415,7 +5529,7 @@
       "legacy_id": "Global Affairs",
       "level": 6,
       "name": "Global Affairs",
-      "rank": 115,
+      "rank": 117,
       "related_count": 2,
       "weighted_degree": 2
     },
@@ -5432,7 +5546,7 @@
       "legacy_id": "Go",
       "level": 6,
       "name": "Go",
-      "rank": 27,
+      "rank": 28,
       "related_count": 11,
       "weighted_degree": 27.6
     },
@@ -5449,7 +5563,7 @@
       "legacy_id": "Google One",
       "level": 6,
       "name": "Google One",
-      "rank": 92,
+      "rank": 94,
       "related_count": 4,
       "weighted_degree": 4
     },
@@ -5466,7 +5580,7 @@
       "legacy_id": "Google Workspace",
       "level": 6,
       "name": "Google Workspace",
-      "rank": 93,
+      "rank": 95,
       "related_count": 4,
       "weighted_degree": 4
     },
@@ -5517,7 +5631,7 @@
       "legacy_id": "hep-ph",
       "level": 6,
       "name": "hep-ph",
-      "rank": 116,
+      "rank": 118,
       "related_count": 2,
       "weighted_degree": 2
     },
@@ -5585,7 +5699,7 @@
       "legacy_id": "JavaScript",
       "level": 6,
       "name": "JavaScript",
-      "rank": 18,
+      "rank": 19,
       "related_count": 18,
       "weighted_degree": 136.6
     },
@@ -5619,7 +5733,7 @@
       "legacy_id": "Kotlin",
       "level": 6,
       "name": "Kotlin",
-      "rank": 28,
+      "rank": 29,
       "related_count": 14,
       "weighted_degree": 27
     },
@@ -5755,7 +5869,7 @@
       "legacy_id": "q-bio.GN",
       "level": 6,
       "name": "q-bio.GN",
-      "rank": 117,
+      "rank": 119,
       "related_count": 2,
       "weighted_degree": 2
     },
@@ -5857,7 +5971,7 @@
       "legacy_id": "Swift",
       "level": 6,
       "name": "Swift",
-      "rank": 26,
+      "rank": 27,
       "related_count": 15,
       "weighted_degree": 28.6
     },
@@ -5891,7 +6005,7 @@
       "legacy_id": "Technical How-to",
       "level": 6,
       "name": "Technical How-to",
-      "rank": 35,
+      "rank": 36,
       "related_count": 16,
       "weighted_degree": 21
     },
@@ -5913,11 +6027,11 @@
       "weighted_degree": 289.6
     },
     {
-      "article_count": 331,
+      "article_count": 332,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
-      "degree": 51,
+      "degree": 53,
       "description": "文章标签: 博客与播客",
       "id": "tag:博客与播客",
       "layer": "tag",
@@ -5926,8 +6040,8 @@
       "level": 6,
       "name": "博客与播客",
       "rank": 4,
-      "related_count": 51,
-      "weighted_degree": 648
+      "related_count": 53,
+      "weighted_degree": 653
     },
     {
       "article_count": 141,
@@ -5976,7 +6090,7 @@
       "legacy_id": "工程实践",
       "level": 6,
       "name": "工程实践",
-      "rank": 29,
+      "rank": 30,
       "related_count": 9,
       "weighted_degree": 25
     },
@@ -6032,11 +6146,11 @@
       "weighted_degree": 240
     },
     {
-      "article_count": 63,
+      "article_count": 64,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:Amazon DynamoDB",
-      "degree": 37,
+      "degree": 39,
       "description": "文章标签: 来源快报",
       "id": "tag:来源快报",
       "layer": "tag",
@@ -6044,9 +6158,9 @@
       "legacy_id": "来源快报",
       "level": 6,
       "name": "来源快报",
-      "rank": 19,
-      "related_count": 37,
-      "weighted_degree": 132
+      "rank": 18,
+      "related_count": 39,
+      "weighted_degree": 137
     },
     {
       "article_count": 9,
@@ -6061,7 +6175,7 @@
       "legacy_id": "来源转写",
       "level": 6,
       "name": "来源转写",
-      "rank": 37,
+      "rank": 38,
       "related_count": 2,
       "weighted_degree": 18
     },
@@ -6136,14 +6250,14 @@
   ],
   "stats": {
     "links_by_type": {
-      "cooccurrence": 538,
-      "semantic": 28
+      "cooccurrence": 547,
+      "semantic": 29
     },
     "nodes_by_layer": {
-      "tag": 92
+      "tag": 94
     },
-    "total_links": 566,
-    "total_nodes": 92
+    "total_links": 576,
+    "total_nodes": 94
   },
   "version": 2
 }
