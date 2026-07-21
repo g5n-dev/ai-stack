@@ -255,6 +255,38 @@ def test_explicit_release_allowlist_can_replace_hash_named_shards(
     )
 
 
+def test_content_addressed_replacement_is_not_collapsed_by_rename_detection(
+    tmp_path: Path,
+) -> None:
+    _, remote = _seed_remote(tmp_path)
+    clone = _clone(remote, tmp_path / "clone")
+    base = _git(clone, "rev-parse", "HEAD")
+    old = clone / "content/base.json"
+    payload = old.read_bytes()
+    old.unlink()
+    (clone / "content/new-hash.json").write_bytes(payload)
+    writer = GitCASWriter(
+        clone,
+        branch="content",
+        allowed_roots=("content",),
+        allowed_paths=("content/*.json",),
+        allow_deletions=True,
+    )
+
+    commit = writer.commit(expected_base=base, message="rotate content addressed shard")
+
+    assert commit.paths == ("content/base.json", "content/new-hash.json")
+    assert _git(
+        clone,
+        "diff-tree",
+        "--no-renames",
+        "--no-commit-id",
+        "--name-status",
+        "-r",
+        "HEAD",
+    ) == "D\tcontent/base.json\nA\tcontent/new-hash.json"
+
+
 def test_writer_path_patterns_still_reject_other_files_under_allowed_root(
     tmp_path: Path,
 ) -> None:

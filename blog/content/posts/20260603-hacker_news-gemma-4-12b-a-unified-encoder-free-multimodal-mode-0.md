@@ -32,7 +32,7 @@ event_id: evt_02af9ea5aac28a20723659b9436a68c27ccdb979adf8e1c2a15909a4f9176939
 lineage_relation: original
 parent_observation_id: null
 source_published_at: null
-first_seen_at: 2026-07-10T00:28:17Z
+first_seen_at: 2026-06-03T19:52:33Z
 last_seen_at: 2026-07-20T00:00:00Z
 timestamp_confidence: git
 ---

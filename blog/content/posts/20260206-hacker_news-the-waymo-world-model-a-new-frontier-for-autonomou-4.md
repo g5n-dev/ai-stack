@@ -40,7 +40,7 @@ event_id: evt_1ccf322b4c197342407c03eab5dcf155e9b05c2a2b58c344974aaf7d6be99a41
 lineage_relation: original
 parent_observation_id: null
 source_published_at: null
-first_seen_at: 2026-07-10T00:28:17Z
+first_seen_at: 2026-02-06T17:25:00Z
 last_seen_at: 2026-07-20T00:00:00Z
 timestamp_confidence: git
 ---
