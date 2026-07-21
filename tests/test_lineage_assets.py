@@ -619,7 +619,92 @@ def test_build_preserves_newer_refresh_revision_and_last_seen(
     assert public_index["generated_at"] == "2026-07-22T00:00:00Z"
 
 
-def test_event_primary_and_aliases_remain_stable_across_repeated_builds(
+def test_build_preserves_refresh_revision_after_equal_day_metadata_backfill(
+    tmp_path: Path,
+) -> None:
+    content_root = tmp_path / "content"
+    posts = content_root / "posts"
+    posts.mkdir(parents=True)
+    post = posts / "equal-day-revision.md"
+    post.write_text(
+        _post(
+            title="Equal-day agent revision",
+            url="https://publisher.example/equal-day-revision",
+            excerpt=_source_text(0, 180),
+            date="2026-07-01T08:00:00Z",
+        ),
+        encoding="utf-8",
+    )
+    internal = tmp_path / "internal"
+    public = tmp_path / "public"
+    build_lineage_assets(
+        content_root=content_root,
+        internal_dir=internal,
+        public_dir=public,
+        as_of="2026-07-20T00:00:00Z",
+    )
+    registry = LineageRegistry.load(internal)
+    historical = parse_historical_post(post, content_root=content_root)
+    assert historical is not None
+    refreshed = replace(
+        historical,
+        source_text=_source_text(0, 240),
+        source_payload_sha256="sha256:" + "b" * 64,
+        last_seen_at="2026-07-21T00:00:00Z",
+    )
+    refreshed_result = registry.resolve_batch([refreshed]).items[0]
+    registry.save(internal, generated_at="2026-07-21T12:00:00Z")
+
+    build_lineage_assets(
+        content_root=content_root,
+        internal_dir=internal,
+        public_dir=public,
+        as_of="2026-07-22T00:00:00Z",
+    )
+    first_apply = apply_lineage_post_metadata(
+        content_root=content_root,
+        internal_dir=internal,
+        apply=True,
+    )
+    assert first_apply["changed"] == 1
+    first_internal = {
+        path.relative_to(internal): path.read_bytes()
+        for path in sorted(internal.rglob("*.json"))
+    }
+    first_public = {
+        path.relative_to(public): path.read_bytes()
+        for path in sorted(public.rglob("*.json"))
+    }
+
+    build_lineage_assets(
+        content_root=content_root,
+        internal_dir=internal,
+        public_dir=public,
+        as_of="2026-07-22T00:00:00Z",
+    )
+    second_apply = apply_lineage_post_metadata(
+        content_root=content_root,
+        internal_dir=internal,
+        apply=True,
+    )
+
+    rebuilt = LineageRegistry.load(internal)
+    record = rebuilt._records[refreshed.observation_id]
+    assert record["revision_id"] == refreshed_result.revision_id
+    assert record["source_payload_sha256"] == "sha256:" + "b" * 64
+    assert record["last_seen_at"] == "2026-07-21T00:00:00Z"
+    assert second_apply == {"changed": 0, "deleted": 0, "scanned": 1}
+    assert {
+        path.relative_to(internal): path.read_bytes()
+        for path in sorted(internal.rglob("*.json"))
+    } == first_internal
+    assert {
+        path.relative_to(public): path.read_bytes()
+        for path in sorted(public.rglob("*.json"))
+    } == first_public
+
+
+def test_strictly_newer_posts_can_merge_events_and_keep_aliases_stable(
     tmp_path: Path,
 ) -> None:
     content_root = tmp_path / "content"
@@ -663,8 +748,13 @@ def test_event_primary_and_aliases_remain_stable_across_repeated_builds(
         ("a.md", first.canonical_url, "2026-07-01T00:00:00Z"),
         ("b.md", second.canonical_url, "2026-07-02T00:00:00Z"),
     ):
+        markdown = _post(title="Stable event merge", url=url, excerpt=merged_text, date=date)
+        markdown = markdown.replace(
+            "timestamp_confidence: publisher\n",
+            "timestamp_confidence: publisher\nlast_seen_at: 2026-07-03T00:00:00Z\n",
+        )
         (posts / name).write_text(
-            _post(title="Stable event merge", url=url, excerpt=merged_text, date=date),
+            markdown,
             encoding="utf-8",
         )
 
@@ -688,6 +778,263 @@ def test_event_primary_and_aliases_remain_stable_across_repeated_builds(
             clusters.extend(shard["clusters"])
         cluster = next(item for item in clusters if item["event_id"] == first_event)
         assert cluster["event_aliases"] == [second_event]
+
+
+def test_equal_day_registry_evidence_prevents_post_excerpt_topology_merge(
+    tmp_path: Path,
+) -> None:
+    content_root = tmp_path / "content"
+    posts = content_root / "posts"
+    posts.mkdir(parents=True)
+    first = ObservationInput(
+        canonical_url="https://origin.example/equal-day-a",
+        title="Equal-day topology",
+        source_text=_source_text(0, 180),
+        source="fixture",
+        article_path="posts/a.md",
+        capture_mode="full_text",
+        source_completeness="complete",
+        source_published_at="2026-07-01T00:00:00Z",
+        first_seen_at="2026-07-01T01:00:00Z",
+        last_seen_at="2026-07-01T01:00:00Z",
+        timestamp_confidence=TimestampConfidence.PUBLISHER,
+    )
+    second = replace(
+        first,
+        canonical_url="https://origin.example/equal-day-b",
+        source_text=_source_text(500, 680),
+        article_path="posts/b.md",
+        source_published_at="2026-07-02T00:00:00Z",
+        first_seen_at="2026-07-02T01:00:00Z",
+        last_seen_at="2026-07-02T01:00:00Z",
+    )
+    registry = LineageRegistry()
+    first_batch = registry.resolve_batch([first, second])
+    original_events = {item.observation_id: item.event_id for item in first_batch.items}
+    original_relations = {
+        item.observation_id: item.relation.value for item in first_batch.items
+    }
+    original_parents = {
+        item.observation_id: item.parent_observation_id for item in first_batch.items
+    }
+    assert len(set(original_events.values())) == 2
+    internal = tmp_path / "internal"
+    public = tmp_path / "public"
+    registry.save(internal, generated_at="2026-07-02T02:00:00Z")
+    publication_excerpt = _source_text(900, 1120)
+    for name, observation in (("a.md", first), ("b.md", second)):
+        (posts / name).write_text(
+            _post(
+                title=observation.title,
+                url=observation.canonical_url,
+                excerpt=publication_excerpt,
+                date=observation.source_published_at or "",
+            ),
+            encoding="utf-8",
+        )
+
+    build_lineage_assets(
+        content_root=content_root,
+        internal_dir=internal,
+        public_dir=public,
+        as_of="2026-07-20T00:00:00Z",
+    )
+    first_internal = {
+        path.relative_to(internal): path.read_bytes()
+        for path in sorted(internal.rglob("*.json"))
+    }
+    first_public = {
+        path.relative_to(public): path.read_bytes()
+        for path in sorted(public.rglob("*.json"))
+    }
+    rebuilt = LineageRegistry.load(internal)
+    assert {
+        identifier: record["event_id"]
+        for identifier, record in rebuilt._records.items()
+    } == original_events
+    assert {
+        identifier: record["relation"]
+        for identifier, record in rebuilt._records.items()
+    } == original_relations
+    assert {
+        identifier: record["parent_observation_id"]
+        for identifier, record in rebuilt._records.items()
+    } == original_parents
+    assert all(record["event_aliases"] == [] for record in rebuilt._records.values())
+
+    build_lineage_assets(
+        content_root=content_root,
+        internal_dir=internal,
+        public_dir=public,
+        as_of="2026-07-20T00:00:00Z",
+    )
+    assert {
+        path.relative_to(internal): path.read_bytes()
+        for path in sorted(internal.rglob("*.json"))
+    } == first_internal
+    assert {
+        path.relative_to(public): path.read_bytes()
+        for path in sorted(public.rglob("*.json"))
+    } == first_public
+
+
+def test_existing_syndicated_edge_survives_a_new_exact_event_member(
+    tmp_path: Path,
+) -> None:
+    content_root = tmp_path / "content"
+    posts = content_root / "posts"
+    posts.mkdir(parents=True)
+    origin = ObservationInput(
+        canonical_url="https://origin.example/growing-event",
+        title="Growing intelligence event",
+        source_text=_source_text(0, 220),
+        source="fixture",
+        article_path="posts/origin.md",
+        capture_mode="full_text",
+        source_completeness="complete",
+        source_published_at="2026-07-01T08:00:00Z",
+        first_seen_at="2026-07-01T08:30:00Z",
+        last_seen_at="2026-07-20T00:00:00Z",
+        timestamp_confidence=TimestampConfidence.PUBLISHER,
+    )
+    syndicated = replace(
+        origin,
+        canonical_url="https://syndicator.example/growing-event",
+        source_text=_source_text(0, 223),
+        article_path="posts/syndicated.md",
+        source_published_at="2026-07-01T10:00:00Z",
+        first_seen_at="2026-07-01T10:30:00Z",
+    )
+    registry = LineageRegistry()
+    initial = registry.resolve_batch([syndicated], historical_baseline=[origin])
+    syndicated_result = initial.items[0]
+    assert syndicated_result.relation is RelationKind.SYNDICATED
+    assert syndicated_result.parent_observation_id == origin.observation_id
+    internal = tmp_path / "internal"
+    public = tmp_path / "public"
+    registry.save(internal, generated_at="2026-07-20T00:00:00Z")
+
+    for name, observation in (("origin.md", origin), ("syndicated.md", syndicated)):
+        markdown = _post(
+            title=observation.title,
+            url=observation.canonical_url,
+            excerpt=observation.source_text,
+            date=observation.source_published_at or "",
+        ).replace(
+            "timestamp_confidence: publisher\n",
+            "timestamp_confidence: publisher\nlast_seen_at: 2026-07-20T00:00:00Z\n",
+        )
+        (posts / name).write_text(markdown, encoding="utf-8")
+    newcomer = replace(
+        origin,
+        canonical_url="https://mirror.example/growing-event",
+        article_path="posts/new-exact.md",
+        source_published_at="2026-07-01T12:00:00Z",
+        first_seen_at="2026-07-01T12:30:00Z",
+        last_seen_at="2026-07-01T12:30:00Z",
+    )
+    (posts / "new-exact.md").write_text(
+        _post(
+            title=newcomer.title,
+            url=newcomer.canonical_url,
+            excerpt=newcomer.source_text,
+            date=newcomer.source_published_at or "",
+        ),
+        encoding="utf-8",
+    )
+
+    build_lineage_assets(
+        content_root=content_root,
+        internal_dir=internal,
+        public_dir=public,
+        as_of="2026-07-21T00:00:00Z",
+    )
+
+    rebuilt = LineageRegistry.load(internal)._records
+    assert rebuilt[syndicated.observation_id]["relation"] == "syndicated"
+    assert (
+        rebuilt[syndicated.observation_id]["parent_observation_id"]
+        == origin.observation_id
+    )
+    assert rebuilt[newcomer.observation_id]["relation"] == "exact_copy"
+    assert rebuilt[newcomer.observation_id]["event_id"] == rebuilt[origin.observation_id][
+        "event_id"
+    ]
+
+
+def test_trusted_earlier_git_time_drives_authoritative_event_order(
+    tmp_path: Path,
+) -> None:
+    content_root = tmp_path / "content"
+    posts = content_root / "posts"
+    posts.mkdir(parents=True)
+    origin = ObservationInput(
+        canonical_url="https://origin.example/git-ordered-event",
+        title="Git ordered intelligence event",
+        source_text=_source_text(0, 220),
+        source="fixture",
+        article_path="posts/origin.md",
+        capture_mode="full_text",
+        source_completeness="complete",
+        source_published_at=None,
+        first_seen_at="2026-07-05T00:00:00Z",
+        last_seen_at="2026-07-20T00:00:00Z",
+        timestamp_confidence=TimestampConfidence.OBSERVED,
+    )
+    registry = LineageRegistry()
+    registry.resolve_batch([], historical_baseline=[origin])
+    internal = tmp_path / "internal"
+    public = tmp_path / "public"
+    registry.save(internal, generated_at="2026-07-20T00:00:00Z")
+
+    origin_post = _post(
+        title=origin.title,
+        url=origin.canonical_url,
+        excerpt=origin.source_text,
+        date="2026-07-05T00:00:00Z",
+    ).replace(
+        "source_published_at: 2026-07-05T00:00:00Z\n"
+        "timestamp_confidence: publisher\n",
+        "source_published_at:\n"
+        "timestamp_confidence: observed\n"
+        "last_seen_at: 2026-07-20T00:00:00Z\n",
+    )
+    origin_path = posts / "origin.md"
+    origin_path.write_text(origin_post, encoding="utf-8")
+    mirror = replace(
+        origin,
+        canonical_url="https://mirror.example/git-ordered-event",
+        article_path="posts/mirror.md",
+        first_seen_at="2026-07-03T00:00:00Z",
+        last_seen_at="2026-07-03T00:00:00Z",
+    )
+    mirror_post = _post(
+        title=mirror.title,
+        url=mirror.canonical_url,
+        excerpt=mirror.source_text,
+        date="2026-07-03T00:00:00Z",
+    ).replace(
+        "source_published_at: 2026-07-03T00:00:00Z\n"
+        "timestamp_confidence: publisher\n",
+        "source_published_at:\n"
+        "timestamp_confidence: observed\n",
+    )
+    (posts / "mirror.md").write_text(mirror_post, encoding="utf-8")
+
+    build_lineage_assets(
+        content_root=content_root,
+        internal_dir=internal,
+        public_dir=public,
+        as_of="2026-07-21T00:00:00Z",
+        first_seen_by_path={origin_path.resolve(): "2026-07-01T00:00:00Z"},
+    )
+
+    rebuilt = LineageRegistry.load(internal)._records
+    assert rebuilt[origin.observation_id]["first_seen_at"] == "2026-07-01T00:00:00Z"
+    assert rebuilt[origin.observation_id]["timestamp_confidence"] == "git"
+    assert rebuilt[origin.observation_id]["relation"] == "original"
+    assert rebuilt[mirror.observation_id]["relation"] == "exact_copy"
+    assert rebuilt[mirror.observation_id]["parent_observation_id"] == origin.observation_id
 
 
 def test_explicit_post_metadata_apply_is_non_destructive_and_idempotent(tmp_path: Path) -> None:
