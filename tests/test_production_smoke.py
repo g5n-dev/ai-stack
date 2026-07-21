@@ -2,11 +2,16 @@ from __future__ import annotations
 
 import hashlib
 import json
-from urllib.parse import urlsplit
+from urllib.parse import unquote, urlsplit
 
 import pytest
 
-from scripts.production_smoke import RETRY_DELAYS_SECONDS, ProductionSmokeError, run_smoke
+from scripts.production_smoke import (
+    RETRY_DELAYS_SECONDS,
+    ProductionSmokeError,
+    _cache_url,
+    run_smoke,
+)
 
 
 SHA = "b" * 40
@@ -169,6 +174,81 @@ def test_smoke_checks_routes_assets_marker_shards_and_internal_articles() -> Non
     assert sleeps == [5]
     assert set(payloads).issubset(requested)
     assert RETRY_DELAYS_SECONDS == (5, 10, 20, 30, 45, 60)
+
+
+def test_smoke_percent_encodes_unicode_lineage_article_route() -> None:
+    payloads, marker = _fixture()
+    unicode_path = "/posts/中文情报溯源/"
+    payloads[unicode_path] = payloads["/posts/one/"]
+    payloads["/data/lineage/clusters/a.json"] = _json(
+        {
+            "clusters": [
+                {
+                    "event_id": "evt",
+                    "representative_article_url": unicode_path,
+                    "observations": [{"article_url": unicode_path}],
+                }
+            ]
+        }
+    )
+    _rebind_product(payloads, marker, product="lineage", marker_field="lineage_hash")
+    requested: list[str] = []
+
+    def fetch(url: str) -> bytes:
+        requested.append(url)
+        return payloads[unquote(urlsplit(url).path)]
+
+    result = run_smoke(
+        "https://example.test/",
+        expected_sha=SHA,
+        expected_release_id=str(marker["release_id"]),
+        fetch=fetch,
+        sleep=lambda _: None,
+    )
+
+    article_requests = [url for url in requested if "/posts/%" in url]
+    assert result["status"] == "healthy"
+    assert len(article_requests) == 1
+    assert "%E4%B8%AD%E6%96%87%E6%83%85%E6%8A%A5%E6%BA%AF%E6%BA%90" in article_requests[0]
+    assert "中文情报溯源" not in article_requests[0]
+
+
+@pytest.mark.parametrize(
+    ("path", "expected_path"),
+    [
+        ("/posts/%E4%B8%AD%E6%96%87/", "/posts/%E4%B8%AD%E6%96%87/"),
+        ("/posts/100%完成/", "/posts/100%25%E5%AE%8C%E6%88%90/"),
+        ("/posts/%ZZ/", "/posts/%25ZZ/"),
+    ],
+)
+def test_cache_url_preserves_only_valid_percent_escapes(
+    path: str,
+    expected_path: str,
+) -> None:
+    result = _cache_url("https://example.test/", path, "release-token")
+
+    assert urlsplit(result).path == expected_path
+
+
+def test_cache_url_preserves_query_semantics_and_drops_fragment() -> None:
+    result = _cache_url(
+        "https://example.test/",
+        "/posts/中文/?tag=人工智能&tag=&mode=full#section",
+        "release-token",
+    )
+    parts = urlsplit(result)
+
+    assert parts.path == "/posts/%E4%B8%AD%E6%96%87/"
+    assert parts.query == (
+        "tag=%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD&tag=&mode=full"
+        "&__ai_stack_release=release-token"
+    )
+    assert parts.fragment == ""
+
+
+def test_cache_url_rejects_cross_origin_reference() -> None:
+    with pytest.raises(ProductionSmokeError, match="cross-origin"):
+        _cache_url("https://example.test/", "https://attacker.test/posts/one/", "token")
 
 
 @pytest.mark.parametrize(
