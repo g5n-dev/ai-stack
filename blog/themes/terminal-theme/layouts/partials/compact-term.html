@@ -14,7 +14,7 @@
             <div class="w-full max-w-4xl mx-auto">
                 <div class="border-b border-muted-teal/20 pb-5 mb-6">
                     <p class="text-primary/70 text-xs font-mono tracking-wide">{{ .Data.Plural | upper }} / TERM</p>
-                    <h1 class="mt-2 text-off-white text-3xl font-light">{{ $termTitle }}</h1>
+                    <h1 class="site-page-title mt-2 text-off-white">{{ $termTitle }}</h1>
                     <p class="mt-2 text-muted-teal/55 text-xs font-mono">共 {{ len $pages }} 篇</p>
                 </div>
 
@@ -23,7 +23,7 @@
                     <li class="py-4">
                         <a href="{{ .RelPermalink }}" data-taxonomy-entry="{{ .RelPermalink }}"
                             class="group flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
-                            <span class="text-off-white/85 group-hover:text-primary">{{ .Title }}</span>
+                            <span class="site-body-copy text-off-white/85 group-hover:text-primary">{{ .Title }}</span>
                             <span class="shrink-0 text-muted-teal/50 text-xs font-mono">
                                 {{ .Date.Format "2006-01-02" }}{{ with .Params.source }} · {{ upper . }}{{ end }}
                             </span>

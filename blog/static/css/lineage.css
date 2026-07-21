@@ -27,22 +27,25 @@
 .lineage-card__kicker {
   margin: 0 0 0.55rem;
   color: var(--lineage-teal);
-  font: 700 0.66rem/1.4 var(--font-mono, ui-monospace, monospace);
+  font: 700 var(--site-meta-size, 11px)/var(--site-meta-line-height, 1.45) var(--site-font-mono, ui-monospace, monospace);
   letter-spacing: 0.14em;
 }
 
 .lineage-card__header h2 {
   margin: 0;
   color: rgb(232 243 244 / 94%);
-  font-size: clamp(1.05rem, 2vw, 1.28rem);
+  font-family: var(--site-font-sans, ui-sans-serif, sans-serif);
+  font-size: var(--site-section-title-size, 18px);
+  font-weight: var(--site-section-title-weight, 600);
+  line-height: var(--site-section-title-line-height, 1.35);
 }
 
 .lineage-card__header p:not(.lineage-card__kicker) {
   max-width: 46rem;
   margin: 0.55rem 0 0;
   color: rgb(211 224 226 / 60%);
-  font-size: 0.82rem;
-  line-height: 1.65;
+  font-size: var(--site-copy-size, 14px);
+  line-height: var(--site-copy-line-height, 1.75);
 }
 
 .lineage-card__header button {
@@ -53,7 +56,7 @@
   border-radius: 0.55rem;
   color: var(--lineage-teal);
   background: rgb(77 182 172 / 8%);
-  font: 700 0.72rem/1 var(--font-mono, ui-monospace, monospace);
+  font: var(--site-control-weight, 600) var(--site-control-size, 13px)/var(--site-control-line-height, 1.5) var(--site-font-sans, ui-sans-serif, sans-serif);
   cursor: pointer;
 }
 
@@ -66,7 +69,7 @@
 .lineage-card__status {
   margin: 1rem 0 0;
   color: rgb(160 187 191 / 60%);
-  font: 0.7rem/1.5 var(--font-mono, ui-monospace, monospace);
+  font: var(--site-meta-size, 11px)/var(--site-meta-line-height, 1.45) var(--site-font-mono, ui-monospace, monospace);
 }
 
 .lineage-card[data-lineage-state="error"] .lineage-card__status {
@@ -92,14 +95,14 @@
 
 .lineage-summary dt {
   color: rgb(160 187 191 / 52%);
-  font: 0.62rem/1.4 var(--font-mono, ui-monospace, monospace);
+  font: var(--site-meta-size, 11px)/var(--site-meta-line-height, 1.45) var(--site-font-mono, ui-monospace, monospace);
 }
 
 .lineage-summary dd {
   margin: 0.35rem 0 0;
   overflow: hidden;
   color: rgb(230 241 242 / 90%);
-  font: 700 0.78rem/1.4 var(--font-mono, ui-monospace, monospace);
+  font: 700 var(--site-data-compact-size, 14px)/1.2 var(--site-font-mono, ui-monospace, monospace);
   text-overflow: ellipsis;
   white-space: nowrap;
 }
@@ -132,7 +135,7 @@
 .lineage-node__ordinal {
   display: block;
   color: rgb(77 182 172 / 45%);
-  font: 0.62rem/1 var(--font-mono, ui-monospace, monospace);
+  font: var(--site-meta-size, 11px)/var(--site-meta-line-height, 1.45) var(--site-font-mono, ui-monospace, monospace);
 }
 
 .lineage-node__article,
@@ -146,7 +149,7 @@
 .lineage-related__heading {
   margin: 1rem 0 0.55rem;
   color: rgb(160 187 191 / 72%);
-  font: 700 0.68rem/1.4 var(--font-mono, ui-monospace, monospace);
+  font: 700 var(--site-meta-size, 11px)/var(--site-meta-line-height, 1.45) var(--site-font-mono, ui-monospace, monospace);
   letter-spacing: 0.08em;
 }
 
@@ -180,14 +183,14 @@
 .lineage-related__link strong {
   overflow: hidden;
   color: rgb(229 240 242 / 90%);
-  font-size: 0.8rem;
+  font-size: var(--site-copy-size, 14px);
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
 .lineage-related__meta {
   color: var(--lineage-blue);
-  font: 0.62rem/1.4 var(--font-mono, ui-monospace, monospace);
+  font: var(--site-meta-size, 11px)/var(--site-meta-line-height, 1.45) var(--site-font-mono, ui-monospace, monospace);
 }
 
 .lineage-node__article {
@@ -198,8 +201,8 @@
 
 .lineage-node__article strong {
   color: rgb(229 240 242 / 90%);
-  font-size: 0.82rem;
-  line-height: 1.45;
+  font-size: var(--site-copy-size, 14px);
+  line-height: var(--site-copy-line-height, 1.75);
 }
 
 .lineage-node__meta {
@@ -207,7 +210,7 @@
   flex-wrap: wrap;
   gap: 0.35rem 0.65rem;
   color: rgb(160 187 191 / 58%);
-  font: 0.62rem/1.45 var(--font-mono, ui-monospace, monospace);
+  font: var(--site-meta-size, 11px)/var(--site-meta-line-height, 1.45) var(--site-font-mono, ui-monospace, monospace);
 }
 
 .lineage-node__relation { color: var(--lineage-teal); }
@@ -218,7 +221,7 @@
   align-items: center;
   margin-top: 0.3rem;
   color: rgb(77 182 172 / 67%);
-  font: 0.64rem/1.4 var(--font-mono, ui-monospace, monospace);
+  font: var(--site-meta-size, 11px)/var(--site-meta-line-height, 1.45) var(--site-font-mono, ui-monospace, monospace);
 }
 
 @media (max-width: 680px) {

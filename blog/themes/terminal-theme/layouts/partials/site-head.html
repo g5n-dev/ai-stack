@@ -24,8 +24,12 @@
 {{- with $page.Site.Params.twitter }}
 <meta name="twitter:site" content="{{ . }}" />
 {{- end }}
-<link rel="stylesheet" href="{{ "css/tailwind.css" | relURL }}" />
-<link rel="stylesheet" href="{{ "css/style.css" | relURL }}" />
+{{- /* Content-address the global styles so a rolling Pages deployment cannot pair
+      new semantic typography classes with a cached pre-token stylesheet. */ -}}
+{{- $tailwindVersion := md5 (readFile "static/css/tailwind.css") -}}
+{{- $siteStyleVersion := md5 (readFile "static/css/style.css") -}}
+<link rel="stylesheet" href="{{ printf "%s?v=%s" ("css/tailwind.css" | relURL) $tailwindVersion }}" />
+<link rel="stylesheet" href="{{ printf "%s?v=%s" ("css/style.css" | relURL) $siteStyleVersion }}" />
 {{- range (index . "Styles" | default (slice)) }}
 <link rel="stylesheet" href="{{ . }}" />
 {{- end }}

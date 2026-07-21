@@ -31,12 +31,13 @@
     {{- if not $metaDescription -}}
     {{- $metaDescription = (.Plain | plainify | truncate 200) -}}
     {{- end -}}
+    {{- $lineageVersion := md5 (readFile "static/css/lineage.css") -}}
     {{ partial "site-head.html" (dict
         "Page" .
         "Description" $metaDescription
         "Type" "article"
         "Canonical" $lineageCanonical
-        "Styles" (slice ("css/lineage.css" | relURL))
+        "Styles" (slice (printf "%s?v=%s" ("css/lineage.css" | relURL) $lineageVersion))
         "Scripts" (slice ("js/terminal.js" | relURL) ("js/lineage.js" | relURL))
     ) }}
     {{- if not $pagefindBlocked -}}
@@ -216,7 +217,7 @@
                     <div class="mt-12 pt-8 border-t border-muted-teal/10">
                         <div class="flex items-center gap-3 mb-6">
                             <span class="material-symbols-outlined text-primary">explore</span>
-                            <h3 class="text-off-white text-lg font-bold tracking-wide">应用场景</h3>
+                            <h3 class="site-section-title text-off-white tracking-wide">应用场景</h3>
                             <span class="h-px flex-1 bg-gradient-to-r from-muted-teal/30 to-transparent"></span>
                         </div>
 
@@ -283,7 +284,7 @@
                         <div class="lineage-card__header">
                             <div>
                                 <p class="lineage-card__kicker">INTELLIGENCE LINEAGE / 情报溯源</p>
-                                <h2 id="lineage-heading">从首次观测到传播链</h2>
+                                <h2 id="lineage-heading" class="site-section-title">从首次观测到传播链</h2>
                                 <p>按本站可核验证据展示疑似源头、转载与衍生关系，不宣称绝对原创。</p>
                             </div>
                             <button type="button" data-lineage-load aria-describedby="lineage-status">

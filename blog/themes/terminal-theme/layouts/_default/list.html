@@ -69,22 +69,22 @@
                         <!-- 快速链接 -->
                         <div class="glass-panel rounded-lg p-4">
                             <h3
-                                class="text-primary/70 text-[11px] font-bold tracking-wide mb-3 flex items-center gap-2">
+                                class="site-meta-text text-primary/70 font-bold tracking-wide mb-3 flex items-center gap-2">
                                 <span class="material-symbols-outlined text-sm">bookmark</span>
                                 快速访问
                             </h3>
                             <ul class="space-y-1">
                                 <li><a href="/posts/"
-                                        class="block px-3 py-1.5 rounded text-[11px] text-off-white/50 hover:bg-muted-teal/5 hover:text-off-white/70 transition-all">全部文章</a>
+                                        class="site-control-text flex items-center px-3 py-1.5 rounded text-off-white/50 hover:bg-muted-teal/5 hover:text-off-white/70 transition-all">全部文章</a>
                                 </li>
                                 <li><a href="/tags/"
-                                        class="block px-3 py-1.5 rounded text-[11px] text-off-white/50 hover:bg-muted-teal/5 hover:text-off-white/70 transition-all">标签云</a>
+                                        class="site-control-text flex items-center px-3 py-1.5 rounded text-off-white/50 hover:bg-muted-teal/5 hover:text-off-white/70 transition-all">标签云</a>
                                 </li>
                                 <li><a href="/scenarios/"
-                                        class="block px-3 py-1.5 rounded text-[11px] text-off-white/50 hover:bg-muted-teal/5 hover:text-off-white/70 transition-all">应用场景</a>
+                                        class="site-control-text flex items-center px-3 py-1.5 rounded text-off-white/50 hover:bg-muted-teal/5 hover:text-off-white/70 transition-all">应用场景</a>
                                 </li>
                                 <li><a href="/archive/"
-                                        class="block px-3 py-1.5 rounded text-[11px] text-off-white/50 hover:bg-muted-teal/5 hover:text-off-white/70 transition-all">时间线归档</a>
+                                        class="site-control-text flex items-center px-3 py-1.5 rounded text-off-white/50 hover:bg-muted-teal/5 hover:text-off-white/70 transition-all">时间线归档</a>
                                 </li>
                             </ul>
                         </div>
@@ -98,7 +98,7 @@
                     <div class="flex items-end justify-between border-b border-muted-teal/10 pb-6 mb-8">
                         <div class="flex flex-col">
                             <span class="text-primary/70 text-[12px] font-bold tracking-wide mb-1">目录</span>
-                            <h1 class="text-off-white text-3xl font-light tracking-tight font-display">{{ .Title }}</h1>
+                            <h1 class="site-page-title text-off-white tracking-tight font-display">{{ .Title }}</h1>
                         </div>
                         <div class="text-muted-teal/45 text-[11px] font-mono tracking-wide">
                             条目：<span id="posts-count">{{ len $pages }}</span>

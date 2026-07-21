@@ -33,7 +33,7 @@
                 <!-- 标题区 -->
                 <div class="text-center mb-12">
                     <span class="text-primary/70 text-[12px] font-bold tracking-wide mb-2 block">TEMPORAL ARCHIVE</span>
-                    <h1 class="text-off-white text-4xl font-light tracking-tight font-display mb-4">时间线归档</h1>
+                    <h1 class="site-page-title text-off-white tracking-tight font-display mb-4">时间线归档</h1>
                     <p class="text-off-white/40 text-sm">共 {{ len $pages }} 篇文章；当前第 {{
                         $paginator.PageNumber }} / {{ $paginator.TotalPages }} 页</p>
                 </div>
@@ -66,7 +66,7 @@
                                 class="sticky top-0 z-10 bg-deep-navy/90 backdrop-blur-sm py-3 -mt-3 mb-6 border-b border-muted-teal/10">
                                 <div class="flex items-center gap-4">
                                     <div class="w-3 h-3 rounded-full bg-primary shadow-[0_0_12px_#4db6ac]"></div>
-                                    <h2 class="text-off-white text-2xl font-bold tracking-tight">{{ $year }} 年</h2>
+                                    <h2 class="site-section-title text-off-white tracking-tight">{{ $year }} 年</h2>
                                     <span class="text-off-white/30 text-sm font-mono">{{ len .Pages }} 篇</span>
                                 </div>
                             </div>

@@ -38,6 +38,10 @@ def test_all_page_templates_share_the_strict_local_head() -> None:
     assert "base-uri 'none'" in head
     assert '"css/tailwind.css" | relURL' in head
     assert '"css/style.css" | relURL' in head
+    assert 'md5 (readFile "static/css/tailwind.css")' in head
+    assert 'md5 (readFile "static/css/style.css")' in head
+    assert 'printf "%s?v=%s" ("css/tailwind.css" | relURL)' in head
+    assert 'printf "%s?v=%s" ("css/style.css" | relURL)' in head
     for template in PAGE_TEMPLATES:
         assert 'partial "site-head.html"' in template.read_text(encoding="utf-8"), template
 
@@ -175,7 +179,9 @@ def test_lineage_duplicate_renders_canonical_noindex_and_subpath_assets(tmp_path
     card = soup.select_one("[data-lineage-card]")
     assert card["data-observation-id"] == observation_id
     assert card["data-index-url"] == "/archive/data/lineage/index.json"
-    assert soup.select_one('link[href="/archive/css/lineage.css"]') is not None
+    lineage_href = soup.select_one('link[href^="/archive/css/lineage.css?v="]')
+    assert lineage_href is not None
+    assert re.fullmatch(r"/archive/css/lineage\.css\?v=[0-9a-f]{32}", lineage_href["href"])
     assert soup.select_one('script[src="/archive/js/lineage.js"]') is not None
 
 
@@ -286,7 +292,9 @@ def test_single_page_resolves_related_entries_by_stable_id_in_constant_lookup(
     assert "Beta" in link.get_text(" ", strip=True)
     assert len(soup.select("main h1")) == 1
     assert soup.select_one('meta[http-equiv="Content-Security-Policy"]') is not None
-    assert soup.select_one('link[href="/css/tailwind.css"]') is not None
+    tailwind_href = soup.select_one('link[href^="/css/tailwind.css?v="]')
+    assert tailwind_href is not None
+    assert re.fullmatch(r"/css/tailwind\.css\?v=[0-9a-f]{32}", tailwind_href["href"])
 
 
 @pytest.mark.skipif(shutil.which("hugo") is None, reason="Hugo is not installed")
