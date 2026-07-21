@@ -93,7 +93,7 @@ def _successful_responder() -> tuple[
                 "id": 100,
                 "run_id": 99,
                 "name": "PR Test Suite",
-                "workflow_name": "PR CI",
+                "workflow_name": f"trusted-ci:{HEAD_SHA}",
                 "head_sha": BASE_SHA,
                 "status": "completed",
                 "conclusion": "success",
@@ -271,6 +271,38 @@ def test_trusted_dispatch_waits_for_dynamic_run_name_to_stabilize() -> None:
     assert run_reads == 2
 
 
+def test_trusted_dispatch_rejects_static_job_workflow_identity() -> None:
+    responder, _state = _successful_responder()
+
+    def static_job_name(
+        method: str,
+        endpoint: str,
+        body: dict[str, object] | None,
+    ) -> object | None:
+        response = responder(method, endpoint, body)
+        if endpoint.endswith("/actions/jobs/100"):
+            assert isinstance(response, dict)
+            response["workflow_name"] = "PR CI"
+        return response
+
+    with pytest.raises(
+        ProtectedBranchMergeError,
+        match="trusted PR Test Suite job identity mismatch",
+    ):
+        merge_validated_branch(
+            FakeApi(static_job_name),
+            repository=REPOSITORY,
+            branch=BRANCH,
+            base_sha=BASE_SHA,
+            head_sha=HEAD_SHA,
+            title="chore(data): persist validated release",
+            body="Validated by the isolated release pipeline.",
+            timeout_seconds=5,
+            poll_seconds=0,
+            sleep=lambda _seconds: None,
+        )
+
+
 def test_dispatch_deploy_uses_returned_run_id_and_exact_sha() -> None:
     calls: list[tuple[str, str, dict[str, object] | None]] = []
 
@@ -432,7 +464,7 @@ def test_default_branch_controller_runs_trusted_ci_for_a_human_pr() -> None:
                 "id": 502,
                 "run_id": 501,
                 "name": "PR Test Suite",
-                "workflow_name": "PR CI",
+                "workflow_name": f"trusted-ci:{HEAD_SHA}",
                 "head_sha": BASE_SHA,
                 "status": "completed",
                 "conclusion": "success",
@@ -528,7 +560,7 @@ def test_controller_maps_failed_trusted_test_run_to_failed_required_check(
                 "id": 602,
                 "run_id": 601,
                 "name": "PR Test Suite",
-                "workflow_name": "PR CI",
+                "workflow_name": f"trusted-ci:{HEAD_SHA}",
                 "head_sha": BASE_SHA,
                 "status": "completed",
                 "conclusion": test_conclusion,

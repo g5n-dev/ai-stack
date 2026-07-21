@@ -222,6 +222,7 @@ def _trusted_test_check(
     repository: str,
     head_sha: str,
     run_id: int,
+    expected_workflow_name: str,
     expected_success: bool,
 ) -> dict[str, object]:
     response = _object(
@@ -275,7 +276,7 @@ def _trusted_test_check(
         job.get("id") != job_id
         or job.get("run_id") != run_id
         or job.get("name") != _TEST_CHECK
-        or job.get("workflow_name") != "PR CI"
+        or job.get("workflow_name") != expected_workflow_name
         or job.get("head_sha") != head_sha
         or job.get("status") != "completed"
         or not job_conclusion_matches
@@ -427,6 +428,7 @@ def _run_trusted_ci(
         repository=repository,
         head_sha=main_sha,
         run_id=run_id,
+        expected_workflow_name=expected_run_name,
         expected_success=conclusion == "success",
     )
     return run_id, run_url, conclusion
