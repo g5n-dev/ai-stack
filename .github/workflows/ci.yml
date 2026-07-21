@@ -1,13 +1,16 @@
 name: PR CI
+run-name: "trusted-ci:${{ inputs.target_sha }}"
 
 on:
-  pull_request:
-    branches:
-      - main
   workflow_dispatch:
+    inputs:
+      target_sha:
+        description: "Exact commit SHA tested by the trusted main workflow"
+        required: true
+        type: string
 
 concurrency:
-  group: pr-ci-${{ github.event.pull_request.number || github.ref }}
+  group: trusted-pr-ci-${{ inputs.target_sha }}
   cancel-in-progress: true
 
 permissions:
@@ -15,18 +18,33 @@ permissions:
 
 jobs:
   unit-tests:
-    name: Unit Tests
+    name: PR Test Suite
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - name: Checkout repository
+      - name: Validate exact target SHA
+        env:
+          TARGET_SHA: ${{ inputs.target_sha }}
+        run: |
+          set -euo pipefail
+          [[ "$TARGET_SHA" =~ ^[0-9a-f]{40}$ ]]
+
+      - name: Checkout exact target with no persisted credential
         uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
+        with:
+          ref: ${{ inputs.target_sha }}
+          persist-credentials: false
+          fetch-depth: 0
+
+      - name: Assert exact checkout
+        env:
+          TARGET_SHA: ${{ inputs.target_sha }}
+        run: test "$(git rev-parse HEAD)" = "$TARGET_SHA"
 
       - name: Set up Python
         uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
         with:
           python-version: "3.11"
-          cache: "pip"
 
       - name: Install Python dependencies
         run: |
@@ -38,7 +56,6 @@ jobs:
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
           node-version: "22"
-          cache: "npm"
 
       - name: Set up Hugo
         uses: peaceiris/actions-hugo@dc99976453b04b1029527154fc04fef80a4a49cf
@@ -69,6 +86,7 @@ jobs:
             tests/test_content_freshness.py \
             tests/test_workflow_security.py \
             tests/test_cicd_closed_loop.py \
+            tests/test_protected_branch_merge.py \
             tests/test_artifact_guard.py \
             tests/test_git_cas_writer.py \
             tests/test_release_guard.py \

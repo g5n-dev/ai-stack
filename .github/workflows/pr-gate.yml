@@ -1,0 +1,46 @@
+name: Protected PR Gate
+
+on:
+  pull_request_target:
+    branches: [main]
+    types: [opened, reopened, synchronize, ready_for_review]
+
+permissions: {}
+
+concurrency:
+  group: protected-pr-gate-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    if: >-
+      ${{ github.event.pull_request.draft == false &&
+          !startsWith(github.event.pull_request.head.ref, 'automation/') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    permissions:
+      actions: write
+      checks: write
+      contents: read
+      pull-requests: read
+    steps:
+      - name: Checkout exact trusted controller from the base SHA
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+
+      - name: Assert exact trusted controller checkout
+        run: test "$(git rev-parse HEAD)" = "$GITHUB_SHA"
+
+      - name: Run trusted main CI against the exact PR head
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          PR_HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+          python3 scripts/protected_branch_merge.py validate-pr \
+            --repository "$GITHUB_REPOSITORY" \
+            --pr-number "$PR_NUMBER" \
+            --head-sha "$PR_HEAD_SHA"

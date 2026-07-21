@@ -27,6 +27,7 @@ PLAN_SCHEMA = "github_hardening_plan_v1"
 _REPOSITORY = re.compile(r"[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+\Z")
 _OBJECT_ID = re.compile(r"(?:[0-9a-f]{40}|[0-9a-f]{64})\Z")
 _DIGEST = re.compile(r"[0-9a-f]{64}\Z")
+_HTTP_STATUS = re.compile(r"\bHTTP\s+([1-5][0-9]{2})\b")
 _MANAGED_RULESETS = frozenset(
     {
         "ai-stack/main-protection-v1",
@@ -94,6 +95,7 @@ class GhCliApi:
             encoded_body = canonical_json(body)
         attempts = 3 if normalized_method == "GET" else 1
         completed: subprocess.CompletedProcess[str] | None = None
+        failure_status: int | None = None
         for attempt in range(attempts):
             try:
                 completed = subprocess.run(
@@ -110,6 +112,20 @@ class GhCliApi:
                 raise GitHubApiError("GitHub CLI could not be executed") from exc
             if completed is not None and completed.returncode == 0:
                 break
+            if completed is not None:
+                match = _HTTP_STATUS.search(completed.stderr)
+                failure_status = int(match.group(1)) if match is not None else None
+                if allow_not_found and failure_status == 404:
+                    return None
+                # Retrying validation/authentication errors cannot make the request
+                # valid and can multiply a state-changing mistake. Only transient
+                # failures (including 429) remain eligible for the bounded GET retry.
+                if (
+                    failure_status is not None
+                    and 400 <= failure_status < 500
+                    and failure_status != 429
+                ):
+                    break
             if attempt + 1 < attempts:
                 time.sleep(attempt + 1)
         if completed is None:
@@ -117,12 +133,14 @@ class GhCliApi:
                 f"GitHub API request timed out ({normalized_method} {endpoint})"
             )
         if completed.returncode != 0:
-            if allow_not_found and re.search(r"\bHTTP 404\b", completed.stderr):
-                return None
             # Do not forward stderr: credential helpers and proxies are outside our
             # trust boundary and may include sensitive request metadata.
+            status_suffix = (
+                f"; HTTP {failure_status}" if failure_status is not None else ""
+            )
             raise GitHubApiError(
-                f"GitHub API request failed ({normalized_method} {endpoint})"
+                "GitHub API request failed "
+                f"({normalized_method} {endpoint}{status_suffix})"
             )
         if not completed.stdout.strip():
             return None
@@ -245,9 +263,44 @@ def _ruleset_body(value: object, *, require_visible_bypass: bool) -> dict[str, o
         if not all(isinstance(item, str) for item in values):
             raise GitHubHardeningError(f"ruleset {name} ref {key} must contain strings")
     rules = _array(payload.get("rules"), f"ruleset {name} rules")
+    normalized_rules: list[dict[str, object]] = []
     for rule in rules:
         rule_object = _object(rule, f"ruleset {name} rule")
-        _string(rule_object.get("type"), f"ruleset {name} rule type")
+        rule_type = _string(rule_object.get("type"), f"ruleset {name} rule type")
+        normalized_rule = copy.deepcopy(rule_object)
+        if (
+            name == "ai-stack/backup-tags-v1"
+            and target == "tag"
+            and rule_type == "update"
+        ):
+            parameters_raw = normalized_rule.get("parameters")
+            if parameters_raw is None:
+                parameters: dict[str, object] = {}
+            else:
+                parameters = _object(
+                    parameters_raw,
+                    f"ruleset {name} update parameters",
+                )
+            if frozenset(parameters) - {"update_allows_fetch_and_merge"}:
+                raise GitHubHardeningError(
+                    f"ruleset {name} update parameters are unsupported"
+                )
+            allows_fetch_and_merge = parameters.get(
+                "update_allows_fetch_and_merge",
+                False,
+            )
+            if not isinstance(allows_fetch_and_merge, bool):
+                raise GitHubHardeningError(
+                    f"ruleset {name} update permission must be a boolean"
+                )
+            if allows_fetch_and_merge:
+                raise GitHubHardeningError(
+                    f"ruleset {name} must not allow fetch and merge"
+                )
+            # GitHub may omit this false-valued parameter in responses. Both forms
+            # mean that the protected tag cannot move and share one canonical form.
+            normalized_rule = {"type": "update"}
+        normalized_rules.append(normalized_rule)
 
     if "bypass_actors" not in payload:
         if require_visible_bypass:
@@ -264,7 +317,7 @@ def _ruleset_body(value: object, *, require_visible_bypass: bool) -> dict[str, o
         "enforcement": enforcement,
         "bypass_actors": bypass,
         "conditions": conditions,
-        "rules": rules,
+        "rules": normalized_rules,
     }
     normalized = _unordered_json(body, f"ruleset {name}")
     return _object(normalized, f"normalized ruleset {name}")
@@ -542,9 +595,9 @@ def _validate_expected_contract(
     actions = _object(expected["actions"], "expected Actions settings")
     if actions != {
         "default_workflow_permissions": "read",
-        "can_approve_pull_request_reviews": False,
+        "can_approve_pull_request_reviews": True,
     }:
-        raise GitHubHardeningError("expected Actions settings would weaken the contract")
+        raise GitHubHardeningError("expected Actions settings do not match the audited contract")
     if _object(expected["immutable_releases"], "expected immutable releases") != {
         "enabled": True
     }:
@@ -574,19 +627,10 @@ def _validate_expected_contract(
     }
     for name, (target, includes) in expected_refs.items():
         ruleset = by_name[name]
-        expected_bypass: list[dict[str, object]] = []
-        if name == "ai-stack/main-protection-v1":
-            expected_bypass = [
-                {
-                    "actor_id": 15368,
-                    "actor_type": "Integration",
-                    "bypass_mode": "always",
-                }
-            ]
         if (
             ruleset["target"] != target
             or ruleset["enforcement"] != "active"
-            or ruleset["bypass_actors"] != expected_bypass
+            or ruleset["bypass_actors"] != []
         ):
             raise GitHubHardeningError(f"ruleset {name} target/enforcement/bypass is invalid")
         conditions = _object(ruleset["conditions"], f"ruleset {name} conditions")
@@ -633,11 +677,7 @@ def _validate_expected_contract(
         raise GitHubHardeningError("main status check rule is missing")
     parameters = _object(status_rule.get("parameters"), "main status parameters")
     checks = _array(parameters.get("required_status_checks"), "main required checks")
-    contexts = {
-        _string(_object(check, "required check").get("context"), "required check context")
-        for check in checks
-    }
-    if contexts != {"Unit Tests"}:
+    if checks != [{"context": "Unit Tests", "integration_id": 15368}]:
         raise GitHubHardeningError("main stable status check contract is invalid")
     if parameters.get("strict_required_status_checks_policy") is not True:
         raise GitHubHardeningError("main status checks must use the latest main revision")
@@ -667,9 +707,7 @@ def _validate_expected_contract(
         for rule in backup_rules
         if _object(rule, "backup rule").get("type") == "update"
     )
-    if _object(update_rule.get("parameters"), "backup update parameters") != {
-        "update_allows_fetch_and_merge": False
-    }:
+    if update_rule != {"type": "update"}:
         raise GitHubHardeningError("backup tag updates must remain disabled")
 
     environments = _array(expected["environments"], "expected environments")

@@ -49,7 +49,12 @@ def test_deploy_is_a_fail_closed_least_privilege_job_chain() -> None:
     assert permissions == {
         "refresh": {"contents": "read"},
         "validate": {"contents": "read"},
-        "persist": {"contents": "write"},
+        "persist": {
+            "actions": "write",
+            "checks": "write",
+            "contents": "write",
+            "pull-requests": "write",
+        },
         "build": {"contents": "read"},
         "deploy": {"pages": "write", "id-token": "write"},
         "production-verify": {"contents": "read"},
@@ -68,6 +73,10 @@ def test_deploy_is_a_fail_closed_least_privilege_job_chain() -> None:
     assert "npm run build:css" in build_text
     assert "git diff --exit-code" in build_text
     assert "--expected-base \"${BASE_SHA}\"" in text
+    assert "--branch \"$AUTOMATION_BRANCH\"" in text
+    assert "scripts/protected_branch_merge.py merge" in text
+    assert "ref: ${{ github.sha }}" in text
+    assert "--branch main" not in text[text.index("  persist:"):text.index("  build:")]
     assert "[skip ci]" in text
     assert 'cron: "17 * * * *"' in text
     assert "github-actions[bot]" in text
@@ -87,7 +96,14 @@ def test_deploy_is_a_fail_closed_least_privilege_job_chain() -> None:
 
 
 def test_workflow_artifacts_are_hashed_allowlisted_and_actions_are_pinned() -> None:
-    for name in ("ci.yml", "deploy.yml", "delete-post.yml", "monitoring.yml", "production-recovery.yml"):
+    for name in (
+        "ci.yml",
+        "deploy.yml",
+        "delete-post.yml",
+        "monitoring.yml",
+        "pr-gate.yml",
+        "production-recovery.yml",
+    ):
         workflow, _ = _load(name)
         assert all(PINNED_ACTION.fullmatch(action) for action in _uses(workflow)), name
 
@@ -126,6 +142,27 @@ def test_workflow_artifacts_are_hashed_allowlisted_and_actions_are_pinned() -> N
         assert f"secrets.{name}" in refresh_pack
 
 
+def test_trusted_ci_dispatch_contract_matches_the_controller_helper() -> None:
+    ci, ci_text = _load("ci.yml")
+    dispatch = ci["on"]["workflow_dispatch"]
+    assert dispatch["inputs"]["target_sha"]["required"] == "true"
+    assert ci["run-name"] == "trusted-ci:${{ inputs.target_sha }}"
+    assert ci["concurrency"]["group"] == "trusted-pr-ci-${{ inputs.target_sha }}"
+    assert "ref: ${{ inputs.target_sha }}" in ci_text
+    assert "persist-credentials: false" in ci_text
+    assert "cache:" not in ci_text
+
+    gate, gate_text = _load("pr-gate.yml")
+    gate_job = gate["jobs"]["validate"]
+    assert gate_job["permissions"]["actions"] == "write"
+    assert "scripts/protected_branch_merge.py validate-pr" in gate_text
+    assert "github.event.pull_request.head.sha" in gate_text
+
+    helper = (ROOT / "scripts/protected_branch_merge.py").read_text(encoding="utf-8")
+    assert 'body={"inputs": {"target_sha": target_sha}, "ref": "main"}' in helper
+    assert 'run.get("display_title") != f"trusted-ci:{target_sha}"' in helper
+
+
 def test_recovery_monitoring_and_delete_workflows_enforce_locked_boundaries() -> None:
     recovery, recovery_text = _load("production-recovery.yml")
     assert recovery["on"] == {"workflow_dispatch": recovery["on"]["workflow_dispatch"]}
@@ -147,8 +184,15 @@ def test_recovery_monitoring_and_delete_workflows_enforce_locked_boundaries() ->
     assert jobs["analyze"]["permissions"] == {"contents": "read"}
     assert jobs["writer"]["permissions"] == {
         "actions": "write",
+        "checks": "write",
         "contents": "write",
+        "pull-requests": "write",
     }
+    assert "scripts/protected_branch_merge.py merge" in deletion_text
+    assert "scripts/protected_branch_merge.py deploy" in deletion_text
+    assert "gh run list" not in deletion_text
+    writer_text = deletion_text[deletion_text.index("  writer:"):]
+    assert "--branch main" not in writer_text
     assert "secrets." not in deletion_text[deletion_text.index("  writer:"):]
     rebuild = (ROOT / "scripts/rebuild_release_data.sh").read_text(encoding="utf-8")
     order = rebuild.index("scripts/build_lineage.py")
