@@ -17,6 +17,15 @@ source_is_truncated: false
 source_support: 1.0
 description: "当前保存的是来源摘要，不代表论文全文。请以原始来源为准。"
 external_url: http://arxiv.org/abs/2607.12986v1
+observation_id: obs_60cfb873ce77516a28c11e356d408a3cdaf4988e4f869e649c3f3630e392471d
+revision_id: rev_baf3c6ac1107e062a65badf0485ad7cd15d8c8608bc1cd61770d230aac8e8575
+event_id: evt_6c8989b00604e5f7c5d19a25c3d1521870146b55a885aa2b59ee6dc1b1764f83
+lineage_relation: original
+parent_observation_id: null
+source_published_at: null
+first_seen_at: 2026-07-15T12:47:38Z
+last_seen_at: 2026-07-20T00:00:00Z
+timestamp_confidence: git
 ---
 
 ## 基本信息

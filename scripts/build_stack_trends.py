@@ -15,6 +15,7 @@ if str(PROJECT_ROOT) not in sys.path:
 
 from processor.stack_trends import (  # noqa: E402
     DEFAULT_CONFIG_PATH,
+    DEFAULT_LINEAGE_ROOT,
     StackTrendsValidationError,
     build_stack_trends,
 )
@@ -35,6 +36,12 @@ def build_parser() -> argparse.ArgumentParser:
     )
     parser.add_argument("--config", type=Path, default=DEFAULT_CONFIG_PATH)
     parser.add_argument(
+        "--lineage-root",
+        type=Path,
+        default=DEFAULT_LINEAGE_ROOT,
+        help="verified public lineage assets; missing index falls back to URL identity",
+    )
+    parser.add_argument(
         "--as-of",
         help=(
             "optional ISO-8601 calculation cutoff; defaults to the latest eligible "
@@ -52,6 +59,7 @@ def main(argv: Sequence[str] | None = None) -> int:
             quality_manifest_path=args.quality_manifest,
             output_dir=args.output,
             config_path=args.config,
+            lineage_root=args.lineage_root,
             as_of=args.as_of,
         )
     except (OSError, StackTrendsValidationError) as exc:

@@ -11,6 +11,8 @@ import hashlib
 import hmac
 import re
 from collections.abc import Mapping
+from datetime import UTC, datetime
+from email.utils import parsedate_to_datetime
 from typing import Any
 from urllib.parse import urlsplit
 
@@ -19,7 +21,8 @@ from .identity import canonicalize_url
 
 EXTRACTOR_VERSION = "source-contract-v1"
 FULL_ARTICLE_EXTRACTOR_VERSION = "source-contract-v2"
-EVIDENCE_SCHEMA = "source_evidence_v1"
+LEGACY_EVIDENCE_SCHEMA = "source_evidence_v1"
+EVIDENCE_SCHEMA = "source_evidence_v2"
 _MAX_EVIDENCE_BYTES = 64 * 1024
 _MAX_STORED_SOURCE_BYTES = 24 * 1024
 _LEGACY_MAX_DISPLAY_EXCERPT_BYTES = 6_000
@@ -35,6 +38,9 @@ _ALLOWED_SOURCES = frozenset(
         "reddit",
         "twitter",
     }
+)
+_TIMESTAMP_CONFIDENCE = frozenset(
+    {"publisher", "feed", "platform", "git", "observed", "unknown"}
 )
 
 
@@ -275,10 +281,21 @@ def _evidence_digest(evidence: Mapping[str, Any]) -> str:
         "truncation_reason": evidence.get("truncation_reason"),
         "fields": evidence.get("fields"),
     }
-    # v1 digests are already persisted in historical crawler records.  New v2
-    # provenance fields are hash-bound only by v2 so those immutable v1 snapshots
-    # remain verifiable during rolling deploys and archive repair.
-    if _text(evidence.get("extractor_version")) == FULL_ARTICLE_EXTRACTOR_VERSION:
+    # v1 digests are already persisted in historical crawler records. New v2
+    # provenance fields are hash-bound only by the evidence schema so immutable
+    # v1 snapshots remain verifiable during rolling deploys and archive repair.
+    if evidence.get("schema_version") == EVIDENCE_SCHEMA:
+        payload.update(
+            {
+                "source_published_at": evidence.get("source_published_at"),
+                "timestamp_confidence": evidence.get("timestamp_confidence"),
+                "source_completeness": evidence.get("source_completeness"),
+                "parent_snapshot_sha256": evidence.get("parent_snapshot_sha256"),
+            }
+        )
+        if _text(evidence.get("extractor_version")) == FULL_ARTICLE_EXTRACTOR_VERSION:
+            payload["captured_at"] = evidence.get("captured_at")
+    elif _text(evidence.get("extractor_version")) == FULL_ARTICLE_EXTRACTOR_VERSION:
         payload.update(
             {
                 "captured_at": evidence.get("captured_at"),
@@ -287,6 +304,43 @@ def _evidence_digest(evidence: Mapping[str, Any]) -> str:
             }
         )
     return "sha256:" + hashlib.sha256(canonical_json_bytes(payload)).hexdigest()
+
+
+def _source_publication_time(
+    source: str, item: Mapping[str, Any], discovery_method: str
+) -> tuple[str, str]:
+    raw_published_at = _text(item.get("source_published_at")) or _text(
+        item.get("published_at") or item.get("published")
+    )
+    if not raw_published_at:
+        return "", "unknown"
+    parsed: datetime | None = None
+    try:
+        parsed = datetime.fromisoformat(raw_published_at.replace("Z", "+00:00"))
+    except ValueError:
+        try:
+            parsed = parsedate_to_datetime(raw_published_at)
+        except (TypeError, ValueError, OverflowError):
+            parsed = None
+    if parsed is None or parsed.tzinfo is None:
+        return "", "unknown"
+    published_at = parsed.astimezone(UTC).isoformat(timespec="seconds").replace(
+        "+00:00", "Z"
+    )
+    explicit = _text(item.get("timestamp_confidence")).casefold()
+    if explicit:
+        if explicit not in _TIMESTAMP_CONFIDENCE:
+            raise SourceContractError("source timestamp confidence is invalid")
+        return published_at, explicit
+    if discovery_method.casefold() == "search_fallback":
+        return published_at, "unknown"
+    if source == "arxiv":
+        return published_at, "publisher"
+    if source in {"blogs_podcasts", "juejin"}:
+        return published_at, "feed"
+    if source in {"reddit", "twitter"}:
+        return published_at, "platform"
+    return published_at, "unknown"
 
 
 def apply_source_contract(item: Mapping[str, Any]) -> dict[str, Any]:
@@ -311,8 +365,7 @@ def apply_source_contract(item: Mapping[str, Any]) -> dict[str, Any]:
     captured_at = _text(
         result.get("captured_at")
         or result.get("crawled_at")
-        or result.get("published_at")
-        or result.get("published")
+        or result.get("scraped_at")
     )
     if not captured_at:
         raise SourceContractError("source capture time is missing")
@@ -396,6 +449,9 @@ def apply_source_contract(item: Mapping[str, Any]) -> dict[str, Any]:
         raise SourceContractError("full article capture requires a parent source snapshot")
 
     discovery_method = _text(result.get("discovery_method")) or discovery_method
+    source_published_at, timestamp_confidence = _source_publication_time(
+        source, result, discovery_method
+    )
     fetch_status = _text(result.get("fetch_status")) or "captured"
     fields = _evidence_fields(source, result, source_text)
     evidence: dict[str, Any] = {
@@ -405,6 +461,8 @@ def apply_source_contract(item: Mapping[str, Any]) -> dict[str, Any]:
         "origin_url": _origin_url(source, result, final_url),
         "external_url": final_url,
         "captured_at": captured_at,
+        "source_published_at": source_published_at,
+        "timestamp_confidence": timestamp_confidence,
         "discovery_method": discovery_method,
         "fetch_status": fetch_status,
         "extractor_version": extractor_version,
@@ -445,6 +503,8 @@ def apply_source_contract(item: Mapping[str, Any]) -> dict[str, Any]:
             "source_is_truncated": is_truncated,
             "source_truncation_reason": truncation_reason,
             "captured_at": captured_at,
+            "source_published_at": source_published_at,
+            "timestamp_confidence": timestamp_confidence,
             "source_summary_original": original_summary,
             "evidence": evidence,
         }
@@ -460,7 +520,8 @@ def verify_source_contract(item: Mapping[str, Any]) -> None:
     evidence = item.get("evidence")
     if not isinstance(evidence, Mapping):
         raise SourceContractError("source evidence is missing")
-    if evidence.get("schema_version") != EVIDENCE_SCHEMA:
+    evidence_schema = evidence.get("schema_version")
+    if evidence_schema not in {LEGACY_EVIDENCE_SCHEMA, EVIDENCE_SCHEMA}:
         raise SourceContractError("source evidence schema is invalid")
     fields = evidence.get("fields")
     if not isinstance(fields, Mapping) or not fields:
@@ -511,6 +572,16 @@ def verify_source_contract(item: Mapping[str, Any]) -> None:
             raise SourceContractError(f"source {label} does not match evidence")
     if _text(item.get("captured_at")) != _text(evidence.get("captured_at")):
         raise SourceContractError("source capture time does not match evidence")
+    if evidence_schema == EVIDENCE_SCHEMA:
+        if _text(item.get("source_published_at")) != _text(
+            evidence.get("source_published_at")
+        ):
+            raise SourceContractError("source publication time does not match evidence")
+        confidence = _text(evidence.get("timestamp_confidence")).casefold()
+        if confidence not in _TIMESTAMP_CONFIDENCE:
+            raise SourceContractError("source timestamp confidence is invalid")
+        if _text(item.get("timestamp_confidence")).casefold() != confidence:
+            raise SourceContractError("source timestamp confidence does not match evidence")
     if _text(item.get("discovery_method")) != _text(evidence.get("discovery_method")):
         raise SourceContractError("source discovery method mismatch")
     if _text(item.get("fetch_status")) != _text(evidence.get("fetch_status")):
@@ -663,6 +734,7 @@ __all__ = [
     "EVIDENCE_SCHEMA",
     "EXTRACTOR_VERSION",
     "FULL_ARTICLE_EXTRACTOR_VERSION",
+    "LEGACY_EVIDENCE_SCHEMA",
     "SourceContractError",
     "apply_source_contract",
     "publication_title_from_contract",

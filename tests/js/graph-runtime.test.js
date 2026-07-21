@@ -806,6 +806,242 @@ test("renderer keeps the 03 focus mode button enabled unless the workbench is bu
   assert.equal(focusButton.disabled, true, "busy workbench must disable mode 03");
 });
 
+test("detail focus loads the captured neighborhood, closes the drawer and persists focus state", async () => {
+  const order = [];
+  const rendererWindow = {
+    AIStackGraphWorkbench: {
+      async focusSelectedNode(engine, nodeId) {
+        order.push(["focus", nodeId]);
+        engine.mode = "focus";
+      },
+    },
+  };
+  vm.runInNewContext(RENDERER_SOURCE, { window: rendererWindow }, {
+    filename: "cytoscape-graph-renderer.js",
+  });
+  const Renderer = rendererWindow.CytoscapeGraphRenderer;
+  const renderer = Object.create(Renderer.prototype);
+  let click;
+  Object.assign(renderer, {
+    _busy: false,
+    _detailNode: { id: "tag:LLM", layer: "tag" },
+    _listeners: [],
+    engine: { mode: "community", selectedNodeId: "tag:stale", clearSelection() {} },
+    elements: {
+      detailClose: null,
+      detailFocus: { addEventListener: (_type, handler) => { click = handler; } },
+      liveState: { textContent: "在线" },
+    },
+    _setBusy(value, label) { order.push(["busy", value, label || ""]); this._busy = value; },
+    _setActiveMode(mode) { order.push(["mode", mode]); },
+    _syncFocusUrl(nodeId) { order.push(["url", nodeId]); },
+    _closeDetail() { order.push(["close"]); },
+    _showError(error) { order.push(["error", error.message]); },
+  });
+
+  renderer._bindDetail();
+  await click();
+
+  assert.deepEqual(order, [
+    ["busy", true, "正在加载节点邻域…"],
+    ["focus", "tag:LLM"],
+    ["mode", "focus"],
+    ["url", "tag:LLM"],
+    ["close"],
+    ["busy", false, ""],
+  ]);
+  assert.equal(renderer.elements.liveState.textContent, "节点邻域已就绪");
+});
+
+test("an already focused core offers a truthful close action without loading the shard again", async () => {
+  const order = [];
+  const rendererWindow = {
+    AIStackGraphWorkbench: {
+      async focusSelectedNode() { order.push("unexpected-refetch"); },
+    },
+  };
+  vm.runInNewContext(RENDERER_SOURCE, { window: rendererWindow }, {
+    filename: "cytoscape-graph-renderer.js",
+  });
+  const Renderer = rendererWindow.CytoscapeGraphRenderer;
+  const renderer = Object.create(Renderer.prototype);
+  let click;
+  Object.assign(renderer, {
+    _busy: false,
+    _detailNode: {
+      id: "tag:LLM",
+      layer: "tag",
+      focusSceneRole: "core",
+    },
+    _listeners: [],
+    engine: { mode: "focus", selectedNodeId: "tag:LLM", clearSelection() {} },
+    elements: {
+      detailClose: null,
+      detailFocus: { addEventListener: (_type, handler) => { click = handler; } },
+      liveState: { textContent: "在线" },
+    },
+    _setBusy(value) { this._busy = value; order.push(`busy:${value}`); },
+    _syncFocusUrl(nodeId) { order.push(`url:${nodeId}`); },
+    _closeDetail() { order.push("close"); },
+    _focusGraphStage() { order.push("stage"); },
+    _showError(error) { order.push(`error:${error.message}`); },
+  });
+
+  assert.equal(renderer._detailFocusLabel(renderer._detailNode), "收起详情，查看完整邻域");
+  renderer._bindDetail();
+  await click();
+
+  assert.deepEqual(order, [
+    "busy:true",
+    "url:tag:LLM",
+    "close",
+    "busy:false",
+    "stage",
+  ]);
+});
+
+test("focus mode and search persist the resolved node as a reloadable deep link", async () => {
+  const order = [];
+  const rendererWindow = {};
+  vm.runInNewContext(RENDERER_SOURCE, { window: rendererWindow }, {
+    filename: "cytoscape-graph-renderer.js",
+  });
+  const Renderer = rendererWindow.CytoscapeGraphRenderer;
+  const renderer = Object.create(Renderer.prototype);
+  let modeClick;
+  const focusButton = {
+    dataset: { graphMode: "focus" },
+    addEventListener: (_type, handler) => { modeClick = handler; },
+  };
+  Object.assign(renderer, {
+    _busy: false,
+    _listeners: [],
+    modeButtons: [focusButton],
+    engine: {
+      selectedNodeId: null,
+      async setMode() { this.selectedNodeId = "tag:resolved"; },
+      async focusNode(nodeId) { this.selectedNodeId = nodeId; },
+    },
+    elements: {
+      searchResults: { hidden: false },
+      search: { setAttribute() {}, removeAttribute() {} },
+    },
+    _setBusy(value) { this._busy = value; },
+    _setActiveMode(mode) { order.push(`mode:${mode}`); },
+    _syncFocusUrl(nodeId) { order.push(`focus-url:${nodeId}`); },
+    _syncModeUrl(mode) { order.push(`mode-url:${mode}`); },
+    _showError(error) { order.push(`error:${error.message}`); },
+  });
+
+  renderer._bindModes();
+  await modeClick();
+  await renderer._chooseSearchResult({ id: "tag:searched" });
+
+  assert.deepEqual(order, [
+    "focus-url:tag:resolved",
+    "mode:focus",
+    "focus-url:tag:searched",
+  ]);
+});
+
+test("busy mode transitions restore keyboard focus to their triggering button", () => {
+  let focused = 0;
+  const focusButton = {
+    dataset: { graphMode: "focus" },
+    disabled: false,
+    focus() { focused += 1; },
+  };
+  const rendererWindow = { document: { activeElement: focusButton } };
+  vm.runInNewContext(RENDERER_SOURCE, { window: rendererWindow }, {
+    filename: "cytoscape-graph-renderer.js",
+  });
+  const Renderer = rendererWindow.CytoscapeGraphRenderer;
+  const renderer = Object.create(Renderer.prototype);
+  Object.assign(renderer, {
+    _busy: false,
+    _busyFocusOrigin: null,
+    engine: { selectedNodeId: null },
+    modeButtons: [focusButton],
+    elements: {
+      detailFocus: { disabled: false },
+      liveState: { textContent: "在线" },
+    },
+  });
+
+  renderer._setBusy(true);
+  assert.equal(focusButton.disabled, true);
+  renderer._setBusy(false);
+
+  assert.equal(focused, 1);
+  assert.equal(focusButton.disabled, false);
+});
+
+test("toolbar reset clears the stale focus deep link after the engine returns to overview", async () => {
+  const order = [];
+  const rendererWindow = {};
+  vm.runInNewContext(RENDERER_SOURCE, { window: rendererWindow }, {
+    filename: "cytoscape-graph-renderer.js",
+  });
+  const Renderer = rendererWindow.CytoscapeGraphRenderer;
+  const renderer = Object.create(Renderer.prototype);
+  let resetClick;
+  const resetButton = { addEventListener: (_type, handler) => { resetClick = handler; } };
+  Object.assign(renderer, {
+    _listeners: [],
+    engine: {
+      async resetView() { order.push("reset"); },
+      zoomIn() {},
+      zoomOut() {},
+      fitToScreen() {},
+    },
+    _closeDetail() { order.push("close"); },
+    _clearSearch() { order.push("search"); },
+    _syncModeUrl(mode) { order.push(`url:${mode}`); },
+    _showError(error) { order.push(`error:${error.message}`); },
+  });
+  const elements = new Map([["btn-reset", resetButton]]);
+  rendererWindow.document = { getElementById: (id) => elements.get(id) || null };
+
+  renderer._bindToolbar();
+  await resetClick();
+
+  assert.deepEqual(order, ["reset", "close", "search", "url:overview"]);
+});
+
+test("detail focus keeps the drawer open and announces a worker failure", async () => {
+  const order = [];
+  const rendererWindow = {
+    AIStackGraphWorkbench: {
+      async focusSelectedNode() { throw new Error("focus shard unavailable"); },
+    },
+  };
+  vm.runInNewContext(RENDERER_SOURCE, { window: rendererWindow }, {
+    filename: "cytoscape-graph-renderer.js",
+  });
+  const Renderer = rendererWindow.CytoscapeGraphRenderer;
+  const renderer = Object.create(Renderer.prototype);
+  let click;
+  Object.assign(renderer, {
+    _busy: false,
+    _detailNode: { id: "tag:LLM", layer: "tag" },
+    _listeners: [],
+    engine: { mode: "community", selectedNodeId: "tag:LLM", clearSelection() {} },
+    elements: {
+      detailClose: null,
+      detailFocus: { addEventListener: (_type, handler) => { click = handler; } },
+      liveState: { textContent: "在线" },
+    },
+    _setBusy(value) { this._busy = value; },
+    _closeDetail() { order.push("close"); },
+    _showError(error) { order.push(error.message); },
+  });
+
+  renderer._bindDetail();
+  await click();
+
+  assert.deepEqual(order, ["focus shard unavailable"]);
+});
+
 test("engine exposes the workbench API and semantic mode layouts", () => {
   const window = {};
   vm.runInNewContext(ENGINE_SOURCE, { window }, {

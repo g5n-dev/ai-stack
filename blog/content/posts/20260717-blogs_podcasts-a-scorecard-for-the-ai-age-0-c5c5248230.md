@@ -18,6 +18,15 @@ source_support: 1.0
 source_title_chars_original: 26
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://openai.com/index/a-scorecard-for-the-ai-age
+observation_id: obs_c5c5248230951857dae9664d8976aabb3764bf6936706cfde3b2931f62916be6
+revision_id: rev_92392cd31862bd391c7d40b7d55821be6aa9d383df5cacb5fd18cdda8c17e350
+event_id: evt_f47684d73bc645e739de3dec16c48ee87c715ff7ead52b8368badda3c209c754
+lineage_relation: original
+parent_observation_id: null
+source_published_at: null
+first_seen_at: 2026-07-17T14:06:51Z
+last_seen_at: 2026-07-20T00:00:00Z
+timestamp_confidence: git
 ---
 
 ## 基本信息

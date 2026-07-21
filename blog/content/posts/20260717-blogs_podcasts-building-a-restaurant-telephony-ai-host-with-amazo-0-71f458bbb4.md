@@ -18,6 +18,15 @@ source_support: 1.0
 source_title_chars_original: 93
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://aws.amazon.com/blogs/machine-learning/building-a-restaurant-telephony-ai-host-with-amazon-bedrock-agentcore-and-amazon-nova-2-sonic
+observation_id: obs_71f458bbb408e5fda7a280d5da6f28676148e80b763eb20d2abfdf766720c6d7
+revision_id: rev_91b14d2abeeab69685cda2dc69ab82a869749a0a496ba8e46022de91da088216
+event_id: evt_f4be8f92a29a16ccca43dbfb666e565fb9aef372bf9c2e1e9e1585442a43b108
+lineage_relation: original
+parent_observation_id: null
+source_published_at: null
+first_seen_at: 2026-07-16T16:47:55Z
+last_seen_at: 2026-07-20T00:00:00Z
+timestamp_confidence: git
 ---
 
 ## 基本信息

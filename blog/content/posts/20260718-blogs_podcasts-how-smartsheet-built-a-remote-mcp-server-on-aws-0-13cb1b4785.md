@@ -18,6 +18,15 @@ source_support: 1.0
 source_title_chars_original: 47
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://aws.amazon.com/blogs/machine-learning/how-smartsheet-built-a-remote-mcp-server-on-aws
+observation_id: obs_13cb1b478514de46e5e7f75d60d927394f61260d171290b478a030a6a53a801a
+revision_id: rev_1de17fc3061c15256005d5aa0af4cdec8c76c2e0933ca3f7799bd078a554ba84
+event_id: evt_78319719c0e8c6f2b3168ffa5577a1cc8e5d9c2942743da2085cff4b65cada50
+lineage_relation: original
+parent_observation_id: null
+source_published_at: null
+first_seen_at: 2026-07-17T21:17:33Z
+last_seen_at: 2026-07-20T00:00:00Z
+timestamp_confidence: git
 ---
 
 ## 基本信息

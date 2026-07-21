@@ -95,6 +95,9 @@ jobs:
             tests/test_production_monitor.py \
             tests/test_github_hardening.py \
             tests/test_refresh_transition_guard.py \
+            tests/test_lineage_core.py \
+            tests/test_lineage_assets.py \
+            tests/test_lineage_cli.py \
             tests/test_local_tooling_contract.py \
             tests/test_processor_import_boundary.py \
             tests/test_trends_delivery_contract.py \
@@ -137,6 +140,21 @@ jobs:
             tests/test_template_hardening.py \
             tests/test_secret_safe_logging.py \
             tests/test_v1_release_contract.py
+
+      - name: Verify committed lineage fixed point
+        env:
+          PYTHONPATH: ${{ github.workspace }}
+        run: |
+          python3 scripts/build_lineage.py --apply-post-metadata
+          python3 scripts/verify_lineage.py --verify-hashes
+          git diff --exit-code -- \
+            blog/content/posts \
+            data/lineage \
+            blog/static/data/lineage
+          test -z "$(git status --porcelain --untracked-files=all -- \
+            blog/content/posts \
+            data/lineage \
+            blog/static/data/lineage)"
 
       - name: Verify committed Post quality manifest
         env:
@@ -192,3 +210,11 @@ jobs:
           test -s blog/public/pagefind/pagefind.js
           test -s blog/public/pagefind/catalog.json
           test -s blog/public/pagefind/catalog.manifest.json
+
+      - name: Verify exact production site artifact in Chromium
+        env:
+          AI_STACK_PUBLIC_DIR: ${{ github.workspace }}/blog/public
+          PYTHONPATH: ${{ github.workspace }}
+        run: |
+          python3 -m pytest -q tests/e2e/test_static_site.py
+          python3 scripts/verify_graph.py --public-dir blog/public

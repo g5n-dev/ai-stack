@@ -18,6 +18,15 @@ source_support: 1.0
 source_title_chars_original: 62
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://openai.com/index/advancing-ai-safety-through-state-and-federal-action
+observation_id: obs_23b1197c74335456a9552d5a5661cf050c548ca7ee725da5e63d6be172adcf52
+revision_id: rev_6381c22c3a5125bd0b23c4775754b4588a9e5781cde9a5b129459d30a580fd61
+event_id: evt_138e94291902856e8260642e4055781d082d5334ebfaca08d3b615b60f52b6c5
+lineage_relation: original
+parent_observation_id: null
+source_published_at: null
+first_seen_at: 2026-07-16T03:41:01Z
+last_seen_at: 2026-07-20T00:00:00Z
+timestamp_confidence: git
 ---
 
 ## 基本信息

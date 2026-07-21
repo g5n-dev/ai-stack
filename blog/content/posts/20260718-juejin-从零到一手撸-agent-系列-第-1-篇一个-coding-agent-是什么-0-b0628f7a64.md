@@ -19,6 +19,15 @@ source_support: 1.0
 source_title_chars_original: 44
 description: "核心结论 Coding Agent 是一种以对话驱动的 AI 编码工具，能够自主决定读取哪些文件、运行哪些命令、怎么修改代码。与代码补全工具（如 GitHub Copilot）和 AI 编辑器（如 Cursor）不同，Coding Agent 的核心特征是主动调用工具、多轮迭代、最终产出结果，而非仅仅根据上下文续写代…"
 external_url: https://juejin.cn/post/7663075794352685083
+observation_id: obs_b0628f7a6433afe933cf43b80a563dec7f5d76c623df1a99436e4d00d84297e3
+revision_id: rev_5b8d153befb2ccddd85561fd16c7c5cb91dd4f518cf412409232e037b1280ecc
+event_id: evt_633a9bab4984fc44208346dcb489d271c6f9ba77c53cc383b8e33afbf8a16a59
+lineage_relation: original
+parent_observation_id: null
+source_published_at: null
+first_seen_at: 2026-07-18T03:34:31Z
+last_seen_at: 2026-07-20T00:00:00Z
+timestamp_confidence: observed
 ---
 
 ## 转写说明

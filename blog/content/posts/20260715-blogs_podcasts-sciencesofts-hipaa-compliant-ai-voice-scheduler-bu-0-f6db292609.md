@@ -18,6 +18,15 @@ source_support: 1.0
 source_title_chars_original: 61
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://aws.amazon.com/blogs/machine-learning/sciencesofts-hipaa-compliant-ai-voice-scheduler-built-on-aws
+observation_id: obs_f6db292609a997355618b43270ebc5102639d701c6ca0d9bc28ea8904ca2ed5c
+revision_id: rev_6cb43fc0ba54ff9c2d4eaf76be12615a4ab0619285400caefab369d4ff867c35
+event_id: evt_78fa8b68bf8d9883c24cde36bd52b074bbe36afab20bcd602614c8901aa9b6b5
+lineage_relation: original
+parent_observation_id: null
+source_published_at: null
+first_seen_at: 2026-07-15T15:50:50Z
+last_seen_at: 2026-07-20T00:00:00Z
+timestamp_confidence: git
 ---
 
 ## 基本信息

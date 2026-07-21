@@ -18,6 +18,15 @@ source_support: 1.0
 source_title_chars_original: 73
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://aws.amazon.com/blogs/machine-learning/scaling-medical-content-review-at-flo-health-with-amazon-bedrock-part-2
+observation_id: obs_2c05a64e6251e25dfc22ec88e2bc12bdfa01866bffaf6cb0bd58687225acf8bb
+revision_id: rev_81fdb630e5466d73850fd3547fa1d076d24ef8a73e119272c3fe9172d2d723a7
+event_id: evt_fa52802258e8a72370f074cfb608015432c24c14ecf04ad6b7cd374d3ffd08d2
+lineage_relation: original
+parent_observation_id: null
+source_published_at: null
+first_seen_at: 2026-07-15T12:47:38Z
+last_seen_at: 2026-07-20T00:00:00Z
+timestamp_confidence: git
 ---
 
 ## 基本信息

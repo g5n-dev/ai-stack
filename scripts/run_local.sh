@@ -39,17 +39,21 @@ else
   python3 scripts/generate_content.py
 fi
 
+python3 scripts/build_lineage.py \
+  --content-root blog/content \
+  --internal-output data/lineage \
+  --public-output blog/static/data/lineage \
+  --apply-post-metadata
+python3 scripts/verify_lineage.py \
+  --public-root blog/static/data/lineage \
+  --internal-root data/lineage \
+  --verify-hashes
 python3 scripts/build_content_quality_manifest.py \
   --content-root blog/content \
   --output blog/data/content_quality.json \
   --fail-on-quarantine \
   --fail-on-structural-warning \
   --fail-on-unverified-provenance
-TAG_GRAPH_ENABLE_CONTENT_MINING=0 \
-TAG_INTRO_ENABLED=0 \
-TAG_INTRO_MAX_NEW=0 \
-  python3 -m processor.tag_graph
-python3 scripts/verify_graph.py --assets-only --public-dir blog/static
 python3 scripts/build_stack_trends.py \
   --content-root blog/content \
   --quality-manifest blog/data/content_quality.json \
@@ -57,6 +61,11 @@ python3 scripts/build_stack_trends.py \
 python3 scripts/verify_stack_trends.py \
   --root blog/static/data/stack-trends \
   --verify-hashes
+TAG_GRAPH_ENABLE_CONTENT_MINING=0 \
+TAG_INTRO_ENABLED=0 \
+TAG_INTRO_MAX_NEW=0 \
+  python3 -m processor.tag_graph
+python3 scripts/verify_graph.py --assets-only --public-dir blog/static
 
 if [[ "$SKIP_BUILD" -eq 0 ]]; then
   python3 scripts/preflight.py --require-hugo

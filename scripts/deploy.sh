@@ -32,7 +32,38 @@ if [[ ! -x node_modules/.bin/pagefind || ! -x node_modules/.bin/tailwindcss ]]; 
   exit 2
 fi
 
-echo "[1/7] 校验内容来源与历史修复固定点"
+echo "[1/8] 重建并校验情报溯源固定点"
+mkdir -p "$TMP_ROOT/lineage-internal"
+if [[ -d data/lineage ]]; then
+  cp -R data/lineage/. "$TMP_ROOT/lineage-internal/"
+fi
+"$PYTHON_BIN" scripts/build_lineage.py \
+  --content-root blog/content \
+  --internal-output "$TMP_ROOT/lineage-internal" \
+  --public-output "$TMP_ROOT/lineage-public"
+"$PYTHON_BIN" scripts/verify_lineage.py \
+  --public-root "$TMP_ROOT/lineage-public" \
+  --internal-root "$TMP_ROOT/lineage-internal" \
+  --verify-hashes
+diff -qr data/lineage "$TMP_ROOT/lineage-internal"
+diff -qr blog/static/data/lineage "$TMP_ROOT/lineage-public"
+"$PYTHON_BIN" - <<'PY'
+from pathlib import Path
+
+from ai_stack.lineage import apply_lineage_post_metadata
+
+report = apply_lineage_post_metadata(
+    content_root=Path("blog/content"),
+    internal_dir=Path("data/lineage"),
+    apply=False,
+)
+if report["changed"]:
+    raise SystemExit(
+        f"lineage Post metadata is not at a fixed point: changed={report['changed']}"
+    )
+PY
+
+echo "[2/8] 校验内容来源与历史修复固定点"
 "$PYTHON_BIN" scripts/build_content_quality_manifest.py \
   --content-root blog/content \
   --output "$TMP_ROOT/content_quality.json" \
@@ -42,10 +73,7 @@ echo "[1/7] 校验内容来源与历史修复固定点"
 cmp --silent blog/data/content_quality.json "$TMP_ROOT/content_quality.json"
 "$PYTHON_BIN" scripts/repair_historical_content.py --check
 
-echo "[2/7] 校验分层知识图谱资产"
-"$PYTHON_BIN" scripts/verify_graph.py --assets-only --public-dir blog/static
-
-echo "[3/7] 从已审核内容重建并比对趋势快照"
+echo "[3/8] 从已审核内容重建并比对趋势快照"
 "$PYTHON_BIN" scripts/build_stack_trends.py \
   --content-root blog/content \
   --quality-manifest blog/data/content_quality.json \
@@ -55,25 +83,30 @@ echo "[3/7] 从已审核内容重建并比对趋势快照"
   --verify-hashes
 diff -qr blog/static/data/stack-trends "$TMP_ROOT/stack-trends"
 
-echo "[4/7] 重建并比对静态样式"
+echo "[4/8] 校验分层知识图谱资产"
+"$PYTHON_BIN" scripts/verify_graph.py --assets-only --public-dir blog/static
+
+echo "[5/8] 重建并比对静态样式"
 npm run build:css
 git diff --exit-code -- blog/static/css/tailwind.css
 
-echo "[5/7] 运行前端交付测试"
+echo "[6/8] 运行前端交付测试"
 npm test
 
-echo "[6/7] 以生产 baseURL 构建 Hugo"
+echo "[7/8] 以生产 baseURL 构建 Hugo"
 PUBLIC_DIR="$TMP_ROOT/public"
 (
   cd blog
   hugo --baseURL "$SITE_BASE_URL" --minify --cleanDestinationDir --destination "$PUBLIC_DIR"
 )
 
-echo "[7/7] 构建 Pagefind 并核对目录"
+echo "[8/8] 构建 Pagefind 并核对目录"
 ./node_modules/.bin/pagefind --site "$PUBLIC_DIR"
 "$PYTHON_BIN" -m ai_stack.pagefind_catalog --public-root "$PUBLIC_DIR"
 test -s "$PUBLIC_DIR/pagefind/pagefind.js"
 test -s "$PUBLIC_DIR/pagefind/catalog.json"
 test -s "$PUBLIC_DIR/pagefind/catalog.manifest.json"
+AI_STACK_PUBLIC_DIR="$PUBLIC_DIR" "$PYTHON_BIN" -m pytest -q tests/e2e/test_static_site.py
+"$PYTHON_BIN" scripts/verify_graph.py --public-dir "$PUBLIC_DIR"
 
 echo "本地发布边界全部通过。实际部署仅由 main 上的 Build and Deploy 工作流执行。"

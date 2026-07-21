@@ -18,6 +18,15 @@ source_support: 1.0
 source_title_chars_original: 53
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://aws.amazon.com/blogs/machine-learning/introducing-mobile-layout-for-amazon-quick-dashboards
+observation_id: obs_c969d458ad0fd709aa95de711da0b24c5866f4353f31413adeac069bb6cbc099
+revision_id: rev_3ef7cf94994e42be2477ba4d0a229b0df7362076d47e7a28029dee7aea35f928
+event_id: evt_8acfad259e366a0eb71317d06216baf48bc7c6d9cbaa8a2d4e42835c1983a985
+lineage_relation: original
+parent_observation_id: null
+source_published_at: null
+first_seen_at: 2026-07-17T22:11:02Z
+last_seen_at: 2026-07-20T00:00:00Z
+timestamp_confidence: git
 ---
 
 ## 基本信息

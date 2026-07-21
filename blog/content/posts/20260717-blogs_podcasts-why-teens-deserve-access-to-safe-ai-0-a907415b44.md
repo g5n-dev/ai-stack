@@ -18,6 +18,15 @@ source_support: 1.0
 source_title_chars_original: 35
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://openai.com/index/why-teens-deserve-access-safe-ai
+observation_id: obs_a907415b440a72c97ae113fef1ec4712f495e77ca68c1416652d44e576d949fd
+revision_id: rev_5f4b5351699f5654c1ee3415dcd4a6e6a5dc3efc02c771138062b14473b01fde
+event_id: evt_3cbd7ef56535254f0cc98e645c3d292a11e9cd88f83832a4335488ce44631534
+lineage_relation: original
+parent_observation_id: null
+source_published_at: null
+first_seen_at: 2026-07-16T23:16:33Z
+last_seen_at: 2026-07-20T00:00:00Z
+timestamp_confidence: git
 ---
 
 ## 基本信息

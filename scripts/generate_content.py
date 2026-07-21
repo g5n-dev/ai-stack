@@ -28,6 +28,12 @@ from runtime_profile import get_runtime_profile
 
 from ai_stack.content_quality import analyze_post, build_content_quality_manifest
 from ai_stack.identity import canonicalize_url
+from ai_stack.lineage import (
+    LineageRegistry,
+    LineageValidationError,
+    observation_from_contract,
+    parse_historical_post,
+)
 from ai_stack.source_contract import (
     SourceContractError,
     apply_source_contract,
@@ -631,6 +637,7 @@ class SuperEnhancedContentGenerator:
         self.processor = ProcessorOrchestrator(runtime_profile=self.runtime_profile)
         self.publisher = PublisherOrchestrator()
         self.posts_dir = project_root / 'blog' / 'content' / 'posts'
+        self.lineage_registry_dir = project_root / "data" / "lineage"
         self.max_new_items_per_source = 1 if self.runtime_profile == "ci" else None
 
         # 确保 posts 目录存在
@@ -665,6 +672,10 @@ class SuperEnhancedContentGenerator:
             total_items = sum(len(items) for items in crawled_data.values())
             logger.info(f"✓ Crawled {total_items} items from {len(crawled_data)} sources")
             self._validate_crawled_data(crawled_data)
+            crawled_data = self._apply_lineage_policy(
+                crawled_data,
+                observations=getattr(self.crawler, "last_observations", None),
+            )
             crawled_data = self._filter_unseen_crawled_data(
                 crawled_data,
                 max_items_per_source=self.max_new_items_per_source,
@@ -814,6 +825,188 @@ class SuperEnhancedContentGenerator:
             self.last_filter_stats["historical_urls"],
             self.last_filter_stats["skipped_historical"],
             self.last_filter_stats["selected"],
+        )
+        return selected
+
+    def _apply_lineage_policy(
+        self,
+        crawled_data: dict,
+        *,
+        observations: list[dict] | None = None,
+    ) -> dict:
+        """Resolve provenance before archive filtering or any model call.
+
+        URL dedupe and lineage serve different purposes: generation receives one
+        winner per URL, while this method records every contracted cross-source
+        observation and suppresses only high-confidence cross-URL copies.
+        """
+
+        raw_observations = observations
+        if raw_observations is None:
+            raw_observations = [
+                item
+                for items in (crawled_data or {}).values()
+                if isinstance(items, list)
+                for item in items
+                if isinstance(item, dict)
+            ]
+        if not raw_observations:
+            return {
+                str(source): list(items) if isinstance(items, list) else []
+                for source, items in (crawled_data or {}).items()
+            }
+
+        # One observation is one canonical URL. Multiple source captures of the
+        # same URL are revisions; choose the strongest immutable capture for the
+        # current resolution while the crawler still retains all raw contracts.
+        strongest_by_observation: dict[str, tuple[dict, object]] = {}
+        propagation_targets = [
+            *raw_observations,
+            *(
+                item
+                for items in (crawled_data or {}).values()
+                if isinstance(items, list)
+                for item in items
+            ),
+        ]
+        for item in propagation_targets:
+            if not isinstance(item, dict):
+                continue
+            verify_source_contract(item)
+            captured_at = str(item.get("captured_at") or "").strip()
+            last_seen_at = (
+                f"{captured_at[:10]}T00:00:00Z"
+                if re.fullmatch(r"\d{4}-\d{2}-\d{2}", captured_at[:10])
+                else None
+            )
+            observation = observation_from_contract(item, last_seen_at=last_seen_at)
+            strength = (
+                str(item.get("source_capture_mode") or "") != "metadata_only",
+                item.get("source_is_truncated") is not True,
+                int(item.get("source_text_chars") or 0),
+                str(item.get("source_snapshot_sha256") or ""),
+            )
+            previous = strongest_by_observation.get(observation.observation_id)
+            if previous is None or strength > previous[0]["_lineage_strength"]:
+                candidate = dict(item)
+                candidate["_lineage_strength"] = strength
+                strongest_by_observation[observation.observation_id] = (
+                    candidate,
+                    observation,
+                )
+
+        if not strongest_by_observation:
+            return {
+                str(source): list(items) if isinstance(items, list) else []
+                for source, items in (crawled_data or {}).items()
+            }
+
+        ordered_pairs = sorted(
+            strongest_by_observation.values(),
+            key=lambda pair: (
+                str(pair[1].source_published_at or pair[1].first_seen_at or ""),
+                pair[1].observation_id,
+            ),
+        )
+        lineage_inputs = [pair[1] for pair in ordered_pairs]
+        registry_root = Path(getattr(self, "lineage_registry_dir", project_root / "data" / "lineage"))
+        registry = LineageRegistry.load(registry_root)
+
+        historical_baseline = []
+        # Reconstruct exact shingles from the bounded, source-only historical
+        # excerpts on every run.  The persisted registry intentionally keeps
+        # only Bitmap / SimHash / KMV candidate signatures, so approximate
+        # suppression is never decided from a lossy sketch alone.
+        content_root = self.posts_dir.parent
+        current_ids = {item.observation_id for item in lineage_inputs}
+        for path in sorted(self.posts_dir.glob("*.md")):
+            try:
+                historical = parse_historical_post(path, content_root=content_root)
+            except (OSError, UnicodeError, LineageValidationError) as exc:
+                raise RuntimeError(
+                    f"Historical lineage baseline is invalid: {path.name}: {exc}"
+                ) from exc
+            if historical is not None and historical.observation_id not in current_ids:
+                historical_baseline.append(historical)
+
+        batch = registry.resolve_batch(
+            lineage_inputs,
+            historical_baseline=historical_baseline,
+        )
+        resolutions = {item.observation_id: item for item in batch.items}
+        lineage_input_by_id = {
+            item.observation_id: item for item in lineage_inputs
+        }
+        contracted_by_id = {
+            identifier: pair[0]
+            for identifier, pair in strongest_by_observation.items()
+        }
+        for identifier, resolution in resolutions.items():
+            contracted = contracted_by_id[identifier]
+            lineage_input = lineage_input_by_id[identifier]
+            contracted.update(
+                {
+                    "observation_id": resolution.observation_id,
+                    "revision_id": resolution.revision_id,
+                    "event_id": resolution.event_id,
+                    "lineage_relation": resolution.relation.value,
+                    "parent_observation_id": resolution.parent_observation_id,
+                    "lineage_confidence": resolution.confidence,
+                    "lineage_suppressed": resolution.suppress,
+                    "first_seen_at": lineage_input.first_seen_at,
+                    "last_seen_at": lineage_input.last_seen_at,
+                }
+            )
+
+        # Propagate resolution fields to all object instances that represent the
+        # same URL, including the generation winner returned by crawler dedupe.
+        for item in propagation_targets:
+            if not isinstance(item, dict):
+                continue
+            identifier = observation_from_contract(item).observation_id
+            metadata = contracted_by_id.get(identifier)
+            if metadata is not None:
+                for field in (
+                    "observation_id",
+                    "revision_id",
+                    "event_id",
+                    "lineage_relation",
+                    "parent_observation_id",
+                    "lineage_confidence",
+                    "lineage_suppressed",
+                    "first_seen_at",
+                    "last_seen_at",
+                ):
+                    item[field] = metadata.get(field)
+
+        generated_at = max(
+            (
+                str(item.get("captured_at") or "")
+                for item in raw_observations
+                if isinstance(item, dict)
+            ),
+            default="",
+        ) or content_now().astimezone(ZoneInfo("UTC")).isoformat().replace("+00:00", "Z")
+        registry.save(registry_root, generated_at=generated_at)
+
+        selected: dict[str, list[dict]] = {}
+        for source, items in (crawled_data or {}).items():
+            selected[str(source)] = [
+                item
+                for item in (items if isinstance(items, list) else [])
+                if isinstance(item, dict) and item.get("lineage_suppressed") is not True
+            ]
+        self.last_lineage_stats = {
+            **batch.stats,
+            "circuit_breaker_tripped": batch.circuit_breaker.tripped,
+            "circuit_breaker_reason": batch.circuit_breaker.reason,
+        }
+        logger.info(
+            "Lineage resolution: observations=%s suppressed=%s derivatives=%s breaker=%s",
+            batch.stats.get("observations", 0),
+            batch.stats.get("suppressed", 0),
+            batch.stats.get("derivatives", 0),
+            batch.circuit_breaker.reason or "off",
         )
         return selected
 
@@ -1286,6 +1479,43 @@ class SuperEnhancedContentGenerator:
         snapshot_digest = str(item.get("source_snapshot_sha256") or "").strip()
         if snapshot_digest:
             lines.append(f'source_snapshot_sha256: "{self._yaml_escape(snapshot_digest)}"')
+        payload_digest = str(item.get("source_payload_sha256") or "").strip()
+        if payload_digest:
+            lines.append(f'source_payload_sha256: "{self._yaml_escape(payload_digest)}"')
+        for field_name in ("observation_id", "event_id", "revision_id"):
+            value = str(item.get(field_name) or "").strip()
+            if value:
+                lines.append(f'{field_name}: "{self._yaml_escape(value)}"')
+        for field_name in ("source_published_at", "first_seen_at"):
+            value = str(item.get(field_name) or "").strip()
+            if value:
+                lines.append(f'{field_name}: "{self._yaml_escape(value)}"')
+        timestamp_confidence = str(item.get("timestamp_confidence") or "").strip()
+        if timestamp_confidence:
+            lines.append(
+                f'timestamp_confidence: "{self._yaml_escape(timestamp_confidence)}"'
+            )
+        lineage_relation = str(item.get("lineage_relation") or "").strip()
+        if lineage_relation:
+            allowed_lineage_relations = {
+                "original",
+                "exact_copy",
+                "syndicated",
+                "same_event",
+                "derivative",
+                "related_only",
+            }
+            if lineage_relation not in allowed_lineage_relations:
+                raise ValueError("generated post has an invalid lineage relation")
+            lines.append(
+                f'lineage_relation: "{self._yaml_escape(lineage_relation)}"'
+            )
+        parent_observation_id = str(item.get("parent_observation_id") or "").strip()
+        if parent_observation_id:
+            lines.append(
+                "parent_observation_id: "
+                f'"{self._yaml_escape(parent_observation_id)}"'
+            )
         extractor_version = str(item.get("extractor_version") or "").strip()
         if extractor_version:
             lines.append(f'extractor_version: "{self._yaml_escape(extractor_version)}"')

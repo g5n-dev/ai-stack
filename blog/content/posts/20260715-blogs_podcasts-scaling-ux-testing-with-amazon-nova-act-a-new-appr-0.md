@@ -18,6 +18,15 @@ source_support: 1.0
 source_title_chars_original: 77
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://aws.amazon.com/blogs/machine-learning/scaling-ux-testing-with-amazon-nova-act-a-new-approach-to-user-flow-analysis
+observation_id: obs_d3d801b9b9ca7e922a046bbad506ae8713ece35556d0f55d5bf5150d69698102
+revision_id: rev_3bfcd34f061bfdec0c4173739a234c14f6111f4c52e8b42471c0feada23ec60a
+event_id: evt_b134fabb7ff9a67f4772932896087e5b19457f9c69b0138fe4e41cd0ad8bc511
+lineage_relation: original
+parent_observation_id: null
+source_published_at: null
+first_seen_at: 2026-07-15T08:56:23Z
+last_seen_at: 2026-07-20T00:00:00Z
+timestamp_confidence: git
 ---
 
 ## 基本信息

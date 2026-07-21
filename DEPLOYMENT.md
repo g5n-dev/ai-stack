@@ -2,7 +2,7 @@
 
 AI Stack 使用 Hugo、Pagefind、GitHub Actions 与 GitHub Pages 发布 `https://ai-stack.site/`。生产系统不依赖数据库、消息队列或常驻服务；内容、质量清单、图谱和趋势快照都保存在仓库中。
 
-## 1. 两条部署路径
+## 1. 触发方式与发布主链
 
 | 触发 | 是否刷新数据 | 主要用途 |
 | --- | --- | --- |
@@ -11,6 +11,14 @@ AI Stack 使用 Hugo、Pagefind、GitHub Actions 与 GitHub Pages 发布 `https:
 | 手动触发 | 可选 | 故障恢复、验证配置或立即刷新 |
 
 生产入口是 [`.github/workflows/deploy.yml`](./.github/workflows/deploy.yml)，工作流名称为 **Build and Deploy**。独立新鲜度监控位于 [`.github/workflows/monitoring.yml`](./.github/workflows/monitoring.yml)。
+
+所有触发最终都经过同一条失败关闭的生产 DAG：
+
+```text
+refresh → validate → persist → build → deploy → production-verify → notify
+```
+
+这是两阶段权限隔离，而不是一个同时持有全部能力的大 job：`refresh` 可读取模型密钥但只有仓库读权；`validate` 复验跨 job handoff 并重建谱系、质量、趋势与图谱；`persist` 没有模型密钥，只能以 CAS 写入白名单数据；Pages 写权只存在于 `deploy`。搜索通知必须等待线上精确版本烟测通过。
 
 ## 2. 前置条件
 
@@ -21,7 +29,7 @@ AI Stack 使用 Hugo、Pagefind、GitHub Actions 与 GitHub Pages 发布 `https:
 
 只发布现有静态站点不需要模型密钥。浏览站点或本地启动 Hugo 也不会调用模型。
 
-## 3. GitHub Actions Secrets
+## 3. GitHub Actions Secrets 与 Variables
 
 在仓库 **Settings → Secrets and variables → Actions** 中配置：
 
@@ -31,11 +39,10 @@ AI Stack 使用 Hugo、Pagefind、GitHub Actions 与 GitHub Pages 发布 `https:
 | `ANTHROPIC_BASE_URL` | 完整刷新必需 | Anthropic Messages 兼容基础地址 |
 | `ANTHROPIC_MODEL` | 建议 | 显式指定模型 ID |
 | `SEARXNG_BASE_URL` | 可选 | 自建搜索兜底地址 |
-| `BING_INDEXNOW_API_KEY` | 可选 | IndexNow 专用公开 ownership key；8–128 位字母、数字或连字符 |
 | `GOOGLE_INDEXING_API_KEY` | 可选 | Google 索引通知认证信息 |
 | `GOOGLE_INDEXING_API_URL` | 可选 | Google 索引通知地址 |
 
-`BING_INDEXNOW_API_KEY` 按 IndexNow 协议会作为站点根目录下的公开文本文件发布，用于证明域名控制权；它不是保密令牌，必须单独生成，且不可复用模型、搜索、GitHub 或其他服务的敏感凭据。工作流会在写入文件名及提交通知前校验格式。
+仓库变量（**Variables**，不是 Secrets）可配置 `BING_INDEXNOW_OWNERSHIP_KEY`。它按 IndexNow 协议作为站点根目录下的专用公开 ownership key 发布，用于证明域名控制权；它不是保密令牌，必须单独生成，且不可复用模型、搜索、GitHub 或其他服务的敏感凭据。工作流只接受 8–128 位字母、数字或连字符。
 
 使用明显占位符准备配置：
 
@@ -66,14 +73,14 @@ hugo --baseURL "https://ai-stack.site/" --minify --cleanDestinationDir
 
 ## 5. 首次发布
 
-代码通过 PR 合并到 `main` 后会自动执行 push 发布路径：
+代码通过 PR 合并到 `main` 后会自动执行不调用模型的 push 发布路径：
 
-1. 安装固定版本的 Python、Node.js 与 Hugo。
-2. 验证已经提交的内容质量 manifest 和历史修复固定点。
-3. 验证图谱与趋势分片。
-4. 构建 Hugo 与 Pagefind 搜索目录。
-5. 上传 Pages artifact 并部署。
-6. 按配置通知搜索引擎。
+1. 将当前文章与数据封装为受哈希和路径白名单保护的 handoff。
+2. 在无模型密钥的 job 中重建并校验事件谱系、内容质量、趋势和图谱。
+3. 以精确 base SHA 的 CAS writer 持久化已验证数据；没有变化时 SHA 保持不变。
+4. 检出精确 persisted SHA，证明派生数据与 CSS 已达到固定点，再构建 Hugo 与 Pagefind。
+5. 创建绑定精确 SHA 及派生资产摘要的 release marker，通过体积与公开树门禁后部署 Pages。
+6. 对线上 marker、关键页面和资产执行烟测；成功后保留生产验证回执，再按配置通知搜索引擎。
 
 push 路径不会执行采集和模型处理，因此代码/样式变更可以快速、确定性上线。
 
@@ -81,14 +88,13 @@ push 路径不会执行采集和模型处理，因此代码/样式变更可以�
 
 计划任务在 UTC 的每小时第 17 分钟触发。它会：
 
-1. 采集已启用来源，并在模型调用前做全历史 URL 去重。
-2. 生成或修复 Markdown 文章。
-3. 校验来源契约、正文结构、标签与历史质量固定点。
-4. 重建 `blog/data/content_quality.json`。
-5. 重建 Graph JSON v2 与 STACK 趋势分片并校验哈希。
-6. 构建 Hugo、Pagefind 与结果 catalog。
-7. 仅在生成资产有变化时提交 `[skip ci]` 数据提交。
-8. 以 CAS/冲突失败关闭策略推送 `main`，随后部署已验证 artifact。
+1. 采集已启用来源，并在模型调用前做全历史规范 URL 去重。
+2. 生成或修复 Markdown 文章，校验来源契约、正文结构、标签与历史质量固定点。
+3. 仅对有限来源证据计算指纹，标记本站最早观测、疑似源头、转载、衍生与同事件；不对生成正文做“原创性”判断。
+4. 依次重建并校验 lineage、`content_quality.json`、趋势和 Graph JSON v2。
+5. 趋势按稳定 `event_id` 统计 `unique_events`，只合并 allowlist 认可的 `same_event`；重复观察记录为 `redundant_observations`，避免转载放大。
+6. 仅在白名单数据变化时提交 `[skip ci]`，CAS 冲突直接失败，不覆盖新的 `main`。
+7. 构建精确 SHA 的 Hugo、Pagefind 与结果 catalog，部署并完成生产验证。
 
 生成机器人提交不会再次触发完整 push 部署，避免递归工作流。
 
@@ -121,14 +127,14 @@ cd ai-stack/blog
 hugo server -D
 ```
 
-运行稳定发布闸门：
+在 Python 3.11–3.13 环境运行稳定发布闸门（以下命令均从仓库根目录开始）：
 
 ```bash
-cd ai-stack
 npm ci --ignore-scripts
 npm test
 python3 -m pytest -q
 npm run build:css
+bash scripts/rebuild_release_data.sh
 cd blog
 hugo --minify --cleanDestinationDir
 cd ..
@@ -157,14 +163,15 @@ curl --fail --silent --show-error https://ai-stack.site/data/stack-trends/index.
 
 ## 10. 新鲜度监控
 
-**System Monitoring & Content Quality Tracking** 每 6 小时第 23 分钟运行：
+**System Monitoring & Content Quality Tracking** 每小时第 41 分钟运行，使用只读权限：
 
-- 校验仓库与线上 Graph JSON v2 的生成时间和文章数。
-- 校验趋势分片哈希、字节数与线上生成时间。
-- 使用 12 小时阈值区分正常与陈旧数据。
-- 通过步骤名称与诊断摘要区分内容、派生数据、部署和线上新鲜度故障；长期状态直接查看 Actions 历史与 README 徽章。
+- 读取 `main` 的精确 SHA 和提交时间，并检查线上 `ai_stack_release_v1.json`。
+- 线上 SHA 与 `main` 不一致超过 3 小时即失败；生产 release 超过 12 小时未更新即失败。
+- 通过 Actions Summary 区分调度、持久化、构建、部署和生产收敛问题；长期状态直接查看 Actions 历史与 README 徽章。
 
 监控失败不应通过放宽阈值解决。先判断是计划任务未启动、采集/质量闸门失败、推送冲突、部署失败还是线上缓存/资源问题。
+
+对这个静态博客，以上证据比单独维护一套“7 天 SLO 报表服务”更合适。若需要周度复盘，可从 Actions 历史汇总部署成功率、新鲜度达标率和恢复时间；它是可选运营视图，不是发布依赖，也不新增常驻基础设施。
 
 按步骤处理见 [新鲜度排障手册](./docs/operations/freshness-runbook.md)。
 
@@ -197,9 +204,11 @@ curl --fail --silent --show-error https://ai-stack.site/data/stack-trends/index.
 
 日志只能确认变量是否存在，不能打印值。轮换认证令牌后重新运行手动完整刷新；不要在 Issue 中粘贴响应头或请求命令。
 
-## 12. 回滚
+## 12. 生产回执与恢复
 
-- 代码/样式回滚：通过新的 PR revert 对应提交，再让 push 发布路径部署。
+- 每次 `production-verify` 成功都会上传 `verified-release-<sha>`，保留 90 天；它证明该精确 SHA 曾通过生产烟测，不是泛化的社交渠道回执。
+- **Production Recovery** 只接受 40 位 `main` 祖先 SHA，且必须能找到来自成功 `deploy.yml` 的未过期生产验证回执；随后重建、部署并再次烟测该精确版本。
+- 常规代码/样式回退：优先通过新的 PR revert 对应提交，让主发布链生成新的可审计版本。
 - 生成数据回滚：优先修复生成器并重建，不直接手改清单或分片。
 - 内容安全事件：使用 **Delete Post** 工作流的 dry run 核对，再执行删除与派生数据重建。
 - 密钥事件：先轮换与撤销，再处理仓库历史和日志暴露面。

@@ -5,7 +5,7 @@ ArXiv papers crawler
 
 import requests
 from bs4 import BeautifulSoup
-from datetime import datetime
+from datetime import datetime, timezone
 from typing import List, Dict
 import logging
 
@@ -113,7 +113,7 @@ class ArxivPapersCrawler:
             'category': category,
             'published': published,
             'source': 'arxiv',
-            'crawled_at': datetime.now().isoformat()
+            'crawled_at': datetime.now(timezone.utc).isoformat()
         }
 
 

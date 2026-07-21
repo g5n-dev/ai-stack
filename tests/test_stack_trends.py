@@ -9,9 +9,13 @@ import pytest
 import yaml
 
 from ai_stack.content_quality import write_content_quality_manifest
+from ai_stack.identity import canonicalize_url
 from processor.intelligence import calculate_trends
 from processor.stack_trends import (
+    INDEX_SCHEMA_VERSION_V2,
     StackTrendsValidationError,
+    TOPIC_SCHEMA_VERSION_V2,
+    WINDOW_SCHEMA_VERSION_V2,
     adapt_posts_to_events,
     build_stack_trends,
     load_stack_trends_config,
@@ -174,6 +178,85 @@ def _tree_bytes(root: Path) -> dict[str, bytes]:
     }
 
 
+def _write_lineage_assets(
+    root: Path,
+    *,
+    observations: list[dict[str, object]],
+    event_id: str,
+) -> Path:
+    """Write the public lineage contract consumed by trend builds."""
+
+    lineage_root = root / "lineage"
+    route_payload = {
+        "version": 1,
+        "bucket": "00",
+        "routes": [
+            {
+                "observation_id": item["observation_id"],
+                "event_id": event_id,
+            }
+            for item in observations
+        ],
+    }
+    cluster_payload = {
+        "version": 1,
+        "bucket": "00",
+        "clusters": [
+            {
+                "event_id": event_id,
+                "event_aliases": [],
+                "earliest_observed_id": observations[0]["observation_id"],
+                "probable_origin_id": observations[0]["observation_id"],
+                "representative_article_url": observations[0]["article_url"],
+                "observations": observations,
+            }
+        ],
+    }
+
+    def write_shard(kind: str, payload: dict[str, object]) -> dict[str, object]:
+        body = (
+            json.dumps(payload, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+            + "\n"
+        ).encode()
+        digest = hashlib.sha256(body).hexdigest()
+        relative = f"{kind}/00-{digest[:16]}.json"
+        path = lineage_root / relative
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_bytes(body)
+        return {"bucket": "00", "path": relative, "sha256": digest, "bytes": len(body)}
+
+    route_ref = write_shard("routes", route_payload)
+    cluster_ref = write_shard("clusters", cluster_payload)
+    index = {
+        "version": 1,
+        "schema": "lineage_index_v1",
+        "generated_at": AS_OF,
+        "bucket_count": 128,
+        "bucket_algorithm": "sha256_prefix32_mod_v1",
+        "stats": {
+            "observations": len(observations),
+            "events": 1,
+            "exact_copies": sum(item["relation"] == "exact_copy" for item in observations),
+            "syndicated": sum(item["relation"] == "syndicated" for item in observations),
+            "derivatives": sum(item["relation"] == "derivative" for item in observations),
+            "same_event": sum(item["relation"] == "same_event" for item in observations),
+            "related_only": sum(item["relation"] == "related_only" for item in observations),
+        },
+        "route_buckets": [route_ref],
+        "cluster_buckets": [cluster_ref],
+    }
+    (lineage_root / "index.json").write_text(
+        json.dumps(index, ensure_ascii=False, sort_keys=True, separators=(",", ":")) + "\n",
+        encoding="utf-8",
+    )
+    return lineage_root
+
+
+def _observation_id(url: str) -> str:
+    canonical = canonicalize_url(url)
+    return f"obs_{hashlib.sha256(canonical.encode()).hexdigest()}"
+
+
 def _rewrite_referenced_asset(
     output: Path,
     *,
@@ -219,6 +302,7 @@ def test_config_uses_versioned_exact_denylist() -> None:
     config = load_stack_trends_config()
 
     assert config.version == 1
+    assert config.same_event_promotions == ()
     assert "来源快报" in config.excluded_tags
     assert "ArXiv" in config.excluded_tags
     assert "Intermediate (200)" in config.excluded_tags
@@ -249,6 +333,71 @@ def test_config_rejects_unreviewed_or_ambiguous_policy(
         load_stack_trends_config(path)
 
 
+def _reviewed_same_event_promotion(
+    *,
+    event_id: str | None = None,
+    observation_id: str | None = None,
+    parent_observation_id: str | None = None,
+) -> dict[str, object]:
+    return {
+        "event_id": event_id or f"evt_{'1' * 64}",
+        "observation_id": observation_id or f"obs_{'2' * 64}",
+        "parent_observation_id": parent_observation_id or f"obs_{'3' * 64}",
+        "successful_refreshes": 24,
+        "deterministic_full_builds": 3,
+        "stable_since": "2026-07-01T00:00:00Z",
+        "reviewed_at": "2026-07-10T00:00:00Z",
+        "false_merge_rate": 0.004,
+    }
+
+
+@pytest.mark.parametrize(
+    ("field", "value", "reason"),
+    [
+        ("successful_refreshes", 23, "successful_refreshes"),
+        ("deterministic_full_builds", 2, "deterministic_full_builds"),
+        ("false_merge_rate", 0.005, "false_merge_rate"),
+        ("stable_since", "2026-07-04T00:00:01Z", "seven full days"),
+        ("observation_id", f"evt_{'2' * 64}", "observation_id"),
+    ],
+)
+def test_same_event_promotion_policy_rejects_unqualified_entries(
+    tmp_path: Path,
+    field: str,
+    value: object,
+    reason: str,
+) -> None:
+    payload = yaml.safe_load(Path("config/stack_trends.yaml").read_text(encoding="utf-8"))
+    promotion = _reviewed_same_event_promotion()
+    promotion[field] = value
+    payload["same_event_promotions"] = [promotion]
+    path = tmp_path / "stack_trends.yaml"
+    path.write_text(yaml.safe_dump(payload), encoding="utf-8")
+
+    with pytest.raises(StackTrendsValidationError, match=reason):
+        load_stack_trends_config(path)
+
+
+def test_same_event_promotion_policy_rejects_unknown_or_duplicate_pairs(
+    tmp_path: Path,
+) -> None:
+    payload = yaml.safe_load(Path("config/stack_trends.yaml").read_text(encoding="utf-8"))
+    promotion = _reviewed_same_event_promotion()
+    promotion["approval_note"] = "not part of the reviewed schema"
+    payload["same_event_promotions"] = [promotion]
+    path = tmp_path / "unknown.yaml"
+    path.write_text(yaml.safe_dump(payload), encoding="utf-8")
+    with pytest.raises(StackTrendsValidationError, match="unknown fields"):
+        load_stack_trends_config(path)
+
+    promotion.pop("approval_note")
+    payload["same_event_promotions"] = [promotion, promotion]
+    path = tmp_path / "duplicate.yaml"
+    path.write_text(yaml.safe_dump(payload), encoding="utf-8")
+    with pytest.raises(StackTrendsValidationError, match="duplicate same_event"):
+        load_stack_trends_config(path)
+
+
 def test_adapter_applies_quality_canonicalization_aliases_and_cutoff(tmp_path: Path) -> None:
     content_root, manifest_path = _fixture_site(tmp_path)
 
@@ -270,6 +419,298 @@ def test_adapter_applies_quality_canonicalization_aliases_and_cutoff(tmp_path: P
     assert not any(event["title"] == "Evidence draft" for event in events)
     assert not any(event["title"] == "Evidence future" for event in events)
     assert not any(event["title"] == "Evidence archived" for event in events)
+
+
+def test_adapter_consumes_lineage_without_merging_derivative_reports(tmp_path: Path) -> None:
+    content_root = tmp_path / "content"
+    urls = {
+        "origin": "https://source.example/launch",
+        "syndicated": "https://wire.example/reprint",
+        "derivative": "https://analysis.example/deep-dive",
+        "suppressed": "https://mirror.example/exact-copy",
+    }
+    routes = {}
+    for index, (name, url) in enumerate(
+        (item for item in urls.items() if item[0] != "suppressed")
+    ):
+        path = _write_post(
+            content_root,
+            name,
+            date=f"2026-07-16T{index + 7:02d}:00:00Z",
+            tags=["Lineage"],
+            source=name,
+            external_url=url,
+        )
+        routes[name] = f"/posts/{path.stem}/"
+    manifest_path = tmp_path / "quality.json"
+    write_content_quality_manifest(content_root, manifest_path)
+
+    origin_id = _observation_id(urls["origin"])
+    event_id = f"evt_{origin_id.removeprefix('obs_')}"
+    observations = [
+        {
+            "observation_id": origin_id,
+            "title": "Original launch",
+            "source": "origin",
+            "source_url": urls["origin"],
+            "article_url": routes["origin"],
+            "relation": "original",
+            "parent_observation_id": None,
+            "source_published_at": "2026-07-16T07:00:00Z",
+            "first_seen_at": "2026-07-16T07:05:00Z",
+            "timestamp_confidence": "publisher",
+        },
+        {
+            "observation_id": _observation_id(urls["syndicated"]),
+            "title": "Syndicated launch",
+            "source": "syndicated",
+            "source_url": urls["syndicated"],
+            "article_url": routes["syndicated"],
+            "relation": "syndicated",
+            "parent_observation_id": origin_id,
+            "source_published_at": "2026-07-16T08:00:00Z",
+            "first_seen_at": "2026-07-16T08:05:00Z",
+            "timestamp_confidence": "feed",
+        },
+        {
+            "observation_id": _observation_id(urls["derivative"]),
+            "title": "Independent analysis",
+            "source": "derivative",
+            "source_url": urls["derivative"],
+            "article_url": routes["derivative"],
+            "relation": "derivative",
+            "parent_observation_id": origin_id,
+            "source_published_at": "2026-07-16T09:00:00Z",
+            "first_seen_at": "2026-07-16T09:05:00Z",
+            "timestamp_confidence": "publisher",
+        },
+        {
+            "observation_id": _observation_id(urls["suppressed"]),
+            "title": "Exact mirror without a local Post",
+            "source": "mirror",
+            "source_url": urls["suppressed"],
+            "article_url": None,
+            "relation": "exact_copy",
+            "parent_observation_id": origin_id,
+            "source_published_at": "2026-07-16T08:30:00Z",
+            "first_seen_at": "2026-07-16T08:35:00Z",
+            "timestamp_confidence": "feed",
+        },
+    ]
+    lineage_root = _write_lineage_assets(
+        tmp_path,
+        observations=observations,
+        event_id=event_id,
+    )
+
+    dataset = adapt_posts_to_events(
+        content_root=content_root,
+        quality_manifest_path=manifest_path,
+        lineage_root=lineage_root,
+        as_of=AS_OF,
+    )
+    by_relation = {event["lineage_relation"]: event for event in dataset["events"]}
+
+    assert by_relation["original"]["canonical_event_id"] == event_id
+    assert by_relation["syndicated"]["canonical_event_id"] == event_id
+    assert by_relation["exact_copy"]["canonical_event_id"] == event_id
+    assert by_relation["exact_copy"]["internal_url"] == routes["origin"]
+    assert by_relation["derivative"]["canonical_event_id"] == by_relation["derivative"]["event_id"]
+    assert len({event["canonical_event_id"] for event in dataset["events"]}) == 2
+    assert len(dataset["events"]) == 4
+    assert dataset["lineage_mode"] == "lineage_index_v1"
+
+
+def test_trends_merge_same_event_only_after_reviewed_promotion_gate(
+    tmp_path: Path,
+) -> None:
+    content_root = tmp_path / "content"
+    urls = {
+        "origin": "https://source.example/model-launch",
+        "same": "https://news.example/model-launch-report",
+        "independent-a": "https://other.example/independent-a",
+        "independent-b": "https://other.example/independent-b",
+    }
+    routes: dict[str, str] = {}
+    for index, (name, url) in enumerate(urls.items()):
+        path = _write_post(
+            content_root,
+            name,
+            date=f"2026-07-16T{index + 7:02d}:00:00Z",
+            tags=["Promotion Gate"],
+            source=name,
+            external_url=url,
+        )
+        routes[name] = f"/posts/{path.stem}/"
+    manifest_path = tmp_path / "quality.json"
+    write_content_quality_manifest(content_root, manifest_path)
+
+    origin_id = _observation_id(urls["origin"])
+    same_id = _observation_id(urls["same"])
+    event_id = f"evt_{origin_id.removeprefix('obs_')}"
+    observations = [
+        {
+            "observation_id": origin_id,
+            "title": "Original model launch",
+            "source": "origin",
+            "source_url": urls["origin"],
+            "article_url": routes["origin"],
+            "relation": "original",
+            "parent_observation_id": None,
+            "source_published_at": "2026-07-16T07:00:00Z",
+            "first_seen_at": "2026-07-16T07:05:00Z",
+            "timestamp_confidence": "publisher",
+        },
+        {
+            "observation_id": same_id,
+            "title": "Independent report about the launch",
+            "source": "same",
+            "source_url": urls["same"],
+            "article_url": routes["same"],
+            "relation": "same_event",
+            "parent_observation_id": origin_id,
+            "source_published_at": "2026-07-16T08:00:00Z",
+            "first_seen_at": "2026-07-16T08:05:00Z",
+            "timestamp_confidence": "feed",
+        },
+    ]
+    lineage_root = _write_lineage_assets(
+        tmp_path,
+        observations=observations,
+        event_id=event_id,
+    )
+
+    unreviewed_output = tmp_path / "unreviewed"
+    build_stack_trends(
+        content_root=content_root,
+        quality_manifest_path=manifest_path,
+        lineage_root=lineage_root,
+        output_dir=unreviewed_output,
+        as_of=AS_OF,
+    )
+    unreviewed_index = json.loads(
+        (unreviewed_output / "index.json").read_text(encoding="utf-8")
+    )
+    unreviewed_window = json.loads(
+        (unreviewed_output / unreviewed_index["windows"]["24h"]["path"]).read_text(
+            encoding="utf-8"
+        )
+    )
+    unreviewed = next(
+        item for item in unreviewed_window["trends"] if item["id"] == "tag:Promotion Gate"
+    )
+    assert unreviewed["unique_events"] == 4
+    assert unreviewed["observations"] == 4
+    assert unreviewed_index["stats"]["promoted_same_event_pairs"] == 0
+
+    config_payload = yaml.safe_load(
+        Path("config/stack_trends.yaml").read_text(encoding="utf-8")
+    )
+    config_payload["same_event_promotions"] = [
+        _reviewed_same_event_promotion(
+            event_id=event_id,
+            observation_id=same_id,
+            parent_observation_id=origin_id,
+        )
+    ]
+    config_path = tmp_path / "reviewed.yaml"
+    config_path.write_text(yaml.safe_dump(config_payload), encoding="utf-8")
+
+    reviewed_output = tmp_path / "reviewed"
+    build_stack_trends(
+        content_root=content_root,
+        quality_manifest_path=manifest_path,
+        lineage_root=lineage_root,
+        config_path=config_path,
+        output_dir=reviewed_output,
+        as_of=AS_OF,
+    )
+    reviewed_index = json.loads(
+        (reviewed_output / "index.json").read_text(encoding="utf-8")
+    )
+    reviewed_window = json.loads(
+        (reviewed_output / reviewed_index["windows"]["24h"]["path"]).read_text(
+            encoding="utf-8"
+        )
+    )
+    reviewed = next(
+        item for item in reviewed_window["trends"] if item["id"] == "tag:Promotion Gate"
+    )
+    assert reviewed["unique_events"] == 3
+    assert reviewed["observations"] == 4
+    assert reviewed["redundant_observations"] == 1
+    assert reviewed_index["stats"]["promoted_same_event_pairs"] == 1
+
+    # A structurally qualified allowlist entry is still inactive before its
+    # reviewed timestamp reaches this deterministic data snapshot.
+    future_promotion = _reviewed_same_event_promotion(
+        event_id=event_id,
+        observation_id=same_id,
+        parent_observation_id=origin_id,
+    )
+    future_promotion["reviewed_at"] = "2026-07-17T00:00:00Z"
+    config_payload["same_event_promotions"] = [future_promotion]
+    future_config_path = tmp_path / "future-reviewed.yaml"
+    future_config_path.write_text(yaml.safe_dump(config_payload), encoding="utf-8")
+    future_output = tmp_path / "future-reviewed"
+    build_stack_trends(
+        content_root=content_root,
+        quality_manifest_path=manifest_path,
+        lineage_root=lineage_root,
+        config_path=future_config_path,
+        output_dir=future_output,
+        as_of=AS_OF,
+    )
+    future_index = json.loads((future_output / "index.json").read_text(encoding="utf-8"))
+    future_window = json.loads(
+        (future_output / future_index["windows"]["24h"]["path"]).read_text(
+            encoding="utf-8"
+        )
+    )
+    future = next(
+        item for item in future_window["trends"] if item["id"] == "tag:Promotion Gate"
+    )
+    assert future["unique_events"] == 4
+    assert future["observations"] == 4
+    assert future_index["stats"]["promoted_same_event_pairs"] == 0
+
+
+def test_build_emits_v2_event_observation_metrics_and_verifier_accepts_v1(
+    tmp_path: Path,
+) -> None:
+    content_root, manifest_path = _fixture_site(tmp_path)
+    output = tmp_path / "stack-trends"
+
+    build_stack_trends(
+        content_root=content_root,
+        quality_manifest_path=manifest_path,
+        output_dir=output,
+        as_of=AS_OF,
+    )
+    index = json.loads((output / "index.json").read_text(encoding="utf-8"))
+    window = json.loads(
+        (output / index["windows"]["24h"]["path"]).read_text(encoding="utf-8")
+    )
+    topic = json.loads(
+        (output / index["topics"]["tag:LLM"]["path"]).read_text(encoding="utf-8")
+    )
+    llm = next(item for item in window["trends"] if item["id"] == "tag:LLM")
+
+    assert index["schema_version"] == INDEX_SCHEMA_VERSION_V2
+    assert window["schema_version"] == WINDOW_SCHEMA_VERSION_V2
+    assert topic["schema_version"] == TOPIC_SCHEMA_VERSION_V2
+    assert llm["observations"] >= llm["unique_events"]
+    assert llm["redundant_observations"] == llm["observations"] - llm["unique_events"]
+    assert llm["source_diversity"] >= 1
+    assert topic["evidence"][0]["associated_observations"] >= 1
+    assert isinstance(topic["evidence"][0]["related_reports"], list)
+
+    # Rollout fallback: the verifier must continue to accept committed v1 assets.
+    committed = Path("blog/static/data/stack-trends")
+    assert verify_stack_trends(committed, verify_hashes=True)["schema_version"] in {
+        "stack_trends_index_v1",
+        INDEX_SCHEMA_VERSION_V2,
+    }
 
 
 def test_adapter_rejects_a_stale_quality_manifest(tmp_path: Path) -> None:
@@ -329,7 +770,7 @@ def test_adapter_rejects_encoded_internal_route_traversal(tmp_path: Path) -> Non
         )
 
 
-def test_build_reuses_trend_v1_and_emits_drilldown_contract(tmp_path: Path) -> None:
+def test_build_reuses_trend_formula_and_emits_v2_drilldown_contract(tmp_path: Path) -> None:
     content_root, manifest_path = _fixture_site(tmp_path)
     output = tmp_path / "stack-trends"
 
@@ -358,7 +799,7 @@ def test_build_reuses_trend_v1_and_emits_drilldown_contract(tmp_path: Path) -> N
     )
 
     assert result["index_path"] == "index.json"
-    assert index["schema_version"] == "stack_trends_index_v1"
+    assert index["schema_version"] == INDEX_SCHEMA_VERSION_V2
     assert index["default_window"] == "30d"
     assert index["realtime"] is False
     assert index["data_as_of"] == "2026-07-16T10:00:00Z"
@@ -389,7 +830,7 @@ def test_build_reuses_trend_v1_and_emits_drilldown_contract(tmp_path: Path) -> N
     assert len(llm["sparkline"]) == 12
     assert sum(llm["sparkline"]) == 3
 
-    assert topic["schema_version"] == "stack_trends_topic_v1"
+    assert topic["schema_version"] == TOPIC_SCHEMA_VERSION_V2
     assert topic["id"] == topic["graph_node_id"] == "tag:LLM"
     assert topic["related_topics"][0]["id"] == "tag:AI Agent"
     assert topic["related_topics"][0]["cooccurrence"] == 2
@@ -405,11 +846,15 @@ def test_build_reuses_trend_v1_and_emits_drilldown_contract(tmp_path: Path) -> N
     evidence = topic["evidence"][0]
     assert set(evidence) == {
         "id",
+        "observation_id",
         "title",
         "summary",
         "source",
         "published_at",
         "internal_url",
+        "relation",
+        "associated_observations",
+        "related_reports",
     }
     assert evidence["internal_url"] == "/posts/llm-current-a/"
     assert all("example.com" not in json.dumps(item) for item in topic["evidence"])
@@ -646,4 +1091,4 @@ def test_build_and_verify_cli_contract(tmp_path: Path, capsys: pytest.CaptureFix
     assert build_exit == 0
     assert build_result["index_path"] == "index.json"
     assert verify_exit == 0
-    assert verify_result["schema_version"] == "stack_trends_index_v1"
+    assert verify_result["schema_version"] == INDEX_SCHEMA_VERSION_V2

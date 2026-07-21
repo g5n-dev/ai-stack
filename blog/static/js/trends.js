@@ -17,9 +17,12 @@
 }(typeof globalThis !== "undefined" ? globalThis : this, function createTrendsApi() {
   "use strict";
 
-  const INDEX_SCHEMA = "stack_trends_index_v1";
-  const WINDOW_SCHEMA = "stack_trends_window_v1";
-  const TOPIC_SCHEMA = "stack_trends_topic_v1";
+  const INDEX_SCHEMA_V1 = "stack_trends_index_v1";
+  const WINDOW_SCHEMA_V1 = "stack_trends_window_v1";
+  const TOPIC_SCHEMA_V1 = "stack_trends_topic_v1";
+  const INDEX_SCHEMA_V2 = "stack_trends_index_v2";
+  const WINDOW_SCHEMA_V2 = "stack_trends_window_v2";
+  const TOPIC_SCHEMA_V2 = "stack_trends_topic_v2";
   const WINDOWS = Object.freeze(["24h", "7d", "30d"]);
   const SIGNALS = Object.freeze(["all", "new", "rising", "steady", "cooling"]);
   const VIEWS = Object.freeze(["matrix", "list"]);
@@ -100,6 +103,10 @@
   const SHA256 = /^[0-9a-f]{64}$/u;
   const ISO_TIMESTAMP = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$/u;
   const TOPIC_ID = /^tag:[^\u0000-\u001f\u007f<>]{1,200}$/u;
+  const LINEAGE_ID = /^(?:obs|evt)_[0-9a-f]{64}$/u;
+  const LINEAGE_RELATIONS = Object.freeze([
+    "original", "exact_copy", "syndicated", "derivative", "same_event", "related_only",
+  ]);
   const SAFE_PATH = /^(?:windows|topics)\/[a-z0-9][a-z0-9._/-]{0,220}\.json$/u;
   const CANONICAL_ORIGIN = "https://ai-stack.site";
   const GRAPH_ROUTE = "/scenarios/";
@@ -227,30 +234,62 @@
     });
   }
 
-  function validateStatsWindow(value, context) {
-    assertExactFields(value, ["trend_count", "evidence_articles", "source_count"], context);
-    return Object.freeze({
+  function validateStatsWindow(value, context, v2 = false) {
+    assertExactFields(value, v2
+      ? ["trend_count", "evidence_articles", "unique_events", "redundant_observations", "source_count"]
+      : ["trend_count", "evidence_articles", "source_count"], context);
+    const result = {
       trend_count: safeInteger(value.trend_count, `${context} trend_count`, 0, MAX_TRENDS),
       evidence_articles: safeInteger(value.evidence_articles, `${context} evidence_articles`, 0, 100000),
       source_count: safeInteger(value.source_count, `${context} source_count`, 0, 10000),
-    });
+    };
+    if (v2) {
+      result.unique_events = safeInteger(value.unique_events, `${context} unique_events`, 0, 100000);
+      result.redundant_observations = safeInteger(
+        value.redundant_observations,
+        `${context} redundant_observations`,
+        0,
+        100000,
+      );
+      if (result.evidence_articles !== result.unique_events + result.redundant_observations) {
+        fail(`${context} observation accounting`);
+      }
+    }
+    return Object.freeze(result);
   }
 
-  function validateStats(value) {
-    assertExactFields(value, ["eligible_articles", "topic_count", "source_count", "windows"], "stats");
+  function validateStats(value, v2 = false) {
+    assertExactFields(value, v2
+      ? ["eligible_articles", "unique_events", "redundant_observations", "topic_count", "source_count", "windows"]
+      : ["eligible_articles", "topic_count", "source_count", "windows"], "stats");
     assertExactFields(value.windows, WINDOWS, "stats windows");
-    return Object.freeze({
+    const result = {
       eligible_articles: safeInteger(value.eligible_articles, "stats eligible_articles", 0, 100000),
       topic_count: safeInteger(value.topic_count, "stats topic_count", 0, MAX_TOPICS),
       source_count: safeInteger(value.source_count, "stats source_count", 0, 10000),
       windows: Object.freeze(Object.fromEntries(
-        WINDOWS.map((name) => [name, validateStatsWindow(value.windows[name], `stats ${name}`)]),
+        WINDOWS.map((name) => [name, validateStatsWindow(value.windows[name], `stats ${name}`, v2)]),
       )),
-    });
+    };
+    if (v2) {
+      result.unique_events = safeInteger(value.unique_events, "stats unique_events", 0, 100000);
+      result.redundant_observations = safeInteger(
+        value.redundant_observations,
+        "stats redundant_observations",
+        0,
+        100000,
+      );
+      if (result.eligible_articles !== result.unique_events + result.redundant_observations) {
+        fail("stats observation accounting");
+      }
+    }
+    return Object.freeze(result);
   }
 
   function validateIndex(value) {
-    assertExactFields(value, [
+    const v2 = value?.schema_version === INDEX_SCHEMA_V2;
+    if (!v2 && value?.schema_version !== INDEX_SCHEMA_V1) fail("index schema");
+    const fields = [
       "schema_version",
       "generated_at",
       "data_as_of",
@@ -263,8 +302,9 @@
       "stats",
       "windows",
       "topics",
-    ], "index");
-    if (value.schema_version !== INDEX_SCHEMA) fail("index schema");
+    ];
+    if (v2) fields.push("lineage_mode");
+    assertExactFields(value, fields, "index");
     const generatedAt = timestamp(value.generated_at, "index generated_at");
     const dataAsOf = timestamp(value.data_as_of, "index data_as_of");
     if (generatedAt !== dataAsOf || value.realtime !== false) fail("index cutoff");
@@ -272,7 +312,11 @@
     const disclaimer = canonicalText(value.disclaimer, "index disclaimer", 240);
     const formula = canonicalText(value.formula, "index formula", 500);
     const normalization = validateNormalization(value.normalization);
-    const stats = validateStats(value.stats);
+    const stats = validateStats(value.stats, v2);
+    const lineageMode = v2
+      ? canonicalText(value.lineage_mode, "index lineage mode", 40)
+      : "url_fallback";
+    if (v2 && !["lineage_index_v1", "url_fallback"].includes(lineageMode)) fail("index lineage mode");
     assertExactFields(value.windows, WINDOWS, "index windows");
     const windows = Object.freeze(Object.fromEntries(
       WINDOWS.map((name) => [name, validateWindowRef(value.windows[name], `index ${name}`)]),
@@ -287,10 +331,11 @@
     }
     if (topicEntries.length !== stats.topic_count) fail("index topic count mismatch");
     return Object.freeze({
-      schema_version: INDEX_SCHEMA,
+      schema_version: value.schema_version,
       generated_at: generatedAt,
       data_as_of: dataAsOf,
       realtime: false,
+      lineage_mode: lineageMode,
       timezone: value.timezone,
       default_window: value.default_window,
       disclaimer,
@@ -356,8 +401,8 @@
     return value;
   }
 
-  function validateTrend(value, context) {
-    assertExactFields(value, [
+  function validateTrend(value, context, v2 = false) {
+    const fields = [
       "id",
       "topic",
       "graph_node_id",
@@ -374,9 +419,19 @@
       "sources",
       "scenarios",
       "detail_path",
-    ], context);
+    ];
+    if (v2) fields.push("redundant_observations", "source_diversity");
+    assertExactFields(value, fields, context);
     const id = topicId(value.id, `${context} id`);
     if (value.graph_node_id !== id) fail(`${context} graph node`);
+    const uniqueEvents = safeInteger(value.unique_events, `${context} unique_events`, 3, 100000);
+    const observations = safeInteger(value.observations, `${context} observations`, 3, 1000000);
+    const redundant = v2
+      ? safeInteger(value.redundant_observations, `${context} redundant_observations`, 0, 1000000)
+      : Math.max(0, observations - uniqueEvents);
+    if (observations < uniqueEvents || redundant !== observations - uniqueEvents) {
+      fail(`${context} observation accounting`);
+    }
     return Object.freeze({
       id,
       topic: canonicalText(value.topic, `${context} topic`, 200),
@@ -384,8 +439,12 @@
       score: finiteNumber(value.score, `${context} score`, 0, 100),
       state: validateSignal(value.state, `${context} state`),
       confidence: validateConfidence(value.confidence, `${context} confidence`),
-      unique_events: safeInteger(value.unique_events, `${context} unique_events`, 3, 100000),
-      observations: safeInteger(value.observations, `${context} observations`, 3, 1000000),
+      unique_events: uniqueEvents,
+      observations,
+      redundant_observations: redundant,
+      source_diversity: v2
+        ? safeInteger(value.source_diversity, `${context} source_diversity`, 1, 10000)
+        : safeInteger(value.unique_sources, `${context} unique_sources`, 1, 10000),
       unique_sources: safeInteger(value.unique_sources, `${context} unique_sources`, 1, 10000),
       duplicate_rate: finiteNumber(value.duplicate_rate, `${context} duplicate_rate`, 0, 1),
       counts: validateCounts(value.counts, `${context} counts`),
@@ -408,7 +467,13 @@
       "facets",
       "trends",
     ], "window");
-    if (value.schema_version !== WINDOW_SCHEMA || value.window !== expectedWindow || !WINDOWS.includes(value.window)) {
+    const v2 = value.schema_version === WINDOW_SCHEMA_V2;
+    if (
+      (!v2 && value.schema_version !== WINDOW_SCHEMA_V1)
+      || value.window !== expectedWindow
+      || !WINDOWS.includes(value.window)
+      || (index && v2 !== (index.schema_version === INDEX_SCHEMA_V2))
+    ) {
       fail("window schema");
     }
     const dataAsOf = timestamp(value.data_as_of, "window data_as_of");
@@ -420,7 +485,7 @@
       : canonicalText(value.sample_notice, "window sample_notice", 240);
     assertExactFields(value.facets, ["sources", "scenarios"], "window facets");
     if (!Array.isArray(value.trends) || value.trends.length > MAX_TRENDS) fail("window trends");
-    const trends = value.trends.map((item, position) => validateTrend(item, `trend[${position}]`));
+    const trends = value.trends.map((item, position) => validateTrend(item, `trend[${position}]`, v2));
     const seen = new Set();
     let previousScore = Number.POSITIVE_INFINITY;
     for (const item of trends) {
@@ -434,7 +499,7 @@
     }
     if (index && trends.length !== index.windows[expectedWindow].trend_count) fail("window trend count");
     return Object.freeze({
-      schema_version: WINDOW_SCHEMA,
+      schema_version: value.schema_version,
       window: value.window,
       data_as_of: dataAsOf,
       minimum_unique_events: safeInteger(value.minimum_unique_events, "window minimum", 1, 100),
@@ -448,9 +513,9 @@
     });
   }
 
-  function validateTopicWindow(value, context) {
+  function validateTopicWindow(value, context, v2 = false) {
     if (value === null) return null;
-    assertExactFields(value, [
+    const fields = [
       "score",
       "state",
       "confidence",
@@ -458,13 +523,30 @@
       "unique_sources",
       "counts",
       "sparkline",
-    ], context);
+    ];
+    if (v2) fields.push("observations", "redundant_observations", "source_diversity");
+    assertExactFields(value, fields, context);
+    const uniqueEvents = safeInteger(value.unique_events, `${context} events`, 3, 100000);
+    const observations = v2
+      ? safeInteger(value.observations, `${context} observations`, 3, 1000000)
+      : uniqueEvents;
+    const redundant = v2
+      ? safeInteger(value.redundant_observations, `${context} redundant`, 0, 1000000)
+      : 0;
+    if (observations < uniqueEvents || redundant !== observations - uniqueEvents) {
+      fail(`${context} observation accounting`);
+    }
     return Object.freeze({
       score: finiteNumber(value.score, `${context} score`, 0, 100),
       state: validateSignal(value.state, `${context} state`),
       confidence: validateConfidence(value.confidence, `${context} confidence`),
-      unique_events: safeInteger(value.unique_events, `${context} events`, 3, 100000),
+      unique_events: uniqueEvents,
+      observations,
+      redundant_observations: redundant,
       unique_sources: safeInteger(value.unique_sources, `${context} sources`, 1, 10000),
+      source_diversity: v2
+        ? safeInteger(value.source_diversity, `${context} source diversity`, 1, 10000)
+        : safeInteger(value.unique_sources, `${context} sources`, 1, 10000),
       counts: validateCounts(value.counts, `${context} counts`),
       sparkline: validateSparkline(value.sparkline, `${context} sparkline`),
     });
@@ -510,17 +592,76 @@
     return `${normalizedBase.slice(0, -1)}${path}`;
   }
 
-  function validateEvidence(value, context) {
-    assertExactFields(value, ["id", "title", "summary", "source", "published_at", "internal_url"], context);
+  function evidenceAssociationCopy(value, basePath = "/") {
+    const associated = Number(value?.associated_observations);
+    const count = Number.isSafeInteger(associated) ? associated - 1 : 0;
+    if (count <= 0) return null;
+    const target = withBasePath(value?.internal_url, basePath);
+    if (target === "#") return null;
+    const parsed = new URL(target, CANONICAL_ORIGIN);
+    parsed.hash = "intelligence-lineage";
+    return Object.freeze({
+      count,
+      label: `另有 ${count} 条关联报道`,
+      href: `${parsed.pathname}${parsed.search}${parsed.hash}`,
+    });
+  }
+
+  function validateEvidenceReport(value, context) {
+    assertExactFields(value, [
+      "observation_id", "title", "source", "published_at", "internal_url", "relation",
+    ], context);
+    if (!LINEAGE_ID.test(value.observation_id || "") || !LINEAGE_RELATIONS.includes(value.relation)) {
+      fail(`${context} lineage identity`);
+    }
     const internalUrl = safeInternalUrl(value.internal_url);
     if (internalUrl === "#") fail(`${context} internal url`);
     return Object.freeze({
+      observation_id: value.observation_id,
+      title: canonicalText(value.title, `${context} title`, 300),
+      source: canonicalText(value.source, `${context} source`, 160),
+      published_at: timestamp(value.published_at, `${context} published_at`),
+      internal_url: internalUrl,
+      relation: value.relation,
+    });
+  }
+
+  function validateEvidence(value, context, v2 = false) {
+    const fields = ["id", "title", "summary", "source", "published_at", "internal_url"];
+    if (v2) fields.push(
+      "observation_id", "relation", "associated_observations", "related_reports",
+    );
+    assertExactFields(value, fields, context);
+    const internalUrl = safeInternalUrl(value.internal_url);
+    if (internalUrl === "#") fail(`${context} internal url`);
+    const relatedReports = v2
+      ? (() => {
+        if (!Array.isArray(value.related_reports) || value.related_reports.length > 5) {
+          fail(`${context} related reports`);
+        }
+        return Object.freeze(value.related_reports.map((item, position) => (
+          validateEvidenceReport(item, `${context} related_reports[${position}]`)
+        )));
+      })()
+      : Object.freeze([]);
+    const associated = v2
+      ? safeInteger(value.associated_observations, `${context} associated observations`, 1, 100000)
+      : 1;
+    if (associated < relatedReports.length + 1) fail(`${context} associated observations`);
+    if (v2 && (!LINEAGE_ID.test(value.observation_id || "") || !LINEAGE_RELATIONS.includes(value.relation))) {
+      fail(`${context} lineage identity`);
+    }
+    return Object.freeze({
       id: canonicalText(value.id, `${context} id`, 200),
+      observation_id: v2 ? value.observation_id : "",
       title: canonicalText(value.title, `${context} title`, 300),
       summary: canonicalText(value.summary, `${context} summary`, 500, true),
       source: canonicalText(value.source, `${context} source`, 160),
       published_at: timestamp(value.published_at, `${context} published_at`),
       internal_url: internalUrl,
+      relation: v2 ? value.relation : "original",
+      associated_observations: associated,
+      related_reports: relatedReports,
     });
   }
 
@@ -539,7 +680,11 @@
       "categories",
       "evidence",
     ], "topic");
-    if (value.schema_version !== TOPIC_SCHEMA) fail("topic schema");
+    const v2 = value.schema_version === TOPIC_SCHEMA_V2;
+    if (
+      (!v2 && value.schema_version !== TOPIC_SCHEMA_V1)
+      || (index && v2 !== (index.schema_version === INDEX_SCHEMA_V2))
+    ) fail("topic schema");
     const id = topicId(value.id, "topic id");
     if (id !== expectedId || value.graph_node_id !== id) fail("topic identity");
     const dataAsOf = timestamp(value.data_as_of, "topic data_as_of");
@@ -551,21 +696,21 @@
       validateRelatedTopic(item, `related_topics[${position}]`)
     ));
     return Object.freeze({
-      schema_version: TOPIC_SCHEMA,
+      schema_version: value.schema_version,
       id,
       topic: canonicalText(value.topic, "topic label", 200),
       graph_node_id: id,
       data_as_of: dataAsOf,
       description: canonicalText(value.description, "topic description", 600, true),
       windows: Object.freeze(Object.fromEntries(
-        WINDOWS.map((name) => [name, validateTopicWindow(value.windows[name], `topic ${name}`)]),
+        WINDOWS.map((name) => [name, validateTopicWindow(value.windows[name], `topic ${name}`, v2)]),
       )),
       related_topics: Object.freeze(relatedTopics),
       sources: validateFacetArray(value.sources, "topic sources"),
       scenarios: validateFacetArray(value.scenarios, "topic scenarios"),
       categories: validateFacetArray(value.categories, "topic categories"),
       evidence: Object.freeze(value.evidence.map((item, position) => (
-        validateEvidence(item, `evidence[${position}]`)
+        validateEvidence(item, `evidence[${position}]`, v2)
       ))),
     });
   }
@@ -2415,6 +2560,21 @@
         time.dateTime = item.published_at;
         link.append(meta);
         row.append(link);
+        const association = evidenceAssociationCopy(
+          item,
+          root.dataset.basePath || "/",
+        );
+        if (association) {
+          const lineage = document.createElement("a");
+          lineage.className = "trend-evidence-lineage";
+          lineage.href = appendReturnContext(
+            association.href,
+            buildTrendReturnUrl(windowObject.location.pathname, model.state),
+          );
+          lineage.textContent = `${association.label} · 查看溯源`;
+          lineage.setAttribute("aria-label", `${item.title}，${association.label}，查看情报溯源`);
+          row.append(lineage);
+        }
         list.append(row);
       });
       section.append(list);
@@ -2905,6 +3065,7 @@
     drawMatrix,
     drawSparkline,
     filterTrends,
+    evidenceAssociationCopy,
     formatSourceName,
     freshnessStatus,
     heatTier,

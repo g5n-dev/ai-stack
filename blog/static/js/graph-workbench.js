@@ -28,6 +28,38 @@
     return { mode: "focus", node };
   }
 
+  async function focusSelectedNode(engine, nodeId) {
+    const request = parseGraphRequest(`?mode=focus&node=${encodeURIComponent(nodeId || "")}`);
+    if (request.mode !== "focus" || !request.node) {
+      throw new Error("A valid graph node id is required");
+    }
+    await Promise.resolve(engine?.ready);
+    if (!engine || typeof engine.focusNode !== "function") {
+      throw new Error("Graph focus API is unavailable");
+    }
+    return engine.focusNode(request.node);
+  }
+
+  function focusRequestUrl(currentUrl, nodeId) {
+    const request = parseGraphRequest(`?mode=focus&node=${encodeURIComponent(nodeId || "")}`);
+    if (request.mode !== "focus" || !request.node) {
+      throw new Error("A valid graph node id is required");
+    }
+    const url = new URL(currentUrl, "https://ai-stack.site");
+    url.searchParams.set("mode", "focus");
+    url.searchParams.set("node", request.node);
+    return `${url.pathname}${url.search}${url.hash}`;
+  }
+
+  function modeRequestUrl(currentUrl, mode) {
+    const request = parseGraphRequest(`?mode=${encodeURIComponent(mode || "overview")}`);
+    const url = new URL(currentUrl, "https://ai-stack.site");
+    url.searchParams.delete("node");
+    if (request.mode === "overview") url.searchParams.delete("mode");
+    else url.searchParams.set("mode", request.mode);
+    return `${url.pathname}${url.search}${url.hash}`;
+  }
+
   async function applyGraphRequest(engine, request) {
     await Promise.resolve(engine.ready);
     const safeRequest = request?.mode === "focus"
@@ -185,7 +217,10 @@
     applyGraphRequest,
     bindGraphWorkbench,
     destroyCurrent,
+    focusRequestUrl,
+    focusSelectedNode,
     initialiseGraphWorkbench,
+    modeRequestUrl,
     parseGraphRequest,
   };
 }));

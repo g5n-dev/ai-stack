@@ -18,6 +18,15 @@ source_support: 1.0
 source_title_chars_original: 89
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://aws.amazon.com/blogs/machine-learning/monitor-amazon-sagemaker-pipelines-cross-account-with-custom-amazon-cloudwatch-dashboards
+observation_id: obs_341d7ce40d944dcf5d842849c17726ef46ab40ea75629eebda73298ef27d59ba
+revision_id: rev_70d63d5d5d5c1485f6f1578dc44de013587dee7eec41b6e2fa4d22d08f8e9f37
+event_id: evt_869668a902c4d7162050bf316d982593189691fea7671087200a263b5dedfb43
+lineage_relation: original
+parent_observation_id: null
+source_published_at: null
+first_seen_at: 2026-07-15T22:17:20Z
+last_seen_at: 2026-07-20T00:00:00Z
+timestamp_confidence: git
 ---
 
 ## 基本信息

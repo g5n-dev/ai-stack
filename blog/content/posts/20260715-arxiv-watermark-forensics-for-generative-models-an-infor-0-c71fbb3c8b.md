@@ -18,6 +18,15 @@ source_support: 1.0
 source_title_chars_original: 79
 description: "当前保存的是来源摘要，不代表论文全文。请以原始来源为准。"
 external_url: http://arxiv.org/abs/2607.13003v1
+observation_id: obs_c71fbb3c8b150bc73be8468f2bc876e32f6d56b313df4ef3f7569fcae428b8f3
+revision_id: rev_7f70342c89231cd80a8812f8535192bcef4e185450ec5e7fd86d886bc49dc05e
+event_id: evt_3424a80cb002ab3416e7cb47a620c8278233b2ed8a4bf3df420e53646becf532
+lineage_relation: original
+parent_observation_id: null
+source_published_at: null
+first_seen_at: 2026-07-15T15:07:00Z
+last_seen_at: 2026-07-20T00:00:00Z
+timestamp_confidence: git
 ---
 
 ## 基本信息

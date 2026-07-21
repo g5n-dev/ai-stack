@@ -18,6 +18,15 @@ source_support: 1.0
 source_title_chars_original: 55
 description: "当前只保存了标题与来源元数据，未抓取外链全文。请以原始来源和 Hacker News 讨论为准。"
 external_url: https://blog.zksecurity.xyz/posts/openvm-bugs
+observation_id: obs_780ff46db43dbfba3bdf721115b918daa1315116ca170ec41ec53cb3eed03d55
+revision_id: rev_7f5881b7222980a0d35330e9d98f26353b02a2f77d08b63b00d3842fe5be6260
+event_id: evt_ee441de71826233c290b839761fe6435b20fb5ab944dfd1a366633a972bce1dd
+lineage_relation: original
+parent_observation_id: null
+source_published_at: null
+first_seen_at: 2026-07-17T15:44:09Z
+last_seen_at: 2026-07-20T00:00:00Z
+timestamp_confidence: git
 ---
 
 ## 基本信息

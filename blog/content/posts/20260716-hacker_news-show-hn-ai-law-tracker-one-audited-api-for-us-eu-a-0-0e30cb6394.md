@@ -18,6 +18,15 @@ source_support: 1.0
 source_title_chars_original: 70
 description: "当前只保存了标题与来源元数据，未抓取外链全文。请以原始来源和 Hacker News 讨论为准。"
 external_url: https://ai-law-tracker.com
+observation_id: obs_0e30cb63949e5b295ebaa2561cb53ebc298113657dde4c894660c19644c0db5c
+revision_id: rev_9136ea157aa37962d31aef6a812d9473c9810d59c2cf6e0e0ad80bf4fe05f60e
+event_id: evt_96a13d2a8317106e2d5d2c7c7a53174d8f0e935745932c6b2b087bc734424c9b
+lineage_relation: original
+parent_observation_id: null
+source_published_at: null
+first_seen_at: 2026-07-16T14:27:34Z
+last_seen_at: 2026-07-20T00:00:00Z
+timestamp_confidence: git
 ---
 
 ## 基本信息

@@ -19,6 +19,15 @@ source_support: 1.0
 source_title_chars_original: 80
 description: "核心结论 2026年7月14日的更新使 GitHub Copilot for JetBrains 呈现出可组合 Runtime 的雏形特征。具体表现为：模型端点、Agent Provider、知识包和执行环境开始形成清晰的可替换边界。这意味着团队需要从“Copilot 能否完成任务”转向关注具体运行时的组件构成。"
 external_url: https://juejin.cn/post/7663350452777402409
+observation_id: obs_2a917f4cdc5977781fcabaf9510451fecc3ecb908268b214f5f34160ea23e632
+revision_id: rev_7ad8756d99acdfd8d133736022064c41c0564270f0d021db1da4cedfc761ea0b
+event_id: evt_af694eb68a0ebb2f87bab18708c981a21c4ded15ffb42c9c17ebc94b461d8f25
+lineage_relation: original
+parent_observation_id: null
+source_published_at: null
+first_seen_at: 2026-07-18T06:23:42Z
+last_seen_at: 2026-07-20T00:00:00Z
+timestamp_confidence: observed
 ---
 
 ## 转写说明

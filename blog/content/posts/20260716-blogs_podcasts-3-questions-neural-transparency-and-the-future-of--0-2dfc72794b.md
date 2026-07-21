@@ -18,6 +18,15 @@ source_support: 1.0
 source_title_chars_original: 60
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://news.mit.edu/2026/3-questions-neural-transparency-and-future-of-ai-design-0715
+observation_id: obs_2dfc72794bbe6e7d2a54cc48d3c1deaf301d5f4227ab6955d53e3e8ea093cca4
+revision_id: rev_b51634f02e0f574a2d6788a370a74951b103f063db384b73746e4850d3586625
+event_id: evt_7d3081286ab8d97ecbc66c63d688a10aa205d68328d1661c952d4e9c145df738
+lineage_relation: original
+parent_observation_id: null
+source_published_at: null
+first_seen_at: 2026-07-16T00:14:36Z
+last_seen_at: 2026-07-20T00:00:00Z
+timestamp_confidence: git
 ---
 
 ## 基本信息

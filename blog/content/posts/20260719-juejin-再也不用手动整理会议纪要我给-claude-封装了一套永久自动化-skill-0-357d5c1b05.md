@@ -19,6 +19,15 @@ source_support: 1.0
 source_title_chars_original: 39
 description: "核心结论 Skill 本质是将反复使用的长 Prompt 和固定工作流程打包成永久保存在本地的专属能力。存放在项目根目录 下的文件夹中，核心配置文件为 。封装后的 Skill 相比临时粘贴提示词，可省去每次对话重新定义角色、规范输出格式的重复操作。"
 external_url: https://juejin.cn/post/7663518981036195874
+observation_id: obs_357d5c1b0595dce4b6f1e7d5443e40d4afc7cca08ae086532e2ac6deda26a02a
+revision_id: rev_dadffaa3b62930752f41d8010493e9f46a5c2c6e49a60b6de677003f6a68a87e
+event_id: evt_026cf00998ffe99ff06390e65090cef1948456a9fd643cbf9102d11025889058
+lineage_relation: original
+parent_observation_id: null
+source_published_at: null
+first_seen_at: 2026-07-19T15:19:40Z
+last_seen_at: 2026-07-20T00:00:00Z
+timestamp_confidence: observed
 ---
 
 ## 转写说明

@@ -18,6 +18,15 @@ source_support: 1.0
 source_title_chars_original: 37
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://juejin.cn/post/7662940929596719114
+observation_id: obs_764ef2b7e6e35e34337762c534e8daa8a5ea4ec354dcb57403bd75722446e922
+revision_id: rev_3180b07b031e8528f93e4e297d7ba8ccde55e1e2c05fde01dbba4ad04c73d66e
+event_id: evt_228fd32e0c3b6bd851cddce9a0914e9d5b867337d7048e83dc15a1461b22c81b
+lineage_relation: original
+parent_observation_id: null
+source_published_at: null
+first_seen_at: 2026-07-17T00:15:41Z
+last_seen_at: 2026-07-20T00:00:00Z
+timestamp_confidence: observed
 ---
 
 ## 基本信息

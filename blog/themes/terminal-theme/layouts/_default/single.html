@@ -12,6 +12,16 @@
 {{- $contentMode := .Params.content_mode | default "" -}}
 {{- $isSourceBrief := and (not $isQualityBlocked) (or (eq $qualityStatus "source_brief") (eq $contentMode "source_brief") (eq $contentMode "legacy_source_brief") $isSourceBriefFallback) -}}
 {{- $isLegacyAnalysis := and (not $isQualityBlocked) (not $isSourceBrief) (or (eq $qualityStatus "legacy_analysis") (eq (.Params.content_mode | default "") "legacy_analysis")) -}}
+{{- $lineageNoindex := .Params.lineage_noindex | default false -}}
+{{- $lineageCanonical := .Permalink -}}
+{{- with .Params.lineage_canonical_url -}}
+    {{- if hasPrefix . "/" -}}
+        {{- $lineageCanonical = strings.TrimPrefix "/" . | relURL | absURL -}}
+    {{- else -}}
+        {{- $lineageCanonical = . | absURL -}}
+    {{- end -}}
+{{- end -}}
+{{- $pagefindBlocked := or $isQualityBlocked $lineageNoindex -}}
 <!DOCTYPE html>
 <html class="dark" lang="{{ .Site.LanguageCode }}">
 
@@ -21,12 +31,21 @@
     {{- if not $metaDescription -}}
     {{- $metaDescription = (.Plain | plainify | truncate 200) -}}
     {{- end -}}
-    {{ partial "site-head.html" (dict "Page" . "Description" $metaDescription "Type" "article" "Scripts" (slice ("js/terminal.js" | relURL))) }}
-    {{- if not $isQualityBlocked -}}
+    {{ partial "site-head.html" (dict
+        "Page" .
+        "Description" $metaDescription
+        "Type" "article"
+        "Canonical" $lineageCanonical
+        "Styles" (slice ("css/lineage.css" | relURL))
+        "Scripts" (slice ("js/terminal.js" | relURL) ("js/lineage.js" | relURL))
+    ) }}
+    {{- if not $pagefindBlocked -}}
     {{ partial "pagefind-metadata.html" . }}
     {{- end -}}
     {{- if $isQualityBlocked }}
     <meta name="robots" content="noindex, nofollow">
+    {{- else if $lineageNoindex }}
+    <meta name="robots" content="noindex, follow">
     {{- end }}
 
     {{- $ldImage := (.Params.og_image | default .Params.image | default .Site.Params.default_og_image | default
@@ -42,7 +61,7 @@
     {{- $ldArticle := dict "@context" "https://schema.org" "@type" "BlogPosting" "headline" .Title "description"
     $ldDescription "image" (slice $ldImage) "datePublished" $ldPublished "dateModified" $ldModified "author" (dict
     "@type" "Person" "name" $ldAuthorName) "publisher" $ldPublisher "mainEntityOfPage" (dict "@type" "WebPage" "@id"
-    .Permalink) "inLanguage" .Site.LanguageCode "url" .Permalink -}}
+    $lineageCanonical) "inLanguage" .Site.LanguageCode "url" $lineageCanonical -}}
     <script type="application/ld+json">{{ $ldArticle | jsonify }}</script>
     {{- $ldHomeItem := dict "@type" "ListItem" "position" 1 "name" .Site.Title "item" ("/" | absURL) -}}
     {{- $ldBreadcrumbItems := slice $ldHomeItem -}}
@@ -61,7 +80,7 @@
 
 </head>
 
-<body{{ if $isQualityBlocked }} data-pagefind-ignore="all"{{ end }} class="bg-deep-navy selection:bg-muted-teal selection:text-deep-navy font-display">
+<body{{ if $pagefindBlocked }} data-pagefind-ignore="all"{{ end }} class="bg-deep-navy selection:bg-muted-teal selection:text-deep-navy font-display">
     <div class="rain-container">
         <div class="rain-streak r1"></div>
         <div class="rain-streak r2"></div>
@@ -102,9 +121,9 @@
             <div class="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                 <article class="lg:col-span-9 terminal-glass rounded-3xl overflow-hidden p-6 md:p-12 relative">
                     <div class="flex flex-wrap items-center gap-3 mb-8 font-mono text-[10px] tracking-wide">
-                        <a class="text-primary/40 hover:text-primary" href="/">ROOT</a>
+                        <a class="text-primary/40 hover:text-primary" href="{{ .Site.Home.RelPermalink }}">ROOT</a>
                         <span class="text-primary/20">/</span>
-                        <a class="text-primary/40 hover:text-primary" href="/posts/">POSTS</a>
+                        <a class="text-primary/40 hover:text-primary" href="{{ "posts/" | relURL }}">POSTS</a>
                         <span class="text-primary/20">/</span>
                         <span class="text-primary/80">ENTRY</span>
                     </div>
@@ -219,7 +238,7 @@
                             {{- $scenarioConfidence = (index . "confidence") -}}
                             {{- end -}}
                             {{- end -}}
-                            {{- $scenarioURL := "/scenarios/" -}}
+                            {{- $scenarioURL := "scenarios/" | relURL -}}
                             {{- range $scenarioTerms -}}
                             {{- if eq (printf "%v" .Data.Term) (printf "%v" $scenarioName) -}}
                             {{- $scenarioURL = .RelPermalink -}}
@@ -250,6 +269,34 @@
                     </div>
                     {{ end }}
 
+                    {{- if .Params.observation_id }}
+                    <section
+                        id="intelligence-lineage"
+                        class="lineage-card"
+                        tabindex="-1"
+                        data-lineage-card
+                        data-observation-id="{{ .Params.observation_id }}"
+                        data-index-url="{{ "data/lineage/index.json" | relURL }}"
+                        data-lineage-state="idle"
+                        aria-labelledby="lineage-heading"
+                    >
+                        <div class="lineage-card__header">
+                            <div>
+                                <p class="lineage-card__kicker">INTELLIGENCE LINEAGE / 情报溯源</p>
+                                <h2 id="lineage-heading">从首次观测到传播链</h2>
+                                <p>按本站可核验证据展示疑似源头、转载与衍生关系，不宣称绝对原创。</p>
+                            </div>
+                            <button type="button" data-lineage-load aria-describedby="lineage-status">
+                                展开来源链
+                            </button>
+                        </div>
+                        <p id="lineage-status" class="lineage-card__status" data-lineage-status aria-live="polite">
+                            接近本区域时按需载入，正文阅读不受影响。
+                        </p>
+                        <div class="lineage-card__content" data-lineage-content></div>
+                    </section>
+                    {{- end }}
+
                     <div
                         class="mt-10 pt-8 border-t border-muted-teal/10 flex flex-col md:flex-row justify-between items-stretch md:items-center gap-4">
                         <div class="flex gap-3">
@@ -266,7 +313,7 @@
                             </a>
                             {{ end }}
                         </div>
-                        <a href="/posts/"
+                        <a href="{{ "posts/" | relURL }}"
                             class="px-5 py-2 bg-primary/5 border border-primary/20 rounded-full hover:bg-primary/10 transition-all text-[11px] font-mono tracking-wide text-primary/70 hover:text-primary text-center">
                             返回归档
                         </a>

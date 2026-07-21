@@ -1,13 +1,18 @@
-# Unified pipeline CLI contract
+# Optional orphan-ledger pipeline CLI contract
 
-The CLI is implemented as a dormant migration target. The current production
-workflow does not wire this coordination DAG into `.github/workflows/*.yml`;
-instead, its single stable CI job covers provenance, historical fixed points,
-graph and trend assets, a real graph browser smoke, Hugo, and Pagefind without
-changing the required check name or introducing the target permission split.
-A later, separately reviewed Actions migration can preserve the existing trigger
-contract while making each trust boundary explicit. Every cross-job directory contains only `content/`,
-`ops/`, and/or `state/` paths and must be repackaged by `artifact_guard`.
+This document specifies the implemented but **non-production** `content`/`ops`
+ledger CLI and its migration gates. It is not the current GitHub Actions
+coordinator. Production already uses the permission-isolated, `main`-based DAG
+`refresh → validate → persist → build → deploy → production-verify → notify`,
+documented in [`ci-trust-model.md`](ci-trust-model.md).
+
+The commands below remain useful for a separately reviewed future migration to
+orphan ledgers. Such a cutover would require new branches, rulesets,
+environments, identities and shadow evidence; the presence of this CLI does not
+mean dual-SHA releases, an `ops` ledger, publisher outbox receipts or a cutover
+gate are active today. Every experimental cross-job directory contains only
+`content/`, `ops/`, and/or `state/` paths and must be repackaged by
+`artifact_guard`.
 
 ## Trusted DAG commands
 

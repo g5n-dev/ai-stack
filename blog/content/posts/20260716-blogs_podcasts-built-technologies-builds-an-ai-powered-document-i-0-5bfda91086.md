@@ -19,6 +19,15 @@ source_support: 1.0
 source_title_chars_original: 120
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://aws.amazon.com/blogs/machine-learning/built-technologies-builds-an-ai-powered-document-intelligence-solution-on-aws-to-power-agents-across-real-estate-finance
+observation_id: obs_5bfda910863ce1fda34fe9b86a208f9efb596cb6a90c5e57b580b191cae84e09
+revision_id: rev_0cba29fd03eaed2310a5ec509e23f1064c91f0c6e954d2ff29ec76d2152ffbff
+event_id: evt_6fe02773e4ca621f9e288a5aac7e00c312ef529f9ecb787a04bdf52a80bf2cdb
+lineage_relation: original
+parent_observation_id: null
+source_published_at: null
+first_seen_at: 2026-07-15T20:24:02Z
+last_seen_at: 2026-07-20T00:00:00Z
+timestamp_confidence: git
 ---
 
 ## 基本信息

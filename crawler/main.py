@@ -39,6 +39,9 @@ class CrawlerOrchestrator:
         self.config = self._load_config()
         self.dedupe = dedupe
         self.dedupe_scope = dedupe_scope  # global | per_source
+        # Every valid capture is retained for lineage, even when URL dedupe keeps
+        # only one winner for the expensive generation path.
+        self.last_observations: List[Dict] = []
         self.crawlers = self._init_crawlers()
 
     def _load_config(self) -> Dict:
@@ -146,6 +149,14 @@ class CrawlerOrchestrator:
                 except (SourceContractError, TypeError, ValueError) as exc:
                     logger.warning("Rejected invalid %s source record: %s", source, exc)
         results = contracted
+        self.last_observations = sorted(
+            (item for items in results.values() for item in items),
+            key=lambda item: (
+                str(item.get("url") or ""),
+                str(item.get("source") or ""),
+                str(item.get("source_snapshot_sha256") or ""),
+            ),
+        )
         if not self.dedupe:
             return results
 

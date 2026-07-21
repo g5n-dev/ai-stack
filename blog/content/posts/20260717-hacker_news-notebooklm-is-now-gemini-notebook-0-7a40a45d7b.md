@@ -18,6 +18,15 @@ source_support: 1.0
 source_title_chars_original: 33
 description: "当前只保存了标题与来源元数据，未抓取外链全文。请以原始来源和 Hacker News 讨论为准。"
 external_url: https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook
+observation_id: obs_7a40a45d7b6d5907da2ae7e1376258e933c0fe0c0421e480ef2915fa9f7ecd66
+revision_id: rev_03cc600990cdbf9db81e7573643718b021152c9cf5e611df0c600fb6afd8b98b
+event_id: evt_e375725eef295358bfd1dff02ca22767ef55bdee16027bec0a5202128b356b75
+lineage_relation: original
+parent_observation_id: null
+source_published_at: null
+first_seen_at: 2026-07-16T20:17:16Z
+last_seen_at: 2026-07-20T00:00:00Z
+timestamp_confidence: git
 ---
 
 ## 基本信息

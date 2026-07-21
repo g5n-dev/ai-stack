@@ -114,6 +114,9 @@ def test_pr_ci_builds_the_same_hugo_and_pagefind_delivery_boundary() -> None:
     assert "test -s blog/public/pagefind/catalog.json" in source
     assert "python3 -m playwright install --with-deps chromium" in source
     assert "run: python3 scripts/verify_graph.py" in source
+    assert "AI_STACK_PUBLIC_DIR" in source
+    assert "tests/e2e/test_static_site.py" in source
+    assert "scripts/verify_graph.py --public-dir blog/public" in source
 
 
 def test_every_production_manifest_gate_rejects_unverified_provenance() -> None:
@@ -136,6 +139,8 @@ def test_local_release_preflight_covers_every_committed_delivery_asset() -> None
 
     for marker in (
         "repair_historical_content.py --check",
+        "build_lineage.py",
+        "verify_lineage.py",
         "verify_graph.py --assets-only",
         "build_stack_trends.py",
         "verify_stack_trends.py",
@@ -143,6 +148,9 @@ def test_local_release_preflight_covers_every_committed_delivery_asset() -> None
         'hugo --baseURL "$SITE_BASE_URL"',
         "pagefind --site",
         "ai_stack.pagefind_catalog",
+        "AI_STACK_PUBLIC_DIR",
+        "tests/e2e/test_static_site.py",
+        'verify_graph.py --public-dir "$PUBLIC_DIR"',
     ):
         assert marker in source
 
@@ -152,14 +160,18 @@ def test_local_release_preflight_covers_every_committed_delivery_asset() -> None
     assert "v0.153.4+extended" in source
 
 
-def test_local_content_refresh_rebuilds_both_post_derived_products() -> None:
+def test_local_content_refresh_rebuilds_all_post_derived_products_in_dependency_order() -> None:
     source = (ROOT / "scripts" / "run_local.sh").read_text(encoding="utf-8")
 
+    assert "python3 scripts/build_lineage.py" in source
+    assert "python3 scripts/verify_lineage.py" in source
     assert "python3 -m processor.tag_graph" in source
     assert "verify_graph.py --assets-only" in source
-    assert source.index("build_content_quality_manifest.py") < source.index(
+    assert source.index("build_lineage.py") < source.index(
+        "build_content_quality_manifest.py"
+    ) < source.index("build_stack_trends.py") < source.index(
         "python3 -m processor.tag_graph"
-    ) < source.index("build_stack_trends.py")
+    )
 
 
 def test_removed_gh_pages_branch_sync_has_no_stale_local_entrypoint() -> None:

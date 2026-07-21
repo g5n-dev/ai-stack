@@ -18,6 +18,15 @@ source_support: 1.0
 source_title_chars_original: 77
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://aws.amazon.com/blogs/machine-learning/build-enterprise-search-for-agents-with-amazon-bedrock-managed-knowledge-base
+observation_id: obs_f6710a64c9b2d151936d45b2acc81adf22c4bbda40e96ca4adb27edcd242f83d
+revision_id: rev_f760c8bd349c028a163926292383cbc9aacfb32c33527e9f66ab9b3d63abe3e1
+event_id: evt_8bccb21b01b4c8996d2db3720e79970e250a7f27102f6bda6561bc925182f1e1
+lineage_relation: original
+parent_observation_id: null
+source_published_at: null
+first_seen_at: 2026-07-16T22:32:21Z
+last_seen_at: 2026-07-20T00:00:00Z
+timestamp_confidence: git
 ---
 
 ## 基本信息

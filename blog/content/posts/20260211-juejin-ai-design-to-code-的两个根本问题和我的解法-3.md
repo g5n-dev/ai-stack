@@ -34,6 +34,15 @@ source_capture_sha256: sha256:291c67a095890f41d2ee21b69efcf9c2ef65b79b7783388989
 source_capture_chars_original: 6000
 source_publication_excerpt_chars: 755
 source_truncation_reason: historical_excerpt_only,historical_publication_excerpt_limit
+observation_id: obs_89ef57034b5957910a312b98741b934118446e246cb7c32cd0e99f8aafd1d437
+revision_id: rev_86aac84ee550693440b574b63f63af8b8421aba23521587b639eded7a5568680
+event_id: evt_d82eb87917fe8f66a9178f00ff1a717250b8c9afa4da5416218067b8e1f3955a
+lineage_relation: original
+parent_observation_id: null
+source_published_at: null
+first_seen_at: 2026-02-11T01:27:49Z
+last_seen_at: 2026-07-20T00:00:00Z
+timestamp_confidence: observed
 ---
 
 ## 基本信息

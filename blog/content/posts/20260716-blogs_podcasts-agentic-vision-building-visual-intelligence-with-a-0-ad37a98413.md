@@ -18,6 +18,15 @@ source_support: 1.0
 source_title_chars_original: 80
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://aws.amazon.com/blogs/machine-learning/agentic-vision-building-visual-intelligence-with-amazon-bedrock-and-mcp-servers
+observation_id: obs_ad37a9841359eb9ed4bb49735b622816ed59dc1ab39e7cc231292d6e4f1bc05b
+revision_id: rev_759a4cf7c8a7f1e941b78d684c57a2af9ff2a42c2f7b95f98f23b359d336014d
+event_id: evt_eb591ffafa94b53e9a93faf569bdfab6ea5a00f17b6bdc9706daa671eb92b6db
+lineage_relation: original
+parent_observation_id: null
+source_published_at: null
+first_seen_at: 2026-07-15T18:29:54Z
+last_seen_at: 2026-07-20T00:00:00Z
+timestamp_confidence: git
 ---
 
 ## 基本信息

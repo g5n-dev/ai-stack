@@ -19,6 +19,15 @@ source_support: 1.0
 source_title_chars_original: 43
 description: "核心结论 WorkRally是腾讯混元团队推出的AI漫画和视频创作平台，其核心定位是面向短剧、短番、条漫等需要角色一致性和分镜连贯性的内容场景。该平台通过角色多视图生成技术解决了AI视频创作中的一致性难题，并提供命令行接口支持自动化工作流。"
 external_url: https://juejin.cn/post/7663690608759210018
+observation_id: obs_446fb4e87d33d654fdf403ad6f0de20162b5327703ef89300a181b0bde97e7d3
+revision_id: rev_2ff9f652d5c2d515f2ba4869cb6fe13f06e3cd691c00110678923408d74b06f7
+event_id: evt_1cffabd3d330b39309fac31d58a0845651f589a6612f70440b3665fc2d410c19
+lineage_relation: original
+parent_observation_id: null
+source_published_at: null
+first_seen_at: 2026-07-19T18:13:23Z
+last_seen_at: 2026-07-20T00:00:00Z
+timestamp_confidence: observed
 ---
 
 ## 转写说明

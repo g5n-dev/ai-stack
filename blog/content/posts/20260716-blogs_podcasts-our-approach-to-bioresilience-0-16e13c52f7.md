@@ -18,6 +18,15 @@ source_support: 1.0
 source_title_chars_original: 29
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://deepmind.google/blog/our-approach-to-bioresilience
+observation_id: obs_16e13c52f7cd02d4ace3d47abac95ccf3b9e630262bd24e605b9bb93a859298e
+revision_id: rev_c0de0eb3df9ecc9e8d0211a3c04aa490ecf37c3d38d43ec08469802be7db8806
+event_id: evt_678bbabd00ee3f35670713b67934776a8e83eb0d5dbfa69b51bc754d56c533a5
+lineage_relation: original
+parent_observation_id: null
+source_published_at: null
+first_seen_at: 2026-07-16T11:59:14Z
+last_seen_at: 2026-07-20T00:00:00Z
+timestamp_confidence: git
 ---
 
 ## 基本信息

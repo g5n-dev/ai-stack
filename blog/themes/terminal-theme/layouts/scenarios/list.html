@@ -4,11 +4,12 @@
 {{- /* Keep graph code and generated data on one cache generation. The data pipeline
       updates index.json without touching this template, so a hard-coded query value
       can leave the Worker reading an older manifest and mismatched focus shards. */ -}}
-{{- $graphAssetVersionSeed := printf "%s|%s|%s|%s|%s|%s"
+{{- $graphAssetVersionSeed := printf "%s|%s|%s|%s|%s|%s|%s"
   (readFile "static/css/graph.css")
   (readFile "static/js/data-parser-worker.js")
   (readFile "static/js/cytoscape-graph-engine.js")
   (readFile "static/js/cytoscape-graph-renderer.js")
+  (readFile "static/js/graph-intelligence.js")
   (readFile "static/js/graph-workbench.js")
   (readFile "static/data/tag-graph/index.json")
 -}}
@@ -20,6 +21,7 @@
 {{- $graphScripts := slice
   ("vendor/cytoscape/cytoscape-3.34.0.min.js" | relURL)
   (printf "%s?v=%s" ("js/cytoscape-graph-engine.js" | relURL) $graphAssetVersion)
+  (printf "%s?v=%s" ("js/graph-intelligence.js" | relURL) $graphAssetVersion)
   (printf "%s?v=%s" ("js/cytoscape-graph-renderer.js" | relURL) $graphAssetVersion)
   (printf "%s?v=%s" ("js/graph-workbench.js" | relURL) $graphAssetVersion)
 -}}
@@ -47,6 +49,8 @@
       id="graph-workbench"
       class="graph-workbench"
       data-index-url="{{ printf "%s?v=%s" ("data/tag-graph/index.json" | relURL) $graphAssetVersion }}"
+      data-trends-index-url="{{ "data/stack-trends/index.json" | relURL }}"
+      data-base-path="{{ .Site.Home.RelPermalink }}"
       data-worker-url="{{ printf "%s?v=%s" ("js/data-parser-worker.js" | relURL) $graphAssetVersion }}"
     >
       <h1 class="sr-only">{{ .Title }}</h1>
@@ -218,6 +222,15 @@
               <div class="detail-list-heading"><h3>主要关联</h3><span>关联流</span></div>
               <ul id="detail-community-links" class="detail-intel-list detail-intel-list--links" data-arrow-icon="{{ "vendor/material-symbols/arrow-forward.svg" | relURL }}"></ul>
             </div>
+          </section>
+
+          <section id="detail-node-intelligence" class="detail-node-intelligence" hidden>
+            <div class="detail-list-heading">
+              <h3>关联情报</h3><span>最多 6 条</span>
+            </div>
+            <p id="detail-intelligence-status" class="detail-intelligence-status" aria-live="polite">选择标签节点后按需载入。</p>
+            <ol id="detail-intelligence-list" class="detail-article-list"></ol>
+            <a id="detail-trend-link" class="detail-trend-link" href="{{ "trends/" | relURL }}">查看该主题趋势</a>
           </section>
 
           <button type="button" id="detail-focus-node" class="detail-focus-button">进入节点邻域</button>
