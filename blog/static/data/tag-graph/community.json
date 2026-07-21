@@ -2,127 +2,91 @@
   "algorithm": "deterministic-weighted-label-propagation",
   "communities": [
     {
-      "article_count": 2148,
+      "article_count": 62,
       "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/01-917711425728.json",
+      "hotspot_file": "community-hotspots/01-38b0f9625a5c.json",
+      "id": "community:tag:Amazon DynamoDB",
+      "leader_id": "tag:来源快报",
+      "name": "来源快报",
+      "node_count": 34,
+      "rank": 1,
+      "tag_occurrences": 132,
+      "weighted_degree": 445.6
+    },
+    {
+      "article_count": 2151,
+      "hotspot_count": 24,
+      "hotspot_file": "community-hotspots/02-7d750548dfc3.json",
       "id": "community:tag:掘金",
       "leader_id": "tag:Hacker News",
       "name": "Hacker News",
       "node_count": 28,
-      "rank": 1,
-      "tag_occurrences": 4585,
-      "weighted_degree": 9891.2
-    },
-    {
-      "article_count": 11,
-      "hotspot_count": 14,
-      "hotspot_file": "community-hotspots/02-468e86de27e3.json",
-      "id": "community:tag:Amazon DynamoDB",
-      "leader_id": "tag:Amazon Bedrock",
-      "name": "Amazon Bedrock",
-      "node_count": 14,
       "rank": 2,
-      "tag_occurrences": 33,
-      "weighted_degree": 197
-    },
-    {
-      "article_count": 55,
-      "hotspot_count": 11,
-      "hotspot_file": "community-hotspots/03-e5effdbe5cc3.json",
-      "id": "community:tag:来源快报",
-      "leader_id": "tag:来源快报",
-      "name": "来源快报",
-      "node_count": 11,
-      "rank": 3,
-      "tag_occurrences": 76,
-      "weighted_degree": 155.6
+      "tag_occurrences": 4588,
+      "weighted_degree": 9898.2
     },
     {
       "article_count": 2,
       "hotspot_count": 8,
-      "hotspot_file": "community-hotspots/04-3efb514d9d64.json",
+      "hotspot_file": "community-hotspots/03-8a26762bf26c.json",
       "id": "community:tag:Computer modeling",
       "leader_id": "tag:Artificial intelligence",
       "name": "Artificial intelligence",
       "node_count": 8,
-      "rank": 4,
+      "rank": 3,
       "tag_occurrences": 11,
       "weighted_degree": 78.8
     },
     {
       "article_count": 10,
       "hotspot_count": 7,
-      "hotspot_file": "community-hotspots/05-4090e291f075.json",
+      "hotspot_file": "community-hotspots/04-563095320264.json",
       "id": "community:tag:Codex",
       "leader_id": "tag:工程实践",
       "name": "工程实践",
       "node_count": 7,
-      "rank": 5,
+      "rank": 4,
       "tag_occurrences": 24,
       "weighted_degree": 78
     },
     {
       "article_count": 3,
       "hotspot_count": 5,
-      "hotspot_file": "community-hotspots/06-c3c05c803f47.json",
+      "hotspot_file": "community-hotspots/05-7aa0b9ff48cd.json",
       "id": "community:tag:Faculty",
       "leader_id": "tag:Safety",
       "name": "Safety",
       "node_count": 5,
-      "rank": 6,
+      "rank": 5,
       "tag_occurrences": 7,
       "weighted_degree": 39
     },
     {
-      "article_count": 5,
-      "hotspot_count": 4,
-      "hotspot_file": "community-hotspots/07-b615d02475b1.json",
-      "id": "community:tag:Partner solutions",
-      "leader_id": "tag:Intermediate (200)",
-      "name": "Intermediate (200)",
-      "node_count": 4,
-      "rank": 7,
-      "tag_occurrences": 8,
-      "weighted_degree": 37
-    },
-    {
-      "article_count": 4,
-      "hotspot_count": 4,
-      "hotspot_file": "community-hotspots/08-5e7e84ae2b69.json",
-      "id": "community:tag:Foundational (100)",
-      "leader_id": "tag:Announcements",
-      "name": "Announcements",
-      "node_count": 4,
-      "rank": 8,
-      "tag_occurrences": 8,
-      "weighted_degree": 35
-    },
-    {
       "article_count": 3,
       "hotspot_count": 4,
-      "hotspot_file": "community-hotspots/09-dce7f71e16f4.json",
+      "hotspot_file": "community-hotspots/06-6e0224bb0622.json",
       "id": "community:tag:Google Workspace",
       "leader_id": "tag:AI",
       "name": "AI",
       "node_count": 4,
-      "rank": 9,
+      "rank": 6,
       "tag_occurrences": 7,
       "weighted_degree": 24.6
     },
     {
       "article_count": 1,
       "hotspot_count": 4,
-      "hotspot_file": "community-hotspots/10-9b07addc275d.json",
+      "hotspot_file": "community-hotspots/07-7948c006fca8.json",
       "id": "community:tag:Amazon Bedrock AgentCore",
       "leader_id": "tag:Amazon API Gateway",
       "name": "Amazon API Gateway",
       "node_count": 4,
-      "rank": 10,
+      "rank": 7,
       "tag_occurrences": 4,
       "weighted_degree": 28.6
     }
   ],
-  "generated_at": "2026-07-20T07:31:42Z",
+  "generated_at": "2026-07-21T05:26:33Z",
   "iterations": 4,
   "limit": 11,
   "links": [
@@ -135,20 +99,20 @@
       "weight": 16
     },
     {
-      "id": "edge:community:community:tag:Amazon DynamoDB->community:tag:Foundational (100)",
+      "id": "edge:community:community:tag:Amazon DynamoDB->community:tag:Faculty",
       "source": "community:tag:Amazon DynamoDB",
       "strength": 1,
-      "target": "community:tag:Foundational (100)",
+      "target": "community:tag:Faculty",
       "type": "community",
-      "weight": 6
+      "weight": 2
     },
     {
-      "id": "edge:community:community:tag:Amazon DynamoDB->community:tag:Partner solutions",
+      "id": "edge:community:community:tag:Amazon DynamoDB->community:tag:Google Workspace",
       "source": "community:tag:Amazon DynamoDB",
       "strength": 1,
-      "target": "community:tag:Partner solutions",
+      "target": "community:tag:Google Workspace",
       "type": "community",
-      "weight": 10
+      "weight": 7
     },
     {
       "id": "edge:community:community:tag:Amazon DynamoDB->community:tag:掘金",
@@ -156,15 +120,7 @@
       "strength": 1,
       "target": "community:tag:掘金",
       "type": "community",
-      "weight": 19
-    },
-    {
-      "id": "edge:community:community:tag:Amazon DynamoDB->community:tag:来源快报",
-      "source": "community:tag:Amazon DynamoDB",
-      "strength": 1,
-      "target": "community:tag:来源快报",
-      "type": "community",
-      "weight": 12
+      "weight": 118
     },
     {
       "id": "edge:community:community:tag:Codex->community:tag:掘金",
@@ -191,84 +147,20 @@
       "weight": 2
     },
     {
-      "id": "edge:community:community:tag:Faculty->community:tag:来源快报",
-      "source": "community:tag:Faculty",
-      "strength": 1,
-      "target": "community:tag:来源快报",
-      "type": "community",
-      "weight": 2
-    },
-    {
-      "id": "edge:community:community:tag:Foundational (100)->community:tag:Partner solutions",
-      "source": "community:tag:Foundational (100)",
-      "strength": 1,
-      "target": "community:tag:Partner solutions",
-      "type": "community",
-      "weight": 3
-    },
-    {
-      "id": "edge:community:community:tag:Foundational (100)->community:tag:掘金",
-      "source": "community:tag:Foundational (100)",
-      "strength": 1,
-      "target": "community:tag:掘金",
-      "type": "community",
-      "weight": 8
-    },
-    {
-      "id": "edge:community:community:tag:Foundational (100)->community:tag:来源快报",
-      "source": "community:tag:Foundational (100)",
-      "strength": 1,
-      "target": "community:tag:来源快报",
-      "type": "community",
-      "weight": 8
-    },
-    {
       "id": "edge:community:community:tag:Google Workspace->community:tag:掘金",
       "source": "community:tag:Google Workspace",
       "strength": 1,
       "target": "community:tag:掘金",
       "type": "community",
       "weight": 7
-    },
-    {
-      "id": "edge:community:community:tag:Google Workspace->community:tag:来源快报",
-      "source": "community:tag:Google Workspace",
-      "strength": 1,
-      "target": "community:tag:来源快报",
-      "type": "community",
-      "weight": 7
-    },
-    {
-      "id": "edge:community:community:tag:Partner solutions->community:tag:掘金",
-      "source": "community:tag:Partner solutions",
-      "strength": 1,
-      "target": "community:tag:掘金",
-      "type": "community",
-      "weight": 8
-    },
-    {
-      "id": "edge:community:community:tag:Partner solutions->community:tag:来源快报",
-      "source": "community:tag:Partner solutions",
-      "strength": 1,
-      "target": "community:tag:来源快报",
-      "type": "community",
-      "weight": 8
-    },
-    {
-      "id": "edge:community:community:tag:掘金->community:tag:来源快报",
-      "source": "community:tag:掘金",
-      "strength": 1,
-      "target": "community:tag:来源快报",
-      "type": "community",
-      "weight": 76
     }
   ],
   "stats": {
-    "assigned_nodes": 89,
-    "detected_communities": 10,
-    "emitted_communities": 10,
-    "total_communities": 10,
-    "total_links": 17,
+    "assigned_nodes": 90,
+    "detected_communities": 7,
+    "emitted_communities": 7,
+    "total_communities": 7,
+    "total_links": 8,
     "weighting": "cosine-association"
   },
   "version": 2
