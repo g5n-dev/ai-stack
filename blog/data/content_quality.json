@@ -1,5 +1,5 @@
 {
-  "active_count": 2161,
+  "active_count": 2162,
   "archived_count": 276,
   "complete_count": 10,
   "legacy_analysis_count": 0,
@@ -17875,6 +17875,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260721-blogs_podcasts-how-couchbase-built-a-multi-model-ai-architecture--0-871896b701.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260721-hacker_news-five-us-tech-giants-hidden-debts-soar-to-165t-on-o-0-1222b74f46.md": {
       "reasons": [
         "concise_source_card"
@@ -17923,10 +17929,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2151,
-  "source_file_count": 2437,
-  "source_tree_sha256": "88e57d2b60d358c575714b8c1a50ce7dcc7230943de0426d85eea1b74f6b56d1",
-  "verified_provenance_count": 2161,
+  "source_brief_count": 2152,
+  "source_file_count": 2438,
+  "source_tree_sha256": "4d74d238e6485009b5194728326d788fc2ee58447af6f78691b344cc925694e2",
+  "verified_provenance_count": 2162,
   "warning_counts": {
     "source_excerpt_truncated": 740
   }
