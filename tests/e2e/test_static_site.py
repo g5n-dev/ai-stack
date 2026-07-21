@@ -8,11 +8,11 @@ from collections.abc import Generator
 from functools import partial
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
-from urllib.parse import urlparse
+from urllib.parse import parse_qs, urlparse
 
 import pytest
 from bs4 import BeautifulSoup
-from playwright.sync_api import Browser, Page, Request, expect, sync_playwright
+from playwright.sync_api import Browser, Page, Request, Route, expect, sync_playwright
 
 ROOT = Path(__file__).resolve().parents[2]
 AXE_SCRIPT = ROOT / "node_modules" / "axe-core" / "axe.min.js"
@@ -253,6 +253,71 @@ def test_trends_initializes_and_all_primary_controls_change_real_state(
     expect(page.locator("#trend-detail .trend-link--graph")).to_be_visible(timeout=15_000)
 
 
+def test_trend_matrix_badge_is_a_pointer_and_click_target(
+    page: Page, site_url: str
+) -> None:
+    response = page.goto(f"{site_url}/trends/?window=30d", wait_until="networkidle")
+    assert response is not None and response.ok
+
+    workbench = page.locator("#trend-workbench")
+    expect(page.locator("#trend-status")).to_contain_text("已发现", timeout=15_000)
+    matrix = page.locator("#trend-matrix")
+    box = matrix.bounding_box()
+    assert box is not None
+
+    width = box["width"]
+    height = box["height"]
+    center_y = round(height * 0.51, 3)
+    cell_radius_y = max(72, min(height * 0.2, width * 0.18))
+    badge_height = 42 if round(width) >= 900 else 38
+    badge_position = {
+        "x": width / 2,
+        "y": max(
+            8 + (badge_height / 2),
+            center_y - cell_radius_y - 4 - (badge_height / 2),
+        ),
+    }
+
+    matrix.hover(position=badge_position)
+    expect(matrix).to_have_css("cursor", "pointer")
+    matrix.click(position=badge_position)
+    expect(workbench).to_have_attribute("data-detail", "open", timeout=15_000)
+    expect(page.locator("#trend-detail .trend-link--graph")).to_be_visible(timeout=15_000)
+
+
+def test_trend_matrix_canvas_keyboard_opens_the_first_visible_topic(
+    page: Page, site_url: str
+) -> None:
+    response = page.goto(f"{site_url}/trends/?window=30d", wait_until="networkidle")
+    assert response is not None and response.ok
+
+    workbench = page.locator("#trend-workbench")
+    expect(page.locator("#trend-status")).to_contain_text("已发现", timeout=15_000)
+    first_topic = page.locator("#trend-list .trend-card__button").first
+    expected_topic_id = first_topic.get_attribute("data-topic-id")
+    assert expected_topic_id
+
+    matrix = page.locator("#trend-matrix")
+    expect(matrix).to_have_attribute("tabindex", "0")
+    matrix.focus()
+    expect(matrix).to_be_focused()
+    page.keyboard.press("Enter")
+    expect(workbench).to_have_attribute("data-detail", "open", timeout=15_000)
+    assert parse_qs(urlparse(page.url).query).get("topic") == [expected_topic_id]
+
+    page.locator("#trend-detail [data-close-trend-detail]").click()
+    expect(workbench).to_have_attribute("data-detail", "closed")
+    expect(matrix).to_be_focused()
+    page.keyboard.press("Space")
+    expect(workbench).to_have_attribute("data-detail", "open", timeout=15_000)
+    assert parse_qs(urlparse(page.url).query).get("topic") == [expected_topic_id]
+
+    page.locator('[data-trend-view="list"]').click()
+    page.locator("#trend-detail [data-close-trend-detail]").click()
+    expect(workbench).to_have_attribute("data-detail", "closed")
+    expect(first_topic).to_be_focused()
+
+
 def test_trends_fails_closed_without_presenting_phantom_data_controls(
     page: Page, site_url: str
 ) -> None:
@@ -284,6 +349,104 @@ def test_trends_fails_closed_without_presenting_phantom_data_controls(
     expect(toggle).to_be_enabled()
     toggle.click()
     expect(toggle).to_have_attribute("aria-expanded", "true")
+
+
+def test_trends_window_shard_failure_keeps_window_recovery_actionable(
+    page: Page, site_url: str
+) -> None:
+    window_requests = 0
+
+    def fail_first_window_shard(route: Route) -> None:
+        nonlocal window_requests
+        window_requests += 1
+        if window_requests == 1:
+            route.fulfill(
+                status=200,
+                content_type="application/json",
+                body='{"schema_version":"invalid_window_fixture"}',
+            )
+            return
+        route.continue_()
+
+    page.route("**/data/stack-trends/windows/30d-*.json", fail_first_window_shard)
+    response = page.goto(f"{site_url}/trends/?window=30d", wait_until="networkidle")
+    assert response is not None and response.ok
+
+    workbench = page.locator("#trend-workbench")
+    expect(page.locator("#trend-status")).to_have_class(re.compile(r"\bis-error\b"))
+    expect(workbench).to_have_attribute("data-load-state", "window-error")
+    expect(workbench).to_have_attribute("aria-busy", "false")
+    expect(page.locator('[data-trend-window="30d"]')).to_be_enabled()
+    expect(page.locator('[data-trend-window="7d"]')).to_be_enabled()
+    expect(page.locator('[data-trend-view="list"]')).to_be_disabled()
+    expect(page.locator("#trend-query")).to_be_disabled()
+    expect(page.locator("#trend-signal-trigger")).to_be_disabled()
+    expect(page.locator("#trend-source-trigger")).to_be_disabled()
+    expect(page.locator("#trend-scenario-trigger")).to_be_disabled()
+    expect(page.locator("#trend-clear")).to_be_disabled()
+    expect(page.locator("#trend-matrix")).to_have_attribute("aria-disabled", "true")
+    expect(page.locator("#trend-matrix")).to_have_attribute("tabindex", "-1")
+
+    page.locator('[data-trend-window="7d"]').click()
+    expect(page.locator("#trend-status")).to_contain_text("已发现", timeout=15_000)
+    expect(workbench).to_have_attribute("data-load-state", "ready")
+    expect(workbench).to_have_attribute("aria-busy", "false")
+    expect(page.locator("#trend-stat-window")).to_have_text("7 天")
+    expect(page.locator('[data-trend-window="30d"]')).to_be_enabled()
+    expect(page.locator('[data-trend-view="list"]')).to_be_enabled()
+    expect(page.locator("#trend-query")).to_be_enabled()
+    expect(page.locator("#trend-signal-trigger")).to_be_enabled()
+    expect(page.locator("#trend-source-trigger")).to_be_enabled()
+    expect(page.locator("#trend-scenario-trigger")).to_be_enabled()
+    expect(page.locator("#trend-clear")).to_be_enabled()
+    expect(page.locator("#trend-matrix")).to_have_attribute("aria-disabled", "false")
+    expect(page.locator("#trend-matrix")).to_have_attribute("tabindex", "0")
+    assert window_requests == 1
+
+
+def test_trend_matrix_cannot_activate_stale_nodes_while_a_window_is_loading(
+    page: Page, site_url: str
+) -> None:
+    pending_routes: list[Route] = []
+    page.route(
+        "**/data/stack-trends/windows/7d-*.json",
+        lambda route: pending_routes.append(route),
+    )
+    response = page.goto(f"{site_url}/trends/?window=30d", wait_until="networkidle")
+    assert response is not None and response.ok
+    expect(page.locator("#trend-status")).to_contain_text("已发现", timeout=15_000)
+
+    workbench = page.locator("#trend-workbench")
+    matrix = page.locator("#trend-matrix")
+    first_topic = page.locator("#trend-list .trend-card__button").first
+    expected_topic_id = first_topic.get_attribute("data-topic-id")
+    expected_topic_name = first_topic.locator(".trend-card__title").inner_text()
+    assert expected_topic_id and expected_topic_name
+    first_topic.click()
+    expect(page.locator("#trend-detail .trend-link--graph")).to_be_visible(timeout=15_000)
+    expect(page.locator("#trend-detail-title")).to_have_text(expected_topic_name)
+
+    page.locator('[data-trend-window="7d"]').click()
+    expect(workbench).to_have_attribute("data-load-state", "loading")
+    expect(matrix).to_have_attribute("aria-disabled", "true")
+    assert pending_routes
+    expect(page.locator("#trend-detail-title")).to_have_text("正在切换观察窗口")
+    expect(page.locator("#trend-detail .trend-link--graph")).to_have_count(0)
+    expect(page.locator("#trend-stat-topics")).to_have_text("—")
+    expect(page.locator("#trend-stat-sources")).to_have_text("—")
+    expect(page.locator("#trend-stat-window")).to_have_text("7 天")
+    expect(page.locator("#trend-result-count")).to_have_text("— 个主题")
+
+    matrix.click(force=True)
+    matrix.press("Enter")
+    expect(workbench).to_have_attribute("data-detail", "open")
+    assert parse_qs(urlparse(page.url).query).get("topic") == [expected_topic_id]
+
+    pending_routes[0].abort()
+    expect(workbench).to_have_attribute("data-load-state", "window-error")
+    expect(page.locator("#trend-detail-title")).to_have_text("观察窗口暂不可用")
+    expect(page.locator("#trend-detail")).not_to_contain_text(expected_topic_name)
+    expect(page.locator("#trend-filter-summary")).to_contain_text("当前窗口数据不可用")
 
 
 def test_pagefind_index_contains_article_body_and_facets(public_dir: Path) -> None:

@@ -22,7 +22,9 @@ def test_trends_page_is_a_progressive_shared_header_workbench() -> None:
     assert soup.select_one('main[id="trend-workbench"]') is not None
     matrix = soup.select_one('canvas[id="trend-matrix"]')
     assert matrix is not None
-    assert not matrix.has_attr("tabindex")
+    assert matrix.get("role") == "button"
+    assert matrix.get("tabindex") == "0"
+    assert matrix.get("aria-keyshortcuts") == "Enter Space"
     assert matrix.get("aria-describedby") == "trend-matrix-tooltip"
     tooltip = soup.select_one('[id="trend-matrix-tooltip"][role="tooltip"]')
     assert tooltip is not None
