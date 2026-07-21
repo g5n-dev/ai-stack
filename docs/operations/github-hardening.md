@@ -75,6 +75,9 @@ endpoint 和可解析的 HTTP status，不转发响应正文或 `gh` stderr；�
   `main` 在验证或合并前移动都会失败，不能 rebase、force 或绕过 ruleset。
 - `content`/`ops` 禁止删除、force push 和 merge commit（`required_linear_history`），但这些规则
   本身只约束更新形状，不会把普通 fast-forward push 自动限定为某个 writer。
+- GitHub 还会在 `main` 的 pull-request rule 响应中自动补出空的
+  `required_reviewers: []`。工具只把“缺失”和“空数组”规范化为同一无额外 reviewer 策略；任何
+  非空值都会 fail closed，避免把服务端新增的真实审批策略静默吞掉。
 - `backup-*` 与 `content-seed-*` tag 创建后禁止更新和删除；创建本身仍允许，以便先产生新的、
   不可移动的备份或内容种子 tag。GitHub 对 tag `update` rule 的只读语义可能返回“省略
   parameters”或显式 `update_allows_fetch_and_merge=false`，工具将二者规范化为同一策略以避免

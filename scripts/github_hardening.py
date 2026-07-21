@@ -300,6 +300,27 @@ def _ruleset_body(value: object, *, require_visible_bypass: bool) -> dict[str, o
             # GitHub may omit this false-valued parameter in responses. Both forms
             # mean that the protected tag cannot move and share one canonical form.
             normalized_rule = {"type": "update"}
+        if (
+            name == "ai-stack/main-protection-v1"
+            and target == "branch"
+            and rule_type == "pull_request"
+        ):
+            parameters = _object(
+                normalized_rule.get("parameters"),
+                f"ruleset {name} pull request parameters",
+            )
+            if "required_reviewers" in parameters:
+                required_reviewers = _array(
+                    parameters["required_reviewers"],
+                    f"ruleset {name} required reviewers",
+                )
+                if required_reviewers:
+                    raise GitHubHardeningError(
+                        f"ruleset {name} required reviewers are unsupported"
+                    )
+                # GitHub adds this empty response-only field even when the request
+                # omitted it. It carries no policy and must not create fake drift.
+                parameters.pop("required_reviewers")
         normalized_rules.append(normalized_rule)
 
     if "bypass_actors" not in payload:
