@@ -387,14 +387,25 @@ def _run_trusted_ci(
         )
         if (
             run.get("id") != run_id
-            or run.get("name") != expected_run_name
             or run.get("path") != ".github/workflows/ci.yml"
             or run.get("event") != "workflow_dispatch"
             or run.get("head_branch") != "main"
             or run.get("head_sha") != main_sha
-            or run.get("display_title") != expected_run_name
         ):
             raise ProtectedBranchMergeError("trusted validation workflow identity mismatch")
+        if (
+            run.get("name") != expected_run_name
+            or run.get("display_title") != expected_run_name
+        ):
+            if run.get("status") == "completed":
+                raise ProtectedBranchMergeError(
+                    "trusted validation workflow title identity mismatch"
+                )
+            # GitHub may briefly expose the static workflow name immediately after
+            # dispatch before materializing run-name. Immutable path/event/SHA
+            # fields above must already match; only this presentation field waits.
+            sleep(poll_seconds)
+            continue
         if run.get("status") == "completed":
             completed = run
             break
