@@ -1,5 +1,5 @@
 {
-  "active_count": 2156,
+  "active_count": 2159,
   "archived_count": 276,
   "complete_count": 10,
   "legacy_analysis_count": 0,
@@ -17836,6 +17836,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260721-arxiv-gigapath-flash-and-gigatime-flash-efficient-pathol-0-0ab5623196.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260721-arxiv-swe-pruner-pro-the-coder-llm-already-knows-what-to-0-839c437bac.md": {
       "reasons": [
         "concise_source_card"
@@ -17851,11 +17857,26 @@
         "source_excerpt_truncated"
       ]
     },
+    "posts/20260721-blogs_podcasts-custom-os-installation-now-available-on-aws-deepra-0-af9d12402f.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260721-hacker_news-five-us-tech-giants-hidden-debts-soar-to-165t-on-o-0-1222b74f46.md": {
       "reasons": [
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260721-juejin-tinyrobot-v050-新版本强在哪-0-8ff1e4aa54.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
     }
   },
   "quarantined_count": 0,
@@ -17890,11 +17911,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2146,
-  "source_file_count": 2432,
-  "source_tree_sha256": "246f05c5471ca471d9157fc17313492af0c4317bdbea9f5613544af4611035e3",
-  "verified_provenance_count": 2156,
+  "source_brief_count": 2149,
+  "source_file_count": 2435,
+  "source_tree_sha256": "9ce40d750bd07c8b714cebcc5cd1732a98eb8de1eee3bb907d5e98f196758c83",
+  "verified_provenance_count": 2159,
   "warning_counts": {
-    "source_excerpt_truncated": 739
+    "source_excerpt_truncated": 740
   }
 }
