@@ -64,7 +64,7 @@ def _successful_responder() -> tuple[
         if endpoint.endswith("/actions/runs/99"):
             return {
                 "id": 99,
-                "name": "PR CI",
+                "name": f"trusted-ci:{HEAD_SHA}",
                 "path": ".github/workflows/ci.yml",
                 "event": "workflow_dispatch",
                 "head_branch": "main",
@@ -365,7 +365,7 @@ def test_default_branch_controller_runs_trusted_ci_for_a_human_pr() -> None:
         if endpoint.endswith("/actions/runs/501") and method == "GET":
             return {
                 "id": 501,
-                "name": "PR CI",
+                "name": f"trusted-ci:{HEAD_SHA}",
                 "path": ".github/workflows/ci.yml",
                 "event": "workflow_dispatch",
                 "head_sha": BASE_SHA,
@@ -461,7 +461,7 @@ def test_controller_maps_failed_trusted_test_run_to_failed_required_check(
         if endpoint.endswith("/actions/runs/601"):
             return {
                 "id": 601,
-                "name": "PR CI",
+                "name": f"trusted-ci:{HEAD_SHA}",
                 "path": ".github/workflows/ci.yml",
                 "event": "workflow_dispatch",
                 "head_sha": BASE_SHA,

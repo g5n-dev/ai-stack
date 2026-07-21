@@ -465,6 +465,44 @@ def test_backup_tag_update_true_fails_closed_before_any_write() -> None:
     assert api.writes == []
 
 
+def test_main_empty_required_reviewers_round_trips_without_drift() -> None:
+    main_ruleset = _managed_ruleset("ai-stack/main-protection-v1", 13)
+    pull_rule = next(
+        rule for rule in main_ruleset["rules"] if rule["type"] == "pull_request"
+    )
+    pull_rule["parameters"]["required_reviewers"] = []
+    responses = _base_responses(
+        ruleset_summaries=[{"id": 13, "name": main_ruleset["name"]}],
+        ruleset_details=[main_ruleset],
+    )
+    snapshot = collect_snapshot(FakeGitHubApi(responses), REPOSITORY)
+
+    operations = build_plan(snapshot, _expected_config())["operations"]
+    assert isinstance(operations, list)
+    assert not any(
+        operation["id"] == "ruleset/ai-stack/main-protection-v1"
+        for operation in operations
+    )
+
+
+def test_main_nonempty_required_reviewers_fails_closed() -> None:
+    main_ruleset = _managed_ruleset("ai-stack/main-protection-v1", 13)
+    pull_rule = next(
+        rule for rule in main_ruleset["rules"] if rule["type"] == "pull_request"
+    )
+    pull_rule["parameters"]["required_reviewers"] = [{"type": "User"}]
+    api = FakeGitHubApi(
+        _base_responses(
+            ruleset_summaries=[{"id": 13, "name": main_ruleset["name"]}],
+            ruleset_details=[main_ruleset],
+        )
+    )
+
+    with pytest.raises(GitHubHardeningError, match="required reviewers"):
+        collect_snapshot(api, REPOSITORY)
+    assert api.writes == []
+
+
 def test_plan_is_canonical_preserves_unknown_rulesets_and_never_deletes() -> None:
     unknown = {
         "id": 77,
