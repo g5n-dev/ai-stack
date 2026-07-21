@@ -12,7 +12,7 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-07-21T16:48:57Z",
+  "generated_at": "2026-07-21T18:43:40Z",
   "items": [
     {
       "article_count": 653,
@@ -54,7 +54,7 @@
       "weighted_degree": 1183
     },
     {
-      "article_count": 333,
+      "article_count": 334,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 53,
@@ -64,7 +64,7 @@
       "legacy_id": "博客与播客",
       "name": "博客与播客",
       "rank": 4,
-      "weighted_degree": 657
+      "weighted_degree": 659
     },
     {
       "article_count": 161,
@@ -184,7 +184,7 @@
       "weighted_degree": 259
     },
     {
-      "article_count": 761,
+      "article_count": 762,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 19,
@@ -194,7 +194,7 @@
       "legacy_id": "Hacker News",
       "name": "Hacker News",
       "rank": 14,
-      "weighted_degree": 256
+      "weighted_degree": 257
     },
     {
       "article_count": 98,
@@ -223,7 +223,7 @@
       "weighted_degree": 148.6
     },
     {
-      "article_count": 65,
+      "article_count": 67,
       "category": "article_tag",
       "community_id": "community:tag:Amazon SageMaker",
       "degree": 40,
@@ -233,7 +233,7 @@
       "legacy_id": "来源快报",
       "name": "来源快报",
       "rank": 17,
-      "weighted_degree": 141
+      "weighted_degree": 144
     },
     {
       "article_count": 29,
@@ -587,6 +587,19 @@
       "weighted_degree": 13
     },
     {
+      "article_count": 4,
+      "category": "article_tag",
+      "community_id": "community:tag:Google Workspace",
+      "degree": 6,
+      "description": "文章标签: AI",
+      "id": "tag:AI",
+      "layer": "tag",
+      "legacy_id": "AI",
+      "name": "AI",
+      "rank": 45,
+      "weighted_degree": 12.6
+    },
+    {
       "article_count": 6,
       "category": "article_tag",
       "community_id": "community:tag:Amazon SageMaker",
@@ -596,7 +609,7 @@
       "layer": "tag",
       "legacy_id": "cs.AI",
       "name": "cs.AI",
-      "rank": 45,
+      "rank": 46,
       "weighted_degree": 12
     },
     {
@@ -609,7 +622,7 @@
       "layer": "tag",
       "legacy_id": "Amazon Quick Suite",
       "name": "Amazon Quick Suite",
-      "rank": 46,
+      "rank": 47,
       "weighted_degree": 12
     },
     {
@@ -622,7 +635,7 @@
       "layer": "tag",
       "legacy_id": "Safety",
       "name": "Safety",
-      "rank": 47,
+      "rank": 48,
       "weighted_degree": 11
     },
     {
@@ -635,7 +648,7 @@
       "layer": "tag",
       "legacy_id": "Amazon SageMaker",
       "name": "Amazon SageMaker",
-      "rank": 48,
+      "rank": 49,
       "weighted_degree": 11
     },
     {
@@ -648,21 +661,8 @@
       "layer": "application",
       "legacy_id": "webapp",
       "name": "Web应用",
-      "rank": 49,
-      "weighted_degree": 11
-    },
-    {
-      "article_count": 3,
-      "category": "article_tag",
-      "community_id": "community:tag:Google Workspace",
-      "degree": 6,
-      "description": "文章标签: AI",
-      "id": "tag:AI",
-      "layer": "tag",
-      "legacy_id": "AI",
-      "name": "AI",
       "rank": 50,
-      "weighted_degree": 10.6
+      "weighted_degree": 11
     },
     {
       "article_count": 5,
@@ -1120,7 +1120,7 @@
       "weighted_degree": 5.6
     },
     {
-      "article_count": 665,
+      "article_count": 666,
       "category": "ai",
       "community_id": null,
       "degree": 7,

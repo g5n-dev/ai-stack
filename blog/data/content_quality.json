@@ -1,5 +1,5 @@
 {
-  "active_count": 2163,
+  "active_count": 2165,
   "archived_count": 276,
   "complete_count": 10,
   "legacy_analysis_count": 0,
@@ -17904,6 +17904,18 @@
       "warnings": [
         "source_excerpt_truncated"
       ]
+    },
+    "posts/20260722-blogs_podcasts-microsoft-expands-azure-ai-and-hpc-infrastructure--0-a0f09f7c50.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260722-hacker_news-metas-ai-models-are-powering-the-first-wave-of-gen-0-7bab78d1b3.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -17938,10 +17950,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2153,
-  "source_file_count": 2439,
-  "source_tree_sha256": "cd130f6514ead001ab0ef3ec9be91c5c2185209383f593737c316e62ce9004df",
-  "verified_provenance_count": 2163,
+  "source_brief_count": 2155,
+  "source_file_count": 2441,
+  "source_tree_sha256": "c9ab51299a7fb1b910e40726a971d7643cf5c05e6e90c9b8e0ffd35504c41d75",
+  "verified_provenance_count": 2165,
   "warning_counts": {
     "source_excerpt_truncated": 741
   }
