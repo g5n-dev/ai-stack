@@ -1179,6 +1179,63 @@ def _relation_priority(value: RelationKind) -> int:
     }[value]
 
 
+def _can_replace_persisted_relationship(
+    decision: RelationshipDecision,
+    persisted: RelationKind,
+) -> bool:
+    """Return whether a freshly classified edge may replace a persisted edge.
+
+    Persisted compact signatures are candidate-recall data, not approximate
+    proof.  The classifier's reason records which final proof gate succeeded;
+    requiring that gate here prevents a weaker reload inference from changing
+    an established lineage role or parent.
+    """
+
+    allowed_existing: dict[RelationKind, frozenset[RelationKind]] = {
+        RelationKind.EXACT_COPY: frozenset(RelationKind),
+        RelationKind.SYNDICATED: frozenset(
+            {
+                RelationKind.ORIGINAL,
+                RelationKind.RELATED_ONLY,
+                RelationKind.SAME_EVENT,
+                RelationKind.DERIVATIVE,
+                RelationKind.SYNDICATED,
+            }
+        ),
+        RelationKind.DERIVATIVE: frozenset(
+            {
+                RelationKind.ORIGINAL,
+                RelationKind.RELATED_ONLY,
+                RelationKind.SAME_EVENT,
+                RelationKind.DERIVATIVE,
+            }
+        ),
+        RelationKind.SAME_EVENT: frozenset(
+            {
+                RelationKind.ORIGINAL,
+                RelationKind.RELATED_ONLY,
+                RelationKind.SAME_EVENT,
+            }
+        ),
+    }
+    proof_reasons = {
+        RelationKind.EXACT_COPY: "normalized_digest_and_title_or_signal_match",
+        RelationKind.SYNDICATED: "high_bidirectional_source_overlap",
+        RelationKind.DERIVATIVE: "asymmetric_overlap_with_reliable_time_direction",
+        RelationKind.SAME_EVENT: "time_bounded_title_and_signal_match_shadow_only",
+    }
+    allowed = allowed_existing.get(decision.relation)
+    return (
+        allowed is not None
+        and persisted in allowed
+        and decision.reason == proof_reasons[decision.relation]
+        and (
+            decision.relation not in {RelationKind.SYNDICATED, RelationKind.DERIVATIVE}
+            or decision.common_shingles > 0
+        )
+    )
+
+
 def _fingerprint_from_record(record: Mapping[str, Any]) -> Fingerprint:
     raw = record.get("fingerprint")
     if not isinstance(raw, Mapping):
@@ -1465,7 +1522,7 @@ class LineageRegistry:
                 for identifier, record in self._records.items()
                 if isinstance(record.get("event_id"), str)
             }
-            baseline_records, _events = _analyze_observations(
+            baseline_records, _events, _decisions = _analyze_observations(
                 baseline_prepared,
                 self.config,
                 existing_events,
@@ -1843,9 +1900,25 @@ def _analyze_observations(
     config: LineageConfig,
     existing_events: Mapping[str, str],
     existing_event_states: Mapping[str, Mapping[str, Any]] | None = None,
-) -> tuple[dict[str, dict[str, Any]], dict[str, dict[str, Any]]]:
+) -> tuple[
+    dict[str, dict[str, Any]],
+    dict[str, dict[str, Any]],
+    dict[str, RelationshipDecision],
+]:
     by_id = {item.observation.observation_id: item for item in prepared}
     union_find = _UnionFind(by_id)
+    # A persisted event is an immutable topology anchor.  Compact registry
+    # fingerprints intentionally omit exact shingles, so existing syndicated
+    # members may no longer be re-provable after a reload.  Keep members of an
+    # already established event together before evaluating any new evidence.
+    existing_members: dict[str, list[str]] = defaultdict(list)
+    for identifier, event_id in sorted(existing_events.items()):
+        if identifier in by_id:
+            existing_members[event_id].append(identifier)
+    for members in existing_members.values():
+        anchor = members[0]
+        for identifier in members[1:]:
+            union_find.union(anchor, identifier)
     relations: dict[str, RelationshipDecision] = {}
     index: dict[tuple[str, str], list[str]] = defaultdict(list)
     ordered = sorted(prepared, key=lambda item: _time_sort_key(item.observation))
@@ -1995,7 +2068,7 @@ def _analyze_observations(
             "representative_observation_id": representative,
             "members": members,
         }
-    return observations_out, events_out
+    return observations_out, events_out, relations
 
 
 def _public_observation(record: Mapping[str, Any]) -> dict[str, Any]:
@@ -2159,12 +2232,69 @@ def build_lineage_assets(
         raise LineageValidationError("failed to parse Posts: " + "; ".join(errors[:5]))
     observations.sort(key=_time_sort_key)
     prepared = _build_prepared(observations, resolved)
+    registry_authoritative_ids: set[str] = set()
+    authoritative_prepared: list[_Prepared] = []
+    for item in prepared:
+        identifier = item.observation.observation_id
+        existing_record = existing_records.get(identifier)
+        existing_last = existing_record.get("last_seen_at") if existing_record else None
+        rebuilt_last = item.observation.last_seen_at
+        if isinstance(existing_last, str) and (
+            not isinstance(rebuilt_last, str) or existing_last >= rebuilt_last
+        ):
+            # Registry fingerprints come from bounded original source evidence;
+            # Post excerpts are publication derivatives.  Use the persisted
+            # evidence before topology analysis when it is at least as fresh,
+            # while still accepting current route/archive presentation state.
+            persisted = _prepared_from_record(existing_record)
+            authoritative_first_seen = persisted.observation.first_seen_at
+            authoritative_confidence = persisted.observation.timestamp_confidence
+            if identifier in trusted_first_seen_ids:
+                git_first_seen = item.observation.first_seen_at
+                existing_first_seen = persisted.observation.first_seen_at
+                authoritative_first_seen = min(
+                    (
+                        value
+                        for value in (
+                            authoritative_first_seen,
+                            item.observation.first_seen_at,
+                        )
+                        if isinstance(value, str)
+                    ),
+                    default=None,
+                )
+                if (
+                    persisted.observation.source_published_at is None
+                    and isinstance(git_first_seen, str)
+                    and (
+                        not isinstance(existing_first_seen, str)
+                        or git_first_seen < existing_first_seen
+                        or (
+                            git_first_seen == existing_first_seen
+                            and authoritative_confidence
+                            in {TimestampConfidence.UNKNOWN, TimestampConfidence.OBSERVED}
+                        )
+                    )
+                ):
+                    authoritative_confidence = TimestampConfidence.GIT
+            observation = replace(
+                persisted.observation,
+                active=item.observation.active,
+                article_path=item.observation.article_path,
+                article_url=item.observation.article_url,
+                first_seen_at=authoritative_first_seen,
+                timestamp_confidence=authoritative_confidence,
+            )
+            item = _Prepared(observation, persisted.fingerprint)
+            registry_authoritative_ids.add(identifier)
+        authoritative_prepared.append(item)
+    prepared = authoritative_prepared
     existing = {
         identifier: str(record["event_id"])
         for identifier, record in existing_records.items()
         if isinstance(record.get("event_id"), str)
     }
-    observation_records, analyzed_events = _analyze_observations(
+    observation_records, analyzed_events, analyzed_decisions = _analyze_observations(
         prepared,
         resolved,
         existing,
@@ -2197,9 +2327,7 @@ def build_lineage_assets(
             (value for value in (rebuilt_last, existing_last) if isinstance(value, str)),
             default=None,
         )
-        if isinstance(existing_last, str) and (
-            not isinstance(rebuilt_last, str) or existing_last > rebuilt_last
-        ):
+        if identifier in registry_authoritative_ids:
             for field_name in (
                 "capture_mode",
                 "fingerprint",
@@ -2209,6 +2337,25 @@ def build_lineage_assets(
                 "source_payload_sha256",
             ):
                 rebuilt[field_name] = record.get(field_name)
+            try:
+                persisted_relation = RelationKind(str(record.get("relation")))
+            except ValueError as exc:
+                raise LineageValidationError(
+                    "registry observation has an invalid persisted relation"
+                ) from exc
+            analyzed_decision = analyzed_decisions.get(identifier)
+            if analyzed_decision is None or not _can_replace_persisted_relationship(
+                analyzed_decision,
+                persisted_relation,
+            ):
+                # Compact fingerprints cannot re-prove approximate edges after
+                # reload.  Retain each established edge independently unless
+                # this build produced a same-strength or stronger classified
+                # decision for this exact observation.  This remains valid when
+                # a new member joins the event: unrelated members must not
+                # downgrade an existing syndicated or derivative edge.
+                rebuilt["parent_observation_id"] = record.get("parent_observation_id")
+                rebuilt["relation"] = record.get("relation")
     event_records = _event_records_from_observations(observation_records, analyzed_events)
     public_observation_records = {
         identifier: record
