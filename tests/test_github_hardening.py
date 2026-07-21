@@ -137,18 +137,12 @@ def test_expected_configuration_encodes_the_repository_security_contract() -> No
     assert expected["api_version"] == API_VERSION == "2026-03-10"
     assert expected["actions"] == {
         "default_workflow_permissions": "read",
-        "can_approve_pull_request_reviews": False,
+        "can_approve_pull_request_reviews": True,
     }
     assert expected["immutable_releases"] == {"enabled": True}
 
     rulesets = {item["name"]: item for item in expected["rulesets"]}  # type: ignore[index]
-    assert rulesets["ai-stack/main-protection-v1"]["bypass_actors"] == [
-        {
-            "actor_id": 15368,
-            "actor_type": "Integration",
-            "bypass_mode": "always",
-        }
-    ]
+    assert all(ruleset["bypass_actors"] == [] for ruleset in rulesets.values())
     main_rules = rulesets["ai-stack/main-protection-v1"]["rules"]
     assert {rule["type"] for rule in main_rules} == {
         "deletion",
@@ -157,8 +151,9 @@ def test_expected_configuration_encodes_the_repository_security_contract() -> No
         "required_status_checks",
     }
     status_rule = next(rule for rule in main_rules if rule["type"] == "required_status_checks")
-    contexts = status_rule["parameters"]["required_status_checks"]
-    assert [check["context"] for check in contexts] == ["Unit Tests"]
+    assert status_rule["parameters"]["required_status_checks"] == [
+        {"context": "Unit Tests", "integration_id": 15368}
+    ]
 
     data_rules = rulesets["ai-stack/data-branches-v1"]
     assert data_rules["conditions"]["ref_name"]["include"] == [
@@ -178,6 +173,8 @@ def test_expected_configuration_encodes_the_repository_security_contract() -> No
         "refs/tags/content-seed-*",
     ]
     assert {rule["type"] for rule in backup_rules["rules"]} == {"deletion", "update"}
+    update_rule = next(rule for rule in backup_rules["rules"] if rule["type"] == "update")
+    assert update_rule == {"type": "update"}
 
     environments = {item["name"]: item for item in expected["environments"]}  # type: ignore[index]
     assert set(environments) == {
@@ -379,6 +376,95 @@ def test_gh_cli_adapter_handles_no_content_404_and_invalid_responses(
         api.request("GET", "https://api.github.com/repos/g5n-dev/ai-stack")
 
 
+def test_gh_cli_adapter_stops_on_422_and_only_exposes_safe_failure_fields(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    secret = "credential-sentinel-that-must-stay-private"
+    calls = 0
+
+    def rejected_run(
+        command: list[str], **kwargs: object
+    ) -> subprocess.CompletedProcess[str]:
+        nonlocal calls
+        calls += 1
+        return subprocess.CompletedProcess(
+            command,
+            1,
+            f'{{"message":"invalid token {secret}"}}',
+            f"gh: validation failed using {secret} (HTTP 422)",
+        )
+
+    monkeypatch.setattr(subprocess, "run", rejected_run)
+
+    with pytest.raises(GitHubApiError) as failure:
+        GhCliApi().request("GET", "/repos/g5n-dev/ai-stack/rulesets")
+
+    message = str(failure.value)
+    assert calls == 1
+    assert message == (
+        "GitHub API request failed "
+        "(GET /repos/g5n-dev/ai-stack/rulesets; HTTP 422)"
+    )
+    assert secret not in message
+    assert "validation failed" not in message
+    assert "invalid token" not in message
+
+
+@pytest.mark.parametrize(
+    "parameters",
+    [None, {"update_allows_fetch_and_merge": False}],
+)
+def test_backup_tag_update_missing_or_false_parameters_are_one_canonical_policy(
+    parameters: dict[str, object] | None,
+) -> None:
+    backup = _managed_ruleset("ai-stack/backup-tags-v1", 12)
+    update_rule = next(rule for rule in backup["rules"] if rule["type"] == "update")
+    assert isinstance(update_rule, dict)
+    if parameters is None:
+        update_rule.pop("parameters", None)
+    else:
+        update_rule["parameters"] = parameters
+    responses = _base_responses(
+        ruleset_summaries=[{"id": 12, "name": backup["name"]}],
+        ruleset_details=[backup],
+        immutable={"enabled": True, "enforced_by_owner": False},
+    )
+    snapshot = collect_snapshot(FakeGitHubApi(responses), REPOSITORY)
+
+    snap_rulesets = snapshot["rulesets"]
+    assert isinstance(snap_rulesets, list)
+    normalized = next(item for item in snap_rulesets if item["name"] == backup["name"])
+    normalized_update = next(
+        rule for rule in normalized["rules"] if rule["type"] == "update"
+    )
+    assert normalized_update == {"type": "update"}
+
+    operations = build_plan(snapshot, _expected_config())["operations"]
+    assert isinstance(operations, list)
+    assert not any(
+        operation["id"] == "ruleset/ai-stack/backup-tags-v1"
+        for operation in operations
+    )
+
+
+def test_backup_tag_update_true_fails_closed_before_any_write() -> None:
+    backup = _managed_ruleset("ai-stack/backup-tags-v1", 12)
+    update_rule = next(rule for rule in backup["rules"] if rule["type"] == "update")
+    assert isinstance(update_rule, dict)
+    update_rule["parameters"] = {"update_allows_fetch_and_merge": True}
+    api = FakeGitHubApi(
+        _base_responses(
+            ruleset_summaries=[{"id": 12, "name": backup["name"]}],
+            ruleset_details=[backup],
+        )
+    )
+
+    with pytest.raises(GitHubHardeningError, match="must not allow fetch and merge"):
+        collect_snapshot(api, REPOSITORY)
+
+    assert api.writes == []
+
+
 def test_plan_is_canonical_preserves_unknown_rulesets_and_never_deletes() -> None:
     unknown = {
         "id": 77,
@@ -546,6 +632,46 @@ def test_expected_contract_rejects_stale_pages_or_missing_content_seed_protectio
         build_plan(snapshot, missing_content_seed)
 
 
+def test_expected_contract_rejects_actions_bypass_or_unbound_required_check() -> None:
+    _, snapshot = _snapshot()
+
+    actions_without_pr_creation = copy.deepcopy(_expected_config())
+    actions = actions_without_pr_creation["actions"]
+    assert isinstance(actions, dict)
+    actions["can_approve_pull_request_reviews"] = False
+    with pytest.raises(GitHubHardeningError, match="Actions settings"):
+        build_plan(snapshot, actions_without_pr_creation)
+
+    bypassed_main = copy.deepcopy(_expected_config())
+    rulesets = bypassed_main["rulesets"]
+    assert isinstance(rulesets, list)
+    main = next(
+        ruleset
+        for ruleset in rulesets
+        if isinstance(ruleset, dict)
+        and ruleset.get("name") == "ai-stack/main-protection-v1"
+    )
+    main["bypass_actors"] = [
+        {"actor_id": 15368, "actor_type": "Integration", "bypass_mode": "always"}
+    ]
+    with pytest.raises(GitHubHardeningError, match="target/enforcement/bypass"):
+        build_plan(snapshot, bypassed_main)
+
+    unbound_check = copy.deepcopy(_expected_config())
+    rulesets = unbound_check["rulesets"]
+    assert isinstance(rulesets, list)
+    main = next(
+        ruleset
+        for ruleset in rulesets
+        if isinstance(ruleset, dict)
+        and ruleset.get("name") == "ai-stack/main-protection-v1"
+    )
+    status = next(rule for rule in main["rules"] if rule["type"] == "required_status_checks")
+    status["parameters"]["required_status_checks"] = [{"context": "Unit Tests"}]
+    with pytest.raises(GitHubHardeningError, match="stable status check contract"):
+        build_plan(snapshot, unbound_check)
+
+
 def test_named_rulesets_are_idempotently_updated_or_created_without_touching_others() -> None:
     exact = _managed_ruleset("ai-stack/main-protection-v1", 10)
     stale = _managed_ruleset("ai-stack/data-branches-v1", 11)
@@ -650,6 +776,37 @@ def test_apply_uses_only_planned_put_and_post_requests_after_all_guards_match() 
         body is not None or endpoint.endswith("/immutable-releases")
         for _, endpoint, body in api.writes
     )
+
+
+def test_apply_stops_after_the_first_rejected_write() -> None:
+    api, snapshot = _snapshot()
+    actions_endpoint = f"/repos/{REPOSITORY}/actions/permissions/workflow"
+    api.responses[("PUT", actions_endpoint)] = GitHubApiError(
+        f"GitHub API request failed (PUT {actions_endpoint}; HTTP 422)"
+    )
+    api.calls.clear()
+
+    with pytest.raises(GitHubApiError, match="HTTP 422"):
+        apply_hardening(
+            api=api,
+            repository=REPOSITORY,
+            expected=_expected_config(),
+            expected_full_name=REPOSITORY,
+            expected_repository_id=REPOSITORY_ID,
+            expected_main_sha=MAIN_SHA,
+            expected_snapshot_digest=snapshot_digest(snapshot),
+        )
+
+    assert api.writes == [
+        (
+            "PUT",
+            actions_endpoint,
+            {
+                "can_approve_pull_request_reviews": True,
+                "default_workflow_permissions": "read",
+            },
+        )
+    ]
 
 
 def test_cli_is_dry_run_by_default_and_apply_requires_every_guard(

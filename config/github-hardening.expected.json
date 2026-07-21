@@ -3,7 +3,7 @@
   "api_version": "2026-03-10",
   "actions": {
     "default_workflow_permissions": "read",
-    "can_approve_pull_request_reviews": false
+    "can_approve_pull_request_reviews": true
   },
   "immutable_releases": {
     "enabled": true
@@ -13,13 +13,7 @@
       "name": "ai-stack/main-protection-v1",
       "target": "branch",
       "enforcement": "active",
-      "bypass_actors": [
-        {
-          "actor_id": 15368,
-          "actor_type": "Integration",
-          "bypass_mode": "always"
-        }
-      ],
+      "bypass_actors": [],
       "conditions": {
         "ref_name": {
           "include": ["refs/heads/main"],
@@ -45,7 +39,7 @@
           "parameters": {
             "do_not_enforce_on_create": true,
             "required_status_checks": [
-              {"context": "Unit Tests"}
+              {"context": "Unit Tests", "integration_id": 15368}
             ],
             "strict_required_status_checks_policy": true
           }
@@ -82,10 +76,7 @@
       },
       "rules": [
         {"type": "deletion"},
-        {
-          "type": "update",
-          "parameters": {"update_allows_fetch_and_merge": false}
-        }
+        {"type": "update"}
       ]
     }
   ],

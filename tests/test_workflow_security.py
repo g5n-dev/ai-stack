@@ -29,30 +29,76 @@ def test_actions_workflow_inventory_is_explicit() -> None:
         "delete-post.yml",
         "deploy.yml",
         "monitoring.yml",
+        "pr-gate.yml",
         "production-recovery.yml",
     }
 
 
-def test_pr_ci_keeps_the_existing_single_required_check() -> None:
+def test_pr_ci_runs_only_as_a_trusted_main_dispatch_for_one_exact_target() -> None:
     workflow, text = _workflow("ci.yml")
     assert workflow["name"] == "PR CI"
+    assert workflow["run-name"] == "trusted-ci:${{ inputs.target_sha }}"
     assert workflow["on"] == {
-        "pull_request": {"branches": ["main"]},
-        "workflow_dispatch": "",
+        "workflow_dispatch": {
+            "inputs": {
+                "target_sha": {
+                    "description": "Exact commit SHA tested by the trusted main workflow",
+                    "required": "true",
+                    "type": "string",
+                }
+            }
+        }
     }
     assert workflow["concurrency"] == {
-        "group": "pr-ci-${{ github.event.pull_request.number || github.ref }}",
+        "group": "trusted-pr-ci-${{ inputs.target_sha }}",
         "cancel-in-progress": "true",
     }
     assert workflow["permissions"] == {"contents": "read"}
     jobs = _jobs(workflow)
     assert tuple(jobs) == ("unit-tests",)
-    assert jobs["unit-tests"]["name"] == "Unit Tests"
+    assert jobs["unit-tests"]["name"] == "PR Test Suite"
     assert "pytest==9.0.3" in text
     assert "tests/test_content_freshness.py" in text
     assert "tests/test_workflow_security.py" in text
+    assert "tests/test_protected_branch_merge.py" in text
+    assert "ref: ${{ inputs.target_sha }}" in text
+    assert "persist-credentials: false" in text
+    assert '[[ "$TARGET_SHA" =~ ^[0-9a-f]{40}$ ]]' in text
+    assert "cache:" not in text
     assert "static-site" not in text
     assert "browser-e2e" not in text
+
+
+def test_pr_gate_uses_pull_request_target_only_as_a_trusted_dispatch_controller() -> None:
+    workflow, text = _workflow("pr-gate.yml")
+    assert workflow["name"] == "Protected PR Gate"
+    assert workflow["on"] == {
+        "pull_request_target": {
+            "branches": ["main"],
+            "types": ["opened", "reopened", "synchronize", "ready_for_review"],
+        }
+    }
+    assert workflow["permissions"] == {}
+    assert workflow["concurrency"] == {
+        "group": "protected-pr-gate-${{ github.event.pull_request.number }}",
+        "cancel-in-progress": "true",
+    }
+    jobs = _jobs(workflow)
+    assert tuple(jobs) == ("validate",)
+    job = jobs["validate"]
+    assert job["permissions"] == {
+        "actions": "write",
+        "checks": "write",
+        "contents": "read",
+        "pull-requests": "read",
+    }
+    assert "github.event.pull_request.draft == false" in str(job["if"])
+    assert "automation/" in str(job["if"])
+    assert "ref: ${{ github.sha }}" in text
+    assert "scripts/protected_branch_merge.py validate-pr" in text
+    assert "github.event.pull_request.head.sha" in text
+    assert "checkout exact target" not in text.lower()
+    assert "secrets." not in text
 
 
 def test_deploy_uses_a_fail_closed_least_privilege_job_flow() -> None:
@@ -67,6 +113,12 @@ def test_deploy_uses_a_fail_closed_least_privilege_job_flow() -> None:
                     "required": "false",
                     "default": "true",
                     "type": "boolean",
+                },
+                "expected_sha": {
+                    "description": "Optional exact main SHA required for chained deploys",
+                    "required": "false",
+                    "default": "",
+                    "type": "string",
                 }
             }
         },
@@ -93,7 +145,12 @@ def test_deploy_uses_a_fail_closed_least_privilege_job_flow() -> None:
     assert {name: job["permissions"] for name, job in jobs.items()} == {
         "refresh": {"contents": "read"},
         "validate": {"contents": "read"},
-        "persist": {"contents": "write"},
+        "persist": {
+            "actions": "write",
+            "checks": "write",
+            "contents": "write",
+            "pull-requests": "write",
+        },
         "build": {"contents": "read"},
         "deploy": {"pages": "write", "id-token": "write"},
         "production-verify": {"contents": "read"},
@@ -102,6 +159,10 @@ def test_deploy_uses_a_fail_closed_least_privilege_job_flow() -> None:
     assert jobs["deploy"]["environment"]["name"] == "github-pages"
     assert "scripts/artifact_guard.py" in text
     assert "scripts/git_cas_writer.py" in text
+    assert "scripts/protected_branch_merge.py merge" in text
+    assert '--force-with-lease="refs/heads/${AUTOMATION_BRANCH}:${head_sha}"' in text
+    assert "ref: ${{ github.sha }}" in text
+    assert "main SHA does not match chained deploy receipt" in text
     assert "scripts/release_guard.py guard-marker" in text
     assert "scripts/production_smoke.py" in text
     assert "ref: ${{ needs.persist.outputs.persisted_sha }}" in text
@@ -128,15 +189,21 @@ def test_delete_workflow_rebuilds_derived_data_and_waits_for_deploy() -> None:
     assert jobs["analyze"]["permissions"] == {"contents": "read"}
     assert jobs["writer"]["permissions"] == {
         "actions": "write",
+        "checks": "write",
         "contents": "write",
+        "pull-requests": "write",
     }
     writer_text = text[text.index("  writer:"):]
     assert "secrets." not in writer_text
     assert "scripts/artifact_guard.py validate" in writer_text
     assert "scripts/git_cas_writer.py commit-and-push" in writer_text
+    assert "scripts/protected_branch_merge.py merge" in writer_text
+    assert '--force-with-lease="refs/heads/${AUTOMATION_BRANCH}:${head_sha}"' in writer_text
     assert "bash scripts/rebuild_release_data.sh" in writer_text
-    assert "gh workflow run deploy.yml --ref main -f refresh_data=false" in writer_text
-    assert "gh run watch" in writer_text
+    assert "scripts/protected_branch_merge.py deploy" in writer_text
+    assert "--expected-sha \"$PERSISTED_SHA\"" in writer_text
+    assert "gh workflow run" not in writer_text
+    assert "gh run list" not in writer_text
 
 
 

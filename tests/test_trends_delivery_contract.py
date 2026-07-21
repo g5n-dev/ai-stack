@@ -84,7 +84,8 @@ def test_delete_rebuilds_verifies_and_persists_trends_before_deploy() -> None:
 
     assert "bash scripts/rebuild_release_data.sh" in rebuild_run
     assert TREND_ASSETS in persist_run
-    assert "gh workflow run deploy.yml" in deploy_run
+    assert "scripts/protected_branch_merge.py deploy" in deploy_run
+    assert '--expected-sha "$PERSISTED_SHA"' in deploy_run
 
 
 def test_monitoring_checks_the_complete_live_release_with_trend_freshness() -> None:

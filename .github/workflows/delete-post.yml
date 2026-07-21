@@ -40,7 +40,7 @@ jobs:
       - name: Checkout exact main base
         uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
         with:
-          ref: main
+          ref: ${{ github.sha }}
           fetch-depth: 0
 
       - name: Set up Python
@@ -178,12 +178,14 @@ jobs:
   writer:
     needs: analyze
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 90
     environment:
       name: data-deletion
     permissions:
       actions: write
+      checks: write
       contents: write
+      pull-requests: write
     steps:
       - name: Checkout main for exact-base writer
         uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
@@ -274,11 +276,16 @@ jobs:
         if: ${{ steps.plan.outputs.dry_run == 'false' && steps.plan.outputs.change_count != '0' }}
         env:
           BASE_SHA: ${{ steps.plan.outputs.base_sha }}
+          GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
+          AUTOMATION_BRANCH="automation/delete-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+          git fetch --no-tags origin main
+          test "$(git rev-parse origin/main)" = "$BASE_SHA"
+          git switch -c "$AUTOMATION_BRANCH"
           python3 scripts/git_cas_writer.py commit-and-push \
             --repository . \
-            --branch main \
+            --branch "$AUTOMATION_BRANCH" \
             --allowed-root blog \
             --allowed-root data \
             --allowed-path 'blog/content/posts/*.md' \
@@ -291,7 +298,23 @@ jobs:
             --expected-base "$BASE_SHA" \
             --message 'chore(content): delete approved Posts and rebuild data [skip ci]' \
             >/tmp/delete-persist-receipt.json
-          echo "persisted_sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+          test "$(jq -r '.changed' /tmp/delete-persist-receipt.json)" = "true"
+          head_sha="$(jq -r '.commit_sha' /tmp/delete-persist-receipt.json)"
+          test "$(git rev-parse HEAD)" = "$head_sha"
+          python3 scripts/protected_branch_merge.py merge \
+            --repository "$GITHUB_REPOSITORY" \
+            --branch "$AUTOMATION_BRANCH" \
+            --base-sha "$BASE_SHA" \
+            --head-sha "$head_sha" \
+            --title 'chore(content): delete approved Posts and rebuild data' \
+            --body "Approved deletion from workflow run ${GITHUB_RUN_ID}." \
+            >/tmp/delete-protected-merge-receipt.json
+          persisted_sha="$(jq -r '.merge_sha' /tmp/delete-protected-merge-receipt.json)"
+          git push \
+            --force-with-lease="refs/heads/${AUTOMATION_BRANCH}:${head_sha}" \
+            origin ":refs/heads/${AUTOMATION_BRANCH}" || \
+            echo "::warning::deletion automation branch cleanup failed"
+          echo "persisted_sha=$persisted_sha" >> "$GITHUB_OUTPUT"
 
       - name: Deploy committed deletion and wait
         if: ${{ steps.persist.outputs.persisted_sha != '' }}
@@ -300,14 +323,8 @@ jobs:
           PERSISTED_SHA: ${{ steps.persist.outputs.persisted_sha }}
         run: |
           set -euo pipefail
-          gh workflow run deploy.yml --ref main -f refresh_data=false
-          run_id=""
-          for _ in $(seq 1 30); do
-            run_id="$(gh run list --workflow deploy.yml --event workflow_dispatch \
-              --commit "$PERSISTED_SHA" --limit 1 --json databaseId \
-              --jq '.[0].databaseId // empty')"
-            [[ -z "$run_id" ]] || break
-            sleep 2
-          done
-          [[ -n "$run_id" ]] || { echo "deploy run did not start" >&2; exit 1; }
-          gh run watch "$run_id" --exit-status --interval 10
+          python3 scripts/protected_branch_merge.py deploy \
+            --repository "$GITHUB_REPOSITORY" \
+            --expected-sha "$PERSISTED_SHA" \
+            >/tmp/delete-deploy-receipt.json
+          test "$(jq -r '.head_sha' /tmp/delete-deploy-receipt.json)" = "$PERSISTED_SHA"

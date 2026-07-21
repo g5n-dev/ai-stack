@@ -176,7 +176,14 @@ def test_repository_hardening_requires_only_checks_that_ci_actually_emits() -> N
         if item["name"] == "ai-stack/main-protection-v1"
     )
     status = next(rule for rule in main["rules"] if rule["type"] == "required_status_checks")
-    assert status["parameters"]["required_status_checks"] == [{"context": "Unit Tests"}]
+    assert status["parameters"]["required_status_checks"] == [
+        {"context": "Unit Tests", "integration_id": 15368}
+    ]
+    controller = (ROOT / "scripts" / "protected_branch_merge.py").read_text(
+        encoding="utf-8"
+    )
+    assert '_REQUIRED_CHECK = "Unit Tests"' in controller
+    assert "_TRUSTED_ACTIONS_APP_ID = 15368" in controller
 
     pages = next(item for item in expected["environments"] if item["name"] == "github-pages")
     assert pages["deployment_branch_policies"] == [{"name": "main", "type": "branch"}]
