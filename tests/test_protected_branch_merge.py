@@ -18,6 +18,7 @@ BASE_SHA = "a" * 40
 HEAD_SHA = "b" * 40
 MERGE_SHA = "c" * 40
 BRANCH = "automation/data-12345-1"
+REQUIRED_CHECK_ID = 101
 
 
 class FakeApi:
@@ -44,7 +45,6 @@ def _successful_responder() -> tuple[
     state = {"main_reads": 0}
 
     def respond(method: str, endpoint: str, body: dict[str, object] | None) -> object | None:
-        del body
         if endpoint.endswith("/git/ref/heads/main"):
             state["main_reads"] += 1
             sha = MERGE_SHA if state["main_reads"] >= 4 else BASE_SHA
@@ -105,22 +105,34 @@ def _successful_responder() -> tuple[
             return {
                 "check_runs": [
                     {
+                        "id": REQUIRED_CHECK_ID,
                         "name": "Unit Tests",
+                        "head_sha": HEAD_SHA,
                         "status": "completed",
                         "conclusion": "success",
-                        "details_url": (
-                            "https://github.com/g5n-dev/ai-stack/actions/runs/99"
-                        ),
+                        "details_url": "https://github.com/g5n-dev/ai-stack/runs/101",
+                        "external_id": f"trusted-ci:99:{HEAD_SHA}",
+                        "output": {
+                            "summary": (
+                                "PR Test Suite run 99 passed for the exact automation head."
+                            ),
+                            "title": "Validated GitHub Actions test run",
+                        },
                         "app": {"id": 15368},
                     }
                 ]
             }
         if endpoint.endswith("/check-runs") and method == "POST":
+            assert body is not None
             return {
+                "id": REQUIRED_CHECK_ID,
                 "name": "Unit Tests",
                 "head_sha": HEAD_SHA,
                 "status": "completed",
                 "conclusion": "success",
+                "details_url": "https://github.com/g5n-dev/ai-stack/runs/101",
+                "external_id": body["external_id"],
+                "output": body["output"],
                 "app": {"id": 15368},
             }
         if endpoint.endswith("/pulls") and method == "POST":
@@ -189,6 +201,7 @@ def test_dispatches_real_ci_then_sha_locks_pr_merge() -> None:
     assert required_check[2] == {
         "conclusion": "success",
         "details_url": "https://github.com/g5n-dev/ai-stack/actions/runs/99",
+        "external_id": f"trusted-ci:99:{HEAD_SHA}",
         "head_sha": HEAD_SHA,
         "name": "Unit Tests",
         "output": {
@@ -204,6 +217,50 @@ def test_dispatches_real_ci_then_sha_locks_pr_merge() -> None:
         "merge_method": "squash",
         "sha": HEAD_SHA,
     }
+
+
+@pytest.mark.parametrize(
+    ("field", "value"),
+    [
+        ("id", 999),
+        ("external_id", f"trusted-ci:98:{HEAD_SHA}"),
+    ],
+)
+def test_required_check_visibility_is_bound_to_published_identity(
+    field: str,
+    value: object,
+) -> None:
+    responder, _state = _successful_responder()
+
+    def substituted_check(
+        method: str,
+        endpoint: str,
+        body: dict[str, object] | None,
+    ) -> object | None:
+        response = responder(method, endpoint, body)
+        if endpoint.endswith(f"/commits/{HEAD_SHA}/check-runs?per_page=100"):
+            assert isinstance(response, dict)
+            response["check_runs"][0][field] = value  # type: ignore[index]
+        return response
+
+    api = FakeApi(substituted_check)
+    with pytest.raises(
+        ProtectedBranchMergeError,
+        match="pull request mergeability did not resolve",
+    ):
+        merge_validated_branch(
+            api,
+            repository=REPOSITORY,
+            branch=BRANCH,
+            base_sha=BASE_SHA,
+            head_sha=HEAD_SHA,
+            title="chore(data): persist validated release",
+            body="Validated by the isolated release pipeline.",
+            timeout_seconds=1,
+            poll_seconds=0,
+            sleep=lambda _seconds: None,
+        )
+    assert not any(endpoint.endswith("/pulls/77/merge") for _, endpoint, _ in api.calls)
 
 
 def test_wrong_check_app_fails_before_pr_creation() -> None:
@@ -475,10 +532,14 @@ def test_default_branch_controller_runs_trusted_ci_for_a_human_pr() -> None:
         if endpoint.endswith("/check-runs") and method == "POST":
             assert body is not None
             return {
+                "id": 503,
                 "name": body["name"],
                 "head_sha": body["head_sha"],
                 "status": body["status"],
                 "conclusion": body["conclusion"],
+                "details_url": "https://github.com/g5n-dev/ai-stack/runs/503",
+                "external_id": body["external_id"],
+                "output": body["output"],
                 "app": {"id": 15368},
             }
         raise AssertionError(f"unexpected API request: {method} {endpoint}")
@@ -571,10 +632,14 @@ def test_controller_maps_failed_trusted_test_run_to_failed_required_check(
         if endpoint.endswith("/check-runs") and method == "POST":
             assert body is not None
             return {
+                "id": 603,
                 "name": body["name"],
                 "head_sha": body["head_sha"],
                 "status": body["status"],
                 "conclusion": body["conclusion"],
+                "details_url": "https://github.com/g5n-dev/ai-stack/runs/603",
+                "external_id": body["external_id"],
+                "output": body["output"],
                 "app": {"id": 15368},
             }
         raise AssertionError(f"unexpected API request: {method} {endpoint}")
