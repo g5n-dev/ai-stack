@@ -1,5 +1,5 @@
 {
-  "active_count": 2159,
+  "active_count": 2161,
   "archived_count": 276,
   "complete_count": 10,
   "legacy_analysis_count": 0,
@@ -17848,6 +17848,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260721-arxiv-vector-search-as-nearest-neighbor-matching-rag-bas-0-11147dd980.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260721-blogs_podcasts-build-specialized-agent-workflows-for-your-busines-0-0433cfb2c6.md": {
       "reasons": [
         "concise_source_card"
@@ -17858,6 +17864,12 @@
       ]
     },
     "posts/20260721-blogs_podcasts-custom-os-installation-now-available-on-aws-deepra-0-af9d12402f.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260721-blogs_podcasts-evolving-from-legacy-bi-to-agentic-ai-at-tradeshif-0-44536b884b.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -17911,10 +17923,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2149,
-  "source_file_count": 2435,
-  "source_tree_sha256": "9ce40d750bd07c8b714cebcc5cd1732a98eb8de1eee3bb907d5e98f196758c83",
-  "verified_provenance_count": 2159,
+  "source_brief_count": 2151,
+  "source_file_count": 2437,
+  "source_tree_sha256": "88e57d2b60d358c575714b8c1a50ce7dcc7230943de0426d85eea1b74f6b56d1",
+  "verified_provenance_count": 2161,
   "warning_counts": {
     "source_excerpt_truncated": 740
   }
