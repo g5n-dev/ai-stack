@@ -70,18 +70,18 @@
 .trend-hero h1 {
   margin: 7px 0 0;
   color: rgb(var(--off-white));
-  font-size: clamp(28px, 3vw, 44px);
-  font-weight: 520;
-  letter-spacing: -0.035em;
-  line-height: 1.08;
+  font-size: var(--site-page-title-size, 30px);
+  font-weight: 300;
+  letter-spacing: -0.025em;
+  line-height: var(--site-page-title-line-height, 1.2);
 }
 
 .trend-hero__lead {
   max-width: 720px;
   margin: 10px 0 0;
   color: var(--trend-muted);
-  font-size: 13px;
-  line-height: 1.75;
+  font-size: var(--site-copy-size, 14px);
+  line-height: var(--site-copy-line-height, 1.75);
 }
 
 .trend-hero__status {
@@ -282,6 +282,7 @@
   font-size: 18px;
   font-weight: 600;
   letter-spacing: -0.015em;
+  line-height: 1.35;
 }
 
 .trend-panel-chip,
@@ -339,7 +340,7 @@
   background: transparent;
   color: var(--trend-muted);
   font-family: var(--site-font-mono);
-  font-size: 11px;
+  font-size: var(--site-control-size, 13px);
   cursor: pointer;
 }
 
@@ -385,7 +386,7 @@
   background-color: rgba(var(--deep-navy), 0.72);
   color: rgb(var(--off-white));
   font-family: var(--site-font-sans);
-  font-size: 12px;
+  font-size: var(--site-control-size, 13px);
 }
 
 .trend-select {
@@ -423,7 +424,7 @@
   background: linear-gradient(180deg, rgba(var(--muted-teal), 0.045), transparent 55%), rgb(3, 9, 18);
   color: rgb(var(--off-white));
   font-family: var(--site-font-sans);
-  font-size: 12px;
+  font-size: var(--site-control-size, 13px);
   text-align: left;
   cursor: pointer;
 }
@@ -500,7 +501,7 @@
   background: transparent;
   color: var(--trend-muted);
   font-family: var(--site-font-sans);
-  font-size: 12px;
+  font-size: var(--site-control-size, 13px);
   text-align: left;
   cursor: pointer;
 }
@@ -595,7 +596,7 @@
   background: rgba(var(--primary), 0.035);
   color: var(--trend-faint);
   font-family: var(--site-font-sans);
-  font-size: 11px;
+  font-size: var(--site-control-size, 13px);
   line-height: 1.7;
 }
 
@@ -617,7 +618,7 @@
   border-radius: 6px;
   background: rgba(var(--primary), 0.1);
   color: rgb(var(--primary));
-  font-size: 11px;
+  font-size: var(--site-control-size, 13px);
   font-weight: 650;
   text-align: center;
   text-decoration: none;
@@ -656,8 +657,8 @@
 .trend-sample-notice {
   margin-bottom: 0;
   color: var(--trend-muted);
-  font-size: 11px;
-  line-height: 1.75;
+  font-size: var(--site-copy-size, 14px);
+  line-height: var(--site-copy-line-height, 1.75);
 }
 
 .trend-stage__toolbar {
@@ -953,13 +954,13 @@
   margin: 10px auto 0;
   max-width: 280px;
   color: var(--trend-muted);
-  font-size: 11px;
-  line-height: 1.7;
+  font-size: var(--site-copy-size, 14px);
+  line-height: var(--site-copy-line-height, 1.75);
 }
 
 .trend-detail__placeholder small {
   color: var(--trend-faint);
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .trend-list {
@@ -1026,7 +1027,7 @@
   display: block;
   overflow: hidden;
   color: rgb(var(--off-white));
-  font-size: 12px;
+  font-size: var(--site-copy-size, 14px);
   font-weight: 650;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -1135,8 +1136,8 @@
 .trend-detail__description {
   margin: 14px 0 0;
   color: var(--trend-muted);
-  font-size: 11px;
-  line-height: 1.75;
+  font-size: var(--site-copy-size, 14px);
+  line-height: var(--site-copy-line-height, 1.75);
 }
 
 .trend-window-empty {
@@ -1157,8 +1158,8 @@
 
 .trend-window-empty p {
   margin: 7px 0 0;
-  font-size: 11px;
-  line-height: 1.65;
+  font-size: var(--site-copy-size, 14px);
+  line-height: var(--site-copy-line-height, 1.75);
 }
 
 .trend-detail__chips,
@@ -1347,7 +1348,7 @@
   border-radius: 5px;
   background: transparent;
   color: var(--trend-copy);
-  font-size: 11px;
+  font-size: var(--site-control-size, 13px);
   text-align: left;
   cursor: pointer;
 }
@@ -1382,7 +1383,7 @@
 .trend-evidence-title {
   display: block;
   color: rgb(var(--off-white));
-  font-size: 12px;
+  font-size: var(--site-copy-size, 14px);
   font-weight: 650;
   line-height: 1.5;
 }
@@ -1396,8 +1397,8 @@
   margin: 7px 0 0;
   overflow: hidden;
   color: var(--trend-muted);
-  font-size: 11px;
-  line-height: 1.55;
+  font-size: var(--site-copy-size, 14px);
+  line-height: 1.65;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
 }
@@ -1448,7 +1449,7 @@
   padding: 14px;
   border: 1px solid rgba(var(--trend-amber), 0.3);
   color: rgba(var(--trend-amber), 0.9);
-  font-size: 11px;
+  font-size: var(--site-copy-size, 14px);
 }
 
 @media (max-width: 1240px) {
@@ -1478,14 +1479,8 @@
     padding-bottom: 12px;
   }
 
-  .trend-hero h1 {
-    margin-top: 4px;
-    font-size: clamp(27px, 2.4vw, 36px);
-  }
-
   .trend-hero__lead {
     margin-top: 6px;
-    line-height: 1.55;
   }
 
   .trend-disclaimer {
@@ -1605,8 +1600,12 @@
     color: rgb(var(--primary));
     background: rgba(var(--primary), 0.08);
     font-family: var(--site-font-mono);
-    font-size: 11px;
+    font-size: var(--site-control-size, 13px);
     cursor: pointer;
+  }
+
+  .trend-control-group input {
+    font-size: 16px;
   }
 
   .trend-view-switch {
@@ -1637,6 +1636,12 @@
 
   .trend-list {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .trend-control-group input {
+    font-size: 16px;
   }
 }
 

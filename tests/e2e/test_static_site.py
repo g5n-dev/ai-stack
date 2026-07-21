@@ -253,6 +253,78 @@ def test_trends_initializes_and_all_primary_controls_change_real_state(
     expect(page.locator("#trend-detail .trend-link--graph")).to_be_visible(timeout=15_000)
 
 
+def test_trends_typography_uses_the_shared_site_scale(
+    page: Page, site_url: str
+) -> None:
+    runtime_errors: list[str] = []
+    page.on("pageerror", lambda error: runtime_errors.append(str(error)))
+    page.set_viewport_size({"width": 1440, "height": 900})
+    response = page.goto(f"{site_url}/trends/?window=30d", wait_until="networkidle")
+    assert response is not None and response.ok
+    expect(page.locator("#trend-status")).to_contain_text("已发现", timeout=15_000)
+
+    desktop = page.evaluate(
+        """
+        () => {
+          const style = (selector) => getComputedStyle(document.querySelector(selector));
+          return {
+            title: style("#trend-page-title").fontSize,
+            titleLine: style("#trend-page-title").lineHeight,
+            titleWeight: style("#trend-page-title").fontWeight,
+            lead: style(".trend-hero__lead").fontSize,
+            module: style(".trend-stage__toolbar h2").fontSize,
+            moduleLine: style(".trend-stage__toolbar h2").lineHeight,
+            control: style("#trend-query").fontSize,
+            button: style('[data-trend-window="30d"]').fontSize,
+          };
+        }
+        """
+    )
+    assert desktop["title"] == "30px"
+    assert desktop["titleLine"] == "36px"
+    assert desktop["titleWeight"] == "300"
+    assert desktop["lead"] == "14px"
+    assert desktop["module"] == "18px"
+    assert float(desktop["moduleLine"].removesuffix("px")) == pytest.approx(24.3, abs=0.1)
+    assert desktop["control"] == "13px"
+    assert desktop["button"] == "13px"
+
+    page.set_viewport_size({"width": 1440, "height": 901})
+    expect(page.locator("#trend-page-title")).to_have_css("font-size", "30px")
+    expect(page.locator(".trend-hero__lead")).to_have_css("line-height", "24.5px")
+
+    response = page.goto(f"{site_url}/search/", wait_until="domcontentloaded")
+    assert response is not None and response.ok
+    expect(page.locator(".search-page__title")).to_have_css("font-size", desktop["title"])
+    expect(page.locator(".search-page__lead")).to_have_css("font-size", desktop["lead"])
+
+    page.set_viewport_size({"width": 390, "height": 844})
+    response = page.goto(f"{site_url}/trends/?window=30d", wait_until="networkidle")
+    assert response is not None and response.ok
+    expect(page.locator("#trend-page-title")).to_have_css("font-size", "30px")
+    expect(page.locator("#trend-query")).to_have_css("font-size", "16px")
+    assert runtime_errors == []
+
+
+def test_trends_touch_input_avoids_mobile_browser_zoom(
+    browser: Browser, site_url: str
+) -> None:
+    context = browser.new_context(
+        viewport={"width": 844, "height": 390},
+        has_touch=True,
+        is_mobile=True,
+        reduced_motion="reduce",
+    )
+    page = context.new_page()
+    try:
+        response = page.goto(f"{site_url}/trends/?window=30d", wait_until="networkidle")
+        assert response is not None and response.ok
+        expect(page.locator("#trend-status")).to_contain_text("已发现", timeout=15_000)
+        expect(page.locator("#trend-query")).to_have_css("font-size", "16px")
+    finally:
+        context.close()
+
+
 def test_trend_matrix_badge_is_a_pointer_and_click_target(
     page: Page, site_url: str
 ) -> None:
