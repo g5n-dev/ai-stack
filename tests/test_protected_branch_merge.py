@@ -233,6 +233,44 @@ def test_wrong_check_app_fails_before_pr_creation() -> None:
     assert not any(endpoint.endswith("/pulls") for _, endpoint, _ in api.calls)
 
 
+def test_trusted_dispatch_waits_for_dynamic_run_name_to_stabilize() -> None:
+    responder, _state = _successful_responder()
+    run_reads = 0
+
+    def eventual_name(
+        method: str,
+        endpoint: str,
+        body: dict[str, object] | None,
+    ) -> object | None:
+        nonlocal run_reads
+        response = responder(method, endpoint, body)
+        if endpoint.endswith("/actions/runs/99"):
+            run_reads += 1
+            if run_reads == 1:
+                assert isinstance(response, dict)
+                response["name"] = "PR CI"
+                response["display_title"] = "PR CI"
+                response["status"] = "queued"
+                response["conclusion"] = None
+        return response
+
+    receipt = merge_validated_branch(
+        FakeApi(eventual_name),
+        repository=REPOSITORY,
+        branch=BRANCH,
+        base_sha=BASE_SHA,
+        head_sha=HEAD_SHA,
+        title="chore(data): persist validated release",
+        body="Validated by the isolated release pipeline.",
+        timeout_seconds=5,
+        poll_seconds=0,
+        sleep=lambda _seconds: None,
+    )
+
+    assert receipt["run_id"] == 99
+    assert run_reads == 2
+
+
 def test_dispatch_deploy_uses_returned_run_id_and_exact_sha() -> None:
     calls: list[tuple[str, str, dict[str, object] | None]] = []
 
