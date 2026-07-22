@@ -1,5 +1,5 @@
 {
-  "active_count": 2172,
+  "active_count": 2173,
   "archived_count": 276,
   "complete_count": 10,
   "legacy_analysis_count": 0,
@@ -17908,6 +17908,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260722-blogs_podcasts-ainews-not-much-happened-today-0-88b2e1578b.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260722-blogs_podcasts-david-vélez-and-robin-vince-join-the-boards-of-the-0-69e4813232.md": {
       "reasons": [
         "concise_source_card"
@@ -17995,10 +18001,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2162,
-  "source_file_count": 2448,
-  "source_tree_sha256": "2195107ad00eb19b05a5e53121906704e78311f8752ca4a72ab632b988458141",
-  "verified_provenance_count": 2172,
+  "source_brief_count": 2163,
+  "source_file_count": 2449,
+  "source_tree_sha256": "ed4fd04899a19c02ea601ef5475b4b7a3fd41054cbaffecb32c8e4b135a64013",
+  "verified_provenance_count": 2173,
   "warning_counts": {
     "source_excerpt_truncated": 742
   }
