@@ -15,7 +15,7 @@ observation_id: obs_69e481323262afa1b5216cbe98dd7c3d5122fa06b483d2f7f01243ab9894
 event_id: evt_b84c4f33d5d6712084c68d8df4c8e444e90ba8a9eebb2eccc86a6d2bf50863ea
 revision_id: rev_b0e5f1cde7a4e7954fc4d950aa74b02113199e69fa8bf9a370448c72ef7d2cad
 source_published_at: 2026-07-21T00:00:00Z
-first_seen_at: 2026-07-21T23:14:15.390680Z
+first_seen_at: 2026-07-22T00:09:04.432740Z
 timestamp_confidence: feed
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -27,7 +27,7 @@ source_title_chars_original: 89
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://openai.com/index/david-velez-robin-vince-join-openai-boards
 parent_observation_id: null
-last_seen_at: 2026-07-21T23:14:15.390680Z
+last_seen_at: 2026-07-22T00:00:00Z
 ---
 
 ## 基本信息
