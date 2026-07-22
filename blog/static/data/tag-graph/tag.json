@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-21T23:15:05Z",
+  "generated_at": "2026-07-22T00:09:50Z",
   "layer": "tag",
   "layers": {
     "application": {
@@ -3992,6 +3992,30 @@
       "weight": 2
     },
     {
+      "id": "edge:cooccurrence:tag:Security->tag:博客与播客",
+      "source": "tag:Security",
+      "strength": 0.5,
+      "target": "tag:博客与播客",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Security->tag:来源快报",
+      "source": "tag:Security",
+      "strength": 0.5,
+      "target": "tag:来源快报",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:semantic:tag:Security->tech:security",
+      "source": "tag:Security",
+      "strength": 0.6,
+      "target": "tech:security",
+      "type": "semantic",
+      "weight": 0.6
+    },
+    {
       "id": "edge:cooccurrence:tag:Swift->tag:TypeScript",
       "source": "tag:Swift",
       "strength": 0.5,
@@ -4245,7 +4269,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 29
+      "weight": 30
     },
     {
       "id": "edge:cooccurrence:tag:博客与播客->tag:深度学习",
@@ -5358,7 +5382,7 @@
       "legacy_id": "cs.LG",
       "level": 6,
       "name": "cs.LG",
-      "rank": 115,
+      "rank": 116,
       "related_count": 2,
       "weighted_degree": 2
     },
@@ -5426,7 +5450,7 @@
       "legacy_id": "econ.EM",
       "level": 6,
       "name": "econ.EM",
-      "rank": 116,
+      "rank": 117,
       "related_count": 2,
       "weighted_degree": 2
     },
@@ -5545,7 +5569,7 @@
       "legacy_id": "Global Affairs",
       "level": 6,
       "name": "Global Affairs",
-      "rank": 117,
+      "rank": 118,
       "related_count": 2,
       "weighted_degree": 2
     },
@@ -5647,7 +5671,7 @@
       "legacy_id": "hep-ph",
       "level": 6,
       "name": "hep-ph",
-      "rank": 118,
+      "rank": 119,
       "related_count": 2,
       "weighted_degree": 2
     },
@@ -5698,7 +5722,7 @@
       "legacy_id": "Java",
       "level": 6,
       "name": "Java",
-      "rank": 16,
+      "rank": 17,
       "related_count": 20,
       "weighted_degree": 148.6
     },
@@ -5885,7 +5909,7 @@
       "legacy_id": "q-bio.GN",
       "level": 6,
       "name": "q-bio.GN",
-      "rank": 119,
+      "rank": 120,
       "related_count": 2,
       "weighted_degree": 2
     },
@@ -5975,6 +5999,23 @@
       "weighted_degree": 6
     },
     {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Amazon SageMaker",
+      "degree": 3,
+      "description": "文章标签: Security",
+      "id": "tag:Security",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Security",
+      "level": 6,
+      "name": "Security",
+      "rank": 113,
+      "related_count": 2,
+      "weighted_degree": 2.6
+    },
+    {
       "article_count": 10,
       "category": "article_tag",
       "color": "#f59e0b",
@@ -6043,11 +6084,11 @@
       "weighted_degree": 289.6
     },
     {
-      "article_count": 336,
+      "article_count": 337,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
-      "degree": 53,
+      "degree": 54,
       "description": "文章标签: 博客与播客",
       "id": "tag:博客与播客",
       "layer": "tag",
@@ -6056,8 +6097,8 @@
       "level": 6,
       "name": "博客与播客",
       "rank": 4,
-      "related_count": 53,
-      "weighted_degree": 662
+      "related_count": 54,
+      "weighted_degree": 664
     },
     {
       "article_count": 141,
@@ -6162,11 +6203,11 @@
       "weighted_degree": 240
     },
     {
-      "article_count": 70,
+      "article_count": 71,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:Amazon SageMaker",
-      "degree": 40,
+      "degree": 41,
       "description": "文章标签: 来源快报",
       "id": "tag:来源快报",
       "layer": "tag",
@@ -6174,9 +6215,9 @@
       "legacy_id": "来源快报",
       "level": 6,
       "name": "来源快报",
-      "rank": 17,
-      "related_count": 40,
-      "weighted_degree": 148
+      "rank": 16,
+      "related_count": 41,
+      "weighted_degree": 150
     },
     {
       "article_count": 9,
@@ -6266,14 +6307,14 @@
   ],
   "stats": {
     "links_by_type": {
-      "cooccurrence": 549,
-      "semantic": 29
+      "cooccurrence": 551,
+      "semantic": 30
     },
     "nodes_by_layer": {
-      "tag": 94
+      "tag": 95
     },
-    "total_links": 578,
-    "total_nodes": 94
+    "total_links": 581,
+    "total_nodes": 95
   },
   "version": 2
 }

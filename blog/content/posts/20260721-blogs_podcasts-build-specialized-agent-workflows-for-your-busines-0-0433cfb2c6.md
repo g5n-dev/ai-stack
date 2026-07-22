@@ -13,7 +13,7 @@ source_snapshot_sha256: "sha256:34cecd2fb9a800a990319742bd57b7549a03735ab87821db
 source_payload_sha256: "sha256:986f37fadf8dd98968892bd67cdb89fea0a3a9a4a752549a14692358feb0f227"
 observation_id: obs_0433cfb2c6fae930626e40d16bca4cfb99f5b834ecc35546ec9106deb5351c42
 event_id: evt_c079f52c0df5009d2d1e30db7378fa37b873f0498cb506a61873d040a5b855be
-revision_id: rev_076fc9dd13f6e6673a5273072644ec832fa7391900b0782b561af805e50a36a2
+revision_id: rev_c0e485a702b3c34178e4044cd6e91bf5070d82bdf7951ec7dbced2ecaf583457
 source_published_at: 2026-07-20T17:01:32Z
 first_seen_at: 2026-07-21T07:08:47Z
 timestamp_confidence: feed
@@ -28,7 +28,7 @@ source_title_chars_original: 99
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://aws.amazon.com/blogs/machine-learning/build-specialized-agent-workflows-for-your-business-with-amazon-quick-and-nvidia-nemo-agent-toolkit
 parent_observation_id: null
-last_seen_at: 2026-07-21T06:52:46.628003Z
+last_seen_at: 2026-07-22T00:00:00Z
 ---
 
 ## 基本信息
