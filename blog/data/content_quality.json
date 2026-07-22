@@ -1,5 +1,5 @@
 {
-  "active_count": 2178,
+  "active_count": 2179,
   "archived_count": 276,
   "complete_count": 11,
   "legacy_analysis_count": 0,
@@ -17986,6 +17986,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260723-blogs_podcasts-advancing-the-next-era-of-national-science-0-577ddf6b90.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260723-blogs_podcasts-ai-teammates-how-mondaycom-runs-production-ai-agen-0-804a63e343.md": {
       "reasons": [
         "concise_source_card"
@@ -18025,10 +18031,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2167,
-  "source_file_count": 2454,
-  "source_tree_sha256": "bf1ee2b7dbe7f56a2bccd8671ba1bc2ae8cc2e8a9f1e187c83df0dad13c6262d",
-  "verified_provenance_count": 2178,
+  "source_brief_count": 2168,
+  "source_file_count": 2455,
+  "source_tree_sha256": "75c907e53f2a3f507d224fb7ea2ac3dd167c1e3982df0cab5c5595ad4b070a21",
+  "verified_provenance_count": 2179,
   "warning_counts": {
     "source_excerpt_truncated": 742
   }
