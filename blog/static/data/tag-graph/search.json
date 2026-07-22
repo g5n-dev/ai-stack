@@ -12,7 +12,7 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-07-22T22:20:15Z",
+  "generated_at": "2026-07-22T23:21:24Z",
   "items": [
     {
       "article_count": 653,
@@ -54,7 +54,7 @@
       "weighted_degree": 1186
     },
     {
-      "article_count": 345,
+      "article_count": 346,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 62,
@@ -64,7 +64,7 @@
       "legacy_id": "博客与播客",
       "name": "博客与播客",
       "rank": 4,
-      "weighted_degree": 684
+      "weighted_degree": 686
     },
     {
       "article_count": 161,
@@ -210,7 +210,7 @@
       "weighted_degree": 240
     },
     {
-      "article_count": 79,
+      "article_count": 80,
       "category": "article_tag",
       "community_id": "community:tag:来源快报",
       "degree": 45,
@@ -220,7 +220,7 @@
       "legacy_id": "来源快报",
       "name": "来源快报",
       "rank": 16,
-      "weighted_degree": 165
+      "weighted_degree": 167
     },
     {
       "article_count": 42,
@@ -1146,6 +1146,19 @@
       "weighted_degree": 6
     },
     {
+      "article_count": 3,
+      "category": "article_tag",
+      "community_id": "community:tag:来源快报",
+      "degree": 2,
+      "description": "文章标签: Global Affairs",
+      "id": "tag:Global Affairs",
+      "layer": "tag",
+      "legacy_id": "Global Affairs",
+      "name": "Global Affairs",
+      "rank": 88,
+      "weighted_degree": 6
+    },
+    {
       "article_count": 2,
       "category": "article_tag",
       "community_id": "community:tag:Gemini App",
@@ -1155,7 +1168,7 @@
       "layer": "tag",
       "legacy_id": "Search",
       "name": "Search",
-      "rank": 88,
+      "rank": 89,
       "weighted_degree": 6
     },
     {
@@ -1168,7 +1181,7 @@
       "layer": "tag",
       "legacy_id": "Amazon Bedrock Guardrails",
       "name": "Amazon Bedrock Guardrails",
-      "rank": 89,
+      "rank": 90,
       "weighted_degree": 6
     },
     {
@@ -1181,7 +1194,7 @@
       "layer": "model",
       "legacy_id": "nlp",
       "name": "自然语言处理",
-      "rank": 90,
+      "rank": 91,
       "weighted_degree": 5.6
     },
     {
@@ -1194,7 +1207,7 @@
       "layer": "tag",
       "legacy_id": "Amazon VPC",
       "name": "Amazon VPC",
-      "rank": 91,
+      "rank": 92,
       "weighted_degree": 5
     },
     {
@@ -1207,7 +1220,7 @@
       "layer": "tag",
       "legacy_id": "Android",
       "name": "Android",
-      "rank": 92,
+      "rank": 93,
       "weighted_degree": 5
     },
     {
@@ -1220,7 +1233,7 @@
       "layer": "tag",
       "legacy_id": "Gemini App",
       "name": "Gemini App",
-      "rank": 93,
+      "rank": 94,
       "weighted_degree": 5
     },
     {
@@ -1233,7 +1246,7 @@
       "layer": "tag",
       "legacy_id": "Gemini Notebook",
       "name": "Gemini Notebook",
-      "rank": 94,
+      "rank": 95,
       "weighted_degree": 5
     },
     {
@@ -1246,7 +1259,7 @@
       "layer": "application",
       "legacy_id": "agent",
       "name": "AI Agent",
-      "rank": 95,
+      "rank": 96,
       "weighted_degree": 4.4
     },
     {
@@ -1259,7 +1272,7 @@
       "layer": "tag",
       "legacy_id": "Company",
       "name": "Company",
-      "rank": 96,
+      "rank": 97,
       "weighted_degree": 4
     },
     {
@@ -1272,19 +1285,6 @@
       "layer": "tag",
       "legacy_id": "cs.CR",
       "name": "cs.CR",
-      "rank": 97,
-      "weighted_degree": 4
-    },
-    {
-      "article_count": 2,
-      "category": "article_tag",
-      "community_id": "community:tag:来源快报",
-      "degree": 2,
-      "description": "文章标签: Global Affairs",
-      "id": "tag:Global Affairs",
-      "layer": "tag",
-      "legacy_id": "Global Affairs",
-      "name": "Global Affairs",
       "rank": 98,
       "weighted_degree": 4
     },
