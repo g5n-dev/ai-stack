@@ -1,5 +1,5 @@
 {
-  "active_count": 2179,
+  "active_count": 2180,
   "archived_count": 276,
   "complete_count": 11,
   "legacy_analysis_count": 0,
@@ -17997,6 +17997,12 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260723-blogs_podcasts-building-ai-infrastructure-with-the-effingham-coun-0-082c4173c7.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -18031,10 +18037,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2168,
-  "source_file_count": 2455,
-  "source_tree_sha256": "75c907e53f2a3f507d224fb7ea2ac3dd167c1e3982df0cab5c5595ad4b070a21",
-  "verified_provenance_count": 2179,
+  "source_brief_count": 2169,
+  "source_file_count": 2456,
+  "source_tree_sha256": "f01f339fcbe1ff53cf564428f77f1076d3b437b19351ccd3f66231ce0c45db9f",
+  "verified_provenance_count": 2180,
   "warning_counts": {
     "source_excerpt_truncated": 742
   }
