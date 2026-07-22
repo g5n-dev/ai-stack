@@ -1,5 +1,5 @@
 {
-  "active_count": 2171,
+  "active_count": 2172,
   "archived_count": 276,
   "complete_count": 10,
   "legacy_analysis_count": 0,
@@ -17902,6 +17902,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260722-blogs_podcasts-ainews-ai-cybersecurity-becomes-top-of-mind-0-03cd65474c.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260722-blogs_podcasts-david-vélez-and-robin-vince-join-the-boards-of-the-0-69e4813232.md": {
       "reasons": [
         "concise_source_card"
@@ -17989,10 +17995,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2161,
-  "source_file_count": 2447,
-  "source_tree_sha256": "531160678b76af7b8d9098f532432e3ee1e8438d7412bfc857d39df3a770156e",
-  "verified_provenance_count": 2171,
+  "source_brief_count": 2162,
+  "source_file_count": 2448,
+  "source_tree_sha256": "2195107ad00eb19b05a5e53121906704e78311f8752ca4a72ab632b988458141",
+  "verified_provenance_count": 2172,
   "warning_counts": {
     "source_excerpt_truncated": 742
   }
