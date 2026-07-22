@@ -1,5 +1,5 @@
 {
-  "active_count": 2175,
+  "active_count": 2176,
   "archived_count": 276,
   "complete_count": 10,
   "legacy_analysis_count": 0,
@@ -17974,6 +17974,12 @@
         "source_excerpt_truncated"
       ]
     },
+    "posts/20260723-blogs_podcasts-3-google-updates-from-galaxy-unpacked-2026-0-7c49a9cf52.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260723-blogs_podcasts-ai-teammates-how-mondaycom-runs-production-ai-agen-0-804a63e343.md": {
       "reasons": [
         "concise_source_card"
@@ -18013,10 +18019,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2165,
-  "source_file_count": 2451,
-  "source_tree_sha256": "f2843e478ce9746ab8ceab89d726fcff0e275fa621f16ca41dc4e2e3e364d802",
-  "verified_provenance_count": 2175,
+  "source_brief_count": 2166,
+  "source_file_count": 2452,
+  "source_tree_sha256": "420983d614cdc838dd1f62b7384ad64df6ac77622d6858a30714fd0d29797b74",
+  "verified_provenance_count": 2176,
   "warning_counts": {
     "source_excerpt_truncated": 742
   }

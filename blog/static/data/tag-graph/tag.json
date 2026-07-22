@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-22T16:48:22Z",
+  "generated_at": "2026-07-22T18:25:24Z",
   "layer": "tag",
   "layers": {
     "application": {
@@ -96,6 +96,30 @@
       "weight": 1
     },
     {
+      "id": "edge:cooccurrence:tag:AI->tag:Android",
+      "source": "tag:AI",
+      "strength": 0.5,
+      "target": "tag:Android",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:AI->tag:Gemini App",
+      "source": "tag:AI",
+      "strength": 0.5,
+      "target": "tag:Gemini App",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:AI->tag:Gemini Notebook",
+      "source": "tag:AI",
+      "strength": 0.5,
+      "target": "tag:Gemini Notebook",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
       "id": "edge:cooccurrence:tag:AI->tag:Google One",
       "source": "tag:AI",
       "strength": 0.5,
@@ -125,7 +149,7 @@
       "strength": 1,
       "target": "tag:博客与播客",
       "type": "cooccurrence",
-      "weight": 4
+      "weight": 5
     },
     {
       "id": "edge:cooccurrence:tag:AI->tag:来源快报",
@@ -133,7 +157,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 4
+      "weight": 5
     },
     {
       "id": "edge:semantic:tag:AI->tech:ai_ml",
@@ -1864,6 +1888,38 @@
       "weight": 1
     },
     {
+      "id": "edge:cooccurrence:tag:Android->tag:Gemini App",
+      "source": "tag:Android",
+      "strength": 0.5,
+      "target": "tag:Gemini App",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Android->tag:Gemini Notebook",
+      "source": "tag:Android",
+      "strength": 0.5,
+      "target": "tag:Gemini Notebook",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Android->tag:博客与播客",
+      "source": "tag:Android",
+      "strength": 0.5,
+      "target": "tag:博客与播客",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Android->tag:来源快报",
+      "source": "tag:Android",
+      "strength": 0.5,
+      "target": "tag:来源快报",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
       "id": "edge:cooccurrence:tag:Announcements->tag:AWS DeepRacer",
       "source": "tag:Announcements",
       "strength": 0.5,
@@ -2718,6 +2774,46 @@
       "target": "tag:来源快报",
       "type": "cooccurrence",
       "weight": 2
+    },
+    {
+      "id": "edge:cooccurrence:tag:Gemini App->tag:Gemini Notebook",
+      "source": "tag:Gemini App",
+      "strength": 0.5,
+      "target": "tag:Gemini Notebook",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Gemini App->tag:博客与播客",
+      "source": "tag:Gemini App",
+      "strength": 0.5,
+      "target": "tag:博客与播客",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Gemini App->tag:来源快报",
+      "source": "tag:Gemini App",
+      "strength": 0.5,
+      "target": "tag:来源快报",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Gemini Notebook->tag:博客与播客",
+      "source": "tag:Gemini Notebook",
+      "strength": 0.5,
+      "target": "tag:博客与播客",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Gemini Notebook->tag:来源快报",
+      "source": "tag:Gemini Notebook",
+      "strength": 0.5,
+      "target": "tag:来源快报",
+      "type": "cooccurrence",
+      "weight": 1
     },
     {
       "id": "edge:cooccurrence:tag:GitHub->tag:Go",
@@ -4469,7 +4565,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 34
+      "weight": 35
     },
     {
       "id": "edge:cooccurrence:tag:博客与播客->tag:深度学习",
@@ -4924,11 +5020,11 @@
       "weighted_degree": 24
     },
     {
-      "article_count": 4,
+      "article_count": 5,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:tag:Google Workspace",
-      "degree": 6,
+      "community_id": "community:tag:Gemini App",
+      "degree": 9,
       "description": "文章标签: AI",
       "id": "tag:AI",
       "layer": "tag",
@@ -4936,9 +5032,9 @@
       "legacy_id": "AI",
       "level": 6,
       "name": "AI",
-      "rank": 46,
-      "related_count": 5,
-      "weighted_degree": 12.6
+      "rank": 39,
+      "related_count": 8,
+      "weighted_degree": 17.6
     },
     {
       "article_count": 1,
@@ -4953,7 +5049,7 @@
       "legacy_id": "AI Adoption",
       "level": 6,
       "name": "AI Adoption",
-      "rank": 116,
+      "rank": 119,
       "related_count": 2,
       "weighted_degree": 2.6
     },
@@ -4987,7 +5083,7 @@
       "legacy_id": "AI Research",
       "level": 6,
       "name": "AI Research",
-      "rank": 117,
+      "rank": 120,
       "related_count": 2,
       "weighted_degree": 2.6
     },
@@ -5106,7 +5202,7 @@
       "legacy_id": "Amazon Bedrock Knowledge Bases",
       "level": 6,
       "name": "Amazon Bedrock Knowledge Bases",
-      "rank": 95,
+      "rank": 98,
       "related_count": 4,
       "weighted_degree": 4
     },
@@ -5208,7 +5304,7 @@
       "legacy_id": "Amazon Nova",
       "level": 6,
       "name": "Amazon Nova",
-      "rank": 44,
+      "rank": 45,
       "related_count": 13,
       "weighted_degree": 13
     },
@@ -5225,7 +5321,7 @@
       "legacy_id": "Amazon Quick Sight",
       "level": 6,
       "name": "Amazon Quick Sight",
-      "rank": 39,
+      "rank": 40,
       "related_count": 12,
       "weighted_degree": 16
     },
@@ -5276,7 +5372,7 @@
       "legacy_id": "Amazon Rekognition",
       "level": 6,
       "name": "Amazon Rekognition",
-      "rank": 96,
+      "rank": 99,
       "related_count": 4,
       "weighted_degree": 4
     },
@@ -5366,6 +5462,23 @@
       "weighted_degree": 5
     },
     {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Gemini App",
+      "degree": 5,
+      "description": "文章标签: Android",
+      "id": "tag:Android",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Android",
+      "level": 6,
+      "name": "Android",
+      "rank": 92,
+      "related_count": 5,
+      "weighted_degree": 5
+    },
+    {
       "article_count": 5,
       "category": "article_tag",
       "color": "#f59e0b",
@@ -5395,7 +5508,7 @@
       "legacy_id": "Artificial Intelligence",
       "level": 6,
       "name": "Artificial Intelligence",
-      "rank": 97,
+      "rank": 100,
       "related_count": 4,
       "weighted_degree": 4
     },
@@ -5412,7 +5525,7 @@
       "legacy_id": "Artificial intelligence",
       "level": 6,
       "name": "Artificial intelligence",
-      "rank": 41,
+      "rank": 42,
       "related_count": 12,
       "weighted_degree": 14
     },
@@ -5446,7 +5559,7 @@
       "legacy_id": "AWS DeepRacer",
       "level": 6,
       "name": "AWS DeepRacer",
-      "rank": 98,
+      "rank": 101,
       "related_count": 4,
       "weighted_degree": 4
     },
@@ -5463,7 +5576,7 @@
       "legacy_id": "AWS Fargate",
       "level": 6,
       "name": "AWS Fargate",
-      "rank": 45,
+      "rank": 46,
       "related_count": 13,
       "weighted_degree": 13
     },
@@ -5514,7 +5627,7 @@
       "legacy_id": "C++",
       "level": 6,
       "name": "C++",
-      "rank": 105,
+      "rank": 108,
       "related_count": 2,
       "weighted_degree": 3.6
     },
@@ -5548,7 +5661,7 @@
       "legacy_id": "Company",
       "level": 6,
       "name": "Company",
-      "rank": 93,
+      "rank": 96,
       "related_count": 2,
       "weighted_degree": 4
     },
@@ -5599,7 +5712,7 @@
       "legacy_id": "cs.AI",
       "level": 6,
       "name": "cs.AI",
-      "rank": 40,
+      "rank": 41,
       "related_count": 2,
       "weighted_degree": 14
     },
@@ -5633,7 +5746,7 @@
       "legacy_id": "cs.CR",
       "level": 6,
       "name": "cs.CR",
-      "rank": 94,
+      "rank": 97,
       "related_count": 2,
       "weighted_degree": 4
     },
@@ -5667,7 +5780,7 @@
       "legacy_id": "cs.LG",
       "level": 6,
       "name": "cs.LG",
-      "rank": 121,
+      "rank": 124,
       "related_count": 2,
       "weighted_degree": 2
     },
@@ -5735,7 +5848,7 @@
       "legacy_id": "econ.EM",
       "level": 6,
       "name": "econ.EM",
-      "rank": 122,
+      "rank": 125,
       "related_count": 2,
       "weighted_degree": 2
     },
@@ -5825,6 +5938,40 @@
       "weighted_degree": 9
     },
     {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Gemini App",
+      "degree": 5,
+      "description": "文章标签: Gemini App",
+      "id": "tag:Gemini App",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Gemini App",
+      "level": 6,
+      "name": "Gemini App",
+      "rank": 93,
+      "related_count": 5,
+      "weighted_degree": 5
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Gemini App",
+      "degree": 5,
+      "description": "文章标签: Gemini Notebook",
+      "id": "tag:Gemini Notebook",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Gemini Notebook",
+      "level": 6,
+      "name": "Gemini Notebook",
+      "rank": 94,
+      "related_count": 5,
+      "weighted_degree": 5
+    },
+    {
       "article_count": 40,
       "category": "article_tag",
       "color": "#f59e0b",
@@ -5854,7 +6001,7 @@
       "legacy_id": "Global Affairs",
       "level": 6,
       "name": "Global Affairs",
-      "rank": 123,
+      "rank": 126,
       "related_count": 2,
       "weighted_degree": 2
     },
@@ -5879,7 +6026,7 @@
       "article_count": 1,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:tag:Google Workspace",
+      "community_id": "community:other",
       "degree": 4,
       "description": "文章标签: Google One",
       "id": "tag:Google One",
@@ -5888,7 +6035,7 @@
       "legacy_id": "Google One",
       "level": 6,
       "name": "Google One",
-      "rank": 99,
+      "rank": 102,
       "related_count": 4,
       "weighted_degree": 4
     },
@@ -5896,7 +6043,7 @@
       "article_count": 1,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:tag:Google Workspace",
+      "community_id": "community:other",
       "degree": 4,
       "description": "文章标签: Google Workspace",
       "id": "tag:Google Workspace",
@@ -5905,7 +6052,7 @@
       "legacy_id": "Google Workspace",
       "level": 6,
       "name": "Google Workspace",
-      "rank": 100,
+      "rank": 103,
       "related_count": 4,
       "weighted_degree": 4
     },
@@ -5956,7 +6103,7 @@
       "legacy_id": "hep-ph",
       "level": 6,
       "name": "hep-ph",
-      "rank": 124,
+      "rank": 127,
       "related_count": 2,
       "weighted_degree": 2
     },
@@ -6092,7 +6239,7 @@
       "legacy_id": "Machine learning",
       "level": 6,
       "name": "Machine learning",
-      "rank": 42,
+      "rank": 43,
       "related_count": 12,
       "weighted_degree": 14
     },
@@ -6194,7 +6341,7 @@
       "legacy_id": "q-bio.GN",
       "level": 6,
       "name": "q-bio.GN",
-      "rank": 125,
+      "rank": 128,
       "related_count": 2,
       "weighted_degree": 2
     },
@@ -6228,7 +6375,7 @@
       "legacy_id": "Research",
       "level": 6,
       "name": "Research",
-      "rank": 43,
+      "rank": 44,
       "related_count": 12,
       "weighted_degree": 14
     },
@@ -6270,7 +6417,7 @@
       "article_count": 2,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:tag:Google Workspace",
+      "community_id": "community:tag:Gemini App",
       "degree": 3,
       "description": "文章标签: Search",
       "id": "tag:Search",
@@ -6296,7 +6443,7 @@
       "legacy_id": "Security",
       "level": 6,
       "name": "Security",
-      "rank": 118,
+      "rank": 121,
       "related_count": 2,
       "weighted_degree": 2.6
     },
@@ -6369,11 +6516,11 @@
       "weighted_degree": 289.6
     },
     {
-      "article_count": 342,
+      "article_count": 343,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
-      "degree": 59,
+      "degree": 62,
       "description": "文章标签: 博客与播客",
       "id": "tag:博客与播客",
       "layer": "tag",
@@ -6382,8 +6529,8 @@
       "level": 6,
       "name": "博客与播客",
       "rank": 4,
-      "related_count": 59,
-      "weighted_degree": 676
+      "related_count": 62,
+      "weighted_degree": 681
     },
     {
       "article_count": 141,
@@ -6488,11 +6635,11 @@
       "weighted_degree": 240
     },
     {
-      "article_count": 76,
+      "article_count": 77,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:来源快报",
-      "degree": 42,
+      "degree": 45,
       "description": "文章标签: 来源快报",
       "id": "tag:来源快报",
       "layer": "tag",
@@ -6501,8 +6648,8 @@
       "level": 6,
       "name": "来源快报",
       "rank": 16,
-      "related_count": 42,
-      "weighted_degree": 157
+      "related_count": 45,
+      "weighted_degree": 162
     },
     {
       "article_count": 9,
@@ -6592,14 +6739,14 @@
   ],
   "stats": {
     "links_by_type": {
-      "cooccurrence": 575,
+      "cooccurrence": 587,
       "semantic": 31
     },
     "nodes_by_layer": {
-      "tag": 100
+      "tag": 103
     },
-    "total_links": 606,
-    "total_nodes": 100
+    "total_links": 618,
+    "total_nodes": 103
   },
   "version": 2
 }
