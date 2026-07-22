@@ -12,7 +12,7 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-07-22T18:25:24Z",
+  "generated_at": "2026-07-22T20:25:53Z",
   "items": [
     {
       "article_count": 653,
@@ -41,7 +41,7 @@
       "weighted_degree": 1223.2
     },
     {
-      "article_count": 449,
+      "article_count": 450,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 25,
@@ -51,10 +51,10 @@
       "legacy_id": "掘金",
       "name": "掘金",
       "rank": 3,
-      "weighted_degree": 1184
+      "weighted_degree": 1186
     },
     {
-      "article_count": 343,
+      "article_count": 344,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 62,
@@ -64,7 +64,7 @@
       "legacy_id": "博客与播客",
       "name": "博客与播客",
       "rank": 4,
-      "weighted_degree": 681
+      "weighted_degree": 682
     },
     {
       "article_count": 161,
@@ -210,7 +210,7 @@
       "weighted_degree": 240
     },
     {
-      "article_count": 77,
+      "article_count": 78,
       "category": "article_tag",
       "community_id": "community:tag:来源快报",
       "degree": 45,
@@ -220,7 +220,7 @@
       "legacy_id": "来源快报",
       "name": "来源快报",
       "rank": 16,
-      "weighted_degree": 162
+      "weighted_degree": 163
     },
     {
       "article_count": 42,
@@ -392,6 +392,19 @@
       "weighted_degree": 27.6
     },
     {
+      "article_count": 11,
+      "category": "article_tag",
+      "community_id": "community:tag:Codex",
+      "degree": 9,
+      "description": "文章标签: 工程实践",
+      "id": "tag:工程实践",
+      "layer": "tag",
+      "legacy_id": "工程实践",
+      "name": "工程实践",
+      "rank": 30,
+      "weighted_degree": 27
+    },
+    {
       "article_count": 8,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
@@ -401,21 +414,8 @@
       "layer": "tag",
       "legacy_id": "Kotlin",
       "name": "Kotlin",
-      "rank": 30,
-      "weighted_degree": 27
-    },
-    {
-      "article_count": 10,
-      "category": "article_tag",
-      "community_id": "community:tag:Codex",
-      "degree": 9,
-      "description": "文章标签: 工程实践",
-      "id": "tag:工程实践",
-      "layer": "tag",
-      "legacy_id": "工程实践",
-      "name": "工程实践",
       "rank": 31,
-      "weighted_degree": 25
+      "weighted_degree": 27
     },
     {
       "article_count": 6,
@@ -496,7 +496,7 @@
       "weighted_degree": 21
     },
     {
-      "article_count": 9,
+      "article_count": 10,
       "category": "article_tag",
       "community_id": "community:tag:Codex",
       "degree": 2,
@@ -506,7 +506,7 @@
       "legacy_id": "来源转写",
       "name": "来源转写",
       "rank": 38,
-      "weighted_degree": 18
+      "weighted_degree": 20
     },
     {
       "article_count": 5,
